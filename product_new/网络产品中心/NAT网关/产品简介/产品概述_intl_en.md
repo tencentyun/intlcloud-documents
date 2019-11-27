@@ -1,11 +1,11 @@
 ## Overview
-NAT Gateway is a service that supports IP address translation and provides the [SNAT](https://cloud.tencent.com/document/product/552/12952) and [DNAT](https://cloud.tencent.com/document/product/552/12952) capabilities. It provides secure and high-performance Internet access for resources in [VPCs](https://intl.cloud.tencent.com/document/product/215/535). NAT Gateway supports a high availability of up to 99.99%, 5 Gbps bandwidth, and more than 10 million concurrent connections. Its typical application scenarios are as follows:
+NAT Gateway is a service that supports IP address translation and provides the [SNAT](https://intl.cloud.tencent.com/document/product/1015/30227) and [DNAT](https://intl.cloud.tencent.com/document/product/1015/30227) capabilities. It provides secure and high-performance Internet access for resources in [VPCs](https://intl.cloud.tencent.com/document/product/215/535). NAT Gateway supports a high availability of up to 99.99%, 5 Gbps bandwidth, and more than 10 million concurrent connections. Its typical application scenarios are as follows:
 1. Large bandwidth and high-availability public network egress services, such as web crawlers and access to Internet public services.
 2. Secure public network egress services, for example, you would like to have a CVM  communicates with internet but don’t want to bind the CVM to a public IP address for security reasons.
 
 ## Network Topology
 As shown in the following figure, when resources in the VPC, such as CVMs, send outbound data packets through the NAT gateway, these data packets first travel through the router and then are routed according to the routing policy. Finally, the NAT gateway sends the traffic to the Internet by using the bound EIP as the source IP address.
-![](https://main.qcloudimg.com/raw/3c4bdc38f992ab789eac9a53ccca9914.png)
+![](https://main.qcloudimg.com/raw/54a74334c8221816ad89ae6d0e5a5dac.png)
 
 ## Differences Between the NAT Gateway and the Public Gateway
 CVMs in a VPC can access the Internet through a NAT gateway or a public gateway. The following table lists the differences between both types of gateways.
