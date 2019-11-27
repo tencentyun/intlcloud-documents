@@ -1,5 +1,5 @@
 ### How do I use the NAT Gateway and EIP?
-- The NAT gateway is able to translate between private IP addresses and public IP addresses in a VPC. It is an ingress or egress for public network traffic in a VPC. For more information about how to use Tencent Cloud’s NAT Gateway service, see [NAT Gateway](https://cloud.tencent.com/document/product/215/4975).
+- The NAT gateway is able to translate between private IP addresses and public IP addresses in a VPC. It is an ingress or egress for public network traffic in a VPC. For more information about how to use Tencent Cloud’s NAT Gateway service, see [NAT Gateway](https://intl.cloud.tencent.com/document/product/1015).
 - The NAT gateway and EIP are two ways for the CVM to access the Internet. You can use either or both of them to design your public network access architecture.
 
 ### How do I configure port mapping on a NAT Gateway in the VPC?
