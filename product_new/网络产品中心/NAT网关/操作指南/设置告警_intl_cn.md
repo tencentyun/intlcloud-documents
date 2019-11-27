@@ -4,6 +4,6 @@
 2. 填写告警策略名称，策略类型选择【私有网络】>【NAT 网关】，选择告警对象，设置告警策略，选择告警接受组和告警渠道，单击【完成】，即可在告警策略列表中查看已设置的告警策略。
 >告警策略创建后，需要解绑所有资源才能删除。
 >
- ![1](https://main.qcloudimg.com/raw/4adfb60a91722bf4bf9b8c42310fe6ab.png)
+ ![1](https://main.qcloudimg.com/raw/dee222aeb87945e3aec1d88da06dbea9.png)
 3. 查看告警信息
 告警条件被触发后，您将通过已选择的告警渠道接收到告警通知（短信 / 邮件 / 站内信等），也可以单击左侧目录【告警历史】查看。更多告警相关信息，请参见  [告警配置](https://intl.cloud.tencent.com/document/product/248/6215)。
