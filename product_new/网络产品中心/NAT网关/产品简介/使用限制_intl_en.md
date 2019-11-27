@@ -10,7 +10,7 @@ For example, the flow of all traffic from VPC 1 to the Internet can be implement
 
 - The NAT gateway supports TCP, UDP and ICMP, while ESP and AH for the GRE tunnel and IPSec cannot be used for the NAT gateway, and ALG technologies are also not supported. This results from the characteristics of the NAT gateway, and has nothing to do with the service provider. Most Internet applications use TCP, and 99% of Internet applications use TCP or UDP.
 
-- The following table lists the restrictions on the supported resources for the NAT gateway. For more information, see [Use Limits](https://cloud.tencent.com/doc/product/215/537).
+- The following table lists the restrictions on the supported resources for the NAT gateway. <!--For more information, see [Use Limits]()-->
 <table>
 <tbody>
 <tr>
