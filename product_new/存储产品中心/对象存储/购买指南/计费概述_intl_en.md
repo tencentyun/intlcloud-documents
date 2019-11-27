@@ -9,25 +9,25 @@ COS is billed on a pay-as-you-go basis as detailed below:
 
 ## Free Tier
 
-New users will receive a certain amount of standard storage capacity provided by COS free of charge in six months after activating the COS service. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
+New users will receive a certain amount of standard storage provided by COS free of charge in six months after activating the COS service. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
 
-> The free tier is not applicable to other billable items such as standard_IA and archive storage capacity, requests, and traffic.
+> The free tier is not applicable to other billable items such as standard_IA and archive storage usage, requests, and traffic.
 
 
 
 ## Billable Items
 
-Billable items in COS include [storage capacity](#jf1), [requests](#jf2), [data retrievals](#jf3), and [traffic](#jf4) as shown below:
+Billable items in COS include [storage usage](#jf1), [requests](#jf2), [data retrievals](#jf3), and [traffic](#jf4) as shown below:
 
 ![](https://main.qcloudimg.com/raw/2a2d84360ad6d8f1b3b3cd5088b0a4a2.png)
 
 <span id="jf1"></span>
 
-### Storage Capacity Fees
+### Storage Usage Fees
 
 COS offers three object storage classes for different access frequencies: standard storage, standard_IA storage, and archive storage. For more information, see [COS Storage Classes](https://intl.cloud.tencent.com/document/product/436/30925).
 
-Storage capacity fees are calculated based on the storage capacity actually used by your data. The specific billable items and descriptions of such fees are as shown below:
+Storage usage fees are calculated based on the storage actually used by your data. The specific billable items and descriptions of such fees are as shown below:
 
 <table>
    <tr>
@@ -37,10 +37,10 @@ Storage capacity fees are calculated based on the storage capacity actually used
       <th>Billing Description</th>
    </tr>
    <tr>
-      <td nowrap="nowrap">Storage capacity</td>
+      <td nowrap="nowrap">Storage usage</td>
       <td>Standard storage<br>Standard_IA storage<br>Archive storage</td>
-      <td>Calculated based on the actual storage capacity occupied by your data</td>
-      <td nowrap="nowrap"><li>Settled on a monthly basis <br><li>Storage capacity fees = storage capacity unit price * monthly storage capacity used<br><li>Monthly storage capacity used = sum of "daily storage capacity used" in the month / number of days in the month <br><li>Daily storage capacity used = sum of "5-minute storage capacity used" / 288 (number of statistical points)</td>
+      <td>Calculated based on the actual storage occupied by your data</td>
+      <td nowrap="nowrap"><li>Settled on a monthly basis <br><li>Storage usage fees = storage usage unit price * monthly storage used<br><li>Monthly storage used = sum of "daily storage used" in the month / number of days in the month <br><li>Daily storage used = sum of "5-minute storage used" / 288 (number of statistical points)</td>
    </tr>
 </table>
 
@@ -168,7 +168,7 @@ The billing cycle and sequence of the billable items in COS are as detailed belo
       <th>Billing Sequence</th>
    </tr>
    <tr>
-      <td nowrap="nowrap">Storage capacity fees</td>
+      <td nowrap="nowrap">Storage usage fees</td>
       <td rowspan="3">Monthly</td>
       <td rowspan="3">The fees for one month are calculated and billed on the 3rd to 5th day of the following month</td>
       <td nowrap="nowrap">Free tier > pay-as-you-go</td>
