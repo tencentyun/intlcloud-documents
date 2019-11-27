@@ -20,7 +20,6 @@ CVMs in a VPC can access the Internet through a NAT gateway or a public gateway.
 | Private IP address | Private IP addresses of VPC users are not consumed | Private IP addresses of subnets are consumed. |
 | Security group | Binding a security group to a NAT gateway is not supported. Instead, you can bind a security group to the backend CVM. | Binding a security group is supported. |
 | Network ACL | Binding a network ACL to a NAT gateway is not supported. Instead, you can bind a network ACL to the subnet where the backend CVM resides. | Binding a network ACL is not supported. Instead, you can bind a network ACL to the subnet where the public gateway resides. |
-| Cost | Mainland China:<br/>Small (max. 1,000,000 connections): 0.5 CNY/hr<br/>Medium (max. 3,000,000 connections: 1.5 CNY/hr<br/>Large (max. 10,000,000 connections): 5 CNY/hr | Depends on the specifications of the CVM that is used as the public gateway, taking mainland China as an example:<br/>1 core and 2 GB: 0.44 CNY/hr<br/>4 cores and 8 GB: 1.76 CNY/hr<br/>12 cores and 24 GB: 5.28 CNY/hr. |
 
 The NAT gateway has the following advantages:
 - Large capacity
