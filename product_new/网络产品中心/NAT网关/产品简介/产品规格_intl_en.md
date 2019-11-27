@@ -12,4 +12,4 @@ Available maximum public network outbound bandwidths of the NAT gateway (in Mbps
 - The maximum public network inbound bandwidth of a NAT gateway is 5 Gbps by default, which is unchangeable for now.
 - The traffic cost of NAT Gateway is calculated based on the maximum public network outbound bandwidth regardless of the public network inbound bandwidth.
 
-For more information about the fees, see [Billing Description](https://cloud.tencent.com/document/product/552/18172).
+For more information about the fees, see [Billing Description](https://intl.cloud.tencent.com/document/product/1015/30248).
