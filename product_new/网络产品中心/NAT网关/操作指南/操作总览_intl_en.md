@@ -1,0 +1,15 @@
+This document describes some common operations for using NAT gateways (create and query port forwarding rules, adjust configurations, manage EIPs, and view bandwidth limit details) and the related products. 
+## Common Operations
+- [Configuring a Route That Points to NAT Gateway](https://cloud.tencent.com/document/product/552/19697)
+- [Adjusting the Priorities of NAT Gateways and EIPs](https://cloud.tencent.com/document/product/552/30012)
+- [Creating a Port Forwarding Rule](https://cloud.tencent.com/document/product/552/18176)
+- [Querying a Port Forwarding Rule](https://cloud.tencent.com/document/product/552/18178)
+- [Modifying NAT Gateway Configuration](https://cloud.tencent.com/document/product/552/18179)
+- [Managing the EIPs Bound to a NAT Gateway](https://cloud.tencent.com/document/product/552/18180)
+- [Viewing NAT Gateway Monitoring Information](https://cloud.tencent.com/document/product/552/18181)
+- [Setting Alarms](https://cloud.tencent.com/document/product/552/18182)
+- [Deleting a NAT Gateway](https://cloud.tencent.com/document/product/552/18183)
+- [Enabling Gateway Traffic Monitoring and Control](https://cloud.tencent.com/document/product/552/18184)
+- [Setting Gateway Traffic Monitoring and Control](https://cloud.tencent.com/document/product/552/18242)
+- [Viewing Gateway Traffic Monitoring and Control](https://cloud.tencent.com/document/product/552/18239)
+- [Binding with an Anti-DDoS Pro Instance](https://cloud.tencent.com/document/product/552/18185)
