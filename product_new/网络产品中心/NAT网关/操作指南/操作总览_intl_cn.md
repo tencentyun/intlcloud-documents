@@ -9,7 +9,7 @@
 - [查看 NAT 网关监控信息](https://intl.cloud.tencent.com/document/product/1015/30241)
 - [设置告警](https://intl.cloud.tencent.com/document/product/1015/30242)
 - [删除 NAT 网关](https://intl.cloud.tencent.com/document/product/1015/30243)
-- [开启网关流控明细](https://intl.cloud.tencent.com/document/product/1015/30244)
-- [设置网关流控明细](https://intl.cloud.tencent.com/document/product/1015/30245)
-- [查看网关流控明细](https://intl.cloud.tencent.com/document/product/1015/30246)
+- 开启网关流控明细
+- 设置网关流控明细
+- 查看网关流控明细
 - [绑定高防包](https://intl.cloud.tencent.com/document/product/1015/30247)
