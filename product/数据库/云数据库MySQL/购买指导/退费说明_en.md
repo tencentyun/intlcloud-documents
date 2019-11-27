@@ -53,44 +53,6 @@ Refund amount=Amount of effective order + Amount of non-effective order - Value 
 - If refund amount<=0, it is considered 0 and resources are cleaned up.
 
 **Note: Rebates and coupons are not returned.**
-	
-**Refund amount** will be returned to your account in the form of **coupons applicable to all products (valid for 2 years)**.
-
-
-## Examples of Billing Rules for Self-Service Return of CDB
- > Note: The following prices are just examples, instead of actual prices on the official website.
- 
-### Scenario of 5-Day Unconditional Return
-**An instance in Guangzhou Zone 2 is 120 CNY/month, with 1 GB memory, 25 GB local disk, and is provided with asynchronous replication. It is purchased by using a 100 CNY coupon with a usage period of 1 year. 17% off for a prepaid instance.
-Discounted price is 120×12×0.83=1,195.2 CNY
-Amount actually paid is 1,195.2-100=1,095.2 CNY**
-
-The user is unsatisfied with the product and applies for a return within 5 days after the purchase. This is the first time the account requests a return.
-Refund amount=Amount actually paid (1,095.2 CNY)
-
-### Scenario of Ordinary Self-service Return
-**An instance in Guangzhou Zone 2 is 120 CNY/month, with 1 GB memory, 25 GB local disk, and is provided with asynchronous replication. It is purchased by using a 100 CNY coupon with a usage period of 1 year. 17% off for a prepaid instance.
-Discounted price is 120×12×0.83=1,195.2 CNY
-Amount actually paid is 1,195.2-100=1,095.2 CNY**
-
-### Cases
-**Case 1: The user applies for an unconditional return within 5 days after the purchase and this is the first time the account requests a return**
-
-Refund amount (**cash**)=Amount actually paid (1,095.2 CNY)
-
-**Case 2: The user applies for a return within 5 days after the purchase and this is not the first time the account requests a return. The resources have been used for a total of 48 hours before return.**
-
-Refund amount (**coupon**)=1,095.2-48×0.35 (0.35 is the unit price for the postpaid instance with the original configuration)=1,078.4 CNY
-
-**Case 3: The user applies for a return within 5 days after the purchase and this is not the first time the account requests a return. The resources have been used for 48 hours. The service is renewed for another year with a discount of 17%, and the amount paid for the renewal is 1,195.2 CNY.**
-
-Refund amount (**coupon**)=1,095.2-48×0.35 (0.35 is the unit price for the postpaid instance with the original configuration) (the refund amount of effective order)+1,195.2 (the amount of non-effective order)=2,273.6 CNY
-
-**Case 4: The user applies for a return within 5 days after the purchase and this is not the first time the account requests a return. The configuration is upgraded when the resources have been used for 12 hours, with the amount paid for the upgrade being 100 CNY. The resources have been used for a total of 72 hours before return.**
-
-Refund amount (**coupon**)=1,095.2-12×0.35 (0.35 is the unit price for the postpaid instance with the original configuration)+100/365 (unit price per day for the upgraded instance)×(365-3) (the number of days during which the instance after upgraded is not used)=1,190.2 CNY
-
-Note: Unit price may vary with regions, activities, policies or other factors. The unit price in the examples is for reference only. Please refer to the actual unit prices in practice.
 
 
 
