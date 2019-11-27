@@ -5,4 +5,4 @@ After creating a NAT gateway, you can modify its attributes.
  - Change the gateway type. Once made, this change takes effect immediately. Changing the gateway type does not lead to network disconnection.
  - Change the bandwidth threshold.
  
-![1](https://main.qcloudimg.com/raw/44ca3bc895ce850a3c79956e066059e9.png)
+![1](https://main.qcloudimg.com/raw/193f44f6120c0a71caa611790df40dee.png)
