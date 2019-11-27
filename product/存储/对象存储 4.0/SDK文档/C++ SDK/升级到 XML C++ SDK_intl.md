@@ -25,7 +25,7 @@ Upgrade C++ SDK by following the 4 steps below.
 make
 make install
 ```
-You can also refer to C++ SDK [Getting Started](https://cloud.tencent.com/document/product/436/12301) to select a proper installation method.
+You can also refer to C++ SDK [Getting Started](https://intl.cloud.tencent.com/document/product/436/12301) to select a proper installation method.
 
 **2. Change the SDK configuration file**
 
@@ -83,7 +83,7 @@ The abbreviations of available regions for XML C++ SDK buckets have changed. Dur
 
 **4. Change APIs**
 
-After JSON C++ SDK is upgraded to XML C++ SDK, the APIs for some operations have changed. Make the corresponding changes based on your actual needs. In addition, we have encapsulated the APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://cloud.tencent.com/document/product/436/12302).
+After JSON C++ SDK is upgraded to XML C++ SDK, the APIs for some operations have changed. Make the corresponding changes based on your actual needs. In addition, we have encapsulated the APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://intl.cloud.tencent.com/document/product/436/12301).
 
 Here are the main changes:
 
@@ -162,5 +162,5 @@ The following APIs are added in XML C++ SDK, which can be called as needed:
 - Operations on Bucket ACLs, such as PutBucketACLReq, GetBucketACLReq, etc.
 - Operations on bucket lifecycle, such as PutBucketLifecycleReq, GetBucketLifecycleReq, etc.
 
-For more information, see C++ SDK [API Documentation](https://cloud.tencent.com/document/product/436/12302).
+For more information, see C++ SDK [API Documentation](https://intl.cloud.tencent.com/document/product/436/12301).
 
