@@ -48,9 +48,9 @@
 **2. 更改 SDK 鉴权方式**
 
 在 JSON SDK 中您需要自己在后台计算好签名，再返回客户端使用。而 XML SDK 使用了新的鉴权算法，我们强烈建议您后台接入我们的临时密钥（STS）方案。该方案您不需要了解签名计算过程，只需要在服务器端接入 CAM，将拿到的临时密钥返回到客户端，并设置到 SDK 中，SDK 会负责管理密钥和计算签名。临时密钥在一段时间后会自动失效，而永久密钥不会泄露。
-您还可以按照不同的粒度来控制访问权限。具体的步骤请参考 [移动应用直传实践](https://cloud.tencent.com/document/product/436/9068) 以及 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
+您还可以按照不同的粒度来控制访问权限。具体的步骤请参考 [移动应用直传实践](https://intl.cloud.tencent.com/document/product/436/30618) 以及 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
-如果您仍然采用后台手动计算签名，再返回客户端使用的方式，请注意我们的签名算法发生了改变。签名不再区分单次和多次签名，而是通过设置签名的有效期来保证安全性。请参考 [XML 请求签名](https://cloud.tencent.com/document/product/436/7778) 文档更新您签名的实现。
+如果您仍然采用后台手动计算签名，再返回客户端使用的方式，请注意我们的签名算法发生了改变。签名不再区分单次和多次签名，而是通过设置签名的有效期来保证安全性。请参考 [XML 请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档更新您签名的实现。
 
 **3. 更改 SDK  初始化方式**
 
@@ -161,7 +161,7 @@ XML SDK 的存储桶可用区域简称发生了变化，下表列出了不同区
 
 **5. 更改 API**
 
-升级到 XML SDK之后，一些操作的 API 发生了变化，请您根据实际需求进行相应的更改。我们做了封装让 SDK 更加易用，具体请参考我们的示例和 [接口文档](https://cloud.tencent.com/document/product/436/12258)。
+升级到 XML SDK之后，一些操作的 API 发生了变化，请您根据实际需求进行相应的更改。我们做了封装让 SDK 更加易用，具体请参考我们的示例和 [接口文档](https://intl.cloud.tencent.com/document/product/436/11280)。
 
 API 变化有以下三点：
 
@@ -234,4 +234,4 @@ XML SDK 增加了很多新的 API，您可根据需求进行调用。包括：
 * 存储桶 ACL 的操作，如 QCloudPutBucketACLRequest、QCloudGetBucketACLRequest 等。
 * 存储桶生命周期的操作，如 PQCloudutBucketLifecycleRequest、QCloudGetBucketLifecycleRequest 等。
 
-具体请参考我们的 [iOS SDK 接口文档](https://cloud.tencent.com/document/product/436/12258)。
+具体请参考我们的 [iOS SDK 接口文档](https://intl.cloud.tencent.com/document/product/436/11280)。
