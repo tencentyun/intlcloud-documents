@@ -1,11 +1,11 @@
 ## 简介
-NAT 网关（NAT Gateway）是一种支持 IP 地址转换服务，提供 [SNAT](https://cloud.tencent.com/document/product/552/12952) 和 [DNAT](https://cloud.tencent.com/document/product/552/12952) 能力，可为 [私有网络（VPC）](https://intl.cloud.tencent.com/document/product/215/535)内的资源提供安全、高性能的 Internet 访问服务。NAT 网关支持高达99.99%的高可用性、5Gbps的带宽以及1000 万以上的并发连接数，其典型应用场景如下：
+NAT 网关（NAT Gateway）是一种支持 IP 地址转换服务，提供 [SNAT](https://intl.cloud.tencent.com/document/product/1015/30227) 和 [DNAT](https://intl.cloud.tencent.com/document/product/1015/30227) 能力，可为 [私有网络（VPC）](https://intl.cloud.tencent.com/document/product/215/535)内的资源提供安全、高性能的 Internet 访问服务。NAT 网关支持高达99.99%的高可用性、5Gbps的带宽以及1000 万以上的并发连接数，其典型应用场景如下：
 1. 大带宽、高可用的公网出口服务，例如：网络爬虫，访问 Internet 公共服务等。
 2. 安全的公网出口服务，例如：云服务器需要与公网通信，但出于安全性考虑，不希望云服务器绑定公网 IP。
 
 ## 网络拓扑关系
 如下图所示，VPC 内云服务器等资源通过 NAT 网关向外发送数据包时，数据会先经过路由器，按照路由策略进行路由选择。最后 NAT 网关把绑定的弹性 IP 地址作为源 IP 地址，将流量发送到 Internet。
-![](https://main.qcloudimg.com/raw/3c4bdc38f992ab789eac9a53ccca9914.png)
+![](https://main.qcloudimg.com/raw/54a74334c8221816ad89ae6d0e5a5dac.png)
 
 ## 与公网网关的区别
 VPC 内的云服务器可以通过 NAT 网关或者公网网关访问 Internet。两种网关之间的差异如下表所示。
@@ -20,7 +20,6 @@ VPC 内的云服务器可以通过 NAT 网关或者公网网关访问 Internet�
 | 内网 IP  | 不占用 VPC 用户的内网 IP                          | 占用子网内 IP                                 |
 | 安全组    | NAT 网关不支持安全组绑定，可对后端云服务器进行安全组绑定     | 支持安全组绑定             |
 | 网络 ACL | NAT 网关不支持网络 ACL 绑定，可对后端云服务器所在子网进行网络 ACL 绑定 | 不支持绑定网络 ACL，可对所在子网进行网络 ACL  绑定   |
-| 费用     | 大陆地区：<br/>小型（最大100万连接数）：0.5元 / 小时<br/>中型（最大300万连接数）：1.5元 / 小时<br/>大型（最大1000万连接数）：5元 / 小时 | 取决于作为公网网关的云服务器规格，以大陆地区为例：<br/>1核2G：0.44元 / 小时<br/>4核8G：1.76元 / 小时<br/>12核24G：5.28元 / 小时 |
 
 由上表可知，NAT 网关具有如下优势：
 - 大容量

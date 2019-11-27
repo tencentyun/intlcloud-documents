@@ -27,6 +27,6 @@ NAT 网关和弹性公网 IP 是云服务器访问 Internet 的两种方式，�
 | [私有网络](https://intl.cloud.tencent.com/document/product/215/535) | NAT 网关是 VPC 的一个子产品 |
 | [路由表](https://intl.cloud.tencent.com/document/product/215/4954) | 创建 NAT 网关后，需要配置路由规则，以将子网流量指向 NAT 网关 |
 | [公网网关](https://intl.cloud.tencent.com/document/product/215/4972) | 公网网关是开启了转发功能的云服务器，支持 NAT 接入 |
-| BGP 高防包<!--(https://cloud.tencent.com/document/product/297/15344) -->| 将 BGP 高防包与 NAT 网关绑定，可实现 DDoS 和 CC 防护 |
+| BGP 高防包| 将 BGP 高防包与 NAT 网关绑定，可实现 DDoS 和 CC 防护 |
 | [网络 ACL](https://intl.cloud.tencent.com/document/product/215/5132) |  NAT 网关后端云服务器所在子网绑定网络 ACL 后，可对进出子网的流量进行精确控制 |
 

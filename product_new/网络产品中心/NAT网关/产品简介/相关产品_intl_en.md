@@ -15,7 +15,7 @@ In this method, the CVM is bound to an EIP. Meanwhile, all traffic from the subn
 > **Note:**
 > If the bandwidth package (BWP) feature is enabled for your account, the fee of the outbound traffic generated from the NAT gateway will be deducted from the BWP. This means that the network traffic will not be repeatedly billed. We recommend that you limit the outbound bandwidth of the NAT gateway to avoid a high BWP fee due to excessive outbound bandwidth usage.
 
-For more information about the EIP, see [EIP Overview](https://cloud.tencent.com/document/product/215/11143).
+For more information about the EIP, see [EIP Overview](https://intl.cloud.tencent.com/document/product/215/4958).
 
 ## Other Products
 For information about related products, see the table below:
@@ -23,10 +23,10 @@ For information about related products, see the table below:
 | Product Name | Relationship with NAT Gateway |
 |---------|---------|
 | [CVM](https://intl.cloud.tencent.com/document/product/213/495) | The NAT gateway and the EIP are two ways for the CVM to access the Internet. |
-| [EIP](https://cloud.tencent.com/document/product/215/11143) | The EIP and the NAT gateway are two ways for the CVM to access the Internet. |
-| [VPC](https://cloud.tencent.com/document/product/215/535) | NAT Gateway is a sub-product of VPC. |
-| [Route Table](https://cloud.tencent.com/document/product/215/4954) | After creating a NAT gateway, you need to configure routing rules to direct the subnet traffic to the NAT gateway. |
-| [Public Gateway](https://cloud.tencent.com/document/product/215/11119) | A public gateway is a CVM with forwarding enabled and can be accessed by NAT. |
-| [Anti-DDoS Pro](https://cloud.tencent.com/document/product/297/15344) | Bind Anti-DDoS Pro to the NAT gateway for DDoS and CC protection. |
-| [Network ACL](https://cloud.tencent.com/document/product/215/5132) | After the network ACL is bound to the subnet where the backend CVM resides, the inbound and outbound traffic of subnets can be precisely controlled. |
+| [EIP](https://intl.cloud.tencent.com/document/product/215/4958) | The EIP and the NAT gateway are two ways for the CVM to access the Internet. |
+| [VPC](https://intl.cloud.tencent.com/document/product/215/535) | NAT Gateway is a sub-product of VPC. |
+| [Route Table](https://intl.cloud.tencent.com/document/product/215/4954) | After creating a NAT gateway, you need to configure routing rules to direct the subnet traffic to the NAT gateway. |
+| [Public Gateway](https://intl.cloud.tencent.com/document/product/215/4972) | A public gateway is a CVM with forwarding enabled and can be accessed by NAT. |
+| Anti-DDoS Pro | Bind Anti-DDoS Pro to the NAT gateway for DDoS and CC protection. |
+| [Network ACL](https://intl.cloud.tencent.com/document/product/215/5132) | After the network ACL is bound to the subnet where the backend CVM resides, the inbound and outbound traffic of subnets can be precisely controlled. |
 

@@ -1,18 +1,18 @@
 ### Purchase CVMs
 
-All users can purchase CVMs on Tencent Cloud's official website. According to different billing methods, users can purchase prepaid CVMs (on a monthly/yearly basis) or postpaid CVMs (billing is accurate to seconds and is settled on an hourly basis). For more information, please see [Billing Methods](https://intl.cloud.tencent.com/document/product/213/2180).
-The purchase process of prepaid and postpaid CVMs is similar, as shown below:
+All users can purchase CVMs on Tencent Cloud's official website. According to different billing methods, users can  purchase postpaid CVMs (billing is accurate to seconds and is settled on an hourly basis). For more information, please see [Billing Methods](https://intl.cloud.tencent.com/document/product/213/2180).
+The purchase process of postpaid CVMs, as shown below:
 
 1. Log in to [Purchase Tencent Cloud Service](https://buy.cloud.tencent.com/cvm?tab=custom&regionId=1&zoneId=0&step=1&bandwidthType=BANDWIDTH_PREPAID), and select the Custom Configuration tab.
 
-2. Select a billing method: prepaid or postpaid.
+2. Select a billing method: postpaid.
 
 3. Select the region and model, image, storage and bandwidth, security group and CVM, and then confirm the order.
 >**Purchase suggestions:**
 >- Users with smooth network are recommended to select bill-by-bandwidth. If bill-by-bandwidth is selected, the traffic is unlimited. The billing method is "hardware + bandwidth" (prepaid)
 >- Users with fluctuate network are recommended to select bill-by-traffic. If bill-by-traffic is selected, users can freely select the peak bandwidth. The billing method is "Hardware (prepaid) + Traffic (actual traffic)".
 
-4. Payment. You can pay with your balance, Tenpay, WeChat Pay or QQ Wallet, etc.
+4. Payment.
 5. The CVM is activated immediately after the payment is completed. You can see the IP address in 1 to 5 minutes, which can be managed after you logged in to the CVM.
 
 > **Note:**
@@ -30,8 +30,6 @@ For more information on how to select regions and available zones, please see [R
 ### What CVM types are provided?
 
 Multiple CVM instance specifications are provided. For more information, please see [Instance Specification](https://intl.cloud.tencent.com/document/product/213/11518). You can select the appropriate instance type based on your business needs.
-
-If your demand is stable, we recommend that you select the prepaid billing method. So your savings will increase with the length of usage. 
 
 To react to spikes in demand, you can choose the postpaid billing method, which allows you to activate/terminate computing instances at any time and only pay for the actually consumed resources. CVM usage is billed in one-second increments to maximize your savings. 
 
@@ -54,10 +52,6 @@ Because Microsoft ended Windows 2003 support, Tencent Cloud no longer provides W
 ### How to select storage?
 
 For data that requires extremely high reliability, use [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) to ensure the persistent and reliable data storage. Try not to select [Local Disk](https://intl.cloud.tencent.com/doc/product/213/5798) for data storage.
-
-### What are the limits of purchasing prepaid and postpaid CVMs?
-
-For more information, please see [Quota for CVM Instances](https://intl.cloud.tencent.com/document/product/213/2664).
 
 ### What are the CVM purchase channels?
 

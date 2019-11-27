@@ -10,7 +10,7 @@
 
 - NAT 网关支持 TCP、UDP 和 ICMP 协议，而 GRE 隧道和 IPSec 使用的 ESP、AH 无法使用 NAT 网关，且暂不支持 ALG 相关技术。这是由 NAT 网关本身的特性决定的，与服务提供商无关。但互联网大部分应用都是 TCP 应用，TCP 和 UDP 应用合起来占互联网应用类型的99%。
 
-- NAT 网关支持的资源限制如下表所示<!--，您还可以查看 [VPC 其它产品的使用限制](https://cloud.tencent.com/doc/product/215/537)-->。
+- NAT 网关支持的资源限制如下表所示：<!--，您还可以查看 [VPC 其它产品的使用限制](https://cloud.tencent.com/doc/product/215/537)-->
 <table>
 <tbody>
 <tr>
