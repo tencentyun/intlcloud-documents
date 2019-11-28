@@ -24,7 +24,7 @@
  pip install -U cos-python-sdk-v5
 ```
 
-此外，您也可以参考 Python SDK [快速入门](https://cloud.tencent.com/document/product/436/12269) 文档选择合适您的安装方式。
+此外，您也可以参考 Python SDK [快速入门](https://intl.cloud.tencent.com/document/product/436/12269) 文档选择合适您的安装方式。
 
 
 **2. 更改 SDK 初始化**
@@ -112,7 +112,7 @@ XML Python SDK 的存储桶可用区域简称发生了变化，在初始化时�
 
 
 **4. 更改 API**
-升级到 XML Python SDK 之后，一些操作的 API 发生了变化，请您根据实际需求进行相应的更改。同时我们做了封装让 SDK 更加易用，具体请参考我们的示例和 [接口文档](https://cloud.tencent.com/document/product/436/12270)。
+升级到 XML Python SDK 之后，一些操作的 API 发生了变化，请您根据实际需求进行相应的更改。同时我们做了封装让 SDK 更加易用，具体请参考我们的示例和 [接口文档](https://intl.cloud.tencent.com/document/product/436/12269)。
 API 变化有以下四点：
 
 **1）没有单独的目录接口**
@@ -143,7 +143,7 @@ response = client.upload_file(
 
 **3）签名算法不同**
 
-通常您不需要手动计算签名，但如果您将 SDK 的签名返回给前端使用，请注意我们的签名算法发生了改变。签名不再区分单次和多次签名，而是通过设置签名的有效期来保证安全性。具体的算法请参考 [XML 请求签名](https://cloud.tencent.com/document/product/436/7778) 文档。
+通常您不需要手动计算签名，但如果您将 SDK 的签名返回给前端使用，请注意我们的签名算法发生了改变。签名不再区分单次和多次签名，而是通过设置签名的有效期来保证安全性。具体的算法请参考 [XML 请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档。
 
 **4）新增 API**
 
@@ -153,4 +153,4 @@ XML Python SDK 新增 API，您可根据需求进行调用。包括：
 * 存储桶 ACL 的操作，如 put_bucket_acl、get_bucket_acl 等。
 * 存储桶生命周期的操作，如 put_bucket_lifecycle、get_bucket_lifecycle 等。
 
-阅读更多请参考我们的 Python SDK [接口文档](https://cloud.tencent.com/document/product/436/12270)。
+阅读更多请参考我们的 Python SDK [接口文档](https://intl.cloud.tencent.com/document/product/436/12269)。
