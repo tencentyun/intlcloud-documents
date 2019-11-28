@@ -31,7 +31,6 @@ Both NAT gateway and public network gateway are used for the CVM in the VPC to a
 | Private IP	| Private IPs of VPC users are not occupied |	Private IPs of the subnet are occupied |
 | Security group |	Binding of security group is not supported. You can bind the security group to the NAT gateway backend CVM	| Support |
 | Network ACL |	Binding of network ACL is not supported. You can bind the network ACL to the subnet in which the NAT gateway backend CVM resides	| Binding of network ACL is not supported. You can bind the network ACL to the subnet to which the public network gateway belongs |
-| Charges	| Mainland China:<br> Small (a maximum of 1m connections): 0.5 CNY/hr<br> Medium (a maximum of 3m connections): 1.5 CNY/hr <br>Large (a maximum of 10m connections): 5 CNY/hr | Depend on the size of CVM used as a public network gateway. Take Mainland China as an example: <br>1-core 2 GB: 0.44 CNY/hr <br>4-core 8 GB: 1.76 CNY/hr <br>12-core 24 GB: 5.28 CNY/hr |
 
 The comparisons listed above show that Tencent Cloud NAT gateway has three advantages:
 - Large capacity: It supports a maximum of 10m concurrent connections, 5 Gbps bandwidth and 10 EIPs to meet the demand of users with a large business scale.
@@ -61,7 +60,7 @@ CVM is only bound with EIP, instead of using NAT gateway. With this solution, al
 The CVM is bound to an EIP, and the traffic of the subnet route for accessing the Internet is directed to the NAT gateway. In this way, all the traffic of the CVM for accessing the Internet is **forwarded to the NAT gateway via the private network only**, and the response packets are returned to the CVM via the NAT gateway. This means that the traffic is not restricted by the upper limit of public network bandwidth specified when you purchase the CVM, and the traffic generated from the NAT gateway does not occupy the public network bandwidth outlet of the CVM. If the traffic from the Internet accesses the EIP of the CVM, the response packets of the CVM are all returned through the EIP. In this case, the resulting outbound traffic of the public network is restricted by the upper limit of public network bandwidth specified when you purchase the CVM. The fees for accessing the public network depend on the billing method of the CVM's network.
 
 > **Note:**
-For the accounts with a bandwidth package for bandwidth sharing, the fee for the outbound traffic from NAT gateway is covered by the bandwidth package (the network traffic fee of 0.8 CNY/GB is not charged additionally). You're recommended to set a limit on the outbound bandwidth of the NAT gateway, so as to avoid a high bandwidth package fee due to the excessive use of outbound bandwidth of NAT gateway.
+For the accounts with a bandwidth package for bandwidth sharing, the fee for the outbound traffic from NAT gateway is covered by the bandwidth package (the network traffic fee is not charged additionally). You're recommended to set a limit on the outbound bandwidth of the NAT gateway, so as to avoid a high bandwidth package fee due to the excessive use of outbound bandwidth of NAT gateway.
 
 ## Key Features
 The followings are some key features of NAT gateway:
