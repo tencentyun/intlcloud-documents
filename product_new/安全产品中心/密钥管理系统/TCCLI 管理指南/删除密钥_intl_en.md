@@ -4,7 +4,7 @@ The schedule key deletion feature involves the following two APIs:
 
 | API Name | Description | Note |
 |---------|---------|---------|
-| ScheduleKeyDeletion | Creates a schedule deletion task | The `KeyId` and `PendingWindowInDays` parameters are required for this API. For more information. |
+| ScheduleKeyDeletion | Creates a schedule deletion task | The `KeyId` and `PendingWindowInDays` parameters are required for this API.|
 | CancelKeyDeletion | Cancels a schedule deletion task | The `KeyId` parameter is required for this API.|
 
 >If a CMK schedule deletion waiting period is set through the ScheduleKeyDeletion API when the CMK is in disabled status, the CMK will be deleted automatically at the specified time.
