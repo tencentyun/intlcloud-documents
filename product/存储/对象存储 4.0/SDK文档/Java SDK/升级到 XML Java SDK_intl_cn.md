@@ -106,7 +106,7 @@ COSClient cosclient = new COSClient(cred, clientConfig);
 ```
 
 **3. 更改 API**
-升级到 XML SDK 之后，一些操作的 API 发生了变化，请您根据实际需求进行相应的更改。同时我们做了封装让 SDK 更加易用，具体请参考我们的示例和 [接口文档](https://cloud.tencent.com/document/product/436/12263)。
+升级到 XML SDK 之后，一些操作的 API 发生了变化，请您根据实际需求进行相应的更改。同时我们做了封装让 SDK 更加易用，具体请参考我们的示例和 [接口文档](https://intl.cloud.tencent.com/document/product/436/10199)。
 
 API 主要有以下变化：
 
@@ -167,7 +167,7 @@ cosclient.shutdown();
 
 **3）签名算法不同**
 
-通常您不需要手动计算签名，但如果您将 SDK 的签名返回给前端使用，请注意我们的签名算法发生了改变。签名不再区分单次和多次签名，而是通过设置签名的有效期来保证安全性。具体的算法请参考 [XML 请求签名](https://cloud.tencent.com/document/product/436/7778) 文档。
+通常您不需要手动计算签名，但如果您将 SDK 的签名返回给前端使用，请注意我们的签名算法发生了改变。签名不再区分单次和多次签名，而是通过设置签名的有效期来保证安全性。具体的算法请参考 [XML 请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档。
 
 **4）新增 API**
 
@@ -177,4 +177,4 @@ XML Java SDK 新增 API，您可根据需求进行调用。包括：
 * 存储桶 ACL 的操作，如 getBucketAcl、setBucketAcl 等。
 * 存储桶生命周期的操作，如 setBucketLifecycleConfiguration、getBucketLifecycleConfiguration、 deleteBucketLifecycleConfiguration 等。
 
-了解更多请查看 [Java SDK 接口文档](https://cloud.tencent.com/document/product/436/12263)。
+了解更多请查看 [Java SDK 接口文档](https://intl.cloud.tencent.com/document/product/436/10199)。
