@@ -3,7 +3,7 @@
 ## 操作步骤
 1、进入 [腾讯云管理控制台](https://console.cloud.tencent.com) 页面，鼠标移动至页面右上角账号昵称。
 2、在弹出的下拉菜单中，单击【切换用户身份】，如下图：
-![](https://main.qcloudimg.com/raw/1e5c7a627b078485edd20ec624f50052.png)
+![](https://main.qcloudimg.com/raw/2d78fbef986a949b5ff314f3b4e8012e.png)
 3、在选择用户身份页面，单击账号信息右侧【∨】 ，选择需要管理的主账号身份，如下图：
-![](https://main.qcloudimg.com/raw/5ba72db07511d3d0edd021ec72ad7a3e.png)
+![](https://main.qcloudimg.com/raw/0d9844414cf232a96784a816bc8e901f.png)
 4、单击【登录】，完成协作者身份切换操作。

@@ -3,6 +3,6 @@
 ## 操作步骤
 1、进入 [腾讯云账号登录](https://cloud.tencent.com/login) 页面，选择被添加协作者账号的登录方式。
 2、输入账号信息或者扫码成功之后，进入选择用户身份页面，如下图：
-![](https://main.qcloudimg.com/raw/5ba72db07511d3d0edd021ec72ad7a3e.png)
+![](https://main.qcloudimg.com/raw/0d9844414cf232a96784a816bc8e901f.png)
 3、在选择用户身份页面，单击账号信息右侧【∨】 ，选择需要管理的主账号身份。
 4、单击【登录】，完成协作者账号登录操作。

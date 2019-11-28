@@ -3,7 +3,7 @@ Azure Active Directory （Azure AD） 是 Microsoft 推出的基于云的标识�
 
 ## 操作步骤
 ### 创建 Azure AD 企业应用程序
->?您可以通过本步骤创建 Azure AD 企业应用程序，如您已经有正在使用的应用程序，可忽略本操作，进行 [配置 CAM](#stepCAM)。
+>您可以通过本步骤创建 Azure AD 企业应用程序，如您已经有正在使用的应用程序，可忽略本操作，进行 [配置 CAM](#stepCAM)。
 
 
 1. 进入 [Azure AD 门户页](https://portal.azure.com/#home)，单击左侧导航栏中【Azure Active Directory】。如下图所示：
@@ -16,7 +16,7 @@ Azure Active Directory （Azure AD） 是 Microsoft 推出的基于云的标识�
 ![](https://main.qcloudimg.com/raw/94c765a2f385e47e641f9befbcb538bf.png)
 
 ### <span id="stepCAM"></span>配置 CAM
->?您可以通过本步骤配置 Azure AD 和腾讯云之间的信任关系使之相互信任。
+>您可以通过本步骤配置 Azure AD 和腾讯云之间的信任关系使之相互信任。
 >
 1. 在左侧导航栏中，选择【Azure Active Directory】>【企业应用程序】> 您创建的应用程序 ，进入应用程序概览页面。
 2. 单击【单一登录】，打开“选择单一登录方法”页面。
@@ -27,14 +27,14 @@ Azure Active Directory （Azure AD） 是 Microsoft 推出的基于云的标识�
 5. 在腾讯云创建 SAML 身份提供商及角色，详细操作请参考 [创建身份提供商](https://intl.cloud.tencent.com/document/product/598/30391)。
 
 ### 配置 Azure AD 的单一登录
->?您可以通过本步骤将 Azure AD 应用程序属性映射到腾讯云的属性，建立 Azure AD 应用程序和腾讯云的互信关系。
+>您可以通过本步骤将 Azure AD 应用程序属性映射到腾讯云的属性，建立 Azure AD 应用程序和腾讯云的互信关系。
 >
 1. 在 “SAML 单一登录”概览界面，单击“基本 SAML 配置”右上角的<image style="margin:0;" src="https://main.qcloudimg.com/raw/836588594e0a214b5951ee5207fc2353.png">。如下图所示：
 ![](https://main.qcloudimg.com/raw/abeffc5c30a39561448523a5fc29b8ee.png)
 2. 在“基本 SAML 配置”编辑页面填写以下信息，并单击【保存】。如下图所示：
 ![](https://main.qcloudimg.com/raw/a0161d7c8eeddcf00dab05d6a65dd2d7.png)
 
->>?
+>>
 > - 如果您的腾讯云账号所在站点为中国站，请按照如下信息进行配置：
 标识符（实体 ID）：cloud.tencent.com
 回复 URL（断言使用者服务 URL）：https://cloud.tencent.com/login/saml
@@ -54,7 +54,7 @@ Azure Active Directory （Azure AD） 是 Microsoft 推出的基于云的标识�
 |Role | https://cloud.tencent.com/SAML/Attributes | 属性| qcs::cam::uin/{AccountID}:roleName/{RoleName},qcs::cam::uin/{AccountID}:saml-provider/{ProviderName} |
 |RoleSessionName| https://cloud.tencent.com/SAML/Attributes | 属性 | Azure |
 
->?在 Role 源属性中 {AccountID}，{RoleName} ，{ProviderName} 分别替换内容下：
+>在 Role 源属性中 {AccountID}，{RoleName} ，{ProviderName} 分别替换内容下：
 >- {AccountID} 替换为您的腾讯云帐户 ID，可前往 [账号信息 - 控制台](https://console.cloud.tencent.com/developer) 查看。
 >- {RoleName}替换您在腾讯云为身份提供商所创建的角色名称（点击查看如何在腾讯云  [为身份提供商创建的角色](https://intl.cloud.tencent.com/document/product/598/19381)），角色名称可前往 [角色 - 控制台](https://console.cloud.tencent.com/cam/role) 查看，如需要添加更多可按照该格式添加：qcs::cam::uin/{AccountID}:roleName/{RoleName} ，以 ; 隔开。
 >- {ProviderName} 替换您在腾讯云创建的 SAML 身份提供商名称，可前往  [身份提供商 - 控制台](https://console.cloud.tencent.com/cam/idp) 查看。
@@ -63,14 +63,14 @@ Azure Active Directory （Azure AD） 是 Microsoft 推出的基于云的标识�
 
 
 ### 配置 Azure AD 用户
->?您可以通过本步骤分配用户访问权限，向 Azure AD 用户分配腾讯云的 SSO 访问权限。
+>您可以通过本步骤分配用户访问权限，向 Azure AD 用户分配腾讯云的 SSO 访问权限。
 >
 1.	单击左侧导航栏【Azure Active Directory】，单击【用户】，打开【所有用户】。如下图所示：
 ![](https://main.qcloudimg.com/raw/7ca36c24562a867451312e003c4afd25.png)
 2. <span id="step2"></span>单击左上角【新建用户】，在“用户”页面填写【姓名】、【用户名】，勾选【显示密码】，信息无误后单击下方【创建】完成创建。如下图所示：
 ![](https://main.qcloudimg.com/raw/a67ec799cdcd060f34c86193f1e2ab7a.png)
 
->?用户名格式为：用户名@域名。您可以自定义用户名，域名可以单击左侧导航栏【Azure Active Directory】，打开概述页，查看您之前设置的【初始域名】。您可以复制保存用户名、密码留用。
+>用户名格式为：用户名@域名。您可以自定义用户名，域名可以单击左侧导航栏【Azure Active Directory】，打开概述页，查看您之前设置的【初始域名】。您可以复制保存用户名、密码留用。
 >
 3. 在左侧导航栏中，选择【Azure Active Directory】>【企业应用程序】> 您创建的应用程序，进入应用程序概览页面，并单击【用户和组】。如下图所示：
 ![](https://main.qcloudimg.com/raw/0fbc968bbdcdc1b1378e79a5e116d28a.png)

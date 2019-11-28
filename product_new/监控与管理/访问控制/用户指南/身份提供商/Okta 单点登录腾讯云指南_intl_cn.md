@@ -3,7 +3,7 @@ Okta 是身份识别与访问管理解决方案提供商。腾讯云支持基于
 
 ## 操作步骤
 ### <span id="stepCREATE"></span>创建 Okta 应用程序
->?您可以通过本步骤创建 Okta 应用程序，如您已经有正在使用的应用程序，可忽略本操作，进行 [配置 CAM](#stepCAM)。
+>您可以通过本步骤创建 Okta 应用程序，如您已经有正在使用的应用程序，可忽略本操作，进行 [配置 CAM](#stepCAM)。
 >
 1. 登录进入 [Okta 网站](https://qqyu-admin.okta.com/admin/dashboard)，选择 Applications，进入应用管理页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/5d55782d704ed50fac661603a30aa0d3.jpg)
@@ -14,7 +14,7 @@ Okta 是身份识别与访问管理解决方案提供商。腾讯云支持基于
 
 
 ### <span id="stepCAM"></span>为 Okta 应用程序配置 SAML
->?
+>
 > - 您可以通过本步骤将 Okta 应用程序属性映射到腾讯云的属性，建立 Okta 和腾讯云之间的信任关系使之相互信任。
 > -  如您是参考 [创建 Okta 应用程序](#stepCREATE)  创建的应用程序，可直接进行操作 [步骤3](#stepbuzhou3) 。
 
@@ -23,7 +23,7 @@ Okta 是身份识别与访问管理解决方案提供商。腾讯云支持基于
 3. <span id="buzhou3"></span>在配置 SAML/Configure SAML 页面将 GENERAL 下 Single sign on URL 和 Audience URL(SP Entity ID)补充为以下信息，如下图所示：
 ![](https://main.qcloudimg.com/raw/43a621945ad09042a40986abaea67962.png)
 
->>?
+>>
  - 如果您的腾讯云账号所在站点为中国站，请按照如下信息进行配置：
  Single sign on URL：https://cloud.tencent.com/login/saml
 Audience URL(SP Entity ID)：cloud.tencent.com
@@ -39,7 +39,7 @@ Audience URL(SP Entity ID)：intl.cloud.tencent.com
 | https://cloud.tencent.com/SAML/Attributes/Role | Unspecified| qcs::cam::uin/{AccountID}:roleName/{RoleName},qcs::cam::uin/{AccountID}:saml-provider/{ProviderName}
 | https://cloud.tencent.com/SAML/Attributes/RoleSessionName | Unspecified| okta |
 
->? 
+> 
 >在 Value 中 {AccountID}，{RoleName}，{ProviderName} 分别替换内容下：
  - {AccountID} 替换为您的腾讯云帐户 ID，可前往 [账号信息 - 控制台](https://console.cloud.tencent.com/developer) 查看。
  - {RoleName}替换您在腾讯云为身份提供商所创建的角色名称（点击查看如何在腾讯云  [为身份提供商创建的角色](https://intl.cloud.tencent.com/document/product/598/19381)），角色名称可前往 [角色 - 控制台](https://console.cloud.tencent.com/cam/role) 查看，如需要添加更多可按照该格式添加：qcs::cam::uin/{AccountID}:roleName/{RoleName} ，以 ; 隔开。
@@ -49,7 +49,7 @@ Audience URL(SP Entity ID)：intl.cloud.tencent.com
 ![](https://main.qcloudimg.com/raw/a360cd597c75039a234b16608ca69e6c.png)
 
 ### 为 Okta 应用程序配置 SAML 集成
->?您可以通过本步骤配置 Okta 和腾讯云之间的信任关系使之相互信任。
+>您可以通过本步骤配置 Okta 和腾讯云之间的信任关系使之相互信任。
 >
 1. 登录进入 [Okta 网站](https://qqyu-admin.okta.com/admin/dashboard)，选择 Applications，进入应用管理页面。
 2. 在应用管理页面，单击您创建的应用程序名称，进入应用详情页，单击【Sign On】。如下图所示：
@@ -61,7 +61,7 @@ Audience URL(SP Entity ID)：intl.cloud.tencent.com
 
 
 ### 配置 Okta 用户
->?您可以通过本步骤分配用户访问权限，向 Okta 用户分配腾讯云的 SSO 访问权限。
+>您可以通过本步骤分配用户访问权限，向 Okta 用户分配腾讯云的 SSO 访问权限。
 >
 1. 登录进入 [Okta 网站](https://qqyu-admin.okta.com/admin/dashboard)，单击 Directory 下的【people】，进入用户管理页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/28eb0bceaebf2de3f073a72ed5bdd6c8.jpg)
