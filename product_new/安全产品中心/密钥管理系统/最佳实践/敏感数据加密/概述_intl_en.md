@@ -1,6 +1,6 @@
 Sensitive information encryption is a core capability of KMS, which is mainly used to protect small pieces of sensitive data (less than 4 KB) such as keys, certificates, and configuration files. A CMK is used to encrypt sensitive data instead of storing it in plaintext. During decryption, the data ciphertext is decrypted to the memory, so that the plaintext does not get stored in the disk. HTTPS requests are used in the entire interaction and transfer process, ensuring the security of sensitive data.
 
-If you need to use KMS for high-performance encryption/decryption of massive amounts of data, please see [Envelope Encryption](https://cloud.tencent.com/document/product/573/8791) scenario.
+If you need to use KMS for high-performance encryption/decryption of massive amounts of data, please see [Envelope Encryption](https://intl.cloud.tencent.com/document/product/1030/31976) scenario.
 
 #### Examples of sensitive information
 
@@ -14,7 +14,6 @@ If you need to use KMS for high-performance encryption/decryption of massive amo
 
 In this scenario, sensitive data is encrypted/decrypted through a CMK, which is protected by a third-party certified hardware security module (HSM). The CMK performs encryption/decryption inside the HSM, and any unauthorized party, including Tencent Cloud, has no access to the CMK in plaintext.
 
-![](https://main.qcloudimg.com/raw/f52c0a8bc2398d310c7641f809450b9f.png)
 
 
 
