@@ -106,7 +106,7 @@ COSClient cosclient = new COSClient(cred, clientConfig);
 ```
 
 **3. Change APIs**
-After JSON Java SDK is upgraded to XML Java SDK, the APIs for some operations have changed. Make corresponding changes based on your actual needs. In addition, we have encapsulated the APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://cloud.tencent.com/document/product/436/12263).
+After JSON Java SDK is upgraded to XML Java SDK, the APIs for some operations have changed. Make corresponding changes based on your actual needs. In addition, we have encapsulated the APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://intl.cloud.tencent.com/document/product/436/10199).
 
 Here are the main changes:
 
@@ -177,5 +177,5 @@ The following APIs are added in XML Java SDK, and they can be called as needed:
 * Operations on bucket ACLs, such as getBucketAcl, and setBucketAcl.
 * Operations on bucket lifecycle, such as setBucketLifecycleConfiguration, getBucketLifecycleConfiguration, and deleteBucketLifecycleConfiguration.
 
-For more information, see [Java SDK API documentation](https://cloud.tencent.com/document/product/436/12263).
+For more information, see [Java SDK API documentation](https://intl.cloud.tencent.com/document/product/436/10199).
 
