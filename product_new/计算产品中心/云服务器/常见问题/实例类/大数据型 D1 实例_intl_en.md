@@ -16,7 +16,6 @@ In addition, combining the highly available architecture design of distributed c
 * The throughput of a single instance can reach up to 2.3 GB/sec. A throughput-intensive HDD local disk is optimal for throughput-intensive storage. Big Data D1 instances are designed exclusively for Hadoop distributed computing, massive log processing, large data warehouses and other business scenarios, providing stable and high sequential read/write throughput performance.
 * Local storage has a unit price as low as 1/10. Big Data D1 instances have the best cost performance in big data scenarios, and can achieve a total cost of ownership close to that of IDC self-built Hadoop clusters based on massive storage space and high storage performance.
 * Read/write time delay is minimized to 2-5 ms. Big Data D1 instances, as high-performance enterprise-level models, are defined for matured enterprise developers.
-* Both prepaid and postpaid billing methods are available for Big Data D1 instances, with a price as low as 4.17 CNY/hour.
 
 ## Specifications of Big Data D1 instances
 
