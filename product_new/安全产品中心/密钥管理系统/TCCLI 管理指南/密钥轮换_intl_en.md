@@ -4,11 +4,11 @@ The key rotation feature involves three APIs:
 
 | API Name | Description | Note |
 |---------|---------|---------|
-|GetKeyRotationStatus | Views key rotation status | The `KeyId` parameter is required for this API. For more information, please see the [GetKeyRotationStatus](https://cloud.tencent.com/document/product/573/34418) API document. |
-|EnableKeyRotation | Enables key rotation | The `KeyId` parameter is required for this API. For more information, please see the [EnableKeyRotation](https://cloud.tencent.com/document/product/573/34422) API document. |
-|DisableKeyRotation | Disables key rotation | The `KeyId` parameter is required for this API. For more information, please see the [DisableKeyRotation](https://cloud.tencent.com/document/product/573/34425) API document. |
+|GetKeyRotationStatus | Views key rotation status | The `KeyId` parameter is required for this API. For more information, please see the [GetKeyRotationStatus](https://intl.cloud.tencent.com/document/product/1030/32187) API document. |
+|EnableKeyRotation | Enables key rotation | The `KeyId` parameter is required for this API. For more information, please see the [EnableKeyRotation](https://intl.cloud.tencent.com/document/product/1030/32191) API document. |
+|DisableKeyRotation | Disables key rotation | The `KeyId` parameter is required for this API. For more information, please see the [DisableKeyRotation](https://intl.cloud.tencent.com/document/product/1030/32194) API document. |
 
-The examples below are called with [TCCLI](https://cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
+The examples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
 
 ## Examples
 #### Viewing key rotation status
