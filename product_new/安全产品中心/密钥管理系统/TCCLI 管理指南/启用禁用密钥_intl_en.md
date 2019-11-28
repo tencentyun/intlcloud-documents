@@ -4,10 +4,10 @@ The operations of enabling and disabling a key involve the following two APIs:
 
 | API Name | Description | Note |
 |---------|---------|---------|
-| EnableKey | Enables a CMK | The `KeyId` parameter is required for this API. For more information, please see the [EnableKey](https://cloud.tencent.com/document/product/573/34423) API document. |
-| DisableKey | Disables a CMK | The `KeyId` parameter is required for this API. For more information, please see the [DisableKey](https://cloud.tencent.com/document/product/573/34426) API document. |
+| EnableKey | Enables a CMK | The `KeyId` parameter is required for this API. For more information, please see the [EnableKey](https://intl.cloud.tencent.com/document/product/1030/32192) API document. |
+| DisableKey | Disables a CMK | The `KeyId` parameter is required for this API. For more information, please see the [DisableKey](https://intl.cloud.tencent.com/document/product/1030/32195) API document. |
 
-The examples below are called with [TCCLI](https://cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
+The examples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
 
 ## Examples
 #### Enabling a CMK
