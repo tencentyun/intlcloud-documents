@@ -14,7 +14,6 @@ In actual business scenarios where massive amounts of data needs to be encrypted
 
 #### Schematic diagram
 In this scenario, a CMK generated in KMS, as an important resource, is used to generate and get the DEK plaintext and ciphertext. Based on your actual business needs, you can first encrypt local data through the DEK plaintext in the memory and store the DEK ciphertext and ciphertext data in the disk, then decrypt the DEK ciphertext using KMS when necessary, and finally decrypt the data in the memory using the decrypted DEK plaintext.
-![](https://main.qcloudimg.com/raw/beb03cab3bc4157e94661a78904d34fd.png)
 
 ## Features
 - High efficiency: All business data is encrypted using highly efficient local symmetric encryption, which has little impact on the access experience in your business. As for the overhead of DEK creation and encryption/decryption, except in extreme cases, you need to use a "one key at a time" scheme. In most scenarios, the plaintext and ciphertext of one DEK can be reused for a certain period of time, so the overhead is generally small.
