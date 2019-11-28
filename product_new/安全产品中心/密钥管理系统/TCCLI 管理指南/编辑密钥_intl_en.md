@@ -3,11 +3,11 @@ The operations of renaming a key and modifying key description involve the follo
 
 | API Name | Description | Note |
 |---------|---------|---------|
-| UpdateAlias | Renames a key | The `KeyId` and `Alias` parameters are required for this API. For more information, please see the [UpdateAlias](https://cloud.tencent.com/document/product/573/34413) API document. |
-| UpdateKeyDescription | Modifies key description | The `KeyId` and `Description` parameters are required for this API. For more information, please see the [UpdateKeyDescription](https://cloud.tencent.com/document/product/573/34412) API document. |
+| UpdateAlias | Renames a key | The `KeyId` and `Alias` parameters are required for this API. For more information, please see the [UpdateAlias](https://intl.cloud.tencent.com/document/product/1030/32182) API document. |
+| UpdateKeyDescription | Modifies key description | The `KeyId` and `Description` parameters are required for this API. For more information, please see the [UpdateKeyDescription](https://intl.cloud.tencent.com/document/product/1030/32181) API document. |
 
 
-The examples below are called with [TCCLI](https://cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
+The examples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
 
 ## Examples
 #### Renaming a key
