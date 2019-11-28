@@ -24,7 +24,7 @@ You can easily obtain the latest XML Python SDK using the pip command:
  pip install -U cos-python-sdk-v5
 ```
 
-You can also refer to Python SDK [Getting Started](https://cloud.tencent.com/document/product/436/12269) to select a proper installation method.
+You can also refer to Python SDK [Getting Started](https://intl.cloud.tencent.com/document/product/436/12269) to select a proper installation method.
 
 
 **2. Change the SDK initialization method**
@@ -112,7 +112,7 @@ The abbreviations of available regions for XML Python SDK buckets have changed. 
 
 
 **4. Change APIs**
-After JSON Python SDK is upgraded to XML Python SDK, the APIs for some operations have changed. Make corresponding changes based on your actual needs. In addition, we have encapsulated APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://cloud.tencent.com/document/product/436/12270).
+After JSON Python SDK is upgraded to XML Python SDK, the APIs for some operations have changed. Make corresponding changes based on your actual needs. In addition, we have encapsulated APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://intl.cloud.tencent.com/document/product/436/12269).
 There are four changes of APIs:
 
 **1) No directory API**
@@ -153,5 +153,5 @@ The following APIs are added in XML Python SDK, and they can be called as needed
 * Operations on bucket ACLs, such as put_bucket_acl, and get_bucket_acl.
 * Operations on bucket lifecycle, such as put_bucket_lifecycle, and get_bucket_lifecycle.
 
-For more information, see Python SDK [API Documentation](https://cloud.tencent.com/document/product/436/12270).
+For more information, see Python SDK [API Documentation](https://intl.cloud.tencent.com/document/product/436/12269).
 
