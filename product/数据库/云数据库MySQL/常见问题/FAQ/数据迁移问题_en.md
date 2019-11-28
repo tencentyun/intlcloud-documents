@@ -28,4 +28,4 @@
 You're recommenced to use [Data Migration](https://cloud.tencent.com/document/product/571/8710) feature to directly connect to your source database for data synchronization.
 
 ### 4. How to achieve the synchronization of real-time data of two instances in a local dual-backup architecture?
-For this purpose, you can purchase [Disaster Recovery Instances](https://cloud.tencent.com/document/product/236/7272) in the console.
+For this purpose, you can purchase [Disaster Recovery Instances](https://intl.cloud.tencent.com/document/product/236/7272) in the console.

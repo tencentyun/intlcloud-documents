@@ -1,5 +1,5 @@
 ### 1. How to configure backup for MySQL manually?
-You can back up your MySQL data by migrating the data to local machine offline. For more information, please see [Migrating Data Offline](https://cloud.tencent.com/document/product/236/8464).
+You can back up your MySQL data by migrating the data to local machine offline. For more information, please see [Migrating Data Offline](https://intl.cloud.tencent.com/document/product/236/8464).
 
 ### 2. How can developers back up data?
 Cloud database instances are fully backed up every day. Developers can also back up data using the quick multi-thread import/export tool provided by the cloud database (For more information, please see [Manual Backup and Recovery of Cloud Database](https://cloud.tencent.com/document/product/236/7275)), or using the mysqldump tool.

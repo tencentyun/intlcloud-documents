@@ -1,5 +1,5 @@
 ### 如何自己手动设置 MySQL 备份？
-您可以通过离线迁移到本地来备份 MySQL 数据，请参考 [离线迁移数据](https://cloud.tencent.com/document/product/236/8464)。
+您可以通过离线迁移到本地来备份 MySQL 数据，请参考 [离线迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)。
 
 ### MySQL 手动备份的注意事项。
 -  由于 cdb_mydumper 采用多线程导出，所以无法保证导出顺序和使用 mysqldump 一致，可能会给某些依赖时间的特性（routine，event 等）带来数据不一致，建议用户把 mysql 库和其他数据库分开导出导入。
@@ -35,7 +35,7 @@
 详细可参考 [物理备份文件恢复数据库](https://cloud.tencent.com/document/product/236/7944) 教程。
 
 ### 配置 MySQL 同城双备，能够实现两个实例实时数据同步吗？
-可以在控制台购买 [灾备实例](https://cloud.tencent.com/document/product/236/7272) 来实现您这个需求 。
+可以在控制台购买 [灾备实例](https://intl.cloud.tencent.com/document/product/236/7272) 来实现您这个需求 。
 
 ### MySQL 数据备份保留多久？
 支持 7-732 天的备份保留时长，目前免费，后续备份空间收费将另行通知。

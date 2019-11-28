@@ -1,5 +1,20 @@
-### Why can't I logically back up and download by database or table?
-After the [backup](https://intl.cloud.tencent.com/document/product/236/7513) feature was upgraded, both logical and physical backup adopt the new compression algorithm, so some download-related features may be unavailable for the time being. In this case, you can perform logical backup of databases or tables by selecting **Logical Backup** > **Specify Table** in the manual backup feature and download the completed backup file.
+### Why can't I logically back up and download databases or tables in a sharding manner?
+After the [backup](https://intl.cloud.tencent.com/document/product/236/7513) feature was upgraded, both logical and physical backup files adopt the new compression algorithm, so some download-related features may be unavailable for the time being. In this case, you can perform logical backup of databases or tables in a sharding manner by selecting **Logical Backup** > **Specify Table** in the manual backup feature and download the completed backup file.
+
+### Why does backup fail?
+If the number of tables in a single instance exceeds one million, backup may fail, and database monitoring may be affected. Please control this value appropriately and make sure that it is below 1 million.
+
+### How to reduce backup costs?
+- Delete manual backups that are no longer used (you can do so in the console)
+- Reduce the frequency of automatic data backup for non-core businesses (you can reduce the number of days for backup in a week, which should be at least 2 days) 
+- Shorten the retention period of data and log backups for non-core businesses (a retention period of 7 days can meet the needs in most cases)
+
+| Business Scenario | Recommended Backup Retention Period |
+| -------------------- | ------------------------------------------------------------ |
+| Core businesses | 7-732 days |
+| Non-core, non-data businesses | 7 days |
+| Archival businesses | 7 days. It is recommended to manually back up data based on your actual business needs and delete the backups promptly after use |
+| Testing businesses | 7 days. It is recommended to manually back up data based on your actual business needs and delete the backups promptly after use |
 
 ### Can data and log backup be disabled in TencentDB for MySQL?
 No.
@@ -24,17 +39,14 @@ Then, the complete backup file can be obtained, such as test_import_57_backup_20
 ### How to download xbstream and qpress?
 - xbstream is a subprogram of Percona XtraBackup. Before using it, you need to install Percona XtraBackup with `yum` or binary installation package.
 - Download qpress [here](http://www.quicklz.com/) and extract the qpress binary files by running the tar command:
-For more information on installation of xtrabackup and qpress, see [Restoring a Database from a Physical Backup File](https://intl.cloud.tencent.com/document/product/236/31910)
+For more information on installation of xtrabackup and qpress, see [Restoring a Database from a Physical Backup File](https://intl.cloud.tencent.com/document/product/236/31910).
 
 ### How to manually set up MySQL backup?
 You can back up your MySQL data by offline migrating the data to the local file system. For more information, see [Migrating Data Offline](https://intl.cloud.tencent.com/document/product/236/8464).
 
-### What are the precautions for manual backup in MySQL?
-- As cdb_mydumper exports data in a multi-thread way, the exported data may not be in the same order as that in mysqldump, and data inconsistency may occur to some time-dependent features such as routine and event. Therefore, you are recommended to export/import MySQL database and other databases separately.
-- As the database extracting and merging functions of cdb_mydumper rely on delimiters, it is required that your database name contain no dots (.) and table name contain no minus signs (-).
 
 ### How to back up data on my own?
-TencentDB for MySQL instances are fully backed up on a daily basis. You can also proactively back up your data using the multi-threaded quick import/export tool provided by TencentDB or using mysqldump. For more information, see [Backup Mode](https://intl.cloud.tencent.com/document/product/236/7513).
+TencentDB for MySQL instances are fully backed up on a daily basis. You can also proactively back up your data using the multi-threaded quick import/export tool provided by TencentDB or using mysqldump. For more information, see [Backup Methods](https://intl.cloud.tencent.com/document/product/236/7513).
 
 ### How to view binlogs in MySQL?
 - Download the binlogs from the console to the local file system such as a CVM instance.

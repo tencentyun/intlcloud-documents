@@ -7,15 +7,15 @@ DTS provides a binlog-based incremental data subscription feature that allows yo
 ## 2. Create a data subscription channel
 Log in to the DTS Console and enter the data subscription page.
 * Click **Create Subscription** in the top-right corner to configure a subscription channel.
-
+![][img-1]
 * Select the region where the source TencentDB instance resides.
-
+![][img-2]
 * Once the channel is created, return to the console and complete initial configuration for it.
-
+![][img-3]
 * Select the source TencentDB instance.
-
+![][img-4]
 * Select your desired data sync type and table to be synced.
-
+![][img-5]
 	The granularity for subscribed objects in DTS includes database level and table level, i.e., you can choose to subscribe to certain databases or tables.
 	DTS offers two data subscription modes: data update (DML) and structure update (DDL). In the first mode, you can only subscribe to three types of data changes caused by insertion/deletion/update. In the second mode, DTS pulls all structural changes in the entire TencentDB instance, and you need to filter out the desired data using the SDK.
 * The subscription channel can be enabled after the subscribed object is selected.
@@ -46,11 +46,11 @@ You can modify the subscribed objects in the following steps:
 For more information, see [SDK User Guide](https://intl.cloud.tencent.com/document/product/571/8776).
 
 
-[img-1]://mc.qcloudimg.com/static/img/03c52107eccbcc933e11cce9e07502df/1.png
-[img-2]://mc.qcloudimg.com/static/img/c78fce470e9a27b74bbee73053f3b9ab/dy.png
-[img-3]://mc.qcloudimg.com/static/img/927fb3ec5f9c2026338a2cb85efd8744/3.png
-[img-4]://mc.qcloudimg.com/static/img/f245a6cbcaeba3a19f5863203371cf0d/4.png
-[img-5]://mc.qcloudimg.com/static/img/72c3a022ddb73535a49f4dfa53061c50/5.png
+[img-1]://main.qcloudimg.com/raw/9ad0b689799aee56054406c5cd67b4df.png
+[img-2]://main.qcloudimg.com/raw/2eac1229584ab78be9802ea9254faf49.png
+[img-3]://main.qcloudimg.com/raw/d25263473aabf08e4a145b6f59176510.png
+[img-4]://main.qcloudimg.com/raw/081dc059e47109c6f4a236de38ea58fa.png
+[img-5]://main.qcloudimg.com/raw/00cb11085e26b1ba7cabf034156bc39f.png
 [img-6]://mc.qcloudimg.com/static/img/092b59bdade021f1c3d1ce0740161d62/6.png
 [img-7]://mc.qcloudimg.com/static/img/f17f7720f13a33ed26b525dcd683046c/7.png
 [img-8]://mc.qcloudimg.com/static/img/c86c4736a65766917a675b3def08883e/8.png

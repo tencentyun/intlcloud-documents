@@ -16,7 +16,7 @@
 - 表维度目前有临时表数量以及等待表锁次数两项指标。临时表数量太多，就说明可能有大量的数据表连接操作，当表数据量大时，会严重影响查询效率，此时就应该对查询进行优化。
 - InnoDB 以及 MyISAM 的监控维度分别对上诉两个存储引擎的运行指标进行监控，从而使管理人员更清楚实际表（可能采取上诉两种引擎）的运行状况。
 
-详细实例监控功能和告警功能的介绍，请参阅 [监控功能](https://cloud.tencent.com/document/product/236/8455) 和 [告警功能](https://cloud.tencent.com/document/product/236/8457)。
+详细实例监控功能和告警功能的介绍，请参阅 [监控功能](https://intl.cloud.tencent.com/document/product/236/8455) 和 [告警功能](https://intl.cloud.tencent.com/document/product/236/8457)。
 
 ### 数据库操作
 在【数据库管理】-【数据库列表】页面，您可以将 sql 文件导入到指定的数据库，如下表所示：
@@ -53,7 +53,7 @@
 
 <span id = "biangengpeizhi"></span>
 ### 调整配置
-在【实例列表】页面，您可以对数据库实例进行配置调整（扩缩容），支持实例升级与降级。入口如下图所示，详细操作可参考 [调整数据库实例规格](https://cloud.tencent.com/document/product/236/19707)。
+在【实例列表】页面，您可以对数据库实例进行配置调整（扩缩容），支持实例升级与降级。入口如下图所示，详细操作可参考 [调整数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707)。
 ![](https://main.qcloudimg.com/raw/6592b2ec71952933e0f1b12dd86de2b5.png)
 
 ### 回档

@@ -68,7 +68,7 @@ DTS supports data migration and data sync across a public network, CVM-created i
 ## Migration Process
 ### 1. Create a migration task
 1. Log in to the [DTS Console](https://console.cloud.tencent.com/dtsnew/migrate/page) and click *Create Task** in the data migration list to create a migration task.
-2. Select the corresponding region on **Link Region** and click **Buy at 0 CNY**.
+2. Select the corresponding region on **Link Region** and click **Buy at 0$**.
 
 ### 2. Configure the task
 - Task Name: Name the task.

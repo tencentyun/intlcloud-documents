@@ -6,17 +6,17 @@
 - [从外网访问实例](https://cloud.tencent.com/document/product/236/9038)
 
 - 维护实例
- - [设置实例维护时间](https://cloud.tencent.com/document/product/236/10929)
+ - [设置实例维护时间](https://intl.cloud.tencent.com/document/product/236/10929)
  - [为实例指定项目](https://cloud.tencent.com/document/product/236/8460)
 
 - 变更实例
  - [升级数据库引擎版本](https://cloud.tencent.com/document/product/236/8126)
- - [调整数据库实例规格](https://cloud.tencent.com/document/product/236/19707)
+ - [调整数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707)
 
 - 扩展实例
  - [只读实例](https://cloud.tencent.com/document/product/236/7270)
  - [只读实例 RO 组](https://cloud.tencent.com/document/product/236/11361)
- - [管理灾备实例](https://cloud.tencent.com/document/product/236/7272)
+ - [管理灾备实例](https://intl.cloud.tencent.com/document/product/236/7272)
 
 - [销毁实例](https://cloud.tencent.com/document/product/236/30305)
 
@@ -51,7 +51,7 @@
 ### 数据导入导出
 
 - [导入数据](https://cloud.tencent.com/document/product/236/8463)
-- [离线迁移数据](https://cloud.tencent.com/document/product/236/8464)
+- [离线迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)
 
 ## 安全组
 [云数据库安全组](https://cloud.tencent.com/document/product/236/9537) 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。下面介绍云数据库安全组常见操作。

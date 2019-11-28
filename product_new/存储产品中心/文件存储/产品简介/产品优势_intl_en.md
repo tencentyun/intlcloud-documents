@@ -33,19 +33,6 @@ Number of redundant copies | 3 | 3
 How to use | Use directly after mounting | Need to install a file system first
 
 
-### Total cost of ownership (TCO): CFS vs. CVM-built NAS
-
-Item | CFS | CVM-built NAS
-------- | ------- | -------
-Usable storage | 1 TB | 1 TB
-Purchased storage | 1 TB | 2 TB (As the disk utilization is 85%, two 1,205 GB premium cloud disks are purchased as master and slave)
-Usable storage | 1 TB | 1 TB
-Yearly storage resource cost | 7,127 (Postpaid: 0.58 CNY/GB/month) | 4,300 (Prepaid: 0.35 CNY/GB/month)
-Yearly computing resource cost | 0 CNY (Users do not need to create a file server for use of CFS) | 23,744 CNY (Two CVMs with the specification of series 1-standard-8 core-32 GB memory are needed as master and slave)
-Yearly TCO | 7,004 | 28,044
-Monthly cost per GB | 0.58 | 2.28
-
-
 
 
 

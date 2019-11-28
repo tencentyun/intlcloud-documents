@@ -7,15 +7,15 @@
 ## 2. 创建数据订阅通道
 登录数据传输服务控制台，进入数据订阅页面。
 * 单击控制台右上角【新建数据订阅】开始订阅通道配置。
-
+![][img-1]
 * 选择源TencentDB实例所在地域。
-
+![][img-2]
 * 开通成功后，进入控制台，为刚才购买的额数据订阅通道初始化配置。
-
+![][img-3]
 * 选择源TencentDB实例。
-
+![][img-4]
 * 选择所需的同步类型及库表。
-
+![][img-5]
 	DTS数据订阅的订阅对象粒度细分为库、表。即用户可以选择订阅某些库或者是订阅某几张表。
 	DTS将订阅数据类型细分为数据更新、结构更新。如果只选择订阅对象及数据更新的话，那么只能订阅到insert/delete/update三种数据变更内容，如果需要订阅结构更新（DDL），那么需要选择订阅数据类型中的结构变更。一旦订阅了结构更新，那么DTS会将整个TencentDB实例的所有结构变更拉取出来，用户需要使用SDK过滤需要的数据。
 * 当选择完订阅对象后，即可启动订阅通道。
@@ -46,11 +46,11 @@ DTS支持在订阅消费的过程中，动态增加/减少订阅对象。如果�
 请查看[SDK使用指南](https://intl.cloud.tencent.com/document/product/571/8776)
 
 
-[img-1]://mc.qcloudimg.com/static/img/03c52107eccbcc933e11cce9e07502df/1.png
-[img-2]://mc.qcloudimg.com/static/img/c78fce470e9a27b74bbee73053f3b9ab/dy.png
-[img-3]://mc.qcloudimg.com/static/img/927fb3ec5f9c2026338a2cb85efd8744/3.png
-[img-4]://mc.qcloudimg.com/static/img/f245a6cbcaeba3a19f5863203371cf0d/4.png
-[img-5]://mc.qcloudimg.com/static/img/72c3a022ddb73535a49f4dfa53061c50/5.png
+[img-1]://main.qcloudimg.com/raw/9ad0b689799aee56054406c5cd67b4df.png
+[img-2]://main.qcloudimg.com/raw/2eac1229584ab78be9802ea9254faf49.png
+[img-3]://main.qcloudimg.com/raw/d25263473aabf08e4a145b6f59176510.png
+[img-4]://main.qcloudimg.com/raw/081dc059e47109c6f4a236de38ea58fa.png
+[img-5]://main.qcloudimg.com/raw/00cb11085e26b1ba7cabf034156bc39f.png
 [img-6]://mc.qcloudimg.com/static/img/092b59bdade021f1c3d1ce0740161d62/6.png
 [img-7]://mc.qcloudimg.com/static/img/f17f7720f13a33ed26b525dcd683046c/7.png
 [img-8]://mc.qcloudimg.com/static/img/c86c4736a65766917a675b3def08883e/8.png
