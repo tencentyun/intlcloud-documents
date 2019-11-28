@@ -19,7 +19,7 @@ Domain name for API request: vpc.api.qcloud.com
 | subnetSet.n | No | Array | Subnet information array. You can create subnets while creating a VPC. This parameter is optional. |
 | subnetSet.n.subnetName | No | String | Subnet name, which cannot exceed 60 characters. |
 | subnetSet.n.cidrBlock | No | String | Subnet IP range. It must fall within the VPC IP address range. Subnet IP address ranges must not overlap with each other within the same VPC. |
-| subnetSet.n.zoneId | No | String | ID of the availability zone in which the subnet resides. You can set up disaster recovery across availability zones by choosing different availability zones for different subnets. For more information, see <a href="https://intl.cloud.tencent.com/document/product/215/20057">VPC Availability Zones</a>. |
+| subnetSet.n.zoneId | No | String | ID of the availability zone in which the subnet resides. You can set up disaster recovery across availability zones by choosing different availability zones for different subnets. For more information, see VPC Availability Zones</a>. |
 
 ## 3. Output Parameters
 
