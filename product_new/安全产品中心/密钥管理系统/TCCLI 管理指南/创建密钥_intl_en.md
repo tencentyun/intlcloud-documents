@@ -1,9 +1,9 @@
 ## Overview
 The CreateKey API can be called to create a customer master key (CMK) used for DEK management. The CMK can be used in other APIs to create DEKs, perform encryption and decryption, and do more.
 
-The `Alias` parameter is required for this API. You can add other descriptions for the CMK as instructed in the [CreateKey](https://cloud.tencent.com/document/product/573/34430) API document.
+The `Alias` parameter is required for this API. You can add other descriptions for the CMK as instructed in the [CreateKey](https://intl.cloud.tencent.com/document/product/1030/32199) API document.
 
-The examples below are called with [TCCLI](https://cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
+The examples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
 
 
 
