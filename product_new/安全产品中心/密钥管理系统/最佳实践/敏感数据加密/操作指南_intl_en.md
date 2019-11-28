@@ -22,7 +22,7 @@ You can follow the four steps below to encrypt sensitive data.
 ## Directions
 
 ### Step 1. Create a CMK
-For more information on how to create a CMK, please see [Creating CMK](https://cloud.tencent.com/document/product/573/8875).
+For more information on how to create a CMK, please see [Creating CMK](https://intl.cloud.tencent.com/document/product/1030/31971).
 
 
 ### Step 2. Encrypt the sensitive data
@@ -30,13 +30,13 @@ For more information on how to create a CMK, please see [Creating CMK](https://c
 #### Prerequisites: Make sure that the CMK created in step 1 is enabled.
 
 #### Via the console
-The online tools are suitable for one-time or non-batch encryption and decryption operations, such as the initial generation of key ciphertext. With the online tools, you can focus on your core business without developing tools for non-batch encryption and decryption. For more information, please see [Encryption and Decryption](https://cloud.tencent.com/document/product/573/8877).
+The online tools are suitable for one-time or non-batch encryption and decryption operations, such as the initial generation of key ciphertext. With the online tools, you can focus on your core business without developing tools for non-batch encryption and decryption. For more information, please see [Encryption and Decryption](https://intl.cloud.tencent.com/document/product/1030/31973).
 
 
 #### Via the SDK for Python
 The Encrypt API is used to encrypt up to 4 KB of data, such as database passwords, RSA keys, or other sensitive information. This document describes how to encrypt data through the SDK for Python. You can also use other supported programming languages.
 
-The `KeyId` and `Plaintext` parameters are required for this API. For more information, please see the [Encrypt](https://cloud.tencent.com/document/product/573/34420) API document.
+The `KeyId` and `Plaintext` parameters are required for this API. For more information, please see the [Encrypt](https://intl.cloud.tencent.com/document/product/1030/32189) API document.
 
 #### Encryption in the SDK for Python
 KMS is used to encrypt the sensitive configuration file `test_encry.dat` and transfer the ciphertext to the server for use, ensuring that the plaintext data does not get stored in the disk. The sample code below demonstrates how to use the specified CMK for data encryption.
@@ -117,14 +117,14 @@ Store the encrypted data according to the application scenarios of your business
 ### Step 4. Decrypt the sensitive data
 
 #### Via the console
-For more information, please see [Encryption and Decryption](https://cloud.tencent.com/document/product/573/8877).
+For more information, please see [Encryption and Decryption](https://intl.cloud.tencent.com/document/product/1030/31973).
 
 
 #### Via the SDK for Python
 
 The Decrypt API is used to decrypt data. The examples below are implemented in the Tencent Cloud SDK for Python, which can also be implemented in other supported programming languages.
 
-The `CiphertextBlob` parameter is required for this API. For more information, please see the [Decrypt](https://cloud.tencent.com/document/product/573/34429) API document.
+The `CiphertextBlob` parameter is required for this API. For more information, please see the [Decrypt](https://intl.cloud.tencent.com/document/product/1030/32198) API document.
 
 
 #### Python sample code
