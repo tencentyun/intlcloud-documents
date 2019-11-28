@@ -3,12 +3,12 @@
 
 | API Name | Description | Note |
 |---------|---------|---------|
-| ListKeys | Shows the list of keys (KeyId information) under an account. | There are no required parameters for this API. For more information, please see the [ListKeys](https://cloud.tencent.com/document/product/573/34415) API document. |
-| DescribeKey | Views the details of the specified CMK, including CMK name, ID, status, and region. | The `KeyId` parameter is required for this API. For more information, please see the [DescribeKey](https://cloud.tencent.com/document/product/573/34428) API document. |
+| ListKeys | Shows the list of keys (KeyId information) under an account. | There are no required parameters for this API. For more information, please see the [ListKeys](https://intl.cloud.tencent.com/document/product/1030/32184) API document. |
+| DescribeKey | Views the details of the specified CMK, including CMK name, ID, status, and region. | The `KeyId` parameter is required for this API. For more information, please see the [DescribeKey](https://intl.cloud.tencent.com/document/product/1030/32197) API document. |
 
 
 
-The examples below are called with [TCCLI](https://cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
+The examples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
 
 
 ## Examples
