@@ -4,8 +4,8 @@
 
 | API 名称| API 描述 | 说明|
 |---------|---------|---------|
-|ScheduleKeyDeletion | 添加计划删除任务|该 API 操作的 KeyId 和 PendingWindowInDays 为必选参数|
-|CancelKeyDeletion | 取消计划删除任务 |该 API 操作的 KeyId 为必选参数|
+|ScheduleKeyDeletion | 添加计划删除任务|该 API 操作的 KeyId 和 PendingWindowInDays 为必选参数。|
+|CancelKeyDeletion | 取消计划删除任务 |该 API 操作的 KeyId 为必选参数。|
 
 >?在密钥禁用的状态下通过 ScheduleKeyDeletion 接口设置 CMK 计划删除时间，在到了规定时间后，该密钥将自动被清理。
 
