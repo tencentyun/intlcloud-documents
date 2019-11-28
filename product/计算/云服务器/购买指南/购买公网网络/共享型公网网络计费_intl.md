@@ -41,8 +41,6 @@ To activate this billing method, please submit a [ticket](https://console.cloud.
 - If project-based billing is enabled, system will calculate total bandwidth package fees as described above. The system will calculate the average daily bandwidth peak for each project (as described in Step 2), as well as separate project charges according to their proportions.
 - For a standard account-purchased bandwidth package, CVM bandwidth fee originally prepaid by bandwidth will be returned to the complimentary account according to the number of remaining usage days.
 
-#### Example
-Suppose a user activates a bandwidth package on March 1. The package is effective on the purchase day. If the actual average daily bandwidth peak for March is 120 Mbps, then charge=120*108=12,960 CNY.
 
 
 
