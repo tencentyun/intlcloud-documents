@@ -4,12 +4,12 @@ The schedule key deletion feature involves the following two APIs:
 
 | API Name | Description | Note |
 |---------|---------|---------|
-| ScheduleKeyDeletion | Creates a schedule deletion task | The `KeyId` and `PendingWindowInDays` parameters are required for this API. For more information, please see the [ScheduleKeyDeletion](https://cloud.tencent.com/document/product/573/35985) API document. |
-| CancelKeyDeletion | Cancels a schedule deletion task | The `KeyId` parameter is required for this API. For more information, please see the [CancelKeyDeletion](https://cloud.tencent.com/document/product/573/35986) API document. |
+| ScheduleKeyDeletion | Creates a schedule deletion task | The `KeyId` and `PendingWindowInDays` parameters are required for this API. For more information. |
+| CancelKeyDeletion | Cancels a schedule deletion task | The `KeyId` parameter is required for this API.|
 
 >If a CMK schedule deletion waiting period is set through the ScheduleKeyDeletion API when the CMK is in disabled status, the CMK will be deleted automatically at the specified time.
 
-The examples below are called with [TCCLI](https://cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
+The examples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
 
 ## Examples
 #### Creating a schedule deletion task
