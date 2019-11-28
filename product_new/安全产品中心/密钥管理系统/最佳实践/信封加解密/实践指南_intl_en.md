@@ -21,7 +21,7 @@ You can follow the three steps below to complete envelop encryption.
 
 ## Steps
 ### Step 1. Create a CMK
-For more information on how to create a CMK, please see [Creating CMK](https://cloud.tencent.com/document/product/573/38383).
+For more information on how to create a CMK, please see [Creating CMK](https://intl.cloud.tencent.com/document/product/1030/32783).
 
 ### Step 2. Encrypt data using envelope encryption
 If a new DEK is needed (e.g., data needs to be encrypted for new users or the reuse of a DEK exceeds the specified period of time), you can call an KMS API to create a new DEK, then encrypt data with the plaintext key in the memory, and store the ciphertext and ciphertext key in the disk.
@@ -32,7 +32,7 @@ The GenerateDataKey API is used to generate a DEK, which is a second-level key g
 
 The examples below are implemented in the Tencent Cloud SDK for Python, which can also be implemented in other supported programming languages.
 
-The `KeyId` parameter is required for this API. For more information, please see the [GenerateDataKey](https://cloud.tencent.com/document/product/573/34419) API document.
+The `KeyId` parameter is required for this API. For more information, please see the [GenerateDataKey](https://intl.cloud.tencent.com/document/product/1030/32188) API document.
 
 #### Example in the SDK for Python
 ```
@@ -139,7 +139,7 @@ The Decrypt API is used to decrypt data.
 
 The examples below are called with the Tencent Cloud SDK for Python, which can also be called with any supported programming languages.
 
-The `CiphertextBlob` parameter is required for this API. For more information, please see the [Decrypt](https://cloud.tencent.com/document/product/573/34429) API document.
+The `CiphertextBlob` parameter is required for this API. For more information, please see the [Decrypt](https://intl.cloud.tencent.com/document/product/1030/32198) API document.
 
 
 #### Example in the SDK for Python
