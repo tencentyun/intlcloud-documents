@@ -143,7 +143,7 @@ The abbreviations of available regions for XML PHP SDK buckets have changed. Dur
 
 
 **4. Change APIs**
-After JSON PHP SDK is upgraded to XML PHP SDK, the APIs for some operations have changed. Make corresponding changes based on your actual needs. In addition, we have encapsulated APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://cloud.tencent.com/document/product/436/12267).
+After JSON PHP SDK is upgraded to XML PHP SDK, the APIs for some operations have changed. Make corresponding changes based on your actual needs. In addition, we have encapsulated APIs to make it easier to use the SDK. For more information, see our examples and [API Documentation](https://intl.cloud.tencent.com/document/product/436/12266).
 
 There are three changes:
 
@@ -167,7 +167,7 @@ The following APIs are added in XML PHP SDK:
 * Operations on Bucket ACLs, such as PutBucketACLRequest, and GetBucketACLRequest.
 * Operations on bucket lifecycle, such as PutBucketLifecycleRequest, and GetBucketLifecycleRequest.
 
-For more information, see PHP SDK [API documentation](https://cloud.tencent.com/document/product/436/12267).
+For more information, see PHP SDK [API documentation](https://intl.cloud.tencent.com/document/product/436/12266).
 
 
 
