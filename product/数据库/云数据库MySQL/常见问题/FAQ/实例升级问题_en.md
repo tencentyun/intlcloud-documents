@@ -1,7 +1,7 @@
 ### 1. How to upgrade cloud database instance specification by yourself?
 To upgrade cloud database instance specification by yourself, please see [Upgrade Database Instance Specification](https://cloud.tencent.com/document/product/236/7271).
 ### 2. How to set maintenance time for instances?
-To set maintenance time for instances, please see [Set Maintenance Time for Instances](https://cloud.tencent.com/document/product/236/10929).
+To set maintenance time for instances, please see [Set Maintenance Time for Instances](https://intl.cloud.tencent.com/document/product/236/10929).
 ### 3. How is upgraded MySQL instance billed?
 If you upgrade a prepaid database instance, the price difference between original and upgraded specifications is deducted from your account. If the account balance is insufficient, you need to top it up. After upgrade, the instance is billed by the new specification. If the upgraded instance is a postpaid instance, it will be billed by the new specification in the next billing period. 
 ### 4. Are there any restrictions on upgrade of MySQL instances by users?

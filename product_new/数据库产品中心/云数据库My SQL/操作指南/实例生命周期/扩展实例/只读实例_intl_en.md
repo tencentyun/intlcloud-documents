@@ -32,10 +32,8 @@ It takes a relatively long time to enable GTID, and the instance will suffer an 
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/).
 2. In the instance list, select the TencentDB instance for which you want to create an RO instance and click **Manage** in the "Operation" column.
 3. On the **Instance Details** tab, click **Add Read-Only Instance** in the instance architecture to enter the RO instance management page.
-![](https://main.qcloudimg.com/raw/91bde52130ced8dd443adb978c9d7c14.png)
+![](https://main.qcloudimg.com/raw/09902e5af5ef3530bd2ade5a5dc0e616.png)
 4. On the **Read-only instance** tab, click **Create**.
 5. Select the desired configuration for the RO instance on the purchase page, confirm that everything is correct, and then click **Buy Now**.
->If you want the master instance and RO instances to have the same expiry date, you can set a collective expiry date in the [Renewal Management Console](https://console.cloud.tencent.com/account/renewal) as instructed in [Unify Expiry Date](https://cloud.tencent.com/document/product/555/7454#.E7.BB.9F.E4.B8.80.E5.88.B0.E6.9C.9F.E6.97.A5).
->
-![](https://main.qcloudimg.com/raw/7774b64f4e25e965fd2f119ce4e17acd.png)
+![](https://main.qcloudimg.com/raw/5c002d37fdeb72a5396a394133672338.png)
 

@@ -8,5 +8,5 @@
 >已经应用该参数模板的所有数据库实例并不会获得该数据库参数模板的所有参数更新。如果您需要将新的参数应用到批量数据库实例上，可通过批量参数设置时导入模板来重新应用。
 
 
-![](https://main.qcloudimg.com/raw/3561ddfbf9c6213a175022484d1aa75d.png)
+![](https://main.qcloudimg.com/raw/f2f53de2288693a4630082c9bc4ef9dd.png)
 

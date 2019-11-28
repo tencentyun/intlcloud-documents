@@ -75,7 +75,7 @@ The read-only instance of CDB for MySQL provides you with a read extension solut
 Read-only instances can also be used for read-only access of different transactions, for example, the master instance undertakes read/write access for online transactions, and the master instance provides read-only query for internal transactions or data analysis platforms.
 
 ## 3. Disaster Recovery Programs of the Cloud Database
-CDB for MySQL provides [Disaster recovery instances](https://cloud.tencent.com/document/product/236/7272) to help you build a cross-city remote database disaster recovery with one click.
+CDB for MySQL provides [Disaster recovery instances](https://intl.cloud.tencent.com/document/product/236/7272) to help you build a cross-city remote database disaster recovery with one click.
 
 With the help of disaster recovery instances, multiple data centers in different regions can be redundant each other, so if one data center fails to provide any service due to a failure or a force majeure event, it can be quickly switched to another data center. The disaster recovery instances use the direct connect of Tencent private network to synchronize data so as to eliminate the adverse effect on transactions as much as possible due to late synchronization in the disaster scenario. When the remote service logic is ready, the disaster recovery can be switched in a few seconds.
 

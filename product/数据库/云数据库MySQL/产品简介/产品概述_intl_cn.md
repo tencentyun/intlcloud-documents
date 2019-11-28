@@ -18,7 +18,7 @@
 
 [RO 组](https://cloud.tencent.com/document/product/236/11361)：提供给用户管理一个或多个只读实例的逻辑工具，可满足读写分离场景下负载均衡，并显著提高用户数据库的读负载能力。
 
-[灾备实例](https://cloud.tencent.com/document/product/236/7272)：提供跨可用区、跨地域灾备能力的 MySQL 实例。
+[灾备实例](https://intl.cloud.tencent.com/document/product/236/7272)：提供跨可用区、跨地域灾备能力的 MySQL 实例。
 
 [私有网络](https://cloud.tencent.com/document/product/215/20046)：自定义的虚拟网络空间，与其他资源逻辑隔离。
 
@@ -50,7 +50,7 @@
 
 [RO 组](https://cloud.tencent.com/document/product/236/11361)：提供给用户管理一个或多个只读实例的逻辑工具，可满足读写分离场景下负载均衡，并显著提高用户数据库的读负载能力。
 
-[灾备实例](https://cloud.tencent.com/document/product/236/7272)：提供跨可用区、跨地域灾备能力的 MySQL 实例。
+[灾备实例](https://intl.cloud.tencent.com/document/product/236/7272)：提供跨可用区、跨地域灾备能力的 MySQL 实例。
 
 [私有网络](https://cloud.tencent.com/document/product/215/20046)：自定义的虚拟网络空间，与其他资源逻辑隔离。
 

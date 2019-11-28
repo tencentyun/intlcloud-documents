@@ -28,7 +28,7 @@
 建议您使用 [数据迁移](https://cloud.tencent.com/document/product/571/8710) 功能，可以直接连到您的源库进行数据同步。
 
 ### 想配置同城双备，能够实现两个实例实时数据同步吗？如何做？
-可以在控制台购买 [灾备实例](https://cloud.tencent.com/document/product/236/7272) 来实现您这个需求 。
+可以在控制台购买 [灾备实例](https://intl.cloud.tencent.com/document/product/236/7272) 来实现您这个需求 。
 
 ### 如何了解更多有关数据迁移、数据审计、数据订阅的问题？
 详见 [数据迁移问题](https://cloud.tencent.com/document/product/571/13706)

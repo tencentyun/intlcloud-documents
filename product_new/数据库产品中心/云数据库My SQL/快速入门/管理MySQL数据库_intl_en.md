@@ -3,11 +3,11 @@ After a TencentDB for MySQL instance is initialized, click the instance name in 
 
 ### Instance details
 On the **Instance Details** tab, you can view and manage the database information. Specifically, you can click <img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;"> to modify the basic information of the instance. The public network address is disabled by default and can be enabled manually if needed.
-![](https://main.qcloudimg.com/raw/507b3aecf9a1d1fd6bf134034ef572a6.png)
+![](https://main.qcloudimg.com/raw/be7a1916b3cba0932a015b95fa857d2d.png)
 
 ### Instance monitoring
 On the **Instance Monitoring** tab, you can view the monitoring data of various core database metrics at the levels of access, load, query cache, table, InnoDB, and MyISAM.
-For more information on instance monitoring and alarming, see [Monitoring Feature](https://cloud.tencent.com/document/product/236/8455) and [Alarm Feature](https://cloud.tencent.com/document/product/236/8457).
+For more information on instance monitoring and alarming, see [Monitoring Feature](https://intl.cloud.tencent.com/document/product/236/8455) and [Alarm Feature](https://intl.cloud.tencent.com/document/product/236/8457).
 
 ### Database management
 #### Database list
@@ -38,17 +38,17 @@ On the **Connection Check** tab, you can check for potential connectivity and ac
 
 ## Instance List Page
 In the TencentDB for MySQL Console, select **Instance List** on the left sidebar to view instance information and manage instances.
-![](https://main.qcloudimg.com/raw/6b5ce84ac2728e387d79703267efdbb8.png)
+![](https://main.qcloudimg.com/raw/ad7eb840269b428dd044ddd45b08545e.png)
 
 ### Adjusting configuration
-On the **Instance List** page, you can adjust the configuration of your database instance (i.e., scale-up or scale-down). For more information, see [Adjusting Database Instance Specification](https://cloud.tencent.com/document/product/236/19707).
+On the **Instance List** page, you can adjust the configuration of your database instance (i.e., scale-up or scale-down). For more information, see [Adjusting Database Instance Specification](https://intl.cloud.tencent.com/document/product/236/19707).
 
 ### Rollback
 On the **Instance List** page, select the instance to be rolled back and select **More** > **Rollback** to roll it back to a specified time point based on cold backup and binlog. For more information, see [Data Rollback](https://intl.cloud.tencent.com/document/product/236/7276).
 
 ### Restart
 On the **Instance List** page, select the instance to be restarted and click **Restart**. You can also select multiple instances and restart them in batches.
-> !
+>
 > - During restart, the instance will be inaccessible, and existing connections will be broken. Please back up your data timely.
 > - Restart will fail if there are a large number of business writes and dirty pages. In that case, the instance will return to the status before the restart and can still be accessed.
 > - Be sure to restart the instance during off-hours so as to ensure success and reduce impact on your business.

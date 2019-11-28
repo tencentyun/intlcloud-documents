@@ -14,21 +14,21 @@ The rollback feature is correlated with backup cycle and retention period settin
 >- A maximum of 500 tables in the same instance can be rolled back at a time.
 >- Up to 5 rollback tasks can be initiated at a time under the same APPID.
 >
-![](https://main.qcloudimg.com/raw/6a5026a8986f23b87f5fc0b9fcdd994f.png)
+![](https://main.qcloudimg.com/raw/85f08362342f02fb27ded34a487b4090.png)
 3. Select the table to be rolled back and click **Next step: set the rollback time and database table name**.
 >
 >- Only tables whose name contains digits, letters, underscores, or their combinations can be rolled back, while those whose name contains special characters are not supported.
 >- If the table to be rolled back has been dropped, you need to log in to the TencentDB instance and create a table first before performing rollback in the console.
 >
-![](https://main.qcloudimg.com/raw/e9e0b303af7eca451aae769cff394d64.png)
+![](https://main.qcloudimg.com/raw/6cb2fa4d3e8b0d795bd5bf19f8d69d86.png)
 4. Set the post-rollback table name and rollback time and click **Rollback**.
 >
 >- Each instance can be set with only one rollback time.
 >- The table name after rollback can contain up to 64-bit letters, digits, decimal points (.), dashes (-), underscores (_), and $.
 >
-![](https://main.qcloudimg.com/raw/af1ba4c4c756688df0054d80d93462e3.png)
+![](https://main.qcloudimg.com/raw/158d0a386461d63670f0274e9f20fe77.png)
 5. After submission, go to **Operation Log** > **Rollback Log** where you can view the rollback progress. Click **View Details** to view the rollback log in real time.
-![](https://main.qcloudimg.com/raw/a49e8537328cad0df7d0039ea089c7e3.png)
+![](https://main.qcloudimg.com/raw/b5206b3c23d532553fb54dfc4fe7bfd0.png)
 6. Upon the completion of rollback, select **Database Management** > **Database List** and you can see the new table after rollback in the original instance.
-![](https://main.qcloudimg.com/raw/823012d8e76bcb28a09d246579fcc969.png)
+![](https://main.qcloudimg.com/raw/9b939d9a6a7da59092df0051f452b5cd.png)
 

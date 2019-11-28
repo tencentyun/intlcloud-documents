@@ -3,11 +3,11 @@
 
 ### 实例详情
 在【实例详情】页面，您可以查看和操作数据库的各种信息，如下图所示，单击<img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;">可以对实例的基本信息进行修改，其中外网地址默认是关闭状态，如您需要，请手动开启。
-![](https://main.qcloudimg.com/raw/507b3aecf9a1d1fd6bf134034ef572a6.png)
+![](https://main.qcloudimg.com/raw/be7a1916b3cba0932a015b95fa857d2d.png)
 
 ### 实例监控
 在【实例监控】页面，您可以查看当前数据库运行的众多核心指标的监控，分为访问、负载、查询缓存、表、InnoDB、MyISAM 等维度的监控。
-详细实例监控功能和告警功能的介绍，请参见 [监控功能](https://cloud.tencent.com/document/product/236/8455) 和 [告警功能](https://cloud.tencent.com/document/product/236/8457)。
+详细实例监控功能和告警功能的介绍，请参见 [监控功能](https://intl.cloud.tencent.com/document/product/236/8455) 和 [告警功能](https://intl.cloud.tencent.com/document/product/236/8457)。
 
 ### 数据库管理
 #### 数据库列表
@@ -22,7 +22,7 @@
 在【数据库管理】>【帐号管理】页面，您可以对系统默认的 root 帐户进行管理，如修改权限，重置密码等，也可以创建帐号，删除帐号。
 
 ### 安全组
-在【安全组】页面，您可以对您的数据库进行安全组的配置操作，详细介绍请参见 [云数据库安全组](https://cloud.tencent.com/document/product/236/9537)。
+在【安全组】页面，您可以对您的数据库进行安全组的配置操作，详细介绍请参见 [云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470)。
 
 ### 备份恢复
 在【备份恢复】页面，您可以进行下载 binlog 和冷备操作，详细介绍请参见 [备份方式](https://intl.cloud.tencent.com/document/product/236/7513)。
@@ -34,14 +34,14 @@
 在【只读实例】页面，您可以创建一个或多个只读实例，以支持用户的读写分离和一主多从应用场景，可显著提高用户数据库的读负载能力，详细介绍请参见 [只读实例](https://intl.cloud.tencent.com/document/product/236/7270)。
 
 ### 连接检查
-在【连接检查】页面，您可以检测云数据库可能存在的连接访问问题，并根据提供的解决方法处理访问问题，以确保您的云数据库能够正常访问，详细介绍请参见 [一键连接检查工具](https://cloud.tencent.com/document/product/236/33206)。
+在【连接检查】页面，您可以检测云数据库可能存在的连接访问问题，并根据提供的解决方法处理访问问题，以确保您的云数据库能够正常访问，详细介绍请参见 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927)。
 
 ## 实例列表页
 在云数据库 MySQL 控制台左侧导航选择【实例列表】页，在实例列表页可查看实例相关信息，以及管理实例。
-![](https://main.qcloudimg.com/raw/6b5ce84ac2728e387d79703267efdbb8.png)
+![](https://main.qcloudimg.com/raw/ad7eb840269b428dd044ddd45b08545e.png)
 
 ### 调整配置
-在【实例列表】页面，您可以对数据库实例进行配置调整（扩缩容），支持实例升级与降级，详细介绍请参见 [调整数据库实例规格](https://cloud.tencent.com/document/product/236/19707)。
+在【实例列表】页面，您可以对数据库实例进行配置调整（扩缩容），支持实例升级与降级，详细介绍请参见 [调整数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707)。
 
 ### 回档
 在【实例列表】页面，勾选所需要回档的实例，选择【更多操作】>【回档】，借助于冷备和 binlog 可以将数据库回档至某个指定的时间，详细介绍请参见 [数据回档](https://intl.cloud.tencent.com/document/product/236/7276)。

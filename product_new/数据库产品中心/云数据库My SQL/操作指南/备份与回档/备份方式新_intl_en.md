@@ -7,7 +7,7 @@ TencentDB for MySQL HA Edition supports two backup types:
 - **Physical backup**, which is a full copy of physical data (supported for both automatic and manual backups).
 - **Logical backup**, which backs up SQL statements (only supported for manual backup).
 >
->- To restore a database from a physical backup, you need to use xbstream to decompress the package first. For more information, see [Restoring a Database from a Physical Backup](https://cloud.tencent.com/document/product/236/33363).
+>- To restore a database from a physical backup, you need to use xbstream to decompress the package first. For more information, see [Restoring a Database from a Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910).
 >- If the number of tables in a single instance exceeds one million, backup may fail, and database monitoring may be affected. Please control this value appropriately and make sure that it is below 1 million.
 >- As the data of tables created by the MEMORY storage engine is stored in the memory, physical backups cannot be created for such tables. To avoid data loss, it is recommended to replace them with InnoDB tables.
 
@@ -34,7 +34,7 @@ This will not affect your business access, but may have impact on your automatic
 >Backup cycle settings concern the database [rollback feature](https://intl.cloud.tencent.com/document/product/236/7276), which only supports rollback to any point in time within the past 7 days for daily backup. Please schedule your backup plan appropriately.
 >
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), click an instance name on the instance list page to enter the management page, and select **Backup and Restore** > **Auto Backup Settings**.
-![](https://main.qcloudimg.com/raw/11a66eaae41cde48918b82ed72ec168d.png)
+![](https://main.qcloudimg.com/raw/69fed1aac393a518bd8cc2ad1fea550f.png)
 2. Select backup parameters in the pop-up window as detailed below and click **OK**:
 <table>
 <thead>
@@ -62,7 +62,7 @@ This will not affect your business access, but may have impact on your automatic
 <td>Log backup files can be retained for 7 (default value) to 732 days. <strong>The number of days set for log backup retention must be smaller than that for data backup retention.</strong>  </td>
 </tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/25aa34cfab719c62ffb7bd4e988135c9.png"  style="margin:0;">
+<img src="https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png"  style="margin:0;">
 
 
 <span id = "manual-backup"></span>
@@ -74,8 +74,8 @@ The manual backup feature allows you to initiate a backup task manually.
 >
 1. On the instance list page, click an instance name to enter the management page, and select **Backup and Restore** > **Manual Backup**.
 2. Select backup methods and objects in the pop-up window and click **OK**.
-![](https://main.qcloudimg.com/raw/8a1361c70fc2aaf8d260e8d45fe2fbc0.png)
+![](https://main.qcloudimg.com/raw/a16e644f51756b6a98597945e45329cd.png)
 >For logical single-database/table backup, select the database or table to be backed up in **Select database & table** in the left column and add the selected item to the right column. If you don't have a database, please create a database/table first.
 >
-![](https://main.qcloudimg.com/raw/617cc91e5df28c6f1bffbd87519625a0.png)
+![](https://main.qcloudimg.com/raw/76924e2c76ac348b68ed113d679d6907.png)
 

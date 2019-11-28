@@ -8,5 +8,5 @@ Currently, a parameter template has the following features. You can log in to th
 >Database instances that use a database parameter template will not get all parameter updates in that template automatically. If you want to apply the new parameters to the instances in batches, you can import the updated template when setting parameters in batches.
 
 
-![](https://main.qcloudimg.com/raw/3561ddfbf9c6213a175022484d1aa75d.png)
+![](https://main.qcloudimg.com/raw/f2f53de2288693a4630082c9bc4ef9dd.png)
 

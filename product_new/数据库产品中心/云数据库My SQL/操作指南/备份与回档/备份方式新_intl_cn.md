@@ -7,7 +7,7 @@
 - **物理备份**，物理数据全拷贝（自动备份与手动备份均支持）。
 - **逻辑备份**，SQL 语句的备份（手动备份支持）。
 >
->- 物理备份恢复方式需要用 xbstream 解包，详细操作请参见 [使用物理备份恢复数据库](https://cloud.tencent.com/document/product/236/33363)。
+>- 物理备份恢复方式需要用 xbstream 解包，详细操作请参见 [使用物理备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31910)。
 >- 单个实例的表数量超过100万后，可能会造成备份失败，同时也会影响数据库监控，请合理规范表的数量，控制单个实例表数量不超过100万。
 >- 由于 Memory 引擎表的数据存储在内存中，因此无法对 Memory 引擎表进行物理备份，为避免丢失数据，建议将 Memory 引擎表转换成 InnoDB 表。
 
@@ -22,7 +22,7 @@
 
 ## 注意事项
 - 云数据库 MySQL 的自动备份于2019年02月26日起，仅支持物理备份。自动备份设置默认方式为物理备份，不再提供逻辑备份。存量自动备份为逻辑备份的实例会陆续被自动切换为物理备份。
-此切换不会影响您业务访问，可能会影响您自动备份的使用习惯。若您需要逻辑备份，可以使用 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb) 中的手动备份方式或者通过 [API 调用](https://cloud.tencent.com/document/product/236/15844) 来生成逻辑备份。
+此切换不会影响您业务访问，可能会影响您自动备份的使用习惯。若您需要逻辑备份，可以使用 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb) 中的手动备份方式或者通过 [API 调用](https://intl.cloud.tencent.com/document/product/236/15844) 来生成逻辑备份。
 - 不论是逻辑备份还是物理备份文件都会被压缩，故部分下载文件无法使用，可通过手动逻辑备份中的备份部分库表功能代替，请参见 [手动备份](#manual-backup)。
 - 实例备份文件占用备份空间，请合理设计备份周期、合理使用备份空间，避免收费后造成额外的费用。
 - 建议选择业务低峰期进行备份。
@@ -34,7 +34,7 @@
 >备份周期设置关系到您的数据库回档功能，[回档功能](https://intl.cloud.tencent.com/document/product/236/7276) 仅提供1天1备情况下的7天任意时间回档，请您权衡配置。
 >
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表页，单击实例名进入管理页面，选择【备份恢复】>【自动备份设置】。
-![](https://main.qcloudimg.com/raw/11a66eaae41cde48918b82ed72ec168d.png)
+![](https://main.qcloudimg.com/raw/69fed1aac393a518bd8cc2ad1fea550f.png)
 2. 在弹出的备份设置对话框选择各备份参数，单击【确定】。参数说明如下：
 <table>
 <thead>
@@ -62,7 +62,7 @@
 <td>日志备份文件可以保留7天 - 732天，默认为7天。<strong>日志备份天数必须小于等于数据备份天数。</strong>  </td>
 </tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/25aa34cfab719c62ffb7bd4e988135c9.png"  style="margin:0;">
+<img src="https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png"  style="margin:0;">
 
 
 <span id = "manual-backup"></span>
@@ -74,8 +74,8 @@
 >
 1. 在实例列表页，单击实例名进入管理页面，选择【备份恢复】>【手动备份】页签。
 2. 在弹出的备份设置对话框，选择备份方式和对象，单击【确定】。
-![](https://main.qcloudimg.com/raw/8a1361c70fc2aaf8d260e8d45fe2fbc0.png)
+![](https://main.qcloudimg.com/raw/a16e644f51756b6a98597945e45329cd.png)
 >如果是逻辑备份下的单库备份或单表备份，请在左侧【选择库表】里勾选要备份的数据库或数据表，将数据库或表加入右侧列表。若您还没有数据库，请先创建数据库或表。
 >
-![](https://main.qcloudimg.com/raw/617cc91e5df28c6f1bffbd87519625a0.png)
+![](https://main.qcloudimg.com/raw/76924e2c76ac348b68ed113d679d6907.png)
 

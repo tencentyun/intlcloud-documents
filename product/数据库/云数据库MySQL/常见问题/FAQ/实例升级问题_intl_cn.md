@@ -27,9 +27,9 @@
 ![图片描述](//bot1024-1253841380.file.myqcloud.com/598bd04d4c086.png)
 
 ### 如何自助调整云数据库实例规格?
-自助调整云数据库实例规格请参考 [调整数据库实例规格](https://cloud.tencent.com/document/product/236/19707)。
+自助调整云数据库实例规格请参考 [调整数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707)。
 ### 如何设置实例可维护时间？
-设置实例可维护时间请参考 [设置实例维护时间](https://cloud.tencent.com/document/product/236/10929)。
+设置实例可维护时间请参考 [设置实例维护时间](https://intl.cloud.tencent.com/document/product/236/10929)。
 ### MySQL 实例调整配置如何计费？
 对包年包月实例，用户自助调整数据库实例时，系统将计算实例规格间的差价，并从用户的账户中扣除或退还差价。实例调整后将按照新的实例规格进行计费。对按量计费实例，实例调整后下一个计费周期将按照新的实例规格进行计费。
 ### 自助调整 MySQL 实例有什么限制吗？
@@ -151,7 +151,7 @@
 ![图片描述](//bot1024-1253841380.file.myqcloud.com/598c0b9ad192f.png)
 
 ### MySQL 如何升级实例规格？
-登录云数据库的管理控制台后，可通过【升级】操作升级指定实例的实例规格。详细可参见 [升级数据库实例规格](https://cloud.tencent.com/document/product/236/19707) 文档。
+登录云数据库的管理控制台后，可通过【升级】操作升级指定实例的实例规格。详细可参见 [升级数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707) 文档。
 
 ### 自己升级 MySQL 实例有什么限制吗？
 - 仅支持预付费和按量计费用户自助升级实例规格。
@@ -178,7 +178,7 @@
 开启同步后，完成初始同步后，后续数据实时同步。
 
 ### MySQL 支持监控的实例类型是什么？
-腾讯云 MySQL 支持云数据库主实例及只读实例的监控，并为每个实例提供独立的监控视图供查询。详细参阅 [MySQL监控功能](https://cloud.tencent.com/document/product/236/8455) 文档。
+腾讯云 MySQL 支持云数据库主实例及只读实例的监控，并为每个实例提供独立的监控视图供查询。详细参阅 [MySQL监控功能](https://intl.cloud.tencent.com/document/product/236/8455) 文档。
 
 ###  什么是 MySQL 实例的异步复制？
 应用发起数据更新（含 insert、update、delete 操作）请求，Master 在执行完更新操作后立即向应用程序返回响应，然后 Master 再向 Slave 复制数据。

@@ -6,7 +6,7 @@
 - In other words, the database will remain **available for 7 days** after the expiration and become **unavailable for another 7 days**. Within the 14 days, you can choose to renew it. If your balance is sufficient and auto-renewal is set for it, the system will perform renewal automatically upon expiration.
 
 ## Expiration Reminder for Pay-as-You-Go TencentDB Instances
-![](https://main.qcloudimg.com/raw/282252ac4a40eda999a9a614d8eaaa6a.png)
+![](http://mc.qcloudimg.com/static/img/3a50706a27bfc92a2a52d524e04beca9/image.png)
 
 ### Balance Reminder
 We will estimate the number of days it takes your account balance to become negative based on the usage in the past 24 hours and current balance. If it is less than five days, we will send a reminder to your Tencent Cloud account creator and all the collaborators via email and SMS.
@@ -24,6 +24,6 @@ For pay-as-you-go resources, fees are deducted on the hour. When your account ba
 - If your account remains negative for 24 hours after shutdown (Point 3 in the figure above), the database will be repossessed, and **all data will be deleted and cannot be recovered**.
 
 We will notify the Tencent Cloud account creator and all the collaborators via email and SMS when the database is repossessed.
-> !When you do not use pay-as-you-go resources any longer, **terminate them as soon as possible** to avoid further fee deduction.
+> When you do not use pay-as-you-go resources any longer, **terminate them as soon as possible** to avoid further fee deduction.
 > After the database is terminated or repossessed, the data will be deleted and cannot be recovered.
 > Since your actual resource consumption changes from time to time, some deviation may exist for the stated balance.

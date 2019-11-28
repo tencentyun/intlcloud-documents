@@ -1,5 +1,5 @@
 ### 1. How to view the parameter list for CDB for MySQL?
-You can back up your MySQL data by migrating the data to local machine offline. For more information, please see [Migrate Data Offline](https://cloud.tencent.com/document/product/236/8464).
+You can back up your MySQL data by migrating the data to local machine offline. For more information, please see [Migrate Data Offline](https://intl.cloud.tencent.com/document/product/236/8464).
 
 ### 2. How to modify the configuration parameters of a cloud database?
 

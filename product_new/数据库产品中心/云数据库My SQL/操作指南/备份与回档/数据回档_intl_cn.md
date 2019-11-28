@@ -14,21 +14,21 @@
 >- 同一实例下同时仅支持500个库表同时回档。
 >- 同一个 APPID 下可同时发起最多5个回档任务。
 >
-![](https://main.qcloudimg.com/raw/6a5026a8986f23b87f5fc0b9fcdd994f.png)
+![](https://main.qcloudimg.com/raw/85f08362342f02fb27ded34a487b4090.png)
 3. 选择回档库表，单击【下一步：设置回档时间和库表名】。
 >
 >- 目前仅支持名称为数字、字母、下划线及其组合的库表回档，库表名为其他特殊字符的暂不支持回档。
 >- 如果需要回档的库表已被删除，需要先登录数据库并创建库表，再使用控制台回档。
 >
-![](https://main.qcloudimg.com/raw/e9e0b303af7eca451aae769cff394d64.png)
+![](https://main.qcloudimg.com/raw/6cb2fa4d3e8b0d795bd5bf19f8d69d86.png)
 4. 设置回档后的库表名和回档时间，单击【回档】。
 >
 >- 每个实例只能设定一个回档时间。
 >- 回档后的库表名仅支持64位以内的英文、数字、小数点（.）、短横线（-）、下划线（_）、$。
 >
-![](https://main.qcloudimg.com/raw/af1ba4c4c756688df0054d80d93462e3.png)
+![](https://main.qcloudimg.com/raw/158d0a386461d63670f0274e9f20fe77.png)
 5. 提交成功后返回【操作日志】>【回档日志】页，可查看回档进度，单击【查看详情】可实时查看回档日志。
-![](https://main.qcloudimg.com/raw/a49e8537328cad0df7d0039ea089c7e3.png)
+![](https://main.qcloudimg.com/raw/b5206b3c23d532553fb54dfc4fe7bfd0.png)
 6. 回档完成后，选择【数据库管理】>【数据库列表】页，可在原实例中看到回档后的新库表。
-![](https://main.qcloudimg.com/raw/823012d8e76bcb28a09d246579fcc969.png)
+![](https://main.qcloudimg.com/raw/9b939d9a6a7da59092df0051f452b5cd.png)
 

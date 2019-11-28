@@ -39,10 +39,10 @@ Then, the complete backup file can be obtained, such as test_import_57_backup_20
 ### How to download xbstream and qpress?
 - xbstream is a subprogram of Percona XtraBackup. Before using it, you need to install Percona XtraBackup with `yum` or binary installation package.
 - Download qpress [here](http://www.quicklz.com/) and extract the qpress binary files by running the tar command:
-For more information on installation of xtrabackup and qpress, see [Restoring a Database from a Physical Backup File](https://cloud.tencent.com/document/product/236/33363).
+For more information on installation of xtrabackup and qpress, see [Restoring a Database from a Physical Backup File](https://intl.cloud.tencent.com/document/product/236/31910).
 
 ### How to manually set up MySQL backup?
-You can back up your MySQL data by offline migrating the data to the local file system. For more information, see [Migrating Data Offline](https://cloud.tencent.com/document/product/236/8464).
+You can back up your MySQL data by offline migrating the data to the local file system. For more information, see [Migrating Data Offline](https://intl.cloud.tencent.com/document/product/236/8464).
 
 
 ### How to back up data on my own?
@@ -53,5 +53,5 @@ TencentDB for MySQL instances are fully backed up on a daily basis. You can also
 - View them using mysqlbinlog. To do so, mysqlbinlog v3.4 or higher is required in MySQL v5.6.
 
 ### How to achieve sync of real-time data in two TencentDB for MySQL instances in a local dual-backup architecture?
-For this purpose, you can purchase [disaster recovery instances](https://cloud.tencent.com/document/product/236/7272) in the TencentDB for MySQL Console.
+For this purpose, you can purchase [disaster recovery instances](https://intl.cloud.tencent.com/document/product/236/7272) in the TencentDB for MySQL Console.
 

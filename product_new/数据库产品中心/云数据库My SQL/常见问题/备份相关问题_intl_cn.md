@@ -39,10 +39,10 @@ qpress -d test_import_57_backup_20181114115236.sql.qp
 ### 如何下载 xbstream 和 qpress 的工具？
 - xbstream 为 Percona 的 xtrabackup 备份工具下的一个子程序，要使用 xbstream，需要先安装 Percona 的 xtrabackup，可以使用 yum 安装和二进制安装两种方式来安装 xtrabackup。
 - [qpress下载地址](http://www.quicklz.com/)，下载之后通过 tar 命令解出 qpress 二进制文件。
-具体 xtrabackup 和 qpress 的安装方式请参见 [使用物理备份恢复数据库](https://cloud.tencent.com/document/product/236/33363)。
+具体 xtrabackup 和 qpress 的安装方式请参见 [使用物理备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31910)。
 
 ### 如何自己手动设置 MySQL 备份？
-您可以通过离线迁移到本地来备份 MySQL 数据，请参见 [离线迁移数据](https://cloud.tencent.com/document/product/236/8464)。
+您可以通过离线迁移到本地来备份 MySQL 数据，请参见 [离线迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)。
 
 
 ### 开发者自己如何备份数据？
@@ -53,5 +53,5 @@ qpress -d test_import_57_backup_20181114115236.sql.qp
 - 使用 mysqlbinlog 命令查看。MySQL 5.6 需要安装3.4或以上版本的 mysqlbinlog 方支持本地服务器查看 binlog。
 
 ### 配置 MySQL 同城双备，能够实现两个实例实时数据同步吗？
-可通过云数据库 MySQL 控制台购买 [灾备实例](https://cloud.tencent.com/document/product/236/7272) 来实现此需求。
+可通过云数据库 MySQL 控制台购买 [灾备实例](https://intl.cloud.tencent.com/document/product/236/7272) 来实现此需求。
 
