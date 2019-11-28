@@ -7,15 +7,15 @@ DTS provides a binlog-based incremental data subscription feature that allows yo
 ## 2. Create a data subscription channel
 Log in to the DTS Console and enter the data subscription page.
 * Click **Create Subscription** in the top-right corner to configure a subscription channel.
-
+![][img-1]
 * Select the region where the source TencentDB instance resides.
-
+![][img-2]
 * Once the channel is created, return to the console and complete initial configuration for it.
-
+![][img-3]
 * Select the source TencentDB instance.
-
+![][img-4]
 * Select your desired data sync type and table to be synced.
-
+![][img-5]
 	The granularity for subscribed objects in DTS includes database level and table level, i.e., you can choose to subscribe to certain databases or tables.
 	DTS offers two data subscription modes: data update (DML) and structure update (DDL). In the first mode, you can only subscribe to three types of data changes caused by insertion/deletion/update. In the second mode, DTS pulls all structural changes in the entire TencentDB instance, and you need to filter out the desired data using the SDK.
 * The subscription channel can be enabled after the subscribed object is selected.
