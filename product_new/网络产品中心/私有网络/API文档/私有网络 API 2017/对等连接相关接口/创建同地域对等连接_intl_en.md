@@ -2,7 +2,7 @@
 This API (CreateVpcPeeringConnection) is used to create intra-region peering connections.
 Domain name for API requests: <font style="color:red">vpc.api.qcloud.com</font>
 
-(1) Regional peering connection is used to establish connectivity between VPCs within the same region. The segments of both VPCs that need to interconnected cannot overlap. For more information, see <a href="https://intl.cloud.tencent.com/doc/product/215/1685" title="Peering Connections">About Peering Connection</a>.
+(1) Regional peering connection is used to establish connectivity between VPCs within the same region. The segments of both VPCs that need to interconnected cannot overlap. For more information, see About Peering Connection</a>.
 (2) Cross-account peering connections take effect only when the receiver accepts the request. The connections within the same account take effect immediately.
 (3) There is no limit on the traffic of intra-region peering connections.
 (4) Intra-region peering connections are available for free.

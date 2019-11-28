@@ -5,7 +5,7 @@ API name: `CreateVpcPeeringConnectionEx`
 - Cross-region peering connections are used to establish connectivity between VPCs in two different regions. The IP address ranges of both VPCs that need to be interconnected cannot overlap.
 - Cross-account peering connections take effect only when the receiver accepts the request. Peering connections between VPCs in the same account take effect immediately.
 - You can set a bandwidth for cross-region interconnection. For any changes made after the creation of the peering connection, contact customer service.
-- For more information about the regions, bandwidth limits, and billing methods supported for cross-regional peering connections, see [About Peering Connection](https://intl.cloud.tencent.com/doc/product/215/1685).
+- For more information about the regions, bandwidth limits, and billing methods supported for cross-regional peering connections, see About Peering Connection.
 
 ## Request Parameters
 Below is a list of API request parameters. You need to add common request parameters to your request when calling this API. For more information, see the [Common Request Parameters](https://intl.cloud.tencent.com/doc/api/229/6976) page. The Action field for this API is `CreateVpcPeeringConnectionEx`.
