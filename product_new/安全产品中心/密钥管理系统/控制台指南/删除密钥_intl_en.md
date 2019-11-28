@@ -6,9 +6,7 @@ You can log in to the KMS Console or call KMS TCCLI to create and cancel a sched
 ## Directions
 1. Log in to the [KMS Console](https://console.cloud.tencent.com/kms2).
 2. Select the key to be deleted, and click **Schedule Deletion** on the right. If the key is enabled, please disable it first.
-![](https://main.qcloudimg.com/raw/e831496edd5ee3af30b7a3ebb83539cd.jpg)
 3. Enter the days of waiting period, click **OK**. The key will be deleted as scheduled.
-![](https://main.qcloudimg.com/raw/fe2bfc5e05fd921262dc9f46b7ff1314.jpg)
 >The waiting period can be set to 7-30 days. After being deleted, a key cannot be recovered, and all data encrypted with it cannot be decrypted.
 To prevent accidental deletion, the KMS automatic alarm will be triggered:
 >- Before a key is deleted, any attempt to call the key will trigger the alarm.
