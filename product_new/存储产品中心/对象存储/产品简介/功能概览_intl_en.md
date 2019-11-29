@@ -95,6 +95,6 @@ COS offers the following capabilities:
    <tr>
       <td>API/SDK</td>
       <td nowrap="nowrap">Multiple APIs and SDKs</td>
-      <td><li>API: COS provides a rich set of APIs that come with usage and parameter descriptions, sample requests, sample responses, and error code descriptions. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/10111">List of Operations</a><br><li>COS offers SDKs for multiple programming languages, including Android, C, C++, .Net, Go, iOS, Java, JavaScript, Node.js, PHP, Python, and WeChat Mini Program. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK Overview</a></td>
+      <td><li>API: COS provides a rich set of APIs that come with usage and parameter descriptions, sample requests, sample responses, and error code descriptions. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/10111">List of Operations</a><br><li>COS offers SDKs for multiple programming languages, including Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, and WeChat Mini Program. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK Overview</a></td>
    </tr>
 </table>
