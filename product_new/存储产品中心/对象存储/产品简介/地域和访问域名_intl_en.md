@@ -147,7 +147,7 @@ examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com
 ```
 
 Here:
->- examplebucket-1250000000 means that the bucket is owned by the user with APPID 1250000000. APPID is the account you get after you successfully register on Tencent Cloud. It is automatically assigned by the system as a unique permanent ID, which can be viewed in [Account Information](https://console.cloud.tencent.com/developer).
+- examplebucket-1250000000 means that the bucket is owned by the user with APPID 1250000000. APPID is the account you get after you successfully register on Tencent Cloud. It is automatically assigned by the system as a unique permanent ID, which can be viewed in [Account Information](https://console.cloud.tencent.com/developer).
 - cos means Cloud Object Storage (COS).
 - ap-guangzhou is the abbreviation of the bucket region.
 - myqcloud.com is a fixed Tencent Cloud domain name.
