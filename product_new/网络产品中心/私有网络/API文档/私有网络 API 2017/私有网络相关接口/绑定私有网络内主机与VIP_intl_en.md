@@ -4,7 +4,7 @@ This API (AssociateVip) is used to bind VPC CVMs with a VIP, that is, to bind a 
 
 <font style="color:red">We do not recommend using this API because its functions can be replaced by ENIs.</font>
 
-For more information about the methods for calling the new API and relevant use cases, see [Build Highly Available Master/Slave Clusters in VPCs with keepalived >>](https://intl.cloud.tencent.com/document/product/215/20186).
+
 
 API request domain name: <font style="color:red">vpc.api.qcloud.com</font>
 
