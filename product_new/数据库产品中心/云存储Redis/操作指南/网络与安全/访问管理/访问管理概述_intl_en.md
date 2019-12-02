@@ -15,7 +15,7 @@ If you do not need to manage the access permissions to TencentDB resources for s
 ### Getting started
 A CAM policy must authorize or deny the use of one or more Redis operations. At the same time, it must specify the resources that can be used for the operations (which can be all resources or partial resources for certain operations). A policy can also include the conditions set for the manipulated resources.
 
-> ?
+> 
 > - You are recommended to manage Redis resources and authorize Redis operations through CAM policies. Although the experience stays the same for existing users who are granted permissions by project, it is not recommended to continue managing resources and authorizing operations in a project-based manner.
 >- Effectiveness conditions cannot be set for Redis for the time being.
 
