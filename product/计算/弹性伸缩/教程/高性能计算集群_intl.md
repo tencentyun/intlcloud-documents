@@ -3,7 +3,7 @@ Cloud computing enables high performance computing (HPC) to use applications wit
 But the problems solved by HPC are usually based on projects, with huge demands for the high scalability of the cloud platform. Compute node can be set into a scaling configuration (template) for the scaling group. By increasing the desired instance number, multiple compute nodes will be generated with one click for any calculation tasks. After saving the calculation results, you can delete the compute nodes for the task by modifying the desired instance number.
 
 
-![Alt text](https://mc.qcloudimg.com/static/img/3b24fb381a8996722fd86ecc69cfa762/AS-Tutorial-Creating+High-performance+Computing+Cluster.png)
+![Alt text](https://main.qcloudimg.com/raw/06b9146add277329c32f68606d9a3a51.png)
 
 ## Tips on Usage
 Create a scaling configuration for the nodes in the cluster, and place the computing cluster into the scaling group.
