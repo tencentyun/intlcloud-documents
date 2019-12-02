@@ -12,6 +12,6 @@ You can check the status of ISPs across the entire network in the CDN Console. C
 In **Network Monitoring**, you can query the historical latency and availability graphs of the specified region or ISP for a specified time period.
 1. Click **Add a Query** to create a query.
 ![Network status query](https://main.qcloudimg.com/raw/990ae908f44e3e85f892a6db554b015c.jpg)
->! Time range: You can query the access statistics for the last 30 days with a maximum time span of 30 days.
+> Time range: You can query the access statistics for the last 30 days with a maximum time span of 30 days.
 2. After selecting the query conditions, click **Query** to view the latency and availability charts.
 ![Network latency](https://main.qcloudimg.com/raw/009614e561ec98ccc0dba3c74fbb2e77.png)
