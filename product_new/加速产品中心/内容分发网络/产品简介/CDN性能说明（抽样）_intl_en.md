@@ -7,7 +7,7 @@ CVM instance (1-core, 1 GB memory) and Tencent Cloud CDN
 
 ### Test Method
 
-The benchmarking test method commonly used in the industry is adopted. The service provider is TingYun.
+We used the benchmark test method commonly used in the industry. The service provider is TingYun.
 
 ### Test Parameters
 
@@ -22,7 +22,7 @@ The benchmarking test method commonly used in the industry is adopted. The servi
 
 ### Latency Performance Curve
 
-In seconds
+Unit: second
 
 ![Latency performance curve](https://main.qcloudimg.com/raw/af4a2f1a8c977561950de6349f9ee755.jpg)
 
@@ -38,7 +38,7 @@ In %
    <tr>
       <td rowspan="2">Monitoring Task</td>
       <td rowspan="2">Monitoring Points</td>
-      <td colspan="5">Performance (Seconds)</td>
+      <td colspan="5">Performance (in seconds)</td>
       <td colspan="5">Availability (%)</td>
    </tr>
    <tr>
@@ -88,10 +88,10 @@ In %
       <td colspan="3">Origin Server</td>
    </tr>
    <tr>
-      <td>Performance (Seconds)</td>
+      <td>Performance (in seconds)</td>
       <td>Availability (%)</td>
       <td>Monitoring Points</td>
-      <td>Performance (Seconds)</td>
+      <td>Performance (in seconds)</td>
       <td>Availability (%)</td>
       <td>Monitoring Points</td>
    </tr>
