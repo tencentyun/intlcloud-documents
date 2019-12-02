@@ -3,7 +3,7 @@ You can get started with CloudAudit easily on the Tencent Cloud console where yo
  
 ## Register and Login
 - [Register](https://intl.cloud.tencent.com/register) a Tencent Cloud account if you don't have one, and then complete identity verification according to [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
-- If you have registered a Tencent Cloud account and completed the identity verification, [log in to Tencent Cloud](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fcloud.tencent.com%2F%3FfromSource%3Dgwzcw.184926.184926.184926%26gclid%3DEAIaIQobChMIoaGVwcT21gIVFSNoCh3VxAi-EAAYASAAEgId7PD_BwE). 
+- If you have registered a Tencent Cloud account and completed the identity verification, [log in to Tencent Cloud](https://intl.cloud.tencent.com/login). 
  Click **Products** -> **Management Tools** -> **CloudAudit** to enter the CloudAudit page.
  
 ## View Operation Records

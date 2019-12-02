@@ -18,4 +18,4 @@ width: 200px;
 | [Hadoop Tool](https://intl.cloud.tencent.com/document/product/436/6884) | This tool allows users to process objects in COS using Hadoop, such as MapReduce and HiveCOS. |
 | [HDFS TO COS Tool](https://intl.cloud.tencent.com/document/product/436/7212) | This tool is used to copy the data on HDFS to COS. |
 
->If you have other tool requirements, please submit your tool requirements to [here](https://cloud.tencent.com/apply/p/d27m5hvdh7b) and we will evaluate your needs in time, thank you!
+>If you have other tool requirements, please submit your tool requirements to [here](https://intl.cloud.tencent.com/apply/p/d27m5hvdh7b) and we will evaluate your needs in time, thank you!
