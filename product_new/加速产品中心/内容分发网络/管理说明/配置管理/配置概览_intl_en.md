@@ -3,7 +3,7 @@ CDN supports various custom configurations, you can optimize your CDN accelerati
 ## Basic Configuration
 | Configuration Name | Feature Description |
 | ------------------------------------------------------------ | -------------------------------------- |
-| [Basic Information](https://intl.cloud.tencent.com/doc/product/228/7864) | Modifies the domain¡¯s project and service type |
+| [Basic Information](https://intl.cloud.tencent.com/doc/product/228/7864) | Modifies the domainâ€™s project and service type |
 | [Origin Server Configuration](https://intl.cloud.tencent.com/doc/product/228/6289) | Configures hot backup origin server and modifies the origin server to ensure the success of origin-pull |
 | [Host Header Configuration](https://intl.cloud.tencent.com/doc/product/228/6293) | Specifies the domain name accessed by CDN during origin-pull |
 
