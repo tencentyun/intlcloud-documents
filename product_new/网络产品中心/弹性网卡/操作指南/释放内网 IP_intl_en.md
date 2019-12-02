@@ -8,6 +8,6 @@ This document describes how to release private IPs.
 5. Click **Release** in the row of the private IP.
 6. Click **OK** in the pop-up window.
  ![](https://main.qcloudimg.com/raw/51f72b65c4b535c752800ccf5d96a28b.png)
->!
+>
 >- Only the secondary IP can be released. Primary IP cannot be released.
 >- After the private IP is unbound, the associated EIP will be unbound automatically.
