@@ -2,12 +2,18 @@ This document describes how to bind and configure ENI.
 
 ## Binding CVM
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc).
+
 2. Click **ENI** in the left sidebar to enter the ENI list page.
-3. Click**Bind CVM** in the row of the ENI.
-   ![](https://main.qcloudimg.com/raw/da7a9bd954f88fa0ca2b287e60d3879f.png)
-   > ! Only CVMs in the same availability zone as the ENI are supported.
+
+3. Click **Bind CVM** in the row of the ENI.
+
+   ![](https://main.qcloudimg.com/raw/af1f3d6c5e49765fd90cac55367879c8.png)
+   
+   
+   > Only CVMs in the same availability zone as the ENI are supported.
+   
 4. Select the CVM to bind and click OK to complete the binding.
-   ![](https://main.qcloudimg.com/raw/e51eb76b35493e343bde423ac5cc65e3.png)
+   ![](https://main.qcloudimg.com/raw/e70eb3254e0bfee0488617915e738aea.png)
 
 ## CVM Configuration
 
@@ -27,19 +33,19 @@ cp ifcfg-eth0 ifcfg-eth1
 ```
    3. Modify the configuration file as follows:
 ```
-DEVICE=`eth1`
-NM_CONTROLLED=`yes`
-ONBOOT=`yes`
-IPADDR=`192.168.1.62`  # #Enter the actual address of the ENI
-NETMASK=`255.255.255.192`  #Enter the actual subnet mask
-#GATEWAY=`192.168.1.1`  #Enter the actual gateway; Eth0 file has defined the gateway and to avoid conflict, there is no need to enter the gateway here
+DEVICE='eth1'
+NM_CONTROLLED='yes'
+ONBOOT='yes'
+IPADDR='192.168.1.62' # #Enter the actual address of the ENI
+NETMASK='255.255.255.192'  #Enter the actual subnet mask
+#GATEWAY='192.168.1.1' #Enter the actual gateway; Eth0 file has defined the gateway and to avoid conflict, there is no need to enter the gateway here
 ```
    4. Save the modified configuration file and exit (enter "wq!" in the last line mode of vim and press Enter).
 
 3. (Optional) Disable `rp_filter` authentication, and disable reverse path filtering in `/etc/sysctl.conf`.
 >? Reverse path filtering means that when receiving an IP packet, the system checks whether the source IP is valid and discards the IP packet if the source IP is invalid.
 >**For example:** A user receives an IP packet on ENI A, and then he sends the packet to IP B. If the packet is not sent from ENI A, this IP packet will be discarded. Because the routing uses the primary ENI by default, after the reverse path filtering is enabled, the ping test on the IP of the secondary ENI will fail.
- 
+
  1. Open the configuration file:`vim /etc/sysctl.conf`.
  2. Modify `net.ipv4.conf.default.rp_filter = 1` to:
 ```
@@ -84,15 +90,11 @@ Now the configuration is completed, you can successfully ping IP addresses on th
 
 ### Configuration Steps in Windows
 - Case one: If DHCP is set in Windows, the secondary ENI and the IP on it can be recognized without any further configuration. See the figure below:
- ![](https://main.qcloudimg.com/raw/0770d0f5ffb3c1ae5fae41a4e39f3774.png)
- ![](https://main.qcloudimg.com/raw/13b340fdd311fd938c1232f5482a4953.png)
- ![](https://main.qcloudimg.com/raw/c2c36a5af8f4495ee954d89abd817be4.png)
+
 -  Case two: If DHCP is not set in Windows, you need to configure the private IP in the operating system. The steps are as follows:
    1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com), and [Bind CVM](http://intl.cloud.tencent.com/document/product/576/18535) with the ENI.
    2. In the operating system, manually enter the actual IP information.
-![](https://main.qcloudimg.com/raw/c5035943f458ea487c2efe393601a111.png)
-![](https://main.qcloudimg.com/raw/a290ac9d97f1e713621ce8ea7280d459.png)
-![](https://main.qcloudimg.com/raw/f854078a223163a63a4d63d7878b5975.png)
+
    3. View manually entered IP.
-![](https://main.qcloudimg.com/raw/28e781d194af2ffff5af8381424ab145.png)
+
    4. Use CVM of the same subnet to ping the private address. If ping test succeeds, the configuration is successful. If there is no other CVM, you can bind the private IP of the secondary ENI to a public IP, then ping the public IP to verify.
