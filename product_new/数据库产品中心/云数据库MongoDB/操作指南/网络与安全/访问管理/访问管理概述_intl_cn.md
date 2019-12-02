@@ -24,5 +24,5 @@ CAM 策略必须授权使用一个或多个 MongoDB 操作，或者必须拒绝�
 | 了解策略基本结构 | [策略语法](https://intl.cloud.tencent.com/document/product/240/32841#yufa) |
 | 在策略中定义操作 | [MongoDB 的操作](https://intl.cloud.tencent.com/document/product/240/32841#caozuo) |
 | 在策略中定义资源 | [MongoDB 的资源路径](https://intl.cloud.tencent.com/document/product/240/32841#lujing) |
-| 资源级权限       | [MongoDB 支持的资源级权限](https://cloud.tencent.com/document/product/240/38706) |
+| 资源级权限       | [MongoDB 支持的资源级权限](https://intl.cloud.tencent.com/document/product/240/32841) |
 
