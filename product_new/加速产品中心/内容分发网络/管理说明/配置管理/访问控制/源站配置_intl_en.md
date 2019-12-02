@@ -8,7 +8,7 @@ A public domain name of the selected COS bucket can be used as an origin server 
 - Slave origin server configuration
 Tencent Cloud CDN supports configuring an external domain name as a hot backup slave origin server. When an origin-pull request to the master origin server fails (e.g., 4XX, 5XX, or TCP connection errors), it will be forwarded to the slave origin server. Configuring a slave origin server can effectively reduce origin-pull failure rate and improve the service quality. Hot backup slave origin server does not support HTTPS origin-pull for the time being; therefore, when you configure a certificate for a domain name with a slave origin server, do not select HTTPS origin-pull.
 >- Only origin servers of the domain names connected by you can be modified. CDN accelerated domain names automatically created by [COS](https://intl.cloud.tencent.com/product/cos) buckets cannot be modified.
->- According to applicable regulations, if an origin server uses a Tencent Cloud CVM’s accelerated domain name, the domain name configured to be the host header should have completed ICP filing through Tencent Cloud.
+>- According to applicable regulations, if an origin server uses a Tencent Cloud CVMæŠ¯ accelerated domain name, the domain name configured to be the host header should have completed ICP filing through Tencent Cloud.
 
 ## Configuration Guide
 ### Viewing the Configuration
