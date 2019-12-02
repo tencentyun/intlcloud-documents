@@ -19,4 +19,4 @@ TencentDB for Redis는 읽기/쓰기 분리 기능을 시작/종료할 수 있�
 1. [Redis 콘솔](https://console.cloud.tencent.com/redis)에 로그인합니다.
 2. 인스턴스 리스트 페이지에서 읽기 전용 인스턴스를 생성해야 할 클라우드 데이터베이스를 선택하고 인스턴스 이름을 클릭하여 인스턴스 세부 정보 페이지에 진입합니다.
 3. [노드 관리] 페이지에서 복제본 읽기 전용 버튼을 클릭하여 읽기/쓰기 분리를 활성화할 수 있습니다.
-![](https://main.qcloudimg.com/raw/bc8c10e7481cf81ef4d97ce615870b4f.png)
+![](https://main.qcloudimg.com/raw/31acc5f160e4b4160f9b79a890990200.png)
