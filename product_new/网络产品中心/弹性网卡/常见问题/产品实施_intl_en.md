@@ -12,16 +12,16 @@ Follow the steps below to assign a private IP for an ENI:
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **ENI** in the left sidebar to enter the ENI list page.
 3. Click an **Instance ID**to enter its details page.
-![](https://main.qcloudimg.com/raw/028702aac3f587be778dc142ccb3723a.png)
+![](https://main.qcloudimg.com/raw/b106dc86410d4874218de22aa7fd9b9e.png)
 4. Click **IP Management** to see the private IPs and EIPs that have been bound to the ENI.
-![](https://main.qcloudimg.com/raw/2126e5ef73cfd2fba09f444908a51cfe.png)
+![](https://main.qcloudimg.com/raw/dba346873b733e1b56d44ae22d2bcfe5.png)
 5. Click **Assign Private IP** and the "Assign Private IP" window will pop up.
-![](
-https://main.qcloudimg.com/raw/8558c454e20679efab3e3d6874b6cb21.jpg)
+
+![](https://main.qcloudimg.com/raw/17f37ed9d3e130cfa220b1332bd61a23.png)
 6. Select "Automatic Assignment" or "Enter Manually".
 7. Click **Add** and assign multiple IPs for ENI in the "Assign Private IP" window.
 8. Click **Complete** to finish the assignment.
-![](https://main.qcloudimg.com/raw/df6e8723866f977bc9f0db9aee33148d.jpg)
+![](https://main.qcloudimg.com/raw/305a46f0e4ee31f6224b6343cc9f36b2.png)
 
 
 
