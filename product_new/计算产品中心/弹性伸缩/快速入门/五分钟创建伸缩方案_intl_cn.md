@@ -18,12 +18,14 @@
 区域的选择限制了可以手动添加的实例和可以绑定的负载均衡。例如，如果启动配置的区域选择了广州，那么伸缩组里自动添加的就是广州的实例。在区域为广州的伸缩组里，将不能手动添加上海、北京、中国香港、多伦多等其他区域的实例，也不能绑定上海、北京、中国香港、多伦多等其他区域的负载均衡。
 ![Select a region](https://main.qcloudimg.com/raw/014744e64c1b5bb3f251a478baa84540.png)
 
+
 2. 单击【新建】，在弹出页面填写启动配置基本信息。
 
 ### 选择机型
 
 在 “新建实例” 页面中，填写启动配置名称，选择可用区，选择机型。如下图所示：
 ![](https://main.qcloudimg.com/raw/0bd50d2d909e34deadd5d9681ba5f7e6.png)
+
 
 - 命名配置名称。
 - 选择和伸缩组想要绑定的实例同样的机型。
@@ -39,10 +41,16 @@
 ![](https://main.qcloudimg.com/raw/51d1974f89849862c8a4536f02864c2a.png)
 
 
+
+
+
 ### 选择存储和带宽
 
 在 “3.选择存储和带宽” 页面中，设置磁盘和网络。如下图所示：
 ![](https://main.qcloudimg.com/raw/2ef5c1920b6e1fbb46a9a17c5de91529.png)
+
+
+
 
 > 如果系统盘选择了云硬盘，那么数据盘就可以选择数据盘快照。
 
@@ -57,10 +65,15 @@
 ### 设置信息
 
 1. 在 “4.设置安全组和主机” 页面中，选择登录方式、安全组。通过弹性伸缩服务新增的 CVM 实例默认免费享受云安全和云监控服务。如下图所示：
-![](https://main.qcloudimg.com/raw/589f0e08800d2ac8f00456acf707e8de.png)
+![](https://main.qcloudimg.com/raw/26b2f98e3a32eb5d9a50af56fbe6eb1e.png)
+
+
+
 
 2. 完成配置后，此条目将显示在页面的启动配置列表中。如下图所示：
-![](https://main.qcloudimg.com/raw/a8485d44d197b4ef2af2ee3b52574169.png)
+![](https://main.qcloudimg.com/raw/7b25c445cf77fecdcf9c67b1f5431a70.png)
+
+
 
 
 ## 创建伸缩组
@@ -71,8 +84,11 @@
 
 ### 新建伸缩组
 
-1. 单击【新建】，在弹出页面填写伸缩组基本信息。其中![](https://main.qcloudimg.com/raw/17d2d70b9ba8dcea80f315841bcd71ac.png)为必填项。如下图所示：
+1. 单击【新建】，在弹出页面填写伸缩组基本信息。其中![](//mccdn.qcloud.com/static/img/f9df27a1d1e0d42a7ff08dd884bfa34c/image.png)
+为必填项。如下图所示：
 ![](https://main.qcloudimg.com/raw/09b130b952b426530acbe5ad6288b5d7.png)
+
+
 
  - 伸缩组的当前 CVM 实例数将维持在最小伸缩数与最大伸缩数之间。
 	- 起始实例数定义了伸缩组一开始 CVM 实例的数量。
@@ -85,10 +101,14 @@
 ![](https://main.qcloudimg.com/raw/3943d03b316974835be615acef893bd2.png)
 
 
+
+
 ### 添加实例（可选）
 
 在实例列表添加进我们要绑定的实例。完成配置后，此条目将显示在页面的启动配置列表中，示例如下：
 ![](https://main.qcloudimg.com/raw/741d48877eaef9642dfff2193d540403.png)
+
+
 > 如果在此处您遇到无法添加实例或者无法移出实例的情况，请检查您设置的最大伸缩数和最小伸缩数。
 
 ## 创建伸缩策略
@@ -102,11 +122,14 @@
 如果您的负载变化情况是可以预知的，那么您可以设置定时任务，对您的设备扩展活动进行规划，您可以使用此功能定时及周期性地自动增加或减少 CVM 实例，从而灵活应对业务负载变化，提高设备利用率，节省部署和实例成本。
 
 1. 在【伸缩组】页面单击 “伸缩组”，进入伸缩组管理页面。
-![伸缩组](https://main.qcloudimg.com/raw/2bd1126836549e378ac52a664e107e79.png)
+![Scaling group](https://main.qcloudimg.com/raw/2bd1126836549e378ac52a664e107e79.png)
+
+
 2. 选择【定时任务】选项卡，单击【新建】。
 ![定时任务](https://main.qcloudimg.com/raw/50a8f16c5826b2b1886e1e9aabba8671.png)
 3. 在新建页面指定定时任务名称、执行时间和执行活动等信息。您也可以勾选【重复】以定义周期定时执行任务。
-![新建定时任务](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)
+![Create a scheduled scaling action](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)
+
 4. 完成设置后，该定时任务将显示在页面的列表中。示例如下：
 ![定时任务列表](https://main.qcloudimg.com/raw/3bd91d894eeefb2b3fc5119500694574.png)
 
@@ -124,8 +147,8 @@
 ![](https://main.qcloudimg.com/raw/50a8f16c5826b2b1886e1e9aabba8671.png)
 3. 在新建页面设置告警策略，基于云监控性能指标（如 CPU、内存、带宽等），自动为伸缩组增加或减少指定台数或指定百分比的 CVM 实例。
 您还可通过复制策略（选填），直接复制已有伸缩组的已有策略到当前伸缩组。
-![新建告警触发策略](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)
+![Create an alarm-triggered policy](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)  
 4. 完成设置后，该告警触发策略将显示在页面的列表中。示例如下：
-![告警策略列表](https://main.qcloudimg.com/raw/3bd91d894eeefb2b3fc5119500694574.png)
+![Alarm-triggered policy list](https://main.qcloudimg.com/raw/3bd91d894eeefb2b3fc5119500694574.png)
 
 
