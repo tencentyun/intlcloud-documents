@@ -52,9 +52,11 @@ Auto Scaling에 새로운 클라우드 서버 용례를 자동으로 추가할 �
 ### 정보 설정
 
 1. 다음과 같이 "4. 보안 그룹 및 호스트 설정" 페이지에서 로그인 방법 및 보안 그룹을 선택하십시오. Auto Scaling 서비스를 통해 추가된 CVM 용례는 기본 클라우드 보안 및 클라우드 모니터링 서비스를 무료로 제공합니다.
-![](https://main.qcloudimg.com/raw/589f0e08800d2ac8f00456acf707e8de.png)
+![](https://main.qcloudimg.com/raw/26b2f98e3a32eb5d9a50af56fbe6eb1e.png)
+
 2. 다음과 같이 구성 완료 후 이 항목은 페이지의 시작 구성 목록에 표시됩니다.
-![](https://main.qcloudimg.com/raw/a8485d44d197b4ef2af2ee3b52574169.png)
+![](https://main.qcloudimg.com/raw/7b25c445cf77fecdcf9c67b1f5431a70.png)
+
 
 ## 스케일링 그룹 생성
 
@@ -64,8 +66,9 @@ Auto Scaling에 새로운 클라우드 서버 용례를 자동으로 추가할 �
 
 ### 스케일링 그룹 생성
 
-1. 다음과 같이 [생성]을 클릭하고 팝업 페이지에서 스케일링 그룹 기본 정보를 입력합니다. 그 중![](https://main.qcloudimg.com/raw/17d2d70b9ba8dcea80f315841bcd71ac.png) 필수 입력 사항입니다.
+1. 다음과 같이 [생성]을 클릭하고 팝업 페이지에서 스케일링 그룹 기본 정보를 입력합니다. 그 중![](//mccdn.qcloud.com/static/img/f9df27a1d1e0d42a7ff08dd884bfa34c/image.png)  필수 입력 사항입니다.
 ![](https://main.qcloudimg.com/raw/09b130b952b426530acbe5ad6288b5d7.png)
+
  - 스케일링 그룹의 현재 CVM 용례 수는 최소 및 최대 스케일링 수량 사이에서 유지됩니다.
 	- 최초 용례 수는 스케일링 그룹 시작할 때 생성되는 CVM 용례 수를 정의합니다.
 	- 현재 CVM 용례 수가 최소 스케일링 수보다 작으면, Auto Scaling 서비스는 용례를 자동 추가하여 최소 스케일링 수와 동일하게 만듭니다.
@@ -95,11 +98,16 @@ Auto Scaling 그룹은 스케일링 정책에 따라 클라우드 서버 수를 
 1. [스케일링 그룹] 페이지에서 [스케일링 그룹]을 클릭하여 스케일링 그룹 관리 페이지로 진입합니다.
 ![스케일링 그룹](https://main.qcloudimg.com/raw/2bd1126836549e378ac52a664e107e79.png)
 2. [예약된 작업] 탭을 선택하고 [생성]을 클릭하십시오.
-! [예약된 작업]](https://main.qcloudimg.com/raw/50a8f16c5826b2b1886e1e9aabba8671.png)
+![Scheduled task](https://main.qcloudimg.com/raw/50a8f16c5826b2b1886e1e9aabba8671.png)
+
+
 3. 새 페이지에서 예약된 작업 이름, 실행 시간 및 실행 이벤트 등 정보를 지정하십시오. 사용자는 주기적으로 예약 작업을 정의하기 위해 [반복]을 선택할 수 있습니다.
-! [예약된 작업 생성](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)
+![Create a scheduled scaling action](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)
+
+
 4. 설정 완료 후 해당 예약된 작업은 페이지 목록에 표시됩니다. 다음 예시 참고:
-! [예약된 작업 목록](https://main.qcloudimg.com/raw/3bd91d894eeefb2b3fc5119500694574.png)
+![Scheduled Scaling Task List](https://main.qcloudimg.com/raw/3bd91d894eeefb2b3fc5119500694574.png)
+
 
 ### 알람 트리거 정책 생성
 
@@ -110,13 +118,17 @@ CVM 지표 상황에 따라 서비스를 배포하려면 사용자 정의 알람
 > - 알람 트리거 정책 사용 전, CVM 미러이미지에 새 버전의 클라우드 모니터링 Agent를 설치해야 합니다. 설치 방법은 [모니터링 구성 요소 설치](https://intl.cloud.tencent.com/document/product/248/6211)를 참조하십시오.
 
 1. [스케일링 그룹] 페이지에서 스케일링 그룹 ID를 클릭하여 관리 페이지로 진입합니다.
-![스케일링 그룹](https://main.qcloudimg.com/raw/2bd1126836549e378ac52a664e107e79.png)
+![Scaling group](https://main.qcloudimg.com/raw/2bd1126836549e378ac52a664e107e79.png)
+
 2. [알람 트리거 정책] 탭을 선택하고 [생성]을 클릭하십시오.
-![](https://main.qcloudimg.com/raw/2bd1126836549e378ac52a664e107e79.png)
+![](https://main.qcloudimg.com/raw/50a8f16c5826b2b1886e1e9aabba8671.png)
+
 3. 새 페이지에 알람 정책을 설정하고 클라우드 모니터링 기능 지표(예 : CPU, 메모리 및 대역폭)을 기반으로 자동으로 스케일링 그룹을 위해 지정된 단위 수 또는 지정된 백분율의 CVM 용례 수를 추가 및 감소합니다.
 복사 정책(선택 사항)을 통해 기존 스케일링 그룹의 기존 정책을 현재 스케일링 그룹으로 복사할 수 있습니다
-![알람 트리거 정책 생성](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)
+![Create an alarm-triggered policy](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)  
+
 4. 설정 완료 후 알람 트리거 정책은 페이지 목록에 표시됩니다. 다음 예시 참고:
-![](https://main.qcloudimg.com/raw/3bd91d894eeefb2b3fc5119500694574.png)
+![Alarm-triggered policy list](https://main.qcloudimg.com/raw/3bd91d894eeefb2b3fc5119500694574.png)
+
 
 
