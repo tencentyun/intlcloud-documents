@@ -1,7 +1,7 @@
 ## What Is a Host Header?
 A host header refers to the website domain name accessed at the origin server by a CDN node during origin-pull. Please make sure that the configured host header domain name can be accessed; otherwise, origin-pull may fail. The host header can be customized according to your business.
 >- Origin server and host header: The IP/domain name configured at the origin server allows a CDN node to find the corresponding origin server during origin-pull. There can be multiple websites on the server, and the host header indicates on which website a resource resides.
->- According to applicable regulations, if an origin server uses a Tencent Cloud CVM’s accelerated domain name, the domain name configured to be the host header should have completed ICP filing through Tencent Cloud.
+>- According to applicable regulations, if an origin server uses a Tencent Cloud CVMæŠ¯ accelerated domain name, the domain name configured to be the host header should have completed ICP filing through Tencent Cloud.
 
 ## Configuration Guide
 ### Viewing the Configuration
