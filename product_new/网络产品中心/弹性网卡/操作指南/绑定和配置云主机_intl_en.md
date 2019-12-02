@@ -43,7 +43,7 @@ NETMASK='255.255.255.192'  #Enter the actual subnet mask
    4. Save the modified configuration file and exit (enter "wq!" in the last line mode of vim and press Enter).
 
 3. (Optional) Disable `rp_filter` authentication, and disable reverse path filtering in `/etc/sysctl.conf`.
->? Reverse path filtering means that when receiving an IP packet, the system checks whether the source IP is valid and discards the IP packet if the source IP is invalid.
+> Reverse path filtering means that when receiving an IP packet, the system checks whether the source IP is valid and discards the IP packet if the source IP is invalid.
 >**For example:** A user receives an IP packet on ENI A, and then he sends the packet to IP B. If the packet is not sent from ENI A, this IP packet will be discarded. Because the routing uses the primary ENI by default, after the reverse path filtering is enabled, the ping test on the IP of the secondary ENI will fail.
 
  1. Open the configuration file:`vim /etc/sysctl.conf`.
