@@ -10,7 +10,6 @@ You can configure a bandwidth cap for a domain name. When the bandwidth consumed
 - If your purpose is to control CDN service fees, we recommend selecting "Forward to origin server" to prevent your service from being affected.
 ![](https://main.qcloudimg.com/raw/d0d18e7f971358cee9fc8e30f279d972.jpg)
 4. If the cap is exceeded, you will be notified by email, SMS or through the Message Center. You can check the domain status in the CDN Console. No matter if you select "Forward to origin server" or "Return 404", the domain will be changed to **Disabled** status. It takes about **5 to 15 minutes** for the settings to take effect.
-![](https://main.qcloudimg.com/raw/55d11b507196c42184ce19fcc699ca0c/limit2.png)
 > The domain will be closed once the bandwidth cap is reached. To continue using the CDN service, you can activate domain name acceleration again in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [Domain Name Operations](https://intl.cloud.tencent.com/doc/product/228/5736).
 
 ## Sample Case
