@@ -19,6 +19,6 @@ Read/Write Splitting を有効にすると、読み取り専用コピーにつ�
 1. [Redis コンソール](https://console.cloud.tencent.com/redis)にログインします。
 2. インスタンスリストのページで読み取り専用インスタンスを作成するデータベースを選択し、インスタンス名をクリックすることでインスタンス詳細のページに移行します。
 3. 【ノード管理】ページでコピー読み取り専用ボタンをクリックすることにより、Read/Write Splitting が有効になります。
-![](https://main.qcloudimg.com/raw/bc8c10e7481cf81ef4d97ce615870b4f.png)
+![](https://main.qcloudimg.com/raw/31acc5f160e4b4160f9b79a890990200.png)
 
 

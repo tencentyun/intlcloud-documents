@@ -7,5 +7,5 @@
 1. 登录 [云数据库 Redis 控制台](https://console.cloud.tencent.com/redis)。
 2. 在实例列表页中，选择需要创建只读实例的云数据库，单击实例名称，进入实例详情页。
 3. 在【节点管理】页，单击副本只读按钮，开启读写分离。
-![](https://main.qcloudimg.com/raw/bc8c10e7481cf81ef4d97ce615870b4f.png)
+![](https://main.qcloudimg.com/raw/31acc5f160e4b4160f9b79a890990200.png)
 
