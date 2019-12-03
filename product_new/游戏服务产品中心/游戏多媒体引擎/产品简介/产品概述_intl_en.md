@@ -20,5 +20,3 @@ This mode is suitable for one-to-many commanding, audio interaction with host an
 ### Voice Message and Speech-to-text Service
 GME supports sending recorded voice messages to game channels and converting them into text messages in real time, with clear sound quality and high accuracy of voice recognition.
 
-### Voice Analysis Service
-GME opens up technologies such as AI-based noise cancellation, voice-music separation, and group audio audit to help detect various voice violations in live broadcasting, chat rooms, and games, such as violent, pornographic, abusive, and advertising information.
