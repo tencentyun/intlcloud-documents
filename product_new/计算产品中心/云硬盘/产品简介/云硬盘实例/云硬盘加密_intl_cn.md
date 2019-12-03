@@ -1,4 +1,4 @@
-当您的业务因为安全或合规要求等原因，需要对存储在云硬盘上的数据进行加密保护时，您可以开启云硬盘加密功能，使用 [腾讯云密钥管理服务（KMS）](https://cloud.tencent.com/product/kms) 提供的基础设施有效保护数据的隐私性。
+当您的业务因为安全或合规要求等原因，需要对存储在云硬盘上的数据进行加密保护时，您可以开启云硬盘加密功能，使用 [腾讯云密钥管理服务（KMS）](https://intl.cloud.tencent.com/product/kms) 提供的基础设施有效保护数据的隐私性。
 >当前本功能为试用阶段，如有需要请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行申请。
 >
 
@@ -58,7 +58,7 @@
 
 
 ## 操作费用
-云硬盘加密功能及所使用的 CMK 均不产生额外的费用，对云硬盘中数据的读写操作也不会产生额外的费用。但涉及加密云硬盘的管理操作时，无论通过控制台还是使用 API 进行加密云硬盘管理操作，均会以 API 的形式使用 KMS，并计入您在该地域下的 KMS 调用次数。KMS 本身按调用次数收费，计费详情请参考 [密钥管理服务计费概述](https://cloud.tencent.com/document/product/573/34388)。
+云硬盘加密功能及所使用的 CMK 均不产生额外的费用，对云硬盘中数据的读写操作也不会产生额外的费用。但涉及加密云硬盘的管理操作时，无论通过控制台还是使用 API 进行加密云硬盘管理操作，均会以 API 的形式使用 KMS，并计入您在该地域下的 KMS 调用次数。KMS 本身按调用次数收费，计费详情请参考 [密钥管理服务计费概述](https://intl.cloud.tencent.com/document/product/1030/31966)。
 
 对加密云硬盘的管理操作包括：
 - 创建加密云硬盘。
@@ -83,10 +83,10 @@
 新建的加密云硬盘为【待挂载】状态，可参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/5745) 将云硬盘挂载至同一可用区内的云服务器。
 
 ### 使用快照创建加密云硬盘
-请参考 [从快照创建云硬盘](https://cloud.tencent.com/document/product/362/5757)，选择加密快照创建云硬盘，即可创建已包含相关数据且加密的云硬盘。
+请参考 [从快照创建云硬盘](https://intl.cloud.tencent.com/document/product/362/5757)，选择加密快照创建云硬盘，即可创建已包含相关数据且加密的云硬盘。
 
 ### 使用 API 创建加密云硬盘
-可使用 [CreateDisks 接口](https://cloud.tencent.com/document/product/362/16312) 通过以下两种方式创建加密云硬盘：
+可使用 [CreateDisks 接口](https://intl.cloud.tencent.com/document/product/362/16312) 通过以下两种方式创建加密云硬盘：
 - 指定加密选项 `Encrypt` 为 `true`。
 - 指定加密快照的 `SnapshotId`。
 
