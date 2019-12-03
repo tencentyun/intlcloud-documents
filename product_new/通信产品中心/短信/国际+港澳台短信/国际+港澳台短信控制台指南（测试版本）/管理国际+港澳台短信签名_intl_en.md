@@ -1,5 +1,5 @@
 A complete SMS message consists of **SMS signature** and **SMS body**. You can set different body templates based on your business needs and then combine a signature and a body into the final SMS content: `[SMS signature] SMS body`.
- >?Signature is optional for global SMS.
+ >Signature is optional for global SMS.
 
 After a SMS signature is submitted, it will be reviewed within two hours generally. Review hours: Monday - Sunday, 9:00 - 23:00 (postponed accordingly in case of public holidays). You can set your mobile number and email address to receive review result notifications.
 
