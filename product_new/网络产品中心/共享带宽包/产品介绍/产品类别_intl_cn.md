@@ -8,6 +8,5 @@
 ## 区别两种账户类型
 您登录 [弹性公网 IP 控制台](https://console.cloud.tencent.com/cvm/eip)：
 - 如果没有 “带宽” 相关的信息，即为此类账户购买的带宽包为“设备带宽包”。弹性公网 IP 的类型为裸 IP，无任何公网网络属性，需要后端资源购买公网网络后，再通过公网 IP 或 CLB 外访。目前大部分客户的使用的为此类账户。如下图所示：
-![](https://main.qcloudimg.com/raw/ecf25a9e29c26f3c42b2d7d3b959bf8a.png)
-- 如果有 “带宽” 相关信息，则账户购买的带宽包为 “IP 带宽包”。如下图所示：
-![](https://main.qcloudimg.com/raw/19928c71537ee2c1eb0c98a1b5f7db37.png)
+![](https://main.qcloudimg.com/raw/a91a1d2d4e3dfd86755e1103f8c30c23.png)
+- 如果有 “带宽” 相关信息，则账户购买的带宽包为 “IP 带宽包”。
