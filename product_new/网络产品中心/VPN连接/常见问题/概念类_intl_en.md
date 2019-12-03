@@ -1,5 +1,5 @@
 ### What is an IPsec VPN?
- [IPsec VPN](https://cloud.tencent.com/document/product/554/19276) is used to connect your IDC and a VPC through an encrypted tunnel over a public network. The IPsec VPN connection to a Tencent Cloud VPC consists of the following parts:
+ [IPsec VPN](https://intl.cloud.tencent.com/document/product/1037/32680) is used to connect your IDC and a VPC through an encrypted tunnel over a public network. The IPsec VPN connection to a Tencent Cloud VPC consists of the following parts:
 - **VPN gateway**: An IPsec VPN gateway in a VPC. It is used with a customer gateway (the IPsec VPN gateway in your IDC) to establish an encrypted network tunnel between the VPC and your IDC for secure and reliable communication.
 - **Customer gateway**: A VPC gateway that is mapped to the IPsec VPN gateway in your IDC. It is used with a VPN gateway. Encrypted VPN tunnels can be established between a VPN gateway and multiple customer gateways.
 - **VPN tunnel**: An encrypted IPsec VPN tunnel over a public network. After the VPN gateway and customer gateway are created, a VPN tunnel can be established for encrypted communication between the VPC and your IDC.
@@ -8,11 +8,11 @@
 Yes. You can create VPN gateways in a VPC and create multiple VPN tunnels for each VPN gateway. Each VPN tunnel connects the VPC to a local IDC.
 
 ### Can two VPCs communicate with each other through a VPN?
-Yes. You need to separately purchase VPN gateways and configure VPN tunnels and customer gateways in the two VPCs, but the configuration is complex. It is recommended that you use [Cloud Connect Network (CCN)](https://cloud.tencent.com/product/ccn). CCN connects two VPCs via Tencent’s private network, ensuring the quality of communication.
+Yes. You need to separately purchase VPN gateways and configure VPN tunnels and customer gateways in the two VPCs, but the configuration is complex. It is recommended that you use [Cloud Connect Network (CCN)](https://intl.cloud.tencent.com/product/ccn). CCN connects two VPCs via Tencent’s private network, ensuring the quality of communication.
 
 ### How do I ensure the network quality between a VPC and IDC that are connected through a VPN?
-- Packets are transmitted over public networks through the VPN connection between a VPC and an IDC. Therefore, the overall network quality depends on the quality of the public networks. When delay, packet loss, or jitter occurs on the public networks, the VPN connection is also affected. If you require more stable communication, it is recommended that you use [Direct Connect](https://cloud.tencent.com/doc/product/215/4976).
-- Tencent Cloud provides 24-hour monitoring on your VPN gateways and reports alarms for exceptions. OPS personnel are available for emergencies. You can also monitor the traffic of your VPN gateways and tunnels on the console in real time. If any exceptions occur, [contact us](https://cloud.tencent.com/about/connect) promptly.
+- Packets are transmitted over public networks through the VPN connection between a VPC and an IDC. Therefore, the overall network quality depends on the quality of the public networks. When delay, packet loss, or jitter occurs on the public networks, the VPN connection is also affected. If you require more stable communication, it is recommended that you use [Direct Connect].
+- Tencent Cloud provides 24-hour monitoring on your VPN gateways and reports alarms for exceptions. OPS personnel are available for emergencies. You can also monitor the traffic of your VPN gateways and tunnels on the console in real time. If any exceptions occur, [contact us](https://intl.cloud.tencent.com/support) promptly.
 
 ### Why is there no traffic at both ends of a connected VPN Tunnel, or why does a ping test between both ends fail?
 Check whether the SPD policy (proxy identity), route table, and security group are properly configured.
