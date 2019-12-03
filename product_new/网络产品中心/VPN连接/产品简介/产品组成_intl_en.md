@@ -24,7 +24,7 @@ The following configuration information is required for establishing a VPN tunne
 The basic information, SPD policy, IKE configuration (optional), and IPsec configuration (optional) are described in detail below.
 ### SPD Policy
 An SPD policy consists of a series of SPD rules that are used to specify the IP ranges in a VPC and an IDC that can communicate with each other. Each SPD rule contains one CIDR for the local IP range and at least one CIDR for the customer IP range. One CIDR for the local IP range and one CIDR for the customer IP range form a mapping. One SPD rule can contain multiple mappings.
->! The rules for all tunnels of the same VPN gateway cannot contain overlapped mappings. In other words, at least one IP address in the local IP range and customer IP range in a mapping must be different.
+> The rules for all tunnels of the same VPN gateway cannot contain overlapped mappings. In other words, at least one IP address in the local IP range and customer IP range in a mapping must be different.
 
 **Example:**
 As shown in the figure below, the following SPD rules have been configured for the VPN gateway:
