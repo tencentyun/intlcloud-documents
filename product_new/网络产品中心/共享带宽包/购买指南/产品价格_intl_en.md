@@ -1,4 +1,4 @@
-**The unit prices of Bandwidth Package for various regions are as follows:
+**The unit prices of Bandwidth Package for various regions are as follows:**
 
 | Region | Billing method | Price |
 | ------------ |---------------| -----:|
