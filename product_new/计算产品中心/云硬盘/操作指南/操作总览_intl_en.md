@@ -7,21 +7,21 @@ This document introduces common cloud disk operations, including managing cloud 
  - [Initializing Cloud Disks (Less Than 2 TB)](https://intl.cloud.tencent.com/document/product/362/6734)
  - [Initializing Cloud Disks (Greater Than or Equal to 2 TB)](https://intl.cloud.tencent.com/document/product/362/6735)
 - Expanding cloud disks
- - [Cloud Disk Expansion Scenarios](https://cloud.tencent.com/document/product/362/32539)
+ - [Cloud Disk Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600)
  - [Expanding Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5747)
- - [Expanding Partitions and File Systems (Windows)](https://cloud.tencent.com/document/product/362/6737)
+ - [Expanding Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601)
  - [Expanding Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/document/product/362/6738)
 - [Unmounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32400)
 - [Terminating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5752)
 
 ## Snapshots
 - [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755)
-- [Rolling Back Data from Snapshots](https://cloud.tencent.com/document/product/362/5756)
-- [Creating Cloud Disks from Snapshots](https://cloud.tencent.com/document/product/362/5757)
+- [Rolling Back Data from Snapshots](https://intl.cloud.tencent.com/document/product/362/5756)
+- [Creating Cloud Disks from Snapshots](https://intl.cloud.tencent.com/document/product/362/5757)
 - [Scheduling Snapshots](https://intl.cloud.tencent.com/document/product/362/31622)
-- [Replicating Snapshots Across Regions](https://cloud.tencent.com/document/product/362/18152)
+- [Replicating Snapshots Across Regions](https://intl.cloud.tencent.com/document/product/362/31623)
 - [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758)
 
 ## Monitoring and Alarms
-[Monitoring and Alarms](https://cloud.tencent.com/document/product/362/6742)
+[Monitoring and Alarms](https://intl.cloud.tencent.com/document/product/362/6742)
 

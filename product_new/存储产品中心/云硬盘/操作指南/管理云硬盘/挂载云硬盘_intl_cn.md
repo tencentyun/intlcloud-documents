@@ -5,7 +5,7 @@
  - 直接创建的云硬盘
  手动挂载后，需要对磁盘进行分区、格式化等初始化操作，具体操作请参考 [初始化云硬盘（小于2TB）](https://intl.cloud.tencent.com/document/product/362/31597)或 [初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/document/product/362/31598)。
  - 从快照创建的云硬盘
-    若云硬盘容量等于快照容量，手动挂载后不需要进行分区、格式化等初始化磁盘的操作即可直接读写数据盘。
+  若云硬盘容量等于快照容量，手动挂载后不需要进行分区、格式化等初始化磁盘的操作即可直接读写数据盘。
 	若云硬盘容量大于快照容量，需要扩展文件系统或转换分区形式。
 
  >部分 Linux 云服务器可能出现无法识别弹性云硬盘的情况，您可以先在云服务器中开启磁盘热插拔功能，详细信息请参考 [开启磁盘热插拔功能](#modprobeacpiphp)。
@@ -16,9 +16,10 @@
 - 数据盘在制作快照前**必须**已经被格式化为`ntfs`或`fat32`格式。
 - 自定义镜像中的 SAN 策略为`onlineAll`。
  >腾讯云目前提供的 Windows 公有镜像已默认进行相关设置，但仍建议用户在制作自定义镜像前检查下此配置，检查方法如下：
- ![](//mccdn.qcloud.com/static/img/74e490afd81bd7ad9fc9590565b48a80/image.jpg)
+ ![](https://main.qcloudimg.com/raw/edac7337395de380c0ec801646e0a627.png)
 
-
+ 
+ 
 ### 挂载数据盘（Linux）
 若您需要在启动 Linux 云服务器实例时，自动挂载由对应数据盘快照创建的云硬盘，指定的自定义镜像和数据盘快照必须满足以下要求：
 - 数据盘在制作快照前**必须**已经进行格式化，即在源云服务器上已经 mount 成功。
@@ -27,9 +28,9 @@
  mkdir -p <mount-point>
  mount <device-id> <mount-point>
  ```
- 其中，参数说明如下：
- - `<mount-point>`需设置为文件系统的挂载点，例如`/mydata`。
- - `<device-id>`需设置为实际文件分区位置。例如，无分区有文件系统时填写`/dev/vdb`，有分区有文件系统时填写`/dev/vdb1`。
+>
+> - `<mount-point>` 需设置为文件系统的挂载点，例如 `/mydata`。
+> - `<device-id>` 需设置为实际文件分区位置。例如，无分区有文件系统时填写 `/dev/vdb`，有分区有文件系统时填写 `/dev/vdb1`。
 
 ## 手动挂载
 
@@ -65,11 +66,11 @@
  </tr>
  <tr>
  <td nowrap="nowrap">快照容量 < 云硬盘容量 ≤ 2TB<br/>或者<br/>2TB < 快照容量 < 云硬盘容量</td>
-<td><ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a></li></ul></td>
+<td><ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/6737">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a></li></ul></td>
  </tr> 
  <tr>
  <td>快照容量 ≤ 2TB < 云硬盘容量</td>
-<td nowrap="nowrap"><ul><li>若快照中使用 MBR 分区形式：</li>需参考 <a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a>使用 GPT 重新分区，<b>该操作将会删除原有数据</b><li>若快照中使用 GPT 分区形式：<ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a></li></ul></td>
+<td nowrap="nowrap"><ul><li>若快照中使用 MBR 分区形式：</li>需参考 <a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a>使用 GPT 重新分区，<b>该操作将会删除原有数据</b><li>若快照中使用 GPT 分区形式：<ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/6737">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a></li></ul></td>
  </tr> 
  </table>
 
@@ -77,7 +78,6 @@
 您可以使用 AttachDisks 接口创建快照，具体操作请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/16313)。
 
 <span id="modprobeacpiphp"></span>
-
 ### 开启磁盘热插拔功能
 目前提供的所有镜像已经支持弹性云硬盘的挂载/卸载操作。**卸载云硬盘前需先执行`umount`（Linux）或脱机（Windows）操作，否则可能会导致该云服务器再次挂载弹性云硬盘时无法识别。**
 但若您在此时间之前购买了以下操作系统的云服务器并计划为其挂载弹性云硬盘，建议您先在云服务器中添加相关驱动获得热插拔功能。
