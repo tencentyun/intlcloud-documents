@@ -1,5 +1,5 @@
 A complete SMS message consists of **SMS signature** and **SMS body**. You can set different body templates based on your business needs and then combine a signature and a body into the final SMS content: `[SMS signature] SMS body`.
->?Signature is optional for global SMS.
+>Signature is optional for global SMS.
 
 After an SMS signature is submitted, it will be reviewed within two hours generally. Review hours: Monday - Sunday, 9:00 - 23:00 (postponed accordingly in case of public holidays). You can set your mobile number and email address to receive review result notifications.
 
@@ -7,7 +7,7 @@ After an SMS signature is submitted, it will be reviewed within two hours genera
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Global SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
-3. Set the following parameters as needed and according to the [SMS body template review standards](https://cloud.tencent.com/document/product/382/13444#Template):
+3. Set the following parameters as needed and according to the [SMS body template review standards](https://intl.cloud.tencent.com/document/product/382/13444#Template):
  - Template Name: Name of the template for easy identification.
  - SMS Type: The type of SMS that will be sent with this body template. Enterprise users can choose **Regular SMS** or **Marketing SMS**, while individual users can only choose **Regular SMS**.
  - SMS Content: Body content of the SMS with less than 500 characters. Custom content can be configured, but it cannot contain only variables. Variables are in the format of `{number}`, and the numbers must be consecutive. Marketing SMS must contain an option for unsubscribing, such as `Reply with T to unsubscribe`.
