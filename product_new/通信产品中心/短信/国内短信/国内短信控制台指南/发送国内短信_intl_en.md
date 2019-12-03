@@ -1,7 +1,7 @@
 ## Prerequisites
 
 - The SMS signature and body template have been approved.
-- A sufficient package has been [purchased](https://cloud.tencent.com/document/product/382/18060).
+- A sufficient package has been purchased.
 
 ## Directions
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
@@ -24,7 +24,7 @@
 	     <td>Example: Test company A <br>Instructions: Please enter the first custom variable content according to the body template, i.e., replacing {1} in the template. </td>   
 	     <td>Example: Server B <br>Instructions: Please enter the second custom variable content according to the body template, i.e., replacing {2} in the template. </td>      
 	     <td>……</td>        
-	     <td>Example: 100 CNY <br>Instructions: Please enter the Nth custom variable content according to the body template, i.e., replacing {N} in the template. </td>  
+	     <td>Example: 100 USD <br>Instructions: Please enter the Nth custom variable content according to the body template, i.e., replacing {N} in the template. </td>  
      </tr> 
 </table>
  - Application: Select the application that needs to send the SMS. 
@@ -39,4 +39,4 @@ You can view the SMS delivery result in the following ways:
 - Select **Statistics** > **Mainland China SMS** and you can filter and view the statistics and relevant analysis of Mainland China SMS by application, signature, body template, and time.
 
 ## Related documentation
-You can also send SMS via APIs or SDKs. For more information, see [API documentation](https://cloud.tencent.com/document/product/382/13297#.E7.9F.AD.E4.BF.A1-api) or [SDK documentation](https://cloud.tencent.com/document/product/382/5804).
+You can also send SMS via APIs or SDKs. For more information, see [API documentation](https://intl.cloud.tencent.com/document/product/382/13297#.E7.9F.AD.E4.BF.A1-api) or [SDK documentation](https://intl.cloud.tencent.com/document/product/382/32991).
