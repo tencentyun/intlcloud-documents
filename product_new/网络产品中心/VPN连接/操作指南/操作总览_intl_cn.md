@@ -5,7 +5,4 @@
 - [设置告警](https://intl.cloud.tencent.com/document/product/1037/32699)
 - [查看 VPN 网关详细信息](https://intl.cloud.tencent.com/document/product/1037/32700)
 - [修改 VPN 通道配置](https://intl.cloud.tencent.com/document/product/1037/32701)
-- [开启网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32702)
-- [设置网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32703)
-- [查看网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32704)
 - [绑定高防包](https://intl.cloud.tencent.com/document/product/1037/32705)
