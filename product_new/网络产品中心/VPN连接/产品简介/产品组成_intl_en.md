@@ -41,7 +41,7 @@ The mappings are as follows:
 The four mappings cannot overlap. In other words, at least one IP address in the local IP range and the customer IP range must be different.
 - If a new mapping 10.0.0.0/24-----192.168.1.0/24 is added, it cannot be added to the SPD rules because it overlaps with an existing mapping.
 - If a new mapping 10.0.1.0/24-----192.168.1.0/24 is added, it can be added to the SPD rules because it does not overlap with the all the existing mappings.
-![](//mccdn.qcloud.com/static/img/5b32174d312e31c5b5a9162a50456de8/image.png)
+![](https://main.qcloudimg.com/raw/802efcd114423a1d07cbc058c5b062ca.png)
 
 ### IKE Configuration
 <style> table th:first-of-type { width: 150px; } </style>
