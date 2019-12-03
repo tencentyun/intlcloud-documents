@@ -29,4 +29,4 @@
 如果检查结束后仍无法解决您的问题，请 [提交工单](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=168&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%20VPC) 与我们联系。
 
 ### 是否可以通过 VPN 连接访问 Internet？
-不可以。腾讯云 VPN 连接产品在国家相关政策法规下提供服务，VPN 网关仅提供接入 VPC 的功能，不提供访问 Internet 功能。
+不可以。VPN 网关仅提供接入 VPC 的功能，不提供访问 Internet 功能。
