@@ -3,5 +3,5 @@
 2. 在左侧目录中单击【子网】，选择私有网络所在的地域和私有网络，单击子网 A 所关联的路由表 ID，进入详情页。
 3. 单击【+ 新增路由策略】。
 4. 在弹出框中，输入目的端网段（`10.0.1.0/24`），下一跳类型选择【VPN 网关】，下一跳选择刚创建的 VPN 网关 `TomVPNGw`。
- ![](https://main.qcloudimg.com/raw/e0d5d841e0fca5cd1c4cdeeeefd5e23a.png)
+ ![](https://main.qcloudimg.com/raw/9fbd44b9fdce36765ce2f086bfdaead9.png)
 5. 单击【确定】即可。
