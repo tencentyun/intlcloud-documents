@@ -1,7 +1,7 @@
 You need to perform several steps to make a VPN connection effective. Then you can configure the IPsec VPN on the console in a self-service manner. An example is described below.
 ## Example
 Use an IPsec VPN connection to connect subnet A `192.168.1.0/24` in your VPC (TomVPC) in **Guangzhou** to the subnet `10.0.1.0/24` in your IDC. The public IP address of the VPN gateway in your IDC is `202.108.22.5`.
-![](//mc.qcloudimg.com/static/img/0cfc46cf11e4d53164219b1c386509a1/1.png)
+![](https://main.qcloudimg.com/raw/a0ad82287cdaf9fae922e0c59fed99ba.png)
 ## Directions
 The flowchart of activating the VPN connection is shown below:
 ![](https://main.qcloudimg.com/raw/8f017e7278462b27bf2aae995e6c280a.png)
