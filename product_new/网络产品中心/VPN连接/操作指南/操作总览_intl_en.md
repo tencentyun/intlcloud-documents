@@ -5,7 +5,4 @@ This document describes the common operations for using VPN connections and rela
 - [Setting Alarms](https://intl.cloud.tencent.com/document/product/1037/32699)
 - [Viewing the Details of a VPN Gateway](https://intl.cloud.tencent.com/document/product/1037/32700)
 - [Modifying VPN Tunnel Configurations](https://intl.cloud.tencent.com/document/product/1037/32701)
-- [Enabling Gateway Traffic Monitor and Control](https://intl.cloud.tencent.com/document/product/1037/32702)
-- [Setting Gateway Traffic Monitor and Control](https://intl.cloud.tencent.com/document/product/1037/32703)
-- [Viewing Gateway Traffic Monitor and Control](https://intl.cloud.tencent.com/document/product/1037/32704)
 - [Binding an Anti-DDoS Pro Instance](https://intl.cloud.tencent.com/document/product/1037/32705)
