@@ -3,7 +3,7 @@ Cloud Block Storage（CBS）를 사용하여 스냅샷을 생성함으로써, �
 CBS는 어떠한 상태에서도 스냅샷을 생성할 수 있지만, 현재 시점에서 이미 입력된 데이터만 스냅샷으로 저장할 수 있습니다. 만약 애플리케이션 프로그램이나 프로세스가 데이터를 입력 중인 경우, 이 부분의 데이터는 해당 시점에 작성된 스냅샷에 저장되지 않을 수 있습니다. 실제 서비스 상황에 따라, 모든 입력을 잠시 중지한 후 스냅샷을 즉시 생성하는 경우와 클라우드 서버에서 CBS를 먼저 [언마운트](https://intl.cloud.tencent.com/document/product/362/32400)하여 스냅샷을 생성한 후, 다시 [마운트](https://intl.cloud.tencent.com/zh/document/product/362/32401)하여 완전한 스냅샷 데이터를 획득하는 경우에 선택할 수 있습니다.
 
 ## 전제 조건
-- [CBS 생성]에 성공한 경우(https://intl.cloud.tencent.com/document/product/362/5744)
+- [CBS 생성](https://intl.cloud.tencent.com/document/product/362/5744)에 성공한 경우
 - 현재 리전 내의 스냅샷 수와 총 용량이 최댓값이 아닌 경우. 자세한 내용은 [스냅샷 할당량 제한](https://intl.cloud.tencent.com/document/product/362/5754#Constraint)을 참고하십시오.
 
 ## 주의사항
