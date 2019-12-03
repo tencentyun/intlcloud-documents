@@ -24,7 +24,7 @@
 	     <td>Example: Test company A <br>Instructions: Please enter the first custom variable content according to the body template, i.e., replacing {1} in the template. </td>   
 	     <td>Example: Server B <br>Instructions: Please enter the second custom variable content according to the body template, i.e., replacing {2} in the template. </td>      
 	     <td>……</td>        
-	     <td>Example: 100 CNY <br>Instructions: Please enter the Nth custom variable content according to the body template, i.e., replacing {N} in the template. </td>  
+	     <td>Example: 100 USD <br>Instructions: Please enter the Nth custom variable content according to the body template, i.e., replacing {N} in the template. </td>  
      </tr> 
 </table>
  - Application: Select the application that needs to send the SMS. 
