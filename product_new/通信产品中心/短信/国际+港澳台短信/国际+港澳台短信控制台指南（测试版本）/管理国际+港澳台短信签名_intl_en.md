@@ -6,13 +6,13 @@ After a SMS signature is submitted, it will be reviewed within two hours general
 ## Creating a signature
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Global SMS** > **Signature Management** on the left sidebar and click **Create a Signature**.
-3. Set the following parameters as needed and according to the [SMS signature review standards](https://cloud.tencent.com/document/product/382/13444#Sign):
+3. Set the following parameters as needed and according to the [SMS signature review standards](https://intl.cloud.tencent.com/document/product/382/13444):
  - Signature Type: Type of the SMS signature.
  Enterprise users can choose **Company**, **App**, **Website**, **Official Account/Mini Program**, **Trademark**, or **Government/public institution/other**.
  Individual users can choose **App**, **Website**, or **Official Account/Mini Program**.
  - Signature Purpose: Purpose of the SMS signature. You can choose **For self-use** (the signature is a company name, website, product name, or something else verified under the current account) or **For others** (the signature is a company name, website, product name, or something else verified under other accounts).
  - Signature Content: Actual content of the SMS signature. There is no need to enter \[], such as `Tencent Cloud`.
- - Certificate Type: Type of qualification certificate for applying for SMS signature. For more information, see [SMS Signature Review Standards](https://cloud.tencent.com/document/product/382/13444#Sign).
+ - Certificate Type: Type of qualification certificate for applying for SMS signature. For more information, see [SMS Signature Review Standards](https://intl.cloud.tencent.com/document/product/382/13444).
  - Certificate Upload: Upload the photo or scan of the corresponding certificate according to the selected **Certificate Type**. Images in .jpg or .png format of less than 5 MB in size are supported.
  - Authorization: This parameter appears only if the **Signature Purpose** is set to "For others".
     i. Download and fill out the [authorization letter](http://attachment-1252075342.cosgz.myqcloud.com/%E6%8E%88%E6%9D%83%E5%A7%94%E6%89%98%E4%B9%A6.docx), where the authorized party must be entered as the full name of the individual/organization verified under the current Tencent Cloud account, and the authorizing party must be entered as the full name of the entity to whom the signature belongs.
