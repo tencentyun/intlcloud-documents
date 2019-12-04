@@ -336,6 +336,5 @@ Sample code is as follows:
 // Obtaining a token
 XGPushConfig.getToken(getApplicationContext());
 ```
-![](https://main.qcloudimg.com/raw/854020af14428df9972629e7dbbee55f.png)
 
 
