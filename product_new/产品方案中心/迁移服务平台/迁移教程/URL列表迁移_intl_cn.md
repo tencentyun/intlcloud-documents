@@ -30,6 +30,7 @@ MSP将通过公网拉取URL中的数据保存到腾讯云对象存储，源厂�
 
  
 > **说明:**
+
 > 迁移服务也可以使用主账号操作，但是出于安全考虑，建议新建子用户并使用子用户API密钥进行迁移，迁移完成后删除。
 
  
@@ -53,12 +54,12 @@ MSP将通过公网拉取URL中的数据保存到腾讯云对象存储，源厂�
 3. 设置要迁移的文件来源。
     此处迁移源服务提供商应选择URL列表。MSP支持本地上传URL列表文件和添加URL列表文件下载地址两种方式。如果文件记录数较多，URL列表文件较大，浏览器上传可能会超时，建议先将URL列表文件保存到COS，选择【提供URL列表文件下载地址】，填写此文件的COS URL访问地址。文件列表请在txt文件中请按行列出。
 
-例如：
+    例如：
 
-http://xxx.xxx.xxx/xxx/l.jpg
- Http://xxx.xxx.xxx/xxx/xxx/xxxxxx/test.mp4
+    http://xxx.xxx.xxx/xxx/l.jpg
+    Http://xxx.xxx.xxx/xxx/xxx/xxxxxx/test.mp4
 
-![img](https://main.qcloudimg.com/raw/a8dc0fe937ee2337420b153db8d17bfd.png)
+    ![img](https://main.qcloudimg.com/raw/a8dc0fe937ee2337420b153db8d17bfd.png)
 
 4. 设置任务执行时间。
 
