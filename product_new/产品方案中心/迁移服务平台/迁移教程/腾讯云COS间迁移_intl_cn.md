@@ -12,7 +12,7 @@
 
 创建目标存储空间：
 
-创建目标存储空间，用于存放迁移的数据。详情请参见[创建存储桶](https://cloud.tencent.com/document/product/436/6232)。
+创建目标存储空间，用于存放迁移的数据。详情请参见[创建存储桶](https://cloud.tencent.com/document/product/436/13309)。
 
 创建用于迁移的子用户并授予相关权限：
 
@@ -30,7 +30,8 @@
 
  
 
-**说明：迁移服务也可以使用主账号操作，但是出于安全考虑，建议新建子用户并使用子用户API密钥进行迁移，****迁移完成后删除。**
+> **说明：
+> 迁移服务也可以使用主账号操作，但是出于安全考虑，建议新建子用户并使用子用户API密钥进行迁移，****迁移完成后删除。**
 
  
 
@@ -48,19 +49,19 @@
 
 2. 设置迁移任务名称。
     此处设置的名称，将用于在任务列表中查看迁移状态和迁移进度。
-    ![图片包含 屏幕截图  描述已自动生成](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+    ![img](https://main.qcloudimg.com/raw/81725decffbebf4467b1f9c9b2abfb35.png)
 
 3. 设置要迁移的文件来源。
     此处迁移源服务提供商应选择腾讯云COS，并在下方AccessKey，SecretKey文本框中输入先前新建用于迁移的腾讯云子用户SecretId，SecretKey。源对象存储桶列表可在填入密钥后点击下拉框右侧刷新按钮获取。
-    ![图片包含 屏幕截图  描述已自动生成](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png)
+    ![img](https://main.qcloudimg.com/raw/424733ad9c344d826fd99b80f65f1c52.png)
 
 4. 选择文件存储方式。
     根据迁移的需求，设定迁移后文件的存储方式，可以选择：标准存储、低频存储、保持原存储属性。
-    ![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+    ![img](https://main.qcloudimg.com/raw/2f1136773cd9168f914d541e70ec1280.png)
 
 5. 选择 Header 设置。
     如果源桶中的文件设定了 Header/Tag 并且需要在迁移后保留，请选择保留或设置替换规则。
-    ![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image007.jpg)
+    ![img](https://main.qcloudimg.com/raw/60aa2765c97949d494adf96539c7908b.png)
 
 6. 设定迁移规则。
     选择对指定桶中的全部文件进行迁移，或仅迁移指定前缀的文件。
@@ -70,34 +71,31 @@
 
 8. 设定最高并发数。
     各公有云厂商的对象存储都有最高并发限制。为确保业务稳定，请在迁移前与源厂商确认并设置最高迁移可用 QPS。
-    ![图片包含 屏幕截图  描述已自动生成](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image009.jpg)
+    ![img](https://main.qcloudimg.com/raw/6da4e7afa74b5acab93ca7b6add64d12.png)
 
 9. 选择要迁移到的目标位置。
     在迁移目标信息中，输入用于迁移的腾讯云子用户SecretId，SecretKey。目标对象存储桶列表可在填入密钥后点击下拉框右侧刷新按钮获取。
-    ![图片包含 屏幕截图  描述已自动生成](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image011.jpg)
+    ![img](https://main.qcloudimg.com/raw/8762d73cf54b28226a544b0b1a6ceab9.png)
 
 10. 指定迁移到目标桶的指定目录。
 
-o  **保存到根目录**： 直接将源桶中的文件按原始相对路径保存到目标桶的根目录。
+   - 保存到根目录： 直接将源桶中的文件按原始相对路径保存到目标桶的根目录。
 
-o  **保存到指定目录**：将源桶中的文件保持原始相对路径保存到指定目录中。
- ![图片包含 屏幕截图  描述已自动生成](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image013.jpg)
- 例如：
- 源桶中的文件/a.txt，/dir/b.txt两个文件，文本框中填写“dest”，那么迁移后这两个文件在目标桶中的路径为：/dest/a.txt，/dest/dir/b.txt。
- 如果文本框中填写dest/20180901，那么迁移后这两个文件在目标桶中的路径为：/dest/20180901/a.txt，/dest/20180901/dir/b.txt。
+   - 保存到指定目录**：将源桶中的文件保持原始相对路径保存到指定目录中。
+   ![img](https://main.qcloudimg.com/raw/a35ef5e7a5c98af31203766945684e86.png)
+   例如：
+   源桶中的文件/a.txt，/dir/b.txt两个文件，文本框中填写“dest”，那么迁移后这两个文件在目标桶中的路径为：/dest/a.txt，/dest/dir/b.txt。
+   如果文本框中填写dest/20180901，那么迁移后这两个文件在目标桶中的路径为：/dest/20180901/a.txt，/dest/20180901/dir/b.txt。
 
- 
 
-**注意：**
-
-**若迁移源与目标源有内容不同，名称相同的文件，建议在【同名文件】配置处选择【跳过（保留目标桶中已有的同名文件）】，系统默认选择【覆盖（源桶中的文件会覆盖目标桶中的同名文件）】。**
-
-**若在迁移过程中对象（文件）内容有变化，需要进行二次迁移。**
+   > **注意：**
+   >- 若迁移源与目标源有内容不同，名称相同的文件，建议在【同名文件】配置处选择【跳过（保留目标桶中已有的同名文件）】，系统默认选择   【覆盖（源桶中的文件会覆盖目标桶中的同名文件）】。**
+   >- 若在迁移过程中对象（文件）内容有变化，需要进行二次迁移。**
 
 11. 选择迁移模式。
 
-o  **新建迁移任务后手动下载 Agent 启动迁移**：选择 Agent 模式迁移，用户在单击“新建并启动”后，将仅创建任务配置，需要用户手动下载 Agent 在迁移源一侧的服务器上部署之后才会正式启动迁移。Agent 模式适用于已有专线希望通过专线迁移的场景。
- ![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image015.jpg)
+**新建迁移任务后手动下载 Agent 启动迁移**：选择 Agent 模式迁移，用户在单击“新建并启动”后，将仅创建任务配置，需要用户手动下载 Agent 在迁移源一侧的服务器上部署之后才会正式启动迁移。Agent 模式适用于已有专线希望通过专线迁移的场景。
+ ![img](https://main.qcloudimg.com/raw/36ca6e5fc6b7a6e23b21d8ce0015a217.png)
 
 ## 4. 预估文件迁移时间
 
