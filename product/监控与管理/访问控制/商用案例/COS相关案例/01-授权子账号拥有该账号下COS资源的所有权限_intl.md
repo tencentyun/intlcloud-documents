@@ -8,14 +8,15 @@ Solution B:
 
 Step 1: Create the following policy using policy syntax
 ```
- {
+{
     "version": "2.0",
-    "statement":
+    "statement":[
      {
          "effect": "allow",
          "action": "cos:*",
          "resource": "*"
      }
+   ]
 }
 ```
 
