@@ -84,9 +84,9 @@ MSP provides a QPS limit for object storage mode and a bandwidth limit for URL l
 
 `[root@VM_10_12_centos ~]`*# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000*
 
+
 > **Note:**
 >- n eth0 is the SN of the ENI, which is obtained in Step 1.
-
 >- n If you need to limit the speed to 10 Mbit, change 50 kbit to 10 Mbit.
 
 5. Run the following command to check whether the download speed is limited.
