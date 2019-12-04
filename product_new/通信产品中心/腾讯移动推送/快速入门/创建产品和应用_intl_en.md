@@ -1,37 +1,48 @@
-# Creating products and applications
-## Going to the console
-Log in to [TPNS Console](https://console.cloud.tencent.com/tpns). To register an account, see [Account registration tutorial](https://intl.cloud.tencent.com/document/product/378/17985).<br>
-## Creating a product
-1. Log in to TPNS Console, and click **Product Management** in the left sidebar.
-2. Enter the **Product Management** page, and click **Add a product**.
-3. Enter the **Add a product** page, enter the product name and product details, and select product type.
-4. Click **Confirm** to create the product.
-![](https://main.qcloudimg.com/raw/ced9a9d3425e553ba777d555d8a1647d.png)
+## Operation scenarios
+This document guides you in how to create products and applications in the TPNS Console.
 
-## Creating a new application
-After creation, go to the newly created product. Click **Add an application**. Each platform limits the creation of one application. After all three platforms have application created, no new application can be added. Create an application according to the following guidelines.<br>
+## Prerequisites
+You have a Tencent Cloud account. For details, see the [Sign Up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) tutorial.
 
 
-### Android application creation steps:
-1. Enter the application package name.<br>
-2. Configure third-party channels (optional).<br>
-3. Click **Confirm** to complete creation.<br>
 
-![](https://main.qcloudimg.com/raw/3e9f12e664c647ad05f37c1c5c77e7f4.png)
+## Directions
+### Creating a product
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns), and click **Product Management** in the left sidebar.
+2. Enter the **Product Management** page, and click **Add a Product**.
+3. Enter the **Add a Product** page, and enter the product name and product details. Select the product type, and add any additional information such as the enterprise name and contact method.
+4. Click **OK** to create the product.
+![](https://main.qcloudimg.com/raw/5287576e5f84d3d76defb12ae488c63b.png)
 
-### iOS application creation steps:
-1. Click **Confirm** and upload the certificate.<br>
-2. Upload the certificate with the “.p12” suffix.<br>
-3. Enter the certificate password.<br>
-4. Click **Confirm** to complete creation.
 
-![](https://main.qcloudimg.com/raw/dcbf620941c57f895b6f3c4c998df6ab.png)<br>
-### macOS application creation steps:
-1. Click **Confirm** and upload the certificate.<br>
-2. Upload the developer environment certificate and enter the certificate password.<br>
-3. Upload the production environment certificate and enter the certificate password.<br>
-4. Click **Confirm** to complete creation.<br>
+## Creating an application
+After you create a product, you can follow these instructions to create an application. Only one application can be created per platform. After applications have been created for all three platforms, no new applications can be created.
+#### Android applications
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns), and select **Application Management** > **Application List** in the left sidebar.
+2. Enter the **Application List** page, and select the product you have created. Click **Create an Application**.
+3. Enter the **Create an Application** page, enter the application name, and check off the platform **Android**.
+4. Enter the application package name, and configure a third-party channel (optional).
+![](https://main.qcloudimg.com/raw/760969260ae6bda7b55a82adb5d2f76b.png)
+5. After entering all needed information, click **OK** to create the Android application.
 
-![](https://main.qcloudimg.com/raw/f3d16d58cda32b5e9e87768638137d97.png)
+
+
+#### iOS applications
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns), and select **Application Management** > **Application List** in the left sidebar.
+2. Enter the **Application List** page, and select the product you have created. Click **Create an Application**.
+3. Enter the **Create an Application** page, enter the application name, and check off the platform **iOS**. Then click **OK and Upload Certificate**.
+![](https://main.qcloudimg.com/raw/6d3601fe62081955cb575aec267289b6.png)
+4. Enter the **Edit Application** page, and enter the Bundle ID and push certificate password. Click **Upload Certificate** and upload a certificate file with a “.p12” suffix. For more information, see [iOS Push Certificates](https://cloud.tencent.com/document/product/548/36664).
+![](https://main.qcloudimg.com/raw/c93ef2fa5c51e6a98ee1fba98fd27eb9.png)
+5. Click **OK** to create the iOS application.
+
+#### macOS applications
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns), and select **Application Management** > **Application List** in the left sidebar.
+2. Enter the **Application List** page, and select the product you have created. Click **Create an Application**.
+3. Enter the **Create an Application** page, enter the application name, and check off the platform **macOS**. Then click **OK and Upload Certificate**.
+![](https://main.qcloudimg.com/raw/035516a4f5179f315090e2afd41e08d1.png)
+4. Enter the **Edit Application** page, and enter the Bundle ID and push certificate password. Click **Upload Certificate** and separately upload the macOS developer environment certificate and the production environment certificate. For more information, see [macOS Push Certificates](https://cloud.tencent.com/document/product/548/37095).
+![](https://main.qcloudimg.com/raw/0237161819b29ef2b38f02aa3b270106.png)
+5. Click **OK** to create the macOS application.
 
 
