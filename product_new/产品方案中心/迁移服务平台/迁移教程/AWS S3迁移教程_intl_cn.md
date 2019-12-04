@@ -87,7 +87,6 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
 >**说明:** 
-
    >- n eth0 为网卡序号，由第1步查看网卡获取。
    >- n 如果需要限速10M，则将50kbit改为10Mbit。
 
