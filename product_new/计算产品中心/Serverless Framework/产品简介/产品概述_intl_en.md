@@ -2,7 +2,7 @@ Well-received in the industry, Serverless Framework allows you to deploy a compl
 
 Serverless Framework is a standardized, component-based serverless application development product. See below for its structure: 
 
-![Serverless Framework structure](https://main.qcloudimg.com/raw/2c5d24285f2ea19151635d0352dc2a20.png)
+![Serverless Framework structure](https://main.qcloudimg.com/raw/30d9772cd859cfa24c14289098435c71.png)
 
 ## Features
 #### Application-level framework
@@ -15,4 +15,4 @@ When you deploy an application, Serverless Framework will automatically deploy a
 #### One-stop experience
 Serverless Framework enables you to quickly create, debug, and deploy a serverless application, as well as to monitor its running status after launch and troubleshoot errors with speed.
 It provides a wide variety of components at the serverless application level. To develop a serverless application, you only need to select and download components that fit your business scenario and write personalized business logic while leaving underlying resources aside.
-![](https://main.qcloudimg.com/raw/f4f0af702e134982fd5ef068c31a070e.svg)
+![](https://main.qcloudimg.com/raw/67654c7514781d218743eac85089e487.png)
