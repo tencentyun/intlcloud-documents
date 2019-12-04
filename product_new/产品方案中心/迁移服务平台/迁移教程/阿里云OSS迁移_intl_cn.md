@@ -148,13 +148,13 @@ secret_key = '此处填写腾讯云 API 密钥 SecretKey'
 Agent 会定时自动从 MSP 平台获取任务的详细配置信息，如果创建多个迁移任务无需重复启动 Agent。
 
 5. 扩充迁移集群（增加 Worker 服务器）。
-    Agent 模式支持分布式迁移（多服务器协同），如果希望进一步提高迁移速度，在有可用带宽的情况下可以增加 Worker 服务器加入到迁移：
+   Agent 模式支持分布式迁移（多服务器协同），如果希望进一步提高迁移速度，在有可用带宽的情况下可以增加 Worker 服务器加入到迁移：
 
-  - Worker 服务器必须与 master 服务器互通。
-
-  - 如果使用专线迁移，需要确保 Worker 服务器可通过专线直接访问 COS。
-  Worker 服务器可以是任意配置，但建议与 master 保持一致。部署和启动 Agent 的方式与 master 服务器完全相同（同样需要修改 agent.toml 中的 secret_id 和 secret_key），因新建任务的时候已经指定了 master 服务器，新加入的 agent 均被作为 Worker 节点与 master 服务器通信获得任务。
-  Worker 服务器可以随时加入迁移集群，但建议创建任务之前将所有的 Worker 服务器与 master 一同创建并配置和启动 Agent，以便 master 启动任务时可以更有效的进行分片调度。
+   - Worker 服务器必须与 master 服务器互通。
+   - 如果使用专线迁移，需要确保 Worker 服务器可通过专线直接访问 COS。
+   
+   Worker 服务器可以是任意配置，但建议与 master 保持一致。部署和启动 Agent 的方式与 master 服务器完全相同（同样需要修改 agent.toml 中的 secret_id 和 secret_key），因新建任务的时候已经指定了 master 服务器，新加入的 agent 均被作为 Worker 节点与 master 服务器通信获得任务。
+   Worker 服务器可以随时加入迁移集群，但建议创建任务之前将所有的 Worker 服务器与 master 一同创建并配置和启动 Agent，以便 master 启动任务时可以更有效的进行分片调度。
 
 ## 5. 预估文件迁移时间
 
