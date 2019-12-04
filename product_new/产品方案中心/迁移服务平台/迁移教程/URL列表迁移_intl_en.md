@@ -89,7 +89,8 @@ Note: You can use Migration Service Platform (MSP) with your root account. Howev
       >- If the object (file) content is changed during migration, you need to migrate again.
 
 8. Select a migration mode.
-  **Create a migration task and download the Agent manually to start migration**: Select Agent mode migration. After you click **Create and Start**, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to launch the migration. Agent mode is applicable to scenarios where you want to migrate through an existing Direct Connect.
+
+    **Create a migration task and download the Agent manually to start migration**: Select Agent mode migration. After you click **Create and Start**, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to launch the migration. Agent mode is applicable to scenarios where you want to migrate through an existing Direct Connect.
  ![img](https://main.qcloudimg.com/raw/e85e26eab8ff54c2512dcf9e75c0d35b.png)
 
 ## Estimating the File Migration Duration
