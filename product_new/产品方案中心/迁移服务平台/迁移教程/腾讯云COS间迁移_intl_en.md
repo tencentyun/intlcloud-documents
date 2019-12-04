@@ -48,19 +48,19 @@ Create a sub-user for migration and grant the required permissions:
 
 2. Set the migration task name.
     The name that is set will be used in the task list to view the status and extent of the migration.
-    ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+    ![Image](https://main.qcloudimg.com/raw/81725decffbebf4467b1f9c9b2abfb35.png)
 
 3. Set the file source to be migrated.
     Here, Tencent Cloud COS should be selected as the migration source service provider, and then the SecretID and SecretKey of the Tencent Cloud sub-user created for migration should be entered in the AccessKey and SecretKey text boxes. The source COS bucket list can be obtained by clicking the refresh button on the right side of the drop-down list after the key has been entered.
-    ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png)
+    ![Image](https://main.qcloudimg.com/raw/424733ad9c344d826fd99b80f65f1c52.png)
 
 4. Select the file storage mode.
     Set the post-migration file storage mode according to the requirements of migration. You can select the following: standard storage, standard_IA storage, and keep original storage attributes.
-    ![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+    ![img](https://main.qcloudimg.com/raw/2f1136773cd9168f914d541e70ec1280.png)
 
 5. Select the Header setting.
     If the file of the source bucket has Header/Tag set and this needs to be retained after migration, select to keep the source headers or set the replacement rule.
-    ![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image007.jpg)
+    ![img](https://main.qcloudimg.com/raw/60aa2765c97949d494adf96539c7908b.png)
 
 6. Set the migration rule.
     Choose to migrate all the files of the specified bucket, or only migrate files with a specified prefix.
@@ -70,18 +70,18 @@ Create a sub-user for migration and grant the required permissions:
 
 8. Set the maximum concurrency number.
     All the object storage services of each public cloud vendor have maximum concurrency restrictions. To ensure business stability, check with the source vendor and set the maximum available migration QPS before migrating.
-    ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image009.jpg)
+    ![Image](https://main.qcloudimg.com/raw/6da4e7afa74b5acab93ca7b6add64d12.png)
 
 9. Select the migration destination.
     In the migration destination information, enter the SecretID and SecretKey of the Tencent Cloud sub-user. The destination COS bucket list can be obtained by clicking the refresh button on the right side of the drop-down list after the key has been entered.
-    ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image011.jpg)
+    ![Image](https://main.qcloudimg.com/raw/8762d73cf54b28226a544b0b1a6ceab9.png)
 
 10. Specify the specified directory for migration to the destination bucket.
 
 o  **Save to the root directory**: Directly save the files in the source bucket to the destination bucket’s root directory, maintaining the original relative path.
 
 o  **Save to a specified directory**: Save the files in the source bucket to the specified directory, maintaining the original relative path.
- ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image013.jpg)
+ ![Image](https://main.qcloudimg.com/raw/a35ef5e7a5c98af31203766945684e86.png)
  For example:
  Source bucket files /a.txt, /dir/b.txt (two files). **dest** is entered in the text box. In this case, after migration, the paths of these two files in the destination bucket are: /dest/a.txt, /dest/dir/b.txt.
  If **dest/20180901** is entered in the text box, then after migration, the paths of these two files in the destination bucket are: /dest/20180901/a.txt, /dest/20180901/dir/b.txt.
@@ -97,7 +97,7 @@ o  **Save to a specified directory**: Save the files in the source bucket to the
 11. Select a migration mode.
 
 o  **Create a migration task and download the Agent manually to start migration**: Select Agent mode migration. After you click **Create and Start**, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to officially launch the migration. Agent mode is applicable to scenarios where there is an existing Direct Connect, and you want to perform migration by using the Direct Connect.
- ![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image015.jpg)
+ ![img](https://main.qcloudimg.com/raw/36ca6e5fc6b7a6e23b21d8ce0015a217.png)
 
 ## Estimating the File Migration Duration
 
