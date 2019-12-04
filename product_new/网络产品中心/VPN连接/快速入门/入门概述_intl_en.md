@@ -4,7 +4,7 @@ Use an IPsec VPN connection to connect subnet A `192.168.1.0/24` in your VPC (To
 ![](https://main.qcloudimg.com/raw/a0ad82287cdaf9fae922e0c59fed99ba.png)
 ## Directions
 The flowchart of activating the VPN connection is shown below:
-![](https://main.qcloudimg.com/raw/8f017e7278462b27bf2aae995e6c280a.png)
+![](https://main.qcloudimg.com/raw/1aa819dbe82889063db1afc22ec7097e.png)
 For details about the steps, click the following links:
 - [Step 1: Create a VPN gateway](https://intl.cloud.tencent.com/document/product/1037/32690)
 - [Step 2: Create a customer gateway](https://intl.cloud.tencent.com/document/product/1037/32691)
