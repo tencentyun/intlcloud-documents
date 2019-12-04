@@ -1,4 +1,4 @@
-The enterprise account CompanyGranter (ownerUin is 12345678 and appId is 8000001) has an object Object1 located in the directory dir1 of the Bucket1 in Guangzhou region. And the sub-account of another enterprise account CompanyGrantee (ownerUin is 87654321) requires the read/write permission of Object1 above.
+The enterprise account CompanyGranter (ownerUin is 12345678 and appId is 1250000000) has an object Object1 located in the directory dir1 of the Bucket1 in Guangzhou region. And the sub-account of another enterprise account CompanyGrantee (ownerUin is 87654321) requires the read/write permission of Object1 above.
 
 Here involves permission propagation.
 
@@ -6,12 +6,13 @@ Step 1: Enterprise account CompanyGrantee creates the following policy using pol
 ```
  {
     "version": "2.0",
-    "statement":
+    "statement":[
      {
          "effect": "allow",
          "action": "cos:*",
-         "resource": "qcs::gz:cvm:uid/8000001:prefix//8000001/Bucket1/dir1/Object1"
+         "resource": "qcs::cos:ap-shanghai:uid/1250000000:Bucket1-1250000000/dir1/Object1"
      }
+    ]
 }
 ```
 

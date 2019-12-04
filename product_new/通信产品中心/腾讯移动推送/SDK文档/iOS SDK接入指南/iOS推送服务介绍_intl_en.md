@@ -16,7 +16,7 @@ To push messages to iOS devices, TPNS only uses the APNs channel. We currently d
 
 
 
-***### Version Notes
+### Version Notes
 
 - iOS 6.0+ supported;
 - For iOS 10.0+:

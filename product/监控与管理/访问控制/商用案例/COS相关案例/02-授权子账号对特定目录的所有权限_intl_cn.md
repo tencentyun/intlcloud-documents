@@ -1,6 +1,6 @@
 ### 授权子账号对特定目录的所有权限
 
-企业帐号CompanyExample（ownerUin为12345678,appId为8000001）下有一个子账号 Developer，该子账号需要拥有对企业帐号CompanyExample的 COS 服务的上海地域名为 Bucket1 的存储桶的 dir1 目录的完全访问权限。
+企业帐号CompanyExample（ownerUin为12345678,appId为1250000000）下有一个子账号 Developer，该子账号需要拥有对企业帐号CompanyExample的 COS 服务的上海地域名为 Bucket1 的存储桶的 dir1 目录的完全访问权限。
 
 方案A：
 
