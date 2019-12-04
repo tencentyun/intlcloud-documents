@@ -133,8 +133,8 @@ secret_id = '此处填写腾讯云 API 密钥 AccessKey'
 secret_key = '此处填写腾讯云 API 密钥 SecretKey'
 ```
 
-   iii. 启动 Agent。
-
+   iii. 启动 Agent.
+   
 ```
 # chmod +x ./agent/bin/agent
 # cd agent/bin  //必须在 bin 目录中启动 agent 程序（否则会找不到配置文件）
