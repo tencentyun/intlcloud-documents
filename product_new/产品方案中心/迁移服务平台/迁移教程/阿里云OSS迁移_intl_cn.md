@@ -119,7 +119,7 @@ n 如果需要限速10M，则将50kbit改为10Mbit。
 
 ​      iii.    在“OSS内网EndPoint”部分，填写阿里云对象存储桶的“EndPoint（地域节点）”。
 
-![](https://main.qcloudimg.com/raw/aacc6697dd8a170f0fb946a6be42bb2f.png
+![](https://main.qcloudimg.com/raw/aacc6697dd8a170f0fb946a6be42bb2f.png)
 **注意：**
 
 **若迁移源与目标源有内容不同，名称相同的文件，建议在【同名文件】配置处选择【跳过（保留目标桶中已有的同名文件）】，系统默认选择【覆盖（源桶中的文件会覆盖目标桶中的同名文件）】。**
