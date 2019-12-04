@@ -35,7 +35,7 @@ Agent 半托管迁移模式中，用户需要手工在源数据云厂商的服�
 
 创建目标存储空间：
 
-创建目标存储空间，用于存放迁移的数据。详情请参见[创建存储桶](https://cloud.tencent.com/document/product/436/6232)。
+创建目标存储空间，用于存放迁移的数据。详情请参见[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
 
 创建用于迁移的子用户并授予相关权限：
 
@@ -119,8 +119,7 @@ n 如果需要限速10M，则将50kbit改为10Mbit。
 
 ​      iii.    在“OSS内网EndPoint”部分，填写阿里云对象存储桶的“EndPoint（地域节点）”。
 
-![图片包含 屏幕截图  描述已自动生成](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png)
-
+![](https://main.qcloudimg.com/raw/aacc6697dd8a170f0fb946a6be42bb2f.png
 **注意：**
 
 **若迁移源与目标源有内容不同，名称相同的文件，建议在【同名文件】配置处选择【跳过（保留目标桶中已有的同名文件）】，系统默认选择【覆盖（源桶中的文件会覆盖目标桶中的同名文件）】。**
