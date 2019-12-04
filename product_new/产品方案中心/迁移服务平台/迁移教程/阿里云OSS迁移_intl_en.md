@@ -35,7 +35,7 @@ Direct Connect preparation:
 
 Create a destination bucket:
 
-Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://cloud.tencent.com/document/product/436/6232).
+Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 Create a sub-user for migration and grant the required permissions:
 
@@ -119,7 +119,7 @@ ii. In the **Master Node Private IP** section, enter the private IP address of t
 
 iii. In the **OSS Private Network EndPoint** section, enter the **EndPoint** (region node) of the object storage bucket.
 
-![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png)
+![Image](https://main.qcloudimg.com/raw/aacc6697dd8a170f0fb946a6be42bb2f.png)
 
 **Note: **
 
