@@ -11,6 +11,4 @@ The advantages of gateway traffic throttling are as follows:
 
 Custom traffic alarms can be set up to enable advance alerting for risks, with alarm messages automatically sent via emails and SMS messages when a metric exceeds its threshold. Both the monitoring and alarm functions are free of charge, enabling you to quickly locate problems once they occur.
 
-- For more information about VPN gateway metrics, see [VPN Gateway Monitoring Metrics](https://cloud.tencent.com/document/product/248/12226).
-- For more information about VPN tunnel metrics, see [VPN tunnel Monitoring Metrics](https://cloud.tencent.com/document/product/248/12225).
-- For more information about how to set alarm policies, see [Setting Alarms](https://cloud.tencent.com/document/product/554/18998).
+- For more information about how to set alarm policies, see [Setting Alarms](https://intl.cloud.tencent.com/document/product/1037/32699).

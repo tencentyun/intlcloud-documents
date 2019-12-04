@@ -2,4 +2,4 @@
 2. 在左侧目录中单击【VPN 连接】>【VPN 网关】，进入管理页。
 3. 单击需要查看的 VPN 网关 ID，即可进入 VPN 网关详情页。
 4. 在该页面中，您可以看到 VPN 网关的详细信息。
- ![](https://main.qcloudimg.com/raw/01fbd2dcee2e8f62408f56947ede1fb8.png)
+ ![](https://main.qcloudimg.com/raw/dd7e278b278798dbe6a9b9c4ea9e7cb9.png)

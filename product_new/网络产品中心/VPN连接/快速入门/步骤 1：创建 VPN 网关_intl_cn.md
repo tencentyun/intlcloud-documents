@@ -2,4 +2,4 @@
 2. 在左侧目录中单击【VPN 连接】>【VPN 网关】，进入管理页。
 3. 选择私有网络所在的地域和私有网络，单击【新建】。
 4. 填写 VPN 网关名称（如：TomVPNGw），选择带宽，单击【创建】即可。VPN 网关创建完成后，系统随机分配公网 IP，如：`203.195.147.82`。
- ![](https://main.qcloudimg.com/raw/7105ed810f642fe1c66adad4d0ea1277.png)
+ ![](https://main.qcloudimg.com/raw/990f568ffc28ef1374a578883fea96f5.png)
