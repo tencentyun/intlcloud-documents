@@ -1,18 +1,17 @@
-### What is ENI?
-- ENI is a virtual network interface. Users can bind a CVM to an ENI to access the network. It is very useful for configuring management networks and establishing highly reliable network solutions.
-- ENI is VPC, availability zone and subnet-specific, and can only be bound to a CVM that resides in the same availability zone as it does. A CVM can be bound with multiple ENIs. The number of ENIs allowed to be bound to a CVM depends on the CVM's specification.
+### What is an ENI?
+- An ENI is a virtual network interface. You can bind a CVM to an ENI for connecting to a network. An ENI is very useful for configuring management networks and developing highly reliable network solutions.
+- An ENI is VPC-, availability zone-, and subnet-specific, and can only be bound to a CVM that resides in the same availability zone as it does. A CVM can be bound with multiple ENIs. The number of ENIs allowed to be bound to a CVM depends on the specification of the CVM.
 
-### What is the difference between a primary ENI and a secondary ENI?
-- A primary ENI is assigned by the system for users, and the information cannot be modified.
-- A secondary ENI is created by users, and the information can be modified.
+### What are the differences between a primary ENI and a secondary ENI?
+- A primary ENI is assigned by the system to users, and its information cannot be modified.
+- A secondary ENI is created by users, and its information can be modified.
 
-### What are the use limits of ENI?
-The number of ENIs that can be bound to a CVM and the number of private IPs that can be bound to each ENI vary greatly depending on CPU and memory configurations. For more details, please see [Use Limits](http://intl.cloud.tencent.com/document/product/576/18527).
+### What are the use limits on ENI?
+The number of ENIs that can be bound to a CVM and the number of private IP addresses that can be bound to each ENI are subject to the CPU and memory configurations of the CVM. For more information, see [Use Limitations](http://intl.cloud.tencent.com/document/product/576/18527).
 
-### What can’t I ping an EIP?
-Typical reasons are:
+### What can I do if an EIP fails to be pinged?
+Common causes for failing to ping through an EIP are as follows:
 
-- Elastic IP is not bound to any cloud product. For binding methods, please see [Binding EIPs to Cloud Products](http://intl.cloud.tencent.com/document/product/213/16586) for details.
-- Security policy is invalid. Users can check whether the security policy ([Security Groups](http://intl.cloud.tencent.com/document/product/213/12452) or [Network ACL](http://intl.cloud.tencent.com/document/product/215/5132)) is effective.
-- Port access is disabled. If the cloud product instance bound to an EIP has security policy, but access to the port is disabled, then the port of the EIP is also inaccessible. For example: If port 8080 is inaccessible, then port 8080 of the EIP is also inaccessible.
-
+- The EIP is not bound to any Tencent Cloud resource. For the binding method, see [Elastic Public IP Addresses](http://intl.cloud.tencent.com/document/product/213/16586).
+- The security policy is invalid. If this is the case, you can check whether the security policy ([Security Groups](http://intl.cloud.tencent.com/document/product/213/12452) or [Network ACL](http://intl.cloud.tencent.com/document/product/215/5132)) is valid.
+- Port access is disabled. If the Tencent Cloud resource that is bound to the EIP has a security policy that disables a port, the same port for the EIP is also inaccessible. For example: If the bound resource disables port 8080, port 8080 for the EIP is also inaccessible.

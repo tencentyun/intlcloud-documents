@@ -1,2 +1,1 @@
-ENI is **free** of charge. For pricing details of VPC products, please see [VPC Billing & Pricing](https://intl.cloud.tencent.com/document/product/215/3079).
-
+An ENI is **free of charge**. For the pricing of more VPC products, see [VPC Billing and Pricing](https://intl.cloud.tencent.com/document/product/215/3079).

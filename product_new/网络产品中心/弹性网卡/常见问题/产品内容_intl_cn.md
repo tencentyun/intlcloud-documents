@@ -7,12 +7,11 @@
 - 辅助网卡是由用户建立的，信息可以修改。
 
 ### 使用弹性网卡有什么约束？
-根据 CPU 和内存配置不同，云服务器可以绑定的弹性网卡数和单网卡绑定内网 IP 数有较大不同，详情请参见 [使用限制](http://intl.cloud.tencent.com/document/product/576/18527)。
+根据 CPU 和内存配置不同，云服务器可以绑定的弹性网卡数和单网卡绑定内网 IP 数有较大不同，详情请参见 [使用限制](https://intl.cloud.tencent.com/document/product/576/18527)。
 
 ### 弹性公网 IP 不通怎么办？
 弹性公网 IP 不通，一般有如下原因：
 
-- 弹性 IP 地址没有绑定云产品。绑定方法的详情请参见 [弹性公网 IP 绑定云产品](http://intl.cloud.tencent.com/document/product/213/16586)。
-- 安全策略无效。用户可以查看安全策略（ [安全组](http://intl.cloud.tencent.com/document/product/213/12452) 或 [网络 ACL](http://intl.cloud.tencent.com/document/product/215/5132) )是否有生效。
+- 弹性 IP 地址没有绑定云产品。绑定方法的详情请参见 [弹性公网 IP 绑定云产品](https://intl.cloud.tencent.com/document/product/213/16586)。
+- 安全策略无效。用户可以查看安全策略（ [安全组](https://intl.cloud.tencent.com/document/product/213/12452) 或 [网络 ACL](https://cloud.tencent.com/document/product/215/5132) )是否有生效。
 - 禁止端口访问。即使绑定的云产品实例有安全策略，但端口被禁止访问，那么弹性公网 IP 的端口也是无法访问的。例如：禁止 8080 端口访问，那么弹性公网 IP 的 8080 端口也是无法访问的。
-
