@@ -78,25 +78,22 @@ Create a sub-user for migration and grant the required permissions:
 
 10. Specify the specified directory for migration to the destination bucket.
 
-o  **Save to the root directory**: Directly save the files in the source bucket to the destination bucket’s root directory, maintaining the original relative path.
+   - Save to the root directory**: Directly save the files in the source bucket to the destination bucket’s root directory, maintaining the original relative path.
 
-o  **Save to a specified directory**: Save the files in the source bucket to the specified directory, maintaining the original relative path.
+   - Save to a specified directory: Save the files in the source bucket to the specified directory, maintaining the original relative path.
  ![Image](https://main.qcloudimg.com/raw/a35ef5e7a5c98af31203766945684e86.png)
- For example:
- Source bucket files /a.txt, /dir/b.txt (two files). **dest** is entered in the text box. In this case, after migration, the paths of these two files in the destination bucket are: /dest/a.txt, /dest/dir/b.txt.
+  For example:
+  Source bucket files /a.txt, /dir/b.txt (two files). **dest** is entered in the text box. In this case, after migration, the paths of these two files in the destination bucket are: /dest/a.txt, /dest/dir/b.txt.
  If **dest/20180901** is entered in the text box, then after migration, the paths of these two files in the destination bucket are: /dest/20180901/a.txt, /dest/20180901/dir/b.txt.
 
- 
 
-**Note: **
-
-**If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.**
-
-**If the object (file) content is changed during migration, you need to migrate again.**
+> If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.**
+> If the object (file) content is changed during migration, you need to migrate again.**
 
 11. Select a migration mode.
 
-o  **Create a migration task and download the Agent manually to start migration**: Select Agent mode migration. After you click **Create and Start**, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to officially launch the migration. Agent mode is applicable to scenarios where there is an existing Direct Connect, and you want to perform migration by using the Direct Connect.
+   - Create a migration task and download the Agent manually to start migration: Select Agent mode migration. After you click 
+  - Create and Start, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to officially launch the migration. Agent mode is applicable to scenarios where there is an existing Direct Connect, and you want to perform migration by using the Direct Connect.
  ![img](https://main.qcloudimg.com/raw/36ca6e5fc6b7a6e23b21d8ce0015a217.png)
 
 ## Estimating the File Migration Duration
