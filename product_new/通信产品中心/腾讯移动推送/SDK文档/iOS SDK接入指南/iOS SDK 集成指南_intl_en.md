@@ -1,43 +1,35 @@
-# iOS Integration Guide
+
 ## Overview
-
-This document provides sample codes for integrating SDK and launching push service. (SDK version: V1.0+ version）
-
-
-
-## SDK Composition
-
-#### TPNS-Push-SDK-iOS-IOT1.* .* .*
-
-* ```doc``` folder: TPNS iOS SDK development guide
-* ```demo``` folder: Mainly contains sample projects and the TPNS SDK.
+This document provides sample codes for integrating the SDK and launching TPNS. (SDK version: V1.0+ version）
 
 
 
-## Integration Steps
+## SDK composition
+- doc folder: TPNS iOS SDK development guide.
+- demo folder: mainly contains sample projects, the TPNS SDK. 
 
-1. Log in to TPNS Console, and click **Product Management** in the left sidebar.
 
-2. Enter the product management page, and click **Add a product**.
 
-3. Go to the **Add a product** page, and enter the product name and product details. Select the product type, and click **Confirm** to add a new product.
-
-4. After creating a new product, select **Application Management**>**Application List** to go to the application list and obtain the product AppID and AppKey. (AppID is the Access ID, and AppKey is the Access Key).
-
-5. Import SDK
-**Method One: Cocoapods Import**
+## Integration steps
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns), and click **Product Management** in the left sidebar.
+2. Enter the **Product Management** page, and click **Add a Product**.
+3. Go to the **Add a Product** page, and enter the product name and product details. Select the product type, and click **OK** to add a new product.
+4. After the product is created, select **Application Management** > **[Application List](https://console.cloud.tencent.com/tpns/applist)** to go to the application list and obtain the product AppID and AppKey. (AppID is Access ID, AppKey is Access Key.)
+5. Import SDK:
+ - **Method one: import using Cocoapods**
 Use the Cocoapods download address:
-
  ``` 
  pod 'TPNS-iOS' 
  ```
- 
-** Method Two: Manual Import**
-Go to the console, and then click **SDK Download** in the left sidebar to go to the download page. Select iOS platform, and click **Download** in the operations column.
-
-Open the SDK folder under the demo directory. Add XGPush.h and libXG-SDK-Cloud.a to the project. Open the XGPushStatistics folder, and obtain XGMTACloud.framework.
-
-Add the following frameworks to Build Phases:
+ - **Method two: import using carthage**
+ Specify the dependent third-party libraries in the Cartfile file:
+ ```
+ github "xingePush/carthage-TPNS-iOS"
+ ```
+ - **Method three: manual import**
+Enter the TPNS Console and click **[SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload)** in the left sidebar to go to the download page. Select the SDK version to download, and click **Download** in the **Operations** column.
+6. Open the SDK folder under the demo directory. Add XGPush.h and libXG-SDK-Cloud.a to the project. Open the XGPushStatistics folder, and obtain XGMTACloud.framework.
+7. Add the following frameworks to Build Phases:
 ```
  * XGMTACloud.framework
  * CoreTelephony.framework
@@ -48,86 +40,75 @@ Add the following frameworks to Build Phases:
  * CoreData.framework
  * CFNetwork.framework
 ```
- 
-After adding the frameworks, the library references are as follows: 
-![](https://main.qcloudimg.com/raw/6b85c14fa5e43431c9392f56bab4969e.png)
+8. After adding the frameworks, the library references are as follows:
+![](https://main.qcloudimg.com/raw/e61961cd6db798d0f02d4b4c1a996fa0.png)
+9. Open the push notification in the project configuration and backend modes, as shown in the following figure:
+![](https://main.qcloudimg.com/raw/549acb8c1cf61c1d2f41de4762baf47b.png)
+10. Add the compilation parameter ```-ObjC```.
+![](https://main.qcloudimg.com/raw/b0b74cec883f69fb0287fedc7bad4140.png)
 
-4. Open the push notification in project configuration and background mode, as shown below: 
+>If checkTargetOtherLinkFlagForObjc reports an error, it means -ObjC has not been added to Other link flags in build setting.
 
-![](https://main.qcloudimg.com/raw/0a893471a34042d4b436a1522da5b02a.png)
+11. Call the API for launching TPNS and implement the method in the ```XGPushDelegate``` protocol as needed to launch the push service.
+	1. Launch TPNS,  the ```AppDelegate``` sample is as follows:
+	```objective-c
+		 @interface AppDelegate () <XGPushDelegate>
+		 @end
 
-5. Add the compilation parameter ```-ObjC```. 
+		 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+				 {
+						 [[XGPush defaultManager] startXGWithAppID:<#your AppID#> appKey:<#your appKey#>  delegate:<#your delegate#>];
+			return YES;
+				 }
+	 ```
+	2. In ```AppDelegate```, choose to implement the method in the ```XGPushDelegate ``` protocol:
+	```objective-c
+		/**
+		 Callback of received push
+		 @param application: UIApplication instance
+		 @param userInfo: parameters specified during push
+		 @param completionHandler: callback completed
+		 */
+		- (void)application:(UIApplication *)application 
+					didReceiveRemoteNotification:(NSDictionary *)userInfo 
+							fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
+			{
+				[[XGPush defaultManager] reportXGNotificationInfo:userInfo];
+				completionHandler(UIBackgroundFetchResultNewData);
+		}
+		// iOS 10 new callback API
+		// App user clicks the notification
+		// App user selects a behavior in the notification
+		// App user clears the message in the notification center
+		// This callback will be used in both local push and remote push
+	#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+		- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center 
+					didReceiveNotificationResponse:(UNNotificationResponse *)response 
+					withCompletionHandler:(void (^)(void))completionHandler 
+					{
+							[[XGPush defaultManager] reportXGNotificationResponse:response];
+							completionHandler();
+		}
 
-![](https://main.qcloudimg.com/raw/97c4d1627d2ebe124fde4c90af8a19ad.png)
-
-	Note: If checkTargetOtherLinkFlagForObjc reports an error, it means -ObjC has not been added to Other link flags in build setting.
-
-6. Call the API for launching TPNS and implement the method in the ```XGPushDelegate``` protocol as needed to launch the push service.
-
-   - Launch the TPNS service; the following is a demonstration in ```AppDelegate```:
-
-   ```objective-c
-   @interface AppDelegate () <XGPushDelegate>
-   @end
-
-   -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
-       {
-           [[XGPush defaultManager] startXGWithAppID:<#your AppID#> appKey:<#your appKey#>  delegate:<#your delegate#>];
-   	return YES;
-       }
-   ```
-
-   - In```AppDelegate```, choose to implement the method in the ```XGPushDelegate ``` protocol.
-
-```objective-c
-	/**
-	 Callback of received push
-	 @param application UIApplication instance
-	 @param userInfo Parameters specified during push
-	 @param completionHandler Callback completed
-	 */
-	- (void)application:(UIApplication *)application 
-        didReceiveRemoteNotification:(NSDictionary *)userInfo 
-            fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
-    {
-    	[[XGPush defaultManager] reportXGNotificationInfo:userInfo];
-    	completionHandler(UIBackgroundFetchResultNewData);
-	}
-	// iOS 10 new callback API
-	// App user clicks the notification
-	// App user selects a behavior in the notification
-	// App user clears the message in the notification center
-	// This callback will be used in both local push and remote push
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center 
-        didReceiveNotificationResponse:(UNNotificationResponse *)response 
-        withCompletionHandler:(void (^)(void))completionHandler 
-        {
-            [[XGPush defaultManager] reportXGNotificationResponse:response];
-            completionHandler();
-	}
-
-	// This API will be used when the app pushes a notification in the notification panel
-	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center
-         willPresentNotification:(UNNotification *)notification 
-             withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
-             {
-                 [[XGPush defaultManager] reportXGNotificationInfo:notification.request.content.userInfo];
-                 completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
-	}
-	#endif
-```
+		// This API will be used when the app pushes a notification in the notification panel
+		- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center
+					 willPresentNotification:(UNNotification *)notification 
+							 withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+							 {
+									 [[XGPush defaultManager] reportXGNotificationInfo:notification.request.content.userInfo];
+									 completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
+		}
+		#endif
+	```
 
 
 
 
-## Debugging
-#### Turning on debugging mode
+## Debugging method
+#### Enable debug mode
+Enable debug mode to view detailed TPNS debug information in the end terminal, facilitating fault location.
 
-After turning on debugging mode, you can view the detailed TPNS debug information on the device for troubleshooting.
-
-##### [Sample code]
-
+#### Sample code
 ```
 // This is to enable debugging
 [[XGPush defaultManager] setEnableDebug:YES];
@@ -137,38 +118,43 @@ After turning on debugging mode, you can view the detailed TPNS debug informatio
 
 #### Implementing the ```XGPushDelegate``` protocol
 
-During debugging, we recommend that you implement the following two methods in the protocol to get detailed debug information.
+During debugging, it is recommended that you implement the following two methods in the protocol to obtain detailed debugging information.
 
 ```objective-c
 /**
- @brief This monitors the launch condition of the TPNS service
+ @brief: this monitors the launch condition of TPNS
 
- @param isSuccess This checks whether TPNS is successfully launched
- @param error This message indicates an error in TPNS launch
+ @param isSuccess: this checks whether TPNS is successfully launched
+ @param error: this message indicates an error in TPNS launch
  */
 - (void)xgPushDidFinishStart:(BOOL)isSuccess error:(nullable NSError *)error;
 
 /**
- @brief This registers the callback of the device token with the TPNS server
+ @brief: this is the callback to register the device token with the TPNS server
  
- @param deviceToken The token of the current device
- @param error Error message
- @note After the current token is registered, this method will no longer be called
- */
+ @param deviceToken: the token of the current device
+ @param error: error message
 - (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken error:(nullable NSError *)error;
 
 ```
 
 #### Observing the log
-
 If Xcode console displays a log similar to the one below, the client has properly integrated the SDK.
 
 ```javascript
-[xgpush]Current device token is 623e4a477abce566a74c449ae32c1ca6066fbb243e7417b3fe393811b54792eb
-The server (193.168.115.248) returns correctly, the device token has been successfully registered.
+[xgpush]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59991583a925030f1b913625a9dab
+[xgpush]Current XG token is 05da87c0ae5973bd2dfa9e08d884aada5bb2
 ```
+>Use a XG 36-bit token for pushing to a single target device.
 
+#### Obtaining a token (optional)
+It is recommended that after you integrate the SDK, you use gestures or other methods to display the token in the app’s less commonly used UI such as **About** or **Feedback**. Doing so will facilitate subsequent troubleshooting.
 
-
-
+#### Sample code
+```objective-c
+//Obtain the token generated by TPNS
+[[XGPushTokenManager defaultTokenManager] xgTokenString];
+//Obtain the DeviceToken generated by APN
+[[XGPushTokenManager defaultTokenManager] deviceTokenString];
+```
 
