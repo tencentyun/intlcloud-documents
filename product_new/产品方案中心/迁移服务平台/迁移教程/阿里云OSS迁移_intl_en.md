@@ -121,6 +121,7 @@ MSP provides a QPS limit for object storage mode and a bandwidth limit for URL l
 3. Click **Create and Start** after setting all the parameters. In Agent mode, the task does not automatically run after creation. Instead, you need to manually start the Agent on the Alibaba Cloud master server as follows:
 
 4. Deploy and start the Agent on the master server.
+
     i. Decompress the Agent toolkit (there are no special requirements on the directory).
     ii. Modify the configuration file.
 
