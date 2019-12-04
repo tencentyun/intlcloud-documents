@@ -135,11 +135,11 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
 
    iii. 启动 Agent.
    
-```
-# chmod +x ./agent/bin/agent
-# cd agent/bin  //必须在 bin 目录中启动 agent 程序（否则会找不到配置文件）
-#./agent
-```
+   ```
+   # chmod +x ./agent/bin/agent
+   # cd agent/bin  //必须在 bin 目录中启动 agent 程序（否则会找不到配置文件）
+   #./agent
+   ```
 
 Agent 会定时自动从 MSP 平台获取任务的详细配置信息，如果创建多个迁移任务无需重复启动 Agent。
 
