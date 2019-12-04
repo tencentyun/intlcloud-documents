@@ -126,12 +126,12 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
    i. 解压 Agent 工具包（目录无特殊要求）。
 
    ii. 修改配置文件。
-```
-./agent/conf/agent.toml
-# 此处填写腾讯云用于迁移的云 API 密钥对
-secret_id = '此处填写腾讯云 API 密钥 AccessKey'
-secret_key = '此处填写腾讯云 API 密钥 SecretKey'
-```
+   ```
+   ./agent/conf/agent.toml
+   # 此处填写腾讯云用于迁移的云 API 密钥对
+   secret_id = '此处填写腾讯云 API 密钥 AccessKey'
+   secret_key = '此处填写腾讯云 API 密钥 SecretKey'
+   ```
 
    iii. 启动 Agent.
    
