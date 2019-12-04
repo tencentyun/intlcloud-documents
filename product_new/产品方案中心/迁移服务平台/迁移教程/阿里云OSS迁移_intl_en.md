@@ -146,12 +146,12 @@ The Agent periodically retrieves detailed task configurations from MSP. You do n
 5. Scale out the migration cluster by adding Worker servers.
     The Agent mode supports distributed migration (multi-server collaboration). To increase the migration speed, add Worker servers to the migration cluster when the available bandwidth allows.
     
-- Ensure that the added Worker servers can communicate with the master server.
-- If migration is performed through Direct Connect, ensure that the Worker servers can directly access COS with Direct Connect.
+   - Ensure that the added Worker servers can communicate with the master server.
+   - If migration is performed through Direct Connect, ensure that the Worker servers can directly access COS with Direct Connect.
 
-You can configure the Worker servers as needed, but it is recommended that you configure them in the same way as the master server. The Agent is deployed and started in the same way as the master server, and you need to change `secret_id` and `secret_key` in agent.toml. Because the master server is designated when the task is created, the newly added Agent works as a Worker node to communicate with the master server and receive the task.
+   You can configure the Worker servers as needed, but it is recommended that you configure them in the same way as the master server. The Agent is deployed and started in the same way as the master server, and you need to change `secret_id` and `secret_key` in agent.toml. Because the master server is designated when the task is created, the newly added Agent works as a Worker node to communicate with the master server and receive the task.
 
-You can add Worker servers to the migration cluster at any time. However, it is recommended that you create all Worker servers and the master server and configure and start the Agent before creating a task. In this way, the master server can effectively schedule segments during task startup.
+   You can add Worker servers to the migration cluster at any time. However, it is recommended that you create all Worker servers and the master server and configure and start the Agent before creating a task. In this way, the master server can effectively schedule segments during task startup.
 
 ## Estimating the File Migration Duration
 
