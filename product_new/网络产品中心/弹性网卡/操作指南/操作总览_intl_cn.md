@@ -1,13 +1,15 @@
 您在使用弹性网卡时，可能碰到诸如创建和查询弹性网卡、绑定和解绑云服务器、修改主内网 IP 等问题。本文将介绍使用弹性网卡以及与其相关的产品的常用操作，供您参考。
 
 ## 常用操作
-- [查看弹性网卡](http://intl.cloud.tencent.com/document/product/576/18533)
-- [创建弹性网卡](http://intl.cloud.tencent.com/document/product/576/18534)
-- [绑定和配置弹性网卡](http://intl.cloud.tencent.com/document/product/576/18535)
-- [删除弹性网卡](http://intl.cloud.tencent.com/document/product/576/18536)
-- [解绑云服务器](http://intl.cloud.tencent.com/document/product/576/18537)
-- [释放内网 IP](http://intl.cloud.tencent.com/document/product/576/18538)
-- [绑定弹性公网 IP](http://intl.cloud.tencent.com/document/product/576/18539)
-- [解绑弹性公网 IP](http://intl.cloud.tencent.com/document/product/576/18540)
-- [修改主内网 IP](http://intl.cloud.tencent.com/document/product/576/18541)
-- [修改所属子网](http://intl.cloud.tencent.com/document/product/576/18542)
+- [查看弹性网卡](https://intl.cloud.tencent.com/document/product/576/18533)
+- [创建弹性网卡](https://intl.cloud.tencent.com/document/product/576/18534)
+- [绑定和配置云服务器](https://intl.cloud.tencent.com/document/product/576/18535)
+- [删除弹性网卡](https://intl.cloud.tencent.com/document/product/576/18536)
+- [解绑云服务器](https://intl.cloud.tencent.com/document/product/576/18537)
+- [申请辅助内网 IP](https://intl.cloud.tencent.com/document/product/576/32938)
+- [释放辅助内网 IP](https://intl.cloud.tencent.com/document/product/576/18538)
+- [绑定弹性公网 IP](https://intl.cloud.tencent.com/document/product/576/18539)
+- [解绑弹性公网 IP](https://intl.cloud.tencent.com/document/product/576/18540)
+- [修改主内网 IP](https://intl.cloud.tencent.com/document/product/576/18541)
+- [修改所属子网](https://intl.cloud.tencent.com/document/product/576/18542)
+- 申请和释放 IPv6
