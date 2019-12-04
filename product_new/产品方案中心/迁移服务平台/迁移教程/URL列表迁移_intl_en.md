@@ -64,7 +64,7 @@ Note: You can use Migration Service Platform (MSP) with your root account. Howev
 
    Data migration will occupy the network resources of the source vendor. You can set the start time of the execution of the migration task according to your business circumstances.
 
-  ![Image](https://main.qcloudimg.com/raw/cd38b9e671e6598c5ae84e981608db9e.png)
+    ![Image](https://main.qcloudimg.com/raw/cd38b9e671e6598c5ae84e981608db9e.png)
 
 5. Set data migration execution speed.
     You can use this function to restrict the maximum data migration speed, in order to avoid excessive CDN bandwidth costs. The actual migration speed is affected by network fluctuations, and will itself fluctuate within the defined values.
@@ -89,7 +89,6 @@ Note: You can use Migration Service Platform (MSP) with your root account. Howev
       >- If the object (file) content is changed during migration, you need to migrate again.
 
 8. Select a migration mode.
-
   **Create a migration task and download the Agent manually to start migration**: Select Agent mode migration. After you click **Create and Start**, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to launch the migration. Agent mode is applicable to scenarios where you want to migrate through an existing Direct Connect.
  ![img](https://main.qcloudimg.com/raw/e85e26eab8ff54c2512dcf9e75c0d35b.png)
 
