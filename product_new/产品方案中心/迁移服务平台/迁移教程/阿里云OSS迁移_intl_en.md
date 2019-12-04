@@ -107,12 +107,9 @@ MSP provides a QPS limit for object storage mode and a bandwidth limit for URL l
     You need to enter the IP address of the Agent master server when creating a migration task. This IP address is a private IP address for communicating with the Worker server in the migration cluster. Therefore, prepare a virtual machine with the CentOS 7.x 64-bit operating system in Alibaba Cloud before creating the migration task.
 
 2. Create a migration task on Tencent Cloud MSP.
-
-    i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
-
-    ii. In the **Master Node Private IP** section, enter the private IP address of the server created on Alibaba Cloud, such as 172.XXX.XXX.94.
-
-    iii. In the **OSS Private Network EndPoint** section, enter the **EndPoint** (region node) of the object storage bucket.
+      i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
+      ii. In the **Master Node Private IP** section, enter the private IP address of the server created on Alibaba Cloud, such as 172.XXX.XXX.94.
+      iii. In the **OSS Private Network EndPoint** section, enter the **EndPoint** (region node) of the object storage bucket.
 
 ![Image](https://main.qcloudimg.com/raw/aacc6697dd8a170f0fb946a6be42bb2f.png)
 
@@ -124,34 +121,32 @@ MSP provides a QPS limit for object storage mode and a bandwidth limit for URL l
 3. Click **Create and Start** after setting all the parameters. In Agent mode, the task does not automatically run after creation. Instead, you need to manually start the Agent on the Alibaba Cloud master server as follows:
 
 4. Deploy and start the Agent on the master server.
+    i. Decompress the Agent toolkit (there are no special requirements on the directory).
+    ii. Modify the configuration file.
 
-   i. Decompress the Agent toolkit (there are no special requirements on the directory).
+    ```
+    ./agent/conf/agent.toml
+    # Entering the Tencent Cloud API AccessKey pair for migration
+    secret_id = 'Enter the Tencent Cloud API AccessKey here'
+    secret_key = 'Enter the Tencent Cloud API SecretKey here'
+    ```
 
-   ii. Modify the configuration file.
+    iii. Launch Agent.
 
-```
-./agent/conf/agent.toml
-# Entering the Tencent Cloud API AccessKey pair for migration
-secret_id = 'Enter the Tencent Cloud API AccessKey here'
-secret_key = 'Enter the Tencent Cloud API SecretKey here'
-```
-
-   iii. Launch Agent.
-
-```
-# chmod +x ./agent/bin/agent
-# cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration file.
-#./agent
-```
+    ```
+    # chmod +x ./agent/bin/agent
+    # cd agent/bin  //Start the Agent from the **bin** directory. Otherwise, you may not be able to find the configuration  file.
+    #./agent
+    ```
 
 The Agent periodically retrieves detailed task configurations from MSP. You do not have to start the Agent repeatedly when multiple migration tasks are created.
 
 5. Scale out the migration cluster by adding Worker servers.
     The Agent mode supports distributed migration (multi-server collaboration). To increase the migration speed, add Worker servers to the migration cluster when the available bandwidth allows.
-
-n Ensure that the added Worker servers can communicate with the master server.
-
-n If migration is performed through Direct Connect, ensure that the Worker servers can directly access COS with Direct Connect.
+    
+> **Note:**
+>- Ensure that the added Worker servers can communicate with the master server.
+>- If migration is performed through Direct Connect, ensure that the Worker servers can directly access COS with Direct Connect.
 
 You can configure the Worker servers as needed, but it is recommended that you configure them in the same way as the master server. The Agent is deployed and started in the same way as the master server, and you need to change `secret_id` and `secret_key` in agent.toml. Because the master server is designated when the task is created, the newly added Agent works as a Worker node to communicate with the master server and receive the task.
 
