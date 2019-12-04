@@ -108,11 +108,11 @@ MSP provides a QPS limit for object storage mode and a bandwidth limit for URL l
 
 2. Create a migration task on Tencent Cloud MSP.
 
-i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
+    i. In the **Mode Selection** section under **Select migration mode**, select **Create a migration task and download the Agent manually to start migration**.
 
-ii. In the **Master Node Private IP** section, enter the private IP address of the server created on Alibaba Cloud, such as 172.XXX.XXX.94.
+    ii. In the **Master Node Private IP** section, enter the private IP address of the server created on Alibaba Cloud, such as 172.XXX.XXX.94.
 
-iii. In the **OSS Private Network EndPoint** section, enter the **EndPoint** (region node) of the object storage bucket.
+    iii. In the **OSS Private Network EndPoint** section, enter the **EndPoint** (region node) of the object storage bucket.
 
 ![Image](https://main.qcloudimg.com/raw/aacc6697dd8a170f0fb946a6be42bb2f.png)
 
@@ -125,9 +125,9 @@ iii. In the **OSS Private Network EndPoint** section, enter the **EndPoint** (re
 
 4. Deploy and start the Agent on the master server.
 
-i. Decompress the Agent toolkit (there are no special requirements on the directory).
+   i. Decompress the Agent toolkit (there are no special requirements on the directory).
 
-ii. Modify the configuration file.
+   ii. Modify the configuration file.
 
 ```
 ./agent/conf/agent.toml
@@ -136,7 +136,7 @@ secret_id = 'Enter the Tencent Cloud API AccessKey here'
 secret_key = 'Enter the Tencent Cloud API SecretKey here'
 ```
 
-iii. Launch Agent.
+   iii. Launch Agent.
 
 ```
 # chmod +x ./agent/bin/agent
