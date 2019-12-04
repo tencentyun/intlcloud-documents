@@ -32,7 +32,7 @@
 2. 进入应用列表页面，选择已创建的产品，单击【新增应用】。
 3. 进入新增应用页面，填写应用名称，勾选平台【iOS】，单击【确定并上传证书】。
 ![](https://main.qcloudimg.com/raw/6d3601fe62081955cb575aec267289b6.png)
-4. 进入编辑应用页面，填写 Bundle ID 和推送证书密码，单击【上传证书】，上传“.p12”后缀的证书。具体操作请参见 [iOS 推送证书说明](https://cloud.tencent.com/document/product/548/36664)。
+4. 进入编辑应用页面，填写 Bundle ID 和推送证书密码，单击【上传证书】，上传“.p12”后缀的证书。具体操作请参见 [iOS 推送证书说明](https://intl.cloud.tencent.com/document/product/1024/30728)。
 ![](https://main.qcloudimg.com/raw/c93ef2fa5c51e6a98ee1fba98fd27eb9.png)
 5. 单击【确定】，即可创建 iOS 应用。
 
@@ -41,7 +41,7 @@
 2. 进入应用列表页面，选择已创建的产品，单击【新增应用】。
 3. 进入新增应用页面，填写应用名称，勾选平台【macOS】，单击【确定并上传证书】。
 ![](https://main.qcloudimg.com/raw/035516a4f5179f315090e2afd41e08d1.png)
-4. 进入编辑应用页面，填写Bundle ID和推送证书密码,单击【上传证书】，分别上传 macOS 开发环境证书和生产环境。具体操作请参见 [macOS 推送证书说明](https://cloud.tencent.com/document/product/548/37095)。
+4. 进入编辑应用页面，填写Bundle ID和推送证书密码,单击【上传证书】，分别上传 macOS 开发环境证书和生产环境。具体操作请参见 [macOS 推送证书说明](https://intl.cloud.tencent.com/document/product/1024/32003)。
 ![](https://main.qcloudimg.com/raw/0237161819b29ef2b38f02aa3b270106.png)
 5. 单击【确定】，即可创建 macOS 应用。
 
