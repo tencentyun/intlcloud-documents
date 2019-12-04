@@ -1,13 +1,8 @@
 # serverless cloud funtion
 
 Deploy scf functions to tencent in seconds with [Serverless Components](https://github.com/serverless/components).
-
 &nbsp;
-
-
-
 &nbsp;
-
 1. [Install](#1-install)
 2. [Create](#2-create)
 3. [Configure](#3-configure)
