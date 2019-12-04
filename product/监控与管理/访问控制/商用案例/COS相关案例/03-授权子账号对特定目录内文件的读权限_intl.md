@@ -6,13 +6,18 @@ Step 1: Create the following policy using policy syntax
 ```
  {
     "version": "2.0",
-    "statement":
+    "statement":[
      {
          "effect": "allow",
-         "action": "cos:*",
-         "resource": ["qcs::cos:cn-east:uid/8000001:prefix//8000001/Bucket1/dir1/*",
-                    "qcs::cos:cn-east:uid/8000001:prefix//8000001/Bucket1/dir1"]
+         "action":  [
+                    "cos:List*",
+                    "cos:Get*",
+                    "cos:Head*",
+                    "cos:OptionsObject"
+                ],
+         "resource": "qcs::cos:ap-shanghai:uid/1250000000:Bucket1-1250000000/dir1/*"
      }
+   ]
 }
 ```
 
