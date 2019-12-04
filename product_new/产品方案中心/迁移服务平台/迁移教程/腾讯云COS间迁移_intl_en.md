@@ -92,8 +92,7 @@ Create a sub-user for migration and grant the required permissions:
 
 11. Select a migration mode.
 
-   - Create a migration task and download the Agent manually to start migration: Select Agent mode migration. After you click 
-  - Create and Start, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to officially launch the migration. Agent mode is applicable to scenarios where there is an existing Direct Connect, and you want to perform migration by using the Direct Connect.
+    **Create a migration task and download the Agent manually to start migration**: Select Agent mode migration. After you click **Create and Start**, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to officially launch the migration. Agent mode is applicable to scenarios where there is an existing Direct Connect, and you want to perform migration by using the Direct Connect.
  ![img](https://main.qcloudimg.com/raw/36ca6e5fc6b7a6e23b21d8ce0015a217.png)
 
 ## Estimating the File Migration Duration
