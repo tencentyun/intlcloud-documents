@@ -15,11 +15,5 @@ You can [submit an application](https://cloud.tencent.com/act/apply/snapshotcopy
   - Region: (Required) Select the destination region.
     Please check the snapshot quota and geographical restriction when you select the region.
 
- ![1](https://main.qcloudimg.com/raw/81bc5c94ed8a5ae1b699f0a527322102.png)
 4. Click **Confirm** to start the replication. Hover over the information icon to view the status of the source snapshot. The new snapshot is added to the destination region. Once the replication is completed, you can view the new snapshot in the snapshot list of the destination region.
 > The source snapshot cannot be deleted during the cross-region replication of this snapshot.
->
- - The following figure shows the status of the source snapshot during cross-region replication:
-![2](https://main.qcloudimg.com/raw/27d6bfa6389efc75d17c4a1c3d4d1899.png)
- - The following figure shows the status of the snapshot created during cross-region replication:
-![3](https://main.qcloudimg.com/raw/0564debf0293e79907dedf7ee7fe02a9.png)
