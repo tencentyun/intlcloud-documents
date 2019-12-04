@@ -1,4 +1,4 @@
-A sub-account Developer under the enterprise account CompanyExample (ownerUin is 12345678 and appId is 8000001) requires read permission of files in the Bucket1's directory dir1 of the COS service in Shanghai region under the enterprise account CompanyExample.
+A sub-account Developer under the enterprise account CompanyExample (ownerUin is 12345678 and appId is 1250000000) requires read permission of files in the Bucket1's directory dir1 of the COS service in Shanghai region under the enterprise account CompanyExample.
 
 Solution A:
 
