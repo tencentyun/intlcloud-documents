@@ -53,16 +53,16 @@ Note: You can use Migration Service Platform (MSP) with your root account. Howev
 3. Set the migration source.
     The migrations source vendor should select “URL List”. You can upload the URL list files or add the URL list file download address. For large URL list files, the browser upload may timeout. It is recommended to save the URL list file to COS, select **Provide URL List File Download Address**, and then enter the COS URL access address of the file. The URL list file should be in TXT format and enter one URL per line.
 
-For example:
+    For example:
 
-http://xxx.xxx.xxx/xxx/l.jpg
- Http://xxx.xxx.xxx/xxx/xxx/xxxxxx/test.mp4
+    http://xxx.xxx.xxx/xxx/l.jpg
+    Http://xxx.xxx.xxx/xxx/xxx/xxxxxx/test.mp4
 
-![Image](https://main.qcloudimg.com/raw/a8dc0fe937ee2337420b153db8d17bfd.png)
+   ![Image](https://main.qcloudimg.com/raw/a8dc0fe937ee2337420b153db8d17bfd.png)
 
 4. Set the task start time.
 
-Data migration will occupy the network resources of the source vendor. You can set the start time of the execution of the migration task according to your business circumstances.
+   Data migration will occupy the network resources of the source vendor. You can set the start time of the execution of the migration task according to your business circumstances.
 
 ![Image](https://main.qcloudimg.com/raw/cd38b9e671e6598c5ae84e981608db9e.png)
 
@@ -85,8 +85,8 @@ Data migration will occupy the network resources of the source vendor. You can s
      If **dest/20180901** is entered in the text box, then after migration, the paths of these two files in the destination bucket are: /dest/20180901/a.txt, /dest/20180901/dir/b.txt.
 
 
->- If the files with the same name exist in both the migration source and destination, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
->- If the object (file) content is changed during migration, you need to migrate again.
+      >- If the files with the same name exist in both the migration source and destination, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
+      >- If the object (file) content is changed during migration, you need to migrate again.
 
 8. Select a migration mode.
 
@@ -105,4 +105,4 @@ The migration speed is determined by the lowest speed during each stage of the m
 
  
 
-Note: Data that is migrated by using the URL list uses standard storage on Tencent Cloud by default.
+> Data that is migrated by using the URL list uses standard storage on Tencent Cloud by default.
