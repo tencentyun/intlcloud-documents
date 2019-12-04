@@ -123,6 +123,7 @@ MSP provides a QPS limit for object storage mode and a bandwidth limit for URL l
 4. Deploy and start the Agent on the master server.
 
     i. Decompress the Agent toolkit (there are no special requirements on the directory).
+    
     ii. Modify the configuration file.
 
     ```
