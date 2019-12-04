@@ -30,7 +30,7 @@ Create a sub-user account for migration and grant the required permissions:
 
  
 
-> **Note:**:
+> **Note:**
 > You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-user, use the sub-user’s API key for migration, and delete the sub-user after migration.
 
  
