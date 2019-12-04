@@ -78,9 +78,8 @@ Create a sub-user for migration and grant the required permissions:
 
 10. Specify the specified directory for migration to the destination bucket.
 
-   - Save to the root directory**: Directly save the files in the source bucket to the destination bucket’s root directory, maintaining the original relative path.
-
-   - Save to a specified directory: Save the files in the source bucket to the specified directory, maintaining the original relative path.
+    - Save to the root directory**: Directly save the files in the source bucket to the destination bucket’s root directory, maintaining the original relative path.
+    - Save to a specified directory: Save the files in the source bucket to the specified directory, maintaining the original relative path.
  ![Image](https://main.qcloudimg.com/raw/a35ef5e7a5c98af31203766945684e86.png)
   For example:
   Source bucket files /a.txt, /dir/b.txt (two files). **dest** is entered in the text box. In this case, after migration, the paths of these two files in the destination bucket are: /dest/a.txt, /dest/dir/b.txt.
