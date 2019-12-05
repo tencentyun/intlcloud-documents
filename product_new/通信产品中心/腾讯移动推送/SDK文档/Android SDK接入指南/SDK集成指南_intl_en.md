@@ -233,7 +233,7 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
 1. In the **Layout** directory of the App, create an .xml file with the name xg_notification.
 2. Copy the following code into the file:
 
-```java
+```
 <?xml version="1.0" encoding="UTF-8"?>
 -<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_root_view" xmlns:android="http://schemas.android.com/apk/res/android">
 <!--Notification background. The id name cannot be changed but others can be changed-->
