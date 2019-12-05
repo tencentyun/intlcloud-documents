@@ -22,7 +22,7 @@ Assume that you have the following Anti-DDoS instances: BGP protective IPs 1.1.1
 
 ## Setting Line Priority
 Please follow the steps below to set priorities for your protective lines based on your scheduling scheme.
-1. Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), select **Intelligent Scheduling** > **Domain Name List** on the left sidebar, and click **Create Intelligent Scheduling**. Then, a CNAME record will be generated automatically by the system.
+1. Log in to the Anti-DDoS Console, select **Intelligent Scheduling** > **Domain Name List** on the left sidebar, and click **Create Intelligent Scheduling**. Then, a CNAME record will be generated automatically by the system.
 ![](https://main.qcloudimg.com/raw/6edb8b562afffb86443f3f7496bd3f4d.png)
 2. Locate the row of the CNAME record and click **Add Anti-DDoS Instance** to enter the intelligent scheduling editing page.
 ![](https://main.qcloudimg.com/raw/5a6f03bc13df5ea70eac17e6aa31d259.png)

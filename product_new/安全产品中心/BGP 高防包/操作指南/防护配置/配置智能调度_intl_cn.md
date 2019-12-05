@@ -22,7 +22,7 @@
 
 ## 设置线路优先级
 请参考以下步骤，按照设想的调度方案为您的高防线路设置优先级：
-1. 登录 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/dayu/overview)，在左侧导航栏选择【智能调度】>【域名列表】，进入域名列表页面，单击【创建智能调度】，系统自动生成一个 CNAME 记录。
+1. 登录Anti-DDoS控制台，在左侧导航栏选择【智能调度】>【域名列表】，进入域名列表页面，单击【创建智能调度】，系统自动生成一个 CNAME 记录。
 ![](https://main.qcloudimg.com/raw/6edb8b562afffb86443f3f7496bd3f4d.png)
 2. 找到该 CNAME 记录所在行，单击【添加高防实例】，进入智能调度编辑页面。
 ![](https://main.qcloudimg.com/raw/5a6f03bc13df5ea70eac17e6aa31d259.png)
