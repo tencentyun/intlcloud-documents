@@ -232,7 +232,8 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
 #### Audio-visual rich media usage (optional)
 1. In the **Layout** directory of the App, create an .xml file with the name xg_notification.
 2. Copy the following code into the file:
-```
+
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 -<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_root_view" xmlns:android="http://schemas.android.com/apk/res/android">
 <!--Notification background. The id name cannot be changed but others can be changed-->
@@ -242,13 +243,14 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
 <!--Notification time. The id name cannot be changed but others can be changed. If the time is not displayed, you can remove this layout-->
 <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/xg_notification_date" android:textSize="12dp" android:layout_marginRight="5dp" android:layout_marginTop="5dp" android:layout_alignParentRight="true" android:layout_alignParentTop="true"/>
 <!--Notification title. The id name cannot be changed but others can be changed. Required.-->
-<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_title" android:layout_marginLeft="10dp" android:layout_marginTop="20dp" android:singleLine="true" android:layout_toRightOf="@id/xg_notification_icon" android:layout_toLeftOf="@id/xg_notification_date"/>
+<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_title" android:layout_marginLeft="10dp" android:layout_marginTop="20dp" android:singleLine="true" android:layout_toRightOf="@id/xg_notification_icon" android:layout_toLeftOf="@id/xg_notification_date">
 <!--Notification content. The id name cannot be changed but others can be changed. Required.-->
 <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_content" android:layout_marginTop="1dp" android:singleLine="true" android:layout_toLeftOf="@id/xg_notification_date" android:layout_alignLeft="@+id/xg_notification_style_title" android:layout_below="@+id/xg_notification_style_title"/>
 <!--Playback button for rich media notifications with audio or video. The id name cannot be changed but others can be changed. If audio-visual rich media is not used, remove this layout.-->
 <ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_play" android:layout_alignLeft="@+id/xg_notification_style_title" android:visibility="gone" android:background="@android:drawable/ic_media_play" android:layout_alignParentBottom="true"/>
 <!--Stop playback button for rich media notifications with audio or video. The id name cannot be changed but others can be changed. If audio-video rich media is not used, remove this layout.-->
-<ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_stop" android:layout_marginLeft="30dp" android:layout_toRightOf="@+id/xg_notification_audio_play" android:visibility="gone" android:background="@android:drawable/ic_media_pause" android:layout_alignParentBottom="true"/></RelativeLayout>
+<ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_stop" android:layout_marginLeft="30dp" android:layout_toRightOf="@+id/xg_notification_audio_play" android:visibility="gone" android:background="@android:drawable/ic_media_pause" android:layout_alignParentBottom="true"/>
+</RelativeLayout>
 ```
 
 
