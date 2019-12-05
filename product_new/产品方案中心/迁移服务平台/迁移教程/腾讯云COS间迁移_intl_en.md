@@ -88,8 +88,8 @@ Create a sub-user for migration and grant the required permissions:
     
 
       > **Note:**
-      >- If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.**
-      >- If the object (file) content is changed during migration, you need to migrate again.**
+      >- If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
+      >- If the object (file) content is changed during migration, you need to migrate again.
 
 11. Select a migration mode.
 
