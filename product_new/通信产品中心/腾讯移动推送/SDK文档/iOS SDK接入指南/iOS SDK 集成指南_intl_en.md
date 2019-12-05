@@ -147,7 +147,7 @@ If Xcode console displays a log similar to the one below, the client has properl
 ```
 >Use a XG 36-bit token for pushing to a single target device.
 
-#### Obtaining a token (optional)
+## Obtaining a token (optional)
 It is recommended that after you integrate the SDK, you use gestures or other methods to display the token in the app’s less commonly used UI such as **About** or **Feedback**. Doing so will facilitate subsequent troubleshooting.
 
 #### Sample code

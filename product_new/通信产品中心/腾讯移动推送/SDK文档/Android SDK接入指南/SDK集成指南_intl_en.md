@@ -329,7 +329,7 @@ In comparison with 4.x, some APIs have been changed.
 	```
 
 
-#### Obtaining a token (optional)
+## Obtaining a token (optional)
 It is recommended that after you integrate the SDK, you use gestures or other methods to display the token in the app’s less commonly used UI such as **About** or **Feedback**. Doing so will facilitate subsequent troubleshooting.
 Sample code is as follows:
 ```java
