@@ -84,10 +84,9 @@ Create a sub-user account for migration and grant the required permissions:
      For example:
      There are two source bucket files, /a.txt and /dir/b.txt. **dest** is entered in the text box. In this case, after migration, the paths of these two files in the destination bucket are: /dest/a.txt, /dest/dir/b.txt.
      If **dest/20180901** is entered in the text box, then after migration, the paths of these two files in the destination bucket are: /dest/20180901/a.txt, /dest/20180901/dir/b.txt.
-
-      > **Note:**
-      >- If the files with the same name exist in both the migration source and destination, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
-      >- If the object (file) content is changed during migration, you need to migrate again.
+       > **Note:**
+       >- If the files with the same name exist in both the migration source and destination, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
+       >- If the object (file) content is changed during migration, you need to migrate again.
 
 8. Select a migration mode.
 
