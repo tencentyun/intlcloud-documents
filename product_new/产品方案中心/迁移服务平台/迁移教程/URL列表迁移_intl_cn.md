@@ -79,7 +79,7 @@ MSP将通过公网拉取URL中的数据保存到腾讯云对象存储，源厂�
     - 保存到根目录**： 直接将源桶中的文件按原始相对路径保存到目标桶的根目录。
 
     - 保存到指定目录**：将源桶中的文件保持原始相对路径保存到指定目录中。
-    ![img](https://main.qcloudimg.com/raw/26b35740940d18c789cdece0c8e2419e.png)
+    ![img](https://main.qcloudimg.com/raw/509ef22e079ee007a1f1a3ec29da7c86.png)
     例如：
     源桶中的文件/a.txt，/dir/b.txt两个文件，文本框中填写“dest”，那么迁移后这两个文件在目标桶中的路径为：/dest/a.txt，/dest/dir/b.txt。
     如果文本框中填写dest/20180901，那么迁移后这两个文件在目标桶中的路径为：/dest/20180901/a.txt，/dest/20180901/dir/b.txt。
