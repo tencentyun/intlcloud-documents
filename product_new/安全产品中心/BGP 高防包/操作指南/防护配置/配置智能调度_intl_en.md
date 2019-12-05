@@ -1,4 +1,4 @@
-﻿## Use Cases
+## Use Cases
 Each account can have multiple Anti-DDoS instances, and each instance has at least one protective line; therefore, there can be multiple protective lines under one account. Once your business is added to an Anti-DDoS instance, a protective line will be configured for it. If multiple protective lines have been configured, you need to choose the optimal business traffic scheduling method, i.e., how to schedule business traffic to the optimal line for protection while ensuring high business access speed and availability.
 Anti-DDoS features priority-based CNAME intelligent scheduling, where you can select an Anti-DDoS instance and set the priority of its protective line as needed.
 >Anti-DDoS Pro (includes single-IP and multi-IP instances) and Anti-DDoS Advanced instances support setting resolution.
