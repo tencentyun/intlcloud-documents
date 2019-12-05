@@ -232,7 +232,8 @@ NDK integration is deprecated in the current plugin. Consider trying the new exp
 #### 音视频富媒体使用方法（可选）
 1. 在 App 的 layout 目录下，新建一个 xml 文件，命名为 xg_notification。
 2. 复制以下代码到文件中：
-<?xml version="1.0" encoding="UTF-8"?>
+
+```<?xml version="1.0" encoding="UTF-8"?>
 -<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_root_view" xmlns:android="http://schemas.android.com/apk/res/android">
 <!--通知的背景，id名字不能改变，其他可变-->
 <ImageView android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/xg_notification_bg" android:scaleType="centerCrop"/>
@@ -335,5 +336,7 @@ XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 //获取 Token
 XGPushConfig.getToken(getApplicationContext());
 ```
+
+
 
 
