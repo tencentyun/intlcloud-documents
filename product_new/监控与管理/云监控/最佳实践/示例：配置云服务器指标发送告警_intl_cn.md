@@ -11,13 +11,13 @@
  - 策略名称：CPU alarm
  - 策略类型：云服务器-基础监控
 5. 配置告警对象。在“告警对象”模块下，勾选“选择部分对象”，并选择云服务器实例。
-![](https://main.qcloudimg.com/raw/da4c1077c3d188585c3a8c3af9ee2152.png)
+![](https://main.qcloudimg.com/raw/783a31c2e600492a755029f19ab3c47c.png)
 6. 配置触发条件。在“触发条件”模块下，配置如下条件。
  - 勾选“配置触发条件”。
  -  勾选“指标告警”：`CPU 利用率` `>` `80%` `5 分钟` `2 个周期`
  -  告警重复周期： `15 分钟`
-![](https://main.qcloudimg.com/raw/b87b9a74a9e73138e41c6843849d7c9a.png)
+![](https://main.qcloudimg.com/raw/a98da8bc680a91254169565635a701a4.png)
 7. 配置告警渠道。添加告警接收组（若未创建，请单击【新增接收组】进行创建。）
-![](https://main.qcloudimg.com/raw/1bc78d203dee2d86c92c2712bc51cf61.png)
+![](https://main.qcloudimg.com/raw/107b2e352d9e96528ee3afb227735ef7.png)
 8. 单击【完成】，即可完成配置告警的全部内容。
 9. 此时，当该实例的 CPU 利用率连续2个五分钟的监控数据都大于80%时，号码 `12345678888` 将收到腾讯云发来的告警短信。
