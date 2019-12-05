@@ -1,0 +1,22 @@
+## 작업 시나리오
+
+콘솔에서 직접 VPC 중 CVM(Cloud Virtual Machine) 인스턴스의 개인 IP를 수정할 수 있습니다. 또한 CVM 인스턴스가 속한 서브넷으로 교환함으로써 인스턴스 개인 IP를 수정할 수 있습니다. 본 문서는 CVM 콘솔의 VPC 중 CVM 인스턴스의 개인 IP를 수정하도록 지도해 드립니다.
+서브넷 교환 작업에 대해 [인스턴스 서브넷 교환](https://intl.cloud.tencent.com/document/product/213/16565)을 참조하십시오.
+
+## 제한 조건
+
+- 주 ENI를 수정하는 주 IP는 연결된 CVM이 자동 재시작하게 할 수 있습니다.
+- 보조 ENI는 주 IP를 수정할 수 없습니다.
+
+## 작업 절차
+
+1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인하십시오.
+2. 개인 IP의 수정을 대기하는 인스턴스의 서브 리전을 선택하고 이 인스턴스의 ID/인스턴스명을 클릭하여 인스턴스 상세 페이지에 들어가십시오.
+3. 인스턴스 상세 페이지에서 [ENI]탭을 선택하고 [주IP 수정]을 클릭하십시오. 아래 이미지를 참조하십시오.
+![](https://main.qcloudimg.com/raw/9d37e260fe95378bfd39ade90af3f82d.png)
+
+4. “주IP 수정” 창에서, 새로운 IP를 입력하고[확인]을 클릭한 뒤, 인스턴스가 재시작을 완료하여 활성화되는 것을 기다리십시오. 아래 이미지를 참조하십시오.
+> 현재 서브넷 CIDR에 속하는 개인 IP만 기입할 수 있습니다.
+>
+![](https://main.qcloudimg.com/raw/0950a31131fc33df936973c7bdf2c1c4.png)
+
