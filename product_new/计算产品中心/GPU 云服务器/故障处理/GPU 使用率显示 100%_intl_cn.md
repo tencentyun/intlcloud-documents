@@ -1,19 +1,11 @@
-## 现象描述
-使用 GPU 计算型实例的过程中，在系统内部使用 `nvidia-smi` 查看 GPU 状态时，可能遇到没有运行任何使用 GPU 的应用，但 GPU 使用率显示100%的情况。如下图所示：
-![](//mc.qcloudimg.com/static/img/5a58bc996b38c28b94131105a3fbd000/image.png)
-## 可能原因
-实例加载 NVIDIA 驱动时，ECC Memory Scrubbing 机制造成。
-## 解决思路
-在实例系统内执行 `nvidia-smi -pm 1` 命令，让 GPU Driver 进入 Persistence 模式。
-## 处理步骤
-1. 登录 GPU 计算型实例，执行以下命令：
-```
-nvidia-smi -pm 1
-```
-![](//mc.qcloudimg.com/static/img/456d59df82aa68c243b6073bfe63f490/image.png)
-2. 执行以下命令，检查 GPU 使用率：
-```
-nvidia-smi
-```
-GPU 使用率正常，如下图所示：
-![](//mc.qcloudimg.com/static/img/460c515a0a7ac32b4c525b759e13c732/image.png)
+GPUクラウドサーバ(GPU Cloud Computing)は、GPUの高速、安定、弾力性に基づく計算サービスで、主にディープラーニングトレーニング\推論、グラフィックス画像処理、科学的計算などのシーンに応用されている。GPUクラウドサーバは、標準CVMクラウドサーバと一致した便利で迅速な管理方式を提供している。GPUクラウドサーバは、膨大な量のデータの計算性能を強力に処理することで、ユーザーの計算圧力を効率的に解放し、業務処理効率と競争力を向上させる。
+
+## なぜGPUクラウドサーバを選択
+
+GPUクラウドサーバと自作GPUサーバとの対比：
+
+<table class="npf-comparsion-table"><colgroup><col class="col2" style="width: 6%;"><col class="col3" style="width: 54%;"><col class="col4" style="width: 40%;"></colgroup><thead><tr><th><div>優勢.</div></th><th class="stress-item"><div class="gradient ">GPUクラウドサーバ</div></th><th><div>GPUサーバを自作</div></th></tr></thead><tbody><tr><td><div><span class="unit-text">弾性.</span></div></td><td class="stress-item"><div><ul class="text-list"><li>数分で簡単に1つまたは複数の高性能計算例を得ることができる。</li><li>必要に応じて柔軟にカスタマイズすることができ、ワンタッチでより高性能と容量の実例仕様にアップグレードし、迅速、滑らかな拡張容量を実現し、業務の迅速な発展需要を満たす。</li><ul></ul></ul></div></td><td><div><span class="unit-text">機械は固定配置で，変化の需要を満たすことが困難である</span></div></td></tr><tr><td><div><span class="unit-text">性能</span></div></td><td class="stress-item"><div><ul class="text-list"><li>GPU性能を透過し、GPU性能を効率的に発揮する。</li><li>単機ピーク計算能力突破125.6 T Flops単精度浮動小数点演算、62.4 T Flops倍精度浮動小数点演算。</li><ul></ul></ul></div></td><td><div><ul class="text-list"><li>ユーザの手作業による被害は，ハードウェアの頑強性に依存する.</li><li>データ物理単品、データ安全は制御できない。</li><ul></ul></ul></div></td></tr><tr><td><div><span class="unit-text">使いやすい</span></div></td><td class="stress-item"><div><ul class="text-list"><li>テンセント·クラウド·サーバCVM、負荷均衡CLBなど多様なクラウド製品とシームレスにアクセスし、イントラネットのトラフィックは無料。</li><li>クラウドサーバCVMと一致した管理方式を採用しており、スクーター登録を必要とせず、簡単に使いやすい。</li><li>鮮明なGPUドライブの実装、配備指針により、高い学習コストを省いている。</li><ul></ul></ul></div></td><td><div><ul class="text-list"><li>購入装着機管理は、自らハードウェア拡張、駆動インストールを実現する。</li><li>跳板機の登録が必要で、操作が複雑です。</li><ul></ul></ul></div></td></tr><tr><td><div><span class="unit-text">安全だ</span></div></td><td class="stress-item"><div><ul class="text-list"><li>異なるユーザー間資源は全面的に隔離し、データ安全は保障がある、</li><li>完全なセキュリティグループとネットワークACLは、事例やサブネットに出入りするネットワークエントリー局の流量を制御し、セキュリティフィルタリングを行うことができるように設定されています。</li><li>クラウドセキュリティとシームレスにドッキングし、クラウドサーバと同等の基幹クラウドセキュリティ基盤防護と高防サービスを有している。</li><ul></ul></ul></div></td><td><div><ul class="unit-text"><li>異なるユーザーは資源を共有し、データは隔離しない。</li><li>安全防護サービスを余分に購入する必要がある。</li><ul></ul></ul></div></td></tr><tr><td><div><span class="unit-text">コスト.</span></div></td><td class="stress-item stress-last-item"><div><ul class="unit-text"><li>月極購入方式を提供し、大量の資金投資で物理サーバを購入する必要はありません。</li><li>ハードウェアは主流のGPU更新ペースに追従し、ハードウェア更新による置換悩みを免除する。</li><li>サーバ運用コストが低く，ハードウェア資源をあらかじめ調達，準備する必要がなく，インフラ建設投入を効果的に低減する.</li><ul></ul></ul></div></td><td><div><ul class="unit-text"><li>高サーバ投資運営コスト。</li><li>設備は高消費電力で、ハードウェアを変更する必要がある。</li><li>サービスの安定を保障するためには高額な運用次元ITコストが必要である。</li><ul></ul></ul></div></td></tr></tbody></table>
+GPUクラウドサーバとCPUクラウドサーバの対比：
+![](//mc.qcloudimg.com/static/img/ac3ea7314a71758f5c7caef08ec63692/image.jpg)
+
+<table class="table"><thead><tr><th>次元</th><th>GPU</th><th>CPU.</th></tr></thead><tbody><tr><td>コア数量</td><td>数千の加速コア(デュアルカードM 40ガンダム6144クアッドコア)</td><td>数十個のコア</td></tr><tr><td>製品の特徴</td><td>1.効率的な多数の演算ユニット(ALU)が並列処理をサポートする.<br>(二)超並列スループットに到達するためのマルチスレッド<br>3.単純な論理制御</td><td>(一)複雑な論理制御装置<br>(2)強力な算術演算ユニット(ALU)<br>3.単純な論理制御</td></tr><tr><td>適用シーン</td><td>計算が密集して並列しやすいプログラム</td><td>論理制御、シリアル演算のプログラム</td></tr></tbody></table>

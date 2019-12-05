@@ -13,7 +13,7 @@ You can log in to the COS Console to enable log management for a bucket, which r
 3. Click Enable to the right of **Status** and click **Save**.
 ![](https://main.qcloudimg.com/raw/4f3a62cbc636be16254547a271204096.png)
 4. Confirm that the feature is enabled. Select the destination bucket (i.e., the bucket that stores the logs), and set the key prefix for the log object (e.g., `log/`). After confirming that the entered information is correct, click **Save**. The configuration items are as described below:
- - **Destination Bucket**: the **source bucket ** for which log management is enabled and the **destination bucket ** that stores the logs must be in the same region. It is not recommended to use the source bucket itself as the destination bucket.
+ - **Destination Bucket**: the **source bucket** for which log management is enabled and the **destination bucket** that stores the logs must be in the same region. It is not recommended to use the source bucket itself as the destination bucket.
  - **Target prefix**: enter a custom path prefix that makes it easy for you to find the logs.
 ![](https://main.qcloudimg.com/raw/d5fa347da09d92b5f757e32c910739e3.png)
 
