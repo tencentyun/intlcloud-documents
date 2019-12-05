@@ -13,45 +13,45 @@ Agent 半托管迁移模式中，用户需要手工在源数据云厂商的服�
 
 ### AWS S3
 
-#### （1） 专线准备确认：
+#### 1.专线准备确认：
 
 Agent 半托管模式如果是通过专线迁移，需要确保AWS云侧主机上使用的 COS SDK，可经过专线访问 COS，迁移前请与商务经理确认。
 
-#### （2）创建 AWS IAM账号并授予相关权限：
+#### 2.创建 AWS IAM账号并授予相关权限：
 
-i. 登录AWS 控制台。
+     i. 登录AWS 控制台。
 
-ii. 在导航窗格中，选择用户，然后选择添加用户。为新用户键入用户名
+     ii. 在导航窗格中，选择用户，然后选择添加用户。为新用户键入用户名
 
-iii. 选择此组用户将拥有的访问权限类型。选择以编程方式访问和访问 AWS 管理控制台。
+     iii. 选择此组用户将拥有的访问权限类型。选择以编程方式访问和访问 AWS 管理控制台。
 
-iv. 选择 Next: Permissions (下一步: 权限)。在 Set permissions 页面上，指定您要向新用户分配权限的方式。授予IAM账号存储空间读写权限
+     iv. 选择 Next: Permissions (下一步: 权限)。在 Set permissions 页面上，指定您要向新用户分配权限的方式。授予IAM账号存储空间读写权限
 
-v. 选择Create user
+     v. 选择Create user
 
-vi. 要查看用户的访问密钥（访问密钥 ID 和秘密访问密钥），请选择您要查看的每个密码和访问密钥旁边的显示。要保存访问密钥，请选择下载 .csv，获取AccessKeyID 和 AccessKeySecret
+     vi. 要查看用户的访问密钥（访问密钥 ID 和秘密访问密钥），请选择您要查看的每个密码和访问密钥旁边的显示。要保存访问密钥，请选择下载 .csv，获取AccessKeyID 和 AccessKeySecret
 
 ### 腾讯云对象存储 COS
 
-#### （1）创建目标存储空间：
+#### 1.创建目标存储空间：
 
 创建目标存储空间，用于存放迁移的数据。详情请参见[创建存储桶](https://cloud.tencent.com/document/product/436/6232)。
 
-#### （2）创建用于迁移的子用户并授予相关权限：
+#### 2.创建用于迁移的子用户并授予相关权限：
 
-i. 登陆腾讯云控制台。
+     i. 登陆腾讯云控制台。
 
-ii. 搜索【访问管理】或在账号信息下拉菜单中单击进入访问管理页面。
+     ii. 搜索【访问管理】或在账号信息下拉菜单中单击进入访问管理页面。
 
-iii. 在左导航栏中单击 【用户】 > 【用户列表】 进入用户列表页面。
+     iii. 在左导航栏中单击 【用户】 > 【用户列表】 进入用户列表页面。
 
-iv. 新建子用户，勾选编程访问及腾讯云控制台访问。
+     iv. 新建子用户，勾选编程访问及腾讯云控制台访问。
 
-v. 搜索并勾选QcloudCOSAccessForMSPRole及QcloudCOSFullAccess策略。
+     v. 搜索并勾选QcloudCOSAccessForMSPRole及QcloudCOSFullAccess策略。
 
-vi. 完成子用户创建并保存子用户名，访问登陆密码，SecretId，SecretKey。
+     vi. 完成子用户创建并保存子用户名，访问登陆密码，SecretId，SecretKey。
 
-vii. 单击 [这里](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) 下载 Agent。
+     vii. 单击 [这里](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) 下载 Agent。
 
 
 >**说明:** 
@@ -60,7 +60,7 @@ vii. 单击 [这里](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2
 
  
 
-## 3. 迁移限速
+## 迁移限速
 
 MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL 列表模式）。用户在使用 Agent 迁移的情况下，也可以在迁移服务器上进行限速操作，同时在 MSP 中创建任务时选择“不限速”。
 
@@ -87,9 +87,7 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
 `[root@VM_10_12_centos ~]`# /sbin/tc qdisc add dev eth0 root tbf rate 50kbit latency 50ms burst 1000
 
 >**说明:** 
-
    >- n eth0 为网卡序号，由第1步查看网卡获取。
-
    >- n 如果需要限速10M，则将50kbit改为10Mbit。
 
 5. 限速后测试，执行如下命令，验证下载速度是否已被限制。
@@ -111,16 +109,14 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
 
 2. 在腾讯云 MSP 中建立迁移任务。
 
-   2.1. 在“选择迁移模式”中的“模式选择”部分，选择“新建迁移任务后手动下载 Agent 启动迁移”。
+   i. 在“选择迁移模式”中的“模式选择”部分，选择“新建迁移任务后手动下载 Agent 启动迁移”。
 
-   2.2. 在“主节点内网 IP”部分，填写AWS上创建的服务器内网 IP 地址（例如：172.XXX.XXX.94）。
+   ii. 在“主节点内网 IP”部分，填写AWS上创建的服务器内网 IP 地址（例如：172.XXX.XXX.94）。
 
 ![img](https://main.qcloudimg.com/raw/b3f8693eab53b25bdf265ae104d1f93a.png)
 
 >**注意:** 
-
 >- 若迁移源与目标源有内容不同，名称相同的文件，建议在【同名文件】配置处选择【跳过（保留目标桶中已有的同名文件）】，系统默认选择【覆盖（源桶中的文件会覆盖目标桶中的同名文件）】。
-
 >- 若在迁移过程中对象（文件）内容有变化，需要进行二次迁移。
 
 3. 所有参数填写完毕后，单击【新建并启动】。需要注意的是，在 Agent 模式下，此时任务虽已创建成功但并未运行，需要按以下步骤在AWS主控服务器上手工启动 Agent。
@@ -130,20 +126,20 @@ MSP 迁移工具提供了限制 QPS（对象存储模式）和带宽限速（URL
    i. 解压 Agent 工具包（目录无特殊要求）。
 
    ii. 修改配置文件。
-```
-./agent/conf/agent.toml
-# 此处填写腾讯云用于迁移的云 API 密钥对
-secret_id = '此处填写腾讯云 API 密钥 AccessKey'
-secret_key = '此处填写腾讯云 API 密钥 SecretKey'
-```
+   ```
+   ./agent/conf/agent.toml
+   # 此处填写腾讯云用于迁移的云 API 密钥对
+   secret_id = '此处填写腾讯云 API 密钥 AccessKey'
+   secret_key = '此处填写腾讯云 API 密钥 SecretKey'
+   ```
 
-   iii. 启动 Agent。
-
-```
-# chmod +x ./agent/bin/agent
-# cd agent/bin  //必须在 bin 目录中启动 agent 程序（否则会找不到配置文件）
-#./agent
-```
+   iii. 启动 Agent.
+   
+   ```
+   # chmod +x ./agent/bin/agent
+   # cd agent/bin  //必须在 bin 目录中启动 agent 程序（否则会找不到配置文件）
+   #./agent
+   ```
 
 Agent 会定时自动从 MSP 平台获取任务的详细配置信息，如果创建多个迁移任务无需重复启动 Agent。
 

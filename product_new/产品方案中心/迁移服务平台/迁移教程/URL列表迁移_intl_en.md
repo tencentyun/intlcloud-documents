@@ -12,7 +12,7 @@ The following section will describe how to use the URL list method to configure 
 
 Create a destination bucket:
 
-Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://cloud.tencent.com/document/product/436/6232).
+Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://cloud.tencent.com/document/product/436/13309).
 
 Create a sub-user account for migration and grant the required permissions:
 
@@ -30,7 +30,8 @@ Create a sub-user account for migration and grant the required permissions:
 
  
 
-Note: You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-user, use the sub-user’s API key for migration, and delete the sub-user after migration.
+> **Note:**
+> You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-user, use the sub-user’s API key for migration, and delete the sub-user after migration.
 
  
 
@@ -48,52 +49,49 @@ Note: You can use Migration Service Platform (MSP) with your root account. Howev
 
 2. Set the migration task name.
     This name will be displayed in the task list, and you can check the status and progress of the migration task.
-    ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+    ![Image](https://main.qcloudimg.com/raw/a36817cf62b78c1ad94b2b6acde3908e.png)
 
 3. Set the migration source.
     The migrations source vendor should select “URL List”. You can upload the URL list files or add the URL list file download address. For large URL list files, the browser upload may timeout. It is recommended to save the URL list file to COS, select **Provide URL List File Download Address**, and then enter the COS URL access address of the file. The URL list file should be in TXT format and enter one URL per line.
 
-For example:
+    For example:
 
-http://xxx.xxx.xxx/xxx/l.jpg
- Http://xxx.xxx.xxx/xxx/xxx/xxxxxx/test.mp4
+    http://xxx.xxx.xxx/xxx/l.jpg
+    Http://xxx.xxx.xxx/xxx/xxx/xxxxxx/test.mp4
 
-![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
+   ![Image](https://main.qcloudimg.com/raw/a8dc0fe937ee2337420b153db8d17bfd.png)
 
 4. Set the task start time.
 
-Data migration will occupy the network resources of the source vendor. You can set the start time of the execution of the migration task according to your business circumstances.
+   Data migration will occupy the network resources of the source vendor. You can set the start time of the execution of the migration task according to your business circumstances.
 
-![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+    ![Image](https://main.qcloudimg.com/raw/cd38b9e671e6598c5ae84e981608db9e.png)
 
 5. Set data migration execution speed.
     You can use this function to restrict the maximum data migration speed, in order to avoid excessive CDN bandwidth costs. The actual migration speed is affected by network fluctuations, and will itself fluctuate within the defined values.
-    ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg)
+    ![Image](https://main.qcloudimg.com/raw/affc515ddbc364e60c19a4bcdfa4ab60.png)
 
 6. Select the migration destination.
     In the migration destination information, enter the SecretID and SecretKey of the Tencent Cloud sub-user. The destination COS bucket list can be obtained by clicking the refresh button on the right side of the drop-down list after the key has been entered.
-    ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg)
+    ![Image](https://main.qcloudimg.com/raw/2e0b4123df4762c9f99e82a6ba7c67c2.png)
 
 7. Specify the directory to the destination bucket.
 
-o  **Save to the root directory**: save the files in the source bucket to the destination bucket’s root directory, maintaining the original relative path.
+    - Save to the root directory: save the files in the source bucket to the destination bucket’s root directory, maintaining the original relative path.
 
-o  **Save to a specified directory**: save the files in the source bucket to the specified directory, maintaining the original relative path.
- ![Image](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)
- For example:
- There are two source bucket files, /a.txt and /dir/b.txt. **dest** is entered in the text box. In this case, after migration, the paths of these two files in the destination bucket are: /dest/a.txt, /dest/dir/b.txt.
- If **dest/20180901** is entered in the text box, then after migration, the paths of these two files in the destination bucket are: /dest/20180901/a.txt, /dest/20180901/dir/b.txt.
-
-Notes:
-
-If the files with the same name exist in both the migration source and destination, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
-
-If the object (file) content is changed during migration, you need to migrate again.
+    - Save to a specified directory: save the files in the source bucket to the specified directory, maintaining the original relative path.
+     ![Image](https://main.qcloudimg.com/raw/509ef22e079ee007a1f1a3ec29da7c86.png)
+     For example:
+     There are two source bucket files, /a.txt and /dir/b.txt. **dest** is entered in the text box. In this case, after migration, the paths of these two files in the destination bucket are: /dest/a.txt, /dest/dir/b.txt.
+     If **dest/20180901** is entered in the text box, then after migration, the paths of these two files in the destination bucket are: /dest/20180901/a.txt, /dest/20180901/dir/b.txt.
+       > **Note:**
+       >- If the files with the same name exist in both the migration source and destination, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
+       >- If the object (file) content is changed during migration, you need to migrate again.
 
 8. Select a migration mode.
 
-o  **Create a migration task and download the Agent manually to start migration**: Select Agent mode migration. After you click **Create and Start**, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to launch the migration. Agent mode is applicable to scenarios where you want to migrate through an existing Direct Connect.
- ![img](file:///C:/Users/V_ZQMZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg)
+    **Create a migration task and download the Agent manually to start migration**: Select Agent mode migration. After you click **Create and Start**, only the task configuration will be created. You must manually download Agent and deploy it on the migration source server to launch the migration. Agent mode is applicable to scenarios where you want to migrate through an existing Direct Connect.
+ ![img](https://main.qcloudimg.com/raw/e85e26eab8ff54c2512dcf9e75c0d35b.png)
 
 ## Estimating the File Migration Duration
 
@@ -107,4 +105,4 @@ The migration speed is determined by the lowest speed during each stage of the m
 
  
 
-Note: Data that is migrated by using the URL list uses standard storage on Tencent Cloud by default.
+> Data that is migrated by using the URL list uses standard storage on Tencent Cloud by default.
