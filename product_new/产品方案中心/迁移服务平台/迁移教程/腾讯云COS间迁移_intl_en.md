@@ -30,7 +30,8 @@ Create a sub-user for migration and grant the required permissions:
 
  
 
-**Note: You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-user, use the sub-user’s API key for migration, and ****delete the sub-user after migration.**
+> **Note:**
+> You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-user, use the sub-user’s API key for migration, and ****delete the sub-user after migration.
 
  
 
@@ -86,7 +87,7 @@ Create a sub-user for migration and grant the required permissions:
     If **dest/20180901** is entered in the text box, then after migration, the paths of these two files in the destination bucket are: /dest/20180901/a.txt, /dest/20180901/dir/b.txt.
     
 
-      > 
+      > **Note:**
       >- If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.**
       >- If the object (file) content is changed during migration, you need to migrate again.**
 
