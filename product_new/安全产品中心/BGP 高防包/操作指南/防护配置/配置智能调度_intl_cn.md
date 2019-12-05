@@ -23,21 +23,16 @@
 ## 设置线路优先级
 请参考以下步骤，按照设想的调度方案为您的高防线路设置优先级：
 1. 登录 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/dayu/overview)，在左侧导航栏选择【智能调度】>【域名列表】，进入域名列表页面，单击【创建智能调度】，系统自动生成一个 CNAME 记录。
-![](https://main.qcloudimg.com/raw/5f40b1c5f47a2262de89200d8e2de274.png)
+![](https://main.qcloudimg.com/raw/6edb8b562afffb86443f3f7496bd3f4d.png)
 2. 找到该 CNAME 记录所在行，单击【添加高防实例】，进入智能调度编辑页面。
-![](https://main.qcloudimg.com/raw/8a66828d0ae9e41e0ffaa19f88d93eca.png)
+![](https://main.qcloudimg.com/raw/5a6f03bc13df5ea70eac17e6aa31d259.png)
 3. 在智能调度编辑页面中，TTL 值默认60秒，取值范围为1 - 3600（秒），调度方式为默认优先级。
-![](https://main.qcloudimg.com/raw/fba008f9a82438fc0a3526233770d754.png)
+![](https://main.qcloudimg.com/raw/eeb46c75e8e9391980ed856162e6d0d9.png)
 4. 进入添加高防实例页面，勾选需要设置高防线路优先级的实例，可选高防实例包括独享包、共享包、BGP 高防 IP ，单击【确定】。
-![](https://main.qcloudimg.com/raw/7741df650ea5b5366e0c0eef960c3097.png)
+![](https://main.qcloudimg.com/raw/3f1a8366baa1b4ff7acf417f5de682bd.png)
 5. 选择高防实例后，实例的高防线路默认开启域名解析，再为其设置优先级。
-![](https://main.qcloudimg.com/raw/a866b4734b0fbbfe86101f970229979a.png)
+![](https://main.qcloudimg.com/raw/3f0fa5d1f061b39a4ad4f4b646853515.png)
 
-#### 示例
-例如，您想要将业务流量先调度到 BGP 高防线路，当 BGP 高防线路被攻击遭到封堵后，将流量自动调度到电信高防线路。如果电信高防线路也被封堵，则将流量调度到联通高防线路。当 BGP 高防线路的封堵解除后，流量将自动恢复调度至 BGP 高防线路。
-优先级设置方式：您可以将防护业务的高防实例中属于 BGP 高防线路的优先级设置成1、电信高防线路的优先级设置成2、联通高防 IP 线路的优先级不变，即可满足上述调度方案。
-![](https://main.qcloudimg.com/raw/d5a2e5c8c7ffc55d58280446a4ffe44b.png)
-如果您暂时不希望联通高防 IP 线路加入流量调度机制，单击<img src="https://main.qcloudimg.com/raw/5a5d700ec3e79ad7e0e6f50d4f440b02.png" style = "margin:0;">关闭域名解析即可，后面再根据需要重新开启域名解析并设置优先级。若想从当前调度机制中剔除该线路，可直接找到该线路对应实例所在行，单击【解除绑定】即可。
 ## 修改 DNS 解析
 使用 CNAME 智能调度前，建议您将业务域名 DNS 的 CNAME 记录，修改为 DDoS 防护（大禹）智能调度系统自动生成的 CNAME，使所有用户访问业务网站的流量都牵引至高防系统。
 
