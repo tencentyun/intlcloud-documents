@@ -74,4 +74,4 @@ Minimum billing duration 	| No limit 	| 30 days 	| 90 days
 Supported regions 	| All 	| All 	| Public cloud regions only
 Storage cost 	| Standard 	| Low 	| Very low
 Data retrieval cost 	| None 	| Low 	| High
-Read/write request cost 	| Very low 	| Low 	| Very low (data needs to be restored to standard storage and then will be subject to the billing rules of standard storage)
+Read/write request cost 	| Very low 	| Low 	| Very low (data needs to be restored to standard storage)
