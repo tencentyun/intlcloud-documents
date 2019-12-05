@@ -114,7 +114,7 @@ MSP provides a QPS limit for object storage mode and a bandwidth limit for URL l
 ![Image](https://main.qcloudimg.com/raw/aacc6697dd8a170f0fb946a6be42bb2f.png)
 
 
-> If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.**
+> If the migration source and the destination source contain files with the same name but different contents, we recommend that you select **Skip (keep the file with the same name in the destination bucket)** for **File with the same name**. By default, **Overwrite (the file in the source bucket replaces the file with the same name in the destination bucket)** is selected.
 
 **Perform secondary migration if the object (file) content is changed during migration.**
 
