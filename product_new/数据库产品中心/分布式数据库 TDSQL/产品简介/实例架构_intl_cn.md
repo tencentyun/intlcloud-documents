@@ -19,3 +19,5 @@
 <td>三个节点：一个 Master 节点，两个 Slave 节点</td>
 </tr>
 <tr>
+</thead>
+</table>
