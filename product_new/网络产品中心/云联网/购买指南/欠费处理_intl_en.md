@@ -12,7 +12,7 @@ Within seven days before expiration, the system will push expiration alerts.
 ## Monhtly Postpaid (bill by 95th Percentile)
 ### Arrears Alert
 1. Arrears notification: The system pushes an arrears notification when the account balance becomes negative.
-2. Arrears alert: This feature is disabled by default. To enable this feature, see [Balance Alert Guide](https://cloud.tencent.com/document/product/555/9942) to subscribe to this feature.
+2. Arrears alert: This feature is disabled by default.  <!--To enable this feature, see [Balance Alert Guide]() to subscribe to this feature.-->
 
 ### Arrears Processing
 The system handles arrears based on the time starting from the moment when the balance drops to 0. The logic is as follows:
