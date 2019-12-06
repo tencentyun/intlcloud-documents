@@ -12,7 +12,7 @@ This document describes migration within Tencent Cloud COS and how semi-managed 
 
 Create a destination bucket:
 
-Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://cloud.tencent.com/document/product/436/6232).
+Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 Create a sub-user for migration and grant the required permissions:
 
