@@ -14,9 +14,9 @@ For the proper running of Ingress resources, the cluster must run an Ingress con
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the cluster ID where the Ingress needs to be created to go to the cluster management page.
 4. Select **Services** -> **Ingress** to go to the Ingress information page. See the figure below:
-![Ingress](https://main.qcloudimg.com/raw/72d715c235d98e1a8e38c05ddf105a21.png)
+![Ingress](https://main.qcloudimg.com/raw/fff4330f966a1dd139e0226f8d07847e.png)
 5. Click **Create** to go to the **Create an Ingress** page. See the figure below:
-![Create an Ingress](https://main.qcloudimg.com/raw/116d6add93717282a62f1793e2146317.png)
+![Create an Ingress](https://main.qcloudimg.com/raw/f2fd4c00a82da4e564b964c87b7e7bcb.png)
 6. Set the Ingress parameters as needed. Key parameters are as follows:
  - Ingress name: custom.
  - Network type: the default value is `Public network`. Select an option as needed.
@@ -33,7 +33,7 @@ For the proper running of Ingress resources, the cluster must run an Ingress con
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the cluster ID for which you want to update the YAML to go to the cluster management page.
 4. Select **Services** -> **Ingress** to go to the Ingress information page. See the figure below:
-![Ingress](https://main.qcloudimg.com/raw/72d715c235d98e1a8e38c05ddf105a21.png)
+![Ingress](https://main.qcloudimg.com/raw/9d8befd5a41b4c922999f3337a71f2ab.png)
 5. In the row of the Ingress for which you want to update YAML, click **Edit YAML** to go to the **Update an Ingress** page.
 6. On the **Update an Ingress** page, edit YAML and click **Complete** to update YAML.
 
@@ -41,9 +41,9 @@ For the proper running of Ingress resources, the cluster must run an Ingress con
 
 1. On the cluster management page, click the cluster ID for which you want to update the YAML to go to the cluster management page.
 2. Select **Services** -> **Ingress** to go to the Ingress information page. See the figure below:
-![Ingress](https://main.qcloudimg.com/raw/72d715c235d98e1a8e38c05ddf105a21.png)
+![Ingress](https://main.qcloudimg.com/raw/6fdbb1dacd69b382e93204a3ead2cbbb.png)
 3. In the row of the Ingress for which you want to update the forwarding rule, click **Update forwarding configuration** to go to the forwarding configuration updating page. See the figure below:
-![Update forwarding configuration](https://main.qcloudimg.com/raw/4246dede3aaa2e21bdb691dd6ccf1a48.png)
+![Update forwarding configuration](https://main.qcloudimg.com/raw/ac813654063e6349790d10216d3eab47.png)
 3. Modify the forwarding configuration based on actual needs and click **Update forwarding configuration** to complete the update.
 
 ## Managing Ingress Using kubectl
@@ -87,7 +87,7 @@ metadata:
     kubernetes.io/ingress.internetChargeType: TRAFFIC_POSTPAID_BY_HOUR
     kubernetes.io/ingress.internetMaxBandwidthOut: "10"
 ```
-For more information on **IP bandwidth packages**, please see [Bandwidth Package Types](https://cloud.tencent.com/document/product/684/15246).
+<!--For more information on **IP bandwidth packages**, please see [Bandwidth Package Types]()-->
 
 ### Creating an Ingress
 
