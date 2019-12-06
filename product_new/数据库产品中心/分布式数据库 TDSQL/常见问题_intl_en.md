@@ -15,7 +15,7 @@ When you use a sharded table, the shardkey must be included in an INSERT/REPLACE
 
 ### How to select the shardkey?
 The shardkey is a data table field used to generate the splitting rules during horizontal splitting (sharding), which should be specified when creating the table. You are recommended to find the entity of the data in the data table on the business logic, determine that the majority or core part of database operations are performed around the data of the entity, and then use the field corresponding to the entity as the shardkey for sharding (this scheme is called group-shard), as shown below:
-![](https://mc.qcloudimg.com/static/img/b7ed0dd48a27c0c534fa490f56b6605d/groupshard.png)
+![](https://main.qcloudimg.com/raw/f0a5b31d7c69eb34b84dbc9d57b5201a.png)
 Group-Shard can ensure that some correlated data entries and complex business logic computation in different sharded tables can be aggregated into one physical shard. For example, if both the order table and user table of an ecommerce platform are sharded by UserID, then the platform can quickly calculate how many orders a user has recently placed through join query (with no cross-node joins or distributed transactions caused).
 
 Below are some typical application scenarios for shardkey selection:

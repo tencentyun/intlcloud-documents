@@ -9,7 +9,7 @@ TDSQL ensures the stability of automatic scaling with its proprietary automatic 
 2. According to the configuration of new node G, some data of node A will be migrated (from the slave) to node G.
 3. After the data is completely synced, nodes A and G will check the database (read-only status for one to tens of seconds), but the entire service will not be suspended.
 4. The scheduling system notifies the proxy to switch route.
-![](https://mc.qcloudimg.com/static/img/d407c9bf2740c3ceb803392448856cf2/image.png)
+![](https://main.qcloudimg.com/raw/50299d47e5a0ee8760e9bde16701148a.png)
 
 ### Scaling up an existing shard
 Scaling up an existing shard is actually replacing it with a larger physical shard.
@@ -18,4 +18,4 @@ Scaling up an existing shard is actually replacing it with a larger physical sha
 1. Assign a new physical shard (the "new shard") based on the required configuration.
 2. Sync the data and configuration of the physical shard to be upgraded (the "old shard") to the new shard.
 3. After the data sync is completed, switch the route in the Tencent Cloud gateway to the new shard for continued use.
-![](https://mc.qcloudimg.com/static/img/d30e97c05742feccf7728e6a326e826f/image.png)
+![](https://main.qcloudimg.com/raw/7f29be1908e9452fbaf5264293cbe59c.png)

@@ -12,7 +12,7 @@ TDSQL 是支持水平拆分的分布式数据库。
 
 #### Shared Nothing 架构
 Shared Nothing 架构能够通过简单堆叠机器，对数据和访问容量进行扩展，Shared Nothing 架构虽能够满足大部分用户的数据库容量需求，但本质上是小型机 + 共享存储，会碰到容量和性能天花板，且价格相对昂贵。
-![](https://main.qcloudimg.com/raw/56369745daf1488e021fef02b07a947a.png)
+![](https://main.qcloudimg.com/raw/280276ed738586bc34b959c38346d01a.png)
 
 #### 数据分裂方式（分片规则）
 TDSQL 主流以自动水平拆分为基础，通过将 shardkey 求模，并通过代理网关（TProxy）按求模后值的特定范围分散到不同库中的分片方案。
