@@ -6,6 +6,8 @@
 <th>节点</th>
 <th>特点</th>
 </tr>
+</thead>
+<tbody><tr>
 <td>标准版（一主一从）</td>
 <td>每个分片提供主从双活部署的高可用架构</td>
 <td>两个节点：一个 Master 节点，一个 Slave 节点</td>
@@ -17,5 +19,4 @@
 <td>三个节点：一个 Master 节点，两个 Slave 节点</td>
 </tr>
 <tr>
-</thead>
 </table>
