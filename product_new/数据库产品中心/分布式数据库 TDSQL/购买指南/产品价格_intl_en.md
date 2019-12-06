@@ -77,4 +77,5 @@ Total price of an instance = shard price * number of shards * duration of usage 
 		<td>0.0222
 </td>
 	</tr>
-	
+</tbody>
+</table>
