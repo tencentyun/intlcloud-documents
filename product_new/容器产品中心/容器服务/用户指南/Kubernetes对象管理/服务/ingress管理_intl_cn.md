@@ -14,9 +14,9 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 2. 在左侧导航栏中，单击【集群】，进入集群管理页面。
 3. 单击需要创建 Ingress 的集群 ID，进入待创建 Ingress 的集群管理页面。
 4. 选择 【服务】 >【Ingress】，进入 Ingress 信息页面。如下图所示：
-![Ingress](https://main.qcloudimg.com/raw/72d715c235d98e1a8e38c05ddf105a21.png)
+![Ingress](https://main.qcloudimg.com/raw/fff4330f966a1dd139e0226f8d07847e.png)
 5. 单击【新建】，进入 “新建Ingress” 页面。如下图所示：
-![新建Ingress](https://main.qcloudimg.com/raw/116d6add93717282a62f1793e2146317.png)
+![新建Ingress](https://main.qcloudimg.com/raw/f2fd4c00a82da4e564b964c87b7e7bcb.png)
 6. 根据实际需求，设置 Ingress 参数。关键参数信息如下：
  - Ingress名称：自定义。
  - 网络类型：默认为 “公网”，请根据实际需求进行选择。
@@ -33,7 +33,7 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 2. 在左侧导航栏中，单击【集群】，进入集群管理页面。
 3. 单击需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
 4. 选择 【服务】 > 【Ingress】，进入 Ingress 信息页面。如下图所示：
-![Ingress](https://main.qcloudimg.com/raw/72d715c235d98e1a8e38c05ddf105a21.png)
+![Ingress](https://main.qcloudimg.com/raw/9d8befd5a41b4c922999f3337a71f2ab.png)
 5. 在需要更新 YAML 的 Ingress 行中，单击【编辑YAML】，进入更新 Ingress 页面。
 6. 在 “更新Ingress” 页面，编辑 YAML，单击【完成】，即可更新 YAML。
 
@@ -41,9 +41,9 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 
 1. 集群管理页面，单击需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
 2. 选择 【服务】 > 【Ingress】，进入 Ingress 信息页面。如下图所示：
-![Ingress](https://main.qcloudimg.com/raw/72d715c235d98e1a8e38c05ddf105a21.png)
+![Ingress](https://main.qcloudimg.com/raw/6fdbb1dacd69b382e93204a3ead2cbbb.png)
 3. 在需要更新转发规则的 Ingress 行中，单击【更新转发配置】，进入更新转发配置页面。如下图所示：
-![更新转发配置](https://main.qcloudimg.com/raw/4246dede3aaa2e21bdb691dd6ccf1a48.png)
+![更新转发配置](https://main.qcloudimg.com/raw/ac813654063e6349790d10216d3eab47.png)
 3. 根据实际需求，修改转发配置，单击【更新转发配置】，即可完成更新。
 
 ## kubectl 操作 Ingress 指引
@@ -87,7 +87,7 @@ metadata:
     kubernetes.io/ingress.internetChargeType: TRAFFIC_POSTPAID_BY_HOUR
     kubernetes.io/ingress.internetMaxBandwidthOut: "10"
 ```
-关于 **IP 带宽包** 的更多详细信息，欢迎查看文档 [共享带宽包产品类别](https://cloud.tencent.com/document/product/684/15246)。
+<!--关于 **IP 带宽包** 的更多详细信息，欢迎查看文档 [共享带宽包产品类别]()-->
 
 ### 创建 Ingress
 
