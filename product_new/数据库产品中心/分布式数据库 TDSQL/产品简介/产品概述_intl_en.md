@@ -12,7 +12,7 @@ Sharding is to spread the data of a table into multiple independent physical dat
 
 #### Shared Nothing architecture
 The Shared Nothing architecture can scale data and access capacity by simply adding more servers. Although it can meet the database capacity needs of most users, it is essentially a minicomputer + shared storage solution that is prone to capacity and performance bottlenecks and relatively expensive.
-![](https://main.qcloudimg.com/raw/56369745daf1488e021fef02b07a947a.png)
+![](https://main.qcloudimg.com/raw/280276ed738586bc34b959c38346d01a.png)
 
 #### Data splitting methods (sharding rules)
 In principle, TDSQL uses a sharding scheme based on automatic horizontal splitting. Specifically, a modulo operation is executed on the shardkey, and then data is distributed into different databases through TProxy according to the specific range of values after modulo operation.
