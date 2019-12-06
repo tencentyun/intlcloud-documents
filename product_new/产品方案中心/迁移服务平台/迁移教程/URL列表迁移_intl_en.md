@@ -12,7 +12,7 @@ The following section will describe how to use the URL list method to configure 
 
 Create a destination bucket:
 
-Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://cloud.tencent.com/document/product/436/13309).
+Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 Create a sub-user account for migration and grant the required permissions:
 
