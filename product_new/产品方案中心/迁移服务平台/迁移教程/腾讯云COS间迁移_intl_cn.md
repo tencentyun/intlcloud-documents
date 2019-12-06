@@ -39,7 +39,7 @@
 
 ### 登录迁移服务平台
 
-1. 登录 [迁移服务平台](https://console.cloud.tencent.com/msp/tools) ，在左导航栏中单击进入迁移工具页面。
+1. 登录 [迁移服务平台](https://console.cloud.tencent.com/msp/v2file) ，在左导航栏中单击进入迁移工具页面。
 
 2. 找到【文件迁移工具】模块，单击【立即使用】，进入文件迁移工具配置页面。
 
