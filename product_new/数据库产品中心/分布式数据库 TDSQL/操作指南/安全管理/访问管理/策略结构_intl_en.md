@@ -22,7 +22,6 @@ CAM policy configuration example:
  3. **condition** describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address. Some services allow you to specify additional values in a condition. This element is optional.
  4. **effect** describes whether the result produced by the statement is "allowed" (allow) or "denied" (deny). This element is required.
 
->As TDSQL was formerly known as DCDB, its API keyword in CAM is "dcdb". For more information, see [Product Name Change](https://intl.cloud.tencent.com/document/product/1042/33376).
 
 ## Actions in TencentDB
 

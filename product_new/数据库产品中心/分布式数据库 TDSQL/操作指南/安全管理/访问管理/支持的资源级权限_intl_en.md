@@ -1,4 +1,3 @@
->As TDSQL was formerly known as DCDB, its API keyword in CAM is "dcdb". For more information, see [Product Name Change](https://intl.cloud.tencent.com/document/product/1042/33376).
 
 Resource-level permission can be used to specify which resources a user can manipulate. TencentDB supports certain resource-level permission. This means that for some TencentDB operations, you can control the time when a user is allowed to perform operations (based on mandatory conditions) or to use specified resources. The following table describes the types of resources that can be authorized in TencentDB.
 

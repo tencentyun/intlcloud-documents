@@ -1,8 +1,6 @@
 ## Sample CAM Policies for TencentDB
 You can grant a user the permission to view and use specific resources in the TencentDB Console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console.
 
->As TDSQL was formerly known as DCDB, its API keyword in CAM is "dcdb". For more information, see [Product Name Change](https://intl.cloud.tencent.com/document/product/1042/33376).
-
 ### Syntax for Creating a Custom Policy
 1. Enter the policy syntax configuration page and click **Create Custom Policy**.
 ![](https://main.qcloudimg.com/raw/fc7ff2e20322c74b2e8b5728a483255c.png)
