@@ -18,4 +18,5 @@
 <td>Each shard provides a high-availability architecture based on master-slave multi-site active-active deployment</td>
 <td>Three nodes: one master node and two slave nodes</td>
 </tr>
-<tr>
+</tbody>
+</table>
