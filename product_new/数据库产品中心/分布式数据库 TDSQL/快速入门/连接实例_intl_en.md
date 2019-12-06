@@ -40,11 +40,11 @@ Welcome to the MySQL monitor.  Commands end with ; or \g.
  - Username: Enter the name of the account created earlier.
  - Password: Enter the account password.
  - Port: Enter the port corresponding to the public network address.
-<!--
-![]()
-3. The following screen will appear after successful connection, where you can perform operations on the database.
-![]()
--->
+
+<!-- ![]() -->
+<!-- 3. The following screen will appear after successful connection, where you can perform operations on the database.-->
+<!-- ![]() -->
+
 ### Connecting via Windows JDBC driver
 TDSQL supports connecting via program drivers. This document uses Java JDBC Driver for MySQL (Connector/J) as an example to describe how to connect to TDSQL.
 
