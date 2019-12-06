@@ -41,5 +41,5 @@ For example, on a 64-bit Linux source server, run the following command with roo
 ```
 sudo ./go2tencentcloud_x64
 ```
-For example, you are using the [private network mode: scenario 2](https://cloud.tencent.com/document/product/213/38783#Scenario2) for migration. If the migration is successful, the following console output appears:
+For example, you are using the private network mode: scenario 2 for migration. If the migration is successful, the following console output appears:
  ![](https://main.qcloudimg.com/raw/3d5c45ccb9f5350bb30cf3d3fce29590/console-cross-region.png)
