@@ -271,5 +271,5 @@ The following APIs are added in XML Android SDK, which can be called as needed:
 * Operations on Bucket ACLs, such as PutBucketACLRequest, and GetBucketACLRequest.
 * Operations on bucket lifecycle, such as PutBucketLifecycleRequest, and GetBucketLifecycleRequest.
 
-For more information, see [Android SDK API Documentation](https://cloud.tencent.com/document/product/436/11238).
+For more information, see [Android SDK API Documentation](https://intl.cloud.tencent.com/document/product/436/12159).
 
