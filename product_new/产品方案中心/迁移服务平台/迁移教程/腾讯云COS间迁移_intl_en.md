@@ -39,7 +39,7 @@ Create a sub-user for migration and grant the required permissions:
 
 ### Logging in to the Migration Service Platform
 
-1. Log in to [Migration Service Platform](https://console.cloud.tencent.com/msp/tools), and click **Migration Tool** in the left sidebar to go to the **Migration Tool** page.
+1. Log in to [Migration Service Platform](https://console.cloud.tencent.com/msp/v2file), and click **Migration Tool** in the left sidebar to go to the **Migration Tool** page.
 
 2. Locate the **File Migration Tool** module, and click **Use Now** to go to the file migration tool configuration page.
 
