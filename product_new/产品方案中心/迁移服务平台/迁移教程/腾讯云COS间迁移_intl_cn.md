@@ -12,7 +12,7 @@
 
 创建目标存储空间：
 
-创建目标存储空间，用于存放迁移的数据。详情请参见[创建存储桶](https://cloud.tencent.com/document/product/436/13309)。
+创建目标存储空间，用于存放迁移的数据。详情请参见[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
 
 创建用于迁移的子用户并授予相关权限：
 
