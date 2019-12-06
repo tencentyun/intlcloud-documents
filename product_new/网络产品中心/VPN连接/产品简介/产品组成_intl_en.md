@@ -4,14 +4,14 @@ A VPN connection consists of a VPN gateway, a customer gateway, and a VPN tunnel
 A VPN gateway is an egress gateway for establishing a VPN connection in a VPC. It is used with a customer gateway (IPsec VPN gateway on the IDC side) to establish an encrypted tunnel between a Tencent Cloud VPC and an external IDC for secure and reliable network communication. A Tencent Cloud VPN gateway is virtualized through software. With a dual-server hot backup mechanism, the system automatically switches to another server when one server becomes faulty, without affecting the normal operation of business.
 
 Five bandwidth limits are available for a VPN gateway: 5 Mbps, 10 Mbps, 20 Mbps, 50 Mbps, and 100 Mbps.
-If you want to use [Anti-DDoS](https://cloud.tencent.com/document/product/297) to provide ultra-large-bandwidth DDoS and CC defense for the VPN gateway, you can bind Anti-DDoS Pro instance to the VPN gateway for security protection.
+If you want to use [Anti-DDoS](https://intl.cloud.tencent.com/document/product/297) to provide ultra-large-bandwidth DDoS and CC defense for the VPN gateway, you can bind Anti-DDoS Pro instance to the VPN gateway for security protection.
 
 ## Customer Gateway
 A customer gateway is a logical object that records the public IP address of the IPsec VPN gateway on the IDC side. It is used with a Tencent Cloud VPN gateway. Encrypted VPN tunnels can be established between a VPN gateway and multiple customer gateways.
 
 ## VPN Tunnel
 After the VPN gateway and customer gateway are created, a VPN tunnel can be established between the VPC and the external IDC for encrypted communication. The VPN tunnel currently supports the IPsec encryption protocol, which can meet the requirements of most VPN connections.
-Since a VPN tunnel runs on an ISP's public network, congestion or jitter on the public network may affect the quality of the VPN network. Therefore, the SLA cannot be assured. If your business is sensitive to delay and jitter, it is recommended that you connect the VPC by using Direct Connect. For more information, see [Direct Connect](https://cloud.tencent.com/product/dc.html).
+Since a VPN tunnel runs on an ISP's public network, congestion or jitter on the public network may affect the quality of the VPN network. Therefore, the SLA cannot be assured. If your business is sensitive to delay and jitter, it is recommended that you connect the VPC by using Direct Connect. For more information, see [Direct Connect](https://intl.cloud.tencent.com/product/dc.html).
 
 ### Establishing a VPN Tunnel
 A VPN tunnel on Tencent Cloud uses the Internet Key Exchange (IKE) protocol to establish a session during the implementation of IPsec. IKE has a self-protection mechanism that can securely authenticate identities, distribute keys, and establish IPSec sessions on insecure networks.
