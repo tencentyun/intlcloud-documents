@@ -8,8 +8,8 @@
 
 类型为数据盘的云硬盘均支持通过控制台和 API 进行硬盘扩容操作，注意只能保持容量不变或扩充容量，不能缩小容量。
 根据 CBS 数据盘“可卸载”属性的不同，您可选择不同的操作入口对数据盘进行扩容
-- 若当前硬盘为“可卸载”的 CBS 数据盘，您可经由云硬盘控制台或使用 [扩容云硬盘](https://cloud.tencent.com/document/product/362/16310) 进行扩容操作。
-- 若当前硬盘为“不可卸载”的 CBS 数据盘，您可经由云服务器实例控制台或使用 [扩容云硬盘](https://cloud.tencent.com/document/product/362/16310) 进行扩容操作。
+- 若当前硬盘为“可卸载”的 CBS 数据盘，您可经由云硬盘控制台或使用 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/16310) 进行扩容操作。
+- 若当前硬盘为“不可卸载”的 CBS 数据盘，您可经由云服务器实例控制台或使用 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/16310) 进行扩容操作。
 
 > 如果云硬盘的最大容量仍无法满足您的业务需求，您可以使用 [多块弹性云硬盘构建 RAID 组](https://intl.cloud.tencent.com/document/product/362/2932) 或 [多块弹性云硬盘构建 LVM 逻辑卷](https://intl.cloud.tencent.com/document/product/362/2933)。
 >
