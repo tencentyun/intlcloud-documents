@@ -23,23 +23,23 @@
 	 <tr>
          <td   rowspan="2" nowrap="nowrap">未创建文件系统</td>
          <td>磁盘容量小于2TB</td>
-		 <td><a href="https://cloud.tencent.com/document/product/362/6734">初始化云硬盘（小于2TB）</a></td>
+		 <td><a href="https://intl.cloud.tencent.com/document/product/362/31597">初始化云硬盘（小于2TB）</a></td>
      </tr> 
 	 <tr>
          <td nowrap="nowrap">磁盘容量大于等于2TB</td>
-         <td><a href="https://cloud.tencent.com/document/product/362/6735">初始化云硬盘（大于等于2TB）</a></td>
+         <td><a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a></td>
      </tr>
 	 <tr>
          <td   rowspan="2">已创建文件系统</td>
          <td>磁盘容量小于2TB</td>
-    		 <td><ul><li>扩容的是 Windows 云服务器的云硬盘：<a href="https://cloud.tencent.com/document/product/362/6737">扩展分区及文件系统（Windows）</a></li>
-			 <li>扩容的是 Linux 云服务器的云硬盘：<a href="https://cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a></li></ul>
+    		 <td><ul><li>扩容的是 Windows 云服务器的云硬盘：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li>
+			 <li>扩容的是 Linux 云服务器的云硬盘：<a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a></li></ul>
 				 </td>
      </tr>
 	 <tr>
          <td>磁盘容量大于等于2TB</td>
          <td>
-				 <ul><li>采用 GPT 分区格式： <a href="https://cloud.tencent.com/document/product/362/6737">扩展分区及文件系统（Windows）</a>或 <a href="https://cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a>。</li>
+				 <ul><li>采用 GPT 分区格式： <a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a>或 <a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a>。</li>
 				 <li>采用 MBR 分区格式：不支持。</li>MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 MBR 格式，且需要扩容到超过2TB时，建议您重新创建并挂载一块新的数据盘，然后使用 GPT 分区方式后将数据拷贝至新盘中。</ul>
 				 </td>
      </tr>
