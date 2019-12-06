@@ -54,7 +54,7 @@ The fields are defined as follows:
   For example, set the target collection path to the local log path `/usr/local/webserver/nginx/logs/access.log`, and bind the log topic to the server group nginx_group. The settings are shown in the following figure.
   ![](https://main.qcloudimg.com/raw/f01e1cfa443ca8ca87da51199ed27982.png)
 - Extract the key-value
-  Set the key-value extraction mode to [Full RegEx](https://intl.cloud.tencent.com/document/product/614/31654), enter a log sample, and verify the regular expression for extraction rule.
+  Set the key-value extraction mode to [Full RegEx](https://intl.cloud.tencent.com/document/product/614/32283), enter a log sample, and verify the regular expression for extraction rule.
   For example, log_format of the NGINX access log is defined as follows:
   ```shell
   log_format  main  '$remote_addr - $remote_user [$time_local] "$request"'
