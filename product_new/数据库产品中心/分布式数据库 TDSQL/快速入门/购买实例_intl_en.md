@@ -8,5 +8,5 @@ This document describes how to create an instance in the TDSQL Console.
  - The networks of Tencent Cloud products in different regions cannot communicate with one another.
  - Once selected, a VPC cannot be changed.
 3. After confirming that everything is correct, click **Buy Now** and make the payment.
-![](https://main.qcloudimg.com/raw/adfcb0f6e91474873469339110317190.png)
+<!--  ![]() -->
 4. After making the payment, return to the TDSQL instance list, wait for the instance status to become **uninitialized**, and initialize the instance.
