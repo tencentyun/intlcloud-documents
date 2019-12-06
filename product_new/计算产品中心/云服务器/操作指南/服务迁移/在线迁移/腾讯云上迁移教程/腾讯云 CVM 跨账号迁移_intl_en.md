@@ -5,7 +5,7 @@ The online migration tool supports migrating Tencent Cloud CVM data across accou
 
 ## Choosing a Migration Mode Based on the Network Environment
 Choose the appropriate migration mode according to the network environments of your source servers and destination CVMs.
-Currently, the migration tool supports the default mode and the private network mode. The private network mode applies to three scenarios. Each migration mode or scenario has different network requirements for source servers and destination CVMs. If both source servers and destination CVMs can access the public network, you can use the default mode for migration. If either source servers or destination CVMs cannot access the public network directly, you need to establish connections through [VPC Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connection](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) ,or [Direct Connect](https://intl.cloud.tencent.com/document/product/216) before using the private network mode for migration.
+Currently, the migration tool supports the default mode and the private network mode. The private network mode applies to three scenarios. Each migration mode or scenario has different network requirements for source servers and destination CVMs. If both source servers and destination CVMs can access the public network, you can use the default mode for migration. If either source servers or destination CVMs cannot access the public network directly, you need to establish connections through [VPN Connection](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) ,or [Direct Connect](https://intl.cloud.tencent.com/document/product/216) before using the private network mode for migration.
 
 ## Data Backup
 You can back up your data by creating snapshots.
@@ -25,7 +25,7 @@ Before migrating, check the following items for source servers and destination C
 ## Start Migration
  
 1. (Optional) Establish a connection between the source server and the destination CVM.  
- - If you are using the private network mode, establish a connection between the source sever and the destination CVM through [VPC Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connection](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/document/product/216).
+ - If you are using the private network mode, establish a connection between the source sever and the destination CVM through [VPN Connection](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/document/product/216).
  - Skip this step if you are using the default mode.
 2. Configure the user.json file.
 The user.json file is for configuring the source server and the target CVM. It contains the following configuration items:
@@ -38,7 +38,7 @@ The client.json file is for configuring the migration mode and other migration c
 4. (Optional) Remove files and directories on the server that do not need to be migrated.  
  Edit the rsync\_excludes\_linux.txt file on the Linux source server to remove files and directories that do not need to be migrated.
 5. Run the tool.
-Take cross-account migration in [Private network mode: Scenario 1](https://cloud.tencent.com/document/product/213/38783#Scenario1) as an example:  
+Take cross-account migration in Private network mode: Scenario 1 as an example:  
  1. On a CVM that has access to the public network, execute the following command to run the tool for migration stage 1.
 ```
 sudo ./go2tencentcloud_x64
