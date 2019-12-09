@@ -2,8 +2,6 @@ A customer master key (CMK) is a basic element of the KMS service. The CMK conta
 
 By default, the underlying encryptor of KMS creates secure key material for a CMK when the CMK is created in KMS. If you want to use your own key material, i.e., implementing a Bring Your Own Key (BYOK) solution, you can use KMS to generate a CMK with the key material left empty, and then import your own key material into the CMK to form an external CMK. The external CMK can be distributed and managed by KMS.
 
-<div align="center"><img src="https://main.qcloudimg.com/raw/02750e16daf955dbc065212cbc62acf2.png"  width="85%"></div>
-
 
 
 ## Features
