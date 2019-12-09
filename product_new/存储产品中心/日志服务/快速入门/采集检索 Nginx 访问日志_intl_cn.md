@@ -54,7 +54,7 @@ log_format  main  '$remote_addr - $remote_user [$time_local] "$request"'
   例如，将本地日志路径`/usr/local/webserver/nginx/logs/access.log`设置为采集目标路径，并绑定 nginx_group 机器组，相关设置如图所示：
   ![](https://main.qcloudimg.com/raw/f01e1cfa443ca8ca87da51199ed27982.png)
 - 提取 key-value 键值
-  键值提取模式选择 [完全正则](https://intl.cloud.tencent.com/document/product/614/31654) 模式，输入日志样例后，验证提取规则的正则表达式。
+  键值提取模式选择 [完全正则](https://intl.cloud.tencent.com/document/product/614/32283) 模式，输入日志样例后，验证提取规则的正则表达式。
   例如，Nginx 访问日志的日志格式 log_format 定义如下：
   ```shell
   log_format  main  '$remote_addr - $remote_user [$time_local] "$request"'

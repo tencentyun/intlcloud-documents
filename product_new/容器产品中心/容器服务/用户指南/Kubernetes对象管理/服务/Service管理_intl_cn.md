@@ -67,9 +67,9 @@ Service 定义访问后端 Pod 的访问方式，并提供固定的虚拟访问 
 2. 在左侧导航栏中，单击【集群】，进入集群管理页面。
 3. 单击需要创建 Service 的集群 ID，进入待创建 Service 的集群管理页面。
 4. 选择 “服务” > “Service”，进入 Service 信息页面。如下图所示：
-![](https://main.qcloudimg.com/raw/3628305bd167fca1f3e2eaa2a4e1d615.png)
+![](https://main.qcloudimg.com/raw/45e8b34c9b4aa5e97360871f7a02563d.png)
 5. 单击【新建】，进入 “新建Service” 页面。如下图所示：
-![](https://main.qcloudimg.com/raw/be05e7133d8c205a42dbb03a1b1de3a5.png)
+![](https://main.qcloudimg.com/raw/f764f808b6417950506094d121cb9e42.png)
 6. 根据实际需求，设置 Service 参数。关键参数信息如下：
    - 服务名称：自定义。
    - 命名空间：根据实际需求进行选择。
@@ -84,7 +84,7 @@ Service 定义访问后端 Pod 的访问方式，并提供固定的虚拟访问 
 2. 在左侧导航栏中，单击【集群】，进入集群管理页面。
 3. 单击需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
 4. 选择 “服务” > “Service”，进入 Service 信息页面。如下图所示：
-![](https://main.qcloudimg.com/raw/77224c6dc76ded174f4188c6e184cc90.png)
+![](https://main.qcloudimg.com/raw/20f3d77dedb38643a3be714653599296.png)
 5. 在需要更新 YAML 的 Service 行中，单击【编辑YAML】，进入更新 Service 页面。
 6. 在 “更新Service” 页面，编辑 YAML，单击【完成】，即可更新 YAML。
 
@@ -162,7 +162,7 @@ metadata:
   service.kubernetes.io/qcloud-loadbalancer-internet-charge-type: TRAFFIC_POSTPAID_BY_HOUR
   service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out: "10"
 ```
-关于 **IP 带宽包** 的更多详细信息，欢迎查看文档 [共享带宽包产品类别](https://cloud.tencent.com/document/product/684/15246)。
+ <!--关于 **IP 带宽包** 的更多详细信息，欢迎查看文档 [共享带宽包产品类别]()-->
 
 ### 创建 Service
 

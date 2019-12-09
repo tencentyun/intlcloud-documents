@@ -1,4 +1,4 @@
-1. 登录 [腾讯云控制台](https://console.cloud.tencent.com/)， 选择【安全】>【大禹网络安全】进入大禹网络安全控制台，在左侧目录中单击 [BGP 高防包](https://console.cloud.tencent.com/dayu/bgp/list/sp/gz) 。
+1. 登录 [腾讯云控制台](https://console.cloud.tencent.com/)， 选择【安全】>【大禹网络安全】进入大禹网络安全控制台，在左侧目录中单击 [BGP 高防包](https://console.cloud.tencent.com/dayu/bgp_v2/list/sp) 。
 2. 在列表中找到您需要绑定的 BGP 高防包实例，单击该实例操作栏中的【更换设备】。
 3. 在弹出框中选择关联设备类型和关联机器，设备类型选择 “VPN 网关”，在列表中选择您需要关联的 VPN 网关。
 4. 选择完毕后，单击【确认】即可。

@@ -150,8 +150,8 @@ The following errors may occur when authentication fails:
 | Error Code | Error Type | Error Description |
 |---------|---------|---------|
 | 4100 | Authentication failed | Make sure the signature added to your request is calculated correctly (see steps above as reference) and  URL encoded.
-| 4101 | No API access authorization | The sub-user is not authorized to call this API. Please contact the developer for authorization. For more information, see [Authorization Policy](https://intl.cloud.tencent.com/doc/product/378/4513). |
-| 4102 | No authorization to access resources | You are not authorized to access resources used by this API. Check the relevant resource IDs in the `message` field and contact the developer for authorization. </br>For more information, see [Authorization Policy](https://intl.cloud.tencent.com/doc/product/378/4513). |
+| 4101 | No API access authorization | The sub-user is not authorized to call this API. Please contact the developer for authorization. |
+| 4102 | No authorization to access resources | You are not authorized to access resources used by this API. Check the relevant resource IDs in the `message` field and contact the developer for authorization. </br> |
 | 4103 | Non-developer's SecretId cannot be used to call this API | The sub-user's SecretId cannot be used to call this API. Only the developer has the access to this API. |
 | 4104 | SecretId does not exist | The SecretId does not exist, or the status of SecretKey is incorrect. Please make sure that the API key is valid and enabled. |
 | 4110 | Authentication failed | Permission verification failed. Please make sure that you are granted the permission to access the resources. |

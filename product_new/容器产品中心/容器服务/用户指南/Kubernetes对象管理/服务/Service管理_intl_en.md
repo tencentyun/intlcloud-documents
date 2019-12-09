@@ -67,9 +67,9 @@ TKE provides the following 4 access methods:
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster for which you need to create a Service to go to the cluster management page.
 4. Select **Service** -> **Service** to go to the Service information page. See the figure below:
-![](https://main.qcloudimg.com/raw/3628305bd167fca1f3e2eaa2a4e1d615.png)
+![](https://main.qcloudimg.com/raw/45e8b34c9b4aa5e97360871f7a02563d.png)
 5. Click **Create** to go to the **Create a Service** page. See the figure below:
-![](https://main.qcloudimg.com/raw/be05e7133d8c205a42dbb03a1b1de3a5.png)
+![](https://main.qcloudimg.com/raw/f764f808b6417950506094d121cb9e42.png)
 6. Set the Service parameters as needed. The key parameter information is as follows:
    - Service name: custom.
    - Namespace: select an option as needed. 
@@ -84,7 +84,7 @@ TKE provides the following 4 access methods:
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the cluster ID for which you want to update the YAML to go to the cluster management page.
 4. Select **Service** -> **Service** to go to the Service information page. See the figure below:
-![](https://main.qcloudimg.com/raw/77224c6dc76ded174f4188c6e184cc90.png)
+![](https://main.qcloudimg.com/raw/20f3d77dedb38643a3be714653599296.png)
 5. In the row of the Service for which you want to update the YAML, click **Edit YAML** to go to the Service update page.
 6. On the **Update a Service** page, edit YAML and click **Finish**.
 
@@ -162,7 +162,7 @@ If you are using an account with **IP bandwidth packages**, you need to specify 
   service.kubernetes.io/qcloud-loadbalancer-internet-charge-type: TRAFFIC_POSTPAID_BY_HOUR
   service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out: "10"
 ```
-For more information on **IP bandwidth packages**, please see the document [Bandwidth Package Types](https://cloud.tencent.com/document/product/684/15246).
+<!--For more information on **IP bandwidth packages**, please see the document [Bandwidth Package Types]()-->
 
 ### Creating a Service
 

@@ -1,4 +1,4 @@
-Log in to Tencent Cloud's ICP filing application system: [Start an application](https://console.cloud.tencent.com/beian) 
+Log in to Tencent Cloud's ICP filing application system.
 
 Application process varies by application type. The following is a basic process and is for reference purposes only:
 
