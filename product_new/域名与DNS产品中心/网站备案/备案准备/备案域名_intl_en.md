@@ -11,8 +11,7 @@ The verification of a domain name for ICP filing can be passed only if all the f
 - The domain name for ICP filing is registered and administrated through a state-approved domain name registrar (domain names registered by a domain registrar outside Mainland China are not eligible for ICP filing application directly and must be transferred to a competent service provider in Mainland China, such as Tencent Cloud).
 [Domain Name Industry Administration Information Publicity System of the Ministry of Industry and Information Technology](http://xn--eqrt2g.xn--vuq861b/#)
 - The domain name for ICP filing is within the validity period of the domain name registration (subject to the expiry date in the WHOIS information).
-- The domain name for ICP filing has passed identity verification.
-[Tencent Cloud Operation Guide on Domain Name Identity Verification](https://cloud.tencent.com/document/product/242/6707)
+- The domain name for ICP filing has passed identity verification.<!--[Tencent Cloud Operation Guide on Domain Name Identity Verification]()-->
 - The ICP filing entity information filled in during ICP filing application is the same as the identity information of the domain name registrant.
  - Personal ICP filing: The information of the person-in-charge of ICP filing must be the same as the identity information of the domain name registrant (the information for comparison includes name and identity document type and number).
  - Organizational ICP filing: The name of the ICP filing entity or the information of the person-in-charge of the entity must be the same as the identity information of the domain name registrant (the information for comparison includes name and identity document type and number).
