@@ -65,8 +65,8 @@ If your ICP filing information (e.g., organization name, website name, business 
 
 >
 >- For example, for charity foundations, certificates such as registration with the civil affairs authorities and stamped letter of guarantee of no provision of financial services shall be provided. If you are in Zhejiang, applicable certificates from the financial regulators are also required; otherwise, ICP filing application is not allowed.
-- If your website indeed involves no financial activities, you need to change the registered business name or business scope in order to apply for an ICP filing.
-- The above information is for reference only.
+>- If your website indeed involves no financial activities, you need to change the registered business name or business scope in order to apply for an ICP filing.
+>- The above information is for reference only.
 
 ### Gaming
 Gaming products must obtain approvals before they can be officially launched and billed. The Publications Bureau of the Publicity Department of the CPC Central Committee is responsible for prerequisite approvals for the gaming industry.
