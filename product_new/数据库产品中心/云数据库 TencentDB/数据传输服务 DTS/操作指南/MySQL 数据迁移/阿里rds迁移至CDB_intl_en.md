@@ -15,7 +15,7 @@ This document describes how to migrate data from Alibaba Cloud ApsaraDB for RDS 
 >The public network address provided by Alibaba Cloud needs to be converted into IP format. You can query IP/server addresses [here](http://ip.chinaz.com).
 >
 1.3. Hover over the profile photo in the top-right corner and select **accesskeys** in the drop-down menu to get the required Accesskey.
-![](https://main.qcloudimg.com/raw/2d67bd05558d5762c322d0c33d344332.png)
+![](https://main.qcloudimg.com/raw/fe14dbae971d715e1b8c99e1065fce69.png)
 	
 ### 2. Create a DTS task for TencentDB
 Log in to the [DTS Console](https://console.cloud.tencent.com/dtsnew/migrate/page), go to the data migration page, click **Create Task**, and configure the task, source database, and target database on the page redirected to.
