@@ -2,7 +2,7 @@ Cloud Connect Network (CCN) is currently under the beta test. To use CCN, please
 
 
 ## Resource Limits
-The following table lists the limits on the supported CCN resources. For limits on other Virtual Private Cloud (VPC) products, see [Limitations](https://cloud.tencent.com/document/product/215/537).
+The following table lists the limits on the supported CCN resources. <!--For limits on other Virtual Private Cloud (VPC) products, see [Limitations]().-->
 <table>
 <tr>
 <th>Resource</th>
@@ -23,7 +23,7 @@ The following table lists the limits on the supported CCN resources. For limits 
 
 A peering connection does not affect the interconnection between a CCN and a VPC added to the CCN. To implement interconnection, the CCN delivers routes only to a network instance that is associated with this CCN.
 For example, as shown in the following figure, a peering connection has been established between VPC 1 and VPC 2. After VPC 1 is added to the CCN, only VPC 1 can interconnect with network instances such as VPC 3 and the IDC in the CCN. VPC 2 can interconnect with VPC 1 only through the peering connection, but cannot interconnect with other instances in the CCN.
-![Image description](https://main.qcloudimg.com/raw/a5bf37fc71f3410db9ac4361b936796d.png)
+![Image description](https://main.qcloudimg.com/raw/f764269dbb106d6f6f47bd8470bb3aa5.png)
 
 ## Route Restrictions
 To ensure that the interconnection between multiple network instances is smooth, CCN restricts the CIDR blocks of the network instances.
