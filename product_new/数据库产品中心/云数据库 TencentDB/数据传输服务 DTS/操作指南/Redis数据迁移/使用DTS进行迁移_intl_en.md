@@ -105,7 +105,7 @@ DTS supports migration interruption alarming to keep you informed of any excepti
 2). Click **Create** to create an alarm policy.
  - Policy Type: Select **Data Transfer Service** > **Self-built Migration**.
  - Alarm Object: Select the DTS task to be monitored and configure the **trigger** and **alarm object** to finish alarm configuration.
-![](https://main.qcloudimg.com/raw/c9e662fab13d50a4ccf1cab91691ccd8.png)
+![](https://main.qcloudimg.com/raw/7b3769a436ce417c9ff6b34c9b56eb4d.png)
 
 ### 6. Complete the migration task 
 Before disabling data sync, the data can be verified on the target instance, and if everything is correct, the migration task can be completed.
