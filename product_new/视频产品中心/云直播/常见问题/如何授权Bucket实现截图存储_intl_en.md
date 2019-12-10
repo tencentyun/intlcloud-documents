@@ -10,6 +10,7 @@ This document describes how to store LVB screenshots or porn detection data in a
 
 ### Authorizing LVB to Store Screenshots
 1. Grant the root account (ID: 3508645126) permission to store LVB screenshots.
+
 	i. Add a user for the bucket in **[Bucket List](https://console.cloud.tencent.com/cos5/bucket)** > **Permission Management** > **Bucket Access Permission**, select root account as user type , **and enter the root account ID `3508645126`**
 	> **You need to enter the root account ID `3508645126` in the account ID field for authorization. (This root account is the LVB service, so it is sufficient to directly enter `3508645126`).**
 	![](https://main.qcloudimg.com/raw/02900e9707b86dc41a279125770711cf.png)
