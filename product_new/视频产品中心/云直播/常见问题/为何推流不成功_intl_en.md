@@ -1,11 +1,11 @@
 
-If you follow the steps in [Best Practice - LVB Push](https://cloud.tencent.com/document/product/267/32732) but still find that push is not successful, please troubleshoot common push issues as instructed in this document.
+If you follow the steps in [Best Practice - LVB Push](https://intl.cloud.tencent.com/document/product/267/31057) but still find that push is not successful, please troubleshoot common push issues as instructed in this document.
 
 ### Why does a push fail?
 #### 1. Is the CNAME record of your domain name resolved to a Tencent Cloud address?
  Only when the CNAME record of your push domain name is resolved to a Tencent Cloud address can a push succeed. You can check whether the created push domain name has a CNAME record in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**. There is a CNAME title bar that can be used to check whether a CNAME record is present, and if yes, a screen like the one below will appear:
 ![](https://main.qcloudimg.com/raw/925d5353b6080cb724b0dbca07fec7d3.png)
-If you don't have a CNAME record, you can configure one as instructed in [CNAME Configuration](https://cloud.tencent.com/document/product/267/30560).
+If you don't have a CNAME record, you can configure one as instructed in [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
 
 #### 2. Is the network normal?
 The default port used by RTMP push is **1935**. If the firewall of your network does not open port 1935 during test, you will encounter a problem connecting to the server. In this case, you can check whether the problem is caused by this reason by switching to another network (such as 4G).
