@@ -29,7 +29,7 @@ For more information, please see [CAM Overview](https://cloud.tencent.com/docume
 ### Related Documents
 | Document description | Link | 
 |---------|---------|
-| Relationship between policy and user | [Policy Management](https://cloud.tencent.com/document/product/378/8955) |
-| Basic structure of policy | [Policy Syntax](https://cloud.tencent.com/document/product/378/8962) | 
+| Relationship between policy and user | [Policy Management](https://intl.cloud.tencent.com/document/product/598/10601) |
+| Basic structure of policy | [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603) | 
 | More products that support CAM | [List of Cloud Services that Support CAM](https://cloud.tencent.com/document/product/378/9029)|
 

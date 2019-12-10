@@ -15,7 +15,7 @@ This document describes how to migrate data from Alibaba Cloud ApsaraDB for RDS 
 >The public network address provided by Alibaba Cloud needs to be converted into IP format. You can query IP/server addresses [here](http://ip.chinaz.com).
 >
 1.3. Hover over the profile photo in the top-right corner and select **accesskeys** in the drop-down menu to get the required Accesskey.
-![](https://main.qcloudimg.com/raw/2d67bd05558d5762c322d0c33d344332.png)
+![](https://main.qcloudimg.com/raw/d01b2f01c876ddf962fd9659796aefca.png)
 	
 ### 2. Create a DTS task for TencentDB
 Log in to the [DTS Console](https://console.cloud.tencent.com/dtsnew/migrate/page), go to the data migration page, click **Create Task**, and configure the task, source database, and target database on the page redirected to.
@@ -24,7 +24,7 @@ Log in to the [DTS Console](https://console.cloud.tencent.com/dtsnew/migrate/pag
 #### 2.1. Set the task
 - Task Name: specify a name for the task.
 - Scheduled Execution: specify the start time of the migration task.
-![](https://mc.qcloudimg.com/static/img/6d45bf22f31923704b6055f3f94f1781/image.png)
+![](https://main.qcloudimg.com/raw/66d467a7be88d995354ab9e17d2beb05.png)
 
 #### 2.2. Enter the information of the source database
 Select a connection type as needed and enter the connection information of the source database.
@@ -32,20 +32,20 @@ Select a connection type as needed and enter the connection information of the s
 >- For mapping a TencentDB for MySQL instance with a public IP, you need to add the public IP of the corresponding region to Alibaba Cloud's whitelist.
 >- If the source database type is configured as "Direct Connect" or "VPN" during DTS configuration, an IP for external mapping will appear after the task is generated. You need to add it to Alibaba Cloud's whitelist.
 >
-![](https://main.qcloudimg.com/raw/b099d7a519f80fcdb450e8476a17d314.png)
+![](https://main.qcloudimg.com/raw/643d71c704dfd69a3b4a6f1cb80c2858.png)
 
 #### 2.3. Enter the information of the target database
 Select TencentDB instance as target instance type and enter the link information of the target instance.
-![](https://main.qcloudimg.com/raw/28b1998fd0b7e512be01c281490703bb.png)
+![](https://main.qcloudimg.com/raw/883eb101608f68fa886d020c2b55b81d.png)
 
 #### 2.4. Select the database to be migrated
 Select the database to be migrated, create a migration task information, and check the task information.
-![](https://main.qcloudimg.com/raw/ed8274a0b47d81ecf1466adea1fac10c.png)
+![](https://main.qcloudimg.com/raw/5a384d22e7ee47744814a83a99c8f8a4.png)
 #### 2.5. Perform data consistency check
 Select a data consistency check type as needed (e.g., full check or no check).
 >The check ratio fields are required if spot check is selected.
 >
-![](https://main.qcloudimg.com/raw/efa134922b1097f832f0c1e41fafaef3.png)
+![](https://main.qcloudimg.com/raw/a9e2b8ed5c722602104a0ace1fb9b0ef.png)
 
 #### 2.6. Check the migration task information
 After the migration task is created, you need to click **Next: Check Task** to verify the task information. You cannot start the migration task until all the check items are passed.
@@ -53,7 +53,7 @@ After the migration task is created, you need to click **Next: Check Task** to v
  - Passed: The check is fully successful.
  - Warning: The check fails. Database operation may be affected during or after data migration, but the migration task can still be executed.
  - Failed: The check fails and the migration task cannot be executed. In this case, please check and modify the migration task information according to the error and then check the task again.
-![](https://main.qcloudimg.com/raw/f0d5e8a304edd34bebe4d21d9ff4746d.png)
+![](https://main.qcloudimg.com/raw/0b8c1c1cf54b071205acb9b36578773f.png)
 
 ### 3. Start migration
 >Due to system design limitations, multiple migration tasks submitted or queued at the same time will be performed in sequence by queuing time.
@@ -68,7 +68,7 @@ After the migration is started, you can view the corresponding migration progres
 
 ### 4. Cancel migration
 To cancel an in-progress migration task, click **Cancel**.
-![](https://main.qcloudimg.com/raw/d57e495a06627c9d10274c3e3ea9beba.png)
+![](https://main.qcloudimg.com/raw/9d9cf9edda859dfd44007be0d4313986.png)
 
 ### 5. Disconnect the migration task
 - Make sure that there are no writes into the ApsaraDB for RDS instance at the business side. You can change the account password for business connection or adjust the permission granted to the account, while ensuring that the account used for DTS sync allows reads and writes.
@@ -77,13 +77,13 @@ To cancel an in-progress migration task, click **Cancel**.
 - Check whether your original ApsaraDB for RDS account can be used to log in to TencentDB; if not, try to escalate it to a privileged account in the following steps:
    While the DTS task continues syncing, add a privileged account on ApsaraDB for RDS (the password encryption method can be changed to general encryption), which will be synced to TencentDB via DTS.
 - You can use the console (as shown below) or extract core table contents to check data consistency.
-![](https://main.qcloudimg.com/raw/bb535aba27effc701d14544b3a5ba09a.png)
+![](https://main.qcloudimg.com/raw/19123fc859e7ddca13cd465a0cc30077.png)
 - Run the `show slave status` command to record the sync time point of TencentDB.
 
 
 ### 6. Complete migration
-After the migration is 100% complete, you can click **Complete** on the right. You can also call the DTS [TencentCloud API](https://cloud.tencent.com/document/product/571/18122) to stop the sync.
-![](https://main.qcloudimg.com/raw/30dbf7018d72cee1daef076323dd5377.png)
+After the migration is 100% complete, you can click **Complete** on the right. <!--You can also call the DTS [TencentCloud API]() to stop the sync.-->
+![](https://main.qcloudimg.com/raw/6485672d5cf6feb6a4faeecb4e072c00.png)
 >If the migration is in **uncompleted** status, the migration task will continue, so will data sync.
 
 ### 7. Restart your business application

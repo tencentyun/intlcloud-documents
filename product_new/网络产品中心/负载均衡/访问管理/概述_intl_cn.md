@@ -32,6 +32,6 @@
 
 | 目标                    | 链接                                                         |
 | ----------------------- | ------------------------------------------------------------ |
-| 了解策略和用户之间关系  | [策略管理](https://cloud.tencent.com/document/product/378/8955) |
-| 了解策略的基本结构      | [策略语法](https://cloud.tencent.com/document/product/378/8962) |
+| 了解策略和用户之间关系  | [策略管理](https://intl.cloud.tencent.com/document/product/598/10601) |
+| 了解策略的基本结构      | [策略语法](https://intl.cloud.tencent.com/document/product/598/10603) |
 | 了解还有哪些产品支持 CAM | [支持 CAM 的云服务列表](https://intl.cloud.tencent.com/document/product/598/10588) |

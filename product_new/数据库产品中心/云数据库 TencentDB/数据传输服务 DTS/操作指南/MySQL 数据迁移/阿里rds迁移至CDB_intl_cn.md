@@ -15,7 +15,7 @@
 >阿里云提供的外网地址需要将其转化成 IP 格式。此处列举一个 [IP/服务器地址查询 ](http://ip.chinaz.com) 的网址。
 >
 1.3 将鼠标悬停于右上方头像处，在出现的下拉菜单中选择【accesskeys】，进入页面后即可获取所需的 Accesskey。
-![](https://main.qcloudimg.com/raw/2d67bd05558d5762c322d0c33d344332.png)
+![](https://main.qcloudimg.com/raw/d01b2f01c876ddf962fd9659796aefca.png)
 	
 ### 2. 创建腾讯云云数据库的 DTS 任务
 登录 [DTS 控制台](https://console.cloud.tencent.com/dtsnew/migrate/page)，进入数据迁移页面，单击【新建任务】，跳转页面后，填写任务设置、源库设置和目标库设置。
@@ -24,7 +24,7 @@
 #### 2.1 任务设置
 - 任务名称：为任务指定名称。
 - 定时执行：可为您的迁移任务指定开始时间。
-![](https://mc.qcloudimg.com/static/img/6d45bf22f31923704b6055f3f94f1781/image.png)
+![](https://main.qcloudimg.com/raw/66d467a7be88d995354ab9e17d2beb05.png)
 
 #### 2.2 源库信息
 根据需要选择接入类型，依次填写对应的源库连接信息。
@@ -32,20 +32,20 @@
 >- 有公网 IP 的 MySQL 腾讯云的映射，您需要将相对应的地区外网 IP 添加到阿里云的白名单中。
 >-  DTS 配置时源库类型为“专线”或者“VPN”会在任务生成后出现对外映射的 IP，需将此 IP 添加到阿里云白名单中。
 >
-![](https://main.qcloudimg.com/raw/b099d7a519f80fcdb450e8476a17d314.png)
+![](https://main.qcloudimg.com/raw/643d71c704dfd69a3b4a6f1cb80c2858.png)
 
 #### 2.3 目标库信息
 目标实例类型选择 TencentDB 实例，填写对应的目标库链接信息。
-![](https://main.qcloudimg.com/raw/28b1998fd0b7e512be01c281490703bb.png)
+![](https://main.qcloudimg.com/raw/883eb101608f68fa886d020c2b55b81d.png)
 
 #### 2.4 选择所要迁移的数据库
 选择要迁移的数据库,创建并检查迁移任务信息。
-![](https://main.qcloudimg.com/raw/ed8274a0b47d81ecf1466adea1fac10c.png)
+![](https://main.qcloudimg.com/raw/5a384d22e7ee47744814a83a99c8f8a4.png)
 #### 2.5 数据一致性检测
 选择数据检测类型（可选择全部检测或不检测）。
 >选择部分检测选项时，需填写检测比例。
 >
-![](https://main.qcloudimg.com/raw/efa134922b1097f832f0c1e41fafaef3.png)
+![](https://main.qcloudimg.com/raw/a9e2b8ed5c722602104a0ace1fb9b0ef.png)
 
 #### 2.6 校验迁移任务信息
 创建完迁移任务后，您需要对迁移任务信息进行校验，单击【下一步：校验任务】进行校验，只有所有校验项通过后才能启动迁移任务，单击【启动】即可。
@@ -53,7 +53,7 @@
  - 通过：表示校验完全通过。
  - 警告：表示校验不通过，迁移过程中或迁移后可能影响数据库正常运行但不影响迁移任务的执行。
  - 失败：表示校验不通过，无法进行迁移。如果校验失败，请根据出错的校验项，检查并修改迁移任务信息，然后重试校验。
-![](https://main.qcloudimg.com/raw/f0d5e8a304edd34bebe4d21d9ff4746d.png)
+![](https://main.qcloudimg.com/raw/0b8c1c1cf54b071205acb9b36578773f.png)
 
 ### 3. 启动迁移
 >由于系统设计限制，一次性提交或排队多个迁移任务将按排队时间串行执行。
@@ -68,7 +68,7 @@
 
 ### 4. 撤销迁移
 在迁移过程中，如果您需要撤销迁移，可以单击【撤销】。
-![](https://main.qcloudimg.com/raw/d57e495a06627c9d10274c3e3ea9beba.png)
+![](https://main.qcloudimg.com/raw/9d9cf9edda859dfd44007be0d4313986.png)
 
 ### 5. 迁移任务割接
 - 保证业务侧对阿里云 RDS 不再进行写入，可通过更改业务连接的账号密码或调整授权，但需确保用于 DTS 同步的账号可正常读写。
@@ -77,13 +77,13 @@
 -  验证原阿里云 RDS 账号是否可以登录 TencentDB，如无法登录可尝试把原阿里云 RDS 账号权限提至最高权限。具体操作为：
    保持 DTS 任务继续同步，在阿里云 RDS 上添加高权限账号（可改变账号密码的加密方式为通用加密方式），然后通过 DTS 同步到 TencentDB。
 - 用户通过 DTS 控制台（见下图）或自行抽取核心表内容检查数据一致性。
-![](https://main.qcloudimg.com/raw/bb535aba27effc701d14544b3a5ba09a.png)
+![](https://main.qcloudimg.com/raw/19123fc859e7ddca13cd465a0cc30077.png)
 - 通过`show slave status`记录 TencentDB 的同步位点。
 
 
 ### 6. 完成迁移
-当迁移进度达到100%时，可单击右侧【完成】，完成迁移任务，或调用 DTS 云 [API](https://cloud.tencent.com/document/product/571/18122) 断开同步，完成迁移任务。。
-![](https://main.qcloudimg.com/raw/30dbf7018d72cee1daef076323dd5377.png)
+当迁移进度达到100%时，可单击右侧【完成】，完成迁移任务<!--，或调用 DTS 云 [API]() 断开同步，完成迁移任务()-->。
+![](https://main.qcloudimg.com/raw/6485672d5cf6feb6a4faeecb4e072c00.png)
 >当迁移处于【未结束】状态时，迁移任务将一直进行，数据库数据同步。
 
 ### 7. 重启业务
