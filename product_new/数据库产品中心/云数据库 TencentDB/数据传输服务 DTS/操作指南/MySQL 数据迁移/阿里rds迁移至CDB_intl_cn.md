@@ -15,7 +15,7 @@
 >阿里云提供的外网地址需要将其转化成 IP 格式。此处列举一个 [IP/服务器地址查询 ](http://ip.chinaz.com) 的网址。
 >
 1.3 将鼠标悬停于右上方头像处，在出现的下拉菜单中选择【accesskeys】，进入页面后即可获取所需的 Accesskey。
-![](https://main.qcloudimg.com/raw/2d67bd05558d5762c322d0c33d344332.png)
+![](https://main.qcloudimg.com/raw/d01b2f01c876ddf962fd9659796aefca.png)
 	
 ### 2. 创建腾讯云云数据库的 DTS 任务
 登录 [DTS 控制台](https://console.cloud.tencent.com/dtsnew/migrate/page)，进入数据迁移页面，单击【新建任务】，跳转页面后，填写任务设置、源库设置和目标库设置。
