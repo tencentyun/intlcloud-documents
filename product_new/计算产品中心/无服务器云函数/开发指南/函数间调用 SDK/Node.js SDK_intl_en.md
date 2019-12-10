@@ -39,7 +39,7 @@ Go to the [GitHub code hosting page](https://github.com/TencentCloud/tencentclou
 ### Chaining functions
 #### Example
 >
->- To chain functions in different regions, you must specify regions. For naming rules, see [Region List](https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8).
+>- To chain functions in different regions, you must specify regions. For naming rules, see [Region List](https://intl.cloud.tencent.com/document/product/583/17238#Region-List).
 >- If no region is specified, functions will be chained within the same region by default.
 >- If no namespace is specified, `default` will be used by default.
 
