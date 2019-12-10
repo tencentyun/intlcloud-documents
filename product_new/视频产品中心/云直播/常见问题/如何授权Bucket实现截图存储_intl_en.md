@@ -10,10 +10,12 @@ This document describes how to store LVB screenshots or porn detection data in a
 
 ### Authorizing LVB to Store Screenshots
 1. Grant the root account (ID: 3508645126) permission to store LVB screenshots.
-	(1) Add a user for the bucket in **[Bucket List](https://console.cloud.tencent.com/cos5/bucket)** > **Permission Management** > **Bucket Access Permission**, select root account as user type , **and enter the root account ID `3508645126`**
-	>! **You need to enter the root account ID `3508645126` in the account ID field for authorization. (This root account is the LVB service, so it is sufficient to directly enter `3508645126`).**
+
+	i. Add a user for the bucket in **[Bucket List](https://console.cloud.tencent.com/cos5/bucket)** > **Permission Management** > **Bucket Access Permission**, select root account as user type , **and enter the root account ID `3508645126`**
+	> **You need to enter the root account ID `3508645126` in the account ID field for authorization. (This root account is the LVB service, so it is sufficient to directly enter `3508645126`).**
 	![](https://main.qcloudimg.com/raw/02900e9707b86dc41a279125770711cf.png)
-	(2) For more information on the bucket access permission setting API, please see [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737).
+	
+	ii. For more information on the bucket access permission setting API, please see [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737).
 2. Get the information of the authorized COS bucket.
 	(1) You can view all the information of COS in the **Basic Configuration** section of the bucket. The access domain name (i.e., origin server domain name) contains bucket name, cos appid, and bucket region.
 	![](https://main.qcloudimg.com/raw/b75e7c8aa1222506b7dfc3fd5282d021.png)
