@@ -16,6 +16,7 @@ txTime 建议设置为当前时间往后推12或者24小时为宜，也就是要
 
 #### 4. txSecret 是否正确？
 腾讯云目前要求推流地址都要加防盗链以确保安全，防盗链计算错误或者已经过了有效期的推流 URL，都会被腾讯云**踢掉**，这种情况下直播 SDK 会抛出 **PUSH_WARNING_SERVER_DISCONNECT** 事件。
+
 阅读 [最佳实践 - 直播推流](https://intl.cloud.tencent.com/document/product/267/31558) 了解如何获取可靠的推流 URL。
 
 #### 5. 推流 URL 是否被占用？
