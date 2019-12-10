@@ -82,7 +82,7 @@ To cancel an in-progress migration task, click **Cancel**.
 
 
 ### 6. Complete migration
-After the migration is 100% complete, you can click **Complete** on the right. You can also call the DTS [TencentCloud API](https://cloud.tencent.com/document/product/571/18122) to stop the sync.
+After the migration is 100% complete, you can click **Complete** on the right. <!--You can also call the DTS [TencentCloud API]() to stop the sync.-->
 ![](https://main.qcloudimg.com/raw/6485672d5cf6feb6a4faeecb4e072c00.png)
 >If the migration is in **uncompleted** status, the migration task will continue, so will data sync.
 
