@@ -59,9 +59,3 @@ cd /data/my-first-scf && zip my_first_scf.zip * -r
 
 针对 Windows 系统，同样可以使用 `pip install <module-name> -t <code-store-path>` 命令安装 Python 库，但是针对需要编译或带有静态、动态库的包，由于 Windows 下编译生成的库无法在 SCF 的运行环境（CentOS 7）中被调用运行，因此 Windows 下的库安装仅适合纯 Python 实现的库。
 
-
-
-## SCF 命令行部署
->在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/583/32754) 方法完成命令行的安装和配置。
->
-您可通过 SCF 命令行执行 `scf deploy` 命令，即可部署函数，部署函数详情 [打包部署](<https://intl.cloud.tencent.com/document/product/583/32756>)。
