@@ -16,14 +16,14 @@
 ### 配置告警策略
 
 1. 在左侧导航栏中，选择 “告警管理 > 告警配置 > 告警策略”，单击【新增】，新增告警。如下图所示：
-![](https://main.qcloudimg.com/raw/d12f023d61b24fadab292b0ed7044ac9.png)
+![](https://main.qcloudimg.com/raw/e14e7a494774e736d53d0ab7627e3b19.png)
 2. 在 “新增策略” 页面中，根据实际需求，填写策略名称，选择策略类型，以及设置告警对象等。如下图所示：
 	- **策略名称**：自定义。
 	- **策略类型**：选择 “无服务器云函数”。
 	- **告警对象**：根据实际需求进行设置。若选择 “选择部分对象”，其默认地域设置为广州。在不同的地域下，可以查看到相应的函数，请选择需要适用告警策略的函数。
-![](https://main.qcloudimg.com/raw/e5bda8684b84fa748e832421d255aa64.png)
+![](https://main.qcloudimg.com/raw/c9c878ca72b247e98c0e2e2ca447b88d.png)
 3. 根据实际需求，设置 “触发条件” 和 “告警渠道”，如下图所示：
-![](https://main.qcloudimg.com/raw/b8a6f3c466a9050282b09653fa28ff3f.png)
+![](https://main.qcloudimg.com/raw/fcf6fd3b4002c03d15aa51278a049b89.png)
 4. 单击【完成】，即可在 “告警策略” 中，查看到已配置好的策略。并可根据实际需求，随时选择启停。
 
 >! 更加详细的告警策略配置，请参考 [云监控 > 告警策略](https://cloud.tencent.com/document/product/248/6215)。
