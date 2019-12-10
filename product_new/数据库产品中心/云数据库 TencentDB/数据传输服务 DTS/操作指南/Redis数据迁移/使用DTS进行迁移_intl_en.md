@@ -90,7 +90,7 @@ Redis instances on CVM are used here as an example, and the same is true for mig
 
 **Notes on Migration in the Cluster Edition**
 DTS supports migration in the Redis Cluster Edition. For cluster schemes with the Redis Cluster, Codis, or tewmproxy architecture, simply enter the addresses and passwords of all shard nodes of the source cluster as the node information when creating the task. It is strongly recommended to perform data migration from a replica node (slave) of the source instance to avoid any impact on business access to the source instance. DTS supports password-free migration. The following is an example for entering relevant information for migration:
-![](https://main.qcloudimg.com/raw/08cd54d22beabddfec6e4e3ef72d1cca.png)
+![](https://main.qcloudimg.com/raw/c08aad1d17a1cc39b1ae4cf978c4194b.png)
 
 ### 4. Start the migration task
 1). After the network connectivity test is successful, click **Save**.
