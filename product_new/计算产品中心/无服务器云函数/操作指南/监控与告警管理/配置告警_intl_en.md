@@ -5,7 +5,7 @@ You can configure alarm policies for SCF through [Cloud Monitor](https://console
 - Number of invocations
 - Number of errors
 
-For the full list of supported metrics, see [Descriptions of monitoring metrics](https://cloud.tencent.com/document/product/583/32686). In addition, you can select user groups that will receive alarms through email, SMS, or WeChat.
+For the full list of supported metrics, see [Descriptions of monitoring metrics](https://intl.cloud.tencent.com/document/product/583/32739). In addition, you can select user groups that will receive alarms through email, SMS, or WeChat.
 
 ### Directions
 
@@ -27,7 +27,7 @@ For the full list of supported metrics, see [Descriptions of monitoring metrics]
 ![](https://main.qcloudimg.com/raw/fcf6fd3b4002c03d15aa51278a049b89.png)
 4. Click **Finish** and you can view the configured policy in "Alarm Policies". You can start or stop a policy at any time as needed.
 
-> For more information on detailed alarm policy configuration, see [Cloud Monitor > Alarm Policy](https://cloud.tencent.com/document/product/248/6215).
+> For more information on detailed alarm policy configuration, see [Cloud Monitor > Alarm Policy](https://intl.cloud.tencent.com/document/product/248/6215).
 
 
 
