@@ -31,7 +31,7 @@ Click [CAM Overview](https://cloud.tencent.com/document/product/378/9028) for de
 ###  Related Documents
 | Target | Link | 
 |---------|---------|
-| Learn the relationship between policy and user | [Policy](https://cloud.tencent.com/document/product/378/8955) |
-| Learn the basic structure of policy | [Policy Syntax](https://cloud.tencent.com/document/product/378/8962) | 
+| Learn the relationship between policy and user | [Policy](https://intl.cloud.tencent.com/document/product/598/10601) |
+| Learn the basic structure of policy | [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603) | 
 | Learn which products support CAM | [List of Cloud Services that Support CAM](https://cloud.tencent.com/document/product/378/9029)|
 
