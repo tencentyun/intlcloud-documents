@@ -28,13 +28,13 @@ A signature in LVB is used to encrypt the content sent using your own private ke
 
 ### SLA
 
-Please see [Service Level Agreement](https://cloud.tencent.com/document/product/267/38543#953)
+Please see [Service Level Agreement](https://intl.cloud.tencent.com/document/product/267/32941#953)
 
 ### StreamName
 
 StreamName is the ID of a stream, which is usually used to uniquely identify the stream together with a domain name.
 
-[F](https://cloud.tencent.com/document/product/267/38543#F)[J](https://cloud.tencent.com/document/product/267/38543#J)[L](https://cloud.tencent.com/document/product/267/38543#L)[Q](https://cloud.tencent.com/document/product/267/38543#Q)[S](https://cloud.tencent.com/document/product/267/38543#S)
+[F](https://intl.cloud.tencent.com/document/product/267/32941#F)[J](https://intl.cloud.tencent.com/document/product/267/32941#J)[L](https://intl.cloud.tencent.com/document/product/267/32941#L)[Q](https://intl.cloud.tencent.com/document/product/267/32941#Q)[S](https://intl.cloud.tencent.com/document/product/267/32941#S)
 
 
   
