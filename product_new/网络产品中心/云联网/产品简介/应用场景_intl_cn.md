@@ -9,7 +9,7 @@
 - 多个 VPC 互联无需创建多条对等连接，加入云联网路由自动下发，只需一次操作。
 - 支持专线网关加入云联网，单专用通道连接多个 VPC，实现您本地 IDC 轻松和云上数据互通的需求。
 
-![](https://main.qcloudimg.com/raw/b7a745ef998e3c73eccea6ae7fdb75e6.png)
+![](https://main.qcloudimg.com/raw/ad996e7953497a716a37fce846dbb48a.png)
 
 ## 场景二、在线教育
 #### 场景描述
@@ -21,8 +21,7 @@
 - 老师和学生就近接入服务，保证传输的质量和延迟。
 - 各地 VPC 第一次加入云联网，即可与其他所有实例互通，无需一一打通。
 
-![](
-https://main.qcloudimg.com/raw/db9c81c795bfa80ad160866e270e8f68.png)
+![](https://main.qcloudimg.com/raw/da6279cd64b73231d7748c3b06be8a5a.png)
 
 ## 场景三、游戏加速
 #### 场景描述 
@@ -33,4 +32,4 @@ https://main.qcloudimg.com/raw/db9c81c795bfa80ad160866e270e8f68.png)
 - 各地玩家就近接入服务 VPC，保证低时延互联
 - 全网拓扑，支持多地域 VPC 加入，构建全球网络
 
-![](https://main.qcloudimg.com/raw/d745ea747268667fb14164760c7c856f.png)
+![](https://main.qcloudimg.com/raw/c7acc6cc6b0cb10d656c002fc4f6fcfd.png)
