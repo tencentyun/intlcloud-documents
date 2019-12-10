@@ -16,7 +16,7 @@ You can create an external CMK in the console or through the API.
 - **Via the console**
 (1). Log in to the [KMS Console](https://console.cloud.tencent.com/kms2).
 (2). Select the region where you want to create a key and click **Create**.
-(3). In the "Create Key" window, enter the key name and select "External" for key material source, read the document on the methods of importing external key materials and the precautions, and check the box. <br><img src="https://main.qcloudimg.com/raw/ae2d358e712220793ab7289d2817ba26.png"  width="52%">
+(3). In the "Create Key" window, enter the key name and select "External" for key material source, read the document on the methods of importing external key materials and the precautions, and check the box. 
 (4). Click **OK** to create the external CMK. You can view the created CMK in the console, where the "Key Source" is displayed as "External".
 
 - **Via the API**
