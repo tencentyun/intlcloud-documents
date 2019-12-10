@@ -9,7 +9,7 @@ Achievements:
 - Add VPCs to CCN to implement automatic routing, eliminating the need to create multiple peering connections.
 - By adding a direct connect gateway to CCN, one dedicated tunnel can connects multiple VPCs, so as to implement the data communication between local IDC and data on cloud.
 
-![](https://main.qcloudimg.com/raw/b7a745ef998e3c73eccea6ae7fdb75e6.png)
+![](https://main.qcloudimg.com/raw/ad996e7953497a716a37fce846dbb48a.png)
 
 ## Scenario 2: Online Education
 #### Scenario Description
@@ -21,8 +21,7 @@ Achievements:
 - Teachers and students can access the nearest online education services, to enjoy the highest quality with the lowest delay.
 - VPCs in different regions can interconnect with all of other instances once connected to CCN.
 
-![](
-https://main.qcloudimg.com/raw/db9c81c795bfa80ad160866e270e8f68.png)
+![](https://main.qcloudimg.com/raw/da6279cd64b73231d7748c3b06be8a5a.png)
 
 ## Scenario 3: Gaming Acceleration
 #### Scenario Description 
@@ -33,4 +32,4 @@ Achievements:
 - Gamers at different locations can access the nearest serving VPCs to implement interconnection with a low latency.
 - With the topology of public and private networks, CCN allows you to add VPCs from multiple regions to create a global network.
 
-![](https://main.qcloudimg.com/raw/d745ea747268667fb14164760c7c856f.png)
+![](https://main.qcloudimg.com/raw/c7acc6cc6b0cb10d656c002fc4f6fcfd.png)
