@@ -3,7 +3,7 @@ This document describes how to store LVB screenshots or porn detection data in a
 1. Log in to the COS Console and select [Bucket List](https://console.cloud.tencent.com/cos5/bucket).
 2. Click **Create Bucket**, enter the corresponding information on the pop-up page, and click **OK**.
  ![](https://main.qcloudimg.com/raw/423beefad19658e0cec8cdd28d6d25e1.png)
->!
+>
 > - The bucket name is examplebucket (excluding -1271775094).  
 > - The above information can be configured based on the actual needs of your business.
 3. You can enable CDN acceleration for the COS bucket according to your business needs. Click the name of the created bucket or **Configuration Management**, select "Domain Name Management", click **Edit** to set the acceleration, and click **Save**.
