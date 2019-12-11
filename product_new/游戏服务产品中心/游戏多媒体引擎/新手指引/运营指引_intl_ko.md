@@ -3,7 +3,7 @@
 ## 콘솔 사용량 통계 사용
 ### 앱 관리 인터페이스에서 사용량 통계를 오픈합니다
 조회하려는 애플리케이션의 [사용량 통계]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/9e78b27c75b9bfcd2ce02ae1d02b7046.png)
+![](https://main.qcloudimg.com/raw/efbdf4105eb37cfa40e96223e2b7a840.png)
 사용량 통계는 실시간 음성과 음성 메시지, 텍스트로 변환 등 파트를 포함합니다.
 
 ### 실시간 음성 사용량 통계
@@ -12,7 +12,7 @@
 - [음성 길이] 이 앱의 어제 음성 시간 메시지를 출력합니다.
 - 최근 7일간 전체 DAU 데이터를 출력합니다. 시간, 지역을 변경하여 사용량 데이터를 조회할 수 있습니다.
 
-![](https://main.qcloudimg.com/raw/4628a1bf59037dbb6298d938c6a8984f.png)
+![](https://main.qcloudimg.com/raw/2b06cde645693dfc4c6e7d919b672a9a.png)
 
 ### 음성 메시지 및 텍스트로 변환
 사용량을 통계하여 오프라인 음성 앱 DAU 데이터를 출력합니다.
@@ -20,4 +20,4 @@
 - [텍스트 변환 횟수] 이 애플리케이션이 어제 텍스트로 변환한 횟수를 출력합니다.
 - 기본적으로 최근 7일간 전체 DAU 데이터를 출력합니다. 시간을 변경하여 사용량 데이터를 조회할 수 있습니다.
 
-![](https://main.qcloudimg.com/raw/68d9a225648748371554228c7a9cb49c.png)
+![](https://main.qcloudimg.com/raw/dd96b485fbd00694ed8cc5f04d0057e9.png)
