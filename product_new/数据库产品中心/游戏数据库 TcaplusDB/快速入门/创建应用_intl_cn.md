@@ -10,7 +10,7 @@
  - **网络类型**：选择私有网络 VPC 及子网 Subnet，每个应用只能在创建时选定私有网络和子网，创建完成后不能修改。
  - **连接协议**：选择 TcaplusDB 应用连接协议（数据描述协议）。
  - **应用名称、访问密码**：同账号下应用名称不能重复，访问密码必须是 a - z、A - Z、0 - 9 的字符，且必须包含数字和大小写字母。
-![](https://main.qcloudimg.com/raw/0b0bc37bdb4777a0536785eab0d4106b.png)
+![](https://main.qcloudimg.com/raw/5ff0f4f35bd10284fe763579d4c0a570.png)
 3. 单击【创建应用】，系统将会提示创建成功。
 返回应用列表可查看创建完的应用，系统会为每个应用分配一个唯一的应用 ID。
-![](https://main.qcloudimg.com/raw/586db76aec300c8a16676e063b3b6231.png)
+![](https://main.qcloudimg.com/raw/51abd8239ca5983f351288cf55dde725.png)
