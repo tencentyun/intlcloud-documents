@@ -208,12 +208,6 @@ a.  We delegate the processing of your personal information as described below, 
 | Renke Interaction (Beijing)  Information Technology Co., Ltd. | Customer relationship management        |
 | Tencent Computing (Beijing) Co., Ltd.                        | Providing back-end support              |
 
-b.  We provide your personal information to third parties as described below:
-
-| **Name of Recipient**        | **Types of Personal Information provided**               | **Purpose of Use by Recipient** | **Period of Retention and Use by Recipient** |
-| ------------------------ | ---------------------------------------------------- | --------------------------- | ---------------------------------------- |
-| Adyen Singapore Pte Ltd. | Credit card number, name, valid period, CVV, address | Risk management analysis    | 7 years                                  |
-
 ### Overseas Transfer of Personal Information
 
 **We transfer Personal Information to third parties overseas as follows:** 
