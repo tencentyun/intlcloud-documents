@@ -7,7 +7,7 @@ NAT Gateway fees consists of the gateway usage (billed hourly) and the Internet 
 ## Billing Mode
 The billing mode for the NAT gateway is as follows:
 
-| Configuration             |Mainland China (excluding Hong Kong, Macao and Taiwan)  |Singapore, Silicon Valley, Virginia, Frankfurt, Hong Kong (China), Korea, Russia & Japan | Mumbai            | Toronto & Bangkok | 
+| Configuration             |Mainland China      |Singapore, Silicon Valley, Virginia, Frankfurt, Hong Kong (China), Korea, Russia & Japan | Mumbai            | Toronto & Bangkok | 
 |-------------    | -----------------------| -------------------------------------------------------- |-------------------| ----------- | 
 | Small             | 0.089                | 0.13                                              | 0.178          | 0.14         | 
 | Mediun             | 0.28                | 0.39                                              | 0.56                                                 |0.42        |
