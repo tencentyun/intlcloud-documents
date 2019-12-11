@@ -4,8 +4,19 @@
 <th>更新内容</th>
 
 <tr>
+	 <td>2019.11.15</td>
+	 <td>TKE 支持自定义节点 Hostname（内测）</td>
+</tr>
+
+<tr>
+	 <td>2019.11.07</td>
+	 <td>TKE Ingress 性能优化发布</td>
+</tr>
+
+
+<tr>
 	 <td>2019.10.22</td>
-	 <td>集群工作节点支持同时配置多个安全组以及使用默认安全组</td>
+	 <td><a href="https://cloud.tencent.com/document/product/457/9084">集群工作节点支持同时配置多个安全组以及使用默认安全组</a></td>
 </tr>
 
 <tr>
@@ -22,7 +33,6 @@
 	 <td>2019.10.15</td>
 	 <td><li>TKE 节点滚动重装升级 kubernetes 版本内测发布</li><li>TKE 支持 GPU 监控指标</li></td>
 </tr>
-
 
 <tr>
 	 <td>2019.09.07</td>
@@ -69,11 +79,6 @@
 	 <td> Ingress 支持使用已有 LB</td>
 </tr>
 
-<tr>
-	 <td>2019.08.04</td>
-	 <td>TKE 支持 kubernetes1.14 版本内测上线</td>
-</tr>
-
 
 <tr>
 	 <td>2019.08.01</td>
@@ -87,7 +92,7 @@
 
 <tr>
 	 <td>2019.07.10</td>
-	 <td><li>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持</td><li>
+	 <td>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持</td>
 </tr>
 <tr>
 	 <td>2019.07.05</td>
@@ -165,7 +170,7 @@
 | 2018.12.04 | <ul><li>修复 Kubernetes 权限提示漏洞</li><li>[关闭 Kubenretes1.7.8 版本创建入口(可提工单申请)](https://console.qcloud.com/workorder)</li><li>[合并 pr71415 解决 CVE-2018-1002105](https://github.com/kubernetes/kubernetes/pull/71415)</li><li>kubelet 关闭 kmem accounting 规避内核 cgroup 泄漏</li></ul>  |
 | 2018.10.31 | <ul><li>[TKE 新版控制台内测上线](https://cloud.tencent.com/apply/p/ozrs3db4q3n)</li><li>Service 指定 LB 只绑定部分节点</li></ul> |
 | 2018.09.10 | <ul><li>容器服务 TKE 默认 Kubenretes 版本为1.10</li><li>黑石集群支持 Kubernetes1.10</li><li>黑石集群支持 Ubuntu16.04   |
-| 2018.07.30 | <ul><li>TKE 上线俄罗斯地域</li><li>TKE 上线印度地域</li><li>[TKE 支持内网访问 Master](https://intl.cloud.tencent.com/document/product/457/31086#.E4.BA.8C.-.E8.8E.B7.E5.8F.96.E9.9B.86.E7.BE.A4.E8.B4.A6.E5.8F.B7.E5.AF.86.E7.A0.81.E4.BB.A5.E5.8F.8A.E8.AF.81.E4.B9.A6.E4.BF.A1.E6.81.AF)</li><li>发布开源组件 tencentcloud-cloud-controller-manager<br>  </li><li>发布开源组件 kubernetes-csi-tencentcloud</li><li>[发布黑石集群 ingress 插件](https://github.com/TencentCloud/ingress-tke-bm/blob/master/README.md</li></ul> |
+| 2018.07.30 | <ul><li>TKE 上线俄罗斯地域</li><li>TKE 上线印度地域</li><li>[TKE 支持内网访问 Master](https://intl.cloud.tencent.com/document/product/457/31086#.E4.BA.8C.-.E8.8E.B7.E5.8F.96.E9.9B.86.E7.BE.A4.E8.B4.A6.E5.8F.B7.E5.AF.86.E7.A0.81.E4.BB.A5.E5.8F.8A.E8.AF.81.E4.B9.A6.E4.BF.A1.E6.81.AF)</li><li>发布开源组件 tencentcloud-cloud-controller-manager<br>  </li><li>[发布开源组件 kubernetes-csi-tencentcloud](https://github.com/tencentcloud/kubernetes-csi-tencentcloud/blob/master/README_zhCN.md)</li><li>[发布黑石集群 ingress 插件](https://github.com/TencentCloud/ingress-tke-bm/blob/master/README_zhCN.md)</li></ul> |
 | 2018.06.22 | <ul><li>容器服务 CCS 改名为 TKE</li><li>[集群自动扩缩容支持自定义配置](https://intl.cloud.tencent.com/document/product/457/6779)</li><li>节点初始化支持传入脚本 |
 | 2018.05.01 | <ul><li>容器服务支持黑石集群</li><li>容器服务支持 GPU 集群</li></ul> |
 | 2018.04.01 | <ul><li>容器服务接入腾讯云新版 UI</li><li>容器服务机型支持完整 CVM 类型</li></ul> |
@@ -193,6 +198,9 @@
 ### TKE kubernetes 1.14.3 revisions
 | 时间         | 版本                  | 更新内容                                               |
 | ---------- | ------------------- | ----------------------------------------------------- |
+| 2019.11.28 | v1.14.3-tke.6 | cloud-provider 增加将节点名称作为 hostname 的支持 |
+| 2019.11.18 | v1.14.3-tke.5 | <li>合并 [pr83435](https://github.com/kubernetes/kubernetes/pull/83435) 解决攻击者可发送特殊构造的恶意 YAML 或 JSON 攻击载荷导致 kube-apiserver CPU或内存耗尽无法提供服务的问题</li><li>合并 [pr84167](https://github.com/kubernetes/kubernetes/pull/84167)解决因为 Etcd key 前缀不正确导致 apiserver 健康检查失败的问题</li><li>合并[pr75622](https://github.com/kubernetes/kubernetes/pull/75622)解决当集群存在大量 sts(>2000) 工作负载的情况下对 sts 的改变同步到 pod 延迟大(大概20s)的问题</li>|
+| 2019.10.23 | v1.14.3-tke.4 |合并[pr79036]()解决当开启 CPU Manager 时，如果 Pod 的 QoS 为 Guaranteed，则关闭 cpu quota |
 | 2019.09.10 | v1.14.3-tke.3       | 合并 [pr63066](https://github.com/kubernetes/kubernetes/pull/63066)修复 IPVS 模式下负载均衡健康检查失败的问题 |
 | 2019.09.06 | v1.14.3-tke.2	   | <ul class="params"><li>解决 [cve-2019-9512&cve-2019-9514](https://discuss.kubernetes.io/t/security-release-of-kubernetes-v1-15-3-v1-14-6-v1-13-10-cve-2019-9512-and-cve-2019-9514/7596) HTTP/2 DDoS 安全漏洞</li><li>合并 [pr72914](https://github.com/kubernetes/kubernetes/pull/72914)修复删除 Pod 后立即创建并调度到同一个节点上可能导致挂载 volume 失败的问题</li><li>解决在 CentOS 下创建容器会导致 cgroup 泄露的问题</li></ul> |
 
@@ -200,6 +208,10 @@
 
 | Date        | Version                  | Update content                                       |
 | ---------- | ------------------- | ----------------------------------------------------- |
+| 2019.11.28 | v1.12.4-tke.13	 | cloud-provider 增加将节点名称作为 hostname 的支持 |
+| 2019.11.18 | v1.12.4-tke.12 |	合并[pr75622](https://github.com/kubernetes/kubernetes/pull/75622)解决当集群存在大量 sts(>2000) 工作负载的情况下对 sts 的改变同步到 pod 延迟大(大概20s)的问题 |
+| 2019.10.23 | v1.12.4-tke.11 |	<li>合并[pr79036](https://github.com/kubernetes/kubernetes/pull/79036.
+)解决当开启 CPU Manager 时，如果 Pod 的 QoS 为 Guaranteed，则关闭 cpu quota</li><li>合并 [pr72866](https://github.com/kubernetes/kubernetes/pull/72868)为 kube-proxy 增加`--metrics-port`命令行参数，同时解决`--metrics-bind-address`不能包含 port 的 bug </li> |
 | 2019.09.06 | v1.12.4-tke.10      | <ul class="params"><li>解决 [cve-2019-9512&cve-2019-9514](https://discuss.kubernetes.io/t/security-release-of-kubernetes-v1-15-3-v1-14-6-v1-13-10-cve-2019-9512-and-cve-2019-9514/7596) HTTP/2 DDoS 安全漏洞</li><li>合并 [pr72914](https://github.com/kubernetes/kubernetes/pull/72914)修复删除 Pod 后立即创建并调度到同一个节点上可能导致挂载 volume 失败的问题</li><li>合并 [pr71834](https://github.com/kubernetes/kubernetes/pull/71834) 修复 IPVS 模式下 sessionAffinity为ClientIP 会访问失效 RS 的问题</li></ul> |
 | 2019.08.09 | v1.12.4-tke.9       | 解决在 CentOS 下创建容器会导致 cgroup 泄露的问题          |
 | 2019.08.08 | v1.12.4-tke.8       | 合并 [pr72118](https://github.com/kubernetes/kubernetes/pull/72118) 解决kubelet在Unmount后对同一设备立即进行Mount时报"resource name may not be empty"的问题 |
@@ -215,6 +227,8 @@
 
 | 时间         | 版本                  | 更新内容                                               |
 | ---------- | ------------------- | ----------------------------------------------------- |
+| 2019.11.18 | v1.10.5-tke.11 | 去掉 kube-controller-manager 的反向探测 |
+| 2019.10.23 | v1.10.5-tke.10 | <li>合并[pr79036]()解决当开启 CPU Manager 时，如果 Pod 的 QoS 为 Guaranteed，则关闭 cpu quota</li><li>合并 [pr72866](https://github.com/kubernetes/kubernetes/pull/72868)为 kube-proxy 增加`--metrics-port`命令行参数，同时解决`--metrics-bind-address`不能包含 port 的 bug </li> |
 | 2019.09.06 | v1.10.5-tke.9       | <ul class="params"><li>解决 [cve-2019-9512&cve-2019-9514](https://discuss.kubernetes.io/t/security-release-of-kubernetes-v1-15-3-v1-14-6-v1-13-10-cve-2019-9512-and-cve-2019-9514/7596) HTTP/2 DDoS 安全漏洞</li><li>合并 [pr72914](https://github.com/kubernetes/kubernetes/pull/72914)修复删除 Pod 后立即创建并调度到同一个节点上可能导致挂载 volume 失败的问题</li><li>合并 [67430](https://github.com/kubernetes/kubernetes/pull/67430) 解决 updateContainerCPUSet 失败情况下的数据结构回滚</li></ul> |
 | 2019.08.08 | v1.10.5-tke.8       | 合并 [pr72118](https://github.com/kubernetes/kubernetes/pull/72118) 解决kubelet在Unmount后对同一设备立即进行Mount报"resource name may not be empty"的问题 |
 | 2019.07.17 | v1.10.5-tke.7       | 合并 [pr75037](https://github.com/kubernetes/kubernetes/pull/75037) 解决 kubectl cp 命令安全隐患 |
@@ -230,6 +244,7 @@
 
 | 时间         | 版本                  | 更新内容                             |
 | ---------- | ------------------- | ----------------------------------------|
+| 2019.11.18 | v1.8.13-tke.5 | <li>去掉 kube-controller-manager 的反向探测</li><li>给 cbs pvc 添加了 metric |
 | 2018.09.28 | v1.8.13-tke.2       | 将创建 clb 的逻辑从 controller-manager 移出(通过独立的 service controller 来实现)                 |
 | 2018.09.27 | v1.8.13-tke.1       | <ul><li>关闭 kmem 统计避免 cgroup 数量泄漏</li><li>减少创建 pod 时触发 resourcequota 冲突</li></ul> |
 | 2018.09.21 | v1.8.13-qcloud-rev1 | 当 kubelet 更新状态超时，controller-manager 对 kubelet 端口做下探测                             |
