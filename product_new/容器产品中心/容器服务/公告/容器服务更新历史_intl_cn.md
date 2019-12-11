@@ -184,7 +184,7 @@
 | 2017.08.23 | <ul><li>[容器服务接入告警平台](https://intl.cloud.tencent.com/document/product/457/10784)</li><li>[容器集群支持 Kubernetes1.7](https://cloud.tencent.com/act/apply/ccs_kubernetes_1_7_3 )</li><li>基于 TencentHub 持续集成和持续部署</li><li>镜像仓库新增触发器功能</li><li>镜像仓库接入操作日志</li></ul>  |
 | 2017.08.04 | <ul><li>[公网使用 Kubectl 操作集群](https://intl.cloud.tencent.com/document/product/457/31086)</li><li>容器集群接入 CAM 权限管理</li></ul> |
 | 2017.07.19 | [容器服务支持配置文件管理](https://intl.cloud.tencent.com/document/product/457/10173) |
-| 2017-07-18 | <ul><li>容器服务支持 CI 源码构建</li><li>镜像仓库新增 TencentHub 镜像</li><li>镜像仓库新增我的收藏</li><li>镜像仓库支持多 Namespace</li></ul>       |
+| 2017.07.18 | <ul><li>容器服务支持 CI 源码构建</li><li>镜像仓库新增 TencentHub 镜像</li><li>镜像仓库新增我的收藏</li><li>镜像仓库支持多 Namespace</li></ul>       |
 | 2017.06.24 | <ul><li>容器服务支持 NFS 数据卷</li><li>容器服务新增特权级容器、工作目录设置</li></ul>        |
 | 2017.06.07 | <ul><li>[容器服务支持集群空间](https://intl.cloud.tencent.com/document/product/457/9091#.E5.88.9B.E5.BB.BA.E9.9B.86.E7.BE.A4.E7.A9.BA.E9.97.B4) </li><li>容器集群创建和添加云服务器支持自动格式数据盘并指定容器目录</li><li>容器服务支持重新部署服务功能</li></ul> |
 | 2017.04.27 | **容器服务全量开放**<ul><li>容器服务支持添加已有的云服务器到容器集群</li><li>[容器服务支持查看实例、服务、集群更丰富的监控指标](https://intl.cloud.tencent.com/document/product/457/9187)</li><li>容器服务支持查看容器日志</li></ul>  |
