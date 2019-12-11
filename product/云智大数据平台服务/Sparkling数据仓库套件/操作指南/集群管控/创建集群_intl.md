@@ -8,7 +8,7 @@ This section describes how to create a data warehouse cluster. Currently, the be
 2. Select the region in which to create the cluster in the upper left corner of the page. Currently, we support  **Guangzhou**, **Shanghai** and **Beijing**.
 3. Click **Create a cluster** in the upper right corner of the page to enter the cluster creation page.
 4. Enter the cluster configuration parameters.
-   ![](https://main.qcloudimg.com/raw/9bc5c6023de60dee61f4eda0d214dd3e.png)
+   ![](https://main.qcloudimg.com/raw/8b9be82b96c78045d07542b61f73583c.png)
 
 <table border="1">
 <tr>
