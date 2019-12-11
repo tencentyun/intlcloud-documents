@@ -1,8 +1,8 @@
 ## Description
 
-COS supports setting tags for existing buckets. This API (GET Bucket tagging) is used to get existing tags of the specified bucket.
+COS supports setting tags for existing buckets. This API is used to get existing tags of a specified bucket.
 
->  If you call the `GET Bucket tagging ` API using a sub-account, please make sure that you have obtained the permission to use this API from the root account.
+> ? If you call the `GET Bucket tagging` API using a sub-account, please make sure that you have obtained the permission to use this API from the root account.
 
 ## Request
 
@@ -21,11 +21,11 @@ Authorization: Auth String
 
 #### Common Headers
 
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 ### Request Body
 
@@ -37,39 +37,39 @@ The request body of this request is empty.
 
 #### Common Response Headers
 
-This response uses a common response header. For more information about common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special Response Headers
 
-This request operation has no special response headers.
+This request operation does not use any special response header.
 
 ### Response Body
 
-The elements of the response body returned by this request are as detailed below:
+The elements of this response body are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------ | ------------------------------------------------------------ | ---------- |
 | Tagging | None | Tag set | Container |
 | TagSet | Tagging | Tag set | Container |
 | Tag | Tagging.TagSet | Tag set, which can contain up to 10 tags | Containers |
-| Key | Tagging.TagSet.Tag | Tag key, which can contain up to 128 bytes of letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes | String |
-| Value | Tagging.TagSet.Tag | Tag value, which can contain up to 256 bytes of letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes | String |
+| Key | Tagging.TagSet.Tag | Tag key, which can contain up to 128 characters. A tag key can contain English letters, digits, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String |
+| Value | Tagging.TagSet.Tag | Tag value, which can contain up to 256 characters. A tag value can contain English letters, digits, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String |
 
 ### Error Codes
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some frequent special errors that may occur when you make this request:
 
 | Error Code | Description | HTTP Status Code |
 | --------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
 | SignatureDoesNotMatch | If the provided signature does not conform to the rule, this error code will be returned | 403 [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3) |
 | NoSuchBucket | If the bucket to which you want to add the rule does not exist, this error code will be returned | 404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4) |
-| NoSuchTagSetError     | No bucket tags have been set for the requested bucket | 404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4) |
+| NoSuchTagSetError     | No bucket tag has been set for the requested bucket | 404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4) |
 
-## Samples
+## Example
 
 ### Request
 
-The following request is made to get the tags of the bucket `examplebucket-1250000000`. After COS parses the request, two tags {age:18} and {name:xiaoming} in the bucket will be returned.
+The following request is made to get the tags of the bucket `examplebucket-1250000000`. COS parses the request and returns the two existing tags of the bucket, {age:18} and {name:xiaoming}.
 
 ```shell
 GET /?tagging HTTP/1.1

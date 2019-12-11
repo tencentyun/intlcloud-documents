@@ -1,10 +1,10 @@
 ## Description
-This API (Upload Part) is used to upload an object to COS in parts. It supports up to 10,000 parts of 1 MB to 5 GB each in size, and the last part can be less than 1 MB.
+This API is used to upload an object to COS in parts. It supports up to 10,000 parts of 1 MB to 5 GB each in size, and the last part can be less than 1 MB.
 
-### Detail Analysis
-1. To upload an object in parts, you need to use the Initiate Multipart Upload API to initialize a multipart upload. After initialization, an uploadId will be returned, which uniquely identifies this upload.
-2. Every time you request the Upload Part API, you need to pass in the partNumber (which is the part number) and uploadId parameters. Out-of-order uploading is supported.
-3. When the uploadId and partNumber of a newly uploaded part are the same as those of a previously uploaded part, the former will overwrite the latter. A 404 NoSuchUpload error will be returned if the uploadId does not exist.
+### Notes
+1. To upload an object in parts, first you need to use the `Initiate Multipart Upload` API to initialize a multipart upload. After the initialization, an `uploadId` will be returned, which uniquely identifies this upload.
+2. Every time you request the `Upload Part` API, you need to pass in `partNumber`, the part number, and `uploadId`. You can upload multiple parts out of order.
+3. When the `uploadId` and `partNumber` of a new part are the same as those of a previously uploaded part, the old part will be overwritten by the new one. A 404 error, `NoSuchUpload`, will be returned if the `uploadId` does not exist.
 
 ## Request
 ### Sample Request
@@ -24,18 +24,18 @@ Authorization: Auth String
 ### Request Headers
 
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
-**Required headers**
-The following required request headers are needed for the implementation of this request operation as detailed below:
+**Required Headers**
+The implementation of this operation uses the following required request headers:
 
 | Name | Description | Type | Required |
 | :------------- | :---------------------------- | :----- | :--- |
 | Content-Length | HTTP request length in bytes as defined in RFC 2616 | String | Yes |
 
-**Recommended headers**
-The following request headers are recommended for the implementation of this request operation as detailed below:
+**Recommended Headers**
+It is recommended to use the following request headers for the implementation of this operation:
 
 | Name | Description | Type | Required |
 | :---------- | :--------------------------------------- | :----- | :--- |
@@ -43,12 +43,12 @@ The following request headers are recommended for the implementation of this req
 | Content-MD5 | Base64-encoded 128-bit MD5 checksum as defined in RFC 1864. This header is used to verify whether the file content has changed | String | No |
 
 #### Request Parameters
-See the details below:
+The parameters are described in details below:
 
 | Parameter Name | Description | Type | Required |
 | :--------- | :--------------------------------------- | :----- | :--- |
-| partNumber  | Identifies a part number                                       | String | Yes  |
-| uploadId | ID of this multipart upload. <br>When the Initiate Multipart Upload API is used to initialize a multipart upload, an uploadId will be obtained, which not only uniquely identifies the data but also identifies the data position in the entire file | String | Yes |
+| partNumber  | A number which identifies this multipart upload                                       | String | Yes  |
+| uploadId | ID of this multipart upload. <br>When the `Initiate Multipart Upload` API is used to initialize a multipart upload, an `uploadId` will be returned. The ID uniquely identifies the data of the part and its position in the entire file | String | Yes |
 
 ### Request Body
 The request body of this request is the data content of the part.
@@ -57,22 +57,22 @@ The request body of this request is the data content of the part.
 
 ### Response Headers
 #### Common Response Headers 
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
-This response may contain the following response headers:
+This response may return the following response headers:
 
 | Name | Description | Type |
 | ---------------------------- | ---------------------------------------- | ------ |
 | x-cos-server-side-encryption | If it is specified to use server-side encryption when the file is uploaded, this response header will be returned. Enumerated value: AES256 | String |
-|x-cos-storage-class| Storage class information of the object. COS will return this response header for all objects except those in the STANDARD storage class. Enumerated values: STANDARD_IA, ARCHIVE| String |
+|x-cos-storage-class| Object storage class. COS will return this response header for all objects but those in the `STANDARD` storage class. Enumerated values: `STANDARD_IA`, `ARCHIVE`| String |
 
 ### Response Body
 The response body of this request is empty.
 
 ### Error Codes
-There are no special error messages for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+The implementation of this operation does not return special error messages. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Example
 
 ### Request
 ```shell

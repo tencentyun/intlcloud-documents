@@ -1,15 +1,15 @@
 ## Description
 
-This API (PUT Object) is used to upload a local object to the specified bucket. The requester of this API should have write permission to the bucket.
+This API is used to upload a local object to a specified bucket. To make this request, you need to have the permission to write to the bucket.
 
-> 
->- If the Content-Length value in the request header is smaller than the length of the data transferred in the actual request body, COS will still successfully create a file, but the object size will only be equal to the size defined in Content-Length, and excessive data will be discarded.
->- If an object with the same name as the object to be uploaded already exists in the bucket, and versioning is not enabled, it will be overwritten and 200 OK will be returned upon success.
+> ?
+>- If the `Content-Length` value in the request header is smaller than the length of the data in the actual request body, COS will still successfully create a file, but the object size will equal the size defined in `Content-Length`, and the remaining data will be discarded.
+>- If there is an object in the bucket with the same name as the object to be uploaded, and versioning is not enabled, the old object will be overwritten by the new one and `200 OK` will be returned upon success.
 
 #### Versioning
 
-- If versioning is enabled for the bucket, COS will automatically generate a unique version ID for the object to be uploaded. It returns this ID in the response using the x-cos-version-id response header.
-- If you suspend versioning for the bucket, COS will always use "null" as the version ID of the object stored in the bucket and will not return the x-cos-version-id response header.
+- If versioning is enabled for the bucket, COS will automatically generate a unique version ID for the object to be uploaded and return this ID in the response using the `x-cos-version-id` response header.
+- If versioning is suspended for the bucket, COS will always use `null` as the version ID of the objects in the bucket and will not return the `x-cos-version-id` response header.
 
 ## Request
 
@@ -27,41 +27,41 @@ Authorization: Auth String
 [Object Content]
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
-This API has no request parameters.
+This API does not use any request parameter.
 
-#### Request Header
+#### Request Headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 | Name | Description | Type | Required |
 | ------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Cache-Control | Cache policy as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| Content-Disposition | File name as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| Content-Encoding | Encoding format as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| Expires | Cache expiration time as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| Transfer-Encoding   | If you want to transfer the object in parts during upload, specify the "Transfer-Encoding: chunked" request header. At this point, the request body will follow the transfer encoding format as defined in RFC 2616 and the "Content-Length" request header cannot be specified | string | No |
-| x-cos-meta-\* | This includes the suffix and information of the user-defined metadata header, which will be saved as the object metadata of up to 2 KB. <br>**Note:** User-defined metadata header information can contain underscores (_), but user-defined metadata header suffixes only supports minus signs (-) | String | No |
-| x-cos-storage-class | Object storage class, including STANDARD, STANDARD_IA, and ARCHIVE. Default value: STANDARD. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum | No |
+| Cache-Control | Cache directives as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| Content-Disposition | Filename as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| Content-Encoding | Encoding format as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| Expires | Cache expiration time as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| Transfer-Encoding   | If you want to upload the object in parts, you need to specify the `Transfer-Encoding: chunked` request header. In such a case, the request body must follow the transfer encoding format as defined in RFC 2616 and you cannot specify the `Content-Length` request header | string | No |
+| x-cos-meta-\* | Header suffix and information of the user-defined metadata, which will be stored in the object metadata; maximum size: 2 KB. <br>**Note:** User-defined metadata information can contain underscores (_), whereas the header suffixes of user-defined metadata can only contain minus signs (-), not underscores | String | No |
+| x-cos-storage-class | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. Default value: `STANDARD`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum | No |
 
 **ACL-related headers**
 
-You can set the access permission of the object by specifying the following request headers when uploading it:
+You can configure access permissions for the object by specifying the following request headers when uploading it:
 
 | Name | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | This defines the access control list (ACL) attribute of the object. For the enumerated values such as default, private, and public-read, see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: default <br>**Note: ** Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, set "default" for this parameter or simply leave it blank, so that the object will inherit the permission of the bucket | Enum | No |
-| x-cos-grant-read | This grants the grantee permission to read the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
-| x-cos-grant-read-acp | This grants the grantee permission to read the ACL of the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
-| x-cos-grant-write-acp | This grants the grantee permission to write to the ACL of the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
-| x-cos-grant-full-control | This grants the grantee full permission to manipulate the object in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-acl | Defines the access control list (ACL) attribute of the object. For the enumerated values such as `default`, `private`, and `public-read`, see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: default <br>**Note:** Currently, there can be up to 1,000 entries in one ACL. If you do not need access control for the object, set `default` for this parameter or simply leave it blank, and the object will inherit the permissions of the bucket | Enum | No |
+| x-cos-grant-read | Allows grantee to read the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-read-acp | Allows grantee to read the ACL of the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-write-acp | Allows grantee to write to the ACL of the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-full-control | Grants a user full permission to perform operations on the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
 
 **Server-side encryption-related headers**
 
-Server-side encryption can be used when the object is uploaded. For more information, see [Server-side encryption-specific headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+You can use server-side encryption when uploading an object. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Request Body
 
@@ -69,9 +69,9 @@ The request body of this API request is the object (file) content.
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Versioning-related headers**
 
@@ -83,7 +83,7 @@ When the object is uploaded to a bucket where versioning is enabled, the followi
 
 **Server-side encryption-related headers**
 
-If server-side encryption is used when the object is uploaded, this API will return the server-side encryption-specific header. For more information. see [Server-side encryption-specific headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used when the object is uploaded, this API will return the server-side encryption headers. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response Body
 
@@ -91,11 +91,11 @@ The response body of this API is empty.
 
 #### Error Codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+There is no special error message for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1. A Simple sample (with Versioning Not Enabled)
+#### Example 1. Basic example (versioning not enabled)
 
 #### Request
 
@@ -124,7 +124,7 @@ Server: tencent-cos
 x-cos-request-id: NWQwY2EyNGNfYThjMDBiMDlfMTA0ZmVfYTJm****
 ```
 
-#### Sample 2. Specifying the Metadata and ACL Using the Request Header
+#### Example 2. Specifying metadata and ACL using request headers
 
 #### Request
 
@@ -157,7 +157,7 @@ Server: tencent-cos
 x-cos-request-id: NWQwY2EyNGZfN2ViMTJhMDlfYmYxN185MjA2****
 ```
 
-#### Sample 3. Using Server-side Encryption SSE-COS
+#### Example 3. Using server-side encryption SSE-COS
 
 #### Request
 
@@ -188,7 +188,7 @@ x-cos-request-id: NWQwY2EyNTNfN2JiMTJhMDlfNDM2ZF85OTA1****
 x-cos-server-side-encryption: AES256
 ```
 
-#### Sample 4. Using Server-side Encryption SSE-C
+#### Example 4. Using server-side encryption SSE-C
 
 #### Request
 
@@ -222,7 +222,7 @@ x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 ```
 
-#### Sample 5. Enabling Versioning
+#### Example 5. With versioning enabled
 
 #### Request
 
@@ -252,7 +252,7 @@ x-cos-request-id: NWQwY2EyNWRfYThjMDBiMDlfMTA1MDlfYTQ1****
 x-cos-version-id: MTg0NDUxODI5NjQ2MjM5OTMyNzM
 ```
 
-#### Sample 6. Suspending Versioning
+#### Example 6. With versioning suspended
 
 #### Request
 
@@ -281,7 +281,7 @@ Server: tencent-cos
 x-cos-request-id: NWQzN2M3YjBfN2ViMTJhMDlfYTkxMl9iY2Fj****
 ```
 
-#### Sample 7. Using the chunked Transfer Encoding for Multipart Transfer
+#### Example 7. Using the chunked transfer encoding for multipart transfer
 
 #### Request
 

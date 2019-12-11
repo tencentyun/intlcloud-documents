@@ -1,16 +1,16 @@
 ## Description
-This API (DELETE Multiple Object) is used to delete objects in the specified bucket in batches. It can delete up to 1,000 objects in a single request. For the response result, COS provides two modes: Verbose and Quiet. Verbose mode returns the deletion result for each object; while Quiet mode only returns the information of objects for which errors are reported.
-> This request must carry Content-MD5 for integrity check of the body.
+This API is used to delete multiple objects from a specified bucket in a single request. You can delete up to 1,000 objects in a single request. For the response, there are two modes for you to choose from: Verbose and Quiet. Verbose mode returns the information on the deletion of each object, whereas Quiet mode only returns the information on objects for which errors are reported.
+>! This request must carry `Content-MD5` for an integrity check on the request body.
 
-### Detail Analysis
-1. Up to 1,000 objects to be deleted can be contained in one single batch deletion request.
-2. Batch deletion supports request return in two modes: verbose mode (default) and quiet mode. In the former mode, the deletion conditions of each key will be returned, while in the latter mode, only the conditions of keys that fail to be deleted will be returned.
-3. A batch deletion request needs to carry the Content-MD5 header to verify that the request body has not been modified.
-4. A batch deletion request is allowed to delete a non-existing key, which will still be considered a success.
+### Notes
+1. You can delete up to 1,000 objects in a single DELETE Multiple Object request.
+2. This API supports response in two modes: Verbose (default) and Quiet. Verbose mode returns the information on the deletion of each key, whereas Quiet mode only returns the information on the keys which the request fails to delete.
+3. This request must carry a `Content-MD5` header for the integrity check on the request body.
+4. If a key you want to delete in a request does not exist, the request can still be successful.
 
 ## Request
 
-Syntax sample:
+Syntax example:
 ```shell
 POST /?delete HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
@@ -38,16 +38,16 @@ Authorization: Auth String
 ```shell
 POST /?delete HTTP/1.1
 ```
-This API allows POST requests.
+This API allows `POST` requests.
 
 ### Request Headers
 
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 **Required headers**
-The implementation of this request operation uses the following required request headers:
+The implementation of this operation uses the following required request headers:
 <style rel="stylesheet"> table th:nth-of-type(1) { width: 200px;	} </style>
 | Name | Description | Type | Required |
 |:---|:---|:---|:---|
@@ -55,7 +55,7 @@ The implementation of this request operation uses the following required request
 | Content-MD5 | Base64-encoded 128-bit MD5 checksum as defined in RFC 1864. This header is used to verify whether the file content has changed | String | Yes |
 
 ### Request Body
-The specific node content of this request body is:
+The node content of this request body is:
 ```shell
 <Delete>
   <Quiet></Quiet>
@@ -73,22 +73,22 @@ The content is described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:---|:---|:---|:---|
-| DELETE | None | Indicates the return result mode and target objects of this deletion | Container | Yes |
-| Quiet | DELETE| A boolean value which determines whether to enable Quiet mode. <br>If the value is true, Quiet mode is enabled; if it is false, Verbose mode is enabled. The default value is False | Boolean | No |
-| Object |DELETE | Describes the information of each target object to be deleted | Container | Yes |
-| Key | DELETE.Object | Filename of the destination object | String | Yes |
+| DELETE | None | The result return mode and the objects to be deleted | Container | Yes |
+| Quiet | DELETE| A boolean value which determines whether to use the Quiet mode. <br>If its value is `true`, the Quiet mode will be used; if it is `false`, Verbose mode will be used. Default value: `false` | Boolean | No |
+| Object |DELETE | Information on the objects to be deleted | Container | Yes |
+| Key | DELETE.Object | Filenames of the objects to be deleted | String | Yes |
 
 
 ## Response
 
 ### Response Headers
 #### Common Response Headers 
-This response uses a common response header. For more information on the common response header, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
-This request operation has no special response headers.
+This request does not use any special response header.
 
 ### Response Body
-The return of this response body is **application/xml** data. Below is a sample containing all the node data:
+This response body returns **application/xml** data. The following contains all the node data:
 ```shell
 <DeleteResult>
   <Deleted>
@@ -101,47 +101,47 @@ The return of this response body is **application/xml** data. Below is a sample 
   </Error>
 </DeleteResult>
 ```
-See the details below:
+The content is described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:---|:---|:---|
-| DeleteResult | None | Indicates the return result mode and target objects of this deletion | Container |
+| DeleteResult | None | The result return mode and target objects of this deletion | Container |
 
-Content of the Container node DeleteResult:
+Content of the Container node `DeleteResult`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:---|:---|:---|
-| Deleted | DeleteResult | Describes the information of successfully deleted objects in this operation | Boolean |
-| Error| DeleteResult | Describes the information of objects that failed to be deleted in this operation | Container |
+| Deleted | DeleteResult | Information on objects that have been successfully deleted in this operation | Boolean |
+| Error| DeleteResult | Information on objects that have not been deleted in this operation | Container |
 
-Content of the Container node Deleted:
+Content of the Container node `Deleted`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:---|:---|:---|
 | Key | DeleteResult.Deleted | Object name | String |
 
-Content of the Container node Error:
+Content of the Container node `Error`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:---|:---|:---|
-| Key | DeleteResult.Error | Name of the object that failed to be deleted | String |
+| Key | DeleteResult.Error | Names of the objects that have not been deleted | String |
 | Code  | DeleteResult.Error | Error code of the deletion failure | String |
 | Message | DeleteResult.Error | Error message for the deletion failure | String |
 
 
 ### Error Analysis
-Some frequent special errors that may occur with this request are listed below:
+The following describes some frequent special errors that may occur when you make this request:
 
 | Error Code | HTTP Status Code | Description |
 | ------------- | --------------------------------------- | -------------- |
-| InvalidRequest | 400 Bad Request | The required Content-MD5 field is not carried, and the `Missing required header for this request: Content-MD5` error message will be returned |
-| MalformedXML   | 400 Bad Request | If the number of requested keys exceeds 1,000,  a MalformedXML error will be returned with the error message `delete key size is greater than 1000` |
-| InvalidDigest  | 400 Bad Request | The Content-MD5 carried does not match the request body calculated by the server |
+| InvalidRequest | 400 Bad Request | The required `Content-MD5` field is not carried, and `Missing required header for this request: Content-MD5` will be returned |
+| MalformedXML   | 400 Bad Request | If the number of keys in a request exceeds 1,000, a `MalformedXML` error will be returned along with the error message `delete key size is greater than 1000` |
+| InvalidDigest  | 400 Bad Request | The `Content-MD5` carried does not match the request body calculated by the server |
 
 
-For more common error codes in COS or the complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+For more COS error codes or a complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
 ### Request
 ```shell

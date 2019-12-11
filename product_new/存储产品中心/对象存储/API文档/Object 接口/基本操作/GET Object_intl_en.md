@@ -1,12 +1,12 @@
 ## Description
 
-This API (GET Object) is used to download an object in a COS bucket to the local file system. This operation requires you to have permission to read the target object or the target object to be public-read.
+This API is used to download an object in a COS bucket to a local file system. To make this request, you need to have Read access to the target object or the target object allows Public Read.
 
-> If the response-* request parameter is used, this request operation does not support anonymous request and must carry a signature.
+>? If the `response-*` request parameter is used, this request operation will not support anonymous request and must carry a signature.
 
 #### Versioning
 
-If versioning is enabled, the GET operation will return the latest version of the object. To return a previous version of the object, use the versionId request parameter.
+If versioning is enabled, the `GET` operation will return the latest version of the object. If you want to download a historical version of the object, please specify the `versionId` request parameter.
 
 ## Request
 
@@ -19,27 +19,27 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
 | Name | Description | Type | Required |
 | ---------------------------- | ----------------------------------------- | ------ | -------- |
-| response-cache-control | Sets the value of the Cache-Control header in the response | string | No |
-| response-content-disposition | Sets the value of the Content-Disposition header in the response | string | No |
-| response-content-encoding | Sets the value of the Content-Encoding header in the response | string | No |
-| response-content-language | Sets the value of the Content-Language header in the response | string | No |
-| response-content-type | Sets the value of the Content-Type header in the response | string | No |
-| response-expires | Sets the value of the Expires header in the response | string | No |
-| versionId | Specifies the version ID of the object to be downloaded | string | No |
+| response-cache-control | Value of the `Cache-Control` header in the response | string | No |
+| response-content-disposition | Value of the `Content-Disposition` header in the response | string | No |
+| response-content-encoding | Value of the `Content-Encoding` header in the response | string | No |
+| response-content-language | Value of the `Content-Language` header in the response | string | No |
+| response-content-type | Value of the `Content-Type` header in the response | string | No |
+| response-expires | Value of the `Expires` header in the response | string | No |
+| versionId | Version ID of the object to be downloaded | string | No |
 
-#### Request Header
+#### Request Headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 | Name | Description | Type | Required |
 | ------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Range | Byte range as defined in RFC 2616. The range value must be in the format of bytes=first-last, where both first and last are offsets starting from 0. For example, bytes=0-9 indicates to download the first 10 bytes of data of the object, and HTTP status code 206 (Partial Content) and the Content-Range response header will be returned. If this parameter is not specified, the entire object will be downloaded | String | No |
+| Range | Byte range as defined in RFC 2616. The range value must be in the format of `bytes=first-last`, where both `first` and `last` are offsets starting from 0. For example, `bytes=0-9` means downloading the first 10-byte data of the object, and HTTP status code 206 (Partial Content) and the Content-Range response header will be returned. If this parameter is not specified, the entire object will be downloaded | String | No |
 | If-Modified-Since   | If the object is modified after the specified time, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned | String | No |
 | If-Unmodified-Since | If the object is not modified after the specified time, the object will be returned; otherwise, HTTP status 412 (Precondition Failed) will be returned | String | No |
 | If-Match | If the ETag of the object is the same as the specified value, the object will be returned; otherwise, HTTP status code 412 (Precondition Failed) will be returned | string | No |
@@ -47,27 +47,27 @@ In addition to common request headers, this API also supports the following requ
 
 **Server-side encryption-related headers**
 
-If server-side encryption is used for the specified object and the encryption method is SSE-C, the headers related to server-side encryption needs to be specified for decrypting the object. For more information. see [Server-side Encryption-specific Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used for the specified object and the encryption method is SSE-C, you will need to specify the headers related to server-side encryption to decrypt the object. For more information. see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Request Body
 
-This API has no request body.
+This API does not have a request body.
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
-In addition to common response headers, this API returns the following response headers. For more information on common response header, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 | Name | Description | Type |
 | ------------------- | ------------------------------------------------------------ | ------ |
-| Cache-Control | Cache policy as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
+| Cache-Control | Cache directives as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
 | Content-Disposition | Filename as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
 | Content-Encoding | Encoding format as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
 | Content-Range | Byte range of the return content as defined in RFC 2616, which will be returned only if the `Range` request header is specified in the request | string |
 | Expires | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
-| x-cos-meta-\* | This includes the suffix and information of the user-defined metadata header | string |
-| x-cos-storage-class | Object storage class, such as STANDARD_IA and ARCHIVE. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the object is not in STANDARD storage class | Enum |
+| x-cos-meta-\* | Header suffix and information of the user-defined metadata | string |
+| x-cos-storage-class | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD` | Enum |
 
 **Versioning-related headers**
 
@@ -79,7 +79,7 @@ For versioned objects, the following response headers will be returned:
 
 **Server-side encryption-related headers**
 
-If server-side encryption is used for the specified object, this API will return the server-side encryption-specific headers. For more information. see [Server-side Encryption-specific Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used for the specified object, this API will return the server-side encryption headers. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response Body
 
@@ -87,11 +87,11 @@ The response body of this API request is the object (file) content.
 
 #### Error Codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+There is no special error message for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1. A Simple Sample (with Versioning Not Enabled)
+#### Example 1. Basic example (versioning not enabled)
 
 #### Request
 
@@ -120,7 +120,7 @@ x-cos-request-id: NWQxZGUzZWNfN2RiZTBiMDlfM2EzZF8yMGYx****
 [Object Content]
 ```
 
-#### Sample 2. Specifying the Response Headers Through Request Parameters
+#### Example 2. Specifying response headers through request parameters
 
 #### Request
 
@@ -151,7 +151,7 @@ x-cos-request-id: NWQxZGUzZWNfNjI4NWQ2NF9lMWYyXzk1NjFj****
 [Object Content]
 ```
 
-#### Sample 3. Using Server-side Encryption SSE-COS
+#### Example 3. Using server-side encryption SSE-COS
 
 #### Request
 
@@ -181,7 +181,7 @@ x-cos-server-side-encryption: AES256
 [Object Content]
 ```
 
-#### Sample 4. Using Server-side Encryption SSE-C
+#### Example 4. Using server-side encryption SSE-C
 
 #### Request
 
@@ -215,7 +215,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 [Object Content]
 ```
 
-#### Sample 5. Downloading the Latest Version of the Object (with Versioning Enabled)
+#### Example 5. Downloading the latest version of the object (with versioning enabled)
 
 #### Request
 
@@ -245,7 +245,7 @@ x-cos-version-id: MTg0NDUxODE3NzYyODMxOTg0OTg
 [Object Content]
 ```
 
-#### Sample 6. Downloading the Specified Version of the Object (with Versioning Enabled)
+#### Example 6. Downloading a specific version of the object (with versioning enabled)
 
 #### Request
 
@@ -275,7 +275,7 @@ x-cos-version-id: MTg0NDUxODE3NzYyODg0ODI2MjA
 [Object Content]
 ```
 
-#### Sample 7. Specifying the Range Request Header to Download Partial Content
+#### Example 7. Downloading partial content by specifying the Range request header
 
 #### Request
 

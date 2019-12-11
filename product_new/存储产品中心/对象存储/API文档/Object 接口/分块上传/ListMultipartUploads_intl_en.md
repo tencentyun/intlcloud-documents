@@ -1,7 +1,7 @@
 ## Description
-This API (List Multipart Uploads) is used to query the multipart uploads in progress. Up to 1,000 ones can be listed in one single request operation.
+This API is used to query the ongoing multipart uploads. A single request operation can list up to 1,000 multipart uploads.
 
-> You need to have read permission to the bucket.
+>! To make the request, you need to have the permission to read the bucket.
 
 ## Request
 ### Sample Request
@@ -18,23 +18,23 @@ Authorization: Auth String
 ### Request Headers
 
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
-### Request Parameter
+### Request Parameters
 
-The specific content is as follows: <style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
+The content is described in details below: <style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
 
 | Name | Description | Type | Required |
 | ---------------- | ---------------------------------------- | ------ | ---- |
-| delimiter | The delimiter is a symbol. The specified prefix in the object name before the first delimiter character is defined as a set of elements: common prefix. If there is no prefix, it starts at the beginning of the path | String | No |
-| encoding-type    | Specifies the encoding method of the return value; value range: url | String | No |
-| prefix | Specifies that the returned object key must be prefixed with the "prefix". </br>Note that when a prefix query is used, the returned key will still contain the prefix | String | No |
-| max-uploads | Sets the maximum number of parts returned between 1 and 1,000. Default value: 1,000 | String | No |
-| key-marker | Used together with upload-id-marker. <Br>If upload-id-marker is not specified, only the multipart uploads with ObjectNames lexicographically greater than the specified key-marker will be included in the list; <Br/>otherwise, the multipart uploads with ObjectNames lexicographically greater than the specified key-marker will be included, and any multipart uploads with ObjectNames equal to the key-marker will also be included, provided that they have UploadIDs lexicographically greater than the specified upload-id-marker | String | No |
-| upload-id-marker | Used together with key-marker. <Br>If key-marker is not specified, upload-id-marker will be ignored; <Br/>otherwise, the multipart uploads with ObjectNames lexicographically greater than the specified key-marker will be included in the list, and any multipart uploads with ObjectNames equal to the key-marker will also be included, provided that they have UploadIDs lexicographically greater than the specified upload-id-marker | String | No |
+| delimiter | The delimiter is a symbol. The delimiter is a symbol. The identical paths between `prefix` or, if no `prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix  | String | No |
+| encoding-type    | Specifies the encoding type of the returned value; valid value: `url` | String | No |
+| prefix | Sets that the response will only contain object keys with the specified prefix. </br>When you make a query with `prefix` specified, the returned keys will still contain `Prefix` | String | No |
+| max-uploads | Sets the maximum number of multipart uploads returned. Value range: [1, 1,000]. Default value: 1,000 | String | No |
+| key-marker | Used together with `upload-id-marker`. <Br>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed; <Br/>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | String | No |
+| upload-id-marker | Used together with `key-marker`. <Br>If `key-marker` is not specified, `upload-id-marker` will be ignored; <Br/>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | String | No |
 
 ### Request Body
 The request body of this request is empty.
@@ -43,12 +43,12 @@ The request body of this request is empty.
 
 ### Response Headers
 #### Common Response Headers
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
-This response has no special response headers.
+This response does not use any special response header.
 
 ### Response Body
-The return of this response body is **application/xml** data. Below is a sample containing all the node data:
+This response body returns **application/xml** data. The following contains all the node data:
 
 ```
 <ListMultipartUploadsResult>
@@ -82,70 +82,70 @@ The return of this response body is **application/xml** data. Below is a sample 
 </ListMultipartUploadsResult>
 ```
 
-Detailed data is as shown below:
+The data are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| ListMultipartUploadsResult | None | Represents the information of all parts | Container |
+| ListMultipartUploadsResult | None | Information on all multipart uploads | Container |
 
-Content of the Container node ListMultipartUploadsResult:
+Content of the Container node `ListMultipartUploadsResult`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| Bucket | InitiateMultipartUploadResult | Destination bucket for the multipart upload, which is formed by connecting the user-defined string and system-generated APPID with a dash, such as examplebucket-1250000000 | String |
-| Encoding-Type | ListMultipartUploadsResult | Specifies the encoding method of the return value; value range: url | String |
-| KeyMarker | ListMultipartUploadsResult| The entry list starts at this key value                                      | String |
-| UploadIdMarker | ListMultipartUploadsResult| The entry list starts at this UploadId value | String |
-| NextKeyMarker | ListMultipartUploadsResult | If the returned entries are truncated, then NextKeyMarker is the starting point of the next entry | String |
-| NextUploadIdMarker | ListMultipartUploadsResult | If the returned entries are truncated, then UploadId is the starting point of the next entry | String |
-| MaxUploads | ListMultipartUploadsResult | Sets the maximum number of parts returned between 0 and 1,000 | String |
-| IsTruncated | ListMultipartUploadsResult | Whether returned entries are truncated, which is a boolean value (TRUE or FALSE) |  Boolean |
-| Prefix | ListMultipartUploadsResult | Specifies that the returned object key must be prefixed with the "prefix". </br>Note that when a prefix query is used, the returned key will still contain the prefix | String |
-| Delimiter | ListMultipartUploadsResult | The delimiter is a symbol. The specified prefix in the object name before the first delimiter character is defined as a set of elements: common prefix. If there is no prefix, it starts at the beginning of the path | String |
-| Upload | ListMultipartUploadsResult | Information of each upload | Container |
-| CommonPrefixes | ListMultipartUploadsResult | The identical paths between prefix and delimiter are grouped into one class and defined as a common prefix | Container |
+| Bucket | InitiateMultipartUploadResult | Destination bucket for a multipart upload, which is formed by connecting a user-defined string and the system-generated APPID with a hyphen, such as `examplebucket-1250000000` | String |
+| Encoding-Type | ListMultipartUploadsResult | Specifies the encoding type of the returned value; valid value: `url` | String |
+| KeyMarker | ListMultipartUploadsResult| The key value where the entry list starts                                      | String |
+| UploadIdMarker | ListMultipartUploadsResult| The `uploadId` value where the entry list starts  | String |
+| NextKeyMarker | ListMultipartUploadsResult | If the returned list is truncated, the `NextKeyMarker` returned will be the starting point of the subsequent list | String |
+| NextUploadIdMarker | ListMultipartUploadsResult | If the returned list is truncated, the `UploadId` returned will be the starting point of the subsequent list | String |
+| MaxUploads | ListMultipartUploadsResult | Sets the maximum number of multipart uploads returned. Value range: [0, 1,000] | String |
+| IsTruncated | ListMultipartUploadsResult | Whether the returned list is truncated, which is a boolean value. Valid values: `TRUE`, `FALSE` |  Boolean |
+| Prefix | ListMultipartUploadsResult | Sets that the response will only contain object keys with the specified `Prefix`. </br>When you make a query with `prefix` specified, the returned keys will still contain `Prefix` | String |
+| Delimiter | ListMultipartUploadsResult | The delimiter is a symbol. The identical paths between `prefix` or, if no `prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix | String |
+| Upload | ListMultipartUploadsResult | Information on each upload | Container |
+| CommonPrefixes | ListMultipartUploadsResult | The identical paths between `prefix` and `delimiter` are grouped and defined as a common prefix | Container |
 
-Content of the Container node Upload:
+Content of the Container node `Upload`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
 | Key | ListMultipartUploadsResult.Upload |  Object name |  String |
-| UploadID | ListMultipartUploadsResult.Upload | ID of this multipart upload | String |
-| StorageClass | ListMultipartUploadsResult.Upload |  Indicates the storage class of the parts; enumerated value: STANDARD, STANDARD_IA, ARCHIVE | String    |
-| Initiator | ListMultipartUploadsResult.Upload | Identifies the initiator of this upload                                 | Container |
-| Owner | ListMultipartUploadsResult.Upload | Identifies the owner of the parts |  Container |
-| Initiated | ListMultipartUploadsResult.Upload |  Start time of the multipart upload |  Date |
+| UploadID | ListMultipartUploadsResult.Upload | ID of a multipart upload | String |
+| StorageClass | ListMultipartUploadsResult.Upload |  Indicates the storage class of the parts; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | String    |
+| Initiator | ListMultipartUploadsResult.Upload | Information on the initiator of an upload                                 | Container |
+| Owner | ListMultipartUploadsResult.Upload | Information on the owner of the parts |  Container |
+| Initiated | ListMultipartUploadsResult.Upload |  Starting time of a multipart upload |  Date |
 
-Content of the Container node Initiator:
+Content of the Container node `Initiator`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------ | ------------------------------------- | --------- |:--|
 | ID | ListMultipartUploadsResult.Upload.Initiator | Unique CAM ID of the user | String  |
 | DisplayName | ListMultipartUploadsResult.Upload.Initiator | User ID (UIN) | String  |
 
-Content of the Container node Owner:
+Content of the Container node `Owner`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------ | ------------------------------------- | --------- |:--|
 | ID | ListMultipartUploadsResult.Upload.Owner | Unique CAM ID of the user | String  |
 | DisplayName | ListMultipartUploadsResult.Upload.Owner| User ID (UIN) | String  |
 
-Content of the Container node CommonPrefixes:
+Content of the Container node `CommonPrefixes`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------ | ------------------------------------- | --------- |:--|
-| Prefix | ListMultipartUploadsResult.CommonPrefixes | Displays the specific CommonPrefixes | String |
+| Prefix | ListMultipartUploadsResult.CommonPrefixes | Displays a specific common prefix | String |
 
 ### Error Analysis
-Some frequent special errors that may occur with this request are listed below:
+The following describes some frequent special errors that may occur when you make this request:
 
 | Error Code | HTTP Status Code | Description |
 | ------------- | ------------------------------------ | ------------- |
-| InvalidArgument | 400 Bad Request | max-uploads must be an integer between 0 and 1,000; otherwise, InvalidArgument will be returned. <br>The value of encoding-type can only be url; otherwise, InvalidArgument will be returned |
+| InvalidArgument | 400 Bad Request | The value of `max-uploads` must be an integer between 0 and 1,000; otherwise, `InvalidArgument` will be returned. <br>The value of `encoding-type` can only be `url`; otherwise, `InvalidArgument` will be returned |
 
-For more common error codes in COS or the complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+For more COS error codes or a complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Example
 
 ### Request
 

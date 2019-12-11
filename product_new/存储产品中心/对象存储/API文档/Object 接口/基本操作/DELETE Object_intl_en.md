@@ -1,11 +1,11 @@
 ## Description
 
-This API (DELETE Object) is used to delete a file (object) in a COS bucket. The requester of this operation should have write permission to the bucket.
+This API is used to delete an object from a COS bucket. To make this request, you need to have the permission to write to the bucket.
 
-### Detail Analysis
+### Notes
 
-- Deleting a non-existing object in a DELETE Object request will still be considered a success, but `204 No Content` will be returned.
-- To use the DELETE Object API, you should have write permission to the object.
+- If an object you want to delete in a `DELETE Object` request does not exist, the request will still be successful and `204 No Content` will be returned.
+- To use the `DELETE Object` API, you need to have Write access to the object.
 
 ## Request
 
@@ -24,11 +24,11 @@ Authorization: Auth String
 
 #### Common Headers
 
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 
-This request operation has no special request headers.
+This request does not use any special request header.
 
 
 ### Request Body
@@ -40,10 +40,10 @@ The request body of this request is empty.
 ### Response Headers
 #### Common Response Headers 
 
-This response uses a common response header. For more information on the common response header, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
 
-This request operation has no special response headers.
+This request does not use any special response header.
 
 ### Response Body
 
@@ -51,14 +51,14 @@ The response body of this request is empty.
 
 ### Error Analysis
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some frequent special errors that may occur when you make this request:
 
 | Error Code | HTTP Status Code | Description |
 |--|--|--|
 | NoSuchBucket |404 Not Found| The bucket does not exist |
 
-For more common error codes in COS or the complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-## Samples
+For more COS error codes or a complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+## Example
 
 ### Request
 ```shell

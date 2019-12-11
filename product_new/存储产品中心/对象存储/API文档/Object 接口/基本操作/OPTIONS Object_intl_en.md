@@ -1,5 +1,5 @@
 ## Description
-This API (OPTIONS Object) is used to implement a pre-request for an cross-origin object access configuration, i.e., an OPTIONS request carrying the specific source origin, HTTP method, and header information is sent to COS for it to determine whether a real cross-origin resource sharing (CORS) request can be made. If no CORS configuration exists, 403 Forbidden will be returned for the request. You can enable the CORS support of a bucket using the PUT Bucket cors API.
+This API is used to implement a pre-request for cross-origin object access configuration. Before making a real cross-origin resource sharing (CORS) request, you can make an `OPTIONS` request carrying the specific source origin, HTTP method, and header information to COS for it to determine whether a real request can be made. If there is no CORS configuration, `403 Forbidden` will be returned. You can enable CORS for a bucket using the `PUT Bucket cors` API.
 
 ## Request
 ### Sample Request
@@ -18,15 +18,15 @@ Authorization: Auth String
 
 ### Request Headers
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 
 Name | Type | Description | Required
 ---|---|---|---
-Origin|string| Origin domain name of the simulated cross-origin access request | Yes
-Access-Control-Request-Method|string| HTTP method of the simulated cross-origin access request | Yes
-Access-Control-Request-Headers|string| Headers of the simulated cross-origin access request | No
+Origin|string| Source origin of the simulated cross-origin access | Yes
+Access-Control-Request-Method|string| HTTP request method of the simulated cross-origin access | Yes
+Access-Control-Request-Headers|string| Request headers of the simulated cross-origin access | No
 
 ### Request Body
 The request body of this request is empty.
@@ -34,24 +34,24 @@ The request body of this request is empty.
 ## Response
 ### Response Headers
 #### Common Response Headers
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special Response Headers
 
-Response headers unique to this request operation include:
+The special response headers used by this operation include:
 
 | Name | Type | Description |
 |---|---|---|
-|Access-Control-Allow-Origin|string| Origin domain names of the simulated cross-origin access request. This header will not be returned if the origin is not allowed | String |
-|Access-Control-Allow-Methods|string| HTTP methods of the simulated cross-origin access request. This header will not be returned if the request method is not allowed |
-|Access-Control-Allow-Headers|string| Headers of the simulated cross-origin access request. This request header will not be returned if no simulated headers are allowed |
-|Access-Control-Expose-Headers|string| HTTP methods of the simulated cross-origin access request. This header will not be returned if the request method is not allowed |
-|Access-Control-Max-Age|string| Sets the validity period of the result of the OPTIONS request |
+|Access-Control-Allow-Origin|string| Source origin of the simulated cross-origin access. This header will not be returned if the origin is not allowed | String |
+|Access-Control-Allow-Methods|string| HTTP request method of the simulated cross-origin access. This header will not be returned if the request method is not allowed |
+|Access-Control-Allow-Headers|string| Request headers of the simulated cross-origin access. If any request header is not allowed, it will not be returned by this response header |
+|Access-Control-Expose-Headers|string| HTTP request method of the simulated cross-origin access. This header will not be returned if the request method is not allowed |
+|Access-Control-Max-Age|string| Sets the validity period of the result of the `OPTIONS` request |
 
 ### Response Body
 This response body is empty.
 
-## Samples
+## Example
 
 ### Request
 

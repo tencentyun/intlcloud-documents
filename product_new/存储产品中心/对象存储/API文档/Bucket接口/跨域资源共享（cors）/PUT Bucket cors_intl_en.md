@@ -1,5 +1,5 @@
 ## Description
-This API (PUT Bucket cors) is used to set the CORS permission to a bucket. You can implement the configuration by passing in a configuration file in XML format of up to 64 KB in size. By default, the bucket owner has direct permission to use this API and can grant such permission to other users.
+This API is used to configure the cross-origin resource sharing (CORS) permission of a bucket. You can make the configuration by passing in a configuration file in XML format of up to 64 KB in size. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
 
 ## Request
 ### Sample Request
@@ -21,10 +21,10 @@ Authorization: Auth String
 
 #### Common Headers
 
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 ### Request Body
 The request body of this request is a CORS rule.
@@ -44,28 +44,28 @@ The request body of this request is a CORS rule.
 ```
 
 
-The detailed data are described as follows:
+The data are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |---|---|---|---|---|
-|CORSConfiguration| Noe | All information of the CORS configuration, which can contain up to 100 CORSRules | Container | Yes |
+|CORSConfiguration| Noe | Describes all the information on the CORS configuration, which can contain up to 100 `CORSRules` | Container | Yes |
 
-Content of the Container node CORSConfiguration:
+Content of the Container node `CORSConfiguration`:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| CORSRule | CORSConfiguration | All information of the CORS configuration, which can contain up to 100 CORSRules | Container | Yes |
+| CORSRule | CORSConfiguration | Describes all the information on the CORS configuration, which can contain up to 100 `CORSRules` | Container | Yes |
 
-Content of the Container node CORSRule:
+Content of the Container node `CORSRule`:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |---|---|---|---|---|
-|ID|CORSConfiguration.CORSRule| Configured rule ID; optional |string| Yes |
+|ID|CORSConfiguration.CORSRule|ID of the configuration rule; optional |string| Yes |
 |AllowedOrigin|CORSConfiguration.CORSRule| Allowed origin in the format of `protocol://domain name[:port number]`, such as `http://www.qq.com`. Wildcard `*` is supported |strings| Yes |
 |AllowedMethod|CORSConfiguration.CORSRule| Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE |strings| Yes |
-|AllowedHeader|CORSConfiguration.CORSRule| Tells the server what custom HTTP request headers can be used for subsequent requests when the OPTIONS request is sent. Wildcard `*` is supported |strings| Yes |
-|MaxAgeSeconds|CORSConfiguration.CORSRule| Sets the validity period of the result of the OPTIONS request |integer| Yes |
-|ExposeHeader|CORSConfiguration.CORSRule| Sets custom header information from the server that the browser can receive |strings| Yes |
+|AllowedHeader|CORSConfiguration.CORSRule| Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported |strings| Yes |
+|MaxAgeSeconds|CORSConfiguration.CORSRule| Sets the validity period of the result of the `OPTIONS` request |integer| Yes |
+|ExposeHeader|CORSConfiguration.CORSRule| Sets the user-defined header information from the server side that can be received by the browser |strings| Yes |
 
 
 ## Response
@@ -73,10 +73,10 @@ Content of the Container node CORSRule:
 
 #### Common Response Headers
 
-This response uses a common response header. For more information about common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special Response Headers
-This request operation has no special response headers.
+This request operation does not use any special response header.
 
 ### Response Body
 The response body of this request is empty.
@@ -88,7 +88,7 @@ The response body of this request is empty.
 |SignatureDoesNotMatch| If the provided signature does not conform to the rule, this error code will be returned |403 [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3) |
 |NoSuchBucket| If the bucket to which you want to add the rule does not exist, this error code will be returned |404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4) |
 
-## Samples
+## Example
 
 ### Request
 

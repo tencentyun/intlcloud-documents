@@ -1,6 +1,6 @@
 ## Description
 
-This API (GET Service) is used to query the list of all buckets under the requester's account or in the specified region.
+This API is used to query the list of all buckets under a requester's account or in a specific region.
 
 ## Request
 
@@ -15,7 +15,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-**Example 2**
+**Sample 2**
 
 ```shell
 GET / HTTP/1.1
@@ -24,31 +24,31 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> 
+> ?
 > - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
-> - Host: To query the list of all buckets, specify this as `service.cos.myqcloud.com`; to query the list of buckets in a specific region, specify this as `cos.<Region>.myqcloud.com`.
+> - Host: specify this as `service.cos.myqcloud.com` to query the list of all buckets; specify this as `cos.<Region>.myqcloud.com` to query the list of buckets in a specific region.
 
 #### Request Parameters
 
-This API has no request parameters.
+This API does not use any request parameter.
 
-#### Request Header
+#### Request Headers
 
-This API uses only a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Body
 
-This API has no request body.
+This API does not have a request body.
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response Body
 
-If the query succeeds, the **application/xml** data will be returned, including the list of buckets in all or specific regions.
+A successful query returns **application/xml** data which include the list of all buckets or the list of buckets in a specific region.
 
 ```shell
 <ListAllMyBucketsResult>
@@ -71,47 +71,47 @@ If the query succeeds, the **application/xml** data will be returned, including 
 </ListAllMyBucketsResult>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ---------------------- | ------ | ------------------------------- | --------- |
-| ListAllMyBucketsResult | None | Stores all information of the GET Service request result | Container |
+| ListAllMyBucketsResult | None | Stores the result of the `GET Service` request | Container |
 
-**Content of the Container node ListAllMyBucketsResult:**
+**Content of the Container node `ListAllMyBucketsResult`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ---------------------- | ---------------- | --------- |
 | Owner              | ListAllMyBucketsResult | Bucket owner information | Container |
 | Buckets            | ListAllMyBucketsResult | Bucket list | Container |
 
-**Content of the Container node Owner:**
+**Content of the Container node `Owner`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ---------------------------- | ------------------------------------------------------------ | ------ |
 | ID                 | ListAllMyBucketsResult.Owner | Complete ID of the bucket owner in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, such as `qcs::cam::uin/100000000001:uin/100000000001` | string |
 | DisplayName        | ListAllMyBucketsResult.Owner | Bucket owner name                                           | string |
 
-**Content of the Container node Buckets:**
+**Content of the Container node `Buckets`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------------------ | ---------- | --------- |
 | Bucket             | ListAllMyBucketsResult.Buckets | Bucket information | Container |
 
-**Content of the Container node Buckets.Bucket:**
+**Content of the Container node `Buckets.Bucket`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------------------------- | ------------------------------------------------------------ | ------ |
 | Name               | ListAllMyBucketsResult.Buckets.Bucket | Bucket name in the format of `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
-| Location           | ListAllMyBucketsResult.Buckets.Bucket | Bucket region such as ap-beijing, ap-hongkong, and eu-frankfurt. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
-| CreationDate | ListAllMyBucketsResult.Buckets.Bucket | Bucket creation time in ISO8601 format, such as 2019-05-24T10:56:40Z    | date   |
+| Location           | ListAllMyBucketsResult.Buckets.Bucket | Bucket region such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
+| CreationDate | ListAllMyBucketsResult.Buckets.Bucket | Bucket creation time in ISO8601 format, such as `2019-05-24T10:56:40Z`    | date   |
 
 #### Error Codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+There is no special error message for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1. Querying the List of All Buckets
+#### Example 1. Querying the list of all buckets
 
 #### Request
 
@@ -164,7 +164,7 @@ x-cos-request-id: NWNlN2RjYjdfOGFiMjM1MGFfNTVjMl8zMmI1****
 </ListAllMyBucketsResult>
 ```
 
-#### Sample 2. Querying the List of Buckets in the Specified Region
+#### Example 2. Querying the list of buckets in a specific region
 
 #### Request
 

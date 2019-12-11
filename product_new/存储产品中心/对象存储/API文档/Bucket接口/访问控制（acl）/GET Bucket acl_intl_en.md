@@ -1,6 +1,6 @@
 ## Description
 
-This API (GET Bucket acl) is used to get the access control list (ACL) of a bucket. The requester of this API should have permission to write ACL to the bucket.
+This API is used to get the access control list (ACL) of a bucket. To make this request, you need to have the permission to read the ACL of the bucket.
 
 ## Request
 
@@ -13,29 +13,29 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
-This API has no request parameters.
+This API does not use any request parameter.
 
-#### Request Header
+#### Request Headers
 
-This API uses only a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Body
 
-This API has no request body.
+This API does not have a request body.
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response Body
 
-If the query succeeds, the **application/xml** data will be returned, including the bucket owner and full authorization information.
+A successful query will return **application/xml** data which include the bucket owner information and full authorization information.
 
 ```shell
 <AccessControlPolicy>
@@ -61,52 +61,52 @@ If the query succeeds, the **application/xml** data will be returned, including 
 </AccessControlPolicy>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described in details below:
 
 Node Name (Keyword) | Parent Node | Description | Type
 ---|---|---|---
-AccessControlPolicy| None | Stores all information of the GET Bucket acl request result |Container
+AccessControlPolicy| None | Stores the result of the `GET Bucket acl` operation |Container
 
-**Content of the Container node AccessControlPolicy:**
+**Content of the Container node `AccessControlPolicy`:**
 
 Node Name (Keyword) | Parent Node | Description | Type
 ---|---|---|---
 Owner|AccessControlPolicy| Bucket owner information |Container
-AccessControlList|AccessControlPolicy| Information of grantee and permission |Container
+AccessControlList|AccessControlPolicy| Information on the grantee and permissions |Container
 
-**Content of the Container node Owner:**
+**Content of the Container node `Owner`:**
 
 Node Name (Keyword) | Parent Node | Description | Type
 ---|---|---|---
 ID|AccessControlPolicy.Owner| Complete ID of the bucket owner in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, such as `qcs::cam::uin/100000000001:uin/100000000001`|string
 DisplayName|AccessControlPolicy.Owner| Bucket owner name |string
 
-**Content of the Container node AccessControlList:**
+**Content of the Container node `AccessControlList`:**
 
 Node Name (Keyword) | Parent Node | Description | Type
 ---|---|---|---
-Grant|AccessControlPolicy.AccessControlList| Authorization information |Container
+Grant|AccessControlPolicy.AccessControlList| A single permission entry |Container
 
-**Content of the Container node AccessControlList.Grant:**
-
-Node Name (Keyword) | Parent Node | Description | Type
----|---|---|---
-Grantee|AccessControlPolicy.AccessControlList.Grant| Grantee information. If `xsi:type` is Group, the child node includes and only includes URI. If it is CanonicalUser, the child node includes and only includes ID and DisplayName |Container
-Permission|AccessControlPolicy.AccessControlList.Grant| Information of the granted permission. For the enumerated values such as WRITE and FULL_CONTROL, see the Bucket Operations section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583) |Enum
-
-**Content of the Container node AccessControlList.Grant.Grantee:**
+**Content of the Container node `AccessControlList.Grant`:**
 
 Node Name (Keyword) | Parent Node | Description | Type
 ---|---|---|---
-URI|AccessControlPolicy.AccessControlList.Grant.Grantee| Preset user group such as `http://cam.qcloud.com/groups/global/AllUsers` or `http://cam.qcloud.com/groups/global/AuthenticatedUsers`. For more information, see the Preset User Groups section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583) |string
+Grantee|AccessControlPolicy.AccessControlList.Grant| Grantee information. If `xsi:type` is specified as `Group`, the child node includes and only includes `URI`. If it is specified as `CanonicalUser`, the child nodes include and only include `ID` and `DisplayName` |Container
+Permission|AccessControlPolicy.AccessControlList.Grant| Permissions. For the enumerated values such as `WRITE` and `FULL_CONTROL`, see the “Actions on buckets” section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583) |Enum
+
+**Content of the Container node `AccessControlList.Grant.Grantee`:**
+
+Node Name (Keyword) | Parent Node | Description | Type
+---|---|---|---
+URI|AccessControlPolicy.AccessControlList.Grant.Grantee| Preset user group such as `http://cam.qcloud.com/groups/global/AllUsers` or `http://cam.qcloud.com/groups/global/AuthenticatedUsers`. For more information, see the “Preset user group” section in [ACL Overview](https://cloud.tencent.com/document/product/436/30752#.E8.BA.AB.E4.BB.BD-grantee) |string
 ID|AccessControlPolicy.AccessControlList.Grant.Grantee| Complete ID of the grantee in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, such as `qcs::cam::uin/100000000001:uin/100000000001`|string
 DisplayName|AccessControlPolicy.AccessControlList.Grant.Grantee| Grantee name |string
 
 #### Error Codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+There is no special error message for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Example
 
 #### Request
 

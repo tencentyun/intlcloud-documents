@@ -1,5 +1,5 @@
 ## Description
-This API (GET Bucket cors) is used by the bucket owner to obtain the cross-origin resource sharing (CORS, a W3C standard) configuration set for the bucket. By default, the bucket owner has the permission to use this API and can grant it to others.
+This API allows the bucket owner to obtain the cross-origin resource sharing (CORS, a W3C standard) configuration of a bucket. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
 
 ## Request
 ### Sample Request
@@ -16,9 +16,9 @@ Authorization: Auth String
 ### Request Headers
 
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 #### Special Headers
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 ### Request Body
 The request body of this request is empty.
@@ -27,9 +27,9 @@ The request body of this request is empty.
 
 ### Response Headers
 #### Common Response Headers
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
-This response has no special response headers.
+This response does not use any special response header.
 
 ### Response Body
 CORS configuration information is obtained successfully.
@@ -48,34 +48,34 @@ CORS configuration information is obtained successfully.
 </CORSConfiguration>
 ```
 
-The detailed data are described as follows:
+The data are described in details below:
 
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
-CORSConfiguration| Noe | All information of the CORS configuration, which can contain up to 100 CORSRules | Container | Yes
+CORSConfiguration| None | Describes all the information on the CORS configuration, which can contain up to 100 `CORSRules` | Container | Yes
 
-Content of the Container node CORSConfiguration:
-
-Node Name (Keyword) | Parent Node | Description | Type | Required
----|---|---|---|---
-CORSRule|CORSConfiguration| All information of the CORS configuration, which can contain up to 100 CORSRules | Container | Yes
-
-Content of the Container node CORSRule:
+Content of the Container node `CORSConfiguration`:
 
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
-ID | CORSConfiguration.CORSRule | ID of the configuration rule (optional) | String | Yes
-AllowedOrigin|CORSConfiguration.CORSRule| Allowed origin in the format of protocol://domain name[:port number], such as `http://www.qq.com`. Wildcard `*` is supported |strings| Yes
+CORSRule|CORSConfiguration| Describes all the information on the CORS configuration, which can contain up to 100 `CORSRules` | Container | Yes
+
+Content of the Container node `CORSRule`:
+
+Node Name (Keyword) | Parent Node | Description | Type | Required
+---|---|---|---|---
+ID | CORSConfiguration.CORSRule | ID of the configuration rule; optional | String | Yes
+AllowedOrigin|CORSConfiguration.CORSRule| Allowed origin in the format of `protocol://domain name[:port number]`, such as `http://www.qq.com`. Wildcard `*` is supported |strings| Yes
 AllowedMethod|CORSConfiguration.CORSRule| Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE |strings| Yes
-AllowedHeader|CORSConfiguration.CORSRule| Tells the server what custom HTTP request headers can be used for subsequent requests when the OPTIONS request is sent. Wildcard * is supported |strings| Yes
-MaxAgeSeconds|CORSConfiguration.CORSRule| Sets the validity period of the result of the OPTIONS request |integer| Yes
-ExposeHeader|CORSConfiguration.CORSRule| Sets custom header information from the server that the browser can receive |strings| Yes
+AllowedHeader|CORSConfiguration.CORSRule| Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported |strings| Yes
+MaxAgeSeconds|CORSConfiguration.CORSRule| Sets the validity period of the result of the `OPTIONS` request |integer| Yes
+ExposeHeader|CORSConfiguration.CORSRule| Sets the user-defined header information from the server side that can be received by the browser |strings| Yes
 
 
 ### Error Codes
-There are no special error messages for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+The implementation of this operation does not return special error messages. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Example
 
 ### Request
 

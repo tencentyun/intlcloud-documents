@@ -1,5 +1,5 @@
 ## Description
-This API (POST Object restore) is used to restore an object in ARCHIVE storage class in COS. The restored readable object is temporary, and you can set the period to keep it readable before it is subsequently deleted. You can use the `Days` parameter to specify the expiration time of the temporary object. If you don't initiate any copy or extending operations before this time elapses, the temporary object will be automatically deleted by the system. A temporary object is only a copy of the source archived object which will always exist during this period.
+This API is used to restore an object archived by COS. The restored readable object is temporary, and you can make configuration to keep it readable and set the time when you want it to be deleted. You can use the `Days` parameter to specify the expiration time of the temporary object. If the object expires and you have not initiated any operation to copy the object or extend its validity period before the expiration, the temporary object will be automatically deleted. A temporary object is only a copy of the source archived object and the source object will exist throughout the period.
 
 ## Request
 ### Sample Request
@@ -16,12 +16,12 @@ Authorization: Auth String
 
 ### Request Headers
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 #### Special Headers
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 ### Request Body
-The implementation of this request operation requires the following request body.
+The implementation of this operation requires the following request body.
 
 ```shell
 <RestoreRequest>
@@ -58,14 +58,14 @@ The detailed data are described as follows:
    <tr>
       <td>CASJobParameters</td>
       <td>None</td>
-      <td>Container of the archive storage parameters</td>
+      <td>Container of the parameters of CAS jobs</td>
       <td>Container</td>
       <td>Yes</td>
    </tr>
    <tr>
       <td>Tier</td>
       <td>None</td>
-      <td>For data restoration, `Tier` can be specified as one of the three modes supported by CAS: Standard (standard mode where a restoration task can be completed in 3-5 hours), Expedited (expedited mode where a restoration task can be completed in 15 minutes), and Bulk (bulk mode where a restoration task can be completed in 5 - 12 hours)</td>
+      <td>When restoring data, you can specify `Tier` as one of the three modes supported by CAS: `Standard`, standard mode where a restoration job can be completed in 3-5 hours; `Expedited`, expedited mode where a restoration job can be completed in 15 minutes; and `Bulk`, batch mode where a restoration job can be completed in 5-12 hours</td>
       <td>Enum</td>
       <td>Yes</td>
    </tr>
@@ -77,9 +77,9 @@ The detailed data are described as follows:
 ### Response Headers
 
 #### Common Response Headers
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
-This response has no special response headers.
+This response does not use any special response header.
 
 ### Response Body
 This response body is empty.
@@ -90,10 +90,10 @@ The following error messages may be returned for this request operation. For com
 Error Code | Description | HTTP Status Code
 ---|---|---
 None| Restoration succeeded |202 [Accepted](https://tools.ietf.org/html/rfc7231#section-6.3.3)
-RestoreAlreadyInProgress| The object is being restored |409 [Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)
+RestoreAlreadyInProgress| Object being restored |409 [Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)
 
 
-## Samples
+## Example
 
 ### Request
 

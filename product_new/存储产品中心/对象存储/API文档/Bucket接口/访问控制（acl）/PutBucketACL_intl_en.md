@@ -1,10 +1,10 @@
 ## Description
 
-This API (PUT Bucket acl) is used to write to the access control list (ACL) of a bucket. You can pass in the ACL information through the request headers `x-cos-acl` and `x-cos-grant-*` or through the request body in XML format.
->
->- You can set an ACL through either request header or request body.
->- PUT Bucket acl is an overwriting operation, i.e., the new ACL passed in will overwrite the original ACL.
->- The requester of this API should have permission to write ACL to the bucket.
+This API is used to write an access control list (ACL) to a bucket. You can pass in the ACL information through the request headers `x-cos-acl` and `x-cos-grant-*` or through the request body in XML format.
+>!
+>- You can set the ACL information either through request headers or through the request body.
+>- `PUT Bucket acl` is an overwriting operation. The new ACL passed in will overwrite the old one.
+>- To make this request, you need to have the permission to write ACL to the bucket.
 
 ## Request
 
@@ -31,28 +31,28 @@ Authorization: Auth String
 [Request Body]
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
-This API has no request parameters.
+This API does not use any request parameter.
 
-#### Request Header
+#### Request Headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 Name | Description | Type | Required
 ---|---|---|---
-x-cos-acl| This defines the access control list (ACL) attribute of the bucket. For the enumerated values such as private and public-read, see the Preset ACL for Buckets section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: private |Enum| No
-x-cos-grant-read| This grants the grantee permission to read the bucket in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"`|string| No
-x-cos-grant-write| This grants the grantee permission to write to the bucket in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"`|string| No
-x-cos-grant-read-acp| This grants the grantee permission to read the ACL and policy of the bucket in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"`|string| No
-x-cos-grant-write-acp| This grants the grantee permission to write to the ACL and policy of the bucket in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"`|string| No
-x-cos-grant-full-control| This grants the grantee full permission to manipulate the bucket in the format of id="[OwnerUin]", such as id="100000000001". Multiple grantees can be separated by comma (,), such as `id="100000000001",id="100000000002"`|string| No
+x-cos-acl| Defines the access control list (ACL) attribute of the bucket. For the enumerated values such as `private` and `public-read`, see the “Preset ACL for buckets” section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `private` |Enum| No
+x-cos-grant-read| Allows grantee to read the bucket; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"`|string| No
+x-cos-grant-write| Allows grantee to write to the bucket; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"`|string| No
+x-cos-grant-read-acp| Allows grantee to read the ACL and the policy of the bucket; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"`|string| No
+x-cos-grant-write-acp| Allows grantee to write to the ACL and the policy of the bucket; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"`|string| No
+x-cos-grant-full-control| Grants a user full permission to perform operations on the bucket; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"`|string| No
 
 #### Request Body
 
-Submit the **application/xml** request data, including the bucket owner and full authorization information.
+This request body submits the **application/xml** request data which include the bucket owner information and full authorization information.
 
 ```shell
 <AccessControlPolicy>
@@ -76,50 +76,50 @@ Submit the **application/xml** request data, including the bucket owner and full
 </AccessControlPolicy>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described in details below:
 
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
-AccessControlPolicy| None | All request information containing the PUT Bucket acl operation |Container| Yes
+AccessControlPolicy| None | All request information of the `PUT Bucket acl` operation |Container| Yes
 
-**Content of the Container node AccessControlPolicy:**
+**Content of the Container node `AccessControlPolicy`:**
 
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
 Owner|AccessControlPolicy| Bucket owner information |Container| Yes
-AccessControlList|AccessControlPolicy| Information of grantee and permission |Container| Yes
+AccessControlList|AccessControlPolicy| Information on the grantee and permissions |Container| Yes
 
-**Content of the Container node Owner:**
+**Content of the Container node `Owner`:**
 
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
 ID|AccessControlPolicy.Owner| Complete ID of the bucket owner in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, such as `qcs::cam::uin/100000000001:uin/100000000001`|string| Yes
 
-**Content of the Container node AccessControlList:**
+**Content of the Container node `AccessControlList`:**
 
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
-Grant|AccessControlPolicy.AccessControlList| Authorization information. One AccessControlList can contain up to 100 Grants |Container| Yes
+Grant|AccessControlPolicy.AccessControlList| A single permission entry. One `AccessControlList` can have up to 100 `Grant` entries |Container| Yes
 
-**Content of the Container node AccessControlList.Grant:**
-
-Node Name (Keyword) | Parent Node | Description | Type | Required
----|---|---|---|---
-Grantee|AccessControlPolicy.AccessControlList.Grant| Grantee information. `xsi:type` can be specified as Group or CanonicalUser. If it is Group, the child node includes and is allowed to only include URI. If it is CanonicalUser, the child node includes and is allowed to only include ID |Container| Yes
-Permission|AccessControlPolicy.AccessControlList.Grant| Information of the granted permission. For the enumerated values such as WRITE and FULL_CONTROL, see the Bucket Operations section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583) |Enum| Yes
-
-**Content of the Container node AccessControlList.Grant.Grantee:**
+**Content of the Container node `AccessControlList.Grant`:**
 
 Node Name (Keyword) | Parent Node | Description | Type | Required
 ---|---|---|---|---
-URI|AccessControlPolicy.AccessControlList.Grant.Grantee| Preset user group such as `http://cam.qcloud.com/groups/global/AllUsers` or `http://cam.qcloud.com/groups/global/AuthenticatedUsers`. For more information, see the Preset User Groups section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583) |string| Yes if the `xsi:type` of `Grantee` is specified as `Group`
-ID|AccessControlPolicy.AccessControlList.Grant.Grantee| Complete ID of the grantee in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, such as `qcs::cam::uin/100000000001:uin/100000000001`|string| This parameter is required if the `xsi:type` of `Grantee` is specified as `CanonicalUser`
+Grantee|AccessControlPolicy.AccessControlList.Grant| Grantee information. `xsi:type` can be specified as `Group` or `CanonicalUser`. If it is specified as `Group`, the child node includes and can only include `URI`. If it is specified as `CanonicalUser`, the child node includes and can only include `ID` |Container| Yes
+Permission|AccessControlPolicy.AccessControlList.Grant| Permissions. For the enumerated values such as `WRITE` and `FULL_CONTROL`, see the “Actions on buckets” section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583) |Enum| Yes
+
+**Content of the Container node `AccessControlList.Grant.Grantee`:**
+
+Node Name (Keyword) | Parent Node | Description | Type | Required
+---|---|---|---|---
+URI|AccessControlPolicy.AccessControlList.Grant.Grantee| Preset user group such as `http://cam.qcloud.com/groups/global/AllUsers` or `http://cam.qcloud.com/groups/global/AuthenticatedUsers`. For more information, see the “Preset user group” section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583) |string| Yes if `xsi:type` of `Grantee` is specified as `Group`
+ID|AccessControlPolicy.AccessControlList.Grant.Grantee| Complete ID of the grantee in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, such as `qcs::cam::uin/100000000001:uin/100000000001`|string| Yes if `xsi:type` of `Grantee` is specified as `CanonicalUser`
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response Body
 
@@ -127,16 +127,16 @@ The response body of this API is empty.
 
 #### Error Codes
 
-The special error messages for this API are as detailed below. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+The implementation of this operation returns the following special error messages. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 Error Code | Description | HTTP Status Code
 ---|---|---
-InvalidDigest| The given Content-MD5 value is invalid |400 Bad Request
+InvalidDigest| The given Content-MD5 checksum is invalid |400 Bad Request
 MalformedXML| The XML format of the request body does not conform to the XML syntax |400 Bad Request
 
 ## Examples
 
-#### Sample 1. Setting an ACL Through Request Headers
+#### Example 1. Configuring ACL through request headers
 
 #### Request
 
@@ -163,7 +163,7 @@ Server: tencent-cos
 x-cos-request-id: NWQwNzRmOTRfODhjMjJhMDlfMWRlYl81Mzc0****
 ```
 
-#### Sample 2. Setting an ACL Through Request Body
+#### Example 2. Configuring ACL through request body
 
 #### Request
 

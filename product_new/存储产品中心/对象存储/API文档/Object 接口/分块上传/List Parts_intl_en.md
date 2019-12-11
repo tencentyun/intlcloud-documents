@@ -1,6 +1,6 @@
 ## Description
 
-This API (List Parts) is used to query the uploaded parts in the specified multipart upload, i.e., listing all successfully uploaded parts in the multipart upload with the specified UploadId.
+This API is used to query the uploaded parts of a specified multipart upload, i.e., listing all successfully uploaded parts of a multipart upload whose `uploadId` is specified.
 
 ## Request
 
@@ -19,20 +19,20 @@ Authorization: Auth String
 
 #### Common Headers
 
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 #### Request Parameters
 
 | Name | Type | Required | Description |
 | ------------------ | ------ | ---- | ------------------------------------------------------------ |
-| UploadId | String | Yes | ID of this multipart upload; when the Initiate Multipart Upload API is used to initialize a multipart upload, an uploadId will be obtained, which not only uniquely identifies the data but also identifies the data position in the entire file |
-| encoding-type      | string | No | Specifies the encoding method of the return value |
+| uploadId | String | Yes | ID of this multipart upload. When the `Initiate Multipart Upload` API is used to initialize a multipart upload, an `uploadId` will be returned. The ID uniquely identifies the data of the part and its position in the entire file |
+| encoding-type      | string | No | Specifies the encoding type of the returned value |
 | max-parts          | string | No   | Maximum number of entries returned at a time. Default value: 1,000                             |
-| part-number-marker | string | No   | By default, entries are listed in UTF-8 binary order, and the entry list starts at marker  |
+| part-number-marker | string | No   | By default, entries are listed in UTF-8 binary order starting from `marker`  |
 
 ### Request Body
 
@@ -44,15 +44,15 @@ The request body of this request is empty.
 
 #### Common Response Headers
 
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special Response Headers
 
-This response has no special response headers.
+This response does not use any special response header.
 
 ### Response Body
 
-If the query succeeds, the **application/xml** data will be returned, including the information of finished parts.
+A successful query returns **application/xml** data which include the information on the successfully uploaded parts.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -83,53 +83,53 @@ If the query succeeds, the **application/xml** data will be returned, including 
 </ListPartsResult>
 ```
 
-The detailed data are described as follows:
+The data are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------ | ---------------------------------- | --------- |
-| ListPartsResult | None | Stores all information of the List Parts request result | Container |
+| ListPartsResult | None | Stores the result of the `List Parts` request | Container |
 
-Content of the Container node ListPartsResult:
+Content of the Container node `ListPartsResult`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | -------------------- | --------------- | ------------------------------------------------------------ | --------- |
-| Bucket               | ListPartsResult | Name of the destination bucket for the multipart upload, which is formed by connecting the user-defined string and system-generated APPID with a dash, such as examplebucket-1250000000 | string |
-| Encoding-Type | ListPartsResult | Encoding method | string |
+| Bucket               | ListPartsResult | Name of the destination bucket for the multipart upload, which is formed by connecting a user-defined string and the system-generated APPID with a hyphen, such as `examplebucket-1250000000` | string |
+| Encoding-Type | ListPartsResult | Encoding type | string |
 | Key                  | ListPartsResult | Object name                                                | string    |
-| UploadId             | ListPartsResult | Identifies the ID of this multipart upload                                        | string    |
-| Initiator            | ListPartsResult | Identifies the owner of the parts                                 | Container |
-| Owner              | ListPartsResult | Identifies the owner of the parts                                 | Container |
-| StorageClass         | ListPartsResult | Indicates the storage class of the parts; enumerated value: STANDARD, STANDARD_IA, ARCHIVE | string    |
-| PartNumberMarker     | ListPartsResult | By default, entries are listed in UTF-8 binary order, and the entry list starts at marker  | string    |
-| NextPartNumberMarker | ListPartsResult | If the returned entries are truncated, then NextMarker is the starting point of the next entry   | string    |
+| UploadId             | ListPartsResult | ID which identifies this multipart upload                                        | string    |
+| Initiator            | ListPartsResult | Information on the creator of the parts                                 | Container |
+| Owner              | ListPartsResult | Information on the owner of the parts                                 | Container |
+| StorageClass         | ListPartsResult | Indicates the storage class of the parts; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | string    |
+| PartNumberMarker     | ListPartsResult | By default, entries are listed in UTF-8 binary order starting from `marker`  | string    |
+| NextPartNumberMarker | ListPartsResult | If the returned list is truncated, the `NextMarker` returned will be the starting point of the subsequent list   | string    |
 | MaxParts             | ListPartsResult | Maximum number of entries returned at a time                                       | string    |
-| IsTruncated          | ListPartsResult | Whether response entries are truncated, which is a boolean value (true or false)                  | boolean   |
+| IsTruncated          | ListPartsResult | Whether the returned list is truncated, which is a boolean value. Valid values: `true`, `false`                  | boolean   |
 | Part                 | ListPartsResult | Metadata                                                   | Container |
 
-Content of the Container node Initiator:
+Content of the Container node `Initiator`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------------- | -------------------- | ------ |
 | ID                 | ListPartsResult.Initiator | Unique ID of the creator | string |
 | DisplayName        | ListPartsResult.Initiator | Creator's username   | string |
 
-Content of the Container node Owner:
+Content of the Container node `Owner`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | --------------------- | -------------------- | ------ |
-| ID                 | ListPartsResult.Owner | Unique ID of the creator | string |
-| DisplayName        | ListPartsResult.Owner | Creator's username   | string |
+| ID                 | ListPartsResult.Owner | Unique ID of the owner | string |
+| DisplayName        | ListPartsResult.Owner | Owner's username   | string |
 
-Content of the Container node Part:
+Content of the Container node `Part`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | -------------------- | ----------------------- | ------ |
 | PartNumber         | ListPartsResult.Part | Part number                | string |
-| LastModified       | ListPartsResult.Part | Last modified time of the part | string |
-| ETag               | ListPartsResult.Part | MD5 checksum of the part | string |
+| LastModified       | ListPartsResult.Part | Last modified time of a part | string |
+| ETag               | ListPartsResult.Part | MD5 checksum of a part | string |
 | Size               | ListPartsResult.Part | Part size in bytes | string |
 
-## Samples
+## Example
 
 ### Request
 

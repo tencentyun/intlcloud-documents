@@ -1,8 +1,8 @@
 ## Description
 
-This API (Head Bucket) is used to check whether a bucket exists and you have permission to access it. Possible situations include:
-- If the bucket exists and you have read permission to it, HTTP status code 200 will be returned.
-- If you have no permission to read the bucket, HTTP status code 403 will be returned.
+This API is used to check whether a bucket exists and whether you have the permission to access it. Possible scenarios include:
+- If the bucket exists and you have the permission to read it, HTTP status code 200 will be returned.
+- If you do not have the permission to read the bucket, HTTP status code 403 will be returned.
 - If the bucket does not exist, HTTP status code 404 will be returned.
 
 ## Request
@@ -16,29 +16,29 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
-This API has no request parameters.
+This API does not use any request parameter.
 
-#### Request Header
+#### Request Headers
 
-This API uses only a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Body
 
-This API has no request body.
+This API does not have a request body.
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
 In addition to common response headers, this API returns the following response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 | Name | Description | Type |
 | --- | --- | --- |
-| x-cos-bucket-region | Bucket region such as ap-beijing, ap-hongkong, and eu-frankfurt. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
+| x-cos-bucket-region | Bucket region such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
 
 #### Response Body
 
@@ -46,9 +46,9 @@ The response body of this API is empty.
 
 #### Error Codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+There is no special error message for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Sample
+## Example
 
 #### Request
 

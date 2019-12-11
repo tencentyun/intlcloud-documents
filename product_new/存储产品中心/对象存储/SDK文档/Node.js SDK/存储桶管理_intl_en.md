@@ -1,53 +1,53 @@
 ## Overview
 
-This document provides an overview of APIs related to cross-origin access, lifecycle, bucket policy, tag management, versioning, and cross-region replication and corresponding SDK sample code.
+This document provides an overview of APIs and SDK code samples related to cross-origin access, lifecycle, bucket policies, tag management, versioning, and cross-region replication.
 
-**Cross-origin access**
+**Cross-origin Access**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ---------------------------- |
-| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting cross-origin access configuration | Sets the cross-origin access permission to a bucket |
-| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying cross-origin access configuration | Queries the cross-origin access configuration information of a bucket |
-| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting cross-origin access configuration | Deletes the cross-origin access configuration information of a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting cross-origin access configuration | Sets cross-origin access permissions for a bucket |
+| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying cross-origin access configuration | Queries the cross-origin access configuration of a bucket |
+| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting cross-origin access configuration | Deletes the cross-origin access configuration of a bucket |
 
 **Lifecycle**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle | Sets the lifecycle management configuration of a bucket |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle | Sets lifecycle management configuration for a bucket |
 | [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying lifecycle | Queries the lifecycle management configuration of a bucket |
 | [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting lifecycle | Deletes the lifecycle management configuration of a bucket |
 
-**Bucket policy**
+**Bucket Policies**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------ |
-| [PUT Bucket policy](https://intl.cloud.tencent.com/document/product/436/8282) | Setting a bucket policy | Sets a permission policy for the specified bucket |
-| [GET Bucket policy](https://intl.cloud.tencent.com/document/product/436/8276) | Querying bucket policy | Queries the permission policy of the specified bucket |
-| [DELETE Bucket policy](https://intl.cloud.tencent.com/document/product/436/8285) | Deleting a bucket policy | Deletes the permission policy of the specified bucket |
+| [PUT Bucket policy](https://intl.cloud.tencent.com/document/product/436/8282) | Setting bucket policies | Sets permission policies for a specified bucket |
+| [GET Bucket policy](https://intl.cloud.tencent.com/document/product/436/8276) | Querying bucket policies | Queries the permission policies of a specified bucket |
+| [DELETE Bucket policy](https://intl.cloud.tencent.com/document/product/436/8285) | Deleting bucket policies | Deletes the permission policies of a specified bucket |
 
-**Tag management**
+**Tag Management**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting a bucket tag | Sets a tag for an existing bucket |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of the specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting a bucket tag | Deletes the specified bucket tag |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes specified bucket tags |
 
 **Versioning**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
-| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets the versioning feature of a bucket |
+| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
 | [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
 
-**Cross-region replication**
+**Cross-region Replication**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication | Sets the cross-region replication rule of a bucket |
-| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rule of a bucket |
-| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rule of a bucket |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication | Sets cross-region replication rules for a bucket |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rules of a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
 
 ## Cross-origin Access
 
@@ -55,9 +55,9 @@ This document provides an overview of APIs related to cross-origin access, lifec
 
 #### Feature Description
 
-This API (PUT Bucket cors) is used to set the cross-origin access permission to a bucket. You can implement the configuration by passing in a configuration file in XML format of up to 64 KB in size. By default, the bucket owner has direct permission to use this API and can grant such permission to other users.
+This API (PUT Bucket cors) is used to configure the cross-origin resource sharing (CORS) permission of a bucket. You can make the configuration by passing in a configuration file in XML format of up to 64 KB in size. By default, the bucket owner has the permission to use this API and can grant such permission to other users..
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.putBucketCors({
@@ -75,19 +75,19 @@ cos.putBucketCors({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ---------------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| CORSRules | Information list of all CORS configurations | ObjectArray | No |
+| CORSRules | List of all the information on CORS configuration | ObjectArray | No |
 | - ID | Configures the rule ID; optional | String | No |
 | - AllowedMethods | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE | StringArray | Yes |
-| - - AllowedOrigins | Allowed origin in the format of `protocol://domain name[:port number]`, <br>such as `http://www.qq.com`. Wildcard `*` is supported | StringArray | Yes |
-| - AllowedHeaders | Tells the server what custom HTTP request headers can be used for subsequent requests when the OPTIONS request is sent. Wildcard `*` is supported | StringArray | No |
-| - ExposeHeaders  | Sets custom header information from the server that the browser can receive | StringArray | No |
-| - MaxAgeSeconds | Sets the validity period of the result of the OPTIONS request | String | No |
+| - AllowedOrigins | Allowed source origin. Wildcard `*` is supported. Format: `protocol://domain name[:port number]`. <br>Example: `http://www.qq.com`.  | StringArray | Yes |
+| - AllowedHeaders | Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported | StringArray | No |
+| - ExposeHeaders  | Sets the user-defined header information from the server side that the browser can receive | StringArray | No |
+| - MaxAgeSeconds | Sets the validity period of the `OPTIONS` request result | String | No |
 
 #### Callback Function Description
 
@@ -97,20 +97,20 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ### Querying Cross-origin Access Configuration
 
 #### Feature Description
 
-This API (GET Bucket cors) is used to query the cross-origin access configuration information of a bucket. (Cross-origin resource sharing (CORS) is a W3C standard.) By default, the bucket owner has direct permission to use this API and can grant such permission to other users.
+This API (GET Bucket cors) is used to query the cross-origin resource sharing (CORS, a W3C standard) configuration of a bucket. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getBucketCors({
@@ -121,7 +121,7 @@ cos.getBucketCors({
 });
 ```
 
-#### Return Sample
+#### Sample Response
 
 ```json
 {
@@ -137,11 +137,11 @@ cos.getBucketCors({
 }
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -152,28 +152,28 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------------ | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - CORSRules | Information list of all CORS configurations | ObjectArray |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - CORSRules | List of all the information on CORS configuration | ObjectArray |
 | - - AllowedMethods | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE | StringArray |
-| - - AllowedOrigins | Allowed origin in the format of `protocol://domain name[:port number]`, <br>such as `http://www.qq.com`. Wildcard `*` is supported | StringArray |
-| - AllowedHeaders | Tells the server what custom HTTP request headers can be used for subsequent requests when the OPTIONS request is sent. Wildcard `*` is supported | StringArray |
-| - - ExposeHeaders  | Sets custom header information from the server that the browser can receive | StringArray |
-| - - MaxAgeSeconds | Sets the OPTIONS cross-origin information caching duration in seconds | String |
+| - - AllowedOrigins | Allowed source origin. Wildcard `*` is supported. Format: `protocol://domain name[:port number]`. <br>Example: `http://www.qq.com`. | StringArray |
+| - - AllowedHeaders | Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported | StringArray |
+| - - ExposeHeaders  | Sets the user-defined header information from the server side that the browser can receive | StringArray |
+| - - MaxAgeSeconds | Sets the validity period of the `OPTIONS` request result | String |
 | - - ID | Configures the rule ID | String |
 
 ### Deleting Cross-origin Access Configuration
 
-> 
+> !
 >
-> 1. Deleting the cross-domain access configuration information of the current bucket will cause all cross-origin access requests to fail. Please do so with caution.
-> 2. This method is not recommended for use in a browser.
+> 1. If you delete the cross-origin access configuration of the current bucket, all cross-origin access requests will fail. Please proceed with caution.
+> 2. It is not recommended to use this method in a browser.
 
 #### Feature Description
 
-This API is used to delete the cross-origin access configuration information of a bucket.
+This API (DELETE Bucket cors) is used to delete the cross-origin access configuration of a bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.deleteBucketCors({
@@ -184,11 +184,11 @@ cos.deleteBucketCors({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -199,14 +199,14 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getBucketLocation({
@@ -217,11 +217,11 @@ cos.getBucketLocation({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -233,11 +233,11 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | -------------------- | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 | - LocationConstraint | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String |
 
@@ -247,11 +247,11 @@ function(err, data) { ... }
 
 #### Feature Description
 
-This API is used to set the lifecycle management configuration for a bucket.
+This API (PUT Bucket lifecycle) is used to set the lifecycle management configuration for a bucket.
 
 #### Samples
 
-Sample 1. Transition files to Standard_IA storage class 30 days after upload
+Sample 1. Transition objects to Standard_IA storage class 30 days after upload
 
 ```js
 cos.putBucketLifecycle({
@@ -272,7 +272,7 @@ cos.putBucketLifecycle({
 
 ```
 
-Sample 2. Transition files with the specified directory prefix `dir/` to archive storage class 90 days after upload
+Sample 2. Transition objects with the specified directory prefix `dir/` to archive storage class 90 days after upload
 
 ```js
 cos.putBucketLifecycle({
@@ -295,7 +295,7 @@ cos.putBucketLifecycle({
 
 ```
 
-Sample 3. Delete files 180 days after upload
+Sample 3. Delete objects 180 days after upload
 
 ```js
 cos.putBucketLifecycle({
@@ -336,25 +336,25 @@ cos.putBucketLifecycle({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ---------------------------------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| LifecycleConfiguration | Specifies the lifecycle rules | Object | Yes |
+| LifecycleConfiguration | Specifies lifecycle rules | Object | Yes |
 | - Rules | Header information returned by the request | ObjectArray | Yes |
-| - - ID | Unique ID of the rule | String | Yes |
-| - - Status | Rule status; enumerated values: Enabled, Disabled | String | Yes |
-| - - Filter | Specifies the filter | String | Yes |
-| - - - Prefix | The object prefix to be matched by the rule | String | No |
-| - - Transition | Indicates to transition the object | Object | No |
-| - - - Days | Validity period of the rule in days starting from the file upload date, which must be a positive integer | Object | Yes |
-| - - - StorageClass | Target storage class for object transition; enumerated values: STANDARD, STANDARD_IA. Default value: STANDARD | Object | No |
-| - - Expiration | Indicates to delete the object | Object | No |
-| - - - Days | Validity period of the rule in days starting from the file upload date, which must be a positive integer | Object | Yes |
+| - - ID | Unique rule ID | String | Yes |
+| - - Status | Rule status; enumerated values: `Enabled`, `Disabled` | String | Yes |
+| - - Filter | Specifies filters | String | Yes |
+| - - - Prefix | Object prefix to be matched by the rule | String | No |
+| - - Transition | Indicates to transition the objects | Object | No |
+| - - - Days | Specifies the number of days between the object upload date and the rule effective date. This parameter can only be a positive integer | Object | Yes |
+| - - - StorageClass | Storage class to which the objects are transitioned; enumerated values: `STANDARD`, `STANDARD_IA`. Default value: `STANDARD` | Object | No |
+| - - Expiration | Indicates to delete the objects | Object | No |
+| - - - Days | Specifies the number of days between the object upload date and the rule effective date. This parameter can only be a positive integer | Object | Yes |
 | - - AbortIncompleteMultipartUpload | Indicates to delete the parts | Object | No |
-| - - - Days | Validity period of the rule in days starting from the file upload date, which must be a positive integer | Object | Yes |
+| - - - Days | Specifies the number of days between the object upload date and the rule effective date. This parameter can only be a positive integer | Object | Yes |
 
 #### Callback Function Description
 
@@ -365,20 +365,20 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ### Querying Lifecycle
 
 #### Feature Description
 
-This API (GET Bucket lifecycle) is used to query the lifecycle management configuration for a bucket.
+This API (GET Bucket lifecycle) is used to query the lifecycle management configuration of a bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getBucketLifecycle({
@@ -390,7 +390,7 @@ cos.getBucketLifecycle({
 
 ```
 
-#### Return Sample
+#### Sample Response
 
 ```json
 {
@@ -433,11 +433,11 @@ cos.getBucketLifecycle({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -449,32 +449,32 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ---------------------------------- | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 | - Rules | Header information returned by the request | ObjectArray |
-| - - ID | Unique ID of the rule | String |
-| - - Status | Rule status; enumerated values: Enabled, Disabled | String |
-| - - Filter | Specifies the filter | String |
-| - - - Prefix | The object prefix to be matched by the rule | String |
-| - - Transition | Indicates to transition the object | Object |
-| - - - Days | Validity period of the rule in days starting from the file upload date, which must be a positive integer | Object |
-| - - - StorageClass | Target storage class for object transition; enumerated values: STANDARD, STANDARD_IA. Default value: STANDARD | Object |
-| - - Expiration | Indicates to delete the object | Object |
-| - - - Days | Validity period of the rule in days starting from the file upload date, which must be a positive integer | Object |
+| - - ID | Unique rule ID | String |
+| - - Status | Rule status; enumerated values: `Enabled`, `Disabled` | String |
+| - - Filter | Specifies filters | String |
+| - - - Prefix | Object prefix to be matched by the rule | String |
+| - - Transition | Indicates to transition the objects | Object |
+| - - - Days | Specifies the number of days between the object upload date and the rule effective date. This parameter can only be a positive integer | Object |
+| - - - StorageClass | Storage class to which the objects are transitioned; enumerated values: `STANDARD`, `STANDARD_IA`. Default value: `STANDARD` | Object |
+| - - Expiration | Indicates to delete the objects | Object |
+| - - - Days | Specifies the number of days between the object upload date and the rule effective date. This parameter can only be a positive integer | Object |
 | - - AbortIncompleteMultipartUpload | Indicates to delete the parts | Object |
-| - - - Days | Validity period of the rule in days starting from the file upload date, which must be a positive integer | Object |
+| - - - Days | Specifies the number of days between the object upload date and the rule effective date. This parameter can only be a positive integer | Object |
 
 ### Deleting Lifecycle
 
 #### Feature Description
 
-This API is used to delete the lifecycle management configuration of a bucket.
+This API (DELETE Bucket lifecycle) is used to delete the lifecycle management configuration of a bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.deleteBucketLifecycle({
@@ -486,11 +486,11 @@ cos.deleteBucketLifecycle({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -502,22 +502,22 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
-## Bucket Policy
+## Bucket Policies
 
-### Setting a Bucket Policy
+### Setting Bucket Policies
 
 #### Feature Description
 
-This API is used to set a permission policy for the specified bucket.
+This API (PUT Bucket policy) is used to set permission policies for a specified bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.putBucketPolicy({
@@ -547,21 +547,21 @@ cos.putBucketPolicy({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Policy | Permission policy. For more information, see [Access Management Policy Syntax](https://intl.cloud.tencent.com/document/product/436/12469#.E8.AE.BF.E9.97.AE.E7.AE.A1.E7.90.86.E7.AD.96.E7.95.A5.E8.AF.AD.E6.B3.95) | Object | Yes |
+| Policy | Permission policy. For more information, see [Cloud Access Management Practices > Policy Syntax](https://intl.cloud.tencent.com/document/product/436/12469#.E8.AE.BF.E9.97.AE.E7.AE.A1.E7.90.86.E7.AD.96.E7.95.A5.E8.AF.AD.E6.B3.95) | Object | Yes |
 | - version | Version number, which is always 2.0 | ObjectArray | Yes |
-| - statement | Permission policy lifecycle list | ObjectArray | Yes |
-| - - effect | Effectiveness; enumerated values: allow, deny | String | Yes |
+| - statement | List of permission policy statements | ObjectArray | Yes |
+| - - effect | Effect; enumerated values: `allow`, `deny` | String | Yes |
 | - - principal | Identity information | ObjectArray | Yes |
-| - - - qcs | ID string <br>Format: `qcs::cam::uin/100000000001:uin/100000000011` <br>Here, 100000000001 is a root account, while 100000000011 is a sub-account | String | Yes |
-| - - action | List of related actions subject to the policy. Wildcard `*` is supported | StringArray | Yes |
-| - - resource | List of related resource identification strings <br>Format: `qcs::cos:<Region>:uid/<AppId>:<ShortBucketName>/*`<br>Example: `qcs::cos:ap-beijing:uid/1250000000:examplebucket/*` | StringArray | Yes   |
-| - - condition | List of allowed or disabled resources, which is a string | ObjectArray | No |
+| - - - qcs | ID string. <br>Format: `qcs::cam::uin/100000000001:uin/100000000011`. <br>100000000001 is a root account, while 100000000011 is a sub-account | String | Yes |
+| - - action | List of actions subject to the policy. Wildcard `*` is supported | StringArray | Yes |
+| - - resource | List of resource identification strings. <br>Format: `qcs::cos:<Region>:uid/<AppId>:<ShortBucketName>/*`.<br>Example: `qcs::cos:ap-beijing:uid/1250000000:examplebucket/*` | StringArray | Yes   |
+| - - condition | List of allowed or denied resources, which is a string | ObjectArray | No |
 
 #### Callback Function Description
 
@@ -571,20 +571,20 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
-### Querying Bucket Policy
+### Querying Bucket Policies
 
 #### Feature Description
 
-This API is used to query the permission policy of the specified bucket.
+This API (GET Bucket policy) is used to query the permission policies of a specified bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getBucketPolicy({
@@ -596,7 +596,7 @@ cos.getBucketPolicy({
 
 ```
 
-#### Return Sample
+#### Sample Response
 
 ```json
 {
@@ -625,11 +625,11 @@ cos.getBucketPolicy({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -641,25 +641,25 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | --------------- | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| Policy | Permission policy. For more information, see [Access Management Policy Syntax](https://intl.cloud.tencent.com/document/product/436/12469#.E8.AE.BF.E9.97.AE.E7.AE.A1.E7.90.86.E7.AD.96.E7.95.A5.E8.AF.AD.E6.B3.95) | Object |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - Policy | Permission policy. For more information, see [Cloud Access Management Practices > Policy Syntax](https://intl.cloud.tencent.com/document/product/436/12469#.E8.AE.BF.E9.97.AE.E7.AE.A1.E7.90.86.E7.AD.96.E7.95.A5.E8.AF.AD.E6.B3.95) | Object |
 | - - version | Version number, which is always 2.0 | ObjectArray |
-| - - statement | Permission policy lifecycle list | ObjectArray |
-| - - - effect | Effectiveness; enumerated values: allow, deny | String |
+| - - statement | List of permission policy statements | ObjectArray |
+| - - - effect | Effect; enumerated values: `allow`, `deny` | String |
 | - - - principal | Identity information | ObjectArray |
-| - - - - qcs | ID string <br>Format: `qcs::cam::uin/100000000001:uin/100000000011` <br>Here, 100000000001 is a root account, while 100000000011 is a sub-account | String |
-| - - - action | List of related actions subject to the policy. Wildcard `*` is supported | StringArray |
-| - - - resource | List of related resource identification strings <br>Format: `qcs::cos:<Region>:uid/&ltAppId>:<ShortBucketName>/*`<br>Example: `qcs::cos:ap-beijing:uid/1250000000:examplebucket/*` | StringArray |
-| - - - condition | List of allowed or disabled resources, which is a string | ObjectArray |
+| - - - - qcs | ID string. <br>Format: `qcs::cam::uin/100000000001:uin/100000000011`. <br>100000000001 is a root account, while 100000000011 is a sub-account | String |
+| - - - action | List of actions subject to the policy. Wildcard `*` is supported | StringArray |
+| - - - resource | List of resource identification strings. <br>Format: `qcs::cos:<Region>:uid/&ltAppId>:<ShortBucketName>/*`.<br>Example: `qcs::cos:ap-beijing:uid/1250000000:examplebucket/*` | StringArray |
+| - - - condition | List of allowed or denied resources, which is a string | ObjectArray |
 
-### Deleting a Bucket Policy
+### Deleting Bucket Policies
 
 #### Feature Description
 
-This API is used to delete the permission policy of the specified bucket.
+This API (DELETE Bucket policy) is used to delete the permission policies of a specified bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.deleteBucketPolicy({
@@ -671,11 +671,11 @@ cos.deleteBucketPolicy({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -687,22 +687,22 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ## Tag Management
 
-### Setting a Bucket Tag
+### Setting Bucket Tags
 
 #### Feature Description
 
-This API is used to set a tag for an existing bucket.
+This API (PUT Bucket tagging) is used to set tags for an existing bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.putBucketTagging({
@@ -720,11 +720,11 @@ cos.putBucketTagging({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 | Tagging | Tag information | Object | Yes |
 | - Tags | Tag information | ObjectArray | Yes |
@@ -740,20 +740,20 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ### Querying Bucket Tags
 
 #### Feature Description
 
-This API is used to query the existing tags of the specified bucket.
+This API (GET Bucket tagging) is used to query the existing tags of a specified bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getBucketTagging({
@@ -765,7 +765,7 @@ cos.getBucketTagging({
 
 ```
 
-#### Return Sample
+#### Sample Response
 
 ```json
 {
@@ -779,11 +779,11 @@ cos.getBucketTagging({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -795,23 +795,23 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 | - Tags | Tag information | ObjectArray |
 | - - Key | Tag name | String |
 | - - Value | Tag value | String |
 
-### Deleting a Bucket Tag
+### Deleting Bucket Tags
 
 #### Feature Description
 
-This API is used to delete the specified bucket tag.
+This API (DELETE Bucket tagging) is used to delete specified bucket tags.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.deleteBucketTagging({
@@ -823,11 +823,11 @@ cos.deleteBucketTagging({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -839,11 +839,11 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ## Versioning
@@ -852,9 +852,9 @@ function(err, data) { ... }
 
 #### Feature Description
 
-This API is used to set the versioning feature for a bucket.
+This API (PUT Bucket versioning) is used to set versioning for a bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.putBucketVersioning({
@@ -869,14 +869,14 @@ cos.putBucketVersioning({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ----------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| VersioningConfiguration | Defines the versioning configuration information of the bucket | Object | Yes |
-| - Status | Versioning status; enumerated values: Enabled, Suspended | String | No |
+| VersioningConfiguration | Defines the versioning configuration of the bucket | Object | Yes |
+| - Status | Versioning status; enumerated values: `Enabled`, `Suspended` | String | No |
 
 #### Callback Function Description
 
@@ -887,20 +887,20 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ### Querying Versioning
 
 #### Feature Description
 
-This API is used to query the versioning information of a bucket.
+This API (GET Bucket versioning) is used to query the versioning configuration of a bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getBucketVersioning({
@@ -912,11 +912,11 @@ cos.getBucketVersioning({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -928,14 +928,14 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------------------- | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - VersioningConfiguration | Versioning configuration information of the bucket | Object |
-| - - Status | Versioning status; enumerated values: null, Enabled, Suspended | String | No |
+| - VersioningConfiguration | Versioning configuration of the bucket | Object |
+| - - Status | Versioning status; enumerated values: `Enabled`, `Suspended` | String |
 
 ## Cross-region Replication
 
@@ -943,9 +943,9 @@ function(err, data) { ... }
 
 #### Feature Description
 
-This API is used to set the cross-region replication rule for a bucket.
+This API (PUT Bucket replication) is used to set cross-region replication rules for a bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.putBucketReplication({
@@ -969,21 +969,21 @@ cos.putBucketReplication({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| ReplicationConfiguration | Defines the cross-region replication rule | Object | Yes |
-| - Role | The role used in the replication process <br>Format: `qcs::cam::uin/100000000001:uin/100000000011`<br>Here, 100000000001 is a root account, while 100000000011 is a sub-account | Object | No |
+| ReplicationConfiguration | Defines cross-region replication rules | Object | Yes |
+| - Role | The role used in the replication process. <br>Format: `qcs::cam::uin/100000000001:uin/100000000011`.<br>100000000001 is a root account, while 100000000011 is a sub-account | Object | No |
 | - Rules | List of specific replication rules | ObjectArray | Yes |
-| - - ID | Task ID | String | No |
-| - - Status | Rule status; enumerated values: Enabled, Disabled | String | Yes |
-| - - Prefix | Prefix of the object to be copied | String | No |
-| - - Destination | Prefix of the object to be copied | Object | Yes |
-| - - - Bucket | Destination bucket <br>Format: `qcs:id/0:cos:<Region>:appid/<AppId>:<ShortBucketName>`<br>Example: `qcs:id/0:cos:ap-chengdu:appid/1250000000:backup` | Object | Yes |
-| - - - StorageClass | Storage class after replication; enumerated values: STANDARD, STANDARD_IA. Default value: STANDARD | Object | No |
+| - - ID | Job ID | String | No |
+| - - Status | Rule status; enumerated values: `Enabled`, `Disabled` | String | Yes |
+| - - Prefix | Prefix of the objects to be replicated | String | No |
+| - - Destination | Prefix of the objects to be replicated | Object | Yes |
+| - - - Bucket | Destination bucket for the replication. <br>Format: `qcs:id/0:cos:<Region>:appid/<AppId>:<ShortBucketName>`<br>Example: `qcs:id/0:cos:ap-chengdu:appid/1250000000:backup` | Object | Yes |
+| - - - StorageClass | Storage class after the replication; enumerated values: `STANDARD`, `STANDARD_IA`. Default value: `STANDARD` | Object | No |
 
 #### Callback Function Description
 
@@ -994,20 +994,20 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ### Querying Cross-region Replication
 
 #### Feature Description
 
-This API is used to query the cross-region replication rule of a specified bucket.
+This API (GET Bucket replication) is used to query the cross-region replication rules of a specified bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getBucketReplication({
@@ -1019,7 +1019,7 @@ cos.getBucketReplication({
 
 ```
 
-#### Return Example
+#### Sample Response
 
 ```json
 {
@@ -1041,11 +1041,11 @@ cos.getBucketReplication({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -1057,25 +1057,25 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | -------------------------- | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
 | - ReplicationConfiguration | Cross-region replication rule | Object |
-| - - Role | The role used in the replication process <br>Format: `qcs::cam::uin/100000000001:uin/100000000011`<br>Here, 100000000001 is a root account, while 100000000011 is a sub-account | Object |
+| - - Role | The role used in the replication process. <br>Format: `qcs::cam::uin/100000000001:uin/100000000011`.<br>100000000001 is a root account, while 100000000011 is a sub-account | Object |
 | - - Rules | List of specific replication rules | ObjectArray |
-| - - - ID | Task ID | String |
-| - - - Status | Rule status; enumerated values: Enabled, Disabled | String |
-| - - - Prefix | Prefix of the object to be copied | String |
-| - - - Destination | Prefix of the object to be copied | Object |
-| - - - Bucket | Destination bucket <br>Format: `qcs:id/0:cos:<Region>:appid/<AppId>:<ShortBucketName>`<br>Example: `qcs:id/0:cos:ap-chengdu:appid/1250000000:backup` | Object |
-| - - - - StorageClass | Storage class after replication; enumerated values: STANDARD, STANDARD_IA. Default value: STANDARD | Object |
+| - - - ID | Job ID | String |
+| - - - Status | Rule status; enumerated values: `Enabled`, `Disabled` | String |
+| - - - Prefix | Prefix of the objects to be replicated | String |
+| - - - Destination | Prefix of the objects to be replicated | Object |
+| - - - Bucket | Destination bucket for the replication.<br>Format: `qcs:id/0:cos:<Region>:appid/<AppId>:<ShortBucketName>`.<br>Example: `qcs:id/0:cos:ap-chengdu:appid/1250000000:backup` | Object |
+| - - - - StorageClass | Storage class after the replication; enumerated values: `STANDARD`, `STANDARD_IA`. Default value: `STANDARD` | Object |
 
 ## Deleting Cross-region Replication
 
 #### Feature Description
 
-This API is used to delete the cross-region replication rule of a bucket.
+This API (DELETE Bucket replication) is used to delete the cross-region replication rules of a bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.deleteBucketReplication({
@@ -1086,11 +1086,11 @@ cos.deleteBucketReplication({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback Function Description
@@ -1101,9 +1101,9 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |

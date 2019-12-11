@@ -1,5 +1,5 @@
 ## Description
-This API (GET Bucket lifecycle) is used to query the lifecycle configuration of a bucket. If the bucket does not have a lifecycle rule configured, NoSuchLifecycleConfiguration will be returned.
+This API is used to query the lifecycle configuration of a bucket. If the bucket does not have a lifecycle rule configured, `NoSuchLifecycleConfiguration` will be returned.
 
 ## Request
 ### Sample Request
@@ -14,9 +14,9 @@ Authorization: Auth String
 
 ### Request Headers
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 #### Special Headers
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 ### Request Body
 The request body of this request is empty.
@@ -25,18 +25,18 @@ The request body of this request is empty.
 
 ### Response Headers
 #### Common Response Headers
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special Response Headers
-This response has no special response headers.
+This response does not use any special response header.
 
 ### Response Body
-The content and meaning of each element in the response body are the same as those in the request body for PUT Bucket lifecycle. For more information, see the Request Body Node Descriptions section in [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280).
+The content and meaning of elements in this response body are the same as those in the request body for `PUT Bucket lifecycle`. For more information, see the request body node description section in [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280).
 
 ### Error Codes
-There are no special error messages for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+The implementation of this operation does not return special error messages. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Example
 
 ### Request
 ```shell

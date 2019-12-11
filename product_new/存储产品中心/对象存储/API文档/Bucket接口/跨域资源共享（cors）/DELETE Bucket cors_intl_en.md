@@ -1,5 +1,5 @@
 ## Description
-This API (DELETE Bucket cors) is used to delete the cross-origin access configuration information.
+This API is used to delete cross-origin access configuration information.
 
 ## Request
 ### Sample Request
@@ -16,10 +16,10 @@ Authorization: Auth String
 ### Request Headers
 
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 ### Request Body
 The request body of this request is empty.
@@ -29,24 +29,24 @@ The request body of this request is empty.
 
 #### Common Response Headers
 
-This response uses a common response header. For more information on the common response header, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special Response Headers
-This response has no special response headers.
+This response does not use any special response header.
 
 ### Response Body
 This response body is empty.
 
 ### Error Codes
-The following error messages may be returned for this request operation. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+The implementation of this operation returns the following error messages. For common error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 Error Code | Description | HTTP Status Code
 ---|---|---
-None| Deletion succeeded. The response body return is empty. |204 [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)
-NoSuchBucket| This error code will be returned if the accessed bucket does not exist |404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)
+None| Deleted successfully. The response body is empty. |204 [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)
+NoSuchBucket| This error code will be returned if the bucket you are trying to access does not exist |404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)
 
 
-## Samples
+## Example
 
 ### Request
 

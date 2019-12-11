@@ -1,7 +1,7 @@
 ## Description
 
-This API (DELETE Bucket) is used to delete the specified bucket. The requester of this API should have write permission to the bucket.
-> Before deleting a bucket, please make sure that all data and incomplete multipart uploads have been cleared in the bucket; otherwise, the bucket cannot be deleted.
+This API is used to delete a specified bucket. To make this request, you need to have the permission to write to the bucket.
+>! Before deleting a bucket, please make sure that all the data and incomplete multipart uploads in the bucket have been deleted; otherwise, the bucket cannot be deleted.
 
 ## Request
 
@@ -14,25 +14,25 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
 #### Request Parameters
 
-This API has no request parameters.
+This API does not use any request parameter.
 
-#### Request Header
+#### Request Headers
 
-This API uses only a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Body
 
-This API has no request body.
+This API does not have a request body.
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response Body
 
@@ -40,14 +40,14 @@ The response body of this API is empty.
 
 #### Error Codes
 
-The special error messages for this API are as detailed below. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+The implementation of this operation returns the following special error messages. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 Error Code | Description | HTTP Status Code
 ---|---|---
 BucketNotEmpty| The bucket is not empty |409 Conflict
 NoSuchBucket| The specified bucket does not exist |404 Not Found
 
-## Sample
+## Example
 
 #### Request
 

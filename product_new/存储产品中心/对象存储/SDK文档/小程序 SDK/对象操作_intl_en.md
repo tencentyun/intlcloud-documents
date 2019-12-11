@@ -1,27 +1,27 @@
 ## Overview
 
-This document provides an overview of APIs related to simple object operations and other operations, corresponding SDK sample code, and usage examples.
+This document provides an overview of APIs and SDK code samples related to operations on objects.
 
-**Simple operations**
+**Simple Operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ---------------------------------------- |
-| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | Querying object list | Queries some or all objects in a bucket |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Simply uploading an object | Uploads an object to a bucket |
-| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an Object Using a Form | Uploads an object using a form request |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | Querying object list | Queries some or all objects in a bucket |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using a form | Uploads an object using a form request |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object |
-| [OPTIONS Object](https://intl.cloud.tencent.com/document/product/436/8288) | Pre-requesting cross-origin configuration | Uses a pre-request to confirm whether a real cross-origin request can be sent |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies an object to the destination path (object key) |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes the specified object in a bucket |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes objects in a bucket in batches |
+| [OPTIONS Object](https://intl.cloud.tencent.com/document/product/436/8288) | Pre-requesting cross-origin access configuration | Sends a pre-request to check whether a real cross-origin access request can be sent |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies an object to a destination path (object key) |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects in a single request |
 
-**Other operations**
+**Other Operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ---------------------------------- |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Retrieves an archived object for access |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for the specified object in a bucket |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for a specified object in a bucket |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
 
 ## Simple Operations
@@ -30,11 +30,11 @@ This document provides an overview of APIs related to simple object operations a
 
 #### Feature Description
 
-This API is used to query some or all objects in a bucket.
+This API (GET Bucket (List Object)) is used to query some or all objects in a bucket.
 
 #### Samples
 
-Sample 1. List all files in directory a.
+Sample 1. List all the files in directory `a`.
 
 ```js
 cos.getBucket({
@@ -46,7 +46,7 @@ cos.getBucket({
 });
 ```
 
-Return value format:
+Response:
 
 ```json
 {
@@ -72,7 +72,7 @@ Return value format:
 }
 ```
 
-Sample 2. List files in directory a with no deep traversal.
+Sample 2. List the files in directory `a` without deep traversal.
 
 ```js
 cos.getBucket({
@@ -85,7 +85,7 @@ cos.getBucket({
 });
 ```
 
-Return value format:
+Response:
 
 ```json
 {
@@ -114,17 +114,17 @@ Return value format:
 }
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Prefix | Prefix match, used to specify the prefix address of the file returned | String | No |
-| Delimiter | The delimiter is a separator symbol which is generally `/`. <br><li>If there is a prefix, the identical paths between prefix and delimiter are grouped into one class and defined as a common prefix, and then all common prefixes are listed. <br><li>If there is no prefix, it starts at the beginning of the path | String | No |
-| Marker | By default, entries are listed in UTF-8 binary order, and the entry list starts at marker | String | No |
+| Prefix | Prefix to be matched, which specifies the prefix address of the files to be returned | String | No |
+| Delimiter | A delimiter is a separating symbol which is usually `/`. <br><li>The identical paths between `Prefix` or, if no `Prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String | No |
+| Marker | By default, entries are listed in UTF-8 binary order starting from `Marker` | String | No |
 | MaxKeys | Maximum number of entries returned at a time. Default value: 1,000 | String | No |
-| EncodingType | Specifies the encoding method of the return value; value range: url | String | No |
+| EncodingType | Specifies the encoding type of the returned values; valid value: `url` | String | No |
 
 #### Callback Function Description
 
@@ -134,43 +134,43 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ---------------- | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
 | - headers | Header information returned by the request | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
-| CommonPrefixes | The identical paths between prefix and delimiter are grouped into one class and defined as a common prefix | ObjectArray |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
+| - CommonPrefixes | The identical paths between `Prefix` and `Delimiter` are grouped and defined as a common prefix | ObjectArray |
 | - - Prefix | A single common prefix | String |
 | - - Name | Describes bucket information | String |
-| - Prefix | Prefix match, used to specify the prefix address of the file returned | String |
-| - Marker | By default, entries are listed in UTF-8 binary order, and the entry list starts at marker | String |
+| - Prefix | Prefix to be matched, which specifies the prefix address of the files to be returned | String |
+| - Marker | By default, entries are listed in UTF-8 binary order starting from `Marker` | String |
 | - MaxKeys | Maximum number of results returned in one response | String |
-| - IsTruncated | Whether response entries are truncated; string type; value range: 'true', 'false' | String |
-| - NextMarker | If the returned entries are truncated, then NextMarker is the starting point of the next entry | String |
-| - Encoding-Type | Encoding method of the return value, which is effective for Delimiter, Marker, Prefix, NextMarker, and Key | String |
+| - IsTruncated | Whether the returned list is truncated; a string. Valid values: `true`, `false` | String |
+| - NextMarker | If the returned list is truncated, the `NextMarker` returned will be the starting point of the subsequent list | String |
+| - Encoding-Type | Encoding type of the returned values, which is applicable to `Delimiter`, `Marker`, `Prefix`, `NextMarker`, and `Key` | String |
 | - Contents | Metadata | ObjectArray |
-| - - ETag | MD5 checksum of the file, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and end** | String |
-| - - Size | Describes the file size in bytes | String |
+| - - ETag | MD5 checksum of the file, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end** | String |
+| - - Size | Describes file size in bytes | String |
 | - - Key | Object name | String |
-| - - LastModified | Describes the last modified time of the object, such as 2017-06-23T12:33:27.000Z | String |
+| - - LastModified | Describes the last modified time of an object, such as `2017-06-23T12:33:27.000Z` | String |
 | - - Owner | Bucket owner information | Object |
-| - ID | Bucket AppID | String |
-| - StorageClass | Object storage class; enumerated values: STANDARD, STANDARD_IA, ARCHIVE | String |
+| - ID | Bucket APPID | String |
+| - StorageClass | Object storage class; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | String |
 
-### Simply Uploading an Object
+### Uploading an Object Using Simple Upload
 
 #### Feature Description
 
-This API (PUT Object) is used to upload an object to a bucket. The requester of this operation should have write permission to the bucket.
+This API (PUT Object) is used to upload an object to a bucket. To make this request, you need to have the permission to write to the bucket.
 
-> 
+> !
 >
-> 1. Key (file name) cannot end in `/`; otherwise, it will be recognized as a folder.
-2. The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it during the upload, so that the object will inherit the permission of the bucket.
-> 3. After the object is uploaded, you can use the same key to generate a pre-signed link. (For a download operation, specify the method as GET. For detailed API descriptions, see below.) This link can be shared for download. However, please note that if your file is private-read, then the pre-signed link is only valid for a certain period of time.
+> 1. An object key (file name) cannot end with `/`; otherwise, the file will be recognized as a folder.
+2. The total number of policies associated with bucket ACL, Policy, and CAM under a single root account (i.e., under the same APPID) cannot exceed 1,000. There is no upper limit on the number of object ACL rules. If you do not need access control for an object, do not make the configuration when uploading it, and the object will inherit the permissions of its bucket.
+> 3. After an object is uploaded, you can use the same key to generate a pre-signed link, which can be shared with others for download. However, please note that if your file is set to private-read, the pre-signed link will only be valid for a certain period of time. To download, please specify the method as `GET`. For API details, see below.
 
-#### Use Cases
+#### Samples
 
 Upload a string as the file content:
 
@@ -198,31 +198,31 @@ cos.putObject({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
-| CacheControl | Cache policy as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| ContentDisposition | File name as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| ContentEncoding | Encoding format as defined in RFC 2616, which will be stored as the object's metadata | String | No |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| CacheControl | Cache policy as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ContentDisposition | Filename as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ContentEncoding | Encoding format as defined in RFC 2616, which will be stored in the object metadata | String | No |
 | ContentLength | HTTP request length in bytes as defined in RFC 2616 | String | No |
-| ContentType | Content type (MIME) as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| Expect | If `Expect: 100-continue` is used, the request content will be sent only after confirmation from the server is received | String | No |
-| Expires | File expiration time as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| ACL | Defines the ACL attribute of the object. Value range: private, public-read. Default value: private | String | No |
-| GrantRead | Grants the grantee the read permission in the format of `x-cos-grant-read: id="[OwnerUin]"` | String | No |
+| ContentType | Content type (MIME) as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| Expect | If `Expect: 100-continue` is used, the request content will be sent only after the confirmation from the server is received | String | No |
+| Expires | Expiration time as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ACL | Defines the ACL attribute of the object. Valid values: `private`, `public-read`. Default value: `private` | String | No |
+| GrantRead | Grants the grantee Read access in the format of `x-cos-grant-read: id="[OwnerUin]"` | String | No |
 | GrantFullControl | Grants the grantee full permission in the format of `x-cos-grant-full-control: id="[OwnerUin]"` | String | No |
-| StorageClass | Sets the object storage class; value range: STANDARD, STANDARD_IA, ARCHIVE. Default value: STANDARD | String | No |
-| x-cos-meta-* | Headers that can be customized, which will be returned as the object metadata of up to 2 KB | String | No |
+| StorageClass | Sets the object storage class; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD` | String | No |
+| x-cos-meta-* | Headers that can be defined by users, which will be returned as the object metadata; maximum size: 2 KB | String | No |
 | Body | Text content of the created file, which can be a string | String | Yes |
-| onProgress | Progress callback function. The first parameter during a call is the `progressData` object | Function | No |
-| - progressData.loaded | Size of the file part that has been downloaded in bytes | Number | No |
-| - progressData.total | Size of the entire file in bytes | Number | No |
-| - progressData.speed | File download speed in bytes/s | Number | No |
-| - progressData.percent | Percentage of file download progress in decimal form; for example, 0.5 means 50% downloaded | Number | No |
+| onProgress | Progress callback function. The first parameter in a callback is the `progressData` object | Function | No |
+| - progressData.loaded | Size of the file part that has been downloaded; unit: byte | Number | No |
+| - progressData.total | Size of the entire file; unit: byte | Number | No |
+| - progressData.speed | File download speed; unit: bytes/s | Number | No |
+| - progressData.percent | A decimal representing the file download progress. For example, 0.5 means 50% has been downloaded | Number | No |
 
 #### Callback Function Description
 
@@ -232,28 +232,28 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - ETag | Returns the MD5 checksum of the file. The value of ETag can be used to check whether the object gets corrupted during upload <br>**Note: There should be double quotation marks at the beginning and end of the ETag value string here, such as `"09cba091df696af91549de27b8e7d0f6"`** | String |
+| - ETag | Returns the MD5 checksum of the file. The value of `ETag` can be used to check whether the object gets corrupted during the upload. <br>**Note: Double quotation marks are required at the beginning and the end of the `ETag` value string here, such as `"09cba091df696af91549de27b8e7d0f6"`** | String |
 
 ### Uploading an Object Using a Form
 
-This API (POST Object) is used to upload a file (object) selected by the user through wx.chooseImage to the specified bucket. The requester of this operation should have write permission to the bucket.
+This API (POST Object) is used to upload a file (object) selected by the user through wx.chooseImage to a specified bucket. To make this request, you need to have the permission to write to the bucket.
 
-#### Use Cases
+#### Sample
 
-Simple upload of a file
+Upload a file using simple upload
 
 ```js
 cos.postObject({
     Bucket: 'examplebucket-1250000000',
     Region: 'ap-beijing',
     Key: filename,
-    FilePath: tmpFilePath, // tmpFilePath of the file selected through wx.chooseImage
+    FilePath: tmpFilePath, // tmpFilePath obtained when you select the file through wx.chooseImage
     onProgress: function (info) {
         console.log(JSON.stringify(info));
     }
@@ -263,30 +263,30 @@ cos.postObject({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
-| CacheControl | Cache policy as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| ContentDisposition | File name as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| ContentEncoding | Encoding format as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| ContentType | Content type (MIME) as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| Expect | If `Expect: 100-continue` is used, the request content will be sent only after confirmation from the server is received | String | No |
-| Expires | File expiration time as defined in RFC 2616, which will be stored as the object's metadata | String | No |
-| ACL | Defines the ACL attribute of the object. Value range: private, public-read. Default value: private | String | No |
-| GrantRead | Grants the grantee the read permission in the format of `x-cos-grant-read: id="[OwnerUin]"` | String | No |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| CacheControl | Cache policy as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ContentDisposition | Filename as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ContentEncoding | Encoding format as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ContentType | Content type (MIME) as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| Expect | If `Expect: 100-continue` is used, the request content will be sent only after the confirmation from the server is received | String | No |
+| Expires | Expiration time as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ACL | Defines the ACL attribute of the object. Valid values: `private`, `public-read`. Default value: `private` | String | No |
+| GrantRead | Grants the grantee Read access in the format of `x-cos-grant-read: id="[OwnerUin]"` | String | No |
 | GrantFullControl | Grants the grantee full permission in the format of `x-cos-grant-full-control: id="[OwnerUin]"` | String | No |
-| StorageClass | Sets the object storage class; value range: STANDARD, STANDARD_IA, ARCHIVE. Default value: STANDARD | String | No |
-| x-cos-meta-* | Headers that can be customized, which will be returned as the object metadata of up to 2 KB | String | No |
-| FilePath | Temporary file path to the uploaded file, which can be obtained by selecting the file through wx.chooseImage | String | Yes |
-| onProgress | Progress callback function. The first parameter during a call is the `progressData` object | Function | No |
-| - progressData.loaded | Size of the file part that has been downloaded in bytes | Number | No |
-| - progressData.total | Size of the entire file in bytes | Number | No |
-| - progressData.speed | File download speed in bytes/s | Number | No |
-| - progressData.percent | Percentage of file download progress in decimal form; for example, 0.5 means 50% downloaded | Number | No |
+| StorageClass | Sets the object storage class; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD` | String | No |
+| x-cos-meta-* | Headers that can be defined by users, which will be returned as the object metadata; maximum size: 2 KB | String | No |
+| FilePath | Temporary file path to the file to be uploaded, which can be obtained by selecting the file through wx.chooseImage | String | Yes |
+| onProgress | Progress callback function. The first parameter in a callback is the `progressData` object | Function | No |
+| - progressData.loaded | Size of the file part that has been downloaded; unit: byte | Number | No |
+| - progressData.total | Size of the entire file; unit: byte | Number | No |
+| - progressData.speed | File download speed; unit: bytes/s | Number | No |
+| - progressData.percent | A decimal representing the file download progress. For example, 0.5 means 50% has been downloaded | Number | No |
 
 #### Callback Function Description
 
@@ -297,21 +297,21 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - ETag | Returns the MD5 checksum of the file. The value of ETag can be used to check whether the object gets corrupted during upload <br>**Note: There should be double quotation marks at the beginning and end of the ETag value string here, such as `"09cba091df696af91549de27b8e7d0f6"`** | String |
+| - ETag | Returns the MD5 checksum of the file. The value of `ETag` can be used to check whether the object gets corrupted during the upload. <br>**Note: Double quotation marks are required at the beginning and the end of the `ETag` value string here, such as `"09cba091df696af91549de27b8e7d0f6"`** | String |
 
 ### Querying Object Metadata
 
 #### Feature Description
 
-This API is used to query object metadata.
+This API (HEAD Object) is used to query object metadata.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.headObject({
@@ -324,14 +324,14 @@ cos.headObject({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | --------------- | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
-| IfModifiedSince | If the object is modified after the specified time, the corresponding object metadata will be returned; otherwise, 304 will be returned | String | No |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| IfModifiedSince | If the object is modified after the specified time, the corresponding object metadata will be returned; otherwise, `304` will be returned | String | No |
 
 #### Callback Function Description
 
@@ -341,25 +341,25 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, and 304. If no modification is made after the specified time, 304 will be returned | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200` and `304`. If no modification is made after the specified time, `304` will be returned | Number |
 | - headers | Header information returned by the request | Object |
-| - x-cos-object-type | Indicates whether the object can be appended to an upload operation. Enumerated values: normal, appendable | String |
-| - x-cos-storage-class | Object storage class; enumerated values: STANDARD, STANDARD_IA, ARCHIVE | String |
+| - x-cos-object-type | Indicates whether an object can be appended to an upload operation. Enumerated values: `normal`, `appendable` | String |
+| - x-cos-storage-class | Object storage class; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | String |
 | - x-cos-meta-* | User-defined metadata | String |
-| - NotModified | Whether the object is not modified after the specified time | Boolean |
+| - NotModified | Whether an object is unmodified after the specified time | Boolean |
 
 ### Downloading an Object
 
-This API (GET Object) API is used to get the content (in string format) of the specified file in a bucket.
+This API (GET Object) is used to get the content, in string format, of a specified file in a bucket.
 
-> This API is used to read the file content to a JS variable. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31711).
+>? This API is used to pass the file content to a JS variable. If you need to launch a browser to download a file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31711).
 
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getObject({
@@ -371,7 +371,7 @@ cos.getObject({
 });
 ```
 
-Specify Range to get the file content:
+Get file content with `Range` specified:
 
 ```js
 cos.getObject({
@@ -384,24 +384,24 @@ cos.getObject({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | -------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
-| ResponseContentType | Sets the Content-Type parameter in the response header | String | No |
-| ResponseContentLanguage | Sets the Content-Language parameter in the response header | String | No |
-| ResponseExpires | Sets the Content-Expires parameter in the response header | String | No |
-| ResponseCacheControl | Sets the Cache-Control parameter in the response header | String | No |
-| ResponseContentDisposition | Sets the Content-Disposition parameter in the response header | String | No |
-| ResponseContentEncoding | Sets the Content-Encoding parameter in the response header | String | No |
-| Range | Byte range of the object. The range value must be in the format of bytes=first-last, where both first and last are offsets starting from 0. For example, bytes=0-9 means that you want to copy the first 10 bytes of data of the source object. If this parameter is not specified, the entire object will be read | String | No |
-| IfModifiedSince | If the object is modified after the specified time, the corresponding object metadata will be returned; otherwise, 304 will be returned | String | No |
-| IfModifiedSince | The file content will be returned only if the file is modified before or at the specified time; otherwise, 412 (precondition failed) will be returned | String | No |
-| IfMatch | The file will be returned only if ETag matches the specified content; otherwise, 412 (precondition failed) will be returned | String | No |
-| IfNoneMatch | The file will be returned only if ETag does not match the specified content; otherwise, 304 (not modified) will be returned | String | No |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| ResponseContentType | Sets the `Content-Type` parameter in the response headers | String | No |
+| ResponseContentLanguage | Sets the `Content-Language` parameter in the response headers | String | No |
+| ResponseExpires | Sets the `Content-Expires` parameter in the response headers | String | No |
+| ResponseCacheControl | Sets the `Cache-Control` parameter in the response headers | String | No |
+| ResponseContentDisposition | Sets the `Content-Disposition` parameter in the response headers | String | No |
+| ResponseContentEncoding | Sets the `Content-Encoding` parameter in the response headers | String | No |
+| Range | Byte range of the object. The range value must be in the format of `bytes=first-last`, where both `first` and `last` are offsets starting from 0. For example, `bytes=0-9` means that you want to copy the first 10 bytes of data of the source object. If this parameter is not specified, the entire object will be read | String | No |
+| IfModifiedSince | If the object is modified after the specified time, the corresponding object metadata will be returned; otherwise, `304` will be returned | String | No |
+| IfModifiedSince | The file content will be returned only if the file is modified before or at the specified time; otherwise, `412` (precondition failed) will be returned | String | No |
+| IfMatch | The file will be returned only if `ETag` matches the specified content; otherwise, `412` (precondition failed) will be returned | String | No |
+| IfNoneMatch | The file will be returned only if `ETag` does not match the specified content; otherwise, `304` (not modified) will be returned | String | No |
 
 #### Callback Function Description
 
@@ -412,25 +412,25 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 304, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `304`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - x-cos-object-type | Indicates whether the object can be appended to an upload operation. Enumerated values: normal, appendable | String |
-| x-cos-storage-class | Storage class of the object. Enumerated values: STANDARD, STANDARD_IA. <br>**Note: If this header is not returned, the file storage class is STANDARD (standard storage)** | String |
+| - x-cos-object-type | Indicates whether an object can be appended to an upload operation. Enumerated values: `normal`, `appendable` | String |
+| x-cos-storage-class | Storage class of the object. Enumerated values: `STANDARD`, `STANDARD_IA`. <br>**Note: If this header is not returned, it means the file storage class is `STANDARD` (standard storage)** | String |
 | - x-cos-meta-* | User-defined metadata | String |
-| - NotModified | This attribute will be returned if the request carries IfModifiedSince. It will be true if the file has not been modified; otherwise, false | Boolean |
+| - NotModified | This attribute will be returned if the request carries `IfModifiedSince`. If the file has not been modified, `true` will be returned; otherwise, `false` will be returned | Boolean |
 | - Body | Returned file content, which is in string format by default | String |
 
 ### Pre-requesting Cross-origin Configuration
 
 #### Feature Description
 
-This API (OPTIONS Object) is used to implement a pre-request for an cross-origin object access configuration, i.e., an OPTIONS request carrying the specific source origin, HTTP method, and header information is sent to COS for it to determine whether a real cross-origin resource sharing (CORS) request can be made. If no CORS configuration exists, 403 Forbidden will be returned for the request. **You can enable the CORS support of a bucket using the PUT Bucket cors API.**
+This API (OPTIONS Object) is used to implement a pre-request for cross-origin object access configuration. Before making a real cross-origin resource sharing (CORS) request, you can send an `OPTIONS` request carrying the specific source origin, HTTP method, and header information to COS for it to determine whether a real request can be sent. If there is no CORS configuration, `403 Forbidden` will be returned. **You can enable CORS for a bucket using the `PUT Bucket cors` API**.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.optionsObject({
@@ -446,14 +446,14 @@ cos.optionsObject({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | --------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
-| Origin | Origin domain name of the simulated cross-origin access request | String | Yes |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Origin | Source origin of the simulated cross-origin access request | String | Yes |
 | AccessControlRequestMethod | HTTP method of the simulated cross-origin access request | String | Yes |
 | AccessControlRequestHeaders | Headers of the simulated cross-origin access request | String | No |
 
@@ -466,26 +466,26 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ---------------------------- | ------------------------------------------------------------ | ------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
 | - headers | Header information returned by the request | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
-| - AccessControlAllowOrigin | Origin domain names of the simulated cross-origin access request separated by commas, such as `*`. This header will not be returned if the origin is not allowed | String |
-| - AccessControlAllowMethods | HTTP methods of the simulated cross-origin access request separated by commas, such as PUT, GET, POST, DELETE, and HEAD. This header will not be returned if the request method is not allowed | String |
-| - AccessControlAllowHeaders | Headers of the simulated cross-origin access request separated by commas, such as accept, content-type, origin, and authorization. This request header will not be returned if no simulated headers are allowed | String |
-| - AccessControlExposeHeaders | Headers that can be returned by CORS, separated by commas, such as ETag | String |
-| - AccessControlMaxAge | Sets the validity period of the result of the OPTIONS request, such as 3600 | String  |
-| - OptionsForbidden | Whether the OPTIONS request is forbidden, which is true if the returned HTTP status code is 403 | Boolean |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
+| - AccessControlAllowOrigin | Source origins of the simulated cross-origin access request separated by commas. This header will not be returned if the origins are not allowed. Example: `*` | String |
+| - AccessControlAllowMethods | HTTP methods of the simulated cross-origin access request separated by commas, such as PUT, GET, POST, DELETE, and HEAD. This header will not be returned if the request methods are not allowed | String |
+| - AccessControlAllowHeaders | Headers of the simulated cross-origin access request separated by commas, such as accept, content-type, origin, and authorization. This request header will not be returned if any of the simulated headers is not allowed | String |
+| - AccessControlExposeHeaders | Response headers supported by CORS, such as `ETag`. The headers are separated by commas | String |
+| - AccessControlMaxAge | Sets the validity period of the `OPTIONS` request result, such as `3600` | String  |
+| - OptionsForbidden | Whether the `OPTIONS` request is forbidden, which will be `true` if the returned HTTP status code is `403` | Boolean |
 
 ### Copying an Object
 
 #### Feature Description
 
-This API (PUT Object - Copy) is used to copy an object to the destination path (object key). It is recommended for files of 1 MB to 5 GB in size. For files over 5 GB, use the Upload - Copy API for multipart copy. Meta attributes and ACLs of the file can be modified during the copy process. You can use this API to copy a file, modify its attributes (the source file attributes are the same as the destination file attributes), move it, or rename it (copy it first and then call the deleting API separately).
+This API (PUT Object - Copy) is used to copy an object to the destination path (object key). The recommended file size is from 1 MB to 5 GB. For files over 5 GB, please use the multipart upload API (Upload - Copy). The metadata and ACL of the file can be modified during the copy process. You can use this API to copy a file, modify its attributes (the source file attributes are the same as the destination file attributes), move it, or rename it (copy it first and then call the DELETE API separately).
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.putObjectCopy({
@@ -499,27 +499,27 @@ cos.putObjectCopy({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | --------------------------- | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
-| CopySource | Source file URL path. A previous version can be specified using the versionid sub-resource | String | Yes |
-| ACL | Defines the ACL attribute of the object. Value range: private, public-read. Default value: private | String | No |
-| GrantRead | Grants the grantee the read permission in the format of id="[OwnerUin]" | String | No |
-| GrantFullControl | Grants the grantee full permission in the format of id="[OwnerUin]" | String | No |
-| MetadataDirective | Whether to copy the metadata. Enumerated values: Copy, Replaced. Default value: Copy. If the flag is Copy, the user metadata in the header is ignored and the copy is performed directly; if the flag is Replaced, the metadata is modified based on the header information. **If the destination path is the same as the source path (i.e., when you want to modify the metadata), the flag has to be Replaced** | String | No |
-| CopySourceIfModifiedSince | If the object is modified after the specified time, the operation is performed; otherwise, 412 is returned. **This parameter can be used together with CopySourceIfNoneMatch. If it is used together with other conditions, a conflict is returned** | String | No |
-| CopySourceIfUnmodifiedSince | If the object is not modified after the specified time, the operation is performed; otherwise, 412 is returned. **This parameter can be used together with CopySourceIfMatch. If it is used together with other conditions, a conflict is returned** | String | No |
-| CopySourceIfMatch | If the Etag of the object is the same as the specified one, the operation is performed; otherwise, 412 is returned. **This parameter can be used together with CopySourceIfUnmodifiedSince. If it is used together with other conditions, a conflict is returned** | String | No |
-| CopySourceIfNoneMatch | If the Etag of the object is different from the specified one, the operation is performed; otherwise, 412 is returned. **This parameter can be used together with CopySourceIfModifiedSince. If it is used together with other conditions, a conflict is returned** | string | No |
-| StorageClass | Storage class; enumerated values: Standard, Standard_IA. Default value: Standard | String | No |
-| x-cos-meta-* | Other custom file headers | String | No |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| CopySource | URL path to the source file. A historical version can be specified using the `versionId` subresource | String | Yes |
+| ACL | Defines the ACL attribute of the object. Valid values: `private`, `public-read`. Default value: `private` | String | No |
+| GrantRead | Grants the grantee Read access in the format of `id="[OwnerUin]"` | String | No |
+| GrantFullControl | Grants the grantee full permission in the format of `id="[OwnerUin]"` | String | No |
+| MetadataDirective | Whether to copy the metadata. Enumerated values: `Copy`, `Replaced`. Default value: `Copy`. If its value is `Copy`, the user metadata in the corresponding header will be ignored and the copy will be performed; if its value is `Replaced`, the metadata will be replaced by the information in the corresponding header. **If the destination path is the same as the source path, which means you want to modify the metadata, you must specify this parameter as `Replaced`** | String | No |
+| CopySourceIfModifiedSince | If the object is modified after the specified time, the operation will be performed; otherwise, `412` will be returned. **This parameter can be used together with `CopySourceIfNoneMatch`. If it is used together with other conditions, a conflict will be returned** | String | No |
+| CopySourceIfUnmodifiedSince | If the object is not modified after the specified time, the operation will be performed; otherwise, `412` will be returned. **This parameter can be used together with `CopySourceIfMatch`. If it is used together with other conditions, a conflict will be returned** | String | No |
+| CopySourceIfMatch | If the `Etag` of the object is the same as the specified one, the operation will be performed; otherwise, `412` will be returned. **This parameter can be used together with `CopySourceIfUnmodifiedSince`. If it is used together with other conditions, a conflict will be returned** | String | No |
+| CopySourceIfNoneMatch | If the `Etag` of the object is different from the specified one, the operation will be performed; otherwise, `412` will be returned. **This parameter can be used together with `CopySourceIfModifiedSince`. If it is used together with other conditions, a conflict will be returned** | string | No |
+| StorageClass | Storage class; enumerated values: `Standard`, `Standard_IA`. Default value: `Standard` | String | No |
+| x-cos-meta-* | Other user-defined file headers | String | No |
 | CacheControl | Specifies the commands that all caching mechanisms must obey throughout the entire request/response chain | String | No |
 | ContentDisposition | An extension of the MIME protocol. The MIME protocol instructs the MIME user agent on how to display the attached files | String | No |
-| ContentEncoding | A pair of header fields used in HTTP to negotiate the "encoding format of body transmission" | String | No |
+| ContentEncoding | A pair of header fields used in HTTP which specifies the encoding format of the body | String | No |
 | ContentType | HTTP request content type (MIME) as defined in RFC 2616, such as `text/plain` | String | No |
 | Expect | Requested specific server behavior | String | No |
 | Expires | Expiration date and time of the response | String | No |
@@ -533,22 +533,22 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | -------------- | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - ETag | MD5 checksum of the file, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and end** | String |
-| - LastModified | Describes the last modified time of the object, such as 2017-06-23T12:33:27.000Z | String |
+| - ETag | MD5 checksum of the file, such as `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end** | String |
+| - LastModified | Describes the last modified time of the object, such as `2017-06-23T12:33:27.000Z` | String |
 
 ### Deleting a Single Object
 
 #### Feature Description
 
-This API (DELETE Object) is used to delete the specified object in a bucket. The requester of this operation should have write permission to the bucket.
+This API (DELETE Object) is used to delete a specified object in a bucket. To make this request, you need to have the permission to write to the bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.deleteObject({
@@ -560,13 +560,13 @@ cos.deleteObject({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 
 #### Callback Function Description
 
@@ -576,20 +576,20 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 204, 403, and 404. **If the deletion is successful or the file does not exist, 204 or 200 will be returned; if the specified bucket is not found, 404 will be returned** | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `204`, `403`, and `404`. **If the deletion is successful or the file does not exist, `204` or `200` will be returned; if the specified bucket is not found, `404` will be returned** | Number |
 | - headers | Header information returned by the request | Object |
 
 ### Deleting Multiple Objects
 
 #### Feature Description
 
-This API (DELETE Multiple Objects) is used to delete objects in a bucket in batches. It can delete up to 1,000 objects in a single request. For the response result, COS provides two modes: Verbose and Quiet. Verbose mode returns the deletion result for each object; while Quiet mode only returns the information of objects for which errors are reported.
+This API (DELETE Multiple Objects) is used to delete multiple objects in a single request. You can delete up to 1,000 objects in a single request. For the response, there are two modes for you to choose from: Verbose and Quiet. Verbose mode returns the information on the deletion of each object, whereas Quiet mode only returns the information on objects for which errors are reported.
 
-#### Use Cases
+#### Sample
 
 Delete multiple files:
 
@@ -606,16 +606,16 @@ cos.deleteMultipleObject({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ----------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Quiet | A boolean value which determines whether to enable Quiet mode. If the value is true, Quiet mode is enabled; if it is false, Verbose mode is enabled. The default value is false | Boolean | No |
+| Quiet | A boolean value which determines whether to use the Quiet mode. If the value is `true`, the Quiet mode will be used; if it is `false`, the Verbose mode will be used. Default value: `false` | Boolean | No |
 | Objects | List of files to be deleted | ObjectArray | Yes |
-| - Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
-| - VersionId | Version ID of the object to be deleted or DeleteMarker | String | No |
+| - Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| - VersionId | Version ID of the object or the delete marker to be deleted | String | No |
 
 #### Callback Function Description
 
@@ -625,19 +625,19 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------------------- | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 204, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `204`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 204, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `204`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - Deleted | Describes the information of successfully deleted objects in this operation | ObjectArray |
-| - - Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| - - VersionId | If the VersionId parameter is passed in, it will also be included in the return, indicating the version of the manipulated object or DeleteMarker | String |
-| - - DeleteMarker | If versioning is enabled and the VersionId parameter is not present, this deletion will not actually erase the content of files; instead, only a new DeleteMarker will be added, indicating that the visible files have been deleted. Enumerated values: true, false | String |
-| - - DeleteMarkerVersionId | If the returned DeleteMarker is true, the VersionId of the newly added DeleteMarker will be returned | String |
-| - Error | Describes the information of objects that failed to be deleted in this operation | ObjectArray |
-| - - Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| - Deleted | Describes information on the objects successfully deleted in this operation | ObjectArray |
+| - - Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| - - VersionId | If the `VersionId` parameter is passed in, it will also be included in the response, indicating the version of the operated object or delete marker | String |
+| - - DeleteMarker | If versioning is enabled and the `VersionId` parameter is not specified, the deletion will not actually erase the content of a file; instead, it will only add a new delete marker, indicating that the visible file has been deleted. Enumerated values: `true`, `false` | String |
+| - - DeleteMarkerVersionId | If the value of the returned `DeleteMarker` is `true`, this parameter will be returned, representing the `VersionId` of the newly added delete marker | String |
+| - Error | Describes information on the objects that have not been deleted in this operation | ObjectArray |
+| - - Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - - Code | Error code of the deletion failure | String |
 | - - Message | Error message of the deletion failure | String |
 
@@ -647,9 +647,9 @@ function(err, data) { ... }
 
 #### Feature Description
 
-This API is used to retrieve an archived object for access.
+This API (POST Object restore) is used to restore an archived object for access.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.restoreObject({
@@ -667,17 +667,17 @@ cos.restoreObject({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------------------ | ------------------------------------------------------------ | ------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | RestoreRequest | Container used for data restoration | Object | Yes |
-| - Days | Sets expiration time of the temporary copy | Object | Yes |
-| - CASJobParameters | Container of the archive storage parameters | Object | Yes |
-| - - Tire | For data restoration, Tier can be specified as one of the three modes supported by CAS: Standard (standard mode where a restoration task can be completed in 3-5 hours), Expedited (expedited mode where a restoration task can be completed in 15 minutes), and Bulk (bulk mode where a restoration task can be completed in 5 - 12 hours) | Integer | Yes |
+| - Days | Sets the expiration time of the temporary copy | Object | Yes |
+| - CASJobParameters | Container of the Cloud Archive Storage job parameters | Object | Yes |
+| - - Tier | This parameter can be specified as one of the three data restoration modes supported by CAS: `Standard`, standard mode where a restoration job can be completed in 3-5 hours; `Expedited`, expedited mode where a restoration job can be completed in 15 minutes; and `Bulk`, batch mode where a restoration job can be completed in 5-12 hours | Integer | Yes |
 
 #### Callback Function Description
 
@@ -687,22 +687,22 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ### Setting Object ACL
 
 #### Feature Description
 
-This API is used to set the ACL for the specified object in a bucket.
+This API (PUT Object acl) is used to set the ACL for an object.
 
->  The total number of policies associated with the ACL, Policy, and CAM of a bucket under one single root account (i.e., under the same APPID) can be up to 1,000. The number of object ACL rules is not limited. If you do not need access control for the object, do not set it, so that the object will inherit the permission of the bucket.
+> ! The total number of policies associated with bucket ACL, Policy, and CAM under a single root account (i.e., under the same APPID) cannot exceed 1,000. There is no upper limit on the number of object ACL rules. If you do not need access control for an object, do not make the configuration, and the object will inherit the permissions of its bucket.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.putObjectAcl({
@@ -715,20 +715,20 @@ cos.putObjectAcl({
 });
 ```
 
-Grant a user read/write permission to a file:
+Grant a user Read/Write access to a file:
 
 ```js
 cos.putObjectAcl({
     Bucket: 'examplebucket-1250000000', /* Required */
     Region: 'ap-beijing',    /* Required */
     Key: 'picture.jpg',              /* Required */
-    GrantFullControl: 'id="100000000001"' // 100000000001 is the uin of the root account
+    GrantFullControl: 'id="100000000001"' // 100000000001 is the UIN of the root account
 }, function(err, data) {
     console.log(err || data);
 });
 ```
 
-Modify bucket permission with AccessControlPolicy:
+Modify bucket permission with `AccessControlPolicy`:
 
 ```js
 cos.putObjectAcl({
@@ -736,12 +736,12 @@ cos.putObjectAcl({
     Region: 'ap-beijing',    /* Required */
     Key: 'picture.jpg',              /* Required */
     AccessControlPolicy: {
-        "Owner": { // There must be an owner in AccessControlPolicy
-            "ID": 'qcs::cam::uin/100000000001:uin/100000000001' // 100000000001 is the QQ account number of the user owning the bucket
+        "Owner": { // `Owner` is required in `AccessControlPolicy`
+            "ID": 'qcs::cam::uin/100000000001:uin/100000000001' // 100000000001 is the UIN of the bucket owner
         },
         "Grants": [{
             "Grantee": {
-                "ID": "qcs::cam::uin/100000000011:uin/100000000011", // 100000000011 is a QQ account number
+                "ID": "qcs::cam::uin/100000000011:uin/100000000011", // 100000000011 is UIN
             },
             "Permission": "WRITE"
         }]
@@ -751,25 +751,25 @@ cos.putObjectAcl({
 });
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------------------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
-| ACL | Defines the ACL attribute of the object. Value range: private, public-read, default. <br>Default value: private. If default is passed in, the file permission is cleared and restored to the inherited permission | String | No |
-| GrantRead | Grants the grantee the read permission in the format of id="[OwnerUin]" | String | No |
-| GrantFullControl | Grants the grantee full permission in the format of id="[OwnerUin]" | String | No |
-| AccessControlPolicy | ACL of the object in JSON format | Object | No |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| ACL | Defines the ACL attribute of the object. Valid values: `private`, `public-read`, `default`. <br>Default value: `private`. If `default` is passed in, the file permissions will be cleared and restored to the inherited permissions | String | No |
+| GrantRead | Grants the grantee Read access in the format of `id="[OwnerUin]"` | String | No |
+| GrantFullControl | Grants the grantee full permission in the format of `id="[OwnerUin]"` | String | No |
+| AccessControlPolicy | Object ACL in JSON format | Object | No |
 | - Owner | Identifies the resource owner | Object | No |
-| - - ID | Bucket owner ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` <br>If it is a root account, &lt;OwnerUin> and &lt;SubUin> are the same value | String | No |
+| - - ID | Bucket owner ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`. <br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value | String | No |
 | - - DisplayName | Object owner name | String | No |
-| - Grants | Information list of grantee and permission | ObjectArray | No |
-| - - Permission | Specifies the permission granted to the grantee. Enumerated values: READ, WRITE, READ_ACP, WRITE_ACP, FULL_CONTROL | String | No |
-| - - Grantee | Describes the information of the grantee. The type can be RootAccount or Subaccount <br><li>If the type is RootAccount, the ID specifies a root account <br><li>If the type is Subaccount, the ID specifies a sub-account | Object | No |
+| - Grants | List of information on the grantee and permissions | ObjectArray | No |
+| - - Permission | Specifies the permission granted to the grantee. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
+| - - Grantee | Describes the information on the grantee. The type can be RootAccount or Subaccount <br><li>If the type is RootAccount, the ID specifies a root account <br><li>If the type is Subaccount, the ID specifies a sub-account | Object | No |
 | - - - DisplayName | Username | String | No |
-| - - - ID | User ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` <br>If it is a root account, &lt;OwnerUin> and &lt;SubUin> are the same value | String | No |
+| - - - ID | User ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` <br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value | String | No |
 
 #### Callback Function Description
 
@@ -779,20 +779,20 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 204, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `204`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
 ### Querying Object ACL
 
 #### Feature Description
 
-This API is used to query the ACL of an object. Only the bucket owner has permission to manipulate it.
+This API (GET Object acl) is used to query the ACL of an object. Only the bucket owner has the permission to perform the operation.
 
-#### Use Cases
+#### Sample
 
 ```js
 cos.getObjectAcl({
@@ -805,13 +805,13 @@ cos.getObjectAcl({
 
 ```
 
-#### Parameter Descriptions
+#### Parameter Description
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
+| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Key | An object key (object name) is a unique ID of an object in the bucket. For more information, see [Object Key Description](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
+| Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 
 #### Callback Function Description
 
@@ -821,39 +821,39 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ----------------- | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Object returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - ACL | Object's ACL attributes; enumerated values: private, public-read, default | Object |
+| - ACL | Object's ACL attributes; enumerated values: `private`, `public-read`, `default` | Object |
 | - Owner | Identifies the resource owner | Object |
-| - - ID | Object owner ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>If it is a root account, &lt;OwnerUin> and &lt;SubUin> are the same value | String |
+| - - ID | Object owner ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value | String |
 | - - DisplayName | Object owner name | String |
-| - Grants | Information list of grantee and permission | ObjectArray |
-| - - Permission | Specifies the permission granted to the grantee. Enumerated values: READ, READ_ACP, WRITE_ACP, FULL_CONTROL | String |
-| - - Grantee | Describes the information of the grantee. The type can be RootAccount or Subaccount <br><li>If the type is RootAccount, the ID specifies a root account <br><li>If the type is Subaccount, the ID specifies a sub-account | Object |
+| - Grants | List of information on the grantee and permissions | ObjectArray |
+| - - Permission | Specifies the permission granted to the grantee. Enumerated values: `READ`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String |
+| - - Grantee | Describes the information on the grantee. The type can be RootAccount or Subaccount <br><li>If the type is RootAccount, the ID specifies a root account <br><li>If the type is Subaccount, the ID specifies a sub-account | Object |
 | - - - DisplayName | Username | String |
-| - - - ID | User ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>If it is a root account, &lt;OwnerUin> and &lt;SubUin> are the same value | String |
+| - - - ID | User ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value | String |
 
 ## Advanced API
 
 ### Upload Queue
 
-The SDK for WeChat Mini Program retains queues of upload tasks initiated by putObject and sliceUploadFile, which can be used in the following ways:
+The SDK for WeChat Mini Program recorded all the upload tasks initiated with `putObject` and `sliceUploadFile` in an upload queue. You can use the queue in the following ways:
 
-1. cos.getTaskList can get the task list.
-2. cos.pauseTask, cos.restartTask, and cos.cancelTask can operate the task.
-3. cos.on('list-update', callback); can listen to the list and progress changes.
+1. Use cos.getTaskList to get the task list.
+2. Use cos.pauseTask, cos.restartTask, and cos.cancelTask to perform operations on upload tasks.
+3. Use cos.on('list-update', callback); to monitor changes in the list and the upload progress.
 
-For a complete example of queue usage, see [Queue Demo](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo/queue).
+For a complete example of queue usage, see [demo-queue](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo/queue).
 
 #### Canceling an Upload Task
 
-This API is used to cancel an upload task based on the taskId.
+This API is used to cancel an upload task by `taskId`.
 
-**Use cases**
+**Sample**
 
 ```js
 var taskId = 'xxxxx';                   /* Required */
@@ -861,17 +861,17 @@ cos.cancelTask(taskId);
 
 ```
 
-**Parameter description**
+**Parameter Description**
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| taskId | File upload task number. When the sliceUploadFile method is called, its TaskReady callback will return the taskId of the upload task | String | Yes |
+| taskId | ID of an upload task. When `sliceUploadFile` is called, `TaskReady` in the callback will return the `taskId` of the upload task | String | Yes |
 
 #### Pausing an Upload Task
 
-This API is used to pause an upload task based on the taskId.
+This API is used to pause an upload task by `taskId`.
 
-**Use cases**
+**Sample**
 
 ```js
 var taskId = 'xxxxx';                   /* Required */
@@ -879,25 +879,25 @@ cos.pauseTask(taskId);
 
 ```
 
-**Parameter description**
+**Parameter Description**
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| taskId | File upload task number. When the sliceUploadFile method is called, its TaskReady callback will return the taskId of the upload task | String | Yes |
+| taskId | ID of an upload task. When `sliceUploadFile` is called, `TaskReady` in the callback will return the `taskId` of the upload task | String | Yes |
 
 #### Restarting an Upload Task
 
-This API is used to restart an upload task based on the taskId that has been manually paused (by calling the pauseTask API) or stopped due to an upload error.
+This API is used to restart an upload task by `taskId`. It can restart tasks that have been manually paused with the `pauseTask` API or have been stopped due to an upload error.
 
-**Use cases**
+**Sample**
 
 ```js
 var taskId = 'xxxxx';                   /* Required */
 cos.restartTask(taskId);
 ```
 
-**Parameter description**
+**Parameter Description**
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| taskId | File upload task number. When the sliceUploadFile method is called, its TaskReady callback will return the taskId of the upload task | String | Yes |
+| taskId | ID of an upload task. When `sliceUploadFile` is called, `TaskReady` in the callback will return the `taskId` of the upload task | String | Yes |

@@ -1,8 +1,8 @@
 ## Description
 
-This API (GET Bucket) is equivalent to the List Object API and can be used to list some or all of the objects in the bucket. The requester of this API should have read permission to the bucket.
+The `GET Bucket` request is equivalent to the `List Object` request and can be used to list some or all of the objects in a bucket. To make this request, you need to have the permission to read the bucket.
 
-> If you upload an object to the bucket and immediately call the GET Bucket API, due to the eventual consistency characteristic of this API, the object just uploaded may not be included in the return result.
+>? If you upload an object to the bucket and immediately call the `GET Bucket` API, due to the eventual consistency characteristic of this API, the response may not include the just uploaded object.
 
 ## Request
 
@@ -15,39 +15,39 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
 | Name | Description | Type | Required |
 | --- | --- | --- | --- |
-| prefix | Matching prefix for object keys, which requires the response to contain only object keys with the specified prefix | string | No |
-| delimiter | A character delimiter that groups object keys. The identical paths between prefix or the beginning (if no prefix is specified) and the first delimiter are defined as a Prefix node under CommonPrefixes. The grouped object keys no longer appear in subsequent object lists. For specific scenarios and usage, see the sample below | string | No |
-| encoding-type | Specifies the encoding method of the return value. Value range: url, which means that the returned object key is a URL-encoded (percent-encoded) value. For example, "腾讯云" will be encoded as `%E8%85%BE%E8%AE%AF%E4%BA%91` | string | No |
-| marker | Marker for the starting object key, after which object key entries will be returned in UTF-8 lexicographical order | string | No |
+| prefix | Matching prefix for object keys, which sets that the response will only contain object keys with the specified prefix | string | No |
+| delimiter | A character delimiter used to group object keys. The identical paths between `prefix` or, if no `prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the examples below | string | No |
+| encoding-type | Specifies the encoding type of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "腾讯云" will be encoded as `%E8%85%BE%E8%AE%AF%E4%BA%91` | string | No |
+| marker | Marker for the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after the marker | string | No |
 | max-keys | Maximum number of entries returned at a time. Default value: 1,000; maximum value: 1,000 | integer | No |
 
-#### Request Header
+#### Request Headers
 
-This API uses only a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Body
 
-This API has no request body.
+This API does not have a request body.
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
 In addition to common response headers, this API returns the following response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 | Name | Description | Type |
 | --- | --- | --- |
-| x-cos-bucket-region | Bucket region such as ap-beijing, ap-hongkong, and eu-frankfurt. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
+| x-cos-bucket-region | Bucket region such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
 
 #### Response Body
 
-If the query succeeds, **application/xml** data will be returned, containing information of objects in the bucket. For response bodies in different scenarios, see the samples below.
+A successful query returns **application/xml** data which contain information on the objects in the bucket. For response bodies in different scenarios, see the examples below.
 
 ```shell
 <?xml version='1.0' encoding='utf-8' ?>
@@ -89,45 +89,45 @@ If the query succeeds, **application/xml** data will be returned, containing inf
 </ListBucketResult>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| ListBucketResult | None | Stores all information of the GET Bucket request result | Container |
+| ListBucketResult | None | Stores the result of the `GET Bucket` request | Container |
 
-**Content of the Container node ListBucketResult:**
+**Content of the Container node `ListBucketResult`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Name | ListBucketResult | Bucket name in the format of `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
-| EncodingType | ListBucketResult | Encoding format, which corresponds to the encoding-type parameter in the request and will be returned only if the encoding-type parameter is specified in the request | string |
-| Prefix | ListBucketResult | Matching prefix for object keys, which corresponds to the prefix parameter in the request | string |
-| Marker | ListBucketResult | Marker for the starting object key, after which object key entries will be returned in UTF-8 lexicographical order. It corresponds to the marker parameter in the request | string |
-| MaxKeys | ListBucketResult | Maximum number of entries returned in one response, which corresponds to the max-keys parameter in the request | integer |
-| Delimiter | ListBucketResult | Delimiter, which corresponds to the delimiter parameter in the request and will be returned only if the delimiter parameter is specified in the request | string |
-| IsTruncated | ListBucketResult | Whether response entries are truncated, which is a boolean value (e.g., true or false) | boolean |
-| NextMarker | ListBucketResult | This node will be returned only if the entries in the response are truncated (i.e., IsTruncated is true). Its value is the last object key among the entries in the current response and will be passed in as the marker parameter in the next request if subsequent entries need to be requested | string |
-| CommonPrefixes | ListBucketResult | The identical paths between prefix or the beginning (if no prefix is specified) and the first delimiter are defined as a common prefix. This node will be returned only if the delimiter parameter is specified in the request | Container |
+| EncodingType | ListBucketResult | Encoding format, which corresponds to the `encoding-type` parameter in the request and will be returned only if the `encoding-type` parameter is specified in the request | string |
+| Prefix | ListBucketResult | Matching prefix for object keys, which corresponds to the `prefix` parameter in the request | string |
+| Marker | ListBucketResult | Marker for the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after the marker. This parameter corresponds to the `marker` parameter in the request | string |
+| MaxKeys | ListBucketResult | Maximum number of entries returned in a single response, which corresponds to the `max-keys` parameter in the request | integer |
+| Delimiter | ListBucketResult | Delimiter, which corresponds to the `delimiter` parameter in the request and will be returned only if the `delimiter` parameter is specified in the request | string |
+| IsTruncated | ListBucketResult | Whether the returned list is truncated, which is a boolean value. Valid values: `true`, `false` | boolean |
+| NextMarker | ListBucketResult | This node will be returned only if the returned list is truncated (i.e., the value of `IsTruncated` is `true`). The value of this parameter is the last object key in the current response and will be passed in as the `marker` parameter in the next request if you need to request subsequent entries | string |
+| CommonPrefixes | ListBucketResult | The identical paths between `prefix` or, if no `prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. This node will be returned only if the `delimiter` parameter is specified in the request | Container |
 | Contents | ListBucketResult | Object entries | Container |
 
-**Content of the Container node CommonPrefixes:**
+**Content of the Container node `CommonPrefixes`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| Prefix | ListBucketResult.CommonPrefixes | Prefix of a single common prefix | string |
+| Prefix | ListBucketResult.CommonPrefixes | A single common prefix | string |
 
-**Content of the Container node Contents:**
+**Content of the Container node `Contents`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Key | ListBucketResult.Contents | Object key | string |
-| LastModified | ListBucketResult.Contents | Last modified time of the object in ISO8601 format, such as 2019-05-24T10:56:40Z | date |
-| ETag | ListBucketResult.Contents | Hash value calculated from file content | string |
+| LastModified | ListBucketResult.Contents | Last modified time of an object in ISO8601 format, such as `2019-05-24T10:56:40Z` | date |
+| ETag | ListBucketResult.Contents | Hash value calculated based on the file content | string |
 | Size | ListBucketResult.Contents | Object size in bytes | integer |
 | Owner | ListBucketResult.Contents | Bucket owner information | Container |
-| StorageClass | ListBucketResult.Contents | Object storage class, such as STANDARD_IA and ARCHIVE. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum |
+| StorageClass | ListBucketResult.Contents | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. For enumerated values, see [Storage Type](https://intl.cloud.tencent.com/document/product/436/30925) | Enum |
 
-**Content of the Container node Contents.Owner:**
+**Content of the Container node `Contents.Owner`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
@@ -136,11 +136,11 @@ The detailed nodes are described as follows:
 
 #### Error Codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+There is no special error message for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1. A Simple Sample
+#### Example 1. Basic example
 
 #### Request
 
@@ -218,7 +218,7 @@ x-cos-request-id: NWNlYmM5NTdfZjI4NWQ2NF81ZmMwX2Q5N2E1****
 </ListBucketResult>
 ```
 
-#### Sample 2. Using the delimiter Parameter (Listing Objects and Subdirectories in the Root Directory)
+#### Example 2. Specifying the `delimiter` parameter (listing objects and subdirectories in the root directory)
 
 #### Request
 
@@ -281,7 +281,7 @@ x-cos-request-id: NWNlYmM5NTdfNzViMDJhMDlfNDkzNF9kMTQ3****
 </ListBucketResult>
 ```
 
-#### Sample 3. Using the prefix and delimiter Parameters (Listing Objects and Subdirectories in the Specified Subdirectory)
+#### Example 3. Specifying the `prefix` and `delimiter` parameters (listing objects and subdirectories in the specified subdirectory)
 
 #### Request
 
@@ -344,7 +344,7 @@ x-cos-request-id: NWNlYmM5NTdfNDQyODVkNjRfNTIwYl82ZGQy****
 </ListBucketResult>
 ```
 
-#### Sample 4. Getting the First Page When Pagination Is Needed
+#### Example 4. Getting the first list of entries when the total number of matching entries exceeds the maximum number of entries allowed for a single response
 
 #### Request
 
@@ -413,7 +413,7 @@ x-cos-request-id: NWNlYmM0ZjJfZDcyNzVkNjRfNjQ5OV9lNzdk****
 </ListBucketResult>
 ```
 
-#### Example 5. Getting Subsequent Pages When Pagination Is Needed
+#### Example 5. Getting the second list of entries when the total number of matching entries exceeds the maximum number of entries allowed for a single response
 
 #### Request
 

@@ -1,8 +1,8 @@
 ## Description
 
-COS supports setting tags for existing buckets. This API (PUT Bucket tagging) is used to set key-value pairs for a bucket as tags, helping you manage existing bucket resources and costs.
+COS supports setting tags for existing buckets. This API is used to set key-value pairs for a bucket as tags, helping you manage existing bucket resources and costs.
 
->  Currently, up to 30 different tags can be set for one bucket.
+> ! Currently, up to 30 different tags can be set for one bucket.
 
 ## Request
 
@@ -15,17 +15,17 @@ Date:date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
-#### Request Header
+#### Request Headers
 
 #### Common Headers
 
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
 
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 #### Request Body
 
@@ -47,27 +47,27 @@ For this request, you need to configure the following set of tags:
 </Tagging>
 ```
 
-The detailed data are described as follows:
+The data are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------------------ | ------------------------------------------------------------ | ---------- | ---- |
 | Tagging | None | Tag set | Container | Yes |
 | TagSet | Tagging | Tag set | Container | Yes |
 | Tag | Tagging.TagSet | Tag set, which can contain up to 10 tags | Containers | Yes |
-| Key | Tagging.TagSet.Tag | Tag key, which can contain up to 128 bytes of letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes | String | Yes |
-| Value | Tagging.TagSet.Tag | Tag value, which can contain up to 256 bytes of letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes | String | Yes |
+| Key | Tagging.TagSet.Tag | Tag key, which can contain up to 128 characters. A tag key can contain English letters, digits, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String | Yes |
+| Value | Tagging.TagSet.Tag | Tag value, which can contain up to 256 characters. A tag value can contain English letters, digits, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String | Yes |
 
 ## Response
 
-#### Response Header
+#### Response Headers
 
 #### Common Response Headers
 
-This response uses a common response header. For more information about common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Special Response Headers
 
-This request operation has no special response headers.
+This request operation does not use any special response header.
 
 #### Response Body
 
@@ -75,21 +75,21 @@ The response body of this request is empty.
 
 #### Error Codes
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some frequent special errors that may occur when you make this request:
 
 | Error Code | Description | HTTP Status Code |
 | --------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | SignatureDoesNotMatch | If the provided signature does not conform to the rule, this error code will be returned | 403 [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3) |
 | NoSuchBucket | If the bucket to which you want to add the rule does not exist, this error code will be returned | 404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4) |
-| MalformedXML          | Invalid XML format. Please check against the Restful API documentation                | 400 [Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1) |
+| MalformedXML          | Invalid XML format. Please check against the RESTful API documentation                | 400 [Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1) |
 | BadRequest            | The maximum number of tags allowed for one bucket is exceeded. Currently, up to 10 tags can be set | 400 [Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1) |
 | InvalidTag | Tag key or value contains the reserved string "cos:" or "Project" | 400 [Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1) |
 
-## Samples
+## Example
 
 #### Request
 
-The following request writes two tags "{age:18}" and "{name:xiaoming}" to the bucket `examplebucket-1250000000`. The COS tag configuration succeeds and 204 success will be returned.
+The following request writes two tags "{age:18}" and "{name:xiaoming}" to the bucket `examplebucket-1250000000`. COS successfully configured the tags and returns 204 (success).
 
 ```shell
 PUT /?tagging HTTP/1.1

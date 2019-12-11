@@ -1,7 +1,7 @@
 ## Description
-This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts. When you call this API, if there is a request that is uploading a part using the Upload Parts API, the request will fail. If the UploadId does not exist, 404 NoSuchUpload will be returned.
+This API is used to abort a multipart upload and delete the uploaded parts. If you call this API and there is an `Upload Part` request that is using the multipart upload, the request will fail. If the `uploadId` does not exist, `404 NoSuchUpload` will be returned.
 
->  It is recommended that you either complete or abort the multipart upload in a timely manner, as the parts that have been uploaded but not completed will take up storage space and incur storage fees.
+> ! It is recommended to either complete or abort a multipart upload as early as possible, as the uploaded parts of an incomplete multipart upload will take up storage capacity and incur storage fees.
 
 ## Request
 
@@ -21,15 +21,15 @@ See the details below:
 
 | Parameter Name | Description | Type | Required |
 |---|---|---|---|
-|uploadId| ID of this multipart upload. <br>When the Initiate Multipart Upload API is used to initialize a multipart upload, an uploadId will be obtained, which not only uniquely identifies the data but also identifies the data position in the entire file |String| Yes |
+| uploadId | ID of this multipart upload. <br>When the `Initiate Multipart Upload` API is used to initialize a multipart upload, an `uploadId` will be returned. The ID uniquely identifies the data of the part and its position in the entire file | String | Yes |
 
 ### Request Headers
 
 #### Common Headers
-The implementation of this request operation uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Special Headers
-This request operation has no special request headers.
+This request operation does not use any special request header.
 
 
 ### Request Body
@@ -39,16 +39,16 @@ The request body of this request is empty.
 
 ### Response Headers
 #### Common Response Headers 
-This response uses a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 #### Special Response Headers
-This request operation has no special response headers.
+This request does not use any special response header.
 
 
 ### Response Body
 The response body of this request is empty.
 
 
-## Samples
+## Example
 
 ### Request
 ```shell
