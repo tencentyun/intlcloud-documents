@@ -92,7 +92,7 @@
 
 <tr>
 	 <td>2019.07.10</td>
-	 <td>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持</td>
+	 <td></li>TKE 伸缩组支持设置新机型作为启动配置</li><li>TKE 伸缩组支持</td>
 </tr>
 <tr>
 	 <td>2019.07.05</td>
@@ -210,8 +210,7 @@
 | ---------- | ------------------- | ----------------------------------------------------- |
 | 2019.11.28 | v1.12.4-tke.13	 | cloud-provider 增加将节点名称作为 hostname 的支持 |
 | 2019.11.18 | v1.12.4-tke.12 |	合并[pr75622](https://github.com/kubernetes/kubernetes/pull/75622)解决当集群存在大量 sts(>2000) 工作负载的情况下对 sts 的改变同步到 pod 延迟大(大概20s)的问题 |
-| 2019.10.23 | v1.12.4-tke.11 |	<li>合并[pr79036](https://github.com/kubernetes/kubernetes/pull/79036.
-)解决当开启 CPU Manager 时，如果 Pod 的 QoS 为 Guaranteed，则关闭 cpu quota</li><li>合并 [pr72866](https://github.com/kubernetes/kubernetes/pull/72868)为 kube-proxy 增加`--metrics-port`命令行参数，同时解决`--metrics-bind-address`不能包含 port 的 bug </li> |
+| 2019.10.23 | v1.12.4-tke.11 |	<li>合并[pr79036](https://github.com/kubernetes/kubernetes/pull/79036)解决当开启 CPU Manager 时，如果 Pod 的 QoS 为 Guaranteed，则关闭 cpu quota</li><li>合并 [pr72866](https://github.com/kubernetes/kubernetes/pull/72868)为 kube-proxy 增加`--metrics-port`命令行参数，同时解决`--metrics-bind-address`不能包含 port 的 bug </li> |
 | 2019.09.06 | v1.12.4-tke.10      | <ul class="params"><li>解决 [cve-2019-9512&cve-2019-9514](https://discuss.kubernetes.io/t/security-release-of-kubernetes-v1-15-3-v1-14-6-v1-13-10-cve-2019-9512-and-cve-2019-9514/7596) HTTP/2 DDoS 安全漏洞</li><li>合并 [pr72914](https://github.com/kubernetes/kubernetes/pull/72914)修复删除 Pod 后立即创建并调度到同一个节点上可能导致挂载 volume 失败的问题</li><li>合并 [pr71834](https://github.com/kubernetes/kubernetes/pull/71834) 修复 IPVS 模式下 sessionAffinity为ClientIP 会访问失效 RS 的问题</li></ul> |
 | 2019.08.09 | v1.12.4-tke.9       | 解决在 CentOS 下创建容器会导致 cgroup 泄露的问题          |
 | 2019.08.08 | v1.12.4-tke.8       | 合并 [pr72118](https://github.com/kubernetes/kubernetes/pull/72118) 解决kubelet在Unmount后对同一设备立即进行Mount时报"resource name may not be empty"的问题 |
