@@ -60,7 +60,7 @@
 
 <tr>
 	 <td>2019.08.27</td>
-	 <td>**Self-deployed Cluster** When creating cluster, automatically bind the master node with an existing security group</td>
+	 <td>[Self-deployed Cluster] When creating cluster, automatically bind the master node with an existing security group</td>
 </tr>
 
 
@@ -92,7 +92,7 @@
 
 <tr>
 	 <td>2019.07.10</td>
-	 <td>TKE scaling group supports new models as launch configurations.</li><li>Supports of TKE scaling group</td>
+	 <td><ul><li>TKE scaling group supports new models as launch configurations.</li><li>Supports of TKE scaling group</li></ul></td>
 </tr>
 <tr>
 	 <td>2019.07.05</td>
@@ -210,8 +210,7 @@
 | ---------- | ------------------- | ----------------------------------------------------- |
 | 2019.11.28 | v1.12.4-tke.13 | cloud-provider supports using the node name as the hostname|
 | 2019.11.18 | v1.12.4-tke.12 |Merges [pr75622](https://github.com/kubernetes/kubernetes/pull/75622) to resolve the issue of long delay (about 20s) in synchronizing the change of STS to the pod when there are more than 2,000 workloads in the cluster|
-| 2019.10.23 | v1.12.4-tke.11 |<li>Merges [pr79036](https://github.com/kubernetes/kubernetes/pull/79036.
-) to resolve the issue where the CPU quota is disabled if QoS of a pod is Guaranteed when the CPU Manager is enabled</li><li>Merges [pr72866](https://github.com/kubernetes/kubernetes/pull/72868) to add `--metrics-port` command line parameter to kube-proxy and fix the bug where `--metrics-bind-address` does not contain port</li> |
+| 2019.10.23 | v1.12.4-tke.11 |<li>Merges [pr79036](https://github.com/kubernetes/kubernetes/pull/79036) to resolve the issue where the CPU quota is disabled if QoS of a pod is Guaranteed when the CPU Manager is enabled</li><li>Merges [pr72866](https://github.com/kubernetes/kubernetes/pull/72868) to add `--metrics-port` command line parameter to kube-proxy and fix the bug where `--metrics-bind-address` does not contain port</li> |
 | 2019.09.06 | v1.12.4-tke.10      | <ul class="params"><li>Resolves [cve-2019-9512&cve-2019-9514](https://discuss.kubernetes.io/t/security-release-of-kubernetes-v1-15-3-v1-14-6-v1-13-10-cve-2019-9512-and-cve-2019-9514/7596) HTTP/2 DDoS security vulnerability</li><li>Merges [pr72914](https://github.com/kubernetes/kubernetes/pull/72914) to fix the issue where volume mounting may fail when deleting a pod, immediately creating a new one and scheduling it to the same node</li><li>Merges [pr71834](https://github.com/kubernetes/kubernetes/pull/71834) to resolve the issue where under IPVS mode, sessionAffinity as ClientIP accesses invalid RS</li></ul> |
 | 2019.08.09 | v1.12.4-tke.9       | Resolves issue of creating container in CentOS resulting in cgroup leakage          |
 | 2019.08.08 | v1.12.4-tke.8       | Merges [pr72118](https://github.com/kubernetes/kubernetes/pull/72118) to resolve teh issue where **resource name may not be empty** appears after unmounting a device and mounting it again immediately.  |
