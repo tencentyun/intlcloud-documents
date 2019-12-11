@@ -2,7 +2,7 @@
 ### 创建 COS Bucket
 1. 登录对象存储控制台选择[【存储桶列表】](https://console.cloud.tencent.com/cos5/bucket)。
 2. 单击【创建储存桶】在弹出页填写相应信息后，单击【确定】即可成功创建存储桶 COS Bucket。
- ![](https://main.qcloudimg.com/raw/31b306873ac7f72aa96d86b0ba91a948.png)
+ ![](https://main.qcloudimg.com/raw/423beefad19658e0cec8cdd28d6d25e1.png)
 >!
 > - Bucket name 为 examplebucket，不含 -1271775094。  
 > - 以上信息均可按照业务实际需要配置。
@@ -12,12 +12,12 @@
 1. 为腾讯云截图存储开通数据写入权限，授权的根账号 ID：3508645126。
 	1. 在存储桶的【[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)】>【权限管理】>【存储桶访问权限】添加用户，用户类型选择根账号，**并输入根账号 ID：3508645126**
 	>! **账号 ID 需填入根账号（也就是主账号） ID：3508645126 进行授权。（根账号 ID：3508645126 即为云直播服务，直接输入 3508645126 即可）**。
-	![](https://main.qcloudimg.com/raw/2417cd97ea3ae2f3ebf57ff1f8834ba1.png)
+	![](https://main.qcloudimg.com/raw/02900e9707b86dc41a279125770711cf.png)
 	
-	2. 存储桶访问权限设置 API 可参考 [PUT Bucket acl 文档](https://cloud.tencent.com/document/product/436/7737)。
+	2. 存储桶访问权限设置 API 可参考 [PUT Bucket acl 文档](https://intl.cloud.tencent.com/document/product/436/7737)。
 2. 获取已授权 COS Bucket 信息。
 	1. 在存储桶的【基础配置】里即可查看到 COS 的所有信息。访问域名（源站域名）包含 bucket name、cos appid 和 bucket region。
-	![](https://main.qcloudimg.com/raw/f442ced48355a2c94b858cebd8928cb5.png)
+	![](https://main.qcloudimg.com/raw/b75e7c8aa1222506b7dfc3fd5282d021.png)
 	 - bucket name：buckettest123
 	 - cos appid：1259200900
 	 - bucket region：ap-chengdu

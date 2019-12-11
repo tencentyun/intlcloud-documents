@@ -129,7 +129,7 @@ Tencent Serverless 可在 Windows， MacOS 中安装。在安装 Tencent Serverl
 #### 查看日志
 云端调用的日志会输出到 VS Code。如下图所示：  
 ![](https://main.qcloudimg.com/raw/83c56ff1d4e808488cffafea2867f4de.png)  
-您也可以前往控制台打开函数页面选择【运行日志】，查看所有历史日志，详情请参见 [函数日志](https://cloud.tencent.com/document/product/583/36143)。
+您也可以前往控制台打开函数页面选择【运行日志】，查看所有历史日志，详情请参见 [函数日志](https://intl.cloud.tencent.com/document/product/583/32740)。
 
 #### 导入本地  
 >如果您已经在 [云函数控制台](https://console.cloud.tencent.com/scf/list) 创建了函数，则可以在 VS Code 插件里直接将云端函数导入到本地。
@@ -171,12 +171,12 @@ Tencent Serverless 可在 Windows， MacOS 中安装。在安装 Tencent Serverl
 3. 在已创建函数的详情页面，选择【监控信息】，即可查看函数调用次数/运行时间等情况。如下图所示：
 >监控统计的粒度最小为1分钟。您需要等待1分钟后，才可查看当次的监控记录。
 >
-![](https://main.qcloudimg.com/raw/acc4d768c7a23e424fd65e065b1c043f.png)
+![](https://main.qcloudimg.com/raw/978e0f5ff56ab6199f6dbe307b37c389.png)
 更多关于监控信息请参见 [监控指标说明](https://intl.cloud.tencent.com/document/product/583/32739)。
 
 #### 配置告警
 在已创建函数的详情页面，单击【前往新增告警】为云函数配置告警策略，对函数运行状态进行监控。如下图所示：  
-![](https://main.qcloudimg.com/raw/6850e40bca71bfe7ca976004388294c8.png)
+![](https://main.qcloudimg.com/raw/7ee322b492ab6d28048a242a5a66d21b.png)
 更多关于配置告警请参见 [告警配置说明](https://intl.cloud.tencent.com/document/product/583/32738)。  
 
 

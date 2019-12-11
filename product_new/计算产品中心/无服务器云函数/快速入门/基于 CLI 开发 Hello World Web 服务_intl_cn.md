@@ -214,13 +214,13 @@ Report RequestId: 37fe28ff-bfdb-11e9-acc7-5254008a4f10 Duration:0ms Memory:128MB
 3. 在已创建函数的详情页面，选择【监控信息】，即可查看函数调用次数/运行时间等情况。如下图所示：
 >监控统计的粒度最小为1分钟。您需要等待1分钟后，才可查看当次的监控记录。
 >
->[](https://main.qcloudimg.com/raw/acc4d768c7a23e424fd65e065b1c043f.png)
+>[](https://main.qcloudimg.com/raw/978e0f5ff56ab6199f6dbe307b37c389.png)
 >更多关于监控信息请参见 [监控指标说明](https://intl.cloud.tencent.com/document/product/583/32739)。
 
 
 ### 配置告警
 在已创建函数的详情页面，单击【前往新增告警】为云函数配置告警策略，对函数运行状态进行监控。如下图所示：
-![](https://main.qcloudimg.com/raw/6850e40bca71bfe7ca976004388294c8.png)
+![](https://main.qcloudimg.com/raw/7ee322b492ab6d28048a242a5a66d21b.png)
 更多关于配置告警请参见 [告警配置说明](https://intl.cloud.tencent.com/document/product/583/32738)。
 
 
