@@ -6,7 +6,7 @@
 2. 在页面左上角选择集群所在区域，目前支持【广州】、【上海】、【北京】。
 3. 在页面右上角单击【创建集群】进入集群创建页面。
 4. 填写集群配置参数。
-   ![](https://main.qcloudimg.com/raw/1afb132ca6894feda20188dd0187a217.png)
+   ![](https://main.qcloudimg.com/raw/8b9be82b96c78045d07542b61f73583c.png)
 
 <table border="1">
 <tr>
@@ -60,7 +60,7 @@
 </table>
 
 5. 选择集群节点类型及数量。
- ![](https://main.qcloudimg.com/raw/15c00e4e94f000dc6a1ab73e471c62b7.png)
+ ![](https://main.qcloudimg.com/raw/2ee505672eaac11805c75efc95a1d598.png)
 
 | 名称         | 含义               | 备注                                                         |
 | ------------ | ------------------ | ------------------------------------------------------------ |
