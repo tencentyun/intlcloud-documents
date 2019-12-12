@@ -1,5 +1,3 @@
-Cloud Connect Network (CCN) is currently under the beta test. To use CCN, please [submit an application](https://cloud.tencent.com/apply/p/tp2478t9skn). 
-
 
 ## Resource Limits
 The following table lists the limits on the supported CCN resources. <!--For limits on other Virtual Private Cloud (VPC) products, see [Limitations]().-->
