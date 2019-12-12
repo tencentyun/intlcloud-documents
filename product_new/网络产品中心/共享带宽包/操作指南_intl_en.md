@@ -3,7 +3,7 @@ The following figure shows the steps of utilizing IP BWP:
 
 ## Creating a BWP
 1. In the BWP console, select the desired region and click **+Create** in the upper-left corner.
-2. Enter a name and select the desired billing method. If you need to use the 95th percentile charging mode, [submit an application](https://cloud.tencent.com/act/apply/bwp) first.
+2. Enter a name and select the desired billing method. 
 ![](https://main.qcloudimg.com/raw/e164f16d8e9c65091df490b7a6a9b609.png)
  
 ## Adding an IP Address
