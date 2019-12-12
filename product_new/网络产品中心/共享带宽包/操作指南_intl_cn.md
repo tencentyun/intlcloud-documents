@@ -3,7 +3,7 @@ IP 带宽包的操作步骤如下图所示：
 
 ## 新建带宽包
 1. 在共享带宽包控制台中，选择地域，单击左上角的【+新建】。
-2. 填写名称，选择您需要计费模式，如需使用月95计费需要 [提交申请](https://cloud.tencent.com/act/apply/bwp)。
+2. 填写名称，选择您需要计费模式。
 ![](https://main.qcloudimg.com/raw/e164f16d8e9c65091df490b7a6a9b609.png)
  
 ## 添加 IP
