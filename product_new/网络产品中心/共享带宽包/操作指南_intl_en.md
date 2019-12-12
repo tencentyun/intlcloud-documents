@@ -1,9 +1,5 @@
 The following figure shows the steps of utilizing IP BWP:
 ![](https://main.qcloudimg.com/raw/8c34e3b59c7d733227a530348186280a.png)
-## Submitting an Application
-1. Click [Apply now](https://cloud.tencent.com/act/apply/bwp_apply) to go to the application page.
-2. Fill in the application form and submit it.
-3. After the application is approved, log in to [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and you will see **BWP Console** in the left sidebar.
 
 ## Creating a BWP
 1. In the BWP console, select the desired region and click **+Create** in the upper-left corner.
