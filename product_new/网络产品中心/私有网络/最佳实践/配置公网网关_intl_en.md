@@ -1,6 +1,6 @@
 ## Scenario
  If some of your CVMs in Tencent Cloud VPC do not have common public IP but need to access the Internet, you can use a CVM with a public IP (common or elastic public IP) as the public gateway to enable them to access the Internet. The public gateway CVM translates the source IP of outbound traffic. When any other CVMs access the Internet through the public gateway CVM, the public gateway CVM translates their IPs to the public IP of the public gateway CVM, as shown in the figure below.
-![](https://main.qcloudimg.com/raw/bbcf344f87b305c1453ac58af74a46be.png)
+![](https://main.qcloudimg.com/raw/5876f3c92f1ae7cb5b4d8f38e59cbfd2.png)
 ## Prerequisites
 - Log into [CVM Console](https://console.cloud.tencent.com/cvm/index).
 - The public gateway CVM and the CVMs that need to access the Internet through the public gateway CVM are located in different subnets because the public gateway CVM can only forward routing requests from different subnets.
@@ -12,15 +12,15 @@
 
 1. In the left sidebar, click **[EIP](https://console.cloud.tencent.com/cvm/eip)** to open the EIP management page.
 2. Find the target elastic public IP and choose **More** > **Bind** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/63b08cbf84289235670f03280caf0228.png)
+![](https://main.qcloudimg.com/raw/b25421e826f69e00a1890e9d59c62828.png)
 3. In the **Bind resources** pop-up window, select a CVM instance to serve as the public gateway and bind it to the elastic public IP.
-![](https://main.qcloudimg.com/raw/2678de7600bdb3e1fd2be4652db1942c.png)
+![](https://main.qcloudimg.com/raw/c23b101995cabbe66d546f2a2bcb64ca.png)
 
 ### Step 2: Configure a route table for the subnet where the gateway is located.
 The gateway subnet and a common subnet cannot be associated with the same route table. An independent route table must be created for the gateway and be associated with the gateway subnet.
-1. [Create a custom route table](https://cloud.tencent.com/document/product/215/20124).
+1. Create a custom route table.
 2. Associate the route table with the subnet where the public gateway CVM is located as prompted.
-![](https://main.qcloudimg.com/raw/99b404786a7e9a96ccee8c211314323b.png)
+![](https://main.qcloudimg.com/raw/c7a6697f7ce1cc4e5c515cfb894ccd25.png)
 
 ### Step 3: Configure a route table for a common subnet.
 Configure the route table for the common subnet and direct the default route to the public gateway CVM, so that CVMs in the common subnet can access the Internet through the routing capability of the public gateway.
@@ -28,8 +28,8 @@ In the route table for the common subnet, add the following routing policy:
 - Destination: public IP to be accessed.
 - Next-hop type: CVM.
 - Next hop: private IP of the CVM instance to which the elastic public IP is bound in step 1.
-For more information about the operations, see [Modifying a route table](https://cloud.tencent.com/document/product/215/20123).
-![](https://main.qcloudimg.com/raw/14a3c3306012870dce7e761b11c05d7e.png)
+<!--For more information about the operations, see [Modifying a route table]().-->
+![](https://main.qcloudimg.com/raw/9b2d9537e7aa0c00428ef112db300d73.png)
 
 ### Step 4: Configure the public gateway.
 1. Log in to the public gateway CVM, enable network forwarding and NAT proxy, and optimize related parameters.
