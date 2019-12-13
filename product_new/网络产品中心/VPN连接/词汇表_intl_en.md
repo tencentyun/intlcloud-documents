@@ -5,7 +5,7 @@
 A customer gateway is a VPC gateway that is mapped to the IPsec VPN gateway in your IDC. It must be used with a VPN gateway. Encrypted VPN tunnels can be established between a VPN gateway and multiple customer gateways.
 
 ### IPsec VPN
-<!--<a href="https://cloud.tencent.com/doc/product/215/4956" target="_blank">-->An IPsec VPN is an encrypted tunnel over a public network that is used to connect your IDC and a VPC.
+<!--<a href="https://intl.cloud.tencent.com/document/product/215/4956" target="_blank">-->An IPsec VPN is an encrypted tunnel over a public network that is used to connect your IDC and a VPC.
 
 
 ### Route Table
