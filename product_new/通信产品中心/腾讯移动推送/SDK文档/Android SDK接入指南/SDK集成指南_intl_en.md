@@ -9,7 +9,7 @@ The Android SDK is a set of APIs provided by TPNS Service for clients to impleme
 
 >Before configuring the SDK, make sure you have configured the Android platform application.
 
-1. Go to the [Application List](https://console.cloud.tencent.com/tpns/applist) page to get the application package name, AccessID, and AccessKey.
+1. Go to the [Application List](https://console.cloud.tencent.com/tpns) page to get the application package name, AccessID, and AccessKey.
 2. In the app build.gradle file, configure the following content:
 
 ```
