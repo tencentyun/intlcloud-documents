@@ -27,7 +27,7 @@ If the networks of a CVM instance and a TencentDB for MySQL instance are of diff
  By default, the CVM and TencentDB for MySQL instances can interconnect over the private network only if they are in the same VPC. If they are in different VPCs, interconnection over the private network can be achieved in the following ways:
 - Solution 1 (**recommended**): Migrate the TencentDB for MySQL instance to the VPC where the CVM instance resides.
 For more information on directions, see [Network Switch](https://intl.cloud.tencent.com/document/product/236/31915) for TencentDB for MySQL.
--  Solution 2: Create a [peering connection](https://intl.cloud.tencent.com/document/product/553) between the two VPCs.
+-  Solution 2: Create a [peering connection](https://intl.cloud.tencent.com/document/product/215/5000) between the two VPCs.
 Otherwise, the instances can only interconnect over the public network, which has poor performance, security, and stability.
 
 ### Incorrect Security Group Configuration
