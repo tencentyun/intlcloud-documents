@@ -13,7 +13,7 @@ Below are Cloud Object Storage (COS) APIs and their descriptions:
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
 | [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under a specified account |
-| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | Querying object list | Queries some or all objects in a bucket |
+| GET Bucket（List Object） | Querying object list | Queries some or all objects in a bucket |
 | [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Retrieving information on a bucket and its permission | Checks whether a bucket exists and whether you have permission to access it |
 | [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket under a specified account |
 
