@@ -3,7 +3,7 @@
 ## 登录控制台
 登录 [腾讯云控制台](https://console.cloud.tencent.com/)。若无帐号，请参见 [帐号注册教程](https://intl.cloud.tencent.com/document/product/378/9603)。
 ## 提交申请
-单击【[立即申请](https://cloud.tencent.com/act/apply/bwp_apply)】，填写申请表格并提交，验证通过后您即可登录共享带宽包控制台。
+填写申请表格并提交，验证通过后您即可登录共享带宽包控制台。
 ## 创建带宽包
 1. 申请通过后，登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，在左侧导航中选择【共享带宽包】，进入共享带宽包控制台。
 2. 选择地域，单击【+新建】，在弹窗中填写名称，选择您需要计费模式，单击【确定】，整个地域将自动转换为按带宽包计费。
