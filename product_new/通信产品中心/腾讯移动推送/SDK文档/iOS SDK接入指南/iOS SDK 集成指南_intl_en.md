@@ -14,7 +14,7 @@ This document provides sample codes for integrating the SDK and launching TPNS. 
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns), and click **Product Management** in the left sidebar.
 2. Enter the **Product Management** page, and click **Add a Product**.
 3. Go to the **Add a Product** page, and enter the product name and product details. Select the product type, and click **OK** to add a new product.
-4. After the product is created, select **Application Management** > **[Application List](https://console.cloud.tencent.com/tpns/applist)** to go to the application list and obtain the product AppID and AppKey. (AppID is Access ID, AppKey is Access Key.)
+4. After the product is created, select **Application Management** > **Application List** to go to the application list and obtain the product AppID and AppKey. (AppID is Access ID, AppKey is Access Key.)
 5. Import SDK:
  - **Method one: import using Cocoapods**
 Use the Cocoapods download address:
