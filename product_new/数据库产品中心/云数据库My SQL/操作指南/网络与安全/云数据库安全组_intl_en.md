@@ -1,5 +1,5 @@
 ## Operation Scenario
-A security group is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For specific rules and limitations, see [Security Group](https://intl.cloud.tencent.com/document/product/215/20089).
+A security group is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. 
 
 
 >- TencentDB for MySQL security group currently only supports network access control for VPC and public networks but not basic networks.
@@ -21,7 +21,7 @@ A security group is a stateful virtual firewall capable of filtering. As an impo
 ![](https://main.qcloudimg.com/raw/5ff13000731c0ccf9904dda884df7478.png)
 
 ### Configuring a Security Group for TencentDB
-A [security group](https://intl.cloud.tencent.com/doc/product/213/500) is an instance-level firewall provided by Tencent Cloud for controlling inbound/outbound traffic of TencentDB. You can associate a security group with an instance when purchasing it or later in the console.
+A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is an instance-level firewall provided by Tencent Cloud for controlling inbound/outbound traffic of TencentDB. You can associate a security group with an instance when purchasing it or later in the console.
 
 >TencentDB for MySQL security groups currently only support the **VPC TencentDB** configuration.
 
