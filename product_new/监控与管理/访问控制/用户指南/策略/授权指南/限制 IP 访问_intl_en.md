@@ -6,7 +6,7 @@ The product must support limiting access via IP. For more information, see [FAQs
 1. Go to the [Policies](https://console.cloud.tencent.com/cam/policy) management page and click **New Custom Policy** in the upper left corner.
 3. In the selection window that pops up, click **Create by Policy Generator**.
 4. In the Service and Action selection page, enter the following information:
-  - Effect: Required. Select “Allow”. If you choose “Reject”, users or groups will not be able to obtain authorization.
+  - Effect: Required. Select “Allow”. If you choose “Deny”, users or groups will not be able to obtain authorization.
   - Service: Required. Select the product you want to add.
   - Action: Required. Select product permissions according to your requirements.
   - Resources: Required. For more information on what to enter, see [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606).
