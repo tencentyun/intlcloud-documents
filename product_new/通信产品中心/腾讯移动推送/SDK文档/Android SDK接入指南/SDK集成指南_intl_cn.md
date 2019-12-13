@@ -9,7 +9,7 @@ Android SDK 是腾讯移动推送服务为客户端实现消息推送而提供�
 
 >在配置 SDK 前，确保已创建 Android 平台的应用。
 
-1. 进入 [应用列表页面](https://console.cloud.tencent.com/tpns/applist)， 获取应用的包名、AccessID、AccessKey。
+1. 进入 [应用列表页面](https://console.cloud.tencent.com/tpns)， 获取应用的包名、AccessID、AccessKey。
 2. 在 app build.gradle 文件下，配置 以下内容：
 
 ```
