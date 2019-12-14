@@ -67,7 +67,7 @@ To upgrade the Elasticsearch version, you need to complete upgrade check and dat
 1. <a id="update_check">Upgrade check</a>
 >  This applies only when you upgrade the Elasticsearch version.
 >
- Check whether the two versions have any incompatible configuration items. If the check fails, the process will terminate, and you can view the specific check items and corresponding solutions. For more information, see [Upgrade Check](https://intl.cloud.tencent.com/document/product/845/36106). You can also choose to only perform an upgrade check before upgrade so as to see whether your cluster meets the conditions for upgrade.
+ Check whether the two versions have any incompatible configuration items. If the check fails, the process will terminate, and you can view the specific check items and corresponding solutions. For more information, see [Upgrade Check](https://intl.cloud.tencent.com/document/product/845/32599). You can also choose to only perform an upgrade check before upgrade so as to see whether your cluster meets the conditions for upgrade.
 2. Snapshot backup
   > This applies only when you upgrade the Elasticsearch version.
   >
