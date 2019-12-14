@@ -22,7 +22,7 @@ On the **Database Management** > **Parameter Settings** tab, you can set modifia
 On the **Database Management** > **Account Management** tab, you can manage the default root account, such as modifying permissions, resetting password, and creating/deleting accounts.
 
 ### Security group
-On the **Security Group** tab, you can configure security groups for your databases. For more information, see [Security Group](https://cloud.tencent.com/document/product/236/9537).
+On the **Security Group** tab, you can configure security groups for your databases. For more information, see [Security Group](https://intl.cloud.tencent.com/document/product/236/14470).
 
 ### Backup and restoration
 On the **Backup and Restore** tab, you can download binlogs and perform cold backup. For more information, see [Backup Modes](https://intl.cloud.tencent.com/document/product/236/7513).
