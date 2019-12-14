@@ -1,6 +1,6 @@
 ## DDoS Protective IP
 1. **Purchase**
-Log in to the [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec), click **DDoS Protective IP** in the left pane, and select **[Purchase Protective IP](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fbuy.cloud.tencent.com%2Fgamesec)**.
+Log in to the [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec), click **DDoS Protective IP** in the left pane, and select **Purchase Protective IP**.
 ![](https://i.imgur.com/oQ19TSi.png)
 2. **Select protection configuration**
 For details on how to purchase a DDoS protective IP, see [Product Configuration Instructions](https://intl.cloud.tencent.com/document/product/685/18798).
