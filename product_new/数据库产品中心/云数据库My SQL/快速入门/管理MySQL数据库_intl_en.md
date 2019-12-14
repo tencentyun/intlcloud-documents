@@ -34,7 +34,7 @@ on the **Operation Log** tab, you can view and download slow logs, error logs, a
 On the **Read-only Instance** tab, you can create one or more read-only (RO) instances, which can be applied to read-write separation and one-master-multiple-slave application scenarios to boost the read load capacity of your databases. For more information, see [Read-only Instances](https://intl.cloud.tencent.com/document/product/236/7270).
 
 ### Connectivity check
-On the **Connection Check** tab, you can check for potential connectivity and access problems and address them using the solutions provided so as to ensure that your databases can be accessed normally. For more information, see [One-Click Connection Check](https://cloud.tencent.com/document/product/236/33206).
+On the **Connection Check** tab, you can check for potential connectivity and access problems and address them using the solutions provided so as to ensure that your databases can be accessed normally. For more information, see [One-Click Connection Check](https://intl.cloud.tencent.com/document/product/236/31927).
 
 ## Instance List Page
 In the TencentDB for MySQL Console, select **Instance List** on the left sidebar to view instance information and manage instances.
