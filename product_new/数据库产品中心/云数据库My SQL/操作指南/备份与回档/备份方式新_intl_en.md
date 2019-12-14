@@ -22,7 +22,7 @@ TencentDB for MySQL HA Edition supports two backup types:
 
 ## Precautions
 - Starting from February 26, 2019, the automatic backup feature of TencentDB for MySQL will only support physical backup (default type) and no longer provide logical backup. Existing automatic logical backups will be switched to physical backups automatically.
-This will not affect your business access, but may have impact on your automatic backup habit. If you need logical backups, you can use the manual backup method in the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) or [call the relevant API](https://cloud.tencent.com/document/product/236/15844) to generate logical backups.
+This will not affect your business access, but may have impact on your automatic backup habit. If you need logical backups, you can use the manual backup method in the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) or [call the relevant API](https://intl.cloud.tencent.com/document/product/236/15844) to generate logical backups.
 - Both logical and physical backup files will be compressed, so some files may be unusable after being downloaded. In that case, you can use the table backup function in manual logical backup. For more information, see [manual backup](#manual-backup).
 - Instance backup files occupy backup capacity. backup capacity, we will inform you in advance. Please develop a backup schedule and plan the backup capacity appropriately to avoid potential extra fees in the future.
 - It is recommended to back up your database during off-hours.
