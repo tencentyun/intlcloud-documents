@@ -27,7 +27,7 @@ TencentDB for MySQL has the following features:
 [Tencent Cloud Console](https://console.cloud.tencent.com/cdb): Web-based UIs.
 
 ### Related Services
-For more information on how to calculate actual expenses precisely with relevant billing tools, see [Fees Overview](https://intl.cloud.tencent.com/document/product/236/18335) and [Price Calculator](https://buy.cloud.tencent.com/calculator/cdb).
+For more information on how to calculate actual expenses precisely with relevant billing tools, see [Fees Overview](https://intl.cloud.tencent.com/document/product/236/18335).
 
 For more information on how to set up in-cloud data services by purchasing TencentDB for MySQL instances, see [Purchase and Renewal Procedures](https://intl.cloud.tencent.com/document/product/236/5160) and [Getting Started](http://intl.cloud.tencent.com/document/product/236/3128).
 
