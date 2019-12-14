@@ -29,7 +29,7 @@ In addition to technical architectures and solutions, resource reserves are crit
 
 ### How to Activate
 The Global LVB service can be directly activated in the [LVB Console](https://console.cloud.tencent.com/live)
-- If you don't have a Tencent Cloud account yet, you need to register one first and then [apply for activation of the LVB service](https://cloud.tencent.com/document/product/267/2819#.E5.BC.80.E9.80.9A.E8.A7.86.E9.A2.91.E7.9B.B4.E6.92.AD.E6.9C.8D.E5.8A.A1). For more information on registration, see [Registering a Tencent Cloud Account](https://cloud.tencent.com/document/product/378/9603).
+- If you don't have a Tencent Cloud account yet, you need to register one first and then [apply for activation of the LVB service](https://intl.cloud.tencent.com/document/product/267/30410). For more information on registration, see [Registering a Tencent Cloud Account](https://cloud.tencent.com/document/product/378/9603).
 - If you already have a Tencent Cloud account and have activated LVB, you can proceed directly to the next step.
 
 Go to the [LVB Console](https://console.cloud.tencent.com/live), select **Domain Management** in the navigation bar, and click **Add Domain**.
