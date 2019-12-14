@@ -27,7 +27,7 @@
 [腾讯云控制台](https://console.cloud.tencent.com/cdb)：基于 Web 的用户界面。
 
 ### 相关服务
-使用计费相关工具来详细并精准计算出实际花费，请参考 [费用总览](https://intl.cloud.tencent.com/document/product/236/18335) 和 [价格计算器](https://buy.cloud.tencent.com/calculator/cdb)。
+使用计费相关工具来详细并精准计算出实际花费，请参考 [费用总览](https://intl.cloud.tencent.com/document/product/236/18335) 
 
 通过购买云数据库 MySQL 实例来搭建云上的数据服务，请参考 [购买与续费流程](https://intl.cloud.tencent.com/document/product/236/5160) 和  [快速入门](http://intl.cloud.tencent.com/document/product/236/3128)。
 
