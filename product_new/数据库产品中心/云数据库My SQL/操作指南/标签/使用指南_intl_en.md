@@ -33,7 +33,7 @@ These tag keys/values are bound to TencentDB for MySQL instances in the followin
 |cdb-abcdef10|	Entertainment	|Post-production|	Harry|
 
 ### Using a Tag
-For more information on how to create and delete a tag, see [Getting Started with Tags](https://intl.cloud.tencent.com/document/product/651/36479).
+For more information on how to create and delete a tag, see [Getting Started with Tags](https://intl.cloud.tencent.com/document/product/651/32582).
 
-For more information on how to edit a tag in TencentDB for MySQL, see [Editing a Tag](https://intl.cloud.tencent.com/document/product/236/30972).
+For more information on how to edit a tag in TencentDB for MySQL, see [Editing a Tag](https://intl.cloud.tencent.com/document/product/236/31918).
 
