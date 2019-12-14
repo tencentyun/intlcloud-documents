@@ -30,7 +30,8 @@ ES supports the following two upgrade types.
   </tr>
 </table>
 <b>Descriptions of Elastic Stack editions:</b>
-The Basic Edition and Platinum Edition integrate Elasticsearch's official Elastic Stack (formerly X-Pack) features such as security, SQL, machine learning, and monitoring. The former only comes with certain SQL features and monitoring, while the latter has all Elastic Stack features. For more information, see [Elastic Stack (X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943).
+The Basic Edition and Platinum Edition integrate Elasticsearch's official Elastic Stack (formerly X-Pack) features such as security, SQL, machine learning, and monitoring. The former only comes with certain SQL features and monitoring, while the latter has all Elastic Stack features. 
+For more information, see [Elastic Stack (X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943).
  
 >
  >1. You can perform only one of the two types of upgrade above at a time. Particularly, when you upgrade from version 5.6.4 to version 6.4.3, you can also choose to upgrade to the Basic Edition, which comes with the features provided by the Elasticsearch's official Elastic Stack (formerly X-Pack) such as monitoring and SQL. This practice is highly recommended.
