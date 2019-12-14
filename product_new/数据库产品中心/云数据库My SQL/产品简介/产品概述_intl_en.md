@@ -35,7 +35,7 @@ For more information on how to migrate data in/off the cloud with the TencentDB 
 
 For more information on how to cleanse and analyze data with the TencentDB for MySQL data subscription tool, see [Data Subscription](http://intl.cloud.tencent.com/document/product/571/8776).
 
-For more information on how to refine the post-transaction auditing and tracking mechanism with the TencentDB for MySQL audit feature, see [Data Auditing](https://intl.cloud.tencent.com/product/cm>).
+For more information on how to refine the post-transaction auditing and tracking mechanism with the TencentDB for MySQL audit feature, see [Data Auditing](https://intl.cloud.tencent.com/product/cm).
 
 For more information on how to deploy your computing services by purchasing CVM instances, see [CVM](https://intl.cloud.tencent.com/document/product/213).
 
