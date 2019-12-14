@@ -33,7 +33,7 @@
 |cdb-abcdef10|	文娱	|后期制作|	王五|
 
 ### 使用标签
-创建与删除标签方法请参见 [标签快速入门](https://intl.cloud.tencent.com/document/product/651/36479)。
+创建与删除标签方法请参见 [标签快速入门](https://intl.cloud.tencent.com/document/product/651/32582)。
 
-编辑云数据库 MySQL 标签方法请参见 [编辑标签](https://intl.cloud.tencent.com/document/product/236/30972)。
+编辑云数据库 MySQL 标签方法请参见 [编辑标签](https://intl.cloud.tencent.com/document/product/236/31918)。
 
