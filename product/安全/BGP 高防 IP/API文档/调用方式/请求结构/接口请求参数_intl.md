@@ -3,7 +3,7 @@ API request parameters vary by API. The initial letter of each API request param
 >**Note:**
 >We take Tencent Cloud CVM-specific API as an example in this document. For other resource-specific APIs, please see relevant documents.
 
-For example, the Tencent Cloud CVM API [DescribeInstances](https://intl.cloud.tencent.com/document/api/229/831) has its specific parameters as the following table shown:
+For example, the Tencent Cloud CVM API DescribeInstances has its specific parameters as the following table shown:
 
 | Parameter Name | Description | Type | Required |
 |---------|---------|---------|---------|
