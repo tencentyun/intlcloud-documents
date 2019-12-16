@@ -1,6 +1,6 @@
 ## Description
 This API is used to delete multiple objects from a specified bucket in a single request. You can delete up to 1,000 objects in a single request. For the response, there are two modes for you to choose from: Verbose and Quiet. Verbose mode returns the information on the deletion of each object, whereas Quiet mode only returns the information on objects for which errors are reported.
->! This request must carry `Content-MD5` for an integrity check on the request body.
+> This request must carry `Content-MD5` for an integrity check on the request body.
 
 ### Notes
 1. You can delete up to 1,000 objects in a single DELETE Multiple Object request.
