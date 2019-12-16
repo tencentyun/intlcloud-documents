@@ -24,7 +24,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> ?
+> 
 > - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 > - Host: specify this as `service.cos.myqcloud.com` to query the list of all buckets; specify this as `cos.<Region>.myqcloud.com` to query the list of buckets in a specific region.
 
