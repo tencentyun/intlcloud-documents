@@ -34,7 +34,7 @@
 - [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845)
 - [私有网络 VPC](https://intl.cloud.tencent.com/document/product/215)
   - [NAT网关](https://intl.cloud.tencent.com/document/product/1015)
-  - [对等连接](https://intl.cloud.tencent.com/document/product/553)
+  - [对等连接](https://intl.cloud.tencent.com/document/product/215/5000)
   - 基础网络跨地域互联
   - [VPN 网关](https://intl.cloud.tencent.com/document/product/1037)
   - [VPN 通道](https://intl.cloud.tencent.com/document/product/1037)

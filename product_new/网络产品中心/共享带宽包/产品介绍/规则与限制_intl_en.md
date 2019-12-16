@@ -1,4 +1,4 @@
-Bandwidth Package (BWP) is currently under the beta test. To use either type of BWP, submit an [application for the beta test](https://cloud.tencent.com/act/apply/bwp_apply).
+Bandwidth Package (BWP) is currently under the beta test.
 ## Device BWPs
 - Only one BWP can be activated for one region (billed based on either the top 5 peaks or the monthly 95th percentile).
 - After the BWP is activated, all CVMs and LBs in the region will be automatically billed by the BWP.

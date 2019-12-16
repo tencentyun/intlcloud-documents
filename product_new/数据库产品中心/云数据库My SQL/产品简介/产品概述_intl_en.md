@@ -27,7 +27,7 @@ TencentDB for MySQL has the following features:
 [Tencent Cloud Console](https://console.cloud.tencent.com/cdb): Web-based UIs.
 
 ### Related Services
-For more information on how to calculate actual expenses precisely with relevant billing tools, see [Fees Overview](https://intl.cloud.tencent.com/document/product/236/18335) and [Price Calculator](https://buy.cloud.tencent.com/calculator/cdb).
+For more information on how to calculate actual expenses precisely with relevant billing tools, see [Fees Overview](https://intl.cloud.tencent.com/document/product/236/18335).
 
 For more information on how to set up in-cloud data services by purchasing TencentDB for MySQL instances, see [Purchase and Renewal Procedures](https://intl.cloud.tencent.com/document/product/236/5160) and [Getting Started](http://intl.cloud.tencent.com/document/product/236/3128).
 
@@ -35,7 +35,7 @@ For more information on how to migrate data in/off the cloud with the TencentDB 
 
 For more information on how to cleanse and analyze data with the TencentDB for MySQL data subscription tool, see [Data Subscription](http://intl.cloud.tencent.com/document/product/571/8776).
 
-For more information on how to refine the post-transaction auditing and tracking mechanism with the TencentDB for MySQL audit feature, see [Data Auditing](https://intl.cloud.tencent.com/product/cm>).
+For more information on how to refine the post-transaction auditing and tracking mechanism with the TencentDB for MySQL audit feature, see [Data Auditing](https://intl.cloud.tencent.com/product/cm).
 
 For more information on how to deploy your computing services by purchasing CVM instances, see [CVM](https://intl.cloud.tencent.com/document/product/213).
 

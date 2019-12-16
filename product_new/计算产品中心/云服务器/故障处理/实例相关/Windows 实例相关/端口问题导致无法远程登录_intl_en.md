@@ -24,7 +24,7 @@ ping + CVM Instance public IP address
 For example, execute the `ping 193.112.XXX.XXX` command.
  - If the network is normal, the following result is returned. In this case, please [check the remote desktop service configuration](#F2).
 ![](https://main.qcloudimg.com/raw/52e6c15bc862dd7724643747ed8abcfb.png)
- - If the network has an exception, the **Request Timeout** prompt will appear. In this case, please refer to [Ping Does Not Connect to Instance IP Address](https://cloud.tencent.com/document/product/213/14639).
+ - If the network has an exception, the **Request Timeout** prompt will appear. In this case, please refer to [Ping Does Not Connect to Instance IP Address](https://intl.cloud.tencent.com/document/product/213/32540).
 3. Execute the following command and press **Enter** to check whether the remote port is open and accessible.
 ```
 telnet + CVM instance public IP address + Port number

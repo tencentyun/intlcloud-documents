@@ -76,7 +76,7 @@ iOS 推送证书分为开发环境的推送证书和发布环境的推送证书�
 
 ## 上传证书
 
-第一步：[登录控制台](https://console.cloud.tencent.com/tpns/applist)
+第一步：[登录控制台](https://console.cloud.tencent.com/tpns)
 
 第二步：在【应用列表】中选择需要上传推送证书的应用
 

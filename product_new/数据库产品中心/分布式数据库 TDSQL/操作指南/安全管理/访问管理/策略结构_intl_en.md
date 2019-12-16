@@ -17,7 +17,7 @@ CAM policy configuration example:
 
 - **version** is required. Currently, only "2.0" is allowed. (This value actually represents the version of TencentCloud APIs acceptable to CAM.)
 - **statement** describes the details of one or more permissions. This element contains a permission or permission set of other elements such as effect, action, resource, and condition. One policy has only one statement.
- - **action** describes the allowed or denied action. An action entered here is a string prefixed with "dcdb:" and suffixed with an [TDSQL API](https://cloud.tencent.com/document/api/557/16124). This element is required.
+ - **action** describes the allowed or denied action. An action entered here is a string prefixed with "dcdb:" and suffixed with an TDSQL API. This element is required.
  2. **resource** describes the details of authorization. A resource is described in a six-piece format. Detailed resource definitions vary by product. For more information on how to specify a resource, see the documentation for the product whose resources you are writing a statement for. This element is required.
  3. **condition** describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address. Some services allow you to specify additional values in a condition. This element is optional.
  4. **effect** describes whether the result produced by the statement is "allowed" (allow) or "denied" (deny). This element is required.

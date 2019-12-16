@@ -20,7 +20,7 @@ You can create an external CMK in the console or through the API.
 (4). Click **OK** to create the external CMK. You can view the created CMK in the console, where the "Key Source" is displayed as "External".
 
 - **Via the API**
-Below is an example using Tencent Cloud [TCCLI](https://cloud.tencent.com/product/cli), which can be called with any supported programming language.
+Below is an example using Tencent Cloud [TCCLI](https://intl.cloud.tencent.com/product/cli), which can be called with any supported programming language.
 	When requesting the CreateKey API, set the `Type` parameter to `2` by running the following command:
 	```shell
 	tccli kms CreateKey --Alias <alias> --Type 2

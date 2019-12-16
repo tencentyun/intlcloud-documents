@@ -1,7 +1,7 @@
 This article guides you to use the Cloud Connect Network to interconnect the VPC with IDC of the same account.
 
 ## Prerequisites
-- Your account is eligible for the [beta testing](https://cloud.tencent.com/apply/p/tp2478t9skn) of the Cloud Connect Network.
+- Your account is eligible for the beta testing of the Cloud Connect Network.
 - Created the VPCs for interconnecting.
 - Eliminating conflicts between the VPC subnet IP range and IDC IP range.
 

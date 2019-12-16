@@ -1,7 +1,7 @@
 This article guides you through using CCN to associate VPCs crossing accounts. 
 
 ## Prerequisites
-- Both accounts are eligible for the [beta testing](https://cloud.tencent.com/apply/p/tp2478t9skn) of the Cloud Connect Network (Here we take account A and B as examples).
+- Both accounts are eligible for the beta testing of the Cloud Connect Network (Here we take account A and B as examples).
 - having created the VPCs for association. 
 - Eliminating conflicts between the VPC subnet IP range and IDC IP range.
 

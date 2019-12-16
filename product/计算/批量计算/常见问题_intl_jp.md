@@ -18,5 +18,5 @@ Batchサービス自体は完全に無料で、ジョブ実行中に作成され
 
 ### どのインスタンスタイプをBatchで購入できますか？
 
-FPGA、GPU、ネットワーク強化型インスタンス、および一部分の内部テスト中のインスタンスタイプを除いて、その他はすべてBatchで購入できます。各Availability Zoneでサポートされているインスタンスリストについては、[CVMインスタンス構成](https://intl.cloud.tencent.com/document/product/213/2177)を参照してください。
+FPGA、GPU、ネットワーク強化型インスタンス、および一部分の内部テスト中のインスタンスタイプを除いて、その他はすべてBatchで購入できます。各Availability Zoneでサポートされているインスタンスリストについては、[CVMインスタンス構成](https://intl.cloud.tencent.com/document/product/213/11518)を参照してください。
 

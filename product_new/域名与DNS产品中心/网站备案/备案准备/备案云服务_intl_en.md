@@ -21,14 +21,14 @@ Assume that you registered accounts A and B with Tencent Cloud. Then, you purcha
 
 ### Creating an ICP filing key
 
-1. Log in to account A under which you have purchased a CVM instance and go to the **[ICP Filing Registration Console](https://console.cloud.tencent.com/beian)** > **ICP Filing Key** page.
+1. Log in to account A under which you have purchased a CVM instance and go to the **ICP Filing Registration Console** > **ICP Filing Key** page.
 2. Click **Generate Key**.
 3. Select the CVM to be bound with and click **OK** to start generation.
 4. After the key is successfully generated, you can view its details, change the CVM or delete it on the page.
 
 ### Using an ICP filing key
 
-1. Log in to account B under which there is no CVM instance, go to the [ICP Filing Registration Console](https://console.cloud.tencent.com/beian), and click **Start ICP Filing** on the **ICP Filing Management** page to start the ICP filing process.
+1. Log in to account B under which there is no CVM instance, go to the ICP Filing Registration Console, and click **Start ICP Filing** on the **ICP Filing Management** page to start the ICP filing process.
 2. Then, select **ICP Filing Key** for **Tencent Cloud Service Used for Application** and paste the key generated in account A.
 3. After successful verification, you can use account B to proceed with the ICP filing process. IP address of the CVM instance that provided the key will be the ICP filing IP address.
 

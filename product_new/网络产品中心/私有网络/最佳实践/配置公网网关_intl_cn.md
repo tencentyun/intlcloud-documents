@@ -1,6 +1,6 @@
 ## 操作场景
  当您在腾讯云 VPC 中的部分云服务器没有普通公网 IP，但需要访问公网时，可以利用带有公网 IP（普通公网 IP 或弹性公网 IP） 的云服务器访问公网。公网网关云服务器将对出网流量进行源地址转换，所有其他云服务器访问公网的流量经过公网网关云服务器后，源 IP 都被转换为公网网关云服务器的公网 IP 地址，如下图所示：
-![](https://main.qcloudimg.com/raw/bbcf344f87b305c1453ac58af74a46be.png)
+![](https://main.qcloudimg.com/raw/5876f3c92f1ae7cb5b4d8f38e59cbfd2.png)
 ## 前提条件
 - 已登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 - 公网网关云服务器只能转发非所在子网的路由转发请求，因此，公网网关云服务器不能与需要借助公网网关访问公网的云服务器处于同一个子网下。
@@ -12,15 +12,15 @@
 
 1. 在左侧导航栏中，单击【[弹性公网IP](https://console.cloud.tencent.com/cvm/eip)】，进入弹性公网 IP 管理页面。
 2. 在需要绑定实例的弹性公网 IP 的操作栏下，选择【更多】>【绑定】。
-![](https://main.qcloudimg.com/raw/63b08cbf84289235670f03280caf0228.png)
+![](https://main.qcloudimg.com/raw/b25421e826f69e00a1890e9d59c62828.png)
 3. 在“绑定资源”弹框中，选择一个被选做公网网关的 CVM 实例进行绑定。
-![](https://main.qcloudimg.com/raw/2678de7600bdb3e1fd2be4652db1942c.png)
+![](https://main.qcloudimg.com/raw/c23b101995cabbe66d546f2a2bcb64ca.png)
 
 ### 步骤2：配置网关所在子网路由表
 网关子网和普通子网不能关联同一张路由表，需要新建一张独立的网关路由表，并将网关子网关联该路由表。
 1. 创建自定义路由表。
 2. 创建后会提示关联子网操作，直接关联公网网关服务器所在子网即可。
-![](https://main.qcloudimg.com/raw/99b404786a7e9a96ccee8c211314323b.png)
+![](https://main.qcloudimg.com/raw/c7a6697f7ce1cc4e5c515cfb894ccd25.png)
 
 ### 步骤3：配置普通子网路由表
 配置普通子网的路由表，配置默认路由走公网网关云服务器，使得普通子网内的云服务器能通过公网网关的路由转发能力访问公网。
@@ -28,7 +28,7 @@
 - 目的端：您要访问的公网地址。
 - 下一跳类型：云服务器。
 - 下一跳：步骤1中绑定弹性公网 IP 的云服务器实例的内网 IP。<!--具体操作请参见 [修改路由表]()-->
-![](https://main.qcloudimg.com/raw/14a3c3306012870dce7e761b11c05d7e.png)
+![](https://main.qcloudimg.com/raw/9b2d9537e7aa0c00428ef112db300d73.png)
 
 ### 步骤4：配置公网网关
 1. 登录公网网关云服务器，开启网络转发，NAT 代理功能，以及相关参数优化。

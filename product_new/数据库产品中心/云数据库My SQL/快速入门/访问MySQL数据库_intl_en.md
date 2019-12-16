@@ -6,7 +6,7 @@ TencentDB for MySQL can be accessed in three methods:
 
 >- For public network access, the database instance's public IP needs to be enabled, which may expose your database service to attacks or intrusions on the public network. Therefore, it is recommended to log in to the database over the private network. 
 >- Public network access to TencentDB is suitable for development or auxiliary management of databases but not for formal business access, as potentially uncontrollable factors may lead to unavailability of the public network access, such as DDoS attacks and bursts of high-traffic access.
-- **Peering connection**: For more information on private network access between CVM and TencentDB instances which reside in different regions, are under different accounts, or use different types of networks, see [Peering Connection](https://int.cloud.tencent.com/document/product/553/18827). For more information on billing, see [Billing Overview of Peering Connection](https://intl.cloud.tencent.com/document/product/553/18833).
+- **Peering connection**: For more information on private network access between CVM and TencentDB instances which reside in different regions, are under different accounts, or use different types of networks, see [Peering Connection](https://int.cloud.tencent.com/document/product/553/18827). For more information on billing, see [Billing Overview of Peering Connection](https://intl.cloud.tencent.com/document/product/215/5000/18833).
 
 
 ## Access to a TencentDB for MySQL Instance

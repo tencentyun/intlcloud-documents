@@ -1,13 +1,9 @@
 IP 带宽包的操作步骤如下图所示：
 ![](https://main.qcloudimg.com/raw/8c34e3b59c7d733227a530348186280a.png)
-## 提交申请
-1. 单击【[立即申请](https://cloud.tencent.com/act/apply/bwp_apply)】 进入申请页面。
-2. 填写申请表格并提交。
-3. 申请成功后，登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，即可在左侧导航看到**“共享带宽包控制台”**。
 
 ## 新建带宽包
 1. 在共享带宽包控制台中，选择地域，单击左上角的【+新建】。
-2. 填写名称，选择您需要计费模式，如需使用月95计费需要 [提交申请](https://cloud.tencent.com/act/apply/bwp)。
+2. 填写名称，选择您需要计费模式。
 ![](https://main.qcloudimg.com/raw/e164f16d8e9c65091df490b7a6a9b609.png)
  
 ## 添加 IP

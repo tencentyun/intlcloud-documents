@@ -60,7 +60,7 @@ Content of the Container node `CORSRule`:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |---|---|---|---|---|
-|ID|CORSConfiguration.CORSRule|ID of the configuration rule; optional |string| Yes |
+|ID|CORSConfiguration.CORSRule|Configures the rule ID |string| No |
 |AllowedOrigin|CORSConfiguration.CORSRule| Allowed origin in the format of `protocol://domain name[:port number]`, such as `http://www.qq.com`. Wildcard `*` is supported |strings| Yes |
 |AllowedMethod|CORSConfiguration.CORSRule| Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE |strings| Yes |
 |AllowedHeader|CORSConfiguration.CORSRule| Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported |strings| Yes |

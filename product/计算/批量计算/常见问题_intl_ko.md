@@ -18,5 +18,5 @@ Batch Compute 서비스 자체는 완전히 무료이지만 작업 실행 과정
 
 ### Batch Compute 중 어느 인스턴스 유형을 구매할 수 있나요?
 
-FPGA, GPU 및 네트워크 강화형 인스턴스와 일부 내부 테스트 중인 인스턴스 유형을 제외한 나머지 모두 사용할 수 있습니다. 가용 영역마다 지원하는 인스턴스 목록은 [CVM 인스턴스 구성](https://intl.cloud.tencent.com/document/product/213/2177)을 참조하십시오.
+FPGA, GPU 및 네트워크 강화형 인스턴스와 일부 내부 테스트 중인 인스턴스 유형을 제외한 나머지 모두 사용할 수 있습니다. 가용 영역마다 지원하는 인스턴스 목록은 [CVM 인스턴스 구성](https://intl.cloud.tencent.com/document/product/213/11518)을 참조하십시오.
 

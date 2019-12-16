@@ -105,7 +105,7 @@ This article contains information about CAM-enabled services, including detailed
  | Service                                                         | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |
 | [LVB](https://intl.cloud.tencent.com/document/product/267)       | ✔        | ✔      | ✔      | Operation level   | ✔        |  -    |
-| [VOD](https://intl.cloud.tencent.com/document/product/266)       | ✔        | -      | ✔      | Service level   | -        |  -  |
+| VOD      | ✔        | -      | ✔      | Service level   | -        |  -  |
 | ILVB*   | ✔        | -      | ✔      | Service level   | -        | -     |
 
 ## Big Data Platform 
@@ -168,7 +168,7 @@ This article contains information about CAM-enabled services, including detailed
 
 | Service                                                        | Policy Syntax | Cloud API | Console | Authorization Granularity | Temporary Key | Role |
 | ------------------------------------------------------------ | -------- | ------ | ------ | -------- | -------- | ---- |	
-| [YouMall](https://intl.cloud.tencent.com/document/product/1010)         |-        | -      | -      | -   | -        |✔    |
+| YouMall       |-        | -      | -      | -   | -        |✔    |
 
 ## Mobile	
  

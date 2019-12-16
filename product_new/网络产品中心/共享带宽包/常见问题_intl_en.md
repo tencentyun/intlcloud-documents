@@ -1,9 +1,6 @@
 ### What is Tencent Cloud Bandwidth Package?
 Tencent Cloud Bandwidth Package (BWP) is a multi-IP aggregated traffic billing method. If you enable BWP in the Guangzhou region, all your devices in this region can be billed by BWP.
 
-### How Do I Enable BWP?
-To enable postpaid BWP, submit an [application for the beta test](https://cloud.tencent.com/act/apply/bwp_apply).
-
 ### What Types of BWP Are Available?
 There are two types of Tencent Cloud BWPs, Device BWP and IP BWP. For more information, see [Product Types](https://intl.cloud.tencent.com/document/product/684/15246).
 

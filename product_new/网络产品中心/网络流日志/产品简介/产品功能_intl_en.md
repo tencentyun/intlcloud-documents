@@ -5,8 +5,6 @@ You can query flow logs in CLS. Features such as full-text search, multi-keyword
 ## Publishing Flow Log Data
 - **Publishing to [COS](https://intl.cloud.tencent.com/document/product/436)**
 CLS can publish the flow log data to a COS bucket under your account to store and manage such data.
-- **Publishing to [CAS](https://intl.cloud.tencent.com/document/product/572) (coming soon)**
-CLS can publish the flow log data to CAS under your account to back up and store such data for log audit.
 
 ## Flow Log Record
 A flow log record represents a network flow in your flow logs. Each record captures a particular 5-tuple network flow that occurs within a capture window.

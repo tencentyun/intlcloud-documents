@@ -5,7 +5,7 @@
 >!
 >- 外网访问需要开启数据库实例的外网地址，此操作会使您的数据库服务暴露在公网上，可能导致数据库被入侵或攻击。建议您使用内网访问的方式来登录数据库。 
 >- 云数据库外网访问适用于开发或辅助管理数据库，不建议正式业务访问使用，因为可能存在不可控因素会导致外网访问不可用（例如 DDOS 攻击、突发大流量访问等）。
-- **对等连接**：对于不同地域、不同账号或不同网络类型的 CVM 与数据库的内网连接方式，请参见 [对等连接](https://int.cloud.tencent.com/document/product/553/18827)，收费标准请参见 [对等连接计费概述](https://intl.cloud.tencent.com/document/product/553/18833)。
+- **对等连接**：对于不同地域、不同账号或不同网络类型的 CVM 与数据库的内网连接方式，请参见 [对等连接](https://int.cloud.tencent.com/document/product/553/18827)，收费标准请参见 [对等连接计费概述](https://intl.cloud.tencent.com/document/product/215/5000/18833)。
 
 
 ## 访问 MySQL 实例

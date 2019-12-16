@@ -30,10 +30,12 @@ ES supports the following two upgrade types.
   </tr>
 </table>
 <b>Descriptions of Elastic Stack editions:</b>
-The Basic Edition and Platinum Edition integrate Elasticsearch's official Elastic Stack (formerly X-Pack) features such as security, SQL, machine learning, and monitoring. The former only comes with certain SQL features and monitoring, while the latter has all Elastic Stack features. For more information, see [Elastic Stack (X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943).
+The Basic Edition and Platinum Edition integrate Elasticsearch's official Elastic Stack (formerly X-Pack) features such as security, SQL, machine learning, and monitoring. The former only comes with certain SQL features and monitoring, while the latter has all Elastic Stack features. 
+
+For more information, see [Elastic Stack (X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943).
  
->
- >1. You can perform only one of the two types of upgrade above at a time. Particularly, when you upgrade from version 5.6.4 to version 6.4.3, you can also choose to upgrade to the Basic Edition, which comes with the features provided by the Elasticsearch's official Elastic Stack (formerly X-Pack) such as monitoring and SQL. This practice is highly recommended.
+
+>1. You can perform only one of the two types of upgrade above at a time. Particularly, when you upgrade from version 5.6.4 to version 6.4.3, you can also choose to upgrade to the Basic Edition, which comes with the features provided by the Elasticsearch's official Elastic Stack (formerly X-Pack) such as monitoring and SQL. This practice is highly recommended.
  >2. Version 5.6.4 only supports the Open Source Edition for the time being and cannot be upgraded to the Basic or Platinum Edition.
 
 ## Notes on upgrade
@@ -67,7 +69,7 @@ To upgrade the Elasticsearch version, you need to complete upgrade check and dat
 1. <a id="update_check">Upgrade check</a>
 >  This applies only when you upgrade the Elasticsearch version.
 >
- Check whether the two versions have any incompatible configuration items. If the check fails, the process will terminate, and you can view the specific check items and corresponding solutions. For more information, see [Upgrade Check](https://intl.cloud.tencent.com/document/product/845/36106). You can also choose to only perform an upgrade check before upgrade so as to see whether your cluster meets the conditions for upgrade.
+ Check whether the two versions have any incompatible configuration items. If the check fails, the process will terminate, and you can view the specific check items and corresponding solutions. For more information, see [Upgrade Check](https://intl.cloud.tencent.com/document/product/845/32599). You can also choose to only perform an upgrade check before upgrade so as to see whether your cluster meets the conditions for upgrade.
 2. Snapshot backup
   > This applies only when you upgrade the Elasticsearch version.
   >
