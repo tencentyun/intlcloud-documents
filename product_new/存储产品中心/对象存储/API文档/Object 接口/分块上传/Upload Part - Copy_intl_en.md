@@ -1,7 +1,7 @@
 ## Description
 This API is used to copy the parts of an object from the source path to the destination path. You can use `x-cos-copy-source` to specify the source object and use `x-cos-copy-source-range` to specify the byte range (allowed part size: 5 MB - 5 GB).
 
->!
+>
 >- If the destination object and the source object are in different regions, and the part size of the destination object will exceed 5 GB, you will need to use multipart upload or multipart copy API to copy the object.
 >- To upload an object in parts, you must first initialize the multipart upload. A unique descriptor (upload ID) will be returned in the response of multipart upload initialization, which needs to be carried in the multipart upload request.
 
