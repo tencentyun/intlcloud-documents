@@ -2,7 +2,7 @@
 
 This API is used to download an object in a COS bucket to a local file system. To make this request, you need to have Read access to the target object or the target object allows Public Read.
 
->? If the `response-*` request parameter is used, this request operation will not support anonymous request and must carry a signature.
+> If the `response-*` request parameter is used, this request operation will not support anonymous request and must carry a signature.
 
 #### Versioning
 
@@ -19,7 +19,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
