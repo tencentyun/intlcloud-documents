@@ -1,5 +1,5 @@
 アクティブアウトバウンドサーバーは明らかに適時性があり、ASサービスを使用して、リクエストサーバーの作成配置と圧縮を迅速に完了できます。
 ユーザーがいつ拡張または圧縮するかを知っている場合は、AS時限ポリシーを事前に設定できます。適切な時間に、システムは自動的にCVMインスタンスを追加または削減するため、手動で待機する必要がなく、配置とインスタンスのコストを節約します。
 
-![Alt text](https://mc.qcloudimg.com/static/img/d3b2a495962d5de3fe890260409496b9/03.png)
+![Alt text](https://mc.qcloudimg.com/static/img/b5bf99353f6c63f6798318616ca26761/AS-Tutorial-Creating+Servers+for+Sending+Requests.png)
 
