@@ -1,7 +1,7 @@
 ## Description
 This API is used to query the ongoing multipart uploads. A single request operation can list up to 1,000 multipart uploads.
 
->! To make the request, you need to have the permission to read the bucket.
+> To make the request, you need to have the permission to read the bucket.
 
 ## Request
 ### Sample Request
