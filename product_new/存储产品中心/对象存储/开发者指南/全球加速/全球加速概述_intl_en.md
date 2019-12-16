@@ -8,13 +8,13 @@ The global acceleration feature of Tencent Cloud COS utilizes a load balancing s
 You can enable global acceleration in the COS Console or through APIs.
 
 #### Via the COS Console
-You can enable global acceleration for your buckets in the COS Console. For more information, please see [Enabling Global Acceleration](https://cloud.tencent.com/document/product/436/38864) in console documentation.
+You can enable global acceleration for your buckets in the COS Console. For more information, please see [Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406) in console documentation.
 
 #### Via REST API
 You can directly use the following APIs to enable global acceleration:
 
-- [PUT Bucket Accelerate](https://cloud.tencent.com/document/product/436/38869)
-- [GET Bucket Accelerate](https://cloud.tencent.com/document/product/436/38868)
+- [PUT Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33411)
+- [GET Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33412)
 
 ## Access domain name
 
@@ -31,7 +31,7 @@ Take the bucket `examplebucket-125000000` in Guangzhou as an example. If you hav
 >If you use global acceleration, fees will be incurred. Therefore, it is recommended that you carefully evaluate this feature based on your actual business needs:
 >
 > 1. If your business has more writes (e.g., PUT Object, POST Object, and Multipart Upload) than reads and uploads data from a remote region to Tencent Cloud data centers, you are recommended to use a global acceleration domain name.
-> 2. If your business has more reads (e.g., GET Object) than writes and mainly involves file download, you are recommended to perform a comprehensive evaluation on the [CDN-based access acceleration](https://intl.cloud.tencent.com/zh/document/product/436/18669) solution and select the option with the best cost performance.
+> 2. If your business has more reads (e.g., GET Object) than writes and mainly involves file download, you are recommended to perform a comprehensive evaluation on the [CDN-based access acceleration](https://intl.cloud.tencent.com/document/product/436/18669) solution and select the option with the best cost performance.
 > 3. If your business mainly involves configuration operations or file extraction, you are recommended to use a default bucket domain name.
 > 4. If your business needs to access buckets over the private network or a Direct Connect line in the same region, you are recommended to use a default bucket domain name.
 
