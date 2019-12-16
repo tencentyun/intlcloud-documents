@@ -8,13 +8,13 @@
 您可以通过对象存储控制台、API 等方式开启全球加速功能。
 
 #### 使用对象存储控制台
-您可以通过对象存储控制台为您的存储桶开启全球加速功能，请参见 [开启全球加速](https://cloud.tencent.com/document/product/436/38864) 控制台文档。
+您可以通过对象存储控制台为您的存储桶开启全球加速功能，请参见 [开启全球加速](https://intl.cloud.tencent.com/document/product/436/33406) 控制台文档。
 
 #### 使用 REST API
 您可以直接通过以下 API 开启全球加速功能：
 
-- [PUT Bucket Accelerate](https://cloud.tencent.com/document/product/436/38869)
-- [GET Bucket Accelerate](https://cloud.tencent.com/document/product/436/38868)
+- [PUT Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33411)
+- [GET Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33412)
 
 ## 访问域名
 
@@ -31,7 +31,7 @@
 >使用全球加速功能会额外产生费用，因此我们建议您根据业务实际情况审慎评估：
 >
 > 1. 如果您的业务写入多于读取，且需要从偏远地区上传数据到云机房时（例如 PUT Objcet、POST Object、Multipart Upload 等操作），我们建议您使用全球加速域名。
-> 2. 如果您的业务读取多于写入，涉及的主要场景以文件下载居多（例如 GET Objcet 操作），我们建议您综合评估 [使用 CDN 加速](https://intl.cloud.tencent.com/zh/document/product/436/18669) 的方案，选择成本最优的方案。
+> 2. 如果您的业务读取多于写入，涉及的主要场景以文件下载居多（例如 GET Objcet 操作），我们建议您综合评估 [使用 CDN 加速](https://intl.cloud.tencent.com/document/product/436/18669) 的方案，选择成本最优的方案。
 > 3. 如果您的业务以配置操作为主，或者是检索文件，我们建议您使用存储桶默认域名。
 > 4. 如果您的业务是通过同地域的内网访问同地域的存储桶，或者通过专线进行访问，我们建议您使用使用存储桶默认域名。
 
