@@ -20,11 +20,11 @@ Date: GMT date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String（详情请参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。
+> Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 请求体
 
@@ -46,7 +46,7 @@ Authorization: Auth String
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。 
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。 
 
 #### 响应体
 
@@ -54,7 +54,7 @@ Authorization: Auth String
 
 #### 错误码
 
-该请求操作可能会出现如下错误信息，常见的错误信息请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档。
+该请求操作可能会出现如下错误信息，常见的错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档。
 
 | 错误码          | HTTP状态码      | 描述                                                         |
 | --------------- | --------------- | ------------------------------------------------------------ |
