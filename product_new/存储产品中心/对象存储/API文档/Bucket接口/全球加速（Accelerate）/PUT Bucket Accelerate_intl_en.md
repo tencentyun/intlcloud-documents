@@ -46,7 +46,7 @@ Detailed data is as shown below:
 
 #### Response header
 
-This API only returns common response headers. For more information, please see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729). 
+This API only returns common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729). 
 
 #### Response body
 
