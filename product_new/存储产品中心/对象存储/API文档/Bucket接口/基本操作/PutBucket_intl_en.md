@@ -2,7 +2,7 @@
 
 This API is used to create a bucket under a specified account. This API does not support anonymous requests; only a request carrying the Authorization signature can create a new bucket. The bucket creator is the bucket owner by default.
 
->? If no access permission is specified for a bucket when it is created, the private Read/Write (private) access will be used by default.
+> If no access permission is specified for a bucket when it is created, the private Read/Write (private) access will be used by default.
 
 ## Request
 
@@ -16,7 +16,7 @@ Content-Length: 0
 Authorization: Auth String
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
 #### Request Parameters
 
