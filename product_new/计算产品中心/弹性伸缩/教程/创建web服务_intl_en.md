@@ -3,7 +3,7 @@ Auto Scaling (AS) is applicable to servers used for common Web services. It help
 
 For e-commerce websites, video websites, and online education websites, requests from clients are directs to the application server through load balancers. In case of rapid changes in the access volume, Auto Scaling can flexibly scale in and out application CVMs based on the volume of requests.
 
-![Alt text](https://mc.qcloudimg.com/static/img/ba977d67b59a73d6a137323b61d17ec4/01+%282%29.png)
+![Alt text](https://mc.qcloudimg.com/static/img/76238c1b282534b67e80a7e4d04bba17/AS-Best+Practise-Cluster+Solution%282%29.png)
 
 ## Usage
 Add the following clusters to the scaling group to provide further protection for the cluster:
