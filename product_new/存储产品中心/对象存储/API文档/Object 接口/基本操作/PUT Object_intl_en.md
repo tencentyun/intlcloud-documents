@@ -2,7 +2,7 @@
 
 This API is used to upload a local object to a specified bucket. To make this request, you need to have the permission to write to the bucket.
 
-> ?
+> 
 >- If the `Content-Length` value in the request header is smaller than the length of the data in the actual request body, COS will still successfully create a file, but the object size will equal the size defined in `Content-Length`, and the remaining data will be discarded.
 >- If there is an object in the bucket with the same name as the object to be uploaded, and versioning is not enabled, the old object will be overwritten by the new one and `200 OK` will be returned upon success.
 
@@ -27,7 +27,7 @@ Authorization: Auth String
 [Object Content]
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
