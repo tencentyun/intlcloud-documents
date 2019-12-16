@@ -2,7 +2,7 @@ COS uses XML APIs, which are lightweight, connectionless, and stateless. By call
 
 Since COS APIs and TencentCloud APIs use different data transfer frameworks, APIs and SDKs provided by COS are independent of TencentCloud APIs and SDKs. You can find more information in [API Operation List](https://intl.cloud.tencent.com/document/product/436/10111) or download SDKs in [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474). The guides for TencentCloud APIs and corresponding SDKs do not cover the operational features of COS.
 
->!
+>
 >- By using Tencent Cloud COS APIs, you acknowledge that you have read and agree to the [Tencent Cloud Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248) and [Tencent Cloud Object Storage Service Level Agreement](https://intl.cloud.tencent.com/document/product/436/6227).
 For more information on the regions where COS is available, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). 
 >- Before using the APIs or SDKs to initiate a request, you are recommended to read the [Creating Request Overview](https://intl.cloud.tencent.com/document/product/436/30613) document to learn more about access domain name, authentication, and how to determine whether an access is via private or public network.
