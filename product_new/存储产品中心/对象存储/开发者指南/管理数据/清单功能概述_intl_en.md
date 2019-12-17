@@ -77,7 +77,7 @@ To learn how to configure the inventory via APIs, see the following API Document
 - [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) 
 - [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) 
 - [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) 
-- [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627) 
+- List Bucket Inventory Configurations
 
 ## Storage Path for the Inventory Report
 
