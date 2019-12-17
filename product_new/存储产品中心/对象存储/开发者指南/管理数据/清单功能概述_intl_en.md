@@ -8,7 +8,7 @@ You can use the inventory feature for various purposes, including but not limite
 - Streamline and speed up service workflows and big data jobs.
 
 >- You can configure multiple inventory tasks for one bucket. COS doesn’t directly read the content of an object, but only scan the attribute information such as metadata of the object.
->- Currently, the inventory feature is not available for COS buckets in financial cloud regions.
+>- Currently, the inventory feature is not available for COS buckets in financial cloud regions and outside China regions.
 
 ## Inventory Parameters
 
