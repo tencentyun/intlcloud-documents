@@ -23,7 +23,7 @@ Authorization: Auth String
 | --- | --- | --- | --- |
 | prefix | Matching prefix for object keys, which sets that the response will only contain object keys with the specified prefix | string | No |
 | delimiter | A character delimiter used to group object keys. The identical paths between `prefix` or, if no `prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the examples below | string | No |
-| encoding-type | Specifies the encoding type of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "腾讯云" will be encoded as `%E8%85%BE%E8%AE%AF%E4%BA%91` | string | No |
+| encoding-type | Specifies the encoding type of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded as `Tencent%20Cloud` | string | No |
 | marker | Marker for the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after the marker | string | No |
 | max-keys | Maximum number of entries returned at a time. Default value: 1,000; maximum value: 1,000 | integer | No |
 
