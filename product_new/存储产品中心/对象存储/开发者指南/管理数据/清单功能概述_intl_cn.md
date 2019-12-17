@@ -74,10 +74,10 @@
 
 您可以参见以下 API 文档了解如何通过 API 配置清单功能：
 
-- [PUT Bucket inventory](https://cloud.tencent.com/document/product/436/33707) 
-- [GET Bucket inventory](https://cloud.tencent.com/document/product/436/33705) 
-- [DELETE Bucket inventory](https://cloud.tencent.com/document/product/436/33704) 
-- [List Bucket Inventory Configurations](https://cloud.tencent.com/document/product/436/33706) 
+- [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) 
+- [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) 
+- [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) 
+- List Bucket Inventory Configurations
 
 ## 清单报告存储路径
 
