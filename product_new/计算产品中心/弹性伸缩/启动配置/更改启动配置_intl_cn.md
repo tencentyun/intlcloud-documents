@@ -6,4 +6,4 @@
 
 **step 2：** 更换对应伸缩组的启动配置，在伸缩组的详情页面，单击“编辑”按钮，之后指向新的启动配置。如图：
 
-![Alt text](https://mc.qcloudimg.com/static/img/6032ba6bf959267ab83922dd2216f0ee/as_revise_3.jpg)
+![Alt text](https://main.qcloudimg.com/raw/dcf76968439d728860e23c70d1fc63f6.png)

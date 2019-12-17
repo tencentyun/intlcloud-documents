@@ -2,7 +2,7 @@
 云计算让高性能计算（HPC）可以使用更高带宽和更高计算能力的应用程序，来解决复杂的科学、工程和业务问题。
 但 HPC 解决的问题通常是项目性的，对云平台的高扩展性要求也有很高要求。可将计算节点做成伸缩组的启动配置（模板）。有计算任务时，调高期望实例数即可一键生成多个计算节点。完成计算保存结果后，再修改期望实例数将完成任务的计算节点删除。
 
-![Alt text](https://mc.qcloudimg.com/static/img/3b24fb381a8996722fd86ecc69cfa762/AS-Tutorial-Creating+High-performance+Computing+Cluster.png)
+![Alt text](https://mc.qcloudimg.com/static/img/abdc577a0708353443eb28fdd154a51a/AS-Customer+Cases-iCarbonX%282%29.png)
 
 ## 使用方法
 制作计算集群中的节点的启动配置，将计算集群放入伸缩组中。

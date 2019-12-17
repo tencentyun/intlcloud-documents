@@ -8,7 +8,7 @@
 
 打开 [控制台](https://console.cloud.tencent.com/autoscaling/config)，选择导航条中的【伸缩组】，在伸缩组列表的右侧单击【停用】。
 
-![](https://mc.qcloudimg.com/static/img/4ab9c83f55b9a0b8fc0b340775a99c4f/1.jpg)
+![](https://main.qcloudimg.com/raw/d34a4b7ad48d5d23620d3e9dbd4afa5e.png)
 
 设置完后，在【状态】列中可看到“停用”字样。
 
@@ -34,7 +34,7 @@
 
 打开[控制台](https://console.cloud.tencent.com/autoscaling/config)，选择导航条中的【伸缩组】，在伸缩组列表的右侧单击【启用】即可。
 
-![](https://mc.qcloudimg.com/static/img/7decfa58fa823b7cba12f596091e7b69/2.jpg)
+![](https://main.qcloudimg.com/raw/216fbb71a440af2e1453537531cc0cc1.png)
 
 
 
