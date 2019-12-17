@@ -17,7 +17,7 @@ New users will receive a certain amount of standard storage provided by COS free
 
 ## Billable Items
 
-Billable items in COS include [storage usage](#jf1), [requests](#jf2), [data retrievals](#jf3), [traffic](#jf4) and [administrative feature fees](#jf5) as shown below:
+Billable items in COS include [storage usage](#jf1), [requests](#jf2), [data retrievals](#jf3), [traffic](#jf4) and [management feature fees](#jf5) as shown below:
 
 ![](https://main.qcloudimg.com/raw/1355e7c9ca4ba0540edbc5fb9a0bf5a4.svg)
 
@@ -158,8 +158,8 @@ The figure below shows the traffic fees incurred by data transmitted from COS to
 
 <span id="jf5"></span>
 
-### Administrative Feature Fees
-Administrative feature fees refers to the cost incurred after the user starts and uses the administrative feature (such as inventory or select feature). At present, administrative feature fees include inventory feature costs and select feature costs.
+### Management Feature Fees
+Management feature fees refers to the cost incurred after the user starts and uses the management feature (such as inventory or select feature). At present, management feature fees include inventory feature costs and select feature costs.
 
 | Billable Item | Applicable Storage Class | Meaning | Description |
 | ---------- | ---------------------- | -------------------------------- | ------------------------------------------------------------ |
