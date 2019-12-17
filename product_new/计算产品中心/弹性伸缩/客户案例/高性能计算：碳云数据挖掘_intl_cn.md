@@ -31,7 +31,7 @@
 
 其中，最需要扩展的计算集群采用如下的部署方式：
 
-![Alt text](https://mc.qcloudimg.com/static/img/abdc577a0708353443eb28fdd154a51a/AS-Customer+Cases-iCarbonX%282%29.png)
+![Alt text](https://main.qcloudimg.com/raw/06b9146add277329c32f68606d9a3a51.png)
  
 可以看到，将最需要海量扩展能力的 Compute Node 交给 AS，碳云实现了在分钟级别创建动辄上千核、数百 TB 的 HPC 集群。计算集群的稳定性和实时性得到极大提升，且减少了人工投入，进而极大程度地节约了成本。
 
