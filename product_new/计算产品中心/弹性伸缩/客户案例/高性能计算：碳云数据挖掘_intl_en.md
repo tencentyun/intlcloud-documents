@@ -31,7 +31,7 @@ iCarbonX allows customers to integrate the advantages of artificial intelligence
 
 The computing cluster to be urgently scaled up is deployed as follows:
 
-![Alt text](https://mc.qcloudimg.com/static/img/abdc577a0708353443eb28fdd154a51a/AS-Customer+Cases-iCarbonX%282%29.png)
+![Alt text](https://main.qcloudimg.com/raw/06b9146add277329c32f68606d9a3a51.png)
  
 Here, you can see that by placing the Compute Node which urgently requires massive scalability into AS, iCarbonX can create HPC clusters with 1,000+ cores and 100+ TB in minutes, greatly improving the stability and real-time nature of the computing cluster while reducing human input, thus greatly reducing costs.
 
