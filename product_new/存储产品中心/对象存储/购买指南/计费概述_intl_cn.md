@@ -19,7 +19,7 @@
 
 对象存储 COS 的计费项包括：[存储容量费用](#jf1)、[请求费用](#jf2)、[数据取回费用](#jf3)、[流量费用](#jf4) 和 [管理功能费用](#jf5)。费用组成如下图所示：
 
-![](https://main.qcloudimg.com/raw/0cacd6076996e43dabd92acdbc2405a8.svg)
+![](https://main.qcloudimg.com/raw/2605ae68c8690d3b9092673fee8e75a6.png)
 
 <span id="jf1"></span>
 
