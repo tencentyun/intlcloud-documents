@@ -348,7 +348,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
    </tr>
 </table>
 
-###  Administrative Feature Pricing
+###  Management Feature Pricing
 
 
 >The inventory feature cost and the select feature cost are settled on a daily basis.
@@ -356,7 +356,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
 <table>
    <tr>
 	 <th rowspan=3 ><center>Region</center></th>
-      <th colspan=2 ><center>Administrative Cost</center></th>
+      <th colspan=2 ><center>Management Cost</center></th>
    </tr>
    <tr>
       <th rowspan=2>Inventory Feature<br>(USD / per million objects listed)</th>
