@@ -54,8 +54,8 @@ You can initiate an extraction request using the console, API, or SDK:
 
 - To use the console, follow the steps in [Extracting Data].
 - To use the SDK, you can go to [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474) and select the required SDK API.
-- To use the API, see [SELECT Object Content].
+- To use the API, see [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/32360).
 
 ## FAQs
 
-If a problem occurs when you try to execute a query, COS Select will return an error code and the associated error message. For the list of error codes and descriptions, see [Special Error Codes].                      
+If a problem occurs when you try to execute a query, COS Select will return an error code and the associated error message. For the list of error codes and descriptions, see [Special Error Codes](https://intl.cloud.tencent.com/document/product/436/32360#errorcode).                      
