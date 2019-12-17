@@ -13,7 +13,7 @@ There are two ways to use the authentication credential:
 
 The COS.getAuthorization method is used to calculate the authentication credential (Authorization), which is the signing information used to verify the request validity.
 
-> ! It is recommended to only use this method for frontend debugging and not in real projects as it involves key disclosure risks.
+>  It is recommended to only use this method for frontend debugging and not in real projects as it involves key disclosure risks.
 
 #### Use Cases
 
