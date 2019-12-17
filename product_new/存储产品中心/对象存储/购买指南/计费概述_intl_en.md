@@ -158,8 +158,8 @@ The figure below shows the traffic fees incurred by data transmitted from COS to
 
 <span id="jf5"></span>
 
-### Administrative Feature Cost
-Management function fee refers to the cost incurred after the user starts and uses the management function (such as inventory or retrieval function). At present, management function costs include inventory function costs and data retrieval function costs.
+### Administrative Feature Fees
+Administrative feature fees refers to the cost incurred after the user starts and uses the administrative feature (such as inventory or select feature). At present, administrative feature fees include inventory feature costs and select feature costs.
 
 | Billable Item | Applicable Storage Class | Meaning | Description |
 | ---------- | ---------------------- | -------------------------------- | ------------------------------------------------------------ |
