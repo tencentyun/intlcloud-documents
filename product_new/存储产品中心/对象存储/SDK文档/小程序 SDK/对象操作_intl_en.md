@@ -6,7 +6,7 @@ This document provides an overview of APIs and SDK code samples related to opera
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ---------------------------------------- |
-| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | Querying object list | Queries some or all objects in a bucket |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | Querying object list | Queries some or all objects in a bucket |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using a form | Uploads an object using a form request |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
@@ -164,7 +164,7 @@ function(err, data) { ... }
 
 This API (PUT Object) is used to upload an object to a bucket. To make this request, you need to have the permission to write to the bucket.
 
-> !
+> 
 >
 > 1. An object key (file name) cannot end with `/`; otherwise, the file will be recognized as a folder.
 2. The total number of policies associated with bucket ACL, Policy, and CAM under a single root account (i.e., under the same APPID) cannot exceed 1,000. There is no upper limit on the number of object ACL rules. If you do not need access control for an object, do not make the configuration when uploading it, and the object will inherit the permissions of its bucket.
@@ -356,7 +356,7 @@ function(err, data) { ... }
 
 This API (GET Object) is used to get the content, in string format, of a specified file in a bucket.
 
->? This API is used to pass the file content to a JS variable. If you need to launch a browser to download a file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31711).
+> This API is used to pass the file content to a JS variable. If you need to launch a browser to download a file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31711).
 
 
 #### Sample
@@ -700,7 +700,7 @@ function(err, data) { ... }
 
 This API (PUT Object acl) is used to set the ACL for an object.
 
-> ! The total number of policies associated with bucket ACL, Policy, and CAM under a single root account (i.e., under the same APPID) cannot exceed 1,000. There is no upper limit on the number of object ACL rules. If you do not need access control for an object, do not make the configuration, and the object will inherit the permissions of its bucket.
+>  The total number of policies associated with bucket ACL, Policy, and CAM under a single root account (i.e., under the same APPID) cannot exceed 1,000. There is no upper limit on the number of object ACL rules. If you do not need access control for an object, do not make the configuration, and the object will inherit the permissions of its bucket.
 
 #### Sample
 
