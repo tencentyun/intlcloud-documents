@@ -1,9 +1,9 @@
 ## Overview
 
-You can enable global acceleration for your bucket in the COS Console, so that end users around the globe can quickly access your bucket, which improves your business access success rate and business stability.For more information on global acceleration, please see [Global Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/33409).
+You can enable global acceleration for your bucket in the COS Console, so that around the world can quickly access your bucket, which improves your business access success rate and business stability.For more information on global acceleration, please see [Global Acceleration Overview](https://intl.cloud.tencent.com/document/product/436/33409).
 ## Directions
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left sidebar, and select the bucket for which you want to configure global acceleration to enter the bucket details page.
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left navigation bar, and select the bucket for which you want to configure global acceleration to enter the bucket details page.
 ![Bucket list page](https://main.qcloudimg.com/raw/01045b0ada6a9c72b55bf090d14fc193.png)
 2. Click **Basic Configuration** on the left to enter the basic configuration page of the bucket, scroll down to **Global Acceleration** and click **Edit**.
 ![](https://main.qcloudimg.com/raw/e26fe8fd79c9bbc0d0ad1f9fe9088169.png)
