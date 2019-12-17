@@ -1,7 +1,7 @@
 The global acceleration feature of Tencent Cloud COS utilizes a load balancing system based on Tencent's global traffic scheduling to intelligently route and parse user requests and select the optimal network linkage for nearby access. Backed by globally deployed Tencent Cloud data centers, it allows users across the world to quickly access your buckets and improves your business access success rate for a higher business stability and smoother user experience.
 
 
->Currently, the global acceleration feature of COS is in beta test. To try it out, [please submit an application for beta test eligibility](https://cloud.tencent.com/apply/p/j5u6h2ibpi8).
+>Currently, the global acceleration feature of COS is in beta test. To try it out, [please submit an application for beta test eligibility](https://console.cloud.tencent.com/workorder/category).
 
 ## Directions
 
@@ -33,7 +33,7 @@ Take the bucket `examplebucket-125000000` in Guangzhou as an example. If you hav
 > 1. If your business has more writes (e.g., PUT Object, POST Object, and Multipart Upload) than reads and uploads data from a remote region to Tencent Cloud data centers, you are recommended to use a global acceleration domain name.
 > 2. If your business has more reads (e.g., GET Object) than writes and mainly involves file download, you are recommended to perform a comprehensive evaluation on the [CDN-based access acceleration](https://intl.cloud.tencent.com/document/product/436/18669) solution and select the option with the best cost performance.
 > 3. If your business mainly involves configuration operations or file extraction, you are recommended to use a default bucket domain name.
-> 4. If your business needs to access buckets over the private network or a Direct Connect line in the same region, you are recommended to use a default bucket domain name.
+> 4. If your business needs to access buckets over the private network or a direct connect line in the same region, you are recommended to use a default bucket domain name.
 
 ## Notes
 
