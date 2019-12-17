@@ -17,7 +17,7 @@ New users will receive a certain amount of standard storage provided by COS free
 
 ## Billable Items
 
-Billable items in COS include [storage usage](#jf1), [requests](#jf2), [data retrievals](#jf3), [traffic](#jf4) and [administrative feature cost](#jf5) as shown below:
+Billable items in COS include [storage usage](#jf1), [requests](#jf2), [data retrievals](#jf3), [traffic](#jf4) and [administrative feature fees](#jf5) as shown below:
 
 ![](https://main.qcloudimg.com/raw/1355e7c9ca4ba0540edbc5fb9a0bf5a4.svg)
 
