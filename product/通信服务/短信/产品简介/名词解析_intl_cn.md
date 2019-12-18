@@ -5,7 +5,7 @@
 发送Global SMS可不带签名，发送Mainland China SMS必须包含签名。
 
 ## 短信签名
-短信签名是附加在短信内容前面的标识，用于标识公司或业务。申请时企业用户需要上传资质证明，个人用户需要上传个人身份证明。短信签名需要审核通过后才可使用。短信签名审核标准请参阅 [签名审核标准]((https://intl.cloud.tencent.com/document/product/382/13444#signature-audit-criteria) 章节。
+短信签名是附加在短信内容前面的标识，用于标识公司或业务。申请时企业用户需要上传资质证明，个人用户需要上传个人身份证明。短信签名需要审核通过后才可使用。短信签名审核标准请参阅 [签名审核标准](https://intl.cloud.tencent.com/document/product/382/13444#signature-audit-criteria) 章节。
 **签名示例：**
 认证企业为：深圳市腾讯计算机系统有限公司
 >例如：
