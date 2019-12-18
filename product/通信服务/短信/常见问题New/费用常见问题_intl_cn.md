@@ -4,7 +4,7 @@
 ### 国际短信计费策略是什么？
 
 国际短信：采用的后付费策略，只有企业认证的用户才能使用；
-详细请参阅 [产品价格](https://cloud.tencent.com/document/product/382/8414) 文档，计费相关规则可参阅 [计费相关](https://cloud.tencent.com/document/product/382/9556) 规则文档。
+详细请参阅 [产品价格](https://intl.cloud.tencent.com/document/product/382/18051) 文档，计费相关规则可参阅 [计费相关](https://intl.cloud.tencent.com/document/product/382/18052) 规则文档。
 
 ### 为什么账户有余额，但是发送短信返回 1031 错误码（余额不足）？
 
