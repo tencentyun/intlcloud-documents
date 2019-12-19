@@ -4,7 +4,7 @@ A sub-account Developer under the enterprise account CompanyExample (ownerUin is
 
 Solution A:
 
-The enterprise account CompanyExample directly authorizes the preset policy QcloudCBSFullAccess to the sub-account Developer. For more information on authorization, please see [Authorization Management](https://cloud.tencent.com/document/product/378/8961).
+The enterprise account CompanyExample directly authorizes the preset policy QcloudCBSFullAccess to the sub-account Developer. For more information on authorization, please see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 Solution B:
 
@@ -31,7 +31,7 @@ Step 1: Create the following policy using policy syntax
 }
 ```
 
-Step 2: Authorize the policy to the sub-account. For more information on authorization, please see [Authorization Management](https://cloud.tencent.com/document/product/378/8961).
+Step 2: Authorize the policy to the sub-account. For more information on authorization, please see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 Note: If the sub-account is not allowed to modify cloud disk properties, remove "cvm:ModifyCbsStorageAttributes" from the above-mentioned policy syntax.
 

@@ -14,6 +14,6 @@
      }
 }
 ```
-단계2: 하위 계정에 이 전략을 권한 부여합니다. 권한 부여 방법은 [권한 부여 관리](https://cloud.tencent.com/document/product/378/8961)를 참조하십시오.
+단계2: 하위 계정에 이 전략을 권한 부여합니다. 권한 부여 방법은 [권한 부여 관리](https://intl.cloud.tencent.com/document/product/598/10602)를 참조하십시오.
 
 참고: 하위 계정 Developer는 CDB 조회 리스트 페이지에서 인스턴스 ID가 cdb-1 및 cdb-2인 리소스만 확인할 수 있습니다.

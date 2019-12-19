@@ -20,7 +20,7 @@ Step 1: Create the following policy using policy syntax
     ]
 }
 ```
-Step 2: Authorize the policy to the sub-account. For more information on authorization, please see [Authorization Management](https://cloud.tencent.com/document/product/378/8961).
+Step 2: Authorize the policy to the sub-account. For more information on authorization, please see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 The following policy allows the sub-account to create, delete and modify security group policies in the CVM console.
 
@@ -42,5 +42,5 @@ Step 1: Create the following policy using policy syntax
 }
 ```
 
-Step 2: Authorize the policy to the sub-account. For more information on authorization, please see [Authorization Management](https://cloud.tencent.com/document/product/378/8961).
+Step 2: Authorize the policy to the sub-account. For more information on authorization, please see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
