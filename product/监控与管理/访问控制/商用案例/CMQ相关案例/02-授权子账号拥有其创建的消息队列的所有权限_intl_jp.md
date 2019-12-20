@@ -4,7 +4,7 @@
 
 ソリューションA：
 
-企業アカウントCompanyExampleは、プリセットポリシーQCloudCmqQueueCreaterFullAccessおよびQCloudCmqTopicCreaterFullAccessをサブアカウントDeveloperに直接付与します。付与方法については、[認証管理](https://cloud.tencent.com/document/product/378/8961)を参照してください。
+企業アカウントCompanyExampleは、プリセットポリシーQCloudCmqQueueCreaterFullAccessおよびQCloudCmqTopicCreaterFullAccessをサブアカウントDeveloperに直接付与します。付与方法については、[認証管理](https://intl.cloud.tencent.com/document/product/598/10602)を参照してください。
 
 ソリューションB：
 
@@ -29,6 +29,6 @@ step1：ポリシー構文を通して次のポリシーを作成します
 }
 ```
 
-step2：このポリシーをサブアカウントに付与します。付与方法については、[認証管理](https://cloud.tencent.com/document/product/378/8961)を参照してください。
+step2：このポリシーをサブアカウントに付与します。付与方法については、[認証管理](https://intl.cloud.tencent.com/document/product/598/10602)を参照してください。
 
 

@@ -2,7 +2,7 @@
 
 方案 A：
 
-企业帐号 CompanyExample 直接将预设策略 QcloudCOSFullAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://cloud.tencent.com/document/product/378/8961)。
+企业帐号 CompanyExample 直接将预设策略 QcloudCOSFullAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
 方案 B：
 
@@ -18,4 +18,4 @@
      }
 }
 ```
-步骤 2：将该策略授权给子账号。授权方式请参考 [授权管理](https://cloud.tencent.com/document/product/378/8961)。
+步骤 2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
