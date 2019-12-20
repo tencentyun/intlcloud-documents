@@ -134,6 +134,6 @@ Select the time range and the log topic for the search, and then enter the searc
 
 CLS can ship data to the Cloud Object Storage (COS) to store logs for a long time at a low cost while performing offline log big data analysis.
 
-To enable log shipping, you need to create a [COS bucket](https://intl.cloud.tencent.com/document/product/436/6232) and log in to the [CLS Console](https://console.cloud.tencent.com/cls). On the logset management page, click **Shipping Configuration** to open the shipping configuration page, and then click **Add shipping Task** to create a shipping task.
+To enable log shipping, you need to create a [COS bucket](https://intl.cloud.tencent.com/document/product/436/13309) and log in to the [CLS Console](https://console.cloud.tencent.com/cls). On the logset management page, click **Shipping Configuration** to open the shipping configuration page, and then click **Add shipping Task** to create a shipping task.
 Currently, CLS supports shipping in the [CSV format](https://intl.cloud.tencent.com/document/product/614/31582) and [JSON format](https://intl.cloud.tencent.com/document/product/614/31583). After you create a shipping task, CLS asynchronously ships data to the destination bucket. You can view the shipping status in **Shipping Task Management** on the left sidebar of the console.
 ![](https://main.qcloudimg.com/raw/c9e92b7a0a5f2e0423c60c285ea16d93.png)
