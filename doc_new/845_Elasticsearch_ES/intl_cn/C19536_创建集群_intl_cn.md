@@ -2,7 +2,7 @@
 
 ## 前提条件
 
-已创建腾讯云账号，创建账号可参考 [注册腾讯云](https://cloud.tencent.com/document/product/378/17985)。
+已创建腾讯云账号，创建账号可参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985)。
 
 ## 操作步骤
 
@@ -23,17 +23,17 @@
 > ! ES 集群创建完成后，不支持修改调整 VPC。
 > 
 > **特殊网络问题说明**
- - 跨 VPC 访问：如果需要通过同一个地域内位于其他 VPC 的 CVM 访问 ES 集群，可以考虑 [对等连接](https://cloud.tencent.com/document/product/553/18827) 方案，将同一地域两个不同的 VPC 进行打通。
- - 基础网络访问： 如果您的业务都部署在基础网络内，且没有使用过 VPC，可以通过基础网络和 VPC 网络互通的方案，将位于基础网络的 CVM 绑定到 ES 集群所在 VPC，从而实现基础网络到 ES 集群的互通（具体可参见 [基础网络互通](https://cloud.tencent.com/document/product/215/20083)）。
+ - 跨 VPC 访问：如果需要通过同一个地域内位于其他 VPC 的 CVM 访问 ES 集群，可以考虑 [对等连接](https://intl.cloud.tencent.com/document/product/215/5000) 方案，将同一地域两个不同的 VPC 进行打通。
+ - 基础网络访问： 如果您的业务都部署在基础网络内，且没有使用过 VPC，可以通过基础网络和 VPC 网络互通的方案，将位于基础网络的 CVM 绑定到 ES 集群所在 VPC，从而实现基础网络到 ES 集群的互通（具体可参见 [基础网络互通](https://intl.cloud.tencent.com/document/product/215/5002)）。
   基础网络互通功能仅支持`10.[0~47].0.0/16`网段内的私有网络，如果您需要从基础网络访问 ES 集群，请在创建 ES 集群时选择有`10.[0~47].0.0/16`网段的 VPC 。
 	
 - 集群名：自定义集群名称，不作为全局唯一标示，可以设置为业务相关描述。
 - 版本：Elasticsearch 版本，支持5.6.4和6.4.3版本。
 - 高级特性：Elasticsearch 官方商业特性（原 X-Pack 插件），包括数据权限管理、SQL JDBC、告警和机器学习等能力；不同版本包含的功能完整度不同，其中白金版包含所有高级特性，基础版包含一部分高级特性，开源版只有开源部分的功能，不包括高级功能，具体版本包含的功能差异，详见 [高级特性（X-Pack）](https://cloud.tencent.com/document/product/845/34926)。
-- 节点机型：集群中每个节点机型的规格，不同规格包含不同的 CPU 核数和内存，ES 支持的节点规格类型以及选择建议可参见 [节点类型存储配置建议](https://cloud.tencent.com/document/product/845/19551) 。
+- 节点机型：集群中每个节点机型的规格，不同规格包含不同的 CPU 核数和内存，ES 支持的节点规格类型以及选择建议可参见 [节点类型存储配置建议](https://intl.cloud.tencent.com/document/product/845/19551) 。
 - 节点存储类型：支持高性能云盘和 SSD 云盘。
 - 单节点存储：每个节点配置的磁盘容量，整个集群的存储量是单个节点存储 * 节点个数。
-- 配置专用主节点：当集群具有一定规模时，可以 [配置专用主节点](https://cloud.tencent.com/document/product/845/32086)，进一步保障集群稳定性。
+- 配置专用主节点：当集群具有一定规模时，可以 [配置专用主节点](https://intl.cloud.tencent.com/document/product/845/19879)，进一步保障集群稳定性。
 - 专用主节点机型：专用主节点机型不要求同数据节点机型一致。
 - 专用主节点个数：可选3个或5个，奇数个能保证高可用并预防脑裂风险。
 - 用户名：Kibana 页面访问，及白金版 Elasticsearch 集群访问用户名，默认为 elastic，不能修改。基础版和开源版，Elasticsearch 没有开启安全用户验证功能，通过 API 访问集群时无需用户名密码，只用于 Kibana 页面登录，而白金版开启了用户权限验证，在通过 API 访问集群时需要相应的用户名密码。
@@ -56,16 +56,16 @@
 
 ### 集群访问
 
-ES 提供了多种类型的客户端访问集群，快速开始，具体请参见 ES [访问方式概述](https://cloud.tencent.com/document/product/845/19539)。
+ES 提供了多种类型的客户端访问集群，快速开始<!--，具体请参见 ES [访问方式概述](https://cloud.tencent.com/document/product/845/19539) -->。
 
 ### 集群监控
 
-腾讯云 ES，提供了丰富的监控指标，可以帮助在集群使用过程中查看集群的状态。 具体请参见 [查看监控](https://cloud.tencent.com/document/product/845/16995)。
+腾讯云 ES，提供了丰富的监控指标，可以帮助在集群使用过程中查看集群的状态。<!-- 具体请参见 [查看监控](https://cloud.tencent.com/document/product/845/16995) -->。
 
 基础版和白金版的 Kibana 页面也有监控项，在左侧菜单的【monitor】页。
 
 ### 集群调整配置
 
-随着业务数据量和访问量的增肌，可以弹性地调整集群配置，具体请参见 [调整配置](https://cloud.tencent.com/document/product/845/32096)。
+随着业务数据量和访问量的增肌，可以弹性地调整集群配置，具体请参见 [调整配置](https://intl.cloud.tencent.com/document/product/845/30944)。
 
 
