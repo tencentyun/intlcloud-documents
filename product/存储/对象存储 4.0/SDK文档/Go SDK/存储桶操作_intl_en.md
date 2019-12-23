@@ -174,9 +174,11 @@ opt = &cos.BucketPutACLOptions{
         AccessControlList: []cos.ACLGrant{
             {
                 Grantee: &cos.ACLGrantee{
+		// Type can also chose the "Group", "CanonicalUser"
                     Type: "RootAccount",
                     ID:"qcs::cam::uin/100000760461:uin/100000760461",
                 },
+		// Permission can also chose the "WRITE"，"FULL_CONTROL" 
                 Permission: "FULL_CONTROL",
             },
         },
