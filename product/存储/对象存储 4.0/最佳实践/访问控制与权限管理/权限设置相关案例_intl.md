@@ -14,7 +14,7 @@ For more examples of permission settings, see the following documents:
 
 #### [Granting Sub-Account Read/Write Access to Files with Specified Prefix](https://intl.cloud.tencent.com/document/product/598/11090)
 
-#### [Granting All Users Read/Write Access to Specified Files](https://intl.cloud.tencent.com/document/product/598/11089)
+#### [Granting All Users Read/Write Access to Specified Files](https://intl.cloud.tencent.com/document/product/598/11086)
 
 #### [Granting Cross-Account Read/Write Access to Specified Files](https://intl.cloud.tencent.com/document/product/598/11091)
 

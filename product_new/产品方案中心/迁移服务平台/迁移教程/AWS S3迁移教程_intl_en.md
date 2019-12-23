@@ -35,7 +35,7 @@ If you want to perform Agent semi-managed migration with direct connect, before 
 
 #### 1. Create a destination bucket
 
-Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/6232).
+Create a bucket to store the migrated data. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 #### 2. Create a sub-user for migration and grant the required permissions
 

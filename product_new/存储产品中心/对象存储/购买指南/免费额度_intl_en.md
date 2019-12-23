@@ -22,7 +22,7 @@ Billable items in COS and the corresponding free tier are as listed in the follo
    </tr>
    <tr>
       <td>Standard_IA storage capacity</td>
-      <td rowspan="7">No<br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/32529">Billing Overview</a></td>
+      <td rowspan="7">No<br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/16871">Billing Overview</a></td>
    </tr>
    <tr>
       <td>Archive storage capacity</td>
@@ -83,7 +83,7 @@ In April 2019, John didn't perform any other operations, and the 60 GB of data w
 - At the beginning of May 2019, the standard storage capacity was billed. The monthly storage capacity was 60 GB, which exceeded the free tier, **so fees for the excessive 10 GB of standard storage capacity were charged**.
 
 >
->- This example focuses on the relevant billing details for personal users during the validity period of the free tier. For detailed descriptions of billable items, monthly storage capacity calculation rules, and cost calculation formulas, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/32529).
+>- This example focuses on the relevant billing details for personal users during the validity period of the free tier. For detailed descriptions of billable items, monthly storage capacity calculation rules, and cost calculation formulas, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/16871).
 >- For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 
 ## FAQs

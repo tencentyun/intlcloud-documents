@@ -35,7 +35,7 @@
 
 
 > ?
-> - 有关计费项的详细说明、计费周期和计费限制，请参见 [计费概述](https://intl.cloud.tencent.com/document/product/436/32529)。
+> - 有关计费项的详细说明、计费周期和计费限制，请参见 [计费概述](https://intl.cloud.tencent.com/zh/document/product/436/16871)。
 > - 有关不同计费项的详细价格信息，请参见 [产品定价](https://intl.cloud.tencent.com/document/product/436/6239)。
 
 ## 示例说明
