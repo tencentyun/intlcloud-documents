@@ -12,7 +12,7 @@ For more information on server-side encryption, please see [Server-side Encrypti
 
 #### Via the COS Console
 
-You can set bucket encryption in the COS Console. For more information, please see [Setting Bucket Encryption](https://cloud.tencent.com/document/product/436/40116) in Console Guide.
+You can set bucket encryption in the COS Console. For more information, please see [Setting Bucket Encryption](https://intl.cloud.tencent.com/document/product/436/33455) in Console Guide.
 
 #### Via REST API
 You can configure bucket encryption using the following APIs:
