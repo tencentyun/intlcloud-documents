@@ -1,0 +1,4 @@
+1. When your account is in arrears (that is, the account balance is below 0) for 24 hours, the Cloud Infinite (CI) service will be suspended.
+2. If you receive an arrears notification, go to [Top-up Center](https://console.cloud.tencent.com/account/recharge) in the console and top up your account promptly to prevent your businesses from being affected.
+3. For billing details, view and check the [Resource Statement](https://console.cloud.tencent.com/account/resources) page in the console.
+4. If you have any questions on the billing items, see [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431) for the description of each billing item and the billing rules.
