@@ -15,4 +15,4 @@
 ![](https://main.qcloudimg.com/raw/c5ced94c2d09085efb55bf39a87a258b.png)
 >目标路径不能与源路径相同，否则将粘贴失败。
 5. 粘贴成功后，即可看到对象和文件夹都被复制到了 target 文件夹。
-![](https://main.qcloudimg.com/raw/fc32963a0ad9e2db5ad5a9ef7488b79a.png
+![](https://main.qcloudimg.com/raw/fc32963a0ad9e2db5ad5a9ef7488b79a.png)
