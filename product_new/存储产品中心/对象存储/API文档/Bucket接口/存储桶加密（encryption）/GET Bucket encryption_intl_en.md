@@ -21,7 +21,7 @@ This API does not use any request parameter.
 
 **Request headers**
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 **Request body**
 
@@ -31,7 +31,7 @@ This API does not have a request body.
 
 **Response headers**
 
-This API only returns common response headers. For more information, please see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Response body**
 
@@ -46,7 +46,7 @@ The following response elements will be returned:
 
 **Error codes**
 
-There are no special error messages for this API. For all error messages, please see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+There are no special error messages for this API. For all error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Use Cases
 
