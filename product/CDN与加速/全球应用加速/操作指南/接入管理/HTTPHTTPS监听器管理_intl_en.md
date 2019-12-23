@@ -4,9 +4,9 @@
  - When HTTP is selected, only the input port is required, and the listener will forward packets using HTTP protocol by default.
  ![](https://main.qcloudimg.com/raw/0096d45b44fbd916012317a49a97a884.png)
  - When HTTPS is selected, additional certificates and other information are required to be configured, as shown below:
-![](https://main.qcloudimg.com/raw/8f40bcafae8eb3e26ae4f9710f3748c7.png)
+![](https://main.qcloudimg.com/raw/941665ba354633d345929e3fbd02fa8c.png)
  - **Listeners communicate with the origin server using HTTP protocol** meaning that the HTTPS protocol is used between the client and the acceleration connection VIP, while the HTTP protocol is used between the VIP and the origin server, which requires the origin server to open the HTTP protocol port. **Listeners communicate with the origin server using HTTPS protocol** meaning that the HTTPS protocol is used between the client and the origin server, and the HTTPS protocol port should be open for the origin server. The primary difference between these two options is that the link latency of the former is lower.
- - **SSL Parsing**: Only **One-way authentication** is supported, that is, server verification on the client.
+ - **SSL Parsing**: One-way authentication、Mutual Authentication.
  - **Server certificate**: You need to purchase a certificate in Tencent Cloud **SSL Certificate Management** or upload your own. Then you can select the corresponding certificate from the drop-down list.
 
 ## Configuring an HTTP/HTTPS Listener
@@ -54,4 +54,4 @@ On the **HTTP/HTTPS Listener Management** tab, click **Modify** to modify the li
 - HTTP listener: You can modify the listener name, as shown below:
 ![](https://main.qcloudimg.com/raw/d5b29fcb1b890469d1e023402d90675e.png)
 - HTTPS listener: You can modify the listener name and protocol between the listener and the origin server and update the certificate, as shown below:
-![](https://main.qcloudimg.com/raw/f6e95b55679a53cc66ce2f7a8e5d9bd3.png)
+![](https://main.qcloudimg.com/raw/d25c42f99371c5f486b30e22c5789451.png)
