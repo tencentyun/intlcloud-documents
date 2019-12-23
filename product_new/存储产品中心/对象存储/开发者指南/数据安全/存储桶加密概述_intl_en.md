@@ -17,9 +17,9 @@ You can set bucket encryption in the COS Console. For more information, please s
 #### Via REST API
 You can configure bucket encryption using the following APIs:
 
-- [PUT Bucket encryption](https://cloud.tencent.com/document/product/436/40136) 
-- [GET Bucket encryption](https://cloud.tencent.com/document/product/436/40137) 
-- [DELETE Bucket encryption](https://cloud.tencent.com/document/product/436/40138) 
+- [PUT Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33459) 
+- [GET Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33460) 
+- [DELETE Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33461) 
 
 ## Notes
 
