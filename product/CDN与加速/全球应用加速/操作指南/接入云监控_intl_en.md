@@ -7,9 +7,9 @@ Log in to the [Cloud Monitoring Console](https://console.cloud.tencent.com/monit
 ### Monitoring Acceleration Connections
 1. In the left sidebar, choose **Alarm Policy**. Click **Add** to enter the **Create New Policy** page.
 2. In **Policy Type**, select **GAAP** -> **Acceleration Connection**.
-![](https://main.qcloudimg.com/raw/e54d39d30857d791b2ea41cfa8c21d0e.png)
+![](https://main.qcloudimg.com/raw/21a41c74d5282d4e55cc340824b79e37.png)
 In **Trigger Conditions**, click **Add**. You can add multiple trigger conditions, including **Public packets in**, **Public packets out**, **Public bandwidth in**,  and other alarm conditions. You can set up policies as needed. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/3abe12f5d1702b4a1e581ccab98a7d00.png)
+![](https://main.qcloudimg.com/raw/442694974704ab4e980785107a5c63a5.png)
 
 ### Monitoring Listeners
 1. In the left sidebar, choose **Alarm Policy**. Click **Add** to enter the **Create New Policy** page.
