@@ -9,12 +9,12 @@
 2. 在“策略类型”中，选择【全球应用加速】>【加速通道】。
 ![](https://main.qcloudimg.com/raw/21a41c74d5282d4e55cc340824b79e37.png)
 3. 在“触发条件”中，单击【添加】，可以添加多个触发条件，里面包含“外网入包量”、“外网出包量”、“外网入带宽”等多种告警对象，可根据需要配置具体的策略。如下图所示：
-![](https://main.qcloudimg.com/raw/442694974704ab4e980785107a5c63a5.png)
+![](https://main.qcloudimg.com/raw/3abe12f5d1702b4a1e581ccab98a7d00.png)
 
 ### 监听器的监控
 1. 在左侧目录中，选择【告警策略】，单击【新增】，进入新建策略页面。
 2. 在“策略类型”中，选择【全球应用加速】>【加速通道监听器】。
-![](https://main.qcloudimg.com/raw/8ed1899153c279a8cdd863dc50a2aecf.png)
+![](https://main.qcloudimg.com/raw/442694974704ab4e980785107a5c63a5.png)
 3. “触发条件”目前支持“监听器源站状态异常”的告警，当源站状态异常时，云监控触发告警。如下图所示：
 ![](https://main.qcloudimg.com/raw/0bef097363d0587dcdf3ad7eb22c272f.png)
 
