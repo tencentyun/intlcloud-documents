@@ -1,6 +1,6 @@
 ## Getting Started Flowchart
 This getting started guide shows how to use Tencent Cloud Console to quickly get familiar with the basic operations in Cloud Infinite (CI). See the flowchart below:
-![](https://main.qcloudimg.com/raw/36e06739157d24cac028e9df0ee90300.png)
+![](https://main.qcloudimg.com/raw/48275f402bfc810e8a5234301b11c89f.png)
 ## Signing Up for a Tencent Cloud Account
 When using Tencent Cloud CI for the first time, you need to sign up for a Tencent Cloud account.
 - If you already have a Tencent Cloud account, proceed to [Logging in to CI Console](https://console.cloud.tencent.com/ci).
