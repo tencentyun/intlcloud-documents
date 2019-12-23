@@ -21,7 +21,7 @@ Authorization: Auth String
 
 **请求头**
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 **请求体**
 
@@ -31,7 +31,7 @@ Authorization: Auth String
 
 **响应头**
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 **响应体**
 
@@ -46,7 +46,7 @@ Authorization: Auth String
 
 **错误码**
 
-此接口无特殊错误信息，全部错误信息请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档。
+此接口无特殊错误信息，全部错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档。
 
 ## 实际案例
 
