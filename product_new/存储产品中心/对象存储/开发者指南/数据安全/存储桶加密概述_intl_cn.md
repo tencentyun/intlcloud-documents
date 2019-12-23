@@ -12,14 +12,14 @@
 
 #### 使用对象存储控制台
 
-您可以使用对象存储控制台设置存储桶加密，详情请参见 [设置存储桶加密](https://cloud.tencent.com/document/product/436/40116) 控制台指南文档。
+您可以使用对象存储控制台设置存储桶加密，详情请参见 [设置存储桶加密](https://intl.cloud.tencent.com/document/product/436/33455) 控制台指南文档。
 
 #### 使用 REST API
 您可以通过以下 API 配置存储桶加密：
 
-- [PUT Bucket encryption](https://cloud.tencent.com/document/product/436/40136) 
-- [GET Bucket encryption](https://cloud.tencent.com/document/product/436/40137) 
-- [DELETE Bucket encryption](https://cloud.tencent.com/document/product/436/40138) 
+- [PUT Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33459) 
+- [GET Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33460) 
+- [DELETE Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33461) 
 
 ## 注意事项
 
