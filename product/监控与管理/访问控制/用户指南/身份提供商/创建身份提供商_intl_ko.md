@@ -14,4 +14,4 @@ ID 공급업체를 생성하려면 CAM 콘솔을 통해 생성 또는 CAM API를
 ### API를 통해 생성
 
 ID 공급업체를 생성하고 메타 데이터 문서를 업로드합니다.
-- [CreateSAMLProvider](https://cloud.tencent.com/document/product/598/30295)를 호출합니다.
+- [CreateSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30295)를 호출합니다.

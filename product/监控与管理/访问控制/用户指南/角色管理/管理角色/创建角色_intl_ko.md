@@ -6,14 +6,14 @@
 1. CAM 콘솔에 로그인하고 [역할 관리](https://console.cloud.tencent.com/cam/role) 페이지로 이동합니다.
 2. [역할 생성]을 클릭하여 [역할 캐리어 선택]을 한 다음 [Tencent Cloud 계정]을 역할 캐리어로 선택합니다.
 3. [계정 ID] 확인란에 역할을 하여 Tencent Cloud 리소스에 대한 접근이 허용된 기본 계정 ID를 입력합니다. 기본값은 귀하의 기본 계정 ID입니다.
-다른 Tencent Cloud 서브 계정에 역할을 부여하려면 [서브 사용자에게 역할 전략 부여](https://cloud.tencent.com/document/product/598/19422)를 참조하십시오.
+다른 Tencent Cloud 서브 계정에 역할을 부여하려면 [서브 사용자에게 역할 전략 부여](https://intl.cloud.tencent.com/document/product/598/19422)를 참조하십시오.
 4. 전략 리스트에서 현재 생성된 역할에 부여할 전략을 선택하여 역할 권한 구성을 완료합니다.
 5. 역할 이름을 입력하고 생성할 역할에 대한 정보를 확인한 다음 [완성]을 클릭하여 사용자 지정 역할 생성을 완료합니다.
 
 ### Tencent Cloud 제품 서비스에 대한 역할 생성
 1. CAM 콘솔에 로그인하고 [역할 관리](https://console.cloud.tencent.com/cam/role) 페이지로 이동합니다.
 2. [역할 생성]을 클릭하고 [역할 캐리어 선택]을 한 다음 [Tencent Cloud 제품 서비스]를 역할 캐리어로 선택합니다.
-Tencent Cloud 제품 서비스가 서비스 역할 사용을 지원하는지 확인하려면 [CAM을 지원하는 클라우드 서비스](https://cloud.tencent.com/document/product/598/10588)를 참조하십시오.
+Tencent Cloud 제품 서비스가 서비스 역할 사용을 지원하는지 확인하려면 [CAM을 지원하는 클라우드 서비스](https://intl.cloud.tencent.com/document/product/598/10588)를 참조하십시오.
 3. 역할 맡기를 지원하는 서비스 제품 리스트에서 역할 캐리어로 필요한 서비스를 선택합니다.
 4. 전략 리스트에서 기존 역할에 추가할 전략을 선택하여 역할에 대한 전략을 구성합니다.
 5. 역할 이름을 입력하고 생성할 역할에 대한 정보를 확인한 다음 [완성]을 클릭하여 사용자 지정 역할 생성을 완료합니다.
@@ -69,7 +69,7 @@ A사 기업 계정은 CompanyExampleA(ownerUin은 12345임) 역할을 생성하�
 	}]
 }
 ```
- 2. A사 기업 계정 CompanyExampleA(ownerUin은 12345)는 [AttachRolePolicy](https://cloud.tencent.com/document/product/598/13889)를 호출하여 단계 1에서 생성한 전략을 역할 DevOpsRole에 바인딩하고 입력 매개변수는 policyName=DevOpsPolicy, roleName=DevOpsRole입니다.
+ 2. A사 기업 계정 CompanyExampleA(ownerUin은 12345)는 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889)를 호출하여 단계 1에서 생성한 전략을 역할 DevOpsRole에 바인딩하고 입력 매개변수는 policyName=DevOpsPolicy, roleName=DevOpsRole입니다.
 
 위의 절차를 걸쳐 A사 기업 계정 CompanyExampleA(ownerUin 은 12345)는 역할 생성 및 권한 부여를 마칩니다.
 
@@ -106,5 +106,5 @@ ID 공급업체에게 역할을 생성하기 전에 CAM에서 SAML ID 공급업�
 }
 ```
 
-2.	생성할 역할에게 권한 전략을 준비합니다. 권한 전략에 대해서는 [전략](https://cloud.tencent.com/document/product/598/10601)을 참조하십시오.
+2.	생성할 역할에게 권한 전략을 준비합니다. 권한 전략에 대해서는 [전략](https://intl.cloud.tencent.com/document/product/598/10601)을 참조하십시오.
 3.	[cam: CreateRole](https://cloud.tencent.com/document/api/598/13886) API를 호출하여 ID 공급업체 역할을 생성합니다.

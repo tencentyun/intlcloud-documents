@@ -23,7 +23,7 @@
 不通用，XML API 和 JSON API 各自有各自的签名方式。详情请参考：
 
 - [JSON API 签名](https://cloud.tencent.com/document/product/436/6054)
-- [XML API 签名](https://cloud.tencent.com/document/product/436/7778)
+- [XML API 签名](https://intl.cloud.tencent.com/document/product/436/7778)
 
 ### XML API 与 JSON API 设置的 ACL 权限是否通用？
 

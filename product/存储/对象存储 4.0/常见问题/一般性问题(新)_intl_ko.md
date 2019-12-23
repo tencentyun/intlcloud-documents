@@ -32,7 +32,7 @@ COS 서비스는 구조화되지 않은 데이터에 대한 분산형 저장 서
 
 ### COS의 사양과 제한은 무엇입니까?
 
-자세한 내용은 [사양 및 제한](https://cloud.tencent.com/document/product/436/14518) 문서를 참조하십시오.
+자세한 내용은 [사양 및 제한](https://intl.cloud.tencent.com/document/product/436/14518) 문서를 참조하십시오.
 
 ### COS는 이전 버전과 현재 버전이 존재하며 어느 것을 사용해야 됩니까?
 

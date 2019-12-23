@@ -102,7 +102,7 @@ print(response['ETag'])
 ### chunkの簡単なアップロード
 ```python
 import requests
-stream = requests.get('https://cloud.tencent.com/document/product/436/7778')
+stream = requests.get('https://intl.cloud.tencent.com/document/product/436/7778')
 
 # ネットワークフローはTransfer-Encoding:chunked方式でCOSに転送されます。
 response = client.put_object(

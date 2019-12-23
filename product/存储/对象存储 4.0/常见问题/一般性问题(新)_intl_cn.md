@@ -32,7 +32,7 @@ COS 支持基础数据统计和返回码统计的功能。在 [COS 控制台](ht
 
 ### COS 有哪些规格和限制？
 
-详情请参阅 [规格与限制](https://cloud.tencent.com/document/product/436/14518) 文档。
+详情请参阅 [规格与限制](https://intl.cloud.tencent.com/document/product/436/14518) 文档。
 
 ### COS 存在历史版本和当前版本，应当使用哪一个？
 

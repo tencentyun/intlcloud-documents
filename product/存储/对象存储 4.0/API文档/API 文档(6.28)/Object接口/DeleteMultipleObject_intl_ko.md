@@ -32,7 +32,7 @@ Authorization: Auth String
 </Delete>
 ```
 
-> Authorization: Auth String(세부 정보는 [요청 서명](https://cloud.tencent.com/document/product/436/7778) 문서를 참조하십시오.).
+> Authorization: Auth String(세부 정보는 [요청 서명](https://intl.cloud.tencent.com/document/product/436/7778) 문서를 참조하십시오.).
 
 ### 요청행
 ```shell

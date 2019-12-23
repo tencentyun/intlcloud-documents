@@ -19,7 +19,7 @@ Content-length: Size
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (For more information, please see [Request Signature](https://cloud.tencent.com/document/product/436/7778) chapter)
+> Authorization: Auth String (For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) chapter)
 
 ### Request Line
 ```

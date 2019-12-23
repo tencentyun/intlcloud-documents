@@ -80,4 +80,4 @@ https://cam.api.qcloud.com/v2/index.php
 ```
 
 ## エラーコード
-[エラーコード](https://cloud.tencent.com/document/product/598/13884)を参照してください。
+[エラーコード](https://intl.cloud.tencent.com/document/product/598/13884)を参照してください。

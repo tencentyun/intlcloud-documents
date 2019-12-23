@@ -15,7 +15,7 @@ Sparkling 采用多租户策略进行权限及角色管理，进而帮助用户�
 Sparkling 多租户策略贯穿整个用户使用流程，包括账号登录、身份认证、角色与权限管控。
 
 * ### 账号登录
-Sparkling 账号登录体系与腾讯云保持一致。您注册的腾讯云账号身份为主账号，并可以通过 [用户管理](https://console.cloud.tencent.com/cam) 为主账号创建子账号进行协作。Sparkling 支持主账号和子账号（包括 [子用户](https://cloud.tencent.com/document/product/598/13674) 和 [协作者](https://cloud.tencent.com/document/product/598/13666)）账号登录使用 Sparkling。
+Sparkling 账号登录体系与腾讯云保持一致。您注册的腾讯云账号身份为主账号，并可以通过 [用户管理](https://console.cloud.tencent.com/cam) 为主账号创建子账号进行协作。Sparkling 支持主账号和子账号（包括 [子用户](https://intl.cloud.tencent.com/document/product/598/13674) 和 [协作者](https://intl.cloud.tencent.com/document/product/598/13666)）账号登录使用 Sparkling。
  - **主账号**
    -   以主账号身份进行集群开通的创建者，自动拥有 Sparkling 内部的所有权限，且不能被其他的项目管理者进行撤权和删除操作。
    - 主账号身份登录，可以拉取子用户和协作者账号，向当前项目空间进行用户添加和授权操作。
@@ -27,7 +27,7 @@ Sparkling 账号登录体系与腾讯云保持一致。您注册的腾讯云账�
    - 协作者账号无法将自己的子账号加入到主账号的项目空间中。
    - 协作者账号不可作为 Sparkling 项目管理者。
 
- 主、子账号管理操作请参见 [CAM 用户指南](https://cloud.tencent.com/document/product/598/13665)。
+ 主、子账号管理操作请参见 [CAM 用户指南](https://intl.cloud.tencent.com/document/product/598/13665)。
 
 * ### 身份认证
 Sparkling 将腾讯云 CAM 权限管理体系和 Sparkling 内部权限管理这两套机制统一管理，帮助管理员轻松管控 Sparkling 用户权限。

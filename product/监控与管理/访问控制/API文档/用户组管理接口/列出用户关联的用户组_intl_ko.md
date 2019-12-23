@@ -66,4 +66,4 @@ https://cam.api.qcloud.com/v2/index.php
 
 ## 오류 코드
 
-[오류 코드](https://cloud.tencent.com/document/product/598/13884)를 참조하십시오.
+[오류 코드](https://intl.cloud.tencent.com/document/product/598/13884)를 참조하십시오.

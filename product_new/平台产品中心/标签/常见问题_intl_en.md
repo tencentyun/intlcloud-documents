@@ -12,4 +12,4 @@ Refer to [Authorization by Tag](https://intl.cloud.tencent.com/document/product/
 Refer to [Editing Tags of Specific Resources](https://intl.cloud.tencent.com/document/product/651/32583), and just add multiple tag keys/values in step 4.
 
 ### What is the difference between a tag and a project?
-One resource can have multiple tags but can only belong to one project. <!--For details, see [Projects and Tags](https://cloud.tencent.com/document/product/598/32738)-->
+One resource can have multiple tags but can only belong to one project. <!--For details, see [Projects and Tags](https://intl.cloud.tencent.com/document/product/598/32738)-->

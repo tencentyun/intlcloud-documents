@@ -26,7 +26,7 @@
 
 #### **1. VPCの作成**
 
-1. [Tencent Cloudコンソール](https://console.cloud.tencent.com/)にログインし、ナビゲーションバーの【VPC】をクリックするか、またはTencent Cloudの[VPC紹介画面](https://cloud.tencent.com/product/vpc.html)の【今すぐ体験】ボタンを押し、[VPCコンソール](https://console.cloud.tencent.com/vpc/)に入ります。
+1. [Tencent Cloudコンソール](https://console.cloud.tencent.com/)にログインし、ナビゲーションバーの【VPC】をクリックするか、またはTencent Cloudの[VPC紹介画面](https://intl.cloud.tencent.com/product/vpc.html)の【今すぐ体験】ボタンを押し、[VPCコンソール](https://console.cloud.tencent.com/vpc/)に入ります。
 
 2. リストの上方のプルダウンボックス中の地域を選択し、【新規作成】をクリックしVPCを作成します。例えば、地域「華北地区（北京）」を選択します。
 

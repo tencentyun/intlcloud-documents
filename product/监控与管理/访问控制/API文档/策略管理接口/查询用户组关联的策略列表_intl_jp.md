@@ -20,7 +20,7 @@ cam.api.qcloud.com
 
 ## 出力パラメータ
 
-[ListPolicies](https://cloud.tencent.com/document/product/598/15426) APIの説明を参照してください。
+[ListPolicies](https://intl.cloud.tencent.com/document/product/598/15426) APIの説明を参照してください。
 
 ## 例
 
@@ -64,5 +64,5 @@ Signature=vBfc7JZiDSZZysKesDoywMN3ca80pgZmWVdiQ4QXJJg%3D
 
 ## エラーコード
 
-[エラーコード](https://cloud.tencent.com/document/product/598/13884)を参照してください。
+[エラーコード](https://intl.cloud.tencent.com/document/product/598/13884)を参照してください。
 

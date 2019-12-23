@@ -48,7 +48,7 @@ CASは、最安のストレージ単価を提供しますが、データを読�
 COSのサポートする利用可能な地域、機能および仕様情報を取得するには、以下のドキュメントを参照してください。
 - [地域とアクセスドメイン名](https://cloud.tencent.com/document/product/436/6224)
 - [機能一覧](https://cloud.tencent.com/document/product/436/8186)
-- [仕様と制限](https://cloud.tencent.com/document/product/436/14518)
+- [仕様と制限](https://intl.cloud.tencent.com/document/product/436/14518)
 
 COSの重要構成要素：バケットとオブジェクトの了解に進みます。
 - [バケット概要](https://cloud.tencent.com/document/product/436/13312)

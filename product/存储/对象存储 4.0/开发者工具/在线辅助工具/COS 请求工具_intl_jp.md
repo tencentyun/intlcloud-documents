@@ -59,7 +59,7 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKIDwqaGoCIWIG4hDWdJUTL5e3hn04xiD5kI&q
 
 最初の行に表示されるのは、HTTP Verbとアクセス対象リンクで、次の行に表示されるのは、アクセス対象ドメイン名で、最後の1行に表示されるのは、今回リクエストする署名情報です。PUT類のリクエストについては、そのリクエストヘッダー情報が複雑であるが、共通リクエストヘッダーが存在します。共通リクエストヘッダーの情報については、[共通リクエストヘッダー](https://cloud.tencent.com/document/product/436/7728)を参照してください。
 
-【署名プロセス】で今回リクエストに関わる署名とその生成プロセスを確認できます。署名アルゴリズムの詳細については、ドキュメント[リクエスト署名](https://cloud.tencent.com/document/product/436/7778)をご覧下さい。リクエスト署名を生成、デバッグする必要がある場合、[COS署名ツール](https://cos5.cloud.tencent.com/static/cos-sign/)を使用することをおすすめします。
+【署名プロセス】で今回リクエストに関わる署名とその生成プロセスを確認できます。署名アルゴリズムの詳細については、ドキュメント[リクエスト署名](https://intl.cloud.tencent.com/document/product/436/7778)をご覧下さい。リクエスト署名を生成、デバッグする必要がある場合、[COS署名ツール](https://cos5.cloud.tencent.com/static/cos-sign/)を使用することをおすすめします。
 
 COSから返される応答結果は以下のとおりです。
 

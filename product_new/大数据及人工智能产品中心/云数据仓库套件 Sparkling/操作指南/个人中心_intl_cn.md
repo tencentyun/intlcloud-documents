@@ -21,7 +21,7 @@
  - **新建子账号并添加至项目空间**
   a. 单击【CAM 控制台】进入 CAM 控制台。
   ![](https://main.qcloudimg.com/raw/76be966f02161746ebab12e14fc17d6c.png)
-  b. 详细控制台添加子账号操作请参见 [CAM 访问管理](https://cloud.tencent.com/document/product/598/10594)。
+  b. 详细控制台添加子账号操作请参见 [CAM 访问管理](https://intl.cloud.tencent.com/document/product/598/10594)。
   c. 返回 Sparkling，单击刷新同步账号信息。
   ![](https://main.qcloudimg.com/raw/b6e5609d5c2d43a402a52e5460ec2b5e.png)
   d. 后续步骤同上“添加已有子账号”的步骤 b - e。

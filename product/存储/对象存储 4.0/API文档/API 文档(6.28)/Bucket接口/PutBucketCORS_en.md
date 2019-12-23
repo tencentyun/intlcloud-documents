@@ -18,7 +18,7 @@ Authorization: Auth String
 
 <XML file>
 ```
-> Authorization: Auth String (For more information, please see [Access Control](https://cloud.tencent.com/document/product/436/7778) chapter)
+> Authorization: Auth String (For more information, please see [Access Control](https://intl.cloud.tencent.com/document/product/436/7778) chapter)
 
 ### Request Line
 ~~~

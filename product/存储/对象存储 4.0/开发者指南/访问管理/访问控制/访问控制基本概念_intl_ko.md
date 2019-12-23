@@ -5,7 +5,7 @@
 
 ### Tencent Cloud의 ID
 
-사용자가 Tencent Cloud 계정을 등록할 때, 시스템은 Tencent Cloud 서비스에 로그인하는 루트 계정 신분 하나를 생성합니다. Tencent Cloud 루트 계정은 사용자 관리 기능을 통해 다른 역할을 맡은 분류 사용자를 관리합니다. 사용자 유형은 **협력자, 메시지 수신자, 서브 계정과 역할** 등을 포함합니다. 자세한 정의는 CAM의 [신분 관리](https://cloud.tencent.com/document/product/598/13665)와 [용어집](https://cloud.tencent.com/document/product/598/18564) 문서를 참조하십시오.
+사용자가 Tencent Cloud 계정을 등록할 때, 시스템은 Tencent Cloud 서비스에 로그인하는 루트 계정 신분 하나를 생성합니다. Tencent Cloud 루트 계정은 사용자 관리 기능을 통해 다른 역할을 맡은 분류 사용자를 관리합니다. 사용자 유형은 **협력자, 메시지 수신자, 서브 계정과 역할** 등을 포함합니다. 자세한 정의는 CAM의 [신분 관리](https://intl.cloud.tencent.com/document/product/598/13665)와 [용어집](https://intl.cloud.tencent.com/document/product/598/18564) 문서를 참조하십시오.
 
 ### COS의 리소스
 
@@ -128,7 +128,7 @@ ACL은 XML 언어를 사용하여 설명하며 리소스와 연결된 권한 부
 
 사용자 정책과 버킷 정책의 가장 큰 차이는 사용자 정책은 효력, 작업, 리소스와 조건(옵션)만 설명하고 의뢰인을 설명하지 않습니다. 그렇기 때문에 사용자 정책은 작성 완료 후, 서브 계정, 사용자 그룹 또는 역할에 연결 작업을 해야 하고 사용자 정책에서 작업과 리소스 권한을 익명 사용자에게 부여하는 것을 지원하지 않습니다.
 
-[사전 정의된 정책으로 연결 권한 부여](https://cloud.tencent.com/document/product/598/10602)하거나 [사용자 정책 자체 작성](https://cloud.tencent.com/document/product/598/10603)한 후, 지정 의뢰인에 연결하면 하위 계정의 접근 제어를 구현할 수 있습니다.
+[사전 정의된 정책으로 연결 권한 부여](https://intl.cloud.tencent.com/document/product/598/10602)하거나 [사용자 정책 자체 작성](https://intl.cloud.tencent.com/document/product/598/10603)한 후, 지정 의뢰인에 연결하면 하위 계정의 접근 제어를 구현할 수 있습니다.
 
 다음은 광저우에 위치한 버킷 `examplebucket-1250000000`의 모든 COS 작업 권한 부여 정책입니다. 정책을 저장한 후 다시 CAM 서브 계정, 사용자 그룹 또는 역할에 연결해야 적용합니다.
 

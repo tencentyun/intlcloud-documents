@@ -23,7 +23,7 @@
 共通ではありません。XML APIとJSON APIはそれぞれの署名方式があります。詳細について次を参照してください。
 
 - [JSON API署名](https://cloud.tencent.com/document/product/436/6054)
-- [XML API署名](https://cloud.tencent.com/document/product/436/7778)
+- [XML API署名](https://intl.cloud.tencent.com/document/product/436/7778)
 
 ### XML APIとJSON APIに設定されるACL権限は共通ですか？
 

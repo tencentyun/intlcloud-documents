@@ -2,7 +2,7 @@
 
 COS 서명 도구는 COS에서 제공된 요청 서명을 생성하는데 사용되는 Web 도구입니다. COS 서명 도구 페이지에서 지정된 매개변수를 입력하여 요청 서명을 생성하고 요청 서명의 정확성을 검증할 수 있습니다.
 - 현재 COS에는 XML 및 JSON, 두 가지 버전의 API가 제공됩니다. 두 가지 유형의 API 서명은 입력 매개변수가 다르며 COS에서 XML API를 사용하는 것을 권장합니다. JSON API는 사용자가 XML API를 시작하기 전에 COS에 접근할 수 있도록 제공하는 API입니다. JSON API는 표준 XML API와 기본 아키텍처가 동일하며 데이터는 상호 운용이 가능하며 교차 사용도 가능하지만 두 API는 호환될 수 없습니다.
-- XML 버전의 서명에 대한 자세한 내용은 XML 버전의 [요청 서명](https://cloud.tencent.com/document/product/436/7778)을 참조하십시오.
+- XML 버전의 서명에 대한 자세한 내용은 XML 버전의 [요청 서명](https://intl.cloud.tencent.com/document/product/436/7778)을 참조하십시오.
 - JSON 버전의 서명에 대한 자세한 내용은 JSON 버전의 [요청 서명](https://cloud.tencent.com/document/product/436/6054)을 참조하십시오.
 
 ## 사용 방법
@@ -19,7 +19,7 @@ COS 서명 도구는 COS에서 제공된 요청 서명을 생성하는데 사용
 ![avatar](https://main.qcloudimg.com/raw/6855a2f6b18779037090e0769303bbc7.png)
 기본 정보의 매개변수가 필수 항목입니다.
 - API 버전: XML 버전 API를 선택하십시오.
-- 서명 유효 기간: 서명의 유효한 기간입니다. [받기]를 클릭하면 유효 기간이 60분인 서명을 받을 수 있습니다. 유효한 시종 시간을 입력하여 현재 시종 시간 아래의 서명 결과를 복원하는 데 사용할 수도 있습니다. 서명 유효 기간에 대한 자세한 내용은 [요청 서명](https://cloud.tencent.com/document/product/436/7778#.E7.AD.BE.E5.90.8D.E5.86.85.E5.AE.B9)을 참조하십시오.
+- 서명 유효 기간: 서명의 유효한 기간입니다. [받기]를 클릭하면 유효 기간이 60분인 서명을 받을 수 있습니다. 유효한 시종 시간을 입력하여 현재 시종 시간 아래의 서명 결과를 복원하는 데 사용할 수도 있습니다. 서명 유효 기간에 대한 자세한 내용은 [요청 서명](https://intl.cloud.tencent.com/document/product/436/7778#.E7.AD.BE.E5.90.8D.E5.86.85.E5.AE.B9)을 참조하십시오.
 
 #### API 키 정보 입력
 
@@ -41,12 +41,12 @@ API 키의 정보가 필수 항목입니다.
 - **HttpHeaders:**선택 항목입니다. HTTP 요청 헤더입니다. url 매개변수를 검증할 경우 이 매개변수를 입력할 수 있습니다. 그중에 key는 소문자로 되어야 하며 value는 URLEncode를 필요로 하여 여러 개 key를 사전순으로 정렬합니다.
  예를 들어 "Host: bucket1-1254000000.cos.ap-beijing.myqcloud.com "은 해당 서명이 계정 1254000000의 버킷 bucket1 아래의 지정한 파일을 접근할 수 있음을 의미합니다.
 
-관련 HTTP 요청 매개변수에 대한 자세한 내용은 [요청 서명](https://cloud.tencent.com/document/product/436/7778#signature-.E8.AE.A1.E7.AE.97)을 참조하십시오.
+관련 HTTP 요청 매개변수에 대한 자세한 내용은 [요청 서명](https://intl.cloud.tencent.com/document/product/436/7778#signature-.E8.AE.A1.E7.AE.97)을 참조하십시오.
 
 #### 서명 생성 및 과정 매개변수 확인
 
 [서명 생성]을 클릭하면 오른쪽에 있는 "결과 피드백"에서 다음과 같이 요청 서명 결과를 확인할 수 있습니다.
-COS 서명 도구는 생성된 최종 서명 및 서명 계산 과정에서의 과정 매개변수를 각각 보여 줍니다. 관련 과정 매개변수에 대한 자세한 내용은 [요청 서명](https://cloud.tencent.com/document/product/436/7778#signature-.E8.AE.A1.E7.AE.97)을 참조하십시오.
+COS 서명 도구는 생성된 최종 서명 및 서명 계산 과정에서의 과정 매개변수를 각각 보여 줍니다. 관련 과정 매개변수에 대한 자세한 내용은 [요청 서명](https://intl.cloud.tencent.com/document/product/436/7778#signature-.E8.AE.A1.E7.AE.97)을 참조하십시오.
 
 ![avatar](https://main.qcloudimg.com/raw/4e5d3164848078e4ac2dc0b9b767ca00.png)
 

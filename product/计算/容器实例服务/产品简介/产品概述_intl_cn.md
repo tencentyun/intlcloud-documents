@@ -41,7 +41,7 @@ CIS 运行在用户 VPC 网络上，支持和用户的其他 VPC 资源互通，
 
 如果您需要用云服务器和容器部署不同场景的业务，推荐您使用 [云服务器 CVM](https://cloud.tencent.com/product/cvm)。
 
-如果您需要管理更复杂的网络，比如建立对等连接、使用 NAT 网关、配置路由表、配置安全策略等，推荐您使用  [私有网络 VPC](https://cloud.tencent.com/product/vpc)。
+如果您需要管理更复杂的网络，比如建立对等连接、使用 NAT 网关、配置路由表、配置安全策略等，推荐您使用  [私有网络 VPC](https://intl.cloud.tencent.com/product/vpc)。
 
 如果您需要调用腾讯云 API 访问腾讯云云的产品和服务，推荐您参考 [腾讯云 API 文档](https://cloud.tencent.com/document/api)。
 

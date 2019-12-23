@@ -43,7 +43,7 @@ COS API権限付与ポリシー（policy）はjson文字列です。例えば、
 | effect   | allow （許可）とdeny（明示的な拒否）の両方があります                |
 | resource | 権限付与操作の具体的なデータは、任意のリソース、パスプレフィックスが指定されたリソース、絶対パスが指定されたリソース、またはそれらの組み合わせであってもよいです |
 | action   | ここで、COS APIが必要に応じて1つまたは一連の操作の組み合わせまたはすべての操作（*）を指定することを指します      |
-|condition|制約条件は記入されなくてもよく、具体的な説明については、[condition](https://cloud.tencent.com/document/product/598/10603#6..E7.94.9F.E6.95.88.E6.9D.A1.E4.BB.B6(condition)) の説明を参照してください  |
+|condition|制約条件は記入されなくてもよく、具体的な説明については、[condition](https://intl.cloud.tencent.com/document/product/598/10603#6..E7.94.9F.E6.95.88.E6.9D.A1.E4.BB.B6(condition)) の説明を参照してください  |
 
 以下、COS APIに基づいて権限付与ポリシーを詳細に説明します。
 

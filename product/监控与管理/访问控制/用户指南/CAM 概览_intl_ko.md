@@ -51,14 +51,14 @@ MFA(Multi-Factor Authentication, 멀티팩터 인증)는 간단하고 효과적�
 ### 단일 CAM 사용자 생성
 CAM 사용자를 생성하고 필요한 권한을 부여합니다. Tencent Cloud 기본 계정은 사용자 관리 기능을 통해 다른 역할을 맡는 각 유형의 사용자를 관리할 수 있습니다. 사용자 유형은 협력자, 메시지 수신자 및 서브 사용자가 있습니다.
 권한을 가진 사용자는 상세 보기 아래의 [사용자 생성]을 클릭하여 구체적인 설정 페이지에 들어갈 수 있습니다. 세부 절차는 다음을 참조하십시오.
-- [서브 사용자](https://cloud.tencent.com/document/product/598/13674)
-- [협력자](https://cloud.tencent.com/document/product/598/13666)
-- [메시지 수신자](https://cloud.tencent.com/document/product/598/13667)
+- [서브 사용자](https://intl.cloud.tencent.com/document/product/598/13674)
+- [협력자](https://intl.cloud.tencent.com/document/product/598/13666)
+- [메시지 수신자](https://intl.cloud.tencent.com/document/product/598/13667)
 
 ### 그룹 생성 및 사용자 추가
 사용자 그룹을 생성하고 CAM 사용자를 추가합니다. 해당 사용자 그룹에 적절한 전략을 연결시켜 다른 권한을 할당하면 계정 내의 리소스를 일괄 관리 및 할당에 도움이 되어 작업 효율성을 향상시킬 수 있습니다.
 권한을 가진 사용자는 상세 보기 아래의 [그룹 생성]을 클릭하여 구체적인 설정 페이지에 들어갈 수 있습니다. 세부 절차는 다음을 참조하십시오.
-- [사용자 그룹 관리](https://cloud.tencent.com/document/product/598/10599)
+- [사용자 그룹 관리](https://intl.cloud.tencent.com/document/product/598/10599)
 
 ### 권한 부여 전략 관리
 CAM은 사전 설정 전략과 사용자 지정 전략과 같은 두 가지 전략을 지원합니다.
@@ -67,12 +67,12 @@ CAM은 사전 설정 전략과 사용자 지정 전략과 같은 두 가지 전�
 
 사용자 그룹 또는 사용자에게 권한을 할당하면 계정의 CAM 사용자 권한에 대한 관리 및 감사를 간소화할 수 있습니다.
 권한을 가진 사용자는 상세 보기 아래의 [사용자 지정 전략 관리]를 클릭하여 구체적인 설정 페이지에 들어갈 수 있습니다. 세부 절차는 다음을 참조하십시오.
-- [전략 관리](https://cloud.tencent.com/document/product/598/10601)
+- [전략 관리](https://intl.cloud.tencent.com/document/product/598/10601)
 
 ### 서브 계정 MFA 활성화
 서브 계정에게 MFA를 활성화하면 클라우드 자산을 더욱 안전하게 보호해 줄 수 있습니다. CAM 사용자에게 MFA를 활성화하면 CAM 사용자는 Tencent Cloud에 로그인하거나 Tencent Cloud에서 민감한 조작을 수행할 때 2차 인증이 필요하게 되어 자산 보안에 도움이 될 수 있습니다. MFA 관련 설정은 클라우드 자산 보안에 매우 중요하기 때문에 서브 사용자 또는 협력자는 기본 계정 또는 CAM 관리 권한이 있는 사용자가 보안 속성에 대해 한 설정을 받아들일 수밖에 없습니다.
 권한을 가진 사용자는 상세 보기 아래의 [서브 사용자 MFA 활성화]를 클릭하여 구체적인 설정 페이지에 들어갈 수 있습니다. 관련 문서는 다음을 참조하십시오.
-- [MFA 설정 가이드](https://cloud.tencent.com/document/product/598/14985)의 **서브 계정 MFA 활성화** 섹션
+- [MFA 설정 가이드](https://intl.cloud.tencent.com/document/product/598/14985)의 **서브 계정 MFA 활성화** 섹션
 
 ### 서브 계정 보호 활성화
 권한을 가진 사용자는 서브 계정에게 로그인 보호 및 조작 보호 기능을 활성화할 수 있습니다.

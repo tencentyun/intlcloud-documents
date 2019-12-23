@@ -23,7 +23,7 @@ Content-length: Size
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (详细参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 章节)
+> Authorization: Auth String (详细参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 章节)
 
 ### 请求行
 ```

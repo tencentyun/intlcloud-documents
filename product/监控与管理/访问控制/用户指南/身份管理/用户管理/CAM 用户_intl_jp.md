@@ -1,4 +1,4 @@
-CAMユーザーはTencent Cloudで作成したエンティティです。各CAMユーザーは、1つのTencent Cloudアカウントにのみ関連付けられています。登録したTencent Cloudアカウント身元は**メインアカウント**です。共同作業するために、[ユーザー管理](https://console.cloud.tencent.com/cam)を通して、さまざまな権限を持つ**サブアカウント**を作成することができます。サブアカウントのタイプは[サブユーザー](https://cloud.tencent.com/document/product/598/13674)、[協力者](https://cloud.tencent.com/document/product/598/13666)および[メッセージ受信者](https://cloud.tencent.com/document/product/598/13667)に分けられます。
+CAMユーザーはTencent Cloudで作成したエンティティです。各CAMユーザーは、1つのTencent Cloudアカウントにのみ関連付けられています。登録したTencent Cloudアカウント身元は**メインアカウント**です。共同作業するために、[ユーザー管理](https://console.cloud.tencent.com/cam)を通して、さまざまな権限を持つ**サブアカウント**を作成することができます。サブアカウントのタイプは[サブユーザー](https://intl.cloud.tencent.com/document/product/598/13674)、[協力者](https://intl.cloud.tencent.com/document/product/598/13666)および[メッセージ受信者](https://intl.cloud.tencent.com/document/product/598/13667)に分けられます。
 
 <table>
 	<tr>

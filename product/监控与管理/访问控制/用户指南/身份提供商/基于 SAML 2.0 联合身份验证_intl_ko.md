@@ -2,11 +2,11 @@ Tencent Cloud는 SAML 2.0(Security Assertion Markup Language 2.0)에 기반한 �
 
 ## SAML ID 공급업체
 
-ID 공급업체는 CAM의 개체이며 외부 신용 계정 모음으로 간주될 수 있습니다. SAML 2.0 페더레이션 ID 인증에 기반한 ID 공급업체는 SAML 2.0(Security Assertion Markup Language 2.0) 표준을 지원하는 ID 공급업체 서비스를 설명합니다. 기업 또는 조직의 멤버가 Tencent Cloud 리소스에 접근할 수 있도록 SAML 2.0 프로토콜이 호환한 ID 공급업체(예: Microsoft Active Directory 페더레이션 ID 인증 서비스)와 Tencent Cloud 간의 신뢰를 구축하려면 SAML ID 공급업체를 생성해야 합니다. SAML ID 공급업체를 생성하려면 [ID 공급업체 생성](https://cloud.tencent.com/document/product/598/30290)을 참조하십시오.
+ID 공급업체는 CAM의 개체이며 외부 신용 계정 모음으로 간주될 수 있습니다. SAML 2.0 페더레이션 ID 인증에 기반한 ID 공급업체는 SAML 2.0(Security Assertion Markup Language 2.0) 표준을 지원하는 ID 공급업체 서비스를 설명합니다. 기업 또는 조직의 멤버가 Tencent Cloud 리소스에 접근할 수 있도록 SAML 2.0 프로토콜이 호환한 ID 공급업체(예: Microsoft Active Directory 페더레이션 ID 인증 서비스)와 Tencent Cloud 간의 신뢰를 구축하려면 SAML ID 공급업체를 생성해야 합니다. SAML ID 공급업체를 생성하려면 [ID 공급업체 생성](https://intl.cloud.tencent.com/document/product/598/30290)을 참조하십시오.
 
 ## ID 공급업체 역할
 
-SAML 제공업체를 생성한 후 SAML ID 공급업체를 역할 캐리어로 하는 하나 이상의 ID 공급업체 역할을 생성해야 합니다. 역할은 일련의 권한을 가지는 가상 ID이며 리소스 접근할 때 임시 보안 인증서가 사용됩니다. SAML 2.0 어설션의 컨텍스트에서 역할은 DP에 의해 인증된 페더레이션 ID 사용자에게 할당될 수 있습니다. 이 역할을 통해 ID 공급업체가 임시 보안 인증서를 요청하여 Tencent Cloud 리소스에 접근할 수 있습니다. 이 역할과 연결된 전략은 페더레이션 ID 사용자가 Tencent Cloud 리소스에 대한 접근 범위를 결정합니다. SAML 2.0 페더레이션 ID 인증에 기반한 ID 공급업체 역할 생성에 대해서는 [역할 생성](https://cloud.tencent.com/document/product/598/19381)을 참조하십시오.
+SAML 제공업체를 생성한 후 SAML ID 공급업체를 역할 캐리어로 하는 하나 이상의 ID 공급업체 역할을 생성해야 합니다. 역할은 일련의 권한을 가지는 가상 ID이며 리소스 접근할 때 임시 보안 인증서가 사용됩니다. SAML 2.0 어설션의 컨텍스트에서 역할은 DP에 의해 인증된 페더레이션 ID 사용자에게 할당될 수 있습니다. 이 역할을 통해 ID 공급업체가 임시 보안 인증서를 요청하여 Tencent Cloud 리소스에 접근할 수 있습니다. 이 역할과 연결된 전략은 페더레이션 ID 사용자가 Tencent Cloud 리소스에 대한 접근 범위를 결정합니다. SAML 2.0 페더레이션 ID 인증에 기반한 ID 공급업체 역할 생성에 대해서는 [역할 생성](https://intl.cloud.tencent.com/document/product/598/19381)을 참조하십시오.
 ![](https://main.qcloudimg.com/raw/db597d52e89473d1a18b46ba150aa233.png)
 
 ## SAML 2.0에 기반한 페더레이션 ID 인증을 사용하여 Tencent Cloud API에 접근

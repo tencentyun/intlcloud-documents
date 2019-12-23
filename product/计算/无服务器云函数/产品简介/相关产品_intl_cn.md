@@ -8,4 +8,4 @@
 | [消息队列 CMQ](https://cloud.tencent.com/document/product/406) | 可以通过配置消息队列触发器，在对应的队列收到消息时触发云函数。 |
 | [消息队列 Ckafka](https://cloud.tencent.com/document/product/597) | 可以通过配置 Ckafka 触发器，在对应的 Kafka topic 收到消息时触发云函数。 |
 | [API 网关 API Gateway](https://cloud.tencent.com/document/product/628) | 可以通过配置 API 网关触发器，在 API URL 上接收 HTTP 请求时触发云函数。 |
-| [访问管理 CAM](https://cloud.tencent.com/document/product/598) | 可以通过配置访问管理的角色，在云函数授予代码执行时访问授权资源的权限。 |
+| [访问管理 CAM](https://intl.cloud.tencent.com/document/product/598) | 可以通过配置访问管理的角色，在云函数授予代码执行时访问授权资源的权限。 |

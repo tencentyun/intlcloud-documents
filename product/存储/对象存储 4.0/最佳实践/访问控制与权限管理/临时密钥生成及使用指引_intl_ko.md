@@ -191,4 +191,4 @@ policy=%7B%0D%0A++%22version%22%3A+%222.0%22%2C%0D%0A++%22statement%22%3A+%5B%0D
 
 - codeDesc는 모듈과 관련된 오류를 나타내는 모듈 오류 코드입니다. 호출이 실패하면 사용자는 모듈 오류 코드 리스트에 따라 오류 원인을 확인하고 해당 조치를 취할 수 있습니다.
 
-구체적인 오류 코드 설명은 [오류 코드](https://cloud.tencent.com/document/product/598/13884)를 참조하십시오.
+구체적인 오류 코드 설명은 [오류 코드](https://intl.cloud.tencent.com/document/product/598/13884)를 참조하십시오.

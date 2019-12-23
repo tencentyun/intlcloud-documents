@@ -51,14 +51,14 @@ MFA（Multi-FactorAuthentication，多因子认证）是一种简单有效的安
 ### 创建单独 CAM 用户
 创建 CAM 用户，向他们授予所需的权限。腾讯云主账号可通过用户管理功能对具有不同职责的分类用户进行管理。用户类型包括协作者、消息接收人、子用户。 
 具有权限的用户可以单击详细介绍下方的【创建用户】进入具体设置页面，详细步骤指引参考：
-- [子用户](https://cloud.tencent.com/document/product/598/13674)
-- [协作者](https://cloud.tencent.com/document/product/598/13666)
-- [消息接收人](https://cloud.tencent.com/document/product/598/13667)
+- [子用户](https://intl.cloud.tencent.com/document/product/598/13674)
+- [协作者](https://intl.cloud.tencent.com/document/product/598/13666)
+- [消息接收人](https://intl.cloud.tencent.com/document/product/598/13667)
 
 ### 创建组并添加用户
 创建用户组并且添加 CAM 用户， 为该用户组关联适当的策略，以分配不同权限，能够帮助您批量管理、分配账号内的资源，提高工作效率。
 具有权限的用户可以单击详细介绍下方的【创建组】进入具体设置页面，详细步骤指引参考：
-- [用户组管理](https://cloud.tencent.com/document/product/598/10599)
+- [用户组管理](https://intl.cloud.tencent.com/document/product/598/10599)
 
 ### 管理授权策略
 CAM 支持两种类型的策略：预设策略和自定义策略。
@@ -67,12 +67,12 @@ CAM 支持两种类型的策略：预设策略和自定义策略。
 
 给用户组或用户分配权限，可以简化您对账户中 CAM 用户的权限管理和审核。
 具有权限的用户可以单击详细介绍下方的【管理自定义策略】进入具体设置页面，详细步骤指引参考：
-- [策略管理](https://cloud.tencent.com/document/product/598/10601)
+- [策略管理](https://intl.cloud.tencent.com/document/product/598/10601)
 
 ### 对子账号启用 MFA
 对子账号启用多因子认证（MFA）将加强对您云上资产的安全保护。对 CAM 用户启用 MFA 后，CAM 用户在登录腾讯云或者在腾讯云进行敏感操作时，需要进行二次认证，帮助保护您的资产安全。MFA 的相关设置关系到云上资产安全，子用户或者协作者只能接受主账号或者是具有 CAM 管理权限的用户对这些安全属性的设置。
 具有权限的用户可以单击详细介绍下方的【去开启子用户MFA】进入具体设置页面，相关文档参考：
-- [MFA 设置指引](https://cloud.tencent.com/document/product/598/14985) 的 **为子账号开启 MFA** 部分
+- [MFA 设置指引](https://intl.cloud.tencent.com/document/product/598/14985) 的 **为子账号开启 MFA** 部分
 
 ### 对子账号开启保护
 具有权限的用户可以对子账号开启登录保护和操作保护。

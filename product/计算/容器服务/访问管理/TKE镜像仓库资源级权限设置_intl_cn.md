@@ -17,9 +17,9 @@
 如果您不需要详细管理镜像仓库权限，可以使用[预设策略授权](#预设策略授权)。
 如果您需要细致地管理协作者权限，请使用[自定义策略授权](#自定义策略授权)。
 容器镜像服务权限基于腾讯云CAM进行管理，您可以详细了解CAM的使用方法：
-- [用户管理](https://cloud.tencent.com/document/product/598/17289)
-- [策略管理](https://cloud.tencent.com/document/product/598/10601)
-- [授权管理](https://cloud.tencent.com/document/product/598/10602)
+- [用户管理](https://intl.cloud.tencent.com/document/product/598/17289)
+- [策略管理](https://intl.cloud.tencent.com/document/product/598/10601)
+- [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)
 
 ## 预设策略授权
 
@@ -35,18 +35,18 @@
  - 删除镜像仓库
  - 删除镜像Tag
 
-如果您不了解如何为协作者关联预设策略，请参考CAM文档：[预设策略介绍](https://cloud.tencent.com/document/product/598/10601#.E9.A2.84.E8.AE.BE.E7.AD.96.E7.95.A5)、[预设策略关联用户](https://cloud.tencent.com/document/product/598/10602#.E9.A2.84.E8.AE.BE.E7.AD.96.E7.95.A5.E5.85.B3.E8.81.94.E7.94.A8.E6.88.B7)
+如果您不了解如何为协作者关联预设策略，请参考CAM文档：[预设策略介绍](https://intl.cloud.tencent.com/document/product/598/10601#.E9.A2.84.E8.AE.BE.E7.AD.96.E7.95.A5)、[预设策略关联用户](https://intl.cloud.tencent.com/document/product/598/10602#.E9.A2.84.E8.AE.BE.E7.AD.96.E7.95.A5.E5.85.B3.E8.81.94.E7.94.A8.E6.88.B7)
 
 ## 自定义策略授权
 
 通过自定义策略，开发商可以为不同的协作者关联不同的权限。
 当您分配权限时，考虑这些要素：
-- **资源(resource)**： 该权限策略关联哪些镜像，例如所有镜像仓库描述为 `qcs::ccr:::repo/*`，详见[CAM资源描述方式](https://cloud.tencent.com/document/product/598/10606)；
+- **资源(resource)**： 该权限策略关联哪些镜像，例如所有镜像仓库描述为 `qcs::ccr:::repo/*`，详见[CAM资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606)；
 - **动作(action)**： 该权限策略对 **资源(resource)** 有哪些操作，如删除、新建等，通常使用接口进行描述；
 - **效力(effect)** ： 该权限策略对协作者表现出的效果(允许/拒绝)；
 
 一旦您规划好权限设置，就可以开始进行权限分配。下面我们以“允许协作者创建镜像仓库”为例进行说明：
-1. 创建自定义策略（[CAM文档](https://cloud.tencent.com/document/product/598/10601#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5))。
+1. 创建自定义策略（[CAM文档](https://intl.cloud.tencent.com/document/product/598/10601#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5))。
   - 使用开发商账号登录腾云讯-控制台。
   - 进入[CAM自定义策略管理页面](https://console.cloud.tencent.com/cam/policy/custom)，单击“新建自定义策略”按钮打开“选择策略创建方式”对话框。
 ![选择创建策略方式][6]
@@ -68,13 +68,13 @@
 >? resource **末尾** 使用 \* 表示可以在任意命名空间下创建镜像仓库_
  - 单击页面底部“创建策略”按钮，结束策略创建过程。
 ![编辑策略][9]
-2. 关联自定义策略。步骤1中的策略(`ccr-policy-demo` )创建完成以后，您可以将其关联到任意协作者，详见[CAM文档](https://cloud.tencent.com/document/product/598/10602#.E7.94.A8.E6.88.B7.E5.85.B3.E8.81.94.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5)。策略关联完成后协作者即拥有 **在任意命名空间下创建镜像仓库权限**。
+2. 关联自定义策略。步骤1中的策略(`ccr-policy-demo` )创建完成以后，您可以将其关联到任意协作者，详见[CAM文档](https://intl.cloud.tencent.com/document/product/598/10602#.E7.94.A8.E6.88.B7.E5.85.B3.E8.81.94.E8.87.AA.E5.AE.9A.E4.B9.89.E7.AD.96.E7.95.A5)。策略关联完成后协作者即拥有 **在任意命名空间下创建镜像仓库权限**。
 _resource `qcs::ccr:::repo/*` 格式说明：
  - `qcs::ccr:::` 为固定格式，表示开发商的腾讯云容器镜像仓库服务。
  - `repo` 为固定前缀，代表资源类型，这里是镜像仓库。
  - 斜杠(`/`)后面的 `*` 表示匹配所有镜像仓库。
 
-关于resource更详细的描述，请参考[CAM资源描述方式](https://cloud.tencent.com/document/product/598/10606)。
+关于resource更详细的描述，请参考[CAM资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606)。
 
 #### 按资源进行授权
 

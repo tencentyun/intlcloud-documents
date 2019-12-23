@@ -1,7 +1,7 @@
 ## 개요
 접근 정책은 COS 리소스 접근 권한 부여에 사용됩니다. 접근 정책은 JSON 에 기반한 접근 정책 언어를 사용합니다. 접근 정책 언어를 통해 지정 의뢰인에게 권한을 부여하여 지정 COS 리소스에 지정 작업을 실행하도록 합니다.
 
-접근 정책 언어는 버킷 정책(Bucket Policy)의 기본 요소와 방법을 설명합니다. 정책 언어에 관련된 설명은 [CAM 정책 관리](https://cloud.tencent.com/document/product/598/10600)를 참조하십시오.
+접근 정책 언어는 버킷 정책(Bucket Policy)의 기본 요소와 방법을 설명합니다. 정책 언어에 관련된 설명은 [CAM 정책 관리](https://intl.cloud.tencent.com/document/product/598/10600)를 참조하십시오.
 
 ## 접근 정책 요소
 

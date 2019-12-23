@@ -15,7 +15,7 @@ Authorization: Auth String
        2. 每一个冒号后面都有一个空格；
        3. Dete 格式是 GMT Date；
        4. Authorization 统一为 Auth String -->
-> Authorization: Auth String (详细参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 章节)
+> Authorization: Auth String (详细参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 章节)
 
 ### 请求行
 <!-- 将以上完整结构的请求语法示例中的请求行单独描述说明-->

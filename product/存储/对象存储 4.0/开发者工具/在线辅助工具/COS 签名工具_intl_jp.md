@@ -2,7 +2,7 @@
 
 COS署名ツールは、Tencent Cloud COSがユーザーに提供するWebツールであり、リクエスト署名を生成するために使用されます。ツールページに指定のパラメータを入力し、リクエスト署名を生成し、リクエスト署名の正確性を検証します。
 - 現時点でCOSはXMLとJSONの2つのバージョンのAPIがあります。2つのAPIの署名入力パラメーターがそれぞれ違います。COSはXMLバージョンのAPIをおすすめします。JSON APIは、Tencent Cloud COSサービスがXML APIをリリースする前に、ユーザーに提供するCOSにアクセスするためのAPIです。APIと標準XMLのAPI最下層アーキテクチャが同じ、データの相互運用性があり、交互に使うことができますが、API互換性がありません。
-- XMLバージョンの署名説明ドキュメントについては、XMLバージョン[リクエスト署名](https://cloud.tencent.com/document/product/436/7778)を参照してください。
+- XMLバージョンの署名説明ドキュメントについては、XMLバージョン[リクエスト署名](https://intl.cloud.tencent.com/document/product/436/7778)を参照してください。
 - JSONバージョンの署名説明ドキュメントについては、JSONバージョン[リクエスト署名](https://cloud.tencent.com/document/product/436/6054)を参照してください。
 
 ## 使用方法
@@ -19,7 +19,7 @@ COS署名ツールは、Tencent Cloud COSがユーザーに提供するWebツー
 ![avatar](https://main.qcloudimg.com/raw/6855a2f6b18779037090e0769303bbc7.png)
 基本情報のパラメータは必須入力項目です
 - APIバージョン：XMLバージョンのAPIを選択します。
-- 署名有効時間：署名の有効時間。【取得】をクリックすると、有効期間が60分間の署名を取得できます。また、有効な開始時刻と終了時刻を入力し、この開始時刻と終了時刻の署名結果を表示できます。関連する署名の有効時間の説明については、[リクエスト署名](https://cloud.tencent.com/document/product/436/7778#.E7.AD.BE.E5.90.8D.E5.86.85.E5.AE.B9)を参照してください。
+- 署名有効時間：署名の有効時間。【取得】をクリックすると、有効期間が60分間の署名を取得できます。また、有効な開始時刻と終了時刻を入力し、この開始時刻と終了時刻の署名結果を表示できます。関連する署名の有効時間の説明については、[リクエスト署名](https://intl.cloud.tencent.com/document/product/436/7778#.E7.AD.BE.E5.90.8D.E5.86.85.E5.AE.B9)を参照してください。
 
 #### API暗号鍵情報の入力
 
@@ -41,12 +41,12 @@ API暗号鍵の情報は必須入力項目です。
 - **HttpHeaders：**選択可能項目。HTTPリクエストヘッダー。URLパラメータを検証するときにこのパラメータを入力できます。そのうち、keyは小文字で、valueはURLEncodeを実行し、複数のkeyは辞書順で並び替えます。
  例えば、「Host: bucket1-1254000000.cos.ap-beijing.myqcloud.com」は、この署名でアカウント1254000000のバケットbucket1の指定ファイルにアクセスできることを示します。
 
-関連するHTTPリクエストパラメータの詳細については、[リクエスト署名](https://cloud.tencent.com/document/product/436/7778#signature-.E8.AE.A1.E7.AE.97)を参照してください。
+関連するHTTPリクエストパラメータの詳細については、[リクエスト署名](https://intl.cloud.tencent.com/document/product/436/7778#signature-.E8.AE.A1.E7.AE.97)を参照してください。
 
 #### 署名の生成およびプロセスパラメータの表示
 
 【署名生成】をクリックすると、下図のように、右側の「結果返答」でリクエスト署名結果を確認できます。
-COS署名ツールは、生成される最終署名と計算署名プロセス中のプロセスパラメータをそれぞれ表示します。関連プロセスパラメータの詳細については、[リクエスト署名](https://cloud.tencent.com/document/product/436/7778#signature-.E8.AE.A1.E7.AE.97)を参照してください。
+COS署名ツールは、生成される最終署名と計算署名プロセス中のプロセスパラメータをそれぞれ表示します。関連プロセスパラメータの詳細については、[リクエスト署名](https://intl.cloud.tencent.com/document/product/436/7778#signature-.E8.AE.A1.E7.AE.97)を参照してください。
 
 ![avatar](https://main.qcloudimg.com/raw/4e5d3164848078e4ac2dc0b9b767ca00.png)
 

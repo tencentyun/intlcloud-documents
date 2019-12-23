@@ -15,14 +15,14 @@
 - **权限**：权限是指允许或拒绝某些用户执行某些操作。默认情况下，**主账号拥有其名下所有资源的访问权限**，而**子账号没有主账号下任何资源的访问权限**。
 - **策略**：策略是定义和描述一条或多条权限的语法规范。**主账号**通过将**策略关联**到用户/用户组完成授权。
 
-[单击查看更多 CAM 文档>>](https://cloud.tencent.com/document/product/598/10583)
+[单击查看更多 CAM 文档>>](https://intl.cloud.tencent.com/document/product/598/10583)
 
 ##  相关文档
 | 目标 | 链接 | 
 |---------|---------|
-|了解策略和用户之间关系| [策略管理](https://cloud.tencent.com/document/product/598/10601)|
-|了解策略的基本结构| [策略语法](https://cloud.tencent.com/document/product/598/10603) | 
-|了解还有哪些产品支持 CAM|[支持 CAM 的产品](https://cloud.tencent.com/document/product/598/10588)|
+|了解策略和用户之间关系| [策略管理](https://intl.cloud.tencent.com/document/product/598/10601)|
+|了解策略的基本结构| [策略语法](https://intl.cloud.tencent.com/document/product/598/10603) | 
+|了解还有哪些产品支持 CAM|[支持 CAM 的产品](https://intl.cloud.tencent.com/document/product/598/10588)|
 
 
 ##  访问控制策略示例 

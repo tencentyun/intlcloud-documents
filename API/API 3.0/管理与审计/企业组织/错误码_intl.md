@@ -29,7 +29,7 @@ Code in Error indicates the error code, and Message indicates the specific infor
 | AuthFailure.SignatureExpire | Signature expired. Timestamp and server time cannot differ by more than five minutes. Please ensure your current local time matches the standard time. |
 | AuthFailure.SignatureFailure | Invalid signature. Signature calculation error. Please ensure you’ve followed the signature calculation process described in the Signature API documentation.  |
 | AuthFailure.TokenFailure | Token error. |
-| AuthFailure.UnauthorizedOperation | The request is not authorized. For more information, see the [CAM](https://cloud.tencent.com/document/product/598) documentation. |
+| AuthFailure.UnauthorizedOperation | The request is not authorized. For more information, see the [CAM](https://intl.cloud.tencent.com/document/product/598) documentation. |
 | DryRunOperation | DryRun Operation. It means that the request would have succeeded, but the DryRun parameter was used. |
 | FailedOperation | Operation failed. |
 | InternalError | Internal error. |

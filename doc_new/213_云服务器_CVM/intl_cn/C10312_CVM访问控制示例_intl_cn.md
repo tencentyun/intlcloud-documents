@@ -262,7 +262,7 @@
 
 方案A：
 
-企业帐号 CompanyExample 直接将预设策略 QcloudCVMFullAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://cloud.tencent.com/document/product/598/10602)。
+企业帐号 CompanyExample 直接将预设策略 QcloudCVMFullAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
 方案B：
 
@@ -279,16 +279,16 @@
     ]
 }
 ```
-2. 将该策略授权给子账号。授权方式请参考 [授权管理](https://cloud.tencent.com/document/product/598/10602)。
+2. 将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
 
 ### 授予子账号拥有项目管理的操作权限
 企业帐号 CompanyExample（ownerUin 为12345678）下有一个子账号 Developer，需要基于项目授权子账号在控制台管理资源。
 
 
-1. 按业务权限创建项目管理自定义策略，请参考 [策略](https://cloud.tencent.com/document/product/598/10601)。
-2. 给子账号关联创建好的自定义策略，请参考 [授权管理](https://cloud.tencent.com/document/product/598/10602)。
-子账号做项目管理时如遇到无权限提示，例如：查看快照、镜像、VPC、弹性公网 IP 等产品时提示无权限，可授权子账号 QcloudCVMAccessForNullProject、QcloudCVMOrderAccess 和 QcloudCVMLaunchToVPC 预设策略。授权方式请参考 [授权管理](https://cloud.tencent.com/document/product/598/10602)。
+1. 按业务权限创建项目管理自定义策略，请参考 [策略](https://intl.cloud.tencent.com/document/product/598/10601)。
+2. 给子账号关联创建好的自定义策略，请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
+子账号做项目管理时如遇到无权限提示，例如：查看快照、镜像、VPC、弹性公网 IP 等产品时提示无权限，可授权子账号 QcloudCVMAccessForNullProject、QcloudCVMOrderAccess 和 QcloudCVMLaunchToVPC 预设策略。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
 
 ### 自定义策略

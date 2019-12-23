@@ -9,9 +9,9 @@ IDプロバイダーを管理する方法は2つあります。CAMコンソー�
 
 ### APIで削除
 
-- （オプション）すべてのIdP情報をページ別にリストするために、[ListSAMLProviders](https://cloud.tencent.com/document/product/598/30298)を呼び出してください。
-- （オプション）特定のプロバイダーに関する詳細情報を取得するために、[GetSAMLProvider](https://cloud.tencent.com/document/product/598/30297)を呼び出してください。
-- SAML IDプロバイダーを削除するために、[DeleteSAMLProvider](https://cloud.tencent.com/document/product/598/30301)を呼び出してください。
+- （オプション）すべてのIdP情報をページ別にリストするために、[ListSAMLProviders](https://intl.cloud.tencent.com/document/product/598/30298)を呼び出してください。
+- （オプション）特定のプロバイダーに関する詳細情報を取得するために、[GetSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30297)を呼び出してください。
+- SAML IDプロバイダーを削除するために、[DeleteSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30301)を呼び出してください。
 
 ## SAML IDプロバイダーの変更
 
@@ -25,4 +25,4 @@ IDプロバイダーを変更する方法は2つあります。CAMコンソー�
 ### APIで変更
 
 SAML IDプロバイダーの説明、またはメタデータドキュメントをアップデートします。
-- 次の操作を呼び出す：[UpdateSAMLProvider](https://cloud.tencent.com/document/product/598/30296)
+- 次の操作を呼び出す：[UpdateSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30296)

@@ -119,7 +119,7 @@
 更多操作，请参见 [网络 ACL 操作概述](https://cloud.tencent.com/document/product/215/20169)。
 
 ### 访问控制
-[访问控制](https://cloud.tencent.com/document/product/598) 是腾讯云提供的一套 Web 服务，用于帮助客户安全地管理腾讯云账户的访问权限，资源管理和使用权限。通过 CAM，您可以创建、管理和销毁用户（组），并通过身份管理和策略管理控制哪些人可以使用哪些腾讯云资源。下面将介绍使用访问控制及与其相关产品的常用操作，供您参考。
+[访问控制](https://intl.cloud.tencent.com/document/product/598) 是腾讯云提供的一套 Web 服务，用于帮助客户安全地管理腾讯云账户的访问权限，资源管理和使用权限。通过 CAM，您可以创建、管理和销毁用户（组），并通过身份管理和策略管理控制哪些人可以使用哪些腾讯云资源。下面将介绍使用访问控制及与其相关产品的常用操作，供您参考。
 - [VPC 访问控制策略示例](https://cloud.tencent.com/document/product/215/20170)
 - [VPC API 操作支持的资源级权限](https://cloud.tencent.com/document/product/215/20171)
 

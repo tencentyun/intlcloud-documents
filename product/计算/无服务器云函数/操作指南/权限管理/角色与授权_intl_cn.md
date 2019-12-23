@@ -1,6 +1,6 @@
 ## 简介
 
-[角色（Role）](https://cloud.tencent.com/document/product/598/19420)是腾讯云 [访问管理（Cloud Access Management，CAM）](https://cloud.tencent.com/document/product/598/10583)提供的拥有一组权限的虚拟身份，主要用于对角色载体授予腾讯云中服务、操作和资源的访问权限，这些权限附加到角色后，通过将角色赋予腾讯云的服务，允许服务代替用户完成对授权资源的操作。
+[角色（Role）](https://intl.cloud.tencent.com/document/product/598/19420)是腾讯云 [访问管理（Cloud Access Management，CAM）](https://intl.cloud.tencent.com/document/product/598/10583)提供的拥有一组权限的虚拟身份，主要用于对角色载体授予腾讯云中服务、操作和资源的访问权限，这些权限附加到角色后，通过将角色赋予腾讯云的服务，允许服务代替用户完成对授权资源的操作。
 
 ## 角色和权限
 
@@ -52,7 +52,7 @@
 
 ### 使用运行角色
 
-当云函数服务在函数被触发执行时，运行角色会自动使用。根据 [使用角色](https://cloud.tencent.com/document/product/598/19419) 的说明，云函数服务将在函数被触发运行时，通过在服务后台获取角色临时凭证的接口，获取到角色对应的临时凭证，并将临时凭证以环境变量的形式设置到云函数代码的运行环境中。在运行环境中设置的临时变量包括 `TENCENTCLOUD_SECRETID`，`TENCENTCLOUD_SECRETKEY`，`TENCENTCLOUD_SESSIONTOKEN`。您可以通过 [使用环境变量](https://cloud.tencent.com/document/product/583/30228#.E4.BD.BF.E7.94.A8.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F) 的方式，根据环境变量 Key，读取到对应值。
+当云函数服务在函数被触发执行时，运行角色会自动使用。根据 [使用角色](https://intl.cloud.tencent.com/document/product/598/19419) 的说明，云函数服务将在函数被触发运行时，通过在服务后台获取角色临时凭证的接口，获取到角色对应的临时凭证，并将临时凭证以环境变量的形式设置到云函数代码的运行环境中。在运行环境中设置的临时变量包括 `TENCENTCLOUD_SECRETID`，`TENCENTCLOUD_SECRETKEY`，`TENCENTCLOUD_SESSIONTOKEN`。您可以通过 [使用环境变量](https://cloud.tencent.com/document/product/583/30228#.E4.BD.BF.E7.94.A8.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F) 的方式，根据环境变量 Key，读取到对应值。
 
 临时凭证的环境变量说明如下：
 

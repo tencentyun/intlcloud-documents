@@ -12,7 +12,7 @@ sts.api.qcloud.com
 |필드|필수 여부|유형|설명|
 | ------------ | ------------ | ------------ | ------------ |
 |name|예|String|페더레이션 ID를 가진 사용자의 별명|
-|policy|예|String|전략 설명</br>**주의: **</br>1. policy를 URL 인코딩해야 합니다(GET 방법으로 클라우드 API를 요청할 경우 요청을 보내기 전에 모든 매개변수는 클라우드 API 사양에 따라 다시 한 번 URL 인코딩해야 합니다). </br>2. 전략 구문은 [CAM 전략 구문](https://cloud.tencent.com/document/product/598/10603)을 참조하십시오. </br>3.전략에는 principal 요소를 포함할 수 없습니다.|
+|policy|예|String|전략 설명</br>**주의: **</br>1. policy를 URL 인코딩해야 합니다(GET 방법으로 클라우드 API를 요청할 경우 요청을 보내기 전에 모든 매개변수는 클라우드 API 사양에 따라 다시 한 번 URL 인코딩해야 합니다). </br>2. 전략 구문은 [CAM 전략 구문](https://intl.cloud.tencent.com/document/product/598/10603)을 참조하십시오. </br>3.전략에는 principal 요소를 포함할 수 없습니다.|
 |durationSeconds|아니요|Int|임시 인증서의 유효 기간(초), 기본값은 1800초이며 최대 유효 기간은 7200초입니다|
 
 ## 출력 매개변수

@@ -77,7 +77,7 @@ CosXmlService cosXmlService = new CosXmlService(context,cosXmlServiceConfig, loc
 
 ## 生成签名
 
-签名具体的生成和使用请参照 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文章。SDK 中已提供了签名获取类，用户只需要继承 BasicLifecycleCredentialProvider 类，并重写 fetchNewCredentials() 方法。
+签名具体的生成和使用请参照 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文章。SDK 中已提供了签名获取类，用户只需要继承 BasicLifecycleCredentialProvider 类，并重写 fetchNewCredentials() 方法。
 
 #### 示例
 ```java

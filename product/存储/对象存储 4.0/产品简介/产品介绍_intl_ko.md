@@ -48,7 +48,7 @@ COS는 콘솔, API 및 SDK와 같은 다양한 방법을 통해 쉽고 빠르게
 Tencent Cloud COS의 지원하는 가영 지억, 기능 및 사양에 대한 정보는 다음 문서를 참조하십시오.
 - [지역 및 액세스 도메인 이름](https://cloud.tencent.com/document/product/436/6224)
 - [기능 개요](https://cloud.tencent.com/document/product/436/8186)
-- [사양 및 제한](https://cloud.tencent.com/document/product/436/14518)
+- [사양 및 제한](https://intl.cloud.tencent.com/document/product/436/14518)
 
 Tencent Cloud COS의 중요한 구성 요소인 버킷과 객체에 대한 정보는 다음 문서를 참조하십시오.
 - [버킷 개요](https://cloud.tencent.com/document/product/436/13312)

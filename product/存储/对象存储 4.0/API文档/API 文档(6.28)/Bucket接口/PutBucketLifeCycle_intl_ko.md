@@ -19,7 +19,7 @@ Date: GMT Date
 Authorization: Auth String
 Content-MD5: MD5
 ```
->Authorization: Auth String(세부 정보는 [요청 서명](https://cloud.tencent.com/document/product/436/7778) 문서를 참조).
+>Authorization: Auth String(세부 정보는 [요청 서명](https://intl.cloud.tencent.com/document/product/436/7778) 문서를 참조).
 
 ### 요청 헤더
 

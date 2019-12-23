@@ -8,7 +8,7 @@
 
 ### COS 分块上传方式，最小分块大小是多少呢？
 
-每块最小1MB。详情请查阅 [规格与限制](https://cloud.tencent.com/document/product/436/14518) 文档。
+每块最小1MB。详情请查阅 [规格与限制](https://intl.cloud.tencent.com/document/product/436/14518) 文档。
 
 ### 大文件分片上传过程中，签名失效后是否可以换签名继续上传分片？
 

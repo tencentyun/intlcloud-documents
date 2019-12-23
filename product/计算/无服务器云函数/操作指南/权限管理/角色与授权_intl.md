@@ -1,6 +1,6 @@
 ## Overview
 
-[Role](https://cloud.tencent.com/document/product/598/19420) is a virtual identity with a set of permissions provided by [CAM](https://cloud.tencent.com/document/product/598/10583), which is mainly used to grant access permissions of services, actions and resources in Tencent Cloud to role carriers. After these permissions are added to a role, the role can be configured to Tencent Cloud services, allowing the services to perform operations on authorized resources on your behalf.
+[Role](https://intl.cloud.tencent.com/document/product/598/19420) is a virtual identity with a set of permissions provided by [CAM](https://intl.cloud.tencent.com/document/product/598/10583), which is mainly used to grant access permissions of services, actions and resources in Tencent Cloud to role carriers. After these permissions are added to a role, the role can be configured to Tencent Cloud services, allowing the services to perform operations on authorized resources on your behalf.
 
 ## Role and Permission
 
@@ -52,7 +52,7 @@ If you manage and configure SCF through TCCLI or APIs rather than the console, t
 
 ### Using Executing Role
 
-When the SCF service is triggered, the executing role will be automatically used. According to the instructions in [Using a Role](https://cloud.tencent.com/document/product/598/19419), the SCF service will obtain the temporary credentials corresponding to the role through the API used to obtain the temporary role credentials in the service backend when the function is triggered, and configure such credentials to the runtime environment of the function in the form of environment variables. Temporary variables set in the runtime environment include `TENCENTCLOUD_SECRETID`, `TENCENTCLOUD_SECRETKEY`, and `TENCENTCLOUD_SESSIONTOKEN`. You can follow the instructions in [Using an Environment Variable](https://cloud.tencent.com/document/product/583/30228#.E4.BD.BF.E7.94.A8.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F) to read the corresponding value based on the environment variable key.
+When the SCF service is triggered, the executing role will be automatically used. According to the instructions in [Using a Role](https://intl.cloud.tencent.com/document/product/598/19419), the SCF service will obtain the temporary credentials corresponding to the role through the API used to obtain the temporary role credentials in the service backend when the function is triggered, and configure such credentials to the runtime environment of the function in the form of environment variables. Temporary variables set in the runtime environment include `TENCENTCLOUD_SECRETID`, `TENCENTCLOUD_SECRETKEY`, and `TENCENTCLOUD_SESSIONTOKEN`. You can follow the instructions in [Using an Environment Variable](https://cloud.tencent.com/document/product/583/30228#.E4.BD.BF.E7.94.A8.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F) to read the corresponding value based on the environment variable key.
 
 The environment variables for temporary credentials are described below:
 

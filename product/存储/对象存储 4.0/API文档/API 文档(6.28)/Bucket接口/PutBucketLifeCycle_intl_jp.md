@@ -19,7 +19,7 @@ Date: GMT Date
 Authorization: Auth String 
 Content-MD5: MD5
 ```
->Authorization：Auth String（詳細については[リクエスト署名](https://cloud.tencent.com/document/product/436/7778)ドキュメントを参照してください）
+>Authorization：Auth String（詳細については[リクエスト署名](https://intl.cloud.tencent.com/document/product/436/7778)ドキュメントを参照してください）
 
 ### リクエストヘッダー
 

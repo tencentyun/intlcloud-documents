@@ -1,4 +1,4 @@
-CAM 사용자는 Tencent Cloud에서 생성한 개체입니다. 하나의 CAM 사용자는 하나의 Tencent Cloud 계정과 연결됩니다. 등록된 Tencent Cloud 계정 ID는 **기본 계정**이며 [사용자 관리](https://console.cloud.tencent.com/cam)를 통해 다른 권한을 가진 **서브 계정**을 생성하고 협력 받을 수 있습니다. 서브 계정 유형은 [서브 사용자](https://cloud.tencent.com/document/product/598/13674), [협력자](https://cloud.tencent.com/document/product/598/13666) 및 [메시지 수신자](https://cloud.tencent.com/document/product/598/13667)로 구분됩니다.
+CAM 사용자는 Tencent Cloud에서 생성한 개체입니다. 하나의 CAM 사용자는 하나의 Tencent Cloud 계정과 연결됩니다. 등록된 Tencent Cloud 계정 ID는 **기본 계정**이며 [사용자 관리](https://console.cloud.tencent.com/cam)를 통해 다른 권한을 가진 **서브 계정**을 생성하고 협력 받을 수 있습니다. 서브 계정 유형은 [서브 사용자](https://intl.cloud.tencent.com/document/product/598/13674), [협력자](https://intl.cloud.tencent.com/document/product/598/13666) 및 [메시지 수신자](https://intl.cloud.tencent.com/document/product/598/13667)로 구분됩니다.
 
 <table>
 	<tr>

@@ -32,7 +32,7 @@ Enter the COS Console, click the Bucket name to enter the management page, then 
 
 ![](https://mc.qcloudimg.com/static/img/4fd194c09b5a2c994867238878649d77/image.png)
 
-**Default domain - cross-region access in private network: Default domain can be used for the access among different Tencent Cloud products in the same region. However, to achieve cross-region access in private network, for example, if a CVM in Guangzhou needs to use the data on the Singapore COS, you need to use a VPC to deploy a dedicated network tunnel to achieve high-speed access.  [Click to view information on VPC](https://cloud.tencent.com/product/vpc.html)**
+**Default domain - cross-region access in private network: Default domain can be used for the access among different Tencent Cloud products in the same region. However, to achieve cross-region access in private network, for example, if a CVM in Guangzhou needs to use the data on the Singapore COS, you need to use a VPC to deploy a dedicated network tunnel to achieve high-speed access.  [Click to view information on VPC](https://intl.cloud.tencent.com/product/vpc.html)**
 
 
 ## CDN Accelerated Domain
@@ -120,7 +120,7 @@ The access URL can be the combination of custom domain with file path: www.srcos
 
 ![](//mccdn.qcloud.com/static/img/32e0a9be3c5fc82754014ccc497c4b1d/image.png)
 
-> Note: If static website feature is enabled, you can directly open and view the file using the custom domain. For the instructions on how to enable the static website feature, please refer to [Static Website Hosting](/doc/product/430/5896).
+> Note: If static website feature is enabled, you can directly open and view the file using the custom domain. For the instructions on how to enable the static website feature, please refer to [Static Website Hosting](https://intl.cloud.tencent.com/document/product/436/14984).
 
 ## Example 2 (Disabling CDN Acceleration)
 
@@ -170,5 +170,5 @@ The access URL can be the combination of custom domain with file path: www.srcos
 
 ![](//mccdn.qcloud.com/static/img/32e0a9be3c5fc82754014ccc497c4b1d/image.png)
 
-> Note: If static website feature is enabled, you can directly open and view the file using the custom domain. For the instructions on how to enable the static website feature, please refer to [Static Website Hosting](/doc/product/430/5896).
+> Note: If static website feature is enabled, you can directly open and view the file using the custom domain. For the instructions on how to enable the static website feature, please refer to [Static Website Hosting](https://intl.cloud.tencent.com/document/product/436/14984).
 

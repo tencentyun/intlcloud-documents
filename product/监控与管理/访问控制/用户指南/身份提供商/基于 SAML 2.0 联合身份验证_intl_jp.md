@@ -2,11 +2,11 @@ Tencent Cloudは、SAML 2.0（Security Assertion Markup Language 2.0）に基づ
 
 ## SAML IDプロバイダー
 
-IDプロバイダーは、アクセス管理（CAM）の1つのエンティティです。外部のクレジットアカウントの集まりと見なすことができます。SAML 2.0統合身元検証に基づくIDプロバイダー（IdP）は、SAML 2.0（Security Assertion Markup Language 2.0）標準をサポートするIDプロバイダー（IdP）サービスについて説明しています。企業または組織のメンバーがTencent Cloudリソースにアクセスできるように、SAML 2.0プロトコル互換のIDプロバイダー（Microsoft Active Directory統合身元検証サービスなど）とTencent Cloudの間で信頼関係を確立する場合は、SAML IDプロバイダーを作成する必要があります。SAML IDプロバイダーの作成については、[IDプロバイダーの作成](https://cloud.tencent.com/document/product/598/30290)を参照してください。
+IDプロバイダーは、アクセス管理（CAM）の1つのエンティティです。外部のクレジットアカウントの集まりと見なすことができます。SAML 2.0統合身元検証に基づくIDプロバイダー（IdP）は、SAML 2.0（Security Assertion Markup Language 2.0）標準をサポートするIDプロバイダー（IdP）サービスについて説明しています。企業または組織のメンバーがTencent Cloudリソースにアクセスできるように、SAML 2.0プロトコル互換のIDプロバイダー（Microsoft Active Directory統合身元検証サービスなど）とTencent Cloudの間で信頼関係を確立する場合は、SAML IDプロバイダーを作成する必要があります。SAML IDプロバイダーの作成については、[IDプロバイダーの作成](https://intl.cloud.tencent.com/document/product/598/30290)を参照してください。
 
 ## IDプロバイダーロール
 
-SAMLプロバイダーを作成した後、SAML IDプロバイダーをロールキャリアとする1つ以上のIDプロバイダーロールを作成する必要があります。ロールは一連の権限を持つ仮想身元であり、リソースにアクセスするときは一時的セキュリティ証明書が使用されます。SAML 2.0アサーションのコンテキストでは、IDプロバイダー（IdP）によって検証された統合身元ユーザーにロールを割り当てることができます。このロールにより、IDプロバイダーはTencent Cloudリソースアクセス用の一時的セキュリティ証明書を申請できます。このロールに関連付けられているポリシーによって、統合身元ユーザーのTencent Cloudリソースへのアクセス範囲が決まります。SAML 2.0統合身元検証に基づいてIDプロバイダーロールを作成することについては、[ロールの作成](https://cloud.tencent.com/document/product/598/19381)を参照してください。
+SAMLプロバイダーを作成した後、SAML IDプロバイダーをロールキャリアとする1つ以上のIDプロバイダーロールを作成する必要があります。ロールは一連の権限を持つ仮想身元であり、リソースにアクセスするときは一時的セキュリティ証明書が使用されます。SAML 2.0アサーションのコンテキストでは、IDプロバイダー（IdP）によって検証された統合身元ユーザーにロールを割り当てることができます。このロールにより、IDプロバイダーはTencent Cloudリソースアクセス用の一時的セキュリティ証明書を申請できます。このロールに関連付けられているポリシーによって、統合身元ユーザーのTencent Cloudリソースへのアクセス範囲が決まります。SAML 2.0統合身元検証に基づいてIDプロバイダーロールを作成することについては、[ロールの作成](https://intl.cloud.tencent.com/document/product/598/19381)を参照してください。
 ![](https://main.qcloudimg.com/raw/f85ada7eb563f1132aabfd6d398cca21.png)
 
 ## SAML 2.0統合身元検証を使用したTencent Cloud APIへのアクセス

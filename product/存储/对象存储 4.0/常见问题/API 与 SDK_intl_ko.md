@@ -23,7 +23,7 @@
 아니요. XML API와 JSON API 서명이 따로 있습니다. 자세한 내용은 다음을 참조하십시오.
 
 - [JSON API 서명](https://cloud.tencent.com/document/product/436/6054)
-- [XML API 서명](https://cloud.tencent.com/document/product/436/7778)
+- [XML API 서명](https://intl.cloud.tencent.com/document/product/436/7778)
 
 ### XML API와 JSON API는 동일한 ACL 권한을 공유합니까?
 

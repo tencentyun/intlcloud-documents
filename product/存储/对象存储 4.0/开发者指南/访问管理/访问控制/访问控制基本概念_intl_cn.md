@@ -5,7 +5,7 @@
 
 ### 腾讯云的身份
 
-用户申请腾讯云账号时，系统会创建一个用于登录腾讯云服务的根账号身份。腾讯云根账号可通过用户管理功能对具有不同职责的分类用户进行管理。用户类型包括 **协作者、消息接收人、子用户和角色** 等，具体定义请参阅访问管理的 [身份管理](https://cloud.tencent.com/document/product/598/13665) 和 [词汇表](https://cloud.tencent.com/document/product/598/18564) 文档。
+用户申请腾讯云账号时，系统会创建一个用于登录腾讯云服务的根账号身份。腾讯云根账号可通过用户管理功能对具有不同职责的分类用户进行管理。用户类型包括 **协作者、消息接收人、子用户和角色** 等，具体定义请参阅访问管理的 [身份管理](https://intl.cloud.tencent.com/document/product/598/13665) 和 [词汇表](https://intl.cloud.tencent.com/document/product/598/18564) 文档。
 
 ### 对象存储的资源
 
@@ -129,7 +129,7 @@
 
 用户策略与存储桶策略的最大差别是：用户策略只描述效力（Effect）、行为（Action）、资源（Resource）和条件（Condition，可选），不描述身份（Principal）。因此用户策略需要撰写完成后，再对子用户、用户组或角色执行关联操作，以及用户策略不支持将操作和资源权限授予匿名用户。
 
-您可以 [使用预设策略进行关联授权](https://cloud.tencent.com/document/product/598/10602)，也可以 [自行撰写用户策略](https://cloud.tencent.com/document/product/598/10603) 后关联到指定的身份，来实现对名下用户的访问管理。
+您可以 [使用预设策略进行关联授权](https://intl.cloud.tencent.com/document/product/598/10602)，也可以 [自行撰写用户策略](https://intl.cloud.tencent.com/document/product/598/10603) 后关联到指定的身份，来实现对名下用户的访问管理。
 
 以下是一个授权位于广州的存储桶 `examplebucket-1250000000` 所有 COS 操作的策略，您需要将策略保存后再关联到 CAM 子用户、用户组或角色方可生效：
 

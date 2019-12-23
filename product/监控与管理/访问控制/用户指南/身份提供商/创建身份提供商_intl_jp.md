@@ -14,4 +14,4 @@ IDプロバイダーを作成する方法は2つあります。CAMコンソー�
 ### APIで作成
 
 IDプロバイダーを作成して、メタデータドキュメントをアップロードします。
-- 次の操作を呼び出す：[CreateSAMLProvider](https://cloud.tencent.com/document/product/598/30295)
+- 次の操作を呼び出す：[CreateSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30295)

@@ -15,4 +15,4 @@ Step 1: create the following policy by using policy syntax.
 }
 ```
 
-Step 2: associate the sub-account with the policy. To learn how to associate a policy with a user account, see [Authorization Management](https://cloud.tencent.com/document/product/598/10602).
+Step 2: associate the sub-account with the policy. To learn how to associate a policy with a user account, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).

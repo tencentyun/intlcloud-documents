@@ -59,7 +59,7 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKIDwqaGoCIWIG4hDWdJUTL5e3hn04xiD5kI&q
 
 首行展示的是您的 HTTP Verb 及访问的链接，次行展示的是访问的域名，最后一行展示的是本次请求的签名信息。对于 PUT 类的请求，其请求头部信息较为复杂，但同样存在一些公共请求头部。有关公共请求头部的信息，请查阅 [公共请求头部](https://cloud.tencent.com/document/product/436/7728)。
 
-【签名过程】中可以查看本次请求中涉及的签名及其生成流程。有关签名算法的详细介绍，您可以查阅文档 [请求签名](https://cloud.tencent.com/document/product/436/7778) 详细了解，如果您需要对请求签名进行生成和调试，建议您使用 [COS 签名工具](https://cos5.cloud.tencent.com/static/cos-sign/)。
+【签名过程】中可以查看本次请求中涉及的签名及其生成流程。有关签名算法的详细介绍，您可以查阅文档 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 详细了解，如果您需要对请求签名进行生成和调试，建议您使用 [COS 签名工具](https://cos5.cloud.tencent.com/static/cos-sign/)。
 
 COS 返回的响应结果如下：
 

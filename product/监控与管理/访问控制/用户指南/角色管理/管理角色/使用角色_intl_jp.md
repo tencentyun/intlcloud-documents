@@ -2,13 +2,13 @@ Tencent Cloudでは、CAM APIを使用して新しいロールを使用するこ
 
 次のシナリオを想定すると、会社Aは保守管理エンジニアのポジションを持ち、そのポジションを会社Bにアウトソーシングしたいと考えています。このポジションでは、会社A広州地域のすべてのCVMリソースを操作する必要があります。
 
-会社Aの企業アカウントCompanyExampleA（ownerUinは12345）、ロールを作成し、ロールキャリアを会社Bの企業アカウントCompanyExampleB（ownerUinは67890）に設定します。会社A（CompanyExampleA）はCreateRole APIを呼び出して、ロール名（roleName）がDevOpsRoleであるロールを作成し、会社Aの企業アカウントCompanyExampleAは、作成されたロールに権限を付与します。上記の手順については、[APIで作成](https://cloud.tencent.com/document/product/598/19381#.E9.80.9A.E8.BF.87-api-.E5.88.9B.E5.BB.BA)を参照してください。
+会社Aの企業アカウントCompanyExampleA（ownerUinは12345）、ロールを作成し、ロールキャリアを会社Bの企業アカウントCompanyExampleB（ownerUinは67890）に設定します。会社A（CompanyExampleA）はCreateRole APIを呼び出して、ロール名（roleName）がDevOpsRoleであるロールを作成し、会社Aの企業アカウントCompanyExampleAは、作成されたロールに権限を付与します。上記の手順については、[APIで作成](https://intl.cloud.tencent.com/document/product/598/19381#.E9.80.9A.E8.BF.87-api-.E5.88.9B.E5.BB.BA)を参照してください。
 
-企業アカウントCompanyExampleBにこのロールを付与された後、サブアカウントDevBがその仕事をすることが望まれます。会社B（CompanyExampleB）は、DevBがCompanyExampleAのロールであるDevOpsRoleを申請できることを承認します。上記の手順については、[サブアカウントにロールポリシーを付与](https://cloud.tencent.com/document/product/598/19422)を参照してください。
+企業アカウントCompanyExampleBにこのロールを付与された後、サブアカウントDevBがその仕事をすることが望まれます。会社B（CompanyExampleB）は、DevBがCompanyExampleAのロールであるDevOpsRoleを申請できることを承認します。上記の手順については、[サブアカウントにロールポリシーを付与](https://intl.cloud.tencent.com/document/product/598/19422)を参照してください。
 
 上記のロールの作成、承認を完了し、サブアカウントにロールポリシーを付与した後、サブアカウントDevBはそのロールの使用を開始できます。
 
-1. ロールDevOpsRoleの一時的認証情報を申請するために、[AssumeRole](https://cloud.tencent.com/document/product/598/13895) APIを呼び出す必要があります。入力パラメータは以下のとおりです。 
+1. ロールDevOpsRoleの一時的認証情報を申請するために、[AssumeRole](https://intl.cloud.tencent.com/document/product/598/13895) APIを呼び出す必要があります。入力パラメータは以下のとおりです。 
 ```
 roleArn=qcs::cam::uin/12345:roleName/DevOpsRole，
 roleSessionName=DevBAssumeTheRole，

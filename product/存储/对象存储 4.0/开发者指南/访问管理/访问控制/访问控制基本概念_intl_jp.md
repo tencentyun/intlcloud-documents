@@ -5,7 +5,7 @@
 
 ### Tencent Cloudの身分
 
-ユーザーがTencent Cloudアカウントを申請したら、システムはTencent Cloudログイン用のルートアカウント身分を作成してくれます。Tencent Cloudルートアカウントはユーザー管理機能により、職責別にユーザーを管理できます。ユーザーのタイプは**協力者、メッセージ受信者、サブユーザーとロール**などを含みます。詳しい定義については、CAMの[身分管理](https://cloud.tencent.com/document/product/598/13665)と[用語集](https://cloud.tencent.com/document/product/598/18564)のドキュメントを参照してください。
+ユーザーがTencent Cloudアカウントを申請したら、システムはTencent Cloudログイン用のルートアカウント身分を作成してくれます。Tencent Cloudルートアカウントはユーザー管理機能により、職責別にユーザーを管理できます。ユーザーのタイプは**協力者、メッセージ受信者、サブユーザーとロール**などを含みます。詳しい定義については、CAMの[身分管理](https://intl.cloud.tencent.com/document/product/598/13665)と[用語集](https://intl.cloud.tencent.com/document/product/598/18564)のドキュメントを参照してください。
 
 ### COSのリソース
 
@@ -128,7 +128,7 @@ Tencent Cloud COSは**バケット**と**オブジェクト**の次元でそれ�
 
 ユーザーポリシーとバケットポリシーの最大の相違点は、ユーザーポリシーは效力（Effect）、行為（Action）、リソース（Resource）と条件（Condition、オプション）のみを説明し、身分（Principal）を説明しません。それで、ユーザーポリシーは、作成完了後、サブユーザー、ユーザーグループまたはロールに対して関連付けの操作を行う必要があります。また、ユーザーポリシーは操作とリソース権限を匿名ユーザーに付与することに対応していません。
 
-[プリセットポリシーによる関連認証](https://cloud.tencent.com/document/product/598/10602)、もしくは[ユーザーポリシーの自主作成](https://cloud.tencent.com/document/product/598/10603)をしてから、指定の身分に関連付けることで、名義下のユーザーのアクセスを管理できます。
+[プリセットポリシーによる関連認証](https://intl.cloud.tencent.com/document/product/598/10602)、もしくは[ユーザーポリシーの自主作成](https://intl.cloud.tencent.com/document/product/598/10603)をしてから、指定の身分に関連付けることで、名義下のユーザーのアクセスを管理できます。
 
 下記は、広州にあるバケット`examplebucket-1250000000`のすべてのCOS操作権限を付与するポリシーです。ポリシーを保存してから、CAMサブユーザー、ユーザーグループまたはロールに関連付けて発効させることができます：
 

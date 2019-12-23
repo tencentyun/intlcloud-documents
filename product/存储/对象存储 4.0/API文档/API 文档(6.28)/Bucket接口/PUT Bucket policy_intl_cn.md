@@ -14,7 +14,7 @@ Content-MD5:MD5
 Authorization: Auth String
 ```
 
-> Authorization: Auth String （详细参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。
+> Authorization: Auth String （详细参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 
 ### 请求头

@@ -8,4 +8,4 @@ Serverless Cloud Function (SCF) may be associated with or use the following prod
 | [Cloud Message Queue (CMQ)](https://cloud.tencent.com/document/product/406) | You can configure a CMQ trigger to trigger a function when a message is received by the corresponding queue. |
 | [Cloud Kafka (CKafka)](https://cloud.tencent.com/document/product/597) | You can configure a CKafka trigger to trigger a function when a message is received by the corresponding CKafka topic. |
 | [API Gateway](https://cloud.tencent.com/document/product/628) | You can configure an API Gateway trigger to trigger a function when an HTTP request is received at the API URL. |
-| [Cloud Access Management (CAM)](https://cloud.tencent.com/document/product/598) | You can configure a CAM role to grant SCF the access to authorized resources when function code is executed. |
+| [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598) | You can configure a CAM role to grant SCF the access to authorized resources when function code is executed. |

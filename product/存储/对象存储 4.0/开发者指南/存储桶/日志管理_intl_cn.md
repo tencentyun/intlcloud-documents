@@ -37,7 +37,7 @@
 3. 开启日志管理
 
 #### 1. 创建日志角色
-创建日志角色，具体接口信息参见 [CreateRole](https://cloud.tencent.com/document/product/598/13886)。
+创建日志角色，具体接口信息参见 [CreateRole](https://intl.cloud.tencent.com/document/product/598/13886)。
 其中，roleName 必须为： CLS_QcsRole；
 policyDocument 为：
 ```
@@ -53,7 +53,7 @@ policyDocument 为：
 }
 ```
 #### 2. 日志角色绑定权限
-角色权限绑定权限，具体接口信息参见 [AttachRolePolicy](https://cloud.tencent.com/document/product/598/13889)。
+角色权限绑定权限，具体接口信息参见 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889)。
 其中，policyName 为：QcloudCOSAccessForCLSRole；roleName 为第 1 步中的 CLS_QcsRole，也可以使用创建 roleName 时返回的 roleID。
 
 #### 3. 创建日志角色

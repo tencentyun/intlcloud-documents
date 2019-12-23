@@ -1,7 +1,7 @@
 ## 概述
 访问策略可用于授予访问 COS 资源的权限。访问策略使用基于 JSON 的访问策略语言。您可以通过访问策略语言授权指定委托人（principal）对指定的 COS 资源执行指定的操作。
 
-访问策略语言描述了存储桶策略（Bucket Policy）的基本元素和用法，有关策略语言的说明可以参阅 [CAM 策略管理](https://cloud.tencent.com/document/product/598/10600)。
+访问策略语言描述了存储桶策略（Bucket Policy）的基本元素和用法，有关策略语言的说明可以参阅 [CAM 策略管理](https://intl.cloud.tencent.com/document/product/598/10600)。
 
 ## 访问策略中的元素
 

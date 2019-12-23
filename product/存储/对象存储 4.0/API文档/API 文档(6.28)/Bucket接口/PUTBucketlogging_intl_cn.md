@@ -15,7 +15,7 @@ Authorization: Auth String
 [XML File]
 ```
 
-> Authorization: Auth String (详细参见 [访问控制](https://cloud.tencent.com/document/product/436/7778) 章节)
+> Authorization: Auth String (详细参见 [访问控制](https://intl.cloud.tencent.com/document/product/436/7778) 章节)
 
 ### 请求行
 ~~~

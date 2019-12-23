@@ -59,7 +59,7 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKIDwqaGoCIWIG4hDWdJUTL5e3hn04xiD5kI&q
 
 첫 번째 라인에는 HTTP 동사와 방문한 링크가 표시됩니다. 두 번째 라인은 방문할 도메인을 보여줍니다. 마지막 라인에는 요청에 대한 서명 정보가 표시됩니다. PUT 유형의 요청의 경우 요청 헤더가 복잡하지만 몇 가지 일반적인 공통 요청 헤더가 있습니다. 공통 요청 헤더에 대한 자세한 내용은 [공통 요청 헤더](https://cloud.tencent.com/document/product/436/7728)를 참조하십시오.
 
-요청에 포함된 서명 및 생성 프로세스는 [서명 프로세스]에서 확인할 수 있습니다. 서명 알고리즘에 대한 자세한 내용은 [요청 서명](https://cloud.tencent.com/document/product/436/7778)을 참조하십시오. 요청 서명을 생성하고 디버깅해야 하는 경우 [COS 서명 도구](https://cos5.cloud.tencent.com/static/cos-sign/)를 사용하는 것이 좋습니다.
+요청에 포함된 서명 및 생성 프로세스는 [서명 프로세스]에서 확인할 수 있습니다. 서명 알고리즘에 대한 자세한 내용은 [요청 서명](https://intl.cloud.tencent.com/document/product/436/7778)을 참조하십시오. 요청 서명을 생성하고 디버깅해야 하는 경우 [COS 서명 도구](https://cos5.cloud.tencent.com/static/cos-sign/)를 사용하는 것이 좋습니다.
 
 COS에서 반환한 응답 결과는 다음과 같습니다.
 

@@ -24,7 +24,7 @@ x-cos-copy-source-if-unmodified-since: time_stamp
 x-cos-copy-source-if-modified-since: time_stamp
 ```
 
->Authorization：Auth String（詳細については[リクエスト署名](https://cloud.tencent.com/document/product/436/7778)ドキュメントを参照します）。
+>Authorization：Auth String（詳細については[リクエスト署名](https://intl.cloud.tencent.com/document/product/436/7778)ドキュメントを参照します）。
 
 
 ### リクエストヘッダー

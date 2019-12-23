@@ -1,6 +1,6 @@
 ## 简介
 
-[访问管理（Cloud Access Management，CAM）](https://cloud.tencent.com/document/product/598) 是腾讯云提供的权限及访问管理服务，主要用于帮助客户安全管理腾讯云账户下的资源的访问权限。用户可以通过 CAM 创建、管理和销毁用户（组），并使用身份管理和策略管理控制其他用户使用腾讯云资源的权限。
+[访问管理（Cloud Access Management，CAM）](https://intl.cloud.tencent.com/document/product/598) 是腾讯云提供的权限及访问管理服务，主要用于帮助客户安全管理腾讯云账户下的资源的访问权限。用户可以通过 CAM 创建、管理和销毁用户（组），并使用身份管理和策略管理控制其他用户使用腾讯云资源的权限。
 
 ## SCF 支持管理的权限
 
@@ -31,7 +31,7 @@
 
 ### 策略语法
 
-SCF 的策略语法遵循 CAM 的 [语法结构](https://cloud.tencent.com/document/product/598/10604) 和 [资源描述方式](https://cloud.tencent.com/document/product/598/10606)，策略语法以 JSON 格式为基础，所有资源均可采用下述的六段式描述方式，示例如下：
+SCF 的策略语法遵循 CAM 的 [语法结构](https://intl.cloud.tencent.com/document/product/598/10604) 和 [资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606)，策略语法以 JSON 格式为基础，所有资源均可采用下述的六段式描述方式，示例如下：
 ```
 qcs: :scf:region:uin/uin—id:function/function-name
 ```

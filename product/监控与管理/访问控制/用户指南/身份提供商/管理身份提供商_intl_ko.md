@@ -9,9 +9,9 @@ ID 공급업체를 관리하려면 CAM 콘솔을 통해 삭제 또는 CAM API를
 
 ### API 를 통해 삭제
 
-- (옵션)페이지별로 모든 IDP 정보를 표시하려면 [ListSAMLProviders](https://cloud.tencent.com/document/product/598/30298)를 호출하십시오.
-- (옵션)특정 제공업체에 대한 자세한 정보를 획득하려면 [GetSAMLProvider](https://cloud.tencent.com/document/product/598/30297)를 호출하십시오.
-- SAML ID 공급업체를 삭제하려면 [DeleteSAMLProvider](https://cloud.tencent.com/document/product/598/30301)를 호출하십시오.
+- (옵션)페이지별로 모든 IDP 정보를 표시하려면 [ListSAMLProviders](https://intl.cloud.tencent.com/document/product/598/30298)를 호출하십시오.
+- (옵션)특정 제공업체에 대한 자세한 정보를 획득하려면 [GetSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30297)를 호출하십시오.
+- SAML ID 공급업체를 삭제하려면 [DeleteSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30301)를 호출하십시오.
 
 ## SAML ID 공급업체 수정
 
@@ -25,4 +25,4 @@ ID 공급업체를 수정하려면 CAM 콘솔을 통해 수정 또는 CAM API를
 ### API 를 통해 수정
 
 SAML ID 공급업체 설명 또는 메타 데이터 문서를 업데이트합니다.
-- [UpdateSAMLProvider](https://cloud.tencent.com/document/product/598/30296)를 호출하십시오.
+- [UpdateSAMLProvider](https://intl.cloud.tencent.com/document/product/598/30296)를 호출하십시오.

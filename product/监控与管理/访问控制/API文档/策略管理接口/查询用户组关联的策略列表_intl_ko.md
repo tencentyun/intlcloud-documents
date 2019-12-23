@@ -20,7 +20,7 @@ cam.api.qcloud.com
 
 ## 출력 매개변수
 
-[ListPolicies](https://cloud.tencent.com/document/product/598/15426) API 설명을 참조하십시오.
+[ListPolicies](https://intl.cloud.tencent.com/document/product/598/15426) API 설명을 참조하십시오.
 
 ## 예제
 
@@ -64,5 +64,5 @@ Signature=vBfc7JZiDSZZysKesDoywMN3ca80pgZmWVdiQ4QXJJg%3D
 
 ## 오류 코드
 
-[오류 코드](https://cloud.tencent.com/document/product/598/13884)를 참조하십시오.
+[오류 코드](https://intl.cloud.tencent.com/document/product/598/13884)를 참조하십시오.
 

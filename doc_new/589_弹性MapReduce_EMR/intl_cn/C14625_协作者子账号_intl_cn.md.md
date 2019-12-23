@@ -1,4 +1,4 @@
-您可以在控制台中对各协作者/子账号进行权限授权，授权方法请参见 [访问管理](https://cloud.tencent.com/document/product/598/10602)。
+您可以在控制台中对各协作者/子账号进行权限授权，授权方法请参见 [访问管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
 目前 EMR 提供了3种权限角色，您可以在 [访问管理控制台](https://console.cloud.tencent.com/cam/overview) 的策略页中搜索 EMR 关键字进行查找。
 

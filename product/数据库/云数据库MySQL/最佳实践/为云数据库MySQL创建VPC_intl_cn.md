@@ -47,13 +47,13 @@
 
 
 [1]:	https://console.cloud.tencent.com/
-[2]:	https://cloud.tencent.com/product/vpc.html
+[2]:	https://intl.cloud.tencent.com/product/vpc.html
 [3]:	https://console.cloud.tencent.com/vpc/
 [4]:	https://console.cloud.tencent.com/
-[5]:	https://cloud.tencent.com/product/vpc.html
+[5]:	https://intl.cloud.tencent.com/product/vpc.html
 [6]:	https://console.cloud.tencent.com/vpc/
 [7]:	https://console.cloud.tencent.com/
-[8]:	https://cloud.tencent.com/product/vpc.html
+[8]:	https://intl.cloud.tencent.com/product/vpc.html
 [9]:	https://console.cloud.tencent.com/vpc/
 [10]:	https://console.cloud.tencent.com/
 [11]:	https://console.cloud.tencent.com/cdb/ 

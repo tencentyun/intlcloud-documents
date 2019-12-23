@@ -6,14 +6,14 @@
 1. アクセス管理（CAM）コンソールにログインして、[ロール管理](https://console.cloud.tencent.com/cam/role)ページに移動します。
 2. 【ロールの作成】をクリックし、【ロールキャリアの選択】を実行して、ロールキャリアとして【Tencent Cloudアカウント】を選択します。
 3. ロールとしてTencent Cloudリソースへのアクセスが許可されるメインアカウントIDを【アカウントID】ボックスに入力します。デフォルトはメインアカウントIDを入力します。
-他のTencent Cloudサブアカウントにロールを付与したい場合は、[サブユーザーにロールポリシーを付与](https://cloud.tencent.com/document/product/598/19422)を参照してください。
+他のTencent Cloudサブアカウントにロールを付与したい場合は、[サブユーザーにロールポリシーを付与](https://intl.cloud.tencent.com/document/product/598/19422)を参照してください。
 4. ロール権限構成を完了するために、ポリシーリストで、現在作成されているロールに付与するポリシーを選択します。
 5. ロール名を入力し、作成しようとしているロールに関する情報を確認し、【完了】をクリックしてカスタムロールの作成を完了します。
 
 ###　Tencent Cloud製品サービス用のロールを作成
 1. アクセス管理（CAM）コンソールにログインして、[ロール管理](https://console.cloud.tencent.com/cam/role)ページに移動します。
 2. 【ロールの作成】をクリックし、【ロールキャリアの選択】を実行して、ロールキャリアとして【Tencent Cloud製品サービス】を選択します。
-Tencent Cloud製品サービスがサービスロールの使用をサポートしているかどうかを確認するために、[CAMをサポートするクラウドサービス](https://cloud.tencent.com/document/product/598/10588)を参照してください。
+Tencent Cloud製品サービスがサービスロールの使用をサポートしているかどうかを確認するために、[CAMをサポートするクラウドサービス](https://intl.cloud.tencent.com/document/product/598/10588)を参照してください。
 3. ロール機能をすでにサポートしているサービス製品のリストで、ロールキャリアとして必要なサービスを選択します。
 4. ロールのポリシーを構成するために、ポリシーリストで、現在ロールに追加するポリシーを選択します。
 5. ロール名を入力し、作成しようとしているロールに関する情報を確認し、【完了】をクリックしてカスタムロールの作成を完了します。
@@ -69,7 +69,7 @@ Tencent Cloudでは、CAM APIを使用して新しいロールを作成するこ
 	}]
 }
 ```
- 2. 会社Aの企業アカウントCompanyExampleA（ownerUinは12345）は、[AttachRolePolicy](https://cloud.tencent.com/document/product/598/13889)を呼び出します。step1で作成したポリシーをロールDevOpsRoleにバインディングして、入力パラメータはpolicyName=DevOpsPolicy、roleName=DevOpsRoleです。
+ 2. 会社Aの企業アカウントCompanyExampleA（ownerUinは12345）は、[AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889)を呼び出します。step1で作成したポリシーをロールDevOpsRoleにバインディングして、入力パラメータはpolicyName=DevOpsPolicy、roleName=DevOpsRoleです。
 
 上記の手順を通じて、会社Aの企業アカウントCompanyExampleA（ownerUinは12345）はロールの作成と認証を完了しました。
 
@@ -106,7 +106,7 @@ IDプロバイダー用のロールを作成する前に、CAMでSAML IDプロ�
 }
 ```
 
-2.	作成しようとしているロールの権限ポリシーを準備します。権限ポリシーについては、[ポリシー](https://cloud.tencent.com/document/product/598/10601)を参照してください。
+2.	作成しようとしているロールの権限ポリシーを準備します。権限ポリシーについては、[ポリシー](https://intl.cloud.tencent.com/document/product/598/10601)を参照してください。
 3.	 [cam:CreateRole](https://cloud.tencent.com/document/api/598/13886) APIを呼び出して、IDプロバイダーロールを作成します。
 
 

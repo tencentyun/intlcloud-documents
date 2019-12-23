@@ -5,7 +5,7 @@
 ### Step 1: Create a VPC and initialize subnets and routing tables
 A VPC contains at least one subnet, only in which the cloud service resources can be added.
 
-1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview](https://cloud.tencent.com/product/vpc.html) page to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
+1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview](https://intl.cloud.tencent.com/product/vpc.html) page to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
 2)	Select a region in the drop-down box above the list and click "New" to create a VPC. For example, select the "North China (Beijing)" region.
 3)	Enter the names of VPC and subnet as well as CIDR, then select the availability zone for the subnet.
 4)	Click "Create".
@@ -15,7 +15,7 @@ A VPC contains at least one subnet, only in which the cloud service resources ca
 ### Step 2: Create a subnet
 You can create one or more subnets at a time.
 
-1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview](https://cloud.tencent.com/product/vpc.html) page to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
+1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview](https://intl.cloud.tencent.com/product/vpc.html) page to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
 2)	Click "Subnets" in the left navigation pane.
 3)	Select a region and a VPC in the drop-down boxes.
 4)	Click "New", and then enter the subnet name, CIDR, availability zone and associated routing table.
@@ -28,7 +28,7 @@ You can create one or more subnets at a time.
 ### Step 3: Create a routing table to associate with a subnet
 You can create a custom routing table, edit the routing policy, and then associate it with specified subnet. The routing table associated with the subnet is used to specify the outbound route for the subnet.
 
-1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview](https://cloud.tencent.com/product/vpc.html) page to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
+1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview](https://intl.cloud.tencent.com/product/vpc.html) page to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
 2) Click "Routing Tables" in the left navigation pane, and click "New" button on the top of the list. Then enter the name, network and new routing rule in the pop-up box.
 3) Click "Create" to view the new routing table in the routing table list.
 4) Click "Subnets" in the left navigation pane.
@@ -41,7 +41,7 @@ You can create a custom routing table, edit the routing policy, and then associa
 
 ### Step 4: Add a CVM to the subnet
 
-1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview](https://cloud.tencent.com/product/vpc.html) page to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
+1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click "Virtual Private Cloud" in the navigation bar, or click "Experience" in Tencent Cloud's [VPC Overview](https://intl.cloud.tencent.com/product/vpc.html) page to enter the [VPC Console](https://console.cloud.tencent.com/vpc/).
 2) Select "Subnets" in the left navigation pane.
 3) In the line for the subnet for which a CVM will be added, click "Add Cloud Virtual Machine" icon. Note: Please select a bandwidth greater than 0 or select "Bill by Traffic" for the CVM instance to be created, because the Internet needs to be accessed in other steps in this guide.
 

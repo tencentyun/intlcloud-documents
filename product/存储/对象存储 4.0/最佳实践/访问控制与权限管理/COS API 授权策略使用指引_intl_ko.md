@@ -43,7 +43,7 @@ COS API 라이센싱 정책(policy)은 json 문자열입니다. 예를 들어 AP
 | effect   | allow(허용)과 deny(명시적 거부) 두 가지 경우가 있습니다. |
 | resource | 라이센싱 작업의 구체적인 데이터는 임의의 리소스, 지정된 경로 접두사의 리소스, 지정된 절대 경로의 리소스 또는 이들의 조합일 수 있습니다. |
 | action   | 여기는 필요에 따라 하나 또는 일련의 작업 또는 모든 작업(*)을 지정하는 COS API입니다.       |
-|Condition| 제약 조건으로 입력하지 않아도 됩니다. 세부 내용은 [condition](https://cloud.tencent.com/document/product/598/10603#6..E7.94.9F.E6.95.88.E6.9D.A1.E4.BB.B6(condition)) 설명을 참조하십시오.  |
+|Condition| 제약 조건으로 입력하지 않아도 됩니다. 세부 내용은 [condition](https://intl.cloud.tencent.com/document/product/598/10603#6..E7.94.9F.E6.95.88.E6.9D.A1.E4.BB.B6(condition)) 설명을 참조하십시오.  |
 
 다음과 같이 COS API에 따른 라이센싱 정책을 자세히 소개합니다.
 

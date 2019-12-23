@@ -1,4 +1,4 @@
-腾讯云的网络环境可以分为 [私有网络](https://cloud.tencent.com/product/vpc?idx=2)（Virtual Private Cloud，VPC）和基础网络两种。
+腾讯云的网络环境可以分为 [私有网络](https://intl.cloud.tencent.com/product/vpc?idx=2)（Virtual Private Cloud，VPC）和基础网络两种。
 2017年6月13日后，新注册的账号已不支持基础网络，推荐您使用私有网络。其原因如下：
 - 功能完备性：基础网络功能均可通过私有网络满足，且私有网络提供更多灵活的网络服务。例如自定义网段、路由、支持专线接入、VPN、NAT 等。
 - 迁移平滑性：业界均无完全平滑的迁移方案（需关机，变更内网 IP 等）。如果您后续因业务发展需使用私有网络，迁移过程可能影响您的业务。

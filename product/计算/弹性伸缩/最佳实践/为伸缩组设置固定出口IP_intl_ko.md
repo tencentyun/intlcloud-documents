@@ -26,7 +26,7 @@
 
 #### **1. VPC 생성**
 
-1. [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에 로그인하여 탐색 모음의 [VPC]를 클릭하거나 Tencent Cloud [VPC 소개 페이지](https://cloud.tencent.com/product/vpc.html)의 [바로 체험하기] 버튼을 눌러 [VPC 콘솔](https://console.cloud.tencent.com/vpc/)로 진입합니다.
+1. [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에 로그인하여 탐색 모음의 [VPC]를 클릭하거나 Tencent Cloud [VPC 소개 페이지](https://intl.cloud.tencent.com/product/vpc.html)의 [바로 체험하기] 버튼을 눌러 [VPC 콘솔](https://console.cloud.tencent.com/vpc/)로 진입합니다.
 
 2. 리스트의 상부 드롭다운 상자에서 [생성]을 클릭해 VPC를 생성합니다. 예를 들어 “화북 지역(베이징)”을 선택합니다.
 

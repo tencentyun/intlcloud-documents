@@ -102,7 +102,7 @@ print(response['ETag'])
 ### chunk 간편 업로드
 ```python
 import requests
-stream = requests.get('https://cloud.tencent.com/document/product/436/7778')
+stream = requests.get('https://intl.cloud.tencent.com/document/product/436/7778')
 
 # 네트워크 스트림이 Transfer-Encoding:chunked 방식으로 COS에 전송
 response = client.put_object(
