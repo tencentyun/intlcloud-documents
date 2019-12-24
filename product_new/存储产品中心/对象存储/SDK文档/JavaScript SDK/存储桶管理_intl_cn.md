@@ -6,48 +6,48 @@
 
 | API                                                          | 操作名       | 操作描述                     |
 | ------------------------------------------------------------ | ------------ | ---------------------------- |
-| [PUT Bucket cors](https://cloud.tencent.com/document/product/436/8279) | 设置跨域配置 | 设置存储桶的跨域访问权限     |
-| [GET Bucket cors](https://cloud.tencent.com/document/product/436/8274) | 查询跨域配置 | 查询存储桶的跨域访问配置信息 |
-| [DELETE Bucket cors](https://cloud.tencent.com/document/product/436/8283) | 删除跨域配置 | 删除存储桶的跨域访问配置信息 |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | 设置跨域配置 | 设置存储桶的跨域访问权限     |
+| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | 查询跨域配置 | 查询存储桶的跨域访问配置信息 |
+| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | 删除跨域配置 | 删除存储桶的跨域访问配置信息 |
 
 **生命周期**
 
 | API                                                          | 操作名       | 操作描述                       |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket lifecycle](https://cloud.tencent.com/document/product/436/8280) | 设置生命周期 | 设置存储桶的生命周期管理的配置 |
-| [GET Bucket lifecycle](https://cloud.tencent.com/document/product/436/8278) | 查询生命周期 | 查询存储桶生命周期管理的配置   |
-| [DELETE Bucket lifecycle](https://cloud.tencent.com/document/product/436/8284) | 删除生命周期 | 删除存储桶生命周期管理的配置   |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | 设置生命周期 | 设置存储桶的生命周期管理的配置 |
+| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | 查询生命周期 | 查询存储桶生命周期管理的配置   |
+| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | 删除生命周期 | 删除存储桶生命周期管理的配置   |
 
 **存储桶策略**
 
 | API                                                          | 操作名         | 操作描述                 |
 | ------------------------------------------------------------ | -------------- | ------------------------ |
-| [PUT Bucket policy](https://cloud.tencent.com/document/product/436/8282) | 设置存储桶策略 | 设置指定存储桶的权限策略 |
-| [GET Bucket policy](https://cloud.tencent.com/document/product/436/8276) | 查询存储桶策略 | 查询指定存储桶的权限策略 |
-| [DELETE Bucket policy](https://cloud.tencent.com/document/product/436/8285) | 删除存储桶策略 | 删除指定存储桶的权限策略 |
+| [PUT Bucket policy](https://intl.cloud.tencent.com/document/product/436/8282) | 设置存储桶策略 | 设置指定存储桶的权限策略 |
+| [GET Bucket policy](https://intl.cloud.tencent.com/document/product/436/8276) | 查询存储桶策略 | 查询指定存储桶的权限策略 |
+| [DELETE Bucket policy](https://intl.cloud.tencent.com/document/product/436/8285) | 删除存储桶策略 | 删除指定存储桶的权限策略 |
 
 **标签管理**
 
 | API                                                          | 操作名         | 操作描述                         |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://cloud.tencent.com/document/product/436/34838) | 设置存储桶标签 | 为已存在的存储桶设置标签         |
-| [GET Bucket tagging](https://cloud.tencent.com/document/product/436/34837) | 查询存储桶标签 | 查询指定存储桶下已有的存储桶标签 |
-| [DELETE Bucket tagging](https://cloud.tencent.com/document/product/436/34836) | 删除存储桶标签 | 删除指定的存储桶标签             |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/34838) | 设置存储桶标签 | 为已存在的存储桶设置标签         |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/34837) | 查询存储桶标签 | 查询指定存储桶下已有的存储桶标签 |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/34836) | 删除存储桶标签 | 删除指定的存储桶标签             |
 
 **版本控制**
 
 | API                                                          | 操作名       | 操作描述                 |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
-| [PUT Bucket versioning](https://cloud.tencent.com/document/product/436/19889) | 设置版本控制 | 设置存储桶的版本控制功能 |
-| [GET Bucket versioning](https://cloud.tencent.com/document/product/436/19888) | 查询版本控制 | 查询存储桶的版本控制信息 |
+| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | 设置版本控制 | 设置存储桶的版本控制功能 |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | 查询版本控制 | 查询存储桶的版本控制信息 |
 
 **跨地域复制**
 
 | API                                                          | 操作名         | 操作描述                   |
 | ------------------------------------------------------------ | -------------- | -------------------------- |
-| [PUT Bucket replication](https://cloud.tencent.com/document/product/436/19223) | 设置跨地域复制 | 设置存储桶的跨地域复制规则 |
-| [GET Bucket replication](https://cloud.tencent.com/document/product/436/19222) | 查询跨地域复制 | 查询存储桶的跨地域复制规则 |
-| [DELETE Bucket replication](https://cloud.tencent.com/document/product/436/19221) | 删除跨地域复制 | 删除存储桶的跨地域复制规则 |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | 设置跨地域复制 | 设置存储桶的跨地域复制规则 |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | 查询跨地域复制 | 查询存储桶的跨地域复制规则 |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | 删除跨地域复制 | 删除存储桶的跨地域复制规则 |
 
 ## 跨域访问
 
@@ -84,7 +84,7 @@ cos.putBucketCors({
 | 参数名           | 参数描述                                                     | 类型        | 必填 |
 | ---------------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket           | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
-| Region           | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
+| Region           | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
 | CORSRules        | 说明跨域资源共享配置的所有信息列表                           | ObjectArray | 否   |
 | - ID             | 配置规则的 ID                                                | String      | 否   |
 | - AllowedMethods | 允许的 HTTP 操作，枚举值：GET、PUT、HEAD、POST、DELETE 等      | StringArray | 是   |
@@ -101,7 +101,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码文档](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码文档](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -146,7 +146,7 @@ cos.getBucketCors({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -156,7 +156,7 @@ function(err, data) { ... }
 
 | 参数名             | 参数描述                                                     | 类型        |
 | ------------------ | ------------------------------------------------------------ | ----------- |
-| err                | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err                | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | data               | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
 | - CORSRules        | 说明跨域资源共享配置的所有信息列表                           | ObjectArray |
 | - - AllowedMethods | 允许的 HTTP 操作，枚举值：GET、PUT、HEAD、POST、DELETE       | StringArray |
@@ -193,7 +193,7 @@ cos.deleteBucketCors({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -203,7 +203,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -325,7 +325,7 @@ cos.putBucketLifecycle({
 | 参数名  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                       | 参数描述                                                     | 类型        | 必填 |
 | -------------------------------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket                           | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
-| Region                           | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
+| Region                           | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
 | Rules                            | 指定生命周期规则列表                                         | ObjectArray | 是   |
 | - ID                             | 规则的唯一标识 ID                                            | String      | 是   |
 | - Status                         | 规则的开启状态，枚举值：Enabled、Disabled                    | String      | 是   |
@@ -351,7 +351,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -430,7 +430,7 @@ cos.getBucketLifecycle({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名规则为 BucketName-APPID ，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -440,7 +440,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            | 参数描述                                                     | 类型        |
 | ---------------------------------- | ------------------------------------------------------------ | ----------- |
-| err                                | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err                                | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | - statusCode                       | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers                          | 请求返回的头部信息                                           | Object      |
 | data                               | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
@@ -485,7 +485,7 @@ cos.deleteBucketLifecycle({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -495,7 +495,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -544,7 +544,7 @@ cos.putBucketPolicy({
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        | 参数描述                                                     | 类型        | 必填 |
 | ------------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket        | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
-| Region        | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
+| Region        | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
 | Policy        | 权限策略，详情请参见 [访问管理策略语法](https://intl.cloud.tencent.com/document/product/436/12469) | Object      | 是   |
 | - version     | 版本号，固定 2.0                                             | String      | 是   |
 | - statement   | 权限策略生命列表                                             | ObjectArray | 是   |
@@ -563,7 +563,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -620,7 +620,7 @@ cos.getBucketPolicy({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -630,7 +630,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          | 参数描述                                                     | 类型        |
 | --------------- | ------------------------------------------------------------ | ----------- |
-| err             | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err             | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | data            | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
 | - Policy        | 权限策略，详情请参见 [访问管理策略语法](https://intl.cloud.tencent.com/document/product/436/12469) | Object      |
 | - - version     | 版本号，固定2.0                                              | String      |
@@ -666,7 +666,7 @@ cos.deleteBucketPolicy({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -676,7 +676,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -713,7 +713,7 @@ cos.putBucketTagging({
 | 参数名    | 参数描述                                                     | 类型        | 必填 |
 | --------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket    | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
-| Region    | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
+| Region    | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
 | Tagging   | 标签信息                                                     | Object      | 是   |
 | - Tags    | 标签信息                                                     | ObjectArray | 是   |
 | - - Key   | 标签名                                                       | String      | 是   |
@@ -727,7 +727,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -769,7 +769,7 @@ cos.getBucketTagging({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -779,7 +779,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 参数描述                                                     | 类型        |
 | ------------ | ------------------------------------------------------------ | ----------- |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers    | 请求返回的头部信息                                           | Object      |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
@@ -811,7 +811,7 @@ cos.deleteBucketTagging({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -821,7 +821,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -861,7 +861,7 @@ cos.putBucketVersioning({
 | 参数名                  | 参数描述                                                     | 类型   | 必填 |
 | ----------------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket                  | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region                  | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region                  | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 | VersioningConfiguration | 定义存储桶的版本控制配置信息                                 | Object | 是   |
 | - Status                | 版本控制是否打开的状态，枚举值：Enabled、Suspended，Enabled 表示打开，Suspended 表示暂停 | String | 否   |
 
@@ -902,7 +902,7 @@ cos.getBucketVersioning({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -912,7 +912,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    | 参数描述                                                     | 类型   |
 | ------------------------- | ------------------------------------------------------------ | ------ |
-| err                       | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err                       | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode              | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers                 | 请求返回的头部信息                                           | Object |
 | data                      | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -959,7 +959,7 @@ cos.putBucketReplication({
 | 参数名                   | 参数描述                                                     | 类型        | 必填 |
 | ------------------------ | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket                   | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
-| Region                   | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
+| Region                   | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
 | ReplicationConfiguration | 定义跨地域复制规则                                           | Object      | 是   |
 | - Role                   | 复制过程以什么角色的身份<br>格式：`qcs::cam::uin/100000000001:uin/100000000011`<br>其中100000000001是主账号，100000000011是子账号 | Object      | 否   |
 | - Rules                  | 复制具体规则列表                                             | ObjectArray | 是   |
@@ -978,7 +978,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -1028,7 +1028,7 @@ cos.getBucketReplication({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
@@ -1072,7 +1072,7 @@ cos.deleteBucketReplication({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
 
