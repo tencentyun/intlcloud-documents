@@ -7,17 +7,17 @@
 
 | API                                                          | 操作名             | 操作描述                           |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
-| [GET Service](https://cloud.tencent.com/document/product/436/8291) | 查询存储桶列表     | 查询指定账号下所有的存储桶列表    |
-| [PUT Bucket](https://cloud.tencent.com/document/product/436/7738) | 创建存储桶         | 在指定账号下创建一个存储桶   |
-| [HEAD Bucket](https://cloud.tencent.com/document/product/436/7735) | 检索存储桶及其权限 | 检索存储桶是否存在且是否有权限访问 |
-| [DELETE Bucket](https://cloud.tencent.com/document/product/436/7732) | 删除存储桶         | 删除指定账号下的空存储桶           |
+| [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | 查询存储桶列表     | 查询指定账号下所有的存储桶列表    |
+| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | 创建存储桶         | 在指定账号下创建一个存储桶   |
+| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | 检索存储桶及其权限 | 检索存储桶是否存在且是否有权限访问 |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | 删除存储桶         | 删除指定账号下的空存储桶           |
 
 **访问控制列表**
 
 | API                                                          | 操作名         | 操作描述              |
 | ------------------------------------------------------------ | -------------- | --------------------- |
-| [PUT Bucket acl](https://cloud.tencent.com/document/product/436/7737) | 设置存储桶 ACL | 设置存储桶的 ACL 配置 |
-| [GET Bucket acl](https://cloud.tencent.com/document/product/436/7733) | 查询存储桶 ACL | 查询存储桶的 ACL 配置 |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | 设置存储桶 ACL | 设置存储桶的 ACL 配置 |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | 查询存储桶 ACL | 查询存储桶的 ACL 配置 |
 
 ## 基本操作
 
