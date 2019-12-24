@@ -10,6 +10,7 @@ COS Migration 是一个集成了 COS 数据迁移功能的一体化工具。通�
 - 并行上传：支持多个对象同时上传。
 - 迁移校验：对象迁移后的校验。
 
+
 >- COS Migration 的编码格式只支持 UTF-8 格式。
 >- 使用该工具上传同名文件，会覆盖较旧的同名文件，不支持校对是否存在同名文件的功能。
 
@@ -111,7 +112,7 @@ encryptionType=sse-cos
 | storageClass|存储类型：Standard（标准存储），Standard_IA（低频存储），Archive（归档存储） |Standard|
 | cosPath|要迁移到的 COS 路径。`/`表示迁移到 Bucket 的根路径下，`/folder/doc/` 表示要迁移到 Bucket的`/folder/doc/` 下，若 `/folder/doc/` 不存在，则会自动创建路径|/|
 | https| 是否使用 HTTPS 传输：on 表示开启，off 表示关闭。开启传输速度较慢，适用于对传输安全要求高的场景|off|
-| tmpFolder|从其他云存储迁移至 COS 的过程中，用于存储临时文件的目录，迁移完成后会删除。要求格式为绝对路径：<br>Linux 下分隔符为单斜杠，如`/a/b/c` <br>Windows 下分隔符为两个反斜杠，如`E:\\a\\b\\c`<br>默认为工具所在路径下的 tmp 目录|./tmp|
+| tmpFolder|从其他云存储迁移至 COS 的过程中，用于存储临时文件的目录，迁移完成后会删除。要求格式为绝对路径：<br>Linux 下分隔符为单斜杠，例如`/a/b/c` <br>Windows 下分隔符为两个反斜杠，例如`E:\\a\\b\\c`<br>默认为工具所在路径下的 tmp 目录|./tmp|
 | smallFileThreshold| 小文件阈值的字节，大于等于这个阈值使用分块上传，否则使用简单上传，默认5MB |5242880|
 | smallFileExecutorNum|小文件（文件小于 smallFileThreshold）的并发度，使用简单上传。如果是通过外网来连接 COS，且带宽较小，请减小该并发度|64|
 | bigFileExecutorNum| 大文件（文件大于等于 smallFileThreshold）的并发度，使用分块上传。如果是通过外网来连接 COS，且带宽较小，请减小该并发度|8|
@@ -131,15 +132,15 @@ encryptionType=sse-cos
 # 从本地迁移到 COS 配置分节
 [migrateLocal]
 localPath=E:\\code\\java\\workspace\\cos_migrate_tool\\test_data
-exeludes=
+excludes=
 ignoreModifiedTimeLessThanSeconds=
 </pre>
 
 | 配置项 | 描述 |
 | ------| ------ |
-|localPath|本地路径，要求格式为绝对路径：<br>Linux 下分隔符为单斜杠，如`/a/b/c` <br>Windows 下分隔符为两个反斜杠，如 `E:\\a\\b\\c`|
+|localPath|本地路径，要求格式为绝对路径：<br><li>Linux 下分隔符为单斜杠，例如`/a/b/c` <br><li>Windows 下分隔符为两个反斜杠，例如`E:\\a\\b\\c`|
 |excludes| 要排除的目录或者文件的绝对路径，表示将 localPath 下面某些目录或者文件不进行迁移，多个绝对路径之前用分号分割，不填表示 localPath 下面的全部迁移|
-|ignoreModifiedTimeLessThanSeconds| 排除更新时间与当前时间相差不足一定时间段的文件，单位为秒，默认不设置，表示不根据 lastmodified 时间进行筛选，适用于客户在更新文件的同时又在运行迁移工具，并要求不把正在更新的文件迁移上传到 COS，比如设置为300，表示只上传更新了5分钟以上的文件|
+|ignoreModifiedTimeLessThanSeconds| 排除更新时间与当前时间相差不足一定时间段的文件，单位为秒，默认不设置，表示不根据 lastmodified 时间进行筛选，适用于客户在更新文件的同时又在运行迁移工具，并要求不把正在更新的文件迁移上传到 COS，例如设置为300，表示只上传更新了5分钟以上的文件|
 
 **3.3.2 配置阿里 OSS 数据源 migrateAli**
 
@@ -189,7 +190,7 @@ proxyPort=
 |proxyHost|如果要使用代理进行访问，则填写代理 IP 地址|
 |proxyPort|代理的端口|
 
-
+ 
 **3.3.4 配置七牛数据源 migrateQiniu**
 
 若从七牛迁移至 COS，则进行该部分配置，具体配置项及说明如下：
@@ -214,7 +215,7 @@ proxyPort=
 |proxyHost|如果要使用代理进行访问，则填写代理 IP 地址|
 |proxyPort|代理的端口|
 
-
+ 
 **3.3.5 配置 URL 列表数据源 migrateUrl**
 
 若从指定 URL 列表迁移至 COS，则进行该部分配置，具体配置项及说明如下：
@@ -223,12 +224,12 @@ proxyPort=
 [migrateUrl]
 urllistPath=D:\\folder\\urllist.txt
 </pre>
-
+     
 | 配置项 | 描述 |
 | ------| ------ |
-|urllistPath|URL 列表的地址，内容为 URL 文本，一行一条 URL 原始地址（如 `http://aaa.bbb.com/yyy/zzz.txt`，无需添加任何双引号或其他符号）。URL 列表的地址要求为绝对路径：<br>Linux 下分隔符为单斜杠，如 `/a/b/c.txt` <br>Windows  下分隔符为两个反斜杠，如 `E:\\a\\b\\c.txt`<br>如果填写的是目录，则会将该目录下的所有文件视为 urllist 文件去扫描迁移|
+|urllistPath|URL 列表的地址，内容为 URL 文本，一行一条 URL 原始地址（例如`http://aaa.bbb.com/yyy/zzz.txt`，无需添加任何双引号或其他符号）。URL 列表的地址要求为绝对路径：<br><li>Linux 下分隔符为单斜杠，例如`/a/b/c.txt` <br><li>Windows  下分隔符为两个反斜杠，例如`E:\\a\\b\\c.txt`<br>如果填写的是目录，则会将该目录下的所有文件视为 urllist 文件去扫描迁移|
 
-
+ 
 **3.3.6 配置 Bucket 相互复制 migrateBucketCopy**
 
 若从 COS 的一个指定 Bucket 迁移至另一个 Bucket，则进行该部分配置，具体配置项及说明如下：
@@ -246,7 +247,7 @@ srcCosPath=/
 | ------| ------ |
 |srcRegion|源 Bucket 的 Region 信息，请参照 [可用地域](https://intl.cloud.tencent.com/document/product/436/6224)|
 |srcBucketName|源 Bucket 的名称，命名格式为 `<BucketName-APPID>`，即 Bucket 名必须包含 APPID，例如 examplebucket-1250000000|
-|srcSecretId|源 Bucket 隶属的用户的密钥 SecretId，可在[云 API 密钥](https://console.cloud.tencent.com/cam/capi) 查看。如果是同一用户的数据，则 srcSecretId 和 common 中的 SecretId 相同，否则是跨账号 Bucket 拷贝|
+|srcSecretId|源 Bucket 隶属的用户的密钥 SecretId，可在 [云 API 密钥](https://console.cloud.tencent.com/cam/capi) 查看。如果是同一用户的数据，则 srcSecretId 和 common 中的 SecretId 相同，否则是跨账号 Bucket 拷贝|
 |srcSecretKey|源 Bucket 隶属的用户的密钥 secret_key，可在 [云 API 密钥](https://console.cloud.tencent.com/cam/capi) 查看。如果是同一用户的数据，则 srcSecretKey 和 common 中的 secretKey 相同，否则是跨账号 Bucket 拷贝|
 |srcCosPath|要迁移的 COS 路径，表示该路径下的文件要迁移至目标 Bucket|
 
@@ -265,7 +266,8 @@ sh start_migrate.sh
 sh start_migrate.sh -Dcommon.cosPath=/savepoint0403_10/
 </pre>
 
->- 工具支持配置项读取方式有两种：命令行读取或配置文件读取。
+>
+> - 工具支持配置项读取方式有两种：命令行读取或配置文件读取。
 > - 命令行优先级高于配置文件，即相同配置选项会优先采用命令行里的参数。
 > - 命令行中读取配置项的形式方便用户同时运行不同的迁移任务，但前提是两次任务中的关键配置项不完全一样，例如 Bucket 名称，COS 路径，要迁移的源路径等。因为不同的迁移任务写入的是不同的 db 目录，可以保证并发迁移。请参照前文中的工具结构中的 db 信息。
 > - 配置项的形式为 **-D{sectionName}.{sectionKey}={sectionValue}** 的形式。其中 sectionName 是配置文件的分节名称，sectionKey 表示分节中配置项名称，sectionValue 表示分节中配置项值。如设置要迁移到的 COS 路径，则以 **-Dcommon.cosPath=/bbb/ddd** 表示。
@@ -283,5 +285,4 @@ COS 迁移工具是有状态的，已经迁移成功的会记录在 db 目录下
 ![](https://main.qcloudimg.com/raw/2534fd390218db29bb03f301ed2620c8.png)
 
 ## 常见问题
-如您在使用 COS Migration 工具过程中，遇到迁移失败、运行报错等异常情况，请参阅 [COS Migration 工具类常见问题](https://intl.cloud.tencent.com/document/product/436/15392) 寻求解决。
-
+如您在使用 COS Migration 工具过程中，遇到迁移失败、运行报错等异常情况，请参阅 [COS Migration 工具类常见问题](https://intl.cloud.tencent.com/document/product/436/30585) 寻求解决。

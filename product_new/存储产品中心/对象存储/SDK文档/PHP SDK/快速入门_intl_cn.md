@@ -2,12 +2,13 @@
 
 ### 相关资源
 - 对象存储 COS 的 XML PHP SDK 源码地址：[ XML PHP SDK ](https://github.com/tencentyun/cos-php-sdk-v5/releases)。
-- 示例 Demo 程序地址：[PHP sample](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/sample.php)。
+- 示例 Demo 程序地址：[PHP sample](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample)。
 
 ### 环境依赖
 
-- PHP 5.3+
-您可以通过`php -v`命令查看当前的 PHP 版本。
+*   PHP 5.6+
+    您可以通过`php -v`命令查看当前的 PHP 版本。
+>- 如果您的php版本`>=5.3` 且`<5.6` ，请使用 [ v1.3 ](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3) 版本
 -  cURL 扩展
 您可以通过`php -m`命令查看 cURL 扩展是否已经安装好。
  - Ubuntu 系统中，您可以使用 apt-get 包管理器安装 PHP 的 cURL 扩展，安装命令如下：
@@ -25,7 +26,7 @@ SDK 安装有三种方式：[Composer 方式](#composer)、[Phar 方式](#phar) 
 <span id="composer"></span>
 #### Composer 方式
 推荐使用 Composer 安装 cos-php-sdk-v5，Composer 是 PHP 的依赖管理工具，允许您声明项目所需的依赖，然后自动将它们安装到您的项目中。
->?您可以在 [Composer 官网](https://getcomposer.org/) 上找到更多关于如何安装 Composer，配置自动加载以及用于定义依赖项的其他最佳实践等相关信息。
+>您可以在 [Composer 官网](https://getcomposer.org/) 上找到更多关于如何安装 Composer，配置自动加载以及用于定义依赖项的其他最佳实践等相关信息。
 
 **安装步骤**
 1. 打开终端。
@@ -37,7 +38,7 @@ curl -sS https://getcomposer.org/installer | php
 ```json
 {
     "require": {
-        "qcloud/cos-sdk-v5": ">=1.0"
+        "qcloud/cos-sdk-v5": ">=2.0"
     }
 }
 ```
@@ -64,7 +65,8 @@ require  '/path/to/cos-sdk-v5.phar';
 <span id="Source"></span>
 #### 源码方式
 源码方式安装 SDK 的步骤如下：
-1.  在 [ SDK 下载页面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载 `cos-sdk-v5.tar.gz` 压缩文件。（注意：`Source code`压缩包为 Github 默认打包的代码包，里面不包含`vendor`目录）
+1.  在 [ SDK 下载页面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载`cos-sdk-v5.tar.gz`压缩文件。
+>`Source code`压缩包为 Github 默认打包的代码包，里面不包含`vendor`目录。
 2.  解压后通过 `autoload.php` 脚本加载 SDK：
 ```shell
 require '/path/to/sdk/vendor/autoload.php';
@@ -88,7 +90,7 @@ $cosClient = new Qcloud\Cos\Client(
             'secretKey' => $secretKey)));
 ```
 
-若您使用 [临时密钥](https://cloud.tencent.com/document/product/436/14048) 初始化，请用下面方式创建实例。
+若您使用 [临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 初始化，请用下面方式创建实例。
 
 ```php
 $tmpSecretId = "COS_SECRETID"; //"临时密钥 SecretId";
@@ -133,7 +135,7 @@ try {
 
 ### 上传对象
 * 使用 putObject 接口上传文件（最大5G）。
-* 使用 Upload 接口分块上传文件。
+* 使用 Upload 接口分块上传文件，Upload 接口为复合上传接口，对小文件进行简单上传，对大文件进行分块上传。
 
 ```php
 # 上传文件
@@ -156,32 +158,34 @@ try {
     $bucket = "examplebucket-1250000000"; //存储桶名称 格式：BucketName-APPID
     $key = "exampleobject";
     $srcPath = "F:/exampleobject";//本地文件绝对路径
-    $result = $cosClient->putObject(array(
-        'Bucket' => $bucket,
-        'Key' => $key,
-        'Body' => fopen($srcPath, 'rb')));
-    print_r($result);
+    $file = fopen($srcPath, "rb");
+    if ($file) {
+        $result = $cosClient->putObject(array(
+            'Bucket' => $bucket,
+            'Key' => $key,
+            'Body' => $file));
+        print_r($result);
+    }
 } catch (\Exception $e) {
     echo "$e\n";
 }
 
-### 设置header和meta
+### 设置 header 和 meta
 try {
     $bucket = "examplebucket-1250000000"; //存储桶名称 格式：BucketName-APPID
     $key = "exampleobject";
-    $srcPath = "F:/exampleobject";//本地文件绝对路径
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
         'Key' => $key,
-        'Body' => fopen($srcPath, 'rb'),
+        'Body' => 'string | stream',
         'ACL' => 'string',
         'CacheControl' => 'string',
         'ContentDisposition' => 'string',
         'ContentEncoding' => 'string',
         'ContentLanguage' => 'string',
-        'ContentLength' => integer,
+        'ContentLength' => 'int',
         'ContentType' => 'string',
-        'Expires' => 'mixed type: string (date format)|int (unix timestamp)|\DateTime',
+        'Expires' => 'string',
         'GrantFullControl' => 'string',
         'GrantRead' => 'string',
         'GrantWrite' => 'string',
@@ -213,10 +217,13 @@ try {
     $bucket = "examplebucket-1250000000"; //存储桶名称 格式：BucketName-APPID
     $key = "exampleobject";
     $srcPath = "F:/exampleobject";//本地文件绝对路径
-    $result = $cosClient->Upload(
-        $bucket = $bucket,
-        $key = $key,
-        $body = fopen($srcPath, 'rb'));
+    $file = fopen($srcPath, 'rb');
+    if ($file) {
+        $result = $cosClient->Upload(
+            $bucket = $bucket,
+            $key = $key,
+            $body = $file);
+    }
     print_r($result);
 } catch (\Exception $e) {
     echo "$e\n";
@@ -226,20 +233,19 @@ try {
 try {
     $bucket = "examplebucket-1250000000"; //存储桶名称 格式：BucketName-APPID
     $key = "exampleobject";
-    $srcPath = "F:/exampleobject";//本地文件绝对路径
     $result = $cosClient->Upload(
         $bucket= $bucket,
         $key = $key,
-        $body = fopen($srcPath, 'rb'),
+        $body = 'string | stream',
         $options = array(
             'ACL' => 'string',
             'CacheControl' => 'string',
             'ContentDisposition' => 'string',
             'ContentEncoding' => 'string',
             'ContentLanguage' => 'string',
-            'ContentLength' => integer,
+            'ContentLength' => 'int',
             'ContentType' => 'string',
-            'Expires' => 'mixed type: string (date format)|int (unix timestamp)|\DateTime',
+            'Expires' => 'string',
             'GrantFullControl' => 'string',
             'GrantRead' => 'string',
             'GrantWrite' => 'string',
@@ -348,7 +354,7 @@ try {
     echo "$e\n";
 }
 
-### 设置返回header
+### 设置返回 header
 try {
     $bucket = "examplebucket-1250000000"; //存储桶，格式：BucketName-APPID
     $key = "exampleobject"; //对象在存储桶中的位置，即称对象键
@@ -368,7 +374,7 @@ try {
     echo "$e\n";
 }
 
-## getObjectUrl(获取文件UrL)
+## getObjectUrl(获取文件 UrL)
 try {    
     $bucket = "examplebucket-1250000000"; //存储桶，格式：BucketName-APPID
     $key = "exampleobject"; //对象在存储桶中的位置，即称对象键
@@ -383,7 +389,7 @@ try {
 
 ### 删除对象
 ```php
-# 删除object
+# 删除 object
 ## deleteObject
 try {
     $bucket = "examplebucket-1250000000"; //存储桶，格式：BucketName-APPID
@@ -399,7 +405,7 @@ try {
     // 请求失败
     echo($e);
 }
-# 删除多个object
+# 删除多个 object
 ## deleteObjects
 try {
     $bucket = "examplebucket-1250000000"; //存储桶，格式：BucketName-APPID

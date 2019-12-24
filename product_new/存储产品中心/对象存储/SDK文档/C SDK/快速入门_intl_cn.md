@@ -1,15 +1,15 @@
 ## 下载与安装
 
-### 相关资源
+#### 相关资源
 
 - 对象存储的 XML C SDK 源码下载地址：[XML C SDK](https://github.com/tencentyun/cos-c-sdk-v5)。
 - 演示示例 Demo 下载地址：[XML C SDK Demo](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c)。
 
-### 环境依赖
+#### 环境依赖
 
 依赖库：libcurl apr apr-util minixml。
 
-### 安装 SDK
+#### 安装 SDK
 
 1. 安装 CMake 工具（建议 2.6.0 及以上版本），单击 [这里](http://www.cmake.org/download/) 下载，安装方式如下：
 ```bash
@@ -53,10 +53,10 @@ make install
 下面为您介绍使用 XML C SDK 的一般流程。
 
 1. 初始化 SDK。
-2. 设置请求选项参数。关于 APPID、SecretId、SecretKey、Bucket 等名称的含义和获取方式请参考 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/18507)。
+2. 设置请求选项参数。关于 APPID、SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
 	- APPID 是申请腾讯云账号后，系统分配的账户标识之一。
 	- access_key_id 与 access_key_secret 是账号 API 密钥。
-	- endpoint 是 COS 访问域名信息，详情请参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。例如，广州地域 endpoint 为`cos.ap-guangzhou.myqcloud.com`。
+	- endpoint 是 COS 访问域名信息，详情请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。例如，广州地域 endpoint 为`cos.ap-guangzhou.myqcloud.com`。
 3. 设置 API 接口必需的参数。
 4. 调用 SDK API 发起请求并获得请求响应结果。
 
@@ -106,7 +106,7 @@ cos_str_set(&options->config->appid, "<用户的AppId>");                    //�
 /* 是否使用了 CNAME */
 options->config->is_cname = 0;
 
-/* 用于设置网络相关参数，比如超时时间等*/
+/* 用于设置网络相关参数，例如超时时间等*/
 options->ctl = cos_http_controller_create(options->pool, 0);
 
 /* 用于设置上传请求是否自动添加 Content-MD5 头部，enable 为 COS_FALSE 时上传请求将不自动添加 Content-MD5 头部，enable 为 COS_TRUE 时上传请求将自动添加Content-MD5 头部，如果不设置此项则默认将添加 Content-MD5 头部 */
@@ -115,6 +115,8 @@ cos_set_content_md5_enable(options->ctl, COS_FALSE);
 /* 用于设置请求路由地址和端口，一般情况下无需设置此参数，请求将按域名解析结果路由 */
 //cos_set_request_route(options->ctl, "192.168.12.34", 80);
 ```
+
+>临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 ### 创建存储桶
 
