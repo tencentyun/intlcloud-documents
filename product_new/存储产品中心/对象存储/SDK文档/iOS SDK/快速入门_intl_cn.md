@@ -13,7 +13,7 @@
 - 手机必须要有网络（GPRS、3G、4G 或 Wi-Fi 网络等）。
 - 从访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/capi) 页面获取 SecretId、SecretKey，以及在 [账号中心](https://console.cloud.tencent.com/developer) 中获取 APPID 信息。
 
->关于文章中出现的 SecretID、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
+>关于文章中出现的 SecretID、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
 
 ### 安装 SDK
 
