@@ -474,7 +474,7 @@ SDK 中的请求需要用到签名，以确认访问的用户的身份，也保�
 
 推荐您在自己的签名服务器内接入腾讯云的 CAM（Cloud Access Manager，访问管理）来实现整个签名流程。
 
-![](https://main.qcloudimg.com/raw/ea4b7027deb7b556e2c62bd73b1da072.png)    
+![](https://main.qcloudimg.com/raw/58b5fff8c6bcf92691adc7299a2bdbf6.png    
 
 至于如何搭建签名服务器接入 CAM 系统，您可以参考 [移动应用直传实践](/document/product/436/9068)。
 
