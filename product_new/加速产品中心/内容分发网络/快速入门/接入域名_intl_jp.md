@@ -3,9 +3,10 @@ CDNコンソールでドメイン名を追加することで、Tencent Cloud に
 ## ドメイン名の追加
 
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左の【ドメイン名管理】メニューをクリックし、【ドメイン名の追加】を選択します。
-![](https://main.qcloudimg.com/raw/3cee079d180314cfaef452b836e0f565.jpg)
+![](https://main.qcloudimg.com/raw/0fbebd8e30610d3e8607a60851946c42.png)
 ドメイン名の追加ページに入ります。ここでドメイン名関連の構成を完了できます。構成については、下表[ドメイン名の構成](#m1)を参照してください。 
-![](https://main.qcloudimg.com/raw/48e8c71e7b7e84b5fdd13ffc1b30ded2.jpg)
+![](https://main.qcloudimg.com/raw/863c50ffd5fc1108dfb6696aa73a034d.png)
+
 <span ID ="m1"> </a>
 ## ドメイン名の構成
 
@@ -30,7 +31,7 @@ CDNコンソールでドメイン名を追加することで、Tencent Cloud に
 	</tr>
 	<tr>
 	<td style="text-align: center;" colspan = "2">オリジンサーバーの種類</td>
-		<td>ユーザー保有のオリジンサーバーまたは <a href = "https://intl.cloud.tencent.com/product/cos">Tencent Cloud（COS）</a> のオリジンサーバーを選択可能です。</td>
+		<td>ユーザー保有のオリジンサーバーまたは <a href = "https://cloud.tencent.com/product/cos">Tencent Cloud（COS）</a> のオリジンサーバーを選択可能です。</td>
 	</tr>
 	<tr>
 		<td colspan="1" rowspan="2" style="text-align: center;" >オリジンサーバーの設定</td>
@@ -43,9 +44,9 @@ CDNコンソールでドメイン名を追加することで、Tencent Cloud に
 	</tr>
 	<tr>
 		<td style="text-align: center; ">COSのオリジンサーバー </td>
-		<td> <a href = "https://intl.cloud.tencent.com/product/cos">Tencent Cloud COS</a>静的加速コンテンツを格納する場合は、この方式によってドメイン名をCDNに追加できます。追加する方法は、以下のとおりです。<br>
+		<td> <a href = "https://cloud.tencent.com/product/cos">Tencent Cloud COS</a>静的加速コンテンツを格納する場合は、この方式によってドメイン名をCDNに追加できます。追加する方法は、以下のとおりです。<br>
 <li>オリジンサーバータイプがCOSの場合、ドロップダウンリストから、またはキーワードを入力してBucketのドメイン名を選択します。
-<li>該当するプロジェクトにバケットがない場合は、<a href ="https://console.cloud.tencent.com/cos5">COSコンソール</a> にログインしてバケットを作成する（作成の詳細については、 <a href = "https://intl.cloud.tencent.com/document/product/436/13309">バケットの作成</a>を参照してください）か、開発者アカウントに連絡し、該当バケットの権限の設定を依頼してください。
+<li>該当するプロジェクトにバケットがない場合は、<a href ="https://console.cloud.tencent.com/cos5">COSコンソール</a> にログインしてバケットを作成する（作成の詳細については、 <a href = "https://cloud.tencent.com/document/product/436/13309">バケットの作成</a>を参照してください）か、開発者アカウントに連絡し、該当バケットの権限の設定を依頼してください。
 <li>バケットをオリジンサーバーとして選択したあとは、<a href ="https://console.cloud.tencent.com/cos5">COSコンソール</a> でオリジンサーバーのコンテンツを管理できます。 
 <blockquote class="d-mod-notice">
 							<div class="d-mod-title d-notice-title">
@@ -66,20 +67,20 @@ CDNコンソールでドメイン名を追加することで、Tencent Cloud に
 ## 加速サービスの構成
 
 加速サービスのタイプと基本構成をを選択します。
-![](https://main.qcloudimg.com/raw/2f0b3ff1c1c8fa1313b96d856fb3b1fd.jpg)
+![](https://main.qcloudimg.com/raw/f1fd65de90d3c3fd98865e5cb30d6dc4.png)
 1. **サービスタイプ** 
    サービスタイプの選定は、ドメイン名がスケジューリングするリソースプラットフォームを決めています。異なるリソースプラットフォームの加速の構成も異なりますので、お客様のサービスに適したサービスタイプを選択してください。
 	- 静的加速：Eコマース、ウェブサイト、ゲーム画像など静的リソースの加速に適しています。
 	- ウンロードの加速：ゲームのインストールパッケージ、音声・動画リソースファイルのダウンロード、携帯電話ファームウェアの配布などに適しています。
 	- ストリーミングメディアのオン・デマンド加速：音声・動画のオン・デマンド加速などに適しています。
 2. **基本構成**
-   CDNによるフィルタリングパラメータスイッチを利用することで、サービスニーズに応じて、ユーザーリクエストURLの中の**“?”**に続くパラメータをフィルタリングするかどうかを制御できます。フィルタリングパラメータを利用することで、バージョンを柔軟に制御したり、リソースのToken付き認証を行ったりすることができます。詳細については、[フィルタリングパラメータの構成](https://intl.cloud.tencent.com/doc/product/228/6291)を参照してください。
+   CDNによるフィルタリングパラメータスイッチを利用することで、サービスニーズに応じて、ユーザーリクエストURLの中の**“?”**に続くパラメータをフィルタリングするかどうかを制御できます。フィルタリングパラメータを利用することで、バージョンを柔軟に制御したり、リソースのToken付き認証を行ったりすることができます。詳細については、[フィルタリングパラメータの構成](https://cloud.tencent.com/doc/product/228/6291)を参照してください。
 3. **キャッシュ期限切れの構成**
-   キャッシュ期限切れの構成とは、サービスコンテンツをキャッシュする際に、CDN加速ノードが従う期限切れのルールです。詳細については、[キャッシュ期限切れの構成](https://intl.cloud.tencent.com/doc/product/228/6290)を参照してください。
+   キャッシュ期限切れの構成とは、サービスコンテンツをキャッシュする際に、CDN加速ノードが従う期限切れのルールです。詳細については、[キャッシュ期限切れの構成](https://cloud.tencent.com/doc/product/228/6290)を参照してください。
 
 ## アクセス完了
 
 【サブミット】をクリックし、ドメイン名を追加します。ドメイン名の構成をネットワーク全体のノードにデリバーするには約5～10分かかるため、しばらくお待ちください。
-![](https://main.qcloudimg.com/raw/0bf658a80d21a62e6bc30a54cbc21ff8.jpg)
+![](https://main.qcloudimg.com/raw/73e56349a7d26444c1e5572bffd0bdbd.png)
 
->アクセスが完了後、Tencent Cloud CDNは対応するCNAMEアドレスをアサインします。CDNサービスを有効にするには、まずCNAMEを構成する必要があります。詳細については、[CNAME構成](https://intl.cloud.tencent.com/document/product/228/3121)を参照してください。
+>!アクセスが完了後、Tencent Cloud CDNは対応するCNAMEアドレスをアサインします。CDNサービスを有効にするには、まずCNAMEを構成する必要があります。詳細については、[CNAME構成](https://intl.cloud.tencent.com/document/product/228/3121)を参照してください。

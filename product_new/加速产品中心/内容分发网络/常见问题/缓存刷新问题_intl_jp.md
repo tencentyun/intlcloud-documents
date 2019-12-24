@@ -1,5 +1,5 @@
 ###  キャッシュ更新とは何ですか。
-キャッシュ更新方法には、URL更新、ディレクトリ更新、URL予熱が含まれています。（詳細な操作手順については、[キャッシュ更新](intl.https://cloud.tencent.com/document/product/228/6299)を参照してください。
+キャッシュ更新方法には、URL更新、ディレクトリ更新、URL予熱が含まれています。（詳細な操作手順については、[キャッシュ更新](https://intl.cloud.tencent.com/document/product/228/6299)を参照してください。
 −URL更新は、ファイル単位でキャッシュ更新を行うことです。
 -ディレクトリ更新は、ディレクトリ単位でディレクトリ内のすべてのファイルをキャッシュ更新を行うことです。
 -URL予熱は、ファイル単位でリソースの予熱を行うことです。
@@ -23,7 +23,7 @@
 方法2： API 方式を呼び出して更新します。詳細については、[URL更新](https://intl.cloud.tencent.com/document/product/228/3946) を参照してください。
 
 ### キャッシュ更新の記録をどう確認しますか。
-キャッシュ更新の記録はCDNコンソールで確認できます。詳細については、「操作記録](https://cloud.tencent.com/document/product/228/6299#.E6.93.8D.E4.BD.9C.E8.AE.B0.E5.BD.95)を参照してください。
+キャッシュ更新の記録はCDNコンソールで確認できます。詳細については、[操作記録](https://intl.cloud.tencent.com/document/product/228/6299#.E6.93.8D.E4.BD.9C.E8.AE.B0.E5.BD.95)を参照してください。
 
 ### 予熱とディレクトリ更新が有効にならないのはなぜですか。
 オリジンサーバーのLast-Maodifiedが変更したかどうかをチェックしてください。Last-Maodifiedが変更された場合、オリジンプルの失敗を引き起こします。問題が解決できない場合は、[作業依頼書の提出](https:/consolue.cloud.tencent.com/workrder/category)にて保守担当者に任せてください。
