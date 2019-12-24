@@ -476,7 +476,7 @@ SDK 中的请求需要用到签名，以确认访问的用户的身份，也保�
 
 ![](https://main.qcloudimg.com/raw/58b5fff8c6bcf92691adc7299a2bdbf6.png    
 
-至于如何搭建签名服务器接入 CAM 系统，您可以参考 [移动应用直传实践](/document/product/436/9068)。
+至于如何搭建签名服务器接入 CAM 系统，您可以参考 [移动应用直传实践](https://intl.cloud.tencent.com/document/product/436/30618)。
 
 签名服务器接入 CAM 系统后，当客户端向签名服务器端请求签名时，签名服务器端会向 CAM 系统请求临时证书，然后返回给客户端。
 CAM 系统会根据您的永久 SecretId 和 SecretKey 来生成临时的 SecretId，SecretKey 和临时 Token 来生成签名，可以最大限度地提高安全性。终端收到这些临时密钥的信息后，通过它们构建一个 QCloudCredential 对象，然后通过这个 QCloudCredentail 对象生成 QCloudAuthentationCreator，最后通过使用 Creator 来生成包含签名信息的 QCloudSignature 对象。具体的操作可以参考以下示例：
