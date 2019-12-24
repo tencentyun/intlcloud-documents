@@ -6,15 +6,15 @@
 
 | API                                                          | 操作名     | 操作描述                   |
 | ------------------------------------------------------------ | ---------- | -------------------------- |
-| [PUT Bucket](https://cloud.tencent.com/document/product/436/7738) | 创建存储桶 | 在指定账号下创建一个存储桶 |
-| [DELETE Bucket](https://cloud.tencent.com/document/product/436/7732) | 删除存储桶 | 删除指定账号下的空存储桶   |
+| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | 创建存储桶 | 在指定账号下创建一个存储桶 |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | 删除存储桶 | 删除指定账号下的空存储桶   |
 
 **访问控制列表**
 
 | API                                                          | 操作名         | 操作描述                       |
 | ------------------------------------------------------------ | -------------- | ------------------------------ |
-| [PUT Bucket acl](https://cloud.tencent.com/document/product/436/7737) | 设置存储桶 ACL | 设置指定存储桶访问权限控制列表 |
-| [GET Bucket acl](https://cloud.tencent.com/document/product/436/7733) | 查询存储桶 ACL | 查询存储桶的访问控制列表       |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | 设置存储桶 ACL | 设置指定存储桶访问权限控制列表 |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | 查询存储桶 ACL | 查询存储桶的访问控制列表       |
 
 ## 基本操作
 
