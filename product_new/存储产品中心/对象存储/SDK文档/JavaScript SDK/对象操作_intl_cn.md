@@ -170,7 +170,7 @@ function(err, data) { ... }
 | - - Owner         | 对象持有者信息                                               | Object      |
 | - - - ID          | 对象持有者的完整 ID，格式为`qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`，<br>例如 `qcs::cam::uin/100000000001:uin/100000000001`，其中100000000001为 uin | String      |
 | - - - DisplayName | 对象持有者的名称                                             | String      |
-| - - StorageClass  | 对象存储级别，枚举值为：STANDARD、STANDARD_IA、ARCHIVE，详情参见 [存储类型](https://cloud.tencent.com/document/product/436/33417) 文档 | String      |
+| - - StorageClass  | 对象存储级别，枚举值为：STANDARD、STANDARD_IA、ARCHIVE，详情参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档 | String      |
 
 ### 简单上传对象
 
