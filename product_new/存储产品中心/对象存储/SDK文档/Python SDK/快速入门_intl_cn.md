@@ -7,7 +7,7 @@
 #### 环境依赖
 
 对象存储的 XML Python SDK  目前可以支持 Python 2.6、Python 2.7 以及 Python 3.x。
->关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751)。
+>关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/zh/document/product/436/18507)。
 
 #### 安装 SDK
 
@@ -140,7 +140,7 @@ print(response['ETag'])
 
 #### chunk 简单上传
 import requests
-stream = requests.get('https://cloud.tencent.com/document/product/436/7778')
+stream = requests.get('https://intl.cloud.tencent.com/document/product/436/7778')
 
 # 网络流将以 Transfer-Encoding:chunked 的方式传输到 COS
 response = client.put_object(
