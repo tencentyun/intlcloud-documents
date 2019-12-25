@@ -1,7 +1,7 @@
 ## 概述
 
 腾讯云海外加速（Global Content Delivery）将腾讯云高性能加速节点拓展至全球各地，在全球范围内提供静态内容加速，下载分发加速，音视频点播加速等多种功能支持。
-目前，腾讯云 GCD 处于公测阶段，测试名额有限，如需使用请提交公测申请单，详情请参见 [申请方式](https://cloud.tencent.com/document/product/673/30415) 了解详情。下面将为您详细介绍如何配置 CDN 海外加速。
+目前，腾讯云 GCD 处于公测阶段，测试名额有限，如需使用请提交公测申请单<!--，详情请参见 [申请方式]() 了解详情-->。下面将为您详细介绍如何配置 CDN 海外加速。
 
 >您需要通过开通申请，才能使用海外加速产品。
 
@@ -51,11 +51,11 @@ examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com
  -  Origin Domain（源站域名）：填写 COS 的 XML API 域名或静态网站域名。
  - **Host header（回源 Host）：必须与源站域名填写一致**。
 ![](https://main.qcloudimg.com/raw/691da49e660fb3a5675d371821e702d9.png)
-其他选项请根据您的实际需要进行设置，详情请参见海外加速的 [快速入门](https://cloud.tencent.com/document/product/673/14422) 文档。
+其他选项请根据您的实际需要进行设置<!--，详情请参见海外加速的 [快速入门]() 文档-->。
 
 ### 配置 CNAME
-请前往您的 DNS 服务商添加对应的 CNAME 记录，配置方法请参见内容分发网络的 [CNAME 配置](https://cloud.tencent.com/document/product/228/3121) 文档。
+请前往您的 DNS 服务商添加对应的 CNAME 记录，配置方法请参见内容分发网络的 [CNAME 配置](https://intl.cloud.tencent.com/document/product/228/3121) 文档。
 
 ## 常见问题
 - 关于未备案的域名是否可以接入海外加速 GCD 等问题，请参见 COS  [常见问题](https://intl.cloud.tencent.com/document/product/436/30590) 文档。
-- 关于 CDN 加速的更多疑问，可前往海外加速 [常见问题](https://cloud.tencent.com/document/product/673/31673) 文档寻求解决。
+<!--- 关于 CDN 加速的更多疑问，可前往海外加速 [常见问题]() 文档寻求解决。-->
