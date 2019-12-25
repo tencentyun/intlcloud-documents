@@ -95,7 +95,7 @@
 
 ### 如何监控错误码信息？
 
-您可以使用 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 获取不同类型的 HTTP 返回码信息，详细内容可参见 [监控与报警](https://intl.cloud.tencent.com/document/product/436/31649) 文档。有关云监控的使用和相关数据获取方式，可参见云监控的 [控制台指南](https://cloud.tencent.com/document/product/248/13517) 或 [API 文档](https://cloud.tencent.com/document/product/248/13655)。  
+您可以使用 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 获取不同类型的 HTTP 返回码信息，详细内容可参见 [监控与报警](https://intl.cloud.tencent.com/document/product/436/31649) 文档。有关云监控的使用和相关数据获取方式，可参见云监控的 [控制台指南](https://intl.cloud.tencent.com/document/product/248/13517)  <!--或 [API 文档]()-->。  
 
 ### COS 可用性如何计算？
 COS 提供以下可用性计算示例，供您参考：
