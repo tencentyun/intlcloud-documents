@@ -25,7 +25,7 @@
  - **地域：**在地域的下拉列表中选中不同地域，可以分地域查询消费明细。
  - **计费模式：**在计费模式的下拉列表中选中不同计费模式，可以查询按量计费和包年包月两种计费模式下的消费明细。
  - **交易类型：**在交易类型的下拉列表中选中不同交易类型，可以查询按量计费，包年包月新购、续费等不同交易类型的消费记录。
-![](https://main.qcloudimg.com/raw/36ec2f339926b7ff36ab49f93a63dc0f.png)
+![](https://main.qcloudimg.com/raw/aa4fed889262089c6bf08e5c5cb8915c.png)
 6. 在账单页面右上方，单击<img src="https://main.qcloudimg.com/raw/e421450264489d44d20f11a44e15dfaa.png"  style="margin:0;">，可下载您的月度 COS 消费明细。
 
 
@@ -42,9 +42,9 @@
 2. 在右上方导航栏【费用】中单击【费用中心】，进入费用中心总览页面。
 3. 在左侧菜单栏中，单击【费用账单】。
 4. 在账单管理子菜单中，选择【账单概览】，进入账单概览后选择日期（开启新版账单日期的前一个月），按照提示进入资源账单1.0页面。
-![](https://main.qcloudimg.com/raw/c9f0bbec27b62b614df125b50b682ac8.png)
+![](https://main.qcloudimg.com/raw/885e63855ce84695ea5bdb99aaf1884e.png)
 5. 在**资源账单1.0**页面中，选择计费模式，可分别按照项目、时间等维度查看对应的消费明细。
 6. 在“云服务类别”中，下拉列表选择 COS 对象存储服务，即可查看 COS 对应的消费明细。例如，存储容量、读写请求、CDN 回源流量费用等。
-![](https://main.qcloudimg.com/raw/593c4f9711f9a1c16cdf314b0352b2c8.png)
+![](https://main.qcloudimg.com/raw/a222197e1008279b6590abc3f3e34c33.png)
 7. 在账单页面右上方，单击<img src="https://main.qcloudimg.com/raw/a62b1624cbabded9ada7f42549be5b44.png"  style="margin:0;">，可下载您的月度 COS 消费明细。
 
