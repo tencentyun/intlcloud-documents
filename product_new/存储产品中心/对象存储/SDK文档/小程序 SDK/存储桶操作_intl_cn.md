@@ -24,7 +24,7 @@
 
 #### 功能说明
 
-GET Service 接口是用来查询请求者名下的所有存储桶列表或特定地域下的存储桶列表（Bucket list）。了解更多请参见 [GET Service](https://cloud.tencent.com/document/product/436/8291)。
+GET Service 接口是用来查询请求者名下的所有存储桶列表或特定地域下的存储桶列表（Bucket list）。了解更多请参见 [GET Service](https://intl.cloud.tencent.com/document/product/436/8291)。
 
 #### 使用示例
 
@@ -113,7 +113,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -156,7 +156,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -198,7 +198,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -291,7 +291,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -356,7 +356,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
-| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers                                                    | 请求返回的头部信息                                           | Object      |
 | data                                                         | 请求成功时返回的对象，如果请求发生错误则为空                 | Object      |
