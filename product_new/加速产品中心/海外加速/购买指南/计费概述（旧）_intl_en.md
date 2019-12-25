@@ -1,6 +1,6 @@
 > Starting January 1, 2020, 00:00, the Global Content Delivery(GCD) billing method will be upgraded from monthly pay-as-you-go to daily pay-as-you-go with fees billed by traffic by default. This document describes the old billing method which is scheduled to cease to have effect as from the end of December, 2019.
 
-Global Content Delivery (GCD) offers two **pay-as-you-go** billing plans when in beta: **bill-by-bandwidth** and **bill-by-traffic**. Both are based on **[monthly tiered usage](#shili)**, and the current calendar month total usage will be billed on the 1st day of the following month at 12 pm.
+Global Content Delivery (GCD) offers two **pay-as-you-go** billing plans when in beta: **bill-by-bandwidth** and **bill-by-traffic**. Both are based on **[monthly tiered usage](https://intl.cloud.tencent.com/document/product/1014/33472#shili)**, and the current calendar month total usage will be billed on the 1st day of the following month at 12 pm.
 
 ## Billing Regions
 GCD has eight billing regions: Asia Pacific Region 1, Asia Pacific Region 2, Asia Pacific Region 3, Middle East Region, Europe Region, North America Region, South America Region, and Africa Region.
