@@ -35,7 +35,7 @@ COSBrowser 是腾讯云对象存储 COS 推出的可视化界面工具，让您�
       <td><a href="https://sj.qq.com/myapp/detail.htm?apkName=com.qcloud.cos.client">Android</a></td>
    </tr>
    <tr>
-      <td>iOS 移动端</td>
+      <td>iOS</td>
       <td>iOS 11以上</td>
       <td><a href="https://apps.apple.com/cn/app/id1469323992">iOS</a></td>
    </tr>
@@ -88,7 +88,7 @@ COSBrowser 移动端支持以下功能：
 
 | 操作名                                                       | 操作描述                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [快捷登录](https://intl.cloud.tencent.com/document/product/436/32566#dulu) | 支持微信快捷登录                                             |
+
 | [数据概览](https://intl.cloud.tencent.com/document/product/436/32566#dateview) | 支持展示近期的数据使用情况                                   |
 | [文件批量操作](https://intl.cloud.tencent.com/document/product/436/32566#filebatch) | 支持批量上传、下载、删除、复制、移动存储桶中的文件           |
 | [分享上传](https://intl.cloud.tencent.com/document/product/436/32566#shareupload) | 支持从第三方软件中分享上传文件至存储桶                       |
@@ -99,7 +99,7 @@ COSBrowser 移动端支持以下功能：
 | [搜索文件](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | 支持以前缀搜索的方式对存储桶中的文件进行搜索                 |
 | [搜索存储桶](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | 支持搜索已创建的存储桶                                       |
 | [查看存储桶详情](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | 支持查看存储桶基本信息                                       |
-| [创建存储桶](https://intl.cloud.tencent.com/document/product/436/11366#searchbuckete) | 支持创建新的存储桶                                           |
+| [创建存储桶](https://intl.cloud.tencent.com/document/product/436/11366#createbucket) | 支持创建新的存储桶                                           |
 | [添加访问路径](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | 支持无访问存储桶列表权限的子账号，通过添加访问路径的方式进入存储桶管理资源 |
 
 ## 更新日志
