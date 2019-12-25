@@ -31,15 +31,14 @@
 ### 使用 SDK
 
 您可以直接调用 SDK 的分块操作方法，详情请参见下列各语言 SDK 文档：
-
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31463#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [C SDK](https://intl.cloud.tencent.com/document/product/436/31464#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31465#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31514)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/31518)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
 - [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30596)
-- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31466#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31467#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31468#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31477#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469#.E6.9F.A5.E8.AF.A2.E5.88.86.E5.9D.97.E4.B8.8A.E4.BC.A0)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31470#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31471#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31526)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31530)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
