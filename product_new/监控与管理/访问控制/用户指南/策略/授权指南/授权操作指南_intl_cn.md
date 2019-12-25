@@ -1,6 +1,6 @@
 ## 限制访问场景
 当您访问控制台进行相关云产品操作时，有可能会遇到提示“您没有操作相关资源的权限”，如下图所示：
-![](https://main.qcloudimg.com/raw/9278181cd2efce6f3f2a5800a0d1d6da.png)
+![](https://main.qcloudimg.com/raw/bad75cdb92e33a8ef02aaaef50143ab3.png)
 这种情况，是由于您所登录的子用户或协作者，没有被授予相关的权限，需要主账号授予对应的权限后，才能进行信息查看或者相关操作。
 
 ## 授权步骤

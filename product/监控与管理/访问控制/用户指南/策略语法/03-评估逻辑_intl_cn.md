@@ -1,5 +1,5 @@
 腾讯云用户访问云资源时， CAM 通过以下评估逻辑决定允许或拒绝。
-![](https://mc.qcloudimg.com/static/img/b2bd42353bee28c55cc1bb1c3e8bb35d/395.png)    
+![](https://mc.qcloudimg.com/static/img/9f6a095cb693996d0653b488e67d1234/CAM-User+Guide-Policy+Syntax-Evalution+Logic.png)    
 1. 默认情况下，所有请求都将被拒绝。
     
 2. CAM 会检查当前用户关联的所有策略。
