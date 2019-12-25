@@ -6,34 +6,34 @@
 
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket（List Object）](https://cloud.tencent.com/document/product/436/7734) | 查询对象列表	|   查询存储桶下的部分或者全部对象|
-| [GET Bucket Object Versions](https://cloud.tencent.com/document/product/436/35521) | 查询对象及其历史版本列表 |   查询存储桶下的部分或者全部对象及其历史版本信息|
-| [PUT Object](https://cloud.tencent.com/document/product/436/7749) | 简单上传对象       | 上传一个对象至存储桶    |
-| [HEAD Object](https://cloud.tencent.com/document/product/436/7745) | 	查询对象元数据  | 查询对象的元数据信息                |
-| [GET Object](https://cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地        |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制对象到目标路径                        |
-| [DELETE Object](https://cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在存储桶中删除指定对象 |
-| [DELETE Multiple Objects](https://cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除指定对象 |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/zh/document/product/436/30614) | 查询对象列表	|   查询存储桶下的部分或者全部对象|
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/zh/document/product/436/31551) | 查询对象及其历史版本列表 |   查询存储桶下的部分或者全部对象及其历史版本信息|
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象       | 上传一个对象至存储桶    |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 	查询对象元数据  | 查询对象的元数据信息                |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地        |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制对象到目标路径                        |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在存储桶中删除指定对象 |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除指定对象 |
 
 **分块操作**
 
 | API                                                          | 操作名         | 操作描述                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
-| [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 	初始化分块上传任务     |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
-| [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 	初始化分块上传任务     |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
 
 **其他操作**
 
 | API                                                          | 操作名       | 操作描述                                      |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问                      |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
-| [GET Object acl](https://cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询存储桶中某个对象的访问控制列表               |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问                      |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询存储桶中某个对象的访问控制列表               |
 
 ## 简单操作
 

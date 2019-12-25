@@ -9,9 +9,9 @@ CosServerException 包含了服务端返回的状态码、requestid 和出错明
 | 成员         | 描述             | 类型   |
 | ----------- | ---------------- | ------ |
 | requestId    | 请求 ID，用于表示一个请求，对于排查问题十分重要              | string |
-| statusCode   | response 的 status 状态码，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | string |
-| errorCode    | 请求失败时 body 返回的 Error Code，更多详情请参见 [ 错误码](https://cloud.tencent.com/document/product/436/7730) | string |
-| errorMessage | 请求失败时 body 返回的 Error Message，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | string |
+| statusCode   | response 的 status 状态码，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | string |
+| errorCode    | 请求失败时 body 返回的 Error Code，更多详情请参见 [ 错误码](https://intl.cloud.tencent.com/document/product/436/7730) | string |
+| errorMessage | 请求失败时 body 返回的 Error Message，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | string |
 
 
 #### 异常捕获示例

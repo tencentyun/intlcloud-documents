@@ -1153,7 +1153,7 @@ cos.putObjectAcl({
 | ------------------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket              | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
 | Region              | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
-| Key                 | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [[对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String      | 是   |
+| Key                 | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String      | 是   |
 | ACL                 | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String      | 否   |
 | GrantRead           | 赋予被授权者读取对象的权限。格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String      | 否   |
 | GrantFullControl    | 赋予被授权者操作对象的所有权限，格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String      | 否   |

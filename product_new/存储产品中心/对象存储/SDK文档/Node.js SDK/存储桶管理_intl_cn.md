@@ -156,7 +156,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             | 参数描述                                                     | 类型        |
 | ------------------ | ------------------------------------------------------------ | ----------- |
-| err                | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err                | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | data               | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
 | - CORSRules        | 说明跨域资源共享配置的所有信息列表                           | ObjectArray |
 | - - AllowedMethods | 允许的 HTTP 操作，枚举值：GET、PUT、HEAD、POST、DELETE       | StringArray |
@@ -202,7 +202,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -350,7 +350,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -439,7 +439,7 @@ function(err, data) { ... }
 
 | 参数名                             | 参数描述                                                     | 类型        |
 | ---------------------------------- | ------------------------------------------------------------ | ----------- |
-| err                                | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err                                | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | - statusCode                       | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers                          | 请求返回的头部信息                                           | Object      |
 | data                               | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
@@ -494,7 +494,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -562,7 +562,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -629,7 +629,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          | 参数描述                                                     | 类型        |
 | --------------- | ------------------------------------------------------------ | ----------- |
-| err             | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err             | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | data            | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
 | - Policy        | 权限策略，详情请参见 [访问管理策略语法](https://intl.cloud.tencent.com/document/product/436/12469) | Object      |
 | - - version     | 版本号，固定2.0                                              | String      |
@@ -675,7 +675,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -726,7 +726,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -778,7 +778,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 参数描述                                                     | 类型        |
 | ------------ | ------------------------------------------------------------ | ----------- |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers    | 请求返回的头部信息                                           | Object      |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
@@ -872,7 +872,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -911,7 +911,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                    | 参数描述                                                     | 类型   |
 | ------------------------- | ------------------------------------------------------------ | ------ |
-| err                       | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err                       | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode              | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers                 | 请求返回的头部信息                                           | Object |
 | data                      | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -977,7 +977,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -1037,7 +1037,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     | 参数描述                                                     | 类型        |
 | -------------------------- | ------------------------------------------------------------ | ----------- |
-| err                        | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err                        | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | data                       | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
 | - ReplicationConfiguration | 跨地域复制规则                                               | Object      |
 | - - Role                   | 复制过程以什么角色的身份<br>格式：`qcs::cam::uin/100000000001:uin/100000000011`<br>其中100000000001是主账号，100000000011是子账号 | Object      |
@@ -1081,7 +1081,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |

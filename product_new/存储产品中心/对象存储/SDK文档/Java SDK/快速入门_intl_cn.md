@@ -9,7 +9,7 @@
 - JDK 安装方式请参见 [Java 安装与配置](https://intl.cloud.tencent.com/document/product/436/10865)。
 
 >
->- 关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
+>- 关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
 >- COS Java SDK 中的常见类所在包分别为：
  - 客户端配置相关类在包 com.qcloud.cos.\* 下。
  - 权限相关类在 com.qcloud.cos.auth.\* 子包下。
@@ -140,7 +140,7 @@ try {
 
 - 若本地文件大部分在 20M 以上，建议您参考使用高级 API 接口进行上传。
 - 若 COS 上已存在同样 Key 的对象，上传时则会覆盖旧的对象。
-- 若要创建目录对象，请参见 [SDK 如何创建目录](https://cloud.tencent.com/document/product/436/30746#sdk-.E5.A6.82.E4.BD.95.E5.88.9B.E5.BB.BA.E7.9B.AE.E5.BD.95.EF.BC.9F)。
+- 若要创建目录对象，请参见 [SDK 如何创建目录](https://intl.cloud.tencent.com/document/product/436/10687)。
 - 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg` 中，对象键为 images/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) 的说明。
 
 

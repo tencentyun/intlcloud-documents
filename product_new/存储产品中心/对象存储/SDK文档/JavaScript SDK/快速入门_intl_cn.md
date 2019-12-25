@@ -8,12 +8,12 @@
 #### 准备环境
 
 1. JavaScript SDK 需浏览器支持基本的 HTML5 特性（支持 IE10 以上浏览器），以便支持 ajax 上传文件和计算文件 MD5 值。
-2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。获取存储桶名称和 [地域名称](https://intl.intl.cloud.tencent.com/document/product/436/6224)。
+2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) ，获取您的项目 SecretId 和 SecretKey。
 4. 配置 CORS 规则，AllowHeader 需配成`*`，ExposeHeaders 需要 ETag、Content-Length 以及其他 js 需要读取的 header 字段，如下图所示。操作详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
-   ![CORS示例](https://main.qcloudimg.com/raw/bdb4f616f2afe4ca18ba663446873fd4.png)
+   ![CORS示例](https://main.qcloudimg.com/raw/6b955af6f27de0cb2240682b48b84be7.png)
 
->关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751)。
+>关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 #### 安装 SDK
 
@@ -209,7 +209,7 @@ getAuthorization 的回调参数说明：
 | -------- | ------------------------------------------------------------ | -------- |
 | options  | 获取临时密钥需要的参数对象                                   | Function |
 | - Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   |
-| - Region | 存储桶所在地域，枚举值请参见 [存储桶地域信息](https://intl.intl.cloud.tencent.com/document/product/436/6224) | String   |
+| - Region | 存储桶所在地域，枚举值请参见 [存储桶地域信息](https://intl.cloud.tencent.com/document/product/436/6224) | String   |
 | callback | 临时密钥获取完成后的回传方法                                 | Function |
 
 获取完临时密钥后，callback 回传一个对象，回传对象的属性列表如下：
