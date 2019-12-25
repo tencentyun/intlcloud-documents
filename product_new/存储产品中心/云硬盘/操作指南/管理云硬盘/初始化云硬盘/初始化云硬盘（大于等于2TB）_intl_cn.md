@@ -59,7 +59,7 @@ MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分�
 <span id="CreateFileSystemOnBareDevice"></span>
 #### 在裸设备上构建文件系统
 
-1. [登录 Linux 云服务器](https://intl.intl.cloud.tencent.com/document/product/213/5436)。
+1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. 以 root 用户执行以下命令，查看磁盘名称。
  ```
 fdisk -l

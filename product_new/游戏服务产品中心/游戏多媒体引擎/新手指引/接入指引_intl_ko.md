@@ -63,23 +63,23 @@ Demo에 Tencent Cloud 테스트 계정을 포함하므로, 성능을 체험할 �
 
 Unity 관련 파일: 
 [프로그래밍 설정 파일](https://intl.cloud.tencent.com/document/product/607/10783)
-[API 파일](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+[API 파일](https://intl.cloud.tencent.com/document/product/607/15210)
 
 Unreal Engine 관련 파일: 
 [프로그래밍 설정 파일](https://intl.cloud.tencent.com/document/product/607/10783)
-[API 파일](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+[API 파일](https://intl.cloud.tencent.com/document/product/607/15210)
 
 Cocos2D 관련 파일:
 [프로그래밍 설정 파일](https://intl.cloud.tencent.com/document/product/607/10783)
-[API 파일](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+[API 파일](https://intl.cloud.tencent.com/document/product/607/15210)
 
 Windows 관련 파일:
 [프로그래밍 설정 파일](https://intl.cloud.tencent.com/document/product/607/10783)
-[API 파일](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+[API 파일](https://intl.cloud.tencent.com/document/product/607/15210)
 
 iOS 관련 파일:
 [프로그래밍 설정 파일](https://intl.cloud.tencent.com/document/product/607/10783)
-[API 파일](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+[API 파일](https://intl.cloud.tencent.com/document/product/607/15210)
 
 Android 관련 파일:
 [프로그래밍 설정 파일](https://intl.cloud.tencent.com/document/product/607/10783)

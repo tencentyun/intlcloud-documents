@@ -158,7 +158,7 @@ mount -a
 >本操作将以在 CentOS 7.5 操作系统中使用 fdisk 分区工具将数据盘 `/dev/vdb`设置为主分区，分区形式默认设置为 MBR，文件系统设置为 EXT4 格式，挂载在`/data/newpart`下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 >
 
-1. [登录 Linux 云服务器](https://intl.intl.cloud.tencent.com/document/product/213/5436)。
+1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. 以 root 用户执行以下命令，查看磁盘名称。
  ```
 fdisk -l

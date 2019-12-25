@@ -58,7 +58,7 @@
 <span id="CreateFileSystemOnBareDevice"></span>
 #### 로우 디바이스에 파일 시스템 구축
 
-1. [Linux 클라우드 서버에 로그인](https://intl.intl.cloud.tencent.com/document/product/213/5436)
+1. [Linux 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/5436)
 2. root 사용자로 다음 커맨드를 실행하여 디스크 이름을 확인하십시오.
  ```
 fdisk -l
@@ -158,7 +158,7 @@ mount -a
 >본 작업은 CentOS 7.5 운영 체제의 fdisk 분할 도구를 사용하여 데이터 디스크 `/ dev / vdb`를 기본 파티션으로 설정합니다. 파티션 포맷은 기본적으로 MBR로 설정되고, 파일 시스템은 EXT4 포맷으로 설정되며 '/data/newpart'에 마운트되고, 부팅 시 자동 마운트되는 경우를 예로 들었습니다. 다른 운영 체제의 포맷 작업은 다를 수 있으니, 본 문서는 참조용으로만 사용하십시오.
 >
 
-1. [Linux 클라우드 서버에 로그인](https://intl.intl.cloud.tencent.com/document/product/213/5436)。
+1. [Linux 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. root 사용자로 다음 커맨드를 실행하여 디스크 이름을 확인하십시오.
  ```
 fdisk -l

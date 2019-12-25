@@ -147,7 +147,7 @@ Resources:
 
 | 属性名称       |   类型    | 是否必填 | 描述                                                         |
 | -------------- | :-------: | :------: | ------------------------------------------------------------ |
-| CronExpression | `String`  |    是    | 函数被触发的时间，支持指定的 [Cron 表达式](https://intl.intl.cloud.tencent.com/document/product/583/9708)。 |
+| CronExpression | `String`  |    是    | 函数被触发的时间，支持指定的 [Cron 表达式](https://intl.cloud.tencent.com/document/product/583/9708)。 |
 | Enable         | `Boolean` |    否    | 是否启用触发器。                                             |
 
 #### 示例：Timer 事件源对象

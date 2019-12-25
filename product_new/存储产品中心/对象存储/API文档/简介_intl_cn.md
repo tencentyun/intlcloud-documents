@@ -4,7 +4,7 @@
 
 >!
 >- 如您已开始使用腾讯云 COS API，即代表您已阅读并同意 [《腾讯云服务协议》](https://intl.cloud.tencent.com/document/product/301/9248) 和 [《腾讯云对象存储服务等级协议》](https://intl.cloud.tencent.com/document/product/436/6227)。
->- COS 的可用地域（Region）的详细信息请查阅 [地域和访问域名](https://intl.intl.cloud.tencent.com/document/product/436/6224) 文档。 
+>- COS 的可用地域（Region）的详细信息请查阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。 
 >- 在使用 API 或 SDK 发起请求前，建议您阅读 [创建请求概述](https://intl.cloud.tencent.com/document/product/436/30613) 文档了解发起访问的域名、安全鉴权概念以及内外网访问检查等信息。
 >- COS 存在 XML 和 JSON 两个不同版本的 API，两个版本的接口协议并不相同，但访问的数据互通。
 >- 腾讯云推荐您使用 XML API，历史版本的 JSON API 将不再提供继2018年之后推出的新功能。
