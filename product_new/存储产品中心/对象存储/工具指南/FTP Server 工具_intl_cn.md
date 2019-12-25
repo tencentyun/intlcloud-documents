@@ -40,7 +40,7 @@ FTP Server 工具下载地址为：[cos-ftp-server](https://github.com/tencentyu
 ```bash
 python setup.py install   # 这里可能需要您的账号 sudo 或者拥有 root 权限。
 ```
-2. 将配置示例文件`conf/vsftpd.conf.example`复制命名为`conf/vsftpd.conf`，参考本文 [配置文件](#conf) 章节 ，正确配置 bucket 和用户信息。
+2. 将配置示例文件`conf/vsftpd.conf.example`复制命名为`conf/vsftpd.conf`，参考本文 [配置文件](https://intl.cloud.tencent.com/document/product/436/7214#conf) 章节 ，正确配置 bucket 和用户信息。
 3. 运行 ftp_server.py 启动 FTP Server：
 ```bash
 python ftp_server.py
