@@ -1,3 +1,5 @@
+>!在给子用户或者协作者添加访问策略时，请务必根据业务需要，按照最小权限原则进行授权。如果您直接授予子用户或者协作者所有资源`(resource:*)`，或者所有操作`(action:*)`权限，则存在由于权限范围过大导致数据安全风险。
+
 ## 概述
 
 访问策略可用于授予访问 COS 资源的权限。访问策略使用基于 JSON 的访问策略语言。您可以通过访问策略语言授权指定委托人（principal）对指定的 COS 资源执行指定的操作。
@@ -116,7 +118,7 @@ qcs:project_id:service_type:region:account:resource
 project_id |描述项目信息，仅为了兼容 CAM 早期逻辑。|可选
 service_type |描述产品简称，如 COS。|是
 region |描述地域信息，可参阅腾讯云 COS 支持的 [可用地域](https://intl.cloud.tencent.com/document/product/436/6224)。|是
- account |描述资源拥有者的主账号信息。目前支持两种方式描述的资源拥有者。<br>一种方式是 uin 方式，即主账号的 qq 号，表示为 `uin/${OwnerUin}`，如 uin/100000000001。<br>另外一种方式是 uid 方式，即主账号的 APPID，表示为 `uid/${appid}`，如 uid/1250000000。目前 COS 的资源拥有者统一使用 uid 的方式表述，即主账号的开发商 APPID。|是
+ account |描述资源拥有者的主账号信息。目前支持两种方式描述的资源拥有者。<br>一种方式是 uin 方式，即主账号的 UIN 账号，表示为 `uin/${OwnerUin}`，如 uin/100000000001。<br>另外一种方式是 uid 方式，即主账号的 APPID，表示为 `uid/${appid}`，如 uid/1250000000。目前 COS 的资源拥有者统一使用 uid 的方式表述，即主账号的开发商 APPID。|是
 resource |描述具体资源详情，在 COS 服务中使用存储桶 XML API 访问域名来描述。|是
 
 下面是指定存储桶 examplebucket-1250000000 的示例。
