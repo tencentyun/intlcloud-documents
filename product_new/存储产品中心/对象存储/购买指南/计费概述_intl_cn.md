@@ -17,7 +17,7 @@
 
 ## 计费项说明
 
-对象存储 COS 的计费项包括：[存储容量费用](#jf1)、[请求费用](#jf2)、[数据取回费用](#jf3) 和 [流量费用](#jf4)。费用组成如下图所示：
+对象存储 COS 的计费项包括：[存储容量费用](https://intl.cloud.tencent.com/document/product/436/16871#jf1)、[请求费用](https://intl.cloud.tencent.com/document/product/436/16871#jf2)、[数据取回费用](https://intl.cloud.tencent.com/document/product/436/16871#jf3) 和 [流量费用](https://intl.cloud.tencent.com/document/product/436/16871#jf4)。费用组成如下图所示：
 
 ![](https://main.qcloudimg.com/raw/2a2d84360ad6d8f1b3b3cd5088b0a4a2.png)
 
