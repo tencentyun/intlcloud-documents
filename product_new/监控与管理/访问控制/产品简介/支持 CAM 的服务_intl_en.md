@@ -66,8 +66,6 @@ Definitions:
 | [Enterprise Content Delivery Network (ECDN)](https://intl.cloud.tencent.com/document/product/570/10364)  | Service level | &#10003;  |  - | -  |-  |
 | [Content Delivery Network (CDN)](https://intl.cloud.tencent.com/document/product/228)| Operation level<sup>1</sup> | &#10003;   |  -   | &#10003; |[Access Control](https://intl.cloud.tencent.com/document/product/228/12722)  |
 
-><sup>1</sup> At present, CDN does not support permission management through policy syntax, and instead supports permission management through projects. For more information, see [CDN Permissions](https://intl.cloud.tencent.com/document/product/228/12722).
-
 ## Middleware	
 
  | Service                                                         | Authorization Granularity | Console | Using Tags for Authorization | Service Role | Reference Documentation |

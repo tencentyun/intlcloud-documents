@@ -27,11 +27,11 @@
 
 ### 角色
 拥有一组权限的虚拟身份。用于对角色载体授予腾讯云中服务、操作和资源的访问权限。这些权限附加到角色，而不附加到具体的用户或者用户组。
-具体解释请参阅 [基本概念](https://intl.intl.cloud.tencent.com/document/product/598/19421)。
+具体解释请参阅 [基本概念](https://intl.cloud.tencent.com/document/product/598/19421)。
 
 ### 角色载体
 角色载体是被允许承载角色权限的对象。您可以对角色进行角色载体编辑，添加或删除相应对象来允许或者拒绝其扮演角色来访问您的腾讯云资源。
-具体请参阅 [基本概念](https://intl.intl.cloud.tencent.com/document/product/598/19421)。
+具体请参阅 [基本概念](https://intl.cloud.tencent.com/document/product/598/19421)。
 
 ### 权限策略
 JSON 格式的权限文档。您可以在权限策略中定义角色可使用的操作和资源。该文档规则依赖于 CAM 策略语言规则。

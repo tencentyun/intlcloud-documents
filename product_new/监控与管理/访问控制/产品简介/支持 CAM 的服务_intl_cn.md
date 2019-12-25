@@ -66,8 +66,6 @@
 | [全站加速网络](https://intl.cloud.tencent.com/document/product/570/10364)  | 服务级 | &#10003;  |  - | -  |-  |
 | [内容分发网络](https://intl.cloud.tencent.com/document/product/228)| 操作级<sup>1</sup> | &#10003;   |  -   | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/228/12722)  |
 
-><sup>1</sup> 内容分发网络暂不支持通过策略语法进行权限管理，支持使用项目进行权限管理，单击 [权限说明](https://intl.cloud.tencent.com/document/product/228/12722) 了解更多。
-
 ## 中间件	
 
  | 服务                                                       | 授权粒度 | 控制台  | 根据标签进行授权 |  服务角色 |	参考文档 |

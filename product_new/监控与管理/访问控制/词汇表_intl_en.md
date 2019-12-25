@@ -27,11 +27,11 @@ An entity created by the root account. It has an ID and identity credentials and
 
 ### Role
 A virtual identity with a collection of permissions. It is used to grant permissions to role entities for them to access services and resources and perform operations in Tencent Cloud. Those permissions are granted to a role, instead of a user or user group.
-For more information, see [Basic Concepts](https://intl.intl.cloud.tencent.com/document/product/598/19421).
+For more information, see [Basic Concepts](https://intl.cloud.tencent.com/document/product/598/19421).
 
 ### Role entity
 An object allowed to have the permissions associated with a role. You can edit role entities by adding or deleting objects to allow them to assume roles to access your Tencent Cloud resources or prohibit them from doing so. 
-For more information, see [Basic Concepts](https://intl.intl.cloud.tencent.com/document/product/598/19421).
+For more information, see [Basic Concepts](https://intl.cloud.tencent.com/document/product/598/19421).
 
 ### Permission policy
 A JSON file on permissions in which you can define   which operations a role can perform and what resources a role can access. This file should conform  to the CAM policy language rule.

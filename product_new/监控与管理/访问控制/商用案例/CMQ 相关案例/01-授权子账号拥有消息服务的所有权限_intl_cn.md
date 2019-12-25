@@ -3,7 +3,7 @@
 
 方案A：
 
-企业帐号 CompanyExample 直接将预设策略 QCloudCmqQueueFullAccess 和 QCloudCmqTopicFullAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://intl.intl.cloud.tencent.com/document/product/598/10602)。
+企业帐号 CompanyExample 直接将预设策略 QCloudCmqQueueFullAccess 和 QCloudCmqTopicFullAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
 方案B：
 
@@ -20,5 +20,5 @@
    ]
 }
 ```
-步骤2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.intl.cloud.tencent.com/document/product/598/10602)。
+步骤2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
