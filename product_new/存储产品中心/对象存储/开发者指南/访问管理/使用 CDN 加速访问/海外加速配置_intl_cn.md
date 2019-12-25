@@ -50,7 +50,7 @@ examplebucket-1250000000.cos-website.ap-guangzhou.myqcloud.com
  - Origin Type（源站类型）：选自有源 External。
  -  Origin Domain（源站域名）：填写 COS 的 XML API 域名或静态网站域名。
  - **Host header（回源 Host）：必须与源站域名填写一致**。
-![](https://main.qcloudimg.com/raw/691da49e660fb3a5675d371821e702d9.png)
+![](https://main.qcloudimg.com/raw/0eb94781fe1e604b6614bf588c5bffd4.png)
 其他选项请根据您的实际需要进行设置<!--，详情请参见海外加速的 [快速入门]() 文档-->。
 
 ### 配置 CNAME
