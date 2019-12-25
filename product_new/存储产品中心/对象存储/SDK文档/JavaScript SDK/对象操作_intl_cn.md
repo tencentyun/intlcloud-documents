@@ -6,35 +6,35 @@
 
 | API                                                          | 操作名         | 操作描述                                 |
 | ------------------------------------------------------------ | -------------- | ---------------------------------------- |
-| [GET Bucket（List Object）](https://cloud.tencent.com/document/product/436/7734) | 查询对象列表   | 查询存储桶下的部分或者全部对象           |
-| [PUT Object](https://cloud.tencent.com/document/product/436/7749) | 简单上传对象   | 上传一个对象至存储桶                     |
-| [POST Object](https://cloud.tencent.com/document/product/436/14690) | 表单上传对象   | 使用表单请求上传对象                     |
-| [HEAD Object](https://cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询对象的元数据信息                     |
-| [GET Object](https://cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地                       |
-| [OPTIONS Object](https://cloud.tencent.com/document/product/436/8288) | 预请求跨域配置 | 用预请求来确认是否可以发送真正的跨域请求 |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制对象到目标路径                       |
-| [DELETE Object](https://cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在存储桶中删除指定对象                   |
-| [DELETE Multiple Objects](https://cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除对象                   |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | 查询对象列表   | 查询存储桶下的部分或者全部对象           |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象   | 上传一个对象至存储桶                     |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | 表单上传对象   | 使用表单请求上传对象                     |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询对象的元数据信息                     |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地                       |
+| [OPTIONS Object](https://intl.cloud.tencent.com/document/product/436/8288) | 预请求跨域配置 | 用预请求来确认是否可以发送真正的跨域请求 |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制对象到目标路径                       |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在存储桶中删除指定对象                   |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除对象                   |
 
 **分块操作**
 
 | API                                                          | 操作名         | 操作描述                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
-| [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化分块上传任务                   |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传对象                         |
-| [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中已上传的块     |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个对象的分块上传               |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化分块上传任务                   |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传对象                         |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中已上传的块     |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个对象的分块上传               |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
 
 **其他操作**
 
 | API                                                          | 操作名       | 操作描述                           |
 | ------------------------------------------------------------ | ------------ | ---------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问           |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
-| [GET Object acl](https://cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询对象的访问控制列表             |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问           |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询对象的访问控制列表             |
 
 ## 简单操作
 
@@ -131,7 +131,7 @@ cos.getBucket({
 | 参数名       | 参数描述                                                     | 类型   | 必填 |
 | ------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket       | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 | Prefix       | 对象键前缀匹配，限定返回中只包含指定前缀的对象键             | String | 否   |
 | Delimiter    | 定界符。为一个分隔符号，用于对对象键进行分组。一般是传`/`。所有对象键从 Prefix 或从头（如未指定 Prefix）到首个 delimiter 之间相同部分的路径归为一类，定义为 Common Prefix，然后列出所有 Common Prefix。 | String | 否   |
 | Marker       | 起始对象键标记。列出从 Marker 开始 MaxKeys 条目，默认顺序为 UTF-8 字典序 | String | 否   |
@@ -146,7 +146,7 @@ function(err, data) { ... }
 
 | 参数名            | 参数描述                                                     | 类型        |
 | ----------------- | ------------------------------------------------------------ | ----------- |
-| err               | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err               | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | - statusCode      | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers         | 请求返回的头部信息                                           | Object      |
 | data              | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
@@ -178,7 +178,7 @@ function(err, data) { ... }
 
 PUT Object 接口可以上传一个对象至指定存储桶中。该操作需要请求者对存储桶有 WRITE 权限。
 
-> !
+> 
 > 1. Key（文件名）不能以`/`结尾，否则会被识别为文件夹。
 > 2. 每个主账号（即同一个 APPID），存储桶的 ACL、Policy 和 CAM 关联的策略数量总和最多为1000条，对象 ACL 规则数量不限制。如果您不需要进行对象 ACL 控制，请在上传时不要设置，默认继承存储桶权限。
 > 3. 上传之后，您可以用同样的 Key 生成预签名链接（下载请指定 method 为 GET，具体接口说明见下文，分享到其他端来进行下载。但注意如果您的文件是私有读权限，那么预签名链接只有一定的有效期。
@@ -233,8 +233,8 @@ cos.putObject({
 | 参数名                 | 参数描述                                                     | 类型             | 必填 |
 | ---------------------- | ------------------------------------------------------------ | ---------------- | ---- |
 | Bucket                 | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String           | 是   |
-| Region                 | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String           | 是   |
-| Key                    | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String           | 是   |
+| Region                 | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String           | 是   |
+| Key                    | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String           | 是   |
 | Body                   | 上传文件的内容，可以为字符串，File 对象或者 Blob 对象        | String\File\Blob | 是   |
 | CacheControl           | RFC 2616中定义的缓存策略，将作为对象的元数据保存             | String           | 否   |
 | ContentDisposition     | RFC 2616中定义的文件名称，将作为对象的元数据保存             | String           | 否   |
@@ -243,7 +243,7 @@ cos.putObject({
 | ContentType            | RFC 2616中定义的内容类型（MIME），将作为对象的元数据保存     | String           | 否   |
 | Expires                | RFC 2616中定义的过期时间，将作为对象的元数据保存             | String           | 否   |
 | Expect                 | 当使用 Expect: 100-continue 时，在收到服务端确认后，才会发送请求内容 | String           | 否   |
-| ACL                    | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://cloud.tencent.com/document/product/436/30752#.E9.A2.84.E8.AE.BE.E7.9A.84-acl) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String           | 否   |
+| ACL                    | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String           | 否   |
 | GrantRead              | 赋予被授权者读取对象的权限，格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String           | 否   |
 | GrantReadAcp           | 赋予被授权者读取对象的访问控制列表（ACL）的权限，格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String           | 否   |
 | GrantWriteAcp          | 赋予被授权者写入对象的访问控制列表（ACL）的权限，格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String           | 否   |
@@ -267,7 +267,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -279,7 +279,7 @@ function(err, data) { ... }
 
 ### 表单上传对象
 
-JS SDK 未提供 POST Object 接口对应的方法，如果需要使用该接口，请参见 [Web 端直传实践](https://cloud.tencent.com/document/product/436/9067) 里的“方案 B：使用 Form 表单上传”。
+JS SDK 未提供 POST Object 接口对应的方法，如果需要使用该接口，请参见 [Web 端直传实践](https://intl.cloud.tencent.com/document/product/436/9067) 里的“方案 B：使用 Form 表单上传”。
 
 ### 查询对象元数据
 
@@ -304,8 +304,8 @@ cos.headObject({
 | 参数名          | 参数描述                                                     | 类型   | 必填 |
 | --------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket          | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region          | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key             | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region          | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key             | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 | IfModifiedSince | 当对象在指定时间后被修改，返回对应对象的元数据信息，否则返回304 | String | 否   |
 
 #### 回调函数说明
@@ -316,7 +316,7 @@ function(err, data) { ... }
 
 | 参数名                | 参数描述                                                     | 类型    |
 | --------------------- | ------------------------------------------------------------ | ------- |
-| err                   | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object  |
+| err                   | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object  |
 | - statusCode          | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number  |
 | - headers             | 请求返回的头部信息                                           | Object  |
 | data                  | 请求成功时返回的对象，如果请求发生错误，则为空               | Object  |
@@ -331,7 +331,7 @@ function(err, data) { ... }
 
 ### 下载对象
 
-> !该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体参见 [预签名 URL](https://cloud.tencent.com/document/product/436/35651) 文档。
+> !该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31540) 文档。
 
 #### 功能说明
 
@@ -367,8 +367,8 @@ cos.getObject({
 | 参数名                     | 参数描述                                                     | 类型     | 必填 |
 | -------------------------- | ------------------------------------------------------------ | -------- | ---- |
 | Bucket                     | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   | 是   |
-| Region                     | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String   | 是   |
-| Key                        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String   | 是   |
+| Region                     | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String   | 是   |
+| Key                        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String   | 是   |
 | ResponseContentType        | 设置响应头部中的 Content-Type 参数                           | String   | 否   |
 | ResponseContentLanguage    | 设置返回头部中的 Content-Language 参数                       | String   | 否   |
 | ResponseExpires            | 设置返回头部中的 Content-Expires 参数                        | String   | 否   |
@@ -396,7 +396,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
-| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object  |
+| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object  |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number  |
 | - headers                                                    | 请求返回的头部信息                                           | Object  |
 | data                                                         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object  |
@@ -439,8 +439,8 @@ cos.optionsObject({
 | 参数名                      | 参数描述                                                     | 类型   | 必填 |
 | --------------------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket                      | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region                      | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key                         | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region                      | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key                         | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 | Origin                      | 模拟跨域访问的请求来源域名                                   | String | 是   |
 | AccessControlRequestMethod  | 模拟跨域访问的请求 HTTP 方法                                 | String | 是   |
 | AccessControlRequestHeaders | 模拟跨域访问的请求头部                                       | String | 否   |
@@ -453,7 +453,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
-| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object  |
+| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object  |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number  |
 | - headers                                                    | 请求返回的头部信息                                           | Object  |
 | data                                                         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object  |
@@ -493,10 +493,10 @@ cos.putObjectCopy({
 | 参数名                      | 参数描述                                                     | 类型   | 必填 |
 | --------------------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket                      | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region                      | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key                         | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [[对象概述](https://cloud.tencent.com/document/product/436/13324)](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region                      | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key                         | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [[对象概述](https://intl.cloud.tencent.com/document/product/436/13324)](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
 | CopySource                  | 源对象 URL 路径，可以通过 URL 参数 ?versionId=&lt;versionId> 参数指定指定历史版本 | String | 是   |
-| ACL                         | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://cloud.tencent.com/document/product/436/30752#.E9.A2.84.E8.AE.BE.E7.9A.84-acl) 文档中对象的预设 ACL 部分，例如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String | 否   |
+| ACL                         | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，例如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String | 否   |
 | GrantRead                   | 赋予被授权者读取对象的权限。格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | 否   |
 | GrantWrite                  | 赋予被授权者写入对象的权限。格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | 否   |
 | GrantFullControl            | 赋予被授权者操作对象的所有权限，格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | 否   |
@@ -516,7 +516,7 @@ function(err, data) { ... }
 
 | 参数名         | 参数描述                                                     | 类型   |
 | -------------- | ------------------------------------------------------------ | ------ |
-| err            | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err            | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode   | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers      | 请求返回的头部信息                                           | Object |
 | data           | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -549,8 +549,8 @@ cos.deleteObject({
 | 参数名    | 参数描述                                                     | 类型   | 必填 |
 | --------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket    | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region    | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key       | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region    | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key       | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 | VersionId | 要删除的对象版本 ID 或 DeleteMarker 版本 ID                  | String | 否   |
 
 #### 回调函数说明
@@ -561,7 +561,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -596,10 +596,10 @@ cos.deleteMultipleObject({
 | 参数名      | 参数描述                                                     | 类型        | 必填 |
 | ----------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket      | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
-| Region      | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String      | 是   |
+| Region      | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
 | Quiet       | 布尔值，这个值决定了是否启动 Quiet 模式。值为 true 启动 Quiet 模式，值为 false 则启动 Verbose 模式，默认值为 false | Boolean     | 否   |
 | Objects     | 要删除的对象列表                                             | ObjectArray | 是   |
-| - Key       | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String      | 是   |
+| - Key       | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String      | 是   |
 | - VersionId | 要删除的对象版本 ID 或 DeleteMarker 版本 ID                  | String      | 否   |
 
 #### 回调函数说明
@@ -617,12 +617,12 @@ function(err, data) { ... }
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200，204，403，404等             | Number      |
 | - headers                                                    | 请求返回的头部信息                                           | Object      |
 | - Deleted                                                    | 说明本次删除成功的对象信息列表                               | ObjectArray |
-| - - Key                                                      | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String      |
+| - - Key                                                      | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String      |
 | - - VersionId                                                | 如果参数传入了 VersionId，返回也会带上 VersionId，表示刚操作的对象版本或 DeleteMarker 版本 | String      |
 | - - DeleteMarker                                             | 如果开启了版本控制，并且参数没有 VersionId，本次删除不会真正抹去文件内容，只新增一个 DeleteMarker 代表可见的文件已删除，枚举值：true、false | String      |
 | - - DeleteMarkerVersionId                                    | 当返回的 DeleteMarker 为 true 时，返回刚新增的 DeleteMarker 的 VersionId | String      |
 | - Error                                                      | 说明本次删除失败的对象信息列表                               | ObjectArray |
-| - - Key                                                      | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String      |
+| - - Key                                                      | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String      |
 | - - Code                                                     | 删除失败的错误码                                             | String      |
 | - - Message                                                  | 删除错误信息                                                 | String      |
 
@@ -653,7 +653,7 @@ cos.multipartList({
 | 参数名         | 参数描述                                                     | 类型   | 必填 |
 | -------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket         | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region         | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Region         | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 | Prefix         | 对象键前缀匹配，限定返回中只包含指定前缀的对象键。注意使用 prefix 查询时，返回的对象键 中仍会包含 Prefix | String | 否   |
 | Delimiter      | 定界符。为一个分隔符号，，用于对对象键进行分组。一般是传`/`。所有对象键从 Prefix 或从头（例如未指定 Prefix）到首个 delimiter 之间相同部分的路径归为一类，定义为 Common Prefix，然后列出所有 Common Prefix | String | 否   |
 | EncodingType   | 规定返回值的编码格式，合法值：url                            | String | 否   |
@@ -669,7 +669,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
-| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object      |
+| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers                                                    | 请求返回的头部信息                                           | Object      |
 | data                                                         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
@@ -726,14 +726,14 @@ cos.multipartInit({
 | 参数名             | 参数描述                                                     | 类型   | 必填 |
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket             | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region             | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key                | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region             | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key                | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 | CacheControl       | RFC 2616 中定义的缓存策略，将作为对象的元数据保存            | String | 否   |
 | ContentDisposition | RFC 2616 中定义的文件名称，将作为对象的元数据保存            | String | 否   |
 | ContentEncoding    | RFC 2616 中定义的编码格式，将作为对象的元数据保存            | String | 否   |
 | ContentType        | RFC 2616 中定义的内容类型（MIME），将作为对象的元数据保存    | String | 否   |
 | Expires            | RFC 2616 中定义的过期时间，将作为对象的元数据保存            | String | 否   |
-| ACL                | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://cloud.tencent.com/document/product/436/30752#.E9.A2.84.E8.AE.BE.E7.9A.84-acl) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String | 否   |
+| ACL                | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String | 否   |
 | GrantRead          | 赋予被授权者读取对象的权限，格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | 否   |
 | GrantFullControl   | 赋予被授权者操作对象的所有权限，格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | 否   |
 | StorageClass       | 设置对象的存储级别，枚举值：STANDARD、STANDARD_IA、ARCHIVE，默认值：STANDARD | String | 否   |
@@ -748,10 +748,10 @@ function(err, data) { ... }
 
 | 参数名   | 参数描述                                                     | 类型   |
 | -------- | ------------------------------------------------------------ | ------ |
-| err      | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err      | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | data     | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
 | Bucket   | 分片上传的目标存储桶，由用户自定义字符串和系统生成 APPID 数字串由中划线连接而成，例如 examplebucket-1250000000 | String |
-| Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String |
+| Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | UploadId | 在后续上传中使用的 ID                                        | String |
 
 ### 上传分块
@@ -784,8 +784,8 @@ cos.multipartUpload({
 | 参数名        | 参数描述                                                     | 类型             | 必填 |
 | ------------- | ------------------------------------------------------------ | ---------------- | ---- |
 | Bucket        | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String           | 是   |
-| Region        | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String           | 是   |
-| Key           | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String           | 是   |
+| Region        | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String           | 是   |
+| Key           | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String           | 是   |
 | ContentLength | RFC 2616中定义的 HTTP 请求内容长度（字节）                   | String           | 是   |
 | PartNumber    | 分块的编号                                                   | String           | 是   |
 | UploadId      | 本次分块上传任务的编号                                       | String           | 是   |
@@ -801,7 +801,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -836,8 +836,8 @@ cos.uploadPartCopy({
 | 参数名                      | 参数描述                                                     | 类型   | 必填 |
 | --------------------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket                      | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region                      | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key                         | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region                      | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key                         | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 | CopySource                  | 源对象 URL 路径，可以通过 URL 参数 ?versionId=&lt;versionId> 参数指定指定历史版本 | String | 是   |
 | partNumber                  | 分块拷贝的块号                                               | String | 是   |
 | uploadId                    | 使用上传分块文件，必须先初始化分块上传。在初始化分块上传的响应中，会返回一个唯一的描述符（upload ID），您需要在分块上传请求中携带此 ID | String | 是   |
@@ -855,7 +855,7 @@ function(err, data) { ... }
 
 | 参数名         | 参数描述                                                     | 类型   |
 | -------------- | ------------------------------------------------------------ | ------ |
-| err            | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err            | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode   | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers      | 请求返回的头部信息                                           | Object |
 | data           | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -888,8 +888,8 @@ cos.multipartListPart({
 | 参数名           | 参数描述                                                     | 类型   | 必填 |
 | ---------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket           | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region           | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key              | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region           | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key              | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 | UploadId         | 标识本次分块上传的 ID。使用 Initiate Multipart Upload 接口初始化分片上传时会得到一个 uploadId，该 ID 不但唯一标识这一分块数据，也标识了这分块数据在整个文件内的相对位置。 | String | 是   |
 | EncodingType     | 规定返回值的编码方式                                         | String | 否   |
 | MaxParts         | 单次返回最大的条目数量，默认1000                             | String | 否   |
@@ -903,7 +903,7 @@ function(err, data) { ... }
 
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
-| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object      |
+| err                                                          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode                                                 | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers                                                    | 请求返回的头部信息                                           | Object      |
 | data                                                         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
@@ -911,7 +911,7 @@ function(err, data) { ... }
 | - headers                                                    | 请求返回的头部信息                                           | Object      |
 | - Bucket                                                     | 分块上传的目标存储桶                                         | String      |
 | - Encoding-type                                              | 规定返回值的编码方式                                         | String      |
-| - Key                                                        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String      |
+| - Key                                                        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String      |
 | - UploadId                                                   | 标识本次分块上传的 ID                                        | String      |
 | - Initiator                                                  | 用来表示本次上传发起者的信息                                 | Object      |
 | - - DisplayName                                              | 上传发起者的名称                                             | String      |
@@ -965,8 +965,8 @@ cos.multipartComplete({
 | 参数名       | 参数描述                                                     | 类型        | 必填 |
 | ------------ | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket       | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
-| Region       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String      | 是   |
-| Key          | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String      | 是   |
+| Region       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
+| Key          | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String      | 是   |
 | UploadId     | 上传任务编号                                                 | String      | 是   |
 | Parts        | 用来说明本次分块上传中块的信息列表                           | ObjectArray | 是   |
 | - PartNumber | 分块的编号                                                   | String      | 是   |
@@ -980,7 +980,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -988,7 +988,7 @@ function(err, data) { ... }
 | - headers    | 请求返回的头部信息                                           | Object |
 | - Location   | 创建对象的外网访问域名                                       | String |
 | - Bucket     | 分块上传的目标存储桶                                         | String |
-| - Key        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - ETag       | 合并后文件的唯一 ID，格式："uuid-<分块数>"<br>例如`"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`，**注意前后携带双引号** | String |
 
 ### 终止分块上传
@@ -1018,8 +1018,8 @@ cos.multipartAbort({
 | 参数名   | 参数描述                                                     | 类型   | 必填 |
 | -------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket   | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region   | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region   | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 | UploadId | 标识本次分块上传的 ID。使用 Initiate Multipart Upload 接口初始化分片上传时会得到一个 uploadId，该 ID 不但唯一标识这一分块数据，也标识了这分块数据在整个文件内的相对位置 | String | 是   |
 
 #### 回调函数说明
@@ -1030,7 +1030,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -1068,8 +1068,8 @@ cos.restoreObject({
 | 参数名             | 参数描述                                                     | 类型   | 必填 |
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket             | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region             | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key                | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region             | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key                | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 | RestoreRequest     | 用于恢复数据的容器                                           | Object | 是   |
 | - Days             | 设置临时副本的过期时间                                       | Number | 是   |
 | - CASJobParameters | 归档存储工作参数的容器                                       | Object | 是   |
@@ -1083,7 +1083,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -1152,9 +1152,9 @@ cos.putObjectAcl({
 | 参数名              | 参数描述                                                     | 类型        | 必填 |
 | ------------------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket              | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String      | 是   |
-| Region              | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String      | 是   |
-| Key                 | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [[对象概述](https://cloud.tencent.com/document/product/436/13324)](https://cloud.tencent.com/document/product/436/13324) | String      | 是   |
-| ACL                 | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://cloud.tencent.com/document/product/436/30752#.E9.A2.84.E8.AE.BE.E7.9A.84-acl) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String      | 否   |
+| Region              | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String      | 是   |
+| Key                 | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [[对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String      | 是   |
+| ACL                 | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String      | 否   |
 | GrantRead           | 赋予被授权者读取对象的权限。格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String      | 否   |
 | GrantFullControl    | 赋予被授权者操作对象的所有权限，格式：id="[OwnerUin]"，可使用半角逗号（,）分隔多组被授权者：<br><li>当需要给子账户授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`<br><li>当需要给主账号授权时，`id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`<br>例如`'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String      | 否   |
 | AccessControlPolicy | 设置对象的访问控制列表（ACL）属性信息                        | Object      | 否   |
@@ -1175,7 +1175,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -1205,8 +1205,8 @@ cos.getObjectAcl({
 | 参数名 | 参数描述                                                     | 类型   | 必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
-| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String | 是   |
-| Key    | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String | 是   |
+| Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
+| Key    | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String | 是   |
 
 #### 回调函数说明
 
@@ -1216,13 +1216,13 @@ function(err, data) { ... }
 
 | 参数名            | 参数描述                                                     | 类型        |
 | ----------------- | ------------------------------------------------------------ | ----------- |
-| err               | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object      |
+| err               | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode      | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers         | 请求返回的头部信息                                           | Object      |
 | data              | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
 | - statusCode      | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers         | 请求返回的头部信息                                           | Object      |
-| - ACL             | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://cloud.tencent.com/document/product/436/30752#.E9.A2.84.E8.AE.BE.E7.9A.84-acl) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String      |
+| - ACL             | 定义对象的访问控制列表（ACL）属性，枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，如 default，private，public-read 等 <br>**注意：如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限** | String      |
 | - Owner           | 标识资源的所有者                                             | Object      |
 | - - ID            | 对象持有者 ID，格式为：`qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>如果是主账号 ID，&lt;OwnerUin> 和 &lt;SubUin>是同一个值 | String      |
 | - - DisplayName   | 对象持有者的名称                                             | String      |
@@ -1269,8 +1269,8 @@ cos.sliceUploadFile({
 | 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 参数描述                                                     | 类型      | 必填 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String    | 是   |
-| Region                                                       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String    | 是   |
-| Key                                                          | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String    | 是   |
+| Region                                                       | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String    | 是   |
+| Key                                                          | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String    | 是   |
 | Body                                                         | 上传文件的内容，可以为  File 对象  或者  Blob 对象           | File\Blob | 是   |
 | SliceSize                                                    | 分块大小                                                     | String    | 否   |
 | AsyncLimit                                                   | 分块的并发量                                                 | String    | 否   |
@@ -1297,7 +1297,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -1305,7 +1305,7 @@ function(err, data) { ... }
 | - headers    | 请求返回的头部信息                                           | Object |
 | - Location   | 创建对象的外网访问域名                                       | String |
 | - Bucket     | 分块上传的目标存储桶                                         | String |
-| - Key        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - ETag       | 合并后文件的唯一 ID，格式："uuid-<分块数>"<br>例如`"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`，**注意前后携带双引号** | String |
 | - VersionId  | 在开启过版本控制的存储桶中上传对象返回对象的版本 ID，存储桶从未开启则不返回该参数 | String |
 
@@ -1338,8 +1338,8 @@ cos.sliceCopyFile({
 | 参数名                 | 参数描述                                                     | 类型     | 必填 |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
 | Bucket                 | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   | 是   |
-| Region                 | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String   | 是   |
-| Key                    | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String   | 是   |
+| Region                 | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String   | 是   |
+| Key                    | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String   | 是   |
 | CopySource             | 源对象 URL 路径，可以通过 URL 参数 ?versionId=&lt;versionId> 参数指定指定历史版本 | String   | 是   |
 | ChunkSize              | 分片复制时，每片的大小字节数，默认值1048576（1MB）           | Number   | 否   |
 | SliceSize              | 表示文件大小多大以上使用分片复制，单位 Byte，默认值5G。小于等于该数值会使用 putObjectCopy 上传，大于该数值会使用 sliceCopyFile 上传 | Number   | 否   |
@@ -1357,7 +1357,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码文档](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码文档](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -1365,7 +1365,7 @@ function(err, data) { ... }
 | - headers    | 请求返回的头部信息                                           | Object |
 | - Location   | 创建对象的外网访问域名                                       | String |
 | - Bucket     | 分块上传的目标存储桶                                         | String |
-| - Key        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String |
+| - Key        | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | - ETag       | 合并后文件的 MD5 算法校验值<br>例如`"22ca88419e2ed4721c23807c678adbe4c08a7880"`，**注意前后携带双引号** | String |
 | - VersionId  | 在开启过版本控制的存储桶中上传对象返回对象的版本 ID，存储桶从未开启则不返回该参数 | String |
 
@@ -1416,8 +1416,8 @@ cos.uploadFiles({
 | ---------------------- | ------------------------------------------------------------ | --------- | ---- |
 | files                  | 文件列表，每一项是传给 putObject 和 sliceUploadFile 的参数对象 | Object    | 是   |
 | - Bucket               | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String    | 是   |
-| - Region               | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String    | 是   |
-| - Key                  | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String    | 是   |
+| - Region               | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String    | 是   |
+| - Key                  | 对象键（Object 的名称），对象在存储桶中的唯一标识，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String    | 是   |
 | - Body                 | 上传文件的内容，可以为  File 对象  或者  Blob 对象           | File\Blob | 是   |
 | SliceSize              | 表示文件大小多大以上使用分片上传，单位 Byte，小于等于该数值会使用 putObject 上传，大于该数值会使用 sliceUploadFile 上传 | Nunber    | 是   |
 | onProgress             | 所有任务 进度汇总计算出来的上传进度                          | String    | 是   |
@@ -1438,7 +1438,7 @@ function(err, data) { ... }
 
 | 参数名       | 参数描述                                                     | 类型        |
 | ------------ | ------------------------------------------------------------ | ----------- |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) | Object      |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误。如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) | Object      |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number      |
 | - headers    | 请求返回的头部信息                                           | Object      |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
