@@ -69,7 +69,7 @@ b. 当存储桶权限为公有读时：
 ### 上传提示错误“get ETag error, please add "ETag" to CORS ExposeHeader setting. ”该如何处理？
 
 请按照下图配置跨域规则，尝试切换浏览器，测试是否可行。详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/11488)。
-![](https://main.qcloudimg.com/raw/489ba5c2abee71caa34a58b8b6cb09db.png)
+![](https://main.qcloudimg.com/raw/e2cb8ce626ceaba0058423bb5eb72327.png)
 
 ### 同时使用了腾讯云 COS 和 CDN，COS 跨域无法正常工作该如何处理？
 
