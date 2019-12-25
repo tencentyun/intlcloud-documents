@@ -92,14 +92,14 @@ CDN 回源鉴权、CDN 鉴权配置会影响 CDN 加速域名和 COS 域名对�
 开启默认加速域名和回源鉴权后，默认加速域名管理界面下会出现一条 CDN 鉴权状态提示，可通过提示上【鉴权配置】直接跳转到对应域名的 CDN 安全配置页面进行配置。
 ![](https://main.qcloudimg.com/raw/a878861f79ea47e27c127c5b5dff4eb4.png)
 
-从 [CDN 控制台](https://console.cloud.tencent.com/cdn) 进入 CDN 鉴权配置页面的路径为【域名管理】> 对应域名的【管理】>【安全配置】。具体配置步骤详见 [鉴权配置](https://cloud.tencent.com/document/product/228/33115) 。
+从 [CDN 控制台](https://console.cloud.tencent.com/cdn) 进入 CDN 鉴权配置页面的路径为【域名管理】> 对应域名的【管理】>【安全配置】。<!--具体配置步骤详见 [鉴权配置]() 。-->
 
 
 ### 关闭功能
 - 在默认加速域名管理界面，单击【编辑】，把状态从**开启**改成**关闭**，单击【 保存】，大约需要5分钟时间进行部署。部署完成之后在 CDN 控制台上该域名的状态由**已启动**变为**已关闭**。
 ![](https://main.qcloudimg.com/raw/7a3033a50a1d6260a6ae508c7d903a28.png)
 
-- 在 [CDN 控制台](https://console.cloud.tencent.com/cdn) 可以对域名进行关闭/删除操作，详情请见 [域名操作](https://intl.intl.cloud.tencent.com/document/product/228/5736) 。
+- 在 [CDN 控制台](https://console.cloud.tencent.com/cdn) 可以对域名进行关闭/删除操作，详情请见 [域名操作](https://intl.cloud.tencent.com/document/product/228/5736) 。
 >在 CDN 控制台删除的只是默认加速域名在 CDN 加速时的记录，并不会将默认加速域名真正抹去，可在 COS 控制台重新开启默认加速域名。
 
 
@@ -107,10 +107,10 @@ CDN 回源鉴权、CDN 鉴权配置会影响 CDN 加速域名和 COS 域名对�
 用户可以通过 COS 控制台为存储桶绑定自定义域名，绑定后开启 CDN 加速，便可通过自定义域名加速访问存储桶。绑定自定义域名时，用户需自行在自定义域名的服务提供商处添加 CNAME 解析。
 > 目前 COS 使用自定义域名必须开启 CDN，请根据您的情况进行判断：
 1. 若您的域名接入国内 CDN，需要备案。但不要求必须通过腾讯云备案，保证接入的域名已备案即可。
-2. 若您的域名接入海外 CDN，不需要备案。但需要注意，您在腾讯云上存放的数据和操作行为仍需遵守相关国家的法律法规，以及[《腾讯云服务协议》](https://cloud.tencent.com/document/product/301/1967)。
+2. 若您的域名接入海外 CDN，不需要备案。但需要注意，您在腾讯云上存放的数据和操作行为仍需遵守相关国家的法律法规，以及《腾讯云服务协议》。
 
 ### 开启功能
->COS 控制台和 CDN 控制台均可完成自定义域名添加及开启 CDN 加速，若要从 CDN 控制台添加自定义域名，可以参考 [域名接入](https://cloud.tencent.com/document/product/228/5734)。
+>COS 控制台和 CDN 控制台均可完成自定义域名添加及开启 CDN 加速，若要从 CDN 控制台添加自定义域名，可以参考 [域名接入](https://intl.cloud.tencent.com/zh/document/product/228/5734)。
 
 #### 1. 选择自定义域名要绑定的存储桶
 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，在左侧导航栏中，单击【存储桶列表】，单击需要加速的存储桶，进入存储桶。
@@ -140,12 +140,12 @@ CDN 回源鉴权、CDN 鉴权配置会影响 CDN 加速域名和 COS 域名对�
 ### 配置鉴权
 >您在为自定义域名启用 CDN 加速之后，任何人都可以通过此域名直接访问源站，如果您的数据有一定的私密性，请您务必开启鉴权配置来保护您的源站数据。
 
-自定义域名部署完成后，CDN 鉴权栏会出现 CDN 鉴权功能设置链接，单击【设置】可直接进入 CDN 控制台进行 CDN 鉴权配置，具体操作方式详见 [鉴权配置](https://cloud.tencent.com/document/product/228/33115) 。
+自定义域名部署完成后，CDN 鉴权栏会出现 CDN 鉴权功能设置链接，单击【设置】可直接进入 CDN 控制台进行 CDN 鉴权配置<!--，具体操作方式详见 [鉴权配置]()--> 。
 ![](https://main.qcloudimg.com/raw/b0e9b2e0febc4b480a16a11f06498740.png)
 
 
 ### 解析域名
-在自定义域名接入 CDN 后，系统会自动为您分配一个 CNAME 域名（以`.cdn.dnsv1.com`为后缀)，您需要在域名服务提供商处完成 CNAME 的配置，具体请见 [CNAME 配置](https://cloud.tencent.com/document/product/228/3121) 。
+在自定义域名接入 CDN 后，系统会自动为您分配一个 CNAME 域名（以`.cdn.dnsv1.com`为后缀)，您需要在域名服务提供商处完成 CNAME 的配置，具体请见 [CNAME 配置](https:/intl.cloud.tencent.com/document/product/228/3121) 。
 
 >CNAME 域名不能直接访问。
 ![CNAME](https://main.qcloudimg.com/raw/b0e9b2e0febc4b480a16a11f06498740.png)
