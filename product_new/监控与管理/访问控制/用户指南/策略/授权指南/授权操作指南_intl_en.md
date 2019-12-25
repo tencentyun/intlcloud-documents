@@ -1,6 +1,6 @@
 ## Access Restricted
 When you try to perform an operation on a Tencent Cloud service, you may say a message indicating that you are not authorized to perform the operation on the resource as shown below:
-![](https://main.qcloudimg.com/raw/9278181cd2efce6f3f2a5800a0d1d6da.png)
+![](https://main.qcloudimg.com/raw/bad75cdb92e33a8ef02aaaef50143ab3.png)
 That is because the sub-account or collaborator account you use to log in to the console is not granted the necessary permissions. You need to get the permissions from the root account before you can view the information or perform the operation.
 
 ## Authorization Steps
