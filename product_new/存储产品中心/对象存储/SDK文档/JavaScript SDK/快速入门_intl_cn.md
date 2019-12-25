@@ -8,7 +8,7 @@
 #### 准备环境
 
 1. JavaScript SDK 需浏览器支持基本的 HTML5 特性（支持 IE10 以上浏览器），以便支持 ajax 上传文件和计算文件 MD5 值。
-2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。获取存储桶名称和 [地域名称](https://intl.intl.cloud.tencent.com/document/product/436/6224)。
+2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) ，获取您的项目 SecretId 和 SecretKey。
 4. 配置 CORS 规则，AllowHeader 需配成`*`，ExposeHeaders 需要 ETag、Content-Length 以及其他 js 需要读取的 header 字段，如下图所示。操作详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
    ![CORS示例](https://main.qcloudimg.com/raw/6b955af6f27de0cb2240682b48b84be7.png)
