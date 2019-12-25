@@ -177,7 +177,7 @@ coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe****
 | -s               | 密钥 Key 请前往 [API 密钥控制台](https://console.cloud.tencent.com/cam/capi) 获取 | 是       | 字符串 |
 | -t               | 临时密钥 token，当使用临时密钥时需要配置，设置 x-cos-security-token 头部 | 否       | 字符串 |
 | -b               | 指定的存储桶名称，存储桶的命名格式为 BucketName-APPID，请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | 是       | 字符串 |
-| -r               | 存储桶所在地域，请参见 [地域和访问域名](https://cloud.tencent.com/doc/product/436/6224) | 是       | 字符串 |
+| -r               | 存储桶所在地域，请参见 [地域和访问域名](https://intl.cloud.tencent.com/doc/product/436/6224) | 是       | 字符串 |
 | -e               | 设置请求的 ENDPOINT，设置 ENDPOINT 参数后，REGION 参数会失效 | 否       | 字符串 |
 | -m               | 多线程操作的最大线程数（默认为5，范围为1 - 30）              | 否       | 数字   |
 | -p               | 分块操作的单块大小（单位MB，默认为1MB，范围为1 - 1000）      | 否       | 数字   |
@@ -292,7 +292,7 @@ coscmd upload -rs /data/examplefolder data/examplefolder --ignore *.txt,*.doc
 > - COSCMD 分块上传时会对每一块进行 MD5 校验。
 > - COSCMD 上传默认会携带 `x-cos-meta-md5` 的头部，值为该文件的 md5 值。
 > - 使用 -s 参数可以使用同步上传，跳过上传 md5 一致的文件（COS 上的原文件必须是由 1.8.3.2 之后的 COSCMD 上传的，默认带有 x-cos-meta-md5 的 header）。
-> - 使用 -H 参数设置 HTTP header 时，请务必保证格式为 JSON，示例：`coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`。更多头部可参见 [PUT Object](https://cloud.tencent.com/document/product/436/7749) 文档。
+> - 使用 -H 参数设置 HTTP header 时，请务必保证格式为 JSON，示例：`coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`。更多头部可参见 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) 文档。
 > - 在上传文件夹时，使用`--ignore`参数可以忽略某一类文件，支持 shell 通配规则，支持多条规则，用逗号`,`分隔。当忽略一类后缀时，必须最后要输入`,` 或者加入`""`。
 > - 目前只支持上传最大40TB的单一文件。
 
@@ -416,7 +416,7 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 >
 > - sourcepath 的格式为：`<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`。
 > - 使用 -d 参数可以设置 `x-cos-metadata-directive` 参数，可选值为 Copy 和 Replaced，默认为 Copy。
-> - 使用 -H 参数设置 HTTP header 时，请务必保证格式为 JSON，示例：`coscmd copy -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`。更多头部请参见 [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) 文档。
+> - 使用 -H 参数设置 HTTP header 时，请务必保证格式为 JSON，示例：`coscmd copy -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`。更多头部请参见 [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) 文档。
 
 ### 查询文件列表
 
