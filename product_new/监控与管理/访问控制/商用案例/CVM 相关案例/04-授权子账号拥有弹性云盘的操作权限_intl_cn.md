@@ -1,0 +1,34 @@
+
+企业帐号 CompanyExample（ownerUin 为 12345678）下有一个子账号 Developer，该子账号需要拥有对企业帐号 CompanyExample 的 CVM 服务的查看 CVM 控制台中的云硬盘信息、创建云硬盘、使用云硬盘的权限。
+
+方案A：
+
+企业帐号 CompanyExample 直接将预设策略 QcloudCBSFullAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
+
+方案B：
+
+步骤1：通过策略语法方式创建以下策略。
+```
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "action": [
+                "cvm:CreateCbsStorages",
+                "cvm:AttachCbsStorages",
+                "cvm:DetachCbsStorages",
+                "cvm:ModifyCbsStorageAttributes",
+                "cvm:DescribeCbsStorages",
+                "cvm:DescribeInstancesCbsNum",
+                "cvm:RenewCbsStorage",
+                "cvm:ResizeCbsStorage"
+                ],
+            "resource": "*",
+            "effect": "allow"
+        }
+    ]
+}
+```
+步骤2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
+
+注：如果不允许子账号修改云硬盘属性，请去掉上述策略语法的"cvm:ModifyCbsStorageAttributes"。

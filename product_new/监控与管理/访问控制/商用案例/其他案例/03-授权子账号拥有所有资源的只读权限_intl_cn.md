@@ -1,0 +1,47 @@
+
+企业帐号 CompanyExample 下有一个子账号 Developer，该子账号需要拥有对企业帐号 CompanyExample 名下的所有资源都有完全访问权限。
+
+方案A：
+
+企业帐号 CompanyExample 直接将预设策略 ReadOnlyAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
+
+方案B：
+
+步骤1：通过策略语法方式创建以下策略
+```
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "action": [
+                "cvm:Describe*",
+                "cvm:Inquiry*",
+                "vpc:Describe*",
+                "vpc:Inquiry*",
+                "vpc:Get*",
+                "clb:Describe*",
+                "monitor:*",  
+                "bm:Describe*",
+                "bmeip:Describe*",
+                "bmlb:Describe*",
+                "bmvpc:Describe*",
+                "bm:Get*",
+                "bmlb:Get*",
+                "cos:List*",
+                "cos:Get*",
+                "cos:Head*",
+                "cos:OptionsObject",
+                "cas:Describe*",
+                "cas:List*",
+                "cas:Get*",
+                "kms:List*",
+                "kms:Get*"                
+            ],
+            "resource": "*",
+            "effect": "allow"
+        }
+    ]
+}
+```
+步骤2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
+

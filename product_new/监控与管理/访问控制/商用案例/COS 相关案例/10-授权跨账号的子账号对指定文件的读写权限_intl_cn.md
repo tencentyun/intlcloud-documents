@@ -1,0 +1,20 @@
+企业帐号 CompanyGranter（ownerUin 为 12345678，appId 为 1250000000）,该账号拥有一个对象 Object1，在广州地域名为 Bucket1 的存储桶的 dir1 目录下。另外一个企业帐号 CompanyGrantee（ownerUin 为 87654321），其子账号需要拥有上述对象的读写权限。
+
+这里涉及权限传递。
+
+步骤 1：企业帐号CompanyGrantee通过策略语法方式创建以下策略。
+```
+ {
+    "version": "2.0",
+    "statement":[
+     {
+         "effect": "allow",
+         "action": "cos:*",
+         "resource": "qcs::cos:ap-shanghai:uid/1250000000:Bucket1-1250000000/dir1/Object1"
+     }
+    ]
+}
+```
+步骤 2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
+
+步骤 3：企业帐号 CompanyGranter 通过 COS 控制台进行 Policy 和 ACL 设置，将对象 Object1 授权给企业帐号 CompanyGrantee，具体请参考 COS 文档。

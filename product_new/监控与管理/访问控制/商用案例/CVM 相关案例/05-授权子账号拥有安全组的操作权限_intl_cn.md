@@ -1,0 +1,43 @@
+
+企业帐号 CompanyExample（ownerUin 为 12345678）下有一个子账号 Developer，该子账号需要拥有对企业帐号 CompanyExample 的查看 CVM 控制台中的安全组，并且使用安全组的权限。
+
+以下策略允许子账号在 CVM 控制台中具有创建、删除安全组的权限。
+
+step1：通过策略语法方式创建以下策略。
+```
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "action": [
+                "cvm:DeleteSecurityGroup",
+                "cvm:CreateSecurityGroup"
+            ],
+            "resource": "*",
+            "effect": "allow"
+        }
+    ]
+}
+```
+step2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
+
+以下策略允许子账号在 CVM 控制台中具有创建、删除、修改安全组策略的权限。
+
+步骤1：通过策略语法方式创建以下策略。
+```
+{
+    "version": "2.0",
+    "statement": [
+        {
+            "action": [
+                "cvm:ModifySecurityGroupPolicy",
+                "cvm:CreateSecurityGroupPolicy",
+                "cvm:DeleteSecurityGroupPolicy"
+            ],
+            "resource": "*",
+            "effect": "allow"
+        }
+    ]
+}
+```
+步骤2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
