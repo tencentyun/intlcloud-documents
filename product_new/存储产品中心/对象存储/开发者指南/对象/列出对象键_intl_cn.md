@@ -25,7 +25,7 @@
 - [Android SDK](https://intl.cloud.tencent.com/document/product/436/31463#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31464#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31465#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30594![](https://intl.cloud.tencent.com/document/product/436/8629))
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30595)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31466#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31467#.E8.8E.B7.E5.8F.96.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31468#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
