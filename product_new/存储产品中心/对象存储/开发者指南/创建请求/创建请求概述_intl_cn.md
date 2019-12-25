@@ -1,13 +1,13 @@
 ## 基本概念
 
-腾讯云对象存储 COS 是一个使用 HTTP/HTTPS 协议访问的 Web 存储服务，您可以使用 [REST API](https://cloud.tencent.com/document/product/436/7751) 或 [COS SDK](https://intl.cloud.tencent.com/document/product/436/6474) 来访问 COS。
+腾讯云对象存储 COS 是一个使用 HTTP/HTTPS 协议访问的 Web 存储服务，您可以使用 [REST API](https://intl.cloud.tencent.com/document/product/436/7751) 或 [COS SDK](https://intl.cloud.tencent.com/document/product/436/6474) 来访问 COS。
 
 当您发起访问 COS 请求，需要经过 COS 认证和鉴权后，才可以对资源进行操作。因此根据身份是否可识别，访问 COS 的请求分两种类型：匿名请求和签名请求。
 
 - 匿名请求：请求未携带 Authorization 或相关参数，又或者相关字符无法识别出用户身份特征，此时请求就会被视为匿名请求而进行鉴权。
 - 签名请求：签名的请求需要在 HTTP 头部或者请求包中包含 Authorization 字段，该字段的内容是结合腾讯云的安全凭证 SecretID、SecretKey 和请求的一些特征值，通过加密算法生成。
 
-如果您使用 COS SDK 访问，只需配置好您的安全凭证即可发起请求。使用 REST API 访问，则需要参见 [请求签名](https://cloud.tencent.com/document/api/436/7778) 文档自行计算请求签名或通过 [COS 签名工具](https://cloud.tencent.com/document/product/436/30442) 直接生成。
+如果您使用 COS SDK 访问，只需配置好您的安全凭证即可发起请求。使用 REST API 访问，则需要参见 [请求签名](https://intl.cloud.tencent.com/document/api/436/7778) 文档自行计算请求签名 <!--或通过 [COS 签名工具]() 直接生成-->。
 
 ## 获取安全凭证
 
@@ -26,7 +26,7 @@
 
 ### 子账号的安全凭证
 
-当您需要在多个维度管理名下的用户和云资源时，您可以在主账号名下创建多个子账号，实现分管人员对资源权限的功能。有关创建子账号的说明请参阅访问管理 [用户管理](https://cloud.tencent.com/document/product/598/13674) 的相关文档。
+当您需要在多个维度管理名下的用户和云资源时，您可以在主账号名下创建多个子账号，实现分管人员对资源权限的功能。有关创建子账号的说明请参阅访问管理 [用户管理](https://intl.cloud.tencent.com/document/product/598/13674) 的相关文档。
 
 使用子账号发起 API 请求前，您需要为子账号创建安全凭证，随后子账号也将具备独特的密钥对，以便于识别身份。您可以对不同的子账号编写用户策略，来控制其对资源的访问权限。您也可以创建用户组，并对用户组添加统一的访问策略，便于对人员的分组和资源的统筹管理。
 
@@ -37,7 +37,7 @@
 除了使用主账号或子账号的安全凭证访问资源外，腾讯云还支持通过创建角色，并使用临时安全凭证管理腾讯云资源。有关角色的基本概念和使用方法，请参阅访问管理 [角色管理](https://intl.cloud.tencent.com/document/product/598/19420) 文档。
 
 由于角色是一个虚拟身份，因此角色不具备永久密钥，腾讯云的 CAM 提供了一套 STS API 用于生成临时安全凭证。
-使用方法和示例详情请参阅 [使用角色](https://intl.cloud.tencent.com/document/product/598/19419) 文档，或参阅 [STS API](https://cloud.tencent.com/document/product/598/13895) 文档查看生成临时安全凭证的方式。临时安全凭证通常只包括**有限策略**（操作、资源、条件）和**有限时间**（有效起止时间），因此生成的临时安全凭证可自行分发或直接使用。
+使用方法和示例详情请参阅 [使用角色](https://intl.cloud.tencent.com/document/product/598/19419) 文档，或参阅 [STS API](https://intl.cloud.tencent.com/document/product/598/13895) 文档查看生成临时安全凭证的方式。临时安全凭证通常只包括**有限策略**（操作、资源、条件）和**有限时间**（有效起止时间），因此生成的临时安全凭证可自行分发或直接使用。
 
 调用生成临时安全凭证的接口，您将获得一对临时密钥（tmpSecretId/tmpSecretKey）和一个安全令牌（sessionToken），其构成了可用于访问对象存储 COS 的安全凭证，以下提供了一个示例：
 
