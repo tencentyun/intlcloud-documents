@@ -7,13 +7,13 @@
 您上传文件成功后，如果一定时间内未收到该文件的转码结果回调消息，那么可能的原因有：
 
   - 未正确设置工作流信息，请确认工作流已被正确设置。
-  - 如果是通过 API 方式发起的转码任务，并且返回成功，则可通过 [任务查询 API](https://cloud.tencent.com/document/product/862/37035) 查询该任务处理进度信息。
+  - 如果是通过 API 方式发起的转码任务，并且返回成功，则可通过 [任务查询 API](https://intl.cloud.tencent.com/document/product/1041/33497) 查询该任务处理进度信息。
   - 任务队列积压，导致处理时间变长或其他服务异常，可通过 [提交工单](https://cloud.tencent.com/workorder/category) 查询您的队列情况。
 
 ### 如何进行回调设置？
 
 视频处理服务使用腾讯云消息队列服务 CMQ 发送转码结果回调消息，您需要提前开通 CMQ 服务，创建用于接收转码回调通知的消息队列。同时，需要授权该消息队列的写权限给视频处理服务，以便其向该消息队列写入数据。然后在 [视频处理控制台](https://console.cloud.tencent.com/mps) 创建工作流的时候，设置对应的消息队列参数即可。
-![](https://main.qcloudimg.com/raw/287a7f5024e3556abadd8023fbd0822a.png)
+![](https://main.qcloudimg.com/raw/e8ddd4a8c75523e9de0dc8745d1a0145.png)
 
 ### 使用 CMQ 是否收费？
 
