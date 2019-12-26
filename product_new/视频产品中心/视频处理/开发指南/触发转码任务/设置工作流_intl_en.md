@@ -3,7 +3,7 @@ Workflow settings mainly include the following parts:
 - Configuration items of tasks such as transcoding, screencapturing (animated image generating and image sprite generating), and watermarking.
 - CMQ address for event notification.
  
-You need to use various created templates in task configuration. You can select [MPS Console > Template Settings](https://console.cloud.tencent.com/mps/templates) to query all parameter templates. For more information on how to create a custom parameter template, please see [Template Parameter Description](https://cloud.tencent.com/document/product/862/37037).
+You need to use various created templates in task configuration. You can select [MPS Console > Template Settings](https://console.cloud.tencent.com/mps/templates) to query all parameter templates. For more information on how to create a custom parameter template, please see [Template Parameter Description](https://intl.cloud.tencent.com/document/product/1041/33494).
 
 ## Workflow Configuration Description
 
