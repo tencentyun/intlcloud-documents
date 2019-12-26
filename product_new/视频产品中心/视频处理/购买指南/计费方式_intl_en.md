@@ -14,7 +14,7 @@ MPS will push and settle the bill for your resource usage generated yesterday on
 
 Pricing: Fees are charged based on the video length after transcoding in USD/minute.
 
-|~Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
+|Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
 |-|-|-|-|-|-|-|
 |H.264|4K (3840 * 2160p) or below|0.0421|0.0480|0.0441|0.0441|0.0480|
 |H.264|2K (2560 * 1440p) or below|0.0206|0.0355|0.0316|0.0316|0.0355|
@@ -34,7 +34,7 @@ Pricing: Fees are charged based on the video length after transcoding in USD/min
  
 Pricing: Fees are charged based on the source video length in USD/minute.
  
-|~Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
+|Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
 |-|-|-|-|-|-|-|
 |H.264|4K (3840 * 2160p) or below|0.1493|0.1533|0.1467|0.1467|0.1533|
 |H.264|2K (2560 * 1440p) or below|0.0747|0.0767|0.0733|0.0733|0.0767|
@@ -69,7 +69,7 @@ The billing description is as shown below:
 - If the source video length is less than 1 minute, it will be calculated as 1 minute.
 The billing details are as shown below:
 
-|~Billable Item|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia State)|(Singapore)|
+|Billable Item|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia State)|(Singapore)|
 |-|-|-|-|-|-|
 |Intelligent content recognition|0.0511|0.0562|0.0572|0.0572|0.0562|
 
@@ -86,7 +86,7 @@ The billing description is as shown below:
 
 The billing details are as shown below:
 
-|~Billable Item|Billing Mode|Price|
+|Billable Item|Billing Mode|Price|
 |-|-|-|
 |Video audit|By the source video length|0.016|
 
