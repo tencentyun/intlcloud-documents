@@ -1,11 +1,11 @@
 ## 概述
 
-当 COS 资源发生变动（例如新文件上传、文件删除），您可以及时收到通知消息。事件通知可以结合 [云函数 SCF](https://cloud.tencent.com/product/scf)（Serverless Cloud Function）实现更丰富的应用场景：
+当 COS 资源发生变动（例如新文件上传、文件删除），您可以及时收到通知消息。事件通知可以结合 [云函数 SCF](https://intl.cloud.tencent.com/product/scf)（Serverless Cloud Function）实现更丰富的应用场景：
 
 - **产品间联动**：例如，当新文件上传到 COS 后，[自动刷新 CDN 缓存](https://intl.cloud.tencent.com/document/product/436/30611)。新文件上传到 COS 后，自动更新数据库。
 - **系统集成**：当 COS 上的文件发生变更（新建、删除、覆盖），自动调用您自己的服务接口。在 UGC（User Generated Content）场景下，您就可以基于事件通知功能，完成移动端和服务端的联动。
 - **数据处理**：对 COS 上的文件进行自动处理，例如，自动解压缩、AI 识别等。
-![](https://main.qcloudimg.com/raw/08d68084e87ea910a2c2cf26c21b40c1.png)
+![](https://main.qcloudimg.com/raw/d3b76080a15393556c8aa5b79f9439f0.png)
 
 COS 事件通知具有以下特点：
 
@@ -35,7 +35,7 @@ COS 事件通知具有以下特点：
 
 1. 创建 SCF 函数
    - 您可以通过 [SCF 控制台](https://console.cloud.tencent.com/scf?rid=1) 或 CLI 创建函数。创建函数过程中需要选择运行环境（根据您后续编写函数所使用的语言选择）、提交函数代码（支持在线编辑或本地上传代码包）。
-   - 您也可以使用 SCF 预置的模板简化创建流程，详情请参见 [创建函数](https://intl.cloud.tencent.com/document/product/583/19806)。不同编程语言的函数写法有所区别，详情请参见 [云函数](https://cloud.tencent.com/document/product/583) 文档。
+   - 您也可以使用 SCF 预置的模板简化创建流程，详情请参见 [创建函数](https://intl.cloud.tencent.com/document/product/583/19806)。不同编程语言的函数写法有所区别，详情请参见 [云函数](https://intl.cloud.tencent.com/document/product/583) 文档。
 2. 测试函数
    函数创建完成后，您可以使用测试模板功能进行初步测试。测试模板可以模拟 COS 事件，并触发函数执行，详情请参见 [测试函数](https://intl.cloud.tencent.com/document/product/583/14572)。
 3. 添加触发器

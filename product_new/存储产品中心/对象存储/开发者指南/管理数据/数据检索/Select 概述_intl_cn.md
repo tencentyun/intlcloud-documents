@@ -55,8 +55,8 @@ COS Select 目前支持以下运算符：
 
 - 使用控制台，您可参见 [检索数据](https://intl.cloud.tencent.com/document/product/436/32538) 文档进行操作。
 - 使用 SDK，您可以前往 [SDK 概览](https://intl.cloud.tencent.com/document/product/436/6474) 选择所需的 SDK 接口。
-- 使用 API，请参见 [SELECT Object Content](https://cloud.tencent.com/document/product/436/37641) API 文档。
+- 使用 API，请参见 [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/32360) API 文档。
 
 ## 常见问题
 
-如果在尝试执行查询时遇到问题，COS Select 将返回错误代码和关联的错误消息。有关错误代码和描述的列表，请参见 [特殊错误码](https://cloud.tencent.com/document/product/436/37641#errorcode)。                      
+如果在尝试执行查询时遇到问题，COS Select 将返回错误代码和关联的错误消息。有关错误代码和描述的列表，请参见 [特殊错误码](https://intl.cloud.tencent.com/document/product/436/32360#errorcode)。                      
