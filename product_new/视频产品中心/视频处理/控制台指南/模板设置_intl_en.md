@@ -1103,7 +1103,7 @@ A created watermarking template will be displayed in the template list, where yo
 Currently, the MPS Console supports three types of screenshots, namely, time point screenshot, sampled screenshot, and image sprite screenshot, and provides preset templates that can be used directly in workflow management. In addition, you can customize screencapturing templates based on your business needs. Click **Create Screencapturing Template** to enter the custom template settings page.
 
 ### Time point screenshot
-Select time point screenshot for the screenshot type. The time point needs to be configured in the workflow, while the template has only parameters for configuring the template name and image size. For detailed configuration, please see [Workflow Management](https://cloud.tencent.com/document/product/862/36406).
+Select time point screenshot for the screenshot type. The time point needs to be configured in the workflow, while the template has only parameters for configuring the template name and image size. For detailed configuration, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
  
 - Template name: It can contain up to 64 letters, digits, and underscores (_).
 - Image format: JPG.
@@ -1152,7 +1152,7 @@ A created screencapturing template will be displayed in the template list, where
 
 ## Animated Image Generating Template
 MPS provides preset animated image generating templates that can be used directly in workflow management. In addition, you can customize animated image generating templates based on your business needs. Click **Create Animated Image Generating Template** to enter the custom template settings page.
-The time point needs to be configured in the workflow, while the template has only parameters for configuring the image type, frame rate, image quality, and image size. For detailed configuration, please see [Workflow Management](https://cloud.tencent.com/document/product/862/36406).
+The time point needs to be configured in the workflow, while the template has only parameters for configuring the image type, frame rate, image quality, and image size. For detailed configuration, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
  
 
 - Template name: It can contain up to 128 letters, digits, and underscores (_).
