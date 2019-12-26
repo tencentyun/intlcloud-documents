@@ -43,7 +43,7 @@ Configuration items | Yes | You can select at least one item for configuration f
  
 ### Step 5. Enable the workflow
 1. After the workflow is created, the message "The workflow is successfully created" will be displayed. Click **Manage Workflow** to go to the [workflow management](https://intl.cloud.tencent.com/document/product/1041/33485) page.
-	![](https://main.qcloudimg.com/raw/bffd1417566ac8be22c4147c69633f41.png)
+	![](https://main.qcloudimg.com/raw/81ae87468f4c99773278fd6487e39bd4.png)
 2. The workflow is disabled by default. Click the status button in the row of the workflow to enable it. Only after the workflow is enabled can videos uploaded to the triggered bucket trigger automatic execution of the workflow.
 
  
