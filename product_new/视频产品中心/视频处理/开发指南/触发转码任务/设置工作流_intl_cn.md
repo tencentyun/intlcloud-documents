@@ -3,7 +3,7 @@
 - 转码、截图（动图和雪碧图）、水印等任务配置。
 - 事件通知 CMQ 地址设置。
  
-在任务配置部分需要使用已创建的各类型模板，全部参数模板可在 [视频处理控制台 - 模板设置](https://console.cloud.tencent.com/mps/templates) 中查询，新建自定义参数模板请参见 [模板参数说明](https://cloud.tencent.com/document/product/862/37037)。
+在任务配置部分需要使用已创建的各类型模板，全部参数模板可在 [视频处理控制台 - 模板设置](https://console.cloud.tencent.com/mps/templates) 中查询，新建自定义参数模板请参见 [模板参数说明](https://intl.cloud.tencent.com/document/product/1041/33494)。
 
 ## 工作流配置说明
 
