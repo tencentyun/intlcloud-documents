@@ -9,4 +9,5 @@ The categories of transcoding statistics include **general transcoding** and **T
 + Transcoding details: Indicates the transcoding details, including transcoding resolution, transcoding duration, and number of transcoding tasks under this transcoding category within the specified time period.
 + Transcoding ratio: Indicates the ratio of different video transcoding resolutions under this transcoding category.
 
-![](https://main.qcloudimg.com/raw/fea42d08e22542883508d2067875bada.png)
+![](https://main.qcloudimg.com/raw/25241ebf61f3f52a1aa904835a79a327.png)
+![](https://main.qcloudimg.com/raw/23ce39b71054f2ca9d28a6ee6f72b358.png)
