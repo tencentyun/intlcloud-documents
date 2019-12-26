@@ -16,7 +16,7 @@
 
 >
 >- 您在使用腾讯云 API 拉取 CMQ 事件消息时，需要对每个消息进行确认，然后该消息才会从 CMQ 中移除，否则会持续拉取到同一个事件消息。
->- CMQ 拉取消息请参见 [消费消息](https://cloud.tencent.com/document/product/406/5839)。CMQ 确认消息请参见 [删除消息](https://cloud.tencent.com/document/product/406/5840)。
+>- CMQ 拉取消息请参见 [消费消息](https://intl.cloud.tencent.com/document/product/406/5839)。CMQ 确认消息请参见 [删除消息](https://intl.cloud.tencent.com/document/product/406/5840)。
 
 ## 事件通知示例
 
@@ -271,4 +271,4 @@
 }
 ```
 
-事件通知消息中的具体结构体及字段含义请参见 [API 接口文档 - 数据结构](https://cloud.tencent.com/document/product/862/37615#WorkflowTask)。
+<!--事件通知消息中的具体结构体及字段含义请参见 [API 接口文档 - 数据结构]()。-->
