@@ -16,7 +16,7 @@ MPS uses CMQ to send event notifications. When you use MPS, you need to activate
 
 >
 >- When you use a TencentCloud API to pull CMQ event messages, you need to confirm each of them so that they will be removed from CMQ; otherwise, the API will keep pulling the same event messages.
->- For more information on pulling CMQ messages, please see [Receiving a Message](https://cloud.tencent.com/document/product/406/5839). For more information on confirming CMQ messages, please see [Deleting a Message](https://cloud.tencent.com/document/product/406/5840).
+>- For more information on pulling CMQ messages, please see [Receiving a Message](https://intl.cloud.tencent.com/document/product/406/5839). For more information on confirming CMQ messages, please see [Deleting a Message](https://intl.cloud.tencent.com/document/product/406/5840).
 
 ## Event Notification Sample
 
@@ -271,4 +271,4 @@ MPS uses CMQ to send event notifications. When you use MPS, you need to activate
 }
 ```
 
-For more information on structures and fields in event notification messages, please see [API Documentation - Data Structure](https://cloud.tencent.com/document/product/862/37615#WorkflowTask).
+<!--For more information on structures and fields in event notification messages, please see [API Documentation - Data Structure]().-->
