@@ -23,7 +23,7 @@
 4. [发送事件通知](#p4)
 工作流处理结束后，视频处理会将任务完成消息发送到上述 CMQ，然后开发者可通过 CMQ 接口接收该事件消息。
 >
->- 工作流简介请参见 [工作流](https://cloud.tencent.com/document/product/862/37043)，工作流设置请参见 [设置工作流](https://intl.cloud.tencent.com/document/product/1041/33492)。 
+>- 工作流简介请参见 [工作流](https://intl.cloud.tencent.com/document/product/1041/33475)，工作流设置请参见 [设置工作流](https://intl.cloud.tencent.com/document/product/1041/33492)。 
 >- 在确认文件转码成功后，您可以继续进行后续的业务逻辑，如通过 CDN 分发转码后的视频等。
 
 #### <span id="p1"></span>配置工作流
