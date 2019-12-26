@@ -43,7 +43,7 @@
  
 ### 步骤5：启用工作流
 1. 工作流创建完成后，会出现“工作流创建成功”的提示。单击【管理工作流】，跳转至 [工作流管理](https://intl.cloud.tencent.com/document/product/1041/33485)。
-	![](https://main.qcloudimg.com/raw/bffd1417566ac8be22c4147c69633f41.png)
+	![](https://main.qcloudimg.com/raw/81ae87468f4c99773278fd6487e39bd4.png)
 2. 工作流默认为未启用状态，单击工作流所在行的状态按钮，可启用工作流。只有启用工作流后，在触发 Bucket 内上传视频才会触发工作流的自动执行。
 
  
