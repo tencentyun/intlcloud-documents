@@ -17,13 +17,13 @@
 1. [配置工作流](#p1)
 管理员通过控制台配置工作流。前置工作包括申请 CMQ 和 [COS Bucket](https://intl.cloud.tencent.com/document/product/436/6231)，并对视频处理服务角色进行相应授权。
 2. [触发转码](#p2)
-上传者通过 SDK 或控制台将音视频文件上传到申请的 COS Bucket，此时会触发绑定到该 Bucket 上的工作流任务，即触发转码任务，开发者也可以通过 API [ProcessMedia](https://cloud.tencent.com/document/product/862/37578) 来对单个文件发起转码任务。
+上传者通过 SDK 或控制台将音视频文件上传到申请的 COS Bucket，此时会触发绑定到该 Bucket 上的工作流任务，即触发转码任务<!-- ，开发者也可以通过 API [ProcessMedia]() 来对单个文件发起转码任务-->。
 3. [转码任务处理](#p3)
 在工作流处理任务的过程中，会对 COS 文件进行读写操作，如下载源文件、上传转码后的文件等。
 4. [发送事件通知](#p4)
 工作流处理结束后，视频处理会将任务完成消息发送到上述 CMQ，然后开发者可通过 CMQ 接口接收该事件消息。
 >
->- 工作流简介请参见 [工作流](https://cloud.tencent.com/document/product/862/37043)，工作流设置请参见 [设置工作流](https://cloud.tencent.com/document/product/862/37038)。 
+>- 工作流简介请参见 [工作流](https://cloud.tencent.com/document/product/862/37043)，工作流设置请参见 [设置工作流](https://intl.cloud.tencent.com/document/product/1041/33492)。 
 >- 在确认文件转码成功后，您可以继续进行后续的业务逻辑，如通过 CDN 分发转码后的视频等。
 
 #### <span id="p1"></span>配置工作流
@@ -35,7 +35,7 @@
 触发转码任务包括自动触发和主动触发两种方式：
 - 自动触发：通过配置工作流，文件上传时会自动触发转码任务。
 <img src="https://main.qcloudimg.com/raw/ba5ac8977a32f209de2d76db3932ba1b.png" width = "600px">
-- 主动触发：通过调用 API 发起转码任务，然后通过 CMQ 接收完成事件通知或通过 TaskId 主动查询任务完成状态。详细请参见 [主动发起转码](https://cloud.tencent.com/document/product/862/37040)。
+- 主动触发：通过调用 API 发起转码任务，然后通过 CMQ 接收完成事件通知或通过 TaskId 主动查询任务完成状态。详细请参见 [主动发起转码](https://intl.cloud.tencent.com/document/product/1041/33493)。
 
 	<img src="https://main.qcloudimg.com/raw/4c36d8bb4edb435d52980a8fedcbff68.png" width = "600px">
 

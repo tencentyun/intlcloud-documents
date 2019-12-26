@@ -17,13 +17,13 @@ Taking video processing as an example, a workflow mainly consists of operations 
 1. [Configure a workflow](#p1)
 You can configure a workflow in the console as an admin. Before configuring, you must create a CMQ queue and a [COS bucket](https://intl.cloud.tencent.com/document/product/436/6231) and authorize the MPS role.
 2. [Trigger transcoding](#p2)
-After an audio/video file is uploaded to the created COS bucket in the console or through an SDK, the workflow task (i.e., transcoding task) that is bound to the bucket will be triggered. You can also use the [ProcessMedia](https://cloud.tencent.com/document/product/862/37578) API to initiate a transcoding task for a single file.
+After an audio/video file is uploaded to the created COS bucket in the console or through an SDK, the workflow task (i.e., transcoding task) that is bound to the bucket will be triggered.<!-- You can also use the [ProcessMedia]() API to initiate a transcoding task for a single file.-->
 3. [Perform a transcoding task](#3)
 Read/write operations such as downloading source files from COS and uploading output files to COS will be performed during the workflow.
 4. [Send event notifications](#p4)
 After the workflow is completed, MPS will send task completion notifications to the created CMQ queue, and you can receive event notifications through the CMQ API.
 >
->- For more information on workflows, please see [Workflow](https://cloud.tencent.com/document/product/862/37043). For more information on how to set up a workflow, please see [Setting up a Workflow](https://cloud.tencent.com/document/product/862/37038). 
+>- For more information on workflows, please see [Workflow](https://intl.cloud.tencent.com/document/product/1041/33475). For more information on how to set up a workflow, please see [Setting up a Workflow](https://intl.cloud.tencent.com/document/product/1041/33492). 
 >- After a file is successfully transcoded, you can proceed to subsequent business logic such as distributing the output video through CDN.
 
 #### <span id="p1"></span>Configuring a workflow
@@ -35,7 +35,7 @@ If you do not want to automatically trigger a transcoding task upon file upload,
 A transcoding task can be automatically or manually triggered.
 - Automatic triggering: With a configured workflow, a transcoding task will be automatically triggered upon file upload.
 <img src="https://main.qcloudimg.com/raw/ba5ac8977a32f209de2d76db3932ba1b.png" width = "600px">
-- Manual triggering: You can call an API to initiate a transcoding task and receive task completion notifications through CMQ or query the task status through `TaskId`. For more information on manual triggering, please see [Manually Initiating Transcoding](https://cloud.tencent.com/document/product/862/37040).
+- Manual triggering: You can call an API to initiate a transcoding task and receive task completion notifications through CMQ or query the task status through `TaskId`. For more information on manual triggering, please see [Manually Initiating Transcoding](https://intl.cloud.tencent.com/document/product/1041/33493).
 
 	<img src="https://main.qcloudimg.com/raw/4c36d8bb4edb435d52980a8fedcbff68.png" width = "600px">
 
