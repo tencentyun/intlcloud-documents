@@ -96,7 +96,7 @@ s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
 #### 1. 修改 AWS 配置和证书文件
 
-> ?下面以 Linux 为例，修改 AWS 配置和证书文件。
+>下面以 Linux 为例，修改 AWS 配置和证书文件。
 
 AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
@@ -130,15 +130,16 @@ AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
 
 #### 1. 修改 AWS 配置和证书文件
 
-> ?下面以 Linux 为例，修改 AWS 配置和证书文件。
+>下面以 Linux 为例，修改 AWS 配置和证书文件。
 
 AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
 - 在配置文件（文件位置是`~/.aws/config`） 中添加以下配置：
 ```
 [default]  
-s3 =  
-addressing_style = virtual 
+s3 =   
+	signature_version = s3
+	addressing_style = virtuall
 ```
 - 在证书文件（文件位置是`~/.aws/credentials`）中配置腾讯云的密钥：  
 ```
@@ -161,7 +162,7 @@ client = boto3.client('s3', endpoint_url='"https://cos.ap-guangzhou.myqcloud.com
 
 #### 1. 修改 AWS 配置和证书文件
 
-> ?下面以 Linux 为例，修改 AWS 配置和证书文件。
+>下面以 Linux 为例，修改 AWS 配置和证书文件。
 
 AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
@@ -255,7 +256,7 @@ service.PutObjectWithContext(ctx, &s3.PutObjectInput{
 
 #### 1. 修改 AWS 配置和证书文件
 
-> ?下面以 Linux 为例，修改 AWS 配置和证书文件。
+>下面以 Linux 为例，修改 AWS 配置和证书文件。
 
 AWS SDK 的默认配置文件通常在用户目录下，可以参考 [配置和证书文件](https://docs.aws.amazon.com/en_us/cli/latest/userguide/cli-configure-files.html)。
 
