@@ -4,7 +4,7 @@
 ## 操作步骤
 
 1. 进入 [视频处理控制台](https://console.cloud.tencent.com/mps)，单击左侧导航栏的【授权管理】，进入“授权管理”页面。如果您还未授权，则需要单击【前往访问管理】，跳转到控制台统一的权限管理页面进行授权操作。同意赋予视频处理权限后，将创建服务预设角色并授予视频处理相关权限。
-![](https://main.qcloudimg.com/raw/bafc02e68fdb63bc625d5001cbc2092c.png)
+![](https://main.qcloudimg.com/raw/4e037db82d7e9849fbba3af4ab32ccc5.png)
 >如果您未完成授权，则无法在视频处理控制台进行其他操作。
 2. 授权完成后，回到“授权管理”页面，显示已完成授权。如果单击【取消授权】，则会跳转至【访问管理】，删除 [服务角色](https://intl.cloud.tencent.com/document/product/598/19388)，即可解除视频处理对 COS 的操作权限。
-![](https://main.qcloudimg.com/raw/631982588decbd10f3ee8753a1193e5e.png)
+![](https://main.qcloudimg.com/raw/d1457827ae9b3416cffc03f76d0fe99f.png)
