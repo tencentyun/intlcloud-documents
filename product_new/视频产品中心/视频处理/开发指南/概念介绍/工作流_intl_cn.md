@@ -13,7 +13,7 @@
 ## 工作流原理
 
 以视频处理为例，工作流程主要包括配置工作流、触发转码、转码任务处理以及发送事件通知等。工作流原理图如下：
-<img src="https://main.qcloudimg.com/raw/6ece0c923755b349e470a02df3c1d683.jpg" width = "800px">
+<img src="https://main.qcloudimg.com/raw/6ece0c923755b349e470a02df3c1d683.jpg" width = "1000px">
 1. [配置工作流](#p1)
 管理员通过控制台配置工作流。前置工作包括申请 CMQ 和 [COS Bucket](https://intl.cloud.tencent.com/document/product/436/6231)，并对视频处理服务角色进行相应授权。
 2. [触发转码](#p2)
@@ -34,7 +34,7 @@
 #### <span id="p2"></span>触发转码
 触发转码任务包括自动触发和主动触发两种方式：
 - 自动触发：通过配置工作流，文件上传时会自动触发转码任务。
-<img src="https://main.qcloudimg.com/raw/31c0ac50ecc4a53b4eae6026b3fab6ec.jpg" width = "800px">
+<img src="https://main.qcloudimg.com/raw/31c0ac50ecc4a53b4eae6026b3fab6ec.jpg" width = "1000px">
 - 主动触发：通过调用 API 发起转码任务，然后通过 CMQ 接收完成事件通知或通过 TaskId 主动查询任务完成状态。详细请参见 [主动发起转码](https://intl.cloud.tencent.com/document/product/1041/33493)。
 
 	<img src="https://main.qcloudimg.com/raw/e727f9a2703c6bde77e93945133b267f.jpg" width = "800px">
