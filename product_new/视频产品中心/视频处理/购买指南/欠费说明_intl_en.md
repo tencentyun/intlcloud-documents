@@ -10,5 +10,5 @@ MPS will be suspended if your account falls into arrears.
 
 ## Monthly Billing
 
-For more information on [monthly billing](https://cloud.tencent.com/document/product/862/36180#.E6.9C.88.E7.BB.93.E8.AE.A1.E8.B4.B9) and price negotiation, please contact your Tencent Cloud rep.
+For more information on [monthly billing](https://intl.cloud.tencent.com/document/product/1041/33478) and price negotiation, please contact your Tencent Cloud rep.
 
