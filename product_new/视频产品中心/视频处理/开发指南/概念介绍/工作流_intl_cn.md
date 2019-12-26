@@ -1,5 +1,5 @@
 工作流表示对一个源文件（音视频文件）发起的一系列作业任务的集合，这些任务以流水线的形式向前执行，因此称为“工作流”。工作流中的作业任务可以是并行的，也可以是串行的，作业任务在视频处理中一般简称“任务”，工作流示意图如下：
-<img src="https://main.qcloudimg.com/raw/9885f9bb3665dbcac1978ed776b7ba5c.png" width = "450px">
+<img src="https://main.qcloudimg.com/raw/9885f9bb3665dbcac1978ed776b7ba5c.png" width = "700px">
 - 圆形：表示任务的开始和结束。
 - 菱形：表示任务的分解。
 - 圆角矩形：表示具体任务的执行单元。
@@ -7,13 +7,13 @@
 - 箭头：表示不同任务或相同任务的不同阶段的执行路径。
 
 以视频处理为例，工作流包含转码、采样截图、时间点截图、转动图、雪碧图以及水印等作业任务。典型的视频处理任务工作流示例如下：
-<img src="https://main.qcloudimg.com/raw/1fee8264c4804a2fa8d69423156ac870.jpg" width = "450px">
+<img src="https://main.qcloudimg.com/raw/1fee8264c4804a2fa8d69423156ac870.jpg" width = "700px">
 转码开始后，如果包含多个规格的转码任务，如标清、高清转码以及多尺寸截图等，则这些任务会被分解，然后并行执行，各转码子任务完成后再将结果进行合并，最后任务结束。
 
 ## 工作流原理
 
 以视频处理为例，工作流程主要包括配置工作流、触发转码、转码任务处理以及发送事件通知等。工作流原理图如下：
-<img src="https://main.qcloudimg.com/raw/6ece0c923755b349e470a02df3c1d683.jpg" width = "600px">
+<img src="https://main.qcloudimg.com/raw/6ece0c923755b349e470a02df3c1d683.jpg" width = "800px">
 1. [配置工作流](#p1)
 管理员通过控制台配置工作流。前置工作包括申请 CMQ 和 [COS Bucket](https://intl.cloud.tencent.com/document/product/436/6231)，并对视频处理服务角色进行相应授权。
 2. [触发转码](#p2)
@@ -34,10 +34,10 @@
 #### <span id="p2"></span>触发转码
 触发转码任务包括自动触发和主动触发两种方式：
 - 自动触发：通过配置工作流，文件上传时会自动触发转码任务。
-<img src="https://main.qcloudimg.com/raw/31c0ac50ecc4a53b4eae6026b3fab6ec.jpg" width = "600px">
+<img src="https://main.qcloudimg.com/raw/31c0ac50ecc4a53b4eae6026b3fab6ec.jpg" width = "800px">
 - 主动触发：通过调用 API 发起转码任务，然后通过 CMQ 接收完成事件通知或通过 TaskId 主动查询任务完成状态。详细请参见 [主动发起转码](https://intl.cloud.tencent.com/document/product/1041/33493)。
 
-	<img src="https://main.qcloudimg.com/raw/e727f9a2703c6bde77e93945133b267f.jpg" width = "600px">
+	<img src="https://main.qcloudimg.com/raw/e727f9a2703c6bde77e93945133b267f.jpg" width = "800px">
 
 	>
 >- 图中第5步表示开发者可通过调用 API 查询任务状态，参数为发起任务返回的 TaskId。
