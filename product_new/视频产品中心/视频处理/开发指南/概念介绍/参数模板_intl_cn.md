@@ -6,7 +6,7 @@
 - 采样截图模板
 - 雪碧图模板
 
-针对上述模板类型，视频处理提供了对应的常用参数模板，称为“预置参数模板”。同时，您也可以创建新的各类型参数模板，并为其指定不同的参数值，称为“自定义参数模板”。参数模板中各参数详细信息请参见 [模板参数说明](https://cloud.tencent.com/document/product/862/37037)。
+针对上述模板类型，视频处理提供了对应的常用参数模板，称为“预置参数模板”。同时，您也可以创建新的各类型参数模板，并为其指定不同的参数值，称为“自定义参数模板”。参数模板中各参数详细信息请参见 [模板参数说明](https://intl.cloud.tencent.com/document/product/1041/33494)。
 
 ## 预置参数模板
 
@@ -977,13 +977,13 @@
 
 ### 控制台创建自定义参数模板
 
-控制台创建自定义参数模板请参见 [模板设置](https://cloud.tencent.com/document/product/862/36407)。
+控制台创建自定义参数模板请参见 [模板设置](https://intl.cloud.tencent.com/document/product/1041/33486)。
 
 ### 通过 API 创建自定义参数模板
 可通过如下 API 创建对应类型的自定义参数模板：
-- [创建转码模板](https://cloud.tencent.com/document/product/862/37605)
-- [创建水印模板](https://cloud.tencent.com/document/product/862/37604)
-- [创建采样截图模板](https://cloud.tencent.com/document/product/862/37607)
-- [创建指定时间点截图模板](https://cloud.tencent.com/document/product/862/37606)
-- [创建转动图模板](https://cloud.tencent.com/document/product/862/37609)
-- [创建雪碧图模板](https://cloud.tencent.com/document/product/862/37608)
+- 创建转码模板
+- 创建水印模板
+- 创建采样截图模板
+- 创建指定时间点截图模板
+- 创建转动图模板
+- 创建雪碧图模板
