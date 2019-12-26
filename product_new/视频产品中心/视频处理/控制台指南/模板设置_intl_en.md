@@ -1,5 +1,5 @@
 Log in to the [MPS Console](https://console.cloud.tencent.com/mps) and click **Template Settings** on the left sidebar to enter the template settings page. There are five types of built-in templates: video transcoding template, audio transcoding template, watermarking template, screencapturing template, and animated image generating template. Each type of templates can be added to a workflow for cloud-based transcoding and audiovisual processing.
-![](https://main.qcloudimg.com/raw/e6284dc003212e6ee7d3ceedcc16308a.png)
+![](https://main.qcloudimg.com/raw/beb249c241648218fd3ae7ca1414b1cd.png)
 >
 >- If the template used in a workflow is edited after the workflow is enabled, the workflow will use the updated template parameters.
 >- If the template used in a workflow is deleted after the workflow is enabled, subtasks associated with the deleted template will fail to be executed.
