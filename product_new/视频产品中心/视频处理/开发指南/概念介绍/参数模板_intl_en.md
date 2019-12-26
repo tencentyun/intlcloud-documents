@@ -6,7 +6,7 @@ MPS uses a parameter template to organize commonly used key transcoding paramete
 - Sampled screencapturing template
 - Image sprite generating template
 
-MPS provides common parameter templates of the above template types, which are called preset parameter templates. You can also create parameter templates of various types and set different parameter values for them, which are called custom parameter templates. For more information on parameters in parameter templates, please see [Template Parameter Description](https://cloud.tencent.com/document/product/862/37037).
+MPS provides common parameter templates of the above template types, which are called preset parameter templates. You can also create parameter templates of various types and set different parameter values for them, which are called custom parameter templates. For more information on parameters in parameter templates, please see [Template Parameter Description](https://intl.cloud.tencent.com/document/product/1041/33494).
 
 ## Preset Parameter Templates
 
@@ -977,13 +977,13 @@ In addition to offering preset parameter templates, MPS allows you to customize 
 
 ### Creating a custom parameter template in the console
 
-For more information on how to create a custom parameter template in the console, please see [Template Settings](https://cloud.tencent.com/document/product/862/36407).
+For more information on how to create a custom parameter template in the console, please see [Template Settings](https://intl.cloud.tencent.com/document/product/1041/33486).
 
 ### Creating a custom parameter template through an API
 You can use the following APIs to create custom parameter templates of corresponding types:
-- [Creating a transcoding template](https://cloud.tencent.com/document/product/862/37605)
-- [Creating a watermarking template](https://cloud.tencent.com/document/product/862/37604)
-- [Creating a sampled screencapturing template](https://cloud.tencent.com/document/product/862/37607)
-- [Creating a screencapturing template](https://cloud.tencent.com/document/product/862/37606)
-- [Creating an animated image generating template](https://cloud.tencent.com/document/product/862/37609)
-- [Creating an image sprite generating template](https://cloud.tencent.com/document/product/862/37608)
+- Creating a transcoding template
+- Creating a watermarking template
+- Creating a sampled screencapturing template
+- Creating a screencapturing template
+- Creating an animated image generating template
+- Creating an image sprite generating template
