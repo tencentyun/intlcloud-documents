@@ -9,4 +9,5 @@
 + 各转码详情：展示的是该转码类型下，该时间段的转码详情，包含转码分辨率、转码时长及转码任务数。
 + 各转码占比：展示的该转码类型下，不同分辨率的转码占比。
 
-![](https://main.qcloudimg.com/raw/fea42d08e22542883508d2067875bada.png)
+![](https://main.qcloudimg.com/raw/25241ebf61f3f52a1aa904835a79a327.png)
+![](https://main.qcloudimg.com/raw/23ce39b71054f2ca9d28a6ee6f72b358.png)

@@ -11,7 +11,7 @@ This document helps you get started with and connect to MPS quickly. The process
 Because MPS needs to perform read/write operations such as downloading files from, transcoding files in, and uploading files to COS buckets, you need to create service roles and grant MPS permissions to operate on COS resources.
 
 Go to the [MPS Console](https://console.cloud.tencent.com/mps). If you have not authorized MPS, click **Go to CAM** to enter the unified permission management page to authorize MPS.
-![](https://main.qcloudimg.com/raw/2fa2466e6bc93fe0aa87d73f9f8cf13c.png)
+![](https://main.qcloudimg.com/raw/a3204a6470d3a9740a081849fc7324f3.png)
 >If you have not completed authorization, you cannot perform further operations in the MPS Console.
 
 
@@ -26,8 +26,8 @@ Enter the bucket management page in the [COS Console](https://console.cloud.tenc
 ### Step 4. Create a workflow
 A workflow can help you automatically process the latest video files uploaded to the bucket using created templates. In a workflow, you can set tasks such as transcoding, screencapturing, animated image generating, and watermarking.
 1. Log in to the [MPS Console](https://console.cloud.tencent.com/mps) and click **Workflow Management** to enter the workflow management page.
-2. Click **Create Workflow** to enter the workflow creation page and set the workflow name, triggered bucket, triggered directory, output bucket, output directory, configuration items, and event notification. For more information, please see [Workflow Management](https://cloud.tencent.com/document/product/862/36406).
-![](https://main.qcloudimg.com/raw/65d291c7556511e59e158827e7d29081.png)
+2. Click **Create Workflow** to enter the workflow creation page and set the workflow name, triggered bucket, triggered directory, output bucket, output directory, configuration items, and event notification. For more information, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
+![](https://main.qcloudimg.com/raw/a2b3e7b0e7e41b68221ea1d2b874b06e.png)
 
 On the workflow creation page, the information to be configured is as follows:
 
@@ -42,8 +42,8 @@ Event notification | No | Disabled by default.
 Configuration items | Yes | You can select at least one item for configuration for a transcoding, screencapturing, or animated image generating task.
  
 ### Step 5. Enable the workflow
-1. After the workflow is created, the message "The workflow is successfully created" will be displayed. Click **Manage Workflow** to go to the [workflow management](https://cloud.tencent.com/document/product/862/36406) page.
-	![](https://main.qcloudimg.com/raw/bffd1417566ac8be22c4147c69633f41.png)
+1. After the workflow is created, the message "The workflow is successfully created" will be displayed. Click **Manage Workflow** to go to the [workflow management](https://intl.cloud.tencent.com/document/product/1041/33485) page.
+	![](https://main.qcloudimg.com/raw/81ae87468f4c99773278fd6487e39bd4.png)
 2. The workflow is disabled by default. Click the status button in the row of the workflow to enable it. Only after the workflow is enabled can videos uploaded to the triggered bucket trigger automatic execution of the workflow.
 
  

@@ -1,5 +1,5 @@
 Log in to the [MPS Console](https://console.cloud.tencent.com/mps) and click **Template Settings** on the left sidebar to enter the template settings page. There are five types of built-in templates: video transcoding template, audio transcoding template, watermarking template, screencapturing template, and animated image generating template. Each type of templates can be added to a workflow for cloud-based transcoding and audiovisual processing.
-![](https://main.qcloudimg.com/raw/e6284dc003212e6ee7d3ceedcc16308a.png)
+![](https://main.qcloudimg.com/raw/beb249c241648218fd3ae7ca1414b1cd.png)
 >
 >- If the template used in a workflow is edited after the workflow is enabled, the workflow will use the updated template parameters.
 >- If the template used in a workflow is deleted after the workflow is enabled, subtasks associated with the deleted template will fail to be executed.
@@ -1103,7 +1103,7 @@ A created watermarking template will be displayed in the template list, where yo
 Currently, the MPS Console supports three types of screenshots, namely, time point screenshot, sampled screenshot, and image sprite screenshot, and provides preset templates that can be used directly in workflow management. In addition, you can customize screencapturing templates based on your business needs. Click **Create Screencapturing Template** to enter the custom template settings page.
 
 ### Time point screenshot
-Select time point screenshot for the screenshot type. The time point needs to be configured in the workflow, while the template has only parameters for configuring the template name and image size. For detailed configuration, please see [Workflow Management](https://cloud.tencent.com/document/product/862/36406).
+Select time point screenshot for the screenshot type. The time point needs to be configured in the workflow, while the template has only parameters for configuring the template name and image size. For detailed configuration, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
  
 - Template name: It can contain up to 64 letters, digits, and underscores (_).
 - Image format: JPG.
@@ -1152,7 +1152,7 @@ A created screencapturing template will be displayed in the template list, where
 
 ## Animated Image Generating Template
 MPS provides preset animated image generating templates that can be used directly in workflow management. In addition, you can customize animated image generating templates based on your business needs. Click **Create Animated Image Generating Template** to enter the custom template settings page.
-The time point needs to be configured in the workflow, while the template has only parameters for configuring the image type, frame rate, image quality, and image size. For detailed configuration, please see [Workflow Management](https://cloud.tencent.com/document/product/862/36406).
+The time point needs to be configured in the workflow, while the template has only parameters for configuring the image type, frame rate, image quality, and image size. For detailed configuration, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
  
 
 - Template name: It can contain up to 128 letters, digits, and underscores (_).

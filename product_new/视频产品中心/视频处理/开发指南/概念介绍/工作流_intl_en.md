@@ -1,5 +1,5 @@
 A workflow refers to a set of job tasks performed on a source audio/video file in a process-oriented way, which resemble a physical assembly line. Jobs tasks can be parallel or serial and are generally referred to as tasks in MPS. A workflow is as shown below.
-<img src="https://main.qcloudimg.com/raw/f327643bd24f9aaa1dec7b9a158fbe60.gif" width = "450px">
+<img src="https://main.qcloudimg.com/raw/9885f9bb3665dbcac1978ed776b7ba5c.png" width = "600px">
 - Circle: Indicates the start and end of a task.
 - Diamond: Indicates breakdown of a task.
 - Rounded rectangle: Indicates an execution unit of a task.
@@ -7,13 +7,13 @@ A workflow refers to a set of job tasks performed on a source audio/video file i
 - Arrow: Indicates the order of executing different tasks or different steps of a task.
 
 An MPS workflow consists of tasks such as transcoding, sampled screencapturing, screencapturing, animated image generating, image sprite generating, and watermarking. Below is an example of a typical MPS workflow:
-<img src="https://main.qcloudimg.com/raw/4d4ca127e5885aa04f4af03bcf972900.png" width = "450px">
+<img src="https://main.qcloudimg.com/raw/1fee8264c4804a2fa8d69423156ac870.jpg" width = "1000px">
 If a transcoding task is of different specifications, such as transcoding to SD and HD and generating screenshots at different sizes, it will be broken down into multiple subtasks that will be executed in parallel. After all transcoding subtasks are completed, MPS will combine their results and end the task.
 
 ## How a Workflow Works
 
 Taking video processing as an example, a workflow mainly consists of operations such as configuring a workflow, triggering transcoding, performing a transcoding task, and sending event notifications, as shown below.
-<img src="https://main.qcloudimg.com/raw/3431a1e974b251452793b6545aac67e9.png" width = "600px">
+<img src="https://main.qcloudimg.com/raw/6ece0c923755b349e470a02df3c1d683.jpg" width = "800px">
 1. [Configure a workflow](#p1)
 You can configure a workflow in the console as an admin. Before configuring, you must create a CMQ queue and a [COS bucket](https://intl.cloud.tencent.com/document/product/436/6231) and authorize the MPS role.
 2. [Trigger transcoding](#p2)
@@ -34,10 +34,10 @@ If you do not want to automatically trigger a transcoding task upon file upload,
 #### <span id="p2"></span>Triggering a transcoding task
 A transcoding task can be automatically or manually triggered.
 - Automatic triggering: With a configured workflow, a transcoding task will be automatically triggered upon file upload.
-<img src="https://main.qcloudimg.com/raw/ba5ac8977a32f209de2d76db3932ba1b.png" width = "600px">
+<img src="https://main.qcloudimg.com/raw/31c0ac50ecc4a53b4eae6026b3fab6ec.jpg" width = "900px">
 - Manual triggering: You can call an API to initiate a transcoding task and receive task completion notifications through CMQ or query the task status through `TaskId`. For more information on manual triggering, please see [Manually Initiating Transcoding](https://intl.cloud.tencent.com/document/product/1041/33493).
 
-	<img src="https://main.qcloudimg.com/raw/4c36d8bb4edb435d52980a8fedcbff68.png" width = "600px">
+	<img src="https://main.qcloudimg.com/raw/e727f9a2703c6bde77e93945133b267f.jpg" width = "900px">
 
 	>
 >- Step 5 in the above figure indicates that you can call an API to query the task status with the `TaskId` parameter returned by task initiation.

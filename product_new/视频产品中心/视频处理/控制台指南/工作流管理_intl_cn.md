@@ -4,7 +4,7 @@
 ## 创建工作流步骤
 1. 登录 [视频处理控制台](https://console.cloud.tencent.com/mps)，单击左侧导航栏的【工作流管理】，进入“工作流管理”界面。
 2. 单击【创建工作流】，进入“创建工作流”页面。在创建工作流时，您需要设置工作流名称、触发 Bucket、触发目录、输出 Bucket、输出目录、事件通知及配置项。
-![](https://main.qcloudimg.com/raw/919c605247d42655a27b956c23f48148.png)
+![](https://main.qcloudimg.com/raw/314b57f24a325fc3f4a3f4da16594006.png)
 	- **工作流名称**
 	必填项，仅支持中文、英文、数字和下划线(\_)，长度不能超过128个字符，任务流名称不可重复。
 	- **触发 Bucket**
@@ -27,9 +27,9 @@
 
 任务类型|是否支持预置或自定义模板|支持配置的模板
 -|-|-
- 转码任务|转码模板：<li>支持预置模板<br><li>支持自定义模板|<li>转码模板：在已创建好的模板列表中进行选择，每个任务配置支持添加一到多个转码模板。如果已有模板不符合使用要求，则可以在 [模板设置 - 转码模板](https://cloud.tencent.com/document/product/862/36407#.E8.A7.86.E9.A2.91.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF) 中重新创建新的模板。<br><li>水印模板：每个转码模板最多可以支持添加四个水印。如果已有水印不符合使用要求，则可以在 [模板设置 - 水印模板](https://cloud.tencent.com/document/product/862/36407#.E6.B0.B4.E5.8D.B0.E6.A8.A1.E6.9D.BF) 中重新创建新的模板。
- 截图任务|截图模板：<li>支持预置模板<br><li>支持自定义模板|<li>截图模板：包含时间点截图、采样截图和雪碧图截图的截图方式，每种截图方式只能选择对应方式下已配置好的模板，时间点截图需要进行时间点的选取。如果已有模板不符合使用要求，则可以在 [模板设置 - 截图模板](https://cloud.tencent.com/document/product/862/36407#.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF) 中重新创建新的模板。<br><li>水印模板：每个转码模板最多可以支持添加四个水印。如果已有水印不符合使用要求，则可以在 [模板设置 - 水印模板](https://cloud.tencent.com/document/product/862/36407#.E6.B0.B4.E5.8D.B0.E6.A8.A1.E6.9D.BF) 中重新创建新的模板。
-转动图任务|转动图模板：<li>支持预置模板<br><li>支持自定义模板|转动图模板：支持添加多个转动图模板及转动图时间段的再次配置。如果已有模板不符合使用要求，则可以在 [模板设置 - 转动图模板](https://cloud.tencent.com/document/product/862/36407#.E8.BD.AC.E5.8A.A8.E5.9B.BE.E6.A8.A1.E6.9D.BF) 中重新创建新的模板。
+ 转码任务|转码模板：<li>支持预置模板<br><li>支持自定义模板|<li>转码模板：在已创建好的模板列表中进行选择，每个任务配置支持添加一到多个转码模板。如果已有模板不符合使用要求，则可以在 [模板设置 - 转码模板](https://intl.cloud.tencent.com/document/product/1041/33486#video-transcoding-template) 中重新创建新的模板。<br><li>水印模板：每个转码模板最多可以支持添加四个水印。如果已有水印不符合使用要求，则可以在 [模板设置 - 水印模板](https://intl.cloud.tencent.com/document/product/1041/33486#watermarking-template) 中重新创建新的模板。
+ 截图任务|截图模板：<li>支持预置模板<br><li>支持自定义模板|<li>截图模板：包含时间点截图、采样截图和雪碧图截图的截图方式，每种截图方式只能选择对应方式下已配置好的模板，时间点截图需要进行时间点的选取。如果已有模板不符合使用要求，则可以在 [模板设置 - 截图模板](https://intl.cloud.tencent.com/document/product/1041/33486#time-point-screenshot) 中重新创建新的模板。<br><li>水印模板：每个转码模板最多可以支持添加四个水印。如果已有水印不符合使用要求，则可以在 [模板设置 - 水印模板](https://intl.cloud.tencent.com/document/product/1041/33486#watermarking-template) 中重新创建新的模板。
+转动图任务|转动图模板：<li>支持预置模板<br><li>支持自定义模板|转动图模板：支持添加多个转动图模板及转动图时间段的再次配置。如果已有模板不符合使用要求，则可以在 [模板设置 - 转动图模板](https://intl.cloud.tencent.com/document/product/1041/33486#animated-image-generating-template) 中重新创建新的模板。
 
 
 

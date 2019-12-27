@@ -1,4 +1,4 @@
-MPS not only can receive notifications of file transcoding results through the [event notification mechanism](https://cloud.tencent.com/document/product/862/37046), but also supports querying details of a specified transcoding task through the [DescribeTaskDetail API](https://cloud.tencent.com/document/product/862/37614). This API is generally used to query the progress and result of a transcoding task that is manually initiated by the [ProcessMedia API](https://cloud.tencent.com/document/product/862/37578). In the query result, the task status may be `WAITING`, `PROCESSING`, or `FINISH`.
+MPS not only can receive notifications of file transcoding results through the [event notification mechanism](https://intl.cloud.tencent.com/document/product/1041/33499), but also supports querying details of a specified transcoding task through the DescribeTaskDetail API. This API is generally used to query the progress and result of a transcoding task that is manually initiated by the ProcessMedia API. In the query result, the task status may be `WAITING`, `PROCESSING`, or `FINISH`.
 - **WAITING**: The task has been initiated and is waiting to be processed.
 - **PROCESSING**: The task is being processed.
 - **FINISH**: The task has been completed processed.
@@ -231,4 +231,4 @@ Below are some samples of task status:
   }
 }
 ```
-For more information on relevant structures and fields, please see [DescribeTaskDetail API Document](https://cloud.tencent.com/document/product/862/37614).
+<!--For more information on relevant structures and fields, please see [DescribeTaskDetail API Document]().-->
