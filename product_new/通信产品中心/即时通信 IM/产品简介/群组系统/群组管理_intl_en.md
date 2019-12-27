@@ -1,4 +1,4 @@
-Instant Messaging (IM) supports the following group types by default: private group (Private), public group (Public), chat room (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom). For more information, see [Group Types](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D).
+Instant Messaging (IM) supports the following group types by default: private group (Private), public group (Public), chat room (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom). For more information, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529).
 
 You can perform the following operations on groups:
 
