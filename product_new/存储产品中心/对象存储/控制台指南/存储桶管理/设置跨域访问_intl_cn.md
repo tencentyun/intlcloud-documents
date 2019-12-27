@@ -6,9 +6,9 @@
 ## 操作步骤
 
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，选择左侧菜单栏【存储桶列表】，进入存储桶列表页面，单击需要设置跨域访问的存储桶。
-![](https://main.qcloudimg.com/raw/f0868afb4209d10b0c152b6e364fc460.jpg)
+![](https://main.qcloudimg.com/raw/c265d4596065e27c9aa4510ba8aeca84.png)
 2. 单击【基础配置】，进入存储桶的基础配置页，找到**跨域访问 CORS 设置**，单击【添加规则】。
-![](https://main.qcloudimg.com/raw/6f3d6f81cb550bac4076d54861efdc60.png)
+![](https://main.qcloudimg.com/raw/1659089c942ec8fadd77c880f1d4f492.png)
 3. 添加规则信息（带 * 号的为必填项），配置项说明如下：
 
  **来源 Origin**：允许跨域请求的来源。
@@ -25,8 +25,8 @@
  - 支持英文大小写[a-z,A-Z]，不允许带有下划线`_`。
  - 在 Access-Control-Request-Headers 中指定的每个 Header，都必须在 Allowed-Header 中有对应项。
  
- **Expose-Headers**：Expose-Header 里返回的是 COS 的常用Header，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728)。具体的配置需要根据应用的需求确定，默认推荐填写 Etag。不允许使用通配符，大小写不敏感，支持多行且每行只能填写一个。
+ **Expose-Headers**：Expose-Header 里返回的是 COS 的常用Header，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728)。具体的配置需要根据应用的需求确定，默认推荐填写 Etag。不允许使用通配符，大小写不敏感，支持多行且每行只能填写一个。
  **超时 Max-Age**：设置 OPTIONS 请求得到结果的有效期（秒）。数值必须为正整数，例如600。
- ![](https://main.qcloudimg.com/raw/de177b977614a1822dc368d860eb4b44.jpg)
+ ![](https://main.qcloudimg.com/raw/6a1f4bed7f42fba69449514822759c42.png)
 4. 设置完成后，单击【提交】即可。此时您可以看到跨域访问规则已添加完成。如需修改，可单击【修改】进行设置。
-![](https://main.qcloudimg.com/raw/e42826a0832f1b4283952a1e7af6c826.png)
+![](https://main.qcloudimg.com/raw/c4399193611b4f81e57a549634ea865a.png)
