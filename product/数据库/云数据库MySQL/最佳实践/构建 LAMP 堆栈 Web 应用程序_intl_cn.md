@@ -5,7 +5,7 @@ LAMP 指 Linux+Apache+Mysql/MariaDB+Perl/PHP/Python，是一组常用来搭建�
 本教程中使用到的云数据库实例和云服务器实例处于同一地域下，如果您的云数据库实例和云服务器实例不处于同一地域下，请参考 [外网访问](https://cloud.tencent.com/document/product/236/3130#.E5.A4.96.E7.BD.91.E8.AE.BF.E9.97.AE)。
 
 ### 初始化云数据库实例
-云数据库的购买和初始化请参考 [购买与续费](https://cloud.tencent.com/document/product/236/5160) 和 [初始化 MySQL 数据库](https://cloud.tencent.com/document/product/236/3128)。
+云数据库的购买和初始化请参考 [购买与续费](https://intl.cloud.tencent.com/document/product/236/5160) 和 [初始化 MySQL 数据库](https://cloud.tencent.com/document/product/236/3128)。
 
 ### 登录到云服务器实例
 云服务器的购买和访问请参考 [快速入门 Linux 云服务器](https://cloud.tencent.com/document/product/213/2936)，本教程中使用的是 CentOS 系统。

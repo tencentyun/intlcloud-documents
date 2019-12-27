@@ -9,7 +9,7 @@ When you create a service, an image is used to specify the process of the contai
 Specify the current working directory. Create one if it does not exist. If no directory is specified, you can use the default value during the running of container. If workdir is not specified in the image or through the console, the `workdir` is `/` by default.
 
 ## How Does the Container Execute the Command and Parameter?
-For more information on how to adapt `docker run` command to Tencent Cloud TKE, please see [Details](/doc/product/457/9883).
+For more information on how to adapt `docker run` command to Tencent Cloud TKE, please see [Details](https://intl.cloud.tencent.com/document/product/457/9883).
  
 Docker image has the metadata for storing the image information. If you do not specify any command or parameter for the container, the container may run the default command and parameter used in the creation of the image. By default, they are `Entrypoint` and `CMD` in Docker. For more information, please see [Entrypoint](https://docs.docker.com/engine/reference/builder/#/entrypoint) and [CMD](https://docs.docker.com/engine/reference/builder/#/cmd) from Docker.
 If you specify a command and a parameter for the container when creating the service, the default commands `Entrypoint` and `CMD` generated in the creation of the image will be overwritten according to the following rules:

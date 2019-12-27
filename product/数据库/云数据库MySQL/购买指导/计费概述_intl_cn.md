@@ -36,7 +36,7 @@
 
 
 ## 相关文档
--  <a href="https://cloud.tencent.com/document/product/236/5160" target="_blank">购买与续费</a>
+-  <a href="https://intl.cloud.tencent.com/document/product/236/5160" target="_blank">购买与续费</a>
 -  <a href="https://cloud.tencent.com/document/product/236/5159" target="_blank">欠费说明</a>
 -  <a href="https://cloud.tencent.com/document/product/236/14618" target="_blank">销毁包年包月实例规则</a>
 

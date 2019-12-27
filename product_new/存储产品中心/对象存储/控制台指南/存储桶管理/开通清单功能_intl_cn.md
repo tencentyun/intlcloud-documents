@@ -13,11 +13,11 @@
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
 2. 在左侧导航栏中，单击【存储桶列表】，然后单击进入想要开通清单功能的存储桶（源存储桶）。
-![](https://main.qcloudimg.com/raw/90afef07a42d0691902e45ce73caa5c0.jpg)
+![](https://main.qcloudimg.com/raw/50018b565afa77f79fba6e346631a7b6.png)
 3. 单击左侧的【高级配置】标签页，找到**清单设置**项，单击【添加清单】。
-![](https://main.qcloudimg.com/raw/10e817b6b9a18a1573ca72a6a9e6aa59.jpg)
+![](https://main.qcloudimg.com/raw/73aa7b3f19389dfdd42d4066e6437329.png)
 4. 在**添加清单**页面您可以进行以下配置：
-![](https://main.qcloudimg.com/raw/957fc150550cfbe44d897e1b3cfca5a5.jpg)
+![](https://main.qcloudimg.com/raw/a219e0eb29661c254f0a70f094cf1ae0.png)
  - **清单名称**：输入您的输出清单名称。
   - **目标存储桶**：是指存储清单的存储桶，初始默认目标存储桶即源存储桶，目标存储桶必须与源存储桶处于同一地域。
  - **清单报告前缀（选填）**：输入为目标存储桶选择的前缀，可对公共位置的清单文件进行分组，初始为默认值。
