@@ -13,7 +13,7 @@
 ![](https://main.qcloudimg.com/raw/286fd5ccef05146bea9dd758d6634db5.png)
 #### 源库设置
 填入源库信息，信息填完后，您可以单击【测试连通性】测试您的源库是否可以连通。
-![](https://main.qcloudimg.com/raw/e4f49a7296ca2322341272d7d5bdda7d.png)
+![](https://main.qcloudimg.com/raw/dcf2c22d49e2c1e2a290f8bf79ed369f.png)
 
 #### 目标库设置
 填写目标库信息，填完后，单击【保存】。
