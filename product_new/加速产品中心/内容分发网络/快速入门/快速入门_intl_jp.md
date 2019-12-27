@@ -46,7 +46,7 @@ CDNはトラフィック課金と帯域幅課金という二つの課金方式�
 ![](https://main.qcloudimg.com/raw/0f21ace69d94ce51fc1d857948510b4a.jpg)
 
 ### CNAMEの変更
-CNAMEの構成は、ドメイン名が追加されるDNSプロバイダーの所でを完了する必要があります。構成方法については、[CNAMEの構成](https://cloud.tencent.com/doc/product/228/3121)を参照してください。
+CNAMEの構成は、ドメイン名が追加されるDNSプロバイダーの所でを完了する必要があります。構成方法については、[CNAMEの構成](https://intl.cloud.tencent.com/doc/product/228/3121)を参照してください。
 ### CNAMEのアクティブ化状態を確認
 DNSプロバイダーによって、CNAMEのアクティブ化にかかる時間が異なっていますが、一般的には30分以内に完了します。dig方式でCNAMEのアクティブ化状態を確認することもできます。拡張子が```.cdn.dnsv1.com```であるドレイン名をdigした場合、ドメイン名のCNAMEが有効になっています。
 ![](https://main.qcloudimg.com/raw/4c611fda0209a45d9441a2f0336bbf84.png)

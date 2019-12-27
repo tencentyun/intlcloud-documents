@@ -23,7 +23,7 @@ Tencent Cloud CDNは現在、2つの方法で証明書をデプロイするこ�
 
 ドメイン名にHTTPS証明書を構成が成功した後、HTTP 2.0をオンにすることができます。
 ![img](https://mc.qcloudimg.com/static/img/72d122326ad99bb23f1ba66690bae91c/4.png)
-更にHTTP2.0関連の特徴を理解するには、[HTTP2.0の新しい特徴](https://cloud.tencent.com/community/article/541321)を参照してください。
+更にHTTP2.0関連の特徴を理解するには、HTTP2.0の新しい特徴を参照してください。
 
 > ? 「.myqcloud.com」拡張子加速ドメイン名はまだHttp2.0をサポートしていません。
 

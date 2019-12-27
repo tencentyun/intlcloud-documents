@@ -23,7 +23,7 @@ Content Delivery Networkはお客様のためにIP帰属クエリーツールを
 ### IPが海外に帰属する
 ![](https://main.qcloudimg.com/raw/6a2e1b6f94362d5508ed98a52bd2d125.png)
 ### IPv6帰属クエリー
->! IPv6加速は内部テスト段階にあります。IPv6 加速の必要がある場合、 [申請をサブミット](https://cloud.tencent.com/apply/p/own2eu41dg8)をクリックしてください。
+>! IPv6加速は内部テスト段階にあります。IPv6 加速の必要がある場合、 申請をサブミットをクリックしてください。
 >
 ![](https://main.qcloudimg.com/raw/7e88553e81f01e86fd4325c3d433fbca.png)
 
