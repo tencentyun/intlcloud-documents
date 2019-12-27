@@ -1,25 +1,25 @@
 ## 群组系统简介
 群组系统是一个支持多人聊天的即时通信系统，群组系统所具备的基本能力包括：
 
-- 完备的 [群组管理](https://cloud.tencent.com/document/product/269/3661) 能力：创建/解散群组、成员管理、群组资料管理、成员资料管理等。
-- 稳定可靠的消息收发能力，完善的 [群组消息](https://cloud.tencent.com/document/product/269/3663) 管理机制：权限控制，禁言，脏词过滤，消息回调，消息漫游等。
-- 内置私有群（Private）、公开群（Public）、聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）五种群组形态， 并支持根据业务需要 [自定义群组形态](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81)。
+- 完备的 [群组管理](https://intl.cloud.tencent.com/document/product/1047/33530) 能力：创建/解散群组、成员管理、群组资料管理、成员资料管理等。
+- 稳定可靠的消息收发能力，完善的 [群组消息](https://intl.cloud.tencent.com/document/product/1047/33526) 管理机制：权限控制，禁言，脏词过滤，消息回调，消息漫游等。
+- 内置私有群（Private）、公开群（Public）、聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）五种群组形态， 并支持根据业务需要 [自定义群组形态](https://intl.cloud.tencent.com/document/product/1047/33529)。
 - 多种群成员人数上限：
  - 私有群成员人数上限200人，公开群成员人数上限2000人，聊天室成员人数上限6000人。
  - 音视频聊天室和在线成员广播大群人数无上限。
 - 在 Web 端，音视频聊天室和在线成员广播大群支持用户以游客身份（即不需要登录）接收消息。
 
 >
->1. 音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）成员人数没有上限，但如果预估群成员人数会超过1万人，请提前联系 [腾讯云客服](https://cloud.tencent.com/about/connect) 或商务工作人员申请服务资源。
+>1. 音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）成员人数没有上限，但如果预估群成员人数会超过1万人，请提前联系 [腾讯云客服](https://intl.cloud.tencent.com/support) 或商务工作人员申请服务资源。
 >2. 目前仅私有群（Private）、公开群（Public）和聊天室（ChatRoom）具备消息漫游能力（默认7天）。如需保存更长时间，您可以在 [控制台](https://console.cloud.tencent.com/im) 修改消息漫游时长。延长消息漫游时长是增值服务，具体计费说明请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673)。
 
 除此之外，即时通信 IM 群组系统具备高度可定制性，具体包括：
 
-- [自定义消息格式](https://cloud.tencent.com/document/product/269/2720#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0)
-- [自定义群组 ID](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id)
-- [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)
-- [自定义群组形态](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81)
-- [自定义回调](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.9B.9E.E8.B0.83)
+- [自定义消息格式](https://intl.cloud.tencent.com/document/product/1047/33527)
+- [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1047/33529)
+- [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529)
+- [自定义群组形态](https://intl.cloud.tencent.com/document/product/1047/33529)
+- [自定义回调](https://intl.cloud.tencent.com/document/product/1047/33529)
 
 ## 群成员角色介绍
 
