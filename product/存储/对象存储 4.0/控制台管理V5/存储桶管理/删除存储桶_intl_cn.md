@@ -7,6 +7,6 @@
 ## 操作步骤
 
 1. 进入存储桶列表，登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，单击左侧导航【存储桶列表】，进入存储桶列表。单击被删除存储桶的右侧【删除】按钮。
-   ![](https://main.qcloudimg.com/raw/b93fd4de9c42c5d8d2e48f69fc48b59d.png)
+   ![](https://main.qcloudimg.com/raw/561801f9eed35b78c95fd028da9cb68a.png)
 2. 弹出删除存储桶确认对话框，然后单击【确定】即可删除存储桶。
-   ![](https://main.qcloudimg.com/raw/121c0b37c6ded183b4383cca3aba5429.png)
+   ![](https://main.qcloudimg.com/raw/6a2655c459d8a54925c1f86e7c3be23c.png)
