@@ -1,6 +1,6 @@
 ## 简介
 
-您可以通过对象存储控制台，为存储桶添加策略，以允许或禁止某个账号、某个来源 IP（或 IP 段）访问策略所设定的 COS 资源。关于存储桶策略概述和策略示例的相关信息，请参见 [访问策略语言概述](https://intl.cloud.tencent.com/document/product/436/18023) 和 [存储桶策略示例](https://intl.intl.cloud.tencent.com/document/product/436/18031)。下面将为您详细介绍如何添加存储桶策略。
+您可以通过对象存储控制台，为存储桶添加策略，以允许或禁止某个账号、某个来源 IP（或 IP 段）访问策略所设定的 COS 资源。关于存储桶策略概述和策略示例的相关信息，请参见 [访问策略语言概述](https://intl.cloud.tencent.com/document/product/436/18023) 和 [存储桶策略示例](https://intl.cloud.tencent.com/document/product/436/18031)。下面将为您详细介绍如何添加存储桶策略。
 
 >每个主账号，创建的对象 ACL、存储桶 ACL 和存储桶策略总和最多为1000条。
 
@@ -11,14 +11,14 @@
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
 2. 在左侧导航栏中，单击【存储桶列表】，选择需要添加存储桶策略的存储桶，进入存储桶。
-![](https://main.qcloudimg.com/raw/0b466aa689145cdc4e5ccb809447d8fd.jpg)
+![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
 3. 单击【权限管理】，找到 **Policy 权限设置**，COS 提供添加存储桶策略的方式为**图形设置**和**策略语法**，您可以选其中一种方式添加存储桶策略。
-![](https://main.qcloudimg.com/raw/d11f4144e22fe99a9ade962c0b4b834c.jpg)
+![](https://main.qcloudimg.com/raw/3e3c1c923384785190720b8505e94025.png)
  - **图形设置**
  设置示例如下：
-![](https://main.qcloudimg.com/raw/dc562271cde876e7642bf4c516192192.png)
+![](https://main.qcloudimg.com/raw/950c03ba2eb714c102b68b57d025792d.png)
  - **策略语法**
- 单击【编辑】，输入您所定义的策略语法。COS 提供了多种场景的策略语法，详情请参见 [存储桶策略示例](https://intl.intl.cloud.tencent.com/document/product/436/18031)。
-  ![](https://main.qcloudimg.com/raw/d5fe3da89e17a9d507df3a1699311a80.png)
+ 单击【编辑】，输入您所定义的策略语法。COS 提供了多种场景的策略语法，详情请参见 [存储桶策略示例](https://intl.cloud.tencent.com/document/product/436/18031)。
+  ![](https://main.qcloudimg.com/raw/f449e55582e5855943c54208030a8b28.png)
 4. 确认配置信息无误后，单击【确定】或【保存】即可。此时使用子账号登录 COS 控制台，将只能访问策略所设定的资源范围。
 
