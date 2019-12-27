@@ -5,7 +5,7 @@ The database can be separated from the environment life cycle after you run the 
 The cloud database instance and CVM instance used in this tutorial reside in the same region. If they are in different regions, see [Access from Public Network](https://cloud.tencent.com/document/product/236/3130#.E5.A4.96.E7.BD.91.E8.AE.BF.E9.97.AE).
 
 ### Initializing Cloud Database Instance
-For more information on how to purchase and initialize cloud databases, please see [Purchase and Renewal](https://cloud.tencent.com/document/product/236/5160) and [Initialize MySQL Database](https://cloud.tencent.com/document/product/236/3128).
+For more information on how to purchase and initialize cloud databases, please see [Purchase and Renewal](https://intl.cloud.tencent.com/document/product/236/5160) and [Initialize MySQL Database](https://cloud.tencent.com/document/product/236/3128).
 
 ### Logging in to CVM Instance
 For more information on purchase and access of CVM, please see [Quick Start for Linux CVM](https://cloud.tencent.com/document/product/213/2936). CentOS is used in this tutorial.
