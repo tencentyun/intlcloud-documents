@@ -17,10 +17,10 @@ Content Delivery Network（CDN）は基本的なキャッシュ構成機能を�
 ## 操作ガイド
 ### 利用方法
 1.  [CDN コンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のディレクトリの【キャッシュ更新】をクリックし、ページに入ってから必要に応じ【URL 更新】又は【ディレクトリ更新】をサブミットできます。
-![](https://main.qcloudimg.com/raw/c968934c30515098e014cb292c2f256c.png)
-![](https://main.qcloudimg.com/raw/7725fa4501fea5e33a8cca896ea585f8.png)
+![](https://main.qcloudimg.com/raw/5e86a9b882255155dbdfcbb8afbe2eff.jpg)
+![](https://main.qcloudimg.com/raw/f132ce7a7b23a8d1e1d4019a8aee8f12.jpg)
 2. 【操作記録】モジュールでは、期間や検索条件、タイプを指定し、サブミットされていた更新操作に対し状態を確認することができます：
-![](https://main.qcloudimg.com/raw/4a607abe9b284fbbe1c7c81cabec8783.png)
+![](https://main.qcloudimg.com/raw/23e7bbf27b30f84ca275810866cecf77.jpg)
 >?コンソールは最大で10000件の操作記録を一括で戻すことが可能であり、完全なexcel形式のファイルでエクスポートされることを対応しています。更新タスクが多い場合は、分割してからクエリー及びエクスポートを行ってください。
 
 ### 注意事項
@@ -45,17 +45,13 @@ Content Delivery Network（CDN）は基本的なキャッシュ構成機能を�
 ## 利用事例
 ### ディレクトリ更新-変更リソースを更新する
 加速ドメイン名がpurge-test-1251991073.file.myqcloud.comであり、オリジンサーバーがTencent CloudのCloud Object Storage（COS）です。オリジンサーバーのリソースが下記の通りです。
-![](https://main.qcloudimg.com/raw/91739f8f9315e1e5be36980d0af248e4.png)
 1. それぞれリソース1.txt と2.txtのアクセスリクエストを提出し、X-Cache-Lookup: Hit From Distank3 及び Server: NWS_SPMid により命中されたノードを判定することができます。ノードより直接にリソースを戻します。
 ![](https://main.qcloudimg.com/raw/8e5e1d55743f83340b6801942011a951.jpg)
 ![](https://main.qcloudimg.com/raw/dc50a49f1177c0a671c0f10f874b0a0b.jpg)
 2. オリジンサーバーで同名ファイルの1.txtを差し替え、ファイル修正時間が変更されます。2.txtはそのままにします。
-![](https://main.qcloudimg.com/raw/5602a365abf57124b31bd24516c9f362.png)
-![](https://main.qcloudimg.com/raw/f2f45c7bf3fd86c5a4b307143c9a6a6f.png)
 3. この際に、再度リクエストを出します。キャッシュはまだ期限切れになっていないため、リソース1.txtへのアクセスがやはり旧い内容のままです。
 ![](https://main.qcloudimg.com/raw/f08fcfe681ff6684ef9ebf96d7a7b5ab.jpg)
 4. ディレクトリ更新をサブミットし、【変更リソースを更新する】を選択し、更新の完了を待ちます。
-![](https://main.qcloudimg.com/raw/6638c5d781b9d41a0b11ee5c4c6ea3af.png)
 5. 更新した後に、1.txt Last-Modifiedは変更があったため、オリジンプルをリクエストします。ファイル2.txtは変更がなかったため、即時にディレクトリ更新をサブミットし、ノードに命中され戻されます。
 ![](https://main.qcloudimg.com/raw/d1e83b5357fc878d6f1df56f0f1cd84b.jpg)
 ![](https://main.qcloudimg.com/raw/29e68b2f6207731a689e9c11ee1bf849.jpg)

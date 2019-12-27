@@ -4,15 +4,15 @@
 >-   Range オリジンプル構成をアクティブにすると、リソースはノードでシャードごとにキャッシュされますが、各シャードのキャッシュの期限切れ時間が全部一致し、ユーザーの指定したキャッシュ期限切れルールに従います。
 
 ## 構成ガイド
-1. [CDNコンソール(https://console.cloud.tencent.com/cdn)にログインし、左のディレクトリの【ドメイン名管理】をクリックすると、管理ページに入り、リストで編集するドメイン名の所在する行を特定し、操作欄の【管理】をクリックします。
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+1. [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左のディレクトリの【ドメイン名管理】をクリックすると、管理ページに入り、リストで編集するドメイン名の所在する行を特定し、操作欄の【管理】をクリックします。
+![img](https://main.qcloudimg.com/raw/19f49578c0be8e9d9509999563860b0a.png)
 2. 【オリジンプル構成】をクリックすると、**Range オリジンプル構成**モジュールが表示されます。デフォルトでは、Range オリジンプル構成はアクティブ状態です。
- ![img](https://main.qcloudimg.com/raw/7653b9061b29fea611ae396df373c2cc.png)
+ ![img](https://main.qcloudimg.com/raw/d4a9d9fb15b14f1bef7b79f5c56c45c4.png)
 
 ## 構成の例
 - ドメイン名`www.test.com`の場合は、 Range オリジンプル構成は下記の通りです。
-![img](https://main.qcloudimg.com/raw/d08305ba88dd4afc1cca6091b12d9528.png)
+![img](https://main.qcloudimg.com/raw/98a3484bd477caa749311c13bfc26984.png)
 ユーザーAがリソース`http://www.test.com/test.apk`をリクエストしてから、ノードはリクエストを受信し、キャッシュされている`test.apk`ファイルが期限切れであることが判明した時に、オリジンプルリクエストを送信します。ノードのオリジンプルはRangeリクエストを使用し、シャードでリソースを取得してからキャッシュします。この時に、ユーザーBもRangeリクエストを送信し、ノードに保存されているシャードが既にRangeで指定されたフィールドを満たしている場合、直接にユーザーに戻し、すべてのシャードの取得完了を待つ必要がありません。
 - ドメイン名 `www.test.com` の場合、Range オリジンプル構成は下記の通りです。
-![img](https://main.qcloudimg.com/raw/2e0aee010a727ec375927482e114a210.png)
+![img](https://main.qcloudimg.com/raw/5b97ad9950896ef43f60e04f41db2f52.png)
   ユーザーAがリソース`http://www.test.com/test.apk`をリクエストしてから、ノードはリクエストを受信した後、キャッシュされている`test.apk`ファイルが期限切れであることが判明した時に、オリジンプルリクエストを送信します。ノードは直接にオリジンサーバーからリソース全体を取得します。そしてリソースを完全に取得してからユーザーに戻します。

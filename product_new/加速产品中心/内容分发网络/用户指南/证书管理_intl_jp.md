@@ -6,9 +6,10 @@ CDNにアクセスしたドメイン名に対し、 HTTPS 証明書の構成を�
 >?Tencent Cloud [SSL 証明書管理](https://console.cloud.tencent.com/ssl) コンソールにおけるホスティング証明書又は発行証明書を構成している場合は、この部分の内容をスキップし、直接に次の [証明書構成](#configuration) 手順を確認してください。
 
 CA機構によって提供の証明書は一般的に下記の幾つかの種類を含んでいます。その中に、CDN は**Nginx**を使っています。
-![](https://main.qcloudimg.com/raw/249538db51d90314f84b2c75a6bccc05.png)
+![](https://main.qcloudimg.com/raw/a2c1b413f9cf770cf7facdb3e424eac4.png)
 Nginxフォルダーに入り、テキストエディッターで「.crt」（証明書）ファイルと 「.key」（プライベートキー）ファイルを開くと、PEMフォーマットの証明書内容及びプライベートキーの内容を確認することができます。
-![](https://main.qcloudimg.com/raw/2a1b11ff93a7cb475d68e38c7701434f/Nginx_certificate.png)
+![](https://main.qcloudimg.com/raw/26bf3f290b85ea75c3a4d74f66334d55.png)
+
 ### 証明書
 証明書の拡張子は一般的に「.pem」、「.crt」又は「.cer」です。テキストエディッターで証明書ファイルを開くと、下記図に類似している証明書内容を確認することができます。
 証明書 PEM フォーマット：「-----BEGIN CERTIFICATE-----」を先頭、「-----END CERTIFICATE-----」を末尾とします。その間の内容は1行当り64文字であり、最後の行の長さが 64文字未満にすることができます。
@@ -40,11 +41,12 @@ openssl rsa -in old_server_key.pem -out new_server_key.pem
 ## 証明書構成
 1.  [CDNコンソール ](https://console.cloud.tencent.com/cdn)にログインし、左側のメニュー欄の【アドバンスドツール】で【証明書管理】をクリックし、管理ページに入ります。
 2. 【証明書構成】をクリックし、証明書構成ページに入ります。
-![](https://main.qcloudimg.com/raw/08a617bd9b9d5530c2df061a552de8d9/cer2.png)
+![](https://main.qcloudimg.com/raw/e72970f28fc8539eb1317ad24a41bbcb.png)
 
 ### ドメイン名を選択
 【ドメイン名】のプルダウンメニューで構成しようとする証明書のドメイン名を選択します。
-![証明書のドメイン名](https://main.qcloudimg.com/raw/db6c57233a38ef01bb631abfd01c9f1c/cer3.png)
+![証明書のドメイン名](https://main.qcloudimg.com/raw/4288a4be379e61addc777b3c3d017ebf.png)
+
 >!
 > + 証明書のドメイン名を構成するにはTencent Cloud CDNにアクセスし、且つドメイン名の状態は**デプロイ中**又は**起動済み**にある必要があります。**無効になっている**状態にあるドメイン名は証明書をデプロイすることができません。
 > + Tencent Cloud**Cloud Object Storage**又は**Cloud YouTu**サービスを利用し、 CDN 加速を有効にすると、デフォルトの `.file.myqcloud.com` 又は `.image.myqcloud.com` ドメイン名は証明書を構成することができません。
@@ -53,7 +55,8 @@ openssl rsa -in old_server_key.pem -out new_server_key.pem
 自分の証明書又はTencent Cloudのホスティング証明書の利用を選択することができます。
 #### 自己証明書
 【自分の証明書】を選択し、証明書の内容とプライベートキーの内容をテキスト枠にコピーします。証明書に対し備考情報を追加することにより区分けすることができます。
-![証明書を選択する](https://main.qcloudimg.com/raw/3285b5ed81d585b033d300e7c5377241/cer4.png)
+![証明書を選択する](https://main.qcloudimg.com/raw/6ee06763e595b9739407d295194c0b61.png)
+
 >!
 > + 証明書の内容は PEM フォーマットである必要があります。当該フォーマットでない証明書は以下の **PEMフォーマット変換**を参考してください。
 > + 証明書は証明書チェーンがある場合、証明書チェーンの内容を PEM フォーマットの内容に変換し、証明書の内容と合わせてからアップロードしてください。証明書チェーンの補完については以下の内容**証明書チェーンの補完**を参考してください。
@@ -61,11 +64,11 @@ openssl rsa -in old_server_key.pem -out new_server_key.pem
 #### Tencent Cloudホスティング証明書
  [SSL 証明書管理](https://console.cloud.tencent.com/ssl) コンソールにログインし、TrustAsiaによる無料提供のサードパーティー製の証明書を申請したり、既存証明書をTencent Cloudにホスティングしたりすることが可能です。
 【Tencent Cloudホスティング証明書】を選択すると、当該ドメイン名の利用可能な証明書リストを確認することができます。証明書リストから使用する証明書を選択します。証明書リストには証明書が「証明書 ID（備考）」の様式で表示されています。
-![ホスティング証明書](https://main.qcloudimg.com/raw/acd4e2211a02392c5eb17bf37c093797/cer5.png)
 
 ### オリジンプル方法
 証明書を構成した後に、CDNノードがオリジンサーバーからリソースを取得する時のオリジンプル方法を選択することができます。CDNは**HTTP** 及び**プロトコルオリジンプル**という2種類のオリジンプル方法を対応しています。
-![](https://main.qcloudimg.com/raw/ee3d2c02520fbfa72d5744ac66e498f6/cer6.png)
+![](https://main.qcloudimg.com/raw/719036689548a629283069a4a796156a.png)
+
 >!
 > +  **HTTP** のオリジンプル構成を選択した後に、CDNノードへのユーザーリクエストはHTTPS/HTTPをサポートします。オリジンサーバーへのCDNノードのリクエストは全部HTTPです。
 > + **プロトコルフォロー**のオリジンプル構成を選択する場合は、お客様のオリジンサーバーに有効な証明書がデプロイされている必要があります。そうでないと、オリジンプルの失敗が発生します。構成が成功した後、CDNノードへのユーザーリクエストがHTTPである時に、CDNノードのオリジンプルリクエストもHTTPとなります。CDNノードへのユーザーリクエストがHTTPSである時に、CDNノードのオリジンプルリクエストもHTTPSとなります。
@@ -74,21 +77,22 @@ openssl rsa -in old_server_key.pem -out new_server_key.pem
 
 #### 成功に構成する
 【サブミット】をクリックし、【証明書管理】ページで成功に構成したドメイン名及び証明書情報を確認することができます。
-![証明書構成の成功リスト](https://main.qcloudimg.com/raw/df003353f5333f1658111629c90d6f63/cer7.png)
+![証明書構成の成功リスト](https://main.qcloudimg.com/raw/1e3b016e129c9d3f5e311fb9440b2b70.png)
 
 ## 証明書の一括構成
 多くのドメイン名証明書又は汎用ドメイン名証明書を持っている場合は、複数のCDN加速ドメイン名に適しています。一括構成により、複数のドメイン名に対し一括追加・構成を行うことが可能です。
 1.  [CDN コンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のメニュー欄の【アドバンスドツール】で【証明書管理】をクリックすると、管理ページに入ります。
 2. 【一括構成】をクリックすると、一括管理ページに入ります。
-![](https://main.qcloudimg.com/raw/c2db820f9d5ae9f3577fafe914859daf/cer8.png)
+![](https://main.qcloudimg.com/raw/03f34e25c7c2a877fc0dfb3d93b80ee2.png)
 
 ### 証明書をアップロードする
 PEMコードの証明書内容及びプライベートキーを対応するのテキスト枠に貼り付けます。備考名の変更により構成される証明書をマークすることができます。それから【次へ】をクリックします。
-![一括](https://main.qcloudimg.com/raw/b52ff5f8d95c0c4f7120c2ec27e1935b.png)
+![一括](https://main.qcloudimg.com/raw/e01b281accc7f413ced65bc3061d23b5.png)
 
 ### ドメイン名のアソシエイト及びオリジンプル方法の選択
 CDNシステムはアップロードされた証明書を利用できるCDN加速ドメイン名（ドメイン名は**デプロイ中**又は**起動済み**の状態にある必要がある）を識別することができます。お客様はアソシエイトするドメイン名、及びオリジンプル方法を選択することができます。
-![一括2](https://main.qcloudimg.com/raw/d755dd48b4b7b3f5a3273171ce16a7c8.png)
+![一括2](https://main.qcloudimg.com/raw/5af0cdca96bb92488a05d0e8474a7dad.png)
+
 >!
 > + 1回当りは最大で10個の加速ドメイン名を選択し構成することが可能です。
 > +  **HTTP** オリジンプルを選択し、成功に構成した後に、 CDN ノードへのユーザーリクエストがHTTPS/HTTPで行われ、オリジンサーバーへのCDNノードリクエストは全部HTTPで送られます。
@@ -104,19 +108,18 @@ CDNシステムはアップロードされた証明書を利用できるCDN加�
 
 ## 証明書の編集
 成功に構成した証明書に対し、ドメイン名の右側の【編集】ボタンをクリックすることにより証明書を更新することができます。
-![証明書の編集](https://main.qcloudimg.com/raw/1bc431777df9dda8f4d7995d3a30faac/cer9.png)
+![証明書の編集](https://main.qcloudimg.com/raw/0c5d408ac629a39135ed784eb6749bbe.png)
 自分の証明書とTencent Cloudホスティング証明書の間に切り替えたり、オリジンプル方法を選択しなおしたりすることができます。【サブミット】をクリックするとデプロイが完了されます。デプロイプロセスはシームレスに上書きであり、サービス利用を影響しません。
-![オリジンプル方法](https://main.qcloudimg.com/raw/9401d8cc626fdbf49df6380a7bfb97eb.png)
 
 ## 証明書の削除
 ドメイン名の右側の【削除】ボタンをクリックすることにより、CDNよりデプロイされた証明書を削除することができます。
-![証明書の削除](https://main.qcloudimg.com/raw/7684b7813ec328591bb0e12bd3c2b8d1/cer10.png)
+![証明書の削除](https://main.qcloudimg.com/raw/49df665ca44fb4858f312e050d32b6eb.png)
 
 ## 証明書チェーンの補完
 自分の証明書を構成する過程では、**証明書チェーンが補完できない**という場合があります。下図の通りです。
 ![](https://main.qcloudimg.com/raw/ed45f581114cc456a710b7d4997076a2.png)
 CAの証明書（PEM フォーマット）の内容をドメイン名証明書（PEM フォーマット）の最後に貼り付けることにより、証明書チェーンを補完することができます。また、作業依頼書をサブミットした上で、こちらに連絡することも可能です。
-![](https://main.qcloudimg.com/raw/c5adc7371454ec06a7f2f8150ec48ed8/cer11.png)
+![](https://main.qcloudimg.com/raw/cf66482b81b4aae1e0a943c984243f1d.png)
 
 ## PEM フォーマットの変換
 現在、CDNはPEMフォーマットの証明書をしか対応していません。ほかのフォーマットの証明書は PEM フォーマットに変換される必要があります。opensslツールで変換を行うことをお勧めします。下記はよく使われている、証明書フォーマットを PEM に変換するの方法です。

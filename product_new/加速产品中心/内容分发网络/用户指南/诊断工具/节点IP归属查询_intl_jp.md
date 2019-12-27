@@ -8,7 +8,8 @@ Content Delivery Networkはお客様のためにIP帰属クエリーツールを
 ## 操作ガイド
 ### クエリーの方法
  [CDN コンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のディレクトリの【診断ツール】>【IP 帰属クエリー】を選択し、機能ページに入ります。
-![](https://main.qcloudimg.com/raw/2cef9ef14588bf79841e072d5eecc04a.png)
+![](https://main.qcloudimg.com/raw/7c72a39a1c0f33e633057d02af9c3a6f.png)
+
 ### ご利用の際の約束
 - テキストボックスに検証する複数のIPアドレスを1行に1つずつ入力します。
 - 最大20個のIPまでを一括検証できます。
@@ -18,17 +19,13 @@ Content Delivery Networkはお客様のためにIP帰属クエリーツールを
 
 ## 利用事例
 ### IPが中国国内に帰属する
-![](https://main.qcloudimg.com/raw/8b6d72d95c45a1ddc3a5f7fe47f0a189.png)
+![](https://main.qcloudimg.com/raw/92a04bfdc0905c9be0465d3dc4825dd3.png)
 ### IPが海外に帰属する
-![](https://main.qcloudimg.com/raw/df019c3d710a6a206e1eefa90338403d.png)
+![](https://main.qcloudimg.com/raw/6a2e1b6f94362d5508ed98a52bd2d125.png)
 ### IPv6帰属クエリー
->! IPv6加速は内部テスト段階にあります。IPv6 加速の必要がある場合、 [申請をサブミット]をクリックしてください(https://cloud.tencent.com/apply/p/own2eu41dg8)。
+>! IPv6加速は内部テスト段階にあります。IPv6 加速の必要がある場合、 [申請をサブミット](https://cloud.tencent.com/apply/p/own2eu41dg8)をクリックしてください。
 >
-![](https://main.qcloudimg.com/raw/d6489b1f3f74ae740873f50a2fd42c3b.png)
-
-
-
-
+![](https://main.qcloudimg.com/raw/7e88553e81f01e86fd4325c3d433fbca.png)
 
 
 

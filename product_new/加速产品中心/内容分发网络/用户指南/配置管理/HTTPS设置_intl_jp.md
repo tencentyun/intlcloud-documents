@@ -7,24 +7,22 @@ HTTPSとは、ハイパーテキスト転送セキュリティプロトコル（
 ## 構成ガイド
 Tencent Cloud CDNは現在、2つの方法で証明書をデプロイすることをサポートしています。
 -ユーザー保有の証明書：ユーザー保有の証明書、プライベートキーの内容をCDNにアップロードしてデプロイします。全プロセスで暗号化されて転送され、証明書が着地しないため、ユーザーの証明書のセキュリティを確保します。
--Tencent Cloudホスティングの証明書：[SSL Certificates Management]（https://console.cloud.tencent.com/ssl）で複数のクラウド製品に使用されるように、既存の証明書をTencent Cloudにホスティングしてもいいし、このプラットフォームでアジア誠信により無料で提供されるサードパーティの証明書を申請してCDNに直接デプロイしてもいいです。
+-Tencent Cloudホスティングの証明書：[SSL Certificates Management](https://console.cloud.tencent.com/ssl)で複数のクラウド製品に使用されるように、既存の証明書をTencent Cloudにホスティングしてもいいし、このプラットフォームでアジア誠信により無料で提供されるサードパーティの証明書を申請してCDNに直接デプロイしてもいいです。
 
 
-1. [CDNコンソール]（https://console.cloud.tencent.com/cdn）にログインし、左側のディレクトリの【ドメイン名管理】をクリックすると、管理ページが表示されます。リストから編集するドメイン名の行を特定して操作バーの【管理】をクリックします。
-![img](https://main.qcloudimg.com/raw/f7f2871e66214431430af7c4e508e29a.png)
-2. 【高度な構成】をクリックし、** HTTPS構成**モジュールを特定します。【構成へ】をクリックすると、**証明書管理**ページが表示されます。証明書を構成します。構成フローについては、[証明書管理]（https://intl.cloud.tencent.com/document/product/228/6303）を参照してください。
-![img](https://main.qcloudimg.com/raw/5c11cea6df9309c96856c352c3b94d23.png)
+1. [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のディレクトリの【ドメイン名管理】をクリックすると、管理ページが表示されます。リストから編集するドメイン名の行を特定して操作バーの【管理】をクリックします。
+![img](https://mc.qcloudimg.com/static/img/f92d2ef7e4be2b69185ab43228f025ef/1.png)
+2. 【高度な構成】をクリックし、** HTTPS構成**モジュールを特定します。【構成へ】をクリックすると、**証明書管理**ページが表示されます。証明書を構成します。構成フローについては、[証明書管理](https://intl.cloud.tencent.com/document/product/228/6303)を参照してください。
+![img](https://mc.qcloudimg.com/static/img/df38d5d35b266e96c99f4ab67732cfd8/2.png)
 3.証明書が**構成が成功した**後、【強制的なHTTPSリダイレクト】スイッチが表示されます。デフォルトでは、強制的なHTTPSリダイレクトはオフ状態になっています。
-![img](https://main.qcloudimg.com/raw/1de2e0e330cc65ced62bd5d351379d43.png)
+![img](https://mc.qcloudimg.com/static/img/22b01df16d9b4d50397b612b60252cfa/3.png)
 4. 【強制的なHTTPSリダイレクト】をオンにすると、ユーザーがHTTPリクエストをスタートしても、HTTPSリクエストに強制的にリダイレクトしてアクセスします。デフォルトでは、リダイレクトモードは302です。
-![image](https://main.qcloudimg.com/raw/9d5fb1d152c3aa781b0f1eaca1f3211a.png)
 【編集】をクリックしてリダイレクトモードを変更することができます。
-![image](https://main.qcloudimg.com/raw/cbd93a57a01478d44f9a6ec067e91e83.png)
 
 ## HTTP2.0構成
 
 ドメイン名にHTTPS証明書を構成が成功した後、HTTP 2.0をオンにすることができます。
-![img](https://main.qcloudimg.com/raw/c31cd21a730ef4ee57c2d31ed3dad0be.png)
+![img](https://mc.qcloudimg.com/static/img/72d122326ad99bb23f1ba66690bae91c/4.png)
 更にHTTP2.0関連の特徴を理解するには、[HTTP2.0の新しい特徴](https://cloud.tencent.com/community/article/541321)を参照してください。
 
 > ? 「.myqcloud.com」拡張子加速ドメイン名はまだHttp2.0をサポートしていません。
@@ -34,7 +32,6 @@ Tencent Cloud CDNは現在、2つの方法で証明書をデプロイするこ�
 OCSPステープリング（OCSP Stapling、TLS証明書状態クエリー拡張）。OCSP Staplingサーバーは、クライアント自身がCAにリクエストを送信する代わりに、TLSハンドシェイク時に、検証のためにキャッシュされたOCSPクエリー結果をクライアントに送信します。OCSPステープリングにより、TLSハンドシェイク効率が大幅に向上し、ユーザーの認証時間が節約されます。
 
 ドメイン名にHTTPS証明書を構成が成功した後、OCSPステープリングをオンにすることができます。
-![image](https://main.qcloudimg.com/raw/fcaee8ad06ea02f5fcdb7ad1d39b0bff.png)
 
 
 ## HTTPSオリジンプルがサポートするのアルゴリズム

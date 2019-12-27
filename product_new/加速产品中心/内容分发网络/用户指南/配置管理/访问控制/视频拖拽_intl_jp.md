@@ -10,10 +10,10 @@
 | TS       | 特に要求無し                                                   |  startパラメータは時刻を示し、単位が秒です、小数点によるミリ秒までの表示を対応しています（例えば start = 1.01は開始時間が1.01sであることを示している）。CDN はstart表される時刻の前のキーフレーム（現在のstartがキーフレームでない場合）を位置づけます | `http://www.test.com/demo.ts?start=10`は第10秒から再生を開始することを示しています|
 
 ## 構成ガイド
-1. [CDNコンソール(https://console.cloud.tencent.com/cdn)にログインし、左側のディレクトリの【ドメイン名管理】をクリックし、管理ページに入ります。リストで編集するドメイン名の所在する行を特定し、操作欄の【管理】をクリックします。
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+1. [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のディレクトリの【ドメイン名管理】をクリックし、管理ページに入ります。リストで編集するドメイン名の所在する行を特定し、操作欄の【管理】をクリックします。
+
 2. 【アクセスコントロール】をクリックすると、**ビデオドラッグ**モジュールでコンフィギュレーションを行うことができます。
 	 デフォルトでは、ビデオドラッグのコンフィグレーションはインアクティブ状態にされています。
-![img](https://main.qcloudimg.com/raw/a7d1ae1ff24deec29d8df988a5f7bba9.png)
+![img](https://main.qcloudimg.com/raw/515a46c56b93b9932f5bbcab39a8293e.png)
 3. ビデオドラッグをアクティブにします。 [フィルタリングパラメータ構成](https://intl.cloud.tencent.com/document/product/228/6291) がインアクティブ状態にある場合は、ビデオドラッグをアクティブにすると、自動的にフィルタリングパラメータをアクティブにします。
-![img](https://main.qcloudimg.com/raw/f358fb661ee482accedb101ae8fac942.png)
+
