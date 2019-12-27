@@ -1,6 +1,6 @@
 ## Operation Scenarios
 This document helps you get started with and connect to MPS quickly. The process of using MPS is as shown below:
-![](https://main.qcloudimg.com/raw/563e19fbb154bdf8a82879933e61bbee.png)
+![](https://main.qcloudimg.com/raw/aed6a4e4f8b3bb99187e0d899ac05338.png)
 
 ## Directions
 ### Step 1. Sign up and log in
