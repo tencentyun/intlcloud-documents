@@ -16,19 +16,16 @@ Disconnection occurs in the following scenarios:
 >To differentiate among online, connection, and disconnection, you need to check whether a network connection is present between the client and the IM backend. iOS and Android users can still receive offline push messages even when they are not online.
 
 ## Querying Users’ Online Statuses
-The app backend can query the online status of multiple users. For more information, see [RESTful API: Obtaining Users’ Online Statuses](https://cloud.tencent.com/document/product/269/2566).
+The app backend can query the online status of multiple users. 
 Currently, the IM SDK cannot obtain users’ online statuses.
 
 ## User Online Status Change Notifications
-IM can notify the app backend of user connection and disconnection events. For more information, see [Status Change Callback](https://cloud.tencent.com/document/product/269/2570).
+IM can notify the app backend of user connection and disconnection events. 
 
 
 ## Multi-Device Login
 ### Force offline
-By default, the IM SDK does not allow multi-device login (for example, simultaneous login on a PC and Android devices). Instead, it forces the previous online device to go offline and allows only the last logged-in device to stay online. For more information on the force offline logic, see:
-
-- [Android User Status Changes](https://cloud.tencent.com/document/product/269/9229#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)
-- [iOS User Status Changes](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)
+By default, the IM SDK does not allow multi-device login (for example, simultaneous login on a PC and Android devices). Instead, it forces the previous online device to go offline and allows only the last logged-in device to stay online. 
 
 
 ### Multi-device online
