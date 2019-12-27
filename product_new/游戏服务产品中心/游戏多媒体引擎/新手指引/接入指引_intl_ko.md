@@ -1,4 +1,4 @@
-[Tencent Cloud GME SDK](https://cloud.tencent.com/product/tmg?idx=1)를 이용해주셔서 감사합니다. 개발자가 Tencent Cloud GME 제품 API를 테스트하는 편의성을 위해 GME SDK 액세스 매뉴얼을 소개드립니다.
+[Tencent Cloud GME SDK](https://intl.cloud.tencent.com/product/tmg?idx=1)를 이용해주셔서 감사합니다. 개발자가 Tencent Cloud GME 제품 API를 테스트하는 편의성을 위해 GME SDK 액세스 매뉴얼을 소개드립니다.
 
 GME 사용 시 하기 5개 프로세스를 진행합니다: 
 1. [Tencent Cloud 콘솔에서 신규 GME 서비스를 구축합니다](#.E6.96.B0.E5.BB.BA.E6.9C.8D.E5.8A.A1);

@@ -8,7 +8,7 @@ If you successfully uploaded a file but did not receive the callback message of 
 
   - The workflow is configured incorrectly. Please check the workflow settings.
   - If you initiated the transcoding task through an API and a success was returned, you can use the [DescribeTaskDetail](https://intl.cloud.tencent.com/document/product/1041/33497) API to query the task progress.
-  - Message backlog in the task queue causes prolonged processing or other service exceptions. You can [submit a ticket](https://cloud.tencent.com/workorder/category) to query your queue status.
+  - Message backlog in the task queue causes prolonged processing or other service exceptions. You can [submit a ticket](https://console.cloud.tencent.com/workorder) to query your queue status.
 
 ### How to set up callback?
 

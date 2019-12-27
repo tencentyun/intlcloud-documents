@@ -1,6 +1,6 @@
 ## 操作场景
 本文档能帮助您快速了解和接入视频处理服务。使用视频处理服务的主要步骤如下图：
-![](https://main.qcloudimg.com/raw/563e19fbb154bdf8a82879933e61bbee.png)
+![](https://main.qcloudimg.com/raw/aed6a4e4f8b3bb99187e0d899ac05338.png)
 
 ## 操作步骤
 ### 步骤1：注册与登录
