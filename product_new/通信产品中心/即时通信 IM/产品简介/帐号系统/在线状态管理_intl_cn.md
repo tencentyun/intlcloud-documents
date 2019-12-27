@@ -16,20 +16,16 @@ App 启动后，客户端和即时通信 IM 服务端建立 TCP 长连接，即�
 >在线、上线、下线这几个概念，唯一的判断标准是客户端与即时通信 IM 后台是否保持网络连接。对于 iOS 或 Android 平台，即使用户不在线，仍然可以收到消息的离线推送。
 
 ## 查询用户在线状态
-App 后台可以通过 [REST API：获取用户在线状态](https://cloud.tencent.com/document/product/269/2566) 来查询一批用户的在线状态。
+App 后台可以通过REST API：获取用户在线状态来查询一批用户的在线状态。
 IM SDK 暂时无法获取用户的在线状态。
 
 ## 用户在线状态变更通知
-即时通信 IM 可以把用户上下线的事件通知给 App 后台，参见 [状态变更回调](https://cloud.tencent.com/document/product/269/2570) 文档。
+即时通信 IM 可以把用户上下线的事件通知给 App 后台。
 
 
 ## 多端登录
 ### 互踢
-默认情况，IM SDK 在同时登录多个终端（如同时登录 PC、Android）时，会进行互踢，只有最后一个登录的设备可以在线，之前登录的都会被踢下线，详细互踢逻辑可以参考以下文档：
-
-- [Android 用户状态变更](https://cloud.tencent.com/document/product/269/9229#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)
-- [iOS 用户状态变更](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)
-
+默认情况，IM SDK 在同时登录多个终端（如同时登录 PC、Android）时，会进行互踢，只有最后一个登录的设备可以在线，之前登录的都会被踢下线。
 
 ### 同时在线
 即时通信 IM 支持在 [控制台](https://console.cloud.tencent.com/im) 修改同时在线策略，通过配置可以做到 PC 端和手机端同时在线，或者 PC、iOS 和 Android 都可以同时在线。开启同时在线登录不同终端后不会互踢，但是两个相同终端（例如两个 iOS 端登录）仍然会互踢。
