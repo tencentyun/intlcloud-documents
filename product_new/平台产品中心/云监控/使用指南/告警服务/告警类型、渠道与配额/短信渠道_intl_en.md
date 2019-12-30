@@ -39,7 +39,7 @@ Currently, additional quotas are not available for custom message alarms or cust
 
 >
 > - Deduction rule: When sending alarm messages, the system uses the free quota first, and then the additional quota if free quota is used up.
-> Quota validity: An alarm quota is permanently valid. You can use a purchased quota at any time.
+> - Quota validity: An alarm quota is permanently valid. You can use a purchased quota at any time.
 
 ### Purchase Channels
 
