@@ -1,5 +1,5 @@
 ## Description of MsgBody Message Content
-Message content is entered in the fields of MsgBody. Instant Messaging (IM) supports multiple message elements in one message, for example, a message can contain both text and emojis. Therefore, MsgBody is defined as an array that can include as many message elements as needed. The name for a message element is TIMMsgElement. For examples of TIMMsgElements constituting MsgBody, see [MsgBody Message Content Examples](https://cloud.tencent.com/document/product/269/2720#msgbody-.E6.B6.88.E6.81.AF.E5.86.85.E5.AE.B9.E5.AE.9E.E4.BE.8B).
+Message content is entered in the fields of MsgBody. Instant Messaging (IM) supports multiple message elements in one message, for example, a message can contain both text and emojis. Therefore, MsgBody is defined as an array that can include as many message elements as needed. The name for a message element is TIMMsgElement.  <!--For examples of TIMMsgElements constituting MsgBody, see [MsgBody Message Content Examples]().-->
 
 The format of TIMMsgElement is defined as follows:
 ```
@@ -341,11 +341,11 @@ The following single message contains two text message elements and one emoji me
 ### Push notification display format on the client
 - **Account nickname is not set**
 If an account has not set a nickname, APNs only displays text content. For one-to-one chat messages, **push text** is displayed. For group messages, **(group name): push text** is displayed.
-![](https://main.qcloudimg.com/raw/4ca4833413796b8d7545a9fa13bcccad.png)
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **Account nickname is set**
 If an account has set a nickname, for one-to-one chat messages, **nickname: push text** is displayed. For group messages, **nickname (group name): push text** is displayed.
-![](https://main.qcloudimg.com/raw/68bc233f06bc50e8486c7f436b4db9a7.png)
+![](https://main.qcloudimg.com/raw/04d71f109d6f56f9815a3c6d0fabf464.png)
 
 - **Display format of combined messages**
 For combined messages, the text displayed shows the push text of each message element in sequence. The following example shows a one-to-one chat message with an account nickname set, and the push text is **helloworld**. Note that the text contains no spaces. The backend connects message elements in sequence without adding any extra characters. If spaces or other characters need to be added between different message elements, the caller should take control.
@@ -370,7 +370,7 @@ For combined messages, the text displayed shows the push text of each message el
     ] 
 }
 </pre>
-![](https://main.qcloudimg.com/raw/e9cf71655c39a7fd103b5f1f32bec1fd.png)
+![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.png)
 
 The following table summarizes the push text of different message elements.
 
@@ -381,9 +381,9 @@ The following table summarizes the push text of different message elements.
 | TIMFaceElem | Emoji | The offline push text is **[表情]** for the Chinese version and **[Face]** for the English version. |
 | TIMCustomElem | Custom | The `Desc` field. |
 
-### RESTful APIs for the nickname and group name settings
-RESTful API for setting the account nickname: [Setting the Profile](https://cloud.tencent.com/document/product/269/1640).
-RESTful API for setting the group name: [Modifying Basic Group Information](https://cloud.tencent.com/document/product/269/1620).
+ <!--### RESTful APIs for the nickname and group name settings
+RESTful API for setting the account nickname: [Setting the Profile]().
+RESTful API for setting the group name: [Modifying Basic Group Information]().-->
 
 ### Advanced applications
 #### Customizing push sounds and extended fields delivered by APNs
@@ -479,5 +479,5 @@ The preceding fields are described as follows:
 ## References
 
 Apple Push Notification Service (APNs) [Apple Push Programming Documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1).
-Configuration of iOS offline message push: [Offline Push (iOS)](https://cloud.tencent.com/document/product/269/9154).
+ <!--Configuration of iOS offline message push: [Offline Push (iOS)]().-->
 
