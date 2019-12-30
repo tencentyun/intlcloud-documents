@@ -40,31 +40,31 @@
    sh ./monitor_agent_admin check
    ```
 > 监控组件管理工具其他操作
->
-> 1. 下载监控组件管理工具
->    ```
->    wget http://update2.agent.tencentyun.com/update/monitor_agent_admin && chmod +x monitor_agent_admin
->    ```
-> 2. 安装监控组件
->    ```
->     ./monitor_agent_admin install
->    ```
-> 3. 卸载监控组件
->    ```
->    ./monitor_agent_admin uninstall
->    ```
-> 4. 重新安装监控组件
->    ```
->    ./monitor_agent_admin reinstall
->    ```
-> 5. 检查并修复
->    ```
->    ./monitor_agent_admin check
->    ```
-> 6. 重启
->    ```
->    ./monitor_agent_admin restart
->    ```
+
+ 1. 下载监控组件管理工具
+   ```
+  wget http://update2.agent.tencentyun.com/update/monitor_agent_admin && chmod +x monitor_agent_admin
+    ```
+ 2. 安装监控组件
+   ```
+    ./monitor_agent_admin install
+   ```
+ 3. 卸载监控组件
+    ```
+    ./monitor_agent_admin uninstall
+    ```
+ 4. 重新安装监控组件
+    ```
+    ./monitor_agent_admin reinstall
+    ```
+ 5. 检查并修复
+    ```
+    ./monitor_agent_admin check
+    ```
+ 6. 重启
+    ```
+    ./monitor_agent_admin restart
+   ```
 
 
 #### Windows 系统常见问题排查流程
