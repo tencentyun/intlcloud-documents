@@ -1,4 +1,4 @@
-即时通信 IM 默认配置了以下群组形态：私有群（Private）、公开群（Public）、聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom），详细请参阅 [群组形态介绍](https://intl.cloud.tencent.com/document/product/1047/33529)。
+即时通信 IM 默认配置了以下群组形态：私有群（Private）、公开群（Public）、聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）。
 
 针对群组，可进行以下操作：
 
@@ -10,7 +10,7 @@
 
 >
 >
-> - 创建群组时，即时通信 IM 会分配默认群组 ID，该群组 ID 以@TGS# 开头。但也支持用户指定群组 ID，详情请参阅 [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1047/33529)。
+> - 创建群组时，即时通信 IM 会分配默认群组 ID，该群组 ID 以@TGS# 开头。但也支持用户指定群组 ID。
 - 创建群组之后，群主所在终端会收到创建群组系统消息，目的在于保持多终端群组同步（一个终端创建群组之后，所有终端都能立即感知到该群已被创建）。
 
 
