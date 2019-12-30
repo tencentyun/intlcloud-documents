@@ -39,32 +39,32 @@ If the private DNS configuration in the CVM is incorrect, Agent may fail to repo
    ```
    sh ./monitor_agent_admin check
    ```
-> Other operations of the Agent management tool
->
-> 1. Download the Agent management tool.
->    ```
->    wget http://update2.agent.tencentyun.com/update/monitor_agent_admin && chmod +x monitor_agent_admin
->    ```
-> 2. Install Agent.
->    ```
->     ./monitor_agent_admin install
->    ```
-> 3. Uninstall Agent.
->    ```
->    ./monitor_agent_admin uninstall
->    ```
-> 4. Reinstall Agent.
->    ```
->    ./monitor_agent_admin reinstall
->    ```
-> 5. Check and solve the problem.
->    ```
->    ./monitor_agent_admin check
->    ```
-> 6. Restart Agent.
->    ```
->    ./monitor_agent_admin restart
->    ```
+    Other operations of the Agent management tool
+
+      i. Download the Agent management tool.
+      ```
+       wget http://update2.agent.tencentyun.com/update/monitor_agent_admin && chmod +x monitor_agent_admin
+      ```
+     ii. Install Agent.
+       ```
+       ./monitor_agent_admin install
+      ```
+     iii. Uninstall Agent.
+       ```
+       ./monitor_agent_admin uninstall
+       ```
+      iv. Reinstall Agent.
+        ```
+       ./monitor_agent_admin reinstall
+       ```
+      v. Check and solve the problem.
+       ```
+       ./monitor_agent_admin check
+        ```
+      vi. Restart Agent.
+       ```
+      ./monitor_agent_admin restart
+      ```
 
 
 #### For Windows - Troubleshooting common problems
@@ -77,11 +77,13 @@ Each log contains "nws send succ".
 3. If reporting fails (nws send fail), identify the problem (such as timeout, CVM connection failure, or domain name parsing failure) based on the logs. 
    You can retrieve the reporting address from `nws_url` in the plugin.ini file under the etc directory.
 4. If "nws send fail" does not appear during reporting, complete the following steps:
-  1. Check whether the uuid file has been modified.
-   uuid file path:
-` For Linux: /etc/uuid`
+
+    i. Check whether the uuid file has been modified.
+    uuid file path:
+ ` For Linux: /etc/uuid`
  `For Windows: c:\windows\system32\drivers\etc\uuid`
 The latest file named in uuid format in the `c:\windows\system32\drivers\etc\` directory
-   2. If the uuid file has not been modified, check the CVM timestamp.
+
+    ii. If the uuid file has not been modified, check the CVM timestamp.
     In Linux, run the `/usr/sbin/ntpdate ntpupdate.tencentyun.com` command to check whether the time change is 50 seconds or less. If the time change is greater than 50 seconds, restart barad_agent.![](https://main.qcloudimg.com/raw/2be108329ee18a199ae1d5b28a571460.png)
 5. If the problem persists, please [Submit Ticket](https://console.cloud.tencent.com/workorder/category) to contact customer service to solve the problem.
