@@ -67,7 +67,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Latitude | Number | Latitude |
 | Longitude | Number | Longitude |
 
-When the receiver is an iOS or Android device and the app is working in the background, the offline push text is **[位置]** for the Chinese version and **[Location]** for the English version.
+When the receiver is an iOS or Android device and the app is working in the background, the offline push text is **[Location]**.
 
 ### Emoji message element
 
@@ -85,7 +85,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Index | Number | Emoji index customized by users |
 | Data | String | Additional data |
 
-When the receiver is an iOS or Android device and the app is working in the background, the offline push text is **[表情]** for the Chinese version and **[Face]** for the English version.
+When the receiver is an iOS or Android device and the app is working in the background, the offline push text is **[Face]**.
 
 ### Custom message element
 
