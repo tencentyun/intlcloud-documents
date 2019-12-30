@@ -1,4 +1,4 @@
-Instant Messaging (IM) supports the following group types by default: private group (Private), public group (Public), chat room (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom). For more information, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529).
+Instant Messaging (IM) supports the following group types by default: private group (Private), public group (Public), chat room (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom).  <!--For more information, see [Group Types]().-->
 
 You can perform the following operations on groups:
 
@@ -10,8 +10,8 @@ You can perform the following operations on groups:
 
 >
 >
-> - When you create a group, IM assigns a default group ID that begins with @TGS#. You can also manually specify a group ID. For more information, see [Custom Group IDs](https://intl.cloud.tencent.com/document/product/1047/33529).
-- After the group is created, a system message about the group creation is sent to the group owner‘s device to ensure synchronization across multiple devices (once a group is created on one device, all devices instantly perceive the created group.)
+> - When you create a group, IM assigns a default group ID that begins with @TGS#. You can also manually specify a group ID.<!--For more information, see [Custom Group IDs]().-->
+> - After the group is created, a system message about the group creation is sent to the group owner‘s device to ensure synchronization across multiple devices (once a group is created on one device, all devices instantly perceive the created group.)
 
 
 

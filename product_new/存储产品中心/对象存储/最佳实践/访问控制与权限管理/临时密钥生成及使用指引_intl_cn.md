@@ -2,7 +2,7 @@
 
 ## 临时密钥
 
-[临时密钥（临时访问凭证）](https://cloud.tencent.com/document/product/598/33416) 是通过 CAM 云 API 提供的接口，获取到权限受限的密钥。
+临时密钥（临时访问凭证）是通过 CAM 云 API 提供的接口，获取到权限受限的密钥。
  COS API 可以使用临时密钥计算签名，用于发起 COS API 请求。
  COS API 请求使用临时密钥计算签名时，需要用到获取临时密钥接口返回信息中的三个字段，如下：
 - tmpSecretId
@@ -12,15 +12,15 @@
 ## 使用临时密钥的优势
 
 Web、iOS、Android 使用 COS 时，通过固定密钥计算签名方式不能有效地控制权限，同时把永久密钥放到客户端代码中有极大的泄露风险。如若通过临时密钥方式，则可以方便、有效地解决权限控制问题。
-例如，在申请临时密钥过程中，可以通过设置权限策略 [policy](https://cloud.tencent.com/document/product/436/31923#policy) 字段，限制操作和资源，将权限限制在指定的范围内。
+例如，在申请临时密钥过程中，可以通过设置权限策略 [policy](https://intl.cloud.tencent.com/document/product/436/30580#policy) 字段，限制操作和资源，将权限限制在指定的范围内。
 
 有关 COS API 授权策略，请参见：
-- [COS API 临时密钥授权策略指引](https://cloud.tencent.com/document/product/436/31923)
-- [常见场景的临时密钥权限策略示例](https://cloud.tencent.com/document/product/436/31923#.E5.B8.B8.E8.A7.81.E5.9C.BA.E6.99.AF.E6.8E.88.E6.9D.83.E7.AD.96.E7.95.A5)
+- [COS API 临时密钥授权策略指引](https://intl.cloud.tencent.com/document/product/436/30580)
+- [常见场景的临时密钥权限策略示例](https://intl.cloud.tencent.com/document/product/436/30580)
 
 ## 获取临时密钥
 
-获取临时密钥，可以通过提供的 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 方式获取，也可以直接请求 [STS 云 API](https://cloud.tencent.com/document/product/598/33416) 的方式获取。
+获取临时密钥，可以通过提供的 [COS STS SDK](https://github.com/tencentyun/qcloud-cos-sts-sdk) 方式获取 <!--，也可以直接请求 [STS 云 API]() 的方式获取。-->
 
 
 >举例使用的是 Java SDK ，需要在 GitHub 上获取 SDK 代码（版本号）。若提示找不到对应 SDK 版本号，请确认是否在 GitHub 上获取到对应版本的 SDK。
