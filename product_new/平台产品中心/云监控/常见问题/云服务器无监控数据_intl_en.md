@@ -49,18 +49,22 @@ If the private DNS configuration in the CVM is incorrect, Agent may fail to repo
        ```
        ./monitor_agent_admin install
        ```
+       
      iii. Uninstall Agent.
        ```
        ./monitor_agent_admin uninstall
        ```
+       
       iv. Reinstall Agent.
         ```
        ./monitor_agent_admin reinstall
        ```
+       
       v. Check and solve the problem.
        ```
        ./monitor_agent_admin check
         ```
+        
       vi. Restart Agent.
        ```
        ./monitor_agent_admin restart
