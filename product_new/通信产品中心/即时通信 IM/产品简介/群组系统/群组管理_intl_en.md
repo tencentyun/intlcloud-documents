@@ -10,7 +10,7 @@ You can perform the following operations on groups:
 
 >
 >
-> - When you create a group, IM assigns a default group ID that begins with @TGS#. You can also manually specify a group ID. For more information, see [Custom Group IDs](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id).
+> - When you create a group, IM assigns a default group ID that begins with @TGS#. You can also manually specify a group ID. For more information, see [Custom Group IDs](https://intl.cloud.tencent.com/document/product/1047/33529).
 - After the group is created, a system message about the group creation is sent to the group owner‘s device to ensure synchronization across multiple devices (once a group is created on one device, all devices instantly perceive the created group.)
 
 
