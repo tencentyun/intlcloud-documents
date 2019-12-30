@@ -6,7 +6,7 @@ Compared with the business console that displays monitoring data, the Cloud Prod
 1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor) console.
 2. On the left sidebar, choose **Cloud Product Monitor** > **Cloud Virtual Machine** to access the monitoring list page for Cloud Virtual Machines (CVMs).
 3. Locate the CVM to be viewed and click its name to access the monitoring page.
-![](https://main.qcloudimg.com/raw/bbfacbb41cbdff0978685923c9155f69.png)
+![](https://main.qcloudimg.com/raw/d0419b7dc224cf54cd9b7312ed6bbac9.png)
 
 
 ### Tencent Cloud services that support monitoring
