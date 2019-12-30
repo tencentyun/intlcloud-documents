@@ -32,7 +32,7 @@ The event center of Tencent Cloud Cloud Monitoring (CM) currently provides the f
 ## TKE
 
 | Event Name | Event Type | Dimension | Recoverable | Description | Troubleshooting Method |
-| ---------- | ------------------------- | ---- | ------ | ------ | ---------------------------------------- | :--------------------------------------- |
+| ---------- | ------------------------- | ---- | ------ | ------ | ---------------------------------------- |--------------------------------------- |
 | NodeNotReady | Exception event | Cluster | Yes | A node exception can be caused by various reasons, such as network connection failure, node kubelet exception, and container OOM. If a node remains abnormal for a long period, Kubernetes drains containers on the node | 1. Check whether the node is running on the CVM page, and whether monitoring has any exceptions. 2. Log in to the CVM instance and check whether kubelet is running properly. 3. Log in to the CVM instance and check whether docker is running properly |
 | NodeHasDiskPressure | Exception event | Cluster | Yes | The disk (such as cbs or root) capacity for storing containers and images is almost used up. When the capacity is used up, NodeOutOfDisk is triggered and new containers cannot be scheduled to this node | Clean up the disk or delete unnecessary containers and images |
 | NodeOutOfDisk | Exception event | Cluster | Yes | The disk (such as cbs or root) capacity for storing containers and images is used up, and new containers cannot be scheduled to this node | Clean up the disk or delete unnecessary containers and images |
@@ -45,7 +45,7 @@ The event center of Tencent Cloud Cloud Monitoring (CM) currently provides the f
 ## TencentDB for MongoDB
 
 | Event Name | Event Type | Dimension | Recoverable | Description | Troubleshooting Method |
-| --------- | ----------------- | ---- | --------------- | ------ | ---------------------------------------- | :--------------------------------------- |
+| --------- | ----------------- | ---- | ---------------| ------ |---------------------------------------- |--------------------------------------- |
 | oplogInsufficient | Exception event | TencentDB for MongoDB instance | No | During backup, TencentDB for MongoDB fails to read the complete oplog from last backup to the current one, which affects the rollback of your data to any point of time in the last 7 days | Adjust the oplog size or backup frequency of TencentDB for MongoDB in the Tencent Cloud console. If you do not need this event notification, disable the event notification feature on the backup page of the TencentDB for MongoDB console |
 | connectionOverlimit | Exceptional event | TencentDB for MongoDB instance | Yes | The number of associated instances exceeds the upper limit | Check whether the configured number of associated instances meets the business requirements. If additional associations are required to be configured, upgrade the instance configuration of TencentDB for MongoDB |
 | primarySwitch | Exception event | TencentDB for MongoDB instance | Yes | An instance switches between the Primary and Secondary status | This event can be triggered when a physical machine failure occurs. In this case, check whether the instance status is normal |
