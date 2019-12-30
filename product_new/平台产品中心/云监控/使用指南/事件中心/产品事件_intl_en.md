@@ -80,7 +80,7 @@ This procedure is the same as configuring an existing new alarm policy. Select t
 
 
 ## Supported Products
-The following products are currently supported, and other products will be available soon. Go to the event list page to [view specific event information](https://cloud.tencent.com/document/product/248/14363).
+The following products are currently supported, and other products will be available soon. Go to the event list page to [view specific event information](https://intl.cloud.tencent.com/document/product/248/32823).
 - Cloud Virtual Machine (CVM)
 - Cloud Load Balancer (CLB)
 - VPN Gateway
