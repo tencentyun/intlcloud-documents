@@ -11,8 +11,8 @@
 - [申请通道](https://intl.cloud.tencent.com/document/product/216/19250)
 - [变更通道](https://intl.cloud.tencent.com/document/product/216/19251)
 - [删除通道](https://intl.cloud.tencent.com/document/product/216/19252)
-- [查看监控信息](https://intl.cloud.tencent.com/document/product/216/19253)
-- [设置告警](https://intl.cloud.tencent.com/document/product/216/19254)
+- [查看监控信息](https://intl.cloud.tencent.com/document/product/216/19247)
+- [设置告警](https://intl.cloud.tencent.com/document/product/216/19248)
 
 ### 管理专线网关
 - [创建专线网关](https://intl.cloud.tencent.com/document/product/216/19256)
@@ -21,4 +21,4 @@
 
 ### 管理路由器
 - [配置路由器](https://intl.cloud.tencent.com/document/product/216/19259)
-
+ 
