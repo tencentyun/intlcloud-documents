@@ -35,4 +35,4 @@ Check whether the source instance runs normally and whether the sets to be migra
 
 ## Completing the Migration Task
 After the check is passed, return to the data migration list. After the incremental sync is 100% complete, click **Complete** in the "Operation" column to finish the migration task.
-![](https://main.qcloudimg.com/raw/a0a9e83c67c34c16f046a21631f6cba8.png)
+![](https://main.qcloudimg.com/raw/c78832f8f369c9f8fb311c1ea5790f9a.png)

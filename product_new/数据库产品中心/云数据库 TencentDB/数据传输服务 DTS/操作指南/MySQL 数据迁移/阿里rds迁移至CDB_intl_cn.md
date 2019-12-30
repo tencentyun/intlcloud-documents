@@ -12,7 +12,7 @@
 1.1 登录 [RDS 管理控制台](https://account.aliyun.com/login/login.htm?oauth_callback=https%3A%2F%2Frdsnew.console.aliyun.com%2F%3Fspm%3Da2c4g.11186623.2.5.cdjgiR)，选择目标实例。
 1.2 在目标实例的基础信息页即可获取我们所需的信息，具体如图所示：
 ![](https://main.qcloudimg.com/raw/d20077e3364fc3fa692c4e67b6760f5b.png)
->阿里云提供的外网地址需要将其转化成 IP 格式。此处列举一个 [IP/服务器地址查询 ](http://ip.chinaz.com) 的网址。
+>阿里云提供的外网地址需要将其转化成 IP 格式。此处列举一个 [IP/服务器地址查询 ](https://whatismyipaddress.com/) 的网址。
 >
 1.3 将鼠标悬停于右上方头像处，在出现的下拉菜单中选择【accesskeys】，进入页面后即可获取所需的 Accesskey。
 ![](https://main.qcloudimg.com/raw/d01b2f01c876ddf962fd9659796aefca.png)

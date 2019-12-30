@@ -7,7 +7,7 @@ By default, after a user device pulls offline messages through the SDK, the IM s
 ## Roaming Message Storage
 
 IM supports message roaming, which means that, when users log in on different devices, they still have access to chat history with other users or groups.
-By default, roaming one-to-one messages and group messages are stored for 7 days. Messages older than 7 days will be deleted. You can change the number of roaming days in the console. Increasing roaming days is an value-added service. For information on billing, see [Pricing](https://cloud.tencent.com/document/product/269/11673#.E5.90.8E.E4.BB.98.E8.B4.B9.E8.B5.84.E6.BA.90.E6.B6.88.E8.80.97(.E4.B8.8D.E4.BD.BF.E7.94.A8.E4.B8.8D.E8.AE.A1.E8.B4.B9)).
+By default, roaming one-to-one messages and group messages are stored for 7 days. Messages older than 7 days will be deleted. You can change the number of roaming days in the console. Increasing roaming days is an value-added service.
 <span id="MsgType"></span>
 Different SDK versions allow you to extend the storage time of historical messages for different message types, as shown in the following table.
 

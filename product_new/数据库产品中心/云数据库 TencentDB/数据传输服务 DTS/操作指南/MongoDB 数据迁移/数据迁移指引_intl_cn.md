@@ -35,4 +35,4 @@
 
 ## 完成迁移任务
 校验通过后，返回数据迁移列表，待增量同步完成100%，在操作列单击【完成】，即可完成迁移任务。
-![](https://main.qcloudimg.com/raw/a0a9e83c67c34c16f046a21631f6cba8.png)
+![](https://main.qcloudimg.com/raw/c78832f8f369c9f8fb311c1ea5790f9a.png)

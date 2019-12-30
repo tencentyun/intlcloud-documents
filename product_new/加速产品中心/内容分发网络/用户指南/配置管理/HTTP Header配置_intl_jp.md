@@ -4,11 +4,8 @@ HTTP headerの構成はドメイン名を対象にするため、一旦構成が
 
 ##構成ガイド
 1.  [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のメニュー欄の【ドメイン名管理】を選択し、編集しようとするドメイン名の左側の【管理】をクリックします。
-![](https://main.qcloudimg.com/raw/8ad0a30890429e47486eefcff20b8a56.png)
 2.【アドバンスド構成】の中で【HTTP Header 構成】モジュールを見つけ、セルフでヘッダーを追加できます。
-![](https://main.qcloudimg.com/raw/2e3a6dc676de2f0e853cba2ae8aa7dfc.png)
 3.【 HTTP header追加】をクリックすることで、ヘッダーを追加できます。
-![](https://main.qcloudimg.com/raw/f6d6761eeeeb271deae17dd66632b4ee.png)
 
 CDNは下記の6種類の常用ヘッダー構成をサポートしており、カスタマイズのヘッダー構成をも対応しています。
 + Content-Disposition：クライアントのダウンロードリソースをアクティブにし、デフォルトのファイル名を設定します。
@@ -37,7 +34,7 @@ Access-Control-Allow-Originはリソースのクロスリージョンの権限�
 - 操作手順
    1. CDN コンソールにログインし、【ドメイン名管理】ページに入り、設定するドメイン名を選択し、【管理】をクリックします。
    2.【アドバンスト構成】の中で【HTTP Header構成】モジュールを見つけ、【HTTP header追加】をクリックすることで、ヘッダーを追加できます。
-![](https://main.qcloudimg.com/raw/0861e8ace2c9d426810595b31a6ce3ef.png)
+
 >! 最大10個のドメイン名までが構成可能です。1個のドメイン名は1行であり、各ドメイン名はエンターキーで区切られます。
 
 - マッチングモードの説明
@@ -82,9 +79,7 @@ Access-Control-Expose-Headersはどれらのヘッダーがレスポンスの一
 
 ### カスタマイズされたヘッダー
 
-カスタマイズされたヘッダーの追加を対応します。key-valueのカスタマイズ設定は下記の通りです。![](https://mc.qcloudimg.com/static/img/8fad908143b81e3d2c21c9ff5ddf2ce0/header-config-3.png)
-
-![](https://mc.qcloudimg.com/static/img/70c010f9dcbbaff8ead411527a0de796/header-config-4.png)
+カスタマイズされたヘッダーの追加を対応します。key-valueのカスタマイズ設定は下記の通りです。
 
 下記ヘッダーの追加は現在対応されていません。
 

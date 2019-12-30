@@ -12,7 +12,7 @@ This document describes how to migrate data from Alibaba Cloud ApsaraDB for RDS 
 1.1. Log in to the [RDS Console](https://account.aliyun.com/login/login.htm?oauth_callback=https%3A%2F%2Frdsnew.console.aliyun.com%2F%3Fspm%3Da2c4g.11186623.2.5.cdjgiR) and select a target instance.
 1.2. You can obtain the necessary information on the target instance's basic information page as shown below:
 ![](https://main.qcloudimg.com/raw/d20077e3364fc3fa692c4e67b6760f5b.png)
->The public network address provided by Alibaba Cloud needs to be converted into IP format. You can query IP/server addresses [here](http://ip.chinaz.com).
+>The public network address provided by Alibaba Cloud needs to be converted into IP format. You can query IP/server addresses [here](https://whatismyipaddress.com/).
 >
 1.3. Hover over the profile photo in the top-right corner and select **accesskeys** in the drop-down menu to get the required Accesskey.
 ![](https://main.qcloudimg.com/raw/d01b2f01c876ddf962fd9659796aefca.png)

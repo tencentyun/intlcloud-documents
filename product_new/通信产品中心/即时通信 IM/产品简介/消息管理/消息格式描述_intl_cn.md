@@ -1,5 +1,5 @@
 ## 消息内容 MsgBody 说明
-MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息中包括多种消息元素类别，例如一条消息中既包括文本消息元素，还包括表情消息元素。因此 MsgBody 定义为 Array 格式，可按照需求加入多类消息元素。消息元素名称为 TIMMsgElement，消息元素 TIMMsgElement 组成 MsgBody 的示例请参见 [消息内容 MsgBody 实例](https://cloud.tencent.com/document/product/269/2720#msgbody-.E6.B6.88.E6.81.AF.E5.86.85.E5.AE.B9.E5.AE.9E.E4.BE.8B)。
+MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息中包括多种消息元素类别，例如一条消息中既包括文本消息元素，还包括表情消息元素。因此 MsgBody 定义为 Array 格式，可按照需求加入多类消息元素。消息元素名称为 TIMMsgElement。
 
 消息元素 TIMMsgElement 的格式统一为：
 ```
@@ -341,11 +341,11 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 ### 客户端推送展示格式说明
 - **未设置帐号昵称**
 如果帐号没有设置昵称，APNs 推送只展示推送文本内容。单聊消息只展示“推送文本”，群组消息展示“(群名称):推送文本“。
-![](https://main.qcloudimg.com/raw/4ca4833413796b8d7545a9fa13bcccad.png)
+![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
 - **已设置帐号昵称**
 如果帐号设置昵称，单聊消息展示格式为“昵称：推送文本内容”，群组消息展示格式为昵称(群名称)：推送文本内容。
-![](https://main.qcloudimg.com/raw/68bc233f06bc50e8486c7f436b4db9a7.png)
+![](https://main.qcloudimg.com/raw/04d71f109d6f56f9815a3c6d0fabf464.png)
 
 - **组合消息展示格式**
 对于组合消息，按顺序叠加各个消息元素的推送文本作为展示文本。下述为已设置帐户昵称的单聊消息，推送文本为"helloworld"。注意 helloworld 中间没有空格，后台按照顺序叠加，各个消息元素推送文本之间不添加任何字符。如需要在各个不同的消息元素间添加空格或其他字符，需调用方自己控制。
@@ -370,7 +370,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
     ] 
 }
 </pre>
-![](https://main.qcloudimg.com/raw/e9cf71655c39a7fd103b5f1f32bec1fd.png)
+![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.png)
 
 各类消息元素推送文本字段汇总。
 
@@ -380,10 +380,6 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 |TIMLocationElem|地理位置消息。|中文版离线推送文本为“[位置]”；英文版为“[Location]”。|
 |TIMFaceElem|表情消息。|中文版离线推送文本为“[表情]”；英文版为“[Face]”。|
 |TIMCustomElem|自定义消息。|Desc 字段。|
-
-### 昵称和群名称 REST API 设置接口
-设置帐号昵称 REST API 接口：[设置资料](https://cloud.tencent.com/document/product/269/1640)。
-设置群名称 REST API 接口：[修改群组基础资料](https://cloud.tencent.com/document/product/269/1620)。
 
 ### 高级应用
 #### 自定义推送声音，APNs 下发扩展字段.
@@ -479,5 +475,5 @@ OfflinePushInfo 的格式示例如下：
 ## 参考
 
 Apple Push Notification Service(APNs) [苹果推送开发文档](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-iOS 离线消息推送配置：[离线推送(iOS)](https://cloud.tencent.com/document/product/269/9154)。
+<!--iOS 离线消息推送配置：[离线推送(iOS)]()。-->
 

@@ -2,20 +2,19 @@ CDNは、ユーザーにフィルタリングパラメータスイッチを提�
 > ? リソースURLの異なるパラメータが同じ内容を表す場合、フィルタリングパラメータを有効にしてキャッシュの命中率を有効に向上させることをお勧めします。
 
 ## 構成ガイド
-1. [CDNコンソール(https://console.cloud.tencent.com/cdn)にログインし、左側のディレクトリの【ドメイン名管理】をクリックすると、管理ページが表示されます。リストで編集するドメイン名の行を特定して、操作バーの【管理】をクリックします。
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+1. [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のディレクトリの【ドメイン名管理】をクリックすると、管理ページが表示されます。リストで編集するドメイン名の行を特定して、操作バーの【管理】をクリックします。
 2.【アクセス制御】タブをクリックし、フィルタリングパラメータの構成モジュールでフィルタリングパラメータの構成を行います。
-![img](https://main.qcloudimg.com/raw/d8d3015823962049e1c753b4f52b6194.png)
+![img](https://main.qcloudimg.com/raw/696b14c83d40fc433bef12f199dd8e5a.jpg)
 
 >?加速タイプがダウンロード、オン・デマンドである場合、フィルタリングパラメータはデフォルトではオン状態になっています。アクセス時に加速タイプを静的に選択すると、フィルタリングパラメータはデフォルトではオフ状態になっています。
 
 ## 構成ケース
 CDNはノードストレージ構造でリソースをキャッシュする時、インデックスとしてcache_keyに基づいて格納されているリソースを検索します。
 1.コンフィグレーションが次の通りである場合、
-   ![img](https://main.qcloudimg.com/raw/594ea432aa841ca5312780b34e8a3deb.png)
+   ![img](https://main.qcloudimg.com/raw/e720e78f96e74ad7bfbde09b4de6a219.png)
    -ユーザーAはURLが「http://www.test.com/1.jpg?version=1.1」であるリソースをリクエストし、ノードがリソースを格納する時、対応する 「cache_key」が「www.test.com/1.jpg」になり、「？」の後のパラメータが無視されています。
    -ユーザーBもURLが「http://www.test.com/1.jpg?version=1.2」 であるリソースをリクエストし、「cache_key」が「www.test.com/1.jpg」であることに従ってリソースを検索するので、ユーザーAがリクエストするものと同じ内容で、直接命中できます。
 2.コンフィグレーションが次の通りである場合、
-   ![img](https://main.qcloudimg.com/raw/b63b9a383cff703d9e691a36d4ed7117.png)
+   ![img](https://main.qcloudimg.com/raw/696b14c83d40fc433bef12f199dd8e5a.jpg)
    -ユーザーAはURLが「http://www.test.com/1.jpg?version=1.1」であるリソースをリクエストし、ノードがリソースを格納する時、対応する「cache_key」が「www.test.com/1.jpg」になり、「？」の後のパラメータが無視されていません。
    -ユーザーBもURLが「http://www.test.com/1.jpg?version=1.2」であるリソースをリクエストし、「cache_key」が「www.test.com/1.jpg?version=1.2」であることに従ってリソースを検索するので、命中していません。だから、再びにオリジンサーバーに戻って対応する内容を取得してキャッシュします。

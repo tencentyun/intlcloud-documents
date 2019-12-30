@@ -87,6 +87,6 @@ When the migration is 100% complete, click the **Finish** button on the right to
 
 
 [1]:    https://account.aliyun.com/login/login.htm?oauth_callback=https%3A%2F%2Frdsnew.console.aliyun.com%2F%3Fspm%3Da2c4g.11186623.2.5.cdjgiR
-[2]:   http://ip.chinaz.com
+[2]:   https://whatismyipaddress.com/
 [3]:   https://console.cloud.tencent.com/dtsnew
 

@@ -7,17 +7,17 @@
 ## 删除单个对象
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在左侧导航中单击【存储桶列表】，进入存储桶列表页。
 2. 找到对应的存储桶，单击其存储桶名称，进入存储桶的文件列表页面。
-![](https://main.qcloudimg.com/raw/9b12d4bef552c8f2ae5759891e113df2.jpg)
+![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
 3. 选择想要删除的对象，单击【删除】，弹出删除文件对话框。
-![](https://main.qcloudimg.com/raw/2bdec7021171ddb5bea5868783dfaee4.png)
+![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
 4. 单击【确定】即可删除对象。
-![](https://main.qcloudimg.com/raw/7109059ad4ed459b8dd2ae0550255b4d.png)
+![](https://main.qcloudimg.com/raw/3e579dc3f90f83c6ececbb76dae519f7.png)
 
 
 ## 删除多个对象
 1. 在对象存储控制台勾选您需要删除的对象，在【更多操作】下拉列表中，单击【删除】，弹出删除文件对话框。
-![](https://main.qcloudimg.com/raw/279b2f2414b84da9216176974bc1965b.jpg)
+![](https://main.qcloudimg.com/raw/0f780f2130fd234c3ae5268d6b9bf091.png)
 2. 单击【确定】即可批量删除对象。
-![](https://main.qcloudimg.com/raw/5deca5123943084303781c9cd082b514.png)
+![](https://main.qcloudimg.com/raw/66e599c3801dd5e51c9aab65f7274fcc.png)
 
 

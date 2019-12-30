@@ -3,4 +3,4 @@
 1. [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインします。
 2. 左側のメニューで【高度なツール】>【トラフィックパッケージ管理】を選択すると、管理ページが表示されます。
 3. 既存のトラフィックパッケージおよび期限切れのトラフィックパッケージの購入と使用状況を確認できます。
-![](https://main.qcloudimg.com/raw/1bf551551806492654ea482b9e1c68c2.png)
+![](https://mc.qcloudimg.com/static/img/11adb0f7ada7a92397a7e78b314965f9/1.png)

@@ -48,17 +48,17 @@ The naming requirements for custom friend fields are as follows:
 
 When applying for custom friend fields, you need to submit the following information for each custom friend field:
 - The name of the custom friend field (Key).
-- The type of the custom friend field (Value). For more information, see <a href="https://cloud.tencent.com/document/product/269/1501#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.AD.97.E6.AE.B5">Relationship Chain Fields</a>.
+- The type of the custom friend field (Value). For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33521">Relationship Chain Fields</a>.
 
 
 
 ### Adding friends
 
-IM supports the following modes for adding friends: adding friends in batches, no approval required, and approval required. For more information, see <a href="https://cloud.tencent.com/document/product/269/1643">Adding Friends</a>.
+IM supports the following modes for adding friends: adding friends in batches, no approval required, and approval required. 
 
 Two-way friends: user A's friend list contains user B, and user B's friend list contains user A.
 One-way friend: user A's friend list contains user B, but user B's friend list does not contain user A.
-Friend request approval method: each user can choose the way in which they are added as a friend of other users. For more information, see the approval method field for new friend requests described in <a href="https://cloud.tencent.com/document/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5">Standard Profile Fields</a>.
+Friend request approval method: each user can choose the way in which they are added as a friend of other users.
 No approval required: if the approval method for friend requests set by account A is AllowType_Type_AllowAny, then anyone who wants to add account A as a friend can directly add it. In this scenario, the friend request and acceptance process has one step.
 Approval required: if the approval method for friend requests set by account A is AllowType_Type_NeedConfirm, then for anyone who wants to add account A as a friend, account A will receive a message asking it to approve the new friend request. Then, account A accepts or rejects the request to complete the process. In this scenario, the friend request and acceptance process has two steps.
 
@@ -72,11 +72,9 @@ IM supports two modes for deleting friends: one-way deletion and two-way deletio
 | Two-way deletion | Delete_Type_Both | To_Account is deleted from the friend list of From_Account, and From_Account is deleted from the friend list of To_Account. |
 
 
-IM also supports deleting friends in batches. For more information, see <a href="https://cloud.tencent.com/document/product/269/1644">Deleting Friends</a>.
-
+IM also supports deleting friends in batches. 
 ### Pulling friends
-IM supports the following three modes for pulling friends: incremental pulling without friends, full pulling by page, and pulling with friends. For more information, see <a href="https://cloud.tencent.com/document/product/269/1647">Pulling Friends</a>.
-
+IM supports the following three modes for pulling friends: incremental pulling without friends, full pulling by page, and pulling with friends.
 ### Verifying friends
 
 IM supports two friend verification modes: one-way friend verification and two-way friend verification.
@@ -104,21 +102,19 @@ Possible results for two-way friend verification are:
 | CheckResult_Type_BWithA | To_Account is not in the friend list of From_Account, but From_Account is in the friend list of To_Account. |
 | CheckResult_Type_NoRelation | To_Account is not in the friend list of From_Account, and From_Account is not in the friend list of To_Account. |
 
-For more information on friend verification, see <a href="https://cloud.tencent.com/document/product/269/1646">Verifying Friends</a>.
-
 ## Blacklists
 Each user has a blacklist, which is used to store the accounts blocked by this user.
 After user A adds user B to the blacklist, user A will unfriend user B (if they are friends), and users A and B cannot send friend requests to each other in the future.
 By default, you can add up to 1,000 accounts to the IM blacklist. If you need a larger blacklist, please contact Tencent Cloud customer service.
 
 ### Blacklisting users
-IM allows you to blacklist users in batches. For more information, see <a href="https://cloud.tencent.com/document/product/269/3718">Blacklisting Users</a>.
+IM allows you to blacklist users in batches.
 
 ### Removing users from the blacklist
-IM allows you to remove users from the blacklist in batches. For more information, see <a href="https://cloud.tencent.com/document/product/269/3719">Removing Users from the Blacklist</a>.
+IM allows you to remove users from the blacklist in batches. 
 
 ### Pulling blacklists
-IM supports pulling a full blacklist by page. For more information, see <a href="https://cloud.tencent.com/document/product/269/3722">Pulling Blacklists</a>.
+IM supports pulling a full blacklist by page. 
 
 ### Verifying blacklists
 IM supports two blacklist verification modes: one-way verification and two-way verification.
@@ -145,13 +141,3 @@ Possible results of two-way blacklist relationship verification are:
 | BlackCheckResult_Type_BWithA | To_Account is not in the blacklist of From_Account, but From_Account is in the blacklist of To_Account. |
 | BlackCheckResult_Type_NO | To_Account is not in the blacklist of From_Account, and From_Account is not in the blacklist of To_Account. |
 
-For more information on blacklist verification, see <a href="https://cloud.tencent.com/document/product/269/3725">Verifying Blacklists</a>.
-
-
-## Related Documentation
-
-- [User Profiles and Relationship Chains (Android)](https://cloud.tencent.com/document/product/269/33926)
-- [User Profiles and Relationship Chains (iOS)](https://cloud.tencent.com/document/product/269/33927)
-- [Overview of Basic Features (Windows)](https://cloud.tencent.com/document/product/269/33490)
-- [Relationship Chains (Web SDK)](https://cloud.tencent.com/document/product/269/1600)
-- [System Messages - Friends (Web SDK)](https://cloud.tencent.com/document/product/269/5848)

@@ -2,7 +2,7 @@
 
 对于腾讯云对象存储资源，不同企业之间或同企业多团队之间，需要对不同的团队或人员配置不同的访问权限。您可通过 CAM（访问管理，以下简称 CAM）对存储桶或对象设置不同的操作权限，使得不同团队或人员能够相互协作。
 
-首先，我们需要先了解几个关键概念：主账号、子账号（用户）和用户组。CAM 的相关术语、配置详细描述请参见访问管理的 [词汇表](https://cloud.tencent.com/document/product/598/18564)。
+首先，我们需要先了解几个关键概念：主账号、子账号（用户）和用户组。CAM 的相关术语、配置详细描述请参见访问管理的 [词汇表](https://intl.cloud.tencent.com/document/product/598/18564)。
 
 #### 主账号
 主账号又被称为开发商。用户申请腾讯云账号时，系统会创建一个用于登录腾讯云服务的主账号身份。主账号是腾讯云资源使用计量计费的基本主体。
@@ -29,7 +29,9 @@
  - **用户名**：输入子用户名称，例如 Sub_user。
  - **邮箱**：您需要为子用户添加邮箱来获取由腾讯云发出的绑定的邮件。
  - **访问方式**：选择编程访问和腾讯云控制台访问。
+ ![](https://main.qcloudimg.com/raw/3ca3b1272dc2635e4f275bcd75e83b40.png)
 4. 填写用户信息完毕后，单击【下一步】，进行身份验证。
+![](https://main.qcloudimg.com/raw/fa64f48b412a2c9af1ed12c2e961246d.png)
 5. 身份验证完毕，设置子用户权限。根据系统提供的策略选择，可配置简单的策略，例如 COS 的存储桶列表的访问权限，只读权限等。如需配置更复杂的策略，可进行 [步骤2：对子账号授予权限](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E5.AF.B9.E5.AD.90.E8.B4.A6.E5.8F.B7.E6.8E.88.E4.BA.88.E6.9D.83.E9.99.90) 。
 6. 确认输入的用户信息无误后，单击【完成】即可创建子账号。
 
@@ -40,13 +42,13 @@
 1. 登录 [CAM 控制台](https://console.cloud.tencent.com/cam)。
 2. 选择【策略】>【新建自定义策略】>【按策略语法创建】，进入策略创建页面。
 3. 可供选择的模版有**空白模板**和与 COS 相关联的**预设策略模板**，选择您需要授予子账号的策略模板，单击【下一步】。
-![](https://main.qcloudimg.com/raw/9c60306242955be93fa0bfbd5cea2bda.jpg)
+![](https://main.qcloudimg.com/raw/e1d43ba1ae7e2ae8bb22416c8c4b8127.png)
 4. 输入便于您记忆的策略名称，若您选择**空白模板**，则需要输入您的策略语法，详情请参见 [策略示例](#策略示例)。您可将策略内容复制粘贴到【编辑策略内容】输入框内，单击【创建策略】。
-![](https://main.qcloudimg.com/raw/880f49ec0df3199c2e301fd86b108580.png)
+![](https://main.qcloudimg.com/raw/b3bccfa38400718a5f57c94d0654cc9e.png)
 5. 创建完成后，将刚才已创建的策略关联到子账号。
-![](https://main.qcloudimg.com/raw/481057a2b826bf038bffa4f49817b380.png)
+![](https://main.qcloudimg.com/raw/1495c8b19dfff2aad622b794d8f5bc6a.png)
 6. 勾选子账号确定授权后，子账号即可根据权限范围访问 COS 资源。
-![](https://main.qcloudimg.com/raw/2a4783ba4976aa7acb89347e75d1236b.png)
+![](https://main.qcloudimg.com/raw/3667de5320e99321a78c5d1c22a49157.png)
 
 ### 步骤3：子账号访问 COS 资源
 COS 访问（API 或 SDK）需要如下资源：APPID、SecretId、SecretKey。
@@ -90,7 +92,7 @@ coscmd config -u 1250000000 -a AKIDasdfmRxHPa9oLhJp -s e8Sdeasdfas2238Vi -b exam
 
 <span id="策略示例"></span>
 ## 策略示例
-以下提供几种典型场景的策略示例，在配置自定义策略时，您可将以下参考策略复制粘贴至输入框【编辑策略内容】，根据实际配置修改即可。更多 COS 常见场景的策略语法请参见 [CAM 产品文档](https://cloud.tencent.com/document/product/598/11083) 的**商用案例**部分。
+以下提供几种典型场景的策略示例，在配置自定义策略时，您可将以下参考策略复制粘贴至输入框【编辑策略内容】，根据实际配置修改即可。更多 COS 常见场景的策略语法请参见 [CAM 产品文档](https://intl.cloud.tencent.com/document/product/598/11083) 的**商用案例**部分。
 
 ### 为子账户配置读写权限
 为子账户仅配置读写权限，具体策略如下所示：
@@ -140,7 +142,7 @@ coscmd config -u 1250000000 -a AKIDasdfmRxHPa9oLhJp -s e8Sdeasdfas2238Vi -b exam
 
 ### 为子账户配置某 IP 段的读写权限
 本示例中限制仅 IP 网段为`192.168.1.0/24`和`192.168.2.0/24`的地址具有读写权限，如下所示。
-更丰富的生效条件填写，请参见 [生效条件](https://cloud.tencent.com/document/product/598/10608)。
+更丰富的生效条件填写，请参见 [生效条件](https://intl.cloud.tencent.com/document/product/598/10608)。
 ```
 {
     "version": "2.0",

@@ -175,9 +175,9 @@
 ### 自定义资料字段的申请
 App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tencent.com/im)>【应用配置】>【功能配置】 申请自定义资料字段，申请提交后，自定义资料字段将在5分钟内生效。
 申请自定义资料字段时，需要为每一个自定义资料字段提交如下资料：
-- 自定义资料字段的名称（Key）：详情可参见 [自定义资料字段的命名规范](#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5.E7.9A.84.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83)
-- 自定义资料字段的类型（Value）：详情可参见 [资料字段](#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)
-- 自定义资料字段的读权限及写权限：详情可参见 [资料字段](#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)
+- 自定义资料字段的名称（Key）：详情可参见 [自定义资料字段的命名规范](#naming-rules-for-custom-profile-fields)
+- 自定义资料字段的类型（Value）：详情可参见 [资料字段](#profile-fields)
+- 自定义资料字段的读权限及写权限：详情可参见 [资料字段](#profile-fields)
 
 ### 自定义资料字段的命名规范
 自定义资料字段的命名规则如下：
@@ -185,11 +185,3 @@ App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tence
 - 自定义资料字段的前缀是：Tag_Profile_Custom。
 - 关键字：必须是英文字母，且长度不得超过8字节，建议用一个英文单词或该英文单词的缩写。
 - 示例：某 App 要申请的自定义字段的关键字是 Test，则自定义资料字段的名称是：Tag_Profile_Custom_Test。
-
-## 相关文档
-
-- [用户资料与关系链（Android）](https://cloud.tencent.com/document/product/269/33926)
-- [用户资料与关系链（iOS）](https://cloud.tencent.com/document/product/269/33927)
-- [快速调通基本功能（Windows）](https://cloud.tencent.com/document/product/269/33490)
-- [用户资料（Web SDK）](https://cloud.tencent.com/document/product/269/1599)
-- [资料系统消息（Web SDK）](https://cloud.tencent.com/document/product/269/5849)

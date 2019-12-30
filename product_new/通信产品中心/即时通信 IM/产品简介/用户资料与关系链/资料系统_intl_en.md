@@ -175,9 +175,9 @@ Custom profile fields are the user data set by each app according to its own bus
 ### Applying for custom profile fields
 To apply for custom profile fields, the app admin can log in to IM [Console](https://console.cloud.tencent.com/im) and choose **App Configuration** > **Feature Configuration**. After the application is submitted, custom profile fields will take effect in 5 minutes.
 When applying for custom profile fields, you need to submit the following information for each field:
-- The name of the custom profile field (Key). For more information, see [Naming Rules for Custom Profile Fields](#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5.E7.9A.84.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83).
-- The type of the custom profile field (Value). For more information, see [Profile Fields](#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5).
-- Read and write permissions of the custom profile field. For more information, see [Profile Fields](#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5).
+- The name of the custom profile field (Key). For more information, see [Naming Rules for Custom Profile Fields](#naming-rules-for-custom-profile-fields).
+- The type of the custom profile field (Value). For more information, see [Profile Fields](#profile-fields).
+- Read and write permissions of the custom profile field. For more information, see [Profile Fields](#profile-fields).
 
 ### Naming rules for custom profile fields
 The rules for naming custom profile fields are as follows:
@@ -185,11 +185,3 @@ The rules for naming custom profile fields are as follows:
 - The prefix of the custom profile field is Tag_Profile_Custom.
 - Keyword: the keyword must be a string of letters with a length less than 8 bytes. We recommend you use an English word or its abbreviation as the keyword.
 - Example: if the custom field to be applied for by an app has the keyword **Test**, then the name of the custom profile field is: Tag_Profile_Custom_Test.
-
-## Related Documentation
-
-- [User Profiles and Relationship Chains (Android)](https://cloud.tencent.com/document/product/269/33926)
-- [User Profiles and Relationship Chains (iOS)](https://cloud.tencent.com/document/product/269/33927)
-- [Overview of Basic Features (Windows)](https://cloud.tencent.com/document/product/269/33490)
-- [User Profiles (Web SDK)](https://cloud.tencent.com/document/product/269/1599)
-- [System Messages - Profile (Web SDK)](https://cloud.tencent.com/document/product/269/5849)

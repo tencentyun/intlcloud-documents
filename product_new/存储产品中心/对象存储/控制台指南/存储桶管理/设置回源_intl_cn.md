@@ -4,13 +4,13 @@
 >回源拉取数据的成功率依赖网络环境，请优先使用电信、移动、联通等 IP 段。
 
 
-<img src="https://main.qcloudimg.com/raw/f63a74cf70a9f6582e52e13a2b16e72a.png" width="90%">
+<img src="https://main.qcloudimg.com/raw/fd9c498033da4e9c7719e138bbf29686.png" width="90%">
 
 
 
 ## 操作步骤
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，选择左侧菜单栏【存储桶列表】，进入存储桶列表页面。单击需要设置回源的存储桶，进入存储桶详情页。
-![](https://main.qcloudimg.com/raw/3797a80a4d8ec0d49d64754530f8fe4d.png)
+![](https://main.qcloudimg.com/raw/5fd95ac85f92a95a256c6098488b6993.png)
 2. 单击左侧菜单栏中的【基础配置】，进入存储桶基础配置页。
 3. 下拉页面找到【回源设置】配置项，修改当前状态为开启，然后输入回源地址。配置项说明如下：
  **回源地址**：只需填入域名或 IP 地址，支持域名或 IP 地址后面添加端口号。无需加上前缀`http://`或`https://`。

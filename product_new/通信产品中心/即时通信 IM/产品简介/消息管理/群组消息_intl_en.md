@@ -61,7 +61,7 @@ The sending of group messages can be controlled through the following methods:
 | Control Method | Description |
 | ---------------- | ------------------------------------------------------------ |
 | Mute group members | Prevent a group member from sending messages for a certain period of time. This feature is effective within a single group. If the muted user quits the group and joins again, the user remains muted until the mute time expires. |
-| Call back before delivering group messages | Before delivering a message to group members, IM checks with the app backend for permission. If not allowed, the message will not be delivered.<br>After receiving a callback, the app backend can modify the message content and return to IM, which will deliver the modified message. For more information, see [Calling Back Before Delivering Group Messages](https://cloud.tencent.com/document/product/269/1619).<br>After initiating a callback, IM will deliver the message directly if it does not receive a response in 2 seconds, without retrying. |
+| Call back before delivering group messages | Before delivering a message to group members, IM checks with the app backend for permission. If not allowed, the message will not be delivered.<br>After receiving a callback, the app backend can modify the message content and return to IM, which will deliver the modified message. <!--For more information, see [Calling Back Before Delivering Group Messages]().--><br>After initiating a callback, IM will deliver the message directly if it does not receive a response in 2 seconds, without retrying. |
 
 
 ## Message Priority and Frequency Control
@@ -83,18 +83,18 @@ The following lists the priorities from high to low:
 
 Number-based frequency control limits the maximum number of messages sent per second in a single group. The default value is 40 messages per second. When the number of messages exceeds the limit, the backend will first deliver higher-priority messages, with messages with the same priority delivered randomly.
 
-A message that has been restricted by frequency control is not delivered or stored in message history, but a success response will be returned to the sender. [Callback before delivering group message](https://cloud.tencent.com/document/product/269/1619) is triggered, but [callback after delivering group message](https://cloud.tencent.com/document/product/269/2661) is not triggered.
+A message that has been restricted by frequency control is not delivered or stored in message history, but a success response will be returned to the sender.<!-- [Callback before delivering group message]() is triggered, but [callback after delivering group message]() is not triggered.-->
 
 #### Priority-based frequency control
 
 Priority-based frequency control limits the maximum number of messages with a certain priority sent per second in a single group. A message sending request must first pass the number-based frequency control check before it enters the priority-based frequency control processing.
 The app admin, group owner, and group admins are not subject to priority-based frequency control. Messages with the High priority are not subject to priority-based frequency control. Messages with other priority levels are subject to a default limit of 40 messages per second, which can be set on an individual basis.
-Each [group type](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D) under an SDKAppID has its own number-based frequency control and priority-based frequency control configurations. To modify their default values, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1).
+Each [group type](https://intl.cloud.tencent.com/document/product/1047/33529) under an SDKAppID has its own number-based frequency control and priority-based frequency control configurations. To modify their default values, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1).
 
 
 
 ## Processing of Offline Group Messages
-![](https://main.qcloudimg.com/raw/8a090ed4cf7134e2a6b194c4b905c995.svg)
+![](https://main.qcloudimg.com/raw/3cffbd86ff1fda0a28221c7700d1718f.png)
 
 #### Offline group messages are processed as follows:
 1. User A calls `sendMessage` to send messages to group C when user B is offline.

@@ -13,7 +13,7 @@ Enter the name of the migration task. If you want it to be executed at a later t
 ![](https://main.qcloudimg.com/raw/286fd5ccef05146bea9dd758d6634db5.png)
 #### Set the source database
 Enter the information of the source database and then click **Test Connectivity** to check whether your source database is connected.
-![](https://main.qcloudimg.com/raw/e4f49a7296ca2322341272d7d5bdda7d.png)
+![](https://main.qcloudimg.com/raw/dcf2c22d49e2c1e2a290f8bf79ed369f.png)
 
 #### Set the target database
 Enter the information of the target database and click **Save**.

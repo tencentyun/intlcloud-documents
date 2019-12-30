@@ -1,25 +1,25 @@
 ## Group System
 The group system is an instant messaging system that allows multiple participants to communicate in one chat. The group system has the following basic capabilities:
 
-- Comprehensive [group management](https://cloud.tencent.com/document/product/269/3661) capabilities: creating and disbanding a group, member management, group profile management, member profile management, and more.
-- Stable and reliable messaging and a sophisticated [group messaging](https://cloud.tencent.com/document/product/269/3663) management mechanism: permission control, muting, bad language filtering, message callback, message roaming, and more.
-- Five group types are available: private group (Private), public group (Public), chat room (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom). You can also [customize group types](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81) based on your business needs.
+- Comprehensive [group management](https://intl.cloud.tencent.com/document/product/1047/33530) capabilities: creating and disbanding a group, member management, group profile management, member profile management, and more.
+- Stable and reliable messaging and a sophisticated [group messaging](https://intl.cloud.tencent.com/document/product/1047/33526) management mechanism: permission control, muting, bad language filtering, message callback, message roaming, and more.
+- Five group types are available: private group (Private), public group (Public), chat room (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom). You can also [customize group types](https://intl.cloud.tencent.com/document/product/1047/33529) based on your business needs.
 - Different group sizes are supported:
  - Private groups and public groups can have up to 200 and 2,000 members respectively, and chat rooms can accommodate up to 6,000 participants.
  - Audio-and-video chat rooms and broadcasting chat rooms can support an unlimited number of participants.
 - On the web, audio-and-video chat rooms and broadcasting chat rooms allow users to receive messages as guests without logging in.
 
 >
->1. Audio-and-video chat rooms and broadcasting chat rooms support an unlimited number of participants. However, if the number of group members is expected to exceed 10,000, contact [Tencent Cloud customer service](https://cloud.tencent.com/about/connect) or sales reps to apply for service resources.
+>1. Audio-and-video chat rooms and broadcasting chat rooms support an unlimited number of participants. However, if the number of group members is expected to exceed 10,000, contact [Tencent Cloud customer service](https://intl.cloud.tencent.com/support) or sales reps to apply for service resources.
 >2. Currently, message roaming is only available to private groups, public groups, and chat rooms, with messages stored for 7 days by default. If you need a longer storage period, change the message roaming period value in the [console](https://console.cloud.tencent.com/im). Increasing message roaming period is a value-added service. For more information on pricing, see [Pricing](https://cloud.tencent.com/document/product/269/11673).
 
 IM’s group system is also highly customizable, allowing you to use:
 
-- [Custom Message Formats](https://cloud.tencent.com/document/product/269/2720#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0)
-- [Custom Group IDs](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id)
-- [Custom Fields](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)
-- [Custom Group Types](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81)
-- [Custom Callbacks](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.9B.9E.E8.B0.83)
+- [Custom Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527)
+- [Custom Group IDs](https://intl.cloud.tencent.com/document/product/1047/33529)
+- [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529)
+- [Custom Group Types](https://intl.cloud.tencent.com/document/product/1047/33529)
+- [Custom Callbacks](https://intl.cloud.tencent.com/document/product/1047/33529)
 
 ## Group Member Roles
 

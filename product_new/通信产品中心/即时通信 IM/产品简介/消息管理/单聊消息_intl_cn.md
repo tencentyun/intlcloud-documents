@@ -52,7 +52,7 @@
 | 单聊消息中携带发送者资料 | 可实现消息中携带发送者资料                                  | 展示发送者昵称、头像等                  |
 
 ## 单聊离线消息处理流程
-![](https://main.qcloudimg.com/raw/c371cedb6f2460bde3bb61c2609e98ba.svg)
+![](https://main.qcloudimg.com/raw/d28999fa32da4e5e6750f34117e116bb.png)
 
 #### 单聊消息离线及漫游处理流程：
 

@@ -10,21 +10,22 @@
  [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、【ドメイン名管理】をクリックすると、対応するページに入ります。加速サービスをアクティブにするには2種類の方法があります。
 ### 単一ドメイン名をアクティブにする
 加速サービスをアクティブにするドメイン名を右クリックし、【 CDNをアクティブにする】を選択します。
-![](https://main.qcloudimg.com/raw/e3d608f08832ce6fa7e01a7fb238ec01.png)
+![](https://main.qcloudimg.com/raw/6d40d5b457f67a93672bf740cb932332.png)
+
 ### 一括的にアクティブにする
 アクティブにするドメイン名を選択し、ドメイン名の上にある【CDNをアクティブにする】をクリックします。
-![](https://main.qcloudimg.com/raw/051ea70275127c1be7394f904ad9d2b1.png)
+![](https://main.qcloudimg.com/raw/df42098d7d31b608d09aaaa3a55fd25a.png)
 
 ## 加速サービスを非アクティブにする
 **アクティブしている**状態にあるドメイン名に対し、**非アクティブ**操作を実行することができます。非アクティブにされたドメイン名の構成が保持されます（次にアクティブにする時に再度構成する必要がない）。加速サービスを非アクティブにするには約5分間かかります。具体的な操作は下記の通りです。
  [CDN コンソール](https://console.cloud.tencent.com/cdn)にログインし、【ドメイン名管理】をクリックすると、対応するページに入ります。ドメイン名加速を非アクティブにするには、単一ドメインの非アクティブ及び一括非アクティブの2種類の方法があります。
 ### 単一ドメインを非アクティブにする
 加速サービスを非アクティブにするドメイン名を右クリックし、【CDNを非アクティブにする】を選択します。
-![](https://main.qcloudimg.com/raw/e38cd358d057f746ae3d62b10b2ee169.png)
+![](https://main.qcloudimg.com/raw/472f15afc0483dcfa698c3a9cdde3066.png)
 
 ### 一括的に非アクティブにする
 非アクティブにするドメイン名を選択してから、【より多くの操作】のドロップダウンリストで、【CDNを非アクティブにする】を選択します。
-![](https://main.qcloudimg.com/raw/cfd1471f736552d89569a4646a279aa7.png)
+![](https://main.qcloudimg.com/raw/5e397998811cc1e7bfb22d21663b2ce2.png)
 
 ## 加速ドメイン名を削除する
 **非アクティブしている**状態にあるドメイン名に対し、削除操作を実行することができます。ドメイン名が削除されたら、**その構成が保持されず、リカバーすることもできません**。具体的な操作は下記の通りです。
@@ -32,19 +33,21 @@
 
 ### 単一ドメイン名の削除
 削除するドメイン名を右クリックし、【削除】を選択します。
-![](https://main.qcloudimg.com/raw/d859905654d49fda9fec4da90052349a.png)
+![](https://main.qcloudimg.com/raw/ce1e3fed32cf1d473c188bfd8e1e2d2d.png)
+
 ### 一括削除
 削除するドメイン名を選択してから、【より多くの操作】のドロップダウンリストで、【削除】を選択します。
-![](https://main.qcloudimg.com/raw/bcd2de467e0008574996bbc881c6822e.png)
+![](https://main.qcloudimg.com/raw/3abcd4a868b4803690b6c4cb01e11c0c.png)
+
 ## 所属するプロジェクトの変更
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、【ドメイン名管理】をクリックすると、対応するページに入ります。ドメイン名の所属するプロジェクトの変更は単一ドメイン名の変更と一括変更の2種類の方法があります。
 
 ### 単一ドメイン名の変更
 所属するプロジェクトを変更するドメイン名を右クリックし、【所属するプロジェクトを変更する】を選択します。
-![](https://main.qcloudimg.com/raw/988859a20a66cddc48350b67bbe5d186.png)
+![](https://main.qcloudimg.com/raw/0b2c043c567f4f197b59b8f24ee73ad9.png)
 
 ### 一括変更
 プロジェクトを変更する複数のドメイン名を選択してから、【より多くの操作】のドロップダウン・リストで、【所属するプロジェクトを変更する】を選択できます。
-![](https://main.qcloudimg.com/raw/215a768ad5b45ec7965e1187ff38de1b.png)
+![](https://main.qcloudimg.com/raw/32bd65f5cbd435bd4687ac09b3b1297d.png)
 所属するプロジェクトをターゲットプロジェクトに変更すればよいです。
-![](https://main.qcloudimg.com/raw/c11fb5f4de5bf484093e38d064cf6b22.png)
+![](https://main.qcloudimg.com/raw/d0019607b105f2e1abc5c310d5def177.png)
