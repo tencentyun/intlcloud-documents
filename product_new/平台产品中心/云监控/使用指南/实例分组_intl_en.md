@@ -50,7 +50,7 @@ You can group cross-region and cross-project instances of a cloud product for un
 3. Find the instance group to be deleted and click **Delete** in the column on the right.
 ![](https://main.qcloudimg.com/raw/1ee997c13ec5a1e365f4994a9340330d.png)
 4. In the pop-up dialog box, click **Delete**.
->?When an instance group bound to an alarm policy is deleted, the alarm policy becomes invalid.
+> When an instance group bound to an alarm policy is deleted, the alarm policy becomes invalid.
 
 
 ### Replicating instance groups
@@ -60,7 +60,7 @@ You can group cross-region and cross-project instances of a cloud product for un
 3. Find the instance group to be replicated and click **Replication** in the column on the right.
 ![](https://main.qcloudimg.com/raw/954913574e826c8b024c1e0c21e4a504.png)
 4. In the pop-up dialog box, click **Copy**.
->?When an instance group is copied, only instances in the group are copied. If the copied instance group is bound to an alarm policy, the binding relationship is not copied.
+> When an instance group is copied, only instances in the group are copied. If the copied instance group is bound to an alarm policy, the binding relationship is not copied.
 
 
 ### Binding instance groups to alarm policies
