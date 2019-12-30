@@ -44,7 +44,6 @@ Currently, additional quotas are not available for custom message alarms or cust
 ### Purchase Channels
 
 Log in to [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/overview). On the **Monitoring Overview** page, you can view the SMS utilization. Click **Purchase SMS** to purchase an additional SMS quota.
-![](https://main.qcloudimg.com/raw/718b418235ab50d530240b757ee62e81.png)
 
 ## Quota counting rules
 
