@@ -3,7 +3,7 @@
 The reasons may be as follows: Agent has not been installed, the user manipulates the CVM in the console or on the CLI, the CVM has a high load, or the private DNS configuration for the CVM is incorrect. This document describes how to troubleshoot and resolve these problems.
 
 #### Agent has not been installed
-The CVM will have no monitoring data if you have not installed [Agent](https://cloud.tencent.com/doc/product/248/2258). To find the exact cause of the problem, complete the following steps:
+The CVM will have no monitoring data if you have not installed [Agent](https://intl.cloud.tencent.com/document/product/248/6211). To find the exact cause of the problem, complete the following steps:
 1. Check whether barad_agent is installed.
 
 If Agent is not installed, your CVM cannot be monitored. If your CVM fails, you will not receive a notification, which is highly risky. For more information about Agent, see [Install monitoring component](https://intl.cloud.tencent.com/document/product/248/6211).
