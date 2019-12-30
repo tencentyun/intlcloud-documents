@@ -6,7 +6,7 @@
 1. 登录 [云监控](https://console.cloud.tencent.com/monitor) 控制台。
 2. 在左侧导航栏中，选择【云产品监控】>【云服务器】，进入云服务器监控列表页面。
 3. 找到您需要查看监控的云服务器，单击其主机名称，进入监控页面。
-![](https://main.qcloudimg.com/raw/bbfacbb41cbdff0978685923c9155f69.png)
+![](https://main.qcloudimg.com/raw/d0419b7dc224cf54cd9b7312ed6bbac9.png)
 
 
 ### 支持监控的云服务
