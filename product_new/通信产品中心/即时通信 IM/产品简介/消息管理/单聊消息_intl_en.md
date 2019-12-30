@@ -52,7 +52,7 @@ Instant Messaging (IM) provides comprehensive one-to-one messaging capabilities.
 | One-to-one chat messages carry sender profiles | Sender profiles can be carried by messages | Display sender information such as the nickname and profile photo |
 
 ## Processing of Offline One-to-One Chat Messages
-![](https://main.qcloudimg.com/raw/c371cedb6f2460bde3bb61c2609e98ba.svg)
+![](https://main.qcloudimg.com/raw/d28999fa32da4e5e6750f34117e116bb.png)
 
 #### Offline and roaming processing of one-to-one chat messages:
 
