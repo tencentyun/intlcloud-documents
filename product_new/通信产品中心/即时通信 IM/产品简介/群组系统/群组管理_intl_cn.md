@@ -10,7 +10,7 @@
 
 >
 >
-> - 创建群组时，即时通信 IM 会分配默认群组 ID，该群组 ID 以@TGS# 开头。但也支持用户指定群组 ID，详情请参阅 [自定义群组 ID](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id)。
+> - 创建群组时，即时通信 IM 会分配默认群组 ID，该群组 ID 以@TGS# 开头。但也支持用户指定群组 ID，详情请参阅 [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1047/33529)。
 - 创建群组之后，群主所在终端会收到创建群组系统消息，目的在于保持多终端群组同步（一个终端创建群组之后，所有终端都能立即感知到该群已被创建）。
 
 
