@@ -17,7 +17,7 @@ You can group cross-region and cross-project instances of a cloud product for un
  - **Group Name**: Enter an instance group name.
  - **Group Type**: Select an option based on your actual needs.
  - **Add to group**: Select an instance to be added to the group.
-![](https://main.qcloudimg.com/raw/246bda5a229647d2abe324fe741207b4.png)
+![](https://main.qcloudimg.com/raw/7b0eccae200873e5902fb98a3d9dc598.png)
 4. Click **Save**.
 
 
