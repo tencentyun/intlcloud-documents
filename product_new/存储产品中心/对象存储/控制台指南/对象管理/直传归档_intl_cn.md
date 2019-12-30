@@ -4,7 +4,7 @@
 
 - 控制台上传
  [COS 控制台](https://console.cloud.tencent.com/cos5) 的【上传文件】，选择上传对象后，在设置对象属性中将存储类型选择为【归档存储】，详情请参见 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321)。
-![](https://main.qcloudimg.com/raw/b3864ba4d6e687f33c6980d5a27cb625.png)
+![](https://main.qcloudimg.com/raw/a1d22225a6e180e4b582e6ff24852088.png)
  
 - API 上传
 通过在 PUT Object、POST Object 或 Initiate Multipart Upload 中将 x-cos-storage-class 设置为 ARCHIVE，实现直传归档。
