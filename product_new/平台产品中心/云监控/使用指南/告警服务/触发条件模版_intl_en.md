@@ -16,7 +16,7 @@ The default logic for repeated alarms is as follows:
 - After an alarm is generated for 24 hours or more but less than 72 hours, alarm notifications are sent repeatedly once every day by default.
 - Alarm information is sent for the last time when the alarm has been generated for 72 hours, after which this alarm information will no longer be sent.
 
-> ?
+> 
 > - A trigger template is used to set triggers for one specific cloud product.
 > - After a trigger template is modified, the corresponding alarm policy that has been applied will synchronize the latest trigger conditions.
 
@@ -32,7 +32,7 @@ The default logic for repeated alarms is as follows:
  - **Policy Type**: Select a monitoring service, such as CVM.
  - **Use preset trigger conditions**: Select this option to enable preset CVM trigger conditions for a given monitoring item.
  - **Trigger Condition**: This includes **Indicator Alarm** and **Event Alarm**. You can click **Add** to set multiple alarm items.
-![](https://main.qcloudimg.com/raw/9282a92a9440514dbc4f6609a69e848d.png)
+![](https://main.qcloudimg.com/raw/dcbe887cb166cdf0747674ca6fd4fd02.png)
 4. Click **Save** to create a trigger template.
 
 ### Editing a trigger template
@@ -41,31 +41,31 @@ The default logic for repeated alarms is as follows:
 2. In the left sidebar, click **Trigger Condition Template** to access the trigger template page.
 3. Click the name of a template to be edited to access the template details page.
 4. Click **Edit** to modify alarm triggers.
-   ![](https://main.qcloudimg.com/raw/e36f133304ca0062f95137cb3bd3c8a6.png)
+   ![](https://main.qcloudimg.com/raw/00bf46e12a1b3fa366d63a87bcaa5603.png)
 5. Modify triggers as needed.
-   ![](https://main.qcloudimg.com/raw/cb616a9c452abb8fa440338d6a0d980e.png)
+   ![](https://main.qcloudimg.com/raw/f48edbd819eeeb759f539e5be9fef137.png)
 
-> ?After a trigger template associated with alarm policies is edited, the modification applies to all associated alarm policies.
+> After a trigger template associated with alarm policies is edited, the modification applies to all associated alarm policies.
 
 ### Deleting a trigger template
 
 1. Log in to [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/).
 2. In the left sidebar, click **Trigger Condition Template** to access the trigger template page.
 3. Find the template to be deleted and click **Delete** in the column on the right.
-   ![](https://main.qcloudimg.com/raw/56bc0d60357f3185ce93d949694532eb.png)
+   ![](https://main.qcloudimg.com/raw/8048c785abefa488c98bf672948fea12.png)
 4. In the pop-up dialog boxs, click **Delete**.
 
-> ?After a trigger template associated with alarm policies is deleted, all alarm policies associated with the template become invalid.
+> After a trigger template associated with alarm policies is deleted, all alarm policies associated with the template become invalid.
 
 ### Copying a trigger template
 
 1. Log in to [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/).
 2. In the left sidebar, click **Trigger Condition Template** to access the trigger template page.
 3. Find the template to be copied and click **Replication** in the column on the right.
-   ![](https://main.qcloudimg.com/raw/6638d17b77829c02873a865d5644e70a.png)
+   ![](https://main.qcloudimg.com/raw/2c2eee29f51f3c91212fa81a6195a552.png)
 4. In the pop-up dialog box, click **Copy**.
 
-> ?When a trigger template is copied, only the triggers and rules of the template are copied. If the copied template is associated with an alarm policy, the association relationship is not copied.
+> When a trigger template is copied, only the triggers and rules of the template are copied. If the copied template is associated with an alarm policy, the association relationship is not copied.
 
 
 
