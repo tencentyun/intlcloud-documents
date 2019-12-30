@@ -17,7 +17,7 @@
  - 分组名：输入实例组名。
  - 分组类型：根据您的实际需求选择。
  - 添加至组：勾选需要添加到该组的实例。
-![](https://main.qcloudimg.com/raw/d44d0e35a54e689a6275a3b1e75bf37c.png)
+![](https://main.qcloudimg.com/raw/7b0eccae200873e5902fb98a3d9dc598.png)
 4. 单击【保存】，即可创建实例分组。
 
 
@@ -34,13 +34,12 @@
 
 #### 新建实例
 1. 单击【新增】。
-![](https://main.qcloudimg.com/raw/a54bb9c85bb3a5d45aab48a5748007ef.png)
+![](https://main.qcloudimg.com/raw/44c18b18e61aaa905627d7e2cbb20905.png)
 2. 在弹出的配置框中，勾选需要添加至该实例分组的实例。
 3. 单击【确定】，即可为该实例分组添加实例。
 
 #### 删除实例
 1. 勾选想要移出的实例分组，单击【移出】。
-![](https://main.qcloudimg.com/raw/291f79275f7dce9086af155ae87f1c14.png)
 2. 在弹出的确认对话框中，单击【确定移出所选实例】，即可将该实例移出实例分组。
 
 
@@ -49,7 +48,7 @@
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/)。
 2. 在左侧导航栏中，单击【实例分组】，进入实例分组页面。
 3. 找到您需要删除的实例分组，在其右侧操作栏中，单击【删除】。
-![](https://main.qcloudimg.com/raw/be23ff6be2ad18f1157c8ffd3f868b62.png)
+![](https://main.qcloudimg.com/raw/1ee997c13ec5a1e365f4994a9340330d.png)
 4. 在弹出的确认对话框中，单击【确定删除】，即可删除该实例分组。
 >当实例分组已经绑定告警策略时，删除实例分组会导致该实例分组绑定的告警策略失效。
 
@@ -59,7 +58,7 @@
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/)。
 2. 在左侧导航栏中，单击【实例分组】，进入实例分组页面。
 3. 找到您需要复制的实例分组，在其右侧操作栏中，单击【复制】。
-![](https://main.qcloudimg.com/raw/fa2ac5a4d01ca88f67129f60f42900b2.png)
+![](https://main.qcloudimg.com/raw/954913574e826c8b024c1e0c21e4a504.png)
 4. 在弹出的对话框中，单击【确定复制】，即可成功复制该实例分组。
 >复制实例分组仅复制其内部所包含的实例，若复制的实例分组绑定了告警策略，则不会复制其绑定关系。
 
@@ -70,6 +69,6 @@
 2. 在左侧导航栏中，单击【告警配置】>【告警策略】，进入告警策略管理页面。
 3. 单击【新增】，进入新建策略配置页面。
 4. 找到“告警对象”配置选项，启用“选择实例组”，在下拉列表选择之前创建的实例分组，如下图所示。
-![](https://main.qcloudimg.com/raw/b1d55bbecb7c58137d0f385b3c763cb8.png)
-5. 在新建策略界面完成其他对应项的填写即可完成告警策略的创建。具体可参照 [创建告警策略](https://cloud.tencent.com/document/product/248/6215)。
+![](https://main.qcloudimg.com/raw/047a57ca70c3dec2fd9cb6e0afeff6de.png)
+5. 在新建策略界面完成其他对应项的填写即可完成告警策略的创建。具体可参照 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215)。
 
