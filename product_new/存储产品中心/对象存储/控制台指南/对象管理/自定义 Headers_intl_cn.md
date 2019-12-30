@@ -8,7 +8,7 @@
 ![](https://main.qcloudimg.com/raw/c265d4596065e27c9aa4510ba8aeca84.png)
 
 2. 找到需要设置头部的对象，单击对象右侧的【详情】。
-![](https://main.qcloudimg.com/raw/83765e8071cb7e63e1d7f5dcd44ce9f1.png)
+![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
 3. 在对象属性页面找到【自定义 Header】，然后单击【添加 Header】，选择需要设置的参数类型（自定义内容需输入自定义名称），输入对应的值。COS 提供了以下6种对象 HTTP 头部标识供配置。头部配置说明如下。配置完成后，单击【保存】即可。
 ![](https://main.qcloudimg.com/raw/babe4e3591b0d63a866537a34de12d94.jpg)
 <table>
