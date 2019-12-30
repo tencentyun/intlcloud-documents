@@ -13,8 +13,8 @@
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)。
 2. 在左侧导航栏中，单击【存储桶列表】。
 3. 选择需要添加存储桶策略的存储桶，进入存储桶详情页。
-![](https://main.qcloudimg.com/raw/9b12d4bef552c8f2ae5759891e113df2.jpg)
+![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
 4. 单击【文件列表】，找到您要设置加密的对象，在其右侧操作栏中，单击【详情】。
-![](https://main.qcloudimg.com/raw/2bdec7021171ddb5bea5868783dfaee4.png)
+![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
 5. 下拉页面找到【服务端加密】配置项，选择 SSE-COS 加密方式，单击【保存】，即可完成对象加密。
-![](https://main.qcloudimg.com/raw/5035f105415e7a19c38d68ad2390cf8a.png)
+![](https://main.qcloudimg.com/raw/48c8b3a3d32170db7172397398c8a883.png)
