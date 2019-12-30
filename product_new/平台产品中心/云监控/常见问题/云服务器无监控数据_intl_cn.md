@@ -77,11 +77,11 @@ windows 系统日志路径：`C:\Program Files\QCloud\Monitor\Barad\logs\info.lo
 3. 若上报失败（nws send fail），需根据日志判断具体的问题（例如超时、无法连接到服务器、无法解析域名等） 
    上报地址可以在 etc 目录的 plugin.ini 文件中的 nws_url 看到。
 4. 若上报未出现 nws send fail。
-  1. 检查 uuid 是否被修改过
-   uuid 文件路径：
-` linux：/etc/uuid`
- `windows：c:\windows\system32\drivers\etc\uuid`
-` c:\windows\system32\drivers\etc\`目录下 uuid 格式命名的最新文件
-   2. 若 uuid 文件未变动，检测子机的时间戳
-    linux 可使用命令`/usr/sbin/ntpdate ntpupdate.tencentyun.com` 查看时间调整是否在50s以内，若时间相关较大，重启 barad_agent 后可恢复。![](https://main.qcloudimg.com/raw/2be108329ee18a199ae1d5b28a571460.png)
+    i. 检查 uuid 是否被修改过
+    uuid 文件路径：
+    ` linux：/etc/uuid`
+    `windows：c:\windows\system32\drivers\etc\uuid`
+   ` c:\windows\system32\drivers\etc\`目录下 uuid 格式命名的最新文件
+    ii. 若 uuid 文件未变动，检测子机的时间戳
+    linux 可使用命令`/usr/sbin/ntpdate ntpupdate.tencentyun.com` 查看时间调整是否在50s以内，若时间相关较大，重启 barad_agent 后 可恢复。![](https://main.qcloudimg.com/raw/2be108329ee18a199ae1d5b28a571460.png)
 5. 若通过以上步骤仍未解决问题，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系工作人员为您处理。
