@@ -16,7 +16,7 @@ The event center of Tencent Cloud Cloud Monitoring (CM) currently provides the f
 ## Cloud Load Balancer
 
 | Event Name | Event Type | Dimension | Recoverable | Description | Troubleshooting Method |
-| --------- | ------------------ | ---- | --------- | ------ | ---------------------- | ----------------- |
+| --------- | ------------------ | ---- | --------- | ------ | ---------------------- |
 | VipBlockInfo | Exception event | Cloud Load Balancer (CLB) instance | Yes | The CLB public IP address is attacked and is blocked after an exception is detected by security check | Submit a ticket to query why the blockage occurs and how to resolve it |
 | RsPortStatusChange | Exception event | Backend server port | Yes | The backend server port of the public network load balancer (LB) is abnormal | Check the running status of the backend server port |
 
@@ -24,7 +24,7 @@ The event center of Tencent Cloud Cloud Monitoring (CM) currently provides the f
 ## VPN Gateway
 
 | Event Name | Event Type | Dimension | Recoverable | Description | Troubleshooting Method |
-| ----------- | ----------------------------------- | ---- | --------- | ------ | ---------------------------------------- | -------- |
+| ----------- | ----------------------------------- | ---- | --------- | ------ | ---------------------------------------- |
 | PacketDroppedByQosWanOutBandwidth | Exception event | VPN gateway instance | Yes | The public network outbound bandwidth of a VPN gateway instance exceeds the upper limit, causing packet loss. Packet loss caused by bandwidth glitches is not reflected in the bandwidth view, because the minimum granularity for bandwidth statistics is 10 (average per-second traffic for 10 seconds). If the bandwidth is not significantly exceeded, it can be ignored | Increase the maximum bandwidth of the public network |
 | PacketDroppedByQosConnectionSession | Exception event | VPN gateway instance | Yes | The number of associated VPN gateway instances exceeds the upper limit, causing packet loss | Contact sales customer service for troubleshooting |
 
