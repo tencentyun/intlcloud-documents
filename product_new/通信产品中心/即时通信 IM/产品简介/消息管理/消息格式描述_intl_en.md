@@ -377,8 +377,8 @@ The following table summarizes the push text of different message elements.
 | Value of MsgType | Type | Push Text of the Message Element |
 |---------|---------|---------|
 | TIMTextElem | Text | The `Text` field. |
-| TIMLocationElem | Location | The offline push text is **[位置]** for the Chinese version and **[Location]** for the English version. |
-| TIMFaceElem | Emoji | The offline push text is **[表情]** for the Chinese version and **[Face]** for the English version. |
+| TIMLocationElem | Location | The offline push text is **[Location]**. |
+| TIMFaceElem | Emoji | The offline push text is **[Face]**. |
 | TIMCustomElem | Custom | The `Desc` field. |
 
  <!--### RESTful APIs for the nickname and group name settings
