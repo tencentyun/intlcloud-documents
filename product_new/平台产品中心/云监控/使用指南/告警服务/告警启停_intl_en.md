@@ -6,4 +6,4 @@ You can use the alarm on-off feature to enable or disable an alarm policy as nee
 1. Log in to the [Cloud Monitoring console](https://console.cloud.tencent.com/monitor/).
 2. In the left sidebar, click **Alarm Configuration** > **Alarm Policy** to access the management page.
 3. Find the target policy. Click the toggle in the **Alarm On-Off** column to enable or disable alarms for the policy.
-![](https://main.qcloudimg.com/raw/65fce402b3695e3260e042f3b4d79457.png)
+![](https://main.qcloudimg.com/raw/47bdf844209ab339aa5ded22a7d54a89.png)
