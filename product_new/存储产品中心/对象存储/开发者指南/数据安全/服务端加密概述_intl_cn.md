@@ -72,11 +72,11 @@ SSE-KMS 加密即使用 KMS 托管密钥的服务端加密。KMS 是腾讯云推
 1. 登录访问管理控制台，进入 [角色](https://console.cloud.tencent.com/cam/role) 列表页面。
 2. 单击【新建角色】，选择角色载体为【腾讯云产品服务】。
 3. 选择支持角色的服务为【对象存储】，然后单击【下一步】。
-![](https://main.qcloudimg.com/raw/d4dd02b7a51da98957bbe4f0f55e7061.png)
+![](https://main.qcloudimg.com/raw/0c45c4dff7d73614a3656bbccf4cc112.png)
 4. 配置角色策略，搜索并勾选【QcloudKMSCreaterFullAccess】，然后单击【下一步】。
-![](https://main.qcloudimg.com/raw/a331b8392d870aed723069d2a8c61d47.jpg)
+![](https://main.qcloudimg.com/raw/b3d8ef7f3c534f33207c47b7fb7725fb.png)
 5. 输入指定角色名称：COS_QcsRole。
-![](https://main.qcloudimg.com/raw/f62b5ffa01478df7033093407e874f67.jpg)
+![](https://main.qcloudimg.com/raw/830a4d4f36a0307a0bee92b6fd6dd24a.png)
 6. 最后单击【完成】即可创建完毕。
 
 ### SSE-C 加密
