@@ -2,7 +2,7 @@ The event center of Tencent Cloud Cloud Monitoring (CM) currently provides the f
 
 ## CVM
  
-| Event Name | Event Type | Dimension | Recoverable | Description | Troubleshooting Method |
+| Event Name| Event Type   | Dimension  | Recoverable | Description | Troubleshooting Method   |
 | --------- | ------------------ | ---- | --------- | ------ | ---------------------- |
 | GuestCoreError | Exception event | CVM instance | No | A fatal error in the operating system kernel caused by an operating system kernel bug or driver issue | 1. Check whether any other kernel drivers are loaded to the system in addition to the kernel drivers provided by the kernel. Try not to load these drivers and then observe the system operating status. 2. View the bug report in release version of the kernel and operating system and try to upgrade the kernel to solve the problem. 3. In Tencent Cloud CVMs, kdump is enabled by default. When panic occurs, system memory dump information is generated in the /var/crash directory. You can use the crash tool for analysis |
 | GuestOom | Exception event | CVM instance | No | The system memory is overloaded | 1. Check whether the memory capacity configured in the system meets the memory requirements of the service. If additional memory capacity is required, we recommend that you upgrade the CVM memory configuration. 2. According to system logs (such as dmesg and /var/log/messages), view the processes killed when OOM occurs and check whether the process memory usage is as expected. Use tools such as valgrind to analyze whether memory leakage occurs |
