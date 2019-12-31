@@ -1,6 +1,6 @@
-Tencent Cloud’s Cloud Monitor (CM) can monitor your Tencent Cloud product resources in real time. It serves as the monitoring and management entry for all cloud products. You can view the most comprehensive and detailed monitoring data on CM. CM monitors cloud products in real time, including [Cloud Virtual Machine](https://cloud.tencent.com/product/cvm.html), [Cloud Database](https://cloud.tencent.com/product/cdb-overview.html), and [Cloud Load Balancer](https://cloud.tencent.com/product/clb.html). It extracts key metrics of cloud products and displays them in monitoring charts and tables. CM provides you with a comprehensive understanding of your resource usage, application performance, and the running status of your cloud products. It also allows you to set custom alarm thresholds and send notifications based on custom rules.
+Tencent Cloud’s Cloud Monitor (CM) can monitor your Tencent Cloud product resources in real time. It serves as the monitoring and management entry for all cloud products. You can view the most comprehensive and detailed monitoring data on CM. CM monitors cloud products in real time, including [Cloud Virtual Machine](https://intl.cloud.tencent.com/product/cvm), [Cloud Database](https://intl.cloud.tencent.com/product/cdb), and [Cloud Load Balancer](https://intl.cloud.tencent.com/product/clb). It extracts key metrics of cloud products and displays them in monitoring charts and tables. CM provides you with a comprehensive understanding of your resource usage, application performance, and the running status of your cloud products. It also allows you to set custom alarm thresholds and send notifications based on custom rules.
 
-CM provides information in charts and tables to help you understand the running status and performance of your cloud products, while pushing alarm notifications in a timely manner to inform you of business exceptions. This allows you a comprehensive understanding of the resource usage and running status of your cloud products, with no need for extra development efforts. You can obtain relevant monitoring data from the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/overview), [Cloud Monitoring API](https://cloud.tencent.com/doc/api/405), or [TCCLI](https://cloud.tencent.com/doc/product/440).
+CM provides information in charts and tables to help you understand the running status and performance of your cloud products, while pushing alarm notifications in a timely manner to inform you of business exceptions. This allows you a comprehensive understanding of the resource usage and running status of your cloud products, with no need for extra development efforts. You can obtain relevant monitoring data from the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/overview), [Cloud Monitoring API](https://intl.cloud.tencent.com/document/api/248), or [TCCLI](https://intl.cloud.tencent.com/product/cli).
 
 ## Basic Features
 
@@ -23,34 +23,34 @@ Currently, CM can automatically monitor the following services. Once you start a
 > ? Currently, monitoring data statistics are collected at a granularity of one minute, five minutes, one hour, and one day. Most products, such as Cloud Virtual Machine (CVM) and Cloud Database, support a monitoring granularity of one minute, meaning data statistics are collected every minute. Some products only support a granularity of five minutes, meaning data statistics are collected every five minutes.
 We will gradually provide seconds-level monitoring for certain products. TencentDB for MySQL instances now support free monitoring at a granularity of five seconds. We will inform you via SMS, Tencent Cloud internal message, and email one month before the official billing starts.
 
-[Cloud Virtual Machine](https://cloud.tencent.com/doc/product/213)
-[Cloud Block Storage](https://cloud.tencent.com/doc/product/362) (only when mounted on a running CVM)
-[Cloud Load Balancer](https://cloud.tencent.com/doc/product/214)
+[Cloud Virtual Machine](https://intl.cloud.tencent.com/document/product/213)
+[Cloud Block Storage](https://intl.cloud.tencent.com/doc/product/362) (only when mounted on a running CVM)
+[Cloud Load Balancer](https://intl.cloud.tencent.com/doc/product/214)
 - Cloud Database
-  - [TencentDB for MySQL](https://cloud.tencent.com/doc/product/236)
-  - [TencentDB for MongoDB](https://cloud.tencent.com/document/product/240)
-  - [TencentDB for Redis](https://cloud.tencent.com/doc/product/239)
-  - [TencentDB for Memcached](https://cloud.tencent.com/doc/product/241)
-- [Elasticsearch Service](https://cloud.tencent.com/document/product/845)
-- [Virtual Private Cloud](https://cloud.tencent.com/document/product/215)
-  - [NAT Gateway](https://cloud.tencent.com/document/product/552)
-  - [Peering Connection](https://cloud.tencent.com/document/product/553)
+  - [TencentDB for MySQL](https://intl.cloud.tencent.com/doc/product/236)
+  - [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240)
+  - [TencentDB for Redis](https://intl.cloud.tencent.com/doc/product/239)
+  - [TencentDB for Memcached](https://intl.cloud.tencent.com/doc/product/241)
+- [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845)
+- [Virtual Private Cloud](https://intl.cloud.tencent.com/document/product/215)
+  - [NAT Gateway](https://intl.cloud.tencent.com/zh/document/product/1015)
+  - Peering Connection
   - Cross-Region Connection via Basic Network
-  - [VPN Gateway](https://cloud.tencent.com/document/product/554)
-  - [VPN Connections](https://cloud.tencent.com/document/product/554)
-  - [Direct Connect Gateway](https://cloud.tencent.com/document/product/216)
+  - VPN Gateway
+  - [VPN Connections](https://intl.cloud.tencent.com/zh/document/product/1037)
+  - [Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216)
   - [Elastic Public IP](https://intl.cloud.tencent.com/document/product/215/4958)
   - Anycast Elastic Public IP
-- [Direct Connect](https://cloud.tencent.com/doc/product/216)
+- [Direct Connect](https://intl.cloud.tencent.com/doc/product/216)
   - Connection
   - Direct Connect
 - Message Service
   - Topic Subscription
   - Queue
-- [Cloud Object Storage](https://cloud.tencent.com/document/product/436)
-- [Cloud File Storage](https://cloud.tencent.com/document/product/582)
-- [Oceanus](https://cloud.tencent.com/document/product/849)
-- [BM](https://cloud.tencent.com/product/bmstack-v)
+- [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436)
+- [Cloud File Storage](https://intl.cloud.tencent.com/document/product/582)
+- Oceanus
+- BM
   - Cloud Physical Machine (CPM)
   - BM NAT Gateway
   - BM Elastic Public IP
@@ -61,7 +61,7 @@ We will gradually provide seconds-level monitoring for certain products. Tencent
 
 ## Architecture
 
-CM provides basic metric monitoring and data storage for users. You can view the metric data of your products in the console or pull metric data from APIs. If the basic metric monitoring function provided by CM cannot meet your needs, you can use [Custom cloud monitoring](https://cloud.tencent.com/doc/product/397) to report metric data and view relevant data charts and tables in the Cloud Monitor console.
+CM provides basic metric monitoring and data storage for users. You can view the metric data of your products in the console or pull metric data from APIs. If the basic metric monitoring function provided by CM cannot meet your needs, you can use [Custom cloud monitoring](https://intl.cloud.tencent.com/doc/product/397) to report metric data and view relevant data charts and tables in the Cloud Monitor console.
 
 CM stores metric data for all cloud resources. The metric data of all other cloud products (such as CVM) is stored in the repository for your retrieval. In addition, the raw data stored for cloud products is used to collect metric statistics, which are then presented in graphs in the Cloud Monitor console.
 
