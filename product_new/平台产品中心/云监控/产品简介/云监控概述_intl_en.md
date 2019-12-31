@@ -30,7 +30,7 @@ We will gradually provide seconds-level monitoring for certain products. Tencent
   - [TencentDB for MySQL](https://intl.cloud.tencent.com/doc/product/236)
   - [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240)
   - [TencentDB for Redis](https://intl.cloud.tencent.com/doc/product/239)
-  - [TencentDB for Memcached](https://intl.cloud.tencent.com/doc/product/241)
+  - TencentDB for Memcached
 - [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845)
 - [Virtual Private Cloud](https://intl.cloud.tencent.com/document/product/215)
   - [NAT Gateway](https://intl.cloud.tencent.com/zh/document/product/1015)
