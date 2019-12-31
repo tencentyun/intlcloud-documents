@@ -1,6 +1,6 @@
 To use Tencent Cloud Cloud Monitoring (CM) to view the metric data of Cloud Virtual Machine (CVM) instances and generate alarms, you need to properly install Agent on Tencent Cloud CVM instances, which will be used to collect the metric data of instances.
 
->!
+>
 >- To properly report monitoring data, you need to open TCP dport 80 on your CVM.
 >- You must log in to the CVM in order to run the command to acquire the Agent installer.
 
@@ -30,9 +30,6 @@ If the command output is shown as below, Agent-related processes have started an
 ## Installing Agent on Windows
 1. After [logging in to a Windows instance](https://intl.cloud.tencent.com/document/product/213/5435), use private network to access `http://update2.agent.tencentyun.com/update/` and download the `windows-stargate-installer.exe` installer.
 2. Run the installer to automatically install Agent.
-The following will show if the installation is successful.
-![](https://main.qcloudimg.com/raw/b86b053af5de987bdbf31b93715fa4ea.png)
-![](https://main.qcloudimg.com/raw/c7679e1161a0891b6e65b2ba45f9106f.png)
 
 ## FAQs
 - If you fail to download the Agent installer or encounter other problems, see [CVM monitoring component FAQs](https://intl.cloud.tencent.com/document/product/248/2259) for troubleshooting methods and solutions.

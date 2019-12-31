@@ -73,7 +73,7 @@ wget http://update2.agent.tencentyun.com/update/monitor_agent_admin && chmod +x 
 ### Windows - Troubleshooting common problems
 
 1. If you have installed Agent on your CVM instance, check whether barad_agent logs are rolled every minute in real time and reported successfully. 
-   >?
+   >
    >- Log path for Windows: C:\Program Files\QCloud\Monitor\Barad\logs\info.log
    >- Each log contains "nws send succ".
 2. If the logs are not rolled, check whether Agent scheduling is abnormal (this problem usually occurs only in Linux, and generally caused by changes of the system time).
