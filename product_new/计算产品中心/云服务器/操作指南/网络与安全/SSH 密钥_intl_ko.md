@@ -45,4 +45,4 @@
 
 1. [SSH 키 생성](#creatSSH)
 2. [SSH 키를 클라우드 서버에 바인딩](#bindingSSH)
-3. [SSH를 Linux 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32501)
+3. [SSH를 Linux 인스턴스에 로그인](https://cloud.tencent.com/document/product/213/35700)
