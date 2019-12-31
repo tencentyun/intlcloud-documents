@@ -37,7 +37,7 @@ Using Cloud Virtual Machine (CVM) as an example:
 
 So far, you have completed the processes of creating a monitoring view, viewing the monitoring view, detecting an exception, and locating the exception. The chart and the sorting list allow you to intuitively view the running status of all resources, locate the specific abnormal object, and analyze the trend of an exception. This provides an effective solution to solve inefficiency in large-scale resource monitoring and difficulty in detecting exceptions.
 
->!Currently, a maximum of 12 CVM instances can be added to each chart on the dashboard. If this does not meet your needs, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to raise the limit.
+> Currently, a maximum of 12 CVM instances can be added to each chart on the dashboard. If this does not meet your needs, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to raise the limit.
 
 #### Creating a details monitoring view for large-scale resources
 
@@ -53,7 +53,7 @@ Aggregation view: The curves of all instances are computed and aggregated into o
  * If some curves deviate from the rest, the performance data of the corresponding instances is abnormal.
 3. **Locate a specific abnormal object.**
    You can also use a details view in conjunction with a chart and a sorted list to locate a specific abnormal object. The overall process is similar to that for an aggregation view. For more information, see the sixth item for aggregation views above.
->!Currently, a maximum of 12 CVM instances can be added to each chart on the dashboard. If this cannot meet your needs, you can submit a ticket to raise the limit.
+> Currently, a maximum of 12 CVM instances can be added to each chart on the dashboard. If this cannot meet your needs, you can submit a ticket to raise the limit.
 
 ### Configuring alarm policies for large-scale resources
 
