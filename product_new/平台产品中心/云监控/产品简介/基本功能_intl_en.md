@@ -5,7 +5,7 @@ After purchasing and using a Tencent Cloud product supported by Cloud Monitoring
 CM offers free monitoring of cloud resources on Tencent Cloud.
 
 - CM can automatically and accurately collect basic monitoring metrics and store monitoring metric data in real time.
-- You can customize various charts based on [Cloud product monitoring](https://intl.cloud.tencent.com/document/product/248/32819) and Dashboard to view the metric data of cloud products, and configure alarms based on [Alarm Overview](https://intl.cloud.tencent.com/document/product/248/6126). In addition, you can pull metric data through [APIs](https://intl.cloud.tencent.com/document/product/248/4469) for further application and analysis.
+- You can customize various charts based on [Cloud product monitoring](https://intl.cloud.tencent.com/document/product/248/32819) and **Dashboard** to view the metric data of cloud products, and configure alarms based on [Alarm Overview](https://intl.cloud.tencent.com/document/product/248/6126). In addition, you can pull metric data through [APIs](https://intl.cloud.tencent.com/document/product/248/4469) for further application and analysis.
 
 Most monitoring metrics of cloud services can be collected and displayed automatically, eliminating the need for manual configuration.
 You need to install and run Agent to collect monitoring data for some cloud services, such as CVM monitoring and CPM monitoring. You can choose automatic installation when purchasing resources for these cloud services.
