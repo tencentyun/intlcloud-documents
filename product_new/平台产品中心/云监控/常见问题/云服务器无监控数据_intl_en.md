@@ -41,27 +41,27 @@ If the private DNS configuration in the CVM is incorrect, Agent may fail to repo
    ```
     Other operations of the Agent management tool
 
-      i. Download the Agent management tool.
+        i. Download the Agent management tool.
        ```
        wget http://update2.agent.tencentyun.com/update/monitor_agent_admin && chmod +x monitor_agent_admin
        ```
-      ii. Install Agent.
+        ii. Install Agent.
        ```
        ./monitor_agent_admin install
         ```
-      iii. Uninstall Agent.
+        iii. Uninstall Agent.
         ```
         ./monitor_agent_admin uninstall
         ```
-       iv. Reinstall Agent.
+        iv. Reinstall Agent.
          ```
         ./monitor_agent_admin reinstall
         ```
-       v. Check and solve the problem.
+        v. Check and solve the problem.
          ```
         ./monitor_agent_admin check
         ```
-       vi. Restart Agent.
+        vi. Restart Agent.
          ```
         ./monitor_agent_admin restart
          ```
