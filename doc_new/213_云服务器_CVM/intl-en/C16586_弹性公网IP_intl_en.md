@@ -66,7 +66,7 @@ The public IP purchased along with the CVM instance is an ordinary public IP. It
  1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm).
 
  2. Click the Convert icon.
-![](https://main.qcloudimg.com/raw/7ccc4a036037b497feecb29d1725b54b.png)
+![](https://main.qcloudimg.com/raw/6b2ace9209b9777cb1c06f20bc422ed6.png)
  3. Click **Confirm Conversion**.
 ![](https://main.qcloudimg.com/raw/3d20c058c66975f847e68e42ae944d6f.png)
 
