@@ -33,14 +33,14 @@
 用户在日常巡检/接收到告警信息时，可登录云监控控制台，查看 [监控概览页](https://console.cloud.tencent.com/monitor/overview)。
 1. 查看概览页—云服务健康状态模块，了解各个地域与项目下资源异常状况
    可通过异常信息概览功能，初步浏览近期异常。
-![](https://main.qcloudimg.com/raw/24fd3a86fc19052de657fe35d580d520.png)
+![](https://main.qcloudimg.com/raw/6c2b2796c4523c28f2e481923762b9a0.png)
 2. 单击异常对象数量，跳转至云产品监控页面。
-![](https://main.qcloudimg.com/raw/8f683e5a6b52c7336997a0f3674ecc50.png)
+![](https://main.qcloudimg.com/raw/8485dd568f76e906d768361dd438eeb0.png)
 云产品监控的列表页将自动在为用户筛选出异常的具体资源对象。
 3. 单击具体对象的ID，可跳转至对象的监控详情页面，提供用户回溯历史状况，辅助异常定位的详细信息。
    - 异常时间轴，提供用户查看该异常对象当前与历史信息的功能。通过历史告警与状态变更信息，辅助用户排查当前异常。
    - 资源性能监控数据，提供用户最全面的资源性能数据。可将同一指标当前数据与历史数据进行同比与环比，或对比不同指标在同个时段的数据变化进行排障。
-![](https://main.qcloudimg.com/raw/0f29918a5be34452d17206da191eca36.png)
+![](https://main.qcloudimg.com/raw/2af63a2c548ae9eec8608f83145bfe0f.png)
 
 
 ### 通过 Dashboard 定位异常对象
@@ -48,8 +48,8 @@
 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/overview)，在左侧导航栏中，单击【Dashboard】，进入 Dashboard 管理页面。
 
 1. 当监控视图中出现异常走势，单击异常时间段，曲线图下方将展开对应实例的排序列表。通过排序列表，可定位产生异常的具体对象。
-![](https://main.qcloudimg.com/raw/742762e9377931bc9e7cb0492648426b.png)
+
 2. 单击排序列表中的对象名称，可跳转至对象的监控详情页面，提供用户回溯历史状况，辅助异常定位的详细信息。
    - 异常时间轴，提供用户查看该异常对象当前与历史信息的功能。通过历史告警与状态变更信息，辅助用户排查当前异常。
    - 资源性能监控数据，提供用户最全面的资源性能数据。可将同一指标当前数据与历史数据进行同比与环比，或对比不同指标在同个时段的数据变化进行排障。
-![](https://main.qcloudimg.com/raw/0f29918a5be34452d17206da191eca36.png)
+![](https://main.qcloudimg.com/raw/ae7b2d1aacdf184d14d476eec8d0dd32.png)

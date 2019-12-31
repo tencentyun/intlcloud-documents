@@ -32,7 +32,7 @@
  - 策略类型：选择监控的服务，如云服务器。
  - 使用预置发条件：云监控内置对应监控项的触发条件，勾选则开启。
  - 触发条件：分为指标告警和事件告警。在其下方单击添加，可以设置多个告警项。
-![](https://main.qcloudimg.com/raw/9282a92a9440514dbc4f6609a69e848d.png)
+![](https://main.qcloudimg.com/raw/dcbe887cb166cdf0747674ca6fd4fd02.png)
 4. 单击【保存】，即可创建触发条件模板。
 
 ### 编辑触发条件模板
@@ -41,9 +41,9 @@
 2. 在左侧导航栏中，单击【触发条件模板】，进入触发条件列表页面。
 3. 单击需要编辑的模板名称，进入模板详情页。
 4. 单击【编辑】，可修改告警触发条件。
-   ![](https://main.qcloudimg.com/raw/e36f133304ca0062f95137cb3bd3c8a6.png)
+   ![](https://main.qcloudimg.com/raw/00bf46e12a1b3fa366d63a87bcaa5603.png)
 5. 根据需求，修改条件。
-   ![](https://main.qcloudimg.com/raw/cb616a9c452abb8fa440338d6a0d980e.png)
+   ![](https://main.qcloudimg.com/raw/f48edbd819eeeb759f539e5be9fef137.png)
 
 > ?当触发条件模版已经关联告警策略时，编辑触发条件模板后，会应用到所有已关联的告警策略组上
 
@@ -52,7 +52,7 @@
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/)。
 2. 在左侧导航栏中，单击【触发条件模板】，进入触发条件列表页面。
 3. 找到您需要修改的模板，在其右侧，单击【删除】。
-   ![](https://main.qcloudimg.com/raw/56bc0d60357f3185ce93d949694532eb.png)
+   ![](https://main.qcloudimg.com/raw/8048c785abefa488c98bf672948fea12.png)
 4. 在弹出的对话框中，单击【确定删除】，即可删除该触发条件模板。
 
 > ?当触发条件告警模版已经关联告警策略时，删除触发条件告警模板会导致该模板关联的告警策略失效。
@@ -62,7 +62,7 @@
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/)。
 2. 在左侧导航栏中，单击【触发条件模板】，进入触发条件列表页面。
 3. 找到您需要复制的模板，在其右侧，单击【复制】。
-   ![](https://main.qcloudimg.com/raw/6638d17b77829c02873a865d5644e70a.png)
+   ![](https://main.qcloudimg.com/raw/2c2eee29f51f3c91212fa81a6195a552.png)
 4. 在弹出的对话框中，单击【确定复制】，即可复制该触发条件模板。
 
 > ?复制触发告警模板仅复制模板的触发条件规则，若复制的条件告警模版关联了告警策略，则不会复制其关联关系

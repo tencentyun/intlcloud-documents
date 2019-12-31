@@ -15,7 +15,7 @@ Each product event record consists of the following attributes.
 | Project (if applicable) | The project to which a resource belongs. |
 | Additional Information (if applicable) | Supplementary information about an event, including zero to multiple extra attributes based on actual scenarios. |
 
->!A recoverable exception event is associated with triggering and restoration event records. To better locate and understand resource status via the console, the two associated event records are displayed together and the status of the exception event of the specific resource is updated according to the `status` attribute. The triggering and restoration event records differ by their start times and update times.
+> A recoverable exception event is associated with triggering and restoration event records. To better locate and understand resource status via the console, the two associated event records are displayed together and the status of the exception event of the specific resource is updated according to the `status` attribute. The triggering and restoration event records differ by their start times and update times.
 
 
 ## Features
@@ -80,7 +80,7 @@ This procedure is the same as configuring an existing new alarm policy. Select t
 
 
 ## Supported Products
-The following products are currently supported, and other products will be available soon. Go to the event list page to [view specific event information](https://cloud.tencent.com/document/product/248/14363).
+The following products are currently supported, and other products will be available soon. Go to the event list page to [view specific event information](https://intl.cloud.tencent.com/document/product/248/32823).
 - Cloud Virtual Machine (CVM)
 - Cloud Load Balancer (CLB)
 - VPN Gateway

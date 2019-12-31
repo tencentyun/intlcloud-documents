@@ -37,20 +37,19 @@ Currently, additional quotas are not available for custom message alarms or cust
 | ≥ 500 messages and < 1,000 messages  | 0.050 |
 | ≥ 1,000 messages | 0.045 |
 
->?
+>
 > - Deduction rule: When sending alarm messages, the system uses the free quota first, and then the additional quota if free quota is used up.
-> Quota validity: An alarm quota is permanently valid. You can use a purchased quota at any time.
+> - Quota validity: An alarm quota is permanently valid. You can use a purchased quota at any time.
 
 ### Purchase Channels
 
 Log in to [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/overview). On the **Monitoring Overview** page, you can view the SMS utilization. Click **Purchase SMS** to purchase an additional SMS quota.
-![](https://main.qcloudimg.com/raw/718b418235ab50d530240b757ee62e81.png)
 
 ## Quota counting rules
 
 1. The quotas for each alarm type are counted separately. Each developer has a certain free SMS quota for each alarm type every month. When the free SMS quota for an alarm type is used up, it does not affect the SMS message sending of other alarm types.
 2. The quantity deducted from an SMS quota is determined by the actual number of received messages. For example, if you configure 10 recipients to receive a certain alarm message (a total of 10 messages will be sent to 10 recipients when the alarm is triggered), 10 messages will be deducted from the corresponding SMS quota.
 
-> ! Assume that you are using the repeated alarm notification feature, a recipient group of 10 recipients is configured for a certain alarm, and the alarm is configured to be sent repeatedly every hour. If the alarm lasts for 24 hours, 240 messages (10 x 24) will be deducted from the SMS quota. Note that repeated alarm notification increases SMS quota consumption.
+>  Assume that you are using the repeated alarm notification feature, a recipient group of 10 recipients is configured for a certain alarm, and the alarm is configured to be sent repeatedly every hour. If the alarm lasts for 24 hours, 240 messages (10 x 24) will be deducted from the SMS quota. Note that repeated alarm notification increases SMS quota consumption.
 
 3. When sending alarm messages, the system uses your free quota first, and then the additional quota if the free quota is used up.

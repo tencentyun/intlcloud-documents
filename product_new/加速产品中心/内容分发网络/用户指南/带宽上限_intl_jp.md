@@ -6,7 +6,7 @@
 2. 【アドバンスト構成】タブをクリックすると、**帯域幅上限構成**モジュールが表示されます。デフォルトでは、帯域幅上限の構成は非アクティブ状態です。
 ![](https://mc.qcloudimg.com/static/img/0a53afbcf5f33dd59c2ec4e9cc7824c4/2.png)
 3. 「帯域幅閾値及び超過処理」が空である場合、アクティブボタンをクリックします。
-![image](https://main.qcloudimg.com/raw/eaed595777897b575c860bb0b9e4094f.png)![](https://mc.qcloudimg.com/static/img/d534483a485993d979cbab4bec715d54/3.png)
+![](https://mc.qcloudimg.com/static/img/d534483a485993d979cbab4bec715d54/3.png)
 アクティブにすると、構成ウィンドーが表示されます。デフォルトでは帯域幅閾値を**10Gbps**とすることをお勧めします。閾値に達すると、**アクセスに404を戻す**ことになります。
 ![](https://mc.qcloudimg.com/static/img/771ee9889b358b9b3cfe0a22f5db0f36/4.png)
 構成した後に、帯域幅上限はアクティブ状態を保持し、関連する構成情報が表示されます。

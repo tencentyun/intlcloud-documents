@@ -38,7 +38,7 @@ If you see a yellow exclamation mark (!) on the monitoring list page in **Cloud 
 
 ### Why is there no monitoring data after Agent is installed?
 
-Troubleshoot the problem by referring to [CVM has no monitoring data](https://cloud.tencent.com/document/product/248/17468).
+Troubleshoot the problem by referring to [CVM has no monitoring data](https://intl.cloud.tencent.com/document/product/248/32827).
 
 
 

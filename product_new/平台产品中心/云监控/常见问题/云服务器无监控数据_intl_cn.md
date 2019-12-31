@@ -3,7 +3,7 @@
 导致云服务器无监控数据的可能原因会有以下几个：未安装监控 agent、用户通过控制台或者命令行操作云服务器、云服务器高负载、云服务器内部 DNS 配置错误等，本文将教您如何排查并解决相应故障。
 
 #### 未安装监控 agent
-无监控数据可能由于云服务器未安装 [监控组件 Agent](https://cloud.tencent.com/doc/product/248/2258) 导致，具体原因可通过以下步骤排查：
+无监控数据可能由于云服务器未安装 [监控组件 Agent](https://intl.cloud.tencent.com/document/product/248/6211) 导致，具体原因可通过以下步骤排查：
 - 判断是否安装 barad_agent。
 
 未安装监控组件会导致无法对您的服务器做更细致的监控，若服务器故障则将无法正常通知，存在高危风险。有关安装监控组件的更多内容，请参考 [安装监控组件](https://intl.cloud.tencent.com/document/product/248/6211)。
@@ -39,32 +39,32 @@
    ```
    sh ./monitor_agent_admin check
    ```
-> 监控组件管理工具其他操作
->
-> 1. 下载监控组件管理工具
->    ```
->    wget http://update2.agent.tencentyun.com/update/monitor_agent_admin && chmod +x monitor_agent_admin
->    ```
-> 2. 安装监控组件
->    ```
->     ./monitor_agent_admin install
->    ```
-> 3. 卸载监控组件
->    ```
->    ./monitor_agent_admin uninstall
->    ```
-> 4. 重新安装监控组件
->    ```
->    ./monitor_agent_admin reinstall
->    ```
-> 5. 检查并修复
->    ```
->    ./monitor_agent_admin check
->    ```
-> 6. 重启
->    ```
->    ./monitor_agent_admin restart
->    ```
+     监控组件管理工具其他操作
+
+     i. 下载监控组件管理工具
+      ```
+     wget http://update2.agent.tencentyun.com/update/monitor_agent_admin && chmod +x monitor_agent_admin
+      ```
+     ii. 安装监控组件
+      ```
+     ./monitor_agent_admin install
+      ```
+     iii. 卸载监控组件
+     ```
+     ./monitor_agent_admin uninstall
+      ```
+     iv. 重新安装监控组件
+      ```
+     ./monitor_agent_admin reinstall
+     ```
+     v. 检查并修复
+     ```
+     ./monitor_agent_admin check
+     ```
+     vi. 重启
+     ```
+     ./monitor_agent_admin restart
+     ```
 
 
 #### Windows 系统常见问题排查流程
@@ -77,11 +77,13 @@ windows 系统日志路径：`C:\Program Files\QCloud\Monitor\Barad\logs\info.lo
 3. 若上报失败（nws send fail），需根据日志判断具体的问题（例如超时、无法连接到服务器、无法解析域名等） 
    上报地址可以在 etc 目录的 plugin.ini 文件中的 nws_url 看到。
 4. 若上报未出现 nws send fail。
-  1. 检查 uuid 是否被修改过
-   uuid 文件路径：
-` linux：/etc/uuid`
- `windows：c:\windows\system32\drivers\etc\uuid`
-` c:\windows\system32\drivers\etc\`目录下 uuid 格式命名的最新文件
-   2. 若 uuid 文件未变动，检测子机的时间戳
-    linux 可使用命令`/usr/sbin/ntpdate ntpupdate.tencentyun.com` 查看时间调整是否在50s以内，若时间相关较大，重启 barad_agent 后可恢复。![](https://main.qcloudimg.com/raw/2be108329ee18a199ae1d5b28a571460.png)
+
+    i. 检查 uuid 是否被修改过
+    uuid 文件路径：
+    ` linux：/etc/uuid`
+    `windows：c:\windows\system32\drivers\etc\uuid`
+   ` c:\windows\system32\drivers\etc\`目录下 uuid 格式命名的最新文件
+   
+    ii. 若 uuid 文件未变动，检测子机的时间戳
+    linux 可使用命令`/usr/sbin/ntpdate ntpupdate.tencentyun.com` 查看时间调整是否在50s以内，若时间相关较大，重启 barad_agent 后 可恢复。![](https://main.qcloudimg.com/raw/2be108329ee18a199ae1d5b28a571460.png)
 5. 若通过以上步骤仍未解决问题，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系工作人员为您处理。

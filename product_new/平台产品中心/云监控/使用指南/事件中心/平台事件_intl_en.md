@@ -12,7 +12,7 @@ Each platform event record consists of the following attributes.
 | **Status** | The status indicates the event triggering and restoration status of a problem-type platform event, the event start and end status of a change-type platform event,e or no status for an announcement-type event |
 | Region (if applicable) | The region of the underlying infrastructure and services affected by platform events |
 
->! Two consecutive event records are associated with an event that has a status. To better locate and understand the status of infrastructures and services in the console, the two associated event records are displayed together and the progress of a specific platform event is updated according to the `Status` attribute. The triggering and restoration event records differ by their start times and update times.
+> Two consecutive event records are associated with an event that has a status. To better locate and understand the status of infrastructures and services in the console, the two associated event records are displayed together and the progress of a specific platform event is updated according to the `Status` attribute. The triggering and restoration event records differ by their start times and update times.
 
 
 
