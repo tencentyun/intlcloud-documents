@@ -8,7 +8,7 @@ Cloud Monitoring (CM) provides various methods to help you identify resource exc
 
 ### Detecting exceptions through monitoring alarms
 
-Through monitoring alarms, Tencent Cloud can promptly detect an exception and automatically inform you of it. This ensures that you can detect exception information in real time across all scenarios. You can log in to [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/overview) and configure corresponding alarm policies for important resources. For more information, see [Create an alarm](https://cloud.tencent.com/document/product/248/6215).
+Through monitoring alarms, Tencent Cloud can promptly detect an exception and automatically inform you of it. This ensures that you can detect exception information in real time across all scenarios. You can log in to [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/overview) and configure corresponding alarm policies for important resources. For more information, see [Create an alarm](https://intl.cloud.tencent.com/document/product/248/6215).
 
 If you have configured important performance metrics and events as alarm rules, when an exception occurs, you and your system are immediately informed of this exception in multiple ways via the alarm channel.
 
@@ -18,11 +18,11 @@ You can also allow exception alarm information to be sent to your system by conf
 
 ### Detecting exceptions through monitoring views
 
-Through monitoring views, you can actively detect and locate exceptions based on average trends and historical data of performance metrics. By routinely inspecting monitoring views, you can discover exceptions with no configured alarms or exceptions that are hard to locate based on alarm rules. Compared to monitoring alarms, monitoring views can help you learn about the impact of exceptions on resources on a global scale. You can highlight resource exception information in various scenarios by subscribing important resources to the dashboard and properly configuring charts. For more information, see [Configure Dashboards](https://cloud.tencent.com/document/product/248/13119).
+Through monitoring views, you can actively detect and locate exceptions based on average trends and historical data of performance metrics. By routinely inspecting monitoring views, you can discover exceptions with no configured alarms or exceptions that are hard to locate based on alarm rules. Compared to monitoring alarms, monitoring views can help you learn about the impact of exceptions on resources on a global scale. You can highlight resource exception information in various scenarios by subscribing important resources to the dashboard and properly configuring charts.  <!--For more information, see [Configure Dashboards]().-->
 
 For some instances, you can subscribe to instance details views to compare the trends of instance performance data on a dashboard.
 
-For resource clusters, you can subscribe to the aggregated data of a cluster to see the overall monitoring view of the cluster on the dashboard, and compare it with that of a single instance in this cluster. For more information, see [Best practices for large-scale monitoring scenarios](https://cloud.tencent.com/document/product/248/13521).
+For resource clusters, you can subscribe to the aggregated data of a cluster to see the overall monitoring view of the cluster on the dashboard, and compare it with that of a single instance in this cluster. For more information, see [Best practices for large-scale monitoring scenarios](https://intl.cloud.tencent.com/document/product/248/32833).
 
 By using the list sorting feature, you can locate the specific resources of any exception detected through a view and determine the impact of the exception for further troubleshooting.
 
