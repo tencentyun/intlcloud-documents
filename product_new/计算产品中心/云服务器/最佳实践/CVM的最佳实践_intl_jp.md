@@ -10,8 +10,8 @@
 
 ## ストレージ
 
-- **ハードウェアストレージ：**高い信頼性を求めるデータに対して、Tencent CloudのCloud Block Storageを利用してデータの永続性を保証し、できるだけ [ローカルディスク](https://intl.cloud.tencent.com/document/product/213/5798)を選択しないでください。詳細については、 [Cloud Block Storage製品ドキュメント](https://cloud.tencent.com/document/product/362)をご参照ください。
-- **データベース：**頻繁にアクセスし、容量が不安定なデータベースに対して、[Tencent Cloudクラウドデータベース](https://cloud.tencent.com/product/tencentdb-catalog)を利用できます。
+- **ハードウェアストレージ：**高い信頼性を求めるデータに対して、Tencent CloudのCloud Block Storageを利用してデータの永続性を保証し、できるだけ [ローカルディスク](https://intl.cloud.tencent.com/document/product/213/5798)を選択しないでください。詳細については、 [Cloud Block Storage製品ドキュメント](https://intl.cloud.tencent.com/document/product/362)をご参照ください。
+- **データベース：**頻繁にアクセスし、容量が不安定なデータベースに対して、[Tencent Cloudクラウドデータベース](https://intl.cloud.tencent.com/product/tencentdb-catalog)を利用できます。
 
 ## バックアップとリカバー
 
