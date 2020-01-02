@@ -45,7 +45,7 @@ Currently, a container cluster can communicate with your IDC mainly through two 
 #### Expected Result
 
 Containers can communicate with opposite servers. See the figure below:
-![](https://main.qcloudimg.com/raw/c6e951242ab093b72cd74ad15b1a0b75.png)
+![](https://main.qcloudimg.com/raw/9513ceef143257c25823366cdc3e2b3c.png)
 Containers can communicate with VPN opposite servers.
 
 >If you want your cloud containers to communicate with your IDC over an IPsec VPN, you need to set the **SPD policy** and **routing table**.
