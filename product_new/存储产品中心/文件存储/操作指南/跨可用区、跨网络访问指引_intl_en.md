@@ -8,7 +8,7 @@ Take Shanghai as an example. You have a CVM in Shanghai Zone 1 and you need to u
 If the CVM resides in the "subnet of Shanghai Zone 1" in a VPC, you can log in to the [VPC console](https://console.cloud.tencent.com/vpc) to find the VPC and create a subnet of "Shanghai zone 2" for it.
 
 ![](https://main.qcloudimg.com/raw/a849aa72a6419206d43ab084a3e72f3d.png)
-![](https://main.qcloudimg.com/raw/13d6a643a5a47d041ecfb5c01e24257f.png)
+![](https://main.qcloudimg.com/raw/a5f3cdc0ff39e1a483c263a2b329d0a6.png)
 ![](https://main.qcloudimg.com/raw/eab7adc8dc279c2baca89b9baec3a7fd.png)
 
 After creating the subnet successfully, go back to the CFS console, and select this VPC and the subnet you just created to create resources in Shanghai Zone 2. The CFS file system can be directly mounted to the CVM in the subnet of Shanghai Zone 1 in this VPC. [View the file system mounting help documentation](https://intl.cloud.tencent.com/document/product/582/11523).
