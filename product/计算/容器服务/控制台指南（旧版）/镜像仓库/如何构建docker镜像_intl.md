@@ -84,7 +84,7 @@ When building an image using Dockerfile, follow these suggestions:
 1. Keep the image simple and avoid installing redundant software packages.
 2. Choose official Docker image as the base tag, to reduce image size.
 3. The commands in the first few lines of Dockerfile should be fixed. Avoid modifying these commands frequently to make efficient use of cache.
-4. Multiple RUN commands are connected using "\" for better understanding and easy maintenance.
+4. Multiple RUN commands are connected using " for better understanding and easy maintenance.
 5. Build images using the "-t" flag, to help manage newly created images.
 6. Do not map public ports in Dockerfile.
 7. Run the image locally before pushing, to ensure the image is built without errors.
