@@ -22,7 +22,7 @@ This document guides you through the process of setting a node Label.
 
 ### Using kubectl to Set a Node Label
 
-1. Install kubectl and connect to a cluster.<!-- For detailed operations, see [Connecting a Cluster via kubectl]().-->
+1. Install kubectl and connect to a cluster. For detailed operations, see [Connecting a Cluster via kubectl](https://intl.cloud.tencent.com/document/product/457/31086).
 2. Run the following command to set a node Label.
    ```shell
    kubectl label nodes <node-name> <label-key>=<label-value>
