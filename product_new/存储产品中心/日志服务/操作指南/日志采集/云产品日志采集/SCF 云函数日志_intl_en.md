@@ -20,7 +20,7 @@ When Serverless Cloud Function (SCF) is used for function computing, a high numb
    ![](https://main.qcloudimg.com/raw/4a21ab6302808048c8a59b0aa20e1f71.png)
 6. In the upper-right corner, click **Edit**, enable **Index Status** and **Full-Text Index**, then click **Save**.
    ![](https://main.qcloudimg.com/raw/b74e2909c6b147961aed8ab9ba4381bc.png)
-   > ?For more operations, such as real-time log search, log shipping and consumption, log in to the [CLS Console](https://console.cloud.tencent.com/cls). For more features, see the [CLS Overview](https://intl.cloud.tencent.com/document/product/614) document.
+   > For more operations, such as real-time log search, log shipping and consumption, log in to the [CLS Console](https://console.cloud.tencent.com/cls). For more features, see the [CLS Overview](https://intl.cloud.tencent.com/document/product/614) document.
 
 ## Real-time search example
 
