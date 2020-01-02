@@ -24,17 +24,15 @@ This document guides you through the process of setting a node Label.
 
 1. Install kubectl and connect to a cluster.<!-- For detailed operations, see [Connecting a Cluster via kubectl](https://intl.cloud.tencent.com/document/product/457/8438).-->
 2. Run the following command to set a node Label.
-```shell
-kubectl label nodes <node-name> <label-key>=<label-value>
-```
+  ```shell
+  kubectl label nodes <node-name> <label-key>=<label-value>
+  ```
 3. Run the following command to view the node Label.
-```shell
-kubectl get nodes --show-labels
-```
-A message similar to the one below is returned:
-```
-NAME           STATUS    ROLES     AGE       VERSION         LABELS
-172.17.124.5   Ready     <none>    12d       v1.10.5-tke.3   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=QCLOUD,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=sh,failure-domain.beta.kubernetes.io/zone=200001,kubernetes.io/hostname=172.17.124.5
+  ```shell
+  kubectl get nodes --show-labels
+  ```
+  A message similar to the one below is returned:
+  ```
+  NAME           STATUS    ROLES     AGE       VERSION         LABELS
+ 172.17.124.5   Ready     <none>    12d       v1.10.5-tke.3   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-  type=QCLOUD,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=sh,failure-domain.beta.kubernetes.io/zone=200001,kubernetes.io/hostname=172.17.124.5
 172.17.124.8   Ready     <none>    12d       v1.10.5-tke.3   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=QCLOUD,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=sh,failure-domain.beta.kubernetes.io/zone=200001,kubernetes.io/hostname=172.17.124.8
-
-
