@@ -6,7 +6,7 @@ Log collection feature allows you to collect logs under the specified CVM paths 
 ## How to Configure
 
 1. Create log collection rule
-![][https://main.qcloudimg.com/raw/14a4a61458c68a2c36a0fcc0216404b0.png]
+![](https://main.qcloudimg.com/raw/14a4a61458c68a2c36a0fcc0216404b0.png)
 
 2. Specify source path and add custom Metadata (optional)
 ![][2]
