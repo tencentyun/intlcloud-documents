@@ -168,7 +168,7 @@
 | Date         | Updates|
 | ---------- | ------- |
 | 2018.12.04 | <ul><li>Fixes Privilege Escalation Vulnerability in Kubernetes</li><li>[Disables creation of Kubenretes1.7.8 containers (please submit a ticket if this is still needed)](https://console.qcloud.com/workorder)</li><li>[Merges pr71415 to resolve CVE-2018-1002105](https://github.com/kubernetes/kubernetes/pull/71415)</li><li>Kubelet disables kmem accounting to avoid kernel cgroup leakage</li></ul>  |
-| 2018.10.31 | <ul><li>[Releases new TKE Console in beta](https://cloud.tencent.com/apply/p/ozrs3db4q3n)</li><li>Supports binding specified partial nodes to the service LB </li></ul> |
+| 2018.10.31 | <ul><li>Releases new TKE Console in beta</li><li>Supports binding specified partial nodes to the service LB </li></ul> |
 | 2018.09.10 | <ul><li>Upgrades default Kubernretes version to 1.10</li><li>BM clusters support Kubernetes 1.10</li><li>BM clusters support Ubuntu 16.04   |
 | 2018.07.30 | <ul><li>TKE launches in Russia</li><li>TKE launches in India</li><li>[TKE supports visiting Master from private network](https://intl.cloud.tencent.com/document/product/457/31086#.E4.BA.8C.-.E8.8E.B7.E5.8F.96.E9.9B.86.E7.BE.A4.E8.B4.A6.E5.8F.B7.E5.AF.86.E7.A0.81.E4.BB.A5.E5.8F.8A.E8.AF.81.E4.B9.A6.E4.BF.A1.E6.81.AF)</li><li>Releases open source component tencentcloud-cloud-controller-manager<br>  </li><li>[Releases open source component kubernetes-csi-tencentcloud](https://github.com/TencentCloud/kubernetes-csi-tencentcloud)</li></ul> |
 | 2018.06.22 | <ul><li>CCS is renamed TKE</li><li>[Supports custom configuration of cluster auto scaling](https://intl.cloud.tencent.com/document/product/457/6779)</li><li>Supports importing scripts for node initialization |
