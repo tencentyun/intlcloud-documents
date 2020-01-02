@@ -21,7 +21,7 @@ If you do not need to manage image repository permissions in detail, you can use
 If you need to manage image repository permissions in detail, use [Customizing Policy Authorization](#CustomPolicyAuthorization).
 The TKE image service utilizes Cloud Access Management (CAM) to manage access permissions. You can learn more about how to use CAM here:
 
-- [User management](https://intl.cloud.tencent.com/document/product/598/17289)
+- [User management](https://intl.cloud.tencent.com/document/product/598/10599)
 - [Policy management](https://intl.cloud.tencent.com/document/product/598/10601)
 - [Authorization management](https://intl.cloud.tencent.com/document/product/598/10602)
 
