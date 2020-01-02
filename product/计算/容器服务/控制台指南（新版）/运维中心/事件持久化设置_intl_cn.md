@@ -11,7 +11,7 @@ Kubernetes Events 包括了 Kuberntes 集群的运行和各类资源的调度情
 ### 开启集群事件持久化存储
 
 1. 在左侧导航栏中，单击【[事件持久化](https://console.cloud.tencent.com/tke2/persistentEvent?rid=1)】，进入集群事件持久化存储管理页面。如下图所示：
-![事件持久化](https://main.qcloudimg.com/raw/f5a2dbcab74a0e44b4d7a489ec8425b7.png)
+![事件持久化](https://main.qcloudimg.com/raw/26a92ce9df9613e7d3853853ee30e3a6.png)
 2. 在 “状态” 为 “未开启” 的集群行中，单击【设置】。
 3. 在 “设置事件持久化” 页面，设置事件持久化。如下图所示：
 主要设置参数如下：
@@ -27,13 +27,13 @@ Kubernetes Events 包括了 Kuberntes 集群的运行和各类资源的调度情
  > - 开启事件持久化存储后，自动在您的集群中部署事件采集容器，该容器将额外占用约0.2核 CPU 和100MB内存的资源。额外占用的资源将在关闭事件持久化存储后进行释放。
  > - 若选择 “Elasticsearch” 存储端，请保证您提供的 Elasticsearch 服务与当前集群网络互通，否则事件无法正常存储。建议 TKE 集群和 Elasticsearch 服务在同一个 VPC 网络内或者 TKE 集群和 Elasticsearch 服务都具备公网出入口。
 
- ![开启事件持久化存储](https://main.qcloudimg.com/raw/f1e5596b7ad2516d3adb6198c2871ad6.png)
+ ![开启事件持久化存储](https://main.qcloudimg.com/raw/f958a9bbf4f6ae9114680b618e1d9583.png)
 4. 单击【保存】，即可开启集群事件持久化存储。
 
 ### 更新或关闭集群事件持久化存储
 
 1. 在左侧导航栏中，单击【[事件持久化](https://console.cloud.tencent.com/tke2/persistentEvent?rid=1)】，进入集群事件持久化存储管理页面。如下图所示：
-![事件持久化](https://main.qcloudimg.com/raw/d20bac46f4d726ec87b54fc9021fb7d6.png)
+![事件持久化](https://main.qcloudimg.com/raw/ff6f48ea243c0032460fd9edef6c3027.png)
 2. 在 “状态” 为 “已开启” 的集群行中，单击【更新设置】。
 3. 在 “设置事件持久化” 页面中，根据实际需求进行修改，并单击【保存】，即可完成更新或关闭集群事件持久化存储。
 
