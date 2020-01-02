@@ -1,7 +1,7 @@
 TencentDB for MongoDB provides multi-dimensional custom alarm system that sends alarms when indicator values exceed the thresholds.
 
 1. Go to **Cloud Monitor** -> **My Alarms** -> **Alarm Policy**, and click **Add**.
-![](https://main.qcloudimg.com/raw/bbdb6a60f288c3c0c64a31e5a6f53977.png)
+![](https://main.qcloudimg.com/raw/2c00a4d8c828e4df98ceb29ffb6beb3a.png)
 
 2. Configure the alarm rule and select MongoDB as the policy type.
 ![](https://main.qcloudimg.com/raw/5a2d9f43f8257421af9605d7030f71b8.png)
