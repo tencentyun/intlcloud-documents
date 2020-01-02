@@ -14,4 +14,4 @@ For more information on installation and usage, see [detailed description](https
 
 ## ingress-tke-bm
 `ingress-tke-bm` is the ingress controller for Tencent Cloud TKE BM clusters. This controller monitors ingress resources, creates BM LBs, and binds them to the corresponding services.
-For more information on installation and usage, see [detailed description](https://github.com/TencentCloud/kubernetes-csi-tencentcloud) on GitHub.
+For more information on installation and usage, see [detailed description](https://github.com/TencentCloud/ingress-tke-bm) on GitHub.
