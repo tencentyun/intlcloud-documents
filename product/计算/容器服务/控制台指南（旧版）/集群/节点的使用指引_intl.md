@@ -15,7 +15,7 @@ You need to create a cluster first. For more information on how to create a clus
 ![](https://mc.qcloudimg.com/static/img/2e5f9c77ce7f4e96daa6756cdbc2bcb6/3.jpg)
 
 ## Adding an Existing Node
-1. Log in to **TKE Console**
+1. Log in to **TKE Console**.
 2. Click **Cluster** on the left navigation bar, and click **Add Existing Node** on the right of the cluster list.
 ![](https://mc.qcloudimg.com/static/img/29b0d7186bd825925051cd6adae2bc3c/4.jpg)
 3. Select a node on the left available node list, and then the ID of this node will display on the right column.
