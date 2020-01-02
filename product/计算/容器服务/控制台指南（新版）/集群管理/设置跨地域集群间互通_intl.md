@@ -2,7 +2,7 @@
 
 
 Peering Connection is a high-bandwidth and high-quality connection service that links Tencent Cloud resources.You can achieve cross-region communication among different clusters through a peering connection.
->- This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/11741).
+>- This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 > - Please make sure that the peering connection has been successfully established and the servers can communicate with one another. If there is a problem establishing the peering connection, please check whether the **console routing table entry, CVM security group, and subnet ACL** are correctly set.
 
 ## Directions
