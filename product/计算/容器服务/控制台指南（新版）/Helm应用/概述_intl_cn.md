@@ -4,5 +4,5 @@ Helm 是管理 Kubernetes 应用程序的打包工具。更多详情请查看 [H
 
 ### Helm应用相关操作
 
-- [Helm 应用管理](https://cloud.tencent.com/document/product/457/32730)
-- [本地 Helm 客户端连接集群](https://cloud.tencent.com/document/product/457/32731)
+- [Helm 应用管理](https://intl.cloud.tencent.com/document/product/457/30683)
+- [本地 Helm 客户端连接集群](https://intl.cloud.tencent.com/document/product/457/30684)
