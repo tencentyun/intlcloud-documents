@@ -3,5 +3,5 @@ TKE has integrated Helm-related features to visually add, delete, change, and qu
 
 ### Helm Application-related Operations
 
-<!--- [Managing a Helm application](https://intl.cloud.tencent.com/document/product/457/30683)-->
+- [Helm Application Management](https://intl.cloud.tencent.com/document/product/457/30683)
 - [Connecting to a cluster using the local Helm client](https://intl.cloud.tencent.com/document/product/457/30684)
