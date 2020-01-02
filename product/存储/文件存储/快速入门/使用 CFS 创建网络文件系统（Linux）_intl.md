@@ -54,7 +54,7 @@ After the CVM is created, you will receive an internal message containing such i
 ![](https://main.qcloudimg.com/raw/b7ac1f186ac0491ac369d62952447d26.png)
 
 2. In the Tencent Cloud CFS console, click **Create** and the Create File System popup window appears. Enter relevant information and confirm, and then click **OK** to create the file system.
-![](https://main.qcloudimg.com/raw/b2c089eb76dec621eda63ef3e138efe0.png)
+![](https://main.qcloudimg.com/raw/ec07c505b21e1d934d255f8c2ddb2e4b.png)
  - Name: Name the file system to be created.
  - Region and availability zone: Choose a region closest to your customers to minimize access latency and improve download speed.
  - File protocol: NFS (suitable for Linux and Unix clients), CIFS/SMB (suitable for Windows clients).
