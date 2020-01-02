@@ -29,7 +29,7 @@ The following sample shows how API request parameters look in a TencentCloud API
 
 <pre>
 https://cvm.api.qcloud.com/v2/index.php?
-&<<a href="https://intl.cloud.tencent.com/document/api/302/7302">Common Request Parameter</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/628/18814">Common Request Parameter</a>>
 &instanceIds.0=ins-0hm4gvho
 &instanceIds.1=ins-8oby8q00
 &offset=0
