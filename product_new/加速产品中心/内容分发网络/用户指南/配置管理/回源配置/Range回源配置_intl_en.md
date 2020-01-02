@@ -5,7 +5,7 @@
 
 ## Configuration Guide
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Name Management** on the left sidebar to enter the management page. Find the domain name you want to edit and click **Manage** in the "Operation" column.
-![img](https://main.qcloudimg.com/raw/19f49578c0be8e9d9509999563860b0a.png)
+![img](https://main.qcloudimg.com/raw/550d0afcc410204314cbeb443644529a.png)
 2. Click **Origin Configuration** and you will see the **Range GETs Configuration** module. The feature is enabled by default.
  ![img](https://main.qcloudimg.com/raw/d4a9d9fb15b14f1bef7b79f5c56c45c4.png)
 
