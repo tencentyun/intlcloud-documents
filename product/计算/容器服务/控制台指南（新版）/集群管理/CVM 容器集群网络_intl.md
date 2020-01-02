@@ -12,7 +12,7 @@ Cluster network and container network are the basic attributes of a cluster. You
 
 - In-cluster containers can communicate with one another.
 - In-cluster containers can communicate with nodes.
-- In-cluster contains can directly communicate with resources such as <!--[TencentDB](https://cloud.tencent.com/product/cdb-overview)--> [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239/3205)<!--, and [Cloud Memcached]() in the same VPC-->.
+- In-cluster contains can directly communicate with resources such as TencentDB, [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239/3205) and Cloud Memcached in the same VPC.
 - [Setting intra-region cross-cluster communication](https://intl.cloud.tencent.com/document/product/457/30645).
 - [Setting cross-region cross-cluster communication](https://intl.cloud.tencent.com/document/product/457/30646).
 - [Setting communication between cluster container and IDC](https://intl.cloud.tencent.com/document/product/457/30647).
