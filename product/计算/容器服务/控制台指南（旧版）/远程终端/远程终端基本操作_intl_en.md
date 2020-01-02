@@ -20,4 +20,4 @@
 
  - Uploading: Specify the directory of the file you want to upload
  - Downloading: Enter the path of the file you want to download
-![](https://main.qcloudimg.com/raw/2885a7f460ad293cfe9693c353b9d3fe.png)
+![](https://main.qcloudimg.com/raw/f9a66e43cdcf0b6089fcfbf0b0529874.png)
