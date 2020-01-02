@@ -22,7 +22,7 @@
 
 ### Kubectl 设置节点 Label
 
-1. 安装 Kubectl，并连接集群。操作详情请参考 [通过 Kubectl 连接集群](https://cloud.tencent.com/document/product/457/8438)。
+1. 安装 Kubectl，并连接集群。操作详情请参考 [通过 Kubectl 连接集群](https://intl.cloud.tencent.com/document/product/457/31086)。
 2. 执行以下命令，设置节点 Label。
     ```shell
    kubectl label nodes <node-name> <label-key>=<label-value>
