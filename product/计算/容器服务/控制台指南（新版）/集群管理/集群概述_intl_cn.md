@@ -73,4 +73,3 @@ TKE 容器集群支持以下两种类型：
 - [集群启用 IPVS](https://cloud.tencent.com/document/product/457/32193)
 - [集群启用 GPU 调度](https://cloud.tencent.com/document/product/457/32194)
 - [CVM 容器集群网络](https://cloud.tencent.com/document/product/457/32195)
-- [黑石容器集群网络](https://cloud.tencent.com/document/product/457/32196)
