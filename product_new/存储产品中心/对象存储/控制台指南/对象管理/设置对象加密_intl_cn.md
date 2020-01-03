@@ -17,7 +17,7 @@
 ![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
 5. 下拉页面找到【服务端加密】配置项，选择对应的加密方式，目前支持以下两种加密方式：
  - SSE-COS：由 COS 托管密钥的服务端加密方式，更多关于 SSE-COS 的信息，请参见 [服务端加密概述：SSE-COS](https://intl.cloud.tencent.com/document/product/436/18145)。
- - SSE-KMS：由腾讯云密钥管理系统 KMS 托管密钥的服务端加密方式，可选择使用默认密钥或自建密钥。关于密钥信息，可参见 [创建 KMS 密钥](https://cloud.tencent.com/document/product/573/8875)， 关于 SSE-KMS 的更多信息，请参见 [服务端加密概述：SSE-KMS](https://intl.cloud.tencent.com/document/product/436/18145)。
+ - SSE-KMS：由腾讯云密钥管理系统 KMS 托管密钥的服务端加密方式，可选择使用默认密钥或自建密钥。关于密钥信息，可参见 [创建 KMS 密钥](https://intl.cloud.tencent.com/document/product/1030/31971)， 关于 SSE-KMS 的更多信息，请参见 [服务端加密概述：SSE-KMS](https://intl.cloud.tencent.com/document/product/436/18145)。
 ![](https://main.qcloudimg.com/raw/48c8b3a3d32170db7172397398c8a883.png)
 
 >
