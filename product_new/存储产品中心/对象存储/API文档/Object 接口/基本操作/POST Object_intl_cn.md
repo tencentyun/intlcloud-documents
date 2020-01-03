@@ -214,7 +214,7 @@ c. 拼接签名有效时间，格式为`StartTimestamp;EndTimestamp`，即为 Ke
 
 #### 响应头
 
-此接口除返回公共响应头部外，还返回以下响应头部，了解公共响应头部详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+此接口除返回公共响应头部外，还返回以下响应头部，了解公共响应头部详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 | 名称 | 描述 | 类型 |
 | --- | --- | --- |
