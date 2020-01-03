@@ -1,5 +1,5 @@
 ## Creating a Cluster
-1. Log in to the [Tencent Cloud TKE console](https://console.cloud.tencent.com/ccs).
+1. Log in to the **Tencent Cloud TKE console**.
 2. Click **Cluster** in the left navigation bar, and click **New** in the cluster list page.
 ![](https://main.qcloudimg.com/raw/b7bef172bccf2163ef4f52999702afc4.png)
 3. Configure the basic cluster information.

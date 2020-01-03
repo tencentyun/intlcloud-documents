@@ -40,7 +40,7 @@ Client Version: version.Info{Major:"1", Minor:"5", GitVersion:"v1.5.2", GitCommi
 ```
 
 ### Getting Cluster Account, Password and Certificate Information
-1. Log into [TKE console > Clusters](https://console.cloud.tencent.com/ccs). Click the **Cluster ID/name** of the cluster.
+1. Log into [TKE console > Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1). Click the **Cluster ID/name** of the cluster.
 2. In the cluster information page, click **Show Credential** to check user name, password and certificate information. 
 3. Copy or download the certificate file to your local storage.
 4. Get access entry.

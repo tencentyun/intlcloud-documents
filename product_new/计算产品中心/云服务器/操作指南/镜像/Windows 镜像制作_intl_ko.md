@@ -56,8 +56,6 @@ bootmenupolicy          Standard
 
 1. [제어판] > [프로그램 및 기능]을 연 다음, 검색창에 Virtio를 검색하십시오.
  - 만약 리턴 결과가 아래와 같으면 Virtio 드라이버가 설치된 것입니다.
-![image](https://main.qcloudimg.com/raw/87808940ddd5317dd8c67a699e3dc5c0.png
-)
  - 만약 Virtio 드라이버가 미설치 상태라면 수동으로 설치해야 합니다.
     - Microsoft Windows Server 2008 R2(스탠다드 에디션, 데이터센터 에디션, 엔터프라이즈 에디션), Microsoft Windows Server 2012 R2(스탠다드 에디션)의 경우, [Tencent Cloud 사용자 정의 에디션 Virtio](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe?_ga=1.44298212.1367540472.1504757536)를 다운로드하십시오
     - 기타 시스템 에디션의 경우, [커뮤니티 에디션 virtio](https://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers)를 다운로드하십시오.

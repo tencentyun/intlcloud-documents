@@ -1,5 +1,5 @@
 Cluster network and container network are the basic attributes of a cluster. You can plan the network partitioning of the cluster by setting up the cluster network and the container network.
-- **Cluster network**: It assigns IP addresses within the node network address range to the servers in the cluster. You can select a subnet of VPC as the node network of the cluster. For more information about VPC, see [VCP and Subnet](https://intl.cloud.tencent.com/document/product/215/4927).
+- **Cluster network**: It assigns IP addresses within the node network address range to the servers in the cluster. You can select a subnet of VPC as the node network of the cluster. For more information about VPC, see [Private Network and Subnet](https://intl.cloud.tencent.com/document/product/215/4927).
 - **Container network**: It assigns the IP addresses within the container network address range to the container in the cluster. You can customize three major private IP address ranges as the container network to automatically assign the CIDR range of an appropriate size to the Kubernetes services based on the maximum in-cluster service quantity you select, or automatically assign an IP address range of an appropriate size to each server in the cluster for assigning an IP address to a Pod based on the maximum Pod quantity per node you select.
 
 ### Relationship Between Cluster Network and Container Network
@@ -12,7 +12,7 @@ Cluster network and container network are the basic attributes of a cluster. You
 
 - In-cluster containers can communicate with one another.
 - In-cluster containers can communicate with nodes.
-- In-cluster contains can directly communicate with resources such as <!--[TencentDB](https://cloud.tencent.com/product/cdb-overview)--> [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239/3205)<!--, and [Cloud Memcached]( https://cloud.tencent.com/document/product/241/7489) in the same VPC-->.
+- In-cluster contains can directly communicate with resources such as TencentDB, [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239/3205) and Cloud Memcached in the same VPC.
 - [Setting intra-region cross-cluster communication](https://intl.cloud.tencent.com/document/product/457/30645).
 - [Setting cross-region cross-cluster communication](https://intl.cloud.tencent.com/document/product/457/30646).
 - [Setting communication between cluster container and IDC](https://intl.cloud.tencent.com/document/product/457/30647).

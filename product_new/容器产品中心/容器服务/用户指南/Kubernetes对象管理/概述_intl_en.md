@@ -33,7 +33,7 @@ There are dozens of other Kubernetes objects such as Namespace, HPA, and Resourc
 
 ## Resource limit
 
-TKE uses ResourceQuota/tke-default-quota to control resources for all **managed clusters**. If you need more quota items, please [submit a ticket] (https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1).
+TKE uses ResourceQuota/tke-default-quota to control resources for all **managed clusters**. If you need more quota items, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1).
 
 <table>
 	<tr>

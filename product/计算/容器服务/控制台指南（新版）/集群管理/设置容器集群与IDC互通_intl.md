@@ -1,7 +1,7 @@
 ## Operation Scenario
 
 Currently, a container cluster can communicate with your IDC mainly through two methods: **Direct Connect** and **IPsec VPN**.
->- This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/11741).
+>- This document uses a cluster that has been created and a node that has been added as an example. For more information about how to create a cluster, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 > - Please make sure that the VPC where your TKE service is located has been successfully connected with your IDC via a Direct Connect line or VPN. 
 
 ## Directions
@@ -45,7 +45,7 @@ Currently, a container cluster can communicate with your IDC mainly through two 
 #### Expected Result
 
 Containers can communicate with opposite servers. See the figure below:
-![](https://main.qcloudimg.com/raw/d0040582fd9742adef06c7c22c178a01.png)
+![](https://main.qcloudimg.com/raw/9513ceef143257c25823366cdc3e2b3c.png)
 Containers can communicate with VPN opposite servers.
 
 >If you want your cloud containers to communicate with your IDC over an IPsec VPN, you need to set the **SPD policy** and **routing table**.

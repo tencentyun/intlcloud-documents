@@ -64,7 +64,7 @@ Global SMS products are [postpaid monthly](https://intl.cloud.tencent.com/docume
 |Algeria|	DZ	|213	|0.1656 |
 |Ecuador|	EC|	593|	0.1068|
 |Estonia|	EE|	372|	0.1141 |
-|Egypt|	EG|	20|	0.0492|
+|Egypt|	EG|	20|	0.060|
 |Eritrea|	ER|	291	|0.0915|
 |Spain|	ES|	34|	0.0988|
 |Ethiopia|ET|	251|	0.0336|
@@ -95,7 +95,7 @@ Global SMS products are [postpaid monthly](https://intl.cloud.tencent.com/docume
 |Croatia|	HR	|385	|0.0801|
 |Haiti	|	HT|	509|	0.0848 |
 |Hungary	|HU	|36|	0.1197 |
-|Indonesia	|ID|	62	|0.0450 |
+|Indonesia	|ID|	62	|0.0650 |
 |Ireland	|	IE	|353|	0.0824 |
 |Israel|IL	|972	|0.0173 |
 |India	|	IN	|91|	0.0085 |
@@ -149,7 +149,7 @@ Global SMS products are [postpaid monthly](https://intl.cloud.tencent.com/docume
 |Namibia	|	NA	|264|	0.0429|
 |New Caledonia	|NC|	687	|0.2356 |
 |Niger	|NE|	227|	0.0769|
-|Nigeria	|	NG	|234	|0.0314 |
+|Nigeria	|	NG	|234	|0.065 |
 |Nicaragua|	NI|	505|	0.0726|
 |Netherlands|NL	|31	|0.1564 |
 |Norway|	NO|	47|	0.0942|
@@ -173,7 +173,7 @@ Global SMS products are [postpaid monthly](https://intl.cloud.tencent.com/docume
 | Réunion Island |	RE	|262|	0.2108|
 |Romania|	RO|	40|	0.0744 |
 |Serbia|	RS|	381	|0.0472 |
-|Russia	|	RU	|7|	0.0321 |
+|Russia	|	RU	|7|	0.045 |
 |Rwanda	|RW	|250	|0.0366 |
 |Saudi Arabia	|	SA	|966|	0.0357 |
 |Solomon Islands|SB	|677|	0.0303 |

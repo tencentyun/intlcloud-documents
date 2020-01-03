@@ -11,7 +11,7 @@
 
 1. Enter **Remote Terminal**
 2. Enter commands you want to execute and click **Enter**
-![](https://main.qcloudimg.com/raw/24dd8ee8b60ebc5f446fa9ee54f8701f.png)
+![](https://main.qcloudimg.com/raw/e019990698f5dc555950bde7052b2aeb.png)
 
 ## Uploading/Downloading File
 
@@ -20,4 +20,4 @@
 
  - Uploading: Specify the directory of the file you want to upload
  - Downloading: Enter the path of the file you want to download
-![](https://main.qcloudimg.com/raw/2885a7f460ad293cfe9693c353b9d3fe.png)
+![](https://main.qcloudimg.com/raw/37a2b9bdc9bb6b0e878c9c8f5b4bc35e.png)

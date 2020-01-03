@@ -74,4 +74,3 @@ In order to ensure the stability of your cluster and the recovery efficiency in 
 - [Enabling IPVS for a cluster](https://intl.cloud.tencent.com/document/product/457/30641)
 - [Enabling GPU scheduling for a cluster](https://intl.cloud.tencent.com/document/product/457/30642)
 - [CVM container cluster network](https://intl.cloud.tencent.com/document/product/457/30643)
-- [CPM container cluster network](https://intl.cloud.tencent.com/document/product/457/30644)

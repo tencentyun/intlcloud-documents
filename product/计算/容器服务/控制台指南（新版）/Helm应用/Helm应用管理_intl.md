@@ -11,7 +11,7 @@ You can create, delete, and modify Helm applications in the console. You can als
 > - If the Helm application management feature is not enabled, please apply for activation in [Helm application](https://console.cloud.tencent.com/tke2/helm).
 > - After the Helm application management feature is enabled, the Helm tiller-related components will be installed in the cluster.
 
- ![](https://main.qcloudimg.com/raw/1be3fceade676e04d3db457862e2c5ea.png)
+ ![](https://main.qcloudimg.com/raw/e17225f3bb2e15c41ebb8e9c7d7d06c8.png)
 
 ## Directions
 

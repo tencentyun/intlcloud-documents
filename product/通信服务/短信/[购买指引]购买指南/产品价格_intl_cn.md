@@ -2,7 +2,7 @@
 
 
 ## 国际短信价格详情
-国际短信采用[月结后付费](https://cloud.tencent.com/document/product/382/9556#3-.E4.BB.98.E6.AC.BE.E6.96.B9.E5.BC.8F)的方式。表中的价格单位为美元。
+国际短信采用[月结后付费](https://intl.cloud.tencent.com/document/product/382/18052#billing-methods)的方式。表中的价格单位为美元。
 <br />单击下载 [国际短信价格表](https://mc.qcloudimg.com/static/archive/ecbd7de36078dab5baf0a270e8a82103/archive.xlsx "腾讯云短信海外价格表")。
 
 | 国家（或地区） | 中文名	| 代号	| 国家（或地区）码 |	单价（美元） |
@@ -64,7 +64,7 @@
 |Algeria|	阿尔及利亚|	DZ	|213	|0.1656 |
 |Ecuador|	厄瓜多尔|	EC|	593|	0.1068| 
 |Estonia|	爱沙尼亚|	EE|	372|	0.1141 |
-|Egypt|	埃及|	EG|	20|	0.0492| 
+|Egypt|	埃及|	EG|	20|	0.060| 
 |Eritrea|	厄立特里亚|	ER|	291	|0.0915| 
 |Spain|	西班牙|	ES|	34|	0.0988| 
 |Ethiopia|	埃塞俄比亚	|ET|	251|	0.0336| 
@@ -95,7 +95,7 @@
 |Croatia|	克罗地亚|	HR	|385	|0.0801| 
 |Haiti	|海地|	HT|	509|	0.0848 |
 |Hungary	|匈牙利	|HU	|36|	0.1197 |
-|Indonesia	|印度尼西亚	|ID|	62	|0.0334 |
+|Indonesia	|印度尼西亚	|ID|	62	|0.065 |
 |Ireland	|爱尔兰|	IE	|353|	0.0824 |
 |Israel|	以色列	|IL	|972	|0.0173 |
 |India	|印度|	IN	|91|	0.0085 |
@@ -151,7 +151,7 @@
 |Namibia	|纳米比亚|	NA	|264|	0.0429| 
 |New Caledonia	|新喀里多尼亚	|NC|	687	|0.2356 |
 |Niger	|尼日尔	|NE|	227|	0.0769| 
-|Nigeria	|尼日利亚|	NG	|234	|0.0314 |
+|Nigeria	|尼日利亚|	NG	|234	|0.065 |
 |Nicaragua|	尼加拉瓜|	NI|	505|	0.0726| 
 |Netherlands|	荷兰	|NL	|31	|0.1564 |
 |Norway|	挪威|	NO|	47|	0.0942| 
@@ -175,7 +175,7 @@
 |Réunion Island	|留尼汪|	RE	|262|	0.2108| 
 |Romania|	罗马尼亚|	RO|	40|	0.0744 |
 |Serbia|	塞尔维亚|	RS|	381	|0.0472 |
-|Russia	|俄罗斯|	RU	|7|	0.0321 |
+|Russia	|俄罗斯|	RU	|7|	0.045 |
 |Rwanda	|卢旺达	|RW	|250	|0.0366 |
 |Saudi Arabia	|沙特阿拉伯|	SA	|966|	0.0357 |
 |Solomon Islands|	所罗门群岛	|SB	|677|	0.0303 |

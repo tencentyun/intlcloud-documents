@@ -1,4 +1,4 @@
-If you don't want to avoid exposing your company¡¯s IP while accessing the public network, you can use Tencent Cloud [NAT Gateway](https://intl.cloud.tencent.com/document/product/215/4975). This document describes how to access the public network via an NAT gateway.
+If you don't want to avoid exposing your company's IP while accessing the public network, you can use Tencent Cloud [NAT Gateway](https://intl.cloud.tencent.com/document/product/215/4975). This document describes how to access the public network via an NAT gateway.
 
 ## Public IP
 When a cluster is created, public IPs are assigned to the nodes in the cluster by default. With these public IPs, you can:

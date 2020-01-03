@@ -22,7 +22,7 @@ This tutorial describes how to configure OneLogin single sign-on for Tencent Clo
 
 1. In the [OneLogin Application Management page](https://xiaoyu.onelogin.com/apps), select the application **test** that you created.
 2. Click **More Actions**. Select **SAML Metadata**, and download the IDP cloud data documentation. This is shown in the following figure.
-![](https://main.qcloudimg.com/raw/a1c304fad4d9b7a898beceae9bf977f6.png)
+![](https://main.qcloudimg.com/raw/56eb0b91f2dcf493478f1ae0e9d9c828.png)
 3. Create the Tencent Cloud CAM identity provider and roles. For more information, see [Creating an IdP](https://intl.cloud.tencent.com/document/product/598/30391).
 
 ### Configuring OneLogin Single Sign-On

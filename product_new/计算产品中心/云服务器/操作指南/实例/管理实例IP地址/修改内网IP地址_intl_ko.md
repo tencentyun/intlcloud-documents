@@ -13,10 +13,7 @@
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인하십시오.
 2. 개인 IP의 수정을 대기하는 인스턴스의 서브 리전을 선택하고 이 인스턴스의 ID/인스턴스명을 클릭하여 인스턴스 상세 페이지에 들어가십시오.
 3. 인스턴스 상세 페이지에서 [ENI]탭을 선택하고 [주IP 수정]을 클릭하십시오. 아래 이미지를 참조하십시오.
-![](https://main.qcloudimg.com/raw/9d37e260fe95378bfd39ade90af3f82d.png)
-
 4. “주IP 수정” 창에서, 새로운 IP를 입력하고[확인]을 클릭한 뒤, 인스턴스가 재시작을 완료하여 활성화되는 것을 기다리십시오. 아래 이미지를 참조하십시오.
 > 현재 서브넷 CIDR에 속하는 개인 IP만 기입할 수 있습니다.
 >
-![](https://main.qcloudimg.com/raw/0950a31131fc33df936973c7bdf2c1c4.png)
 

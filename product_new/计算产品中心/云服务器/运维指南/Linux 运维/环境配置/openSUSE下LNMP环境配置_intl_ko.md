@@ -125,7 +125,7 @@ zypper install -y php7 php7-fpm php7-mysql
 ```
 cd /etc/php7/fpm
 cp php-fpm.conf.default php-fpm.conf
-``` 
+```
 2. 다음 커맨드를 순서대로 실행하여, `/etc/php7/fpm/php-fpm.d` 디렉터리에 이동하여 `www.conf.default` 파일을 복사하고 `www.conf` 파일로 이름을 바꾸십시오.
 ```
 cd /etc/php7/fpm/php-fpm.d

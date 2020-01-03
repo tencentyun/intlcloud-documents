@@ -22,20 +22,17 @@
 
 ### Kubectl 设置节点 Label
 
-1. 安装 Kubectl，并连接集群。操作详情请参考 [通过 Kubectl 连接集群](https://cloud.tencent.com/document/product/457/8438)。
+1. 安装 Kubectl，并连接集群。操作详情请参考 [通过 Kubectl 连接集群](https://intl.cloud.tencent.com/document/product/457/31086)。
 2. 执行以下命令，设置节点 Label。
-```shell
-kubectl label nodes <node-name> <label-key>=<label-value>
-```
+    ```shell
+   kubectl label nodes <node-name> <label-key>=<label-value>
+   ```
 3. 执行以下命令，查看节点 Label。
-```shell
-kubectl get nodes --show-labels
-```
-返回类似如下信息：
-```
-NAME           STATUS    ROLES     AGE       VERSION         LABELS
-172.17.124.5   Ready     <none>    12d       v1.10.5-tke.3   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=QCLOUD,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=sh,failure-domain.beta.kubernetes.io/zone=200001,kubernetes.io/hostname=172.17.124.5
-172.17.124.8   Ready     <none>    12d       v1.10.5-tke.3   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=QCLOUD,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=sh,failure-domain.beta.kubernetes.io/zone=200001,kubernetes.io/hostname=172.17.124.8
-```
-
-
+   ```shell
+   kubectl get nodes --show-labels
+   ```
+    返回类似如下信息：
+    ```
+    NAME           STATUS    ROLES     AGE       VERSION         LABELS
+    172.17.124.5   Ready     <none>    12d       v1.10.5-tke.3   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance- type=QCLOUD,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=sh,failure-domain.beta.kubernetes.io/zone=200001,kubernetes.io/hostname=172.17.124.5
+    172.17.124.8   Ready     <none>    12d       v1.10.5-tke.3   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=QCLOUD,beta.kubernetes.io/os=linux,failure-domain.beta.kubernetes.io/region=sh,failure-domain.beta.kubernetes.io/zone=200001,kubernetes.io/hostname=172.17.124.8

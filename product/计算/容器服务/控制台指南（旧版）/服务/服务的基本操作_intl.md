@@ -1,5 +1,5 @@
 ## Creating Service
-1. Log in to the [Tencent Cloud TKE console](https://console.cloud.tencent.com/ccs).
+1. Log in to the **Tencent Cloud TKE console**.
 2. Click **Service** in the left navigation bar, and click **New** in the service list page.
 ![](https://main.qcloudimg.com/raw/8478242ffb1a155095abb25bcda136b2.png)
 3. Configure basic service information.

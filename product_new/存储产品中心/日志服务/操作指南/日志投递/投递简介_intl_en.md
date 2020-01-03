@@ -15,4 +15,4 @@ CLS allows you to ship data in a log topic to COS to meet the requirements of ot
 | [JSON Shipping](https://intl.cloud.tencent.com/document/product/614/31583) | Logs are shipped to COS in the JSON format. |
 | [Source Format Shipping](https://intl.cloud.tencent.com/document/product/614/31584) | Logs are shipped to COS in the source format.   |
 
->!After logs are shipped to COS, storage costs are generated on the COS side. For more information about billing, see the COS [Billing Overview](https://intl.cloud.tencent.com/document/product/436/16871).
+>After logs are shipped to COS, storage costs are generated on the COS side. For more information about billing, see the COS [Billing Overview](https://intl.cloud.tencent.com/document/product/436/16871).
