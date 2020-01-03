@@ -1,7 +1,7 @@
 >- The following billing samples are based on cities in China. 
 >- The prices in the samples are for reference only. For actual prices, see [Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
->- A personal user is eligible for 50 GB of standard storage capacity per month free of charge for 6 calendar months. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
->An enterprise user is eligible for 1 TB of standard storage capacity per month free of charge for 6 calendar months. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
+>- A personal user is eligible for 50 GB of standard storage capacity per month free of charge for 6 months. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
+>An enterprise user is eligible for 1 TB of standard storage capacity per month free of charge for 6 months. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
 
 ## Sample 1: Personal User in Guangzhou Region
 
@@ -15,7 +15,7 @@ The images are expected to occupy 100 GB of standard storage capacity per month 
 
 ### Monthly Fees Calculation
 
-During the validity period of the Free Tier (i.e., 6 calendar months after the COS service is activated), the monthly fee is as follows:
+During the validity period of the Free Tier (i.e., 6 months after the COS service is activated), the monthly fee is as follows:
 
 | Item | Free Tier | Unit Price | Billable Usage | Fees (Unit Price * Billable Usage) |
 | ---------------- | -------- | ------------- | ----------- | ------------------------ |
@@ -48,7 +48,7 @@ The images are expected to occupy 100 GB of standard storage capacity per month 
 
 ### Monthly Fees Calculation
 
-During the validity period of the Free Tier (i.e., 6 calendar months after the COS service is activated), the monthly fee is as follows:
+During the validity period of the Free Tier (i.e., 6 months after the COS service is activated), the monthly fee is as follows:
 
 | Item | Free Tier | Unit Price | Billable Usage | Fees (Unit Price \* Billable Usage) |
 | ---------------- | -------- | -------------- | ----------- | ------------------------ |
@@ -80,7 +80,7 @@ The files are expected to occupy 1.5 TB of standard storage capacity per month a
 
 ### Monthly Fees Calculation
 
-During the validity period of the Free Tier (i.e., 6 calendar months after the COS service is activated), the monthly fee is as follows:
+During the validity period of the Free Tier (i.e., 6 months after the COS service is activated), the monthly fee is as follows:
 
 | Item | Free Tier | Unit Price | Billable Usage | Fees (Unit Price \* Billable Usage) |
 | ---------------- | -------- | ------------- | ------------------- | ------------------------ |
