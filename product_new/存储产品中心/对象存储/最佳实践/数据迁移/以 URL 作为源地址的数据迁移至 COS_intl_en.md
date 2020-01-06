@@ -61,7 +61,7 @@ For more information, please see [Setting Origin-Pull](https://intl.cloud.tencen
 The following steps demonstrate how to separate hot data and cold data. Hot data can be seamlessly migrated to COS for faster reads.
 
 1. Redirect the read/write requests in your business system to COS, enable the origin-pull setting in the COS Console, and configure the data origin server as the source address. The system structure is as shown below.
-![](https://main.qcloudimg.com/raw/c30ed0391380420007bf9e2d89df89eb.png)
+![](https://main.qcloudimg.com/raw/455212542dc210f556b4d55ee86c9776.jpg)
 2. After a period of time, the cold data remains in the origin server, while the hot data has been migrated to COS without any impact on your business system during migration.
 
 
