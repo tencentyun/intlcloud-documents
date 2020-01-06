@@ -43,7 +43,7 @@ You can put the needed objects in an inventory file, which can come from the inv
 </table>
  - **Inventory Bucket**: Select the bucket where the inventory is stored.
  - **Inventory File Path**: Enter the inventory file or CSV file path in the format of `directory/manifest.json` or `directory/manifest.csv`, respectively. For example, if you have an inventory stored in the `examplebucket-1250000000` root directory, the inventory path will be `manifest.json`. 
-![](https://main.qcloudimg.com/raw/21a385b9a99ffcee13f1a59dadfa51e0.png)
+![](https://main.qcloudimg.com/raw/b6f26b1c6583c1628df0303740e14edd.png)
 3. Click **Next** and the inventory ETag will be displayed, reflecting that you have selected the correct inventory objects. Then, you will enter the operation configuration page.
 	- **Job Type**: Select the type of operation you want to perform on all the objects in the inventory list.
 	- **Destination Bucket**: Select the bucket where to store the replicas of the objects in the inventory list.
@@ -51,13 +51,13 @@ You can put the needed objects in an inventory file, which can come from the inv
 	- **Server-side Encryption**: Select whether to encrypt the object replicas. Options include no encryption or SSE-COS encryption.
 	- **Access Permission**: Set access permissions to the object replicas. Options include inheriting destination bucket's permission, private read/write, and public read/private write.
 	- **Object Metadata**: Set metadata for the object copies. You can choose to copy the original metadata or replace all metadata.
-  ![](https://main.qcloudimg.com/raw/e4f416a16b57e0199965baa43f0808db.png)
+  ![](https://main.qcloudimg.com/raw/105ce204a7441db25aea4eeb5461ca96.png)
 4. Click **Next** to enter the "Other Configurations" page where you can configure the following items:
  - **Job Description (Optional)**: Description of the job; optional.
  - **Job Priority**: A job of a higher priority will be performed first. The value can be a positive integer. The greater the value, the higher the priority.
  - **Job Report**: Select whether to generate a job report.
  - **CAM Role**: You can create a CAM role or select an existing one to authorize COS.
-![](https://main.qcloudimg.com/raw/c40828253530ca7dab4c275c4b34856f.png)
+![](https://main.qcloudimg.com/raw/5553d2a9b546128193259bfc8b39076e.png)
 > !To authorize COS to batch operate, you need to create a CAM role. For more information on CAM roles, please see [Role Overview](https://intl.cloud.tencent.com/document/product/598/19420).
 5. Click **Next** to enter the information check page where you can check the batch operation job configuration items. If you need to make a change, click **Modify** or **Previous** accordingly. After confirming that everything is correct, click **OK**.
-![](https://main.qcloudimg.com/raw/d0ea5cf05facbd6a744dfc5297c63675.png)
+![](https://main.qcloudimg.com/raw/b46d4d4b6682479a2657f33f351196d7.png)
