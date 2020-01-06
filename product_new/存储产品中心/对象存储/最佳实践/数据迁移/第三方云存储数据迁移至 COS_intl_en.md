@@ -29,12 +29,12 @@ The steps are as follows:
 
 For more information, please see the following documents:
 
-- [Migrating from Alibaba Cloud OSS](https://cloud.tencent.com/document/product/659/37855)
-- [Migrating from Qiniu KODO](https://cloud.tencent.com/document/product/659/38008)
-- [Migrating from UCLOUD UFile](https://cloud.tencent.com/document/product/659/38003)
-- [Migrating from Kingsoft Cloud KS3](https://cloud.tencent.com/document/product/659/38007)
-- [Migrating from Baidu Cloud BOS](https://cloud.tencent.com/document/product/659/38006)
-- [Migrating from AWS S3](https://cloud.tencent.com/document/product/659/38799)
+- Migrating from Alibaba Cloud OSS
+- Migrating from Qiniu KODO
+- Migrating from UCLOUD UFile
+- Migrating from Kingsoft Cloud KS3
+- Migrating from Baidu Cloud BOS
+- [Migrating from AWS S3](https://intl.cloud.tencent.com/document/product/1036/32522)
 
 #### Tips
 
