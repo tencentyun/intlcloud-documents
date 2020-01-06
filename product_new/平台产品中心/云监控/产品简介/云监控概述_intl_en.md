@@ -66,4 +66,4 @@ CM provides basic metric monitoring and data storage for users. You can view the
 CM stores metric data for all cloud resources. The metric data of all other cloud products (such as CVM) is stored in the repository for your retrieval. In addition, the raw data stored for cloud products is used to collect metric statistics, which are then presented in graphs in the Cloud Monitor console.
 
 **Architecture Diagram**
-![](https://main.qcloudimg.com/raw/3295e8492d0691ca32ea5e4399c5f8df.png)
+![](https://main.qcloudimg.com/raw/d6dadcb6df11651053ce31ff9f037895.jpg)
