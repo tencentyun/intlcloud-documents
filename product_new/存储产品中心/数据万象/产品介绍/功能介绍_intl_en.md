@@ -9,11 +9,11 @@ Cloud Infinite (CI) provides the following features:
    <tr>
       <td rowspan=12>Basic image processing service</td>
       <td><a href="https://cloud.tencent.com/document/product/460/36540">Scaling</a></td>
-      <td>Scale an image proportionally, scale an image based on the target width and height, and more</td>
+      <td>Proportional scaling, scale an image based on the target width and height, and more</td>
    </tr>
    <tr>
       <td><a href="https://cloud.tencent.com/document/product/460/36541">Cropping</a></td>
-      <td>Cutting, cropping, inscribed circle cropping, and face-detection based cropping</td>
+      <td>Cut (regular cropping), crop (scaling and cropping), iradius (inscribed circle cropping), rradius (rounded corner cropping) and scrop (smart cropping)</td>
    </tr>
    <tr>
       <td><a href="https://cloud.tencent.com/document/product/460/36542">Rotation</a></td>
