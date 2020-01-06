@@ -1,12 +1,12 @@
 ## 计费定价
 
-用户可自行估算使用量，使用 [SCF 价格计算器](https://buy.cloud.tencent.com/price/scf/calculator) 计算具体的购买价格。关于 SCF 的详细计费介绍，请参见 [计费方式](https://cloud.tencent.com/document/product/583/12284) 、[产品定价](https://cloud.tencent.com/document/product/583/12281) 和 [欠费说明](https://cloud.tencent.com/document/product/583/12283)。
+关于 SCF 的详细计费介绍，请参见 [计费方式](https://intl.cloud.tencent.com/document/product/583/12284) 、[产品定价](https://intl.cloud.tencent.com/document/product/583/12281) 和 [欠费说明](https://intl.cloud.tencent.com/document/product/583/12283)。
 
-云函数 SCF 按照实际使用付费，采用后付费小时结，以**元**为单位进行结算。SCF 账单由以下三部分组成，每部分根据自身统计结果和计算方式进行费用计算，结果以**元**为单位，并保留小数点后两位。
+云函数 SCF 按照实际使用付费，采用后付费小时结，以**美元**为单位进行结算。SCF 账单由以下三部分组成，每部分根据自身统计结果和计算方式进行费用计算，结果以**美元**为单位。
 * 资源使用费用 
 * 调用次数费用
 * 外网出流量费用
->?资源使用、调用次数及外网出流量单价请参见 [产品定价](https://cloud.tencent.com/document/product/583/12281)。其中，外网出流量按GB进行计算，详情请参见 [网络带宽计费](https://buy.cloud.tencent.com/price/idc) 中的按流量计费。
+> 资源使用、调用次数及外网出流量单价请参见 [产品定价](https://intl.cloud.tencent.com/document/product/583/12281)。其中，外网出流量按GB进行计算，详情请参见 [网络带宽计费](https://intl.cloud.tencent.com/document/product/213/10579) 中的按流量计费。
 
 
 ## 资源使用费用
@@ -23,8 +23,8 @@
 例如，配置为256MB的函数，单次运行了 1760 ms，计费时长为 1760 ms，则单次运行的资源使用量为（256/1024）×（1760/1000） = 0.44 GBs。
 
 针对函数的每次运行，均会计算资源使用量，并按小时汇总求和，作为该小时的资源使用量。
->!
->- 当前云函数的资源用量，按照函数的配置内存乘以触发时的实际运行时长进行计费，相较于向上对齐100ms计费的方式，总体资源用量更低，产生的费用更低。详情可参见 [费用示例](https://cloud.tencent.com/document/product/583/12285)。
+>
+>- 当前云函数的资源用量，按照函数的配置内存乘以触发时的实际运行时长进行计费，相较于向上对齐100ms计费的方式，总体资源用量更低，产生的费用更低。详情可参见 [费用示例](https://intl.cloud.tencent.com/document/product/583/12285)。
 >- 由于云函数运行时所在的计算资源具有一定的不确定性，以及代码内的具体行为、涉及到的网络通信等影响，相同函数代码在触发时的运行时长会有轻微波动。
 
 ## 调用次数费用
