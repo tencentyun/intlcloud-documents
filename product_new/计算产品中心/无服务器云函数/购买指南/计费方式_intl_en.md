@@ -6,7 +6,7 @@ SCF is billed on an hourly basis in **Yuan**. The SCF bill consists of the follo
 * Resource usage fee 
 * Fee for number of invocations
 * Fee for public network outbound traffic
->? For unit prices of resource usage, number of innovations and public network outbound traffic, please see [Product Pricing](https://cloud.tencent.com/document/product/583/12281). Among them, public network outbound traffic is calculated in GB. For more details, please see Traffic-based Billing of [Broadband Network Billing](https://buy.cloud.tencent.com/price/idc).
+> For unit prices of resource usage, number of innovations and public network outbound traffic, please see [Product Pricing](https://cloud.tencent.com/document/product/583/12281). Among them, public network outbound traffic is calculated in GB. For more details, please see Traffic-based Billing of [Broadband Network Billing](https://buy.cloud.tencent.com/price/idc).
 
 ## Resource Usage Fee
 
