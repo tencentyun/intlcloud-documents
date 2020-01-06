@@ -2,7 +2,7 @@
 
 Cloud Monitoring (CM) provides various methods to help you identify resource exceptions, and delivers exception information to you in real time through multiple channels.
 
-![](http://mc.qcloudimg.com/static/img/3486dc34300abd096c209c69ab4a73b1/image.png)
+![](https://main.qcloudimg.com/raw/f1627024b2d2bb0f5e35321bf8e3809b.jpg)
 
 ## Locating Exceptions
 
@@ -33,7 +33,7 @@ By using the list sorting feature, you can locate the specific resources of any 
 When conducting routine inspection or when receiving an alarm message, you can log into the loud monitoring console and go to the [Monitoring Overview](https://console.cloud.tencent.com/monitor/overview) page.
 1. On the **Monitoring Overview** page, locate **Service Health Status in Last 24 Hours** to view the resource exceptions of each region and project.
    You can browse recent exceptions by using the exception information overview feature.
-![](https://main.qcloudimg.com/raw/6c2b2796c4523c28f2e481923762b9a0.png)
+![](https://main.qcloudimg.com/raw/bef2d6f00c46f99fc18c14f8026ced30.png)
 2. Click the number of exception objects to access the cloud product monitoring page.
 ![](https://main.qcloudimg.com/raw/8485dd568f76e906d768361dd438eeb0.png)
 Abnormal resource objects are automatically filtered out on the cloud product monitoring page.
