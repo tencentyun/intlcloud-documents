@@ -11,8 +11,7 @@ Authorization: Auth String
 Pic-Operations: <PicOperations> 
 ```
 
->
-- For more information on the simple upload API of COS, see [PUT Object Documentation](https://intl.cloud.tencent.com/document/product/436/7749).
+> For more information on the simple upload API of COS, see [PUT Object Documentation](https://intl.cloud.tencent.com/document/product/436/7749).
 > Authorization: Auth String (For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).)
 
 
