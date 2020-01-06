@@ -16,7 +16,7 @@
 	- **资源路径**：仅指定资源时需要填写，根据需要填写。
 	- **操作**：单击添加操作，选择所有操作，如仅需授权部分操作，也可以选择一个或多个实际需要的操作。
 	- **条件**：根据需要填写，如不需要可留空。
-	![](https://main.qcloudimg.com/raw/f7a35ecadb310f6871cc6eab37a9de9d.png)
+	![](https://main.qcloudimg.com/raw/4bcfb704ad37a793adb34aacdf6cb3f1.png)
 5. 单击【确定】，此时主账号 B 将拥有操作该存储桶的相关权限。
 6. 如需授权其他存储桶，可重复上述步骤。
 
@@ -41,10 +41,10 @@
 }
 ```
 其中，`uid/1250000000`中的1250000000为主账号 A 的 uid，`examplebucket1-1250000000`为被授权的存储桶名称。存储桶资源`examplebucket1-1250000000/*`也可以直接使用`*`，代表将所有主账号 B 有权操作的 A 名下的存储桶均授权给子账号 B0。
-![](https://main.qcloudimg.com/raw/fa7d470babcfb09bd5011599708e0d63.png)
+![](https://main.qcloudimg.com/raw/f53be7ca4360edd0547e440868506c8e.png)
 4. 单击【创建策略】，完成策略的创建。
 5. 在**策略**列表中找到刚才已创建的策略，并单击右侧的【关联用户/组】。
-![](https://main.qcloudimg.com/raw/430c7fb38b6da3fa9ddc59c14ca61d66.png)
+![](https://main.qcloudimg.com/raw/4ebafe21d09f664e49d0dfc23020229d.png)
 6. 在**关联用户/用户组**对话框中，勾选子账号 B0，单击【确定】。
-![](https://main.qcloudimg.com/raw/887b766bd8027e0fcb72607e1b34feb3.jpg)
+![](https://main.qcloudimg.com/raw/79e063a0f4f3647e305e3abd947412a0.png)
 7. 完成授权操作，即可使用子账号 B0 的密钥，测试操作 A 名下的存储桶。
