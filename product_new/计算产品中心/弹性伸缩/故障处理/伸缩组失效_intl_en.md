@@ -4,7 +4,7 @@ When you cannot create a CVM manually or through AS due to insufficient balance 
 
 ## Problem Analysis
 View the status of scaling groups in the [Scaling group list](https://console.cloud.tencent.com/autoscaling/group). If <img style="margin:-3px 0;" src="https://main.qcloudimg.com/raw/653cff66183ba681f01873603de9eda6.png"> is displayed, it indicates that the scaling activity is in **exceptional** status. At this time the scaling group is no longer available.
->?Mouse-over the icon to view the cause of the exception.
+>Mouse-over the icon to view the cause of the exception.
 >
 
 
