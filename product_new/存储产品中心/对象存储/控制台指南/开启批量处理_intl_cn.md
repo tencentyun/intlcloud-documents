@@ -43,7 +43,7 @@ COS 批量处理功能可以实现对存储桶中的对象执行大规模批量�
 </table>
  - **清单存储桶**：选择清单所在的存储桶。
  - **清单文件路径**：输入清单文件或 CSV 文件路径，格式分别为`目录/manifest.json`和`目录/manifest.csv`，例如您有一份清单保存在`examplebucket-1250000000`的根目录下，则清单路径为：`manifest.json`。 
-![](https://main.qcloudimg.com/raw/21a385b9a99ffcee13f1a59dadfa51e0.png)
+![](https://main.qcloudimg.com/raw/b6f26b1c6583c1628df0303740e14edd.png)
 3. 单击【下一步】，此时清单 Etag 会列出，该项用于验证您已选择正确的清单对象，进入操作配置页。
 	- **任务类型**：选择您希望对清单中列出的所有对象执行的操作类型。
 	- **目标存储桶**：希望将清单列表中的对象复制后存放的存储桶。
@@ -51,13 +51,13 @@ COS 批量处理功能可以实现对存储桶中的对象执行大规模批量�
 	- **服务端加密**：选择是否需要对复制后的对象进行加密，可选不加密、SSE-COS 加密。
 	- **访问权限**：对复制后的对象设置访问权限，可选继承目标存储桶权限、私有读写、公有读私有写。
 	- **对象元数据**：对复制后的对象设置元数据，可选复制原有元数据、替换所有元数据。
-  ![](https://main.qcloudimg.com/raw/e4f416a16b57e0199965baa43f0808db.png)
+  ![](https://main.qcloudimg.com/raw/105ce204a7441db25aea4eeb5461ca96.png)
 4. 单击【下一步】，进入其他配置页，填写好以下相关配置：
  - **任务描述（可选）**：针对该项任务的描述，可不填。
  - **任务优先级**：优先级高的任务会优先执行，可填非0正整数，数字越大表示优先级越高。
  - **任务报告**：可选择是否生成任务报告。
  - **CAM 角色**：您可以建立一个 CAM 角色或选择已有的 CAM 角色为 COS 授予操作权限。
-![](https://main.qcloudimg.com/raw/c40828253530ca7dab4c275c4b34856f.png)
+![](https://main.qcloudimg.com/raw/5553d2a9b546128193259bfc8b39076e.png)
 > !批量处理操作需要您通过创建 CAM 角色的方式，来授予 COS 批量处理的权限，有关 CAM 角色详情可参见 [CAM 角色概述](https://intl.cloud.tencent.com/document/product/598/19420)。
 5. 单击【下一步】，进入信息核对页，请核对您所填写的批量处理任务配置，如需修改，请单击对应的【修改】或【上一步】，最后确认无误后单击【完成】即可。
-![](https://main.qcloudimg.com/raw/d0ea5cf05facbd6a744dfc5297c63675.png)
+![](https://main.qcloudimg.com/raw/b46d4d4b6682479a2657f33f351196d7.png)
