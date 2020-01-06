@@ -10,10 +10,10 @@
  - 人工守护及频繁处理容量告警，需要多次手动变更
 
 **传统模式下的集群维护：**
-![Alt text](https://mc.qcloudimg.com/static/img/dad472d890863fea889cea359de94c28/image.jpg)
+![Alt text](https://mc.qcloudimg.com/static/img/92ae76d43c2b490f558490d328b8761a/AS-Product+Introduction%281%29.jpg)
 
 **采用AS后的效果：**
-![Alt text](https://mc.qcloudimg.com/static/img/5ca21d066ffffe9093a6796e3739325b/AS.jpg)
+![Alt text](https://mc.qcloudimg.com/static/img/953c495c4b950e98fd6e360d871bf891/AS-Product+Introduction%282%29.jpg)
 
 
 ## AS的工作方式

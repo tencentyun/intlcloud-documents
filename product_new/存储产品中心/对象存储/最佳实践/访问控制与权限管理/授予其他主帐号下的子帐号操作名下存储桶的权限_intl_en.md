@@ -16,7 +16,7 @@ There are two buckets under root account A (APPID: `1250000000`): `examplebucket
 	- **Resource Path**: It needs to be entered only for specified resources.
 	- **Operation**: Click "Add Operation" and select all operations. If you want to grant root account B permissions to only certain operations, you can also select one or more operations as needed.
 	- **Filter**: Add a filter or leave it blank as needed.
-	![](https://main.qcloudimg.com/raw/f7a35ecadb310f6871cc6eab37a9de9d.png)
+	![](https://main.qcloudimg.com/raw/4bcfb704ad37a793adb34aacdf6cb3f1.png)
 5. Click **OK** to grant root account B specified permissions to the bucket.
 6. If you need to authorize root account B to manipulate other buckets, repeat the above steps.
 
@@ -41,10 +41,10 @@ There are two buckets under root account A (APPID: `1250000000`): `examplebucket
 }
 ```
 Specifically, "1250000000" in `uid/1250000000` is the uid of root account A, and `examplebucket1-1250000000` is the bucket name to be authorized. The `examplebucket1-1250000000/*` bucket resource can be replaced with `*`, meaning that all buckets under root account A that root account B are authorized to manipulate will be authorized to sub-account B0.
-![](https://main.qcloudimg.com/raw/fa7d470babcfb09bd5011599708e0d63.png)
+![](https://main.qcloudimg.com/raw/f53be7ca4360edd0547e440868506c8e.png)
 4. Click **Create Policy**.
 5. Locate the created policy in the **policy list** and click **Associate User/User Group** on the right.
-![](https://main.qcloudimg.com/raw/430c7fb38b6da3fa9ddc59c14ca61d66.png)
+![](https://main.qcloudimg.com/raw/4ebafe21d09f664e49d0dfc23020229d.png)
 6. In the **Associate User/User Group** pop-up window, select sub-account B0 and click **OK**.
-![](https://main.qcloudimg.com/raw/887b766bd8027e0fcb72607e1b34feb3.jpg)
+![](https://main.qcloudimg.com/raw/79e063a0f4f3647e305e3abd947412a0.png)
 7. Then, the authorization is completed, and you can use the key of sub-account B0 to manipulate the bucket under root account A.

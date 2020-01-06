@@ -18,9 +18,9 @@ If you have a local IDC, COS offers the following migration methods to help you 
 </table>
 
 You can determine how to migrate data based on the data volume, IDC egress bandwidth, IDC idle server resources, acceptable completion time, and other factors. The estimated time needed for online migration is shown in the figure below. As can be seen, if data migration needs to take more than 10 days or the amount of data to be migrated exceeds 50 TB, you are recommended to use [CDM](#cdm) for offline migration; otherwise, online migration is a better choice.
-![](https://main.qcloudimg.com/raw/b07948f0626973d2d64753df39add6f4.png)
+![](https://main.qcloudimg.com/raw/68430597098c909ae1fabbb5edcced35.jpg)
 
-> !Data migration may be affected if there is a high number of small files below 1 MB or the performance of disk IO is insufficient.
+> Data migration may be affected if there is a high number of small files below 1 MB or the performance of disk IO is insufficient.
 
 
 
@@ -82,7 +82,7 @@ The steps are as follows:
 3. After receiving the device, copy your data to it as instructed in the migration device user manual.
 4. Then, submit a return application in the console and wait for Tencent Cloud to migrate your data to COS.
 
-For more information, please see [Cloud Data Migration (CDM)](https://cloud.tencent.com/document/product/623).
+For more information, please see [Cloud Data Migration (CDM)](https://intl.cloud.tencent.com/document/product/623).
 
 #### Tips
 
