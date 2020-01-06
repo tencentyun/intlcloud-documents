@@ -35,7 +35,7 @@ The steps are as follows:
 3. Create a migration task and configure task information.
 4. Start the task.
 
-For more information, please see [Migrating from a URL List](https://cloud.tencent.com/document/product/659/37997).
+For more information, please see [Migrating from a URL List](https://intl.cloud.tencent.com/document/product/1036/33185).
 
 
 #### Tips
@@ -61,7 +61,7 @@ For more information, please see [Setting Origin-Pull](https://intl.cloud.tencen
 The following steps demonstrate how to separate hot data and cold data. Hot data can be seamlessly migrated to COS for faster reads.
 
 1. Redirect the read/write requests in your business system to COS, enable the origin-pull setting in the COS Console, and configure the data origin server as the source address. The system structure is as shown below.
-![](https://main.qcloudimg.com/raw/c30ed0391380420007bf9e2d89df89eb.png)
+![](https://main.qcloudimg.com/raw/455212542dc210f556b4d55ee86c9776.jpg)
 2. After a period of time, the cold data remains in the origin server, while the hot data has been migrated to COS without any impact on your business system during migration.
 
 
