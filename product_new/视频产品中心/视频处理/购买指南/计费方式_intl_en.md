@@ -4,17 +4,17 @@ MPS is billed in two modes: daily billing or monthly billing. The daily billing 
 
 ## Daily Billing
  
-MPS will push and settle the bill for your resource usage generated yesterday on a daily basis. You can view the actual resource usage in the [console](https://console.cloud.tencent.com/mps). The daily billing mode is used by default. If you want to change it to monthly billing, please contact your Tencent Cloud rep.
+MPS pushes and settles the bill for your resource usage generated yesterday on a daily basis. You can view the actual resource usage in the [console](https://console.cloud.tencent.com/mps). The daily billing mode is used by default. If you want to change it to monthly billing, please contact your Tencent Cloud rep.
  
-+ Billing cycle: The bill is settled daily. Everyday at a point between 12:00 and 18:00 Beijing time, MPS will calculate, output, and settle the bill for fees incurred yesterday.
-+ Billing mode: Pay-as-you-go.
++ Billing cycle: the bill is settled daily. Everyday at a point between 12:00 and 18:00 Beijing time, MPS will calculate, output, and settle the bill for fees incurred yesterday.
++ Billing mode: pay-as-you-go.
  
 ### Billable items 
 #### General transcoding
 
-Pricing: Fees are charged based on the video length after transcoding in USD/minute.
+Pricing: fees are charged based on the video length after transcoding in USD/minute.
 
-|Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
+|Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
 |-|-|-|-|-|-|-|
 |H.264|4K (3840 * 2160p) or below|0.0421|0.0480|0.0441|0.0441|0.0480|
 |H.264|2K (2560 * 1440p) or below|0.0206|0.0355|0.0316|0.0316|0.0355|
@@ -32,8 +32,8 @@ Pricing: Fees are charged based on the video length after transcoding in USD/min
 
 #### Tencent Extreme Speed High Definition
  
-Pricing: Fees are charged based on the source video length in USD/minute.
- 
+Pricing: fees are charged based on the source video length in USD/minute.
+
 |Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
 |-|-|-|-|-|-|-|
 |H.264|4K (3840 * 2160p) or below|0.1493|0.1533|0.1467|0.1467|0.1533|
@@ -51,8 +51,8 @@ Pricing: Fees are charged based on the source video length in USD/minute.
 
 ### Billing description
 
-+ Billing rule: The transcoding service is billed daily based on the requested codec, resolution, and output video length.
-+ Billing formula: Video transcoding fees = output video length (minute) * transcoding unit price for different codec and resolution options (USD/minute)
++ Billing rule: the transcoding service is billed daily based on the requested codec, resolution, and output video length.
++ Billing formula: video transcoding fees = output video length (minute) * transcoding unit price for different codec and resolution options (USD/minute)
 + Each transcoding task is billed only once. If the output video length is less than 1 minute, it will be calculated as 1 minute.
  
 ### Billing example
@@ -62,10 +62,10 @@ Transcoding fees = 0.0355 (USD/minute) * 60 (minutes) + 0.023 (USD/minute) * 100
 
 
 #### Intelligent content recognition
-The intelligent content recognition feature of MPS uses AI technology to recognize elements in videos such as human faces, objects, texts, speeches, opening and closing credits, and frame-specific tags. It is priced in USD/minute.
+In MPS, the intelligent content recognition feature uses AI technology to recognize elements in videos such as human faces, objects, texts, speeches, opening and closing credits, and frame-specific tags. It is priced in USD/minute.
 
 The billing description is as shown below:
-- Billing mode: Pay-as-you-go.
+- Billing mode: pay-as-you-go.
 - If the source video length is less than 1 minute, it will be calculated as 1 minute.
 The billing details are as shown below:
 
@@ -74,14 +74,30 @@ The billing details are as shown below:
 |Intelligent content recognition|0.0511|0.0562|0.0572|0.0572|0.0562|
 
 
-__Billing formula__: Intelligent content recognition fees = source video length (minute) * unit price (USD/minute)
+__Billing formula__: intelligent content recognition fees = source video length (minute) * unit price (USD/minute)
+
+
+#### Intelligent content analysis
+In MPS, the intelligent content analysis feature uses AI technology and massive samples to analyze and process video contents such as intelligent tagging, categorization, cover generation, highlights generation, video abstract generation, and entry-based recognition. It is priced in USD/minute.
+The billing description is as shown below:
+- Billing mode: pay-as-you-go.
+- If the source video length is less than 1 minute, it will be calculated as 1 minute.
+The billing details are as shown below:
+
+|Billable Item|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia State)|(Singapore)|
+|-|-|-|-|-|-|
+|Intelligent content recognition|0.0511|0.0562|0.0572|0.0572|0.0562|
+
+
+__Billing formula__: intelligent content recognition fees = source video length (minute) * unit price (USD/minute)
+
 
 
 #### Video audit
-The audiovisual AI-based video audit feature of MPS intelligently audits images, speeches, and texts in videos to detect pornographic, terrorism, and politically sensitive information and outputs audit results as requested. This feature is billed based on the used service and source video length in USD/minute.
+In MPS, the audiovisual AI-based video audit feature intelligently audits images, speeches, and texts in videos to detect pornographic, terrorism, and politically sensitive information and outputs audit results as requested. This feature is billed based on the used service and source video length in USD/minute.
 
 The billing description is as shown below:
-- Billing mode: Pay-as-you-go.
+- Billing mode: pay-as-you-go.
 - If the source video length is less than 1 minute, it will be calculated as 1 minute.
 
 The billing details are as shown below:
@@ -91,7 +107,7 @@ The billing details are as shown below:
 |Video audit|By the source video length|0.016|
 
 
- __Billing formula__: Video audit fees = source video length (minute) * unit price (USD/minute)
+ __Billing formula__: video audit fees = source video length (minute) * unit price (USD/minute)
 
 
 ## Monthly Billing
@@ -99,8 +115,8 @@ The billing details are as shown below:
 On the first day in each month, MPS will push and settle the bill for your resource usage generated in the last month. You can view the actual resource usage in the [console](https://console.cloud.tencent.com/mps).
 
 
-- Billing cycle: The bill is settled monthly. On the first day in each month, MPS will calculate, output, and settle the bill for fees incurred in the last month.
-- Billing mode: Pay-as-you-go.
+- Billing cycle: the bill is settled monthly. On the first day in each month, MPS will calculate, output, and settle the bill for fees incurred in the last month.
+- Billing mode: pay-as-you-go.
 - For more information on monthly billing, please contact your Tencent Cloud rep. The prices will be subject to the contract.
 
 
