@@ -29,15 +29,15 @@ download_url?watermark/2/text/<encodedText>
 | ------------ | ------------------------------------------------------------ |
 | download_url | 文件的访问链接，具体构成为`<BucketName-APPID>.<picture region>.<domain>.com/<picture name>`，如`examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`。 |
 | /text/       | 水印内容，需要经过 URL 安全的 Base64 编码                    |
-| /font/       | 水印字体，需要经过 URL 安全的 Base64 编码，默认值 tahoma.ttf 。水印字体列表参考 [支持字体列表](https://cloud.tencent.com/document/product/460/19568) |
-| /fontsize/   | 水印文字字体大小，单位是： 磅，缺省值13                       |
+| /font/       | 水印字体，需要经过 URL 安全的 Base64 编码，默认值 tahoma.ttf 。 |
+| /fontsize/   | 水印文字字体大小，单位是： 磅，缺省值13                      |
 | /fill/       | 字体颜色，缺省为灰色，需设置为十六进制 RGB 格式（如 #FF0000），详情参考 [RGB 编码表](https://www.rapidtables.com/web/color/RGB_Color.html)，需经过 URL 安全的 Base64 编码，默认值为 #3D3D3D |
-| /dissolve/   | 文字透明度，取值1 - 100 ，默认100（完全不透明）                |
+| /dissolve/   | 文字透明度，取值1 - 100 ，默认100（完全不透明）              |
 | /gravity/    | 文字水印位置，九宫格位置（[参见九宫格方位图](#1)），默认值 SouthEast |
 | /dx/         | 水平（横轴）边距，单位为像素，缺省值为0                      |
 | /dy/         | 垂直（纵轴）边距，单位为像素，默认值为0                      |
 | /batch/      | 平铺水印功能，可将文字水印平铺至整张图片。当 batch 设置为1时，开启平铺水印功能 |
-| /degree/     | 文字水印的旋转角度设置，取值范围为0 - 360，默认0               |
+| /degree/     | 文字水印的旋转角度设置，取值范围为0 - 360，默认0             |
 
 <span id="1"></span>
 ### 九宫格方位图

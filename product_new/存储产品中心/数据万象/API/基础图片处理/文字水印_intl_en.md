@@ -29,7 +29,7 @@ download_url?watermark/2/text/<encodedText>
 | ------------ | ------------------------------------------------------------ |
 | download_url | The file access URL in the format of `<BucketName-APPID>.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`. |
 | /text/ | The content of the watermark, which must be URL-safe Base64 encoded. |
-| /font/ | The font of the watermark, which must be URL-safe Base64 encoded. The default value is tahoma.ttf. For more information on the list of watermark fonts, see the [Supported Font List](https://cloud.tencent.com/document/product/460/19568). |
+| /font/ | The font of the watermark, which must be URL-safe Base64 encoded. The default value is tahoma.ttf. |
 | /fontsize/ | The font size of the watermark text in pt. The default value is 13. |
 | /fill/ | The font color. The default value is grey. The value must be in hexadecimal RGB format, for example, #FF0000. For more information, see the [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value of this parameter must be URL-safe Base64 encoded. The default value is #3D3D3D. |
 | /dissolve/ | The text transparency value. Value range: 1-100. The default value is 100 (completely opaque). |
