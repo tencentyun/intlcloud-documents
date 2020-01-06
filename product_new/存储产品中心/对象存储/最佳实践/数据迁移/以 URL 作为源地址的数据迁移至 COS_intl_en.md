@@ -35,7 +35,7 @@ The steps are as follows:
 3. Create a migration task and configure task information.
 4. Start the task.
 
-For more information, please see [Migrating from a URL List](https://cloud.tencent.com/document/product/659/37997).
+For more information, please see [Migrating from a URL List](https://intl.cloud.tencent.com/document/product/1036/33185).
 
 
 #### Tips
