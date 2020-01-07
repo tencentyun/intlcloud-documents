@@ -1,4 +1,4 @@
-﻿## Introduction
+## Introduction
 This document describes how to configure restrictions on sub-accounts’ access to the console and how to apply for a temporary access. The sub-accounts will be subject to the restrictions when they access the console and manage the resources under the root account.
 ## Directions
 ### Configuring Login Restrictions
