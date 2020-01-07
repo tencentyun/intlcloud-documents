@@ -39,7 +39,7 @@ public abstract bool IsEnableSpatializer()
 |戻り値|意味|
 | ------- |---------|
 | true    |オンになっています    |
-| false    |オフになっています|  
+| false    |オフになっています|
 
 ## 音源の方位を更新する（向きを含む）
 この関数は、音源の方位情報を更新するために使用され、フレームごとに呼び出すと、3Dサウンドエフェクトを実現できます。
@@ -51,8 +51,6 @@ public abstract bool IsEnableSpatializer()
 | ------- |---------|
 | 0 < N < range/10  |減衰係数：1.0（ボリュームは減衰しない）です|
 | N ≥ range/10|減衰係数：range/10/N        |
-
-![](https://main.qcloudimg.com/raw/50e745c853ab0e3f9f3bbef9d9cfc401.jpg)
 
 ####  関数のプロトタイプ
 
@@ -70,7 +68,7 @@ public abstract int UpdateSelfPosition(int position[3], float axisForward[3], fl
 
 
 |パラメータ     | タイプ         |意味|
-| ------------- |-------------|-------------
+| ------------- |-------------|-------------|
 | position   |int[]||世界座標での自己座標、順序は前、右、上です|
 | axisForward   |float[]  |自己座標の前軸の単位ベクトルです|
 | axisRight    |float[]  |自己座標系の右軸の単位ベクトルです|
