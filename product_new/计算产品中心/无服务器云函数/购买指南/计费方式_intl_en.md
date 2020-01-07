@@ -1,6 +1,6 @@
 ## Billing
 
-Users can estimate the usage by themselves and calculate the specific purchase price via [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For the introduction to SCF Billing details, please see [Billing Methods](https://cloud.tencent.com/document/product/583/12284), [Product Pricing](https://cloud.tencent.com/document/product/583/12281) and [Instruction of Arrearage](https://cloud.tencent.com/document/product/583/12283). 
+Users can estimate the usage by themselves and calculate the specific purchase price via [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For the introduction to SCF Billing details, please see [Billing Modes](https://cloud.tencent.com/document/product/583/12284), [Product Pricing](https://cloud.tencent.com/document/product/583/12281) and [Payment in Arrears](https://cloud.tencent.com/document/product/583/12283). 
 
 SCF is billed on an hourly basis in **Yuan**. The SCF bill consists of the following three parts, with each calculated in a specific method based on the collected data. The calculated amount is in **Yuan**.
 * Resource usage fee 
@@ -28,7 +28,7 @@ Resources used in each run are calculated on an hourly basis.
 >- Current resource usage of SCF is billed as memory configured for the function* actual running duration. Compared with the billing method of 100ms CDN(Cloud Front), it will consume less resources and cause lower cost. Please see [Example of Fees](https://cloud.tencent.com/document/product/583/12285) for more details.
 >- Due to the uncertainty of the computing resources when the cloud function is running, and the specific behavior inside the code, as well as the impact of network communications, the running time of the same function code when triggered will change slightly.
 
-## Fee for Number of Calls
+## Fee for Number of Invocations
 
 **Fee for number of invocations = (Total number of invocations - Free invocation quota) X Invocation unit price**
 
