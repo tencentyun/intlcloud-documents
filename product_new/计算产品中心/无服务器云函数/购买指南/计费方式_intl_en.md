@@ -1,6 +1,6 @@
 ## Billing
 
-Users can estimate the usage by themselves and calculate the specific purchase price via [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For the introduction to SCF Billing details, please see [Billing Ways](https://cloud.tencent.com/document/product/583/12284), [Product Pricing](https://cloud.tencent.com/document/product/583/12281) and [Instruction of Arrearage](https://cloud.tencent.com/document/product/583/12283). 
+Users can estimate the usage by themselves and calculate the specific purchase price via [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For the introduction to SCF Billing details, please see [Billing Methods](https://cloud.tencent.com/document/product/583/12284), [Product Pricing](https://cloud.tencent.com/document/product/583/12281) and [Instruction of Arrearage](https://cloud.tencent.com/document/product/583/12283). 
 
 SCF is billed on an hourly basis in **Yuan**. The SCF bill consists of the following three parts, with each calculated in a specific method based on the collected data. The calculated amount is in **Yuan**.
 * Resource usage fee 
@@ -20,6 +20,7 @@ SCF is billed on an hourly basis in **Yuan**. The SCF bill consists of the follo
 **Resource usage = Memory configured for the function X Running duration**
 
 Memory configured for the function is calculated in GB, and charged duration is calculated in seconds (converted from milliseconds). So resource usage is calculated in **GBs** (GB-second).
+
 For example, if a function is configured with a memory of 256 MB and runs for 1760 ms (billed by 1760 ms), the resources used in this single run are (256/1024) X (1760/1000) = 0.44 GBs.
 
 Resources used in each run are calculated on an hourly basis.
