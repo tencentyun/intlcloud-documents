@@ -33,4 +33,4 @@ http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?imageMogr2/thumbnail/!
 ```
 
 The final image processing effect is as follows: 
-![](https://main.qcloudimg.com/raw/61567af609b9f9dd93fe49b22825d3d0.jpg)
+![](https://main.qcloudimg.com/raw/8c44c8e3cda5f6311ebdd7e5b33b0480.jpg)
