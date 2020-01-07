@@ -142,7 +142,7 @@ TMGAudioEffectCtrl int setVoiceType(int type)
 
 
 
-|타입파라미터     |파라미터 대표|의미|
+|타입 파라미터     |파라미터 대표|의미|
 | ------------- |-------------|------------- |
 | ITMG_VOICE_TYPE_ORIGINAL_SOUND  |0|오리지널 사운드.|
 | ITMG_VOICE_TYPE_LOLITA    |1|로리.|
