@@ -174,7 +174,7 @@ TMGAudioEffectCtrl int SetKaraokeType(int type)
 | type    |int                    |이 터널의 가청 주파수 변셩 타입을 의미합니다.|
 
 
-|타입파라미터     |파라미터代表|의미|
+|타입 파라미터     |파라미터 대표|의미|
 | ------------- |-------------|------------- |
 |ITMG_KARAOKE_TYPE_ORIGINAL |0|오리지널 사운드.|
 |ITMG_KARAOKE_TYPE_POP |1|팝.|
