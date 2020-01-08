@@ -6,21 +6,21 @@
 
 ## 1. Terms and Definitions
 
-#### 1.1  **Tencent Cloud Workload Protection Service: **means the product features (both basic edition and professional edition) provided by Cloud Workload Protection. The Service Availability of professional edition is no less than 99% while the basic edition is free to use with no guarantee of Service level. For details, please refer to the Service you purchase and the contents of the Service provided by Tencent Cloud. 
+#### 1.1  **Tencent Cloud Workload Protection Service:** means the product features (both basic edition and professional edition) provided by Cloud Workload Protection. The Service Availability of professional edition is no less than 99% while the basic edition is free to use with no guarantee of Service level. For details, please refer to the Service you purchase and the contents of the Service provided by Tencent Cloud. 
 
 #### 1.2  **Service Unavailability:** The failure or malfunction of the security function caused by the abnormality of the Cloud Workload Protection Service system (for example, the security feature cannot be used, and the product cannot be started or uninstalled).
 
-#### 1.3  **Service Downtime Calculated in Minutes**: Service Downtime Calculated in Minutes = the time when the Service Unavailability of the Service is fixed – the time when the Service Unavailability of the Service starts. Such downtime will be calculated in minutes, and when the downtime, or an unrounded portion thereof, is less than sixty (60) seconds, it will be rounded up to one (1) minute. For example, if the actual downtime is one (1) minute and one (1) second, the Service Downtime Calculated in Minutes is two (2) minutes. If the Service Unavailability of the Service is fixed within one (1) minute, which means that the actual downtime of the Service is less than one (1) minute, such downtime will not be counted towards the Service Downtime.
+#### 1.3  **Service Downtime Calculated in Minutes:** Service Downtime Calculated in Minutes = the time when the Service Unavailability of the Service is fixed – the time when the Service Unavailability of the Service starts. Such downtime will be calculated in minutes, and when the downtime, or an unrounded portion thereof, is less than sixty (60) seconds, it will be rounded up to one (1) minute. For example, if the actual downtime is one (1) minute and one (1) second, the Service Downtime Calculated in Minutes is two (2) minutes. If the Service Unavailability of the Service is fixed within one (1) minute, which means that the actual downtime of the Service is less than one (1) minute, such downtime will not be counted towards the Service Downtime.
 
 #### 1.4  **Service Month(s)**: means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
 
 ## 2. Service Availability
 
-#### 2.1  **Calculation of Service Availability **
+#### 2.1  **Calculation of Service Availability**
 
 Service Availability = ((total time of a Service Month calculated in minutes - Service Downtime Calculated in Minutes within a Service Month) / total time of a Service Month calculated in minutes) × 100%
 
-#### 2.2  **Service Availability Standard **
+#### 2.2  **Service Availability Standard**
 
 **The Service Availability of the Service provided by Tencent Cloud will be** **no less than** **99%**. You are entitled to the compensation as set forth in Section 3 below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 
@@ -28,7 +28,7 @@ Service Availability = ((total time of a Service Month calculated in minutes - S
 
  **In respect of this Service, if the Service Availability fails to meet the abovementioned standard, you will be entitled to compensations in accordance with the following terms: **
 
-#### 3.1  **Standards of Compensation **
+#### 3.1  **Standards of Compensation**
 
 (1) Compensations will be made **in the form of voucher** by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud’s official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
@@ -42,13 +42,13 @@ Service Availability = ((total time of a Service Month calculated in minutes - S
 
  
 
-#### 3.2  **Time Limit for Compensation Application **
+#### 3.2  **Time Limit for Compensation Application**
 
 (1) If the Service Availability for a Service Month fails to meet the abovementioned Service Availability standard, you may apply for compensation **through (and only through) the support ticket system under your relevant account** after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, **both parties agree that the back-end record of Tencent Cloud will prevail**.
 
 (2) **You should apply for such compensation no later than sixty (60) calendar days following the expiry of the applicable Service Month in which the Service Availability fails to meet the standard**. If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
-#### 3.3  **Application Materials for Compensation **
+#### 3.3  **Application Materials for Compensation**
 
 If you believe that the Service fails to meet the Service Availability standards specified herein, you may submit the compensation application within the period set forth in this SLA. Your compensation application shall be submitted along with at least the following documents:
 
