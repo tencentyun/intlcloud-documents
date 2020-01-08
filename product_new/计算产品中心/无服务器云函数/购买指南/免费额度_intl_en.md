@@ -1,8 +1,8 @@
- SCF users are entitled to a certain quota of free resources and invocations each month. There is no free quota for public network outbound traffic。
+ SCF users are entitled to a certain quota of free resources and invocations each month. There is no free quota for public network outbound traffic. For the information about Free quota,see the table below.
 
-The free quota in each month cannot be accumulated and will be reset at the beginning of the next month.
-
-When we charge the monthly fees for use of resources and invocations, the free quota is deducted first, and the rest is charged on a postpaid basis.
+>- The free quota for each month cannot be accumulated and will be reset at the beginning of each month.
+>
+>- When we charge the monthly fees for use of resources and invocations, the free quota is deducted first, and the rest is charged on a postpaid basis.
 
 | Resource type | Monthly free quota |
 | ---- | ------ |

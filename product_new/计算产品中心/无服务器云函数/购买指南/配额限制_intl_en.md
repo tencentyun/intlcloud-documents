@@ -20,7 +20,7 @@ The limits for the function runtime environment are as follows:
 | Item | Quota limit |
 | --- | --- |
 | Memory assigned | Minimum: 128 MB, maximum: 1536 MB, increased by 128 MB |
-| Temporary cache space, i.e., size of the /tmp directory | 512 MB |
+| Temporary cache space, i.e., size of the `/tmp` directory | 512 MB |
 | Timeout interval | Minimum: 1 second, maximum: 900 seconds |
 | Number of file descriptors | 1024 |
 | Total processes and threads | 1024 |
@@ -32,7 +32,7 @@ The limits for the function runtime environment are as follows:
 
 Currently, limits that can be increased include:
 
-* Maximum number of functions per region
+* Maximum number of functions
 * Maximum number of concurrent executions per function
 * Maximum number of triggers per function
 

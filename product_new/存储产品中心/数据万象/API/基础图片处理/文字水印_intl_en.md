@@ -59,4 +59,4 @@ http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?watermark/2/text/6IW-6
 ```
 
 The effect of adding the text watermark is as follows:
-![](https://main.qcloudimg.com/raw/e2ea173afafb7b50a2a7824b9173edf2.jpeg)
+![](https://main.qcloudimg.com/raw/7e72e46d082e36dfc5ec319e0ccd1664.jpg)
