@@ -12,7 +12,7 @@
 
 **1.3  Service Downtime Calculated in Minutes:** Service Downtime Calculated in Minutes = the time when the Service Unavailability of the Service is fixed – the time when the Service Unavailability of the Service starts. Such downtime will be calculated in minutes, and when the downtime, or an unrounded portion thereof, is less than sixty (60) seconds, it will be rounded up to one (1) minute. For example, if the actual downtime is one (1) minute and one (1) second, the Service Downtime Calculated in Minutes is two (2) minutes. If the Service Unavailability of the Service is fixed within one (1) minute, which means that the actual downtime of the Service is less than one (1) minute, such downtime will not be counted towards the Service Downtime.
 
-**1.4  **Service Month(s):** means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
+**1.4  Service Month(s):** means the calendar month(s) within the term of the Service purchased by you. For example, if you purchase the Service for a term of three months starting from March 17, there will be four (4) Service Months (the first Service Month from March 17 to March 31, the second from April 1 to April 30, the third from May 1 to May 31, and the fourth from June 1 to June 16). The availability of the Service will be calculated independently for each Service Month.
 
 ## 2. Service Availability
 
