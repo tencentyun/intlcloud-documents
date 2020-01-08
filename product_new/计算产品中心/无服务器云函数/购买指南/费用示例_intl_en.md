@@ -26,12 +26,12 @@ For forwarding the event in object storage to the downstream system, the actual 
 
 Assume that the function configured with API gateway is triggered and executed by URL 100,000 times a day. The SCF is configured with a memory of 128 MB and the average running duration of processing each request is 70 ms.
 
-**The resource usage and number of invocations per day are as follows:
+**The resource usage and number of invocations per day are as follows:**
 
 - Number of invocations per day: 100,000 invocations
 - Resource usage per day:（128 / 1024）×（70 / 1000）× 100000 = 875 GBs
 
-**The fee is calculated as follows based on 30 days of each month:
+**The fee is calculated as follows based on 30 days of each month:**
 
 - Resource usage fee per month: 875 × 30 = 26250 GBs. No fee is caused for less than 400,000 GBs. 
 - Fees for number of invocations per month: 100000 x 30 / 10000 - 100）x 0.002 = 0.3 USD
@@ -43,12 +43,12 @@ In this case, the total fee is 0.3 USD.
 Assume that the function is configured with Ckafka trigger mode and is triggered 3 times per second. The SCF is configured with a memory of 128MB. The function will process the message and put the message back to the processed message queue. For processing each message, the running duration of the function is 70 ms.
 
 
-**The resource usage and number of invocations per day are as follows:
+**The resource usage and number of invocations per day are as follows:**
 
 - Resource usage per day:（128 / 1024）×（260 / 1000）× 3 × 3600 × 24 = 8424GBs
 - Number of invocations per day: 3 × 3600 × 24 = 259200 invocations
 
-**The fee is calculated as follows based on 30 days of each month:
+**The fee is calculated as follows based on 30 days of each month:**
 
 - Resource usage fee per month: 8424 × 30 = 252720 GBs. No fee is caused for less than 400,000 GBs. 
 - Fees for number of invocations per month:（259200 × 30 / 10000 - 100）× 0.002 = 1.36 USD
@@ -59,13 +59,13 @@ Under this circumstance, the total fee is 1.36 USD.
 
 Assume that the function is invocated directly by the user using the cloud API, and there are 50 invocations per minute. The SCF is configured with a memory of 256 MB. The function generates a file of 1KB and uploads the file to an external site built by the user. In this case, the function runs for 780 ms.
 
-**The resource usage and number of invocations per day are as follows:
+**The resource usage and number of invocations per day are as follows:**
 
 - Resource usage per day:（256 / 1024）×（780 / 1000）× 50 × 60 × 24 = 14040GBs
 - Number of invocations per day: 50 × 60 × 24 = 72000 invocations
 - Traffic per day: 1 × 50 × 60 × 24 = 72000KB = 70.31MB
 
-**The fee is calculated as follows based on 30 days of each month:
+**The fee is calculated as follows based on 30 days of each month:**
 
 - Resource usage fee per month: （14040 × 30 - 400000）× 0.0000167  = 0.35 USD
 - Fees for number of invocations per month:（72000 × 30 / 10000 - 100）× 0.002 = 0.23 USD
