@@ -4,15 +4,15 @@ Current resource usage of SCF is billed as memory configured for the function mu
 
 ### Web and API Service
 
-For Web service or API request, the actual running duration of related codes is usually in the range of 30 ms to 50 ms. You can get a benefit of up to 70% by billing based on actural running duration.
+For Web service or API request, the actual running duration of related codes is usually in the range of 30 ms to 50 ms. You can get a save up to 70% by billing based on actural running duration.
 
-**Example**: A user used some API service made up of SCF and API gateway. The SCF is configured with a memory of 128 MB, and its average excution duration is 37ms. In the initial billing scheme, the charging duration of the function was 100ms, and a resource usage of 12,500 GBs would be generated with 1 million invocations per day. However, only 4625 GBs of resource usage was generated according to the billing scheme based on actual running duration, which was a reduction of 63%.
+**Example**: A user used some API service consisting of SCF and API gateway. The SCF is configured with a memory of 128 MB, and its average execution duration is 37ms. In the previous billing scheme, the charging duration of the function was 100ms and 1 million invocations would cause resouce usage of 12,500 GBs. However, billing based on actual running duration only cause resource usage of 4625 GBs, which brings a reduction of 63%.
 
 ### Message Handling
 
-For the fliter, tansformation and forwarding of the messages in message quene, the actual running duration of related codes is usually in the range of 60 ms to 80 ms. You can get a benefit of up to 40% by billing based on actural running duration.
+For the filtering, transformation, and forwarding of the messages in message quene, the actual running duration of related codes is usually in the range of 60 ms to 80 ms. You can get a save up to 40% by billing based on actural running duration.
 
-**Example**: B user triggered SCF by the message of Ckakfa and reforwarded the message which had been flitered and transformed the format to Ckafka. The SCF is configured with a memory of 256 MB, and its average excution duration is 67 ms. In the initial billing scheme, a resource usage of 125,000 GBs would be generated with 5 million invocations per day. However, only 83,750 GBs of resource usage was generated according to the billing scheme based on actual running duration, which was a reduction of 37%. 
+**Example**: B user triggered SCF by the message of Ckakfa and reforwarded the message filtered and transformed to Ckafka. The SCF is configured with a memory of 256 MB, and its average excution duration is 67 ms. In the previous billing scheme, a resource usage of 125,000 GBs would be generated with 5 million invocations per day. However, only 83,750 GBs of resource usage was generated according to the billing scheme based on actual running duration, which was a reduction of 37%. 
 
 ### Event Forwarding
 
