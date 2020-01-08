@@ -189,7 +189,7 @@ prepare to invoke a function!
 	<th>Parameter Name</th> <th>Required</th> <th>Type</th> <th>Description</th>
 	</tr>
 	<tr>
-	<td>region </td> 	<td>否</td> 	<td><code>String</code></td>
+	<td>region </td> 	<td>No</td> 	<td><code>String</code></td>
 		<td>Region information, which is the same as the region where the function invocation resides by default. The region is Guangzhou by default for local invocation.</td>
 	</tr>
 	<tr>
