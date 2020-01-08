@@ -36,7 +36,7 @@ Assume that the function configured with API gateway is triggered and executed b
 - Resource usage fee per month: 875 × 30 = 26250 GBs. No fee is caused for less than 400,000 GBs. 
 - Fees for number of invocations per month: 100000 x 30 / 10000 - 100）x 0.002 = 0.3 USD
 
-Under this circumstance, the total fee is 0.3 USD of fees for number of invocations.
+Under this circumstance, the total fee is 0.3 USD.
 
 ### Message Queue Trigger
 
@@ -53,7 +53,7 @@ Assume that the function is configured with Ckafka trigger mode and is triggered
 - Resource usage fee per month: 8424 × 30 = 252720 GBs. No fee is caused for less than 400,000 GBs. 
 - Fees for number of invocations per month:（259200 × 30 / 10000 - 100）× 0.002 = 1.36 USD
 
-Under this circumstance, the total fee is 1.36 USD of fees for number of invocations.
+Under this circumstance, the total fee is 1.36 USD.
 
 ### External File Upload
 
@@ -71,4 +71,4 @@ Assume that the function is invocated directly by the user using the cloud API, 
 - Fees for number of invocations per month:（72000 × 30 / 10000 - 100）× 0.002 = 0.23 USD
 - Fees for public network outbound traffic per month: （70.31 × 30 / 1024）× 0.12  = 0.25 USD
 
-Under this circumstance, the total fee is: resource usage fee of 0.35 USD + fees of 0.23 USD for number of invocations + fees of 0.25 USD for public network outbound traffic = 0.83 USD
+Under this circumstance, the total fee is: resource usage fee of 0.35 USD + fees of 0.23 USD for number of invocations + fees of 0.25 USD for public network outbound traffic = 0.83 USD.
