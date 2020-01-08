@@ -10,7 +10,7 @@
 
 Windowsシステムがイメージの作成に失敗した場合は、次の検査を順番に行ってください。
 1. 下記のサービスおよびTencent Cloudが提供する冒頭がWin_Agentであるすべてのサービスが実行していることを確認してください。
-</table>
+<table>
 	<tr><th>プログラム名</th><th>インストール位置</th><th>サービス名</th></tr>
 	<tr><td>QcloudService.exe</td><td>C:\Windows\ </td><td>Qcloud サービス</td></tr>
 	<tr><td>WinAgent.exe</td><td>C:\WinAgent\</td><td>WinAgent Display Name</td></tr>
