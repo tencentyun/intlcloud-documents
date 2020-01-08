@@ -47,7 +47,7 @@ You can download an installation package on [OBS official website](https://obspr
 - **XSplit Installation**
 You can download an installation package on [XSplit official website](https://www.xsplit.com/zh_cn/) to install it according to default settings.
 XSplit is not a free software. As an alternative, you can use OBS (**Free**). For game LVB, XSplit has a separate installation package. It is recommended to use BroadCaster for non-game LVB.
-![](https://mc.qcloudimg.com/static/img/18c47cb7646e189acc168e6a5e8e4714/image.png)
+![](https://main.qcloudimg.com/raw/401afb98511a69bf70806bf50d28c2ff.png)
 
 ## 2. Software parameter configuration
 ### 2.1 Set push URL
