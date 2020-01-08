@@ -97,7 +97,7 @@ Now, the operating environment of Ckafka has been created.
 2)	Configure Flume options.
 - Use Ckafka as Sink
 	a)	Write a configuration file, and focus on the combination of Flume and CKafka as Sink. Therefore, the default configuration is used for Source and Channel, which is not discussed here. The following is a simple demo (configured in the conf folder of the decompressed directory). Please note that, unless specified otherwise, use your own instance IP and topic to replace those in the configuration file:
- ![](https://main.qcloudimg.com/raw/64e96d884d3b239701fb1fa46bc27823.png)
+ ![](https://main.qcloudimg.com/raw/0e0a751a804d83a15e6bc193ca2bdce4.png)
 	b)	The source used here is tail -F flume-test, which is the new information in the file
 	c)	Launch Flume:
 ```
