@@ -18,7 +18,7 @@
 
 #### 2.1  **Calculation of Service Availability**
 
-Service Availability = ((total time of a Service Month calculated in minutes - Service Downtime Calculated in Minutes within a Service Month) / total time of a Service Month calculated in minutes) × 100%
+Service Availability = ((total time of a Service Month calculated in minutes - Service Downtime Calculated in Minutes within a Service Month) / total time of a Service Month calculated in minutes) × 100%.
 
 #### 2.2  **Service Availability Standard**
 
