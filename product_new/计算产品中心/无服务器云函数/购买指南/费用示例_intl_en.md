@@ -34,7 +34,7 @@ Assume that the function configured with API gateway is triggered and excuted by
 **The fee is calculated as follows based on 30 days of each month:
 
 - Resourece usage fee per month: 875 × 30 = 26250 GBs. No fee is generated for less than 400,000 GBs. 
-- Fees for number of invocations per month:（100000 × 30 / 10000 - 100）× 0.0015 = 0.3 USD
+- Fees for number of invocations per month: 100000 x 30 / 10000 - 100）x 0.002 = 0.4 USD
 
 Under this circumstance, the total fee is 0.3 USD of fees for number of invocations.
 
