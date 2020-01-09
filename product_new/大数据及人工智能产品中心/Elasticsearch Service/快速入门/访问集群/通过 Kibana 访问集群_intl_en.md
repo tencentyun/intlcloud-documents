@@ -95,7 +95,7 @@ Before you can use Kibana, you need to configure at least one index that can be 
 View the fields for the index:
 ![View index fields](https://main.qcloudimg.com/raw/0158dab743148ead2f1abcfaf7ce507b.png)
 Click **Discover** to view the documents added under the index:
-![Access details](https://main.qcloudimg.com/raw/d0f8b710d44d411f8938fd56c4f08c57.png)
+![Access details](https://main.qcloudimg.com/raw/91e42b3495a32c1ecb8f39665a3e0aba.png)
 
 ## 3. Visualizing Query and Analysis
 
