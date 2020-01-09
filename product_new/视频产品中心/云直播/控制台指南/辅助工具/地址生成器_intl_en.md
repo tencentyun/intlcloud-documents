@@ -14,5 +14,5 @@ There should be at least one available domain name in [Manage Domain](https://in
 ![](https://main.qcloudimg.com/raw/d91fe5d373cfc03df2c87562f3984858.png)
 
 >- The generated push address consists of the following four parts:
-![](https://main.qcloudimg.com/raw/7a276cbf9250e3c7f7d94a620172e795.png)
+![](https://main.qcloudimg.com/raw/9094e537a4ae7cecc7feb9c88fb83a55.png)
 >- The generated playback address supports RTMP, FLV, and HLS protocols. 

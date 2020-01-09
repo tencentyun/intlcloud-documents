@@ -97,7 +97,7 @@ Now, the operating environment of Ckafka has been created.
 2)	Configure Flume options.
 - Use Ckafka as Sink
 	a)	Write a configuration file, and focus on the combination of Flume and CKafka as Sink. Therefore, the default configuration is used for Source and Channel, which is not discussed here. The following is a simple demo (configured in the conf folder of the decompressed directory). Please note that, unless specified otherwise, use your own instance IP and topic to replace those in the configuration file:
- ![](https://main.qcloudimg.com/raw/64e96d884d3b239701fb1fa46bc27823.png)
+ ![](https://main.qcloudimg.com/raw/315513928ba22c4a98de1875ffcf0d5a.png)
 	b)	The source used here is tail -F flume-test, which is the new information in the file
 	c)	Launch Flume:
 ```
@@ -110,11 +110,11 @@ e)	Launch the CKafka client for consumption:
 ./kafka-console-consumer.sh --bootstrap-server 172.16.16.12:9092 --topic flume_test --from-beginning --new-consumer
 ```
 You can see that the above message has been consumed out
- ![](https://mc.qcloudimg.com/static/img/ee394af9d8280bfef988d71ccc30f805/77.png)
+ ![](https://main.qcloudimg.com/raw/3ece59e42f68209eb1514cd8831946e3.png)
 
 - Use Ckafka as Source
 	a)	Write a configuration file, and focus on the combination of Flume and CKafka as Source. Therefore, the default configuration is used for Sink and Channel, which is not discussed here. The following is a simple demo (configured in the conf folder of the decompressed directory). Please note that, unless specified otherwise, use your own instance IP and topic to replace those in the configuration file:
- ![](https://main.qcloudimg.com/raw/181dcc70ad4096d585d2e57cdbfc6f97.png)
+ ![](https://mc.qcloudimg.com/static/img/ee394af9d8280bfef988d71ccc30f805/77.png)
 
 b)	The sink used here is logger
 c)	Launch Flume:

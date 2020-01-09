@@ -47,8 +47,7 @@ According to statistics, upstream clog at VJ end is responsible for over 80% of 
  BITRATE (= VIDEO_BITRATE + AUDIO_BITRATE) refers to the number of audio/video data bits produced by the encoder for push per second; NET_SPEED refers to the number of data bits pushed actually per second. A long duration of BITRATE == NET_SPEED means a good push quality. However, a long duration of BITRATE >= NET_SPEED indicates a bad push quality.
 - **4.1.2: CACHE_SIZE and DROP_CNT values**
 Once BITRATE >= NET_SPEED, the audio/video data produced by the encoder will build up on VJ's phone, with the severity indicated by the CACHE_SIZE value. When the CACHE_SIZE value exceeds the warning level, SDK will actively drop some audio/video data, thus triggering an increment of DROP_CNT. The figure below shows a typical upstream clog, with CACHE_SIZE remaining above the **red warning level**. This means that the upstream bandwidth doesn't meet the data transfer requirements (i.e. the upstream network is severely clogged).
-![](//mc.qcloudimg.com/static/img/319d6197da603ca15ffc6e2afd778e48/image.png)
-![](//mc.qcloudimg.com/static/img/e241222c0591e6b5ffa41738a8a35d62/image.png)
+![](https://main.qcloudimg.com/raw/ea350eb13c5bde411529b8e9914f705c.png)
  > Note:
  > The figure similar to the above can be found in [**LVB Console**](https://console.cloud.tencent.com/live/livestat) -> **Quality Monitor**.
 

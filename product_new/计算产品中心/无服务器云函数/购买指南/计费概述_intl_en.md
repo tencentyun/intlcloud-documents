@@ -9,11 +9,11 @@ Users who have opened SCF service can enjoy certain amount of free resource usag
 
 ## Billing Modes and Items
 
-SCF is billed on an hourly basis in a post-paid mode in CNY. 
+SCF is billed on an hourly basis in a post-paid mode in USD. 
 
 The SCF bill consists of the following three parts and each part is calculated in a specific method based on the collected data. The calculated amount is in CNY and rounded to 0.01：
 
-* Resource usage fee: Memory used * running time, in GBs.
+* Resource usage fee: Memory configured * running time, in GBs.
 * Fee for number of invocations: Every time the function is triggered and executed, it is counted as one invocation.
 * Fee for public network outbound traffic: The traffic generated in accessing external network resources from SCF is counted as outbound traffic in GB.
 

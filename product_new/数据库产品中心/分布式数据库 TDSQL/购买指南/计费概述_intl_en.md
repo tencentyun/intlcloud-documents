@@ -17,7 +17,7 @@ Depending on the usage duration, the prices in pay-as-you-go mode are divided in
 
 ### Billing formula
 **Total fees = instance fees + backup capacity fees + traffic fees**
-**Instance fees = shard price * number of shards * number of nodes = (shard memory * memory price + shard disk * disk price) * number of shards * number of nodes**
+**Instance fees = shard price * number of shards= (node memory * memory price + node disk * disk price) * number of nodes* number of shards**
 >The number of nodes is the sum of master and slave instances. For example, one master and one slave are 2 nodes, while one master and two slaves are 3 nodes.
 ### Billable items
 <table>
