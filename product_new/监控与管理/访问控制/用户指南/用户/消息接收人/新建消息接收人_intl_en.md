@@ -6,5 +6,5 @@ This document describes how to create a message recipient. A message recipient i
 2. On the User List page, click **Create User**.
 3. Click **Create a custom user**.
 4. On the User Type page, click **Receive messages only**.
-4. Enter a username, notes, a mobile phone number, and an email address and choose whether the user is allowed to receive messages via Wechat. The notes are optional.
+4. Enter a username, notes, a mobile phone number, and an email address. The notes are optional.
 5. Click **Done** to complete the creation.
