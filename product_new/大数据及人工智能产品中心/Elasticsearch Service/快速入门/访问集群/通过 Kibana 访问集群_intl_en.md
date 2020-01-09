@@ -52,7 +52,7 @@ PUT china
 
 #### Add a single document
 
-![Save a single piece of data](https://main.qcloudimg.com/raw/1ca53899fe58347c285665d71160289b.png)
+![Save a single piece of data](https://main.qcloudimg.com/raw/aa483266a62ae6399d4072e819c3db5f.png)
 ```
 PUT china/city/wuhan 
 {"name":"Wuhan","province":"No. 188 Yanjiang Road, Jiang'an District, Hubei Province","location":{"lat":30.5952548577,"lon":114.2999398195},"x":6384,"level":{"level":2,"range":19,"name":"new first-tier city"},"y":4231,"cityNo":7}
