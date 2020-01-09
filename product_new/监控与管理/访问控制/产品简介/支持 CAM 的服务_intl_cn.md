@@ -159,3 +159,9 @@
 | [云监控](https://intl.cloud.tencent.com/document/product/248) | 操作级 | &#10003;  | -  |  - |	- |	
 | [密钥管理服务](https://intl.cloud.tencent.com/document/product/1030/) | 资源级   | &#10003;  | -  |  -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/1030/31978) |	
 | [迁移服务平台](https://intl.cloud.tencent.com/document/product/1036/)  | -   | -  | -   |&#10003;    |	- |	
+
+## 开发者工具
+
+ | 服务                                                         | 授权粒度 | 控制台  | 根据标签进行授权 | 服务角色 |	参考文档 |
+| ------------------------------------------------------------  | ------ | -------- | ----- | ---- |	---- |
+| [腾讯云 IaC 平台](https://intl.cloud.tencent.com/document/product/1043) | 服务级 | &#10003;  | -  |  - |	- |	

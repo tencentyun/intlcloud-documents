@@ -52,7 +52,7 @@ PUT china
 
 #### Add a single document
 
-![Save a single piece of data](https://main.qcloudimg.com/raw/1ca53899fe58347c285665d71160289b.png)
+![Save a single piece of data](https://main.qcloudimg.com/raw/aa483266a62ae6399d4072e819c3db5f.png)
 ```
 PUT china/city/wuhan 
 {"name":"Wuhan","province":"No. 188 Yanjiang Road, Jiang'an District, Hubei Province","location":{"lat":30.5952548577,"lon":114.2999398195},"x":6384,"level":{"level":2,"range":19,"name":"new first-tier city"},"y":4231,"cityNo":7}
@@ -95,7 +95,7 @@ Before you can use Kibana, you need to configure at least one index that can be 
 View the fields for the index:
 ![View index fields](https://main.qcloudimg.com/raw/0158dab743148ead2f1abcfaf7ce507b.png)
 Click **Discover** to view the documents added under the index:
-![Access details](https://main.qcloudimg.com/raw/d0f8b710d44d411f8938fd56c4f08c57.png)
+![Access details](https://main.qcloudimg.com/raw/91e42b3495a32c1ecb8f39665a3e0aba.png)
 
 ## 3. Visualizing Query and Analysis
 
