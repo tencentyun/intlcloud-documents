@@ -17,7 +17,7 @@ This document describes how to create a custom sub-user and configure permission
 8. On the permissions configuration page, configure permissions for the new sub-user in one of the following ways according to your needs. After being associated with a policy, the sub-user will have the permissions described by the policy.
  - Select policies from the policy list: click **Select policies from the policy list** and select the policies you want to associate with the sub-user.
  - Use existing user policies: click **Use existing user policies** and select the user whose permissions you want to use; the new sub-user will be associated with the policies of the existing user.
- - Add the sub-user to a user group to associate it with the group permissions: this is the best way to manage user permissions by roles and functions. You can add the sub-user to an existing user group or a new user group, and the sub-user will be associated with the policies of the user group.
+ - Use group permissions: you can add the sub-user to an existing user group or a new user group, and the sub-user will be associated with the policies of the user group. This is the best way to manage user permissions by roles and functions.
 9. Click **Next** to go to the review page.
 10. On the review page, double check the information, click **Done**, and you will see a prompt that you have successfully created a user.
 11. You can obtain the sub-user information in the following ways.
