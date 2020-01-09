@@ -51,7 +51,7 @@ In this example, the Logstash image provided by TencentHub image repository is u
 
 4. Create a data volume.
 Create a data volume to store the logstash configuration file. In this example, a configuration file named logstash.conf is added to the CVM's `/data/config` directory and mounted to the Docker's `/data` directory, so that the logstash.conf file can be read when the container starts.
-![](https://main.qcloudimg.com/raw/02cc84086b585b969ff57dc02ec14d9e.png)
+![](https://main.qcloudimg.com/raw/586d21e0309f162d2a054fdc48372b88.png)
 
 5. Configure the operating parameters.
 ![](https://main.qcloudimg.com/raw/c134f1daa02aa08bae193b5e0ecf37e6.png)
