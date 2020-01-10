@@ -43,7 +43,7 @@ Click **Create** and configure the following information in the pop-up window. A
     <p>VPC or basic network. Please create and mount the file system according to the network type in which your CVM instance resides; otherwise, access may fail as network interconnection is unavailable.</p>
     <li>To allow a file system to be shared by CVM instances in the same VPC, you need to select VPC when creating the file system. If a file system resides in a VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.</p>
     <li>To allow a file system to be shared by CVM instances in the basic network, you need to select basic network when creating the file system. If a file system resides in the basic network, only CVM instances in the basic network can be mounted if no specific network settings are made.</p>
-    <li>If a file system needs to be shared across multiple networks, please see <a href="https://cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</p>
+    <li>If a file system needs to be shared across multiple networks, please see <a href="https://intl.cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</p>
     </td>
   </tr>  
   <tr>
