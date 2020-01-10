@@ -39,7 +39,7 @@ Yes. You can encrypt URLs based on our encoding and decoding rules. Encrypted ac
 Take cropping + watermarking as an example, use the pipeline operator **l** to connect respective processing parameters, and then both operations will be performed in sequence.
 
 ### Why do the quality and size of the image stay the same no matter which parameters I use?
-One possible cause is that the EXIF information of the original image accounts for the majority of the image size. If the image size shows little change after you adjust the image resolution, use the **strip** parameter to remove the EXIF information. For instructions, see [Removing Meta Information](https://cloud.tencent.com/document/product/460/36547).
+One possible cause is that the EXIF information of the original image accounts for the majority of the image size. If the image size shows little change after you adjust the image resolution, use the **strip** parameter to remove the EXIF information. For instructions, see [Removing Meta Information](https://intl.cloud.tencent.com/document/product/1045/33725).
 
 ### Why does the watermarked image not take effect?
 This issue may result from the following common reasons:
