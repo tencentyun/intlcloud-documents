@@ -61,7 +61,7 @@ Get the mount point information. After the file system and mount point are creat
 
 ### Connecting to an instance
 
-This section describes how to log in to a Windows-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For more information on other login methods, please see [Logging in to a Windows-based Instance](/doc/product/213/5435).
+This section describes how to log in to a Windows-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For more information on other login methods, please see [Logging in to a Windows-based Instance](https://intl.cloud.tencent.com/document/product/213/5435).
 
 #### Prerequisites
 
