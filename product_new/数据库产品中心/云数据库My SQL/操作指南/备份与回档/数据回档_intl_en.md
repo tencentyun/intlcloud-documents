@@ -26,7 +26,7 @@ The rollback feature is correlated with backup cycle and retention period settin
 >- Each instance can be set with only one rollback time.
 >- The table name after rollback can contain up to 64-bit letters, digits, decimal points (.), dashes (-), underscores (_), and $.
 >
-![](https://main.qcloudimg.com/raw/158d0a386461d63670f0274e9f20fe77.png)
+![](https://main.qcloudimg.com/raw/62377981b147bdb453d79631b3557d12.png)
 5. After submission, go to **Operation Log** > **Rollback Log** where you can view the rollback progress. Click **View Details** to view the rollback log in real time.
 ![](https://main.qcloudimg.com/raw/b5206b3c23d532553fb54dfc4fe7bfd0.png)
 6. Upon the completion of rollback, select **Database Management** > **Database List** and you can see the new table after rollback in the original instance.
