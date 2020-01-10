@@ -1,30 +1,31 @@
-## Cross-availability zone and Cross-network Access to File System
+## Cross-AZ Access in a VPC
 
-### Cross-availability zone access in a VPC
+If you need to have a CFS instance shared by multiple CVM instances in different AZs in the same region, you can configure the CVM and CFS instances into the same VPC to achieve cross-AZ access to resources.
 
-When you need to have the file storage shared among multiple CVMs distributed in different availability zones of the same region, you can set these CVMs and the CFS in the same VPC to achieve resource access across availability zones.
-Take Shanghai as an example. You have a CVM in Shanghai Zone 1 and you need to use CFS. However, you cannot directly create a file system, because the resources have been sold out in Shanghai Zone 1.
+For example, assume that there is a CVM instance in Guangzhou Zone 1 that needs to use CFS, but file systems cannot be directly created in Guangzhou Zone 1 as the resources are sold out there.
+If the CVM instance is in the "Guangzhou Zone 1" subnet of a VPC, you can log in to the [VPC Console](https://console.cloud.tencent.com/vpc) to create a subnet whose AZ is "Guangzhou Zone 2" for the VPC.
+![](https://main.qcloudimg.com/raw/d25fc9283b76f114a772bebb1b703548.png)
+![](https://main.qcloudimg.com/raw/74ffa38cc8774e6534617aed6f4476df.png)
+![](https://main.qcloudimg.com/raw/344f0c3bfce47031137fa66351bbb11c.png)
 
-If the CVM resides in the "subnet of Shanghai Zone 1" in a VPC, you can log in to the [VPC console](https://console.cloud.tencent.com/vpc) to find the VPC and create a subnet of "Shanghai zone 2" for it.
-
-![](https://main.qcloudimg.com/raw/a849aa72a6419206d43ab084a3e72f3d.png)
-![](https://main.qcloudimg.com/raw/a5f3cdc0ff39e1a483c263a2b329d0a6.png)
-![](https://main.qcloudimg.com/raw/eab7adc8dc279c2baca89b9baec3a7fd.png)
-
-After creating the subnet successfully, go back to the CFS console, and select this VPC and the subnet you just created to create resources in Shanghai Zone 2. The CFS file system can be directly mounted to the CVM in the subnet of Shanghai Zone 1 in this VPC. [View the file system mounting help documentation](https://intl.cloud.tencent.com/document/product/582/11523).
+After the subnet is successfully created, go back to the CFS Console and select this VPC and the subnet you just created to create resources in Guangzhou Zone 2. The CFS file system can be directly mounted to the CVM instance in the subnet of Guangzhou Zone 1 in this VPC. For more information, please see [Using CFS File Systems on Linux Clients](https://intl.cloud.tencent.com/document/product/582/11523).
 
 
-### Cross-VPC and cross-region access
+## Cross-VPC and Cross-region Access
+CFS supports the following scenarios for resource access.
 
-* When you need to have the file storage shared among multiple CVMs distributed in different VPCs, 
-* or when your CVMs and the CFS are in different VPCs,
-* or when your CVMs and the CFS are in different regions (for better access performance, it is recommended that the CVMs and the CFS be in the same region),
+- You need to have the CFS instance shared by multiple CVM instances distributed in different VPCs; 
+- Your CVM and CFS instances are in different VPCs;
+- Your CVM and CFS instances are in different regions (for better access performance, it is recommended that the CVM instances and CFS be in the same region);
 
-you can achieve resource access across the CVMs distributed in VPC-A/VPC-B and the CFS distributed in VPC-C by configuring a "peering connection". [Click to see how to configure a peering connection](https://intl.cloud.tencent.com/document/product/215/5000).
+You can achieve resource access across the CVM instances distributed in VPC-A/VPC-B and CFS instance distributed in VPC-C by configuring a "peering connection". For more information, please see [Peering Connection](https://intl.cloud.tencent.com/document/product/215/5000).
 
 
-### Cross-network access
+## Cross-network Access
+If you need to have a CFS instance shared by multiple CVM instances distributed in the basic network and a VPC, you can create a CFS file system in the VPC.
+- From CVM instances in the basic network to CFS in a VPC: mutual access to resources between a CVM instance in the basic network and resources in a VPC can be achieved by configuring a "Classiclink". For more information, please see [Classiclink Settings](https://cloud.tencent.com/document/product/215/20083).
+- From CVM instances in VPC-A to CFS in VPC-B: please refer to the setting method above.
 
-When you need to have the file storage shared among multiple CVMs distributed in a basic network or a VPC, you can create a CFS file system in the VPC.
-Access between the CVMs in a basic network and the CFS in a VPC: "Classiclink" can be configured to achieve resource access between the CVMs in a basic network and the CFS in a VPC. [Click to see how to configure Classiclink](https://intl.cloud.tencent.com/document/product/215/5002). *Note: The access between the CFS in a basic network and the CVMs in a VPC is not supported currently.*
-Access between the CVMs in VPC-A and the CFS in VPC-B: See the configuration method in the last section.
+>
+>- Currently, CFS instances in the basic network cannot be connected to CVM instances in VPCs.
+>- The client and CFS instance are in the basic network and a VPC, respectively, but they cannot be connected if they are in different regions.

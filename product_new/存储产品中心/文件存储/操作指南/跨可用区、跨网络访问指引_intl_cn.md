@@ -8,7 +8,7 @@
 ![](https://main.qcloudimg.com/raw/74ffa38cc8774e6534617aed6f4476df.png)
 ![](https://main.qcloudimg.com/raw/344f0c3bfce47031137fa66351bbb11c.png)
 
-创建子网完成后，回到 CFS 控制台，创建广州二区的资源时选择该 VPC 及刚创建的子网。 此时原来在该 VPC 广州一区子网下的云服务器即可直接挂载 CFS 文件系统，查看 [文件系统挂载帮助](https://cloud.tencent.com/document/product/582/11523)。
+创建子网完成后，回到 CFS 控制台，创建广州二区的资源时选择该 VPC 及刚创建的子网。 此时原来在该 VPC 广州一区子网下的云服务器即可直接挂载 CFS 文件系统，查看 [文件系统挂载帮助](https://intl.cloud.tencent.com/document/product/582/11523)。
 
 
 ## 跨私有网络及跨地域访问
@@ -18,7 +18,7 @@
 - 或者您的 CVM 与 CFS 在不同 VPC 下时；
 - 或者您的 CVM 与 CFS 分布在不同地域时（为了达到最好的访问性能，建议 CVM 要与 CFS 在同一个地域）；
 
-您可以将分布在 VPC-A/VPC-B 的 CVM 与分布在 VPC-C 的 CFS，通过设置 "对等连接" 的方式实现跨 VPC-A、VPC-B、VPC-C之间的互访，查看 [对等连接设置方法](https://cloud.tencent.com/document/product/215/20082)。
+您可以将分布在 VPC-A/VPC-B 的 CVM 与分布在 VPC-C 的 CFS，通过设置 "对等连接" 的方式实现跨 VPC-A、VPC-B、VPC-C之间的互访，查看 [对等连接设置方法](https://intl.cloud.tencent.com/document/product/215/5000)。
 
 
 ## 跨网络访问
@@ -26,6 +26,6 @@
 - 基础网络内的 CVM 到 VPC 下的 CFS：通过设置 "基础网络互通" 来实现基础网络下的云服务器与 VPC 之间资源的互相访问，查看 [基础网络互通设置方法](https://cloud.tencent.com/document/product/215/20083) 。
 - VPC-A 下的 CVM 到 VPC-B  下的 CFS：请参考上一个章节设置方式。
 
->!
+>
 >- CFS 在基础网络内暂不支持与 VPC 内的云服务器进行互通。
 >- 客户端和 CFS 分别处于基础网络与 VPC 网络，但两者在不同地域时，不支持互通。

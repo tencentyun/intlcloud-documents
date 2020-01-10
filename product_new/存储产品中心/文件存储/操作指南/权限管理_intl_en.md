@@ -1,44 +1,54 @@
-## Permission Management
-Accessing clients must be in the same network with the file system. Permission groups can be configured to further control the access permission and read and write permissions of the clients.
+## Operation Scenarios
 
+A visiting client must be in the same network as the file system, for which a permission group needs to be configured to manage the access and read/write permissions of the client. This document describes how to do so.
+
+
+## Directions
 ### Creating a permission group
-Click **Create** to create a permission group under the Permission Group tab.
-![](https://main.qcloudimg.com/raw/476316bb59fa6235d95edca6a95a50e4.png)
-
-Set a name and note for the permission group in the popup window.
-![](https://main.qcloudimg.com/raw/ab927080ea543761f36566088361377a.png)
-
-### Managing permission group rules
-You can add, edit or delete rules in the rule list. If no rule is added to the permission group, all IPs in your network are allowed.
-
-Accessing Address: You can enter a single IP or a single IP address range, such as 10.1.10.11 or 10.10.1.0/24. * indicates that all IPs are allowed. Please note that the IP entered should be CVM's private IP.
-Read and Write Permissions: Read-only or read and write permissions. 
-User Permission: You can select one of the following 4 options to control the permissions of accessing users. **Note: This permission option is not supported for CIFS/SMB file systems and will not take effect after configured.**
-
-* 	all_squash: All access users are mapped as anonymous users or user groups.
-* 	no_all_squash: Access users will match local users first and be mapped to anonymous users or user groups after matching failed.
-* 	root_squash: Map access root users to anonymous users or user groups.
-* 	no_root_squash: Access root users keep root account permission.
-
-**Note: The default permission for each file system is 755, and nfsnobody users do not have write permission. We recommend that you select no_root_squash if there is no special requirements.**
-
-**If you create a file directory and mount a file system as a root user, and set all_squash or root_squash for accessing IPs, the accessing IPs can only read the files (because the mount path is configured with root permission and the accessing IPs are mapped as anonymous users).**
-
-Priority: You can configure an integer from 1-100 as the priority level, where 1 indicates the highest priority. When the permission of a single IP conflicts with that of an IP address range containing this single IP in the same permission group, the permission with a higher priority shall prevail. If the priority is the same, the permission of the single IP shall prevail. If two IP address ranges that have overlaps are configured with different permissions but the same priority, the permissions of the overlapped range will take effect randomly. Please avoid configuring IP address ranges with overlaps. **Note: Priority configuration is not supported for CIFS/SMB file systems and it will not take effect after configured.**
-![](https://main.qcloudimg.com/raw/71754c722e1b841ca7745c9bbaa5e6cf.png)
+1. Log in to the [CFS Console](https://console.cloud.tencent.com/cfs) and click **Permission Group** on the left sidebar.
+2. On the permission group page, click **Create** and configure the name and remarks for the new permission group in the pop-up window.
 
 
-### Configuring a permission group for the file system
+### Creating a permission group rule
+You can add, edit, or delete rules in the rule list. If no rule is added to the permission group, all IPs will be allowed. The rules are described as follows:
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td>Visiting address</td>
+		<td>You can enter a single IP or IP range, such as 10.1.10.11 or 10.10.1.0/24. The default visiting address is <code>*</code>, indicating that all IPs are allowed. Please note that you need to enter the CVM instance's private IP here.</td>
+  </tr>
+  <tr>
+    <td>Read/write permission</td>
+    <td>Read-only or read/write.</td>
+  </tr>
+  <tr>
+    <td>User permission</td>
+    <td> 
+    <p>The four options below are used for controlling the permissions of a visiting user.<b>Note: CIFS/SMB file system does not support this permission item, so the configuration will not take effect.</b></p>
+    <li>all_squash: any visiting user will be mapped to an anonymous user or user group.</li>
+    <li>no_all_squash: a visiting user will be first matched with a local user, and if the match fails, it will be mapped to an anonymous user or user group.</li>
+    <li>root_squash: a visiting root user will be mapped to an anonymous user or user group.</li>
+    <li>no_root_squash: a visiting root user will be allowed to maintain root account privileges.</li>
+    <p><b>Note: the default permission is 755 for each file system, and nfsnobody does not have write permission. Therefore, if there are no special needs, `no_root_squash` is recommended. If the root user creates a file directory and mounts the file system, when the visiting IP is set to `all_squash` or `root_squash`, the visiting IP can only read files. (because the mount path requires root privileges, but the visiting IP has been mapped to an anonymous user).<b></p>
+    </td>
+  </tr>  
+  <tr>
+    <td>Priority</td>
+    <td>You can configure an integer between 1 and 100 as the priority level, where 1 indicates the highest priority. If the permission of a single IP conflicts with that of an IP within an IP range in the same permission group, the permission with a higher priority will prevail, and if their priority levels are the same, the permission of the single IP will prevail. If two IP ranges that have overlaps are configured with different permissions but the same priority levels, the permissions of the overlapping ranges will take effect randomly. Please avoid configuring overlapping IP ranges. <b>Note: priority configuration is not supported for CIFS/SMB file systems and will not take effect.</b>
+    </td>
+  </tr>
+</table>
 
-* You can create a permission group in advance and select it when creating a file system.
-* You can also select the default permission group when creating a file system and modify it in the file system details page after the creation.
+### Configuring a permission group for a file system
+The configuration of a permission group can be modified after the file system is created. You can choose to create a permission group first and select it when creating a file system. You can also select the default permission group when creating a file system and then go to the file system details page to change the permission group.
 
-**Note: If the file system is mounted using the NFS v4 protocol, the modification to the permission group rules of the file system will take effect in 2 minutes.**
+>Note: if the file system is mounted with the NFS v4 protocol, the modification to the permission group rules of the file system will take effect in 2 minutes.
 
-![](https://main.qcloudimg.com/raw/78cec9a955e9d92c996f4a67335bc2b4.png)
 
-### Modifying permission group information
-You can modify the name and the note of the permission group in the permission group details page.
-![](https://main.qcloudimg.com/raw/fe17d7bb9bb7720c5afc406340fb4395.png)
+### Modifying the information and rule of a permission group
+You can enter the permission group details page to modify the name, remarks, and rule of a permission group.
 
 

@@ -1,33 +1,35 @@
-## Managing File Systems
-In the console, you can see the created file system list. You can manage the created file systems in the list.
+## Operation Scenarios
+You can view the created file systems and manipulate them in the CFS Console, such as viewing the file system status and usage, file system details, and mount point information.
 
-### Viewing status and usage of a file system
-You can see the usage and status of the file system in the file system list.
-![](https://main.qcloudimg.com/raw/5ad7482188b0fd2e4db9da629146a6f4.png)
+>If a file system is in the "Creating" status, you cannot view its details or delete it.
 
-### Viewing the information of a file system and mount point
-Click on the name of the file system to enter the details page of file system. In the details page, you can see the information of the file and mount point.
+## Prerequisites
 
-The information of the file system is as follows:
-![](https://main.qcloudimg.com/raw/d20103a10effcdea880d850319ded77c.png)
+Log in to the [CFS Console](https://console.cloud.tencent.com/cfs) and click **File System** on the left sidebar to enter the file system list page.
 
-The mount point information of NFS file system is as follows:
-![](https://main.qcloudimg.com/raw/e52d235c97f0a6f16a9cbd86eabe5aa6.png)
-
-The mount point information of CIFS/SMB file system is as follows: 
-![](https://main.qcloudimg.com/raw/3a13257ec58a8de79929d8af39b4ed5a.png)
-
-**Note: The file system details cannot be viewed when the file system is in the status of "Creating", "Creation Failed", or "Mounting".**
-
-### Renaming a file system
-You can rename the file system in the details page.
-![](https://main.qcloudimg.com/raw/b70f21c18f35d3fabc76cc67294ed775.png)
-
-### Deleting a file system
-Select the file system that you want to delete and delete it.
-![](https://main.qcloudimg.com/raw/d78ceee487b0fc9e7fd8832bc304dcde.png)
-
-**Note: Deletion cannot be performed when the file system is in the status of "Creating", "Mounting", or "Deleting".**
+## Viewing File System Status and Usage
+You can view the current file system usage and status on the file system list page. CFS also allows you to search for items by file system name, ID, VPCID, and IP.
 
 
+## Viewing a File System
+Click a file system name on the file system list page to enter the file system details page, where you can view the basic information of the file system as well as information of its mount point and mounted clients.
+
+### Basic information of a file system
+The basic information of a file system includes its region, file system ID, name, file service protocol, file system status, and creation time. You can set the file system name on this page.
+
+### Mount point information
+The mount point information of an NFS file system includes the network information, permission group, and recommended mount command. You can modify the file system permission group on this page.
+
+### Mounted client information
+You can select the "Mounted Clients" tab to view the information of the clients where the file system is mounted, but the CFS service monitoring plugin needs to be installed on the clients first; otherwise, the client information will be unavailable. For more information on how to install the plugin, please see [CFS Monitoring Plugin User Guide](https://cloud.tencent.com/document/product/582/34307).
+>Client information display may have a delay of 1–3 minutes.
+
+
+## Renaming a File System
+Click the file system to be renamed in the file system list to enter the file system details page, where you can click <img src="https://main.qcloudimg.com/raw/a779dd9fce8c531f8ca36cf19c7d4d42.png"  style="margin:0;"> to the right of the instance name to rename the file system.
+
+
+## Deleting a File System
+If you no longer need a file system, you can find it in the file system list and select **Delete** in the "Operation" column to delete it.
+>To avoid system exceptions on clients, please disconnect the file system from all clients before deleting it.
 
