@@ -1,28 +1,66 @@
-## Creating File System and Mount Point
-1. Log in to the CFS console
+## Overview
 
-2. Click the **Create** button, and the Create File System popup window appears.
-![](https://main.qcloudimg.com/raw/b2c089eb76dec621eda63ef3e138efe0.png)
+You can create a file system and mount point on the file system page in the CFS Console. This document describes in detail how to do so.
 
-3. When creating a file system and mount point, select the following attributes in the popup window.
+## Directions
 
-- Region: Select a region supported by CFS
-- Availability zone: Select an availability zone supported by CFS
-- File protocol (NFS or CIFS/SMB): Select a file system type. NFS protocol is more suitable for Linux clients, while CIFS/SMB protocol is more suitable for Windows clients.
-- Network type: VPC or basic network. Note: Create and mount a file system based on the network of your CVM instance.
+#### 1. Enter the file system page
 
-	- To allow a file system to be shared by CVMs under a VPC, you need to select VPC when creating a file system. When the file system belongs to VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.
-	- To allow a file system to be shared by CVMs under a basic network, you need to select basic network when creating a file system. When the file system belongs to basic network, only CVM instances in the same basic network can be mounted if no specific network settings are made.
-	- For more information on how to share a file system among multiple networks, please see [Cross-network Access to File System](https://cloud.tencent.com/document/product/582/9764)
-	
-- Permission group: Each file system must be bound to a permission group 
-	
-4. Obtain the mount point information: After the file system and mount point are created, go to the file system details page to obtain the mount commands for Linux and Windows. "Quantity" refers to the number of mount sources, that is, the number of mounting methods. Only mounting via IP is supported. Therefore, the value is 1.
+Log in to the [CFS Console](https://console.cloud.tencent.com/cfs) and click **File System** on the left sidebar to enter the file system list page.
 
-The mount point information of NFS file system is as follows:
-![](https://main.qcloudimg.com/raw/e52d235c97f0a6f16a9cbd86eabe5aa6.png)
+#### 2. Create a file system and mount point
 
-The mount point information of CIFS/SMB file system is as follows: 
-![](https://main.qcloudimg.com/raw/3a13257ec58a8de79929d8af39b4ed5a.png)
+Click **Create** and configure the following information in the pop-up window. After confirming that everything is correct, click **OK**.
+
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td>Region</td>
+    <td>Select the region where the CFS file system is to be created.</td>
+  </tr>
+  <tr>
+    <td>AZ</td>
+    <td>Select the AZ where the CFS file system is to be created.</td>
+  </tr>
+  <tr>
+  <tr>
+    <td>Storage class</td>
+    <td>Select the needed storage class (standard or high-performance).</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap">File service protocol</td>
+    <td>Select the protocol type for the file system, which can be NFS or CIFS/SMB. Among them, NFS is more suitable for Linux/Unix clients, while CIFS/SMB is more suitable for Windows clients. The beta test for CIFS/SMB file systems has ended, and the schedule for future tests will be announced later. For more information, please see <a href="https://cloud.tencent.com/document/product/582/9553#cifs.2Fsmb-.E5.85.AC.E6.B5.8B.E8.AF.B4.E6.98.8E">Notes on CIFS/SMB Beta Test</a>.</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap">Client type</td>
+    <td>Select the type of the client that needs to access the CFS file system, which can be a CVM/TKE/BatchCompute instance or a CPM instance. As the two types of instances are in different networks, the system will assign the file system to the specified network according to your client type.</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap">Network type</td>
+    <td> 
+    <p>VPC or basic network. Please create and mount the file system according to the network type in which your CVM instance resides; otherwise, access may fail as network interconnection is unavailable.</p>
+    <li>To allow a file system to be shared by CVM instances in the same VPC, you need to select VPC when creating the file system. If a file system resides in a VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.</li>
+    <li>To allow a file system to be shared by CVM instances in the basic network, you need to select basic network when creating the file system. If a file system resides in the basic network, only CVM instances in the basic network can be mounted if no specific network settings are made.</li>
+    <li>If a file system needs to be shared across multiple networks, please see <a href="https://cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</li>
+    </td>
+  </tr>  
+  <tr>
+    <td>Permission group</td>
+    <td>Each file system must be bound to a permission group, which specifies the access whitelist and read/write permissions.
+    </td>
+  </tr>
+</table>
+
+
+
+#### 3. Get the mount point information
+
+(1) After th file system is created, return to the file system list.
+(2) Click the name of the file system to enter the its basic information page.
+(3) Click **Mount Point Info** to get the mount commands on Linux and Windows. You are recommended to copy the commands provided in the console to perform mount operations.
+>**Quantity** refers to the number of mounted sources, i.e., the number of ways of mounting. Currently, only mounting via IP is supported, so this value is 1.
 
 

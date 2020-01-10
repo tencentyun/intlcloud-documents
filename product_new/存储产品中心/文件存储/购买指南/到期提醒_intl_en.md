@@ -1,27 +1,21 @@
-### Pay-as-you-go Arrears Reminder
+## Arrears Reminder for Pay-as-you-go Resources
+![](https://main.qcloudimg.com/raw/c79ebc99c63d9b5eac77b585a895a8ef.png)
 
-![](https://main.qcloudimg.com/raw/2b456d2454d45297292f63d2551c3951.png)
-
-### Balance Reminder
-We will estimate the number of days it takes your account balance to become negative based on the past 24 hours usage and current balance. If it's less than 5 days, we will send you a reminder message. The reminder message will be sent to the Tencent Cloud account creator and all the collaborators via email and SMS.
-
-
-### Arrears Reminder
-For pay-as-you-go resources, fees are deducted on the hour. When your account balance is in negative, we will notify the Tencent Cloud account creator and all the collaborators via email and SMS.
+## Alert for Insufficient Balance
+We will estimate the number of days it takes your account balance to become negative based on the usage in the last 24 hours and current balance. If it is less than 5 days, we will send a reminder to your Tencent Cloud root account and all the subaccounts via email, SMS, and phone call.
 
 
-### Arrears Processing
-You can continue to use the CFS file system for 24 hours from the moment your account becomes negative (the orange segment in the above figure). The console will display a reminder that service will soon be suspended.
-
-After 24 hours, if your account is not topped up to a positive balance (the red segment in the above figure), CFS service will automatically be stopped. The file system cannot be read/written, and in the console you can only add funds. Your service will remain unavailable if your balance is not positive within 7 days after automatic shutdown. If your balance is positive, services and read/write will resume automatically.
-
-If your balance remains negative more than 7 days after automatic shutdown (the black segment in the above figure), CFS file system will be repossessed, and all data will be deleted and cannot be recovered. Email and SMS notifications will be sent to the Tencent Cloud account creator and all collaborators 
-
-> Note: 
-- When you do not use pay-as-you-go resources any longer, **terminate them as soon as possible** to avoid further fee deduction.
-- After the resource is terminated or repossessed, the data will be deleted and cannot be recovered.
-- Since your actual resource consumption changes from time to time, some deviation may exist for the stated balance.
+## Alert for Arrears
+For pay-as-you-go resources, fees are deducted on the hour. When your account balance is below zero, we will notify your Tencent Cloud root account and all the subaccounts via email and SMS.
 
 
+## Arrears Processing
+1. The CFS file system can be used normally within 24 hours after your account falls into arrears (as shown in the orange segment in the figure above), but there will be an alert informing you of upcoming service suspension in the console.
+2. If your account is not topped up to a positive value between 24 hours and 168 hours (as shown in the red segment in the figure above) after your account falls into arrears, CFS will suspend the service, the file system will not be available for reads/writes but will still be billed, and only the top-up operation can be performed in the console. After your account balance becomes positive, the service will be automatically resumed and available for reads/writes.
+3. If your account balance remains negative for 7 days (as shown in the black segment in the figure above), the pay-as-you-go CFS file system will be repossessed. At this point, all data will be cleared and cannot be recovered.
+4. Your Tencent Cloud root account and all the subaccounts will be notified of the CFS repossession via email and SMS.
 
-
+>
+>- When you no longer need to use pay-as-you-go resources, please terminate them as soon as possible to avoid further fee deductions.
+>- After a resource is terminated or repossessed, the data will be cleared and cannot be recovered.
+>- As your actual resource consumption may change over time, there may be some deviation in the balance alert.
