@@ -59,7 +59,7 @@ How the plugin works and its key features:
 
 ## Installing on Linux
 
-You can log in to the Linux-based instance and follow the steps below to obtain and install the CFS service monitoring plugin: [Download the plugin](#step1) > [Modify the plugin format](#step2) > [Install the plugin](#step3).
+You can log in to the Linux-based instance and follow the steps below to obtain and install the CFS service monitoring plugin: [Download the plugin](#step1) > [Grant the installer execute permissions](#step2) > [Install the plugin](#step3).
 
 <span id="step1"></span>
 
@@ -74,12 +74,12 @@ wget http://mirrors.tencentyun.com/install/cfs/cfs_barad_plugin_installer_releas
 
 <span id="step2"></span>
 
-#### Modify the plugin format
+#### Grant the installer execute permissions
 
-You can run the following command to change the CFS service monitoring plugin to an executable format.
+You can run the following command to grant the CFS service monitoring plugin installer execute permissions.
 
 ```sh
-## Modifying File Type
+## Grant installer execute permissions
 chmod +x cfs_barad_plugin_installer_release_v11
 ```
 

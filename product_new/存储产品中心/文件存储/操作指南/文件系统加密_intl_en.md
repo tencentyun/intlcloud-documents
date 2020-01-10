@@ -1,5 +1,5 @@
 ## Operation Scenarios
-CFS supports transfer encryption and storage encryption. You can enable storage encryption when creating a file system and transfer encryption when mounting a file system. To try out the file storage encryption feature, please fill in the [CFS Encryption Feature Application Form](https://cloud.tencent.com/apply/p/alop3uh2szt) for application. This document describes how to use these two encryption features.
+CFS supports transfer encryption and storage encryption. You can enable storage encryption when creating a file system and transfer encryption when mounting a file system. This document describes how to use these two encryption features.
 
 <table>
    <tr>
@@ -27,7 +27,7 @@ CFS supports transfer encryption and storage encryption. You can enable storage 
 
 
 ## Prerequisites
-- The [CFS](https://intl.cloud.tencent.com/product/cfs) service has been activated, and the application for using the [CFS encryption feature](https://cloud.tencent.com/apply/p/alop3uh2szt) has been approved.
+- The [CFS](https://intl.cloud.tencent.com/product/cfs) service has been activated.
 - The [KMS](https://intl.cloud.tencent.com/document/product/1030/31966) service has been activated.
 
 

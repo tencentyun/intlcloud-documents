@@ -1,5 +1,5 @@
 ## 操作场景
-文件存储 CFS 支持传输加密及存储加密功能。您可以在创建文件系统时启用存储加密，在挂载文件系统时启用传输加密。体验文件存储加密功能，请您填写 [文件存储加密功能申请表](https://cloud.tencent.com/apply/p/alop3uh2szt) 申请使用。本文将为您详细介绍如何使用文件存储加密功能。
+文件存储 CFS 支持传输加密及存储加密功能。您可以在创建文件系统时启用存储加密，在挂载文件系统时启用传输加密。本文将为您详细介绍如何使用文件存储加密功能。
 
 <table>
    <tr>
@@ -27,7 +27,7 @@
 
 
 ## 前提条件
-- 已开通 [文件存储 CFS](https://intl.cloud.tencent.com/product/cfs) 服务，并已通过 [文件存储加密功能](https://cloud.tencent.com/apply/p/alop3uh2szt) 申请。
+- 已开通 [文件存储 CFS](https://intl.cloud.tencent.com/product/cfs) 服务。
 - 已开通 [密钥管理服务 KMS ](https://intl.cloud.tencent.com/document/product/1030/31966)服务。
 
 

@@ -4,15 +4,6 @@
 ### 文件存储怎么收费？
 仅存储费用。按实际存储量计费（按每小时峰值存储量收取费用）。
 
-### 没有使用广州地区资源，文件存储账单中为何会有广州地区的扣费？
-CFS 文件存储服务账单中，由于中国大陆地区的存储量是合并计费，因此扣费地区会统一显示为 "华南地区（广州）"， 但账单的扩展字段中会展示被合并计费的地区。
-
-**查看方法**
-1. 您可以在 "[费用中心](https://console.cloud.tencent.com/expense/overview) > 账单管理 > 账单明细 > 资源 ID 账单" 列表中， 在表格右上角处单击<img src="https://main.qcloudimg.com/raw/c861c752e9882ce5b8fbbb964b47b035.png"  style="margin:0;">，在弹窗中勾选 "扩展字段1"，单击【确认】保存即可。
-![](https://main.qcloudimg.com/raw/2e3d131717073628b7748554a79d64be.png)
-2. 用鼠标拖动表格下方的拖动条，将表格拉至最后，在**扩展字段1**列中，您可以看到计费时被合并的地区 "北京、广州、上海、成都"的说明。
-![](https://main.qcloudimg.com/raw/4fb9fd41c628fdb066c5f5210c33e7f8.png)
-
 
 ### 文件存储支持哪些访问协议？
 NFS v3.0/v4.0 及 CIFS/SMB 协议，CIFS/SMB 协议文件系统公测中，更多信息请参阅 [CIFS/SMB公测说明](https://intl.cloud.tencent.com/document/product/582/9553)。
@@ -77,9 +68,9 @@ threads=<线程数量>; src=<源路径/>; dest=<目标路径/>; rsync -av -f"+ *
 ### Windows IIS 无法使用 mapped driver，怎么办？
 按照 [在 Windows 客户端上使用 CFS 文件系统](https://intl.cloud.tencent.com/document/product/582/11524) 中的步骤，配置正确的 NFS 客户端程序并修改注册（添加访问用户）表。
 重启客户端后，打开 IIS 配置页面，增加站点并单击【高级设置】。
-![](https://mc.qcloudimg.com/static/img/bdd15aa1ca694653b5595442cbc38737/IIS.png)
+![](https://main.qcloudimg.com/raw/871a0b585060646f662fa4c8e111df36.png)
 将高级设置中的 "物理路径" 为 CFS 挂载点。
-![](https://main.qcloudimg.com/raw/54375f5bab346a95785bd26575a86fea.png)
+![](https://main.qcloudimg.com/raw/44777ef4949311c8db84f972b2885af9.png)
 
 ### 如何处理 Docker 或 Kubernetes 部分挂载成功、部分失败问题？
 
@@ -94,8 +85,8 @@ threads=<线程数量>; src=<源路径/>; dest=<目标路径/>; rsync -av -f"+ *
 以广州为例，若已经有广州一区的云服务器，此时需要用到 CFS 文件存储，但广州一区由于资源已售罄无法直接创建文件系统。
 **VPC 网络下**
 若云服务器在 VPC 的 "广州一区子网" 内， 您可以登录 [VPC 控制台](https://console.cloud.tencent.com/vpc) 为该私有网络创建创建一个可用区为 "广州二区" 的子网。
-![](https://main.qcloudimg.com/raw/d25fc9283b76f114a772bebb1b703548.png)
-![](https://main.qcloudimg.com/raw/5c0bb3dc41a7759bacf0c096dee4b413.png)
+![](https://main.qcloudimg.com/raw/8fcb0be11627236c99cef6b54d129ac6.png)
+![](https://main.qcloudimg.com/raw/261ea1f31f78b0955221cc0f1288285f.png)
 
 创建子网完成后，回到 CFS 控制台，创建广州二区的资源时选择该 VPC 及刚创建的子网。 此时原来在该 VPC 广州一区子网下的云服务器即可直接挂载 CFS 文件系统。
 文件系统使用指引：
@@ -103,7 +94,7 @@ threads=<线程数量>; src=<源路径/>; dest=<目标路径/>; rsync -av -f"+ *
 - [Windows](https://intl.cloud.tencent.com/document/product/582/11524)
 
 **基础网络下** 
-若云服务器在基础网络内，可创建 VPC 及广州二区子网并在该网络下创建文件系统。 通过 "基础网络互通" 方法，打通云服务器所在的基础网络及该 VPC 即可实现访问。详细操作请参阅 [基础网络互通](https://cloud.tencent.com/document/product/215/20083) 文档。
+若云服务器在基础网络内，可创建 VPC 及广州二区子网并在该网络下创建文件系统。 通过 "基础网络互通" 方法，打通云服务器所在的基础网络及该 VPC 即可实现访问。<!--详细操作请参阅 [基础网络互通]() 文档。-->
 
 ### 文件内容更新不同步，如何解决？
 #### 问题现象

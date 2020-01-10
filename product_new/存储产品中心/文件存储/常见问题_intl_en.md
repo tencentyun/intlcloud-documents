@@ -4,15 +4,6 @@ Linux, Unix, and Windows clients are supported.
 ### How is CFS billed?
 CFS is billed based on actual storage capacity (peak storage capacity per hour).
 
-### I have never used any resources in the Guangzhou region. Why are there fees for Guangzhou in CFS bills?
-As storage capacity in Mainland China is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills, but the specific regions involved will be shown in the extended fields of the bills. This document describes how to view CFS bills in the console.
-
-**How to view**
-1. Go to "[Billing Center](https://console.cloud.tencent.com/expense/overview) > Manage Bills > Billing Details > Resource ID Bills", click <img src="https://main.qcloudimg.com/raw/c861c752e9882ce5b8fbbb964b47b035.png"  style="margin:0;"> in the top-right corner, check "Extended Field 1" in the pop-up window, and click **OK**.
-![](https://main.qcloudimg.com/raw/2e3d131717073628b7748554a79d64be.png)
-2. Scroll to the end of the table and you will see the notes on the consolidated billing zones of "Beijing, Guangzhou, Shanghai, and Chengdu" in the **Extended Field 1** column.
-![](https://main.qcloudimg.com/raw/4fb9fd41c628fdb066c5f5210c33e7f8.png)
-
 
 ### Which access protocols are supported by CFS?
 NFS v3.0/v4.0 and CIFS/SMB. CIFS/SMB file systems are in beta test. For more information, please see [Notes on CIFS/SMB Beta Test](https://intl.cloud.tencent.com/document/product/582/9553).
@@ -77,9 +68,9 @@ For more information, please see [Using CFS File Systems on Windows Clients](htt
 ### What if mapped drives cannot be used with Windows IIS?
 You can configure the correct NFS client program and modify the Registry (by adding users for access) as instructed in [Using CFS File Systems on Windows Clients](https://intl.cloud.tencent.com/document/product/582/11524).
 Restart the client, open the IIS configuration page, add a site, and click **Advanced Settings**.
-![](https://mc.qcloudimg.com/static/img/bdd15aa1ca694653b5595442cbc38737/IIS.png)
+![](https://main.qcloudimg.com/raw/871a0b585060646f662fa4c8e111df36.png)
 Set the "Physical Path" in the "Advanced Settings" to the CFS mount point.
-![](https://main.qcloudimg.com/raw/54375f5bab346a95785bd26575a86fea.png)
+![](https://main.qcloudimg.com/raw/44777ef4949311c8db84f972b2885af9.png)
 
 ### Mounting a CFS file system on Docker or Kubernetes can succeed sometimes but fail at other times. How to solve this problem?
 
@@ -94,8 +85,8 @@ IIS will convert the FSID needed for mounting with NFS v3.0 to uppercase, leadin
 For example, assume that there is a CVM instance in Guangzhou Zone 1 that needs to use CFS, but file systems cannot be directly created in Guangzhou Zone 1 as the resources are sold out there.
 **In a VPC**
 If the CVM instance is in the "Guangzhou Zone 1" subnet of a VPC, you can log in to the [VPC Console](https://console.cloud.tencent.com/vpc) to create a subnet whose AZ is "Guangzhou Zone 2" for the VPC.
-![](https://main.qcloudimg.com/raw/d25fc9283b76f114a772bebb1b703548.png)
-![](https://main.qcloudimg.com/raw/5c0bb3dc41a7759bacf0c096dee4b413.png)
+![](https://main.qcloudimg.com/raw/8fcb0be11627236c99cef6b54d129ac6.png)
+![](https://main.qcloudimg.com/raw/261ea1f31f78b0955221cc0f1288285f.png)
 
 After the subnet is successfully created, go back to the CFS Console and select this VPC and the subnet you just created to create resources in Guangzhou Zone 2. The CFS file system can be directly mounted to the CVM instance in the subnet of Guangzhou Zone 1 in this VPC.
 CIFS/SMB file system user guide:
@@ -103,7 +94,7 @@ CIFS/SMB file system user guide:
 - [Windows](https://intl.cloud.tencent.com/document/product/582/11524)
 
 **In the basic network** 
-If the CVM instance resides in the basic network, you can create a VPC and a subnet in Guangzhou Zone 2 and then create a file system in this network. With Classiclink, you can connect the basic network and the VPC for access. For more information, please see [Classiclink](https://cloud.tencent.com/document/product/215/20083).
+If the CVM instance resides in the basic network, you can create a VPC and a subnet in Guangzhou Zone 2 and then create a file system in this network. With Classiclink, you can connect the basic network and the VPC for access.<!-- For more information, please see [Classiclink]().-->
 
 ### File content update is out of sync. How can I fix this?
 #### Issue

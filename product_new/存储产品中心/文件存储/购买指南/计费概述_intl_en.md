@@ -161,6 +161,6 @@ Below are the latest unit prices for standard file systems in all regions in Mai
 
 An organization has 20 CVM instances that access two file systems in Mainland China. The file system A is used for cold data storage with a maximum standard storage capacity of 11 TB. The file system B is used as organizational cloud storage with a peak standard storage capacity of 105.6 GB in the current hour.  
 
-Total CFS fees for the current hour = (11*1024 + 105.6) * 0.00048611 = 5.53 USD
+Total CFS fees for the current hour = (11*1024 + 105.6) * 0.00008056 = 0.92 USD
 
   
