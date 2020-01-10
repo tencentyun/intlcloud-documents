@@ -4,9 +4,9 @@
 
 以广州为例，若已经有广州一区的云服务器，此时需要用到 CFS 文件存储，但广州一区由于资源已售罄无法直接创建文件系统。
 若云服务器在私有网络 VPC 的 "广州一区" 子网内， 您可以登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 为该 VPC  创建可用区为 "广州二区" 的子网。
-![](https://main.qcloudimg.com/raw/d25fc9283b76f114a772bebb1b703548.png)
-![](https://main.qcloudimg.com/raw/74ffa38cc8774e6534617aed6f4476df.png)
-![](https://main.qcloudimg.com/raw/344f0c3bfce47031137fa66351bbb11c.png)
+![](https://main.qcloudimg.com/raw/98f9e310bbf48820bb8781ed01c89fcd.png)
+![](https://main.qcloudimg.com/raw/ef4d81e3d728c3bef173aaf2c1f59551.png)
+![](https://main.qcloudimg.com/raw/28b51682e19077de58c6c0e9a86e1d11.png)
 
 创建子网完成后，回到 CFS 控制台，创建广州二区的资源时选择该 VPC 及刚创建的子网。 此时原来在该 VPC 广州一区子网下的云服务器即可直接挂载 CFS 文件系统，查看 [文件系统挂载帮助](https://intl.cloud.tencent.com/document/product/582/11523)。
 
@@ -23,7 +23,7 @@
 
 ## 跨网络访问
 当您有多台 CVM 分布在基础网络或 VPC 下，需要共享文件存储时。您可以创建一个在 VPC 下的 CFS 文件系统。
-- 基础网络内的 CVM 到 VPC 下的 CFS：通过设置 "基础网络互通" 来实现基础网络下的云服务器与 VPC 之间资源的互相访问，查看 [基础网络互通设置方法](https://cloud.tencent.com/document/product/215/20083) 。
+- 基础网络内的 CVM 到 VPC 下的 CFS：通过设置 "基础网络互通" 来实现基础网络下的云服务器与 VPC 之间资源的互相访问<!--，查看 [基础网络互通设置方法]() -->。
 - VPC-A 下的 CVM 到 VPC-B  下的 CFS：请参考上一个章节设置方式。
 
 >
