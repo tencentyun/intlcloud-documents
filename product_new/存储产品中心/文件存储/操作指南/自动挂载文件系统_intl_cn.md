@@ -28,4 +28,4 @@ vi /etc/fstab
 
 ### Windows 下自动挂载文件系统
 挂载时，勾选 "登录时重新连接" 选项，如下图示。更多挂载帮助请参见 [在 Windows 客户端上使用 CFS 文件系统](https://intl.cloud.tencent.com/document/product/582/11524)。
-![](https://main.qcloudimg.com/raw/e785d09a01063abd549fe5e4714af252.png)
+![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
