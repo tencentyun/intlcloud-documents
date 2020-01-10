@@ -138,15 +138,14 @@ A file system can be mounted via graphical interface or command line (CMD).
 - Mount via graphical interface
   a. Open "Map Network Drive"
   Log in to Windows where you need to mount the file system, find "Computer" in the "Start" menu, right-click it, and then click "Map Network Drive" in the menu that appears. 
-  ![](https://main.qcloudimg.com/raw/515b5b21a19e3f3518c75441326e1800.png)
-  ![](https://main.qcloudimg.com/raw/b0396ce0f8f108f3e89a2f2bfb3d7f71.png)
+  ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
   b. Enter the access path
   In the pop-up window, set the drive letter for "Drive" and folder (i.e., the mount directory you see in the NFS file system).
-  ![](https://main.qcloudimg.com/raw/8d58ee713b9e072156caf8019b4242d5.png)
-  ![](https://mc.qcloudimg.com/static/img/caa18888e6da73b19de8eefc18ff3680/image.png)
+  ![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
+  ![](https://main.qcloudimg.com/raw/3de493b63f5687253caf9cf99322b17b.png)
   c. Verify read/write
   After confirmation, the page goes directly to the file system that has been mounted. You can right-click to create a file for verifying the correctness of read/write.
-  ![](https://mc.qcloudimg.com/static/img/60b9388885536ec7d81b1cf7f76c39d5/image.png)
+  ![](https://main.qcloudimg.com/raw/598f69f5f327c1acc663b4a3eed5ba03.png)
 - Mount via CMD
   Enter the following command on the Windows command line to mount the file system. The default subdirectory is `FSID`.
 ```bash
