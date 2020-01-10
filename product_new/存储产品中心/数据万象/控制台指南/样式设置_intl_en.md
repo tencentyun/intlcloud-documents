@@ -71,4 +71,4 @@ Add an image watermark to the target image by using the image that you set. Use 
 ![Image watermark](https://main.qcloudimg.com/raw/767136b69920bf54a4d122216a9ec8ff.png)
 
 ### Advanced settings
-CI also provides advanced settings, which allow you to configure images by using parameters. For more information, see the [Basic Image Processing](https://cloud.tencent.com/document/product/460/36540) API document.
+CI also provides advanced settings, which allow you to configure images by using parameters. For more information, see the [Basic Image Processing](https://intl.cloud.tencent.com/document/product/1045/33713) API document.

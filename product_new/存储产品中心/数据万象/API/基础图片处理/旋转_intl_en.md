@@ -8,7 +8,7 @@ download_url?imageMogr2/rotate/<rotateDegree>
 					   /auto-orient
 ```
 
-> ! Ignore the preceding spaces and linefeeds.
+> Ignore the preceding spaces and linefeeds.
 
 
 ## Parameter Description

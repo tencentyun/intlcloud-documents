@@ -21,7 +21,7 @@ The basic information of a file system includes its region, file system ID, name
 The mount point information of an NFS file system includes the network information, permission group, and recommended mount command. You can modify the file system permission group on this page.
 
 ### Mounted client information
-You can select the "Mounted Clients" tab to view the information of the clients where the file system is mounted, but the CFS service monitoring plugin needs to be installed on the clients first; otherwise, the client information will be unavailable. For more information on how to install the plugin, please see [CFS Monitoring Plugin User Guide](https://cloud.tencent.com/document/product/582/34307).
+You can select the "Mounted Clients" tab to view the information of the clients where the file system is mounted, but the CFS service monitoring plugin needs to be installed on the clients first; otherwise, the client information will be unavailable. For more information on how to install the plugin, please see [CFS Monitoring Plugin User Guide](https://intl.cloud.tencent.com/document/product/582/33747).
 >Client information display may have a delay of 1–3 minutes.
 
 

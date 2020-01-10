@@ -12,4 +12,4 @@ You can enable QR code recognition in CI Console and then call QR code recogniti
 3. Go to the bucket details page and click **Style** on the top.
 4. In the QR code recognition configuration section, click **Edit** and change **Status** to **Enabled**.
 ![](https://main.qcloudimg.com/raw/ee07a34c430f8a4f3e764cfb3571aeef.png)
-5. After QR code recognition is enabled, you can use its various functionalities by calling corresponding [APIs](https://cloud.tencent.com/document/product/460/37513).
+5. After QR code recognition is enabled, you can use its various functionalities by calling corresponding [APIs](https://intl.cloud.tencent.com/document/product/1045/33699).
