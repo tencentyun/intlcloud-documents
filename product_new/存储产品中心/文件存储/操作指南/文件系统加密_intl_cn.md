@@ -27,8 +27,8 @@
 
 
 ## 前提条件
-- 已开通 [文件存储 CFS](https://cloud.tencent.com/product/cfs) 服务，并已通过 [文件存储加密功能](https://cloud.tencent.com/apply/p/alop3uh2szt) 申请。
-- 已开通 [密钥管理服务 KMS ](https://cloud.tencent.com/document/product/573/34388)服务。
+- 已开通 [文件存储 CFS](https://intl.cloud.tencent.com/product/cfs) 服务，并已通过 [文件存储加密功能](https://cloud.tencent.com/apply/p/alop3uh2szt) 申请。
+- 已开通 [密钥管理服务 KMS ](https://intl.cloud.tencent.com/document/product/1030/31966)服务。
 
 
 
@@ -73,7 +73,7 @@ mount -t nfs -o vers=4.0,rw,sync  localhost:/ /localfolder
 ### 加密静态数据
 
 除了在传输过程中加密，某些业务场景还要求对存储的数据进行加密。文件存储 CFS 提供静态存储数据加密功能，以保障数据的私密性。
-文件存储 CFS 使用腾讯云 [密钥管理服务 KMS](https://cloud.tencent.com/document/product/573) 提供的密钥，并使用 AES-256 算法进行数据的静态加密。启用文件系统的加密功能后，您无需关心加解密程序，存储加密过程对于您的业务系统来说完全透明。
+文件存储 CFS 使用腾讯云 [密钥管理服务 KMS](https://intl.cloud.tencent.com/document/product/1030) 提供的密钥，并使用 AES-256 算法进行数据的静态加密。启用文件系统的加密功能后，您无需关心加解密程序，存储加密过程对于您的业务系统来说完全透明。
 
 您可以在创建文件系统时，选择是否要加密文件系统。
 1. 登录 [CFS 控制台](https://console.cloud.tencent.com/cfs)。
