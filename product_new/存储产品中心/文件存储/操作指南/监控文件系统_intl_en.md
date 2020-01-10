@@ -137,5 +137,5 @@ You can enter the alarm policy page to view the alarm policy bound to the file s
 ## Setting an Alarm
 
 Tencent Cloud allows you to configure alarm and notification policies for your file system based on monitoring metrics. If you want to create a policy or bind a policy to the file system, please enter the [Cloud Monitor Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) page.
-Click **Cloud Monitor** > **Manage Alarms** > **Alarm Policy** to enter the alarm policy page. For more information, please see [Cloud Monitor Alarm Service Guide](https://cloud.tencent.com/document/product/248/6126).
+Click **Cloud Monitor** > **Manage Alarms** > **Alarm Policy** to enter the alarm policy page. For more information, please see [Cloud Monitor Alarm Service Guide](https://intl.cloud.tencent.com/document/product/248/6126).
 
