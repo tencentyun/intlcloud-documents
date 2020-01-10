@@ -43,7 +43,7 @@
     <p>私有网络（VPC）或者是基础网络。请根据您的 CVM 实例所在网络来创建并挂载文件系统，否则可能因为网络不通导致无法访问。</p>
     <li>若您要实现私有网络（VPC） 下 CVM 对文件系统的共享，您需要在创建文件系统时选择私有网络。当文件系统属于私有网络时，如果未进行特殊网络设置，则只有同一私有网络内的 CVM 实例能够挂载。</p>
     <li>若您要实现基础网络下 CVM 对文件系统的共享，您需要在创建文件系统时选择基础网络。当文件系统属于基础网络时，如果未进行特殊网络设置，则只有同在基础网络内的 CVM 实例能够挂载。</p>
-    <li>如果有多网络共享文件系统需求，请查见 <a href="https://cloud.tencent.com/document/product/582/9764">跨网络访问文件系统</a> 文档</p>
+    <li>如果有多网络共享文件系统需求，请查见 <a href="https://intl.cloud.tencent.com/document/product/582/9764">跨网络访问文件系统</a> 文档</p>
     </td>
   </tr>  
   <tr>
@@ -138,15 +138,14 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default
 - 通过图形界面挂载
   a. 打开 "映射网络驱动器"
   登录到需要挂载文件系统的 Windows 上，在 "开始" 菜单中找到 "计算机"，单击鼠标右键出现菜单，单击菜单中的 "映射网络驱动器"。 
-  ![](https://main.qcloudimg.com/raw/515b5b21a19e3f3518c75441326e1800.png)
-  ![](https://main.qcloudimg.com/raw/b0396ce0f8f108f3e89a2f2bfb3d7f71.png)
+  ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
   b. 输入访问路径
   在弹出的设置窗口中设置 "驱动器" 盘符名称及文件夹（即在 NFS 文件系统中看到的挂载目录）。
-  ![](https://main.qcloudimg.com/raw/8d58ee713b9e072156caf8019b4242d5.png)
-  ![](https://mc.qcloudimg.com/static/img/caa18888e6da73b19de8eefc18ff3680/image.png)
+  ![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
+  ![](https://main.qcloudimg.com/raw/3de493b63f5687253caf9cf99322b17b.png)
   c. 验证读写
   确认后，页面直接进入到已经挂载的文件系统中。可以右键新建一个文件来验证读写的正确性。
-  ![](https://mc.qcloudimg.com/static/img/60b9388885536ec7d81b1cf7f76c39d5/image.png)
+  ![](https://main.qcloudimg.com/raw/598f69f5f327c1acc663b4a3eed5ba03.png)
 - 通过 CMD 命令行挂载
   在 Windows 的命令行工具中输入如下命令，挂载文件系统。其中，系统缺省子目录为 FSID。
 ```bash
@@ -168,15 +167,10 @@ mount 10.10.0.12:/z3r6k95r X:
 
 1. 打开 "映射网络驱动器"
    登录到需要挂载文件系统的 Windows 上，在 "开始" 菜单中找到 "计算机"，单击鼠标右键出现菜单，单击菜单中的 "映射网络驱动器"。 
-   ![](https://main.qcloudimg.com/raw/515b5b21a19e3f3518c75441326e1800.png)
-   ![](https://main.qcloudimg.com/raw/b0396ce0f8f108f3e89a2f2bfb3d7f71.png)
 2. 输入访问路径
    在弹出的设置窗口中设置 "驱动器" 盘符名称及文件夹（即在 CIFS/SMB 文件系统中看到的挂载目录）。
-   ![](https://main.qcloudimg.com/raw/8d58ee713b9e072156caf8019b4242d5.png)
-   ![](https://main.qcloudimg.com/raw/939aafe4bca9907bc391d41e8798c4a6.png)
 3. 验证读写
    确认后，页面直接进入到已经挂载的文件系统中。可以右键新建一个文件来验证读写的正确性。
-   ![](https://mc.qcloudimg.com/static/img/60b9388885536ec7d81b1cf7f76c39d5/image.png)
 
 #### 通过命令行挂载文件系统
 请使用 FSID 进行挂载文件系统，挂载命令如下。
@@ -190,7 +184,6 @@ net use X: \\10.10.11.12\fjie120
 ```
 
 > FSID 可以到【控制台】>【文件系统详情】>【挂载点信息】中获取。
->[](https://main.qcloudimg.com/raw/939aafe4bca9907bc391d41e8798c4a6.png)
 
 
 
@@ -198,7 +191,7 @@ net use X: \\10.10.11.12\fjie120
 #### 通过图形界面卸载共享目录
 
 要断开已经挂载的文件系统，只需鼠标右键单击磁盘，再出现的菜单中单击【断开】选项，即可断开文件系统的连接。
-![](https://mc.qcloudimg.com/static/img/376cd0547aa64f4d519e5444c5a58f93/image.png)
+![](https://main.qcloudimg.com/raw/3c6c6649a6df3513ea2d7436c0ab7cf3.png)
 
 #### 通过 CMD 命令卸载 NFS 共享目录 
 
