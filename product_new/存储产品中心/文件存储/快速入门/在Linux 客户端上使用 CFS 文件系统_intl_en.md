@@ -42,7 +42,7 @@ Click **Create** and configure the following information in the pop-up window. A
 VPC or basic network. Please create and mount the file system according to the network type in which your CVM instance resides; otherwise, access may fail as network interconnection is unavailable.
     <li>To allow a file system to be shared by CVM instances in the same VPC, you need to select VPC when creating the file system. If a file system resides in a VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.</li>
     <li>To allow a file system to be shared by CVM instances in the basic network, you need to select basic network when creating the file system. If a file system resides in the basic network, only CVM instances in the basic network can be mounted if no specific network settings are made.</li>
-    <li>If a file system needs to be shared across multiple networks, please see <a href="https://cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</li>
+    <li>If a file system needs to be shared across multiple networks, please see <a href="https://intl.cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</li>
     </td>
   </tr>  
   <tr>
@@ -60,7 +60,7 @@ Get the mount point information. After the file system and mount point are creat
 
 
 ### Connecting to an instance
-This section describes how to log in to a Linux-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For more information on other login methods, please see [Logging in to a Linux-based Instance](/doc/product/213/5436).
+This section describes how to log in to a Linux-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For more information on other login methods, please see [Logging in to a Linux-based Instance](https://intl.cloud.tencent.com/document/product/213/5436).
 
 #### Prerequisites
 You need to use an admin account ID and the corresponding password to log in to the CVM instance.

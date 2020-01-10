@@ -43,7 +43,7 @@ Click **Create** and configure the following information in the pop-up window. A
     <p>VPC or basic network. Please create and mount the file system according to the network type in which your CVM instance resides; otherwise, access may fail as network interconnection is unavailable.</p>
     <li>To allow a file system to be shared by CVM instances in the same VPC, you need to select VPC when creating the file system. If a file system resides in a VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.</p>
     <li>To allow a file system to be shared by CVM instances in the basic network, you need to select basic network when creating the file system. If a file system resides in the basic network, only CVM instances in the basic network can be mounted if no specific network settings are made.</p>
-    <li>If a file system needs to be shared across multiple networks, please see <a href="https://cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</p>
+    <li>If a file system needs to be shared across multiple networks, please see <a href="https://intl.cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</p>
     </td>
   </tr>  
   <tr>
@@ -61,7 +61,7 @@ Get the mount point information. After the file system and mount point are creat
 
 ### Connecting to an instance
 
-This section describes how to log in to a Windows-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For more information on other login methods, please see [Logging in to a Windows-based Instance](/doc/product/213/5435).
+This section describes how to log in to a Windows-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For more information on other login methods, please see [Logging in to a Windows-based Instance](https://intl.cloud.tencent.com/document/product/213/5435).
 
 #### Prerequisites
 
@@ -138,15 +138,14 @@ A file system can be mounted via graphical interface or command line (CMD).
 - Mount via graphical interface
   a. Open "Map Network Drive"
   Log in to Windows where you need to mount the file system, find "Computer" in the "Start" menu, right-click it, and then click "Map Network Drive" in the menu that appears. 
-  ![](https://main.qcloudimg.com/raw/515b5b21a19e3f3518c75441326e1800.png)
-  ![](https://main.qcloudimg.com/raw/b0396ce0f8f108f3e89a2f2bfb3d7f71.png)
+  ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
   b. Enter the access path
   In the pop-up window, set the drive letter for "Drive" and folder (i.e., the mount directory you see in the NFS file system).
-  ![](https://main.qcloudimg.com/raw/8d58ee713b9e072156caf8019b4242d5.png)
-  ![](https://mc.qcloudimg.com/static/img/caa18888e6da73b19de8eefc18ff3680/image.png)
+  ![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
+  ![](https://main.qcloudimg.com/raw/3de493b63f5687253caf9cf99322b17b.png)
   c. Verify read/write
   After confirmation, the page goes directly to the file system that has been mounted. You can right-click to create a file for verifying the correctness of read/write.
-  ![](https://mc.qcloudimg.com/static/img/60b9388885536ec7d81b1cf7f76c39d5/image.png)
+  ![](https://main.qcloudimg.com/raw/598f69f5f327c1acc663b4a3eed5ba03.png)
 - Mount via CMD
   Enter the following command on the Windows command line to mount the file system. The default subdirectory is `FSID`.
 ```bash
@@ -168,15 +167,10 @@ A CIFS/SMB file system can be mounted via graphical interface or command line.
 
 1. Open "Map Network Drive"
    Log in to Windows where you need to mount the file system, find "Computer" in the "Start" menu, right-click it, and then click "Map Network Drive" in the menu that appears. 
-   ![](https://main.qcloudimg.com/raw/515b5b21a19e3f3518c75441326e1800.png)
-   ![](https://main.qcloudimg.com/raw/b0396ce0f8f108f3e89a2f2bfb3d7f71.png)
 2. Enter the access path
    In the pop-up window, set the drive letter for "Drive" and folder (i.e., the mount directory you see in the CIFS/SMB file system).
-   ![](https://main.qcloudimg.com/raw/8d58ee713b9e072156caf8019b4242d5.png)
-   ![](https://main.qcloudimg.com/raw/939aafe4bca9907bc391d41e8798c4a6.png)
 3. Verify read/write
    After confirmation, the page goes directly to the file system that has been mounted. You can right-click to create a file for verifying the correctness of read/write.
-   ![](https://mc.qcloudimg.com/static/img/60b9388885536ec7d81b1cf7f76c39d5/image.png)
 
 #### Mounting a file system via command line
 Use FSID to mount the file system. The mount command is as follows:
@@ -190,7 +184,6 @@ net use X: \\10.10.11.12\fjie120
 ```
 
 > You can go to the **CFS Console** > **File System Details** > **Mount Point Info** to get the `FSID` mount command.
->[](https://main.qcloudimg.com/raw/939aafe4bca9907bc391d41e8798c4a6.png)
 
 
 
@@ -198,7 +191,7 @@ net use X: \\10.10.11.12\fjie120
 #### Unmounting a shared directory via graphical interface
 
 To disconnect a mounted file system, simply right-click the disk and click **Disconnect** in the menu that appears.
-![](https://mc.qcloudimg.com/static/img/376cd0547aa64f4d519e5444c5a58f93/image.png)
+![](https://main.qcloudimg.com/raw/3c6c6649a6df3513ea2d7436c0ab7cf3.png)
 
 #### Unmounting an NFS shared directory via CMD 
 

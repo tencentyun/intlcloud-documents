@@ -32,7 +32,7 @@ Click **Create** and configure the following information in the pop-up window. A
   </tr>
   <tr>
     <td nowrap="nowrap">File service protocol</td>
-    <td>Select the protocol type for the file system, which can be NFS or CIFS/SMB. Among them, NFS is more suitable for Linux/Unix clients, while CIFS/SMB is more suitable for Windows clients. The beta test for CIFS/SMB file systems has ended, and the schedule for future tests will be announced later. For more information, please see <a href="https://cloud.tencent.com/document/product/582/9553#cifs.2Fsmb-.E5.85.AC.E6.B5.8B.E8.AF.B4.E6.98.8E">Notes on CIFS/SMB Beta Test</a>.</td>
+    <td>Select the protocol type for the file system, which can be NFS or CIFS/SMB. Among them, NFS is more suitable for Linux/Unix clients, while CIFS/SMB is more suitable for Windows clients. The beta test for CIFS/SMB file systems has ended, and the schedule for future tests will be announced later. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/582/9553">Notes on CIFS/SMB Beta Test</a>.</td>
   </tr>
   <tr>
     <td nowrap="nowrap">Client type</td>
@@ -44,7 +44,7 @@ Click **Create** and configure the following information in the pop-up window. A
     <p>VPC or basic network. Please create and mount the file system according to the network type in which your CVM instance resides; otherwise, access may fail as network interconnection is unavailable.</p>
     <li>To allow a file system to be shared by CVM instances in the same VPC, you need to select VPC when creating the file system. If a file system resides in a VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.</li>
     <li>To allow a file system to be shared by CVM instances in the basic network, you need to select basic network when creating the file system. If a file system resides in the basic network, only CVM instances in the basic network can be mounted if no specific network settings are made.</li>
-    <li>If a file system needs to be shared across multiple networks, please see <a href="https://cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</li>
+    <li>If a file system needs to be shared across multiple networks, please see <a href="https://intl.cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</li>
     </td>
   </tr>  
   <tr>

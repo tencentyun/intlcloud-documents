@@ -1,5 +1,5 @@
 ## Arrears Reminder for Pay-as-you-go Resources
-![](https://main.qcloudimg.com/raw/c79ebc99c63d9b5eac77b585a895a8ef.png)
+![](https://main.qcloudimg.com/raw/23ef4b0d1cc37f6d73627978ffd79e83.jpg)
 
 ## Alert for Insufficient Balance
 We will estimate the number of days it takes your account balance to become negative based on the usage in the last 24 hours and current balance. If it is less than 5 days, we will send a reminder to your Tencent Cloud root account and all the subaccounts via email, SMS, and phone call.

@@ -32,7 +32,7 @@
   </tr>
   <tr>
     <td nowrap="nowrap">文件服务协议</td>
-    <td>选择文件系统的协议类型，NFS 或 CIFS/SMB 。其中，NFS 协议更适合于 Linux/Unix 客户端，CIFS/SMB 协议更适合于 Windows 客户端。CIFS/SMB 协议近期公测已结束，后续开放时间敬待通知，更多信息请参见 <a href="https://cloud.tencent.com/document/product/582/9553#cifs.2Fsmb-.E5.85.AC.E6.B5.8B.E8.AF.B4.E6.98.8E">CIFS/SMB 公测说明</a>。</td>
+    <td>选择文件系统的协议类型，NFS 或 CIFS/SMB 。其中，NFS 协议更适合于 Linux/Unix 客户端，CIFS/SMB 协议更适合于 Windows 客户端。CIFS/SMB 协议近期公测已结束，后续开放时间敬待通知，更多信息请参见 <a href="https://intl.cloud.tencent.com/document/product/582/9553">CIFS/SMB 公测说明</a>。</td>
   </tr>
   <tr>
     <td nowrap="nowrap">客户端类型</td>
@@ -44,7 +44,7 @@
     <p>私有网络（VPC）或者是基础网络。请根据您的 CVM 实例所在网络来创建并挂载文件系统，否则可能因为网络不通导致无法访问。</p>
     <li>若您要实现私有网络（VPC） 下 CVM 对文件系统的共享，您需要在创建文件系统时选择私有网络。当文件系统属于私有网络时，如果未进行特殊网络设置，则只有同一私有网络内的 CVM 实例能够挂载。</li>
     <li>若您要实现基础网络下 CVM 对文件系统的共享，您需要在创建文件系统时选择基础网络。当文件系统属于基础网络时，如果未进行特殊网络设置，则只有同在基础网络内的 CVM 实例能够挂载。</li>
-    <li>如果有多网络共享文件系统需求，请参见 <a href="https://cloud.tencent.com/document/product/582/9764">跨网络访问文件系统</a> 文档。</li>
+    <li>如果有多网络共享文件系统需求，请参见 <a href="https://intl.cloud.tencent.com/document/product/582/9764">跨网络访问文件系统</a> 文档。</li>
     </td>
   </tr>  
   <tr>
