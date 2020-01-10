@@ -28,4 +28,4 @@ Example: 10.10.19.12:/djoajeo4 /local/test nfs nfsvers=3,hard,timeo=600,retrans=
 
 ### Automatically mounting a file system on Windows
 When mounting a file system, select "Reconnect at logon" as shown below. For more information, please see [Using CFS File Systems on Windows Clients](https://intl.cloud.tencent.com/document/product/582/11524).
-![](https://main.qcloudimg.com/raw/e785d09a01063abd549fe5e4714af252.png)
+![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
