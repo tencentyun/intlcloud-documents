@@ -62,11 +62,11 @@ wget http://mirrors.tencentyun.com/install/cfs/cfs_barad_plugin_installer_releas
 ```
 
 <span id="step2"></span>
-#### Modify the plugin format
-You can run the following command to change the CFS service monitoring plugin to an executable format.
+#### Grant the installer execute permissions
+You can run the following command to grant the CFS service monitoring plugin installer execute permissions.
 
 ```sh
-## Modifying File Type
+## Grant installer execute permissions
 chmod +x cfs_barad_plugin_installer_release_v11
 ```
 
