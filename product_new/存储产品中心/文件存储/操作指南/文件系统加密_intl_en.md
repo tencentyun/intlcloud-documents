@@ -27,8 +27,8 @@ CFS supports transfer encryption and storage encryption. You can enable storage 
 
 
 ## Prerequisites
-- The [CFS](https://cloud.tencent.com/product/cfs) service has been activated, and the application for using the [CFS encryption feature](https://cloud.tencent.com/apply/p/alop3uh2szt) has been approved.
-- The [KMS](https://cloud.tencent.com/document/product/573/34388) service has been activated.
+- The [CFS](https://intl.cloud.tencent.com/product/cfs) service has been activated, and the application for using the [CFS encryption feature](https://cloud.tencent.com/apply/p/alop3uh2szt) has been approved.
+- The [KMS](https://intl.cloud.tencent.com/document/product/1030/31966) service has been activated.
 
 
 
