@@ -1,37 +1,47 @@
-## FAQ
-### Which platforms are supported by CFS?
-Linux, Unix, Windows, and other clients.
+### Which operating systems are supported by CFS?
+Linux, Unix, and Windows clients are supported.
 
 ### How is CFS billed?
-CFS is billed only based on actual storage (peak storage per hour).
+CFS is billed based on actual storage capacity (peak storage capacity per hour).
+
+### I have never used any resources in the Guangzhou region. Why are there fees for Guangzhou in CFS bills?
+As storage capacity in Mainland China is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills, but the specific regions involved will be shown in the extended fields of the bills. This document describes how to view CFS bills in the console.
+
+**How to view**
+1. Go to "[Billing Center](https://console.cloud.tencent.com/expense/overview) > Manage Bills > Billing Details > Resource ID Bills", click <img src="https://main.qcloudimg.com/raw/c861c752e9882ce5b8fbbb964b47b035.png"  style="margin:0;"> in the top-right corner, check "Extended Field 1" in the pop-up window, and click **OK**.
+![](https://main.qcloudimg.com/raw/2e3d131717073628b7748554a79d64be.png)
+2. Scroll to the end of the table and you will see the notes on the consolidated billing zones of "Beijing, Guangzhou, Shanghai, and Chengdu" in the **Extended Field 1** column.
+![](https://main.qcloudimg.com/raw/4fb9fd41c628fdb066c5f5210c33e7f8.png)
+
 
 ### Which access protocols are supported by CFS?
-NFS v3.0/v4.0 and CIFS/SMB protocols. The CIFS/SMB protocol is under public trial, and you can submit a ticket to apply for a trial.
+NFS v3.0/v4.0 and CIFS/SMB. CIFS/SMB file systems are in beta test. For more information, please see [Notes on CIFS/SMB Beta Test](https://intl.cloud.tencent.com/document/product/582/9553).
 
+As clients on Windows and Linux 3.10 and its previous kernel version (e.g., CentOS 6.\*) are incompatible with NFS v4.0, they cannot work normally after mount. Please use NFS v3.0 instead.
 
-Because operation system clients include Windows， Linux 3.10 (eg CentOS 6.* ) and it's previous kernel version are incompatible with the NFS 4.0 protocol, they cannot work normally after being mounted with NFS 4.0. Use NFS 3.0 to mount such clients.
+### What concepts are used in CFS?
+File system: a file system is a CFS instance. After a file system is mounted to a CVM instance, you can use it in the same way as a local storage system. It can be mounted to a subdirectory.
 
-
-### CFS-related concepts
-File system: A file system is a file storage instance. After a file system is mounted to a CVM, you can use it in the same way as you use a local storage. It can be mounted to a directory.
-Mount point: The mount point is an entry for the computing node to access the file storage. It defines the type of network for the computing node and the permission used to access the file storage.
+Mount point: A mount point is an entry for the compute node to access CFS. It defines the type of network for the node and the permission to access CFS.
 
 ### How many file systems can be created for each user?
-A maximum of 10 file systems can be created for ​a single user in each region. Submit a ticket to apply for more quota.
+Up to 10 ones can be created in a region for each user. If you have special requirements, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for scaling.
 
-### The file system cannot be mounted to the mount point
-- See the error message.
-- Check whether nfs-utils, nfs-common and cifs-utils are installed.
+### What if a mount point is unavailable?
+You can troubleshoot the problem in the following steps:
+- View the error message.
+- Check whether `nfs-utils`, `nfs-common`, and `cifs-utils` are installed.
 - Check whether the local mount directory exists.
-- Check whether the VPC of the mount point is the same as that of the client VM, and whether they share the same region.
-- Check whether the VM hosting the CFS client is configured with a security group policy that prohibits access to external ports. For more information on specific ports, please see [File System Port](https://cloud.tencent.com/document/product/582/9551#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E7.AB.AF.E5.8F.A3.E9.97.AE.E9.A2.98). 
+- Check whether the mount point is in the same VPC as the client server and whether they are in the same region.
+- Check whether the client server has a security group policy prohibiting access to external ports. For more information on the specific ports, please see [Notes on Open Ports in a File System](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E9.9C.80.E8.A6.81.E5.BC.80.E6.94.BE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.EF.BC.9F).
 
-### Data cannot be written into CFS
-- See the error message.
-- Check whether the network of the VM hosting the client is normal, and whether the port of telnet mount point is opened. For more information on specific ports, please see [File System Port](https://cloud.tencent.com/document/product/582/9551#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E7.AB.AF.E5.8F.A3.E9.97.AE.E9.A2.98). 
-- If the file system is not mounted to the mount point root directory, check whether the corresponding mount point directory exists. (The common error message here is "Stale file handle". You can check whether the subdirectory exists through the device that has been mounted to the root directory.)
+### What if data cannot be written to CFS?
+You can troubleshoot the problem in the following steps:
+- View the error message.
+- Check whether the network of the client server is normal and run `telnet` to verify whether the port of the mount point is open. For more information on the specific ports, please see [Notes on Open Ports in a File System](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E9.9C.80.E8.A6.81.E5.BC.80.E6.94.BE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.EF.BC.9F). 
+- If the file system is not mounted to the mount point's root directory, check whether the corresponding mount point directory exists (the common error message in this case is "Stale file handle". You can check whether the subdirectory exists through a device mounted to the root directory).
 
-### File system port
+### Which ports need to be opened in a file system?
 
 File System Protocol | Open Port | Check Network Connectivity
 ------- | ------- | ---------
@@ -39,80 +49,87 @@ NFS 3.0 | 111, 892, 2049 | telnet file system IP 2049
 NFS 4.0 | 2049 | telnet file system IP 2049
 CIFS/SMB | 445 | telnet file system IP 445 
 
-Note: CFS does not currently support ping.
+> CFS does not support `ping` currently.
 
-### How do permissions take effect?
-NFS file system supports configuring multiple rules which take effect based on their priorities.
+### What if the configured access permission does not take effect?
+For an NFS file system, multiple rules can be configured, which will take effect based on their priorities:
+- If the permission of a single IP conflicts with that of an IP within an IP range in the same permission group, the permission with a higher priority will prevail, and if their priority levels are the same, the permission of the single IP will prevail.
+- If two IP ranges that have overlaps are configured with different permissions but the same priority levels, the permissions of the overlapping ranges will take effect randomly. Please avoid configuring overlapping IP ranges. 
 
-- If a single IP conflicts with an IP of the IP address range in the same permission group, the rule with a higher priority takes effect. If the priority is the same, the permission of the single IP prevails.
-- If two overlapped IP address ranges are configured with different permissions but the same priority, the permission of the overlapped IP address range takes effect randomly. Please avoid configuring overlapped IP address ranges. 
+>Priority configuration is not supported for CIFS/SMB file systems and will not take effect.
 
-**Note: CIFS/SMB file system does not support priorities, so the permission does not take effect.**
+### How to speed up copying local files to CFS?
+For Linux, use the `shell` script below to accelerate copying local files to CFS. The "number of threads" in the following code can be adjusted as needed.
+```
+threads=<number of threads>; src=<source path/>; dest=<target path/>; rsync -av -f"+ */" -f"- *" $src $dest && (cd $src && find . -type f | xargs -n1 -P$threads -I% rsync -av % $dest/% )
 
-### Accelerate copying local files to CFS
-For Linux, use the following shell script to accelerate the copying of local files to CFS. The "number of threads" in the following code can be adjusted as needed.
-
+<!--Example: threads=24; src=/root/github/swift/; dest=/nfs/; rsync -av -f"+ */" -f"- *" $src $dest && (cd $src && find . -type f | xargs -n1 -P$threads -I% rsync -av % $dest/% )-->
 ```
 
-threads=<number of threads>; src=<source path/>; dest=<destination path/>; rsync -av -f"+ */" -f"- *" $src $dest && (cd $src && find . -type f | xargs -n1 -P$threads -I% rsync -av % $dest/% )
+### What if an exception occurs when renaming a file or directory on Windows?
+Given the client's support for protocols, renaming a file or directory may fail if a Windows client mounts the file system with NFS. In this case, you are recommended to use CIFS/SMB for CFS file systems on Windows.
 
-<!--for example, threads=24; src=/root/github/swift/; dest=/nfs/; rsync -av -f"+ */" -f"- *" $src $dest && (cd $src && find . -type f | xargs -n1 -P$threads -I% rsync -av % $dest/% )-->
 
+### What if a file system has no write permission on Windows after being mounted with NFS?
+Please strictly follow the operation guide. Add `AnonymousUid` and `AnonymousGid` to the Registry and try again after restarting the system.
+For more information, please see [Using CFS File Systems on Windows Clients](https://intl.cloud.tencent.com/document/product/582/11524)
+
+### What if mapped drives cannot be used with Windows IIS?
+You can configure the correct NFS client program and modify the Registry (by adding users for access) as instructed in [Using CFS File Systems on Windows Clients](https://intl.cloud.tencent.com/document/product/582/11524).
+Restart the client, open the IIS configuration page, add a site, and click **Advanced Settings**.
+![](https://mc.qcloudimg.com/static/img/bdd15aa1ca694653b5595442cbc38737/IIS.png)
+Set the "Physical Path" in the "Advanced Settings" to the CFS mount point.
+![](https://main.qcloudimg.com/raw/54375f5bab346a95785bd26575a86fea.png)
+
+### Mounting a CFS file system on Docker or Kubernetes can succeed sometimes but fail at other times. How to solve this problem?
+
+This problem is caused by protocol compatibility. NFS v3 is recommended for mounting CFS with clients such as Docker and Kubernetes (using NFS v4 may lead to mounting problems on some clients).
+
+### What if I want to use a CFS file system on Window Server 2012 R2 as IIS server directory, but the file system cannot be mounted?
+
+IIS will convert the FSID needed for mounting with NFS v3.0 to uppercase, leading to the problem that the file system cannot be mounted normally. You are recommended to use Windows Server 2016 to avoid this problem.
+
+### How can I continue using CFS in an AZ where CFS resources are sold out?
+
+For example, assume that there is a CVM instance in Guangzhou Zone 1 that needs to use CFS, but file systems cannot be directly created in Guangzhou Zone 1 as the resources are sold out there.
+**In a VPC**
+If the CVM instance is in the "Guangzhou Zone 1" subnet of a VPC, you can log in to the [VPC Console](https://console.cloud.tencent.com/vpc) to create a subnet whose AZ is "Guangzhou Zone 2" for the VPC.
+![](https://main.qcloudimg.com/raw/d25fc9283b76f114a772bebb1b703548.png)
+![](https://main.qcloudimg.com/raw/5c0bb3dc41a7759bacf0c096dee4b413.png)
+
+After the subnet is successfully created, go back to the CFS Console and select this VPC and the subnet you just created to create resources in Guangzhou Zone 2. The CFS file system can be directly mounted to the CVM instance in the subnet of Guangzhou Zone 1 in this VPC.
+CIFS/SMB file system user guide:
+- [Linux](https://intl.cloud.tencent.com/document/product/582/11523)
+- [Windows](https://intl.cloud.tencent.com/document/product/582/11524)
+
+**In the basic network** 
+If the CVM instance resides in the basic network, you can create a VPC and a subnet in Guangzhou Zone 2 and then create a file system in this network. With Classiclink, you can connect the basic network and the VPC for access. For more information, please see [Classiclink](https://cloud.tencent.com/document/product/215/20083).
+
+### File content update is out of sync. How can I fix this?
+#### Issue
+An NFS file system is mounted to two Linux-based CVM instances. Use `append` to write a file to CVM instance A, and use `tail -f` to observe the changes to the file on CVM instance B. After data is written to the file on CVM instance A, it will take 10–30 seconds for the updated content to display on CVM instance B. However, in the same scenario, if you open the file directly on CVM instance B (e.g., using the `vi` command), you can view the update immediately.
+
+#### Cause
+This issue is related to the option of the NFS mount command and the implementation of `tail -f`. You can use the following mount command:   
+```sh
+sudo mount -t nfs -o vers=4 <mount point IP>:/ <target mount directory>
 ```
 
-### An exception occurred while modifying file name/directory name in Windows
-If a read/write exception or a failure to rename folder/file occurred while using the default subdirectory "nfs" to mount the file system, use FSID for mounting. The mount command is as follows. (FSID can be found in **Console** -> **File System Details** -> **Mount Point Information**.)
-> mount <mount point IP>:/FSID <shared directory name>:
-> //For example: mount 10.10.0.12:/z3r6k95r X:
+If CVM instance B mounts the file system with the NFS mount command, the kernel will maintain a metadata cache of the file and directory attributes (e.g., permissions, size, and timestamp) by default. The purpose of caching is to reduce the number of `NFSPROC_GETATTR` remote procedure calls (RPCs).
 
-![](https://main.qcloudimg.com/raw/d30598951413f86722aed46482e053f9.png)
+`tail -f` observes the changes to file attributes (mainly the file size) through `sleep+fstat` and then reads the file and outputs the content. The result of `fstat` determines whether `tail -f` can output the file content in real time. However, due to the metadata cache of file and directory attributes, `fstat` cannot poll real-time file attributes. As a result, although the file on the NFS server has been updated, `tail -f` cannot observe the change, which causes an output delay.
 
-
-### The file system has no write permission in Windows after being mounted using NFS
-Add AnonymousUid and AnonymousGid to the registry as instructed, and then restart the system and try again. [View instructions](https://cloud.tencent.com/document/product/582/9133#.E5.9C.A8-windows-.E4.B8.8A.E4.BD.BF.E7.94.A8.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-.
-
-### Windows IIS cannot use mapped driver
-Configure the correct NFS client program and modify the registry (add users who access the system) by following the steps in [Use File System in Windows](https://cloud.tencent.com/document/product/582/9133#.E5.9C.A8-windows-.E4.B8.8A.E4.BD.BF.E7.94.A8.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F).
-After the client is restarted, open the IIS configuration page, add a site, and click **Advanced Settings** to set the "Physical path" as the CFS mount point.
-
-![](https://main.qcloudimg.com/raw/83580529ff0f22032f891e442dff1235.png)
-![](https://main.qcloudimg.com/raw/b1a83b2a698428e569ab833f5132e37d.png)
-
-### How can I continue using CFS in an availability zone with the CFS resources sold out?
-Take Shanghai as an example. You have a CVM in Shanghai Zone 1 and you need to use CFS. However, you cannot directly create a file system, because the resources have been sold out in Shanghai Zone 1.
-
-**In VPC network**
-If the CVM resides in the "subnet of Shanghai Zone 1" in a VPC, you can log in to the [VPC console](https://console.cloud.tencent.com/vpc) to find the VPC and create a subnet of "Shanghai zone 2" for it.
-![](https://main.qcloudimg.com/raw/a849aa72a6419206d43ab084a3e72f3d.png)
-![](https://main.qcloudimg.com/raw/13d6a643a5a47d041ecfb5c01e24257f.png)
-![](https://main.qcloudimg.com/raw/eab7adc8dc279c2baca89b9baec3a7fd.png)
-
-After creating the subnet successfully, go back to the CFS console, and select this VPC and the subnet you just created to create resources in Shanghai Zone 2. The CFS file system can be directly mounted to the CVM in the subnet of Shanghai Zone 1 in this VPC. [View the file system mounting help documentation](https://cloud.tencent.com/document/product/582/11523).
-
-
-**In basic network** 
-If the CVM resides in a basic network, you can create a VPC and a subnet in Shanghai Zone 2, and then create a file system in this network. With "Classiclink", you can connect the CVM's basic network and the VPC to realize the access. [View Classiclink help documentation](https://cloud.tencent.com/document/product/215/5002).
-
-### File update is not synced (metadata cache and noac option)
-
-**Issue**
-A NFS file system is mounted to two Linux CVMs. Use "append" to write a file to CVM A, and use "tail -f" to observe the changes to the file on CVM B. After data has been written into the file on CVM A, it takes 10-30 seconds for the updated content to display on CVM B. However, in the same scenario, if you open the file directly on CVM B (e.g. using the vi command), you can view the update immediately.
-
-**Reason**
-This issue is related to the option of the NFS mount command and the implementation of tail -f.
-
-Mount command: sudo mount -t nfs -o vers=4 <mount point IP>:/ <target mount directory>  
- 
-If CVM B mounts the file system using NFS mount command, the kernel maintains a metadata cache of the file and directory attributes (including permissions, size, timestamp) by default. The purpose of caching is to reduce the number of NFSPROC_GETATTR Remote Procedure Calls (RPCs).
-
-tail -f observes the changes to file attributes (mainly the file size) through sleep+fstat, then it reads the file and outputs the content. The result of fstat determines whether tail -f can output the file content in real time. However, due to the metadata cache of file and directory attributes, fstat cannot poll real-time file attributes. As a result, the file on the NFS server has been updated, but tail -f cannot observe the change, which causes output delay.
-
-**Solution**
-Add the noac option when mounting the file system with the mount command to disable the caching of file and directory attributes. The mount command is as follows:
+#### Solution
+Add the `noac` option when mounting the file system with the mount command to disable the caching of file and directory attributes. The mount command is as follows:
+```sh
 sudo mount -t nfs -o vers=4 noac <mount point IP>:/ <target mount directory>
 sudo mount -t nfs -o vers=3 noac,nolock,proto=tcp <mount point IP>:/<FSID or subdirectory> <target mount directory>
+```
 
+### What if error 0x800704C9 occurs when a file system is mounted with NFS to a client based on Windows 7 or Windows Server 2008 R2?
 
+#### Cause
+These clients cache the original port numbers used to communicate with nlockmgr. For the specific cause, please see the help documentation on Microsoft's website [here](https://support.microsoft.com/en-us/help/2761774/0x800704c9-error-when-you-copy-files-to-an-nfs-server-from-a-windows-7).
 
-
+#### Solution
+Turn on the Automatic Updates feature on Windows to upgrade the system to the latest version to fix this problem.
