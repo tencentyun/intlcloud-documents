@@ -58,15 +58,15 @@
 **示例：**`1557902800;1557910000`
 
 ### 步骤2：生成 SignKey
-使用 [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 以 [SecretKey](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 为密钥，以 [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime) 为消息，计算消息摘要（哈希值），即为 SignKey。
+使用 [HMAC-SHA1](#preparations) 以 [SecretKey](preparations) 为密钥，以 [KeyTime](#generating-keytime) 为消息，计算消息摘要（哈希值），即为 SignKey。
 
 **示例：**`36bcd76dbb8c9f066472fec403df8a34cab34c77`
 
 ### 步骤3：生成 UrlParamList 和 HttpParameters
-1. 遍历 HTTP 请求参数，生成 key 到 value 的映射 Map 及 key 的列表 KeyList，其中 key 转换为小写形式，value 使用 [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 编码，没有 value 的参数，则认为 value 为空字符串。例如请求路径为`/?acl`，则认为是`/?acl=`。
+1. 遍历 HTTP 请求参数，生成 key 到 value 的映射 Map 及 key 的列表 KeyList，其中 key 转换为小写形式，value 使用 [UrlEncode](#preparations) 编码，没有 value 的参数，则认为 value 为空字符串。例如请求路径为`/?acl`，则认为是`/?acl=`。
 >? HTTP 请求参数，即请求路径中`?`以后的部分，例如请求路径为`/?versions&prefix=example-folder%2F&delimiter=%2F&max-keys=10`，则请求参数为`versions&prefix=example-folder%2F&delimiter=%2F&max-keys=10`。
 2. 将 KeyList 按照字典序排序。
-3. 将 Map 和 KeyList 中的 key 使用 [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 编码，并再次转换为小写形式。
+3. 将 Map 和 KeyList 中的 key 使用 [UrlEncode](#preparations) 编码，并再次转换为小写形式。
 4. 按照 KeyList 的顺序拼接 Map 中的每一个键值对，格式为`key1=value1&key2=value2&key3=value3`，即为 HttpParameters。
 5. 按照 KeyList 的顺序拼接 KeyList 中的每一项，格式为`key1;key2;key3`，即为 UrlParamList。
 
@@ -75,16 +75,17 @@
 请求路径:`/?prefix=example-folder%2F&delimiter=%2F&max-keys=10`
 UrlParamList: `delimiter;max-keys;prefix`
 HttpParameters: `delimiter=%2F&max-keys=10&prefix=example-folder%2F`
->!请求路径中的请求参数在实际发送请求时也会进行 UrlEncode，因此要注意不要重复执行 UrlEncode。
+>!请求路径中的请求参数在实际发送请求时也会进行 
+，因此要注意不要重复执行。
 - 示例二：
 请求路径:`/exampleobject?acl`
 UrlParamList: `acl`
 HttpParameters: `acl=`
 
 ### 步骤4：生成 HeaderList 和 HttpHeaders
-1. 遍历 HTTP 请求头部，生成 key 到 value 的映射 Map 及 key 的列表 KeyList，其中 key 转换为小写形式，value 使用 [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 编码。
+1. 遍历 HTTP 请求头部，生成 key 到 value 的映射 Map 及 key 的列表 KeyList，其中 key 转换为小写形式，value 使用 [UrlEncode](#preparations) 编码。
 2. 将 KeyList 按照字典序排序。
-3. 将 Map 和 KeyList 中的 key 使用 [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 编码，并再次转换为小写形式。
+3. 将 Map 和 KeyList 中的 key 使用 [UrlEncode](#preparations) 编码，并再次转换为小写形式。
 4. 按照 KeyList 的顺序拼接 Map 中的每一个键值对，格式为`key1=value1&key2=value2&key3=value3`，即为 HttpHeaders。
 5. 按照 KeyList 的顺序拼接 KeyList 中的每一项，格式为`key1;key2;key3`，即为 HeaderList。
 
@@ -99,7 +100,7 @@ x-cos-grant-read: uin="100000000011"
 计算得到 HeaderList 为`date;host;x-cos-acl;x-cos-grant-read`，HttpHeaders 为`date=Thu%2C%2016%20May%202019%2003%3A15%3A06%20GMT&host=examplebucket-1250000000.cos.ap-shanghai.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`。
 
 ### 步骤5：生成 HttpString
-根据 HTTP 方法、HTTP 请求路径、[HttpParameters](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters) 和 [HttpHeaders](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders) 生成 HttpString，格式为`HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`。
+根据 HTTP 方法、HTTP 请求路径、[HttpParameters](#generating-urlparamlist-and-httpparameters) 和 [HttpHeaders](#generating-headerlist-and-httpheaders) 生成 HttpString，格式为`HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`。
 
 其中：
 - HttpMethod 转换为小写，例如 get 或 put。
