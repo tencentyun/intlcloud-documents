@@ -73,7 +73,7 @@ mount -t nfs -o vers=4.0,rw,sync  localhost:/ /localfolder
 ### Encrypting static data
 
 In addition to encryption in transfer, encryption of stored data is required too in some business scenarios. CFS features static data encryption to ensure data privacy.
-CFS uses the key provided by [KMS](https://cloud.tencent.com/document/product/573) and the AES-256 algorithm for static data encryption. Once the file system encryption feature is enabled, you don't have to care about the encryption and decryption procedures, as the storage encryption process is completely imperceptible to your business systems.
+CFS uses the key provided by [KMS](https://intl.cloud.tencent.com/document/product/1030) and the AES-256 algorithm for static data encryption. Once the file system encryption feature is enabled, you don't have to care about the encryption and decryption procedures, as the storage encryption process is completely imperceptible to your business systems.
 
 When creating a file system, you can choose whether to encrypt it or not.
 1. Log in to the [CFS Console](https://console.cloud.tencent.com/cfs).
