@@ -82,7 +82,7 @@ A Windows file system usually uses NTFS or FAT32 format, while a Linux file syst
 2. Download and install DiskInternals Linux Reader on the reinstalled Windows CVM.
 3. Mount the data disk under Linux to the Windows CVM. Skip this step if the data disk has already been mounted: Log in to [Console](https://console.cloud.tencent.com/cvm), go to **Cloud Virtual Machine** -> **Cloud Block Storage**, and then click **More** -> **Mount to CVM** button for the Linux data disk to be mounted. Select the reinstalled Windows CVM in the pop-up box, and then click **OK**.
 4. Run DiskInternals to check the information of the data disk you just mounted. /root/mnt and /root/mnt1 correspond to partitions vdb1 and vdb2, respectively:![](https://main.qcloudimg.com/raw/b35757625119c8226a022042cf0fac3f.png)
-5. Click to enter /root/mnt, right-click the file you want to copy, and then select **Save** to save the file.![](https://main.qcloudimg.com/raw/05b1cecf7206fec9052973f4ae7955a6.png)
+5. Click to enter /root/mnt, right-click the file you want to copy, and then select **Save** to save the file.![](https://main.qcloudimg.com/raw/431d722a14e746e3f680cc7af91c9808.png)
 
 6. Note that the Linux data disk is read-only at this time. To perform read and write operations on the data disk as you do on a Windows data disk, back up the files you need and then re-format the disk into a standard type supported by Windows operating system. For more information, please see [Data Disk Partitioning and Formatting on Windows System](https://cloud.tencent.com/document/product/213/2158).
 

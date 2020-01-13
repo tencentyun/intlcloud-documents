@@ -85,4 +85,4 @@ Windowsのファイルシステムは一般的にNTFS又はFAT32 フォーマッ
 5. クリックして/root/mntに入り、コピーしようとするファイルを右クリックし、【save】を選択しファイルを保存します。
 > この時の Linux データディスクは読み取り専用です。このデータディスクをWindowsデータディスクとして読み書き操作を行う場合は、先に必要なファイルをバックアップし、 Windows OSの対応する標準タイプにフォーマットしてください。具体的な操作は [Windows データディスクパーティション及びフォーマット](https://intl.cloud.tencent.com/document/product/213/2158)をご参照ください。
 >
-![](https://main.qcloudimg.com/raw/05b1cecf7206fec9052973f4ae7955a6.png)
+![](https://main.qcloudimg.com/raw/431d722a14e746e3f680cc7af91c9808.png)
