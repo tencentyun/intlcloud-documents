@@ -20,7 +20,7 @@ ES supports configuring alarms for key metrics, which can help you identify clus
 3. After the configuration is completed, click **Finish**. Return to the **Alarm Policy** list and you can see the alarm policy just configured.
 >For more information about how to configure an alarm policy, see [Cloud Monitor Alarm Configuration](https://intl.cloud.tencent.com/document/product/248/6215).
 >
-![](https://main.qcloudimg.com/raw/22a734b1ea38092f3a4fc6d24df91c51.png)
+![](https://main.qcloudimg.com/raw/e036d702d7225cb01e2ffd9f02ca927a.png)
 ![](https://main.qcloudimg.com/raw/e4277fe07038f654ef69fd2185f0ac2e.png)
 
 ### Create a new trigger template
