@@ -30,6 +30,7 @@ This API (GET Service) is used to query the list of all buckets under a requeste
 
 Sample 1. Listing all buckets
 
+[//]: # (.cssg-snippet-get-service)
 ```js
 cos.getService(function(err, data) {
     console.log(err || data);
@@ -38,9 +39,10 @@ cos.getService(function(err, data) {
 
 Sample 2. Listing all buckets in a specified region
 
+[//]: # (.cssg-snippet-get-regional-service)
 ```js
 cos.getService({
-    Region: 'ap-beijing',
+    Region: 'COS_REGION',
 }, function(err, data) {
     console.log(err || data);
 });
@@ -67,10 +69,12 @@ function(err, data) { ... }
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 | - Owner | Object representing the bucket owner | Object |
+| - - ID           | String representing the user ID in the format of `qcs::cam::uin/100000000001:uin/100000000001`, where 100000000001 is UIN | String |
+| - - DisplayName  | String representing the username, which is usually the same as the string you enter for ID      | String |
 | - Buckets      | Bucket List                                                   | Object |
-| - - Name       | Bucket list                                                   | Object |
-| - - Location   | Bucket region                                               | String |
-| - - CreateDate | Bucket creation time                                               | String |
+| - - Name       | Bucket list. The format is BucketName-APPID, such as examplebucket-1250000000                                                  | Object |
+| - - Location   | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224), such as ap-guangzhou, ap-beijing, ap-hongkong, etc.                                               | String |
+| - - CreateDate | Bucket creation time, It is in ISO8601 format, such as 2019-05-24T10:56:40Z | String |
 
 ### Creating a Bucket
 
@@ -80,11 +84,11 @@ This API (PUT Bucket) is used to create a bucket under a specified account.
 
 #### Sample
 
+[//]: # (.cssg-snippet-put-bucket)
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
-    Region: 'ap-beijing',
-    ACL: 'private',
+    Region: 'COS_REGION'
 }, function(err, data) {
     console.log(err || data);
 });
@@ -132,7 +136,7 @@ This API (HEAD Bucket) is used to verify whether a bucket exists and whether you
 ```js
 cos.headBucket({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'ap-beijing',     /* Required */
+    Region: 'COS_REGION',     /* Required */
 }, function(err, data) {
     console.log(err || data);
 });
@@ -166,12 +170,14 @@ function(err, data) { ... }
 
 This API (DELETE Bucket) is used to delete an empty bucket under a specified account. If the deletion succeeds, HTTP status code `200` or `204` will be returned.
 
+>Before deleting a bucket, please make sure that all the data and incomplete multipart uploads in the bucket have been deleted; otherwise, the bucket cannot be deleted.
+
 #### Sample
 
 ```js
 cos.deleteBucket({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'ap-beijing'     /* Required */
+    Region: 'COS_REGION'     /* Required */
 }, function(err, data) {
     console.log(err || data);
 });
@@ -214,7 +220,7 @@ Set a bucket to public-read:
 ```js
 cos.putBucketAcl({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'ap-beijing',    /* Required */
+    Region: 'COS_REGION',    /* Required */
     ACL: 'public-read'
 }, function(err, data) {
     console.log(err || data);
@@ -223,34 +229,23 @@ cos.putBucketAcl({
 
 Grant a user Read/Write access to a bucket:
 
+[//]: # (.cssg-snippet-put-bucket-acl-user)
 ```js
 cos.putBucketAcl({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'ap-beijing',    /* Required */
+    Region: 'COS_REGION',    /* Required */
     GrantFullControl: 'id="qcs::cam::uin/100000000001:uin/100000000001",id="qcs::cam::uin/100000000011:uin/100000000011"' // 100000000001 is UIN
 }, function(err, data) {
     console.log(err || data);
 });
 ```
-
-Grant a user Read/Write access to a bucket:
-
-```js
-cos.putBucketAcl({
-    Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'ap-beijing',    /* Required */
-    GrantFullControl: 'id="qcs::cam::uin/100000000001:uin/100000000001",id="qcs::cam::uin/100000000011:uin/100000000011"' // 100000000001 is UIN
-}, function(err, data) {
-    console.log(err || data);
-});
-```
-
 Modify bucket permission with `AccessControlPolicy`:
 
+[//]: # (.cssg-snippet-put-bucket-acl-acp)
 ```js
 cos.putBucketAcl({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'ap-beijing',    /* Required */
+    Region: 'COS_REGION',    /* Required */
     AccessControlPolicy: {
         "Owner": { // `Owner` is required in `AccessControlPolicy`
             "ID": 'qcs::cam::uin/100000000001:uin/100000000001' // 100000000001 is the UIN of the bucket owner
@@ -287,6 +282,8 @@ cos.putBucketAcl({
 | - - Grantee | List of all the information on CORS configuration | ObjectArray | No |
 | - - - ID | String representing the user ID in the format of `qcs::cam::uin/100000000001:uin/100000000001`, where 100000000001 is UIN | String | No |
 | - - - DisplayName | String representing the username, which is usually the same as the string you enter for `ID` | String | No |
+| - - - URI           |Preset user group, see [ACL overview](https://intl.cloud.tencent.com/document/product/436/30583#acl-elements), such as<br>`http://cam.qcloud.com/groups/global/AllUsers`or<br>`http://cam.qcloud.com/groups/global/AuthenticatedUsers` | String      |    No |
+
 
 #### Callback Function Description
 
@@ -314,7 +311,7 @@ This API (GET Bucket acl) is used to query the access control list (ACL) of a bu
 ```js
 cos.getBucketAcl({
     Bucket: 'examplebucket-1250000000', /* Required */
-    Region: 'ap-beijing'     /* Required */
+    Region: 'COS_REGION'     /* Required */
 }, function(err, data) {
     console.log(err || data);
 });
@@ -375,9 +372,10 @@ function(err, data) { ... }
 | - GrantFullControl | Grants the grantee Read/Write access | String |
 | - Owner | Bucket owner information | Object |
 | - - DisplayName | Bucket owner name | String |
-| - - ID | Bucket owner ID. <br>Format: `qcs::cam::uin/&lt;OwnerUin>:uin/&lt;SubUin>`. <br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String |
+| - - ID | Bucket owner ID. <br>Format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`. <br>For root accounts, <OwnerUin> and <SubUin> have the same value. | String |
 | - Grants | List of information on the grantee and permissions | ObjectArray |
 | - - Permission | Specifies the permission granted to the grantee. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String |
 | - - Grantee | Information on the grantee. The type can be RootAccount or Subaccount <br>If the type is RootAccount, the ID specifies a root account <br>If the type is Subaccount, the ID specifies a sub-account | Object |
 | - - - DisplayName | Username | String |
-| - - - ID | User ID. <br>For root accounts, the format is `qcs::cam::uin/&lt;OwnerUin>:uin/&lt;OwnerUin>` <br>or `qcs::cam::anyone:anyone` representing all users. <br>For sub-accounts, the format is `qcs::cam::uin/&lt;OwnerUin>:uin/&lt;SubUin>` | String      |
+| - - - ID | User ID. <br>For root accounts, the format is `qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>` <br>or `qcs::cam::anyone:anyone` representing all users. <br>For sub-accounts, the format is `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String      |
+| - - - URI           |Preset user group, see [ACL overview](https://intl.cloud.tencent.com/document/product/436/30583#acl-elements), such as<br>`http://cam.qcloud.com/groups/global/AllUsers`or<br>`http://cam.qcloud.com/groups/global/AuthenticatedUsers` | String      |    No |
