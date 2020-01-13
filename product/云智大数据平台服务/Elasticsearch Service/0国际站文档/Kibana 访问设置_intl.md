@@ -1,7 +1,7 @@
 For accessomg Kibana and its usage, see [Accessing Kibana](https://cloud.tencent.com/document/product/845/17146).
 
 Since Kibana is accessed through the public network, certain security restrictions, including passwords and blacklist and whitelist of IPs, can be set up in the access control section of the details page, as shown below:
-![Reset password](https://main.qcloudimg.com/raw/3fa85f997895ed2e21b1abe9f7c1f9ee.png)
+![Reset password](https://main.qcloudimg.com/raw/7af2eff8fbb21eacbb399fdf87e20214.png)
 ## Password Verification and Modification
 To access Kibana, you need to verify your login password. If you forget your password, you can reset the Kibana password in the basic information section of your cluster details page. A Kibana password is a combination of 8-16 characters comprised of at least two of the following types: letters, numbers and special symbols.
 

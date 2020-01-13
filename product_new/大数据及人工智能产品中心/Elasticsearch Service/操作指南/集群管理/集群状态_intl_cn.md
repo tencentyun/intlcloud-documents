@@ -1,6 +1,6 @@
 在集群列表页和集群详情页的基本信息中，均可查看到集群的状态信息。
-![列表页](https://main.qcloudimg.com/raw/3126ad8ef939ee985f7c326080620219.png)
-![详情页](https://main.qcloudimg.com/raw/3fa85f997895ed2e21b1abe9f7c1f9ee.png)
+![列表页](https://main.qcloudimg.com/raw/80a76902ac9513d09df81d220ac5d7d7.png)
+![详情页](https://main.qcloudimg.com/raw/7af2eff8fbb21eacbb399fdf87e20214.png)
 集群状态是反映集群是否在变更中或正常使用的状态，包括：正常、处理等，具体含义如下：
 
 | 状态 | 含义 | 

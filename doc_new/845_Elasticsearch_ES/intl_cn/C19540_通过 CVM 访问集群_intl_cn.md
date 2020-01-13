@@ -2,7 +2,7 @@
 
 ## 查看内网地址
 在集群列表页，单击集群 ID 进入详情页，在基础配置中可查看内网地址。
-![基本配置](https://main.qcloudimg.com/raw/3fa85f997895ed2e21b1abe9f7c1f9ee.png)  
+![基本配置](https://main.qcloudimg.com/raw/7af2eff8fbb21eacbb399fdf87e20214.png)  
 
 >!不同高级特性版本（原X-Pack插件）的访问方式不同，开源版和基础版不需要用户名密码鉴权，白金版需要用户名密码鉴权。 
 >具体规则为 curl action -u user:password host ...，请注意将 user、password 替换为自己实际的用户名密码。

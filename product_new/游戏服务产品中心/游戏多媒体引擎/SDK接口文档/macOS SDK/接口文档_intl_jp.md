@@ -23,7 +23,7 @@ macOSを使う開発者がTencent Cloud Gaming Multimedia Engineの製品APIの�
 - エラーコードの詳細については、「エラーコード」(https://intl.cloud.tencent.com/document/product/607/15173)をご参照ください。
 
 ## リアルタイム音声のフローチャート
-![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
+![](https://main.qcloudimg.com/raw/810d0404638c494d9d5514eb5037cd37.png)
 
 
 ## 関連インターフェースの初期化
@@ -84,7 +84,8 @@ _context.TMGDelegate =self;
 パラメータの取得については、[アクセスガイド](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。
 このインターフェースはTencent CloudコンソールからのSDKAppID番号をパラメータとする必要があります。また、openIdも必要です、このopenIdはユーザーの唯一の標識です。ルールはApp開発者により設定され、Appでは重複されてはなりません（現在、INT64のみに対応しています）。
 >入室するには、SDKを先に初期化する必要があります。
-####  関数のプロトタイプ
+>
+>####  関数のプロトタイプ
 
 ```
 ITMGContext -(int)InitEngine:(NSString*)sdkAppID openID:(NSString*)openId
@@ -317,7 +318,7 @@ ITMGContext GetRoom -(int)GetRoomType
 | ITMG_ROOM_CHANGE_EVENT_ENTERROOM|1 |入室に際し、固有のオーディオタイプはルームタイプと不一致であるため、入室するルームのオーディオタイプに変更されました|
 | ITMG_ROOM_CHANGE_EVENT_START|2|入室済みで、オーディオタイプ切り替え中です（例えば、ChangeRoomTypeインターフェースを呼び出してからオーディオタイプを切り替えます）|
 | ITMG_ROOM_CHANGE_EVENT_COMPLETE|3|入室済みで、オーディオタイプは切り替え済みです|
-| ITMG_ROOM_CHANGE_EVENT_REQUEST|4|ルームメンバーが ChangeRoomTypeインターフェースを呼び出し、ルームのオーディオタイプの切り替えをリクエストします|	
+| ITMG_ROOM_CHANGE_EVENT_REQUEST|4|ルームメンバーが ChangeRoomTypeインターフェースを呼び出し、ルームのオーディオタイプの切り替えをリクエストします|
 
 
 ####  サンプルコード  
@@ -750,7 +751,7 @@ ITMGContext GetAudioCtrl -(QAVResult)EnableLoopBack:(BOOL)enable
 
 
 ## オフライン音声のテキスト変換のフローチャート
-![](https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png)
+![](https://main.qcloudimg.com/raw/9ef5e5e4ebc8e63bcd7bfbea6cfb94cc.png)
 
 
 
@@ -762,7 +763,7 @@ ITMGContext GetAudioCtrl -(QAVResult)EnableLoopBack:(BOOL)enable
 
 |インターフェース     | インターフェースの意味   |
 | ------------- |:-------------:|
-|Init    |GMEを初期化します | 
+|Init    |GMEを初期化します |
 |Poll    |イベントコールバックをトリガーします|
 |Pause   |システムを一時停止します|
 |Resume |システムをリカバーします|
@@ -904,8 +905,8 @@ ITMGContext GetPTT -(void) StartRecordingWithStreamingRecognition(const NSString
 
 |エラーコード     | 意味         |対処方法|
 | ------------- |:-------------:|:-------------:|
-|32775|ストリーミングボイスツーテキスト変換は失敗しましたが、録音は成功しました|UploadRecordedFileインターフェースを呼び出し録音をアップロードしてから、SpeechToTextインターフェースを呼び出しボイステキスト変換を行います
-|32777|ストリーミングボイスツーテキスト変換は失敗しましたが、録音は成功し、アップロードしました|返された情報にはアップロードしたバックグラウンドurlアドレスが含まれているため、SpeechToTextインターフェースを呼び出してボイステキスト変換を行います
+|32775|ストリーミングボイスツーテキスト変換は失敗しましたが、録音は成功しました|UploadRecordedFileインターフェースを呼び出し録音をアップロードしてから、SpeechToTextインターフェースを呼び出しボイステキスト変換を行います|
+|32777|ストリーミングボイスツーテキスト変換は失敗しましたが、録音は成功し、アップロードしました|返された情報にはアップロードしたバックグラウンドurlアドレスが含まれているため、SpeechToTextインターフェースを呼び出してボイステキスト変換を行います|
 
 ####  サンプルコード  
 ```
@@ -1425,7 +1426,7 @@ ITMGContext GetAudioCtrl -(QAVResult)RemoveAudioBlackList:(NSString*)openID
 
 ### メッセージリスト：
 
-|メッセージ    | メッセージの意味   
+|メッセージ    | メッセージの意味   |
 | ------------- |:-------------:|
 |ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    |オーディオルームに入室します|
 |ITMG_MAIN_EVENT_TYPE_EXIT_ROOM             |オーディオルームから退室します|
