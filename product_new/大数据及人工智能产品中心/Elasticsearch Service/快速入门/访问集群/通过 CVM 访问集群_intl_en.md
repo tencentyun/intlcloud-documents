@@ -4,7 +4,7 @@ Tencent Cloud ES is built on your VPC, and you can access the ES cluster by usin
 
 You can view the private network address in Basic Configuration of the cluster details page by clicking the cluster ID in the list page.
 
-![Basic Configuration](https://main.qcloudimg.com/raw/3fa85f997895ed2e21b1abe9f7c1f9ee.png)  
+![Basic Configuration](https://main.qcloudimg.com/raw/7af2eff8fbb21eacbb399fdf87e20214.png)  
 
 
 ## Create Documents

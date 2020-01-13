@@ -4,7 +4,7 @@
 
 在列表页集群 ID>详情页基础配置中可查看内网地址。
 
-![基本配置](https://main.qcloudimg.com/raw/3fa85f997895ed2e21b1abe9f7c1f9ee.png)  
+![基本配置](https://main.qcloudimg.com/raw/7af2eff8fbb21eacbb399fdf87e20214.png)  
 
 
 ## 创建文档
