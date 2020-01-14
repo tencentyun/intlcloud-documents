@@ -25,7 +25,7 @@
 #### 通过策略模板配置
 
 1. 使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，单击左侧菜单【用户】，单击已创建的子账号。
-![](https://main.qcloudimg.com/raw/482b09f65e41238be79052cda852f2c8.png)
+![](https://main.qcloudimg.com/raw/03804c04df5e91fc0472e8d0297f694d.png)
 2. 在策略列表中搜索`QcloudMonitorFullAccess`策略，单击确定添加至该子账号中，即可使用该子账号查阅云监控报表。
 ![Aaron Swartz](https://main.qcloudimg.com/raw/c2e07335d2e68e2f077138ff9d73837f.png)
 >!策略模板将授予访问云监控的所有权限，如您需要保护账号安全，可自定义配置子账户读权限的访问策略。
