@@ -1,4 +1,4 @@
-### <span id="CVM가격 참고">CVM가격 참고</span>
+### <span id="CVM가격참고">CVM가격 참고</span>
 
 본 문서는 현재 Tencent Cloud 소재 리전의 각 유형별 CVM의 가격 참고용 문서입니다. 실제 거래 가격은 최종 주문을 기준으로 진행됩니다. 조회하기 쉽도록 알파벳 순서로 정렬됩니다.표의 인스턴스는 [CVM 인스턴스 사양](https://intl.cloud.tencent.com/document/product/213/11518) 소개를 통해 자세한 내용을 참조하십시오.
 
@@ -41,7 +41,7 @@
 | Standard S2        | S2.SMALL2      | 1 Core   | 2GB   | Intel Xeon   E5-2680 v4(2.4 GHz) | 0.03USD/hr |
 | Standard S2        | S2.SMALL1      | 1 Core   | 1GB   | Intel Xeon E5-2680 v4(2.4 GHz)   | 0.02USD/hr |
 
-[맨 위로](#CVM가격 참조)
+[맨 위로](#CVM가격참고)
 
 ##### 베이징
 
@@ -162,7 +162,7 @@
 | Standard S3      | S3.SMALL2       | 1   Core   | 2GB   | Intel Xeon Skylake 6133(2.5 GHz) | 0.04   USD/hr  |
 | Standard S3      | S3.SMALL1       | 1   Core   | 1GB   | Intel Xeon Skylake 6133(2.5 GHz) | 0.03   USD/hr  |
 
-[맨 위로](#CVM가격 참조)
+[맨 위로](#CVM가격참고)
 
 ##### 청두
 
