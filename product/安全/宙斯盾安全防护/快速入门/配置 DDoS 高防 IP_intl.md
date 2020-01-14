@@ -9,19 +9,19 @@ This document details the steps for configuring and launching a DDoS protective 
 1. **Purchase a DDoS protective IP**
 a. Go to the [Aegis Anti-DDoS Console](https://console.cloud.tencent.com/gamesec), click **DDoS Protective IP* in the left pane, and click **Purchase Protective IP** under "Protective IP List".
 
-![1](https://i.imgur.com/vvj42N6.png)
+![1](https://main.qcloudimg.com/raw/be6c1607ce5f3e2ef43c09ba76d81535.png)
 b. Select the required configuration according to the business needs, confirm the configuration and click **Purchase Now**.
-![2](https://i.imgur.com/YC0mlTS.png)
+![2](https://main.qcloudimg.com/raw/b0bed15beeeaf210deed3327f959db72.png)
 2. **Add a protective IP forwarding rule group**
 a. On the "DDoS Protective IP" page, click **Forwarding rule group** and click **Add forwarding rule group**.
 b. Enter "New rule group name", select the "Forwarding mode" and "Project" and click **OK**.
-![3](https://i.imgur.com/h1PmEq4.png)
+![3](https://main.qcloudimg.com/raw/c797ebc57417de384638fa3bafb5444c.png)
 >**Note:**
 >60 forwarding rules are provided free of charge by default for each forwarding rule group.
 
 3. **Add a forwarding rule*
 a. After creating a forwarding rule group, click a **Forwarding rule group ID** to enter the forwarding rule group details page.
-![4](https://i.imgur.com/tiaxGnH.png)
+![4](https://main.qcloudimg.com/raw/d2f61f622e130824eefd472635726caf.png)
 b. Under **Rule group information**, click **Add Forwarding Rule** to add a rule based on layer 4 port forwarding. Based on the business protocol requirements, select the "Protocol type", configure "Session hold", select the appropriate "Polling policy", and enter the "Forwarding port" number, "Real server port" number and "Real server's public IP and weight" and click **OK**. Forwarding rules can be created and added in batches.
 ![5](https://main.qcloudimg.com/raw/f3cc98aea65ebf357d23f10fcfd5bc7d.png)
 >**Note:**
@@ -38,9 +38,9 @@ Each forwarding rule can be configured with 40 public IPs of the real server.
 > - The following port numbers are reserved for the forwarding cluster and cannot be added as forwarding ports: 843, 3306, 1433, 1434, 36000, 56000 and 3389.
 4. **Binding Forwarding Rule Group to Protective IP**
 After creating a forwarding rule group, under "DDoS Protective IP", click **Forwarding Rule Group**. In the "Operation" column, click **Bind Protective IP** to bind the forwarding rule group to a protective IP.
-![6](https://i.imgur.com/j6P3AhZ.png)
+![6](https://main.qcloudimg.com/raw/ba0a97d71a426a1cf82507c67cf5719e.png)
 You can also click **DDoS Protective IP** and select a protective IP to enter the DDoS protective IP details page. Then, click **Basic Configuration**, click **Bind** under "Forwarding Rule Group Settings" and click **Bind** to bind the forwarding rule group to the protective IP.
-![7](https://i.imgur.com/phz8AkB.png)
+![7](https://main.qcloudimg.com/raw/5df4421d7e0964c67fffaba5a1b11923.png)
 ![8](https://main.qcloudimg.com/raw/377d5e8e0a64953b750755c8913ff2c3.png)
 5. **Pointing Business to Protective IP**
  After binding a forwarding rule group to the protective IP, you can verify the connectivity from the protective IP's forwarding port to the real server's real server port. Point the business to the protective IP to complete the protective IP accessing configuration. If your business uses DNS service, you can change the DNS in your business' DNS service provider and replace the original IP address with the bound protective IP address. 

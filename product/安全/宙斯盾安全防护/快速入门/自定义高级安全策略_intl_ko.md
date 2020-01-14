@@ -29,7 +29,7 @@ Aegis Anti-DDoS는 기초 보안 전략을 제공합니다. 전략은 AI 지능�
 
 **사례 설명:**
 다음은 정상적인 비즈니스 메시지입니다.
-![1](https://i.imgur.com/Zx83ZgR.png)
+![1](https://main.qcloudimg.com/raw/c52a92b15c4c99d0a581462b40ca536b.png)
 
 분석하고 결과 특징은 다음과 같습니다.
 - 대상 포트는 80입니다.

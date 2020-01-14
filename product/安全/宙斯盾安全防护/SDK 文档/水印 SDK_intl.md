@@ -8,7 +8,7 @@ Download the relevant [Demo and SDK](https://main.qcloudimg.com/raw/5ef28eba1118
  2. Call the SDK API function to generate watermark information.
  3. When sending a message, place the 20-byte watermark information in front of the message body.
 - The SDK file contains so and jar files in the following directory structure:
-![](https://i.imgur.com/mPPkCxA.png)
+![](https://main.qcloudimg.com/raw/917fa4204160a4def749d5c71a98f810.png)
 - SDK API description:
  - Package: com.gamesec
  - Class: Mark
@@ -24,7 +24,7 @@ Download the relevant [Demo and SDK](https://main.qcloudimg.com/raw/5ef28eba1118
 
 ### Access Steps (Android Studio)
 1. Copy the content of the sdk/android folder to the libs folder of the project directory:
- ![](https://i.imgur.com/GnO0TF2.png)
+ ![](https://main.qcloudimg.com/raw/10957eeaba136e56d53528d4cedc4001.png)
 2. Modify the project's build.gradle file, set the jni file directory and add jar dependencies:
 ```
 android {
@@ -121,7 +121,7 @@ s.close();
 	2. Call the SDK API function to generate watermark information.
 	3. When sending a message, place the 20-byte watermark information in front of the message body.
 - The SDK file contains a and h files in the following directory structure:
- ![](https://i.imgur.com/Q8Xz8J5.png)
+ ![](https://main.qcloudimg.com/raw/64126dc978ed27a9c4c5d02ad906a250.png)
 - API description:
 <table>
 <tbody>
@@ -134,17 +134,17 @@ s.close();
 
 ### Access Steps (Xcode)
 1. Copy the content of the sdk/ios folder to the project directory:
-![](https://i.imgur.com/1RHDRpP.png)
+![](https://main.qcloudimg.com/raw/1e6284a08a2d17c9138e4442cb7204b1.png)
 2. Add the SDK file to Xcode. Right-click the project name and click "Add Files to".
-![](https://i.imgur.com/ZOeSU5b.png)
+![](https://main.qcloudimg.com/raw/d2dc416312ca9c2b244c7a0ba75ce841.png)
 3. Select "Create folder references" in the dialog box, select the two files of the SDK and click Add.
-![](https://i.imgur.com/T7ls8Cu.png)
+![](https://main.qcloudimg.com/raw/2a7bf9fb066bd7c4ab584eb4287a5f1b.png)
 4. Click the project name, select General and add the a file to "Linked Frameworks and Libraries":
-![](https://i.imgur.com/B1M5boV.png)
+![](https://main.qcloudimg.com/raw/b509d322e2cb7485c848f4226ed9ccfd.png)
 5. If it is a Swift project, you need to create a bridge file; for an Object-C project, skip this step. Create a Header File and name it bridge.h. Add the following code to the file:
 			# import "gamesec.h";
 6. Click the project name, select Build Settings and add bridge.h to the Object-C Bridging Header:
-![](https://i.imgur.com/tt4w0Lg.png)
+![](https://main.qcloudimg.com/raw/2a7bf9fb066bd7c4ab584eb4287a5f1b.png)
 
 ### API Call
 

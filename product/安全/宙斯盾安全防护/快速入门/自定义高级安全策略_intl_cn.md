@@ -29,7 +29,7 @@
 
 **案例说明：**
 如下为一个正常业务报文。
-![1](https://i.imgur.com/Zx83ZgR.png)
+![1](https://main.qcloudimg.com/raw/c52a92b15c4c99d0a581462b40ca536b.png)
 
 经过分析，其特征如下：
 - 目的端口为 80。
@@ -45,7 +45,7 @@
 **执行操作：**
 同时命中上述条件做拦截。
 
-![2](https://i.imgur.com/5Psp2sr.png)
+![2](https://main.qcloudimg.com/raw/e47e7ffb5af1ce6c63dcd0e884776401.png)
 
 ## CC 防护策略
 

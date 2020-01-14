@@ -9,19 +9,19 @@
 1. **购买 DDoS 高防 IP**
 a. 用户进入 [宙斯盾高防控制台](https://console.cloud.tencent.com/gamesec)，在左侧目录中，单击【DDoS 高防 IP】，在 “高防 IP 列表” 下，单击 【购买】。
 
-![1](https://i.imgur.com/vvj42N6.png)
+![1](https://main.qcloudimg.com/raw/be6c1607ce5f3e2ef43c09ba76d81535.png)
 b. 根据业务需求选取需要的配置，确认好配置，单击【立即支付】。
-![2](https://i.imgur.com/YC0mlTS.png)
+![2](https://main.qcloudimg.com/raw/b0bed15beeeaf210deed3327f959db72.png)
 2. **添加高防 IP 转发规则组**
 a. 在 “DDoS 高防 IP” 下，单击【转发规则组】，单击【添加转发规则组】。
 b. 输入 “新规则组名称”，选择好 “转发模式” 和 “所属项目” ，单击【确定】。
-![3](https://i.imgur.com/h1PmEq4.png)
+![3](https://main.qcloudimg.com/raw/c797ebc57417de384638fa3bafb5444c.png)
 >**说明：**
 >每个转发规则组下默认免费提供 60 个转发规则。
 
 3. **添加转发规则**
 a. 创建转发规则组后，单击【转发规则组 ID】，进入 “转发规则组详情” 页面。
-![4](https://i.imgur.com/tiaxGnH.png)
+![4](https://main.qcloudimg.com/raw/d2f61f622e130824eefd472635726caf.png)
 b. 在【规则组信息】下，单击【添加转发规则】，可以添加基于 4 层端口转发的规则。请根据业务协议需求，选择 “协议类型”，配置 “会话保持” 开关，选取适合的 “轮询策略”，并输入 “转发端口” 号、“源站端口” 号和 “源站公网 IP 和权重”，创建转发规则支持批量添加，单击【确定】。
 ![5](https://i.imgur.com/hLmcVB6.png)
 >**说明：**
@@ -38,9 +38,9 @@ b. 在【规则组信息】下，单击【添加转发规则】，可以添加�
 > - 如下端口号为转发集群保留端口，不可添加为转发端口：843，3306，1433，1434，36000，56000，3389。
 4. **为高防 IP 绑定转发规则组**
 创建完转发规则组后，在 “DDoS 高防 IP” 下，单击【转发规则组】，在 “操作” 列下，单击【关联高防 IP】，将该转发规则组绑定到高防 IP。
-![6](https://i.imgur.com/j6P3AhZ.png)
+![6](https://main.qcloudimg.com/raw/ba0a97d71a426a1cf82507c67cf5719e.png)
 也可以在 “DDoS 高防 IP” 下选择 “高防 IP”，进入 “DDoS 高防 IP 详情” 页面， 单击【基础配置】，在 “转发规则组设置” 项目下，单击【绑定】，为高防 IP 绑定转发规则组。
-![7](https://i.imgur.com/phz8AkB.png)
+![7](https://main.qcloudimg.com/raw/5df4421d7e0964c67fffaba5a1b11923.png)
 ![8](https://i.imgur.com/atKA3EE.png)
 5. **业务指向高防 IP**
  为高防 IP 绑定转发规则组后，用户可以验证从高防 IP 的转发端口到源站服务器的源站端口的连通性。配置业务指向到高防 IP，即完成了高防 IP 的接入配置。如用户业务之前使用了域名解析，用户可在业务域名解析服务商中更改域名解析，将原 IP 地址更换为绑定的高防 IP 地址。 

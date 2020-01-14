@@ -8,15 +8,15 @@
 ## 接入步骤
 1. **购买 DDoS 高防包**
 a. 用户进入 [宙斯盾高防控制台](https://console.cloud.tencent.com/gamesec)，在左侧目录中，单击【DDoS 高防包】，在 “高防包列表” 的下，单击【购买】。
-![1](https://i.imgur.com/TBrDbFu.png)
+![1](https://main.qcloudimg.com/raw/df630ccec3cab14691171922384836c5.png)
 b. 选择好配置，单击【立即下单】。
-![2](https://i.imgur.com/R8NhTNf.png)
+![2](https://main.qcloudimg.com/raw/4f15ff65dce6198d107f20dcc0868615.png)
 2. **绑定防护 IP**
 a. 在 “DDoS 高防包” 页面的【高防包列表】下，单击高防包 ID，进入基本信息页。
-![6](https://i.imgur.com/0hr040S.png)
+![6](https://main.qcloudimg.com/raw/ca821b16273f669683d0ba85b59dcfab.png)
 b. 在 “DDoS 高防包详情” 页面下，单击【防护 IP 列表】，单击【添加防护 IP】。
-![7](https://i.imgur.com/bHv4nvt.png)
+![7](https://main.qcloudimg.com/raw/b5c3b51d527183481d6dc854757e463a.png)
 c. 在 “添加防护 IP” 弹窗中，勾选好云服务器的 “IP 地址”，单击【确定】。
 ![8](https://i.imgur.com/MmGjqdM.png)
 d. 添加成功后，在【防护 IP 列表】下，可以看到该 IP 地址即可以获得 DDoS 高防包防护了。
-![9](https://i.imgur.com/FezkAQ5.png)
+![9](https://main.qcloudimg.com/raw/1e6247686a49f9053ee801ce865638a7.png)
