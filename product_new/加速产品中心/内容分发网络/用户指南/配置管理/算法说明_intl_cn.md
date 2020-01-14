@@ -50,7 +50,7 @@ CDN 上分发的内容默认为公开资源，为了避免恶意用户盗刷内�
    - 签名参数：设置携带签名串的参数名称，默认填充为 **sign**，可指定为其他参数名。
    - 有效时间：服务端会通过签名解析出来的 **timestamp**，加上有效时间，与当前时间对比，判定签名是否有效。
 
-<img src="https://main.qcloudimg.com/raw/abf68477508155f85d888668fc6b2b99.png"  style="margin: 0px 0px 0px 30px;">
+<img src="https://main.qcloudimg.com/raw/95253c212fcd2028d37d8e2f5f828c41.png"  style="margin: 0px 0px 0px 30px;">
 
 5. 完成鉴权参数配置后，需指定鉴权范围与对象：
 ![img](https://main.qcloudimg.com/raw/4c89dd4fc8aab848a3ada068794c2977.png)
