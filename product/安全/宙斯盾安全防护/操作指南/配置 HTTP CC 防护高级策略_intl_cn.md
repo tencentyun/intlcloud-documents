@@ -3,24 +3,24 @@
 
 ## 添加 CC 防护策略
 1. 用户进入 [宙斯盾高防控制台](https://console.cloud.tencent.com/gamesec)，在左侧目录中，单击【HTTP CC 防护高级策略】，在 “HTTP CC 防护高级策略” 下，单击【添加新策略】。添加成功后，在 “操作” 列下单击【配置】进入策略配置页面。
-![1](https://i.imgur.com/yDiQsHG.png)
+![1](https://main.qcloudimg.com/raw/a32eaf1467ef22fd27cac77a7ce4b15f.png)
 2. 根据业务特点和防护需求配置 HTTP QPS 请求阈值、URL 白名单、IP 黑白名单、CC 自定义防护模式等策略。单击保存即添加策略成功。
-![2](https://i.imgur.com/mfY0Xyt.png)
+![2](https://main.qcloudimg.com/raw/5b6359d8248c3b1e34aedb073691a9fa.png)
 
 ## CC 防护策略直接绑定防护 IP
 1. 单击【HTTP CC 防护高级策略】，在 “HTTP CC 防护高级策略” 下单击 “策略 ID”。
-![3](https://i.imgur.com/VYBlSMr.png)
+![3](https://main.qcloudimg.com/raw/3d663831885c74d52b19c9377852d24d.png)
 2. 单击【绑定 IP 列表】，单击【添加 IP】。
-![4](https://i.imgur.com/Nj10vJm.png)
+![4](https://main.qcloudimg.com/raw/de18a5e19a794f66e789d3c39d8f77b1.png)
 
 ## DDoS 高防 IP 绑定 CC 防护策略
 1. 单击【DDoS 高防 IP 】，在 “DDoS 高防 IP” 下，选择 “高防 IP”，进入 “DDoS 高防  IP” 详情页。
-![5](https://i.imgur.com/pAeeKuk.png)
+![5](https://main.qcloudimg.com/raw/997da26bb158592f5b42a515e53406bc.png)
 2. 单击 “高级配置信息”。单击【绑定】，选择好 CC 防护策略，单击【确认】。
-![6](https://i.imgur.com/i37QogR.png)
+![6](https://main.qcloudimg.com/raw/daa015ef589070bb7921909e113fa0f0.png)
 
 ## 给 DDoS 高防包下的防护 IP 配置 CC 防护策略
 1.  单击【DDoS 高防包】，在 “DDoS 高防包” 下，选择 “高防包 ID”，进入 “DDoS 高防包” 详情页。
-![7](https://i.imgur.com/ME4OtML.png)
+![7](https://main.qcloudimg.com/raw/c83a7d6e01ee0bc9e70ec1372b75c952.png)
 2. 单击【防护 IP 列表】，勾选需要配置的 IP，单击 “配置 CC 防护策略”。
 ![8](https://i.imgur.com/E9k6P1r.png)

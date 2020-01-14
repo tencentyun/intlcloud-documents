@@ -2,16 +2,16 @@
 
 | SDK            | 接入文档                                     |
 | ------------- | --------------------------------------- |
-| Android SDK    | [Android SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629) |
-| C SDK    | [C SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629) |
-| C++ SDK    | [C++ SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629) |
-|  .NET SDK   |[.NET SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629)
-| Go SDK    |   [Go SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629)  |
-| iOS SDK        | [iOS SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629)    |
-| Java SDK | [Java SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629) |
-| JavaScript SDK | [JavaScript SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629) |
+| Android SDK    | [Android SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/12159) |
+| C SDK    | [C SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/12296) |
+| C++ SDK    | [C++ SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/12301) |
+|  .NET SDK   |[.NET SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/30594)
+| Go SDK    |   [Go SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/30601)  |
+| iOS SDK        | [iOS SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/11280)    |
+| Java SDK | [Java SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/10199) |
+| JavaScript SDK | [JavaScript SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/11459) |
 | Node.js SDK    | [Node.js SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629) |
-| PHP SDK       | [PHP SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629)   |
-| Python SDK       | [Python SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629)   |
-| 小程序 SDK     |  [小程序 SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/8629)       |
+| PHP SDK       | [PHP SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/12266)   |
+| Python SDK       | [Python SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/12269)   |
+| 小程序 SDK     |  [小程序 SDK 快速入门](https://intl.cloud.tencent.com/document/product/436/30609)       |
 

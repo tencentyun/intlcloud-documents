@@ -16,7 +16,7 @@
 | 监控报表         | [查询监控报表](https://intl.cloud.tencent.com/document/product/436/31634)|
 |日志管理|[设置日志管理](https://intl.cloud.tencent.com/document/product/436/17040)   |
 | 数据回源     | [设置回源](https://intl.cloud.tencent.com/document/product/436/31508) |
-| 批量处理 | 批量处理 |
+| 批量处理 | [批量处理](https://intl.cloud.tencent.com/document/product/436/32956)  |
 | 数据检索     | [检索数据](https://intl.cloud.tencent.com/document/product/436/32538) |
 | 版本控制     | [设置版本控制](https://intl.cloud.tencent.com/document/product/436/19881)   |
 | 跨地域复制   | [设置跨地域复制](https://intl.cloud.tencent.com/document/product/436/19235)  |

@@ -8,7 +8,7 @@
  2. SDK 인터페이스 함수를 호출하고, 워터마크 정보를 생성합니다.
  3. 메시지 발송 시, 20바이트의 워터마크 정보가 정보체 앞에 놓입니다.
 - SDK 파일은 so 파일과 jar 파일을 포함하며, 디렉터리 구조는 다음과 같습니다.
-![](https://i.imgur.com/mPPkCxA.png)
+![](https://main.qcloudimg.com/raw/917fa4204160a4def749d5c71a98f810.png)
 - SDK API 설명
  - 프로그램 패키지: com.gamesec
  - 유형: Mark
@@ -24,7 +24,7 @@
 
 ### 액세스 절차(Android Studio)
 1. sdk/android 폴더 내용을 프로세스 디렉터리의 libs 폴더에 복사합니다.
- ![](https://i.imgur.com/GnO0TF2.png)
+ ![](https://main.qcloudimg.com/raw/10957eeaba136e56d53528d4cedc4001.png)
 2. 프로젝트의 build.gradle 파일을 수정하고, jni 파일 디렉터리를 설정하며, jar 의존을 추가합니다.
 ```
 android {
@@ -121,7 +121,7 @@ s.close();
 	2. SDK 인터페이스 함수를 호출하고, 워터마크 정보를 생성합니다.
 	3. 메시지 발송 시, 20바이트의 워터마크 정보가 정보체 앞에 놓입니다.
 - SDK 파일은 a 파일과 h 파일을 포함합니다. 디렉터리 구조는 다음과 같습니다.
- ![](https://i.imgur.com/Q8Xz8J5.png)
+ ![](https://main.qcloudimg.com/raw/64126dc978ed27a9c4c5d02ad906a250.png)
 - 인터페이스 설명:
 <table>
 <tbody>
@@ -134,17 +134,17 @@ s.close();
 
 ### 액세스 절차(Xcode)
 1. SDK/ios 폴더의 내용을 프로세스 디렉터리에 복사합니다.
-![](https://i.imgur.com/1RHDRpP.png)
+![](https://main.qcloudimg.com/raw/1e6284a08a2d17c9138e4442cb7204b1.png)
 2. SDK 파일을 Xcode에 추가합니다. 프로세스 이름을 마우스 우클릭하고, “Add Files to”를 클릭합니다.
-![](https://i.imgur.com/ZOeSU5b.png)
+![](https://main.qcloudimg.com/raw/d2dc416312ca9c2b244c7a0ba75ce841.png)
 3. 대화 상자에서 “Create folder references”를 선택하고, SDK의 두 파일을 선택한 뒤, 추가를 클릭합니다.
-![](https://i.imgur.com/T7ls8Cu.png)
+![](https://main.qcloudimg.com/raw/2a7bf9fb066bd7c4ab584eb4287a5f1b.png)
 4. 프로세스 이름을 좌클릭하고 General을 선택한 뒤, a 파일을 “Linked Framews and Libraries”에 추가합니다.
-![](https://i.imgur.com/B1M5boV.png)
+![](https://main.qcloudimg.com/raw/b509d322e2cb7485c848f4226ed9ccfd.png)
 5. Swift 프로젝트의 경우, 브리지 파일을 생성해야 하며, Object-C 프로젝트의 경우, 해당 절차를 넘어갈 수 있습니다. Header File 1개를 생성하여 bridge.h라 명명합니다. 파일에 아래 코드를 추가합니다.
 			# import "gamesec.h";
 6. 프로세스 이름을 좌클릭하고 Build Settings를 선택하여 bridge.h를 Object-C Bridging Header에 추가합니다.
-![](https://i.imgur.com/tt4w0Lg.png)
+![](https://main.qcloudimg.com/raw/2a7bf9fb066bd7c4ab584eb4287a5f1b.png)
 
 ### 인터페이스 호출
 

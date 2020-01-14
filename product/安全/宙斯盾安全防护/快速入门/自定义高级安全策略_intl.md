@@ -29,7 +29,7 @@ TCP traffic requests from outside China (Mainland China, Hong Kong (China), Maca
 
 **Case description:**
 The following is a normal business message.
-![1](https://i.imgur.com/Zx83ZgR.png)
+![1](https://main.qcloudimg.com/raw/c52a92b15c4c99d0a581462b40ca536b.png)
 
 After analysis, its characteristics are as follows:
 - The destination port is 80.
@@ -45,7 +45,7 @@ Messages that meet the following conditions:
 **Executed operation:**
 If a message meets all the conditions above at the same time, it will be blocked.
 
-![2](https://i.imgur.com/5Psp2sr.png)
+![2](https://main.qcloudimg.com/raw/e47e7ffb5af1ce6c63dcd0e884776401.png)
 
 ## CC Protection Policy
 

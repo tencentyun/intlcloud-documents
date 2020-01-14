@@ -8,7 +8,7 @@
  2. SDKインターフェイス関数を呼び出して透かし情報を生成します。
  3. メッセージを送信するときは、20バイトの透かし情報をメッセージ本文の前に置きます。
 - SDKファイルにはsoファイルとjarファイルが含まれ、ディレクトリ構造は次のとおりです。
-![](https://i.imgur.com/mPPkCxA.png)
+![](https://main.qcloudimg.com/raw/917fa4204160a4def749d5c71a98f810.png)
 - SDK APIの説明：
  - プログラムパッケージ：com.gamesec
  - クラス：Mark
@@ -24,7 +24,7 @@
 
 ### アクセス手順（Android Studio）
 1. sdk/androidフォルダの内容をプロジェクトディレクトリのlibs フォルダにコピーします。
- ![](https://i.imgur.com/GnO0TF2.png)
+ ![](https://main.qcloudimg.com/raw/10957eeaba136e56d53528d4cedc4001.png)
 2. アイテムのbuild.gradleファイルを変更し、jniファイルディレクトリを設定し、jar依存関係を追加します。
 ```
 android {
@@ -121,7 +121,7 @@ s.close();
 	2. SDKインターフェイス関数を呼び出して透かし情報を生成します。
 	3. メッセージを送信するときは、20バイトの透かし情報をメッセージ本文の前に置きます。
 - SDKファイルにはaファイルとhファイルが含まれ、ディレクトリ構造は次のとおりです。
- ![](https://i.imgur.com/Q8Xz8J5.png)
+ ![](https://main.qcloudimg.com/raw/64126dc978ed27a9c4c5d02ad906a250.png)
 - インターフェイスの説明：
 <table>
 <tbody>
@@ -134,17 +134,17 @@ s.close();
 
 ### アクセス手順（Xcode）
 1. sdk/iosフォルダの内容をプロジェクトディレクトリにコピーします。
-![](https://i.imgur.com/1RHDRpP.png)
+![](https://main.qcloudimg.com/raw/1e6284a08a2d17c9138e4442cb7204b1.png)
 2. SDKファイルをXcodeに追加します。プロジェクト名を右クリックして、「Add Files to」をクリックします。
-![](https://i.imgur.com/ZOeSU5b.png)
+![](https://main.qcloudimg.com/raw/d2dc416312ca9c2b244c7a0ba75ce841.png)
 3. ダイアログで 「Create folder references」を選択し、SDK の二つのファイルを選択し、Addをクリックします。
-![](https://i.imgur.com/T7ls8Cu.png)
+![](https://main.qcloudimg.com/raw/2a7bf9fb066bd7c4ab584eb4287a5f1b.png)
 4. プロジェクト名を左クリックして、Generalを選択し、a ファイルを 「Linked Framews and Libraries」に追加します。
-![](https://i.imgur.com/B1M5boV.png)
+![](https://main.qcloudimg.com/raw/b509d322e2cb7485c848f4226ed9ccfd.png)
 5. Swiftアイテムであれば、ブリッジファイルを作成する必要があり、Object-Cアイテムはこのステップをスキップできます。Header Fileを作成し、bridge.hに命名します。次のコードをファイルに追加します。
 			# import "gamesec.h";
 6. プロジェクト名を左クリックして、Build Settingsを選択し、 bridge.h を Object-C Bridging Headerに追加します。
-![](https://i.imgur.com/tt4w0Lg.png)
+![](https://main.qcloudimg.com/raw/2a7bf9fb066bd7c4ab584eb4287a5f1b.png)
 
 ### インターフェイスの呼び出し
 

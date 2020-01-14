@@ -15,4 +15,4 @@
 
 ## 用户运营商分布
 通过来源客户端 IP 识别出访问者所在运营商，并进行环状占比图、列表展示，便于客户了解自身业务用户运营商分布情况。
-![](https://main.qcloudimg.com/raw/eb7b45eb5458a5f6e9db70dfa9227c5c.png)
+![](https://main.qcloudimg.com/raw/88ab778c8ca2cbfb5f920a1684a76b9e.png)

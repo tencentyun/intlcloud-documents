@@ -4,9 +4,9 @@
 ## 操作步骤
 1. 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧菜单中单击【域名管理】，进入管理页面。
 2. 单击激活域名检索输入框，选择域名、源站、标签及所属项目其中一个或多个资源属性，并输入对应值进行域名搜索过滤。
-![](https://main.qcloudimg.com/raw/2027fba6a0f6299b6f1291efbee534b2.png)
+![](https://main.qcloudimg.com/raw/5f77724408026bd05f2d1ac14b9f8b86.png)
 3. 若对输入资源属性或输入格式有疑问，可通过单击【i】图标，获得 [搜索帮助](#help)。
-![](https://main.qcloudimg.com/raw/32ce829d3dda62bfc473698664620be1.png)
+![](https://main.qcloudimg.com/raw/a102d06a64427fd3e171d99ba1c4040a.png)
 
 >!
 >+ 只支持主源站搜索，备源站暂不支持搜索。
@@ -15,11 +15,11 @@
 
 ## 搜索说明
 + 域名搜索：输入完整或部分域名进行匹配，支持模糊搜索。
-  ![](https://main.qcloudimg.com/raw/75a0da4dd4205c7142a017ea9d326d57.png)
+  ![](https://main.qcloudimg.com/raw/438647b2478de9df7d204d23639d6b87.png)
 + 源站搜索：输入完整或部分源站进行匹配，支持模糊搜索。
 + 标签搜索：输入完整标签名，返回包含输入标签名的域名列表，标签名不支持模糊搜索。
 + 所属项目搜索：允许选择多项目进行筛选。
-  ![所属项目](https://main.qcloudimg.com/raw/c9968a6d337484d74f3236034fcc3414.png)
+  ![所属项目](https://main.qcloudimg.com/raw/8b15327f7125150a2cb78342839f41b5.png)
 - 支持多条件筛选：即选定域名、源站、标签和所属项目其中一个或多个条件共同筛选，当多条件筛选时以回车分隔。
 - 支持多关键字筛选：即每个筛选条件允许输入多个关键字，每个关键字之间由 | 分隔。
 
@@ -37,10 +37,10 @@ width: 240px;
 | 类别               | 输入格式                                             | 例子                     | 搜索框示例                                                   | 说明                                                         |
 | ----------------- | --------------------------------------------------- |----------------------- | ----------------------------------------------------------- | ------------------------------------------------------------ |
 | 单个关键字         | 【关键字】                                           | www.test.com             |  ![单关键字](https://main.qcloudimg.com/raw/af1f1771fd42f0a38df5c7a0bc9bc861.png)| 过滤包含字符 "www.test.com" 的域名。                           |
-| 单域名属性         | 【属性】:【关键词】                                  | 源站：1.1.1.1            | ![单域名](https://main.qcloudimg.com/raw/0569c8fe8e8ddcf34b65a6da0d4dcacc.png) | 过滤源站包含“1.1.1.1”的域名。                                  |
-| 多域名属性         | 【属性】:【关键词】【回车】<br>【属性】:【关键词】 | 域名：text<br>源站：1.1.1.1 | ![多域名](https://main.qcloudimg.com/raw/d351c69ad10134bdfa13a2b3db479c88.png) | 过滤域名包含字符 “text”，源站包含“1.1.1.1”的域名。              |
-| 单域名属性多关键字 | 【属性】:【关键词】\|【关键词】                      | 所属项目：test1\|test2   | ![单域名多关键字](https://main.qcloudimg.com/raw/0fd9fed4dcd8402415849e3e57eec5f5.png) | 过滤所属项目包含 “test1” 或 “test2” 的域名。 域名、源站属性暂不支持多关键字检索。 |
-| 复制字符           | （黏贴的字符）                                       | test abc                 | ![复制](https://main.qcloudimg.com/raw/a286ea1b578faf54dfe1ce671a836eb2.png) | 过滤包含字符 “text” 或 “abc” 的域名。                              |
+| 单域名属性         | 【属性】:【关键词】                                  | 源站：1.1.1.1            | ![单域名](https://main.qcloudimg.com/raw/95eab4659fde0526a6ff7b82b4dae03b.png) | 过滤源站包含“1.1.1.1”的域名。                                  |
+| 多域名属性         | 【属性】:【关键词】【回车】<br>【属性】:【关键词】 | 域名：text<br>源站：1.1.1.1 | ![多域名](https://main.qcloudimg.com/raw/1e199e5b7a5268ee3e0b458b7db1fa76.png) | 过滤域名包含字符 “text”，源站包含“1.1.1.1”的域名。              |
+| 单域名属性多关键字 | 【属性】:【关键词】\|【关键词】                      | 所属项目：test1\|test2   | ![单域名多关键字](https://main.qcloudimg.com/raw/22a61295630849332aac815db4a6a039.png) | 过滤所属项目包含 “test1” 或 “test2” 的域名。 域名、源站属性暂不支持多关键字检索。 |
+| 复制字符           | （黏贴的字符）                                       | test abc                 | ![复制](https://main.qcloudimg.com/raw/823aeda4c1e1f43dc2fa3cec34b8c29f.png) | 过滤包含字符 “text” 或 “abc” 的域名。                              |
 
 >!未填充属性时，CDN 无法做到全局搜索，因此默认添加上【域名】属性进行搜索，即输入单个关键字时，搜索框内容为：`域名:www.test.com`；黏贴字符时，搜索框内容为：`域名:test|abc`。
 
