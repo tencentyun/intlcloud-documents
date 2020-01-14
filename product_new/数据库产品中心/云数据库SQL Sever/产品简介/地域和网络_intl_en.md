@@ -72,4 +72,4 @@
 The network connectivity test tool provided on the [TencentDB for SQL Server purchase page](https://buy.cloud.tencent.com/sqlserver#/) can be used to check if there are CVM instances that can communicate with TencentDB for SQL Server over a private network for the selected regions/AZ and network types. 
 ![](https://main.qcloudimg.com/raw/a302d5de7907b7820a0a6d60c4cc5d19.png)
 Click **View Details** to view information about the eligible CVM instances, including ID/instance name, AZ, configuration (CPU, memory, disk, and network), and master IP address. You can also use the search function to easily find eligible CVM instances.
-![](https://main.qcloudimg.com/raw/b3f7164672075c3a477673109d070ac5.png)
+![](https://main.qcloudimg.com/raw/5d39b94b29e77d342e1d6379e470d70f.png)
