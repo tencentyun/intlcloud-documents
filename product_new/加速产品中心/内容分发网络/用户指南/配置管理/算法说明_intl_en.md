@@ -42,7 +42,7 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
 2. Click **Security Configuration** and you can see the **Authentication Configuration** module, which is disabled by default.
 ![image](https://main.qcloudimg.com/raw/7704e3f764d2e99ed61504783bb36b42.png)
 3. In the **Authentication Configuration** module, click *Configuration** to enable authentication. Currently, three types can be configured:
-> !Currently, TypeB cannot be selected due to feature upgrade.
+> Currently, TypeB cannot be selected due to feature upgrade.
 > 
 ![img](https://main.qcloudimg.com/raw/e011bc76fafa307013956f9b4f1e3b4c.png)
 4. After selecting the type, you can configure authentication parameters. The following takes **TypeA** as an example:
