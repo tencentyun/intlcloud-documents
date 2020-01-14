@@ -13,7 +13,7 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Doma
 ![](https://main.qcloudimg.com/raw/d301ff1eea5fe534ce09ec5964e8c82b.png)
 
 ### Configuring the domain name
-![](https://main.qcloudimg.com/raw/ec7ea324171295b8fd0321e226d0e0a3.png)
+![](https://main.qcloudimg.com/raw/be5e2b251bbcbcc674242062684649c1.png)
 1. Enter the **domain name** to be accelerated.
 Wildcard domain names are supported, such as `*.test.com`. Up to 10 domain names can be connected in batches in one single operation.
 The domain name should meet the following conditions:
