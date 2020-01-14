@@ -38,13 +38,13 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
 
 ## Configuration Guide
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page. Find the desired domain name and click **Manage** in the "Operation" column.
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+![img](https://main.qcloudimg.com/raw/dec7f22ef91890a5d39b969d01437361.png)
 2. Click **Security Configuration** and you can see the **Authentication Configuration** module, which is disabled by default.
-![image](https://main.qcloudimg.com/raw/6c74dadfd6d5eb65d59134d5647c1116.png)
+![image](https://main.qcloudimg.com/raw/7704e3f764d2e99ed61504783bb36b42.png)
 3. In the **Authentication Configuration** module, click *Configuration** to enable authentication. Currently, three types can be configured:
 > !Currently, TypeB cannot be selected due to feature upgrade.
 > 
-![img](https://main.qcloudimg.com/raw/90f6a122795f2baecc281f267a6c5611.png)
+![img](https://main.qcloudimg.com/raw/e011bc76fafa307013956f9b4f1e3b4c.png)
 4. After selecting the type, you can configure authentication parameters. The following takes **TypeA** as an example:
    - Authentication Key: Select a specified string as the authentication key based on your business conditions.
    - Signature Parameter: Set a parameter name with a signature string. The value is **sign** by default and can be customized.
@@ -53,13 +53,13 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
 <img src="https://main.qcloudimg.com/raw/abf68477508155f85d888668fc6b2b99.png"  style="margin: 0px 0px 0px 30px;">
 
 5. After parameter configuration is completed, specify the authentication range and object.
-![img](https://main.qcloudimg.com/raw/353bcd539cb3a9d183b089d56fd54bae.png)
+![img](https://main.qcloudimg.com/raw/4c89dd4fc8aab848a3ada068794c2977.png)
 
 ## Authentication Calculator
 > ?You can use the authentication calculator to check whether the request path and signature are correct.
 > 
 In the **Authentication Configuration** module, click *Configuration.** Currently, three types can be configured. Select the type, configure the authentication parameters, and then determine the authentication URL. The following takes **TypeA** as an example:
-![img](https://main.qcloudimg.com/raw/c74fcdb0416d52b266ff3d1e54d0172f.png)
+![img](https://main.qcloudimg.com/raw/8d090ea7b5358120a1e233245e06f885.png)
 > !
 > - Currently, TypeB cannot be selected due to feature upgrade.
 > - If the access path has a URL with Chinese characters, you need to decode the URL first before performing the authentication configuration.
