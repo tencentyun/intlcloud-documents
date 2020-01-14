@@ -20,9 +20,9 @@ Log into the [CDN Console](https://console.cloud.tencent.com/cdn) and select **S
 
 ### Data on the details page
 Click **View Details** under each metric to enter the metric details page.
-![](https://main.qcloudimg.com/raw/55cd96de690acf97ca6e9194df6644ec.png)
+![](https://main.qcloudimg.com/raw/f63c60b1e8d89db0302c9e102548fe70.png)
 You can switch metrics via the drop-down list on the top-left corner of the details page.
-![](https://main.qcloudimg.com/raw/afeaff1b7a408e5caebe26a738714569.png)
+![](https://main.qcloudimg.com/raw/795eeb398f3f73663f5168f3b41612c4.png)
 
 ## Granularity Description
 ### Granularity on the overview page
