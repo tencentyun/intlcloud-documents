@@ -8,7 +8,7 @@
  2. 调用 SDK 接口函数，生成水印信息。
  3. 发送报文时，将 20 字节水印信息放在消息体前面。
 - SDK 文件包含 so 文件和 jar 文件，目录结构如下：
-![](https://i.imgur.com/mPPkCxA.png)
+![](https://main.qcloudimg.com/raw/917fa4204160a4def749d5c71a98f810.png)
 - SDK API 说明：
  - 程序包：com.gamesec
  - 类：Mark
@@ -24,7 +24,7 @@
 
 ### 接入步骤（Android Studio）
 1. 将 sdk/android 文件夹下的内容拷贝到工程目录的 libs 文件夹下：
- ![](https://i.imgur.com/GnO0TF2.png)
+ ![](https://main.qcloudimg.com/raw/10957eeaba136e56d53528d4cedc4001.png)
 2. 修改项目的 build.gradle 文件，设置 jni 文件目录，添加 jar 依赖：
 ```
 android {
@@ -121,7 +121,7 @@ s.close();
 	2. 调用 SDK 接口函数，生成水印信息。
 	3. 发送报文时，将 20 字节水印信息放在消息体前面。
 - SDK 文件包含 a 文件和 h 文件，目录结构如下：
- ![](https://i.imgur.com/Q8Xz8J5.png)
+ ![](https://main.qcloudimg.com/raw/64126dc978ed27a9c4c5d02ad906a250.png)
 - 接口说明：
 <table>
 <tbody>
@@ -134,17 +134,17 @@ s.close();
 
 ### 接入步骤（Xcode）
 1. 将 sdk/ios 文件夹下的内容拷贝到工程目录：
-![](https://i.imgur.com/1RHDRpP.png)
+![](https://main.qcloudimg.com/raw/1e6284a08a2d17c9138e4442cb7204b1.png)
 2. 将 SDK 文件添加到 Xcode。右键工程名，单击 “Add Files to”。
-![](https://i.imgur.com/ZOeSU5b.png)
+![](https://main.qcloudimg.com/raw/d2dc416312ca9c2b244c7a0ba75ce841.png)
 3. 在对话框中勾选 “Create folder references”，选中 SDK 的两个文件，单击 Add。
-![](https://i.imgur.com/T7ls8Cu.png)
+![](https://main.qcloudimg.com/raw/2a7bf9fb066bd7c4ab584eb4287a5f1b.png)
 4. 左键工程名，选择 General，将 a 文件添加到 “Linked Framews and Libraries”：
-![](https://i.imgur.com/B1M5boV.png)
+![](https://main.qcloudimg.com/raw/b509d322e2cb7485c848f4226ed9ccfd.png)
 5. 如果是 Swift 项目，需要创建桥文件，Object-C 项目可以跳过此步骤。创建一个 Header File，命名为 bridge.h。并在文件中添加以下代码：
 			# import "gamesec.h";
 6. 左键工程名，选择 Build Settings，将 bridge.h 添加到 Object-C Bridging Header 中：
-![](https://i.imgur.com/tt4w0Lg.png)
+![](https://main.qcloudimg.com/raw/2a7bf9fb066bd7c4ab584eb4287a5f1b.png)
 
 ### 接口调用
 

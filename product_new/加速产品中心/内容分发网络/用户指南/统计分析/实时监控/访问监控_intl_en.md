@@ -12,9 +12,9 @@ Log into the [CDN Console](https://console.cloud.tencent.com/cdn) and select **S
 
 ### Data on the details page
 Click **View Details** under each metric to enter the metric details page.
-![](https://main.qcloudimg.com/raw/f07bfb4a06e39995e35d43ce39ef6941.png)
+![](https://main.qcloudimg.com/raw/3aae6ee3d47dadae74ca59667b6d7310.png)
 You can switch metrics via the drop-down list on the top-left corner of the details page.
-![](https://main.qcloudimg.com/raw/7d465cd4fcc4f7625ae181208a3d06cd.png)
+![](https://main.qcloudimg.com/raw/5262321ca413e2a24274a0d0fe086263.png)
 On the details page, you can view the following data:
 + Bandwidth: Total peak bandwidth, real-time bandwidth curve, and domain name bandwidth rankings (from large to small).
 + Traffic: Total traffic, real-time traffic curve, domain name traffic rankings (from high to low), and URL traffic rankings (from high to low).

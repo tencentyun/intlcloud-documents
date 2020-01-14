@@ -6,18 +6,18 @@
 ## 开启流程
 1. ** 进入 “业务列表” 开启水印**
 用户进入 [宙斯盾高防控制台](https://console.cloud.tencent.com/gamesec)，在左侧目录中单击 【业务域名列表】，在已经创建的对应项目列，单击【开启水印】。
-![1](https://i.imgur.com/lroTzT1.png)
+![1](https://main.qcloudimg.com/raw/6c53776a2a1f72da1aab2e4cbeb7b67e.png)
 2. **复制密钥**
 a. 开启水印成功后，在 “水印功能开启成功” 的弹窗中选择 “复制密钥”，单击【添加防护策略】。
 ![2](https://i.imgur.com/YqQ6cKQ.png)
 b. 进入 “添加防护策略” 页面，选择 “防护 IP”。
-![3](https://i.imgur.com/CXYs6jS.png)
+![3](https://main.qcloudimg.com/raw/c15bc6e8aefa1b7a711bb4b187a9f2cf.png)
 c. 添加好 TCP 协议防护端口、UDP 协议防护端口、白名单，单击【确认添加】。
-![4](https://i.imgur.com/U7c1tI5.png)
+![4](https://main.qcloudimg.com/raw/bb5b8a2c9394a19720ba92aa5c2b5682.png)
 3. **线下配置**
 在 “水印功能开启成功” 弹窗中，单击【客户端接入文件】下载，完成客户端和服务端的接入。
 4. **开启策略**
 a. 用户创建策略成功后，在【水印防护】下，单击【增加策略】进行修改，单击【启用】策略。
-![](https://i.imgur.com/ZmGSyBC.png)
+![](https://main.qcloudimg.com/raw/8fe6f6bd3b004821f8e2c4e06515bebd.png)
 b. 等待几秒钟，防护状态显示为“防护生效”，水印开启成功。
 ![](https://i.imgur.com/Qnh0UC9.png)

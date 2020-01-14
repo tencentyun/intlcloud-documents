@@ -3,24 +3,24 @@
 
 ## 添加高级安全策略
 1. 用户进入 [宙斯盾高防控制台](https://console.cloud.tencent.com/gamesec)，在左侧目录中，单击【DDoS 防护高级策略】，在 “DDos 防护高级策略下”，单击【添加新策略】。添加成功后，在 “操作” 列下单击【配置】进入策略配置页面。
-![1](https://i.imgur.com/Wl3AkVR.png)
+![1](https://main.qcloudimg.com/raw/11e9043e9091e22122ba494483f272d4.png)
 2. 选择需要配置的禁用协议跟端口，设置 IP 黑白名单，报文特征过滤，可选择性开启拒绝海外流量、空连接防护。单击保存即添加策略成功。
-![2](https://i.imgur.com/yavb9sQ.png)
+![2](https://main.qcloudimg.com/raw/6a9ed6826316038298b2bd4d9ccf3c14.png)
 
 ## 高级安全策略直接绑定防护 IP
 1. 单击【DDoS 防护高级策略】，在 “DDos 防护高级策略下”，单击 “策略 ID”。
-![3](https://i.imgur.com/RAyf1eu.png)
+![3](https://main.qcloudimg.com/raw/4817bd463538640d1ef1fe22cac202df.png)
 2. 在 “DDos 防护高级策略下”，单击【绑定IP列表】，单击【添加IP】。
-![4](https://i.imgur.com/npch7l6.png)
+![4](https://main.qcloudimg.com/raw/d9823cf1e24d5787828ef61d0e93e542.png)
 
 ## DDoS 高防 IP 绑定高级安全策略
 1. 单击【DDoS 高防 IP】，在 “DDos 高防 IP”下，单击 “高防 IP”。
-![5](https://i.imgur.com/XvPmr7Q.png)
+![5](https://main.qcloudimg.com/raw/73e8199885af3acb65055fc32698cf60.png)
 2.在 “DDos 高防 IP 详情” 页下单击【高级配置】。单击【绑定】，在 “配置 DDoS 防护高级策略” 弹窗中，选择好 “DDoS 防护高级安全策略” ，单击【确认】。
-![6](https://i.imgur.com/2q7m1qI.png)
+![6](https://main.qcloudimg.com/raw/fec960c5d75c5f86c8f7dec2a8b69aa0.png)
 
 ## 给 DDoS 高防包下的防护 IP 配置高级安全策略
 1. 单击【DDoS 高防包】，在 “DDos 高防包”下，单击高防包 ID。
-![7](https://i.imgur.com/8Oo1qt0.png)
+![7](https://main.qcloudimg.com/raw/e063a0b9d0a19da4e51134400664c6ed.png)
 2. 在 “DDos 高防包详情” 页下单击【防护 IP 列表】，勾选需要配置的 IP，单击 “配置高级安全策略”。
-![8](https://i.imgur.com/t0TdZN8.png)
+![8](https://main.qcloudimg.com/raw/447920da62277b2e5bac787b58be27c4.png)

@@ -20,9 +20,9 @@
 
 ### 详情页数据说明
 单击每一个指标下方的【查看详情】，即可进入指标详情页面。
-![](https://main.qcloudimg.com/raw/55cd96de690acf97ca6e9194df6644ec.png)
+![](https://main.qcloudimg.com/raw/f63c60b1e8d89db0302c9e102548fe70.png)
 也可在详情页中，通过左上方进行指标快速切换。
-![](https://main.qcloudimg.com/raw/afeaff1b7a408e5caebe26a738714569.png)
+![](https://main.qcloudimg.com/raw/795eeb398f3f73663f5168f3b41612c4.png)
 
 ## 粒度说明
 ### 总览页面粒度说明

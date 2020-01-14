@@ -29,7 +29,7 @@ Aegis Anti-DDoSは、デフォルトで基本的なセキュリティポリシ�
 
 **ケースの説明：**
 以下は通常のサービスメッセージです。
-![1](https://i.imgur.com/Zx83ZgR.png)
+![1](https://main.qcloudimg.com/raw/c52a92b15c4c99d0a581462b40ca536b.png)
 
 分析後、その特性は次のとおりです。
 -宛先ポートは80です。
