@@ -31,7 +31,7 @@ classpath 'com.google.gms:google-services:4.2.0'
 在应用级的build.gradle文件中添加依赖
 ```xml
 
-implementation 'com.tencent.tpns:fcm:1.1.0.2-release' 
+implementation 'com.tencent.tpns:fcm:[VERSION]-release' [VERSION] is the current SDK version number. You can view the SDK version number on the SDK download page 
 
 implementation  'com.google.firebase:firebase-messaging:17.6.0'
 
