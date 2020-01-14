@@ -31,7 +31,7 @@ Solution: You can add the following to string.xml under the res/values folder:
 Add dependencies to the app-level build.gradle file
 ```xml
 
-implementation 'com.tencent.tpns:fcm:[VERSION]-release'// [VERSION] is the current SDK version number.
+implementation 'com.tencent.tpns:fcm:[VERSION]-release'// [VERSION] is the current SDK version number.You can view the SDK version number on the SDK download page
 
 implementation  'com.google.firebase:firebase-messaging:17.6.0'
 
