@@ -50,7 +50,7 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
    - Signature Parameter: Set a parameter name with a signature string. The value is **sign** by default and can be customized.
    - Effective Time: The server compares the **timestamp** (obtained by parsing the signature) plus the effective time with the current time to determine whether the signature is effective.
 
-<img src="https://main.qcloudimg.com/raw/abf68477508155f85d888668fc6b2b99.png"  style="margin: 0px 0px 0px 30px;">
+<img src="https://main.qcloudimg.com/raw/95253c212fcd2028d37d8e2f5f828c41.png"  style="margin: 0px 0px 0px 30px;">
 
 5. After parameter configuration is completed, specify the authentication range and object.
 ![img](https://main.qcloudimg.com/raw/4c89dd4fc8aab848a3ada068794c2977.png)
