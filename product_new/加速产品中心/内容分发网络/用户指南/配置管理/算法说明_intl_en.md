@@ -10,7 +10,7 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
   - uid: 0.
   - md5hash: MD5 (file path-timestamp-rand-uid-custom key).
 
-> !If the original request URL is `http://www.test.com/test/1.jpg`, then the file path used for MD5 calculation will be `/test/1.jpg`.
+> If the original request URL is `http://www.test.com/test/1.jpg`, then the file path used for MD5 calculation will be `/test/1.jpg`.
 
 ### TypeB
 - Access URL format: `http://DomainName/timestamp/md5hash/FileName`
@@ -18,7 +18,7 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
   - timestamp: A timestamp in the format of `YYYYMMDDHHMM`.
   - md5hash: MD5 (custom key+timestamp+file path).
 
-> !If the original request URL is `http://www.test.com/test/1.jpg`, then the file path used for MD5 calculation will be `/test/1.jpg`.
+> If the original request URL is `http://www.test.com/test/1.jpg`, then the file path used for MD5 calculation will be `/test/1.jpg`.
 
 ### TypeC
 - Access URL format: `http://DomainName/md5hash/timestamp/FileName`
@@ -26,7 +26,7 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
   - timestamp: A hex timestamp in UNIX format.
   - md5hash: MD5 (custom key + file path + timestamp).
 
-> !If the original request URL is `http://www.test.com/test/1.jpg`, then the file path used for MD5 calculation will be `/test/1.jpg`.
+> If the original request URL is `http://www.test.com/test/1.jpg`, then the file path used for MD5 calculation will be `/test/1.jpg`.
 
 ### TypeD
 - Access URL format: `http://DomainName/FileName?sign=md5hash&t=timestamp`
@@ -34,7 +34,7 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
   - timestamp: A decimal or hex timestamp in UNIX format.
   - md5hash: MD5 (custom key + file path + timestamp).
 
-> !If the original request URL is `http://www.test.com/test/1.jpg`, then the file path used for MD5 calculation will be `/test/1.jpg`.
+> If the original request URL is `http://www.test.com/test/1.jpg`, then the file path used for MD5 calculation will be `/test/1.jpg`.
 
 ## Configuration Guide
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page. Find the desired domain name and click **Manage** in the "Operation" column.
@@ -56,11 +56,11 @@ Contents distributed by CDN are public resources by default. To prevent maliciou
 ![img](https://main.qcloudimg.com/raw/4c89dd4fc8aab848a3ada068794c2977.png)
 
 ## Authentication Calculator
-> ?You can use the authentication calculator to check whether the request path and signature are correct.
+> You can use the authentication calculator to check whether the request path and signature are correct.
 > 
 In the **Authentication Configuration** module, click *Configuration.** Currently, three types can be configured. Select the type, configure the authentication parameters, and then determine the authentication URL. The following takes **TypeA** as an example:
 ![img](https://main.qcloudimg.com/raw/8d090ea7b5358120a1e233245e06f885.png)
-> !
+> 
 > - Currently, TypeB cannot be selected due to feature upgrade.
 > - If the access path has a URL with Chinese characters, you need to decode the URL first before performing the authentication configuration.
 
