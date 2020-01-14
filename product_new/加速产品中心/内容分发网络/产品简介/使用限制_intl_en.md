@@ -1,5 +1,5 @@
 ## ICP filing for domain name
-You need to obtain ICP filing for your domain name connected to CDN for acceleration. If you have not done so, use the [ICP filing registration](https://cloud.tencent.com/product/ba) service of Tencent Cloud.
+You need to obtain ICP filing for your domain name connected to CDN for acceleration. If you have not done so, use the [ICP filing registration](https://intl.cloud.tencent.com/product/icp) service of Tencent Cloud.
 
 ## Credit Check
 When connecting your domain name to CDN, CDN will check its credibility. If your domain name has had the following situations, it will have a low credibility and be blacklisted.
