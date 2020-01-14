@@ -4,9 +4,9 @@ You can use the domain name search feature to find a specific domain name. You c
 ## Directions
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page.
 2. Click the domain name search box to activate the search feature, select one or more resource attributes such as domain name, origin server, tag or project, and enter a value to filter domain names.
-![](https://main.qcloudimg.com/raw/2027fba6a0f6299b6f1291efbee534b2.png)
+![](https://main.qcloudimg.com/raw/5f77724408026bd05f2d1ac14b9f8b86.png)
 3. If you have questions about the input resource attribute or input format, click the **i** icon for [help with search](#help).
-![](https://main.qcloudimg.com/raw/32ce829d3dda62bfc473698664620be1.png)
+![](https://main.qcloudimg.com/raw/a102d06a64427fd3e171d99ba1c4040a.png)
 
 >
 >+ You can only search for master origin servers, not slave ones.
@@ -15,11 +15,11 @@ You can use the domain name search feature to find a specific domain name. You c
 
 ## Search Description
 + Search by domain name: Enter a complete or partial domain name. Fuzzy search is supported.
-  ![](https://main.qcloudimg.com/raw/75a0da4dd4205c7142a017ea9d326d57.png)
+  ![](https://main.qcloudimg.com/raw/438647b2478de9df7d204d23639d6b87.png)
 + Search by origin server: Enter a complete or partial origin server name. Fuzzy search is supported.
 + Search by tag: Enter a complete tag and a list of domain names containing the entered tag will be returned. Fuzzy search is not supported.
 + Search by project: You can select multiple projects as a filter.
-  ![Project](https://main.qcloudimg.com/raw/c9968a6d337484d74f3236034fcc3414.png)
+  ![Project](https://main.qcloudimg.com/raw/8b15327f7125150a2cb78342839f41b5.png)
 - Filter by multiple criteria: You can filter by selecting one or more criteria such as tag, domain name, origin server, and project. Use the enter key to separate multiple criteria.
 - Filter by multiple keywords: You can enter multiple keywords for each filter criterion. Use vertical bar (|) to separate multiple keywords.
 
