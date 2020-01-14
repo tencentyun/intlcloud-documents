@@ -77,7 +77,7 @@
 ## 相关链接
 
 
-1. 关于 COS 的费用详细计算及不同场景下的计费详情，请参见 [计费示例](https://cloud.tencent.com/document/product/436/6241)。
+1. 关于 COS 的费用详细计算及不同场景下的计费详情，请参见 [计费示例](https://intl.cloud.tencent.com/document/product/436/6241)。
 2. 关于 COS 的欠费停服策略：数据的保留和销毁时间、以及相关计费说明，请参见 COS [欠费说明](https://intl.cloud.tencent.com/document/product/436/10044)。
 3. 若您对 COS 计费仍有疑问，可参见计费 [常见问题](https://intl.cloud.tencent.com/document/product/436/32532) 寻求答案。
 
