@@ -3,9 +3,9 @@
 ## 添加域名
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击左侧【域名管理】菜单，选择【添加域名】。
-![](https://main.qcloudimg.com/raw/3cee079d180314cfaef452b836e0f565.jpg)
+![](https://main.qcloudimg.com/raw/f09d7aec3e7083d2915ff77474328bb5.png)
 进入添加域名页面，您可以在此完成域名的相关配置。配置说明可参见下表 [域名配置](#m1)。 
-![](https://main.qcloudimg.com/raw/48e8c71e7b7e84b5fdd13ffc1b30ded2.jpg)
+![](https://main.qcloudimg.com/raw/5f1d0a786b194d6dfdc15d20a22ebf0b.png)
 
 <span ID ="m1"> </a>
 ## 域名配置
@@ -67,7 +67,7 @@
 ## 加速服务配置
 
 选择加速服务业务类型及基础配置。
-![](https://main.qcloudimg.com/raw/2f0b3ff1c1c8fa1313b96d856fb3b1fd.jpg)
+![](https://main.qcloudimg.com/raw/c2f355d4b1ec5b5b50efb4b56e5b5d6f.png)
 1. **业务类型** 
    业务类型选择决定了域名调度的资源平台，不同资源平台加速配置存在一定差异，请选择与您业务相匹配的业务类型：
 	- 静态加速：适用于电商类、网站类、游戏图片类静态资源加速场景。
@@ -81,7 +81,7 @@
 ## 接入完成
 
 单击【提交】完成添加域名操作，请耐心等待域名配置下发至全网节点，下发时间约5 - 10分钟。
-![](https://main.qcloudimg.com/raw/0bf658a80d21a62e6bc30a54cbc21ff8.jpg)
+![](https://main.qcloudimg.com/raw/ca9f3b3a91d6c62b12c80e29d5e32e10.png)
 
 
 >!接入完成后，腾讯云 CDN 会为您分配对应的 CNAME 地址，您需要完成 CNAME 的配置，CDN 服务才能生效。详情请参见 [配置 CNAME](https://intl.cloud.tencent.com/document/product/228/3121)。

@@ -3,9 +3,9 @@ You can add domain names to CDN console for Tencent Cloud CDN services with the 
 ## Adding domain name
 
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Domain Management** on the left sidebar, and click **Create Distribution**.
-![](https://main.qcloudimg.com/raw/0fbebd8e30610d3e8607a60851946c42.png)
+![](https://main.qcloudimg.com/raw/f09d7aec3e7083d2915ff77474328bb5.png)
 Enter the page for creating domain names to complete the domain name configuration. For information about configuration descriptions, please see [Configuring domain name](#m1). 
-![](https://main.qcloudimg.com/raw/863c50ffd5fc1108dfb6696aa73a034d.png)
+![](https://main.qcloudimg.com/raw/5f1d0a786b194d6dfdc15d20a22ebf0b.png)
 
 <span ID ="m1"> </a>
 ## Configuring domain name
@@ -31,7 +31,7 @@ Enter the page for creating domain names to complete the domain name configurati
 	</tr>
 	<tr>
 	<td style="text-align: center;" colspan="2">Origin Type</td>
-		<td>You can select an external origin server or <a href = "https://cloud.tencent.com/product/cos">COS</a> as your origin server. </td>
+		<td>You can select an external origin server or <a href = "https://intl.cloud.tencent.com/product/cos">COS</a> as your origin server. </td>
 	</tr>
 	<tr>
 		<td colspan="1" rowspan="2" style="text-align: center;" >Origin Settings</td>
@@ -44,9 +44,9 @@ Enter the page for creating domain names to complete the domain name configurati
 	</tr>
 	<tr>
 		<td style="text-align: center; ">COS origin server</td>
-		<td>If you want to use <a href = "https://cloud.tencent.com/product/cos">COS</a> to store static content for fast delivery, you can directly add the domain name of COS to CDN. Use one of the following methods to add the domain name to CDN:<br>
+		<td>If you want to use <a href = "https://intl.cloud.tencent.com/product/cos">COS</a> to store static content for fast delivery, you can directly add the domain name of COS to CDN. Use one of the following methods to add the domain name to CDN:<br>
 <li> If the origin server type is COS, you can enter or select the bucket domain name from the drop-down list.
-<li> If there is no bucket, you need to log into the <a href ="https://console.cloud.tencent.com/cos5">COS Console</a> to create one (for instructions, please see <a href = "https://cloud.tencent.com/document/product/436/13309">Creating Buckets</a>). You can also ask your developer account for corresponding bucket access.
+<li> If there is no bucket, you need to log into the <a href ="https://console.cloud.tencent.com/cos5">COS Console</a> to create one (for instructions, please see <a href = "https://intl.cloud.tencent.com/document/product/436/13309">Creating Buckets</a>). You can also ask your developer account for corresponding bucket access.
 <li>After selecting a bucket as the origin server, you can manage its content on the <a href ="https://console.cloud.tencent.com/cos5">COS Console</a>. 
 <blockquote class="d-mod-notice">
 							<div class="d-mod-title d-notice-title">
@@ -67,20 +67,20 @@ Enter the page for creating domain names to complete the domain name configurati
 ## Configuring the acceleration service
 
 Select the acceleration service type and basic configuration.
-![](https://main.qcloudimg.com/raw/f1fd65de90d3c3fd98865e5cb30d6dc4.png)
+![](https://main.qcloudimg.com/raw/c2f355d4b1ec5b5b50efb4b56e5b5d6f.png)
 1. **Business Type** 
    The business type determines the resource platform to be scheduled by the domain name. The acceleration configuration varies by resource platform. Please select a business type based on your business conditions:
 	- Static acceleration: Suitable for static resource acceleration scenarios such as ecommerce, websites, and gaming images.
 	- Download acceleration: Suitable for scenarios such as game installations, audio/video downloads, and mobile phone firmware package distribution.
 	- Streaming VOD acceleration: Suitable for VOD acceleration scenarios.
 2. **Basic Configuration**
-   CDN provides the Ignore Query String switch, which allows you to control whether to filter parameters after **"?"** in end users' request URLs. You can use this feature for flexible version control or token-based authentication. For more information, please see [Ignore query string configuration](https://cloud.tencent.com/doc/product/228/6291).
+   CDN provides the Ignore Query String switch, which allows you to control whether to filter parameters after **"?"** in end users' request URLs. You can use this feature for flexible version control or token-based authentication. For more information, please see [Ignore query string configuration](https://intl.cloud.tencent.com/doc/product/228/6291).
 3. **Cache expiration configuration**
-   Cache expiration configuration refers to a set of expiration rules that CDN cache nodes should comply with when caching your business content. For more information, please see [Cache Expiration Configuration](https://cloud.tencent.com/doc/product/228/6290).
+   Cache expiration configuration refers to a set of expiration rules that CDN cache nodes should comply with when caching your business content. For more information, please see [Cache Expiration Configuration](https://intl.cloud.tencent.com/doc/product/228/6290).
 
 ## Completing the connection
 
 Click **Submit** to add the domain name and wait for the domain name configuration to be delivered over the entire network. This usually takes 5 to 10 minutes.
-![](https://main.qcloudimg.com/raw/73e56349a7d26444c1e5572bffd0bdbd.png)
+![](https://main.qcloudimg.com/raw/ca9f3b3a91d6c62b12c80e29d5e32e10.png)
 
->After the connection is successful, CDN will assign you a corresponding CNAME address. CDN service takes effect only after you complete the CNAME configuration. For more information, please see [Configuring CNAME](https://cloud.tencent.com/document/product/228/3121).
+>After the connection is successful, CDN will assign you a corresponding CNAME address. CDN service takes effect only after you complete the CNAME configuration. For more information, please see [Configuring CNAME](https://intl.cloud.tencent.com/document/product/228/3121).

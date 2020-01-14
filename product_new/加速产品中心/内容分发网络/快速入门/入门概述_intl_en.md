@@ -7,20 +7,20 @@ If you already have a Tencent Cloud account, you can ignore this step.
 
 ## Step 2. Activate the CDN service
 #### 1. Complete identity verification
-Registered users must first complete identity verification in order to activate CDN. You can verify your identity in the CDN Console or Account Center. For more information on the verification process, please see [Identity verification guide](https://cloud.tencent.com/doc/product/378/3629).
+Registered users must first complete identity verification in order to activate CDN. You can verify your identity in the CDN Console or Account Center. For more information on the verification process, please see [Identity verification guide](https://intl.cloud.tencent.com/document/product/378/3629).
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;">Click here to go to the Account Center</a></div><br>
 
-![](https://main.qcloudimg.com/raw/24bc11aadb6e94a45cc65096bd116b44.png)
+![](https://main.qcloudimg.com/raw/e71557f3118bf3579d551bb2ae2e2e9e.png)
 #### 2. Provide additional service information
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), confirm your identity verification information, select the service, and click **Next**.
-![](https://main.qcloudimg.com/raw/a0ff6d3dcc86ab39c2de304e9b1119bc.png)
+![](https://main.qcloudimg.com/raw/087a21d256d40282127396a63b67c7b4.png)
 #### 3. Select a billing method
 CDN provides two billing methods: bill-by-traffic and bill-by-bandwidth. You can choose according to your business type. For more information, please see [Billing Descriptions](https://cloud.tencent.com/doc/product/228/2949).
 Accept the terms of service and click **Activate CDN** to start using the acceleration service.
-![](https://main.qcloudimg.com/raw/795a07829b09452d9552edec52c80393.png)
+![](https://main.qcloudimg.com/raw/03c8c19ce7c7c73c956c23dc1c36dd3f.png)
 
 ## Step 3. Connect a domain name
-You need to add an accelerated domain name for your acceleration service. Through accelerated domain name, CDN caches resources on an origin server into a CDN cache node closest to the client to accelerate resource access. For more information, please see [Connecting a domain name](https://cloud.tencent.com/document/product/228/5734). 
+You need to add an accelerated domain name for your acceleration service. Through accelerated domain name, CDN caches resources on an origin server into a CDN cache node closest to the client to accelerate resource access. For more information, please see [Connecting a domain name](https://intl.cloud.tencent.com/document/product/228/5734). 
 
 ## Step 4. Configure CNAME
-After connecting your domain name to CDN, you need to configure the CNAME with your domain name provider. The CDN service will be available after the configuration takes effect. For more information, please see [Configuring CNAME](https://cloud.tencent.com/document/product/228/3121).
+After connecting your domain name to CDN, you need to configure the CNAME with your domain name provider. The CDN service will be available after the configuration takes effect. For more information, please see [Configuring CNAME](https://intl.cloud.tencent.com/document/product/228/3121).
