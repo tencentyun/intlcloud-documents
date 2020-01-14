@@ -18,7 +18,7 @@ The pornography detection service intelligently scans the image resources distri
    ![](https://main.qcloudimg.com/raw/6a5032ae03e9d818de743ab729e49540.png)
 
 ### Suspicious Images
-> !When the pornography detection service scans and finds that your business resources contain suspected pornographic images, it will notify you via SMS, email, or internal message.
+> When the pornography detection service scans and finds that your business resources contain suspected pornographic images, it will notify you via SMS, email, or internal message.
 > 
 1. The **Suspicious Images** module is displayed by default in the console. You can click the icon in the top-right corner to switch to thumbnail or list mode.
 ![](https://main.qcloudimg.com/raw/e563618d7e2a1db33c590f186490f545.png)
