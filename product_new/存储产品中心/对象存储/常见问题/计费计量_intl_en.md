@@ -4,7 +4,7 @@ We provide new COS users with a free tier of standard storage capacity with a va
 
 ### How is COS billed?
 
-The fees of COS are broken down into four items: storage capacity, requests, data retrievals, and traffic.
+The fees of COS are broken down into five items: storage capacity, requests, data retrievals, traffic, and Management Feature Fees.
 
 For information on billable items in COS and billing rules, see [Billing Restrictions](https://intl.cloud.tencent.com/document/product/436/16871).
 
@@ -12,7 +12,7 @@ For information on billable items in COS and billing rules, see [Billing Restric
 
 Possible reasons include:
 
-1. Other billable items: COS fees are charged for storage, requests, data retrievals, and traffic. Currently, the free tier is only applicable to standard storage, while other billable items will be billed as incurred.
+1. Other billable items: COS fees are charged for storage, requests, data retrievals,  traffic, and Management Feature Fees. Currently, the free tier is only applicable to standard storage, while other billable items will be billed as incurred.
 2. Charges for excessive use of resources. For example, if you are entitled to 50 GB of free standard storage capacity, but your actual storage exceeds 50 GB, the excessive storage will be billed as incurred.
 3. Expiration of the free tier. We provide new COS users a free tier of standard storage capacity with a validity period of 6 months. After the expiration of the free tier, storage will be billed as incurred. You can log in to the COS Console to view the validity period for your free tier on the [subscription plan management](https://console.cloud.tencent.com/cos5/package) page.
 
