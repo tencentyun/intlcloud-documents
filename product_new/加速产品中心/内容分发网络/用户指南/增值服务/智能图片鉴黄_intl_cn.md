@@ -15,18 +15,17 @@
 ## 操作指南
 1. 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击左侧目录的【图片鉴黄】，进入图片鉴黄管理页面。
 2. 控制台默认选中“疑似色情图片”模块，您可以单击【色情图片】、【正常图片】进行切换。
-   ![](https://main.qcloudimg.com/raw/dbacbda17404e1ee7333f8b49628bb39.png)
+   ![](https://main.qcloudimg.com/raw/6a5032ae03e9d818de743ab729e49540.png)
 
 ### 疑似色情图片
 > !当 CDN 图片智能扫描发现您的业务资源中存在疑似色情图片，会通过短信、邮件和站内信等方式通知您。
 > 
 1. 控制台默认选中“疑似色情图片”，您可以单击右上角图标切换大图模式 / 列表模式。
-![](https://main.qcloudimg.com/raw/d674742535502d4db3942bd0b8683c09.png)
+![](https://main.qcloudimg.com/raw/e563618d7e2a1db33c590f186490f545.png)
 2. 主动处理
 您可以手动单击图片下方的【正常图片】或【色情图片】，CDN 会根据您的操作自动将图片归入“正常图片”或“色情图片”中。
 > CDN 会自动将归入“色情图片”的图片进行屏蔽，若您想取消屏蔽，请参见下文 [取消屏蔽](#m1)。
 >
-  ![](https://main.qcloudimg.com/raw/813ffd3c844a20a38fe4eda3c4d91097.png)
 3. 自动处理
    扫描24小时后，若您未对疑似色情的图片进行手动确认，CDN 会自动进行屏蔽处理，您可在上方单击【色情图片】，切换到“色情图片”模块查看到此类图片，其封禁方式为【自动封禁】。
 
@@ -36,12 +35,12 @@
 <span ID = "m1"></span>
 1. 控制台默认选中“疑似色情图片”模块，您可以单击【色情图片】进行切换。
 “色情图片”支持图片状态筛选：未申诉、申诉处理中和申诉驳回。您可以根据您的需要进行筛选查看和管理。
-![](https://main.qcloudimg.com/raw/b71d4e1c2c61c4af5405e0c1c3478b84.png)
+![](https://main.qcloudimg.com/raw/e68168dd147f828144414116afa5d489.png)
 2. 取消屏蔽
   若您需要对某张图片消屏蔽，可在该图片右下方单击【申诉】，腾讯云涉黄专项服务团队会进行人工确认，屏蔽取消后会通过短信、邮件和站内信等方式通知到您。
-  ![](https://main.qcloudimg.com/raw/376e9365647f582730d44044fc4fc0fd.png)
+  ![](https://main.qcloudimg.com/raw/cb039e15fe71b426bbd946cfbb7ad03f.png)
 
 ### 正常图片
 若您的业务资源归类为“正常图片”，则 CDN 暂时不会进行屏蔽，由涉黄专项团队进行人工确认，并根据情况纳入样本库进一步优化智能鉴黄算法。
 控制台默认选中“疑似色情图片”模块，您可以单击【正常图片】进行切换。在“正常图片”模块可以看到每张图片的确认状态。
-![](https://main.qcloudimg.com/raw/175fae728a71f0e1877803390f453cb5.png)
+![](https://main.qcloudimg.com/raw/accc286fec2374675e1f86f7e588132d.png)
