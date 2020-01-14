@@ -10,10 +10,10 @@
 ### 添加域名
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧导航栏中，单击【域名管理】进入域名管理页面，单击【添加域名】。
-![](https://main.qcloudimg.com/raw/0fbebd8e30610d3e8607a60851946c42.png)
+![](https://main.qcloudimg.com/raw/d301ff1eea5fe534ce09ec5964e8c82b.png)
 
 ### 域名配置
-![](https://main.qcloudimg.com/raw/2bccee43aeea90a73ef2b7c7af0008c2.png)
+![](https://main.qcloudimg.com/raw/ec7ea324171295b8fd0321e226d0e0a3.png)
 1. 输入需要加速的**域名**
 支持泛域名接入，如：*.test.com。支持域名批量接入，最多可添加10个域名。
 域名需要满足以下条件：
@@ -28,7 +28,7 @@
 ### 加速服务配置
 
 根据您的业务需求选择**业务类型**、**基本配置**和**缓存过期配置**
-![](https://main.qcloudimg.com/raw/74d292c485e1fd9d4b38b88a8835fd85.png)
+![](https://main.qcloudimg.com/raw/6264633c18801547e4aece61a94009cb.png)
 1. **业务类型**
 业务类型选择决定了域名调度的资源平台，不同资源平台加速配置存在一定差异，请选择与您业务相匹配的业务类型：
 	- 静态加速：适用于电商类、网站类、游戏图片类静态资源加速场景。
