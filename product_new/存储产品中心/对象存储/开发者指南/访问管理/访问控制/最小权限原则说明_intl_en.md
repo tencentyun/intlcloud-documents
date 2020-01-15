@@ -33,7 +33,7 @@ Under the principle of least privilege, you should specify the following informa
 
 ### Least privilege guide for temporary key
 
-When applying for a temporary key, you can set the permission policy field (`[Policy](https://cloud.tencent.com/document/product/598/33416)`) to limit the permissions to operations and resources within the specific scope. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+When applying for a temporary key, you can set the permission policy field [Policy] to limit the permissions to operations and resources within the specific scope. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 #### Authorization example
 
