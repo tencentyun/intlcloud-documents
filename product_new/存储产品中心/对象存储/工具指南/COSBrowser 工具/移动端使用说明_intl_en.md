@@ -56,7 +56,7 @@ COSBrowser allows you to download, delete, copy, or move multiple files in your 
 > - COSBrowser for iOS allows you to save image and video files to the album.
 > - No batch operations can be performed on folders for the time being.
 
-<img src="https://main.qcloudimg.com/raw/677300a8276ce0db713dfe66d180b6ee.png" style="zoom:20%;" />
+<img src="https://main.qcloudimg.com/raw/677300a8276ce0db713dfe66d180b6ee.png" style="zoom:10%;" />
 
 <span id="shareupload"></span>
 
@@ -64,7 +64,7 @@ COSBrowser allows you to download, delete, copy, or move multiple files in your 
 
 In a third-party app, you can copy the specified file to your bucket by selecting **Open in another app** > **COSBrowser**.
 
-<img src="https://main.qcloudimg.com/raw/32b998eddcb135b9c351435ca8ab194e.png" style="zoom:30%;" />
+<img src="https://main.qcloudimg.com/raw/32b998eddcb135b9c351435ca8ab194e.png" style="zoom:40%;" />
 
 
 
@@ -94,7 +94,7 @@ In the specified bucket or path, tap "+" in the top-right corner, tap **Create a
 
 To view the details of a file, tap its filename. File details include object name, object size, modification time, access permission, object address, validity period, and option to generate a temporary link.
 
-<img src="https://main.qcloudimg.com/raw/34e5aa857508257a80119356abffce80.png" style="zoom:35%;" />
+<img src="https://main.qcloudimg.com/raw/34e5aa857508257a80119356abffce80.png" style="zoom:40%;" />
 
 <span id="generatelinks"></span>
 
@@ -133,7 +133,7 @@ To view the details of a bucket, tap Operation to the right of the bucket on the
 
 To create a bucket, tap **Create a Bucket** in the top-right corner on the bucket list page and specify the name, region, and access permission.
 
-<img src="https://main.qcloudimg.com/raw/2cfabcbe6c970ef295a05029e4c03b63.png" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/2cfabcbe6c970ef295a05029e4c03b63.png" style="zoom:10%;" />
 
 <span id="addaccess"></span>
 
@@ -141,5 +141,5 @@ To create a bucket, tap **Create a Bucket** in the top-right corner on the bucke
 
 If you log in with a sub-account that has no access to the bucket list, you can add the specified path to a bucket or directory to manage resources by tapping **Add Access Path** in the top-right corner of the bucket list page.
 
-<img src="https://main.qcloudimg.com/raw/3a81c3a3f090a269b6152d154ea4f8e7.png" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/3a81c3a3f090a269b6152d154ea4f8e7.png" style="zoom:10%;" />
 
