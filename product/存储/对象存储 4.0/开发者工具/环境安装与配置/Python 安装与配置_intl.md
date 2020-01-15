@@ -48,6 +48,6 @@ ln -s /usr/local/bin/python2.7 /usr/bin/python
 python
 ```
 If the following message appears, Python 2.7 is installed and configured successfully:
-! [112046]
+![112046](//mc.qcloudimg.com/static/img/0eb560566c1f67e302e75b1dcb515d98/image.png)
 > <font color="#0000cc">**Note:**</font>
 If permission-related errors occur, try to add sudo before command.
