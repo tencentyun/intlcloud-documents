@@ -1,6 +1,6 @@
 ## 功能描述
 
-ListJobs 用于列出您的批量处理任务。有关批量处理任务的详细介绍，可参见 [批量处理概述](https://cloud.tencent.com/document/product/436/38601)。
+ListJobs 用于列出您的批量处理任务。有关批量处理任务的详细介绍，可参见 [批量处理概述](https://intl.cloud.tencent.com/document/product/436/32958)。
 
 ## 请求
 
@@ -24,7 +24,7 @@ x-cos-appid: <appid>
 
 **请求头**
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 **请求体**
 该请求无请求体。
@@ -42,7 +42,7 @@ HTTP/1.1 200
 
 **响应头**
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 **响应体**
 
@@ -97,7 +97,7 @@ HTTP/1.1 200
 | Status          | member | 任务执行状态。合法参数值包括 Active、Cancelled、Cancelling、Complete、Completing、Failed、Failing、New、Paused、Pausing、Preparing、Ready、Suspended。 | String                 |
 | TerminationDate | member | 批量处理任务的结束时间。                                     | Timestamp              |
 
-其他元素请参见 [批量处理功能公共元素](https://cloud.tencent.com/document/product/436/38607)。
+其他元素请参见 [批量处理功能公共元素](https://intl.cloud.tencent.com/document/product/436/33786)。
 
 ## 错误分析
 
@@ -109,5 +109,5 @@ HTTP/1.1 200
 | InvalidArgument | maxResults 参数必须为整数        | 400    | ListJobs |
 | InvalidArgument | nextToken 参数无效               | 400    | ListJobs |
 
-其他错误请参考 [批量处理功能错误响应](https://cloud.tencent.com/document/product/436/38610)。
+其他错误请参考 [批量处理功能错误响应](https://intl.cloud.tencent.com/document/product/436/33787)。
 
