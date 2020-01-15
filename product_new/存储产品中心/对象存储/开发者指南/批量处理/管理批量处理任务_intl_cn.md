@@ -35,7 +35,7 @@
 | Cancelling | COS 取消正在处理的批量处理任务，切换至 Cancelled 的中间状态即 Cancelling。 | 可切换至 Cancelled 状态。当 COS 确保已取消您正在执行的批量处理任务时，状态即切换至 Cancelled。 |
 | Cancelled  | 当批量处理任务已被成功取消时，任务状态为 Cancelled，此时您将无法对任务状态进行任何修改。 | Cancelled 状态是最终状态，当一项任务切换 Cancelled 状态时，将不再切换至其他状态。 |
 | Failing    | COS 切换至 Failed 的中间状态即 Cancelling。                  | 可切换至 Failed 状态。                                        |
-| Failed     | 任务失败时，任务状态即 Failed 。有关任务失败的详细信息，可参见 [跟踪失败任务](https://intl.cloud.tencent.com/zh/document/product/436/32961?lang=zh#.E8.B7.9F.E8.B8.AA.E5.A4.B1.E8.B4.A5.E4.BB.BB.E5.8A.A1)。 | Failed 状态是最终状态，当一项任务切换 Failed 状态时，将不再切换至其他状态。 |
+| Failed     | 任务失败时，任务状态即 Failed 。有关任务失败的详细信息，可参见 [跟踪失败任务](https://intl.cloud.tencent.com/document/product/436/32961#tracking-a-failing-job)。 | Failed 状态是最终状态，当一项任务切换 Failed 状态时，将不再切换至其他状态。 |
 
 
 
