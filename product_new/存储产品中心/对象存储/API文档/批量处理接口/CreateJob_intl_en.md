@@ -106,7 +106,7 @@ You can set the configuration information for the inventory job in the request b
 </CreateJobRequest>
 ```
 
-The elements in the request body are described as below. For other elements, please see [CommonElements](https://cloud.tencent.com/document/product/436/38607).
+The elements in the request body are described as below. For other elements, please see [CommonElements](https://intl.cloud.tencent.com/document/product/436/33786).
 
 
 
