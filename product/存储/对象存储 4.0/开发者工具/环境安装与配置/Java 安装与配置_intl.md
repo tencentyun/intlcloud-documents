@@ -28,43 +28,43 @@ Go to the [Oracle official website](http://www.oracle.com/technetwork/java/javas
 
 ### 2. Create a directory 
 Create a `java` directory in the `/usr/` directory.
-​```shell
+```shell
 mkdir /usr/java
 cd /usr/java 
-​```
+```
 Copy the downloaded file jdk-8u151-linux-x64.tar.gz to the /usr/java/ directory. 
 
 ### 3. Decompress JDK
-​```shell
+```shell
 tar -zxvf jdk-8u151-linux-x64.tar.gz 
-​```
+```
 
 ### 4. Set environment variables
 Edit the /etc/profile file. Add the following content to the profile file and save it:
-​```shell
+```shell
 set java environment
 JAVA_HOME=/usr/java/jdk1.8.0_151        
 JRE_HOME=/usr/java/jdk1.8.0_151/jre     
 CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
 PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 export JAVA_HOME JRE_HOME CLASS_PATH PATH 
-​```
+```
 >JAVA_HOME and JRE_HOME should be configured according to your actual installation path and JDK version.
 
 Implement the change:
-​```shell
+```shell
 source /etc/profile 
-​```
+```
 
 ### 5. Test
-​```sh
+```sh
 java -version
-​```
+```
 If the java version information appears, it indicates that JDK is installed successfully.
-​```shell
+```shell
 java version "1.8.0_151"
 Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)
-​```xxxxxxxxxx java version "1.7.0_79" Java(TM) SE Runtime Environment (build 1.7.0_79-b15) Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode) 
+```xxxxxxxxxx java version "1.7.0_79" Java(TM) SE Runtime Environment (build 1.7.0_79-b15) Java HotSpot(TM) 64-Bit Server VM (build 24.79-b02, mixed mode) 
 ```
 
