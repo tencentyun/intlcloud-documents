@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to create a batch operation job in a bucket. For more information, please see [Batch Operation Overview](https://cloud.tencent.com/document/product/436/38601).
+This API is used to create a batch operation job in a bucket. For more information, please see [Batch Operation Overview](https://intl.cloud.tencent.com/document/product/436/32958).
 
 When calling this API, please make sure that you have necessary permissions to perform operations on the objects in the bucket. The bucket owner has such permissions by default. If you do not have the permissions, please apply for them to the bucket owner first.
 
@@ -26,7 +26,7 @@ Calling the `CreateJob` API requires the following parameters:
 | x-cos-appid | User APPID with a length of 1–64 bytes. | Yes |
 
 #### Request Headers
-This API only uses common request headers. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Body
 You can set the configuration information for the inventory job in the request body with the XML language. Such information includes the objects to be analyzed by the inventory job, frequency and dimension of the analysis, and format and storage location of the analysis result.
@@ -125,7 +125,7 @@ The elements in the request body are described as below. For other elements, ple
 
 **Response Headers**
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Response Body**
 
@@ -143,7 +143,7 @@ The content is described in detail as below:
 
 **Error Codes**
 
-This request operation may return the following error messages. For other errors, please see [ErrorResponse](https://cloud.tencent.com/document/product/436/38610).
+This request operation may return the following error messages. For other errors, please see [ErrorResponse](https://intl.cloud.tencent.com/document/product/436/33787).
 
 | Error Code | Description | Status Code | API |
 | ------------------ | ----------------------------------------- | ------ | --------- |
