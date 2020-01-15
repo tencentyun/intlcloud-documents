@@ -64,7 +64,7 @@ COSBrowser allows you to download, delete, copy, or move multiple files in your 
 
 In a third-party app, you can copy the specified file to your bucket by selecting **Open in another app** > **COSBrowser**.
 
-<img src="https://main.qcloudimg.com/raw/32b998eddcb135b9c351435ca8ab194e.png" style="zoom:15%;" />
+<img src="https://main.qcloudimg.com/raw/32b998eddcb135b9c351435ca8ab194e.png" style="zoom:30%;" />
 
 
 
@@ -94,7 +94,7 @@ In the specified bucket or path, tap "+" in the top-right corner, tap **Create a
 
 To view the details of a file, tap its filename. File details include object name, object size, modification time, access permission, object address, validity period, and option to generate a temporary link.
 
-<img src="https://main.qcloudimg.com/raw/34e5aa857508257a80119356abffce80.png" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/34e5aa857508257a80119356abffce80.png" style="zoom:35%;" />
 
 <span id="generatelinks"></span>
 
