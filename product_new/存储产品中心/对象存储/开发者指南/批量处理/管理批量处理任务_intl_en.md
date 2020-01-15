@@ -35,7 +35,7 @@ The specific meaning of each job status is as follows:
 | Cancelling | After COS cancels an ongoing job and before the status changes to "Cancelled", the job status in between will be "Cancelling". | It can be followed by "Cancelled" when COS has successfully canceled the ongoing job. |
 | Cancelled | When a batch operation job is successfully canceled, the job status will change to "Cancelled". At this point, you cannot make any modification to the job status. | "Cancelled" is a final status. i.e., the job will not change to any other status. |
 | Failing | The "Failing" status comes before "Failed". | It can change to the "Failed" status. |
-| Failed | After a job fails, the job status will change to "Failed". For more information, please see [Tracking a Failing Job](https://intl.cloud.tencent.com/zh/document/product/436/32961?!editLang=zh&!preview=&lang=zh#.E8.B7.9F.E8.B8.AA.E5.A4.B1.E8.B4.A5.E4.BB.BB.E5.8A.A1). | "Failed" is a final status, i.e., the job will not change to any other status. |
+| Failed | After a job fails, the job status will change to "Failed". For more information, please see [Tracking a Failing Job](https://intl.cloud.tencent.com/document/product/436/32961?lang=en#tracking-a-failing-job). | "Failed" is a final status, i.e., the job will not change to any other status. |
 
 
 
