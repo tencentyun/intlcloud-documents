@@ -56,7 +56,7 @@ COSBrowser 支持批量下载、删除、复制、移动存储桶中的文件，
 > - iOS 版支持将图片及视频格式的文件保存至相册。
 > - 文件夹暂不支持批量操作。
 
-<img src="https://main.qcloudimg.com/raw/677300a8276ce0db713dfe66d180b6ee.png" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/677300a8276ce0db713dfe66d180b6ee.png" style="zoom:35%;" />
 
 <span id="shareupload"></span>
 
