@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to upgrade the priority of a job. The greater the value, the higher the priority. Jobs with a higher priority will be carried out first. For more information on batch operation jobs, see [Batch Operation Overview](https://cloud.tencent.com/document/product/436/38601).
+This API is used to upgrade the priority of a job. The greater the value, the higher the priority. Jobs with a higher priority will be carried out first. For more information on batch operation jobs, see [Batch Operation Overview](https://intl.cloud.tencent.com/document/product/436/32958).
 
 ## Request
 
@@ -23,7 +23,7 @@ Calling the `UpdateJobPriority` API requires the following parameters:
 
 **Request Headers**
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 **Request Body**
 
@@ -42,7 +42,7 @@ HTTP/1.1 200
 ```
 
 **Response Headers**
-This API only returns common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Response Body**
 
@@ -71,5 +71,5 @@ The following describes some frequent special errors that may occur when you mak
 | InvalidRequest | No job priority is provided | 400 | UpdateJobPriority |
 | NoSuchJob | The specified job does not exist or has already been completed | 404 | UpdateJobStatus, UpdateJobPriority |
 
-For other errors, see [ErrorResponse](https://cloud.tencent.com/document/product/436/38610).
+For other errors, see [ErrorResponse](https://intl.cloud.tencent.com/document/product/436/33787).
 
