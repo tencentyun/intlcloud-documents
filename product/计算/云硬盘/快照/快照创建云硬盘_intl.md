@@ -1,5 +1,4 @@
-A cloud disk created from a snapshot has all the data of the snapshot upon creation, so you don't need to perform operations such as [partitioning, formatting and creating file system](https://intl.cloud.tencent.com/document/product/362/6734
-), because the data on the cloud disk would be all erased through formatting. After creating a cloud disk from a snapshot and [connecting it to a CVM instance](/doc/product/362/5745), users can read and write all the data normally on the snapshot. Therefore, snapshots are an important way for data sharing and migration.
+A cloud disk created from a snapshot has all the data of the snapshot upon creation, so you don't need to perform operations such as partitioning, formatting and creating file system, because the data on the cloud disk would be all erased through formatting. After creating a cloud disk from a snapshot and connecting it to a CVM instance, users can read and write all the data normally on the snapshot. Therefore, snapshots are an important way for data sharing and migration.
 
 ## Creating a Cloud Disk from a Snapshot in Console
 1) Open [CVM Console](https://console.cloud.tencent.com/cvm/).

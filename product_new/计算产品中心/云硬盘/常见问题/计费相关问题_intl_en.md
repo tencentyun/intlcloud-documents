@@ -2,9 +2,9 @@
 Elastic cloud disks can be billed independently and are pay-as-you-go.
 
 ### How are cloud disks priced?
-The billing mode for cloud disks is pay-as-you-go. Pricing varies by cloud disk types and billing modes. For more information, see [Price Overview](https://intl.cloud.tencent.com/document/product/362/2413).
+The billing mode for cloud disks is pay-as-you-go. Pricing varies by cloud disk types and billing modes. For more information, see [Price Overview](https://intl.cloud.tencent.com/document/product/362/32415).
 ### How much is the pay-as-you-go cloud disk?
-Price standard for different types of pay-as-you-go cloud disks varies by regions. For more information, see [Price Overview](https://intl.cloud.tencent.com/document/product/362/2413).
+Price standard for different types of pay-as-you-go cloud disks varies by regions. For more information, see [Price Overview](https://intl.cloud.tencent.com/document/product/362/32415).
 
 ### How will users be notified when pay-as-you-go CBS data disks expire?
 The system estimates the number of days it takes your account balance to become negative based on the past 24 hours usage and current balance. If it’s less than 5 days, the system will send a balance alert to your Tencent Cloud account creator and all collaborators via the Message Center, email, and SMS. 

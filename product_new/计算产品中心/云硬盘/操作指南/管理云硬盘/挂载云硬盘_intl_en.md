@@ -74,7 +74,7 @@ If you need to automatically mount a cloud disk created from a corresponding dat
  </table>
 
 ### Using the API to mount cloud disks
-You can use the `AttachDisks` API to create a snapshot. For more information, see [Mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/16316).
+You can use the AttachDisks API to mount a cloud disk. For more information, see [Mounting cloud disks](https://intl.cloud.tencent.com/document/product/362/16313).
 
 <span id="modprobeacpiphp"></span>
 
