@@ -1,6 +1,6 @@
 
 
-The batch replication feature is used to replicate objects in the inventory, i.e., allowing you to batch replicate the specified objects from the source bucket to the destination bucket in the same region or in different regions. It supports customizing parameters for the `PUT Object-copy` operation, and the copy metadata and storage type are subject to the configuration information. For more information, please see [PUT Object-copy](https://cloud.tencent.com/document/product/436/10881).
+The batch replication feature is used to replicate objects in the inventory, i.e., allowing you to batch replicate the specified objects from the source bucket to the destination bucket in the same region or in different regions. It supports customizing parameters for the `PUT Object-copy` operation, and the copy metadata and storage type are subject to the configuration information. For more information, please see [PUT Object-copy](https://intl.cloud.tencent.com/document/product/436/10881).
 
 #### Use Limits
 
