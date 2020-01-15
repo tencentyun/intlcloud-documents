@@ -2,9 +2,8 @@
 
 ### 通过控制台无法删除存储桶，提示“目录非空”或“请删除存储桶中的有效数据”怎么办？
 
-1. 请确认您使用的控制台版本是 V4 还是 V5 版本，V4 版本请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=84&source=0&data_title=%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%20COS&level3_id=91&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=28&scene_code=14471&step=2) ，申请升级到 V5 版本控制台。
-2. 登录对象存储 [ V5 版本控制台](https://console.cloud.tencent.com/cos5)，进入需要删除的存储桶，单击【未完成上传】管理项将文件碎片删除。
-3. 回到【存储桶列表】删除对应存储桶。
+1. 登录对象存储 [ V5 版本控制台](https://console.cloud.tencent.com/cos5)，进入需要删除的存储桶，单击【未完成上传】管理项将文件碎片删除。
+2. 回到【存储桶列表】删除对应存储桶。
 
 ## 文件碎片
 
