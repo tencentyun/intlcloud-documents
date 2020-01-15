@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to list your batch operation jobs. For more information on batch operation, please see [Batch Operation Overview](https://cloud.tencent.com/document/product/436/38601).
+This API is used to list your batch operation jobs. For more information on batch operation, please see [Batch Operation Overview](https://intl.cloud.tencent.com/document/product/436/32958).
 
 ## Request
 
@@ -24,7 +24,7 @@ Calling the `ListJobs` API requires the following parameters:
 
 **Request Headers**
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 **Request Body**
 This request does not have a request body.
@@ -42,7 +42,7 @@ HTTP/1.1 200
 
 **Response Headers**
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Response Body**
 
@@ -97,7 +97,7 @@ This node contains information on the batch operation jobs returned by COS.
 | Status  | member | Job status. Valid values: Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended. | String |
 | TerminationDate | member | Job end time. | Timestamp |
 
-For other elements, see [CommonElements](https://cloud.tencent.com/document/product/436/38607).
+For other elements, see [CommonElements](https://intl.cloud.tencent.com/document/product/436/33786).
 
 ## Error Codes
 
@@ -109,5 +109,5 @@ The following describes some frequent special errors that may occur when you mak
 | InvalidArgument | The `maxResults` parameter must be an integer | 400 | ListJobs |
 | InvalidArgument | The `nextToken` parameter is invalid | 400 | ListJobs |
 
-For other errors, see [ErrorResponse](https://cloud.tencent.com/document/product/436/38610).
+For other errors, see [ErrorResponse](https://intl.cloud.tencent.com/document/product/436/33787).
 
