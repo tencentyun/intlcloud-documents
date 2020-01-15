@@ -106,7 +106,7 @@ x-cos-appid: <appid>
 </CreateJobRequest>
 ```
 
-请求体内相关元素的具体描述如下。其他元素请参见 [CommonElements](https://intl.cloud.tencent.com/document/product/436/33786)。
+请求体内相关元素的具体描述如下。其他元素请参见 [公共元素](https://intl.cloud.tencent.com/document/product/436/33786)。
 
 
 
