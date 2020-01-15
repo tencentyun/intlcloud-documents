@@ -1,6 +1,6 @@
 ## 功能描述
 
-CreateJob 用于在存储桶中创建批量处理任务。详细信息可参见 [批量处理概述](https://cloud.tencent.com/document/product/436/38601)。
+CreateJob 用于在存储桶中创建批量处理任务。详细信息可参见 [批量处理概述](https://intl.cloud.tencent.com/document/product/436/32958)。
 
 调用该请求时，请确保您有足够的权限对存储桶的对象进行操作。存储桶所有者默认拥有该权限，若您无该项权限，请先向存储桶所有者申请该项操作的权限。
 
@@ -26,7 +26,7 @@ x-cos-appid: <appid>
 | x-cos-appid | 用户的 APPID，长度为1 - 64字节。 | 是   |
 
 #### 请求头
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 请求体
 用户在请求体中使用 XML 语言设置清单任务的具体配置信息。配置信息包括清单任务分析的对象，分析的频次，分析的维度，分析结果的格式及存储的位置等信息。
@@ -106,7 +106,7 @@ x-cos-appid: <appid>
 </CreateJobRequest>
 ```
 
-请求体内相关元素的具体描述如下。其他元素请参见 [CommonElements](https://cloud.tencent.com/document/product/436/38607)。
+请求体内相关元素的具体描述如下。其他元素请参见 [CommonElements](https://intl.cloud.tencent.com/document/product/436/33786)。
 
 
 
@@ -125,7 +125,7 @@ x-cos-appid: <appid>
 
 **响应头**
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 **响应体**
 
@@ -143,7 +143,7 @@ x-cos-appid: <appid>
 
 **错误分析**
 
-该请求操作可能会出现如下错误信息。其他错误请参见 [批量处理功能错误响应](https://cloud.tencent.com/document/product/436/38610)。
+该请求操作可能会出现如下错误信息。其他错误请参见 [批量处理功能错误响应](https://intl.cloud.tencent.com/document/product/436/33787)。
 
 | 错误代码           | 描述                                      | 状态码 | API       |
 | ------------------ | ----------------------------------------- | ------ | --------- |
