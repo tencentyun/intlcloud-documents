@@ -1,10 +1,8 @@
 ## FAQs About Deletion
 
 ### What should I do if a bucket fails to be deleted in the console with an error message "The directory is not empty" or "Please delete the valid data in the bucket"?
-
-1. Check whether your console version is v4 or v5. If you are using v4, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=84&source=0&data_title=%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%20COS&level3_id=91&radio_title=%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%97%AE%E9%A2%98&queue=28&scene_code=14471&step=2) to apply for upgrading to v5.
-2. Log in to the [COS Console v5](https://console.cloud.tencent.com/cos5), go to the details page of the bucket to be deleted, and click **Incomplete Uploads** to delete the incomplete multipart uploads.
-3. Return to the **Bucket List** and delete the bucket.
+1. Log in to the [COS Console v5](https://console.cloud.tencent.com/cos5), go to the details page of the bucket to be deleted, and click **Incomplete Uploads** to delete the incomplete multipart uploads.
+2. Return to the **Bucket List** and delete the bucket.
 
 ## FAQs About Static Website
 
