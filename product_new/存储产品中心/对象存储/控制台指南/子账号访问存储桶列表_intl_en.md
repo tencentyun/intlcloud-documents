@@ -2,11 +2,6 @@
 
 **Sub-accounts** do not have the permission to pull the bucket list by default. Therefore, if you log in to the [COS Console](https://console.cloud.tencent.com/cos5) with a sub-account, you cannot access buckets, bucket list, or statistics in Bucket List, as shown below.
 
-**Example of denied access to bucket list:**
-![](https://main.qcloudimg.com/raw/f7b9932bbb8d7c102109d05ed970d7f1.png)
-**Example of denied access to statistics:**
-![7](https://main.qcloudimg.com/raw/57376c9bc860b54bf8f01c2241a598db.png)
-
 You can allow a **sub-account** to access a bucket by **adding an access path** or access the bucket list by **adding the preset policy QcloudCOSGetServiceAccess (i.e., the permission to obtain the bucket list)** to it.
 
 >  This feature is applicable to scenarios where the sub-account is logged in to the console to access the bucket.
