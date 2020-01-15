@@ -1,4 +1,4 @@
-The main features available in different editions of Host Security are listed as follows:
+The main features available in different editions of Cloud Workload Protection are listed as follows:
 
 | **Feature and Description** | **Basic Protection** | **Professional Protection** |
 | ---------------------------------------- | :------: | :------: |

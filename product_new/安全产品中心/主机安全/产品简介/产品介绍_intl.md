@@ -1,8 +1,8 @@
-## What is Host Security?
+## What is Cloud Workload Protection?
 
-Host Security (HS) is a product that provides multi-dimensional security protection for CVMs based on the massive threat intelligence data and vulnerability information collected by Tencent over years. By leveraging machine learning, this product offers you a variety of security services such as hacker intrusion detection and vulnerability risk alert, allowing password cracking blocking, remote login alert, Trojan detection and removal, high-risk vulnerability detection and other security features. It can help your company deal with the major network security risks associated with servers and build a server security protection system to prevent data leakage.
+Cloud Workload Protection (CWP) is a product that provides multi-dimensional security protection for CVMs based on the massive threat intelligence data and vulnerability information collected by Tencent over years. By leveraging machine learning, this product offers you a variety of security services such as hacker intrusion detection and vulnerability risk alert, allowing password cracking blocking, remote login alert, Trojan detection and removal, high-risk vulnerability detection and other security features. It can help your company deal with the major network security risks associated with servers and build a server security protection system to prevent data leakage.
 
-## Why do you need Host Security?
+## Why do you need Cloud Workload Protection?
 
 What security risks will your company face once your server is hacked?
 
@@ -11,7 +11,7 @@ What security risks will your company face once your server is hacked?
 - **Encryption by ransomware**: A hacker who intrudes into a company's server encrypts data and extorts money from the company by embedding irreversible encryption ransomware.
 - **Unstable service**: A hacker runs mining and DDoS Trojan programs in a server to gain benefits and consume considerable system resources, causing the failure of server to provide services normally.
 
-**Host Security allows you to defense against the above problems and ensure the system and business security of your company website.**
+**Cloud Workload Protection allows you to defense against the above problems and ensure the system and business security of your company website.**
 
 ## Key Features
 

@@ -1,20 +1,20 @@
 ## Getting Started
-Host Security can be installed together with Tencent Cloud CVMs and CPMs or installed separately.
-Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click **Products** -> **Security**-> **Host Security** to go to the Host Security console page to check if Host Security has been installed on your CVM.
+Cloud Workload Protection can be installed together with Tencent Cloud CVMs and CPMs or installed separately.
+Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click **Products** -> **Security**-> **Cloud Workload Protection** to go to the Cloud Workload Protection console page to check if Cloud Workload Protection has been installed on your CVM.
 
-The following shows how the Host Security console looks like:
+The following shows how the Cloud Workload Protection console looks like:
 ![](https://mc.qcloudimg.com/static/img/51114266f017374b9a12addf6c39570a/image.png)
 
-- For the server surrounded by the yellow box, no host security product is installed. You can install the product depending on the server's operating system as shown below:
+- For the server surrounded by the yellow box, no cloud workload protection product is installed. You can install the product depending on the server's operating system as shown below:
   - [Windows CVM](#windows-.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.8E.AF.E5.A2.83) 
   - [Linux CVM](#linux-.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.8E.AF.E5.A2.83) 
-- For the server surrounded by the blue box, the Basic Protection edition of Host Security is installed. You can [Activate Professional Protection](#Activating Professional Protection ) for it.
-- For the server surrounded by the red box, the Professional Protection edition of Host Security is installed to provide a multi-dimensional security protection for system.
+- For the server surrounded by the blue box, the Basic Protection edition of Cloud Workload Protection is installed. You can [Activate Professional Protection](#Activating Professional Protection ) for it.
+- For the server surrounded by the red box, the Professional Protection edition of Cloud Workload Protection is installed to provide a multi-dimensional security protection for system.
 
 ## Intrusion Detection
-After Host Security is installed, such features as Trojan detection, login behavior audit and password cracking blocking are enabled automatically. You can check the intrusion detection details of a server by either of the following two ways:
-- In the **Security Overview** tab on the Host Security console page, locate the server for which you want to view details in the server list, click the IP address of the server, and then click **Protection Details** to view the intrusion detection details of the server.
-- In the Host Security console page, click **Intrusion Detection** in the menu on the left, and then click the feature you want to view to check the intrusion detection details of all servers for which you have activated Host Security.
+After Cloud Workload Protection is installed, such features as Trojan detection, login behavior audit and password cracking blocking are enabled automatically. You can check the intrusion detection details of a server by either of the following two ways:
+- In the **Security Overview** tab on the Cloud Workload Protection console page, locate the server for which you want to view details in the server list, click the IP address of the server, and then click **Protection Details** to view the intrusion detection details of the server.
+- In the Cloud Workload Protection console page, click **Intrusion Detection** in the menu on the left, and then click the feature you want to view to check the intrusion detection details of all servers for which you have activated Cloud Workload Protection.
 
 For operations related to additional features, please see:
 -  [Trojan Handling Operations](/document/product/296/13008)
@@ -22,10 +22,10 @@ For operations related to additional features, please see:
 - [Login Audit Operations](/document/product/296/13643)
 
 ## Vulnerability Detection
-After Host Security is installed with Professional Protection activated, system component vulnerability detection, Web component vulnerability detection, and security baseline detection are available for you.
-In the Host Security console page, click **Vulnerability Management** in the menu on the left, and then click the feature you want to view to check the vulnerability detection details of all the servers for which you have activated Professional Protection of Host Security, and fix the vulnerabilities as instructed.
+After Cloud Workload Protection is installed with Professional Protection activated, system component vulnerability detection, Web component vulnerability detection, and security baseline detection are available for you.
+In the Cloud Workload Protection console page, click **Vulnerability Management** in the menu on the left, and then click the feature you want to view to check the vulnerability detection details of all the servers for which you have activated Professional Protection of Cloud Workload Protection, and fix the vulnerabilities as instructed.
 
-## Installing Host Security
+## Installing Cloud Workload Protection
 ### Windows CVM  
 #### Applicable versions
 Supported versions:
@@ -55,7 +55,7 @@ Open the task manager to check if YDService and YDLive processes have been invok
 
 #### FAQs
 1. Firewall blocking
-It is recommended to configure the firewall policy to open the access address of the Host Security backend server to Internet:
+It is recommended to configure the firewall policy to open the access address of the Cloud Workload Protection backend server to Internet:
 Domain name: `s.yd.qcloud.com; l.yd.qcloud.com; u.yd.qcloud.com`
 Port: `5574, 8080, 80, 9080`
 
@@ -101,26 +101,26 @@ If the processes have not been started, run the command manually with root user 
 
 #### Uninstallation
 
-You can uninstall Host Security by either of the following two ways:
+You can uninstall Cloud Workload Protection by either of the following two ways:
 **Uninstall in console**
 1. Log in to the console.
 Log in to the Tencent Cloud [Console](https://console.cloud.tencent.com/).
-2. Go to the Host Security page.
-Go to the [Host Security](https://console.cloud.tencent.com/yunjing) management page to check if Host Security has been installed for your CVM.
-3. Uninstall Host Security
-In the server list, select the server for which you want to uninstall Host Security to uninstall it.
+2. Go to the Cloud Workload Protection page.
+Go to the [Cloud Workload Protection](https://console.cloud.tencent.com/yunjing) management page to check if Cloud Workload Protection has been installed for your CVM.
+3. Uninstall Cloud Workload Protection
+In the server list, select the server for which you want to uninstall Cloud Workload Protection to uninstall it.
  ![](https://main.qcloudimg.com/raw/9f5f5eec8b585df854fb735df0b47a47.png)
 
 **Uninstall in system**
 1. Windows
-Locate the uninstall.exe file in the following path, and double-click it to uninstall Host Security.
+Locate the uninstall.exe file in the following path, and double-click it to uninstall Cloud Workload Protection.
 Path: `C:\Program Files\QCloud\YunJing\uninst.exe`
 2. Linux
-Enter the command `/usr/local/qcloud/YunJing/uninst.sh` to uninstall Host Security.
+Enter the command `/usr/local/qcloud/YunJing/uninst.sh` to uninstall Cloud Workload Protection.
 
 #### FAQs
 1. Firewall blocking
-It is recommended to configure the firewall policy to open the access address of the Host Security backend server to Internet:
+It is recommended to configure the firewall policy to open the access address of the Cloud Workload Protection backend server to Internet:
 Domain name: `s.yd.qcloud.com; l.yd.qcloud.com; u.yd.qcloud.com`
 Port: `5574, 8080, 80, 9080`
 
@@ -129,6 +129,6 @@ If you do not need to use the default DNS, forward all resolutions of the root d
 
 ## Activating Professional Protection
 You can activate Professional Protection by either of the following two ways:
--  Click **Buy Now** in the [Host Security Introduction page](https://intl.cloud.tencent.com/product/hs) on the Tencent Cloud official website to go to the login page of Tencent Cloud console. After login, you can activate Professional Protection for your CVM as needed.
+-  Click **Buy Now** in the [Cloud Workload Protection Introduction page](https://intl.cloud.tencent.com/product/hs) on the Tencent Cloud official website to go to the login page of Tencent Cloud console. After login, you can activate Professional Protection for your CVM as needed.
 
-- Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click **Products** -> **Security** -> **Host Security** to go to the Host Security configuration page, and then click **Activate Professional Protection** in the **Operation** column in the **Security Overview** page to activate Professional Protection for your CVM.
+- Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/), click **Products** -> **Security** -> **Cloud Workload Protection** to go to the Cloud Workload Protection configuration page, and then click **Activate Professional Protection** in the **Operation** column in the **Security Overview** page to activate Professional Protection for your CVM.

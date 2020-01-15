@@ -1,8 +1,8 @@
-The advantages of Host Security in comparison with other host security products are listed as follows:
+The advantages of Cloud Workload Protection in comparison with other cloud workload protection products are listed as follows:
 
 
 
-| Feature | Host Security | Other host security products |
+| Feature | Cloud Workload Protection | Other cloud workload protection products |
 | ------ | ---------------------------------------- | ---------------------------------------- |
 | Hacker Behavior Detection |**Detects hacker attack attempts in real time based on Tencent's threat intelligence data sources across the network.** | Conduct analysis based on single server's behavior data with a lower ability of detection and slow response. |
 | Trojan Detection | **Responds to unknown risks quickly by leveraging Tencent PC Manager's new-generation TAV antivirus engine and Hubble analysis system integrated at the back end; effectively defenses against encrypted and metamorphic malicious scripts using the WebShell detection engine based on machine learning.** | Inability to detect executable malicious files; the WebShell detection based on character matching using regular expression logic has a high risk of false positives and false negatives. |
