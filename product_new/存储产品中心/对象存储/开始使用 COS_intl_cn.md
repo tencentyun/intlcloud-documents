@@ -18,7 +18,7 @@
  - 名称：存储桶名称，此处我们输入 examplebucket。
  - 所属地域：存储桶存放地域，选择与您最近的一个地区，例如我在 “深圳”，地域可以选择 “广州”。
  - 访问权限：存储桶访问权限，此处我们选择“私有读写”。
-![](https://main.qcloudimg.com/raw/38addaf41a18eab91259469c30af7b0e.jpg)
+![](https://main.qcloudimg.com/raw/8f575f8ef7c3da41150f9ca8417bca72.png)
 3. 单击【确定】，即可创建存储桶。
 
 
