@@ -16,7 +16,7 @@ To perform a batch operation, you need to create a batch operation job first, wh
 
 After you provide an object file and start the created batch operation job, the batch operation feature will execute the specified operation on the objects in the inventory sequentially. During job execution, you can monitor the execution status in the COS Console or choose to output a job report after the job is completed. The job report details the status of every operation in the job.
 
-> !The batch operation feature is only applicable to objects in the current bucket. If you want to batch operate on the objects in another bucket, please enable the batch operation feature for that bucket.
+> The batch operation feature is only applicable to objects in the current bucket. If you want to batch operate on the objects in another bucket, please enable the batch operation feature for that bucket.
 
 ## Object Inventory
 
@@ -31,7 +31,7 @@ examplebucket-appid, exampleobject, PZ9ibn9D5lP6p298B7S9_ceqx1n5EJ0p
 examplebucket-appid, exampleobject, jbo9_jhdPEyB4RrmOxWS0kU0EoNrU_oI
 ```
 
-> !
+> 
 > - If versioning is or was once enabled for your bucket, you must provide object versioning information in the object inventory. Before executing a job, COS will parse your inventory and determine the objects to be operated on based on the inventory.
 > - An object inventory can contain all the objects in a bucket. However, it may take a longer time to operate on a large number of objects.
 > - If version ID is not specified, COS will operate on the objects on the latest version by default. If you uploaded an object file with the same name as an object to be operated on before creating a job, COS will operate on the object on the latest version by default rather than the version when the object inventory was created. To avoid this issue, you can enable versioning and specify the version ID in the object inventory.
