@@ -6,8 +6,6 @@ Since COS APIs and TencentCloud APIs use different data transfer frameworks, API
 >- By using Tencent Cloud COS APIs, you acknowledge that you have read and agree to the [Tencent Cloud Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248) and [Tencent Cloud Object Storage Service Level Agreement](https://intl.cloud.tencent.com/document/product/436/6227).
 For more information on the regions where COS is available, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). 
 >- Before using the APIs or SDKs to initiate a request, you are recommended to read the [Creating Request Overview](https://intl.cloud.tencent.com/document/product/436/30613) document to learn more about access domain name, authentication, and how to determine whether an access is via private or public network.
->- COS offers two different versions of APIs: XML and JSON. The two versions have different API protocols, but they can access the same data.
->- Tencent Cloud recommends that you use XML APIs, as legacy JSON APIs no longer provide new features introduced after 2018.
 
 ## Glossary
 Below are some main concepts and terms that may come up in the documentation:
