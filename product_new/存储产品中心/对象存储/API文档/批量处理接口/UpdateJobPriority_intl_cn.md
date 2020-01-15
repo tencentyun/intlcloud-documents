@@ -1,6 +1,6 @@
 ## 功能描述
 
-UpdateJobPriority 用于更新任务优先级。您可以使用这一接口以更新一项任务的优先级，数值越大，优先级越高，高优先级的 Job 会被优先执行。有关批量处理任务的详细介绍，可参见 [批量处理概述](https://cloud.tencent.com/document/product/436/38601)。
+UpdateJobPriority 用于更新任务优先级。您可以使用这一接口以更新一项任务的优先级，数值越大，优先级越高，高优先级的 Job 会被优先执行。有关批量处理任务的详细介绍，可参见 [批量处理概述](https://intl.cloud.tencent.com/document/product/436/32958)。
 
 ## 请求
 
@@ -23,7 +23,7 @@ x-cos-appid: <appid>
 
 **请求头**
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 **请求体**
 
@@ -42,7 +42,7 @@ HTTP/1.1 200
 ```
 
 **响应头**
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 **响应体**
 
@@ -71,5 +71,5 @@ HTTP/1.1 200
 | InvalidRequest | 未提供任务优先级                                | 400    | UpdateJobPriority                 |
 | NoSuchJob      | 指定任务不存在或已完成 | 404    | UpdateJobStatus，UpdateJobPriority |
 
-其他错误请参见 [批量处理功能错误响应](https://cloud.tencent.com/document/product/436/38610)。
+其他错误请参见 [批量处理功能错误响应](https://intl.cloud.tencent.com/document/product/436/33787)。
 
