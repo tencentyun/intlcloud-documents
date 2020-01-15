@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API is used to get the parameters of a batch operation job and the job status. For more information, please see [Batch Operation Overview](https://cloud.tencent.com/document/product/436/38601).
+This API is used to get the parameters of a batch operation job and the job status. For more information, please see [Batch Operation Overview](https://intl.cloud.tencent.com/document/product/436/32958).
 
 ## Request
 
@@ -22,7 +22,7 @@ Calling the `DescribeJob` API requires the following parameters:
 
 **Request Headers**
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 **Request Body**
 
@@ -41,7 +41,7 @@ HTTP/1.1 200
 
 **Response Headers**
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Response Body**
 
@@ -155,11 +155,11 @@ This node includes the parameters and status information of the specified batch 
 | FailureCode   | JobFailure | Job failure code; length: 0–64 bytes.  | String |
 | FailureReason | JobFailure | Cause of job failure; length: 0–256 bytes. | String |
 
-For other elements, see [CommonElements](https://cloud.tencent.com/document/product/436/38607).
+For other elements, see [CommonElements](https://intl.cloud.tencent.com/document/product/436/33786).
 
 ## Error Codes
 
-The following describes some frequent special errors that may occur when you make this request. For other errors, see [ErrorResponse](https://cloud.tencent.com/document/product/436/38610).
+The following describes some frequent special errors that may occur when you make this request. For other errors, see [ErrorResponse](https://intl.cloud.tencent.com/document/product/436/33787).
 
 | Error Code | Description | Status Code | API |
 | --------- | -------------------------------- | ------ | ----------- |
