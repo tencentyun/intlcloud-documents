@@ -8,7 +8,7 @@ At present, the batch operation feature only supports the following operation:
 
 - [Replicating Objects in Batches](https://intl.cloud.tencent.com/document/product/436/32960)
 
-You can use the batch operation feature in the COS Console.<!-- For more information, please see [Batch Operation]().-->
+You can use the batch operation feature in the COS Console.For more information, please see [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956).
 
 ## How It Works
 
