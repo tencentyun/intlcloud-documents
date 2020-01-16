@@ -1,18 +1,18 @@
 This document introduces common cloud disk operations, including managing cloud disks and snapshots, as well as monitoring and alarms. 
 ## Cloud Disk
 - [Creating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5744)
-- [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5745)
+- [Mounting Cloud Disks](https://intl.cloud.tencent.com/zh/document/product/362/32401)
 - Initializing cloud disks
  - [Initialization Scenarios](https://intl.cloud.tencent.com/document/product/362/31596)
- - [Initializing Cloud Disks (Less Than 2 TB)](https://intl.cloud.tencent.com/document/product/362/6734)
- - [Initializing Cloud Disks (Greater Than or Equal to 2 TB)](https://intl.cloud.tencent.com/document/product/362/6735)
+ - [Initializing Cloud Disks (Less Than 2 TB)](https://intl.cloud.tencent.com/zh/document/product/362/31597)
+ - [Initializing Cloud Disks (Greater Than or Equal to 2 TB)](https://intl.cloud.tencent.com/zh/document/product/362/31598)
 - Expanding cloud disks
  - [Cloud Disk Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600)
  - [Expanding Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5747)
  - [Expanding Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601)
- - [Expanding Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/document/product/362/6738)
+ - [Expanding Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/zh/document/product/362/31602)
 - [Unmounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32400)
-- [Terminating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5752)
+- [Terminating Cloud Disks](https://intl.cloud.tencent.com/zh/document/product/362/32399)
 
 ## Snapshots
 - [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755)

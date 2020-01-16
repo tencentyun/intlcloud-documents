@@ -155,7 +155,7 @@ MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 
 
 ### 如何删除云硬盘？
 - 系统盘的生命周期跟随云服务器，只能在 [销毁云服务器](https://intl.cloud.tencent.com/document/product/213/4930) 时被删除。
-- 数据盘（即弹性云硬盘）的生命周期独立于云服务器，可以独立删除。具体操作请参考 [销毁云硬盘](https://intl.cloud.tencent.com/document/product/362/5752)。
+- 数据盘（即弹性云硬盘）的生命周期独立于云服务器，可以独立删除。具体操作请参考 [销毁云硬盘](https://intl.cloud.tencent.com/document/product/362/32399)。
 
 ### 系统盘能否进行分区操作？
 系统盘不支持分区操作。

@@ -155,7 +155,7 @@ After formatting, cloud disks cannot be recovered. We recommend you [create a sn
 
 ### How do I delete cloud disks?
 - Lifecycle of a system disk follows that of the CVM. It can only be deleted when the [CVM is terminated](https://intl.cloud.tencent.com/document/product/213/4930).
-- Lifecycle of a data disk (that is, elastic cloud disk) is independent from that of the CVM. It can be deleted separately. For more information, see [Terminating cloud disks](https://intl.cloud.tencent.com/document/product/362/5752).
+- Lifecycle of a data disk (that is, elastic cloud disk) is independent from that of the CVM. It can be deleted separately. For more information, see [Terminating cloud disks](https://intl.cloud.tencent.com/document/product/362/32399).
 
 ### Can system disks be partitioned?
 System disks do not support partitioning.

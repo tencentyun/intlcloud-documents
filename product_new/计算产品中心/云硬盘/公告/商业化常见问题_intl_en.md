@@ -76,7 +76,7 @@ The following table describes snapshot billing circumstances under different use
 ## Manually created snapshots and scheduled snapshots
 Tencent Cloud provides the following two methods for you to create snapshots:
 - Manually created snapshots: Manually back up the data of the cloud disk at any point in time as a snapshot, which can be used to create more identical cloud disks or, in the future, restore the cloud disk to its state at that point in time. For more information about specific operations, see [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755).
-- Scheduled snapshots: If your business continuously updates, you can use scheduled snapshots to provide continuous backups. By implementing a backup policy and associating cloud disks, you can achieve continuous data backups of cloud disks for a certain period, substantially enhancing data security. For more information, see [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/31622).
+- Scheduled snapshots: If your business continuously updates, you can use scheduled snapshots to provide continuous backups. By implementing a backup policy and associating cloud disks, you can achieve continuous data backups of cloud disks for a certain period, substantially enhancing data security.  <!--For more information, see [Scheduled Snapshots]().-->
 
 <a id="reduceoverhead"></a>
 ## How to effectively reduce snapshot costs after commercialization
