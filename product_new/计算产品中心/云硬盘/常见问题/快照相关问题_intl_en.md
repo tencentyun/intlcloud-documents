@@ -1,5 +1,3 @@
-### What is a scheduled snapshot?
-A scheduled snapshot is automatically created by the system according to the scheduled snapshot policy you created for the cloud disk associated with the policy. To use this feature, you must first create a scheduled snapshot policy and associate it with the cloud disk. For more information, see [Scheduling Snapshots](https://intl.cloud.tencent.com/document/product/362/31622).
 
 ### Is snapshot available in all availability zones ?
 Snapshot feature is available in all availability zones.
@@ -39,7 +37,3 @@ After cross-region replication, the new snapshot and the source disk of the sour
 ### How do I delete snapshots?
 - For cloud disk snapshots, you can delete them directly in the console or through the API. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
 - For snapshots associated with custom images, you must first delete custom images, and then [delete snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
-
-### What limits do scheduled snapshots have?
-A maximum of 30 scheduled snapshot policies can be created in one region. Each scheduled snapshot policy can be bound to at most 200 cloud disks. Also, snapshots created by scheduled snapshot policies comply with snapshot quota limits. For more information, see [Snapshot Overview].
-

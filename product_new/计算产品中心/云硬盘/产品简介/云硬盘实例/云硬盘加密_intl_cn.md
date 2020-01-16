@@ -80,7 +80,7 @@
 >
 3. 根据您的实际情况选择云硬盘配置，并单击【确定】。
 4. 购买完成后，您可在 [云硬盘列表](https://console.cloud.tencent.com/cvm/cbs) 页面查看已创建的加密云硬盘。
-新建的加密云硬盘为【待挂载】状态，可参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/5745) 将云硬盘挂载至同一可用区内的云服务器。
+新建的加密云硬盘为【待挂载】状态，可参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401) 将云硬盘挂载至同一可用区内的云服务器。
 
 ### 使用快照创建加密云硬盘
 请参考 [从快照创建云硬盘](https://intl.cloud.tencent.com/document/product/362/5757)，选择加密快照创建云硬盘，即可创建已包含相关数据且加密的云硬盘。

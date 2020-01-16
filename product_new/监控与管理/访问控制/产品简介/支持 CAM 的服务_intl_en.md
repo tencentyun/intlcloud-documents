@@ -36,7 +36,7 @@ Definitions:
 | [Cloud Object Storage (COS)](https://intl.cloud.tencent.com/document/product/436) | Resource level | &#10003;       | -  | &#10003;   |[Access Control](https://intl.cloud.tencent.com/document/product/436/12473)   |
 | [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582) | Resource level | &#10003;        | -  |  &#10003;    |[Access Control](https://intl.cloud.tencent.com/document/product/582/14679)   |		
 | [Cloud Block Storage (CBS)](https://intl.cloud.tencent.com/document/product/362) | Resource level | &#10003;       | &#10003;  |  -    |-    |	
-| [Cloud Log Service (CLS)](https://intl.cloud.tencent.com/document/product/614)  | Resource level | &#10003;        | -  | &#10003; |[Access Control](https://intl.cloud.tencent.com/document/product/614/35564)    |	
+| [Cloud Log Service (CLS)](https://intl.cloud.tencent.com/document/product/614)  | Resource level | &#10003;        | -  | &#10003; |[Access Control](https://intl.cloud.tencent.com/document/product/614/32854)    |	
 
 ## Networking	
 
@@ -45,7 +45,7 @@ Definitions:
 | [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214)   | Resource level | &#10003;      | &#10003;    |    &#10003;  |[Access Control](https://intl.cloud.tencent.com/document/product/214/9777) |	
 | [Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | Resource level | &#10003;        | -     | - | - |	
 | [Direct Connect (DC)](https://intl.cloud.tencent.com/document/product/216) | Resource level   | &#10003;       | -       | -  | - |	
-><sup>1</sup>CAM is supported by [ENI](https://intl.cloud.tencent.com/document/product/576), [NAT Gateway](https://intl.cloud.tencent.com/document/product/1015), [Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connection](https://intl.cloud.tencent.com/document/product/1037), [Anycast Internet acceleration (AIA)](https://intl.cloud.tencent.com/document/product/644), and [Cloud Connect Network (CCN)](https://intl.cloud.tencent.com/document/product/1003).
+><sup>1</sup>CAM is supported by [ENI](https://intl.cloud.tencent.com/document/product/576), [NAT Gateway](https://intl.cloud.tencent.com/document/product/1015), Peering Connection, [VPN Connection](https://intl.cloud.tencent.com/document/product/1037), [Anycast Internet acceleration (AIA)](https://intl.cloud.tencent.com/document/product/644), and [Cloud Connect Network (CCN)](https://intl.cloud.tencent.com/document/product/1003).
 
 ## Database	
 
@@ -111,14 +111,14 @@ Definitions:
 | ----------------------------------------------------------- | ------ | --------| ----- |  ---- |	 ---- |
 | [Elastic MapReduce (EMR)](https://intl.cloud.tencent.com/document/product/1026)   | Operation level | &#10003;  | -   |  &#10003;  | [Access Control](https://intl.cloud.tencent.com/document/product/1026/31100) |
 | [Tencent Sparkling Data Warehouse Suite](https://intl.cloud.tencent.com/document/product/1019)  | Resource level | &#10003; | -  | &#10003;    | - |
-| [Oceanus](https://intl.cloud.tencent.com/document/product/1000)  | Service level   | &#10003;     | -  | &#10003;  | - |
+| Oceanus  | Service level   | &#10003;     | -  | &#10003;  | - |
 | [Elasticsearch Service (ES)](https://intl.cloud.tencent.com/document/product/845)  | Operation level | &#10003; | -   |  -  | [Access Control](https://intl.cloud.tencent.com/document/product/845/19550) |
 
 ## Image Recognition
 
  | Service                                                         | Authorization Granularity | Console | Using Tags for Authorization | Service Role | Reference Documentation |
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	 ---- |		
-| [Optical Character Recognition (OCR)](https://intl.cloud.tencent.com/document/product/1005) | Service level | &#10003;| -  | - | - |	
+| Optical Character Recognition (OCR) | Service level | &#10003;| -  | - | - |	
 
 ## Gaming Services
 

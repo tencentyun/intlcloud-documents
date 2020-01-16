@@ -80,7 +80,7 @@ You can create an encrypted cloud disk using one of following three methods:
 >
 3. Select the cloud disk configuration based on your actual situation and click **Confirm**.
 4. Once you have purchased the cloud disk, you can view the created encrypted cloud disk on the [Cloud Disk List](https://console.cloud.tencent.com/cvm/cbs) page.
-The new encrypted cloud disk is in the **to be mounted** state, and you can refer to [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5745) to mount the cloud disk to a CVM instance in the same availability zone.
+The new encrypted cloud disk is in the **to be mounted** state, and you can refer to [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401) to mount the cloud disk to a CVM instance in the same availability zone.
 
 ### Creating an Encrypted Cloud Disk from a Snapshot
 Refer to [Creating Cloud Disks from Snapshots](https://intl.cloud.tencent.com/document/product/362/5757), and select an encrypted snapshot to create a cloud disk. That is, you can create a cloud disk that already contains the relevant data and is encrypted.
