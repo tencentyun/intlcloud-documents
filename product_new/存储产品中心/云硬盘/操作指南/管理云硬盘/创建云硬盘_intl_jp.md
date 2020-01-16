@@ -78,7 +78,7 @@ CBSを作成する前に、[Tencent Cloudのアカウント新規登録](https:/
   1. 仕様を確認した後、実際の状況に応じて、金券を利用するかどうかを選択して、【購入確認】をクリックします。
   2. 支払いを完了します。
  </ol>
-5.  [CBSリスト](https://console.cloud.tencent.com/cvm/cbs) 画面で作成済みのCBSを確認することができます。新規作成されたElastic CBSは【マウント待ち】状態であり、[CBSのマウント](https://intl.cloud.tencent.com/document/product/362/5745) を参照して、CBSを同じアベイラビリティーゾーン内にあるCVMにマウントします。
+5. [CBSリスト](https://console.cloud.tencent.com/cvm/cbs) 画面で作成済みのCBSを確認することができます。新規作成されたElastic CBSは【マウント待ち】状態であり、[CBSのマウント](https://intl.cloud.tencent.com/document/product/362/5745) を参照して、CBSを同じアベイラビリティーゾーン内にあるCVMにマウントします。
 
 ### スナップショットを利用してCBSを作成する
 新しく作成したCBSの中に関連データを直接含むことを希望する場合は、[スナップショットを利用してCBSの作成](https://intl.cloud.tencent.com/document/product/362/5757) を選択してください。
