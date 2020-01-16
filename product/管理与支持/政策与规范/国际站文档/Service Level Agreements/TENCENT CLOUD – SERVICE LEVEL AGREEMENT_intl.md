@@ -93,6 +93,6 @@ The Service Levels that apply to specific Tencent Cloud services are set out at:
 
 - [CDB Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12907)
 
-- [CDN Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12910)
+- [CDN Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/30981)
 
 - [Redis Service Level Agreement](https://intl.cloud.tencent.com/document/product/301/32279)
