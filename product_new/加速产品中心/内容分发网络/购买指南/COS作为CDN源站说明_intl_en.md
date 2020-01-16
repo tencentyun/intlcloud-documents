@@ -9,7 +9,7 @@ When CDN obtains resources from a nearby CDN node and delivers them to clients, 
 
 ### COS Billing
 When CDN pulls resources from a COS origin server, the traffic consumed will be charged by COS. For more information, please see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
-![](https://main.qcloudimg.com/raw/10462fb00d64fb9a63afc8616ceb2b79.png)
+![](https://main.qcloudimg.com/raw/794db40485325436ec6f52e32f0df117.jpg)
 
 
 
