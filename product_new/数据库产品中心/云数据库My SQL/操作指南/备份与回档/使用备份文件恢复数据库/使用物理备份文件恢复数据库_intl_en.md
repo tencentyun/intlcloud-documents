@@ -61,7 +61,7 @@ Modify file properties and check whether files are owned by a TencentDB for MySQ
 ```
 chown -R mysql:mysql /data
 ```
-![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
+![](https://main.qcloudimg.com/raw/2c2bfcad8c8bdac9385e70d975bec56a.png)
 
 ### Starting the mysqld process and logging in for verification
 1. Start the mysqld process.
