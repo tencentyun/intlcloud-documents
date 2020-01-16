@@ -16,7 +16,7 @@
 
 <tr>
 	 <td>2019.10.22</td>
-	 <td><a href="https://cloud.tencent.com/document/product/457/9084">Multiple security groups can be configured for a cluster worker node, and the default security group is used</a></td>
+	 <td><a href="https://intl.cloud.tencent.com/document/product/457/9084">Multiple security groups can be configured for a cluster worker node, and the default security group is used</a></td>
 </tr>
 
 <tr>
