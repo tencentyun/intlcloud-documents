@@ -1,18 +1,18 @@
 您在使用云硬盘时，可能碰到诸如管理云硬盘、管理快照以及监控与告警等问题。本文将介绍使用云硬盘的常用操作，供您参考。
 ## 云硬盘
 - [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/5744)
-- [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/5745)
+- [挂载云硬盘](https://intl.cloud.tencent.com/zh/document/product/362/32401)
 - 初始化云硬盘
  - [初始化场景介绍](https://intl.cloud.tencent.com/document/product/362/31596)
- - [初始化云硬盘（小于2TB）](https://intl.cloud.tencent.com/document/product/362/6734)
- - [初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/document/product/362/6735)
+ - [初始化云硬盘（小于2TB）](https://intl.cloud.tencent.com/zh/document/product/362/31597)
+ - [初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/zh/document/product/362/31598)
 - 扩容云硬盘
  - [扩容场景介绍](https://intl.cloud.tencent.com/document/product/362/31600)
  - [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747)
  - [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)
- - [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/6738)
+ - [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/zh/document/product/362/31602)
 - [卸载云硬盘](https://intl.cloud.tencent.com/document/product/362/32400)
-- [销毁云硬盘](https://intl.cloud.tencent.com/document/product/362/5752)
+- [销毁云硬盘](https://intl.cloud.tencent.com/zh/document/product/362/32399)
 
 ## 快照
 - [创建快照](https://intl.cloud.tencent.com/document/product/362/5755)
