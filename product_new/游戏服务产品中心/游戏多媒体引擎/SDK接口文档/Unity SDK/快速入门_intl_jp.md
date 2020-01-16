@@ -90,7 +90,7 @@ ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 | roomType |ITMGRoomType|ルームのオーディオタイプです。|
 | authBuffer |Byte[] |認証コードです。|
 
-ルームのオーディオタイプについては、「音質選択」(https://intl.cloud.tencent.com/document/product/607/18522)をご参照ください。
+ルームのオーディオタイプについては、[音質選択](https://intl.cloud.tencent.com/document/product/607/18522)をご参照ください。
 
 
 ####  サンプルコード  
