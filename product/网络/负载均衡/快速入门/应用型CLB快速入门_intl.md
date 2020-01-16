@@ -115,7 +115,7 @@ Next, you can enter `http://www.example.com/image/` and `https://www.example2.co
 
 ![](https://mc.qcloudimg.com/static/img/82360f96ea78984030d7378b35ee48e0/014.png)
 
-![](https://mc.qcloudimg.com/static/img/bd9bc8b9d925c8cb54740d448eead43c/015.png)
+![](https://main.qcloudimg.com/raw/d34bf71078922465c54ad49040db1c66.png)
 
 The results shown in the above figure indicate that we can access different backend CVMs via different ***domain names + URLs*** under a LB instance, that is, ***"content-based routing"*** feature is realized. Then, the redirection feature can work in the two scenarios below:
 
