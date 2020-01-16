@@ -7,7 +7,7 @@
 
 
 ## 通过腾讯云命令行删除函数
-在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/30220) 方法完成命令行的安装和配置。
+在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/33463) 方法完成命令行的安装和配置。
 
 通过`tccli scf DeleteFunctions`命令即可获取函数列表，其中 `FunctionName` 为必选参数，指明期望删除的函数名。
 ```

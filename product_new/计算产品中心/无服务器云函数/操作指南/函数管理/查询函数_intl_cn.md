@@ -12,7 +12,7 @@
  * 监控页：显示函数运行监控信息。
 
 ## 通过腾讯云命令行获取函数信息
-在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/30220) 方法完成命令行的安装和配置。
+在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/33463) 方法完成命令行的安装和配置。
 通过`tccli scf ListFunctions`和`tccli scf GetFunction`命令即可获取函数信息。
 ### 获取函数列表
 通过`tccli scf ListFunctions`命令即可获取函数列表，并且可以通过`Order`，`Orderby`，`Offset`，`Limit`，`SearchKey`参数进行过滤、排序、数量控制等操作。

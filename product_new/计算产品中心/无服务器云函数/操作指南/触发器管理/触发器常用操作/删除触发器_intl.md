@@ -11,7 +11,7 @@ A function trigger can be deleted in the console or through TCCLI.
 
 ## Deleting a Trigger Through TCCLI
 
-Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/30220).
+Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/33463).
 Use the `tccli scf DeleteTrigger` command to delete a function trigger.
 The sample below deletes a timer trigger using TCCLI:
 

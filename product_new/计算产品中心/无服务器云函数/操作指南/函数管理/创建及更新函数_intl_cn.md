@@ -12,7 +12,7 @@
 
 ## 通过腾讯云命令行创建函数
 
-在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/30220) 方法完成命令行的安装和配置。
+在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/33463) 方法完成命令行的安装和配置。
 使用`tccli scf CreateFunction`命令即可完成函数创建。
 
 ### 通过本地 zip 包创建函数

@@ -7,7 +7,7 @@ A function can be deleted in the console or through TCCLI.
 
 
 ## Deleting a Function Through TCCLI
-Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/30220).
+Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/33463).
 
 The function list can be obtained using the `tccli scf DeleteFunctions` command, where `FunctionName` is a required parameter indicating the name of the function you want to delete.
 ```

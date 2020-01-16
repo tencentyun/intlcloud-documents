@@ -11,7 +11,7 @@
 
 ## 通过腾讯云命令行完成触发器创删除
 
-在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/30220) 方法完成命令行的安装和配置。
+在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/33463) 方法完成命令行的安装和配置。
 使用 `tccli scf DeleteTrigger` 命令即可完成函数触发器创建。
 如下示例为通过命令行完成定时触发器的删除：
 
