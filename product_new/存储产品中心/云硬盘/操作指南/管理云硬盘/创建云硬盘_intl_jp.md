@@ -1,6 +1,6 @@
 ## ユースケース
 CBSを作成して、同じアベイラビリティーゾーン内に任意のCVMに接続することができます。ブロックストレージデバイスマッピングを通して、CBSがCVMによって識別・使用されます。CBSを作成すると、ウォームアップせずに最高性能を実現できます。
-業務ニーズに応じ、異なるタイプのCBS選択して、作成することができます。CBSタイプの詳細な情報については、[CBSタイプ](/doc/product/362/2353) をご参照ください。
+業務ニーズに応じ、異なるタイプのCBS選択して、作成することができます。CBSタイプの詳細な情報については、[CBSタイプ](https://intl.cloud.tencent.com/document/product/362/31636) をご参照ください。
 
 ## 前提条件
 CBSを作成する前に、[Tencent Cloudのアカウント新規登録](https://intl.cloud.tencent.com/document/product/378/17985) を進めて、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629) を完了してください。
