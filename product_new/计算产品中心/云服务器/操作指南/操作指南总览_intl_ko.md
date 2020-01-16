@@ -6,7 +6,7 @@ CVM를 최초로 구매하고 사용할 때 아래의 절차를 이해한 후에
 
 1. CVM 개념 이해: [CVM 개요](https://intl.cloud.tencent.com/document/product/213/495)
 2. CVM 유형 선택 및 구매. 개인 사용자로서 처음 사용할 경우 빠른 설정을 통한 방식을 추천합니다. [Windows 인스턴스 설정](https://intl.cloud.tencent.com/document/product/213/2764) 또는 [Linux 인스턴스 설정](https://intl.cloud.tencent.com/document/product/213/2936)을 참조하십시오.
-3. 구매 완료 후 CVM 로그인: 사용자가 구매한 CVM 유형에 따라 [Windows 인스턴스 로그인](https://cloud.tencent.com/document/product/213/35697) 또는 [Linux 인스턴스 로그인](https://cloud.tencent.com/document/product/213/16515)을 선택하십시오.
+3. 구매 완료 후 CVM 로그인: 사용자가 구매한 CVM 유형에 따라 [Windows 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/32498) 또는 [Linux 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/5436)을 선택하십시오.
 4. (옵션) 구매한 CVM를 통해 개인 웹 사이트, 게시판 또는 스토리지 파일을 구축할 수 있습니다.
  - [미러 이미지를 사용해 WordPress 개인 웹 사이트 구축](https://cloud.tencent.com/document/product/213/9740)
  - [미러 이미지를 사용해 Discuz! 포럼 구축](https://cloud.tencent.com/document/product/213/9753)

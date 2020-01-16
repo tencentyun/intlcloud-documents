@@ -14,15 +14,15 @@
 > - **홍콩 리전의 Windows 클라우드 서버를 구매할 경우, 최소 1Mbps의 대역폭을 구매해야 하며, 그렇지 않으면 점프 서버 로그인이 불가능합니다.** 
 >
 2. 구매 완료 후, 필요에 따라 중국 리전 Windows 클라우드 서버 로그인 방식을 선택하십시오:
- - [RDP 파일로 Windows 클라우드 서버에 로그인](https://intl.intl.cloud.tencent.com/document/product/213/5435)
+ - [RDP 파일로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/5435)
  - [원격 데스크톱 연결로 Windows 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35703)
- - [VNC로 Windows 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35704)
+ - [VNC로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32496)
 3. 홍콩 리전의 Windows 클라우드 서버 내에서 필요에 따라 북미 리전 클라우드 서버 로그인 방식을 선택하십시오.
  - 북미 리전의 Linux 클라우드 서버 로그인하기
     - [표준 로그인 방식으로 Linux 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/5436)
     - [원격 로그인 소프트웨어로  Linux 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35699)
-    - [VNC로 Linux 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35701)
+    - [VNC로 Linux 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32494)
  - 북미 리전의 Windows 클라우드 서버에 로그인하기 
-    - [RDP 파일로 Windows 클라우드 서버에 로그인](https://intl.intl.cloud.tencent.com/document/product/213/5435)
+    - [RDP 파일로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/5435)
     - [원격 데스크톱 연결로 Windows 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35703)
-    - [VNC로 Windows 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35704)
+    - [VNC로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32496)

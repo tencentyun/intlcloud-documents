@@ -1,11 +1,11 @@
 ### SSHキーログインとパスワードログインに何か違いがありますか。
 SSHキーは、Linuxサーバーにリモートログインする方法であり、その原理はキージェネレーターにより、キーペア（パブリックキーとプライベートキー）を作成します。パブリックキーをサーバーに追加して、クライアントでプライベートキーを利用して認証とログインを完成させます。この方式はデータの安全性を重視します。また従来のパスワードログイン方式の手動入力に比べて、更なる利便性を提供します。
 現在、Linuxインスタンスはパスワード及びSSHキーの二つのログイン方式が利用できます。Windowsインスタンスはパスワードログイン方式のみ利用できます。関連ドキュメント：
-- [Linuxインスタンスをログインする](https://cloud.tencent.com/document/product/213/16515)
-- [Windowsインスタンスをログインする](https://cloud.tencent.com/document/product/213/35697)
+- [Linuxインスタンスをログインする](https://intl.cloud.tencent.com/document/product/213/5436)
+- [Windowsインスタンスをログインする](https://intl.cloud.tencent.com/document/product/213/32498)
 
 ### SSHキーでログインする同時にパスワードログインが利用できますか。
-ユーザーが [SSHキーでLinuxインスタンスをログインする](https://cloud.tencent.com/document/product/213/35700) 場合は、パスワードログインがデフォルトで利用不可であることにより、安全性を向上させます。従って、SSHキーログインした後にユーザーはパスワードログインを利用できません。
+ユーザーが [SSHキーでLinuxインスタンスをログインする](https://intl.cloud.tencent.com/document/product/213/32501) 場合は、パスワードログインがデフォルトで利用不可であることにより、安全性を向上させます。従って、SSHキーログインした後にユーザーはパスワードログインを利用できません。
 
 ### パスワードを忘れた場合どうすればよいですか。
 パスワードをリセットすることができます。詳細な操作については、[インスタンスパスワードのリセット](https://intl.cloud.tencent.com/document/product/213/16566) をご参照ください。
@@ -21,15 +21,15 @@ SSHキーは、Linuxサーバーにリモートログインする方法であり
 
 ### どのようにSSHキーをサーバーにバインド/バインド解除しますか。
 
-[SSHキー操作ガイド](https://intl.intl.intl.cloud.tencent.com/document/product/213/16691)の**キーとサーバーをバインド/バインド解除**する部分をご参照ください。
+[SSHキー操作ガイド](https://intl.cloud.tencent.com/document/product/213/16691)の**キーとサーバーをバインド/バインド解除**する部分をご参照ください。
 
 ### どのようにSSHキーの名前/説明を修正しますか。
 
-[SSHキー操作ガイド](https://intl.intl.intl.cloud.tencent.com/document/product/213/16691)の**SSHキーの名前/説明を修正する**部分をご参照ください。
+[SSHキー操作ガイド](https://intl.cloud.tencent.com/document/product/213/16691)の**SSHキーの名前/説明を修正する**部分をご参照ください。
 
 ### どのようにSSHキーを削除しますか。
 
-[SSHキー操作ガイド](https://intl.intl.intl.cloud.tencent.com/document/product/213/16691)の**SSHキーを削除する**部分をご参照ください。
+[SSHキー操作ガイド](https://intl.cloud.tencent.com/document/product/213/16691)の**SSHキーを削除する**部分をご参照ください。
 
 ### SSHキーはどのような使用制限がありますか。
 

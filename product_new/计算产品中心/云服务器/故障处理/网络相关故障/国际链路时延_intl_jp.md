@@ -14,15 +14,15 @@
 > - **中国香港リージョンのWindows CVMを購入する場合、1Mbps以上の帯域幅を購入する必要があります。そうしないと、ジャンプサーバーにログインできません。**
 >
 2. 購入が成功した後、実際のニーズに応じて、中国香港リージョンのWindows CVMのログイン方法を選択する：
- - [RDPファイルを利用してWindows CVMにログインする](https://intl.intl.cloud.tencent.com/document/product/213/5435)
+ - [RDPファイルを利用してWindows CVMにログインする](https://intl.cloud.tencent.com/document/product/213/5435)
  - [リモートデスクトップを利用してWindows CVMにログインする](https://cloud.tencent.com/document/product/213/35703)
- - [VNC を利用してWindows CVMにログインする](https://cloud.tencent.com/document/product/213/35704)
+ - [VNC を利用してWindows CVMにログインする](https://intl.cloud.tencent.com/document/product/213/32496)
 3. 中国香港リージョンのWindows CVMで、実際のニーズに応じて、北米リージョンにあるCVMへのログイン方式を選択する：
  - 北米リージョンのLinux CVMにログインします。
     - [標準ログイン方式を利用してLinux CVM にログインする](https://intl.cloud.tencent.com/document/product/213/5436)
     - [リモートデスクトップを利用してLinux CVMにログインする](https://cloud.tencent.com/document/product/213/35699)
-    - [VNCを利用してLinux CVMにログインする](https://cloud.tencent.com/document/product/213/35701)
+    - [VNCを利用してLinux CVMにログインする](https://intl.cloud.tencent.com/document/product/213/32494)
  - 北米リージョンのWindows CVMにログインします。 
-    -  [RDPファイルを利用してWindows CVMにログインする](https://intl.intl.cloud.tencent.com/document/product/213/5435)
+    -  [RDPファイルを利用してWindows CVMにログインする](https://intl.cloud.tencent.com/document/product/213/5435)
     - [リモートデスクトップを利用してWindows CVMにログインする](https://cloud.tencent.com/document/product/213/35703)
-    - [VNCを利用してWindows CVMにログインする](https://cloud.tencent.com/document/product/213/35704)
+    - [VNCを利用してWindows CVMにログインする](https://intl.cloud.tencent.com/document/product/213/32496)

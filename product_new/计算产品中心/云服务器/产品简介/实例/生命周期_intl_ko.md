@@ -20,7 +20,7 @@ Tencent Cloud CVM 인스턴스의 라이프사이클이란 인스턴스가 시�
  - 인스턴스 작업을 시작한 후 인스턴스는 생성 중 상태로 진입합니다. 생성 중인 인스턴스는 지정된 [인스턴스 사양](https://intl.cloud.tencent.com/document/product/213/11518)에 따라 하드웨어 사양을 구성하며 시스템 시작 시 지정된 미러 이미지를 사용하여 인스턴스를 시작합니다.
  - 인스턴스 생성 완료 후 실행 중인 상태로 진입합니다. 실행 상태의 인스턴스는 액세스 서비스와 정상 연결되어 시작됩니다.
 
-인스턴스 시작 정보에 대한 자세한 내용은 [인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855), [Windows 인스턴스 로그인](https://cloud.tencent.com/document/product/213/35697)과 [Linux 인스턴스 로그인](https://cloud.tencent.com/document/product/213/16515)을 참조하십시오.
+인스턴스 시작 정보에 대한 자세한 내용은 [인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/4855), [Windows 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/32498)과 [Linux 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/5436)을 참조하십시오.
 
 ## 인스턴스 재시작
 사용자가 Tencent Cloud 콘솔, Tencent Cloud API 를 임의로 선택하여 인스턴스를 재시작할 것을 권장하며 인스턴스에서 운영 체제 재시작 명령어를 실행하는 것은 아닙니다.

@@ -6,7 +6,7 @@
 ### CVM의 리전과 가용존의 종류와 선택 방법은 무엇이 있습니까?
 
 CVM에서 선택 가능한 리전과 가용존에 대한 자세한 내용은 [리전과 가용존](https://intl.cloud.tencent.com/document/product/213/6091)을 참조하십시오.
-리전과 가용존 선택에 대한 자세한 내용은 [리전과 가용존 선택 방법](https://intl.intl.cloud.tencent.com/document/product/213/6091)을 참조하십시오.
+리전과 가용존 선택에 대한 자세한 내용은 [리전과 가용존 선택 방법](https://intl.cloud.tencent.com/document/product/213/6091)을 참조하십시오.
 
 ### CVM는 현재 어떤 호스트 유형을 제공합니까?
 
@@ -15,7 +15,6 @@ CVM는 여러 인스턴스 사양을 제공하며, 자세한 내용은 [인스�
 
 ### CVM 구성 방안은 어떻게 선택합니까?
 
-Tencent Cloud에서 제공하는 아래의 [추천 사양](https://cloud.tencent.com/act/recommended)을 참조하십시오.
 - 입문형: 개인 블로그 등의 소규모 웹 사이트와 같은 시작 단계의 개인 웹 사이트가 사용하기에 적합합니다.
 - 기본형: 대규모 기업의 공식 사이트, 소규모 전자 상거래 웹 사이트 등의 일정한 액세스량이 있는 웹 사이트 또는 애플리케이션에 적합합니다.
 - 보급형: 포털 사이트, SaaS 소프트웨어, 소규모 App과 같이 자주 사용하는 클라우드 컴퓨팅처럼 일정한 양의 컴퓨팅이 필요할 때 적합합니다.
@@ -31,7 +30,7 @@ Microsoft가 2015년 7월 14일부터 Windows Server 2003과 Windows Server 2003
 
 ### 스토리지를 선택하는 방법은 무엇입니까?
 
-신뢰성에 대한 요구가 높은 데이터의 경우 [CBS](https://cloud.tencent.com/document/product/213/32811)를 사용하길 추천합니다. 데이터의 지속적인 스토리지 신뢰성을 보장하고자 한다면 [로컬 디스크](https://cloud.tencent.com/doc/product/213/5798)를 선택하지 마십시오.
+신뢰성에 대한 요구가 높은 데이터의 경우 [CBS](https://intl.cloud.tencent.com/document/product/213/33000)를 사용하길 추천합니다. 데이터의 지속적인 스토리지 신뢰성을 보장하고자 한다면 [로컬 디스크](https://cloud.tencent.com/doc/product/213/5798)를 선택하지 마십시오.
 액세스가 빈번하고 용량이 불안정한 데이터베이스의 경우 [Tencent CDB](https://cloud.tencent.com/product/cdb-overview)를 사용하길 추천합니다.
 
 ### 종량제 CVM에 대한 제한 사항은 무엇입니까?

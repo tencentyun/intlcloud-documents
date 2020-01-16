@@ -68,7 +68,7 @@ ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('�
 
 ### 5단계: WordPress 설치 및 구성
 #### WordPress 다운로드
-> WordPress는 [WordPress 공식 웹 사이트](https://cn.wordpress.org/download/releases/)에서 WordPress 최신 중문 버전을 설치할 수 있습니다. 본 튜토리얼은 WordPress 중문 버전을 사용합니다.
+> WordPress는 [WordPress 공식 웹 사이트](https://wordpress.org/download/releases/)에서 WordPress 최신 중문 버전을 설치할 수 있습니다. 본 튜토리얼은 WordPress 중문 버전을 사용합니다.
 >
 1. 아래의 명령어를 실행하여 웹 사이트 디렉터리에서 PHP-Nginx 구성 테스트에 사용하는 ‘index.php’ 파일을 삭제하십시오.
 ```

@@ -5,8 +5,8 @@ CVM 빠른 구성과 비교하여 사용자 정의 구성은 더 많은 미러 �
 
 CVM를 사용하기 전 다음과 같은 준비 작업을 완료해야 합니다.
 1. Tencent Cloud 계정 등록 및 실명 인증을 완료하십시오.
-신규 사용자는 Tencent Cloud 공식 사이트에서 [등록](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)을 진행해야 합니다. 자세한 내용은 [Tencent Cloud 등록](https://cloud.tencent.com/doc/product/378/9603)을 참조하십시오.
-2. [Tencent Cloud CVM 소개 페이지](https://cloud.tencent.com/product/cvm)를 액세스하고 [즉시상담]을 클릭합니다.
+신규 사용자는 Tencent Cloud 공식 사이트에서 [등록](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)을 진행해야 합니다. 자세한 내용은 [Tencent Cloud 등록](https://intl.cloud.tencent.com/document/product/378/17985)을 참조하십시오.
+2. [Tencent Cloud CVM 소개 페이지](https://intl.cloud.tencent.com/product/cvm)를 액세스하고 [즉시상담]을 클릭합니다.
 
 <span id="SelectType"></span>
 ## 모델 선택
@@ -16,15 +16,15 @@ CVM를 사용하기 전 다음과 같은 준비 작업을 완료해야 합니다
 ![리전과 모델 선택](https://main.qcloudimg.com/raw/a71d4168ae6bd2b762badd4689c0aba7.png)
 <table>
 <tr><th style="width: 20%">유형</th><th style="width: 12%">필수/선택</th><th>구성 설명</th></tr>
-<tr><td><a href="https://cloud.tencent.com/document/product/213/2180">과금 방식</a></td><td>필수</td><td>실제 필요에 따라 선택하십시오.<ul><li><b>종량제</b>: CVM의 유연한 과금 방식은 전자 상거래의 대량 구매 등 장치 수요가 순간 변동량이 큰 시나리오에 적합합니다.</li><li><b>스팟 인스턴스</b>: 일종의 새 인스턴스 작업 모드로써 빅 데이터 컴퓨팅, CLB, 온라인 서비스 및 네트워크 서비스 등 시나리오에 적합하며 일반적인 가격 범위는 종량제 요금의 10%~20%사이 입니다.</li></ul></td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/213/2180">과금 방식</a></td><td>필수</td><td>실제 필요에 따라 선택하십시오.<ul><li><b>종량제</b>: CVM의 유연한 과금 방식은 전자 상거래의 대량 구매 등 장치 수요가 순간 변동량이 큰 시나리오에 적합합니다.</li><li><b>스팟 인스턴스</b>: 일종의 새 인스턴스 작업 모드로써 빅 데이터 컴퓨팅, CLB, 온라인 서비스 및 네트워크 서비스 등 시나리오에 적합하며 일반적인 가격 범위는 종량제 요금의 10%~20%사이 입니다.</li></ul></td></tr>
 <tr><td>리전</td><td>필수</td><td>사용자의 고객과 가장 가까운 리전을 선택하여 액세스 딜레이 시간을 낮추고 액세스 속도를 높일 것을 권장합니다.</td></tr>
 <tr><td>가용존</td><td>필수</td><td>실제 요구 사항에 따라 선택하십시오.</br>여러 대의 CVM을 구매해야 할 경우 서로 다른 가용존을 선택하여 재해 복구 효과를 실현할 것을 권장합니다.</td></tr>
 <tr><td>네트워크</td><td>필수</td><td>Tencent Cloud에 구축된 논리적 격리를 나타내는 네트워크 용량으로써 VPC는 최소 하나의 서브넷으로 구성됩니다. 시스템은 사용자를 위해 각 리전에 기본 VPC 및 서브넷을 제공합니다.<br>
-기존의 VPC/서브넷이 사용자의 요구사항을 충족하지 못한 경우 VPC 콘솔에서 생성할 수 있습니다.</br><b>주의 사항</b>: <ul><li>동일한 VPC 내에서 리소스는 기본으로 내부 네트워크를 상호 연결합니다.</li><li>구매할 때 CVM과 가용존 속성과 동일한 서브넷에서 CVM을 생성해야 합니다.</li><li>Windows CVM은 <a href="https://cloud.tencent.com/document/product/215/20078">공용망 게이트웨이</a>로 사용할 수 없으며 공용망 게이트웨이가 필요한 사용자는 <a href="https://cloud.tencent.com/document/product/213/10517">사용자 정의 Linux CVM 구성</a>을 참조하십시오.</li></ul></td></tr>
-<tr><td>인스턴스</td><td>필수</td><td>하위 하드웨어 레이어에 따라 Tencent Cloud는 현재 다양한 인스턴스 유형을 제공합니다. 최적의 성능을 얻기 위해 차세대 인스턴스 유형을 사용하는 것을 권장합니다.</br>인스턴스에 대한 자세한 내용은 <a href="https://cloud.tencent.com/document/product/213/11518">인스턴스 사양</a>을 참조하십시오.</a>.</td></tr>
-<tr><td>미러 이미지</td><td>필수</td><td>Tencent Cloud는 공용 이미지, 사용자 정의 이미지, 공유 이미지 및 마켓플레이스를 제공하므로 <a href="https://cloud.tencent.com/document/product/213/4941">미러 이미지 유형</a>을 참조하여 선택하십시오.</br>Tencent Cloud를 처음으로 사용하는 사용자는 공용 네트워크 미러 이미지를 선택하는 것이 좋습니다. Windows 운영 체제의 정품 에디션이 활성화되어 있으므로 추가 비용(북미 리전 제외)은 발생하지 않습니다.</td></tr>
-<tr><td><a href="https://cloud.tencent.com/document/product/362/2353">시스템 디스크</a></td><td>필수</td><td>운영 체제 설치에 사용되는 기본 용량은 50GB입니다.</br>다양한 리전은 CBS 유형의 선택에 영향을 줄 수 있으므로 실제 페이지의 알림에 따라 선택하십시오.</br>CBS에 대한 자세한 내용은<a href="https://cloud.tencent.com/document/product/362/2353">CBS 유형</a>을 참조하십시오.</td></tr>
-<tr><td><a href="https://cloud.tencent.com/document/product/362/2353">데이터 디스크</a></td><td>선택</td><td>CVM의 스토리지 용량 확장에 사용되며 효율적이고 신뢰할 수 있는 스토리지 장치를 제공합니다. 기본 CBS 데이터 디스크는 추가하지 않습니다.</br>CBS에 대한 자세한 내용은 <a href="https://cloud.tencent.com/document/product/362/2353">CBS 유형</a>을 참조하십시오.</td></tr>
+기존의 VPC/서브넷이 사용자의 요구사항을 충족하지 못한 경우 VPC 콘솔에서 생성할 수 있습니다.</br><b>주의 사항</b>: <ul><li>동일한 VPC 내에서 리소스는 기본으로 내부 네트워크를 상호 연결합니다.</li><li>구매할 때 CVM과 가용존 속성과 동일한 서브넷에서 CVM을 생성해야 합니다.</li><li>Windows CVM은 <a href="https://cloud.tencent.com/document/product/215/20078">공용망 게이트웨이</a>로 사용할 수 없으며 공용망 게이트웨이가 필요한 사용자는 <a href="https://intl.cloud.tencent.com/document/product/213/10517">사용자 정의 Linux CVM 구성</a>을 참조하십시오.</li></ul></td></tr>
+<tr><td>인스턴스</td><td>필수</td><td>하위 하드웨어 레이어에 따라 Tencent Cloud는 현재 다양한 인스턴스 유형을 제공합니다. 최적의 성능을 얻기 위해 차세대 인스턴스 유형을 사용하는 것을 권장합니다.</br>인스턴스에 대한 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/11518">인스턴스 사양</a>을 참조하십시오.</a>.</td></tr>
+<tr><td>미러 이미지</td><td>필수</td><td>Tencent Cloud는 공용 이미지, 사용자 정의 이미지, 공유 이미지 및 마켓플레이스를 제공하므로 <a href="https://intl.cloud.tencent.com/document/product/213/4941">미러 이미지 유형</a>을 참조하여 선택하십시오.</br>Tencent Cloud를 처음으로 사용하는 사용자는 공용 네트워크 미러 이미지를 선택하는 것이 좋습니다. Windows 운영 체제의 정품 에디션이 활성화되어 있으므로 추가 비용(북미 리전 제외)은 발생하지 않습니다.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">시스템 디스크</a></td><td>필수</td><td>운영 체제 설치에 사용되는 기본 용량은 50GB입니다.</br>다양한 리전은 CBS 유형의 선택에 영향을 줄 수 있으므로 실제 페이지의 알림에 따라 선택하십시오.</br>CBS에 대한 자세한 내용은<a href="https://intl.cloud.tencent.com/document/product/362/31636">CBS 유형</a>을 참조하십시오.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">데이터 디스크</a></td><td>선택</td><td>CVM의 스토리지 용량 확장에 사용되며 효율적이고 신뢰할 수 있는 스토리지 장치를 제공합니다. 기본 CBS 데이터 디스크는 추가하지 않습니다.</br>CBS에 대한 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/362/31636">CBS 유형</a>을 참조하십시오.</td></tr>
 <tr><td>공용 네트워크 대역폭</td><td>필수</td><td>Tencent Cloud는 다음 2가지 네트워크 과금 방식을 제공하므로 실제 필요에 따라 선택하십시오.<ul><li><b>대역폭 과금</b>: 고정적인 대역폭을 선택하여 본 대역폭을 초과할 경우 패킷이 손실됩니다. 네트워크 변동이 적은 시나리오에 적합합니다.</li><li><b>트래픽 과금</b>: 실제 사용한 트래픽에 따라 과금합니다. 피크값 대역폭을 제한하여 예기치 않은 트래픽에 따른 비용을 피할 수 있으며 대역폭이 해당 값을 초과할 경우 패킷이 손실됩니다. 네트워크 변동이 큰 시나리오에 적합합니다.</li></ul></td></tr>
 <tr><td>수량</td><td>필수</td><td>구매할 CVM 수량을 표시합니다.</td></tr>  
 </table>
@@ -66,4 +66,4 @@ Tencent Cloud 콘솔을 통한 CVM 로그인 방법은 실제 필요에 따라 �
 - 디스크 용량이 2TB 이상인 경우
 [CBS 초기화(Windows)](https://intl.cloud.tencent.com/document/product/362/6735)
 
-더 자세한 내용은 [초기화 시나리오 소개](https://cloud.tencent.com/document/product/362/33065)를 참조하십시오.
+더 자세한 내용은 [초기화 시나리오 소개](https://intl.cloud.tencent.com/document/product/362/31596)를 참조하십시오.

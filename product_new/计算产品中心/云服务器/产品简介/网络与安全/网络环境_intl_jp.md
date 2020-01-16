@@ -24,7 +24,7 @@ Tencent Cloud[VPC](https://cloud.tencent.com/document/product/215) は、ユー�
 | ルーティングのカスタマイズ | 未対応| 対応|
 | IPのカスタマイズ | 未対応| 対応|
 | 相互接続ルール |同一テナント、同一地域で相互接続します| クロスリージョン、クロスアカウントの相互接続に対応しています |
-| セキュリティ制御　| [セキュリティグループ](https://intl.intl.intl.cloud.tencent.com/document/product/213/12452)| [セキュリティグループ](https://intl.intl.intl.cloud.tencent.com/document/product/213/12452) と [ネットワークACL](https://intl.cloud.tencent.com/document/product/215/5132) |
+| セキュリティ制御　| [セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452)| [セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452) と [ネットワークACL](https://intl.cloud.tencent.com/document/product/215/5132) |
 
 ## VPCと基幹ネットワーク間のリソース共有及びアクセス
 
@@ -36,7 +36,7 @@ Tencent Cloudにおける一部のクラウドソースと機能は両方のネ�
 |[Elastic IP](https://intl.cloud.tencent.com/document/product/213/5733)|Elastic IPは、任意のネット環境におけるCVMインスタンスをバインドできます|
 |インスタンス|基幹ネットワークのインスタンスとVPCのインスタンスは、 [パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224) または [基幹ネットワークの相互接続](https://cloud.tencent.com/document/product/215/20083) で相互通信できます|
 |[SSHキー](https://intl.cloud.tencent.com/document/product/213/6092)|SSHキーは、任意のネット環境におけるCVMインスタンスにロードできます|
-|[セキュリティグループ](https://intl.intl.intl.cloud.tencent.com/document/product/213/12452)|セキュリティグループは、任意のネット環境におけるCVMインスタンスにバインドできます|
+|[セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452)|セキュリティグループは、任意のネット環境におけるCVMインスタンスにバインドできます|
 
 > [Cloud Load Balancer](https://cloud.tencent.com/document/product/214) は基幹ネットワークとVPCの間で共有できません。ネットワークの相互接続が構築されていても、Cloud Load BalancerをVPCのインスタンスと基幹ネットワークのインスタンスに同時にバインドすることはできません。
 

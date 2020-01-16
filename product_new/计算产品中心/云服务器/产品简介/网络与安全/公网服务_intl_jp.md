@@ -2,7 +2,7 @@
 
 ## パブリックIPアドレス
  - **概要：**パブリックIP アドレスはInternet上で保持しないアドレスです。パブリックIPアドレスをもつCVMはインターネットの他のコンピューターと相互にアクセスできます。
- - **獲得：**CVMを作成する時、ネットワークで帯域幅を0Mbpsより大きく設定します。設定完了後、Tencent Cloudシステムは自動的にパブリックIPアドレスプールからIPを取得してインスタンスにアサインします、このアドレスは変更することができます。詳細操作は[パブリックネットワークIPの置き換え](https://intl.intl.cloud.tencent.com/document/product/213/16642)をご参照ください。
+ - **獲得：**CVMを作成する時、ネットワークで帯域幅を0Mbpsより大きく設定します。設定完了後、Tencent Cloudシステムは自動的にパブリックIPアドレスプールからIPを取得してインスタンスにアサインします、このアドレスは変更することができます。詳細操作は[パブリックネットワークIPの置き換え](https://intl.cloud.tencent.com/document/product/213/16642)をご参照ください。
  - **設定：**InternetでパブリックネットワークIPアドレスをもつCVMインスタンスにログインして、関連設定を行います。CVMインスタンスのログイン詳細情報について、[Linux インスタンスのログイン](/doc/product/213/5436)と[Windows インスタンスのログイン](/doc/product/213/5435)をご参照ください 。
  - **変換：**パブリックIP アドレスはネットワークアドレス変換( NAT )を通して、インスタンスの[プライベートIP アドレス](/doc/product/213/5225)にマッピングされます。
  - **メンテナンス：**Tencent CloudのすべてのパブリックネットワークインターフェースはTencent Gateway(TGW)に処理されます。Tencent Cloud CVMインスタンスのパブリックネットワークENIは統合インターフェイスレイヤーTGWで構成されているため、CVMが感知無しです。ユーザーがCVMで`ifconfig (Linux)` また `ipconfig (Windows)`コマンドを使用して、ネットワークインターフェースの情報を確認する時、[プライベートネットワーク](/doc/product/213/5225)の情報のみ確認できます。パブリックネットワーク情報はユーザー自ら[CVM コンソール](https://console.cloud.tencent.com/cvm) にログインしてCVMのリスト/詳細画面で確認します。
@@ -19,4 +19,4 @@
 ## 操作ガイド
 パブリックIPアドレスの獲得・置き換えなどの操作を実行できます、詳細な手順については、以下をご参照ください。
 - [インスタンスパブリックIPアドレスの獲得](https://intl.cloud.tencent.com/document/product/213/17940)
-- [インスタンスパブリックIPアドレスの置き換え](https://intl.intl.cloud.tencent.com/document/product/213/16642)
+- [インスタンスパブリックIPアドレスの置き換え](https://intl.cloud.tencent.com/document/product/213/16642)

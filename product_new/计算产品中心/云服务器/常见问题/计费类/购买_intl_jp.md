@@ -6,7 +6,7 @@
 ### CVMは何のリージョンおよびアベイラビリティーゾーンがありますか。選択方法は何ですか。
 
 選択可能なCVMのリージョンとアベイラビリティーゾーンについては、[リージョンとアベイラビリティーゾーン](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
-リージョンとアベイラビリティーゾーンの選択については、[リージョンとアベイラビリティーゾーンの選択方法](https://intl.intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
+リージョンとアベイラビリティーゾーンの選択については、[リージョンとアベイラビリティーゾーンの選択方法](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
 
 ### 現在、CVMでどの種類のホストが選択できますか。
 
@@ -15,7 +15,6 @@ CVMは複数のインスタンス仕様を提供しています。詳細につ�
 
 ### CVM構成スキームを選択するには、どうすればいいですか。
 
-Tencent Cloudは、次の[推奨構成](https://cloud.tencent.com/act/recommended)をご提供します。
 - スタート型:スタートアップ段階の個人ウェブサイトに適しています。例えば、個人ブログなど規模の小さいウェブサイト。
 - 基本型:大規模な企業公式サイトや小規模なEコマースウェブサイトなど、一定規模のアクセス数を有するサイトまたはアプリケーションに適しています。
 - 普及型:ポータルサイト、SaaSソフトウェア、小型アプリなど、クラウドコンピューティングなどをよく使う、ある程度のコンピューティング量に対するニーズのあるユースケースに適しています。
@@ -31,7 +30,7 @@ Microsoftは2015年7月14日からWindows Server 2003およびWindows Server 200
 
 ### ストレージを選択するには、どうすればいいですか。
 
-信頼性要件が非常に高いデータの場合、[Cloud Block Storage](https://cloud.tencent.com/document/product/213/32811)を使用して、データの永続的なストレージ信頼性を確保することをお勧めします。 [ローカルディスク](https://cloud.tencent.com/doc/product/213/5798)による保存は推奨しません。
+信頼性要件が非常に高いデータの場合、[Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/33000)を使用して、データの永続的なストレージ信頼性を確保することをお勧めします。 [ローカルディスク](https://cloud.tencent.com/doc/product/213/5798)による保存は推奨しません。
 頻繁にアクセスし、容量が不安定なデータベースの場合、[Tencent Cloudのクラウドデータベース](https://cloud.tencent.com/product/cdb-overview)を使用することをお勧めします。
 
 ### 従量課金のCVMは何かの制限がありますか。

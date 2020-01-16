@@ -9,7 +9,7 @@ Windows、Linuxと Mac OSは全てRDP方式でCVMにログインすることが�
 
 - Windows インスタンスをリモートログインするために必要なインスタンスの管理者アカウントと該当するパスワードを獲得しました。
  - システムのデフォルトパスワードでインスタンスにログインする場合、[内部メッセージ](https://console.cloud.tencent.com/message)から取得してください。
- - パスワードを忘れた場合、 [インスタンスのパスワードをリセット](https://intl.intl.intl.intl.cloud.tencent.com/document/product/213/16566)してください。
+ - パスワードを忘れた場合、 [インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
 - CVMインスタンスはパブリックネットワークIPを購入済みであり、このインスタンスはCVMインスタンスの3389ポート（クイック構成で購入したCVMインスタンスの場合、デフォルトでアクティブになっています）をアクティブしました。
 
 ## 操作手順
@@ -20,7 +20,7 @@ Windows、Linuxと Mac OSは全てRDP方式でCVMにログインすることが�
 3.ポップアップの【Windowsインスタンスのログイン】ウィンドウで、【RDPファイルによりログイン】を選択し、【RDPファイルをダウンロードする】をクリックし、RDPファイルをローカルにダウンロードします。
 4. ローカルにダウンロードしたRDPファイルをダブルクリックすると、リモートでWindows CVMに接続できます。
  - システムのデフォルトパスワードでインスタンスにログインする場合、[内部メッセージ](https://console.cloud.tencent.com/message)から取得してください。
- - パスワードを忘れた場合、 [インスタンスのパスワードをリセット](https://intl.intl.intl.intl.cloud.tencent.com/document/product/213/16566)してください。
+ - パスワードを忘れた場合、 [インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
 
 ### LinuxシステムはRDPでログインする
 
@@ -53,7 +53,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ```
  - `Administrator` は前提条件で入手した管理者アカウントです。
  - `<your-password>` は設置されたログインパスワードです。
-   システムのデフォルトパスワードでインスタンスにログインする場合、[内部メッセージ](https://console.cloud.tencent.com/message)から取得してください。パスワードを忘れた場合、[インスタンスパスワードをリセット](https://intl.intl.intl.intl.cloud.tencent.com/document/product/213/16566)してください。
+   システムのデフォルトパスワードでインスタンスにログインする場合、[内部メッセージ](https://console.cloud.tencent.com/message)から取得してください。パスワードを忘れた場合、[インスタンスパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
  - `<hostname or IP address>` は WindowsインスタンスのパブリックネットワークIP或いはカスタマイズのドメイン名です。
 
 ###  MacOS システムはRDPでログインする
@@ -67,4 +67,4 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ![](https://main.qcloudimg.com/raw/57d7f343e8d52d9365fcd4f4ada5d090.png)
 4. 新しく追加されたリモートデスクトップをダブルクリックし、インスタンスの管理者アカウントと該当するパスワードを入力し、 リモートでWindows CVMに接続します。
  - システムのデフォルトパスワードでインスタンスにログインする場合、[内部メッセージ](https://console.cloud.tencent.com/message)から取得してください。
- - パスワードを忘れた場合、[インスタンスのパスワードをリセット](https://intl.intl.intl.intl.cloud.tencent.com/document/product/213/16566)してください。
+ - パスワードを忘れた場合、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。

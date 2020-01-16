@@ -6,7 +6,7 @@ Tencent Cloud의 CVM(Cloud Virtual Machine), VPC, 데이터 베이스 등의 서
 
 CAM(Cloud Access Management)은 Tencent Cloud에서 제공하는 웹서비스로써, 사용자가 Tencent Cloud 계정에서 리소스 액세스 권한에 대한 보안을 관리하는 데 주로 사용합니다. CAM을 통하여 사용자(그룹)을 생성, 관리 및 폐기 할 수 있으며, 신분 관리 및 정책 관리를 통해 누가 어떤 Tencent Cloud 리소스를 사용하게 할지 제어할 수 있습니다.
 
-CAM을 사용할 경우 사용자 또는 사용자 그룹과 정책을 연결할 수 있으며, 정책을 통해 사용자가 지정된 리소스로 지정된 작업을 완료할 수 있도록 권한을 부여하거나 거부할 수 있습니다. CAM 정책과 관련된 더 자세한 기본 정보는 [정책 구문](https://cloud.tencent.com/document/product/598/10596), 사용 정보에 대한 내용은 [정책](https://intl.cloud.tencent.com/document/product/598/10601)을 참조하십시오.
+CAM을 사용할 경우 사용자 또는 사용자 그룹과 정책을 연결할 수 있으며, 정책을 통해 사용자가 지정된 리소스로 지정된 작업을 완료할 수 있도록 권한을 부여하거나 거부할 수 있습니다. CAM 정책과 관련된 더 자세한 기본 정보는 [정책 구문](https://intl.cloud.tencent.com/document/product/598/10603), 사용 정보에 대한 내용은 [정책](https://intl.cloud.tencent.com/document/product/598/10601)을 참조하십시오.
 
 서브 계정을 통한 CVM 관련 리소스 CAM 진행이 필요하지 않을 경우 이 섹션을 건너뛸 수 있습니다. 이 섹션을 건너뛰더라도 문서의 나머지 섹션을 이해하고 사용하는 데 영향을 미치지 않습니다.
 

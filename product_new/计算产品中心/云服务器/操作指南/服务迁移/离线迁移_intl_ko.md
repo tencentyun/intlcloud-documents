@@ -28,7 +28,7 @@
 [COS 콘솔](https://console.cloud.tencent.com/cos5/bucket)에서 방금 업로드한 미러 이미지 파일을 찾아 파일 정보를 조회하고 파일 링크를 가져옵니다.
 - 마이그레이션할 CVM 및 CBS를 준비합니다.
 [CVM 구매 클릭>>](https://buy.cloud.tencent.com/cvm?tab=custom&step=1®ionId=8)
-[CBS 구매 가이드는 클릭>>](https://cloud.tencent.com/document/product/362/2732)
+[CBS 구매 가이드는 클릭>>](https://intl.cloud.tencent.com/document/product/362/32414)
 
 
 ## 작업 순서
