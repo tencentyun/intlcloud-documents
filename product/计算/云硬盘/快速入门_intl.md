@@ -53,5 +53,5 @@ Write something in the editing state, for example: "This is my first test". Pres
 
 (5) Create a file named `qcloud.txt` in the disk. Enter something, and click "Save". Now you have successfully written the file.
 
-For more information on partitioning, formatting, online and file system creation on Windows, please see [Partitioning, Formatting, Online and File System Creation on Windows](https://intl.cloud.tencent.com/document/product/362/6734).
+<!--For more information on partitioning, formatting, online and file system creation on Windows, please see [Partitioning, Formatting, Online and File System Creation on Windows]().-->
 
