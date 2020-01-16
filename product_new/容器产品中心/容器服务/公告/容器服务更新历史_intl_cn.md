@@ -16,7 +16,7 @@
 
 <tr>
 	 <td>2019.10.22</td>
-	 <td><a href="https://cloud.tencent.com/document/product/457/9084">集群工作节点支持同时配置多个安全组以及使用默认安全组</a></td>
+	 <td><a href="https://intl.cloud.tencent.com/document/product/457/9084">集群工作节点支持同时配置多个安全组以及使用默认安全组</a></td>
 </tr>
 
 <tr>
