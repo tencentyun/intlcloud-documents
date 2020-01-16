@@ -43,7 +43,7 @@ CDH also provides various APIs for host management. For more information about C
 You can use the SDK (with PHP, Python, Java, .NET and Node.js supported) for programming or use the Tencent Cloud Command Line Interface (CLI) to call the CVM API. For details, see:
 
 
-- [Using CLI >>](<https://intl.cloud.tencent.com/document/product/1013/30220>)
+- [Using CLI >>](<https://intl.cloud.tencent.com/document/product/1013/33463>)
 
 
 

@@ -35,7 +35,7 @@ Animated image generating task | Animated image generating template: <li>Preset 
 
 ## Managing a Workflow
 
-1. Log in to the [MPS Console](https://console.cloud.tencent.com/vod) and click **Workflow Management** on the left sidebar to enter the workflow management page.
+1. Log in to the [MPS Console](https://console.cloud.tencent.com/mps) and click **Workflow Management** on the left sidebar to enter the workflow management page.
 2. The workflow list displays information such as the workflow name, triggered bucket, region, directory, creation time, and enablement status. You can sort workflows by creation time, search for a workflow by name, and view details of, edit, or delete a specified workflow.
 	-  **Enable a workflow**
 		- Workflows are disabled by default. Click the status button of a workflow to enable it.

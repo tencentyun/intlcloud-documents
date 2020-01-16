@@ -19,8 +19,6 @@ The purchase process of postpaid CVMs, as shown below:
 >
 > After a postpaid CVM is activated, make sure that your balance is sufficient.
 
-See [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998) 
-
 ### What are the regions and availability zones of CVMs? How to select?
 
 For more information on available regions and available zones of CVMs, please see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091)

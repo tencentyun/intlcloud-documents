@@ -20,7 +20,7 @@ GME 快速入门文档只提供最主要的接入接口，更多详细接口请�
 - GME 需要周期性的调用 Poll 接口触发事件回调。
 - GME 回调信息参考回调消息列表。
 - 设备的操作要在进房成功之后。
-- 错误码详情可参考 [错误码](https://intl.cloud.tencent.com/document/product/607/15173)
+- 错误码详情可参考 [错误码](https://intl.cloud.tencent.com/document/product/607/15173)。
 
 
 ## 快速接入步骤

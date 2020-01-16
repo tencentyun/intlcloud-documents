@@ -41,7 +41,7 @@ The table below lists the use cases of CDN. You can click to view the details.
 Website acceleration is suitable for all types of websites such as web portals, ecommerce platforms, and UGC communities. CDN can cache and accelerate the delivery of static contents on your website such as images, HTML, CSS, and JavaScript files. To accelerate access to dynamic contents such as .asp, .jsp, .php, .cgi, and .perl files as well as API and database requests, use [ECDN](https://intl.cloud.tencent.com/product/dsa).
 
 CDN provides powerful static content delivery capabilities, significantly speeding up page loading and offering a smooth and fast browsing experience for geographically dispersed end users. During service peaks with a large number of concurrent users, it can alleviate the pressure on origin servers to ensure stable and smooth access to services and webpages.
-![](https://main.qcloudimg.com/raw/7396e9492f3283765fd31e3227109b12.png)
+![](https://main.qcloudimg.com/raw/c9d1c4da99eabde91c5c63a10bf83d46.jpg)
 
 
 <span ID = "m2"></span>
@@ -49,13 +49,13 @@ CDN provides powerful static content delivery capabilities, significantly speedi
 Download acceleration is suitable for speeding up the download of various files such as game, app, and ROM installation packages
 
 Supported by the massive amounts of elastic bandwidth resources of Tencent Cloud, CDN can endure large-scale traffic and speed up the download of large files, ensuring service stability and providing an efficient download experience for all end users.
-![](https://main.qcloudimg.com/raw/582cc55c97a30fdaf4c1bf82a5c6a739.png)
+![](https://main.qcloudimg.com/raw/d87bc25ccad9a04e936b6ee6ecca653f.jpg)
 
 
 <span ID = "m3"></span>
 ### Audio/Video acceleration
 Audio/video acceleration is suitable for different types of audio/video on-demand websites and applications such as audio/video apps, online audio/video platforms, and IPTV. With enhanced content delivery capabilities and supported by Tencent's profound experience in online video operation, Tencent Cloud CDN can effectively ensure smooth audio/video playback for all end users during peak hours with massive volumes of concurrent requests.
-![](https://main.qcloudimg.com/raw/8abd1a709e5495b97f1c171c9526e4e0.png)
+![](https://main.qcloudimg.com/raw/b492585e2b1c6840834c32f7303b7b53.jpg)
 
 
 <span ID = "m4"></span>
@@ -63,7 +63,7 @@ Audio/video acceleration is suitable for different types of audio/video on-deman
 [Enterprise Content Delivery Network (ECDN)](https://intl.cloud.tencent.com/product/dsa) is suitable for websites and applications with a mix of dynamic and static resources, or with many requests for dynamic resources such as .asp, .jsp, .php, .cgi, and .perl files as well as API and database requests.
 
 By integrating static edge caching with dynamic origin-pull route optimization, intelligently scheduling requests to the optimal service nodes, automatically identifying static and dynamic resources, and utilizing Tencent's proprietary optimal route calculation algorithm and TCP optimization technology, ECDN, currently a standalone product, can provide end users with a high-performance and one-stop acceleration experience.
-![](https://main.qcloudimg.com/raw/b28e2c4fdc3b85132128fe17614876cd.png)
+![](https://main.qcloudimg.com/raw/7546f16ca821a265837bbfb080de255e.jpg)
 
 
 <span ID = "m5"></span>
@@ -71,7 +71,7 @@ By integrating static edge caching with dynamic origin-pull route optimization, 
 **Secure Content Delivery Network (SCDN)** is suitable for scenarios that integrate high-speed delivery of static and dynamic contents with security protection. It is ideal for industries that require fast content delivery and high network security, such as gaming, internet finance, ecommerce, and government portals. In addition to all the acceleration benefits of CDN, SCDN also features enhanced network security protection against high-traffic DDoS and CC attacks while supporting integration with Web Application Firewall (WAF). Security protection can be quickly enabled in CDN.
 
 SCDN is built upon CDN and you do not need to re-do DNS configuration. Network security protection can be quickly enabled for domain names accelerated by CDN.
-![](https://main.qcloudimg.com/raw/d5743a361c84ee57a0cbd07994dfca2a.png)
+![](https://main.qcloudimg.com/raw/d2a1b1f002aefc746fa5ff54efdbd9a8.jpg)
 
 
 

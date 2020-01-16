@@ -27,7 +27,7 @@ When testing, if you do not want to modify the testing template every time, you 
 You can delete a custom template that is no longer used by selecting it and clicking **Delete**.
 
 ## Testing a Function Through TCCLI
-Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/30220).
+Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/33463).
 
 The function can be executed using the `tccli scf Invoke` command. `FunctionName` is a required parameter, indicating the name of the function to be executed; the `InvocationType` parameter can be used to specify sync or async execution method; the `LogType` parameter specifies whether to obtain the execution log; and the `ClientContext` parameter is used to enter the testing event content.
 When entering the testing event content, you should pay attention to the conversion of data content. You need to first perform JSON format escaping and then complete URL-encoding. For example, if you want to enter the event content `{"test":"value"}`, you need to first escape it into `{\"test\":\"value\"}` and then URL-encode it into `%7B%5C%22test%5C%22:%5C%22value%5C%22%7D`.

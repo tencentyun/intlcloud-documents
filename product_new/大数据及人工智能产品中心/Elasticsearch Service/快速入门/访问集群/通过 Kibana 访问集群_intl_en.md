@@ -9,7 +9,7 @@ You can access Kibana through the following two entry points, which can be found
 
 ### 1.2 Login
 To access Kibana, you need to log in with the account name "elastic" and the password which was set when you created the cluster. If you forget your password, you can reset it on the cluster details page.
-For security reasons, you can configure blacklist and whitelist of IPs to control the access to Kibana. For details, see [here](https://cloud.tencent.com/document/product/845/16992).
+For security reasons, you can configure blacklist and whitelist of IPs to control the access to Kibana. For details, see [here](https://intl.cloud.tencent.com/document/product/845/16992).
 ![Login](https://main.qcloudimg.com/raw/5d8060f7bcb64b39e3770c6008fb0861.png)
 
 ### 1.3 Access

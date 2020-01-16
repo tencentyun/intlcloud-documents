@@ -27,7 +27,7 @@
 对于不再使用的自定义模版，可以通过选择模版后单击【删除】按钮进行删除。
 
 ## 通过命令行测试函数
-在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/30220) 方法完成命令行的安装和配置。
+在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/33463) 方法完成命令行的安装和配置。
 
 通过`tccli scf Invoke`命令即可运行函数。其中 `FunctionName` 为必选参数，指明期望运行的函数名，通过 `InvocationType` 参数可以指定同步或异步运行方式，通过`LogType` 参数指定是否获取运行日志，通过 `ClientContext` 参数输入测试事件内容。
 在输入测试事件内容时，需要注意的是数据内容的转换，需要先进行 JSON 格式转义后再进行 URL 编码，例如针对`{"test":"value"}`测试内容，需要先转义为 `{\"test\":\"value\"}` ，之后再进行 URL 编码为`%7B%5C%22test%5C%22:%5C%22value%5C%22%7D`。

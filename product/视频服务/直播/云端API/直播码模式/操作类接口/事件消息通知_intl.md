@@ -5,7 +5,7 @@ You can register a callback URL from your backend server in Tencent Cloud consol
 
 ## Configuring a URL
 When you enable the LVB Code mode in the **[LVB Console](https://console.cloud.tencent.com/live/livecodemanage)** -> **LVB Code Access** -> **Access Configuration**, you can specify a URL for receiving Tencent Cloud notifications, as shown below:
-![](/https://main.qcloudimg.com/raw/e980e533a7c7f2e60c772373c0e369fc.png)
+![](https://main.qcloudimg.com/raw/e980e533a7c7f2e60c772373c0e369fc.png)
 
 ## Message Organizing Format
 Notification messages are organized in JSON format and then placed in the HTTP POST protocol body. Note that the ContentType of the POST format here is application/json instead of multipart/form-data. Therefore, do not use the function for reading form fields in PHP or Java to read the messages.

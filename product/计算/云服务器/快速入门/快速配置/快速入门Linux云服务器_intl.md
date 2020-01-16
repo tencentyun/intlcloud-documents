@@ -90,7 +90,7 @@ After a CVM is purchased and launched, we will send you information of this CVM 
 ### Prerequisites
  - Users who have purchased a data disk need to format it before use, and those who have not purchased a data disk can skip this step.
  - Make sure you have completed Step 3 to log in to the CVM.
- - Mount data disks larger than 2 TB using GPT method. For more information, see [Partitioning and Formatting Data Disk with GPT Partition Table](https://intl.cloud.tencent.com/document/product/362/6738#formatting-new-space-as-an-independent-gpt-partition).
+ - Mount data disks larger than 2 TB using GPT method. For more information, see [Partitioning and Formatting Data Disk with GPT Partition Table](https://intl.cloud.tencent.com/document/product/362/31602#formatting-new-space-as-an-independent-gpt-partition).
 
 ### Partition the data disk
 

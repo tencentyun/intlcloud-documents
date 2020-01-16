@@ -6,7 +6,7 @@ Function execution logs can be queried on the console or through TCCLI, and many
 4. Open the function log tab to query the function execution logs. You can view all logs, success logs, and failure logs by choosing the function execution result at the top left. Logs with the specified request ID can be queried in the query window at the top right.
 
 ## Querying Function Execution Logs Through TCCLI
-Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/30220).
+Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/33463).
 Function execution logs can be queried using the `tccli scf GetFunctionLogs` command, and parameters such as `Order`, `Orderby`, `Offset`, `Limit`, `Filter`, `FunctionRequestId`, `StartTime`, and `EndTime` can be used to filter, sort, control quantity of, and exactly query the logs.
 
 ```

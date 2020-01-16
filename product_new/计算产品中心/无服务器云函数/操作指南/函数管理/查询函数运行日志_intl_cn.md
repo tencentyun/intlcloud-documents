@@ -6,7 +6,7 @@
 4. 切换至函数日志页，可以查询到函数运行日志。通过左侧顶端的函数运行结果，可以在全部日志、成功日志和失败日志间切换。通过右侧顶端的查询窗口，可以查询指定 Request ID 的运行日志。
 
 ## 通过腾讯云命令行查询函数运行日志
-在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/30220) 方法完成命令行的安装和配置。
+在使用腾讯云命令行前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/1013/33463) 方法完成命令行的安装和配置。
 通过`tccli scf GetFunctionLogs` 命令即可查询函数运行日志，并且可以通过 `Order`，`Orderby`，`Offset`，`Limit`，`Filter`，`FunctionRequestId`，`StartTime`，`EndTime`参数进行过滤，排序，数量控制，查询等操作。
 ```
 $ tccli scf GetFunctionLogs --FunctionName testclifunc --Filter '{"RetCode":"not0"}'

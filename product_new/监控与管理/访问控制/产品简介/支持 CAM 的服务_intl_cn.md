@@ -36,7 +36,7 @@
 | [对象存储](https://intl.cloud.tencent.com/document/product/436) | 资源级 | &#10003;       | -  | &#10003;   |	[访问管理指南](https://intl.cloud.tencent.com/document/product/436/12473)   |
 | [文件存储](https://intl.cloud.tencent.com/document/product/582) | 资源级 | &#10003;        | -  |  &#10003;    |[访问管理指南](https://intl.cloud.tencent.com/document/product/582/14679)   |		
 | [云硬盘](https://intl.cloud.tencent.com/document/product/362) | 资源级  | &#10003;       | &#10003;  |  -    |-    |	
-| [日志服务](https://intl.cloud.tencent.com/document/product/614)  | 资源级 | &#10003;        | -  | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/614/35564)    |	
+| [日志服务](https://intl.cloud.tencent.com/document/product/614)  | 资源级 | &#10003;        | -  | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/614/32854)    |	
     
 ## 网络	
 
@@ -45,7 +45,7 @@
 | [负载均衡](https://intl.cloud.tencent.com/document/product/214)   | 资源级  | &#10003;      | &#10003;    |    &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/214/9777) |	
 | [私有网络 VPC ](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | 资源级 | &#10003;        | -     | - |	 - |	
 | [专线接入](https://intl.cloud.tencent.com/document/product/216) | 资源级   | &#10003;       | -       | -  |	 - |	
-><sup>1</sup> 私有网络 VPC 中 [弹性网卡](https://intl.cloud.tencent.com/document/product/576)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、[对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[Anycast 公网加速](https://intl.cloud.tencent.com/document/product/644)、[云联网](https://intl.cloud.tencent.com/document/product/1003)均已支持使用 CAM。
+><sup>1</sup> 私有网络 VPC 中 [弹性网卡](https://intl.cloud.tencent.com/document/product/576)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、对等连接、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[Anycast 公网加速](https://intl.cloud.tencent.com/document/product/644)、[云联网](https://intl.cloud.tencent.com/document/product/1003)均已支持使用 CAM。
 
 ## 数据库	
 
@@ -111,14 +111,14 @@
 | ----------------------------------------------------------- | ------ | --------| ----- |  ---- |	 ---- |
 | [弹性 MapReduce](https://intl.cloud.tencent.com/document/product/1026)   | 操作级 | &#10003;  | -   |  &#10003;  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/1026/31100) |
 | [云数据仓库套件 Sparkling](https://intl.cloud.tencent.com/document/product/1019)  | 资源级  | &#10003; | -  | &#10003;    |	 - |
-| [流计算服务](https://intl.cloud.tencent.com/document/product/1000)  | 服务级   | &#10003;     | -  | &#10003;  | - |
+| 流计算服务 | 服务级   | &#10003;     | -  | &#10003;  | - |
 | [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845)  | 操作级   | &#10003; | -   |  -  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/845/19550) |
 
 ## 图像识别
 
  | 服务                                                         | 授权粒度 | 控制台  | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	 ---- |		
-| [文字识别](https://intl.cloud.tencent.com/document/product/1005) | 服务级| &#10003;| -  | - |	 - |	
+| 文字识别 | 服务级| &#10003;| -  | - |	 - |	
 
 ## 游戏服务
 

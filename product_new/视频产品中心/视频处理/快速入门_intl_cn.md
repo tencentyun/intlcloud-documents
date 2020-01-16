@@ -19,7 +19,7 @@
 ### 步骤3：创建 Bucket
 由于视频处理是对您上传到 COS 上的视频文件进行转码和截图等处理的服务，所以您需要在 COS 控制台上创建存储桶（Bucket）。
 
-进入 [COS 控制台](https://console.cloud.tencent.com/cos5) 的存储桶管理页面，单击【创建存储桶】，创建一个 Bucket，然后可以在该 Bucket 中创建文件夹和上传文件，详细请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/6232)。
+进入 [COS 控制台](https://console.cloud.tencent.com/cos5) 的存储桶管理页面，单击【创建存储桶】，创建一个 Bucket，然后可以在该 Bucket 中创建文件夹和上传文件，详细请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。
 
  
 

@@ -40,8 +40,7 @@ vi qcloud.txt
 ```
 Write something in the editing state, for example: "This is my first test". Press ESC to exit the editing state, and enter `wq` to save the change. Execute the command `ls`, and then you can see that the file has been written to the disk.
 
-For more information on partitioning, formatting, and file system creation on Linux, please see [Partitioning, Formatting, Mounting and File System Creation on Linux](/document/product/362/6735
-).
+<!--For more information on partitioning, formatting, and file system creation on Linux, please see [Partitioning, Formatting, Mounting and File System Creation on Linux]().-->
 
 ### Connection to a Windows instance
 (1). Go to (**Start** ->) **CVM Management** -> **Storage/Computer Management** -> **Disk Management**.
@@ -54,5 +53,5 @@ For more information on partitioning, formatting, and file system creation on Li
 
 (5) Create a file named `qcloud.txt` in the disk. Enter something, and click "Save". Now you have successfully written the file.
 
-For more information on partitioning, formatting, online and file system creation on Windows, please see [Partitioning, Formatting, Online and File System Creation on Windows](https://intl.cloud.tencent.com/document/product/362/6734).
+<!--For more information on partitioning, formatting, online and file system creation on Windows, please see [Partitioning, Formatting, Online and File System Creation on Windows]().-->
 

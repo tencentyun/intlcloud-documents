@@ -15,7 +15,7 @@ For example, the Tencent Cloud CVM API [Querying Instance List](https://intl.clo
 | status | The status of the CVM instance to be queried. | Int | No |
 | projectId | The ID of the project. If this parameter is not passed in, the CVM instances of all projects will be queried. 0 indicates the default project. If you want to specify other projects, call the Query Project List API (DescribeProject) to query. | String | No |
 | simplify | Obtains non-real time data if the input parameter `simplify=1` is passed in. | Int | No |
-| zoneId | The ID of the availability zone. If this parameter is not passed in, the CVM instances in all availability zones will be queried. If you want to specify an availability zone, call the [Query Availability Zone List API](https://intl.cloud.tencent.com/document/product/213/15707) (DescribeAvailabilityZones) to query. | Int | No |
+| zoneId | The ID of the availability zone. If this parameter is not passed in, the CVM instances in all availability zones will be queried. If you want to specify an availability zone, call the Query Availability Zone List API (DescribeAvailabilityZones) to query. | Int | No |
 
 The descriptions of each field are as follows:
 

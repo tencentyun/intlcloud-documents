@@ -19,7 +19,7 @@ Go to the [MPS Console](https://console.cloud.tencent.com/mps). If you have not 
 ### Step 3. Create a bucket
 Because video processing is to perform operations on video files uploaded to COS, such as transcoding or screencapturing, you need to create a bucket in the COS Console first.
 
-Enter the bucket management page in the [COS Console](https://console.cloud.tencent.com/cos5) and click **Create Bucket** to create a bucket. Then, you can create folders in the bucket and upload files to them. For more information, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/6232).
+Enter the bucket management page in the [COS Console](https://console.cloud.tencent.com/cos5) and click **Create Bucket** to create a bucket. Then, you can create folders in the bucket and upload files to them. For more information, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
 
  
 

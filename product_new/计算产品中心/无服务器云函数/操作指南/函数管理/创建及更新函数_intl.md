@@ -12,7 +12,7 @@ A function can be created in the console or through TCCLI.
 
 ## Creating a Function Through TCCLI
 
-Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/30220).
+Before starting, you need to install and configure TCCLI by following the instructions in [TCCLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/1013/33463).
 Use the `tccli scf CreateFunction` command to create a function.
 
 ### Creating a Function with a Local zip Package
