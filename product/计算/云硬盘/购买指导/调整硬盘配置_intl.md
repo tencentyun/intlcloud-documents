@@ -6,7 +6,7 @@ Cloud disk is an expandable storage device on cloud. When a cloud disk is create
 - For postpaid CVMs, you can only change the configuration when both the system disk and data disk are <font color="red">cloud disks</font>.
 - You can only expand the server system disks of cloud disks by reinstalling OS.
 - For a cloud disk not mounted on a CVM, you can expand its capacity directly. If it has been mounted on a CVM, you need to shut down the CVM first before the expansion, or unmount the cloud disk before the expansion, and remount it on the original CVM after the expansion.
-- After disk expansion, you need to manually modify the file system configuration to make use of the newly expanded capacity. For more information, please see [Expanding Linux File System](https://intl.cloud.tencent.com/document/product/362/6738) and [Expanding Windows File System](https://intl.cloud.tencent.com/document/product/362/6737).
+- After disk expansion, you need to manually modify the file system configuration to make use of the newly expanded capacity. For more information, please see [Expanding Linux File System](https://intl.cloud.tencent.com/document/product/362/31602) and [Expanding Windows File System](https://intl.cloud.tencent.com/document/product/362/31601).
 - To ensure user data security, the disk capacity can only be expanded but cannot be reduced.
 
 ## Expanding Elastic Cloud Disk
