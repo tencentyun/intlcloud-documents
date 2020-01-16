@@ -18,7 +18,6 @@ This document introduces common cloud disk operations, including managing cloud 
 - [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755)
 - [Rolling Back Data from Snapshots](https://intl.cloud.tencent.com/document/product/362/5756)
 - [Creating Cloud Disks from Snapshots](https://intl.cloud.tencent.com/document/product/362/5757)
-- [Scheduling Snapshots](https://intl.cloud.tencent.com/document/product/362/31622)
 - [Replicating Snapshots Across Regions](https://intl.cloud.tencent.com/document/product/362/31623)
 - [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758)
 
