@@ -4,7 +4,7 @@
 
 ## 操作手順
 
-###コンソールで取得する
+### コンソールで取得する
 1. [CVMコンソール](https://console.cloud.tencent.com/cvm/)にログインします。
 2.インスタンス管理ページで、マウスをプライマリIPアドレス列に移動すると、<img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style="margin: 0;"></img>が以下に示すように表示されます。
 ![](https://main.qcloudimg.com/raw/07a2e4d94faad232fecedee5fcf6148b.png)
