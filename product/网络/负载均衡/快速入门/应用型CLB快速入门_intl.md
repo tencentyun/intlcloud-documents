@@ -151,5 +151,5 @@ After the redirection policy is configured, you can view the policy on the LB re
 Finally, we can access `http://www.example.com/image/` to verify whether the request is automatically redirected to the address `https://www.example2.com/text/`.
 If the following page appears after you enter `http://www.example.com/image/`, the redirection is configured successfully.
 
-![](https://mc.qcloudimg.com/static/img/591798ef620f8a72d9904197ca06c9a2/020.png)
+![](https://main.qcloudimg.com/raw/7d0327d0f412777a6b63a3e99b41404b.png)
 
