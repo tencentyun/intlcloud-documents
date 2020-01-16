@@ -2,7 +2,7 @@
 ### ローカルからクラウドへ
 - **高性能で高信頼性のデータストレージ**：CBSはCVMのホットマイグレーションを効率的にサポートし、物理的な障害による業務中断を事前に回避できます。CBSは三つの冗長化データを提供し、完善なデータバックアップ、スナップショット、データを秒レベルのリカバー機能を持っています。CBSは高負荷なコア業務システムに適しています。
 - **Elasticスケールアウト**：CBSは同じアベイラビリティーゾーン内で自由にマウント、アンマウントできるため、CVMをシャットダウン/再起動する必要がありません。CBSの容量はElastic構成ができるため、必要に応じてスケールアウトします。
-![](https://main.qcloudimg.com/raw/e389e3f1ee4fe06604572ad8c9d273b3.png)
+![](https://main.qcloudimg.com/raw/1cdbb7fadac1aa88d823eba12a106522.png)
 
 ### 大量データの分析
 代表的な Spark-HDFS オフラインデータ分析フレームワークは、ディスクのリード・ライト RDD read/write、shuffle write は全部シーケンシャルI/Oであり、 shuffle read I/O のみランダムI/Oであるため、シーケンシャルI/Oの比率は95％の高比率になってます。CBSは優れたマルチスレッド並列処理スループットパフォーマンスを備えており、 Hadoop-Mapreduce、HDFS、Spark、TB/PB レベルのデータのオフライン処理をサポートしています。
@@ -17,7 +17,7 @@
 ### コアデータベース
 SSD CBSはI/O 性能の要求が高くて、データの信頼性の要求も高い業務に適しています。特にPostgreSQL、MySQL、Oracle、SQL Serverなどの中大規模のリレーショナルデータベースアプリケーションと、データの信頼性の要求が高い I/O 集約型などのコア業務システム及びデータの信頼性の要求が高い中大規模の開発テスト環境に適しています。
 SSD CBSはデータの信頼性と高性能を完全に統合します。
-![](https://main.qcloudimg.com/raw/d4ce3eb3d1f7fb4f49d6e8e71fa20b7f.png)
+![](https://main.qcloudimg.com/raw/a826f514194aad6d398069b00ab817da.png)
 **デプロイ環境**：４台の4Core 8GB RAM CVMにそれぞれ1つ800Gの SSD CBSをマウントして、 MySQL version 5.5.42をデプロイします。
 **性能テスト**：sysbench を利用してOLTPパフォーマンステストをシミュレートし、テストセットは1000万件レコードです。TPS は1616に達しており、QPS は29000に達します。1台のディスクが秒あたりで数万人のオンライン同時取引をサポートできます。
 
@@ -30,10 +30,10 @@ SSD CBSはデータの信頼性と高性能を完全に統合します。
 
 ## 典型的なアプリケーションシナリオ I/O モデル
 - **時間単位データの書き込み**
-![](https://main.qcloudimg.com/raw/d433840cd456283df7bfb3aac07e84e3.png)
+![](https://main.qcloudimg.com/raw/11e16a3ee744c3cdd313de199b461881.png)
 - **高負荷のOLTP業務**
-![](https://main.qcloudimg.com/raw/d428aa55d72b392b5e27bdebffd4cfc8.png)
+![](https://main.qcloudimg.com/raw/a835908f6a9bcaf8407a299607d33dee.png)
 - **周期的な高負荷**
-![](https://main.qcloudimg.com/raw/0d5e7f1a6fbc83e1b59aceeb1da454e8.png)
+![](https://main.qcloudimg.com/raw/66b6e76d8cc2d477698a21e12cffff8d.png)
 - **継続的な高いシーケンシャルリード・ライト**
-![](https://main.qcloudimg.com/raw/ea66d844a9dcc5610c62f63c31129510.png)
+![](https://main.qcloudimg.com/raw/f08c8eb9b38a1bf0a94cec35fea5538e.png)
