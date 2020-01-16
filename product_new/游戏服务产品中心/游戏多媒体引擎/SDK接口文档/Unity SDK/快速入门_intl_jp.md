@@ -19,7 +19,7 @@ GME クイックスタートドキュメントは最も主なアクセスイン�
 - GMEは周期的にPollインターフェースを呼び出してイベントのコールバックをトリガーする必要があります
 - GMEのコールバック情報については、コールバックメッセージリストをご参照ください。
 - デバイスを操作するには、先に成功に入室する必要があります。
-- エラーコードの詳細については、「エラーコード」(https://intl.cloud.tencent.com/document/product/607/15173)をご参照ください。
+- エラーコードの詳細については、[エラーコード](https://intl.cloud.tencent.com/document/product/607/15173)をご参照ください。
 
 ## クイックアクセスの手順
 ### 1、 SDKを初期化する
@@ -90,7 +90,7 @@ ITMGContext EnterRoom(string roomId, int roomType, byte[] authBuffer)
 | roomType |ITMGRoomType|ルームのオーディオタイプです。|
 | authBuffer |Byte[] |認証コードです。|
 
-ルームのオーディオタイプについては、「音質選択」(https://intl.cloud.tencent.com/document/product/607/18522)をご参照ください。
+ルームのオーディオタイプについては、[音質選択](https://intl.cloud.tencent.com/document/product/607/18522)をご参照ください。
 
 
 ####  サンプルコード  

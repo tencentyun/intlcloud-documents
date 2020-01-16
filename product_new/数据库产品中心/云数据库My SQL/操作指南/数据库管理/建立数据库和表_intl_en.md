@@ -4,7 +4,7 @@
 2. Enter the database name, select the sorting rule (`utf8_general_ci` by default), and click **Create**.
 ![](https://main.qcloudimg.com/raw/b4a4fe5ab5f19ebef146f8a81813ad95.png)
 3. Select the desired database and click **Operation** on the navigation bar at the top to enter the database operation page, where you can **create a table**, **drop a database**, or perform other operations. You can also move, rename, or replicate the database after it is created.
-![](https://main.qcloudimg.com/raw/ca73b5b00d02cbb9855c5cce7e630d9d.png)
+![](https://main.qcloudimg.com/raw/b1316742957bcfa1846ea93ab19b045b.png)
 
 ## Creating a Table
 1. Select the database where you want to create a table, click **Create** or enter the table name and select the number of fields in the **Create Table** bar, and then click **Execute**.

@@ -1,7 +1,7 @@
 ## Via the GUI of the phpMyAdmin Console
 ### Dropping a Database
 1. Log in to the [phpMyAdmin Console](https://intl.cloud.tencent.com/document/product/236/32341), click the name of database to be managed to enter the database management page, and click **Operation**.
-![](https://main.qcloudimg.com/raw/ff37d09e2844114378b6952dcfe9a5c6.png)
+![](https://main.qcloudimg.com/raw/dc2a0cec1568a8b98afa5ee745b130d0.png)
 2. You can perform various operations on databases on this page, such as **creating a table** and **dropping a database**. To drop a database, click **Drop Database (DROP)**.
 
 
