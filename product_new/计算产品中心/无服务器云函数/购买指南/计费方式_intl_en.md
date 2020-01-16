@@ -1,12 +1,12 @@
 ## Billing
 
-Users can estimate the usage and price via [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For the overview of SCF Billing details, please see [Billing Modes](https://cloud.tencent.com/document/product/583/12284), [Product Pricing](https://cloud.tencent.com/document/product/583/12281) and [Payment in Arrears](https://cloud.tencent.com/document/product/583/12283). 
+Users can estimate the usage and price via [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For the overview of SCF Billing details, please see [Billing Modes](https://intl.cloud.tencent.com/document/product/583/12284), [Product Pricing](https://intl.cloud.tencent.com/document/product/583/12281) and [Payment in Arrears](https://intl.cloud.tencent.com/document/product/583/12283). 
 
 SCF is billed on an hourly basis in **USD**. The SCF bill consists of the following three parts and each part is calculated in a specific method based on the collected data. The calculated amount is in **USD**.
 * Resource usage fee 
 * Fee for number of invocations
 * Fee for public network outbound traffic
-> For unit prices of resource usage, number of innovations and public network outbound traffic, please see [Product Pricing](https://cloud.tencent.com/document/product/583/12281). Public network outbound traffic is calculated in GB. For more details, please see Traffic-based Billing of [Broadband Network Billing](https://buy.cloud.tencent.com/price/idc).
+> For unit prices of resource usage, number of innovations and public network outbound traffic, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Public network outbound traffic is calculated in GB. For more details, please see Traffic-based Billing of [Broadband Network Billing](https://buy.cloud.tencent.com/price/idc).
 
 ## Resource Usage Fee
 
@@ -25,7 +25,7 @@ For example, if a function is configured with a memory of 256 MB and runs for 17
 
 Resources used in each run are calculated on an hourly basis.
 
->- Current resource usage of SCF is billed as memory configured for the function* actual running duration. Compared with the billing method of 100ms CDN(Cloud Front), it will consume less resources and cause lower cost. Please see [Example of Fees](https://cloud.tencent.com/document/product/583/12285) for more details.
+>- Current resource usage of SCF is billed as memory configured for the function* actual running duration. Compared with the billing method of 100ms CDN(Cloud Front), it will consume less resources and cause lower cost. Please see [Example of Fees](https://intl.cloud.tencent.com/document/product/583/12285) for more details.
 >- Due to the uncertainty of the computing resources when the cloud function is running, and the specific behavior inside the code, as well as the impact of network communications, the running time of the same function code when triggered will change slightly.
 
 ## Fee for Number of Invocations
