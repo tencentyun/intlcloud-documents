@@ -3,7 +3,7 @@ To configure CDN, you must sign up for a Tencent Cloud account, activate CDN, ad
 
 ## Step 1. Sign up for a Tencent Cloud account
 If you already have a Tencent Cloud account, you can ignore this step.
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
 
 ## Step 2. Activate the CDN service
 #### 1. Complete identity verification
@@ -15,7 +15,7 @@ Registered users must first complete identity verification in order to activate 
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), confirm your identity verification information, select the service, and click **Next**.
 ![](https://main.qcloudimg.com/raw/087a21d256d40282127396a63b67c7b4.png)
 #### 3. Select a billing method
-CDN provides two billing methods: bill-by-traffic and bill-by-bandwidth. You can choose according to your business type. For more information, please see [Billing Descriptions](https://cloud.tencent.com/doc/product/228/2949).
+CDN provides two billing methods: bill-by-traffic and bill-by-bandwidth. You can choose according to your business type. For more information, please see [Billing Descriptions](https://intl.cloud.tencent.com/doc/product/228/2949).
 Accept the terms of service and click **Activate CDN** to start using the acceleration service.
 ![](https://main.qcloudimg.com/raw/03c8c19ce7c7c73c956c23dc1c36dd3f.png)
 
