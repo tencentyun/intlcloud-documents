@@ -13,7 +13,7 @@ Public network gateways have had the public network traffic route forwarding fun
 - Public network gateways support NAT connections, and users need to log in to the CVM to configure this. Direct Connect gateways and VPN gateways do not support NAT connections currently.
 
 ## Billing
-As a public network gateway is essentially a CVM instance, the billing method is the same as the CVM billing. For details, please refer to [here](https://intl.cloud.tencent.com/doc/product/213/2179).
+As a public network gateway is essentially a CVM instance, the billing method is the same as the CVM billing. For details, please refer to [here](https://intl.cloud.tencent.com/document/product/213/30011).
 
 ## Expiry Reminder
 The expiry reminder mode is consistent with the CVM. For details, please refer to [here](https://intl.cloud.tencent.com/doc/product/213/2181).
