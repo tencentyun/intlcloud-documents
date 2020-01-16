@@ -9,4 +9,4 @@
  在需要解绑的弹性 IP 操作栏中，单击【解绑】即可。
  >至少要保留一个弹性 IP。
  >
- ![](https://main.qcloudimg.com/raw/7a8e1cdc7f1391bc5f1d7ab64887eb95.png)
+ ![](https://main.qcloudimg.com/raw/d0f7274dc7492481e4282a8cd20c1d38.png)
