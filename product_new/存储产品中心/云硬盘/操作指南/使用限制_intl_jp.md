@@ -6,7 +6,7 @@
 	</tr>
 	<tr>
 		<td>Elastic CBS機能</td>
-		<td> 2018年5月から、CVMと一緒に購入したデータディスクはElastic CBSとなり、CVMからアンマウントして再マウントすることをサポートします。この機能はすべてのアベイラビリティーゾーンに対応できます。詳細については、<a href="https://cloud.tencent.com/document/api/213/15707">アベイラビリティーゾーンリストの確認</a>をご参照ください。</td>
+		<td> 2018年5月から、CVMと一緒に購入したデータディスクはElastic CBSとなり、CVMからアンマウントして再マウントすることをサポートします。この機能はすべてのアベイラビリティーゾーンに対応できます。詳細については、<a href="https://intl.cloud.tencent.com/document/api/213/15707">アベイラビリティーゾーンリストの確認</a>をご参照ください。</td>
 	</tr>
 	<tr>
 		<td>CBSの性能制限</td>
@@ -22,7 +22,7 @@
 	</tr>
 	<tr>
 		<td>CBSの支払い延滞による回収</td>
-		<td>サブスクリプションのElastic CBSが期限切れとなった七日以内に更新されない場合、システムによるCBSとCVM間のマウントを強制的に解除させ、ごみ箱に回収することになります。回収のメカニズムについては<a href="https://cloud.tencent.com/document/product/362/3064">支払い延滞に関する説明</a>をご参照ください。<br>現在、<a href="https://cloud.tencent.com/document/product/362/5745">マウント済みのCBS</a> がサブスクリプションElasticCBSの場合、実際のニーズに応じて以下の支払い更新方式を選択してください：
+		<td>サブスクリプションのElastic CBSが期限切れとなった七日以内に更新されない場合、システムによるCBSとCVM間のマウントを強制的に解除させ、ごみ箱に回収することになります。回収のメカニズムについては<a href="https://intl.cloud.tencent.com/document/product/362/31625">支払い延滞に関する説明</a>をご参照ください。<br>現在、<a href="https://intl.cloud.tencent.com/document/product/362/32401">マウント済みのCBS</a> がサブスクリプションElasticCBSの場合、実際のニーズに応じて以下の支払い更新方式を選択してください：
 			<ul style="margin-bottom:0;">
 			<li>CVMの使用期限と合わせます。</li>
 			<li>CVMの使用期限が切れた後、月ごとに自動更新します。</li>
@@ -48,7 +48,7 @@
 	</tr>
 			<tr>
 			<td>スナップショットロールバックの制限</td>
-			<td>スナップショットはこのスナップショットが作成されたソースCBSのみロールバックできます。既存のスナップショットを利用して新しいCBSを作成したい場合、 <a href="https://cloud.tencent.com/document/product/362/5757">スナップショットを利用してCBSの作成<a>をご参照ください。
+			<td>スナップショットはこのスナップショットが作成されたソースCBSのみロールバックできます。既存のスナップショットを利用して新しいCBSを作成したい場合、 <a href="https://intl.cloud.tencent.com/document/product/362/5757">スナップショットを利用してCBSの作成<a>をご参照ください。
 		</td>
 	</tr>
 	<tr>
