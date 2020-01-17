@@ -14,7 +14,7 @@
 - 拡張待ちのパーティションとファイルシステムのWindows CVMに[ログイン](https://intl.cloud.tencent.com/document/product/213/5435) しました。
 
 ## 操作手順
->?
+>
 >- [CBSをスケールアウトする](https://intl.cloud.tencent.com/document/product/362/5747)時に、このディスクをマウントするCVMが正常に実行している状態で、[ディスクを再スキャン](#Scaning) して、スケールアウトしたCBSキャパシティーを識別した後、[ボリュームを拡張](#Extending)します。
 >- [CBSをスケールアウトする](https://intl.cloud.tencent.com/document/product/362/5747)時に、このディスクはマウント待ち状態またはこのディスクをマウントするCVMがシャットダウン状態になる場合、直接[ボリュームを拡張](#Extending) します。
 >- 本ドキュメントはWindows Server 2008 OSを例として、異なるOSのスケールアウト操作は異なります。このドキュメントは参考のみになります。
