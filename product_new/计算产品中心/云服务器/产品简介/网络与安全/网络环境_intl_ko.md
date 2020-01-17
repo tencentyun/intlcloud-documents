@@ -24,7 +24,7 @@ Tencent Cloud [VPC](https://cloud.tencent.com/document/product/215)는 사용자
 | 라우팅 사용자 정의 | 미지원| 지원|
 | 사용자 정의 IP| 미지원| 지원|
 | 통신 규칙 |동일 테넌트의 리전 내 통신| 리전 간 계정 간 통신 지원 |
-| 보안 컨트롤 | [보안 그룹](https://intl.intl.intl.cloud.tencent.com/document/product/213/12452)| [보안 그룹](https://intl.intl.intl.cloud.tencent.com/document/product/213/12452)과 [ACL 네트워크](https://intl.cloud.tencent.com/document/product/215/5132) |
+| 보안 컨트롤 | [보안 그룹](https://intl.cloud.tencent.com/document/product/213/12452)| [보안 그룹](https://intl.cloud.tencent.com/document/product/213/12452)과 [ACL 네트워크](https://intl.cloud.tencent.com/document/product/215/5132) |
 
 ## VPC와 기본 네트워크 간 리소스 공유 및 액세스
 
@@ -36,7 +36,7 @@ Tencent Cloud에서 일부 클라우드 리소스와 기능은 동시에 두가�
 |[EIP](https://intl.cloud.tencent.com/document/product/213/5733)|EIP는 어떠한 네트워크 환경의 CVM 인스턴스도 바인딩할 수 있습니다.|
 |인스턴스|기본 네트워크의 인스턴스와 VPC 내의 인스턴스는 [공인 IP](https://intl.cloud.tencent.com/document/product/213/5224) 또는 [클래식링크](https://cloud.tencent.com/document/product/215/20083) 기능을 통하여 상호 통신할 수 있습니다.|
 |[SSH 키](https://intl.cloud.tencent.com/document/product/213/6092)|SSH 키는 어떠한 네트워크 환경에서도 CVM 인스턴스 로딩을 지원합니다.|
-|[보안 그룹](https://intl.intl.intl.cloud.tencent.com/document/product/213/12452)|보안 그룹은 어떠한 네트워크 환경에서도 CVM의 인스턴스를 바인딩할 수 있도록 지원합니다.|
+|[보안 그룹](https://intl.cloud.tencent.com/document/product/213/12452)|보안 그룹은 어떠한 네트워크 환경에서도 CVM의 인스턴스를 바인딩할 수 있도록 지원합니다.|
 
 > [CLB](https://cloud.tencent.com/document/product/214) 기본 네트워크와 VPC 간에 공유할 수 없습니다. 네트워크 통신 연결이 이미 구축되어 있더라도 CLB가 VPC 내의 인스턴스와 기본 네트워크 인스턴스를 동시에 바인딩하는 것을 지원하지 않습니다.
 

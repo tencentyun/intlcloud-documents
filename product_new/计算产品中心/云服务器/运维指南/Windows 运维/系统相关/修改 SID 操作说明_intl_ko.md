@@ -17,7 +17,7 @@
 > - sysprep를 사용하여 SID 수정 후 시스템 파라미터 대부분은 새로 설정되며, 여기에 IP 구성 정보 등이 포함되므로 반드시 수동으로 재설정 하십시오.
 > - sysprep를 사용하여 SID 수정 후 C:\Users\Administrator 는 재설정될 것 입니다. 시스템 디스크의 부분 데이터는 삭제되며, 데이터 백업에 주의하십시오.
 > 
-1. [VNC 방식을 사용하여 텐센트 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35704)
+1. [VNC 방식을 사용하여 텐센트 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32496)
 2. 작업 시스템 인터페이스에서 마우스 우클릭으로 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"> >[실행]을 클릭하고, **cmd**를 입력한 뒤, **Enter**를 눌러 관리자 커맨드 라인 툴을 여십시오.
 3. <span id="step_03">관리자 커맨드 라인 툴에서 다음 커맨드를 실행하여 현재 네트워크 구성을 저장하십시오.</span>
 ```

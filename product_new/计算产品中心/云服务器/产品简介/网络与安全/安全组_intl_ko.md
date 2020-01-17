@@ -28,5 +28,5 @@
 - 상용 포트 템플릿 개방: TCP 22포트(Linux SSH 로그인), 80 및 443포트(Web 서비스), 3389포트(Windows 원격 로그인),  ICMP 프로토콜(Ping),  개인 네트워크 등을 개방합니다.
 
 >
->- 제공된 보안 그룹 템플릿이 사용자 실제 이용을 충족하지 않을 경우 사용자 정의 보안 그룹을 생성할 수 있습니다. 자세한 내용은 [보안 그룹 생성](https://intl.cloud.tencent.com/document/product/213/18197) 및 [보안 그룹 응용 사례](https://cloud.tencent.com/document/product/213/34601)를 참조하십시오.
+>- 제공된 보안 그룹 템플릿이 사용자 실제 이용을 충족하지 않을 경우 사용자 정의 보안 그룹을 생성할 수 있습니다. 자세한 내용은 [보안 그룹 생성](https://intl.cloud.tencent.com/document/product/213/18197) 및 [보안 그룹 응용 사례](https://intl.cloud.tencent.com/document/product/213/32369)를 참조하십시오.
 >- 응용 레이어(HTTP/HTTPS)에 대한 보안 수요가 필요할 경우 [Tecent Cloud WAF(Web Application Firewall)](https://cloud.tencent.com/product/waf)을 별도로 구매하여 응용 레이어 Web 보안을 제공할 수 있습니다. Web 취약점 공격,  악성 크롤러 및 CC 공격 등 행위를 제어하여 네트워크 및 Web MS를 보호합니다.

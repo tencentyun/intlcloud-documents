@@ -28,7 +28,7 @@ RDP 또는 원격 로그인 소프트웨어를 통해 Windows 인스턴스에 �
 1. [Tencent Cloud 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인하십시오.
 2. 인스턴스 관리 페이지에서 로그인할 인스턴스를 선택하고 [로그인]을 클릭하십시오. 아래 이미지를 참조하십시오.
 3. 팝업된 “Windows 인스턴스 로그인” 창에서 [기타 방식(VNC)]을 선택하고 [즉시 로그인]을 클릭하십시오.
-> 로그인 과정 중 비밀번호를 잊었을 경우, 콘솔에서 인스턴스 비밀번호를 재설정할 수 있습니다. 자세한 내용은 [인스턴스 비밀번호 재설정](https://intl.intl.cloud.tencent.com/document/product/213/16566)을 참조하십시오.
+> 로그인 과정 중 비밀번호를 잊었을 경우, 콘솔에서 인스턴스 비밀번호를 재설정할 수 있습니다. 자세한 내용은 [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)을 참조하십시오.
 >
 4. 팝업된 로그인 창에서 좌측 상단의 “원격 커맨드 발송”을 선택하고 Ctrl-Alt-Delete를 클릭해 시스템 로그인 인터페이스로 진입하십시오. 아래 이미지를 참조하십시오.
 
@@ -37,7 +37,7 @@ RDP 또는 원격 로그인 소프트웨어를 통해 Windows 인스턴스에 �
 
 **장애 현상**: 잘못된 비밀번호를 입력하거나 비밀번호를 잊었거나 비밀번호 재설정에 실패할 경우 로그인에 실패합니다.
 **해결 방법**: [Tencent Cloud 콘솔](https://console.cloud.tencent.com/cvm/index)에서 인스턴스의 비밀번호를 재설정하고 인스턴스를 재시작하십시오.
-**처리 순서**: 인스턴스 비밀번호 재설정 방법은 [인스턴스 비밀번호 재설정](https://intl.intl.cloud.tencent.com/document/product/213/16566)을 참조하십시오.
+**처리 순서**: 인스턴스 비밀번호 재설정 방법은 [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)을 참조하십시오.
 
 <span id="BandwidthUtilization"></span>
 ### 대역폭 이용률이 너무 높을 경우

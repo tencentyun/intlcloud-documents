@@ -16,7 +16,7 @@
 
 ### 概要
 
-アベイラビリティーゾーンとは、Tencent Cloudが同じリージョン内で電源とネットワークが独立した物理的なデータセンターです。ユーザーのサービスをオンラインで継続させるために、アベイラビリティーゾーン間の障害を互いに隔離させ（大きな災害または電力システム障害の場合を除く）、障害が広がらないようにすることは目的です。独立したアベイラビリティーゾーン内のインスタンスを起動することにより、ユーザーは単一障害点の影響からアプリケーションを保護できます。
+アベイラビリティーゾーンとは、Tencent Cloudが同じリージョン内で電源とネットワークが独立した物理的なデータセンターです。ユーザーのサービスをオンラインで継続させるために、アベイラビリティーゾーン間の障害を互いに隔離させ(大きな災害または電力システム障害の場合を除く)、障害が広がらないようにすることは目的です。独立したアベイラビリティーゾーン内のインスタンスを起動することにより、ユーザーは単一障害点の影響からアプリケーションを保護できます。
 APIインターフェース[アベイラビリティーゾーン一覧照会](http://intl.cloud.tencent.com/document/product/213/9455) を介して、完全なアベイラビリティーゾーン一覧を確認できます。
 
 ### 関連特徴
@@ -33,8 +33,8 @@ APIインターフェース[アベイラビリティーゾーン一覧照会](ht
 		<th>アベイラビリティーゾーン</th>
 	</tr>
 	<tr>
-		<td rowspan="4">華南地区（広州）<br> ap-guangzhou</td>
-		<td>広州1区（売り切れ）<br> ap-guangzhou-1</td>
+		<td rowspan="4">華南地区(広州)<br> ap-guangzhou</td>
+		<td>広州1区(売り切れ)<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
 		<td>広州2区<br> ap-guangzhou-2</td>
@@ -46,7 +46,7 @@ APIインターフェース[アベイラビリティーゾーン一覧照会](ht
 		<td>広州4区<br> ap-guangzhou-4</td>
 	</tr>
 	<tr>
-		<td rowspan="4">華東地区（上海）<br>ap-shanghai</td>
+		<td rowspan="4">華東地区(上海)<br>ap-shanghai</td>
 		<td>上海1区<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -59,7 +59,7 @@ APIインターフェース[アベイラビリティーゾーン一覧照会](ht
 		<td>上海4区<br>ap-shanghai-4</td>
 	</tr>
 	<tr>
-			<td rowspan="4">華北地区（北京）<br>ap-beijing</td>
+			<td rowspan="4">華北地区(北京)<br>ap-beijing</td>
 			<td>北京1区<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -72,22 +72,22 @@ APIインターフェース[アベイラビリティーゾーン一覧照会](ht
 			<td>北京4区<br>ap-beijing-4</td>
 	</tr>
 	<tr>
-		<td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
+		<td rowspan="2">西南地区(成都)<br>ap-chengdu</td>
 		<td>成都1区<br>ap-chengdu-1</td>
 	</tr>
 	<tr>
 			<td>成都2区<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-			<td >西南地区（重慶）<br>ap-chongqing</td>
+			<td >西南地区(重慶)<br>ap-chongqing</td>
 			<td>重慶1区<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="2">香港・マカオ・台湾リージョン（中国香港）<br>ap-hongkong</td>
-			<td>香港1区（中国香港ノードは香港・マカオ・台湾地域をカバーできる）<br>ap-hongkong-1</td>
+			<td rowspan="2">香港・マカオ・台湾リージョン(中国香港)<br>ap-hongkong</td>
+			<td>香港1区(中国香港ノードは香港・マカオ・台湾地域をカバーできる)<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
-			<td>香港2区（中国香港ノードは香港・マカオ・台湾地域をカバーできる）<br>ap-hongkong-2</td>
+			<td>香港2区(中国香港ノードは香港・マカオ・台湾地域をカバーできる)<br>ap-hongkong-2</td>
 	</tr>
 </tbody>
 </table>	
@@ -102,51 +102,51 @@ APIインターフェース[アベイラビリティーゾーン一覧照会](ht
 			<th>アベイラビリティーゾーン</th>
 		</tr>
 		<tr>
-			<td>東南アジアパシフィック（シンガポール）<br>ap-singapore</td>
-			<td>シンガポール1区（シンガポールノードは東南アジアパシフィック地域をカバーできる）<br>ap-singapore-1</td>
+			<td>東南アジアパシフィック(シンガポール)<br>ap-singapore</td>
+			<td>シンガポール1区(シンガポールノードは東南アジアパシフィック地域をカバーできる)<br>ap-singapore-1</td>
 		</tr>
 		<tr>
-			<td >北東アジアパシフィック（ソウル）<br>ap-seoul</td>
-			<td>ソウル1区（ソウルノードは北東アジアパシフィック地域をカバーできる）<br>ap-seoul-1</td>
+			<td >北東アジアパシフィック(ソウル)<br>ap-seoul</td>
+			<td>ソウル1区(ソウルノードは北東アジアパシフィック地域をカバーできる)<br>ap-seoul-1</td>
 		</tr>
 		<tr>
-			<td >北東アジアパシフィック（東京）<br>ap-tokyo</td>
-			<td>東京１区（東京ノードは北東アジアパシフィック地域をカバーできる）<br>ap-tokyo-1</td>
+			<td >北東アジアパシフィック(東京)<br>ap-tokyo</td>
+			<td>東京１区(東京ノードは北東アジアパシフィック地域をカバーできる)<br>ap-tokyo-1</td>
 		</tr>
        <tr>
-			<td  rowspan="2">南アジアパシフィック（ムンバイ）<br>ap-mumbai</td>
-			<td>ムンバイ1区（ムンバイノードは南アジアパシフィック地域をカバーできる）<br>ap-mumbai-1</td>
+			<td  rowspan="2">南アジアパシフィック(ムンバイ)<br>ap-mumbai</td>
+			<td>ムンバイ1区(ムンバイノードは南アジアパシフィック地域をカバーできる)<br>ap-mumbai-1</td>
 		</tr>
        <tr>
-			<td>ムンバイ2区（ムンバイノードは南アジアパシフィック地域をカバーできる）<br>ap-mumbai-2</td>
+			<td>ムンバイ2区(ムンバイノードは南アジアパシフィック地域をカバーできる)<br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-		  	<td >東南アジア（バンコク）<br>ap-bangkok </td>
-				 <td >バンコク1区  （バンコクノードは東南アジアパシフィック地域をカバーできる）<br>ap-bangkok-1</td>
+		  	<td >東南アジア(バンコク)<br>ap-bangkok </td>
+				 <td >バンコク1区  (バンコクノードは東南アジアパシフィック地域をカバーできる)<br>ap-bangkok-1</td>
 		<tr>
-			<td>北米地域（トロント）<br>na-toronto</td>
-			<td>トロント1区（トロントノードは北米地域をカバーできる）<br>na-toronto-1</td>
+			<td>北米地域(トロント)<br>na-toronto</td>
+			<td>トロント1区(トロントノードは北米地域をカバーできる)<br>na-toronto-1</td>
 		</tr>
 		<tr>
-			<td rowspan="2">米国西部（シリコンバレー）<br>na-siliconvalley</td>
-			<td>リコンバレー1区（シリコンバレーノードは米国西部をカバーできる）<br>na-siliconvalley-1</td>
+			<td rowspan="2">米国西部(シリコンバレー)<br>na-siliconvalley</td>
+			<td>リコンバレー1区(シリコンバレーノードは米国西部をカバーできる)<br>na-siliconvalley-1</td>
 		</tr>
     <tr>
-			<td>リコンバレー2区（シリコンバレーノードは米国西部をカバーできる）<br>na-siliconvalley-2</td>
+			<td>リコンバレー2区(シリコンバレーノードは米国西部をカバーできる)<br>na-siliconvalley-2</td>
 		</tr>
 		<tr>
-			<td rowspan="2">米国東部（バージニア）<br>na-ashburn</td>
-			<td>バージニア1区 （バージニアノードは米国東部をカバーできる）<br>na-ashburn-1</td>
+			<td rowspan="2">米国東部(バージニア)<br>na-ashburn</td>
+			<td>バージニア1区 (バージニアノードは米国東部をカバーできる)<br>na-ashburn-1</td>
 		</tr>
 		<tr>
-			<td>バージニア2区 （バージニアノードは米国東部をカバーできる）<br>na-ashburn-2</td>
+			<td>バージニア2区 (バージニアノードは米国東部をカバーできる)<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td>欧州リージョン（フランクフルト）<br>eu-frankfurt</td>
-			<td>フランクフル1区（フランクフルトノードは欧州地域をカバーできる）<br>eu-frankfurt-1</td>
+			<td>欧州リージョン(フランクフルト)<br>eu-frankfurt</td>
+			<td>フランクフル1区(フランクフルトノードは欧州地域をカバーできる)<br>eu-frankfurt-1</td>
 		</tr>
-		<td >欧州リージョン（モスクワ）<br>eu-moscow</td>
-		<td>モスクワ1区（モスクワノードアベイラビリティーゾーンは欧州地域をカバーできる）<br>eu-moscow-1</td>
+		<td >欧州リージョン(モスクワ)<br>eu-moscow</td>
+		<td>モスクワ1区(モスクワノードアベイラビリティーゾーンは欧州地域をカバーできる)<br>eu-moscow-1</td>
 		</tr>
 	</tbody>
 </table>
@@ -161,7 +161,7 @@ APIインターフェース[アベイラビリティーゾーン一覧照会](ht
 -サービスの高可用性と災害復帰の考慮事項。
 VPCが1つしかないユースケースでも、アベイラビリティーゾーン間の障害隔離を確保し、クロスアベイラビリティーの災害復帰を実現するために、サービスを少なくとも異なるアベイラビリティーゾーンにデプロイすることをお勧めします。
 -異なるアベイラビリティーゾーン間でネットワーク通信のディレーが発生する可能性がありますので、実際のサービス要件に応じて検討し、高可用性と低レイテンシとの最適なバランスを取る必要があります。
-- 他の国や地域のホストにアクセスする必要がある場合は、他の国や地域のCVMを選択してアクセスすることをお勧めします。[中国]（#MainlandChina）でCVMを作成して、[他の国・地域のホスト]（#InternationalArea）にアクセスする場合、アクセスのディレーが高くなるため、ご利用はお勧めしません。
+- 他の国や地域のホストにアクセスする必要がある場合は、他の国や地域のCVMを選択してアクセスすることをお勧めします。[中国](#MainlandChina)でCVMを作成して、[他の国・地域のホスト](#InternationalArea)にアクセスする場合、アクセスのディレーが高くなるため、ご利用はお勧めしません。
 
 ## リソース場所の説明
 ここでは、Tencent Cloudにおいて、どのリソースがグローバル的なものであるか、どのリソースがリージョンによって異なり、アベイラビリティーゾーンに依存しないものであるか、どのリソースがアベイラビリティーゾーンに基づくものであるかを説明します。
@@ -215,7 +215,7 @@ VPCが1つしかないユースケースでも、アベイラビリティーゾ�
 	<td> <a href="https://intl.cloud.tencent.com/document/product/362/2345">スナップショット</a> </td>
 	  <td>snap-xxxxxxxx</td>
 	  <td>単一リージョンの複数のアベイラビリティーゾーンで利用可能</td>
-	  <td>特定のCloud Block Storageにスナップショットを作成してから、ユーザーは対象リージョンで作成されたスナップショットを使用して、他の操作（Cloud Block Storageの作成など）を行うことができます。</td>
+	  <td>特定のCloud Block Storageにスナップショットを作成してから、ユーザーは対象リージョンで作成されたスナップショットを使用して、他の操作(Cloud Block Storageの作成など)を行うことができます。</td>
 	</tr>
 	<tr>
 	<td> <a href="https://intl.cloud.tencent.com/document/product/214/524">Cloud Load Balancer</a> </td>
@@ -255,7 +255,7 @@ VPCが1つしかないユースケースでも、アベイラビリティーゾ�
 3. ーゾーン内のサブネットを作成してから、新しいアベイラビリティーゾーンで元のサブネットと同じIPアドレス範囲でサブネットを作成できます。使用可能なインスタンスを含まないサブネットのみが削除可能であることに注意してください。そのため、現在のサブネット内のすべてのインスタンスを新しいサブネットに移行させる必要があります。
 3. 上記手順で作成されたカスタマイズイメージを使用して、新しいアベイラビリティーゾーンで新しいインスタンスを作成します。ユーザーは、元のインスタンスと同じインスタンスタイプの構成を選択するか、新しいインスタンスタイプと構成を選択できます。詳細については、[インスタンスの購入と起動](http://intl.cloud.tencent.com/document/product/213/4855)を参照してください。
 4. 元のインスタンスがすでにElastic IPアドレスに関連付けられている場合、古いインスタンスとの関連付けを解除してから、新しいインスタンスに関連付ける必要があります。詳細については、[Elastic IP](http://intl.cloud.tencent.com/document/product/213/5733)を参照してください。
-5. （オプション）元のインスタンスが[従量課金](http://intl.cloud.tencent.com/document/product/213/2180)タイプの場合、元のインスタンスを廃棄することができます。詳細については、[Destruction Instances](http://intl.cloud.tencent.com/document/product/213/4930)を参照してください。
+5. (オプション)元のインスタンスが[従量課金](http://intl.cloud.tencent.com/document/product/213/2180)タイプの場合、元のインスタンスを廃棄することができます。詳細については、[Destruction Instances](http://intl.cloud.tencent.com/document/product/213/4930)を参照してください。
 
 ### イメージを他のリージョンにコピーする
 

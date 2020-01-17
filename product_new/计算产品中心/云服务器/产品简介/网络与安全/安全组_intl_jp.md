@@ -28,5 +28,5 @@
 - 常用ポートをオープンするテンプレート：TCP 22ポート（Linux SSH ログイン）、80、443ポート（Webサーバー）、3389ポート（Windows リモートログイン）、 ICMP プロトコル（Ping）、及びプライベートネットワークをインターネットにオープンします。
 
 >
->- 提供されたセキュリティグループテンプレートがお客様の要求を満たさない場合は、カスタマイズセキュリティグループを新規作成することができます。詳細については、[セキュリティグループ作成](https://intl.cloud.tencent.com/document/product/213/18197)と[セキュリティグループ事例](https://cloud.tencent.com/document/product/213/34601) をご参照ください。
+>- 提供されたセキュリティグループテンプレートがお客様の要求を満たさない場合は、カスタマイズセキュリティグループを新規作成することができます。詳細については、[セキュリティグループ作成](https://intl.cloud.tencent.com/document/product/213/18197)と[セキュリティグループ事例](https://intl.cloud.tencent.com/document/product/213/32369) をご参照ください。
 >- お客様がアプリケーション層（HTTP/HTTPS）にセキュリティ対策への需要がある場合は、[Tencent Cloud Web Application Firewall（WAF）](https://cloud.tencent.com/product/waf) を別途購入することが可能です。WAFはお客様にアプリケーション層のWebセキュリティ保護を提供し、Web 脆弱性の攻撃、悪意のあるクローラー及びCC攻撃などの脅威を防ぎ、ウェブサイトとWebアプリケーションの安全を保護します。

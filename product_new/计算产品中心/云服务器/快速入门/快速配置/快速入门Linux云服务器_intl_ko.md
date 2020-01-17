@@ -66,4 +66,4 @@ CVM 작업 완료 후, Tencent Cloud 콘솔을 통해 CVM에 로그인하여 실
 Tencent Cloud 콘솔을 통한 CVM 로그인은 실제 요구 사항에 따라 해당하는 로그인 방식을 선택하십시오.
 - [표준 로그인 방식으로 Linux 인스턴스에 로그인(권장)](https://intl.cloud.tencent.com/document/product/213/5436)
 - [원격 및 소프트웨어로 Linux 인스턴스에 로그인](https://cloud.tencent.com/document/product/213/35699)
-- [SSH을 사용하여 Linux 인스턴스에 로그인](https://cloud.tencent.com/document/product/213/35700)
+- [SSH을 사용하여 Linux 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32501)

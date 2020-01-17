@@ -1,6 +1,6 @@
 ## ユースケース
 CBSを作成して、同じアベイラビリティーゾーン内に任意のCVMに接続することができます。ブロックストレージデバイスマッピングを通して、CBSがCVMによって識別・使用されます。CBSを作成すると、ウォームアップせずに最高性能を実現できます。
-業務ニーズに応じ、異なるタイプのCBS選択して、作成することができます。CBSタイプの詳細な情報については、[CBSタイプ](/doc/product/362/2353) をご参照ください。
+業務ニーズに応じ、異なるタイプのCBS選択して、作成することができます。CBSタイプの詳細な情報については、[CBSタイプ](https://intl.cloud.tencent.com/document/product/362/31636) をご参照ください。
 
 ## 前提条件
 CBSを作成する前に、[Tencent Cloudのアカウント新規登録](https://intl.cloud.tencent.com/document/product/378/17985) を進めて、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629) を完了してください。
@@ -37,7 +37,7 @@ CBSを作成する前に、[Tencent Cloudのアカウント新規登録](https:/
 	 <tr>
 	 <tr>
          <td>定期スナップショット</td>
-         <td>オプションパラメータ。<br>CBSを作成する際に、定期スナップショットポリシーとの関連付けを通して、CBSのスナップショットに対する定期管理を行います。現在中国における各リージョンは50GBの容量を無料で提供しております。詳細については、<a href="https://cloud.tencent.com/document/product/362/32361#.E5.BF.AB.E7.85.A7.E8.AE.A1.E8.B4.B9.E6.A6.82.E8.BF.B0">スナップショット課金概要</a> をご参照ください。
+         <td>オプションパラメータ。<br>CBSを作成する際に、定期スナップショットポリシーとの関連付けを通して、CBSのスナップショットに対する定期管理を行います。現在中国における各リージョンは50GBの容量を無料で提供しております。詳細については、<a href="https://intl.cloud.tencent.com/document/product/362/32415">スナップショット課金概要</a> をご参照ください。
          </td>
      </tr>
      <tr>
@@ -50,7 +50,7 @@ CBSを作成する前に、[Tencent Cloudのアカウント新規登録](https:/
      </tr>
 	 <tr>
          <td>タグ</td>
-         <td>オプションパラメータ。</br> CBSを作成する際に、タグをつけることができます。タグを利用してクラウドリソースを識別することにより、クラウドリソースの分類と検索を実現します。タグの詳細については、 <a href="https://cloud.tencent.com/document/product/651">タグ製品ドキュメント</a> をご参照ください。</td>
+         <td>オプションパラメータ。</br> CBSを作成する際に、タグをつけることができます。タグを利用してクラウドリソースを識別することにより、クラウドリソースの分類と検索を実現します。タグの詳細については、 <a href="https://intl.cloud.tencent.com/document/product/651">タグ製品ドキュメント</a> をご参照ください。</td>
      </tr>
 	 <tr>
          <td>課金モード</td>
@@ -78,10 +78,11 @@ CBSを作成する前に、[Tencent Cloudのアカウント新規登録](https:/
   1. 仕様を確認した後、実際の状況に応じて、金券を利用するかどうかを選択して、【購入確認】をクリックします。
   2. 支払いを完了します。
  </ol>
-5.  [CBSリスト](https://console.cloud.tencent.com/cvm/cbs) 画面で作成済みのCBSを確認することができます。新規作成されたElastic CBSは【マウント待ち】状態であり、[CBSのマウント](https://intl.cloud.tencent.com/document/product/362/5745) を参照して、CBSを同じアベイラビリティーゾーン内にあるCVMにマウントします。
+ 
+5.[CBSリスト](https://console.cloud.tencent.com/cvm/cbs) 画面で作成済みのCBSを確認することができます。新規作成されたElastic CBSは【マウント待ち】状態であり、[CBSのマウント](https://intl.cloud.tencent.com/document/product/362/5745) を参照して、CBSを同じアベイラビリティーゾーン内にあるCVMにマウントします。
 
 ### スナップショットを利用してCBSを作成する
-新しく作成したCBSの中に関連データを直接含むことを希望する場合は、[スナップショットを利用してCBSの作成](https://cloud.tencent.com/document/product/362/5757) を選択してください。
+新しく作成したCBSの中に関連データを直接含むことを希望する場合は、[スナップショットを利用してCBSの作成](https://intl.cloud.tencent.com/document/product/362/5757) を選択してください。
 
 ### APIを利用してCBSを作成する
-CreateDisksインターフェースを通して、CBSを作成することができます。詳細な操作については、[CBSの作成](https://cloud.tencent.com/document/product/362/16312) をご参照ください。
+CreateDisksインターフェースを通して、CBSを作成することができます。詳細な操作については、[CBSの作成](https://intl.cloud.tencent.com/document/product/362/16312) をご参照ください。

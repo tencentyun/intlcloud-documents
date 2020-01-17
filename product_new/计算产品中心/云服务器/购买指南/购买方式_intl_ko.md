@@ -6,8 +6,8 @@ Tencent Cloud는 공식 웹 사이트 구매 및 API 구매의 두 가지 CVM �
 다음은 공식 웹 사이트에서 이 두 가지 서버를 구매하는 자세한 내용을 설명합니다.
 
 > 
->- 각종 구성에 대해 [CVM 가격 리스트](https://cloud.tencent.com/document/product/213/2176), [CBS 가격 리스트](https://cloud.tencent.com/document/product/213/2255), [공용 네트워크 과금 방식](https://intl.intl.cloud.tencent.com/document/product/213/10578)등의 문서를 참조하여 실제 필요에 따라 선택 후 구매하십시오.
->- 구매와 관련된 더 자세한 설명과 주의사항은 [공식 웹 사이트 구매 설명](https://intl.intl.cloud.tencent.com/document/product/213/6998)을 참조하십시오.
+>- 각종 구성에 대해 [CVM 가격 리스트](https://cloud.tencent.com/document/product/213/2176), [CBS 가격 리스트](https://intl.cloud.tencent.com/document/product/213/2255), [공용 네트워크 과금 방식](https://intl.cloud.tencent.com/document/product/213/10578)등의 문서를 참조하여 실제 필요에 따라 선택 후 구매하십시오.
+>- 구매와 관련된 더 자세한 설명과 주의사항은 [공식 웹 사이트 구매 설명](https://intl.cloud.tencent.com/document/product/213/6998)을 참조하십시오.
 
 ### 종량제
  
@@ -19,8 +19,8 @@ Tencent Cloud는 공식 웹 사이트 구매 및 API 구매의 두 가지 CVM �
 >
 >- 종량제 CVM를 활성화한 후, 계정 잔액이 충분한지 확인하십시오. 계정 잔액이 충분하지 않을 경우 요금이 연체되거나 호스트가 회수될 수 있습니다.
 > 자세한 내용은 [연체 설명](https://intl.cloud.tencent.com/document/product/213/2181)을 참조하십시오.
->- 각종 구성에 대해 [CVM 가격 리스트](https://cloud.tencent.com/document/product/213/2176), [CBS 가격 리스트](https://cloud.tencent.com/document/product/213/2255), [공용 네트워크 과금 방식](https://intl.intl.cloud.tencent.com/document/product/213/10578)등의 문서를 참조하여 실제 필요에 따라 선택 후 구매하십시오.
->- 구매와 관련된 더 자세한 설명과 주의사항은 [공식 웹 사이트 구매 설명](https://intl.intl.cloud.tencent.com/document/product/213/6998)을 참조하십시오.
+>- 각종 구성에 대해 [CVM 가격 리스트](https://cloud.tencent.com/document/product/213/2176), [CBS 가격 리스트](https://intl.cloud.tencent.com/document/product/213/2255), [공용 네트워크 과금 방식](https://intl.cloud.tencent.com/document/product/213/10578)등의 문서를 참조하여 실제 필요에 따라 선택 후 구매하십시오.
+>- 구매와 관련된 더 자세한 설명과 주의사항은 [공식 웹 사이트 구매 설명](https://intl.cloud.tencent.com/document/product/213/6998)을 참조하십시오.
 
 ## API 구매
 API를 통해 CVM를 구매하려는 사용자는 API 문서 [인스턴스 생성](https://cloud.tencent.com/document/api/213/15730)을 참조하십시오.

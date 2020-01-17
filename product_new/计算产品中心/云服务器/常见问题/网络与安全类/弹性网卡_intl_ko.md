@@ -1,6 +1,6 @@
 ### ENI란 무엇입니까?
 
-[ENI](https://cloud.tencent.com/product/eni)(Elastic Network Interface)는 VPC 내의 CVM을 바인딩하는 일종의 탄력적 네트워크 인터페이스로서 여러 CVM 사이에서 자유롭게 마이그레이션할 수 있습니다. ENI는 매니지먼트 네트워크 구성 및 신뢰성 높은 네트워크 솔루션 구축에 큰 도움이 됩니다.
+[ENI](https://intl.cloud.tencent.com/product/eni)(Elastic Network Interface)는 VPC 내의 CVM을 바인딩하는 일종의 탄력적 네트워크 인터페이스로서 여러 CVM 사이에서 자유롭게 마이그레이션할 수 있습니다. ENI는 매니지먼트 네트워크 구성 및 신뢰성 높은 네트워크 솔루션 구축에 큰 도움이 됩니다.
 
 ENI는 VPC, 가용존 및 서브넷 속성을 갖고 있어 동일한 가용존의 CVM만 바인딩할 수 있습니다. 1대의 CVM는 여러 ENI를 바인딩할 수 있으며 구체적인 바인딩 수량은 CVM 규격에 따라 결정됩니다.
 
@@ -22,11 +22,11 @@ ENI는 VPC, 가용존 및 서브넷 속성을 갖고 있어 동일한 가용존�
 
 ### ENI를 CVM 인스턴스에 바인딩하려면 어떻게 해야 합니까?
 
-[CVM 바인딩 및 구성](https://intl.intl.intl.cloud.tencent.com/document/product/576/18535)을 참조하십시오.
+[CVM 바인딩 및 구성](https://intl.cloud.tencent.com/document/product/576/18535)을 참조하십시오.
 
 ### CVM 인스턴스 내의 ENI를 어떻게 구성합니까?
 
-[CVM 바인딩 및 구성](https://intl.intl.intl.cloud.tencent.com/document/product/576/18535)을 참조하십시오.
+[CVM 바인딩 및 구성](https://intl.cloud.tencent.com/document/product/576/18535)을 참조하십시오.
 
 ### ENI의 개인 IP를 수정 및 사용자 정의 어떻게 합니까?
 
@@ -39,4 +39,4 @@ VPC 내의 CVM는 ENI개인 IP를 수정 및 사용자 정의할 수 있으며 �
 5. 팝업 창에서 IP 할당 방식으로 **수동 입력**을 선택하고 수정할 IP 주소를 입력하십시오.
 6. [확인]을 클릭하고 작업을 완료하십시오.
 
-콘솔을 수정한 후, ENI의 구성 파일을 동기화 및 수정해야 하므로 자세한 내용은 [CVM 바인딩 및 구성](https://intl.intl.intl.cloud.tencent.com/document/product/576/18535)을 참조하십시오.
+콘솔을 수정한 후, ENI의 구성 파일을 동기화 및 수정해야 하므로 자세한 내용은 [CVM 바인딩 및 구성](https://intl.cloud.tencent.com/document/product/576/18535)을 참조하십시오.

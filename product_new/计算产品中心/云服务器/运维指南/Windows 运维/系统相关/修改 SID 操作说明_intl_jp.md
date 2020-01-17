@@ -17,7 +17,7 @@
 > - sysprep を使用してSIDを修正した後、IP構成情報などを含む多くのシステムパラメーターがリセットされます。手動でリセットすること必要があります。
 > - sysprep を使用してSIDを修正した後、C:\Users\Administrator がリセットされ、システムディスクデータの一部が消去されるため、データのバックアップに注意してください。
 > 
-1. [VNC を使用してCVMにログインする](https://cloud.tencent.com/document/product/213/35704)。
+1. [VNC を使用してCVMにログインする](https://intl.cloud.tencent.com/document/product/213/32496)。
 2. OSインターフェースで、 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"> >【実行】を右クリックし、 **cmd**を入力し、 **Enter**を押して、管理者コマンドラインツールを開きます。
 3. <span id="step_03">管理者コマンドラインで、以下のコマンドを実行して、現在のネットワーク設定を保存します。</span>
 ```

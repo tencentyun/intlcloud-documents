@@ -1,11 +1,10 @@
 본 문서는 보안 그룹 및 포트 생성과 관련된 문제를 소개합니다.
-- CVM에서 생성, 구성과 보안 그룹 작업하는 방법에 대한 자세한 내용은 [보안 그룹 생성](https://intl.cloud.tencent.com/document/product/213/15377)과 [보안 그룹 작업](https://intl.intl.cloud.tencent.com/document/product/213/18197)을 참조하십시오.
-- Tencent CVM API에 익숙한 경우 [보안 그룹 API](https://cloud.tencent.com/document/product/213/12447)를 통해 보안 그룹을 생성, 작업할 수 있습니다.
+- CVM에서 생성, 구성과 보안 그룹 작업하는 방법에 대한 자세한 내용은 [보안 그룹 생성](https://intl.cloud.tencent.com/document/product/213/15377)과 [보안 그룹 작업](https://intl.cloud.tencent.com/document/product/213/18197)을 참조하십시오.
 
 ## 포트 관련
 
 ### 인스턴스에 로그인하기 전 개방에 어떤 포트가 필요합니까?
-일반적으로 Linux 인스턴스에 대해 22번 포트로 개방하고 Windows 인스턴스에 대해 3389번 포트로 개방합니다. 다른 인스턴스 유형에 적용되는 포트에 대한 자세한 내용은 [일반 시나리오 구성](https://cloud.tencent.com/document/product/213/34601)을 참조하십시오.
+일반적으로 Linux 인스턴스에 대해 22번 포트로 개방하고 Windows 인스턴스에 대해 3389번 포트로 개방합니다. 다른 인스턴스 유형에 적용되는 포트에 대한 자세한 내용은 [일반 시나리오 구성](https://intl.cloud.tencent.com/document/product/213/32369)을 참조하십시오.
 
 ### CVM가 상용하는 포트는 무엇이 있습니까?
 
@@ -13,7 +12,7 @@
 
 ### 포트를 여는 이유는 무엇입니까? 어떤 방법으로 포트를 열 수 있습니까?
 
-보안 그룹에서 포트를 활성화하여야 포트에 대응하는 서비스를 사용할 수 있습니다. 보안 그룹 포트 구성, 구성 규칙에 대한 자세한 내용은 [보안 그룹 작업](https://intl.intl.cloud.tencent.com/document/product/213/18197)을 참조하십시오.
+보안 그룹에서 포트를 활성화하여야 포트에 대응하는 서비스를 사용할 수 있습니다. 보안 그룹 포트 구성, 구성 규칙에 대한 자세한 내용은 [보안 그룹 작업](https://intl.cloud.tencent.com/document/product/213/18197)을 참조하십시오.
 
 ### 포트 수정 후 서비스를 사용할 수 없는 이유는 무엇입니까?
 

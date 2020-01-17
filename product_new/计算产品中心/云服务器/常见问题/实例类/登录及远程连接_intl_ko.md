@@ -14,27 +14,27 @@ CVM을 구매할 때 사용자가 선택한 구성 방식에 따라 초기 비�
 
 ### 비밀번호를 어떻게 재설정 합니까?
 
-[인스턴스 비밀번호 재설정](https://intl.intl.cloud.tencent.com/document/product/213/16566)에서 재설정하십시오.
+[인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)에서 재설정하십시오.
 
 ### 비밀번호 재설정이 실패하면 어떻게 해야 합니까?
 
 사용자가 재설정할 인스턴스가 종료되었는지 확인하십시오.
-- 종료되지 않은 경우 [인스턴스 종료](https://intl.cloud.tencent.com/document/product/213/4929)한 후 다시 [인스턴스 비밀번호 재설정](https://intl.intl.cloud.tencent.com/document/product/213/16566)을 진행하십시오.
+- 종료되지 않은 경우 [인스턴스 종료](https://intl.cloud.tencent.com/document/product/213/4929)한 후 다시 [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)을 진행하십시오.
 - 사용자의 인스턴스가 종료된 경우 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 엔지니어에게 문의하고 문제를 해결하십시오.
 
 ### Linux 인스턴스에 SSH 키 연결 후，사용자 이름 비밀번호를 사용하여 로그인할 수 없는 이유는 무엇입니까?
 
-CVM에 SSH 키 연결 후，**종료** 사용자 이름 비밀번호 로그인은 [SSH 키로 CVM 로그인](https://cloud.tencent.com/document/product/213/35700)을 실행하십시오. 
+CVM에 SSH 키 연결 후，**종료** 사용자 이름 비밀번호 로그인은 [SSH 키로 CVM 로그인](https://intl.cloud.tencent.com/document/product/213/32501)을 실행하십시오. 
 
 ### VNC을 사용하여 CVM에 로그인하려면 어떻게 해야 합니까?
 
 VNC 로그인은 Tencent Cloud가 사용자에게 제공하는 Web 브라우저를 통해 CVM에 원격으로 연결하는 방식입니다. 클라이언트 원격 로그인을 설치하지 않았거나 클라이언트 원격 로그인을 사용할 수 없는 경우 사용자는 VNC 로그인을 통해 CVM에 연결하여 CVM 상태를 모니터링하고 CVM 계정을 통해 기본적인 CVM 관리 작업을 실행할 수 있습니다. 구체적인 작업 절차는 다음 문서를 참조하십시오.
-- [VNC로 Linux 인스턴스에 로그인](https://cloud.tencent.com/document/product/213/35701)
-- [VNC로 Windows 인스턴스에 로그인](https://cloud.tencent.com/document/product/213/35704)
+- [VNC로 Linux 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32494)
+- [VNC로 Windows 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32496)
 
 ### Windows 서버에 여러 사용자 원격 로그인을 구성하려면 어떻게 해야 합니까?
 
-Windows 서버는 여러 사용자 원격 로그인을 지원합니다. 구체적인 구성 방법은 [Windows CVM에 여러 사용자 원격 로그인 허용 설정](https://cloud.tencent.com/document/product/213/36267)을 참조하십시오.
+Windows 서버는 여러 사용자 원격 로그인을 지원합니다. 구체적인 구성 방법은 [Windows CVM에 여러 사용자 원격 로그인 허용 설정](https://intl.cloud.tencent.com/document/product/213/32497)을 참조하십시오.
 설정이 적용되지 않으면 재시작한 후 다시 로그인하십시오.
 
 ### Ubuntu 시스템은 어떻게 root를 사용하여 사용자 인스턴스에 로그인할 수 있습니까?

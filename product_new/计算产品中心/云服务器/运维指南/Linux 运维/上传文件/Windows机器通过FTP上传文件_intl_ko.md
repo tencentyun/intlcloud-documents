@@ -4,7 +4,7 @@
 
 ## 전제 조건
 
-클라우드 서버에 [FTP 구축 서비스](https://intl.intl.intl.cloud.tencent.com/document/product/213/10912)에 있어야 합니다.
+클라우드 서버에 [FTP 구축 서비스](https://intl.cloud.tencent.com/document/product/213/10912)에 있어야 합니다.
 
 ## 작업 순서
 
@@ -16,8 +16,8 @@
 4. FileZilla 창에서 호스트, 사용자 이름, 비밀번호 및 포트 등의 정보를 입력한 후 아래와 같이 [빠른 연결]을 클릭하십시오.
 **구성 정보 설명**
  - 호스트: 클라우드 서버의 공용 네트워크 IP입니다. [클라우드 서버 콘솔](https://console.cloud.tencent.com/cvm)의 인스턴스 관리 페이지에서 해당 클라우드 서버의 공용 네트워크 IP를 조회할 수 있습니다.
- - 사용자 이름: [FTP 구축 서비스](https://intl.intl.intl.cloud.tencent.com/document/product/213/10912)에서 설정한 FTP 사용자의 계정입니다. 이미지 상의 "ftpuser1"이 예시입니다.
- - 비밀번호: [FTP 구축 서비스](https://intl.intl.intl.cloud.tencent.com/document/product/213/10912)에서 설정한 FTP 사용자 계정에 해당하는 비밀번호입니다.
+ - 사용자 이름: [FTP 구축 서비스](https://intl.cloud.tencent.com/document/product/213/10912)에서 설정한 FTP 사용자의 계정입니다. 이미지 상의 "ftpuser1"이 예시입니다.
+ - 비밀번호: [FTP 구축 서비스](https://intl.cloud.tencent.com/document/product/213/10912)에서 설정한 FTP 사용자 계정에 해당하는 비밀번호입니다.
  - 포트: FTP 수신 포트로써 기본값은 **21**입니다.
 5. 왼쪽 하단의 "로컬 사이트" 창에서 업로드 대기 중인 로컬 파일을 마우스 우클릭해 [업로드]를 선택하면 아래와 같이 바로 Linux 클라우드 서버로 파일을 업로드할 수 있습니다.
 > 

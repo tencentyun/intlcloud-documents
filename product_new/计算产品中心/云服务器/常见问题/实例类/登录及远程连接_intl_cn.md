@@ -1,0 +1,105 @@
+### 如何设置初始密码？
+
+在购买云服务器时，您选择的配置方式不同，初始密码的设置也将不同。
+- 如果您通过【[**快速配置**](https://buy.cloud.tencent.com/cvm?tab=lite)】的方式进行购买云服务器，云服务器的初始密码将会以电子邮件和控制台 [站内信](https://console.cloud.tencent.com/message) 发送给您。
+- 如果您通过【[**自定义配置**](https://buy.cloud.tencent.com/cvm?tab=custom)】的方式进行购买云服务器，根据登录方式的不同，设置初始密码的方式如下：
+<table>
+	<tr><th>登录方式</th><th>说明</th></tr>
+	<tr><td>自动生成密码</td><td>初始密码将会以电子邮件和控制台 <a href="https://console.cloud.tencent.com/message">站内信</a> 发送给您。</td></tr>
+	<tr><td>立即关联密钥</td><td><b>默认关闭</b>用户名密码登录，但初始密码仍会以电子邮件和控制台 <a href="https://console.cloud.tencent.com/message">站内信</a> 发送给您。</td></tr>
+	<tr><td>设置密码</td><td>自定义的密码即为初始密码。</td></tr>
+</table>
+
+更多详情可参见 [管理登录密码](https://intl.cloud.tencent.com/document/product/213/17008)。
+
+### 如何重置密码？
+
+请参考 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566) 进行重置。
+
+### 重置密码失败怎么办？
+
+请确认您待重置密码的实例是否关机。
+- 如果未关机，请 [关机实例](https://intl.cloud.tencent.com/document/product/213/4929)，再进行 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566)。
+- 如果您的实例已经关机，请 [提交工单](https://console.cloud.tencent.com/workorder/category)，工程师将协助您解决问题。
+
+### Linux 实例关联 SSH 密钥后，为何无法使用用户名密码登录?
+
+云服务器关联 SSH 密钥后，**默认关闭**用户名密码登录，请 [使用 SSH 密钥登录云服务器](https://intl.cloud.tencent.com/document/product/213/32501)。 
+
+### 如何使用 VNC 登录云服务器？
+
+VNC 登录是腾讯云为用户提供的一种通过 Web 浏览器远程连接云服务器的方式。在没有安装远程登录客户端或者客户端远程登录无法使用的情况下，用户可以通过 VNC 登录连接到云服务器，观察云服务器状态，并且可通过云服务器账户进行基本的云服务器管理操作。具体的操作步骤请参考以下文档：
+- [使用 VNC 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32494)
+- [使用 VNC 登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32496)
+
+### Windows 服务器如何配置多用户远程登录？
+
+Windows 服务器可以支持同时多人远程登录，具体配置方法请参考 [设置允许多用户远程登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/32497)。
+如若设置未生效，请重启后再尝试登录。
+
+### Ubuntu 系统如何使用 root 用户登录实例？
+
+Ubuntu 系统的默认用户名是 ubuntu，并在安装过程中默认不设置 root 帐户和密码。您如若有需要，可在设置中开启允许 root 用户登录。具体操作步骤如下：
+1. 使用 ubuntu 帐户登录云服务器。
+2. 执行以下命令，设置 root 密码。
+```
+sudo passwd root
+```
+3. 输入 root 的密码，按 **Enter**。
+4. 重复输入 root 的密码，按 **Enter**。
+返回如下信息，即表示 root 密码设置成功。
+```
+passwd: password updated successfully
+```
+5. 执行以下命令，打开 `sshd_config` 配置文件。
+```
+sudo vi /etc/ssh/sshd_config 
+```
+6. 按 **i** 切换至编辑模式，找到 `#Authentication`，将 `PermitRootLogin` 参数修改为 `yes`。如下图所示：
+> 如果 `PermitRootLogin` 参数被注释，请去掉首行的注释符号（`#`）。
+> 
+![](https://main.qcloudimg.com/raw/359242f7e5df666d43459fe74abce72a.png)
+7. 按 **Esc**，输入 **:wq**，保存文件并返回。
+8. 执行以下命令，重启 ssh 服务。
+```
+sudo service ssh restart
+```
+9. 使用 root 帐户密码登录 Ubuntu 云服务器。
+
+### 如何批量重置运行中的 Linux 实例密码？
+
+如果您需要在不关机的情况下，进行批量重置 Linux 实例密码的操作，可以 [点此下载](http://batchchpasswd-10016717.file.myqcloud.com/batch-chpasswd.tgz?_ga=1.165307193.726382295.1500898081) 批量重置脚本，并运行该脚本。批量重置脚本的使用方法如下：
+> 
+> - 若您在公网机器上运行该脚本，填到 hosts.txt 文件的 IP 需为实例的公网 IP。
+> - 若您在内网机器上运行该脚本，则可以填写实例的内网 IP。
+> 
+1. 将需要操作的实例 IP，SSH 端口，帐号，旧密码和新密码填写到 hosts.txt 文件中，每一行代表一个主机。例如：
+```
+10.0.0.1 22 root old_passwd new_passwd 
+10.0.0.2 22 root old_passwd new_passwd
+```
+2. 执行如下代码：
+```
+./batch-chpasswd.py
+```
+返回示例：
+```
+change password for root@10.0.0.1
+spawn ssh root@10.0.0.1 -p 22
+root's password: 
+Authentication successful.
+Last login: Tue Nov 17 20:22:25 2017 from 10.181.225.39
+[root@VM_18_18_centos ~]# echo root:root | chpasswd
+[root@VM_18_18_centos ~]# exit
+logout
+```
+```
+change password for root@10.0.0.2
+spawn ssh root@10.0.0.2 -p 22
+root's password: 
+Authentication successful.
+Last login: Mon Nov  9 15:19:22 2017 from 10.181.225.39
+[root@VM_19_150_centos ~]# echo root:root | chpasswd
+[root@VM_19_150_centos ~]# exit
+logout
+```

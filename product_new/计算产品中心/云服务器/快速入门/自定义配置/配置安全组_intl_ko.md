@@ -1,4 +1,4 @@
-본 문서는 보안 그룹 생성을 예시로 하여, 인스턴스 사용자 정의 구성 시 Tencent Cloud가 제공하는 보안 그룹 규칙을 사용해 보안 그룹을 처음 생성하는 방법에 대해 안내합니다. 관련된 자세한 내용은 [보안 그룹 작업](https://intl.intl.cloud.tencent.com/document/product/213/18197)을 참조하십시오.
+본 문서는 보안 그룹 생성을 예시로 하여, 인스턴스 사용자 정의 구성 시 Tencent Cloud가 제공하는 보안 그룹 규칙을 사용해 보안 그룹을 처음 생성하는 방법에 대해 안내합니다. 관련된 자세한 내용은 [보안 그룹 작업](https://intl.cloud.tencent.com/document/product/213/18197)을 참조하십시오.
 
 
 ## 보안 그룹 설정
@@ -11,7 +11,7 @@
 2. 실제 필요에 따라 Tencent Cloud에서 제공하는 보안 그룹 규칙을 선택하십시오.
 예를 들어 [**22, 80, 443, 3389 포트 및 ICMP 프로토콜 개방**]을 선택할 경우 [**보안 그룹 규칙**]에서 보안 그룹의 자세한 인바운드/아웃바운드 규칙은 아래와 같이 표시됩니다.
 3. 구성된 보안 그룹의 인바운드/아웃바운드 규칙이 만족스러울 경우 페이지의 안내에 따라 그 외의 정보를 구성한 후, [**다음 단계, 구성 정보 확인**]을 클릭하십시오.
-> Tencent Cloud에서 제공하는 두 가지 보안 그룹 규칙이 만족스럽지 않을 경우 [보안 그룹 응용 사례](https://cloud.tencent.com/document/product/213/34601)를 참조하여 [보안 그룹 생성](https://intl.intl.cloud.tencent.com/document/product/213/18197)을 진행할 수 있습니다. 보안상의 이유로 Tencent Cloud는 최대한 서비스에 필요한 포트만 개방하여 불필요한 보안 위험을 피하길 권장합니다.
+> Tencent Cloud에서 제공하는 두 가지 보안 그룹 규칙이 만족스럽지 않을 경우 [보안 그룹 응용 사례](https://intl.cloud.tencent.com/document/product/213/32369)를 참조하여 [보안 그룹 생성](https://intl.cloud.tencent.com/document/product/213/18197)을 진행할 수 있습니다. 보안상의 이유로 Tencent Cloud는 최대한 서비스에 필요한 포트만 개방하여 불필요한 보안 위험을 피하길 권장합니다.
 
 ## 보안 그룹 규칙
 
@@ -25,4 +25,4 @@
 
 ## 보안 그룹 제한
 
-자세한 내용은 [보안 그룹 관련 제한](https://cloud.tencent.com/document/product/213/15379?!editLang=zh&!preview#.E5.AE.89.E5.85.A8.E7.BB.84.E7.9B.B8.E5.85.B3.E9.99.90.E5.88.B6)을 참조하십시오.
+자세한 내용은 [보안 그룹 관련 제한](https://intl.cloud.tencent.com/document/product/213/15379)을 참조하십시오.

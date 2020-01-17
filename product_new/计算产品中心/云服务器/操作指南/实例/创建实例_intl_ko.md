@@ -14,21 +14,21 @@ CVM 인스턴스를 생성하기 전 다음 작업을 완료해야 합니다.
 
 ## 작업 순서
 
-1. [Tencent Cloud 공식 사이트](https://cloud.tencent.com)에 로그인한 후[제품]>[기본]>[컴퓨팅]>[[CVM](https://cloud.tencent.com/product/cvm)]선택 및[지금 구매]를 클릭하고 CVM 구매 페이지로 들어가십시오.
+1. [Tencent Cloud 공식 사이트](https://cloud.tencent.com)에 로그인한 후[제품]>[기본]>[컴퓨팅]>[[CVM](https://intl.cloud.tencent.com/product/cvm)]선택 및[지금 구매]를 클릭하고 CVM 구매 페이지로 들어가십시오.
  - **[빠른 구성](https://buy.cloud.tencent.com/cvm?tab=lite)：** 일반 환경에서 사용하기 적합하고 사용자의 요구에 부합되는 CVM 인스턴스를 선택할 수 있습니다
  - **[사용자 정의 구성](https://buy.cloud.tencent.com/cvm?tab=custom)：** 특정 환경에서 사용하기 적합하고 사용자의 특정 요구에 부합되는 CVM 인스턴스를 선택할 수 있습니다.
 2. 페이지 알림에 따라 다음 정보를 구성하십시오.
 <table>
 <tr><th style="width: 20%">유형</th><th style="width: 12%">필수/선택</th><th>구성 설명</th></tr>
-<tr><td>청구 모드</td><td>필수</td><td>실제 수요에 따라 선택하십시오：<ul><li><b>종량제</b>：CVM의 탄력적 청구 모드는 전자 상거래 사재기 등 장치 수요가 순간적으로 크게 변동하는 시나리오에 적용됩니다.</li><li><b>스팟 인스턴스</b>：일종의 새 인스턴스 작업 모드로써 빅 데이터 컴퓨팅, CLB 온라인 서비스 및 웹 사이트 서비스 등 시나리오에 적용되며 일반 가격 범위는 온디맨드 요금의 10%-20%입니다. <li></ul>청구 모드에 대한 자세한 내용은<a href="https://cloud.tencent.com/document/product/213/2180">에서 청구 모드 설명을</a>참조하십시오.</td></tr>
+<tr><td>청구 모드</td><td>필수</td><td>실제 수요에 따라 선택하십시오：<ul><li><b>종량제</b>：CVM의 탄력적 청구 모드는 전자 상거래 사재기 등 장치 수요가 순간적으로 크게 변동하는 시나리오에 적용됩니다.</li><li><b>스팟 인스턴스</b>：일종의 새 인스턴스 작업 모드로써 빅 데이터 컴퓨팅, CLB 온라인 서비스 및 웹 사이트 서비스 등 시나리오에 적용되며 일반 가격 범위는 온디맨드 요금의 10%-20%입니다. <li></ul>청구 모드에 대한 자세한 내용은<a href="https://intl.cloud.tencent.com/document/product/213/2180">에서 청구 모드 설명을</a>참조하십시오.</td></tr>
 <tr><td>리전/가용존</td><td>필수</td><td><ul><li><b>리전</b>：액세스 지연시간을 줄이고 액세스 속도를 향상하려면 고객과 가장 가까운 리전을 선택하는 것을 권장합니다.<li><li><b>가용존</b>：실제 수요에 따라 선택하십시오. <br>여러 CVM을 구매해야 할 경우 장애 복구를 위해 다양한 가용존을 선택하는 것을 권장합니다.</li></ul>선택 가능한 리전 및 가용존에 대한 소개는<a href="https://cloud.tencent.com/document/product/213/6091">리전 및 가용존</a>을 참조하십시오.</td></tr>
 <tr><td>네트워크</td><td>필수</td><td>Tencent Cloud에 구축된 논리적 격리를 나타내는 네트워크 용량으로써 VPC는 적어도 하나의 서브넷으로 구성됩니다. 시스템은 사용자를 위해 각 리전에 기본 VPC 및 서브넷을 제공합니다.<br>
 기존 VPC/서브넷이 사용자 수요를 충족하지 않으면 VPC 콘솔에서 생성할 수 있습니다. br><b>주의 사항</b>：<ul><li>동일한 VPC에서 리소스는 기본 인트라넷에 의해 상호 연결됩니다.</li><li>구매할 때 CVM과 가용존 속성이 같은 서브넷에 CVM을 생성해야 합니다.</li></ul></td></tr>
 <tr><td>인스턴스</td><td>필수</td><td>Tencent Cloud는 낮은 레이어 하드웨어에 따라 현재 다양한 인스턴스 유형을 제공합니다. 최상의 성능을 얻기 위해 차세대 인스턴스 유형을 사용할 것을 권장합니다.<br>
-더 많은 인스턴스에 관한 자세한 내용은<a href="https://cloud.tencent.com/document/product/213/11518">인스턴스 규격</a>을 참조하십시오.</td></tr>
-<tr><td>미러 이미지</td><td>필수</td><td>Tencent Cloud는 공용 이미지, 사용자 정의 이미지, 공유 이미지 및 마켓플레이스를 제공하므로<a href="https://cloud.tencent.com/document/product/213/4941">에서 미러 이미지 유형을 참조하고</a>선택하십시오.</td></tr>
-<tr><td><a href="https://cloud.tencent.com/document/product/362/2353">시스템 디스크</a></td><td>필수</td><td>운영 체제 설치에 사용되는 기본 값은 50GB입니다.</br>다양한 리전은 CBS 유형의 선택에 영향을 줄 수 있으므로 실제 페이지의 알림에 따라 선택하십시오.</br>CBS에 대한 자세한 내용은<a href="https://cloud.tencent.com/document/product/362/2353">에서 CBS 유형을</a>참조하십시오.</td></tr>
-<tr><td><a href="https://cloud.tencent.com/document/product/362/2353">데이터 디스크</a></td><td>선택</td><td>CVM의 스토리지 용량 확장에 사용되며 효율적이고 신뢰할 수 있는 스토리지 장치를 제공합니다. 기본 CBS 데이터 디스크는 추가하지 않습니다.</br>CBS에 대한 자세한 내용은<a href="https://cloud.tencent.com/document/product/362/2353">에서 CBS 유형을</a>참조하십시오.</td></tr>
+더 많은 인스턴스에 관한 자세한 내용은<a href="https://intl.cloud.tencent.com/document/product/213/11518">인스턴스 규격</a>을 참조하십시오.</td></tr>
+<tr><td>미러 이미지</td><td>필수</td><td>Tencent Cloud는 공용 이미지, 사용자 정의 이미지, 공유 이미지 및 마켓플레이스를 제공하므로<a href="https://intl.cloud.tencent.com/document/product/213/4941">에서 미러 이미지 유형을 참조하고</a>선택하십시오.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">시스템 디스크</a></td><td>필수</td><td>운영 체제 설치에 사용되는 기본 값은 50GB입니다.</br>다양한 리전은 CBS 유형의 선택에 영향을 줄 수 있으므로 실제 페이지의 알림에 따라 선택하십시오.</br>CBS에 대한 자세한 내용은<a href="https://intl.cloud.tencent.com/document/product/362/31636">에서 CBS 유형을</a>참조하십시오.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/362/31636">데이터 디스크</a></td><td>선택</td><td>CVM의 스토리지 용량 확장에 사용되며 효율적이고 신뢰할 수 있는 스토리지 장치를 제공합니다. 기본 CBS 데이터 디스크는 추가하지 않습니다.</br>CBS에 대한 자세한 내용은<a href="https://intl.cloud.tencent.com/document/product/362/31636">에서 CBS 유형을</a>참조하십시오.</td></tr>
 <tr><td>공용 네트워크 대역폭</td><td>필수</td><td>무료로 독립된 공용 네트워크 IP 주소를 할당합니다.</br>Tencent Cloud는 다음과 같이 두 가지 네트워크 청구 방식을 제공하므로 실제 수요에 따라 0Mbps보다 큰 값을 설정하십시오. <ul><li><b>대역폭 과금</b>：고정 대역폭을 선택하면 본 대역폭을 초과 시 패킷합니다. 네트워크 변동이 적은 환경에 적합합니다. <li><li><b>트래픽 사용량에 따라 과금</b>：실제 사용한 트래픽에 따라 청구합니다. 피크 대역폭을 제한하면 우발적으로 발생하는 트래픽 요금을 절감할 수 있으며 대역폭이 해당 값을 초과하면 제한합니다. 네트워크 변동이 큰 환경에 적합합니다.</li></ul><b>주의 사항</b>：무료로 할당된 독립적인 공용 네트워크 IP 주소는 인스턴스와 바인딩 해제할 수 없습니다. 해당 IP 주소를 바인딩 해제하려면 공용 네트워크 IP 주소를 EIP로 전환한 후 다시 바인딩 해제하십시오. EIP에 관한 자세한 내용은 <a href="https://cloud.tencent.com/document/product/213/5733">EIP</a>를 참조하십시오.</td></tr>
 <tr><td>공용 게이트웨이</td><td>선택</td><td>Linux관련 미러 이미지만 해당합니다.</br>공용망 게이트웨이는 VPC와 공용 네트워크의 일종 인터페이스로서 VPC의 다양한 서브넷에 공용 IP가 없는 CVM 요청을 전달할 수 있습니다. </br>자세한 내용은<a href="https://cloud.tencent.com/document/product/215/20078">공용망 게이트웨이</a>를 참조하십시오,</td></tr> 
 <tr><td>수량</td><td>필수</td><td>구매할 CVM 수량을 표시합니다.</td></tr>  

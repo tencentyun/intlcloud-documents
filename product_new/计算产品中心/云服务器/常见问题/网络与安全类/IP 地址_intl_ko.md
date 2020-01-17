@@ -1,18 +1,18 @@
 ### 공용 네트워크 IP 주소는 무엇입니까?
 
-[공용 네트워크 서비스](https://intl.intl.cloud.tencent.com/document/product/213/5224)에서 **공용 네트워크 IP 주소** 부분을 참조하십시오.
+[공용 네트워크 서비스](https://intl.cloud.tencent.com/document/product/213/5224)에서 **공용 네트워크 IP 주소** 부분을 참조하십시오.
 
 ### 개인 네트워크 IP 주소는 무엇입니까?
 
-[개인 네트워크 서비스](https://intl.intl.cloud.tencent.com/document/product/213/5225)에서 **개인 네트워크 IP 주소** 부분을 참조하십시오.
+[개인 네트워크 서비스](https://intl.cloud.tencent.com/document/product/213/5225)에서 **개인 네트워크 IP 주소** 부분을 참조하십시오.
 
 ### 인스턴스의 공용 네트워크 IP 주소는 어떻게 획득합니까?
 
-[공용 네트워크 서비스](https://intl.intl.cloud.tencent.com/document/product/213/5224)에서 **인스턴스의 공용 네트워크 IP 주소 획득** 부분을 참조하십시오.
+[공용 네트워크 서비스](https://intl.cloud.tencent.com/document/product/213/5224)에서 **인스턴스의 공용 네트워크 IP 주소 획득** 부분을 참조하십시오.
 
 ### 인스턴스의 개인 네트워크 IP 주소는 어떻게 획득합니까?
 
-[개인 네트워크 서비스](https://intl.intl.cloud.tencent.com/document/product/213/5225)에서 **인스턴스 개인 네트워크 IP 주소 가져오기** 부분을 참조하십시오.
+[개인 네트워크 서비스](https://intl.cloud.tencent.com/document/product/213/5225)에서 **인스턴스 개인 네트워크 IP 주소 가져오기** 부분을 참조하십시오.
 
 ### 인스턴스 공용 네트워크 IP를 변경하는 방법은 무엇입니까?
 

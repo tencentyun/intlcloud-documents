@@ -1,18 +1,18 @@
 ### パブリックIPアドレスは何ですか？
 
-[パブリックサービス](https://intl.intl.cloud.tencent.com/document/product/213/5224)の **パブリックIPアドレス** 部分をご参照ください。
+[パブリックサービス](https://intl.cloud.tencent.com/document/product/213/5224)の **パブリックIPアドレス** 部分をご参照ください。
 
 ### プライベートIPアドレスは何ですか？
 
-[プライベートサービス](https://intl.intl.cloud.tencent.com/document/product/213/5225) の**プライベートIPアドレス** 部分をご参照てください。
+[プライベートサービス](https://intl.cloud.tencent.com/document/product/213/5225) の**プライベートIPアドレス** 部分をご参照てください。
 
 ### どのようにインスタンスのパブリックIPアドレスを取得しますか？
 
-[パブリックサービス](https://intl.intl.cloud.tencent.com/document/product/213/5224) の**インスタンスのパブリックIPアドレスを取得する** 部分をご参照ください。
+[パブリックサービス](https://intl.cloud.tencent.com/document/product/213/5224) の**インスタンスのパブリックIPアドレスを取得する** 部分をご参照ください。
 
 ### どのようにインスタンスのプライベートIPアドレスを取得しますか？
 
-[プライベートサービス](https://intl.intl.cloud.tencent.com/document/product/213/5225)の **インスタンスのプライベートIPアドレスを取得する** 部分をご参照ください。
+[プライベートサービス](https://intl.cloud.tencent.com/document/product/213/5225)の **インスタンスのプライベートIPアドレスを取得する** 部分をご参照ください。
 
 ### どのようにインスタンスのパブリックIPを変更しますか？
 

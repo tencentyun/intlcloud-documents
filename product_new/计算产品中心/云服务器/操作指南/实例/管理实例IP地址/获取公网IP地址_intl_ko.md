@@ -17,7 +17,7 @@
 <span id = "jump">  </span>
 ### 인스턴스 메타데이터를 사용하여 획득하기
 1. CVM 인스턴스에 로그인하십시오.
-로그인 방법은 [Linux 인스턴스 로그인](https://cloud.tencent.com/document/product/213/16515)과 [Windows 인스턴스 로그인](https://cloud.tencent.com/document/product/213/35697)을 참조하십시오.
+로그인 방법은 [Linux 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/5436)과 [Windows 인스턴스 로그인](https://intl.cloud.tencent.com/document/product/213/32498)을 참조하십시오.
 2. cURL 툴 및 HTTP의 GET 요청을 통해 metadata에 액세스하고 공인 IP 주소를 획득합니다.
 ```
 curl http://metadata.tencentyun.com/meta-data/public-ipv4

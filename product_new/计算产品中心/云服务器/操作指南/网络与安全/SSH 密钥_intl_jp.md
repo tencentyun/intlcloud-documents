@@ -45,4 +45,4 @@
 
 1. [SSH キーを作成する](#creatSSH)。
 2. [SSH キーをCVMにバインドする](#bindingSSH)。
-3. [SSH キーを利用して、Linux インスタンスにログインする](https://cloud.tencent.com/document/product/213/35700)。
+3. [SSH キーを利用して、Linux インスタンスにログインする](https://intl.cloud.tencent.com/document/product/213/32501)。

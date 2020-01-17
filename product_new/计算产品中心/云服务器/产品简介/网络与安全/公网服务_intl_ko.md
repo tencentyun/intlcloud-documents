@@ -2,7 +2,7 @@
 
 ## 공용 네트워크 IP 주소
  - **개요：** 공용 네트워크 IP 주소는 Internet의 비저장 주소이며 공용 네트워크 IP 주소가 있는 CVM은 Internet의 다른 컴퓨터와 서로 액세스 가능합니다. 
- - **획득：**CVM을 생성할 때 네트워크에 0Mbps 보다 큰 대역폭을 설정하면 완료한 뒤 Tencent Cloud 시스템이 자동으로 Tencent Cloud 공유 IP 주소 풀에서 해당 인스턴스를 위해 1개 공유 IP 주소를 할당합니다. 이 주소는 변경 가능하며 작업에 대한 자세한 내용은 [공용 네트워크 IP 변경](https://intl.intl.cloud.tencent.com/document/product/213/16642) 을 참조하십시오.
+ - **획득：**CVM을 생성할 때 네트워크에 0Mbps 보다 큰 대역폭을 설정하면 완료한 뒤 Tencent Cloud 시스템이 자동으로 Tencent Cloud 공유 IP 주소 풀에서 해당 인스턴스를 위해 1개 공유 IP 주소를 할당합니다. 이 주소는 변경 가능하며 작업에 대한 자세한 내용은 [공용 네트워크 IP 변경](https://intl.cloud.tencent.com/document/product/213/16642) 을 참조하십시오.
  -**구성：** Internet에서 공용 네트워크 IP 주소로 CVM 인스턴스에 로그인하여 구성할 수 있습니다. CVM 인스턴스 로그인에 대한 자세한 내용은 [Linux 인스턴스 로그인](/doc/product/213/5436) 및 [Windows 인스턴스 로그인](/doc/product/213/5435) 을 참조하십시오.
  - **전환：**공유 IP 주소는 네트워크 주소를 통해 (NAT)로 전환되어 인스턴스의 [개인 IP 주소](/doc/product/213/5225) 에 매핑됩니다. 
  - **유지 보수：**Tencent Cloud의 모든 공용 네트워크 인터페이스는 Tencent Gateway(TGW)에 의해 일괄 처리됩니다. Tencent Cloud CVM 인스턴스의 공용 네트워크 ENI는 통합 인터페이스 레이어 TGW에 배포되어 있어 CVM은 감지 불가 합니다. 그러므로 사용자는 CVM에서 `ifconfig (Linux)`및 `ipconfig (Windows)` 커맨드를 통해 네트워크 인터페이스 정보를 조회할 경우 [개인 네트워크](/doc/product/213/5225) 정보만 조회할 수 있습니다. 공용 네트워크 정보는 사용자가 [CVM 콘솔](https://console.cloud.tencent.com/cvm) 에 로그인하고 CVM 목록/상세 페이지에서 조회할 수 있습니다.
@@ -19,4 +19,4 @@
 ## 운영 가이드
 사용자는 공용 네트워크 IP 주소를 획득 및 변경 등 작업을 실행할 수 있으므로 자세한 안내는 다음을 참조하십시오.
 - [인스턴스 공용 네트워크 IP 주소 획득](https://intl.cloud.tencent.com/document/product/213/17940)
-- [인스턴스 공용 네트워크 IP 주소 변경](https://intl.intl.cloud.tencent.com/document/product/213/16642)
+- [인스턴스 공용 네트워크 IP 주소 변경](https://intl.cloud.tencent.com/document/product/213/16642)

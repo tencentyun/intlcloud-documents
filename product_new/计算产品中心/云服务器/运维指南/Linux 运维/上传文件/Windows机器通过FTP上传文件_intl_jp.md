@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-CVMに [FTPサービスの構築](https://intl.intl.intl.cloud.tencent.com/document/product/213/10912)を実施しました。
+CVMに [FTPサービスの構築](https://intl.cloud.tencent.com/document/product/213/10912)を実施しました。
 
 ## 操作手順
 
@@ -16,8 +16,8 @@ CVMに [FTPサービスの構築](https://intl.intl.intl.cloud.tencent.com/docum
 4. FileZillaウィンドウで、ホスト、ユーザー名、パスワード、ポート情報などを入力し、【クィック接続】をクリックします。 以下に示すように：
 **構成情報の説明：**
  - ホスト：CVMのパブリックIPです。 [CVMコンソール](https://console.cloud.tencent.com/cvm)のインスタンス管理画面で、該当CVMのパブリックIPを確認できます。
- - ユーザー名：[FTPサービスの構築](https://intl.intl.intl.cloud.tencent.com/document/product/213/10912) で設定されたFTPユーザーのアカウントです。 図では、「ftpuser1」を例として説明します。
- - パスワード：[FTPサービスの構築](https://intl.intl.intl.cloud.tencent.com/document/product/213/10912)で設定されたFTPユーザーアカウントのパスワードです。
+ - ユーザー名：[FTPサービスの構築](https://intl.cloud.tencent.com/document/product/213/10912) で設定されたFTPユーザーのアカウントです。 図では、「ftpuser1」を例として説明します。
+ - パスワード：[FTPサービスの構築](https://intl.cloud.tencent.com/document/product/213/10912)で設定されたFTPユーザーアカウントのパスワードです。
  - ポート：FTPの監視ポートです。デフォルトは** 21 **です。
 5.左下の「ローカルサイト」ウィンドウで、アップロード対象のローカルファイルを右クリックし、【アップロード】を選択してLinux CVMにファイルをアップロードします。以下の図に示すように：
 > 

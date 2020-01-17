@@ -26,7 +26,7 @@ DiskInternals Linux Reader 소프트웨어 획득 방법: `http://www.diskintern
 >
 ![](https://main.qcloudimg.com/raw/490428b0668dcd61c4c60bcb75121462.png)
 2. `/root/mnt` 디렉터리를 더블 클릭하고 복사할 파일을 마우스 우클릭으로 클릭한 후 [저장]을 선택하여 파일을 저장하십시오. 아래 이미지를 참조하십시오.
-![](https://main.qcloudimg.com/raw/2d2f39e89014f72aaef1bfc3d1d101f3.png)
+![](https://main.qcloudimg.com/raw/a7caf7bcfcd33162bff11c121a64a7f5.png)
 
 
 
