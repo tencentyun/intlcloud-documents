@@ -10,4 +10,4 @@
 3. 【OK】をクリックします。
 
 ### API を利用してスナップショットを削除する
- DeleteSnapshots インターフェースを利用してスナップショットを削除します。詳細については、 [スナップショットの削除](https://cloud.tencent.com/document/product/362/15645) をご参照してください。
+ DeleteSnapshots インターフェースを利用してスナップショットを削除します。詳細については、 [スナップショットの削除](https://intl.cloud.tencent.com/document/product/362/15645) をご参照してください。
