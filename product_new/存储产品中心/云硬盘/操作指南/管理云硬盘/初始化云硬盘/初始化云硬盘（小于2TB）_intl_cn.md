@@ -7,7 +7,7 @@
 >- 格式化数据盘会将数据将被全部清空，请确保数据盘中没有数据或已备份重要数据。
 >- 为避免服务发生异常，格式化前请确保云服务器已停止对外服务。
 >
-已 [挂载云硬盘](https://intl.cloud.tencent.com/doc/product/362/5745) 至云服务器。
+已 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401) 至云服务器。
 
 ## 操作步骤
 
@@ -306,5 +306,5 @@ UUID=d489ca1c-5057-4536-81cb-ceb2847f9954 /data/newpart   ext4 defaults     0   
 如果运行通过则说明文件写入成功，新建的文件系统会在操作系统启动时自动挂载。
 
 ## 相关操作
-[初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/document/product/362/6735)
+[初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/document/product/362/31598)
 
