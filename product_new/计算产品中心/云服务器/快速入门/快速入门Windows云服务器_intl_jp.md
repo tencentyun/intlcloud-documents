@@ -12,17 +12,17 @@ Tencent Cloud International Stationは現在、**カスタマイズ設定**の�
 | **セキュリティグループの設定** |  デフォルトの設定です。 デフォルトでは、ポート20、80、443、3389およびICMPプロトコルがオープンされ、プライベートネットワークは全てインターネットにオープンされて、他のポートによる外部アクセスは禁止されています。  | カスタマイズ設定では、セキュリティグループ規則をカスタマイズできます。 |
 | **その他** |  アベイラビリティーゾーン、項目、ホスト名などは自動的にアサインされ、購入後に修正できます。 | 購入時に構成をカスタマイズします。 |
 
-##ステップ１：登録と認証
+## ステップ１：登録と認証
 CVMを利用する前に、次の準備を完了する必要があります。
 1. Tencent Cloudを登録し、実名認証を完了させます。
-新規ユーザーは、Tencent Cloud公式サイトで[登録](https://intl.cloud.tencent.com/register)を行い、詳細については、[ Tencent Cloudの登録](https://intl.cloud.tencent.com/document / product / 378/17985)をご参照ください。
+新規ユーザーは、Tencent Cloud公式サイトで[登録](https://intl.cloud.tencent.com/register)を行い、詳細については、[Tencent Cloudの登録](https://intl.cloud.tencent.com/document/product/378/17985)をご参照ください。
 2. [Tencent Cloud CVMの紹介画面](https://intl.cloud.tencent.com/product/cvm)にアクセスし、【今すぐ購入】をクリックします。
 
-##ステップ2：設定タイプの選択
+## ステップ2：設定タイプの選択
 
 [Windows CVMのカスタマイズ設定](https://cloud.tencent.com/doc/product/213/10516)のドキュメントを参照して設定します。
 
-###CVMのリージョンとアベイラビリティーゾーンを選択する
+### CVMのリージョンとアベイラビリティーゾーンを選択する
 
 次の原則に従ってリージョンを選択し、クイック設定したCVMに対して、デフォルトではランダムにアベイラビリティーゾーンをアサインします。
 - ユーザーに近い原則
@@ -40,12 +40,6 @@ CVMを利用する前に、次の準備を完了する必要があります。
 | 共通設定 | シリーズ2：標準型2コアCPU、4Gメモリ | 50G高性能Cloud Block Storage(システムディスク) | 並列処理APPまたは一般的なデータ処理に適し、例えばポータルサイト、SaaSソフトウェア、小規模なAPP。 |
 | プロフェッショナル設定 | シリーズ2：標準型の4コアCPU、8Gメモリ | 50G高性能Cloud Block Storage(システムディスク) | 並列処理の要求が高いアプリケーションに適し、CVMネットワークとコンピューティングパフォーマンスに要求があるユースケースも適します。例えば、大規模なポータルサイト、ECサイト、ゲームAPP。 |
 
-
-
-### イメージの選択
-
-本文では、Windowsインスタンスの購入とログインについて説明します、Windowsを選択してイメージを提供してください。 
-![](https://main.qcloudimg.com/raw/3b941704ba3357682ba1f71849d81790.png)
 > Windows CVMを[パブリックゲートウエイ](https://intl.cloud.tencent.com/document/product/215/4972)として利用できず、パブリックゲートウェイが必要なユーザーは、Linuxシステムを選択してください。詳細については、[Linux CVMのクイックスタート](https://intl.cloud.tencent.com/document/product/213/2936)ドキュメントをご参照ください。
 
 
