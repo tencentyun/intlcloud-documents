@@ -431,7 +431,7 @@ df -h
 下図に示すような情報が返された場合、マウントが成功したことを示し、データディスクを確認できます。
 ![](//mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
 
->?CVMがリスタートまたはスタートアップする時にデータディスクを自動的にマウントさせる場合、[ステップ10](#AddNewPartINFOstep10) および[ステップ11](#AddNewPartINFOstep11) を実行して新しいパーティション情報を`/etc/fstab`に追加する必要があります。
+> CVMがリスタートまたはスタートアップする時にデータディスクを自動的にマウントさせる場合、[ステップ10](#AddNewPartINFOstep10) および[ステップ11](#AddNewPartINFOstep11) を実行して新しいパーティション情報を`/etc/fstab`に追加する必要があります。
 
 <span id="AddNewPartINFOstep10"></span>
 10. 次のコマンドを実行して、情報を追加します。
