@@ -13,7 +13,7 @@ CVMに[CBSをマウント](https://intl.cloud.tencent.com/document/product/362/3
 
 <span id="Windows2008"></span>
 ### CBSの初期化（Windows）
->?このドキュメントは Windows Server 2008 OSを例として、OSによってフォーマット操作が異なる場合があり、このドキュメントはあくまで参考です。
+> このドキュメントは Windows Server 2008 OSを例として、OSによってフォーマット操作が異なる場合があり、このドキュメントはあくまで参考です。
 
 1. [ Windows CVMにログインします](https://intl.cloud.tencent.com/document/product/213/5435)。
 2. CVMのデスクトップで、【開始】をクリックします。
