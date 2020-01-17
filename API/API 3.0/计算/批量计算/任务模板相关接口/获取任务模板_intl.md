@@ -113,8 +113,8 @@ https://batch.tencentcloudapi.com/?Action=DescribeTaskTemplates
           "Authentications": [
             {
               "Scene": "COS",
-              "SecretId": "AKIDHS4Zs1esoxBRkwqugIiyDTfkjXIsvn6M",
-              "SecretKey": "SlxCco25zhH0dabfhYDqyym4ED0PglgZ"
+              "SecretId": "AKIDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+              "SecretKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             }
           ],
           "ComputeEnv": {
