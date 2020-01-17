@@ -7,7 +7,7 @@
 >- データディスクをフォーマットすることによりすべてのデータがクリアされるため、データディスクにデータを保存しないか、重要なデータがバックアップされたことを確認してください。
 >- サービス異常を回避するために、フォーマットを実行する前に、CVMが外部へのサービスを停止したことを確認してください。
 >
-CVMに[CBSをマウント](/doc/product/362/5745)しました。
+CVMに[CBSをマウント](https://intl.cloud.tencent.com/document/product/362/32401)しました。
 
 ## 操作手順
 
@@ -19,35 +19,24 @@ CVMに[CBSをマウント](/doc/product/362/5745)しました。
 2. CVMのデスクトップで、【開始】をクリックします。
 3. スタートメニューの【コンピュータ】を右クリックし、【管理】を選択します。
 4. 左側のナビゲーションバーで、【ストレージ】>【ディスク管理】を選択します。【ディスク管理】の画面にアクセスします。
- ![](https://main.qcloudimg.com/raw/6ccd2a2958137036311a9eb02c0b430b.png)
 
 >?新規ディスクがオフライン状態である場合（上図に示すように）、まず[ステップ5](#online) を実行し、オンラインにした後 [ステップ6](#initialize) を実行して、初期化を行います。それ以外の場合は [ステップ6](#initialize) を直接実行して、初期化を行います。
 
 <span id="online"></span>
 5. 右側のペインにディスクリストが表示されますので、ディスク1領域を右クリックし、メニューリストで【オンライン】を選択し、オンライン処理を行います。オンラインした後、ディスク1は【オフライン】状態から【未初期化】に変換します。
- ![](https://main.qcloudimg.com/raw/a6b5296ab23c0c361440b7d5b97bc493.png)
  
 <span id="initialize"></span>
 6. ディスク1領域を右クリックし、メニューリストで【ディスクの初期化】を選択します。
- ![](https://main.qcloudimg.com/raw/b38f04f488ff40b26e12d33aa1f83ee1.png)
 7. 【ディスクの初期化】ダイアログボックスで初期化するディスクが表示され、【MBR（マスターブートレコード）】あるいは【GPT（GUID パーティションテーブル）】を選択して、【OK】をクリックします。
 >!ディスクの使用が開始した後、ディスクパーティション形式を置き換え、ディスクの元のデータが全部クリアされるため、実際の需要に応じてパーティション形式を合理的に選択します。
 >
- ![](https://main.qcloudimg.com/raw/a7de4fb54fb5585a3a2ee808566679af.png)
 8. ディスク上のアサインされていない領域を右クリックし、【シンプルボリュームの新規作成】を選択します。
- ![](https://main.qcloudimg.com/raw/f7d4e90dfd4d766ca80a6ab35b991d89.png)
 9. 【シンプルボリューム新規作成のガイド】ダイアログボックスで、インターフェースプロンプトに従って、【次へ】をクリックします。
- ![](https://main.qcloudimg.com/raw/205037d66e5f7fbd844be0a9c1ba3852.png)
 10. 実際の状況に応じてボリュームサイズを指定し、デフォルトは最大値であり、【次へ】をクリックします。
 11. ドライバー番号をアサインし、【次へ】をクリックします。
- ![](https://main.qcloudimg.com/raw/68478d5a03ce84be545c8792ea355324.png)
 12. 【下記の設定手順に従ってボリュームをフォーマットする】を選択し、実際の状況に応じて、パラメータを設定し、新しいパーティションをフォーマットし、【次へ】をクリックして、パーティションの作成を完成します。
- ![](https://main.qcloudimg.com/raw/3519b7d616dadbea6789ae2201a6f5ea.png)
 13. 【完成】をクリックして、ガイドラインを完成します。初期化を完成させるまでしばらく待つ必要があり、ボリュームのステータスが[状態良好]の場合、ディスクの初期化が成功したことを示します。
-  ![](https://main.qcloudimg.com/raw/bb944e741233634c15b957a6ea1b1fee.png)
   初期化が成功した後、【コンピューター】のインターフェースで新しいディスクを確認できます。
-  ![](https://main.qcloudimg.com/raw/f54cd20f227707853eb8c9a8a6142ebf.png)
-
 <span id="Linux"></span>
 ### CBSの初期化（Linux）
 
@@ -58,7 +47,7 @@ CVMに[CBSをマウント](/doc/product/362/5745)しました。
 <span id="CreateFileSystemOnBareDevice"></span>
 #### ベアデバイスでファイルシステムを構築する
 
-1. [ Linux CVM にログインします](https://intl.intl.cloud.tencent.com/document/product/213/5436)。
+1. [ Linux CVM にログインします](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. rootユーザーとして以下のコマンドを実行して、ディスクの名称を確認します。
  ```
 fdisk -l
@@ -158,7 +147,7 @@ mount -a
 >?この操作はCentOS 7.5 OSでfdisk パーティションツールを使用して、データディスク `/dev/vdb`をプライマリパーティションに設定し、パーティションの形式はデフォルトで MBRに設定し、ファイルシステムのフォーマットはEXT4に設定し、`/data/newpart`の配下にマウントして、スタートアップする時に自動マウントを設定することを例として説明します。各OSのフォーマット操作が異なるため、このドキュメントはあくまで参考です。
 >
 
-1. [ Linux CVM にログインします](https://intl.intl.cloud.tencent.com/document/product/213/5436)。
+1. [ Linux CVM にログインします](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. rootユーザーとして以下のコマンドを実行して、ディスクの名称を確認します。
  ```
 fdisk -l
@@ -306,5 +295,5 @@ UUID=d489ca1c-5057-4536-81cb-ceb2847f9954 /data/newpart   ext4 defaults   �
 操作が成功すると、ファイルは正常に書き込まれ、OSが起動する時に新規作成されたファイルシステムが自動的にマウントされます。
 
 ## 関連操作
-[CBSの初期化（2TB以上）](https://intl.cloud.tencent.com/document/product/362/6735)
+[CBSの初期化（2TB以上）](https://intl.cloud.tencent.com/document/product/362/31598)
 
