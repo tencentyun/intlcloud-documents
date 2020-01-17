@@ -1,15 +1,15 @@
 ## ユースケース
 CBSはクラウドにおいて拡張可能なストレージデバイスであり、いつでもCBSを作成してサイズを拡張できます。ストレージキャパシティーを増やし、同時にCBSの元のデータが損失されません。
-[CBSのスケールアウト](https://cloud.tencent.com/document/product/362/5747) が完了した後、スケールアウトした容量を既存のパーティションに割り当て、またはスケールアウトした容量を独立した新しいパーティションにフォーマットする必要があります。
+[CBSのスケールアウト](https://intl.cloud.tencent.com/document/product/362/5747) が完了した後、スケールアウトした容量を既存のパーティションに割り当て、またはスケールアウトした容量を独立した新しいパーティションにフォーマットする必要があります。
 
 
 
 ## 前提条件
->!不適切なファイルシステムのスケールアウト操作は既存のデータに影響を与える可能性があるため、操作する前に手動で[スナップショットを作成して](https://cloud.tencent.com/document/product/362/5755) データをバックアップすることを強くお勧めします。
+>!不適切なファイルシステムのスケールアウト操作は既存のデータに影響を与える可能性があるため、操作する前に手動で[スナップショットを作成して](https://intl.cloud.tencent.com/document/product/362/5755) データをバックアップすることを強くお勧めします。
 >
-- [CBSをスケールアウト](https://cloud.tencent.com/document/product/362/5747) しました。
-- このCBSがすでにLinux CVMに[マウント](https://cloud.tencent.com/document/product/362/5745) されており、ファイルシステムも作成されました。
-- 拡張待ちパーティションとファイルシステムのLinux CVMに[ログイン](https://cloud.tencent.com/document/product/213/5436) しました。
+- [CBSをスケールアウト](https://intl.cloud.tencent.com/document/product/362/5747) しました。
+- このCBSがすでにLinux CVMに[マウント](https://intl.cloud.tencent.com/document/product/362/5745) されており、ファイルシステムも作成されました。
+- 拡張待ちパーティションとファイルシステムのLinux CVMに[ログイン](https://intl.cloud.tencent.com/document/product/213/5436) しました。
 
 ## 操作手順
 ### 拡張方法を確認する
@@ -447,4 +447,4 @@ cat /etc/fstab
 ![](//mccdn.qcloud.com/static/img/f0b5c14bf08fd3629ddf6d9b1ae01ffc/image.png)
 
 ## 関連操作
-[パーティションとファイルシステム（Windows）を拡張する](https://cloud.tencent.com/document/product/362/6737)
+[パーティションとファイルシステム（Windows）を拡張する](https://intl.cloud.tencent.com/document/product/362/6737)
