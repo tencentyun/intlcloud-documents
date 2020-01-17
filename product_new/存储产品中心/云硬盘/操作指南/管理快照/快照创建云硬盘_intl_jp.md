@@ -70,6 +70,7 @@
   1. 仕様を確認した後、実際の状況に応じて金券を使用するかどうかを選択し、【購入の確定】をクリックします。
   2. 支払いが完了します。
  </ol>
+ 
 5. [ CBSリスト](https://console.cloud.tencent.com/cvm/cbs) 画面で、作成されたCBSを確認できます。新しく作成されたElastic CBS は【マウント待ち】状態です。 [ CBSのマウント](https://intl.cloud.tencent.com/document/product/362/5745) を参照して、CBS を同じアベイラビリティソーンのCVMにマウントします。
 
 ### API を利用してスナップショットからCBSを作成する
