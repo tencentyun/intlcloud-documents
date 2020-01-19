@@ -1,4 +1,4 @@
-- If you are a Tencent Cloud VIP customer, you can contact your Tencent Cloud sales rep for assistance to change your billing mode.
+> If you are a Tencent Cloud VIP customer, you can contact your Tencent Cloud sales rep for assistance to change your billing mode.
 
 If you find the selected billing mode is not suitable for your business needs during use, you can change it according to [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949).
 
