@@ -32,21 +32,21 @@ The VOD superplayer implements video playback via the HTML5 `<video>` tag and Fl
 The player is compatible with common browsers and can automatically identify the platform to use the optimal playback scheme. For example, it will use the Flash player in IE 11/10/9/8 to enable the browser to play HLS videos through HTML5, preferably use the HTML5 technology in modern browsers such as Chrome for video playback, and directly use the HTML5 technology or the browser kernel capabilities in mobile browsers.
 
 ### Adaptive bitrate streaming service on the VOD Platform
-Currently, the most widely used adaptive bitstream formats are HLS and Dash. Adaptive bitrate streaming supports dynamic selection of the appropriate bitrate based on bandwidth and commercial-grade DRM, while the player only plays back the adaptive streams of videos. Therefore, videos to be played back via this player need to be [transcoded to adaptive bitstream](https://cloud.tencent.com/document/product/266/34071) through VOD.
+Currently, the most widely used adaptive bitstream formats are HLS and Dash. Adaptive bitrate streaming supports dynamic selection of the appropriate bitrate based on bandwidth and commercial-grade DRM, while the player only plays back the adaptive streams of videos. Therefore, videos to be played back via this player need to be [transcoded to adaptive bitstream](https://intl.cloud.tencent.com/document/product/266/33942) through VOD.
 
 ## Preparations
 ### Step 1. Activate the service
-Sign up for a Tencent Cloud account at [Tencent Cloud's official website](https://cloud.tencent.com/) and activate the VOD service.
+Sign up for a Tencent Cloud account at [Tencent Cloud's official website](https://intl.cloud.tencent.com/) and activate the VOD service.
 ### Step 2. Upload a video and transcode it
-After the VOD service is activated, you need to [upload a video](https://cloud.tencent.com/document/product/266/2841#.E4.B8.8A.E4.BC.A0.E8.A7.86.E9.A2.91) and [transcode](https://cloud.tencent.com/document/product/266/2841#.E5.A4.84.E7.90.86.E8.A7.86.E9.A2.91) it.
+After the VOD service is activated, you need to [upload a video](https://intl.cloud.tencent.com/document/product/266/33890) and [transcode](https://intl.cloud.tencent.com/document/product/266/33890) it.
 ### Step 3. Get the ID and APPID
-1. Get ID (`fileid`): after a video is uploaded, you can [view the video ID](https://cloud.tencent.com/document/product/266/2841#.E5.BF.AB.E6.8D.B7.E6.9F.A5.E7.9C.8B.E8.A7.86.E9.A2.91.E4.BF.A1.E6.81.AF) in "Media Assets".
+1. Get ID (`fileid`): after a video is uploaded, you can [view the video ID](https://intl.cloud.tencent.com/document/product/266/33890) in "Media Assets".
 
 2. Get APPID: it can be viewed in **Tencent Cloud Console** > **[Account Info](https://console.cloud.tencent.com/developer)**.
 
 ### Step 4. Transcode to adaptive bitstream and get `playDefinition`
-You can initiate an [adaptive bitrate streaming](https://cloud.tencent.com/document/product/266/34071) task for the uploaded video through [ProcessMedia](https://cloud.tencent.com/document/product/266/33427):
-You are recommended to enter 10 for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition` in the API parameter, indicating transcoding to adaptive bitstream in HLS format. For common parameter combinations, VOD provides a [preset adaptive bitrate streaming template](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF).
+You can initiate an [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) task for the uploaded video through ProcessMedia <!-- (https://intL.cloud.tencent.com/document/product/266/33427#APIplaceholder) -->:
+You are recommended to enter 10 for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition` in the API parameter, indicating transcoding to adaptive bitstream in HLS format. For common parameter combinations, VOD provides a [preset adaptive bitrate streaming template](https://intl.cloud.tencent.com/document/product/266/33932#preset-adaptive-bitrate-streaming-templates).
 
 
 ## Initializing Web Player
@@ -234,7 +234,7 @@ Example: [Mirroring feature](https://imgcache.qq.com/open/qcloud/video/tcplayer/
 >This feature is unavailable for browser-hijacking playback.
 
 ### Progress bar marking
-You can enable progress bar marking in the player by [adding timestamps](https://cloud.tencent.com/document/product/266/14190) through the server API as shown below:
+You can enable progress bar marking in the player by adding timestamps <!--API (https://intl.cloud.tencent.com/document/product/266/14190)--> through the server API as shown below:
 ![](https://main.qcloudimg.com/raw/70d880065adce22cb64270f4999558f8.png)
 
 How to enable in the player:
