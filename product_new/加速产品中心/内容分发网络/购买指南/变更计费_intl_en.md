@@ -13,4 +13,5 @@ The billing mode used to calculate the generated consumption on the current day 
 2. Change the original billing mode **Bill-by-traffic** to **Bill-by-bandwidth** and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/f611bf8653bce37ace29e99ebbb75f7b.png)
 3. After the billing mode is changed to **Bill-by-bandwidth**, your traffic package will no longer be deducted.
+![](https://main.qcloudimg.com/raw/ea7c507ae6aa4399caff71091e1331bf.png)
 4. You can repeat the previous steps to cancel the switch.
