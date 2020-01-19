@@ -9,8 +9,8 @@ The billing mode used to calculate the generated consumption on the current day 
 
 ## How to change billing mode
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Overview** on the left sidebar to enter the management page and click **Change** in the right.
- ![](https://main.qcloudimg.com/raw/1c74aed03457752b4831ad0ec91cedb0.png)
+ ![](https://main.qcloudimg.com/raw/11ba290746b4ed66736119d94175e367.png)
 2. Change the original billing mode **Bill-by-traffic** to **Bill-by-bandwidth** and click **Confirm**.
-![](https://main.qcloudimg.com/raw/cc9722cc784b4c3591c95443c184b0a4.png)
+![](https://main.qcloudimg.com/raw/f611bf8653bce37ace29e99ebbb75f7b.png)
 3. After the billing mode is changed to **Bill-by-bandwidth**, your traffic package will no longer be deducted.
 4. You can repeat the previous steps to cancel the switch.
