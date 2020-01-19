@@ -4,7 +4,7 @@
 1. 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)。
 2. 在左侧菜单中，选择【服务查询】>【全网状态监控】，进入全网状态监控页面。
 3. 您可以在**全网实时状态概览**中查看各区域的时延及可用性。
-![全网概览](https://main.qcloudimg.com/raw/b0850c1afc39c87851b37a89c8b4f071.png)
+![全网概览](https://main.qcloudimg.com/raw/b7a54f611db4c89ac4e9812f3266bf26.png)
 >
 > + 图中展示了三大运营商数据，包括移动、联通、电信。计算平均时延或可用性时，包含了中小型运营商的数据。
 > + 图中实时数据刷新时间为1分钟。
@@ -12,7 +12,7 @@
 ## 全网状态详情
 您可以在**全网状态详情**中查询指定时间区间，指定地域、运营商的历史时延、可用性曲线。
 1. 单击【添加查询】即可增加新的查询内容。
-![全网查询](https://main.qcloudimg.com/raw/c51f67fdd79007c21bae0a4d7476fd1e.png)
+![全网查询](https://main.qcloudimg.com/raw/85566d6b41e3e59a57b00e237119752b.png)
 >时间区间：支持最近30天访问情况统计查询，查询跨度最大为30天。
 2. 选择查询条件后，单击【查询】，即可查看时延和可用性的统计曲线。
-![全网时延](https://main.qcloudimg.com/raw/657c1db110cad4e5187324dd148e965b.png)
+![全网时延](https://main.qcloudimg.com/raw/dc7f30fa6f105c4161a55ef5d4a319c2.png)
