@@ -4,17 +4,15 @@ An intermediate server is an origin-pull server located at the intermediate laye
 
 ## Configuration Guide
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page. Find the domain name you want to edit and click **Manage** in the "Operation" column.
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+![img](https://main.qcloudimg.com/raw/f84d049dfe3e99b6fe5548ec64a864ce.png)
 Click **Origin-Pull Configuration** and if you don't see the "Intermediate Server Configuration" module, **an intermediate server has been enabled for your domain name by default**. User requests will be converged to the intermediate server, which will perform origin-pulls in a unified manner, improving the CDN acceleration result and alleviating the access pressure on your origin server.
 >For legacy connected domain names, if you see that the intermediate server configuration is disabled in **Origin-pull Configuration**, we recommend you manually enable this feature to improve the acceleration result. Once enabled, this configuration item will be hidden and cannot be disabled.
 
 ## Sample Case
 - If the configuration is as follows:
-![](https://main.qcloudimg.com/raw/3cbfc72af360a4635ac67d6942ed4a13.png)
 The user request will reach an edge server first. If the requested resource is missed on the edge server, the request will be forwarded to a parent node. If there is still a miss, the request will be forwarded to the origin server. The CDN architecture is as shown below:
-![](https://main.qcloudimg.com/raw/999d516b9bc4c1e9eed1842e92ea1a1b.png)
+![](https://main.qcloudimg.com/raw/bfe35d9aa2c3a959ecc10501835bc15c.png)
 - If the configuration is as follows:
-![](https://main.qcloudimg.com/raw/ad886e54362143e32be498b17b8c47b2.png)
 The user request will reach an edge server first. If the requested resource is missed on the edge server, it will be pulled from the origin server directly. The CDN architecture is shown in the figure:
-![](https://main.qcloudimg.com/raw/ca73f3972e1490b8cca74c6f9bb0b5d9.png)
+![](https://main.qcloudimg.com/raw/9698dfb085f6abeabc2aa7d3a05f41cb.png)
 
