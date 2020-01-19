@@ -3,8 +3,8 @@ SEO optimization configuration is a feature that solves the problem with incorre
 
 ## Configuration Guide
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page. Find the desired domain name and click **Manage** in the "Operation" column.
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+![img](https://main.qcloudimg.com/raw/8b5151ce60251400ae4b4a62fdf76fa0.png)
 2. Click **Advanced Configuration** and you can see the **SEO Optimization** module. Automatic origin-pull for search engine is disabled by default.
 > The SEO optimization configuration feature is available only when the connected domain name is your **own**. After this feature is enabled, if a domain name has multiple origin server addresses, the first one will be the default origin-pull address.
 >
-![img](https://main.qcloudimg.com/raw/cd67f24a23eb2241ff4a35ab27777c6c.png)
+![img](https://main.qcloudimg.com/raw/6c0cc02dea22e27435dfe2d1bd6d10ff.png)
