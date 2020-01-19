@@ -11,21 +11,21 @@ Tencent Cloud CDN supports two certificate deployment methods:
 
 
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page. Find the desired domain name and click **Manage** in the "Operation" column.
-![img](https://main.qcloudimg.com/raw/f7f2871e66214431430af7c4e508e29a.png)
+![img](https://main.qcloudimg.com/raw/47ca7b8ed8414f624262aa8b65bf06dd.png)
 2. Click **Advanced Configuration** and find **HTTPS Configuration**. Click **Configure Now** to enter the **Certificate Management** page where you can configure a certificate. For the configuration process, please see [Certificate Management](https://intl.cloud.tencent.com/document/product/228/6303).
-![img](https://main.qcloudimg.com/raw/5c11cea6df9309c96856c352c3b94d23.png)
+![img](https://main.qcloudimg.com/raw/2d0c2762eda5f17aeeaed6bfce5417a8.png)
 3. After the certificate is **successfully configured**, the **Forced HTTPS Redirect** switch will appear, which is disabled by default.
-![img](https://main.qcloudimg.com/raw/1de2e0e330cc65ced62bd5d351379d43.png)
+![img](https://main.qcloudimg.com/raw/c0133b1cae3c9b429f4cb265b8746349.png)
 4. After enabling **Forced HTTPS Redirect**, even if the user initiates an HTTP request, it will be redirected to HTTPS for access. The redirect method is 302 redirect by default.
-![image](https://main.qcloudimg.com/raw/9d5fb1d152c3aa781b0f1eaca1f3211a.png)
+![image](https://main.qcloudimg.com/raw/c731097643f44dc960dfdc03f5f400bd.png)
 You can click **Edit** to modify the redirect mehod:
-![image](https://main.qcloudimg.com/raw/cbd93a57a01478d44f9a6ec067e91e83.png)
+![image](https://main.qcloudimg.com/raw/fae0b873ff49de6ce7c20dd8d03cfbc3.png)
 
 ## HTTP2.0 Configuration
 
 After successfully configuring the HTTPS certificate for the domain name, you can enable HTTP 2.0.
-![img](https://main.qcloudimg.com/raw/c31cd21a730ef4ee57c2d31ed3dad0be.png)
-For more information on HTTP 2.0 features, please see [New Features of HTTP 2.0](https://cloud.tencent.com/community/article/541321).
+![img](https://main.qcloudimg.com/raw/b78e5bc45ca42a1c4fbeb9db059fa6fa.png)
+<!--For more information on HTTP 2.0 features, please see [New Features of HTTP 2.0]().-->
 
 > Currently, acceleration domain names suffixed with `.myqcloud.com` do not support HTTP 2.0.
 
@@ -34,7 +34,7 @@ For more information on HTTP 2.0 features, please see [New Features of HTTP 2.0]
 OCSP stapling is a TLS certificate status query extension. An OCSP stapling server can send the cached OCSP query result to the client during TLS handshake for verification by the user without having the client send the request to the CA. OCSP stapling greatly improves the efficiency of TLS handshake and reduces user verification time.
 
 After successfully configuring the HTTPS certificate for the domain name, you can enable OCSP stapling.
-![image](https://main.qcloudimg.com/raw/fcaee8ad06ea02f5fcdb7ad1d39b0bff.png)
+![image](https://main.qcloudimg.com/raw/536f6bd66f8013a67026a2be579916da.png)
 
 
 ## Algorithms supported by HTTPS origin-pull
