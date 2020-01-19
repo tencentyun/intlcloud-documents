@@ -4,17 +4,13 @@
 
 ## 配置指引
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击左侧目录的【域名管理】，进入管理页面，在列表中找到您需要编辑的域名所在行，单击操作栏的【管理】。
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+![img](https://main.qcloudimg.com/raw/f84d049dfe3e99b6fe5548ec64a864ce.png)
 单击【回源配置】，若未看到“中间源配置”模块，则表示您的域名已经**默认开启中间源配置**，用户的请求回源行为会在中间源进行收敛，由中间源统一回源获取数据，提升您的 CDN 加速效果，有效缓解回源后源站的访问压力。
 >历史已经接入的域名，若在【回源配置】处可以看见中间源配置为关闭状态，建议手动开启该配置，提升您的加速效果。开启后，此配置项将被屏蔽，不支持关闭操作。
 
 ## 配置案例
-- 若配置如下：
-![](https://main.qcloudimg.com/raw/3cbfc72af360a4635ac67d6942ed4a13.png)
-用户请求到达各边缘节点，若边缘节点未命中资源，则会回源至父层节点，若父层节点仍未命中，才回源至客户源站。CDN 的架构如图：
-![](https://main.qcloudimg.com/raw/999d516b9bc4c1e9eed1842e92ea1a1b.png)
-- 若配置如下：
-![](https://main.qcloudimg.com/raw/ad886e54362143e32be498b17b8c47b2.png)
-用户请求到达各边缘节点，若边缘节点未命中资源，直接回源至客户源站获取。CDN 的架构如图：
-![](https://main.qcloudimg.com/raw/ca73f3972e1490b8cca74c6f9bb0b5d9.png)
+- 用户请求到达各边缘节点，若边缘节点未命中资源，则会回源至父层节点，若父层节点仍未命中，才回源至客户源站。CDN 的架构如图：
+![](https://main.qcloudimg.com/raw/bfe35d9aa2c3a959ecc10501835bc15c.png)
+- 用户请求到达各边缘节点，若边缘节点未命中资源，直接回源至客户源站获取。CDN 的架构如图：
+![](https://main.qcloudimg.com/raw/9698dfb085f6abeabc2aa7d3a05f41cb.png)
 
