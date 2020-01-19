@@ -3,7 +3,7 @@ To help you control access to your business resources, CDN offers referer-based 
 ## Configuration Guide
 1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page. Find the desired domain name and click **Manage** in the "Operation" column.
 ![img](https://main.qcloudimg.com/raw/2ce3d1f1c8de224de57af4098beb41d8.png)
-2. Click the **Access Control** tab and configure the **Hotlink Protection ** module.
+2. Click the **Access Control** tab and configure the **Hotlink Protection** module.
  ![](https://main.qcloudimg.com/raw/9fd20fc22df01301995b50825c9275d8.png)
 Hotlink protection is disabled by default with no blacklist or whitelist. Referer-based blacklist and whitelist are incompatible with each other and cannot coexist. You can enter up to 400 entries, separated by line breaks and one entry per row.
 >
