@@ -9,10 +9,8 @@ Click **Origin-Pull Configuration** and if you don't see the "Intermediate Serve
 >For legacy connected domain names, if you see that the intermediate server configuration is disabled in **Origin-pull Configuration**, we recommend you manually enable this feature to improve the acceleration result. Once enabled, this configuration item will be hidden and cannot be disabled.
 
 ## Sample Case
-- If the configuration is as follows:
-The user request will reach an edge server first. If the requested resource is missed on the edge server, the request will be forwarded to a parent node. If there is still a miss, the request will be forwarded to the origin server. The CDN architecture is as shown below:
+- The user request will reach an edge server first. If the requested resource is missed on the edge server, the request will be forwarded to a parent node. If there is still a miss, the request will be forwarded to the origin server. The CDN architecture is as shown below:
 ![](https://main.qcloudimg.com/raw/bfe35d9aa2c3a959ecc10501835bc15c.png)
-- If the configuration is as follows:
-The user request will reach an edge server first. If the requested resource is missed on the edge server, it will be pulled from the origin server directly. The CDN architecture is shown in the figure:
+- The user request will reach an edge server first. If the requested resource is missed on the edge server, it will be pulled from the origin server directly. The CDN architecture is shown in the figure:
 ![](https://main.qcloudimg.com/raw/9698dfb085f6abeabc2aa7d3a05f41cb.png)
 
