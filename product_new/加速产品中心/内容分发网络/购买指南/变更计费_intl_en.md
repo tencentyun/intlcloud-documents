@@ -1,29 +1,16 @@
-If you find that the billing model you selected is not applicable to your actual business during your use (For instructions on how to make the judgment, refer to [Billing Options](https://intl.cloud.tencent.com/doc/product/228/2949)), you can change the billing model as follows:
+- If you are a Tencent Cloud VIP customer, you can contact your Tencent Cloud sales rep for assistance to change your billing mode.
 
-1. Log in to Tencent Cloud [CDN Console](https://console.cloud.tencent.com/), and click **Change** at the upper right corner:
-  ![](https://mc.qcloudimg.com/static/img/59a10afcc90d118720537cddd979e21e/image.png)
+If you find the selected billing mode is not suitable for your business needs during use, you can change it according to [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949).
 
-2. Change the original billing method **Pay by Traffic** to **Pay by Bandwidth**:
-  ![](//mc.qcloudimg.com/static/img/10d3e6759eba5e6b20b1ed3e2d2a258a/image.png)
+## Notes
+The billing mode used to calculate the generated consumption on the current day will be also used for settlement on the following day.
++ If you switch from bill-by-bandwidth to bill-by-traffic when consumption has yet to occur, you will be charged with bill-by-traffic on the following day unless you switch the billing mode again.
++ If consumption has already occurred when you switch, you will be charged with bill-by-bandwidth on the following day. You will be charged with bill-by-traffic on the third day when calculating the consumption on the second day, unless you switch the billing mode again.
 
-3. After the billing method is changed to **Pay by Bandwidth**, the balance of your traffic package will be frozen:
-  ![](https://mc.qcloudimg.com/static/img/d6502e9bf1535ff9caa58d479e397241/3.png)
-
-4. Click OK to complete the change. If you want to cancel the change, you can click **Change** again, switching the billing method back to **Pay by Traffic**. 
-  ![](https://mc.qcloudimg.com/static/img/e91b058ffa7d2957109f3310f247cce8/image.png)
-
-**Note:**
-
-+ The billing method based on which the charge for the current date is calculated the next day shall be subject to the one used for the consumption generated on the current date.
-+ **If you are a key customer with a contract entered into with Tencent Cloud, you can change the billing method by contacting your key customer manager, calling 4009-100-100, or submitting tickets, etc.**
-
-
-**Examples:**
->Example 1: If the original billing method is "Pay by Bandwidth" on the current date, then it is changed to "Pay by Traffic" when there is no consumption generated;
->Billing method: The settlement for this day will be made based on "Pay by Traffic" the next day, provided that the billing method remains unchanged after this change.
-
->Example 2: If the original billing method is "Pay by Bandwidth" on the current date and consumption has generated before it is changed to "Pay by Traffic"; 
->Billing method: The settlement for this day will be made based on "Pay by Bandwidth" the next day, provided that the billing method remains unchanged after this change. When the settlement for the next day is made on the third day, "Pay by Traffic" will be used.
-
-
-
+## How to change billing mode
+1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Overview** on the left sidebar to enter the management page and click **Change** in the right.
+ ![](https://main.qcloudimg.com/raw/1c74aed03457752b4831ad0ec91cedb0.png)
+2. Change the original billing mode **Bill-by-traffic** to **Bill-by-bandwidth** and click **Confirm**.
+![](https://main.qcloudimg.com/raw/cc9722cc784b4c3591c95443c184b0a4.png)
+3. After the billing mode is changed to **Bill-by-bandwidth**, your traffic package will no longer be deducted.
+4. You can repeat the previous steps to cancel the switch.
