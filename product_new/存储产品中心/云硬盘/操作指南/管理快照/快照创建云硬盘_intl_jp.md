@@ -71,7 +71,7 @@
   2. 支払いが完了します。
  </ol>
  
-5. [ CBSリスト](https://console.cloud.tencent.com/cvm/cbs) 画面で、作成されたCBSを確認できます。新しく作成されたElastic CBS は【マウント待ち】状態です。 [ CBSのマウント](https://intl.cloud.tencent.com/document/product/362/5745) を参照して、CBS を同じアベイラビリティソーンのCVMにマウントします。
+5.[ CBSリスト](https://console.cloud.tencent.com/cvm/cbs) 画面で、作成されたCBSを確認できます。新しく作成されたElastic CBS は【マウント待ち】状態です。 [ CBSのマウント](https://intl.cloud.tencent.com/document/product/362/5745) を参照して、CBS を同じアベイラビリティソーンのCVMにマウントします。
 
 ### API を利用してスナップショットからCBSを作成する
 CreateDisks インターフェースを利用してスナップショットを作成できます。詳細については、 [CBS の作成](https://intl.cloud.tencent.com/document/product/362/16312) をご参照ください。
