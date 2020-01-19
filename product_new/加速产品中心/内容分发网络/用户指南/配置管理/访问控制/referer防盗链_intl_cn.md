@@ -2,9 +2,9 @@
 
 ## 配置指引
 1. 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击左侧目录的【域名管理】，进入管理页面，在列表中找到您需要编辑的域名所在行，单击操作栏的【管理】。
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+![img](https://main.qcloudimg.com/raw/2ce3d1f1c8de224de57af4098beb41d8.png)
 2. 单击【访问控制】选项卡，可在**防盗链配置**模块进行配置。
- ![](https://main.qcloudimg.com/raw/acb36f0fb20e71f06231d8571ad5e9ca.png)
+ ![](https://main.qcloudimg.com/raw/9fd20fc22df01301995b50825c9275d8.png)
 默认情况下，防盗链未启用，无黑/白名单。referer 黑名单、白名单二者不兼容，同一时间只能生效一种类型，防盗链输入内容最多可输400条，以换行符相隔，一行输入一个。
 >
 > - 防盗链支持域名 / IP 规则，匹配方式为前缀匹配（仅支持路径情况下，域名的前缀匹配不支持），即假设配置名单为 `www.abc.com`，则 `www.abc.com/123`匹配，`www.abc.com.cn`不匹配；假设配置名单为127.0.0.1，则127.0.0.1/123也会匹配。
@@ -18,7 +18,7 @@
  - 若请求的 referer 字段不匹配白名单设置的内容，则 CDN 节点拒绝返回该请求信息，会直接返回状态码403。
  - 当设置白名单时，CDN 节点只能返回符合该白名单内字符串内容的请求。
  - 当勾选**包含空 referer** 选项时，此时若请求 referer 字段为空或无 referer 字段（如浏览器请求），则 CDN 正常返回请求信息。
-![](https://main.qcloudimg.com/raw/701ae9a937217ba90808a91deef48005.png)
+![](https://main.qcloudimg.com/raw/8bb57f6f192f204d08e209f00d2c52a7.png)
 
 ### referer 黑名单
 1. 单击防盗链配置处【编辑】图标，选中【referer 黑名单】，可进行黑名单配置。
@@ -27,10 +27,10 @@
  - 若请求的 referer 字段匹配黑名单内设置的内容，CDN 节点拒绝返回该请求信息，直接返回403状态码。
  - 若请求的 referer 不匹配黑名单内设置的内容，则 CDN 节点正常返回请求信息。
  - 当勾选**包含空 referer**选项时，此时若请求 referer 字段为空或无 referer 字段（如浏览器请求），则 CDN 节点拒绝返回该请求信息，返回403状态码。
-![](https://main.qcloudimg.com/raw/4e683552eca11fb7014c1cd3e7103ad3.png)
+![](https://main.qcloudimg.com/raw/82a111ebd792082b5614917ef9116177.png)
 
 ## 配置案例
 若域名 referer 配置如下：
-![](https://main.qcloudimg.com/raw/4252af2551ec2d32db072d00011bba41.png)
+![](https://main.qcloudimg.com/raw/429f14c59e95b118cf0ef484c443819b.png)
 - 用户请求 URL 为 `http://www.test.com/1.jpg?version=1.1` 的资源，通过浏览器访问，请求 referer 为空，此时正常返回内容。
 - 用户请求 URL 为 `http://www.test.com/1.jpg?version=1.1` 的资源，请求 referer 为 `www.abcd.com`，此时未在白名单中，因此直接返回403。
