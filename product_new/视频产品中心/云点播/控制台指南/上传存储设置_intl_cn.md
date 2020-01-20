@@ -3,7 +3,7 @@
 
 ## 分类管理步骤
 1. 登录 [云点播控制台](https://console.cloud.tencent.com/vod/overview)，选择左侧导航栏的【上传存储设置】>【分类管理】，进入“分类管理”页面。
-![](https://main.qcloudimg.com/raw/32907d7786d94234bde68649e22cb592.png)
+![](https://main.qcloudimg.com/raw/e9b6b780809c9857bc410c1b6c9a0a02.png)
 2. 单击【添加分类】，弹出“添加分类”对话框，输入分类名称，单击【确定】，完成添加。
 3. 新添加的分类会展示在该页面的分类列表中，其中可以对目标分类记录进行重命名、删除及添加子分类操作。
 	- 重命名：单击目标分类名称，名称右侧会出现编辑图标，单击该图标，可修改分类名称。
@@ -19,7 +19,7 @@
 
 ## 存储地域步骤
 1. 登录 [云点播控制台](https://console.cloud.tencent.com/vod/overview)，选择左侧导航栏的【上传存储设置】>【存储地域】，进入“存储地域”页面。
-![](https://main.qcloudimg.com/raw/dde696a1aa4a23fcc3e29786410d70d2.png)
+![](https://main.qcloudimg.com/raw/43deae2ce3e366a448daf6fa692b6b80.png)
 2. 单击目标地域所在行的开启状态按钮，开通该地域，已开通的地域支持设置为默认地域。
 >
 	- 您可以选择开通多个地域，但有且只有一个地域可以设为默认地域。
