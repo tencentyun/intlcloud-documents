@@ -32,7 +32,7 @@ This document describes how to process videos in the VOD Console, such as transc
      </tr> 
 		  <tr>      
          <td>Task flow</td>   
-	     <td>If **Task Flow** is selected as the processing type, this parameter is <b>"Task Flow Template"</b>: select an existing task flow template </td>   
+			  <td>If <b>Task Flow</b> is selected as the processing type, this parameter is <b>"Task Flow Template"</b>: select an existing task flow template </td>   
 	     <td align="middle">-</td>   
 	     <td align="middle">-</td>
      </tr> 
