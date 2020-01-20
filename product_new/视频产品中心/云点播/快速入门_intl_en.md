@@ -20,22 +20,22 @@ This document guides you through how to quickly upload a video from your local f
 1. Select **Video Processing** > **[Templates](https://console.cloud.tencent.com/vod/video-process/template)** on the left sidebar.
 2. Select the **Watermarking Template** tab.
 3. Click **Create Watermarking Template**, make the following settings on this page, and click **Create**. <br>
-<img src="https://main.qcloudimg.com/raw/b102d1663cd1446d9436a9e818235c4a.png" width="450">
+<img src="https://main.qcloudimg.com/raw/c85044cca9840a8f83bc5747e87985a9.png" width="450">
 	
 ## Step 4. Process the video
 1. Select **Uploaded** on the "[Media Assets](https://console.cloud.tencent.com/vod/media)" page.
 2. Check "Tencent Cloud.mp4" and click **Video Processing**.
-![](https://main.qcloudimg.com/raw/82af82fefe1d35d420ebba92894fae37.png)
+![](https://main.qcloudimg.com/raw/535b71cfc6374ff65bc46c1ab07eccd1.png)
 3. In the **Video Processing** pop-up box, select **Transcode** for **Processing Type**.
 4. In the **Transcoding Template** configuration item, click the drop-down list on the left to select **Select Transcoding Template**, and then click the drop-down list on the right to select **MP4-SD-SD(20)** and **MP4-HD-HD(30)** (multiple transcoding templates can be selected).
 5. In the **Watermarking Template** configuration item, click the drop-down list and select **Select Watermarking Template**. A drop-down list will pop up on the right where you can select **p001**.
 6. In the **Video Cover** configuration item, check **Use First Frame as Cover** and click **OK**.
-<img src="https://main.qcloudimg.com/raw/788dfb8ef9fc14b729185560657f8634.png">
+<img src="https://main.qcloudimg.com/raw/69abe9f386f0e12a79ae6596d6a994e4.png">
 
 ## Step 5. Get a playback link
 1. Click **Manage** in the "Operation" column at the row of "Tencent Cloud.mp4".
 2. Click **MP4-SD-SD** in the **Standard Transcoding List** module and click **Copy address** in the "Operation" column.
-<img src="https://main.qcloudimg.com/raw/f14b31cb27614df1597850e902a0fdd9.png" width="850">
+<img src="https://main.qcloudimg.com/raw/d6936a55fcc0a1e7df5fdf9265c25f7a.png" width="850">
 3. Paste the copied URL into the address bar on a web browser and press Enter to play back the video.
 
 

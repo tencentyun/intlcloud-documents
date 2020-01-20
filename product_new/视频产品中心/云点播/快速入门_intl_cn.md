@@ -20,22 +20,22 @@
 1. 在左侧导航栏选择【视频处理设置】>[【模板设置】](https://console.cloud.tencent.com/vod/video-process/template)。
 2. 在页签栏选择【水印模板】。
 3. 单击【创建水印模板】，在该页面进行如下设置，最后单击【创建】。<br>
-<img src="https://main.qcloudimg.com/raw/b102d1663cd1446d9436a9e818235c4a.png" width="450">
+<img src="https://main.qcloudimg.com/raw/c85044cca9840a8f83bc5747e87985a9.png" width="450">
 	
 ## 步骤4：处理视频
 1. 在 [媒资管理](https://console.cloud.tencent.com/vod/media) 页签栏选择【已上传】。
 2. 选中“腾讯云.mp4”前的勾选框，单击【视频处理】。
-![](https://main.qcloudimg.com/raw/82af82fefe1d35d420ebba92894fae37.png)
+![](https://main.qcloudimg.com/raw/535b71cfc6374ff65bc46c1ab07eccd1.png)
 3. 在“视频处理”弹框中，【处理类型】配置项选择【转码】。
 4. 在【转码模板】配置项，单击左侧下拉框选择【选择转码模板】，然后单击右侧下拉框选择【MP4-标清-SD(20)】和【MP4-高清-HD(30)】（可勾选多个转码模板）。
 5. 在【水印模板】配置项，单击下拉框选择【选择水印模板】，右侧弹出下拉框，选择【p001】。
 6. 在【视频封面】配置项，勾选【使用首帧做封面】，最后单击【确定】。
-<img src="https://main.qcloudimg.com/raw/788dfb8ef9fc14b729185560657f8634.png">
+<img src="https://main.qcloudimg.com/raw/69abe9f386f0e12a79ae6596d6a994e4.png">
 
 ## 步骤5：获取播放链接
 1. 单击“腾讯云.mp4”所在行操作栏的【管理】。
 2. 单击【标准转码列表】模块中【MP4-标清-SD】对应操作栏下的【复制地址】。
-<img src="https://main.qcloudimg.com/raw/f14b31cb27614df1597850e902a0fdd9.png" width="850">
+<img src="https://main.qcloudimg.com/raw/d6936a55fcc0a1e7df5fdf9265c25f7a.png" width="850">
 3. 在 Web 浏览器 URL 地址栏输入已复制的 URL 地址，按下回车键，即可播放该视频。
 
 
