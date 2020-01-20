@@ -7,8 +7,8 @@
  - **Kubernetes版本**：提供多个 Kubernetes 版本选择，各版本特性对比请查看 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/)。
  - **所在地域**：建议您根据所在地理位置选择靠近的地域。可降低访问延迟，提高下载速度。
  - **可用区**：同地域内，内网互通；不同地域，内网不通。需要多个内网通信的用户须选择相同的地域。
- - **节点网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。参阅 [容器及节点网络设置](/doc/product/457/9083)。
- - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。参阅 [容器及节点网络设置](/doc/product/457/9083)。
+ - **节点网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。参阅 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
+ - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。参阅 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
  - **集群描述**：创建集群的相关信息。该信息将显示在 **集群信息** 页面。
 ![Alt text](https://main.qcloudimg.com/raw/6d8768b09d2f3b09e4c3455ba90ae0db.png)
 
@@ -63,7 +63,7 @@
 ![](https://main.qcloudimg.com/raw/e963384ec8f72283b3ad84d8f57740dd/basic11.png)
 
 ## 登录到节点
-当前节点支持腾讯云云服务器，如何登录请查看 [登录到云服务器](https://cloud.tencent.com/doc/product/213/5436) 。
+当前节点支持腾讯云云服务器，如何登录请查看 [登录到云服务器](https://intl.cloud.tencent.com/doc/product/213/5436) 。
 
 ## 创建集群 Namespace
 
