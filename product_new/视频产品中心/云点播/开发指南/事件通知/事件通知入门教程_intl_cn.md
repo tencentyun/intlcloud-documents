@@ -32,13 +32,13 @@
 
 请下载 [演示视频](http://1255566954.vod2.myqcloud.com/ca75586fvodgzp1255566954/484c46995285890788305672872/xUCHV5kOGyIA.wmv) 到您的本地，用于入门教学。
 1. 单击左侧菜单栏的【媒资管理】，选择【已上传】，单击【上传视频】。
-![](https://main.qcloudimg.com/raw/bbbbc39b295157b9dee12a6841b712d3.png)
+![](https://main.qcloudimg.com/raw/4724951966b46c801498efed4b6ebec9.png)
 2. 弹出“**上传视频**”的对话框后，选择【本地上传】，单击【选择视频】，将**演示视频**上传到云点播平台。
-![](https://main.qcloudimg.com/raw/e52b179050923d6c98c979994063d0ce.png)
+![](https://main.qcloudimg.com/raw/e0eb51db29de59e948b332ad05a069db.png)
  执行上传之后，您将在“**正在上传**”栏看到视频的上传进度。
-![](https://main.qcloudimg.com/raw/8a2579f87d5ea0ca5181550f7d4eaca4.png)
+![](https://main.qcloudimg.com/raw/7f072f0e67b4f3be6907ff1f5a414848.png)
  上传完成之后，在“**已上传**”栏的视频列表中，将看到上传完成的视频，以及视频对应的 ID（即 FileId）。
-![](https://main.qcloudimg.com/raw/12ef8ef8a7d9d1332cee08dc8500cff4.png)
+![](https://main.qcloudimg.com/raw/6c18e73eb8576fc120fe903fc0848927.png)
 3. 检查 CVM，标准输出打印 [视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950#817356113) 通知的内容。
  <img src="https://main.qcloudimg.com/raw/f6439edcd8ae59cab1d393987382e136.png" width="818">
 4. 在【媒资管理】的“**已上传**”栏，勾选刚上传成功的视频，单击[【视频处理】](https://intl.cloud.tencent.com/document/product/266/33892)。【处理类型】选择“**手动选择转码模板**”选项，并在【转码模板】中勾选“**MP4-流畅-FLU (10)**”，保持【视频封面】勾选，单击【确定】。
@@ -58,16 +58,16 @@
 ### 发起可靠回调
 
 1. 单击左侧菜单栏的【媒资管理】，选择【已上传】，单击【上传视频】。
-![](https://main.qcloudimg.com/raw/bbbbc39b295157b9dee12a6841b712d3.png)
+![](https://main.qcloudimg.com/raw/4724951966b46c801498efed4b6ebec9.png)
 
 2. 弹出“**上传视频**”的对话框后，选择【本地上传】，单击【选择视频】，将**演示视频**上传到云点播平台。
-![](https://main.qcloudimg.com/raw/e52b179050923d6c98c979994063d0ce.png)
+![](https://main.qcloudimg.com/raw/e0eb51db29de59e948b332ad05a069db.png)
  
  执行上传之后，您将在“**正在上传**”栏看到视频的上传进度。
-![](https://main.qcloudimg.com/raw/8a2579f87d5ea0ca5181550f7d4eaca4.png)
+![](https://main.qcloudimg.com/raw/7f072f0e67b4f3be6907ff1f5a414848.png)
  
  上传完成之后，在“**已上传**”栏的视频列表中，将看到上传完成的视频，以及视频对应的 ID（即 FileId）。
-![](https://main.qcloudimg.com/raw/12ef8ef8a7d9d1332cee08dc8500cff4.png)
+![](https://main.qcloudimg.com/raw/6c18e73eb8576fc120fe903fc0848927.png)
 
 3. 在【媒资管理】的“**已上传**”栏，勾选刚上传成功的视频，单击[【视频处理】](https://intl.cloud.tencent.com/document/product/266/33892)。【处理类型】选择“**手动选择转码模板**”选项，并在【转码模板】中勾选“**MP4-流畅-FLU (10)**”，保持【视频封面】勾选，单击【确定】。
 

@@ -32,13 +32,13 @@ After the command is executed, the standard output of the CVM instance should pr
 
 Please download the [demo video](http://1255566954.vod2.myqcloud.com/ca75586fvodgzp1255566954/484c46995285890788305672872/xUCHV5kOGyIA.wmv) to your local file system for getting started.
 1. Click **Media Assets** on the left sidebar, select **Uploaded**, and click **Upload Video**.
-![](https://main.qcloudimg.com/raw/bbbbc39b295157b9dee12a6841b712d3.png)
+![](https://main.qcloudimg.com/raw/4724951966b46c801498efed4b6ebec9.png)
 2. In the **Upload Video** dialog box that pops up, select **Local Upload**, click **Select Video**, and upload the **demo video** to the VOD platform.
-![](https://main.qcloudimg.com/raw/e52b179050923d6c98c979994063d0ce.png)
+![](https://main.qcloudimg.com/raw/e0eb51db29de59e948b332ad05a069db.png)
  After performing the upload operation, you will see the video upload progress in the **Uploading** column.
-![](https://main.qcloudimg.com/raw/8a2579f87d5ea0ca5181550f7d4eaca4.png)
+![](https://main.qcloudimg.com/raw/7f072f0e67b4f3be6907ff1f5a414848.png)
  After the upload is completed, you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column.
-![](https://main.qcloudimg.com/raw/12ef8ef8a7d9d1332cee08dc8500cff4.png)
+![](https://main.qcloudimg.com/raw/6c18e73eb8576fc120fe903fc0848927.png)
 3. Check the CVM instance. The standard output should print the content of the notification for [video upload completion](https://intl.cloud.tencent.com/document/product/266/33950#817356113).
  <img src="https://main.qcloudimg.com/raw/f6439edcd8ae59cab1d393987382e136.png" width="818">
 4. In the **Uploaded** column in **Media Assets**, select the video just uploaded and click **[Video Processing](https://intl.cloud.tencent.com/document/product/266/33892)**. Select **Manually select transcoding template** for **Processing Type**, check **MP4-LD-FLU (10)** in **Transcoding Template**, keep **Video Cover** checked, and click **OK**.
@@ -58,16 +58,16 @@ At this point, you have uploaded a video and performed a transcoding task on it.
 ### Initiating reliable callback
 
 1. Click **Media Assets** on the left sidebar, select **Uploaded**, and click **Upload Video**.
-![](https://main.qcloudimg.com/raw/bbbbc39b295157b9dee12a6841b712d3.png)
+![](https://main.qcloudimg.com/raw/4724951966b46c801498efed4b6ebec9.png)
 
 2. In the **Upload Video** dialog box that pops up, select **Local Upload**, click **Select Video**, and upload the **demo video** to the VOD platform.
-![](https://main.qcloudimg.com/raw/e52b179050923d6c98c979994063d0ce.png)
+![](https://main.qcloudimg.com/raw/e0eb51db29de59e948b332ad05a069db.png)
  
  After performing the upload operation, you will see the video upload progress in the **Uploading** column.
-![](https://main.qcloudimg.com/raw/8a2579f87d5ea0ca5181550f7d4eaca4.png)
+![](https://main.qcloudimg.com/raw/7f072f0e67b4f3be6907ff1f5a414848.png)
  
  After the upload is completed, you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column.
-![](https://main.qcloudimg.com/raw/12ef8ef8a7d9d1332cee08dc8500cff4.png)
+![](https://main.qcloudimg.com/raw/6c18e73eb8576fc120fe903fc0848927.png)
 
 3. In the **Uploaded** column in **Media Assets**, select the video just uploaded and click **[Video Processing](https://intl.cloud.tencent.com/document/product/266/33892)**. Select **Manually select transcoding template** for **Processing Type**, check **MP4-LD-FLU (10)** in **Transcoding Template**, keep **Video Cover** checked, and click **OK**.
 
