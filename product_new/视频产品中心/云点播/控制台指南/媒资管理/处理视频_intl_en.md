@@ -14,19 +14,19 @@ This document describes how to process videos in the VOD Console, such as transc
      </tr>
 	 <tr>      
          <td>Transcoding</td>   
-	     <td>If <b>Transcoding</b>> is selected as the processing type, this parameter is <b>"Transcoding Template"</b> <ul><li> If <b>Common Transcoding Template</b>> is selected in the drop-down list on the left, the default template will be selected in the drop-down list on the right automatically <li>If <b>Select Transcoding Template</b>> is selected in the drop-down list on the left, multiple transcoding templates can be selected in the drop-down list on the right </ul></td>   
-	     <td nowrap="nowrap"><ul><li>Select <b>No Watermark</b>> <li>Select <b>Default Watermark</b> <li>Select <b>Select Watermarking Template</b>></td>   
+	     <td>If <b>Transcoding</b> is selected as the processing type, this parameter is <b>"Transcoding Template"</b> <ul><li> If <b>Common Transcoding Template</b> is selected in the drop-down list on the left, the default template will be selected in the drop-down list on the right automatically <li>If <b>Select Transcoding Template</b> is selected in the drop-down list on the left, multiple transcoding templates can be selected in the drop-down list on the right </ul></td>   
+	     <td nowrap="nowrap"><ul><li>Select <b>No Watermark</b> <li>Select <b>Default Watermark</b> <li>Select <b>Select Watermarking Template</b></td>   
 	     <td>Select whether to use the first frame as the video cover</td>
      </tr> 
 	 <tr>      
          <td nowrap="nowrap">Transcoding to adaptive bitrate streaming</td>   
-	     <td>If <b>Transcode to Adaptive Bitrate Streaming</b>> is selected as the processing type, this parameter is <b>"Transcoding Template"</b>: multiple transcoding templates can be selected</td>   
-	     <td><ul><li>Select <b>No Watermark</b>> <li>Select <b>Default Watermark</b>> <li>Select <b>Select Watermarking Template</b>></td>   
+	     <td>If <b>Transcode to Adaptive Bitrate Streaming</b> is selected as the processing type, this parameter is <b>"Transcoding Template"</b>: multiple transcoding templates can be selected</td>   
+	     <td><ul><li>Select <b>No Watermark</b> <li>Select <b>Default Watermark</b> <li>Select <b>Select Watermarking Template</b></td>   
 	     <td>Select whether to use the first frame as the video cover</td>
      </tr> 
 	 <tr>      
          <td>Video audit</td>   
-	     <td>If <b>Video Audit</b>> is selected as the processing type, this parameter is <b>"Audit Template"</b>: select an existing audit template </td>   
+	     <td>If <b>Video Audit</b> is selected as the processing type, this parameter is <b>"Audit Template"</b>: select an existing audit template </td>   
 	     <td align="middle">-</td>   
 	     <td align="middle">-</td>
      </tr> 
