@@ -28,7 +28,7 @@ Kubernetes only retains Kubernetes Events for one hour by default. PersistentEve
 ### Installing and configuring the storage location
 1. Log in to the [TKE Console](https://console.qcloud.com/tke2), and select **Add-ons** in the left sidebar.
 2. On the top of the **Add-ons** management page, select the region and the cluster for installing PersistentEvent, and click **Create**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/d087e46c782e0fe391bb0abd7d2af71d.png)
+![](https://main.qcloudimg.com/raw/672f9156620c9643ffb7baa4ec1e1d27.png)
 3. In the **Create Add-on** page, select **PersistentEvent**, configure the persistent storage side, and click **Complete** to install it.
 PersistentEvent supports two storage options, [Elasticsearch](https://intl.cloud.tencent.com/document/product/845/16478) and [CLS](https://intl.cloud.tencent.com/document/product/614/11254). It is recommended that you use CLS. You can choose which to use according to your actual circumstances. This document uses CLS as an example.
 
@@ -38,17 +38,17 @@ PersistentEvent supports two storage options, [Elasticsearch](https://intl.cloud
 ### Updating the storage location
 1. Log in to the [TKE Console](https://console.qcloud.com/tke2), and select **Add-ons** in the left sidebar.
 2. On the top of the **Add-on** page, select the region with the cluster whose PersistentEvent you want to update, and click **Update Configurations** on the right. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/d8bd0a3193ae8b30be7222f4cec42b7a.png)
+![](https://main.qcloudimg.com/raw/cde73e9c1c54d943045bb7e0f538d47a.png)
 3. In the **Update PersistentEvent** page, adjust the storage location for events, and click **Complete** to finish updating configurations.
 
 ### Searching events in the CLS Console
 1. Log in to the CLS Console, and select ****[Logset Management](https://console.cloud.tencent.com/cls/logset)** in the left sidebar.
 2. On the top of the **Logset Management** page, select the domain of the logset configured by PersistentEvent.
 3. In the logset list, click the name of the logset configured by PersistentEvent to go to the logset details page. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/adb6166a495c78580a1a2eacf42353cf.png)
+![](https://main.qcloudimg.com/raw/be97c45c1b40311a49d5ce8514143965.png)
 4. Click **Manage** on the right of row containing the logset configured by PersistentEvent to go to the **Log Topic** details page.
 5. Select the **Search Configuration** tab page. On the page, enable the index configuration and click **Save** to turn on the log indexing feature. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/a804577fd5e6d638cd4921f2ce255579.png)
+![](https://main.qcloudimg.com/raw/bb30c2912f760ee81e70170412373332.png)
 6. Select **[Log Index](https://console.cloud.tencent.com/cls/search)** in the left sidebar, and select the log service configured by PersistentEvent in the **Logset** and **Log Topic** drop-down lists, as well as the time period for which to search logs, and click **Query Analysis** to view the event data. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/7b30875bb8f4e7bf057291d210dc0d0c.png)
+![](https://main.qcloudimg.com/raw/490b164af5d62d345eb7436a852bfd64.png)
 
