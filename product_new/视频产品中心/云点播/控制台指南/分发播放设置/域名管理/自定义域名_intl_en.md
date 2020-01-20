@@ -15,8 +15,8 @@ After you activate VOD, the system will assign you a default domain name `xxx.vo
 
 ## Resolving a Domain Name
 After adding a domain name, you need to configure the CNAME in the specific DNS service provider of the domain name, so that users can access your video information through the domain name. 
- <!--
-The steps are as follows:
+
+ <!--The steps are as follows:
 >The following uses Tencent Cloud DNS as the DNS service provider to illustrate how to add a CNAME record. The detailed steps vary by provider. For more information, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/570/11134).
 
 1. Log in to [Domain Name Management Console](https://console.cloud.tencent.com/domain). In **My Domain Names**, find the domain name for which to add a CNAME record, and click **Resolve** in the "Operation" column.
