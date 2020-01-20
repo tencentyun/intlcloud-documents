@@ -8,7 +8,7 @@
 
 开通云点播服务 <!--doc ，详细请参见 [购买指引](https://intl.cloud.tencent.com/document/product/266/2839)。-->
 
-#### <span id = "p3"></span>2. 获取云 API 密钥
+#### 2. 获取云 API 密钥
  
 获取调用服务端 API 所需的安全凭证，即 SecretId 和 SecretKey，具体步骤如下：
 1. 登录控制台，选择【云产品】>【访问管理】>[【API密钥管理】](https://console.cloud.tencent.com/cam/capi)，进入“API 密钥管理”页面。

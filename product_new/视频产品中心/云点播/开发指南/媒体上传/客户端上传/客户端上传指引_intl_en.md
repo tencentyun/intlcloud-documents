@@ -8,7 +8,7 @@ Video upload from client refers to uploading local videos to the VOD platform by
 
 Activate VOD. <!--doc For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/266/2839).-->
 
-#### <span id = "p3"></span>2. Get TencentCloud API key
+#### 2. Get TencentCloud API key
  
 Get the security credentials (i.e., `SecretId` and `SecretKey`) required to call the server API in the following steps:
 1. Log in to the console and select **Cloud Products** > **Cloud Access Management** > **[API Key Management](https://console.cloud.tencent.com/cam/capi)** to enter the "API Key Management" page.
