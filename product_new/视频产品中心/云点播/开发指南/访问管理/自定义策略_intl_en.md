@@ -91,7 +91,7 @@ In the example below, we will create a custom policy, which allows all actions e
 	- Enter `qcs::vod::uin/12345678:subAppId/1400000001` for **Resource** according to the [syntax description for resource](#p1).
 	- The **Condition** configuration item does not need to be configured.
 	- Click **Add Statement** and a statement saying that "The `ProcessMedia` action is denied on VOD subapplication 1400000001" will appear at the bottom of the page.
-     ![](https://main.qcloudimg.com/raw/f1021e0b522b588364759e5bda7636fb.png)
+     ![](https://main.qcloudimg.com/raw/1ac34ffafb9719e36e46d4a5e7ccf1cf.png)
 5. Click **Next** and rename the policy name as needed (or leave it unchanged).
 6. Click **Create Policy** to create the custom policy. Subsequently, this policy can be granted to subusers in the same way as [granting full permissions of VOD to existing subusers](https://intl.cloud.tencent.com/document/product/266/33971#p2).
 
