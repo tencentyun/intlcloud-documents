@@ -4,7 +4,7 @@
 ## 操作步骤
 1. 登录 [云点播控制台](https://console.cloud.tencent.com/vod/overview)，单击左侧导航栏的【媒资管理】，默认进入“已上传”页面。
 2. 勾选一个或多个目标视频文件，单击列表上方的【视频处理】，弹出“视频处理”配置框，根据下表配置视频处理参数，单击【确定】，开始执行视频处理任务。
-![](https://main.qcloudimg.com/raw/44fbfcddc1cce3eecf7d0d5d0488b1f1.png)
+![](https://main.qcloudimg.com/raw/e38db4214a5d6e8e33ae3de26a2acc11.png)
 <table>
      <tr>
          <th nowrap="nowrap">处理类型</th>  
