@@ -26,11 +26,11 @@ Log collection feature is applicable to users who need to store and analyze serv
 ### Installing the add-on
 1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2), and select **Add-ons** in the left sidebar.
 2. On the top of the **Add-ons** management page, select the region and the cluster for installing LogCollector, and click **Create**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/887d95fb6d298edbb4e9a329440c22c1.png)
+![](https://main.qcloudimg.com/raw/4b7f364107adde29df480403dfe3e43b.png)
 3. In the **Create Add-on** page, select **LogCollector**, and click **Complete** to install it.
 
 ### Configuring log collection rules
 1. Log in to [TKE Console](https://console.cloud.tencent.com/tke2) and click **Log Collection** on the left sidebar.
 2. In the **Log Collection** management page, select the region and cluster where you want to install LogCollector, and click **Create** to create the log collection rules. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/7285a504bcef8d1370e3f9e0abab1d0c.png)
+![](https://main.qcloudimg.com/raw/47157223647e2d4f0eea5680b7dea989.png)
 3. In the **Create Log Collection Rules** page, create rules by referring to [Log Collection](https://intl.cloud.tencent.com/document/product/457/32419). The rules can be used after creation.
