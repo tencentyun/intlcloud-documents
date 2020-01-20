@@ -261,4 +261,5 @@ Support conditions and usage of different upload methods are as shown below:
 <td><ul style="margin:0;"><li>For MP4/FLV formats, the upper limit is 48.82 TB (50,000 GB)</li><li>There is no upper limit for files in HLS format</li><li> Other restrictions are subject to <a href="/document/product/267/32739">LVB recording</a></td>
 </tr>
 </tbody></table>
+
 - Number of files: unlimited.
