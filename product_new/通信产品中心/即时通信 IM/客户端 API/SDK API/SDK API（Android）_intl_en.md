@@ -218,7 +218,7 @@ TIMFriendshipManager is the module for managing profile relationship chains. You
 
 ## TIMMessage
 
-**TIMMessage** consists of multiple message elements (TIMElem). The TIMElem can be text or an image, and each message can contain multiple texts or images. <!--For more information, see [Receiving and Sending Messages]().
+**TIMMessage** consists of multiple message elements (TIMElem). The TIMElem can be text or an image, and each message can contain multiple texts or images. <!--For more information, see [Receiving and Sending Messages]().-->
 
 | API | Description |
 | --- | --- |
