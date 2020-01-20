@@ -3,7 +3,7 @@
 
 ## 计费情况
 计费情况展示当前腾讯云账户的**计费方式**。
-![](https://main.qcloudimg.com/raw/fe060133c6eabcfa2ad2673fcff2994f.png)
+![](https://main.qcloudimg.com/raw/a786077e2852c8e350f213278112f967.png)
 <table border=0 cellpadding="0" cellspacing="0">
 <thead>
 <tr>
@@ -21,7 +21,7 @@
 ## 资源用量
 
 资源用量展示当月使用云点播服务的资源用量信息，包括**当前存储空间总量**、**本月转码总时长**、**本月流量总量**和**本月审核总时长**。
-![](https://main.qcloudimg.com/raw/d10627da8a4ff9a3cef7bf4bc78327a6.png)
+![](https://main.qcloudimg.com/raw/1f547963822f80ab6409a99238457fda.png)
 <table border=0 cellpadding="0" cellspacing="0">
 <thead>
 <tr>
@@ -58,7 +58,7 @@
 ## 关键数据
 
 关键数据展示为最近一周内存储空间、转码时长、使用流量、使用带宽、审核时长以及周趋势，您可以单击分栏进行查看，也可以单击右上角【详情数据】跳转至 [数据中心 - 用量统计](https://console.cloud.tencent.com/vod/dosage-statistics/index/cos) 查看更多详细信息。
-![](https://main.qcloudimg.com/raw/c6d00023d07f77401280c7fb4250d4cd.png)
+![](https://main.qcloudimg.com/raw/7b9bad31fa7fc81ee388d9717bff6f15.png)
 
 
 
