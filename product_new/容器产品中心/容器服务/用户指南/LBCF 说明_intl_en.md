@@ -44,13 +44,13 @@ LBCF has the following system requirements:
 --feature-gates=CustomResourceSubresources=true
 ```
 
->It is recommended that you purchase clusters of version 1.12.4 on [Tencent Cloud TKE](https://cloud.tencent.com/product/tke2), so that you do not need to modify any parameters.
+>It is recommended that you purchase clusters of version 1.12.4 on [Tencent Cloud TKE](https://console.cloud.tencent.com/tke2), so that you do not need to modify any parameters.
 
 ## Usage
 ### Installing the add-on
 1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2), and select **Add-ons** in the left sidebar.
 2. On the top of the **Add-ons** management page, select the region and the cluster for installing LBCF, and click **Create**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/887d95fb6d298edbb4e9a329440c22c1.png)
+![](https://main.qcloudimg.com/raw/bd96e23cb9ac958c941de19a3212c9dd.png)
 3. Develop or choose to install LBCF Webhook specifications to implement the Webhook server.
 
 
