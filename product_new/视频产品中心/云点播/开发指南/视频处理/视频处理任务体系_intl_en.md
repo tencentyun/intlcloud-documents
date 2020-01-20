@@ -1,5 +1,5 @@
 After a video processing task is initiated, it takes anywhere from a few minutes to a few hours for the task to complete execution and output the result. Video processing is essentially an offline task. Taking into account the characteristics of video processing tasks, VOD provides a task system allowing you to initiate tasks synchronously and receive task execution result notifications asynchronously.
-![](https://main.qcloudimg.com/raw/64fea5182f1939937f1420f27d3a1481.png)
+![](https://main.qcloudimg.com/raw/8941db2138127cc702ead3f856b5b074.png)
 
 - Initiate a task: after a video processing task is submitted, VOD will immediately return a task ID to you and will wait for some time to start executing the task.
 - Notify of result: upon task completion, VOD will send you a result notification, which contains the task ID and execution result.
@@ -20,7 +20,7 @@ In VOD, the following video processing operations are independent tasks:
 - intelligent categorization
 
 If several independent tasks are executed at the same time, there will be multiple task IDs, and you will have to receive and deal with multiple task result notifications. In order to simply the initiation and notification of multiple tasks, VOD offers a task flow scheme. A task flow is essentially a "parent task" composed of multiple subtasks. Initiating a task flow is equivalent to initiating all the subtasks.
-![](https://main.qcloudimg.com/raw/92301af6ff2c26abade1e0e386e7c8f1.png)
+![](https://main.qcloudimg.com/raw/eb772f0b31003f3c3325312e3c1584a5.png)
 As shown in the figure, the task flow contains three subtasks and ends when the last subtask (subtask 3) is completed. Task flow result notification will be triggered when the task flow ends as well as when each of the subtasks is completed, enabling you to perceive the execution result of any subtask in real time.
 
 Most video processing tasks in VOD are performed in the form of a task flow, which can be regarded as a special type of task. VOD also supports [creating task flow templates](https://intl.cloud.tencent.com/document/product/266/14058) and naming them. When initiating a task flow, you can use the task flow template name to indicate the desired task.
