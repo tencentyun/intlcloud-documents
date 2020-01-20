@@ -33,7 +33,7 @@ When the GPU application is running in a Kubernetes cluster, it can prevent the 
 ### Installing the add-on
 1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2), and select **Add-ons** in the left sidebar.
 2. On the top of the **Add-ons** management page, select the region and the cluster for installing GPU-Manager, and click **Create**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/d087e46c782e0fe391bb0abd7d2af71d.png)
+![](https://main.qcloudimg.com/raw/9cc38b381194c7c6b3180b42d87a6557.png)
 3. In the **Create Add-on** page, select **GPU Manager**, and click **Complete** to install it.
 
 
@@ -45,7 +45,7 @@ After GPU-Manager is successfully installed, you can use the following two metho
 1. Log in to the TKE Console and select **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. Select the cluster for which you want to greate the GPU applicaiton, go to the workload management page, and click **Create**.
 3. In the **Create Workload** page, complete configuration as needed. You can configure a fine-grained GPU workload in **GPU Limits**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/1158f1e99e049a83c48692e19ae6aa6b.png)
+![](https://main.qcloudimg.com/raw/3c622cc72df1699a50a7fbb4cd8ee0e0.png)
 
 
 #### Method 2: creating through YAML
