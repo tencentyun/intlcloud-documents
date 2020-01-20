@@ -6,7 +6,7 @@ Malicious video hosting can cause serious economic losses since all the storage,
 
 ## Causes of Malicious Video Hosting
 ### How UGC/PGC platforms interact with others normally
-<img src="https://main.qcloudimg.com/raw/1583662375b390c774d1298e41cda9fd.png" width="400">
+<img src="https://main.qcloudimg.com/raw/afe1e6c94f5546d559c276a117a5562e.png" width="400">
 
 Generally, a UGC (or PGC) video platform interacts with content providers, content consumers, and VOD in the following ways (for more information on steps 1–3, please see [Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921)):
 
@@ -17,7 +17,7 @@ Generally, a UGC (or PGC) video platform interacts with content providers, conte
 5. The content consumer accelerates video playback via VOD through the URL.
 
 ### How malicious video hosting is implemented
-<img src="https://main.qcloudimg.com/raw/3ccbd82c7b6ff5e805d1ce16f113de18.png" width="500">
+<img src="https://main.qcloudimg.com/raw/7909bd475575fbf34df519943a3451a1.png" width="500">
 
 A malicious third-party video platform impersonates a normal user of your platform:
 - It upload its own videos to VOD as a video provider (steps 1 and 2).
@@ -42,9 +42,9 @@ The following describes how VOD helps you restrict **playback** of and **access*
 
 ### Restricting playback of URLs
 
-VOD's [key hotlink protection](/document/product/266/14047) provides the ability to limit the number of devices allowed to play back a video from a URL, so as to prevent the URL from being distributed to any number of devices for playback.
+VOD's [key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986) provides the ability to limit the number of devices allowed to play back a video from a URL, so as to prevent the URL from being distributed to any number of devices for playback.
 
-In order to implement effective control of the playback URL, you need to enable hotlink protection in the console; in step 4, a hotlink protection-enabled URL needs to be generated on the application backend according to the key hotlink protection URL generation rules (please see the [example](/document/product/266/14047#.E7.A4.BA.E4.BE.8B2.EF.BC.9A.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E5.9C.B0.E5.9D.80.E6.9C.80.E5.A4.9A.E5.8F.AF.E6.92.AD.E6.94.BE-ip-.E6.95.B0) of "maximum number of IPs allowed for playback at a video playback address") in order to limit the validity period of the URL and the number of IPs allowed for playback.
+In order to implement effective control of the playback URL, you need to enable hotlink protection in the console; in step 4, a hotlink protection-enabled URL needs to be generated on the application backend according to the key hotlink protection URL generation rules (please see the [example](https://intl.cloud.tencent.com/document/product/266/33986#.E7.A4.BA.E4.BE.8B2.EF.BC.9A.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E5.9C.B0.E5.9D.80.E6.9C.80.E5.A4.9A.E5.8F.AF.E6.92.AD.E6.94.BE-ip-.E6.95.B0) of "maximum number of IPs allowed for playback at a video playback address") in order to limit the validity period of the URL and the number of IPs allowed for playback.
 
 ### Restricting access to URLs
 

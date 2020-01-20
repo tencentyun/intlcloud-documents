@@ -6,7 +6,7 @@ UGC（用户生产内容）和 PGC（专业生产内容）是视频行业中常�
 
 ## 视频床问题产生的原因
 ### UGC 和 PGC 平台的一般交互方式
-<img src="https://main.qcloudimg.com/raw/1583662375b390c774d1298e41cda9fd.png" width="400">
+<img src="https://main.qcloudimg.com/raw/afe1e6c94f5546d559c276a117a5562e.png" width="400">
 
 UGC（或 PGC）的视频平台，与内容提供方、内容消费方和云点播的交互方式如下（第1 - 3步，可参考 [客户端上传](https://intl.cloud.tencent.com/document/product/266/33921)）：
 
@@ -17,7 +17,7 @@ UGC（或 PGC）的视频平台，与内容提供方、内容消费方和云点�
 5. 内容消费方通过播放 URL，从云点播加速播放视频。
 
 ### 恶意用户如何实现视频床
-<img src="https://main.qcloudimg.com/raw/3ccbd82c7b6ff5e805d1ce16f113de18.png" width="500">
+<img src="https://main.qcloudimg.com/raw/7909bd475575fbf34df519943a3451a1.png" width="500">
 
 恶意的第三方视频平台，会冒充开发者 App 平台的普通用户：
 - 首先，以视频提供方的身份，将自有视频上传到云点播中（第1步和第2步）。
@@ -42,9 +42,9 @@ UGC（或 PGC）的视频平台，与内容提供方、内容消费方和云点�
 
 ### 限制视频 URL 的播放
 
-云点播的 [Key 防盗链](/document/product/266/14047) 提供了限制 URL 允许播放终端数的能力，防止一个视频 URL 被传播给任意多个客户终端播放。
+云点播的 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986) 提供了限制 URL 允许播放终端数的能力，防止一个视频 URL 被传播给任意多个客户终端播放。
 
-为了实现对视频播放 URL 的控制，开发者需要在控制台开启防盗链，并且在第4步中，App 后台需要按照 Key 防盗链生成规则（参考“视频播放地址最多可播放 IP 数”的 [示例](/document/product/266/14047#.E7.A4.BA.E4.BE.8B2.EF.BC.9A.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E5.9C.B0.E5.9D.80.E6.9C.80.E5.A4.9A.E5.8F.AF.E6.92.AD.E6.94.BE-ip-.E6.95.B0)）生成防盗链，限制 URL 的有效时间和允许播放的 IP 数。
+为了实现对视频播放 URL 的控制，开发者需要在控制台开启防盗链，并且在第4步中，App 后台需要按照 Key 防盗链生成规则（参考“视频播放地址最多可播放 IP 数”的 [示例](https://intl.cloud.tencent.com/document/product/266/33986#.E7.A4.BA.E4.BE.8B2.EF.BC.9A.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E5.9C.B0.E5.9D.80.E6.9C.80.E5.A4.9A.E5.8F.AF.E6.92.AD.E6.94.BE-ip-.E6.95.B0)）生成防盗链，限制 URL 的有效时间和允许播放的 IP 数。
 
 ### 限制视频 URL 的获取
 

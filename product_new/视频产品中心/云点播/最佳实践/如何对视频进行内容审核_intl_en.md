@@ -3,7 +3,7 @@ User-generated content (UGC) and professionally generated content (PGC) platform
 ## Causes of Violations
 
 Generally, a UGC or PGC video platform interacts with content providers, content consumers, and VOD in the following ways (for more information on steps 1–3, please see [Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921)):
-<img src="https://main.qcloudimg.com/raw/1583662375b390c774d1298e41cda9fd.png" width="400">
+<img src="https://main.qcloudimg.com/raw/afe1e6c94f5546d559c276a117a5562e.png" width="400">
 1. The video application backend authenticates the content provider and distributes to them a [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922) after authentication is passed.
 2. The content provider uploads the content to be shared to VOD.
 3. VOD notifies the application backend of [relevant information](https://intl.cloud.tencent.com/document/product/266/33950) such as the `FileId` and playback URL of the uploaded video.
@@ -19,7 +19,7 @@ VOD provides a [video content audit](https://intl.cloud.tencent.com/document/pro
 * If the audit result is "review" (human audit suggested), the application backend will leave the video for human audit to determine whether to publish the video.
 
 After video content audit is enabled in VOD, the application backend can efficiently recognize and filter out illegal videos. The recommended use process is as follows:
-<img src="https://main.qcloudimg.com/raw/3696b553b4d21a221e83cd537d7df8f2.png" width="550">
+<img src="https://main.qcloudimg.com/raw/750a8f13fbc0bc4cf3231d2c70234745.png" width="550">
 
 1. The video application backend authenticates the content provider and distributes to them a [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922) after authentication is passed.
 2. The content provider uploads the content to be shared to VOD.
