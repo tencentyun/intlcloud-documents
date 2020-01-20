@@ -71,7 +71,7 @@ App 开启断点续传功能的方式如下：
 - **App 后台收到视频上传完成的通知后，如何识别是哪个客户上传的**？
 在客户端上传签名中增加`sourceContext`参数，通过该参数来携带用户身份信息，上传完成通知会将该参数传递给 App 后台，详细请参见 [事件通知](#p2)。
 
-### <span id = "p2"></span>3. 事件通知
+### 3. 事件通知
 
 视频上传完成之后，云点播会给 App 后台发起 [事件通知 - 视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950)，App 后台可通过该事件感知到视频上传行为。如果要接收事件通知，则 App 需要到 [控制台 - 回调设置](https://console.cloud.tencent.com/vod/callback) 开启事件通知。[事件通知 - 视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950) 主要包含如下信息：
 - 新视频文件的 FileId 和 URL。

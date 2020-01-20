@@ -71,7 +71,7 @@ You can use the `procedure` parameter in the signature for upload from client to
 - **How does the application backend identify which client uploaded the video when it receives the video upload completion notification?**
 You can add the `sourceContext` parameter to the signature for upload from client to carry the user identity information. The video upload completion notification will pass this parameter to the application backend. For more information, please see [Event Notification](#p2).
 
-### <span id = "p2"></span>3. Event notification
+### 3. Event notification
 
 After a video upload is completed, VOD will initiate an [event notification - video upload completion](https://intl.cloud.tencent.com/document/product/266/33950) to the application backend, through which the application backend can become aware of the video upload event. To receive event notifications, you need to go to [Console - Callbacks](https://console.cloud.tencent.com/vod/callback) to enable event notification. [Event notification - video upload completion](https://intl.cloud.tencent.com/document/product/266/33950) mainly contains the following information:
 - `FileId` and URL of the uploaded video.
