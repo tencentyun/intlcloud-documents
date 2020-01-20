@@ -241,7 +241,7 @@ TIMFriendshipManager is the module for managing profile relationship chains. You
 | **getSenderGroupMemberProfile** | Obtains the sender profile in the group. |
 | **setPriority** | Configures message priority (for group message only).|
 | **getPriority** | Obtains message priority (for group message only). |
-| **setOfflinePushSettings | Configures parameters related to offline push. |
+| **setOfflinePushSettings** | Configures parameters related to offline push. |
 | **getOfflinePushSettings** | Obtains the offline push configurations of messages. |
 | **setCustomInt** | Configures the custom integer. The default value is 0. This attribute is for local use only. |
 | **getCustomInt** | Obtains the custom integer. |
