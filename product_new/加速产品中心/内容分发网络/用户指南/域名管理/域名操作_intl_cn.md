@@ -10,21 +10,21 @@
 登录 [CDN控制台](https://console.cloud.tencent.com/cdn)，单击【域名管理】进入相应页面。启动加速服务有2种方式：
 ### 单域名启动
 右键单击要启动加速服务的域名，选择【启动 CDN】。
-![](https://main.qcloudimg.com/raw/e3d608f08832ce6fa7e01a7fb238ec01.png)
+![](https://main.qcloudimg.com/raw/1b43338bb791171551209cc46b0c547c.png)
 ### 批量启动
 勾选需要启动的域名，单击域名上方【启动 CDN】。
-![](https://main.qcloudimg.com/raw/051ea70275127c1be7394f904ad9d2b1.png)
+![](https://main.qcloudimg.com/raw/f75d9dbffe1cf66d05de404662d3f738.png)
 
 ## 关闭加速域名
 对处于**已启动**状态的域名，您可以对其进行**关闭**操作。关闭后的域名配置会保留（下次开启时无需再次配置），但不会继续为您提供加速服务。关闭过程大约需要5分钟，具体操作如下。
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击【域名管理】进入相应页面。关闭域名加速有单域名关闭和批量关闭2种方式。
 ### 单域名关闭
 右键单击要关闭加速服务的域名，选择【关闭 CDN】。
-![](https://main.qcloudimg.com/raw/e38cd358d057f746ae3d62b10b2ee169.png)
+![](https://main.qcloudimg.com/raw/f30849431436150df62e19f17808df2f.png)
 
 ### 批量关闭
 勾选需要关闭的域名，然后在【更多操作】下拉框中，选择【关闭 CDN】。
-![](https://main.qcloudimg.com/raw/cfd1471f736552d89569a4646a279aa7.png)
+![](https://main.qcloudimg.com/raw/9d80ed62526ad68ebe448927b0c204cf.png)
 
 ## 删除加速域名
 对处于**已关闭**状态的域名，您可以对其进行删除操作，删除域名后，**其配置将不会保留，且无法恢复**，具体操作如下。
@@ -32,19 +32,19 @@
 
 ### 单域名删除
 右键单击要删除的域名，选择【删除】。
-![](https://main.qcloudimg.com/raw/d859905654d49fda9fec4da90052349a.png)
+![](https://main.qcloudimg.com/raw/65b5a9d1e911a54de7fcbdb0b7363144.png)
 ### 批量删除
 勾选需要删除的域名，然后在【更多操作】下拉框中，选择【删除】。
-![](https://main.qcloudimg.com/raw/bcd2de467e0008574996bbc881c6822e.png)
+![](https://main.qcloudimg.com/raw/d7508791ddf0f7e0d07d056670586608.png)
 ## 修改所属项目
 登录 [CDN控制台](https://console.cloud.tencent.com/cdn)，单击【域名管理】进入相应页面。修改域名所属项目有单域名修改和批量修改2种方式。
 
 ### 单域名修改
 右键单击要修改所属项目的域名，选择【修改所属项目】。
-![](https://main.qcloudimg.com/raw/988859a20a66cddc48350b67bbe5d186.png)
+![](https://main.qcloudimg.com/raw/7642879cec12b07813fc02f5366c4222.png)
 
 ### 批量修改
 您也可以勾选多个需要调整项目的域名，然后在【更多操作】下拉框中，选择【修改所属项目】。
-![](https://main.qcloudimg.com/raw/215a768ad5b45ec7965e1187ff38de1b.png)
+![](https://main.qcloudimg.com/raw/e8388d3a886701a7f2180a7d1d437b42.png)
 将所属项目修改为目标项目即可。
-![](https://main.qcloudimg.com/raw/c11fb5f4de5bf484093e38d064cf6b22.png)
+![](https://main.qcloudimg.com/raw/b618fd0aca8b5c568c382dfa8d140ff3.png)
