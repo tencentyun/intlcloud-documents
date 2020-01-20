@@ -7,7 +7,7 @@ With the web player management feature, you can easily customize the style of th
 1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview), and click **Delivery and Playback Settings** > **Web Player Management** on the left sidebar to enter the "Web Player Management" page.
 >This page displays a list of players. You can create and maintain up to 10 custom players.
 2. Click **Create Player** in the top-left corner to pop up the "Create Player" dialog box, and set the following options as prompted:
-![](https://main.qcloudimg.com/raw/19df12286ce87efb2d01b3c33f86299b.png)
+![](https://main.qcloudimg.com/raw/371b691aeaad9889df3a6973be739891.png)
 	- Basic Settings: you can configure the player name, description, and default definition.
 		- Player Name: you can enter letters, digits, and underscores, with a length of up to 20 chars.
 		- Description: up to 50 characters.
