@@ -28,7 +28,7 @@ Kubernetes 默认仅提供保留一个小时的 Kubernetes 事件。而 Persiste
 ### 安装并设置存储端
 1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)，选择左侧导航栏中的【扩展组件】。
 2. 在“扩展组件”管理页面上方，选择需安装 PersistentEvent 地域下的集群，并单击【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/d087e46c782e0fe391bb0abd7d2af71d.png)
+![](https://main.qcloudimg.com/raw/672f9156620c9643ffb7baa4ec1e1d27.png)
 3. 在“新建扩展组件”页面，选择【PersistentEvent 组件】并配置事件持久化存储端，单击【完成】即可安装成功。
 PersistentEvent 支持 [Elasticsearch](https://intl.cloud.tencent.com/document/product/845/16478) 及 [日志服务 CLS](https://intl.cloud.tencent.com/document/product/614/11254) 两种存储端选择，推荐使用日志服务 CLS。您可根据实际情况进行选择，本文以日志服务 CLS 为例。
 
@@ -38,17 +38,17 @@ PersistentEvent 支持 [Elasticsearch](https://intl.cloud.tencent.com/document/p
 ### 更新存储端
 1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)，选择左侧导航栏中的【扩展组件】。
 2. 在“扩展组件”页面上方选择需更新地域下 PersistentEvent 的集群，并单击组件所在行右侧的【更新配置】。如下图所示：
-![](https://main.qcloudimg.com/raw/d8bd0a3193ae8b30be7222f4cec42b7a.png)
+![](https://main.qcloudimg.com/raw/cde73e9c1c54d943045bb7e0f538d47a.png)
 3. 在“更新事件持久化组件”页面，调整事件持久化存储端后单击【完成】即可完成更新。
 
 ### 在 CLS 控制台检索事件
 1. 登录日志服务控制台，选择左侧导航栏中的【[日志集管理](https://console.cloud.tencent.com/cls/logset)】。
 2. 在“日志集管理”页面上方，选择 PersistentEvent 所配置日志集所在地域。
 3. 在日志集列表中单击 PersistentEvent 所配置日志集名称，进入该日志集详情页。如下图所示：
-![](https://main.qcloudimg.com/raw/adb6166a495c78580a1a2eacf42353cf.png)
+![](https://main.qcloudimg.com/raw/be97c45c1b40311a49d5ce8514143965.png)
 4. 单击 PersistentEvent 所配置的日志集主题所在行右侧的【管理】，进入“日志主题”详情页。
 5. 选择【索引配置】页签，在页面中开启索引配置并单击【保存】，打开日志检索功能。如下图所示：
-![](https://main.qcloudimg.com/raw/a804577fd5e6d638cd4921f2ce255579.png)
+![](https://main.qcloudimg.com/raw/bb30c2912f760ee81e70170412373332.png)
 6. 选择左侧导航栏中的【[日志检索](https://console.cloud.tencent.com/cls/search)】，并在“日志集”和“日志主题”下拉框中选择 PersistentEvent 所配置的日志服务，以及期望检索日志的时间段，单击【查询分析】即可查看事件数据。如下图所示：
-![](https://main.qcloudimg.com/raw/7b30875bb8f4e7bf057291d210dc0d0c.png)
+![](https://main.qcloudimg.com/raw/490b164af5d62d345eb7436a852bfd64.png)
 
