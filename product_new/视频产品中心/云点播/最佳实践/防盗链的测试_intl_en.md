@@ -29,17 +29,17 @@ The terms involved are described as below:
 
 Generally, a user in the production network environment gets a video playback URL from the production application backend, and a test client from the test application backend. The domain names in the two URLs are the same (i.e., the default VOD domain name). During hotlink protection test, the default VOD domain name shall not be changed directly; otherwise, users will be affected.
 
-<img src="https://main.qcloudimg.com/raw/4117ff809dd401c6f0f6c7569d731b21.png" width="450">
+<img src="https://main.qcloudimg.com/raw/17cb66481e92c1e39f081d30658f0242.png" width="450">
 
 To prevent hotlink protection test from affecting users in the production network environment, VOD provides a "preset VOD test domain name", which is isolated from the default VOD domain name used in the production network environment. During hotlink protection test, you should only manage the hotlink protection configuration of the test domain name.
 
 VOD also provides a "test domain name proxy" (IP: `122.152.250.73`). You just need to modify the HOST table on the test client to resolve the default VOD domain name to this proxy. Playback requests from the test client will be forwarded to the test domain name through the proxy (red path in the figure below), while playback requests from users in the production network environment will still be forwarded to the official domain name (black path in the figure below).
 
-<img src="https://main.qcloudimg.com/raw/3c461eb955a8b526816341f5116ff19c.png" width="450">
+<img src="https://main.qcloudimg.com/raw/fea4ad61c4ae9f671736e5036c490143.png" width="450">
 
 Therefore, you can freely modify the hotlink protection configuration of the test domain name and test the playback URL distributed by the test application backend without worrying about any impact on users in the production network environment.
 
-<img src="https://main.qcloudimg.com/raw/6f891fcbebef12da423e42ec5ab59e1e.png" width="450">
+<img src="https://main.qcloudimg.com/raw/04713121c5926b979508fa6b771daca4.png" width="450">
 
 After fully verifying hotlink protection on the test client and test application backend and confirming that everything is correct, you can take the steps below:
 
@@ -63,7 +63,7 @@ Below is an example of enabling key hotlink protection to show you the steps of 
 
 #### Background
 
-![](https://main.qcloudimg.com/raw/98a0a1c95a0874cb8ebdf39f321753d5.png)
+![](https://main.qcloudimg.com/raw/a133df5973b3180568baaf3f057c0943.png)
 After logging into the VOD Console, a user (e.g., appid: `125xxx655`) will see the following two domain names in **[Domain Name Management](https://console.cloud.tencent.com/vod/distribute-play/domain)**:
 
 * Preset VOD domain name (`125xxx655.vod2.myqcloud.com`).

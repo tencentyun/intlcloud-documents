@@ -29,17 +29,17 @@
 
 通常情况下，现网用户从业务的正式 App 后台获取视频的播放 URL，测试客户端从业务的测试 App 后台获取视频播放 URL，两处获得的 URL 中的域名相同（都是点播默认域名）。当对防盗链测试时，不能直接变更点播默认域名，否则现网用户将受到影响。
 
-<img src="https://main.qcloudimg.com/raw/4117ff809dd401c6f0f6c7569d731b21.png" width="450">
+<img src="https://main.qcloudimg.com/raw/17cb66481e92c1e39f081d30658f0242.png" width="450">
 
 为了避免防盗链测试影响现网用户，云点播提供了一个“预置点播测试域名”，与现网中使用的点播默认域名隔离。开发者测试防盗链时，仅操作测试域名的防盗链配置。
 
 云点播还提供了一个“测试域名代理”（IP 为`122.152.250.73`），开发者只需要修改测试客户端的 HOST 表，将点播默认域名解析到这个代理上，测试客户端的视频播放请求，将经过代理转发到测试域名（下图中的红色路径），而现网用户的播放请求仍然通过正式域名获取视频内容（下图中的黑色路径）。
 
-<img src="https://main.qcloudimg.com/raw/3c461eb955a8b526816341f5116ff19c.png" width="450">
+<img src="https://main.qcloudimg.com/raw/fea4ad61c4ae9f671736e5036c490143.png" width="450">
 
 因此，开发者可以自由修改测试域名的防盗链配置，以及测试 App 后台派发的视频播放 URL，而不必担心影响到现网用户。
 
-<img src="https://main.qcloudimg.com/raw/6f891fcbebef12da423e42ec5ab59e1e.png" width="450">
+<img src="https://main.qcloudimg.com/raw/04713121c5926b979508fa6b771daca4.png" width="450">
 
 开发者使用测试客户端和测试 App 后台，充分验证防盗链并确认无误后，可以依次执行以下步骤：
 
@@ -63,7 +63,7 @@
 
 #### 背景
 
-![](https://main.qcloudimg.com/raw/98a0a1c95a0874cb8ebdf39f321753d5.png)
+![](https://main.qcloudimg.com/raw/a133df5973b3180568baaf3f057c0943.png)
 用户（例中 appid 为`125xxx655`）登录云点播控制台，在 [【域名管理】](https://console.cloud.tencent.com/vod/distribute-play/domain) 将看到以下两种域名：
 
 * 预置点播域名（`125xxx655.vod2.myqcloud.com`）。
