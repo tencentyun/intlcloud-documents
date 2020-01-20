@@ -30,7 +30,7 @@ The VOD subapplication system provides the following capabilities:
 - Independent statistics are generated for each subapplication, such as storage usage, bandwidth/traffic, transcoding duration, video audit duration, and playback data.
 - Aggregated statistics for all subapplications are provided.
 
-### <span id ="p4"></span>Limits
+### </span>Limits
 The VOD subapplication system has the following limits:
 
 - The name and description of the primary application cannot be modified.
@@ -38,7 +38,7 @@ The VOD subapplication system has the following limits:
 - Up to 50 subapplications can be created under one VOD account.
 - No separate billing logic (such as billing mode, separate bill generation, and purchase of exclusive resource packages) can be set for subapplications. All subapplications under a VOD account belong to the same account, and all VOD usage data (including but not limited to VOD billable items such as storage, traffic, transcoding duration, and video audit duration) is aggregated for fee calculation and unified billing.
 
-## <span id="p3"></span>Console Instructions
+## Console Instructions
 
 ### Enabling the subapplication feature
 
@@ -68,7 +68,7 @@ Under the subapplication role, usage of the VOD Console is basically the same as
 ## Server API Instructions
 After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using [VOD Server APIs](https://intl.cloud.tencent.com/document/product/266/31752).
 -->
-### <span id = "p2"></span>Specifying a subapplication in a server API
+### Specifying a subapplication in a server API
 VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.tencent.com/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
 <!--api
