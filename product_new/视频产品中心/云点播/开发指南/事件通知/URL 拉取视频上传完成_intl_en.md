@@ -1,12 +1,12 @@
 >
->- This document describes the callback on version 3.0. For legacy callback on version 2.0, please see [Legacy Callback](https://cloud.tencent.com/document/product/266/33796#url-.E6.8B.89.E5.8F.96.E8.A7.86.E9.A2.91.E4.B8.8A.E4.BC.A0.E5.AE.8C.E6.88.90).
+>- This document describes the callback on version 3.0. For legacy callback on version 2.0, please see [Legacy Callback](https://intl.cloud.tencent.com/document/product/266/33962#url-.E6.8B.89.E5.8F.96.E8.A7.86.E9.A2.91.E4.B8.8A.E4.BC.A0.E5.AE.8C.E6.88.90).
 >- You are recommended to gradually migrate the callback to v3.0, as the documentation for callback v2.0 will no longer be updated.
 
 ## Event Name
 PullComplete
 
 ## Event Description
-If the application is configured with event notification, after a video pull upload is completed, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`PullComplete` structure](https://cloud.tencent.com/document/api/266/31773#EventContent).
+If the application is configured with event notification, after a video pull upload is completed, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`PullComplete` structure](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#EventContent).
 
 
 ## Examples
@@ -52,7 +52,7 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
 ```
 
 ### Reliable callback
-If you choose the reliable callback mode, after the [event notification puling](/document/product/266/33433) API is called, an HTTP response in the following format will be received (the fields with null values are omitted).
+If you choose the reliable callback mode, after the [event notification puling](#APIhttps://intl.cloud.tencent.com/document/api/266/31773) API is called, an HTTP response in the following format will be received (the fields with null values are omitted).
 
 ```json
 {

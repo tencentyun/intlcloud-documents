@@ -30,11 +30,11 @@ secretId=[secretId]&currentTimeStamp=[currentTimeStamp]&expireTime=[expireTime]&
 ```java
 String signature = base64Encode(byteMerger(signatureTmp, original.getBytes("utf8")));
 ```
-> **`byteMerger` and `base64Encode` are methods of array merging and Base64-encoding, respectively. For more information, please see [Sample Code of Signature in Java](https://cloud.tencent.com/document/product/266/10638#java-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B).**
+> **`byteMerger` and `base64Encode` are methods of array merging and Base64-encoding, respectively. For more information, please see [Sample Code of Signature in Java](https://intl.cloud.tencent.com/document/product/266/33923#java-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B).**
 
 ## Example of Signature Generation
 VOD also provides **sample code for signature generation** and a signature generator for your reference and verification:
-- [Upload from client - sample code for signature generation](https://cloud.tencent.com/document/product/266/10638)
+- [Upload from client - sample code for signature generation](https://intl.cloud.tencent.com/document/product/266/33923)
 - [Upload from client - signature generator](https://video.qcloud.com/signature/ugcgenerate.html)
 - [Upload from client - signature checker](https://video.qcloud.com/signature/ugcdecode.html)
 		
@@ -43,19 +43,19 @@ VOD also provides **sample code for signature generation** and a signature gener
  
 | Parameter Name | Required | Type | Description |
 | --- | --- | --- | --- | 
-| secretId | Yes | String | `SecretId` in the TencentCloud API key. For more information on how to get it, please see [Guide for Upload from Client - Get TencentCloud API Key](https://cloud.tencent.com/document/product/266/9219#p3). |
+| secretId | Yes | String | `SecretId` in the TencentCloud API key. For more information on how to get it, please see [Guide for Upload from Client - Get TencentCloud API Key](https://intl.cloud.tencent.com/document/product/266/33921#p3). |
 | currentTimeStamp | Yes | Integer | Current Unix timestamp. |
 | expireTime | Yes | Integer | Unix timestamp for signature expiration. <br/>```expireTime = currentTimeStamp + signature validity period```<br/>The maximum value for signature validity period is 7,776,000 (i.e., 90 days). |
 | random | Yes | Integer | A 32-digit unsigned random integer, which is a parameter used to construct a plaintext signature string. |
 | classId | No | Integer | Video file category. Default value: 0. | 
-|<span id ="p3"></span> procedure | No | String | Subsequent task operation on a video, i.e., after a video file is uploaded, task flow operations will be initiated automatically. This parameter value is a task flow template name. VOD supports [creating task flow templates](https://cloud.tencent.com/document/product/266/33819) and naming the templates. | 
+|<span id ="p3"></span> procedure | No | String | Subsequent task operation on a video, i.e., after a video file is uploaded, task flow operations will be initiated automatically. This parameter value is a task flow template name. VOD supports [creating task flow templates](https://intl.cloud.tencent.com/document/product/266/14058) and naming the templates. | 
 | taskPriority | No | Integer | Priority of subsequent video task (only valid if `procedure` is specified). Value range: [-10, 10]. Default value: 0. | 
 | taskNotifyMode | No | String | Notification mode for task flow status change (only valid if `procedure` is specified). <li>Finish: an event notification will be initiated only after the task flow is completely executed. </li><li>Change: an event notification will be initiated as soon as the status of a subtask in the task flow changes. </li><li>None: no callback for the task flow will be accepted. </li>Default value: Finish. | 
-| sourceContext | No | String | Source context, which is used to pass through the user request information. The [upload callback](/document/product/266/7830) API will return the value of this field. It can contain up to 250 characters. |
-| oneTimeValid | No | Integer | Whether a signature is valid only for once. For more information, please see [Guide for Upload from Client - One-time Signature](https://cloud.tencent.com/document/product/266/9219#p4). <br>0 (default value): not enabled; 1: enabled. <br>For relevant error codes, please see [One-time Signature Description](#p1). | 
-| vodSubAppId | No | Integer | [Subapplication](/document/product/266/14574) ID. If this parameter is left empty, `0`, or your Tencent Cloud `AppId`, the manipulated subapplication will be the "primary application". | 
-| sessionContext | No | String | Session context, which is used to pass through the user request information. If the `procedure` parameter is specified, the [task flow status change callback](/document/product/266/9636) API will return the value of this field. It can contain up to 1,000 characters. |
-| storageRegion | No | String | Specifies the storage region. You can add storage regions in the console by yourself. For more information, please see [Upload Storage Settings](/document/product/266/14059). This field should be filled in with a [region abbreviation](/document/product/266/9760#.E4.B8.8A.E4.BC.A0.E5.AD.98.E5.82.A8). |
+| sourceContext | No | String | Source context, which is used to pass through the user request information. The [upload callback](https://intl.cloud.tencent.com/document/product/266/33950) API will return the value of this field. It can contain up to 250 characters. |
+| oneTimeValid | No | Integer | Whether a signature is valid only for once. For more information, please see [Guide for Upload from Client - One-time Signature](https://intl.cloud.tencent.com/document/product/266/33921#p4). <br>0 (default value): not enabled; 1: enabled. <br>For relevant error codes, please see [One-time Signature Description](#p1). | 
+| vodSubAppId | No | Integer | [Subapplication](https://intl.cloud.tencent.com/document/product/266/33987) ID. If this parameter is left empty, `0`, or your Tencent Cloud `AppId`, the manipulated subapplication will be the "primary application". | 
+| sessionContext | No | String | Session context, which is used to pass through the user request information. If the `procedure` parameter is specified, the [task flow status change callback](https://intl.cloud.tencent.com/document/product/266/33953) API will return the value of this field. It can contain up to 1,000 characters. |
+| storageRegion | No | String | Specifies the storage region. You can add storage regions in the console by yourself. For more information, please see [Upload Storage Settings](https://intl.cloud.tencent.com/document/product/266/18874). This field should be filled in with a [region abbreviation](https://intl.cloud.tencent.com/document/product/266/33910). |
 
 #### <span id ="p1"></span>One-time signature description
 

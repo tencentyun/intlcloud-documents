@@ -39,7 +39,7 @@
 	     </tr> 
 </table>
 
->模板及任务流相关设置，请参见 [视频处理设置](https://cloud.tencent.com/document/product/266/33818)。
+>模板及任务流相关设置，请参见 [视频处理设置](https://intl.cloud.tencent.com/document/product/266/14059)。
 
 
 

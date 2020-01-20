@@ -30,11 +30,11 @@ secretId=[secretId]&currentTimeStamp=[currentTimeStamp]&expireTime=[expireTime]&
 ```java
 String signature = base64Encode(byteMerger(signatureTmp, original.getBytes("utf8")));
 ```
->**byteMerger 和 base64Encode 分别是数组合并和 Base64 编码的方法，详细请参见 [Java 签名示例代码](https://cloud.tencent.com/document/product/266/10638#java-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)**。
+>**byteMerger 和 base64Encode 分别是数组合并和 Base64 编码的方法，详细请参见 [Java 签名示例代码](https://intl.cloud.tencent.com/document/product/266/33923#java-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)**。
 
 ## 签名生成示例
 云点播还提供了**签名生成示例代码**和签名工具，便于您参考和验证：
-- [客户端上传 - 签名生成示例代码](https://cloud.tencent.com/document/product/266/10638)
+- [客户端上传 - 签名生成示例代码](https://intl.cloud.tencent.com/document/product/266/33923)
 - [点播客户端上传 - 签名生成工具](https://video.qcloud.com/signature/ugcgenerate.html)
 - [点播客户端上传 - 签名校验工具](https://video.qcloud.com/signature/ugcdecode.html)
 		
@@ -43,19 +43,19 @@ String signature = base64Encode(byteMerger(signatureTmp, original.getBytes("utf8
  
 | 参数名称 | 必选 | 类型 | 说明 |
 | --- | --- | --- | --- | 
-| secretId | 是 | String | 云 API 密钥中的 SecretId，获取方式请参见 [客户端上传指引 - 获取云 API 密钥](https://cloud.tencent.com/document/product/266/9219#p3)。 |
+| secretId | 是 | String | 云 API 密钥中的 SecretId，获取方式请参见 [客户端上传指引 - 获取云 API 密钥](https://intl.cloud.tencent.com/document/product/266/33921#p3)。 |
 | currentTimeStamp | 是 | Integer | 当前 Unix 时间戳。 |
 | expireTime | 是 | Integer| 签名到期 Unix 时间戳。<br/>```expireTime = currentTimeStamp + 签名有效时长```<br/>签名有效时长最大取值为7776000，即90天。 |
 | random | 是 | Integer | 构造签名明文串的参数，无符号32位随机数。 |
 | classId | 否 | Integer | 视频文件分类，默认为0。 | 
-|<span id ="p3"></span> procedure | 否 | String | 视频后续任务处理操作，即完成视频上传后，可自动发起任务流操作。参数值为任务流模板名，云点播支持 [创建任务流模板](https://cloud.tencent.com/document/product/266/33819) 并为模板命名。 | 
+|<span id ="p3"></span> procedure | 否 | String | 视频后续任务处理操作，即完成视频上传后，可自动发起任务流操作。参数值为任务流模板名，云点播支持 [创建任务流模板](https://intl.cloud.tencent.com/document/product/266/14058) 并为模板命名。 | 
 | taskPriority | 否 | Integer | 视频后续任务优先级（仅当指定了 procedure 时才有效），取值范围为[-10，10]，默认为0。| 
 | taskNotifyMode | 否 | String | 任务流状态变更通知模式（仅当指定了 procedure 时才有效）。<li>Finish：只有当任务流全部执行完毕时，才发起一次事件通知。</li><li>Change：只要任务流中每个子任务的状态发生变化，都进行事件通知。</li><li>None：不接受该任务流回调。 </li>默认为 Finish。| 
-| sourceContext | 否 | String | 来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长250个字符。 |
-| oneTimeValid | 否 | Integer | 签名是否单次有效，详细请参见 [客户端上传指引 - 单次有效签名](https://cloud.tencent.com/document/product/266/9219#p4)。<br>默认为0，表示不启用；1表示签名单次有效。<br>相关错误码详见 [单次有效签名说明](#p1)。 | 
-| vodSubAppId | 否 | Integer | [子应用](/document/product/266/14574) ID，如果不填写、填写0或填写开发者的腾讯云 AppId，则操作的子应用为“主应用”。 | 
-| sessionContext | 否 | String | 会话上下文，用于透传用户请求信息，当指定 procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。|
-| storageRegion | 否 | String | 指定存储地域，可以在控制台上自助添加存储地域，详细请参见 [上传存储设置](/document/product/266/14059)，该字段填写为存储地域的 [英文简称](/document/product/266/9760#.E4.B8.8A.E4.BC.A0.E5.AD.98.E5.82.A8)。|
+| sourceContext | 否 | String | 来源上下文，用于透传用户请求信息，[上传完成回调](https://intl.cloud.tencent.com/document/product/266/33950) 将返回该字段值，最长250个字符。 |
+| oneTimeValid | 否 | Integer | 签名是否单次有效，详细请参见 [客户端上传指引 - 单次有效签名](https://intl.cloud.tencent.com/document/product/266/33921#p4)。<br>默认为0，表示不启用；1表示签名单次有效。<br>相关错误码详见 [单次有效签名说明](#p1)。 | 
+| vodSubAppId | 否 | Integer | [子应用](https://intl.cloud.tencent.com/document/product/266/33987) ID，如果不填写、填写0或填写开发者的腾讯云 AppId，则操作的子应用为“主应用”。 | 
+| sessionContext | 否 | String | 会话上下文，用于透传用户请求信息，当指定 procedure 参数后，[任务流状态变更回调](https://intl.cloud.tencent.com/document/product/266/33953) 将返回该字段值，最长 1000 个字符。|
+| storageRegion | 否 | String | 指定存储地域，可以在控制台上自助添加存储地域，详细请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)，该字段填写为存储地域的 [英文简称](https://intl.cloud.tencent.com/document/product/266/33910)。|
 
 #### <span id ="p1"></span>单次有效签名说明
 

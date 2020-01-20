@@ -1,4 +1,4 @@
-VOD provides a video upload SDK for WeChat Mini Program. For more information on the upload process, please see [Guide for Upload from Client](/document/product/266/9219).
+VOD provides a video upload SDK for WeChat Mini Program. For more information on the upload process, please see [Guide for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921).
 
 - If you need the SDK source code, please click [here](https://github.com/tencentyun/vod-wx-sdk-v2/).
 - If you need the Demo source code, please click [here](https://github.com/tencentyun/vod-wx-sdk-v2/tree/master/demo).
@@ -34,8 +34,8 @@ getSignature: function(callback) {
 ```
 
 >
-- `url` is the URL of your signature distribution service. For more information, please see [Guide for Upload from Client](https://cloud.tencent.com/document/product/266/9219).
-- For the rule of `signature` calculation, please see [Signature for Upload from Client](https://cloud.tencent.com/document/product/266/9221).
+- `url` is the URL of your signature distribution service. For more information, please see [Guide for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921).
+- For the rule of `signature` calculation, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 **3. Upload a video**
 Video upload is implemented by calling `VodUploader.start`, and video selection is implemented by the `wx.chooseVideo` method in the WeChat Mini Program API. Below is an example:

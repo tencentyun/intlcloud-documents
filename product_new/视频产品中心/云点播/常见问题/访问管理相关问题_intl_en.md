@@ -1,6 +1,6 @@
 ### What permissions are needed to upload a file?
 
-VOD offers multiple upload methods such as [upload from server](/document/product/266/9759), [upload from client](/document/product/266/9219), [pull from URL](/document/product/266/35575), and [LVB recording](https://cloud.tencent.com/document/product/267/32739). The permissions required for each method are as follows:
+VOD offers multiple upload methods such as [upload from server](https://intl.cloud.tencent.com/document/product/266/33912), [upload from client](https://intl.cloud.tencent.com/document/product/266/33921), [pull from URL](/document/product/266/35575). The permissions required for each method are as follows:
 
 | Upload Method | Permission to Resources |  Permission to Operations | Remarks |
 | ---------- | ------------ | ------------------------------------------------------------ | ------------------ |
@@ -9,15 +9,15 @@ VOD offers multiple upload methods such as [upload from server](/document/produc
 | Pull from URL | Specified subapplication |  [PullUpload](/document/product/266/35575) | - |
 | LVB recording   | All subapplications   | -  | The LVB recording feature needs to be enabled |
 
->[Local upload](/document/product/266/2841#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) of videos in the VOD Console is a form of upload from client.
+>[Local upload](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) of videos in the VOD Console is a form of upload from client.
 
 ### A "no permission" error is returned for upload from server, but upload through other methods can succeed. Why?
 
-This is probably because the server SDK is too old. Please upgrade the SDK to the latest [version](/document/product/266/9759#1.-.E5.8F.91.E8.B5.B7.E4.B8.8A.E4.BC.A0).
+This is probably because the server SDK is too old. Please upgrade the SDK to the latest [version](https://intl.cloud.tencent.com/document/product/266/33912#1.-.E5.8F.91.E8.B5.B7.E4.B8.8A.E4.BC.A0).
 
 ### What permission is needed to watch videos?
 
-To watch a video is essentially to make a request to VOD CDN as an ordinary viewer rather than a Tencent Cloud account, so you do not need to grant a viewer any permissions (if [hotlink protection](/document/product/266/11243) or [video encryption](/document/product/266/9638) is enabled, the conditions as described in applicable documents must be met before the video can be watched, but these are irrelevant to access control).
+To watch a video is essentially to make a request to VOD CDN as an ordinary viewer rather than a Tencent Cloud account, so you do not need to grant a viewer any permissions (if [hotlink protection](https://intl.cloud.tencent.com/document/product/266/33984) or [video encryption](https://intl.cloud.tencent.com/document/product/266/33968) is enabled, the conditions as described in applicable documents must be met before the video can be watched, but these are irrelevant to access control).
 
 ### Can permissions to an individual file be granted?
 
@@ -30,7 +30,7 @@ The possible reasons of conflicts are as follows:
 - A custom policy contains multiple statements where there are conflicting descriptions (for example, one statement allows access to a resource, but another one denies such access).
 - A subuser is bound to multiple policies where there are conflicting descriptions.
 
-As VOD permission management is based on CAM, VOD permissions are determined in accordance with the policy [judgment logic](/document/product/598/10605) of CAM.
+As VOD permission management is based on CAM, VOD permissions are determined in accordance with the policy [judgment logic](https://intl.cloud.tencent.com/document/product/598/10605) of CAM.
 
 ### Does VOD support cross-account resource access?
 

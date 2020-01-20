@@ -11,7 +11,7 @@
 
 App 客户端完成视频制作后，需要将视频上传到云点播。
 
-[短视频 SDK](https://cloud.tencent.com/document/product/584/9366) 集成了客户端视频上传的功能，推荐使用该 SDK 实现客户端视频上传。如果您不希望使用短视频 SDK，我们也提供了独立的 [客户端上传 SDK](https://cloud.tencent.com/document/product/266/9219)。
+[短视频 SDK](https://cloud.tencent.com/document/product/584/9366) 集成了客户端视频上传的功能，推荐使用该 SDK 实现客户端视频上传。如果您不希望使用短视频 SDK，我们也提供了独立的 [客户端上传 SDK](https://intl.cloud.tencent.com/document/product/266/33921)。
 
 ## 视频播放
 
@@ -23,10 +23,10 @@ App 客户端完成视频制作后，需要将视频上传到云点播。
 
 App 用户上传的视频可能存在涉黄、涉暴和涉政问题。
 
-云点播提供了 [视频内容审核](https://cloud.tencent.com/document/product/266/33498) 功能，使用腾讯云强大的 AI 对视频进行快速准确的智能审核。内容审核的具体集成方案，请参见 [如何对视频进行内容审核](https://cloud.tencent.com/document/product/266/34104)。
+云点播提供了 [视频内容审核](https://intl.cloud.tencent.com/document/product/266/33944) 功能，使用腾讯云强大的 AI 对视频进行快速准确的智能审核。内容审核的具体集成方案，请参见 [如何对视频进行内容审核](https://intl.cloud.tencent.com/document/product/266/33905)。
 
 ## 视频床防范
 
-恶意用户上传自有内容视频并分发给第三方用户，这是一种侵占您带宽和存储资源的行为，即 [视频床问题](https://cloud.tencent.com/document/product/266/20394#.E8.A7.86.E9.A2.91.E5.BA.8A.E9.97.AE.E9.A2.98.E4.BA.A7.E7.94.9F.E7.9A.84.E5.8E.9F.E5.9B.A0)。
+恶意用户上传自有内容视频并分发给第三方用户，这是一种侵占您带宽和存储资源的行为，即 [视频床问题](https://intl.cloud.tencent.com/document/product/266/33906#causes-of-malicious-video-hosting)。
 
-云点播提供了一种 [视频床防范](https://cloud.tencent.com/document/product/266/20394#.E8.A7.86.E9.A2.91.E5.BA.8A.E9.98.B2.E8.8C.83.E6.96.B9.E6.A1.88) 方案，通过限制 URL 的获取和播放次数防止您的资源成为“视频床”。
+云点播提供了一种 [视频床防范](https://intl.cloud.tencent.com/document/product/266/33906#malicious-video-hosting-prevention) 方案，通过限制 URL 的获取和播放次数防止您的资源成为“视频床”。

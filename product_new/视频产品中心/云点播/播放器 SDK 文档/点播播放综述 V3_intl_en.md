@@ -1,11 +1,11 @@
-In order to meet the playback requirements in various scenarios such as [video website](https://cloud.tencent.com/document/product/266/34147), VOD provides mobile and web superplayers. You can quickly integrate them to play back videos in VOD in a very simple way.
+In order to meet the playback requirements in various scenarios such as [video website](https://intl.cloud.tencent.com/document/product/266/33887), VOD provides mobile and web superplayers. You can quickly integrate them to play back videos in VOD in a very simple way.
 
 ## Restrictions
 
 The superplayer has the following restrictions on the video and playback methods:
 
 * Only videos in VOD but not on other platforms can be played back.
-* Video must be [transcoded to adaptive bitrate streaming](https://cloud.tencent.com/document/product/266/34071) before they can be played back.
+* Video must be [transcoded to adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) before they can be played back.
 * Videos can be played back only by video ID (i.e., `FileId`) but not by video URL.
 
 ## Advantages

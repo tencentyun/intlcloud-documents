@@ -35,7 +35,7 @@
 无论是前者还是后者，都可以通过调整对应的并发数，提高带宽的利用率。
 
 #### 文件并发上传
-文件并发上传是利用多个进程或者线程，同时发起上传操作。目前云点播没有提供相关的 SDK 包装，用户可以参考具体的语言特性进行实现，下面基于云点播 [Java SDK](/document/product/266/10276) 提供一个简单的示例：
+文件并发上传是利用多个进程或者线程，同时发起上传操作。目前云点播没有提供相关的 SDK 包装，用户可以参考具体的语言特性进行实现，下面基于云点播 [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914) 提供一个简单的示例：
 
 ```
 import com.qcloud.vod.VodUploadClient;
@@ -101,9 +101,9 @@ class UploadThread implements Runnable {
 #### 分片并发上传
 分片并发上传是针对大文件，拆分成多个分片同时进行上传。分片并发上传的优势在于可以快速完成单个文件的上传，云点播提供的 SDK 会根据用户文件的长度，自动选择普通上传以及分片上传，用户不用关心分片上传的每个步骤，即可实现分片上传。而文件的分片并发数通过`ConcurrentUploadNumber`参数进行指定，具体的使用示例参考对应 SDK，目前已经支持该参数的 SDK 列表如下：
 
-- [Java SDK](/document/product/266/10276#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
-- [Python SDK](/document/product/266/32319#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
-- [Go SDK](/document/product/266/32410#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
 
 ### 就近上传
 就近上传是指能够感知上传者所处的位置，分配离上传者最近的存储中心进行上传。例如，成都的用户会分配重庆地域进行上传，而不会分配到上海地域。
@@ -115,14 +115,14 @@ class UploadThread implements Runnable {
 云点播本身支持就近上传的能力，您只需简单确认下面两点：
 
 - **开通多个存储地域**
-云点播默认提供的存储地域设置在**重庆**，如果要充分利用就近上传的能力，就需要开通希望就近存储的区域列表，可以在控制台上自助添加其他存储地域，详情请参见 [上传存储设置](/document/product/266/14059)。启用多地存储后，当用户上传时，通过 IP 识别用户所在的地域，云点播根据已经开通的地域列表，智能分配一个最近地域用于上传。
+云点播默认提供的存储地域设置在**重庆**，如果要充分利用就近上传的能力，就需要开通希望就近存储的区域列表，可以在控制台上自助添加其他存储地域，详情请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。启用多地存储后，当用户上传时，通过 IP 识别用户所在的地域，云点播根据已经开通的地域列表，智能分配一个最近地域用于上传。
 - **校验是否正确调度**
 如果开通了重庆及上海的存储地域，用户在成都发起上传，通过就近调度，理论上应该是上传到重庆。如何确认调度是否合理，可以获取完成上传返回的`FileId`，通过 [获取媒体详细信息接口](/document/api/266/31763) 返回的基础信息（basicInfo）进行确认，其中就包含了`StorageRegion`字段，代表媒体文件存储地区。
 
 如果上传者中间经过了代理或者转发，导致最后云点播通过 IP 识别地区有误，也可以通过强制指定存储地域，上传到目标地域中，具体用法请参见：
 
-- [客户端上传指引](/document/product/266/9219)
-- [服务端上传指引](/document/product/266/9759)
+- [客户端上传指引](https://intl.cloud.tencent.com/document/product/266/33921)
+- [服务端上传指引](https://intl.cloud.tencent.com/document/product/266/33912)
 
 
 ### 预探测上传
@@ -133,5 +133,5 @@ class UploadThread implements Runnable {
 
 预探测上传的能力目前应用在客户端上传中，接入方式简单，具体的用法参考 SDK 中`预上传`的说明：
 
-- [Android 上传 SDK](/document/product/266/9539)
-- [iOS 上传 SDK](/document/product/266/13793)
+- [Android 上传 SDK](https://intl.cloud.tencent.com/document/product/266/33925)
+- [iOS 上传 SDK](https://intl.cloud.tencent.com/document/product/266/33926)

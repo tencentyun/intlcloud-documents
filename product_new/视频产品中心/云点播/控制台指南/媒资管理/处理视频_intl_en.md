@@ -39,7 +39,7 @@ This document describes how to process videos in the VOD Console, such as transc
 	     </tr> 
 </table>
 
->For more information on the template and task flow settings, please see [Video Processing Settings](https://cloud.tencent.com/document/product/266/33818).
+>For more information on the template and task flow settings, please see [Video Processing Settings](https://intl.cloud.tencent.com/document/product/266/14059).
 
 
 

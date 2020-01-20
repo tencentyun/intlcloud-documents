@@ -13,17 +13,17 @@ Below is the **table of comparison between callback v2.0 and v3.0**:
 
 | Event Notification | v3.0 | v2.0 |
 | -- | -- | -- |
-| Video upload completion | [Link](https://cloud.tencent.com/document/product/266/7830) | [Link](#NewFileUpload) | 
-| Video pull from URL completion | [Link](https://cloud.tencent.com/document/product/266/7831) | [Link](#PullComplete) | 
-| Video deletion completion | [Link](https://cloud.tencent.com/document/product/266/13434) | [Link](#FileDeleted) |  
-| Task flow status change | [Link](https://cloud.tencent.com/document/product/266/9636) | [Link](#ProcedureStateChanged) | 
-| Video editing completion | [Link](https://cloud.tencent.com/document/product/266/33794) | - | 
-| Release on WeChat completion | [Link](https://cloud.tencent.com/document/product/266/33795) | - | 
-| Video transcoding completion | [Link](https://cloud.tencent.com/document/product/266/7832) | [Link](#TranscodeComplete) | 
-| Time point screencapturing completion | [Link](https://cloud.tencent.com/document/product/266/8105) | [Link](#CreateSnapshotByTimeOffsetComplete) | 
-| Image sprite generating completion | [Link](https://cloud.tencent.com/document/product/266/8104) | [Link](#CreateImageSpriteComplete) | 
-| Video clipping completion | [Link](https://cloud.tencent.com/document/product/266/10157) | [Link](#ClipComplete) | 
-| Video splicing completion | [Link](https://cloud.tencent.com/document/product/266/7834) | [Link](#ConcatComplete) | 
+| Video upload completion | [Link](https://intl.cloud.tencent.com/document/product/266/33950) | [Link](#NewFileUpload) | 
+| Video pull from URL completion | [Link](https://intl.cloud.tencent.com/document/product/266/33951) | [Link](#PullComplete) | 
+| Video deletion completion | [Link](https://intl.cloud.tencent.com/document/product/266/33952) | [Link](#FileDeleted) |  
+| Task flow status change | [Link](https://intl.cloud.tencent.com/document/product/266/33953) | [Link](#ProcedureStateChanged) | 
+| Video editing completion | [Link](https://intl.cloud.tencent.com/document/product/266/33954) | - | 
+| Release on WeChat completion | [Link](https://intl.cloud.tencent.com/document/product/266/33955) | - | 
+| Video transcoding completion | [Link](https://intl.cloud.tencent.com/document/product/266/33957) | [Link](#TranscodeComplete) | 
+| Time point screencapturing completion | [Link](https://intl.cloud.tencent.com/document/product/266/33958) | [Link](#CreateSnapshotByTimeOffsetComplete) | 
+| Image sprite generating completion | [Link](https://intl.cloud.tencent.com/document/product/266/33959) | [Link](#CreateImageSpriteComplete) | 
+| Video clipping completion | [Link](https://intl.cloud.tencent.com/document/product/266/33960) | [Link](#ClipComplete) | 
+| Video splicing completion | [Link](https://intl.cloud.tencent.com/document/product/266/33961) | [Link](#ConcatComplete) | 
 
 ## Table of v2.0 Callbacks
 <span id="NewFileUpload"></span>
@@ -139,7 +139,7 @@ Below is the **table of comparison between callback v2.0 and v3.0**:
 | data.metaData | Object | Video metadata, which must be specified. For more information on this field, please see [metaData (Video Metadata)](#metadata.EF.BC.88.E8.A7.86.E9.A2.91.E5.85.83.E4.BF.A1.E6.81.AF.EF.BC.89). |
 | data.contentReviewList | Array | List of content audit results. For more information on this field, please see [contentReviewList (Content Audit List)](#contentreviewlist.EF.BC.88.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E5.88.97.E8.A1.A8.EF.BC.89). |
 | data.aIAnalysisList | Array | List of intelligent analysis results. For more information on this field, please see [aIAnalysisList (Intelligent Analysis List)](#aianalysislist.EF.BC.88.E6.99.BA.E8.83.BD.E5.88.86.E6.9E.90.E5.88.97.E8.A1.A8.EF.BC.89). |
-| data.drm | Object | File encryption information. This field exists only if you specify encryption in the [transcoding control parameters](/document/product/266/9642#transcode.EF.BC.88.E8.BD.AC.E7.A0.81.E6.8E.A7.E5.88.B6.E5.8F.82.E6.95.B0.EF.BC.89) when you initiate a task flow. For more information on this field, please see [drm (Video Encryption Information)](#drm.EF.BC.88.E8.A7.86.E9.A2.91.E5.8A.A0.E5.AF.86.E4.BF.A1.E6.81.AF.EF.BC.89). |
+| data.drm | Object | File encryption information. This field exists only if you specify encryption in the [transcoding control parameters](#APIhttps://intl.cloud.tencent.com/document/product/266/9642#transcode.EF.BC.88.E8.BD.AC.E7.A0.81.E6.8E.A7.E5.88.B6.E5.8F.82.E6.95.B0.EF.BC.89) when you initiate a task flow. For more information on this field, please see [drm (Video Encryption Information)](#drm.EF.BC.88.E8.A7.86.E9.A2.91.E5.8A.A0.E5.AF.86.E4.BF.A1.E6.81.AF.EF.BC.89). |
 | data.processTaskList | Array | List of tasks contained in a task flow. For more information on this field, please see [processTaskList (Task List)](#processtasklist.EF.BC.88.E4.BB.BB.E5.8A.A1.E5.88.97.E8.A1.A8.EF.BC.89). |
 
 ##### metaData (video metadata)
@@ -576,7 +576,7 @@ List of task information. Currently, the following types are available:
 | data | Object | Specific callback data. |
 | data.vodTaskId | String |  Time point screencapturing task ID. |
 | data.fileId | String | FileId of a specified time point screenshot. |
-| data.definition | Integer | Time point screenshot specification. For more information, please see [Parameter Template for Time Point Screencapturing](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). |
+| data.definition | Integer | Time point screenshot specification. For more information, please see [Parameter Template for Time Point Screencapturing](https://intl.cloud.tencent.com/document/product/266/33940#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). |
 | data.picInfo | Array | Information of a specified time point screenshot. |
 
 Each element in the `data.picInfo` array is an `Object`, and the meanings of the parameters are as follows:
@@ -624,7 +624,7 @@ Each element in the `data.picInfo` array is an `Object`, and the meanings of the
 | data.message | String | Error message. |
 | data.vodTaskId | String | Image sprite generating task ID. |
 | data.fileId | String | FileId of a generated image sprite. |
-| data.definition | Integer | Image sprite specification. For more information, please see [Image Sprite Generating Template](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF). |
+| data.definition | Integer | Image sprite specification. For more information, please see [Image Sprite Generating Template](https://intl.cloud.tencent.com/document/product/266/33940#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF). |
 | data.totalCount | Integer | Total number of subimages in an image sprite. |
 | data.imageSpriteUrl | Array | Information of a generated image sprite. |
 | data.webVttUrl | String | Address of the WebVtt file for the position-time relationship among subimages in an image sprite. |

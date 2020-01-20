@@ -1,4 +1,4 @@
-VOD provides an upload SDK for Android for uploading videos on the Android platform. For more information on the upload process, please see [Uploading Videos from Client](/document/product/266/9219).
+VOD provides an upload SDK for Android for uploading videos on the Android platform. For more information on the upload process, please see [Uploading Videos from Client](https://intl.cloud.tencent.com/document/product/266/33921).
 
 ## Downloading Source Code
 
@@ -56,7 +56,7 @@ TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishPara
 param.signature = "xxx";
 param.videoPath = "xxx";
 ```
-For the rule of signature calculation, please see [Signature for Upload from Client](/document/product/266/9221).
+For the rule of signature calculation, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 #### Calling upload
 
@@ -96,7 +96,7 @@ param.signature = "xxx";
 param.mediaPath = "xxx";
 ```
 
-For the rule of signature calculation, please see [Signature for Upload from Client](/document/product/266/9221).
+For the rule of signature calculation, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 #### Calling upload
 
@@ -118,7 +118,7 @@ param.signature = "xxx";
 param.videoPath = "xxx";
 param.coverPath = "xxx";
 ```
-For the rule of signature calculation, please see [Signature for Upload from Client](/document/product/266/9221).
+For the rule of signature calculation, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 #### Canceling and resuming upload
 
@@ -155,7 +155,7 @@ You are recommended to call `TXUGCPublishOptCenter.getInstance().prepareUpload(s
 </receiver>
 ```
 
-For the rule of signature calculation, please see [Signature for Upload from Client](/document/product/266/9221).
+For the rule of signature calculation, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 
 ## Video Upload API Description
@@ -184,7 +184,7 @@ Upload parameter: `TXUGCPublishTypeDef.TXPublishParam`
 
 | Parameter Name | Description | Type | Required |
 | ------------ | ---------------------------------- | ------- | ---- |
-| signature | [Signature for upload from client](/document/product/266/9221) | String | Yes |
+| signature | [Signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922) | String | Yes |
 | videoPath | Path to a local video file. | String | Yes |
 | coverPath | Path to a local cover file. No cover file is uploaded by default. | String | No |
 | enableResume | Whether to enable resumable upload, which is enabled by default. | boolean | No |
@@ -225,7 +225,7 @@ Pre-upload: `TXUGCPublishOptCenter.prepareUpload`
 
 | Parameter Name | Description | Type | Required |
 | --------- | ---------------------- | ------- | ---- |
-| signature | [Signature for upload from client](/document/product/266/9221). | String | Yes |
+| signature | [Signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922). | String | Yes |
 
 ## Image Upload API Description
 
@@ -252,7 +252,7 @@ Upload parameter: `TXUGCPublishTypeDef.TXMediaPublishParam`
 
 | Parameter Name | Description | Type | Required |
 | ------------ | -------------------------------------------------- | ------- | ---- |
-| signature | [Signature for upload from client](/document/product/266/9221). | String | Yes |
+| signature | [Signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922). | String | Yes |
 | mediaPath | Path to a local image file. | String | Yes |
 | enableResume | Whether to enable resumable upload, which is enabled by default. | boolean | No |
 | enableHttps | Whether to enable HTTPS, which is disabled by default. | boolean | No |
@@ -290,7 +290,7 @@ Pre-upload: `TXUGCPublishOptCenter.prepareUpload`
 
 | Parameter Name | Description | Type | Required |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature | [Signature for upload from client](/document/product/266/9221). | String | Yes |
+| signature | [Signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922). | String | Yes |
 
 ## Error Codes
 

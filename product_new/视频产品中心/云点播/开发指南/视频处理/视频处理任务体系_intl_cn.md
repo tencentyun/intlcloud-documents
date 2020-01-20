@@ -7,8 +7,8 @@
 
 ## 参数模板
 
-视频处理的参数通常较复杂，例如，视频转码参数包括封装格式、编码格式、码率、分辨率以及帧率等数十个参数。为了简化视频处理任务参数，云点播将各类视频处理的参数集合固化成参数模板（如 [转码模板](https://cloud.tencent.com/document/product/266/33478#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)），并用模板 ID 表示。
-- 预置参数模板：对于常见的视频处理参数集合，云点播预置了一批参数模板，称为预置参数模板，模板清单请参见 [预置参数模板列表](https://cloud.tencent.com/document/product/266/33476)。
+视频处理的参数通常较复杂，例如，视频转码参数包括封装格式、编码格式、码率、分辨率以及帧率等数十个参数。为了简化视频处理任务参数，云点播将各类视频处理的参数集合固化成参数模板（如 [转码模板](https://intl.cloud.tencent.com/document/product/266/33938#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF)），并用模板 ID 表示。
+- 预置参数模板：对于常见的视频处理参数集合，云点播预置了一批参数模板，称为预置参数模板，模板清单请参见 [预置参数模板列表](https://intl.cloud.tencent.com/document/product/266/33932)。
 - 自定义参数模板：可以通过控制台或服务端 API 自定义参数模板。
 
 ## 任务流
@@ -23,7 +23,7 @@
 ![](https://main.qcloudimg.com/raw/92301af6ff2c26abade1e0e386e7c8f1.png)
 如图所示，任务流中包含了3个子任务，任务流在最后一个子任务（子任务3）完成时结束。任务流的结果通知不仅在任务流结束时触发，也会在各个子任务完成时触发，因此业务方可以实时感知到任意一个子任务的执行结果。
 
-云点播中的视频处理任务大多以任务流的方式执行，“任务流”可以被当做一种特殊的“任务”。云点播还支持 [创建任务流模板](https://cloud.tencent.com/document/product/266/33819)，并为模板命名。发起任务流时，可以用任务流模板名字来表示要发起的任务。
+云点播中的视频处理任务大多以任务流的方式执行，“任务流”可以被当做一种特殊的“任务”。云点播还支持 [创建任务流模板](https://intl.cloud.tencent.com/document/product/266/14058)，并为模板命名。发起任务流时，可以用任务流模板名字来表示要发起的任务。
 
 <span id="OriginatingTask"></span>
 
@@ -34,23 +34,23 @@
 #### 通过服务端 API 发起
 
 通过服务端 API，可以直接对云点播中的视频发起任务，也可以对视频做编辑，并指定编辑生成的新视频要执行的任务。
-- [视频处理](https://cloud.tencent.com/document/product/266/33427)
-- [对指定 URL 的视频发起视频处理](https://cloud.tencent.com/document/product/266/33426)
-- [使用任务流模板进行视频处理](https://cloud.tencent.com/document/product/266/11030)
-- [编辑视频](https://cloud.tencent.com/document/product/266/34783)
+- [视频处理](#APIhttps://intL.cloud.tencent.com/document/product/266/33427)
+- [对指定 URL 的视频发起视频处理](#APIhttps://intl.cloud.tencent.com/document/product/266/33426)
+- [使用任务流模板进行视频处理](#APIhttps://intl.cloud.tencent.com/document/product/266/11030)
+- [编辑视频](#APIhttps://intl.cloud.tencent.com/document/product/266/34783)
 - 微信发布
 
 #### 通过控制台发起
 
-通过控制台，可以对云点播中的视频发起任务，发起方式请参见 [处理视频](https://cloud.tencent.com/document/product/266/36448)。
+通过控制台，可以对云点播中的视频发起任务，发起方式请参见 [处理视频](https://intl.cloud.tencent.com/document/product/266/33892)。
 
 #### 上传时指定要执行的任务
 
 云点播提供了客户端上传、服务端上传和控制台上传三种视频上传方式，这几种上传方式都可以指定视频文件上传后要执行的任务。
 
-- 客户端上传：通过 [客户端上传签名](https://cloud.tencent.com/document/product/266/9221#p3) 中的`procedure`参数，指定视频上传后要执行的任务。
-- 服务端上传：通过 [申请上传](https://cloud.tencent.com/document/product/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数，指定视频上传后要执行的任务。
-- 控制台上传：通过控制台上传视频，选择【上传的同时对视频进行处理操作】并指定视频上传后要执行的任务，具体操作请参考 [上传视频](https://cloud.tencent.com/document/product/266/2841#.E4.B8.8A.E4.BC.A0.E8.A7.86.E9.A2.91)。
+- 客户端上传：通过 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922#p3) 中的`procedure`参数，指定视频上传后要执行的任务。
+- 服务端上传：通过 [申请上传](#https://intl.cloud.tencent.com/document/product/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数，指定视频上传后要执行的任务。
+- 控制台上传：通过控制台上传视频，选择【上传的同时对视频进行处理操作】并指定视频上传后要执行的任务，具体操作请参考 [上传视频](https://intl.cloud.tencent.com/document/product/266/33890)。
 
 <span id="ResultNotification"></span>
 
@@ -59,14 +59,14 @@
 业务方发起视频处理后，需要通过以“结果通知”的方式异步感知任务的执行结果。
 视频处理的结果通知主要有以下类型：
 
-- [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)
-- [视频编辑完成](https://cloud.tencent.com/document/product/266/33794)
-- [微信发布完成](https://cloud.tencent.com/document/product/266/33795)
+- [任务流状态变更](https://intl.cloud.tencent.com/document/product/266/33953)
+- [视频编辑完成](https://intl.cloud.tencent.com/document/product/266/33954)
+- [微信发布完成](https://intl.cloud.tencent.com/document/product/266/33955)
 
-视频处理的结果通知属于云点播的“事件通知”，有“HTTP 普通回调”和“可靠回调”两种接收类型，事件通知的接收方式等信息请参见 [事件通知](https://cloud.tencent.com/document/product/266/33779)。
+视频处理的结果通知属于云点播的“事件通知”，有“HTTP 普通回调”和“可靠回调”两种接收类型，事件通知的接收方式等信息请参见 [事件通知](https://intl.cloud.tencent.com/document/product/266/33948)。
 
 <span id="TaskQuery"></span>
 
 ## 任务查询
 
-业务方除了以结果通知的方式感知任务的执行结果，还可以通过任务 ID 定时轮询任务的执行状态，即任务查询。云点播目前仅提供 [获取任务列表](https://cloud.tencent.com/document/product/266/33430) 和 [查询任务详情](https://cloud.tencent.com/document/product/266/33431) 两种服务端 API 查询任务的执行状态和执行结果。
+业务方除了以结果通知的方式感知任务的执行结果，还可以通过任务 ID 定时轮询任务的执行状态，即任务查询。云点播目前仅提供 [获取任务列表](#apihttps://intl.cloud.tencent.com/document/product/266/33430) 和 [查询任务详情](#apihttps://intl.cloud.tencent.com/document/product/266/33431) 两种服务端 API 查询任务的执行状态和执行结果。

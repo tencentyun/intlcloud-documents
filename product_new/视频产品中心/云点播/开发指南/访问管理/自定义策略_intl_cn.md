@@ -1,4 +1,4 @@
-在访问管理中使用 [预设策略](https://cloud.tencent.com/document/product/266/39338) 来实现授权虽然方便，但权限控制粒度粗，不能细化到子应用和 API 粒度。如果开发者要求精细的权限控制能力，则需要创建自定义策略。
+在访问管理中使用 [预设策略](https://intl.cloud.tencent.com/document/product/266/33971) 来实现授权虽然方便，但权限控制粒度粗，不能细化到子应用和 API 粒度。如果开发者要求精细的权限控制能力，则需要创建自定义策略。
 
 
 ## 自定义策略创建方法
@@ -17,7 +17,7 @@
 
 ## <span id = "p1"></span>策略语法资源描述
 
-如上文所述，云点播权限管理的资源粒度是子应用。子应用的策略语法描述方式遵循 [CAM 标准](/document/product/598/10606)。在下文的示例中，开发者的账号 ID 是12345678，APPID 是1250000001（主应用 ID 等于 APPID），开发者创建了两个云点播子应用，ID 分别是1400000001和1400000002。
+如上文所述，云点播权限管理的资源粒度是子应用。子应用的策略语法描述方式遵循 [CAM 标准](https://intl.cloud.tencent.com/document/product/598/10606)。在下文的示例中，开发者的账号 ID 是12345678，APPID 是1250000001（主应用 ID 等于 APPID），开发者创建了两个云点播子应用，ID 分别是1400000001和1400000002。
 
 - **云点播所有资源的策略语法描述**
 ```
@@ -75,7 +75,7 @@
 
 在下文示例中，我们将创建一个自定义策略。该策略允许对1400000001这个云点播子应用进行任何操作，除了`ProcessMedia`这个服务端 API。
 
-1. 以 [主账号](/document/product/598/13665) 的身份访问 CAM 控制台的[【策略】](https://console.cloud.tencent.com/cam/policy)，单击【新建自定义策略】。
+1. 以 [主账号](https://intl.cloud.tencent.com/document/product/598/32633) 的身份访问 CAM 控制台的[【策略】](https://console.cloud.tencent.com/cam/policy)，单击【新建自定义策略】。
 2. 选择【按策略生成器创建】，进入策略创建页面。
 3. 选择服务和操作。
 	- 【效果(Effect)】配置项选择【允许】。
@@ -93,14 +93,14 @@
 	- 单击【添加声明】，页面最下方会出现一条“拒绝对云点播子应用1400000001进行`ProcessMedia`操作”的声明。
      ![](https://main.qcloudimg.com/raw/f1021e0b522b588364759e5bda7636fb.png)
 5. 单击【下一步】，按需修改策略名称（也可以不修改）。
-6. 单击【创建策略】完成自定义策略的创建。后续将该策略授予子用户的方法同 [将云点播完整权限授予已存在的子用户](https://cloud.tencent.com/document/product/266/39338#p2)。
+6. 单击【创建策略】完成自定义策略的创建。后续将该策略授予子用户的方法同 [将云点播完整权限授予已存在的子用户](https://intl.cloud.tencent.com/document/product/266/33971#p2)。
 
 
 ### 使用策略语法
 
 在下文示例中，我们将创建一个自定义策略。该策略允许对1400000001和1400000002这两个云点播子应用进行任何操作，但不允许对1400000001进行`ProcessMedia`操作。
 
-1. 以 [主账号](/document/product/598/13665) 的身份访问 CAM 控制台的[【策略】](https://console.cloud.tencent.com/cam/policy)，单击【新建自定义策略】。
+1. 以 [主账号](https://intl.cloud.tencent.com/document/product/598/32633) 的身份访问 CAM 控制台的[【策略】](https://console.cloud.tencent.com/cam/policy)，单击【新建自定义策略】。
 2. 选择【按策略语法创建】，进入策略创建页面。
 3. 在【选择模板类型】框下选择【空白模版】。
 >所谓策略模版，指新策略是现有策略（预置策略或自定义策略）的一个拷贝，然后在此基础上做调整。在实际使用中，开发者可以根据情况选择合适的策略模版，降低编写策略内容的难度和工作量。
@@ -132,15 +132,15 @@
     ]
 }
 ```
->策略内容遵循 CAM [策略语法](/document/product/598/10603) 规范，其中资源和操作两个元素的语法分别如上文 [策略语法资源描述](#p1) 和 [策略语法操作描述](#p3) 所述。
-6. 单击【创建策略】完成自定义策略的创建。后续将该策略授予子用户的方法同 [示例：将云点播完整权限授予已存在的子用户](https://cloud.tencent.com/document/product/266/39338#p2)。
+>策略内容遵循 CAM [策略语法](https://intl.cloud.tencent.com/document/product/598/10603) 规范，其中资源和操作两个元素的语法分别如上文 [策略语法资源描述](#p1) 和 [策略语法操作描述](#p3) 所述。
+6. 单击【创建策略】完成自定义策略的创建。后续将该策略授予子用户的方法同 [示例：将云点播完整权限授予已存在的子用户](https://intl.cloud.tencent.com/document/product/266/33971#p2)。
 
 ### 使用服务端 API
 
 对于大多数开发者来说，在控制台完成权限管理操作已经能满足业务需求。但如果需要将权限管理能力自动化和系统化，则可以基于服务端 API 来实现。
-策略相关的服务端 API 属于 CAM，具体请参见 [CAM 官网文档](https://cloud.tencent.com/document/product/598)。此处仅列出几个主要接口：
+策略相关的服务端 API 属于 CAM，具体请参见 [CAM 官网文档](https://intl.cloud.tencent.com/document/product/598)。此处仅列出几个主要接口：
 
-- [创建策略](https://cloud.tencent.com/document/product/598/34578)
-- [删除策略](/document/product/598/34577)
-- [绑定策略到用户](/document/product/598/34579)
-- [解除绑定到用户的策略](/document/product/598/34575)
+- [创建策略](https://intl.cloud.tencent.com/document/product/598/32248)
+- [删除策略](https://intl.cloud.tencent.com/document/product/598/32247)
+- [绑定策略到用户](https://intl.cloud.tencent.com/document/product/598/32249)
+- [解除绑定到用户的策略](https://intl.cloud.tencent.com/document/product/598/32245)

@@ -27,7 +27,7 @@ Enter `pod install` or `pod update` on the command line to perform the installat
 Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview), click **Media Assets** on the left sidebar, and you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column. If you don't have a video, please click **Upload Video** to upload one.
 ![](https://main.qcloudimg.com/raw/f80e23558bee2bd33b1f29a522fe8da9.png)
 
-You can initiate an [adaptive bitrate streaming](https://cloud.tencent.com/document/product/266/34071) task for the uploaded video through [ProcessMedia](https://cloud.tencent.com/document/product/266/33427):
+You can initiate an [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) task for the uploaded video through [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427):
 You are recommended to enter 10 for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition` in the API parameter, indicating transcoding to adaptive bitstream in HLS format.
 
 ### Starting playback
@@ -53,48 +53,17 @@ playerModel.videoId = video;
 [_playerView playWithModel:self.playerModel];
 ```
 
-In the code, `appId` is your AppId, `fileId` is the ID of the video you want to play back, `playDefinition` is the ID of the [playback template](https://cloud.tencent.com/document/product/266/34101#.E6.92.AD.E6.94.BE.E6.A8.A1.E6.9D.BF) used for playback, and `version` is fixed to `SuperPlayerVideoId.FILE_ID_V3`.
+In the code, `appId` is your AppId, `fileId` is the ID of the video you want to play back, `playDefinition` is the ID of the playback template used for playback, and `version` is fixed to `SuperPlayerVideoId.FILE_ID_V3`.
 
 Run the code and you can see that the video is played back on the phone and most of the features in the UI are available.
 <img src="https://main.qcloudimg.com/raw/128c45edfc77b319475868c21caec2de.png" width="550">
 
 ## Thumbnails and Timestamps
 
-When videos are played back, the "thumbnails" and "timestamps" on the progress bar can help viewers find the points of interest easily. Thumbnails are implemented through [image sprites](https://cloud.tencent.com/document/product/266/8101), while timestamps by [modifying timestamp information in media assets](https://cloud.tencent.com/document/product/266/31762#.E7.A4.BA.E4.BE.8B3-.E4.BF.AE.E6.94.B9.E5.AA.92.E4.BD.93.E6.96.87.E4.BB.B6.E8.A7.86.E9.A2.91.E6.89.93.E7.82.B9.E4.BF.A1.E6.81.AF).
+When videos are played back, the "thumbnails" and "timestamps" on the progress bar can help viewers find the points of interest easily. Thumbnails are implemented through [image sprites](#APIhttps://intl.cloud.tencent.com/document/product/266/8101), while timestamps by [modifying timestamp information in media assets](#APIhttps://intl.cloud.tencent.com/document/product/266/31762#.E7.A4.BA.E4.BE.8B3-.E4.BF.AE.E6.94.B9.E5.AA.92.E4.BD.93.E6.96.87.E4.BB.B6.E8.A7.86.E9.A2.91.E6.89.93.E7.82.B9.E4.BF.A1.E6.81.AF).
 
 After image sprites are generated and timestamps are added, new elements will be displayed in the player UI.
 <img src="https://main.qcloudimg.com/raw/55ebce6d0c703dafa1ac131e1852e025.png" width="550">
-
-## Playing back a DRM-encrypted Video
-
-Digital Rights Management (DRM) is to encrypt content through technical measures to protect copyrighted content, especially suitable for copyrighted multimedia content such as music and movies. VOD provides commercial-grade DRM encryption. For more information, please see [How to Protect the Copyright of Content](https://cloud.tencent.com/document/product/266/34105#.E5.95.86.E4.B8.9A.E7.BA.A7-drm).
-
-The Superplayer SDK for Android can play the outputs of two encryption methods in [commercial DRM](https://cloud.tencent.com/document/product/266/34105#.E5.95.86.E4.B8.9A.E7.BA.A7-drm):
-
-- Encrypted HLS format based on FairPlay.
-- Encrypted HLS format based on SimpleAES.
-
-VOD provides DRM based on Tencent Cloud Superplayer. You are recommended to read [Getting Started with DRM](https://cloud.tencent.com/document/product/266/34690) first.
-
-### How to use
-
-First, the application needs to get the token from your **business backend**. For more information on how to generate a token, please see [Generating Tokens](https://cloud.tencent.com/document/product/266/34102#token-.E7.94.9F.E6.88.90). If you need to play FairPlay-encrypted content, follow the [ASK and FPS Certificate Guide](https://cloud.tencent.com/document/product/266/34102#ask-.E5.92.8C-fps-.E8.AF.81.E4.B9.A6) to generate an FPS certificate whose content is indicated by `fairplay_cer`.
-
-Then, play back the video through `FileId` and `Token` with the following playback code:
-
-```
-SuperPlayerModel *model = [[SuperPlayerModel alloc] init];
-SuperPlayerVideoId *video = [[SuperPlayerVideoId alloc] init];
-video.appId = 1256993030;
-video.fileId = @"7447398157015849771";
-video.playDefinition = @"20";
-video.version = FileIdV3;
-model.videoId = video;
-model.token = token; // Token issued by the server
-model.certificate = fairplay_cer; // FairPlay's certificate which is read from the local file
-```
-
-`playDefinition` in the code is the ID of the [playback template](https://cloud.tencent.com/document/product/266/34101#.E6.92.AD.E6.94.BE.E6.A8.A1.E6.9D.BF). The player will play back the video as specified by the playback template. For example, if the template ID is 20, the player will first try to play the output of commercial encryption, and if it cannot play back, it will downgrade and play back the output of SimpleAES encryption.
 
 ## Small Window Playback
 

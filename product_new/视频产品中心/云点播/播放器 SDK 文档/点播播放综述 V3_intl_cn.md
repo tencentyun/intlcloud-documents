@@ -1,11 +1,11 @@
-为了适应 [视频网站](https://cloud.tencent.com/document/product/266/34147) 类场景的播放需求，云点播提供了移动端和 Web 端超级播放器。开发者可以快速集成，以极简单的方式播放点播中的视频。
+为了适应 [视频网站](https://intl.cloud.tencent.com/document/product/266/33887) 类场景的播放需求，云点播提供了移动端和 Web 端超级播放器。开发者可以快速集成，以极简单的方式播放点播中的视频。
 
 ## 限制
 
 超级播放器对播放的视频和播放方式有如下限制：
 
 * 只能播放云点播视频，不能播放其他平台的视频。
-* 视频必须 [转自适应码流](https://cloud.tencent.com/document/product/266/34071) 后才能播放。
+* 视频必须 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 后才能播放。
 * 只可通过视频 ID（即 FileId）方式播放，不能通过视频 URL 播放。
 
 ## 优势

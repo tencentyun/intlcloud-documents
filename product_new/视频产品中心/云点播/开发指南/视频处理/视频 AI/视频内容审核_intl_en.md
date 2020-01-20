@@ -114,24 +114,25 @@ The audit operations in a video content audit task are subject to audit paramete
 - OCR-based porn information detection in text
 - OCR-based politically sensitive information detection in text
 
-For common combinations of operations, VOD provides a [preset video content audit template](https://cloud.tencent.com/document/product/266/33476#verify). In addition, you can also create and manage custom video content audit templates by calling a [server API](https://cloud.tencent.com/document/product/266/34790).
+For common combinations of operations, VOD provides a [preset video content audit template](https://intl.cloud.tencent.com/document/product/266/33932#verify). <!--api In addition, you can also create and manage custom video content audit templates by calling a [server API](https://intl.cloud.tencent.com/document/product/266/34790).-->
 
 ## Task Initiation
 
-There are three ways to initiate a video content audit task, namely, directly initiating through server API, directly initiating through the console, and specifying a task upon upload. For more information, please see [Task Initiation](https://cloud.tencent.com/document/product/266/33475#OriginatingTask) for video processing.
+There are three ways to initiate a video content audit task, namely, directly initiating through server API, directly initiating through the console, and specifying a task upon upload. For more information, please see [Task Initiation](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask) for video processing.
 
 Below are instructions for initiating video content audit tasks in these ways:
-
-* Call the server API [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
-* Call the server API [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
-* Initiate a task on a video through the console: [add a task flow](https://cloud.tencent.com/document/product/266/33819) in the console, enable video content audit in it, and use it to [initiate video processing](https://cloud.tencent.com/document/product/266/2841#.E5.A4.84.E7.90.86.E8.A7.86.E9.A2.91).
-* Specify a task upon upload from server: [add a task flow](https://cloud.tencent.com/document/product/266/33819) in the console, enable video content audit in it, and specify it as the `procedure` in the [ApplyUpload](https://cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
-* Specify a task upon upload from client: [add a task flow](https://cloud.tencent.com/document/product/266/33819) in the console, enable video content audit in it, and specify it as the `procedure` parameter in the [signature for upload from client](https://cloud.tencent.com/document/product/266/9221#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).
-* Upload through console: [add a task flow](https://cloud.tencent.com/document/product/266/33819) in the console, enable video content audit in it, upload a video through the console, select [Process Video During Upload](https://cloud.tencent.com/document/product/266/2841#.E4.B8.8A.E4.BC.A0.E8.A7.86.E9.A2.91), and specify to execute this task flow upon video upload completion.
+<!--api
+* Call the server API [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
+* Call the server API [ProcessMediaByUrl](#APIhttps://intl.cloud.tencent.com/document/product/266/33426) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
+-->
+* Initiate a task on a video through the console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable video content audit in it, and use it to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33890).
+* Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable video content audit in it, and specify it as the `procedure` in the [ApplyUpload](#APIhttps://intl.cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
+* Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable video content audit in it, and specify it as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).
+* Upload through console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable video content audit in it, upload a video through the console, select [Process Video During Upload](https://intl.cloud.tencent.com/document/product/266/33890), and specify to execute this task flow upon video upload completion.
 
 ## Getting Result
 
-After initiating a video content audit task, you can wait for [result notification](https://cloud.tencent.com/document/product/266/33475#ResultNotification) asynchronously or perform [task query](https://cloud.tencent.com/document/product/266/33475#TaskQuery) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the content audit task is initiated (the fields with null value are omitted):
+After initiating a video content audit task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the content audit task is initiated (the fields with null value are omitted):
 ```json
 {
     "EventType":"ProcedureStateChanged",

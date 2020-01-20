@@ -8,7 +8,7 @@ UGC（用户生产内容）和 PGC（专业生产内容）是视频行业中常�
 ### UGC 和 PGC 平台的一般交互方式
 <img src="https://main.qcloudimg.com/raw/1583662375b390c774d1298e41cda9fd.png" width="400">
 
-UGC（或 PGC）的视频平台，与内容提供方、内容消费方和云点播的交互方式如下（第1 - 3步，可参考 [客户端上传](/document/product/266/9219)）：
+UGC（或 PGC）的视频平台，与内容提供方、内容消费方和云点播的交互方式如下（第1 - 3步，可参考 [客户端上传](https://intl.cloud.tencent.com/document/product/266/33921)）：
 
 1. App 后台对内容提供方进行鉴权，鉴权通过后派发视频上传签名。
 2. 内容提供方执行上传，把分享的内容上传到云点播。

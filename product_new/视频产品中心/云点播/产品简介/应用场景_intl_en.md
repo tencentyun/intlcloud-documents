@@ -13,5 +13,5 @@ VOD comes with features such as storage management, transcoding processing, vide
 
 ## UGSV Application
 
-VOD features storage, audit, transcoding, adaptive bitrate streaming, watermarking, cover generating, encryption, and distribution of videos, making it apt for UGSV scenarios where videos captured by clients are uploaded after operations such as clipping, audio mixing, special effect processing, subtitling, and sticker adding are performed. For more information, please see [UGSV SDK](https://cloud.tencent.com/product/ugsv).
+VOD features storage, audit, transcoding, adaptive bitrate streaming, watermarking, cover generating, encryption, and distribution of videos, making it apt for UGSV scenarios where videos captured by clients are uploaded after operations such as clipping, audio mixing, special effect processing, subtitling, and sticker adding are performed..
 

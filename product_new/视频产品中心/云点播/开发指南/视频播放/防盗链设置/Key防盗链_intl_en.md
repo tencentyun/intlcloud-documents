@@ -6,7 +6,7 @@
 - A CDN node controls video playback requests by checking the parameters and signature in the video URL. If a request fails to pass the check, a 403 error will be returned.
 - Supported file formats include MP4, TS, M3U8, FLV, AAC, MOV, WMV, AVI, MP3, RMVB, MKV, MPG, 3GP, WEBM, M4V, ASF, F4V, WAV, MPEG, VOB, RM, WMA, DAT, M4A, MPD, and M4S.
 
->For more information on enabling key hotlink protection, please see [Setting Hotlink Protection](https://cloud.tencent.com/document/product/266/33469#key-.E9.98.B2.E7.9B.97.E9.93.BE).
+>For more information on enabling key hotlink protection, please see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/14060#key-.E9.98.B2.E7.9B.97.E9.93.BE).
 
 ## How to Generate a Hotlink Protection URL
 - All your videos in VOD has an **original video URL**. If hotlink protection is not enabled, the original video URL can be used to play back the video.
@@ -21,7 +21,7 @@ The hotlink protection parameters in `QueryString` must be spliced in the order 
 #### Hotlink protection parameters
 | Parameter Name | Required | Description |
 | ------ | ---- | ------------------------------------------------------------ |
-| `KEY` | Yes | The key entered when key hotlink protection is enabled. It must contain 8–20 letters (a–Z) or digits (0–9). You are recommended to click **Generate KEY** in the console to generate a key. For detailed directions, please see [Setting Hotlink Protection](https://cloud.tencent.com/document/product/266/33469#key-.E9.98.B2.E7.9B.97.E9.93.BE). |
+| `KEY` | Yes | The key entered when key hotlink protection is enabled. It must contain 8–20 letters (a–Z) or digits (0–9). You are recommended to click **Generate KEY** in the console to generate a key. For detailed directions, please see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/14060#key-.E9.98.B2.E7.9B.97.E9.93.BE). |
 | `Dir` | Yes | The remaining part of the path in an original video URL after the filename is removed. For example, if the original URL is `http://example.vod2.myqcloud.com/dir1/dir2/myVideo.mp4`, then the playback path is `/dir1/dir2/`. |
 | `t` | Yes | <li>The expiration timestamp of a playback address in the form of hexadecimal lowercase Unix time. <br><li>Once expired, the URL will become invalid, and a 403 error will be returned. Due to possible time difference between servers, the actual expiration time of a hotlink protection URL is generally 5 minutes longer than the specified expiration time, that is, an additional 300-second tolerance time is allowed. <br><li>The expiration timestamp should be large enough for full video playback to complete. |
 | `exper` | No | <li>The preview duration in decimal seconds. If this parameter is left empty or 0, preview mode is disabled (i.e., the complete video will be returned). <br><li>The preview duration must be shorter than the original video duration; otherwise, playback may fail. |

@@ -1,11 +1,11 @@
 ## 接口说明
 
-- 上传小文件（小于5MB）使用的 API，请参见 [简单上传文件](https://cloud.tencent.com/document/product/436/7749)。
-- 上传大文件（大于5MB）使用的 API，请参见 [初始化分片上传](https://cloud.tencent.com/document/product/436/7746)、[逐个上传分片](https://cloud.tencent.com/document/product/436/7750) 和 [结束上传分片](https://cloud.tencent.com/document/product/436/7742)。
+- 上传小文件（小于5MB）使用的 API，请参见 [简单上传文件](https://intl.cloud.tencent.com/document/product/436/7749)。
+- 上传大文件（大于5MB）使用的 API，请参见 [初始化分片上传](https://intl.cloud.tencent.com/document/product/436/7746)、[逐个上传分片](https://intl.cloud.tencent.com/document/product/436/7750) 和 [结束上传分片](https://intl.cloud.tencent.com/document/product/436/7742)。
 
 ## 功能说明
 1. 上传媒体（和封面）文件。
-2. API 在服务端的上传步骤请参见 [服务端上传综述](https://cloud.tencent.com/document/product/266/9760)。
+2. API 在服务端的上传步骤请参见 [服务端上传综述](https://intl.cloud.tencent.com/document/product/266/33910)。
 
 ## SDK 方式
 建议使用 [封装的 SDK](/document/product/436/6474) 进行 API 的调用。

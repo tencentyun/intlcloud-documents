@@ -24,7 +24,7 @@
 | 高度（Height）     | 截图高度，范围是128px - 4096px。                             |
 | 填充方式（FillType） | 当截图的宽高比与原始视频的宽高比不一致时，对截图的处理方式，即为“填充”。一般有以下几种填充方式：<li>拉伸：对图片进行拉伸，填满整个图片，可能导致图片被“压扁”或者“拉长”。</li><li>留黑：保持图片宽高比不变，边缘剩余部分使用黑色填充。</li><li>留白：保持图片宽高比不变，边缘剩余部分使用白色填充。</li><li>高斯模糊：保持图片宽高比不变，边缘剩余部分使用高斯模糊化后填充。</li> |
 
-针对常见的规格，云点播提供 [预置时间点截图模板](https://cloud.tencent.com/document/product/266/33476#screenshot01)。另外，您还可以通过控制台创建和管理自定义截图模板，具体操作请参见 [模板设置](https://cloud.tencent.com/document/product/266/33818#.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+针对常见的规格，云点播提供 [预置时间点截图模板](https://intl.cloud.tencent.com/document/product/266/33932#screenshot01)。另外，您还可以通过控制台创建和管理自定义截图模板，具体操作请参见 [模板设置](https://intl.cloud.tencent.com/document/product/266/14059#.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
 
 ### 采样截图模板
 
@@ -39,7 +39,7 @@
 | 采样间隔（Interval）   | 采样的间隔长度：<li>如果按百分比采样，间隔是百分比。</li><li>如果按时间间隔采样，间隔是多少秒。</li> |
 | 填充方式（FillType）   | 当截图的宽高比与原始视频的宽高比不一致时，对截图的处理方式，即为“填充”。一般有以下几种填充方式：<li>拉伸：对图片进行拉伸，填满整个图片，可能导致图片被“压扁”或者“拉长”。</li><li>留黑：保持图片宽高比不变，边缘剩余部分使用黑色填充。</li><li>留白：保持图片宽高比不变，边缘剩余部分使用白色填充。</li><li>高斯模糊：保持图片宽高比不变，边缘剩余部分使用高斯模糊化后填充。</li> |
 
-针对常见的规格，云点播提供了 [预置采样截图模板](https://cloud.tencent.com/document/product/266/33476#screenshot02)。另外，您还可以通过控制台创建和管理自定义截图模板，具体操作请参见 [模板设置](https://cloud.tencent.com/document/product/266/33818#.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+针对常见的规格，云点播提供了 [预置采样截图模板](https://intl.cloud.tencent.com/document/product/266/33932#screenshot02)。另外，您还可以通过控制台创建和管理自定义截图模板，具体操作请参见 [模板设置](https://intl.cloud.tencent.com/document/product/266/14059#.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
 
 ### 雪碧图模板
 
@@ -59,23 +59,23 @@
 >- Width × Columns 需要在128px - 4096px之间（即大图宽度在128px - 4096px之间）。
 >- Height × Rows 需要在128px - 4096px之间（即大图高度在128px - 4096px之间）。
 
-针对常见的规格，云点播提供了 [预置雪碧图模板](https://cloud.tencent.com/document/product/266/33476#screenshot03)。另外，您还可以通过控制台创建和管理自定义截图模板，具体操作请参见 [模板设置](https://cloud.tencent.com/document/product/266/33818#.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+针对常见的规格，云点播提供了 [预置雪碧图模板](https://intl.cloud.tencent.com/document/product/266/33932#screenshot03)。另外，您还可以通过控制台创建和管理自定义截图模板，具体操作请参见 [模板设置](https://intl.cloud.tencent.com/document/product/266/14059#.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
 
 ## 任务发起
 
-发起截图任务，有“通过服务端 API 直接发起”，“通过控制台直接发起”和“上传时指定要执行的任务”三种方式。具体请参照视频处理的 [任务发起](https://cloud.tencent.com/document/product/266/33475#OriginatingTask)。
+发起截图任务，有“通过服务端 API 直接发起”，“通过控制台直接发起”和“上传时指定要执行的任务”三种方式。具体请参照视频处理的 [任务发起](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask)。
 
 以下是各种方式发起截图任务的说明：
 
-* 调用服务端 API [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 发起任务：在请求中的`MediaProcessTask.SnapshotByTimeOffsetTaskSet`参数指定 [截图模板](#jt) 的模板 ID。
-* 通过控制台对视频发起任务：在控制台 [添加任务流](https://cloud.tencent.com/document/product/266/33819)，任务流中设置目标截图规格；在控制台使用该任务流 [发起视频处理](https://cloud.tencent.com/document/product/266/2841#.E5.A4.84.E7.90.86.E8.A7.86.E9.A2.91)。
-* 服务端上传时指定任务：在控制台 [添加任务流](https://cloud.tencent.com/document/product/266/33819)，任务流中设置目标截图规格；[申请上传](https://cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
-* 客户端上传时指定任务：在控制台 [添加任务流](https://cloud.tencent.com/document/product/266/33819)，任务流中设置目标截图规格；在 [客户端上传签名](https://cloud.tencent.com/document/product/266/9221#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) 中的`procedure`指定该任务流。
-* 控制台上传：在控制台 [添加任务流](https://cloud.tencent.com/document/product/266/33819)，任务流中设置目标截图规格；通过控制台上传视频，选择 [上传的同时对视频进行处理操作](https://cloud.tencent.com/document/product/266/2841#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) 并指定视频上传后执行该任务流。
+* 调用服务端 API [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) 发起任务：在请求中的`MediaProcessTask.SnapshotByTimeOffsetTaskSet`参数指定 [截图模板](#jt) 的模板 ID。
+* 通过控制台对视频发起任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标截图规格；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33890)。
+* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标截图规格；[申请上传](#APIhttps://intl.cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
+* 客户端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标截图规格；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) 中的`procedure`指定该任务流。
+* 控制台上传：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标截图规格；通过控制台上传视频，选择 [上传的同时对视频进行处理操作](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) 并指定视频上传后执行该任务流。
 
 ## 结果获取
 
-发起截图任务后，您可以通过异步等待 [结果通知](https://cloud.tencent.com/document/product/266/33475#ResultNotification) 和同步进行 [任务查询](https://cloud.tencent.com/document/product/266/33475#TaskQuery) 两种方式获取截图任务的执行结果。下面是发起截图任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
+发起截图任务后，您可以通过异步等待 [结果通知](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) 和同步进行 [任务查询](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) 两种方式获取截图任务的执行结果。下面是发起截图任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
 
 ```json
 {

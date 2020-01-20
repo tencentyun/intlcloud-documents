@@ -14,7 +14,7 @@ The billing section displays the **billing mode** under the current Tencent Clou
 <tbody>
 <tr>
 <td>Current billing mode</td>
-<td >Daily billing: for more information, please see <a href="https://cloud.tencent.com/document/product/266/14666">Daily Billing (Postpaid)</a>. Click <a href="https://buy.cloud.tencent.com/price/vod/calculator">Price Calculator</a> to estimate the prices of different resource combinations <br>Monthly billing: please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for consultation </td>
+<td >Daily billing: <!--doc for more information, please see <a href="https://intl.cloud.tencent.com/document/product/266/14666">-->Daily Billing (Postpaid)</a>.<br>Monthly billing: please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for consultation </td>
 </tbody></table>
 
 

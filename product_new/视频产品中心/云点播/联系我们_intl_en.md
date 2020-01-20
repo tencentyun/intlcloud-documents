@@ -13,9 +13,3 @@ A ticket can have the following states:
 - Closed: the ticket is solved or closed by you before the technical support team takes an action
 
 
-## Q&A Community
-The Q&A community is a communication platform provided by Tencent Cloud to developers. It features popular tags such as cloud computing, AI, WeChat Mini Program, and product documentation.
-You can log in to the Q&A community to ask questions, and product experts or enthusiastic users will provide answers, discussions, and guidance.
-Platform entry: [Q&A](https://cloud.tencent.com/developer/ask)
-
-

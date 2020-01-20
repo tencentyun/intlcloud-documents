@@ -8,7 +8,7 @@
 ## 普通回调
 ### 部署回调接收服务
 
-以 [普通回调](https://cloud.tencent.com/document/product/266/33779#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83) 的方式获取事件通知，需要在有公网 IP 的服务器上，部署回调接收服务。这里以 CVM 为例，介绍如何部署该服务：
+以 [普通回调](https://intl.cloud.tencent.com/document/product/266/33948#normal-callback) 的方式获取事件通知，需要在有公网 IP 的服务器上，部署回调接收服务。这里以 CVM 为例，介绍如何部署该服务：
 
 1. 进入云服务器 CVM 控制台的 [实例列表](https://console.cloud.tencent.com/cvm/index) 界面，单击【新建】。
 2. 选择【快速配置】菜单，【镜像】选择“**Ubuntu Server**”或“**CentOS**”，【公网带宽】选择“**1Mbps**”并勾选“**分配免费公网 IP**”，然后单击【立即购买】。
@@ -39,10 +39,10 @@
 ![](https://main.qcloudimg.com/raw/8a2579f87d5ea0ca5181550f7d4eaca4.png)
  上传完成之后，在“**已上传**”栏的视频列表中，将看到上传完成的视频，以及视频对应的 ID（即 FileId）。
 ![](https://main.qcloudimg.com/raw/12ef8ef8a7d9d1332cee08dc8500cff4.png)
-3. 检查 CVM，标准输出打印 [视频上传完成](https://cloud.tencent.com/document/product/266/7830#817356113) 通知的内容。
+3. 检查 CVM，标准输出打印 [视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950#817356113) 通知的内容。
  <img src="https://main.qcloudimg.com/raw/f6439edcd8ae59cab1d393987382e136.png" width="818">
-4. 在【媒资管理】的“**已上传**”栏，勾选刚上传成功的视频，单击[【视频处理】](https://cloud.tencent.com/document/product/266/36448)。【处理类型】选择“**手动选择转码模板**”选项，并在【转码模板】中勾选“**MP4-流畅-FLU (10)**”，保持【视频封面】勾选，单击【确定】。
-5. 等待10分钟后，检查 CVM，标准输出打印 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83) 通知的内容，其中包括了转码（`Type`为`Transcode`）和时间点截图做封面（`Type`为`CoverBySnapshot`）的结果。
+4. 在【媒资管理】的“**已上传**”栏，勾选刚上传成功的视频，单击[【视频处理】](https://intl.cloud.tencent.com/document/product/266/33892)。【处理类型】选择“**手动选择转码模板**”选项，并在【转码模板】中勾选“**MP4-流畅-FLU (10)**”，保持【视频封面】勾选，单击【确定】。
+5. 等待10分钟后，检查 CVM，标准输出打印 [任务流状态变更](https://intl.cloud.tencent.com/document/product/266/33953#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83) 通知的内容，其中包括了转码（`Type`为`Transcode`）和时间点截图做封面（`Type`为`CoverBySnapshot`）的结果。
  <img src="https://main.qcloudimg.com/raw/4e577e7feb5524ff82e8a82c8e1cbdd2.png" width="818">
 
 至此，您上传了一个视频并对其执行了转码任务。上传和转码完成后，您的回调接收服务分别接收到了一个“**视频上传完成**”和“**任务流状态变更**”通知。
@@ -69,13 +69,13 @@
  上传完成之后，在“**已上传**”栏的视频列表中，将看到上传完成的视频，以及视频对应的 ID（即 FileId）。
 ![](https://main.qcloudimg.com/raw/12ef8ef8a7d9d1332cee08dc8500cff4.png)
 
-3. 在【媒资管理】的“**已上传**”栏，勾选刚上传成功的视频，单击[【视频处理】](https://cloud.tencent.com/document/product/266/36448)。【处理类型】选择“**手动选择转码模板**”选项，并在【转码模板】中勾选“**MP4-流畅-FLU (10)**”，保持【视频封面】勾选，单击【确定】。
+3. 在【媒资管理】的“**已上传**”栏，勾选刚上传成功的视频，单击[【视频处理】](https://intl.cloud.tencent.com/document/product/266/33892)。【处理类型】选择“**手动选择转码模板**”选项，并在【转码模板】中勾选“**MP4-流畅-FLU (10)**”，保持【视频封面】勾选，单击【确定】。
 
 至此，您重新上传了一个视频，并对视频发起了转码任务。这些操作将会触发事件通知。
 
 ### 拉取可靠回调
 
-事件通知触发后，您需要主动拉取可靠回调。您可以通过 [API 工具](https://cloud.tencent.com/document/product/266/33433#API-Explorer) 执行`PullEvents`命令，查询待消费的事件通知，具体步骤如下：
+事件通知触发后，您需要主动拉取可靠回调。您可以通过 API 工具 <!--api https://intl.cloud.tencent.com/document/product/266/33433#API-Explorer--> 执行`PullEvents`命令，查询待消费的事件通知，具体步骤如下：
 1. 进入 [云点播 PullEvents 命令的 API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=PullEvents&SignVersion=)，填写您的“**个人密钥**”（可单击【查看密钥】，从 [API 密钥管理控制台](https://console.cloud.tencent.com/cam/capi) 获取）。
 <img src="https://main.qcloudimg.com/raw/57bb4106c7ec29f0d49b94bafc95e38b.png" width="399">
 2. 在右边栏中选择【在线调用】，并单击【发送请求】。
@@ -94,7 +94,7 @@
 * 事件句柄30秒后再调 API 进行确认，将调用失败。
 * 事件超过30秒没有确认，将会在下一次拉取可靠回调时再次被拉取到。
 
-您可以通过 [API 工具](https://cloud.tencent.com/document/product/266/33434#API-Explorer) 执行`ConfirmEvents`命令，查询待消费的事件通知，具体步骤如下：
+您可以通过 API 工具 <!--api (https://intl.cloud.tencent.com/document/product/266/33434#API-Explorer)--> 执行`ConfirmEvents`命令，查询待消费的事件通知，具体步骤如下：
 
 1. 进入 [云点播 ConfirmEvents 命令的 API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=ConfirmEvents&SignVersion=)，填写您的“**个人密钥**”。
 <img src="https://main.qcloudimg.com/raw/5b0e7986096a0e4512c5266a6c5e0073.png" width="399">
@@ -113,7 +113,7 @@
 	如果返回失败，请确认：
 	- 事件句柄是否填错。
 	- 事件是否已经拉取超过30秒。
-4. 经过5分钟，再次使用 [API 工具](https://cloud.tencent.com/document/product/266/33433#API-Explorer) 执行`PullEvents`命令，拉取事件通知。
+4. 经过5分钟，再次使用 API 工具 <!--api https://intl.cloud.tencent.com/document/product/266/33433#API-Explorer--> 执行`PullEvents`命令，拉取事件通知。
 
   <img src="https://main.qcloudimg.com/raw/3d064849187be7c5d2c2da1f560e7b4a.png" width="462">
 

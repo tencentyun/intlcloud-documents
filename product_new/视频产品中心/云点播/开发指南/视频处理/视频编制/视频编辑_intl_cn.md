@@ -8,15 +8,15 @@
 * **流拼接**：对云点播中的多个流进行拼接，生成一个新的视频。
 * **流剪辑后拼接**：对云点播中的多个流进行剪辑，然后拼接，生成一个新的视频。
 
-编辑后生成的新视频封装格式是 MP4。发起编辑时，可以指定是否对生成的新视频执行 [任务流](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81)。
+编辑后生成的新视频封装格式是 MP4。发起编辑时，可以指定是否对生成的新视频执行 [任务流](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81)。
 
 ## 任务发起
 
-视频编辑任务，通过 [服务端 API](https://cloud.tencent.com/document/product/266/34783) 方式发起。调用 API 的返回结果中包含任务 ID，用于关联 [结果获取](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96) 时对应的任务结果。
+视频编辑任务，通过 [服务端 API](#APIhttps://intl.cloud.tencent.com/document/product/266/34783) 方式发起。调用 API 的返回结果中包含任务 ID，用于关联 [结果获取](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96) 时对应的任务结果。
 
 ## 结果获取
 
-发起任务后，您可以通过异步等待 [结果通知](https://cloud.tencent.com/document/product/266/33475#ResultNotification) 或同步进行 [任务查询](https://cloud.tencent.com/document/product/266/33475#TaskQuery) 的方式获取编辑的执行结果。下面是发起视频编辑任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
+发起任务后，您可以通过异步等待 [结果通知](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) 或同步进行 [任务查询](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) 的方式获取编辑的执行结果。下面是发起视频编辑任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
 
 ```json
 {

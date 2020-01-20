@@ -3,7 +3,7 @@ This document guides you through how to quickly upload a video from your local f
 
 ## Step 1. Activate VOD
 1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verify your identity](https://intl.cloud.tencent.com/document/product/378/3629).
-2. Purchase the VOD service. For more information, please see [Billing Overview](https://cloud.tencent.com/document/product/266/2838).
+2. Purchase the VOD service. <!--doc For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/266/2838).-->
 3. Select **Cloud Products** > **Video Services** > **[Video on Demand](https://console.cloud.tencent.com/vod)** to enter the VOD Console.
 
 > If the VOD service has already been activated, please proceed directly to the next step.

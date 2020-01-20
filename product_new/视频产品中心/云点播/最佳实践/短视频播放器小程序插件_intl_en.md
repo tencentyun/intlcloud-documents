@@ -4,7 +4,7 @@ Relying on the sophisticated one-stop service platform of VOD, the UGSV player p
 
 ## Preparations
 #### Signing up for a Tencent Cloud account
-1. [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verify your organizational identity](https://cloud.tencent.com/document/product/378/10496).
+1. [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verify your organizational identity](https://intl.cloud.tencent.com/document/product/378/3629).
 2. Log in to the [VOD Console](https://console.cloud.tencent.com/vod) and get the [VOD APPID](https://console.cloud.tencent.com/developer) for connection to the UGSV player plugin for WeChat Mini Program.
 3. Purchase the [UGSV player plugin for WeChat Mini Program](https://buy.cloud.tencent.com/vod).
 
@@ -27,14 +27,14 @@ After adding the plugin, you can use it in your WeChat Mini Program.
 ## Using a Plugin
 
 ### Uploading video to console
-1. Upload a video to the VOD Console. For detailed directions, please see [Video Upload](https://cloud.tencent.com/document/product/266/2841#.E5.B7.B2.E4.B8.8A.E4.BC.A0).
-2. Transcode the video to a format that can be played back in WeChat Mini Program. Currently, only videos in MP4, 3GP, and M3U8 formats are supported in this scenario. For detailed directions, please see [Video Processing](https://cloud.tencent.com/document/product/266/36448).
-3. After the video is successfully transcoded, it will be displayed in the list of [published videos](https://cloud.tencent.com/document/product/266/36452#.E8.A7.86.E9.A2.91.E5.8F.91.E5.B8.83.E6.AD.A5.E9.AA.A4).
+1. Upload a video to the VOD Console. For detailed directions, please see [Video Upload](https://intl.cloud.tencent.com/document/product/266/33890#.E5.B7.B2.E4.B8.8A.E4.BC.A0).
+2. Transcode the video to a format that can be played back in WeChat Mini Program. Currently, only videos in MP4, 3GP, and M3U8 formats are supported in this scenario. For detailed directions, please see [Video Processing](https://intl.cloud.tencent.com/document/product/266/33892).
+3. After the video is successfully transcoded, it will be displayed in the list of [published videos](https://intl.cloud.tencent.com/document/product/266/33896#video-release-steps).
 ![](https://main.qcloudimg.com/raw/234d040ceaa88fa231e7d3f8a9ad711a.png)
 
 
 ### Applying for video release in WeChat Mini Program
-- You can publish a video in **Media Assets** > **Videos** > **[Video Release in WeChat Mini Program](https://cloud.tencent.com/document/product/266/36452#.E8.A7.86.E9.A2.91.E5.8F.91.E5.B8.83.E6.AD.A5.E9.AA.A4).
+- You can publish a video in **Media Assets** > **Videos** > **[Video Release in WeChat Mini Program](https://intl.cloud.tencent.com/document/product/266/33896#video-release-steps).
 - Due to the video upload requirements of WeChat Mini Program, you can only publish videos in MP4, 3GP, and M3U8 formats. The VOD platform will audit the videos to confirm whether they can be approved for playback.
 - Query release status
 VOD displays the release status of an audited video to identify whether it is approved for release:
@@ -60,7 +60,7 @@ Import the plugin code into your WeChat Mini Program. For more information, plea
   }
 ```
 + appid: this parameter is required and can be viewed in **[Account Info](https://console.cloud.tencent.com/developer)** in the console.
-+ fileid: this parameter is required and indicates the unique ID of a video file. After a video is uploaded, its `fileid` can be viewed in [Media Assets](https://cloud.tencent.com/document/product/266/36451).
++ fileid: this parameter is required and indicates the unique ID of a video file. After a video is uploaded, its `fileid` can be viewed in [Media Assets](https://intl.cloud.tencent.com/document/product/266/33895).
 + playerid: this parameter is required and indicates the unique ID of a video container. In your WeChat Mini Program, you need to get the specific `video context` through this ID to control the video.
 
 
@@ -113,6 +113,6 @@ Scan the QR code below to try out the UGSV player plugin for WeChat Mini Program
 
  
 ## Instructions
-+ The plugin service takes effect immediately after purchase. In addition to the purchase charge, the UGSV player plugin for WeChat Mini Program is also billed based on the number of video playbacks and VOD usage. For more information, please see [Purchase Guide](https://cloud.tencent.com/document/product/266/2838).
++ The plugin service takes effect immediately after purchase. In addition to the purchase charge, the UGSV player plugin for WeChat Mini Program is also billed based on the number of video playbacks and VOD usage. <!--doc For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/266/2838).-->
 + One Tencent Cloud account provides only one APPID; therefore, you can purchase only one plugin under your Tencent Cloud account.
 

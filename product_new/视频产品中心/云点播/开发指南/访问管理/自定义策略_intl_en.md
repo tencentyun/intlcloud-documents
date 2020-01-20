@@ -1,4 +1,4 @@
-It is convenient to use a [preset policy](https://cloud.tencent.com/document/product/266/39338) in CAM to implement authorization, but its granularity of permission control is coarse and cannot be refined to the subapplication and API levels. If you require fine-grained permissions control, you need to create custom policies.
+It is convenient to use a [preset policy](https://intl.cloud.tencent.com/document/product/266/33971) in CAM to implement authorization, but its granularity of permission control is coarse and cannot be refined to the subapplication and API levels. If you require fine-grained permissions control, you need to create custom policies.
 
 
 ## Custom Policy Creation Method
@@ -17,7 +17,7 @@ There are multiple ways to create a custom policy. The table below shows a compa
 
 ## <span id = "p1"></span>Policy Syntax Description for Resource
 
-As mentioned above, the resource granularity of permission control in VOD is subapplication. The subapplication description in policy syntax follows the [CAM rules](/document/product/598/10606). In the example below, the developer's account ID is 12345678, APPID is 1250000001 (which is equivalent to the primary application ID), and the developer has created two VOD subapplications with IDs of 1400000001 and 1400000002 respectively.
+As mentioned above, the resource granularity of permission control in VOD is subapplication. The subapplication description in policy syntax follows the [CAM rules](https://intl.cloud.tencent.com/document/product/598/10606). In the example below, the developer's account ID is 12345678, APPID is 1250000001 (which is equivalent to the primary application ID), and the developer has created two VOD subapplications with IDs of 1400000001 and 1400000002 respectively.
 
 - **Policy syntax description for all VOD resources**
 ```
@@ -75,7 +75,7 @@ As mentioned above, the action granularity of permission control in VOD is serve
 
 In the example below, we will create a custom policy, which allows all actions except the server API `ProcessMedia` to be performed on VOD subapplication 1400000001.
 
-1. Access the **[Policy](https://console.cloud.tencent.com/cam/policy)** page in the CAM Console as a [root account](/document/product/598/13665) and click **Create Custom Policy**.
+1. Access the **[Policy](https://console.cloud.tencent.com/cam/policy)** page in the CAM Console as a [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create Custom Policy**.
 2. Select **Create by Policy Builder** to enter the policy creation page.
 3. Select services and actions.
 	- Select **Allow** for **Effect**.
@@ -93,14 +93,14 @@ In the example below, we will create a custom policy, which allows all actions e
 	- Click **Add Statement** and a statement saying that "The `ProcessMedia` action is denied on VOD subapplication 1400000001" will appear at the bottom of the page.
      ![](https://main.qcloudimg.com/raw/f1021e0b522b588364759e5bda7636fb.png)
 5. Click **Next** and rename the policy name as needed (or leave it unchanged).
-6. Click **Create Policy** to create the custom policy. Subsequently, this policy can be granted to subusers in the same way as [granting full permissions of VOD to existing subusers](https://cloud.tencent.com/document/product/266/39338#p2).
+6. Click **Create Policy** to create the custom policy. Subsequently, this policy can be granted to subusers in the same way as [granting full permissions of VOD to existing subusers](https://intl.cloud.tencent.com/document/product/266/33971#p2).
 
 
 ### Using policy syntax
 
 In the example below, we will create a custom policy, which allows all actions to be performed on VOD subapplications 1400000001 and 1400000002 but denies `ProcessMedia` for subapplication 1400000001.
 
-1. Access the **[Policy](https://console.cloud.tencent.com/cam/policy)** page in the CAM Console as a [root account](/document/product/598/13665) and click **Create Custom Policy**.
+1. Access the **[Policy](https://console.cloud.tencent.com/cam/policy)** page in the CAM Console as a [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create Custom Policy**.
 2. Select **Create by Policy Syntax** to enter the policy creation page.
 3. In the **Select Template Type** box, select **Blank Template**.
 >A policy template is used to create a policy by copying an existing policy (preset or custom) and then making adjustment to the copy. In actual use, you can choose an appropriate policy template based on the actual conditions to reduce the difficulty and workload of writing policy content.
@@ -132,15 +132,15 @@ In the example below, we will create a custom policy, which allows all actions t
     ]
 }
 ```
-> The policy content should follow the CAM [policy syntax](/document/product/598/10603) rules, where the syntax of "resource" and "action" is as shown above in [Policy Syntax Description for Resource](#p1) and [Policy Syntax Description for Action](#p3).
-6. Click **Create Policy** to create the custom policy. Subsequently, this policy can be granted to subusers in the same way as [the example of granting full permissions of VOD to existing subusers](https://cloud.tencent.com/document/product/266/39338#p2).
+> The policy content should follow the CAM [policy syntax](https://intl.cloud.tencent.com/document/product/598/10603) rules, where the syntax of "resource" and "action" is as shown above in [Policy Syntax Description for Resource](#p1) and [Policy Syntax Description for Action](#p3).
+6. Click **Create Policy** to create the custom policy. Subsequently, this policy can be granted to subusers in the same way as [the example of granting full permissions of VOD to existing subusers](https://intl.cloud.tencent.com/document/product/266/33971#p2).
 
 ### Using server API
 
 For most developers, performing permission management operations in the console can meet their business needs. However, if you need to automate and systematize your permission management capabilities, you can use server APIs.
-The server APIs related to policies belongs to CAM. For more information, please see the [CAM documentation](https://cloud.tencent.com/document/product/598). Only a few main APIs are listed below:
+The server APIs related to policies belongs to CAM. For more information, please see the [CAM documentation](https://intl.cloud.tencent.com/document/product/598). Only a few main APIs are listed below:
 
-- [CreatePolicy](https://cloud.tencent.com/document/product/598/34578)
-- [DeletePolicy](/document/product/598/34577)
-- [AttachUserPolicy](/document/product/598/34579)
-- [DetachUserPolicy](/document/product/598/34575)
+- [CreatePolicy](https://intl.cloud.tencent.com/document/product/598/32248)
+- [DeletePolicy](https://intl.cloud.tencent.com/document/product/598/32247)
+- [AttachUserPolicy](https://intl.cloud.tencent.com/document/product/598/32249)
+- [DetachUserPolicy](https://intl.cloud.tencent.com/document/product/598/32245)

@@ -2,18 +2,18 @@ UGC（用户生产内容）和 PGC（专业生产内容）是视频行业中常�
 
 ## 违规视频问题的产生
 
-UGC 或 PGC 的视频平台，与内容提供方、内容消费方及云点播的交互方式如下（第1 - 3步，可参考 [客户端上传](https://cloud.tencent.com/document/product/266/9219)）：
+UGC 或 PGC 的视频平台，与内容提供方、内容消费方及云点播的交互方式如下（第1 - 3步，可参考 [客户端上传](https://intl.cloud.tencent.com/document/product/266/33921)）：
 <img src="https://main.qcloudimg.com/raw/1583662375b390c774d1298e41cda9fd.png" width="400">
-1. 视频 App 后台对内容提供方进行鉴权，鉴权通过后派发 [客户端上传签名](https://cloud.tencent.com/document/product/266/9221)。
+1. 视频 App 后台对内容提供方进行鉴权，鉴权通过后派发 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 2. 内容提供方执行上传，把分享的内容上传到云点播。
-3. 云点播将成功上传的视频 FileId 和播放 URL 等 [相关信息](https://cloud.tencent.com/document/product/266/7830) 通知到 App 后台。
+3. 云点播将成功上传的视频 FileId 和播放 URL 等 [相关信息](https://intl.cloud.tencent.com/document/product/266/33950) 通知到 App 后台。
 4. 内容消费方向视频 App 后台请求视频的播放 URL。
 5. 内容消费方通过播放 URL，从云点播加速播放视频。
 
 App 平台在第3步获取到视频的上传信息后，即在平台中发布该视频，允许第4步用户获取到视频的播放 URL 并播放视频。如果该视频是违规视频，则视频就会直接暴露给内容消费方。
 
 ## 引入视频内容审核
-云点播提供了 [视频内容审核](https://cloud.tencent.com/document/product/266/33498) 功能，可以对视频发起内容审核，并在审核结果中给出建议（建议屏蔽、建议复核和建议通过）。App 后台获取审核结果后，可以根据建议来决定是否发布视频：
+云点播提供了 [视频内容审核](https://intl.cloud.tencent.com/document/product/266/33944) 功能，可以对视频发起内容审核，并在审核结果中给出建议（建议屏蔽、建议复核和建议通过）。App 后台获取审核结果后，可以根据建议来决定是否发布视频：
 * 审核结果为“block（建议屏蔽）”时，App 后台屏蔽该视频。
 * 审核结果为“pass（建议通过）”时，App 后台直接发布该视频。
 * 审核结果为“review（建议复核）”时，App 后台进行人工复核，选择是否发布视频。
@@ -21,11 +21,11 @@ App 平台在第3步获取到视频的上传信息后，即在平台中发布该
 启用云点播的视频内容审核后，App 后台可以高效识别并过滤违规视频，推荐使用流程如下：
 <img src="https://main.qcloudimg.com/raw/3696b553b4d21a221e83cd537d7df8f2.png" width="550">
 
-1. App 后台对内容提供方进行鉴权，鉴权通过后派发视频 [客户端上传签名](https://cloud.tencent.com/document/product/266/9221)。
+1. App 后台对内容提供方进行鉴权，鉴权通过后派发视频 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 2. 内容提供方执行上传，把分享的内容上传到云点播。
-3. 云点播将成功上传的视频 FileId 以及播放 URL 等 [相关信息](https://cloud.tencent.com/document/product/266/7830) 通知到 App 后台。
+3. 云点播将成功上传的视频 FileId 以及播放 URL 等 [相关信息](https://intl.cloud.tencent.com/document/product/266/33950) 通知到 App 后台。
 4. 云点播执行上传签名时对`procedure`参数进行配置的视频内容审核任务。
-5. 云点播通过 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636) 通知 App 后台审核结果。
+5. 云点播通过 [任务流状态变更](https://intl.cloud.tencent.com/document/product/266/33953) 通知 App 后台审核结果。
 6. App 后台发布“建议通过”的视频，以及“建议复核”且经人工复核通过的视频。
 7. 内容消费方向 App 后台请求已发布视频的播放 URL。
 8. 内容消费方通过播放 URL，从云点播加速播放视频。

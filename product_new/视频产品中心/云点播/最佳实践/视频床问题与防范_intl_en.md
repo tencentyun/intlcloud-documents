@@ -8,7 +8,7 @@ Malicious video hosting can cause serious economic losses since all the storage,
 ### How UGC/PGC platforms interact with others normally
 <img src="https://main.qcloudimg.com/raw/1583662375b390c774d1298e41cda9fd.png" width="400">
 
-Generally, a UGC (or PGC) video platform interacts with content providers, content consumers, and VOD in the following ways (for more information on steps 1–3, please see [Upload from Client](/document/product/266/9219)):
+Generally, a UGC (or PGC) video platform interacts with content providers, content consumers, and VOD in the following ways (for more information on steps 1–3, please see [Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921)):
 
 1. The application backend authenticates the content provider and distribute to them a video upload signature after authentication is passed.
 2. The content provider uploads the content to be shared to VOD.

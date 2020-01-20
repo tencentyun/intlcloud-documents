@@ -14,7 +14,7 @@ The upload storage settings in VOD consist of category management and storage re
 >- The category name can contain up to 25 letters, digits, and ().
 >- In category management, you can also view, modify, delete, and associate files with categories.
 >- Category management supports a 4-level structure, and subcategories cannot be added for a level-4 category.
->- After adding a category, you can also modify the category of a video file in the media assets section in the console. For more information, please see [Modifying Video Categories](https://cloud.tencent.com/document/product/266/36449).
+>- After adding a category, you can also modify the category of a video file in the media assets section in the console. For more information, please see [Modifying Video Categories](https://intl.cloud.tencent.com/document/product/266/33893).
 >- By default, there is a category named "Other" in category management, and you cannot rename or delete it or add subcategories for it. After a category is deleted, existing files in it will be categorized as "Other".
 
 ## Storage Region Directions
@@ -32,7 +32,7 @@ The upload storage settings in VOD consist of category management and storage re
 	- If an IP is **within the nearby upload storage range of the enabled region**, files will be uploaded to the nearby enabled region.
 	- If an IP is **outside the nearby upload storage range of the enabled region**, files will be uploaded to the default region.
 
-For more information on storage region, please see [Practice of Optimizing Upload Quality](https://cloud.tencent.com/document/product/266/38117).
+For more information on storage region, please see [Practice of Optimizing Upload Quality](https://intl.cloud.tencent.com/document/product/266/33904).
 
 
 

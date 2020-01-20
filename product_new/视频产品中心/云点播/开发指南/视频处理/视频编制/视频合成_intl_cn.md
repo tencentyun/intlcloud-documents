@@ -13,11 +13,11 @@
 
 ## 任务发起
 
-视频合成任务，通过 [服务端 API](https://cloud.tencent.com/document/product/266/35286) 方式发起。调用 API 的返回结果中包含任务 ID，用于关联 [结果获取](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96) 时对应的任务结果。
+视频合成任务，通过 [服务端 API](#https://intl.cloud.tencent.com/document/product/266/35286) 方式发起。调用 API 的返回结果中包含任务 ID，用于关联 [结果获取](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96) 时对应的任务结果。
 
 ## 结果获取
 
-发起任务后，您可以通过异步等待 [结果通知](https://cloud.tencent.com/document/product/266/33475#ResultNotification) 和同步进行 [任务查询](https://cloud.tencent.com/document/product/266/33475#TaskQuery) 两种方式获取视频合成的执行结果。下面是发起视频合成任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
+发起任务后，您可以通过异步等待 [结果通知](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) 和同步进行 [任务查询](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) 两种方式获取视频合成的执行结果。下面是发起视频合成任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
 
 ```json
 {

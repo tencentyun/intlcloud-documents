@@ -26,7 +26,7 @@ With the web player management feature, you can easily customize the style of th
 	
 >
 >- In the player list, only one player can be set as the default player.
->- If the selected player is associated with a video file, it cannot be deleted, and you need to unassociate it first in [Media Assets](https://console.cloud.tencent.com/vod/media) first. For directions, please see [Directions for Generating Web Player Code](https://cloud.tencent.com/document/product/266/36452#web-.E6.92.AD.E6.94.BE.E5.99.A8.E4.BB.A3.E7.A0.81.E7.94.9F.E6.88.90.E6.AD.A5.E9.AA.A4).
+>- If the selected player is associated with a video file, it cannot be deleted, and you need to unassociate it first in [Media Assets](https://console.cloud.tencent.com/vod/media) first. For directions, please see [Directions for Generating Web Player Code](https://intl.cloud.tencent.com/document/product/266/33896#web-.E6.92.AD.E6.94.BE.E5.99.A8.E4.BB.A3.E7.A0.81.E7.94.9F.E6.88.90.E6.AD.A5.E9.AA.A4).
 
 
 

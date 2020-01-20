@@ -1,4 +1,4 @@
-小程序端上传视频的 SDK。上传流程请参见 [客户端上传指引](/document/product/266/9219)。
+小程序端上传视频的 SDK。上传流程请参见 [客户端上传指引](https://intl.cloud.tencent.com/document/product/266/33921)。
 
 - 如果您需要 SDK 源码，可访问 [SDK 源码](https://github.com/tencentyun/vod-wx-sdk-v2/)。
 - 如果您需要 Demo 源码，可访问 [Demo 源码](https://github.com/tencentyun/vod-wx-sdk-v2/tree/master/demo)。
@@ -34,8 +34,8 @@ getSignature: function(callback) {
 ```
 
 >
-- `url`是您派发签名服务的 URL，参见 [客户端上传指引](https://cloud.tencent.com/document/product/266/9219)。
-- `signature`计算规则可参考 [客户端上传签名](https://cloud.tencent.com/document/product/266/9221)。
+- `url`是您派发签名服务的 URL，参见 [客户端上传指引](https://intl.cloud.tencent.com/document/product/266/33921)。
+- `signature`计算规则可参考 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
 **3. 上传视频**
 上传视频是通过调用`VodUploader.start`来实现的，选择视频则通过微信小程序 API 中的`wx.chooseVideo`方法实现。示例如下：

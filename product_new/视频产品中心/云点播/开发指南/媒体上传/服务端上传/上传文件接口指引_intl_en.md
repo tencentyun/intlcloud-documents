@@ -1,11 +1,11 @@
 ## API Description
 
-- For the API used to upload a small file (below 5 MB), please see [Simple File Upload](https://cloud.tencent.com/document/product/436/7749).
-- For the API used to upload a large file (above 5 MB), please see [Initializing Multipart Upload](https://cloud.tencent.com/document/product/436/7746), [Uploading Parts One by One](https://cloud.tencent.com/document/product/436/7750), and [Ending Multipart Upload](https://cloud.tencent.com/document/product/436/7742).
+- For the API used to upload a small file (below 5 MB), please see [Simple File Upload](https://intl.cloud.tencent.com/document/product/436/7749).
+- For the API used to upload a large file (above 5 MB), please see [Initializing Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746), [Uploading Parts One by One](https://intl.cloud.tencent.com/document/product/436/7750), and [Ending Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742).
 
 ## Feature Description
 1. Upload media (and cover) files.
-2. For how to upload from a client using an API, please see [Overview of Upload from Client](https://cloud.tencent.com/document/product/266/9760).
+2. For how to upload from a client using an API, please see [Overview of Upload from Client](https://intl.cloud.tencent.com/document/product/266/33910).
 
 ## Via SDK
 It is recommended to use the [encapsulated SDK](/document/product/436/6474) to call the API.
