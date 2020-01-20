@@ -1,6 +1,6 @@
 ## 操作场景
 客户端视频上传是指 App 的最终用户将本地视频上传到云点播平台，其流程图如下。本文将为您介绍如何使用客户端上传视频。
-![](https://main.qcloudimg.com/raw/cb72789083e25a1759c446ec4f2356f9.jpg)
+![](https://main.qcloudimg.com/raw/b92eb9f4b61aa7f3605e3a372ace494e.png)
 
 ## 前提条件
 

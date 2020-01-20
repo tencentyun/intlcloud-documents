@@ -31,12 +31,12 @@ To facilitate the upload feature in your development environment, VOD provides S
 #### Initiating upload through API
 
 If the upload SDK provided by VOD does not apply to the programming language used by your application backend, the application backend needs to call VOD server APIs for video upload (this method is more complicated and not recommended). The business flow of API-based upload is as follows:
-![](https://main.qcloudimg.com/raw/f0c04e9da4d3aafcaf2ba68302814c72.jpg)
-API-based upload requires you to implement steps such as applying for upload and uploading file on your own, which is not so convenient as SDK-based upload. Plus, you need to develop multipart upload logic for uploading large files. <!--api For more information, please see:
+![](https://main.qcloudimg.com/raw/005ec15acf74e0a428e8d328ffd2da2f.png)
+API-based upload requires you to implement steps such as applying for upload and uploading file on your own, which is not so convenient as SDK-based upload. Plus, you need to develop multipart upload logic for uploading large files. 
+<!-- api For more information, please see:
 - [Server API - ApplyUpload](/document/product/266/31767)
 - [Server APIs - Uploading File](/document/product/266/31784)
-- [Server API - CommitUpload](/document/product/266/31766)
--->
+- [Server API - CommitUpload](/document/product/266/31766)-->
 #### Advanced features
 
 - **Specify a task flow during upload**

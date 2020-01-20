@@ -1,6 +1,6 @@
 ## Operation Scenarios
 Video upload from client refers to uploading local videos to the VOD platform by an end user of application. This document describes how to upload videos using a client.
-![](https://main.qcloudimg.com/raw/cb72789083e25a1759c446ec4f2356f9.jpg)
+![](https://main.qcloudimg.com/raw/b92eb9f4b61aa7f3605e3a372ace494e.png)
 
 ## Prerequisites
 
