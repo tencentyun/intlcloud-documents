@@ -50,7 +50,7 @@
 
 ### 专线服务商只提供一个 VLAN 的物理专线时，如何实现访问云上多个 VPC？
 
-使用 [云联网产品](https://cloud.tencent.com/product/ccn) 可实现。
+使用 [云联网产品](https://intl.cloud.tencent.com/product/ccn) 可实现。
 
 ### 腾讯云如何隔离不同的租户，保证数据安全？
 
