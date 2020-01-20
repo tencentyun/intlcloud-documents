@@ -42,7 +42,7 @@ PersistentEvent supports two storage options, [Elasticsearch](https://intl.cloud
 3. In the **Update PersistentEvent** page, adjust the storage location for events, and click **Complete** to finish updating configurations.
 
 ### Searching events in the CLS Console
-1. Log in to the CLS Console, and select ****[Logset Management](https://console.cloud.tencent.com/cls/logset)** in the left sidebar.
+1. Log in to the CLS Console, and select **[Logset Management](https://console.cloud.tencent.com/cls/logset)** in the left sidebar.
 2. On the top of the **Logset Management** page, select the domain of the logset configured by PersistentEvent.
 3. In the logset list, click the name of the logset configured by PersistentEvent to go to the logset details page. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/be97c45c1b40311a49d5ce8514143965.png)
