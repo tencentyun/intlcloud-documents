@@ -1,4 +1,4 @@
-对于在 Android 平台上传视频的场景，云点播提供了 Android 上传 SDK。上传流程请参见 [客户端上传指引](/document/product/266/9219)。
+对于在 Android 平台上传视频的场景，云点播提供了 Android 上传 SDK。上传流程请参见 [客户端上传指引](https://intl.cloud.tencent.com/document/product/266/33921)。
 
 ## 源码下载
 
@@ -56,7 +56,7 @@ TXUGCPublishTypeDef.TXPublishParam param = new TXUGCPublishTypeDef.TXPublishPara
 param.signature = "xxx";
 param.videoPath = "xxx";
 ```
-`signature`计算规则请参见 [客户端上传签名](/document/product/266/9221)。
+`signature`计算规则请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
 #### 调用上传
 
@@ -96,7 +96,7 @@ param.signature = "xxx";
 param.mediaPath = "xxx";
 ```
 
-`signature`计算规则请参见 [客户端上传签名](/document/product/266/9221)。
+`signature`计算规则请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
 #### 调用上传
 
@@ -118,7 +118,7 @@ param.signature = "xxx";
 param.videoPath = "xxx";
 param.coverPath = "xxx";
 ```
-`signature`计算规则请参见 [客户端上传签名](/document/product/266/9221)。
+`signature`计算规则请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
 #### 取消和恢复上传
 
@@ -155,7 +155,7 @@ mVideoPublish.canclePublish();
 </receiver>
 ```
 
-`signature`计算规则请参见 [客户端上传签名](/document/product/266/9221)。
+`signature`计算规则请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
 
 ## 视频上传接口描述
@@ -184,7 +184,7 @@ mVideoPublish.canclePublish();
 
 | 参数名称         | 参数描述                               | 类型      | 必填   |
 | ------------ | ---------------------------------- | ------- | ---- |
-| signature    | [客户端上传签名](/document/product/266/9221)。 | String  | 是    |
+| signature    | [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。 | String  | 是    |
 | videoPath    | 本地视频文件路径。                           | String  | 是    |
 | coverPath    | 本地封面文件路径，默认不带封面文件。                  | String  | 否    |
 | enableResume | 是否启动断点续传，默认开启。                      | boolean | 否    |
@@ -225,7 +225,7 @@ mVideoPublish.canclePublish();
 
 | 参数名称      | 参数描述                   | 类型      | 必填   |
 | --------- | ---------------------- | ------- | ---- |
-| signature   | [客户端上传签名](/document/product/266/9221)。        | String | 是    |
+| signature   | [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。        | String | 是    |
 
 ## 图片上传接口描述
 
@@ -252,7 +252,7 @@ mVideoPublish.canclePublish();
 
 | 参数名称     | 参数描述                                           | 类型    | 必填 |
 | ------------ | -------------------------------------------------- | ------- | ---- |
-| signature    | [客户端上传签名](/document/product/266/9221)。       | String  | 是   |
+| signature    | [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。       | String  | 是   |
 | mediaPath    | 本地图片文件路径。                                   | String  | 是   |
 | enableResume | 是否启动断点续传，默认开启。                         | boolean | 否   |
 | enableHttps  | 是否启动 HTTPS，默认关闭。                           | boolean | 否   |
@@ -290,7 +290,7 @@ mVideoPublish.canclePublish();
 
 | 参数名称  | 参数描述                                     | 类型   | 必填 |
 | --------- | -------------------------------------------- | ------ | ---- |
-| signature | [客户端上传签名](/document/product/266/9221)。 | String | 是   |
+| signature | [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。 | String | 是   |
 
 ## 错误码
 

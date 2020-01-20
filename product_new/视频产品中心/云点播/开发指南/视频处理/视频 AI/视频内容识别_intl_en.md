@@ -17,9 +17,9 @@ Some content recognition features depend on a material library. There are two ty
 
 | Recognition Type | Public Library | Custom Library |
 | -- | -- | -- |
-| Face recognition | Supported. Figures in the library mainly include entertainment celebrities, sports celebrities, and politically sensitive figures | Supported. Call a [server API](https://cloud.tencent.com/document/product/266/34800) to manage the custom face library |
-| Speech recognition | Not supported yet | Supported. Call a [server API](https://cloud.tencent.com/document/product/266/34799) to manage the keyword library |
-| Text recognition | Not supported yet | Supported. Call a [server API](https://cloud.tencent.com/document/product/266/34799) to manage the keyword library |
+| Face recognition | Supported. Figures in the library mainly include entertainment celebrities, sports celebrities, and politically sensitive figures | Supported. Call a [server API](https://intl.cloud.tencent.com/document/product/266/34800) to manage the custom face library |
+| Speech recognition | Not supported yet | Supported. Call a server API <!--api (https://intl.cloud.tencent.com/document/product/266/34799)--> to manage the keyword library |
+| Text recognition | Not supported yet | Supported. Call a server API <!--api (https://intl.cloud.tencent.com/document/product/266/34799)--> to manage the keyword library |
 | Object recognition | Supported. Objects in the library mainly include politically sensitive icons | Not supported yet |
 
 ## <span id = "sh"></span>Video Content Recognition Template
@@ -31,24 +31,24 @@ Video content recognition integrates a number of recognition features that requi
 * Filter score specified: at what confidence score a face recognition result will be returned.
 * Filter tag specified: within what range a face tag result will be returned.
 
-For common combinations of operations, VOD provides a [preset video content recognition template](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF). In addition, you can also create and manage custom video recognition templates by calling a [server API](https://cloud.tencent.com/document/product/266/34791).
+For common combinations of operations, VOD provides a [preset video content recognition template](https://intl.cloud.tencent.com/document/product/266/33932#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF). In addition, you can also create and manage custom video recognition templates by calling a [server API](#APIhttps://intl.cloud.tencent.com/document/product/266/34791).
 
 ## Task Initiation
 
-There are three ways to initiate a video content recognition task, namely, directly initiating through server API, directly initiating through the console, and specifying a task upon upload. For more information, please see [Task Initiation](https://cloud.tencent.com/document/product/266/33475#OriginatingTask) for video processing.
-
+There are three ways to initiate a video content recognition task, namely, directly initiating through server API, directly initiating through the console, and specifying a task upon upload. For more information, please see [Task Initiation](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask) for video processing.
+<!--api
 Below are instructions for initiating video content recognition tasks in these ways:
 
-* Call the server API [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) to initiate a task: specify the [video content recognition template](#sh) ID in the `AiRecognitionTask` parameter in the request.
-* Call the server API [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426) to initiate a task: specify the [video content recognition template](#sh) ID in the `AiRecognitionTask` parameter in the request.
-* Initiate a task on a video through the console: call a [server API](https://cloud.tencent.com/document/product/266/33897) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and use it to [initiate video processing](https://cloud.tencent.com/document/product/266/2841#.E5.A4.84.E7.90.86.E8.A7.86.E9.A2.91) in the console.
-* Specify a task upon upload from server: call a [server API](https://cloud.tencent.com/document/product/266/33897) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and specify it as the `procedure` in the [ApplyUpload](https://cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
-* Specify a task upon upload from client: call a [server API](https://cloud.tencent.com/document/product/266/33897) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and specify it as the `procedure` in the [signature for upload from client](https://cloud.tencent.com/document/product/266/9221#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).
-* Upload through console: call a [server API](https://cloud.tencent.com/document/product/266/33897) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), upload a video through the console, select [Process Video During Upload](https://cloud.tencent.com/document/product/266/2841#.E4.B8.8A.E4.BC.A0.E8.A7.86.E9.A2.91), and specify to execute this task flow upon video upload completion.
-
+* Call the server API [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) to initiate a task: specify the [video content recognition template](#sh) ID in the `AiRecognitionTask` parameter in the request.
+* Call the server API [ProcessMediaByUrl](#APIhttps://intl.cloud.tencent.com/document/product/266/33426) to initiate a task: specify the [video content recognition template](#sh) ID in the `AiRecognitionTask` parameter in the request.
+* Initiate a task on a video through the console: call a [server API](#APIhttps://intl.cloud.tencent.com/document/product/266/33897) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and use it to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33890) in the console.
+* Specify a task upon upload from server: call a [server API](#APIhttps://intl.cloud.tencent.com/document/product/266/33897) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and specify it as the `procedure` in the [ApplyUpload](#APIhttps://intl.cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
+* Specify a task upon upload from client: call a [server API](#APIhttps://intl.cloud.tencent.com/document/product/266/33897) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and specify it as the `procedure` in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).
+* Upload through console: call a [server API](#APIhttps://intl.cloud.tencent.com/document/product/266/33897) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), upload a video through the console, select [Process Video During Upload](https://intl.cloud.tencent.com/document/product/266/33890), and specify to execute this task flow upon video upload completion.
+-->
 ## Getting Result
 
-After initiating a video content recognition task, you can wait for [result notification](https://cloud.tencent.com/document/product/266/33475#ResultNotification) asynchronously or perform [task query](https://cloud.tencent.com/document/product/266/33475#TaskQuery) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the content recognition task is initiated (the fields with null value are omitted):
+After initiating a video content recognition task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the content recognition task is initiated (the fields with null value are omitted):
 
 ```json
 {

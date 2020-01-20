@@ -8,7 +8,7 @@ This tutorial guides you through how to use VOD event notifications in "normal c
 ## Normal Callback
 ### Deploying callback receiving service
 
-To get event notifications through [normal callback](https://cloud.tencent.com/document/product/266/33779#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83), you need to deploy a callback receiving service on a server with a public IP. Below describes how to deploy such a service on a CVM instance as an example:
+To get event notifications through [normal callback](https://intl.cloud.tencent.com/document/product/266/33948#normal-callback), you need to deploy a callback receiving service on a server with a public IP. Below describes how to deploy such a service on a CVM instance as an example:
 
 1. Enter the [Instance List](https://console.cloud.tencent.com/cvm/index) page in the CVM Console and click **Create**.
 2. Select the **Quick Configuration** menu, select **Ubuntu Server** or **CentOS** for **Image** and **1 Mbps** for **Public Network Bandwidth**, check **Allocate Free Public IP**, and then click **Buy Now**.
@@ -39,10 +39,10 @@ Please download the [demo video](http://1255566954.vod2.myqcloud.com/ca75586fvod
 ![](https://main.qcloudimg.com/raw/8a2579f87d5ea0ca5181550f7d4eaca4.png)
  After the upload is completed, you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column.
 ![](https://main.qcloudimg.com/raw/12ef8ef8a7d9d1332cee08dc8500cff4.png)
-3. Check the CVM instance. The standard output should print the content of the notification for [video upload completion](https://cloud.tencent.com/document/product/266/7830#817356113).
+3. Check the CVM instance. The standard output should print the content of the notification for [video upload completion](https://intl.cloud.tencent.com/document/product/266/33950#817356113).
  <img src="https://main.qcloudimg.com/raw/f6439edcd8ae59cab1d393987382e136.png" width="818">
-4. In the **Uploaded** column in **Media Assets**, select the video just uploaded and click **[Video Processing](https://cloud.tencent.com/document/product/266/36448)**. Select **Manually select transcoding template** for **Processing Type**, check **MP4-LD-FLU (10)** in **Transcoding Template**, keep **Video Cover** checked, and click **OK**.
-5. After waiting for 10 minutes, check the CVM instance, and its standard output should print the content of the notification for [task flow status change](https://cloud.tencent.com/document/product/266/9636#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83), including the results of transcoding (where `Type` is `Transcode`) and time point screencapturing for cover generation (where `Type` is `CoverBySnapshot`).
+4. In the **Uploaded** column in **Media Assets**, select the video just uploaded and click **[Video Processing](https://intl.cloud.tencent.com/document/product/266/33892)**. Select **Manually select transcoding template** for **Processing Type**, check **MP4-LD-FLU (10)** in **Transcoding Template**, keep **Video Cover** checked, and click **OK**.
+5. After waiting for 10 minutes, check the CVM instance, and its standard output should print the content of the notification for [task flow status change](https://intl.cloud.tencent.com/document/product/266/33953#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83), including the results of transcoding (where `Type` is `Transcode`) and time point screencapturing for cover generation (where `Type` is `CoverBySnapshot`).
  <img src="https://main.qcloudimg.com/raw/4e577e7feb5524ff82e8a82c8e1cbdd2.png" width="818">
 
 At this point, you have uploaded a video and performed a transcoding task on it. After the upload and transcoding were completed, your callback receiving service received notifications for **video upload completion** and **task flow status change**.
@@ -69,13 +69,13 @@ At this point, you have uploaded a video and performed a transcoding task on it.
  After the upload is completed, you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column.
 ![](https://main.qcloudimg.com/raw/12ef8ef8a7d9d1332cee08dc8500cff4.png)
 
-3. In the **Uploaded** column in **Media Assets**, select the video just uploaded and click **[Video Processing](https://cloud.tencent.com/document/product/266/36448)**. Select **Manually select transcoding template** for **Processing Type**, check **MP4-LD-FLU (10)** in **Transcoding Template**, keep **Video Cover** checked, and click **OK**.
+3. In the **Uploaded** column in **Media Assets**, select the video just uploaded and click **[Video Processing](https://intl.cloud.tencent.com/document/product/266/33892)**. Select **Manually select transcoding template** for **Processing Type**, check **MP4-LD-FLU (10)** in **Transcoding Template**, keep **Video Cover** checked, and click **OK**.
 
 At this point, you have uploaded a video again and initiated a transcoding task for it. These operations have triggered event notifications.
 
 ### Pulling reliable callback
 
-After an event notification is triggered, you need to proactively pull the reliable callback. You can use the [API tool](https://cloud.tencent.com/document/product/266/33433#API-Explorer) to run the `PullEvents` command for querying the event notifications to be consumed. The specific directions are as follows:
+After an event notification is triggered, you need to proactively pull the reliable callback. You can use the API tool <!--api(https://intl.cloud.tencent.com/document/product/266/33433#API-Explorer)--> to run the `PullEvents` command for querying the event notifications to be consumed. The specific directions are as follows:
 1. Go to the [API 3.0 Explorer of VOD's `PullEvents` command](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=PullEvents&SignVersion=) and enter your **key** (which can be viewed by clicking **View Key** in the [API Key Console](https://console.cloud.tencent.com/cam/capi)).
 <img src="https://main.qcloudimg.com/raw/57bb4106c7ec29f0d49b94bafc95e38b.png" width="399">
 2. Select **Online Call** in the right and click **Send Request**.
@@ -94,7 +94,7 @@ The pulled reliable callback needs to be confirmed within **30 seconds**; otherw
 * If the API for confirmation is called more than 30 seconds after an event handler is received, the call will fail.
 * If the event is not confirmed within 30 seconds, it will be pulled again when the next reliable callback is pulled.
 
-You can run the `ConfirmEvents` command in the [API tool](https://cloud.tencent.com/document/product/266/33434#API-Explorer) to query the event notifications to be consumed. The specific directions are as follows:
+You can run the `ConfirmEvents` command in the API tool <!--api(https://intl.cloud.tencent.com/document/product/266/33434#API-Explorer)--> to query the event notifications to be consumed. The specific directions are as follows:
 
 1. Go to the [API 3.0 Explorer of VOD's `ConfirmEvents` command](https://console.cloud.tencent.com/api/explorer?Product=vod&Version=2018-07-17&Action=ConfirmEvents&SignVersion=) and enter your **key**.
 <img src="https://main.qcloudimg.com/raw/5b0e7986096a0e4512c5266a6c5e0073.png" width="399">
@@ -113,7 +113,7 @@ You can run the `ConfirmEvents` command in the [API tool](https://cloud.tencent.
 	If the return fails, please confirm:
 	- Whether the event handler was entered incorrectly.
 	- Whether the event was pulled more than 30 seconds ago.
-4. After 5 minutes, use the [API tool](https://cloud.tencent.com/document/product/266/33433#API-Explorer) to run the `PullEvents` command again to pull event notifications.
+4. After 5 minutes, use the API tool <!--api (https://intl.cloud.tencent.com/document/product/266/33433#API-Explorer)--> to run the `PullEvents` command again to pull event notifications.
 
   <img src="https://main.qcloudimg.com/raw/3d064849187be7c5d2c2da1f560e7b4a.png" width="462">
 

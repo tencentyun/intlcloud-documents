@@ -1,5 +1,5 @@
 ## System Architecture
-<img src="https://mc.qcloudimg.com/static/img/556de80b48183bb0b31ddbddfef18a40/image.png" width="650">
+<img src="https://main.qcloudimg.com/raw/146d801f4900734b8faa0435b34ea6cc.png" width="650">
 
 ## Features
 ### Customizing domain names

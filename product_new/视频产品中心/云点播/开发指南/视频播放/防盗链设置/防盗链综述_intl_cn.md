@@ -4,7 +4,7 @@
 
 ## 类型和能力
 云点播防盗链支持 Referer 防盗链和 Key 防盗链。
-<img src="https://main.qcloudimg.com/raw/a24050a706ebff6911e565f55d6cf87b.png" width="450">
+<img src="https://main.qcloudimg.com/raw/a92778f479b70f6ff9d0eaa5d65b5589.png" width="450">
 
 ### Referer 防盗链
 基于 HTTP 协议支持的 Referer 机制，通过播放请求 Header 中携带的 Referer 字段识别请求的来源。开发者可以设置一批域名为黑名单或白名单，CDN 节点将按照名单中的域名做鉴权，从而允许或拒绝播放请求。
@@ -22,5 +22,5 @@
 在视频 URL 中指定试看时长（如仅允许播放视频的前5分钟）。通过这种方式，可以实现对未付费用户的试看功能。
 
 >
->- 关于 Referer 防盗链，更多详情请参见 [Referer 防盗链](/document/product/266/14046)。
->- 关于 Key 防盗链，更多详情请参见 [Key 防盗链](/document/product/266/14047)。
+>- 关于 Referer 防盗链，更多详情请参见 [Referer 防盗链](https://intl.cloud.tencent.com/document/product/266/33985)。
+>- 关于 Key 防盗链，更多详情请参见 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)。

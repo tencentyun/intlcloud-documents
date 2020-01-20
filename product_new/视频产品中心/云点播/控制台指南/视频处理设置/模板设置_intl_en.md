@@ -1301,7 +1301,7 @@ In the management list of created watermarking templates, you can view the name 
 You can create a screencapturing template based on your business needs, so that you can take screenshots of the uploaded videos in various ways. Currently, the VOD Console supports three types of screencapturing: time point screencapturing, sampled screencapturing, and image sprite generating.
 
 ### Time point screencapturing
-Select "Time Point Screencapturing" for screencapturing type. **The sampling time points need to be specified in the screencapturing task configuration, while the template only configures the screencapturing type.** For detailed configuration of time point screencapturing, please see [Task Configuration Description](https://cloud.tencent.com/document/product/266/33819#p1).
+Select "Time Point Screencapturing" for screencapturing type. **The sampling time points need to be specified in the screencapturing task configuration, while the template only configures the screencapturing type.** For detailed configuration of time point screencapturing, please see [Task Configuration Description](https://intl.cloud.tencent.com/document/product/266/14058#p1).
 
 - Template name: it can contain up to 64 letters, digits, spaces, underscores (_), dashes (-), and periods (.)
 - Image format: JPG
@@ -1349,7 +1349,7 @@ The template name, screencapturing type, and image dimensions are displayed in t
 
 
 ## Animated Image Generating Template
-You can create an animated image generating template based on your business needs to take screenshots within the specified time period and generate an animated image. **The time period needs to be specified in the animated image generating task configuration, while the template only configures the animated image generating type.** For detailed configuration of animated image generating, please see [Task Configuration Description](https://cloud.tencent.com/document/product/266/33819#p1).
+You can create an animated image generating template based on your business needs to take screenshots within the specified time period and generate an animated image. **The time period needs to be specified in the animated image generating task configuration, while the template only configures the animated image generating type.** For detailed configuration of animated image generating, please see [Task Configuration Description](https://intl.cloud.tencent.com/document/product/266/14058#p1).
 
 - Image type: WebP, GIF
 - Frame rate: 1–30 fps

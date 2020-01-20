@@ -1,4 +1,4 @@
-Access control is essentially to bind subaccounts to policies or grants policies to subaccounts. You can use preset policies directly in the console to implement some simple authorization operations. For more complicated authorization operations, please see [Custom Policies](https://cloud.tencent.com/document/product/266/39339).
+Access control is essentially to bind subaccounts to policies or grants policies to subaccounts. You can use preset policies directly in the console to implement some simple authorization operations. For more complicated authorization operations, please see [Custom Policies](https://intl.cloud.tencent.com/document/product/266/33972).
 
 Currently, VOD provides the following preset policies:
 
@@ -12,7 +12,7 @@ Currently, VOD provides the following preset policies:
 
 ### Creating a subuser with full access to VOD
 
-1. Access the **[User List](https://console.cloud.tencent.com/cam)** page in the CAM Console as a [root account](https://cloud.tencent.com/document/product/598/13665) and click **Create User**.
+1. Access the **[User List](https://console.cloud.tencent.com/cam)** page in the CAM Console as a [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create User**.
    ![](https://main.qcloudimg.com/raw/1a069f052f6256ee997f600e0d28ad9d.png)
 2. On the "Create User" page, click **Custom** under "Subuser" to enter the "Create Subuser" page.
    ![](https://main.qcloudimg.com/raw/e0482952524b105812409fcd53b8173c.png)
@@ -54,13 +54,13 @@ Currently, VOD provides the following preset policies:
 		  <tr>      
          <td>SecretId</td>   
 	     <td>Security credential file in CSV format</td>   
-	     <td >Needed for server API call. For more information, please see<a href="https://cloud.tencent.com/document/product/598/37140">Access Key</a></td>   
+	     <td >Needed for server API call. For more information, please see<a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</a></td>   
 	     <td >Yes</td>
      </tr> 
 	     <tr>      
          <td>SecretKey</td>   
 	     <td>Security credential file in CSV format</td>   
-	     <td >Needed for server API call. For more information, please see<a href="https://cloud.tencent.com/document/product/598/37140">Access Key</td>   
+	     <td >Needed for server API call. For more information, please see<a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</td>   
 	     <td >Yes</td>
      </tr> 
 </table>
@@ -70,7 +70,7 @@ With the above login link and security credentials, you can use this subuser to 
 
 ### <span id="p2"></span>Granting full permissions of VOD to existing subusers
 
-1. Access the **[User List](https://console.cloud.tencent.com/cam)** in the CAM Console as a [root account](/document/product/598/13665) and click the desired subaccount.
+1. Access the **[User List](https://console.cloud.tencent.com/cam)** in the CAM Console as a [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click the desired subaccount.
    ![](https://main.qcloudimg.com/raw/d4e14d166031830c96c8af62e8ba7580.png)
 2. Click **Add Policy** in the "Permission" column on the "User Details" page, as shown below (in practice, the information displayed on this page may vary by existing permissions of the subaccount. If the permission of a subaccount is not empty, please click **Associate Policy**).
    ![](https://main.qcloudimg.com/raw/03601abde3da997fcbcbdb0832f97ae9.png)
@@ -78,7 +78,7 @@ With the above login link and security credentials, you can use this subuser to 
 
 ### Revoking a subuser's full access to VOD
 
-1. Access the **[User List](https://console.cloud.tencent.com/cam)** in the CAM Console as a [root account](/document/product/598/13665) and click the desired subaccount.
+1. Access the **[User List](https://console.cloud.tencent.com/cam)** in the CAM Console as a [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click the desired subaccount.
    ![](https://main.qcloudimg.com/raw/b1aa046a9683d823bfd2a981af6eaf98.png)
 2. Find the preset policy `QcloudVODFullAccess` in the "Permission" column on the "User Details" page, click **Unassociate** on the right, and complete deauthorization as prompted.
    <img src="https://main.qcloudimg.com/raw/d8275e7b4d6ae7ebcd9d0f9c729b7aff.png" width="704">

@@ -35,7 +35,7 @@ For scenarios where network bandwidth is insufficient, a direct solution is to a
 At both levels, the bandwidth utilization can be improved by adjusting the corresponding number of concurrencies.
 
 #### Concurrent file upload
-Concurrent file upload refers to using multiple processes or threads to initiate upload operations simultaneously. At present, VOD does not provide related SDK packages for this mode. You can implement this feature by referring to the characteristics of specific programming languages. Below is a simple example based on the [VOD SDK for Java](/document/product/266/10276).
+Concurrent file upload refers to using multiple processes or threads to initiate upload operations simultaneously. At present, VOD does not provide related SDK packages for this mode. You can implement this feature by referring to the characteristics of specific programming languages. Below is a simple example based on the [VOD SDK for Java](https://intl.cloud.tencent.com/document/product/266/33914).
 
 ```
 import com.qcloud.vod.VodUploadClient;
@@ -101,9 +101,9 @@ class UploadThread implements Runnable {
 #### Concurrent part upload
 Concurrent part upload is applicable to uploading a large file in multiple parts simultaneously. The advantage of multipart upload lies in that a large file can be uploaded quickly. The SDK provided by VOD automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload. The number of concurrent parts of the file is specified by the `ConcurrentUploadNumber` parameter. For specific usage examples, please see the corresponding SDK. The SDKs that currently support this parameter include:
 
-- [SDK for Java](/document/product/266/10276#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
-- [SDK for Python](/document/product/266/32319#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
-- [SDK for Go](/document/product/266/32410#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
+- [SDK for Java](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
+- [SDK for Python](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
+- [SDK for Go](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.88.86.E7.89.87.E5.B9.B6.E5.8F.91.E6.95.B0)
 
 ### Nearby upload
 Nearby upload refers to the ability to sense the location of the uploader and allocate the storage center closest to the uploader for file upload. For example, users in Chengdu will be allocated to the Chongqing rather than Shanghai region for upload.
@@ -115,14 +115,14 @@ The biggest benefit of the nearby upload capability is to shorten the transfer d
 VOD natively supports nearby upload. You just need to simply confirm the following two points:
 
 - **Activate multiple storage regions**
-The storage region provided by VOD is **Chongqing** by default. If you want to take full advantage of the nearby upload capability, you need to activate regions desired for nearby upload in the console. For more information, please see [Upload Storage Settings](/document/product/266/14059). After multi-region storage is enabled, when a user uploads a file, VOD will identify the user's region by IP and intelligently allocate the region closest to the user out of the activated regions for upload.
+The storage region provided by VOD is **Chongqing** by default. If you want to take full advantage of the nearby upload capability, you need to activate regions desired for nearby upload in the console. For more information, please see [Upload Storage Settings](https://intl.cloud.tencent.com/document/product/266/18874). After multi-region storage is enabled, when a user uploads a file, VOD will identify the user's region by IP and intelligently allocate the region closest to the user out of the activated regions for upload.
 - **Check whether the scheduling is proper**
 If the storage regions of Chongqing and Shanghai are activated, and the user initiates an upload in Chengdu, the file will theoretically be uploaded to Chongqing through nearby scheduling. To confirm whether the scheduling is reasonable, you can get the `FileId` returned upon upload completion, and confirm it against the basic information (`basicInfo`) returned by the [DescribeMediaInfos API](/document/api/266/31763), which contains a `StorageRegion` field representing the storage region of the uploaded media file.
 
 If the transfer experiences proxy or forwarding, and the region identified by VOD by IP is incorrect, you can forcibly specify a storage region for file uploads. For specific directions, please see:
 
-- [Guide for Upload from Client](/document/product/266/9219)
-- [Guide for Upload from Server](/document/product/266/9759)
+- [Guide for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921)
+- [Guide for Upload from Server](https://intl.cloud.tencent.com/document/product/266/33912)
 
 
 ### Pre-detection upload
@@ -133,5 +133,5 @@ Pre-detection upload is mainly a means to optimize various types of scenarios wi
 
 The pre-detection upload capability is currently applied to uploads from client, and the connection method is simple. For specific directions, please see the description of `pre-upload` in the corresponding SDK:
 
-- [Upload SDK for Android](/document/product/266/9539)
-- [Upload SDK for iOS](/document/product/266/13793)
+- [Upload SDK for Android](https://intl.cloud.tencent.com/document/product/266/33925)
+- [Upload SDK for iOS](https://intl.cloud.tencent.com/document/product/266/33926)

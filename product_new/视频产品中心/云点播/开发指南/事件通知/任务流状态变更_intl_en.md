@@ -1,5 +1,5 @@
 >
->- This document describes the callback on v3.0. For legacy callback on v2.0, please see [Legacy Callback](https://cloud.tencent.com/document/product/266/33796#ProcedureStateChanged).
+>- This document describes the callback on v3.0. For legacy callback on v2.0, please see [Legacy Callback](https://intl.cloud.tencent.com/document/product/266/33962#ProcedureStateChanged).
 >- You are recommended to gradually migrate the callback to v3.0, as the documentation for callback v2.0 will no longer be maintained.
 
 
@@ -8,7 +8,7 @@ ProcedureStateChanged
 
 ## Event Description
 
-If the application is configured with event notification, after the status of a task flow changes, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`ProcedureTask` structure](https://cloud.tencent.com/document/api/266/31773#ProcedureTask).
+If the application is configured with event notification, after the status of a task flow changes, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`ProcedureTask` structure](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#ProcedureTask).
 
 ## Samples
 ### Normal callback
@@ -114,7 +114,7 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
 
 
 ### Reliable callback
-If you choose the reliable callback mode, after the [PullEvents](/document/product/266/33433) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
+If you choose the reliable callback mode, after the [PullEvents](#APIhttps://intl.cloud.tencent.com/document/api/266/31773) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
 
 ```json
 {

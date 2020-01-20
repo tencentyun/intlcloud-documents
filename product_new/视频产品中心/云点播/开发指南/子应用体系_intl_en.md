@@ -7,7 +7,7 @@ VOD provides a **subapplication** feature to enable you to isolate resources in 
 Below are some typical use cases for VOD subapplication:
 
 - **Multi-department/multi-business isolation**: a company intends to develop its own products based on Tencent Cloud. Department A plans to use VOD to develop a UGSV application, and department B a movie and television website. These two VOD businesses need to be isolated from each other. However, out of financial considerations, the company cannot create an independent Tencent Cloud account for each department. In this case, the subapplication feature of VOD can be used to assign a subapplication to each department.
-- **Separation between production and test environments**: if you want to test some VOD features (e.g., modifying the method of [event notification](/document/product/266/33779) or enabling [hotlink protection](/document/product/266/11243)) without affecting the operations of the production environment, you can create two subapplications, one for the production environment and one for the test environment. New features can be tested in the test environment first and then made available in the production environment after successful validation.
+- **Separation between production and test environments**: if you want to test some VOD features (e.g., modifying the method of [event notification](/document/product/266/33779) or enabling [hotlink protection](https://intl.cloud.tencent.com/document/product/266/33984)) without affecting the operations of the production environment, you can create two subapplications, one for the production environment and one for the test environment. New features can be tested in the test environment first and then made available in the production environment after successful validation.
 
 ### Role definition and ID
 Roles in the VOD subapplication system include **admin**, **primary application**, and **subapplication**. Their definitions are as shown below.
@@ -64,15 +64,17 @@ Under the admin role, the left sidebar displays the following entries: **Service
 ### Subapplication
 Under the subapplication role, usage of the VOD Console is basically the same as that before the subapplication feature is enabled, and you can view and manipulate the subapplication's VOD resources. The main difference lies in that the subapplication itself has no separate billing configuration.
 
+<!--api
 ## Server API Instructions
-After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using [VOD Server APIs](https://cloud.tencent.com/document/product/266/31752).
-
+After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using [VOD Server APIs](https://intl.cloud.tencent.com/document/product/266/31752).
+-->
 ### <span id = "p2"></span>Specifying a subapplication in a server API
-VOD server API has been upgraded to [TencentCloud API 3.0](https://cloud.tencent.com/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
+VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.tencent.com/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
+<!--api
 ### Specifying a subapplication in server API 2017
-[Server API 2017](https://cloud.tencent.com/document/product/266/10688) also supports subapplications. When using it, you need to add the `SubAppId` parameter (case-sensitive) to the request. This parameter is at the same level as [common request parameters](/document/api/213/6976) of server API 2017, and its value is the subapplication ID. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
-
+[Server API 2017](https://intl.cloud.tencent.com/document/product/266/10688) also supports subapplications. When using it, you need to add the `SubAppId` parameter (case-sensitive) to the request. This parameter is at the same level as [common request parameters](/document/api/213/6976) of server API 2017, and its value is the subapplication ID. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
+-->
 >
 >- Server API 2017 documentation does not disclose the `SubAppId` parameter, which will not affect the use of it though.
 >- The `SubAppId` parameter is also involved in signature calculation for server APIs in the same calculation rule.
@@ -84,21 +86,22 @@ After enabling the VOD subapplication feature, you must specify the subapplicati
 [LVB recording](/document/product/267/32739) allows you to generate recording files in the specified subapplication by adding `vod_sub_app_id=xxx` (`xxx` refers to the subapplication ID) to the LVB push parameters. If you want to generate recording files in the primary application, simply leave this parameter empty.
 
 ### Upload from server
-[Upload from server](/document/product/266/9759) supports file upload to the specified subapplication. For more information on how to set the parameters, please visit the link below. If you want to upload files to the primary application, you can enter the primary application ID or leave the corresponding parameter empty.
+[Upload from server](https://intl.cloud.tencent.com/document/product/266/33912) supports file upload to the specified subapplication. For more information on how to set the parameters, please visit the link below. If you want to upload files to the primary application, you can enter the primary application ID or leave the corresponding parameter empty.
 
 #### Via SDK
-* [SDK for Java](https://cloud.tencent.com/document/product/266/10276#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
-* [SDK for PHP](https://cloud.tencent.com/document/product/266/9725#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
-* [SDK for Python](https://cloud.tencent.com/document/product/266/32319#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
-* [SDK for Node.js](https://cloud.tencent.com/document/product/266/32320#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
-* [SDK for Go](https://cloud.tencent.com/document/product/266/32410#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
+* [SDK for Java](https://intl.cloud.tencent.com/document/product/266/33914#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
+* [SDK for PHP](https://intl.cloud.tencent.com/document/product/266/33916#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
+* [SDK for Python](https://intl.cloud.tencent.com/document/product/266/33917#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
+* [SDK for Node.js](https://intl.cloud.tencent.com/document/product/266/33918#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
+* [SDK for Go](https://intl.cloud.tencent.com/document/product/266/33919#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
 
+<!--api
 #### Via server APIs
-The [ApplyUpload](https://cloud.tencent.com/document/product/266/31767) and [CommitUpload](https://cloud.tencent.com/document/product/266/31766) APIs will be used for upload. For more information, please see [Specifying a Subapplication in a Server API](#p2).
+The [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/31767) and [CommitUpload](https://intl.cloud.tencent.com/document/product/266/31766) APIs will be used for upload. For more information, please see [Specifying a Subapplication in a Server API](#p2).
 You are strongly recommended to use the SDK for upload.
-
+-->
 ### Upload from client
-[Upload from client](https://cloud.tencent.com/document/product/266/9219) allows you to upload files to the specified subapplication by adding `vodSubAppId=xxx` (`xxx` refers to the subapplication ID) to the [signature for upload from client](https://cloud.tencent.com/document/product/266/9221). If you want to upload files to the primary application, you can enter the primary application ID or leave this parameter empty.
+[Upload from client](https://intl.cloud.tencent.com/document/product/266/33921) allows you to upload files to the specified subapplication by adding `vodSubAppId=xxx` (`xxx` refers to the subapplication ID) to the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922). If you want to upload files to the primary application, you can enter the primary application ID or leave this parameter empty.
 
 >- The `vodSubAppId` parameter is also involved in calculation of the signature for upload from client in the same calculation rule.
 
@@ -106,10 +109,10 @@ You are strongly recommended to use the SDK for upload.
 Upload from URL allows you to upload files to the specified subapplication.
 
 * Via the console: for more information, please see [Console Instructions](#p3).
-* Via Server API: use the [PullUpload](https://cloud.tencent.com/document/product/266/35575) API. For more information, please see [Specifying a Subapplication in a Server API](#p2).
+<!--API * Via Server API: use the [PullUpload](https://intl.cloud.tencent.com/document/product/266/35575) API. For more information, please see [Specifying a Subapplication in a Server API](#p2).-->
 
 ## Permission Management
-VOD has been connected to CAM and supports authorization at subapplication level. For more information, please see [Access Management](https://cloud.tencent.com/document/product/266/39337).
+VOD has been connected to CAM and supports authorization at subapplication level. For more information, please see [Access Management](https://intl.cloud.tencent.com/document/product/266/33970).
 
 ## FAQs
 #### After the subapplication feature is enabled, will it affect existing business logic in the production environment?

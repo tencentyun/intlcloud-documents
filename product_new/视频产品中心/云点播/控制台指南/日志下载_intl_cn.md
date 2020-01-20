@@ -3,7 +3,7 @@
 ## 下载 CDN 日志
 1. 登录 [云点播控制台](https://console.cloud.tencent.com/vod)，选择左侧导航栏的【日志下载】>【CDN日志】。
 2. 选择需要获取日志的时间范围和域名，单击【确定】，即可获取日志下载链接。
-![](https://main.qcloudimg.com/raw/4f651b5c1fafbb3a382f4ce9b09314c7.png)
+![](https://main.qcloudimg.com/raw/5da8ab89237962c2900798525de41ba2.png)
 >
 >- 若当天该域名无请求，则不会产生日志，页面会显示无数据。
 >- CDN 日志默认按小时分割，即每天最多有24个日志文件，若某个小时该域名无请求，则不会产生日志数据包。

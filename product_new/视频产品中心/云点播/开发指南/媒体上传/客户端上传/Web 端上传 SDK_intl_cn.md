@@ -30,8 +30,8 @@ function getSignature() {
 };
 ```
 
-> `url`是您派发签名服务的 URL，详细请参见 [客户端上传指引](/document/product/266/9219)。
-> `signature`计算规则请参见 [客户端上传签名](/document/product/266/9221)。
+> `url`是您派发签名服务的 URL，详细请参见 [客户端上传指引](https://intl.cloud.tencent.com/document/product/266/33921)。
+> `signature`计算规则请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
 ####  上传视频示例
 
@@ -118,7 +118,7 @@ uploader.done().then(function (doneResult) {
 })
 ```
 
-`xxx_upload`与`xxx_progress`的回调值请参见 [分块上传/复制任务操作]( https://cloud.tencent.com/document/product/436/35649#.E5.88.86.E7.89.87.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)。
+`xxx_upload`与`xxx_progress`的回调值请参见 [分块上传/复制任务操作]( https://intl.cloud.tencent.com/document/product/436/31538#.E5.88.86.E7.89.87.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)。
 
 #### 取消上传
 

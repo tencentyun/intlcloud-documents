@@ -1,10 +1,10 @@
 ## 基础问题
 
 ### 什么是专线接入？
-[专线接入](https://cloud.tencent.com/document/product/216/544) 提供了一种快速连接腾讯云与本地数据中心的方法。用户可以通过申请一条物理专线，一次性打通多地域的腾讯云计算资源与您的本地数据中心，实现灵活可靠的混合云部署。
+[专线接入](https://intl.cloud.tencent.com/document/product/216/544) 提供了一种快速连接腾讯云与本地数据中心的方法。用户可以通过申请一条物理专线，一次性打通多地域的腾讯云计算资源与您的本地数据中心，实现灵活可靠的混合云部署。
 
 ### 专线接入有哪些组成部分？
-专线接入由物理专线、专用通道和专线网关组成，详见 [产品概述](https://cloud.tencent.com/document/product/216/544)。
+专线接入由物理专线、专用通道和专线网关组成，详见 [产品概述](https://intl.cloud.tencent.com/document/product/216/544)。
 ### 申请专线接入腾讯云需要多长时间？
 
 申请专线接入主要包含以下几个步骤：
@@ -13,16 +13,16 @@
      - 境内，同城专线20天，境内跨城专线30天。
      - 境外，不同国家地区差异较大，例如香港1个月，欧美地区1个半到2个月等等。
 
-   - 自助申请物理专线，需前往 [专线接入控制台](https://console.cloud.tencent.com/dc/dc)，参考 [申请物理专线](https://cloud.tencent.com/document/product/216/19244) 文档，申请时需填上的部分参数需要和您的专线服务商确认，例如端口类型、带宽等。
+   - 自助申请物理专线，需前往 [专线接入控制台](https://console.cloud.tencent.com/dc/dc)，参考 [申请物理专线](https://intl.cloud.tencent.com/document/product/216/19244) 文档，申请时需填上的部分参数需要和您的专线服务商确认，例如端口类型、带宽等。
    提交申请后，腾讯云专线交付工程师将会在3天内联系您确认需求详情，并发起建设。从发起建设起，一般一周内可以准备好端口以及模块等资源，等候专线服务商光纤接入
    - 通过合作伙伴申请：由于腾讯云专线合作伙伴与腾讯云已实现 NNI 互通，通过合作伙伴购买专线可免去腾讯云侧物理专线施工，您只需直接创建专用通道共享合作伙伴线路即可。所以建议您通过腾讯云专线合作伙伴购买专线服务。合作伙伴详情请参见 [腾讯云市场](https://market.cloud.tencent.com/categories/1042)。
-- **申请专用通道**：[腾讯云控制台](https://console.cloud.tencent.com/dc/dcConn) 申请，参考申请 [通道文档](https://cloud.tencent.com/document/product/216/19250)，提交申请后，10分钟内即可完成创建（若您是共享合作伙伴物理线路，还需合作伙伴确认后才能开始创建）。
+- **申请专用通道**：[腾讯云控制台](https://console.cloud.tencent.com/dc/dcConn) 申请，参考申请 [通道文档](https://intl.cloud.tencent.com/document/product/216/19250)，提交申请后，10分钟内即可完成创建（若您是共享合作伙伴物理线路，还需合作伙伴确认后才能开始创建）。
 
 - **申请专线网关、配置路由表**：均是自动化创建，提交即可完成创建。
 
 ### 是否支持跨账号使用专线？
 
-支持物理专线的跨账号使用，详情请查看 [共享物理专线](https://cloud.tencent.com/document/product/216/19246)。
+支持物理专线的跨账号使用，详情请查看 [共享物理专线](https://intl.cloud.tencent.com/document/product/216/19246)。
 
 ### 物理专线申请提交后能否更改参数？
 
@@ -42,7 +42,7 @@
 支持。支持一点接入，访问全地域云上资源。两种方式：
 
 - 腾讯云专线接入点设备支持802.1Q VLAN 封装技术，物理专线开启 Trunk 模式支持多 Vlan，通过不同 Vlan 创建不同的专用通道访问多地域的云上 VPC 资源；
-- 使用 [云联网产品](https://cloud.tencent.com/product/ccn)，访问云上多地域的 VPC 资源。
+- 使用 [云联网产品](https://intl.cloud.tencent.com/product/ccn)，访问云上多地域的 VPC 资源。
 
 ### 为什么物理专线状态一直“申请中”？
 
@@ -79,12 +79,12 @@
 
 ### 使用专线接入有什么约束？
 
-专线接入有资源限制和接入限制，详情请参见 [使用限制](https://cloud.tencent.com/document/product/216/546)。
+专线接入有资源限制和接入限制，详情请参见 [使用限制](https://intl.cloud.tencent.com/document/product/216/546)。
 
 ### 使用专线接入时，数据传输量是否有限制？
 
 没有限制，用户可以传输任意数量的数据，最大速度为用户选择的专线带宽。
-其他使用限制，请参见 [使用限制](https://cloud.tencent.com/document/product/216/546)。
+其他使用限制，请参见 [使用限制](https://intl.cloud.tencent.com/document/product/216/546)。
 
 ### 如何为专线配置告警？
 
@@ -95,5 +95,5 @@
 - VPN 连接利用公网和 IPsec 协议，在您的数据中心和 VPC 之间建立加密的网络连接。VPN 网关的购买、生效和配置可以在几分钟内完成。但是 VPN 连接可能会受到 Internet 抖动、阻塞等公网质量问题而中断，当用户业务对网络连接质量要求不高时，是一种快速部署的高性价比选择。
 - 专线接入则提供了一个您专用的专线网络连接方案，施工时间较长，但可以提供高质量、高可靠的网络连接服务，当用户业务对网络质量和网络安全要求较高时，可以选择专线接入进行部署。
 
-更多详情，请参见 [产品概述](https://cloud.tencent.com/document/product/216/544)。
+更多详情，请参见 [产品概述](https://intl.cloud.tencent.com/document/product/216/544)。
 

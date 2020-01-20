@@ -2,7 +2,7 @@
 EditMediaComplete
 
 ## Event Description
-If the application is configured with event notification, after a video is edited, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`EditMediaTask` structure](https://cloud.tencent.com/document/api/266/31773#EditMediaTask).
+If the application is configured with event notification, after a video is edited, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`EditMediaTask` structure](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#EditMediaTask).
 
 ## Samples
 ### Normal Callback
@@ -48,7 +48,7 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
 
 
 ### Reliable Callback
-If you choose the reliable callback mode, after the [PullEvents](/document/product/266/33433) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
+If you choose the reliable callback mode, after the [PullEvents](#APIhttps://intl.cloud.tencent.com/document/api/266/31773) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
 
 ```json
 {

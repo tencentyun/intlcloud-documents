@@ -16,7 +16,7 @@ This document describes how to manage videos in the VOD Console, including editi
 <tbody>
 <tr>
 <td>Video cover</td>
-<td ><ul><li>Click **Change Image** to select and upload a local image. <br><li>Only JPG, PNG, and static GIF images are supported. <br><li>The image can be up to 1 MB in size and 1920 * 1080 px in dimensions. <br><li>The filename cannot contain Chinese characters. </ul></td>
+<td ><ul><li>Click <b>Change Image</b> to select and upload a local image. <br><li>Only JPG, PNG, and static GIF images are supported. <br><li>The image can be up to 1 MB in size and 1920 * 1080 px in dimensions. <br><li>The filename cannot contain Chinese characters. </ul></td>
 </tr>
 <tr>
 <td>Video name</td>
@@ -24,7 +24,7 @@ This document describes how to manage videos in the VOD Console, including editi
 </tr>
 <tr>
 <td>Category</td>
-<td><ul><li>You can modify the video category. <br><li>Click **Modify Category**, select a category, and click **OK**.</ul></td>
+<td><ul><li>You can modify the video category. <br><li>Click <b>Modify Category</b>, select a category, and click <b>OK</b>.</ul></td>
 </tr>
 <tr>
 <td>Tag</td>
@@ -35,10 +35,11 @@ This document describes how to manage videos in the VOD Console, including editi
 <td><ul><li>You can add a brief description to the video. <br><li>The description can contain up to 128 characters.</ul></td>
 </tr>
 </tbody></table>
-	- **List of standard transcoding output files**: it lists the source and output video files.
-		- You can copy the URL of a video file and preview it.
-		- You can also delete an output video file and share it through QR code.
-	- **List of adaptive bitrate streaming output files**
+
+- **List of standard transcoding output files**: it lists the source and output video files.
+	- You can copy the URL of a video file and preview it.
+	- You can also delete an output video file and share it through QR code.
+- **List of adaptive bitrate streaming output files**
 	You can copy the URL of a video file, preview it, and view its details.
 	
 
@@ -47,8 +48,6 @@ This document describes how to manage videos in the VOD Console, including editi
 1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview) and click **Media Assets** on the left sidebar to enter the "Uploaded" page by default.
 2. Click **Manage** in the row of the desired video file to enter the "Basic Info" page by default.
 3. Click **Video Release** to enter the "Video Release" page which displays the source and output video files.
-	- **Video link release on WeChat Official Account**
-		You can apply for a WeChat Official Account video link for video release. **Only videos in MP4 format can be published in this way.** For more information, please see [Guide for Publishing Video Link on WeChat Official Account](https://cloud.tencent.com/document/product/266/2876).
 	- **Video release in WeChat Mini Program**
 		Videos in MP4, 3GP, and HLS formats can be published in WeChat Mini Program, and the published videos can be played back in WeChat Mini Program.
 	
@@ -57,7 +56,7 @@ This document describes how to manage videos in the VOD Console, including editi
 1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview) and click **Media Assets** on the left sidebar to enter the "Uploaded" page by default.
 2. Click **Manage** in the row of the desired video file to enter the "Basic Info" page by default.
 3. Click **Web Player Code Generation** to enter the "Web Player Code Generation" page where you can manage player information and web player code.
-	- In the "Parameter Settings" section, click **Modify** and the "Modify Player" dialog box will pop up. Select a configured player in the player drop-down list (for more information on player settings, please see [Web Player Management](https://cloud.tencent.com/document/product/266/14056)), and click **OK**.
+	- In the "Parameter Settings" section, click **Modify** and the "Modify Player" dialog box will pop up. Select a configured player in the player drop-down list (for more information on player settings, please see [Web Player Management](https://intl.cloud.tencent.com/document/product/266/33900)), and click **OK**.
 	- In the **Web Player Code** section, you can choose the appropriate video resolution in the "Video Resolution" drop-down list, turn autoplay on or off as needed, and set **HTML** or **IFRAME** for code type.
 4. Click **Copy Code** to copy the generated web player code.
 

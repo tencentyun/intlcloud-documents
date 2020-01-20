@@ -4,7 +4,7 @@
 
 ## 准备工作
 ####  注册腾讯云
-1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [企业实名认证](https://cloud.tencent.com/document/product/378/10496)。
+1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [企业实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 2. 访问 [云点播控制台](https://console.cloud.tencent.com/vod)，获取 [云点播 APPID](https://console.cloud.tencent.com/developer)，用于接入短视频播放器小程序插件。
 3. 购买 [短视频播放器小程序插件](https://buy.cloud.tencent.com/vod)。
 
@@ -27,14 +27,14 @@
 ## 使用插件
 
 ### 上传视频至控制台
-1. 将视频上传至云点播控制台，详细步骤请参见 [视频上传](https://cloud.tencent.com/document/product/266/2841#.E5.B7.B2.E4.B8.8A.E4.BC.A0)。
-2. 将视频转码为可在小程序端播放的视频，目前小程序视频播放仅支持 MP4、3GP 及 M3U8 格式的视频发布，详细步骤请参见 [视频处理](https://cloud.tencent.com/document/product/266/36448)。
-3. 视频转码成功后，会在 [视频发布](https://cloud.tencent.com/document/product/266/36452#.E8.A7.86.E9.A2.91.E5.8F.91.E5.B8.83.E6.AD.A5.E9.AA.A4) 列表中展示。
+1. 将视频上传至云点播控制台，详细步骤请参见 [视频上传](https://intl.cloud.tencent.com/document/product/266/33890#.E5.B7.B2.E4.B8.8A.E4.BC.A0)。
+2. 将视频转码为可在小程序端播放的视频，目前小程序视频播放仅支持 MP4、3GP 及 M3U8 格式的视频发布，详细步骤请参见 [视频处理](https://intl.cloud.tencent.com/document/product/266/33892)。
+3. 视频转码成功后，会在 [视频发布](https://intl.cloud.tencent.com/document/product/266/33896#video-release-steps) 列表中展示。
 ![](https://main.qcloudimg.com/raw/234d040ceaa88fa231e7d3f8a9ad711a.png)
 
 
 ###  申请小程序视频发布
-- 用户需要在【媒资管理】>【视频管理】>[【微信小程序视频发布】](https://cloud.tencent.com/document/product/266/36452#.E8.A7.86.E9.A2.91.E5.8F.91.E5.B8.83.E6.AD.A5.E9.AA.A4)内对视频进行发布。
+- 用户需要在【媒资管理】>【视频管理】>[【微信小程序视频发布】](https://intl.cloud.tencent.com/document/product/266/33896#video-release-steps)内对视频进行发布。
 - 由于微信小程序的视频上传要求，用户只能选择 MP4、3GP 及 M3U8 格式的视频进行发布，云点播平台会对该视频进行审核，确认是否授予播放资质。
 - 查询发布状态
 云点播会对审核后的视频显示发布状态，用来标识该视频是否可以发布：
@@ -60,7 +60,7 @@
   }
 ```
 + appid：必填参数。在控制台的[【账号信息】](https://console.cloud.tencent.com/developer)中查看。
-+ fileid：必填参数。表示视频文件的唯一 ID，视频上传后，通过 [媒资管理](https://cloud.tencent.com/document/product/266/36451) 可以查看 fileid。
++ fileid：必填参数。表示视频文件的唯一 ID，视频上传后，通过 [媒资管理](https://intl.cloud.tencent.com/document/product/266/33895) 可以查看 fileid。
 + playerid：必填参数。表示视频容器的唯一 ID，在小程序里需要通过该 ID 获取具体的`video context`来控制视频。
 
 
@@ -113,6 +113,6 @@
 
  
 ## 使用说明
-+ 插件服务购买后即时生效，短视频播放器小程序插件除收取购买费用外，实际使用时会按照视频播放次数和点播使用情况收费，详细请参见 [购买指南](https://cloud.tencent.com/document/product/266/2838)。
++ 插件服务购买后即时生效，短视频播放器小程序插件除收取购买费用外，实际使用时会按照视频播放次数和点播使用情况收费<!--doc ，详细请参见 [购买指南](https://intl.cloud.tencent.com/document/product/266/2838)-->。
 + 一个腾讯云账户仅提供一个 APPID，即一个腾讯云账号仅支持购买一个插件。
 

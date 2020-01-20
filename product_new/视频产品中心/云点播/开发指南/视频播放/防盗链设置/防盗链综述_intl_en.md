@@ -4,7 +4,7 @@ Tencent Cloud VOD offers hotlink protection to control the video playback permis
 
 ## Types and Capabilities
 VOD hotlink protection can prevent hotlinking based on referer and key.
-<img src="https://main.qcloudimg.com/raw/a24050a706ebff6911e565f55d6cf87b.png" width="450">
+<img src="https://main.qcloudimg.com/raw/a92778f479b70f6ff9d0eaa5d65b5589.png" width="450">
 
 ### Referer hotlink protection
 The referer mechanism based on HTTP identifies the request source through the referer field in the playback request header. You can add specified domain names to a blacklist or whitelist, based on which the CDN node will authenticate to allow or deny the playback requests accordingly.
@@ -22,5 +22,5 @@ It specifies the number of viewers that can access the video URL. Devices that a
 It specifies the preview duration in a video URL (e.g., the first five minutes of a video) to implement preview for non-paying users.
 
 >
->- For more information on referer hotlink protection, please see [Referer Hotlink Protection](/document/product/266/14046).
->- For more information on key hotlink protection, please see [Key Hotlink Protection](/document/product/266/14047).
+>- For more information on referer hotlink protection, please see [Referer Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33985).
+>- For more information on key hotlink protection, please see [Key Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33986).

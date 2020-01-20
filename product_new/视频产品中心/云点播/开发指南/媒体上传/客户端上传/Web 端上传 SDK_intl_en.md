@@ -30,8 +30,8 @@ function getSignature() {
 };
 ```
 
-> `url` is the URL of your signature distribution service. For more information, please see [Guide for Upload from Client](/document/product/266/9219).
-> For the rule of `signature` calculation, please see [Signature for Upload from Client](/document/product/266/9221).
+> `url` is the URL of your signature distribution service. For more information, please see [Guide for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921).
+> For the rule of `signature` calculation, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 #### Video upload example
 
@@ -118,7 +118,7 @@ uploader.done().then(function (doneResult) {
 })
 ```
 
-For the callback values of `xxx_upload` and `xxx_progress`, please see [Multipart Upload/Copy Task Operation](https://cloud.tencent.com/document/product/436/35649#.E5.88.86.E7.89.87.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
+For the callback values of `xxx_upload` and `xxx_progress`, please see [Multipart Upload/Copy Task Operation](https://intl.cloud.tencent.com/document/product/436/31538#.E5.88.86.E7.89.87.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
 
 #### Canceling upload
 

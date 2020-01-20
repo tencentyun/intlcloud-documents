@@ -13,13 +13,13 @@ Theoretically no. As the VOD system does not set any limits, it allows an unlimi
 
 ### How do I solve the problem of lagging during playback?
 
-If the video file itself is ruled out as the cause, lagging may be attributable to low device specification or poor network environment (e.g., bandwidth and latency). You can change the device used for playback or the network environment if possible. If the problem persists, please [contact us](https://cloud.tencent.com/document/product/266/19905).
+If the video file itself is ruled out as the cause, lagging may be attributable to low device specification or poor network environment (e.g., bandwidth and latency). You can change the device used for playback or the network environment if possible. If the problem persists, please [contact us](https://intl.cloud.tencent.com/document/product/266/19905).
 
 ### When I try to play back a video using HTTP on an HTTPS page, it is blocked by the browser. How do I fix this?
 The browser blocks the video for security reasons. Please make sure that videos using HTTP are played back on the webpage using the same protocol, and the same is true for HTTPS videos.
 
 ### What should I do if a 404 error is returned for a video link and the video does not exist on CDN?
-Please [contact us](https://cloud.tencent.com/document/product/266/19905) to help you locate the problem and restore CDN resources.
+Please [contact us](https://intl.cloud.tencent.com/document/product/266/19905) to help you locate the problem and restore CDN resources.
 
 ### What should I do if a 403 error is returned for a video link and the video cannot be loaded?
 Please check whether referer or key hotlink protection has been enabled and whether there are authentication parameters during playback.
@@ -35,19 +35,19 @@ To play back videos with Flash on PCs, the `crossdomain.xml` file and correct ac
 - `crossdomain.xml` contains the domain name configuration of the SWF file.
 
 To play back videos in HLS or FLV format by using HTML5 in modern PC browsers, [CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS) needs to be configured for the video server.
-Generally, the above two policies are configured automatically by Tencent Cloud. If you have any problems, please [contact us](https://cloud.tencent.com/document/product/266/19905).
+Generally, the above two policies are configured automatically by Tencent Cloud. If you have any problems, please [contact us](https://intl.cloud.tencent.com/document/product/266/19905).
 
 ### How do I solve the problem where the player prompts that the video is not transcoded?
-Please transcode the video. For detailed directions, please see [Processing Videos](https://cloud.tencent.com/document/product/266/2841#.E5.A4.84.E7.90.86.E8.A7.86.E9.A2.91). Please make sure that the video encoder is H.264 and container format is MP4 or HLS.
+Please transcode the video. For detailed directions, please see [Processing Videos](https://intl.cloud.tencent.com/document/product/266/33890). Please make sure that the video encoder is H.264 and container format is MP4 or HLS.
 
 ### Can I add different watermarks for different viewers?
 VOD only allows specifying image or text watermarks during transcoding and does not support dynamic watermarking for different viewers.
 
 ### Does VOD offer video editing features such as dubbing, mixing, brightness adjustment, rotation, or picture-in-picture?
-Yes. For more information, please see [media production](https://cloud.tencent.com/document/product/266/37534) in the video processing features of VOD.
+Yes. For more information, please see [media production](https://intl.cloud.tencent.com/document/product/266/33936) in the video processing features of VOD.
 
 ### How do I solve the problems such as blurred screen, blank screen, lagging, and playback failures after transcoding?
-You need to first find out whether there is any problem with the source video. If the problem is caused by transcoding, please [contact us](https://cloud.tencent.com/document/product/266/19905).
+You need to first find out whether there is any problem with the source video. If the problem is caused by transcoding, please [contact us](https://intl.cloud.tencent.com/document/product/266/19905).
 
 ### Are there any prompts if playback is not supported by a browser?
 Generally, web playback depends on the decoder of the browser or the Flash decoder. If playback is not supported, error code `3` or `4` will be returned.
@@ -62,7 +62,7 @@ If Flash is not supported, the player will use MSE to play back videos in HLS or
 Generally, there is no corresponding video decoder in the browser kernel of some PC software programs or applications in integrated or lite editions. Please upgrade the browser kernel in them or integrate with Flash and allow it to be called.
 
 ### How do I prevent my videos from being downloaded and played back by others?
-To play back a video online is to download it first and then play it back, so it is impossible to prevent a video from being downloaded by others. If you want your videos not to be played back after being downloaded by others, please see [video encryption](https://cloud.tencent.com/document/product/266/9638) in VOD.
+To play back a video online is to download it first and then play it back, so it is impossible to prevent a video from being downloaded by others. If you want your videos not to be played back after being downloaded by others, please see [video encryption](https://intl.cloud.tencent.com/document/product/266/33968) in VOD.
 
 ### How do I solve the problem where an HLS-encrypted video cannot be played back?
 The playback process of an HLS-encrypted video is different from that of ordinary videos. Generally, you need to get the right key. The steps to fix this problem are as follows:

@@ -7,7 +7,7 @@ VOD provides a rich set of transcoding features for video release. In order to d
 - FHD: bitrate: 2,500 Kbps; resolution: around 1920 * 1080.
 
 The detailed specifications and technical parameters of output videos after transcoding are as follows:
-![](https://main.qcloudimg.com/raw/478ef85c096df8dec3478b32693045ba.png)
+![](https://main.qcloudimg.com/raw/8b6b539f861b35444a488ecbaebc9eca.png)
 
 If the resolution of an uploaded video does not match the values above, the video will be transcoded to a resolution with a standard width in the corresponding category and a proportionally scaled height.
 
@@ -56,10 +56,7 @@ Specifically, when you try to play back a video, you need to enter an 8-characte
 ### What are blacklist/whitelist?
 
 The blacklist/whitelist can be used to allow or deny the requests for accessing videos published through player code from particular webpages.
-These lists are effective to videos published through player code. You can enable this feature globally and specify a blacklist or a whitelist. Each list can contain up to 10 URLs and works by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://cloud.tencent.com/document/product/266/11243).
-
-### Does VOD support publishing links on WeChat Official Account?
-Yes. For more information, please see [Guide for Publishing Video Link on WeChat Official Account](https://cloud.tencent.com/document/product/266/2876).
+These lists are effective to videos published through player code. You can enable this feature globally and specify a blacklist or a whitelist. Each list can contain up to 10 URLs and works by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
 
 ### Can I add ads to videos published through an application player?
 Adding ads is currently not supported. We will make this feature available as soon as possible.

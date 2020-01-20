@@ -20,8 +20,8 @@ To support the permission control of video playback, VOD has launched a hotlink 
 
 >
 >- Once configured, it will take around five minutes for the hotlink protection to take effect on all CDN nodes.
->- For more information on referer hotlink protection, please see [Referer Hotlink Protection](https://cloud.tencent.com/document/product/266/14046).
->- For more information on key hotlink protection, please see [Key Hotlink Protection](https://cloud.tencent.com/document/product/266/14047).
+>- For more information on referer hotlink protection, please see [Referer Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33985).
+>- For more information on key hotlink protection, please see [Key Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33986).
 
 
 

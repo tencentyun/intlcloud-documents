@@ -32,21 +32,21 @@
 播放器兼容常见的浏览器，播放器内部会自动区分平台，并使用最优的播放方案。例如，在 IE11/10/9/8 浏览器中会使用 Flash 播放器以实现其不支持 HTML5 播放 HLS 的能力，在 Chrome 等现代浏览器中优先使用 HTML5 技术实现视频播放，而手机浏览器上会使用 HTML5 技术或者浏览器内核能力实现视频播放。
 
 ### 点播平台的转自适应码流服务
-目前应用最广泛的自适应码流格式为 HLS 和 Dash，自适应码流视频支持：根据播放环境的带宽情况，动态选择合适的码率播放，支持商业级 DRM 等功能。而播放器仅播放视频的自适应码流格式，因此通过本播放器播放的视频需要通过云点播转码进行 [转自适应码流](https://cloud.tencent.com/document/product/266/34071)。
+目前应用最广泛的自适应码流格式为 HLS 和 Dash，自适应码流视频支持：根据播放环境的带宽情况，动态选择合适的码率播放，支持商业级 DRM 等功能。而播放器仅播放视频的自适应码流格式，因此通过本播放器播放的视频需要通过云点播转码进行 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942)。
 
 ## 准备工作
 ### Step1. 开通服务
-在 [腾讯云官网](https://cloud.tencent.com/) 注册腾讯云账号，然后开通云点播。
+在 [腾讯云官网](https://intl.cloud.tencent.com/) 注册腾讯云账号，然后开通云点播。
 ### Step2. 上传视频并转码
-云点播开通之后，需要 [上传视频](https://cloud.tencent.com/document/product/266/2841#.E4.B8.8A.E4.BC.A0.E8.A7.86.E9.A2.91)，并进行 [转码处理](https://cloud.tencent.com/document/product/266/2841#.E5.A4.84.E7.90.86.E8.A7.86.E9.A2.91)。
+云点播开通之后，需要 [上传视频](https://intl.cloud.tencent.com/document/product/266/33890)，并进行 [转码处理](https://intl.cloud.tencent.com/document/product/266/33890)。
 ### Step3. 获取 ID 与 APPID
-1. 获取 ID（fileID）：视频上传后，通过媒资管理可以 [查看视频 ID](https://cloud.tencent.com/document/product/266/2841#.E5.BF.AB.E6.8D.B7.E6.9F.A5.E7.9C.8B.E8.A7.86.E9.A2.91.E4.BF.A1.E6.81.AF)。
+1. 获取 ID（fileID）：视频上传后，通过媒资管理可以 [查看视频 ID](https://intl.cloud.tencent.com/document/product/266/33890)。
 
 2. 获取 APPID：在【腾讯云控制台】>【[账号信息](https://console.cloud.tencent.com/developer)】中查看。
 
 ### Step4. 转自适应码流，获取 playDefinition
-通过 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) ，对上传的视频发起 [转自适应码流](https://cloud.tencent.com/document/product/266/34071) 任务：
-API 参数中的`MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition`建议填10，表示转 HLS 格式的自适应码流，针对常见的参数组合，云点播提供了 [预置转自适应码流模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.BD.AC.E8.87.AA.E9.80.82.E5.BA.94.E7.A0.81.E6.B5.81.E6.A8.A1.E6.9D.BF)。
+通过 [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) ，对上传的视频发起 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 任务：
+API 参数中的`MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition`建议填10，表示转 HLS 格式的自适应码流，针对常见的参数组合，云点播提供了 [预置转自适应码流模板](https://intl.cloud.tencent.com/document/product/266/33932#preset-adaptive-bitrate-streaming-templates)。
 
 
 ## 初始化 Web 播放器
@@ -152,7 +152,6 @@ var player = TCPlayer('player-container-id', {
 
 >
 > - 如果浏览器不支持倍速播放，播放器将不会显示倍速切换按钮。
-> - 如需关闭该功能请参见 [开发文档](https://cloud.tencent.com/document/product/881/30824#options-.E5.8F.82.E6.95.B0.E5.88.97.E8.A1.A8)。
 
 ### 设置播放器 logo
 点播超级播放器支持配置播放器 logo，可以在[【Web播放器管理】](https://console.cloud.tencent.com/vod/distribute-play/web-player)选定某个播放器配置，在【外观】这一步设置 logo 信息。设置 logo 信息后，使用该播放器配置播放视频时，将会在指定位置显示 logo。
@@ -182,7 +181,7 @@ var player = TCPlayer('player-container-id', {
 >- 在浏览器劫持视频播放的情况下，设置的贴片将无法显示。
 
 ### 缩略图预览
-点播超级播放器支持缩略图预览，可以通过服务端 API 生成视频的缩略图与 VTT 文件，相关文档请参见 [截图 - 雪碧图](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
+点播超级播放器支持缩略图预览，可以通过服务端 API 生成视频的缩略图与 VTT 文件，相关文档请参见 [截图 - 雪碧图](https://intl.cloud.tencent.com/document/product/266/33940#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。
 
 
 开启成功的效果如下图：
@@ -234,7 +233,7 @@ var player = TCPlayer('player-container-id', {
 >在浏览器劫持视频播放的情况下，该功能无法使用。
 
 ### 进度条标记
-通过服务端 API 对视频 [增加打点信息](https://cloud.tencent.com/document/product/266/14190)，可以在播放器中开启显示进度条标记，如下图所示：
+通过服务端 API 对视频 [增加打点信息](https://intl.cloud.tencent.com/document/product/266/14190)，可以在播放器中开启显示进度条标记，如下图所示：
 ![](https://main.qcloudimg.com/raw/70d880065adce22cb64270f4999558f8.png)
 
 播放器开启方式：
@@ -256,7 +255,7 @@ var player = TCPlayer('player-container-id', {
 >- 在浏览器劫持视频播放的情况下，该功能无法使用。
 
 ### Referer 防盗链
-开启流程请参见 [Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)。
+开启流程请参见 [Referer 防盗链](https://intl.cloud.tencent.com/document/product/266/33985)。
 
 播放器初始化需增加参数如下：
 ```
@@ -280,15 +279,6 @@ var player = TCPlayer('player-container-id', {
 >- 播放器的 Flash swf 文件默认存放在`imgcache.qq.com`域名下，如需部署到自己的服务器上，可自行下载并部署，[swf 文件地址](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf)。
 >- iframe 嵌入播放器页面，视频请求的 Referer 会带上 iframe src。
 
-### 播放 DRM 内容
-点播超级播放器集成了播放 [DRM](https://cloud.tencent.com/document/product/266/34105#.E5.95.86.E4.B8.9A.E7.BA.A7-drm) 内容的功能，支持以下几种 DRM 方案：
-
-- 基于 Widevine 商业级加密的 DASH 方案。
-- 基于 FairPlay 商业级加密的 HLS 方案。
-- 基于 SimpleAES 基础级加密的 HLS 方案。
-
-关于 DRM 的更多详情，请参见 [如何对内容做版权保护](<https://cloud.tencent.com/document/product/266/34105#.E5.95.86.E4.B8.9A.E7.BA.A7-drm>)。
-
 #### 浏览器的支持情况
 各浏览器对 DRM 的支持情况如下。
 
@@ -309,9 +299,7 @@ var player = TCPlayer('player-container-id', {
 
 #### 使用方法
 
-首先，App 需要从您的**业务后台**获取 Token，Token 的生成方式请参见 [Token 生成](<https://cloud.tencent.com/document/product/266/34102#token-.E7.94.9F.E6.88.90>) 。如果需要播放 FairPlay 加密的内容，按照 [ASK 和 FPS 证书指引](https://cloud.tencent.com/document/product/266/34102#ask-.E5.92.8C-fps-.E8.AF.81.E4.B9.A6) 生成 FPS 证书，并将证书部署在您的服务器中，证书的下载地址 URI 记为`certificateUri`。
-
-然后，通过 FileId + Token 方式进行播放，播放代码如下：
+首先，App 需要从您的**业务后台**获取 Token,然后，通过 FileId + Token 方式进行播放，播放代码如下：
 
 ```
 var player = TCPlayer('player-container-id', {
@@ -326,17 +314,12 @@ var player = TCPlayer('player-container-id', {
   }``
 });
 ```
-播放器会根据传入的 [播放模版](https://cloud.tencent.com/document/product/266/34101#.E6.92.AD.E6.94.BE.E6.A8.A1.E6.9D.BF) ID 和当前浏览器的支持情况，按优先级选择合适的播放方案，DRM 方案选择优先级为：【Widevine】>【FairPlay】>【SimpleAES】，例如：
+播放器会根据传入的播放模版 ID 和当前浏览器的支持情况，按优先级选择合适的播放方案，DRM 方案选择优先级为：【Widevine】>【FairPlay】>【SimpleAES】，例如：
 - 传入`playDefinition`为20 ，播放器依次选择 Widevine 或 FairPlay ，SimpleAES 的加密输出播放。
 - 传入`playDefinition`为12 ，播放器依次选择 Widevine 或 FairPlay 的加密输出播放。
 - 传入`playDefinition`为10 ，播放器将会选择未加密的 HLS 或 DASH 输出播放。
 
 示例：[DRM 自动识别播放](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod-v3/tcplayer-vod-drm-token-auto.html)
-
-相关指引如下：
-- [播放模版说明文档](https://cloud.tencent.com/document/product/266/34101#.E6.92.AD.E6.94.BE.E6.A8.A1.E6.9D.BF)
-- [Token 生成指引](https://cloud.tencent.com/document/product/266/34102#token-.E7.94.9F.E6.88.90)
-- [FairPlay 证书生成指引](https://cloud.tencent.com/document/product/266/34102#ask-.E5.92.8C-fps-.E8.AF.81.E4.B9.A6)
 
 >
 >- 商业级 DRM 内容只能在 HTTPS 协议下的页面进行播放。

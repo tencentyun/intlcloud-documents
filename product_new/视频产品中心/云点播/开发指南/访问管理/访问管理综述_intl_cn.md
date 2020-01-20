@@ -1,8 +1,8 @@
 云点播已接入腾讯云 [访问管理](/document/product/598) （Cloud Access Management，CAM），开发者可以根据自身需要为子账号分配合适的云点播访问权限。在开通云点播服务后，云点播访问管理功能即可直接使用。
 阅读本文前，开发者需要对腾讯云访问管理和云点播子应用体系有所了解。本文涉及的概念主要有：
 
-- 访问管理相关：[用户类型](/document/product/598/13665)、[API 密钥](/document/product/598/37140)、[策略](/document/product/598/10601) 、[策略语法](/document/product/598/10603)
-- 云点播相关：[子应用](https://cloud.tencent.com/document/product/266/14574)
+- 访问管理相关：[用户类型](https://intl.cloud.tencent.com/document/product/598/32633)、[API 密钥](/document/product/598/37140)、[策略](/document/product/598/10601) 、[策略语法](https://intl.cloud.tencent.com/document/product/598/10603)
+- 云点播相关：[子应用](https://intl.cloud.tencent.com/document/product/266/33987)
 
 ## 应用场景
 云点播访问管理有以下几种典型应用场景：
@@ -19,7 +19,7 @@
 
 ## 能力限制
 - 云点播访问管理的资源粒度为子应用，不支持对更细粒度的资源（如媒体文件、域名等）做授权。
-- 云点播访问管理不支持 [项目与标签](/document/product/598/32738)。
+<!--doc  云点播访问管理不支持 [项目与标签](/document/product/598/32738)。 -->
 
 ## 支持资源级授权的 API
 
@@ -30,8 +30,11 @@
 | 接口名称                                        | 接口功能       | 说明                                                         |
 | :---------------------------------------------- | -------------- | ------------------------------------------------------------ |
 | [DescribeSubAppIds](/document/api/266/36304)    | 查询子应用列表 | 所有子用户都有权限调用该接口，不需要授权。请求该接口时也不需要指定具体的子应用。 |
-| [ModifySubAppIdStatus](/document/api/266/36302) | 修改子应用状态 | 该接口可停用指定的子应用，属于高危操作，因此仅具备云点播完整权限（即 [预设策略](https://cloud.tencent.com/document/product/266/39338#.E9.A2.84.E8.AE.BE.E7.AD.96.E7.95.A5.E5.88.97.E8.A1.A8)`QcloudVODFullAccess`）的子用户才允许访问。如果一个子用户拥有某个子应用的写权限，但没有`QcloudVODFullAccess`权限，也无权调用该接口。 |
+| [ModifySubAppIdStatus](/document/api/266/36302) | 修改子应用状态 | 该接口可停用指定的子应用，属于高危操作，因此仅具备云点播完整权限（即 [预设策略](https://intl.cloud.tencent.com/document/product/266/33971#.E9.A2.84.E8.AE.BE.E7.AD.96.E7.95.A5.E5.88.97.E8.A1.A8)`QcloudVODFullAccess`）的子用户才允许访问。如果一个子用户拥有某个子应用的写权限，但没有`QcloudVODFullAccess`权限，也无权调用该接口。 |
 
+<!--api
 ### 支持资源级授权的 API 列表
 
-除了上述不支持资源级授权的 API 列表，其它所有展示在 [API 概览](https://cloud.tencent.com/document/product/266/31753) 中的接口都支持资源级授权。策略语法中对这些接口的资源描述形式均相同，具体为：`qcs::vod::uin/$uin:subAppId/$subAppId`。
+``除了上述不支持资源级授权的 API 列表，其它所有展示在 [API 概览](#apihttps://intl.cloud.tencent.com/document/product/266/31753) 中的接口都支持资源级授权。策略语法中对这些接口的资源描述形式均相同，具体为：`qcs::vod::uin/$uin:subAppId/$subAppId`。
+
+-->

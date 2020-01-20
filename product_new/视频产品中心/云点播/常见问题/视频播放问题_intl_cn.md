@@ -13,13 +13,13 @@
 
 ### 如何解决视频播放会有卡顿现象的问题？
 
-在排除视频文件本身问题的情况下，视频卡顿有可能是因为播放视频的电脑配置过低或局部网络条件欠佳（包括带宽和时延）引起的，可以通过改变播放视频的硬件设备或网络环境来尝试分析。如果问题仍然存在，请 [联系我们](https://cloud.tencent.com/document/product/266/19905)。
+在排除视频文件本身问题的情况下，视频卡顿有可能是因为播放视频的电脑配置过低或局部网络条件欠佳（包括带宽和时延）引起的，可以通过改变播放视频的硬件设备或网络环境来尝试分析。如果问题仍然存在，请 [联系我们](https://intl.cloud.tencent.com/document/product/266/19905)。
 
 ### 如何解决在 HTTPS 协议的页面播放 HTTP 协议的视频，被浏览器拦截的问题？
 浏览器会处于安全考虑进行拦截。因此，在 HTTP 协议的页面播放 HTTP 的视频，HTTPS 协议的页面播放 HTTPS 的视频。
 
 ### 如何解决 CDN 无视频，访问视频地址返回404的问题？
-请 [联系我们](https://cloud.tencent.com/document/product/266/19905) 定位并修复 CDN 资源。
+请 [联系我们](https://intl.cloud.tencent.com/document/product/266/19905) 定位并修复 CDN 资源。
 
 ### 如何解决访问视频地址返回403，无法加载视频的问题？
 需确认是否开启 referer 防盗链或者 key 防盗链，视频播放时是否具备校验参数。
@@ -35,19 +35,19 @@
 - `crossdomain.xml`中配置的是 SWF 文件的域名。
 
 在 PC 端的现代浏览器使用 HTML5 播放 HLS 和 FLV 时，视频服务器需要配置跨域资源共享 [CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)。
-正常情况下，腾讯云服务会自动配置这两项跨域策略，如遇到异常情况请 [联系我们](https://cloud.tencent.com/document/product/266/19905)。
+正常情况下，腾讯云服务会自动配置这两项跨域策略，如遇到异常情况请 [联系我们](https://intl.cloud.tencent.com/document/product/266/19905)。
 
 ### 如何解决播放器提示视频未转码的问题？
-对视频进行转码操作，具体操作请参见 [处理视频](https://cloud.tencent.com/document/product/266/2841#.E5.A4.84.E7.90.86.E8.A7.86.E9.A2.91)，确保视频编码格式为 H.264，视频封装格式为 MP4 或者 HLS。
+对视频进行转码操作，具体操作请参见 [处理视频](https://intl.cloud.tencent.com/document/product/266/33890)，确保视频编码格式为 H.264，视频封装格式为 MP4 或者 HLS。
 
 ### 能否为不同的视频观看者打不同的水印？
 云点播仅支持在转码时指定固定的图片或文字水印，不支持随观看者的不同打动态水印。
 
 ### 能否对视频做配音、混音、亮度调节、画面旋转、画中画等编辑？
-可以，请参见云点播视频处理功能中的 [媒体制作](https://cloud.tencent.com/document/product/266/37534) 功能。
+可以，请参见云点播视频处理功能中的 [媒体制作](https://intl.cloud.tencent.com/document/product/266/33936) 功能。
 
 ### 如何解决转码后的视频出现花屏、黑屏、卡顿和无法播放等现象的问题？
-需要定位原始视频是否有问题，如果是转码问题请 [联系我们](https://cloud.tencent.com/document/product/266/19905)。
+需要定位原始视频是否有问题，如果是转码问题请 [联系我们](https://intl.cloud.tencent.com/document/product/266/19905)。
 
 ### 浏览器环境不支持播放时会有什么提示？
 通常情况下在 Web 端播放视频依赖浏览器自带的解码器，或者 Flash 解码器，不支持播放会出现 error code 为3或4的错误。
@@ -62,7 +62,7 @@
 通常出现在部分 PC 软件或者 App 集成精简版本的浏览器内核中，没有对应的视频解码器。在 PC 软件或 App 中升级浏览器内核，或者集成 Flash 插件，并允许调用 Flash 插件。
 
 ### 如何防止视频被其他人下载并播放？
-网络上视频播放的原理，就是下载后播放，因此不能防止他人下载视频。如果您希望自己的视频被他人下载后不能被随意播放，请参见云点播的 [视频加密](https://cloud.tencent.com/document/product/266/9638)。
+网络上视频播放的原理，就是下载后播放，因此不能防止他人下载视频。如果您希望自己的视频被他人下载后不能被随意播放，请参见云点播的 [视频加密](https://intl.cloud.tencent.com/document/product/266/33968)。
 
 ### 如何解决 HLS 加密视频播放失败的问题？
 HLS 加密视频的播放流程有别于常规视频，通常需要确保获取 key 这个步骤是正常的，解决步骤如下：

@@ -1,12 +1,12 @@
 ## 简介
-云点播提供了 [防盗链](https://cloud.tencent.com/document/product/266/11243) 功能，开发者可以根据实际需要，对视频播放 URL 使用的域名合理设置防盗链，实现对用户视频播放行为的控制。
+云点播提供了 [防盗链](https://intl.cloud.tencent.com/document/product/266/33984) 功能，开发者可以根据实际需要，对视频播放 URL 使用的域名合理设置防盗链，实现对用户视频播放行为的控制。
 
 然而，不经测试就对使用中的域名设置防盗链有以下风险：
 
 - 可能导致现网用户播放失败。
 - 可能未达到播放控制的效果。
 
-例如，开发者希望对视频播放 URL 的有效期进行控制，就需要启用 [KEY 防盗链](https://cloud.tencent.com/document/product/266/14047)：
+例如，开发者希望对视频播放 URL 的有效期进行控制，就需要启用 [KEY 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)：
 
 * 如果生成的防盗链中签名参数`sign`计算错误，**启用防盗链可能导致现网所有视频播放失败**。
 * 如果生成的防盗链中过期时间参数`t`过大，**启用防盗链后视频播放 URL 不会在预期的时间失效**。
@@ -20,7 +20,7 @@
 ### 术语说明
 为了便于说明方案，下面介绍一些会涉及的术语：
 
-* **点播默认域名**：现网环境中，用户播放点播视频使用的正式域名。“预置点播域名”和“自定义域名”都能被设置成“点播默认域名”（设置方法请参见 [自定义域名](https://cloud.tencent.com/document/product/266/33371)）。
+* **点播默认域名**：现网环境中，用户播放点播视频使用的正式域名。“预置点播域名”和“自定义域名”都能被设置成“点播默认域名”（设置方法请参见 [自定义域名](https://intl.cloud.tencent.com/document/product/266/14056)）。
 * **预置点播测试域名**：一个用于开发者调试的测试域名（通常为`xxx-test.vod2.myqcloud.com`），不得用于现网环境，不能被设为默认域名。
 * **正式 App 后台**：业务的 App 后台服务，现网用户从这里获取视频的播放 URL。
 * **测试 App 后台**：业务测试环境中的 App 后台服务，测试客户端从这里获取视频的播放 URL。
@@ -29,17 +29,17 @@
 
 通常情况下，现网用户从业务的正式 App 后台获取视频的播放 URL，测试客户端从业务的测试 App 后台获取视频播放 URL，两处获得的 URL 中的域名相同（都是点播默认域名）。当对防盗链测试时，不能直接变更点播默认域名，否则现网用户将受到影响。
 
-<img src="https://main.qcloudimg.com/raw/4117ff809dd401c6f0f6c7569d731b21.png" width="450">
+<img src="https://main.qcloudimg.com/raw/17cb66481e92c1e39f081d30658f0242.png" width="450">
 
 为了避免防盗链测试影响现网用户，云点播提供了一个“预置点播测试域名”，与现网中使用的点播默认域名隔离。开发者测试防盗链时，仅操作测试域名的防盗链配置。
 
 云点播还提供了一个“测试域名代理”（IP 为`122.152.250.73`），开发者只需要修改测试客户端的 HOST 表，将点播默认域名解析到这个代理上，测试客户端的视频播放请求，将经过代理转发到测试域名（下图中的红色路径），而现网用户的播放请求仍然通过正式域名获取视频内容（下图中的黑色路径）。
 
-<img src="https://main.qcloudimg.com/raw/3c461eb955a8b526816341f5116ff19c.png" width="450">
+<img src="https://main.qcloudimg.com/raw/fea4ad61c4ae9f671736e5036c490143.png" width="450">
 
 因此，开发者可以自由修改测试域名的防盗链配置，以及测试 App 后台派发的视频播放 URL，而不必担心影响到现网用户。
 
-<img src="https://main.qcloudimg.com/raw/6f891fcbebef12da423e42ec5ab59e1e.png" width="450">
+<img src="https://main.qcloudimg.com/raw/04713121c5926b979508fa6b771daca4.png" width="450">
 
 开发者使用测试客户端和测试 App 后台，充分验证防盗链并确认无误后，可以依次执行以下步骤：
 
@@ -63,7 +63,7 @@
 
 #### 背景
 
-![](https://main.qcloudimg.com/raw/98a0a1c95a0874cb8ebdf39f321753d5.png)
+![](https://main.qcloudimg.com/raw/a133df5973b3180568baaf3f057c0943.png)
 用户（例中 appid 为`125xxx655`）登录云点播控制台，在 [【域名管理】](https://console.cloud.tencent.com/vod/distribute-play/domain) 将看到以下两种域名：
 
 * 预置点播域名（`125xxx655.vod2.myqcloud.com`）。
@@ -77,7 +77,7 @@
 
 #### 2. 获取一个原始播放 URL
 
-视频的原始播放 URL，是指没有带 [防盗链参数](https://cloud.tencent.com/document/product/266/14047#.E9.98.B2.E7.9B.97.E9.93.BE.E5.8F.82.E6.95.B0) 的 URL 地址，可以从控制台 [媒资管理](https://console.cloud.tencent.com/vod/media) 中获取。例子中使用的 URL 为：`https://125xxx655.vod2.myqcloud.com/ca7xxx655/cfbxxx349/PkxxxIA.mov`。
+视频的原始播放 URL，是指没有带 [防盗链参数](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE.E5.8F.82.E6.95.B0) 的 URL 地址，可以从控制台 [媒资管理](https://console.cloud.tencent.com/vod/media) 中获取。例子中使用的 URL 为：`https://125xxx655.vod2.myqcloud.com/ca7xxx655/cfbxxx349/PkxxxIA.mov`。
 
 #### 3. 测试客户端仍然能够播放视频原始 URL
 
@@ -96,7 +96,7 @@
 
 #### 6. 测试客户端能够播放带防盗链参数的 URL
 
-按照 Key 防盗链的 [生成规则](https://cloud.tencent.com/document/product/266/14047#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) 生成带有防盗链参数的 URL，便能成功播放视频，地址为`https://125xxx655.vod2.myqcloud.com/ca7xxx655/cfbxxx349/PkxxxIA.mov?t=5bd6be00&sign=18cxxx9deb`，执行```curl```返回的 HTTP 状态码为 200。
+按照 Key 防盗链的 [生成规则](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) 生成带有防盗链参数的 URL，便能成功播放视频，地址为`https://125xxx655.vod2.myqcloud.com/ca7xxx655/cfbxxx349/PkxxxIA.mov?t=5bd6be00&sign=18cxxx9deb`，执行```curl```返回的 HTTP 状态码为 200。
 
 测试 App 后台按照防盗链生成规则，派发带有防盗链参数的 URL，并使用测试客户端进行验证。
 

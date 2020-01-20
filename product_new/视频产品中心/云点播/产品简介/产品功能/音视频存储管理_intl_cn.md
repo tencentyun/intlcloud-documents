@@ -1,5 +1,5 @@
 ## 系统架构
-<img src="https://mc.qcloudimg.com/static/img/fbb9569e3b73af8f1c8ea97ffbb81afb/image.png" width="650">
+<img src="https://main.qcloudimg.com/raw/146d801f4900734b8faa0435b34ea6cc.png" width="650">
 
 ## 产品功能
 ### 音视频上传

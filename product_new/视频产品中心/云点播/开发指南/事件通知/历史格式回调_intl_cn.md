@@ -13,17 +13,17 @@
 
 | 事件通知 | 3.0格式 | 2.0格式 |
 | -- | -- | -- |
-| 视频上传完成 | [链接](https://cloud.tencent.com/document/product/266/7830) | [链接](#NewFileUpload) | 
-| URL 拉取视频上传完成 | [链接](https://cloud.tencent.com/document/product/266/7831) | [链接](#PullComplete) | 
-| 视频删除完成 | [链接](https://cloud.tencent.com/document/product/266/13434) | [链接](#FileDeleted) |  
-| 任务流状态变更 | [链接](https://cloud.tencent.com/document/product/266/9636) | [链接](#ProcedureStateChanged) | 
-| 视频编辑完成 | [链接](https://cloud.tencent.com/document/product/266/33794) | - | 
-| 微信发布完成 | [链接](https://cloud.tencent.com/document/product/266/33795) | - | 
-| 视频转码完成 | [链接](https://cloud.tencent.com/document/product/266/7832) | [链接](#TranscodeComplete) | 
-| 指定时间点截图完成 | [链接](https://cloud.tencent.com/document/product/266/8105) | [链接](#CreateSnapshotByTimeOffsetComplete) | 
-| 视频截取雪碧图完成 | [链接](https://cloud.tencent.com/document/product/266/8104) | [链接](#CreateImageSpriteComplete) | 
-| 视频剪辑完成 | [链接](https://cloud.tencent.com/document/product/266/10157) | [链接](#ClipComplete) | 
-| 视频拼接完成 | [链接](https://cloud.tencent.com/document/product/266/7834) | [链接](#ConcatComplete) | 
+| 视频上传完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33950) | [链接](#NewFileUpload) | 
+| URL 拉取视频上传完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33951) | [链接](#PullComplete) | 
+| 视频删除完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33952) | [链接](#FileDeleted) |  
+| 任务流状态变更 | [链接](https://intl.cloud.tencent.com/document/product/266/33953) | [链接](#ProcedureStateChanged) | 
+| 视频编辑完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33954) | - | 
+| 微信发布完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33955) | - | 
+| 视频转码完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33957) | [链接](#TranscodeComplete) | 
+| 指定时间点截图完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33958) | [链接](#CreateSnapshotByTimeOffsetComplete) | 
+| 视频截取雪碧图完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33959) | [链接](#CreateImageSpriteComplete) | 
+| 视频剪辑完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33960) | [链接](#ClipComplete) | 
+| 视频拼接完成 | [链接](https://intl.cloud.tencent.com/document/product/266/33961) | [链接](#ConcatComplete) | 
 
 ## 2.0格式回调列表
 <span id="NewFileUpload"></span>
@@ -139,7 +139,7 @@
 | data.metaData | Object | 视频元信息，该字段一定存在，字段信息参见 [metaData（视频元信息）](#metadata.EF.BC.88.E8.A7.86.E9.A2.91.E5.85.83.E4.BF.A1.E6.81.AF.EF.BC.89)。 |
 | data.contentReviewList | Array | 内容审核结果列表，字段信息参见 [contentReviewList（内容审核列表）](#contentreviewlist.EF.BC.88.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E5.88.97.E8.A1.A8.EF.BC.89)。 |
 | data.aIAnalysisList | Array | 智能分析结果列表，字段信息参见 [aIAnalysisList（智能分析列表）](#aianalysislist.EF.BC.88.E6.99.BA.E8.83.BD.E5.88.86.E6.9E.90.E5.88.97.E8.A1.A8.EF.BC.89)。 |
-| data.drm | Object | 文件加密信息，用户在发起任务流时在 [转码控制参数](/document/product/266/9642#transcode.EF.BC.88.E8.BD.AC.E7.A0.81.E6.8E.A7.E5.88.B6.E5.8F.82.E6.95.B0.EF.BC.89) 指定了加密，该字段才存在。 字段信息参见 [drm（视频加密信息）](#drm.EF.BC.88.E8.A7.86.E9.A2.91.E5.8A.A0.E5.AF.86.E4.BF.A1.E6.81.AF.EF.BC.89)。 |
+| data.drm | Object | 文件加密信息，用户在发起任务流时在 [转码控制参数](#APIhttps://intl.cloud.tencent.com/document/product/266/9642#transcode.EF.BC.88.E8.BD.AC.E7.A0.81.E6.8E.A7.E5.88.B6.E5.8F.82.E6.95.B0.EF.BC.89) 指定了加密，该字段才存在。 字段信息参见 [drm（视频加密信息）](#drm.EF.BC.88.E8.A7.86.E9.A2.91.E5.8A.A0.E5.AF.86.E4.BF.A1.E6.81.AF.EF.BC.89)。 |
 | data.processTaskList | Array | 任务流包含的任务列表，字段信息参见 [processTaskList（任务列表）](#processtasklist.EF.BC.88.E4.BB.BB.E5.8A.A1.E5.88.97.E8.A1.A8.EF.BC.89)。 |
 
 ##### metaData（视频元信息）
@@ -576,7 +576,7 @@
 | data | Object | 具体回调数据。 |
 | data.vodTaskId | String | 指定时间点截图任务 ID。  |
 | data.fileId | String | 指定时间点截图的 FileId。  |
-| data.definition | Integer | 截图规格，请参考 [指定时间点截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。 |
+| data.definition | Integer | 截图规格，请参考 [指定时间点截图参数模板](https://intl.cloud.tencent.com/document/product/266/33940#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。 |
 | data.picInfo | Array | 指定时间点截图输出的截图信息。 |
 
 data.picInfo 数组中每个元素均为 Object，参数含义如下：
@@ -624,7 +624,7 @@ data.picInfo 数组中每个元素均为 Object，参数含义如下：
 | data.message | String | 错误信息。 |
 | data.vodTaskId | String | 截取雪碧图任务 ID。 |
 | data.fileId | String | 截取雪碧图的 FileId。 |
-| data.definition | Integer | 雪碧图规格，请参考 [雪碧图截图模板](https://cloud.tencent.com/document/product/266/33480#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。 |
+| data.definition | Integer | 雪碧图规格，请参考 [雪碧图截图模板](https://intl.cloud.tencent.com/document/product/266/33940#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.A8.A1.E6.9D.BF)。 |
 | data.totalCount | Integer | 雪碧图小图总数量。 |
 | data.imageSpriteUrl | Array | 截图雪碧图输出的雪碧图信息。 |
 | data.webVttUrl | String | 雪碧图子图位置与时间关系 WebVtt 文件地址。 |

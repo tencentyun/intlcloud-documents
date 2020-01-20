@@ -20,8 +20,8 @@
 
 >
 >- 设置防盗链后，在所有 CDN 节点生效大约需要5分钟。
->- 关于 Referer 防盗链的相关文档，请参见 [Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)。
->- 关于 Key 防盗链的相关文档，请参见 [Key 防盗链](https://cloud.tencent.com/document/product/266/14047)。
+>- 关于 Referer 防盗链的相关文档，请参见 [Referer 防盗链](https://intl.cloud.tencent.com/document/product/266/33985)。
+>- 关于 Key 防盗链的相关文档，请参见 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)。
 
 
 

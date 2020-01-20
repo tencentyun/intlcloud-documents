@@ -31,10 +31,10 @@ Memory
 >注：如果集群开启了日志收集功能，每个节点还会占用约0.3核和250Mib的资源来运行日志收集插件，该消耗会直接算入用户的已分配资源。
 
 ## 使用帮助
-- [集群的基本操作](https://cloud.tencent.com/document/product/457/9091)
-- [集群的生命周期](https://cloud.tencent.com/document/product/457/9092)
-- [集群配额限制](https://cloud.tencent.com/document/product/457/9087)
-- [集群节点及容器网络设置](https://cloud.tencent.com/document/product/457/9083)
-- [集群节点硬盘设置](https://cloud.tencent.com/document/product/457/9086)
-- [集群节点公网IP设置](https://cloud.tencent.com/document/product/457/9085)
-- [集群节点安全组设置](https://cloud.tencent.com/document/product/457/9084)
+- [集群的基本操作](https://intl.cloud.tencent.com/document/product/457/9091)
+- [集群的生命周期](https://intl.cloud.tencent.com/document/product/457/9092)
+- [集群配额限制](https://intl.cloud.tencent.com/document/product/457/9087)
+- [集群节点及容器网络设置](https://intl.cloud.tencent.com/document/product/457/9083)
+- [集群节点硬盘设置](https://intl.cloud.tencent.com/document/product/457/9086)
+- [集群节点公网IP设置](https://intl.cloud.tencent.com/document/product/457/9085)
+- [集群节点安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)

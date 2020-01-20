@@ -11,7 +11,7 @@ VOD provides a [UGSV SDK](https://cloud.tencent.com/document/product/584/9366) t
 
 After a video is produced in the application client, it needs to be uploaded to VOD.
 
-The [UGSV SDK](https://cloud.tencent.com/document/product/584/9366) integrates the feature of video upload from client, so you are recommended to use it for uploading videos from client. If you do not want to use it, you can use the [upload from client SDK](https://cloud.tencent.com/document/product/266/9219) provided separately.
+The [UGSV SDK](https://cloud.tencent.com/document/product/584/9366) integrates the feature of video upload from client, so you are recommended to use it for uploading videos from client. If you do not want to use it, you can use the [upload from client SDK](https://intl.cloud.tencent.com/document/product/266/33921) provided separately.
 
 ## Video Playback
 
@@ -23,10 +23,10 @@ The [UGSV SDK](https://cloud.tencent.com/document/product/584/9366) integrates t
 
 Videos uploaded by application users may contain porn, terrorism, and politically sensitive information.
 
-VOD provides a [video content audit](https://cloud.tencent.com/document/product/266/33498) feature that utilizes Tencent Cloud's powerful AI capabilities to conduct fast, accurate, intelligent audits on videos. For the specific integration scheme of content audit, please see [How to Audit Video Content](https://cloud.tencent.com/document/product/266/34104).
+VOD provides a [video content audit](https://intl.cloud.tencent.com/document/product/266/33944) feature that utilizes Tencent Cloud's powerful AI capabilities to conduct fast, accurate, intelligent audits on videos. For the specific integration scheme of content audit, please see [How to Audit Video Content](https://intl.cloud.tencent.com/document/product/266/33905).
 
 ## Malicious Video Hosting
 
-Malicious users may upload their own videos and distribute them to third-party users. This behavior steals your bandwidth and storage resources, which is called [malicious video hosting](https://cloud.tencent.com/document/product/266/20394#.E8.A7.86.E9.A2.91.E5.BA.8A.E9.97.AE.E9.A2.98.E4.BA.A7.E7.94.9F.E7.9A.84.E5.8E.9F.E5.9B.A0).
+Malicious users may upload their own videos and distribute them to third-party users. This behavior steals your bandwidth and storage resources, which is called [malicious video hosting](https://intl.cloud.tencent.com/document/product/266/33906#causes-of-malicious-video-hosting).
 
-VOD provides a [malicious video hosting prevention](https://cloud.tencent.com/document/product/266/20394#.E8.A7.86.E9.A2.91.E5.BA.8A.E9.98.B2.E8.8C.83.E6.96.B9.E6.A1.88) scheme. It helps prevent your resources from being misused for malicious video hosting by restricting the number of times a URL can be obtained and played back.
+VOD provides a [malicious video hosting prevention](https://intl.cloud.tencent.com/document/product/266/33906#malicious-video-hosting-prevention) scheme. It helps prevent your resources from being misused for malicious video hosting by restricting the number of times a URL can be obtained and played back.

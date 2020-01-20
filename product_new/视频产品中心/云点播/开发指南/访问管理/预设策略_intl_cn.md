@@ -1,4 +1,4 @@
-访问管理实质上是将子账号与策略进行绑定，或者说将策略授予子账号。开发者可以在控制台上直接使用预设策略来实现一些简单的授权操作，复杂的授权操作请参见 [自定义策略](https://cloud.tencent.com/document/product/266/39339)。
+访问管理实质上是将子账号与策略进行绑定，或者说将策略授予子账号。开发者可以在控制台上直接使用预设策略来实现一些简单的授权操作，复杂的授权操作请参见 [自定义策略](https://intl.cloud.tencent.com/document/product/266/33972)。
 
 云点播目前提供了以下预设策略：
 
@@ -12,7 +12,7 @@
 
 ### 创建拥有云点播完整权限的子用户
 
-1. 以 [主账号](https://cloud.tencent.com/document/product/598/13665) 的身份访问 CAM 控制台的[【用户列表】](https://console.cloud.tencent.com/cam)，单击【新建用户】。
+1. 以 [主账号](https://intl.cloud.tencent.com/document/product/598/32633) 的身份访问 CAM 控制台的[【用户列表】](https://console.cloud.tencent.com/cam)，单击【新建用户】。
    ![](https://main.qcloudimg.com/raw/1a069f052f6256ee997f600e0d28ad9d.png)
 2. 在“新建用户”页面单击子用户类型下的【自定义创建】，进入“新建子用户”页面。
    ![](https://main.qcloudimg.com/raw/e0482952524b105812409fcd53b8173c.png)
@@ -54,13 +54,13 @@
 		  <tr>      
          <td>SecretId</td>   
 	     <td>安全凭证 CSV 文件</td>   
-	     <td >调用服务端 API 时使用，详见 <a href="https://cloud.tencent.com/document/product/598/37140">访问密钥</a></td>   
+	     <td >调用服务端 API 时使用，详见 <a href="https://intl.cloud.tencent.com/document/product/598/32675">访问密钥</a></td>   
 	     <td >是</td>
      </tr> 
 	     <tr>      
          <td>SecretKey</td>   
 	     <td>安全凭证 CSV 文件</td>   
-	     <td >调用服务端 API 时使用，详见 <a href="https://cloud.tencent.com/document/product/598/37140">访问密钥</td>   
+	     <td >调用服务端 API 时使用，详见 <a href="https://intl.cloud.tencent.com/document/product/598/32675">访问密钥</td>   
 	     <td >是</td>
      </tr> 
 </table>
@@ -70,7 +70,7 @@
 
 ### <span id="p2"></span>将云点播完整权限授予已存在的子用户
 
-1. 以 [主账号](/document/product/598/13665) 的身份访问 CAM 控制台的[【用户列表】](https://console.cloud.tencent.com/cam)，单击想要进行授权的子账号。
+1. 以 [主账号](https://intl.cloud.tencent.com/document/product/598/32633) 的身份访问 CAM 控制台的[【用户列表】](https://console.cloud.tencent.com/cam)，单击想要进行授权的子账号。
    ![](https://main.qcloudimg.com/raw/d4e14d166031830c96c8af62e8ba7580.png)
 2. 单击“用户详情”页面权限栏的【添加策略】，如下图所示（实际操作中，根据子账号已有权限的不通过，页面的信息可能有所差异。如果子账号的权限非空，则单击【关联策略】）。
    ![](https://main.qcloudimg.com/raw/03601abde3da997fcbcbdb0832f97ae9.png)
@@ -78,7 +78,7 @@
 
 ### 解除子用户的云点播完整权限
 
-1. 以 [主账号](/document/product/598/13665) 的身份访问 CAM 控制台的[【用户列表】](https://console.cloud.tencent.com/cam)，单击想要解除授权的子账号。
+1. 以 [主账号](https://intl.cloud.tencent.com/document/product/598/32633) 的身份访问 CAM 控制台的[【用户列表】](https://console.cloud.tencent.com/cam)，单击想要解除授权的子账号。
    ![](https://main.qcloudimg.com/raw/b1aa046a9683d823bfd2a981af6eaf98.png)
 2. 在“用户详情”页面权限栏找到预设策略`QcloudVODFullAccess`，单击右侧的【解除】。按页面提示完成解除授权流程即可。
    <img src="https://main.qcloudimg.com/raw/d8275e7b4d6ae7ebcd9d0f9c729b7aff.png" width="704">

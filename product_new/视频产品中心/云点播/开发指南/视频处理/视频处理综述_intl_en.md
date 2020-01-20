@@ -117,4 +117,4 @@ The above is a list of video processing features provided by VOD. In addition to
 - intelligent content audit, analysis, and recognition with the aid of Tencent Cloud's powerful AI.
 - integration with commercial-grade DRM for high-level video encryption.
 
-After a video processing task is initiated, the processing result cannot be output immediately (i.e., the result cannot be obtained synchronously). Therefore, video processing is performed as an offline task. For more information on how to initiate a video processing task and get the task result, please see [Video Processing Task System](https://cloud.tencent.com/document/product/266/33475).
+After a video processing task is initiated, the processing result cannot be output immediately (i.e., the result cannot be obtained synchronously). Therefore, video processing is performed as an offline task. For more information on how to initiate a video processing task and get the task result, please see [Video Processing Task System](https://intl.cloud.tencent.com/document/product/266/33931).

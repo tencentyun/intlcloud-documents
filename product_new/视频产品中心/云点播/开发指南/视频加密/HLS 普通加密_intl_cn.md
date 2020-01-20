@@ -11,13 +11,13 @@
 
 #### 局限性
 
-- 仅支持2017版接口：使用 [ProcessFile](https://cloud.tencent.com/document/product/266/9642) 发起加密任务，[GetTaskInfo](https://cloud.tencent.com/document/product/266/11724) 查询加密结果。
-- 新版接口 [ProcessMedia](https://cloud.tencent.com/document/product/266/33427) 和 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 不支持 HLS 普通加密。
+- 仅支持2017版接口：使用 [ProcessFile](#APIhttps://intl.cloud.tencent.com/document/product/266/9642) 发起加密任务，GetTaskInfo <!--api (https://intl.cloud.tencent.com/document/product/266/11724)--> 查询加密结果。
+- 新版接口 [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) 和 [DescribeTaskDetail](#apihttps://intl.cloud.tencent.com/document/product/266/33431) 不支持 HLS 普通加密。
 
 ### 术语介绍
 
 #### 密钥管理服务（Key Management Service，简称 KMS）
-一项安全管理服务，主要负责数据密钥的生产、加密和解密等工作。例如腾讯云的 [密钥管理服务](https://cloud.tencent.com/product/kms)。
+一项安全管理服务，主要负责数据密钥的生产、加密和解密等工作。例如腾讯云的 [密钥管理服务](https://intl.cloud.tencent.com/product/kms)。
 
 #### 数据密钥（Data Key，简称 DK）
 由 KMS 系统生成的，用于对称加解密的密钥。
@@ -53,7 +53,7 @@
 - 如需支持浏览器播放，为了避免跨域问题，请确保“鉴权与密钥派发服务”与“视频播放页面”使用的域名相同（例如，若视频播放页面的域名是`v.myvideo.com`，则密钥派发服务的域名也需要是`v.myvideo.com`）。
 
 #### 配置视频加密模板
-为确保云点播后台能够进行正确的加密操作，您需要配置视频加密模板，详细请参见 [HLS 普通加密模板](https://cloud.tencent.com/document/product/266/9645)。
+为确保云点播后台能够进行正确的加密操作，您需要配置视频加密模板，详细请参见 [HLS 普通加密模板](https://intl.cloud.tencent.com/document/product/266/33969)。
 
 ### 业务流程
 
@@ -66,7 +66,7 @@
 
 #### 1. App 后台发起视频加密
 
-目前您可以通过 [ProcessFile](https://cloud.tencent.com/document/product/266/9642) 接口发起视频加密，目前只支持对 HLS 文件进行加密。
+目前您可以通过 [ProcessFile](#APIhttps://intl.cloud.tencent.com/document/product/266/9642) 接口发起视频加密，目前只支持对 HLS 文件进行加密。
 
 如下示例的含义是：
 
@@ -106,10 +106,10 @@ https://getkey.example.com?fileId=123456&keySource=VodBuildInKMS&edk=abcdef
 该 URL 也是客户端最终在视频播放过程中获取解密密钥时访问的 URL。
 
 #### 4. 点播平台发起加密完成回调
-包含加密操作的任务流状态发生变化（或者执行完毕）之后，点播平台将发起 [任务流状态变更通知](/document/product/266/9636)。
+包含加密操作的任务流状态发生变化（或者执行完毕）之后，点播平台将发起 [任务流状态变更通知](https://intl.cloud.tencent.com/document/product/266/33953)。
 
 ### 媒资管理
-视频加密操作完成后，可以通过 [GetVideoInfo](/document/product/266/8586) 接口获取视频的加密信息。
+视频加密操作完成后，可以通过 [GetVideoInfo](#APIhttps://intl.cloud.tencent.com/document/product/266/8586) 接口获取视频的加密信息。
 - GetVideoInfo 接口会返回该视频 ID 所有转码规格的视频播放地址，包括源文件的播放地址，由于源文件是没有加密处理的，App 服务端可以过滤掉源文件的播放地址，只提供加密视频的播放地址给客户端。
 - GetVideoInfo 获取到的源文件 definition 参数是0，可以根据这个值来过滤源文件的视频播放地址。
 
@@ -219,16 +219,16 @@ App 服务端需要部署客户端播放加密视频时获取密钥数据的 HTT
 
 ####  3. 播放器播放加密视频时从哪里获取解密密钥？
 播放器播放加密视频时，根据 M3U8 文件里`EXT-X-KEY`的 URI，发起获取密钥的请求，即 App 提供给云点播的 getkeyurl 地址。
-> 播放器不是向点播服务器发起获取密钥的请求。App 服务器在调用点播 ProcessFile API 进行加密时，加密完成后再调用 [获取视频解密密钥](https://cloud.tencent.com/document/product/266/9643)  API 获取到密钥后，需要将密钥保存起来，当播放器请求密钥时，根据播放器的请求参数来返回对应的密钥。
+<!--api 播放器不是向点播服务器发起获取密钥的请求。App 服务器在调用点播 ProcessFile API 进行加密时，加密完成后再调用 [获取视频解密密钥](https://intl.cloud.tencent.com/document/product/266/9643)  API 获取到密钥后，需要将密钥保存起来，当播放器请求密钥时，根据播放器的请求参数来返回对应的密钥。-->
 
 ####  4. App 服务端如何返回密钥给播放器？
-播放器向 App 服务端发起获取密钥请求时，App 服务端需要将对应的密钥数据返回给播放器，返回的密钥数据为16字节的二进制数据。通过 [获取视频解密密钥](https://cloud.tencent.com/document/product/266/9643) API 获取到密钥为 Base64 编码的字符串，返回给播放器时需要将这个字符串转换为二进制数据。
+播放器向 App 服务端发起获取密钥请求时，App 服务端需要将对应的密钥数据返回给播放器，返回的密钥数据为16字节的二进制数据。<!--api 通过 [获取视频解密密钥](https://intl.cloud.tencent.com/document/product/266/9643) API 获取到密钥为 Base64 编码的字符串，返回给播放器时需要将这个字符串转换为二进制数据。-->
 例如，dkData 为 Base64 编码的密钥数据：
 
 Java
 ```java
   import java.util.Base64;
-  byte[] dkBin = Base64.getDecoder().decode(dkData）;
+  byte[] dkBin = Base64.getDecoder().decode(dkData);
 ```  
 
 PHP
