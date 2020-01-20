@@ -13,7 +13,7 @@ To get event notifications through [normal callback](https://intl.cloud.tencent.
 1. Enter the [Instance List](https://console.cloud.tencent.com/cvm/index) page in the CVM Console and click **Create**.
 2. Select the **Quick Configuration** menu, select **Ubuntu Server** or **CentOS** for **Image** and **1 Mbps** for **Public Network Bandwidth**, check **Allocate Free Public IP**, and then click **Buy Now**.
 3. Enter the [Instance List](https://console.cloud.tencent.com/cvm/index) page again, find the CVM instance successfully created, and copy the public IP in **Primary IP Address** (**134.XXX.XXX.167** in this example).
-![](https://main.qcloudimg.com/raw/d48f654b759159de0935e83bc0e6fdc8.png)
+![](https://main.qcloudimg.com/raw/89e8b56123b9155e880658bad20eec1e.png)
 4. Log in to the purchased CVM instance, download the [source code package](http://document-1251659802.coscd.myqcloud.com/NotificationTuition.zip), extract it to your working directory, and run the following command:
 		python NotificationReceiveServer.py
 After the command is executed, the standard output of the CVM instance should print `Started httpserver on port 8080`, indicating that the service process has started and is listening on port 8080.

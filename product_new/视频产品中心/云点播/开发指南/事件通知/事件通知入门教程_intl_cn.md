@@ -13,7 +13,7 @@
 1. 进入云服务器 CVM 控制台的 [实例列表](https://console.cloud.tencent.com/cvm/index) 界面，单击【新建】。
 2. 选择【快速配置】菜单，【镜像】选择“**Ubuntu Server**”或“**CentOS**”，【公网带宽】选择“**1Mbps**”并勾选“**分配免费公网 IP**”，然后单击【立即购买】。
 3. 再次进入 [实例列表](https://console.cloud.tencent.com/cvm/index) 界面，找到您创建成功的 CVM 示例，并拷贝【主IP地址】中的公网 IP（示例中的 IP 是 **134.XXX.XXX.167**）。
-![](https://main.qcloudimg.com/raw/d48f654b759159de0935e83bc0e6fdc8.png)
+![](https://main.qcloudimg.com/raw/89e8b56123b9155e880658bad20eec1e.png)
 4. 登录您购买的 CVM，下载 [源码压缩包](http://document-1251659802.coscd.myqcloud.com/NotificationTuition.zip) 并解压到您的工作目录，然后执行以下命令：
 		python NotificationReceiveServer.py
 命令执行后，CVM 的标准输出打印`Started httpserver on port 8080`，表示服务进程已经启动，正在监听8080端口。
