@@ -28,14 +28,14 @@
 - 支持 Kubernetes 1.10 以上版本的集群。
 - 需设置 kube-apiserver 的启动参数为：` --feature-gates=CustomResourceSubresources=true`。
 
->推荐您在 [腾讯云容器服务](https://cloud.tencent.com/product/tke2) 中购买 1.12.4 版本集群，无需修改任何参数，开箱可用。
+>推荐您在 [腾讯云容器服务](https://console.cloud.tencent.com/tke2) 中购买 1.12.4 版本集群，无需修改任何参数，开箱可用。
 
 ## 使用方法
 
 ### 组件安装
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【扩展组件】。
 2. 在“扩展组件”管理页面上方，选择地域及需安装 GameApp 的集群，并单击【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/887d95fb6d298edbb4e9a329440c22c1.png)
+![](https://main.qcloudimg.com/raw/601a8e4118a112fe26355ef6535e6038.png)
 3. 在“新建扩展组件”页面，选择【GameApp 组件】后，单击【完成】即可安装成功。
 
 
