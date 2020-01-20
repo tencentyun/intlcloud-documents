@@ -33,7 +33,7 @@ You can bind a filed custom domain name to the bucket and enable CDN acceleratio
 (1) Click **Add domain name** in the **custom acceleration domain name** module to add a filed custom domain name.
 ![](https://main.qcloudimg.com/raw/eda34cc24d82cebf109e3507a2ae142f.png)
 (2) Configuration to add domain names:
-**Domain Name**: Enter the custom domain name to be bound (e.g. `www.example.com`). Ensure that the domain name has ICP filing, and a corresponding CNAME has been configured for the domain name with the DNS service provider. For more information, please see [CNAME Configuration](https://cloud.tencent.com/document/product/228/3121).
+**Domain Name**: Enter the custom domain name to be bound (e.g. `www.example.com`). Ensure that the domain name has ICP filing, and a corresponding CNAME has been configured for the domain name with the DNS service provider. For more information, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
 **Origin-Pull Authentication**: for private-read buckets, please manually enable **origin-pull authentication** to protect the origin server.
 After completing the configuration, click **Save**.
 ![](https://main.qcloudimg.com/raw/e21189d91929209ded554581d267a505.png)
