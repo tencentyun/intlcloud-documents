@@ -17,8 +17,8 @@ TIM is the namespace of the IM Web SDK, and provides the static method **create(
 | Profile | **Profile** describes the basic information of a user, including the nickname, gender, personal signature, and profile photo address. |
 | Group | **Group** is a communication system for group chatting. Many types of groups are available: private group, public group, chat room, and audio-and-video chat room. |
 | GroupMember (Group member) | **GroupMember** indicates the basic information of each group member, such as the ID, nickname, role, and the time of joining the group. |
-| Group notification | A group notification is generated when an event such as group member adding or deletion occurs. You can configure whether to display group notifications to group members.<br/>For more information about group notification types, see **Message.GroupTipPayload**.|
-| Group system message | For example, when a user applies for joining a group, the group admins will receive a system message. After an admin accepts or denies the application, the IM SDK will return the application result to the access terminal, and then the user can view the result displayed on the access terminal.<br/>For more information about types of group system messages, see **Message.GroupSystemNoticePayload**.  |
+| Group notification | A group notification is generated when an event such as group member adding or deletion occurs. You can configure whether to display group notifications to group members. |
+| Group system message | For example, when a user applies for joining a group, the group admins will receive a system message. After an admin accepts or denies the application, the IM SDK will return the application result to the access terminal, and then the user can view the result displayed on the access terminal. |
 | Message display on Screen | The sent messages, including text segments and images, are displayed on the computer or phone screen. |
 
 ### Login
