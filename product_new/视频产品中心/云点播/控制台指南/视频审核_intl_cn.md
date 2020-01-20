@@ -4,7 +4,7 @@
 ## 操作步骤
 
 1. 登录 [云点播控制台](https://console.cloud.tencent.com/vod/overview)，单击左侧导航栏的【视频审核】，进入“视频审核”页面。
-![](https://main.qcloudimg.com/raw/226920768d74a5acccbc1393493c1a59.png)
+![](https://main.qcloudimg.com/raw/f3d1b953ef6f8fc4f2a16910f18a079d.png)
 	- 时间段查询：视频审核列表支持查询今天、昨天、近7天以及7天内任意时间段的视频审核结果。
 	- 前缀搜索：您可以通过 FileId 或视频名称前缀对审核结果进行搜索。
 	- 筛选：您可以按创建时间进行顺序或倒序排序，还可以对审核状态、机审结果及人工确认结果进行视频文件筛选。
@@ -13,7 +13,7 @@
 >您需要在媒资管理中发起 [视频审核](https://intl.cloud.tencent.com/document/product/266/33892)，才可以看到视频审核结果。
 
 2. 单击目标视频文件所在行的【查看结果】，进入“审核结果”页面。
-![](https://main.qcloudimg.com/raw/bb204c5235cd38be81c26dd862c55e9e.png)
+![](https://main.qcloudimg.com/raw/8f92f1853c4fc5151fda3ba689708064.png)
 	- 页面内容展示：该页面展示了任务 ID、视频名称、视频源文件 URL、机审结果、人工确认结果以及机审结果的审核详情。
 	- 视频信息复制：您可以对任务 ID、视频名称及视频源文件 URL 进行复制。
 	- 审核结果确认：
