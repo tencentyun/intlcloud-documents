@@ -1,6 +1,6 @@
 ## Overview
 VOD provides a **subapplication** feature to enable you to isolate resources in it. This feature is an internal concept in VOD with respect to how resources are divided. A subapplication is similar to an independent VOD account. After a subapplication is created, the ownership of VOD resources will be as shown below:
-![](https://main.qcloudimg.com/raw/dcade8f8776b986a0b20ca2907953299.jpg)
+![](https://main.qcloudimg.com/raw/58880e642525a040fc3bcd5e5c6d12b9.png)
 >**Resources** mentioned in this document include media files in VOD and their attributes, derivative files, configurations, CDN domain names, and statistics of VOD service usage.
 
 ### Use cases
@@ -11,7 +11,7 @@ Below are some typical use cases for VOD subapplication:
 
 ### Role definition and ID
 Roles in the VOD subapplication system include **admin**, **primary application**, and **subapplication**. Their definitions are as shown below.
-![](https://main.qcloudimg.com/raw/c5f570888aa8c25b76cda3e9fcbeb225.jpg)
+![](https://main.qcloudimg.com/raw/c873e8cdb0eb762df5d899efc13aa7cc.png)
 
 1. After you activate the VOD service, you are in the default role of **primary application**, to which all VOD resources belong. The primary application ID is your Tencent Cloud `APPID`, which can be viewed in [**Account Info**](https://console.cloud.tencent.com/developer) in the console.
 2. After you enable the VOD subapplication feature, an **admin** role will be generated, which does not own any VOD resources, and all resources still belong to the primary application.
@@ -50,7 +50,7 @@ The VOD subapplication system has the following limits:
 
 ### Selecting a role
 After the subapplication feature is enabled, a drop-down list will be displayed in the top-left corner of the [VOD Console](https://console.cloud.tencent.com/vod) where you can select a role. If you have just enabled the subapplication feature, there are only two roles in the drop-down list: **admin** and **primary application**. After you create a subapplication, it will be displayed as a role in the drop-down list.
-![](https://main.qcloudimg.com/raw/2ae59153d3d8e7f2aba9ecc91289ae04.png)
+![](https://main.qcloudimg.com/raw/6585927d88d708893d9fe0524907f77f.png)
 
 ### Admin
 Under the admin role, the left sidebar displays the following entries: **Service Overview**, **Applications**, and **Resource Packages**.
@@ -81,9 +81,6 @@ VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.te
 
 ## File Upload Instructions
 After enabling the VOD subapplication feature, you must specify the subapplication to which you want to upload your media files.
-
-### LVB recording
-[LVB recording](/document/product/267/32739) allows you to generate recording files in the specified subapplication by adding `vod_sub_app_id=xxx` (`xxx` refers to the subapplication ID) to the LVB push parameters. If you want to generate recording files in the primary application, simply leave this parameter empty.
 
 ### Upload from server
 [Upload from server](https://intl.cloud.tencent.com/document/product/266/33912) supports file upload to the specified subapplication. For more information on how to set the parameters, please visit the link below. If you want to upload files to the primary application, you can enter the primary application ID or leave the corresponding parameter empty.
