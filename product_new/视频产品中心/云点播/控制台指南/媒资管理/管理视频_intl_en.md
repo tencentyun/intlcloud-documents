@@ -16,7 +16,7 @@ This document describes how to manage videos in the VOD Console, including editi
 <tbody>
 <tr>
 <td>Video cover</td>
-<td ><ul><li>Click **Change Image** to select and upload a local image. <br><li>Only JPG, PNG, and static GIF images are supported. <br><li>The image can be up to 1 MB in size and 1920 * 1080 px in dimensions. <br><li>The filename cannot contain Chinese characters. </ul></td>
+<td ><ul><li>Click <b>Change Image</b> to select and upload a local image. <br><li>Only JPG, PNG, and static GIF images are supported. <br><li>The image can be up to 1 MB in size and 1920 * 1080 px in dimensions. <br><li>The filename cannot contain Chinese characters. </ul></td>
 </tr>
 <tr>
 <td>Video name</td>
@@ -24,7 +24,7 @@ This document describes how to manage videos in the VOD Console, including editi
 </tr>
 <tr>
 <td>Category</td>
-<td><ul><li>You can modify the video category. <br><li>Click **Modify Category**, select a category, and click **OK**.</ul></td>
+<td><ul><li>You can modify the video category. <br><li>Click <b>Modify Category</b>, select a category, and click <b>OK</b>.</ul></td>
 </tr>
 <tr>
 <td>Tag</td>
@@ -35,10 +35,11 @@ This document describes how to manage videos in the VOD Console, including editi
 <td><ul><li>You can add a brief description to the video. <br><li>The description can contain up to 128 characters.</ul></td>
 </tr>
 </tbody></table>
-	- **List of standard transcoding output files**: it lists the source and output video files.
-		- You can copy the URL of a video file and preview it.
-		- You can also delete an output video file and share it through QR code.
-	- **List of adaptive bitrate streaming output files**
+
+- **List of standard transcoding output files**: it lists the source and output video files.
+	- You can copy the URL of a video file and preview it.
+	- You can also delete an output video file and share it through QR code.
+- **List of adaptive bitrate streaming output files**
 	You can copy the URL of a video file, preview it, and view its details.
 	
 
