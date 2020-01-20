@@ -33,7 +33,7 @@ GPU Manager 提供一个 All-in-One 的 GPU 管理器，基于 Kubernetes Device
 ### 组件安装
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【扩展组件】。
 2. 在“扩展组件”管理页面上方，选择地域及需安装 GPU-Manage 的集群，并单击【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/d087e46c782e0fe391bb0abd7d2af71d.png)
+![](https://main.qcloudimg.com/raw/9cc38b381194c7c6b3180b42d87a6557.png)
 3. 在“新建扩展组件”页面，选择【GpuManagerr 组件】后，单击【完成】即可安装成功。
 
 
@@ -45,7 +45,7 @@ GPU Manager 提供一个 All-in-One 的 GPU 管理器，基于 Kubernetes Device
 1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】。
 2. 选择需要创建 GPU 应用的集群，进入工作负载管理页，并单击【新建】。
 3. 在“新建Workload”页面根据实际需求进行配置，可在“GPU限制”配置细粒度的 GPU 工作负载。如下图所示：
-![](https://main.qcloudimg.com/raw/1158f1e99e049a83c48692e19ae6aa6b.png)
+![](https://main.qcloudimg.com/raw/3c622cc72df1699a50a7fbb4cd8ee0e0.png)
 
 
 #### 方式二：通过 yaml 创建

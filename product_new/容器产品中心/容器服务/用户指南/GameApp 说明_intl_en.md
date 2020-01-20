@@ -28,14 +28,14 @@ Deploying GameApp Add-on in a cluster will deploy the following Kubernetes objec
 - Supports clusters with Kubernetes version 1.10 and above.
 - The launch parameters of kube-apiserver must be set as follows: ` --feature-gates=CustomResourceSubresources=true`.
 
->We recommend to purchase clusters of version 1.12.4 on [Tencent Cloud TKE](https://cloud.tencent.com/product/tke2), so that you do not need to modify any parameters.
+>We recommend to purchase clusters of version 1.12.4 on [Tencent Cloud TKE](https://console.cloud.tencent.com/tke2), so that you do not need to modify any parameters.
 
 ## Usage
 
 ### Installing the add-on
 1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2), and select **Add-ons** in the left sidebar.
 2. On the top of the **Add-ons** management page, select the region and the cluster for installing GameApp, and click **Create**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/887d95fb6d298edbb4e9a329440c22c1.png)
+![](https://main.qcloudimg.com/raw/601a8e4118a112fe26355ef6535e6038.png)
 3. In the **Create Add-on** page, select **GameApp**, and click **Complete** to install it.
 
 
