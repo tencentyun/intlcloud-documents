@@ -57,7 +57,7 @@ allprojects {
 ### Preparing videos
 
 Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview), click **Media Assets** on the left sidebar, and you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column. If you don't have a video, please click **Upload Video** to upload one.
-![](https://main.qcloudimg.com/raw/69b347af5d260d31ed9eb16617388a3b.png)
+![](https://main.qcloudimg.com/raw/2193e70a3f4c19b18e31c63778f3795e.png)
 
 You can initiate an [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) task for the uploaded video through [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427):
 You are recommended to enter 10 for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition` in the API parameter, indicating transcoding to adaptive bitstream in HLS format.
