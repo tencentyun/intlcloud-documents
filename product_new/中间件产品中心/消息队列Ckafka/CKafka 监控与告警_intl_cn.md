@@ -7,7 +7,7 @@ CKafka 控制台提供两种维度的数据监控：实例维度和 Topic 维度
 
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在实例列表中，单击操作列的【配置告警】可以直接跳转到告警配置页面。请务必对实例配置告警，防止因突发流量或者到达规格限制而导致的异常。
-![](https://main.qcloudimg.com/raw/5211355ea3bca6accabdd524891c0dea.png)
+![](https://main.qcloudimg.com/raw/dc9f5683a22207babe37faca837503c5.png)
 3. 在实例列表中，单击需要查看的实例 ID/Topic ID，进入实例详情页。
 4. 在实例详情页顶部，单击【本实例监控】选项卡，可查看监控数据。
 
@@ -52,13 +52,13 @@ Topic 监控：
 
 ### CKafka 监控 API 文档
 CKafka 监控 API 详情可参见如下文档：
-- [主题监控](https://cloud.tencent.com/document/product/248/17296)
-- [实例监控](https://cloud.tencent.com/document/product/248/17297) 
-- [消费分组监控](https://cloud.tencent.com/document/product/248/17298)
+- 主题监控
+- 实例监控
+- 消费分组监控
 
 ## CKafka 告警策略
 在 CKafka 状态改变时，可以创建告警来及时通知您采取措施。创建的告警会将一定周期内监控的指标与给定阈值的情况进行比对，从而判断是否需要触发相关通知。
-状态改变而导致告警触发后，您可以及时进行相应的预防或补救措施。合理地创建告警能帮助您提高应用程序的健壮性和可靠性。有关告警的更多信息，请参考 [云监控创建告警](https://cloud.tencent.com/document/product/248/6215) 。
+状态改变而导致告警触发后，您可以及时进行相应的预防或补救措施。合理地创建告警能帮助您提高应用程序的健壮性和可靠性。有关告警的更多信息，请参考 [云监控创建告警](https://intl.cloud.tencent.com/document/product/248/6215) 。
 
 ## CKafka 推荐监控告警策略
 影响业务数据稳定性的指标请参考 [CKafka数 据可靠性说明](https://intl.cloud.tencent.com/document/product/597/31586)。
