@@ -11,7 +11,7 @@ In the above domain names, **`{$region}` needs to be replaced with a specific re
 
 
 ## Input Parameters
-The list below contains only the API request parameters. <!--Other parameters can be found in [Common Request Parameters]().-->
+The list below contains only the API request parameters. Other parameters can be found in [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/6976).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
