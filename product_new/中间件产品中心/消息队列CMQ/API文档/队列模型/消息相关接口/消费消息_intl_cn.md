@@ -1,6 +1,6 @@
 ## 接口描述
 本接口（ReceiveMessage）用于消费队列中的一条消息。
-ReceiveMessage 操作会将取得的消息状态变成 inactive，inactive 的时间长度由队列属性 visibilityTimeout 指定（详见 [CreateQueue 接口](https://cloud.tencent.com/document/product/406/5832)）。 建议消费者在 visibilityTimeout 时间内消费成功后需要调用（batch）DeleteMessage 接口删除该消息，否则该消息将会重新变成为 active 状态，此消息又可被消费者重新消费，保证消息至少消费一次，但是不能保证幂等性， 业务侧需要有去重逻辑。
+ReceiveMessage 操作会将取得的消息状态变成 inactive，inactive 的时间长度由队列属性 visibilityTimeout 指定（详见 [CreateQueue 接口](https://intl.cloud.tencent.com/document/product/406/5832)）。 建议消费者在 visibilityTimeout 时间内消费成功后需要调用（batch）DeleteMessage 接口删除该消息，否则该消息将会重新变成为 active 状态，此消息又可被消费者重新消费，保证消息至少消费一次，但是不能保证幂等性， 业务侧需要有去重逻辑。
 
 - 外网接口请求域名：`https://cmq-queue-{$region}.api.qcloud.com`
 - 内网接口请求域名：`http://cmq-queue-{$region}.api.tencentyun.com`
@@ -11,7 +11,7 @@ ReceiveMessage 操作会将取得的消息状态变成 inactive，inactive 的�
 
 
 ## 输入参数
-以下请求参数列表仅列出了接口请求参数，其它参数见 [公共请求参数](https://cloud.tencent.com/document/product/295/7279) 页面。
+以下请求参数列表仅列出了接口请求参数，其它参数见 [公共请求参数](https://intl.cloud.tencent.com/document/api/213/6976) 页面。
 
 | 参数名称 | 是否必选  | 类型 | 描述 |
 |---------|---------|---------|---------|
@@ -23,7 +23,7 @@ ReceiveMessage 操作会将取得的消息状态变成 inactive，inactive 的�
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
-| code | Int |0：表示成功，others：错误，详细错误见 [公共错误码](https://cloud.tencent.com/document/product/406/5903)。|
+| code | Int |0：表示成功，others：错误，详细错误见 [公共错误码](https://intl.cloud.tencent.com/document/product/406/5903)。|
 | message | String | 错误提示信息。|
 | requestId| String| 服务器生成的请求 ID。出现服务器内部错误时，用户可提交此 ID 给后台定位问题。|
 | msgBody| String| 本次消费的消息正文。|
@@ -35,7 +35,7 @@ ReceiveMessage 操作会将取得的消息状态变成 inactive，inactive 的�
 | firstDequeueTime| Int| 保留字段。|
 
 ## 错误码
-请查看 [公共错误码](https://cloud.tencent.com/document/product/406/5903)。
+请查看 [公共错误码](https://intl.cloud.tencent.com/document/product/406/5903)。
 
 
 
@@ -46,7 +46,7 @@ ReceiveMessage 操作会将取得的消息状态变成 inactive，inactive 的�
 <pre>
  https://domain/v2/index.php?Action=ReceiveMessage
  &queueName=test-queue-123
- &<<a href="https://cloud.tencent.com/doc/api/229/6976">公共请求参数</a>>
+ &<<a href="https://intl.cloud.tencent.com/doc/api/229/6976">公共请求参数</a>>
 </pre>
 
 输出：
