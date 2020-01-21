@@ -26,13 +26,15 @@ Window，Linux 또는 Mac OS
 
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인하십시오.
 2. 인스턴스 관리페이지에서 로그인해야하는 Linux CVM을 선택하고 [로그인]을 클릭하십시오. 아래 이미지를 참조하십시오.
+![](https://main.qcloudimg.com/raw/cc5786b9f8b57ff4057b666503729bc0.png)
 3.[Linux 인스턴스 로그인]창에서 [표준 로그인 방식]을 선택하고,[즉시 로그인]을 클릭하십시오. 아래 이미지를 참조하십시오.
+![](https://main.qcloudimg.com/raw/cc5786b9f8b57ff4057b666503729bc0.png)
 4. Webshell 로그인 페이지에서, 실제 요구사항에 따라 [비밀번호 로그인] 또는 [키 로그인] 방식을 선택하여 로그인하십시오. 아래 이미지를 참조하십시오.
+![](https://main.qcloudimg.com/raw/87ba7e511f8d0ffe48f220cecaa7b057.png)
 로그인에 성공하면, WebShell 인터페이스에 Socket connection established가 표시됩니다. 아래 이미지를 참조하십시오.
-
+![](https://main.qcloudimg.com/raw/6bcd152ff947909f52da67430aa7eda6.png)
 ## 후속 작업
 
 클라우드 서버에 로그인 성공하면, Tencent 클라우드 서버에서 개인 사이트, 포럼을 구축할 수 있고, 다른 작업을 사용할 수 있습니다. 관련 작업 방법은 아래의 내용을 참조하십시오.
-- [WordPress 개인 사이트 구축](https://cloud.tencent.com/document/product/213/34064)
-- [Discuz! 포럼 구축](https://cloud.tencent.com/document/product/213/34065)
+- [WordPress 개인 사이트 구축](https://intl.cloud.tencent.com/document/product/213/8044)
 

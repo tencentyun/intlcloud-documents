@@ -1,4 +1,4 @@
-Download the IM SDK based on the platform you use. For more information about how to run the demo, see [Quick Demo Operation](https://cloud.tencent.com/document/product/269/36838).
+Download the IM SDK based on the platform you use.  <!--For more information about how to run the demo, see [Quick Demo Operation]().-->
 
 >We recommend that you download the source code of the demo, the source code of TUIKit, and the SDK from GitHub. If you experience high latency accessing GitHub, you can also download them from Gitee or directly download their ZIP packages.
 

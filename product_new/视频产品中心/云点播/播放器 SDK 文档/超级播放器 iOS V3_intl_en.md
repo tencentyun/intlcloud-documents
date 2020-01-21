@@ -25,7 +25,7 @@ Enter `pod install` or `pod update` on the command line to perform the installat
 ### Preparing videos
 
 Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview), click **Media Assets** on the left sidebar, and you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column. If you don't have a video, please click **Upload Video** to upload one.
-![](https://main.qcloudimg.com/raw/f80e23558bee2bd33b1f29a522fe8da9.png)
+![](https://main.qcloudimg.com/raw/5aa5675fb0b702b447e422328f54cb72.png)
 
 You can initiate an [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) task for the uploaded video through [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427):
 You are recommended to enter 10 for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition` in the API parameter, indicating transcoding to adaptive bitstream in HLS format.
