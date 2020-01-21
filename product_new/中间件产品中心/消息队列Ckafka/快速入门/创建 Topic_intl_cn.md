@@ -20,7 +20,7 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
 
 >副本数也算分区个数的，例如客户创建了1个 Topic、6个分区、2个副本，那么分区额度一共用了1 \* 6 \* 2 = 12个。
 如果超过了购买的最大分区个数，单击【提交】时会有如下提示：
-![](https://main.qcloudimg.com/raw/eeb3b9aa16ef7b5ae6370d56affed865.png)
+![](https://main.qcloudimg.com/raw/dc04896549f78ac7d1c5c277d890f9e0.png)
 
 ### 查看 Topic
 1. 在 CKafka 实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
@@ -33,5 +33,5 @@ Topic（主题）是某一种分类的名字，消息在 Topic 中可以被存�
 
 1. 在 CKafka 实例列表页，单击目标实例的“ID/名称”，进入实例详情页。
 2. 在实例详情页，单击页面顶部的【Topic 管理】。
-3. 在 Topic 管理页，单击操作列的【删除】，或通过接口 [删除主题](https://cloud.tencent.com/document/product/597/10099)。 
+3. 在 Topic 管理页，单击操作列的【删除】，或通过接口 [删除主题](https://intl.cloud.tencent.com/document/product/597/10099)。 
 
