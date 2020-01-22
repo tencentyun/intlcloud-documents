@@ -7,7 +7,7 @@ Monitoring data in the CKafka Console can be displayed by instance or topic. In 
 
 1. Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka).
 2. In the instance list, click **Configure Alarm** in the "Operation" column to enter the alarm configuration page. You must configure an alarm for an instance to prevent exceptions caused by traffic surges or exceeded specification threshold.
-![](https://main.qcloudimg.com/raw/5211355ea3bca6accabdd524891c0dea.png)
+![](https://main.qcloudimg.com/raw/dc9f5683a22207babe37faca837503c5.png)
 3. In the instance list, click the ID of the desired instance/topic to enter the instance details page.
 4. At the top of the instance details page, click the **Monitoring of This Instance** tab to view monitoring data.
 
@@ -52,13 +52,13 @@ For more information on the metric names and descriptions, please see [CKafka Mo
 
 ### CKafka monitoring API documentation
 For more information on CKafka monitoring APIs, please see:
-- [Topic Monitoring](https://cloud.tencent.com/document/product/248/17296)
-- [Instance Monitoring](https://cloud.tencent.com/document/product/248/17297) 
-- [Consumer Group Monitoring](https://cloud.tencent.com/document/product/248/17298)
+- Topic Monitoring
+- Instance Monitoring
+- Consumer Group Monitoring
 
 ## CKafka Alarm Policy
 You can create an alarm to promptly remind yourself to take corresponding measures when the status of CKafka changes. The created alarm can determine whether an alarm notification should be sent based on the comparison between the monitored metric and the given threshold in the selected time period.
-You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered. Therefore, properly created alarms can help you improve the robustness and reliability of your applications. For more information on alarms, please see [Creating Alarms in Cloud Monitor](https://cloud.tencent.com/document/product/248/6215).
+You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered. Therefore, properly created alarms can help you improve the robustness and reliability of your applications. For more information on alarms, please see [Creating Alarms in Cloud Monitor](https://intl.cloud.tencent.com/document/product/248/6215).
 
 ## Monitoring and Alarm Policies Recommended for CKafka
 For more information on metrics that may affect the business data stability, please see [CKafka Data Reliability Description](https://intl.cloud.tencent.com/document/product/597/31586).

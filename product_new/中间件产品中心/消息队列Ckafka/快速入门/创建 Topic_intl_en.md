@@ -20,7 +20,7 @@ You have [created an instance](https://intl.cloud.tencent.com/document/product/5
 
 >The number of replicas is also considered for partitions. For example, if you create 1 topic, 6 partitions, and 2 replicas, then there will be a total of 1 \* 6 \* 2 = 12 partitions.
 If the maximum number of partitions allowed is exceeded during purchase, the following prompt will be displayed when you click **Submit**:
-![](https://main.qcloudimg.com/raw/eeb3b9aa16ef7b5ae6370d56affed865.png)
+![](https://main.qcloudimg.com/raw/dc04896549f78ac7d1c5c277d890f9e0.png)
 
 ### Viewing a topic
 1. On the CKafka instance list page, click the "ID/Name" of the target instance to enter the instance details page.
@@ -33,5 +33,5 @@ If the maximum number of partitions allowed is exceeded during purchase, the fol
 
 1. On the CKafka instance list page, click the "ID/Name" of the target instance to enter the instance details page.
 2. On the instance details page, click **Topic Management** at the top.
-3. On the topic management page, click **Delete** in the "Operation" column. Or, use the [DeleteTopic](https://cloud.tencent.com/document/product/597/10099) API to delete the instance. 
+3. On the topic management page, click **Delete** in the "Operation" column. Or, use the [DeleteTopic](https://intl.cloud.tencent.com/document/product/597/10099) API to delete the instance. 
 
