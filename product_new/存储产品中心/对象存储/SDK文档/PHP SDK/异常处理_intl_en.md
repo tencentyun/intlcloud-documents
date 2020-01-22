@@ -9,9 +9,9 @@ CosServiceException contains the status code returned by the server, requestId, 
 | Member       | Description            | Type  |
 | ----------- | ---------------- | ------ |
 | requestId | Request ID which identifies a request. It is very important for troubleshooting. | string |
-| statusCode | Status code in the response. For more information, see [Error Codes](https://cloud.tencent.com/document/product/436/7730). | string |
-| errorCode | Error code returned by the body when the request fails. For more information, see [Error Codes](https://cloud.tencent.com/document/product/436/7730). | string |
-| errorMessage | Error message returned by the body when the request fails. For more information, see [Error Codes](https://cloud.tencent.com/document/product/436/7730). | string |
+| statusCode | Status code in the response. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | string |
+| errorCode | Error code returned by the body when the request fails. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | string |
+| errorMessage | Error message returned by the body when the request fails. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | string |
 
 
 #### Example of Exception Catching

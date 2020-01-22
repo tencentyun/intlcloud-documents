@@ -15,5 +15,6 @@ This document describes how to view and modify sub-account information including
 > - Email address: you can modify the email address bound to the current sub-account. This email can be used to receive messages and notifications from the root account.
 4. Click **OK** to complete the modification of the user information. You can search for your sub-accounts by using the modified user name, mobile phone number, notes, or email address in the [User List](https://console.cloud.tencent.com/cam) management page.
 
-## Related Documentation<span id="contact"></span>
+## Related Documentation
+
 For more information on sub-accounts message subscriptions, see [Sub-Users Message Subscriptions](https://intl.cloud.tencent.com/document/product/598/32651), [Collaborator Message Subscriptions](https://intl.cloud.tencent.com/document/product/598/32642), and [Message Recipient Message Subscriptions](https://intl.cloud.tencent.com/document/product/598/32646).
