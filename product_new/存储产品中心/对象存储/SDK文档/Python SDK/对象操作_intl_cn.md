@@ -6,8 +6,8 @@
 
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket（List Object）](https://intl.cloud.tencent.com/zh/document/product/436/30614) | 查询对象列表	|   查询存储桶下的部分或者全部对象|
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/zh/document/product/436/31551) | 查询对象及其历史版本列表 |   查询存储桶下的部分或者全部对象及其历史版本信息|
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | 查询对象列表	|   查询存储桶下的部分或者全部对象|
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | 查询对象及其历史版本列表 |   查询存储桶下的部分或者全部对象及其历史版本信息|
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象       | 上传一个对象至存储桶    |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 	查询对象元数据  | 查询对象的元数据信息                |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地        |
