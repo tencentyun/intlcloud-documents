@@ -6,12 +6,12 @@ This document provides an overview of APIs and SDK sample codes related to simpl
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | Querying object list | Queries some or all objects in a bucket |
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/35521) | Querying list of current and historical versions of objects | Queries some or all objects in a bucket and their historical versions |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | Querying object list | Queries some or all objects in a bucket |
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying list of current and historical versions of objects | Queries some or all objects in a bucket and their historical versions |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | Setting object replication | Copies a file to the destination path |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Setting object replication | Copies a file to the destination path |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
 
@@ -19,20 +19,20 @@ This document provides an overview of APIs and SDK sample codes related to simpl
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information on ongoing multipart uploads |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information on ongoing multipart uploads |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload task |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads file parts |
-| [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts in a specified multipart upload operation |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of the entire file |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload operation and deletes the uploaded parts |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads file parts |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts in a specified multipart upload operation |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of the entire file |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload operation and deletes the uploaded parts |
 
 **Other Operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | Restores an archived object | Restores an archived object for access |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for a specified object in a bucket |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restores an archived object | Restores an archived object for access |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for a specified object in a bucket |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
 
 ## Simple Operations
