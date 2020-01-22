@@ -1,13 +1,14 @@
 ## Download and Installation
 
 ### Relevant Resources
-- COS XML PHP SDK source code: [Download here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
-- Demo: [Download here](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample).
+- Source code of COS XML SDK for PHP: [XML PHP SDK](https://github.com/tencentyun/cos-php-sdk-v5/releases).
+- Demo: [PHP sample](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample).
 
 ### Environment Requirements
 
-- PHP 5.3+
-You can run the `php -v` command to view the current PHP version.
+*   PHP 5.6+
+    You can run the `php -v` command to view the current PHP version.
+>- If your php version is `>=5.3` and `<5.6`, please use [ v1.3 ](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3).
 - cURL extension
 You can run the `php -m` command to check whether the cURL extension has been installed properly.
  - On Ubuntu, you can install PHP's cURL extension using the apt-get package manager with the following command:
@@ -20,14 +21,14 @@ sudo yum install php-curl
 ```
 
 ### Installing the SDK
-You can install the SDK in three ways, i.e.: [Composer method](#composer), [Phar method](#phar), and [source code method](#Source).
+You can install the SDK in three ways, i.e. [Composer method](#composer), [Phar method](#phar), and [source code method](#Source).
 
 <span id="composer"></span>
 #### Composer Method
 It is recommended to install cos-php-sdk-v5 with Composer, a PHP dependency manager that allows you to declare the dependencies necessary for your project and then automatically installs them into your project.
-> You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer official website](https://getcomposer.org/).
+> You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer website](https://getcomposer.org/).
 
-**Installation steps**
+**Installation Steps**
 1. Start the terminal.
 2. Download Composer and run the following command.
 ```shell
@@ -37,7 +38,7 @@ curl -sS https://getcomposer.org/installer | php
 ```json
 {
     "require": {
-        "qcloud/cos-sdk-v5": ">=1.0"
+        "qcloud/cos-sdk-v5": ">=2.0"
     }
 }
 ```
@@ -50,7 +51,7 @@ This command will create a `vendor` folder in the current directory. The folder 
 ```shell
 require '/path/to/sdk/vendor/autoload.php';
 ```
-Now, you can use COS XML PHP SDK in your project.
+Now, you can use COS XML SDK for PHP in your project.
 
 <span id="phar"></span>
 #### Phar Method
@@ -64,7 +65,8 @@ require  '/path/to/cos-sdk-v5.phar';
 <span id="Source"></span>
 #### Source Code Method
 Install the SDK using the source code as instructed below:
-1. Download the `cos-sdk-v5.tar.gz` package [here](https://github.com/tencentyun/cos-php-sdk-v5/releases). (Note: The `Source code` package is the default package compressed by GitHub and does not contain the `vendor` directory.)
+1. Download `cos-sdk-v5.tar.gz` compressed file on the [SDK releases page](https://github.com/tencentyun/cos-php-sdk-v5/releases).
+> `Source code` compressed file is the code packaged by Github by default. The directory `vendor` is not included.
 2. After decompressing it, load the SDK via the `autoload.php` script:
 ```shell
 require '/path/to/sdk/vendor/autoload.php';
@@ -72,7 +74,7 @@ require '/path/to/sdk/vendor/autoload.php';
 
 
 ## Getting Started
-The section below describes how to perform basic operations with COS PHP SDK, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object.
+The section below describes how to use COS SDK for PHP to perform basic operations, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object.
 
 ### Initialization
 ```php
@@ -110,7 +112,7 @@ $cosClient = new Qcloud\Cos\Client(
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $result = $cosClient->createBucket(array('Bucket' => $bucket));
-    // Request succeeded
+    //Request succeeded
     print_r($result);
 } catch (\Exception $e) {
 	// Request failed
@@ -121,7 +123,7 @@ try {
 ### Querying the Bucket List
 ```php
 try {
-    // Request succeeded
+    //Request succeeded
     $result = $cosClient->listBuckets();
     print_r($result);
 } catch (\Exception $e) {
@@ -133,11 +135,11 @@ try {
 
 ### Uploading an Object
 * Upload a file (up to 5 GB) using the putObject API.
-* Upload a file in parts using the Upload API.
+* Upload a file using the Upload API. The Upload API is an advanced API which uses simple upload for small files and multipart upload for large files.
 
 ```php
 # Upload a file
-## putObject (upload API which can upload files of up to 5 GB)
+## putObject (an API which can upload files of up to 5 GB)
 ### Upload strings in memory
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
@@ -151,37 +153,39 @@ try {
     echo "$e\n";
 }
 
-### Upload a File Stream
+### Upload a file stream
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
     $srcPath = "F:/exampleobject";// Absolute path to the local file
-    $result = $cosClient->putObject(array(
-        'Bucket' => $bucket,
-        'Key' => $key,
-        'Body' => fopen($srcPath, 'rb')));
-    print_r($result);
+    $file = fopen($srcPath, "rb");
+    if ($file) {
+        $result = $cosClient->putObject(array(
+            'Bucket' => $bucket,
+            'Key' => $key,
+            'Body' => $file));
+        print_r($result);
+    }
 } catch (\Exception $e) {
     echo "$e\n";
 }
 
-### Set header and meta
+### Set headers and metadata
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
-    $srcPath = "F:/exampleobject";// Absolute path to the local file
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
         'Key' => $key,
-        'Body' => fopen($srcPath, 'rb'),
+        'Body' => 'string | stream',
         'ACL' => 'string',
         'CacheControl' => 'string',
         'ContentDisposition' => 'string',
         'ContentEncoding' => 'string',
         'ContentLanguage' => 'string',
-        'ContentLength' => integer,
+        'ContentLength' => 'int',
         'ContentType' => 'string',
-        'Expires' => 'mixed type: string (date format)|int (unix timestamp)|\DateTime',
+        'Expires' => 'string',
         'GrantFullControl' => 'string',
         'GrantRead' => 'string',
         'GrantWrite' => 'string',
@@ -194,7 +198,7 @@ try {
     echo "$e\n";
 }
 
-## Upload (advanced upload API, which uses multipart upload by default and can upload files of up to 50 TB)
+## Upload (advanced upload API, which can upload files of up to 50 TB with multipart upload)
 ### Upload strings in memory
 try {    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
@@ -208,38 +212,40 @@ try {
     echo "$e\n";
 }
 
-### Upload a File Stream
+### Upload a file stream
 try {    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
     $srcPath = "F:/exampleobject";// Absolute path to the local file
-    $result = $cosClient->Upload(
-        $bucket = $bucket,
-        $key = $key,
-        $body = fopen($srcPath, 'rb'));
+    $file = fopen($srcPath, 'rb');
+    if ($file) {
+        $result = $cosClient->Upload(
+            $bucket = $bucket,
+            $key = $key,
+            $body = $file);
+    }
     print_r($result);
 } catch (\Exception $e) {
     echo "$e\n";
 }
 
-### Set header and meta
+### Set headers and metadata
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
-    $srcPath = "F:/exampleobject";// Absolute path to the local file
     $result = $cosClient->Upload(
         $bucket= $bucket,
         $key = $key,
-        $body = fopen($srcPath, 'rb'),
+        $body = 'string | stream',
         $options = array(
             'ACL' => 'string',
             'CacheControl' => 'string',
             'ContentDisposition' => 'string',
             'ContentEncoding' => 'string',
             'ContentLanguage' => 'string',
-            'ContentLength' => integer,
+            'ContentLength' => 'int',
             'ContentType' => 'string',
-            'Expires' => 'mixed type: string (date format)|int (unix timestamp)|\DateTime',
+            'Expires' => 'string',
             'GrantFullControl' => 'string',
             'GrantRead' => 'string',
             'GrantWrite' => 'string',
@@ -287,7 +293,7 @@ try {
         }
         $marker = $result['NextMarker']; // Set a new end marker
         if (!$result['IsTruncated']) {
-            break; // Determine whether the query is completed
+            break; // Determine whether the query is complete
         }
     }
 } catch (\Exception $e) {
@@ -297,11 +303,11 @@ try {
 
 ### Downloading an Object
 * Download a file using the getObject API.
-* Get a file download URL using the getObjectUrl API.
+* Get the file download URL using the getObjectUrl API.
 
 ```php
 # Download a file
-## getObject (for file download)
+## getObject (download file)
 ### Download to memory
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
@@ -348,7 +354,7 @@ try {
     echo "$e\n";
 }
 
-### Set the return header
+### Set response headers
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject"; // Location of the object in the bucket, i.e., the object key
@@ -368,7 +374,7 @@ try {
     echo "$e\n";
 }
 
-## getObjectUrl (for getting file URL)
+## getObjectUrl (get the file URL)
 try {    
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject"; // Location of the object in the bucket, i.e., the object key
@@ -381,7 +387,7 @@ try {
 }
 ```
 
-### Deleting an Object
+### Deleting Objects
 ```php
 # Delete an object
 ## deleteObject
