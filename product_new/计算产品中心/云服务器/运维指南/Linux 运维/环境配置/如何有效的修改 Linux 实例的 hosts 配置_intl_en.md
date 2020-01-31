@@ -1,11 +1,11 @@
 ## Scenario
 
-From March 1st, 2018, the Linux public image provided by Tencent Cloud has the fully open-source tool Cloud-Init pre-installed, implementing all the initialization operations of an instance through Cloud-Init, making the internal operations of the entire instance more transparent. For more information, see Cloud-Init.
-In **each launch**, Cloud-Init generates a new `/etc/hosts` file according to the `/etc/cloud/templates/hosts.${os_type}.tmpl` template and overwrite the original `/etc/hosts` file of instance. After the user has manually modified the internal `/etc/hosts` configuration of the instance, and restarted the instance, the `/etc/hosts` configuration becomes the original default configuration.
+From March 1, 2018, the Linux public image provided by Tencent Cloud has the open-source tool Cloud-Init pre-installed, and all initialization operations on an instance will be done via Cloud-Init, making the internal operations of the instance more transparent. For more information, see Cloud-Init.
+In **each launch**, Cloud-Init generates a new `/etc/hosts` file according to the `/etc/cloud/templates/hosts.${os_type}.tmpl` template and overwrites the original `/etc/hosts` file of an instance. Hence, after the user manually modifies the internal `/etc/hosts` configuration of the instance and restarts it, the `/etc/hosts` configuration goes back to the original default configuration.
 
-##  Prerequisites
-Tencent Cloud has fixed this problem for instance created after September, 2018, the `/etc/hosts` configuration will not be overwritten.
-For instance created **before September, 2018**, please modify the as instructed below.
+## Prerequisites
+Tencent Cloud has fixed this problem for instances created **after September 2018**, and the `/etc/hosts` configuration will not be overwritten.
+For instance created **before September 2018**, follow the steps below for modification.
 
 ## Steps
 
@@ -21,7 +21,7 @@ touch /var/lib/cloud/instance/sem/config_update_etc_hosts
 ```
 
 ### Solution 2
->This solution takes the CentOS 7.2 operating system as an example.
+>?This solution takes the CentOS 7.2 operating system as an example.
 >
 #### Obtaining `hosts` Template File Path
 1. Log into the Linux CVM.
@@ -34,7 +34,7 @@ The `hosts` template file is as shown in the following figure:
 
 
 #### Modifying the `hosts` Template File
->Taking adding `127.0.0.1 test test` as an example, you can modify the `hosts` template and `/etc/hosts` file as needed.
+>?Taking adding `127.0.0.1 test test` as an example, you can modify the `hosts` template and `/etc/hosts` file as needed.
 >
 1. Execute the following command to modify the `hosts` template file.
 ```
