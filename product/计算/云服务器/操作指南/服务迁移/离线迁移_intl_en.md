@@ -1,6 +1,8 @@
 ## Scenario
 
-Service migration is a tool for easy online and offline migration from local DC to the cloud. With this tool, you can migrate OS, applications, and application data on local computer disks to Tencent Cloud Cloud Virtual Machine (CVM) or Cloud Block Storage (CBS). Offline migration includes offline instance migration and offline data migration.
+Service migration is a tool for easy online and offline migration from local DC to the cloud. With this tool, you can migrate OS, applications, and application data on local computer disks to Tencent Cloud Cloud Virtual Machine (CVM) or Cloud Block Storage (CBS). 
+
+Offline migration includes [offline instance migration](#cvmStep) and [offline data migration](#csmStep).
 
 ## Prerequisites
 
@@ -25,12 +27,13 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 
 ## Directions
 
+<span id="cvmStep"></span>
 ### Offline Instance Migration
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/overview).
 2. In the left sidebar, click **Service Migration** > **[Offline Instance Migration](https://console.cloud.tencent.com/csm/cvm)**, as shown below:
  ![](https://main.qcloudimg.com/raw/616cd42dda6a00f42e9b2b7bba32f2fb.png)
-3. Click **Create**.
+3. Click **Create** > **Instance Migration**.
 4. Prepare for instance migration, confirm that everything is good, and click **Next**.
 5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task, as shown below:
 
@@ -42,11 +45,12 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 4. View the progress of the migration task, as shown below:
 ![](https://main.qcloudimg.com/raw/5e1fba6cab23c4294261f65042581c5c.png)
 
+<span id="csmStep"></span>
 ### Offline Data Migration
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/overview).
 2. In the left sidebar, click **Service Migration** > **[Offline Data Migration](https://console.cloud.tencent.com/csm/cbs?rid=1)**.
-3. Click **Create**.
+3. Click **Create** > **Data Migration**..
 4. Prepare for data migration, confirm that everything is good, and click **Next**.
 5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task, as shown below:
 > - The destination data disk capacity cannot be smaller than the uploaded image file size; otherwise, the task will fail.
@@ -54,4 +58,6 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 ![](https://main.qcloudimg.com/raw/6ec8c8cd4f03bcdc5d8d79efaff5be3d.png)
 
 
+## FAQs
 
+See About [Service migration](https://intl.cloud.tencent.com/document/product/213/32395)
