@@ -1,4 +1,6 @@
-In addition to the [Create Custom Image](/doc/product/213/4942) feature, Tencent Cloud also supports image import feature. You can import an image file of a server system disk on the local machine or another platform into the CVM custom images. After the image is imported, you can use it to create a CVM or reinstall the system for an existing CVM.
+In addition to the [Create Custom Image](https://intl.cloud.tencent.com/zh/document/product/213/4942) feature, Tencent Cloud also supports image import feature. You can import an image file of a server system disk on the local machine or another platform into the CVM custom images. After the image is imported, you can use it to create a CVM or reinstall the system for an existing CVM.
+
+<span id="Preparations"></span>
 ## Preparations for Import
 ### Applying for Permission
 Before using this feature, make sure that you have activated the image import permission. If you need to activate the permission, contact the Business Manager and submit relevant information to the ticket system.
@@ -12,7 +14,7 @@ You need to prepare an image file that meets the import limits in advance.
 | Operating system | <li>The image that is based on CentOS, Ubuntu, Debian, CoreOS, OpenSUSE, and SUSE distributions.<br><li>Both 32-bit and 64-bit systems are supported. |
 | Image format | <li>The image formats such as RAW, VHD, QCOW2 and VMDK are supported.<br><li>Use <code>qemu-img info imageName &#124; grep 'file format'</code> to check the image format. |
 | Image size | <li>Use <code>qemu-img info imageName &#124; grep 'disk size'</code> to check the actual size of the image if it does not exceed 50 GB. <br><li>Use <code>qemu-img info imageName &#124; grep 'virtual size'</code> to check the vsize of the image if it does not exceed 500 GB.<br><li>Note: Check the image size when you import an image, which is subject to the information of the image that is converted to the QCOW2 format. |
-| Network | <li>Tencent Cloud provides the `eth0` network interface for the instance by default.<br><li>Tencent Cloud does not support IPV6.<br><li>You can query the network configuration of an instance through the metadata service in the instance. For more information, please see [Instance Metadata](/document/product/213/4934). |
+| Network | <li>Tencent Cloud provides the `eth0` network interface for the instance by default.<br><li>You can query the network configuration of an instance through the metadata service in the instance. For more information, please see [Instance Metadata](/document/product/213/4934). |
 | Driver | <li>The virtio driver of the visualization platform KVM must be installed in the image. For more information, please see [Import Image to Linux to Check virtio Driver](/document/product/213/9929).<br><li>It is recommended to install cloudinit for the image.<br><li>If cloudinit cannot be installed in the image for some reason, you can configure the instance manually by referring to [Forced Import](/document/product/213/12849). |
 | Limit on Kernel | <li>Native kernel is preferable for an image. Any modifications may cause failure in importing the image into the CVM. |
 
@@ -20,11 +22,11 @@ You need to prepare an image file that meets the import limits in advance.
 
 | Image Attribute | Condition |
 |---------|---------|
-| Operating system | <li>Microsoft Windows Server 2008 R2 (Standard Edition, Datacenter Edition, Enterprise Edition), Microsoft Windows Server 2012 R2 (Standard Edition).<br><li>Both 32-bit and 64-bit systems are supported. |
+| Operating system | <li>Microsoft Windows Server 2008 R2 (Standard Edition, Datacenter Edition, Enterprise Edition), Microsoft Windows Server 2012 R2 (Standard Edition). Microsoft Windows Server 2016 relevant editions<br><li>Both 32-bit and 64-bit systems are supported. |
 | Image format | <li>The image formats such as RAW, VHD, QCOW2 and VMDK are supported. <br><li>Use <code>qemu-img info imageName &#124; grep 'file format'</code> to check the image format. |
 | File system type | <li>Only NTFS file system using the MBR-style partition is supported.<br><li>GPT-style partition is not supported.<br><li>Logical Volume Management (LVM) is not supported. |
 | Image size | <li>Use <code>qemu-img info imageName &#124; grep 'disk size'</code> to check the actual size of the image if it does not exceed 50 GB.<br><li>Use <code>qemu-img info imageName &#124; grep 'virtual size'</code> to check the vsize of the image if it does not exceed 500 GB.<br><li>Note: Check the image size when you import an image, which is subject to the information of the image that is converted to the QCOW2 format. |
-| Network | <li>Tencent Cloud provides the `Local Area Connection` network interface for the instance by default.<br><li>Tencent Cloud does not support IPV6.<br><li>You can query the network configuration of an instance through the metadata service in the instance. For more information, please see [Instance Metadata](/document/product/213/4934). |
+| Network | <li>Tencent Cloud provides the `Local Area Connection` network interface for the instance by default.<br><li>You can query the network configuration of an instance through the metadata service in the instance. For more information, please see [Instance Metadata](/document/product/213/4934). |
 | Driver | <li>The virtio driver of the visualization platform KVM must be installed in the image. If it is not installed in the Windows system by default, you can install the [Windows virtio driver](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe), and then export the local image. |
 | Other | <li>The imported Windows image **does not provide** the [Windows Activation](/doc/product/213/%E6%AD%A3%E7%89%88%E6%BF%80%E6%B4%BB) service. |
 
