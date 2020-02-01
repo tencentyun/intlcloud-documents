@@ -34,28 +34,18 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 2. In the left sidebar, click **Service Migration**
 3. Click **Create** > **Instance Migration**.
 4. Prepare for instance migration, confirm that everything is good, and click **Next**.
-5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task, as shown below:
-
-
+5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task. View the progress of the migration task.
 >- The COS file needs to be set to [public read and private write access](https://intl.cloud.tencent.com/document/product/436/13327).
 > - The system disk capacity of the destination instance cannot be smaller than the uploaded image file size; otherwise, the task will fail.
-> 
-> ![](https://main.qcloudimg.com/raw/1a3ed96a32594c8a4607c9ecd5b3bd08.png)
-4. View the progress of the migration task, as shown below:
-![](https://main.qcloudimg.com/raw/5e1fba6cab23c4294261f65042581c5c.png)
 
 <span id="csmStep"></span>
 ### Offline Data Migration
 
-1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/overview).
-2. In the left sidebar, click **Service Migration**
-3. Click **Create** > **Data Migration**..
-4. Prepare for data migration, confirm that everything is good, and click **Next**.
-5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task, as shown below:
+1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/overview) and click **Service Migration** on the left.
+2. Click **Create** > **Data Migration**..
+3. Prepare for data migration, confirm that everything is good, and click **Next**.
+4. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task.
 > - The destination data disk capacity cannot be smaller than the uploaded image file size; otherwise, the task will fail.
->
-![](https://main.qcloudimg.com/raw/6ec8c8cd4f03bcdc5d8d79efaff5be3d.png)
-
 
 ## FAQs
 
