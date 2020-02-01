@@ -49,4 +49,4 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 
 ## FAQs
 
-See About [Service migration](https://intl.cloud.tencent.com/document/product/213/32395)
+See [About Service migration](https://intl.cloud.tencent.com/document/product/213/32395)
