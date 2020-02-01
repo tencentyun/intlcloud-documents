@@ -31,8 +31,7 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 ### Offline Instance Migration
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/overview).
-2. In the left sidebar, click **Service Migration** > **[Offline Instance Migration](https://console.cloud.tencent.com/csm/cvm)**, as shown below:
- ![](https://main.qcloudimg.com/raw/616cd42dda6a00f42e9b2b7bba32f2fb.png)
+2. In the left sidebar, click **Service Migration**
 3. Click **Create** > **Instance Migration**.
 4. Prepare for instance migration, confirm that everything is good, and click **Next**.
 5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task, as shown below:
@@ -49,7 +48,7 @@ In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), find the im
 ### Offline Data Migration
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/overview).
-2. In the left sidebar, click **Service Migration** > **[Offline Data Migration](https://console.cloud.tencent.com/csm/cbs?rid=1)**.
+2. In the left sidebar, click **Service Migration**
 3. Click **Create** > **Data Migration**..
 4. Prepare for data migration, confirm that everything is good, and click **Next**.
 5. Enter the migration configuration information such as task name, COS link, and destination CVM instance and click **Finish** to create the migration task, as shown below:
