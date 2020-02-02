@@ -1,6 +1,6 @@
 ## Scenario
 
-You can get public IP through console, API, or Instance Metadata.
+You can get the public IP of an instance through console, API, or Instance Metadata.
 
 ## Directions
 ### Obtaining the Address on the Console
