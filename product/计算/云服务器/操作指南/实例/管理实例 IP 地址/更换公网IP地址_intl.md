@@ -4,9 +4,9 @@ This guide introduces how to change public IP. There are two different ways:
 - Change public IP directly
 - First change to Elastic Public IP, and then unbind Elastic Public IP
 
-> **Note:**
+**Note:**
 If you change IP directly:
-- No more than 3 times/day per account per region.
+- At most 3 times/day per account per region.
 - One instance can only change IP once.
 - The previous IP will be released.
 
@@ -24,7 +24,6 @@ If you first change to Elastic Public IP and then unbind it:
 #### Binding an EIP
 1. Log in to Tencent Cloud, enter the CVM [management page](https://console.cloud.tencent.com/cvm/index) of the CVM console, and click **More** -> **IP/ENI** -> **Bind EIP**.
 2. After confirming the information in the pop-up box, click **Confirm**.
-3. The EIP converted successfully is shown as below:
 
 > **Note:**
 > It is recommended to bind the applied EIP with the CVM immediately. Otherwise, you will be billed for the idle EIP.
