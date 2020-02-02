@@ -35,7 +35,7 @@ If you first change to Elastic Public IP and then unbind it:
 #### Unbinding EIP
 1. To convert the EIP back to public network IP, click **More** -> **IP/ENI** -> **Unbind EIP**.
 ![](https://main.qcloudimg.com/raw/15575487bdf6dbb15e9b5c0ff9daa22a.png)
-2. In the pop-up box, select **Assign Public IP for Free after Unbinding**, and click **OK** to unbind the EIP.
+2. In the pop-up box, select **A free public IP will be assigned after unbinding**, and click **OK** to unbind the EIP.
 ![](https://main.qcloudimg.com/raw/c36e36a4ebe4a26449e131b48019e410.png)
 
 #### Releasing EIP
