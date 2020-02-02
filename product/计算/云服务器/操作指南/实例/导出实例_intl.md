@@ -8,5 +8,3 @@ You can export the CVM instance list of a region in the console, and customize t
 - Click the Download All icon.
 ![](https://main.qcloudimg.com/raw/23966592d8f5340c1873d5f7a8fbfad8.png)
 - On the page of customizing fields to be exported, you can select the fields to export. Then, click **OK** to export.
-![](https://main.qcloudimg.com/raw/ac6bab925166311399a1a86764267175.png)
-
