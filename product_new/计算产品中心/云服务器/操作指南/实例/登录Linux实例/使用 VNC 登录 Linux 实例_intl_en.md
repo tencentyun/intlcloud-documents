@@ -1,6 +1,5 @@
 ## Scenario
 
-
 VNC login offered by Tencent allows users to remotely connect to a CVM via a web browser. If a client does not have remote login installed, it cannot be used or logged into via any other means, users can connect to a CVM using VNC login to observe the CVM’s status and do basic CVM management operations using the CVM account.
 
 ## Applicable OS
@@ -21,7 +20,7 @@ If you forgot the password, then [reset instance password](http://intl.cloud.ten
 ## Steps
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
-2. On the instance’s management page, select the Linux CVM that you want to log in to and click **Log In**, as shown below:
+2. On the instance’s management page, select the Linux CVM that you want to log in to and click **Log In** on the right side, as shown below:
 ![](https://main.qcloudimg.com/raw/b7f0594ddecad128707ee720502e10b0.png)
 3. In the **Log into Linux instance** pop-up window, select **Alternative login methods (VNC)** and click **Log In Now**, as shown below.
 ![](https://main.qcloudimg.com/raw/6d4eb31a5c3e127f7214b31db263bc5a.png)
