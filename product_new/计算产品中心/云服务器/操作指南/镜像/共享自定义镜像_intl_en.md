@@ -7,22 +7,21 @@ Note that Tencent Cloud cannot guarantee the integrity or security of the shared
 ### Obtaining Account of the Counterpart 
 To share an image with another user, you need to obtain his/er unique account ID. You can inform him of obtaining your ID in this way: 
 
-1) Log in to Tencent Cloud console, and click the account name in the upper right corner.
+1) Log in to Tencent Cloud console, and click the account name in the upper right corner > **Account Information**.
 
-2) View the account ID in your personal information.
-![](//mc.qcloudimg.com/static/img/dd0614aed805b82e6aa642f375facb4d/image.png)
+2) View the Account ID in Basic Information.
 
 ### Sharing Images on Console
 
 1) Log in to [Tencent Cloud Console](https://console.cloud.tencent.com).
 
-2) Click **CVM** – **Image** in the navigation pane.
+2) Click **Images** in the navigation pane.
 
-3) Click the **Custom Images** tab, and select the custom image you want to share.
+3) Click the **Custom Image** tab, and select the custom image you want to share.
 
 4) Click the **Share** button, enter the unique Tencent Cloud account ID of the counterpart, and click **OK**.
 
-5) Inform him of logging in to [Tencent Cloud Console](https://console.cloud.tencent.com) and select "CVM" - "Image" - "Share Image", to view the image that you has shared with him.
+5) Inform him of logging in to [Tencent Cloud Console](https://console.cloud.tencent.com) and select "CVM" - "Image" - "Shared   Image", to view the image that you has shared with him.
 
 6) To share this image with multiple users, repeat the above steps until you have added all users.
 
