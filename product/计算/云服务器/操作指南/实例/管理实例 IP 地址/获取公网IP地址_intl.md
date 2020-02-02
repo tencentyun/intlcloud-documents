@@ -13,7 +13,7 @@ You can get public IP through console, API, or Instance Metadata.
 
 ### Obtaining the Address Using API
 
-&Nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more information, please see [DescribeInstances API](/doc/product/213/9388).
+For more information, please see [DescribeInstances API](/doc/product/213/9388).
 
 <span id = "jump">  </span>
 
