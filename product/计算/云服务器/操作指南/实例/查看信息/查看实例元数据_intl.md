@@ -9,20 +9,31 @@ Tencent Cloud provides the following meta-data:
 | Data | Description | Version Where It Was Introduced |
 |---------|---------|---------|
 | instance-id | Instance ID | 1.0 |
+| instance-name | Instance name | 1.0 |
 | uuid | Instance ID | 1.0 |
 | local-ipv4 | Instance's private IP | 1.0 |
 | public-ipv4 | Instance's public IP | 1.0 |
 | mac | MAC address of instance's eth0 device | 1.0 |
 | placement/region | Information of the region where the instance resides | Updated on Sept 19, 2017 |
 | placement/zone | Information of the availability zone where the instance resides | Updated on Sept 19, 2017 |
-| network/interfaces/macs/<font style="color:red">mac</font>/mac | Device address of the instance's network interface | 1.0 |
-| network/interfaces/macs/<font style="color:red">mac</font>/primary-local-ipv4 | Primary private IP of instance's network interface | 1.0 |
-| network/interfaces/macs/<font style="color:red">mac</font>/public-ipv4s | Public IP of the instance's network interface | 1.0 |
-| network/interfaces/macs/<font style="color:red">mac</font>/local-ipv4s/<font style="color:red">local-ipv4</font>/gateway | Gateway address of the instance's network interface | 1.0 |
-| network/interfaces/macs/<font style="color:red">mac</font>/local-ipv4s/<font style="color:red">local-ipv4</font>/local-ipv4 | Private IP of the instance's network interface | 1.0 |
-| network/interfaces/macs/<font style="color:red">mac</font>/local-ipv4s/<font style="color:red">local-ipv4</font>/public-ipv4 | Public IP of the instance's network interface | 1.0 |
-| network/interfaces/macs/<font style="color:red">mac</font>/local-ipv4s/<font style="color:red">local-ipv4</font>/public-ipv4-mode | Public network mode of the instance's network interface | 1.0 |
-| network/interfaces/macs/<font style="color:red">mac</font>/local-ipv4s/<font style="color:red">local-ipv4</font>/subnet-mask | Subnet mask of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/mac | Device address of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/primary-local-ipv4 | Primary private IP of instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/public-ipv4s | Public IP of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/vpc-id | VPC ID of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/subnet-id | Subnet ID of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/local-ipv4s/${local-ipv4}/gateway | Gateway address of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/local-ipv4s/${local-ipv4}/local-ipv4 | Private IP of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/local-ipv4s/${local-ipv4}/public-ipv4 | Public IP of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/local-ipv4s/${local-ipv4}/public-ipv4-mode | Public network mode of the instance's network interface | 1.0 |
+| network/interfaces/macs/${mac}/local-ipv4s/${local-ipv4}/subnet-mask | Subnet mask of the instance's network interface | 1.0 |
+| payment/charge-type | Charge type | Updated on Sept 19, 2017 |
+| payment/create-time | Create time | Updated on Sept 19, 2017 |
+| payment/termination-time | Termination time | Updated on Sept 19, 2017 |
+| app-id | App ID of the account | Updated on Sept 19, 2017 |
+| as-group-id | AS group ID | Updated on Sept 19, 2017 |
+| /meta-data/instance/instance-type | Instance type | Updated on Sept 19, 2017 |
+| /instance/image-id | Image ID | Updated on Sept 19, 2017 |
+| /instance/security-group | Security group | Updated on Sept 19, 2017 |
 
 > Fields <font style="color:red">mac</font> and <font style="color:red">local-ipv4</font> in red in the above table indicate the device address and private IP of the network interface specified for the instance, respectively.
 > 
@@ -116,8 +127,12 @@ The following example shows how to obtain the information of specified ENI.
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/network/interfaces/macs/52:54:00:BF:B3:51/
 local-ipv4s/
 mac
+vpc-id
+subnet-id
+owner-id
 primary-local-ipv4
 public-ipv4s
+local-ipv4s/
 ```
 
 The following example shows how to obtain the list of private IPs bound to the specified ENI. If the ENI is bound with multiple private IPs, multiple lines of data are returned.
