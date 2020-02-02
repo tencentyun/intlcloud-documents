@@ -102,11 +102,11 @@
 
 | Limits on | Description |
 | --- |  --- |
-| Elastic cloud disk capability | Since May,2018, all the data disk bought with instances are all elastic cloud disks. You can unmount them from your CVM and get them remounted. This capability is available in all [Availability Zones](https://intl.cloud.tencent.com/doc/api/229/1286). |
+| Elastic cloud disk capability | Since May 2018, all the data disks bought with instances are all elastic cloud disks. You can unmount them from your CVM and get them remounted. This capability is available in all [Availability Zones](https://intl.cloud.tencent.com/doc/api/229/1286). |
 | Cloud disk performance | The I/O performance described in the product documentation. For example, a 1 TB SSD cloud disk can deliver up to 24,000 random IOPS. This means the 24,000 IOPS is achievable for both read and write operations. The I/O performances of 4 KB/8 KB can both reach this number, while the IO of 16 KB cannot reach 24,000 IOPS because its throughput has already reached the limit of 260 MB/s. |
 | Maximum number of cloud disks per instance | 20 at most |
-| Number of snapshots in a single region | 64 + disks in the region * 64 |
-| Mounting elastic cloud storage to CVM | The CVM and the elastic cloud storage must be in the same availability zone. |
+| Number of snapshots in a single region | 64 + count of disks in the region * 64 |
+| Mounting elastic cloud storage to CVM | The instance and the elastic cloud storage must be in the same availability zone. |
 | Snapshot rollback | Snapshot data can only be rolled back to the cloud disk from which the snapshot was created. |
 | Allowed disk type for creating elastic cloud disks using snapshots | You can only use data disk snapshots to create new elastic cloud disks. |
 | Allowed disk size for creating elastic cloud disks using snapshots | The size of the created elastic cloud disk must be bigger or equal to the size of the cloud disk from which the snapshot was created. |
@@ -140,15 +140,3 @@
 | Number of routing policies per routing table |  100	 |
 | Number of associated routing tables per subnet |  1 |
 | Number of HAVIP per VPC | 10 |
-
-## Direct Connect Limits
-| Resource | Limit | Description |
-|------|-----|-----|
-| Physical Direct Connect/User | 10 |  |
-| Direct Connect tunnel/Physical Direct Connect | 10  |
-| Direct Connect gateway (NAT supported)/VPC | 1  |
-| Direct Connect gateway (NAT not supported)/VPC | 1  |
-| Local IP translation/Direct Connect gateway | 100 | You can apply for higher quota. |
-| Peer IP translation/Direct Connect gateway | 100 | You can apply for higher quota. |
-| Number of IPs for local source IP port translation/Direct Connect gateway | 20 | You can apply for higher quota. |
-| Local destination IP port translation/Direct Connect gateway | 100 | You can apply for higher quota. |
