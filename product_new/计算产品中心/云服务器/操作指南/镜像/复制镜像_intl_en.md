@@ -1,3 +1,5 @@
+## Overview
+
 **Cross-region Copying** allows you to quickly deploy the same CVM instances in different regions. Deploying the same CVM instance in different regions using image synchronization is a reliable way to improve application robustness.
 
 ## Synchronizing images to different regions on Console
@@ -5,7 +7,7 @@
 
 2) Click **Image** in the navigation pane.
 
-3) Check all images you want to copy, click the **Cross-region Copying** at the top.
+3) Check the image you want to copy, click **More** > **Cross-region copying**.
 
 4) Select the destination region, and click **OK**.
 
