@@ -13,7 +13,7 @@ Tencent Cloud provides the following two options for you to view the monitoring 
 ![](https://main.qcloudimg.com/raw/a8935276066a8d37c3cb2d6a4c424844.png)
 4. In the monitoring information page, you can view the CVM instance's monitoring information such as CPU, memory, bandwidth of private network/public network, and disk usage.
 ![](https://main.qcloudimg.com/raw/9bb7484b41286d01ed34f7b87269a533.png)
-5. You can view the monitoring information of public network traffic in the [Traffic Monitor](https://console.cloud.tencent.com/monitor/flow) page.
+5. You can view the monitoring information of public network traffic in the [Traffic Monitoring](https://console.cloud.tencent.com/monitor/flow) page.
 
 ## Viewing Instance Monitoring Information in CVM Console
 
@@ -22,5 +22,5 @@ Tencent Cloud provides the following two options for you to view the monitoring 
 3. Click an instance ID to enter the instance details page, and then click **Monitoring**.
 4. In the monitoring information page, you can view the CVM instance's monitoring information such as CPU, memory, bandwidth of private network/public network, and disk usage.
 ![](https://main.qcloudimg.com/raw/305d8409d941ffaddfd5c4ca12b3d2c9.png)
-5. You can view the monitoring information of public network traffic in the [Traffic Monitor](https://console.cloud.tencent.com/monitor/flow) page.
+5. You can view the monitoring information of public network traffic in the [Traffic Monitoring](https://console.cloud.tencent.com/monitor/flow) page.
 
