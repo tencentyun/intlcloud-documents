@@ -35,8 +35,6 @@ Tencent Cloud provides the following meta-data:
 | /instance/image-id | Image ID | Updated on Sept 19, 2017 |
 | /instance/security-group | Security group | Updated on Sept 19, 2017 |
 
-> Fields <font style="color:red">mac</font> and <font style="color:red">local-ipv4</font> in red in the above table indicate the device address and private IP of the network interface specified for the instance, respectively.
-> 
 > The requested target URL is case sensitive. > Construct the target URL address of new request in strict accordance with the format of the returned result of request.
 >
 > In the current version, the returned data of placement has been changed. To use the data in the previous version, specify the previous version path or leave the version path empty to access the data of version 1.0. For more information about the returned data of placement, please see [Region and Availability Zone](/document/product/213/6091).
