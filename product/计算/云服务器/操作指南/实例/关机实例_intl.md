@@ -11,11 +11,11 @@ The instance can be shut down when you need to stop the instance service or modi
 
 ## Shutdown Instance via the Console
  1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
- 2. Shut down an instance: Select the instance to be shut down, and click **Shutdown** at the top of the list or click **More** -> **CVM Status** -> **Shutdown** in the Operation column on the right side.
+ 2. Shut down an instance: Select the instance to be shut down, and click **Shutdown** at the top of the list or click **More** -> **Instance Status** -> **Shutdown** in the Operation column on the right side.
  3. Restart an instance: Select all the instance to be shut down, and click **Shutdown** at the top of the list. Instances can be shut down in batches. Reasons are given for instances that cannot be shut down.
 
 ## Shutdown instance via API
-For more information, please see the [API StopInstances](/doc/product/213/9383).
+For more information, please see the [API StopInstances](https://intl.cloud.tencent.com/document/product/213/33235).
 
 ## Modify a Instance that Has Been Shut Down
 You cannot modify the following instance attributes until the instance has been shut down.
