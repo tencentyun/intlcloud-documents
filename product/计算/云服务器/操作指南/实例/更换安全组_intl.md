@@ -12,7 +12,7 @@ Security group is a stateful virtual firewall for filtering packets and is used 
 - Log in to [CVM Console](https://console.cloud.tencent.com/cvm/index), and select the instance to be assigned to the new security group.
 - Click **More** on the right, and then click **Configure Security Group**.
 - Enter the security group configuration page, and select the name of the new security group (multiple names can be selected), and click **Confirm**.
-- Another way is to select the instance and click **More actions** > **Add to security group** to get into the configuration page.
+- Another way is to select the instance and click **More actions** on the top > **Add to security group** to get into the configuration page.
 
 >**Note:**
 >You can only bind a security group in the same project and region as CVM.
