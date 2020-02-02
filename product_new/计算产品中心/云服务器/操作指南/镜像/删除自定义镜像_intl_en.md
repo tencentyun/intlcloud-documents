@@ -7,9 +7,9 @@ After using the custom image, you can delete it. When you delete a custom image,
 
 1) Open [Tencent Cloud Console](https://console.cloud.tencent.com).
 
-2) Click **CVM – Image** in the navigation pane.
+2) Click **CVM – Images** in the navigation pane.
 
-3) Click the "Custom Images" tab, and select the custom image you want to share in the list.
+3) Click the "Custom Image" tab, and select the custom image you want to share in the list.
 
 4) Click the "Delete" button and confirm the operation, to delete all selected custom images. In case of failed deletion, the reasons will be prompted above the image. 
 
