@@ -42,7 +42,6 @@ Tencent Cloud provides Yum download source. You can quickly install software thr
 3. Specify a name for the session in "Saved Sessions" field, and click "Save" to save the session configuration.
 ![putty1](//mc.qcloudimg.com/static/img/a7f57ac399e06522be67de3cf9d264e0/image.png)
 4. After the configuration is completed, click "Open", and a prompt window appears for certificate confirmation. Select "Yes".
-![putty2](//mc.qcloudimg.com/static/img/b7883110e977fb0d94310379a152c5d3/image.png)
 In the pop-up login interface, enter the CVM's user name and password to connect to the CVM for the subsequent operations.
 ![putty3](//mc.qcloudimg.com/static/img/b632cf3e122832193a77afe04c93fbc1/image.png)
 
