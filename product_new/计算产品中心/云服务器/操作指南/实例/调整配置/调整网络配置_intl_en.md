@@ -17,7 +17,7 @@ The options vary with different payment methods and CVM configurations. For more
 ## Procedure
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index), select the instance for which you want to change the network configuration, and then click **More** -> **Resource Adjustment** -> **Adjust Network**.
 
-2. In the **Adjust network** popup page, you can change the billing method and bandwidth cap.
+2. In the **Adjust Network** popup page, you can change the billing method and bandwidth cap.
 
 3. Click **OK**.
 
