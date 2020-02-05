@@ -1,8 +1,10 @@
-By default, the CVM console displays the CVMs for all projects in the current region. To help you quickly search CVMs in the current region, Tencent Cloud provides CVM search feature. You can filter out CVMs by such resource attributes as project, CVM billing method, CVM type, availability zone, IP, CVM ID, and CVM name.
+## Scenario
 
-## Procedure
+By default, the CVM console displays the instances for all projects in the current region. To help you quickly search instances in the current region, Tencent Cloud provides CVM search feature. You can filter out instances by such resource attributes as project, instance billing method, instance type, availability zone, IP, instance ID, and instance name.
 
-1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index), enter the keyword in the search box, and then click the search icon to query the CVMs that match the search criteria.
+## Directions
+
+1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index), enter the keyword in the search text box, and then click the search icon to query the CVMs that match the search conditions. Or you can choose a specific dimension for searching after clicking the search icon.
 ![](https://main.qcloudimg.com/raw/4eac2d19630d80b29ea2278636daee3f.png)
 
 2. You can click **Help** to view the syntax of search examples.
