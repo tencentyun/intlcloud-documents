@@ -2,45 +2,45 @@
 1. 登录 [全球应用加速控制台](https://console.cloud.tencent.com/gaap)。
 2. 单击【源站管理】>【新增】，设置名称，填写源站 IP 或域名，（可选）添加标签。可将所有要加速访问的服务器信息添加到【源站管理】，且支持一次性填写多个源站。
 3. 单击【确定】保存。
-![](https://main.qcloudimg.com/raw/7195bbe54cb5126fdee8dfc1b4180e8e.png)
+![](https://main.qcloudimg.com/raw/700758b2be655f701f88ddc2f72857fc.png)
 4.（可选）给源站添加别名，方便后续使用：单击源站名字旁边的【编辑】图标，填写名字，单击【确认】保存。
-![](https://main.qcloudimg.com/raw/d6f8bc075b8ce9a3ccac4074ce4185c6.png)
+![](https://main.qcloudimg.com/raw/c72f5506cc15b41a93fb8ce64767108f.png)
 
 ## 步骤2：创建加速通道
 1. 单击【接入管理】>【新增】。
-![](https://main.qcloudimg.com/raw/c743d637c6111ddb61a4681f503a801e.png)
+![](https://main.qcloudimg.com/raw/5f424ce7a93036ad42f1adb174bdffbc.png)
 2. 在“新增通道”弹窗中，填写加速通道信息。
  - 加速区域：客户端所在的区域。
  - 源站区域：目标服务器所在区域。
  - 带宽上限：通道的带宽上限。
  - 并发上限：通道可以支持的最大并发连接数。
- ![](https://main.qcloudimg.com/raw/1a6da52af4d11436605244e55c645779.png)
+ ![](https://main.qcloudimg.com/raw/e2c839706090fbce1d01d7ecae40310c.png)
 3. 单击【确定】，成功创建后可以看到通道信息，其中 “VIP” 或“域名”作为加速通道的接入地址。
- ![](https://main.qcloudimg.com/raw/c693b5d390392d93a2e32ff0a50d1fb9.png)
+ ![](https://main.qcloudimg.com/raw/f398e22ba4e21ac9055b30141c049a7e.png)
 4. 单击通道的【ID/通道名】进入下一级页面。
 
 ## 步骤3：创建监听器
 1. 选择【TCP/UDP 监听器管理】标签页，单击【新建】，在弹出的向导中添加转发策略。
 2. 配置监听器信息（以 TCP 为例），用于设置加速的协议和端口映射关系。可一次增加多条端口的映射，但端口不能重复。
  - 源端口：加速通道 VIP 的访问端口。
-![](https://main.qcloudimg.com/raw/a7de8078c5aebaf0afabc1456adb0f58.png)
+![](https://main.qcloudimg.com/raw/e81e6cf664c72dfd4dea36714e0e5197.png)
 3. 配置源站处理策略：即同一个监听器绑定多个源站的情况下，选择源站之间的调度策略，如下图所示：
-![](https://mc.qcloudimg.com/static/img/a3b7dc951b25250c06ce5695337aba6a/image.png)
+![](https://main.qcloudimg.com/raw/74a7f1b78cf5436fd9ff439c96dee5b0.png)
 4. 配置健康检查机制。
 如果是 TCP 协议，需要配置健康检查机制，在“启用健康检查”选中情况下，设置相应时长和监控间隔。
  - 响应超时时间：指响应的超时时间。
  - 健康检查间隔：指前后两次健康检查的时间间隔，当健康检查判断源站异常时，该源站将不再转发数据包，直至该源站健康检查状态恢复正常。
-![](https://mc.qcloudimg.com/static/img/b90d35f384f2c9cb0390ec61c77e8c31/image.png)
+![](https://main.qcloudimg.com/raw/17f17a494f535cfb20c7a6d6e1f77945.png)
 
 ## 步骤4：绑定源站
 1. 选中监听器，单击其操作栏中的【源站绑定】。
 2. 将左侧列表中要绑定的所有源站添加到右侧区域。
 此处源站端口：指源站的访问端口。
-![](https://main.qcloudimg.com/raw/0515d362fe8c44f5106d80ac9010adc5.png)
+![](https://main.qcloudimg.com/raw/7fd67c2a72a2c57d2c626596ce74cf4d.png)
 
 ## 步骤5：使用加速通道
 上述步骤完成后，等待监听器的状态变为“正常”，即可使用通道进行加速。
-![](https://mc.qcloudimg.com/static/img/666877d9771c4fff446696e0b5f54798/image.png)
+![](https://main.qcloudimg.com/raw/27c637a5321fde96212d7f48dc4a57de.png)
 1. **接入方法**
  - 方法 1：客户端访问 VIP+端口，即可实现加速客户端到目标服务器的加速。
  - 方法 2：客户端访问加速通道域名+端口，即可实现加速客户端到目标服务器的加速。
@@ -50,10 +50,10 @@
  - 客户端到 VIP：公网。
  - VIP 到源站区域转发服务器：专线（内网）。
  - 源站区域转发服务器至源站：公网。
-![](https://main.qcloudimg.com/raw/560c4da4614a71a2bcc8255335fc28b4.png)
+![](https://main.qcloudimg.com/raw/263f007ed5775c3a81ad9ba03a2f2cb6.png)
 3. **转发服务器 IP 说明**
 若源站设置了安全组规则，需要先单击通道的【ID/通道名】，在【通道信息】标签页中查询“转发 IP”，在源站上允许这些 IP 的访问，才能实现加速，如下图所示：
-![](https://main.qcloudimg.com/raw/7d67f56766a3f736bbb1c0d2d56199f5.png)
->?如需要获取客户端的真实 IP，请参见 [服务端获取客户端真实 IP（仅针对 TCP 协议）](/document/product/608/14429)。
+![](https://main.qcloudimg.com/raw/57f70164fc7b34b948a79740d035dfd4.png)
+>如需要获取客户端的真实 IP，请参见 [服务端获取客户端真实 IP（仅针对 TCP 协议）](https://intl.cloud.tencent.com/document/product/608/14429)。
 4. **查看统计数据**
-可在统计数据页面查看当前和历史的统计数据。更多操作说明，请参见 [全球应用加速操作指南](https://cloud.tencent.com/document/product/608/13767)。
+可在统计数据页面查看当前和历史的统计数据。更多操作说明，请参见 [统计数据](https://intl.cloud.tencent.com/document/product/608/14425)。

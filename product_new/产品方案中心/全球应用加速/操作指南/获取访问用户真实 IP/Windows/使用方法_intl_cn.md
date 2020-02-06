@@ -10,7 +10,7 @@ bool InitUpToaFetcher(char *ncard_ip_str, char *svr_ip_str, u_short svr_port[], 
 ```
  2. 入参说明
     - ncard_ip_str：	用于识别网络接口的 IP 地址字符串，例如：10.75.132.39，该网卡为与客户端通信的网卡。
-- svr_ip_str：服务器的 IP 地址字符串，例如：10.75.132.39，用于过滤 TCP 流。
+    - svr_ip_str：服务器的 IP 地址字符串，例如：10.75.132.39，用于过滤 TCP 流。
     - svr_port：服务器的端口列表，用于过滤 TCP 流，最多可以填三个端口，svr_port 和 port_range_ptr 至少设置其中一个。
     - svr_port_num：服务器的端口个数。
     - port_range_ptr：服务器的端口范围数组指针，其中元素为指向一个字符串的指针，端口范围字符串格式：10001-10005，用于过滤 TCP 流，最多填三个范围，svr_port 和 port_range_ptr 至少设置其中一个。

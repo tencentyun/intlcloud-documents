@@ -11,7 +11,7 @@
 ### 策略关联用户
 1. 在左侧菜单中，单击【策略】，进入管理页面。
 2. 在搜索栏中，检索“GAAP”，找到2条结果。选择策略权限，单击【关联用户/组】。
-![1](https://main.qcloudimg.com/raw/79d580ecc933ca7b3b7dc2ef14c7eccf.png)
+![1](https://main.qcloudimg.com/raw/06fc88f33dbc935ca2b65948fb3343e3.png)
 3. 勾选需要授权的用户，单击【确定】，即授权成功。
 ![](https://main.qcloudimg.com/raw/cc41715cfe649f76ff15ae49bc3485a6.png)
 
@@ -20,7 +20,7 @@
 2. 在列表中，找到需要授权的用户所在行，单击操作栏中的【授权】。
 ![](https://main.qcloudimg.com/raw/64eccc12058f227c789a4153d92fddc6.png)
 3. 在关联列表中，检索“GAAP”，勾选策略权限，单击【确定】，即授权成功。
-![](https://main.qcloudimg.com/raw/bbe6329ebf47fe0c3f64714716ef351d.png)
+![](https://main.qcloudimg.com/raw/7a602d2eefa9ed3ba69ca72df39616a7.png)
 
 ### 查看和解除权限
 授权成功的用户，可在 [用户列表](https://console.cloud.tencent.com/cam) 中，单击用户名称，查看权限、解除权限。

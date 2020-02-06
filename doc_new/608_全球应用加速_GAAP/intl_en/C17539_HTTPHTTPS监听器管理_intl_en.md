@@ -15,25 +15,25 @@ Open **HTTP/HTTPS Listener Management** tab, click **Settings** in the **Operati
 ### Adding a Rule</span>
 In the **HTTP/HTTPS Listener Management** page, click **Add a rule** to add the domain name and corresponding URL. You can add up to 20 URL rules under the same domain name, as shown below:
 1. Basic configuration
-![](https://main.qcloudimg.com/raw/b3cb374125b39dfb3584b241f4e96af4.png)
+![](https://main.qcloudimg.com/raw/fcf56bdf702b67b81990cc4dedd89f0d.png)
 **Domain name**: Exact match is required. It supports `a-z`, `0-9`, `_`, `.`, `–`, and can contain 3-80 characters. 
 **URL**: It supports `a-z`, `A-Z`, `0-9`, `_`, `.`, `-`, `/`, and can contain 1-80 characters.
 **Origin type**: Two types of origin servers are supported: IP and domain name. For the differences between the two types, see the description of TCP/UDP listener.
 
 2. Processing policy for the origin server
 Set the forwarding rules of the origin server. It supports **RR**, **Weighted RR**, and **Least Connections**. For a description of the specific policy, see the description of TCP/UDP listener.
-![](https://main.qcloudimg.com/raw/292d45db29f3ee3c991dacf5860e3868.png)
+![](https://main.qcloudimg.com/raw/bb6f7d4cf05d2fb6e623c5ed28904dbc.png)
 3. Origin server health check mechanism
 The monitoring check mechanism can be enabled. For the current domain name, an independent check URL can be set. The request mode supports HEAD and GET. The check status code supports http_1xx, http_2xx, http_3xx, http_4xx, and http_5xx, and one or multiple selections can be made. When the specified status code is detected, the listener considers that the backend origin server is in normal status. If no status code is detected, the listener considers that the backend origin server is abnormal.
-![](https://main.qcloudimg.com/raw/576a01ceb4a8eb66a31ca5c9506c6218.png)
+![](https://main.qcloudimg.com/raw/20d08ec6efd43a94734b6a408afc2d10.png)
 
 ### Modifying a Domain Name
 In the **HTTP/HTTPS Listener Management** page, click **Modify Domain Name** from the operation column to modify the domain name, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/4a87419818656d855b2d431933cbff9e.png)
+![](https://main.qcloudimg.com/raw/c61efa495d61009bc93ebff1a8891de5.png)
 
 ### Deleting a Domain Name
 When deleting a domain name, if a rule under the domain name is bound with the origin server, you need to check **Force deletion of rules bound with origin servers**.
-![](https://main.qcloudimg.com/raw/50987ba13431db15c467acfed88a3319.png)
+![](https://main.qcloudimg.com/raw/3a7a088320acb13f1c822b1ec34c9ba1.png)
 
 ### Modifying Rules
 See the preceding [Adding a Rule](#Adding a Rule) section. The main difference is that the domain name and origin server type cannot be modified.
@@ -43,11 +43,11 @@ For details, see [Binding an Origin Server](https://cloud.tencent.com/document/p
 
 ### Deleting Rules
 If there is an origin server bound under the rule, first check **Force deletion of rules bound with origin servers**.
-![](https://main.qcloudimg.com/raw/f0db28068f2f1d231af4f47db9ce124d.png)
+![](https://main.qcloudimg.com/raw/2fd560217ca2f53847033d501eb90e1a.png)
 
 ## Deleting an HTTP/HTTPS Listener
 Open **HTTP/HTTPS Listener Management** tab, click **Delete** in the **Operation** column to delete a specified listener. If the listener is bound with an origin server, you need to check **Allow force deletion of listeners bound with origin servers** to delete it. After deletion, acceleration service for the listener’s port stops.
-![](https://main.qcloudimg.com/raw/2bd55dcafc2ffeb68dc70b937eb5e72a.png)
+![](https://main.qcloudimg.com/raw/5df2bff2fb4f07ce2631824792429147.png)
 
 ## Modifying an HTTP/HTTPS Listener
 On the **HTTP/HTTPS Listener Management** tab, click **Modify** to modify the listener information.

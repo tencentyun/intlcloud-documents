@@ -2,11 +2,11 @@
 ## 数据总览
 ### 选择通道
 登录 [全球应用加速控制台](https://console.cloud.tencent.com/gaap)，单击【统计数据】> 【数据总览】，在“数据总览“页面中，用户可选择任意一个项目中通道进行统计数据查看。
-![](https://main.qcloudimg.com/raw/bbb273462179e36ad855a8cd0401345e.png)
+![](https://main.qcloudimg.com/raw/ee8855b279a91831d35c09f12633b4c0.png)
 <span id ="选择统计周期">
 ### 选择统计周期</span>
 提供5个常用统计周期，可直接选择：今天、昨天、近 7天、近15天、近30天，同时也可以指定具体的起止时间段，如下图所示：
-![](https://main.qcloudimg.com/raw/47381bba3149cb498e9aa65bfc89d4d4.png)
+![](https://main.qcloudimg.com/raw/33c0e700386d4080509118db2cbc6b6a.png)
 <span id="选择数据类型">
 ### 选择数据类型</span>
 支持通道的数据类型有：带宽（出带宽、入带宽）、包量（出包量、入包量）、时延、丢包率、并发连接数。
@@ -14,16 +14,16 @@
 
 ### 数据对比
 用户可以选择一个历史数据，通过勾选不同通道进行对比，历史数据的统计周期与当前数据的统计周期一致。
-![](https://main.qcloudimg.com/raw/4e9f376477c93e86a7ddd212f58628d5.png)
+![](https://main.qcloudimg.com/raw/6adaaa7336bbc7479b8c5df7c21c3782.png)
 
 ## 通道监控
 ### 选择通道
 登录 [全球应用加速控制台](https://console.cloud.tencent.com/gaap)，单击【统计数据】> 【通道监测】，在“通道监测”页面中，选择项目，单通道/通道组，通道名称。默认情况下，给出的是指定通道下全部监听器合并后的统计数据，下图中红框位置可选择不同的通道：
-![](https://main.qcloudimg.com/raw/034dd9f940bfa78029b62d7b62837851.png)
+![](https://main.qcloudimg.com/raw/b957ff2db257f55cc4369d7c9f08f88f.png)
 
 ### 选择监听器
 在【统计数据】页面下，指定项目、通道的前提下，可以选择任意的监听器进行统计数据查看，下图中红框位置可选择不同的监听器：
-![](https://main.qcloudimg.com/raw/51116669169631383c24106ce0bcae99.png)
+![](https://main.qcloudimg.com/raw/849c21e874f488c623acc245c928a6c4.png)
 
 ### 选择统计周期
 参考上文 [选择统计周期](#选择统计周期)。
@@ -33,4 +33,4 @@
 
 ### 数据对比
 可以选择一个历史数据，与当前的数据进行对比，历史数据的统计周期与当前数据的统计周期一致。
-![](https://main.qcloudimg.com/raw/c54c1a5d4d5f827ad56fa3f705dbd487.png)
+![](https://main.qcloudimg.com/raw/a68dcaf4e4735f48304fffb1e045ab67.png)
