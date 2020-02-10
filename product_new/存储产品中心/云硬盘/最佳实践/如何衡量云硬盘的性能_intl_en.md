@@ -10,7 +10,7 @@ FIO is a tool for testing disk performance. It is used to perform stress test an
 We recommend that you use libaio’s I/O engine to perform the test. Please install FIO and libaio.
 >
 - **To avoid damaging important files in the system, do not perform FIO testing on the system disk.**
-- ** To avoid data corruption caused by corruption of the metadata of the underlying file system, do not perform the test on the business data disk. **
+- **To avoid data corruption caused by corruption of the metadata of the underlying file system, do not perform the test on the business data disk.**
 - Ensure the `/etc/fstab` file configuration items **do not contain** the mounting configuration of the disk to be tested. Otherwise, CVM may fail to launch.
 
 ## Recommended test objects
