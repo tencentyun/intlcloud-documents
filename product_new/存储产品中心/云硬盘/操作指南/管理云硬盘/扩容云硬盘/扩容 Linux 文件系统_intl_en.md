@@ -5,9 +5,9 @@ After [expanding a cloud disk](https://intl.cloud.tencent.com/document/product/3
 
 
 ##  Prerequisites
->! Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before performing the operation.
+> Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before performing the operation.
 >
-- You have [expanded the cloud disk capacity](https://cloud.tencent.com/document/product/362/5747).
+- You have [expanded the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/5747).
 - You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/5745) to a Linux CVM and created a file system.
 - You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5436) the Linux CVM on which you want to expand partitions and the file system.
 
@@ -23,7 +23,7 @@ fdisk -l
 ![](https://main.qcloudimg.com/raw/5ff70adb58a223d32d334470c5b29e0e.png)
 ![](https://main.qcloudimg.com/raw/ce19715fc8494a9735b714d86f0cccfa.png)
  - If the result is as shown in the following figure (which may vary according to the operating system), the MBR partition format is used.
- >! The maximum disk capacity supported by MBR partition format is 2 TB. If your disk partition is in MBR format, and you need to expand its capacity to more than 2 TB, we recommend that you create and mount a new data disk, select the GPT partition style, and copy the data from the MBR disk to the new disk. For Linux operating system, if the disk partition format is GPT, the fdisk partition tool can no longer be used, and the parted tool must be used.
+ > The maximum disk capacity supported by MBR partition format is 2 TB. If your disk partition is in MBR format, and you need to expand its capacity to more than 2 TB, we recommend that you create and mount a new data disk, select the GPT partition style, and copy the data from the MBR disk to the new disk. For Linux operating system, if the disk partition format is GPT, the fdisk partition tool can no longer be used, and the parted tool must be used.
  >
 ![](https://main.qcloudimg.com/raw/0e336cd3354c098cf5e70d0672e6f625.png)
 2. Follow [Step 1](#fdisk) to view the cloud disk partition format, and select the corresponding operations guide.
@@ -111,7 +111,7 @@ If the mounting point is `/data`, run the following command:
 ```
 umount /data
 ```
->? Unmount the file systems from all partitions on the cloud disk, and perform the operations in [Step 4](#step4) again. You can run the following command again to confirm that the file systems have been unmounted from all partitions on the cloud disk:
+> Unmount the file systems from all partitions on the cloud disk, and perform the operations in [Step 4](#step4) again. You can run the following command again to confirm that the file systems have been unmounted from all partitions on the cloud disk:
 ```
 mount | grep '/dev/vdb'
 ```
@@ -130,7 +130,7 @@ parted '/dev/vdb'
 unit s
 ```
 6. Run the following command to view the partition information and record the `Start` value of the existing partition:
->! After a partition is deleted and a new one is created, the `Start` value must remain unchanged. Otherwise, data may be lost.
+> After a partition is deleted and a new one is created, the `Start` value must remain unchanged. Otherwise, data may be lost.
 >
 ```
 print
@@ -433,7 +433,7 @@ df -h
 ```
 The following figure shows the command output when the mounting is successful, that is, you can see the data disk.
 ![](//mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
->? To allow the CVM to automatically mount a data disk upon restart or start, perform [Step 10](#AddNewPartINFOstep10) and [Step 11](AddNewPartINFOstep11) to add the new partition information to `/etc/fstab`.
+> To allow the CVM to automatically mount a data disk upon restart or start, perform [Step 10](#AddNewPartINFOstep10) and [Step 11](AddNewPartINFOstep11) to add the new partition information to `/etc/fstab`.
 10. <span id="AddNewPartINFOstep10"></span>Run the following command to add information:
 ```
 echo '/dev/xvdc2 /data1 ext3 defaults 0 0' >> /etc/fstab
