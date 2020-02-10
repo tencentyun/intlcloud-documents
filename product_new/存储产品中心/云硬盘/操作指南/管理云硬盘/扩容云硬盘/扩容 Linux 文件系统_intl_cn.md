@@ -5,7 +5,7 @@
 
 
 ## 前提条件
->!扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://cloud.tencent.com/document/product/362/5755) 备份数据。
+>!扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 备份数据。
 >
 - 已 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747)  空间。
 - 该云硬盘已 [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 到 Linux 云服务器并已创建文件系统。
@@ -446,4 +446,4 @@ cat /etc/fstab
 ![](//mccdn.qcloud.com/static/img/f0b5c14bf08fd3629ddf6d9b1ae01ffc/image.png)
 
 ## 相关操作
-[扩展分区及文件系统（Windows）](https://cloud.tencent.com/document/product/362/6737)
+[扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)

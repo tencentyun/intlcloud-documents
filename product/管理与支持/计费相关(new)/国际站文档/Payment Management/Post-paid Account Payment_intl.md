@@ -10,7 +10,7 @@ There are three ways for you to make a payment in your post-paid billing account
 
   A. After logging in to Tencent Cloud, you can click "**Pay Now**" on the "**Billing Center**" page to pay off the outstanding balance in your account if there are funds in your account, but you cannot make a payment here if the outstanding balance is equal to 0.
 
-  ![](https://main.qcloudimg.com/raw/0491c3bc7e856b9701702d5391448687.png)
+  ![](https://main.qcloudimg.com/raw/1792ffd64de8c6395f87d517980dfd7e.png)
 
   B. The other self-help option is that you make a payment with the credit card you have added in the account after processing to the "**Payment**" page. If the payment amount is larger than the amount you currently owe, the surplus amount will be added to the available credit which cannot be withdrawn.
 
