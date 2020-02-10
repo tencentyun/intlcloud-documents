@@ -17,7 +17,3 @@ You can modify the recipients and how they receive the alarm messages according 
  ![](https://main.qcloudimg.com/raw/dd5b78ffe4d40c73137f1ba81c7a2583.png)
 4. Select recipients and receiving methods, and then click **OK**.
 ![4](https://main.qcloudimg.com/raw/4585148f7eac8328ec54349aacab54f9.png)
-
-## Others
-Follow Tencent Cloud Assistant to receive and handle Tencent Cloud products and alarm information using WeChat. Tap **Scan and Follow** in the **Message Subscription** screen to receive alarm and other information in time.
-![](https://main.qcloudimg.com/raw/75fe8a331b12b5475e1655c67c53e199.png)
