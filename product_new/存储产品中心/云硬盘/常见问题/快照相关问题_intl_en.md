@@ -71,10 +71,10 @@ Creating a snapshot will occupy a small amount of the disk I/O. We recommend cre
 The time for creating a snapshot is subject to factors such as the number of disk writes, and the underlying read-write operations. It is hard to predict, but creating a snapshot does not affect your normal disk use.
 
 ### How do I create a cloud disk by using a snapshot?
-See [Creating Cloud Disks using Snapshots](https://cloud.tencent.com/document/product/362/5757).
+See [Creating Cloud Disks using Snapshots](https://intl.cloud.tencent.com/document/product/362/5757).
 
 ### How do I roll back snapshots?
-See [Rolling Back Snapshots](https://cloud.tencent.com/document/product/362/5756).
+See [Rolling Back Snapshots](https://intl.cloud.tencent.com/document/product/362/5756).
 
 ### Do I need to shut down the CVM to roll back a snapshot?
 - For a cloud disk that has been mounted to a CVM, you have to shut down the CVM during rollback.
@@ -90,8 +90,8 @@ No. It can only be deleted after the replication is complete.
 After cross-region replication, the new snapshot is no longer associated with the source disk of the source snapshot. The rollback feature is unavailable for replicated snapshot.
 
 ### How do I delete a snapshot?
-- Cloud disk snapshots can be deleted on the console or via APIs. For more information, see [Deleting Snapshots](https://intl.intl.cloud.tencent.com/document/product/362/5758).
-- For snapshots associated with custom images, you must delete the custom image before [deleting the snapshot](https://intl.intl.cloud.tencent.com/document/product/362/5758).
+- Cloud disk snapshots can be deleted on the console or via APIs. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
+- For snapshots associated with custom images, you must delete the custom image before [deleting the snapshot](https://intl.cloud.tencent.com/document/product/362/5758).
 
 
 
