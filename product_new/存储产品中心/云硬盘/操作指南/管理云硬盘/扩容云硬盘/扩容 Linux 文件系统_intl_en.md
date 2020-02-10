@@ -245,7 +245,7 @@ If the mounting point is `/data`, run the following command:
 ```
 umount /data
 ```
->? Unmount the file systems from all partitions on the cloud disk, and perform the operations in [Step 4](#step4) again. You can run the following command again to confirm that the file systems have been unmounted from all partitions on the cloud disk:
+> Unmount the file systems from all partitions on the cloud disk, and perform the operations in [Step 4](#step4) again. You can run the following command again to confirm that the file systems have been unmounted from all partitions on the cloud disk:
 ```
 mount | grep '/dev/vdb'
 ```
@@ -382,7 +382,7 @@ If the mounting point is `/data`, run the following command:
 ```
 umount /data
 ```
->? After all partitions of the cloud disk have been unmounted, perform [Step 4](#Step4MBR) again.
+> After all partitions of the cloud disk have been unmounted, perform [Step 4](#Step4MBR) again.
 <span id="Step4MBR"></span>
 4. Run the following command to create a new partition:
 ```
@@ -394,7 +394,7 @@ fdisk /dev/xvdc
 ```
 According to the prompts on the page, sequentially enter `p` (to check the existing partition information), `n` (to create a partition), `p` (to create a primary partition), `2` (to create a second primary partition), press **Enter** twice (to use default configurations), enter `w` (to save the partition table), and start the partition, as shown in the following figure.
 ![](//mccdn.qcloud.com/static/img/8c35d6f4dfb367e74edc27ce6822c317/image.png)
->? This document takes creating one partition as an example. You can create multiple partitions according to your actual needs.
+> This document takes creating one partition as an example. You can create multiple partitions according to your actual needs.
 5. Run the following command to view the new partition:
 ```
 fdisk -l
