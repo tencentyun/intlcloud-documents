@@ -8,8 +8,8 @@ You will be billed for elastic protection when the attack traffic is over the ba
 ## I enabled elastic protection a month ago but no attack has occurred so far. Do I still have to pay for the feature?
 You will not be billed for elastic protection in this case.
 
-## If I purchased 100 Gbps of base protection bandwidth, can I downgrade it to 50 Gbps?
-No. The base protection does not support upgrade or downgrade.
+## I purchased 100 Gbps of base protection bandwidth. Can I downgrade it to 50 Gbps?
+No. You can upgrade but not downgrade your base protection bandwidth.
 
 ## Can I raise the elastic protection bandwidth when my business is under attack?
 Yes. On the basic information page of your Anti-DDoS Pro instance, you can upgrade or degrade the elastic protection bandwidth. The elastic protection bandwidth varies depending on the region. For the billing tiers of the elastic protection bandwidth, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1029/31747).
