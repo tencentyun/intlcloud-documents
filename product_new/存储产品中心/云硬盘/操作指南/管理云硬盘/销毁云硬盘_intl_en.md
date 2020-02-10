@@ -11,7 +11,7 @@ Elastic cloud disks can be terminated with the following methods:
   - A pay-as-you-go cloud disk will be automatically terminated if your balance becomes negative for more than 24 hours. You can continue using it if you [top up](https://intl.cloud.tencent.com/document/product/362/3064) your account within the specified time.
 
 ##  Prerequisites
-- The cloud disk is in the **To Be Mounted** status. [Unmount](https://intl.cloud.tencent.com/document/product/362/6740) cloud disks that are mounted.
+- The cloud disk is in the **To Be Mounted** status. [Unmount](https://intl.cloud.tencent.com/zh/document/product/362/32400) cloud disks that are mounted.
 - **All important data are already backed up**.
 
 ## Manually terminating pay-as-you-go cloud disks
