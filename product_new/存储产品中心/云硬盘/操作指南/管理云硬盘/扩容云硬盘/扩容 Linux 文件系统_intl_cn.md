@@ -5,10 +5,10 @@
 
 
 ## 前提条件
->扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 备份数据。
+>!扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://cloud.tencent.com/document/product/362/5755) 备份数据。
 >
 - 已 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747)  空间。
-- 该云硬盘已 [挂载](https://intl.cloud.tencent.com/zh/document/product/362/32401) 到 Linux 云服务器并已创建文件系统。
+- 该云硬盘已 [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 到 Linux 云服务器并已创建文件系统。
 - 已 [登录](https://intl.cloud.tencent.com/document/product/213/5436) 待扩展分区及文件系统的 Linux 云服务器。
 
 ## 操作步骤
@@ -23,7 +23,7 @@ fdisk -l
 ![](https://main.qcloudimg.com/raw/5ff70adb58a223d32d334470c5b29e0e.png)
 ![](https://main.qcloudimg.com/raw/ce19715fc8494a9735b714d86f0cccfa.png)
  - 若结果如下图所示（根据操作系统不同略有不同），则说明使用 MBR 分区形式。
- >MBR 分区形式支持的磁盘最大容量为2TB。如果您的硬盘分区为 MBR 格式，且需要扩容到超过 2TB 时，建议您重新创建并挂载一块数据盘，使用 GPT 分区方式后将数据拷贝至新盘上。对于 Linux 操作系统而言，当磁盘分区形式选用 GPT 时，fdisk 分区工具将无法使用，需要采用 parted 工具。
+ >! MBR 分区形式支持的磁盘最大容量为2TB。如果您的硬盘分区为 MBR 格式，且需要扩容到超过 2TB 时，建议您重新创建并挂载一块数据盘，使用 GPT 分区方式后将数据拷贝至新盘上。对于 Linux 操作系统而言，当磁盘分区形式选用 GPT 时，fdisk 分区工具将无法使用，需要采用 parted 工具。
  >
 ![](https://main.qcloudimg.com/raw/0e336cd3354c098cf5e70d0672e6f625.png)
 2. 根据 [步骤1](#fdisk) 查询到的云硬盘分区形式，选择对应的操作指引。
@@ -111,15 +111,13 @@ umount <挂载点>
 ```
 umount /data
 ```
-> 请将云硬盘上所有分区的文件系统都解挂，再执行 [步骤4](#step4) 操作。可重复执行以下命令，确认该硬盘上所有分区的文件系统都已解挂。
+>? 请将云硬盘上所有分区的文件系统都解挂，再执行 [步骤4](#step4) 操作。可重复执行以下命令，确认该硬盘上所有分区的文件系统都已解挂。
 ```
 mount | grep '/dev/vdb'
 ```
 云硬盘上所有的分区文件系统均已解挂。如下图所示：
 ![](https://main.qcloudimg.com/raw/9242efdec1aab382ae74f975ca68d68a.png)
-
-<span id="step4"></span>
-4. 执行以下命令，进入 parted 分区工具。
+4. <span id="step4"></span>执行以下命令，进入 parted 分区工具。
 ```
 parted '<磁盘路径>'
 ```
@@ -131,10 +129,15 @@ parted '/dev/vdb'
 ```
 unit s
 ```
-6. 输入 `print`，查看分区信息，并记录已有分区的 Start 值。
-> 删除分区并新建后，Start 值必须保持不变，否则将会引起数据丢失。
+6. 执行以下命令，查看分区信息，并记录已有分区的 Start 值。
+>! 删除分区并新建后，Start 值必须保持不变，否则将会引起数据丢失。
+>
+```
+print
+```
+本文中 Start 值为 `2048s`。如下图所示：
+![](//mccdn.qcloud.com/static/img/67ba54c1d9d63c307d4b8a157b70c722/image.png)
 
- ![](//mccdn.qcloud.com/static/img/67ba54c1d9d63c307d4b8a157b70c722/image.png)
 7. 执行以下命令，删除原有分区。
 ```
 rm <分区 Number>
@@ -145,7 +148,7 @@ rm <分区 Number>
 ```
 回显信息如下图所示。
 ![](//mccdn.qcloud.com/static/img/3384eeada87ce75695e0e55125109eff/image.png)
-5. 执行以下命令，新建一个主分区。
+8. 执行以下命令，新建一个主分区。
 ```
 mkpart primary <原分区起始扇区> 100%
 ```
@@ -242,7 +245,7 @@ umount <挂载点>
 ```
 umount /data
 ```
-> 请将云硬盘上所有分区的文件系统都解挂，再执行 [步骤4](#Step4) 操作。可重复执行以下命令，确认该硬盘上所有分区的文件系统都已解挂。
+>? 请将云硬盘上所有分区的文件系统都解挂，再执行 [步骤4](#Step4) 操作。可重复执行以下命令，确认该硬盘上所有分区的文件系统都已解挂。
 ```
 mount | grep '/dev/vdb'
 ```
@@ -379,7 +382,7 @@ umount <挂载点>
 ```
 umount /data
 ```
-> 请将云硬盘上所有分区都解挂后，再执行 [步骤4](#Step4MBR) 。
+>? 请将云硬盘上所有分区都解挂后，再执行 [步骤4](#Step4MBR) 。
 <span id="Step4MBR"></span>
 4. 执行以下命令，新建一个新分区。
 ```
@@ -389,7 +392,7 @@ fdisk <硬盘路径>
 ```
 fdisk /dev/xvdc
 ```
-按照界面的提示，依次输入”p”（查看现有分区信息）、“n”（新建分区）、“p”（新建主分区）、“2”（新建第2个主分区），两次回车（使用默认配置），输入 “w”（保存分区表），开始分区。如下图所示：
+按照界面的提示，依次输入“p”（查看现有分区信息）、“n”（新建分区）、“p”（新建主分区）、“2”（新建第2个主分区），两次回车（使用默认配置），输入 “w”（保存分区表），开始分区。如下图所示：
 ![](//mccdn.qcloud.com/static/img/8c35d6f4dfb367e74edc27ce6822c317/image.png)
 >? 本文以创建一个分区为例，您也可以根据实际需求创建多个分区。
 5. 执行以下命令，查看新分区。
@@ -430,16 +433,12 @@ df -h
 ```
 返回如下图所示信息则说明挂载成功，即可以查看到数据盘。
 ![](//mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
-
 >?若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](#AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
-
-<span id="AddNewPartINFOstep10"></span>
-10. 执行以下命令，添加信息。
+10. <span id="AddNewPartINFOstep10"></span>执行以下命令，添加信息。
 ```
 echo '/dev/xvdc2 /data1 ext3 defaults 0 0' >> /etc/fstab
 ```
-<span id="AddNewPartINFOstep11"></span>
-11. 执行以下命令，查看信息。
+11. <span id="AddNewPartINFOstep11"></span>执行以下命令，查看信息。
 ```
 cat /etc/fstab
 ```
@@ -447,4 +446,4 @@ cat /etc/fstab
 ![](//mccdn.qcloud.com/static/img/f0b5c14bf08fd3629ddf6d9b1ae01ffc/image.png)
 
 ## 相关操作
-[扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/6737)
+[扩展分区及文件系统（Windows）](https://cloud.tencent.com/document/product/362/6737)
