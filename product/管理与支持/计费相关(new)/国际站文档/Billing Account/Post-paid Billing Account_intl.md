@@ -1,8 +1,6 @@
 
 Tencent Cloud's post-paid billing account provides you with a better experience by extending a credit limit, allowing you to spend within the credit limit for any Tencent Cloud services. We will automatically charge the bill amount using your default payment method bound with your post-paid account based on your billing cycle. You can also make an early payment. Once the bill is paid successfully, your available credit will be restored.
 
-![](https://main.qcloudimg.com/raw/28a962e9e298808b9abf68e2ebdca00d.png)
-
 # Post-paid account information
 ## Initial Credit
 Initial credit is the credit offered by Tencent Cloud according to a customer's credit rating, which will remain unchanged unless manually adjusted.
