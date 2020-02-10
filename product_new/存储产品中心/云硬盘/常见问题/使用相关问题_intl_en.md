@@ -1,7 +1,7 @@
 ### What are some use cases for different cloud disks?
-- After purchasing CVMs, you realize the disk space is insufficient. You can [purchase](https://intl.intl.cloud.tencent.com/document/product/362/5744) and [mount](https://intl.intl.intl.intl.cloud.tencent.com/document/product/362/5745) elastic cloud disks, which can be used as data disks and meet your storage requirements.
+- After purchasing CVMs, you realize the disk space is insufficient. You can [purchase](https://intl.cloud.tencent.com/document/product/362/5744) and [mount](https://intl.cloud.tencent.com/document/product/362/32401) elastic cloud disks, which can be used as data disks and meet your storage requirements.
 - When purchasing CVMs, you do not want to purchase additional data disks. When you have storage requirements, you can purchase an elastic cloud disk and mount it as a data disk.
-- CVM A has 10 GB of important data stored on an elastic cloud disk, and you need to share the data with CVM B. You can directly [unmount](https://intl.cloud.tencent.com/document/product/362/32400) the disk from CVM A, and then [mount](https://intl.intl.intl.intl.cloud.tencent.com/document/product/362/5745) it to CVM B.
+- CVM A has 10 GB of important data stored on an elastic cloud disk, and you need to share the data with CVM B. You can directly [unmount](https://intl.cloud.tencent.com/document/product/362/32400) the disk from CVM A, and then [mount](https://intl.cloud.tencent.com/document/product/362/5745) it to CVM B.
 - If a single maximum-sized cloud disk cannot meet your storage requirements, you can purchase multiple cloud disks with equal capacity and configure LVM logical volumes to provide a larger disk capacity.
 - If the I/O performance of a single disk cannot meet business requirements, you can purchase multiple cloud disks and configure RAID 0, RAID 10, and so on to enhance the I/O performance.
 
@@ -20,7 +20,7 @@ Before you select a disk type, determine the usage scenario.
 - When unmounting a cloud disk from Windows, we recommend that you first interrupt all read/write operations on the disk, and perform the `offline` operation.
 
 ### When using a custom image and a data disk snapshot, how do I implement automatic mounting when launching new instances?
-See the "Automatic Mounting" section in [Mounting Cloud Disks](https://intl.intl.intl.intl.cloud.tencent.com/document/product/362/5745).
+See the "Automatic Mounting" section in [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401).
 
 ### How do I purchase cloud disks?
 You can create cloud disks in the console or by calling an API. For more information, see [Creating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5744).
@@ -41,11 +41,11 @@ After manually mounting a cloud disk, you must select and perform the subsequent
  <tr>
  <td  rowspan="2">Create directly</td>
  <td>Cloud disk capacity < 2 TB</td>
- <td><a href="https://intl.cloud.tencent.com/document/product/362/6734">Initializing cloud disks (smaller than 2 TB)</a></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/362/31597">Initializing cloud disks (smaller than 2 TB)</a></td>
  </tr>
  <tr>
   <td>Cloud disk capacity ≥ 2 TB</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/362/6735">Initializing cloud disks (larger than or equal to 2 TB)</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (larger than or equal to 2 TB)</a></td>
  </tr>
   <tr>
 	<td  rowspan="3">Create from a snapshot</td>
@@ -55,20 +55,20 @@ After manually mounting a cloud disk, you must select and perform the subsequent
  </tr>
  <tr>
  <td nowrap="nowrap">Snapshot capacity < Cloud disk capacity ≤ 2 TB <br/>or<br/>2 TB < Snapshot capacity < Cloud disk capacity</td>
-<td><ul><li>Mounting to a Windows CVM: <a href="https://cloud.tencent.com/document/product/362/6737"> Extending partitions and file systems (Windows)</a></li><li>Mounting to a Linux CVM: <a href="https://cloud.tencent.com/document/product/362/6738">Extending partitions and file systems (Linux)</a></li></ul></td>
+<td><ul><li>Mounting to a Windows CVM: <a href="https://intl.cloud.tencent.com/document/product/362/31601"> Extending partitions and file systems (Windows)</a></li><li>Mounting to a Linux CVM: <a href="https://intl.cloud.tencent.com/document/product/362/31602">Extending partitions and file systems (Linux)</a></li></ul></td>
  </tr> 
  <tr>
  <td>Snapshot capacity ≤ 2 TB < Cloud disk capacity</td>
-<td nowrap="nowrap"><ul><li>If the MBR partition format is used in the snapshot: </li>see <a href="https://intl.cloud.tencent.com/document/product/362/6735">Initializing cloud disks (larger than or equal to 2 TB)</a> Using GPT to re-partition: <b>this operation will delete the original data.</b><li>If the GPT partition format is used in the snapshot: <ul><li>Mounting to a Windows CVM: <a href="https://cloud.tencent.com/document/product/362/6737">Extending partitions and file systems (Windows)</a></li><li>Mounting to a Linux CVM: <a href="https://cloud.tencent.com/document/product/362/6738">Extending partitions and file systems (Linux)</a></li></ul></td>
+<td nowrap="nowrap"><ul><li>If the MBR partition format is used in the snapshot: </li>see <a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (larger than or equal to 2 TB)</a> Using GPT to re-partition: <b>this operation will delete the original data.</b><li>If the GPT partition format is used in the snapshot: <ul><li>Mounting to a Windows CVM: <a href="https://intl.cloud.tencent.com/document/product/362/31601">Extending partitions and file systems (Windows)</a></li><li>Mounting to a Linux CVM: <a href="https://intl.cloud.tencent.com/document/product/362/31602">Extending partitions and file systems (Linux)</a></li></ul></td>
  </tr> 
  </table>
 
 
 ### After mounting a cloud disk, how do I perform partitioning and formatting?
-See [Initializing cloud disks (smaller than 2 TB)](https://intl.cloud.tencent.com/document/product/362/6734) or [Initializing cloud disks (larger than or equal to 2 TB)](https://intl.cloud.tencent.com/document/product/362/6735).
+See [Initializing cloud disks (smaller than 2 TB)](https://intl.cloud.tencent.com/document/product/362/31597) or [Initializing cloud disks (larger than or equal to 2 TB)](https://intl.cloud.tencent.com/document/product/362/31598).
 
 ### Can multiple CVMs access one cloud disk?
-This is not supported currently. You can mount up to 20 cloud disks to the same CVM, but multiple CVMs cannot share the same cloud disk. You can only share data by [unmounting](https://intl.cloud.tencent.com/document/product/362/32400) from CVM A and then [mounting](https://intl.intl.intl.intl.cloud.tencent.com/document/product/362/5745) to CVM B.
+This is not supported currently. You can mount up to 20 cloud disks to the same CVM, but multiple CVMs cannot share the same cloud disk. You can only share data by [unmounting](https://intl.cloud.tencent.com/document/product/362/32400) from CVM A and then [mounting](https://intl.cloud.tencent.com/document/product/362/32401) to CVM B.
 
 ### When several cloud disks of the same size and type are mounted to the same CVM, how do I distinguish them in the operating system?
 - In Linux, you can view the relationship between the elastic cloud disks and the device name by running the following command:
@@ -108,17 +108,17 @@ The following instructions are only applicable for elastic cloud disks that supp
 Currently, switching types of cloud disks is not supported. You can create a snapshot for backup and then use the snapshot to create a cloud disk of your needed type.
 
 ### Can I adjust the cloud disk capacity after a successful purchase?
-Yes. Cloud disks support capacity adjustment. Cloud disks can be [scaled up](https://cloud.tencent.com/document/product/362/32539), but cannot be scaled down.
+Yes. Cloud disks support capacity adjustment. Cloud disks can be [scaled up](https://intl.cloud.tencent.com/document/product/362/31600), but cannot be scaled down.
 
 ### What are the requirements for extending the file system?
-Only cloud disks can be scaled up. Local disks cannot be scaled up. For more information, see [Expansion Scenarios](https://cloud.tencent.com/document/product/362/32539).
+Only cloud disks can be scaled up. Local disks cannot be scaled up. For more information, see [Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600).
 >
 >- We strongly recommend that you create a snapshot before expansion to ensure data security.
 > If the maximum capacity of a cloud disk cannot meet your business needs, you can try [Building Up RAID Groups](https://intl.cloud.tencent.com/document/product/362/2932) or [Building Up LVM Logic Volumes](https://intl.cloud.tencent.com/document/product/362/2933) by using multiple elastic cloud disks.
 > - Disks in MBR format support a maximum capacity of 2 TB. If your disk is in MBR format and needs to be expand to more than 2 TB, we recommend that you create and mount a new data disk, select the GPT partition style, and copy the data from the MBR disk to the new disk.
 
 ### How do I expand cloud disks?
-See [Cloud Disk Expansion Scenarios](https://cloud.tencent.com/document/product/362/32539)
+See [Cloud Disk Expansion Scenarios](https://intl.cloud.tencent.com/document/product/362/31600)
 
 ### Do CVMs support CPU/memory expansion? 
 If the system disk is a cloud disk, the CVM supports CPU and memory adjustments.
