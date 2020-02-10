@@ -1,21 +1,21 @@
 ## Background
-Due to objective factors, Anti-DDoS Pro provides up to 300 Gpbs of protection bandwidth in Shanghai and a lower bandwidth in Guangzhou and Beijing. In addition, Anti-DDoS Pro is not available in Chengdu, Chongqing, and other regions in China.
-If your business origin servers are deployed on Tencent Cloud and you require DDoS protection in regions other than the region where Tencent Cloud origin servers locate, you can refer to this plan.
+Anti-DDoS Pro provides up to 300 Gpbs of protection bandwidth in Shanghai but a lower bandwidth in Guangzhou and Beijing. In addition, Anti-DDoS Pro is not available in Chengdu, Chongqing, and other regions in China.
+If your business origin server is deployed in Tencent Cloud and you need to use the DDoS protection capability of regions other than the region where your origin server is located, you may consider the following solution.
 
-## Protection Solution
-This plan consists of Anti-DDoS Pro, Cloud Load Balancer (CLB), and customer originservers. Deploy a CLB in the regions with Anti-DDoS Pro resources and bind the CLB to the Anti-DDoS Pro instance. Configure the private network forwarding rules for the CLB to ensure that the public network IPs can access business through the CLB.
-- In normal status, business IP can be parsed to the public network IPs of the origin server (or directly to CLB public network IPs in other regions). The business traffic accesses the nearby origin server.
-- If attacks occur, the business IP is parsed to CLB IPs for DDoS attack traffic cleansing. After cleansing, the CLB forwards the traffic to the origin server via a private direct connect.
+## Solution
+This solution involves Anti-DDoS Pro, Cloud Load Balancer (CLB), and your origin server. Firstly, you will need to deploy a CLB instance in a region where you have Anti-DDoS Pro resources and bind the CLB to the Anti-DDoS Pro instance. Next, configure the private network forwarding rules for the CLB to ensure that your business can be accessed through the public IP of the CLB.
+- Normally, business traffic will be resolved to the public IP of the origin server or directly to the public IP of the CLB in another region. The business traffic will access the nearest origin server.
+- If attacks occur, business traffic will be resolved to the CLB IP for the Anti-DDoS Pro instance to cleanse the traffic. After the traffic is cleansed, the CLB will forward the traffic back to the origin server via private network Direct Connect.
 
-The following figure shows the detailed plan.
-![](https://main.qcloudimg.com/raw/26603bdc4a5c0ba147ee14b0d3f7b1e7.png)
+The following figure describes the details of the solution:
+![](https://main.qcloudimg.com/raw/fb964c6fbeb9e362821c8f2cc0bd9316.png)
 
-## Solution Results
-- The protection is no longer limited by regions and provides up to 300 Gpbs of Anti-DDoS Pro protection.
-- The business traffic is forwarded by Tencent Cloud through direct connection to the private network with high reliability and a short delay time.
-- Enjoy all the advantages of the Tencent Cloud BGP network, where all public network IPs belong to the BGP network lowering delay times.
+## Benefits
+- The DDoS protection capability will no longer be limited by regions and can be as high as 300 Gpbs.
+- The business traffic will be forwarded via private network Direct Connect with high reliability and a low latency.
+- You will enjoy all the advantages brought by Tencent Cloud BGP network. All your public IPs will be BGP IPs and the latency will be very low.
 
-## Suggestions and Notes
+## Tips
 - Deploy Anti-DDoS Pro and CLB in advance.
-- Establish a business availability monitoring regime to discover and handle swiftly any exceptional access to the origin server when the automatic switching regime is not deployed.
-- Conduct regular tests and practice drills to familiarize yourself with solutions and to solve potential problems.
+- Establish a business availability monitoring system so that you can promptly notice and respond to any problem with access to the origin server when the automatic switching mechanism is not deployed.
+- Test regularly, familiarize yourself with the solution details, and solve potential problems.

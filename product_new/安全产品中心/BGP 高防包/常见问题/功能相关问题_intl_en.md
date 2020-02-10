@@ -1,29 +1,29 @@
 ## Does Anti-DDoS Pro support non-Tencent Cloud IPs?
-No. Anti-DDoS Pro only provides DDoS protection for public network IPs of Tencent Cloud. For protection of IPs other than Tencent Cloud, please [purchase Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297/15483).
+No. Anti-DDoS Pro only provides DDoS protection for public IPs of Tencent Cloud. For protection of non-Tencent Cloud IPs, please [purchase Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297/15483).
 
-## What if the bound resource expires but the Anti-DDoS Pro instance does not expire? 
-An Anti-DDoS Pro instance is purchased by month, and provides protection based on IPs. If the resource of the bound protected object expires and you do not replace the IP bound to the Anti-DDoS Pro instance, the instance may continue protection for the bound IP, but the corresponding resource may not be yours. You are advised to renew the cloud service in time or replace a new protected object IP.
+## What if the bound resource has expired but the Anti-DDoS Pro instance has not? 
+An Anti-DDoS Pro instance is purchased by month, and provides protection based on IPs. If the resource protected by your Anti-DDoS Pro instance expires and you do not change the IP bound to the instance, the instance will continue to provide protection for the bound IP, but the resource corresponding to the IP may not be yours. It is recommended to renew your Tencent Cloud resources or change the IP you want to protect in time.
 
 
 ## Does Anti-DDoS Pro protect domain names?
 No. For domain name protection and application-layer protection, please [purchase Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297/15483).
 
 ## The protection bandwidth of Anti-DDoS Basic is 2 Gbps. If I also purchase an Anti-DDoS Pro instance, will the final protection bandwidth be the sum of the two?
-The final protection bandwidth a user enjoys is the protection bandwidth of the Anti-DDoS Pro instance. The default protection bandwidth of Anti-DDoS Basic will not add to it.
-Assume the IP of a certain cloud virtual machine enjoys a 2 Gbps free protection bandwidth. Due to frequent attacks, the user purchases a 20 Gbps Anti-DDoS Pro instance for this IP, and then the maximum protection capability is 20 Gbps.
+In such a case, the final protection bandwidth you enjoy will be the protection bandwidth of the Anti-DDoS Pro instance. The default protection bandwidth of Anti-DDoS Basic will not be added to it.
+For example, a CVM IP had a free protection bandwidth of 2 Gbps. Due to frequent attacks, the user purchased a 20 Gbps Anti-DDoS Pro instance for it. Now the maximum protection capability the CVM IP enjoys is 20 Gbps.
 
 ## What are the differences between Anti-DDoS Pro and Anti-DDoS Advanced?
-- Protected objects:
- -  Anti-DDoS Pro only provides anti-DDoS protection for services within Tencent Cloud.
- -  Anti-DDoS Advanced is available for non-Tencent Cloud resources, providing non-Tencent Cloud service IPs/domain names with protection.
+- Protection coverage:
+ -  Anti-DDoS Pro provides DDoS protection only for services within Tencent Cloud.
+ -  Anti-DDoS Advanced can protect non-Tencent Cloud resources, including non-Tencent Cloud service IPs and domain names.
 - Access:
-  - The access configuration of Anti-DDoS Pro is more convenient without the need of changing public network IP addresses.
-  - Anti-DDoS Advanced requires you to modify DNS or business IP before accessing the protection.
+  - Anti-DDoS Pro is easy to access and you do not need to change your public IPs.
+  - To access Anti-DDoS Advanced, you need to modify DNS or your business IPs.
 
 ## What are the differences between Anti-DDoS Pro and non-BGP protection?
-|     Differences     | Anti-DDoS Pro             | Non-BGP Protection                  |
+|     Difference     | Anti-DDoS Pro             | Non-BGP Protection                  |
 | -------- | -------------------- | ------------------- |
-| Cost of Access | It does not require changing of the server IP, and directly improves the defense capability of cloud products with immediate effect and low cost of access. | It requires you to replace the server IP with non-BGP IP and enter the domain name and port information. The configuration is quite complex. |
-| Access Quality | It uses BGP bandwidths, minimizing access latency across networks. The access speed increases by over 30%.         | It has no BGP bandwidths, the network latency is higher, and the quality is poor.                              |
-| Pricing Policy | The pricing policy is flexible. It allows for base + elastic pricing, and allows sharing.                              | The pricing policy is complex, and requires you to pay traffic fees.|
+| Access Costs | Low access costs without the need of changing your server IPs | Complicated configuration where you need to replace your server IPs with non-BGP IPs and enter the domain name and port information |
+| Access Quality | Uses BGP bandwidth and offers a lower access latency across networks and 30% higher access speed         | No BGP bandwidth with a high network latency and poor quality                              |
+| Pricing | Flexible pricing that supports sharing and a combination of base and elastic protection                              | Complicated pricing where you need to pay for traffic|
 

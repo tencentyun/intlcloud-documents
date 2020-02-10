@@ -1,20 +1,20 @@
-Anti-DDoS Pro provides Tencent Cloud public IP with higher anti-DDoS capability. It supports Tencent Cloud services like CVM, CLB, NAT, and WAF. Accessing Anti-DDoS Pro is convenient. It requires no change of business IP, and allows for fast protection configuration.
-Currently, Anti-DDoS Pro provides two types of instances, Single IP instance and the Multi-IP instance.
+Anti-DDoS Pro provides Tencent Cloud public IPs with higher anti-DDoS capability. It supports Tencent Cloud services such as CVM, CLB, NAT, and WAF. It is easy to access and requires no IP changes.
+Currently, Anti-DDoS Pro offers two types of instances, single IP instances and multi-IP instances.
 ## Prerequisites
-Before you bind the protected IP, you need to successfully [purchase an Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/31748).
+You need to [purchase an Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/31748) before you can bind it to the IP addresses you want to protect.
 
-## Steps
-1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and go to **Anti-DDoS Pro** -> **Resource List**.
-• For Single IP instances, please select **Single IP Instance** tab.
-• For Multi-IP instance, please select **Multi-IP Instance** tab.
-1. Select the region of the target Anti-DDoS Pro instance and click **Bind Resource** in the line of the instance.
-![](https://main.qcloudimg.com/raw/4fc76e35b8a449cd8a3606b86ca93998.png)
-3. On the **Bind Resource** page, select **Associated Resource Type** and **Associated Resource** according to the actual protection demand.
-  - One Single IP instance can only be bound with one resource.
-	 ![](https://main.qcloudimg.com/raw/a6531effe9b2fa348ed7f67b515039d3.png)
- - For Multi-IP instance, you can select multiple items in **Associated Resource Type** and **Associated Resource**. The number of **Associated Resource** cannot exceed the **IP Number** set when you [purchase the Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/31748).
- ![](https://main.qcloudimg.com/raw/3b08e8d8e9dae86401eb3221ec2bbe47.png)
+## Directions
+1. Log in to [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) and go to **Anti-DDoS Pro** > **Resource List**.
+• For single IP instances, go to the **Single IP Instance** tab.
+• For multi-IP instances, go to the **Multi-IP Instance** tab.
+1. Select the region of the Anti-DDoS Pro instance you want to use and click **Bind Resource** to the right of the instance.
+![](https://main.qcloudimg.com/raw/dd16c73f416aa57ca7671effcc49c266.png)
+3. On the **Bind Resource** page, select **Resource Type** and resources you want to associate.
+  - One single IP instance can only be bound to one resource.
+	 ![](https://main.qcloudimg.com/raw/5bd85e4544a0a7926e90f98961943f63.png)
+ - For multi-IP instances, you can select multiple resource types and resources. The number of resources to be associated cannot exceed the **Number of IPs** you choose when [purchasing the Anti-DDoS Pro instance](https://intl.cloud.tencent.com/document/product/1029/31748).
+ ![](https://main.qcloudimg.com/raw/226b6cb6c2f39a5c53e08e7ea191a387.png)
 
- > Binding hosted IP with Anti-DDoS Pro instance is only available to whitelisted users now. If necessary, please [contact us](https://intl.cloud.tencent.com/support) for consultation, or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+ > Only whitelisted users can bind hosted IPs to an Anti-DDoS Pro instance. If you need the feature, please [contact us](https://intl.cloud.tencent.com/support) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to get whitelisted.
 4. Click **OK**.
 

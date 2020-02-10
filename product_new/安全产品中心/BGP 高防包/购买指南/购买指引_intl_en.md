@@ -1,25 +1,25 @@
-## Prerequisites
-Before you purchase an Anti-DDoS Pro instance, you need to register a Tencent Cloud account and complete the identity verification.
+﻿## Prerequisites
+Before you purchase an Anti-DDoS Pro instance, you need to register for a Tencent Cloud account and complete the identity verification.
 
-## Steps
-1. Log in to the [Tencent Cloud Anti-DDoS Pro Console](https://console.cloud.tencent.com/dayu/bgp_v2), select **Anti-DDoS Pro** -> **Resource List** page, and click **Purchase** on the top right.
-2. Configure the following parameters according to the actual protection needs:
- ![](https://main.qcloudimg.com/raw/ad15965a2e56c677b506a0b094f87849.png)
- - Type: Select **Single IP Instance** or **Multi-IP Instance**.
-    - A Single IP instance can bind to one public network IP of Tencent Cloud. The IP enjoys dedicated protection capability.
-    - A Multi-IP instance can bind to multiple public network IP of Tencent Cloud. These IPs share the protection capability.
- - (Optional) Number of IPs: This parameter is visible only when **Type** is set to **Multi-IP Instance**. It indicates the number of public network IPs of Tencent Cloud that Anti-DDoS Pro instance can bind to.
- - Region: Please select the region of the origin server of Tencent Cloud. Currently, Anti-DDoS Pro only provides anti-DDoS service for public network IPs of Tencent Cloud within the same region.
- >Anti-DDoS Pro in regions outside China is only available to whiltelisted users. If you want to purchase the service, please [contact us](https://intl.cloud.tencent.com/support) for more information.
- - Base Protection Bandwidth: The basic protection capability of this instance. It’s recommended to set the base protection bandwidth slightly higher than the historical average attack traffic value, which will allow you to handle normal attacks.
- - Purchase Number: Set the number of instances you need to purchase. You are allowed to purchase up to 100 Anti-DDoS Pro instances at one time.
- - Purchase Duration: Set how long the service plan you want to purchase. The fees are prepaid and calculated based on the IP number, the base protection bandwidth, and the purchased usage period.
- - Elastic Protection Bandwidth: The highest possible protection capability of this instance. You are advised to refer to the largest value of the historical attack traffic, and select an elastic protection bandwidth slightly higher than the largest value to defend against sudden increases in attack traffic, avoiding IP block caused by traffic exceeding the protection bandwidth limit to ensure a non-stop business protection. The cost of the elastic part is billed according to the actual protection volume and is settled by day.
-3. Click **Pay Now** to complete the payment process.
+## Directions
+1. Log in to the [Anti-DDoS Pro Console](https://console.cloud.tencent.com/dayu/bgp_v2), go to **Anti-DDoS Pro** > **Resource List**, and click **Purchase** on the top right.
+2. Make the following configurations according to your needs:
+ ![](https://main.qcloudimg.com/raw/3219dad97fc2deaa07d5377a15a86d81.png)
+ - Type: choose **Single IP Instance** or **Multi-IP Instance**.
+    - A single IP instance can be bound to only one Tencent Cloud public IP which will enjoy dedicated protection.
+    - A multi-IP instance can can be bound to multiple Tencent Cloud public IPs which will share the protection capability.
+ - (Optional) Number of IPs: this is available only when you choose **Multi-IP Instance**. It represents the maximum number of Tencent Cloud public IPs that can be bound to the Anti-DDoS Pro instance.
+ - Region: please select the region of Tencent Cloud real server. Currently, an Anti-DDoS Pro instance can only provide DDoS protection for Tencent Cloud public IPs in the same region.
+ >Currently Anti-DDoS Pro instances in regions outside Mainland China are only available to whitelisted users. If you need such instances, please [contact us](https://intl.cloud.tencent.com/support) for more information.
+ - Base Protection Bandwidth: the basic protection capability of the instance. It’s recommended to set the base protection bandwidth slightly higher than the average of historical attack traffic so that the instance can handle most attacks.
+ - Quantity: number of instances you want to purchase. You can purchase up to 100 Anti-DDoS Pro instances at a time.
+ - Validity Period: how long the instance is going to be valid. The price will be calculated based on the number of IPs, the base protection bandwidth, and the validity period.
+ - Elastic Protection Bandwidth: the maximum protection bandwidth of the instance. It is recommended to set the elastic protection bandwidth slightly higher than the highest historical attack traffic to defend against large traffic attacks. Elastic protection can help you keep your IPs from being blocked when the attack traffic goes over the base protection bandwidth to ensure the continuity of your business. The fees for elastic protection are calculated based on the actual bandwidth of the attack traffic and are billed daily.
+3. Click **Purchase Now** to complete the purchase.
 
->In addition to the Resource List, you can also the protection configuration page and the statistics report page also provide you with purchase entry.
+>You can also find the Purchase button on the Protection Configuration page and the Statistics page.
 
-## More Information
-- [Detailed Billing Description of Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/31747)
-- [Billing FAQs](https://intl.cloud.tencent.com/document/product/1029/31774)
+## References
+- [Billing Overview](https://intl.cloud.tencent.com/document/product/1029/31747)
+- [About Billing](https://intl.cloud.tencent.com/document/product/1029/31774)
 

@@ -1,18 +1,18 @@
-Anti-DDoS Pro is a paid service to improve the DDoS protection capability of cloud products such as CVM, CLB, and NAT gateway in Tencent Cloud. It has the following strengths:
+Anti-DDoS Pro is a paid service which can enhance DDoS protection capabilities of Tencent Cloud services such as CVM, CLB, and NAT gateway. It has the following strengths:
 ## One-Click Access
-With the simple configuration feature, users do not need to change IP addresses. Once purchased, it takes only a few minutes to bind it to the cloud product’s IP address for protection.
+Anti-DDoS Pro is easy to access and requires no business changes on your end. After you purchase an instance, it only takes you a couple of minutes to get started. You only need to bind it to the Tencent Cloud services you want to protect.
 
 ## Massive Protection Resources
-Exclusive support of 30-line BGP access to the protection node and up to 300Gbps protection bandwidth helps easily defend against DDoS attacks, meeting the high security and stability demands of large-scale events such as major sales promotion and launch activities.
+Utilizing BGP protection bandwidth, Anti-DDoS Pro can provide BGP protection capability of up to 300 Gbps, meeting the high requirements for security and stability of critical business such as promotion and launch events.
 
-## Leading Cleaning Capability
-Utilizing Tencent Cloud's powerful proprietary protective clusters and with the aid of a smart AI engine, Anti-DDoS Advanced continuously optimizes multi-dimensional algorithms such as protection policies, IP profiling, behavior pattern analysis and cookie challenges to accurately clean attacking traffic and protect customer business in real time.
+## Leading Cleansing Capability
+Leveraging the powerful protective clusters developed by Tencent and multi-dimensional algorithms, such as IP profiling, behavior pattern analysis, and cookie challenges, Anti-DDoS Pro can accurately and promptly detect attack traffic. With the aid of a smart AI engine that continuously optimizes the algorithms, Anti-DDoS Pro is also flexible in coping with attack tricks.
 
 ## Fast Speed and Reliability
 With a 30-line BGP network encompassing ISPs across Mainland China, Anti-DDoS Pro features an average protection delay of less than 30 ms.
 
 ## Cost Optimization
-Anti-DDoS Pro offers a “base protection + elastic protection” combo package. This package offers elastic protection only when needed and charges by the actual attacking traffic, helping reduce your daily protection costs.
+Anti-DDoS Pro offers a “base protection + elastic protection” combo package where you are only charged by the amount of actual attack traffic. When the attack traffic exceeds the basic protection bandwidth, it provides elastic protection to ensure the continuance of your business. Such seamless transition requires no additional devices and configuration on your side, reducing your daily protection costs.
 
-## Rich Attack Defense Report
-The report provides accurate, detailed real-time statistics and automatic packet capturing that allows you to trace and analyze the attacks.
+## Detailed Defense Report
+Anti-DDoS Pro can generate accurate and detailed defense reports. It can also capture attack packets automatically for troubleshooting.
