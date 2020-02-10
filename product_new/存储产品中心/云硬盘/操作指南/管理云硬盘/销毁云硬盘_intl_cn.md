@@ -9,7 +9,7 @@
   - 按量计费云硬盘余额小于0状态持续24小时后自动销毁，规定时间内完成 [续费](https://intl.cloud.tencent.com/document/product/362/3064) 可继续使用。
 
 ## 前提条件
-- 云硬盘处于【待挂载】状态，对于已挂载使用的云硬盘，需要先 [卸载](https://intl.cloud.tencent.com/document/product/362/6740)。
+- 云硬盘处于【待挂载】状态，对于已挂载使用的云硬盘，需要先 [卸载](https://intl.cloud.tencent.com/document/product/362/32400)。
 - 已根据业务需求**备份重要数据**。
 
 ## 手动销毁按量计费云硬盘
