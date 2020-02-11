@@ -1,4 +1,4 @@
-﻿### A Record
+### A Record
 A record that maps a host name or domain name to an IP address.
 
 ### BGP Network
