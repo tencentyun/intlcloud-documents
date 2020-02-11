@@ -1,6 +1,6 @@
 ## Scenario
 The password is an exclusive login credential for every CVM. To ensure the reliability and security of an instance, Tencent Cloud provides the following two login methods:
-- [Password Login](https://cloud.tencent.com/document/product/213/6093)
+- [Password Login](https://intl.cloud.tencent.com/document/product/213/6093)
 - SSH key pair login
 
 This document describes common operations in using SSH key pair to log in to an instance.
@@ -15,8 +15,8 @@ This document describes common operations in using SSH key pair to log in to an 
  4. In the pop-up **Create SSH key** window, select the method for creating a key, enter the information, and click **OK**.
   - If you select **Create a new key pair**, enter the key name.
   - If you select **Use an existing public key**, enter the key name and the original public key information.
- 4. In the prompt box that pops up, click **Download** to download the private key.
- >! Tencent Cloud does not save your private key information. Download and obtain the private key within 10 minutes.
+ 5. In the prompt box that pops up, click **Download** to download the private key.
+ > Tencent Cloud does not save your private key information. Download and obtain the private key within 10 minutes.
  > 
 
 <span id="bindingSSH"></span>
@@ -45,4 +45,4 @@ This document describes common operations in using SSH key pair to log in to an 
 
 1. [Create an SSH key](#creatSSH).
 2. [Bind an SSH key to a CVM](#bindingSSH).
-3. [Use SSH to log in to a Linux instance].
+3. [Logging into Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501).

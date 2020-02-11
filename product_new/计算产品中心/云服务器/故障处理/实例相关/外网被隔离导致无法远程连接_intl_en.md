@@ -3,6 +3,7 @@ This document describes how to resolve login failures if the CVM is isolated fro
 ## Problems
 The CVM may have been isolated because it violates current laws and regulations. You can use the following methods to check whether the CVM is isolated.
 - When a CVM is isolated from the public network, you will be notified of the isolation via an [internal message in the console](https://console.cloud.tencent.com/message) or a text message.
+<!--
  - Internal Message:
 ![](//mc.qcloudimg.com/static/img/3c8ecd4ac301180e3632a25343be0697/image.png)
 Or
@@ -10,7 +11,7 @@ Or
  - SMS:
 ![](//mc.qcloudimg.com/static/img/afaff154fa12695844055422f4f103e6/image.png)
 - The **Monitoring/Status** tab in the [CVM Console](https://console.cloud.tencent.com/cvm/index) displays the status of the CVM: Isolated.
-
+-->
 
 ## Causes
 When a regulation violation or risk event occurs for a CVM, the offending machine will be partially isolated (except for the private network login port 22, 36000, and 3389, all network access will be isolated. Developers can use a jump server to log in to the server.
