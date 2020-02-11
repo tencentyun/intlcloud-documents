@@ -34,7 +34,7 @@ This document describes common operations in using SSH key pair to log in to an 
  4. In the **Modify a key** window that pops up, enter the new key name and key description, and click **OK**.
 
 ### Deleting SSH keys
->! If the SSH key is associated with a CVM or a custom image, it cannot be deleted.
+> If the SSH key is associated with a CVM or a custom image, it cannot be deleted.
 >
  1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
  2. In the left sidebar, click **[SSH key](https://console.cloud.tencent.com/cvm/sshkey)**.

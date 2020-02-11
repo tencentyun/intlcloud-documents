@@ -1,5 +1,5 @@
 云硬盘快照目前已支持跨地域复制功能，您可以通过该功能将数据、服务方便地迁移到其他地域，也可以基于跨地域复制能力构建您的业务跨地域容灾体系。
-快照跨地域复制目前处于灰度内测阶段，您可以 [申请](https://cloud.tencent.com/act/apply/snapshotcopy) 使用腾讯云云硬盘快照跨地域复制。
+快照跨地域复制目前处于灰度内测阶段，您可以[申请](https://cloud.tencent.com/act/apply/snapshotcopy)使用腾讯云云硬盘快照跨地域复制。
 
 ## 使用限制
 - **白名单申请**：快照跨地域复制目前处于灰度使用阶段，需要 [申请](https://cloud.tencent.com/act/apply/snapshotcopy) 才能使用该功能。
