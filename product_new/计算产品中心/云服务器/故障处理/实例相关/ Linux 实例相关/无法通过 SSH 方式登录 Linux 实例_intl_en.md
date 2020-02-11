@@ -8,10 +8,10 @@ When using SSH to log in to a Linux instance, you receive an error message that 
 
 1. Log in to the [Cloud Virtual Machine Console](https://console.cloud.tencent.com/cvm).
 2. On the instance management page, select the instance to be troubleshot and choose **More* > **Security Group** > **Configure Security Group**, as shown below:
-![](https://main.qcloudimg.com/raw/deff7af1803cc95cfd45036b850a9cb6.png)
+![](https://main.qcloudimg.com/raw/17b58fbde619b1a5c56e2573f65a9e8d.png)
 3. In the “Configure Security Group” pop-up window, click the configured (selected) security group ID.
 Enter the page where security group bound to this instance appears.
-![](https://main.qcloudimg.com/raw/8beddaae54897226d160c7d54c488990.png)
+![](https://main.qcloudimg.com/raw/74d4acb3b2dec41fd91f9c633305edb9.png)
 4. On the inbound rule tab page of the security group rule, click **Open All**.
 5. In the pop-up window, click **OK**.
 6. Log in to the Linux instance via SSH again to check whether the login is successful.
