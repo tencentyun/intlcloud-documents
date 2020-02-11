@@ -8,7 +8,7 @@ This solution involves Anti-DDoS Pro, Cloud Load Balancer (CLB), and your origin
 - If attacks occur, business traffic will be resolved to the CLB IP for the Anti-DDoS Pro instance to cleanse the traffic. After the traffic is cleansed, the CLB will forward the traffic back to the origin server via private network Direct Connect.
 
 The following figure describes the details of the solution:
-![](https://main.qcloudimg.com/raw/fb964c6fbeb9e362821c8f2cc0bd9316.png)
+![](https://main.qcloudimg.com/raw/26603bdc4a5c0ba147ee14b0d3f7b1e7.png)
 
 ## Benefits
 - The DDoS protection capability will no longer be limited by regions and can be as high as 300 Gpbs.

@@ -4,13 +4,13 @@ You may need to continuously optimize the policies to keep up with actual busine
 ## Creating a Scenario
 - **Method 1:**
 If you have not configured any scenario for your Anti-DDoS Pro instance yet, when you log in to [Anti-DDoS Pro Console](https://console.cloud.tencent.com/dayu/bgp_v2) and select **Protection Configuration** in the left sidebar, you will see a message as shown below. Click **Create Now** to create a scenario.
-![](https://main.qcloudimg.com/raw/6d48443f59cbe498ef2f1387adfcbe69.png)
+![](https://main.qcloudimg.com/raw/6464fbb25cbabca6e0e05551ef024a7e.png)
 >You can create up to 5 scenarios.
 - **Method 2:**
 
 
 1. Log in to [Anti-DDoS Pro Console](https://console.cloud.tencent.com/dayu/bgp_v2) and select **Protection Configuration** in the left sidebar. Select the **Advanced DDoS Protection Policy** tab and click **Create Scenario**.
-![](https://main.qcloudimg.com/raw/881942d97b75abebdae9ae6a3d1b883a.png)
+![](https://main.qcloudimg.com/raw/fc9a5f67e5e9bbd7486342f0e3eab7da.png)
 1. In the **Create Scenario** box, configure the following parameters according to your service features and click **OK** to complete the configuration.
 	- **Scenario Name:** required; enter a scenario name with a length of 1-32 characters.
 	- **Platform:** select the development platform of your service. The options include PC client, mobile, TV, and host.
@@ -33,7 +33,7 @@ Select **Yes** or **No**. If you select **Yes**, you need to enter the ports tha
 	- **Is there any web API service?**
 	Select **Yes** or **No**. **No** is selected by default. If you selected **Yes**, you need to enter the API service URL(s). Use commas (,) to separate multiple URLs.
 
- ![](https://main.qcloudimg.com/raw/e97a9e85475d7a851403c8017e21fb26.png)
+ ![](https://main.qcloudimg.com/raw/a5527197d8d8480f06f0d5f6bb3db064.png)
 1. The backend will analyze the scenario you create and will automatically generate an advanced protection policy named in the format of “scenario name_policy_Number”, e.g., “test_policy_1”. You can then configure or modify the protection policy as needed.
 >- If you only have one Anti-DDoS Pro instance and have created only one scenario, the generated advanced protection policy will be automatically associated with the instance.
 	- If you modify the scenario information, the related configuration items in the corresponding advanced protection policy will be automatically modified to keep up with the changes to the scenario. However, changes to the advanced policy will not be synchronized to the corresponding scenario.
@@ -43,5 +43,5 @@ Select **Yes** or **No**. If you select **Yes**, you need to enter the ports tha
 1. In the **Advanced DDoS Protection Policy** tab, click **Configure** or **Delete** to the right of the target scenario to modify or delete the scenario.
 >If a scenario is deleted, the advanced protection policy corresponding to the scenario will also be deleted.
 >
-![](https://main.qcloudimg.com/raw/e9df4c3e5d1ee9e668e685d263d2605e.png)
+![](https://main.qcloudimg.com/raw/65f745bad99b8bdea356d428bc1466ce.png)
 For more information, please see [Managing Advanced DDoS Protection Policies](https://intl.cloud.tencent.com/document/product/1029/31762).

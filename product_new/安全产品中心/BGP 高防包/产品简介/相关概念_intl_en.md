@@ -13,7 +13,7 @@ There are two types of protection bandwidth: base protection bandwidth and elast
 - Elastic protection bandwidth: the largest possible protection bandwidth which is pay-as-you-go and billed daily. 
 
 If elastic protection is not enabled, the maximum bandwidth of an Anti-DDoS Pro instance will be the base protection bandwidth. If elastic protection is enabled, the maximum bandwidth will be the elastic protection bandwidth. Once the attack traffic exceeds the maximum protection bandwidth, IP blocking will be triggered. 
->?Elastic protection is disabled by default. If you need the feature, please check the pricing and billing information and enable it yourself. You can adjust the elastic protection bandwidth as required. 
+>Elastic protection is disabled by default. If you need the feature, please check the pricing and billing information and enable it yourself. You can adjust the elastic protection bandwidth as required. 
 ### Benefits of Elastic Protection Bandwidth 
 With elastic protection enabled, when the attack traffic is higher than the base protection bandwidth but lower than the elastic protection bandwidth, Tencent Cloud Anti-DDoS Pro will continue to protect your IPs to ensure the continuity of your business. 
 ### Elastic Protection Billing 

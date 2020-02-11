@@ -7,19 +7,19 @@ After an IP address is bound to an Anti-DDoS Pro instance, when you receive a DD
    >You can query attack traffic and DDoS attack events in the past 180 days.
    >
 	- Check the details about the attacks to the instance within the queried period, including trends in **attack traffic bandwidth/attack packet rate**.
-![](https://main.qcloudimg.com/raw/e2cad2b0653173aa060516a42999d41b.png)
+![](https://main.qcloudimg.com/raw/f85be5ab570a2d24cd9aff3ed3610a0e.png)
 	- Check how the attacks distribute over different attack traffic protocols, attack packet protocols, and attack types.
 		- **Attack traffic protocol distribution**: Check how the attacks distribute over different attack traffic protocols within the queried period.
 		- **Attack package protocol distribution**: Check how the attacks distribute over different attack packet protocols within the queried period.
 		- **Attack type distribution**: Check how the attacks distribute over different attack types within the queried period.
-![](https://main.qcloudimg.com/raw/3938c0e41b9197e424e64a03036773a4.png)
+![](https://main.qcloudimg.com/raw/3f42c5495df9beb5b0a69351dfa28371.png)
 	-  In **DDoS Attack Records**, check details about the DDoS attack events within the queried period, including the starting time, duration, type and status of each attack event.
 		- You can download attack packets to analyze and trace the DDoS attacks.
 		- Click **Attack Details** to view the maximum package rate, maximum attack traffic bandwidth, and total amount of traffic cleansed during the DDoS attack events.
 		- Click **Attack Source Information** to check the attack source IP addresses, original regions, generated attack traffic, and attack packet size, etc.
 >!Attack source information is sampled data, which is randomly collected for statistics. The data will appear around 2 hours after an attack ends.
 >
-![](https://main.qcloudimg.com/raw/517c3e6013d00c94758e300fbc3641e3.png)
+![](https://main.qcloudimg.com/raw/7d41cf01864b72699fdd6b1286b70a13.png)
 
 ## Checking CC Protection
 1. Log in to [Anti-DDoS Pro Console](https://console.cloud.tencent.com/dayu/bgp_v2).
@@ -32,5 +32,5 @@ After an IP address is bound to an Anti-DDoS Pro instance, when you receive a DD
 	- If the protected IP is subject to CC attacks, the system will record the attack start time, end time, attacked domain names, attacked URLs, total request peak, attack request peak, the attack source, etc.
 		-  **Total Request Peak**: represents the peak of the total request traffic the instance receives when the attack occurs.
 		- **Attack Request Peak**: represents the peak number of requests blocked by the instance when the attack occurs.
-![](https://main.qcloudimg.com/raw/5555350b5de6d54039030a0c90c99195.png)
+![](https://main.qcloudimg.com/raw/8c7200189ea496f4b562fca672929f02.png)
 

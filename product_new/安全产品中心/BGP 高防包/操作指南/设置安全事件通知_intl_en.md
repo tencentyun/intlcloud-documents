@@ -12,8 +12,8 @@ You can modify the recipients and how they receive the alarm messages according 
  >Alternatively, you can log in to the [Console](https://console.cloud.tencent.com/dayu/bgp_v2), click <img src="https://main.qcloudimg.com/raw/00487734872fb32f9f58685345cd82ff.png"  style="margin:0;"> in the upper right corner, and then click **Check more** in the upper right corner.
 
 2. Click **Message Subscription** in the left sidebar.
- ![2](https://main.qcloudimg.com/raw/1be871b7d51c56b7259c95553a43dadb.png)
+ ![2](https://main.qcloudimg.com/raw/d5e3674bfac348d167f94e685984bfb9.png)
 3. On the Message Subscription page, click **Settings** to the right of **Attack Notifications** to enter the settings page.
- ![](https://main.qcloudimg.com/raw/dd5b78ffe4d40c73137f1ba81c7a2583.png)
+ ![](https://main.qcloudimg.com/raw/0fafc3993d05ff2595d3868a66b7e764.png)
 4. Select recipients and receiving methods, and then click **OK**.
-![4](https://main.qcloudimg.com/raw/4585148f7eac8328ec54349aacab54f9.png)
+![4](https://main.qcloudimg.com/raw/b3e395c6d98663b7eb385247813c955a.png)

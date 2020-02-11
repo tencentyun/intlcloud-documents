@@ -4,7 +4,7 @@ Before you purchase an Anti-DDoS Pro instance, you need to register for a Tencen
 ## Directions
 1. Log in to the [Anti-DDoS Pro Console](https://console.cloud.tencent.com/dayu/bgp_v2), go to **Anti-DDoS Pro** > **Resource List**, and click **Purchase** on the top right.
 2. Make the following configurations according to your needs:
- ![](https://main.qcloudimg.com/raw/3219dad97fc2deaa07d5377a15a86d81.png)
+ ![](https://main.qcloudimg.com/raw/ad15965a2e56c677b506a0b094f87849.png)
  - Type: choose **Single IP Instance** or **Multi-IP Instance**.
     - A single IP instance can be bound to only one Tencent Cloud public IP which will enjoy dedicated protection.
     - A multi-IP instance can can be bound to multiple Tencent Cloud public IPs which will share the protection capability.

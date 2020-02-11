@@ -60,5 +60,3 @@ The following table shows the protection bandwidths that Anti-DDoS Pro provides 
 		
 		 
 </table>
-
->?Anti-DDoS Pro is now available in Hong Kong (China), Singapore, Seoul (South Korea), Tokyo (Japan), and Silicon Valley in the western US for whitelisted users. If you need the service, please [Contact Us](https://intl.cloud.tencent.com/support) for more information or [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) for application.

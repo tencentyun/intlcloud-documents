@@ -1,7 +1,6 @@
 ﻿Currently, Anti-DDoS Pro is available in the following regions:
 - Mainland China: North China (Beijing), East China (Shanghai), and South China (Guangzhou).
->
-- Outside Mainland China: Hong Kong (China), Singapore, Seoul (South Korea), Tokyo (Japan), and Silicon Valley (US). Currently Anti-DDoS Pro in these regions is only available to whitelisted users. If you need the service, please [contact us](https://intl.cloud.tencent.com/contact-sales) for more information.
+
 ## Billing Methods
 Anti-DDoS Pro billing involves both monthly subscription and pay-as-you-go. The base protection bandwidth is monthly prepaid, whereas the elastic protection bandwidth is pay-as-you-go and billed daily.
 
