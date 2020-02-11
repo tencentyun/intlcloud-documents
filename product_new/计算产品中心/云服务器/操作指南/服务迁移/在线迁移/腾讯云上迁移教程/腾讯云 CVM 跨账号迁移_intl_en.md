@@ -38,7 +38,7 @@ The client.json file is for configuring the migration mode and other migration c
 4. (Optional) Remove files and directories on the server that do not need to be migrated.  
  Edit the rsync\_excludes\_linux.txt file on the Linux source server to remove files and directories that do not need to be migrated.
 5. Run the tool.
-Take cross-account migration in [private network mode: Scenario 1](https://cloud.tencent.com/document/product/213/38783#Scenario1) as an example:  
+Take cross-account migration in private network mode: Scenario 1 as an example:  
  1. On a CVM that has access to the public network, execute the following command to run the tool for migration stage 1.
 ```
 sudo ./go2tencentcloud_x64
