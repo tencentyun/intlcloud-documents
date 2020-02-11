@@ -1,4 +1,4 @@
-﻿## Prerequisites
+## Prerequisites
 Before you purchase an Anti-DDoS Pro instance, you need to register for a Tencent Cloud account and complete the identity verification.
 
 ## Directions
