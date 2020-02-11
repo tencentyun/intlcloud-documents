@@ -22,11 +22,11 @@ If you forgot the password, then [reset instance password](http://intl.cloud.ten
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. On the instance’s management page, select the Windows CVM that you want to log in to and click **Log In**, as shown below:
-![](https://main.qcloudimg.com/raw/038fce530c6c6827796e51d896306a93.png)
+![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. In the **Log into Windows instance** pop-up window, select **Alternative login methods (VNC)** and click **Log In Now**, as shown below.
-![](https://main.qcloudimg.com/raw/9f282782aa5096a82c05af675ff02203.png)
+![](https://main.qcloudimg.com/raw/9f964c1ebdec90f7e371b42340e13662.png)
 4. In the login window, select “Send Remote Command” in the top left corner, and press **Ctrl-Alt-Delete** to enter the system login interface as shown below:
-![](https://main.qcloudimg.com/raw/2dec43fa6ddb5e442da59c75f7a34b0f.png)
+![](https://main.qcloudimg.com/raw/c07755c1e0d0040e2ecb87f048b8be1b.png)
 
 
 

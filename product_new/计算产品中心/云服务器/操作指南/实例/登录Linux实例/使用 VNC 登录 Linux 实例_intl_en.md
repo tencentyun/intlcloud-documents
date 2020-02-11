@@ -21,15 +21,9 @@ If you forgot the password, then [reset instance password](http://intl.cloud.ten
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. On the instance’s management page, select the Linux CVM that you want to log in to and click **Log In** on the right side, as shown below:
-![](https://main.qcloudimg.com/raw/b7f0594ddecad128707ee720502e10b0.png)
+![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
 3. In the **Log into Linux instance** pop-up window, select **Alternative login methods (VNC)** and click **Log In Now**, as shown below.
-![](https://main.qcloudimg.com/raw/6d4eb31a5c3e127f7214b31db263bc5a.png)
+![](https://main.qcloudimg.com/raw/1bd4877abc15d06adb8c54fc7ed1318e.png)
 4. Enter the username/password in the pop-up dialog box to complete the login process, as shown below:
-![](https://main.qcloudimg.com/raw/bab14d0f56db2f3bc1ab949e08fcc0f0.png)
-
-## Subsequent Actions
-
-After successfully logging in to the CVM, you can build a personal website or forum on the Tencent Cloud CVM or do other operations. For related operations, refer to the following:
-- [Building a personal WordPress website]
-- [Building a Discuz! forum]
+![](https://main.qcloudimg.com/raw/03a8492f66e8342221858709b6068669.png)
 
