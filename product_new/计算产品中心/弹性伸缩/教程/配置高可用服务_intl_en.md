@@ -16,7 +16,7 @@ Step 2: Create a scaling group, and configure the maximum and the minimum capaci
 
 Step 3: Create a notification policy and select to receive notifications about scaling activities that replace unhealthy instances.
 
-![Alt text](https://mc.qcloudimg.com/static/img/ebee2c6fbcae2766d12ca046cdc75317/26.png)
+![Alt text](https://mc.qcloudimg.com/static/img/705fa579fa400fc3e03f7731cb3216e5/AS-Tutorial-Configuring+for+High+Availability+Services.png)
 
 The configuration is complete.
 
