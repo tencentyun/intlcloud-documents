@@ -16,7 +16,7 @@ step2： 创建伸缩组，最大伸缩数、最小伸缩数为您期望的集�
 
 step3： 创建通知，选择接受替换不健康实例的伸缩活动通知
 
-![Alt text](https://mc.qcloudimg.com/static/img/ebee2c6fbcae2766d12ca046cdc75317/26.png)
+![Alt text](https://mc.qcloudimg.com/static/img/705fa579fa400fc3e03f7731cb3216e5/AS-Tutorial-Configuring+for+High+Availability+Services.png)
 
 既可完成配置。
 
