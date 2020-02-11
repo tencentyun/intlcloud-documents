@@ -12,7 +12,7 @@
 		<tr>
 		<th width="10%">名称</th>
 		<td width="45%">快照</td>
-		<td><a href="https://cloud.tencent.com/document/product/213/4940">镜像</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/213/4940">镜像</a></td>
 		</tr>
 		<tr>
 		<th>性质</th>
@@ -71,10 +71,10 @@
 快照制作的时间受云硬盘写入量的情况、底层的读写情况等各种因素影响，较难预测，但制作快照并不影响您正常使用硬盘。
 
 ### 如何通过快照创建云硬盘？
-具体操作请参考 [从快照创建云硬盘](https://cloud.tencent.com/document/product/362/5757)。
+具体操作请参考 [从快照创建云硬盘](https://intl.cloud.tencent.com/document/product/362/5757)。
 
 ### 如何回滚快照？
-具体操作请参考 [从快照回滚数据](https://cloud.tencent.com/document/product/362/5756)。
+具体操作请参考 [从快照回滚数据](https://intl.cloud.tencent.com/document/product/362/5756)。
 
 ### 回滚快照是否需要关机？
 - 对于已经挂载在云服务器上的云硬盘，回滚时需要关闭云服务器。
@@ -90,8 +90,8 @@
 跨地域复制后新快照与源快照的源磁盘之间将不再有关联关系，复制之后新快照的回滚功能不可用。
 
 ### 如何删除快照？
-- 对于云硬盘的快照，可直接在控制台或通过 API 删除，具体操作请参考 [删除快照](https://intl.intl.cloud.tencent.com/document/product/362/5758)。
-- 对于自定义镜像的关联快照，需要先删除自定义镜像，才能 [删除快照](https://intl.intl.cloud.tencent.com/document/product/362/5758)。
+- 对于云硬盘的快照，可直接在控制台或通过 API 删除，具体操作请参考 [删除快照](https://intl.cloud.tencent.com/document/product/362/5758)。
+- 对于自定义镜像的关联快照，需要先删除自定义镜像，才能 [删除快照](https://intl.cloud.tencent.com/document/product/362/5758)。
 
 
 
