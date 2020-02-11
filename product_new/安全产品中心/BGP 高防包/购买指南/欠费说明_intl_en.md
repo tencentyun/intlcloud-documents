@@ -1,4 +1,4 @@
-﻿## Expiration Reminder
+## Expiration Reminder
 The system will send an expiration reminder to the Tencent Cloud account creator and all collaborators 7 days before the expiry of an Anti-DDoS Pro instance via Message Center, SMS and email.
 
 ## Expiration
