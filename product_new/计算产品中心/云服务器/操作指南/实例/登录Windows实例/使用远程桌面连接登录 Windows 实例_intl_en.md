@@ -20,7 +20,8 @@ Windows
 ![](https://main.qcloudimg.com/raw/d8a4b0f70f876f6c0edc6e995a02c37d.png)
 2. Enter the Windows server’s public IP after **Computer** and click **Connect**.
 3. Enter the instance’s admin account/password in the **Windows Security** pop-up window, as shown below:
-> If the **Do you trust this remote connection?** dialog box pops up, you can check **Don’t ask me again for connections to this computer ** and click **Connect**.
+> If the **Do you trust this remote connection?** dialog box pops up, you can check **Don’t ask me again for connections to this computer** and click **Connect**.
+
 ![](https://main.qcloudimg.com/raw/5d3d89e3ec4616a367b80ba377a3f541.png)
 4. Click **OK** to log in to the Windows CVM instance.
 
