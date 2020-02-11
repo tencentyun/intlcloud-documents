@@ -1,94 +1,120 @@
-## Operation Scenario
-
-This documentation provides information on cluster scaling. You can scale TKE container clusters in two ways:
+## Introduction
+This document describes how to scale a cluster. You can scale a cluster in one of the following ways:
 
 - [Manually adding/removing a node](#ManuallyAddAndRemove)
 - [Automatically adding/removing a node via Auto Scaling](#AutomaticAddAndRemove)
 
 ## Prerequisites
 
-You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
+You are logged into the [TKE console](https://console.cloud.tencent.com/tke2).
 
 ## Directions
 
 <span id="ManuallyAddAndRemove"></span>
-
 ### Manually Adding/Removing a Node
-#### Creating a Node
-For detailed directions, see [Creating a Node](https://cloud.tencent.com/document/product/457/32203#createNode).
-During the creation, you can configure the CVM instance and scale the cluster on the **CVM Configuration** page.
+To scale out a cluster, you can manually add a node by [creating a node](#create) or [adding an existing node](#add). To scale in a cluster, you can [remove a node](#delete).
 
-#### Adding an Existing Node
-> ?
+#### <span id="create"></sapn>Creating a Node
+When creating a node, you can configure your new CVM on the **Create a Node** page.
+For detailed directions, see [Adding a Node > Creating a Node](https://intl.cloud.tencent.com/document/product/457/30652).
+
+
+#### <span id="add"></sapn>Adding an Existing Node
 >
-> - Currently, you can only add CVM instances in the same VPC.
-> - If you add an existing node to the cluster, the OS of the CVM instance will be reinstalled.
-> - If you add an existing node to the cluster, the CVM instance will be migrated to the project set for the cluster.
-> - If you want to add a node with only one data disk to the cluster, you can choose whether to set a container directory. Setting a container directory will format the disk. If a CVM does not have data disks or has multiple data disks, you will not be able to set a container directory.
+>- Currently, you can only add CVMs in the same VPC.
+>- If you choose to add an existing node to the cluster, the operating system of the CVM will be reinstalled according to you settings.
+>- If you choose to add an existing node to the cluster, the project of the CVM will be migrated to the project set for the cluster.
+>- When adding a node with only one data disk to the cluster, you can choose whether to set the container directory. If you set the container directory, the data disk will be formatted.
+> You cannot set the container directory for CVMs with no or multiple data disks.
+>
+When adding a node, you can select and configure the CVM you want to add to the cluster on the **Add Existing Node** page.
+For detailed directions, see [Adding a Node > Adding an Existing Node](https://intl.cloud.tencent.com/document/product/457/30652).
 
-For detailed directions, see [Adding an Existing Node](https://cloud.tencent.com/document/product/457/32203#addExistingNode).
-During the adding process, you can configure the CVM instance you want to add to the cluster and scale the cluster on the **CVM Configuration** page.
+#### <span id="delete"></sapn>Removing a Node
+For directions on how to scale in a cluster, see [Removing a Node](https://intl.cloud.tencent.com/document/product/457/30653).
 
-#### Removing a Node
-For detailed directions, see [Removing a Node](https://cloud.tencent.com/document/product/457/32204).
-<span id="AutomaticAddAndRemove"></span>
 
-### Automatically Adding/Removing a Node via Auto Scaling
+### <span id="AutomaticAddAndRemove"></span>Automatically Adding/removing a Node via Auto Scaling
 Cluster Autoscaler (CA) is an independent program that dynamically adjusts the number of nodes in a cluster to meet your needs. When there is any Pod in a cluster that cannot be scheduled due to a lack of resources, scaling out is automatically triggered to reduce your labor costs. When some other conditions are met (for example, there are idle nodes), scaling in is automatically triggered to reduce your resource costs.
 
-#### Enabling CA
-####Creating a Scaling Group
-1. <span id="step1">In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** to enter the **Cluster Management** page.</span>
-2. Click the ID/name of the cluster for which scaling groups need to be created, and enter its cluster management page as shown below:
+#### Creating a Scaling Group
+1. <span id="step1"></span>Log in to the TKE console and click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** in the left sidebar.
+2. Click the ID of the cluster for which you want to create the scaling group to go to the **Workload** page as shown below:
 ![Management page](https://main.qcloudimg.com/raw/0ebce98c546da319b216fb939c3f2522.png)
-3. In the left sidebar, select **Node Management** > **Scaling Groups** to enter the **Scaling group list** page.
-4. Click **Create a scaling group**, you will see a pop-up window as shown below:
-![Create a scaling group](https://main.qcloudimg.com/raw/ec92b15289ad89f7a34039d361dd1dc6.png)
-5. Configure the scaling group based on your needs. The primary parameter information is as follows:
-**Launch configuration**:
- - Name: user-defined name.
- - Creation Method: you can choose from **Select other model configurations** and **Select existing node model** based on your needs.
- - Instance Type: you can choose from **Pay as you go** and **[Spot](https://cloud.tencent.com/document/product/213/17816)** based on your needs.
- - Model Configuration: please choose from the options based on your needs.
- - Login Method:
-    - Set Password: please set a password as prompted.
-    - SSH Key Pair: a key pair is a pair of parameters generated by an algorithm. Using a key pair to log in to a CVM is more secure than using regular passwords. For details, see [SSH Key](https://cloud.tencent.com/document/product/213/6092).
-     - Random Password: a password will be automatically generated and sent to you through an internal message.
- - Data Disk mounting: choose whether to select based on your needs.
- - Security Group: used to set the network access control for the CVM instance. Please select based on your needs. You can click **Create security group** to open other ports to the Internet.
- - Label: set a label for the scaling group. The label will be added to the nodes that are created during automatic scale-out to implement elastic scheduling policies for services.
+3. In the left cluster sidebar, select **Node Management** > **Scaling Groups** to enter the **Scaling Groups** page.
+4. Click **Create Scaling Group** and configure the scaling group according to the following information.
+ - **Launch Configurations**:
+    - **Name**: enter a custom launch configuration name.
+    - **Creation Method**: you can choose from the two methods of **Re-select other model configuration** or **Select existing node model** based on your needs.
+    - **Instance Type**: **pay as you go** instances are available.
+    - **Model Settings**: please choose from the options based on your needs.
+    - **Login Method**:
+       - Custom Password: please set a password as prompted.
+       - SSH Key Pair: a key pair is a pair of parameters generated by an algorithm. Using a key pair is more secure than using regular passwords. For more details, see [SSH Key](https://intl.cloud.tencent.com/document/product/213/6092).
+      - Random Password: an automatically generated password will be sent to your [Message Center](https://console.cloud.tencent.com/message).
+    - **Data Disk**: please select according to your needs.
+    - **Security Groups**: used to control network access to CVMs. Please select based on your needs.
+    - **Label**: set a label for the scaling group. The label will be added to the nodes that are created during automatic scale-out for flexible service scheduling.
+ - **Scaling Group Configurations**:
+    - **Supported Network**: the cluster network is selected by default and cannot be changed.
+    - **Supported Subnets**: please select based on your needs.
+    - **Number of Nodes**: set the node quantity range for the scaling group.
+    - **Retry Policy**: you can choose from **Retry instantly** and **Retry with incremental intervals** based on your needs.
+       - Retry instantly: retry immediately and stop retrying after failing five times in a row. 
+       - Retry with incremental intervals: as the number of consecutive failures increases, the interval between each attempt will increase; the interval can range from seconds to a day.
+5. <span id="step5"></span>Click **Create Scaling Group** to complete the creation.
+6. To create multiple scaling groups, repeat [step 1](#step1) to [step 5](#step5).
 
-   **Scaling Group Configurations**:
- - Supported Network: this is the cluster network by default and cannot be changed.
- - Supported Subnets: select based on your needs.
- - Number of Nodes: the limit to the number of nodes in the scaling group.
- - Retry policy: you can choose from **Instantly Retry** and **Retry with Incremented Intervals** based on your needs.
-6. <span id="step6">Click **Submit** to complete creation.</span>
-7. You can create multiple scaling groups by repeating [step 1](#step1) to [step 6](#step6).
-
-> ! 
 >
-> - You need to configure the `request` value of the containers under the service. With the `request` value, whether the resources in the cluster are sufficient can be assessed in order to decide whether to trigger automatic scale-out.
-> - Do not directly modify the nodes that are in a scaling group.
-> - All nodes in the same scaling group should have the same configuration (such as model and Label).
+> - You need to configure the request value of the containers under the service. With the request value, whether the resources in the cluster are sufficient can be assessed in order to decide whether to trigger automatic scale-out.
+> - Do not directly modify nodes in a scaling group.
+> - All nodes in the same scaling group should have the same configuration, e.g. model, label, etc.
 > - You can use PodDisruptionBudget to prevent a Pod from being deleted during scale-in.
-> - Check whether the quota of the availability zone is large enough before setting the minimum/maximum number of nodes for a scaling group.
-> - It is not recommended to enable monitoring metric-based auto scaling of nodes.
-> - Deleting a scaling group will also terminate the CVM instances in it. Please be cautious when doing so.
+> - Check whether there is enough CVM quota in the availability zone before setting the minimum/maximum number of nodes for a scaling group.
+>- It is not recommended to enable monitoring metric-based node auto-scaling.
+>- Please note that deleting a scaling group will terminate the CVM instances in it.
 
-#### Scaling-triggering Conditions
-##### Scale-out Triggers
-If there is any container Pod in a cluster that cannot be scheduled due to a lack of available resources, the auto scale-out policy will be triggered to scale out the node to run the Pod.
-Whenever the Kubernetes scheduler cannot find a place to run a Pod, it will set the Pod's PodCondition to false and set the reason to **Unschedulable**. The CA program scans the cluster regularly to see if there are unschedulable Pods. If so, it will scale out the nodes to run the Pods.
 
-##### Scale-in Conditions
-If the proportion of both CPU and memory requests of all the Pods on a node is less than 50%, an attempt will be made to scale in the node. If any of the following conditions is met, the node cannot be scaled in until all the Pods on it can be scheduled to other nodes.
-- You set strict PodDisruptionBudget for Pods on the node, and the PDB is not met.
+
+
+### Adjusting Global Configurations
+1. Log in to the TKE console and click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** in the left sidebar.
+2. Click the ID of the cluster for which you want to adjust the scaling group configurations to go to the cluster’s **Workload** page.
+3. In the left sidebar, select **Node Management** > **Scaling Groups** to enter the **Scaling Groups** page.
+4. Click **Edit** in the top right corner of the **Global Configurations** module to go to **Set Global Configurations for Cluster Scaling** as shown below:
+![](https://main.qcloudimg.com/raw/fdf9efb894c12ee0eeeefecbe93393a8.png)
+5. On the **Set Global Configurations for Cluster Scaling** page, adjust the global configurations according to the following instructions. See the figure below: 
+![](https://main.qcloudimg.com/raw/79a4b795c03f485352da73d7f67b1340.png)
+ - **Auto Scale-in**: select as needed.
+ - **Scale-in Configuration**: after enabling auto scale-in, make configurations as needed.
+ - **Scale-out Algorithm**: this algorithm decides which scaling group is used for scale-out when you have  multiple scaling groups. Please select one from the following three algorithms.
+    - **Random**: randomly select a scaling group.
+    - **most-pods**: select the scaling group that can schedule the most Pods.
+    - **least-waste**: select the scaling group that can ensure the fewest remaining resources after Pod scheduling.
+6. Click **OK** to complete the setup.
+
+#### Adjusting Scaling Group Configuration
+1. On the **Scaling Groups** page, you can select **More** > **Adjust Configuration** to the right of the scaling group whose configuration you want to adjust.
+2. In the **Adjust Scaling Group Configuration** pop-up window, modify the number of Pods based on your needs. See the figure below:
+![](https://main.qcloudimg.com/raw/4aa7e35926aa17f9a16f649e244a5383.png)
+3. Click **OK** to complete the setup, and the number of nodes in the scaling group will be automatically adjusted within the specified range.
+
+
+### Scaling-triggering Conditions
+#### Scale-out Triggers
+If there is any container Pod in a cluster that cannot be scheduled due to a lack of available resources, the pre-configured auto scale-out policy will be triggered to scale out the nodes to run the Pod.
+Whenever the Kubernetes scheduler cannot find a place to run a Pod, it will set the Pod's PodCondition to false and set the reason to **Unschedulable**. Cluster Autoscaler scans clusters regularly to see if there are unschedulable Pods. If there are, it will try to scale out the nodes to run the Pods.
+
+#### Scale-in Conditions
+Scale-in will be triggered when there are too many idle resources in a cluster. This generally means that the ratio of resources used by CPU or memory to all available resources is lower than the percentage you set. Only when all the Pods on a node can be successfully scheduled to other nodes will the Pods be drained for the scale-in.
+
+A node will not be used for scale-in when any of the Pods on it meets any of the following conditions:
+- You set strict PodDisruptionBudget (PDB) for the Pods on the node, and the PDB is not met.
 - There are Pods under the Kube-system.
-- On the node there are Pods that are not created by controllers such as Deployment, ReplicaSet, Job, or StatefulSet.
+- There are Pods that were not created by controllers such as Deployment, ReplicaSet, Job, or StatefulSet.
 - There are Pods with local storage.
-- There are Pods that cannot be scheduled to another node due to certain reasons.
+- There are Pods that cannot be scheduled to other nodes.
 
-## FAQs
+## FAQ
 
-For issues related to scaling, see [FAQs for Scaling](https://cloud.tencent.com/document/product/457/32316).
+For issues related to scaling, see [Auto-scaling Related](https://intl.cloud.tencent.com/document/product/457/31425).
