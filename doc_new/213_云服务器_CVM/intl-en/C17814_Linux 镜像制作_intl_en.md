@@ -24,7 +24,7 @@ If the EFI file exists, then the current system starts in the EFI mode, and it i
 
 - Unmount the drivers and software that produce conflicts (including VMware tools, Xen tools, Virtualbox GuestAdditions and other software that comes with underlying drivers).
 
-- Check the virtio driver: Please see [Check virtio Driver in Linux System](https://cloud.tencent.com/document/product/213/9929).
+- Check the virtio driver: Please see [Check virtio Driver in Linux System](https://intl.cloud.tencent.com/document/product/213/9929).
 
 - Install cloud-init: Please see [Install cloud-init](https://cloud.tencent.com/document/product/213/12587).
 

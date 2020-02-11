@@ -13,7 +13,7 @@
 <tr><td>镜像格式</td><td><ul><li>支持 RAW、VHD、QCOW2、VMDK 镜像格式</li><li>使用<code>qemu-img info imageName &#124; grep 'file format'</code>查看镜像格式</li></ul></td></tr>
 <tr><td>镜像大小</td><td><ul><li>镜像实际大小不超过50G，使用<code>qemu-img info imageName &#124; grep 'disk size'</code>查看镜像实际大小</li><li>镜像 vsize 不超过500G，使用<code>qemu-img info imageName &#124; grep 'virtual size'</code>查看镜像 vsize</li><li>注意，导入镜像时审查大小以转换为 QCOW2 格式后的镜像信息为准</li></ul></td></tr>
 <tr><td>网络</td><td><ul><li>腾讯云默认为实例提供`eth0`网络接口</li><li>腾讯云暂不支持 IPV6</li><li>用户可以在实例内通过 metadata 服务查询实例的网络配置，详见 <a href="https://cloud.tencent.com/document/product/213/4934">实例元数据</a></li></ul></td></tr>
-<tr><td>驱动</td><td><ul><li>镜像必须安装虚拟化平台 KVM 的 virtio 驱动，详情参考 <a href="https://cloud.tencent.com/document/product/213/9929">Linux 导入镜像检查 virtio 驱动</a></li><li>镜像建议安装 cloudinit，详情参考 <a href="https://cloud.tencent.com/document/product/213/12587">Linux 导入镜像安装 cloudinit</a></li><li>如因某些原因，镜像无法安装 cloudinit，请根据 <a href="https://cloud.tencent.com/document/product/213/12849">强制导入</a> 步骤自行配置实例</li></ul></td></tr>
+<tr><td>驱动</td><td><ul><li>镜像必须安装虚拟化平台 KVM 的 virtio 驱动，详情参考 <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux 导入镜像检查 virtio 驱动</a></li><li>镜像建议安装 cloudinit，详情参考 <a href="https://cloud.tencent.com/document/product/213/12587">Linux 导入镜像安装 cloudinit</a></li><li>如因某些原因，镜像无法安装 cloudinit，请根据 <a href="https://cloud.tencent.com/document/product/213/12849">强制导入</a> 步骤自行配置实例</li></ul></td></tr>
 <tr><td>内核限制</td><td>镜像最好是原生内核，修改可能会导致云服务器无法导入</td></tr>
 </table>
 - **Windows 系统类型镜像限制：**
@@ -80,7 +80,7 @@
 #### VirtioNotInstall：未安装 virtio 驱动
 
 出现报错 VirtioNotInstall，错误提示：预导入镜像未安装 virtio 驱动。腾讯云使用 KVM虚拟化技术，要求用户导入的镜像内已安装 virtio 驱动。除了少部分用户定制的 Linux 操作系统外，大部分的 Linux 操作系统已经安装 virtio 驱动；Windows 操作系统则需要用户手动安装 virtio 驱动：
-* Linux 镜像导入，可以参考文档 [Linux 系统检查 virtio 驱动](https://cloud.tencent.com/document/product/213/9929)。
+* Linux 镜像导入，可以参考文档 [Linux 系统检查 virtio 驱动](https://intl.cloud.tencent.com/document/product/213/9929)。
 * Windows 镜像导入，可以参考文档 [Windows 镜像制作](https://cloud.tencent.com/document/product/213/17815) 安装 virtio 驱动。
 
 #### CloudInitNotInstalled：未安装 cloud-init 程序

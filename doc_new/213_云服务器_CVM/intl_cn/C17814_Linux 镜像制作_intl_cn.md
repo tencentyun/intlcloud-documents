@@ -24,7 +24,7 @@ sudo ls /sys/firmware/efi
 
 - 卸载会产生冲突的驱动和软件（包括 VMware tools，Xen tools，Virtualbox GuestAdditions 以及一些自带底层驱动的软件）。
 
-- 检查 virtio 驱动：请参考 [Linux 系统检查 virtio 驱动](https://cloud.tencent.com/document/product/213/9929)。
+- 检查 virtio 驱动：请参考 [Linux 系统检查 virtio 驱动](https://intl.cloud.tencent.com/document/product/213/9929)。
 
 - 安装 cloud-init：请参考 [cloud-init 安装文档](https://cloud.tencent.com/document/product/213/12587)。
 

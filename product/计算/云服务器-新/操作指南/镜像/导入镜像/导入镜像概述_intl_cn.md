@@ -72,7 +72,7 @@
 
 #### VirtioNotInstall：未安装 virtio 驱动
 出现报错 VirtioNotInstall，错误提示：预导入镜像未安装 virtio 驱动。腾讯云使用 KVM虚拟化技术，要求用户导入的镜像内已安装 virtio 驱动。除了少部分用户定制的 Linux 操作系统外，大部分的 Linux 操作系统已经安装 virtio 驱动；Windows 操作系统则需要用户手动安装 virtio 驱动：
-* Linux 镜像导入，可以参考文档 [Linux 系统检查 virtio 驱动](https://cloud.tencent.com/document/product/213/9929)。
+* Linux 镜像导入，可以参考文档 [Linux 系统检查 virtio 驱动](https://intl.cloud.tencent.com/document/product/213/9929)。
 * Windows 镜像导入，可以参考文档 [Windows 镜像制作](https://cloud.tencent.com/document/product/213/17815) 安装 virtio 驱动。
 
 #### CloudInitNotInstalled：未安装 cloud-init 程序
