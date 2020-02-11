@@ -1,13 +1,13 @@
 Cloud disk snapshots currently support cross-region snapshot replication. This feature allows you to easily migrate data and services to other regions, or build a cross-region disaster recovery system for your business.
-Cross-region snapshot replication is currently in beta test. You can **submit an application**.
+Cross-region snapshot replication is currently in beta test. You can [submit an application](https://cloud.tencent.com/act/apply/snapshotcopy).
 
 ## Use Limits
-**Whitelisted users only**: Cross-region snapshot replication is currently in beta test. You need to **submit an application** to use this feature.
+**Whitelisted users only**: Cross-region snapshot replication is currently in beta test. You need to [submit an application](https://cloud.tencent.com/act/apply/snapshotcopy) to use this feature.
 - **Supported Regions**: This feature is currently available in Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Bombay, and Guangzhou Open. We will provide this feature to all regions soon.
 - **Snapshot Rollback**: New snapshot created via cross-region snapshot replication is not associated with the source disk. Therefore, the rollback feature is not available for the newly replicated snapshot.
 
 ## Steps
-1. Access the **Snapshot List** page.
+1. Access the [Snapshot List](https://console.cloud.tencent.com/cvm/snapshot) page.
 2. Click **Cross-Region Replication** for the target snapshot.
 3. Configure the following parameters:
   - New snapshot name: Enter the new snapshot name, which is a string of up to 60 characters (optional).
