@@ -1,4 +1,4 @@
-﻿## Are the billing modes the same for elastic protection of different Anti-DDoS services? How are the fees for elastic protection calculated?
+## Are the billing modes the same for elastic protection of different Anti-DDoS services? How are the fees for elastic protection calculated?
 Yes, they are. Elastic protection is billed based on the tiered price of the peak attack bandwidth of the day. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/1029/31747).
 For example, you have purchased an Anti-DDoS Pro instance with 20 Gbps base protection bandwidth and 50 Gbps elastic protection bandwidth. An DDoS attack occurs one day with the peak attack bandwidth of 45 Gbps. Since 45 Gbps goes over the base protection bandwidth and triggers elastic protection, and it falls between 40 Gbps and 50 Gbps, the fees for elastic protection of that day will be billed according to the tiered price of the billing tier between 40 Gbps and 50 Gbps.
 
