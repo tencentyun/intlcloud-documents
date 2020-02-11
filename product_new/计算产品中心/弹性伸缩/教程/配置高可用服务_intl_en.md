@@ -4,9 +4,6 @@
 Building master/slave or active-active HA clusters in the traditional way is quite cumbersome. You can use health check of Auto Scaling to implement high availability.
 
 The system will automatically monitor the health status of the active nodes. When the active node does not respond to a ping, Auto Scaling will automatically replicate a healthy instance to replace any abnormal ones, ensuring healthy and smooth business operation and providing comprehensive protection for your business.
-See the following figure for example: 
-
-![Alt text](https://mc.qcloudimg.com/static/img/b4553279b674477afa12c5109e09bf6f/04+%282%29.gif)
 
 ## Directions
 
