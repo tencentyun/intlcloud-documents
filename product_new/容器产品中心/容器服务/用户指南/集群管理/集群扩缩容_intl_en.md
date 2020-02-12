@@ -40,7 +40,7 @@ Cluster Autoscaler (CA) is an independent program that dynamically adjusts the n
 #### Creating a Scaling Group
 1. <span id="step1"></span>Log in to the TKE console and click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=4)** in the left sidebar.
 2. Click the ID of the cluster for which you want to create the scaling group to go to the **Workload** page as shown below:
-![Management page](https://main.qcloudimg.com/raw/0ebce98c546da319b216fb939c3f2522.png)
+![Management page](https://main.qcloudimg.com/raw/e2bcad6764bd49c84498a55e9c53197e.png)
 3. In the left cluster sidebar, select **Node Management** > **Scaling Groups** to enter the **Scaling Groups** page.
 4. Click **Create Scaling Group** and configure the scaling group according to the following information.
  - **Launch Configurations**:
@@ -82,9 +82,9 @@ Cluster Autoscaler (CA) is an independent program that dynamically adjusts the n
 2. Click the ID of the cluster for which you want to adjust the scaling group configurations to go to the cluster’s **Workload** page.
 3. In the left sidebar, select **Node Management** > **Scaling Groups** to enter the **Scaling Groups** page.
 4. Click **Edit** in the top right corner of the **Global Configurations** module to go to **Set Global Configurations for Cluster Scaling** as shown below:
-![](https://main.qcloudimg.com/raw/fdf9efb894c12ee0eeeefecbe93393a8.png)
+![](https://main.qcloudimg.com/raw/410ab4e705a961c2d5220478d3fc4d39.png)
 5. On the **Set Global Configurations for Cluster Scaling** page, adjust the global configurations according to the following instructions. See the figure below: 
-![](https://main.qcloudimg.com/raw/79a4b795c03f485352da73d7f67b1340.png)
+![](https://main.qcloudimg.com/raw/fa01f9cf9c649ee41413d20cdd3f9a72.png)
  - **Auto Scale-in**: select as needed.
  - **Scale-in Configuration**: after enabling auto scale-in, make configurations as needed.
  - **Scale-out Algorithm**: this algorithm decides which scaling group is used for scale-out when you have  multiple scaling groups. Please select one from the following three algorithms.
@@ -96,7 +96,7 @@ Cluster Autoscaler (CA) is an independent program that dynamically adjusts the n
 #### Adjusting Scaling Group Configuration
 1. On the **Scaling Groups** page, you can select **More** > **Adjust Configuration** to the right of the scaling group whose configuration you want to adjust.
 2. In the **Adjust Scaling Group Configuration** pop-up window, modify the number of Pods based on your needs. See the figure below:
-![](https://main.qcloudimg.com/raw/4aa7e35926aa17f9a16f649e244a5383.png)
+![](https://main.qcloudimg.com/raw/2f74410ed45a42b12183eaa1cce1cada.png)
 3. Click **OK** to complete the setup, and the number of nodes in the scaling group will be automatically adjusted within the specified range.
 
 
