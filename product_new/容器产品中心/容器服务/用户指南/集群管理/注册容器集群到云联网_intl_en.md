@@ -23,7 +23,7 @@ You can register existing container clusters to CCN, and CCN will include the co
 3. Toggle on the CCN registration button to register the container network to the CCN as shown below:
 > This step only registers the container IP range to the CCN. Whether or not the routing takes effect depends on your configuration on the CCN side.
 >
-![](https://main.qcloudimg.com/raw/5398c65b6435b077bec1d7b22227fc9a.png)
+![](https://main.qcloudimg.com/raw/ff0a346802069809892bf0241d64687d.png)
 
 
 
@@ -31,13 +31,13 @@ You can register existing container clusters to CCN, and CCN will include the co
 ### Viewing the IP Range Routing of the Container
 1. Log in to the VPC console and click **[CCN](https://console.qcloud.com/vpc/ccn)** in the left sidebar to go to the CCN management page.
 2. Click **Manage Instance** to the right of the CCN associated with the cluster VPC to go to the CCN instance management page as shown below:
-![](https://main.qcloudimg.com/raw/5fecbd8e1c9c7985e8f9ebcc9d87e6c6.png)
+![](https://main.qcloudimg.com/raw/49143db7cbcabe993574eb670256cab0.png)
 3. Click the **Route Table** tab to view whether the container’s IP range routing is enabled or not as shown below:
 >
 >- If the IP range of the cluster network does not conflict with the existing routing in the CCN instance, the routing will be enabled by default. If there is an IP range conflict, the routing will be disabled by default.
 >- For more information on routing conflicts, see [Use Limit > Route Restrictions](https://intl.cloud.tencent.com/document/product/1003/30052). If you want to enable a route that may lead to routing conflicts, read [Enabling a Route](https://intl.cloud.tencent.com/document/product/1003/30069).
 >
-![](https://main.qcloudimg.com/raw/b3fdeab0a6217890b4b462253025d275.png)
+![](https://main.qcloudimg.com/raw/d28a8232ed5b4e33aa51768d08d604d3.png)
 4. Test the interconnection between the container cluster and other resources in the CCN.
 
 
