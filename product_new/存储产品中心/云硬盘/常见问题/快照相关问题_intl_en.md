@@ -50,7 +50,7 @@ If no data disk is mounted to an instance and all data is written on the system 
 
 
 ### What is a scheduled snapshot?
-A scheduled snapshot is automatically created by the system according to the scheduled snapshot policy you created for the cloud disk associated with the policy. To use this feature, you must first create a scheduled snapshot policy and associate it with the cloud disk. For more information, see [Scheduling Snapshots](https://intl.cloud.tencent.com/document/product/362/31622).
+A scheduled snapshot is automatically created by the system according to the scheduled snapshot policy you created for the cloud disk associated with the policy. To use this feature, you must first create a scheduled snapshot policy and associate it with the cloud disk. 
 
 ### What limits do scheduled snapshots have?
 A maximum of 30 scheduled snapshot policies can be created in one region. Each scheduled snapshot policy can be associated with up to 200 cloud disks. In addition, snapshots created according to the scheduled snapshot policies comply with snapshot quota limits. For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/362/32406).
