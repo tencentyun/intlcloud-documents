@@ -1,6 +1,6 @@
 ### A cloud disk has adopted a three-copy redundancy mechanism for data security. Why do we still need to use snapshots?
 In situations where a logic-level data error occurs, for example, suppose a user deletes data by mistake, or if the data is damaged by a virus or file system exceptions, all three copies of the data stored will be affected and historical data cannot be restored. If you have created a snapshot previously, you can use the snapshot to restore data to the point in time the snapshot was created.
-![](https://main.qcloudimg.com/raw/489f6b71326383b3aba931a1786d94e0.svg)
+![](https://main.qcloudimg.com/raw/824b34d077d2e58114e08de86edae2b8.png)
 Suppose an administrator created snapshot A for a cloud disk at 11:00, and the cloud disk was infected with a virus at 12:00, which caused that data to be unusable. In this case, the three copies of the data would have been updated to state 2, and the data cannot be restored. Only snapshot A created at 11:00 can be used to restore data to the uninfected state 1.
 
 
@@ -12,7 +12,7 @@ If no data disk is mounted to an instance and all data is written on the system 
 		<tr>
 		<th width="10%">Name</th>
 		<td width="45%">Snapshots</td>
-		<td><a href="https://cloud.tencent.com/document/product/213/4940">Images</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/213/4940">Images</a></td>
 		</tr>
 		<tr>
 		<th>Characteristics</th>
