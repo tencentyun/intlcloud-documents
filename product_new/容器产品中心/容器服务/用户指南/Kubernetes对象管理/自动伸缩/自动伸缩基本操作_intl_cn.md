@@ -16,7 +16,7 @@ HPA 后台组件会每隔30秒向腾讯云云监控拉取容器和 Pod 的监控
 - 如果对单个 Deployment 同时绑定多个 HPA ，则创建的 HPA 会同时生效，会造成的集群反复扩缩容。
 
 ## 前提条件
-- 已 [注册腾讯云账户](https://cloud.tencent.com/register)。
+- 已 [注册腾讯云账户](https://intl.cloud.tencent.com/register)。
 - 已登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)。
 - 已创建集群。关于创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 
@@ -30,9 +30,9 @@ HPA 后台组件会每隔30秒向腾讯云云监控拉取容器和 Pod 的监控
 #### 通过设置实例数量调节
 1. 单击左侧导航栏中【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 2. 单击需要创建伸缩组的集群 ID，进入工作负载 Deployment 详情页，选择【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/c6d54e147a7b2e0e789781a9b743b30b.png)
+![](https://main.qcloudimg.com/raw/35583330917b8749972f290f5847e0f8.png)
 3. 在“新建Workload”页面，设置实例数量为**自动调节**。如下图所示：
-![](https://main.qcloudimg.com/raw/3d7e13d6372ee8f5f657ce9f524c362a.png)
+![](https://main.qcloudimg.com/raw/4d9f2de48a93f82b344cb1780242de26.png)
  - **触发策略**：自动伸缩功能依赖的策略指标。详情请参见 [指标类型](#IndicatorType)。
  - **实例范围**：请根据实际需求进行选择，实例数量会在设定的范围内自动调节，不会超出该设定范围。
 
@@ -40,9 +40,9 @@ HPA 后台组件会每隔30秒向腾讯云云监控拉取容器和 Pod 的监控
 1. 单击左侧导航栏中【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 2. 单击需要创建伸缩组的集群 ID，进入工作负载 Deployment 详情页，选择【自动伸缩】。
 3. 在“HorizontalPodAutoscaler”页面，单击【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/462b1796da9e8f8ccc45c33415fe6b61.png)
+![](https://main.qcloudimg.com/raw/25f05ca2148e7b7a82d8370af10058c6.png)
 3. 在“新建Hpa”页面，根据以下提示，进行 HPA 配置。如下图所示：
-![](https://main.qcloudimg.com/raw/585e9028065458d53c303ef0ede1fed7.png)
+![](https://main.qcloudimg.com/raw/0e76e8abed2ba63d244415a5b6861f2d.png)
  - **名称**：输入要创建的自动伸缩组的名称。
  - **命名空间**：请根据实际需求进行选择。
  - **关联deployment**：不能为空，请根据实际需求进行选择。
@@ -54,7 +54,7 @@ HPA 后台组件会每隔30秒向腾讯云云监控拉取容器和 Pod 的监控
 1. 单击左侧导航栏中【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 2. 单击需要创建伸缩组的集群 ID，进入工作负载 Deployment 详情页。
 3. 单击该页面右上角【YAML创建资源】。如下图所示：
-![](https://main.qcloudimg.com/raw/1cb1fa4df085a3f6f76a789adbd058e0.png)
+![](https://main.qcloudimg.com/raw/1d558af5c6057f8ac8c1682a2b1480f4.png)
 4. 在“YAML创建资源”页面，根据实际需求编辑内容，单击【完成】，即可新建 HPA 。
 
 
@@ -64,26 +64,26 @@ HPA 后台组件会每隔30秒向腾讯云云监控拉取容器和 Pod 的监控
 #### 通过更新实例数量
 1. 单击左侧导航栏中【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 2. 选择需要创建伸缩组的集群 ID，进入工作负载 Deployment 详情页，单击【更新实例数量】。如下图所示：
-![](https://main.qcloudimg.com/raw/09d6825bb349718712d8b94843a96cf9.png)
+![](https://main.qcloudimg.com/raw/107751e7e5520fa8f11eeafdb883d080.png)
 3. 在“更新实例数量”页面，根据实际需求进行设置，并单击【更新实例数量】。如下图所示：
-![](https://main.qcloudimg.com/raw/2291d0a52e3cb84791b5b7657b629919.png)
+![](https://main.qcloudimg.com/raw/af155961769ad37885ea36b087756f2d.png)
 
 #### 通过修改 Hpa 配置
 1. 单击左侧导航栏中【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 2. 选择需要创建伸缩组的集群 ID，进入工作负载 Deployment 详情页，单击【自动伸缩】。
 3. 在“HorizontalPodAutoscaler”页面，单击需要更新配置的 HPA 所在行右侧的【修改配置】。如下图所示：
-![](https://main.qcloudimg.com/raw/d0e498827dd05a95a095634411791a8b.png)
+![](https://main.qcloudimg.com/raw/5bc7933b13b005e4c695f89ac0dab0e7.png)
 3. 在“更新Hpa配置”页面，根据实际需求进行设置，并单击【更新Hpa】。如下图所示：
-![](https://main.qcloudimg.com/raw/47aa6413af8e046d4ccb053aa37856d6.png)
+![](https://main.qcloudimg.com/raw/e55638c55b122b9857ea45ae40dcf369.png)
 
 #### 通过编辑 YAML 更新
 1. 单击左侧导航栏中【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入“集群管理”页面。
 2. 单击需要创建伸缩组的集群 ID，选择【自动伸缩】。
 3. 在“HorizontalPodAutoscaler”页面，选择需要更新配置的 HPA 所在行右侧的【编辑YAML】。如下图所示：
-![](https://main.qcloudimg.com/raw/9eeec0fbf70fdc27f57fb5812b85e88c.png)
+![](https://main.qcloudimg.com/raw/707f99e989bb733663f1a21685b74ce8.png)
 3. 在“更新HorizontalPodAutoscaler”页面，根据实际需求进行编辑，单击【完成】即可。
 
 
 <span id="IndicatorType"></span>
 ## 指标类型
-相关指标和类型请参见 [自动伸缩指标说明](https://cloud.tencent.com/document/product/457/38929)。
+相关指标和类型请参见 [自动伸缩指标说明](https://intl.cloud.tencent.com/document/product/457/34025)。
