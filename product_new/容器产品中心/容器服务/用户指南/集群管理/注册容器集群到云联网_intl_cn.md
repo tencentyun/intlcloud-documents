@@ -23,7 +23,7 @@
 3. 单击云联网的注册开关，将容器网络注册到云联网。如下图所示：
 >此步骤仅是将容器网段注册到云联网，路由是否生效，需要在云联网侧控制。
 >
-![](https://main.qcloudimg.com/raw/5398c65b6435b077bec1d7b22227fc9a.png)
+![](https://main.qcloudimg.com/raw/ff0a346802069809892bf0241d64687d.png)
 
 
 
@@ -31,13 +31,13 @@
 ### 查看容器网段路由
 1. 登录私有网络控制台，单击左侧导航栏中的【[云联网](https://console.qcloud.com/vpc/ccn)】进入云联网管理页面。
 2. 单击集群 VPC 关联的云联网所在行右侧的【管理实例】，进入云联网实例管理页面。如下图所示：
-![](https://main.qcloudimg.com/raw/5fecbd8e1c9c7985e8f9ebcc9d87e6c6.png)
+![](https://main.qcloudimg.com/raw/49143db7cbcabe993574eb670256cab0.png)
 3. 在云联网实例管理页面中，单击【路由表】页签，查看容器网段路由启动情况。如下图所示：
 >
 >- 若网段不冲突，则路由默认启动。网段冲突，则路由默认关闭。
 >- 路由冲突原则请参见 [路由限制](https://intl.cloud.tencent.com/document/product/1003/30052)，如需启动冲突路由，请参见 [启用路由](https://intl.cloud.tencent.com/document/product/1003/30069)。
 >
-![](https://main.qcloudimg.com/raw/b3fdeab0a6217890b4b462253025d275.png)
+![](https://main.qcloudimg.com/raw/d28a8232ed5b4e33aa51768d08d604d3.png)
 4. 可开始测试容器集群与云联网其他资源的互通性。
 
 
