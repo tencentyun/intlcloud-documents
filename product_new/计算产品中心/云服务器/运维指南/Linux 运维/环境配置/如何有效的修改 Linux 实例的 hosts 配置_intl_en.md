@@ -21,7 +21,7 @@ touch /var/lib/cloud/instance/sem/config_update_etc_hosts
 ```
 
 ### Solution 2
->?This solution takes the CentOS 7.2 operating system as an example.
+>This solution takes the CentOS 7.2 operating system as an example.
 >
 #### Obtaining `hosts` Template File Path
 1. Log into the Linux CVM.
@@ -34,7 +34,7 @@ The `hosts` template file is as shown in the following figure:
 
 
 #### Modifying the `hosts` Template File
->?Taking adding `127.0.0.1 test test` as an example, you can modify the `hosts` template and `/etc/hosts` file as needed.
+>Taking adding `127.0.0.1 test test` as an example, you can modify the `hosts` template and `/etc/hosts` file as needed.
 >
 1. Execute the following command to modify the `hosts` template file.
 ```
