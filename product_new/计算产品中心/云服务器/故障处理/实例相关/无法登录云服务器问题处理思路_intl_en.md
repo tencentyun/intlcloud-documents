@@ -3,7 +3,7 @@ This document describes how to determine possible causes of instance login failu
 ## Possible Causes
 
 The following figure shows the primary causes of CVM instance login failures and their probabilities. If you cannot connect to an instance, we recommended you use the diagnosis tool and perform troubleshooting as instructed below.
-<img src="https://main.qcloudimg.com/raw/bde5d6d99a10bd307da495cfaeea3c7a.jpeg" height="310" width="520" />
+<img src="https://main.qcloudimg.com/raw/d8e0151489003a251514eebe74dc201a.png" height="310" width="520" />
 
 ## Troubleshooting
 
@@ -11,10 +11,10 @@ The following figure shows the primary causes of CVM instance login failures and
 
 You must first determine whether your purchased instance is a Windows system instance or Linux system instance. The causes of login failures vary by instance types. According to your purchased instance type, refer to the following documentation to locate and resolve the issue.
 - [Unable to log into a Windows instance](http://intl.cloud.tencent.com/document/product/213/10339)
-- [Unable to log into a Linux instance]
+- [Unable to log into a Linux instance](https://intl.cloud.tencent.com/document/product/213/32500)
 
 ### Using the diagnosis tool to locate the causes
-Tencent Cloud provides [Self-Diagnosis Tool](https://console.cloud.tencent.com/workorder/check) and [Port Verification](https://console.cloud.tencent.com/vpc/helper) to help you determine possible causes of login failures. More than 70% of login issues can be checked and located by this tool.
+Tencent Cloud provides [Port Verification](https://console.cloud.tencent.com/vpc/helper) to help you determine possible causes of login failures. More than 70% of login issues can be checked and located by this tool.
 
 #### Self-Diagnosis Tool
 Problems that can be diagnosed include high bandwidth usage rate, zero public network bandwidth, high server workload, improper security group rules, DDoS attack blocking, security isolation, and account in arrears.
@@ -31,14 +31,13 @@ For information about how to restart an instance, see [Restart Instance](http://
 If you cannot locate the cause of the issue following the above-mentioned steps, or you receive the following error messages when logging in to the CVM, refer to the following solutions.
 
 #### Windows Instances
-- [Windows instance: Unauthorized to log in via remote desktop service]
-- [Windows instance: Mac remote login exception]
-- [Windows instance: Authentication error]
-- [Windows instance: Network-level authentication required]
-- [Windows instance: Remote desktop cannot connect to the remote computer]
+- [Windows instance: Unauthorized to log in via remote desktop service](https://intl.cloud.tencent.com/document/product/213/32420)
+- [Windows instance: Mac remote login exception](https://intl.cloud.tencent.com/document/product/213/32422)
+- [Windows instance: Authentication error](https://intl.cloud.tencent.com/document/product/213/32421)
+- [Windows instance: Remote desktop cannot connect to the remote computer](https://intl.cloud.tencent.com/document/product/213/32404)
 
 #### Linux Instances
-[Linux instance: Unable to login due to high CPU and memory usage rates]
+[Linux instance: Unable to login due to high CPU and memory usage rates](https://intl.cloud.tencent.com/document/product/213/32387)
 
 ## Subsequent Operations
 

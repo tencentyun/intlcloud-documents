@@ -31,7 +31,7 @@
 如果通过以上处理步骤均无法定位问题原因，或者您在登录云服务器时直接返回以下类型的错误信息，均可以参考以下解决方案。
 
 #### Windows 实例
-- [Windows实例：没有远程桌面服务登录的权限](https://intl.cloud.tencent.com/document/product/213/32420 )
+- [Windows实例：没有远程桌面服务登录的权限](https://intl.cloud.tencent.com/document/product/213/32420)
 - [Windows 实例：Mac 远程登录异常](https://intl.cloud.tencent.com/document/product/213/32422)
 - [Windows 实例：发生身份验证错误](https://intl.cloud.tencent.com/document/product/213/32421)
 - [Windows 实例：远程桌面无法连接到远程计算机](https://intl.cloud.tencent.com/document/product/213/32404)

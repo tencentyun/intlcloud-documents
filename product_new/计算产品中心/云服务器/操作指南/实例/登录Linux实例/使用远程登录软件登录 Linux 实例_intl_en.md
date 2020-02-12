@@ -50,7 +50,7 @@ For example, select and open the private key file that has the file name **david
 4. In the **PuTTY Key Generator** window, enter the key name and the encrypted private key password. Click **Save private key**. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/58a250d3f3d1b78eff3edaab64cd01c0.png)
 5. In the pop-up window, select the path where the key will be saved. In the file name field, enter **Key Name.ppk**, and click **Save**. For example, save the `david` private key file as `david.ppk` key file. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/d0fa9fd8aad7d2259bd8a0ce48ae5160.png)
+![](https://main.qcloudimg.com/raw/44df54ca77069356a26c51e2a4db7643.png)
 6. Double click **putty.exe** to open the PuTTY client.
 7. In the left sidebar, select **Connection** > **SSH** > **Auth**, to enter the Auth configuration interface.
 8. Click **Browse**, select and open the saved path of the key. This is shown in the following figure:
@@ -67,6 +67,5 @@ For example, select and open the private key file that has the file name **david
 ## Subsequent Operations
 
 After logging into the CVM, you can build a personal website or forum on Tencent Cloud CVM or perform other operations. For more information, see the following:
-- [Building a personal WordPress website]
-- [Building a Discuz! forum]
+- [Manually Build WordPress Website](https://intl.cloud.tencent.com/document/product/213/8044)
 

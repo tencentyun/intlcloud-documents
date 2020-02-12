@@ -54,7 +54,6 @@ ssh -i <The absolute path of the private key downloaded to be associated with th
 ## Subsequent Operations
 
 After logging into the CVM, you can build a personal website or forum on Tencent Cloud CVM or perform other operations. For more information, see the following:
-- [Building a personal WordPress website]
-- [Building a Discuz! forum]
+- [Manually Build WordPress Website](https://intl.cloud.tencent.com/document/product/213/8044)
 
 
