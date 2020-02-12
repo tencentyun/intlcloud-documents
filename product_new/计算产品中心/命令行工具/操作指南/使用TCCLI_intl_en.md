@@ -19,6 +19,7 @@ Mac and Linux:
 ```bash
 tccli cvm RunInstances --InstanceChargeType POSTPAID_BY_HOUR --Placement '{"Zone":"ap-guangzhou-2"}' --InstanceType S1.SMALL1 --ImageId img-8toqc6s3 --SystemDisk '{"DiskType":"CLOUD_BASIC", "DiskSize":50}' --InternetAccessible '{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":10,"PublicIpAssigned":true}' --InstanceCount 1 --InstanceName TCCLI-TEST --LoginSettings '{"Password":"P1easeChange1t@"}' --HostName TCCLI-HOST-NAME1
 ```
+
 Windows：
 
 ```bash
