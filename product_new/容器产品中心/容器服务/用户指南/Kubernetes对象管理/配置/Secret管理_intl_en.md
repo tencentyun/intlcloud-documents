@@ -7,10 +7,10 @@ A secret is a key-value pair that can store sensitive information such as passwo
 1. Log in to the TKE console and select **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. Select the ID of the cluster where you want to create a secret to enter the cluster management page.
 3. Select **Configuration Management** > **Secret** on the left sidebar to go to the Secret page as shown below:
-![](https://main.qcloudimg.com/raw/de4fcb50d53db97af9f1d6ede08be1e1.png)
+![](https://main.qcloudimg.com/raw/e48919ef47fdc60fa4fd39198f66f4fe.png)
 4. Click **Create** to go to the **Create Secret** page.
 5. In the “Create Secret” page, make the following configurations according to your needs .
-![](https://main.qcloudimg.com/raw/a0c5ec51165aa0cfff4bfbfc303246b7.png)
+![](https://main.qcloudimg.com/raw/9a9babcb79782ad55d8c19d325139b04.png)
  - **Name**: enter a name.
  - **Secret Type**: please select one from **Opaque** and **Dockercfg** according to your needs.
         - **Opaque**: suitable for storing key certificates and configuration files. The value will be base64-encoded.
@@ -33,14 +33,14 @@ A secret is a key-value pair that can store sensitive information such as passwo
 2. Click the ID of the cluster where you want to deploy a workload to enter the cluster management page.
 3. Under **Workload**, select a workload type to go to the corresponding information page.
 For example, select **Workload** > **DaemonSet** to go to the DaemonSet page as shown below:
-![](https://main.qcloudimg.com/raw/743aa4292e75f58e92033ee829d44cbb.png)
+![](https://main.qcloudimg.com/raw/ec181a50743703e95ddba570f24d6734.png)
 4. Click **Create** to go to **Create Workload** page.
 5. Set the workload name, namespace and other information as instructed. In **Volume**, click **Add Volume** as shown below: 
-![](https://main.qcloudimg.com/raw/15e95703427ae44a8bae6b608ee34101.png)
+![](https://main.qcloudimg.com/raw/95d912af0af1ffeec2060f45d2108373.png)
 6. Select **Use Secret** in the drop-down menu, enter a name, and click **Select Secret** as shown below:
-![](https://main.qcloudimg.com/raw/9b560e9458c2253ad422a163d59e8532.png)
+![](https://main.qcloudimg.com/raw/20ac28f182c201dd0df88b492ec6493c.png)
 7. In the **Configure Secret** pop-up window, configure the mounting point and click **OK** as shown below:
-![](https://main.qcloudimg.com/raw/ec9c1f5055eb5ed8779777efe4ce6f03.png)
+![](https://main.qcloudimg.com/raw/760367ca00db0be33fc30d10d406829f.png)
  - **Select a secret**: select a secret as needed.
  - **Options**: you can select from **All** or **Specific keys**.
  - **Items**: if you select the **Specific keys** option, you can mount the secret to a specific path by adding an item. For example, if the mounting point is `/data/config`, the sub-path is `dev`, it will finally be saved under `/data/config/dev`.
@@ -51,12 +51,12 @@ For example, select **Workload** > **DaemonSet** to go to the DaemonSet page as 
 2. Click the ID of the cluster where you want to deploy a workload to enter the cluster management page.
 3. Under **Workload**, select a workload type to go to the corresponding information page.
 For example, select **Workload** > **DaemonSet** to go to the DaemonSet page as shown below:
-![](https://main.qcloudimg.com/raw/743aa4292e75f58e92033ee829d44cbb.png)
+![](https://main.qcloudimg.com/raw/d283d7fc289e34ebf8293a95d2c2c8de.png)
 4. Click **Create** to go to **Create Workload** page.
 5. Set the workload name, namespace and other information as instructed. In **Environment Variable** under **Containers in the pod**, click **Reference ConfigMap/Secret** as shown below:
-![](https://main.qcloudimg.com/raw/f9ca9039ce314fe65a302963c2ddf254.png)
+![](https://main.qcloudimg.com/raw/1703850463b0bf78406cc421f52a4d4c.png)
 6. Select **Secret** for the environment variable and select resources based on your needs as shown below:
-![](https://main.qcloudimg.com/raw/5ae67cf051ed20a4c1e509c3f7ac6fb9.png)
+![](https://main.qcloudimg.com/raw/5d145c2eb694af38f3e3a6f73d74bc13.png)
 7. Click **Create Workload** to complete the creation.
 
 #### Method 3: Referencing secret when using third-party image repositories
@@ -64,18 +64,18 @@ For example, select **Workload** > **DaemonSet** to go to the DaemonSet page as 
 2. Click the ID of the cluster where you want to deploy the workload to enter the cluster management page.
 3. Under **Workload**, select a workload type to go to the corresponding information page.
 For example, select **Workload** > **DaemonSet** to go to the DaemonSet page as shown below:
-![](https://main.qcloudimg.com/raw/743aa4292e75f58e92033ee829d44cbb.png)
+![](https://main.qcloudimg.com/raw/c02d49524d5c797f9cd3dab03ecca1fa.png)
 4. Click **Create** to go to **Create Workload** page.
 5. Set the workload name, namespace and other information as instructed. Click **Advanced Settings** in the bottom left corner of the page.
 6 Click **Add** under **imagePullSecrets** and select a dockercfg-type secret according to your needs as shown below:
-![](https://main.qcloudimg.com/raw/e744a226a75914f8cccaec30da86d213.png)
+![](https://main.qcloudimg.com/raw/2bab4fa82d83dba3c4a4a9651de20f68.png)
 7. Click **Create Workload** to complete the creation.
 
 ### Updating a Secret
 1. Log in to the TKE console and select **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. Select the ID of the cluster for which you want to update the YAML to go to the cluster management page.
 3. Select **Configuration Management** > **Secret** to go to the Secret page as shown below:
-![Secret](https://main.qcloudimg.com/raw/de4fcb50d53db97af9f1d6ede08be1e1.png)
+![Secret](https://main.qcloudimg.com/raw/8f92bfd6dc32a125409a57f623bd0a2f.png)
 4. In the row of the Secret for which you want to update the YAML, click **Edit YAML** to go to the secret updating page.
 5. On the Update Secret page, edit the YAML and click **Complete**.
 > To modify key-values, edit the parameter values of data in YAML and click **Finish** to complete the update.
