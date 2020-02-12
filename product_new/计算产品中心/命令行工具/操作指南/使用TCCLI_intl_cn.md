@@ -13,12 +13,22 @@
 >
 > 请注意 demo 中非简单类型的参数必须为标准 json 格式。
 
-以创建一台 CVM 为例，执行以下命令：
+以创建一台 CVM 为例，执行以下命令（Mac、Linux系统）：
 
 ```bash
 tccli cvm RunInstances --InstanceChargeType POSTPAID_BY_HOUR --Placement '{"Zone":"ap-guangzhou-2"}' --InstanceType S1.SMALL1 --ImageId img-8toqc6s3 --SystemDisk '{"DiskType":"CLOUD_BASIC", "DiskSize":50}' --InternetAccessible '{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":10,"PublicIpAssigned":true}' --InstanceCount 1 --InstanceName TCCLI-TEST --LoginSettings '{"Password":"P1easeChange1t@"}' --HostName TCCLI-HOST-NAME1
 ```
+Windows系统：
 
+```bash
+tccli cvm RunInstances --InstanceChargeType POSTPAID_BY_HOUR --Placement {\"Zone\":\"ap-guangzhou-2\"} --InstanceType S1.SMALL1 --ImageId img-8toqc6s3 --SystemDisk {\"DiskType\":\"CLOUD_BASIC\", \"DiskSize\":50} --InternetAccessible {\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":10,\"PublicIpAssigned\":true} --InstanceCount 1 --InstanceName TCCLI-TEST --LoginSettings {\"Password\":\"P1easeChange1t@\"} --HostName TCCLI-HOST-NAME1
+```
+
+
+>
+> 
+>
 > 说明：
 >
 > 更多功能，您可以通过`tccli help`查看支持的产品，通过`tccli cvm help`（以 CVM 举例）查看产品支持的接口。通过`tccli cbs DescribeDisks help`（以 CBS 产品的 DescribeDisks 接口为例） 查看接口支持的参数。
+
