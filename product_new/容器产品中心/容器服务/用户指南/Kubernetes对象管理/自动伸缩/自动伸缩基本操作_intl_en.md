@@ -16,7 +16,7 @@ Take CPU utilization as an example. Suppose there are two Pods with an average C
 - If multiple HPAs are bound to a single Deployment, the HPAs will take effect simultaneously, which will cause clusters to be repeatedly scaled.
 
 ## Prerequisites
-- You have [registered for a Tencent Cloud account](https://cloud.tencent.com/register).
+- You have [registered for a Tencent Cloud account](https://intl.cloud.tencent.com/register).
 - You are logged in to the [TKE console](https://console.cloud.tencent.com/tke2).
 - You have created a cluster. For details about how to create a cluster, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 
@@ -86,4 +86,4 @@ You can update auto scaling rules in one of the following ways.
 
 <span id="MetricType"></span>
 ## Metric Type
-For more information on metrics and types, see [Autoscaling Metrics](https://cloud.tencent.com/document/product/457/38929).
+For more information on metrics and types, see [Notes for Automatic Scaling Indicators](https://intl.cloud.tencent.com/document/product/457/34025).
