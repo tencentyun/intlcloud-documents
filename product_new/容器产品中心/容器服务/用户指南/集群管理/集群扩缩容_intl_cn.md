@@ -40,7 +40,7 @@
 #### 创建伸缩组
 1. <span id="step1"></span>登录容器服务控制台，单击左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster?rid=4)】。
 2. 单击需创建伸缩组的集群 ID，进入集群的“工作负载”页面。如下图所示：
-![管理页面](https://main.qcloudimg.com/raw/0ebce98c546da319b216fb939c3f2522.png)
+![管理页面](https://main.qcloudimg.com/raw/e2bcad6764bd49c84498a55e9c53197e.png)
 3. 选择左侧集群导航栏中的【节点管理】>【伸缩组】，进入“伸缩组”列表页面。
 4. 单击【新建伸缩组】，并在弹出 “新建伸缩组” 窗口中根据以下信息创建伸缩组。
  - **启动配置**：
@@ -82,9 +82,9 @@
 2. 单击需调整伸缩组配置的集群 ID，进入集群的“工作负载”页面。
 3. 在左侧导航栏中，选择【节点管理】>【伸缩组】，进入 “伸缩组列表” 页面。
 4. 单击“全局配置”模块右上角的【编辑】，进入“设置集群伸缩全局配置”。如下图所示：
-![](https://main.qcloudimg.com/raw/fdf9efb894c12ee0eeeefecbe93393a8.png)
+![](https://main.qcloudimg.com/raw/410ab4e705a961c2d5220478d3fc4d39.png)
 5. 在“设置集群伸缩全局配置”页面，根据以下信息调整全局配置。如下图所示：
-![](https://main.qcloudimg.com/raw/79a4b795c03f485352da73d7f67b1340.png)
+![](https://main.qcloudimg.com/raw/fa01f9cf9c649ee41413d20cdd3f9a72.png)
  - **自动缩容**：请根据实际情况进行勾选。
  - **缩容配置**：在开启自动缩容后，根据实际需求进行设置。
  - **扩容算法**：集群扩容时所依赖的算法准则，为您提供以下三种选择。
@@ -96,7 +96,7 @@
 #### 调整伸缩组配置
 1. 在“伸缩组列表”页面，选择需要调整配置的伸缩组所在行右侧的【更多】>【调整配置】，进入“调整伸缩组配置”页面。
 2. 在“调整伸缩组配置”页面，根据实际需求进行实例范围调整。如下图所示：
-![](https://main.qcloudimg.com/raw/4aa7e35926aa17f9a16f649e244a5383.png)
+![](https://main.qcloudimg.com/raw/2f74410ed45a42b12183eaa1cce1cada.png)
 3. 单击【确定】即可设置成功，伸缩组节点实例数将会在该范围内自动调节。
 
 
