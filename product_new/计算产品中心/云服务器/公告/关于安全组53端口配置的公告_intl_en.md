@@ -17,14 +17,14 @@ If you or your company does not engage in **Internet domain name resolution serv
 
 1. Log in to the [Tencent Cloud CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. In the instance management page, select the instance where port 53 is to be disabled, and click the **ID/Name**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/47cd2e4f355af6d8d6e0ad37ff0b7a0a.png)
+![](https://main.qcloudimg.com/raw/186bd6ec5c69b12b3ea9645ff1dbb22b.png)
 3. In the instance details page, select the **Security Groups** tab, to enter the security group management page for this instance. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/00458c704ee91bb04a725ee5e1a758ea.png)
+![](https://main.qcloudimg.com/raw/7eb1b0b56520701fc8d28a14cfecd7f1.png)
 4. In the **Bound to security group** field, select the **Security Group ID/Name** of the inbound rule that is to be modified.
 5. In the **Security Group Rule** page, select the **Inbound Rule** tab. Click **Add a Rule**. This is shown in the following figure.
-![](https://main.qcloudimg.com/raw/c79222c44236cdf754abb1f5544055bd.png)
+![](https://main.qcloudimg.com/raw/f1f7f9ce6d3e259e06542bf19d797022.png)
 6. In the **Add Inbound Rule** window that pops up, enter the following information. This is shown in the following figure:
-![Add inbound rules-disable port 53](https://main.qcloudimg.com/raw/209e2b6a5e926ba033e2b008400333e2.png)
+![Add inbound rules-disable port 53](https://main.qcloudimg.com/raw/f3890575ef22f31f67c0c6902f6df55a.png)
  - Type: Select “Custom”.
  - Source: Enter “0.0.0.0/0”.
  - Protocol port: Enter “UDP:53”.
