@@ -1,4 +1,3 @@
->Starting January 1, 2020, 00:00, the Global Content Delivery(GCD) billing method will be upgraded from monthly pay-as-you-go to daily pay-as-you-go with fees billed by traffic by default. This document describes the new billing method which is scheduled to take effect on January 1, 2020.The previous billing method described in [Billing Overview (Legacy)](<https://intl.cloud.tencent.com/document/product/1014/33472>) will remain effective until December 31, 2019.
 
 ## Billing regions
 GCD has eight billing regions: Asia Pacific Region 1, Asia Pacific Region 2, Asia Pacific Region 3, Middle East Region, Europe Region, North America Region, South America Region, and Africa Region.
