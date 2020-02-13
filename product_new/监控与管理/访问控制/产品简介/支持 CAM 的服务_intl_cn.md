@@ -87,6 +87,13 @@
 | [BGP 高防包](https://intl.cloud.tencent.com/document/product/1029) | 服务级  | &#10003; | -   |  - | - |
 | [BGP 高防 IP](https://intl.cloud.tencent.com/document/product/297) | 服务级  | &#10003; | -   |  - | - |
 
+
+## 数据安全
+
+ | 服务                                                          | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |
+| ----------------------------------------------------------- | ------ | -------- | ----- | ---- | ---- |
+| [密钥管理服务](https://intl.cloud.tencent.com/document/product/1030/) | 资源级   | &#10003;  | -  |  -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/1030/31978) |
+
 ## 安全管理
 
  | 服务                                                         | 授权粒度  | 控制台  | 根据标签进行授权 | 服务角色 | 参考文档 |
@@ -156,8 +163,7 @@
 
  | 服务                                                         | 授权粒度 | 控制台  | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------  | ------ | -------- | ----- | ---- |	---- |
-| [云监控](https://intl.cloud.tencent.com/document/product/248) | 操作级 | &#10003;  | -  |  - |	- |	
-| [密钥管理服务](https://intl.cloud.tencent.com/document/product/1030/) | 资源级   | &#10003;  | -  |  -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/1030/31978) |	
+| [云监控](https://intl.cloud.tencent.com/document/product/248) | 操作级 | &#10003;  | -  |  - |	- |		
 | [迁移服务平台](https://intl.cloud.tencent.com/document/product/1036/)  | -   | -  | -   |&#10003;    |	- |	
 
 ## 开发者工具
