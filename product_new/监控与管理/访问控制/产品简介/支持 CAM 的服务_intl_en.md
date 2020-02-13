@@ -87,6 +87,13 @@ Definitions:
 | [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029) | Service level | &#10003; | -   |  - | - |
 | [Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297) | Service level  | &#10003; | -   |  - | - |
 
+
+## Data Security	
+
+ | Service                                                         | Authorization Granularity | Console | Using Tags for Authorization | Service Role | Reference Documentation |
+| ----------------------------------------------------------- | ------ | -------- | ----- | ---- | ---- |
+| [Key Management Service (KMS)](https://intl.cloud.tencent.com/document/product/1030/) | Resource level | &#10003;  | -  |  -     |[Access Control](https://intl.cloud.tencent.com/document/product/1030/31978) |	
+
 ## Security Management
 
  | Service                                                         | Authorization Granularity | Console | Using Tags for Authorization | Service Role | Reference Documentation |
@@ -157,7 +164,6 @@ Definitions:
  | Service                                                         | Authorization Granularity | Console | Using Tags for Authorization | Service Role | Reference Documentation |
 | ------------------------------------------------------------  | ------ | -------- | ----- | ---- |	---- |
 | [Cloud Monitor (CM)](https://intl.cloud.tencent.com/document/product/248) | Operation level | &#10003;  | -  |  - |- |	
-| [Key Management Service (KMS)](https://intl.cloud.tencent.com/document/product/1030/) | Resource level | &#10003;  | -  |  -     |[Access Control](https://intl.cloud.tencent.com/document/product/1030/31978) |	
 | [Migration Service Platform (MSP)](https://intl.cloud.tencent.com/document/product/1036/)  | -   | -  | -   |&#10003;    |- |	
 
 ## Developer Tools
