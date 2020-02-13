@@ -120,7 +120,7 @@ CDN 目前对外提供的接口大部分为 API3.0 接口，进行项目级别�
 
 **语法说明**
 
-- action：表示需要授权的 Action，仅支持 DescribeCdnData、DescribeOriginData、ListTopData、DescribeIpVisit 这4个 Action 授权，详情请参见 [域名权限](https://cloud.tencent.com/document/product/228/12722#ymqx)。
+- action：表示需要授权的 Action，仅支持 DescribeCdnData、DescribeOriginData、ListTopData、DescribeIpVisit 这4个 Action 授权，详情请参见 [域名权限](https://intl.cloud.tencent.com/document/product/228/12722#ymqx)。
 - resource：表示需要授权的对象，对 CDN 服务而言，仅支持域名级别的授权，格式需要按示例所示。
 - effect：授权允许，即允许对 resource 调用 action，可配置为 deny，即禁止对 resource 调用 action。
 - statement 允许配置多条，当域名存在重复配置 deny 与 allow 时，deny 优先。
@@ -129,5 +129,5 @@ CDN 目前对外提供的接口大部分为 API3.0 接口，进行项目级别�
 >
 > 
 >
-> - 策略语法仅支持上述 DescribeCdnData、DescribeOriginData、ListTopData、DescribeIpVisit 这4个 Action 授权，详情请参见 [域名权限](https://cloud.tencent.com/document/product/228/12722#ymqx)。因此若配置为 * ，则表示对这几个 Action 均做授权。
+> - 策略语法仅支持上述 DescribeCdnData、DescribeOriginData、ListTopData、DescribeIpVisit 这4个 Action 授权，详情请参见 [域名权限](https://intl.cloud.tencent.com/document/product/228/12722#ymqx)。因此若配置为 * ，则表示对这几个 Action 均做授权。
 > - 允许同时按照项目授权、策略语法进行域名级别授权。若授权了项目 A 的数据访问权限，在策略语法中又拒绝了项目 A 中 a 域名的数据查询权限，则没有项目 A 的权限，但是有项目 A 下其他域名权限。
