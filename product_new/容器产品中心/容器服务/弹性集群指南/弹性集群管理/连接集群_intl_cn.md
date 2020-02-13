@@ -62,7 +62,7 @@ Client Version: version.Info{Major:"1", Minor:"14", GitVersion:"v1.14.5", GitCom
 
 
 
-### 通过证书信息使用 Kubectl 操作集群<span id="TheCluster"</span>
+### 通过证书信息使用 Kubectl 操作集群
 
 #### 单次 Kubectl 操作请求，附带证书信息
 >?该方法适用于单次操作集群，无需将容器集群的证书信息长期保存到机器上。
