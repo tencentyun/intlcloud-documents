@@ -23,8 +23,8 @@
 
 <span id="UseSSHLogin"></span>
 ### SSH 问题导致无法登录
-**故障现象**：[使用 SSH 登录 Linux 实例] 时，提示无法连接或者连接失败。
-**处理步骤**：参考 [无法通过 SSH 方式登录 Linux 实例] 进行排查。
+**故障现象**：[使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501) 时，提示无法连接或者连接失败。
+**处理步骤**：参考 [无法通过 SSH 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32486) 进行排查。
 
 <span id="CryptographicProblem"></span>
 ### 密码问题导致无法登录
@@ -37,7 +37,7 @@
 **故障现象**：通过自助诊断工具诊断，提示问题为带宽利用率过高。
 **处理步骤**：
 1. 通过 [VNC 登录](#VNC) 登录实例。
-2. 参考 [带宽占用高导致无法登录]，查看实例的带宽使用情况和处理故障。
+2. 参考 [带宽占用高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32542)，查看实例的带宽使用情况和处理故障。
 
 <span id="HighServerLoad"></span>
 ### 服务器高负载
@@ -45,14 +45,14 @@
 **可能原因**：病毒木马、第三方杀毒软件、应用程序异常、驱动异常或者软件后台的自动更新，会造成 CPU 占用率高，导致登录不上云服务器或者访问慢的问题。
 **处理步骤**：
 1. 通过 [VNC 登录](#VNC) 登录实例。
-2. 参考 [Linux 实例：CPU 与内存占用率高导致无法登录]，在 “任务管理器” 中定位高负载的进程。
+2. 参考 [Linux 实例：CPU 与内存占用率高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32387)，在 “任务管理器” 中定位高负载的进程。
 
 
 <span id="RemotePortConfiguration"></span>
 ### 远程端口配置异常
 **故障现象**：远程无法连接，远程访问端口非默认端口、被修改或者22端口没打开。
 **定位思路**：是否能 ping 通实例的公网 IP，通过 telnet 命令检测端口是否打开。
-**处理步骤**：具体操作可参考 [端口问题导致无法远程登录]。
+**处理步骤**：具体操作可参考 [端口问题导致无法远程登录](https://intl.cloud.tencent.com/document/product/213/32540)。
 
 <span id="SafetyGroupRule"></span>
 ### 安全组规则不当
