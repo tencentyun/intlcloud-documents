@@ -1,7 +1,7 @@
 ## 概述
 使用弹性容器服务（EKS），您无需关心集群节点，但为了合理分配资源和准确核算，您需在部署工作负载时指定 Pod 申请的资源规格。腾讯云会根据您指定的规格为工作负载分配计算资源，也会根据此规格进行费用核算。
 
-当您使用 Kubernetes API 或 Kubectl 创建弹性容器工作负载时，也需注明资源规格，详情请参考 [工作负载管理](https://cloud.tencent.com/document/product/457/39816)。
+当您使用 Kubernetes API 或 Kubectl 创建弹性容器工作负载时，也需注明资源规格，详情请参考 [工作负载管理](https://intl.cloud.tencent.com/document/product/457/34043)。
 
 >!
 > - 资源规格是 Pod 内容器可使用的最大资源量。
