@@ -5,7 +5,7 @@
 ## 前提条件
 - 请安装 curl 软件。
 - 请根据操作系统的类型，选择获取 Kubectl 工具的方式：
->!请对应您实际使用版本，将命令行中的 `v1.14.5` 替换成业务所需的 Kubectl 版本。
+>请对应您实际使用版本，将命令行中的 `v1.14.5` 替换成业务所需的 Kubectl 版本。
 >
  - **Mac OS 系统**
  在终端执行以下命令，获取 Kubectl 工具。
@@ -28,7 +28,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.14.5/bin/w
 ### 安装 Kubectl 工具
 
 1. 参考 [Installing and Setting up kubectl](https://kubernetes.io/docs/user-guide/prereqs/)，安装 Kubectl 工具。
->?
+>
 >- 如果您已经安装 Kubectl 工具，请忽略本步骤。
 >- 此步骤以 Linux 系统为例。
 2. 依次执行以下命令，添加执行权限。
@@ -65,7 +65,7 @@ Client Version: version.Info{Major:"1", Minor:"14", GitVersion:"v1.14.5", GitCom
 ### 通过证书信息使用 Kubectl 操作集群
 
 #### 单次 Kubectl 操作请求，附带证书信息
->?该方法适用于单次操作集群，无需将容器集群的证书信息长期保存到机器上。
+>该方法适用于单次操作集群，无需将容器集群的证书信息长期保存到机器上。
 >
 **请求方法：**
 Kubectl 命令参数格式如下所示：
@@ -84,7 +84,7 @@ kubectl get node -s "https://xxx.xx.xx.xxx:443/" --username=admin --password=666
 ```
 
 #### 修改 Kubectl 配置文件，长期有效
->?该方法适用于长期通过 Kubectl 操作集群，仅配置一次且无需修改文件，即可长期有效。
+>该方法适用于长期通过 Kubectl 操作集群，仅配置一次且无需修改文件，即可长期有效。
 >
 1. 参考以下命令，设置 Kubectl 配置文件中的密码、证书信息。
 ```shell
