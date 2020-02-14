@@ -31,11 +31,6 @@
       <td>&lt;BucketName-APPID&gt;.cos.ap-beijing.myqcloud.com</td>
    </tr>
    <tr>
-      <td>南京</td>
-      <td>ap-nanjing</td>
-      <td>&lt;BucketName-APPID&gt;.cos.ap-nanjing.myqcloud.com</td>
-   </tr>
-   <tr>
       <td>上海（华东）</td>
       <td>ap-shanghai</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-shanghai.myqcloud.com</td>
