@@ -4,9 +4,9 @@
 
 ## 计费方式
 
-EKS 会根据工作负载申请的 CPU、GPU、内存数值以及工作负载的运行时间来核算费用，具体计算方式请参见 [产品定价](https://cloud.tencent.com/document/product/457/39806)。
+EKS 会根据工作负载申请的 CPU、GPU、内存数值以及工作负载的运行时间来核算费用，具体计算方式请参见 [产品定价](https://intl.cloud.tencent.com/document/product/457/34055)。
 
 ## 其他费用
-如在使用 EKS 时使用到 [负载均衡 CLB](https://cloud.tencent.com/product/clb)、[云硬盘 CBS](https://cloud.tencent.com/product/cbs) 、[文件存储 CFS](https://cloud.tencent.com/product/cfs) 等其他收费产品时，按原产品计费原则计费，具体细节请参考各产品购买指南。
+如在使用 EKS 时使用到 [负载均衡 CLB](https://intl.cloud.tencent.com/product/clb)、[云硬盘 CBS](https://intl.cloud.tencent.com/product/cbs) 、[文件存储 CFS](https://intl.cloud.tencent.com/product/cfs) 等其他收费产品时，按原产品计费原则计费，具体细节请参考各产品购买指南。
 
 

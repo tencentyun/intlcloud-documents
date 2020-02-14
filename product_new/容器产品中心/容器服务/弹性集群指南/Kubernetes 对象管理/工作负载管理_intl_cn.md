@@ -3,7 +3,7 @@
 >!如果您需要通过 YAML 来创建和管理您的弹性容器工作负载，请务必阅读 [弹性容器服务 Annotation 说明](#workloadAnnotationDesc)。
 
 ## 前提条件
-- 已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://cloud.tencent.com/document/product/457/39813)。
+- 已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/34048)。
 - 集群有合适的且为 Active 状态的命名空间。
 
 ## 工作负载类型介绍
@@ -34,19 +34,19 @@ Cron 格式说明如下：
 ## 操作步骤
 1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)】。
 2. 在 “弹性集群” 列表页面，单击需创建工作负载的集群 ID，进入集群 “Deployment” 页面。如下图所示：
-![](https://main.qcloudimg.com/raw/25a9b8b66aabcc288cb71997c90f24f3.png)
+<!--![](https://main.qcloudimg.com/raw/25a9b8b66aabcc288cb71997c90f24f3.png)-->
 3. 单击【新建】，进入 “新建Workload” 页面。
 4. 填写工作负载名，并选择要创建的工作负载类型。
   - 各类型工作负载的具体参数设置请参考：
-     - [Deployment 管理](https://cloud.tencent.com/document/product/457/31705)
-     - [StatefulSet 管理](https://cloud.tencent.com/document/product/457/31707)
-     - [CronJob 管理](https://cloud.tencent.com/document/product/457/31709)
-     - [Job 管理](https://cloud.tencent.com/document/product/457/31708)
+     - [Deployment 管理](https://intl.cloud.tencent.com/document/product/457/30662)
+     - [StatefulSet 管理](https://intl.cloud.tencent.com/document/product/457/30663)
+     - [CronJob 管理](https://intl.cloud.tencent.com/document/product/457/30666)
+     - [Job 管理](https://intl.cloud.tencent.com/document/product/457/30665)
    - 其他操作指引请参考：
-     - [设置工作负载的资源限制](https://cloud.tencent.com/document/product/457/32813)
-     - [设置工作负载的调度规则](https://cloud.tencent.com/document/product/457/32814)
-     - [设置工作负载的健康检查](https://cloud.tencent.com/document/product/457/32815)
-    - [设置工作负载的运行命令和参数](https://cloud.tencent.com/document/product/457/32816)
+     - [设置工作负载的资源限制](https://intl.cloud.tencent.com/document/product/457/30667)
+     - [设置工作负载的调度规则](https://intl.cloud.tencent.com/document/product/457/30668)
+     - [设置工作负载的健康检查](https://intl.cloud.tencent.com/document/product/457/30669)
+    - [设置工作负载的运行命令和参数](https://intl.cloud.tencent.com/document/product/457/30670)
 
 <span id="workloadAnnotationDesc"></span>
 ## 弹性容器服务 Annotation 说明
@@ -61,13 +61,13 @@ Cron 格式说明如下：
 </thead>
 <tbody><tr>
 <td>eks.tke.cloud.tencent.com/cpu</td>
-<td>请参考 <a href="https://cloud.tencent.com/document/product/457/39808" target="_blank">资源规格</a> 填写，默认单位为核，不需要注明</td>
+<td>请参考 <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">资源规格</a> 填写，默认单位为核，不需要注明</td>
 <td>Pod 规格的 CPU 参数</td>
 <td>是，不填或填写不存在的规格会报错。</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/mem</td>
-<td>请参考 <a href="https://cloud.tencent.com/document/product/457/39808" target="_blank">资源规格</a> 填写，需要注明单位，例如512Mi、0.5Gi、1Gi</td>
+<td>请参考 <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">资源规格</a> 填写，需要注明单位，例如512Mi、0.5Gi、1Gi</td>
 <td>Pod 规格的内存参数</td>
 <td>是，不填或填写不存在的规格会报错。</td>
 </tr>

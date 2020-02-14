@@ -2,14 +2,14 @@
 本文档介绍弹性容器服务（EKS）提供的集群、工作负载、Pod、Container 4个层面的监控数据收集和展示功能。
 
 ## 前提条件
-已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://cloud.tencent.com/document/product/457/39813)。
+已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/34048)。
 
 ## 操作步骤
 1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)】。
 2. 在“弹性集群”列表页面，选择需操作的集群 ID。
 3. 在集群资源管理页面，参考以下文档查看监控及设置告警：
- - [查看监控数据](https://cloud.tencent.com/document/product/457/34181)
- - [设置告警](https://cloud.tencent.com/document/product/457/34182)
+ - [查看监控数据](https://intl.cloud.tencent.com/document/product/457/30689)
+ - [设置告警](https://intl.cloud.tencent.com/document/product/457/30690)
 
 ## 监控及告警指标列表
 ### 监控
@@ -17,7 +17,7 @@
 >!
 >- 工作负载使用的 PV 的详细监控指标请参考 [云硬盘监控](https://console.cloud.tencent.com/monitor/product/bs)、[文件存储监控](https://console.cloud.tencent.com/monitor/product/cfs)。
 >- Service 关联的 CLB 详细的网络监控指标请参考 [负载均衡监控](https://console.cloud.tencent.com/monitor/clb)。
->- 云监控创建告警策略指引，详情请参见 [创建告警策略](https://cloud.tencent.com/document/product/248/6215)。
+>- 云监控创建告警策略指引，详情请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215)。
 
 
 ### 集群监控指标
