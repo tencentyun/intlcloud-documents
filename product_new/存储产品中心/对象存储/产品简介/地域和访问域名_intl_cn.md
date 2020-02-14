@@ -19,7 +19,7 @@
       <th>默认域名（上传/下载/管理 ）</th>
    </tr>
    <tr>
-      <td rowspan=9>中国大陆</td>
+      <td rowspan=10>中国大陆</td>
       <td rowspan=7 nowrap="nowrap">公有云地域</td>
       <td nowrap="nowrap">北京一区（已售罄）</td>
       <td>ap-beijing-1</td>
