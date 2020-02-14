@@ -15,5 +15,5 @@ There are three ways to call KMS:
 - After a CMK is rotated, you do not need to encrypt the data again, as Tencent Cloud will retain the original CMK. Ciphertext encrypted with the old CMK can still be decrypted, while new data will be encrypted with the new CMK. 
 
 ### Is the quantum key service still available?
-KMS no longer offers quantum key management services. However, current quantum key users can continue to use them in the [KMS Console](https://console.cloud.tencent.com/kms).
+KMS no longer offers quantum key management services. However, current quantum key users can continue to use them in the [KMS Console](https://console.cloud.tencent.com/kms2).
 

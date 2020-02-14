@@ -10,8 +10,7 @@ COS 利用标签服务对原项目功能进行了兼容。在标签服务的体�
 
 >
 > - 如果您有分类管理存储桶的需求，我们推荐您直接通过标签管理您的存储桶，实现权限控制和分账等任务，而不是通过项目的途径进行管理。有关如何在控制台上增加标签，请参见 [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)。
-> - 了解项目请参见 CAM 的 [项目与标签](https://cloud.tencent.com/document/product/598/32738#.E9.A1.B9.E7.9B.AE.E7.AE.80.E4.BB.8B)，如需了解标签服务，请参见 [标签](https://cloud.tencent.com/document/product/651) 产品文档。
-> - 了解标签的优势，请参见 [使用标签的优势](https://cloud.tencent.com/document/product/598/32738#.E4.BD.BF.E7.94.A8.E6.A0.87.E7.AD.BE.E7.9A.84.E4.BC.98.E5.8A.BF)。
+> - 了解项目请参见 CAM 的 **项目与标签**，如需了解标签服务，请参见 [标签](https://intl.cloud.tencent.com/zh/document/product/651) 产品文档。
 
 ## 授予子账号拥有项目的访问权限
 
@@ -19,8 +18,8 @@ COS 利用标签服务对原项目功能进行了兼容。在标签服务的体�
 
 1. 登录 [项目管理控制台](https://console.cloud.tencent.com/project)，新建一个项目，自定义项目名称并提交，然后选择在该项目下创建一个存储桶或者云服务器等资源。如果您已有项目，且项目已有归属的存储或计算资源，可跳过这一步。
 2. 创建完项目并绑定好相应资源后，进入 [策略管理](https://console.cloud.tencent.com/cam/policy) 页面，单击【新建自定义策略】>【按标签授权】，您可以选择标签鉴权的方式，选择相应的项目标签，授予子账号访问该项目标签下的所有资源。
-   ![](https://main.qcloudimg.com/raw/ef361d9c809478f0ac81e38dac9bbf9f.png)
+   <!--![](https://main.qcloudimg.com/raw/ef361d9c809478f0ac81e38dac9bbf9f.png)-->
 3. 默认策略内容为授予子账号访问该项目标签下的所有资源。如果您只希望用户仅能对标签下的部分资源进行指定操作，您可以参见 [语法结构](https://intl.cloud.tencent.com/document/product/598/10604) 文档，修改策略语法中的`action`（设置指定操作）和`resource`（设定可操作资源），然后单击【完成】即可。
-![](https://main.qcloudimg.com/raw/70c3367cbcca8abc188662982316c5b8.png)
+<!--![](https://main.qcloudimg.com/raw/70c3367cbcca8abc188662982316c5b8.png)-->
 4. 如果您希望子账号能够创建存储桶，则还需要为子账号授予`PUT Bucket`的操作权限。您可以在 [策略管理](https://console.cloud.tencent.com/cam/policy) 页面单击【新建自定义策略】>【按策略生成器创建】，授权子账号相应的权限。
-![](https://main.qcloudimg.com/raw/1780442f042a88e2c819f62b61882913.jpg)
+<!--![](https://main.qcloudimg.com/raw/1780442f042a88e2c819f62b61882913.jpg)-->

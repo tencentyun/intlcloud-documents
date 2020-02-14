@@ -8,9 +8,9 @@
 
 ## 操作步骤
 1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)】。
-2. 在页面上方选择需创建弹性集群的地域，并单击【新建】。如下图所示：
+2. 在页面上方选择需创建弹性集群的地域，并单击【新建】。
 <!--![](https://main.qcloudimg.com/raw/b87df2b1d8b2ba95de0b91d859d17f41.png)-->
-3. 在“创建弹性集群”页面，根据以下提示设置集群信息。如下图所示：
+3. 在“创建弹性集群”页面，根据以下提示设置集群信息。
 <!--![](https://main.qcloudimg.com/raw/aecfb417ed5aa0b84bd17bf8d10e3410.png)-->
  -  **集群名称**：创建的弹性集群名称，不超过60个字符。
  -  **Kubernetes版本**：弹性集群支持1.12以上的多个 Kubernetes 版本选择，各版本特性对比请查看 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/)。
@@ -23,6 +23,6 @@
 ## 容器网络说明
 弹性容器服务的 Pod 会直接运行在用户已指定的 VPC 网络上，每个 Pod 在生命周期内都会绑定一个指定 VPC 内的弹性网卡。您可前往 [弹性网卡列表](https://console.cloud.tencent.com/vpc/eni) 查看 Pod 关联的网卡。
 
->?
+>
 >- 建议为容器网络配置多个可用区，这样您的工作负载在部署时会自动打散分布在多个可用区，可用性更高。
 >- 请确保为容器网络分配 IP 充足的子网，避免创建大规模工作负载时因为 IP 资源耗尽无法创建 Pod。

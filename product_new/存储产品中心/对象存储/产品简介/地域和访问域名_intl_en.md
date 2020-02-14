@@ -19,8 +19,8 @@ The **default domain name** refers to the default domain name of a COS bucket wh
       <th>Default Domain Name (Upload/Download/Management)</th>
    </tr>
    <tr>
-      <td rowspan=9>Mainland China</td>
-      <td rowspan=6 nowrap="nowrap">Public cloud regions</td>
+      <td rowspan=10>Mainland China</td>
+      <td rowspan=7 nowrap="nowrap">Public cloud regions</td>
       <td nowrap="nowrap">Beijing Zone 1 (sold out)</td>
       <td>ap-beijing-1</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-beijing-1.myqcloud.com</td>
@@ -29,6 +29,11 @@ The **default domain name** refers to the default domain name of a COS bucket wh
       <td>Beijing</td>
       <td>ap-beijing</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-beijing.myqcloud.com</td>
+   </tr>  
+   <tr>
+      <td>Nanjing</td>
+      <td>ap-nanjing</td>
+      <td>&lt;BucketName-APPID&gt;.cos.ap-nanjing.myqcloud.com</td>
    </tr>
    <tr>
       <td>Shanghai (East China)</td>

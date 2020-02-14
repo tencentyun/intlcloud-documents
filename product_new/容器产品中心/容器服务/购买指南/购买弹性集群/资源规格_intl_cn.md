@@ -3,7 +3,7 @@
 
 当您使用 Kubernetes API 或 Kubectl 创建弹性容器工作负载时，也需注明资源规格，详情请参考 [工作负载管理](https://intl.cloud.tencent.com/document/product/457/34043)。
 
->!
+>
 > - 资源规格是 Pod 内容器可使用的最大资源量。
 > - Pod 内所有 Container 设置的 Request 之和不可大于 Pod 规格。
 > - Pod 内任何 Container 设置的 Limit 不可大于 Pod 规格。

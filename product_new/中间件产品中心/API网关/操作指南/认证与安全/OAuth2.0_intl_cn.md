@@ -71,6 +71,9 @@ API 网关已经对外提供了 OAuth 功能，实践一个 Auth 的 Demo 需要
 #### 生成 RSA 公私钥
 - 公钥：放在 API 网关，用于验证 JWT 签名。
 - 私钥： AS 保存。
+
+> RSA SHA256 签名，密钥位数2048
+
 ![](https://main.qcloudimg.com/raw/55c9153f2d7a0f585a9bc0251d9d55a8.png)
 
 JSON 格式输出，满足 JWT Header 头部信息包含两部分：
@@ -83,7 +86,7 @@ JSON 格式输出，满足 JWT Header 头部信息包含两部分：
 
 
 #### 生成 id_token
-![](https://main.qcloudimg.com/raw/14ae49322bf0768c0e0fadf268e3f27c.png)
+![](https://main.qcloudimg.com/raw/878ca3fca403fff80f319da3f98b1464.png)
 - 生成 Token 时，需要用户设置 OIDC 协议定义 JWT 的 payload 中的 Claims 属性(iss, aud, iat, exp, sub)。其中，iat 和 exp 必须设置，其他为非必须设置项。
 
 #### 处理请求 Token

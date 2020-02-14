@@ -14,7 +14,7 @@
 ## 监控及告警指标列表
 ### 监控
 目前 EKS 提供了以下维度的监控指标，所有指标均为统计周期内的**平均值**。
->!
+>
 >- 工作负载使用的 PV 的详细监控指标请参考 [云硬盘监控](https://console.cloud.tencent.com/monitor/product/bs)、[文件存储监控](https://console.cloud.tencent.com/monitor/product/cfs)。
 >- Service 关联的 CLB 详细的网络监控指标请参考 [负载均衡监控](https://console.cloud.tencent.com/monitor/clb)。
 >- 云监控创建告警策略指引，详情请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215)。

@@ -16,13 +16,13 @@
 <td>南京地域上线</td>
 <td>对象存储上线南京地域（ap-nanjing）。</td>
 <td>2019.12.19</td>
-<td><a href="https://cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
 </tr>
 <tr>
 <td>存储桶加密功能上线</td>
 <td>通过设置存储桶加密，可对新上传至存储桶的所有对象默认以指定的服务端加密方式进行加密。</td>
 <td>2019.12.16</td>
-<td><a href="https://cloud.tencent.com/document/product/436/40117">存储桶加密概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/33457">存储桶加密概述</a></td>
 </tr>
 </tbody></table>
 
@@ -42,13 +42,13 @@
 <td>批量处理功能上线</td>
 <td>批量处理功能可以让您对存储桶内指定的对象列表执行指定的操作。</td>
 <td>2019.10.22</td>
-<td><a href="https://cloud.tencent.com/document/product/436/38601">批量处理概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">批量处理概述</a></td>
 </tr>
 <tr>
 <td>检索功能上线</td>
 <td>COS 检索功能通过结构化查询语句（SQL）筛选存储在 COS 上的对象，以便检索对象并获取用户所需的数据。</td>
 <td>2019.10.09</td>
-<td><a href="https://cloud.tencent.com/document/product/436/37635">Select 概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32472">Select 概述</a></td>
 </tr>
 </tbody></table>
 
@@ -68,7 +68,7 @@
 <td>日志管理功能上线</td>
 <td>日志管理功能够记录对于指定源存储桶的详细访问信息，并将这些信息以日志文件的形式保存在指定的存储桶中，以实现对存储桶更好的管理。</td>
 <td>2019.8.29</td>
-<td><a href="https://cloud.tencent.com/document/product/436/16920">日志管理概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/16920">日志管理概述</a></td>
 </tbody></table>
 
 
@@ -86,25 +86,25 @@
 <td>版本控制功能上线</td>
 <td>版本控制用于实现在相同存储桶中存放同一对象的多个版本。</td>
 <td>2019.06.20</td>
-<td><a href="https://cloud.tencent.com/document/product/436/19883">版本控制概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/19883">版本控制概述</a></td>
 </tr>
 <tr>
 <td>跨地域复制功能上线</td>
 <td>通过配置跨地域复制规则，可以在不同存储区域的存储桶中自动、异步地复制增量对象。</td>
 <td>2019.06.20</td>
-<td><a href="https://cloud.tencent.com/document/product/436/19237">跨地域复制概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/19237">跨地域复制概述</a></td>
 </tr>
 <tr>
 <td>支持自定义源站域名</td>
 <td>用户可以将已备案的自定义域名，绑定至当前存储桶，通过自定义域名访问桶内对象。</td>
 <td>2019.06.10</td>
-<td><a href="https://cloud.tencent.com/document/product/436/18424">域名管理概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/18424">域名管理概述</a></td>
 </tr>
 <tr>
 <td>清单功能上线</td>
 <td>清单是一种帮助用户管理存储桶中对象的功能，可以有计划地取代对象存储同步 List API 操作。</td>
 <td>2019.06.03</td>
-<td><a href="https://cloud.tencent.com/document/product/436/33703">清单功能概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/30622">清单功能概述</a></td>
 </tr>
 </tbody></table>
 
@@ -125,7 +125,7 @@
 <td>存储桶标签上线</td>
 <td>存储桶标签是管理存储桶的一个标识，便于用户对存储桶进行分组管理。</td>
 <td>2019.05.10</td>
-<td><a href="https://cloud.tencent.com/document/product/436/34834">存储桶标签概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31509">存储桶标签概述</a></td>
 </tr>
 </tbody></table>
 
@@ -144,7 +144,7 @@
 <td>直传归档功能上线</td>
 <td>在 COS 中直接上传存储类型为归档存储的对象。</td>
 <td>2019.04.26</td>
-<td><a href="https://cloud.tencent.com/document/product/436/34338">直传归档</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/30933">直传归档</a></td>
 </tr>
 </tbody></table>
 
@@ -172,13 +172,13 @@
 <td>优化请求速率的性能</td>
 <td>对象存储全面支持超高频率发起访问请求，满足大数据计算等高频访问的场景。</td>
 <td>2018.11</td>
-<td><a href="https://cloud.tencent.com/document/product/436/13653">请求速率与性能优化</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/13653">请求速率与性能优化</a></td>
 </tr>
 <tr>
 <td>计费相关</td>
 <td>在中国大陆地域，COS 归档支持美元计费。</td>
 <td>2018.11.12</td>
-<td><a href="https://cloud.tencent.com/document/product/436/6239">产品定价</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/6239">产品定价</a></td>
 </tr>
 </tbody></table>
 
@@ -214,7 +214,7 @@
 <td>日本东京地域上线</td>
 <td>对象存储上线日本东京（ap-tokyo）地域。</td>
 <td>2018.8</td>
-<td><a href="https://cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
 </tr>
 <tr>
 <td>新版控制台灰度上线</td>
@@ -226,7 +226,7 @@
 <br>注意：
 <br>官网功能、案例等文档将按照新版控制台界面同步更新。
 <td>2018.08.01</td>
-<td><a href="https://cloud.tencent.com/document/product/436/11365">控制台概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/11365">控制台概述</a></td>
 </tr>
 </tbody></table>
 
@@ -243,7 +243,7 @@
 <tbody><tr>
 <td>发布 Hadoop COS 插件，支持大数据场景</td>
 <td>正式发布 Hadoop COS 插件包，可以直接导入到 Hadoop 环境中，通过修改配置文件 core-site.xml 后，可使用 cosn:// 协议直接访问对象存储中的数据。</td>
-<td><a href="https://cloud.tencent.com/document/product/436/6884">Hadoop 工具</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/6884">Hadoop 工具</a></td>
 </tr>
 <tr>
 <td>私有存储桶可绑定 CDN 访问功能</td>
@@ -268,7 +268,7 @@
 <tbody><tr>
 <td>泰国曼谷、俄罗斯莫斯科地域上线</td>
 <td>对象存储在全球多个新地域上线，包含泰国曼谷（ap-bangkok）和俄罗斯莫斯科（eu-moscow）地域。</td>
-<td><a href="https://cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
 </tr>
 </tbody></table>
 
@@ -291,7 +291,7 @@
 <tr>
 <td>美国硅谷、弗吉尼亚（阿什本）、韩国首尔和印度孟买地域上线</td>
 <td>对象存储在全球多个新地域上线，包含美国硅谷（na-siliconvalley）、弗吉尼亚（阿什本 na-ashburn）、韩国首尔（ap-seoul）和印度孟买（ap-mumbai）地域。</td>
-<td><a href="https://cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
 </tr>
 </tbody></table>
 
@@ -310,7 +310,7 @@
 <td>对象存储流量日结上线</td>
 <td>为了让用户及时了解流量使用情况及费用情况，对象存储流量计费由月结变更为日结，其他计费项保持月结不变</td>
 <td>2017.12.15</td>
-<td><a href="https://cloud.tencent.com/document/product/436/40285">计费项</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/33776">计费项</a></td>
 </tbody></table>
 
 
@@ -326,5 +326,5 @@
 <tbody><tr>
 <td>对象存储发布全球多地域设施</td>
 <td>对象存储新增成都、中国香港、新加坡、多伦多、法兰克福地域的存储服务，为全球用户提供就近存储和接入的能力，并调整降低了中国大陆地区的外网流量价格。</td>
-<td><a href="https://cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/6224">地域和访问域名</a></td>
 </tbody></table>

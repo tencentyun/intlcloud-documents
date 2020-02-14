@@ -1,6 +1,6 @@
 ## 操作场景
 本文介绍如何在弹性集群中选择多种工作负载形式来运行您的服务。
->!如果您需要通过 YAML 来创建和管理您的弹性容器工作负载，请务必阅读 [弹性容器服务 Annotation 说明](#workloadAnnotationDesc)。
+>如果您需要通过 YAML 来创建和管理您的弹性容器工作负载，请务必阅读 [弹性容器服务 Annotation 说明](#workloadAnnotationDesc)。
 
 ## 前提条件
 - 已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/34048)。

@@ -21,14 +21,14 @@
 2. 参考 [创建 Ingress ](https://intl.cloud.tencent.com/document/product/457/30673) 完成 Ingress 新建。
 其中监听端口勾选【Http:443】，并选择合适的服务器证书。
 
->?
+>
 > -  当控制台创建的 Ingress 开启 HTTPS 服务，会先创建同名的 Secret 资源用于存放证书 ID，然后在 Ingress 中使用并监听该 Secret。
 > - 当控制台修改证书时，会修改对应当前 Ingress 的证书资源。需注意的是，如用户的多个 Ingress 配置使用同一个 Secret 资源，那么这些 Ingress 对应 CLB 的证书会一起变更。
 
 
 ### Kubectl 操作指引
 
-#### 配置证书并创建一个 HTTPS 服务<span id="CreatingSecret"></span>
+#### 配置证书并创建一个 HTTPS 服务
 1. 创建 Secret 资源。
  - Base64 手动编码。YAML 示例如下：
 ```yaml
@@ -87,7 +87,7 @@ kubectl edit secrets
 kubectl edit secrets tencent-com-cert
 ```
 2. 修改 Secret 资源，将 `qcloud_cert_id` 的值修改为新的证书 ID。
->! 与创建 Secret 相同，修改 Secret 证书 ID 需要进行 Base64 编码，请根据实际需求选择 Base64 手动编码或者指定 `stringData` 进行 Base64 自动编码。
+> 与创建 Secret 相同，修改 Secret 证书 ID 需要进行 Base64 编码，请根据实际需求选择 Base64 手动编码或者指定 `stringData` 进行 Base64 自动编码。
 
 
 #### 混合规则配置
