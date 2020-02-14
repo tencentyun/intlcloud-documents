@@ -18,7 +18,7 @@
 ### 控制台使用证书操作指引
 
 1. 登录 CLB 控制台，选择左侧导航栏中的 [【证书管理】](https://console.cloud.tencent.com/clb/cert)，在“证书管理”页面新建证书。
-2. 参考 [创建 Ingress ](https://cloud.tencent.com/document/product/457/31711#.E5.88.9B.E5.BB.BA-ingress) 完成 Ingress 新建。
+2. 参考 [创建 Ingress ](https://intl.cloud.tencent.com/document/product/457/30673) 完成 Ingress 新建。
 其中监听端口勾选【Http:443】，并选择合适的服务器证书。
 
 >?
@@ -100,7 +100,7 @@ TKE Ingress Controller 支持混合配置 HTTP/HTTPS 规则，步骤如下：
 将 Ingress 中的每一条规则与 `kubernetes.io/ingress.http-rules` 、 `kubernetes.io/ingress.https-rules` 进行匹配并添加到对应规则集中。若 Ingress 中的规则未匹配，则默认添加到 HTTPS 规则集中。
 3. 校验匹配项
 匹配时请注意校验 Host、Path、ServiceName、ServicePort（其中 Host 默认为 `VIP`、Path 默认为 `/`）。
-请注意 [IPv6](https://cloud.tencent.com/document/product/1142/38134) 的 CLB 不具备提供默认域名的功能。
+请注意 **IPv6** 的 CLB 不具备提供默认域名的功能。
 
 #### YAML 示例
 
