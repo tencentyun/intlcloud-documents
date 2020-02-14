@@ -47,7 +47,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>N/A</td>
    </tr>
    <tr>
-      <td rowspan="3">Beijing (North China), Shanghai (East China), Guangzhou (South China)</td>
+      <td rowspan="3">Beijing (North China), Nanjing, Shanghai (East China), Guangzhou (South China)</td>
       <td>COS Standard</td>
       <td>0.024</td>
       <td>0.002</td>
