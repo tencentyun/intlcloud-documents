@@ -17,8 +17,8 @@
 #### 驱逐前检查
 驱逐的过程涉及了 Pod 的重建，可能会对集群中的服务造成影响，因此建议在驱逐前执行如下检查：
 1. 检查集群中的剩余节点是否有足够资源去运行待驱逐节点上的 Pod。
-节点的资源分配情况可通过 TKE 控制台查看。在 “[集群列表](https://console.cloud.tencent.com/tke2/cluster)” 页面，选择集群 ID >【节点管理】> 节点，检查“节点列表”页面中的“已分配/总资源”。如下图所示：
-![](https://main.qcloudimg.com/raw/5ac6f7f2000b2389c4546c3e08644978.png)
+节点的资源分配情况可通过 TKE 控制台查看。在 “[集群列表](https://console.cloud.tencent.com/tke2/cluster)” 页面，选择集群 ID >【节点管理】> 节点，检查“节点列表”页面中的“已分配/总资源”。
+ <!--![](https://main.qcloudimg.com/raw/5ac6f7f2000b2389c4546c3e08644978.png)-->
 	如果节点的剩余资源不足，建议您向集群中新增节点，防止被驱逐的 Pod 出现无法运行的情况，从而对服务造成影响。
 2. 检查集群中是否有配置主动驱逐保护 PodDisruptionBudget（PDB）。
 主动驱逐保护会中断驱逐操作的执行，建议先删除主动驱逐保护 PDB。
@@ -41,8 +41,8 @@
 **通过 TKE 控制台驱逐**
 1. 在集群列表页面，选择需驱逐节点的集群 ID，进入集群工作负载管理页。
 2. 选择左侧导航栏中的【节点管理】>【节点】，进入“节点列表”页面。
-3. 选择节点所在行右侧的【更多】>【驱逐】，以驱逐节点上运行的 Pod。如下图所示：
-![](https://main.qcloudimg.com/raw/77764afa7d3ba6192a1d13d4d8169c65.png)
+3. 选择节点所在行右侧的【更多】>【驱逐】，以驱逐节点上运行的 Pod。
+<!--![](https://main.qcloudimg.com/raw/77764afa7d3ba6192a1d13d4d8169c65.png)-->
 
 **通过 kubectl drain 命令行驱逐**
 1. 请参考 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)，登录节点。
@@ -60,16 +60,16 @@ kubectl drain node <node-name>
 >- 请记录该节点 ID，用于重新添加到集群。
 >- 如果该节点是按量计费节点，注意不要勾选【销毁按量计费的节点】，销毁后不可恢复。
 >
-![](https://main.qcloudimg.com/raw/8231695c9f69b6690a2164dfe32d08a4.png)
+<!--![](https://main.qcloudimg.com/raw/8231695c9f69b6690a2164dfe32d08a4.png)-->
 
 
 ### 步骤3：重新加入该节点到集群
 1. 在“节点列表”页面，单击页面上方的【添加已有节点】。
 2. 在“选择节点”页面，输入记录的节点 ID，并单击<img src="https://main.qcloudimg.com/raw/706ad377ac9c152afe7d28aa9685f8e6.png" style="margin:-3px 0px">。
-3. 在搜索结果列表中勾选节点，并单击【下一步】进入云服务器配置页。如下图所示：
-![](https://main.qcloudimg.com/raw/23bb5511c4b49ce16a50d45c983416ba.png)
+3. 在搜索结果列表中勾选节点，并单击【下一步】进入云服务器配置页。
+<!--![](https://main.qcloudimg.com/raw/23bb5511c4b49ce16a50d45c983416ba.png)-->
 4. 在“云服务器配置”页面，【数据盘挂载】与【容器目录】默认不勾选。如果需要将容器和镜像存储在数据盘，则勾选【数据盘挂载】。如下图所示：
-![](https://main.qcloudimg.com/raw/e25bdb6fd89a23744528019eedec60d1.png)
+<!--![](https://main.qcloudimg.com/raw/e25bdb6fd89a23744528019eedec60d1.png)-->
 >选择数据盘挂载时，已格式化的 ext3、ext4、xfs 文件系统的系统盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为 ext4 并挂载。若您需保留数据盘数据并挂载，可参考 [数据盘挂载](#data)。
 >
 5. 请根据实际情况进行登录密码及安全组设置，并单击【完成】，等待节点添加成功。
@@ -99,7 +99,7 @@ K8S 1.4 之后的版本，`drain` 操作为先对节点进行封锁，再对节�
 >
 1. 在“云服务器配置”页面，不勾选【数据盘挂载】。
 2. 打开“高级设置”，在“自定义数据”输入以下节点初始化脚本，并勾选【开启封锁】。如下图所示：
-![](https://main.qcloudimg.com/raw/2998c7dcebca9bcff89fcf0d38586fc9.png)
+<!--![](https://main.qcloudimg.com/raw/2998c7dcebca9bcff89fcf0d38586fc9.png)-->
 ```
 systemctl stop kubelet  
 docker stop $(docker ps -a | awk '{ print $1}' | tail -n +2)
