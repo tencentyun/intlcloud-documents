@@ -91,6 +91,7 @@ TCP/UDP 防护端口最多可以配置5个端口段；不同端口段不可以�
 
 - 绑定资源：在弹出的【绑定资源】对话框中，根据实际业务需求勾选一个或多个资源，单击【确定】。
 - 解绑资源：在弹出的【绑定资源】对话框中，根据实际业务需求单击【已选择】区域中已选资源右侧的<img src="https://main.qcloudimg.com/raw/f452deeefbca4c66f34b7db71ec0daca.png"  style="margin:0;">，单击【确定】。
+
 <!--![解绑资源](https://main.qcloudimg.com/raw/156a2cfa944ec7493cd4d0966ac303e7.png)-->
 
 ##  **客户端接入水印**
