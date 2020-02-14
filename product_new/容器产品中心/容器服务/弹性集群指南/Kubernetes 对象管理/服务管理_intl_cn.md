@@ -3,7 +3,7 @@
 
 
 ## 前提条件
-- 已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://cloud.tencent.com/document/product/457/39813)。
+- 已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/34048)。
 - 集群有合适的且为 Active 状态的命名空间。
 
 ## 服务类型介绍
@@ -23,10 +23,10 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 
 
 ## 操作步骤
-具体操作请参考 [Service 管理](https://cloud.tencent.com/document/product/457/31710) 和 [Ingress 管理](https://cloud.tencent.com/document/product/457/31711)。
+具体操作请参考 [Service 管理](https://intl.cloud.tencent.com/document/product/457/30672) 和 [Ingress 管理](https://intl.cloud.tencent.com/document/product/457/30673)。
 
 ## 注意事项
 - 弹性集群集群内访问仅支持创建 Headless ClusterIP Service。
 - 弹性集群 Service 创建的 CLB 会直接绑定 Endpoint 内所有 Pod 的弹性网卡。
-- 弹性集群 Service 仅支持 [应用型负载均衡](https://cloud.tencent.com/document/product/214/8847)。
+- 弹性集群 Service 仅支持 [应用型负载均衡](https://intl.cloud.tencent.com/document/product/214/8847)。
 - 使用已有 CLB 创建 Service 时，仅支持使用当前未创建监听器的 CLB。
