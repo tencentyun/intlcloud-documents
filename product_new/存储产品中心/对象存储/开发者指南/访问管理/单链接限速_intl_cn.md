@@ -1,6 +1,6 @@
 ## 单链接限速
 
-COS 支持上传、下载文件时进行流量控制，以保证您其他应用的网络带宽，您可以在 [PutObject](https://cloud.tencent.com/document/product/436/7749)、[PostObject](https://cloud.tencent.com/document/product/436/14690)、[GetObject](https://cloud.tencent.com/document/product/436/7753)、[UploadPart](https://cloud.tencent.com/document/product/436/7750) 请求时携带 x-cos-traffic-limit 参数，并设置限速值，COS 会根据设置的限速值来控制本次请求的网络带宽。
+COS 支持上传、下载文件时进行流量控制，以保证您其他应用的网络带宽，您可以在 [PutObject](https://intl.cloud.tencent.com/document/product/436/7749)、[PostObject](https://intl.cloud.tencent.com/document/product/436/14690)、[GetObject](https://intl.cloud.tencent.com/document/product/436/7753)、[UploadPart](https://intl.cloud.tencent.com/document/product/436/7750) 请求时携带 x-cos-traffic-limit 参数，并设置限速值，COS 会根据设置的限速值来控制本次请求的网络带宽。
 
 ## 使用说明
 
