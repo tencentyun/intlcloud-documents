@@ -22,15 +22,15 @@
 |---------|---------|
 | 有公网 IP 的 PostgreSQL |  能够通过公网 IP 访问的 PostgreSQL 数据库。所需信息：<br><li>PostgreSQL 主机地址<li>PostgreSQL 端口<li>PostgreSQL 账号<li>PostgreSQL 密码 | 
 | 云服务器上的自建 PostgreSQL |  支持基础网络和私有网络两种环境下基于云服务器 CVM 的自建 PostgreSQL 数据库。使用时需要指定云服务器 CVM 的实例 ID 和所处的网络环境。所需信息：<br><li>所属地域：目前仅支持同地域内的 CVM 自建 PostgreSQL 迁移 TencentDB。若 CVM 与 TencentDB 分处于不同地域，使用 CVM 公网网络，选择【有公网 IP 的 PostgreSQL】项实现迁移<li>CVM 网络：支持基础网络和私有网络<li>私有网络：如选择私有网络，需选择所属的私有网络及子网<li>云服务器实例 ID<li>PostgreSQL 端口<li>PostgreSQL 账号<li>PostgreSQL 密码 | 
-| 专线接入的 PostgreSQL |  本地 IDC 自建 PostgreSQL 使用 [专线接入DC](https://cloud.tencent.com/product/dc) 服务与腾讯云相连接后，可使用 DTS 数据迁移至腾讯云。所需信息：<br><li> 专线网关：接入腾讯云的数据库服务器所使用的专线网关，[了解专线网关](https://intl.cloud.tencent.com/document/product/216/19256)<li>私有网络：专线网关所属的私有网络<li> PostgreSQL主机地址：IDC 内的 PostgreSQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li>PostgreSQL 端口<li>PostgreSQL 账号<li>PostgreSQL 密码		 | 
-| VPN 接入的 PostgreSQL |  本地 IDC 自建 PostgreSQL 通过 [VPN 连接服务](https://cloud.tencent.com/product/vpn) 或云服务器上自建 VPN 服务接入与腾讯云相连接后，可使用 DTS 数据迁移至腾讯云。所需信息：<br><li>所属地域：目前仅支持同地域内的 VPN 服务<li>VPN 类型：[云 VPN 服务](https://cloud.tencent.com/product/vpn) 或云服务器上自建 VPN<li>VPN 网关：仅 [云 VPN 服务](https://cloud.tencent.com/product/vpn) 需要补充 VPN 网关信息，[了解 VPN](https://cloud.tencent.com/product/vpn)<li>私有网络：VPN 服务所属的私有网络<li>PostgreSQL 主机地址：IDC 内的 PostgreSQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li>PostgreSQL 端口<li>PostgreSQL 账号<li>PostgreSQL 密码		 | 
+| 专线接入的 PostgreSQL |  本地 IDC 自建 PostgreSQL 使用 [专线接入DC](https://intl.cloud.tencent.com/product/dc) 服务与腾讯云相连接后，可使用 DTS 数据迁移至腾讯云。所需信息：<br><li> 专线网关：接入腾讯云的数据库服务器所使用的专线网关，[了解专线网关](https://intl.cloud.tencent.com/document/product/216/19256)<li>私有网络：专线网关所属的私有网络<li> PostgreSQL主机地址：IDC 内的 PostgreSQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li>PostgreSQL 端口<li>PostgreSQL 账号<li>PostgreSQL 密码		 | 
+| VPN 接入的 PostgreSQL |  本地 IDC 自建 PostgreSQL 通过 [VPN 连接服务](https://intl.cloud.tencent.com/product/vpn) 或云服务器上自建 VPN 服务接入与腾讯云相连接后，可使用 DTS 数据迁移至腾讯云。所需信息：<br><li>所属地域：目前仅支持同地域内的 VPN 服务<li>VPN 类型：[云 VPN 服务](https://intl.cloud.tencent.com/product/vpn) 或云服务器上自建 VPN<li>VPN 网关：仅 [云 VPN 服务](https://intl.cloud.tencent.com/product/vpn) 需要补充 VPN 网关信息，[了解 VPN](https://intl.cloud.tencent.com/product/vpn)<li>私有网络：VPN 服务所属的私有网络<li>PostgreSQL 主机地址：IDC 内的 PostgreSQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li>PostgreSQL 端口<li>PostgreSQL 账号<li>PostgreSQL 密码		 | 
 | 云数据库 PostgreSQL |TencentDB for PostgreSQL 云数据库实例。所需信息：<br><li>PostgreSQL 实例 ID<li>PostgreSQL 账号<li>PostgreSQL 密码   | 
 	
-![](https://main.qcloudimg.com/raw/c57aaf34e4a594d2e22e525339e83927.png)
+<!--![](https://main.qcloudimg.com/raw/c57aaf34e4a594d2e22e525339e83927.png)-->
 
 ### 选择所要迁移的数据库
 选择要迁移的数据库（可选择全部迁移或部分库表迁移）。
-![](https://main.qcloudimg.com/raw/22aeb31026feb69a5478fe04bbcb2049.png)
+<!--![](https://main.qcloudimg.co<!--6feb69a5478fe04bbcb2049.png)-->
 
 ### 校验迁移任务
 单击【下一步：校验任务】，对迁移任务信息进行校验，只有所有校验项通过后才能启动迁移任务，校验完成后，单击【启动】即可。
@@ -38,7 +38,7 @@
  - 通过：表示校验完全通过。
  - 警告：表示校验不通过，迁移过程中或迁移后可能影响数据库正常运行但不影响迁移任务的执行。
  - 失败：表示校验不通过，无法进行迁移。如果校验失败，请根据出错的校验项，检查并修改迁移任务信息，然后重试校验。
-![](https://main.qcloudimg.com/raw/5eea31c81b6fbf11ce2a800609f1cbbb.png)
+<!--![](https://main.qcloudimg.com/raw/5eea31c81b6fbf11ce2a800609f1cbbb.png)-->
 
 ### 启动迁移
 校验通过后，返回数据迁移列表，在【操作】列，单击【立即启动】开始迁移数据。需要注意的是，如果您设定了迁移任务的定时时间，则迁移任务会在设定的时间开始排队并执行，如果没有设置定时任务，则迁移任务会立即执行。
@@ -60,7 +60,7 @@
 >- 迁移单独的表时，需保证所有表外键依赖的表必须被迁移。
 
 ### 完成迁移
-![](https://main.qcloudimg.com/raw/ae86eb048301493f2eb4d687f91f9cb5.png)
+<!--![](https://main.qcloudimg.com/raw/ae86eb048301493f2eb4d687f91f9cb5.png)-->
 
 ## 同步插件配置
 1. 下载并拷贝 [dts_decoding](https://main.qcloudimg.com/raw/97b6b39254c963fcafc228a9c565a2e0.zip) 到 PostgreSQL 安装路径的 lib 目录下。

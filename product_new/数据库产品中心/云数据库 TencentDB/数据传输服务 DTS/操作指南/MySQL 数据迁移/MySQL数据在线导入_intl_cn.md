@@ -62,8 +62,8 @@
 登录 [DTS 控制台](https://console.cloud.tencent.com/dtsnew/migrate/page)，进入【数据迁移】页面，单击【新建任务】。
 
 ###  2. 修改配置
-填写任务设置、源库设置和目标库设置。如下图：
-![](https://mc.qcloudimg.com/static/img/513a6893e79862359ee52fd6d2d97c5b/image.png)
+填写任务设置、源库设置和目标库设置。
+<!--![](https://mc.qcloudimg.com/static/img/513a6893e79862359ee52fd6d2d97c5b/image.png)-->
 
 #### 任务设置
 * 任务名称：为任务指定名称。
@@ -76,8 +76,8 @@
 |---------|---------|
 | 有公网 IP 的 MySQL | 能够通过公网 IP 访问的 MySQL 数据库，所需信息：<li> MySQL 主机地址<li> MySQL 端口<li> MySQL 账号<li> MySQL 密码	 | 
 | 云服务器上的自建 MySQL | 支持基础网络和私有网络两种环境下基于 CVM 的自建 MySQL 数据库。使用时需要指定 CVM 的实例 ID 和所处的网络环境。所需信息：<li>所属地域：目前仅支持同地域内的 CVM 自建 MySQL 迁移 TencentDB。若 CVM 与 TencentDB 分处于不同地域，使用 CVM 公网网络，选择【有公网 IP 的 MySQL】项实现迁移<li>CVM 网络：支持基础网络和私有网络<li>私有网络：如选择私有网络，需选择所属的私有网络及子网<li>云服务器实例 ID<li>MySQL 端口<li> MySQL 账号<li>MySQL 密码			 | 
-| 专线接入腾讯云的 MySQL | 本地 IDC 自建 MySQL 使用 [专线接入 DC](https://cloud.tencent.com/product/dc) 服务与腾讯云相连接后，可使用DTS数据迁移至腾讯云。所需信息：<li>专线网关：接入腾讯云的数据库服务器所使用的专线网关，了解 [专线网关](https://intl.cloud.tencent.com/document/product/216/19256)<li>私有网络：专线网关所属的私有网络<li>MySQL主机地址：IDC 内的 MySQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li> MySQL 端口<li> MySQL 账号<li> MySQL 密码 | 
-| VPN 接入的 MySQL | 本地 IDC 自建 MySQL 通过 [腾讯云 VPN 连接服务](https://cloud.tencent.com/product/vpn) 或云服务器上自建 VPN 服务接入与腾讯云相连接后，可使用 DTS 数据迁移至腾讯云。所需信息：<li>所属地域：目前仅支持同地域内的 VPN 服务。<li>VPN 类型：云 VPN 服务或云服务器上自建 VPN。<li>VPN 网关：仅云 VPN 服务需要补充 VPN 网关信息，了解 [VPN](https://intl.cloud.tencent.com/document/product/215/4956)<li> 私有网络：VPN 服务所属的私有网络。<li> MySQL 主机地址：IDC 内的 MySQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li> MySQL 端口<li> MySQL 账号<li> MySQL 密码	 | 
+| 专线接入腾讯云的 MySQL | 本地 IDC 自建 MySQL 使用 [专线接入 DC](https://intl.cloud.tencent.com/product/dc) 服务与腾讯云相连接后，可使用DTS数据迁移至腾讯云。所需信息：<li>专线网关：接入腾讯云的数据库服务器所使用的专线网关，了解 [专线网关](https://intl.cloud.tencent.com/document/product/216/19256)<li>私有网络：专线网关所属的私有网络<li>MySQL主机地址：IDC 内的 MySQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li> MySQL 端口<li> MySQL 账号<li> MySQL 密码 | 
+| VPN 接入的 MySQL | 本地 IDC 自建 MySQL 通过 [腾讯云 VPN 连接服务](https://intl.cloud.tencent.com/product/vpn) 或云服务器上自建 VPN 服务接入与腾讯云相连接后，可使用 DTS 数据迁移至腾讯云。所需信息：<li>所属地域：目前仅支持同地域内的 VPN 服务。<li>VPN 类型：云 VPN 服务或云服务器上自建 VPN。<li>VPN 网关：仅云 VPN 服务需要补充 VPN 网关信息，了解 [VPN](https://intl.cloud.tencent.com/document/product/215/4956)<li> 私有网络：VPN 服务所属的私有网络。<li> MySQL 主机地址：IDC 内的 MySQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li> MySQL 端口<li> MySQL 账号<li> MySQL 密码	 | 
 
 ### 3. 选择所要迁移的数据库
 选择要迁移的数据库（可选择全部迁移或部分库表迁移），创建并检查迁移任务信息。
@@ -89,17 +89,16 @@
 **增量同步**：在进行数据导出导入后，设置 TencentDB for MySQL 为源库的备库，进行主备增量同步。
 **覆盖 root 账号**：因 root 账号将用于云数据库安全效验，若源库 root 账号不存在，会对后续使用 TencentDB 造成不便。因此在整实例迁移时，需指定是否使用源库 root 账号覆盖目标库 root 账号。如需使用源库 root 账号或目标库未设置 root，则选【是】，如需保留目标库的 root 账号，则选【否】。
 **是否只读**：选择只读后，在数据迁移过程中，从源数据库迁移的数据在目标数据库只能读取（Read Only），无法更改，直至用户单击完成迁移任务。
-![](https://main.qcloudimg.com/raw/c6f149f94c1c5c4f4edcc5b45759f2c2.png)
+<!--![](https://main.qcloudimg.com/raw/c6f149f94c1c5c4f4edcc5b45759f2c2.png)-->
 
 ### 4. 数据一致性检测
 选择数据检测类型（可选择全部检测或部分检测或不检测）。
 >选择部分检测选项时，需填写检测比例。
-
-![](https://main.qcloudimg.com/raw/50fde268f4cef7da0871a5f8f985eaf8.png)
+<!--![](https://main.qcloudimg.com/raw/50fde268f4cef7da0871a5f8f985eaf8.png)-->
 
 ### 5. 校验迁移任务信息
  在创建完迁移任务后，您需要对迁移任务信息进行校验，单击【下一步：校验任务】进行校验，只有所有校验项通过后才能启动迁移任务，单击【启动】即可。
-![](https://main.qcloudimg.com/raw/25ac6eb8eefe73b8ccacc85b11fa1b8b.png)
+<!--![](https://main.qcloudimg.com/raw/25ac6eb8eefe73b8ccacc85b11fa1b8b.png)-->
 任务校验存在 3 种状态：
 
  - 通过：表示校验完全通过
@@ -125,29 +124,29 @@
 3. 迁移单独的表时，需保证所有表外键依赖的表必须被迁移。
 
 在迁移过程中，如果您需要撤销迁移，可以单击【 撤销 】按钮。
-![](https://main.qcloudimg.com/raw/59099f9a8101c0a4fba0da27c1a26ea1.png)
+<!--![](https://main.qcloudimg.com/raw/59099f9a8101c0a4fba0da27c1a26ea1.png)-->
 
 撤销之后效果如下
-![](https://main.qcloudimg.com/raw/695ef6c76591830080a02195e663e3d2.jpg)
+<!--![](https://main.qcloudimg.com/raw/695ef6c76591830080a02195e663e3d2.jpg)-->
 
 
 ### 9. 完成迁移
 >当迁移处于【未结束】状态时，迁移任务将一直进行，数据持续同步。
 
 当迁移进度达到100%时，可单击右侧【完成】，完成迁移任务。
-![](https://main.qcloudimg.com/raw/21b56e090f75c8fd33b6ac54a5b8753f.jpg)
+<!--![](https://main.qcloudimg.com/raw/21b56e090f75c8fd33b6ac54a5b8753f.jpg)-->
 
-单击【 完成 】效果如下：
-![](https://main.qcloudimg.com/raw/2accc71a6a9e544bbea29e3c6ebc3d1f.jpg)
-![](https://main.qcloudimg.com/raw/de3bb36092060a461b46d804d975c295.png)
+单击【 完成 】。
+<!--![](https://main.qcloudimg.com/raw/2accc71a6a9e544bbea29e3c6ebc3d1f.jpg)-->
+<!--![](https://main.qcloudimg.com/raw/de3bb36092060a461b46d804d975c295.png)-->
 
 
 
-[1]:	https://cloud.tencent.com/product/dc
-[2]:	https://cloud.tencent.com/document/product/216/549
-[3]:	https://cloud.tencent.com/product/vpn
-[3]:	https://cloud.tencent.com/product/vpn
-[4]:	https://cloud.tencent.com/document/product/215/4956
+[1]:	https://intl.cloud.tencent.com/product/dc
+[2]:	https://https://intl.cloud.tencent.com/document/product/216/19256
+[3]:	https://intl.cloud.tencent.com/product/vpn
+[3]:	https://intl.cloud.tencent.com/product/vpn
+[4]:	https://intl.cloud.tencent.com/document/product/215/4956
 
 [img-creat0]: //mc.qcloudimg.com/static/img/d782322e94fc253a41f95e642f794b32/create0.png
 [img-creat1]: //mc.qcloudimg.com/static/img/123cd23d3449cd5497502d8572f4b0a0/creat1.png
