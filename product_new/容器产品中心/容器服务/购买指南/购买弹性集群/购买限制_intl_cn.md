@@ -1,9 +1,9 @@
 ## 使用要求
-使用 EKS 之前，腾讯云账号需完成实名认证。如未完成，请参考 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629) 进行认证。
+使用 EKS 之前，腾讯云账号需完成实名认证。如未完成，请参考 [实名认证基本介绍](https://intl.cloud.tencent.com/document/product/378/3629) 进行认证。
 
 
 ## 支持地域
-EKS 支持的地域以及资源规格信息请参考 [资源规格](https://cloud.tencent.com/document/product/457/39808)。
+EKS 支持的地域以及资源规格信息请参考 [资源规格](https://intl.cloud.tencent.com/document/product/457/34057)。
 
 ## 资源配额
 | 资源 | 限制（个） | 说明 |
