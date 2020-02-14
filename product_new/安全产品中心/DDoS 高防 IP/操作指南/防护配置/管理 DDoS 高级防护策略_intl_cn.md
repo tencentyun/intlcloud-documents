@@ -72,7 +72,7 @@ table th:first-of-type {
 
 - **水印防护**
 单击【开启】进行水印防护配置。填写指定的 TCP 协议防护端口和 UDP 协议防护端口，单击【确定】水印防护功能即刻开启。添加 DDoS 高级防护策略后，自动产生一条密钥信息，需要完成线下客户端接入水印配置。
-![水印防护](https://main.qcloudimg.com/raw/952eec4dacdd2f2f52bfafefab1f04d9.png)
+<!--![水印防护](https://main.qcloudimg.com/raw/952eec4dacdd2f2f52bfafefab1f04d9.png)-->
 
 - **TCP 协议防护端口、UDP 协议防护端口**
 TCP/UDP 防护端口最多可以配置5个端口段；不同端口段不可以互相重合；起止端口号相同则认为是一个端口；TCP 或 UDP协议端口段中需要至少配置一条。
@@ -91,7 +91,7 @@ TCP/UDP 防护端口最多可以配置5个端口段；不同端口段不可以�
 
 - 绑定资源：在弹出的【绑定资源】对话框中，根据实际业务需求勾选一个或多个资源，单击【确定】。
 - 解绑资源：在弹出的【绑定资源】对话框中，根据实际业务需求单击【已选择】区域中已选资源右侧的<img src="https://main.qcloudimg.com/raw/f452deeefbca4c66f34b7db71ec0daca.png"  style="margin:0;">，单击【确定】。
-![解绑资源](https://main.qcloudimg.com/raw/156a2cfa944ec7493cd4d0966ac303e7.png)
+<!--![解绑资源](https://main.qcloudimg.com/raw/156a2cfa944ec7493cd4d0966ac303e7.png)-->
 
 ##  **客户端接入水印**
 登录 [DDoS 防护管理控制台](https://console.cloud.tencent.com/dayu/bgpip_v2)，选择【DDoS 高防 IP】>【防护配置】。在【DDoS 高级防护策略】页签，单击目标策略所在行的【水印客户端文件下载】，线下完成客户端的接入。
@@ -103,7 +103,7 @@ TCP/UDP 防护端口最多可以配置5个端口段；不同端口段不可以�
  - **删除密钥**：只能对已停用的密钥进行删除。在弹出的【密钥信息】对话框中，单击目的密钥所在行的【删除】即可。
 >最多可存在2个密钥，如果需要添加新密钥，请先删掉其中一个旧密钥；当仅有一个密钥生效时，不可将其停用或删除。
 
-![密钥](https://main.qcloudimg.com/raw/0bedf4e2ee46f65ca89e2a0c834fc94d.png)
+<!--![密钥](https://main.qcloudimg.com/raw/0bedf4e2ee46f65ca89e2a0c834fc94d.png)-->
 ## 配置策略
 
 登录 [DDoS 防护管理控制台](https://console.cloud.tencent.com/dayu/bgpip_v2)，选择【DDoS 高防 IP】>【防护配置】。在【DDoS 高级防护策略】页签，单击目标策略所在行的【配置】。根据实际业务需求更新以下参数，单击【确定】保存修改。
