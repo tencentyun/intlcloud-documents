@@ -94,7 +94,6 @@
 ### 4. 数据一致性检测
 选择数据检测类型（可选择全部检测或部分检测或不检测）。
 >选择部分检测选项时，需填写检测比例。
--->
 <!--![](https://main.qcloudimg.com/raw/50fde268f4cef7da0871a5f8f985eaf8.png)-->
 
 ### 5. 校验迁移任务信息
@@ -137,7 +136,7 @@
 当迁移进度达到100%时，可单击右侧【完成】，完成迁移任务。
 <!--![](https://main.qcloudimg.com/raw/21b56e090f75c8fd33b6ac54a5b8753f.jpg)-->
 
-单击【 完成 】效果如下：
+单击【 完成 】。
 <!--![](https://main.qcloudimg.com/raw/2accc71a6a9e544bbea29e3c6ebc3d1f.jpg)-->
 <!--![](https://main.qcloudimg.com/raw/de3bb36092060a461b46d804d975c295.png)-->
 
