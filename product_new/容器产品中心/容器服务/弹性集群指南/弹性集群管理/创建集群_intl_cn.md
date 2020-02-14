@@ -8,9 +8,9 @@
 
 ## 操作步骤
 1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)】。
-2. 在页面上方选择需创建弹性集群的地域，并单击【新建】。如下图所示：
+2. 在页面上方选择需创建弹性集群的地域，并单击【新建】。
 <!--![](https://main.qcloudimg.com/raw/b87df2b1d8b2ba95de0b91d859d17f41.png)-->
-3. 在“创建弹性集群”页面，根据以下提示设置集群信息。如下图所示：
+3. 在“创建弹性集群”页面，根据以下提示设置集群信息。
 <!--![](https://main.qcloudimg.com/raw/aecfb417ed5aa0b84bd17bf8d10e3410.png)-->
  -  **集群名称**：创建的弹性集群名称，不超过60个字符。
  -  **Kubernetes版本**：弹性集群支持1.12以上的多个 Kubernetes 版本选择，各版本特性对比请查看 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/)。
