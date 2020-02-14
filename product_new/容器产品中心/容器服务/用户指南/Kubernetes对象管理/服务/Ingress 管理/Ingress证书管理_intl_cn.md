@@ -139,7 +139,7 @@ spec:
 
 ## 相关资料
 
-更多内容请参考 Kubenetes 官网文档 [Secret](https://kubernetes.io/zh/docs/concepts/configuration/secret/)。
+更多内容请参考 Kubenetes 官网文档 [Secret](https://kubernetes.io/docs/concepts/configuration/secret/)。
 
 
 
