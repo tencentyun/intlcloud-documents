@@ -1,4 +1,4 @@
->网络流日志正在火热内测中，[欢迎申请](https://intl.cloud.tencent.com/act/apply/VPCFlowLogs)。
+>网络流日志正在火热内测中，欢迎申请。
 
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，在左侧导航栏中单击【诊断工具】>【网络流日志】。
 2. 单击【新建】，进入“新建流日志”弹框。
