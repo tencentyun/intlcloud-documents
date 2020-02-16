@@ -1,4 +1,4 @@
->网络流日志正在火热内测中，[欢迎申请](https://cloud.tencent.com/act/apply/VPCFlowLogs)。
+>网络流日志正在火热内测中，[欢迎申请](https://intl.cloud.tencent.com/act/apply/VPCFlowLogs)。
 
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，在左侧导航栏中单击【诊断工具】>【网络流日志】。
 2. 单击【新建】，进入“新建流日志”弹框。
@@ -8,7 +8,7 @@
  - **日志集**：指定流日志在日志服务内的存储集合。
  - **日志主题**：指定日志存储的最小维度，用于区别不同类型日志，如 Accept 日志等。
 
-![](https://main.qcloudimg.com/raw/377e6e10c4f5ddb9afdd11489e652f67.png)
+<!--![](https://main.qcloudimg.com/raw/377e6e10c4f5ddb9afdd11489e652f67.png)-->
 >
 >- 首次创建流日志需要约15分钟后（10分钟捕获窗口，5分钟数据推送时间），方可在日志服务中查看流日志。
 >- 流日志本身不会产生费用，数据存储在日志服务中，将按日志服务的 [标准收费](https://intl.cloud.tencent.com/document/product/614/30012)。
