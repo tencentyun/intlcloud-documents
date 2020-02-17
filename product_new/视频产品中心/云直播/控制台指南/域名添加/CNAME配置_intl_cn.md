@@ -6,7 +6,7 @@
 
 ## 前提条件
 登录云直播控制台，进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)查看域名列表，获取域名的 CNAME 地址。
-![](https://main.qcloudimg.com/raw/a1a4cf2a596a842d456897e63cff8b46.png)
+<!--![](https://main.qcloudimg.com/raw/a1a4cf2a596a842d456897e63cff8b46.png)-->
 
 ## 腾讯云设置方法
 若您的 DNS 服务商为腾讯云，您可通过如下步骤添加 CNAME 记录：
@@ -20,8 +20,8 @@
 	- 记录值：填写腾讯云控制台[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)域名对应的 CNAME 值，格式为 `domain.livecdn.liveplay.myqcloud.com`。
 	- TTL：建议填写10分钟。
 5. 单击【保存】即可。
-![](https://main.qcloudimg.com/raw/e6efcdbf6b973e84f217968bdb3653d9.png)
-6. 验证 CNAME 生效。CNAME 设置完成后约15分钟生效，当云直播[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)中域名对应 CNAME 值显示![](https://main.qcloudimg.com/raw/bd92cce6703d3703582c0c2a194fd866.png)则 CNAME 成功。若 CNAME 设置完成后长时间未显示成功，可参考 [CNAME 配置问题定位。](https://cloud.tencent.com/document/product/267/30010#.E9.85.8D.E7.BD.AE.E5.AE.8C.E6.88.90-cname-.E5.90.8E.EF.BC.8C.E4.BE.9D.E6.97.A7.E6.98.BE.E7.A4.BA-cname-.E6.9C.AA.E9.85.8D.E7.BD.AE.E6.98.AF.E4.BB.80.E4.B9.88.E5.8E.9F.E5.9B.A0.EF.BC.9F)
+ <!--![](https://main.qcloudimg.com/raw/e6efcdbf6b973e84f217968bdb3653d9.png)-->
+6. 验证 CNAME 生效。CNAME 设置完成后约15分钟生效，当云直播[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)中域名对应 CNAME 值显示![](https://main.qcloudimg.com/raw/bd92cce6703d3703582c0c2a194fd866.png)则 CNAME 成功。若 CNAME 设置完成后长时间未显示成功，可参考 [CNAME 配置问题定位](https://intl.cloud.tencent.com/document/product/267/32478)。
 
 
 ## 阿里云设置方法
@@ -36,10 +36,10 @@
 	-  记录值：填写腾讯云控制台域名管理页域名对应的 CNAME 值，格式为 `domain.livecdn.liveplay.myqcloud.com`。
 	-  TTL：建议填写`10分钟`。
 4. 单击【确定】即可。
-![](https://main.qcloudimg.com/raw/c1c1966aa54b0eb263e057ed2534965b.png)
-4. 验证 CNAME 生效。CNAME 设置完成后约15分钟生效，当云直播 [域名管理](https://console.cloud.tencent.com/live/domainmanage) 中域名对应 CNAME 值显示![](https://main.qcloudimg.com/raw/ca12667bfcfd9716639c27d51f3beed3.png)则 CNAME 成功。若 CNAME 设置完成后长时间未显示成功，可参考 [CNAME 配置问题定位。](https://cloud.tencent.com/document/product/267/30010#.E9.85.8D.E7.BD.AE.E5.AE.8C.E6.88.90-cname-.E5.90.8E.EF.BC.8C.E4.BE.9D.E6.97.A7.E6.98.BE.E7.A4.BA-cname-.E6.9C.AA.E9.85.8D.E7.BD.AE.E6.98.AF.E4.BB.80.E4.B9.88.E5.8E.9F.E5.9B.A0.EF.BC.9F)
+ <!--![](https://main.qcloudimg.com/raw/c1c1966aa54b0eb263e057ed2534965b.png)-->
+5. 验证 CNAME 生效。CNAME 设置完成后约15分钟生效，当云直播 [域名管理](https://console.cloud.tencent.com/live/domainmanage) 中域名对应 CNAME 值显示![](https://main.qcloudimg.com/raw/ca12667bfcfd9716639c27d51f3beed3.png)则 CNAME 成功。若 CNAME 设置完成后长时间未显示成功，可参考 [CNAME 配置问题定位](https://intl.cloud.tencent.com/document/product/267/32478)。
 
->本文档基于阿里云 2019年10月31日版本进行说明，如阿里云控制台更新，本文档暂未更新，请根据说明路径自行调整。如无法设置成功的，请 [与客服联系](https://cloud.tencent.com/about/connect)。
+>本文档基于阿里云 2019年10月31日版本进行说明，如阿里云控制台更新，本文档暂未更新，请根据说明路径自行调整。如无法设置成功的，请 [与客服联系](https://intl.cloud.tencent.com/support)。
 
 ## 百度云设置方法
 若您的域名服务商为百度云，且已完成域名备案，可参考下述步骤进行 CNAME 设置。
@@ -52,27 +52,27 @@
  - 记录值：云直播控制台域名管理页域名对应的 CNAME 值，格式为 `domain.livecdn.liveplay.myqcloud.com`。
  - TTL：建议填写`10分钟`。
 4. 单击【确定】提交即可。
-![](https://main.qcloudimg.com/raw/7ed00d812a79bb472c6d5395ea5c8783.png)
-5. 验证 CNAME 生效。CNAME 设置完成后约15分钟生效，当云直播域名管理中域名对应 CNAME 值显示![](https://main.qcloudimg.com/raw/bd92cce6703d3703582c0c2a194fd866.png)则 CNAME 成功。若 CNAME 设置完成后长时间未显示成功，可参考 [CNAME 配置问题定位。](https://cloud.tencent.com/document/product/267/30010#.E9.85.8D.E7.BD.AE.E5.AE.8C.E6.88.90-cname-.E5.90.8E.EF.BC.8C.E4.BE.9D.E6.97.A7.E6.98.BE.E7.A4.BA-cname-.E6.9C.AA.E9.85.8D.E7.BD.AE.E6.98.AF.E4.BB.80.E4.B9.88.E5.8E.9F.E5.9B.A0.EF.BC.9F)
+<!--![](https://main.qcloudimg.com/raw/7ed00d812a79bb472c6d5395ea5c8783.png)-->
+5. 验证 CNAME 生效。CNAME 设置完成后约15分钟生效，当云直播域名管理中域名对应 CNAME 值显示![](https://main.qcloudimg.com/raw/bd92cce6703d3703582c0c2a194fd866.png)则 CNAME 成功。若 CNAME 设置完成后长时间未显示成功，可参考 [CNAME 配置问题定位](https://intl.cloud.tencent.com/document/product/267/32478)。
 
->本文档基于百度云 2019年03月01日版本进行说明，如百度云控制台更新，本文档暂未更新，请根据说明路径自行调整。如 无法设置成功，请 [与客服联系](https://cloud.tencent.com/about/connect)。
+>本文档基于百度云 2019年03月01日版本进行说明，如百度云控制台更新，本文档暂未更新，请根据说明路径自行调整。如 无法设置成功，请 [与客服联系](https://intl.cloud.tencent.com/support)。
 
 ## DNSPod 设置方法
 若您的 DNS 服务商为 DNSPod，您可通过如下步骤添加 CNAME 记录。
-![](https://main.qcloudimg.com/raw/c78f494c6b550562ddb49a255f1caf0d.png)
+<!--![](https://main.qcloudimg.com/raw/c78f494c6b550562ddb49a255f1caf0d.png)-->
 
 ## 万网设置方法
 若您的 DNS 服务商为万网，您可通过如下步骤添加 CNAME 记录。
-![](https://main.qcloudimg.com/raw/2d5e7afc347f2dd549c2e83c5e2c3f46.png)
-![](https://main.qcloudimg.com/raw/0640d16350ad8d8e54ff5d8cf2230c8b.png)
+<!--![](https://main.qcloudimg.com/raw/2d5e7afc347f2dd549c2e83c5e2c3f46.png)-->
+<!--![](https://main.qcloudimg.com/raw/0640d16350ad8d8e54ff5d8cf2230c8b.png)-->
 
 
 
 ## 新网设置方法
 若您的 DNS 服务商为新网，您可通过如下步骤添加 CNAME 记录。
-![](https://main.qcloudimg.com/raw/656a08fdc068ef7189a8aee89521fb85.png)
+<!--![](https://main.qcloudimg.com/raw/656a08fdc068ef7189a8aee89521fb85.png)-->
 
 
 ## 验证 CNAME 是否生效
 不同的 DNS 服务商，CNAME 生效的时间略有不同，一般会在半个小时之内生效。您也可以通过命令行中的 dig 或 nslookup 命令来查询 CNAME 是否生效，如果查询到后缀为 .myqcloud.com 的域名表示域名 CNAME 已生效。
-![](https://main.qcloudimg.com/raw/8684b716b879c5d8ad519b5f220b520e.png)
+<!--![](https://main.qcloudimg.com/raw/8684b716b879c5d8ad519b5f220b520e.png)-->
