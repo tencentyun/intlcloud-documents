@@ -14,17 +14,17 @@
 
 | API 操作 | 资源路径 | 条件密钥 |
 | :-------- | :--------| :------ |
-|[AttachDisks](https://cloud.tencent.com/document/product/362/16313)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[CreateDisks](https://cloud.tencent.com/document/product/362/16312)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[DescribeDiskOperationLogs](https://cloud.tencent.com/document/product/362/30162)|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[DescribeDisks](https://cloud.tencent.com/document/product/362/16315)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[DetachDisks](https://cloud.tencent.com/document/product/362/16316)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[ModifyDiskAttributes](https://cloud.tencent.com/document/product/362/15659)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[ModifyDisksChargeType](https://cloud.tencent.com/document/product/362/38075)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[ModifyDisksRenewFlag](https://cloud.tencent.com/document/product/362/15668)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[RenewDisk](https://cloud.tencent.com/document/product/362/16319)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[ResizeDisk](https://cloud.tencent.com/document/product/362/16310)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
-|[TerminateDisks](https://cloud.tencent.com/document/product/362/16321)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|[AttachDisks](https://intl.cloud.tencent.com/document/product/362/16313)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|[CreateDisks](https://intl.cloud.tencent.com/document/product/362/16312)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|[DescribeDiskOperationLogs](https://intl.cloud.tencent.com/document/product/362/32170)|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|[DescribeDisks](https://intl.cloud.tencent.com/document/product/362/16315)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|[DetachDisks](https://intl.cloud.tencent.com/document/product/362/16316)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|[ModifyDiskAttributes](https://intl.cloud.tencent.com/document/product/362/15659)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|ModifyDisksChargeType	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|ModifyDisksRenewFlag	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|RenewDisk	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|[ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
+|[TerminateDisks](https://intl.cloud.tencent.com/document/product/362/16321)	|  `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId`| cvm:region<br>cvm:zone<br>cvm:disk_type|
 
 
 
