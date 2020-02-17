@@ -15,7 +15,7 @@
 1.登录 [云监控控制台](https://console.cloud.tencent.com/monitor)。
 2.在左边菜单栏中单击【云服务器】。进入云服务器-基础监控管理页。
 3.双击【监控图标】，通过监控浮窗可查看监控数据。
-![](https://main.qcloudimg.com/raw/68677c5f518b09f6f927f333471bca81.png)
+  <!--![](https://main.qcloudimg.com/raw/68677c5f518b09f6f927f333471bca81.png)-->
 **导出云服务器监控数据**
 1.登录 [云监控控制台](https://console.cloud.tencent.com/monitor)。
 2.在左边菜单栏中单击【云服务器】。进入云服务器-基础监控管理页。
@@ -32,7 +32,7 @@
 1.登录 [云服务器控制台](https://console.cloud.tencent.com/cvm) 。
 2.在左边菜单栏单击【实例】，进入实例管理页。
 2.双击【监控图标】，通过监控浮窗快速浏览各个实例的性能数据。
-![](https://main.qcloudimg.com/raw/15d3c6687a1cdf978c0b970544236a1b.png)
+ <!--![](https://main.qcloudimg.com/raw/15d3c6687a1cdf978c0b970544236a1b.png)-->
 **导出云服务器监控数据**
 1.登录 [云服务器控制台](https://console.cloud.tencent.com/cvm) 。
 2.在左边菜单栏单击【实例】，进入实例管理页。
@@ -40,7 +40,7 @@
 
 ### 查看和流量监控数据
 
-** 查看流量监控数据**
+**查看流量监控数据**
 
 流量监控为用户提供了云服务器公网流量监控功能，展示了用户账号下所有云服务器外网出带宽的汇总数据。
 
@@ -48,12 +48,12 @@
 2.单击【流量监控】，进入监控管理页。
 3.进入监控管理页后，您可以查看实时流量，也可以通过时间选择器切换展示的时间跨度，查看实时、近24小时、近7天、或任意一天的流量情况。
 
-![](https://main.qcloudimg.com/raw/8977e43da190c3a8231668f419691d45.png)
+  <!--![](https://main.qcloudimg.com/raw/8977e43da190c3a8231668f419691d45.png)-->
 
 **导出流量监控数据**
 1.登录 [云监控控制台](https://console.cloud.tencent.com/monitor)。
 2.单击【流量监控】，进入监控管理页。
-3.选择导出数据的时间范围，下图以选择近24小时为例
-4.单击【导出数据】即可
-![](https://main.qcloudimg.com/raw/7651288ece4680f4be21468e3b4d3166.png)
+3.选择导出数据的时间范围，下图以选择近24小时为例。
+4.单击【导出数据】即可。
+  <!--![](https://main.qcloudimg.com/raw/7651288ece4680f4be21468e3b4d3166.png)-->
 
