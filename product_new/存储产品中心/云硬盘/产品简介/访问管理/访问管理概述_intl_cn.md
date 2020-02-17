@@ -16,7 +16,7 @@ CAM 策略必须授权使用一个或多个 CBS 相关操作或者必须拒绝�
 
 | 任务 | 链接 |
 |---------|---------|
-|了解策略基本结构|[策略语法](https://intl.cloud.tencent.com/document/product/362/34221|
+|了解策略基本结构|[策略语法](https://intl.cloud.tencent.com/document/product/362/34221) |
 |在策略中定义操作| [CBS 相关操作](https://intl.cloud.tencent.com/document/product/362/34221#cbs-.E7.9A.84.E6.93.8D.E4.BD.9C) |
 |在策略中定义资源|[CBS 相关资源路径](https://intl.cloud.tencent.com/document/product/362/34221#cbs-.E7.9A.84.E8.B5.84.E6.BA.90.E8.B7.AF.E5.BE.84)|
 |使用条件来限制策略|[CBS 的条件密钥](https://intl.cloud.tencent.com/document/product/362/34221#cbs-.E7.9A.84.E6.9D.A1.E4.BB.B6.E5.AF.86.E9.92.A5)|
