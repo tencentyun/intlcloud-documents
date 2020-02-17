@@ -1,8 +1,7 @@
 ## 入门准备
 
 主机安全可在腾讯云服务器（黑石物理服务器 CPM）安装时一同安装，或单独进行安装。
-登录 [主机安全控制台](https://console.cloud.tencent.com/yunjing)，在左侧导航栏中，选择【资产管理】>【主机列表】，查看云服务器是否已安装主机安全，如下图所示：
-![](https://main.qcloudimg.com/raw/c4f17485bc1e406c43d51606f360be30.png)
+登录 [主机安全控制台](https://console.cloud.tencent.com/yunjing)，在左侧导航栏中，选择【资产管理】>【主机列表】，查看云服务器是否已安装主机安全。
 - 红色框中的服务器安装了主机安全的专业防护版本，享有主机安全带来的全面多维度的系统安全保障。
 - 蓝色框中的服务器安装了主机安全的基础防护版本，可在右侧单击 【开通专业防护】，升级为专业防护版本。
 - 黄色框中的服务器没有安装主机安全产品。可根据如下指引及进行安装：
@@ -16,8 +15,8 @@
 - 登录 [主机安全控制台](https://console.cloud.tencent.com/yunjing) ，在左侧导航栏中，选择【资产管理】>【主机列表】，服务器列表中找到需要查看的服务器，单击服务器 IP 地址，然后单击【入侵检测】即可查看该服务器入侵检测详情。
 - 登录 [主机安全控制台](https://console.cloud.tencent.com/yunjing) ，在左侧导航栏中，单击【入侵检测】，然后单击所需查看的功能，即可查阅所有开通主机安全的服务器入侵检测详情。
 - 更多功能操作请参见：
-	- [木马文件操作处理](https://cloud.tencent.com/document/product/296/13008)
-	- [登录审计操作](https://cloud.tencent.com/document/product/296/13643)
+	- [木马文件操作处理](https://intl.cloud.tencent.com/document/product/296/13008)
+	- [登录审计操作](https://intl.cloud.tencent.com/document/product/296/34229)
 
 ## 漏洞检测
 
@@ -49,7 +48,6 @@ http://u.yd.tencentyun.com/ydeyes_win32.exe
 
 #### 安装说明
 Windows 安装成功状态验证：打开任务管理器，查看 YDService，YDLive 进程是否有调用，有调用则安装成功。
-![Windows进程](https://mc.qcloudimg.com/static/img/cb809b0f1e6a61d548a24f4bd4b57a61/image.jpg)
 #### 常见问题
 - 防火墙拦截
    建议防火墙策略放通主机安全后台服务器访问地址：
@@ -96,7 +94,6 @@ ps -ef|grep YD
 - **控制台中卸载**
 	1. 登录 [主机安全](https://console.cloud.tencent.com/yunjing) 控制台，查看自己的云服务器是否已安装主机安全。
 	2. 在服务器列表中，选择需要卸载主机安全的服务器进行卸载。
-		![](https://main.qcloudimg.com/raw/77e594350ecd0922f24d8e6c1d402de7.png)
 
 - **进入系统卸载**
 	1. Windows 系统
@@ -116,5 +113,5 @@ ps -ef|grep YD
 
 ## 开通专业防护
 用户可以通过以下两种渠道进行开通：
-- 在腾讯云官网， [主机安全产品介绍页面](https://cloud.tencent.com/product/hs) 中单击【立即选购】，随即跳转腾讯云控制台登录界面，登录后可以为需要的云服务器开通专业防护。
+- 在腾讯云官网， [主机安全产品介绍页面](https://intl.cloud.tencent.com/product/hs) 中单击【立即选购】，随即跳转腾讯云控制台登录界面，登录后可以为需要的云服务器开通专业防护。
 - 登录 [主机安全控制台](https://console.cloud.tencent.com/cwp) ，在左侧导航栏中，单击【安全概览】，进入安全概览页面，在上方公告栏中，单击【升级专业版】，即可为需要的云服务器开通专业防护。
