@@ -5,13 +5,13 @@
 - 稳定可靠的消息收发能力，完善的 [群组消息](https://intl.cloud.tencent.com/document/product/1047/33526) 管理机制：权限控制，禁言，脏词过滤，消息回调，消息漫游等。
 - 内置私有群（Private）、公开群（Public）、聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）五种群组形态， 并支持根据业务需要 [自定义群组形态](https://intl.cloud.tencent.com/document/product/1047/33529)。
 - 多种群成员人数上限：
- - 私有群成员人数上限200人，公开群成员人数上限2000人，聊天室成员人数上限6000人，但此三种群组实际的群成员上限还受套餐包的限制，详情请参阅 [价格说明](https://cloud.tencent.com/document/product/269/11673) 。
- - 音视频聊天室和在线成员广播大群人数无上限，也不受套餐包的限制，但您可创建的音视频聊天室数量受套餐包限制，详情请参阅 [价格说明](https://cloud.tencent.com/document/product/269/11673) 。
+ - 私有群成员人数上限200人，公开群成员人数上限2000人，聊天室成员人数上限6000人，但此三种群组实际的群成员上限还受套餐包的限制，详情请参阅 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 。
+ - 音视频聊天室和在线成员广播大群人数无上限，也不受套餐包的限制，但您可创建的音视频聊天室数量受套餐包限制，详情请参阅 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 。
 - 在 Web 端，音视频聊天室和在线成员广播大群支持用户以游客身份（即不需要登录）接收消息。
 
 >
 >1. 音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）成员人数没有上限，但如果预估群成员人数会超过1万人，请提前联系 [腾讯云客服](https://intl.cloud.tencent.com/support) 或商务工作人员申请服务资源。
->2. 目前仅私有群（Private）、公开群（Public）和聊天室（ChatRoom）具备消息漫游能力（默认7天）。如需保存更长时间，您可以在 [控制台](https://console.cloud.tencent.com/im) 修改消息漫游时长。延长消息漫游时长是增值服务，具体计费说明请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673)。
+>2. 目前仅私有群（Private）、公开群（Public）和聊天室（ChatRoom）具备消息漫游能力（默认7天）。如需保存更长时间，您可以在 [控制台](https://console.cloud.tencent.com/im) 修改消息漫游时长。延长消息漫游时长是增值服务，具体计费说明请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 除此之外，即时通信 IM 群组系统具备高度可定制性，具体包括：
 
@@ -74,7 +74,7 @@
 |移除群成员|群主和 App 管理员可移除群成员|群管理员、群主和 App 管理员可移除群成员|不允许任何人（包括 App 管理员）移除群成员|
 |定期移除不在线的群成员|默认不开启|默认不开启|不支持|
 
->如果需要开启定时清理不在线成员的功能，可以根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#.E5.AE.9A.E6.9C.9F.E8.B8.A2.E6.8E.89.E7.BE.A4.E5.86.85.E4.B8.8D.E5.9C.A8.E7.BA.BF.E6.88.90.E5.91.98) 提交工单进行申请，但是只会清理普通成员，不会清理群主和管理员。
+>如果需要开启定时清理不在线成员的功能，可以根据 **工单模板**提交工单进行申请，但是只会清理普通成员，不会清理群主和管理员。
 
 
 ### 群组限制差异
@@ -83,13 +83,13 @@
 |--- |--- |--- |--- |--- |--- |
 |成员人数上限|200|2000|6000|无上限|无上限|
 |每日可净增群组数量上限|10000|10000|10000|10000|5|
-|App 累计可创建群组数量|无上限|无上限|无上限|请参见 [价格说明](https://cloud.tencent.com/document/product/269/11673#.E5.9F.BA.E7.A1.80.E5.A5.97.E9.A4.90.E5.8C.85.EF.BC.88.E9.A2.84.E4.BB.98.E8.B4.B9.EF.BC.89)|5|
+|App 累计可创建群组数量|无上限|无上限|无上限|请参见 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)|5https://intl.cloud.tencent.com/document/product/1047/34350|
 
 >
->1. 累计可创建群组数（包括所有群组类型）是没有限制的，但如超过10万，需支付一定费用，详情请参考 [套餐外资费 > 峰值群组数](https://cloud.tencent.com/document/product/269/11673#additional)。所以建议及时解散无需继续使用的群组。
->2. 对于私有群、公开群和聊天室，实际群成员人数上限还需结合购买情况，详情请参阅 [价格说明](https://cloud.tencent.com/document/product/269/11673)。例如，您购买了专业版，那么这三种群组形态的成员人数上限均为200人；如果您额外购买了“扩展群人数上限-6000人”，则三种群组形态的成员人数上限分别为200、2000、6000。
+>1. 累计可创建群组数（包括所有群组类型）是没有限制的，但如超过10万，需支付一定费用，详情请参考 [套餐外资费 > 峰值群组数](https://intl.cloud.tencent.com/document/product/1047/34350#additional)。所以建议及时解散无需继续使用的群组。
+>2. 对于私有群、公开群和聊天室，实际群成员人数上限还需结合购买情况，详情请参阅 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。例如，您购买了专业版，那么这三种群组形态的成员人数上限均为200人；如果您额外购买了“扩展群人数上限-6000人”，则三种群组形态的成员人数上限分别为200、2000、6000。
 >3. 净增群组数量，是指创建群组数减去解散群组数。
->4. 每日净增群组数量上限10000个，是指所有形态的群组的净增数量总和不能超过10000个。如果对每日创建群组的上限有调高的需求，可以根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#.E4.BF.AE.E6.94.B9.E6.AF.8F.E6.97.A5.E5.88.9B.E5.BB.BA.E7.BE.A4.E7.BB.84.E9.85.8D.E9.A2.9D) 提交工单进行申请。
+>4. 每日净增群组数量上限10000个，是指所有形态的群组的净增数量总和不能超过10000个。如果对每日创建群组的上限有调高的需求，可以根据 **工单模板**提交工单进行申请。
 
 
 
@@ -111,7 +111,7 @@
 >1. 需要激活的群组，在群主发消息前为未激活状态，对群主以外的其他群成员不可见；而不需要激活的群组，创建后即对所有群成员可见。
 >2. 被禁言的群成员，在禁言时间内无法发送群聊消息；在线成员广播大群（BChatRoom）中，只有 App 管理员可以发送消息，所以不支持禁言。
 >3. 离线推送目前只有 Android（Android 离线推送）和 iOS（APNs 推送）支持。
->4. 目前仅私有群（Private）、公开群（Public）和聊天室（ChatRoom）具备消息漫游能力（默认7天）。如需保存更长时间，您可以在 [控制台](https://console.cloud.tencent.com/im) 修改消息漫游时长。延长消息漫游时长是增值服务，详情请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673#.E5.90.8E.E4.BB.98.E8.B4.B9.E8.B5.84.E6.BA.90.E6.B6.88.E8.80.97(.E4.B8.8D.E4.BD.BF.E7.94.A8.E4.B8.8D.E8.AE.A1.E8.B4.B9))。
+>4. 目前仅私有群（Private）、公开群（Public）和聊天室（ChatRoom）具备消息漫游能力（默认7天）。如需保存更长时间，您可以在 [控制台](https://console.cloud.tencent.com/im) 修改消息漫游时长。延长消息漫游时长是增值服务，详情请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.90.8E.E4.BB.98.E8.B4.B9.E8.B5.84.E6.BA.90.E6.B6.88.E8.80.97(.E4.B8.8D.E4.BD.BF.E7.94.A8.E4.B8.8D.E8.AE.A1.E8.B4.B9))。
 
 
 ### 批量导入与自动回收差异
@@ -121,7 +121,7 @@
 |允许导入群、群成员和群消息|允许导入群、群成员和群消息，适用于从第三方平台迁移历史群组到即时通信 IM 时使用|不允许批量导入群、群成员和群消息，只能使用现有的群、群成员和群消息|
 |群组自动回收时间（秒）|后台不会回收群组，除非群主解散，或者所有成员都退出群组|后台不会回收群组，除非群主解散，或者所有成员都退出群组|
 
-> 如果需要开启群组回收功能，可以根据 [工单模板](https://cloud.tencent.com/document/product/269/3916#.E8.87.AA.E5.8A.A8.E5.9B.9E.E6.94.B6.E7.BE.A4.E7.BB.84) 提交工单进行申请。配置后，将会根据群组类型清理不活跃群组（群组不活跃是指群组中既没人发言，也没有成员变更）。
+> 如果需要开启群组回收功能，可以根据 **工单模板** 提交工单进行申请。配置后，将会根据群组类型清理不活跃群组（群组不活跃是指群组中既没人发言，也没有成员变更）。
 
 ## 群组数据结构介绍
 ### 群基础资料
@@ -160,7 +160,7 @@
 
 ## 自定义群组形态
 
-在实际使用中，如果 IM 提供的 [五种群组形态](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D) 无法满足您的需求，您可以按照 [工单模板](https://cloud.tencent.com/document/product/269/3916#.E6.96.B0.E5.A2.9E.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81) 准备相关信息，然后 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请修改现有群组形态或新增自定义群组形态。
+在实际使用中，如果 IM 提供的 [五种群组形态](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D) 无法满足您的需求，您可以按照 **工单模板**准备相关信息，然后 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请修改现有群组形态或新增自定义群组形态。
 例如，某种办公场景下使用的群组，它与公开群相似但需要群内任意成员都具有最高级别的管理权限且可以查看入群之前的历史消息。那么您可以选择以下方案：
 - 选择使用公开群， 然后 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开启“是否支持查看入群前历史消息”和“是否允许普通成员踢人”选项。
 - [提交工单](https://console.cloud.tencent.com/workorder/category) 申请定义一种新的群组形态：OAGroup，指定公开群（Public）为参考形态，并开启“是否支持查看入群前历史消息”和“是否允许普通成员踢人”选项。  
@@ -207,4 +207,4 @@
 ## 自定义回调
 
 第三方回调是 App 实现特殊需求的重要方式之一，为用户提供了自定义行为的能力。
-即时通信 IM 群组系统支持多种回调，具体参见 [第三方回调简介](https://cloud.tencent.com/document/product/269/1522)以及 [回调命令列表](https://cloud.tencent.com/document/product/269/1523)。
+即时通信 IM 群组系统支持多种回调，具体参见 [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)以及 [回调命令列表](https://intl.cloud.tencent.com/document/product/1047/34355)。
