@@ -19,10 +19,10 @@ The logic of automatic route addition in CCN involves three stages as shown belo
 >
 >- Dynamic learning (BGP) is in beta test. If you want to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=168&source=0&data_title=%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9CVPC&step=1) for application.
 >- AS-PATH description:
-     >i. The information of AS-PATH can be viewed in the Direct Connect gateway.
-     >ii. 32-bit string is supported. If the string is exceptional, the route will be deleted, and a string exception event will be reported, for which you can configure event alarming.
-     >iii. The maximum AS-PATH length is 30; if the maximum length is exceeded, the AS-PATH will be truncated, and a truncation event will be reported, for which you can configure event alarming.
-     >iv. Three AS numbers (45090, 139341, and 45090) will be added to the AS-PATH that passes through Direct Connect gateway - CCN - Direct Connect gateway.
+   > i. The information of AS-PATH can be viewed in the Direct Connect gateway.
+   > ii. 32-bit string is supported. If the string is exceptional, the route will be deleted, and a string exception event will be reported, for which you can configure event alarming.
+   > iii. The maximum AS-PATH length is 30; if the maximum length is exceeded, the AS-PATH will be truncated, and a truncation event will be reported, for which you can configure event alarming.
+   > iv. Three AS numbers (45090, 139341, and 45090) will be added to the AS-PATH that passes through Direct Connect gateway - CCN - Direct Connect gateway.
 
 ### 2. During addition
 - Check policy: if it overlaps any existing route, routes newly added will become invalid by default to avoid affecting existing routes. You can adjust their validity after assessing the impact.
