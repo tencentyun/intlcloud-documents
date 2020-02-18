@@ -120,8 +120,8 @@ chmod -R 777 /var/www/html
 >- 请记住自己的管理员用户和密码。
 >
 6. 单击【下一步】，开始安装。
-6. 安装完成后，单击【您的论坛已完成安装，点此访问】，即可访问论坛。如下图所示：
-![安装5](https://mc.qcloudimg.com/static/img/41dab1ec86120a565bdd790238f271da/image.png)
+6. 安装完成后，单击【您的论坛已完成安装，点此访问】，即可访问论坛。<!--如下图所示：
+![安装5](https://mc.qcloudimg.com/static/img/41dab1ec86120a565bdd790238f271da/image.png)-->
 
 
 ## 常见问题
