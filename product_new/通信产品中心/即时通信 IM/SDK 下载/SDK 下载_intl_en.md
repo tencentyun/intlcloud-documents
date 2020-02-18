@@ -17,8 +17,8 @@ Download the IM SDK based on the platform you use.  <!--For more information abo
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'android'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'android'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'android'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Android">Gitee</a></td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/37059">DOC</a></td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/32679">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34286">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34306">DOC</a></td>
 		<td>arm64-v8a: about 1.6 MB<br />armeabi-v7a: about 1.1 MB</td>   
 	</tr> 
 	<tr>      
@@ -26,8 +26,8 @@ Download the IM SDK based on the platform you use.  <!--For more information abo
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'ios'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'ios'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'ios'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/iOS">Gitee</a></td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/37060">DOC</a></td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/32675">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34287">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34307">DOC</a></td>
 		<td>arm64: about 1.5 MB</td>   
 	</tr> 
 	<tr>      
@@ -36,7 +36,7 @@ Download the IM SDK based on the platform you use.  <!--For more information abo
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'mac'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'mac'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Mac">Gitee</a></td>
 		<td align="center">-</td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/32676">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34308">DOC</a></td>
 		<td>x86_64: about 1.9 MB</td>
 	</tr> 
 	<tr>      
@@ -45,7 +45,7 @@ Download the IM SDK based on the platform you use.  <!--For more information abo
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'windows'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'windows'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Windows">Gitee</a></td>
 		<td align="center">-</td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/33489">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34310">DOC</a></td>
 		<td>x86: about 3.9 MB<br>x86-64: about 5.1 MB</td>
 	</tr>
 	<tr>
@@ -54,7 +54,7 @@ Download the IM SDK based on the platform you use.  <!--For more information abo
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'web'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'web'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/H5">Gitee</a></td>
 		<td align="center">-</td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/37413">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34309">DOC</a></td>
 		<td align="center">-</td>
 	</tr>
 	<tr>
@@ -63,7 +63,7 @@ Download the IM SDK based on the platform you use.  <!--For more information abo
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'wxmini'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'wxmini'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/WXMini">Gitee</a></td>
 		<td align="center">-</td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/37413">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34309">DOC</a></td>
 		<td align="center">-</td>   
 	</tr> 
 </table>
