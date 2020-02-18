@@ -127,7 +127,7 @@
 
 ## 推送格式 
 推送格式示例如下图所示。
-<img src="//https://main.qcloudimg.com/raw/a9775d825cc1bfabd1fd8a01fa463539.png" width=480 />
+![](https://main.qcloudimg.com/raw/a9775d825cc1bfabd1fd8a01fa463539.png)
 
 
 ### 通用推送规则
