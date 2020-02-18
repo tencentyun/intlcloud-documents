@@ -146,7 +146,7 @@ wx.chooseImage({
 ### 创建音频消息
 创建音频消息实例的接口，此接口返回一个消息实例，可以在需要发送音频消息时调用 [发送消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) 接口发送消息实例。 目前 createAudioMessage 只支持在微信小程序环境使用。
 
->全平台互通音频消息，移动端请升级使用 [最新的 TUIKit 或 SDK](https://cloud.tencent.com/document/product/269/36887)。
+>全平台互通音频消息，移动端请升级使用 [最新的 TUIKit 或 SDK](https://intl.cloud.tencent.com/document/product/1047/33996)。
 
 **接口**
 
@@ -353,7 +353,7 @@ promise.then(function(imResponse) {
 创建视频消息实例的接口，此接口返回一个消息实例，可以在需要发送视频消息时调用 [发送消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) 接口发送消息实例。 目前 `createVideoMessage` 只支持在微信小程序环境使用。微信小程序录制视频或从相册选择视频文件，不会返回视频缩略图信息。为了更好的体验，SDK 在创建视频消息时会设置默认的缩略图信息。如果接入侧不想展示默认的缩略图，可在渲染时忽略缩图相关信息，自主处理。
 
 >
-> 全平台互通视频消息，移动端请升级使用 [最新的 TUIKit 或 SDK](https://cloud.tencent.com/document/product/269/36887)。
+> 全平台互通视频消息，移动端请升级使用 [最新的 TUIKit 或 SDK](https://intl.cloud.tencent.com/document/product/1047/33996)。
 >- 使用该接口前，需要将 SDK 版本升级至v2.2.0或以上。
 
 **接口**
@@ -526,7 +526,7 @@ promise.then(function(imResponse) {
 >- 使用该接口前，需要将 SDK 版本升级至v2.4.0或以上。
 >- 消息可撤回时间默认为2分钟。可通过 [控制台](https://console.cloud.tencent.com/im-detail/login-message) 调整消息可撤回时间。
 >- 被撤回的消息，可以调用 [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) 接口从单聊或者群聊消息漫游中拉取到。接入侧需根据消息对象的 isRevoked 属性妥善处理被撤回消息的展示。例如，单聊会话内可展示为 "对方撤回了一条消息"，群聊会话内可展示为 "张三撤回了一条消息"。
->- 可使用 REST API [撤回单聊消息](https://cloud.tencent.com/document/product/269/38980) 或 [撤回群聊消息](https://cloud.tencent.com/document/product/269/12341)。
+>- 可使用 REST API 撤回单聊消息 或 撤回群聊消息。
 
 **接口**
 
