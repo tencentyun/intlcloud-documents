@@ -65,7 +65,7 @@ rm ~/Library/Caches/CocoaPods/search_index.json
 
 | 包名 | 介绍 | 功能 |
 | --- | --- | --- |
-| TXLiteAVSDK_UGC.framework | 小视频录制、编辑能力扩展包 | 包含小视频录制功能、小视频编辑功能，详情请参阅 **短视频 SDK 文档**|
+| TXLiteAVSDK_UGC.framework | 小视频录制、编辑能力扩展包 | 包含小视频录制功能、小视频编辑功能，详情请参阅 短视频 SDK 文档|
 
 #### 2. 创建工程
 **创建一个新工程**：
