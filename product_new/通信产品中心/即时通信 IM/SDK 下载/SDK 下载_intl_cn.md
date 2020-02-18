@@ -1,4 +1,4 @@
-您可以根据不同使用平台下载对应的即时通信 IM SDK，Demo 运行说明请参见 [一分钟跑通 Demo](https://cloud.tencent.com/document/product/269/36838)。
+您可以根据不同使用平台下载对应的即时通信 IM SDK。
 
 >推荐使用 Github 下载 Demo 源码、TUIKit 源码以及 SDK，当 Github 访问较慢时，您可以使用 Gitee 下载或者直接下载 Zip 包。
 
@@ -17,8 +17,8 @@
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'android'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'android'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'android'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Android">Gitee</a></td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/37059">DOC</a></td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/32679">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34286">DOhttps://intl.cloud.tencent.com/document/product/1047/34286C</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34306">DOC</a></td>
 		<td>arm64-v8a：约1.6M<br />armeabi-v7a：约1.1M</td>   
 	</tr> 
 	<tr>      
@@ -26,8 +26,8 @@
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'ios'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'ios'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'ios'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/iOS">Gitee</a></td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/37060">DOC</a></td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/32675">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34287">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34307">DOC</a></td>
 		<td>arm64：约1.5M</td>   
 	</tr> 
 	<tr>      
@@ -36,7 +36,7 @@
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'mac'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'mac'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Mac">Gitee</a></td>
 		<td align="center">-</td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/32676">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34308">DOC</a></td>
 		<td>x86_64：约1.9M</td>
 	</tr> 
 	<tr>      
@@ -45,7 +45,7 @@
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'windows'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'windows'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Windows">Gitee</a></td>
 		<td align="center">-</td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/33489">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34310">DOC</a></td>
 		<td>x86：约3.9M<br>x86-64：约5.1M</td>
 	</tr>
 	<tr>
@@ -54,7 +54,7 @@
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'web'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'web'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/H5">Gitee</a></td>
 		<td align="center">-</td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/37413">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34309">DOC</a></td>
 		<td align="center">-</td>
 	</tr>
 	<tr>
@@ -63,7 +63,7 @@
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'wxmini'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'wxmini'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/WXMini">Gitee</a></td>
 		<td align="center">-</td>
-		<td align="center"><a href="https://cloud.tencent.com/document/product/269/37413">DOC</a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34309">DOC</a></td>
 		<td align="center">-</td>   
 	</tr> 
 </table>
