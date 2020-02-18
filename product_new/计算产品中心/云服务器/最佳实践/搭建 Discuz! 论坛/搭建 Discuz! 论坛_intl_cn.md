@@ -1,0 +1,132 @@
+## 操作场景
+
+Discuz! 是全球成熟度最高、覆盖率最大的论坛网站软件系统之一，被200多万网站用户使用。您可通过 Discuz! 搭建论坛，本文档介绍在腾讯云云服务器上搭建 Discuz! 论坛及其所需的 LAMP（Linux + Apache + MariaDB + PHP）环境。
+
+
+进行手动搭建 Discuz! 论坛，您需要熟悉 Linux 命令，例如 [CentOS 环境下通过 YUM 安装软件](https://intl.cloud.tencent.com/document/product/213/2046) 等常用命令，并对所安装软件的使用及版本兼容性比较了解。
+
+## 示例软件版本
+本文搭建的 Discuz! 论坛软件组成版本及说明如下：
+- Linux：Linux 操作系统，本文以 CentOS 7.5 为例。
+- Apache：Web 服务器，本文以 Apache 2.4.15 为例。
+- MariaDB：数据库，本文以 MariaDB 5.5.60 为例。
+- PHP：脚本语言，本文以 PHP 5.4.16 为例。
+- Discuz!：论坛网站软件，本文以 Discuz! X3.2 为例。
+
+
+## 操作步骤
+### 步骤1：登录云服务器
+[使用标准方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)。您也可以根据实际操作习惯，选择其他不同的登录方式：
+- [使用远程登录软件登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32502)
+- [使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501)
+
+
+
+### 步骤2：搭建 LAMP 环境 
+
+对于 CentOS 系统，腾讯云提供与 CentOS 官方同步的软件安装源，包含的软件均为当前最稳定的版本，可直接通过 Yum 快速安装。
+
+<span id="InstallNecessarySoftware"></span>
+#### 安装配置必要软件
+1. 执行以下命令，安装必要软件（Apache、MariaDB、PHP）：
+```
+yum install httpd php php-fpm php-mysql mariadb mariadb-server -y
+```
+2. 执行以下命令，启动服务。
+```
+systemctl start httpd
+systemctl start mariadb
+systemctl start php-fpm
+```
+3. <span id="step3"></span>执行以下命令，设定 root 帐户密码及基础配置，使 root 用户可以访问数据库。
+>
+>- 针对首次登录 MariaDB 前执行以下命令进入用户密码及基础设置。
+>- 首次输入 root 帐户密码后按下回车键（设置 root 密码时界面默认不显示），并再次输入确认。通过界面上的提示完成基础配置。
+> 
+```
+mysql_secure_installation
+```
+4. 执行以下命令，登录 MariaDB，并输入 [步骤3](#step3) 设置的密码，按 “**Enter**”。
+```
+mysql -u root -p
+``` 
+若输入刚设定的密码可以登录到 MariaDB 中，则说明配置正确。如下图所示：
+![](https://main.qcloudimg.com/raw/e22b91cc30bf4155436ab398ee44502a.png)
+
+5. 执行以下命令，退出 MariaDB 数据库。
+```
+exit
+```
+
+#### 验证环境配置
+
+为确认和保证环境搭建成功，您可以通过以下操作来验证：
+1. 执行以下命令，在 Apache 的默认根目录 `/var/www/html` 中创建 `test.php` 测试文件。
+```
+vim /var/www/html/test.php
+```
+2. 按 “**i**” 切换至编辑模式，写入如下内容：
+```
+<?php
+echo "<title>Test Page</title>";
+phpinfo()
+?>
+```
+3. 按 “**Esc**”，输入 “**:wq**”，保存文件并返回。
+4. 在浏览器中，访问该`test.php`文件，查看环境配置是否成功。
+```
+http://云服务器的公网 IP/test.php 
+```
+出现以下页面，则说明 LAMP 环境配置成功。
+![](https://main.qcloudimg.com/raw/f511b15ac3016d710c2b1f833e69448d.png)
+
+
+
+<span id="InstallDiscuz"></span>
+### 步骤3：安装和配置 Discuz!  
+
+#### 下载 Discuz! 
+执行以下命令，下载安装包。
+```
+wget http://download.comsenz.com/DiscuzX/3.2/Discuz_X3.2_SC_UTF8.zip
+```
+
+#### 安装准备工作
+1. 执行以下命令，解压安装包。
+```
+unzip Discuz_X3.2_SC_UTF8.zip
+```
+2. 执行以下命令，将解压后的 “upload” 文件夹下的所有文件复制到 `/var/www/html/`。
+```
+cp -r upload/* /var/www/html/
+```
+3. 执行以下命令，将写权限赋予给其他用户。
+```
+chmod -R 777 /var/www/html
+```
+
+#### 安装 Discuz!
+1. 在 Web 浏览器地址栏中，输入 Discuz! 站点的 IP 地址（即云服务器实例的公网 IP 地址），即可看到 Discuz! 安装界面。<!--如下图所示：
+![安装1](https://mc.qcloudimg.com/static/img/ad97b179b5b4977d86ca09a78ef05a7d/image.png)-->
+2. 单击【我同意】，进入检查安装环境页面。<!--如下图所示：
+![安装2](https://mc.qcloudimg.com/static/img/c5a521673ed6f1a3528ba67ca5886ee4/image.png)-->
+3. 确认当前状态正常，单击 【下一步】，进入设置运行环境页面。<!--如下图所示：
+![安装3](https://mc.qcloudimg.com/static/img/11a44bd86bfdfcd1fe3dcce6e8f200e6/image.png)-->
+4. 选择全新安装，单击【下一步】，进入创建数据库页面。<!--如下图所示：
+![安装4改](https://mc.qcloudimg.com/static/img/5d5184cfb34f98d791c243273b910065/image.png)-->
+5. 根据页面提示，填写信息，为 Discuz! 创建一个数据库。
+>
+>- 请使用 [安装必要软件](#InstallNecessarySoftware) 设置的 root 帐号和密码连接数据库，并设置好系统信箱、管理员帐号、密码和 Email。
+>- 请记住自己的管理员用户和密码。
+>
+6. 单击【下一步】，开始安装。
+6. 安装完成后，单击【您的论坛已完成安装，点此访问】，即可访问论坛。<!--如下图所示：
+![安装5](https://mc.qcloudimg.com/static/img/41dab1ec86120a565bdd790238f271da/image.png)-->
+
+
+## 常见问题
+如果您在使用云服务器的过程中遇到问题，可参考以下文档并结合实际情况分析并解决问题：
+- 云服务器的登录问题，可参考 [密码及密钥](https://intl.cloud.tencent.com/document/product/213/18120)、[登录及远程连接](https://intl.cloud.tencent.com/document/product/213/17278)。
+- 云服务器的网络问题，可参考 [IP 地址](https://intl.cloud.tencent.com/document/product/213/17285)、[端口与安全组](https://intl.cloud.tencent.com/document/product/213/2502)。
+- 云服务器硬盘问题，可参考 [系统盘和数据盘](https://intl.cloud.tencent.com/document/product/213/17351)。
+ 
