@@ -9,9 +9,7 @@ The logic of automatic route addition in CCN involves three stages as shown belo
 ### 1. Before addition
 - The associated instance is a VPC in public cloud: for a new subnet, the destination is a subnet IP range, and the next hop is VPC route to CCN.
 - The associated instance is a Direct Connect gateway: the destination is an IDC IP range, and the next hop is Direct Connect gateway route to CCN. There are two ways to pass the route:
-
    i. Manual entry (static): you need to manually enter the IDC IP range to be passed to CCN, and the next hop is the corresponding Direct Connect gateway, which facilitates IP range convergence and filtering.
-   
    ii. Dynamic learning (BGP): this refers to dynamically learning about routes through BGP, and the next hop is the corresponding Direct Connect gateway, which makes it easy to perceive routing changes in IDC. Currently, routes published to CCN can be controlled based on AS-PATH:
      - If the AS-PATH lengths are the same, CCN will accept all routes.
      - If the AS-PATH lengths are different, CCN will accept routes with a shorter AS-PATH.
