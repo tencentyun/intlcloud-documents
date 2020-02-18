@@ -19,7 +19,7 @@
 **变更**
 - [createFileMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFileMessage) 上传文件大小由20M调整为100M。
 - [群提示消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload) 的 `msgMemberInfo` 和 `shutupTime` 即将废弃，请使用 `memberList` 和 `muteTime` 代替。
-- 控制台新增 [IM 智能客服入口](https://cloud.tencent.com/act/event/smarty-service?from=im-doc)。
+- 控制台新增 **IM 智能客服入口**。
 
 **修复**
 - 调用 [off](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#off) 接口无法取消监听事件。
