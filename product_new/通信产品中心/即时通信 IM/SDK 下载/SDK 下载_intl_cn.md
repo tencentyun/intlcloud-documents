@@ -17,7 +17,7 @@
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'android'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'android'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'android'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Android">Gitee</a></td>
-		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34286"></a></td>
+		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34286">DOC</a></td>
 		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34306">DOC</a></td>
 		<td>arm64-v8a：约1.6M<br />armeabi-v7a：约1.1M</td>   
 	</tr> 
