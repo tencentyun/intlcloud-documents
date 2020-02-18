@@ -5,13 +5,13 @@ TUIKit 源码暂不支持 Androidx。
 ### 登录报错 6012 或  TLSSDK exchange ticket fail ？
 
 - 初始化接口和登录接口要分开调用，不能连续调用（因为初始化方法中有异步操作）；
-- 如果您当前是即时通信 IM 体验版，需要升级为专业版，升级后可正常登录，可以到 [即时通信 IM 购买页面](https://buy.cloud.tencent.com/avc) 进行购买升级，详细价格说明请参阅 [产品价格](https://cloud.tencent.com/document/product/269/11673)。
+- 如果您当前是即时通信 IM 体验版，需要升级为专业版，升级后可正常登录，可以到 [即时通信 IM 购买页面](https://buy.cloud.tencent.com/avc) 进行购买升级，详细价格说明请参阅 [产品价格](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 ### 出现 6013 SDK 未初始化错误？
 
 如果出现 6013 SDK 未初始化错误，您可以尝试以下方式排查：
 1. 查看是否没有登录成功就进行收发消息等其他操作；
-2. 查看是否登录时被其它终端踢掉，IM SDK 默认一个帐号仅能在一个终端上登录。处理方式请参考 [多终端同时登录](https://cloud.tencent.com/document/product/269/3665#.E5.A4.9A.E7.AB.AF.E7.99.BB.E5.BD.95) 文档；
+2. 查看是否登录时被其它终端踢掉，IM SDK 默认一个帐号仅能在一个终端上登录。处理方式请参考 [多终端同时登录](https://intl.cloud.tencent.com/document/product/1047/33518#.E5.A4.9A.E7.AB.AF.E7.99.BB.E5.BD.95) 文档；
 3. Android 请关注库文件是否未能全部加载，或是使用过程中被系统回收。
 
 ### code: 6205 desc: QALSERVICE not ready？
@@ -51,7 +51,7 @@ TUIKit 源码暂不支持 Androidx。
 
 ### 语音消息播放语音时返回错误码：6010？
 
-通常情况是语音消息超过了漫游保存有效期，请求失败导致，可 [延长漫游消息时间](https://cloud.tencent.com/document/product/269/38656#.E5.8E.86.E5.8F.B2.E6.B6.88.E6.81.AF.E5.AD.98.E5.82.A8.E6.97.B6.E9.95.BF.E9.85.8D.E7.BD.AE) 或获取语音文件到本地播放（已过期的文件无法恢复）。但不同版本的 SDK 支持延长历史消息存储时长的消息类型不同，详情请参见 [消息存储](https://cloud.tencent.com/document/product/269/3571#MsgType)。
+通常情况是语音消息超过了漫游保存有效期，请求失败导致，可 [延长漫游消息时间](https://intl.cloud.tencent.com/document/product/1047/34419#.E5.8E.86.E5.8F.B2.E6.B6.88.E6.81.AF.E5.AD.98.E5.82.A8.E6.97.B6.E9.95.BF.E9.85.8D.E7.BD.AE) 或获取语音文件到本地播放（已过期的文件无法恢复）。但不同版本的 SDK 支持延长历史消息存储时长的消息类型不同，详情请参见 [消息存储](https://intl.cloud.tencent.com/document/product/1047/33524#MsgType)。
 
 ### 帐号鉴权时返回错误码 70001 或 70003 或 70009 或 70013？
 
