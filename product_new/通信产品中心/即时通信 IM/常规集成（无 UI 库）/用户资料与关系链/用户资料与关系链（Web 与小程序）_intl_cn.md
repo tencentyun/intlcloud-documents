@@ -31,7 +31,7 @@ promise.then(function(imResponse) {
 
 
 ### 获取其他用户资料
-此接口会同时获取标配资料和 [自定义资料](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。
+此接口会同时获取标配资料和 [自定义资料](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。
 
 >
 > v2.3.2版本开始支持自定义资料字段，使用前需要将 SDK 升级至v2.3.2或以上。
@@ -100,7 +100,7 @@ tim.updateMyProfile(options)
 | `adminForbidType` | `String` | 管理员禁止加好友标识：<li>TIM.TYPES.FORBID_TYPE_NONE 表示允许加好友，默认值</li><li>TIM.TYPES.FORBID_TYPE_SEND_OUT 表示禁止该用户发起加好友请求</li> |
 | `level`           | `Number` | 等级，建议拆分以保存多种角色的等级信息                        |
 | `role`            | `Number` | 角色，建议拆分以保存多种角色信息                              |
-| `profileCustomField` | `Array<Object>` | [自定义资料](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) 键值对集合，可根据业务侧需要使用|
+| `profileCustomField` | `Array<Object>` | [自定义资料](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) 键值对集合，可根据业务侧需要使用|
 
 **返回值**
 
