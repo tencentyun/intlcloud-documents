@@ -44,7 +44,7 @@ TIMConversation * grp_conversation = [[TIMManager sharedInstance] getConversatio
 
 #### 消息发送
 
-通过 `TIMManager` 获取会话 `TIMConversation` 后，可发送消息和获取会话缓存消息。IM SDK 中消息的解释可参阅 [IM SDK 基本概念](https://cloud.tencent.com/document/product/269/9147)。IM SDK 中的消息由 `TIMMessage` 表达， 一个 `TIMMessage` 由多个 `TIMElem` 组成，每个 `TIMElem` 可以是文本和图片，也就是说每一条消息可包含多个文本和多张图片。发消息通过 `TIMConversation` 的成员 `sendMessage` 实现，有两种方式实现，一种使用闭包，另一种调用方实现 `protocol` 回调。
+通过 `TIMManager` 获取会话 `TIMConversation` 后，可发送消息和获取会话缓存消息。IM SDK 中消息的解释可参阅 [IM SDK 基本概念](https://intl.cloud.tencent.com/document/product/1047/34302)。IM SDK 中的消息由 `TIMMessage` 表达， 一个 `TIMMessage` 由多个 `TIMElem` 组成，每个 `TIMElem` 可以是文本和图片，也就是说每一条消息可包含多个文本和多张图片。发消息通过 `TIMConversation` 的成员 `sendMessage` 实现，有两种方式实现，一种使用闭包，另一种调用方实现 `protocol` 回调。
 
 ![](https://main.qcloudimg.com/raw/6bf979993ac8490ce53f68256e05ef01.png)
 
@@ -80,7 +80,7 @@ fail | 失败回调
 
 >
 >- text 传递需要发送的文本消息。
->- 失败回调中，code 表示错误码，具体可参阅 [错误码](/doc/product/269/1671)，err 表示错误描述。
+>- 失败回调中，code 表示错误码，具体可参阅 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)，err 表示错误描述。
 
 ```
 TIMTextElem * text_elem = [[TIMTextElem alloc] init];
@@ -901,7 +901,7 @@ uuid | 唯一标识，方便用户缓存
 dataSize | 语音文件大小
 second | 语音时长，以秒为单位
 
-**语音消息已读状态：**语音是否已经播放，可使用 [消息自定义字段](/doc/product/269/消息收发（iOS%20SDK）#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) 实现，如 `customInt` 的值0表示未播放，1表示播放，当用户单击播放后可设置 `customInt` 的值为1。
+**语音消息已读状态：**语音是否已经播放，可使用 [消息自定义字段](https://intl.cloud.tencent.com/document/product/1047/34321) 实现，如 `customInt` 的值0表示未播放，1表示播放，当用户单击播放后可设置 `customInt` 的值为1。
 
 ```
 @interface TIMMessage : NSObject
@@ -1136,7 +1136,7 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
 
 ### 消息是否已读
 
-通过消息属性 `isReaded` 是否消息已读。这里已读与否取决于 App 侧进行的 [已读上报](/doc/product/269/未读消息计数（iOS%20SDK）#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5)。
+通过消息属性 `isReaded` 是否消息已读。这里已读与否取决于 App 侧进行的 [已读上报](https://intl.cloud.tencent.com/document/product/1047/34325)。
 
 ```
 @interface TIMMessage : NSObject
@@ -1748,7 +1748,7 @@ IM SDK 在 3.1.0 版本开始提供撤回消息的接口。可以通过调用 `T
 - (int)revokeMessage:(TIMMessage*)msg succ:(TIMSucc)succ fail:(TIMFail)fail;
 ```
 
-成功撤回消息后，群组内其他用户和 C2C 会话对端用户会收到一条消息撤回通知，并通过消息撤回通知监听器 `TIMMessageRevokeListener` 通知到上层应用。消息撤回通知监听器可以在登录前，通过 `TIMUserConfig` 的 `messageRevokeListener` 来进行配置。具体可以参考 [用户配置](https://cloud.tencent.com/document/product/269/9148)。
+成功撤回消息后，群组内其他用户和 C2C 会话对端用户会收到一条消息撤回通知，并通过消息撤回通知监听器 `TIMMessageRevokeListener` 通知到上层应用。消息撤回通知监听器可以在登录前，通过 `TIMUserConfig` 的 `messageRevokeListener` 来进行配置。具体可以参考 [用户配置](https://intl.cloud.tencent.com/document/product/1047/34313)。
 
 **原型：**
 
@@ -1786,8 +1786,8 @@ IM SDK 在 3.1.0 版本开始提供撤回消息的接口。可以通过调用 `T
 
 会话类型（TIMConversationType）除了 C2C 单聊和 Group 群聊以外，还有一种系统消息，系统消息不能由用户主动发送，是系统后台在相应的事件发生时产生的通知消息。系统消息目前分为两种，一种是关系链系统消息，一种是群系统消息。
 
-- **关系链变更系统消息：**当有用户加自己为好友，或者有用户删除自己好友的情况下，系统会发出变更通知，开发者可更新好友列表。相关细节可参阅 [关系链变更系统通知](/doc/product/269/用户资料与关系链（iOS%20SDK）#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5) 部分。
+- **关系链变更系统消息：**当有用户加自己为好友，或者有用户删除自己好友的情况下，系统会发出变更通知，开发者可更新好友列表。相关细节可参阅 [关系链变更系统通知](https://intl.cloud.tencent.com/zh/document/product/1047/34332#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5) 部分。
 
-- **群事件消息：**当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。详细内容可参阅：[群组管理-群事件消息](/doc/product/269/群组管理（iOS%20SDK）#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF)。
+- **群事件消息：**当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。详细内容可参阅：[群组管理-群事件消息](https://intl.cloud.tencent.com/document/product/1047/34329)。
 
-- **群系统消息：**当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息，相关细节可参阅 [群组管理-群系统消息](/doc/product/269/群组管理（iOS%20SDK）#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF)。
+- **群系统消息：**当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息，相关细节可参阅 [群组管理-群系统消息](https://intl.cloud.tencent.com/document/product/1047/34329)。
