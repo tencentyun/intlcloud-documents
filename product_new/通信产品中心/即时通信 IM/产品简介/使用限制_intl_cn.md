@@ -17,7 +17,7 @@
                 单 App 限制100次/秒
             </td>
             <td>
-                单个 App 每天净增群组限制10000 个，如果超出该限制，请 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1">提交工单</a> 开通；单个 App 最多可拥有1亿个群组，但当总群组数量超过10万时，需要付费使用，详细价格说明请参见 <a href="https://cloud.tencent.com/document/product/269/11673">价格说明</a> 文档
+                单个 App 每天净增群组限制10000 个，如果超出该限制，请 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1">提交工单</a> 开通；单个 App 最多可拥有1亿个群组，但当总群组数量超过10万时，需要付费使用，详细价格说明请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">价格说明</a> 文档
             </td>
         </tr>
         <tr>
@@ -28,7 +28,7 @@
                 单 App 限制100次/秒
             </td>
             <td>
-                一次最多支持添加100个成员，单个用户最大可加入1000个群组，具体请参见 <a href="https://cloud.tencent.com/document/product/269/11673">产品价格</a> 文档
+                一次最多支持添加100个成员，单个用户最大可加入1000个群组，具体请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">产品价格</a> 文档
             </td>
         </tr>
         <tr>
@@ -541,7 +541,7 @@
                 REST API
             </td>
             <td>
-                <li><a href="https://cloud.tencent.com/document/product/269/38417">帐号检查接口</a>、<a href="https://cloud.tencent.com/document/product/269/36443">帐号删除接口</a> 和 <a href="https://cloud.tencent.com/document/product/269/1614">获取 App 中的所有群组接口</a>：限制100次/秒</li><li>其他接口：限制200次/秒</li>
+                <li>帐号检查接口、帐号删除接口和获取 App 中的所有群组接口</a>：限制100次/秒</li><li>其他接口：限制200次/秒</li>
             </td>
         </tr>
 </table>
@@ -629,7 +629,7 @@
                 消息漫游时长
             </td>
             <td>
-                目前单聊消息及群聊消息，含私有群（Private）、公开群（Public）和聊天室（ChatRoom），具备消息漫游能力（默认7天）。如需保存更长时间，您可以在即时通信 IM <a href="https://console.cloud.tencent.com/im">控制台</a> 修改消息漫游时长。延长消息漫游时长是增值服务，具体计费说明请参见 <a href="https://cloud.tencent.com/document/product/269/11673">价格说明</a>
+                目前单聊消息及群聊消息，含私有群（Private）、公开群（Public）和聊天室（ChatRoom），具备消息漫游能力（默认7天）。如需保存更长时间，您可以在即时通信 IM <a href="https://console.cloud.tencent.com/im">控制台</a> 修改消息漫游时长。延长消息漫游时长是增值服务，具体计费说明请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">价格说明</a>
             </td>
         </tr>
         <tr>
