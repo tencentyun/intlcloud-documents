@@ -21,7 +21,6 @@
  华为推送在申请 PUSH 服务时，需要您提供应用签名证书的 SHA256 指纹，最多允许添加5个。 华为推送服务应用创建完成后，在应用详情中，您可以查看详细的应用信息。
 <span id="Step1_3"></span>
 3. 记录**`包名`**、**`APP ID`**、**`APP Secret`**信息。
- ![](https://main.qcloudimg.com/raw/40979f6bd542e30da307e867a895a157.png)
 
 <span id="Step2"></span>
 ### 步骤2：托管证书信息到即时通信 IM
@@ -30,7 +29,6 @@
 2. 单击【Android平台推送设置】区域的【添加证书】。
  >如果您原来已有证书只需变更信息，可以单击【Android平台推送设置】区域的【编辑】进行修改更新。
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
 3. 根据 [步骤1](#Step1_3) 中获取的信息设置以下参数：
  - **推送平台**：选择**华为**
  - **应用包名称**：填写华为推送服务应用的**包名**
@@ -38,10 +36,8 @@
  - **AppSecret**：填写华为推送服务应用的 **APP SECRET**
  - **点击通知后**：选择点击通知栏消息后的响应操作，支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#click)
   当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#section4)。
- ![](https://main.qcloudimg.com/raw/5f5386db721ac107b9ab3da421decb49.png)
 4. 单击【确认】保存信息，证书信息保存后10分钟内生效。
 5. 待推送证书信息生成后，记录证书的**`ID`**。
- ![](https://main.qcloudimg.com/raw/bcce6ae63e5e7f221256463445165f90.png)
 
 <span id="Step3"></span>
 ### 步骤3：集成推送 SDK
@@ -356,11 +352,9 @@ public class ThirdPushTokenMgr {
 
 ### 打开应用
 默认为点击通知栏消息打开应用。
-![](https://main.qcloudimg.com/raw/5f5386db721ac107b9ab3da421decb49.png)
 
  ### 打开网页
-您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/799c6ac3402ccc4fbe372f076f08d381.png)
+您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://intl.cloud.tencent.com/document/product/457`。
 
 ### 打开应用内指定界面
 1. 在 manifest 中配置需要打开的 Activity 的`intent-filter`，示例代码如下：
@@ -397,7 +391,6 @@ public class ThirdPushTokenMgr {
     ```
 
 3. 在 [添加证书](#Step2) 时选择【打开应用内指定界面】并输入上述打印结果。
- ![](https://main.qcloudimg.com/raw/3d8da1fde6346919ee9686e29ca84795.png)
 
 <span id="section4"></span>
 ## 透传自定义内容
@@ -415,7 +408,7 @@ public class ThirdPushTokenMgr {
   mConversation.sendMessage(false, timMessage, callback);
   ```
 
-- 服务端示例请参见 [OfflinePushInfo 的格式示例](https://cloud.tencent.com/document/product/269/2720#.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81-offlinepushinfo-.E8.AF.B4.E6.98.8E)。
+- 服务端示例请参见 [OfflinePushInfo 的格式示例](https://intl.cloud.tencent.com/document/product/1047/33527)。
 
 ### 步骤2：接收端获取自定义内容
 点击通知栏的消息时，客户端在相应的 `Activity` 中获取自定义内容。
