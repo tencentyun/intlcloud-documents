@@ -1,11 +1,11 @@
 
 ## 群组综述
 
-即时通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://cloud.tencent.com/document/product/269/1502)。群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作。
+即时通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://intl.cloud.tencent.com/zh/document/product/1047/33529)。群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作。
 
 ## 群组消息
 
-群组消息与 C2C （单聊）消息相同，仅在获取 `Conversation` 时的会话类型不同，请参见 [消息发送](https://cloud.tencent.com/document/product/269/9150#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81) 。
+群组消息与 C2C （单聊）消息相同，仅在获取 `Conversation` 时的会话类型不同，请参见 [消息发送](https://intl.cloud.tencent.com/document/product/1047/34320) 。
 
 ## 群组管理
 
@@ -21,7 +21,7 @@
 
 ### 创建内置类型群组
 
-即时通信 IM 中内置了**私有群（Private）、公开群（Public）、 聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）**这几种群组类型，详情请参见 [群组形态介绍](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)。创建时可指定群组名称以及要加入的用户列表，创建成功后返回群组 ID，可通过群组 ID 获取 `Conversation` 收发消息等。
+即时通信 IM 中内置了**私有群（Private）、公开群（Public）、 聊天室（ChatRoom）、音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）**这几种群组类型，详情请参见 [群组形态介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)。创建时可指定群组名称以及要加入的用户列表，创建成功后返回群组 ID，可通过群组 ID 获取 `Conversation` 收发消息等。
 
 **创建群组说明：**
 
@@ -253,7 +253,7 @@ fail|失败回调
 
 **权限说明：**
 
-详情请参见 [群成员操作差异](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。 
+详情请参见 [群成员操作差异](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。 
 
 **原型：**
 
@@ -329,7 +329,7 @@ typedef NS_ENUM(NSInteger, TIMGroupMemberStatus) {
 `TIMGroupManager` 的接口 `joinGroup` 可以主动申请进入群组。此操作只对公开群和聊天室有效。
 
 **权限说明：**
-详情请参见 [群成员操作差异](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。
+详情请参见 [群成员操作差异](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。
 
 **原型：**
 
@@ -377,7 +377,7 @@ fail | 失败回调
 - **私有群：**全员可退出群组。
 - **公开群、聊天室、直播大群：**群主不能退出。
 
-详情请参见 [群成员操作差异](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。
+详情请参见 [群成员操作差异](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。
 
 **原型：**
 
@@ -420,7 +420,7 @@ fail | 失败回调
 群组成员也可以删除其他成员，函数参数信息与加入群组相同。
 
 **权限说明：**
-详情请参见 [群成员操作差异](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。
+详情请参见 [群成员操作差异](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。
 
 **原型：**
 
@@ -476,7 +476,7 @@ NSMutableArray * members = [[NSMutableArray alloc] init];
 - **任何群组类型：**都可以获取成员列表。
 - **直播大群：**只能拉取部分成员（包括群主、管理员和部分成员）。
 
-详情请参见 [群组操作差异](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。 
+详情请参见 [群组操作差异](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。 
 
 **原型：**
 
@@ -615,7 +615,7 @@ fail | 失败回调
 
 **权限说明：**
 
-详情请参见 [群组操作差异](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。 
+详情请参见 [群组操作差异](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82)。 
 
 
 **原型：**
@@ -1662,9 +1662,8 @@ TIMGroupPendencyItem *item = [pendencies firstObject];
 
 ## 群事件消息
 
-当有用户被邀请加入群组，或者有用户被移出群组时，群内会产生有提示消息，调用方可选择是否予以展示，以及如何展示（例如：忽略或者根据需要展示给用户）。 提示消息使用一个特殊的 `Elem` 标识，通过新消息回调返回消息，参见 [新消息通知](/doc/product/269/9148#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5)。如下图中，展示一条修改群名的事件消息。
+当有用户被邀请加入群组，或者有用户被移出群组时，群内会产生有提示消息，调用方可选择是否予以展示，以及如何展示（例如：忽略或者根据需要展示给用户）。 提示消息使用一个特殊的 `Elem` 标识，通过新消息回调返回消息，参见 [新消息通知](https://intl.cloud.tencent.com/document/product/1047/34313)。
 
-![](https://main.qcloudimg.com/raw/5a103b18bc1728baa742c7671443788e.jpg)
 
 **消息原型：**
 
@@ -1891,7 +1890,7 @@ value | 变更后的值，根据变更类型表示不同含义
 **触发时机：**当群成员的群相关资料变更时，包括群内用户被禁言、群内成员角色变更，会有系统消息发出，可更新相关字段展示，或者选择性把消息展示给用户。
 
 >
->- 这里的资料仅跟群相关资料，例如禁言时间、成员角色变更等，不包括用户昵称等本身资料，对于群内人数可能过多，不建议实时更新，建议的做法是直接显示消息体内的资料，参考：[消息发送者以及相关资料](/doc/product/269/9150#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81.E8.80.85.E4.BB.A5.E5.8F.8A.E7.9B.B8.E5.85.B3.E8.B5.84.E6.96.99)
+>- 这里的资料仅跟群相关资料，例如禁言时间、成员角色变更等，不包括用户昵称等本身资料，对于群内人数可能过多，不建议实时更新，建议的做法是直接显示消息体内的资料，参考：[消息发送者以及相关资料](https://intl.cloud.tencent.com/document/product/1047/34321)
 >- 如果本地有保存用户资料，可根据消息体内资料判断是否有变更，在收到此用户一条消息后更新资料。
 
 **`TIMGroupTipsElem` 参数说明：**

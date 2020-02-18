@@ -1,6 +1,6 @@
 ## 群组综述
 
-即时通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://cloud.tencent.com/doc/product/269/群组系统)。群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作。
+即时通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://intl.cloud.tencent.com/zh/document/product/1047/33529)。群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作。
 
 ## 群组管理
 
@@ -68,7 +68,7 @@ tim.getGroupProfile(options);
 | 名称                    | 类型           | 属性 | 描述                                                         |
 | :---------------------- | :------------- | :--- | :----------------------------------------------------------- |
 | `groupID  `               | `String`         |-  | 群组 ID                                                       |
-| `groupCustomFieldFilter`  | `Array<String>` | `<optional>` | 群组的自定义字段过滤器，指定需要获取的群组的自定义字段，详情请参见 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
+| `groupCustomFieldFilter`  | `Array<String>` | `<optional>` | 群组的自定义字段过滤器，指定需要获取的群组的自定义字段，详情请参见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
 
 **返回值**
 
@@ -128,7 +128,7 @@ tim.createGroup(options);
 | :------------------ | :------------- | :--------- | :----------------------------------------------------------- |
 | `userID    `        | `String`         |      -      | 必填，群成员的 UserID                                        |
 | `role  `            | `String`         | `<optional>` | 成员身份，可选值只有 Admin，表示添加该成员并设置为管理员      |
-| `memberCustomField` | `Array<Object>` | `<optional>` | 群成员维度的自定义字段，默认没有自定义字段，如需开通请参见 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
+| `memberCustomField` | `Array<Object>` | `<optional>` | 群成员维度的自定义字段，默认没有自定义字段，如需开通请参见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
 
 **返回值**
 
