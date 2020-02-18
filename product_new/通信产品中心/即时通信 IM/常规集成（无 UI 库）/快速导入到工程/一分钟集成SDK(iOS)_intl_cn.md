@@ -54,7 +54,6 @@ rm ~/Library/Caches/CocoaPods/search_index.json
 
 ### 手动集成
 #### 1. 从 [Github](https://github.com/tencentyun/TIMSDK) 获取 SDK 的下载地址：
-![](https://main.qcloudimg.com/raw/97cb6171855e6e09540c1ccd6fc57343.png)
 
 - IMSDK.framework 为 IM SDK 的核心动态库文件。
 
@@ -66,7 +65,7 @@ rm ~/Library/Caches/CocoaPods/search_index.json
 
 | 包名 | 介绍 | 功能 |
 | --- | --- | --- |
-| TXLiteAVSDK_UGC.framework | 小视频录制、编辑能力扩展包 | 包含小视频录制功能、小视频编辑功能，详情请参阅 [短视频 SDK 文档](https://cloud.tencent.com/product/ugsv) |
+| TXLiteAVSDK_UGC.framework | 小视频录制、编辑能力扩展包 | 包含小视频录制功能、小视频编辑功能，详情请参阅 **短视频 SDK 文档**|
 
 #### 2. 创建工程
 **创建一个新工程**：
