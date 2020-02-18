@@ -19,7 +19,7 @@
 ### 收不到离线推送怎么处理？
 
 - APNs
-参考 [离线推送（iOS）](https://cloud.tencent.com/document/product/269/9154) 说明文档进行以下确认：
+参考 [离线推送（iOS）](https://intl.cloud.tencent.com/document/product/1047/34347) 说明文档进行以下确认：
  - 确认是否正确上传证书到腾讯云控制台。
  - 确认在登录成功后，是否成功上传 token 到腾讯云。
  - 确认在上报 token 时，是否上报了正确的证书 ID。
@@ -29,7 +29,7 @@
  - 如果是群消息，是否设置了消息不提醒选项。
 
 - Android
-参考 [离线推送](https://cloud.tencent.com/document/product/269/9234) 说明文档进行以下确认：
+参考 [离线推送](https://intl.cloud.tencent.com/document/product/1047/34336) 说明文档进行以下确认：
  - 确认是否正确上传了推送证书。
  - 确认是否成功上报 token。
  - 如果不是第三方离线推送（华为，小米，魅族），确认一下 QALService 进程是否存活，不存活的情况下确实会收不到离线推送，需要依赖系统的自启动权限。
@@ -42,9 +42,9 @@
 不管是 APNs 推送还是 Android 上的离线推送，在以上步骤无法确认问题时，需要继续确认以下情况：
 1. 确认接收方 ID 是否与消息要推送的用户 ID 一致。
 2. 确认是否设置了离线推送监听器（Android）。
-3. 确认是否设置了免打扰，iOS 参考 [设置自定义推送提示音](https://cloud.tencent.com/document/product/269/9154#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.AE.9A.E4.B9.89.E6.8E.A8.E9.80.81.E6.8F.90.E7.A4.BA.E9.9F.B3)，Android 参考 [设置全局离线推送配置](https://cloud.tencent.com/document/product/269/9234#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE)。
+3. 确认是否设置了免打扰，iOS 参考 [设置自定义推送提示音](https://intl.cloud.tencent.com/document/product/1047/34347#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.AE.9A.E4.B9.89.E6.8E.A8.E9.80.81.E6.8F.90.E7.A4.BA.E9.9F.B3)，Android 参考 [设置全局离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34336#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE)。
 4. 确认消息是否是通过 `sendOnlineMessage` 接口发送的在线消息，或者通过 REST API 推送的时候设置了 `MsgLifeTime` 为 `0`。
-5. 确认消息是否设置了不进行离线推送的标识，iOS 参考 [自定义离线消息属性](https://cloud.tencent.com/document/product/269/9154#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7)，Android 参考 [设置单条消息的离线推送配置](https://cloud.tencent.com/document/product/269/9234#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81)。
+5. 确认消息是否设置了不进行离线推送的标识，iOS 参考 [自定义离线消息属性](https://intl.cloud.tencent.com/document/product/1047/34347#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7)，Android 参考 [设置单条消息的离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81)。
 6. 若还是无法定位，可提供相关信息给技术人员进行排查。
 
 ### 群 @ 消息怎么处理？
@@ -102,7 +102,7 @@ try{
 红包消息与 @ 消息类似，可以通过 `TIMCustomElem` 来实现。需要应用在 UI 上做相应的特殊处理，例如检查到当前消息为红包消息后，消息展示为红包的样式。
 另外，红包消息作为重要消息，最好在发送消息的时候将其设置为高优先级消息，以最大程度保证消息在触达频率限制的情况下仍可以送达（目前群内消息默认限制频率40条/s, 单聊消息默认限制频率为5条/s）。
 
-关于消息优先级相关的内容可以参考 [消息优先级](https://cloud.tencent.com/document/product/269/3663#.E7.BE.A4.E6.B6.88.E6.81.AF.E4.BC.98.E5.85.88.E7.BA.A7)。
+关于消息优先级相关的内容可以参考 [消息优先级](https://intl.cloud.tencent.com/document/product/1047/33526#.E7.BE.A4.E6.B6.88.E6.81.AF.E4.BC.98.E5.85.88.E7.BA.A7)。
 
 >红包消息的支付部分功能，需要应用自行集成相应的支付 SDK，IM SDK 暂不提供这部分功能。
 
@@ -135,5 +135,5 @@ msg.setPriority(TIMMessagePriority.High);
 ```
 
 ### 即时通信 IM 消息存储时长是多久？
-单聊/群聊消息默认保存7天，您可在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 的应用配置中自助延长历史消息存储时长，最大支持延长12个月。延长历史消息存储时长属于增值服务，具体计费说明请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9)。
+单聊/群聊消息默认保存7天，您可在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 的应用配置中自助延长历史消息存储时长，最大支持延长12个月。延长历史消息存储时长属于增值服务，具体计费说明请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9)。
 
