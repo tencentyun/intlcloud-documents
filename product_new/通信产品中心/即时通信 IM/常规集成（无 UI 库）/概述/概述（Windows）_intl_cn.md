@@ -21,12 +21,12 @@ json_value_init[kTIMSdkConfigDeviceInfo] = json_value_dev;
 TIMInit(sdk_app_id, json_value_init.toStyledString().c_str());
 ```
 
-SDKAppID 可以在即时通信 IM [控制台](https://console.cloud.tencent.com/im) 创建应用后获取到。更多初始化操作请参考 [初始化](https://cloud.tencent.com/document/product/269/33546) 文档。
+SDKAppID 可以在即时通信 IM [控制台](https://console.cloud.tencent.com/im) 创建应用后获取到。更多初始化操作请参考 [初始化](https://intl.cloud.tencent.com/document/product/1047/34388) 文档。
 
 
 ## 登录/登出
 ### 登录
-- 用户登录腾讯后台服务器后才能正常收发消息，登录需要用户提供 UserID、UserSig。详细请参阅 [登录鉴权](https://cloud.tencent.com/document/product/269/31999) 文档。
+- 用户登录腾讯后台服务器后才能正常收发消息，登录需要用户提供 UserID、UserSig。详细请参阅 [登录鉴权](https://intl.cloud.tencent.com/document/product/1047/33517) 文档。
 - 登录为异步过程，通过回调函数返回是否成功，成功后方能进行后续操作。登录成功或者失败会主动调用提供的回调。
 
 **示例：**
@@ -45,15 +45,15 @@ TIMLogin(id, user_sig, [](int32_t code, const char* desc, const char* json_param
 }, user_data);
 ```
 
->code 表示错误码，desc 表示错误描述，具体可参阅 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+>code 表示错误码，desc 表示错误描述，具体可参阅 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 
 **onForceOffline**
 
-如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`），如果用户被踢了，请务必用 Alert 等提示窗提示用户，关于被踢的详细描述，参阅 [用户状态变更](https://cloud.tencent.com/document/product/269/33551#timsetkickedofflinecallback)。
+如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`），如果用户被踢了，https://intl.cloud.tencent.com/document/product/1047/34389请务必用 Alert 等提示窗提示用户，关于被踢的详细描述，参阅 [用户状态变更](https://intl.cloud.tencent.com/document/product/1047/34389#timsetkickedofflinecallback)。
 
 
 **onUserSigExpired**
-每一个 UserSig 都有一个过期时间，如果 UserSig 过期，`login` 将会返回 `70001` 错误码，如果您收到这个错误码，可以向您的业务服务器重新请求新的 UserSig，参阅 [用户票据过期](https://cloud.tencent.com/document/product/269/33551#timsetusersigexpiredcallback)。
+每一个 UserSig 都有一个过期时间，如果 UserSig 过期，`login` 将会返回 `70001` 错误码，如果您收到这个错误码，可以向您的业务服务器重新请求新的 UserSig，参阅 [用户票据过期](https://intl.cloud.tencent.com/document/product/1047/34389#timsetusersigexpiredcallback)。
 
 
 ### 登出
@@ -74,7 +74,7 @@ TIMLogout([](int32_t code, const char* desc, const char* json_param, const void*
 ```
 
 >在需要切换帐号时，需要 `Logout` 回调成功或者失败后才能再次 `Login`，否则 `Login` 可能会失败。
-更多登录/登出操作请参考 [登录登出](https://cloud.tencent.com/document/product/269/33547) 文档。
+更多登录/登出操作请参考 [登录登出](https://intl.cloud.tencent.com/document/product/1047/34390) 文档。
 
 ## 消息发送
 
@@ -177,11 +177,11 @@ TIMSetRecvNewMsgCallback([](const char* json_msg_array, const void* user_data) {
 }, user_data);
 ```
 
-更多消息收发操作请参考 [消息发送](https://cloud.tencent.com/document/product/269/33549) 和 [消息接收](https://cloud.tencent.com/document/product/269/33551#timaddrecvnewmsgcallback)。
+更多消息收发操作请参考 [消息发送](https://intl.cloud.tencent.com/document/product/1047/34391) 和 [消息接收](https://intl.cloud.tencent.com/document/product/1047/34389#timaddrecvnewmsgcallback)。
 
 ## 群组管理
 
-即时通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)，群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作，其中群组相关操作都由 `TIMGroupManager` 实现，需要用户登录成功后操作。
+即时通信 IM 有多种群组类型，其特点以及限制因素可参考 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)，群组使用唯一 ID 标识，通过群组 ID 可以进行不同操作，其中群组相关操作都由 `TIMGroupManager` 实现，需要用户登录成功后操作。
 
 |             类型              | 说明                                                         |
 | --------------------------- | ----------------------------------------------------------- |
@@ -229,7 +229,7 @@ int ret = TIMGroupCreate(json_param.c_str(), [](int32_t code, const char* desc, 
 }, user_data))
 ```
 
-更多群组操作请参考 [群组相关接口文档](https://cloud.tencent.com/document/product/269/33550)。
+更多群组操作请参考 [群组相关接口文档](https://intl.cloud.tencent.com/document/product/1047/34393)。
 
 ### 群组消息
-群组消息与 C2C （单聊）消息相同，仅在发送时填写群组的 ID 和类型`kTIMConv_Group`，可参阅 SDK 文档 [消息发送](https://cloud.tencent.com/document/product/269/33549) 部分。
+群组消息与 C2C （单聊）消息相同，仅在发送时填写群组的 ID 和类型`kTIMConv_Group`，可参阅 SDK 文档 [消息发送](https://intl.cloud.tencent.com/document/product/1047/34391) 部分。
