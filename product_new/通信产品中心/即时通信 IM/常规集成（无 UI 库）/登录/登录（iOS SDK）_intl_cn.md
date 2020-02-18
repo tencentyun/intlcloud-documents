@@ -3,8 +3,8 @@
 用户登录腾讯后台服务器后才能正常收发消息，登录需要用户提供 `UserID`、`UserSig`。如果用户保存用户票据，可能会存在过期的情况，如果用户票据过期，`login` 将会返回 `6206` 错误码，开发者可根据错误码进行票据更换。登录为异步过程，通过回调函数返回是否成功，成功后方能进行后续操作。登录成功或者失败后使用闭包 `succ` 和 `fail` 进行回调。
 
 >
->- 如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`）。开发者必须进行登录错误码 `ERR_IMSDK_KICKED_BY_OTHERS` 的判断。关于被踢的详细描述，参见 [用户状态变更](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)。
->- 只要登录成功以后，用户没有主动登出或者被踢，网络变更会自动重连，无需开发者关心。不过特别需要注意被踢操作，需要注册 [用户状态变更回调](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)，否则被踢时得不到通知。
+>- 如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`）。开发者必须进行登录错误码 `ERR_IMSDK_KICKED_BY_OTHERS` 的判断。关于被踢的详细描述，参见 [用户状态变更](https://intl.cloud.tencent.com/document/product/1047/34313#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)。
+>- 只要登录成功以后，用户没有主动登出或者被踢，网络变更会自动重连，无需开发者关心。不过特别需要注意被踢操作，需要注册 [用户状态变更回调](https://intl.cloud.tencent.com/document/product/1047/34313#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)，否则被踢时得不到通知。
 
 **原型：**
 
@@ -68,7 +68,7 @@ login_param.appidAt3rd = @"123456";
     NSLog(@"Login Failed: %d->%@", code, err);
 }];
 ```
-UserSig 正确的签发方式请参考 [登录鉴权](https://cloud.tencent.com/document/product/269/31999)。
+UserSig 正确的签发方式请参考 [登录鉴权](https://intl.cloud.tencent.com/document/product/1047/33517)。
 ## 登出
 
 如用户主动注销或需要进行用户的切换，则需要调用注销操作。
@@ -162,7 +162,7 @@ TIMLoginParam * login_param = [[TIMLoginParam alloc ]init];
 
 ## IM SDK 同步离线消息
 
-IM SDK 启动后会同步离线消息和最近联系人。如果不需要离线消息，可以在发消息时使用：[发送在线消息](/doc/product/269/9150#.E5.9C.A8.E7.BA.BF.E6.B6.88.E6.81.AF)。默认登录后会异步获取离线消息以及同步资料数据（如果有开启，可参见关系链资料章节），同步完成后会通过 `onRefresh` 回调通知更新界面，用户得到这个消息时，可以刷新界面，例如会话列表的未读等。
+IM SDK 启动后会同步离线消息和最近联系人。如果不需要离线消息，可以在发消息时使用：[发送在线消息](https://intl.cloud.tencent.com/document/product/1047/34321#.E5.9C.A8.E7.BA.BF.E6.B6.88.E6.81.AF)。默认登录后会异步获取离线消息以及同步资料数据（如果有开启，可参见关系链资料章节），同步完成后会通过 `onRefresh` 回调通知更新界面，用户得到这个消息时，可以刷新界面，例如会话列表的未读等。
 
 ```
 @interface TIMUserConfig : NSObject
