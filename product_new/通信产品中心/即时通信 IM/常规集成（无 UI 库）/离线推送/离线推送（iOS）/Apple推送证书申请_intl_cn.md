@@ -2,13 +2,10 @@
 ## 生成 CSR 文件
 
 生成 Certificate Signing Request(CSR)：
- <img src="//main.qcloudimg.com/raw/76c59ee727f1147693f6da95bc1db070.png" width=640 />
  
 填写您的邮箱（这个邮箱是申请 AppID 的付费帐号）和常用名称（一般默认是计算机名，不用更改），并选择保存到硬盘：
- <img src="//main.qcloudimg.com/raw/12c80d3cb45d44e6b9fb8f63bc616347.png" width=640 />
  
 单击继续：
- <img src="//main.qcloudimg.com/raw/b393d5662e94646b24aa14979c17b3c3.png" width=640 />
  
  已经在本地生成了一个 TXIMDemoAPS.certSigningRequest 的 CSR 文件。
 
@@ -59,16 +56,13 @@ aps 证书创建成功了，单击 Download 下载到本地。（文件名：开
 
 导入证书
 双击上一节下载的文件（aps_development.cer 和 aps.cer）将其安装到电脑，在“钥匙串访问”中，可以看到已经导入的证书。
-<img src="//main.qcloudimg.com/raw/51b99080f9f479319ee6d742aedd3a3a.png" width=640 />
 
 右键选择导出为 p12 文件, （例：存储为 TXIMDemoAPS.p12）：
-<img src="//main.qcloudimg.com/raw/af2ead9db94586c2e18bf2b59b2151ec.png" width=640 />
 
 注意：开发版本证书只有在 debug 模式下开发的时候会生效，正式发布版本的证书，一定要使用正式版本的证书。
 
 ## 生成 Provisioning Profile 文件（PP 文件）
 生成对应的描述文件，这里演示开发版描述文件的创建（发布版本的创建流程一样，用户可以自行操作），单击"Continue"
-<img src="//main.qcloudimg.com/raw/6c4eff074f24e0ae1b3bb73dda9dea26.png" width=640 />
 
 选择3.3步骤中创建推送证书那个 App ID，单击"Continue"，
 <img src="//main.qcloudimg.com/raw/ec5fd56e7269a9f75299e636dd644d58.png" width=640 />
@@ -97,4 +91,3 @@ aps 证书创建成功了，单击 Download 下载到本地。（文件名：开
 
 ## Xcode 中的配置
 新版 Xcode 已经不需要手动配置证书和描述文件了，只需在 General 中选择正确的 Team，Fix Issue 即可，这也是上面所说的不用下载证书到本地安装的原因
-<img src="//main.qcloudimg.com/raw/22db4c59af9d26d562f916e87e10fbc2.png" width=640 />
