@@ -184,12 +184,12 @@
 | ------ | ------------------------------------------------------------ |
 | 70001  | UserSig 已过期，请重新生成。建议 UserSig 有效期设置不小于24小时。 |
 | 70002  | UserSig 长度为0，请检查传入的 UserSig 是否正确。             |
-| 70003  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。 |
-| 70005  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。  |
-| 70009  | UserSig 验证失败，可能因为生成 UserSig 时混用了其他 SDKAppID 的私钥或密钥导致，请使用对应 SDKAppID 下的私钥或密钥重新 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。 |
+| 70003  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。 |
+| 70005  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。  |
+| 70009  | UserSig 验证失败，可能因为生成 UserSig 时混用了其他 SDKAppID 的私钥或密钥导致，请使用对应 SDKAppID 下的私钥或密钥重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。 |
 | 70013  | 请求中的 UserID 与生成 UserSig 时使用的 UserID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。      |
 | 70014  | 请求中的 SDKAppID 与生成 UserSig 时使用的 SDKAppID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。          |
-| 70016  | 公钥不存在，UserSig 验证失败，请在即时通信 IM 控制台 [获取密钥](https://cloud.tencent.com/document/product/269/32578#.E8.8E.B7.E5.8F.96.E5.AF.86.E9.92.A5)。 |
+| 70016  | 公钥不存在，UserSig 验证失败，请在即时通信 IM 控制台 [获取密钥](https://intl.cloud.tencent.com/document/product/1047/34419#.E8.8E.B7.E5.8F.96.E5.AF.86.E9.92.A5)。 |
 | 70020  | SDKAppID 未找到，请在即时通信 IM 控制台确认应用信息。          |
 | 70050  | UserSig 验证次数过于频繁。请检查 UserSig 是否正确，并于1分钟后重新验证。您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。 |
 | 70051  | 帐号被拉入黑名单。                                           |
@@ -201,7 +201,7 @@
 | 70206  | 请求中批量数量不合法。                                       |
 | 70402  | 参数非法，请检查必填字段是否填充，或者字段的填充是否满足协议要求。 |
 | 70403  | 请求失败，需要 App 管理员权限。                                    |
-| 70398  | 帐号数超限。如需创建多于100个帐号，请将应用升级为专业版，具体操作指引请参见 [购买指引](https://cloud.tencent.com/document/product/269/32458)。         |
+| 70398  | 帐号数超限。如需创建多于100个帐号，请将应用升级为专业版，具体操作指引请参见 [购买指引](https://intl.cloud.tencent.com/document/product/1047/34351)。         |
 | 70500  | 服务端内部错误，请稍后重试。                                     |
 | 71000  | 删除帐号失败。仅支持删除体验版帐号，您当前应用为专业版，暂不支持帐号删除。      |
 
@@ -215,12 +215,12 @@
 | 40004  | 请求需要 App 管理员权限。                              |
 | 40005  | 资料字段中包含敏感词。                                 |
 | 40006  | 服务端内部错误，请稍后重试。                           |
-| 40007  | 没有资料字段的读权限，详情可参见 [资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。            |
-| 40008  | 没有资料字段的写权限，详情可参见 [资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。            |
+| 40007  | 没有资料字段的读权限，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。            |
+| 40008  | 没有资料字段的写权限，详情可参见 [资料字段](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。            |
 | 40009  | 资料字段的 Tag 不存在。                                |
 | 40601  | 资料字段的 Value 长度超过500字节。                     |
-| 40605  | 标配资料字段的 Value 错误，详情可参见 [标配资料字段](https://cloud.tencent.com/document/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。   |
-| 40610  | 资料字段的 Value 类型不匹配，详情可参见 [标配资料字段](https://cloud.tencent.com/document/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。 |
+| 40605  | 标配资料字段的 Value 错误，详情可参见 [标配资料字段](https://intl.cloud.tencent.com/document/product/1047/33520#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。   |
+| 40610  | 资料字段的 Value 类型不匹配，详情可参见 [标配资料字段](https://intl.cloud.tencent.com/document/product/1047/33520#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。 |
 
 ### 关系链错误码
 
@@ -270,7 +270,7 @@
 | 20004           | 网络异常，请重试。                                           |
 | 20005           | 服务端内部错误，请重试。                                     |
 | 20006           | 触发发送单聊消息之前回调，App 后台返回禁止下发该消息。       |
-| 20007           | 发送单聊消息，被对方拉黑，禁止发送。 <br>消息发送状态默认展示为失败，您可以登录控制台修改该场景下的消息发送状态展示结果，具体操作请参见 [消息保留设置](https://cloud.tencent.com/document/product/269/38656)。   |
+| 20007           | 发送单聊消息，被对方拉黑，禁止发送。 <br>消息发送状态默认展示为失败，您可以登录控制台修改该场景下的消息发送状态展示结果，具体操作请参见 [消息保留设置](https://intl.cloud.tencent.com/document/product/1047/34419)。   |
 | 20008           | 消息发送方和接收方属于不同的 SDKAppID。原因是客户端切换了 SDKAppID，但数据库未进行清理。解决办法是在切换 SDKAppID 时删除原来的数据库。|
 | 20009           | 消息发送双方互相不是好友，禁止发送（配置单聊消息校验好友关系才会出现）。 |
 | 20010           | 发送单聊消息，自己不是对方的好友（单向关系），禁止发送。     |
@@ -279,14 +279,14 @@
 | 20016           | 消息撤回超过了时间限制（默认2分钟）。                        |
 | 20018           | 删除漫游内部错误。                                           |
 | 90001           | JSON 格式解析失败，请检查请求包是否符合 JSON 规范。          |
-| 90002           | JSON 格式请求包中 MsgBody 不符合消息格式描述，或者 MsgBody 不是 Array 类型，请参考 [TIMMsgElement 对象](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义。 |
+| 90002           | JSON 格式请求包中 MsgBody 不符合消息格式描述，或者 MsgBody 不是 Array 类型，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义。 |
 | 90003           | JSON 格式请求包体中缺少 To_Account 字段或者 To_Account 帐号不存在。 |
 | 90005           | JSON 格式请求包体中缺少 MsgRandom 字段或者 MsgRandom 字段不是 Integer 类型。 |
 | 90006           | JSON 格式请求包体中缺少 MsgTimeStamp 字段或者 MsgTimeStamp 字段不是 Integer 类型。 |
 | 90007           | JSON 格式请求包体中 MsgBody 类型不是 Array 类型，请将其修改为 Array 类型。 |
 | 90008           | JSON 格式请求包体中缺少 From_Account 字段或者 From_Account 帐号不存在。|
 | 90009           | 请求需要 App 管理员权限。                                    |
-| 90010           | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义。 |
+| 90010           | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义。 |
 | 90011           | 批量发消息目标帐号超过500，请减少 To_Account 中目标帐号数量。 |
 | 90012           | To_Account 没有注册或不存在，请确认 To_Account 是否导入即时通信 IM 或者是否拼写错误。 |
 | 90026           | 消息离线存储时间错误（最多不能超过7天）。                    |
