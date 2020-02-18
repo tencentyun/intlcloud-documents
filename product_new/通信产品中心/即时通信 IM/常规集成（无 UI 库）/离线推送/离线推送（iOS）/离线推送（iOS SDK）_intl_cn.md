@@ -3,7 +3,7 @@
 如想要接收 APNs 离线消息通知，需要在腾讯云管理平台提交 Push 证书，在客户端每次登录时，获取并通过 API 接口上报 Token。APNs 推送功能只用于通知用户，如果 App 在前台，以 `onNewMessage` 回调获取新消息为准，`didReceiveRemoteNotification` 获取到的消息可以忽略。详细推送原理请参见 [Apple Push Notification Service](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)。
 
 ### 申请 APNs 证书
-申请 APNs 证书的具体操作步骤请参见 [Apple 推送证书申请](https://cloud.tencent.com/document/product/269/3898)。
+申请 APNs 证书的具体操作步骤请参见 [Apple 推送证书申请](https://intl.cloud.tencent.com/document/product/1047/34346)。
 
 ### 上传证书到控制台
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
@@ -20,7 +20,7 @@
 
 ### 客户端实现 APNs 推送
 
-客户端要实现接收 APNs 推送，需要实现以下几个步骤，更详细的操作步骤可参考 [即时通信 iOS IM SDK 离线推送视频](https://cloud.tencent.com/edu/learning/learn-1059-1112)。
+客户端要实现接收 APNs 推送，需要实现以下几个步骤。
 
 #### 向苹果后台请求 DeviceToken
 
@@ -127,7 +127,7 @@
 
 ## 推送格式 
 推送格式示例如下图所示。
-<img src="//main.qcloudimg.com/raw/d23be65b4c481beb71db993045b4fec9.png" width=480 />
+<img src="//https://main.qcloudimg.com/raw/a9775d825cc1bfabd1fd8a01fa463539.png" width=480 />
 
 
 ### 通用推送规则
@@ -157,7 +157,7 @@ APNs 推送内容部分由消息体中各个 `Elem` 内容组成，不同 `Elem`
 
 ### 多 App 互通
 
-如果将多个 App 中的 `SDKAppID` 设置为相同值，则可以实现多 App 互通。不同 App 需要使用不同的推送证书，您需要为每一个 App [申请 APNs 证书](https://cloud.tencent.com/document/product/269/3898) 并完成 [离线推送配置](#配置推送)。
+如果将多个 App 中的 `SDKAppID` 设置为相同值，则可以实现多 App 互通。不同 App 需要使用不同的推送证书，您需要为每一个 App [申请 APNs 证书](https://intl.cloud.tencent.com/document/product/1047/34346) 并完成 [离线推送配置](#配置推送)。
 
 
 ## 推送提示音
@@ -212,7 +212,6 @@ IM SDK 提供了设置用户声音的接口，可按需自定义设置单聊消�
 3. 调用 `setAPNS` 接口设置音频文件信息。
  >只需要设置音频文件的**文件名称（含后缀）**即可。
  >
-<img src="//main.qcloudimg.com/raw/76005ecd34b9cabf23536d77828f2de7.png" width=480 />
 
 ### 获取推送消息提示音
 
