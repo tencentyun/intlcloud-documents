@@ -26,7 +26,6 @@ dependencies {
 }
 ```
 >
- ![](https://main.qcloudimg.com/raw/211945758a897f53299951d415209ea6.png)
 - **第二步：指定 App 使用架构**
 在 defaultConfig 中，指定 App 使用的 CPU 架构（从 IM SDK 4.3.118 版本开始支持 armeabi-v7a，arm64-v8a，x86，x86_64）：
 ```
@@ -39,7 +38,6 @@ dependencies {
 
 - **第三步：同步 SDK**
 单击【Sync Now】按钮，如果您的网络连接 jcenter 没有问题，SDK 就会自动下载集成到工程里。
-![](https://main.qcloudimg.com/raw/e3ce64d671fd4a159f8919332ce1ae15.png)
 
 
 ### 方法二：手动下载（aar）
