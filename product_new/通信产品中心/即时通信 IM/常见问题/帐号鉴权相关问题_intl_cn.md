@@ -19,16 +19,16 @@ Exception in thread "main" java.lang.UnsatisfiedLinkError: *** Can't load IA 32-
 
 
 ### 如何生成 UserSig？
-详情请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。
+详情请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ### UserSig 有效期是多久？
 
-UserSig 作为即时通信 IM 登录鉴权的重要凭证，默认有效期为180天，只能通过原生接口修改有效期，其他接口与工具不能修改有效期。UserSig 有效期最长可以设置为50年，为了您的帐号安全建议将 UserSig 有效期设置为两个月。详情可参阅 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。
+UserSig 作为即时通信 IM 登录鉴权的重要凭证，默认有效期为180天，只能通过原生接口修改有效期，其他接口与工具不能修改有效期。UserSig 有效期最长可以设置为50年，为了您的帐号安全建议将 UserSig 有效期设置为两个月。详情可参阅 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ### 帐号是否可以删除？
 
-- **专业版**中的帐号不允许删除，如果您无需继续使用某个帐号，您可以通过 Rest  API 调用 [帐号登录态失效接口](https://cloud.tencent.com/document/product/269/3853) 使该帐号所有者的登录状态失效。
-- **体验版**中的帐号支持删除，您可以通过 Rest  API 调用 [帐号删除接口](https://cloud.tencent.com/document/product/269/36443) 删除不再使用的帐号，**删除后该用户的数据将无法恢复**，请谨慎处理。
+- **专业版**中的帐号不允许删除，如果您无需继续使用某个帐号，您可以通过 Rest  API 调用 **帐号登录态失效接口**使该帐号所有者的登录状态失效。
+- **体验版**中的帐号支持删除，您可以通过 Rest  API 调用**帐号删除接口**删除不再使用的帐号，**删除后该用户的数据将无法恢复**，请谨慎处理。
 
 ### 登录报错70009？
 
