@@ -8,7 +8,7 @@
 
 
 ## 相关文档
-- [一分钟跑通 Demo](https://cloud.tencent.com/document/product/269/36838)
+- 一分钟跑通 Demo
 - [IM SDK（小程序） Demo 运行](https://github.com/tencentyun/TIMSDK/tree/master/WXMini)
 - [IM SDK（Web） Demo 运行](https://github.com/tencentyun/TIMSDK/tree/master/H5)
 
@@ -114,7 +114,7 @@ tim.registerPlugin({'cos-js-sdk': COS});
 更详细的初始化流程和 API 使用介绍请参见 [SDK 初始化](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html)。
 
 ### 相关资源
-- [SDK 更新日志](https://cloud.tencent.com/document/product/269/38492)
+- [SDK 更新日志](https://intl.cloud.tencent.com/document/product/1047/34281)
 - [SDK 接口文档](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html)
 - [常见问题](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/tutorial-01-faq.html)
 - [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/H5)
