@@ -30,7 +30,6 @@ vivo 手机使用深度定制 Android 系统，对于第三方 App 自启动权�
 2. 单击【Android平台推送设置】区域的【添加证书】。
  >如果您原来已有证书只需变更信息，可以单击对应证书区域的【编辑】进行修改更新。
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
 3. 根据 [步骤1](#Step1_3) 中获取的信息设置以下参数：
  - **推送平台**：选择 **vivo**
  - **AppKey**：填写 vivo 推送服务应用的 **APP key**
@@ -38,10 +37,8 @@ vivo 手机使用深度定制 Android 系统，对于第三方 App 自启动权�
  - **AppSecret**：填写 vivo 推送服务应用的 **APP secret**
  - **点击通知后**：选择点击通知栏消息后的响应操作，支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#click)
   当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#section4)。
- ![](https://main.qcloudimg.com/raw/ac890d834dd7f069f936094180634cd7.png)
 4. 单击【确认】保存信息，证书信息保存后10分钟内生效。
 5. 待推送证书信息生成后，记录证书的**`ID`**。
- ![](https://main.qcloudimg.com/raw/3442e00debac668c42fa4be89903ac90.png)
 
 <span id="Step3"></span>
 ### 步骤3：集成推送 SDK
@@ -297,8 +294,7 @@ public class ThirdPushTokenMgr {
 ![](https://main.qcloudimg.com/raw/ac890d834dd7f069f936094180634cd7.png)
 
 ### 打开网页
-您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/76ebc2f58623241c685ebffab6b4c2f6.png)
+您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://intl.cloud.tencent.com/document/product/457`。
 
 ### 打开应用内指定界面
 
@@ -334,7 +330,7 @@ public class ThirdPushTokenMgr {
     ```
 
 3. 在 [添加证书](#Step2) 时选择【打开应用内指定界面】并输入上述打印结果。
-    ![](https://main.qcloudimg.com/raw/1ab25b8c52b953014786682bce43c2ed.png)
+
 
 <span id="section4"></span>
 ## 透传自定义内容
@@ -352,7 +348,7 @@ public class ThirdPushTokenMgr {
   mConversation.sendMessage(false, timMessage, callback);
   ```
 
-- 服务端示例请参见 [OfflinePushInfo 的格式示例](https://cloud.tencent.com/document/product/269/2720#.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81-offlinepushinfo-.E8.AF.B4.E6.98.8E)。
+- 服务端示例请参见 [OfflinePushInfo 的格式示例](https://intl.cloud.tencent.com/document/product/1047/33527)。
 
 ### 步骤2：接收端获取自定义内容
 点击通知栏的消息时，会触发 vivo 推送 SDK 的 `onNotificationMessageClicked(Context context, UPSNotificationMessage upsNotificationMessage)` 回调，自定义内容可以从 `upsNotificationMessage` 中获取。
