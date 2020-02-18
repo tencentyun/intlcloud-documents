@@ -10,7 +10,6 @@
 ### 步骤1. 下载 IM SDK
 
 在 [Github](https://github.com/tencentyun/TIMSDK) 下载 Windows IM SDK，Windows IM SDK 的下载方式如下：
- ![](https://main.qcloudimg.com/raw/22f0841537a6314fa7e00581d84a07de.png)
 
 下载并解压打开 IM SDK 文件夹，包含以下几个部分：
 
