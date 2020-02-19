@@ -3,16 +3,16 @@ App 后台可以通过该回调实时监控群组资料（群名称、群简介�
 
 ## 注意事项
 
-- 要启用回调，必须配置回调 URL，并打开本条回调协议对应的开关，配置方法详见 [第三方回调配置](https://cloud.tencent.com/document/product/269/32431) 文档。
+- 要启用回调，必须配置回调 URL，并打开本条回调协议对应的开关，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
 - 回调的方向是即时通信 IM 后台向 App 后台发起 HTTP POST 请求。
 - App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
-- 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://cloud.tencent.com/document/product/269/1522#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91) 文档。
+- 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91) 文档。
 
 ## 可能触发该回调的场景
 
 ### 哪些内容会触发回调
 
-群组资料包括 [群基础资料](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E5.9F.BA.E7.A1.80.E8.B5.84.E6.96.99) 和 [群组维度自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81)。
+群组资料包括 [群基础资料](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E5.9F.BA.E7.A1.80.E8.B5.84.E6.96.99) 和 [群组维度自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81)。
 目前，群基础资料中的群组名称、群组简介、群组公告和群组头像 URL 被修改后，可能触发该回调。其他群基础资料被修改后暂不会触发。
 
 ### 哪些方式会触发回调
@@ -45,7 +45,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | 固定为 Group.CallbackAfterGroupInfoChanged |
 | contenttype | 固定值为 JSON |
 | ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://cloud.tencent.com/document/product/269/1522#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE) 中 OptPlatform 的参数含义 |
+| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 #### 仅修改部分群基础资料
@@ -116,7 +116,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | --- | --- | --- |
 | CallbackCommand | String | 回调命令 |
 | GroupId | String | 群资料被修改的群组 ID |
-| Type | String | 群资料被修改的群的 [群组形态介绍](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)，例如 Private，Public 和 ChatRoom |
+| Type | String | 群资料被修改的群的 [群组形态介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)，例如 Private，Public 和 ChatRoom |
 | Operator_Account | String | 操作者 Identifier |
 | Name | String | 修改后的群名称 |
 | Introduction | String | 修改后的群简介 |
@@ -146,5 +146,5 @@ App 后台记录群资料的变更信息后，发送回调应答包。
 
 ## 参考
 
-- [第三方回调简介](https://cloud.tencent.com/document/product/269/1522)
-- REST API：[修改群组基础资料](https://cloud.tencent.com/document/product/269/1620)
+- [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
+- REST API：修改群组基础资料
