@@ -18,6 +18,6 @@
 
 CDN 加速的 COS 的具体操作实现方法如下：
 
-- 将 COS 域名指向 CDN 加速域名，再将用户域名绑定到 CDN 加速域名（CNAME）。具体操作流程请参见 [通过 CDN 控制台实现](https://intl.cloud.tencent.com/document/product/228/32984
+- 将 COS 域名指向 CDN 加速域名，再将用户域名绑定到 CDN 加速域名（CNAME）。具体操作流程请参见 [通过 CDN 控制台实现](https://intl.cloud.tencent.com/document/product/228/32984)。
 - 将用户域名绑定到 COS 域名，同时开启 CDN 加速。具体操作流程请参见 [通过 COS 控制台实现](https://intl.cloud.tencent.com/document/product/228/32985)。
 
