@@ -3,8 +3,7 @@
 - 月结后付费：按自然月结算，每月3日扣除上一个自然月所产生的费用。
 
 ## 计费组成
-即时通信 IM 的计费包括：基础服务资费和增值服务资费，如下图所示：
-![](https://main.qcloudimg.com/raw/64619bd963435d36a7b1ffc011baed74.png)
+即时通信 IM 的计费包括：基础服务资费和增值服务资费。
 
 <table>
 <tr>
@@ -13,7 +12,7 @@
 <th>月结后付费</th>
 </tr>
 <tr>
-<td rowspan="4"><a href="https://cloud.tencent.com/document/product/269/11673#Package">基础服务资费</a></td>
+<td rowspan="4"><a href="https://intl.cloud.tencent.com/document/product/1047/34350#Package">基础服务资费</a></td>
 <td>专业版 - 套餐包</td>
 <td>×</td>
 </tr>
@@ -31,7 +30,7 @@
 </tr>
 </tr>
 <tr>
-<td rowspan="6"><a href="https://cloud.tencent.com/document/product/269/11673#Value-added">增值服务资费</a></td>
+<td rowspan="6"><a href="https://intl.cloud.tencent.com/document/product/1047/34350#Value-added">增值服务资费</a></td>
 <td>扩展音视频聊天室创建数至无上限</td>
 <td>×</td>
 </tr>
@@ -72,8 +71,8 @@
 | 免费日活跃用户数（DAU）额度  | 100/月         | 1万/月       | 1万/月           |
 | 免费峰值群组数| 10万/月 | 10万/月  |10万/月   |
 
-- **可创建音视频聊天室个数**：指单个 SDKAppID 内所有用户可创建的总个数，音视频聊天室仅提供聊天室内发送文字、图片、短语音及其他自定义消息的能力，如需使用 [云直播](https://cloud.tencent.com/document/product/267)、[实时音视频](https://cloud.tencent.com/document/product/647) 等服务，您需要开通对应服务。
-- **日净增群组数**：指每个自然日内，单个 SDKAppID 所有用户创建的所有类型的群组净增总和。日净增群组数最大支持10000个，其中最多可包含5个在线成员广播大群。若创建群组数已达日净增群组数阈值但仍需创建群组，您可以及时解散删除当天创建的无需再使用的群组后再创建新群组，更多详情请参见 [群组系统](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82)。
+- **可创建音视频聊天室个数**：指单个 SDKAppID 内所有用户可创建的总个数，音视频聊天室仅提供聊天室内发送文字、图片、短语音及其他自定义消息的能力，如需使用 [云直播](https://intl.cloud.tencent.com/document/product/267)、[实时音视频](https://intl.cloud.tencent.com/document/product/647) 等服务，您需要开通对应服务。
+- **日净增群组数**：指每个自然日内，单个 SDKAppID 所有用户创建的所有类型的群组净增总和。日净增群组数最大支持10000个，其中最多可包含5个在线成员广播大群。若创建群组数已达日净增群组数阈值但仍需创建群组，您可以及时解散删除当天创建的无需再使用的群组后再创建新群组，更多详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82)。
 - **DAU**：单个用户当日登录即时通信 IM 计为1个 DAU，同一用户重复登录时，DAU 不累加。
 - **峰值群组数**：单个应用（SDKAppID）下所有用户创建和加入的群组数的总和，以自然月中最高峰值进行结算。
 
@@ -91,7 +90,7 @@
      </tr> 
 	 <tr>   
 	     <td>扩展单个群成员数上限</td>   
-	     <td>对单个 SDKAppID 内所有的群组生效，群成员数上限同时受不同群组类型的特性约束，详情请参见 <a href="https://cloud.tencent.com/document/product/269/1499#.E7.BE.A4.E7.BB.84.E5.8A.9F.E8.83.BD">群组功能说明</a>。</td>   
+	     <td>对单个 SDKAppID 内所有的群组生效，群成员数上限同时受不同群组类型的特性约束，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33515#.E7.BE.A4.E7.BB.84.E5.8A.9F.E8.83.BD">群组功能说明</a>。</td>   
      </tr> 
 	 <tr>   
 	     <td>扩展单个用户可加入群组数上限</td>   
@@ -99,7 +98,7 @@
      </tr> 
 	 <tr>   
 	     <td>延长历史消息存储时长</td>   
-	     <td>对单个 SDKAppID 生效。<br>支持文字、图片、短语音、短视频、文件以及自定义消息延长服务，但不同版本的 SDK 支持延长历史消息存储时长的消息类型不同，请参见 <a href="https://cloud.tencent.com/document/product/269/3571#MsgType">消息存储</a>。您可以在 <a href="https://console.cloud.tencent.com/im">控制台</a> 自助延长历史消息存储时长，最大支持延长至360天。</td>   
+	     <td>对单个 SDKAppID 生效。<br>支持文字、图片、短语音、短视频、文件以及自定义消息延长服务，但不同版本的 SDK 支持延长历史消息存储时长的消息类型不同，请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33524#MsgType">消息存储</a>。您可以在 <a href="https://console.cloud.tencent.com/im">控制台</a> 自助延长历史消息存储时长，最大支持延长至360天。</td>   
      </tr> 
 	 <tr>   
 	     <td>安全打击服务</td>   
@@ -112,5 +111,5 @@
 </table>
 
 ## 相关文档
-- [价格说明](https://cloud.tencent.com/document/product/269/11673)
-- [购买指引](https://cloud.tencent.com/document/product/269/32458)
+- [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)
+- [购买指引](https://intl.cloud.tencent.com/document/product/1047/34351)
