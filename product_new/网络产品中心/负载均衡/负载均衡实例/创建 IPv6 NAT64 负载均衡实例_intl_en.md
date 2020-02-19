@@ -11,7 +11,7 @@ An IPv6 NAT64 CLB instance is a load balancer implemented based on the IPv6 NAT6
 
 ## IPv6 NAT64 CLB Architecture
 The IPv6 NAT64 CLB architecture is as shown below.
-![](https://main.qcloudimg.com/raw/caae8ad5e6a49ce24aeaa3fc0a6fd0c7.svg)
+![](https://main.qcloudimg.com/raw/e86896cc8286b53e8198facc8d28076f.png)
 When IPv6 NAT64 CLB is accessed from an IPv6 network, CLB can smoothly convert IPv6 addresses to IPv4 addresses to adapt to existing services and quickly implement IPv6 transformation.
 
 ## IPv6 NAT64 CLB Advantages
@@ -31,8 +31,8 @@ Tencent Cloud IPv6 NAT64 CLB has the following advantages when helping your busi
  - Network: VPC.
  - Other configurations are the same as general instance configurations.
 3. After setting the configuration items on the purchase page, click **Buy Now** to return to the [CLB instance list page](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1), where you can view the IPv6 NAT64 CLB instance you just purchased.
-![](https://main.qcloudimg.com/raw/d55b34c80b12ac6effa806d969ef74a0.png)
+<!--![](https://main.qcloudimg.com/raw/d55b34c80b12ac6effa806d969ef74a0.png)-->
 
 ### Using IPv6 NAT64 CLB
 Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1) and click an instance ID to enter the details page. On the "Listener Management" tab, you can configure listeners and forwarding rules and bind CVM instances. For more information, please see [Getting Started with CLB](https://intl.cloud.tencent.com/document/product/214/8975).
-![](https://main.qcloudimg.com/raw/37295edc8457d19babd3b6b9f2785de5.png)
+<!--![](https://main.qcloudimg.com/raw/37295edc8457d19babd3b6b9f2785de5.png)-->
