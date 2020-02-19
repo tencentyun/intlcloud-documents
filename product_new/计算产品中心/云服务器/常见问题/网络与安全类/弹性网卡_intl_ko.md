@@ -1,6 +1,6 @@
 ### ENI란 무엇입니까?
 
-[ENI](https://intl.cloud.tencent.com/product/eni)(Elastic Network Interface)는 VPC 내의 CVM을 바인딩하는 일종의 탄력적 네트워크 인터페이스로서 여러 CVM 사이에서 자유롭게 마이그레이션할 수 있습니다. ENI는 매니지먼트 네트워크 구성 및 신뢰성 높은 네트워크 솔루션 구축에 큰 도움이 됩니다.
+[ENI](https://intl.cloud.tencent.com/product/eni)(Elastic Network Interface)는 VPC 내의 CVM을 바인딩하는 일종의 탄력적 네트워크 인터페이스로서 여러 CVM 사이에서 자유롭게 마이그레이션할 수 있습니다. ENI는 관리 네트워크 구성 및 신뢰성 높은 네트워크 솔루션 구축에 큰 도움이 됩니다.
 
 ENI는 VPC, 가용존 및 서브넷 속성을 갖고 있어 동일한 가용존의 CVM만 바인딩할 수 있습니다. 1대의 CVM는 여러 ENI를 바인딩할 수 있으며 구체적인 바인딩 수량은 CVM 규격에 따라 결정됩니다.
 
