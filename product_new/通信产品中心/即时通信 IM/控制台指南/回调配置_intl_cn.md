@@ -15,8 +15,7 @@
 ## 配置事件回调
 1. 在【回调配置】页面，单击事件回调配置区域的【编辑】。
 2. 在弹出的事件回调配置对话框中，勾选所需的回调。
- ![](https://main.qcloudimg.com/raw/aeaa08f9aa11578ee0e4c7778fb32cc7.png)
 3. 单击【确定】保存配置。
 
 ## 后续操作
-配置回调 URL 并启用相应的事件回调后，您可以参考 [第三方回调](https://cloud.tencent.com/document/product/269/1522) 使用相应的回调功能，实时了解用户信息和操作。
+配置回调 URL 并启用相应的事件回调后，您可以参考 [第三方回调](https://intl.cloud.tencent.com/document/product/1047/34354) 使用相应的回调功能，实时了解用户信息和操作。
