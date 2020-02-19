@@ -1,7 +1,7 @@
 Tencent Cloud CLB supports three IP versions: IPv4, IPv6, and IPv6 NAT64. IPv6 CLB supports the TCP, UDP, TCP SSL, HTTP, and HTTPS protocols and provides flexible forwarding capabilities based on domain names and URL paths. This document guides you through how to get started with IPv6 CLB.
 
 ## Prerequisites
-1. CLB only forwards traffic but cannot process requests; therefore, you need to create a CVM instance that processes user requests first and complete IPv6 configuration for it. For more information on how to create a CVM instance and enable IPv6, please see [Quickly Setting up IPv6 VPCs](https://cloud.tencent.com/document/product/215/37946).
+1. CLB only forwards traffic but cannot process requests; therefore, you need to create a CVM instance that processes user requests first and complete IPv6 configuration for it. 
 2. This document takes HTTP forwarding as an example. The corresponding web server (such as Apache, Nginx, or IIS) must be deployed on the CVM instance, and the port used by the server needs to listen on IPv6.
 
 ## Instructions
@@ -12,7 +12,7 @@ Tencent Cloud CLB supports three IP versions: IPv4, IPv6, and IPv6 NAT64. IPv6 C
 - IPv6 implementations are still at the primary stage across the internet. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). SLA is not guaranteed during the beta test period.
 
 ## Step 1. Create a CVM instance and configure IPv6
-1. Enter the [CVM Console](https://console.cloud.tencent.com/cvm/instance/index?rid=1), log in to the CVM instance, and complete basic IPv6 configuration. For detailed directions, please see [Quickly Setting up IPv6 VPCs](https://cloud.tencent.com/document/product/215/37946).
+1. Enter the [CVM Console](https://console.cloud.tencent.com/cvm/instance/index?rid=1), log in to the CVM instance, and complete basic IPv6 configuration. 
 2. On the CVM instance, run the following commands in sequence to deploy and restart the Nginx service.
 ```
 yum install nginx
