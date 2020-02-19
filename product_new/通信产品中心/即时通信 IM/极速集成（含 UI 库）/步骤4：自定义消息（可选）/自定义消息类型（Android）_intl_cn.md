@@ -10,23 +10,23 @@ TUIKit 基本消息类型请参见 [MessageInfo.java](https://imsdk-1252463788.c
      </tr>
 	 <tr>      
          <td style="text-align:center">文本类消息</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/6535b0a414d4dd51aabab464f0980ca3.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/751b6975a0a786dac0f35aabc0aa90e2.png" width="320"/></td>   
      </tr> 
 	 <tr>      
          <td style="text-align:center">图片类消息</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/1f5330a92c688b6288bbd47f97202867.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/02cff177167e31feaa447d414d2e77f4.png" width="320"/></td>   
      </tr> 
 	 <tr>      
          <td style="text-align:center">语音类消息</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/5387ea2450e7fe37daa59efb163e93b6.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/95447ed8a0c4dcf37c118758f44788e4.png" width="320"/></td>   
      </tr> 
 	 <tr>      
          <td style="text-align:center">视频类消息</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/eb50c8cefa0decf1eef1c896c44e6188.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/564c492d9fc621882b39a5a420436081.png" width="320"/></td>   
      </tr> 
 	 <tr>      
          <td style="text-align:center">文件类消息</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/4be73ac319f7693916ee08b98f14c4c6.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/32dc502005f11f9caa53937a3f1c20cf.png" width="320"/></td>   
      </tr> 
 </table>
 
@@ -57,8 +57,6 @@ chatLayout.sendMessage(info)
 3. 将创建的 View 添加到 TUIKit 的父容器里。
 4. 实现 View 的交互逻辑。
 
-渲染自定义消息的流程如下图所示：
-![](https://main.qcloudimg.com/raw/644f6a44045300f48d98440ceb150bb3.png)
 
 TUIKit 会在内部通过消息的类型获知该条消息是自定义消息，渲染到该条消息时会通过回调通知您，并调用您的布局以及实现逻辑，所以您只需将实现了`IOnCustomMessageDrawListener`的监听传入到 TUIKit 即可。
 ```java
@@ -131,5 +129,4 @@ public static class CustomMessageData {
 }
 ```
 
-显示效果如下图所示：
-![](https://main.qcloudimg.com/raw/019fe0810738f271b61cd1d7a33c5b03.png)
+
