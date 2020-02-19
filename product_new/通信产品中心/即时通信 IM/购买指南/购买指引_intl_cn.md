@@ -8,9 +8,8 @@
 3. 在【创建应用】对话框中输入您的应用名称，单击【确定】。
     创建完成后，可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。
   >新建应用的业务版本默认为体验版，状态默认为启用。
-  >同一个腾讯云账号，最多可创建100个即时通信 IM 应用。若已有100个应用，您可以先 [停用](https://cloud.tencent.com/document/product/269/32578#.E5.81.9C.E7.94.A8.E5.BA.94.E7.94.A8) 并删除无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
+  >同一个腾讯云账号，最多可创建100个即时通信 IM 应用。若已有100个应用，您可以先 [停用](https://intl.cloud.tencent.com/document/product/1047/34540#.E5.81.9C.E7.94.A8.E5.BA.94.E7.94.A8) 并删除无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
   >
-  ![](https://main.qcloudimg.com/raw/2753962b67754a9ebb2a2a5b8042f2ef.png)
 
 
 ## 步骤2：购买专业版套餐包
@@ -40,8 +39,7 @@
 	     <td>支持1个月 - 2年，以月为单位购买套餐包。</td>   
      </tr> 
 </table>
-<img src="https://main.qcloudimg.com/raw/d78c12aeeceb8922c4c7bf1d8c36da6d.png">
-4. 勾选【我已阅读并同意 《[腾讯云即时通信 IM 服务等级协议](https://cloud.tencent.com/document/product/269/34004)》】，单击【立即购买】。
+4. 勾选【我已阅读并同意 《[腾讯云即时通信 IM 服务等级协议](https://intl.cloud.tencent.com/document/product/1047/34545)》】，单击【立即购买】。
 5. 核对所选信息，选择是否使用代金券，单击【确认购买】，完成支付流程。
 
 ### 使用购买页购买
@@ -77,8 +75,7 @@
 	     <td>当勾选单独购买功能包时，必须选择专业版应用。</td>   
      </tr> 
 </table>
-<img src="https://main.qcloudimg.com/raw/d78c12aeeceb8922c4c7bf1d8c36da6d.png">
-3. 勾选【我已阅读并同意 《[腾讯云即时通信 IM 服务等级协议](https://cloud.tencent.com/document/product/269/34004)》】，单击【立即购买】。
+3. 勾选【我已阅读并同意 《[腾讯云即时通信 IM 服务等级协议](https://intl.cloud.tencent.com/document/product/1047/34545)》】，单击【立即购买】。
 4. 核对所选信息，选择是否使用代金券，单击【确认购买】，完成支付流程。
 
 
