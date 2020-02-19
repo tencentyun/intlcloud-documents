@@ -4,10 +4,10 @@ App 后台可以通过该回调实时监控用户创建群组的信息，包括�
 
 ## 注意事项
 
-- 要启用回调，必须配置回调 URL，并打开本条回调协议对应的开关，配置方法详见 [第三方回调配置](https://cloud.tencent.com/document/product/269/32431) 文档。
+- 要启用回调，必须配置回调 URL，并打开本条回调协议对应的开关，配置方法详见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
 - 回调的方向是即时通信 IM 后台向 App 后台发起 HTTP POST 请求。
 - App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
-- 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://cloud.tencent.com/document/product/269/1522#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91) 文档。
+- 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91) 文档。
 
 ## 可能触发该回调的场景
 
@@ -39,7 +39,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | 固定为 Group.CallbackAfterCreateGroup |
 | contenttype | 固定值为 JSON |
 | ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://cloud.tencent.com/document/product/269/1522#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE) 中 OptPlatform 的参数含义 |
+| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -80,10 +80,10 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | GroupId | String | 操作的群 ID |
 | Operator_Account | String | 发起创建群组请求的操作者 Identifier |
 | Owner_Account | String | 请求创建的群的群主 Identifier |
-| Type | String | 请求创建的 [群组形态介绍](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)，例如 Private，Public 和 ChatRoom |
+| Type | String | 请求创建的 [群组形态介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D)，例如 Private，Public 和 ChatRoom |
 | Name | String | 请求创建的群组的名称 |
 | MemberList | Array | 请求创建的群组的初始化成员列表 |
-| UserDefinedDataList | Array | 用户建群时的自定义字段，这个字段默认是没有的，需要开通，详见 [自定义字段](/doc/product/269/群组系统#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
+| UserDefinedDataList | Array | 用户建群时的自定义字段，这个字段默认是没有的，需要开通，详见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
 
 ### 应答包示例
 
@@ -106,5 +106,5 @@ App 后台同步数据后，发送回调应答包。
 | ErrorInfo | String | 必填 | 错误信息 |
 
 ## 参考
-- [第三方回调简介](https://cloud.tencent.com/document/product/269/1522)
-- REST API：[创建群组](https://cloud.tencent.com/document/product/269/1615)
+- [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
+- REST API：创建群组
