@@ -8,8 +8,8 @@ This document describes how to host an existing or new static website on COS and
 The following services will be used in this practice:
 
 - [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloudProductDns): Before hosting a static website, you need to register a domain name such as `www.example.com`. You can do so via [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloud).
-- [COS](https://cloud.tencent.com/product/cos): You need to create a bucket in COS for storing the uploaded webpage contents.
-- [CDN](https://cloud.tencent.com/product/cdn-scd): Together with Tencent Cloud DNS, CDN can accelerate the delivery of static website contents, reduce access delay, and improve availability while binding the domain name to the contents.
+- [COS](https://intl.cloud.tencent.com/product/cos): You need to create a bucket in COS for storing the uploaded webpage contents.
+- [CDN](https://intl.cloud.tencent.com/product/cdn): Together with Tencent Cloud DNS, CDN can accelerate the delivery of static website contents, reduce access delay, and improve availability while binding the domain name to the contents.
 - Tencent Cloud DNS: It enables access to the static website through a custom domain name.
 
 > ?The sample domain name `www.example.com` is used in all steps in this document. In practice, replace it with your own domain name.
@@ -21,8 +21,8 @@ The following services will be used in this practice:
 Domain name registration is a prerequisite for any service built on the internet. After you register a domain name, you need to apply for ICP filing for it before your website can be accessed. Please proceed according to your actual situation:
 
 - If you have already registered a domain name and obtained ICP filing for it, skip this step and proceed to [step 2](#Create a bucket).
-- If you have already registered a domain name but have not obtained ICP filing for it, please [apply for ICP filing](https://cloud.tencent.com/product/ba).
-- If you have not registered a domain name, please [register one](https://dnspod.cloud.tencent.com/?from=qcloud) first and then [apply for ICP filing for it ](https://cloud.tencent.com/product/ba).
+- If you have already registered a domain name but have not obtained ICP filing for it, please [apply for ICP filing](https://intl.cloud.tencent.com/product/icp).
+- If you have not registered a domain name, please [register one](https://dnspod.cloud.tencent.com/?from=qcloud) first and then [apply for ICP filing for it ](https://intl.cloud.tencent.com/product/icp).
 
 <span id="Create a bucket"></span>
 
