@@ -1,5 +1,5 @@
 ## 操作场景
-通过 [EMR 控制台](https://console.cloud.tencent.com/emr)，您可以导出存量集群的软件配置参数，后续在新建集群时可使用这些参数进行 [软件配置](https://cloud.tencent.com/document/product/589/35655)，从而快速新建一个熟悉的集群。
+通过 [EMR 控制台](https://console.cloud.tencent.com/emr)，您可以导出存量集群的软件配置参数，后续在新建集群时可使用这些参数进行 [软件配置](https://intl.cloud.tencent.com/document/product/1026/34530)，从而快速新建一个熟悉的集群。
 >目前仅以下文件支持导出软件配置：
 HDFS：core-site.xml、hdfs-site.xml、hadoop-env.sh、log4j.properties
 YARN：yarn-site.xml、mapred-site.xml、fair-scheduler.xml、capacity-scheduler.xml、yarn-env.sh、mapred-env.sh

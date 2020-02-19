@@ -6,4 +6,4 @@
 ![](https://main.qcloudimg.com/raw/56795633007852cb9fa07d3509e51789.png)
 2. 单击【同意授权】，将默认角色 EMR_QCSRole 授予弹性 MapReduce 的服务账号。
  ![](https://main.qcloudimg.com/raw/e47130867d10e1371c7ef85a47cb52c2.png)
-3. 授权完成后，用户需刷新弹性 MapReduce 的控制台或购买页，刷新后即可正常操作。更多 EMR_QCSRole 相关的详细策略信息，可登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy) 查看。EMR_QCSRole 包含的权限信息详见 [协作者/子账号权限](https://cloud.tencent.com/document/product/589/14625)。
+3. 授权完成后，用户需刷新弹性 MapReduce 的控制台或购买页，刷新后即可正常操作。更多 EMR_QCSRole 相关的详细策略信息，可登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy) 查看。EMR_QCSRole 包含的权限信息详见 [协作者/子账号权限](https://intl.cloud.tencent.com/document/product/1026/31100)。

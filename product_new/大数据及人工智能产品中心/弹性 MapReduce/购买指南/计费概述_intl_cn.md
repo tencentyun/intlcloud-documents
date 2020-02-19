@@ -1,5 +1,5 @@
 ## 计费模式
-按量计费：集群的全部节点计费模式均为 [按量计费](https://cloud.tencent.com/document/product/555/9617)，节点类型详细介绍请参见 [节点类型说明](https://cloud.tencent.com/document/product/589/14624)。
+按量计费：集群的全部节点计费模式均为按量计费，节点类型详细介绍请参见 [节点类型说明](https://intl.cloud.tencent.com/document/product/1026/31094)。
 
 购买弹性 MapReduce 集群时，集群单价按小时呈现，结算时按实际使用秒数计价，费用四舍五入，精确到小数点后2位；计费的起点以集群创建开始的时间点为准，终点以您发起销毁集群完成操作的时间点为准。 
 
