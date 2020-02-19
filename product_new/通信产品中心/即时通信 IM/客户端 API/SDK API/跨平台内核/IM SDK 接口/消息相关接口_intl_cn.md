@@ -1,4 +1,4 @@
-消息介绍请参考 [单聊消息](https://cloud.tencent.com/document/product/269/3662)、[群组消息](https://cloud.tencent.com/document/product/269/3663) 和 [消息格式描述](https://cloud.tencent.com/document/product/269/2720)。
+消息介绍请参考 [单聊消息](https://intl.cloud.tencent.com/document/product/1047/33523)、[群组消息](https://intl.cloud.tencent.com/document/product/1047/33526) 和 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)。
 
 ## TIMMsgSendNewMsg
 
@@ -15,30 +15,30 @@ TIM_DECL int TIMMsgSendNewMsg(const char* conv_id, enum TIMConvType conv_type, c
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | conv_id | const char\* | 会话的 ID  |
-| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://cloud.tencent.com/document/product/269/33553#timconvtype)  |
+| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype)  |
 | json_msg_param | const char\* | 消息 JSON 字符串 |
-| cb | TIMCommCallback | 发送新消息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 发送新消息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 发送新消息，单聊消息和群消息的发送均采用此接口。
  - 发送单聊消息时`conv_id`为对方的 UserID，`conv_type`为`kTIMConv_C2C`。
  - 发送群聊消息时`conv_id`为群 ID，`conv_type`为`kTIMConv_Group`。
 - 发送消息时不能发送`kTIMElem_GroupTips`、`kTIMElem_GroupReport`，他们由为后台下发，用于更新（通知）群的信息。可以的发送消息内元素。
- - 文本消息元素，请参考 [TextElem](https://cloud.tencent.com/document/product/269/33553#textelem)。
- - 表情消息元素，请参考 [FaceElem](https://cloud.tencent.com/document/product/269/33553#faceelem)。
- - 位置消息元素，请参考 [LocationElem](https://cloud.tencent.com/document/product/269/33553#locationelem)。
- - 图片消息元素，请参考 [ImageElem](https://cloud.tencent.com/document/product/269/33553#imageelem)。
- - 声音消息元素，请参考 [SoundElem](https://cloud.tencent.com/document/product/269/33553#soundelem)。
- - 自定义消息元素，请参考 [CustomElem](https://cloud.tencent.com/document/product/269/33553#customelem)。
- - 文件消息元素，请参考 [FileElem](https://cloud.tencent.com/document/product/269/33553#fileelem)。
- - 视频消息元素，请参考 [VideoElem](https://cloud.tencent.com/document/product/269/33553#videoelem)。
+ - 文本消息元素，请参考 [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551#textelem)。
+ - 表情消息元素，请参考 [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551#faceelem)。
+ - 位置消息元素，请参考 [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551#locationelem)。
+ - 图片消息元素，请参考 [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551#imageelem)。
+ - 声音消息元素，请参考 [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551#soundelem)。
+ - 自定义消息元素，请参考 [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551#customelem)。
+ - 文件消息元素，请参考 [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551#fileelem)。
+ - 视频消息元素，请参考 [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551#videoelem)。
 
 
 **示例**
@@ -91,16 +91,16 @@ TIM_DECL int TIMMsgReportReaded(const char* conv_id, enum TIMConvType conv_type,
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | conv_id | const char\* | 会话的 ID  |
-| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://cloud.tencent.com/document/product/269/33553#timconvtype)  |
+| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype)  |
 | json_msg_param | const char\* | 消息 JSON 字符串 |
-| cb | TIMCommCallback | 消息上报已读成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 消息上报已读成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >`json_msg_param`可以填`NULL`空字符串指针或者""空字符串，此时以会话当前最新消息的时间戳（如果会话存在最新消息）或当前时间为已读时间戳上报。当要指定消息时，则以该指定消息的时间戳为已读时间戳上报，最好用接收新消息获取的消息数组里面的消息 JSON 或者用消息定位符查找到的消息 JSON，避免重复构造消息 JSON。
 
@@ -120,16 +120,16 @@ TIM_DECL int TIMMsgRevoke(const char* conv_id, enum TIMConvType conv_type, const
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | conv_id | const char\* | 会话的 ID  |
-| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://cloud.tencent.com/document/product/269/33553#timconvtype)  |
+| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype)  |
 | json_msg_param | const char\* | 消息 JSON 字符串 |
-| cb | TIMCommCallback | 消息撤回成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 消息撤回成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >消息撤回。使用保存的消息 JSON 或者用消息定位符查找到的消息 JSON，避免重复构造消息 JSON。
 
@@ -176,16 +176,16 @@ TIM_DECL int TIMMsgFindByMsgLocatorList(const char* conv_id, enum TIMConvType co
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | conv_id | const char\* | 会话的 ID  |
-| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://cloud.tencent.com/document/product/269/33553#timconvtype)  |
+| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype)  |
 | json_msg_Locator_array | const char\* | 消息定位符数组 |
-| cb | TIMCommCallback | 根据消息定位精准查找指定会话的消息成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 根据消息定位精准查找指定会话的消息成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 此接口根据消息定位符精准查找指定会话的消息，该功能一般用于消息撤回时查找指定消息等。
@@ -236,16 +236,16 @@ TIM_DECL int TIMMsgImportMsgList(const char* conv_id, enum TIMConvType conv_type
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | conv_id | const char\* | 会话的 ID  |
-| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://cloud.tencent.com/document/product/269/33553#timconvtype)  |
+| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype)  |
 | json_msg_array | const char\* | 消息数组 |
-| cb | TIMCommCallback | 导入消息列表到指定会话成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 导入消息列表到指定会话成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >批量导入消息，可以自己构造消息去导入。也可以将之前要导入的消息数组 JSON 保存，然后导入的时候直接调用接口，避免构造消息数组。
 
@@ -302,16 +302,16 @@ TIM_DECL int TIMMsgSaveMsg(const char* conv_id, enum TIMConvType conv_type, cons
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | conv_id | const char\* | 会话的 ID  |
-| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://cloud.tencent.com/document/product/269/33553#timconvtype)  |
+| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype)  |
 | json_msg_param | const char\* | 消息 JSON 字符串 |
-| cb | TIMCommCallback | 保存自定义消息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 保存自定义消息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >消息保存接口，一般是自己构造一个消息 JSON 字符串，然后保存到指定会话。
 
@@ -331,16 +331,16 @@ TIM_DECL int TIMMsgGetMsgList(const char* conv_id, enum TIMConvType conv_type, c
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | conv_id | const char\* | 会话的 ID  |
-| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://cloud.tencent.com/document/product/269/33553#timconvtype)  |
+| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype)  |
 | json_get_msg_param | const char\* | 消息获取参数 |
-| cb | TIMCommCallback | 获取指定会话的消息列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 获取指定会话的消息列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >从`kTIMMsgGetMsgListParamLastMsg`指定的消息开始获取本地消息列表，kTIMMsgGetMsgListParamCount  为要获取的消息数目。若指定`kTIMMsgGetMsgListParamIsRamble`为 true 则本地消息获取不够指定数目时，则会去获取云端漫游消息。kTIMMsgGetMsgListParamIsForward 指定向前获取还是向后获取。
 
@@ -383,16 +383,16 @@ TIM_DECL int TIMMsgDelete(const char* conv_id, enum TIMConvType conv_type, const
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | conv_id | const char\* | 会话的 ID  |
-| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://cloud.tencent.com/document/product/269/33553#timconvtype)  |
+| conv_type | enum TIMConvType | 会话类型，请参考 [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype)  |
 | json_msgdel_param | const char\* | 消息获取参数 |
-| cb | TIMCommCallback | 删除指定会话的消息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 删除指定会话的消息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 当设置`kTIMMsgDeleteParamMsg`时，在会话中删除指定本地消息。
@@ -435,16 +435,16 @@ TIM_DECL int TIMMsgDownloadElemToPath(const char* json_download_elem_param, cons
 |-----|-----|-----|
 | json_download_elem_param | const char\* | 下载的参数 JSON 字符串 |
 | path | const char\* | 下载文件保存路径 |
-| cb | TIMCommCallback | 下载成功与否的回调以及下载进度回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 下载成功与否的回调以及下载进度回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->此接口用于下载消息内图片、文件、声音、视频等元素。下载的参数kTIMMsgDownloadElemParamFlag、kTIMMsgDownloadElemParamId、kTIMMsgDownloadElemParamBusinessId、kTIMMsgDownloadElemParamUrl  均可以在相应元素内找到。其中`kTIMMsgDownloadElemParamType`为下载文件类型 [TIMDownloadType](https://cloud.tencent.com/document/product/269/33553#timdownloadtype)。
+>此接口用于下载消息内图片、文件、声音、视频等元素。下载的参数kTIMMsgDownloadElemParamFlag、kTIMMsgDownloadElemParamId、kTIMMsgDownloadElemParamBusinessId、kTIMMsgDownloadElemParamUrl  均可以在相应元素内找到。其中`kTIMMsgDownloadElemParamType`为下载文件类型 [TIMDownloadType](https://intl.cloud.tencent.com/document/product/1047/34551#timdownloadtype)。
 
 
 **示例**
@@ -478,14 +478,14 @@ TIM_DECL int TIMMsgBatchSend(const char* json_batch_send_param, TIMCommCallback 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_batch_send_param | const char\* | 群发消息 JSON 字符串 |
-| cb | TIMCommCallback | 群发消息成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 群发消息成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >批量发送消息的接口，每个 UserID 发送成功与否，通过回调 cb 返回。
 
