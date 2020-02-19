@@ -1,4 +1,4 @@
-群组相关介绍请参考 [群组系统](https://cloud.tencent.com/document/product/269/1502)、[群组管理](https://cloud.tencent.com/document/product/269/3661) 和 [群组自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)。
+群组相关介绍请参考 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)、[群组管理](https://intl.cloud.tencent.com/document/product/1047/33530) 和 [群组自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)。
 
 ## TIMGroupCreate
 
@@ -15,18 +15,18 @@ TIM_DECL int TIMGroupCreate(const char* json_group_create_param, TIMCommCallback
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_create_param | const char\* | 创建群组的参数 JSON 字符串 |
-| cb | TIMCommCallback | 创建群组成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 创建群组成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 创建群组时可以指定群 ID，若未指定时 IM 通讯云服务器会生成一个唯一的 ID，以便后续操作，群组 ID 通过创建群组时传入的回调返回。
-- 创建群参数的 JSON Key 详情请参考 [CreateGroupParam](https://cloud.tencent.com/document/product/269/33553#creategroupparam)。
+- 创建群参数的 JSON Key 详情请参考 [CreateGroupParam](https://intl.cloud.tencent.com/document/product/1047/34551#creategroupparam)。
 
 
 **示例**
@@ -89,14 +89,14 @@ TIM_DECL int TIMGroupDelete(const char* group_id, TIMCommCallback cb, const void
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | group_id | const char\* | 要删除的群组 ID  |
-| cb | TIMCommCallback | 删除群组成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 删除群组成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 权限说明：
@@ -121,14 +121,14 @@ TIM_DECL int TIMGroupJoin(const char* group_id, const char* hello_msg, TIMCommCa
 |-----|-----|-----|
 | group_id | const char\* | 要加入的群组 ID  |
 | hello_msg | const char\* | 申请理由（选填） |
-| cb | TIMCommCallback | 申请加入群组成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 申请加入群组成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 权限说明：
@@ -153,14 +153,14 @@ TIM_DECL int TIMGroupQuit(const char* group_id, TIMCommCallback cb, const void* 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | group_id | const char\* | 要退出的群组 ID  |
-| cb | TIMCommCallback | 退出群组成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 退出群组成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 权限说明：
@@ -184,21 +184,21 @@ TIM_DECL int TIMGroupInviteMember(const char* json_group_invite_param, TIMCommCa
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_invite_param | const char\* | 邀请加入群组的 JSON 字符串 |
-| cb | TIMCommCallback | 邀请加入群组成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 邀请加入群组成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 权限说明：
  - 只有私有群可以拉用户入群。
  - 公开群、聊天室邀请用户入群。
  - 需要用户同意；直播大群不能邀请用户入群。
-- 此接口支持批量邀请成员加入群组，JSON Key 详情请参考 [GroupInviteMemberParam](https://cloud.tencent.com/document/product/269/33553#groupinvitememberparam)。
+- 此接口支持批量邀请成员加入群组，JSON Key 详情请参考 [GroupInviteMemberParam](https://intl.cloud.tencent.com/document/product/1047/34551#groupinvitememberparam)。
 
 
 **示例**
@@ -246,21 +246,21 @@ TIM_DECL int TIMGroupDeleteMember(const char* json_group_delete_param, TIMCommCa
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_delete_param | const char\* | 删除群组成员的 JSON 字符串 |
-| cb | TIMCommCallback | 删除群组成员成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 删除群组成员成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 权限说明：
  - 对于私有群：只有创建者可删除群组成员。
  - 对于公开群和聊天室：只有管理员和群主可以踢人。
  - 对于直播大群：不能踢人。
-- 此接口支持批量删除群成员，JSON Key 详情请参考 [GroupDeleteMemberParam](https://cloud.tencent.com/document/product/269/33553#groupdeletememberparam)。
+- 此接口支持批量删除群成员，JSON Key 详情请参考 [GroupDeleteMemberParam](https://intl.cloud.tencent.com/document/product/1047/34551#groupdeletememberparam)。
 
 
 **示例**
@@ -299,20 +299,20 @@ TIM_DECL int TIMGroupGetJoinedGroupList(TIMCommCallback cb, const void* user_dat
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| cb | TIMCommCallback | 获取已加入群组列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 获取已加入群组列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 权限说明：
  - 此接口可以获取自己所加入的群列表。
  - 此接口只能获得加入的部分直播大的列表。
-- 此接口用于获取当前用户已加入的群组列表，返回群组的基础信息。具体返回的群组基本信息字段参考 [GroupBaseInfo](https://cloud.tencent.com/document/product/269/33553#groupbaseinfo)。
+- 此接口用于获取当前用户已加入的群组列表，返回群组的基础信息。具体返回的群组基本信息字段参考 [GroupBaseInfo](https://intl.cloud.tencent.com/document/product/1047/34551#groupbaseinfo)。
 
 
 ## TIMGroupGetGroupInfoList
@@ -330,16 +330,16 @@ TIM_DECL int TIMGroupGetGroupInfoList(const char* json_group_getinfo_param, TIMC
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_getinfo_param | const char\* | 获取群组信息列表参数的 JSON 字符串 |
-| cb | TIMCommCallback | 获取群组信息列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 获取群组信息列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->此接口用于获取指定群 ID 列表的群详细信息。具体返回的群组详细信息字段参考 [GroupDetailInfo](https://cloud.tencent.com/document/product/269/33553#groupdetailinfo)。
+>此接口用于获取指定群 ID 列表的群详细信息。具体返回的群组详细信息字段参考 [GroupDetailInfo](https://intl.cloud.tencent.com/document/product/1047/34551#groupdetailinfo)。
 
 
 **示例**
@@ -373,14 +373,14 @@ TIM_DECL int TIMGroupModifyGroupInfo(const char* json_group_modifyinfo_param, TI
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_modifyinfo_param | const char\* | 设置群信息参数的 JSON 字符串 JSON 字符串 |
-| cb | TIMCommCallback | 设置群信息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 设置群信息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 修改群主（群转让）的权限说明：
@@ -389,7 +389,7 @@ TIM_DECL int TIMGroupModifyGroupInfo(const char* json_group_modifyinfo_param, TI
 - 修改群其他信息的权限说明：
  - 对于公开群、聊天室和直播大群，只有群主或者管理员可以修改群简介。
  - 对于私有群，任何人可修改群简介。
-- `kTIMGroupModifyInfoParamModifyFlag`可以按位或设置多个值。不同的 flag 设置不同的键，详情请参考 [GroupModifyInfoParam](https://cloud.tencent.com/document/product/269/33553#groupmodifyinfoparam)。
+- `kTIMGroupModifyInfoParamModifyFlag`可以按位或设置多个值。不同的 flag 设置不同的键，详情请参考 [GroupModifyInfoParam](https://intl.cloud.tencent.com/document/product/1047/34551#groupmodifyinfoparam)。
 
 
 **示例一、设置群所有者**
@@ -451,20 +451,20 @@ TIM_DECL int TIMGroupGetMemberInfoList(const char* json_group_getmeminfos_param,
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_getmeminfos_param | const char\* | 获取群成员信息列表参数的 JSON 字符串 |
-| cb | TIMCommCallback | 获取群成员信息列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 获取群成员信息列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 权限说明：
  - 任何群组类型都可以获取成员列表。
  - 直播大群只能拉取部分成员列表：包括群主、管理员和部分成员。
-- 根据不同的选项，获取群成员信息列表。成员信息的各个字段含义请参考 [GroupMemberInfo](https://cloud.tencent.com/document/product/269/33553#groupmemberinfo)。
+- 根据不同的选项，获取群成员信息列表。成员信息的各个字段含义请参考 [GroupMemberInfo](https://intl.cloud.tencent.com/document/product/1047/34551#groupmemberinfo)。
 
 
 **示例**
@@ -517,21 +517,21 @@ TIM_DECL int TIMGroupModifyMemberInfo(const char* json_group_modifymeminfo_param
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_modifymeminfo_param | const char\* | 设置群信息参数的 JSON 字符串 |
-| cb | TIMCommCallback | 设置群成员信息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 设置群成员信息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 权限说明：
  - 只有群主或者管理员可以进行对群成员的身份进行修改。
  - 直播大群不支持修改用户群内身份。
  - 只有群主或者管理员可以进行对群成员进行禁言。
-- `kTIMGroupModifyMemberInfoParamModifyFlag`可以按位或设置多个值，不同的 flag 设置不同的键。请参考 [GroupModifyMemberInfoParam](https://cloud.tencent.com/document/product/269/33553#groupmodifymemberinfoparam)。
+- `kTIMGroupModifyMemberInfoParamModifyFlag`可以按位或设置多个值，不同的 flag 设置不同的键。请参考 [GroupModifyMemberInfoParam](https://intl.cloud.tencent.com/document/product/1047/34551#groupmodifymemberinfoparam)。
 
 
 **示例**
@@ -574,14 +574,14 @@ TIM_DECL int TIMGroupGetPendencyList(const char* json_group_getpendence_list_par
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_getpendence_list_param | const char\* | 设置群未决信息参数的 JSON 字符串 |
-| cb | TIMCommCallback | 获取群未决信息列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 获取群未决信息列表成功与否的回调。回调函数定义和参数解析请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 此处的群未决消息泛指所有需要审批的群相关的操作。例如：加群待审批，拉人入群待审批等等。即便审核通过或者拒绝后，该条信息也可通过此接口拉回，拉回的信息中有已决标志。
@@ -589,7 +589,7 @@ TIM_DECL int TIMGroupGetPendencyList(const char* json_group_getpendence_list_par
 - 如果 AdminA 拉 UserA 进去 GroupA，则 UserA 可以拉取此未决相关信息，因为该未决信息待 UserA 审批。
 - 权限说明：
  - 只有审批人有权限拉取相关未决信息。
-- `kTIMGroupPendencyOptionStartTime`设置拉取时间戳，第一次请求填0，后边根据 server 返回的 [GroupPendencyResult](https://cloud.tencent.com/document/product/269/33553#grouppendencyresult) 键`kTIMGroupPendencyResultNextStartTime`指定的时间戳进行填写。
+- `kTIMGroupPendencyOptionStartTime`设置拉取时间戳，第一次请求填0，后边根据 server 返回的 [GroupPendencyResult](https://intl.cloud.tencent.com/document/product/1047/34551#grouppendencyresult) 键`kTIMGroupPendencyResultNextStartTime`指定的时间戳进行填写。
 - `kTIMGroupPendencyOptionMaxLimited`拉取的建议数量，server 可根据需要返回或多或少，不能作为完成与否的标志。
 
 
@@ -628,15 +628,15 @@ TIM_DECL int TIMGroupReportPendencyReaded(uint64_t time_stamp, TIMCommCallback c
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| time_stamp | uint64_t | 已读时间戳（单位秒）。与 [GroupPendency](https://cloud.tencent.com/document/product/269/33553#grouppendency) 键`kTIMGroupPendencyAddTime`指定的时间比较 |
-| cb | TIMCommCallback | 上报群未决信息已读成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| time_stamp | uint64_t | 已读时间戳（单位秒）。与 [GroupPendency](https://intl.cloud.tencent.com/document/product/1047/34551#grouppendency) 键`kTIMGroupPendencyAddTime`指定的时间比较 |
+| cb | TIMCommCallback | 上报群未决信息已读成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >时间戳 time_stamp 以前的群未决请求都将置为已读。上报已读后，仍然可以拉取到这些未决信息，但可通过对已读时戳的判断判定未决信息是否已读。
 
@@ -656,18 +656,18 @@ TIM_DECL int TIMGroupHandlePendency(const char* json_group_handle_pendency_param
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | json_group_handle_pendency_param | const char\* | 处理群未决信息参数的 JSON 字符串 |
-| cb | TIMCommCallback | 处理群未决信息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback)  |
+| cb | TIMCommCallback | 处理群未决信息成功与否的回调。回调函数定义请参考 [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
 **返回值**
 
 | 类型 | 含义 |
 |-----|-----|
-| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult)  |
+| int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
 >
 - 对于群的未决信息，IM SDK 增加了处理接口。审批人可以选择对单条信息进行同意或者拒绝。已处理成功过的未决信息不能再次处理。
-- 处理未决信息时需要带一个未决信息 [GroupPendency](https://cloud.tencent.com/document/product/269/33553#grouppendency)，可以在接口 [TIMGroupGetPendencyList](#timgroupgetpendencylist) 返回的未决信息列表将未决信息保存下来，在处理未决信息的时候将 [GroupPendency](https://cloud.tencent.com/document/product/269/33553#grouppendency) 传入键`kTIMGroupHandlePendencyParamPendency`。
+- 处理未决信息时需要带一个未决信息 [GroupPendency](https://intl.cloud.tencent.com/document/product/1047/34551#grouppendency)，可以在接口 [TIMGroupGetPendencyList](#timgroupgetpendencylist) 返回的未决信息列表将未决信息保存下来，在处理未决信息的时候将 [GroupPendency](https://intl.cloud.tencent.com/document/product/1047/34551#grouppendency) 传入键`kTIMGroupHandlePendencyParamPendency`。
 
 
 **示例**
