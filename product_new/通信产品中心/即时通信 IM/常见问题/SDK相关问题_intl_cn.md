@@ -5,7 +5,7 @@ TUIKit 源码暂不支持 Androidx。
 ### 登录报错 6012 或  TLSSDK exchange ticket fail ？
 
 - 初始化接口和登录接口要分开调用，不能连续调用（因为初始化方法中有异步操作）；
-- 如果您当前是即时通信 IM 体验版，需要升级为专业版，升级后可正常登录，可以到 [即时通信 IM 购买页面](https://buy.cloud.tencent.com/avc) 进行购买升级，详细价格说明请参阅 [产品价格](https://intl.cloud.tencent.com/document/product/1047/34350)。
+- 如果您当前是即时通信 IM 体验版，需要升级为专业版，升级后可正常登录，您可以在您的控制台上为您的SDKAppID进行配置。详细价格说明请参阅 [产品价格](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 ### 出现 6013 SDK 未初始化错误？
 
