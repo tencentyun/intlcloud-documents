@@ -106,7 +106,7 @@
 |-----|-----|-----|-----|
 | kTIMGroupMemberGetInfoOptionInfoFlag |  uint64 [TIMGroupMemberInfoFlag](#timgroupmemberinfoflag)  | 读写（选填） | 根据想要获取的信息过滤，默认值为 0xffffffff（获取全部信息） |
 | kTIMGroupMemberGetInfoOptionRoleFlag |  uint64 [TIMGroupMemberRoleFlag](#timgroupmemberroleflag)  | 读写（选填） | 根据成员角色过滤，默认值为 kTIMGroupMemberRoleFlag_All，获取所有角色 |
-| kTIMGroupMemberGetInfoOptionCustomArray |  array string | 只写（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupMemberGetInfoOptionCustomArray |  array string | 只写（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
 
 ### TIMGroupGetInfoFlag
 
@@ -143,7 +143,7 @@
 | JSON 键 | 值类型 | 属性 | 含义 |
 |-----|-----|-----|-----|
 | kTIMGroupGetInfoOptionInfoFlag |  uint64 [TIMGroupGetInfoFlag](#timgroupgetinfoflag)  | 读写（选填） | 根据想要获取的信息过滤，默认值为 0xffffffff（获取全部信息） |
-| kTIMGroupGetInfoOptionCustomArray |  array string | 只写（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupGetInfoOptionCustomArray |  array string | 只写（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
 
 ### UserConfig
 
@@ -183,7 +183,7 @@ SOCKS5 代理信息。
 **更新配置**
 
 - 自定义数据。
-开发者可以自定义的数据（长度限制为64个字节），IM SDK 只负责透传给即时通信 IM 后台后，可以通过第三方回调 [状态变更回调](https://cloud.tencent.com/document/product/269/2570) 告知开发者业务后台。
+开发者可以自定义的数据（长度限制为64个字节），IM SDK 只负责透传给即时通信 IM 后台后，可以通过第三方回调 [状态变更回调](https://intl.cloud.tencent.com/document/product/1047/34357) 告知开发者业务后台。
 - HTTP 代理。
 HTTP 代理主要用在发送图片、语音、文件、微视频等消息时，将相关文件上传到 COS，以及接收到图片、语音、文件、微视频等消息，将相关文件下载到本地时用到。设置时，设置的 IP 不能为空，端口不能为0。如果需要取消 HTTP 代理，只需将代理的 IP 设置为空字符串，端口设置为0。
 - SOCKS5 代理。
@@ -636,7 +636,7 @@ SOCKS5 代理需要在初始化之前设置。设置之后 IM SDK 发送的所�
 | JSON 键 | 值类型 | 属性 | 含义 |
 |-----|-----|-----|-----|
 | kTIMMsgBatchSendResultIdentifier | string | 只读 | 群发的单个 ID |
-| kTIMMsgBatchSendResultCode |  int [错误码](https://cloud.tencent.com/document/product/269/1671)  | 只读 | 消息发送结果 |
+| kTIMMsgBatchSendResultCode |  int [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)  | 只读 | 消息发送结果 |
 | kTIMMsgBatchSendResultDesc | string | 只读 | 消息发送的描述 |
 | kTIMMsgBatchSendResultMsg |  object [Message](#message)  | 只读 | 发送的消息 |
 
@@ -793,7 +793,7 @@ UUID 类型。
 | kTIMGroupMemberInfoMsgSeq | uint | 只读 | - |
 | kTIMGroupMemberInfoShutupTime | uint | 只读 | 成员禁言时间 |
 | kTIMGroupMemberInfoNameCard | string | 只读 | 成员群名片 |
-| kTIMGroupMemberInfoCustomInfo |  array [GroupMemberInfoCustemString](#groupmemberinfocustemstring)  | 只读 | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupMemberInfoCustomInfo |  array [GroupMemberInfoCustemString](#groupmemberinfocustemstring)  | 只读 | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
 
 ### GroupInfoCustemString
 
@@ -817,7 +817,7 @@ UUID 类型。
 | kTIMCreateGroupParamFaceUrl | string | 只写（选填） | 群组头像 URL |
 | kTIMCreateGroupParamAddOption |  uint [TIMGroupAddOption](#timgroupaddoption)  | 只写（选填） | 加群选项，默认为 Any |
 | kTIMCreateGroupParamMaxMemberCount | uint | 只写（选填） | 群组最大成员数 |
-| kTIMCreateGroupParamCustomInfo |  array [GroupInfoCustemString](#groupinfocustemstring)  | 只读（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMCreateGroupParamCustomInfo |  array [GroupInfoCustemString](#groupinfocustemstring)  | 只读（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
 
 ### CreateGroupResult
 
@@ -939,7 +939,7 @@ UUID 类型。
 | kTIMGroupDetialInfoSearchable | uint | 只读 | 群组是否能被搜索 |
 | kTIMGroupDetialInfoIsShutupAll | bool | 只读 | 群组是否被设置了全员禁言 |
 | kTIMGroupDetialInfoOwnerIdentifier | string | 只读 | 群组所有者 ID |
-| kTIMGroupDetialInfoCustomInfo |  array [GroupInfoCustemString](#groupinfocustemstring)  | 只读 | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupDetialInfoCustomInfo |  array [GroupInfoCustemString](#groupinfocustemstring)  | 只读 | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
 
 ### GetGroupInfoResult
 
@@ -947,7 +947,7 @@ UUID 类型。
 
 | JSON 键 | 值类型 | 属性 | 含义 |
 |-----|-----|-----|-----|
-| kTIMGetGroupInfoResultCode |  int [错误码](https://cloud.tencent.com/document/product/269/1671)  | 只读 | 获取群组详细信息的结果 |
+| kTIMGetGroupInfoResultCode |  int [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)  | 只读 | 获取群组详细信息的结果 |
 | kTIMGetGroupInfoResultDesc | string | 只读 | 获取群组详细失败的描述信息 |
 | kTIMGetGroupInfoResultInfo |  json object [GroupDetailInfo](#groupdetailinfo)  | 只读 | 群组详细信息 |
 
@@ -987,7 +987,7 @@ UUID 类型。
 | kTIMGroupModifyInfoParamSearchAble | uint | 只写（选填） | 修改群是否被搜索，当`modify_flag`包含`kTIMGroupModifyInfoFlag_Searchable`时必填，其他情况不用填 |
 | kTIMGroupModifyInfoParamIsShutupAll | bool | 只写（选填） | 修改群是否全体禁言，当`modify_flag`包含`kTIMGroupModifyInfoFlag_ShutupAll`时必填，其他情况不用填 |
 | kTIMGroupModifyInfoParamOwner | string | 只写（选填） | 修改群主所有者，当`modify_flag`包含`kTIMGroupModifyInfoFlag_Owner`时必填，其他情况不用填。此时`modify_flag`不能包含其他值，当修改群主时，同时修改其他信息已无意义 |
-| kTIMGroupModifyInfoParamCustomInfo |  array [GroupInfoCustemString](#groupinfocustemstring)  | 只写（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupModifyInfoParamCustomInfo |  array [GroupInfoCustemString](#groupinfocustemstring)  | 只写（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
 
 ### GroupGetMemberInfoListParam
 
@@ -1034,7 +1034,7 @@ UUID 类型。
 | kTIMGroupModifyMemberInfoParamMemberRole |  uint [TIMGroupMemberRole](#timgroupmemberrole)  | 只写（选填） | 修改成员角色，当`modify_flag`包含`kTIMGroupMemberModifyFlag_MemberRole`时必填，其他情况不用填 |
 | kTIMGroupModifyMemberInfoParamShutupTime | uint | 只写（选填） | 修改禁言时间，当`modify_flag`包含`kTIMGroupMemberModifyFlag_ShutupTime`时必填，其他情况不用填 |
 | kTIMGroupModifyMemberInfoParamNameCard | string | 只写（选填） | 修改群名片，当`modify_flag`包含`kTIMGroupMemberModifyFlag_NameCard`时必填，其他情况不用填 |
-| kTIMGroupModifyMemberInfoParamCustomInfo |  array [GroupMemberInfoCustemString](#groupmemberinfocustemstring)  | 只写（选填） | 请参考 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
+| kTIMGroupModifyMemberInfoParamCustomInfo |  array [GroupMemberInfoCustemString](#groupmemberinfocustemstring)  | 只写（选填） | 请参考 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)  |
 
 ### GroupPendencyOption
 
@@ -1174,7 +1174,7 @@ UUID 类型。
 | kTIMUserProfileBirthDay | uint | 只读 | 生日 |
 | kTIMUserProfileLevel | uint | 只读 | 等级 |
 | kTIMUserProfileRole | uint | 只读 | 角色 |
-| kTIMUserProfileCustomStringArray |  array [UserProfileCustemStringInfo](#userprofilecustemstringinfo)  | 只读 | 请参考 [自定义资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)  |
+| kTIMUserProfileCustomStringArray |  array [UserProfileCustemStringInfo](#userprofilecustemstringinfo)  | 只读 | 请参考 [自定义资料字段](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)  |
 
 ### UserProfileItem
 
@@ -1190,7 +1190,7 @@ UUID 类型。
 | kTIMUserProfileItemBirthDay | uint | 只写 | 修改生日 |
 | kTIMUserProfileItemLevel | uint | 只写 | 修改等级 |
 | kTIMUserProfileItemRole | uint | 只写 | 修改角色 |
-| kTIMUserProfileItemCustomStringArray |  array [UserProfileCustemStringInfo](#userprofilecustemstringinfo)  | 只写 | 修改 [自定义资料字段](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)  |
+| kTIMUserProfileItemCustomStringArray |  array [UserProfileCustemStringInfo](#userprofilecustemstringinfo)  | 只写 | 修改 [自定义资料字段](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)  |
 
 ### FriendProfileCustemStringInfo
 
@@ -1212,7 +1212,7 @@ UUID 类型。
 | kTIMFriendProfileAddSource | string | 只读 | 好友申请时的添加来源 |
 | kTIMFriendProfileAddTime | uint64 | 只读 | 好友添加时间 |
 | kTIMFriendProfileUserProfile | `object`【UserProfile】 | 只读 | 好友的个人资料 |
-| kTIMFriendProfileCustomStringArray |  array [FriendProfileCustemStringInfo](#friendprofilecustemstringinfo)  | 只读 |  [自定义好友字段](https://cloud.tencent.com/document/product/269/1501#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)  |
+| kTIMFriendProfileCustomStringArray |  array [FriendProfileCustemStringInfo](#friendprofilecustemstringinfo)  | 只读 |  [自定义好友字段](https://intl.cloud.tencent.com/document/product/1047/33521#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)  |
 
 ### FriendProfileItem
 
@@ -1220,7 +1220,7 @@ UUID 类型。
 |-----|-----|-----|-----|
 | kTIMFriendProfileItemRemark | string | 只写 | 修改好友备注 |
 | kTIMFriendProfileItemGroupNameArray |  array string | 只写 | 修改好友分组名称列表 |
-| kTIMFriendProfileItemCustomStringArray |  array [FriendProfileCustemStringInfo](#friendprofilecustemstringinfo)  | 只写 | 修改 [自定义好友字段](https://cloud.tencent.com/document/product/269/1501#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)  |
+| kTIMFriendProfileItemCustomStringArray |  array [FriendProfileCustemStringInfo](#friendprofilecustemstringinfo)  | 只写 | 修改 [自定义好友字段](https://intl.cloud.tencent.com/document/product/1047/33521#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)  |
 
 ### TIMFriendType
 
@@ -1247,7 +1247,7 @@ UUID 类型。
 | JSON 键 | 值类型 | 属性 | 含义 |
 |-----|-----|-----|-----|
 | kTIMFriendResultIdentifier | string | 只读 | 关系链操作的用户 ID |
-| kTIMFriendResultCode |  int [错误码](https://cloud.tencent.com/document/product/269/1671)  | 只读 | 关系链操作的结果 |
+| kTIMFriendResultCode |  int [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)  | 只读 | 关系链操作的结果 |
 | kTIMFriendResultDesc | string | 只读 | 关系链操作失败的详细描述 |
 
 ### FriendshipModifyFriendProfileParam
@@ -1380,6 +1380,6 @@ UUID 类型。
 |-----|-----|-----|-----|
 | kTIMFriendshipCheckFriendTypeResultIdentifier | string | 只读 | 被检测的好友 UserID |
 | kTIMFriendshipCheckFriendTypeResultRelation |  uint [TIMFriendCheckRelation](#timfriendcheckrelation)  | 只读 | 检测成功时返回的二者之间的关系 |
-| kTIMFriendshipCheckFriendTypeResultCode |  int [错误码](https://cloud.tencent.com/document/product/269/1671)  | 只读 | 检测的结果 |
+| kTIMFriendshipCheckFriendTypeResultCode |  int [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)  | 只读 | 检测的结果 |
 | kTIMFriendshipCheckFriendTypeResultDesc | string | 只读 | 检测好友失败的描述信息 |
 

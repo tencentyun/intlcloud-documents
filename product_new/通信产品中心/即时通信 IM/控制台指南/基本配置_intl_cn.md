@@ -2,10 +2,9 @@
 
 ## 业务版本变更
 
-单击【业务版本】区域的【升级】，您可以升级应用的业务版本或配置。具体操作请参见 [升级应用](https://cloud.tencent.com/document/product/269/32577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8)。
+单击【业务版本】区域的【升级】，您可以升级应用的业务版本或配置。具体操作请参见 [升级应用](https://intl.cloud.tencent.com/document/product/1047/34577#.E5.8D.87.E7.BA.A7.E5.BA.94.E7.94.A8)。
 
 ## 配置基础信息
-![](https://main.qcloudimg.com/raw/6e02515de636967bfa924a077ed0a5c4.png)
 在【基本信息】区域，您可以执行以下操作：
 - 编辑该应用的基本信息，包括应用名称、应用类型和应用简介。
 - 停用/删除该应用。
@@ -31,15 +30,14 @@
 2. 在弹出的删除提醒对话框中，单击【确定】。
 
 ### 获取密钥
-**密钥信息为敏感信息，请妥善保密，谨防泄露。**2019年8月15日前创建的应用（SDKAppID）默认使用区分公钥和私钥的 [ECDSA-SHA256](https://cloud.tencent.com/document/product/269/32688#ECDSA-SHA256) 签名算法，您可以选择升级至 HMAC-SHA256 签名算法。
+**密钥信息为敏感信息，请妥善保密，谨防泄露。**2019年8月15日前创建的应用（SDKAppID）默认使用区分公钥和私钥的 [ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/1047/34385#ECDSA-SHA256) 签名算法，您可以选择升级至 HMAC-SHA256 签名算法。
 
 1. 单击【密钥】右侧的【显示密钥】。
 2. 单击【复制】即可复制并储存密钥信息。
-  密钥可用于生成 UserSig，详细操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)。
+  密钥可用于生成 UserSig，详细操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ## 配置帐号管理员
 帐号管理员可用于调用 REST API 接口、解散群以及全员等功能，您可以直接使用系统默认的帐号管理员`administrator`，也可以手动添加新的帐号管理员。
-![](https://main.qcloudimg.com/raw/19db2d23fd7ae62d0fa95c4e37458387.png)
 <span id="AddAdmin"></span>
 ###  添加管理员
 1. 单击【帐号管理员】右侧的【添加管理员】。
@@ -58,9 +56,7 @@
 1. 单击对应平台推送设置区域的【添加证书】。
 2. 根据弹出的添加证书对话框，配置相关参数：
  - 添加 Android 证书
- ![](https://main.qcloudimg.com/raw/11842c1b9d44d7a13e53457ebc0d189d.png)
  - 添加 iOS 证书
- ![](https://main.qcloudimg.com/raw/416ec3e78bf7846fae2276d56df1256d.png)
 3. 单击【确认】保存配置。
 
 ### 编辑离线推送证书
@@ -74,7 +70,7 @@
 2. 在弹出的确认删除证书中，单击【确认】。
 
 ## 开通腾讯实时音视频服务
-如果您需要在当前 IM 应用中实现语音通话、视频通话、互动直播等功能，或需要同时集成 IM SDK 和 TRTC SDK 时，可通过【开通腾讯实时音视频服务】区域开通 [实时音视频服务](https://cloud.tencent.com/document/product/647)，系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
+如果您需要在当前 IM 应用中实现语音通话、视频通话、互动直播等功能，或需要同时集成 IM SDK 和 TRTC SDK 时，可通过【开通腾讯实时音视频服务】区域开通 [实时音视频服务](https://intl.cloud.tencent.com/document/product/647)，系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
 
 1. 单击【开通腾讯实时音视频服务】区域【立即开通】。
 2. 在弹出的开通实时音视频 TRTC 服务对话框中，单击【确认】。
