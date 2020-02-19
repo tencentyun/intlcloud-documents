@@ -5,7 +5,7 @@ The parameter template has the following features. You can log in to the [Tencen
 - Generate templates by importing parameters from MySQL configuration file `my.conf`.
 - Save parameter settings as templates.
 - Import parameters from templates when setting parameters for one or multiple instances.
->! All database instances that have applied a parameter template will not get all parameter updates of the template. If you want to apply new parameters to a batch of database instances, you can apply them by importing a template during batch parameter settings.
+> All database instances that have applied a parameter template will not get all parameter updates of the template. If you want to apply new parameters to a batch of database instances, you can apply them by importing a template during batch parameter settings.
 
 ## Creating a Parameter Template
 To use your own database parameter template, simply create a new one, modify the required parameters, and apply it to your database.
