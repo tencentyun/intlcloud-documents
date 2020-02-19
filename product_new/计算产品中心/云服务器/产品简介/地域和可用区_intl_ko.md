@@ -59,6 +59,13 @@ API 인터페이스 [가용 영역 리스트 조회](http://intl.cloud.tencent.c
 		<td>상하이4존<br>ap-shanghai-4</td>
 	</tr>
 	<tr>
+			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
+			<td>南京一区<br>ap-nanjing-1</td>
+	</tr>
+	<tr>
+			<td>南京二区<br>ap-nanjing-2</td>
+	</tr>
+	<tr>
 			<td rowspan="4">화북지역(베이징)<br>ap-beijing</td>
 			<td>베이징1존<br>ap-beijing-1</td>
 	</tr>
