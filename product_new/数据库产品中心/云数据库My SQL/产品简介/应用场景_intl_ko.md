@@ -9,7 +9,7 @@ MySQL은 인터넷과 모바일앱 서버에 최종 데이터를 저장하는 �
 ![](https://main.qcloudimg.com/raw/1e9c80cc49f6e08e37abe4a90db58735.png)
 
 ## 금융 시나리오
-금융 거래 데이터, 계정 데이터를 저장하고 처리합니다. TencentDB for MySQL는 안전한 감사, 리전간 장애 복구, 강력한 데이터 동기화 등 데이터베이스 서비스를 제공하며, 금융 데이터의 안전을 지켜줍니다.
+금융 거래 데이터, 계정 데이터를 저장하고 처리합니다. TencentDB for MySQL는 안전한 감사, 리전간 재해 복구, 강력한 데이터 동기화 등 데이터베이스 서비스를 제공하며, 금융 데이터의 안전을 지켜줍니다.
 ![](https://main.qcloudimg.com/raw/a8dac9ba93f3fbf822d908e4db9b1108.png)
 
 ## 전자상거래 시나리오
