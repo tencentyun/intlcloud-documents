@@ -16,9 +16,6 @@ A CVM instance has been created.
 
 ## Subsequent Operations
 - To view all the security groups that you have created in a region, you can query the security group list.
-For more information on the operation, see [Viewing Security Groups](https://cloud.tencent.com/document/product/215/39794).
 - You can also remove a CVM from one or more security groups.
-For more information on the operation, see [Removing from Security Groups](https://cloud.tencent.com/document/product/215/39795).
 - You can delete the security groups when they are not necessary. After you delete a security group, all security group rules in this group will also be deleted.
-For more information on the operation, see [Deleting a Security Group](https://cloud.tencent.com/document/product/215/39797).
 
