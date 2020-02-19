@@ -59,7 +59,7 @@ API 인터페이스 [가용 영역 리스트 조회](http://intl.cloud.tencent.c
 		<td>상하이4존<br>ap-shanghai-4</td>
 	</tr>
 	<tr>
-			<td rowspan="2">화동지역（남）<br>ap-nanjing</td>
+			<td rowspan="2">화동지역（남경）<br>ap-nanjing</td>
 			<td>남경1존<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
