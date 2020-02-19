@@ -59,6 +59,13 @@
 		<td>上海四区<br>ap-shanghai-4</td>
 	</tr>
 	<tr>
+			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
+			<td>南京一区<br>ap-nanjing-1</td>
+	</tr>
+	<tr>
+			<td>南京二区<br>ap-nanjing-2</td>
+	</tr>
+	<tr>
 			<td rowspan="4">华北地区（北京）<br>ap-beijing</td>
 			<td>北京一区<br>ap-beijing-1</td>
 	</tr>

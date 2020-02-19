@@ -58,37 +58,44 @@ Tencent Cloud products that are in the same region and different availability zo
 	<tr>
 		<td>Shanghai Zone 4 <br>ap-shanghai-4</td>
 	</tr>
-	<tr>
-			<td rowspan="4">North China (Beijing) <br>ap-beijing</td>
-			<td>Beijing Zone 1 <br>ap-beijing-1</td>
-	</tr>
-	<tr>
-			<td>Beijing Zone 2 <br>ap-beijing-2</td>
-	</tr>
-	<tr>
-			<td>Beijing Zone 3 <br>ap-beijing-3</td>
-	</tr>
-	<tr>
-			<td>Beijing Zone 4 <br>ap-beijing-4</td>
-	</tr>
-	<tr>
-		<td rowspan="2">Southwest China (Chengdu) <br>ap-chengdu</td>
-		<td>Chengdu Zone 1 <br>ap-chengdu-1</td>
-	</tr>
-	<tr>
-			<td>Chengdu Zone 2 <br>ap-chengdu-2</td>
-	</tr>    
-	<tr>
-			<td >Southwest China (Chongqing) <br>ap-chongqing</td>
-			<td>Chongqing Zone 1 <br>ap-chongqing-1</td>
-	</tr>
-	<tr>
-			<td rowspan="2">Hong Kong/Macao/Taiwan (Hong Kong, China) <br>ap-hongkong</td>
-			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan) <br>ap-hongkong-1</td>
-	</tr>
-	<tr>
-			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan) <br>ap-hongkong-2</td>
-	</tr>
+    <tr>
+    	<td rowspan="2">East China (Nanjing) <br>ap-nanjing</td>
+    	<td>Nanjing Zone 1 <br>ap-nanjing-1</td>
+    </tr>
+    <tr>
+    	<td>Nanjing Zone 2 <br>ap-nanjing-2</td>
+    </tr>
+    <tr>
+    		<td rowspan="4">North China (Beijing) <br>ap-beijing</td>
+    		<td>Beijing Zone 1 <br>ap-beijing-1</td>
+    </tr>
+    <tr>
+    		<td>Beijing Zone 2 <br>ap-beijing-2</td>
+    </tr>
+    <tr>
+    		<td>Beijing Zone 3 <br>ap-beijing-3</td>
+    </tr>
+    <tr>
+    		<td>Beijing Zone 4 <br>ap-beijing-4</td>
+    </tr>
+    <tr>
+    	<td rowspan="2">Southwest China (Chengdu) <br>ap-chengdu</td>
+    	<td>Chengdu Zone 1 <br>ap-chengdu-1</td>
+    </tr>
+    <tr>
+    		<td>Chengdu Zone 2 <br>ap-chengdu-2</td>
+    </tr>    
+    <tr>
+    		<td >Southwest China (Chongqing) <br>ap-chongqing</td>
+    		<td>Chongqing Zone 1 <br>ap-chongqing-1</td>
+    </tr>
+    <tr>
+    		<td rowspan="2">Hong Kong/Macao/Taiwan (Hong Kong, China) <br>ap-hongkong</td>
+    		<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan) <br>ap-hongkong-1</td>
+    </tr>
+    <tr>
+    		<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan) <br>ap-hongkong-2</td>
+    </tr>
 </tbody>
 </table>	
 
