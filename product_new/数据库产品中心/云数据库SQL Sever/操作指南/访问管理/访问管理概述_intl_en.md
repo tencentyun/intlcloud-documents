@@ -20,8 +20,8 @@ A CAM policy must authorize or deny the use of one or more TencentDB operations.
 
 | Task | Link |
 |---------|---------|
-| Basic policy structure | [Policy Syntax](https://cloud.tencent.com/document/product/238/38875#celueyufa)|
-| Operation definition in a policy | [TencentDB Operations](https://cloud.tencent.com/document/product/238/38875#caozuo) |
-| Resource definition in a policy | [TencentDB Resource Path](https://cloud.tencent.com/document/product/238/38875#ziyuanlujing)|
-| Resource-level permission supported by TencentDB | [Resource-level Permission Supported by TencentDB](https://cloud.tencent.com/document/product/238/38876)|
+| Basic policy structure | [Policy Syntax](https://intl.cloud.tencent.com/document/product/238/34584)|
+| Operation definition in a policy | [TencentDB Operations](https://intl.cloud.tencent.com/document/product/238/34584) |
+| Resource definition in a policy | [TencentDB Resource Path](https://intl.cloud.tencent.com/document/product/238/34584)|
+| Resource-level permission supported by TencentDB | [Resource-level Permission Supported by TencentDB](https://intl.cloud.tencent.com/document/product/238/34585)|
 
