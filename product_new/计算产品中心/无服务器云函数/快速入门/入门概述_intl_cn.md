@@ -5,7 +5,7 @@
 ## 使用流程
 以下为云函数使用流程图及基本步骤简介：
 ![](https://main.qcloudimg.com/raw/238c9831ab16c07ea94ab14f41d4b1b0.png)
-1. **准备工作**：包含 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)、开通云函数服务、配置基本开发环境等。
+1. **准备工作**：包含 [注册腾讯云账号](https://cloud.tencent.com/document/product/378/17985)、开通云函数服务、配置基本开发环境等。
 2. **编写函数**：函数是调度与运行的基本单元，编写函数时需遵循函数接口规范。
 3. **本地测试**：可在本地进行代码调试，并将代码部署到云端。
 4. **部署函数（含配置触发器）**：代码部署到云端后，云函数可在配置好条件后执行函数。函数的执行条件被称为触发器，您可以配置定时、API 网关、COS 等多种触发器。
@@ -20,7 +20,13 @@
 
 快速入门可带领您体验完整的云函数使用流程，您可以根据如下示例进一步熟悉云函数以及开发者工具：
 
-- [使用控制台创建函数](https://intl.cloud.tencent.com/document/product/583/32742)
+- [使用控制台创建函数](https://cloud.tencent.com/document/product/583/37509)
+- [使用 CLI 创建函数](https://cloud.tencent.com/document/product/583/37510)（推荐）
+- [使用 VS Code 插件创建函数](https://cloud.tencent.com/document/product/583/37511)
+
+
+
+
 
 
 ## 开发者工具
@@ -28,5 +34,7 @@
 腾讯云 Serverless 团队提供了丰富的开发者工具帮助您使用云函数：
 
 - [云函数控制台](https://console.cloud.tencent.com/scf)
+- [SCF CLI](https://cloud.tencent.com/document/product/583/33445)
+- [SCF VS Code](https://cloud.tencent.com/document/product/583/37511)
 
-您还可通过了解 [云函数的工作原理](https://intl.cloud.tencent.com/document/product/583/9694)、[开发指南](https://intl.cloud.tencent.com/document/product/583/9210)、体验 [最佳实践](https://intl.cloud.tencent.com/document/product/583/9739) ，掌握更多关于使用云函数构建生产系统的信息。
+您还可通过了解 [云函数的工作原理](https://cloud.tencent.com/document/product/583/9694)、使用 [开发者工具]构建云函数、体验 [最佳实践](https://cloud.tencent.com/document/product/583/9739) ，掌握更多关于使用云函数构建生产系统的信息。
