@@ -1,43 +1,41 @@
-## Monitoring Granularity
-TencentDB for MongoDB does not support customized monitoring granularity. The adaptive monitoring policy is as follows:
+## 监控粒度
+云数据库 MongoDB 暂不支持监控粒度的自定义选择，监控自适应策略如下：
 
-| Time Span | Monitoring Granularity | Retention Period |
+| 时间跨度 | 监控粒度 | 保留时长 |
 | -------- | -------- | -------- |
-| 0-2 days | 1 minute | 2 days |
-| 2-7 days | 5 minutes | 7 days |
-| 7-30 days | 1 minute | 30 days |
+| 0天 - 2天   | 1分钟     | 2天      |
+| 2天 - 7天  | 5分钟     | 7天      |
+| 7天 - 30天 | 1分钟       | 30天     |
 
-## Types of Instances with Monitoring
+## 支持监控的实例类型
+云数据库 MongoDB 支持主实例、只读实例和灾备实例的监控，并为每个实例提供独立的监控视图供查询。
 
-TencentDB for MongoDB can monitor master instances, read-only instances and disaster recovery instances, and you can query an independent monitoring view for each instance
+## 监控指标
 
-## Monitoring Metrics
+腾讯云监控为云数据库 MongoDB 实例提供以下监控指标：
 
-Tencent Cloud's Cloud Monitor provides the following monitoring metrics for TencentDB for MongoDB instances:
-
-| Metric Name | Metric | Unit | Dimension | Metric Description |
+| 指标中文名       | 指标英文名        | 单位  | 维度 | 指标说明                                   |
 | ---------------- | ----------------- | ----- | ---- | ------------------------------------------ |
-| Write request | inserts | N/A | Cluster | Number of write requests sent to the cluster |
-| Read request | reads | N/A | Cluster | Number of read requests sent to the cluster |
-| Update request | updates | N/A | Cluster | Number of update requests sent to the cluster |
-| Delete request | deletes | N/A | Cluster | Number of delete requests sent to the cluster |
-| count request | counts | N/A | Cluster | Total number of requests sent to the cluster |
-| Aggregates request | aggregates | N/A | Cluster | Number of aggregation requests sent to cluster |
-| Number of cluster connections | conn | N/A | Cluster | Total number of connections received by the cluster proxy |
-| Proportion of cluster connections | connper | % | Cluster | Proportion of current connections to the configured total connections of the cluster |
-| Capacity usage | diskusage | % | Cluster | Proportion of storage space occupied of the cluster to the total capacity |
-| QPS | qps | N/A | Cluster | Number of operations (including CRUD operations) per second |
-| 10-50 ms | 10 ms | N/A | Cluster | Number of requests with an execution time between 10 ms and 50 ms |
-| 50-100 ms | 50 ms | N/A | Cluster | Number of requests with an execution time between 50 ms and 100 ms |
-| 100 ms | 100 ms | N/A | Cluster | Number of requests with an execution time of more than 100 ms |
-| Timeout | timeouts | N/A | Cluster | Number of timeout requests |
-| Master-slave delay | slavedelay | Seconds | Cluster | Master-slave delay time |
-| Time difference in oplog | oplogreservedtime | Hours | Cluster | Time difference between the last operation and the first operation in oplog |
-| CPU utilization | cpuusage | % | Node | CPU utilization of current node |
-| MEM usage | memusage | % | Node | MEM usage of current node |
-| qr | qr | N/A | Node | Length of client read request queue |
-| qw | qw | N/A | Node | Length of client write request queue |
-| Number of connections | conn | N/A | Node | Number of connections of current mongod node |
-| netin | netin | MB/s | Node | Inbound traffic |
-| netout | netout | MB/s | Node | Outbound traffic |
-
+| 写入请求         | inserts           | 次    | 集群 | 当前集群的写入请求数                       |
+| 读取请求         | reads             | 次    | 集群 | 当前集群的读取请求数                       |
+| 更新请求         | updates           | 次    | 集群 | 当前集群的更新请求数                       |
+| 删除请求         | deletes           | 次    | 集群 | 当前集群的删除请求数                       |
+| count 请求        | counts            | 次    | 集群 | 当前集群的总请求数                         |
+| Aggregates 请求   | aggregates        | 次    | 集群 | 当前集群的聚合请求数                       |
+| 集群连接数       | conn              | 次    | 集群 | 集群总连接数，指当前集群 proxy 收到的连接数  |
+| 集群连接数百分比 | connper           | %     | 集群 | 当前集群的连接数与集群总连接配置的比例     |
+| 容量使用率       | diskusage         | %     | 集群 | 集群当前实际占用存储空间与总容量配置的比例 |
+| QPS              | qps               | 次/秒 | 集群 | 每秒操作数，包含 CRUD 操作                   |
+| 10毫秒 - 50毫秒        | 10ms              | 次    | 集群 | 执行时间在10毫秒和50毫秒之间的请求数       |
+| 50毫秒 - 100毫秒       | 50ms              | 次    | 集群 | 执行时间在50毫秒和100毫秒之间的请求数      |
+| 100毫秒          | 100ms             | 次    | 集群 | 执行时间超过100毫秒的请求数                |
+| 超时             | timeouts          | 次    | 集群 | 执行时间超时的请求数                       |
+| 主从延迟         | slavedelay        | 秒    | 集群 | 主从延迟时间                               |
+| oplog 时间差      | oplogreservedtime | 小时  | 集群 | oplog 记录中最后一次操作和首次操作时间差    |
+| CPU 使用率        | cpuusage          | %     | 节点 | 当前节点的 CPU 使用率                        |
+| 内存使用率       | memusage          | %     | 节点 | 当前节点的内存使用率                       |
+| qr               | qr                | 个    | 节点 | 等待读操作的客户端队列长度                 |
+| qw               | qw                | 个    | 节点 | 等待写操作的客户端队列长度                 |
+| 连接数           | conn              | 个    | 节点 | 当前 mongod 节点的连接数                     |
+| netin            | netin             | MB/s  | 节点 | 入站流量                                   |
+| netout           | netout            | MB/s  | 节点 | 出站流量                                   |
