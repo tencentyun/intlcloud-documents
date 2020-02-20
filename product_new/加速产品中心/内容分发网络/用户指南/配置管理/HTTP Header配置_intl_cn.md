@@ -4,11 +4,8 @@
 
 ## 配置指引
 1. 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击左侧目录的【域名管理】，进入管理页面，在列表中找到您需要编辑的域名所在行，单击操作栏的【管理】。
-![img](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
 2. 在【高级配置】中找到 **HTTP Header 配置**模块。默认情况下，**HTTP Header 配置**为关闭状态。
-![img](https://main.qcloudimg.com/raw/8044e171d8626d8ff0d6072d6866fea9.png)
 3. 单击开启 **HTTP Header** 开关，可添加头部：
-![img](https://main.qcloudimg.com/raw/e0aa1b7333b2825f2cd4fce0274e0f38.png)
 	CDN 提供以下常见的6类头部设置，也可支持自定义头部设置：
 	- Access-Control-Allow-Origin：指定跨域请求时，允许访问资源的请求来源。
 	- Access-Control-Allow-Methods： 指定跨域请求时，允许的跨域请求方法。
@@ -18,9 +15,7 @@
 	- Content-Language：用于定义页面所使用的语言代码。
 	- 自定义：自定义头部。
 4. 假设配置内容为：Access-Control-Allow-Origin，设置通配符`*`。确认提交后，开关为开启状态，下方显示正在生效的配置信息。单击【修改】可更改配置信息。单击【删除】可删该配置。
-![img](https://main.qcloudimg.com/raw/f20db46cf30bcdc5060b4d5a7884d78a.png)
 5. 关闭 **HTTP Header** 开关后，下方的配置信息失效，即 HTTP Header 配置未启用。可再次手动开启。
-![img](https://main.qcloudimg.com/raw/e04ce374d5b46284afda72a5b52bc07c.png)
 
 ### 通用配置
 #### Content-Disposition
@@ -38,7 +33,6 @@ Content-Language 是用于定义页面所使用的语言代码，常用配置如
 #### Access-Control-Allow-Origin
 - 功能介绍
 Access-Control-Allow-Origin 用于解决资源的跨域权限问题，域值定义了允许访问该资源的域，若来源请求 Host 在域名配置列表之内，则直接填充对应值在返回头部中。也可以设置通配符`*`，允许被所有域请求。
-![img](https://main.qcloudimg.com/raw/036e7f2988edcd7dfacd733400efeb12.png)
 > 支持最多10个域名配置，一个一行，每个以回车分隔。
 - 匹配模式介绍
 
@@ -81,9 +75,7 @@ Access-Control-Expose-Headers: `Content-Length,X-My-Header`
 
 ### 自定义头部
 1. 支持添加自定义 Header，用户可在参数列表选择“自定义”。
-![img](https://main.qcloudimg.com/raw/fa7ffacae1c3c2dcb22c242f55a0cc25.png)
 2. 填写自定义 key-value 值。
-![img](https://main.qcloudimg.com/raw/e355d14afebc9943407156a44727603a.png)
 
 暂不支持以下 Header 添加：
 ```
