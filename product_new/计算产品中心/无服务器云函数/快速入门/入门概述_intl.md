@@ -18,6 +18,3 @@ You can learn how to perform basic operations in the SCF console through these t
 - Test a function and view its execution log and monitoring.
 
 After reading the getting started guide, you can also read how SCF works, how to build a function, and best practices to learn more about building a production system using SCF.
-
-- [SCF CLI](https://cloud.tencent.com/document/product/583/33445)
-- [SCF VS Code](https://cloud.tencent.com/document/product/583/37511)
