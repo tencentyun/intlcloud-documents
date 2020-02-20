@@ -10,7 +10,7 @@ You can enable On-Cloud MixTranscoding using the **setMixTranscodingConfig** API
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |     &#10003;  |    &#10003;    |    &#10003;   |    &#10003;    |    ×    |   ×    |
 
->! WeChat Mini Program and HTML5 do not support the setMixTranscodingConfig API on mobile devices and PCs. You can enable this feature using the [REST API](https://cloud.tencent.com/document/product/267/8832) in LVB.
+>! WeChat Mini Program and HTML5 do not support the setMixTranscodingConfig API on mobile devices and PCs. You can enable this feature using the [REST API](https://intl.cloud.tencent.com/document/product/267/8832) in LVB.
 
 
 ## How Cloud MixTranscoding Works
@@ -24,7 +24,7 @@ Call the `setMixTranscodingConfig` API of TRTCCloud to enable On-Cloud MixTransc
 Before enabling Cloud MixTranscoding, you need to configure the parameter `TRTCTranscodingConfig` to specify the relative positions of the subimages in the mixed image.
 
 - **Objective-C**
- For more information on the MixTranscoding configuration, please see [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32261#trtctranscodingconfig).
+ For more information on the MixTranscoding configuration, please see [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647).
 
 ``` Objective-C
 //Sample code for Cloud MixTranscoding
