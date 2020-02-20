@@ -59,7 +59,7 @@ Before enabling Cloud MixTranscoding, you need to configure the parameter `TRTCT
 ```
 
 - **Java**
- For more information on the MixTranscoding configuration, please see [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32266#trtctranscodingconfig).
+ For more information on the MixTranscoding configuration, please see [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647).
 
 ``` java
 //Enable Cloud MixTranscoding
@@ -102,7 +102,7 @@ public void enableTranscoding() {
 ```
 
 - **C++**
- For more information on the MixTranscoding configuration, please see [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32271#trtctranscodingconfig).
+ For more information on the MixTranscoding configuration, please see [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647).
 
 ``` C++
 // Enable On-Cloud MixTranscoding
@@ -148,7 +148,7 @@ void enableTranscoding()
 ```
 
 - **C#**
- For more information on the MixTranscoding configuration, please see [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/36780#trtctranscodingconfig).
+ For more information on the MixTranscoding configuration, please see [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647).
 
 ```c#
 // Enable On-Cloud MixTranscoding
