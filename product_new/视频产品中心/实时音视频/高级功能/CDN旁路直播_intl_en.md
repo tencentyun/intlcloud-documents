@@ -5,7 +5,7 @@ The following describes how to play the audio/video streams in a TRTC room on Te
 
 
 ## Demo
-The relayed live streaming feature has been incorporated into the TRTC [Demo](https://cloud.tencent.com/document/product/647/17021). During a video call, click **More** to locate the feature (download TXLivePlayer from [MLVB Demo](https://cloud.tencent.com/document/product/454/6555)).
+The relayed live streaming feature has been incorporated into the TRTC [Demo](https://intl.cloud.tencent.com/document/product/647/17021). During a video call, click **More** to locate the feature (download TXLivePlayer from MLVB Demo).
 
 ## Sample Code
 
@@ -63,14 +63,12 @@ Enable On-Cloud MixTranscoding by calling the `setMixTranscodingConfig` API in T
  - position and size of each subimage;
  - image quality and encoding parameter of the mixed stream.
 
-For more information, please see [On-Cloud MixTranscoding](https://cloud.tencent.com/document/product/647/16827).
+For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618).
 >! Instead of mixing streams at the end users, `setMixTranscodingConfig` sends the stream mixing configuration to the cloud for stream mixing and transcoding. Because both involve decoding and re-encoding the original audio/video data, they may take a while. Therefore, a mixed stream has a playback latency 1 or 2 seconds longer than individual streams.
 
 ### Step 4: Start playback.
 
-We recommend an **http://~.flv ** address beginning with `http` and ending with `.flv`, which features a short playback latency, good instant broadcasting performance, and high stability. It's recommended to use the TXLivePlayer included in TRTC SDK. The documents for this player are:
-- [TXLivePlayer (iOS)](https://cloud.tencent.com/document/product/454/7880)
-- [TXLivePlayer (Android)](https://cloud.tencent.com/document/product/454/7886)
+We recommend an **http://~.flv ** address beginning with `http` and ending with `.flv`, which features a short playback latency, good instant broadcasting performance, and high stability. It's recommended to use the TXLivePlayer included in TRTC SDK. 
 
 
 ### Step 5: Optimize the latency.
@@ -88,7 +86,7 @@ If you experience a latency higher than stated above in practice, optimize the l
 TXLivePlayer uses a Tencent-developed playback engine that allows for latency control. In contrast, using ijkplayer or ffmpeg to play videos from such URL can cause uncontrollable latency. This is because they are thin wrappers around ffmpeg, which lacks the ability to compensate for latency.
 
 - **Set TXLivePlayer to the ultrafast mode**
-Enable the ultrafast mode by configuring three parameters of TXLivePlayerConfig. Taking [iOS](https://cloud.tencent.com/document/product/454/7880#Delay) as an example, the code is as follows:
+Enable the ultrafast mode by configuring three parameters of TXLivePlayerConfig. Taking iOS as an example, the code is as follows:
     ```
     // Set TXLivePlayer to ultrafast mode
     TXLivePlayerConfig * config = [[TXLivePlayerConfig alloc] init];
