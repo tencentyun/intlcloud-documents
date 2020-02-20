@@ -16,8 +16,8 @@ The lite edition only includes TRTC and TXLivePlayer and has the smallest storag
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32396">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32173">DOC</a></td>
+      <td style="text-align:center">DOC</td>
+      <td style="text-align:center">DOC</td>
       <td style="text-align:center">1.90 MB (arm64)</td>
    </tr>
      <tr>
@@ -25,8 +25,8 @@ The lite edition only includes TRTC and TXLivePlayer and has the smallest storag
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32166">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32175">DOC</a></td>
+      <td style="text-align:center">DOC</td>
+      <td style="text-align:center">DOC</td>
       <td style="text-align:center">jar: 820 KB<br> so(armv7): 4.8 MB<br>so(arm64): 5.7 MB</td>
    </tr>
      <tr>
