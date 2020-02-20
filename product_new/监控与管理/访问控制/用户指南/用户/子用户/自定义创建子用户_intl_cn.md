@@ -1,5 +1,7 @@
 ## 操作场景
 本文档介绍如何通过自定义方式创建及设定子用户的权限，子用户将在获得的权限范围内管理主账号下的资源。
+以下视频将为您介绍创建子用户并实现访问管理：
+<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1765-19055?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 ## 操作指南
 ### 通过控制台创建
@@ -38,4 +40,3 @@
 如果您想了解如何子用户如何登录，请参阅 [子用户登录](https://cloud.tencent.com/document/product/598/39133)。
 如果您想了解如何为子用户重置密钥，请参阅 [为子用户重置登录密码](https://cloud.tencent.com/document/product/598/36260)。
 如果您想了解如何为子用户订阅消息，请参阅 [子用户消息订阅](https://cloud.tencent.com/document/product/598/36257)。
-
