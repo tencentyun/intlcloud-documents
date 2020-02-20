@@ -11,7 +11,7 @@ To facilitate you to integrate both TRTC and IM into the same product, when you 
 
 | Value-added Item | Billed Product | Billing Details |
 | :----------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| Instant messaging | [IM](https://cloud.tencent.com/document/product/269) | The Trial Edition for TRTC of IM is free of charge forever. You can purchase different [IM editions]() based on your actual needs. For more information, please see [IM]() |
+| Instant messaging | [IM](https://intl.cloud.tencent.com/document/product/1047) | The Trial Edition for TRTC of IM is free of charge forever. You can purchase different [IM editions]() based on your actual needs. For more information, please see [IM]() |
 
 > Note:
 >
