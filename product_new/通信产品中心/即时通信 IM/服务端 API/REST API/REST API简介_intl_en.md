@@ -1,11 +1,11 @@
-RESTful APIs are HTTP management APIs that provide the app backend with a management entry at the backend. For the list of RESTful APIs currently supported by IM, please see [RESTful APIs](https://cloud.tencent.com/document/product/269/1520).
+RESTful APIs are HTTP management APIs that provide the app backend with a management entry at the backend. For the list of RESTful APIs currently supported by IM, please see [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34621).
 The app console supports data management and one-to-one/group messaging. Developers can manage, check, and test data in the console. While RESTful APIs have less functions but they can provide more powerful management capabilities.
 For security concerns, RESTful APIs are supported over HTTPS only.
 
 ## Prerequisites
 Before you call the RESTful API, complete the following operations:
-1. Create an app in the IM console. For more information, see [here](https://cloud.tencent.com/document/product/269/32577).
-2. Assign an admin account to the app. For more information, see the account system in [Basic Configuration](https://cloud.tencent.com/document/product/269/32578).
+1. Create an app in the IM console. For more information, see [here](https://intl.cloud.tencent.com/document/product/1047/34577).
+2. Assign an admin account to the app. For more information, see the account system in [Basic Configuration](https://intl.cloud.tencent.com/document/product/1047/34540).
 
 >To avoid errors, please DO use the admin account when you call the RESTful API.
 
@@ -23,11 +23,11 @@ The descriptions and values ​​of parameters are as follows (parameter names 
 | https    |Request protocol.      | The request protocol is HTTPS, and the request method is POST.       |
 | console.tim.qq.com |Request domain name.  | Always `console.tim.qq.com`.      |
 | ver  | Protocol version number. | Always `v4`.  |
-| servicename  | Internal service name. The servicename parameter varies with the service type. |Example:<br>`v4/im_open_login_svc/account_import`. `im_open_login_svc` is the `servicename`.<br/>For more information, see [RESTful APIs](https://cloud.tencent.com/document/product/269/1520). |
-| command  | Command words. Used with the servicename parameter to identify a specific service feature. |Example:<br>`v4/im_open_login_svc/account_import`. `account_import` is the `command` parameter.<br/>For more information, see [RESTful APIs](https://cloud.tencent.com/document/product/269/1520). |
+| servicename  | Internal service name. The servicename parameter varies with the service type. |Example:<br>`v4/im_open_login_svc/account_import`. `im_open_login_svc` is the `servicename`.<br/>For more information, see [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34621). |
+| command  | Command words. Used with the servicename parameter to identify a specific service feature. |Example:<br>`v4/im_open_login_svc/account_import`. `account_import` is the `command` parameter.<br/>For more information, see [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34621). |
 | sdkappid  | App ID obtained in the IM console. |It is obtained when the user applies for service connection. |
-| identifier  | User name should be the admin account when the user calls the RESTful API. |For more information, see [App Admin](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98).  |
-| usersig  | Password that corresponds to the user name. |For more information, see [Generating UserSig](https://cloud.tencent.com/document/product/269/32688). |
+| identifier  | User name should be the admin account when the user calls the RESTful API. |For more information, see [App Admin](https://intl.cloud.tencent.com/document/product/1047/33517).  |
+| usersig  | Password that corresponds to the user name. |For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random  | A random number parameter that is used to identify the current request. |32-bit unsigned random integer. Value range: 0-4294967295. |
 | contenttype   |Request format.     | Always `json`.                   |
 
@@ -58,10 +58,10 @@ The response body must contain the ActionStatus field, the ErrorInfo field, and 
 |---------|---------|---------|
 |ActionStatus | String | Result processing result. OK indicates success; FAIL indicates failure. If the request fails, the cause of failure is displayed in the ErrorInfo field. |
 |ErrorInfo  | String | Failure causes |
-|ErrorCode  | Integer | Error code. 0: Successful;  other values: Failed. For more information, see [Error codes](https://cloud.tencent.com/document/product/269/1671). |
+|ErrorCode  | Integer | Error code. 0: Successful;  other values: Failed. For more information, see [Error codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
 
 ## Example
-This example shows you how to use the RESTful API to [obtain all groups in an app](https://cloud.tencent.com/document/product/269/1614).
+This example shows you how to use the RESTful API to obtain all groups in an app.
 
 HTTPS requests:
 ```

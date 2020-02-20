@@ -2,7 +2,7 @@
 mongodump 的参数中设置 --readPreference=secondaryPreferred。
 
 ### MongoDB 支持哪些数据迁移？
-目前支持两类迁移：云数据库 CVM 自建实例迁移、外网实例迁移，详情请参见 [MongoDB 数据迁移](https://intl.cloud.tencent.com/document/product/240/8271)。
+目前支持两类迁移：云数据库 CVM 自建实例迁移、外网实例迁移，详情请参见 [MongoDB 数据迁移](https://cloud.tencent.com/document/product/240/8271)。
 
 ### 使用 mongodump（整库）或者 mongoexport（单个集合），如何把 MongoDB 的数据导出到本地？
 
@@ -15,8 +15,6 @@ MongoDB 官方提供了两套数据导出工具，一般来说，进行整库导
  mongodump --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb -o /data/dump_testdb
 ```
 
-![图片描述](//bot1024-1253841380.file.myqcloud.com/598299decb2a1.png)
-
 **2. 使用 mongoexport 进行单个集合导出备份**
 导出命令如下:
 
@@ -27,7 +25,7 @@ mongoexport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authentic
 > ?您也可以加上 -f 参数指定需要的字段，-q 参数指定一个查询条件来限定要导出的数据。
 
 **3. 关于 rwuser 和 mongouser 用户名在写导出命令时的参数说明** 
-在 [连接示例](https://intl.cloud.tencent.com/document/product/240/3563) 文档中有说明，腾讯云 MongoDB 默认提供了 rwuser 和 mongouser 两个用户名，分别支持 MONGODB-CR 和 SCRAM-SHA-1 两种认证方式。
+在 [连接示例](https://cloud.tencent.com/document/product/240/3563) 文档中有说明，腾讯云 MongoDB 默认提供了 rwuser 和 mongouser 两个用户名，分别支持 MONGODB-CR 和 SCRAM-SHA-1 两种认证方式。
 
 - 对于 mongouser 以及在控制台创建的所有新用户，在使用导出命令工具时按照上文示例操作即可。
 - 对于 rwuser，需要在每个命令里加入参数 --authenticationMechanism=MONGODB-CR 。
@@ -49,7 +47,8 @@ MongoDB 官方提供了两套数据导入工具，一般来说，进行整库导
 mongorestore --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --dir=/data/dump_testdb
 ```
 
-![图片描述](//bot1024-1253841380.file.myqcloud.com/5982b30189287.png)
+
+
 **2. 使用mongoimport进行单个集合导入备份**
 导入命令如下:
 
@@ -58,7 +57,7 @@ mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authentic
 ```
 
 **3.关于 rwuser 和 mongouser 用户名在写导入命令时的参数说明**
-在 [连接示例](https://intl.cloud.tencent.com/document/product/240/3563) 文档有说明，腾讯云 MongoDB 默认提供了  rwuser 和 mongouser 两个用户名，分别支持 MONGODB-CR 和 SCRAM-SHA-1 两种认证方式。
+在 [连接示例](https://cloud.tencent.com/document/product/240/3563) 文档有说明，腾讯云 MongoDB 默认提供了  rwuser 和 mongouser 两个用户名，分别支持 MONGODB-CR 和 SCRAM-SHA-1 两种认证方式。
 
 - 对于 mongouser 以及在控制台创建的所有新用户，在使用导入命令工具时按照上文示例操作即可。
 - 对于 rwuser，需要在每个命令里加入参数 --authenticationMechanism=MONGODB-CR。
@@ -78,4 +77,4 @@ mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authentic
   综合下来导致整个数据库空间的空洞率较高，而导入数据时相当于做了一次类似磁盘整理的操作，使导入后的数据保存得相对紧凑，所以看起来数据变小了。
 
 ### MongoDB 的 mongodump 无法导出数据，如何处理？
-mongodump 使用参见 [导入导出](https://intl.cloud.tencent.com/document/product/240/5321)，mongodump 工具建议使用3.2.10以上版本。
+mongodump 使用参见 [导入导出](https://cloud.tencent.com/document/product/240/5321)，mongodump 工具建议使用3.2.10以上版本。

@@ -1,12 +1,12 @@
 
-MPS bill includes fees only for processing audio/video files, such as transcoding or remuxing, but **not fees incurred by COS**.
-MPS is billed in two modes: daily billing or monthly billing. The daily billing mode is used by default. If you want to change it to monthly billing, please contact your Tencent Cloud rep.
+Bills for MPS contain only charges for processing audio/video files, such as transcoding or remuxing. **Fees incurred by COS are not included in the bill**.
+MPS offers two billing modes: daily billing and monthly billing. The daily billing mode is used by default. If you want to change to monthly billing, please contact your Tencent Cloud sales rep.
 
 ## Daily Billing
  
-MPS pushes and settles the bill for your resource usage generated yesterday on a daily basis. You can view the actual resource usage in the [console](https://console.cloud.tencent.com/mps). The daily billing mode is used by default. If you want to change it to monthly billing, please contact your Tencent Cloud rep.
+MPS will calculate and generate the bill for the previous day’s resource daily. You can view the actual resource usage in the [console](https://console.cloud.tencent.com/mps). The daily billing mode is used by default. If you want to change to monthly billing, please contact your Tencent Cloud sales rep.
  
-+ Billing cycle: the bill is settled daily. Everyday at a point between 12:00 and 18:00 Beijing time, MPS will calculate, output, and settle the bill for fees incurred yesterday.
++ Billing cycle: the bill is settled daily. MPS will calculate, output and settle the bill for fees incurred the day before daily between 12:00 and 18:00 Beijing time.
 + Billing mode: pay-as-you-go.
  
 ### Billable items 
@@ -14,7 +14,7 @@ MPS pushes and settles the bill for your resource usage generated yesterday on a
 
 Pricing: fees are charged based on the video length after transcoding in USD/minute.
 
-|Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
+||~Codec||Resolution||Mainland China||Mumbai, Seoul, Bangkok, Moscow||Hong Kong(China), Tokyo, Toronto, Frankfurt||Silicon Valley, Virginia||Singapore||
 |-|-|-|-|-|-|-|
 |H.264|4K (3840 * 2160p) or below|0.0421|0.0480|0.0441|0.0441|0.0480|
 |H.264|2K (2560 * 1440p) or below|0.0206|0.0355|0.0316|0.0316|0.0355|
@@ -34,7 +34,7 @@ Pricing: fees are charged based on the video length after transcoding in USD/min
  
 Pricing: fees are charged based on the source video length in USD/minute.
 
-|Codec|Resolution|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia)|(Singapore)|
+||~Codec||Resolution||Mainland China||Mumbai, Seoul, Bangkok, Moscow||Hong Kong(China), Tokyo, Toronto, Frankfurt||Silicon Valley, Virginia||Singapore||
 |-|-|-|-|-|-|-|
 |H.264|4K (3840 * 2160p) or below|0.1493|0.1533|0.1467|0.1467|0.1533|
 |H.264|2K (2560 * 1440p) or below|0.0747|0.0767|0.0733|0.0733|0.0767|
@@ -51,25 +51,25 @@ Pricing: fees are charged based on the source video length in USD/minute.
 
 ### Billing description
 
-+ Billing rule: the transcoding service is billed daily based on the requested codec, resolution, and output video length.
++ Billing rule: transcoding service is billed daily based on the requested codec, resolution, and output video length.
 + Billing formula: video transcoding fees = output video length (minute) * transcoding unit price for different codec and resolution options (USD/minute)
 + Each transcoding task is billed only once. If the output video length is less than 1 minute, it will be calculated as 1 minute.
  
 ### Billing example
 
-For example, if you use the general transcoding service in the Mumbai region on January 1 to transcode two videos with H.264 codec (one to a 60-minute video at 2560 * 1440p resolution and the other to a 100-minute video at 1600 * 980p resolution), then you need to pay transcoding fees on January 2 as calculated below:
+Suppose you utilized the transcoding service in the Mumbai region on January 1 to transcode two videos with H.264 codec (the first to a 60-minute video at 2560 * 1440p resolution and the other to a 100-minute video at 1600 * 980p resolution), the transcoding fees will be generated on January 2 as calculated below:
 Transcoding fees = 0.0355 (USD/minute) * 60 (minutes) + 0.023 (USD/minute) * 100 (minutes) = 4.43 USD
 
 
 #### Intelligent content recognition
-In MPS, the intelligent content recognition feature uses AI technology to recognize elements in videos such as human faces, objects, texts, speeches, opening and closing credits, and frame-specific tags. It is priced in USD/minute.
+MPS’s intelligent content recognition feature uses AI technology to identify content in videos such as faces, objects, text, audio, opening and closing credits, and frame-specific tags. It is priced in USD/minute.
 
 The billing description is as shown below:
 - Billing mode: pay-as-you-go.
 - If the source video length is less than 1 minute, it will be calculated as 1 minute.
 The billing details are as shown below:
 
-|Billable Item|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia State)|(Singapore)|
+||~Billable Item||Mainland China||Mumbai, Seoul, Bangkok, Moscow||Hong Kong(China), Tokyo, Toronto, Frankfurt||Silicon Valley, Virginia State||Singapore||
 |-|-|-|-|-|-|
 |Intelligent content recognition|0.0511|0.0562|0.0572|0.0572|0.0562|
 
@@ -78,13 +78,13 @@ __Billing formula__: intelligent content recognition fees = source video length 
 
 
 #### Intelligent content analysis
-In MPS, the intelligent content analysis feature uses AI technology and massive samples to analyze and process video contents such as intelligent tagging, categorization, cover generation, highlights generation, video abstract generation, and entry-based recognition. It is priced in USD/minute.
+MPS’s intelligent content analysis feature uses AI technology and massive samples to analyze and process video contents. Services provided include intelligent tagging, categorization, cover generation, highlights generation, video abstraction, and video segmentation. It is priced in USD/minute.
 The billing description is as shown below:
 - Billing mode: pay-as-you-go.
 - If the source video length is less than 1 minute, it will be calculated as 1 minute.
 The billing details are as shown below:
 
-|Billable Item|Mainland China|(Mumbai, Seoul, Bangkok, Moscow)|(Hong Kong of China, Tokyo, Toronto, Frankfurt)|(Silicon Valley, Virginia State)|(Singapore)|
+||~Billable Item||Mainland China||Mumbai, Seoul, Bangkok, Moscow||Hong Kong(China), Tokyo, Toronto, Frankfurt||Silicon Valley, Virginia State||Singapore||
 |-|-|-|-|-|-|
 |Intelligent content recognition|0.0511|0.0562|0.0572|0.0572|0.0562|
 
@@ -94,7 +94,7 @@ __Billing formula__: intelligent content recognition fees = source video length 
 
 
 #### Video audit
-In MPS, the audiovisual AI-based video audit feature intelligently audits images, speeches, and texts in videos to detect pornographic, terrorism, and politically sensitive information and outputs audit results as requested. This feature is billed based on the used service and source video length in USD/minute.
+MPS’s audiovisual AI-based video audit feature intelligently audits images, audio, and text in videos to detect pornography, terrorism, and politically sensitive information and outputs audit results as requested. This feature is billed based on the used service and source video length in USD/minute.
 
 The billing description is as shown below:
 - Billing mode: pay-as-you-go.
@@ -112,12 +112,12 @@ The billing details are as shown below:
 
 ## Monthly Billing
 
-On the first day in each month, MPS will push and settle the bill for your resource usage generated in the last month. You can view the actual resource usage in the [console](https://console.cloud.tencent.com/mps).
+On the first day in each month, MPS will calculate and generate the bill for the previous months’s resource usage. You can view the actual resource usage in the [console](https://console.cloud.tencent.com/mps).
 
 
 - Billing cycle: the bill is settled monthly. On the first day in each month, MPS will calculate, output, and settle the bill for fees incurred in the last month.
 - Billing mode: pay-as-you-go.
-- For more information on monthly billing, please contact your Tencent Cloud rep. The prices will be subject to the contract.
+- For more information on monthly billing, please contact your Tencent Cloud sales rep. The prices will be subject to the contract.
 
 
 

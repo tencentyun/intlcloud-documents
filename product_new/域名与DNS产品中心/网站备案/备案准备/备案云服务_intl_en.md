@@ -4,7 +4,6 @@
 If you want to submit your ICP filing application through Tencent Cloud, you need to purchase a Tencent Cloud CVM instance first, which should meet the following conditions:
 
 - The CVM instance you purchase is based in **Mainland China** (CVM instances outside Mainland China require no ICP filing and cannot be used for ICP filing application).
-- The billing mode should be **monthly subscription** (pay-as-you-go CVM instances are not supported currently).
 - The CVM instance has a **public IP** (the bandwidth cannot be 0 at the time of purchase).
 - The CVM instance has a length of purchase of **at least 3 months and has not expired** (otherwise, you need to renew it for at least 3 months).
 

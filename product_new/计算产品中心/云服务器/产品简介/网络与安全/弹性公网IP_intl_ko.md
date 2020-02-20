@@ -22,7 +22,7 @@ EIP는 계정과 연결된 정적 IP 주소입니다. EIP는 릴리스하기 전
 | Tencent Cloud 계정별 리전의 일일 주문 횟수	 | 할당수 \* 2회 |
 | EIP 바인딩 해제 시 계정당 공용 네트워크 IP를 매일 무료로 재할당 가능한 횟수 | 10회 |
 
-> EIP 할당은 기본으로 조정되지지 않으며 [NAT Gateway](https://cloud.tencent.com/product/nat), [로드 밸런서](https://cloud.tencent.com/document/product/214)를 통해 IP 컨버전스를 진행할 수 있습니다.
+> EIP 할당은 기본으로 조정되지지 않으며 [NAT Gateway](https://cloud.tencent.com/product/nat), [Cloud load balancer](https://cloud.tencent.com/document/product/214)를 통해 IP 컨버전스를 진행할 수 있습니다.
 > - 특수한 상황에서 조정이 필요할 경우, 계정에 대응하는 범위의 클라우드 서버 리소스가 있어야만 합리적 사용이 가능합니다.
 > - 요구되는 할당이 비교적 높을 경우 초과한 할당은 과금될 수 있습니다.
 >- 만약 조정 후 빈번하게 IP를 교체하거나 적용되는 법률 법규를 위반할 경우, Tencent Cloud는 할당을 철회할 권리가 있습니다.
