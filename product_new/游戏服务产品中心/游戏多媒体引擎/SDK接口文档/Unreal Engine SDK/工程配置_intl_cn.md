@@ -8,7 +8,7 @@
 3. 导入之后，在 Unreal Engine 引擎中对插件进行编译。
 ![](https://main.qcloudimg.com/raw/562882f1d39aa0d4fc77e835290d99df.png)
 4. 编译完成后，在 VS2015 中会出现以下目录。
-![](https://main.qcloudimg.com/raw/3005bc887e0179bdc45719b07a61f778.png)
+![](https://main.qcloudimg.com/raw/0070a5057c678182ca78c166b9aeaeee.png)
 5. 重新打开 Unreal Engine 引擎，单击【编辑】，单击【Plugins】，即可查看 GME 插件。
 ![](https://main.qcloudimg.com/raw/60fb6340f6899e2c8fc6f4693193533e.png)
 6. 如果是使用 Unreal Engine 4.21及以上版本，下载使用 GME Unreal Engine 示例代码后要添加以下代码：
