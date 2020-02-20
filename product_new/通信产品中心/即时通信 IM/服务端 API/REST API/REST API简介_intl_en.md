@@ -58,10 +58,10 @@ The response body must contain the ActionStatus field, the ErrorInfo field, and 
 |---------|---------|---------|
 |ActionStatus | String | Result processing result. OK indicates success; FAIL indicates failure. If the request fails, the cause of failure is displayed in the ErrorInfo field. |
 |ErrorInfo  | String | Failure causes |
-|ErrorCode  | Integer | Error code. 0: Successful;  other values: Failed. For more information, see [Error codes](https://cloud.tencent.com/document/product/269/1671). |
+|ErrorCode  | Integer | Error code. 0: Successful;  other values: Failed. For more information, see [Error codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
 
 ## Example
-This example shows you how to use the RESTful API to [obtain all groups in an app](https://cloud.tencent.com/document/product/269/1614).
+This example shows you how to use the RESTful API to obtain all groups in an app.
 
 HTTPS requests:
 ```
