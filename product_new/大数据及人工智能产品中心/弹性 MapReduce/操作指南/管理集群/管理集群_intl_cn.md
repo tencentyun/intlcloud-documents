@@ -22,4 +22,4 @@
 >为验证后开启 COS 生效，请确保 SecretID 和 SecretKey 对应的访问域名一致，以便于验证。
 
 ![](https://main.qcloudimg.com/raw/599a484aa1ee3c2e176a667396386c04.png)
-具体操作可见 [控制台自助开启 COS](https://cloud.tencent.com/document/product/589/40366)。
+具体操作可见 [控制台自助开启 COS](https://intl.cloud.tencent.com/document/product/1026/34570)。

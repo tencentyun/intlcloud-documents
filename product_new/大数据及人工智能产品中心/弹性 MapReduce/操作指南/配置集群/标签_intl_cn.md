@@ -1,5 +1,5 @@
 ## 简介
-[标签](https://cloud.tencent.com/document/product/651/36479) 是腾讯云弹性 MapReduce 提供的用于标识集群类型或节点资源的标记，是一个键值对（Key-Value）。
+[标签](https://intl.cloud.tencent.com/document/product/651/32582) 是腾讯云弹性 MapReduce 提供的用于标识集群类型或节点资源的标记，是一个键值对（Key-Value）。
 
 您可根据各种维度（例如业务、用途、负责人等）使用标签对集群或节点资源类型进行分类管理。也可通过标签非常方便的标识集群或节点资源。标签键值对对弹性 MapReduce 没有任何语义意义，会严格按字符串进行解析匹配。
 
