@@ -10,12 +10,14 @@
 
 #### 基本操作接口
 
-| API                                                          | 操作名             | 操作描述                           |
-| ------------------------------------------------------------ | ------------------ | ---------------------------------- |
-| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | 创建存储桶         | 在指定账号下创建一个存储桶         |
-| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | 查询对象列表       | 查询存储桶下的部分或者全部对象     |
-| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | 检索存储桶及其权限 | 确认存储桶是否存在且是否有权限访问 |
-| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | 删除存储桶         | 删除指定账号下的空存储桶           |
+| API                                                          | 操作名             | 操作描述                                       |
+| ------------------------------------------------------------ | ------------------ | ---------------------------------------------- |
+| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | 创建存储桶         | 在指定账号下创建一个存储桶                     |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | 查询对象列表       | 查询存储桶下的部分或者全部对象                 |
+| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | 检索存储桶及其权限 | 确认存储桶是否存在且是否有权限访问             |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | 删除存储桶         | 删除指定账号下的空存储桶                       |
+| [GET Bucket Object versions](https://intl.cloud.tencent.com/document/product/436/31551) | 查询对象版本       | 查询存储桶下的部分或者全部对象及其历史版本信息 |
+
 
 #### 访问控制（acl）接口
 
@@ -55,9 +57,6 @@
 | [DELETE Bucket policy](https://intl.cloud.tencent.com/document/product/436/8285) | 删除存储桶策略 | 删除指定存储桶的权限策略 |
 
 
-
-
-
 #### 防盗链（referer）接口
 
 | API                                                          | 操作名             | 操作描述                            |
@@ -67,7 +66,7 @@
 
 
 
-#### 标签（tagging）接口
+#### 存储桶标签（tagging）接口
 
 | API                                                          | 操作名         | 操作描述                         |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
@@ -79,11 +78,51 @@
 
 #### 静态网站（website）接口
 
-| API                                                          | 操作名             | 操作描述                           |
-| ------------------------------------------------------------ | ------------------ | ---------------------------------- |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | 设置存储桶 website | 为存储桶配置静态网站               |
-| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | 查询存储桶 website | 查询与存储桶关联的静态网站配置信息 |
-| [DELETE Bucket website](<https://intl.cloud.tencent.com/document/product/436/30629>) | 删除存储桶 website | 删除指定存储桶的静态网站配置信息   |
+| API                                                          | 操作名           | 操作描述                           |
+| ------------------------------------------------------------ | ---------------- | ---------------------------------- |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | 设置静态网站     | 为存储桶配置静态网站               |
+| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | 查询静态网站配置 | 查询与存储桶关联的静态网站配置信息 |
+| [DELETE Bucket website](<https://intl.cloud.tencent.com/document/product/436/30629>) | 删除静态网站配置 | 删除指定存储桶的静态网站配置信息   |
+
+
+#### 清单（inventory）接口
+
+| API                                                          | 操作名       | 操作描述                     |
+| ------------------------------------------------------------ | ------------ | ---------------------------- |
+| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | 设置清单任务 | 在存储桶中创建清单任务       |
+| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | 查询清单任务 | 查询存储桶的指定清单配置信息 |
+|  [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627)  |查询所有清单 | 查询存储桶的所有清单任务 |
+| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | 删除清单任务 | 删除存储桶中指定的清单任务   |
+
+#### 版本控制（versioning）接口
+
+| API                                                          | 操作名       | 操作描述                         |
+| ------------------------------------------------------------ | ------------ | -------------------------------- |
+| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | 设置版本控制 | 启用或者暂停存储桶的版本控制功能 |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | 查询版本控制 | 查询存储桶的版本控制信息         |
+
+#### 跨地域复制（replication）接口
+
+| API                                                          | 操作名         | 操作描述                                   |
+| ------------------------------------------------------------ | -------------- | ------------------------------------------ |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | 设置跨地域复制 | 对已启用版本控制的存储桶配置跨地域复制规则 |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | 查询跨地域复制 | 查询存储桶的跨地域复制配置信息             |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | 删除跨地域复制 | 删除存储桶的跨地域复制配置信息             |
+
+#### 日志管理（logging）接口
+
+| API                                                          | 操作名       | 操作描述                   |
+| ------------------------------------------------------------ | ------------ | -------------------------- |
+| [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054) | 设置日志管理 | 为源存储桶开启日志记录     |
+| [GET Bucket logging](https://intl.cloud.tencent.com/document/product/436/17053) | 查询日志管理 | 查询源存储桶的日志配置信息 |
+
+#### 存储桶加密（encryption）接口
+
+| API                                                          | 操作名         | 操作描述                       |
+| ------------------------------------------------------------ | -------------- | ------------------------------ |
+| [PUT Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33459) | 设置存储桶加密 | 设置指定存储桶下的默认加密配置 |
+| [GET Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33460) | 查询存储桶加密 | 查询指定存储桶下的默认加密配置 |
+| [DELETE Bucket encryption](https://intl.cloud.tencent.com/document/product/436/33461) | 删除存储桶加密 | 删除指定存储桶下的默认加密配置 |
 
 
 
@@ -102,8 +141,7 @@
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除对象                   |
 | [OPTIONS Object](https://intl.cloud.tencent.com/document/product/436/8288) | 预请求跨域配置 | 用预请求来确认是否可以发送真正的跨域请求 |
 | [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象   | 将归档类型的对象取回访问                 |
-
-
+| [SELECT Object Content](https://intl.cloud.tencent.com/document/product/436/32360) | 检索对象内容   | 检索指定对象的内容                       |
 
 #### 访问控制接口
 
@@ -125,3 +163,15 @@
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
+
+
+## 批量处理（batch）接口
+
+| API                                                          | 操作名         | 操作描述                                         |
+| ------------------------------------------------------------ | -------------- | ------------------------------------------------ |
+| [CreateJob](https://intl.cloud.tencent.com/document/product/436/33781) | 创建任务       | 用于在存储桶中创建批量处理任务                   |
+| [DescribeJob](https://intl.cloud.tencent.com/document/product/436/33782) | 描述任务       | 用于获取已创建的批量处理任务的参数和任务执行状态 |
+| [ListJobs](https://intl.cloud.tencent.com/document/product/436/33783) | 查询任务       | 用于列出已创建的批量处理任务                     |
+| [UpdateJobPriority](https://intl.cloud.tencent.com/document/product/436/33784) | 更新任务优先级 | 用于更新已创建任务的优先级                       |
+| [UpdateJobStatus](https://intl.cloud.tencent.com/document/product/436/33785) | 更新任务状态   | 用于更新已创建任务的状态                         |
+
