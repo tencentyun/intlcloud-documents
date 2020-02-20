@@ -1,7 +1,7 @@
 ## Billable Items
 
 TRTC fees consist of basic service fees and value-added service fees as shown below:
-<!--![Billable items](费用组成说明.png)-->
+<!--![Billable items](Billable items.png)-->
 
 ### Basic service fees
 Basic services refer to basic TRTC communication services such as audio call, video call, co-anchoring, and low-latency LVB. Call fees generated when you use basic services are called [basic service fees](https://cloud.tencent.com/document/product/647/37097). You can use such services as needed and only pay for what you use.
