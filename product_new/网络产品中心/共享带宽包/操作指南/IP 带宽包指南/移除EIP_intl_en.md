@@ -7,4 +7,4 @@ You can remove an EIP from a bandwidth package. After the removal, the bandwidth
 2. Click **Bandwidth Package** on the left sidebar.
 3. Select a region, find the target bandwidth package in the list, and click its instance ID to go to the instance details page.
 4. In the "Bandwidth Package Resources" section on the details page, select the target EIP, click **Remove Resource**, and then click **Confirm**.
-![](https://main.qcloudimg.com/raw/cc95861a9884f409e58b592165ba8760.png)
+
