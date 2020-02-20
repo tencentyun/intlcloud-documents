@@ -18,7 +18,7 @@ To query the monitoring data of TcaplusDB, use the following input parameters:<b
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/248/4478).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://intl.cloud.tencent.com/document/api/248/4478).
 
 ### 2.1. Input parameters
 
@@ -26,10 +26,10 @@ The following request parameter list only provides API request parameters and so
 | ----------- | ---- | ---------------------------------------- | ---------------------------------------- |
 | Action      | Yes    | String                                   | Common parameter. The value used for this API: GetMonitorData                |
 | Version     | Yes    | String                                   | Common parameter. The value used for this API: 2018-07-24                   |
-| Region      | No    | String                                   | Common parameter, indicating the region of the instance for which to query monitoring data. For supported regions, please see the [list of regions](https://cloud.tencent.com/document/product/596/39651#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by TcaplusDB |
+| Region      | No    | String                                   | Common parameter, indicating the region of the instance for which to query monitoring data. |
 | Namespace   | Yes    | String                                   | Namespace. Each Tencent Cloud product has a namespace, such as QCE/TCAPLUS             |
 | MetricName  | Yes    | String                                   | Metric name. For more information, please see section 2.2                            |
-| Instances.N | Yes    | Array of [Instance](https://cloud.tencent.com/document/product/248/30354) | Combination of instance object dimensions                                |
+| Instances.N | Yes    | Array of Instance | Combination of instance object dimensions                                |
 | Period      | No    | Integer                                  | Statistical period for monitoring data in seconds. Default value: 300                    |
 | StartTime   | No    | Datetime | Start time, such as "2018-09-22T19:51:23+08:00". Default value: "00:00:00" on the current day |
 | EndTime     | No    | Timestamp                                | End time, which is the current time by default. `EndTime` cannot be earlier than `StartTime`       |
@@ -48,7 +48,7 @@ The following request parameter list only provides API request parameters and so
 
 ### 2.2. Metric name
 
-The statistical granularity (`Period`) may vary by metric. The [DescribeBaseMetrics](https://cloud.tencent.com/document/product/248/30351) API can be used to get the `Periods` supported by each API.
+The statistical granularity (`Period`) may vary by metric. The DescribeBaseMetrics API can be used to get the `Periods` supported by each API.
 
 
 
