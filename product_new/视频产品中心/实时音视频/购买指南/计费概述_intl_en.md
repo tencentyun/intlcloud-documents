@@ -4,10 +4,10 @@ TRTC fees consist of basic service fees and value-added service fees as shown be
 <!--![Billable items](Billable items.png)-->
 
 ### Basic service fees
-Basic services refer to basic TRTC communication services such as audio call, video call, co-anchoring, and low-latency LVB. Call fees generated when you use basic services are called [basic service fees](https://cloud.tencent.com/document/product/647/37097). You can use such services as needed and only pay for what you use.
+Basic services refer to basic TRTC communication services such as audio call, video call, co-anchoring, and low-latency LVB. Call fees generated when you use basic services are called [basic service fees](https://intl.cloud.tencent.com/document/product/647/34613). You can use such services as needed and only pay for what you use.
 ### Value-added service fees
 Value-added services include instant messaging, relayed live streaming, on-cloud recording, On-Cloud MixTranscoding, and porn information detection in video. Each value-added service has its own independent billing rule. Fees generated when you use value-added services are called value-added service fees.
-Value-added services are disabled by default and will not be charged if they are not used after being activated. For more information on billing, please see [Value-added Service Fees](https://cloud.tencent.com/document/product/647/32574).
+Value-added services are disabled by default and will not be charged if they are not used after being activated. For more information on billing, please see [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34614).
 
 <span id="Type"></span>
 ## Call Type Description
