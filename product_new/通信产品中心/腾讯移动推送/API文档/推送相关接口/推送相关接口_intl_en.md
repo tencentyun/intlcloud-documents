@@ -105,7 +105,7 @@ Push API provides a variety of push targets, such as all, tag, single device, de
   }
   ```
 
-<span id="消息体类型"></span>
+<span id="message_type"></span>
 #### message_type: message body type
 
 For different platforms, the message types are slightly different; for details, see the table below:
