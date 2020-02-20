@@ -1,4 +1,4 @@
-为方便 iOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 iOS 开发的快速接入文档。
+为方便 macOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 macOS 开发的快速接入文档。
 
 GME 快速入门文档只提供最主要的接入接口，更多详细接口请参考 [相关接口文档](https://intl.cloud.tencent.com/document/product/607/15210)。
 
@@ -7,7 +7,6 @@ GME 快速入门文档只提供最主要的接入接口，更多详细接口请�
 | ------------- |:-------------:|
 |InitEngine    				       	|初始化 GME 	|
 |Poll    		|触发事件回调	|
-|SetDefaultAudienceAudioCategory 	|设置后台|
 |EnterRoom	 	|进房  		|
 |EnableMic	 	|开麦克风 	|
 |EnableSpeaker		|开扬声器 	|
@@ -16,7 +15,6 @@ GME 快速入门文档只提供最主要的接入接口，更多详细接口请�
 - GME 使用前请对工程进行配置，否则 SDK 不生效。
 - GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
 - GME 的接口调用要在同一个线程下。
-- GME 加入房间需要鉴权，请参考文档关于鉴权部分内容。
 - GME 需要周期性的调用 Poll 接口触发事件回调。
 - GME 回调信息参考回调消息列表。
 - 设备的操作要在进房成功之后。
@@ -43,12 +41,13 @@ _context.TMGDelegate =self;
 
 ### 2、初始化 SDK
 参数获取请查看 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)。
-此接口需要来自腾讯云控制台的 SDKAppID 号码作为参数，再加上 openId，这个 openId 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
+此接口需要来自腾讯云控制台的 AppID 号码作为参数，再加上 openID，这个 openID 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
+
 >初始化 SDK 之后才可以进房。
 ####  函数原型
 
 ```
-ITMGContext -(int)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
+ITMGContext -(int)InitEngine:(NSString*)sdkAppID openID:(NSString*)openId
 ```
 
 |参数     | 类型         |含义|
@@ -104,6 +103,8 @@ NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:
 ```
 ### 5、加入房间
 用生成的鉴权信息进房，会收到消息为 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM 的回调。加入房间默认不打开麦克风及扬声器。返回值为 AV_OK 的时候代表成功。
+
+
 ####  函数原型
 ```
 ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuffer:(NSData*)authBuffer
@@ -129,6 +130,7 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuf
 - (void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary*)data
 ```
 回调处理相关参考代码。
+
 ####  示例代码  
 ```
 -(void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data{
@@ -149,7 +151,6 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuf
 |消息     | Data         |例子|
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				|result; error_info					|{"error_info":"","result":0}|
-
 
 ### 7、开启关闭麦克风
 此接口用来开启关闭麦克风。加入房间默认不打开麦克风及扬声器。
