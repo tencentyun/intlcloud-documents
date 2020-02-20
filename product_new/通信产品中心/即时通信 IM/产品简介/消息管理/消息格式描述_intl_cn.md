@@ -1,5 +1,5 @@
 ## 消息内容 MsgBody 说明
-MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息中包括多种消息元素类别，例如一条消息中既包括文本消息元素，还包括表情消息元素。因此 MsgBody 定义为 Array 格式，可按照需求加入多类消息元素。消息元素名称为 TIMMsgElement。
+MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息中包括多种消息元素类别，例如一条消息中既包括文本消息元素，还包括表情消息元素。因此 MsgBody 定义为 Array 格式，可按照需求加入多类消息元素。消息元素名称为 TIMMsgElement，消息元素 TIMMsgElement 组成 MsgBody 的示例请参见 [消息内容 MsgBody 实例](https://cloud.tencent.com/document/product/269/2720#msgbody-.E6.B6.88.E6.81.AF.E5.86.85.E5.AE.B9.E5.AE.9E.E4.BE.8B)。
 
 消息元素 TIMMsgElement 的格式统一为：
 ```
@@ -103,8 +103,8 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | 字段 | 类型 | 说明 |
 |---------|---------|---------|
 | Data | String | 自定义消息数据。 不作为 APNs 的 payload 字段下发，故从 payload 中无法获取 Data 字段。|
-|Desc|String|自定义消息描述信息；当接收方为 iOS 或 Android 后台在线时，做离线推送文本展示。|
-|Ext|String|扩展字段；当接收方为 iOS 系统且应用处在后台时，此字段作为 APNs 请求包 Payloads 中的 Ext 键值下发，Ext 的协议格式由业务方确定，APNs 只做透传。|
+|Desc|String|自定义消息描述信息。当接收方为 iOS 或 Android 后台在线时，做离线推送文本展示。<br>若发送自定义消息的同时设置了 [OfflinePushInfo.Desc](https://cloud.tencent.com/document/product/269/2720#.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81-offlinepushinfo-.E8.AF.B4.E6.98.8E) 字段，此字段会被覆盖，请优先填 OfflinePushInfo.Desc 字段。<br>当消息中只有一个 TIMCustomElem 自定义消息元素时，如果 Desc 字段和 OfflinePushInfo.Desc 字段都不填写，将收不到该条消息的离线推送，需要填写 OfflinePushInfo.Desc 字段才能收到该消息的离线推送。|
+|Ext|String|扩展字段。当接收方为 iOS 系统且应用处在后台时，此字段作为 APNs 请求包 Payloads 中的 Ext 键值下发，Ext 的协议格式由业务方确定，APNs 只做透传。|
 |Sound|String|自定义 APNs 推送铃音。|
 
 当接收方为 iOS 系统且应用处在后台时，Desc 作为推送文本， Ext 字段作为 APNS 请求包 Payloads 中的 ext 键值下发， Data 字段不作为 APNs 的 Payloads 字段下发。注意，一条组合消息中只能包含一个 TIMCustomElem 自定义消息元素。
@@ -269,7 +269,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | ThumbDownloadFlag | Number | 视频缩略图下载方式标记。目前 ThumbDownloadFlag 取值只能为2，表示可通过`ThumbUrl`字段值的 URL 地址直接下载视频缩略图。 |
 
 
->2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的的视频消息元素如下：
+>2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
 >```
 {
     "MsgType": "TIMVideoFileElem",
@@ -381,6 +381,10 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 |TIMFaceElem|表情消息。|中文版离线推送文本为“[表情]”；英文版为“[Face]”。|
 |TIMCustomElem|自定义消息。|Desc 字段。|
 
+### 昵称和群名称 REST API 设置接口
+设置帐号昵称 REST API 接口：[设置资料](https://cloud.tencent.com/document/product/269/1640)。
+设置群名称 REST API 接口：[修改群组基础资料](https://cloud.tencent.com/document/product/269/1620)。
+
 ### 高级应用
 #### 自定义推送声音，APNs 下发扩展字段.
 利用自定义消息元素 TIMCustomElem，Sound 填写自定义声音文件名称， Ext 填写下发的扩展字段，请求扩展字段可以从 APNs 推送 PayLoad 中的 Ext 字段获取。
@@ -461,7 +465,7 @@ OfflinePushInfo 的格式示例如下：
 |---------|---------|---------|---------|
 | PushFlag | Integer | 选填 | 0表示推送，1表示不离线推送。  |
 | Title | String | 选填 | 离线推送标题。该字段为 iOS 和 Android 共用。|
-| Desc | String | 选填 | 离线推送内容。|
+| Desc | String | 选填 | 离线推送内容。该字段会覆盖上面各种消息元素 [TIMMsgElement](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的离线推送展示文本。<br>若发送的消息只有一个 [TIMCustomElem](https://cloud.tencent.com/document/product/269/2720#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0) 自定义消息元素，该 Desc 字段会覆盖 TIMCustomElem 中的 Desc 字段。如果两个 Desc 字段都不填，将收不到该自定义消息的离线推送。|
 | Ext | String | 选填 | 离线推送透传内容。 |
 | AndroidInfo.Sound | String | 选填 | Android 离线推送声音文件路径。 |
 | AndroidInfo.OPPOChannelID | String | 选填 | OPPO 手机 Android 8.0 以上的 NotificationChannel 通知适配字段。 |
@@ -475,5 +479,5 @@ OfflinePushInfo 的格式示例如下：
 ## 参考
 
 Apple Push Notification Service(APNs) [苹果推送开发文档](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-<!--iOS 离线消息推送配置：[离线推送(iOS)]()。-->
+iOS 离线消息推送配置：[离线推送(iOS)](https://cloud.tencent.com/document/product/269/9154)。
 
