@@ -41,17 +41,17 @@ The on-cloud recording feature is disabled by default. For feature overview and 
 
 ## On-Cloud MixTranscoding Fees
 
-The On-Cloud MixTranscoding feature is disabled by default. For feature overview and instructions, please see [On-Cloud MixTranscoding](https://cloud.tencent.com/document/product/647/16827). To use this feature, you need to activate LVB and [configure transcoding](https://cloud.tencent.com/document/product/267/32834) in the LVB Console based on your business needs.
+The On-Cloud MixTranscoding feature is disabled by default. For feature overview and instructions, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618). To use this feature, you need to activate LVB and [configure transcoding](https://intl.cloud.tencent.com/document/product/267/31062) in the LVB Console based on your business needs.
 
 | Value-added Item | Billed Product | Billing Details |
 | :--------------- | :------------------------------------------------------- | :----------------------------------------------------------- |
-| On-Cloud MixTranscoding | [LVB](https://cloud.tencent.com/document/product/267) | It is billed by the **duration of On-Cloud MixTranscoding for different codecs and resolutions**. For more information, please see [LVB]() |
+| On-Cloud MixTranscoding | [LVB](https://intl.cloud.tencent.com/document/product/267) | It is billed by the **duration of On-Cloud MixTranscoding for different codecs and resolutions**. For more information, please see [LVB]() |
 
 ## Screencapturing and Porn Information Detection Fees
 
-The screencapturing and porn information detection feature is disabled by default. For feature overview and instructions, please see [Screencapturing and Porn Information Detection Settings](https://cloud.tencent.com/document/product/267/20386).
+The screencapturing and porn information detection feature is disabled by default. For feature overview and instructions, please see [Screencapturing and Porn Information Detection Settings](https://intl.cloud.tencent.com/document/product/267/31072).
 
 | Value-added Item | Billed Product | Billing Details |
 | :------- | :------------------------------------------------------- | :---------------------------------------- |
-| LVB screencapturing | [LVB](https://cloud.tencent.com/document/product/267) | It is billed by the **number of screenshots**. For more information, please see [LVB]() |
-| Intelligent porn information detection | [LVB](https://cloud.tencent.com/document/product/267) | It is billed by the **number of images for porn information detection**. For more information, please see [LVB]() |
+| LVB screencapturing | [LVB](https://intl.cloud.tencent.com/document/product/267) | It is billed by the **number of screenshots**. For more information, please see [LVB]() |
+| Intelligent porn information detection | [LVB](https://intl.cloud.tencent.com/document/product/267) | It is billed by the **number of images for porn information detection**. For more information, please see [LVB]() |
