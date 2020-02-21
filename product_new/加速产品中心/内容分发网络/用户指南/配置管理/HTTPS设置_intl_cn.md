@@ -27,8 +27,6 @@ HTTPS 是指超文本传输安全协议（Hypertext Transfer Protocol Secure）�
 ![img](https://main.qcloudimg.com/raw/b78e5bc45ca42a1c4fbeb9db059fa6fa.png)
 <!--了解更多 HTTP2.0 相关特性，请参见 [HTTP2.0 的新特性]()。-->
 
-> `.myqcloud.com`后缀加速域名暂不支持 HTTP2.0
-
 ## OCSP 装订配置
 **功能说明**
 OCSP 装订（OCSP Stapling，TLS 证书状态查询扩展）。OCSP Stapling 服务器在 TLS 握手时可将已经缓存好的 OCSP 查询结果发送给客户端，供用户验证，而不用让客户端自己向 CA 发送请求。OCSP 装订极大地提高了 TLS 握手效率，节省了用户验证时间。

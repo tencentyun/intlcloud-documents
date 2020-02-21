@@ -26,4 +26,3 @@ Binding key 、Routing key 是组合使用的，提供类似于 RabbitMQ 的消�
 
 
 ![](//mc.qcloudimg.com/static/img/d12ffc8e91322fead97b7633cea47f9a/image.png)
-

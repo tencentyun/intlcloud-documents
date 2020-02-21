@@ -12,8 +12,7 @@ MongoDB 的服务模型是每个网络连接由一个单独的线程（ one-thre
 3. 请检查是否有慢查询导致连接被占用。<br>
  - 若确认业务无异常，请检查索引是否有异常，例如之前建立的索引被误删等。<br> 
  -  若索引无异常，请检查当前是否有大量慢查询。慢查询导致连接一直占用未被释放，因此会建立更多的连接。<br>
-登录 [腾讯云 MongoDB 控制台](https://console.cloud.tencent.com/mongodb) ，查看实例的慢日志，可选择抽象查询。<br>
-
+登录 [腾讯云 MongoDB 控制台](https://console.cloud.tencent.com/mongodb) ，查看实例的慢日志，可选择抽象查询。
 请关注：command、COLLSCAN、IXSCAN、keysExamined、docsExamined 等关键字，更多的日志说明请参考 [MongoDB 官网](https://docs.mongodb.com/manual/reference/log-messages/index.html)， <br>
    需注意的关键字如下：<br>
  1. command 指出慢日志中记录的操作。<br>
@@ -32,7 +31,7 @@ MongoDB 的服务模型是每个网络连接由一个单独的线程（ one-thre
           ]
         }
         )
-返回如下图所示，msg 字段代表了当前建索引的的进度，locks 字段代表该操作的锁类型，更多锁的说明请参考 [MongoDB 官网](https://docs.mongodb.com/v3.2/reference/database-profiler/)。<br>
+返回如下图所示，msg 字段代表了当前建索引的进度，locks 字段代表该操作的锁类型，更多锁的说明请参考 [MongoDB 官网](https://docs.mongodb.com/v3.2/reference/database-profiler/)。<br>
 ![](https://main.qcloudimg.com/raw/355b6c06539ad6a5e3980b90bd200bf0.png)
 ![](https://main.qcloudimg.com/raw/155583329a2eb2a99575a2b5ce0b8647.png)<br>
 5. 评估实例配置是否满足业务要求<br>
@@ -41,13 +40,12 @@ MongoDB 的服务模型是每个网络连接由一个单独的线程（ one-thre
 ## 连接拒绝 ##
 若在实际使用过程中出现了连接拒绝，请参考如下步骤排查问题。<br>
 1. 确认实例连接使用率是否达到100%。
-登录 [腾讯云 MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，查看控制台的连接数和连接使用率监控指标。<br>
-
+登录 [腾讯云 MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，查看控制台的连接数和连接使用率监控指标。
  若实例连接使用率100%，请排查自身业务是否有异常，另一方面紧急情况可以通过在控制台重启 mongos 来快速释放连接。
 >! 重启 mongos 会导致实例所有的连接在重启的一瞬间中断，业务直接进行重连即可，不存在持续影响业务的可能。若重启后业务连接数迅速增加又导致连接使用率100%，则说明业务确实存在大量有效连接，不属于连接泄漏的场景。此时需要业务首先排查产生大量连接的原因，可参考连接使用率高问题的排查方法。
 
 2. 确认用户名与密码是否错误。
-请确保用户名和密码正确，如有错，请前往控制台更改。路径为【管理】->【账号管理】。<br>
+请确保用户名和密码正确，如有错，请前往控制台更改。路径为【管理】->【账号管理】。
 
 3. 确认 Mongoshell 版本。
 为保障鉴权成功，请安装 Mongo Shell 3.0及以上版本。安装步骤请参考 [官方文档](https://docs.mongodb.com/v3.2/installation/)。<br>
