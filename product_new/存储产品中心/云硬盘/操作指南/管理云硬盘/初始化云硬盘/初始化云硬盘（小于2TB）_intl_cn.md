@@ -14,7 +14,7 @@
 
 <span id="Windows2008"></span>
 ### 初始化云硬盘（Windows）
->?本文将以 Windows Server 2008 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
+>本文将以 Windows Server 2008 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 
 1. [登录 Windows 云服务器](https://cloud.tencent.com/document/product/213/5435)。
 2. 在云服务器桌面，单击【开始】。
@@ -74,7 +74,7 @@ mkfs -t <文件系统格式> /dev/vdb
 ```
 mkfs -t ext4 /dev/vdb
 ```
->! 格式化需要等待一段时间，请观察系统运行状态，不要退出。
+>格式化需要等待一段时间，请观察系统运行状态，不要退出。
 4. 执行以下命令，新建挂载点。
 ```
 mkdir <挂载点>
@@ -247,7 +247,7 @@ df -TH
  ![](https://main.qcloudimg.com/raw/b7e5501fed8d7d648b48dc66685baf94.png)
  表示新建分区`/dev/vdb1`已挂载至`/data/newpart`。
  
->?若无需设置开机自动挂载磁盘，则跳过后续步骤。
+>若无需设置开机自动挂载磁盘，则跳过后续步骤。
 >
 16. 确认挂载方式并获取对应信息。
  您可以根据业务需求选择使用弹性云硬盘的软链接、文件系统的 UUID（universally unique identifier）或设备名称自动挂载磁盘，相关说明和信息获取方式如下：
