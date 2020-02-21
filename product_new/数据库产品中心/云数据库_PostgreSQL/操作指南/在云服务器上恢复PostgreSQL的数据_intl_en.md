@@ -45,7 +45,7 @@ mkdir /var/lib/pgsql/9.5/recovery
 3. Download the backup file from the provided VPC address or public network address.
 >
 >- If a VPC address is to be used, the TencentDB instance and CVM instance should be in the same VPC, and the backup needs to be downloaded to the `/var/lib/pgsql/10/recovery` directory.
->- If a public network address is to be used, the downloaded backup file needs to be uploaded to the `/var/lib/pgsql/10/recovery` directory in the CVM instance. For more information, please see [How to Copy Local Files to CVM Instances](https://cloud.tencent.com/document/product/213/39138).
+>- If a public network address is to be used, the downloaded backup file needs to be uploaded to the `/var/lib/pgsql/10/recovery` directory in the CVM instance. For more information, please see [How to Copy Local Files to CVM Instances](https://intl.cloud.tencent.com/document/product/213/2761).
 >
 After upload, the following information will be displayed:
 ![](https://main.qcloudimg.com/raw/e450c3acbab7f0c18560accbe7085184.png)
