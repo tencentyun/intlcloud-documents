@@ -1,9 +1,9 @@
 ## 操作场景
 您可以创建云硬盘并将它连接到同一个可用区内的任何云服务器。通过块储存设备映射，云硬盘被云服务器识别并使用，云硬盘在创建后不需要预热即可达到其最高性能。
-您可以根据业务使用需要选择创建不同类型的云硬盘，更多关于云硬盘类型的信息请参考 [云硬盘类型](https://intl.cloud.tencent.com/document/product/362/31636)。
+您可以根据业务使用需要选择创建不同类型的云硬盘，更多关于云硬盘类型的信息请参考 [云硬盘类型](/doc/product/362/2353)。
 
 ## 前提条件
-在创建云硬盘前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在创建云硬盘前，您需要完成 [注册腾讯云](https://cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://cloud.tencent.com/document/product/378/3629)。
 
 ## 操作步骤
 ### 使用控制台创建云硬盘
@@ -28,7 +28,7 @@
 			 <td>快速创盘</td>
 			 <td>可选参数。使用快照创建云硬盘时，需勾选【使用快照创建云硬盘】并选择您需要使用的快照。
 				 <ul><li>使用快照创建的云硬盘容量默认等于快照大小，您可以调整容量大于该默认值。</li>
-         <li>通过快照创建云硬盘时，磁盘类型和快照源云硬盘保持一致。</li></ul></td>
+         <li>通过快照创建云硬盘时，磁盘类型和快照源云硬盘默认保持一致，您可以调整云硬盘类型。</li></ul></td>
 		 </tr>
 	 <tr>
          <td>容量</td>
@@ -37,7 +37,7 @@
 	 <tr>
 	 <tr>
          <td>定期快照</td>
-         <td>可选参数。<br>您可以在创建云硬盘时关联定期快照策略，对云硬盘的快照进行定期管理。目前中国境内每个地域提供50G免费额度，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/362/32415">快照计费概述</a>。
+         <td>可选参数。<br>您可以在创建云硬盘时关联定期快照策略，对云硬盘的快照进行定期管理。目前中国境内每个地域提供50G免费额度，详情请参见 <a href="https://cloud.tencent.com/document/product/362/32361#.E5.BF.AB.E7.85.A7.E8.AE.A1.E8.B4.B9.E6.A6.82.E8.BF.B0">快照计费概述</a>。
          </td>
      </tr>
      <tr>
@@ -50,11 +50,11 @@
      </tr>
 	 <tr>
          <td>标签</td>
-         <td>可选参数。</br>您可以在创建云硬盘时为云硬盘绑定标签，标签用于标识云资源，可通过标签实现对云资源的分类和搜索。关于标签的更多详细信息，请参考 <a href="https://intl.cloud.tencent.com/document/product/651">标签产品文档</a>。</td>
+         <td>可选参数。</br>您可以在创建云硬盘时为云硬盘绑定标签，标签用于标识云资源，可通过标签实现对云资源的分类和搜索。关于标签的更多详细信息，请参考 <a href="https://cloud.tencent.com/document/product/651">标签产品文档</a>。</td>
      </tr>
 	 <tr>
          <td>计费模式</td>
-         <td>必选参数。</br>云硬盘支持的计费类型为：按量计费
+         <td>必选参数。</br>云硬盘支持的计费类型：<li>按量计费</li></ul></td>
      </tr>
 	  <tr>
          <td>购买数量</td>
@@ -62,26 +62,27 @@
      </tr>
 	 <tr>
          <td>购买时长</td>
-         <td>如果【计费模式】选择【按量计费】，则不涉及该参数。</td>
+         </li><li>如果【计费模式】选择【按量计费】，则不涉及该参数。</li></ul></td>
      </tr>
 		 <tr>
          <td>自动续费</td>
-		<td>如果【计费模式】选择【按量计费】，则不涉及该参数。</td>
+         <td><ul>
+				
+					</li>
+				 <li>如果【计费模式】选择【按量计费】，则不涉及该参数。</li></ul></td>
      </tr>
-
 </table>
-
 4. 单击【确定】。
  - 如果【计费模式】选择【按量计费】，则完成创建。
- - 如果【计费模式】选择【包年包月】，则进入【核对信息】页面。
+
   <ol>
   1. 规格确认无误后，根据实际情况选择是否使用代金券，单击【确认购买】。
   2. 完成支付。
  </ol>
-5. 您可在 [云硬盘列表](https://console.cloud.tencent.com/cvm/cbs) 页面查看已创建的云硬盘，新建的弹性云硬盘为【待挂载】状态，可参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/5745) 将云硬盘挂载至同一可用区内的云服务器。
+5. 您可在 [云硬盘列表](https://console.cloud.tencent.com/cvm/cbs) 页面查看已创建的云硬盘，新建的弹性云硬盘为【待挂载】状态，可参考 [挂载云硬盘](https://cloud.tencent.com/document/product/362/5745) 将云硬盘挂载至同一可用区内的云服务器。
 
 ### 使用快照创建云硬盘
 如果您希望创建的新云硬盘直接包含相关数据，则可以选择 [从快照创建云硬盘](https://cloud.tencent.com/document/product/362/5757)。
 
 ### 使用 API 创建云硬盘
-您可以使用 CreateDisks 接口创建云硬盘，具体操作请参考 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/16312)。
+您可以使用 CreateDisks 接口创建云硬盘，具体操作请参考 [创建云硬盘](https://cloud.tencent.com/document/product/362/16312)。
