@@ -57,7 +57,7 @@ Deployment 声明了 Pod 的模板和控制 Pod 的运行策略，适用于部�
 
 ## Kubectl 操作 Deployment 指引
 
-### YAML 示例<span id="YAMLSample"></span>
+### YAML 示例
 ```Yaml
 apiVersion: apps/v1beta2
 kind: Deployment
