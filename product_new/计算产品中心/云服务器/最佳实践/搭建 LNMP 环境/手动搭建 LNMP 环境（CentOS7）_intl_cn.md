@@ -1,26 +1,21 @@
 ## 操作场景
 LNMP 环境是指在 Linux 系统下，由 Nginx + MySQL/MariaDB + PHP 组成的网站服务器架构。本文档介绍如何在腾讯云云服务器（CVM）上手动搭建 LNMP 环境。
 
-进行手动搭建 LNMP 环境，您需要熟悉 Linux 命令，例如 [CentOS 环境下通过 YUM 安装软件](https://intl.cloud.tencent.com/document/product/213/2046) 等常用命令，并对所安装软件的使用及版本兼容性比较了解。
+进行手动搭建 LNMP 环境，您需要熟悉 Linux 命令，例如 [CentOS 环境下通过 YUM 安装软件](https://cloud.tencent.com/document/product/213/2046) 等常用命令，并对所安装软件的使用及版本兼容性比较了解。
 
 ## 示例软件版本
 本文搭建的 LNMP 环境软件组成版本及说明如下：
 - Linux：Linux 操作系统，本文以 CentOS 7.6 为例。
-- Nginx：Web 服务器，本文以  Nginx 1.17.5 为例。
+- Nginx：Web 服务器，本文以  Nginx 1.17.7 为例。
 - MariaDB：数据库，本文以 MariaDB 10.4.8 为例。
 - PHP：脚本语言，本文以 PHP 7.2.22 为例。
-
-
-## 前提条件
-已购买 Linux 云服务器。如果您还未购买云服务器，请参考 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2936)。
-
 
 ## 操作步骤
 
 ### 步骤1：登录 Linux 实例
-[使用标准方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)。您也可以根据实际操作习惯，选择其他不同的登录方式：
-- [使用远程登录软件登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32502)
-- [使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501)
+[使用标准方式登录 Linux 实例（推荐）](https://cloud.tencent.com/document/product/213/5436)。您也可以根据实际操作习惯，选择其他不同的登录方式：
+- [使用远程登录软件登录 Linux 实例](https://cloud.tencent.com/document/product/213/35699)
+- [使用 SSH 登录 Linux 实例](https://cloud.tencent.com/document/product/213/35700)
 
 ### 步骤2：安装 Nginx
 1. 执行以下命令，在 `/etc/yum.repos.d/` 下创建 `nginx.repo` 文件。
@@ -45,8 +40,9 @@ yum install -y nginx
 vim /etc/nginx/nginx.conf
 ```
 6. 按 “**i**” 切换至编辑模式，编辑 `nginx.conf` 文件。
+7. 找到 `server{...}`，并将 `server` 大括号中相应的配置信息替换为如下内容。
 用于取消对 IPv6 地址的监听，同时配置 Nginx，实现与 PHP 的联动。
->找到 `nginx.conf` 文件中的 `#gzip on;`，另起一行并输入以下内容。
+> 您可使用 `Ctrl+F` 向下翻页、`Ctrl+B`向上翻页查看文件。若 `nginx.conf` 文件中未找到 `server{...}`，请在 `include /etc/nginx/conf.d/*conf;`上方添加如下内容。
 >
 ```
 server {
@@ -109,7 +105,9 @@ yum -y remove 包名
 ```
 vi /etc/yum.repos.d/MariaDB.repo
 ```
-3. 按 “**i**” 切换至编辑模式，写入以下内容。
+3. 按 “**i**” 切换至编辑模式，写入以下内容，添加 MariaDB 软件库。
+> 不同操作系统的 MariaDB 软件库不同，您可前往 [MariaDB 官网](https://downloads.mariadb.org) 获取其他版本操作系统的 MariaDB 软件库安装信息。
+>
 ```
 # MariaDB 10.4 CentOS repository list - created 2019-11-05 11:56 UTC
 # http://downloads.mariadb.org/mariadb/repositories/
@@ -119,7 +117,6 @@ baseurl = http://yum.mariadb.org/10.4/centos7-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
->您可前往 [MariaDB 官网](https://downloads.mariadb.org) 获取其他版本操作系统的安装信息。
 4. 按 “**Esc**”，输入 “**:wq**”，保存文件并返回。
 5. 执行以下命令，安装 MariaDB。
 ```
@@ -185,13 +182,13 @@ http://云服务器实例的公网 IP
 
 
 ## 相关操作
-在完成了 LNMP 环境搭建之后，您可在此基础上进行 [手动搭建 Wordpress 个人站点](https://intl.cloud.tencent.com/document/product/213/8044) 实践，了解并掌握更多关于云服务器的相关功能。
+在完成了 LNMP 环境搭建之后，您可在此基础上进行 [手动搭建 Wordpress 个人站点](https://cloud.tencent.com/document/product/213/8044) 实践，了解并掌握更多关于云服务器的相关功能。
 
 ## 常见问题
 如果您在使用云服务器的过程中遇到问题，可参考以下文档并结合实际情况分析并解决问题：
-- 云服务器的登录问题，可参考 [密码及密钥](https://intl.cloud.tencent.com/document/product/213/18120)、[登录及远程连接](https://intl.cloud.tencent.com/document/product/213/17278)。
-- 云服务器的网络问题，可参考 [IP 地址](https://intl.cloud.tencent.com/document/product/213/17285)、[端口与安全组](https://intl.cloud.tencent.com/document/product/213/2502)。
-- 云服务器硬盘问题，可参考 [系统盘和数据盘](https://intl.cloud.tencent.com/document/product/213/17351)。
+- 云服务器的登录问题，可参考 [密码及密钥](https://cloud.tencent.com/document/product/213/18120)、[登录及远程连接](https://cloud.tencent.com/document/product/213/17278)。
+- 云服务器的网络问题，可参考 [IP 地址](https://cloud.tencent.com/document/product/213/17285)、[端口与安全组](https://cloud.tencent.com/document/product/213/2502)。
+- 云服务器硬盘问题，可参考 [系统盘和数据盘](https://cloud.tencent.com/document/product/213/17351)。
 
 
 
