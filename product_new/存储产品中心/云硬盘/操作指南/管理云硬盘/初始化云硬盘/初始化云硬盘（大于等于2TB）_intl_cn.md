@@ -72,7 +72,7 @@ mkfs -t <文件系统格式> /dev/vdb
 ```
 mkfs -t ext4 /dev/vdb
 ```
->! 格式化需要等待一段时间，请观察系统运行状态，不要退出。
+>格式化需要等待一段时间，请观察系统运行状态，不要退出。
 4. 执行以下命令，新建挂载点。
 ```
 mkdir <挂载点>
@@ -154,7 +154,7 @@ mount -a
 <span id="CreateFileSystemOnPartition"></span>
 #### 在分区上构建文件系统
 
->?本文将以在 CentOS 7.5 操作系统中使用 parted 分区工具将数据盘 `/dev/vdc`设置为主分区，分区形式默认设置为 GPT，文件系统设置为 EXT4 格式，挂载在`/data/newpart2`下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
+>本文将以在 CentOS 7.5 操作系统中使用 parted 分区工具将数据盘 `/dev/vdc`设置为主分区，分区形式默认设置为 GPT，文件系统设置为 EXT4 格式，挂载在`/data/newpart2`下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 
 1. [登录 Linux 云服务器](https://cloud.tencent.com/document/product/213/5436)
 2. 以 root 用户执行以下命令，查看磁盘名称。
@@ -238,7 +238,7 @@ df -TH
  ![](https://main.qcloudimg.com/raw/774c2d9ff266634c4836df6456b9dd4d.png)
  表示新建分区`/dev/vdc1`已挂载至`/data/newpart2`。
  
->?若无需设置开机自动挂载磁盘，则跳过后续步骤。
+>若无需设置开机自动挂载磁盘，则跳过后续步骤。
 >
 16. 确认挂载方式并获取对应信息。
  您可以根据业务需求选择使用弹性云硬盘的软链接、文件系统的 UUID（universally unique identifier）或设备名称自动挂载磁盘，相关说明和信息获取方式如下：
