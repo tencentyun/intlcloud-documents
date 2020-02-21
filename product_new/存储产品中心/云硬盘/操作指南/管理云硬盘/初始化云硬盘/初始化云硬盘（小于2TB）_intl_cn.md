@@ -1,13 +1,14 @@
 ## 操作场景
-本文以云硬盘容量小于2TB为例，提供云硬盘的初始化操作指导。关于磁盘初始化场景的更多介绍，请参考 [初始化场景介绍](https://intl.cloud.tencent.com/document/product/362/31596)。
+本文以云硬盘容量小于2TB为例，提供云硬盘的初始化操作指导。关于磁盘初始化场景的更多介绍，请参考 [初始化场景介绍](https://cloud.tencent.com/document/product/362/33065)。
 
 
 ## 前提条件
->! 
->- 格式化数据盘会将数据将被全部清空，请确保数据盘中没有数据或已备份重要数据。
->- 为避免服务发生异常，格式化前请确保云服务器已停止对外服务。
->
-已 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401) 至云服务器。
+已 [挂载云硬盘](/doc/product/362/5745) 至云服务器。
+
+## 注意事项
+- 您可先了解 [云硬盘使用注意事项](https://cloud.tencent.com/document/product/362/17819#.E4.BA.91.E7.A1.AC.E7.9B.98.E4.BD.BF.E7.94.A8.E4.B8.8A.E6.9C.89.E4.BB.80.E4.B9.88.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.EF.BC.9F) 后再对云硬盘进行相关操作，以免损坏重要数据。
+- 格式化数据盘会将数据将被全部清空，请确保数据盘中没有数据或已备份重要数据。
+- 为避免服务发生异常，格式化前请确保云服务器已停止对外服务。
 
 ## 操作步骤
 
@@ -15,17 +16,17 @@
 ### 初始化云硬盘（Windows）
 >?本文将以 Windows Server 2008 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 
-1. [登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/5435)。
+1. [登录 Windows 云服务器](https://cloud.tencent.com/document/product/213/5435)。
 2. 在云服务器桌面，单击【开始】。
 3. 右键单击开始菜单中的【计算机】，选择【管理】。
 4. 在左侧导航树中，选择【存储】>【磁盘管理】。进入【磁盘管理】页面。
 
 
->?若新增磁盘处于脱机状态（如上图），需要先执行 [步骤5](#online) 联机后再执行 [步骤6](#initialize) 进行初始化。否则直接执行 [步骤6](#initialize) 进行初始化。
+>若新增磁盘处于脱机状态（如上图），需要先执行 [步骤5](#online) 联机后再执行 [步骤6](#initialize) 进行初始化。否则直接执行 [步骤6](#initialize) 进行初始化。
 
 <span id="online"></span>
 5. 在右侧窗格中出现磁盘列表，右键单击磁盘1区域，在菜单列表中选择【联机】，进行联机。联机后，磁盘1由【脱机】状态变为【没有初始化】。
-
+ 
  
 <span id="initialize"></span>
 6. 右键单击磁盘1区域，在菜单列表中选择【初始化磁盘】。
@@ -42,11 +43,11 @@
 11. 分配驱动器号，单击【下一步】。
 
 12. 选择【按下列设置格式化这个卷】，并根据实际情况设置参数，格式化新分区，单击【下一步】完成分区创建。
-
+ 
 13. 单击【完成】完成向导。需要等待片刻让系统完成初始化操作，当卷状态为【状态良好】时，表示初始化磁盘成功。
-
+ 
   初始化成功后，进入【计算机】界面可以查看到新磁盘。
-
+  
 
 <span id="Linux"></span>
 ### 初始化云硬盘（Linux）
@@ -58,7 +59,7 @@
 <span id="CreateFileSystemOnBareDevice"></span>
 #### 在裸设备上构建文件系统
 
-1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)。
+1. [登录 Linux 云服务器](https://cloud.tencent.com/document/product/213/5436)。
 2. 以 root 用户执行以下命令，查看磁盘名称。
  ```
 fdisk -l
@@ -73,7 +74,7 @@ mkfs -t <文件系统格式> /dev/vdb
 ```
 mkfs -t ext4 /dev/vdb
 ```
-> 格式化需要等待一段时间，请观察系统运行状态，不要退出。
+>! 格式化需要等待一段时间，请观察系统运行状态，不要退出。
 4. 执行以下命令，新建挂载点。
 ```
 mkdir <挂载点>
@@ -158,7 +159,7 @@ mount -a
 >本操作将以在 CentOS 7.5 操作系统中使用 fdisk 分区工具将数据盘 `/dev/vdb`设置为主分区，分区形式默认设置为 MBR，文件系统设置为 EXT4 格式，挂载在`/data/newpart`下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 >
 
-1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)。
+1. [登录 Linux 云服务器](https://cloud.tencent.com/document/product/213/5436)。
 2. 以 root 用户执行以下命令，查看磁盘名称。
  ```
 fdisk -l
@@ -202,7 +203,7 @@ fdisk /dev/vdb
  ![](https://main.qcloudimg.com/raw/98427c11e0a181e02eb23a95fc1e908c.png)
  表示新建分区`/dev/vdb1`的详细信息。
 
->若上述分区操作有误，请输入`q`，退出 fdisk 分区工具，之前的分区结果将不会被保留。
+>?若上述分区操作有误，请输入`q`，退出 fdisk 分区工具，之前的分区结果将不会被保留。
 
 10. 输入`w`，按 **Enter**，将分区结果写入分区表中。
  回显信息类似如下图，表示分区创建完成。
@@ -246,7 +247,7 @@ df -TH
  ![](https://main.qcloudimg.com/raw/b7e5501fed8d7d648b48dc66685baf94.png)
  表示新建分区`/dev/vdb1`已挂载至`/data/newpart`。
  
->若无需设置开机自动挂载磁盘，则跳过后续步骤。
+>?若无需设置开机自动挂载磁盘，则跳过后续步骤。
 >
 16. 确认挂载方式并获取对应信息。
  您可以根据业务需求选择使用弹性云硬盘的软链接、文件系统的 UUID（universally unique identifier）或设备名称自动挂载磁盘，相关说明和信息获取方式如下：
@@ -306,5 +307,5 @@ UUID=d489ca1c-5057-4536-81cb-ceb2847f9954 /data/newpart   ext4 defaults     0   
 如果运行通过则说明文件写入成功，新建的文件系统会在操作系统启动时自动挂载。
 
 ## 相关操作
-[初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/document/product/362/31598)
+[初始化云硬盘（大于等于2TB）](https://cloud.tencent.com/document/product/362/6735)
 
