@@ -90,7 +90,7 @@ upstream_response_time: 0.354
 
 【键值提取模式】请选择**完全正则**，如下图所示：
 
-![](https://main.qcloudimg.com/raw/79786db542d1171f3d66fb972d104d28.png)
+![](https://main.qcloudimg.com/raw/4264c5f0f9262d41ab305d56e5b2f901.png)
 
 #### 6.1 定义正则表达式
 
