@@ -54,7 +54,8 @@
 
 
 <tr>
-	 <td>2019.09.12</td>TKE 集群伸缩组相关 API </a>接入 API 3.0</td>
+	 <td>2019.09.12</td>
+	<td>TKE 集群伸缩组相关 API 接入 API 3.0</td>
 </tr>
 
 <tr>
@@ -65,7 +66,7 @@
 
 <tr>
 	 <td>2019.09.06</td>
-	 <td><ul class="params"><li>TKE 接入腾讯云标签, 支持按标签授权</li><li>创建 LoadBalancer 类型的 Service 默认采用实例类型为：<a href="https://intl.cent.com/document/product/214/8847">负载均衡</a>（原“应用型负载均衡”） </li></td>
+	 <td><ul class="params"><li>TKE 接入腾讯云标签, 支持按标签授权</li><li>创建 LoadBalancer 类型的 Service 默认采用实例类型为：<a href="https://intl.cloud.tencent.com/document/product/214/8847">负载均衡</a>（原“应用型负载均衡”） </li></td>
 </tr>
 
 
@@ -130,7 +131,7 @@
 
 <tr>
 	 <td>2019.06.29</td>
-	 <td><ul class="params"><li><a TKE支持 VPC-CNI 网络模式（内测）</a></li><li><a  StatefulSet 支持固定 IP（内测）</a></li></ul></td>
+	 <td><ul class="params"><li>TKE支持 VPC-CNI 网络模式（内测</li><li>StatefulSet 支持固定 IP（内测）</li></ul></td>
 </tr>
 
 <tr>

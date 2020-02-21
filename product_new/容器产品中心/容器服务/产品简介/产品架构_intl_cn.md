@@ -1,7 +1,4 @@
 
-以下视频介绍了腾讯云容器服务的架构及相关功能：
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1563-10966?ADTAG=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
 ### 总体架构
 本节介绍腾讯云容器服务系统的设计和实现，产品架构如下图所示：
 ![](https://main.qcloudimg.com/raw/8ecde8fe39d8f4cc65b9622823ab1058.png)
