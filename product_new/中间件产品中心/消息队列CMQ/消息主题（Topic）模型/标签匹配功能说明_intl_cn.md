@@ -2,7 +2,7 @@ CMQ 的 Topic 模式支持订阅筛选标签（tag）功能，类似于 rabbitMQ
 ![](https://main.qcloudimg.com/raw/171e6538aafb695b153a68ff682fd38f.png)
 ## 场景说明
 ### 场景1
-有4个订阅者 A、B、C、D，A 消息标签是 apple，B 消息标签是 xiaomi，C 没有设置任何标签，D 的消息标签是 imac+xiaomi。
+有4个订阅者 A、B、C、D，A 消息标签是 apple，B 消息标签是 xiaomi，C 的消息标签是 imac+xiaomi，D 没有设置任何标签。
 此时，有生产者 publish 到 Topic 100条消息，带的消息标签过滤为：apple、imac、iphone、macbook。此后 Topic 立即投递到 A、B、C、D。
 
 **场景分析**：
@@ -11,8 +11,9 @@ CMQ 的 Topic 模式支持订阅筛选标签（tag）功能，类似于 rabbitMQ
 |:---------:|:---------:|:---------:|
 | A | apple | 由于 apple 能匹配消息过滤标签中的 apple，则能正常收到100条消息。 |
 | B | xiaomi | 不能收到任何消息。 |
-| C | - | 不能收到任何消息。 |
-| D | imac+xiaomi | 由于其中一个标签 imac 能匹配，则能正常收到100条消息 。|
+| C | imac+xiaomi | 由于其中一个标签 imac 能匹配，则能正常收到100条消息 。|
+| D | - | 不能收到任何消息。 |
+
 
 
 
@@ -70,5 +71,3 @@ Topic 名为 test2 ，在12点01分，调用了订阅发布的 API，定义该�
 | B | 无 | 有 |投递时消息不用匹配，订阅者都能收到消息。 |
 | C | 有 | 有 |两者匹配的，才能收到消息。支持 N:M 匹配，如消息有10个 tag，订阅者有4个 tag，其中有1个 tag 相互能匹配上，则订阅者能收到消息。 |
 | D | 无 | 无 | 投递后，所有订阅者都能收到消息。 |
-
-
