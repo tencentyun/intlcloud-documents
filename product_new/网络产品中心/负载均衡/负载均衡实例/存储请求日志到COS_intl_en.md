@@ -1,52 +1,51 @@
-CLB supports storage of request logs. You can store such logs to COS and download them for analytics. Currently, the layer-7 (HTTP/HTTPS) logging feature is available in Guangzhou, Shanghai, Beijing, Hong Kong (China), Shanghai Finance, and Beijing Finance regions. CLB does not support layer-4 (TCP/UDP) log storage or download.
+负载均衡支持七层重定向，该功能支持用户在七层 HTTP/HTTPS 监听器上配置重定向。
+>
+>- 会话保持：如果客户端访问了`example.com/bbs/test/123.html` ，且后端 CVM 开启了会话保持。当启用重定向后，将流量导到`example.com/bbs/test/456.html`时，原会话保持机制将失效。
+- TCP / UDP 重定向：暂不支持 IP + Port 级别的重定向，后续版本将提供。
+## 重定向概述
+1. 自动重定向
+  - 简介
+  系统自动为已存在的`HTTPS:443`监听器创建 HTTP 监听器进行转发，默认使用 80 端口。创建成功后可以通过`HTTP:80`地址自动跳转为`HTTPS:443`地址进行访问。
+  - 使用场景
+ 强制 HTTPS 跳转，即 HTTP 强转 HTTPS。PC、手机浏览器等以 HTTP 请求访问 Web 服务，CLB 会将所有`HTTP:80`的请求重定向至`HTTPS:443`进行转发。
+  - 方案优势
+		- 仅需1次配置：一个域名，一次配置即可完成强制 HTTPS 跳转。
+		- 更新方便：若 HTTPS 服务的 URL 有增减，只需要在控制台，重新使用该功能刷新一遍即可。
+2. 手动重定向
+ - 简介
+您可以配置一对一重定向，如在某个 CLB 实例中，配置`监听器1 / 域名1 / URL1`重定向至`监听器2 / 域名2 / URL2`。
+ - 使用场景
+单路径的重定向。如 Web 业务需要临时下线（如电商售罄、页面维护，更新升级时），此时需将原有页面重定向至新页面。如果不做重定向，用户的收藏和搜索引擎数据库中的旧地址只能让访客得到一个`404/503` 错误信息页面，降低了用户体验度，导致访问流量白白丧失。
 
-## Activating Logging
-1. On the **CLB instance details** page, activate the log access feature.
-![](https://main.qcloudimg.com/raw/bac871f6bb89869bea69d8f71c2879fc.png)
-2. Select the corresponding bucket in the COS, under which to automatically create a folder named `lb-id` for the request logs. Then, click the bucket address to redirect to the log download page.
-![](https://main.qcloudimg.com/raw/e006dc215ffc6f54d226b3835f53019c.png)
-> If you haven't created a COS bucket, see [Creating a Bucket](https://console.cloud.tencent.com/cos5/bucket) and select the corresponding storage location.
+## 自动重定向
+腾讯云 CLB 支持一键式的 HTTP 强转 HTTPS。
+假定开发者需要配置网站`https://www.example.com` 。开发者希望用户在浏览器中输入网址时，不论是 HTTP 请求（`http://www.example.com`）还是 HTTPS 请求（`https://www.example.com`），都可通过 HTTPS 协议进行安全访问。
+### 前提条件
+已配置 `HTTPS:443` 监听器。
+### 操作步骤
+1. 请在 [腾讯云负载均衡控制台](https://console.cloud.tencent.com/clb) 完成 CLB 的 HTTPS 监听器的配置，搭建`https://example.com`的 Web 环境。详情请参见 [配置 HTTPS 监听器
+](https://cloud.tencent.com/document/product/214/36385)。
+2. 完成 HTTPS 监听器配置
+3. 在 CLB 实例详情的“重定向配置”标签页中，单击【新建重定向配置】。
+4. 选择【自动重定向配置】，并选择已配置的 HTTPS 监听器和域名，单击【下一步：配置路径】。
+5. 单击【提交】即可完成配置。
+6. 完成重定向配置后，可以看到已为`HTTPS:443` 监听器自动配置了`HTTP:80` 监听器，且 HTTP 的流量均会被自动重定向到 HTTPS。
 
-## Restrictions and Billing
-- The current log convergence granularity is 1 hour.
-- CLB currently supports storage and download of layer-7 (HTTP/HTTPS) logs but not layer-4 (TCP/UDP) logs.
-- Log data transmission may have a delay.
-- Logging is currently free of charge. A free storage capacity of 50 GB is provided for individual users as specified in [Free Quotas](http://intl.cloud.tencent.com/document/product/436/6240). If you have massive amounts of logs, please clean them up in a timely manner.
-- If the log access feature is not activated, Tencent Cloud will keep the logs for three days by default; otherwise, the storage period will be subject to the COS configuration.
 
-## Log Format and Variable Descriptions
-### Log Format
-```
-[$stgw_request_id] [$time_local] [$protocol_type] [$server_addr:$server_port] [$server_name] [$remote_addr:$remote_port] [$status]  [$upstream_status] [$proxy_host] [$request] [$request_length] [$bytes_sent] [$http_host] [$http_user_agent] [$http_referer]
-[$request_time] [$upstream_response_time] [$upstream_connect_time] [$upstream_header_time] [$tcpinfo_rtt] [$connection] [$connection_requests] [$ssl_handshake_time] [$ssl_cipher] [$ssl_protocol] [$ssl_session_reused]
-```
+## 手动重定向
+腾讯云 CLB 支持配置一对一的重定向跳转。
+例如，业务使用 forsale 页面来做运营活动，现在活动结束需要将活动页面`https://www.example.com/forsale`重定向至新主页`https://www.new.com/index`。
 
-## Log Variable Descriptions
+### 前提条件
+- 已配置 HTTPS 监听器。
+- 已配置转发域名`https://www.example.com/forsale`。
+- 已配置转发域名和路径`https://www.new.com/index`。
 
-| Number | Variable Name | Description |
-| :-------- | :-------- | :------ |
-| 1 | time_local	| Access time and time zone, such as "01/Jul/2019:11:11:00 +0800" where "+0800" represents UTC+8, i.e., Beijing time. |
-| 2 | protocol_type | Protocol type (HTTP/HTTPS/SPDY/HTTP2/WS/WSS) |
-| 3 | server_addr:server_port | Destination IP and port of a request. |
-| 4 | server_name | Rule's `server_name`, i.e., server name. |
-| 5 | remote_addr:remote_port 	| Client ip:port. |
-| 6 | status | Status code returned by CLB to the client. |
-| 7 | upstream_status | Status code returned by RS to CLB. |
-| 8 | proxy_host | Upstream ID. |
-| 9 | request | Request line. |
-| 10 | request_length | Number of bytes of the request received by the client. |
-| 11 |bytes_sent | 	Number of bytes of the request sent to the client. |
-| 12 |http_host	 | Request domain name. |
-| 13 |http_user_agent |	user_agent. |
-| 14 |http_referer	 | HTTP request source. |
-| 15 | request_time| Request processing time (from the first byte received by the client until the last byte sent to it, i.e., the total time it takes for the client request to reach CLB, for CLB to forward the request to RS, for RS response data to arrive at CLB, and for CLB to forward the data to the client). |
-| 16 | upstream_response_time | Time that an entire backend request takes (from when CONNECT RS starts until RS receives the response). |
-| 17 | upstream_connect_time| Time it takes to establish a TCP connection to RS (from when CONNECT RS starts until CLB starts sending HTTP requests to RS) |
-| 18 | upstream_header_time	| Times it takes for RS to receive an HTTP header (from when CONNECT RS starts until RS receives the HTTP response header). |
-| 19 | tcpinfo_rtt | TCP connection RTT. |
-| 20 | connection | Connection ID. |
-| 21 | connection_requests | Number of connection requests. |
-| 22 | ssl_handshake_time	| Time that an SSL handshake takes. |
-| 23 | ssl_cipher | Encryption suite. |
-| 24 | ssl_protocol	| SSL protocol version. |
-| 25 | ssl_session_reused |SSL SESSION reuse. |	 
+
+### 操作步骤
+1. 请在 [腾讯云负载均衡控制台](https://console.cloud.tencent.com/clb) 完成 CLB 的 HTTPS 监听器的配置，搭建`https://example.com`的 Web 环境。详情请参见 [配置 HTTPS 监听器](https://cloud.tencent.com/document/product/214/36385)。
+2. 完成 HTTPS 配置。
+3. 在 CLB 实例详情的“重定向配置”标签页中，单击【新建重定向配置】。
+4. 选择【手动重定向配置】，选择原访问的前端协议端口`HTTPS:443`和域名`https://www.example.com/forsale`，选择重定向后的前端协议端口`HTTPS:443`和域名`https://www.new.com/index`，单击【下一步：配置路径】。
+5. 原访问路径选择`/forsale`，重定向后的访问路径选择`/index`，单击【提交】即可完成配置。
+6. 完成重定向配置后，可以看到`HTTP:443`监听器中，`https://www.example.com/forsale`已重定向至`https://www.new.com/index`。
