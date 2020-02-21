@@ -3,7 +3,7 @@ TencentDB for PostgreSQL offers the following two billing modes:
 
 | Billing Mode | Payment Mode | Application Scenario | 
 |---------|---------|---------|
-| Pay as you go | In this [postpaid](https://cloud.tencent.com/document/product/555/9617) billing mode, you can apply for resources for on-demand use and will be charged based on the actual usage at the billing time. | It is suitable for instantaneously fluctuating businesses. In this mode, instances can be released immediately after the use so as to reduce the costs. | 
+| Pay as you go | In this [postpaid](https://intl.cloud.tencent.com/document/product/555/30328) billing mode, you can apply for resources for on-demand use and will be charged based on the actual usage at the billing time. | It is suitable for instantaneously fluctuating businesses. In this mode, instances can be released immediately after the use so as to reduce the costs. | 
 
 A linear pricing schedule is used for pay-as-you-go disks. The unit prices for different regions are as follows:
 
