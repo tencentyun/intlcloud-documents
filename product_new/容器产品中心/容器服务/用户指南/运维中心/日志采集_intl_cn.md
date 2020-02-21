@@ -37,7 +37,7 @@
 采集到的日志信息将会以 JSON 格式输出到用户指定的消费端，并会附加相关的 Kubernetes metadata，包括容器所属 pod 的 label 和 annotation 等信息。
 
 #### 配置方法
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏【日志采集】。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【日志采集】。
 2. 在日志采集页面上方选择地域与集群后，单击【新建】。如下图所示：
 ![](https://main.qcloudimg.com/raw/bcee30ade672b8a4e114d25f3d5abd16.png)
 3. 在新建日志收集规则页面，选择【容器标准输出】采集类型，并配置日志源。如下图所示：
@@ -87,15 +87,15 @@
 ### 采集容器内文件日志 
 日志采集功能也支持采集集群内指定 pod 内文件的日志。
 采集到的日志信息将会以 JSON 格式输出到用户指定的消费端，并会附加相关的 Kubernetes metadata，包括容器所属 pod 的 label 和 annotation 等信息。
->!目前仅支持采集存储在 volume 的日志文件，即需要在工作负载创建时挂载 emptyDir、hostpath 等 volume，并将日志文件存到指定 volume。
+>目前仅支持采集存储在 volume 的日志文件，即需要在工作负载创建时挂载 emptyDir、hostpath 等 volume，并将日志文件存到指定 volume。
 
 
 #### 配置方法
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏【日志采集】。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【日志采集】。
 2. 在日志采集页面上方选择地域与集群后，单击【新建】。如下图所示：
 ![](https://main.qcloudimg.com/raw/31e736aeb7c96977d2978eff5e9b83ba.png)
 3. 指定【容器文件路径】采集类型，并配置日志源。如下图所示：
->?用户可以通过指定日志文件的路径来采集 pod 上相应路径的日志文件，路径支持文件路径和通配规则，如 `/var/log/nginx.log` 或 `/var/lib/docker/containers/*/*.log`。
+>用户可以通过指定日志文件的路径来采集 pod 上相应路径的日志文件，路径支持文件路径和通配规则，如 `/var/log/nginx.log` 或 `/var/lib/docker/containers/*/*.log`。
 >
 ![](https://main.qcloudimg.com/raw/42b80d3b0ee85a4898a7ab1bf13352c6.png)
 选择容器文件路径采集类型时，会默认为每条日志添加以下 metadata，其中 message 为原始日志信息。且该类型日志源不支持选择多个 Namespace 的工作负载。
@@ -141,19 +141,19 @@
 5. 单击【完成】，完成创建。
 
 
-<span id="inside"></span>
-### 采集主机内文件日志 
+
+### 采集主机内文件日志 <span id="inside"></span>
 
 日志采集功能支持采集集群内所有节点的指定主机路径的日志。用户可以根据自己的需求，灵活的配置所需的路径，日志采集 Agent 会采集集群内所有节点上满足指定路径规则的文件日志。
 采集到的日志信息将会以 JSON 格式输出到用户指定的输出端，并会附加用户指定的 metadata，包括日志来源文件的路径和用户自定义的 metadata。
 
 
 #### 配置方法
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏【日志采集】。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【日志采集】。
 2. 在日志采集页面上方选择地域与集群后，单击【新建】。如下图所示：
 ![](https://main.qcloudimg.com/raw/deee5dca8f7ed69419df61ecd149b9ca.png)
 3. 在新建日志采集规则页面，指定【节点文件路径】采集类型。如下图所示：
->?用户可以通过指定日志文件的路径来采集集群内节点上相应路径的日志文件，路径支持文件路径和通配规则，如 `/var/log/nginx.log` 或 `/var/lib/docker/containers/*/*.log`。
+>用户可以通过指定日志文件的路径来采集集群内节点上相应路径的日志文件，路径支持文件路径和通配规则，如 `/var/log/nginx.log` 或 `/var/lib/docker/containers/*/*.log`。
 >
 ![](https://main.qcloudimg.com/raw/e0991c11fb20bfea9c99e8c404ef5d44.png)
 用户可根据实际需求进行添加自定义的 “metadata” ，将采集到的日志信息附加指定 Key-Value 形式的 “metadata”，作为日志信息的 metadata 标记。
@@ -195,9 +195,10 @@
 ![](https://main.qcloudimg.com/raw/941c5737edc5ca069d83a6764fdaaf58.png)
 
 #### 配置日志服务 CLS 作为日志消费端
->!日志服务 CLS 目前只能支持同地域的容器集群进行日志采集上报。
+>日志服务 CLS 目前只能支持同地域的容器集群进行日志采集上报。
 >
 1. 创建日志集时，由于容器服务的日志有独立的采集能力，新建日志集不需要开启【使用LogListener】。如下图所示：
+请参考 [创建日志集和日志主题](https://intl.cloud.tencent.com/document/product/614/31592) 完成日志集的创建。
 ![](https://main.qcloudimg.com/raw/654d3d2408519b7fbb515f1aaf1da65c.png)
 2. 打开日志主题的【日志索引】。如下图所示：
 ![](https://main.qcloudimg.com/raw/c37bd895071f8d9b27c78318ebdc8a26.png)

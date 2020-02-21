@@ -10,7 +10,7 @@
 3. 在“创建集群”页面，设置集群的基本信息，并单击【下一步】。如下图所示：
  - **集群名称**：输入要创建的集群的名称，不超过60个字符。
  - **新增资源所属项目**：根据实际需求进行选择，新增的资源将会自动分配到该项目下。
- - **Kubernetes版本**：提供多个 Kubernetes 版本选择，单击 [这里](https://kubernetes.io/docs/home/supported-doc-versions/) 查看各版本特性对比。
+ - **Kubernetes版本**：提供多个 Kubernetes 版本选择，前往 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/) 查看各版本特性对比。
  - **运行时组件**：提供 “docker” 和 “containerd” 两种选择，详情请参见 [如何选择 Containerd 和 Docker](https://intl.cloud.tencent.com/document/product/457/31088)。
  - **所在地域**：建议您根据所在地理位置选择靠近的地域。可降低访问延迟，提高下载速度。
  - **集群网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。具体操作请参阅 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
@@ -59,7 +59,7 @@
 3. （可选）设置数据卷，要指定容器挂载至指定路径时，单击【添加数据卷】，详情查看 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。如下图所示：
 >!源路径不指定时将默认分配临时路径。
 > 
- - 类型：支持使用临时目录、主机路径、NFS盘、已有VPC、腾讯云硬盘、ConfigMap、Secret七种类型的数据卷。相关详细介绍请参阅 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
+ - 类型：支持使用临时目录、主机路径、NFS盘、已有PVC、腾讯云硬盘、ConfigMap、Secret七种类型的数据卷。相关详细介绍请参阅 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
  - 名称：数据卷的名称。
 ![](https://main.qcloudimg.com/raw/a4e6150eedd0c7385b4a170649042cee.png)
 4. 设置**实例內容器**。如下图所示：
@@ -72,7 +72,7 @@
 ![](https://main.qcloudimg.com/raw/fc1425d8ba8d84599a3b84a7376b6d7d.png)
 5. 设置**实例数量**。如下图所示：
  - 手动调节：设定实例数量，本文实例数量设置为1。可单击“+”或“-”控制实例数量。
- - 自动调节：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424)。
+ - 自动调节：满足任一设定条件，则自动调节实例（pod）数目。详情请参见 [服务自动扩缩容](https://intl.cloud.tencent.com/document/product/457/11741)。
 ![](https://main.qcloudimg.com/raw/292f93f595f95dd798385470f1f5dac7.png)
 6. 进行访问设置。如下图所示：
  - **Service**：勾选“启用”。
@@ -132,4 +132,4 @@
 
 您可进入下一个教程，了解 [负载均衡](https://intl.cloud.tencent.com/document/product/457/9110) 和 [镜像仓库](https://intl.cloud.tencent.com/document/product/457/9118) 的基本概念和操作，通过 [入门示例](https://intl.cloud.tencent.com/document/product/457/11138) 快速构建服务。
 
-​                                          
+                                          
