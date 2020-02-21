@@ -131,7 +131,7 @@
 
 <tr>
 	 <td>2019.06.29</td>
-	 <td><ul class="params"><li><a TKE支持 VPC-CNI 网络模式（内测）</a></li><li><a  StatefulSet 支持固定 IP（内测）</a></li></ul></td>
+	 <td><ul class="params"><li>TKE支持 VPC-CNI 网络模式（内测</li><li>StatefulSet 支持固定 IP（内测）</li></ul></td>
 </tr>
 
 <tr>
