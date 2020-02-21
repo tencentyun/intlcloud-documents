@@ -1,40 +1,38 @@
 ## 操作场景
-本文以云硬盘容量大于等于2TB为例，提供云硬盘的初始化操作指导。关于云磁盘初始化场景的更多介绍，请参考 [初始化场景介绍](https://intl.cloud.tencent.com/document/product/362/31596)。
+本文以云硬盘容量大于等于2TB为例，提供云硬盘的初始化操作指导。关于云磁盘初始化场景的更多介绍，请参考 [初始化场景介绍](https://cloud.tencent.com/document/product/362/33065)。
 MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分区时，请采用 GPT 分区形式。对于 Linux 操作系统而言，当磁盘分区形式选用 GPT 时，fdisk 分区工具将无法使用，需要采用 parted 工具。
 
 ## 前提条件
->
->- 格式化数据盘会将数据将被全部清空。请确保数据盘中没有数据或已备份重要数据。
->- 为避免服务发生异常，格式化前请确保云服务器已停止对外服务。
->
-已 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/32401) 至云服务器。
+已 [挂载云硬盘](/doc/product/362/5745) 至云服务器。
+
+## 注意事项
+- 您可先了解 [云硬盘使用注意事项](https://cloud.tencent.com/document/product/362/17819#.E4.BA.91.E7.A1.AC.E7.9B.98.E4.BD.BF.E7.94.A8.E4.B8.8A.E6.9C.89.E4.BB.80.E4.B9.88.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.EF.BC.9F) 后再对云硬盘进行相关操作，以免损坏重要数据。
+-  格式化数据盘会将数据将被全部清空。请确保数据盘中没有数据或已备份重要数据。
+- 为避免服务发生异常，格式化前请确保云服务器已停止对外服务。
 
 ## 操作步骤
 <span id="2TBWindows2012"></span>
 ### 初始化云硬盘（Windows）
->本文将以 Windows Server 2012 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
+>?本文将以 Windows Server 2012 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 
-1. [登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/5435)。
+1. [登录 Windows 云服务器](https://cloud.tencent.com/document/product/213/5435)。
 2. 在云服务器桌面，单击<img src="https://main.qcloudimg.com/raw/0a02193a82217974f650bbcaf4e1ed2d.png"  style="margin:0;">。进入【服务器管理器】页面。
 3. 在左侧导航树中，单击【文件和存储服务】。
 4. 在左侧导航树中，选择【卷】>【磁盘】。
- 
+
 
 >若新增磁盘处于脱机状态（如上图），需要先执行 [步骤5](#online) 联机后再执行 [步骤6](#initialize) 进行初始化。否则直接执行 [步骤6](#initialize) 进行初始化。
 
 <span id="online"></span>
 5. 在右侧窗格中出现磁盘列表，右键单击1所在行，在菜单列表中选择【联机】，进行联机。联机后，1由【脱机】状态变为【联机】。
 
- 
-<span id="initialize"></span>
 6. 右键单击1所在行，在菜单列表中选择【初始化】。
- 
-7. 根据界面提示，单击【是】。
 
+7. 根据界面提示，单击【是】。
+ 
 8. 初始化后，1由【未知】分区变为【GPT】，右键单击1所在行，在菜单列表中选择【新建简单卷】。
 
 9. 弹出【新建卷向导】对话框，根据界面提示，单击【下一步】。
-
 10. 选择服务器和磁盘，单击【下一步】。
 
 11. 根据实际情况指定卷大小，默认为最大值，单击【下一步】。
@@ -44,7 +42,7 @@ MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分�
 13. 选择【按下列设置格式化这个卷】，并根据实际情况设置参数，格式化新分区，单击【下一步】完成分区创建。
 
 14. 确认信息无误后，单击【创建】。
-
+ 
 15. 需要等待片刻让系统完成新建卷操作，单击【关闭】。
  初始化成功后，进入【这台电脑】界面可以查看到新磁盘。
 
@@ -59,13 +57,13 @@ MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分�
 <span id="CreateFileSystemOnBareDevice"></span>
 #### 在裸设备上构建文件系统
 
-1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)。
+1. [登录 Linux 云服务器](https://cloud.tencent.com/document/product/213/5436)。
 2. 以 root 用户执行以下命令，查看磁盘名称。
  ```
 fdisk -l
 ```
  回显信息类似如下图，表示当前的云服务器有两块磁盘，“/dev/vda” 是系统盘，“/dev/vdb” 是新增数据盘。
- ![](https://main.qcloudimg.com/raw/aad842b12fec3ca583790bff609c9fb7.png)
+ 
 3. 执行以下命令，对 “/dev/vdb” 裸设备直接创建文件系统格式。
 ```
 mkfs -t <文件系统格式> /dev/vdb
@@ -74,7 +72,7 @@ mkfs -t <文件系统格式> /dev/vdb
 ```
 mkfs -t ext4 /dev/vdb
 ```
-> 格式化需要等待一段时间，请观察系统运行状态，不要退出。
+>! 格式化需要等待一段时间，请观察系统运行状态，不要退出。
 4. 执行以下命令，新建挂载点。
 ```
 mkdir <挂载点>
@@ -95,7 +93,7 @@ mount /dev/vdb /data
 ```
 df -TH
 ```
-> 若无需设置开机自动挂载磁盘，则跳过后续步骤。
+>? 若无需设置开机自动挂载磁盘，则跳过后续步骤。
 7. 确认挂载方式并获取对应信息。
 您可以根据业务需求选择使用弹性云硬盘的软链接、文件系统的 UUID（universally unique identifier）或设备名称自动挂载磁盘，相关说明和信息获取方式如下：
 <table>
@@ -156,9 +154,9 @@ mount -a
 <span id="CreateFileSystemOnPartition"></span>
 #### 在分区上构建文件系统
 
->本文将以在 CentOS 7.5 操作系统中使用 parted 分区工具将数据盘 `/dev/vdc`设置为主分区，分区形式默认设置为 GPT，文件系统设置为 EXT4 格式，挂载在`/data/newpart2`下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
+>?本文将以在 CentOS 7.5 操作系统中使用 parted 分区工具将数据盘 `/dev/vdc`设置为主分区，分区形式默认设置为 GPT，文件系统设置为 EXT4 格式，挂载在`/data/newpart2`下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 
-1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)
+1. [登录 Linux 云服务器](https://cloud.tencent.com/document/product/213/5436)
 2. 以 root 用户执行以下命令，查看磁盘名称。
  ```
 lsblk
@@ -240,7 +238,7 @@ df -TH
  ![](https://main.qcloudimg.com/raw/774c2d9ff266634c4836df6456b9dd4d.png)
  表示新建分区`/dev/vdc1`已挂载至`/data/newpart2`。
  
->若无需设置开机自动挂载磁盘，则跳过后续步骤。
+>?若无需设置开机自动挂载磁盘，则跳过后续步骤。
 >
 16. 确认挂载方式并获取对应信息。
  您可以根据业务需求选择使用弹性云硬盘的软链接、文件系统的 UUID（universally unique identifier）或设备名称自动挂载磁盘，相关说明和信息获取方式如下：
@@ -300,4 +298,4 @@ UUID=fc3f42cc-2093-49c7-b4fd-c616ba6165f4 /data/newpart2   ext4 defaults     0  
 如果运行通过则说明文件写入成功，新建的文件系统会在操作系统启动时自动挂载。
 
 ## 相关操作
-[初始化云硬盘（小于2TB）](https://intl.cloud.tencent.com/document/product/362/31597)
+ [初始化云硬盘（小于2TB）](https://cloud.tencent.com/document/product/362/6734)
