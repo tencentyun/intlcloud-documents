@@ -9,9 +9,9 @@ TencentDB for PostgreSQL supports creating custom extensions (`create extension 
 | cube                                                         | &#10003; | &#10003; | &#10003; |
 | dict_int                                                     | &#10003; | &#10003; | &#10003; |
 | earthdistance                                                | &#10003; | &#10003; | &#10003; |
-| [postgres_fdw](https://cloud.tencent.com/document/product/409/18706) | &#10003; | &#10003; | × |
-| [mysql_fdw](https://cloud.tencent.com/document/product/409/18706 ) | &#10003; | &#10003; | × |
-| [cos_fdw](https://cloud.tencent.com/document/product/409/18706 ) | &#10003; | &#10003; | × |
+| [postgres_fdw](https://intl.cloud.tencent.com/document/product/409/18706) | &#10003; | &#10003; | × |
+| [mysql_fdw](https://intl.cloud.tencent.com/document/product/409/18706 ) | &#10003; | &#10003; | × |
+| [cos_fdw](https://intl.cloud.tencent.com/document/product/409/18706 ) | &#10003; | &#10003; | × |
 | fuzzystrmatch                                                | &#10003; | &#10003; | &#10003; |
 | hstore                                                       | &#10003; | &#10003; | &#10003; |
 | intagg                                                       | &#10003; | &#10003; | &#10003; |
