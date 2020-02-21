@@ -342,5 +342,5 @@ Parameter: `filepath`, which is the relative path to the text file in the bucket
 ```
 
 ### 6. References
-[COS documentation](https://cloud.tencent.com/document/product/436)
+[COS documentation](https://intl.cloud.tencent.com/document/product/436)
 
