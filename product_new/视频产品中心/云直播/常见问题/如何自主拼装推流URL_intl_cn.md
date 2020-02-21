@@ -1,6 +1,5 @@
 云直播控制台的 [地址生成器](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 工具可自助生成推流地址和播放地址，当直播间较多时，可通过服务器自行拼接推流和播放地址，只要符合腾讯云标准规范的 URL 就可以用来推流。
 - **Domain**
-
 推流域名，可使用腾讯云直播提供的默认推流域名，亦可使用自有推流域名。
 - **AppName**
 直播的应用名称，默认为 live，若需要自定义 AppName，可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 配置。
@@ -12,6 +11,3 @@
 用以防止攻击者伪造您的后台生成推流 URL，计算方法参见 [最佳实践-防盗链计算](https://cloud.tencent.com/document/product/267/32735)。
 - **示例代码**
 【云直播控制台】>[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，选中事先配置的推流域名，【管理】>【推流配置】页面下半部分有【推流地址示例代码】（PHP 和 Java 两个版本）演示如何生成防盗链地址。
-
-
-
