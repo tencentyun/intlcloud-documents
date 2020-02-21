@@ -77,7 +77,7 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 
 【键值提取模式】请选择**分隔符**，如下图所示：
 
-![](https://main.qcloudimg.com/raw/ca48770ab72d495a025db91c1f2549df.png)
+![](https://main.qcloudimg.com/raw/96762c7d10456545c31a29ad25bc8bb5.png)
 
 ### 7. 确定分隔符
 
@@ -95,13 +95,13 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 
 保持采集时间状态为开启状态即可，如下图所示：
 
-![](https://main.qcloudimg.com/raw/9d71ef818c41d51a1611e0a308ef252e.png)
+![](https://main.qcloudimg.com/raw/5dede85877e54a69a3d4cf8fdaf81893.png)
 
 #### 8.2 日志的原始时间戳作为日志时间属性
 
 关闭采集时间状态，填写原始时间戳的时间键以及对应的时间解析格式，转换格式支持strftime的所有函数。
 
-![](https://main.qcloudimg.com/raw/30e1bced5c3a076fdc950c52ce8dd7b9.png)
+![](https://main.qcloudimg.com/raw/611e5517422e485362c0c2db75c0426c.png)
 
 这里举例说明时间格式解析规则填写：
 例1：日志样例原始时间戳：`10/Dec/2017:08:00:00`，解析格式为：`%d/%b/%Y:%H:%M:%S`。
