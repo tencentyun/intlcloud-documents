@@ -2,7 +2,7 @@
 This document describes how to create a database instance in the TencentDB for PostgreSQL Console.
 
 ## Prerequisites
-You have already [signed up for a Tencent Cloud account](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F).
+You have already [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fintl.cloud.tencent.com%2Fdocument%2Fproduct%2F555%2F30328).
 
 ## Directions
 1. Log in to the [TencentDB for PostgreSQL Console](https://console.cloud.tencent.com/pgsql) and click **Create** in the instance list.
