@@ -175,3 +175,4 @@ Linux 内核启动顺序为：
 
 1. 使用 root 权限执行 `lsof |grep deleted` 命令，查看正在使用被删除文件的进程的 PID。
 2. 通过命令 `kill -9 PID` 杀掉对应的进程即可。 
+

@@ -1,0 +1,44 @@
+
+
+
+
+## 接口描述
+
+本接口（DeleteServiceSubDomainMapping）用于删除服务中某个环境的自定义域名映射。
+当用户使用自定义域名，并使用了自定义映射时，可使用此接口。但需注意，若删除了所有环境的映射时，调用此 API 均会返回失败。
+
+
+## 输入参数
+
+以下请求参数列表仅列出了接口请求参数，其它参数可参考 [公共请求参数](https://intl.cloud.tencent.com/document/product/628/18814)。
+
+| 参数名称        | 是否必选 | 类型     | 描述          |
+| ----------- | ---- | ------ | ----------- |
+| serviceId   | 是    | String | 服务唯一 ID     |
+| subDomain   | 是    | String | 服务绑定的自定义域名 |
+| environment | 是    | String | 待删除映射的环境名称 |
+
+## 输出参数
+| 参数名称 | 类型   | 描述                                                         |
+| -------- | ------ | ------------------------------------------------------------ |
+| code     | Int    | 公共错误码，0表示成功，其他值表示失败。详见错误码页面的 [公共错误码](https://intl.cloud.tencent.com/document/product/628/18822) |
+| codeDesc | String | 业务侧错误码。成功时返回 Success，错误时返回具体业务错误原因 |
+
+
+## 示例 
+```
+https://apigateway.api.qcloud.com/v2/index.php?
+&<公共请求参数>
+&Action=DeleteServiceSubDomainMapping
+&serviceId=service-XXXX
+&subDomain=www.qq.com
+&environment=test
+```
+返回示例如下：
+```
+{
+	"code": "0",
+	"message": "",
+	"codeDesc": "Success"
+}
+```

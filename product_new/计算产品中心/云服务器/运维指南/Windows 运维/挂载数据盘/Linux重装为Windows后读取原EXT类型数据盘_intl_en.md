@@ -18,4 +18,3 @@ Log into Tencent Cloud console, enter "Cloud Virtual Machine" - "Cloud Block Sto
 6) Please note that the Linux data disk is read-only at this time. If you need to perform read and write operations on the data disk as Windows data disk, please first back up the files you need and then re-format it into a standard type supported by Windows operating system. For specific operations, please see [here](https://intl.cloud.tencent.com/document/product/213/2158).
 
 
-

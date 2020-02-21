@@ -14,11 +14,8 @@
 - [查看已关联 VPC 的路由表](https://cloud.tencent.com/document/product/877/18754)
 - [启用路由](https://cloud.tencent.com/document/product/877/18750)
 - [停用路由](https://cloud.tencent.com/document/product/877/18746)
-- [删除路由](https://cloud.tencent.com/document/product/877/18749)
 
 ### 监控与告警
 - [查看监控信息](https://cloud.tencent.com/document/product/877/18755)
 - [查看出带宽上限](https://cloud.tencent.com/document/product/877/18753)
 - [调整出带宽上限](https://cloud.tencent.com/document/product/877/18759)
-- [设置跨地域互联告警](https://cloud.tencent.com/document/product/877/18758)
-

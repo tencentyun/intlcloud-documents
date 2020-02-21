@@ -1,47 +1,37 @@
-为了提升用户在云服务器上的软件安装效率，减少下载和安装软件的成本，腾讯云提供了Apt-get下载源。操作系统为Ubuntu12.04的云服务器，用户可通过Apt-get快速安装软件。
+## 操作场景
+为提升用户在云服务器上的软件安装效率，减少下载和安装软件的成本，腾讯云提供了 Apt-get 下载源。在 Ubuntu 环境下，用户可通过 Apt-get 快速安装软件。对于 Apt-get 下载源，不需要添加软件源，可以直接安装软件包。
 
-对于apt-get下载源，不需要添加软件源，可以直接安装软件包。为了加速软件安装，目前系统已经在内网预先配置了Ubuntu的mirror，这个mirror是官方x86_64的完全镜像，与官网源一致。 
+## 前提条件
+已登录操作系统为 Ubuntu 的云服务器。
 
-## 1. 安装步骤
-1) 登录操作系统为Ubuntu12.04的云服务器
+## 操作步骤
+>以下操作以安装 Nginx 为例。
+>
 
-2) 通过以下命令安装软件：
-
+### 查看可安装的软件
+执行以下命令，查看可安装的软件。
 ```
-sudo apt-get install
-```
-示例如下：
-
-```
-sudo apt-get install nginx php5-cli php5-cgi php5-fpm php5-mcrypt php5-mysql mysql-client-core-5.5 mysql-server-core-5.5
+sudo apt-cache search all
 ```
 
-结果：
-
-![](http://mccdn.qcloud.com/img56af4dfeb631a.png)
-
-3) 输入“Y”确认后，开始安装软件，直至软件安装完成。
-
-##  2. 查看安装的软件信息
-软件安装完成后，可通过以下命令查看软件包所在的目录，及该软件包中的所有文件：
-
+### 安装软件
+执行以下命令，安装 Nginx。 
 ```
-sudo dpkg -L 
+sudo apt-get install nginx
 ```
+确认软件信息无误后，键入 `Y` ，同意安装，等待至软件安装完成即可。如下图所示：
+![](https://mc.qcloudimg.com/static/img/d03f55bba1690ff30532b73148ccc1e9/45.png)
 
-可通过以下命令查看软件包的版本信息：
-
+### 查看已安装软件信息
+根据实际需求，执行不同的命令查看已安装的软件信息。
+- 执行以下命令，查看软件包所在的目录以及该软件包中的所有文件。
+``` 
+sudo dpkg -L 软件名 
 ```
-sudo dpkg -l 
-```
-
-示例如下：
-
-```
-sudo dpkg -L nginx 
-sudo dpkg -l nginx
+- 执行以下命令，查看软件包的版本信息。
+``` 
+sudo dpkg -l 软件名 
 ```
 
-结果如下（实际的版本可能和此版本不一致，请以实际查询到的版本为准）：
-![](http://mccdn.qcloud.com/img56af4f1d9e433.png)
-![](http://mccdn.qcloud.com/img56af4f7f57949.png)
+查看已安装的 Nginx 信息。如下图所示：
+![](https://mc.qcloudimg.com/static/img/8bbc99d7a31e8463da36f3dc2221c028/46.png)
