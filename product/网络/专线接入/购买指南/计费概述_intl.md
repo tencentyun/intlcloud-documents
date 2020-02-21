@@ -36,7 +36,7 @@ For resource of shared access port by partners, only outbound traffic is charged
 |--------| ----|
 | Outbound traffic | 0.015 USD/GB |
 
->Outbound traffic is free of charge before January 1, 2020.
+>Outbound traffic is free of charge before May 1, 2020.
 
 ### Dedicated Tunnel Bandwidth Resource Fee
 - **Monthly 95th percentile billing:**
