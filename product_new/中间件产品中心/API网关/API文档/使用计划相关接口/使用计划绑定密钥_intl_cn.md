@@ -1,16 +1,17 @@
 ## 接口描述
 
-本接口（UnBindSubDomain）用于解绑自定义域名。
-用户使用 API 网关绑定了自定义域名到服务中后，若想要解绑此自定义域名，可使用此接口。
+本接口（BindSecretIds）用于为使用计划绑定密钥。
+将密钥绑定到某个使用计划，并将此使用计划绑定到某个服务发布的环境上，调用者方可使用此密钥调用这个服务中的 API，可使用本接口为使用计划绑定密钥。
+
 
 ## 输入参数
 
 以下请求参数列表仅列出了接口请求参数，其它参数可参考 [公共请求参数](https://intl.cloud.tencent.com/document/product/628/18814)。
 
-| 参数名称      | 是否必选 | 类型     | 描述          |
-| --------- | ---- | ------ | ----------- |
-| serviceId | 是    | String | 服务唯一 ID     |
-| subDomain | 是    | String | 待解绑的自定义的域名 |
+| 参数名称        | 是否必选 | 类型             | 描述            |
+| ----------- | ---- | -------------- | ------------- |
+| usagePlanId | 是    | String         | 待绑定的使用计划唯一 ID |
+| secretIds   | 是    | List of String | 待绑定的密钥 ID 数组   |
 
 ## 输出参数
 | 参数名称 | 类型   | 描述                                                         |
@@ -19,17 +20,17 @@
 | codeDesc | String | 业务侧错误码。成功时返回 Success，错误时返回具体业务错误原因 |
 | message  | String | 模块错误信息描述，与接口相关                                 |
 
-
 ## 示例 
-```
+```http
 https://apigateway.api.qcloud.com/v2/index.php?
 &<公共请求参数>
-&Action=UnBindSubDomain
-&serviceId=service-XXXX
-&subDomain=testSubDomain
+&Action=BindSecretIds
+&usagePlanId=usagePlan-XX
+&secretIds.0=AKIDXXXXXXwEdsADQ
+&secretIds.1=AKIDXXXXXXjkIjdDE
 ```
 返回示例如下：
-```
+```json
 {
 	"code": "0",
 	"message": "",
