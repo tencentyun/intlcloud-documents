@@ -1,79 +1,140 @@
 ## 操作场景
-本文以 CentOS 7.2 64位系统为例，使用 vsftpd 作为 FTP 服务端，FileZilla 作为客户端。指导您如何在 Linux 云服务器上搭建 FTP 服务。
+Vsftpd（very secure FTP daemon）是众多 Linux 发行版中默认的 FTP 服务器。本文以 CentOS 7.6 64位操作系统的腾讯云服务器（CVM）为例，使用 vsftpd 软件搭建 Linux 云服务器的 FTP 服务。
+
+## 示例软件版本
+本文搭建 FTP 服务组成版本如下：
+- Linux 操作系统：本文以公共镜像 CentOS 7.6 为例。
+- Vsftpd：本文以 vsftpd 3.0.2 为例。
+
 
 ## 操作步骤
-### 安装 vsftpd
-1. 登录云服务器。
-2. 执行以下命令，安装 vsftpd。
-``` 
-yum install vsftpd -y
-```
+### 步骤1：登录云服务器
+[使用标准方式登录 Linux 实例（推荐）](https://cloud.tencent.com/document/product/213/5436)。您也可以根据实际操作习惯，选择其他不同的登录方式：
+- [使用远程登录软件登录 Linux 实例](https://cloud.tencent.com/document/product/213/35699)
+- [使用 SSH 登录 Linux 实例](https://cloud.tencent.com/document/product/213/35700)
 
-### 启动服务
-1. 执行以下命令，启动服务。
+### 步骤2：安装 vsftpd
+1. 执行以下命令，安装 vsftpd。
+```
+yum install -y vsftpd
+```
+2. 执行以下命令，设置 vsftpd 开机自启动。
+```
+systemctl enable vsftpd
+```
+3. 执行以下命令，启动 FTP 服务。
 ```
 systemctl start vsftpd
 ```
-2. 执行以下命令，确认服务是否启动。
+4. 执行以下命令，确认服务是否启动。
 ```
-netstat -tunlp
+netstat -antup | grep ftp
 ```
-返回类似如下信息，则表示 vsftpd 服务已经启动成功。
-![](//mc.qcloudimg.com/static/img/6cc74de5689106ce763be98bfe7f5d24/image.png)
-3. 执行以下命令，安装 telnet 服务。
-```
-yum -y install  telnet
-```
-4. 执行以下命令，在其他联网计算机上测试服务是否启动成功。
-```
-telnet + 云服务器公网 IP + 21
-```
-返回类似如下信息，即表示已经启动成功。
-![](https://main.qcloudimg.com/raw/47ad66d7be133b6d69d60c3e5b719dbd.png)
+显示结果如下，则说明 FTP 服务已成功启动。
+![](https://main.qcloudimg.com/raw/2a7abf80253a8469c9340878d89b452a.png)
+此时，vsftpd 已默认开启匿名访问模式，无需通过用户名和密码即可登录 FTP 服务器。使用此方式登录 FTP 服务器的用户没有权修改或上传文件的权限。
 
-<span id = "jump">  </span>
-
-### 配置 vsftpd
-1. 执行以下命令，打开 vsftpd 配置文件。
+<span id="user"></span>
+### 步骤3：配置 vsftpd
+1. 执行以下命令，为 FTP 服务创建用户，本文以 ftpuser 为例。
 ```
-vi /etc/vsftpd/vsftpd.conf
+useradd ftpuser
 ```
-2. 按 “**i**” 或 “**Insert**” 切换至编辑模式，将文件中的`anonymous_enable=YES`改为`anonymous_enable=NO`。如下图所示：
-![](//mc.qcloudimg.com/static/img/4e7770981eae42e7b16a2a5a7866a6a6/image.png)
-3. 按 “**Esc**”，输入 “**:wq**”，保存文件并返回。
-
-### 添加 FTP 用户
-1. 执行以下命令，添加用户`ftpuser1`。
-``` 
-useradd -m -d /home/ftpuser1 -s /sbin/nologin ftpuser1
+2. 执行以下命令，设置 ftpuser 用户的密码。
 ```
-2. 执行以下命令，设置用户`ftpuser1`的密码。
+passwd ftpuser
 ```
-passwd ftpuser1
+输入密码后请按 **Enter** 确认设置，密码默认不显示，本文以 `tf7295TFY` 为例。
+3. 执行以下命令，创建 FTP 服务使用的文件目录，本为以 `/var/ftp/test` 为例。
 ```
-创建用户、用户密码设置成功。如下图所示：
-![](https://main.qcloudimg.com/raw/eec9ba9d188bf8b82a846fed73e02b52.png)
-
-## 常见问题
-### FTP 客户端连接超时或者读取目录列表失败
-#### 问题描述
-部分用户在本地使用 FTP 客户端连接时可能遇到连接超时和读取目录列表失败的问题。如下图所示：
-![](https://main.qcloudimg.com/raw/7ce40abf194d65604b2ee73aa34e0fe7.png)
-问题出现在 PASV 命令处。原因在于 FTP 协议在腾讯云网络架构上的不适。FTP 客户端默认被动模式传输，因此在通信过程中会去寻找服务器端的 IP 地址进行连接，但是由于腾讯云的公网 IP 不是直接配在网卡上，因此在被动模式下客户端无法找到有效 IP （只能找到云服务器内网 IP ，内网 IP 无法直接和公网通信），故无法建立连接。
-
-#### 解决方法
-1. 将客户端传输模式改为主动即可。
-2. 如果客户端网络环境要求被动模式，那么需要在服务端 [配置 vsftpd](#jump) 中的配置文件中新增这些语句：
+mkdir /var/ftp/test
 ```
-pasv_address=XXX.XXX.XXX.XXX     //(公网 IP)
+4. 执行以下命令，修改目录权限。
+```
+chown -R ftpuser:ftpuser /var/ftp/test
+```
+5. 执行以下命令，打开 `vsftpd.conf` 文件。
+```
+vim /etc/vsftpd/vsftpd.conf
+```
+6. 按 **i** 切换至编辑模式，根据实际需求选择 FTP 模式，修改配置文件 `vsftpd.conf`：<span id="config"></span>
+> FTP 可通过主动模式和被动模式与客户端机器进行连接并传输数据。由于大多数客户端机器的防火墙设置及无法获取真实 IP 等原因，建议您选择**被动模式**搭建 FTP 服务。如下修改以设置被动模式为例，您如需选择主动模式，请前往 [设置 FTP 主动模式](#port)。
+>
+ 1. 修改以下配置参数，设置匿名用户和本地用户的登录权限，设置指定例外用户列表文件的路径，并开启监听 IPv4 sockets。
+```
+anonymous_enable=NO
+local_enable=YES
+chroot_local_user=YES
+chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd/chroot_list
+listen=YES
+```
+  2. 在行首添加 `#`，注释 `listen_ipv6=YES` 配置参数，关闭监听 IPv6 sockets。
+```
+#listen_ipv6=YES
+```
+  3.  添加以下配置参数，开启被动模式，设置本地用户登录后所在目录，以及云服务器建立数据传输可使用的端口范围值。
+```
+local_root=/var/ftp/test
+allow_writeable_chroot=YES
 pasv_enable=YES
-pasv_min_port=1024
-pasv_max_port=2048
+pasv_address=xxx.xx.xxx.xx #请修改为您的 Linux 云服务器公网 IP
+pasv_min_port=40000
+pasv_max_port=45000
 ```
+7. 按 **Esc** 后输入 **:wq** 保存后退出。
+8. 执行以下命令，创建并编辑 `chroot_list` 文件。<span id="create"></span>
+```
+vim /etc/vsftpd/chroot_list
+```
+9. 按 **i** 进入编辑模式，输入用户名，一个用户名占据一行，设置完成后按 **Esc** 并输入 **:wq** 保存后退出。
+您若没有设置例外用户的需求，可跳过此步骤，输入 **:wq** 退出文件。
+10. 执行以下命令，重启 FTP 服务。
+```
+systemctl restart vsftpd
+```
+
+### 步骤4：设置安全组
+搭建好 FTP 服务后，您需要根据实际使用的 FTP 模式给 Linux 云服务器放通**入站规则**。
+大多数客户端机器在局域网中，IP 地址是经过转换的。如果您选择了 FTP 主动模式，请确保客户端机器已获取真实的 IP 地址，否则可能会导致客户端无法登录 FTP 服务器。
+- 主动模式：放通端口21。
+- 被动模式：放通端口21，及 [修改配置文件](#config) 中设置的 `pasv_min_port` 到 `pasv_max_port` 之间的所有端口，本文放通端口为40000 - 45000。
+
+### 步骤5：验证 FTP 服务
+您可通过 FTP 客户端软件、浏览器或文件资源管理器等工具验证 FTP 服务，本文以客户端的文件资源管理器为例。
+1. 打开客户端的 IE 浏览器，选择【工具】>【Internet 选项】>【高级】，根据您选择的 FTP 模式进行修改：
+ - 主动模式：取消勾选【使用被动 FTP】。
+ - 被动模式：勾选【使用被动 FTP】。
+2. 打开客户端的计算机，在路径栏中访问以下地址。
+```
+ftp://云服务器公网IP:21
+```
+3. 在弹出的“登录身份”窗口中输入 [配置 vsftpd](#user) 中已设置的用户名及密码。
+本文使用的用户名为 `ftpuser`，密码为 `tf7295TFY`。
+4. 成功登录后，即可上传及下载文件。
+
+
+## 附录
+<span id="port"></span>
+### 设置 FTP 主动模式
+主动模式需修改的配置如下，其余配置保持默认设置：
+```
+anonymous_enable=NO      #禁止匿名用户登录
+local_enable=YES         #支持本地用户登录
+chroot_local_user=YES    #全部用户被限制在主目录
+chroot_list_enable=YES   #启用例外用户名单
+chroot_list_file=/etc/vsftpd/chroot_list  #指定用户列表文件，该列表中的用户不被锁定在主目录
+listen=YES               #监听IPv4 sockets
+#在行首添加#注释掉以下参数
+#listen_ipv6=YES         #关闭监听IPv6 sockets
+#添加下列参数
+allow_writeable_chroot=YES
+local_root=/var/ftp/test #设置本地用户登录后所在的目录
+```
+按 **Esc** 后输入 **:wq** 保存后退出，并前往 [步骤8](#create) 完成 vsftpd 配置。
 
 ### FTP 客户端上传文件失败
 #### 问题描述
-
 Linux 系统环境下，通过 vsftp 上传文件时，提示如下报错信息。
 ```
 553 Could not create file
