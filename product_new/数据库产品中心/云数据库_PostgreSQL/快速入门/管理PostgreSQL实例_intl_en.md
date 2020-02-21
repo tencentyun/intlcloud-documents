@@ -20,13 +20,13 @@ On the **Instance Details** page, you can view and manage the basic information 
 
 ### System monitoring
 On the **System Monitoring** page, you can view the monitoring data of various core metrics of the current database, including access, load, cache hit rate, SQL execution latency, and XLOG sync delay.
-For more information on instance monitoring and alarming, please see [Monitoring Feature](https://cloud.tencent.com/document/product/409/7564) and [Alarm Feature](https://cloud.tencent.com/document/product/409/7563).
+For more information on instance monitoring and alarming, please see [Monitoring Feature](https://intl.cloud.tencent.com/document/product/409/7564) and [Alarm Feature](https://intl.cloud.tencent.com/document/product/409/7563).
 
 ### Account management
 On the **Account Management** page, you can manage your account, such as modifying remarks and resetting the password.
 
 ### Backup management
-On the **Backup Management** page, you can view and download backup and xlog files. For more information, please see [Backing up Data](https://cloud.tencent.com/document/product/409/33945).
+On the **Backup Management** page, you can view and download backup and xlog files. For more information, please see [Backing up Data](https://intl.cloud.tencent.com/document/product/409/34628).
 
 ### Performance optimization
 On the **Performance Optimization** page, you can view and download slow logs and error logs.
