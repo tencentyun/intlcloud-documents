@@ -27,7 +27,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.8.13/bin/w
 ### 安装 Kubectl 工具<span id="installKubectl"></span>
 
 1. 参考 [Installing and Setting up kubectl](https://kubernetes.io/docs/user-guide/prereqs/)，安装 Kubectl 工具。
->? 
+>
 >- 如果您已经安装 Kubectl 工具，请忽略本步骤。
 >- 此步骤以 Linux 系统为例。
 
