@@ -1,7 +1,7 @@
 ## Operation Scenarios
 After initializing a TencentDB for PostgreSQL instance, you can use a standard SQL client to access it over the private network or public network.
 - **Private network access**: a CVM instance can be used to access the private network address automatically assigned to the TencentDB instance. This access method relies on the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) or in the basic network.
->For more information on connection between CVM and database instances in different VPCs (under the same account/different accounts; in the same region/different regions) over the private network, please see [Peering Connection](https://cloud.tencent.com/document/product/553/18827).
+>For more information on connection between CVM and database instances in different VPCs (under the same account/different accounts; in the same region/different regions) over the private network.
 - **Public network access**: TencentDB for PostgreSQL can be accessed by using a public network address.
 >
 >- For public network access, the database instance's public IP needs to be enabled, which may expose the database service to attacks or intrusions on the public network. Therefore, it is recommended to log in to the database over the private network.
