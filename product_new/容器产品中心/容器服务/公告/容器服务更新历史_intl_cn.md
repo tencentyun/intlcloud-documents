@@ -45,7 +45,7 @@
 	 <td>2019.10.17</td>
 	 <td>运行时组件 containerd 支持 GPU 机型</td>
 </tr>
-<td>
+
 <tr>
 	 <td>2019.10.15</td>
 	 <td><ul class="params"><li>TKE 节点滚动重装升级 kubernetes 版本内测发布</li><li>TKE 支持 GPU 监控指标</li></ul></td>
