@@ -66,7 +66,7 @@
 
 <tr>
 	 <td>2019.09.06</td>
-	 <td><ul class="params"><li>TKE 接入腾讯云标签, 支持按标签授权</li><li>创建 LoadBalancer 类型的 Service 默认采用实例类型为：<a href="https://intl.cent.com/document/product/214/8847">负载均衡</a>（原“应用型负载均衡”） </li></td>
+	 <td><ul class="params"><li>TKE 接入腾讯云标签, 支持按标签授权</li><li>创建 LoadBalancer 类型的 Service 默认采用实例类型为：<a href="https://intl.cloud.tencent.com/document/product/214/8847">负载均衡</a>（原“应用型负载均衡”） </li></td>
 </tr>
 
 
