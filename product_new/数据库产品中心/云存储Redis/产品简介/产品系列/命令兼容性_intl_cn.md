@@ -1,7 +1,5 @@
-
-
-各版本命令兼容性说明如下表：
-
+### 各版本命令兼容性列表
+下表中 ✓ 表示支持，x 表示不支持，- 表示该命令不存在跨 Slot 访问的场景，自定义命令说明请参见 [自定义命令](https://cloud.tencent.com/document/product/239/18336#ziding)，集群版命令兼容性说明请参见 [命令兼容性说明](https://cloud.tencent.com/document/product/239/18336#xianzhi)。
 <table>
    <tr>
       <th>命令族</th>
@@ -9,11 +7,15 @@
       <th>2.8标准版</th>
       <th>4.0标准版</th>
       <th>4.0集群版</th>
-      <th>4.0集群版跨 Slot 支持</th>
+      <th>5.0标准版</th>
+      <th>5.0集群版</th>
+      <th>集群版跨 Slot 支持</th>
    </tr>
    <tr>
       <td rowspan=6>connection 族</td>
       <td>auth</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -24,6 +26,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -31,10 +35,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>自定义</td>
+      <td>✓</td>
+      <td>自定义</td>
       <td>-</td>
    </tr>
    <tr>
       <td>quit</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -45,11 +53,15 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>swapdb</td>
       <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>-</td>
@@ -60,10 +72,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>hexists</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -74,10 +90,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>hgetall</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -88,10 +108,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>hincrbyfloat</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -102,10 +126,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>hlen</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -116,10 +144,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>hmset</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -130,10 +162,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>hsetnx</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -144,6 +180,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -151,10 +189,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>hscan</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -167,16 +209,22 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
    </tr>
    <tr>
       <td>scan</td>
       <td>✓</td>
       <td>✓</td>
       <td>自定义</td>
+       <td>✓</td>
+      <td>自定义</td>
       <td>-</td>
    </tr>
    <tr>
       <td>exists</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -187,10 +235,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>expireat</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -201,10 +253,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>自定义</td>
+      <td>✓</td>
+      <td>自定义</td>
       <td>-</td>
    </tr>
    <tr>
       <td>type</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -215,10 +271,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>ttl</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -229,10 +289,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>pexpire</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -243,10 +307,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>pttl</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -257,10 +325,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>rename</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -271,10 +343,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>sort</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -286,10 +362,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>linsert</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -300,10 +380,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>lpop</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -314,10 +398,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>lpushx</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -328,10 +416,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>lrem</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -342,10 +434,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>ltrim</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -356,6 +452,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -363,10 +461,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>rpush</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -377,10 +479,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>blpop</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -391,6 +497,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>x</td>
    </tr>
    <tr>
@@ -398,11 +506,15 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
    </tr>
    <tr>
       <td rowspan=6>pub/sub 族</td>
       <td>psubscribe</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -413,10 +525,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>publish</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -427,6 +543,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -434,10 +552,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>unsubscribe</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -449,10 +571,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>scard</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -463,10 +589,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>x</td>
    </tr>
    <tr>
       <td>sdiffstore</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -477,10 +607,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>x</td>
    </tr>
    <tr>
       <td>sinterstore</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -491,10 +625,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>smembers</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -505,10 +643,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>spop</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -519,10 +661,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>srem</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -533,10 +679,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>sunion</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -547,11 +697,15 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
    </tr>
    <tr>
-      <td rowspan=21>sorted sets 族</td>
+      <td rowspan=25>sorted sets 族</td>
       <td>zadd</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -562,10 +716,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>zcount</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -576,6 +734,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -583,10 +743,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>zlexcount</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -597,10 +761,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>zrangebylex</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -611,10 +779,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>zrank</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -625,6 +797,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -632,10 +806,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>zremrangebyrank</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -653,10 +831,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>zrevrangebylex</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -667,10 +849,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>zscore</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -681,10 +867,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>zscan</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -695,11 +885,51 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
+   </tr>
+   <tr>
+      <td>zpopmax</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>zpopmin</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>bzpopmax</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>bzpopmin</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td rowspan=24>strings 族</td>
       <td>append</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -710,6 +940,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -717,10 +949,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>bitpos</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -731,10 +967,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>decrby</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -745,10 +985,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>getbit</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -759,10 +1003,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>getset</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -773,6 +1021,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -780,10 +1030,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>incrbyfloat</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -795,9 +1049,13 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
    </tr>
    <tr>
       <td>mset</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -808,10 +1066,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>x</td>
    </tr>
    <tr>
       <td>psetex</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -822,10 +1084,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>set</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -836,10 +1102,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>setnx</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -850,10 +1120,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>strlen</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -864,11 +1138,15 @@
       <td>x</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td rowspan=5>transactions 族</td>
       <td>discard</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -879,10 +1157,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>multi</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -893,10 +1175,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>watch</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -908,6 +1194,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -915,10 +1203,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>x</td>
    </tr>
    <tr>
       <td>pfmerge</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -930,17 +1222,23 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>evalsha</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>script debug</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -951,10 +1249,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>script flush</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -965,10 +1267,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>script kill</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -980,11 +1286,15 @@
       <td>x</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>geohash</td>
       <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>-</td>
@@ -994,11 +1304,15 @@
       <td>x</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>geodist</td>
       <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>-</td>
@@ -1008,6 +1322,8 @@
       <td>x</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -1015,25 +1331,33 @@
       <td>x</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td rowspan=7>keys 族</td>
       <td>touch</td>
-      <td>x</td>
-      <td>x</td>
-      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>restore</td>
-      <td>x</td>
-      <td>x</td>
-      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>object</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1044,10 +1368,14 @@
       <td>x</td>
       <td>✓</td>
       <td>✓</td>
+       <td>✓</td>
+      <td>✓</td>
       <td>x</td>
    </tr>
    <tr>
       <td>wait</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1058,6 +1386,8 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
@@ -1065,11 +1395,15 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=39>server 族</td>
+      <td rowspan=40>server 族</td>
       <td>bgrewriteaof</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1080,10 +1414,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>client kill</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1094,10 +1432,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>psync</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1108,10 +1450,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>client getname</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1122,10 +1468,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>client reply</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1136,10 +1486,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>command count</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1150,10 +1504,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>command info</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1164,10 +1522,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>config rewrite</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1178,10 +1540,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>config resetstat</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1192,10 +1558,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>debug segfault</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1206,10 +1576,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>save</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1220,10 +1594,14 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
       <td>-</td>
    </tr>
    <tr>
       <td>shutdown</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1234,10 +1612,14 @@
       <td>x</td>
       <td>✓</td>
       <td>自定义</td>
+      <td>✓</td>
+      <td>自定义</td>
       <td>-</td>
    </tr>
    <tr>
       <td>command</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -1248,6 +1630,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -1255,10 +1639,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>自定义</td>
+      <td>✓</td>
+      <td>自定义</td>
       <td>-</td>
    </tr>
    <tr>
       <td>time</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -1269,10 +1657,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>config get</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -1283,6 +1675,8 @@
       <td>✓</td>
       <td>✓</td>
       <td>自定义</td>
+      <td>✓</td>
+      <td>自定义</td>
       <td>-</td>
    </tr>
    <tr>
@@ -1290,10 +1684,14 @@
       <td>✓</td>
       <td>✓</td>
       <td>自定义</td>
+      <td>✓</td>
+      <td>自定义</td>
       <td>-</td>
    </tr>
    <tr>
       <td>flushall</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -1304,11 +1702,15 @@
       <td>✓</td>
       <td>✓</td>
       <td>自定义</td>
+      <td>✓</td>
+      <td>自定义</td>
       <td>-</td>
    </tr>
    <tr>
       <td>cluster keyslot</td>
       <td>x</td>
+      <td>x</td>
+      <td>✓</td>
       <td>x</td>
       <td>✓</td>
       <td>-</td>
@@ -1318,6 +1720,8 @@
       <td>x</td>
       <td>x</td>
       <td>✓</td>
+      <td>x</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
@@ -1325,10 +1729,14 @@
       <td>x</td>
       <td>x</td>
       <td>✓</td>
+      <td>x</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
    <tr>
       <td>cluster 其他</td>
+      <td>x</td>
+      <td>x</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
@@ -1339,6 +1747,135 @@
       <td>x</td>
       <td>x</td>
       <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>lolwut</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td rowspan=13>Stream 族</td>
+      <td>xinfo</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xadd</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xtrim</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xdel</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xrange</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xrevrange</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xlen</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xread</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
+   </tr>
+   <tr>
+      <td>xgroup</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xreadgroup</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>x</td>
+   </tr>
+   <tr>
+      <td>xack</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xlclaim</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>-</td>
+   </tr>
+   <tr>
+      <td>xpending</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>✓</td>
+      <td>✓</td>
       <td>-</td>
    </tr>
 </table>
