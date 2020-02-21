@@ -2,7 +2,7 @@
 
 分隔符日志是指一条日志数据可以根据指定的分隔符将整条日志进行结构化处理，每条完整的日志以换行符`\n`为结束标识符。日志服务在进行分隔符格式日志处理时，您需要为每个分开的字段定义唯一的 key。
 
-### 示例
+#### 示例
 
 假设您的一条日志原始数据为：
 
@@ -32,12 +32,12 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 ### 2. 新建 LogListener 采集
 
 选择目标日志集，单击【新建日志主题】，输入日志主题名称：test-separator ，单击【确定】。
-![](https://main.qcloudimg.com/raw/3183cb91decddea1f22d833a8d78d151.png)
+![](https://main.qcloudimg.com/raw/9ad94a9088f143eaf0987a709f8f6d93.png)
 
 ### 3. 配置 LogListener 采集
 
 单击 LogListener 采集的日志主题，在采集配置界面中单击右上角【编辑】按钮，进入到编辑模式，开启【采集状态】和【使用 LogListener】。
-![](https://main.qcloudimg.com/raw/e1db7c9c549508f55ee1819d33f67940.png)
+![](https://main.qcloudimg.com/raw/e49f2dfe5342010a3e33113b5530362f.png)
 
 ### 4.配置日志文件采集路径
 
@@ -71,7 +71,7 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 ### 5. 关联机器组
 
 从机器组列表中选择目标机器组，将其与当前日志主题进行关联，值得注意的是，关联的机器组与日志主题所在的地域需保持一致。操作详情请参阅 [如何创建机器组](https://intl.cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84) 文档。
-![](https://main.qcloudimg.com/raw/be3455a6fdf01afa81c3b322aa6c0548.png)
+![](https://main.qcloudimg.com/raw/a6bf012aca0efa7ec40233480c8d93ce.png)
 
 ### 6. 分隔符模式选择
 
@@ -82,7 +82,7 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 ### 7. 确定分隔符
 
 首先需要您选择唯一的分隔符，系统根据确定的分隔符将日志样例进行切分，并展示在抽取结果栏中，您需要为每个字段定义唯一的 key。目前，日志采集支持多种分隔符，常见的分隔符有：空格、制表符、逗号、分号、竖线，若您的日志数据所采用的分隔符是其他符号，例如 `:::` ，也可以通过自定义分词符进行解析。
-![](https://main.qcloudimg.com/raw/9b6fb6fb70d2a198776751928cb90911.png)
+![](https://main.qcloudimg.com/raw/1721555739d53fa1dfc7049eb8c86fcd.png)
 
 ### 8. 采集时间配置
 
@@ -121,6 +121,6 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 ### 10. 检索结果
 
 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，左侧选择日志检索，选择日志集与日志主题，单击【搜索】，即可检索日志。
-![](https://main.qcloudimg.com/raw/63eb590b9e309123d060bc3643e1c4dc.png)
+![](https://main.qcloudimg.com/raw/22dfcc938d8b7e2db37c56e51bd52f47.png)
 
 >!检索必须开启索引配置，否则无法进行检索。
