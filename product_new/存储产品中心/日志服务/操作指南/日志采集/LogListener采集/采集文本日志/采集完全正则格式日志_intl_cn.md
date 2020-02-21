@@ -34,7 +34,7 @@ time_local: [22/Jan/2019:19:19:30 +0800]
 upstream_response_time: 0.354
 ```
 
-> !完全正则目前只支持单行日志提取 key-value ，多行日志暂不支持提取，如需采集多行日志请参阅 [多行全文采集](https://intl.cloud.tencent.com/document/product/614/17422) 文档。
+> 完全正则目前只支持单行日志提取 key-value ，多行日志暂不支持提取，如需采集多行日志请参阅 [多行全文采集](https://intl.cloud.tencent.com/document/product/614/17422) 文档。
 
 ## 采集配置
 
@@ -76,7 +76,7 @@ upstream_response_time: 0.354
 | 2.   | /var/log/nginx | \*.log       | 此例中，日志路径配置为 `/var/log/nginx/**/*.log`，LogListener 将会监听`/var/log/nginx`前缀路径下所有子目录中以 `.log` 结尾的日志文件 |
 | 3.   | /var/log/nginx | error\*      | 此例中，日志路径配置为`/var/log/nginx/**/error*`，LogListener 将会监听`/var/log/nginx`前缀路径下所有子目录中以`error`开头命名的日志文件 |
 
->!
+>
 >1. 多层目录和通配符配置方式依赖2.2.2及以上版本的 loglistener，为兼容低版本 loglistener 路径配置修改方式，用户可切换旧配置进行历史修改，旧采集路径方式不支持多目录采集。
 >2. 一个日志文件只能被一个日志主题采集。
 >3. LogListener 不支持监听软连接方式的日志文件和 NFS、CIFS 等共享文件目录上的日志文件。
