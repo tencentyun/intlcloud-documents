@@ -13,7 +13,7 @@ MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分�
 ## 操作步骤
 <span id="2TBWindows2012"></span>
 ### 初始化云硬盘（Windows）
->?本文将以 Windows Server 2012 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
+>本文将以 Windows Server 2012 操作系统为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 
 1. [登录 Windows 云服务器](https://cloud.tencent.com/document/product/213/5435)。
 2. 在云服务器桌面，单击<img src="https://main.qcloudimg.com/raw/0a02193a82217974f650bbcaf4e1ed2d.png"  style="margin:0;">。进入【服务器管理器】页面。
