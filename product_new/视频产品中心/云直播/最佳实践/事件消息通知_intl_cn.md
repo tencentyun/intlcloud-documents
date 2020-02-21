@@ -5,7 +5,7 @@
 - 【直播录制】文件生成事件
 - 【直播截图】文件生成事件
 
->! 本文不涉及鉴黄事件通知回调，详情请看 [最佳实践-直播鉴黄](https://cloud.tencent.com/document/product/267/32741)。
+>本文不涉及鉴黄事件通知回调，详情请看 [最佳实践-直播鉴黄](https://cloud.tencent.com/document/product/267/32741)。
 
 
 
