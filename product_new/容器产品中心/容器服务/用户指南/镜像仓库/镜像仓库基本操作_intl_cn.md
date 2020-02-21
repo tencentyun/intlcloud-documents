@@ -3,7 +3,7 @@
 
 ## 操作步骤
 
-### 开通镜像仓库<span id="create"></span>
+### 开通镜像仓库
 >首次使用镜像仓库的用户，需要先开通镜像仓库。
 >
 1. 登录容器服务控制台，选择左侧导航栏中的【镜像仓库】>【[我的镜像](https://console.cloud.tencent.com/tke2/registry/user/self)】。
