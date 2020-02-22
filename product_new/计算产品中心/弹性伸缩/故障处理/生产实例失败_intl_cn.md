@@ -1,11 +1,9 @@
 ## 现象描述
 执行伸缩活动时，可能会有一些原因导致活动失败，需要及时关注并处理以确保伸缩活动正常进行。
-<!--
 您可在 [伸缩组列表](https://console.cloud.tencent.com/autoscaling/group) 中查看伸缩组状态，若您的伸缩组状态出现<img style="margin:-3px 0;" src="https://main.qcloudimg.com/raw/df9771a6e2211e3f418ce257051313c3.png">提示，则此伸缩组中最新一次的伸缩活动是失败的。如下图所示：
->可将鼠标悬浮在提示图标上方查看具体异常原因。
+>?可将鼠标悬浮在提示图标上方查看具体异常原因。
 >
-![](https://main.qcloudimg.com/raw/8872d47c9f5966e23db7574c069ca124.png)
--->
+
 ## 问题分析
 ### 查看原因说明
 腾讯云 AS 提供了业界最智能的查看伸缩组活动失败原因方式，您可通过执行以下步骤查看伸缩活动失败的详细信息：
@@ -40,16 +38,16 @@
 
 #### 云服务器机型在当前可用区无效
 故障原因：指定实例规格已下线。
-处理方法：请在启动配置中选择在售的实例规格，更多说明请参考 [实例规格](https://intl.cloud.tencent.com/document/product/213/11518)。
+处理方法：请在启动配置中选择在售的实例规格，更多说明请参考 [实例规格](https://cloud.tencent.com/document/product/213/11518)。
 
 #### 云服务器与云硬盘搭配无效
 故障原因：当前系统盘类型不支持该机型实例。
 处理方法：请检查伸缩配置，修改系统盘类型，建议选择高性能云盘/SSD云盘。
 
 #### 云服务器购买配额不足
-故障原因：每个用户都有 CVM 的购买配额，按量计费 CVM 的默认配额 请参见 [购买按量计费 CVM 实例限制](https://intl.cloud.tencent.com/document/product/213/2664)。
+故障原因：每个用户都有 CVM 的购买配额，按量计费 CVM 的默认配额 请参见 [购买按量计费 CVM 实例限制](https://cloud.tencent.com/document/product/213/2664#.E8.B4.AD.E4.B9.B0.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B9.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.AE.9E.E4.BE.8B.E9.99.90.E5.88.B6)。
 如果您超过了这个配额，AS 就会无法开出机器。
-处理方法：减少扩容子机数量，或通过 [提交工单](https://intl.cloud.tencent.com/document/product/213/2664) 申请提高配额。
+处理方法：减少扩容子机数量，或通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请提高配额。
 
 #### 云服务器机型不存在
 故障原因：您启动配置里定义的机型不正确或已下架。
