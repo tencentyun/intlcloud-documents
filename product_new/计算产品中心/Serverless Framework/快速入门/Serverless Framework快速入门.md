@@ -1,5 +1,8 @@
 ## 操作场景
-您可以通过如下几步，使用 Serverless Framework 开源 CLI 在腾讯云上部署一个服务，完成配置、创建、测试、部署等步骤。
+该任务指导您使用 Serverless Framework 开源 CLI 在腾讯云上部署一个服务，并完成配置、创建、测试、部署等步骤。
+>
+>- 通过 Serverless Framework 创建的资源，您可以在资源自身的控制台进行查看和管理，例如 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)、[API 网关控制台](https://console.cloud.tencent.com/apigateway/index?rid=1) 等。
+>- 预计2020年3月，Serverless Framework 将提供可视化的页面，您可以从 Serverless 应用的角度查看和管理资源。
 
 ## 前提条件
 在使用之前，请确保如下软件已经安装：
@@ -65,7 +68,7 @@ service: my-service # service name
 provider: # provider information
   name: tencent
   runtime: Nodejs8.9
-  credentials: ~/credentials  #如不使用二维码一键登录，密钥字段需要和credentials文件路径一致
+  credentials: ~/credentials  #如不使用二维码一键登录，密钥字段需要和 credentials 文件路径一致
 
 plugins:
   - serverless-tencent-scf
@@ -82,8 +85,10 @@ functions:
              serviceId:
              httpMethod: ANY
 ```
+>
+>- 您可以通过 [详细配置文档](https://github.com/serverless-tencent/serverless-tencent-scf/blob/master/docs/zh/yaml.md)，查看`serverless.yml`中所有可用属性的属性列表。
+>- Serverless Framework 会为控制台中实际部署的函数增加前缀组成函数名称，前缀规范为`service-stage-function`，默认的stage为`dev`。以上述配置为例，配置文件中的函数名称`hello_world`在控制台中的函数名称对应为`my-service-dev-hello_world`。
 
-> 注，Serverless Framework会为控制台中实际部署的函数增加前缀组成函数名称，前缀规范为`service-stage-function`，默认的stage为`dev`。以上述配置为例，配置文件中的函数名称`hello_world`在控制台中的函数名称对应为`my-service-dev-hello_world`。
 
 #### 部署服务
 通过该命令部署或更新您创建的函数和触发器，资源配置会和`serverless.yml`中保持一致。
@@ -91,9 +96,9 @@ functions:
 serverless deploy
 ```
 
-如您的账号未[登陆](https://intl.cloud.tencent.com/login)或[注册](https://intl.cloud.tencent.com/register)腾讯云，您可以在运行该命令后，直接用`微信`扫描命令中弹出的二维码，对云账户进行授权登陆和注册。
+如您的账号未 [登录](https://intl.cloud.tencent.com/login) 或 [注册](https://intl.cloud.tencent.com/register) 腾讯云，您可以在运行该命令后，直接用**微信**扫描命令中弹出的二维码，对云账户进行授权登录和注册。
 
-更多部署详情参考 [部署服务](https://intl.cloud.tencent.com/document/product/1040/33173) 文档。
+更多部署详情参考 [部署服务](https://cloud.tencent.com/document/product/1154/38814) 文档。
 
 #### 测试服务
 
@@ -109,7 +114,7 @@ $ curl -X POST https://service-xxxx-1300000000.ap-guangzhou.apigateway.myqcloud.
 ```bash
 serverless invoke -f hello_world
 ```
-更多部署详情参考 [云端调用](https://intl.cloud.tencent.com/document/product/1040/33175)。
+更多部署详情参考 [云端调用](https://cloud.tencent.com/document/product/1154/38815)。
 
 #### 获取函数日志
 
@@ -126,4 +131,4 @@ serverless remove
 ```
 
 #### 配置账户信息
-当前默认支持CLI扫描二维码登录，如您希望配置持久的环境变量/秘钥信息，也可以参考 [配置账号](https://intl.cloud.tencent.com/document/product/1040/33170) 文档。
+当前默认支持 CLI 扫描二维码登录，如您希望配置持久的环境变量/密钥信息，也可以参考 [配置账号](https://cloud.tencent.com/document/product/1154/38811) 文档。
