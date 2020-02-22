@@ -16,8 +16,7 @@
 
 如下图：
 
-![1](https://main.qcloudimg.com/raw/645411d191ecdf976ed11d5a11cd69aa.png)
-
+![](https://main.qcloudimg.com/raw/645411d191ecdf976ed11d5a11cd69aa.png)
 
 
 
@@ -27,7 +26,7 @@
 
 #### **1. 创建 VPC**
 
-1. 登录[腾讯云控制台](https://console.cloud.tencent.com/)，单击导航条【私有网络】，或者进入腾讯云[私有网络介绍页中](https://intl.cloud.tencent.com/product/vpc.html)的【立即体验】按钮，进入[私有网络控制台](https://console.cloud.tencent.com/vpc/)。
+1. 登录[腾讯云控制台](https://console.cloud.tencent.com/)，单击导航条【私有网络】，或者进入腾讯云[私有网络介绍页中](https://intl.cloud.tencent.com/product/vpc)的【立即体验】按钮，进入[私有网络控制台](https://console.cloud.tencent.com/vpc/)。
 
 2. 选择列表上方下拉框中的地域，单击【新建】创建私有网络，例如，选择地域“华北地区（北京）”。
 
@@ -39,7 +38,7 @@
 #### **2. 创建子网**
 
 1. 登录[腾讯云控制台](https://console.cloud.tencent.com/)，单击导航条【私有网络】，单击左导航栏中的【子网】。选择下拉框中的地域和私有网络。
-![2](https://main.qcloudimg.com/raw/8c04a129eabe941ad8ef9758347e028f.png)
+![](https://main.qcloudimg.com/raw/8c04a129eabe941ad8ef9758347e028f.png)
 
 2. 单击【新建】，填写子网络名称、CIDR、可用区和关联路由表。然后单击【创建】确认。
 
@@ -65,13 +64,13 @@
 
 2. 在路由表列表中，单击需要访问 Internet 的子网所关联的路由表 ID 进入路由表详情页，在路由策略中单击【编辑】按钮。
 
-3. 单击新增一行，填入目的端（例如这种场景下可以填“0.0.0.0/0”，下一跳类型选择【NAT网关】，并选择已创建的 NAT 网关 ID，然后单击确定。
-![3](https://main.qcloudimg.com/raw/e5029e42a6570c26814375f2264a7f4b.png)
+3. 单击新增一行，填入目的端，例如这种场景下可以填“0.0.0.0/0”，下一跳类型选择【NAT网关】，并选择已创建的 NAT 网关 ID，然后单击确定。
+![](https://main.qcloudimg.com/raw/e5029e42a6570c26814375f2264a7f4b.png)
 
 至此，您在这个子网中的机器，即使没有公网 IP，也可以经过 NAT 网关主动外访了，对外而言还是固定的 IP。
 
 如下图，即使我购买的是没有公网IP且带宽为0的主机，也可以主动外访：
-![4](https://mc.qcloudimg.com/static/img/17ed153e06272885b56764781d9ab581/49.jpg)
+![](https://mc.qcloudimg.com/static/img/17ed153e06272885b56764781d9ab581/49.jpg)
 但伸缩组需要识别这个子网，并确保机器都在这个子网上创建。
 
 ### 第三步：设置伸缩组
@@ -84,6 +83,6 @@
 - 选择“网络”和“子网”，指向刚才设置好的 VPC 和子网**（重要）**。
 
 如下图：
-![5](https://main.qcloudimg.com/raw/f752a1ae61b9a49c97d50626f33f76da.png)
+![](https://main.qcloudimg.com/raw/f752a1ae61b9a49c97d50626f33f76da.png)
 
 至此设置完成。
