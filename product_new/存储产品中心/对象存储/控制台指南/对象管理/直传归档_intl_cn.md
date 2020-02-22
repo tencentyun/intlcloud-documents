@@ -11,7 +11,7 @@
  
 - API 上传
 通过在 PUT Object、POST Object 或 Initiate Multipart Upload 中将 x-cos-storage-class 设置为 ARCHIVE，实现直传归档。
->!Append Object 不支持直传归档。
+>Append Object 不支持直传归档。
 
 - SDK 上传
 当前 COS 发布所有 SDK 都支持直传归档，具体方式为在文件上传时，将 StorageClass 参数设置为 ARCHIVE，实现直传归档。
