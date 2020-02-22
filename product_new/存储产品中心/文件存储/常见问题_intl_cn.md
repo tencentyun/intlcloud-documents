@@ -4,9 +4,16 @@
 ### 文件存储怎么收费？
 仅存储费用。按实际存储量计费（按每小时峰值存储量收取费用）。
 
+### 没有使用广州地区资源，文件存储账单中为何会有广州地区的扣费？
+CFS 文件存储服务账单中，由于中国大陆地区的存储量是合并计费，因此扣费地区会统一显示为 "华南地区（广州）"， 但账单的扩展字段中会展示被合并计费的地区。
+
+**查看方法**
+1. 您可以在 "[费用中心](https://console.cloud.tencent.com/expense/overview) > 账单管理 > 账单明细 > 资源 ID 账单" 列表中， 在表格右上角处单击<img src="https://main.qcloudimg.com/raw/c861c752e9882ce5b8fbbb964b47b035.png"  style="margin:0;">，在弹窗中勾选 "扩展字段1"，单击【确认】保存即可。
+2. 用鼠标拖动表格下方的拖动条，将表格拉至最后，在**扩展字段1**列中，您可以看到计费时被合并的地区 "北京、广州、上海、成都"的说明。
+
 
 ### 文件存储支持哪些访问协议？
-NFS v3.0/v4.0 及 CIFS/SMB 协议，CIFS/SMB 协议文件系统公测中，更多信息请参阅 [CIFS/SMB公测说明](https://intl.cloud.tencent.com/document/product/582/9553)。
+NFS v3.0/v4.0 及 CIFS/SMB 协议，CIFS/SMB 协议文件系统公测中，更多信息请参阅 [CIFS/SMB公测说明](https://cloud.tencent.com/document/product/582/9553#cifs.2Fsmb-.E5.85.AC.E6.B5.8B.E8.AF.B4.E6.98.8E)。
 
 其中由于 Windows 及 Linux 3.10 （例如 CentOS 6.\* ) 早期版本内核的操作系统客户端对 NFS v4.0 协议兼容问题，挂载后无法正常使用，此类客户端请使用 NFS v3.0 挂载。
 
@@ -26,6 +33,27 @@ NFS v3.0/v4.0 及 CIFS/SMB 协议，CIFS/SMB 协议文件系统公测中，更�
 - 挂载点所在 VPC 网络是否和客户端主机所在 VPC 网络一致，地域是否相同。
 - CFS 客户端所在的主机是否有做禁止访问外部端口的安全组策略，具体端口请参考 [文件系统开放端口说明](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E9.9C.80.E8.A6.81.E5.BC.80.E6.94.BE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.EF.BC.9F)。
 
+### 使用 vers=4 挂载命令有报错该如何处理？
+
+使用 vers=4 挂载命令挂载时，由于部分客户端支持 NFS v4.1协议，客户端会优先跟服务端协商尝试使用 NFS v4.1协议挂载，此时由于 CFS 暂时只支持 NFS v4.0 协议，可能会报 NFS4ERR_MINOR_VERS_MIMATCH 错误，但是该错误不会影响客户端挂载、可以忽略；协商失败后，客户端和服务端会继续协商使用 NFS v4.0 进行挂载。
+
+### 在 Windows Server 2016 操作系统设置了 Windows IIS Web 服务后， IIS 和 cifs 协议仍无法协同工作？
+对于 Windows Server 2016 操作系统，由于默认安全策略的更改，还需完成以下配置才能实现 IIS 和 cifs 协议协同工作：
+
+1. 修改 SMB 客户端的注册表项：
+```sh
+HKEY_LOCAL_MACHINE> SYSTEM> CurrentControlSet> Services> LanmanWorkstation> Parameters> AllowInsecureGuestAuth
+```
+若该设置已经存在，则设置成1即可；若设置不存在，则需要点击鼠标右键、选择【新建】>【DWORD（32 位）值】， 设置数值名称为AllowInsecureGuestAuth，其值设置为1。
+2. 指定一个本地用户来访问存储：
+打开 Internet 信息服务（IIS）管理器，在当前主机下：
+	1. 选择【网站】> 【Default Web Site】，单击【基本设置】。
+	2. 在编辑网站对话框中，单击【连接为】，选择特定用户。
+	3. 单击【设置】，设置用户名、密码。
+	4. 最后单击【确定】即可。
+
+
+
 ### CFS 无法写入，如何处理？
 请参考以下方法进行排查：
 - 查看报错信息。
@@ -40,14 +68,14 @@ NFS 3.0 | 111，892，2049 |  telnet 文件系统 IP 2049
 NFS 4.0 | 2049 |  telnet 文件系统 IP 2049
 CIFS/SMB | 445 |  telnet 文件系统 IP 445 
 
-> CFS 暂不支持 ping。
+>! CFS 暂不支持 ping。
 
 ### 设置的访问权限不生效怎么办？
 NFS 协议的文件系统，支持配置多条规则，并根据优先级生效。其中：
 - 当同一个权限组内单条 IP 与网段中包含的 IP 的权限有冲突时，会生效优先级高的规则。若优先级相同则优先生效单条 IP 的权限。
 - 若配置了两个有重叠的网段权限不同但优先级相同，则重叠网段的权限会随机生效，请尽量避免重叠网段的配置。 
 
->CIFS/SMB 文件系统不支持优先级，配置后不生效。
+>!CIFS/SMB 文件系统不支持优先级，配置后不生效。
 
 ### 如何加速复制本地文件到 CFS？
 Linux 可以使用下面 shell 脚本来加速复制本地文件到 CFS。下面代码中，"线程数量" 可以根据需要调整。
@@ -63,10 +91,10 @@ threads=<线程数量>; src=<源路径/>; dest=<目标路径/>; rsync -av -f"+ *
 
 ### 使用 nfs 挂载后，Windows 下没有写入权限，如何处理？
 请严格按照操作指引，在注册表中添加 AnonymousUid 和 AnonymousGid ，并重启系统后在重试。
-可参考文档：[在 Windows 客户端上使用 CFS 文件系统](https://intl.cloud.tencent.com/document/product/582/11524)
+可参考文档：[在 Windows 客户端上使用 CFS 文件系统](https://cloud.tencent.com/document/product/582/11524)
 
 ### Windows IIS 无法使用 mapped driver，怎么办？
-按照 [在 Windows 客户端上使用 CFS 文件系统](https://intl.cloud.tencent.com/document/product/582/11524) 中的步骤，配置正确的 NFS 客户端程序并修改注册（添加访问用户）表。
+按照 [在 Windows 客户端上使用 CFS 文件系统](https://cloud.tencent.com/document/product/582/11524) 中的步骤，配置正确的 NFS 客户端程序并修改注册（添加访问用户）表。
 重启客户端后，打开 IIS 配置页面，增加站点并单击【高级设置】。
 ![](https://main.qcloudimg.com/raw/871a0b585060646f662fa4c8e111df36.png)
 将高级设置中的 "物理路径" 为 CFS 挂载点。
@@ -90,11 +118,11 @@ threads=<线程数量>; src=<源路径/>; dest=<目标路径/>; rsync -av -f"+ *
 
 创建子网完成后，回到 CFS 控制台，创建广州二区的资源时选择该 VPC 及刚创建的子网。 此时原来在该 VPC 广州一区子网下的云服务器即可直接挂载 CFS 文件系统。
 文件系统使用指引：
-- [Linux](https://intl.cloud.tencent.com/document/product/582/11523)
-- [Windows](https://intl.cloud.tencent.com/document/product/582/11524)
+- [Linux](https://cloud.tencent.com/document/product/582/11523)
+- [Windows](https://cloud.tencent.com/document/product/582/11524)
 
 **基础网络下** 
-若云服务器在基础网络内，可创建 VPC 及广州二区子网并在该网络下创建文件系统。 通过 "基础网络互通" 方法，打通云服务器所在的基础网络及该 VPC 即可实现访问。<!--详细操作请参阅 [基础网络互通]() 文档。-->
+若云服务器在基础网络内，可创建 VPC 及广州二区子网并在该网络下创建文件系统。 通过 "基础网络互通" 方法，打通云服务器所在的基础网络及该 VPC 即可实现访问。
 
 ### 文件内容更新不同步，如何解决？
 #### 问题现象
