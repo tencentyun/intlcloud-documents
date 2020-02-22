@@ -9,6 +9,8 @@
 - [远程端口配置异常](#RemotePortConfiguration)
 - [安全组规则不当](#SafetyGroupRule)
 
+如果您的问题无法通过故障排查工具检查，建议您 [通过 VNC 的方式登录](#VNC) 云服务器逐步排查故障。
+
 ## 故障处理
 ### 通过 VNC 方式登录
 <span id="VNC"></span>
@@ -17,27 +19,27 @@
 2. 在实例的管理页面，选择您需要登录的实例，单击【登录】。如下图所示：
 ![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
 3. 在弹出的 “登录Linux实例” 窗口中，选择【其它方式（VNC）】，单击【立即登录】。
->? 登录过程中，如果忘记密码，可以在控制台中重置该实例的密码。具体操作可参考 [重置实例密码](http://intl.cloud.tencent.com/document/product/213/16566)。
+> 登录过程中，如果忘记密码，可以在控制台中重置该实例的密码。具体操作可参考 [重置实例密码](https://cloud.tencent.com/document/product/213/16566)。
 >
 4. 在弹出的对话框中，输入用户名和密码登录，完成登录。
 
 <span id="UseSSHLogin"></span>
 ### SSH 问题导致无法登录
-**故障现象**：[使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501) 时，提示无法连接或者连接失败。
-**处理步骤**：参考 [无法通过 SSH 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32486) 进行排查。
+**故障现象**：[使用 SSH 登录 Linux 实例](https://cloud.tencent.com/document/product/213/35700) 时，提示无法连接或者连接失败。
+**处理步骤**：参考 [无法通过 SSH 方式登录 Linux 实例](https://cloud.tencent.com/document/product/213/37925) 进行排查。
 
 <span id="CryptographicProblem"></span>
 ### 密码问题导致无法登录
 **故障现象**：密码输入错误、忘记密码或者密码重置失败导致登录不成功。
 **解决方法**：请在 [腾讯云控制台](https://console.cloud.tencent.com/cvm/index) 重置该实例的密码，并重启实例。
-**处理步骤**：重置实例密码的方法请参考 [重置实例密码](http://intl.cloud.tencent.com/document/product/213/16566)。
+**处理步骤**：重置实例密码的方法请参考 [重置实例密码](https://cloud.tencent.com/document/product/213/16566)。
 
 <span id="BandwidthUtilization"></span>
 ### 带宽利用率过高
 **故障现象**：通过自助诊断工具诊断，提示问题为带宽利用率过高。
 **处理步骤**：
 1. 通过 [VNC 登录](#VNC) 登录实例。
-2. 参考 [带宽占用高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32542)，查看实例的带宽使用情况和处理故障。
+2. 参考 [带宽占用高导致无法登录](https://cloud.tencent.com/document/product/213/10334#.E9.92.88.E5.AF.B9-linux-.E6.9C.8D.E5.8A.A1.E5.99.A8)，查看实例的带宽使用情况和处理故障。
 
 <span id="HighServerLoad"></span>
 ### 服务器高负载
@@ -45,14 +47,14 @@
 **可能原因**：病毒木马、第三方杀毒软件、应用程序异常、驱动异常或者软件后台的自动更新，会造成 CPU 占用率高，导致登录不上云服务器或者访问慢的问题。
 **处理步骤**：
 1. 通过 [VNC 登录](#VNC) 登录实例。
-2. 参考 [Linux 实例：CPU 与内存占用率高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32387)，在 “任务管理器” 中定位高负载的进程。
+2. 参考 [Linux 实例：CPU 与内存占用率高导致无法登录](https://cloud.tencent.com/document/product/213/10310)，在 “任务管理器” 中定位高负载的进程。
 
 
 <span id="RemotePortConfiguration"></span>
 ### 远程端口配置异常
 **故障现象**：远程无法连接，远程访问端口非默认端口、被修改或者22端口没打开。
 **定位思路**：是否能 ping 通实例的公网 IP，通过 telnet 命令检测端口是否打开。
-**处理步骤**：具体操作可参考 [端口问题导致无法远程登录](https://intl.cloud.tencent.com/document/product/213/32540)。
+**处理步骤**：具体操作可参考 [端口问题导致无法远程登录](https://cloud.tencent.com/document/product/213/10232)。
 
 <span id="SafetyGroupRule"></span>
 ### 安全组规则不当
@@ -61,7 +63,7 @@
 ![](https://main.qcloudimg.com/raw/278c7f0abd9b7224d32fa5402554544a.png)
 如果确定为安全组端口设置问题，可通过工具中的【一键放通】功能放通端口。
 ![](https://main.qcloudimg.com/raw/e4a40dafcc9607ce18ee7001129d9655.png)
-如果您需要自定义设置安全组规则，请参考 [安全组操作](http://intl.cloud.tencent.com/document/product/213/18197) 重新配置安全组规则。
+如果您需要自定义设置安全组规则，请参考 [添加安全组规则](https://cloud.tencent.com/document/product/213/39740) 重新配置安全组规则。
 
 
 
