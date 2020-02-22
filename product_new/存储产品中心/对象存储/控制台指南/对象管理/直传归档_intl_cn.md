@@ -1,14 +1,17 @@
+## 简介
 当前使用归档存储有两种模式：使用归档存储 CAS（Cloud Archive Storage）或者通过对象存储 COS（Cloud Object Storage）的生命周期功能将对象沉降为归档存储类型 。后续这两种模式将进行归一，我们将不再提供归档存储 CAS，只保留后者。与此同时，我们在对象存储 COS 中实现直传归档，即在 COS 中直接上传存储类型为归档存储的对象。
 
 您可以通过控制台、API、SDK、COSCMD 工具来进行 COS 直传归档。
 
+## 直传归档的方式
+
 - 控制台上传
  [COS 控制台](https://console.cloud.tencent.com/cos5) 的【上传文件】，选择上传对象后，在设置对象属性中将存储类型选择为【归档存储】，详情请参见 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321)。
-![](https://main.qcloudimg.com/raw/a1d22225a6e180e4b582e6ff24852088.png)
+![](https://main.qcloudimg.com/raw/8f3b05d1407a9017c54c86c9cec693c7.png)
  
 - API 上传
 通过在 PUT Object、POST Object 或 Initiate Multipart Upload 中将 x-cos-storage-class 设置为 ARCHIVE，实现直传归档。
->Append Object 不支持直传归档。
+>!Append Object 不支持直传归档。
 
 - SDK 上传
 当前 COS 发布所有 SDK 都支持直传归档，具体方式为在文件上传时，将 StorageClass 参数设置为 ARCHIVE，实现直传归档。
