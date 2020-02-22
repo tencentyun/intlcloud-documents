@@ -105,12 +105,12 @@ Dependences.N | array of Dependence objects | 否 |  依赖信息
 -----|------|-----|------|------
 TaskName | String | 是 | 任务名称，在一个作业内部唯一 | Task1
 TaskInstanceNum | Integer | 是 | 任务实例运行个数 | 1
-Application | Application object | 是 | 应用程序信息 | 
-ComputeEnv  | ComputeEnv object | 是 | 运行环境信息 |
-RedirectInfo | RedirectInfo object | 是 | 重定向路径 |
-InputMappings | array of InputMapping object | 否 | 输入映射 |
-OutputMappings | array of OutputMapping object | 否 | 输出映射 |
-Authentications | array of Authentication object | 否 | 授权信息 |
+Application | Application object | 是 | 应用程序信息 | -
+ComputeEnv  | ComputeEnv object | 是 | 运行环境信息 |-
+RedirectInfo | RedirectInfo object | 是 | 重定向路径 |-
+InputMappings | array of InputMapping object | 否 | 输入映射 |-
+OutputMappings | array of OutputMapping object | 否 | 输出映射 |-
+Authentications | array of Authentication object | 否 | 授权信息 |-
 MaxRetryCount | Integer | 否 | 任务失败后的最大重试次数 | 3
 Timeout | Integer | 否 | 任务启动后的超时时间，单位秒 | 3600
 
@@ -125,14 +125,14 @@ PackagePath | String | 否 | 远程代码包路径，必须 .tgz 格式 | ```htt
 名称 | 类型  | 是否必选 | 描述 | 示例
 -----|------|-----|------|------
 EnvType | String | 是 | 计算环境管理类型，包括托管和非托管两种 | LOCAL 本地，PACKAGE 远程代码包
-EnvData | EnvData object | 是 | 计算环境具体参数 |
+EnvData | EnvData object | 是 | 计算环境具体参数 |-
 
 #### EnvData
 名称 | 类型  | 是否必选 | 描述 | 示例
 -----|------|-----|------|------
 InstanceType | String | 是 | CVM实例类型，托管类型必填 | S1.SMALL1
 ImageId | String | 是 | CVM镜像 ID，托管类型必填 | img-m4q71qnf
-others | others | 否 | 参考 CVM API文档 [创建实例](https://itnl.cloud.tencent.com/zh/document/api/213/9384) 提供的参数 | 支持 SystemDisk、DataDisks、VirtualPrivateCloud 等
+others | others | 否 | 参考 CVM API文档 [创建实例](https://intl.cloud.tencent.com/document/api/213/9384) 提供的参数 | 支持 SystemDisk、DataDisks、VirtualPrivateCloud 等
 
 #### RedirectInfo
 名称 | 类型  | 是否必选 | 描述 | 示例
