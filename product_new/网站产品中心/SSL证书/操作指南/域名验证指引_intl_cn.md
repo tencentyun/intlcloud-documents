@@ -91,4 +91,4 @@
 > 
 6. 请耐心等待 CA 机构扫描审核。证书颁发完成后，文件和目录即可清除。
 
->操作过程如果出现问题，请您 [联系我们](https://cloud.tencent.com/document/product/400/35259)。
+>操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
