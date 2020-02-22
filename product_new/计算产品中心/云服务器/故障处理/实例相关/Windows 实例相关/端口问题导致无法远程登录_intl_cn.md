@@ -1,9 +1,10 @@
 本文档介绍云服务器因端口问题导致无法远程登录的排查方法和解决方案。
->? 以下操作以 Windows Server 2012 系统的云服务器为例。
+> 以下操作以 Windows Server 2012 系统的云服务器为例。
 >
 
 ## 检查工具
 您可以通过腾讯云提供的以下工具判断无法登录是否与端口和安全组设置相关：
+- [自助诊断](https://console.cloud.tencent.com/workorder/check) 
 - [安全组（端口）验通工具](https://console.cloud.tencent.com/vpc/helper) 
 
 如果检测为安全组设置的问题，您可以通过 [安全组（端口）验通工具](https://console.cloud.tencent.com/vpc/helper) 中的【一键放通】功能放通相关端口并再次尝试登录。如果放通端口后还是登录失败，可参考以下内容逐步排查原因。
@@ -23,38 +24,38 @@ ping + 云服务器实例公网 IP 地址
 ```
 例如，执行 `ping 139.199.XXX.XXX` 命令。
  - 如果网络正常，返回类似以下结果，请 [检查远程桌面服务配置](#F2)。
-![](//mc.qcloudimg.com/static/img/9596963f31d642deb9417e0a7c0a4085/image.png)
- - 如果网络异常，则出现【请求超时】提示，请参考 [实例 IP 地址 Ping 不通](https://intl.cloud.tencent.com/document/product/213/14639) 进行排查。
+![](https://main.qcloudimg.com/raw/52e6c15bc862dd7724643747ed8abcfb.png)
+ - 如果网络异常，则出现【请求超时】提示，请参考 [实例 IP 地址 Ping 不通](https://cloud.tencent.com/document/product/213/14639) 进行排查。
 3. 执行以下命令，并按 **Enter**，测试远程端口开启情况，判断端口是否可以访问。
 ```
 telnet + 云服务器实例公网 IP 地址 + 端口号
 ```
 例如，执行 `telnet 139.199.XXX.XXX 3389` 命令。如下图所示：
-![](//mc.qcloudimg.com/static/img/e18be3704977545d5c952d3a583f2ccc/image.png)
+![](https://mc.qcloudimg.com/static/img/e18be3704977545d5c952d3a583f2ccc/image.png)
  - 正常情况：黑屏，仅显示光标。说明远程端口（3389）可访问，请 [检查实例远程桌面服务是否开启](#F2)。
  - 异常情况：连接失败，如下图所示。说明网络出现问题，请检查问题网络相应部分。
- ![](//mc.qcloudimg.com/static/img/4b3d0e492b8c005fb1a43bc0cbd1496c/image.png)
-
+ ![](https://main.qcloudimg.com/raw/e3996140e2c1895d2ba2b1dfa637f998.png)
+ 
 <span id = "F2"></span>
 ### 检查远程桌面服务配置
 
 #### 通过 VNC 的方式登录云服务器
 
->? VNC 方式是您通过标准方式无法登录服务器时建议的登录方式。
+> VNC 方式是您通过标准方式无法登录服务器时建议的登录方式。
 >
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)。
 2. 选择待检查的云服务器，单击【登录】。如下图所示：
-![](https://main.qcloudimg.com/raw/038fce530c6c6827796e51d896306a93.png)
+![](https://main.qcloudimg.com/raw/d9ccf04da21f4ac86d624742c87d5628.png)
 3. 在弹出的 “登录Windows实例” 窗口中，选择【其它方式（VNC）】，单击【立即登录】，登录云服务器。
 4. 在弹出的登录窗口中，选择左上角的 “发送远程命令”，单击 **Ctrl-Alt-Delete** 进入系统登录界面。如下图所示：
-![](https://main.qcloudimg.com/raw/2dec43fa6ddb5e442da59c75f7a34b0f.png)
+![](https://main.qcloudimg.com/raw/5064251ea86085326e86884a1c13ef6b.png)
 
 #### 检查云服务器的远程桌面配置是否开启
 
 1. 在云服务器中，右键单击【这台电脑】>【属性】，打开 “系统” 窗口。
-2. 在 “系统” 窗口，选择【高级系统设置】，打开 “系统属性” 窗口。
-3. 在 “系统属性” 窗口，选择【远程】页签，检查 “远程桌面” 功能栏中是否勾选【允许远程连接带此计算机】。如下图所示：
-![](https://main.qcloudimg.com/raw/7cadb6d62af77f7035d973283b104ac8.png)
+2. 在 “系统” 窗口中，选择【高级系统设置】，打开 “系统属性” 窗口。
+3. 在 “系统属性” 窗口中，选择【远程】页签，检查 “远程桌面” 功能栏中是否勾选【允许远程连接带此计算机】。如下图所示：
+![](https://main.qcloudimg.com/raw/2ee4d1abf5ebf351ed814d6644bc7d58.png)
  - 是，表示已开启远程连接配置，请 [检查远程访问端口是否开启](#F3)。
  - 否，请勾选【允许远程连接带此计算机】，并重新进行远程连接实例，查看是否连接成功。
 
@@ -62,23 +63,23 @@ telnet + 云服务器实例公网 IP 地址 + 端口号
 ### 检查远程访问端口是否开启
 
 1. 在云服务器中，单击 <img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;"></img>，打开 “Windows PowerShell” 窗口。
-2. 执行以下命令，检查远程桌面运行情况（默认情况下，远程桌面服务端口号为3389）。
+2. 在 “Windows PowerShell” 窗口中，执行以下命令，检查远程桌面运行情况（默认情况下，远程桌面服务端口号为3389）。
 ```
 netstat -ant | findstr 3389
 ```
  - 若返回类似以下结果，表示正常情况，请 [重启远程桌面](#F4)，并重新进行远程连接实例，查看是否连接成功。
-![](//mc.qcloudimg.com/static/img/45484df01fb678058a23c2f2e122eee1/image.png)
+![](https://main.qcloudimg.com/raw/5206af71e86f8126e9e6845bbeef21b2.png)
  - 若不显示任何连接，表示异常情况，请 [检查注册表远程端口是否一致](#F5)。
 
 <span id = "F5"></span>
 ### 检查注册表远程端口是否一致
 
->! 该步骤指导您检查 **TCP PortNumber** 和 **RDP Tcp PortNumer** 两处端口号，两处端口号必须一致。
+> 该步骤指导您检查 **TCP PortNumber** 和 **RDP Tcp PortNumer** 两处端口号，两处端口号必须一致。
 >
 1. 在云服务器中，单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>，选择 <img src="https://main.qcloudimg.com/raw/5b5e3abb2f39cb719a4119ba77b74447.png" style="margin: 0;"></img>，输入 **regedit**，按 **Enter**，打开 “注册表编辑器” 窗口。
 2. 在左侧的注册表导航中，依次展开【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【Wds】>【rdpwd】>【Tds】>【tcp】目录。
 3. 找到【tcp】中的 PortNumber，并记录 PortNumber 的数据（即端口号，默认为3389）。如下图所示：
-![](https://main.qcloudimg.com/raw/b091a78772809748d39b067b27f8604d.png)
+![](https://main.qcloudimg.com/raw/e67b696fd25b3355c9038f99a08b90be.png)
 4. 在左侧的注册表导航中，依次展开【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【WinStations】>【RDP-Tcp】目录。
 5. 找到【RDP-Tcp】中的 PortNumber，并确认【RDP-Tcp】中的 PortNumber 数据（端口号）是否与【tcp】中的 PortNumber 数据（端口号）一致。如下图所示：
 ![](https://main.qcloudimg.com/raw/8240dd43dcb3ca246caf3397e4a1e84f.png)
@@ -93,8 +94,8 @@ netstat -ant | findstr 3389
 ### 重启远程登录服务
 
 1. 在云服务器中，单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>，选择 <img src="https://main.qcloudimg.com/raw/5b5e3abb2f39cb719a4119ba77b74447.png" style="margin: 0;"></img>，输入 **services.msc**，按 **Enter**，打开 “服务” 窗口。
-2. 找到【Remote Desktop Services】，并右键单击【Remote Desktop Services】，选择【重新启动】，重启远程登录服务。如下图所示：
-![](https://main.qcloudimg.com/raw/6fe2b272cb191fc2fab71a1ea7fe9dd3.png)
+2. 在 “服务” 窗口中，找到【Remote Desktop Services】，并右键单击【Remote Desktop Services】，选择【重新启动】，重启远程登录服务。如下图所示：
+![](https://main.qcloudimg.com/raw/396ee711bb64c8fb1966112a81dd0fd4.png)
 
 ## 其他操作
 
