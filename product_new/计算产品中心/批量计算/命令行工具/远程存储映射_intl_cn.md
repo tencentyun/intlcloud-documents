@@ -3,7 +3,7 @@
 
 
 ##  前提条件
-请根据 [前置准备](http://intl.cloud.tencent.com/document/product/599/10548) 里的说明完成准备，并了解如何配置自定义信息里的通用部分。
+请根据 [前置准备](https://cloud.tencent.com/document/product/599/10548) 里的说明完成准备，并了解如何配置自定义信息里的通用部分。
 
 ## 操作步骤
 ### 上传输入数据文件
@@ -24,7 +24,7 @@
 ![](https://main.qcloudimg.com/raw/82be55909b293aa026539d47c996a1c4.png)
 
 ### 查看和修改 Demo
->请在 [前置准备](http://intl.cloud.tencent.com/document/product/599/10548) 中修改  `3_StoreMapping.py` 文件自定义信息的通用部分。
+>请在 [前置准备](https://cloud.tencent.com/document/product/599/10548) 中修改  `3_StoreMapping.py` 文件自定义信息的通用部分。
 >
 使用编辑器打开 `3_StoreMapping.py` 文件
 ```
@@ -46,7 +46,7 @@ OutputMapping = {
     "DestinationPath": "your output remote path"
 }
 ```
-与 [`2_RemoteCodePkg.py`](http://intl.cloud.tencent.com/document/product/599/10552) 相比，自定义部分中修改如下表：
+与 [`2_RemoteCodePkg.py`](https://cloud.tencent.com/document/product/599/10552#.E6.9F.A5.E7.9C.8B-demo) 相比，自定义部分中修改如下表：
 <table>
 	<tr>
 	<th>配置项</th>
@@ -60,7 +60,7 @@ OutputMapping = {
 	<td>InputMapping</td>
 	<td>	输入映射。
 	<ul class="params">
-	<li>SourcePath 远程存储地址：修改为前置准备里 input 文件夹的地址，请参考 <a href="http://intl.cloud.tencent.com/document/product/599/10548#.E8.8E.B7.E5.8F.96-cos-.E7.9B.B8.E5.85.B3.E8.AE.BF.E9.97.AE.E5.9F.9F.E5.90.8D">获取 COS 相关访问域名</a>。</li>
+	<li>SourcePath 远程存储地址：修改为前置准备里 input 文件夹的地址，请参考 <a href="https://cloud.tencent.com/document/product/599/10548#.E8.8E.B7.E5.8F.96-cos-.E7.9B.B8.E5.85.B3.E8.AE.BF.E9.97.AE.E5.9F.9F.E5.90.8D">获取 COS 相关访问域名</a>。</li>
 	<li>DestinationPath 本地目录：暂不修改。</li>
 	</ul>
 </td>
@@ -70,7 +70,7 @@ OutputMapping = {
 	<td>输出映射。
 	<ul class="params">
 	<li>SourcePath 本地目录：暂不修改。</li>
-	<li>DestinationPath 远程存储地址：修改为前置准备里 output 文件夹的地址，请参考 <a href="http://intl.cloud.tencent.com/document/product/599/10548#.E8.8E.B7.E5.8F.96-cos-.E7.9B.B8.E5.85.B3.E8.AE.BF.E9.97.AE.E5.9F.9F.E5.90.8D">获取 COS 相关访问域名</a>。</li>
+	<li>DestinationPath 远程存储地址：修改为前置准备里 output 文件夹的地址，请参考 <a href="https://cloud.tencent.com/document/product/599/10548#.E8.8E.B7.E5.8F.96-cos-.E7.9B.B8.E5.85.B3.E8.AE.BF.E9.97.AE.E5.9F.9F.E5.90.8D">获取 COS 相关访问域名</a>。</li>
 	</ul>
 	</td>
 	</tr>
@@ -113,10 +113,10 @@ python 3_StoreMapping.py
     "JobId": "job-97smiptb"
 }
 ```
-若未提交成功，请检查返回值排查错误，也可以通过 [联系我们](http://intl.cloud.tencent.com/document/product/599/10806) 中的 QQ 群向管理员咨询。
+若未提交成功，请检查返回值排查错误，也可以通过 [联系我们](https://cloud.tencent.com/document/product/599/10806#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 中的 QQ 群向管理员咨询。
 
 ### 查看状态
-步骤同简单开始中的 [查看状态](http://intl.cloud.tencent.com/document/product/599/10551)。
+步骤同简单开始中的 [查看状态](https://cloud.tencent.com/document/product/599/10551#.E6.9F.A5.E7.9C.8B.E7.8A.B6.E6.80.81)。
 
 ### 查看结果
 1. 登录对象存储控制台，单击左侧导航栏中的【[存储桶列表](https://console.cloud.tencent.com/cos5/bucket)】。
