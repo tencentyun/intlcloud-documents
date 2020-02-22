@@ -1,7 +1,7 @@
 ## 简介
-本实践将引导您在使用腾讯云对象存储 COS 上传对象时，借助无服务器云函数 SCF 实现自动刷新在 CDN 上指定的缓存文件，让其自动获取到更新后的资源。
+本实践将引导您在使用腾讯云对象存储 COS 上传对象时，借助云函数 SCF 实现自动刷新在 CDN 上指定的缓存文件，让其自动获取到更新后的资源。
 
->使用此功能将遵循 CDN 相关 API 调用次数的限制，详情请查见 [缓存刷新](https://intl.cloud.tencent.com/document/product/228/6299#url-.E5.88.B7.E6.96.B0) 文档。
+>使用此功能将遵循 CDN 相关 API 调用次数的限制，详情请参见 [缓存刷新](https://intl.cloud.tencent.com/document/product/228/6299#url-.E5.88.B7.E6.96.B0) 文档。
 
 ## 实践背景
 
@@ -49,7 +49,7 @@
 	2. 在 [SCF 控制台](https://console.cloud.tencent.com/scf/) 中，选择 【函数代码】 页签，将 "提交方法" 设置为 "本地上传 zip 包"，单击【上传】，选择此压缩的 zip 格式文件。如下图所示：
 ![](https://main.qcloudimg.com/raw/4404e739459ec5d72679fb3bb8d7145a.png)
 3. 添加触发方式
- 1. 在 [SCF 控制台](https://console.cloud.tencent.com/scf/) 中，选择 "触发方式" 页签，单击【添加触发方式】。
+ 1. 在 [SCF 控制台](https://console.cloud.tencent.com/scf/) 中，选择【触发方式】，单击【添加触发方式】。
  2. 将 “触发方式” 设置为  "COS 触发"，并选择需刷新 COS 资源的存储桶，配置项说明如下，了解更多详情请参见 [COS 触发器](https://intl.cloud.tencent.com/document/product/583/9707) 文档。 
 **COS Bucket**：选择用作事件源的 COS 存储桶，该存储桶必须位于函数所在地域。
 **事件类型**：选择 COS Bucket 在哪种条件下触发函数。对于每个 COS Bucket，一种事件类型只能设置一次。
