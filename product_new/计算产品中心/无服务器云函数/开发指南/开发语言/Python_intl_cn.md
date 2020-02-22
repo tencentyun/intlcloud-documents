@@ -48,6 +48,9 @@ def main_handler(event, context):
 
 输出内容您可以在函数日志中的 `log` 位置查看。
 
+## 如何安装依赖
+
+
 
 ## 已包含的库及使用方法
 
@@ -197,4 +200,5 @@ Python 2 云端运行时已支持的库如下表：
 - [使用 SCF 连接数据库](<https://cloud.tencent.com/document/product/583/38012>)
 - [网络配置管理](<https://cloud.tencent.com/document/product/583/38202>)
 - [角色与授权](<https://cloud.tencent.com/document/product/583/32389>)
+
 
