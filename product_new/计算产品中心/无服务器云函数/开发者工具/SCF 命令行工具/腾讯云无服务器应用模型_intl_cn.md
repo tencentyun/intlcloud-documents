@@ -1,7 +1,7 @@
 ## 简介
 腾讯云无服务器应用模型（Tencent Cloud Serverless Application Model，TCSAM），是用于在腾讯云上定义 Serverless 应用的模型。
-Serverless 应用是由事件触发运行的应用，一个典型的 Serverless 应用由一个或多个腾讯云云函数 SCF 组成。例如云函数由向 [腾讯云对象存储 COS](https://intl.cloud.tencent.com/product/cos) 上传对象文件操作、向 [腾讯云消息队列 CMQ](https://intl.cloud.tencent.com/product/mq) 中投递消息等事件触发。这些函数可以独立运行，也可以使用其它资源，例如腾讯云对象存储 COS，腾讯云数据库服务 TencentDB。同时，最基本的 Serverless 应用可以只有一个函数。
->?
+Serverless 应用是由事件触发运行的应用，一个典型的 Serverless 应用由一个或多个腾讯云云函数 SCF 组成。例如云函数由向 [腾讯云对象存储 COS](https://intl.cloud.tencent.com/product/cos) 上传对象文件操作、向 [腾讯云消息队列 CMQ](https://intl.cloud.tencent.com/product/cmq) 中投递消息等事件触发。这些函数可以独立运行，也可以使用其它资源，例如腾讯云对象存储 COS，腾讯云数据库服务 TencentDB。同时，最基本的 Serverless 应用可以只有一个函数。
+>
 >- 本文中的 “一定”，“不一定”，“必填”，“将要”，“最好不要”，“应该”，“不应该”，“推荐”，“可能”，和 “可选” 按照 [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) 中的描述进行解释。
 >- 本文中 TCSAM 根据 [Apache 2.0 许可证](http://www.apache.org/licenses/LICENSE-2.0.html) 授权，其版本为2018-11-11。
 
@@ -82,7 +82,7 @@ Globals:
 | MemorySize  |                 `Integer`                  |    否    | 函数执行时分配的内存大小，单位是 MB，默认为128（MB），按128递增。 |
 | Timeout     |                 `Integer`                  |    否    | 函数在被终止之前可以运行的最长时间，单位是秒，默认为3秒。    |
 | Role        |                  `String`                  |    否    | 通过填写角色名称，为函数指定运行角色。 如果此字段缺省，将为函数创建一个默认的角色 QCS_SCFExcuteRole。 |
-| Environment | [环境变量对象](#Environmentvariableobject) |    否    | 为函数配置 [环境变量](https://intl.cloud.tencent.com/document/product/583/32748)。 |
+| Environment | [环境变量对象](#Environmentvariableobject) |    否    | 为函数配置 [环境变量](https://cloud.tencent.com/document/product/583/30228)。 |
 | Events      |         [事件源对象](#EventSource)         |    否    | 用于定义触发此函数的事件源。                                 |
 | VpcConfig   |  [VPC 配置对象](#VPCconfigurationObject)   |    否    | 用于配置云函数访问 VPC。                                     |
 
@@ -104,7 +104,9 @@ ProjectTest: # 命名空间名称
 
 <span id = "event-source-type"></span>
 
->如果有多个函数，可以在函数目录外部新建一个 template.yaml ，在 yaml 里指定每个函数的 CodeUri 即可，部署时将会部署多个函数。
+>
+>- 如果有多个函数，可以在函数目录外部新建一个 template.yaml ，在 yaml 里指定每个函数的 CodeUri 即可，部署时将会部署多个函数。
+>- VS Code 插件尚未支持同时部署多个函数，请依次进行单个函数的部署。
 >
 如下所示，部署时会自动部署 “func1” ,“func2”两个函数。
 ```yaml
@@ -141,13 +143,14 @@ Resources:
 - [CKafka](#ckafka)
 
 ### Timer
-描述类型为 [定时触发器](https://intl.cloud.tencent.com/document/product/583/9708) 的对象。
+描述类型为 [定时触发器](https://cloud.tencent.com/document/product/583/9708) 的对象。
 
 #### 属性
 
 | 属性名称       |   类型    | 是否必填 | 描述                                                         |
 | -------------- | :-------: | :------: | ------------------------------------------------------------ |
-| CronExpression | `String`  |    是    | 函数被触发的时间，支持指定的 [Cron 表达式](https://intl.cloud.tencent.com/document/product/583/9708)。 |
+| CronExpression | `String`  |    是    | 函数被触发的时间，支持指定的 [Cron 表达式](https://cloud.tencent.com/document/product/583/9708#cron-.E8.A1.A8.E8.BE.BE.E5.BC.8F)。 |
+| Message        | `String`  |    否    | 自定义触发附加消息，可以在云函数入参 `event` 中获取。           |
 | Enable         | `Boolean` |    否    | 是否启用触发器。                                             |
 
 #### 示例：Timer 事件源对象
@@ -157,11 +160,12 @@ Resources:
 			 Type: Timer
 			 Properties:
 					 CronExpression: '*/5 * * * *'
+					 Message:"这是一条附加消息"
 					 Enable: True
 ```
 
 ### COS
-描述类型为 [对象存储触发器](https://intl.cloud.tencent.com/document/product/583/9707) 的对象。
+描述类型为 [对象存储触发器](https://cloud.tencent.com/document/product/583/9707) 的对象。
 
 #### 属性
 
@@ -185,13 +189,12 @@ Events:
 					 Events: cos:ObjectCreated:*
 					 Enable: True
 ```
- Bucket name 及 bucket 字段的值可前往 [COS 控制台](https://console.cloud.tencent.com/cos/bucket) 查看。如下图所示：
-![](https://main.qcloudimg.com/raw/c5dd45ad0bda8688fb6ae512d0243ed6.png)
+ Bucket name 及 bucket 字段的值可前往 [COS 控制台](https://console.cloud.tencent.com/cos/bucket) 查看。
 
 <span id="tencentcloudserverlessapi"></span>
-### API
-描述类型为 [API 网关触发器]() 的对象。
->?如果在描述文件中同时存在 API 资源对象或 API 网关触发器事件源对象时，API 资源对象将生效。
+### API 网关
+描述类型为 [API 网关触发器](https://cloud.tencent.com/document/product/583/12513) 的对象。
+>如果在描述文件中同时存在 API 资源对象或 API 网关触发器事件源对象时，API 资源对象将生效。
 >
 
 #### 属性
@@ -216,7 +219,7 @@ Events:
 ```
 
 ### CMQ
-描述类型为 [CMQ 消息队列触发器](https://intl.cloud.tencent.com/document/product/583/11517) 的对象。
+描述类型为 [CMQ 消息队列触发器](https://cloud.tencent.com/document/product/583/11517) 的对象。
 
 #### 属性
 | 属性名称 |   类型    | 是否必填 | 描述             |
@@ -232,12 +235,11 @@ Events:
 			 Properties:
 					 Name: qname
 ```
-Name 字段的值为 topic 名，可前往 [CMQ 控制台](https://console.cloud.tencent.com/cmq/topic?rid=1) 获取信息。如下图所示：
-![](https://main.qcloudimg.com/raw/23a3fe17507a2e47b4a68679100a070b.png)
+Name 字段的值为 topic 名，可前往 [CMQ 控制台](https://console.cloud.tencent.com/cmq/topic?rid=1) 获取信息。
 
 ### CKafka
 
-描述类型为 [CKafka 触发器](https://intl.cloud.tencent.com/document/product/583/17530) 的对象。
+描述类型为 [CKafka 触发器](https://cloud.tencent.com/document/product/583/17530) 的对象。
 
 #### 属性
 
@@ -261,8 +263,7 @@ Events:
 			Offset: latest
 			Enable: true  
 ```
-Name 的字段为 CKafka ID，Topic 字段的值为 topic name 。可前往 [CKafka 控制台](https://console.cloud.tencent.com/ckafka/index?rid=1) 查看对应信息。如下图所示：
-![](https://main.qcloudimg.com/raw/9da143a897e2e7d330347a4f934d2819.png)
+Name 的字段为 CKafka ID，Topic 字段的值为 topic name 。可前往 [CKafka 控制台](https://console.cloud.tencent.com/ckafka/index?rid=1) 查看对应信息。
 
 <span id = "property-type"></span>
 ## 属性类型
@@ -287,12 +288,14 @@ Events:
   Type: Timer
   Properties:
     CronExpression: '*/5 * * * *'
+    Message:"这是一条附加消息"
     Enable: true
 ```
 
 <span id="VPCconfigurationObject"></span>
+
 ### VPC 配置对象
-VPC 配置对象包含的属性包括：`VpcId`、`SubnetId` 属性。它们所代表的含义参考 [VPC Config 对象](https://intl.cloud.tencent.com/document/product/583/17244#VpcConfig)。
+VPC 配置对象包含的属性包括：`VpcId`、`SubnetId` 属性。它们所代表的含义参考 [VPC Config 对象](https://intl.cloud.tencent.com/document/api/583/17244?from_cn_redirect=1#VpcConfig)。
 
 | 属性名称 |   类型   | 是否必填 | 描述                   |
 | -------- | :------: | :------: | ---------------------- |
