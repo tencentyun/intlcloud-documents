@@ -1,6 +1,6 @@
 
-版本功能主要用于对于函数配置和代码的固化，避免开发调试及测试时，对业务的影响。[发布云函数的版本](https://intl.cloud.tencent.com/document/product/583/15371) 后，您可以通过调用指定版本的云函数使用版本。
->?$LATEST 版本为开发和测试使用的版本，用于代码的进一步开发和调试。
+版本功能主要用于对于函数配置和代码的固化，避免开发调试及测试时，对业务的影响。[发布云函数的版本](https://cloud.tencent.com/document/product/583/15371) 后，您可以通过调用指定版本的云函数使用版本。
+> $LATEST 版本为开发和测试使用的版本，用于代码的进一步开发和调试。
 
 ### 版本的触发器
 
@@ -11,11 +11,9 @@
 - 其他产品或服务中配置的云函数触发器不受此限制。
 例如，API 网关触发云函数，可配置任意多个 API 触发同一个云函数。
 
->? 如需增加触发器的配额数量（即配额提升），可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
+> 如需增加触发器的配额数量（即配额提升），可通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
 
 ### 云 API 触发版本
 
 使用云 API InvokeFunction 接口触发云函数调用时，可通过可选参数 Qualifier 指定需要触发的具体版本。如果没有此参数，默认触发 $LATEST 版本。
-
-
 
