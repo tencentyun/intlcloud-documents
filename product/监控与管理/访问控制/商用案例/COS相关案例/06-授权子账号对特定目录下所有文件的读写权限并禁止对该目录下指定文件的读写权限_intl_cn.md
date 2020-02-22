@@ -21,8 +21,8 @@
     ]
 }
 ```
-步骤 2：将该策略授权给子账号。授权方式请参考 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
+步骤 2：将该策略授权给子账号。授权方式请参考 [授权管理](https://cloud.tencent.com/document/product/378/8961)。
 
 方案 B：
 
-通过 COS 控制台进行 Policy 和 ACL 设置。具体请参考 COS 文档。
+通过 COS 控制台进行 Policy 和 ACL 设置。具体请参考 [ACL 访问控制实践](https://cloud.tencent.com/document/product/436/12470)。
