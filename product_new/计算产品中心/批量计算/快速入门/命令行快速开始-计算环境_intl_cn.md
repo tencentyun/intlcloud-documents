@@ -2,12 +2,12 @@
 本文介绍如何使用命令行 TCCLI 来创建计算环境、向计算环境提交作业、销毁计算环境。
 
 ## 前提条件
-请参考 [开始前的准备](http://intl.cloud.tencent.com/document/product/599/10807) 中的步骤做好准备。
+请参考 [开始前的准备](https://cloud.tencent.com/document/product/599/10807) 中的步骤做好准备。
 
 
 ## 操作步骤
 ### 安装和配置 TCCLI
-1. 请参考 [安装 TCCLI](http://intl.cloud.tencent.com/document/product/599/10548) 安装命令行工具。 
+1. 请参考 [安装 TCCLI](https://cloud.tencent.com/document/product/599/10548#.E6.AD.A5.E9.AA.A41-.E5.AE.89.E8.A3.85-tccli) 安装命令行工具。 
 2. 执行以下命令，验证 TCCLI 是否成功安装。
 ```
 tccli batch help
@@ -31,20 +31,20 @@ AVAILABLE ACTION
         CreateTaskTemplate
         用于创建任务模板
 ```
-3. 请按照 [配置 TCCLI](http://intl.cloud.tencent.com/document/product/599/10548) 配置命令行工具。
+3. 请按照 [配置 TCCLI](https://cloud.tencent.com/document/product/599/10548#.E6.AD.A5.E9.AA.A42-.E9.85.8D.E7.BD.AE-tccli) 配置命令行工具。
 
 
 
 ### 创建保存结果的 COS Bucket
 在本文示例中，返回结果将直接输出到系统标准输出中，而 Batch 可以采集系统标准输出 stdout 和 stderr，并在任务结束后将信息上传到已指定的 COS Bucket 中，您需提前创建 Bucket 及用于保存信息的子文件夹。
 
-请参考 [准备 COS 目录](http://intl.cloud.tencent.com/document/product/599/10548) 创建对应 COS Bucket 和子文件夹。
+请参考 [准备 COS 目录](https://cloud.tencent.com/document/product/599/10548#.E6.AD.A5.E9.AA.A43-.E5.87.86.E5.A4.87-cos-.E7.9B.AE.E5.BD.95) 创建对应 COS Bucket 和子文件夹。
 
 
 
 ### 创建计算环境
 您可获取并修改官方提供的示例，作为个人账号下可执行的 Batch 计算环境。请参考以下内容了解计算环境各项配置的含义：
-您也可查阅 [创建计算环境](https://intl.cloud.tencent.com/document/api/599/30521) 等计算环境相关接口。
+您也可查阅 [创建计算环境](https://intl.cloud.tencent.com/document/product/599/30521) 等计算环境相关接口。
 ```
 tccli batch CreateComputeEnv --version 2017-03-12 --ComputeEnv '{
     "EnvName": "test compute env",          // 计算环境名称
