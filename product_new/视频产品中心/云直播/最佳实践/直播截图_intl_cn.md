@@ -4,8 +4,7 @@
 直播截图是指以固定的时间间隔截取实时直播流的图像，并生成图片。您可以通过回调通知获取截图信息，截图数据可应用于直播鉴黄、直播房间封面等多种场景。
 
 ## 直播截图整体流程
-
-![](https://main.qcloudimg.com/raw/02003859ba1db720fbc7d36928d3ffdb.png)
+![](https://main.qcloudimg.com/raw/3ff391e3f3505a257e9abb96fc882b21.png)
 
 整体流程：
 1. 在控制台或者直接调用云 API 配置直播截图功能。
@@ -17,7 +16,7 @@
 
 ### 截图配置方式
 - 云 API
-- 【直播控制台】>【[截图鉴黄配置](https://console.cloud.tencent.com/live/config/jtjh)】
+- 【云直播控制台】>【功能模板】>【[截图鉴黄配置](https://console.cloud.tencent.com/live/config/jtjh)】
 
 ### 截图间隔配置
 
@@ -27,7 +26,7 @@
 
 截图服务支持指定宽（Width）高（Height）截图：
 
- ![](https://main.qcloudimg.com/raw/50a5faab6a70a0737eca78f0ac6b2c20.png)
+ ![](https://main.qcloudimg.com/raw/86e3ce12a58b5125cca87a2d19ff922f.png)
 
 >! 若无需指定特殊宽高，默认截图宽高（设置为 0）则为推流视频画面宽高，可不看如下进阶配置，直接跳过查看下一小节内容。
 
@@ -53,7 +52,7 @@
 
 ## 直播截图事件消息通知
 
-事件消息通知配置请参见 [事件消息通知](https://cloud.tencent.com/document/product/267/32744)，截图回调通知以 JSON 格式，用 HTTP POST 协议通知到客户事先配置好的接收服务端。
+事件消息通知配置请参见 [事件消息通知](https://intl.cloud.tencent.com/document/product/267/31566)，截图回调通知以 JSON 格式，用 HTTP POST 协议通知到客户事先配置好的接收服务端。
 
 ### 截图回调相关字段
 
@@ -66,22 +65,22 @@
 | file\_size | int | 截图文件大小，单位为字节 |
 | width | int | 截图宽，单位为像素 |
 | height | int | 截图高，单位为像素 |
-| pic\_url | string | 截图文件路径 /path/name.jpg，详见下文【部分字段详解】 |
-| pic\_full\_url | string | 截图完整 URL，详见下文【部分字段详解】 |
-| sign | string | 回调签名，详见【事件消息通知】 |
-| t | int64 | 回调签名过期 Unix 时间戳，详见【事件消息通知】 |
+| pic\_url | string | 截图文件路径 /path/name.jpg，详见下文 [部分字段详解](#jump) |
+| pic\_full\_url | string | 截图完整 URL，详见下文 [部分字段详解](#jump) |
+| sign | string | 回调签名，详见 [事件消息通知](https://intl.cloud.tencent.com/document/product/267/31566 |
+| t | int64 | 回调签名过期 Unix 时间戳，详见 [事件消息通知](https://intl.cloud.tencent.com/document/product/267/31566) |
 
-### 部分字段详解
-- `pic_url` 详解：
+### <span id="jump">部分字段详解</span>
+- `pic_url`详解：
  - path：年-月-日
- - name：直播流名称 -screenshot-时-分-秒-宽x高.jpg
+ - name：直播流名称-screenshot-时-分-秒-宽x高.jpg
  例子：
 ```
  /2018-12-17/stream_name-screenshot-19-06-59-640x352.jpg
 ```
 该字段可用于拼接自定义的 COS CDN 域名，若不需要 CDN 域名可直接使用 pic_full_url。
 
-- `pic_full_url` 详解：
+- `pic_full_url`详解：
  - http://COS域名+pic_url
 	例子：
 ```
@@ -118,3 +117,5 @@
 
 }
 ```
+
+
