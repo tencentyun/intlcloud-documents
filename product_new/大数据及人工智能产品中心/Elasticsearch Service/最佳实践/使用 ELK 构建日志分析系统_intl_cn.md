@@ -1,68 +1,51 @@
-腾讯云 Elasticsearch Service 提供的实例包含 Elasticsearch 集群和 Kibana 控制台，其中 Elasticsearch 集群通过在用户 VPC 内的私有网络 VIP 地址 + 端口进行访问，Kibana 控制台提供外网地址供用户在浏览器端访问，至于数据源，当前只支持用户自行接入 Elasticsearch 集群。
-下面以最典型的日志分析架构 ELK 为例，介绍如何将用户的日志导入到 Elasticsearch, 并可以在浏览器访问 Kibana 控制台进行查询与分析。
+腾讯云 Elasticsearch Service（ES），是分布式多节点形式的集群，每个节点均是有计算和存储两部分构成，如何根据业务的需求，选择合适的配置，我们根据实际运营经验，在此提供一些 ES 常见使用场景下，配置选择的建议。您可以根据业务需要进行参考，当然，最好的方法还是需要您在业务的实际使用过程中逐步去探索。依托腾讯云 ES 提供的弹性伸缩机制，在业务规模增大，性能遇到瓶颈的时候，您可以随时扩容，调整得到合适的集群规格。
 
-## 安装部署 logstash
+## 存储容量评估
+影响腾讯云 ES 服务存储容量的主要因素如下：
 
-### 准备环境
-- 用户需要创建和 Elasticsearch 集群在同一 VPC 的 CVM，根据需要可以创建多台 CVM 实例，在 CVM 实例中部署 logstash 组件。
-- CVM 需有2GB以上内存。
-- 在创建好的 CVM 中安装 Java8 或以上版本。
+- 副本数量：副本有利于增加数据的可靠性，但同时会增加存储成本。默认和建议的副本数量为1，对于部分可以承受异常情况导致数据丢失的场景，可考虑设置副本数量为0。
+- 数据膨胀：除原始数据外，ES 需要存储索引、列存数据等，在应用编码压缩等技术后，一般膨胀10%。
+- 内部任务开销：ES 占用约**20%**的磁盘空间，用于 segment 合并、ES Translog、日志等。
+- 操作系统预留：Linux 操作系统默认为 root 用户预留5%的磁盘空间，用于关键流程处理、系统恢复、防止磁盘碎片化问题等。
 
-### 部署 logstash
-1. 下载 logstash 组件包并解压。
-```
-wget https://artifacts.elastic.co/downloads/logstash/logstash-5.6.4.tar.gz
-tar xvf logstash-5.6.4.tar.gz
-```
->?请注意 logstash 版本，建议与 Elasticsearch 版本保持一致。
-2. 配置 logstash。
-本示例以 nginx 日志为输入源，输出项配置为 Elasticsearch 集群的内网 VIP 地址和端口。
-创建 test.conf 配置文件，文件内容如下：
-```
-input {
-    file {
-        path => "/var/log/nginx/access.log" # nginx 访问日志的路径
-        start_position => "beginning" # 从文件起始位置读取日志，如果不设置则在文件有写入时才读取，类似于tail -f
-        }
-}
-filter {
-}
-output {
-  elasticsearch {
-    hosts => ["http://172.16.0.145:9200"] # Elasticsearch集群的内网VIP地址和端口
-    index => "nginx_access-%{+YYYY.MM.dd}" # 索引名称, 按天自动创建索引
- }
-}
-```
-腾讯云 Elasticsearch 集群默认开启了允许自动创建索引配置，上述 test.conf 配置文件中的 nginx_access-%{+YYYY.MM.dd} 索引会自动创建，除非需要提前设置好索引中字段的 mapping，否则无需额外调用 Elasticsearch 的 API 创建索引。
-3. 启动 logstash。
- - 进入 logstash 压缩包解压目录 logstash-5.6.4 下，执行以下命令，后台运行 logstash，注意配置文件路径填写为自己创建的路径。
-```
-nohup ./bin/logstash -f ~/test.conf 2>&1 >/dev/null &
-```
- - 查看 logstash-5.6.4 目录下的 logs 目录，确认 logstash 已经正常启动，正常启动的情况下会记录如下日志：
-```
-[2018-09-13T19:49:50,014][WARN ][logstash.runner          ] --config.debug was specified, but log.level was not set to 'debug'! No config info will be logged.
-[2018-09-13T19:49:50,022][INFO ][logstash.modules.scaffold] Initializing module {:module_name=>"netflow", :directory=>"/root/logstash-5.6.4/modules/netflow/configuration"}
-[2018-09-13T19:49:50,023][INFO ][logstash.modules.scaffold] Initializing module {:module_name=>"fb_apache", :directory=>"/root/logstash-5.6.4/modules/fb_apache/configuration"}
-[2018-09-13T19:49:50,475][INFO ][logstash.outputs.elasticsearch] Elasticsearch pool URLs updated {:changes=>{:removed=>[], :added=>[http://172.16.0.145:9200/]}}
-[2018-09-13T19:49:50,476][INFO ][logstash.outputs.elasticsearch] Running health check to see if an Elasticsearch connection is working {:healthcheck_url=>http://172.16.0.145:9200/, :path=>"/"}
-[2018-09-13T19:49:50,564][WARN ][logstash.outputs.elasticsearch] Restored connection to ES instance {:url=>"http://172.16.0.145:9200/"}
-[2018-09-13T19:49:50,604][INFO ][logstash.outputs.elasticsearch] Using mapping template from {:path=>nil}
-[2018-09-13T19:49:50,607][INFO ][logstash.outputs.elasticsearch] Attempting to install template {:manage_template=>{"template"=>"logstash-*", "version"=>50001, "settings"=>{"index.refresh_interval"=>"5s"}, "mappings"=>{"_default_"=>{"_all"=>{"enabled"=>true, "norms"=>false}, "dynamic_templates"=>[{"message_field"=>{"path_match"=>"message", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false}}}, {"string_fields"=>{"match"=>"*", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false, "fields"=>{"keyword"=>{"type"=>"keyword", "ignore_above"=>256}}}}}], "properties"=>{"@timestamp"=>{"type"=>"date", "include_in_all"=>false}, "@version"=>{"type"=>"keyword", "include_in_all"=>false}, "geoip"=>{"dynamic"=>true, "properties"=>{"ip"=>{"type"=>"ip"}, "location"=>{"type"=>"geo_point"}, "latitude"=>{"type"=>"half_float"}, "longitude"=>{"type"=>"half_float"}}}}}}}}
-[2018-09-13T19:49:50,618][INFO ][logstash.outputs.elasticsearch] Installing elasticsearch template to _template/logstash
-[2018-09-13T19:49:50,666][INFO ][logstash.outputs.elasticsearch] New Elasticsearch output {:class=>"LogStash::Outputs::ElasticSearch", :hosts=>["http://172.16.0.145:9200"]}
-[2018-09-13T19:49:50,670][INFO ][logstash.pipeline        ] Starting pipeline {"id"=>"main", "pipeline.workers"=>4, "pipeline.batch.size"=>125, "pipeline.batch.delay"=>5, "pipeline.max_inflight"=>500}
-[2018-09-13T19:49:50,807][INFO ][logstash.pipeline        ] Pipeline main started
-[2018-09-13T19:49:50,855][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=>9600}
-```
-有关 logstash 的更多功能，请查看 [elastic 官方文档](https://www.elastic.co/products/logstash)。
+因此，数据在 ES 中占用的实际空间可通过下面公式估算：
 
-## 查询日志
-1. 登录 [ES 控制台](https://console.cloud.tencent.com/es)，在集群列表，单击【Kibana】，进入 Kibana 控制台。
-![](https://main.qcloudimg.com/raw/a99bb629ecefb620669bf5cc649e4e3d.png)
-2. 选择 【Management】>【Index Patterns】，添加名为【nginx_access*】的索引。
-![](https://main.qcloudimg.com/raw/b9aca384cf66b074fcfcd3ef4ae62d85.png)
-3. 选择【Discover】页，选择【nginx_access*】索引项，已经可以检索到 nginx 的访问日志。
-![](https://main.qcloudimg.com/raw/cfa7444ebde8df0f2b5661e2fc0288b6.png)
-有关 Kibana 控制台的更多功能，请参见 [elastic 官方文档](https://www.elastic.co/products/kibana)。
+``` 
+实际空间 = 源数据 * (1 + 副本数量) * (1 + 数据膨胀) / (1 - 内部任务开销) / (1 - 操作系统预留)
+        ≈ 源数据 * (1 + 副本数量) * 1.45
+``` 
+为保证服务的稳定运行，建议至少预留50%的存储空间，因此建议申请的存储容量为：
+``` 
+存储容量 = 源数据 * (1 + 副本数量) * 1.45 * （1 + 预留空间）
+        ≈ 源数据 * (1 + 副本数量) * 2.2
+``` 
+
+>! ES 广泛应用于日志、站点检索、Metrics、APM 等场景，上述存储容量评估方法较为泛化，您可以根据自身需求高度优化 ES，降低存储成本。
+
+
+## 计算资源评估
+ES 的计算资源主要消耗在写入和查询过程，而不同业务场景在写入和查询方面的复杂度不同、比重不同，导致计算资源相比存储资源较难评估。但一般情况下，存储资源会较早成为瓶颈，因此建议您优先评估存储资源量，初步选择计算资源，在测试过程中确认计算资源是否足够。下面也针对几种常见使用场景，介绍计算资源评估过程中的一些经验：
+
+- 日志场景：日志属于典型的写多读少类场景，计算资源主要消耗在写入过程中。我们在日志场景的经验是：2核8GB内存的资源最大可支持0.5w/s的写入能力，但注意不同业务场景可能有偏差。由于实例性能基本随计算资源总量呈线性扩容，您可以按实例资源总量估算写入能力。例如6核24GB内存的资源可支持1.5w/s的写入能力，40核160GB内存的资源可支持10w/s的写入能力。
+- Metric 及 APM 等结构化数据场景：这也是写多读少类场景，但相比日志场景计算资源消耗较小，2核8GB内存的资源一般可支持1w/s的写入能力，您可参照日志场景线性扩展的方式，评估不同规格实例的实际写入能力。
+- 站内搜索及应用搜索等搜索场景：此类为读多写少类场景，计算资源主要消耗在查询过程，由于查询复杂度在不同使用场景差别非常大，计算资源也最难评估，建议您结合存储资源初步选择计算资源，然后在测试过程中验证、调整。
+
+
+## 实例类型选择及测试
+
+在完成存储、计算资源评估后，您可以初步选择实例类型，这里包含节点规格和节点数量两方面。选择实例类型的常用建议如下：
+- 我们建议您至少选择3个节点，避免 ES 实例出现脑裂问题，保证 ES 实例具有较高的节点故障容错能力。
+- 如果您有非常大的存储容量需求，建议选择高规格的节点，避免大量低规格节点，这对大实例的性能、稳定性等有较大好处。例如如果您有40核160GB内存5TB存储容量需求，建议选择8核32GB内存1TB * 5节点的实例。同理，当您需要对实例扩容时，建议优先进行纵向扩容，把节点扩容到8核32GB或16核64GB的规格，然后再考虑横向扩容增加节点个数。
+- 当完成实例类型的初步选择后，您可以使用真实数据进行测试，通过观察 CPU 使用率、写入指标（性能、拒绝率）、查询指标（QPS、拒绝率）等监控信息，进一步确认实例类型是否合适。另外，建议针对上述监控信息配置告警，方便在线上使用时，及时发现资源不足等问题。
+
+
+## 分片数量评估
+
+每个 ES 索引被分为多个分片，数据按哈希算法打散到不同的分片中。由于索引分片的数量影响读写性能、故障恢复速度，且通常无法轻松更改，需要提前考虑。这里给出配置分片数量的一些常用建议：
+
+- 建议单个分片大小保持在10GB - 50GB之间，您可以据此初步确定 Index 的分片数量。分片不宜过大或过小：过大可能使 ES 的故障恢复速度变慢；过小可能导致非常多的分片，但因为每个分片使用一些数量的 CPU 和内存，从而导致读写性能、内存不足等问题。
+- 在测试阶段，可以根据每个 Index 的实际大小、预期未来增长情况，适当调整分片数量。
+- 当分片数量超过数据节点数量时，建议分片数量接近数据节点的整数倍，方便分片在所有数据节点均匀分布。
+- 对于日志、Metric 等场景中，建议使用 ES 自带的 [Rollover Index](https://www.elastic.co/guide/en/elasticsearch/reference/master/indices-rollover-index.html) 功能，持续滚动产生新的 Index。方便在发现分片大小不合理时，通过该功能及时调整分片数量。
+
+例如， 假设实例有5个数据节点，Index 当前大小为150GB，预期半年后增长50%。如果我们控制每个单分片为30GB，则大约需要150GB * （1 + 50%） / 30 ≈ 7个分片，考虑到有两个数据节点支撑2/7的数据压力，节点间压力相对不均匀，我们把分片数量调整到10个。
