@@ -218,7 +218,7 @@
    </tr>
 </table>
 
-> ! 另外，由于 CFS 文件系统使用 VPC 的 IP，因此创建文件系统、列出 CFS 文件系统列表、查询文件系统详情等页面中需要获取 "vpc:DescribeVpcEx" 及 "vpc:DescribeSubnetEx" 接口的权限（如果不授予则无法查询和创建）。强烈建议您对所有授权 CFS 的策略中增加这两个接口对 VPC 所有资源的授权。 详细策略写法可以参考  QcloudCFSReadOnlyAccess 策略申明。
+> 另外，由于 CFS 文件系统使用 VPC 的 IP，因此创建文件系统、列出 CFS 文件系统列表、查询文件系统详情等页面中需要获取 "vpc:DescribeVpcEx" 及 "vpc:DescribeSubnetEx" 接口的权限（如果不授予则无法查询和创建）。强烈建议您对所有授权 CFS 的策略中增加这两个接口对 VPC 所有资源的授权。 详细策略写法可以参考  QcloudCFSReadOnlyAccess 策略申明。
 
 上述参数设置完成后，单击【添加声明】，则为该自定义策略添加了一条声明。您可以重复上述操作，添加多条声明。若有重复或冲突的策略，他们之间的关系及生效结果请参见 [语法结构](https://cloud.tencent.com/document/product/598/10604)。
 
