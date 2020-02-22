@@ -1,1 +1,2 @@
-You can set up a Dedicated Tunnel by using the Connection under other Tencent Cloud account, which is known as hosted connection. You can also share your own Connection with other Tencent Cloud customers, especially, all by your own without any Tencent Cloud's permission. For more how-to information, please see the Direct Connect [documentation](https://intl.cloud.tencent.com/document/product/216).
+您可共享其他账号的物理专线建设专用通道，也可将自己账号下的物理专线共享给其他腾讯云客户。
+如果您是向腾讯云合作伙伴购买物理专线服务，一般是共享物理专线模式，您需向合作伙伴获得合作伙伴物理专线账号的 UIN、物理专线实例 ID 以及 VLANID。操作详情请参见 [申请通道](https://cloud.tencent.com/document/product/216/19250 ) 。
