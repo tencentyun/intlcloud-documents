@@ -1,9 +1,9 @@
-用户可以编写 SCF 函数来处理 COS Bucket 中的对象创建和对象删除事件。COS 可将事件发布给 SCF 函数并将事件数据作为参数来调用该函数。用户可以在 COS Bucket 中添加存储桶通知配置，该配置可标识触发函数的事件类型和希望调用的函数名称等信息，更多内容请参考PutBucketNotification接口。
+用户可以编写 SCF 函数来处理 COS Bucket 中的对象创建和对象删除事件。COS 可将事件发布给 SCF 函数并将事件数据作为参数来调用该函数。用户可以在 COS Bucket 中添加存储桶通知配置，该配置可标识触发函数的事件类型和希望调用的函数名称等信息。
 
 COS 触发器具有以下特点：
 
 - **Push 模型**：COS 会监控指定的 Bucket 动作（事件类型）并调用相关函数，将事件数据推送给 SCF 函数。在推模型中使用 Bucket 通知来保存 COS 的事件源映射。
-- **异步调用**：COS 始终使用异步调用类型来调用函数，结果不会返回给调用方。有关调用类型的更多信息，请参阅 [调用类型](https://intl.cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B)。
+- **异步调用**：COS 始终使用异步调用类型来调用函数，结果不会返回给调用方。有关调用类型的更多信息，请参阅 [调用类型](https://cloud.tencent.com/document/product/583/9694#.E8.B0.83.E7.94.A8.E7.B1.BB.E5.9E.8B)。
 
 ## COS 触发器属性
 
@@ -12,14 +12,20 @@ COS 触发器具有以下特点：
 
 |    事件类型    | 描述 |
 | ---------- | --- |
-| cos: ObjectCreated:*         |  以下提到的所有上传事件均可触发云函数 |
-| cos: ObjectCreated:Put       |  使用 Put Object 接口创建文件时触发云函数 |
-| cos: ObjectCreated:Post      |  使用 Post Object 接口创建文件时触发云函数  |
-| cos: ObjectCreated:Copy      |  使用 Put Object - Copy 接口创建文件时触发云函数  |
-| cos: ObjectCreated:CompleteMultipartUpload |  使用 CompleteMultipartUploadt 接口创建文件  |
-| cos: ObjectRemove:*          | 以下提到的所有删除事件均可触发云函数 |
-| cos: ObjectRemove:Delete     | 在未开启版本管理的 Bucket 下使用 Delete Object 接口删除的 Object，或者使用 versionid 删除指定版本的 Object 时触发云函数  |
-| cos: ObjectRemove:DeleteMarkerCreated | 在开启或者暂停版本管理的 Bucket 下使用 Delete Object 接口删除的 Object 时触发云函数|
+| cos:ObjectCreated:*         |  以下提到的所有上传事件均可触发云函数 |
+| cos:ObjectCreated:Put       |  使用 Put Object 接口创建文件时触发云函数 |
+| cos:ObjectCreated:Post      |  使用 Post Object 接口创建文件时触发云函数  |
+| cos:ObjectCreated:Copy      |  使用 Put Object - Copy 接口创建文件时触发云函数  |
+| cos:ObjectCreated:CompleteMultipartUpload |  使用 CompleteMultipartUploadt 接口创建文件时触发云函数  |
+| cos:ObjectCreated:Origin | 发生 CDN 回源时触发云函数 | 
+| cos:ObjectCreated:Replication | 通过跨区域复制创建对象时触发云函数 |
+| cos:ObjectRemove:*          | 以下提到的所有删除事件均可触发云函数 |
+| cos:ObjectRemove:Delete     | 在未开启版本管理的 Bucket 下使用 Delete Object 接口删除的 Object，或者使用 versionid 删除指定版本的 Object 时触发云函数  |
+| cos:ObjectRemove:DeleteMarkerCreated | 在开启或者暂停版本管理的 Bucket 下使用 Delete Object 接口删除的 Object 时触发云函数|
+| cos:ObjectRestore:Post | 创建了归档恢复的任务时触发云函数 |
+| cos:ObjectRestore:Completed | 完成归档恢复任务时触发云函数 |
+
+
 
 - 前后缀过滤（可选）：您可以将通知配置为按对象名称的前缀和后缀进行筛选。例如，您可以设置 “上传事件” 加前缀规则为 “.jpg”，当有以 “.jpg” 为扩展名的文件添加到存储桶时会触发 SCF 函数。
 
@@ -76,7 +82,6 @@ COS 触发器具有以下特点：
 }
 ```
 
-
 数据结构内容详细说明如下：
 
 |    结构名    | 内容 |
@@ -86,3 +91,9 @@ COS 触发器具有以下特点：
 | cos | 记录事件对应的 COS 信息 |
 | cosBucket |  记录具体事件发生的 Bucket，包含 Bucket 名称，地域，所属用户 APPID |
 | cosObject |  记录具体事件发生的对象，包含对象文件路径，大小，自定义元数据，访问 URL  |
+
+## 相关示例
+以下为 Java 语言的 COS 触发器示例，您可参考示例进行使用：
+```
+https://github.com/tencentyun/scf-demo-java/blob/master/src/main/java/example/Cos.java
+```
