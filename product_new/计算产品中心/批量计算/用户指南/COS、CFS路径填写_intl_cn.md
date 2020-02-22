@@ -10,7 +10,7 @@ Batch 填写的时候仅支持 XML API 形式的域名。如下图所示：
 
 
 ### 前缀需要以 cos:// 开头
-已获取的 COS 路径。如下图所所示：
+已获取的 COS 路径。如下图所示：
 ![](https://main.qcloudimg.com/raw/f96cd300eaa28ba674ef9d3ab6362b0a.png)
 在 Batch 的路径填写里，需要添加 `cos://` 开头、需要以 `/` 结尾，得出以下形式路径：
 ``` 
