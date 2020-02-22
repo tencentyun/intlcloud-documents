@@ -1,38 +1,35 @@
-SCF 默认是部署在公共网络中，如果您想让 SCF 可以访问到内网中的资源，如 CDB、CVM等，在创建或编辑云函数时，您可以通过更改网络配置，来为云函数的运行环境增加至 VPC 网络的访问能力。需要注意的是：
-
-* 部署在 VPC 中的云函数默认是和外网隔离开的，如果您想让云函数同时具备内网访问和外网访问能力，您可以参考另外一篇文章《函数在 VPC 网络中访问外网》，给 VPC 添加 NAT 网关。
-* 云函数当前不支持对接到基础网络里的资源，如果您确实需要访问到基础网络，可以[提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) 联系我们。
-
-## 使用场景
-
-* 内网服务访问：访问内网的数据库、Redis、Kafka 等产品或服务，确保数据安全，连接安全。
-* 访问控制：外网访问统一收敛至同一地址，通过 VPC 外网出口可控制出口地址唯一。
-
-## 编辑网络配置
-
-在创建函数的过程中，或针对创建后的函数进行编辑时，可在函数配置页里，找到 VPC 网络配置。选择需接入的 VPC 网络和所需要使用的子网。
-
-通过选择网络选项中的 `无`，可重新切换云函数的网络环境至当前所属的独立网络环境。
-
-## 查看网络配置
-
-在配置好云函数的网络项后，可通过查看云函数的函数配置，通过 **所属网络** 和 **所在子网** 了解到具体配置。
-
-## 使用 VPC 网络
-
-在配置完成并开始使用 VPC 网络后，此云函数的运行网络环境，将从当前独立的网络环境中切换至用户的 VPC 中。云函数启动时，将占用用户 VPC 子网中的 IP 地址作为云函数运行环境的 IP 地址。
-
-> **注意** 
-> 请确保子网中有足够的可用空闲的 IP 地址。如果由于无空闲 IP 导致的 IP 分配失败，将使得云函数启动运行失败。您可以更改子网的掩码长度来扩充子网 IP 的数量。
+## 操作场景
+腾讯云云函数默认部署在公共网络中，本文介绍了通过私有网络配置实现云函数访问内网中的资源，例如 TencentDB、CVM、Redis、Kafka 等，确保了数据安全及连接安全。
 
 
+## 注意事项
+在进行私有网络配置时，需注意以下几点：
+- 部署在 VPC 中的云函数默认隔离外网。若想使云函数同时具备内网访问和外网访问能力，可通过以下两种方式实现：
+ - 通过配置云函数公网访问能力，且公网访问可控制出口地址唯一。
+ - 通过 VPC 添加 NAT 网关，请参考 [私有网络中配置 NAT](https://cloud.tencent.com/document/product/583/19704)。
+- 云函数目前不支持对接到基础网络里的资源。
 
-云函数启动后，可通过代码访问 VPC 内的其他各产品，例如 [弹性缓存 Redis](https://intl.cloud.tencent.com/product/crs?idx=1)、[云数据库 CDB](https://intl.cloud.tencent.com/product/cdb)、或用户配置在 VPC 中的 CVM 等等各种访问入口位于 VPC 中的产品或服务，直接通过内网 IP 地址即可访问。如下为访问 [弹性缓存 Redis](https://intl.cloud.tencent.com/product/crs?idx=1) 的示例代码，其中 Redis 实例在 VPC 内的 IP 地址为 `10.0.0.86`。
 
-```
-# -*- coding: utf8 -*- 
+## 前提条件
+已 [创建云函数](https://cloud.tencent.com/document/product/583/37509)。
+
+
+## 操作步骤
+### 修改网络配置
+1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index)，单击左侧导航栏中的【函数服务】。
+2. 在页面上方选择地域，单击需要配置的函数名。
+3. 在“函数配置”页面中，单击右上角的【编辑】。
+4. 开启【内网访问】功能，选择需要接入的 VPC 网络和所需要的使用的子网。
+
+
+### 使用 VPC 网络
+在云函数完成内网访问配置，并开始使用 VPC 网络时，云函数将从当前独立的网络环境切换至已配置的 VPC 中。云函数启动时，将占用用户 VPC 子网中的 IP 地址作为云函数运行环境的 IP 地址。为了降低云函数对子网的 IP 地址占用，运行中的云函数实例会共享一组 proxy 对，并根据网络带宽使用率对 proxy 对进行扩缩容。
+
+云函数启动后，可通过代码及内网 IP 地址访问 VPC 中的资源，例如 [云数据库 TencentDB for Redis](https://intl.cloud.tencent.com/product/crs)、用户配置在 VPC 中的 CVM 等各种访问入口位于 VPC 中的资源。
+以下为访问 [云数据库 TencentDB for Redis](https://intl.cloud.tencent.com/product/crs) 的示例代码，其中 Redis 实例在 VPC 内的 IP 地址为 `10.0.0.86`。
+```python
+# -*- coding: utf8 -*-
 import redis
-
 def main_handler(event,context):
     r = redis.StrictRedis(host='10.0.0.86', port=6379, db=0,password="crs-i4kg86dg:abcd1234")
     print(r.set('foo', 'bar'))
@@ -40,24 +37,37 @@ def main_handler(event,context):
     return r.get('foo')
 ```
 
-云函数切换至 VPC 网络环境后，将失去原有独立网络环境中的外网访问能力，如需继续访问外网，在 VPC 上通过 [配置公网网关](https://intl.cloud.tencent.com/document/product/215/4972)、配置 NAT 网关 等方式，打通 VPC 访问外网的能力，具体可以参考另外一篇文章《函数在 VPC 网络中访问外网》，给 VPC 添加 NAT 网关。
+#### VPC 网络中的 Name server 配置
+在云函数完成内网访问配置后，若需要在 VPC 网络中使用域名方式访问网络内的自建服务，通常需要使用自定义 `name server` 实现域名解析。
+为了支持云函数环境内的自定义 `name server` 配置，目前可以通过配置 `OS_NAMESERVER` 环境变量来实现自定义 `name server`。如下表：
 
-### VPC 网络中的 Name server 配置
+<table>
+	<tr>
+	<th>环境变量名</th>
+  <th>值设置规则</th>
+	<th>作用</th>
+	</tr>
+	<tr>
+	<td>OS_NAMESERVER</td>
+	<td>
+		<ul style="margin-bottom:0px;"> 
+		<li>可以为一个或多个 IP 地址、或域名，多个地址时使用<code>;</code>分号分隔。</li>
+			<li>最多可以支持配置5个自定义 <code>name server</code>。 </li>
+		<ul>
+	</td>
+	<td>配置自定义 <code>name server</code>。 </td>
+	</tr>
+</table>
 
-在配置云函数到 VPC 网络中后，如果需要在 VPC 网络内仍然使用域名方式访问 VPC 网络内的自建服务，通常需要使用自定义 name server 实现域名解析。
 
-为了支持云函数环境内的自定义 name server 配置，目前可以通过配置 `OS_NAMESERVER` 环境变量来实现自定义 name server。
-
-| 环境变量名 | 值设置规则 | 作用 |
-| --- | --- | --- |
-| OS_NAMESERVER | 可以为一个或多个 IP 地址、或域名，多个地址时使用“;”分号分隔。最多可以支持配置 5 个 自定义 name server。 | 配置自定义 name server |
-
-可通过打印输出 /etc/resolv.conf 文件检查配置生效情况
-
-```
+#### 验证配置
+如下例代码，可通过打印输出 `/etc/resolv.conf` 文件检查配置生效情况。
+```python
 with open("/etc/resolv.conf") as f:
     print(f.readlines())
 ```
 
-
-
+## 相关操作
+### 查看网络配置
+1. 登录云函数控制台，单击左侧导航栏中的【函数服务】。
+2. 在页面上方选择地域，并单击已配置内网访问的函数名，即可通过**所属网络**和**所属子网**了解到具体配置。
