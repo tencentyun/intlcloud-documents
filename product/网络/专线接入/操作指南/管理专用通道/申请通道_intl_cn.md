@@ -1,17 +1,6 @@
 ## 申请步骤
-1. 登录 [专线接入 - 专用通道](https://console.cloud.tencent.com/vpc/dcConn) 控制台。
-2. 单击 【+ 新建】，发起专用通道的申请。创建专用通道您需要输入以下信息，参数说明请参见下文 [参数含义说明](#shuoming)：
- 1. 基本配置：
- 假设您的账号有合适的物理专线，申请页面如下：
- ![基本配置](https://main.qcloudimg.com/raw/d122e4ea8876e6ea85734f908eab7ee5.png)
- 假设您的账号没有合适的物理专线，申请页面如下：
- ![](https://main.qcloudimg.com/raw/83a65a62d26525530903b0cafce6ebd6.png)
- 2. 高级配置：
- ![高级配置](https://main.qcloudimg.com/raw/dc493d124ef59f49bade7366f65495f8.png)
- 3. 配置 IDC 设备：
-您可下载 CPE 配置指引文件，文件提供了几款通用厂商的配置方法。
-![](https://main.qcloudimg.com/raw/980bdf742ff291249d1b19bf5a2131bd.png)
-
+1. 登录 [专线接入 - 专用通道](https://console.cloud.tencent.com/dc/dcConn) 控制台。
+2. 单击 【+新建】，发起专用通道的申请。创建专用通道您需要输入以下信息，参数说明请参见下文 [参数含义说明](#shuoming)：
 <span id='shuoming'></span>
 ## 参数含义说明
 <style>
@@ -30,8 +19,8 @@ table th:first-of-type {
 | 物理专线        | 【我的专线】【托管专线】选择您需要建立专用通道的物理专线 ID。          | -                             |
 | 专线提供方       | 【共享专线】输入您需要共享的物理专线所属账号。                   | -                                 |
 | 共享专线 ID     | 【共享专线】输入您需要建立专用通道的共享专线 ID。                | -                                 |
-| 接入网络        | 支持 [私有网络](https://cloud.tencent.com/document/product/215)、[黑石网络](https://cloud.tencent.com/document/product/386) 和 [云联网网络](https://cloud.tencent.com/document/product/877)。 | 云联网：可实现一个通道连接多个 VPC 网络。              |
-| 私有网络 / 黑石网络 | 【私有网络】【黑石网络】选择专用通道需要连接的网络实例 ID。           | 黑石网络暂只支持标准型专线网关。                   |
+| 接入网络        | 支持 [私有网络](https://intl.cloud.tencent.com/document/product/215)和 [云联网网络](https://intl.cloud.tencent.com/document/product/1003)。 | 云联网：可实现一个通道连接多个 VPC 网络。              |
+| 私有网络 | 【私有网络】选择专用通道需要连接的网络实例 ID。           | 黑石网络暂只支持标准型专线网关。                   |
 | 网关地域        | 【云联网网络】表示云联网专线网关地域，与物理专线接入点所属公有云大区地域相同。   | 共享专线模式需向物理专线所有者获得专线接入点地域信息。        |
 | 专线网关        | 私有网络 VPC 专线网关与 VPC 地域相同；云联网专线网关与专线接入点所属公有云大区地域相同 | 云联网专线网关暂时不支持 NAT 功能。               |
 | VLAN ID     | VLAN ID = 0：表示该物理专线不开启子接口，只能创建一个通道。       | MSTP 专线透传多 VLAN 需运营商线路开启 Trunk 模式。 |
