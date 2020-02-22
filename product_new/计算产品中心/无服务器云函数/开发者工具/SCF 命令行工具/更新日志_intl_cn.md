@@ -20,9 +20,9 @@
 
 **新增功能：**
 
-- 支持在本地调用云端函数。<!--详情请参考 [云端调用函数]()-->。
+- 支持在本地调用云端函数。
 - 初始化函数模版默认支持 SCF 及联动资源权限角色。
-- 支持获取云端函数信息。<!--详情请参考 [查看函数信息]()-->。
+- 支持获取云端函数信息。
 
 **体验优化：**
 
@@ -38,10 +38,10 @@
 
 **新增功能：**
 
-- 支持自定义函数上传忽略内容，详情请参考 [部署教程](https://intl.cloud.tencent.com/document/product/583/32756)。
-- 支持查看云端函数运行状态，详情请参考 [运行状态教程](https://intl.cloud.tencent.com/document/product/583/32768)。
-- 支持配置多账号和账号间切换，详情请参考 [账号切换教程](https://intl.cloud.tencent.com/document/product/583/32767)
-- 支持在 template.yaml 进行角色指定，详情请参考[ TCSAM 说明](https://intl.cloud.tencent.com/document/product/583/32761)。
+- 支持自定义函数上传忽略内容，详情请参考 [部署教程](https://cloud.tencent.com/document/product/583/33451)。
+- 支持查看云端函数运行状态，详情请参考 [运行状态教程](https://cloud.tencent.com/document/product/583/37859)。
+- 支持配置多账号和账号间切换，详情请参考 [账号切换教程](https://cloud.tencent.com/document/product/583/37852)
+- 支持在 template.yaml 进行角色指定，详情请参考[ TCSAM 说明](https://cloud.tencent.com/document/product/583/36198)。
 - 升级提醒会提示具体新增内容。
 
 **体验优化：**
@@ -59,7 +59,7 @@
 
 **新增功能：**
 
-- 支持函数的模板文件上传/下载以及获取模板文件列表，详情参考 [测试模板](<https://intl.cloud.tencent.com/document/product/583/32757>)。
+- 支持函数的模板文件上传/下载以及获取模板文件列表，详情参考 [测试模板](<https://cloud.tencent.com/document/product/583/33453>)。
 - 支持触发器的修改，本地修改触发器后部署至云端会立即生效。
 
 **问题修复：**
@@ -77,8 +77,8 @@
 
 **新增功能：**
 
-- 支持绑定已有 API 网关，详情请参考[ TCSAM 说明](https://intl.cloud.tencent.com/document/product/583/32761#api)。
-- 已有网关不再重复创建（通过 template.yaml 里 ServiceId 识别），详情请参考 [TCSAM 说明](<https://intl.cloud.tencent.com/document/product/583/32761#api>)。
+- 支持绑定已有 API 网关，详情请参考[ TCSAM 说明](https://cloud.tencent.com/document/product/583/36198#api-.E7.BD.91.E5.85.B3)。
+- 已有网关不再重复创建（通过 template.yaml 里 ServiceId 识别），详情请参考 [TCSAM 说明](<https://cloud.tencent.com/document/product/583/36198#api-.E7.BD.91.E5.85.B3>)。
 - 支持配置多版本 Python path。
 
 **问题修复：**
