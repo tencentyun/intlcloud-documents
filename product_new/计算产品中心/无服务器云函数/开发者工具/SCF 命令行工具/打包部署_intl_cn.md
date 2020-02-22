@@ -2,7 +2,7 @@
 
 ## 函数部署
 SCF CLI 通过 `deploy` 子命令来完成函数打包部署。SCF 命令行工具依据指定的函数模板配置文件，将配置文件中指定的代码包、函数配置等信息，部署到云端，或更新云端的函数。
-> `scf deploy` 命令的执行过程均基于函数模板配置文件，具体的模板文件说明和写法请见 [模板文件说明](https://intl.cloud.tencent.com/document/product/583/32758)。
+> `scf deploy` 命令的执行过程均基于函数模板配置文件，具体的模板文件说明和写法请见 [模板文件说明](https://cloud.tencent.com/document/product/583/33454)。
 
 ### 参数说明
 
@@ -66,7 +66,7 @@ Resources:
         Timeout: 3
 ```
 则目录层级及 HELLO.ignore 如下图所示：
-![](https://main.qcloudimg.com/raw/867949f7ba128cd078bd4b2bf400783a.png)
+![](https://main.qcloudimg.com/raw/10e4384d9adb5588592878796016015d.png)
 完成配置后，最终上传会**忽略 testmodule 目录**和**当前路径下所有 md 文件**。
 
 
@@ -80,8 +80,9 @@ Resources:
 <span id="COSUploadCode"></span>
 ### 通过 COS 对象存储上传代码
 使用 COS 部署函数最高能提升80%的速率，大大提高了工作效率。但在部署频次、部署包很大时，可能会产生 COS 计费。现 SCF 与 COS 联合发布限时活动，开启 COS 部署即可领取代金券，请前往 [SCF 控制台](https://console.cloud.tencent.com/scf/index?rid=1?from=fromdoc) 查看活动信息。
+
 #### 自动部署
-您可以执行 `scf configure set --using-cos y` 命令开启自动 COS 上传。部署时，云端将会在您的账户下自动开启 COS 并存储部署包。
+您可以执行 `scf configure set --using-cos y` 命令开启自动 COS 上传。部署时，云端将会在您的账户下自动开启 COS 并创建名为 `scf-deploy-区域-appid` 的存储桶，并存储部署包。
 
 #### 手动指定
 使用 `deploy` 命令时，指定 cos bucket 参数，即可将 zip 包上传至指定的 bucket 中。部署时，云端将会从 cos bucket 拉取代码包。
