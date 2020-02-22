@@ -1,10 +1,8 @@
-[//]: # (chinagitpath:XXXXX)
-
 TcaplusDB 使用 Google Protobuf 文件定义业务数据表，支持 proto2 和 proto3 的语法规范，以下是 proto 建表文件的规则描述。
 
 ## proto2 加表文件规范
 
-以下是一个符合 proto2 语法规范的加表文件示例
+以下是一个符合 proto2 语法规范的加表文件示例：
 
 ```
 syntax = "proto2";                      // 指明符合proto2语法规范
@@ -167,5 +165,3 @@ TcaplusDB 的表定义文件在 protobuf 语法基础上通过 option 进行扩�
 | tcaplus_sharding_key | 在设置了表索引键的前提下，用户可以自定义表分片键 | option(tcaplusservice.tcaplus_sharding_key) = "uin"; | 否 |
 | tcaplus_field_cipher_suite | 如果需要使用字段加密功能，需要设置，如果用户需要指定自己的加密算法，请参考 API 中的例子 | option(tcaplusservice.tcaplus_field_cipher_suite) = "DefaultAesCipherSuite"; | 否 |
 | tcaplus_cipher_md5 | 如果需要使用字段加密功能，需要设置用户侧保存加密密码字符串的 MD5 | option(tcaplusservice.tcaplus_cipher_md5)= "62fee3b53619b7f303c939964c6f2c4b"; | 否 |
-
-
