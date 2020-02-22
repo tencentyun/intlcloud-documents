@@ -3,7 +3,7 @@
 WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览器与服务器全双工（full-duplex）通信，即允许服务器主动发送信息给客户端。WebSocket 在服务端有数据推送需求时，可以主动发送数据至客户端。而原有 HTTP 协议的服务端对于需推送的数据，仅能通过轮询或 long poll 的方式来让客户端获得。
 
 由于云函数是无状态且以触发式运行，即在有事件到来时才会被触发，因此，为了实现 WebSocket，云函数与 API 网关相结合，通过 API 网关承接及保持与客户端的连接。您可以认为 API 网关与 SCF 一起实现了服务端。当客户端有消息发出时，会先传递给 API 网关，再由 API 网关触发云函数执行。当服务端云函数要向客户端发送消息时，会先由云函数将消息 POST 到 API 网关的反向推送链接，再由 API 网关向客户端完成消息的推送。具体的实现架构如下：
-![](https://main.qcloudimg.com/raw/d51ee070556d8f6bb3be308f651bcc4b.png)
+![](https://main.qcloudimg.com/raw/71cef73b5ff2c695da6d636500d4272f.png)
 
 对于 WebSocket 的整个生命周期，主要由以下几个事件组成：
 - 连接建立：客户端向服务端请求建立连接并完成连接建立。
@@ -24,7 +24,7 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
 - 清理函数：在客户端主动发起 WebSocket 连接中断请求时触发该函数，通知 SCF 准备断开连接的 secConnectionID。通常会在该函数清理持久存储中记录的该 secConnectionID。
 - 传输函数：在客户端通过 WebSocket 连接发送数据时触发该函数，告知 SCF 连接的 secConnectionID 以及发送的数据。通常会在该函数处理业务数据。例如，是否将数据推送给持久存储中的其他 secConnectionID。
 
->! 当您需要主动给某个 secConnectionID 推送数据或主动断开某个 secConnectionID 时，均需要用到 API 网关的反向推送地址。
+> 当您需要主动给某个 secConnectionID 推送数据或主动断开某个 secConnectionID 时，均需要用到 API 网关的反向推送地址。
 
 ## 数据结构
 
@@ -81,7 +81,7 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
 </tr>
 </table>
 
- >! 在 API 网关迭代过程中，requestContext 中的内容可能会大量增加。目前只保证数据结构内容仅增加，不删除，且不对已有结构进行破坏。
+ > 在 API 网关迭代过程中，requestContext 中的内容可能会大量增加。目前只保证数据结构内容仅增加，不删除，且不对已有结构进行破坏。
 2. 当注册函数收到连接建立的请求后，需要在函数处理结束时，将是否同意建立连接的响应消息返回至 API 网关中。响应  Body 要求为 JSON 格式，其示例如下：
 ```
 {
@@ -121,7 +121,7 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
 </tr>
 </table>
 
- >! 
+ > 
  > - SCF 请求超时默认认为连接建立失败。
  > - 当 API 网关收到云函数的响应消息后，优先判断 HTTP 响应码。如果响应码为200，则解析响应 Body。如果响应码为非200，则认为 SCF 出现故障，拒绝建立连接。
 
@@ -135,7 +135,7 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
 ```
 {
   "websocket":{
-    "action":"data recv",
+    "action":"data send",
     "secConnectionID":"xawexasdfewezdfsdfeasdfffa==",
     "dataType":"text", 
     "data":"xxx"
@@ -146,7 +146,7 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
 <table>
 <tr><th>参数</th><th>内容</th></tr>
 <tr><td>websocket</td><td>数据传输的详细信息。</td></tr>
-<tr><td>action</td><td>本次请求的动作，例如 “data recv”。</td></tr>
+<tr><td>action</td><td>本次请求的动作，本文以 “data send” 为例。</td></tr>
 <tr><td>secConnectionID</td><td>字符串，是标识 WebSocket 连接的 ID。原始长度为128Bit，是经过 base64 编码后的字符串，共32个字符</td></tr>
 <tr><td>dataType</td><td>传输数据的类型。<ul><li>“binary”：表示二进制。</li><li>“text”：表示文本。</li></ul></td></tr>
 <tr><td>data</td><td>传输的数据。如果 “dataType” 是 “binary”，则为 base64 编码后的二进制流；如果 “dataType” 是 “text”，则为字符串。</td></tr>
@@ -158,7 +158,7 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
 - 如果响应码为200，表示函数运行成功。
 - 如果响应码为非200，表示系统故障，API 网关会主动给客户端发 FIN 包。
 
->! API 网关不会处理响应 Body 中的内容。
+> API 网关不会处理响应 Body 中的内容。
 
 <span id="DownlinkDataCallback"></span>
 #### 下行数据回调
@@ -237,7 +237,7 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
 | websocket | 连接断开的详细信息。 |
 | action | 本次请求的动作，此处为 "closing"。 |
 | secConnectionID | 字符串。</br>是标识 WebSocket 连接的 ID。原始长度为128Bit，是经过 base64 编码后的字符串，共32个字符。|
->! 在清理函数中，您可以从 event 中获取 secConnectionID，并在永久存储（如数据库）中删除该 ID。
+> 在清理函数中，您可以从 event 中获取 secConnectionID，并在永久存储（如数据库）中删除该 ID。
 
 ##### 注销响应
 
@@ -245,7 +245,7 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
 - 如果响应码为200，表示函数运行成功。
 - 如果响应码为非200，表示系统故障。
 
->! API 网关不会处理响应 Body 中的内容。
+> API 网关不会处理响应 Body 中的内容。
 
 #### 服务端主动断开连接
 
@@ -258,4 +258,5 @@ WebSocket 协议是基于 TCP 的一种新的网络协议。它实现了浏览�
   }
 }
 ```
->! 当主动断开客户端的链接时，您需要先获取客户端 WebSocket 的 secConnectionID，并将其填写在数据结构中；再在永久存储（如数据库）中删除该 ID。
+> 当主动断开客户端的链接时，您需要先获取客户端 WebSocket 的 secConnectionID，并将其填写在数据结构中；再在永久存储（如数据库）中删除该 ID。
+
