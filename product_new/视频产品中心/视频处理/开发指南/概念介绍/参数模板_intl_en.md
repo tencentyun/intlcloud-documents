@@ -1,12 +1,12 @@
-MPS uses a parameter template to organize commonly used key transcoding parameters for your convenience. A parameter template is identified by its name and ID. For example, common parameter templates "LD", "SD", "HD", and "FHD" are identified by transcoding template IDs "10", "20", "30", and "40", respectively. Parameter templates can be categorized as follows based on different transcoding tasks:
+MPS uses parameter templates to organize commonly used key transcoding parameters for your convenience. A parameter template is identified by its name and ID. For example, common parameter templates "LD", "SD", "HD", and "FHD" are identified by transcoding template IDs "10", "20", "30", and "40", respectively. Parameter templates can be categorized as follows based on different transcoding tasks:
 - Transcoding template
 - Remuxing template
 - Animated image generating template
-- Screencapturing template
+- Time point screencapturing template
 - Sampled screencapturing template
 - Image sprite generating template
 
-MPS provides common parameter templates of the above template types, which are called preset parameter templates. You can also create parameter templates of various types and set different parameter values for them, which are called custom parameter templates. For more information on parameters in parameter templates, please see [Template Parameter Description](https://intl.cloud.tencent.com/document/product/1041/33494).
+MPS provides preset parameter templates for all of the above. You can also create custom parameter templates and set parameter values. For more information on parameter templates, please see [Parameter Templates](https://cloud.tencent.com/document/product/862/37037).
 
 ## Preset Parameter Templates
 
@@ -719,7 +719,7 @@ Parameters that are not listed in the above table are as shown below:
     </tr>
     <tr>
         <td>
-            GOP (short for group of pictures) length
+            Group of Pictures (GOP) length
         </td>
         <td>
             240 frames
@@ -762,7 +762,7 @@ Parameters that are not listed in the above table are as shown below:
     </tr>
     <tr>
         <td>
-            SoundSystem
+            Sound System
         </td>
         <td>
             Stereo
@@ -787,10 +787,10 @@ Parameters that are not listed in the above table are as shown below:
             Codec
         </th>
         <th>
-            SoundSystem
+            Sound System
         </th>
         <th>
-            SampleRate
+            Sample Rate
         </th>
     </tr>
  <tr>
@@ -951,39 +951,39 @@ Parameters that are not listed in the above table are as shown below:
 | 20001   | WebP               | Same as source                 | 2           |
 
 <span id="screenshot01"></span>
-### Preset screencapturing templates
+### Preset time point screencapturing templates
 
-| Template ID | Format | Width | Height | FillType |
+| Template ID | Format | Width | Height | Fill Type |
 | ------- | --------- | ----- | --------- | -------------- |
 | 10      | JPG                | Same as source          | Same as source           | Stretch   |
 
 <span id="screenshot02"></span>
 ### Preset sampled screencapturing templates
 
-| Template ID | Format | Width | Height | SampleType | Interval | FillType |
+| Template ID | Format | Width | Height | Sample Type | Interval | Fill Type |
 | ------- | -------- | -- | ----- | ---- | ------- | -------- |
 | 10      | JPG    | Same as source   | Save as source     | By percent  | 10%   | Stretch     |
 
 <span id="screenshot03"></span>
 ### Preset image sprite generating templates
 
-| Template ID  | Format | Width | Height | Rows | Columns | SampleType | Interval |
+| Template ID  | Format | Width | Height | Rows | Columns | Sample Type | Interval |
 | ------- | ----- | ------- | ----- | ---- | ---- | -------- | ------- |
 | 10      | JPG   | 142    | 80      | 10       | 10    | By time   | 10s  |
 
 
 ## Custom Parameter Templates
-In addition to offering preset parameter templates, MPS allows you to customize template parameters, i.e., creating a custom parameter template. You can use the console or APIs to create custom parameter templates of desired types which are visible only to you.
+In addition to offering preset parameter templates, MPS allows you to customize template parameters to create your own custom parameter template. You can use the console or APIs to create custom parameter templates. Your created custom parameter templates are visible only to you.
 
 ### Creating a custom parameter template in the console
 
-For more information on how to create a custom parameter template in the console, please see [Template Settings](https://intl.cloud.tencent.com/document/product/1041/33486).
+For more information on how to create a custom parameter template in the console, please see [Template Settings](https://cloud.tencent.com/document/product/862/36407).
 
 ### Creating a custom parameter template through an API
 You can use the following APIs to create custom parameter templates of corresponding types:
-- Creating a transcoding template
-- Creating a watermarking template
-- Creating a sampled screencapturing template
-- Creating a screencapturing template
-- Creating an animated image generating template
-- Creating an image sprite generating template
+- [Creating a transcoding template](https://cloud.tencent.com/document/product/862/37605)
+- [Creating a watermarking template](https://cloud.tencent.com/document/product/862/37604)
+- [Creating a sampled screencapturing template](https://cloud.tencent.com/document/product/862/37607)
+- [Creating a time point screencapturing template](https://cloud.tencent.com/document/product/862/37606)
+- [Creating an animated image generating template](https://cloud.tencent.com/document/product/862/37609)
+- [Creating an image sprite generating template](https://cloud.tencent.com/document/product/862/37608)

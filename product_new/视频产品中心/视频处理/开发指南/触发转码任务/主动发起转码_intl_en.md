@@ -1,11 +1,11 @@
-In MPS, you can initiate a transcoding task in the following methods:
+In MPS, there are two ways to initiate transcoding tasks:
 - You can set up a workflow to automatically trigger a transcoding task upon file upload.
 - You can call an API to manually initiate a transcoding task for an uploaded file.
- 
-For more information on the first method, please see [Setting Workflow](https://intl.cloud.tencent.com/document/product/1041/33475). This document describes how to call an API to initiate a task.
+
+This document describes how to call an API to initiate a task. To learn how to set up a workflow to automatically trigger transcoding tasks, see [Setting Workflows](https://intl.cloud.tencent.com/document/product/1041/33475). 
 
 ## Initiating a Transcoding Task
-You can call the PocessMedia API to initiate a transcoding task for a single file. If the API is successfully called, the task ID, i.e., the `TaskID` field in the result, will be returned.
+You can call the ProcessMedia API to initiate a transcoding task for a single file. If the API is successfully called, the task ID, i.e., the `TaskID` field in the result, will be returned.
 
 ### Sample request
 ```

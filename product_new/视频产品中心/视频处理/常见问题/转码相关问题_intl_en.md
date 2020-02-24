@@ -1,5 +1,5 @@
-### What container formats and audio/video codecs are supported by the transcoding service?
-Supported video input formats include:
+### What container formats and audio/video codecs do we support for transcoding?
+We support the following video input formats:
 
 | Container Format     | Video Codec | Audio Codec  |
 |:---------:|:---:|:----:|
@@ -14,7 +14,7 @@ Supported video input formats include:
 | MPG | MPEG1 and MPEG2 |  MP2 |
 | 3GP | H263 and MPEG4 |  AMR and AAC  |
 
-Supported video output formats include:
+We support the following video output formats:
 
 | Container Format     | Video Codec | Audio Codec  |
 |:---------:|:---:|:----:|
@@ -24,14 +24,14 @@ Supported video output formats include:
 | FLV | H.264 and H.265 | AAC  |
 | DASH | H.264 and H.265 | AAC  |
 
-Supported audio input formats include:
+We support the following audio input formats:
 
 | Container Format   | Audio Codec  |
 |:-----:|:---:|
 | SILK | SILK |
 | AMR | AMR |
 
-Supported audio output formats include:
+We support the following audio output formats:
 
 | Container Format   | Audio Codec  |
 |:-----:|:---:|
@@ -39,25 +39,25 @@ Supported audio output formats include:
 | MP3 | LAME |
 
 
-### What if no transcoding is initiated?
+### Why wasn’t transcoding initiated?
 
 Possible reasons and troubleshooting methods include:
 
-- **Upload failed**: File upload through a Tencent Cloud COS SDK or in the COS Console failed, and an HTTP error code is returned (e.g., `4XX` or `5XX`). In this case, no COS event notification will be triggered, and MPS will not initiate a transcoding task. **Please check whether the file is successfully uploaded.**
-- **Upload succeeded but did not trigger transcoding**: Possible reasons include: No workflow is set up, or the workflow is incorrectly configured. **Please check and make sure that the workflow is correctly configured.**
+- **Upload failed**: File upload through a Tencent Cloud COS SDK or in the COS Console failed, and an HTTP error code was returned (e.g., `4XX` or `5XX`). In this case, no COS event notification will be triggered, and MPS will not initiate a transcoding task. **Please check whether the file is successfully uploaded.**
+- **Upload succeeded but did not trigger transcoding**: Possible reasons include: No workflow was set up, or the workflow was not set up correctly. **Please check and make sure that the workflow is set up properly.**
 
-### What if transcoding fails to be initiated?
+### Why did the transcoding initiation fail?
 
 Possible reasons and troubleshooting methods include:
 
-- **Incorrect request parameters**: If the API returns an error, please check the API parameters and make sure that success is returned for the API call.
-- **No authorization**: If the API returns a permission-related error, please check whether you have grant MPS the permission to COS and CMQ resources.
+- **Incorrect request parameters**: If the API returns an error, please check the API parameters and make sure that the API call is successful.
+- **No authorization**: If the API returns a permission-related error, please check whether you have granted MPS permissions to COS and CMQ resources.
 
-### What if transcoding fails?
+### Why did transcoding fail?
 
-Transcoding failure refers to a failure that occurs during any subtask in MPS, such as transcoding, screencapturing, watermarking, and intelligent audit, recognition, analysis, and release.
+Transcoding failure refers to a failure that occurs during any subtask. This includes transcoding, screencapturing, watermarking, video audit, content recognition and content analysis.
 You can determine the error type based on the returned error code and message, as shown below:
 - Incorrect source file metadata or unsupported format.
 - Failed screencapturing (due to lack of video stream), unknown errors, etc.
 
-If the error is relevant to the source file, please check file metadata and encoding parameters. For errors of other types, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If the error is relevant to the source file, please check the file metadata and encoding parameters. For other error types, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).

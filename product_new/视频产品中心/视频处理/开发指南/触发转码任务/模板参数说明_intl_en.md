@@ -1,4 +1,4 @@
-When creating a parameter template, you need to customize parameters in it such as the bitrate, video width and height, remuxing format, and codec. The meanings and value ranges of key parameters in each type of parameter templates are as shown below:
+When creating a parameter template, you need to set the parameters, including bitrate, video width and height, remuxing format, and codec. This document describe the key parameters for each template and their value ranges.
 
 ## Audio/Video Transcoding Template
 
@@ -93,58 +93,58 @@ When creating a parameter template, you need to customize parameters in it such 
     </tr>
 </table>
 
-## Watermarking Template
+## Watermark Template
 
 | Parameter      | Description     |
 | ------------- | ------ |
 | Type  | Image and text watermarks are supported: <li>Image watermark: Static or animated images are supported</li><li>Text watermark: Texts in various languages are supported</li> |
 | Position | Relative position of a watermark in the video    |
-| ImageSize | Size of an image watermark in the video     |
-| ImageContent | Binary content of an image watermark |
-| FontSize     | Font size of a text watermark |
-| FontType     | Font of a text watermark, e.g., Times New Roman |
-| FontColor    | Color of a text watermark, e.g., 0xRRGGBB   |
-| FontAlpha  | Transparency of text watermark. Value range: 0–100% |
+| Image Dimension | Size of an image watermark in the video     |
+| Image Content | Binary content of an image watermark |
+| Font Size     | Font size of a text watermark |
+| Font Type     | Font of a text watermark, e.g., Times New Roman |
+| Font Color    | Color of a text watermark, e.g., 0xRRGGBB   |
+| Font Alpha  | Transparency of text watermark. Value range: 0–100% |
 
-## Screencapturing Template
+## Screenshot Template
 
-### Time point screencapturing template
+### Time point screenshot template
 
-A time point screencapturing template is used to take a screenshot at a specified time point or take a screenshot as a cover.
+A time point screenshot template is used to take a screenshot at a specified time point or to generate a thumbnail cover.
 
 | Parameter       | Description            |
 | ----------- | --------- |
 | Format   | Output format of a screenshot file. Currently, only JPG is supported   |
 | Width        | Screenshot width. Value range: 128–4,096 px  |
 | Height     | Screenshot height. Value range: 128–4,096 px   |
-| FillType | Filling refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. Generally, the following filling types are supported: <li>Stretch: The screenshot is stretched to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer" </li><li>Fill with black: This option retains the aspect ratio of the source video for the screenshot and fill the unmatched area with black color blocks </li><li>Fill with white: This option retains the aspect ratio of the source video for the screenshot and fill the unmatched area with white color blocks </li><li>Gaussian blur: This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with Gaussian blur </li> |
+| Fill Type | Filling refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. Generally, the following filling types are supported: <li>Stretch: The screenshot is stretched to match the aspect ratio of the source video, which may distort the image. </li><li>Fill in black: This option retains the aspect ratio of the source video for the screenshot and the unmatched area is filled in black. </li><li>Fill in white: This option retains the aspect ratio of the source video for the screenshot and the unmatched area is filled in white. </li><li>Gaussian blur: This option retains the aspect ratio of the source video for the screenshot and Gaussian blur is applied to the unmatched area. </li> |
 
-### Sampled screencapturing template
+### Sampled screenshot template
 
-A sampled screencapturing template is used to take sampled screenshots.
+A sampled screenshot template is used to take sampled screenshots.
 
 | Parameter  | Description  |
 | ----------- | -- |
 | Format  | Output format of a screenshot file. Currently, only JPG is supported    |
 | Width   | Screenshot width. Value range: 128–4,096 px         |
 | Height  | Screenshot height. Value range: 128–4,096 px         |
-| SampleType | The following two types are supported: <li>Sample by percent: If this type is selected and `Interval` is set to `5%` for example, 20 screenshots will be generated </li><li>Sample by time: If this type is selected and `Interval` is set to `10s` for example, the number of generated screenshots will depend on the video length </li> |
-| Interval   | Sampling interval. <li>If the sampling type is by percent, this parameter will be a percent value </li><li>If the sampling type is by time, this parameter will be a second value </li> |
-| FillType | Filling refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. Generally, the following filling types are supported: <li>Stretch: The screenshot is stretched to match the aspect ratio of the source video, which may make the screenshot "shorter" or "longer" </li><li>Fill with black: This option retains the aspect ratio of the source video for the screenshot and fill the unmatched area with black color blocks </li><li>Fill with white: This option retains the aspect ratio of the source video for the screenshot and fill the unmatched area with white color blocks </li><li>Gaussian blur: This option retains the aspect ratio of the source video for the screenshot and fills the unmatched area with Gaussian blur </li> |
+| Sample Type | The following two types are supported: <li>Sample by percent: If this is selected and `Interval` is set to `5%` for example, 20 screenshots will be generated </li><li>Sample by time: If this is selected and `Interval` is set to `10s` for example, the number of generated screenshots will depend on the video length </li> |
+| Interval   | Sampling interval. <li>If the sampling type is by percent, this parameter will be a percent value </li><li>If the sampling type is by time, this parameter will be in seconds </li> |
+| Fill Type | Filling refers to the way of processing a screenshot when its aspect ratio is different from that of the source video. Generally, the following filling types are supported: <li>Stretch: The screenshot is stretched to match the aspect ratio of the source video, which may distort the image. </li><li>Fill in black: This option retains the aspect ratio of the source video for the screenshot and the unmatched area is filled in black. </li><li>Fill in white: This option retains the aspect ratio of the source video for the screenshot and the unmatched area is filled in white. </li><li>Gaussian blur: This option retains the aspect ratio of the source video for the screenshot and Gaussian blur is applied to the unmatched area. </li> |
 
-### Image sprite generating template
+### Image sprite screenshot template
 
-An image sprite screencapturing template is used to take screenshots and combine them to generate an image sprite.
+An image sprite screenshot template is used to take screenshots and combine them to generate an image sprite.
 
 | Parameter         | Description              |
 | ------------ | ------------------ |
 | Format       | Output format of an image sprite file. Currently, only JPG is supported                         |
-| Width      | Subimage width of an image sprite                     |
-| Height   | Subimage height of an image sprite                       |
-| Rows       | Number of rows of subimages in an image sprite                  |
-| Columns    | Number of columns of subimages in an image sprite                   |
-| SampleType | Sampling type of subimages. Currently, only sampling by time is supported |
-| Interval   | Time interval for capturing a screenshot as a subimage     |
+| Width      | Sub-image width                    |
+| Height   | Sub-image height                    |
+| Rows       | Number sub-image rows in an image sprite                 |
+| Columns    | Number sub-image columns in an image sprite                  |
+| Sample Type | Sub-image sampling method. Currently, only sampling by time is supported |
+| Interval   | Time interval for capturing sub-images     |
 
 >
 >- The value of `Width` * `Columns` should be between 128 and 4,096 px (i.e., the range of the image sprite width).

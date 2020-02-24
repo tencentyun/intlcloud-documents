@@ -1,10 +1,10 @@
-Log in to the [MPS Console](https://console.cloud.tencent.com/mps) and click **Template Settings** on the left sidebar to enter the template settings page. There are five types of built-in templates: video transcoding template, audio transcoding template, watermarking template, screencapturing template, and animated image generating template. Each type of templates can be added to a workflow for cloud-based transcoding and audiovisual processing.
+Log in to the [MPS Console](https://console.cloud.tencent.com/mps) and click **Template Settings** on the left sidebar. There are five types of preset templates: video transcoding template, audio transcoding template, watermark template, screenshot template, and animated image generating template. They can all be can be added to a workflow for cloud-based transcoding and audiovisual processing.
 ![](https://main.qcloudimg.com/raw/beb249c241648218fd3ae7ca1414b1cd.png)
 >
 >- If the template used in a workflow is edited after the workflow is enabled, the workflow will use the updated template parameters.
->- If the template used in a workflow is deleted after the workflow is enabled, subtasks associated with the deleted template will fail to be executed.
+>- If the template used in a workflow is deleted after the workflow is enabled, subtasks associated with the deleted template will fail.
 ## Video Transcoding Template
-MPS provides preset video transcoding templates that can be used directly in workflow management. In addition, you can customize video transcoding templates based on your business needs. Click **Create Template** to enter the custom template settings page.
+MPS provides preset video transcoding templates that can be used in workflows. You can customize these video transcoding templates according to your needs. Click **Create Video Transcoding Template** to enter the custom template settings page.
 - Template name: It can contain up to 64 letters, digits, spaces, underscores (_), dashes (-), and periods (.).
 - Container format: MP4, FLV, or HLS.
 - Configuration item: Video parameters or audio parameter.
@@ -17,11 +17,11 @@ MPS provides preset video transcoding templates that can be used directly in wor
 - Audio bitrate: 0 (indicating that the source bitrate is retained) or 26–256 Kbps.
 - Audio sound system: mono-channel or dual-channel.
 
-A created template will be displayed in the template list, where you can view, edit, or delete custom templates. Preset templates can be viewed only but not edited or deleted.
+Created templates will be displayed in the template list, where you can view, edit, or delete custom templates. Preset templates can be viewed, but cannot be edited or deleted.
 
 > If MP4, FLV, or HLS is selected, video parameters must be configured, and audio parameters are optional.
 
-#### Preset parameter template list
+#### List of preset parameter templates
 
 <table>
     <tr>
@@ -907,8 +907,8 @@ A created template will be displayed in the template list, where you can view, e
 </table>
 
 ## Audio Transcoding Template
-MPS provides preset audio transcoding templates that can be used directly in workflow management. In addition, you can customize audio transcoding templates based on your business needs. Click **Create Transcoding Template** to enter the custom template settings page.
- 
+MPS provides preset audio transcoding templates that can be used in workflows. You can customize these audio transcoding templates according to your needs. Click **Create Template** to enter the custom template settings page.
+
 - Template name: It can contain up to 64 letters, digits, spaces, underscores (_), dashes (-), and periods (.).
 - Container format: MP3, FLAC, OGG, or M4A.
 - Audio codec: MP3 if the container format is MP3; FLAC if the container format is FLAC or OGG; or MP3, AAC, or AC3 if the container format is M4A.
@@ -916,9 +916,9 @@ MPS provides preset audio transcoding templates that can be used directly in wor
 - Audio bitrate: 0 (indicating that the source bitrate is retained) or 26–256 Kbps.
 - Sound system: Mono-channel or dual-channel.
 
-A created template will be displayed in the template list, where you can view, edit, or delete custom templates. Preset templates can be viewed only but not edited or deleted.
+Created templates will be displayed in the template list, where you can view, edit, or delete custom templates. Preset templates can be viewed, but cannot be edited or deleted.
 
-#### Preset parameter template list
+#### List of preset parameter templates
 
 <table>
     <tr>
@@ -935,10 +935,10 @@ A created template will be displayed in the template list, where you can view, e
             Codec
         </th>
         <th>
-            SoundSystem
+            Sound System
         </th>
         <th>
-            SampleRate
+            Sample Rate
         </th>
     </tr>
  <tr>
@@ -1082,50 +1082,50 @@ A created template will be displayed in the template list, where you can view, e
         </td>
     </tr>
 </table>
- 
+
 
 ## Watermarking Template
-MPS does not provide preset watermarking templates. You can create custom templates based on your business needs. Click **Create Watermarking Template** to enter the custom template settings page.
- 
+MPS does not provide preset watermarking templates. You can create custom templates according to your needs. Click **Create Template** to enter the custom template settings page.
+
 - Template name: It can contain up to 128 letters, digits, and underscores (_).
 - Watermark type: Image watermark.
 - Watermark image: PNG and APNG images are supported. For optimal visual effects, transparent images in PNG format are recommended. The image cannot exceed 200 KB in size or 200 * 200 px in dimensions.
 - Watermark position: The default position is in the top-left corner, which can be adjusted by vertical and horizontal offsets.
 - Vertical offset: The vertical offset percentage represents the ratio of the vertical distance between the watermark and the top-left corner to the vertical height, which is used to configure the vertical position of the watermark.
 - Horizontal offset: The horizontal offset percentage represents the ratio of the horizontal distance between the watermark and the top-left corner to the horizontal width, which is used to configure the horizontal position of the watermark.
-- Watermark size: You can choose to resize the watermark by percentage (%) or pixel (px). If % is selected, the original size will be scaled by percentage. If px is selected, the watermark will be scaled according to the specified size.
+- Watermark dimension: You can choose to resize the watermark by percentage (%) or pixel (px). If % is selected, the original size will be scaled by percentage. If px is selected, the watermark will be scaled according to the specified size.
 
-A created watermarking template will be displayed in the template list, where you can view the name of a watermarking template, preview a watermark file, and view the format, type, location, and size of a watermark. You can also view, edit, or delete the watermarking template, or set it as the default template.
+Created watermark templates will be displayed in the template list, where you can view their details, including the template names. You can preview the watermarks, and view their format, type, position and dimension. You can also view, edit, or delete templates, and set the default template.
 
  
 
-## Screencapturing Template
-Currently, the MPS Console supports three types of screenshots, namely, time point screenshot, sampled screenshot, and image sprite screenshot, and provides preset templates that can be used directly in workflow management. In addition, you can customize screencapturing templates based on your business needs. Click **Create Screencapturing Template** to enter the custom template settings page.
+## Screenshot Template
+Currently, the MPS Console supports three types of screenshots, namely, time point screenshot, sampled screenshot, and image sprite screenshot, and provides preset templates that can be used in workflows. You can customize these screenshot templates according to your needs. Click **Create Template** to enter the custom template settings page.
 
 ### Time point screenshot
-Select time point screenshot for the screenshot type. The time point needs to be configured in the workflow, while the template has only parameters for configuring the template name and image size. For detailed configuration, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
- 
+If time point screenshot is selected as the screenshot type, the time point needs to be configured in the workflow. You can only set the name and image size in the template. For detailed configuration, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
+
 - Template name: It can contain up to 64 letters, digits, and underscores (_).
 - Image format: JPG.
-- Image size: The value range of the image width or height is 128–4,096 px.
+- Image dimension: The value range of the image width or height is 128–4,096 px.
 
-#### Preset parameter template list
+#### List of preset parameter templates
 
-| Template ID | Format | Width | Height | FillType |
+| Template ID | Format | Width | Height | Fill Type |
 | ------- | ------------------ | ------------- | -------------- | -------------------- |
 | 10      | JPG                | Same as source          | Same as source           | Stretch   |
 
 ### Sampled screenshot
 Select sampled screenshot for the screenshot type.
- 
+
 - Template name: It can contain up to 64 letters, digits, and underscores (_).
 - Image format: JPG.
-- Image size: The value range of the image width or height is 128–4,096 px.
-- Interval: The interval can be set to a percent value (%) or second value (s). If a percent value is selected, it cannot exceed 100.
+- Image dimension: The value range of the image width or height is 128–4,096 px.
+- Interval: The interval can be a percent value (%) or be in seconds (s). If a percent value is selected, it cannot exceed 100.
 
-#### Preset parameter template list
+#### List of preset parameter templates
 
-| Template ID | Format | Width | Height | SampleType | Interval | FillType |
+| Template ID | Format | Width | Height | Sample Type | Interval | Fill Type |
 | ------- | ------------------ | ------------- | -------------- | ---------------------- | -------------------- | -------------------- |
 | 10      | JPG    | Same as source   | Save as source     | By percent  | 10%   | Stretch     |
 
@@ -1134,36 +1134,36 @@ Select image sprite screenshot for the screenshot type.
 
 - Template name: It can contain up to 64 letters, digits, and underscores (_).
 - Image format: JPG.
-- Image size: The value range of the image width or height is 128–4,096 px.
-- Interval: The interval can be set to a percent value (%) or second value (s). If a percent value is selected, it cannot exceed 100.
-- Rows: A positive integer. The number of small image rows multiplied by the number of small image columns cannot exceed 100.
-- Columns: A positive integer. The number of small image rows multiplied by the number of small image columns cannot exceed 100.
+- Image dimension: The value range of the image width or height is 128–4,096 px.
+- Interval: The interval can be a percent value (%) or be in seconds (s). If a percent value is selected, it cannot exceed 100.
+- Rows: A positive integer. The number of sub-image rows multiplied by the number of sub-image columns cannot exceed 100.
+- Columns: A positive integer. The number of sub-image rows multiplied by the number of sub-image columns cannot exceed 100.
 
-A created screencapturing template will be displayed in the template list, where you can view information such as the template name, screenshot type, image size, and template type. You can also view, edit, or delete the custom template, or set it as the default template. Preset templates can be viewed only but not edited or deleted.
+Created screenshot templates will be displayed in the template list, where you can view details such as the template name, screenshot type, image dimension, and template type. You can also view, edit, or delete the custom template, or set it as the default template. Preset templates can be viewed, but cannot be edited or deleted.
 
-#### Preset parameter template list
+#### List of preset parameter templates
 
-| Template ID  | Format | Width | Height | Rows | Columns | SampleType | Interval |
+| Template ID  | Format | Width | Height | Rows | Columns | Sample Type | Interval |
 | ------- | ------------------ | ----------------- | ------------------ | ---------------- | ------------------- | ---------------------- | -------------------- |
 | 10      | JPG                | 142               | 80                 | 10               | 10                  | By time             | 10s                 |
 
 
- 
+
 
 ## Animated Image Generating Template
-MPS provides preset animated image generating templates that can be used directly in workflow management. In addition, you can customize animated image generating templates based on your business needs. Click **Create Animated Image Generating Template** to enter the custom template settings page.
-The time point needs to be configured in the workflow, while the template has only parameters for configuring the image type, frame rate, image quality, and image size. For detailed configuration, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
- 
+MPS provides preset animated image generating templates that can be used in workflows. You can customize these animated image generating transcoding templates according to your needs. Click **Create Template** to enter the custom template settings page.
+You can set the image format, frame rate, image dimensions and image quality with the template. Time points needs to be configured in the workflow. For detailed configuration, please see [Workflow Management](https://intl.cloud.tencent.com/document/product/1041/33485).
+
 
 - Template name: It can contain up to 128 letters, digits, and underscores (_).
-- Image type: WEBP or GIF.
+- Image format: WEBP or GIF.
 - Frame rate: 1–30 fps.
 - Image quality: 0–100 (This value is the quality of the generated animated image. The higher the quality, the larger the animated image size.)
-- Image size: The value of the image width or height should be greater than 0 and less than or equal to 1920 px.
+- Image dimension: The value of the image width or height should be greater than 0 and less than or equal to 1920 px.
 
-A created animated image generating template will be displayed in the template list, where you can view information such as the template name, image type, frame rate, image quality, image size, and template type. You can also view, edit, or delete the custom template, or set it as the default template. Preset templates can be viewed only but not edited or deleted.
+Created animated image generating template will be displayed in the template list, where you can view details such as the template name, image type, frame rate, image quality, image dimension, and template type. You can also view, edit, or delete the custom template, or set it as the default template. Preset templates can be viewed, but cannot be edited or deleted.
 
-#### Preset parameter template list
+#### List of preset parameter templates
 
 | Template ID | Format | Resolution | FPS |
 | ------- | ------------------ | -------------------- | ----------- |

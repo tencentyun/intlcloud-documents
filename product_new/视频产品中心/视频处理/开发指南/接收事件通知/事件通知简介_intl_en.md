@@ -1,22 +1,22 @@
-An event notification informs you of a file transcoding result, so that you can perform further operations accordingly.
+An event notification informs you of a file transcoding result, so you can move on to the next logical step.
 
 ## Event Notification Definition
-An event in MPS refers to a task status change of a file during transcoding. An event notification refers to a message notification that you will receive at the end of an event,and contains the file transcoding result.
+An event in MPS refers to a task status change of a file during transcoding. An event notification refers to a message notification that you will receive at the end of an event, which includes the file transcoding result.
 
 ## Event Notification Types
 Below are types of event notifications currently provided:
 
 | Event Type     | Event Name | Description |
 |:---------:|:---:|:---:|
-| WorkflowTask | WorkflowTaskEvent | Status change. The `Status` field of the event shows the specific status. <br>Generally, the status is `FINISH`, indicating that the task is completed (either succeeded or failed). |
+| WorkflowTask | WorkflowTaskEvent | Status change. The `Status` field of the event shows the specific status. <br>Generally, the status is `FINISH`, indicating that the task has ended. The task could have been completed successfully or failed. |
 
 ## Event Notification Mode
 
 MPS uses CMQ to send event notifications. When you use MPS, you need to activate CMQ and authorize MPS before you can receive transcoding event notifications. If you do not activate CMQ or do not configure the CMQ queue address for event notification in a workflow template, you will not receive task event notifications from MPS.
 
 >
->- When you use a TencentCloud API to pull CMQ event messages, you need to confirm each of them so that they will be removed from CMQ; otherwise, the API will keep pulling the same event messages.
->- For more information on pulling CMQ messages, please see [Receiving a Message](https://intl.cloud.tencent.com/document/product/406/5839). For more information on confirming CMQ messages, please see [Deleting a Message](https://intl.cloud.tencent.com/document/product/406/5840).
+>- If you use a TencentCloud API to receive CMQ event messages, you need to acknowledge each individual message for the message to be removed from the queue; otherwise, the API will keep pulling the same event messages.
+>- For more information on receiving CMQ messages, please see [Consuming Messages](https://intl.cloud.tencent.com/document/product/406/5839). For more information on acknowledging CMQ messages, please see [Deleting a Message](https://intl.cloud.tencent.com/document/product/406/5840).
 
 ## Event Notification Sample
 
