@@ -38,6 +38,7 @@ Nginxフォルダーに入り、テキストエディッターを使用して「
 プライベートキーPEMフォーマット：「-----BEGIN RSA PRIVATE KEY-----」を先頭、「-----END RSA PRIVATE KEY-----」を末尾とします。その間の内容は1行あたり64文字であり、最後の行の長さが64文字未満にすることができます。
 
 ![](https://main.qcloudimg.com/raw/e10009916aeb00d5158a3703115d0354.jpg)
+
 「-----BEGIN PRIVATE KEY-----」を先頭、「-----END PRIVATE KEY-----」を末尾とするプライベートキーを取得する場合は、opensslツールによりフォーマットを変換することをお勧めします。コマンドは下記の通りです。
 ```
 openssl rsa -in old_server_key.pem -out new_server_key.pem
