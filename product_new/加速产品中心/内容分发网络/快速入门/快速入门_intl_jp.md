@@ -3,13 +3,13 @@ CDNサービスの利用手順は、次の図に示します。
 ## CDNサービスのアクティブ化
 CDNサービスを利用するには、実名認証とCDNサービスのアクティブ化が必要です。お持ちのTencent CloudアカウントのCDNサービスがすでに有効になっている場合、直接[ドメイン名の追加](#yuming)に進んでください。
 ### 実名認証
-1. 新規ユーザーが [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインすると、実名認証の案内が表示されます。【Verify】をクリックして、実名認証に進みます。
+1. 新規ユーザーが [CDNサービスコンソール](https://console.cloud.tencent.com/cdn)にログインすると、実名認証の案内が表示されます。【Verify】をクリックして、実名認証に進みます。
  ![](https://main.qcloudimg.com/raw/b5aa156bf7e0b124808e56640af1da86.png)
 2. [アカウントセンター](https://console.cloud.tencent.com/developer)に入り、【Submit for Verification】をクリックして認証することもできます。
 3. 認証の詳細手順については、[実名認証ガイド](https://intl.cloud.tencent.com/doc/product/378/3629)を参照してください。個人認証の場合は審議に提出した次第完了できます。法人認証の場合は約1営業日がかかり、認証成功した後にSMS通知が届きます。お客様は、[チケットを提出](https://console.cloud.tencent.com/workorder/category/create?level1_id=1&level2_id=41&level1_name=%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E7%B1%BB%E9%97%AE%E9%A2%98&level2_name=%E8%B4%A6%E5%8F%B7%E7%B1%BB) して実名認証の進捗を確認できます。
 
 ### サービス情報の補足
-実名認証が完了してからは、[CDNコンソール](https://console.cloud.tencent.com/cdn)で実名認証の情報を確認し、サービス内容を選択してから、【Next】をクリックしてください。
+実名認証が完了してからは、[CDNサービスコンソール](https://console.cloud.tencent.com/cdn)で実名認証の情報を確認し、サービス内容を選択してから、【Next】をクリックしてください。
 
 ### 支払い方法の選択
 CDNサービスはトラフィックによる課金と帯域幅による課金という二つの課金方式を提供しています。お客様は、サービスモデルに応じて課金方式を選択できます。詳細については、[課金説明](https://intl.cloud.tencent.com/doc/product/228/2949)をご参照ください。
@@ -21,13 +21,13 @@ CDNサービスはトラフィックによる課金と帯域幅による課金�
 <span id="yuming"></span>
 ## ドメイン名の追加
 ### ドメイン名設定の記入
-[CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側メニューの【Domain Management】をクリック
+[CDNサービスコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側メニューの【Domain Management】をクリック
 して該当のページに入り、【Add a Domain Name】をクリックします。
  ![](https://main.qcloudimg.com/raw/0f21ace69d94ce51fc1d857948510b4a.jpg)
 
 2. **ドメイン名**に加速するドメイン名を記入します。対象ドメイン名は、下記の条件を満たす必要があります。
  - すでに中国工信部にICP申告を提出していること。
- - Tencent Cloud CDNに追加されていないこと。
+ - Tencent Cloud CDNサービスに追加されていないこと。
 ![](https://main.qcloudimg.com/raw/e0dbd38a9395439f37efeec4a4c10b3e.png)
 
 ### サービス設定の記入
