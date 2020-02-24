@@ -14,7 +14,7 @@ There are free quotas for both billing methods of the live voice chat service.
 
 After reaching free quotas, fees apply based on your utilization.
 
-> If an application has 150 minutes voice duration on a day, the service will be free of charge. If it has 1,000 minutes, the billable duration would be 1,000 minutes. Fee = 1,000 minutes * 0.94/1000 USD/minutes =  0.94 USD (based on the voice duration unit price of 0.94 USD/1,000 minutes).
+> If an application has 150 minutes voice duration on a day (< 300 minutes), the service will be free of charge. If it has 1,000 minutes, the billable duration would be 0.94 USD (based on the voice duration unit price of 0.94 USD/1,000 minutes).
 
 
 ### Rates
