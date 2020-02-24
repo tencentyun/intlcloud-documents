@@ -231,4 +231,4 @@ Below are some task status samples:
   }
 }
 ```
-<!--For more information, please see [DescribeTaskDetail API Document](https://cloud.tencent.com/document/product/862/37614)-->.
+<!--For more information, please see DescribeTaskDetail API Document.-->.
