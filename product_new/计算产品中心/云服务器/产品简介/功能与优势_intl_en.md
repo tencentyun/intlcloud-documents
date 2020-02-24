@@ -19,9 +19,9 @@ Tencent Cloud CVM provides comprehensive and extensive service contents for you.
 ## Elastic
 We are committed to building the most elastic cloud service management platform in the industry with the following capabilities:
 
-- **Hardware configurations:** Instant upgrading/downgrading** of hardware configurations for CVM based on CBS
-- **Disk change:** Instant capacity expansion** of disk for CVM based on CBS 
-- **Network bandwidth:** Instant upgrading/downgrading** of bandwidth for CVM (limited to postpaid billing method)
+- **Hardware configurations:** **Instant upgrading/downgrading** of hardware configurations for CVM based on CBS
+- **Disk change:** **Instant capacity expansion** of disk for CVM based on CBS 
+- **Network bandwidth:** **Instant upgrading/downgrading** of bandwidth for CVM (limited to postpaid billing method)
 - **Operating system:** CVM supports switch between Windows and Linux systems at any time
 - **EIP:** It can be bound to CVMs in various network environments
 - **Image type**: Public image (with multiple Linux and Windows operating system types), service marketplace image (integrated with third parties for different application environments), and custom image (image created by users through the image creation feature). Cross-region adjustment and image copying are supported.
