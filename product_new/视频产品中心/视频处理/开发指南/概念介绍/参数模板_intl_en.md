@@ -6,7 +6,7 @@ MPS uses parameter templates to organize commonly used key transcoding parameter
 - Sampled screencapturing template
 - Image sprite generating template
 
-MPS provides preset parameter templates for all of the above. You can also create custom parameter templates and set parameter values. For more information on parameter templates, please see [Parameter Templates](https://cloud.tencent.com/document/product/862/37037).
+MPS provides preset parameter templates for all of the above. You can also create custom parameter templates and set parameter values. For more information on parameter templates, please see [Parameter Templates](https://intl.cloud.tencent.com/document/product/1041/33494).
 
 ## Preset Parameter Templates
 
@@ -977,13 +977,13 @@ In addition to offering preset parameter templates, MPS allows you to customize 
 
 ### Creating a custom parameter template in the console
 
-For more information on how to create a custom parameter template in the console, please see [Template Settings](https://cloud.tencent.com/document/product/862/36407).
+For more information on how to create a custom parameter template in the console, please see [Template Settings](https://intl.cloud.tencent.com/document/product/1041/33486).
 
 ### Creating a custom parameter template through an API
 You can use the following APIs to create custom parameter templates of corresponding types:
-- [Creating a transcoding template](https://cloud.tencent.com/document/product/862/37605)
-- [Creating a watermarking template](https://cloud.tencent.com/document/product/862/37604)
-- [Creating a sampled screencapturing template](https://cloud.tencent.com/document/product/862/37607)
-- [Creating a time point screencapturing template](https://cloud.tencent.com/document/product/862/37606)
-- [Creating an animated image generating template](https://cloud.tencent.com/document/product/862/37609)
-- [Creating an image sprite generating template](https://cloud.tencent.com/document/product/862/37608)
+- Creating a transcoding template
+- Creating a watermarking template
+- Creating a sampled screencapturing template
+- Creating a time point screencapturing template
+- Creating an animated image generating template
+- Creating an image sprite generating template
