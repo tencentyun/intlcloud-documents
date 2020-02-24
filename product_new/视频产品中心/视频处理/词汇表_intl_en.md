@@ -38,7 +38,7 @@ An IDR (instantaneous decoding refresh) picture is a type of I picture. It diffe
 
 If IDR frame alignment is specified when multi-bitrate transcoding is performed on a video, IDR pictures of all the output videos will be precisely aligned by time point and picture content, so that video players can smoothly switch among videos at different bitrates without obvious lagging.
 
-If you enable IDR frame alignment on the Tencent Cloud transcoding platform, the [frame rate](#帧率), [GOP](#gop) length, [codec](#编解码器), and [container format](#封装格式) of multiple output formats must be identical.
+If you enable IDR frame alignment on the Tencent Cloud transcoding platform, the [frame rate](#frame rate), [GOP](#gop) length, [codec](#codec), and [container format](#container format) of multiple output formats must be identical.
 
 ### Profile
 A profile is a collection of specific encoding parameters. You need to make tremendous endeavors in hardware and software to support a complete codec standard due to its large number of features. Therefore, to facilitate use of a codec standard, some common parameters are selected and combined to form different profiles. H.264 specifies three profiles as shown below:
