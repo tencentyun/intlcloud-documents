@@ -9,6 +9,7 @@
 
 ## 変更方法
 1. Tencent Cloud[CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のディレクトリで【 Overview】をクリックし、表示される管理ページの右上の【Change】をクリックします。
+
   ![](https://main.qcloudimg.com/raw/11ba290746b4ed66736119d94175e367.png)
   
 
