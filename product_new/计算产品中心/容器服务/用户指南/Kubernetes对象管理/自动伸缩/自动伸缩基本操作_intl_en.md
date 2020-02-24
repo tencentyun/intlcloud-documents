@@ -11,7 +11,7 @@ Take CPU utilization as an example. Suppose there are two Pods with an average C
 - Set reasonable targets for the policy metrics. For example, set 70% for containers and applications and leave 30%.
 - Keep Pods and nodes healthy; avoid frequently recreating Pods.
 - Ensure that the load balancer works stably.
-- If the gap between the actual number and desired number of replicas is smaller than 10%, HPA will not adjust the number of replicas.
+- If the gap between the actual value and the desired value of monitored metrics is smaller than 10%, HPA will not adjust the number of replicas.
 - If the value of Deployment.spec.replicas corresponding to the service is 0, HPA will not work.
 - If multiple HPAs are bound to a single Deployment, the HPAs will take effect simultaneously, which will cause clusters to be repeatedly scaled.
 
