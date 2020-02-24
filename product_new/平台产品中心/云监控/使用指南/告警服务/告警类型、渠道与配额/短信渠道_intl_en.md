@@ -1,6 +1,6 @@
 ## SMS Quota
 
-Currently, Tencent Cloud SMS alarm channel has quote limit. The quota system consists of a free quota and an additional quota that you purchase.
+Currently, Tencent Cloud SMS alarm channel has quota limit. The quota system consists of a free quota and an additional quota that you purchase.
 
 When the monthly free SMS quota is used up, the system will send you an alarm notification, which will no longer be sent through the SMS channel for the rest of the month, but the email channel is not affected.
 
