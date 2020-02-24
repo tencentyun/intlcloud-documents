@@ -173,13 +173,13 @@ When deploying or running business, you may trigger high-risk operations at diff
 	<td>Manually unmounting cloud disks through console</td>
 	<td>Writing to Pod reports IO errors </td>
 	<td>Delete the mount directory of the node and reschedule the Pod</td>
-	<td>Files in Pod record where they are collected</td>
+	<td>Files in Pos record where the files are collected</td>
 	</tr>	
 	<tr>
 	<td>Unmounting disk mounting path on the node</td>
 	<td>Pod gets written to the local disk</td>
 	<td>Re-mount the corresponding directory onto Pod</td>
-	<td>Buffer contains log cache file</td>
+	<td>Buffer contains log cache files to be consumed</td>
 	</tr>	
 	<tr>
 	<td>Directly operating CBS block device on the node</td>
