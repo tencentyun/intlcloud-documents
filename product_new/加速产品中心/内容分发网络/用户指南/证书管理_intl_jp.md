@@ -8,6 +8,7 @@ CDNサービスにアクセスしたドメイン名に対し、 HTTPS 証明書�
 CA機構によって提供する証明書は一般的に下記の幾つかの種類を含んでいます。その中に、CDNサービスは**Nginx**を使用します。
 
 ![](https://main.qcloudimg.com/raw/a2c1b413f9cf770cf7facdb3e424eac4.png)
+
 Nginxフォルダーに入り、テキストエディッターを使用して「.crt」（証明書）ファイルと 「.key」（プライベートキー）ファイルを開くと、PEMフォーマットの証明書内容及びプライベートキーの内容を確認することができます。
 
 ![](https://main.qcloudimg.com/raw/26bf3f290b85ea75c3a4d74f66334d55.png)
