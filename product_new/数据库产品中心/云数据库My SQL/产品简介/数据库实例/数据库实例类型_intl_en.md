@@ -1,36 +1,9 @@
-数据库实例是在腾讯云中独立运行的数据库环境。一个数据库实例可以包含多个由用户创建的数据库，并且可以使用与独立数据库实例相同的工具和应用程序进行访问。
+A database instance is a standalone database environment running in Tencent Cloud. It can contain multiple user-created databases and can be accessed using the same tools and applications as those for a standalone database instance. There are three types of instances available in TencentDB for MySQL.
 
-腾讯云数据库 MySQL 有如下三种数据库实例：
+| Instance Type | Definition         | Architecture                  | Visible in the Instance List | Function                         |
+| -------- | --------------- | -------------------- | ------------------ | ------------------------------ |
+| Master instance   | An instance that can be read from and written to                     | [Basic edition](https://intl.cloud.tencent.com/document/product/236/17136#jichuban) and [High availability edition](https://intl.cloud.tencent.com/document/product/236/17136#gaokeyongban)  | Yes                 | A master instance can mount read-only instances and disaster recovery instances for read/write separation and remote disaster recovery   |
+| Read-only instance | An instance that can only be read from                 | [Single-node high-IO edition](https://intl.cloud.tencent.com/document/product/236/17136#danjiedian) | Yes                 | A read-only instance cannot exist on its own; instead, it must be affiliated to a master instance. Its data comes solely from sync with the master instance. Besides, it must reside in the same region as the master instance |
+| Disaster recovery instance | An instance that enables disaster recovery across AZs and regions | [High availability edition](https://intl.cloud.tencent.com/document/product/236/17136#gaokeyongban) | Yes                 | A disaster recovery instance is read-only during sync with a master instance. It can actively stop the sync and be promoted to a master instance for read/write access. It must reside in a different region as the master instance |
 
-<table>
-<thead>
-<tr>
-<th>实例类型</th>
-<th width="20%">定义</th>
-<th width="15%">架构</th>
-<th>实例列表是否可见</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>主实例</td>
-<td>可读可写的实例</td>
-<td><li><a href="https://cloud.tencent.com/document/product/236/17136#jichuban" target="_blank">基础版</a> <li> <a href="https://cloud.tencent.com/document/product/236/17136#gaokeyongban" target="_blank">高可用版</a></td>
-<td>是</td>
-<td>主实例可挂载只读实例与灾备实例，实现读写分离与异地灾备功能</td>
-</tr>
-<tr>
-<td>只读实例</td>
-<td>仅提供读功能的实例</td>
-<td><a href="https://cloud.tencent.com/document/product/236/17136#danjiedian" target="_blank">单节点高 IO 版</a></td>
-<td>是</td>
-<td>只读实例无法单独存在，必须隶属于某个主实例，唯一数据来源是从主实例同步数据，只能与主实例同地域</td>
-</tr>
-<tr>
-<td>灾备实例</td>
-<td>提供跨可用区、跨地域灾备能力的实例</td>
-<td><a href="https://cloud.tencent.com/document/product/236/17136#gaokeyongban" target="_blank">高可用版</a></td>
-<td>是</td>
-<td>灾备实例在同步时仅可读，灾备实例可主动与主实例断开同步关系，主动提升为主实例，即可提供读写访问能力，必须与主实例异地</td>
-</tr>
-</tbody></table>
+
