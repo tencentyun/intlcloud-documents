@@ -19,4 +19,3 @@
 3. ビデオドラッグをアクティブにします。 [フィルタリングパラメータ設定](https://intl.cloud.tencent.com/document/product/228/6291) が非アクティブ状態にある場合は、ビデオドラッグをアクティブにすると、自動的にフィルタリングパラメータをアクティブにします。
 ![](https://main.qcloudimg.com/raw/36d2c0ef77d57bb1fa180b8d89134369.jpg)
 
-
