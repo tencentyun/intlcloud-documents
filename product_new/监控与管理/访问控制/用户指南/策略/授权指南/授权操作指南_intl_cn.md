@@ -1,23 +1,13 @@
-企业帐号 CompanyExample（ownerUin 为 12345678）下有一个子账号 Developer，该子账号需要拥有对企业帐号 CompanyExample 的 VPC 服务的所有管理权限（创建、管理等全部操作），但不包括支付权限，可以下单但无法支付。
+## 限制访问场景
+当您访问控制台进行相关云产品操作时，有可能会遇到提示“您没有操作相关资源的权限”，如下图所示：
+![](https://main.qcloudimg.com/raw/b178cd0102c0f800f129c4c397ba16c2.png)
+这种情况，是由于您所登录的子用户或协作者，没有被授予相关的权限，需要主账号授予对应的权限后，才能进行信息查看或者相关操作。
 
-方案A：
+## 授权步骤
+1. 确认您需要被授予的权限。
+  在失败信息描述中，指明了您不具备的权限。如上图所示，您不具备 CVM （云服务器）这个产品下 DescribeInstances 这个接口的权限，导致您无法查看页面上的内容。
 
-企业帐号 CompanyExample 直接将预设策略 QcloudVPCFullAccess 授权给子账号 Developer。授权方式请参考 [授权管理](https://cloud.tencent.com/document/product/378/8961)。
+2. 使用主账号或者具有管理权限的子用户授予相关权限给对应的子用户或协作者。
 
-方案B：
-
-步骤1：通过策略语法方式创建以下策略。
-```
- {
-    "version": "2.0",
-    "statement":[
-         {
-             "effect": "allow",
-             "action": "vpc:*",
-             "resource": "*"
-         }
-    ]
-}
-```
-步骤2：将该策略授权给子账号。授权方式请参考 [授权管理](https://cloud.tencent.com/document/product/378/8961)。
-
+ - 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/overview)，进入 [策略](https://console.cloud.tencent.com/cam/policy) 管理页面，单击【新建自定义策略】>【按策略生成器创建】，授予特定接口权限（如 DescribeInstances）。详细步骤可参考 [通过策略生成器创建策略](https://cloud.tencent.com/document/product/598/10601#.E6.8C.89.E7.AD.96.E7.95.A5.E7.94.9F.E6.88.90.E5.99.A8.E5.88.9B.E5.BB.BA) 。
+  - 在策略管理页面，查询对应产品的系统策略，将预设系统策略授予子用户，例如本示例中的云服务器相关的预设策略。详情步骤可参考 [通过预设策略关联用户/用户组](https://cloud.tencent.com/document/product/598/10602#.E9.80.9A.E8.BF.87.E7.AD.96.E7.95.A5.E5.85.B3.E8.81.94.E7.94.A8.E6.88.B7.2F.E7.94.A8.E6.88.B7.E7.BB.84.EF.BC.9A)。
