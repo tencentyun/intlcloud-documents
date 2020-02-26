@@ -119,7 +119,7 @@ CDNサービスは、事前設定された機能セットに従ってプロジ�
     ]
 }
 ```
-**構文の説明**
+**構文の説明
 
 - action：認証が必要なActionを示します、DescribeCdnData、DescribeOriginData、ListTopData、DescribeIpVisitの4つのAction認証のみをサポートします。詳細については、[ドメイン名権限](https://intl.cloud.tencent.com/document/product/228/12722#ymqx)をご参照ください。
 
