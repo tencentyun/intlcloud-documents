@@ -11,26 +11,26 @@
 1. [CDNコンソール(https://console.cloud.tencent.com/cdn)にログインして、左側のディレクトリで【ドメイン名管理】をクリックし、管理ページに入ります。
 
 2.リストで編集するドメイン名が位置している行を特定し、アクションバーで【管理】をクリックします。
-![ドメイン名リスト](https://main.qcloudimg.com/raw/99e0c24b4530c30b9abe27325bb1b317.png)
+![ドメイン名リスト](https://main.qcloudimg.com/raw/38fd074fba05c89ad53497ba3fb3266c.jpg)
 
 3.基本設定ページの一番下に、back to originドメイン名の設定情報が表示されます。
-![img](https://main.qcloudimg.com/raw/88420f34964c14d554b8f48b10304491.png)
+![](https://main.qcloudimg.com/raw/650b683d8908042600b24d0d410a9b10.jpg)
 デフォルトでは、サブドメイン名ホストヘッダーは設定された加速ドメイン名で、汎用ドメイン名ホストヘッダーはアクセスドメイン名です。
 	-アクセスしている加速ドメイン名が「wwww.test.com」である場合、このノードはこのドメイン名のリソースにback to originリクエストを発送する時、Request HTTP HeaderのHostフィールドの値は「wwww.test.com」となります。
 	- アクセスしている加速ドメイン名が「*.test.com」のような汎用ドメイン名である場合、アクセスドメイン名が「abc.test.com」である場合、ホストヘッダーは「abc.test.com」となります。
 
 ### ホストヘッダーの変更
 back to originの設定情報で【編集】をクリックすることで、ホストヘッダーの設定を調整することができます。**ユーザー保有のオリジンサーバーのホストヘッダーの編集のみをサポートします。COSのオリジンサーバーのホストヘッダーはデフォルトでバケットに対応する追加のネットワークネットドメイン名で、変更できません。**
-![img](https://main.qcloudimg.com/raw/43f9b9cc952c77169d8eecda4f8fa6df.png)
+![](https://main.qcloudimg.com/raw/13e522ee379e14a998a5be0e0b2daf47.jpg)
 
 ## 設定ケース
 ユーザーのアクセスドメイン名は「www.test.com」で、オリジンサーバーにドメイン名「origin.test.com」が設定され、「origin.test.com」に対応するA記録は「1.1.1.1」です。
 ユーザーリクエストは「http://www.test.com/1.jpg」です。
 1. 次の通りに設定されている場合、
-![img](https://main.qcloudimg.com/raw/43f9b9cc952c77169d8eecda4f8fa6df.png)
+ ![](https://main.qcloudimg.com/raw/13e522ee379e14a998a5be0e0b2daf47.jpg)
 デフォルトでは、ホストヘッダーは加速ドメイン名で、back to origin時、実際のリクエストは「1.1.1.1」に送信されます。
    取得されたリソースは「http://www.test.com/1.jpg」です。
 2. 次の通りに設定されている場合、
-![img](https://main.qcloudimg.com/raw/7b3821894aafae537a818ab862129cda.png)
+ ![](https://main.qcloudimg.com/raw/0ea2184b08ddfc4ad54ec3467ea93bc2.jpg)
 ホストヘッダーは「origin.test.com」で、back to origin時、実際のリクエストは「1.1.1.1」に送信されます。
 取得されたリソースは「http://origin.test.com/1.jpg」です。
