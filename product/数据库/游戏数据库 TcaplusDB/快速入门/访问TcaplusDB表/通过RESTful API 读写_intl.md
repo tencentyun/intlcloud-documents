@@ -6,7 +6,7 @@ After cluster creation, table group creation, and table creation, a TcaplusDB Ap
 
 >Operations must be performed in the CVM under your Tencent Cloud account.
 
-In the following example, you received the following access point information and created a table tb_online in the deployment unit with the TableGroupID  of 1.
+In the following example, you received the following access point information and created a table tb_online in the table group with the TableGroupID  of 1.
 
 * AccessID:2
 * AppKey:3aa84dd773826cd655e9f24a249d68bb
