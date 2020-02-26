@@ -8,12 +8,12 @@ The TcaplusServiceAPI release package for the Linux x86_64 platform will include
 
 > Operations must be performed in the CVM under your Tencent Cloud account.
 
-In the following example, you receive the following access point information and created a table tb_online in the deployment unit with the ZoneId of 1.
+In the following example, you receive the following access point information and created a table tb_online in the table group with the TableGroupID of 1.
 
-* AppID:2
+* AccessID:2
 * AppKey:3aa84dd773826cd655e9f24a249d68bb
 * tcapdir Access Point:10.125.32.21:9999
-* ZoneID:1
+* TableGroupID:1
 
 ## Permissions
 

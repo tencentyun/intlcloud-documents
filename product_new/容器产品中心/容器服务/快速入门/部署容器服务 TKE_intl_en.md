@@ -59,7 +59,7 @@ After a cluster is created, you need to create a service. A service is a microse
 3. (Optional) Set the volume. Click **Add Volume** when you specify a specific path to which a container is mounted. For more details, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678). See the figure below:
 > If no source path is specified, a temporary path is assigned by default.
 > 
- - **Type**: The seven types of volumes that are supported are temp directory, CVM path, NFS disk, existing VPC, Tencent Cloud block storage, ConfigMap, and Secret. For a more detailed introduction, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
+ - **Type**: The seven types of volumes that are supported are temp directory, CVM path, NFS disk, existing PVC, Tencent Cloud block storage, ConfigMap, and Secret. For a more detailed introduction, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
  - **Name**: Name of volume.
 ![](https://main.qcloudimg.com/raw/a4e6150eedd0c7385b4a170649042cee.png)
 4. Set **Containers in the Pod**. See the figure below:
