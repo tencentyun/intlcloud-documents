@@ -1,9 +1,9 @@
 
-This document describes how to manage a TcaplusDB cluster or deployment unit. For more information on how to create a cluster or deployment unit, see [Creating Cluster](https://intl.cloud.tencent.com/document/product/1016/32714) or [Creating a Deployment Unit](https://intl.cloud.tencent.com/document/product/1016/32716).
+This document describes how to manage a TcaplusDB cluster or table group. For more information on how to create a cluster or table group, see [Creating Cluster](https://intl.cloud.tencent.com/document/product/1016/32714) or [Creating a Table Group](https://intl.cloud.tencent.com/document/product/1016/32716).
 
 ## Managing a Cluster
 ### Renaming a cluster
-1. On the [Deployment Unit](https://console.cloud.tencent.com/tcaplusdb/app) page, click a cluster ID to enter the cluster details page.
+1. On the [Table Group](https://console.cloud.tencent.com/tcaplusdb/app) page, click a cluster ID to enter the cluster details page.
 2. Click the "Modify" icon to the right of the **Cluster Name**. The new cluster name should be unique under the account.
 ![](https://main.qcloudimg.com/raw/6e962819e86afe233d9c481e4f7bb4e4.png)
 
@@ -31,17 +31,17 @@ This document describes how to manage a TcaplusDB cluster or deployment unit. Fo
 ### Terminating a cluster
 > A cluster cannot be recovered once terminated, so please operate with caution.
 >
-In the cluster list, click **Terminate** to terminate a cluster. If there is a deployment unit in it, then it cannot be terminated.
+In the cluster list, click **Terminate** to terminate a cluster. If there is a table group in it, then it cannot be terminated.
 ![](https://main.qcloudimg.com/raw/5ec45ba252c6ab8f96191ebefb5f3e9c.png)
 
-## Managing a Deployment Unit
-### Renaming a deployment unit
-In the deployment unit list, click **Modify** in the "Operation" column to change the name of a deployment unit. Its name should be unique under the cluster.
+## Managing a Table Group
+### Renaming a table group
+In the table group list, click **Modify** in the "Operation" column to change the name of a table group. Its name should be unique under the cluster.
 ![](https://main.qcloudimg.com/raw/6ced0ca63b18b4f569321a7d9d7627d2.png)
 
-### Terminating a deployment unit
-> A deployment unit cannot be recovered once terminated, so please operate with caution.
+### Terminating a table group
+> A table group cannot be recovered once terminated, so please operate with caution.
 >
-In the deployment unit list, click **Terminate** in the "Operation" column to destroy a deployment unit. If there is a table in it that is in a normal state or in the recycle bin, it cannot be terminated.
+In the table group list, click **Terminate** in the "Operation" column to destroy a table group. If there is a table in it that is in a normal state or in the recycle bin, it cannot be terminated.
 ![](https://main.qcloudimg.com/raw/d4397bc74149092495c083087cd7acc7.png)
 
