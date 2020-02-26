@@ -5,7 +5,7 @@ This document describes how to create a TcaplusDB cluster in the console.
 You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/9603) and [verified your identity successfully](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
-1. Log in to the [TcaplusDB Console](https://console.cloud.tencent.com/tcaplusdb/app), select **Table Group** on the left sidebar, and click **Create Cluster**.
+1. Log in to the [TcaplusDB Console](https://console.cloud.tencent.com/tcaplusdb/app), select **Cluster List** on the left sidebar, and click **Create Cluster**.
 2. Configure your cluster in the cluster creation pop-up.
  - **Network Type**: Select a VPC and a subnet. You can select one VPC and one subnet only when creating a cluster, which cannot be modified once created.
  - **Connection Protocol**: Select a connection protocol (data description protocol) for your TcaplusDB cluster.
