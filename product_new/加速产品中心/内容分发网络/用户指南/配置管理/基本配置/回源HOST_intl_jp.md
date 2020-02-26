@@ -38,6 +38,8 @@ back to originの設定情報で【編集】をクリックすることで、ホ
 
 デフォルトでは、ホストヘッダーは加速ドメイン名で、back to origin時、実際のリクエストは「1.1.1.1」に送信されます。
    取得されたリソースは「http://www.test.com/1.jpg」です。
+
+
 2. 次の通りに設定されている場合、
 
 ![](https://main.qcloudimg.com/raw/0ea2184b08ddfc4ad54ec3467ea93bc2.jpg)
