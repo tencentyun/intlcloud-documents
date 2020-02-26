@@ -13,6 +13,7 @@ MPS will calculate and generate the bill for the previous day’s resource daily
 #### General transcoding
 
 Pricing: Fees are charged based on the video length after transcoding in USD/minute.
+
 |~Codec|Resolution|Mainland China|Mumbai, Seoul, Bangkok, Moscow|Hong Kong(China), Tokyo, Toronto, Frankfurt|Silicon Valley, Virginia|Singapore|
 |-|-|-|-|-|-|-|
 |H.264|4K (3840 * 2160p) or below|0.0421|0.0480|0.0441|0.0441|0.0480|
@@ -69,6 +70,7 @@ The billing description is as shown below:
 The billing details are as shown below:
 
 |~Billable Item|Mainland China|Mumbai, Seoul, Bangkok, Moscow|Hong Kong(China), Tokyo, Toronto, Frankfurt|Silicon Valley, Virginia State|Singapore|
+|-|-|-|-|-|-|
 |Intelligent content recognition|0.0511|0.0562|0.0572|0.0572|0.0562|
 
 
@@ -85,6 +87,7 @@ The billing description is as shown below:
 The billing details are as shown below:
 
 |~Billable Item|Billing Mode|Price|
+|-|-|-|
 |Video audit|By the source video length|0.016|
 
 
