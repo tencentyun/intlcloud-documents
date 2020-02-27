@@ -28,7 +28,7 @@ The returned result is as shown in the following figure. Record the `CLUSTER IP`
 >- The DaemonSet resource created in this step is used to deploy the Local DNS Cache component.
 
 >
-	```yaml
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -166,6 +166,7 @@ spec:
 	           - key: Corefile
 	             path: Corefile.base
 	```
+	
 3. Set the specified DNS resolution access address of kubelet to the local DNS cache created in [Step 2](#StepTwo). This document provides the following two configuration methods, which you can choose according to your actual situation:
  -  Execute the following commands in order, to modify the kubelet launch parameters and restart it.
 ```
