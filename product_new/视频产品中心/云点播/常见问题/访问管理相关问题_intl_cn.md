@@ -1,15 +1,15 @@
 ### 上传文件需要什么操作权限？
 
-云点播的上传方式有 [服务端上传](https://intl.cloud.tencent.com/document/product/266/33912)、[客户端上传](https://intl.cloud.tencent.com/document/product/266/33921)、<!--API [拉取上传](/document/product/266/35575) --> 等方式，各自涉及的权限如下：
+云点播的上传方式有 [服务端上传](https://intl.cloud.tencent.com/document/product/266/33912)、[客户端上传](https://intl.cloud.tencent.com/document/product/266/33921)、<!--API [拉取上传](https://intl.cloud.tencent.com/document/product/266/34118) --> 等方式，各自涉及的权限如下：
 
-<!--API
+
 | 上传方式   | 资源权限     | 操作权限                                                     | 备注               |
 | ---------- | ------------ | ------------------------------------------------------------ | ------------------ |
-| 服务端上传 | 指定的子应用 | [申请上传](/document/product/266/31767)<br/>[确认上传](/document/product/266/31766) | -                  |
-| 客户端上传 | 指定的子应用 | [申请上传](/document/product/266/31767)<br/>[确认上传](/document/product/266/31766) | -                  |
-| 拉取上传   | 指定的子应用 | [拉取上传](/document/product/266/35575)                      | -                  |
+| 服务端上传 | 指定的子应用 | [申请上传](https://intl.cloud.tencent.com/document/product/266/34120)<br/>[确认上传](https://intl.cloud.tencent.com/document/product/266/34119) | -                  |
+| 客户端上传 | 指定的子应用 | [申请上传](https://intl.cloud.tencent.com/document/product/266/34120)<br/>[确认上传](https://intl.cloud.tencent.com/document/product/266/34119) | -                  |
+| 拉取上传   | 指定的子应用 | [拉取上传](https://intl.cloud.tencent.com/document/product/266/34118)                      | -                  |
 | 直播录制   | 所有子应用   | -                                                            | 需开通直播录制功能 |
--->
+
 >在云点播控制台上进行 [本地上传](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) 视频属于客户端上传。
 
 ### 服务端上传返回无权限，但其它上传方式能成功是什么原因？

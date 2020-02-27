@@ -33,15 +33,15 @@
 如果云点播提供的上传 SDK 没有涵盖 App 后台所使用的语言，则 App 后台需要自行调用云点播的服务端 API 进行视频上传（这种方式较为复杂，不推荐），基于 API 上传的业务流程图如下：
 ![](https://main.qcloudimg.com/raw/005ec15acf74e0a428e8d328ffd2da2f.png)
 相比 SDK 方式的上传，基于 API 方式的上传需要自行实现申请上传和上传文件等步骤。而上传文件也没有 SDK 的方式方便，对于大文件需要自己做分片上传等逻辑。<!--api详情请参见：
-- [服务端 API - 申请上传](/document/product/266/31767)
+- [服务端 API - 申请上传](https://intl.cloud.tencent.com/document/product/266/34120)
 - [服务端 API - 上传文件](/document/product/266/31784)
-- [服务端 API - 确认上传](/document/product/266/31766)
+- [服务端 API - 确认上传](https://intl.cloud.tencent.com/document/product/266/34119)
 -->
 
 #### 高级功能
 
 - **上传时指定任务流**
-如果开发者需要在视频上传完成后自动发起 [视频处理任务流](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81)（例如转码、截图等），可以在调用服务端 API [申请上传](/document/product/266/31767) 时通过 `Procedure` 参数来实现。参数值为任务流模板名，云点播支持 [创建任务流模板](https://intl.cloud.tencent.com/document/product/266/14058) 并为模板命名。发起任务流时，可以用任务流模板名来表示要发起的任务，云点播提供的多语言 SDK 都支持指定任务流参数，详情请参见：
+如果开发者需要在视频上传完成后自动发起 [视频处理任务流](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81)（例如转码、截图等），可以在调用服务端 API [申请上传](https://intl.cloud.tencent.com/document/product/266/34120) 时通过 `Procedure` 参数来实现。参数值为任务流模板名，云点播支持 [创建任务流模板](https://intl.cloud.tencent.com/document/product/266/14058) 并为模板命名。发起任务流时，可以用任务流模板名来表示要发起的任务，云点播提供的多语言 SDK 都支持指定任务流参数，详情请参见：
 	- [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
@@ -49,7 +49,7 @@
 	- [Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 - **上传时指定存储地域**
-云点播默认提供的存储地域设置在重庆，如果需要存储到其他区域，可以在控制台上自助添加其他存储地域，详情请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。设置完成后调用服务端 API [申请上传](/document/product/266/31767) 时通过`StorageRegion`参数来实现，参数值为存储地域的 [英文简称](https://intl.cloud.tencent.com/document/product/266/33910)。云点播提供的多语言 SDK 都支持上传时指定存储地域，详情请参见：
+云点播默认提供的存储地域设置在重庆，如果需要存储到其他区域，可以在控制台上自助添加其他存储地域，详情请参见 [上传存储设置](https://intl.cloud.tencent.com/document/product/266/18874)。设置完成后调用服务端 API [申请上传](https://intl.cloud.tencent.com/document/product/266/34120) 时通过`StorageRegion`参数来实现，参数值为存储地域的 [英文简称](https://intl.cloud.tencent.com/document/product/266/33910)。云点播提供的多语言 SDK 都支持上传时指定存储地域，详情请参见：
 	- [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)

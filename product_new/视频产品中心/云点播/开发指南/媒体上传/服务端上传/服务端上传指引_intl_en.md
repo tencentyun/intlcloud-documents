@@ -34,13 +34,13 @@ If the upload SDK provided by VOD does not apply to the programming language use
 ![](https://main.qcloudimg.com/raw/005ec15acf74e0a428e8d328ffd2da2f.png)
 API-based upload requires you to implement steps such as applying for upload and uploading file on your own, which is not so convenient as SDK-based upload. Plus, you need to develop multipart upload logic for uploading large files. 
 <!-- api For more information, please see:
-- [Server API - ApplyUpload](/document/product/266/31767)
+- [Server API - ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120)
 - [Server APIs - Uploading File](/document/product/266/31784)
-- [Server API - CommitUpload](/document/product/266/31766)-->
+- [Server API - CommitUpload](https://intl.cloud.tencent.com/document/product/266/34119)-->
 #### Advanced features
 
 - **Specify a task flow during upload**
-If you want to automatically initiate a [video processing task flow](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81) such as transcoding and screencapturing upon video upload completion, you can specify the `Procedure` parameter when calling the server API [ApplyUpload](/document/product/266/31767), and the parameter value should the name of the desired task flow template. VOD supports [creating task flow templates](https://intl.cloud.tencent.com/document/product/266/14058) and naming them. When initiating a task flow, you can use the task flow template name to indicate the desired task. All the SDKs provided by VOD for different programming languages support specifying the task flow parameter. For more information, please see:
+If you want to automatically initiate a [video processing task flow](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81) such as transcoding and screencapturing upon video upload completion, you can specify the `Procedure` parameter when calling the server API [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120), and the parameter value should the name of the desired task flow template. VOD supports [creating task flow templates](https://intl.cloud.tencent.com/document/product/266/14058) and naming them. When initiating a task flow, you can use the task flow template name to indicate the desired task. All the SDKs provided by VOD for different programming languages support specifying the task flow parameter. For more information, please see:
 	- [SDK for PHP](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [SDK for Java](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [SDK for Python](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
@@ -48,7 +48,7 @@ If you want to automatically initiate a [video processing task flow](https://int
 	- [SDK for Go](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [SDK for C#](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 - **Specify a storage region during upload**
-The storage region provided by VOD is "Chongqing" by default. If you want to store files in another region, you need to activate it in the console. For more information, please see [Upload Storage Settings](https://intl.cloud.tencent.com/document/product/266/18874). After the settings are made, the storage region can be specified by the `StorageRegion` parameter when the server API [ApplyUpload](/document/product/266/31767) is called, and the parameter value should be a [region abbreviation](https://intl.cloud.tencent.com/document/product/266/33910). All the SDKs provided by VOD for different programming languages support specifying the storage region during upload. For more information, please see:
+The storage region provided by VOD is "Chongqing" by default. If you want to store files in another region, you need to activate it in the console. For more information, please see [Upload Storage Settings](https://intl.cloud.tencent.com/document/product/266/18874). After the settings are made, the storage region can be specified by the `StorageRegion` parameter when the server API [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120) is called, and the parameter value should be a [region abbreviation](https://intl.cloud.tencent.com/document/product/266/33910). All the SDKs provided by VOD for different programming languages support specifying the storage region during upload. For more information, please see:
 	- [SDK for PHP](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [SDK for Java](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [SDK for Python](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
