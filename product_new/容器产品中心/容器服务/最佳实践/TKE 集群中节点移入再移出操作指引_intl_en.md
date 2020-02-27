@@ -18,7 +18,7 @@ Before performing the removal and re-addition of a node in a cluster, you must f
 The draining process involves reconstructing Pods, which may affect services in the cluster. Therefore, it is recommended that you perform the following checks before performing draining:
 1. Check whether the remaining nodes in the cluster have sufficient resources to run the Pods on the node to be drained.
 You can check the resource allocation of the nodes in TKE Console. In the **[Cluster List](https://console.cloud.tencent.com/tke2/cluster)** page, select the cluster ID > **Node Management** >  and the node, and check the **Assigned/Total Resources** on the **Node List** page. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/5ac6f7f2000b2389c4546c3e08644978.png)
+![](https://main.qcloudimg.com/raw/792b2016cf2523ee68279570ebf3dff5.png)
 	If the remaining resources of the nodes are insufficient, it is recommended that you add new nodes to the cluster to prevent the drained Pod from being unable to run and, as a result, affecting the service.
 2. Check whether active drainage protection, PodDisruptionBudget (PDB), is configured in the cluster.
 Active drainage protection interrupts the execution of drainage operations. It is recommended that you first delete the active drainage protection PDB.
@@ -42,7 +42,7 @@ Currently, there are two ways to complete drainage for TKE clusters:
 1. On the Cluster List page, select the cluster ID of the node to be drained, and enter the Cluster Workload Management page.
 2. On the left sidebar, select **Node Management** > **Node** to go to the **Node List** page.
 3. On the right of the row where the node is located, select **More** > **Drain** to drain the Pods running on the node. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/77764afa7d3ba6192a1d13d4d8169c65.png)
+![](https://main.qcloudimg.com/raw/440a3f97c414de413df36fa9d6a3a31e.png)
 
 **Using the kubectl drain command to drain**
 1. To log in to the node, refer to [Logging In to a Linux Instance in Standard Login Mode (Recommended)](https://intl.cloud.tencent.com/document/product/213/5436).
@@ -60,16 +60,16 @@ kubectl drain node <node-name>
 >- Note the node ID to be used for re-adding the node to the cluster.
 >- Be careful not to check **Terminate pay-as-you-go nodes**, as they cannot be restored after being terminated.
 >
-![](https://main.qcloudimg.com/raw/8231695c9f69b6690a2164dfe32d08a4.png)
+![](https://main.qcloudimg.com/raw/7b3b004f9278aebb65a010f1e7019b20.png)
 
 
 ### Step 3: add the node back to the cluster
 1. In the **Node List** page, click **Add Existing Node** on the top of the page.
 2. On the **Select Nodes** page, enter the recorded node ID and click <img src="https://main.qcloudimg.com/raw/706ad377ac9c152afe7d28aa9685f8e6.png" style="margin:-3px 0px">.
 3. In the search results list, check the desired node and click **Next** to go to the CVM Configuration page. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/23bb5511c4b49ce16a50d45c983416ba.png)
+![](https://main.qcloudimg.com/raw/355865d7fd63c5edf41fd69c92a5fedc.png)
 4. In the **CVM Configuration** page, **Mount Data disk** and **Container Directory** are not checked by default. If you need to store the container and image on the data disk, please check **Mount Data disk**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/e25bdb6fd89a23744528019eedec60d1.png)
+![](https://main.qcloudimg.com/raw/b8d256500636a96261afdefb15f5ba3e.png)
 >When *Mount data disk** is selected, the system disk with an formatted ext3, ext4 or xfs file system will be mounted directly. Other file systems or unformatted data disks will be automatically formatted as ext4, and mounted. If you need to keep the data disk and mount it, you can refer to [Data Disk Mounting](#data).
 >
 5. Set the login password and security group according to your actual circumstances, click **Complete**, and wait for the node to be added successfully.
@@ -99,7 +99,7 @@ To avoid this situation, Kubernetes versions 1.4 and later introduced PodDisrupt
 >
 1. In the **CVM Configuration** page, do not check **Mount Data Disk**.
 2. Open **Advanced Configurations**. In the **Custom Data** enter the following node initialization script and place a check next to **Enable Cordon**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/2998c7dcebca9bcff89fcf0d38586fc9.png)
+![](https://main.qcloudimg.com/raw/8f52adf74468b05bd817f5e7a3ba8dce.png)
 ```
 systemctl stop kubelet  
 docker stop $(docker ps -a | awk '{ print $1}' | tail -n +2)
