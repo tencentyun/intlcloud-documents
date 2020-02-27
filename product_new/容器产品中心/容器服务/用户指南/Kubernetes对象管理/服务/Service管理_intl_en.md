@@ -1,4 +1,4 @@
-## Introduction<span id="Introduction"></span>
+## Introduction
 A Service defines the method for accessing a backend Pod and provides a fixed virtual access IP address. You can access the backend Pod through settings in the Service. Services with different access methods can provide different network capabilities.
 TKE provides the following 4 access methods:
 
@@ -50,7 +50,8 @@ TKE provides the following 4 access methods:
 Usually a layer-4 load balancer (LB) will bind multiple nodes as real servers (RS). In this case, please make sure that the client and RS are not on the same CVM, otherwise the packets will not be able to sent out due to the loopback.
 When a Pod accesses an LB, Pod is the source IP. When it is transmitted to the private network, LB will not transfer the source IP to the Node IP via SNAT. Therefore the LB cannot identify the source node of the packet. The LB’s loopback avoidance policy will not take effect, and packet may be forwareded to any RS. When the packet is forwarded to the Node where the client is located, LB will be unable to receive the response, leading to access failure.
 
-## Notes<span id="annotations"></span>
+<span id="annotations"></span>
+## Notes
 - Make sure your container and CVM instance do not share a CLB.
 - For a CLB managed by TKE, you cannot modify its listeners and backend servers on the CLB Console. Changes made on the CLB Console will be automatically overwritten by TKE.
 - When using an existing CLB:
