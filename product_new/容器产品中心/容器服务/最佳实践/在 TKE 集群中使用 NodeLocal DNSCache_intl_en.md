@@ -28,6 +28,7 @@ The returned result is as shown in the following figure. Record the `CLUSTER IP`
 >- The DaemonSet resource created in this step is used to deploy the Local DNS Cache component.
 
 >
+
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -165,16 +166,19 @@ spec:
 	         items:
 	           - key: Corefile
 	             path: Corefile.base
-	```
+```
 	
 3. Set the specified DNS resolution access address of kubelet to the local DNS cache created in [Step 2](#StepTwo). This document provides the following two configuration methods, which you can choose according to your actual situation:
  -  Execute the following commands in order, to modify the kubelet launch parameters and restart it.
+
 ```
 sed -i '/CLUSTER_DNS/c\CLUSTER_DNS="--cluster-dns=169.254.20.10"' /etc/kubernetes/kubelet
 ```
+
 ```
 systemctl restart kubelet
 ```
+
  - Restart after configuring the `dnsconfig` of a single Pod as needed. The YAML core references are as follows:
     - You must set the `nameserver` to 169.254.20.10.
     - To ensure the internal domain name of the cluster can be resolved normally, you must configure `searches`.
@@ -198,8 +202,3 @@ This test cluster is a Kubernetes version 1.14 cluster. After the NodeLocal DNSC
 2. Dig Internet domain name, try to capture packets on the coredns pod.
 3. If it shows that 169.254.20.10 is working normally, it means that the NodeLocal DNSCache component has been deployed successfully. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/8990eecaa4497f006da9878c8b736e62.png)
-
-
-
-
-
