@@ -1,5 +1,5 @@
-| Name | Level | vul_type |
-|---------|---------|---------|---------|	
+| name | level | vul_type |
+|---------|---------|---------|	
 | Deserialization RCE vulnerability in Adobe ColdFusion Java RMI	| High	| Remote code execution |
 | SQL injection vulnerability in admin/login.php of BEESCMS	| High	| SQL injection |
 | SQL injection vulnerability in member.php of BEESCMS V4.0	| High	| SQL injection |
