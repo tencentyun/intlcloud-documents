@@ -22,6 +22,7 @@ kubectl -n kube-system get services kube-dns -o jsonpath="{.spec.clusterIP}"
 ```
 返回结果如下所示，请记录 `CLUSTER IP`。	
 ![](https://main.qcloudimg.com/raw/2b09784b95bf1851a12b9421dde78564.png)
+
 2. <span ID="StepTwo"></span>一键部署 NodeLocal DNS Cache。YAML 示例如下：
 >
 >- 该步骤中创建的 ConfigMap 资源为 coredns 的配置文件，其中 `UPSTREAM_CLUSTER_IP` 字段需更换为 [ 步骤1 ](#StepOne)中获取的 `CLUSTER IP`。
