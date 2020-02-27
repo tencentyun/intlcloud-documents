@@ -6,7 +6,7 @@
 - 在修改业务域名 DNS 信息前，您需要成功购买域名解析产品。
 
 ## 操作流程
-<!--![](https://main.qcloudimg.com/raw/26be97a1509c1947df6837ca6dce7597.png)-->
+![](https://main.qcloudimg.com/raw/0df61ac0012ebf1123ec9d83fc3438cc.png)
 
 ## 操作步骤
 <span id="step1"></span>
