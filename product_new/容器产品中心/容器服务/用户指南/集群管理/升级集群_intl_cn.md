@@ -3,8 +3,8 @@
 腾讯云容器服务提供升级 Kubernetes 版本的功能，您可通过此功能对运行中的 Kubernetes 集群进行升级。升级的过程为升级的前置检查、升级 Master 、升级 Node。
 
 
-
-## 升级须知<span ID="UpgradeNotice"></sapn>
+<span ID="UpgradeNotice"></sapn>
+## 升级须知
 - **升级属于不可逆操作、请谨慎进行。**
 - 目前集群升级功能处于内测阶段， 如有需要请[ 提交工单 ](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) 申请。
 - 请在升级集群前，查看集群下状态是否均为健康状态。若集群不正常，您可以自行修复，也可以通过[ 提交工单 ](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1)联系我们协助您进行修复。
