@@ -100,7 +100,7 @@ When the Ingress template does not have TLS configured, no certificate resources
 Match each rule in Ingress with `kubernetes.io/ingress.http-rules` and `kubernetes.io/ingress.https-rules`, and add them to the corresponding rule set. If the rules in Ingress are not matched, they are added to the HTTPS rule set by default.
 3. Verify matches
 When matching, verify the Host, Path, ServiceName, ServicePort (in these, Host is `VIP` by default, and Path is `/` by default).
-Note that [IPv6](https://cloud.tencent.com/document/product/1142/38134) CLBs do not have the feature for providing default domain names.
+Note that **IPv6**CLBs do not have the feature for providing default domain names.
 
 #### YAML sample
 
