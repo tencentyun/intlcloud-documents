@@ -1,12 +1,12 @@
 ### What permissions are needed to upload a file?
 
-VOD offers multiple upload methods such as [upload from server](https://intl.cloud.tencent.com/document/product/266/33912), [upload from client](https://intl.cloud.tencent.com/document/product/266/33921), [pull from URL](/document/product/266/35575). The permissions required for each method are as follows:
+VOD offers multiple upload methods such as [upload from server](https://intl.cloud.tencent.com/document/product/266/33912), [upload from client](https://intl.cloud.tencent.com/document/product/266/33921), [pull from URL](https://intl.cloud.tencent.com/document/product/266/34118). The permissions required for each method are as follows:
 
 | Upload Method | Permission to Resources |  Permission to Operations | Remarks |
 | ---------- | ------------ | ------------------------------------------------------------ | ------------------ |
-| Upload from server | Specified subapplication | [ApplyUpload](/document/product/266/31767)<br/>[CommitUpload](/document/product/266/31766) | -  |
-| Upload from client | Specified subapplication | [ApplyUpload](/document/product/266/31767)<br/>[CommitUpload](/document/product/266/31766) | -  |
-| Pull from URL | Specified subapplication |  [PullUpload](/document/product/266/35575) | - |
+| Upload from server | Specified subapplication | [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120)<br/>[CommitUpload](https://intl.cloud.tencent.com/document/product/266/34119) | -  |
+| Upload from client | Specified subapplication | [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120)<br/>[CommitUpload](https://intl.cloud.tencent.com/document/product/266/34119) | -  |
+| Pull from URL | Specified subapplication |  [PullUpload](https://intl.cloud.tencent.com/document/product/266/34118) | - |
 | LVB recording   | All subapplications   | -  | The LVB recording feature needs to be enabled |
 
 >[Local upload](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) of videos in the VOD Console is a form of upload from client.

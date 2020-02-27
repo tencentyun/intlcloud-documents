@@ -47,7 +47,7 @@ In addition to the APIs used to upload videos, mobile SDKs also provide a rich s
 No. This feature is under development and will be available in the future.
 
 ### Do the video upload APIs of VOD support Go, PHP, and .NET?
-You can use TencentCloud API 3.0 that supports SDKs for Go, PHP, and .NET. <!--API For more information, please see [ApplyUpload API documentation](https://intl.cloud.tencent.com/document/product/266/31767#SDK). -->
+You can use TencentCloud API 3.0 that supports SDKs for Go, PHP, and .NET. <API For more information, please see [ApplyUpload API documentation](https://intl.cloud.tencent.com/document/product/266/34120#SDK).
 
 
 

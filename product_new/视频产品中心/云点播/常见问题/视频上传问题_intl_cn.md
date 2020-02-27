@@ -47,7 +47,7 @@
 目前不支持，对应功能正在开发，后续会上线。
 
 ### 云点播视频上传接口是否支持 Go、PHP 及 .NET？
-使用云 API3.0 的接口上传，3.0接口支持 Go SDK、PHP SDK 及 .NET SDK， 详细请参见 [申请上传接口文档](https://intl.cloud.tencent.com/document/product/266/31767#SDK)。
+使用云 API3.0 的接口上传，3.0接口支持 Go SDK、PHP SDK 及 .NET SDK， 详细请参见 [申请上传接口文档](https://intl.cloud.tencent.com/document/product/266/34120#SDK)。
 
 
 

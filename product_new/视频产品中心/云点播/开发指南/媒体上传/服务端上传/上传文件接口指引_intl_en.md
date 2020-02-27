@@ -20,7 +20,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-The following variables in the syntax take the values in the return result of the [ApplyUpload API](/document/product/266/31767):  
+The following variables in the syntax take the values in the return result of the [ApplyUpload API](https://intl.cloud.tencent.com/document/product/266/34120):  
 
 - `<ObjectName>` is **MediaStoragePath** (or **CoverStoragePath** for a cover file).
 - `<BucketName>-<APPID>` is **StorageBucket**.
@@ -28,5 +28,5 @@ The following variables in the syntax take the values in the return result of th
 
 For API requests, note the following:
 
-- For the `Authorization` signature, use `SecretId` and `SecretKey` in **TempCertificate** in the return result of the [ApplyUpload API](/document/product/266/31767). For the calculation method, please see [Request Signature](/document/api/436/7778).
+- For the `Authorization` signature, use `SecretId` and `SecretKey` in **TempCertificate** in the return result of the [ApplyUpload API](https://intl.cloud.tencent.com/document/product/266/34120). For the calculation method, please see [Request Signature](/document/api/436/7778).
 - Pass in the **x-cos-security-token** field (identifying the security token used in the request) in the HTTP header or `form-data` of the POST request packet, and assign it the value of the `Token` field in **TempCertificate**.
