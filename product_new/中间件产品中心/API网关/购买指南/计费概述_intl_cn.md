@@ -56,8 +56,8 @@ API 网关的计费项包括：调用次数费用和流量费用。<!--费用组
 | 外网入流量 | 数据通过互联网从客户端传输到 API 网关产生的流量              | 免费                                                         |
 
 
-<!--流量走向：
-![](https://main.qcloudimg.com/raw/3357dcfb534304480ce0c752628ddbec.png)-->
+流量走向
+![](https://main.qcloudimg.com/raw/8d816cd1a15d788a53a3eecb06eb94c4.png)
 #### 计费说明
 - 计费项：流量费用（外网出流量）
 - 计费方式：按量计费 
