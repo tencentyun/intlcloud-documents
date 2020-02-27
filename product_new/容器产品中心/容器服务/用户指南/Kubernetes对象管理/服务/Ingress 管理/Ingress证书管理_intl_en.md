@@ -139,7 +139,7 @@ Log in to the CLB Console, and select **[Certificate Management](https://console
 
 ## Reference
 
-For more information, see the official Kubernetes documentation [Secret](https://kubernetes.io/zh/docs/concepts/configuration/secret/).
+For more information, see the official Kubernetes documentation [Secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
 
 
