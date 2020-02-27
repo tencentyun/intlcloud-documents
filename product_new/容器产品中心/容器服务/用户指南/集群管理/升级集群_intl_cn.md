@@ -14,7 +14,7 @@
 ## 操作步骤
 
 升级集群分为升级集群的 Master kubernetes 版本和升级 Node Kubernetes 版本两个步骤。具体信息如下图所示：
-![](https://main.qcloudimg.com/raw/1b4a4b4e25c9d9a66eb4f0c6d609bf49.png)
+![](https://main.qcloudimg.com/raw/9a86b7ebd520700999af9b6e62fe5bd4.png)
 
 ### 升级 Master Kubernetes 版本
 **目前仅支持托管集群 Master 版本升级**，且升级需要花费5 - 10分钟，在此期间您将无法操作您的集群。
@@ -34,16 +34,16 @@
 2. 选择需进行 Master Kubernetes 版本升级的集群 ID，进入该集群的 “Deployment” 页面。
 3. 选择左侧导航栏中的【基本信息】，进入集群“基础信息”页面。
 4. 在集群“基础信息”页面的集群信息模块，单击 Master 版本右侧的【升级】。如下图所示：
-![](https://main.qcloudimg.com/raw/3ba70cdb57fa729d647e3fb2a3aa4a73.png)
+![](https://main.qcloudimg.com/raw/65eb801aaeefc2d499f5451eac1bccc8.png)
 5. 在弹出窗口中单击【确定】，等待升级完成。
 该示例集群 Kubernetes 版本升级前 Master 版本为1.10.5，升级完成后为 Master 1.12.4。如下图所示：
-![](https://main.qcloudimg.com/raw/099ce1d116ac2ecdb995680b154fd23f.png)
+![](https://main.qcloudimg.com/raw/c6ed7a61c8438c6d76c64a34bb925cc3.png)
 
 
 ### 升级 Node Kubernetes 版本
 
 集群 Master Kubernetes 版本升级完成后，集群列表页将显示该集群节点有可用升级。如下图所示：
-![](https://main.qcloudimg.com/raw/05d3f2b65d31d309ad16c33970186dcd.png)
+![](https://main.qcloudimg.com/raw/4981b44503c27682a16fc102713d6d0a.png)
 您可通过以下步骤进行升级：
 
 
@@ -61,7 +61,7 @@
 
 #### 重装滚动升级
 基于重装的节点升级采用滚动升级的方式，同一时间只会对一个节点进行升级，只有当前节点升级成功才会进行下个节点的升级。如下图所示：
-![](https://main.qcloudimg.com/raw/9a2b7caa360e40aa8a1b919c7917217a.png)
+![](https://main.qcloudimg.com/raw/bd85fe590108c8aa83eaac53af4439e6.png)
 步骤描述如下：
 1.  **升级前检查**：对节点上的 Pod 进行驱逐前的检查。具体的升级前检查项如下：
    - 统计该节点所有工作负载的 Pod 个数，若驱逐节点后，任何工作负载的 Pod 数目变为0 ，则检查不通过，不能进行升级。
@@ -83,11 +83,11 @@
 1. 登录 TKE 控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入 “集群管理” 页面。
 2. 选择需进行 Node  Kubernetes 升级的集群 ID，进入该集群的 “Deployment” 页面。
 3. 选择左侧导航栏中的【基本信息】，并单击 Node Kubernetes 版本右侧的【升级】。如下图所示：
-![](https://main.qcloudimg.com/raw/68c53549dd487d18b202c9dfd09e5aa0.png)
+![](https://main.qcloudimg.com/raw/b81c9c37422de8f76b2e51d7017bb416.png)
 4. 在“升级须知”步骤中，选择升级方式为**重装滚动升级**，仔细阅读升级须知。勾选【我已阅读并同意上述技术条款】，并单击【下一步】。如下图所示：
 >该升级方式将重装系统，原有数据将会被清除，请注意提前备份数据。
 >
-![](https://main.qcloudimg.com/raw/5edfaedfbb569d3d339adc80bd6d774c.png)
+![](https://main.qcloudimg.com/raw/8643f4ba2799bbc7cd7f022e8c465ae7.png)
 6. 在“节点选择”步骤中，选择本批次需要升级的节点，并单击【下一步】。
 6. 在“升级设置”步骤中，按需填写节点信息，并单击【下一步】。
 7. 在“确认”步骤中，确认信息并单击【完成】即可开始升级。
@@ -96,7 +96,7 @@
 
 #### 原地滚动升级
 节点原地升级采用滚动升级的方式，同一时间只会对一个节点进行升级，只有当前节点升级成功才会进行下个节点的升级。原地升级目前仅支持同一个大版本的不同小版本升级。如下图所示：
-![](https://main.qcloudimg.com/raw/9bfc2ff8fb0af26ba30214a715fe633d.png)
+![](https://main.qcloudimg.com/raw/c6e9f30699c429a83e621b1d0a82cee5.png)
 步骤描述如下：
 1. **组件更新**：替换和重启节点上的 kubelet 和 kube-proxy 组件，参数将被初始化为默认值。
 - **升级后检查**：检查节点是否 ready，是否为可调度的。
@@ -107,9 +107,9 @@
 1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】，进入 “集群管理” 页面。
 2. 选择需进行 Node  Kubernetes 升级的集群 ID，进入该集群的 “Deployment” 页面。
 3. 选择左侧导航栏中的【基本信息】，并单击 Node Kubernetes 版本右侧的【升级】。如下图所示：
-![](https://main.qcloudimg.com/raw/68c53549dd487d18b202c9dfd09e5aa0.png)
+![](https://main.qcloudimg.com/raw/598448074a6123e1387cea015e2c2521.png)
 4. 在“升级须知”步骤中，选择升级方式为**原地滚动升级**，仔细阅读升级须知。勾选【我已阅读并同意上述技术条款】，并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/118172ac03f18b7001ad0eb83d4ea7ba.png)
+![](https://main.qcloudimg.com/raw/a5fa1dbd29f9a24f6930c4e40e12ab2e.png)
 5. 在“节点选择”步骤中，选择本批次需要升级的节点，单击【下一步】。
 6. 在“确认”步骤中，确认信息并单击【完成】即可开始升级。
 7. 查看节点升级进度， 直至所有节点升级完成。
