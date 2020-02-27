@@ -20,7 +20,7 @@ As shown in the following figure, there are only three steps to run the applicat
 2. Create a workload or Ingress.
 3. Run the Service or Ingress.
 
-![][manual]
+![][https://main.qcloudimg.com/raw/1a6296351069c4b8cad7e4362fa3415c.png]
 ## Pricing
 TKE is now free of charge, but you need to pay for the usage of relevant Tencent Cloud resources. For more information on billing and pricing, see [Pricing Description](https://intl.cloud.tencent.com/document/product/457/6770).
 
