@@ -34,12 +34,12 @@ Authorization: Auth String（详情请参阅 [请求签名](https://intl.cloud.t
 
 ### 请求
 
-下述请求示例展示了从存储桶`originBucet-1250000000`中删除跨地域配置信息。
+下述请求示例展示了从存储桶`originBucket-1250000000`中删除跨地域配置信息。
 ```shell
 DELETE /?replication HTTP/1.1
 Date: Fri, 14 Apr 2019 07:47:35 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR98JM&q-sign-time=1503901499;1503901859&q-key-time=1503901499;1503901859&q-header-list=host&q-url-param-list=replication&q-signature=761f3f6449c6a11684464f4b09c6f292f0a4e7e0
-Host: originBucet-1250000000.cos.ap-chengdu.myqcloud.com
+Host: originBucket-1250000000.cos.ap-chengdu.myqcloud.com
 ```
 
 ### 响应
