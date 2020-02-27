@@ -167,7 +167,7 @@ If you are using an account with **IP bandwidth packages**, you need to specify 
   service.kubernetes.io/qcloud-loadbalancer-internet-charge-type: TRAFFIC_POSTPAID_BY_HOUR
   service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out: "10"
 ```
-For more information on **IP bandwidth packages**, see the [Bandwidth Package Types](https://cloud.tencent.com/document/product/684/15246) document.
+For more information on **IP bandwidth packages**, see the [Bandwidth Package Types](https://intl.cloud.tencent.com/document/product/684/15246) document.
 
 ### Creating a Service
 
