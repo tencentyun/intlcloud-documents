@@ -20,16 +20,16 @@
 2. 创建工作负载或 Ingress
 3. 运行 Service 或 Ingress
 
-![](https://main.qcloudimg.com/raw/1140e2e6b694283beb743020f9f606d6.png)
+![](https://main.qcloudimg.com/raw/1a6296351069c4b8cad7e4362fa3415c.png)
 ## 产品定价
-容器服务暂不收取服务本身费用，用户只需要按实际使用的云资源进行付费。关于收费模式和具体价格，请参阅 [计费说明](https://cloud.tencent.com/doc/product/457/6770)。
+容器服务暂不收取服务本身费用，用户只需要按实际使用的云资源进行付费。关于收费模式和具体价格，请参阅 [计费说明](https://intl.cloud.tencent.com/doc/product/457/6770)。
 
 ## 相关服务
 
-- 通过购买若干个云服务器组成容器服务集群，容器运行在云服务器中。有关更多信息，请参阅 [云服务器产品文档](https://cloud.tencent.com/doc/product/213)。
-- 集群可以建立在私有网络下，集群内主机可以分配在不同可用区的子网下。有关更多信息，请参阅 [私有网络产品文档](https://cloud.tencent.com/doc/product/215)。
-- 可以使用负载均衡，自动分配横跨多个云服务实例的客户端请求流量，转发至主机内容器。有关更多信息，请参阅 [负载均衡产品文档](https://cloud.tencent.com/doc/product/214)。
-- 监控容器服务集群和容器实例的运行统计数据，可使用云监控。有关更多信息，请参阅 [云监控产品文档](https://cloud.tencent.com/doc/product/248)。
+- 通过购买若干个云服务器组成容器服务集群，容器运行在云服务器中。有关更多信息，请参阅 [云服务器产品文档](https://intl.cloud.tencent.com/doc/product/213)。
+- 集群可以建立在私有网络下，集群内主机可以分配在不同可用区的子网下。有关更多信息，请参阅 [私有网络产品文档](https://intl.cloud.tencent.com/doc/product/215)。
+- 可以使用负载均衡，自动分配横跨多个云服务实例的客户端请求流量，转发至主机内容器。有关更多信息，请参阅 [负载均衡产品文档](https://intl.cloud.tencent.com/doc/product/214)。
+- 监控容器服务集群和容器实例的运行统计数据，可使用云监控。有关更多信息，请参阅 [云监控产品文档](https://intl.cloud.tencent.com/doc/product/248)。
 
 
 
