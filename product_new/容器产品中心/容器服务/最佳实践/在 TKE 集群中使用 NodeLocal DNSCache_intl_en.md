@@ -1,31 +1,31 @@
-## 操作场景
-通过在集群节点上以 Daemonset 的形式运行 [NodeLocal DNS Cache](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns/nodelocaldns?spm=a2c6h.12873639.0.0.b8e3669eIhJqEN)，能够大幅提升集群内 DNS 解析性能，以及有效避免[ conntrack 冲突引发的 DNS 五秒延迟](https://www.weave.works/blog/racy-conntrack-and-dns-lookup-timeouts)。
+## Scenarios
+By running [NodeLocal DNSCache](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns/nodelocaldns?spm=a2c6h.12873639.0.0.b8e3669eIhJqEN) in a form of Daemonset on the cluster node, you can greatly improve the DNS resolution performance in the cluster, and can effectively avoid [DNS 5-second delay due to conntrack conflicts](https://www.weave.works/blog/racy-conntrack-and-dns-lookup-timeouts).
 
-本文接下来将详细介绍如何在 TKE 集群中使用 NodeLocal DNS Cache。
+This document describes in detail how to use NodeLocal DNS Cache in a TKE cluster.
 
-## 操作原理
+## Principle
 
-通过 DaemonSet 在集群的每个节点上部署一个 hostNetwork 的 Pod，该 Pod 是 node-cache，可以缓存本节点上 Pod 的 DNS 请求。如果存在 cache misses ，该 Pod 将会通过 TCP 请求上游 kube-dns 服务进行获取。原理图如下所示：
+A hostNetwork Pod is deployed on every node of a cluster by using DaemonSet. This Pod is node-cache, and can cache DNS requests for Pods on this node. If there are cache misses, this Pod will obtain them through a TCP request to the upstream kube-dns service. The principle is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/f40abea3e536d3583c8e84370811e22a.png)
->NodeLocal DNS Cache 没有高可用性（High Availability，HA），会存在单点 nodelocal dns cache 故障（Pod Evicted/ OOMKilled/ConfigMpa error/DaemonSet Upgrade），但是该现象其实是任何的单点代理（例如 kube-proxy，cni pod）都会存在的常见故障问题。
+>NodeLocal DNS Cache does not have high availability (HA), so there will be a single point of nodelocal dns cache failure (Pod Evicted/OOMKilled/ConfigMpa error/DaemonSet Upgrade). However, this issue is actually a common failure problem that will exist in any single point proxy (such as kube-proxy and cni pod).
 
-## 前提条件
-已通过 [TKE 控制台](https://console.cloud.tencent.com/tke2/cluster) 创建了 Kubernetes 版本为 1.14 及以上的集群，且该集群中存在节点。
+##  Prerequisites
+You have created a cluster of Kubernetes version 1.14 or above in the [TKE Console](https://console.cloud.tencent.com/tke2/cluster), and nodes exist in this cluster.
 
 
 
-## 操作步骤
+## Directions
 
-1. <span ID="StepOne"></span>登录节点，在 Linux 终端执行以下命令，获取 `Kube-dns-upstream` 的 `CLUSTER IP`。
+1. <span ID="StepOne"></span>Log in to the node. In the Linux terminal, execute the following command to obtain the `CLUSTER IP` of `Kube-dns-upstream`.
 ```
 kubectl -n kube-system get services kube-dns -o jsonpath="{.spec.clusterIP}"
 ```
-返回结果如下所示，请记录 `CLUSTER IP`。	
+The returned result is as shown in the following figure. Record the `CLUSTER IP`.	
 ![](https://main.qcloudimg.com/raw/2b09784b95bf1851a12b9421dde78564.png)
-2. <span ID="StepTwo"></span>一键部署 NodeLocal DNS Cache。YAML 示例如下：
+2. <span ID="StepTwo"></span>Deploy NodeLocal DNS Cache with one click. The YAML example is as follows:
 >
->- 该步骤中创建的 ConfigMap 资源为 coredns 的配置文件，其中 `UPSTREAM_CLUSTER_IP` 字段需更换为 [ 步骤1 ](#StepOne)中获取的 `CLUSTER IP`。
->- 该步骤中创建的 DaemonSet 资源用来部署 Local DNS Cache 缓存组件。
+>- The ConfigMap resource created in this step is the configuration file of coredns, where the `UPSTREAM_CLUSTER_IP` field must be replaced with the `CLUSTER IP` obtained in [Step 1](#StepOne).
+>- The DaemonSet resource created in this step is used to deploy the Local DNS Cache component.
 >
 	```yaml
 apiVersion: v1
@@ -165,19 +165,19 @@ spec:
 	           - key: Corefile
 	             path: Corefile.base
 	```
-3. 将 kubelet 的指定 dns 解析访问地址设置为[ 步骤2 ](#StepTwo)中创建的 lcoal dns cache。本文提供以下两种配置方法，请根据实际情况进行选择：
- -  依次执行以下命令，修改 kubelet 启动参数并重启。
+3. Set the specified DNS resolution access address of kubelet to the local DNS cache created in [Step 2](#StepTwo). This document provides the following two configuration methods, which you can choose according to your actual situation:
+ -  Execute the following commands in order, to modify the kubelet launch parameters and restart it.
 ```
 sed -i '/CLUSTER_DNS/c\CLUSTER_DNS="--cluster-dns=169.254.20.10"' /etc/kubernetes/kubelet
 ```
 ```
 systemctl restart kubelet
 ```
- - 根据需求配置单个 Pod 的 dnsconfig 后重启。YAML 核心部分参考如下：
-    - 需要将 nameserver 配置为169.254.20.10。
-    - 为确保集群内部域名能够被正常解析，需要配置 searches。
-    - 适当降低 ndots 值有利于加速集群外部域名访问。
-    - 当 Pod 没有使用带有多个 dots 的集群内部域名的情况下，建议将值设为2。
+ - Restart after configuring the `dnsconfig` of a single Pod as needed. The YAML core references are as follows:
+    - You must set the `nameserver` to 169.254.20.10.
+    - To ensure the internal domain name of the cluster can be resolved normally, you must configure `searches`.
+    - Suitably reducing the `ndots` value is useful for accelerating the external domain name access of clusters.
+    - When the Pod does not use the internal domain name of a cluster with multiple dots, it is recommended that you set the value to 2.
 	```
 	dnsConfig:
 	  nameservers: ["169.254.20.10"]
@@ -190,11 +190,11 @@ systemctl restart kubelet
 	      value: "2" 
 	```
 	
-## 配置验证
-本次测试集群为 Kubernetes 1.14 版本集群。在通过上述步骤完成 NodeLocal DNSCache 组件部署之后，可以参照以下方法进行验证：
-1. 选择一个 debug pod，调整 kubelet 参数或者配置 dnsConfig 后重启。
-2. Dig 外网域名，尝试在 coredns pod 上抓包。
-3. 显示169.254.20.10正常工作即可证明 NodeLocal DNSCache 组件部署成功。如下图所示：
+## Configuration Verification
+This test cluster is a Kubernetes version 1.14 cluster. After the NodeLocal DNSCache component is deployed through the preceding steps, you can perform verification by referring to the following methods:
+1. Select a debug pod, and restart after adjusting kubelet parameters or configuring dnsConfig.
+2. Dig Internet domain name, try to capture packets on the coredns pod.
+3. If it shows that 169.254.20.10 is working normally, it means that the NodeLocal DNSCache component has been deployed successfully. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/8990eecaa4497f006da9878c8b736e62.png)
 
 

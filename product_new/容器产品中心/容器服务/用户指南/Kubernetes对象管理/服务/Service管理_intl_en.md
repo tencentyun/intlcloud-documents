@@ -26,7 +26,7 @@ TKE provides the following 4 access methods:
 </td>
 </tr>
 <tr>
-<td>Via VPC</td>
+<td>Via private network</td>
 <td>
 <ul class="params">
 <li>Uses the Loadbalance mode of the Service. If <code>annotations:service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-xxxxxxxx</code> is specified, the backend Pod can be accessed using a private IP address.</li>
@@ -38,32 +38,36 @@ TKE provides the following 4 access methods:
 <td>Node Port Access</td>
 <td>
 <ul class="params">
-<li>An access method that maps a node port to the container, with support for TCP, UDP, and Ingress. It can be used for forwarding from upper-layer custom LB to Node.</li>
-<li>The created service can be accessed using <b>CVM IP and Node port</b> or <b>Service name and Service port</b>.</li>
+<li>An access method that maps a node port to the container, with support for TCP, UDP, and Ingress. It can be used for forwarding from the upper-layer custom LB to Node.</li>
+<li>The created service can be accessed by using <b>CVM IP and Node port</b> or <b>Service name and Service port</b>.</li>
 </ul>
 </td>
 </tr>
 </table>
 
+>Please do not access Service in the cluster via the load balancer IP to avoid access failure.
+
+Usually a layer-4 load balancer (LB) will bind multiple nodes as real servers (RS). In this case, please make sure that the client and RS are not on the same CVM, otherwise the packets will not be able to sent out due to the loopback.
+When a Pod accesses an LB, Pod is the source IP. When it is transmitted to the private network, LB will not transfer the source IP to the Node IP via SNAT. Therefore the LB cannot identify the source node of the packet. The LB’s loopback avoidance policy will not take effect, and packet may be forwareded to any RS. When the packet is forwarded to the Node where the client is located, LB will be unable to receive the response, leading to access failure.
 
 ## Notes<span id="annotations"></span>
 - Make sure your container and CVM instance do not share a CLB.
-- For a CLB managed by TKE, you cannot modify its listeners and backend-bound servers on CLB console. Changes made on CLB console will be automatically overwritten by TKE.
+- For a CLB managed by TKE, you cannot modify its listeners and backend servers on the CLB Console. Changes made on the CLB Console will be automatically overwritten by TKE.
 - When using an existing CLB:
-  - You can only use load balancers created through the CLB console, not balancers automatically created by TKE.
+  - You can only use load balancers created through the CLB Console, not balancers automatically created by TKE.
   - Ports of Services sharing the same existing CLB cannot be the same.
   - Services in different clusters cannot share the same CLB.
   - Services sharing the same CLB do not support local access.
   - When you delete a Service using an existing CLB, the real server bound to the balancer needs to be unbound manually. The tag (tke-clusterId: cls-xxxx) is kept for the CLB. You need to clear it manually.
 
 
-## Managing Service in Console
+## Managing Service in the Console
 
 
 
 ### Creating a Service
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
+1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the ID of the cluster for which you need to create a Service to go to the cluster management page.
 4. Select **Service** -> **Service** to go to the Service information page. See the figure below:
@@ -72,7 +76,7 @@ TKE provides the following 4 access methods:
 ![](https://main.qcloudimg.com/raw/f764f808b6417950506094d121cb9e42.png)
 6. Set the Service parameters as needed. The key parameter information is as follows:
    - Service name: custom.
-   - Namespace: select an option as needed. 
+   - Namespace: select an option as needed.
    - Access settings: please see [Introduction](#Introduction) and set this parameter as needed.
 7. Click **Create Service** to complete creation.
 
@@ -80,7 +84,7 @@ TKE provides the following 4 access methods:
 
 #### Updating YAML
 
-1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
+1. Log in to the [TKE Console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **Clusters** to go to the cluster management page.
 3. Click the cluster ID for which you want to update the YAML to go to the cluster management page.
 4. Select **Service** -> **Service** to go to the Service information page. See the figure below:
@@ -88,10 +92,10 @@ TKE provides the following 4 access methods:
 5. In the row of the Service for which you want to update the YAML, click **Edit YAML** to go to the Service update page.
 6. On the **Update a Service** page, edit YAML and click **Finish**.
 
-## Managing Services Using kubectl
+## Managing Service Using kubectl
 
 <span id="YAMLSample"></span>
-### YAML Sample
+### YAML sample
 ```Yaml
 kind: Service
 apiVersion: v1
@@ -113,15 +117,15 @@ spec:
 - metadata: basic information such as Service name and Label.
 - metadata.annotations: an additional description of a Service. You can set additional enhancements for TKE through this parameter.
 - spec.type: identifies the access type of the Service.
-  - ClusterIP: the service is open in the cluster and can be accessed inside the cluster. 
-   NodePort: Maps the the node port to the backend Service, and the service can be accessed outside the cluster through “[node IP]:[NodePort]”.
+  - ClusterIP: the service is open in the cluster and can be accessed inside the cluster.
+  - NodePort: Maps the node port to the backend Service, and the service can be accessed outside the cluster through “[node IP]:[NodePort]”.
   - LoadBalancer: the service is made open to the public through a CLB. A public network CLB is created by default if you choose this type. You can also create a private network CLB by specifying the annotations.
   - ExternalName: the Service is mapped to DNS. This is only applicable to kube-dns v1.7 or higher.
 
 #### annotations: create a Service for public/private network access with an existing load balancer
 
-If the existing CLB is idle and you want to use it for a Service created by TKE, or you expect to use the same CLB within the cluster, you can set it using the following annotations:
->Please read the [Notes](#annotations) before using.
+If the existing application CLB is idle and you want to use it for a Service created by TKE, or you want to use the same CLB within the cluster, you can set it using the following annotations:
+>Read the [Notes](#annotations) before using it.
 >
 ```Yaml
 metadata:
@@ -154,7 +158,7 @@ If you are using an account with **IP bandwidth packages**, you need to specify 
 - `service.kubernetes.io/qcloud-loadbalancer-internet-charge-type` identifies the public network bandwidth billing method. Optional values include:   
  -  TRAFFIC_POSTPAID_BY_HOUR (Bill-by-traffic)
  -  BANDWIDTH_POSTPAID_BY_HOUR (Bill-by-bandwidth)
-- `service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out` identifies the  bandwidth cap (value range: [1,2000] Mbps).
+- `service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out` identifies the bandwidth cap (value range: [1,2000] Mbps).
    For example:
 ```Yaml
   metadata:
@@ -162,12 +166,12 @@ If you are using an account with **IP bandwidth packages**, you need to specify 
   service.kubernetes.io/qcloud-loadbalancer-internet-charge-type: TRAFFIC_POSTPAID_BY_HOUR
   service.kubernetes.io/qcloud-loadbalancer-internet-max-bandwidth-out: "10"
 ```
-<!--For more information on **IP bandwidth packages**, please see the document [Bandwidth Package Types]()-->
+For more information on **IP bandwidth packages**, see the [Bandwidth Package Types](https://cloud.tencent.com/document/product/684/15246) document.
 
 ### Creating a Service
 
 1. Prepare the StatefulSet YAML file as instructed by [YAML sample](#YAMLSample).
-2. Install kubectl and connect to a cluster. For detailed operations, please see [Connecting to Clusters](https://intl.cloud.tencent.com/document/product/457/31086).
+2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting to Clusters](https://intl.cloud.tencent.com/document/product/457/31086).
 3. Run the following command to create the Service YAML file.
 ```shell
 kubectl create -f Service YAML filename
@@ -180,7 +184,7 @@ kubectl create -f my-service.yaml
 ```shell
 kubectl get services
 ```
-A message similar to the one below indicates that the Ingress YAML file is successfully created. 
+A message similar to the one below indicates that the Ingress YAML file is successfully created.
 ```
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
 kubernetes ClusterIP 172.16.255.1 <none> 443/TCP 38d
