@@ -12,7 +12,7 @@ You can create a snapshot in the console as instructed below:
 3. Find the row of the desired instance and click **Create Snapshot**.
 4. Wait until the snapshot is created.
 
-For more information, please see [Snapshot Overview](https://cloud.tencent.com/document/product/362/5754).
+For more information, please see [Snapshot Overview](https://intl.cloud.tencent.com/document/product/362/31638).
 
 ### What to do if the system prompts that a password has been successfully cracked by brute force attacks?
 If the password is cracked, the server may be hacked by a backdoor program embedded into it.
@@ -28,7 +28,7 @@ The CWP agent may go offline because of the following reasons:
 - The agent is corrupted by a third-party malware on the server. In this case, please re-install the agent.
 
 ### What to do if my server has trojan files?
-To learn more about how to deal with trojan files detected, please see [Dealing with Trojan Files](https://cloud.tencent.com/document/product/296/13008).
+To learn more about how to deal with trojan files detected, please see [Dealing with Trojan Files](https://intl.cloud.tencent.com/document/product/296/13008).
 
 ### What to do if trojans are not successfully detected (false negative)?
 If undetected trojan files are found, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=635&source=0&data_title=%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8(%E4%BA%91%E9%95%9C)&step=1) to contact the Tencent Cloud security team for fast identification.
@@ -37,4 +37,4 @@ If undetected trojan files are found, [submit a ticket](https://console.cloud.te
 - Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing), select **Asset Management** > **Server List** on the left sidebar, find the server from which you want to uninstall CWP, and click **Uninstall**. Or, open the installation directory and use the uninstaller there to uninstall it.
 
 ### What to do if there is a problem in identity verification of my Tencent Cloud account?
-If you have encountered a problem related to the Tencent Cloud account when using CWP, please see the [account documentation](https://cloud.tencent.com/document/product/378).
+If you have encountered a problem related to the Tencent Cloud account when using CWP, please see the [account documentation](https://intl.cloud.tencent.com/document/product/378).
