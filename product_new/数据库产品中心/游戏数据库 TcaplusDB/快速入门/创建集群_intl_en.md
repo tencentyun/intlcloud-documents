@@ -10,7 +10,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
  - **Network Type**: Select a VPC and a subnet. You can select one VPC and one subnet only when creating a cluster, which cannot be modified once created.
  - **Connection Protocol**: Select a connection protocol (data description protocol) for your TcaplusDB cluster.
  - **Cluster Name and Access Password**: A cluster name should be unique under the same account. An access password must contain lowercase letters (a-z), uppercase letters (A-Z), and digits (0-9).
-![](https://main.qcloudimg.com/raw/c4800cb09e135efaa45384abf4a7bd78.png)
+![](https://main.qcloudimg.com/raw/403156d42bf01dec755e6b169c77b160.png)
 3. Click **Create Cluster** and the system will prompt that the creation has been successful.
 You can return to the cluster list to view the created cluster. Each cluster will be assigned a unique cluster ID.
 ![](https://main.qcloudimg.com/raw/7612056a6d9420ffb5697c0243c0e7d4.png)

@@ -1,27 +1,28 @@
-### What problems can be solved by GAAP?
-GAAP helps vendors create high-speed network connections between end users and service servers, resolving cross-regional latency and stutter issues.
+### What problems can GAAP solve?
+GAAP helps vendors create high-speed network connections between end users and business servers to solve cross-regional access latency and lag.
 
 ### What is the coverage of GAAP?
-GAAP boasts more than 50 global nodes, covering Asia, Europe, South America, North America, and Oceania. It provides stable and efficient high-speed connection for businesses across the globe that require cross-region access or server sharing to avoid stutter and high latency in service access.
+GAAP has more than 50 global nodes deployed across Asia, Europe, South America, North America, and Oceania. It provides stable and efficient high-speed connections for businesses around the globe that require cross-region access or server sharing, avoiding access lag and high latency.
 
-### How does GAAP work? 
-A peering connection between the acceleration region and the origin region is set up, so users can avoid unstable public networks by using Tencent Cloud’s global high-speed private network and optimized access routing. Direct business access through high-speed connections ensures fast and stable user experience.
+### How does GAAP work?
+A peering connection is set up between the acceleration region and the origin server region, so users can avoid unstable public network by using Tencent Cloud's global high-speed private network and optimized access routes. Direct business access through high-speed connections delivers a fast and stable access experience.
 
-### What is an acceleration region and an origin region?
-- Acceleration region refers to the region where the user is located.
-- Origin region refers to the region where the server is located. 
+### What are acceleration region and origin server region?
+- Acceleration region refers to the region where a user is located.
+- Origin server region refers to the region where the origin server is located. 
 
-For example, your server is located in Hong Kong, and you want users from multiple locations (including the U.S. West Coast, U.S. East Coast, Japan, and Korea) to simultaneously access the Hong Kong server with high-speed connections, and you want the users to have fast and stable access experience. In this case, the acceleration region is the U.S. West Coast, U.S. East Coast, Japan, and Korea, while the origin region is Hong Kong.
+For example, if your server is located in Hong Kong (China), and you want users from multiple regions such as Western US, Eastern US, Japan, and Korea to access the server through high-speed connections for a fast and stable access experience, then acceleration regions will be Western US, Eastern US, Japan, and Korea, while the origin server region will be Hong Kong (China).
 
-### What protocols and forwarding methods are supported by GAAP?
-GAAP supports Layer-4 and Layer-7 protocols. UDP/HTTP/HTTPS protocols, and IP, domain name forwarding are also supported.
+### What protocols and forwarding methods does GAAP support?
+GAAP supports UDP/HTTP/HTTPS protocols, Layer 4 and Layer 7 protocols, and IP/domain name forwarding.
 
-### Does GAAP enable the origin server to get the real IP of the access user?
-GAAP enables the origin server to get the real IP of the access user.
+### Does GAAP support the origin server to get the real user IP?
+GAAP supports the origin server to get the real user IP.
 
-### What are some GAAP application scenarios?
-GAAP can be used for cross-region business access, such as global e-commerce and global video game servers. For details, see [Use Cases](https://intl.cloud.tencent.com/document/product/608/13760).
+### What are some application scenarios of GAAP?
+GAAP can be used for cross-region business access, such as global e-commerce and globally unified game servers. For more information, please see [Application Scenarios](https://intl.cloud.tencent.com/document/product/608/13760).
 
-### What should be done if a collaborator account does not have permission to access GAAP?
-Please contact the administrator of the root account or another account that has AdministratorAccess permissions to assign the collaborator with GAAP read-write or GAAP read-only access permission in [Configure Permissions](https://intl.cloud.tencent.com/document/product/608/31510). 
+### What if the collaborator account does not have permission to access GAAP?
+Please contact the administrator of the root account or another account that has the `AdministratorAccess` permission to grant the collaborator  GAAP read/write or read-only permission, as instructed in [Configuring Permissions](https://intl.cloud.tencent.com/document/product/608/31510).
+<!-- ![](https://main.qcloudimg.com/raw/0189d4261af32dbc8cf632e390ff7a19.png) -->
 

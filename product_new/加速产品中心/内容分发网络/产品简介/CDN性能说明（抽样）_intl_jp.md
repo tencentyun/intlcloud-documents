@@ -1,5 +1,4 @@
-
-##テスト説明
+## テスト説明
 
 ### テストツール
 
@@ -20,19 +19,19 @@
 
 ## 結果の分析
 
-###レイテンシー性能曲線
+### レイテンシー性能曲線
 
 単位：秒
 
-![レイテンシー性図](https://main.qcloudimg.com/raw/523e221c3a7bbf5853d5ed3e17ff3689.png)
+![レイテンシー性図](https://main.qcloudimg.com/raw/af4a2f1a8c977561950de6349f9ee755.jpg)
 
 ### 可用性曲線
 
 単位：%
 
-![可用性図new](https://main.qcloudimg.com/raw/f3b7b6f9483045e9fd0797f1d2c90632.png)
+![可用性図new](https://main.qcloudimg.com/raw/e868c5fc16cb145e785620091e1a10e5.jpg)
 
-###図表の分析
+### 図表の分析
 
 <table>
    <tr>
@@ -77,9 +76,8 @@
       <td>05月21日 11:15</td>
       <td> 97.65</td>
    </tr>
-</table>
-
-###データの詳細
+<table>
+### データの詳細
 
 <table>
    <tr>
@@ -312,7 +310,7 @@
       <td> 94</td>
    </tr>
    <tr>
-      <td>平均/まとめ</td>
+      <td>平均/集計</td>
       <td>  0.196</td>
       <td> 99.996</td>
       <td>2235</td>
@@ -325,4 +323,5 @@
       <td colspan="3">  0</td>
       <td colspan="3">  0</td>
    </tr>
-</table>
+<table>
+
