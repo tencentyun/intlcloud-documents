@@ -22,7 +22,6 @@ Content Delivery Network(CDN) はユーザーのためにIP帰属照会ツール
 ### IPが海外に帰属する
 ![](https://main.qcloudimg.com/raw/6a2e1b6f94362d5508ed98a52bd2d125.png)
 ### IPv6帰属照会
-> <!--IPv6加速は内部テスト段階にあります。IPv6 加速が必要である場合、 [申請を提出する](https://cloud.tencent.com/apply/p/own2eu41dg8)をクリックしてください。-->
 >
 ![](https://main.qcloudimg.com/raw/7e88553e81f01e86fd4325c3d433fbca.png)
 
