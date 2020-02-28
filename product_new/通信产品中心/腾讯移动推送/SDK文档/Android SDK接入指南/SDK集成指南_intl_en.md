@@ -56,7 +56,7 @@ dependencies {
             <intent-filter>
                 <!-- Receive message passthrough -->
                 <action android:name="com.tencent.android.xg.vip.action.PUSH_MESSAGE" />
-                <!-- Listen to results of registration, unregistration, tag setting/deletion, and notification clicks ->
+                <!-- Listen to results of registration, unregistration, tag setting/deletion, and notification clicks -->
                 <action android:name="com.tencent.android.xg.vip.action.FEEDBACK" />
             </intent-filter>
         </receiver>
