@@ -360,3 +360,4 @@ export SPARK_DIST_CLASSPATH=$(/usr/local/hadoop/bin/hadoop classpath)
 bin/run-example SparkPi
 ```
 若成功安装可以看到程序输出 π 的近似值。
+
