@@ -1,7 +1,7 @@
 <span id="size"></span>
 ## SMS Length Calculation Rule
 SMS length = number of characters in the signature + number of characters in the body. A single SMS message can contain up to 500 characters.
->?Signature is optional for global SMS.
+>Signature is optional for global SMS.
 
 ### SMS containing only English characters
 
@@ -35,7 +35,7 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
 
 
 ## Billing Mode
-Global SMS is daily pay-as-you-go by message length on a per message basis. **General vouchers do not apply.** The payment for a day is deducted at 8:00 am the next day as detailed in the bill. Global SMS is available in over 200 countries and regions by which the prices vary. For more information, please see [Global SMS Pricing Overview](https://cloud.tencent.com/document/product/382/18051).
+Global SMS is daily pay-as-you-go by message length on a per message basis. **General vouchers do not apply.** The payment for a day is deducted at 8:00 am the next day as detailed in the bill. Global SMS is available in over 200 countries and regions by which the prices vary. For more information, please see [Global SMS Pricing Overview](https://intl.cloud.tencent.com/document/product/382/8414).
 
 ## Billing Details
 Before the 3rd day of each month, Tencent Cloud will provide you with a detailed global SMS bill for last month. You can click **Details** for the SMS service in Tencent Cloud Console > **Fees** > **[Statement of Account](https://console.cloud.tencent.com/expense/transactions)** to view the billing details. On the billing details page, you can click **View Monthly Trend** to view the SMS trend in a selected month. You can also export reports for financial reporting and bookkeeping.
