@@ -1,5 +1,5 @@
 ## Billing Mode
-Pay-as-you-go: the billing mode of all nodes in a cluster is [pay-as-you-go](https://cloud.tencent.com/document/product/555/9617). For more information on node types, please see [Node Type Description](https://cloud.tencent.com/document/product/589/14624).
+Pay-as-you-go: the billing mode of all nodes in a cluster is pay-as-you-go. For more information on node types, please see [Node Type Description](https://intl.cloud.tencent.com/document/product/1026/31094).
 
 When you purchase an EMR cluster, the unit price of the cluster will be displayed by hour. During bill settlement, the price will be calculated based on the number of seconds of actual usage, and the fees will be rounded to 2 decimal places. The billing starts at the time point when the cluster is created and ends at the time point when termination of the cluster is completed. 
 
