@@ -54,6 +54,6 @@ Acceleration linkages are divided into the following types:
 3. **Forwarding Server IP Description**
 If security group rules have been configured for the origin server, click **ID/Connection Name** of the connection, and query **Forwarding server IP** under the **Connection Info** tab. Acceleration is possible only if the origin server allows access from these IPs. See the following figure:
 ![](https://main.qcloudimg.com/raw/57f70164fc7b34b948a79740d035dfd4.png)
->?To obtain the real IP of the client, see [Obtaining the Real IPs of Access Users](/document/product/608/14429).
+> To obtain the real IP of the client, see [Obtaining the Real IPs of Access Users](/document/product/608/14429).
 4. **View Statistics**
 You can view current and historical statistics in **Statistics** page. For more information on operations, see [Statistics](https://cloud.tencent.com/document/product/608/13767).
