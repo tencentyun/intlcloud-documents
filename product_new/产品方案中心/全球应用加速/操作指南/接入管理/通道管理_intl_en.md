@@ -28,7 +28,7 @@
 >Connections that have been changed may not reside in the current project view. You can switch projects to view them.
 
 ## Configuring a connection
- Log into the [Global Application Accelerate Platform Console] (https://console.cloud.tencent.com/gaap) and enter the "Access Management" page. For the specified connection, click [Set] to modify parameters such as project, connection name, bandwidth cap, and maximum concurrent connections.
+ Log into the [Global Application Accelerate Platform Console](https://console.cloud.tencent.com/gaap) and enter the "Access Management" page. For the specified connection, click [Set] to modify parameters such as project, connection name, bandwidth cap, and maximum concurrent connections.
 >In acceleration connection, if the origin server is in the following regions, the connection currently does not support configuration adjustment: Tokyo, Japan; Chennai, India; Sydney, Australia; Sao Paulo, Brazil; Dallas, Central US.; Washington, Eastern US.
 
 ## Enabling a connection
