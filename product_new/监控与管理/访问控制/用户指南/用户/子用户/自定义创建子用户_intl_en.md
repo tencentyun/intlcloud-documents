@@ -7,7 +7,7 @@ You can log in to the Tencent Cloud Console to create a custom sub-user and conf
 1. 	Log in to the CAM Console and select **User** > **[User List](https://console.cloud.tencent.com/cam)** on the left sidebar.
 2. 	On the user list page, click **Create User**.
 3. 	Click **Create Custom User**.
-4. On the user type selection page, select **Access resources and receive messages** and click **Next**.
+4. On the user type selection page, select **Access Resources and Receive Messages** and click **Next**.
 5. Enter a username (required), notes, a mobile number, and email address.
  > 
  > - Click **Add User** to add more users. You can create up to 10 users at a time. 
