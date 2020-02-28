@@ -1,39 +1,42 @@
-## 呼び出し前の準備
+## 呼び出しの準備
 
-コマンドラインスクリプトを使ってsectIdとecomkeyを構成してAPIを呼び出す必要があります。テンセントクラウドにログインして移動します。[クラウドAPIキー](https://console.cloud.tencent.com/capi)APIを呼び出す必要のある事務総長と事務局の鍵を見るには、それらの安全を確保してください。
+コマンドラインスクリプトを使用してAPIを呼び出すには、SecretIdとSecretKeyを構成する必要があります。Tencent Cloudにログインし、【TencentCloud API】(https://console.cloud.tencent.com/capi)に入ると、APIの呼び出しに必要なSecretIdとSecretKeyを確認できます。キーを大切に保管してください。
 ![](//mc.qcloudimg.com/static/img/f449efa9f3904c24894f50376bd406f6/image.png)
 
-## 指令.
 
-命令行はpython scriptです。[ダウンロードする.](https://github.com/zz-mars/CDN_API_DEMO/blob/master/Qcloud_CDN_API/python/QcloudCdnTools_V2.py).
 
-### 使用前準備
+## 使用の説明
 
-上記のpythonスクリプトを使用するには、要求ライブラリをインストールする必要があります。以下のコマンドを使用してください。
+コマンドラインがPythonスクリプトで、【ダウンロードに進む】(https://github.com/zz-mars/CDN_API_DEMO/tree/master/Qcloud_CDN_API/python)。
+
+### 使用の準備
+
+上記のPythonスクリプトを使用する場合、requests ライブラリをインストールする必要があります。次のコマンドを使用できます。
 
 ```
 pip install requests
 ```
 
-スクリプトを直接実行することができます。現在サポートしているAPIリストはあなたに提供します：
+スクリプトを直接実行でき、現在サポートされているインターフェースのリストが表示されます。
 ![](https://mc.qcloudimg.com/static/img/813c521d24602315a8ddd18c644f56a6/2.png)
+インターフェース機能の説明については、【API概要】(<https://intl.cloud.tencent.com/document/api/228/31719>)を参照してください。
 
-### 照会ドメイン詳細情報
+### ドメイン名詳細のクエリー
 
-#### すべてのドメインの詳細情報を調べる
+#### すべてのドメイン名詳細のクエリー
 
-以下のコマンドを用いて呼び出す[CdnHostsについて](https://intl.cloud.tencent.com/doc/api/231/3937)APIはappIdの下のすべてのドメインの詳細情報を調べる：
+1. 次のコマンドを使用して、[DescribeCdnHosts](<https://intl.cloud.tencent.com/document/product/228/3937>) インターフェースを呼び出して、APPID 配下のすべてのドメイン名詳細情報をクエリーできます。
 
 ```
 python QcloudCdnTools_V2.py DescribeCdnHosts -u xxxxxx -p xxxxxxx
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局鍵を表す。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
 
-##### 結果例
+3. 結果の例
 
 ```josn
 {
@@ -95,21 +98,21 @@ python QcloudCdnTools_V2.py DescribeCdnHosts -u xxxxxx -p xxxxxxx
 }
 ```
 
-#### ドメイン調査に基づく詳細情報
+#### ドメイン名によるドメイン名詳細のクエリー
 
-以下のコマンドを用いて呼び出す[GetHostInfoByHost](https://intl.cloud.tencent.com/doc/api/231/3938)APIは、指定ドメインの詳細情報を調べる：
+1. 次のコマンドを使用して、[GetHostInfoByHost](<https://intl.cloud.tencent.com/document/product/228/3938>) インターフェースを呼び出して、指定されたドメイン名に対応する詳細をクエリーできます。
 
 ```
 python QcloudCdnTools_V2.py GetHostInfoByHost -u xxxxx -p xxxxxxx --hosts www.test.com --hosts www.test2.com
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ --hostsはクエリのドメインを表しています。あなたは使用することができます--host一度に複数のドメインを調べることができます。APIパラメータには2つのブレーク番号が必要ですので注意してください。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- --hosts はクエリーするドメイン名を示します。一度に複数件をクエリーできます、いずれも--hostsを使用します。インターフェースパラメータには2本の横線が必要です。
 
-##### 結果例
+3. 結果の例
 
 ```json
 {
@@ -171,21 +174,21 @@ python QcloudCdnTools_V2.py GetHostInfoByHost -u xxxxx -p xxxxxxx --hosts www.te
 }
 ```
 
-#### ドメインIDに基づいてドメイン詳細情報を問い合わせる.
+#### ドメイン名 IDに基づくドメイン名詳細のクエリー
 
-以下のコマンドを用いて呼び出す[GetHostInfoById](https://intl.cloud.tencent.com/doc/api/231/3939)APIは、指定されたIDを有するドメインの詳細情報を問い合わせる：
+1. 次のコマンドを使用して、[GetHostInfoById](<https://intl.cloud.tencent.com/document/product/228/3939>) インターフェースを呼び出して、IDに対応するドメイン名詳細をクエリーできます。
 
 ```
 python QcloudCdnTools_V2.py GetHostInfoById -u xxxxx -p xxxxxxx --ids 1234
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ --idはクエリのドメインのIDを表しています。a-idを使って複数のドメインを一度に照会することができます。APIパラメータには2つのブレーク番号が必要ですので注意してください。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- --ids は、クエリーするドメイン名のIDを示します。複数のIDを一度にクエリーできます、いずれも--idsを使用します。インターフェースパラメータには2本の横線が必要です。
 
-##### 結果例
+3. 結果の例
 
 ```json
 {
@@ -246,25 +249,25 @@ python QcloudCdnTools_V2.py GetHostInfoById -u xxxxx -p xxxxxxx --ids 1234
 }
 ```
 
-### 刷新とプリフェッチ
+### 更新予熱
 
-#### 刷新URL
+#### URL更新
 
-以下のコマンドを用いて呼び出す[CdnUrlを刷新](https://intl.cloud.tencent.com/doc/api/231/3946)指定URLを刷新するためのAPI：
+1. 次のコマンドを使用して、[RefreshCdnUrl](<https://intl.cloud.tencent.com/document/product/228/3946>) インターフェースを呼び出して、指定されたURLを更新できます。
 
 ```
 python QcloudCdnTools_V2.py RefreshCdnUrl -u xxxxx -p xxxxxxx --urls http://xxxxxxxtang.sp.oa.com/test.php --urls http://www.test.com/1.html
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ --URLは更新するURLを表しています。a-URLを使って複数のURLを一度に検索することができます；
-+ URLパラメータの前にhttp：//またはhttps：//プレフィクスを追加しなければなりません；
-+ 各ユーザは1日あたり10，000個のURLしか更新できず，更新ごとに最大1，000個のURLの提出が許可されている.
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- --urls は、更新するURLを示します。一度に複数件をクエリーでき、いずれも--urlsを使用します。
+- urls パラメータの前にhttp：//またはhttps：//のプレフィックスを追加する必要があります。
+- 各ユーザーは1日に更新できるURLは10,000件までで、一度にサブミットできる更新は1000件までです。
 
-##### 結果例
+3. 結果の例
 
 ```json
 [
@@ -273,47 +276,51 @@ python QcloudCdnTools_V2.py RefreshCdnUrl -u xxxxx -p xxxxxxx --urls http://xxxx
         u'count': 1
     }
 ]
+
 ```
 
-log_idは更新のために提出されたジョブのIDを表します。このIDを使ってジョブの実行状態を問い合わせることができます。countはそのために更新を提出するURLの数を表します。
+log_idはサブミットする更新タスクのIDであり、このIDに基づいて対象更新タスクの実行状態をクエリーできます。countは今回サブミットするURL更新の件数です。
 
-#### カタログを刷新中である
+#### ディレクトリの更新
 
-以下のコマンドを用いて呼び出す[CdnDirを再刷新](https://intl.cloud.tencent.com/doc/api/231/3947)指定ディレクトリを刷新するためのAPI：
+1. 次のコマンドを使用して、[RefreshCdnDir](<https://intl.cloud.tencent.com/document/product/228/3947>) インターフェースを呼び出して、指定されたディレクトリを更新できます。
 
 ```
 python QcloudCdnTools_V2.py RefreshCdnDir -u xxxxx -p xxxxxxx --dirs http://www.test.com/abc/
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ --dirsは更新するURLを表しています。a-dirsを使って複数のURLを一度に検索することができます；
-+ dirsパラメータの前にhttp：//またはhttps：//プレフィクスを追加しなければなりません；
-+ 各ユーザーは1日100ディレクトリしか更新できず、更新ごとに最大20ディレクトリの提出が許可されている。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- --dirs は、更新するURLを示します。一度に複数件のURLをクエリーでき、いずれも--dirsを使用します。
+- dirs パラメータの前にhttp：//またはhttps：//のプレフィックスを追加する必要があります。
+- 各ユーザーは1日に更新できるディレクトリは100件までで、一度にサブミットできる更新は20件までです。
 
-##### 結果例
+3. 結果の例
 
 ```json
 request is success.
+
 ```
 
-#### 更新結果を照会する
+#### 更新履歴のクエリー
 
-更新結果を以下のコマンドで問い合わせることができる：
+1. 1.次のコマンドを使用して、更新履歴をクエリーできます。
 
 ```
 python QcloudCdnTools_V2.py GetCdnRefreshLog -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-16
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-- -秘書を代表する。
-- -pは事務局のキーワードを表します。
-- startDateはクエリの開始日であり，endDateはクエリの終了日である.startDateはendDateよりも早くなければならない.
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- startDate はクエリーの開始日であり、endDateはクエリー終了日です。startDateはendDateよりも小さい必要があります。
 
-##### 結果例
+3. 結果の例
 
 ```json
 {
@@ -335,198 +342,213 @@ python QcloudCdnTools_V2.py GetCdnRefreshLog -u xxxxxxxxxxxx -p xxxxxxxxxxxx --s
 		...
 	]
 }
-```
-
-状態は更新作業の状態である.%1は完了したことを示しており，このAPIを用いて更新URLやディレクトリの記録を問い合わせることができる.
-
-### ドメイン配置
-
-#### キャッシュ構成を修正
-
-以下のコマンドを用いて呼び出す[UpdateCache]キャッシュの期限切れ時間構成を修正するためのAPI：
 
 ```
-python QcloudCdnTools_V2.py UpdateCache -u xxxxx -p xxxxxxx --hostId 1234 --cache [[0,\"all\",1000],[1,\".jpg;.js\",2000],[2,\"/www/html\",3000],[3,\"/index.html;/test/*.jpg\",3000]]
+
+statusが更新状態であり、1 が更新完了を示します。URL更新、ディレクトリ更新の履歴はすべてこのインターフェースを介してクエリーできます。
+
+### ドメイン名の構成
+
+#### キャッシュ構成の変更
+
+1. 次のコマンドを使用して、[UpdateCache] インターフェースを呼び出して、キャッシュの期限切れ設定を変更できます。
+
+```
+python QcloudCdnTools_V2.py UpdateCache -u xxxxx -p xxxxxxx --hostId 1234 --cache [[0,\"all\",1000],[1,\".jpg;.js\",2000],[2,\"/www/html\",3000]]
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ hostIdは，キャッシュの期限切れ配置を修正しようとするドメインのIDである；
-+ キャッシュはターゲットキャッシュの構成です。注意してください。ダブルリード番号を変更する必要があります。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- hostIdは、キャッシュの期限切れ構成の変更が必要なドメイン名IDです。
+- cache cacheはターゲットキャッシュの構成です。二重引用符はエスケープする必要があることに注意してください。
 
-**キャッシュ期限切れ配置**
-1つのドメインのキャッシュの期限切れ構成は、複数のキャッシュの期限切れプロファイルから構成され、各エントリは、キャッシュタイプ、マッチングルール、構成の期限切れ時間(秒単位)の3つのパラメータに分けられる。CDNは、3つのタイプを提供する：
+ **キャッシュ期限切れの設定**
+ドメイン名のキャッシュ期限切れ構成は、複数件のキャッシュ期限切れ設定で構成されます。各キャッシュ期限切れ設定に、3つのパラメータがあります。1つ目はキャッシュタイプ、2つ目はマッチングルール、3つ目は設定された期限切れ時間で、単位が秒です。CDNには次の3つのタイプがあります。
 
-+ 0：すべてのタイプ。これはすべてのファイルが一致していることを意味する。これはデフォルトのキャッシュ配置である。
-+ 1：ファイルタイプ。これは、ファイル拡張子に基づいてマッチングを行うことを意味する。例えば：.jpg；.png；
-+ 2：フォルダタイプ。これはディレクトリに基づいてマッチングを行うことを意味する。例えば：/abc；/def；
+- 0：すべてのタイプ。マッチングするすべてのファイルは、デフォルトのキャッシュ構成となることを示します。
+- 1：ファイルタイプ。ファイルのサフィックスにマッチングすることを示します。マッチング例： .jpg;.png。
+- 2：フォルダタイプ。ディレクトリによるマッチングを示します。マッチング例：/abc;/def。
 
-##### 結果例
+3. 結果の例
 
 ```json
 request is success.
+
 ```
 
-#### ドメインの修正項目
+#### ドメインが属するプロジェクトの変更
 
-以下のコマンドを用いて呼び出す[UpdateCdnProject](https://intl.cloud.tencent.com/doc/api/231/3935)ドメインの所属項目を修正するためのAPI：
+1. 次のコマンドを使用して、[UpdateCdnProject]インターフェースを呼び出して、ドメイン名が属するプロジェクトを変更できます。
 
 ```
 python QcloudCdnTools_V2.py UpdateCdnProject -u xxxxx -p xxxxxxx --hostId 1234 --projectId 0
+
 ```
 
-ドメインの項目を修正する際には、項目のIDを知る必要があります。移動してください[項目管理](https://console.cloud.tencent.com/project)チェック項目ID.デフォルト項目のIDは0.
+ドメイン名が属するプロジェクトを変更するときは、プロジェクトに対応するIDを知る必要があります。【プロジェクト管理】(https://console.cloud.tencent.com/project) で確認できます。デフォルトのプロジェクトIDが0です。
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ hostIdはその項目を修正するドメインのIDである；
-+ projectIdは目標項目IDである.
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- hostId は、変更するプロジェクトのドメイン名に対応するIDを表します。
+- projectId は、ターゲットプロジェクトのIDです。
 
-##### 結果例
+3. 結果の例
 
 ```json
 request is success.
+
 ```
 
-#### 修正域配置
+#### ドメイン名構成の変更
 
-以下のコマンドを用いて呼び出す[UpdateCdnConfig]APIは、キャッシュの期限切れ構成、ホットリンク保護、ホストソース、全パスキャッシュなどのドメイン構成を修正するために使用される：
+1. 次のコマンドを使用して、[UpdateCdnConfig] インターフェースを呼び出して、キャッシュ期限切れの設定、防犯リンク、back to origin HOST、フルパスキャッシュなどを含むドメイン名構成を変更します。
 
 ```
 python QcloudCdnTools_V2.py UpdateCdnConfig -u xxxxx -p xxxxxxx --hostId 1234 --projectId 0 --cacheMode custom --cache [[0,\"all\",1023448]] --refer [1,[\"www.baidu.com\",\"www.qq.com\"]] --fwdHost www.test.org --fullUrl off
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ hostIdはその構成を修正しようとするドメインのID；
-+ projectIdは修正すべき項目のID；
-+ cacheModeは、上位キャッシュ構成を有効にするか否かを指定する；
-+ キャッシュはキャッシュの期限切れ構成です。UpdateCache上の説明を参照してください；
-+ 参考にするのは熱リンク保護構成、
-+ fwdHostはシンクソース構成；
-+ FullUrlは全パスキャッシュを有効にするかどうかを指定する。全パスキャッシュを有効にすることは禁止パラメータのスクリーニングを意味する；
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- hostId は構成を変更するドメイン名のIDを示します。
+- projectIdは、変更するプロジェクトIDを示します。
+- cacheMode は高度なキャッシュ設定を有効にするか否かを示します。
+- cache はキャッシュの期限切れ設定を示します。UpdateCacheの説明を参照してください。
+- refer は、防犯リンク設定を示します。
+- fwdHost はback to origin Host設定を示します。
+- fullUrl は、フルパスキャッシュが有効になっているかどうかを示し、フルパスキャッシュが有効になっている場合、フィルターパラメータスイッチはオフになり、フルパスキャッシュが有効になっていない場合、フィルターパラメータスイッチはオンになります。
 
-**ホットリンク保護構成説明書**
-ホットリンク保護は、2つのフィールドから構成される。第1のフィールドは、参照のタイプを指定する：
+ **防犯リンク設定の説明**
+防犯リンクは2つのフィールドで構成され、最初のフィールドは refer のタイプを識別します。
 
-+ 0：ホットリンク保護を配置しない；
-+ 1：ブラックリスト配置
-+ 2：ホワイトリストを配置する。
+- 0：防犯リンクを設定しない。
+- 1：ブラックリストを設定する。
+- 2：ホワイトリストを設定する。
 
-第2のフィールドは、特定の名前リストである。
+ 2番目のフィールドは特定のリストです。
 
-##### 結果例
+3. 結果の例
 
 ```json
 request is success.
+
 ```
 
-##### ドメイン管理
+### ドメイン名管理
 
-#### 添加域
+#### ドメイン名の追加
 
-以下のコマンドを用いて呼び出す[AddCdnHost](https://intl.cloud.tencent.com/doc/api/231/1406)CDN加速ドメインのAPIを追加：
+1. 次のコマンドを使用して、[AddCdnHost]インターフェースを呼び出して、CDN加速ドメイン名を追加できます。
 
 ```
 python QcloudCdnTools_V2.py AddCdnHost -u xxxxx -p xxxxxxx --host www.test.com --projectId 0 --hostType cname --origin 1.1.1.1
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ ホストは追加する加速ドメインを代表しています。このドメインは工信部が記録しなければならず、以前は騰訊雲CDNに接続されていませんでした。
-+ projectIdは、その中にドメインの項目を付加するIDです。中で項目IDをチェックすることができます。[項目管理](https://console.cloud.tencent.com/project)
-+ hostTypeは接続方法であり，“cname”は自分のソースを，“ftp”はFTPソースを表す(この場合，ソースサーバパラメータは無視される).
-+ 原点はオリジナルサーバの構成。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- host は追加する加速ドメイン名を示します。ドメイン名は、中国工業情報化部にICP申告する必要があり、またTencent Cloud CDNにアクセスしたことがない前提です。
+- projecctId はドメイン名の追加先プロジェクトIDを示します【プロジェクト管理】（https://console.cloud.tencent.com/project）に入って、プロジェクトに対応するIDを表示できます。
+- hostType はアクセスタイプで、「cname」の場合はユーザー保有オリジンアクセスを意味し、「ftp」の場合はFTPオリジンアクセスを意味します、この場合オリジンサーバーパラメータが無視されます。
+- origin はオリジンサーバーの構成を示します。
 
-##### 結果例
+3. 結果の例
 
 ```
 request is success.
+
 ```
 
-#### ドメインをオフラインにする
+#### ドメイン名のオフライン化
 
-以下のコマンドを用いて呼び出す[オフラインホスト](https://intl.cloud.tencent.com/doc/api/231/1403)指定ドメインのCDN加速サービスを停止するためのAPI：
+1. 次のコマンドを使用して、[OfflineHost] インターフェースを呼び出して、指定されたドメイン名のCDN加速サービスを無効化できます。
 
 ```
 python QcloudCdnTools_V2.py OfflineHost -u xxxxx -p xxxxxxx --hostId 1234
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-+ -秘書を代表する。
-+ -pは事務局のキーワードを表します。
-+ 状態が「アクティブ」であるフィールドに対しては，Offline命令を呼び出すことに成功するしかない.
-+ hostIdはオフラインになるドメインのIDです。GetHostInfoByHostを使ってドメインIDを取得することができます。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- 「オン」状態のドメイン名のみは、オフラインコマンドを正常に呼び出せます。
+- hostId は、オフラインにするドメイン名のIDを示します。GetHostInfoByHostを使用して、ドメイン名に対応するIDを取得できます。
 
-##### 結果例
+3. 結果の例
 
 ```json
 request is success.
+
 ```
 
-#### オンライン生成ドメイン
+#### ドメイン名のオンライン化
 
-以下のコマンドを用いて呼び出す[オンラインホスト](https://intl.cloud.tencent.com/doc/api/231/1402)指定ドメインのCDN加速サービスを活性化するためのAPI：
+1. 次のコマンドを使用して、[OnlineHost]インターフェースを呼び出して、指定されたドメイン名のCDN加速サービスを有効化できます
 
 ```
 python QcloudCdnTools_V2.py OnlineHost -u xxxxx -p xxxxxxx --hostId 1234
+
 ```
 
-##### パラメータ記述：
+2. パラメータの説明
 
-- -秘書を代表する。
-- -pは事務局のキーワードを表します。
-- 状態が「閉じる」フィールドだけが「オンライン」命令を呼び出すことに成功する.
-- hostIdはオフラインになるドメインのIDです。GetHostInfoByHostを使ってドメインIDを取得することができます。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- 「オフ」状態のドメイン名のみがオンラインコマンドを正常に呼び出すことができます。
+- hostId は、オフラインにするドメイン名のIDを示しますGetHostInfoByHostを使用して、ドメイン名に対応するIDを取得できます。
 
-##### 結果例
+3. 結果の例
 
 ```json
 request is success.
+
 ```
 
-#### 削除域
+#### ドメイン名の削除
 
-以下のコマンドを用いて呼び出す[DeleteCdnHost](https://intl.cloud.tencent.com/doc/api/231/1396)指定ドメインのAPIを削除する：
+1. 次のコマンドを使用して、[DeleteCdnHost] インターフェースを呼び出して、指定されたドメイン名を削除できます。
 
 ```
 python QcloudCdnTools_V2.py DeleteCdnHost -u xxxxx -p xxxxxx -hostId 1234
+
 ```
 
-##### パラメータ記述：
+2. パラメータの説明
 
-- -秘書を代表する。
-- -pは事務局のキーワードを表します。
-- 削除コマンドは、状態が「閉じる」状態のフィールドを呼び出すことに成功することしかできません；
-- hostIdはオフラインになるドメインのIDです。GetHostInfoByHostを使ってドメインIDを取得することができます。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- 「オフ」状態のドメイン名のみが削除コマンドを呼び出せます。
+- hostId は、オフラインにするドメイン名のIDを示します。GetHostInfoByHostを使用して、ドメイン名に対応するIDを取得できます。
 
-### 原木
+### ログ関連
 
-#### ログ取得ダウンロードリンク
+#### ログダウンロードリンクの取得
 
-指定ドメインのCDNログを取得するために、以下のコマンドを使用してGenerateLogList APIを呼び出し、リンクをダウンロードする：
+1. 次のコマンドを使用して、[GenerateLogList]インターフェースを呼び出して、指定されたドメイン名の CDN ログダウンロードリンクを取得できます。
 
 ```
 python QcloudCdnTools_V2.py GenerateLogList -u xxxxx -p xxxxxxx --hostId 1234
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-- -秘書を代表する。
-- -pは事務局のキーワードを表します。
-- hostIdは，そのログがリンクをダウンロードしたドメインのIDを調べることである；
-- 30日間の毎日ログのダウンロードリンクを獲得します。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- hostId はクエリーするログダウンロードリンクのドメイン名IDです。
+- 最近30日以内の毎日のログダウンロードリンクを取得します。
 
-##### 結果例
+3. 結果の例
 
 ```json
 {
@@ -546,31 +568,35 @@ python QcloudCdnTools_V2.py GenerateLogList -u xxxxx -p xxxxxxx --hostId 1234
 		...
 	]
 }
+
 ```
 
-リンクフィールドがない場合は，当日ログデータが生成されていないことを示す.
+linkフィールドがない場合は、その日にログデータが生成されなかったことを示します。
 
-### 消費データを照会する
+ 
 
-#### クエリ上位100個のURL
+### 消費のクエリー
 
-以下のコマンドを用いて呼び出す[GetCdnStatTop]API問合せトラフィック/帯域消費が最も高いドメインまたはプロジェクトの上位100個のURL：
+#### TOP 100 URLのクエリー 
+
+1. 次のコマンドを使用して、[GetCdnStatTop]インターフェースを呼び出して、ドメイン名またはプロジェクトのTOP 100のトラフィック/帯域幅消費URLをクエリーできます。
 
 ```
 python QcloudCdnTools_V2.py GetCdnStatTop -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --statType bandwidth --projects 0 --hosts test.com
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-- -秘書を代表する。
-- -pは事務局のキーワードを表します。
-- StartDateはクエリの開始時間である.たとえば，8/15/2016は問合せの実際の開始時間が8/15/2016 00：00：00であることを示している.
-- endDateはクエリの終了時間であり、例えば、8/15/2016はクエリの実際の終了時間が8/15/2016 23：55：00であることを示している；
-- Projectsはチェックすべき項目のIDです。複数のIDを入力することができます；
-- ホストはクエリのドメインです。そのドメインの属する項目にパラメータを渡さなければなりません。そうでないとエラーになります。
-- statTypeは整列化方法であり，帯域は消費する帯域，流量はトラヒックである.
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- startDate はクエリーの開始時間を示します。2016-08-15に設定されている場合、クエリーの実際の開始時間は2016-08-15 00:00:00です。
+- endDate はクエリーの終了時間を示します。2016-08-15に設定されている場合、クエリーの実際の終了時間は2016-08-15 23:55:00です。
+- projects はクエリーするプロジェクトIDを示し、複数件をサポートします。
+- hosts はクエリーするドメイン名を示します。ドメイン名が属するプロジェクトは、パラメータを渡す必要があります。そうしないと、エラーが発生します。複数件をサポートします。
+- statTypeはランキングの根拠であり、bandwidth が帯域幅、flux がトラフィックを示します。
 
-##### 結果例
+3. 結果の例
 
 ```json
 {
@@ -591,28 +617,30 @@ python QcloudCdnTools_V2.py GetCdnStatTop -u xxxxxxxxxxxx -p xxxxxxxxxxxx --star
 		...
 	]
 }
+
 ```
 
-値は消耗値である.トラヒックと帯域の測定単位はそれぞれByteとbpsである.
+value は消費値です。fluxの単位はByte、bandwidthの単位はbpsです。
 
-#### クエリ状態コード統計情報
+#### ステータスコード統計のクエリー
 
-以下のコマンドを用いて呼び出す[GetCdnStatusCode]ドメインやプロジェクトの状態コードの統計情報を問い合わせるためのAPI：
+1. 次のコマンドを使用して、[GetCdnStatusCode] インターフェースを呼び出して、ドメイン名やプロジェクトの ステータスコード統計をクエリーできます。
 
 ```
 python QcloudCdnTools_V2.py GetCdnStatusCode -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --projects 0 --hosts test.com
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-- -秘書を代表する。
-- -pは事務局のキーワードを表します。
-- StartDateはクエリの開始時間である.たとえば，8/15/2016は問合せの実際の開始時間が8/15/2016 00：00：00であることを示している.
-- endDateはクエリの終了時間であり、例えば、8/15/2016はクエリの実際の終了時間が8/15/2016 23：55：00であることを示している；
-- Projectsはチェックすべき項目のIDです。複数のIDを入力することができます；
-- Hostsはクエリのドメインです。そのドメインの属する項目にパラメータ(項目)を渡さなければなりません。そうでないとエラーになります。複数のドメインを入力することができます。
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- startDate はクエリーの開始時間を示します。2016-08-15に設定されている場合、クエリーの実際の開始時間は2016-08-15 00:00:00です。
+- endDate はクエリーの終了時間を示します。2016-08-15に設定されている場合、クエリーの実際の終了時間は2016-08-15 23:55:00です。
+- projects はクエリーのプロジェクトIDを示し、複数件をサポートします。
+- hostsはクエリーするドメイン名を示します。ドメイン名が属するプロジェクトは、パラメータ（projects）を渡す必要があります。そうしないと、エラーが発生します。複数件をサポートします。
 
-##### 結果例
+3. 結果の例
 
 ```json
 [
@@ -647,27 +675,31 @@ python QcloudCdnTools_V2.py GetCdnStatusCode -u xxxxxxxxxxxx -p xxxxxxxxxxxx --s
       	]
     }
 ]
+
 ```
 
-#### 詳細消費統計データを調べる
 
-以下のコマンドを用いて呼び出す[DescribeCdnHostDetailedInfo]APIはドメインやプロジェクトを参照するための詳細な消費統計情報：
+
+#### 消費統計明細のクエリー
+
+1. 次のコマンドを使用して、[DescribeCdnHostDetailedInfo]インターフェースを呼び出して、ドメイン名またはプロジェクトの消費の詳細をクエリーできます。
 
 ```
 python QcloudCdnTools_V2.py DescribeCdnHostDetailedInfo -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-05-08 --endDate 2016-08-15 --projects 0 --hosts www.test.com --statType bandwidth
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-- -秘書を代表する。
-- -pは事務局のキーワードを表します。
-- StartDateはクエリの開始時間である.たとえば，8/15/2016は問合せの実際の開始時間が8/15/2016 00：00：00であることを示している.
-- endDateはクエリの終了時間であり、例えば、8/15/2016はクエリの実際の終了時間が8/15/2016 23：55：00であることを示している；
-- Projectsはチェックすべき項目のIDです。複数のIDを入力することができます；
-- ホストはクエリのドメインです。そのドメインに属する項目にパラメータ(項目)を伝達しなければなりません。そうでないとエラーになります。複数のドメインを入力することができます。
-- statTypeは問合せのための消費タイプであり，トラヒックはトラヒック(バイト単位)であり，帯域は消費する帯域(bps単位)である.
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- startDate はクエリーの開始時間を示します。2016-08-15に設定されている場合、クエリーの実際の開始時間は2016-08-15 00:00:00です。
+- endDate はクエリーの終了時間を示します。2016-08-15に設定されている場合、クエリーの実際の終了時間は2016-08-15 23:55:00です。
+- projects はクエリーするプロジェクトIDを示し、複数件をサポートします。
+- hostsは、クエリーするドメイン名を示します。ドメイン名が属するプロジェクトは、パラメータ（projects）を渡す必要があります。そうしないと、エラーが発生します。複数件をサポートします。
+- statType は指定されたクエリーの消費タイプです。fluxはトラフィックで、単位がByteです。bandwidthは帯域幅で、単位がbpsです。
 
-##### 結果例
+3. 結果の例
 
 ```json
 {
@@ -688,29 +720,31 @@ python QcloudCdnTools_V2.py DescribeCdnHostDetailedInfo -u xxxxxxxxxxxx -p xxxxx
     u'end_datetime': u'2016-08-1523: 55: 00',
     u'period': 5
 }
+
 ```
 
-期間は時間粒度であり，問合せ時間範囲によって異なり，1日から3日までの問合せ時間範囲は5分，4日から7日の時間範囲は1時間，8日以上の時間範囲は1日である.
+period は時間の粒度であり、クエリーする時間の期間によって異なり、返された時間粒度も異なります。 1〜3日の明細の時間粒度は5分で、4〜7日の粒度は1時間で、8日以上の時間粒度は1日です。
 
-#### 照会消費統計
+#### 消費量統計のクエリー
 
-以下のコマンドを用いて呼び出す[DescribeCdnHostInfo]APIはドメインやプロジェクトを参照するための消費統計情報：
+1. 次のコマンドを使用して、[DescribeCdnHostInfo]インターフェースを呼び出して、ドメイン名またはプロジェクトの消費統計をクエリーできます。
 
 ```
 python QcloudCdnTools_V2.py DescribeCdnHostInfo -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --projects 0 --hosts www.test.com --statType bandwidth
+
 ```
 
-##### パラメータ記述
+2. パラメータの説明
 
-- -秘書を代表する。
-- -pは事務局のキーワードを表します。
-- StartDateはクエリの開始時間である.たとえば，8/15/2016は問合せの実際の開始時間が8/15/2016 00：00：00であることを示している.
-- endDateはクエリの終了時間であり、例えば、8/15/2016はクエリの実際の終了時間が8/15/2016 23：55：00であることを示している；
-- Projectsはチェックすべき項目のIDです。複数のIDを入力することができます；
-- ホストはクエリのドメインです。そのドメインに属する項目にパラメータ(項目)を伝達しなければなりません。そうでないとエラーになります。複数のドメインを入力することができます。
-- statTypeは問合せのための消費タイプであり，トラヒックはトラヒック(バイト単位)であり，帯域は消費する帯域(bps単位)である.
+- -u はSecretIdを示します。
+- -p はSecretKeyを示します。
+- startDate はクエリーの開始時間を示します。2016-08-15に設定されている場合、クエリーの実際の開始時間は2016-08-15 00:00:00です。
+- endDate はクエリーの終了時間を示します。2016-08-15に設定されている場合、クエリーの実際の終了時間は2016-08-15 23:55:00です。
+- projects はクエリーするプロジェクトIDを示し、複数件をサポートします。
+- hosts はクエリーするドメイン名を示します。ドメイン名が属するプロジェクトは、パラメータ（projects）を渡す必要があります。そうしないと、エラーが発生します。複数件をサポートします。
+- statType は指定されたクエリーの消費タイプです。fluxはトラフィックで、単位がByteです。bandwidthは帯域幅で、単位がbpsです。
 
-##### 結果例
+3. 結果の例
 
 ```json
 {
@@ -727,6 +761,8 @@ python QcloudCdnTools_V2.py DescribeCdnHostInfo -u xxxxxxxxxxxx -p xxxxxxxxxxxx 
     ],
     u'period': 5
 }
+
 ```
 
-問合せの結果，指定された時間範囲内の総消費を示す.HOST_TYPEは接続ドメインのタイプ，cnameはソース，ftpはFTPの原点，cosはCOSの原点を表す.
+クエリー結果は指定された時間期間の合計量、host_typeはドメイン名にアクセスするときのタイプです。cnameはユーザー保有オリジンアクセスを示し、ftpはFTPオリジンアクセスを示し、cosはCOSオリジンアクセスを示します。
+
