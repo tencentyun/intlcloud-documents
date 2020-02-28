@@ -1,18 +1,17 @@
-## Product Description
-With the high-speed connections, forwarding clusters and intelligent routing technology between global nodes, Global Application Acceleration Platform (GAAP) allows users in different regions to access the closest nodes and to directly reach the origin server via high-speed connections, thus solving access stutter and long lag.
-GAAP provides a graphical configuration interface. You can create and use high-speed connections to access your business origin server in just a few minutes and view the running status of connections via the console.
+## Overview
+Tencent Cloud Global Application Acceleration Platform (GAAP) uses high-speed connections, cluster forwarding, and intelligent routing among global nodes to allow users in different regions to access the closest nodes so their requests can directly reach the origin server through high-speed connections, reducing access lag and latency.
+GAAP provides graphical configuration interface. Within a few minutes, you can create a high-speed connection, use it to access business origin servers, and view the running status of the connection in the console.
 
 ## Product Advantages
-### Global presence
-GAAP boasts more than 50 global nodes in Asia, Europe, South America, North America, and Oceania. With such a presence, it can provide stable and efficient high-speed connections for businesses that require cross-origin access or server sharing across the globe to solve business access stutter and high latency.
+### Global Deployment
+GAAP has more than 50 global nodes deployed across Asia, Europe, South America, North America, and Oceania. It provides stable and efficient high-speed connections for businesses around the globe that require cross-region access or server sharing, reducing access lag and latency.
 
-### Stability and efficiency
-The nodes in the five continents serve various regions around the world, with a linkage stability of 99.95%. The connection latency within one region is less than 60 ms, and the connection latency across continents or regions is less than 180 ms. A single connection supports 1 GB bandwidth and a concurrency of 1 million connections.
+### High stability and efficiency
+GAAP has five central nodes covering major regions around the world with a linkage stability of 99.95%. The network latency is below 60ms for intra-region communications and below 180ms for cross-continent or cross-region communications. A single GAAP connection can sustain 1 Gbps bandwidth and accelerate one million concurrent requests.
 
-### Flexible access
-GAAP provides a graphical interface for you to quickly create and use high-speed connections. It supports IP and domain name access; supports connection to the closest region via a globally unified domain name; and supports TCP and UDP protocols, and URL rule forwarding of HTTP and HTTPS.
+### Flexible Access
+GAAP provides graphical user interface for easy creation and use of high-speed connections. It supports IP and domain name access, nearby access through globally unified domain name, TCP and UDP protocols, and URL rule forwarding for HTTP and HTTPS.
 
-### OPS support
-The origin server can obtain real user IP. GAAP supports capacity expansion and business change as needed without affecting your business; provides statistical analysis in multiple dimensions, such as bandwidth, concurrence, packet loss, delay, and packet forwarding; and supports cloud monitor alarm for connections and origin servers.
-
+### OPS Support
+GAAP supports the origin server to get real user IPs. It supports on-demand capacity expansion and service change imperceptible to your business; statistical analysis in multiple dimensions such as bandwidth, concurrence, packet loss, latency, and packet forwarding; cloud monitoring alarms for connections and origin servers.
 

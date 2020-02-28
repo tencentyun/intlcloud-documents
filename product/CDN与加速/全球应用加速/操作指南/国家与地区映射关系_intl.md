@@ -1,9 +1,9 @@
-Due to different territory areas of countries around the world, and considering data display and coverage of acceleration nodes, we have merged some countries close to each other and split those with a larger territory. When selecting a region covered by the acceleration nodes using the "Access with Globally Unified Domain Name" feature, you can configure the region covered by the global acceleration nodes according to the mapping between countries and regions in the table below.
+Due to different territory sizes of countries around the world, and considering data display and coverage of acceleration nodes, we have merged adjacent countries/regions into larger geographical zones, and split those with larger territories. When using the the "globally unified domain name" feature and selecting regions to be covered by global acceleration nodes, refer to the following mapping between countries and regions to configure zones to be covered by global acceleration nodes.
 
 
 <table>
    <tr>
-      <th width="80" >Continent</th>
+      <th width="81" >Continent</th>
       <th width="100">Geographical Zone</th>
       <th width="150">Country/Region</th>
       <th>Province/State</th>
@@ -48,7 +48,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Macao, China</td>
+      <td>Macao (China)</td>
       <td></td>
    </tr>
    <tr>
@@ -80,7 +80,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Hong Kong, China</td>
+      <td>Hong Kong (China)</td>
       <td></td>
    </tr>
    <tr>
@@ -88,7 +88,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Taiwan, China</td>
+      <td>Taiwan (China)</td>
       <td></td>
    </tr>
    <tr>
@@ -150,7 +150,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td rowspan="20">West Asia</td>
+      <td rowspan="20">Western Asia</td>
       <td>Afghanistan</td>
       <td></td>
    </tr>
@@ -439,7 +439,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Madeira Islands</td>
+      <td>Madeira Island</td>
       <td></td>
    </tr>
    <tr>
@@ -489,7 +489,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Central African Republic</td>
+      <td>Central Africa</td>
       <td></td>
    </tr>
    <tr>
@@ -505,11 +505,11 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Congo (Brazzaville)</td>
+      <td>Republic of the Congo</td>
       <td></td>
    </tr>
    <tr>
-      <td>Congo (Kinshasa)</td>
+      <td>Democratic Republic of the Congo</td>
       <td></td>
    </tr>
    <tr>
@@ -558,7 +558,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Cote d'Ivoire</td>
+      <td>Ivory Coast</td>
       <td></td>
    </tr>
    <tr>
@@ -611,7 +611,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Republic of South Africa</td>
+      <td>South Africa</td>
       <td></td>
    </tr>
    <tr>
@@ -689,7 +689,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Fiji Islands</td>
+      <td>Fiji</td>
       <td></td>
    </tr>
    <tr>
@@ -730,20 +730,20 @@ Due to different territory areas of countries around the world, and considering 
    </tr>
    <tr>
       <td rowspan="38">North America</td>
-      <td  rowspan="6">Northern America</td>
+      <td  rowspan="6">North America</td>
       <td>Canada</td>
       <td></td>
    </tr>
    <tr>
-      <td>Eastern U.S.</td>
-      <td>Maine, New Hampshire, Vermont, Massachusetts, Rhode Island, Connecticut, New York, Pennsylvania, New Jersey, Delaware, Maryland, Washington, D.C, Virginia, West Virginia, North Carolina, South Carolina, Georgia, Florida, Kentucky, Tennessee, Mississippi, Alabama</td>
+      <td>Eastern US</td>
+      <td>Maine, New Hampshire, Vermont, Massachusetts, Rhode Island, Connecticut, New York, Pennsylvania, New Jersey, Delaware, Maryland, Washington, D.C., Virginia, West Virginia, North Carolina, South Carolina, Georgia, Florida, Kentucky, Tennessee, Mississippi, Alabama</td>
    </tr>
    <tr>
-      <td>Western U.S.</td>
+      <td>Western US</td>
       <td>Idaho, Montana, Wyoming, Nevada, Utah, Colorado, Arizona, New Mexico, Alaska, Washington, Oregon, California, Hawaii</td>
    </tr>
    <tr>
-      <td>Central U.S.</td>
+      <td>Central US</td>
       <td>Wisconsin, Michigan, Illinois, Indiana, Ohio, Missouri, North Dakota, South Dakota, Nebraska, Kansas, Minnesota, Iowa, Oklahoma, Texas, Arkansas, Louisiana</td>
    </tr>
    <tr>
@@ -784,7 +784,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td rowspan="25">Caribbean Area</td>
+      <td rowspan="25">Caribbean</td>
       <td>Bahamas</td>
       <td></td>
    </tr>
@@ -845,7 +845,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>United States Virgin Islands</td>
+      <td>U.S. Virgin Islands</td>
       <td></td>
    </tr>
    <tr>
@@ -865,7 +865,7 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
    <tr>
-      <td>Caribbean Netherlands</td>
+      <td>Dutch Caribbean</td>
       <td></td>
    </tr>
    <tr>
@@ -942,4 +942,3 @@ Due to different territory areas of countries around the world, and considering 
       <td></td>
    </tr>
  </table>
-

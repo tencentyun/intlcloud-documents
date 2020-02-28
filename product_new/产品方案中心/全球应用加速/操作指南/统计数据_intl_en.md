@@ -7,8 +7,8 @@ Log into the [Global Application Acceleration Console](https://console.cloud.ten
 ### Selecting a statistical period</span>
 Five common statistical periods are available: Today, Yesterday, Last 7 days, Last 15 days, and Last 30 days. You can also customize a specific start and end date, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/33c0e700386d4080509118db2cbc6b6a.png)
-<span id="Selecting a Data Type">
-### Selecting a data type</span>
+<span id="Selecting a Data Type"></span>
+### Selecting a data type
 Supported connection data types are: bandwidth (outbound bandwidth and inbound bandwidth), packet volume (outbound packet volume and inbound packet volume), delay, packet loss rate, and concurrent connections.
 **Outbound bandwidth** refers to the bandwidth from the origin server to the client. **Inbound bandwidth** refers to the bandwidth from the client to the origin server.
 

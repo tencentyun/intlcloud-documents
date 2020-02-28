@@ -5,7 +5,7 @@ The user can grant permissions to collaborator accounts by two methods: associat
 ## Preparation
 1. Log into the [Tencent Cloud Console](https://console.cloud.tencent.com/) using the root account with GAAP permissions or other accounts with AdministratorAccess permissions.
 2. In the top navigation, select **Products**>**Management & Audit**>**[Cloud Access Management](https://console.cloud.tencent.com/cam/policy)** to enter the CAM console.
->? You can also enter the CAM console by selecting **Your Account Name**>**Cloud Access Management** in the upper-right corner of the console.
+> You can also enter the CAM console by selecting **Your Account Name**>**Cloud Access Management** in the upper-right corner of the console.
 
 ### Steps
 ### Associating a user with a policy

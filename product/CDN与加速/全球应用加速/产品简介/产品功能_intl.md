@@ -1,22 +1,20 @@
-Key features of the Global Application Acceleration Platform include acceleration proxy configuration, origin server management, acceleration data statistics, connection monitoring, and acquisition of real user IPs.
+Key features of GAAP include acceleration proxy configuration, origin server management, acceleration statistics collection, connection monitoring, and acquisition of real user IPs.
 ## Acceleration Proxy
-- Acceleration connections can be configured based on the regions of destination users and origin servers. GAAP selects an optimal acceleration connection automatically according to the regions of the destination user and the origin servers. This connection is the shortest and the optimal path between the destination user and the origin server, which delivers a positive experience for real users. For more information, please see [Access Management](/document/product/608/13765).
-
-- Forwarding via TCP and UDP is supported.
+- GAAP supports configuring an acceleration connection by target user region and origin server region. It will automatically select the most appropriate connection based on the target user region and origin server region to achieve the shortest and optimal path from user to origin server, delivering a smoother access experience. For more information on configuration, see [Access Management](https://intl.cloud.tencent.com/document/product/608/13765).
+- TCP and UDP forwarding are supported.
 - Forwarding of URL rules is supported for HTTP and HTTPS.
-- A listener can be bound with multiple origin servers, and a connection can be used to create multiple listeners.
-- Configuration and change of connection forwarding rules are supported. The changes take effect in real time and do not affect online businesses.
-- Flexible configuration of acceleration and forwarding rules within connections is supported to meet the needs of step-by-step verification scenarios during beta test. For more information, please see [Listener Management](/document/product/608/13764).
+- One listener can be bound with multiple origin servers, and one connection can have multiple listeners created.
+- Configuration and modification of forwarding rules are supported, which take effect in real time and do not affect online business.
+- Flexible configuration of acceleration forwarding rules within an connection satisfies scenarios that need step-by-step beta test verification. For more information on configuration, see [Listener Management](https://intl.cloud.tencent.com/document/product/608/13764).
 
 ## Origin Server Management
-- Manage massive origin servers by IP and domain name, and add them in batches.
+- GAAP can manage massive amount of origin servers whose types are IP and domain name, and add them in batches.
 
-## Data Statistics
-- Provide statistics about acceleration connection bandwidth, concurrence, packet loss, delay, and packet forwarding. Adjust the limit of acceleration connection capacity as needed based on the actual statistics. For more information, please see [Statistical Data](/document/product/608/14425).
+## Statistics Collection
+- GAAP can collect statistics of an acceleration connection such as its bandwidth, concurrence, packet loss, delay, and packet forwarding volume. Based on the statistics, you can flexibly adjust the capacity cap of an acceleration connection as needed. For more information, see [Statistics](https://intl.cloud.tencent.com/document/product/608/14425).
 
 ## Connection Monitoring
-- Monitor the statuses of connections and origin servers. Trigger alerts in the event of irregularities to keep you abreast of the situation and help you resolve any issue promptly. For more information, please see [here](/document/product/608/17541).
+- GAAP supports monitoring connection and origin server status. It alerts you promptly to connection or origin server problems for easier and quicker troubleshooting. For more information, see [Access Cloud Monitoring](https://intl.cloud.tencent.com/document/product/608/17541).
 
-## Acquisition of Real User IPs
-- Obtain real user IPs via the TOA module. Ensure effective and transparent transmission of IPs to meet your needs of business data analysis. For more information, please see [here](https://intl.cloud.tencent.com/document/product/608/18946).
-
+## Acquisition of real user IPs
+- GAAP support TOA module to obtain real user IPs, ensuring effective IP passthrough for data analysis purpose. For more information, see [Obtaining the Real IPs of Access Users](https://intl.cloud.tencent.com/document/product/608/18946).

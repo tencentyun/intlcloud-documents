@@ -12,7 +12,7 @@
 3. 找到需要创建快照的实例所在行，单击【创建快照】。
 4. 等待快照创建。
 
-更多信息请参见：[快照功能说明](https://cloud.tencent.com/document/product/362/5754)。
+更多信息请参见：[快照功能说明](https://intl.cloud.tencent.com/document/product/362/31638)。
 
 ### 提示密码被暴力破解成功之后该如何解决?
 密码破解成功后，服务器可能已被黑客入侵并留下了后门程序。
@@ -28,7 +28,7 @@
 - 服务器安装了第三方恶意软件，导致安全防护程序被破坏。
 
 ### 如何处理木马文件？
-请参见 [木马文件操作处理](https://cloud.tencent.com/document/product/296/13008)。
+请参见 [木马文件操作处理](https://intl.cloud.tencent.com/document/product/296/13008)。
 
 ### 未能成功检测出木马（漏报）如何解决？
 若发现有未检测出来的木马文件，可通过 [工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=635&source=0&data_title=%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8(%E4%BA%91%E9%95%9C)&step=1) 联系提交给腾讯云安全团队，由腾讯云安全团队快速鉴定。
@@ -37,4 +37,4 @@
 登录 [腾讯云服务器安全产品控制台](https://console.cloud.tencent.com/yunjing)，在左侧导航栏选择【资产管理】>【主机列表】，在服务器列表，找到需要卸载的云服务器单击【卸载】，或打开安装目录，通过目录中的卸载程序进行卸载。
 
 ### 腾讯云账号实名认证出现问题要如何处理？
-若在使用主机安全的过程中，遇到腾讯云账号相关问题，详情请参见 [账号相关文档](https://cloud.tencent.com/document/product/378)。
+若在使用主机安全的过程中，遇到腾讯云账号相关问题，详情请参见 [账号相关文档](https://intl.cloud.tencent.com/document/product/378)。
