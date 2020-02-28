@@ -1,52 +1,52 @@
-CDNは複数項目のカスタマイズ構成をサポートしているため、お客様のサービスニーズに応じて設定し、CDN加速の効果を最適化できます。
+CDNは複数項目のカスタマイズ構成をサポートしています。お客様はサービスニーズに応じて構成を行って、CDN加速の効果を最適化することができます。
 
 ## 基本構成
-| 構成名                                    | 機能説明                |
+| 構成名称                                    | 機能説明                |
 | ---------------------------------------- | ------------------- |
-| [基本情報](https://intl.cloud.tencent.com/doc/product/228/7864) | ドメイン名の所属プロジェクト、ドメイン名のサービスタイプの変更をサポートします|
-| [オリジンサーバーの構成](https://intl.cloud.tencent.com/doc/product/228/6289) | オリジンサーバーの構成・変更をホットバックアップでき、 オリジンプルを保障します |
-| [ホストヘッダーの構成](https://intl.cloud.tencent.com/doc/product/228/6293) | CDNがオリジンサーバーにオリジンプルする場合のアクセスドメイン名を指定します  |
+| [基本情報](https://intl.cloud.tencent.com/doc/product/228/7864) | ドメイン名の所属プロジェクト、ドメイン名に対応するサービスタイプの変更をサポートします|
+| [オリジンサーバーの構成](https://intl.cloud.tencent.com/doc/product/228/6289) | ホットバックアップオリジンサーバーの構成及び変更をサポートすることで、back to originを保証します |
+| [back to origin HOSTの構成](https://intl.cloud.tencent.com/doc/product/228/6293) | CDNがオリジンサーバーにback to originする場合のアクセスドメイン名を指定します  |
 
 ## アクセスコントロール
-| 構成名                                      | 機能説明                      |
+| 構成名称                                      | 機能説明                      |
 | ---------------------------------------- | ------------------------- |
-| [フィルタリングパラメータの構成](https://intl.cloud.tencent.com/doc/product/228/6291) | ノードがユーザーアクセスURLの中の「?」に続くパラメータを無視するかどうかを指定します |
-| [ホットリンク対策の構成](https://intl.cloud.tencent.com/doc/product/228/6292) | HTTP refererブラックリスト/ホワイトリストを構成します      |
-| [IPブラックリスト/ホワイトリストの構成](https://intl.cloud.tencent.com/doc/product/228/6298) | IPブラックリスト/ホワイトリストの構成をサポートすることで、アクセスコントロールを実現します     |
-| [IPアクセス頻度制限の構成](https://intl.cloud.tencent.com/doc/product/228/6420) | IPごと、ノードごとのアクセス頻度制限の構成をサポートします      |
-| [ビデオドラッグの構成](https://intl.cloud.tencent.com/doc/product/228/8111) |   ビデオドラッグ構成の有効化をサポートします              |
+| [フィルタリングパラメータの構成](https://intl.cloud.tencent.com/doc/product/228/6291) | ノードがユーザーのアクセスするURLにおける「?」に続くパラメータを無視するかどうかを指定します |
+| [防犯リンクの構成](https://intl.cloud.tencent.com/doc/product/228/6292) | HTTP refererのブラックリスト/ホワイトリストを構成します      |
+| [IPブラックリスト/ホワイトリストの構成](https://intl.cloud.tencent.com/doc/product/228/6298) | IPブラックリスト/ホワイトリストを構成して、アクセスをコントロールすることをサポートします     |
+| [IPアクセス頻度制限の構成](https://intl.cloud.tencent.com/doc/product/228/6420) | IPごとに、ノードごとにアクセス頻度制限の構成をサポートします      |
+| [ビデオドラッグの構成](https://intl.cloud.tencent.com/doc/product/228/8111) |   ビデオドラッグの構成を有効にすることが可能です              |
 
 
 ## キャッシュ期限切れの構成
-| 構成名                                  | 機能説明              |
+| 構成名称                                 | 機能説明              |
 | ---------------------------------------- | ----------------- |
-| [キャッシュ期限切れの構成](https://intl.cloud.tencent.com/doc/product/228/6290) | 指定したリソースコンテンツのキャッシュ期限切れの時間的ルールを構成します |
-| [ステータスコードキャッシュの構成](https://intl.cloud.tencent.com/document/product/228/6290) | 404ステータスコードのキャッシュ時間を構成します    |
-| [HTTPヘッダーキャッシュ](https://intl.cloud.tencent.com/document/product/228/6290) | ヘッダーのキャッシュポリシーを構成します         |
+| [キャッシュ期限切れの構成](https://intl.cloud.tencent.com/doc/product/228/6290) | 指定したリソースコンテンツのキャッシュ期限切れの時間ルールを構成します |
+| [ステータスコードキャッシュの構成](https://intl.cloud.tencent.com/doc/product/228/6290) | 404ステータスコードのキャッシュ時間を構成します    |
+| [HTTPヘッダーキャッシュ](https://intl.cloud.tencent.com/doc/product/228/6290) | ヘッダーのキャッシュポリシーを構成します         |
 
-## オリジンプルの構成
-| 構成名                                    | 機能説明                |
+## back to originの構成
+| 構成名称                                    | 機能説明                |
 | ---------------------------------------- | -------------------- |
 |  [中間ソースの構成](https://intl.cloud.tencent.com/doc/product/228/6294) | 中間ソースを使うかどうかを指定します          |
-| [Rangeオリジンプルの構成](https://intl.cloud.tencent.com/doc/product/228/7184) | Range マルチパートのオリジンプルをオン/オフにします    |
-| [オリジンプルの302フォローの構成](https://intl.cloud.tencent.com/doc/product/228/7183) | オリジンサーバーから302が戻された場合、それをフォローしてリダイレクトする機能をオン/オフにします |
+| [Range back to originの構成](https://intl.cloud.tencent.com/doc/product/228/7184) | Range パートのback to originをオン/オフにします    |
+| [back to originの302フォローの構成](https://intl.cloud.tencent.com/doc/product/228/7183) | オリジンサーバーから302が戻された場合、それをフォローしてリダイレクトする機能をオン/オフにします |
 
 ## セキュリティ構成
 
-| 構成名                                      | 機能説明                      |
+| 構成名称                                      | 機能説明                      |
 | ---------------------------------------- | --------- |
-| [認証の構成](https://intl.cloud.tencent.com/document/product/228/13677) | URL認証を構成します |
+| 認証構成| URL認証を構成します |
 
-## 高度な構成
+## アドバンスド構成
 
-| 構成名                                    | 機能説明                             |
+| 構成名称                                    | 機能説明                             |
 | ---------------------------------------- | -------------------------------- |
-| [帯域幅制限の構成](https://intl.cloud.tencent.com/doc/product/228/7541) | ドメイン名に対し、帯域幅の制限しきい値を構成します。しきい値を超えた場合は、CDNサービスを終了して、オリジンプルサーバーにアクセスします |
-| [HTTPSの構成](https://intl.cloud.tencent.com/doc/product/228/6295) | HTTPSを構成することで、安全な加速を実現します。HTTPSの強制リダイレクトをサポートします   |
-| [SEO最適化の構成](https://intl.cloud.tencent.com/doc/product/228/6297) | SEOの最適化構成を有効にし、検索エンジンの重みが安定であることを保証します         |
+| [帯域幅上限の構成](https://intl.cloud.tencent.com/doc/product/228/7541) | ドメイン名に対して、帯域幅の上限しきい値を構成します。しきい値を超えた場合、CDNサービスを無効化して、オリジンサーバーにアクセスします |
+| [HTTPSの構成](https://intl.cloud.tencent.com/doc/product/228/6295) | HTTPSを構成することで、安全な加速を実現します。HTTPSの強制的リダイレクトをサポートします   |
+| [SEO最適化構成](https://intl.cloud.tencent.com/doc/product/228/6297) | SEOの最適化構成を有効にして、検索エンジンの重みの安定性を保証します         |
 | [HTTP Headerの構成](https://intl.cloud.tencent.com/doc/product/228/6296) |HTTP Headerの構成を追加します                |
 
 ## 国際専用回線の構成
-| 構成名                                      | 機能説明                      |
+| 構成名称                                   | 機能説明                      |
 | ---------------------------------------- | --------------------------- |
-| 国際専用回線の構成（内部テスト中）| 海外CDNを加速する場合、国際専用回線をオン/オフにすることで、オリジンプルの品質を保障します |
+| 国際専用回線（内部テスト中） | 海外CDN加速を行う場合、国際専用回線を有効化/無効化することで、back to originの品質を保証します|
