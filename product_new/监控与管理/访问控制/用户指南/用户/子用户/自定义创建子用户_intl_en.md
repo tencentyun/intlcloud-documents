@@ -31,8 +31,12 @@ You can log in to the Tencent Cloud Console to create a custom sub-user and conf
 You can create a sub-user and configure permissions for it by calling the `AddUser` API through an access key.
 ## Relevant Documents
 For more information on how to manage sub-users through user groups and group permissions, please see [User Group Management](https://intl.cloud.tencent.com/document/product/598/10599?from_cn_redirect=1) and [Setting User Group Permissions](https://intl.cloud.tencent.com/document/product/598/32666).
+
 For more information on how to associate/dissociate a sub-user to/from policies, please see [Setting Sub-User Permissions](https://intl.cloud.tencent.com/document/product/598/32650).
+
 For more information on how to log in as a sub-user, please see [Logging in as a Sub-User](https://intl.cloud.tencent.com/document/product/598/34006).
+
 For more information on how to reset a sub-user password, please see [Resetting Login Passwords for Sub-Users](https://intl.cloud.tencent.com/document/product/598/32656).
+
 For more information on set message subscription for sub-users, please see [Sub-Users Message Subscriptions](https://intl.cloud.tencent.com/document/product/598/32651).
 
