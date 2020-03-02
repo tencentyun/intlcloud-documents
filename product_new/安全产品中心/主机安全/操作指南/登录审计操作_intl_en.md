@@ -8,7 +8,7 @@ Setting up common login locations can effectively help detect login behaviors at
 
 In the CWP Console, click **Intrusion Detection** > **Login Auditing** on the left sidebar to view the login audit logs of the currently protected server, as shown below.
 
-![Login mark](https://mc.qcloudimg.com/static/img/ffca81622dd21ee01f967e6c9bb7bc66/image.png)
+![Login mark](https://main.qcloudimg.com/raw/afa7af91421a7a0aebfbacaaebab86ac.png)
 **Note:**
 
 - Server: the server currently logged in to.
