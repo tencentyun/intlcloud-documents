@@ -6,8 +6,8 @@ Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing) and selec
 - The server in the red box has enabled CWP Pro.
 - The server in the blue box has enabled CWP Basic. You can click **Activate CWP Pro** to upgrade it.
 - The server in the yellow box has not been installed with CWP. You can install CWP by following the instructions below:
-  - [Windows-based CVM](#windows-.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.8E.AF.E5.A2.83) 
-  - [Linux-based CVM](#linux-.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8.E7.8E.AF.E5.A2.83) 
+  - [Windows-based CVM](#Windows-based CVM) 
+  - [Linux-based CVM](#Linux-based CVM) 
 
 
 ## Intrusion Detection
