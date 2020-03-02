@@ -1,7 +1,8 @@
 ## 入门准备
 
 主机安全可在腾讯云服务器（黑石物理服务器 CPM）安装时一同安装，或单独进行安装。
-登录 [主机安全控制台](https://console.cloud.tencent.com/yunjing)，在左侧导航栏中，选择【资产管理】>【主机列表】，查看云服务器是否已安装主机安全。
+登录 [主机安全控制台](https://console.cloud.tencent.com/yunjing)，在左侧导航栏中，选择【资产管理】>【主机列表】，查看云服务器是否已安装主机安全，如下图所示：
+![](https://main.qcloudimg.com/raw/76641a48eb933d23657fa3aeed902481.png)
 - 红色框中的服务器安装了主机安全的专业防护版本，享有主机安全带来的全面多维度的系统安全保障。
 - 蓝色框中的服务器安装了主机安全的基础防护版本，可在右侧单击 【开通专业防护】，升级为专业防护版本。
 - 黄色框中的服务器没有安装主机安全产品。可根据如下指引及进行安装：
@@ -48,6 +49,7 @@ http://u.yd.tencentyun.com/ydeyes_win32.exe
 
 #### 安装说明
 Windows 安装成功状态验证：打开任务管理器，查看 YDService，YDLive 进程是否有调用，有调用则安装成功。
+![Windows processes](https://main.qcloudimg.com/raw/fe5aefe39b682cc05358e07b954bb44c.png)
 #### 常见问题
 - 防火墙拦截
    建议防火墙策略放通主机安全后台服务器访问地址：
@@ -94,6 +96,7 @@ ps -ef|grep YD
 - **控制台中卸载**
 	1. 登录 [主机安全](https://console.cloud.tencent.com/yunjing) 控制台，查看自己的云服务器是否已安装主机安全。
 	2. 在服务器列表中，选择需要卸载主机安全的服务器进行卸载。
+	  ![](https://main.qcloudimg.com/raw/be64dbdb9e4ac97804fb7d2eb169269b.png)
 
 - **进入系统卸载**
 	1. Windows 系统

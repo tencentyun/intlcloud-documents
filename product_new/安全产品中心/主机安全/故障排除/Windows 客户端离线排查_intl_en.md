@@ -1,7 +1,7 @@
 ## Agent Process Not Started
 1. Check whether the CWP process exist.
 Open Windows Task Manager and check whether the `YDService.exe` process exists.
- ![](https://main.qcloudimg.com/raw/27dbe87687c917e2cd2426cbc71a45c4.png)
+ ![](https://main.qcloudimg.com/raw/8a37fa3cd01736cc663df5ba8dbd1732.png)
 2. If the agent process do not exist, possible reasons include the following:
  - The CWP agent is not installed on or has been uninstalled from the server. Please see [Getting Started](https://cloud.tencent.com/document/product/296/12236) and follow the instructions to install the agent.
  - The agent has a conflict or crash and thus cannot be started.

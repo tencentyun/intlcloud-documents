@@ -1,6 +1,7 @@
 ## 客户端进程未启动排查
 1. 请查询主机安全进程是否存在。
 打开 Windows 任务管理器，查找名为`YDService.exe`的进程是否存在。
+ ![](https://main.qcloudimg.com/raw/8a37fa3cd01736cc663df5ba8dbd1732.png)
 2. 如果进程不存在，可能存在以下情况：
  - 服务器未安装主机安全或者客户端已被卸载，请根据 [快速入门](https://intl.cloud.tencent.com/document/product/296/12236) 安装指引，进行客户端安装。
  - 客户端可能出现异常冲突或者崩溃，导致进程没有启动。
