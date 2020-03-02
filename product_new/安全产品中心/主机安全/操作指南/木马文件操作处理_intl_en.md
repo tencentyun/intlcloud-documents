@@ -1,5 +1,5 @@
 Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing/manage) and select **Intrusion Detection** > **Trojans** to view the trojan detection records, as shown below:
-![1](https://main.qcloudimg.com/raw/14d504e3fb064927bba046a5b49018da.png)
+![1](https://main.qcloudimg.com/raw/b13956ca1487f93594c386157c54fd3b.png)
 #### Dealing with suspicious files
 - **Quarantine** 
 After malicious files are confirmed, you can quarantine a single file or multiple files in batches. After successful quarantine, the original malicious files will be encrypted and quarantined. You can filter **quarantined** files to recover them in the future if necessary.
