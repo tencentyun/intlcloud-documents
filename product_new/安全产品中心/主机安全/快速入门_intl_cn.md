@@ -96,7 +96,7 @@ ps -ef|grep YD
 - **控制台中卸载**
 	1. 登录 [主机安全](https://console.cloud.tencent.com/yunjing) 控制台，查看自己的云服务器是否已安装主机安全。
 	2. 在服务器列表中，选择需要卸载主机安全的服务器进行卸载。
-	  ![](https://main.qcloudimg.com/raw/12b843da437be0505ef5f43b07d6c8cc.png)
+	  ![](https://main.qcloudimg.com/raw/a45bbcc43606cc005a08f60c4f626427.png)
 
 - **进入系统卸载**
 	1. Windows 系统
