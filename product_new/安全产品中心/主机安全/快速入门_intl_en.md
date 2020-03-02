@@ -2,7 +2,7 @@
 
 CWP agent can be installed upon launch of CVM or CPM instance or later.
 Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing) and select **Asset Management** > **Server List** on the left sidebar to see whether CWP agent has been installed on the instance, as shown below:
-![](https://main.qcloudimg.com/raw/255e1e71576fbd5d4e93935a133557d2.png)
+![](https://main.qcloudimg.com/raw/76641a48eb933d23657fa3aeed902481.png)
 - The server in the red box has enabled CWP Pro.
 - The server in the blue box has enabled CWP Basic. You can click **Activate CWP Pro** to upgrade it.
 - The server in the yellow box has not been installed with CWP. You can install CWP by following the instructions below:
