@@ -2,7 +2,7 @@
 
 CWP agent can be installed upon launch of CVM or CPM instance or later.
 Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing) and select **Asset Management** > **Server List** on the left sidebar to see whether CWP agent has been installed on the instance, as shown below:
-![](https://main.qcloudimg.com/raw/c4f17485bc1e406c43d51606f360be30.png)
+![](https://main.qcloudimg.com/raw/255e1e71576fbd5d4e93935a133557d2.png)
 - The server in the red box has enabled CWP Pro.
 - The server in the blue box has enabled CWP Basic. You can click **Activate CWP Pro** to upgrade it.
 - The server in the yellow box has not been installed with CWP. You can install CWP by following the instructions below:
@@ -16,8 +16,8 @@ After installing CWP, you can use the features such as trojan detection and kill
 - Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing), select **Asset Management** > **Server List** on the left sidebar, and find the server you want to query. Click the IP address of the server and click **Intrusion Detection** to view its intrusion detection details.
 - Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing), click **Intrusion Detection** on the left sidebar, and click the feature you want to view. Then, you can view the intrusion detection details of all servers with CWP enabled.
 - For more information on feature-related operations, please see:
-	- [Trojan operation and handling](https://cloud.tencent.com/document/product/296/13008)
-	- [Login audit operation](https://cloud.tencent.com/document/product/296/13643)
+	- [Trojan operation and handling](https://intl.cloud.tencent.com/document/product/296/13008)
+	- [Login audit operation](https://intl.cloud.tencent.com/document/product/296/34229)
 
 ## Vulnerability Detection
 
@@ -49,7 +49,7 @@ http://u.yd.tencentyun.com/ydeyes_win32.exe
 
 #### Installation instructions
 Verification of installation result on Windows: open Task Manager and check whether the YDService and YDLive processes are called, and if yes, the installation is successful.
-![Windows processes](https://mc.qcloudimg.com/static/img/cb809b0f1e6a61d548a24f4bd4b57a61/image.jpg)
+![Windows processes](https://main.qcloudimg.com/raw/fe5aefe39b682cc05358e07b954bb44c.png)
 #### FAQs
 - Firewall interception
    We recommend allowing access addresses of the CWP backend server in the firewall policies:
@@ -96,7 +96,7 @@ You can uninstall CWP agent in the console or OS, as shown below:
 - **Uninstallation in the console**
 	1. Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing).
 	2. In the server list, select the server from which you want to uninstall CWP agent.
-		![](https://main.qcloudimg.com/raw/77e594350ecd0922f24d8e6c1d402de7.png)
+		![](https://main.qcloudimg.com/raw/12b843da437be0505ef5f43b07d6c8cc.png)
 
 - **Uninstallation in the OS**
 	1. Windows
@@ -116,5 +116,5 @@ You can uninstall CWP agent in the console or OS, as shown below:
 
 ## Activating CWP Pro
 You can activate the CWP Pro in the following two ways:
-- On the Tencent Cloud website, enter the [CWP product page](https://cloud.tencent.com/product/hs) and click **Purchase Now**. You will be redirected to the Tencent Cloud Console login page. After login, you can activate CWP Pro.
+- On the Tencent Cloud website, enter the [CWP product page](https://intl.cloud.tencent.com/product/hs) and click **Purchase Now**. You will be redirected to the Tencent Cloud Console login page. After login, you can activate CWP Pro.
 - Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/), click **Cloud Product** > **Endpoint Security** > **Cloud Workload Protection** to enter the CWP configuration page. Click **Security Overview** on the left sidebar and click **Upgrade to CWP Pro** in the bulletin board zone above to activate the Pro edition.
