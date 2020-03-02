@@ -21,10 +21,10 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
 	     <td>| ^ € { } [ ] ~ \</td>
      </tr> 
 </table>
- - If an SMS message contains less than 160 characters, it will be billed as one message; otherwise, it will be billed as multiple messages based on the standard of 153 characters per message.
+ - If an SMS message contains 160 characters or less, it will be billed as one message; otherwise, it will be billed as multiple messages based on the standard of 153 characters per message.
   For example, if an SMS message contains 320 characters, it will be billed as 3 messages (153 + 153 + 14 characters).
 
 ### SMS containing non-English characters
 - One Chinese character, letter, digit, punctuation mark (both fullwidth and halfwidth forms), or space will be calculated as **1 character**.
-- If an SMS message contains less than 70 characters, it will be billed as one message; otherwise, it will be billed as multiple messages based on the standard of 67 characters per message.
+- If an SMS message contains 70 characters or less, it will be billed as one message; otherwise, it will be billed as multiple messages based on the standard of 67 characters per message.
  For example, if an SMS message contains 150 characters, it will be billed as 3 messages (67 + 67 + 16 characters).

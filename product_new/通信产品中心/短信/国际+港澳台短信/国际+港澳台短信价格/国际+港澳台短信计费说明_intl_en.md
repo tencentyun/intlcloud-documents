@@ -24,12 +24,12 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
 	     <td>| ^ € { } [ ] ~ \</td>
      </tr> 
 </table>
- - If an SMS message contains less than 160 characters, it will be billed as one message; otherwise, it will be billed as multiple messages based on the standard of 153 characters per message.
+ - If an SMS message contains 160 characters or less, it will be billed as one message; otherwise, it will be billed as multiple messages based on the standard of 153 characters per message.
   For example, if an SMS message contains 320 characters, it will be billed as 3 messages (153 + 153 + 14 characters).
 
 ### SMS containing non-English characters
 - One Chinese character, letter, digit, punctuation mark (both fullwidth and halfwidth forms), or space will be calculated as **1 character**.
-- If an SMS message contains less than 70 characters, it will be billed as one message; otherwise, it will be billed as multiple messages based on the standard of 67 characters per message.
+- If an SMS message contains 70 characters or less, it will be billed as one message; otherwise, it will be billed as multiple messages based on the standard of 67 characters per message.
  For example, if an SMS message contains 150 characters, it will be billed as 3 messages (67 + 67 + 16 characters).
 
 
@@ -38,8 +38,8 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
 Global SMS is daily pay-as-you-go by message length on a per message basis. **General vouchers do not apply.** The payment for a day is deducted at 8:00 am the next day as detailed in the bill. Global SMS is available in over 200 countries and regions by which the prices vary. For more information, please see [Global SMS Pricing Overview](https://cloud.tencent.com/document/product/382/18051).
 
 ## Billing Details
-Before the 3rd day of each month, Tencent Cloud will provide you with a detailed global SMS bill for last month. You can click **Details** for the SMS service in Tencent Cloud Console > **Fees** > **[Statement of Account](https://console.cloud.tencent.com/expense/transactions)** to view the billing details. On the billing details page, you can click **View Monthly Trend** to view the SMS trend in a selected month. You can also export reports for financial reporting and bookkeeping.
+Before the 3rd day of each month, Tencent Cloud will provide you with a detailed global SMS bill for last month. You can click **Details** for the SMS service in Tencent Cloud Console > **Billing Center** > **[Transactions](https://console.cloud.tencent.com/expense/transactions)** to view the billing details. You can also export reports for financial reporting and bookkeeping.
 
-## Note on Arrears
+## Arrears
 Global SMS is daily pay-as-you-go. The payment for a day is deducted at 8:00 am the next day. If payment fails due to insufficient balance, you will receive an arrears notification via SMS. If you fail to top up your account within 12 hours, the service will be suspended.
 The service will resume when you have sufficient balance in your Tencent Cloud account. You shall be responsible for any consequences caused by service suspension due to arrears.
