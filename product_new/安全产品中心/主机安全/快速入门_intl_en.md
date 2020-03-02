@@ -96,7 +96,7 @@ You can uninstall CWP agent in the console or OS, as shown below:
 - **Uninstallation in the console**
 	1. Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing).
 	2. In the server list, select the server from which you want to uninstall CWP agent.
-		![](https://main.qcloudimg.com/raw/12b843da437be0505ef5f43b07d6c8cc.png)
+		![](https://main.qcloudimg.com/raw/a45bbcc43606cc005a08f60c4f626427.png)
 
 - **Uninstallation in the OS**
 	1. Windows
