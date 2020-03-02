@@ -1,5 +1,7 @@
 ## Description
-This API is used to add a style for a specified bucket.
+This API is used to set styles for a bucket. All images uploaded to the bucket later will be added with this style.
+>Notes:
+>There are frequency limitations for Bucket APIs: 1qps for write requests and 20qps for read requests.
 
 ## Request
 #### Request sample
