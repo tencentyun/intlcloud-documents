@@ -58,7 +58,7 @@
 获取这些信息的方法如下：
 1. 登录 [数据万象控制台](https://console.cloud.tencent.com/ci/index)，单击左侧菜单栏【Bucket 管理】。
 2. 选择需要管理的存储桶，单击【Bucket 配置】，即可查看 Bucket 名称和 Bucket ID 。若当前项目无存储桶，您可参考 [创建存储桶](https://intl.cloud.tencent.com/document/product/1045/33436) 文档进行创建。
-![](https://main.qcloudimg.com/raw/b88f4f23afe126bb79f44734de2d522b.png)
+![](https://main.qcloudimg.com/raw/5ea3acb08f39c9fa37dfb4d909cbbed9.png)
 3. 单击【密钥管理】左侧导航栏，按照页面提示，单击超链跳转到云 API 密钥控制台获取密钥。
 
 
