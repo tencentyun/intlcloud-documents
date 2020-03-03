@@ -44,6 +44,7 @@ qcs:project_id:service_type:region:account:resource
 	<resource_type>/*
 ```
 	 -  表示某产品下的所有资源。
+	 
 ```
 	*
 ```
