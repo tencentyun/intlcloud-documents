@@ -16,7 +16,6 @@ Before using TencentCloud API for the first time, you need to apply for security
 
 >!
 > - A developer account can have up to two pairs of `SecretId/SecretKey`.
-> - A developer can add a QQ account as a sub-user and use it to apply for different security credentials in multiple developer consoles.
 > - A sub-user can only call certain specified TencentCloud APIs with their security credentials.
 
 ## Generating a Signature String
