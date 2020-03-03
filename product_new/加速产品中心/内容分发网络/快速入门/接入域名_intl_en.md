@@ -3,7 +3,7 @@ You can add domain names to CDN console for Tencent Cloud CDN services with the 
 ## Adding domain name
 
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Domain Management** on the left sidebar, and click **Create Distribution**.
-![](https://main.qcloudimg.com/raw/f09d7aec3e7083d2915ff77474328bb5.png)
+![](https://main.qcloudimg.com/raw/621d9b5199427db390f3a1df2a86c8a5.png)
 Enter the page for creating domain names to complete the domain name configuration. For information about configuration descriptions, please see [Configuring domain name](#m1). 
 ![](https://main.qcloudimg.com/raw/5f1d0a786b194d6dfdc15d20a22ebf0b.png)
 
