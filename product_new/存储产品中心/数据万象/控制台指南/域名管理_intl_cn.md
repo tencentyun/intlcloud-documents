@@ -47,7 +47,7 @@ http:// testbucket-1250000000.image.myqcloud.com/testdir/test.jpg
 
 ### 配置 CDN 加速域名
 1. 登录 [数据万象控制台](https://console.cloud.tencent.com/ci) ，进入左侧菜单栏【 Bucket 管理】，单击需要配置域名的存储桶（如 imagetest1），进入存储桶。
-![CDN1](https://main.qcloudimg.com/raw/5babf965dede77f1a0b4bf7b307b0d17.png)
+![CDN1](https://main.qcloudimg.com/raw/c3eaf22d2ae3782401d86adea3d07303.png)
 2. 单击【域名管理】，进入域名管理页面，单击 CDN 加速的【编辑】按钮，进入可配置状态。
 ![CDN2](https://main.qcloudimg.com/raw/cecb03ee36e772faa07c07ba14a09ba3.png)
 3. 修改当前状态，单击【保存】即可。

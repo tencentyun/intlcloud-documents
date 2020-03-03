@@ -6,8 +6,8 @@ This document describes how to accelerate access to resources in COS through CDN
 
 ## Operation Guide
 ### Adding a domain name
-Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Domain Management** on the left sidebar to enter the domain name management page, and click **Create Distribution**.
- ![](https://main.qcloudimg.com/raw/d301ff1eea5fe534ce09ec5964e8c82b.png)
+Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Domain Management** on the left sidebar to enter the domain name management page, and click **Create Distribution**.<!
+![](https://main.qcloudimg.com/raw/557bb679be9e43f75f3a9c399a11abde.png)
 
 ### Selecting COS as origin server
 ![](https://main.qcloudimg.com/raw/ec7ea324171295b8fd0321e226d0e0a3.png)

@@ -47,7 +47,7 @@ At the same time, a new domain name, which is the CDN acceleration domain name, 
 
 ### Configuring the CDN acceleration domain name
 1. Log in to [CI Console](https://console.cloud.tencent.com/ci). In the left sidebar, click **Bucket Management**, and then click the bucket for which you want to configure the domain name (for example, imagetest1).
-![CDN1](https://main.qcloudimg.com/raw/5babf965dede77f1a0b4bf7b307b0d17.png)
+![CDN1](https://main.qcloudimg.com/raw/c3eaf22d2ae3782401d86adea3d07303.png)
 2. Click **Domain Management** to go to the domain management page, and click the **Edit** button for CDN acceleration to configure the domain name.
 ![CDN2](https://main.qcloudimg.com/raw/cecb03ee36e772faa07c07ba14a09ba3.png)
 3. Change the status and click **Save**.
