@@ -13,7 +13,7 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 
 （如果已在腾讯云注册，可忽略此步骤。）
 
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">点此注册腾讯云账号</a></div>
 
 #### 步骤2：完成实名认证
 
@@ -21,7 +21,7 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 
-详细认证流程，请参见 <a href="https://cloud.tencent.com/document/product/378/3629">实名认证介绍</a>。
+详细认证流程，请参见 <a href="https://intl.cloud.tencent.com/document/product/378/3629">实名认证介绍</a>。
 
 #### 步骤3：开通 COS 服务
 
