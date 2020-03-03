@@ -9,6 +9,16 @@
 > - APPID 是在成功申请腾讯云账户后，系统分配的账户标识之一，可通过 [腾讯云控制台](https://console.cloud.tencent.com/) 【账号信息】查看。
 
 
+## 中国大陆地域
+| 地域         | 上传域名                                               | 下载域名                                     |
+| ------------ | ------------------------------------------------------ | -------------------------------------------- |
+| 北京（华北） | &lt;BucketName-APPID&gt;.pic.ap-beijing.myqcloud.com   | &lt;BucketName-APPID&gt;.picbj.myqcloud.com  |
+|南京（华东）| &lt;BucketName-APPID&gt;.pic.ap-nanjing.myqcloud.com   | &lt;BucketName-APPID&gt;.picnj.myqcloud.com  |
+| 上海（华东） | &lt;BucketName-APPID&gt;.pic.ap-shanghai.myqcloud.com  | &lt;BucketName-APPID&gt;.picsh.myqcloud.com  |
+| 广州（华南） | &lt;BucketName-APPID&gt;.pic.ap-guangzhou.myqcloud.com | &lt;BucketName-APPID&gt;.picgz.myqcloud.com  |
+| 成都（西南） | &lt;BucketName-APPID&gt;.pic.ap-chengdu.myqcloud.com   | &lt;BucketName-APPID&gt;.piccd.myqcloud.com  |
+| 重庆（西南） | &lt;BucketName-APPID&gt;.pic.ap-chognqing.myqcloud.com   | &lt;BucketName-APPID&gt;.piccq.myqcloud.com  |
+
 ## 中国香港及境外地域
 | 地域         | 上传域名                                               | 下载域名                                     |
 | ------------ | ------------------------------------------------------ | -------------------------------------------- |
@@ -17,12 +27,6 @@
 | 新加坡       | &lt;BucketName-APPID&gt;.pic.ap-singapore.myqcloud.com | &lt;BucketName-APPID&gt;.picsgp.myqcloud.com |
 | 多伦多       | &lt;BucketName-APPID&gt;.pic.na-toronto.myqcloud.com   | &lt;BucketName-APPID&gt;.picca.myqcloud.com  |
 | 孟买          | &lt;BucketName-APPID&gt;.pic.ap-mumbai.myqcloud.com    | &lt;BucketName-APPID&gt;.picin.myqcloud.com  |
-| 北京（华北） | &lt;BucketName-APPID&gt;.pic.ap-beijing.myqcloud.com   | &lt;BucketName-APPID&gt;.picbj.myqcloud.com  |
-|南京（华东）| &lt;BucketName-APPID&gt;.pic.ap-nanjing.myqcloud.com   | &lt;BucketName-APPID&gt;.picnj.myqcloud.com  |
-| 上海（华东） | &lt;BucketName-APPID&gt;.pic.ap-shanghai.myqcloud.com  | &lt;BucketName-APPID&gt;.picsh.myqcloud.com  |
-| 广州（华南） | &lt;BucketName-APPID&gt;.pic.ap-guangzhou.myqcloud.com | &lt;BucketName-APPID&gt;.picgz.myqcloud.com  |
-| 成都（西南） | &lt;BucketName-APPID&gt;.pic.ap-chengdu.myqcloud.com   | &lt;BucketName-APPID&gt;.piccd.myqcloud.com  |
-| 重庆（西南） | &lt;BucketName-APPID&gt;.pic.ap-chognqing.myqcloud.com   | &lt;BucketName-APPID&gt;.piccq.myqcloud.com  |
 
 **示例**：
 用户在所属地域新加坡创建了一个存储桶，存储桶名称中用户自定义字符串部分为 examplebucket，系统自动为用户生成的数字串 APPID 为 1250000000。
