@@ -7,7 +7,7 @@ You can use the domain name search feature to find a specific domain name. You c
 2. Click the domain name search box to activate the search feature, select one or more resource attributes such as domain name, origin server, tag, or project, and enter a value to filter domain names.
 ![](https://main.qcloudimg.com/raw/5f77724408026bd05f2d1ac14b9f8b86.png)
 3. If you have questions about the input resource attribute or input format, click the **i** icon for [help with search](#help).
-![](https://main.qcloudimg.com/raw/a102d06a64427fd3e171d99ba1c4040a.png)
+![](https://main.qcloudimg.com/raw/b633c3602cc79891cd9ad2e0c11323f9.png)
 
 >
 >+ Only master origin servers can be searched for, not slave servers.
@@ -16,11 +16,11 @@ You can use the domain name search feature to find a specific domain name. You c
 
 ## Search Description
 + Search by domain name: Enter a complete or partial domain name for search. Fuzzy search is supported.
-  ![](https://main.qcloudimg.com/raw/438647b2478de9df7d204d23639d6b87.png)
+![](https://main.qcloudimg.com/raw/95ff6e4da21cfa031a625146bf912b4b.png)
 + Search by origin server: Enter a complete or partial origin server for search. Fuzzy search is supported.
 + Search by tag: Enter a complete tag, and a list of domain names that contain the entered tag will be returned. Fuzzy search is not supported.
 + Search by project: You can select multiple projects as a filter.
-  ![Project](https://main.qcloudimg.com/raw/8b15327f7125150a2cb78342839f41b5.png)
+![Project](https://main.qcloudimg.com/raw/bdcaa7725595005fd1b49c3953559437.png)
 - Filter by multiple criteria: You can select one or more criteria such as tag, domain name, origin server, and project for filtering. Use the enter key to separate multiple criteria.
 - Filter by multiple keywords: You can enter multiple keywords for each filter criterion. Use vertical bar (|) to separate multiple keywords.
 
