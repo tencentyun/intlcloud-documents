@@ -1,4 +1,5 @@
 主机安全采集了主机上的 RDP 和 SSH 登录日志，登录审计功能提供了主机上的全部登录流水展示，并对可疑的登录行为进行了标识。
+![Login mark](https://main.qcloudimg.com/raw/afa7af91421a7a0aebfbacaaebab86ac.png)
 包含字段说明如下：
 - 服务器：当前登录的服务器。
 - 来源 IP：登录来源 IP，一般是公司网络出口 IP或网络代理 IP。
