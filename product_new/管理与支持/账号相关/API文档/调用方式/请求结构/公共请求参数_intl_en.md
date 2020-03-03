@@ -36,13 +36,13 @@ The following lists the specific common request parameters:
 <tr>
 <td> SecretId
 </td><td> String
-</td><td> An ID that the user applies for on the <a href="https://console.cloud.tencent.com/capi">TencentCloud API Key</a> page. A `SecretId` is paired with a unique `SecretKey`, which is used to generate the request signature (`Signature`). 
+</td><td> An ID that the user applies for on the <a href="https://console.cloud.tencent.com/capi">TencentCloud API Key</a> page. A `SecretId` is paired with a unique `SecretKey`, which is used to generate the request signature (`Signature`). For more information, see <a href="https://intl.cloud.tencent.com/document/product/378/4378" title="Signing Method">Signature Method</a>.
 </td><td> Yes
 </td></tr>
 <tr>
 <td> Signature
 </td><td> String
-</td><td> Request signature, which is used to verify the validity of the request. It is generated automatically by the system based on the input parameters. 
+</td><td> Request signature, which is used to verify the validity of the request. It is generated automatically by the system based on the input parameters. For more information, see <a href="https://intl.cloud.tencent.com/document/product/378/4378" title="Signing Method">Signature Method</a>.
 </td><td> Yes
 </td></tr></tbody></table>
 

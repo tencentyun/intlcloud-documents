@@ -36,13 +36,13 @@
 <tr>
 <td> SecretId
 </td><td> String
-</td><td> 在 <a href="https://console.cloud.tencent.com/capi">云 API 密钥</a> 上申请的标识身份的 SecretId，一个 SecretId 对应唯一的 SecretKey , 而 SecretKey 会用来生成请求签名 Signature。
+</td><td> 在 <a href="https://console.cloud.tencent.com/capi">云 API 密钥</a> 上申请的标识身份的 SecretId，一个 SecretId 对应唯一的 SecretKey , 而 SecretKey 会用来生成请求签名 Signature。具体可参考 <a href="https://intl.cloud.tencent.com/document/product/378/4378" title="签名方法">签名方法</a> 页面。
 </td><td> 是
 </td></tr>
 <tr>
 <td> Signature
 </td><td> String
-</td><td> 请求签名，用来验证此次请求的合法性，由系统根据输入参数自动生成。
+</td><td> 请求签名，用来验证此次请求的合法性，由系统根据输入参数自动生成。具体可参考 <a href="https://intl.cloud.tencent.com/document/product/378/4378" title="签名方法">签名方法</a> 页面。
 </td><td> 是
 </td></tr></tbody></table>
 
