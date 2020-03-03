@@ -55,19 +55,6 @@
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443">样式设置</a></td>
       <td>设置图片的样式，方便管理不同需求的图片</td>
    </tr>
-   <tr>
-      <td rowspan=3>增值服务</td>
-   </tr>
-   <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33696">盲水印</a></td>
-      <td>为原图添加不可见水印，不影响原图质量</td>
-   </tr>
-<tr>
-   <td><a href="https://intl.cloud.tencent.com/document/product/1045/33447">二维码识别</a></td>
-      <td>识别图片中有效二维码的位置及内容，并可进行覆盖
-</td>
-   </tr>
-   
 <tr>
       <td>安全策略</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33444">防盗链</a></td>
