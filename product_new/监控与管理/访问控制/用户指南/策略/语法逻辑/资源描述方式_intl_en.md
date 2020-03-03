@@ -44,6 +44,7 @@ qcs:project_id:service_type:region:account:resource
 	<resource_type>/*
 ```
 	 - Indicates all the resources under a product.
+
 ```
 	*
 ```
