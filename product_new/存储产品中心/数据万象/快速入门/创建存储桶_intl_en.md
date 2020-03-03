@@ -23,18 +23,6 @@ A bucket is created under a project and only belongs to one project. The project
 a. The bucket name can only contain numbers, lowercase letters, and dashes (**-**) with a length no greater than 40 characters.
 b. The bucket name must be unique across all projects under the same APPID.
 
-### Region
-CI supports multi-region storage with the Singapore, Toronto (Canada), Moscow (Russia), Mumbai (India), and Hong Kong (China) regions available. You can select a region when creating a bucket. The region cannot be changed once set. For accelerated access, we recommend that you select a region close to your users.
-
-| Region | Region Abbreviation | Defaut Domain Name | Status |
-| ---- | ----- | --------------------------------------- | ---- |
-| Singapore | picsgp | < bucketname >-[APPID].picsgp.myqcloud.com | Active |
-| Toronto (Canada) | picca | < bucketname >-[APPID].picca.myqcloud.com | Active |
-| Moscow (Russia) | picru | < bucketname >-[APPID].picru.myqcloud.com | Active |
-| Mumbai (India) | picin | < bucketname >-[APPID].picin.myqcloud.com | Active |
-| Hong Kong (China) | pichk | < bucketname >-[APPID].pichk.myqcloud.com | Active |
-
-
 ### Access permissions
 Two access permissions are available for buckets by default: Public Read/Private Write and Private Read/Write.
 a. Public Read/Private Write: Anyone including anonymous visitors can read objects in the bucket. However, only the bucket creator and authorized accounts can write to objects in the bucket.
