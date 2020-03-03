@@ -8,6 +8,16 @@ Tencent Cloud's Cloud Infinite (CI) supports multi-region storage, and different
 > - BucketName is the custom name that you enter when creating the bucket, which can be viewed through the bucket’s **Basic Configuration** in [CI Console](https://console.cloud.tencent.com/ci).
 > - APPID is one of the account identifiers assigned by the system after successful application for a Tencent Cloud account. It can be viewed through **Account Information** in [Tencent Cloud Console](https://console.cloud.tencent.com).
 
+## China
+| Region | Upload Domain Name | Download Domain Name |
+| ------------ | ------------------------------------------------------ | -------------------------------------------- |
+| Beijing (North China) | &lt;BucketName-APPID&gt;.pic.ap-beijing.myqcloud.com   | &lt;BucketName-APPID&gt;.picbj.myqcloud.com  |
+|Nanjing (East China)| &lt;BucketName-APPID&gt;.pic.ap-nanjing.myqcloud.com   | &lt;BucketName-APPID&gt;.picnj.myqcloud.com  |
+| Shanghai (East China) | &lt;BucketName-APPID&gt;.pic.ap-shanghai.myqcloud.com  | &lt;BucketName-APPID&gt;.picsh.myqcloud.com  |
+| Guangzhou (South China) | &lt;BucketName-APPID&gt;.pic.ap-guangzhou.myqcloud.com | &lt;BucketName-APPID&gt;.picgz.myqcloud.com  |
+| Chengdu (Southwest China) | &lt;BucketName-APPID&gt;.pic.ap-chengdu.myqcloud.com   | &lt;BucketName-APPID&gt;.piccd.myqcloud.com  |
+| Chongqing (Southwest China) | &lt;BucketName-APPID&gt;.pic.ap-chognqing.myqcloud.com   | &lt;BucketName-APPID&gt;.piccq.myqcloud.com  |
+
 
 ## Hong Kong (China) and Other Regions Outside Mainland China
 | Region | Upload Domain Name | Download Domain Name |
@@ -17,12 +27,6 @@ Tencent Cloud's Cloud Infinite (CI) supports multi-region storage, and different
 | Singapore | &lt;BucketName-APPID&gt;.pic.ap-singapore.myqcloud.com | &lt;BucketName-APPID&gt;.picsgp.myqcloud.com |
 | Toronto | &lt;BucketName-APPID&gt;.pic.na-toronto.myqcloud.com | &lt;BucketName-APPID&gt;.picca.myqcloud.com |
 | Mumbai | &lt;BucketName-APPID&gt;.pic.ap-mumbai.myqcloud.com | &lt;BucketName-APPID&gt;.picin.myqcloud.com |
-| Beijing (North China) | &lt;BucketName-APPID&gt;.pic.ap-beijing.myqcloud.com   | &lt;BucketName-APPID&gt;.picbj.myqcloud.com  |
-|Nanjing (East China)| &lt;BucketName-APPID&gt;.pic.ap-nanjing.myqcloud.com   | &lt;BucketName-APPID&gt;.picnj.myqcloud.com  |
-| Shanghai (East China) | &lt;BucketName-APPID&gt;.pic.ap-shanghai.myqcloud.com  | &lt;BucketName-APPID&gt;.picsh.myqcloud.com  |
-| Guangzhou (South China) | &lt;BucketName-APPID&gt;.pic.ap-guangzhou.myqcloud.com | &lt;BucketName-APPID&gt;.picgz.myqcloud.com  |
-| Chengdu (Southwest China) | &lt;BucketName-APPID&gt;.pic.ap-chengdu.myqcloud.com   | &lt;BucketName-APPID&gt;.piccd.myqcloud.com  |
-| Chongqing (Southwest China) | &lt;BucketName-APPID&gt;.pic.ap-chognqing.myqcloud.com   | &lt;BucketName-APPID&gt;.piccq.myqcloud.com  |
 
 **Example**
 A user created a bucket in the Singapore region where the user resides. The user-defined string of the bucket name is **examplebucket**, and the system-generated APPID is **1250000000**.
