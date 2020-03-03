@@ -2,10 +2,10 @@ The storage feature of Cloud Infinite (CI) is based on Cloud Object Storage (COS
 ## Directions
 You can bind or create a bucket in CI Console and customize it after the creation.
 1. Log in to [CI Console](https://console.cloud.tencent.com/ci/index). In the left sidebar, click **Bucket Management** to go to the bucket management page. Then, click **Bind Bucket**, and the **Bind Bucket** dialog box appears.
-![](https://main.qcloudimg.com/raw/52e7162e8fa745d3e54cb5d9ff804c5b.png)
+![](https://main.qcloudimg.com/raw/fa3e24e28f40d8d446331ea02c724773.png)
 
 2. Select the **Bind an existing COS bucket** or **Create** checkbox. If you select **Bind an existing COS bucket**, you need to specify the bucket name. If you select **Create**, you need to enter a name for the bucket, select a region and access permission, and set whether to enable CDN acceleration. Then, click **OK** to create the bucket. For information about the configuration items, see Notes.
-![Creating a bucket](https://main.qcloudimg.com/raw/00041708ac12021a61bbaf94119988b5.png)
+![Creating a bucket](https://main.qcloudimg.com/raw/16d7ddb899019e6f17c7f179dc614903.png)
 
 ### Notes
 ### Methods of adding a bucket
@@ -22,18 +22,6 @@ A bucket is created under a project and only belongs to one project. The project
 ### Name
 a. The bucket name can only contain numbers, lowercase letters, and dashes (**-**) with a length no greater than 40 characters.
 b. The bucket name must be unique across all projects under the same APPID.
-
-### Region
-CI supports multi-region storage with the Singapore, Toronto (Canada), Moscow (Russia), Mumbai (India), and Hong Kong (China) regions available. You can select a region when creating a bucket. The region cannot be changed once set. For accelerated access, we recommend that you select a region close to your users.
-
-| Region | Region Abbreviation | Defaut Domain Name | Status |
-| ---- | ----- | --------------------------------------- | ---- |
-| Singapore | picsgp | < bucketname >-[APPID].picsgp.myqcloud.com | Active |
-| Toronto (Canada) | picca | < bucketname >-[APPID].picca.myqcloud.com | Active |
-| Moscow (Russia) | picru | < bucketname >-[APPID].picru.myqcloud.com | Active |
-| Mumbai (India) | picin | < bucketname >-[APPID].picin.myqcloud.com | Active |
-| Hong Kong (China) | pichk | < bucketname >-[APPID].pichk.myqcloud.com | Active |
-
 
 ### Access permissions
 Two access permissions are available for buckets by default: Public Read/Private Write and Private Read/Write.

@@ -2,10 +2,10 @@
 ## 操作步骤
 您可以通过数据万象控制台绑定或创建存储桶，创建完成后可对该存储桶进行自定义配置。
 1. 登录 [数据万象控制台](https://console.cloud.tencent.com/ci/index)，单击左侧导航【Bucket 管理】，进入 Bucket 管理页面，然后单击【绑定 Bucket】，弹出绑定 Bucket 对话框。
-![](https://main.qcloudimg.com/raw/52e7162e8fa745d3e54cb5d9ff804c5b.png)
+![](https://main.qcloudimg.com/raw/fa3e24e28f40d8d446331ea02c724773.png)
 
 2. 选择绑定已有 COS Bucket 或新建一个存储桶。如选择绑定已有 COS 的 Bucket 则需要指定存储桶名称。如新建则填写自定义的存储桶名称，选定存储桶所属地区、访问权限和 CDN 加速。最后单击【确定】即可快速创建一个存储桶。了解各配置项信息请见如下相关信息说明。
-![创建存储桶](https://main.qcloudimg.com/raw/00041708ac12021a61bbaf94119988b5.png)
+![创建存储桶](https://main.qcloudimg.com/raw/16d7ddb899019e6f17c7f179dc614903.png)
 
 ## 相关信息说明
 ### 新增方式
@@ -22,18 +22,6 @@ b. 选择已有 COS 的存储桶。通过此种方式，本质上是为一个 CO
 ### 名称
 a. 存储桶名称仅支持数字、小写字母和“-”的组合，长度不能超过40字符。
 b. 同一个 APPID 的所有项目下存储桶名称是唯一的，不能重名。
-
-### 所属地区
-存储服务支持多地域，目前开放了新加坡、加拿大多伦多、俄罗斯莫斯科、印度孟买和中国香港。创建存储桶时可选择存储桶所属地区，一旦设置不可更改。为了提高访问速度，建议选择离您的用户近的可用地域。
-
-| 地区   | 区域表示  | 默认域名                                    | 状态   |
-| ---- | ----- | --------------------------------------- | ---- |
-|新加坡| picsgp |  < bucketname >-[APPID].picsgp.myqcloud.com   |  已上线  |
-| 加拿大多伦多  | picca | < bucketname >-[APPID].picca.myqcloud.com | 已上线  |
-| 俄罗斯莫斯科   | picru | < bucketname >-[APPID].picru.myqcloud.com | 已上线  |
-| 印度孟买  | picin | < bucketname >-[APPID].picin.myqcloud.com | 已上线  |
-| 中国香港  | pichk  | < bucketname >-[APPID].pichk.myqcloud.com  | 已上线 |
-
 
 ### 访问权限
 存储桶默认提供两种访问权限：公有读私有写和私有读写。

@@ -55,22 +55,9 @@ Cloud Infinite (CI) provides the following features:
       <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443">Setting styles</a></td>
       <td>Set image styles to manage images for different purposes</td>
    </tr>
-   <tr>
-      <td rowspan=3>Value-added services</td>
-   </tr>
-   <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33696">Blind watermarking</a></td>
-      <td>Perform imperceptible watermarking without reducing the quality of original images</td>
-   </tr>
-<tr>
-   <td><a href="https://intl.cloud.tencent.com/document/product/1045/33447">QR code recognition</a></td>
-      <td>Recognize the location and content of QR codes and cover the QR codes
-</td>
-   </tr>
-   
 <tr>
       <td>Security policies</td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33444">Hotlink protection</a></td>
+      <td>Hotlink protection</td>
       <td>Provide security policies such as signed download and the blacklist/whitelist for domain name control</td>
    </tr>
 </table>

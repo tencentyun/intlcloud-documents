@@ -58,7 +58,7 @@ The information that is required for generating a signature includes the APPID (
 The preceding information can be obtained as follows:
 1. Log in to [CI Console](https://console.cloud.tencent.com/ci/index), and click **Bucket Management** in the left sidebar.
 2. Select the bucket that you want to manage, and click **Bucket Configuration** to view the bucket name and bucket ID. Create a bucket if the current project does not contain one yet. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/1045/33436).
-![](https://main.qcloudimg.com/raw/85e3889983ef912900d99cc6b7f778d9.png)
+![](https://main.qcloudimg.com/raw/b88f4f23afe126bb79f44734de2d522b.png)
 3. Click **Key Management** in the left sidebar. Follow the instructions on the page to go to the API Keys page on Cloud Access Management Console by clicking the hyperlink, and obtain the key.
 
 

@@ -4,7 +4,7 @@ An intermediate server is an origin-pull server located at the intermediate laye
 
 ## Configuration Guide
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to enter the management page. Find the domain name you want to edit and click **Manage** in the "Operation" column.
-![img](https://main.qcloudimg.com/raw/f84d049dfe3e99b6fe5548ec64a864ce.png)
+![img](https://main.qcloudimg.com/raw/c2c5fa124f81a8056635cf83bec15182.png)
 Click **Origin-Pull Configuration** and if you don't see the "Intermediate Server Configuration" module, **an intermediate server has been enabled for your domain name by default**. User requests will be converged to the intermediate server, which will perform origin-pulls in a unified manner, improving the CDN acceleration result and alleviating the access pressure on your origin server.
 >For legacy connected domain names, if you see that the intermediate server configuration is disabled in **Origin-pull Configuration**, we recommend you manually enable this feature to improve the acceleration result. Once enabled, this configuration item will be hidden and cannot be disabled.
 

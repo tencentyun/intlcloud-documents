@@ -4,6 +4,6 @@
 
 ## 操作步骤
 1. 进入 [数据万象控制台](https://console.cloud.tencent.com/ci)，找到您想要解绑的存储桶，单击右侧的【解绑】，弹出解绑存储桶对话框。
-![](https://main.qcloudimg.com/raw/12604136b46d5386ad13c89d9a1161f3.jpg)
+![](https://main.qcloudimg.com/raw/664fec4586fe31302ae98f6490a6e884.png)
 >解绑后该存储桶将从数据万象的存储桶列表中删除，但 COS 中将保留该存储桶及存储桶中的全部内容，请前往 COS 控制台查看。
 2. 单击【确定】即可解绑存储桶。
