@@ -4,7 +4,7 @@
 ### 操作步骤
 1. 登录 [数据万象控制台](https://console.cloud.tencent.com/ci) ，单击左侧导航栏【 Bucket 管理】，然后选择单击需要设置样式的存储桶，进入存储桶配置页面。
 2. 在存储桶配置页面，单击上方的【样式】配置项，向下找到【样式管理】，将**分隔符**修改为感叹号（!）。您可选择一种或多种样式分隔符。
-![](https://main.qcloudimg.com/raw/6f6c238f1e809b0a944b977476ca155f.png)
+![](https://main.qcloudimg.com/raw/92c55ff1075bb647113f2de33ea64a61.png)
 
 ### 使用说明
 格式： http:// 绑定域名 /文件名称 + 分隔符 + 处理样式名
@@ -23,9 +23,9 @@
 在存储桶中，开发者可以设置图片的样式，方便管理不同需求的图片。此处设置的样式是图片下载时为实时处理参数组合起的一个别名。具体操作如下：
 
 1. 选择一个存储桶（如 imagetest1 ），进入【样式】页面。单击【添加样式】。
-![样式](https://main.qcloudimg.com/raw/749118d5bf657fb727f94d6c61432721.png)
+![样式](https://main.qcloudimg.com/raw/fb7f72a2d3dbf281215bab69898da53d.png)
 2. 进入编辑样式界面，填写样式名称。可以设置样式的缩略方式，渐进效果、输出格式、输出效果、文字或图片水印等。
-![样式2](https://main.qcloudimg.com/raw/4e1951a61bec4279f4d0c0a725223586.png)
+![样式2](https://main.qcloudimg.com/raw/0e82f5e94be7554f46d62243e7ef5e60.png)
 
 >样式名需要区分大小写，且保存之后不可修改。
 
@@ -45,13 +45,13 @@
 
 - **限定宽高缩放**
 严格按照用户限定的图片尺寸进行缩略。
-![裁剪 + 绽放](https://main.qcloudimg.com/raw/0e9b659e1c11955e00c69ba7abe5b34e.png)
+![裁剪 + 绽放](https://main.qcloudimg.com/raw/ff573ce671721dfdac9ca554ba8831c2.png)
 
 例如，原图为1200X900 ，缩略图为尺寸为600X600 ，则会先将原图按宽高比（600:600即1:1 ）做裁剪，裁剪原图到900X900后，再进行缩放，缩小到600X600的目标尺寸。
 
 #### 只裁剪
 只裁剪样式根据您设置的裁剪位置和缩略图尺寸，直接对原图进行裁剪，其中九宫格确定裁剪的中心位置。
-![只裁剪](https://main.qcloudimg.com/raw/fd957aaa4d4c8e34147cddc533a24bc5.png)
+![只裁剪](https://main.qcloudimg.com/raw/7f0c3da4dfb5f6160ff1c83cf8068526.png)
 
 例如，设置裁剪位置为居中，裁剪后的缩略图尺寸为600X600  ，则沿宽中线左右各取300，高沿中线各取300，形成最终的600X600缩略图进行裁剪。
 
@@ -60,15 +60,15 @@
 **等比缩放：**等比缩放是指按原图的长宽比例根据用户的尺寸设置进行缩略。
 **限定宽高缩放：**严格按照用户限定的图片尺寸进行缩略，忽略原图宽高比例。
 
-![只缩放](https://main.qcloudimg.com/raw/dabb684a0e0eb35d1a1e6f03f9e7b9c1.png)
+![只缩放](https://main.qcloudimg.com/raw/189f1c74bbd5c3366951b25e16c82630.png)
 
 ### 文字水印
 文字水印能够按照您设置的文字内容、字体、字号、颜色、透明度等信息，由九宫格确定水印位置，在目标图片上设置水印。
-![文字水印](https://main.qcloudimg.com/raw/4ca38256668ee716271b582c5c526095.png)
+![文字水印](https://main.qcloudimg.com/raw/b66c234e69fc2fc689e06387e13f631f.png)
 
 ### 图片水印
 图片水印能够按照您设置的图片，由九宫格确定水印位置，在目标图片上设置水印。
-![图片水印](https://main.qcloudimg.com/raw/767136b69920bf54a4d122216a9ec8ff.png)
+![图片水印](https://main.qcloudimg.com/raw/e681ad02948366582d90b8b5b66e5547.png)
 
 ### 高级设置
 数据万象也提供样式的高级设置，可以根据参数进行配置，详情请参考 [基础图片处理](https://intl.cloud.tencent.com/document/product/1045/33713) API 文档。

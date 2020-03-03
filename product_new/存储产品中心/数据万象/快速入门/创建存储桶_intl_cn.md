@@ -2,10 +2,10 @@
 ## 操作步骤
 您可以通过数据万象控制台绑定或创建存储桶，创建完成后可对该存储桶进行自定义配置。
 1. 登录 [数据万象控制台](https://console.cloud.tencent.com/ci/index)，单击左侧导航【Bucket 管理】，进入 Bucket 管理页面，然后单击【绑定 Bucket】，弹出绑定 Bucket 对话框。
-![](https://main.qcloudimg.com/raw/52e7162e8fa745d3e54cb5d9ff804c5b.png)
+![](https://main.qcloudimg.com/raw/fa3e24e28f40d8d446331ea02c724773.png)
 
 2. 选择绑定已有 COS Bucket 或新建一个存储桶。如选择绑定已有 COS 的 Bucket 则需要指定存储桶名称。如新建则填写自定义的存储桶名称，选定存储桶所属地区、访问权限和 CDN 加速。最后单击【确定】即可快速创建一个存储桶。了解各配置项信息请见如下相关信息说明。
-![创建存储桶](https://main.qcloudimg.com/raw/00041708ac12021a61bbaf94119988b5.png)
+![创建存储桶](https://main.qcloudimg.com/raw/16d7ddb899019e6f17c7f179dc614903.png)
 
 ## 相关信息说明
 ### 新增方式
