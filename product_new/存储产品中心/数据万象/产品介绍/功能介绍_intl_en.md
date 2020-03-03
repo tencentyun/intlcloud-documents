@@ -57,7 +57,7 @@ Cloud Infinite (CI) provides the following features:
    </tr>
 <tr>
       <td>Security policies</td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33444">Hotlink protection</a></td>
+      <td>Hotlink protection</td>
       <td>Provide security policies such as signed download and the blacklist/whitelist for domain name control</td>
    </tr>
 </table>
