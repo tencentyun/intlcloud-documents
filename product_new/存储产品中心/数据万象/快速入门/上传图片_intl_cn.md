@@ -2,13 +2,13 @@
 1. 在[数据万象控制台](https://console.cloud.tencent.com/ci)，单击【Bucket 管理】，进入存储桶列表。单击您想存储图片的存储桶，进入存储桶的文件列表页面。
 ![](https://main.qcloudimg.com/raw/c3eaf22d2ae3782401d86adea3d07303.png)
 2. 在文件列表中，单击【上传图片】，出现上传图片对话框。选择要上传的图片，单击【打开】。
-![](https://main.qcloudimg.com/raw/147a6e0a53751ef8f1a740bad26eada8.png)
+![](https://main.qcloudimg.com/raw/dc33d319aa2317777099d77ad099e091.png)
 3. 当文件列表中出现所上传的图片信息时，表示上传成功。
-![上传](https://main.qcloudimg.com/raw/344b5c46866b9361a4d18de11003b158.png)
+![上传](https://main.qcloudimg.com/raw/15082613f1ed5b626eeb77f0d4513f7d.png)
 
 ## 查看文件信息
 图片上传至存储桶后，您可查看图片的相关信息，包括属性、URL、大小等。
 1. 在 [数据万象控制台](https://console.cloud.tencent.com/ci)  ，选择【Bucket 管理】，选择相应存储桶，进入存储桶的图片列表。
 ![](https://main.qcloudimg.com/raw/c3eaf22d2ae3782401d86adea3d07303.png)
 2. 在图片列表中找到需要查看的图片，单击右侧的【文件信息】，弹出文件信息详情框，即可查看该图片的相关信息。
-![文件信息](https://main.qcloudimg.com/raw/8c25efc0c54ae8ad6a299b55a666fd07.png)
+![文件信息](https://main.qcloudimg.com/raw/752beaafc310085b577078819a5a8845.png)
