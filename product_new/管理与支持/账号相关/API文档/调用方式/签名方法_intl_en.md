@@ -6,7 +6,7 @@ Before using TencentCloud API for the first time, you need to apply for security
 - **SecretId** is the identity of the requester.
 - **SecretKey** is used to encrypt the strings to create a signature so that Tencent Cloud server can validate the identity of the requester.
 
->!API keys is an important credential for creating TencentCloud API requests. You can access and manage the resources in your Tencent Cloud account via APIs. For the security of your assets and services, please keep the keys private, change them regularly, and delete old keys promptly after creating new ones.
+>API keys is an important credential for creating TencentCloud API requests. You can access and manage the resources in your Tencent Cloud account via APIs. For the security of your assets and services, please keep the keys private, change them regularly, and delete old keys promptly after creating new ones.
 
 
 #### How to apply for security credentials
@@ -14,20 +14,20 @@ Before using TencentCloud API for the first time, you need to apply for security
 1. Log in to the Tencent Cloud Console and enter the [API Key Management](https://console.cloud.tencent.com/cam/capi) page.
 2. On the API Key Management page, click **Create Key** to create a pair of `SecretId/SecretKey`.
 
->!
+>
 > - A developer account can have up to two pairs of `SecretId/SecretKey`.
 > - A sub-user can only call certain specified TencentCloud APIs with their security credentials.
 
 ## Generating a Signature String
 With the `SecretId` and `SecretKey`, a signature string can be generated as described below:
 
-![](//mc.qcloudimg.com/static/img/3a3a616ba175bb95be68123d86715e77/image.png)
+![](https://main.qcloudimg.com/raw/8ee1112aa861f897ddf193ac7490064d.png)
 
 Assume that the `SecretId` and `SecretKey` are:
 SecretId： AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA
 SecretKey： Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
->! This example is for demonstration purposes only. Make sure that you proceed with your actual `SecretId`, `SecretKey` and request parameters.
+> This example is for demonstration purposes only. Make sure that you proceed with your actual `SecretId`, `SecretKey` and request parameters.
 
 Take Tencent Cloud CVM as an example. If you wish to call the  `DescribeInstances` API to view the instance list, the request parameters are as follows:
 
@@ -61,7 +61,7 @@ Any other programming languages can be used to sort these parameters as long as 
 This step generates a request string.
 Format the request parameters sorted in the previous step into the form of `"parameter name"="value"`. For example, for the `Action` parameter, its parameter name is `"Action"` and its value is `"DescribeInstances"`; therefore, the parameter is formatted into `Action=DescribeInstances`.
 
->!
+>
 - "Parameter value" is the original value instead of the URL-encoded value.
 - If the key of an input parameter contains an underscore, the underscore should be replaced with a `.`; however, underscores in `Value` do not need to be replaced. For example, `Placement_Zone=CN_GUANGZHOU` should be converted to `Placement.Zone=CN_GUANGZHOU`.
 
@@ -139,7 +139,7 @@ nPVnY6njQmwQ8ciqbPl5Qe+Oru4=
 The generated signature string cannot be directly used as a request parameter and needs to be URL-encoded.
 For example, the signature string `0EEm/HtGRr/VJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s=` generated in the previous step should be encoded to `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`. Therefore, the resulting request parameter for the `Signature` is `0EEm%2FHtGRr%2FVJXTAD9tYMth1Bzm3lLHz5RCDv1GdM8s%3D`, which will be used to generate the final request URL.
 
->!If you are sending a GET request, all parameters in the request need to be URL-encoded. Please note that some programming languages may offer automatic URL-encoding, and repeated encoding will cause signature verification failure.
+>If you are sending a GET request, all parameters in the request need to be URL-encoded. Please note that some programming languages may offer automatic URL-encoding, and repeated encoding will cause signature verification failure.
 
 ## Authentication Failure
 The following errors may occur when authentication fails:
