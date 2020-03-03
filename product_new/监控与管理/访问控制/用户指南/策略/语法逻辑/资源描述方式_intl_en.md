@@ -43,10 +43,7 @@ qcs:project_id:service_type:region:account:resource
 ```
 	<resource_type>/*
 ```
-	 - Indicates all the resources under a product.
-	 ```
-	*
-	```
+	 - Indicates all the resources under a product.```*```
 
  - In certain scenarios, resource elements can be described with `*`, and the definitions are as follows. For more information, see the corresponding product documentation.
  - For actions that require association with resources, "resource" defined as `*` indicates that all resources are associated.
