@@ -57,7 +57,7 @@
    </tr>
 <tr>
       <td>安全策略</td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33444">防盗链</a></td>
+      <td>防盗链</td>
       <td>提供签名私密下载、黑白名单域名控制等安全策略</td>
    </tr>
 </table>
