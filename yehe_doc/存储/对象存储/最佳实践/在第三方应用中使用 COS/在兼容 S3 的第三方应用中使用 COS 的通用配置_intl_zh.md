@@ -21,7 +21,7 @@ Amazon Simple Storage Service（Amazon S3，下文简称 S3）是 AWS 最早推�
 
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 
-详细认证流程，请参见 <a href="https://cloud.tencent.com/document/product/378/3629">实名认证介绍</a>。
+详细认证流程，请参见 <a href="https://intl.cloud.tencent.com/document/product/378/3629">实名认证介绍</a>。
 
 #### 步骤3：开通 COS 服务
 
