@@ -13,7 +13,7 @@ You can use the following products or features to enable access between a VPC in
 <tbody><tr>
 <th>Common public IP address</th>
 <td>Enables mutual access between the CVM and internet.</td>
-<td>You can only obtain a common public IP address while purchasing of a CVM. If you do not obtain one during the purchase, you can use <a xiugaihref="https://intl.cloud.tencent.com/document/product/213/5733" target="_blank">elastic public IP address</a> or <a href="https://intl.cloud.tencent.com/document/product/1015" target="_blank">NAT gateway</a>.</td>
+<td>You can only obtain a common public IP address while purchasing of a CVM. If you do not obtain one during the purchase, you can use <a href="https://intl.cloud.tencent.com/document/product/213/5733" target="_blank">elastic public IP address</a> or <a href="https://intl.cloud.tencent.com/document/product/1015" target="_blank">NAT gateway</a>.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/213/5733" target="_blank">Elastic public IP address<br>(EIP)</a></td>
