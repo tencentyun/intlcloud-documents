@@ -1,15 +1,35 @@
-##  托管简单网站
-您可以使用私有网络部署简单的 Web 应用，如博客、网站和日志系统等；通过 [安全组](https://intl.cloud.tencent.com/document/product/215/31889) 和 [网络 ACL](https://intl.cloud.tencent.com/document/product/215/5132) 等防火墙，可以使 Web 应用响应 HTTP 等请求，但拒绝 Web 应用访问 Internet，从而保证 Web 应用的安全；在流量突增时，可以在 VPC 中启用 [负载均衡](http://intl.cloud.tencent.com/document/product/214/524) 。
-![](//mccdn.qcloud.com/static/img/23729e8b1f865148f8851e82db3cfff5/image.png)
-相关产品：[云服务器（CVM）](http://intl.cloud.tencent.com/document/product/213/495)、[云数据库](https://intl.cloud.tencent.com/doc/product/236)、[负载均衡](http://intl.cloud.tencent.com/document/product/214/524)。
+## 访问公网
+### 单个云服务器访问公网
+当您的业务量较小，仅有单个云服务器时，可以通过申请一个公网 IP 绑定在云服务器上，实现访问公网的功能。
+![](https://main.qcloudimg.com/raw/623ba575db31584481e7b660f8b1dec0.png)
 
-## 托管多层 Web 应用
-私有网络可以在为应用提供 Internet 服务的同时，又保障数据库服务器的安全。您可以安全灵活地在私有网络中托管多层 Web 应用程序：在私有网络中创建不同的子网，将整个 Web 层放在一个子网，通过 [弹性 IP](https://intl.cloud.tencent.com/document/product/215/4958) / [公网网关](https://intl.cloud.tencent.com/document/product/215/4972) / NAT 网关与 Internet 通信；将逻辑层单独放在一个子网，只能和 Web 层及数据层通信；将数据层放在另外一个子网，只和逻辑层通信。子网和子网之间的流量通过 [网络 ACL](https://intl.cloud.tencent.com/document/product/215/5132) 控制。
-![](//mccdn.qcloud.com/static/img/64ac36b8359811995205cba91f788c85/image.png)
-相关产品：[云服务器（CVM）](http://intl.cloud.tencent.com/document/product/213/495)、[云数据库](https://cloud.tencent.com/doc/product/236)、[弹性 IP](https://intl.cloud.tencent.com/doc/product/213)、[NAT 网关](http://intl.cloud.tencent.com/document/product/215/4975)、[公网网关](https://intl.cloud.tencent.com/document/product/215/4972)。
+### 多云服务器安全访问公网
+当您有多个云服务器需要同时访问公网，且不希望暴露云服务器的内网地址时，可以使用 [NAT 网关](https://intl.cloud.tencent.com/document/product/1015)。NAT 网关具有 SNAT 功能，可以使多个云服务器都通过 NAT 网关上的公网 IP 实现访问公网，且在未配置 DNAT 功能时，外部用户无法直接访问 NAT 网关，保证了安全性。当 NAT 网关上有多个公网 IP 时，NAT 网关会自动做负载均衡。
+![](https://main.qcloudimg.com/raw/79cf9f746c93cdce4a2e01bb6ece0297.png)
 
-##  部署弹性混合云
-您可以在私有网络内，部署应用程序；在企业数据中心，部署数据库服务器。私有网络提供稳定安全的VPN 连接 / [专线接入](https://intl.cloud.tencent.com/document/product/216) 服务，帮您打通企业数据中心与云端资源。您可使用 [弹性伸缩](http://intl.cloud.tencent.com/document/product/377/3154) 服务，以根据业务量扩展应用程序的资源（云服务器等），既降低了企业 IT 运维成本，又无需担心企业核心数据外泄，轻松实现弹性混合云部署。
-![](//mccdn.qcloud.com/static/img/23ac09921e7876e6d33d75704dc7f6db/image.png)
-相关产品：[云服务器（CVM）](http://intl.cloud.tencent.com/document/product/213/495)、[云硬盘（CBS）](http://intl.cloud.tencent.com/document/product/362/2345)、[弹性伸缩（AS）](http://intl.cloud.tencent.com/document/product/377/3154)、[专线接入](https://intl.cloud.tencent.com/document/product/216)、VPN 连接。
+## 对公网提供服务
+### 单个云服务器提供服务
+您可以将网站等服务托管在 VPC 中的云服务器上，并通过一个公网 IP 实现对外提供服务的功能。
+![](https://main.qcloudimg.com/raw/1e0f8b71f125b857f6d421629e90e94f.png)
 
+### 多个云服务器负载均衡
+当您有较多服务器来部署复杂业务、且公网流量较大时，可以使用 [负载均衡](https://intl.cloud.tencent.com/document/product/214)。负载均衡可以实现自动分配云中多个 CVM 实例间应用程序的访问流量，让您实现更高水平的应用程序容错能力。
+![](https://main.qcloudimg.com/raw/d943efd83cc5d6df07e3e78954e681af.png)
+
+## 应用容灾
+### 跨可用区容灾
+子网具有可用区属性，您可以在一个地域的私有网络下创建属于不同可用区的子网，同一个私有网络下不同子网默认内网互通，您可以在不同可用区的子网中部署资源，实现跨可用区容灾。
+![](https://main.qcloudimg.com/raw/32d62386d6369d631163749a0007396e.png)
+
+### 跨地域容灾
+您可以跨地域部署业务，例如两地三中心方案，以实现跨地域的容灾。
+![](https://main.qcloudimg.com/raw/0bb675a6c474ba0c6ca05b2298e7f0a2.png)
+
+## 部署混合云
+### 连接本地数据中心
+私有网络提供专线接入、VPN 连接等多种方式，可以将您的本地数据中心和云上私有网络连接，轻松构建混合云架构。使用本地数据中心，可以保证您核心数据的安全性。您还可以根据业务量扩展云上的资源数量（如云服务器、云数据库等），降低 IT 运维成本。
+![](https://main.qcloudimg.com/raw/40bd0f4a3920409a0e08c15568551a5c.png)
+
+### 全球多点互联
+当您在全球、全国多地域都部署有业务，且各个地域需要进行互联时，可以使用 [云联网](https://intl.cloud.tencent.com/document/product/1003)、[专线接入](https://intl.cloud.tencent.com/document/product/216) 等产品，通过单点接入，轻松实现全球多点互联。
+![](https://main.qcloudimg.com/raw/cdcded11e541ee50f4b050d48c251b43.png)

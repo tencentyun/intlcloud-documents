@@ -42,7 +42,7 @@ Billable traffic includes **CDN origin-pull traffic** and **public network outbo
       <th>Public network outbound traffic</th>
    </tr>
    <tr>
-      <td>Beijing、Shanghai 、Guangzhou 、Nanjing 、Chongqing 、Chengdu </td>
+      <td>Beijing,Shanghai,Guangzhou,Nanjing,Chongqing,Chengdu </td>
       <td>Free</td>
       <td>0.02</td>
       <td>0.1</td>

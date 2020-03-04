@@ -1,4 +1,4 @@
-Tencent Cloud has adjusted the calculation rule for global SMS message length, which will take effect on March 2, 2020. The calculation rule after adjustment is as follows:
+Tencent Cloud has adjusted the calculation rule for global SMS message length, which took effect on March 2, 2020. The calculation rule after adjustment is as follows:
 
 ### SMS containing only English characters
 
