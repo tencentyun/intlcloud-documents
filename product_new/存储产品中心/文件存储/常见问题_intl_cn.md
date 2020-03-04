@@ -8,7 +8,7 @@
 CFS 文件存储服务账单中，由于中国大陆地区的存储量是合并计费，因此扣费地区会统一显示为 "华南地区（广州）"， 但账单的扩展字段中会展示被合并计费的地区。
 
 **查看方法**
-1. 您可以在 "[费用中心](https://console.cloud.tencent.com/expense/overview) > 账单管理 > 账单明细 > 资源 ID 账单" 列表中， 在表格右上角处单击<img src="https://main.qcloudimg.com/raw/c861c752e9882ce5b8fbbb964b47b035.png"  style="margin:0;">，在弹窗中勾选 "扩展字段1"，单击【确认】保存即可。
+1. 您可以在 "[费用中心](https://console.cloud.tencent.com/expense) > 账单管理 > 账单明细 > 资源 ID 账单" 列表中， 在表格右上角处单击<img src="https://main.qcloudimg.com/raw/c861c752e9882ce5b8fbbb964b47b035.png"  style="margin:0;">，在弹窗中勾选 "扩展字段1"，单击【确认】保存即可。
 2. 用鼠标拖动表格下方的拖动条，将表格拉至最后，在**扩展字段1**列中，您可以看到计费时被合并的地区 "北京、广州、上海、成都"的说明。
 
 
