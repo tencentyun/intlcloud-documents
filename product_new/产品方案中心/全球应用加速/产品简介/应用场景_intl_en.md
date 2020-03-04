@@ -1,4 +1,4 @@
-## One server shared by game payers worldwide
+## One server shared by game players worldwide
 In general, many of our games are simultaneously accessible to players around the globe or across a large region, but this type of scenario may compromise game fairness and user experience due to network differences in various regions. The Global Application Acceleration Service allows multiple regions to use a unified domain name for access, allowing players in each region to access the nearest high-speed connections, enabling simultaneous acceleration of users worldwide or in the same region, directly improving user experience and ensuring game fairness.
 ![](https://main.qcloudimg.com/raw/cf6448bd4d04e225766baaa08af2f4d1.png)
 
