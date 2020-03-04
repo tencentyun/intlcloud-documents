@@ -31,5 +31,5 @@ VPC provides multiple connection modes, such as direct connect and VPN connectio
 ![](https://main.qcloudimg.com/raw/40bd0f4a3920409a0e08c15568551a5c.png)
 
 ### Global Multi-Point Interconnection
-When you have businesses deployed in multiple regions around the world and interconnection among regions is needed, you can use products or features such as [CCN](https://intl.cloud.tencent.com/document/product/1103) and [Direct Connect](https://intl.cloud.tencent.com/document/product/216) to enable global multi-point interconnection through single-point access.
+When you have businesses deployed in multiple regions around the world and interconnection among regions is needed, you can use products or features such as [CCN](https://intl.cloud.tencent.com/document/product/1003) and [Direct Connect](https://intl.cloud.tencent.com/document/product/216) to enable global multi-point interconnection through single-point access.
 ![](https://main.qcloudimg.com/raw/cdcded11e541ee50f4b050d48c251b43.png)
