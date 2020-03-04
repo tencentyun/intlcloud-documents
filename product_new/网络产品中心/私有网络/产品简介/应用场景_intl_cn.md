@@ -23,7 +23,7 @@
 
 ### 跨地域容灾
 您可以跨地域部署业务，例如两地三中心方案，以实现跨地域的容灾。
-![](https://main.qcloudimg.com/raw/0bb675a6c474ba0c6ca05b2298e7f0a2.png)
+![](https://main.qcloudimg.com/raw/89fa56523b51e4ad09d1ae238c74b1cb.png)
 
 ## 部署混合云
 ### 连接本地数据中心
