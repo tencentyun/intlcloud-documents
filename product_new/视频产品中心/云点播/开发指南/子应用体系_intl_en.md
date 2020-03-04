@@ -106,7 +106,7 @@ You are strongly recommended to use the SDK for upload.
 Upload from URL allows you to upload files to the specified subapplication.
 
 * Via the console: for more information, please see [Console Instructions](#p3).
-<!--API * Via Server API: use the [PullUpload](https://intl.cloud.tencent.com/document/product/266/35575) API. For more information, please see [Specifying a Subapplication in a Server API](#p2).-->
+API * Via Server API: use the [PullUpload](https://intl.cloud.tencent.com/document/product/266/34118) API. For more information, please see [Specifying a Subapplication in a Server API](#p2).
 
 ## Permission Management
 VOD has been connected to CAM and supports authorization at subapplication level. For more information, please see [Access Management](https://intl.cloud.tencent.com/document/product/266/33970).

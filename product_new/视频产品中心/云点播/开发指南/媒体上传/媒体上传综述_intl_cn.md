@@ -155,7 +155,7 @@
 </tr>
 <tr>
 <td>API 拉取上传</td>
-<td><a href="/document/product/266/35575">拉取上传接口 StorageRegion 参数</a> </td>
+<td><a href="/document/product/266/34118">拉取上传接口 StorageRegion 参数</a> </td>
 </tr>
 <tr>
 <td>直播录制</td>

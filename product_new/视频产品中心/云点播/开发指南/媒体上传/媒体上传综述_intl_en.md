@@ -155,7 +155,7 @@ A specified storage region is needed for media upload, which can be automaticall
 </tr>
 <tr>
 <td>Pull through API</td>
-<td><a href="/document/product/266/35575">`StorageRegion` parameter of the pull API</a> </td>
+<td><a href="/document/product/266/34118">`StorageRegion` parameter of the pull API</a> </td>
 </tr>
 <tr>
 <td>LVB recording</td>

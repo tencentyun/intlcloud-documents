@@ -106,7 +106,7 @@
 URL 拉取视频上传支持上传到指定的子应用。
 
 * 控制台方式：具体用法请参见 [控制台使用说明](#p3)。
-<!--api * 服务端 API 方式：使用 [PullUpload](https://intl.cloud.tencent.com/document/product/266/35575) 接口，具体用法请参见 [在服务端 API 中指定子应用](#p2)。-->
+<!--api * 服务端 API 方式：使用 [PullUpload](https://intl.cloud.tencent.com/document/product/266/34118) 接口，具体用法请参见 [在服务端 API 中指定子应用](#p2)。-->
 
 ## 权限管理
 云点播已接入访问管理 CAM，支持子应用维度的授权，详情请参见 [访问管理](https://intl.cloud.tencent.com/document/product/266/33970)。
