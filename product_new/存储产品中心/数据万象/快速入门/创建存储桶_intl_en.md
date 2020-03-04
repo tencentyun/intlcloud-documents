@@ -10,7 +10,7 @@ You can bind or create a bucket in CI Console and customize it after the creatio
 ### Notes
 ### Methods of adding a bucket
 There are two methods:
-a. Create: This creates a bucket. Since the storage of CI is based on COS, you can query the newly created bucket in [COS Console](https://console.cloud.tencent.com/cos4/index).
+a. Create: This creates a bucket. Since the storage of CI is based on COS, you can query the newly created bucket in [COS Console](https://console.cloud.tencent.com/cos5/index).
 b. Choose an existing COS bucket. By selecting this option, you actually activate the image processing service for a COS bucket.
 
 >You can bind up to 200 buckets across regions, but the numbers of directories and files in a bucket are unlimited.

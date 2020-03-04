@@ -23,7 +23,7 @@ COS의 모바일 SDK(Android/IOS)는 모두 임시 키를 통한 권한 요청�
 
 ### 버킷 생성
 
-[COS 콘솔](https://console.cloud.tencent.com/cos/bucket)에서 하나의 Bucket을 생성합니다. 자체의 수요에 따라 bucket 권한을 비공개 읽기/쓰기 권한 또는 공개 읽기 및 비공개 쓰기 권한으로 설정합니다.
+[COS 콘솔](https://console.cloud.tencent.com/cos5/bucket)에서 하나의 Bucket을 생성합니다. 자체의 수요에 따라 bucket 권한을 비공개 읽기/쓰기 권한 또는 공개 읽기 및 비공개 쓰기 권한으로 설정합니다.
 
 ### 영구 키 획득
 

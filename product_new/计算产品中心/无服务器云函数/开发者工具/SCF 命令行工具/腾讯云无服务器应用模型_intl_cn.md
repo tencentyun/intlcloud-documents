@@ -189,7 +189,7 @@ Events:
 					 Events: cos:ObjectCreated:*
 					 Enable: True
 ```
- Bucket name 及 bucket 字段的值可前往 [COS 控制台](https://console.cloud.tencent.com/cos/bucket) 查看。
+ Bucket name 及 bucket 字段的值可前往 [COS 控制台](https://console.cloud.tencent.com/cos5/bucket) 查看。
 
 <span id="tencentcloudserverlessapi"></span>
 ### API 网关

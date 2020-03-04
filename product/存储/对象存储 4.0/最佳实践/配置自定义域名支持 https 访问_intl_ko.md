@@ -54,7 +54,7 @@ proxy_set_header Host $http_host;
 ```
 #### Referer 핫 링크 보호 구성
 공유 버킷일 경우 링크가 도난될 위험이 있습니다. 사용자는 핫 링크 보호를 설정하고 Referer 화이트리스트를 시작하여 악의적인 링크 도난을 방지할 수 있습니다. 자세한 조작 절차는 아래와 같습니다.
-1. [COS 콘솔](https://console.cloud.tencent.com/cos4/index)에서 핫 링크 보호 설정 기능을 시작하고 화이트리스트를 선택합니다. 작업 가이드는 [핫 링크 보호 설정](/doc/product/436/6250)을 참조하십시오.
+1. [COS 콘솔](https://console.cloud.tencent.com/cos5/index)에서 핫 링크 보호 설정 기능을 시작하고 화이트리스트를 선택합니다. 작업 가이드는 [핫 링크 보호 설정](/doc/product/436/6250)을 참조하십시오.
 ![이미지2](//mc.qcloudimg.com/static/img/788556013c4d3ebd6b728d8c22a8adb5/image.png)
 2. Nginx 구성에 한 줄의 정보를 추가하고 Nginx를 다시 시작한 다음 브라우저 캐시를 새로고침하면 됩니다.
 ```
