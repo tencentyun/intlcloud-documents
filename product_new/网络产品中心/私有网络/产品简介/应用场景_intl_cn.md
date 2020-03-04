@@ -31,5 +31,5 @@
 ![](https://main.qcloudimg.com/raw/40bd0f4a3920409a0e08c15568551a5c.png)
 
 ### 全球多点互联
-当您在全球、全国多地域都部署有业务，且各个地域需要进行互联时，可以使用 [云联网](https://intl.cloud.tencent.com/document/product/1103)、[专线接入](https://intl.cloud.tencent.com/document/product/216) 等产品，通过单点接入，轻松实现全球多点互联。
+当您在全球、全国多地域都部署有业务，且各个地域需要进行互联时，可以使用 [云联网](https://intl.cloud.tencent.com/document/product/1003)、[专线接入](https://intl.cloud.tencent.com/document/product/216) 等产品，通过单点接入，轻松实现全球多点互联。
 ![](https://main.qcloudimg.com/raw/cdcded11e541ee50f4b050d48c251b43.png)
