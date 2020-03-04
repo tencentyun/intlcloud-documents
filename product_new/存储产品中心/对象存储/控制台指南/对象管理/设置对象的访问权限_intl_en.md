@@ -8,7 +8,7 @@ By setting object access permission, you can, for example, set the specific obje
 - Private read/write: When you access an object with the private read/write permission, the object can only be accessed after signature authentication regardless of the bucket permission.
 
 ## Directions
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos4/index) and select **Bucket List** on the left sidebar to enter the bucket list page. Click the bucket of the object for which you want to modify access permission (such as example) to enter the bucket.
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and select **Bucket List** on the left sidebar to enter the bucket list page. Click the bucket of the object for which you want to modify access permission (such as example) to enter the bucket.
 2. Locate the object for which you want to set permission (such as example.exe), click **More** > **Set Permission** on its right, and the **Set Permission** dialog box will pop up.
 ![Set object permission 1](https://main.qcloudimg.com/raw/a295c398bffe042cb320fd7fb12ce879.png)
 3. Modify the access permission and click **OK** to save the changes.
