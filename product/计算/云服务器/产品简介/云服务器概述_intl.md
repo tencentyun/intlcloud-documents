@@ -17,10 +17,6 @@ Glossary:
 - [Metadata](/doc/product/213/4934): Tag for identifying instance sources within the instances
 - [Console](https://console.cloud.tencent.com/): Web-based user interface
 
-
-If you're new to Tencent Cloud CVM, please refer to [Quick start for Windows CVM](/doc/product/213/2764) and [Quick start for Linux CVM](/doc/product/213/2936).
-
-
 ## Related Services
 
 - [Cloud Load Balance](/doc/product/214): may realize automatic distribution of request traffic from clients across multiple CVM instances. 
