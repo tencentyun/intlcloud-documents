@@ -1,4 +1,4 @@
-私有网络（Virtual Private Cloud，VPC）是一块您在腾讯云上自定义的逻辑隔离网络空间，与您在数据中心运行的传统网络相似，托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括 [云服务器](https://cloud.tencent.com/doc/product/213/495)、[负载均衡](https://cloud.tencent.com/doc/product/214/524)、[云数据库](https://cloud.tencent.com/doc/product/236) 等。
+私有网络（Virtual Private Cloud，VPC）是一块您在腾讯云上自定义的逻辑隔离网络空间，与您在数据中心运行的传统网络相似，托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括 [云服务器](https://intl.cloud.tencent.com/doc/product/213/495)、[负载均衡](https://intl.cloud.tencent.com/doc/product/214/524)、[云数据库](https://intl.cloud.tencent.com/doc/product/236) 等。
 
 本文将为您介绍私有网络的核心组成成分、私有网络的多种连接方式及安全性。
 ## 核心组成成分
@@ -15,10 +15,10 @@
 一个私有网络由至少一个子网组成，子网的 CIDR 必须在私有网络的 CIDR 内。
 子网用于管理弹性云服务器网络平面的一个网络，可以提供 IP 地址管理、DNS 等服务。私有网络中的所有云资源（如云服务器、云数据库等）都必须部署在子网内。
 
-私有网络具有 [地域（Region）](https://cloud.tencent.com/document/product/215/20057#.E5.9C.B0.E5.9F.9F.EF.BC.88region.EF.BC.89) 属性（如广州），而子网具有 [可用区（Zone）](https://cloud.tencent.com/document/product/215/20057#.E5.8F.AF.E7.94.A8.E5.8C.BA.EF.BC.88zone.EF.BC.89) 属性（如广州一区），一个私有网络下的子网可以属于该地域下不同可用区，同一私有网络下各个子网内资源无论是否在同一可用区内，均默认内网互通。
+私有网络具有 [地域（Region）](https://intl.cloud.tencent.com/document/product/215/31786#.E5.9C.B0.E5.9F.9F.EF.BC.88region.EF.BC.89) 属性（如广州），而子网具有 [可用区（Zone）](https://intl.cloud.tencent.com/document/product/215/31786#.E5.8F.AF.E7.94.A8.E5.8C.BA.EF.BC.88zone.EF.BC.89) 属性（如广州一区），一个私有网络下的子网可以属于该地域下不同可用区，同一私有网络下各个子网内资源无论是否在同一可用区内，均默认内网互通。
 
-不同私有网络的弹性云服务器可通过创建 [对等连接](https://cloud.tencent.com/document/product/553) 或 [云联网](https://cloud.tencent.com/document/product/877) 通信。
-![](https://main.qcloudimg.com/raw/9ab6da241dc050a0bb8f33f48859b1f1.png)
+不同私有网络的弹性云服务器可通过创建 [对等连接](https://intl.cloud.tencent.com/document/product/553) 或 [云联网](https://intl.cloud.tencent.com/document/product/1003) 通信。
+![](https://main.qcloudimg.com/raw/9fe1af6b2ee439449a6fefa64663215c.png)
 
 ### 路由表
 路由表由多条路由策略组成，用于控制私有网络内子网的出流量走向。每个子网仅且只能关联一个路由表，一个路由表可以关联多个子网。您可以为不同流量走向的子网创建多个路由表。
@@ -32,7 +32,7 @@
 ## 私有网络连接
 腾讯云为您提供丰富的解决方案，可以满足 VPC 内的云服务器、数据库等实例连接公网（Internet）、连接其他 VPC 内实例、或与本地数据中心（IDC）互联的需求。
 
-更多关于私有网络连接方式的介绍，请参见 [VPC 连接](https://cloud.tencent.com/document/product/215/37053)。
+更多关于私有网络连接方式的介绍，请参见 [VPC 连接](https://intl.cloud.tencent.com/document/product/215/34797)。
 
 ## 私有网络安全
 私有网络基于 OverLay 技术，在云上构建逻辑隔离的网络空间，不同租户、不同私有网络间网络相互隔离，保障您的业务安全。
@@ -40,4 +40,4 @@
 - 权限控制：私有网络支持通过 CAM 实现账户最小授权，为您提供精确到账号、实例、API 维度的权限控制功能。
 - 网络 ACL：网络 ACL 是一个子网级别的、无状态的包过滤虚拟防火墙，可以控制进出子网的数据流。
 
-更多私有网络安全性的介绍，请参见 [安全](https://cloud.tencent.com/document/product/215/20087)。
+更多私有网络安全性的介绍，请参见 [安全](https://intl.cloud.tencent.com/document/product/215/5132)。
