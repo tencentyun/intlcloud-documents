@@ -5,16 +5,16 @@ When creating a VPC, you need to select a region. When creating a subnet, you ne
 Tencent Cloud regions are named after the rule of **coverage range + city where the data center is located**, for example, South China (Guangzhou), East China (Shanghai), and Asia Pacific (Seoul). The coverage range indicates the coverage of the data center. The city indicates the city where the data center is located or the closest city. For the list of regions, see the [List of Tencent Cloud regions and availability zones] (#liebiao).
 **Region features:**
 - A VPC has the region attribute, and each VPC belongs to only one region.
-- Whether in the same region or different regions, different VPC instances are isolated from each other and cannot directly communicate through the private network. If communication between VPC instances is needed, you can use [CCN](https://cloud.tencent.com/document/product/877) or [peering connections] (https://cloud.tencent.com/document/product/553).
+- Whether in the same region or different regions, different VPC instances are isolated from each other and cannot directly communicate through the private network. If communication between VPC instances is needed, you can use [CCN](https://intl.cloud.tencent.com/document/product/1003) or [peering connections] (https://intl.cloud.tencent.com/document/product/553).
 
 ## Availability Zones
 Availability zones refer to Tencent Cloud’s physical data centers with power facilities and networks that are independent of each other within the same region. Each region has at least one availability zone. In the following example, four availability zones exist in the Guangzhou region.
 Establishing multiple availability zones in one region is a way to implement failure isolation between availability zones (with the exception of large-scale disasters or large-scale power outages) so that failures do not spread and users’ businesses are not interrupted.
-![](https://main.qcloudimg.com/raw/9b133e5ce7451e17f56c682753be38ac.png)
+![](https://main.qcloudimg.com/raw/d08b5c6929deea1470b5fddd217d880f.png)
 **Availability zone features:**
 - A subnet of a VPC is associated with an availability zone, and one VPC can concurrently host subnets in different availability zones (for example, the VPC in the Guangzhou region can host subnets in Zone 1, Zone 2, Zone 3, and Zone 4 of the Guangzhou region.)
 - Cloud products in the same region and same VPC can interconnect with each other even if they are in different availability zones. For example, subnets in different availability zones of the VPC in the Guangzhou region can directly interconnect with each other through the private network via private IP addresses.
-- Resources of different accounts are completely isolated from each other on private networks. You must establish [cross-account peering connections](https://cloud.tencent.com/document/product/553/18837) to achieve the interconnection of these resources.
+- Resources of different accounts are completely isolated from each other on private networks. You must establish cross-account peering connections to achieve the interconnection of these resources.
 
 ## Choosing Regions and Availability Zones
 When choosing regions and availability zones, you must take the following into consideration:
