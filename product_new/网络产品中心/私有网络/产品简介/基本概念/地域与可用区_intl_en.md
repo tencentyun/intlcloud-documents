@@ -5,7 +5,7 @@ When creating a VPC, you need to select a region. When creating a subnet, you ne
 Tencent Cloud regions are named after the rule of **coverage range + city where the data center is located**, for example, South China (Guangzhou), East China (Shanghai), and Asia Pacific (Seoul). The coverage range indicates the coverage of the data center. The city indicates the city where the data center is located or the closest city. For the list of regions, see the [List of Tencent Cloud regions and availability zones] (#liebiao).
 **Region features:**
 - A VPC has the region attribute, and each VPC belongs to only one region.
-- Whether in the same region or different regions, different VPC instances are isolated from each other and cannot directly communicate through the private network. If communication between VPC instances is needed, you can use [CCN](https://intl.cloud.tencent.com/document/product/1003) or [peering connections] (https://intl.cloud.tencent.com/document/product/553).
+- Whether in the same region or different regions, different VPC instances are isolated from each other and cannot directly communicate through the private network. If communication between VPC instances is needed, you can use [CCN](https://intl.cloud.tencent.com/document/product/1003) or [peering connections](https://intl.cloud.tencent.com/document/product/553).
 
 ## Availability Zones
 Availability zones refer to Tencent Cloud’s physical data centers with power facilities and networks that are independent of each other within the same region. Each region has at least one availability zone. In the following example, four availability zones exist in the Guangzhou region.
