@@ -23,7 +23,7 @@ A subnet is associated with a availability zone. You can create subnets in diffe
 
 ### Cross-Region Disaster Recovery
 You can deploy businesses across regions (for example, the 2-region-3-DC solution) to achieve cross-region disaster recovery.
-![](https://main.qcloudimg.com/raw/0bb675a6c474ba0c6ca05b2298e7f0a2.png)
+![](https://main.qcloudimg.com/raw/89fa56523b51e4ad09d1ae238c74b1cb.png)
 
 ## Deploying a Hybrid Cloud
 ### Connecting to Local IDCs
