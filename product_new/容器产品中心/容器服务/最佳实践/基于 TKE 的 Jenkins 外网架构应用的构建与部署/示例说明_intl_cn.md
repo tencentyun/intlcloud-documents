@@ -51,6 +51,6 @@ Jenkins 是连接持续集成和持续交付的桥梁，采用 Jenkins Master/Sl
 
 ## 操作流程
 按照以下步骤，先对 TKE 集群及 Jenkins 进行配置，再使用 slave pod 进行构建打包并推送镜像至 TKE 镜像仓库，最后通过 TKE 控制台使用拉取的镜像进行 Pod 部署。
-1.  [TKE 集群侧及 Jenkins 侧配置](https://cloud.tencent.com/document/product/457/41396) 
-2.  [Slave pod 构建配置](https://cloud.tencent.com/document/product/457/41397)
-3.  [构建测试](https://cloud.tencent.com/document/product/457/41398)
+1.  [TKE 集群侧及 Jenkins 侧配置](https://intl.cloud.tencent.com/document/product/457/34867) 
+2.  [Slave pod 构建配置](https://intl.cloud.tencent.com/document/product/457/34868)
+3.  [构建测试](https://intl.cloud.tencent.com/document/product/457/34869)
