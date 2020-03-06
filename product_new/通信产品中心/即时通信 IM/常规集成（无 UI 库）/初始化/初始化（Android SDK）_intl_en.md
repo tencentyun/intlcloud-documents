@@ -229,7 +229,7 @@ See the example in [User Configuration](#User Configuration).
 
 ### User state changes
 
-The IM SDK sends notifications for user state changes. You can monitor notifications for various changes by setting a listener for user state change notifications through `TIMUserConfig`. Currently, there are two types of notifications. For more information, see [Forcible User Offline Notifications](#.E7.94.A8.E6.88.B7.E8.A2.AB.E8.B8.A2.E4.B8.8B.E7.BA.BF.E9.80.9A.E7.9F.A5) and [User Ticket Expiration Notifications](#.E7.94.A8.E6.88.B7.E7.A5.A8.E6.8D.AE.E8.BF.87.E6.9C.9F.E9.80.9A.E7.9F.A5).
+The IM SDK sends notifications for user state changes. You can monitor notifications for various changes by setting a listener for user state change notifications through `TIMUserConfig`. Currently, there are two types of notifications. For more information, see [Forcible User Offline Notifications](#forcible-offline-notifications) and [User Ticket Expiration Notifications](#user-ticket-expiration-notifications).
 
 **Prototype:**
 
