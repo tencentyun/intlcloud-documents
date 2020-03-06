@@ -185,12 +185,12 @@
 | ------ | ------------------------------------------------------------ |
 | 70001 | UserSig expired. To correct it, generate a new UserSig. We recommend that the UserSig validity period is not less than 24 hours. |
 | 70002 | The length of UserSig is 0. To correct it, check whether the input UserSig is correct. |
-| 70003 | UserSig is invalid. To correct it, use the API provided by the official website to [generate a new UserSig](https://cloud.tencent.com/document/product/269/32688). |
-| 70005 | UserSig is invalid. To correct it, use the API provided by the official website to [generate a new UserSig](https://cloud.tencent.com/document/product/269/32688). |
-| 70009 | UserSig authentication failed. The reason may be that the private key or key of another SDKAppID was mistakenly used to generate the UserSig. To correct it, use the private key or key of the appropriate SDKAppID to [generate a new UserSig](https://cloud.tencent.com/document/product/269/32688). |
+| 70003 | UserSig is invalid. To correct it, use the API provided by the official website to [generate a new UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
+| 70005 | UserSig is invalid. To correct it, use the API provided by the official website to [generate a new UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
+| 70009 | UserSig authentication failed. The reason may be that the private key or key of another SDKAppID was mistakenly used to generate the UserSig. To correct it, use the private key or key of the appropriate SDKAppID to [generate a new UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 70013 | The UserID in the request and the UserID that was used to generate the UserSig do not match. To correct it, verify the UserSig on the **[Development Tools](https://console.cloud.tencent.com/im-detail/tool-usersig)** page of the IM console. |
 | 70014 | The SDKAppID in the request and the SDKAppID that was used to generate the UserSig do not match. To correct it, verify the UserSig on the **[Development Tools](https://console.cloud.tencent.com/im-detail/tool-usersig)** page of the IM console. |
-| 70016 | The public key does not exist and UserSig authentication failed. To correct it, [obtain a key](https://cloud.tencent.com/document/product/269/32578#.E8.8E.B7.E5.8F.96.E5.AF.86.E9.92.A5) in the IM console. |
+| 70016 | The public key does not exist and UserSig authentication failed. To correct it, [obtain a key](https://intl.cloud.tencent.com/document/product/1047/34419#.E8.8E.B7.E5.8F.96.E5.AF.86.E9.92.A5) in the IM console. |
 | 70020 | SDKAppID was not found. To correct it, check the app information in the IM console. |
 | 70050 | UserSig authentication attempts are too frequent. To correct it, check whether the UserSig is correct and try again one minute later. You can verify the UserSig on the **[Development Tools](https://console.cloud.tencent.com/im-detail/tool-usersig)** page of the IM console. |
 | 70051 | The account is blacklisted. |
@@ -202,7 +202,7 @@
 | 70206 | The batch quantity in the request is invalid. |
 | 70402 | A parameter is invalid. To correct it, check whether required fields are specified and the specified fields meet protocol requirements. |
 | 70403 | The request failed, and app admin permissions are required. |
-| 70398 | The number of accounts exceeds the limit. To create more than 100 accounts, upgrade your app to the professional edition. For details, see the [Purchase Guide](https://cloud.tencent.com/document/product/269/32458). |
+| 70398 | The number of accounts exceeds the limit. To create more than 100 accounts, upgrade your app to the professional edition. For details, see the [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/34351). |
 | 70500 | An internal server error occurred. To correct it, try again later. |
 | 71000 | Failed to delete the account. Only trial-edition accounts can be deleted. However, your app is of the professional edition, and therefore account deletion is not supported. |
 
@@ -216,12 +216,12 @@
 | 40004 | The request requires app admin permissions. |
 | 40005 | Profile fields contain sensitive words. |
 | 40006 | An internal server error occurred. To correct it, try again later. |
-| 40007 | You do not have the read permission for profile fields. For details, see [Profile Fields](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
-| 40008 | You do not have the write permission for profile fields. For details, see [Profile Fields](https://cloud.tencent.com/document/product/269/1500#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
+| 40007 | You do not have the read permission for profile fields. For details, see [Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
+| 40008 | You do not have the write permission for profile fields. For details, see [Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
 | 40009 | Tag for a profile field does not exist. |
 | 40601 | The length of a profile field’s Value exceeds 500 bytes. |
-| 40605 | The Value of a standard profile field is incorrect. For details, see [Standard Profile Fields](https://cloud.tencent.com/document/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
-| 40610 | Value types in profile fields do not match. For details, see [Standard Profile Fields](https://cloud.tencent.com/document/product/269/1500#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
+| 40605 | The Value of a standard profile field is incorrect. For details, see [Standard Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
+| 40610 | Value types in profile fields do not match. For details, see [Standard Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
 
 ### Error codes for the relationship chain
 
@@ -271,7 +271,7 @@
 | 20004 | A network exception occurred. To correct it, try again. |
 | 20005 | An internal server error occurred. To correct it, try again. |
 | 20006 | The callback before sending a one-to-one chat message was triggered, and the app backend returned a response that forbids the message to be delivered. |
-| 20007 | Failed to send the one-to-one chat message because the sender is in the recipient’s blacklist. <br>By default, the message delivery state is displayed as failed. To correct it, you can log in to the console to change the displayed message delivery state. For details, see [Message Retention Settings](https://cloud.tencent.com/document/product/269/38656). |
+| 20007 | Failed to send the one-to-one chat message because the sender is in the recipient’s blacklist. <br>By default, the message delivery state is displayed as failed. To correct it, you can log in to the console to change the displayed message delivery state. For details, see [Message Retention Settings](https://intl.cloud.tencent.com/document/product/1047/34419). |
 | 20009 | Failed to send the message because the sender and the recipient are not friends (this problem occurs only if friendship verification for one-to-one chat messages is enabled.) |
 | 20010 | Failed to send the one-to-one chat message because the sender is not a friend of the recipient (one-way relationship). |
 | 20011 | Failed to send the one-to-one chat message because the recipient is not a friend of the sender (one-way relationship). |
@@ -279,14 +279,14 @@
 | 20016 | Failed to recall the message because it has exceeded the recallable period (2 minutes by default). |
 | 20018 | An internal error occurred when deleting roaming messages. |
 | 90001 | Failed to parse the JSON request packet. To correct it, check whether the request packet meets JSON specifications. |
-| 90002 | The MsgBody in the JSON request packet does not meet message format requirements, or MsgBody is not set to the Array type. For more information, see the definition of the [TIMMsgElement Object](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
+| 90002 | The MsgBody in the JSON request packet does not meet message format requirements, or MsgBody is not set to the Array type. For more information, see the definition of the [TIMMsgElement Object](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
 | 90003 | The JSON request packet does not contain the To_Account field or To_Account does not exist. |
 | 90005 | The JSON request packet does not contain the MsgRandom field or MsgRandom is not of the Integer type. |
 | 90006 | The JSON request packet does not contain the MsgTimeStamp field or MsgTimeStamp is not of the Integer type. |
 | 90007 | The MsgBody in the JSON request packet is not set to the Array type. To correct it, change the type to Array. |
 | 90008 | The JSON request packet does not contain the From_Account field or From_Account does not exist. |
 | 90009 | The request requires app admin permissions. |
-| 90010 | The JSON request packet does not meet message format requirements. For more information, see the definition of the [TIMMsgElement Object](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
+| 90010 | The JSON request packet does not meet message format requirements. For more information, see the definition of the [TIMMsgElement Object](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
 | 90011 | The number of target accounts to which messages will be sent exceeds 500. To correct it, reduce the number of target accounts in To_Account. |
 | 90012 | To_Account is not registered or does not exist. To correct it, check whether To_Account has been imported into IM or is misspelled. |
 | 90026 | The retention period of offline messages is invalid. The period cannot exceed 7 days. |
@@ -335,9 +335,9 @@
 | 10033 | The group type does not support recalling. |
 | 10034 | The message type does not support deletion. |
 | 10035 | AVChatRoom and BChatRoom groups do not support message deletion. |
-| 10036 | The number of created AVChatRoom groups exceeded the limit. To correct it, see [Pricing](https://cloud.tencent.com/document/product/269/11673) and purchase the "IM AVChatRoom" prepaid package. |
-| 10037 | The maximum number of groups that can be created and joined by a single user was reached. To correct it, see [Pricing](https://cloud.tencent.com/document/product/269/11673) and purchase or upgrade the prepaid package "Number of groups that can be created and joined by a single user". |
-| 10038 | The maximum number of group members was reached. To correct it, see [Pricing](https://cloud.tencent.com/document/product/269/11673) and purchase or upgrade the prepaid package "Increase the maximum number of group members". |
+| 10036 | The number of created AVChatRoom groups exceeded the limit. To correct it, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) and purchase the "IM AVChatRoom" prepaid package. |
+| 10037 | The maximum number of groups that can be created and joined by a single user was reached. To correct it, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) and purchase or upgrade the prepaid package "Number of groups that can be created and joined by a single user". |
+| 10038 | The maximum number of group members was reached. To correct it, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) and purchase or upgrade the prepaid package "Increase the maximum number of group members". |
 | 10041 | This app (SDKAppID) was configured not to support group message recalling. |
 
 ## 3. Error Codes of IM SDK V3

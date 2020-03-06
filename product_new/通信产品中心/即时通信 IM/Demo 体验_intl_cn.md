@@ -15,4 +15,4 @@
 </table>
 
 
->您也可以通过 **一分钟跑通 Demo**了解更详细的信息。
+>您也可以通过 [一分钟跑通 Demo](https://intl.cloud.tencent.com/document/product/1047/34553)了解更详细的信息。

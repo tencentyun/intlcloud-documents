@@ -8,7 +8,7 @@
 
 
 ## 相关文档
-- 一分钟跑通 Demo
+- [一分钟跑通 Demo](https://intl.cloud.tencent.com/document/product/1047/34553)
 - [IM SDK（小程序） Demo 运行](https://github.com/tencentyun/TIMSDK/tree/master/WXMini)
 - [IM SDK（Web） Demo 运行](https://github.com/tencentyun/TIMSDK/tree/master/H5)
 
