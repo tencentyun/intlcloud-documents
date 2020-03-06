@@ -8,7 +8,7 @@ This document describes how to quickly integrate the Tencent Cloud IM SDK into y
 
 
 ## Related Documentation
-- [Quick Demo Operation](https://cloud.tencent.com/document/product/269/36838)
+- [Quick Demo Operation](https://intl.cloud.tencent.com/document/product/1047/34553)
 - [Running the IM SDK (Mini Program) Demo](https://github.com/tencentyun/TIMSDK/tree/master/WXMini)
 - [Running the IM SDK (Web) Demo](https://github.com/tencentyun/TIMSDK/tree/master/H5)
 
