@@ -276,10 +276,10 @@ The user will be forced to log out when logging in on another device. When this 
 
 The following diagram illustrates the mutual forcible offline process in online scenarios. The user logs in on device 1, stays online, and then logs in on device 2. At this point, the user is forced offline by device 1 and the `onForceOffline` callback is triggered. After receiving the callback result on device 1, the user is prompted to call `login` to go back online and force device 2 offline.
 
-![](https://main.qcloudimg.com/raw/5f4091568e3bae2b625112add7ae60fe.png)
+![](https://main.qcloudimg.com/raw/40551f5696d97d39d7a905d5c88f6261.png)
 
 The following diagram illustrates the mutual forcible offline process in offline scenarios. The user logs in on device 1 and kills the app process without calling `logout`. Then, the user logs in on device 2, but device 1 is unaware of this event because the app process has been killed. To explicitly alert the user and avoid imperceptible forcible offline, error code `ERR_IMSDK_KICKED_BY_OTHERS: 6208` is returned when the user tries to log in on device 1 again. This notifies the user of the forcible offline event and asks whether to force the other party offline. To force the other party offline, the user calls `login` again to forcibly go online, and the logged-in instance on device 2 receives the `onForceOffline` callback.
-![](https://main.qcloudimg.com/raw/4fb97b610d233d87c0057031f91cf683.png)
+![](https://main.qcloudimg.com/raw/44ffa44fad6cc2c2de8a791e610da480.png)
 
 ### User ticket expiration notifications
 
