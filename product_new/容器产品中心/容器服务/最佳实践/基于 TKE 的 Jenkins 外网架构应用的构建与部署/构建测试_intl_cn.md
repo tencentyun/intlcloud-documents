@@ -1,7 +1,7 @@
 此步骤介绍如何推送单个或多个镜像至 TKE 镜像仓库，并通过 TKE 控制台使用该镜像创建 Deployment。
 
 ### 构建配置<span id="buildConfiguration"></span>
-1. 登录 Jenkins 后台，单击任务列表中已在 [Slave pod 构建配置](https://cloud.tencent.com/document/product/457/41397) 步骤所创建的任务 test。如下图所示：
+1. 登录 Jenkins 后台，单击任务列表中已在 [Slave pod 构建配置](https://intl.cloud.tencent.com/document/product/457/34868) 步骤所创建的任务 test。如下图所示：
 ![](https://main.qcloudimg.com/raw/c510e8dccb3577df3b127f2752dbbd04.png)
 2. 单击左侧菜单栏中的【Build with Parameters】，打开“工程 test” 面板，进行以下参数设置。如下图所示：
 ![](https://main.qcloudimg.com/raw/db43db8e7254221474abb65f4b3b72e1.png)
@@ -30,8 +30,8 @@
 2. 在“系统配置”页，自定义修改“执行者数量”，本文以数量10为例。
 >执行者数量为10 ，则表示可以同时执行10个 Job。
 >
-3. 其他配置项保持[ 配置 slave pod 模板 ](https://cloud.tencent.com/document/product/457/41396#PodTemplates)步骤中所设置的内容。
-4. 参考[ Slave pod 构建配置 ](https://cloud.tencent.com/document/product/457/41397)步骤，根据实际需求依次新建10个 test。如下图所示：
+3. 其他配置项保持[ 配置 slave pod 模板 ](https://intl.cloud.tencent.com/document/product/457/34867#PodTemplates)步骤中所设置的内容。
+4. 参考[ Slave pod 构建配置 ](https://intl.cloud.tencent.com/document/product/457/34868)步骤，根据实际需求依次新建10个 test。如下图所示：
 ![](https://main.qcloudimg.com/raw/f4e63d7e897ceb84a68322104d6db571.png)
 5. 参考 [构建配置](#buildConfiguration) 步骤依次执行多个任务构建。
 6. 成功构建后，您可登录 node 节点，执行以下命令查看 job pod。
