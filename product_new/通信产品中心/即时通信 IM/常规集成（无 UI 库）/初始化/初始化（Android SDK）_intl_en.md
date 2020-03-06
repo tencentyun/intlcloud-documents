@@ -225,7 +225,7 @@ public TIMUserConfig setConnectionListener(TIMConnListener listener)
 
 **Example:**
 
-See the example in [User Configuration](#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE).
+See the example in [User Configuration](#User Configuration).
 
 ### User state changes
 
