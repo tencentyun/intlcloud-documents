@@ -4,13 +4,13 @@ No, TUIKit source code does not support Androidx currently.
 ### Why do I encounter error 6012 or the "TLSSDK exchange ticket fail" message upon login?
 
 - The initialization API and the login API must be called separately and cannot be called continuously (because asynchronous operations exist in the initialization method).
-- If you are using IM Trial Edition, you must upgrade to IM Pro Edition for intended login. You can purchase an upgrade package on the [IM purchase page](https://buy.cloud.tencent.com/avc). For more information on pricing, see [Pricing](https://cloud.tencent.com/document/product/269/11673).
+- If you are using IM Trial Edition, you must upgrade to IM Pro Edition for intended login. You can purchase an upgrade package on the [IM purchase page](https://buy.cloud.tencent.com/avc). For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 ### Why do I encounter error 6013 stating that the SDK has not been initialized?
 
 If error 6013 occurs, try the following troubleshooting options:
 1. Check whether you have performed other operations such as receiving and sending messages before logging in successfully.
-2. Check whether you have been forced offline on another device. By default, the IM SDK allows one account to log in on a single device. For information on how to handle this situation, see [Multi-Device Login](https://cloud.tencent.com/document/product/269/3665#.E5.A4.9A.E7.AB.AF.E7.99.BB.E5.BD.95).
+2. Check whether you have been forced offline on another device. By default, the IM SDK allows one account to log in on a single device. For information on how to handle this situation, see [Multi-Device Login](https://intl.cloud.tencent.com/document/product/1047/33518#.E5.A4.9A.E7.AB.AF.E7.99.BB.E5.BD.95).
 3. For Android, verify that all library files have been loaded or repossessed by the system during use.
 
 ### Why do I encounter error 6205 stating that "QALSERVICE not ready"?
@@ -50,7 +50,7 @@ This error code is returned when UserID is invalid or UserID has not been import
 
 ### Why do I encounter error 6010 when playing audio messages?
 
-This error code is returned when you request audio messages that are no longer available on the roaming server. To correct it, [increase the message roaming period](https://cloud.tencent.com/document/product/269/38656#.E5.8E.86.E5.8F.B2.E6.B6.88.E6.81.AF.E5.AD.98.E5.82.A8.E6.97.B6.E9.95.BF.E9.85.8D.E7.BD.AE) or download audio files to local storage and play them locally (expired files cannot be restored.) Different SDK versions allow you to increase the storage period for different message types. For more information, see [Message Storage](https://cloud.tencent.com/document/product/269/3571#MsgType).
+This error code is returned when you request audio messages that are no longer available on the roaming server. To correct it, [increase the message roaming period](https://intl.cloud.tencent.com/document/product/1047/34419#.E5.8E.86.E5.8F.B2.E6.B6.88.E6.81.AF.E5.AD.98.E5.82.A8.E6.97.B6.E9.95.BF.E9.85.8D.E7.BD.AE) or download audio files to local storage and play them locally (expired files cannot be restored.) Different SDK versions allow you to increase the storage period for different message types. For more information, see [Message Storage](https://intl.cloud.tencent.com/document/product/1047/33524#MsgType).
 
 ### What do the returned error codes 70001, 70003, 70009, and 70013 mean during account authentication?
 
