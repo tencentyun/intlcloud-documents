@@ -123,4 +123,4 @@ cat /etc/hosts
 8. 单击页面下方的【保存】，即可完成 slave pod 模板配置。
 
 ## 下一步操作
-请前往 [步骤2：Slave pod 构建配置](https://cloud.tencent.com/document/product/457/41397) 创建新任务及配置任务参数。
+请前往 [步骤2：Slave pod 构建配置](https://intl.cloud.tencent.com/document/product/457/34868) 创建新任务及配置任务参数。

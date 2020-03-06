@@ -4,9 +4,9 @@
 
 ## 为云函数编写代码
 
-用户需要使用 SCF 平台支持的语言编写云函数代码。编写代码时，可以任意选用代码编写工具如 SCF 控制台，本地编辑器或本地 IDE 等。需要注意的是，如果您的代码中引入了平台暂未引入的其他依赖库，则 **必须** 上传这些依赖库，平台提供的依赖库请参考 [执行环境](https://cloud.tencent.com/document/product/583/9694#.E6.89.A7.E8.A1.8C.E7.8E.AF.E5.A2.83.E5.92.8C.E5.8F.AF.E7.94.A8.E5.BA.93) 章节，上传代码请参考 [创建部署程序包](https://cloud.tencent.com/document/product/583/9702) 章节。
+用户需要使用 SCF 平台支持的语言编写云函数代码。编写代码时，可以任意选用代码编写工具如 SCF 控制台，本地编辑器或本地 IDE 等。需要注意的是，如果您的代码中引入了平台暂未引入的其他依赖库，则 **必须** 上传这些依赖库，平台提供的依赖库请参考 [执行环境](https://cloud.tencent.com/document/product/583/9694#.E6.89.A7.E8.A1.8C.E7.8E.AF.E5.A2.83.E5.92.8C.E5.8F.AF.E7.94.A8.E5.BA.93) 章节，上传代码请参考 [创建部署程序包](https://intl.cloud.tencent.com/document/product/583/32741) 章节。
 
-函数的开发语言目前已支持 Python、Node.js、PHP、JAVA，各语言的函数编写方法与特性，可参考 [开发语言说明](https://cloud.tencent.com/document/product/583/11060) 章节。
+函数的开发语言目前已支持 Python、Node.js、PHP、JAVA，各语言的函数编写方法与特性，可参考 [开发语言说明](https://intl.cloud.tencent.com/document/product/583/11060) 章节。
 
 同时，SCF 平台提供了一套函数编写的基本范式。例如，如何确定函数最先调用的方法、如何从参数中获取信息、如何输出日志、如何与当前运行环境交互等。具体的函数范式请参考 [编写处理方法](https://cloud.tencent.com/document/product/583/9210) 章节。
 
@@ -17,7 +17,7 @@
 
 - 当您的代码中使用的都是 Python 标准库和腾讯云提供的库（如各类云产品的 SDK）时，只需在控制台提供代码，SCF 平台会自动打包此代码文件并上传至 SCF 平台。
 
-- 如果您需要引入外部库，请按照 [创建部署程序包](https://cloud.tencent.com/document/product/583/9702) 中的特定方式组织您的代码和依赖项，打包并上传至 SCF 平台。
+- 如果您需要引入外部库，请按照 [创建部署程序包](https://intl.cloud.tencent.com/document/product/583/32741) 中的特定方式组织您的代码和依赖项，打包并上传至 SCF 平台。
 
 - 通过上传 zip 包创建函数时，还需注意打包方式和 “执行方法” 的填写：
 执行方法格式为`a.b`，其中：a 是 py 文件的名称，b 是代码中的方法名。如果用户上传的 zip 包在解压后，根目录下找不到名为 `a.py` 的文件，则会提示 “函数服务创建失败，请重试”，或者 “函数代码无法显示，代码 zip 包中找不到执行方法指定的文件名”。

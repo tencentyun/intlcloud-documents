@@ -7,7 +7,7 @@ You must follow the platform-specific programming model when writing the executi
 
 ## Function Input Parameters
 
-Function input parameters refer to the content that is passed to the function when the function is triggered. Usually, there are two input parameters: event and context. Depending on the programming language and environment, the number of input parameters may vary. For the specific differences in terms of input parameters for different languages, see [Notes on Programming Languages](https://cloud.tencent.com/document/product/583/11061).
+Function input parameters refer to the content that is passed to the function when the function is triggered. Usually, there are two input parameters: event and context. Depending on the programming language and environment, the number of input parameters may vary. For the specific differences in terms of input parameters for different languages, see [Notes on Programming Languages](https://intl.cloud.tencent.com/document/product/583/11061).
 > **Note:**
 > To ensure uniformity for each programming language and environment, `event` and `context`are uniformly encapsulated using the JSON data format.
 

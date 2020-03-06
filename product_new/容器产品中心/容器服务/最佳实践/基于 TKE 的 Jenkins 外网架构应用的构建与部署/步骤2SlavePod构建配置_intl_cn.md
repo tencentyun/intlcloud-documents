@@ -52,7 +52,7 @@
 2. 将以下脚本内容复制粘贴至“命令”输入框中，并单击【保存】。
 > 
 >- 脚本中 gitlab 地址、TKE 镜像地址、镜像仓库用户名及密码等信息为示例使用，请根据实际需求进行更换。
->- 请确保基于源代码 Docker build 构建打包处，工作目录 `/home/Jenkins/agent` 需与“容器列表”中的 [Container Template](https://cloud.tencent.com/document/product/457/41396#ContainerTemplate) 工作目录一致。
+>- 请确保基于源代码 Docker build 构建打包处，工作目录 `/home/Jenkins/agent` 需与“容器列表”中的 [Container Template](https://intl.cloud.tencent.com/document/product/457/34867#ContainerTemplate) 工作目录一致。
 >
 ```
 	echo " gitlab 地址为：https://gitlab.com/[user]/[project-name]].git" 
@@ -74,4 +74,4 @@
     - 将与代码合并构建后的 docker 镜像推送至 TKE 镜像仓库。
 
 ### 下一步操作
-至此您已成功构建 slave pod，请前往 [构建测试](https://cloud.tencent.com/document/product/457/41398) 进行推送镜像及验证操作。
+至此您已成功构建 slave pod，请前往 [构建测试](https://intl.cloud.tencent.com/document/product/457/34869) 进行推送镜像及验证操作。
