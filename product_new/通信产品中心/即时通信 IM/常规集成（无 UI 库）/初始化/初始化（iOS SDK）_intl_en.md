@@ -153,7 +153,7 @@ In most cases, users need to be notified of new messages. To this end, register 
 @end
 ```
 
-The content of messages that are called back is transferred through the `TIMMessage` parameter. With `TIMMessage`, you can obtain details about messages and conversations, such as message text, audio data, and images. The following example sets message callback notifications and directly prints messages upon their arrival. For more information, see [Message Parsing](/doc/product/269/9150#.E6.B6.88.E6.81.AF.E8.A7.A3.E6.9E.90).
+The content of messages that are called back is transferred through the `TIMMessage` parameter. With `TIMMessage`, you can obtain details about messages and conversations, such as message text, audio data, and images. The following example sets message callback notifications and directly prints messages upon their arrival. For more information, see [Message Parsing](https://intl.cloud.tencent.com/document/product/1047/34321#.E6.B6.88.E6.81.AF.E8.A7.A3.E6.9E.90).
 
 **Example:**
 
@@ -271,7 +271,7 @@ cfg.logFunc = ^(NSString* content) {
 
 ## User State Changes
 
-The SDK sends notifications for user state changes. You can listen to notifications for various changes by setting listeners for user state change notifications, which can be done by setting the `userStatusListener` attribute in `TIMUserConfig`. Currently, there are three kinds of notifications. For more information, see [User Forcible Logout Notifications](#.E7.94.A8.E6.88.B7.E8.A2.AB.E8.B8.A2.E4.B8.8B.E7.BA.BF.E9.80.9A.E7.9F.A5) and [User Ticket Expiration Notifications](#.E7.94.A8.E6.88.B7.E7.A5.A8.E6.8D.AE.E8.BF.87.E6.9C.9F.E9.80.9A.E7.9F.A5). In this case, users need to log in again to normally use the message, group, and friend features.
+The SDK sends notifications for user state changes. You can listen to notifications for various changes by setting listeners for user state change notifications, which can be done by setting the `userStatusListener` attribute in `TIMUserConfig`. Currently, there are three kinds of notifications. For more information, see [User Forcible Logout Notifications](#user-forcible-logout-notifications) and [User Ticket Expiration Notifications](#user-ticket-expiration-notifications). In this case, users need to log in again to normally use the message, group, and friend features.
 
 **Prototype:**
 ```
@@ -323,21 +323,21 @@ cfg.userStatusListener = impl;
 ```
 
 ### Forcible logout notifications
-The user will be forced logout when calling login to log in on another device. When this happens, the SDK sends a forcible logout notification. If you have set a user state change notification listener (see [User State Changes](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)), this situation will be handled in the listener’s callback method `onForceOffline`. The common practice is to prompt the user to log out or force the other party logout by calling login again.
+The user will be forced logout when calling login to log in on another device. When this happens, the SDK sends a forcible logout notification. If you have set a user state change notification listener (see [User State Changes](#user-state-changes)), this situation will be handled in the listener’s callback method `onForceOffline`. The common practice is to prompt the user to log out or force the other party logout by calling login again.
 
 > **Note:**
 > If the user is logged out when offline, the subsequent login by calling login will fail with a strong alert and a strong alert (login error code `ERR_IMSDK_KICKED_BY_OTHERS: 6208`) is displayed to the user. Developers can also choose to ignore this error and allow the user to log in again.
 
 The following diagram illustrates the **forcible logout process in online scenarios**. The user logs in on device 1 by calling login, stays online, and then logs in on device 2 by calling login. At this point, the user is forced logout on device 1 and receives the `onForceOffline` callback. After receiving the callback on device 1, the user is prompted to call `login` to go back online and force device 2 logout.
 
-![](https://main.qcloudimg.com/raw/aed1b1ab63d16431d0ef34cc16023387.png)
+![](https://main.qcloudimg.com/raw/40551f5696d97d39d7a905d5c88f6261.png)
 
 The following diagram illustrates the **forcible logout process in offline scenarios**. The user logs in on device 1 by calling login and the process exits without calling `logout`. The user then logs in on device 2 by calling login, but device 1 is unaware of this event because the user is not online. To explicitly alert the user and avoid imperceptible forcible logout, `ERR_IMSDK_KICKED_BY_OTHERS: 6208` is returned when the user tries to log in on device 1 again, notifying the user of the forcible logout event and asking whether to force the other party logout. To force the other party logout, the user calls `login` again to force a login, and the logged-in instance on device 2 receives the `onForceOffline` callback.
 
-![](https://main.qcloudimg.com/raw/552d6b22b3528a1d76935a4551cfb372.png)
+![](https://main.qcloudimg.com/raw/44ffa44fad6cc2c2de8a791e610da480.png)
 
 ### User ticket expiration notifications
-When the user logs in (see [Login](/doc/product/269/9149#1.-.E7.99.BB.E5.BD.951)), a user ticket needs to be provided, which will expire after a certain period of time. If the user ticket expires, the interaction between the SDK and the server fails and the SDK sends the user ticket expiration notification. If you have set a user state change notification listener (see [User State Changes](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B .B4)), the corresponding processing can be done in the listener's callback method `onUserSigExpired`. To continue to interact with the server, the user must refresh the ticket and log in again.
+When the user logs in (see [Login](https://intl.cloud.tencent.com/document/product/1047/34317)), a user ticket needs to be provided, which will expire after a certain period of time. If the user ticket expires, the interaction between the SDK and the server fails and the SDK sends the user ticket expiration notification. If you have set a user state change notification listener (see [User State Changes](#user-state-changes)), the corresponding processing can be done in the listener's callback method `onUserSigExpired`. To continue to interact with the server, the user must refresh the ticket and log in again.
 
 ## Setting the Log Level
 You can modify the internal log level of the IM SDK by configuring `TIMSdkConfig`. You can disable IM SDK log output by setting the log level to TIMLogLevel.OFF. We recommend that you leave it enabled to facilitate troubleshooting.
