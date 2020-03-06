@@ -4,7 +4,7 @@ No, TUIKit source code does not support Androidx currently.
 ### Why do I encounter error 6012 or the "TLSSDK exchange ticket fail" message upon login?
 
 - The initialization API and the login API must be called separately and cannot be called continuously (because asynchronous operations exist in the initialization method).
-- If you are using IM Trial Edition, you must upgrade to IM Pro Edition for intended login. You can purchase an upgrade package on the [IM purchase page](https://buy.cloud.tencent.com/avc). For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+- If you are using IM Trial Edition, you must upgrade to IM Pro Edition for intended login. You can configure your SDKAppID on your console. For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 ### Why do I encounter error 6013 stating that the SDK has not been initialized?
 
