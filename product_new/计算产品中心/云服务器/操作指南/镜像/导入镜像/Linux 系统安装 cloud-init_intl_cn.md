@@ -17,7 +17,7 @@ Cloud-init 主要提供实例首次初始化时自定义配置的能力。如果
 ### 手工下载 cloud-init 源码包方式
 
 #### 下载 cloud-init 源码包
->?  在正常安装的情况下，cloud-init-17.1 版本与腾讯云的兼容性最佳，可以保证使用该镜像创建的云服务器的所有配置项都可以正常初始化。建议选择 **cloud-init-17.1.tar.gz** 安装版本。您也可以 [点此获取](https://launchpad.net/cloud-init/+download) 其他版本的 cloud-init 源码包。本文以 cloud-init-17.1 版本为例。
+>  在正常安装的情况下，cloud-init-17.1 版本与腾讯云的兼容性最佳，可以保证使用该镜像创建的云服务器的所有配置项都可以正常初始化。建议选择 **cloud-init-17.1.tar.gz** 安装版本。您也可以 [点此获取](https://launchpad.net/cloud-init/+download) 其他版本的 cloud-init 源码包。本文以 cloud-init-17.1 版本为例。
 >
 执行以下命令，下载 cloud-init 源码包。
 ```
@@ -26,7 +26,7 @@ wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.g
 
 #### 安装 cloud-init
 1. 执行以下命令，解压 cloud-init 安装包。
->? 如果您使用的操作系统为 Ubuntu，请切换至 root 帐号。
+> 如果您使用的操作系统为 Ubuntu，请切换至 root 帐号。
 >
 ```
 tar -zxvf cloud-init-17.1.tar.gz 
@@ -45,7 +45,7 @@ yum install python-pip -y
 apt-get install python-pip -y
 ```
 4. 执行以下命令，安装依赖包。
->!  Cloud-init 依赖组件 requests 2.20.0版本后，已弃用 Python2.6。如果镜像环境的 Python 解释器为 Python2.6及以下，在安装 cloud-init 依赖包之前，请执行 `pip install 'requests<2.20.0'` 命令，安装 requests 2.20.0 版本以下的版本。
+>  Cloud-init 依赖组件 requests 2.20.0版本后，已弃用 Python2.6。如果镜像环境的 Python 解释器为 Python2.6及以下，在安装 cloud-init 依赖包之前，请执行 `pip install 'requests<2.20.0'` 命令，安装 requests 2.20.0 版本以下的版本。
 >
 ```
 pip install -r requirements.txt
@@ -69,7 +69,7 @@ apt-get install cloud-guest-utils -y
 python setup.py build
 python setup.py install --init-system systemd
 ```
->! --init-system 的可选参数有：(systemd, sysvinit,  sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart)  [default: None]。请根据当前操作系统使用的自启动服务管理方式，进行选择。若选择错误，cloud-init 服务会无法开机自启动。本文以 systemd 自启动服务管理为例。
+> --init-system 的可选参数有：(systemd, sysvinit,  sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse, upstart)  [default: None]。请根据当前操作系统使用的自启动服务管理方式，进行选择。若选择错误，cloud-init 服务会无法开机自启动。本文以 systemd 自启动服务管理为例。
 
 #### 修改 cloud-init 配置文件
 
@@ -175,7 +175,7 @@ chkconfig cloud-final on
 ```
 apt-get/yum install cloud-init
 ```
->? 通过 apt-get 或 yum 命令安装的 cloud-init 默认为当前操作系统配置的软件源中默认的 cloud-init 版本。使用该方式安装的镜像创建的实例可能会存在部分配置项初始化不符合预期的情况，建议使用 [手工下载 cloud-init 源码包方式](#ManualDown) 进行安装。
+> 通过 apt-get 或 yum 命令安装的 cloud-init 默认为当前操作系统配置的软件源中默认的 cloud-init 版本。使用该方式安装的镜像创建的实例可能会存在部分配置项初始化不符合预期的情况，建议使用 [手工下载 cloud-init 源码包方式](#ManualDown) 进行安装。
 >
 
 #### 修改 cloud-init 配置文件
@@ -185,7 +185,7 @@ apt-get/yum install cloud-init
 2. 将 `/etc/cloud/cloud.cfg` 的内容替换为已下载的 cloud.cfg 文件内容。
 
 ## 相关操作
->! 以下操作执行完成后，请勿重启服务器，否则需重新执行下以下操作。
+> 以下操作执行完成后，请勿重启服务器，否则需重新执行下以下操作。
 >
 1. 执行以下命令，检查 cloud-init 相关配置是否成功。
 ```
