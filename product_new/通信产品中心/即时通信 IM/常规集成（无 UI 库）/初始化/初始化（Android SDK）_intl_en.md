@@ -264,12 +264,12 @@ public interface TIMUserStatusListener {
 
 **Example:**
 
-See the example in [User Configuration](#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE).
+See the example in [User Configuration](#user-configuration).
 
 
 ### Forcible offline notifications
 
-The user will be forced to log out when logging in on another device. When this happens, the IM SDK sends a forcible offline notification. If a listener for user state change notifications has been set (see [User State Changes](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)), this will be handled in the listener’s callback method `onForceOffline`. The common practice to this situation is to prompt the user to log out or force the other party to log out.
+The user will be forced to log out when logging in on another device. When this happens, the IM SDK sends a forcible offline notification. If a listener for user state change notifications has been set (see [User State Changes](#user-state-changes)), this will be handled in the listener’s callback method `onForceOffline`. The common practice to this situation is to prompt the user to log out or force the other party to log out.
 
 
 >If the user is logged out when offline, the following login attempt fails and a critical alert (login error code ERR_IMSDK_KICKED_BY_OTHERS: 6208) is displayed to the user. Developers can also choose to ignore this error and allow the user to log in again.
@@ -283,7 +283,7 @@ The following diagram illustrates the mutual forcible offline process in offline
 
 ### User ticket expiration notifications
 
-When the user logs in (see [Login](https://intl.cloud.tencent.com/document/product/1047/34316#.E7.99.BB.E5.BD.951)), a user ticket needs to be provided, which expires after a certain period of time. If the user ticket expires, the interaction between the SDK and the server fails and the SDK sends the user ticket expiration notification. If the listener for user state change notifications has been set (see [User State Changes](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B .B4)), corresponding processing is performed in the listener's callback method `onUserSigExpired`. To continue to interact with the server, the user must refresh the ticket and log in again.
+When the user logs in (see [Login](https://intl.cloud.tencent.com/document/product/1047/34316#.E7.99.BB.E5.BD.951)), a user ticket needs to be provided, which expires after a certain period of time. If the user ticket expires, the interaction between the SDK and the server fails and the SDK sends the user ticket expiration notification. If the listener for user state change notifications has been set (see [User State Changes](#user-state-changes)), corresponding processing is performed in the listener's callback method `onUserSigExpired`. To continue to interact with the server, the user must refresh the ticket and log in again.
 
 
 ### Disabling storage
