@@ -54,7 +54,7 @@ proxy_set_header Host $http_host;
 ```
 #### referホットリンク保護の構成
 バケット（Bucket）が一般公開される場合、ホットリンクされるリスクがあります。ユーザーはホットリンク保護の設定により、Refererのホワイトリストを有効化し、悪意のあるホットリンクを防止できます。具体的な操作ステップは以下のとおりです：
-1. [COSコンソール](https://console.cloud.tencent.com/cos4/index) でホットリンク保護設定機能を有効化し、ホワイトリストを選択します。操作ガイドについては、[ホットリンク保護の設定](/doc/product/436/6250)を参照してください。
+1. [COSコンソール](https://console.cloud.tencent.com/cos5/index) でホットリンク保護設定機能を有効化し、ホワイトリストを選択します。操作ガイドについては、[ホットリンク保護の設定](/doc/product/436/6250)を参照してください。
 ![画像2](//mc.qcloudimg.com/static/img/788556013c4d3ebd6b728d8c22a8adb5/image.png)
 2. Nginx構成に1行の情報を追加し、Nginxを再起動し、ブラウザのキャッシュを更新します。
 ```

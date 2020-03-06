@@ -31,7 +31,7 @@
  1. [CVMコンソール](https://console.cloud.tencent.com/cvm/)にログインします。
  2. 左側ナビゲーションバー中の【[イメージ](https://console.cloud.tencent.com/cvm/image)】をクリックします。
  3. 【カスタマイズイメージ】を選択し、【イメージのインポート】をクリックします。
- 4. 操作インターフェースの要件に従って、まず [COSをアクティブ](https://console.cloud.tencent.com/cos4/index)し、 [ bucket バケットを作成](/doc/product/436/6232)して 、イメージファイルを bucketにアップロードしてから、 [イメージファイルのURLを取得](/doc/product/436/6260)します。
+ 4. 操作インターフェースの要件に従って、まず [COSをアクティブ](https://console.cloud.tencent.com/cos5/index)し、 [ bucket バケットを作成](/doc/product/436/6232)して 、イメージファイルを bucketにアップロードしてから、 [イメージファイルのURLを取得](/doc/product/436/6260)します。
  5.【次へ】をクリックします。
  6. 実際の状況に応じて、表に記入し、【インポート開始】をクリックします。
  > COSファイルのURLが正確であることを確認してください。
@@ -54,7 +54,7 @@
 #### InvalidUrl：COS リンク無効
 
 InvalidUrl エラーが発生し、エラーメッセージ：イメージをインポートする画面に間違い COSリンクを記入し、考えられる理由は次のとおりです。
-* 入力したリンクは[Tencent Cloud COS](https://console.cloud.tencent.com/cos4/index) のイメージリンクではありません。
+* 入力したリンクは[Tencent Cloud COS](https://console.cloud.tencent.com/cos5/index) のイメージリンクではありません。
 * COS ファイルのアクセス権限はプライベートリードであり、署名が無効になりました。
 > 署名付きのCOSファイルは一回しかアクセスできません。
 >

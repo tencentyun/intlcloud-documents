@@ -34,7 +34,7 @@ Once the App server successfully uploads files to COS, it needs to initiate a co
 
 Cloud VOD service provides SDKs of different language platforms to make it easier for users to develop their client upload features:
 
-* [PHP SDK](/document/product/266/9725)
+* [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916)
 * [Java SDK](/document/product/266/10276)
 
 Based on Cloud Image APIs and COS, the SDKs encapsulate detailed elements used for servers to interact with VOD and COS. You can simply call a single API in the SDK to complete everything in step 1 - step 3 in the upload process. Thus ***it is strongly recommended*** that users realize server upload features for their Apps while referring to the SDK provided by VOD service.

@@ -30,7 +30,7 @@
  1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/) 
  2. 单击左侧导航窗格中的【镜像】
  3. 单击【自定义镜像】，再单击【导入镜像】按钮
- 4. 按步骤要求，先 [开通对象存储 COS](https://console.cloud.tencent.com/cos4/index)，再 [创建 bucket 存储桶](/doc/product/436/6232) ，上传镜像文件到 bucket 并 [获取镜像文件 URL](/doc/product/436/6260) ，单击【下一步】
+ 4. 按步骤要求，先 [开通对象存储 COS](https://console.cloud.tencent.com/cos5/index)，再 [创建 bucket 存储桶](/doc/product/436/6232) ，上传镜像文件到 bucket 并 [获取镜像文件 URL](/doc/product/436/6260) ，单击【下一步】
  5. 按照实际情况，填写表单，将请确保录入的对象存储文件 URL 准确，单击【开始导入】
  6. 导入成功或失败，会以站内信的的形式通知
 
@@ -47,7 +47,7 @@
 
 #### InvalidUrl：COS 链接无效
 出现报错 InvalidUrl，错误提示：导入镜像页面输入了错误的 COS 链接，可能原因如下：
-* 输入了不是 [腾讯云对象存储](https://console.cloud.tencent.com/cos4/index) 的镜像链接。
+* 输入了不是 [腾讯云对象存储](https://console.cloud.tencent.com/cos5/index) 的镜像链接。
 
 * COS 文件的访问权限为私有读，但是签名已失效。
 **注意：**带有签名的 COS 文件链接仅能被访问一次。

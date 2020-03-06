@@ -15,7 +15,7 @@ Tencent Cloud COS는 핫 링크 보호 구성을 지원합니다. 콘솔의 핫 
 ![referer_1](//mc.qcloudimg.com/static/img/f000c8ee64ae569f08680c495ddb1b7b/image.png)
 ## 콘솔 설정 설명
 ### 설정 절차
-1. [COS 콘솔](https://console.cloud.tencent.com/cos4/index)에 로그인한 후 왼쪽 메뉴의 [Bucket 리스트]에 액세스하고 핫 링크 보호를 설정할 버킷을 선택한 다음 버킷에 들어갑니다.
+1. [COS 콘솔](https://console.cloud.tencent.com/cos5/index)에 로그인한 후 왼쪽 메뉴의 [Bucket 리스트]에 액세스하고 핫 링크 보호를 설정할 버킷을 선택한 다음 버킷에 들어갑니다.
 2. 버킷 세부 정보 페이지에서 [기본 구성]을 클릭하여 핫 링크 보호 설정을 찾은 후 [편집] 버튼을 클릭하여 편집 가능한 상태에 들어갑니다.
 ![핫 링크 보호 설정 1](//mc.qcloudimg.com/static/img/3d76b7e130d8917a41c4b2b7e8b1a730/image.png)
 3. 현재 상태가 시작임을 확인한 다음 리스트 유형(블랙리스트 또는 화이트리스트)을 선택하고 해당되는 도메인 이름을 설정하고 [저장]을 클릭하면 됩니다. 사용자는 핫 링크 보호 상태를 시작으로 설정한 다음 반드시 해당되는 도메인 이름을 입력해야 합니다.

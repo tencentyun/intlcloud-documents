@@ -31,7 +31,7 @@
  1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/)에 로그인하십시오.
  2. 왼쪽 사이드바의 [[미러 이미지](https://console.cloud.tencent.com/cvm/image)]를 클릭하십시오.
  3. [사용자 정의 이미지]를 선택하고 [미러 이미지 가져오기]를 클릭하십시오.
- 4. 작업 인터페이스 요구에 따라 먼저 [COS 활성화](https://console.cloud.tencent.com/cos4/index)를 한 뒤, [bucket 생성](/doc/product/436/6232)을 할 경우 미러 이미지 파일이 bucket에 업로드되며 [미러 이미지 파일 URL을 획득](/doc/product/436/6260)합니다.
+ 4. 작업 인터페이스 요구에 따라 먼저 [COS 활성화](https://console.cloud.tencent.com/cos5/index)를 한 뒤, [bucket 생성](/doc/product/436/6232)을 할 경우 미러 이미지 파일이 bucket에 업로드되며 [미러 이미지 파일 URL을 획득](/doc/product/436/6260)합니다.
  5. [다음 단계]를 클릭하십시오.
  6. 실제 상황에 따라 서식을 입력하고 [가져오기 시작]을 클릭하십시오.
  > 입력한 COS 파일 URL이 확실한지 확인하십시오.
@@ -54,7 +54,7 @@
 #### InvalidUrl: COS 링크 무효
 
 오류 보고 InvalidUrl의 오류 알림: 미러 이미지 가져오기 페이지에 잘못된 COS 링크를 입력했습니다. 예상되는 원인은 아래와 같습니다.
-* [Tencent Cloud COS](https://console.cloud.tencent.com/cos4/index)의 미러 이미지 링크가 아닌 것을 입력했습니다.
+* [Tencent Cloud COS](https://console.cloud.tencent.com/cos5/index)의 미러 이미지 링크가 아닌 것을 입력했습니다.
 * COS 파일의 액세스 권한이 사유 읽기이지만, 서명이 유효하지 않습니다.
 > 서명이 포함된 COS 파일 링크만 액세스될 수 있습니다.
 >

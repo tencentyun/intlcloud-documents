@@ -15,7 +15,7 @@
 ![referer_1](//mc.qcloudimg.com/static/img/f000c8ee64ae569f08680c495ddb1b7b/image.png)
 ## 控制台设置说明
 ### 设置步骤
-1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos4/index)，进入左侧菜单栏【Bucket 列表】，选择需要设置防盗链的存储桶，进入存储桶。 
+1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5/index)，进入左侧菜单栏【Bucket 列表】，选择需要设置防盗链的存储桶，进入存储桶。 
 2. 在存储桶详情页，单击【基础配置】，找到防盗链设置，单击【编辑】按钮进入可编辑状态。
 ![防盗链设置1](//mc.qcloudimg.com/static/img/3d76b7e130d8917a41c4b2b7e8b1a730/image.png)
 3. 确认当前状态为开启，选择名单类型（黑名单或白名单），设置好相应域名，设置完成单击【保存】即可。用户设置防盗链状态为开启后，必须填入相应的域名。

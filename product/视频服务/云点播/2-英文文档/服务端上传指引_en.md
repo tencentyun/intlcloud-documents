@@ -34,7 +34,7 @@ After the App backend uploads files to COS successfully, it needs to initiate a 
 
 Cloud VOD service provides SDKs of different language platforms to make it easier for users to develop their client upload features:
 
-* [PHP SDK](/document/product/266/9725)
+* [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916)
 * [Java SDK](/document/product/266/10276)
 
 Based on Cloud Image APIs and COS, the SDKs encapsulate elements of interactions between servers and VOD/COS. You can complete Step 1 through Step 3 of the upload process by simply calling a single API in the SDK. Therefore, it is ***highly recommended*** to reference the SDK provided by VOD into your App to achieve upload from server.
@@ -53,7 +53,7 @@ The video upload is divided into [Upload Application](/document/product/266/9756
 
 Cloud VOD service provides DEMOs based on SDKs of different language platforms to make it easier for users to develop their client upload features.
 
-* [PHP SDK](/document/product/266/9725)
+* [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916)
 * [Java SDK](/document/product/266/10276)
 
 **Notes:**
@@ -132,7 +132,7 @@ The video upload is divided into [Upload Application](/document/product/266/3176
 ### Initiating Upload with the VOD SDK for Uploading from Server
 Tencent Cloud VOD provides the Demos based on SDKs of different language platforms to make it easier for users to develop their upload features. See: 
 
-* [PHP SDK](/document/product/266/9725);
+* [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916);
 * [JAVA SDK](/document/product/266/10276).
 
 ### Initiating Upload with Server APIs
@@ -186,7 +186,7 @@ The value of parameter `procedure` can also be other VOD built-in task flows, or
 
 The videos uploaded from server are stored in Guangzhou by default, but VOD also supports other areas. You can submit a ticket to apply for other storage areas for storage. Then you can specify the area when uploading videos. See:
 
-* [PHP SDK](/document/product/266/9725);
+* [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916);
 * [JAVA SDK](/document/product/266/10276).
 
 

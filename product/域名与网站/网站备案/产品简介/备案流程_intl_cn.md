@@ -1,4 +1,4 @@
-您可登录 [腾讯云备案系统](https://console.cloud.tencent.com/beian) 填写及提交您的备案订单。 
+您可登录 腾讯云备案系统 填写及提交您的备案订单。 
 不同备案类型的备案流程略有区别，以下基本流程仅供参考：
 ![](https://main.qcloudimg.com/raw/c9050ecd8b05b0cb1071f5a2c7baa6b5.png)
 

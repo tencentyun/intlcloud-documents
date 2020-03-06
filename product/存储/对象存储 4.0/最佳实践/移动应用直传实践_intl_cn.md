@@ -17,7 +17,7 @@ COS 移动端 SDK（Android/IOS）均很好的支持了通过临时密钥来授�
 
 ## 前提条件
 1. 创建存储桶。
-在 [COS 控制台](https://console.cloud.tencent.com/cos/bucket) 上创建存储桶。按照您的需求，请将存储桶权限设置为私有读写或者公有读私有写。详细操作步骤请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309) 和 [设置访问权限](https://intl.cloud.tencent.com/document/product/436/13315) 。
+在 [COS 控制台](https://console.cloud.tencent.com/cos5/bucket) 上创建存储桶。按照您的需求，请将存储桶权限设置为私有读写或者公有读私有写。详细操作步骤请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309) 和 [设置访问权限](https://intl.cloud.tencent.com/document/product/436/13315) 。
 2. 获取永久密钥。
 临时密钥需要通过永久密钥生成。请前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 获取 SecretId、SecretKey，前往 [账号信息](https://console.cloud.tencent.com/developer) 获取 APPID。
   

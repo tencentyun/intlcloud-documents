@@ -4,7 +4,7 @@ CDN 加速适用于对存储桶中的对象进行下载、分发的场景，特�
 在控制台上进行简单配置即可对指定的存储桶开启 CDN 加速服务。开启 CDN 加速后，腾讯云会自动为该存储桶生成一个加速域名。使用加速域名访问可实现 CDN 加速。使用默认域名访问，即保持默认的访问方式。
 
 ### 设置 CDN 加速
-1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos4/index) ，进入左侧菜单栏【 Bucket 列表】，单击需要配置域名的存储桶（如 example），进入存储桶。
+1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5/index) ，进入左侧菜单栏【 Bucket 列表】，单击需要配置域名的存储桶（如 example），进入存储桶。
 ![域名管理1](//mc.qcloudimg.com/static/img/3153ef78fbad0c8e791f1d78d93023ce/image.png)
 2. 单击【域名管理】，进入域名管理页面，单击加速域名的【修改】按钮，进入可配置状态。
 3. 修改当前状态为开启，单击【保存】即可。
@@ -33,7 +33,7 @@ example-1234567890.file.myqcloud.com/test.txt
  
 ### 开启 CDN 加速
 #### 添加域名
-1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos4/index) ，进入左侧菜单栏【 Bucket 列表】，单击需要配置域名的存储桶（如 example），进入存储桶。
+1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5/index) ，进入左侧菜单栏【 Bucket 列表】，单击需要配置域名的存储桶（如 example），进入存储桶。
 ![域名管理1](//mc.qcloudimg.com/static/img/3153ef78fbad0c8e791f1d78d93023ce/image.png)
 2. 单击【域名管理】，进入域名管理页面，单击自定义域名下的【+ 添加域名】按钮，进入可配置状态。
 ![域名管理5](//mc.qcloudimg.com/static/img/de12443b88e07fe20613cf759a60966f/image.png)
@@ -55,7 +55,7 @@ example-1234567890.file.myqcloud.com/test.txt
 
 ### 关闭 CDN 加速
 #### 解析域名
-1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos4/index) ，进入左侧菜单栏【 Bucket 列表】，单击需要配置域名的存储桶（如 example），进入存储桶。
+1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5/index) ，进入左侧菜单栏【 Bucket 列表】，单击需要配置域名的存储桶（如 example），进入存储桶。
 ![域名管理1](//mc.qcloudimg.com/static/img/3153ef78fbad0c8e791f1d78d93023ce/image.png)
 <span id="步骤2"></span>
 2. 单击【域名管理】，复制存储桶的默认域名（[步骤 6](#步骤6) 需要用到）。
@@ -70,7 +70,7 @@ example-1234567890.file.myqcloud.com/test.txt
 ![域名管理13](//mc.qcloudimg.com/static/img/0ce1b0776398e43658d80d5d02481283/image.png)
 
 #### 添加域名
-1. 返回 [对象存储控制台](https://console.cloud.tencent.com/cos4/index) ，单击【域名管理】，进入域名管理页面，单击自定义域名下的【+ 添加域名】按钮，进入可配置状态。
+1. 返回 [对象存储控制台](https://console.cloud.tencent.com/cos5/index) ，单击【域名管理】，进入域名管理页面，单击自定义域名下的【+ 添加域名】按钮，进入可配置状态。
 ![域名管理5](//mc.qcloudimg.com/static/img/de12443b88e07fe20613cf759a60966f/image.png)
 2. 输入待绑定的自定义域名（如 www.example.com ），选择关闭 CDN 加速，单击【保存】即可完成自定义域名配置。
 ![域名管理14](//mc.qcloudimg.com/static/img/35c7da7a9cc0a82c062a84d32f0ed100/image.png)

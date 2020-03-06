@@ -23,7 +23,7 @@ COSモバイル端末のSDK（Android/IOS）は、一時暗号鍵によるライ
 
 ### bucketの作成
 
-[COSコンソール](https://console.cloud.tencent.com/cos/bucket)でバケットを作成します。ニーズに応じて、バケットの権限をプライベート読み書きまたはパブリック読み取り・プライベート書き込みに設定します。
+[COSコンソール](https://console.cloud.tencent.com/cos5/bucket)でバケットを作成します。ニーズに応じて、バケットの権限をプライベート読み書きまたはパブリック読み取り・プライベート書き込みに設定します。
 
 ### 永続暗号鍵の取得
 

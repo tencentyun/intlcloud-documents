@@ -32,7 +32,7 @@ You need to prepare an image file that meets the import limits in advance.
  1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/). 
  2. Click **Image** in the left navigation bar.
  3. Click **Custom Image**, and then click the **Import Image** button.
- 4. As instructed in the steps, you need to [**Enable Cloud Object Storage**](https://console.cloud.tencent.com/cos4/index), [**Create bucket**](/doc/product/436/6232), then **Upload the image file to the bucket and [get Image file URL](/doc/product/436/6260)**, and then click **Next**.
+ 4. As instructed in the steps, you need to [**Enable Cloud Object Storage**](https://console.cloud.tencent.com/cos5/index), [**Create bucket**](/doc/product/436/6232), then **Upload the image file to the bucket and [get Image file URL](/doc/product/436/6260)**, and then click **Next**.
  5. Fill in the form according to the actual situation. Be sure to enter the correct COS file URL, and then click **Import**.
  6. You will be notified whether the import is successful or failed via internal message.
 
