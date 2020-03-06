@@ -61,10 +61,10 @@ SCF 平台支持同步和异步两种调用方式来调用云函数。调用类�
 
 如果需要在代码中包含可执行的二进制文件、动态库或静态库，请都确保兼容此执行环境。
 基于不同语言环境，在 SCF 执行环境下有相关语言的基础库及安装的附加库，您可以在各个语言说明中查看环境中已安装的附加库：
-- [Python](https://cloud.tencent.com/document/product/583/11061)
-- [Node.js](https://cloud.tencent.com/document/product/583/11060)
+- [Python](https://intl.cloud.tencent.com/document/product/583/11061)
+- [Node.js](https://intl.cloud.tencent.com/document/product/583/11060)
 - [Golang](https://cloud.tencent.com/document/product/583/18032)
-- [PHP](https://cloud.tencent.com/document/product/583/17531)
+- [PHP](https://intl.cloud.tencent.com/document/product/583/17531)
 - [Java](https://cloud.tencent.com/document/product/583/12214)
 
 

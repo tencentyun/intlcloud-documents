@@ -5,7 +5,7 @@
 
 云函数的开发过程，主要包含以下流程：
 * [编写](https://cloud.tencent.com/document/product/583/9699)：根据业务需求编写代码。
-* [打包](https://cloud.tencent.com/document/product/583/9702)：将业务代码及依赖进行编译、打包，生成所需格式。
+* [打包](https://intl.cloud.tencent.com/document/product/583/32741)：将业务代码及依赖进行编译、打包，生成所需格式。
 * [部署](https://cloud.tencent.com/document/product/583/9207)：使用生成的打包内容，在云端创建函数或更新函数。
 * [测试](https://cloud.tencent.com/document/product/583/30397)：测试代码业务逻辑的正确性。
 * [运行](https://cloud.tencent.com/document/product/583/30398)：通过配置触发器或使用指定的触发方式、触发函数，运行实际业务。
@@ -15,9 +15,9 @@
 ## 开发语言
 
 随着开发语言的不同，代码的编写方式均有所不同。目前云函数支持以下开发语言：
-* [Python 2.7，Python 3.6](https://cloud.tencent.com/document/product/583/11061)
-* [Node.js 6.10，Node.js 8.9](https://cloud.tencent.com/document/product/583/11060)
-* [PHP 5.6，PHP 7.2](https://cloud.tencent.com/document/product/583/17531)
+* [Python 2.7，Python 3.6](https://intl.cloud.tencent.com/document/product/583/11061)
+* [Node.js 6.10，Node.js 8.9](https://intl.cloud.tencent.com/document/product/583/11060)
+* [PHP 5.6，PHP 7.2](https://intl.cloud.tencent.com/document/product/583/17531)
 * [Java 8](https://cloud.tencent.com/document/product/583/12214)
 * [Golang 1](https://cloud.tencent.com/document/product/583/18032)
 
