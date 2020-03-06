@@ -4,7 +4,7 @@ Other than your CVM model and VPC configuration, these factors also influence ho
 - Quantity
 
 ### Billing method
--**Pay as you go** is a flexible billing method for CVM instances. You can launch/terminate a CVM at any time and are billed by the actual usage of the CVM. You pay by the second and no up-front payment is required. A bill is generated every hour on the dot. This billing method is suitable for use cases such as an e-commerce flash sale where the demand for resources can fluctuate greatly.
+- **Pay as you go** is a flexible billing method for CVM instances. You can launch/terminate a CVM at any time and are billed by the actual usage of the CVM. You pay by the second and no up-front payment is required. A bill is generated every hour on the dot. This billing method is suitable for use cases such as an e-commerce flash sale where the demand for resources can fluctuate greatly.
 - **Spot Instance** is a new way to use and pay for CVM instances. Similar to Pay as you go, you pay for Spot Instances by the second, every hour. The price of Spot Instances fluctuates according to market demand. You get a sizable discount for them when the demand is low (usually 10 to 20%). However, they might be repossessed automatically by the system as the demand becomes high.
 
 ### Resources used
