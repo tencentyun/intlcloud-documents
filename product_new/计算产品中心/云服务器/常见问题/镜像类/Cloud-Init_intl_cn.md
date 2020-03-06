@@ -42,14 +42,15 @@ cloud-init modules --mode=final
 	<td>当您使用自定义镜像创建或重装实例时，您想保持自定义镜像内部自定义的 hostname 设置，可以在制作自定义镜像之前在 <code>/etc/cloud/cloud.cfg</code> 里面删除 <code>- scripts-user</code> 这行配置。</td>
 	<td>如果您禁用了 <code>- scripts-user</code> 这行配置，实例内部的 <code>/var/lib/cloud/instance/scripts/runcmd</code> 初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：云监控、云安全的安装、软件源的设置）。 同时，在您创建子机时，自定义脚本也不会被执行。</td>
 </tr>
+
 <tr>
 	<td>/etc/hosts 的初始化</td>
 	<td>实例<b>首次启动</b>时，Cloud-Init 会默认将 <code>/etc/hosts</code> 初始化为 <code>127.0.0.1 $hostname</code>。</td>
 	<td>当您使用自定义镜像创建或重装实例时，您想保持自定义镜像内部自定义的 /etc/hosts 设置，可以在制作自定义镜像之前在 <code>/etc/cloud/cloud.cfg</code> 里面删除 <code>- scripts-user</code> 这行配置。</td>
 	<td>
 		<ul style="margin: 0px;">
-			<li>如果您禁用了 <code>- scripts-user</code> 这行配置，实例内部的 <code>/var/lib/cloud/instance/scripts/runcmd</code> 初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：云监控、云安全的安装、软件源的设置）。同时，在您创建子机时，自定义脚本也不会被执行。。</li>
-			<li>每当子机重启时，部分存量机器 <code>/etc/hosts</code> 的设置都会被覆盖。解决方案请参见 <a href="https://cloud.tencent.com/document/product/213/34698">如何有效的修改 Linux 实例的 etc hosts 配置</a></li>
+			<li>如果您禁用了 <code>- scripts-user</code> 这行配置，实例内部的 <code>/var/lib/cloud/instance/scripts/runcmd</code> 初始化脚本将不会被执行，并会同时影响其他子项的初始化（主要涉及：云监控、云安全的安装、软件源的设置）。同时，在您创建子机时，自定义脚本也不会被执行。</li>
+			<li>每当子机重启时，部分存量机器 <code>/etc/hosts</code> 的设置都会被覆盖。解决方案请参见 <a href="https://intl.cloud.tencent.com/document/product/213/32504">如何有效的修改 Linux 实例的 etc hosts 配置</a>。</li>
 		</ul>
 	</td>
 </tr>
@@ -121,7 +122,7 @@ pkg_resources.DistributionNotFound: pyyaml
 安装 Cloud-Init 时，Python 解释默认使用 Python2（即 `/usr/bin/python` 与 `/bin/python` 这两个软连链向 Python2）。当用户业务有需要时，可能会在实例内部把 Python 的默认解释器改为 Python3（即修改 `/usr/bin/python` 与 `/bin/python` 这两个软连，使其指向 Python3）。由于兼容性问题，导致在开机启动执行 Cloud-Init 时报错。
 - 解决方案：
  1. 修改 `/usr/bin/cloud-init` 文件中指定的 Python 解释器，将 `#/usr/bin/python`或`#/bin/python` 修改为 `#! user/bin/python`。
->! 不要使用软连接，直接指向具体的解释器。
+> 不要使用软连接，直接指向具体的解释器。
 >
  2. 根据 [Cloud-Init 服务运行排查方案](#checkcloud-init) 执行操作，直至全部执行完无错误为止。
 
@@ -135,7 +136,7 @@ pkg_resources.DistributionNotFound: pyyaml
 <span id="checkcloudbase-init"></span>
 #### Cloudbase-Init 服务运行排查方案：
 1. 登录实例。
->? 若您忘记密码或因为 Cloudbase-Init 服务异常重置密码失败，可通过 [步骤 2](#step02) 进行密码重置。 
+> 若您忘记密码或因为 Cloudbase-Init 服务异常重置密码失败，可通过 [步骤 2](#step02) 进行密码重置。 
 >
 2. <span id="step02">打开**控制面板** > **管理工具** > **服务**。
 3. 找到 cloudbase-init 服务，并右键单击【属性】，打开 cloudbase-init 的属性窗口。</span>
