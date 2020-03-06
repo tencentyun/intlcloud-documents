@@ -40,13 +40,6 @@ unzip drupal-8.1.1.zip
 ```
 mv drupal-8.1.1/ drupal/
 ```
-3. Run the following commands to download the Chinese language pack for Drupal.
-```
-cd drupal/
-```
-```
-wget -P sites/default/files/translations https://ftp.drupal.org/files/translations/8.x/drupal/drupal-8.7.8.zh-hans.po
-```
 
 ### Step 4 Configuring Drupal 
 1. Run the following command to open the Apache configuration file.
