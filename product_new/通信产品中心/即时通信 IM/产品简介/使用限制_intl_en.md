@@ -17,7 +17,7 @@
                 100 requests/sec per app
             </td>
             <td>
-                The daily net increase cap is 10,000 per app. To increase the limit, <a href="https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1">submit a ticket</a> to apply. A single app can have up to 100 million groups, but you need to pay fees when the number exceeds 100,000. For more information on pricing, see <a href="https://cloud.tencent.com/document/product/269/11673">Pricing</a>.
+                The daily net increase cap is 10,000 per app. To increase the limit, <a href="https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1">submit a ticket</a> to apply. A single app can have up to 100 million groups, but you need to pay fees when the number exceeds 100,000. For more information on pricing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Pricing</a>.
             </td>
         </tr>
         <tr>
@@ -28,7 +28,7 @@
                 100 requests/sec per app
             </td>
             <td>
-                A maximum of 100 members can be added at a time. A single user can join up to 1,000 groups. For more information, see <a href="https://cloud.tencent.com/document/product/269/11673">Pricing</a>.
+                A maximum of 100 members can be added at a time. A single user can join up to 1,000 groups. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Pricing</a>.
             </td>
         </tr>
         <tr>
@@ -541,7 +541,7 @@
                 RESTful APIs
             </td>
             <td>
-                <li><a href="https://cloud.tencent.com/document/product/269/38417">Verify accounts</a>, <a href="https://cloud.tencent.com/document/product/269/36443">delete an account</a>, and <a href="https://cloud.tencent.com/document/product/269/1614">obtain all groups in an app</a>: 100 requests/sec</li><li>Other APIs: 200 requests/sec</li>
+                <li>Verify accounts, delete an account, and obtain all groups in an app: 100 requests/sec</li><li>Other APIs: 200 requests/sec</li>
             </td>
         </tr>
 </table>
@@ -629,7 +629,7 @@
                 Message roaming period
             </td>
             <td>
-                Currently, message roaming is only available to Private, Public, and ChatRoom groups, with messages retained for 7 days by default. If you need a longer retention period, change the message roaming period in the IM <a href="https://console.cloud.tencent.com/im">console</a>. Increasing the message roaming period is a value-added service. For more information on pricing, see <a href="https://cloud.tencent.com/document/product/269/11673">Pricing</a>.
+                Currently, message roaming is only available to Private, Public, and ChatRoom groups, with messages retained for 7 days by default. If you need a longer retention period, change the message roaming period in the IM <a href="https://console.cloud.tencent.com/im">console</a>. Increasing the message roaming period is a value-added service. For more information on pricing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Pricing</a>.
             </td>
         </tr>
         <tr>
