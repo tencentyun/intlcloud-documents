@@ -349,7 +349,7 @@ Optional Push API parameters are the optional advanced parameters except `audien
 |group_id     |string      |No                 |tpns_yyyymmdd, with yyyymmdd representing the push date        | Statistics tag, used for aggregated statistics|
 | tag_list      | object  | Only required by tag push          | None       | <li>Push to devices with tag1 and tag2:`{"tags":["tag1","tag2"],"op":"AND"}`<li>Push to devices with tag1 or tag2: `{"tags":["tag1","tag2"],"op":"OR"}` |
 | account_list  | array   | Only required by single-account push and account list push  | None       | For single-account push:<li>`audience_type must be account`<li>Parameter format:["account1"]<br>For account list push:<li>Parameter format:`["account1","account2"]`<li>Up to 1,000 accounts |
-| account_push_type  | int     | Optional for single-account push         | 0       |<li>0: push message to the latest device of the single account<li> 1: push message to all device associated with the single account|
+| account_push_type  | int     | Optional for account push         | 0       |<li>0: push message to the latest device of the account<li> 1: push message to all device associated with the account|
 | account_type  | int     | Optional for single-account push         | 0       | <li>Account type: see the account description below.<li>It must be the same as the account type set when the account is bound.   |
 | token_list    | array   | Required by single-device push and device list push  | None       | For single-device push:<li>audience_type must be token<li>Parameter format:["token1"]<br>For device list push:<li>Parameter format:["token1","token2"]<li>Up to 1,000 tokens |
 

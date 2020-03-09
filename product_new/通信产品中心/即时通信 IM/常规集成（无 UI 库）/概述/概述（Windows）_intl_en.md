@@ -21,12 +21,12 @@ json_value_init[kTIMSdkConfigDeviceInfo] = json_value_dev;
 TIMInit(sdk_app_id, json_value_init.toStyledString().c_str());
 ```
 
-You can obtain the SDKAppID after creating an app in the IM [console](https://console.cloud.tencent.com/im). For more information on initialization operations, see [Initialization](https://cloud.tencent.com/document/product/269/33546).
+You can obtain the SDKAppID after creating an app in the IM [console](https://console.cloud.tencent.com/im). For more information on initialization operations, see [Initialization](https://intl.cloud.tencent.com/document/product/1047/34388).
 
 
 ## Login/Logout
 ### Login
-- Users can normally send and receive messages only after they have logged in to the Tencent backend server. To log in to the Tencent backend server, a user needs to provide information including UserID and UserSig. For more information, see [Login Authentication](https://cloud.tencent.com/document/product/269/31999).
+- Users can normally send and receive messages only after they have logged in to the Tencent backend server. To log in to the Tencent backend server, a user needs to provide information including UserID and UserSig. For more information, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517).
 Login is an asynchronous process, and the result returned by the callback function indicates whether the login was successful. Users can proceed to subsequent operations only after successful login. When login succeeds or fails, the system will trigger the corresponding callback.
 
 **Example:**
@@ -49,11 +49,11 @@ TIMLogin(id, user_sig, [](int32_t code, const char* desc, const char* json_param
 
 **onForceOffline**
 
-If this user has been forced logout by another client, the login fails and returns the error code (`ERR_IMSDK_KICKED_BY_OTHERS: 6208`). If a user is forced logout, be sure to notify the user of this with a notification window such as an Alert window. For more information on forcible logout, see [User State Changes](https://cloud.tencent.com/document/product/269/33551#timsetkickedofflinecallback).
+If this user has been forced logout by another client, the login fails and returns the error code (`ERR_IMSDK_KICKED_BY_OTHERS: 6208`). If a user is forced logout, be sure to notify the user of this with a notification window such as an Alert window. For more information on forcible logout, see [User State Changes](https://intl.cloud.tencent.com/document/product/1047/34389#timsetkickedofflinecallback).
 
 
 **onUserSigExpired**
-Every UserSig has an expiration time. When a UserSig expires, `login` returns error code `70001`. If you receive this error code, request a new UserSig from your business server. For more information, see [User Ticket Expiration](https://cloud.tencent.com/document/product/269/33551#timsetusersigexpiredcallback).
+Every UserSig has an expiration time. When a UserSig expires, `login` returns error code `70001`. If you receive this error code, request a new UserSig from your business server. For more information, see [User Ticket Expiration](https://intl.cloud.tencent.com/document/product/1047/34389#timsetusersigexpiredcallback).
 
 
 ## Logout
@@ -74,7 +74,7 @@ TIMLogout([](int32_t code, const char* desc, const char* json_param, const void*
 ```
 
 > When you need to switch to another account, `login` can be called again only after the `logout` callback succeeds or fails. Otherwise, `login` may fail.
-For more information on login and logout operations, see [Login and Logout](https://cloud.tencent.com/document/product/269/33547).
+For more information on login and logout operations, see [Login and Logout](https://intl.cloud.tencent.com/document/product/1047/34390).
 
 ## Sending Messages
 
@@ -177,11 +177,11 @@ TIMSetRecvNewMsgCallback([](const char* json_msg_array, const void* user_data) {
 }, user_data);
 ```
 
-For more information on receiving and sending messages, see [Sending Messages](https://cloud.tencent.com/document/product/269/33549) and [Receiving Messages](https://cloud.tencent.com/document/product/269/33551#timaddrecvnewmsgcallback).
+For more information on receiving and sending messages, see [Sending Messages](https://intl.cloud.tencent.com/document/product/1047/34391) and [Receiving Messages](https://intl.cloud.tencent.com/document/product/1047/34389#timaddrecvnewmsgcallback).
 
 ## Group Management
 
-There are multiple group types in IM. For information on their characteristics and limits, see the [Group System](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). A group is identified by a unique ID, which allows for different operations. Group-related operations are implemented by `TIMGroupManager`, which can be used after login.
+There are multiple group types in IM. For information on their characteristics and limits, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). A group is identified by a unique ID, which allows for different operations. Group-related operations are implemented by `TIMGroupManager`, which can be used after login.
 
 | Type | Description |
 | --------------------------- | ----------------------------------------------------------- |
@@ -229,7 +229,7 @@ int ret = TIMGroupCreate(json_param.c_str(), [](int32_t code, const char* desc, 
 }, user_data))
 ```
 
-For more information on group operations, see [Group APIs](https://cloud.tencent.com/document/product/269/33550).
+For more information on group operations, see [Group APIs](https://intl.cloud.tencent.com/document/product/1047/34393).
 
 ### Group messages
-Group messages are similar to C2C (one-to-one chat) messages and require you to enter the group ID and group type `kTIMConv_Group` when the message is sent. For more information, see [Sending Messages](https://cloud.tencent.com/document/product/269/33549) in SDK documentation.
+Group messages are similar to C2C (one-to-one chat) messages and require you to enter the group ID and group type `kTIMConv_Group` when the message is sent. For more information, see [Sending Messages](https://intl.cloud.tencent.com/document/product/1047/34391) in SDK documentation.

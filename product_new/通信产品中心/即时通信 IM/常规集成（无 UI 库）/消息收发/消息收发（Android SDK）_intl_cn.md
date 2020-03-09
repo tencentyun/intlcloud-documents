@@ -1189,7 +1189,7 @@ public boolean isSelf()
 
 可以通过 `TIMMessage` 的方法 `getSender` 获取发送用户的 ID。
 **对于单聊消息**，可以通过 `TIMMessage` 的 `getConversation` 获取到对应会话，会话的 `getPeer` 即可得到正在聊天的用户及其相关资料。
-**对于群消息**，可以通过 `getSenderProfile` 和 `getSenderGroupMemberProfile` 获取发送者的资料和所在群的资料。如需拉取自定义字段，需在登录 IM SDK 之前 [设置拉取字段](https://cloud.tencent.com/document/product/269/9236) 。
+**对于群消息**，可以通过 `getSenderProfile` 和 `getSenderGroupMemberProfile` 获取发送者的资料和所在群的资料。如需拉取自定义字段，需在登录 IM SDK 之前 [设置拉取字段](https://intl.cloud.tencent.com/document/product/1047/34328) 。
  >此字段是消息发送时获取用户资料写入消息体，如后续用户资料更新，此字段不会相应变更，只有产生的新消息中才会带最新的昵称。
  >只有接收到的群消息才能获取到相应的资料。
 
@@ -1285,7 +1285,7 @@ public TIMMessagePriority getPriority()
 
 ### 已读回执
 
-IM SDK 提供**针对于 C2C 消息**的已读回执功能。通过 `TIMUserConfig` 中的 `enableReadReceipt` 接口可以启用消息已读回执功能。启用已读回执功能后，在进行 [消息已读上报](https://cloud.tencent.com/document/product/269/9226#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5) 时会发送已读回执给对方。
+IM SDK 提供**针对于 C2C 消息**的已读回执功能。通过 `TIMUserConfig` 中的 `enableReadReceipt` 接口可以启用消息已读回执功能。启用已读回执功能后，在进行 [消息已读上报](https://intl.cloud.tencent.com/document/product/1047/34324#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5) 时会发送已读回执给对方。
 
 通过 `TIMUserConfig` 的接口 `setMessageReceiptListener` 可以注册已读回执监听器。通过 `TIMMessage` 中的 `isPeerReaded` 可以查询当前消息对方是否已读。
 

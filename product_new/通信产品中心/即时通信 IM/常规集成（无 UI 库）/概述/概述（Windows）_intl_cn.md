@@ -49,7 +49,7 @@ TIMLogin(id, user_sig, [](int32_t code, const char* desc, const char* json_param
 
 **onForceOffline**
 
-如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`），如果用户被踢了，https://intl.cloud.tencent.com/document/product/1047/34389请务必用 Alert 等提示窗提示用户，关于被踢的详细描述，参阅 [用户状态变更](https://intl.cloud.tencent.com/document/product/1047/34389#timsetkickedofflinecallback)。
+如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`），如果用户被踢了，请务必用 Alert 等提示窗提示用户，关于被踢的详细描述，参阅 [用户状态变更](https://intl.cloud.tencent.com/document/product/1047/34389#timsetkickedofflinecallback)。
 
 
 **onUserSigExpired**
