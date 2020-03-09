@@ -128,7 +128,7 @@ public class videoCallMessageData {
 ## Step 5: Enter the Video Room
  The Chat/Meeting folder in the [demo](https://github.com/tencentyun/TIMSDK) contains the logic for entering or quitting video rooms, which can be copied to the current project.
 
-The following shows the sample code for entering a video room. 
+The following shows the sample code for entering a video room. For more information, see [TRTCParams configuration](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams). 
 
 ```
 - (void)_enterMeetingRoom {
