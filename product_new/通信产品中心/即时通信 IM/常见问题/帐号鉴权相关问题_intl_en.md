@@ -19,16 +19,16 @@ This indicates a typical mismatch between JVM and the dynamic library. To correc
 
 
 ### How can I generate UserSig?
-For details, see [Generating UserSig](https://cloud.tencent.com/document/product/269/32688).
+For details, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ### What is the validity period of UserSig?
 
-As an important credential for IM login authentication, UserSig has a default validity period of 180 days, which can only be modified through the native API. Other APIs and tools cannot modify the validity period. The validity period of UserSig can be set to a maximum of 50 years. We recommend that you set the validity period to 2 months for the security of your account. For more information, see [Generating UserSig](https://cloud.tencent.com/document/product/269/32688).
+As an important credential for IM login authentication, UserSig has a default validity period of 180 days, which can only be modified through the native API. Other APIs and tools cannot modify the validity period. The validity period of UserSig can be set to a maximum of 50 years. We recommend that you set the validity period to 2 months for the security of your account. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ### Can I delete an account?
 
-- Accounts in the **Professional Edition** cannot be deleted. To deactivate an account, you can call the [API for invalidating the account login state](https://cloud.tencent.com/document/product/269/3853) to invalidate the login state of the account owner.
-- Accounts in the **Trial Edition** can be deleted. You can call the [API for deleting accounts](https://cloud.tencent.com/document/product/269/36443) to delete accounts that are no longer needed. **Note that user data cannot be restored after accounts are deleted.**
+- Accounts in the **Professional Edition** cannot be deleted. To deactivate an account, you can call the **API for invalidating the account login state** to invalidate the login state of the account owner.
+- Accounts in the **Trial Edition** can be deleted. You can call the **API for deleting accounts** to delete accounts that are no longer needed. **Note that user data cannot be restored after accounts are deleted.**
 
 ### Why do I encounter error 70009 upon login?
 

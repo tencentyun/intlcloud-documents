@@ -8,7 +8,7 @@
 **Changes**
 - Increased the maximum size of files uploaded through [createFileMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFileMessage) from 20 MB to 100 MB.
 - About to deprecate the `msgMemberInfo` and `shutupTime` of [Group Tips](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload) and replace them with `memberList` and `muteTime`, respectively.
-- Added the entry to [IM Smart Customer Service](https://cloud.tencent.com/act/event/smarty-service?from=im-doc) in the console.
+- Added the entry to **IM Smart Customer Service** in the console.
 
 **Fixes**
 - Fixed the issue where calling the [off](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#off) API failed to cancel listening for events.
@@ -21,7 +21,7 @@
 
 ### Version 2.3.2 @2019.12.18
 **Changes**
-Supported [custom profile fields](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) by [getUserProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getUserProfile) and [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile).
+Supported [custom profile fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) by [getUserProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getUserProfile) and [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile).
 
 **Fixes**
 Fixed the issue where [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) lost combined messages.
@@ -36,7 +36,7 @@ Fixed the issue where [getMessageList](https://imsdk-1252463788.file.myqcloud.co
 - When a message fails to be sent, the SDK returns the actual error code and error message.
 - Calling [logout](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#logout) now only logs out from the message channel of the current instance.
 - The callback functions passed in by the access side are encapsulated for security purposes. If the logic of callback functions is incorrect, this error can be quickly detected and located.
-- The SDK outputs error messages in Chinese when [IM server-side error codes](https://cloud.tencent.com/document/product/269/1671#.EF.BC.88.E4.BA.8C.EF.BC.89.E6.9C.8D.E5.8A.A1.E7.AB.AF.E7.9A.84.E9.94.99.E8.AF.AF.E7.A0.81) appear.
+- The SDK outputs error messages in Chinese when [IM server-side error codes](https://intl.cloud.tencent.com/document/product/1047/34348#.EF.BC.88.E4.BA.8C.EF.BC.89.E6.9C.8D.E5.8A.A1.E7.AB.AF.E7.9A.84.E9.94.99.E8.AF.AF.E7.A0.81) appear.
 
 **Fixes**
 - Fixed occasional issues where messages were lost when WeChat Mini Program went to foreground after staying in the background for a long time.
@@ -103,7 +103,7 @@ Compatible with combined messages (messages that contain multiple message elemen
 
 ### Version 2.1.1 @2019.10.18
 **Additions**
-Supported [sending audio messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createAudioMessage) by mini programs. Audio messages are supported across platforms. To use this feature, update to the latest version of the [TUIKit and SDK](https://cloud.tencent.com/document/product/269/36887).
+Supported [sending audio messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createAudioMessage) by mini programs. Audio messages are supported across platforms. To use this feature, update to the latest version of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 
 **Fixes**
 Fixed the issue where, after joining the group again after quitting, [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) could still pull historical messages prior to quitting the group.
