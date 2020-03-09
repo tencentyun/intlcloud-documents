@@ -44,7 +44,7 @@ TIMConversation * grp_conversation = [[TIMManager sharedInstance] getConversatio
 
 #### Sending messages
 
-After getting a `TIMConversation` instance through `TIMManager`, you can send messages and get cached messages for the conversation. See [IM SDK Basic Concepts](https://cloud.tencent.com/document/product/269/9147) for an explanation of Message in the IM SDK. In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` can contain multiple `TIMElem` units, which can be text or images. This means a message can contain multiple text segments and images. Use the `sendMessage` method of `TIMConversation` to send messages through blocks or the `protocol` callback.
+After getting a `TIMConversation` instance through `TIMManager`, you can send messages and get cached messages for the conversation. See [IM SDK Basic Concepts](https://intl.cloud.tencent.com/document/product/1047/34302) for an explanation of Message in the IM SDK. In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` can contain multiple `TIMElem` units, which can be text or images. This means a message can contain multiple text segments and images. Use the `sendMessage` method of `TIMConversation` to send messages through blocks or the `protocol` callback.
 
 ![](https://main.qcloudimg.com/raw/6bf979993ac8490ce53f68256e05ef01.png)
 
@@ -80,7 +80,7 @@ A text message is defined by `TIMTextElem`.
 
 >
 >- "text" passes the text message to be sent.
->- In the failure callback, "code" indicates the error code (see [Error Codes](/doc/product/269/1671) for more information), and "err" indicates the error description.
+>- In the failure callback, "code" indicates the error code (see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348) for more information), and "err" indicates the error description.
 
 ```
 TIMTextElem * text_elem = [[TIMTextElem alloc] init];
@@ -897,7 +897,7 @@ uuid | Unique identifier for easy caching
 dataSize | Audio file size
 second | Audio length in seconds
 
-**The read state of the audio message:** whether the audio file has been played. Use [message custom fields](/doc/product/269/消息收发(iOS%20SDK)#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) to implement this feature. For example, for `customInt`, a value of 0 means not played and a value of 1 means played. In this case, set `customInt` to 1 after the user taps to play the audio file.
+**The read state of the audio message:** whether the audio file has been played. Use [message custom fields](https://intl.cloud.tencent.com/document/product/1047/34321) to implement this feature. For example, for `customInt`, a value of 0 means not played and a value of 1 means played. In this case, set `customInt` to 1 after the user taps to play the audio file.
 
 ```
 @interface TIMMessage : NSObject
@@ -1132,7 +1132,7 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
 
 ### Whether a message is read
 
-Determine whether a message is read through the message property `isReaded`. The read state depends on [read reports](/doc/product/269/未读消息计数(iOS%20SDK)#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5) from the app.
+Determine whether a message is read through the message property `isReaded`. The read state depends on [read reports](https://intl.cloud.tencent.com/document/product/1047/34325) from the app.
 
 ```
 @interface TIMMessage : NSObject
@@ -1742,7 +1742,7 @@ Starting with version 3.1.0, the IM SDK provides an API to recall messages. You 
 - (int)revokeMessage:(TIMMessage*)msg succ:(TIMSucc)succ fail:(TIMFail)fail;
 ```
 
-After a message is recalled, other members in the group or the peer in the C2C conversation receives a message recall notification. In addition, the message recall notification listener `TIMMessageRevokeListener` notifies the upper-layer app. You can configure the message recall notification listener before login through `messageRevokeListener` of `TIMUserConfig`. For more information, see [User Configuration](https://cloud.tencent.com/document/product/269/9148).
+After a message is recalled, other members in the group or the peer in the C2C conversation receives a message recall notification. In addition, the message recall notification listener `TIMMessageRevokeListener` notifies the upper-layer app. You can configure the message recall notification listener before login through `messageRevokeListener` of `TIMUserConfig`. For more information, see [User Configuration](https://intl.cloud.tencent.com/document/product/1047/34313).
 
 **Prototype:**
 
@@ -1780,8 +1780,8 @@ After receiving a message recall notification, you can use the `respondsToLocato
 
 In addition to C2C chat and group chat, system messages is also a conversation type (TIMConversationType). System messages are notification messages sent by the system backend for various events and cannot be sent by users. Currently, there are two kinds of system messages: relationship chain system messages and group system messages.
 
-- **Relationship chain change system messages:** when the user has a friend request or is deleted by a contact, the system sends a change notification and the developer can refresh the friend list. For more information, see [Relationship Chain Change System Notifications](/doc/product/269/用户资料与关系链(iOS%20SDK)#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5).
+- **Relationship chain change system messages:** when the user has a friend request or is deleted by a contact, the system sends a change notification and the developer can refresh the friend list. For more information, see [Relationship Chain Change System Notifications](https://intl.cloud.tencent.com/zh/document/product/1047/34332#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5).
 
-- **Group event messages:** when a group profile is modified, such as changes to the group name or group members, the system sends a group event message in the group. The developer can choose whether to display the message or not and can refresh the group profile or group members at the same time. For more information, see [Group Management - Group Event Messages](/doc/product/269/群组管理(iOS%20SDK)#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF).
+- **Group event messages:** when a group profile is modified, such as changes to the group name or group members, the system sends a group event message in the group. The developer can choose whether to display the message or not and can refresh the group profile or group members at the same time. For more information, see [Group Management - Group Event Messages](https://intl.cloud.tencent.com/document/product/1047/34329).
 
-- **Group system messages:** when the group owner is removed or non-members are invited to the group, the system sends a group system message to users. For more information, see [Group Management - Group System Messages](/doc/product/269/群组管理(iOS%20SDK)#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF).
+- **Group system messages:** when the group owner is removed or non-members are invited to the group, the system sends a group system message to users. For more information, see [Group Management - Group System Messages](https://intl.cloud.tencent.com/document/product/1047/34329).
