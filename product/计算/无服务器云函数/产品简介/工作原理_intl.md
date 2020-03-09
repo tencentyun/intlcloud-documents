@@ -60,10 +60,10 @@ The current SCF execution environment is built based on the following:
 
 If you need to include executable binaries, dynamic libraries, or static libraries in your code, make sure that they are compatible with this execution environment.
 Based on different language environments, there are base libraries and additional libraries installed for the corresponding language in the SCF execution environment. You can view the additional libraries installed in the environment in the descriptions of each language:
-- [Python](https://cloud.tencent.com/document/product/583/11061)
-- [Node.js](https://cloud.tencent.com/document/product/583/11060)
+- [Python](https://intl.cloud.tencent.com/document/product/583/11061)
+- [Node.js](https://intl.cloud.tencent.com/document/product/583/11060)
 - [Golang](https://cloud.tencent.com/document/product/583/18032)
-- [PHP](https://cloud.tencent.com/document/product/583/11060)
+- [PHP](https://intl.cloud.tencent.com/document/product/583/11060)
 - [JAVA](https://cloud.tencent.com/document/product/583/12214)
 
 

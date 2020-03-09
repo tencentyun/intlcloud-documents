@@ -1,6 +1,6 @@
 ### 本地运行正常，线上运行提示找不到某依赖怎么处理？
 通常是第三方依赖未打包上传至线上环境导致，您需要将函数依赖的第三方库放至函数目录下，跟随函数代码一起打包上传。
-- 部署函数教程请参见 [部署函数](<https://cloud.tencent.com/document/product/583/9702>)。
+- 部署函数教程请参见 [部署函数](<https://intl.cloud.tencent.com/document/product/583/32741>)。
 - Python 打包依赖可参考 [为Python云函数打包依赖](<https://cloud.tencent.com/developer/article/1443081>)。
 
 ### SCF 部署到 VPC 后，如何配置外网访问？

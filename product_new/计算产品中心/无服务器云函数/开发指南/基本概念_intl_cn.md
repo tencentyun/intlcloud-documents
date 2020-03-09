@@ -12,7 +12,7 @@ def method_name(event,context):
 
 ## 函数入参
 
-函数入参，是指函数在被触发调用时所传递给函数的内容。通常情况下，函数入参包括 **event 入参**和 **context 入参**两部分，但根据开发语言和环境的不同，入参个数可能有所不同，详情请参见 [开发语言说明](https://cloud.tencent.com/document/product/583/11061)。
+函数入参，是指函数在被触发调用时所传递给函数的内容。通常情况下，函数入参包括 **event 入参**和 **context 入参**两部分，但根据开发语言和环境的不同，入参个数可能有所不同，详情请参见 [开发语言说明](https://intl.cloud.tencent.com/document/product/583/11061)。
 <table>
 	<tr>
 		<th style=“width： 12%;”>入参类型</th>

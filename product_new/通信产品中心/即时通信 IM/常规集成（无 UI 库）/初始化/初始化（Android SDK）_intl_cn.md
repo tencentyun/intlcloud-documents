@@ -275,8 +275,10 @@ public interface TIMUserStatusListener {
 >用户如果在离线状态下被踢，下次登录将会失败，可以给用户一个非常强的提醒（登录错误码 ERR_IMSDK_KICKED_BY_OTHERS：6208），开发者也可以选择忽略这次错误，再次登录即可。
 
 用户在线情况下的互踢情况如下图所示。用户在设备 1 登录，保持在线状态下，该用户又在设备 2 登录，这时用户会在设备 1 上强制下线，收到 `onForceOffline` 回调。用户在设备 1 上收到回调后，提示用户，可继续调用 `login` 上线，强制设备 2 下线。这里是在线情况下互踢过程。
+![](https://main.qcloudimg.com/raw/40551f5696d97d39d7a905d5c88f6261.png)
 
 用户离线状态互踢如下图所示。用户在设备 1 登录，没有进行 `logout` 情况下杀掉应用进程。该用户在设备 2 登录，此时由于应用进程已不在了，设备 1 无法感知此事件，为了显式提醒用户，避免无感知的互踢，用户重新在设备 1 登录时，会返回（`ERR_IMSDK_KICKED_BY_OTHERS：6208`）错误码，表明之前被踢，是否需要把对方踢下线。如果需要，则再次调用`login`强制上线，设备2的登录的实例将会收到 `onForceOffline` 回调。
+![](https://main.qcloudimg.com/raw/44ffa44fad6cc2c2de8a791e610da480.png)
 
 ### 用户票据过期通知
 

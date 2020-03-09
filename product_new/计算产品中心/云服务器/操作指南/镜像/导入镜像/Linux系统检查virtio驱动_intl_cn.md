@@ -12,7 +12,7 @@ grep -i virtio /boot/config-$(uname -r)
 返回类似如下结果：
 ![](https://main.qcloudimg.com/raw/8c32c3dd554700a0c17ff0c7e5675090.png)
  - 如果返回结果中`CONFIG_VIRTIO_BLK` 参数和`CONFIG_VIRTIO_NET` 参数取值为 `m`，请执行 [步骤2](#CheckVirtioForInitramfs)。
- - 如果在返回结果中`CONFIG_VIRTIO_BLK` 参数和`CONFIG_VIRTIO_NET` 参数取值为 `y`，表示该操作系统包含了 Virtio 驱动，您可以直接导入自定义的镜像到腾讯云。操作详情请参见 [导入镜像概述](https://cloud.tencent.com/document/product/213/4945)。
+ - 如果在返回结果中`CONFIG_VIRTIO_BLK` 参数和`CONFIG_VIRTIO_NET` 参数取值为 `y`，表示该操作系统包含了 Virtio 驱动，您可以直接导入自定义的镜像到腾讯云。操作详情请参见 [导入镜像概述](https://intl.cloud.tencent.com/document/product/213/4945)。
  - 如果在返回结果中没有`CONFIG_VIRTIO_BLK` 参数和`CONFIG_VIRTIO_NET` 参数的信息，表示该操作系统**不支持**导入腾讯云，请 [下载和编译内核](#DownloadCompileKernel)。
 
 <span id="CheckVirtioForInitramfs"></span>
@@ -35,7 +35,7 @@ lsinitramfs /boot/initrd.img-$(uname -r) | grep virtio
 
 返回类似如下结果：
 <img src="https://main.qcloudimg.com/raw/a5e22f75f48ce26a6b03f65588a52877.png" />
-可得知，<code>initramfs</code> 已经包含了 <code>virtio_blk</code> 驱动，以及其所依赖的 <code>virtio.ko</code>、<code>virtio_pci.ko</code> 和 <code>virtio_ring.ko</code>，您可以直接导入自定义的镜像到腾讯云。操作详情请参见 <a href="https://cloud.tencent.com/document/product/213/4945">导入镜像概述</a>。
+可得知，<code>initramfs</code> 已经包含了 <code>virtio_blk</code> 驱动，以及其所依赖的 <code>virtio.ko</code>、<code>virtio_pci.ko</code> 和 <code>virtio_ring.ko</code>，您可以直接导入自定义的镜像到腾讯云。操作详情请参见 <a href="https://intl.cloud.tencent.com/document/product/213/4945">导入镜像概述</a>。
 如果 <code>initramfs</code> 或者 <code>initrd</code> 没有包含 <code>virtio</code> 驱动，请执行 [步骤3](#ReconfigureInitramfs)。
 
 <span id="ReconfigureInitramfs"></span>
@@ -107,7 +107,7 @@ make menuconfig
 ```
 进入 “Linux Kernel vX.X.XX Configuration” 界面。如下图所示：
 ![](https://main.qcloudimg.com/raw/72c3bea10627aaef022f1a72b72ac79a.png)
->? 如果没有进入 “Linux Kernel vX.X.XX Configuration” 界面，请执行 [步骤18](#OptionalStep)。
+> 如果没有进入 “Linux Kernel vX.X.XX Configuration” 界面，请执行 [步骤18](#OptionalStep)。
 > “Linux Kernel vX.X.XX Configuration” 界面：
 > - 按 “Tab” 或 “↑” “↓” 方向键移动光标。
 > - 按 “Enter” 选择或执行光标所选项目。
@@ -138,7 +138,7 @@ make menuconfig
 16. 按 “Esc” 退出内核配置界面，并根据弹窗提示，选择 “YES”，保存 `.config` 文件。
 17. 参考 [步骤1：检查内核是否支持 Virtio 驱动](#CheckVirtioForKernel)，验证 Virtio 驱动是否已经正确配置。
 18. <span id="OptionalStep"></span>（可选）执行以下命令，手动编辑 `.config` 文件。
->? 如果您符合如下任一条件，建议执行此操作：
+> 如果您符合如下任一条件，建议执行此操作：
 > - 若检查后发现，内核仍无 Virtio 驱动的相关配置信息。
 > - 编译内核时，无法进入内核配置界面或者未成功保存 `.config` 文件。
 > 

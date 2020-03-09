@@ -4,9 +4,9 @@ The lifecycle of an SCF-based application typically involves writing code, creat
 
 ## Writing Code for SCF
 
-You need to write function code in a language supported by the SCF platform. When writing code, you can choose any code writing tool such as SCF console, local editor or local IDE. It should be noted that if your code references other dependent libraries that have not been referenced by the platform, you **must** upload these dependent libraries. For more information about the dependent libraries provided by the platform, see [Runtime environment](https://cloud.tencent.com/document/product/583/9694#.E6.89.A7.E8.A1.8C.E7.8E.AF.E5.A2.83.E5.92.8C.E5.8F.AF.E7.94.A8.E5.BA.93). For more information about how to upload the code, see [Creating a Deployment Package](https://cloud.tencent.com/document/product/583/9702).
+You need to write function code in a language supported by the SCF platform. When writing code, you can choose any code writing tool such as SCF console, local editor or local IDE. It should be noted that if your code references other dependent libraries that have not been referenced by the platform, you **must** upload these dependent libraries. For more information about the dependent libraries provided by the platform, see [Runtime environment](https://cloud.tencent.com/document/product/583/9694#.E6.89.A7.E8.A1.8C.E7.8E.AF.E5.A2.83.E5.92.8C.E5.8F.AF.E7.94.A8.E5.BA.93). For more information about how to upload the code, see [Creating a Deployment Package](https://intl.cloud.tencent.com/document/product/583/32741).
 
-Currently, supported programming languages include Python, Node.js, PHP, and JAVA. For the code writing methods and features in each language, see [Notes on Programming Languages](https://cloud.tencent.com/document/product/583/11060).
+Currently, supported programming languages include Python, Node.js, PHP, and JAVA. For the code writing methods and features in each language, see [Notes on Programming Languages](https://intl.cloud.tencent.com/document/product/583/11060).
 
 In addition, the SCF platform provides a set of basic paradigms for function writing about how to determine the initial calling method of the function, how to get information from the parameters, how to output the log, and how to interact with the current runtime environment, among others. For the specific function paradigms, see [Writing and Handling Methods](https://cloud.tencent.com/document/product/583/9210).
 
@@ -17,7 +17,7 @@ You need to provide code or deployment package:
 
 - If all the libraries used in your code are standard Python libraries or libraries provided by Tencent Cloud (such as SDKs for various cloud products), you only need to provide the code in the console, and the SCF platform will automatically package the code file and upload it.
 
-- If you need to reference an external library, please organize your code and dependencies in the way specified in [Creating a Deployment Package](https://cloud.tencent.com/document/product/583/9702), package them and upload to the SCF platform.
+- If you need to reference an external library, please organize your code and dependencies in the way specified in [Creating a Deployment Package](https://intl.cloud.tencent.com/document/product/583/32741), package them and upload to the SCF platform.
 
 - When creating a function by uploading a zip package, you should also pay attention to the packaging method and "execution method":
 The execution method is in `a.b` format, where a is the name of the .py file, and b is the name of the method in the code. If a file named `a.py` cannot be found in the root directory of the unzipped folder, the system will prompt that "Failed to create the function. Please retry" or "The function code cannot be displayed as the file specified by the execution method cannot be found in the zip package of the code".
