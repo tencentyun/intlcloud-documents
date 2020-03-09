@@ -3,8 +3,8 @@
 Users can normally send and receive messages only after they have logged in to the Tencent backend server. To log in to the Tencent backend server, a user needs to provide `UserID` and `UserSig`. If users have saved user tickets, these tickets may expire. If their user tickets expire, `login` returns the error code `6206`. In this case, developers can change the ticket based on the error code. Login is an asynchronous process, and the result returned by the callback function indicates whether the login was successful. Users can proceed to subsequent operations only after successful login. The `succ` and `fail` blocks are used for the callback upon successful or failed login, respectively.
 
 >
->- If the user is forced logout on another terminal, the login attempt fails, and the error code (`ERR_IMSDK_KICKED_BY_OTHERS: 6208`) is returned. In this case, developers must analyze the cause to the login error code `ERR_IMSDK_KICKED_BY_OTHERS`. For details on forcible logout, see [User State Changes](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4).
->- After successful login, as long as users do not log out or are not forced logout and automatic network reconnection upon connectivity change is supported, developers need not be concerned. However, they should pay special attention to situations where users are forced logout. Therefore, the [callback for a user state change](https://cloud.tencent.com/document/product/269/9148#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4) must be registered, otherwise no notification can be received when forcible logout occurs.
+>- If the user is forced logout on another terminal, the login attempt fails, and the error code (`ERR_IMSDK_KICKED_BY_OTHERS: 6208`) is returned. In this case, developers must analyze the cause to the login error code `ERR_IMSDK_KICKED_BY_OTHERS`. For details on forcible logout, see [User State Changes](https://intl.cloud.tencent.com/document/product/1047/34313#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4).
+>- After successful login, as long as users do not log out or are not forced logout and automatic network reconnection upon connectivity change is supported, developers need not be concerned. However, they should pay special attention to situations where users are forced logout. Therefore, the [callback for a user state change](https://intl.cloud.tencent.com/document/product/1047/34313#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4) must be registered, otherwise no notification can be received when forcible logout occurs.
 
 **Prototype:**
 
@@ -68,7 +68,7 @@ login_param.appidAt3rd = @"123456";
     NSLog(@"Login Failed: %d->%@", code, err);
 }];
 ```
-For the correct method of issuing UserSig, see [Login Authentication](https://cloud.tencent.com/document/product/269/31999).
+For the correct method of issuing UserSig, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517).
 ## Logout
 
 To log out or switch to another user, call the logout operation.
@@ -163,7 +163,7 @@ The `getLoginUser` method of `TIMManager` can be used to obtain the current user
 
 ## Synchronizing Offline Messages by the IM SDK
 
-The IM SDK automatically synchronizes offline messages and recent contacts after startup. If offline messages are not needed, you can send messages by referring to [sending online messages](/doc/product/269/9150#.E5.9C.A8.E7.BA.BF.E6.B6.88.E6.81.AF). By default, after login, the IM SDK asynchronously obtains offline messages and synchronizes profile data (if this feature is enabled, and you can see the section about relationship chain profiles for more information). After the synchronization is completed, the IM SDK notifies users of UI updates through the `onRefresh` callback. After receiving the notification, users can update the UI, for example, to view unread messages in the conversation list.
+The IM SDK automatically synchronizes offline messages and recent contacts after startup. If offline messages are not needed, you can send messages by referring to [sending online messages](https://intl.cloud.tencent.com/document/product/1047/34321#.E5.9C.A8.E7.BA.BF.E6.B6.88.E6.81.AF). By default, after login, the IM SDK asynchronously obtains offline messages and synchronizes profile data (if this feature is enabled, and you can see the section about relationship chain profiles for more information). After the synchronization is completed, the IM SDK notifies users of UI updates through the `onRefresh` callback. After receiving the notification, users can update the UI, for example, to view unread messages in the conversation list.
 
 ```
 @interface TIMUserConfig : NSObject
