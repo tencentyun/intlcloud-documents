@@ -144,7 +144,7 @@ Message instance [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web
 ### Creating audio messages
 This API is used for creating audio message instances. It returns a message instance. To send an audio message, call the API [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) to send the message instance. Currently, createAudioMessage can only be used in the WeChat Mini Program environment.
 
-> Audio messages can be sent throughout the platform. When using mobile terminals, use the [latest TUIKit or SDK](https://cloud.tencent.com/document/product/269/36887).
+> Audio messages can be sent throughout the platform. When using mobile terminals, use the [latest TUIKit or SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 
 **API**
 
@@ -347,7 +347,7 @@ Message instance [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web
 
 This API is used for creating video message instances. It returns a message instance. To send a video message, call the API [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) to send the message instance. Currently, `createVideoMessage` can only be used in the WeChat Mini Program environment. For videos recorded by WeChat Mini Programs or video files selected from the album, no video thumbnail information is returned. To improve the user experience, the SDK sets the default thumbnail information when creating a video message. If the access side does not want the default thumbnail to be displayed, it can ignore relevant thumbnail information during rendering as needed.
 
-> Video messages can be sent throughout the platform. When using mobile terminals, use the [latest TUIKit or SDK](https://cloud.tencent.com/document/product/269/36887).
+> Video messages can be sent throughout the platform. When using mobile terminals, use the [latest TUIKit or SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 
 **API**
 
@@ -516,7 +516,7 @@ This API is used for recalling a one-to-one chat message or group chat message. 
 >
 >- The default time frame for recalling a message is 2 minutes. You can set this time frame in the [console](https://console.cloud.tencent.com/im-detail/login-message).
 >- The recalled message can be fetched from one-to-one chat message or group chat message roaming by calling the API [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList). The access side needs to properly handle the display of the recalled message based on the isRevoked attribute of the message object. For example, in a one-to-one conversation, it can be displayed as "The user recalled a message". In a group conversation, it can be displayed as "Tom recalled a message".
->- You can call RESTful APIs of [recalling a one-to-one chat message](https://cloud.tencent.com/document/product/269/38980) or [recalling a group chat message](https://cloud.tencent.com/document/product/269/12341) to recall a message.
+>- You can call RESTful APIs of recalling a one-to-one chat message or recalling a group chat message to recall a message.
 
 **API**
 
