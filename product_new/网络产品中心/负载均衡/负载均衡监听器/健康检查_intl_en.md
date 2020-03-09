@@ -1,99 +1,70 @@
-Tencent Cloud's cloud load balancer instances can periodically send Ping to backend CVMs, make attempts to connect with them or send requests to them to test their running status. This is called "health check".
+- CLB instance can periodically send ping commands to real servers, attempt to connect with or send requests to them to check their running status. These are called "health check".
+- If a real server is confirmed as unhealthy, the CLB instance will not forward requests to it. However, health check is carried out for all real servers (whether healthy or unhealthy). When an unhealthy instance recovers to normal status, the CLB instance will continue to forward new requests to it.
+- An auto scaling group will periodically use a similar method to check the running status of each instance in the group. For more information, please see [Auto Scaling](https://intl.cloud.tencent.com/document/product/377).
 
-If it is concluded that a backend CVM instance is unhealthy, the cloud load balancer instance will not forward requests to the instance. But health check will be performed on all backend CVMs, whether healthy or unhealthy, and when the unhealthy instance returns to normal state, the cloud load balancer instance will forward new requests to it.
+## Health check configuration for Layer-4 forwarding
+The health check mechanism for Layer-4 forwarding is as follows: CLB initiates an access request to the server port specified in the configuration. If access to the port is normal, the real server is considered healthy. Otherwise, it is considered unhealthy.
+For TCP business, SYN packets are used for health check. For UDP business, the ping command is used.
 
-Auto scaling group regularly checks the running status of instances within each group in a similar way. For more information, please see [Auto Scaling product documentation](https://intl.cloud.tencent.com/doc/product/377).
+| Health Check Configuration    | Description                    | Default Value                               |
+| ------- | ------------------------ | ---------------------------------------- |
+| Response timeout period | <li>Maximum response timeout period for health check.</li><li>If a real server fails to respond properly within the timeout period, it is considered as having an exception.</li><li>Value range: 2–60s.</li> | 2s |
+| Check interval | <li>Interval between two health checks.</li><li>Value range: 5–300s. </li> | 5s |
+| Unhealthy threshold | <li>If the health check results received are failures for n times (n is the entered number) in a row, the real server will be considered as unhealthy, and the status displayed in the console will be **unhealthy**.</li><li>Value range: 2–10.</li> | 3 times |
+| Healthy threshold | <li>If the health check results received are successes for n times (n is the entered number) in a row, the real server will be considered as healthy, and the status displayed in the console will be **healthy**.</li><li>Value range: 2–10.</li> | 3 times |
 
-## Definitions of Health Check Configuration Fields
+## Health check configuration for Layer-7 forwarding
 
-**Response Timeout:** The maximum time-out for the response to health check. If a backend CVM does not respond properly within the time limit, it is considered that the health check fails.
+The health check mechanism for Layer-7 forwarding is as follows: CLB sends an HTTP request to the real server for health check. CLB determines whether the server is healthy based on the HTTP return value. For example, assume HTTP return values include `http_1xx`, `http_2xx`, `http_3xx`, `http_4xx` and `http_5xx`, users can define `http_1xx` and `http_2xx` as normal status based on their business needs, and configure `http_3xx` to `http_5xx` as unhealthy status.
 
-**Health Check Interval:** Time interval between health checks.
+| Health Check Configuration    | Description                    | Default Value                                |
+| ------- | ------------------------ | ---------------------------------------- |
+| Check domain name | Request domain name<br></li><li> It can contain 1–120 supported characters: `a–z`, `0–9`, `.`, and `-`.</li><li>Regex is currently not supported.</li><li>If a wildcard domain name is entered, a fixed domain name (non-regular) should be specified as the health check domain name.</li> | Forwarding domain name |
+| Check path | Request path <br><li>The path must begin with `/`.</li><li>It can contain 1–120 supported characters: `a–z`, `0–9`, `.`, and `-`.</li><li>Regex is currently not supported.</li><li>We recommend you specify a fixed URL path (static page) for health check.</li>  | `/` |
+| Check interval | <li>Interval between two health checks.</li><li>Value range: 5–300s. </li> | 5s |
+| Unhealthy threshold | <li>If the health check results received are failures for n times (n is the entered number) in a row, the real server will be considered as unhealthy, and the status displayed in the console will be **unhealthy**.</li><li>Value range: 2–10.</li> | 3 times |
+| Healthy threshold | <li>If the health check results received are successes for n times (n is the entered number) in a row, the instance will be considered as healthy, and the status displayed in the console will be **healthy**.</li><li>Value range: 2–10.</li> | 3 times |
+| HTTP request method | HTTP request method for health checks. Value range: GET, HEAD. <li>If HEAD is used, the server will only return the HTTP header, which can reduce backend overheads and improve request efficiency. The corresponding real server must support HEAD.</li><li>If GET is used, the real server must support GET.</li> | GET |
+| HTTP status code check | If the status code is the selected one, the real server is considered alive (healthy). Valid values: http_1xx, http_2xx, http_3xx, http_4xx, http_5xx. | http_1xx, http_2xx, http_3xx, http_4xx |
 
-**Unhealthy Threshold:** If a failure result is returned for the health check for n consecutive times (n is the input value), the backend CVM is identified as unhealthy and marked "Unhealthy" on the console.
+# # How to troubleshoot in health check
+### Troubleshooting Layer-4 issues
 
-**Healthy Threshold:** If a success result is returned for the health check for n consecutive times (n is the input value), the backend CVM is identified as healthy and marked "Healthy" on the console.
+Under TCP protocol, CLB uses SYN packets for check. Under UDP protocol, CLB uses `Ping` command for check.
+When a real server port is marked as "unhealthy" on the page, troubleshoot via the following steps:
 
-**Normal Status Code:** This is only applicable to HTTP check method. Specify the HTTP status code used to verify that the health check is normal. Option values include `http_1xx`, `http_2xx`, `http_3xx`, `http_4xx` and `http_5xx`. Multiple choices are allowed. By default or if no choice is made, it is set to `http_2xx`.
+- Check whether the real server is configured with security groups that affect the service. For more information on access control over a real server to ensure normal running of services, please see [Real Server Security Group Configuration](https://intl.cloud.tencent.com/document/product/214/6157).
+- Run the `netstat` command to check whether there is a process listening on the real server port. If no such process is found, restart the service.
 
-## Health Check Configuration for Layer-4 Forwarding
-
-Under the health check mechanism for Layer-4 forwarding, cloud load balancer initiates an access request to the CVM port specified in the configuration. If the access to the port is normal, the backend CVM is considered normal, otherwise it is considered abnormal. For TCP services, SYN packet is used for the check. For UDP services, Ping command is used for the check.
-
-- Response timeout: 2-60 seconds
-- Check interval: 5-300 seconds
-- Unhealthy threshold: 2-10 times (When the response timeout has happened to a healthy backend CVM for the specified number of times, the backend CVM is considered unhealthy)
-- Healthy threshold: 2-10 times (When the response timeout has happened to an unhealthy backend CVM for the specified number of times, the backend CVM is considered healthy)
-
-## Health Check Configuration for Layer-7 Forwarding
-
-Under the health check mechanism for Layer-7 forwarding, the cloud load balancer sends an HTTP request to the backend CVM to check the backend services. The cloud load balancer determines the running status of the service based on whether the returned value of HTTP is `http_2xx` or `http_4xx`. In the future, users will be allowed to customize the descriptions of the statuses represented by response codes. For example, in a certain scenario, HTTP returned values include `http_1xx`, `http_2xx`, `http_3xx`, `http_4xx` and `http_5xx`. Users can, based on business needs, define `http_1xx` and `http_2xx` as normal status and the values from `http_3xx` to `http_5xx` as abnormal status.
-
-- Response timeout cannot be configured. Default is 5 seconds.
-- Check interval is 5-300 seconds, default is 6 seconds.
-- Unhealthy threshold: 2-10 times, default is 3 times. When the response timeout has happened to a healthy backend CVM for the specified number of times, the backend CVM is considered unhealthy.
-- Healthy threshold: 2-10 times, default is 3 times. When the response timeout has happened to an unhealthy backend CVM for the specified number of times, the backend CVM is considered healthy.
-- HTTP Request Method: by default, the HEAD method is used. The server only returns the HTTP header information. The corresponding backend service needs to support HEAD. Selecting HEAD method can reduce back-end overhead and improve the request efficiency. If the GET method is used, the backend service needs to support GET.
-
-## How to Troubleshoot in Health Check
-### Layer-4 Troubleshooting
-
-Under TCP protocol, cloud load balancer uses SYN packet for the check while under UDP protocol, it uses Ping command for the check.
-
-When a backend CVM port is marked "unhealthy" in the page, you should conduct troubleshooting using the following procedures:
-
-- Check whether the service of the backend CVM is affected by a configuration or the security group. For information on how to ensure the normal operation of service by controlling the access to the backend CVM, please see [Access Control for the Backend CVM](https://intl.cloud.tencent.com/document/product/214/6157).
-- Use the `netstat` command to check if there is a process listening on the backend CVM's port. If no such process is found, restart the service.
-
-### Layer-7 Troubleshooting
-For Layer-7 services (HTTP/HTTPS protocol), when an exception is detected in the health check by a listener process, the troubleshooting can be performed in the following ways:
-
-1) The Layer-7 health check service of cloud load balancer communicates with the backend CVM via private network, so you need to log in to the server to check whether the application server port is being listened on normally at the private network address; if not, you should move the listening of application server port to the private network address to ensure the normal communication between cloud load balancer system and backend CVM.
-
-Assume that the both the frontend and the backend ports of the cloud load balancer are 80, the CVM's private IP is: 1.1.1.10
-
-The server on Windows system uses the following command:
-
+### Troubleshooting Layer-7 issues
+For Layer-7 (HTTP/HTTPS protocols) services, when a listener has an exception during health check, troubleshoot via the following steps:
+1. Because Layer-7 health check service of CLB communicates with the real server via the private network, you need to log into the server to check whether the application server port is listened on normally at the private network address. If not, move the listener on the application server port to the private network to ensure normal communication between CLB and the real server.
+Suppose both the CLB’s frontend port and the real server’s backend port are 80, and the CVM instance's private IP is `1.1.1.10`:
+For a server on Windows, use the following command:
 ```
 netstat -ano | findstr :80
 ```
-
-The server on Linux system uses the following command:
-
+For a server on Linux, use the following command:
 ```
 netstat -anp | grep :80
 ```
+If you can see the listening on `1.1.1.10:80` or `0.0.0.0:80`, the configuration is normal.
+2. Make sure that the backend port configured in CLB listener has been enabled on the real server.
+For Layer-4 CLB, it is considered normal as long as backend port `telnet` responds. You can use `telnet 1.1.1.10 80` for testing. For Layer-7 CLB, it is considered normal if an HTTP status code such as 200 is returned. Check as follows:
+ - On Windows, you can directly enter the private IP in the browser on a CVM instance to test whether it is normal. This example uses `http://1.1.1.10`.
+ - On Linux, you can run the `curl-I` command to check whether the status is `HTTP/1.1 200 OK`. This example uses the `curl -I 1.1.1.10` command.
+3. Check whether the CVM has a firewall or other security software, which is likely to block the local IP address of the CLB. This causes CLB to be unable to communicate with the real server.
+Check whether the private network firewall of the server allows port 80 to pass. You can temporarily disable the firewall for the test.
+ - For Windows, run the `firewall.cpl' command to disable the firewall.
+ - For Linux, run the `/etc/init.d/iptables stop` command to disable the firewall.
+4. Check whether the health check parameters of CLB are configured correctly. We recommend you use the default health check parameter values in this document.
+5. For the test file specified for health check, we recommend you use a simple page in HTML format, which is only used to check the returned results. Dynamic programming languages such as PHP are not recommended.
+6. Check whether the real server has high load that leads to slow response.
+7. Check the HTTP request method. If HEAD is used, the real server must support HEAD. If GET is used, the real server must support GET.
 
-If you can see the listening status at 1.1.1.10:80 or 0.0.0.0:80, the configuration is considered normal.
+### Notes on high-frequency health checks
+Health check packets are sent too frequently. Each health check packet is sent every 5 seconds as configured in the console, but the real server finds that one or multiple health check requests are received within 1 second. The reasons are as follows:
+- If health check is too frequent, it may be caused by CLB’s health check implementation mechanism. Suppose that 1 million requests from clients are distributed to four CLB real servers before being sent to the CVM instance. Each CLB real server conducts health check separately. If the CLB instances are configured to send a health check request every 5 seconds, each CLB real server will send a health check request every 5 seconds. The CVM instance will therefore receive multiple health check requests. (For example, if the cluster to which a CLB instance belongs has 8 physical servers, and each server sends a request every 5 seconds, then the CVM instance may receive 8 health check requests in 5 seconds.)
+- The advantages of this implementation scheme are high efficiency, accurate check, and avoidance of mistaken removal. For example, if one of eight physical servers in CLB instance cluster fails, the other seven servers can still forward traffic normally. 
 
-2) Make sure that the backend port configured in the cloud load balancer listener has been enabled on the backend CVM.
-
-For Layer-4 cloud load balancer, it is considered normal as long as the backend port telnet gives a response. You can use `telnet 1.1.1.10 80` to test. For Layer-7 cloud load balancer, such HTTP status codes as 200 indicate a normal state. The test is conducted as follows:
-
-- On Windows system, directly input private IP in the CVM browser to check whether it is normal. In this example, `http://1.1.1.10` is input;
-- On Linux system, use the `curl-I` command to check if the status is` HTTP/1.1 200 OK`. In this example, `curl -I 1.1.1.10` command is used
-
-3) Check whether there is a firewall or other security software inside the backend CVM. This type of software can easily block the local IP address of the cloud load balancer system, causing the failure of cloud load balancer system to communicate with the backend CVM.
-
-Check whether the firewall of private network on server allows port 80. You can temporarily disable the firewall for the test.
-
-- For Windows system, run the `firewall.cpl' entry to disable the firewall
-- For Linux system, input `/etc/init.d/iptables stop` to disable the firewall
-
-4) Check if the parameter settings of cloud load balancer health check are correct. It is recommended to complete the settings by referring to the health check default parameter values provided in this document.
-
-5) The recommended test file specified for health check is a simple page in HTML form and is only used for check returned results. Dynamic scripting languages such as php are not recommended.
-
-6) Check whether there is a high load on the backend CVM that leads to slow response of CVM to provide service.
-
-7) Check the HTTP request method. If you use the HEAD method, the backend service must support HEAD. If it is a GET method, the backend service must support GET.
-
-### Notes about too frequent health check
-
-Health check packets are sent too frequently. Each health check packet is sent every 5 seconds as configured in the console. But the backend RS finds that one or more health check requests are received in one second. Why is that?
-
-Too frequent health check is caused by the implementation mechanism of CLB backend health check. Assume that 1 million requests from client are distributed on four LB backend physical machines before being sent to the CVM, and each LB backend physical machine conducts health check separately. If the LB instance is set to send a health check request every 5 seconds, each physical machine on the LB backend sends a health check request every 5 seconds. That's why the backend CVM receives multiple health check requests. For example, if the cluster to which an LB instance belongs has eight physical machines, and each machine sends a request every 5 seconds, the backend CVM may receive 8 health check requests in 5 seconds.
-
-The advantages of this implementation solution are high efficiency, accurate check, and avoidance of mis-removal. For example, if one of eight physical machines in the LB instance cluster fails, the other seven machines can still forward traffic normally.
-
-Therefore, if your backend CVM is checked too frequently, you can set the check interval to be much longer, such as, 15 seconds.
+Therefore, if your real server is checked too frequently, you can configure the check interval to be much longer (for example, 15 seconds).
