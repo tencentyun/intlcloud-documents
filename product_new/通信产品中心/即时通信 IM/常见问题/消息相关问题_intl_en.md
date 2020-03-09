@@ -19,7 +19,7 @@ For both C2C and group messages, if you cannot determine the cause by completing
 ### What should I do if offline push messages fail to be received?
 
 - For APNs
-Check the following items by referring to [Offline Push (iOS)](https://cloud.tencent.com/document/product/269/9154):
+Check the following items by referring to [Offline Push (iOS)](https://intl.cloud.tencent.com/document/product/1047/34347):
  - Check whether the certificate has been uploaded to the Tencent Cloud console correctly.
  - Check whether the token has been successfully uploaded to Tencent Cloud after successful login.
  - Check whether the correct certificate ID has been reported when reporting the token.
@@ -29,7 +29,7 @@ Check the following items by referring to [Offline Push (iOS)](https://cloud.ten
  - For a group message, check whether the no message reminder option is enabled.
 
 - For Android
-Check the following items by referring to [Offline Push](https://cloud.tencent.com/document/product/269/9234):
+Check the following items by referring to [Offline Push](https://intl.cloud.tencent.com/document/product/1047/34336):
  - Check whether the push certificate has been uploaded correctly.
  - Check whether the token has been reported successfully.
  - If the message is not pushed online by a third party (Huawei, MI, or Meizu), check whether the QALService process is active. If no, no offline push messages can be received. In this case, the auto-start permission of the system is required.
@@ -42,9 +42,9 @@ Check the following items by referring to [Offline Push](https://cloud.tencent.c
 For APNs push or offline push on Android systems, if you cannot determine the cause by completing the preceding procedure, check the following items:
 1. Check whether the recipient ID is consistent with the ID of the target user.
 2. Check whether the offline push listener (Android) is enabled.
-3. Check whether the silent mode is enabled. For iOS, see [Setting Custom Push Notification Sounds](https://cloud.tencent.com/document/product/269/9154#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.AE.9A.E4.B9.89.E6.8E.A8.E9.80.81.E6.8F.90.E7.A4.BA.E9.9F.B3). For Android, see [Configuring Global Offline Push Settings](https://cloud.tencent.com/document/product/269/9234#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE).
+3. Check whether the silent mode is enabled. For iOS, see [Setting Custom Push Notification Sounds](https://intl.cloud.tencent.com/document/product/1047/34347#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.AE.9A.E4.B9.89.E6.8E.A8.E9.80.81.E6.8F.90.E7.A4.BA.E9.9F.B3). For Android, see [Configuring Global Offline Push Settings](https://intl.cloud.tencent.com/document/product/1047/34336#.E8.AE.BE.E7.BD.AE.E5.85.A8.E5.B1.80.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81.E9.85.8D.E7.BD.AE).
 4. Check whether the message is an online message that is sent through the `sendOnlineMessage` API or whether `MsgLifeTime` is set to `0` through a RESTful API during push.
-5. Check whether an identifier indicating no offline push has been set for the message. For iOS, see [Customizing Offline Message Attributes](https://cloud.tencent.com/document/product/269/9154#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7). For Android, see [Configuring Offline Push Settings for a Single Message](https://cloud.tencent.com/document/product/269/9234#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81).
+5. Check whether an identifier indicating no offline push has been set for the message. For iOS, see [Customizing Offline Message Attributes](https://intl.cloud.tencent.com/document/product/1047/34347#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.A6.BB.E7.BA.BF.E6.B6.88.E6.81.AF.E5.B1.9E.E6.80.A7). For Android, see [Configuring Offline Push Settings for a Single Message](https://intl.cloud.tencent.com/document/product/1047/34336#.E9.92.88.E5.AF.B9.E5.8D.95.E6.9D.A1.E6.B6.88.E6.81.AF.E8.AE.BE.E7.BD.AE.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81).
 6. If you still cannot identify the cause, you can provide relevant information to technical personnel for troubleshooting.
 
 ### How to process group @ messages?
@@ -102,7 +102,7 @@ try {
 Red packet messages are similar to @ messages and can be implemented through `TIMCustomElem`. Apps need to perform corresponding special processing on the UI. For example, after detecting that the current message is a red packet message, the app needs to display it as a red packet.
 In addition, as red packet messages are important messages, we recommend that you set them as high-priority messages when sending them to ensure, as far as possible, that they can reach the recipients successfully even under delivery restrictions (currently, the default maximum frequency of sending group messages is 40 messages per second, and the default maximum frequency of sending one-to-one chat messages is 5 messages per second.)
 
-For details on message priorities, see [Message Priorities](https://cloud.tencent.com/document/product/269/3663#.E7.BE.A4.E6.B6.88.E6.81.AF.E4.BC.98.E5.85.88.E7.BA.A7).
+For details on message priorities, see [Message Priorities](https://intl.cloud.tencent.com/document/product/1047/33526#.E7.BE.A4.E6.B6.88.E6.81.AF.E4.BC.98.E5.85.88.E7.BA.A7).
 
 > The payment feature of red packet messages requires apps to integrate corresponding payment SDKs on their own. Currently, the IM SDK does not provide this feature.
 
@@ -135,5 +135,5 @@ msg.setPriority(TIMMessagePriority.High);
 ```
 
 ### How long are IM messages retained?
-By default, one-to-one and group chat messages are retained for 7 days. You can extend the retention period for historical messages in **App Configuration** in the [IM console](https://console.cloud.tencent.com/im). The maximum extended period is 12 months. Extending the retention period of historical messages is an added-value service. For billing details, see [Pricing](https://cloud.tencent.com/document/product/269/11673#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9).
+By default, one-to-one and group chat messages are retained for 7 days. You can extend the retention period for historical messages in **App Configuration** in the [IM console](https://console.cloud.tencent.com/im). The maximum extended period is 12 months. Extending the retention period of historical messages is an added-value service. For billing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9).
 
