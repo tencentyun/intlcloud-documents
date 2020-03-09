@@ -1,6 +1,6 @@
 ## Group Overview
 
-Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see the [Group System](https://cloud.tencent.com/doc/product/269/群组系统). A group is identified by a unique ID, which allows for different operations.
+Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see the [Group System](https://intl.cloud.tencent.com/zh/document/product/1047/33529). A group is identified by a unique ID, which allows for different operations.
 
 ## Group Management
 
@@ -68,7 +68,7 @@ The `options` parameter is of the `Object` type. The property values that it con
 | Name | Type | Property | Description |
 | :---------------------- | :------------- | :--- | :----------------------------------------------------------- |
 | `groupID` | `String` | - | Group ID |
-| `groupCustomFieldFilter`  | `Array<String>` | `<optional>` | Group custom field filter for obtaining the group custom fields that you specify. For more information, see [Custom Fields](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
+| `groupCustomFieldFilter`  | `Array<String>` | `<optional>` | Group custom field filter for obtaining the group custom fields that you specify. For more information, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
 
 **Returned value**
 
@@ -119,7 +119,7 @@ The `options` parameter is of the `Object` type. The property values that it con
 | `maxMemberNum` | `Number` | `<optional>` | - | Maximum number of group members. Default values for different group types are as follows: Private: 200, Public: 2,000, ChatRoom: 6,000, AVChatRoom: unlimited. |
 | `joinOption` | `String` | `<optional>` | `TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS` | Handling method of group joining applications. **This field cannot be set when you create a Private, ChatRoom, or AVChatRoom group.** For Private groups, the value of this field is fixed to "disallow to join". For ChatRoom and AVChatRoom groups, the value of this field is fixed to "free access".<br><li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS: free access</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION: approval required</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY: disallow to join</li> |
 | `memberList` | `Array<Object>` | `<optional>`| - | List of initial members. The maximum number of initial members is limited to 500. You cannot add members when creating AVChatRoom groups. For more information, see [memberList parameter description](#memberList) below. |
-| `groupCustomField` | `Array<Object>` | `<optional>` | - | Group custom field. There are no custom fields by default. To enable custom fields, see [Group Member Information](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
+| `groupCustomField` | `Array<Object>` | `<optional>` | - | Group custom field. There are no custom fields by default. To enable custom fields, see [Group Member Information](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
 
 <span id="memberList"></span>
 `memberList` parameter description
@@ -207,7 +207,7 @@ The `options` parameter is of the `Object` type. The property values that it con
 | `notification` | `Object` | `<optional>` | - | Group announcement with a maximum length of 300 bytes |
 | `maxMemberNum` | `Number` | `<optional>` | - | Maximum number of group members, which is limited to 6,000 |
 | `joinOption` | `String` | `<optional>` | `TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS` | Handling method of group joining applications.<br>**This field cannot be set when you modify the group information of Private, ChatRoom, and AVChatRoom groups**. For Private groups, the value of this field is fixed to "disallow to join". For ChatRoom and AVChatRoom groups, the value of this field is fixed to "free access".<li>TIM.TYPES.JOIN_OPTIONS_FREE_ACCESS: free access</li><li>TIM.TYPES.JOIN_OPTIONS_NEED_PERMISSION: approval required</li><li>TIM.TYPES.JOIN_OPTIONS_DISABLE_APPLY: disallow to join</li> |
-| `groupCustomField` | `Array<Object>` | `<optional>` | - | Group custom field. For more information, see [`groupCustomField` parameter description](#groupCustomField) below.<br>There are no custom fields by default. To enable custom fields, see [Custom Fields](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
+| `groupCustomField` | `Array<Object>` | `<optional>` | - | Group custom field. For more information, see [`groupCustomField` parameter description](#groupCustomField) below.<br>There are no custom fields by default. To enable custom fields, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
 
 <span id="groupCustomField"></span>
 `groupCustomField` parameter description
