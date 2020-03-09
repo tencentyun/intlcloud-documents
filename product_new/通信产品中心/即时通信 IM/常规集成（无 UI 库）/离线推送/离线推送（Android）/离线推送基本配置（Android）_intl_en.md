@@ -11,37 +11,37 @@ Currently, IM supports APNs, MI push, Huawei push, Meizu push, vivo push, OPPO p
      <th>Conditions</th> 
    </tr> 
    <tr> 
-     <td><a href="https://cloud.tencent.com/document/product/269/9154" target="_blank">APNs</a></td> 
+     <td><a href="https://intl.cloud.tencent.com/document/product/1047/34336" target="_blank">APNs</a></td> 
      <td>iOS</td> 
      <td>iOS system push channel, which is also the only iOS push channel</td> 
    </tr> 
    <tr> 
-     <td><a href="https://cloud.tencent.com/document/product/269/35000" target="_blank">MI push</a></td> 
+     <td><a href="https://intl.cloud.tencent.com/document/product/1047/34339" target="_blank">MI push</a></td> 
      <td>MIUI</td> 
      <td>Use MI push MiPush_SDK_Client_3_6_12.jar</td> 
    </tr> 
    <tr> 
-     <td><a href="https://cloud.tencent.com/document/product/269/34999" target="_blank">Huawei push</a></td> 
+     <td><a href="https://intl.cloud.tencent.com/document/product/1047/34340" target="_blank">Huawei push</a></td> 
      <td>EMUI</td> 
      <td>Huawei mobile service versions later than 20401300 and SDK version of push:2.6.3.301</td> 
    </tr> 
    <tr> 
-     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/269/37317" target="_blank">Google FCM push</a></td> 
+     <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/1047/34341" target="_blank">Google FCM push</a></td> 
      <td nowrap="nowrap">Android 4.1 and later versions</td> 
      <td>The mobile phone needs to install Google Play Services and be used outside Mainland China.</td> 
    </tr> 
    <tr> 
-     <td><a href="https://cloud.tencent.com/document/product/269/35001" target="_blank">Meizu push</a></td> 
+     <td><a href="https://intl.cloud.tencent.com/document/product/1047/34342" target="_blank">Meizu push</a></td> 
      <td>Flyme</td> 
      <td>Use Meizu push push-internal:3.6.+</td> 
    </tr> 
    <tr> 
-     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/269/37729" target="_blank">OPPO push</a></td> 
+     <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/1047/34344" target="_blank">OPPO push</a></td> 
      <td>ColorOS</td> 
      <td>Not all OPPO models and versions support OPPO push. At present, the OPPO push service is available only to A/B-level apps that are already in OPPO’s app store. Therefore, the current demo has no sample of OPPO push.</td> 
    </tr>  
    <tr> 
-     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/269/34998" target="_blank">vivo push</a></td> 
+     <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/1047/34343" target="_blank">vivo push</a></td> 
      <td nowrap="nowrap">FuntouchOS</td> 
      <td>Not all vivo models and versions support vivo push. The required SDK version is vivo_pushsdk_v2.3.1.jar.</td> 
    </tr> 
@@ -52,7 +52,7 @@ Here, "offline" means that the app is closed by the system or user without logou
 
 >
 > - Users who have logged out normally or have been forced logout will not receive any message notifications.
-> - Currently, offline push only provides notifications for [ordinary chat messages](/doc/product/269/%E6%B6%88%E6%81%AF%E6%94%B6%E5%8F%91%EF%BC%88Android%20SDK%EF%BC%89#1-.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81) and does not provide notifications for [system messages](/doc/product/269/消息收发（Android%20SDK）#.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF).
+> - Currently, offline push only provides notifications for [ordinary chat messages](https://intl.cloud.tencent.com/document/product/1047/34320) and does not provide notifications for [system messages](https://intl.cloud.tencent.com/document/product/1047/34320).
 
 ## Basic Configuration of IM SDK Offline Push
 ### Configuring global offline push settings

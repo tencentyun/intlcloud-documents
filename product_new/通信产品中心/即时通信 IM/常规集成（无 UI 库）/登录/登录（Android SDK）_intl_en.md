@@ -1,8 +1,8 @@
 ## Login
-Users can normally send and receive messages only after they have logged in to the Tencent backend server. To log in to the Tencent backend server, a user needs to provide information including `UserID` and `UserSig`. For more information, see [Login Authentication](https://cloud.tencent.com/document/product/269/31999).
+Users can normally send and receive messages only after they have logged in to the Tencent backend server. To log in to the Tencent backend server, a user needs to provide information including `UserID` and `UserSig`. For more information, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517).
 
 >
->- If the user is forced logout on another terminal, the login attempt fails, and the error code (`ERR_IMSDK_KICKED_BY_OTHERS: 6208`) is returned. In this case, developers must analyze the cause to the login error code `ERR_IMSDK_KICKED_BY_OTHERS`. For details on forcible logout, see [User State Changes](https://cloud.tencent.com/document/product/269/9229#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4).
+>- If the user is forced logout on another terminal, the login attempt fails, and the error code (`ERR_IMSDK_KICKED_BY_OTHERS: 6208`) is returned. In this case, developers must analyze the cause to the login error code `ERR_IMSDK_KICKED_BY_OTHERS`. For details on forcible logout, see [User State Changes](https://intl.cloud.tencent.com/document/product/1047/34312#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4).
 >- If users have saved user tickets, these tickets may expire. If their user tickets expire, `login` returns the error code `70001`. In this case, developers can change the ticket based on the error code.
 
 Login is an asynchronous process, and the result returned by the callback function indicates whether the login was successful. Users can proceed to subsequent operations only after successful login.
