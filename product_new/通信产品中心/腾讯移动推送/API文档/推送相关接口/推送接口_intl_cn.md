@@ -348,7 +348,7 @@ Push API 可选参数是除了 `audience_type`、`platform`、`message_type`、`
 |group_id     |string      |否                 |tpns_yyyymmdd，yyyymmdd 代表推送日期        | 统计标签，用于聚合统计|
 | tag_list      | object  | 仅标签推送必需          | 无       | <li>推送 tag1 和 tag2 的设备：`{"tags":["tag1","tag2"],"op":"AND"}`<li>推送 tag1 或 tag2 的设备： `{"tags":["tag1","tag2"],"op":"OR"}` |
 | account_list  | array   | 单账号推送、账号列表推送时必需  | 无       | 若单账号推送：<li>要求 `audience_type=account`<li>参数格式：["account1"]<br>若账号列表推送：<li>参数格式：`["account1","account2"]`<li>最多1000 个 account |
-| account_push_type  | int     | 单账号推送时可选         | 0       |<li> 0：往单个账号的最新的 device 上推送信息<li> 1：往单个账号关联的所有 device 设备上推送信息|
+| account_push_type  | int     | 账号推送时可选         | 0       |<li> 0：往账号的最新的 device 上推送信息<li> 1：往账号关联的所有 device 设备上推送信息|
 | account_type  | int     | 单账号推送时可选         | 0       | <li>账号类型：参考后面账号说明<li>必须与账号绑定时设定的账号类型一致   |
 | token_list    | array   | 单设备推送、设备列表推送时必需  | 无       | 若单设备推送：<li>要求 audience_type=token<li>参数格式：["token1"]<br>若设备列表推送：<li>参数格式：["token1","token2"]<li>最多1000 个 token |
 
