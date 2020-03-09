@@ -32,7 +32,7 @@ conversation = TIMManager.getInstance().getConversation(
         groupId);                       //Group ID
 ```
 
-**Sending messages:** after obtaining a `TIMConversation` instance through `TIMManager`, you can send messages and obtain the cached messages of the conversation. See [Introduction to IM SDK Objects](/doc/product/269/9227#2.1-imsdk.E5.AF.B9.E8.B1.A1.E7.AE.80.E4.BB.8B) for the explanation of a message in the IM SDK. In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` object can contain multiple `TIMElem` objects, which can be text segments or images. That is, a message can contain multiple text segments and images.
+**Sending messages:** after obtaining a `TIMConversation` instance through `TIMManager`, you can send messages and obtain the cached messages of the conversation. See [Introduction to IM SDK Objects](https://intl.cloud.tencent.com/document/product/1047/34301) for the explanation of a message in the IM SDK. In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` object can contain multiple `TIMElem` objects, which can be text segments or images. That is, a message can contain multiple text segments and images.
 
 ![](https://main.qcloudimg.com/raw/5b109b81e56ac31a6c73ca6053a342ff.png)
 
@@ -833,7 +833,7 @@ public boolean copyFrom(@NonNull TIMMessage srcMsg)
 
 ## Receiving Messages
 
-In most cases, users need to be notified of new messages. For this purpose, you only need to register the new message notification callback `TIMMessageListener`. If the user is logged in, the IM SDK throws new messages through `onNewMessages` in the callback. For information on how to register the callback, see [New Message Notifications](/doc/product/269/9229#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5).
+In most cases, users need to be notified of new messages. For this purpose, you only need to register the new message notification callback `TIMMessageListener`. If the user is logged in, the IM SDK throws new messages through `onNewMessages` in the callback. For information on how to register the callback, see [New Message Notifications](https://intl.cloud.tencent.com/document/product/1047/34312).
 
 >Messages thrown through `onNewMessages` are not necessarily unread messages. Instead, they can also be messages that have not been displayed locally, such as when messages are read on another client and pulling recent contacts obtains the last messages of conversations. If not stored locally, these messages are thrown by this method. After the user logs in, the IM SDK pulls C2C offline messages. To avoid missing message notifications, you need to register new message notifications before login.
 
@@ -949,7 +949,7 @@ After receiving a message, the recipient can obtain all `Elem` nodes from `TIMMe
 public void getSoundToFile(@NonNull final String path, @NonNull TIMCallBack callback)
 ```
 
-**The read state of the audio message:** whether the audio file has been played. Use [message custom fields](/doc/product/269/9232#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) to implement this feature. For example, for `customInt`, a value of 0 means not played and a value of 1 means played. In this case, set `customInt` to 1 after the user clicks to play the audio. The following sets a custom integer and the default value is 0.
+**The read state of the audio message:** whether the audio file has been played. Use [message custom fields](https://intl.cloud.tencent.com/document/product/1047/34320) to implement this feature. For example, for `customInt`, a value of 0 means not played and a value of 1 means played. In this case, set `customInt` to 1 after the user clicks to play the audio. The following sets a custom integer and the default value is 0.
 
 **Prototype:**
 ```
@@ -1144,7 +1144,7 @@ Message properties can be obtained through the member methods of `TIMMessage`.
 
 ### Checking whether a message is read
 
-You can check whether a message is read through the `isRead` method of `TIMMessage`. Whether a message is read or not depends on the [read reports](https://cloud.tencent.com/document/product/269/9226#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5) implemented by the app. The prototype for determining the message read state is as follows:
+You can check whether a message is read through the `isRead` method of `TIMMessage`. Whether a message is read or not depends on the [read reports](https://intl.cloud.tencent.com/document/product/1047/34324#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5) implemented by the app. The prototype for determining the message read state is as follows:
 
 **Prototype:**
 ```
@@ -1184,7 +1184,7 @@ public boolean isSelf()
 
 The sender’s ID can be obtained through the `getSender` method of `TIMMessage`.
 **For one-to-one chat messages:** you can obtain the corresponding conversation through the `getConversation` method of `TIMMessage`, as well as the recipient and the recipient’s profile through `getPeer`.
-**For group chat messages:** you can obtain the sender’s profile and the profile of the sender’s belonging group through `getSenderProfile` and `getSenderGroupMemberProfile`. To pull custom fields, you need to [set the fields to be pulled](https://cloud.tencent.com/document/product/269/9236) before logging in to the IM SDK.
+**For group chat messages:** you can obtain the sender’s profile and the profile of the sender’s belonging group through `getSenderProfile` and `getSenderGroupMemberProfile`. To pull custom fields, you need to [set the fields to be pulled](https://intl.cloud.tencent.com/document/product/1047/34328) before logging in to the IM SDK.
  >This field obtains the user profile and writes it to the message body when the message is sent. If there are user profile updates in the future, this field does not change unless new messages are generated.
  >You can only obtain profiles from received group messages.
 
@@ -1280,7 +1280,7 @@ public TIMMessagePriority getPriority()
 
 ### Read receipts
 
-The IM SDK provides the read receipt feature for **C2C messages**, which can be enabled through `enableReadReceipt` in `TIMUserConfig`. After the feature is enabled, read receipts will be sent to the recipient when reporting [message read reports](https://cloud.tencent.com/document/product/269/9226#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5).
+The IM SDK provides the read receipt feature for **C2C messages**, which can be enabled through `enableReadReceipt` in `TIMUserConfig`. After the feature is enabled, read receipts will be sent to the recipient when reporting [message read reports](https://intl.cloud.tencent.com/document/product/1047/34324#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5).
 
 You can register the read receipt listener through `setMessageReceiptListener` in `TIMUserConfig`, and query whether the current message has been read by the recipient through `isPeerReaded` in `TIMMessage`.
 
@@ -1649,7 +1649,7 @@ Starting with version 3.1.0, the IM SDK provides an API to recall messages. You 
 public void revokeMessage(@NonNull TIMMessage msg, @NonNull TIMCallBack cb)
 ```
 
-After a message is recalled, other members in the group or the peer in the C2C conversation receives a message recall notification. In addition, the message recall notification listener `TIMMessageRevokeListener` notifies the upper-layer app of this. You can configure the message recall notification listener before login through `setMessageRevokedListener` of `TIMUserConfig`. For more information, see [User Configuration](https://cloud.tencent.com/document/product/269/9229#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE).
+After a message is recalled, other members in the group or the peer in the C2C conversation receives a message recall notification. In addition, the message recall notification listener `TIMMessageRevokeListener` notifies the upper-layer app of this. You can configure the message recall notification listener before login through `setMessageRevokedListener` of `TIMUserConfig`. For more information, see [User Configuration](https://intl.cloud.tencent.com/document/product/1047/34312#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE).
 
 **Prototype:**
 
@@ -1687,9 +1687,9 @@ public boolean checkEquals(@NonNull TIMMessageLocator locator)
 
 In addition to C2C chat and group chat messages, system message is another conversation type (TIMConversationType). System messages are notification messages sent by the system backend for various events and cannot be sent by users. Currently, there are two types of system messages: relationship chain system messages and group system messages.
 
-- Relationship chain change system messages: when the user has a friend request or is deleted by a contact, the system sends a change notification, and the developer can refresh the friend list. For more information, see [Relationship Chain Change System Notifications](https://cloud.tencent.com/document/product/269/33926#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5).
-- When the group profile is modified, such as a change to the group name or group members, the system sends a group event message in the group. The developer can choose whether to display the message or not and can refresh the group profile or group members at the same time. For more information, see [Group Event Messages](https://cloud.tencent.com/document/product/269/9236#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF).
-- When the group owner is removed or non-members are invited to the group, the system sends a group system message to users. For more information, see [Group System Messages](https://cloud.tencent.com/document/product/269/9236#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF).
+- Relationship chain change system messages: when the user has a friend request or is deleted by a contact, the system sends a change notification, and the developer can refresh the friend list. For more information, see [Relationship Chain Change System Notifications](https://intl.cloud.tencent.com/document/product/1047/34332#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5).
+- When the group profile is modified, such as a change to the group name or group members, the system sends a group event message in the group. The developer can choose whether to display the message or not and can refresh the group profile or group members at the same time. For more information, see [Group Event Messages](https://intl.cloud.tencent.com/document/product/1047/34328#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF).
+- When the group owner is removed or non-members are invited to the group, the system sends a group system message to users. For more information, see [Group System Messages](https://intl.cloud.tencent.com/document/product/1047/34328#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF).
 
 
 ## Setting Background Message Notification Bar Reminders
