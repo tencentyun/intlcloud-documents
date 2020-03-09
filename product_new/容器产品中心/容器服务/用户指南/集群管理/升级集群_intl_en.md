@@ -7,7 +7,6 @@ Tencent Cloud TKE provides a version upgrade feature for Kubernetes. You can use
 ## Upgrade Notice
 - **Upgrades are irreversible. Perform this operation with caution.**
 - Currently the cluster upgrade feature is in beta. To apply to use it, [submit a ticket](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1).
-- Before upgrading the cluster, check whether the cluster status is healthy. If the cluster status is abnormal, you can repair it yourself or [submit a ticket](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1) to contact us.
 - When upgrading a cluster, you must first upgrade the master version, and then complete the node version upgrade as quickly as possible. During the upgrade process, it is not recommended to perform any operation in the cluster.
 - Only the upgrade of the closest Kubernetes version offered by TKE is supported. Upgrading across multiple versions (such as upgrading from 1.8 to 1.12, skipping 1.10) is not supported. You can upgrade to the next version only if the master and node versions are consistent.
 
