@@ -1,5 +1,5 @@
 ## Login
-Users can normally send and receive messages only after they have logged in to the IM SDK. To log in to the IM SDK, a user needs to provide information including UserID and UserSig. For more information, see [Login Authentication](https://cloud.tencent.com/document/product/269/31999). After successful login, [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) and other APIs that require authentication can be called only when the SDK state is ready. You can monitor the event [TIM.EVENT.SDK_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_READY) to obtain the SDK state.
+Users can normally send and receive messages only after they have logged in to the IM SDK. To log in to the IM SDK, a user needs to provide information including UserID and UserSig. For more information, see [Login Authentication](https://intl.cloud.tencent.com/zh/document/product/1047/33517). After successful login, [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) and other APIs that require authentication can be called only when the SDK state is ready. You can monitor the event [TIM.EVENT.SDK_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_READY) to obtain the SDK state.
 
 > By default, multi-instance login is not supported. If an account that has logged in on another webpage continues to log in on the current webpage and the login succeeds, the account may be forced logout on another webpage. When a user is forced logout, the event `TIM.EVENT.KICKED_OUT` is triggered. Users can perform relevant handling after detecting this event. An example of monitoring multi-instance login is as follows:
 ```javascript
@@ -21,7 +21,7 @@ tim.login(options)
 | Name | Type | Description |
 | --------- | -------- | ------------------------------------------------------------ |
 | UserID | String | User ID |
-| UserSig | String | Password with which the user logs in to IM. It is essentially the ciphertext resulting from the encryption of UserID and relevant information. <br/>For the detailed generation method, see [Generating UserSig](https://cloud.tencent.com/document/product/269/32688). |
+| UserSig | String | Password with which the user logs in to IM. It is essentially the ciphertext resulting from the encryption of UserID and relevant information. <br/>For the detailed generation method, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 
 **Return values**
 
