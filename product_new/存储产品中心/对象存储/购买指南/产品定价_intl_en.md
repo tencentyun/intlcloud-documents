@@ -443,7 +443,7 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
    </tr>
 </table>
 
-## Transmission Accelerated Pricing
+### Transmission Accelerated Pricing
 
 >The transmission acceleration traffic cost is settled on a daily basis.
 
