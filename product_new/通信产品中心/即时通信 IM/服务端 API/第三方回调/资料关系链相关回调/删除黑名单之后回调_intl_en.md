@@ -1,0 +1,96 @@
+## Feature Description
+
+Through this callback, the app backend can monitor the deletion of user blacklists in real time.
+
+## Precautions
+
+- To enable this callback, you must configure the callback URL and toggle on the corresponding protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://cloud.tencent.com/document/product/269/32431).
+- Callback direction: The IM backend initiates an HTTP POST request to the app backend.
+- After receiving the callback request, the app backend must check whether the SDKAppID contained in the request URL is consistent with its own SDKAppID.
+- For other security-related issues, see [Third-Party Callback Overview: Security Considerations](https://cloud.tencent.com/document/product/269/1522#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
+
+## Callback Triggering Scenarios
+
+- An app user uses a client to initiate a blacklist deletion request.
+- The app backend initiates a blacklist deletion request through the RESTful API.
+
+## Callback Triggering Time
+
+The callback is triggered after the IM backend receives a blacklist deletion request and successfully deletes the blacklist.
+
+## API Description
+
+### Request URL example
+
+In the following example, the callback URL configured in the app is `https://www.example.com`.
+**Example:**
+
+```
+https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&contenttype=json&ClientIP=$ClientIP&OptPlatform=$OptPlatform
+```
+
+### Request parameters
+
+| Parameter | Description |
+| --- | --- |
+| https | The request protocol is HTTPS, and the request method is POST. |
+| www.example.com | The callback URL. |
+| SdkAppid | The SDKAppID assigned by the IM console when an app is created. |
+| CallbackCommand | The value is fixed to Sns.CallbackBlackListDelete. |
+| contenttype | The value is fixed to JSON. |
+| ClientIP | The client IP address, whose format is similar to: 127.0.0.1. |
+| OptPlatform | The client platform. For details on the possible values, see the OptPlatform parameter in [Third-Party Callback Overview: Callback Protocols](https://cloud.tencent.com/document/product/269/1522#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
+
+### Request packet example
+
+```
+{
+    "CallbackCommand": "Sns.CallbackBlackListDelete",
+    "PairList": [
+        {
+            "From_Account": "id",
+            "To_Account": "id1"
+        },
+        {
+            "From_Account": "id",
+            "To_Account": "id2"
+        },
+        {
+            "From_Account": "id",
+            "To_Account": "id3"
+        }
+    ]
+}
+```
+
+### Request packet fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| CallbackCommand | String | The callback command. |
+| PairList | Array | The blacklist pair that has been successfully deleted. |
+| From_Account | String | From_Account deletes To_Account from its blacklist. |
+| To_Account | String | To_Account is deleted from the blacklist of From_Account. |
+
+### Response packet example
+
+```
+{
+    "ActionStatus": "OK",
+    "ErrorCode": 0,
+    "ErrorInfo": ""
+}
+```
+
+### Response packet fields
+
+| Field | Type | Attribute | Description |
+| --- | --- | --- | --- |
+| ActionStatus | String | Required | The request processing result. OK: succeeded. FAIL: failed. |
+| ErrorCode | Integer | Required | The error code. 0 indicates that app backend processing was successful, and 1 indicates that app backend processing failed. |
+| ErrorInfo | String | Required | Error information. |
+
+## References
+
+- [Third-party callback overview](https://cloud.tencent.com/document/product/269/1522)
+- RESTful APIs: [Adding a user to the blacklist](https://cloud.tencent.com/document/product/269/3718)
