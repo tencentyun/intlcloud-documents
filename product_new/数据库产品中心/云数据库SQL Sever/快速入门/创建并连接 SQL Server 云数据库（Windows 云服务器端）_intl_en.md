@@ -1,6 +1,6 @@
 ## Operation Scenario
 This document describes how to connect to a TencentDB for SQL Server instance through SQL Server Management Studio (SSMS) in a Windows CVM instance and run a simple query.
->?The CVM and TencentDB instances must be under the same account and in the same VPC in the same region.
+>The CVM and TencentDB instances must be under the same account and in the same VPC in the same region.
 
 ## Directions
 1. On the [TencentDB for SQL Server](https://console.cloud.tencent.com/sqlserver) instance details page, view the private IP and port number of the instance, which will be used for connecting to the TencentDB instance.
