@@ -1,4 +1,4 @@
-For the information on relationship chains, see [Introduction to the Relationship Chain System](https://cloud.tencent.com/document/product/269/1501#.E5.85.B3.E7.B3.BB.E9.93.BE.E7.B3.BB.E7.BB.9F.E7.AE.80.E4.BB.8B).
+For the information on relationship chains, see [Introduction to the Relationship Chain System](https://intl.cloud.tencent.com/document/product/1047/33521#.E5.85.B3.E7.B3.BB.E9.93.BE.E7.B3.BB.E7.BB.9F.E7.AE.80.E4.BB.8B).
 
 ## TIMFriendshipGetFriendProfileList
 
@@ -14,16 +14,16 @@ TIM_DECL int TIMFriendshipGetFriendProfileList(TIMCommCallback cb, const void* u
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMCommCallback | The callback for checking whether obtaining the friend list succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback).  |
+| cb | TIMCommCallback | The callback for checking whether obtaining the friend list succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback).  |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC.) If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC.) If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
-> Through the callback, this API returns all [FriendProfile](https://cloud.tencent.com/document/product/269/33553#friendprofile) friend profiles.
+> Through the callback, this API returns all [FriendProfile](https://intl.cloud.tencent.com/document/product/1047/34551#friendprofile) friend profiles.
 
 
 ## TIMFriendshipAddFriend
@@ -41,16 +41,16 @@ TIM_DECL int TIMFriendshipAddFriend(const char* json_add_friend_param, TIMCommCa
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_add_friend_param | const char\* | The JSON parameter string of the API for adding a friend. |
-| cb | TIMCommCallback | The callback for checking whether adding the friend succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether adding the friend succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
-> Friendships are divided into one-way and two-way friendships. For details, see [Adding a Friend](https://cloud.tencent.com/document/product/269/1501#.E6.B7.BB.E5.8A.A0.E5.A5.BD.E5.8F.8B).
+> Friendships are divided into one-way and two-way friendships. For details, see [Adding a Friend](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.B7.BB.E5.8A.A0.E5.A5.BD.E5.8F.8B).
 
 
 **Example**
@@ -85,14 +85,14 @@ TIM_DECL int TIMFriendshipHandleFriendAddRequest(const char* json_handle_friend_
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_handle_friend_add_param | const char\* | The JSON parameter string of the API for processing friend requests. |
-| cb | TIMCommCallback | The callback for checking whether processing the friend request succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether processing the friend request succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 > If `kTIMUserProfileAddPermission` is set to `kTIMProfileAddPermission_NeedConfirm` in your profile, you will receive a friend request when someone requests to friend you. In this case, you can process the request through this API.
 
@@ -126,14 +126,14 @@ TIM_DECL int TIMFriendshipModifyFriendProfile(const char* json_modify_friend_inf
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_modify_friend_info_param | const char\* | The JSON parameter string of the API for updating a friend’s profile. |
-| cb | TIMCommCallback | The callback for checking whether updating the friend’s profile succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether updating the friend’s profile succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 **Example**
 
@@ -165,16 +165,16 @@ TIM_DECL int TIMFriendshipDeleteFriend(const char* json_delete_friend_param, TIM
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_delete_friend_param | const char\* | The JSON parameter string of the API for deleting a friend. |
-| cb | TIMCommCallback | The callback for checking  whether deleting the friend succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking  whether deleting the friend succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
-> Friend deletion is divided into one-way deletion and two-way deletion. For details, see [Deleting a Friend](https://cloud.tencent.com/document/product/269/1501#.E5.88.A0.E9.99.A4.E5.A5.BD.E5.8F.8B).
+> Friend deletion is divided into one-way deletion and two-way deletion. For details, see [Deleting a Friend](https://intl.cloud.tencent.com/document/product/1047/33521#.E5.88.A0.E9.99.A4.E5.A5.BD.E5.8F.8B).
 
 
 **Example**
@@ -207,16 +207,16 @@ TIM_DECL int TIMFriendshipCheckFriendType(const char* json_check_friend_list_par
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_check_friend_list_param | const char\* | The JSON parameter string of the API for detecting the friend type. |
-| cb | TIMCommCallback | The callback for checking whether detecting the friend type succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether detecting the friend type succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
-> The developer can use this API to check the friendship between a specified `UserID` list and the current account. For information on detecting friends, see [Detecting Friends](https://cloud.tencent.com/document/product/269/1501#.E6.A0.A1.E9.AA.8C.E5.A5.BD.E5.8F.8B).
+> The developer can use this API to check the friendship between a specified `UserID` list and the current account. For information on detecting friends, see [Detecting Friends](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E5.A5.BD.E5.8F.8B).
 
 
 **Example**
@@ -246,14 +246,14 @@ TIM_DECL int TIMFriendshipCreateFriendGroup(const char* json_create_friend_group
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_create_friend_group_param | const char\* | The JSON parameter string of the API for creating a friend group. |
-| cb | TIMCommCallback | The callback for checking whether creating the friend group succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether creating the friend group succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 > You cannot create a group that already exists.
 
@@ -286,14 +286,14 @@ TIM_DECL int TIMFriendshipGetFriendGroupList(const char* json_get_friend_group_l
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_get_friend_group_list_param | const char\* | The JSON parameter string of the API for obtaining the group information of a specified friend group. |
-| cb | TIMCommCallback | The callback for checking whether obtaining friend group information succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether obtaining friend group information succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 **Example**
 
@@ -321,14 +321,14 @@ TIM_DECL int TIMFriendshipModifyFriendGroup(const char* json_modify_friend_group
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_modify_friend_group_param | const char\* | The JSON parameter string of the API for modifying a friend group. |
-| cb | TIMCommCallback | The callback for checking whether modifying the friend group succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether modifying the friend group succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 **Example**
 
@@ -360,14 +360,14 @@ TIM_DECL int TIMFriendshipDeleteFriendGroup(const char* json_delete_friend_group
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_delete_friend_group_param | const char\* | The JSON parameter string of the API for deleting a friend group. |
-| cb | TIMCommCallback | The callback for checking whether deleting the friend group succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether deleting the friend group succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 **Example**
 
@@ -395,14 +395,14 @@ TIM_DECL int TIMFriendshipAddToBlackList(const char* json_add_to_blacklist_param
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_add_to_blacklist_param | const char\* | The JSON parameter string of the API for adding a specified user to the blacklist. |
-| cb | TIMCommCallback | The callback for checking whether adding a specified user to the blacklist succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether adding a specified user to the blacklist succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 **Example**
 
@@ -430,14 +430,14 @@ TIM_DECL int TIMFriendshipGetBlackList(TIMCommCallback cb, const void* user_data
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMCommCallback | The callback for checking whether obtaining the blacklist succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether obtaining the blacklist succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 ## TIMFriendshipDeleteFromBlackList
 
@@ -454,14 +454,14 @@ TIM_DECL int TIMFriendshipDeleteFromBlackList(const char* json_delete_from_black
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_delete_from_blacklist_param | const char\* | The JSON parameter string of the API for deleting a specified user from the blacklist. |
-| cb | TIMCommCallback | The callback for checking whether deleting a specified user from the blacklist succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether deleting a specified user from the blacklist succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 **Example**
 
@@ -490,14 +490,14 @@ TIM_DECL int TIMFriendshipGetPendencyList(const char* json_get_pendency_list_par
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_get_pendency_list_param | const char\* | The JSON parameter string of the API for obtaining the list of pending friend request information. |
-| cb | TIMCommCallback | The callback for checking whether obtaining the pending request information list succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether obtaining the pending request information list succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 > The list of pending friend request information refers to friend requests that have not yet been handled. For example, the developer sends a friend request to a user, but the user does not handle the request; or a user sends a friend request to the developer, but the developer does not handle the request. This is referred to as pending friend request information.
 
@@ -529,14 +529,14 @@ TIM_DECL int TIMFriendshipDeletePendency(const char* json_delete_pendency_param,
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_delete_pendency_param | const char\* | The JSON parameter string of the API for deleting the specified pending friend request information. |
-| cb | TIMCommCallback | The callback for checking whether deleting the specified pending request information succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether deleting the specified pending request information succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
 **Example**
 
@@ -565,12 +565,12 @@ TIM_DECL int TIMFriendshipReportPendencyReaded(uint64_t time_stamp, TIMCommCallb
 | Parameter | Type | Description |
 |-----|-----|-----|
 | time_stamp | uint64_t | The timestamp for reporting that the pending information has been read. |
-| cb | TIMCommCallback | The callback for checking whether reporting that the pending information has been read succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://cloud.tencent.com/document/product/269/33552#timcommcallback). |
+| cb | TIMCommCallback | The callback for checking whether reporting that the pending information has been read succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
 
 **Returned value**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://cloud.tencent.com/document/product/269/33553#timresult). |
+| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
