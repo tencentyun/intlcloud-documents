@@ -48,7 +48,7 @@
 1. 客户端再次发送请求时，Request 需带上会话保持的 Cookie。
 2. CLB 接收到会话保持 Cookie，通过算法找到处理上次请求的后端服务器，并转发给对应的后端服务器。
 
-![](https://main.qcloudimg.com/raw/b0dd9f7c679a63342cf176672adee688.png)
+![](https://main.qcloudimg.com/raw/dbf107c8a09531bd8bd1fa598dcfb9fb.png)
 
 ### 会话（Session）的会话保持
 此种方式通过多个后端服务器共享 Session 的方式，实现与负载均衡同时的会话保持。主要有如下形式：

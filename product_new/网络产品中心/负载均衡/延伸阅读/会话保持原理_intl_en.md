@@ -48,7 +48,7 @@ In cookie-based session persistence, the client and load balancer process the co
 1. When the client sends a new request, the request must carry a session persistence cookie.
 2. CLB receives the cookie, finds through the algorithm the real server that processes the previous request, and forwards the request to that server.
 
-![](https://main.qcloudimg.com/raw/b0dd9f7c679a63342cf176672adee688.png)
+![](https://main.qcloudimg.com/raw/dbf107c8a09531bd8bd1fa598dcfb9fb.png)
 
 ### Session Persistence
 This method implements session persistence simultaneously with load balancing by sharing a session among multiple real servers.
