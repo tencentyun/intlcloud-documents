@@ -25,7 +25,7 @@ Developers can set styles for images in the bucket to manage images for differen
 1. Select a bucket (for example, imagetest1) and go to the **Style** page. Then, click **Add Style**.
 ![Add style](https://main.qcloudimg.com/raw/fb7f72a2d3dbf281215bab69898da53d.png)
 2. Go to the style editing page and enter the style name. You can set the thumbnail method, progressive effect, output format, output effect, and text watermark or image watermark.
-![Style 2](https://main.qcloudimg.com/raw/0e82f5e94be7554f46d62243e7ef5e60.png)
+![Style 2](https://main.qcloudimg.com/raw/9f6c7cce07630253436a9d4eb8640d47.png)
 
 >The style name is case-sensitive and can not be modified once saved.
 
