@@ -1,10 +1,10 @@
 ## Group Overview
 
-Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see the [Group System](https://cloud.tencent.com/document/product/269/1502). A group is identified by a unique ID that enables different operations.
+Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). A group is identified by a unique ID that enables different operations.
 
 ## Group Messages
 
-Group messages and C2C (one-to-one) chat messages are the same except for the conversation type obtained through Conversation. For more information, see [Sending Messages](https://cloud.tencent.com/document/product/269/9232#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81).
+Group messages and C2C (one-to-one) chat messages are the same except for the conversation type obtained through Conversation. For more information, see [Sending Messages](https://intl.cloud.tencent.com/document/product/1047/34320#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81).
 
 ## Group Management
 
@@ -22,12 +22,12 @@ public static TIMGroupManager getInstance()
 
 ### Creating a group
 
-IM has the following built-in group types: **private group (Private), public group (Public), chatroom (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chatroom (BChatRoom)**. For more information, see [Group Types](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D).
+IM has the following built-in group types: **private group (Private), public group (Public), chatroom (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chatroom (BChatRoom)**. For more information, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D).
 
 - **AVChatRoom:** it is also called a live-streaming group, which supports an unlimited number of members, but does not support features such as adding members or querying the total number of members.
 - You can create groups through `createGroup` in `TIMGroupManager`. When creating a group, you can specify certain group information, such as the group type, name, introduction, list of group members, and even the group ID. The group ID is returned after the group is created and can be used to obtain Conversation to receive and send messages.
 
->You need to follow certain rules when defining group IDs. For more information, see [Custom Group IDs](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id).
+>You need to follow certain rules when defining group IDs. For more information, see [Custom Group IDs](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id).
 
 **Prototype:**
 
@@ -142,7 +142,7 @@ You can add (invite) users to a group through `inviteGroupMember` of `TIMGroupMa
 
 **Permission description:**
 
-For more information, see [Differences in Group Member Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
+For more information, see [Differences in Group Member Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
 
 **Prototype:**
 
@@ -218,7 +218,7 @@ TIMGroupManager.getInstance().inviteGroupMember(
 
 **Permission description:**
 
-For more information, see [Differences in Group Member Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
+For more information, see [Differences in Group Member Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
 
 **Prototype:**
 
@@ -259,7 +259,7 @@ Group members can quit a group through the API provided by `TIMGroupManager`.
 - **Private:** any member can quit the group.
 - **Public, ChatRoom, and AVChatRoom:** the group owner cannot quit the group.
 
-For more information, see [Differences in Group Member Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
+For more information, see [Differences in Group Member Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
 
 **Prototype:**
 
@@ -300,7 +300,7 @@ TIMGroupManager.getInstance().quitGroup(
 This function’s parameters are the same as those of joining a group. The API for deleting group members is provided by `TIMGroupManager`.
 
 **Permission description:**
-For more information, see [Differences in Group Member Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
+For more information, see [Differences in Group Member Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
 
 **Prototype:**
 
@@ -373,7 +373,7 @@ The API for obtaining the list of group members is `getGroupMembers`. Built-in f
 - **Any type of group:** the member list can be obtained.
 - **Live-streaming group:** the member list only contains the group owner, admin, and some members.
 
-For more information, see [Differences in Group Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
+For more information, see [Differences in Group Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
 
 **Prototype:**
 
@@ -414,7 +414,7 @@ TIMGroupManager.getInstance().getGroupMembers(
 
 ### Obtaining the list of groups the user has joined
 
-You can obtain the list of groups that the current user has joined through `TIMGroupManager`. The returned information contains only part of the basic information. To obtain detailed group information, see [Obtaining Group Information by Group Members](https://cloud.tencent.com/document/product/269/9236#.E8.8E.B7.E5.8F.96.E7.BE.A4.E7.BB.84.E8.B5.84.E6.96.992).
+You can obtain the list of groups that the current user has joined through `TIMGroupManager`. The returned information contains only part of the basic information. To obtain detailed group information, see [Obtaining Group Information by Group Members](https://intl.cloud.tencent.com/document/product/1047/34328#.E8.8E.B7.E5.8F.96.E7.BE.A4.E7.BB.84.E8.B5.84.E6.96.992).
 
 **Permission description:**
 
@@ -498,7 +498,7 @@ TIMGroupManager.getInstance().getGroupList(cb);
  The API for dismissing groups is provided by `TIMGroupManager`.
 
 **Permission description:**
-For more information, see [Differences in Group Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
+For more information, see [Differences in Group Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
 
 **Prototype:**
 
@@ -1444,7 +1444,7 @@ public void refuse(String msg, TIMCallBack cb)
 
 ## Group Event Messages
 
-When a user is invited to a group or is removed from a group, a prompt message is displayed in the group. The caller can choose to display the prompt message or ignore it. A prompt message is identified by a special `Elem` and returned by the new message callback (see [New Message Notifications](/doc/product/269/9229#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5)). To obtain group event messages, in addition to relying on new message notifications, you can also set group event listeners to monitor different events through `setGroupEventListener` of `TIMUserConfig` **before login** (see [Initialization (Android)](https://cloud.tencent.com/document/product/269/9229#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE)).
+When a user is invited to a group or is removed from a group, a prompt message is displayed in the group. The caller can choose to display the prompt message or ignore it. A prompt message is identified by a special `Elem` and returned by the new message callback (see [New Message Notifications](https://intl.cloud.tencent.com/document/product/1047/34312#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5)). To obtain group event messages, in addition to relying on new message notifications, you can also set group event listeners to monitor different events through `setGroupEventListener` of `TIMUserConfig` **before login** (see [Initialization (Android)](https://intl.cloud.tencent.com/document/product/1047/34312#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE)).
 
 > The group event messages of ChatRoom and AVChatRoom groups are not delivered by new message notifications. Therefore, you must register group event listeners to monitor different group events.
 
@@ -1596,7 +1596,7 @@ ModifyOwner
 **Trigger:** when a group member’s profile related to the group is modified, such as when the member has been muted or the member’s role in the group has changed, the system sends a message. You can update related display fields, or selectively display the message to users.
 
 >
->- **The profile mentioned here includes only information related to the group, such as muting duration and member role change. Information related to the user, such as the user’s nickname is not included**. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, see [Message sender and related profile](/doc/product/269/9232#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81.E8.80.85.E5.8F.8A.E5.85.B6.E7.9B.B8.E5.85.B3.E8.B5.84.E6.96.99).
+>- **The profile mentioned here includes only information related to the group, such as muting duration and member role change. Information related to the user, such as the user’s nickname is not included**. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, see [Message sender and related profile](https://intl.cloud.tencent.com/document/product/1047/34320#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81.E8.80.85.E5.8F.8A.E5.85.B6.E7.9B.B8.E5.85.B3.E8.B5.84.E6.96.99).
 >- If the user profile is stored locally, you can determine whether a change has occurred according to the information in the message body and update the profile after receiving a message from this user.
 
 **Description of the responses of `TIMGroupTipsElem` member methods:**

@@ -40,7 +40,7 @@ mysqldump -c -t -utest -ptest1234  -S /data/4003/prod/mysql.scok caccts t_acct_w
 >导出数据必须通过 mysqldump 工具导出，并且加上 -c 参数，因为这样导出的数据行都带有列名字段，不带列名字段的 sql 会被 TDSQL for Percona、MariaDB 拒绝掉。-t 参数的意义是不导出表结构，只导出表数据。
 
 ### 上传文件至云服务器某目录
-上传前，您需开启 CVM 外网访问地址，并参见 [Linux 系统通过 SCP 上传文件到 Linux 云服务器](https://cloud.tencent.com/document/product/213/2133) 上传文件，您至少需要上传刚刚导出的：
+上传前，您需开启 CVM 外网访问地址，并参见 [Linux 系统通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133) 上传文件，您至少需要上传刚刚导出的：
 - 表结构 sql：table.sql
 - 数据 sql：data.sql
 

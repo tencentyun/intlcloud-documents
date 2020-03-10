@@ -1,5 +1,5 @@
 The following figure illustrates the video call process:
-![trtc demo](https://main.qcloudimg.com/raw/d097f4090d52a73c8ca6c82767b49b3d.png)
+![trtc demo](https://main.qcloudimg.com/raw/3d7bdb9f19b352d5f092ea0b3b3a4032.png)
 
 1. The IM SDK sends and receives custom communication protocol messages.
 2. The custom messages are displayed through TUIKit.
@@ -128,7 +128,7 @@ public class videoCallMessageData {
 ## Step 5: Enter the Video Room
  The Chat/Meeting folder in the [demo](https://github.com/tencentyun/TIMSDK) contains the logic for entering or quitting video rooms, which can be copied to the current project.
 
-The following shows the sample code for entering a video room. For more information, see [TRTCParams Configuration](https://cloud.tencent.com/document/product/647/32261#trtcparams).
+The following shows the sample code for entering a video room. For more information, see [TRTCParams configuration](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams). 
 
 ```
 - (void)_enterMeetingRoom {
@@ -145,7 +145,7 @@ The following shows the sample code for entering a video room. For more informat
     [[TRTCCloud sharedInstance] startLocalPreview:YES view:self.localVideoView];
 }
 ```
->`param.userSig` must be set as the UserSig of the current TRTC SDKAppID. If the TRTC SDKAppID and IM SDKAppID are the same, the UserSig can be reused. Otherwise, obtain the UserSig specific to the TRTC SDKAppID before authentication. For more information, see [How to Generate UserSig](https://cloud.tencent.com/document/product/647/17275).
+>`param.userSig` must be set as the UserSig of the current TRTC SDKAppID. If the TRTC SDKAppID and IM SDKAppID are the same, the UserSig can be reused. Otherwise, obtain the UserSig specific to the TRTC SDKAppID before authentication. 
  
 The following shows the sample code for quitting a video room:
 
@@ -163,4 +163,4 @@ For the complete logic for TRTC callbacks and setting rendering pages, see the C
 ## FAQs
 **1. What should I do if I created the TRTC SDKAppID and IM SDKAppID separately and want to integrate both the IM SDK and TRTC SDK?**
 
- If you created the TRTC SDKAppID and IM SDKAppID separately, then you have two different SDKAppIDs, and the accounts and their authentications cannot be reused. In this case, you need to generate a UserSig for each SDKAppID for authentication. For more information on how to generate UserSig, see [How to Generate UserSig](https://cloud.tencent.com/document/product/647/17275).
+ If you created the TRTC SDKAppID and IM SDKAppID separately, then you have two different SDKAppIDs, and the accounts and their authentications cannot be reused. In this case, you need to generate a UserSig for each SDKAppID for authentication.

@@ -23,10 +23,10 @@ HTTP persistent connection and non-persistent connection are essentially TCP per
 If TCP protocol is used for network communication, a connection must be established between the client and the server before an actual read/write operation is performed. After the operation is completed, the connection can be released if no longer needed by the two parties. The establishment of a connection relies on a "three-way handshake", while the release requires a "four-way handshake". The establishment of each connection consumes resource and time.
 
 Diagram of connection establishment via three-way handshake:
-![](https://main.qcloudimg.com/raw/0fd90c1e746103ac30860ff72d3991af.jpg)
+![](https://main.qcloudimg.com/raw/5cb0bc4a4bef77cef257f2f7055a3529.png)
 
 Diagram of connection close via four-way handshake:
-![](https://main.qcloudimg.com/raw/0365ef944cf4e0f68c697e4e597319ff.jpg)
+![](https://main.qcloudimg.com/raw/b9a052de2859256d91b43fe99218ab0f.png)
 
 ### TCP non-persistent connection
 Below is a simulation of TCP non-persistent connection. The client initiates a connection request to the server, the server receives the request, and a connection is established. The client sends a message to the server, the server responds to the client, and a request is completed. Either party can now initiate a close operation, which is usually initiated by the client first. In general, non-persistent connection only passes one single request between the client and the server.

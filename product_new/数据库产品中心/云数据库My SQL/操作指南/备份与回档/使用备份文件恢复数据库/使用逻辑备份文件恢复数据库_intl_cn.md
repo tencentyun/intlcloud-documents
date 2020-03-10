@@ -13,7 +13,7 @@
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表中，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 在实例管理页，选择【备份恢复】>【数据备份列表】页， 选择需要下载的备份，在操作列单击【下载】。
 3. 在弹出的对话框，推荐您复制下载地址，并登录到云数据库所在 VPC 下的 CVM（Linux 系统） 中，运用 wget 命令进行内网高速下载，更高效。
->?
+>
 >- 您也可以选择【本地下载】直接下载，但耗时较多。
 >- wget 命令格式：wget -c '备份文件下载地址' -O 自定义文件名.xb
 >
@@ -27,7 +27,7 @@ wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%
 ```
 xbstream -x < test0.xb
 ```
->?`test0.xb`替换为您的备份文件。
+>`test0.xb`替换为您的备份文件。
 >
 解包结果如下图所示：
 ![](https://main.qcloudimg.com/raw/61b53f4f54ffd2fbe7c0d1b3423255b0.png)
@@ -37,7 +37,7 @@ xbstream -x < test0.xb
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?若 wget 下载提示错误，您可至 [quicklz](http://www.quicklz.com/) 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://cloud.tencent.com/document/product/213/2133)。
+>?若 wget 下载提示错误，您可至 [quicklz](http://www.quicklz.com/) 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133)。
 2. 通过如下命令解出 qpress 二进制文件。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
