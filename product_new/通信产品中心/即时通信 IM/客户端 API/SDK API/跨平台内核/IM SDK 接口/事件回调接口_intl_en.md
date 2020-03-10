@@ -13,7 +13,7 @@ TIM_DECL void TIMAddRecvNewMsgCallback(TIMRecvNewMsgCallback cb, const void* use
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMRecvNewMsgCallback | The callback function for new messages. For more information, see [TIMRecvNewMsgCallback](https://cloud.tencent.com/document/product/269/33552#timrecvnewmsgcallback). |
+| cb | TIMRecvNewMsgCallback | The callback function for new messages. For more information, see [TIMRecvNewMsgCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timrecvnewmsgcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 > If the user is logged in, the IM SDK will send newly received messages by using the callback set by this API. Note that not only unread messages are sent. Any messages that do not exist on the local terminal are sent. For example, if a message has been read on another terminal, when the IM SDK pulls recent contact messages, the last message in the conversation can be obtained. If the message does not exist on the local terminal, it will be sent by using this method. After the user logs in, the IM SDK will pull offline messages. In order not to miss any message notifications, the user needs to register new message notifications before login.
@@ -33,7 +33,7 @@ TIM_DECL void TIMRemoveRecvNewMsgCallback(TIMRecvNewMsgCallback cb);
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMRecvNewMsgCallback | The callback function for new messages. For more information, see [TIMRecvNewMsgCallback](https://cloud.tencent.com/document/product/269/33552#timrecvnewmsgcallback). |
+| cb | TIMRecvNewMsgCallback | The callback function for new messages. For more information, see [TIMRecvNewMsgCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timrecvnewmsgcallback). |
 
 > The cb parameter must be consistent with that passed in by [TIMAddRecvNewMsgCallback] (#timaddrecvnewmsgcallback). Otherwise, the callback cannot be deleted.
 
@@ -52,10 +52,10 @@ TIM_DECL void TIMSetMsgReadedReceiptCallback(TIMMsgReadedReceiptCallback cb, con
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMMsgReadedReceiptCallback | The callback function for message read receipt. For more information, see [TIMMsgReadedReceiptCallback](https://cloud.tencent.com/document/product/269/33552#timmsgreadedreceiptcallback). |
+| cb | TIMMsgReadedReceiptCallback | The callback function for message read receipt. For more information, see [TIMMsgReadedReceiptCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timmsgreadedreceiptcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
-> When the sender sends a message, the recipient invokes the [TIMMsgReportReaded] (https://cloud.tencent.com/document/product/269/33549#timmsgreportreaded) API to report that the message has been read. Then, the IM SDK for the sender will send the receipt through the callback set by this API.
+> When the sender sends a message, the recipient invokes the [TIMMsgReportReaded] (https://intl.cloud.tencent.com/document/product/1047/34391#timmsgreportreaded) API to report that the message has been read. Then, the IM SDK for the sender will send the receipt through the callback set by this API.
 
 
 ## TIMSetMsgRevokeCallback
@@ -72,10 +72,10 @@ TIM_DECL void TIMSetMsgRevokeCallback(TIMMsgRevokeCallback cb, const void* user_
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMMsgRevokeCallback | The callback function for message revocation notifications. For more information, see [TIMMsgRevokeCallback] (https://cloud.tencent.com/document/product/269/33552#timmsgrevokecallback). |
+| cb | TIMMsgRevokeCallback | The callback function for message revocation notifications. For more information, see [TIMMsgRevokeCallback] (https://intl.cloud.tencent.com/document/product/1047/34550#timmsgrevokecallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
-> After the sender sends a message to the recipient, if the sender then invokes the [TIMMsgRevoke] (https://cloud.tencent.com/document/product/269/33549#timmsgrevoke) API to revoke the message. the IM SDK for the recipient will send a notification through the callback set by this API.
+> After the sender sends a message to the recipient, if the sender then invokes the [TIMMsgRevoke] (https://intl.cloud.tencent.com/document/product/1047/34391#timmsgrevoke) API to revoke the message. the IM SDK for the recipient will send a notification through the callback set by this API.
 
 
 ## TIMSetMsgElemUploadProgressCallback
@@ -92,7 +92,7 @@ TIM_DECL void TIMSetMsgElemUploadProgressCallback(TIMMsgElemUploadProgressCallba
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMMsgElemUploadProgressCallback | The callback function for checking the file upload progress. For more information, see [TIMMsgElemUploadProgressCallback](https://cloud.tencent.com/document/product/269/33552#timmsgelemuploadprogresscallback). |
+| cb | TIMMsgElemUploadProgressCallback | The callback function for checking the file upload progress. For more information, see [TIMMsgElemUploadProgressCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timmsgelemuploadprogresscallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 > Sets the callback for checking the progress of uploading message elements. When a message contains the image, audio, file, or video elements, the IM SDK will upload these files and trigger the callback set by this API. Users can learn about the upload progress based on the callback.
@@ -112,7 +112,7 @@ TIM_DECL void TIMSetGroupTipsEventCallback(TIMGroupTipsEventCallback cb, const v
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMGroupTipsEventCallback | The callback for group messages. For more information, see [TIMGroupTipsEventCallback](https://cloud.tencent.com/document/product/269/33552#timgrouptipseventcallback). |
+| cb | TIMGroupTipsEventCallback | The callback for group messages. For more information, see [TIMGroupTipsEventCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timgrouptipseventcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 > Group system message events include joining a group, exiting from a group, removing from a group, setting an admin, canceling an admin, modifying the group profile, and modifying group member profiles. These messages are sent to all group members.
@@ -132,7 +132,7 @@ TIM_DECL void TIMSetConvEventCallback(TIMConvEventCallback cb, const void* user_
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMConvEventCallback | The callback for conversation events. For more information, see [TIMConvEventCallback](https://cloud.tencent.com/document/product/269/33552#timconveventcallback). |
+| cb | TIMConvEventCallback | The callback for conversation events. For more information, see [TIMConvEventCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timconveventcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 >
@@ -140,7 +140,7 @@ TIM_DECL void TIMSetConvEventCallback(TIMConvEventCallback cb, const void* user_
  - Conversation creation
  - Conversation deletion
  - Conversation update
-- Any operation that generates a new conversation will trigger the conversation creation event, such as invoking the [TIMConvCreate](https://cloud.tencent.com/document/product/269/33548#timconvcreate) API to create a conversation or receiving the first message in an unknown conversation. Any operation that changes an existing conversation will trigger the conversation update event, such as receiving a new conversation message, revoking messages, and reporting that a message has been read. When the [TIMConvDelete](https://cloud.tencent.com/document/product/269/33548#timconvdelete) API is invoked to delete a conversation, the conversation deletion event will be triggered.
+- Any operation that generates a new conversation will trigger the conversation creation event, such as invoking the [TIMConvCreate](https://intl.cloud.tencent.com/document/product/1047/34557#timconvcreate) API to create a conversation or receiving the first message in an unknown conversation. Any operation that changes an existing conversation will trigger the conversation update event, such as receiving a new conversation message, revoking messages, and reporting that a message has been read. When the [TIMConvDelete](https://intl.cloud.tencent.com/document/product/1047/34557#timconvdelete) API is invoked to delete a conversation, the conversation deletion event will be triggered.
 
 
 ## TIMSetNetworkStatusListenerCallback
@@ -157,7 +157,7 @@ TIM_DECL void TIMSetNetworkStatusListenerCallback(TIMNetworkStatusListenerCallba
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMNetworkStatusListenerCallback | The callback for network connection events. For more information, see [TIMNetworkStatusListenerCallback](https://cloud.tencent.com/document/product/269/33552#timnetworkstatuslistenercallback). |
+| cb | TIMNetworkStatusListenerCallback | The callback for network connection events. For more information, see [TIMNetworkStatusListenerCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timnetworkstatuslistenercallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 >
@@ -181,7 +181,7 @@ TIM_DECL void TIMSetKickedOfflineCallback(TIMKickedOfflineCallback cb, const voi
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMKickedOfflineCallback | The callback for forced logout. For more information, see[TIMKickedOfflineCallback](https://cloud.tencent.com/document/product/269/33552#timkickedofflinecallback). |
+| cb | TIMKickedOfflineCallback | The callback for forced logout. For more information, see[TIMKickedOfflineCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timkickedofflinecallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 >
@@ -207,10 +207,10 @@ TIM_DECL void TIMSetUserSigExpiredCallback(TIMUserSigExpiredCallback cb, const v
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMUserSigExpiredCallback | The callback for ticket expiration. For more information, see [TIMUserSigExpiredCallback](https://cloud.tencent.com/document/product/269/33552#timusersigexpiredcallback). |
+| cb | TIMUserSigExpiredCallback | The callback for ticket expiration. For more information, see [TIMUserSigExpiredCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timusersigexpiredcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
->User tickets may expire. If a user ticket expires, the callback set by this API will be invoked, and [TIMLogin](https://cloud.tencent.com/document/product/269/33547#timlogin) will return error code 70001. Developers can change the ticket based on the error code or ticket expiration callback.
+>User tickets may expire. If a user ticket expires, the callback set by this API will be invoked, and [TIMLogin](https://intl.cloud.tencent.com/document/product/1047/34390#timlogin) will return error code 70001. Developers can change the ticket based on the error code or ticket expiration callback.
 
 
 ## TIMSetOnAddFriendCallback
@@ -227,7 +227,7 @@ TIM_DECL void TIMSetOnAddFriendCallback(TIMOnAddFriendCallback cb, const void* u
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMOnAddFriendCallback | The callback for adding friends. For more information, see [TIMOnAddFriendCallback](https://cloud.tencent.com/document/product/269/33552#timonaddfriendcallback). |
+| cb | TIMOnAddFriendCallback | The callback for adding friends. For more information, see [TIMOnAddFriendCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timonaddfriendcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 > This callback is used for multi-terminal synchronization. For example, assume that the same IM SDK account has been logged in on devices A and B. When a friend is added on device A, the IM SDK for device B will receive a friend addition notification, and the IM SDK will notify the developer of the notification through this callback.
@@ -247,7 +247,7 @@ TIM_DECL void TIMSetOnDeleteFriendCallback(TIMOnDeleteFriendCallback cb, const v
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMOnDeleteFriendCallback | The callback for deleting friends. For more information, see [TIMOnDeleteFriendCallback](https://cloud.tencent.com/document/product/269/33552#timondeletefriendcallback). |
+| cb | TIMOnDeleteFriendCallback | The callback for deleting friends. For more information, see [TIMOnDeleteFriendCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timondeletefriendcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 > This callback is used for multi-terminal synchronization. For example, assume that the same IM SDK account has been logged in on devices A and B. When a friend is deleted on device A, the IM SDK for device B will receive a friend deletion notification, and the IM SDK will notify the developer of the notification through this callback.
@@ -267,7 +267,7 @@ TIM_DECL void TIMSetUpdateFriendProfileCallback(TIMUpdateFriendProfileCallback c
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMUpdateFriendProfileCallback | The callback for updating friend profiles. For more information, see [TIMUpdateFriendProfileCallback](https://cloud.tencent.com/document/product/269/33552#timupdatefriendprofilecallback). |
+| cb | TIMUpdateFriendProfileCallback | The callback for updating friend profiles. For more information, see [TIMUpdateFriendProfileCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timupdatefriendprofilecallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 > This callback is used for multi-terminal synchronization. For example, assume that the same IM SDK account has been logged in on devices A and B. When a friend’s profile is updated on device A, the IM SDK for device B will receive a friend profile update notification, and the IM SDK will notify the developer of the notification through this callback.
@@ -287,7 +287,7 @@ TIM_DECL void TIMSetFriendAddRequestCallback(TIMFriendAddRequestCallback cb, con
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMFriendAddRequestCallback | The callback for friend requests. For more information, see [TIMFriendAddRequestCallback](https://cloud.tencent.com/document/product/269/33552#timfriendaddrequestcallback). |
+| cb | TIMFriendAddRequestCallback | The callback for friend requests. For more information, see [TIMFriendAddRequestCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timfriendaddrequestcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 > If the logged-in user has set that confirmation is required for friend requests and another user sends a friend request to this user, the logged-in user will receive the friend request callback, and the IM SDK will notify the developer through this callback. If the same account has been logged in on multiple terminals, each of these terminals will receive the callback.
@@ -307,10 +307,10 @@ TIM_DECL void TIMSetLogCallback(TIMLogCallback cb, const void* user_data);
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMLogCallback | The callback for logs. For more information, see [TIMLogCallback](https://cloud.tencent.com/document/product/269/33552#timlogcallback). |
+| cb | TIMLogCallback | The callback for logs. For more information, see [TIMLogCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timlogcallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
-> After the log monitoring callback is set, IM SDK internal logs will be returned to the callback set by this API. Developers can invoke the [TIMSetConfig](https://cloud.tencent.com/document/product/269/33546#timsetconfig) API to configure the log levels of logs to be returned to the callback.
+> After the log monitoring callback is set, IM SDK internal logs will be returned to the callback set by this API. Developers can invoke the [TIMSetConfig](https://intl.cloud.tencent.com/document/product/1047/34388#timsetconfig) API to configure the log levels of logs to be returned to the callback.
 
 
 ## TIMSetMsgUpdateCallback
@@ -327,12 +327,12 @@ TIM_DECL void TIMSetMsgUpdateCallback(TIMMsgUpdateCallback cb, const void* user_
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMMsgUpdateCallback | The callback for message updating. For more information, see [TIMMsgUpdateCallback](https://cloud.tencent.com/document/product/269/33552#timmsgupdatecallback). |
+| cb | TIMMsgUpdateCallback | The callback for message updating. For more information, see [TIMMsgUpdateCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timmsgupdatecallback). |
 | user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without performing any processing. |
 
 >
 - After a message that you sent is modified on the server end, the IM SDK will notify you of this modification through this callback.
-- You can intercept all IM messages on your server. For more information, see [Performing Callback Before Sending One-to-One Chat Messages](https://cloud.tencent.com/document/product/269/1632).
+- You can intercept all IM messages on your server. For more information, see [Performing Callback Before Sending One-to-One Chat Messages](https://intl.cloud.tencent.com/document/product/1047/34364).
 - After this callback is set, the IM server will notify your business server of each message sent by your users.
 - The business server can modify the message (for example, filter out sensitive words). If the business server modifies the message, the IM SDK will notify you of this modification through this callback.
 
