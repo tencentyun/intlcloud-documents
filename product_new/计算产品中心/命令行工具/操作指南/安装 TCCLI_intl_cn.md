@@ -11,7 +11,6 @@
 > 注意：
 >
 > Python 版本必须为2.7及以上版本，更多内容请参考 [Python](https://www.python.org/) 主页 和 [pip](https://pypi.org/project/pip/) 主页。
-
 ## 相关说明
 
 - TCCLI 依赖于 [TencentCloudApi Python SDK](https://github.com/TencentCloud/tencentcloud-sdk-python-intl-en)，如果 TencentCloudApi Python SDK 的版本号小于要安装 TCCLI 版本号，在安装 TCCLI 时会自动升级 TencentCloudApi Python SDK。
@@ -24,7 +23,7 @@
    ```sh
 pip install tccli-intl-en
    ```
-   
+
 2. 安装完成之后，执行以下命令，检测是否安装成功：
 
    ```
