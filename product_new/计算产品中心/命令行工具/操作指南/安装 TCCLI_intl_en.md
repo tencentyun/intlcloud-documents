@@ -32,15 +32,15 @@ pip install tccli-intl-en
    ```
 
    > Note:
->
+   >
    > If your environment is Linux, you can enable autocomplete feature by running the following command:
    >
    > ```
    >complete -C 'tccli_completer' tccli
    > ```
-   
+  
 ## Please note that a certificate issue may occur in Mac OS
->Note：
+> Note：
 >
 >While installing Python 3.6 or later versions in Mac OS, you may get an error saying 
 `Error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:1056).`
