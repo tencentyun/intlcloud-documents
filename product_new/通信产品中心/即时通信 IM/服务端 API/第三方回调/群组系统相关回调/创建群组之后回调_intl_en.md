@@ -4,10 +4,10 @@ Through this callback, the app backend can monitor information about creating gr
 
 ## Notes
 
-- To enable this callback, you must configure the callback URL and toggle on the corresponding protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://cloud.tencent.com/document/product/269/32431).
+- To enable this callback, you must configure the callback URL and toggle on the corresponding protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - Callback direction: the IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the SDKAppID contained in the request URL is consistent with its own SDKAppID.
-- For other security-related issues, see [Third-Party Callback Overview: Security Considerations](https://cloud.tencent.com/document/product/269/1522#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
+- For other security-related issues, see [Third-Party Callback Overview: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
 
 ## Callback Triggering Scenarios
 
@@ -39,7 +39,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | The value is fixed to Group.CallbackAfterCreateGroup. |
 | contenttype | The value is fixed to JSON. |
 | ClientIP | The client IP address, whose format is similar to: 127.0.0.1. |
-| OptPlatform | The client platform. For details on the values, see the **OptPlatform** parameter in [Third-Party Callback Overview: Callback Protocols](https://cloud.tencent.com/document/product/269/1522#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
+| OptPlatform | The client platform. For details on the values, see the **OptPlatform** parameter in [Third-Party Callback Overview: Callback Protocols](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
 
 ### Request packet example
 
@@ -80,10 +80,10 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | GroupId | String | The ID of the target group. |
 | Operator_Account | String | The identifier of the operator who initiates the request for creating a group. |
 | Owner_Account | String | The identifier of the owner of the group to be created by the request. |
-| Type | String | The type of the group to be created. For details, see [Group Types](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). The group type can be Private, Public, or ChatRoom. |
+| Type | String | The type of the group to be created. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). The group type can be Private, Public, or ChatRoom. |
 | Name | String | The name of the group to be created by the request. |
 | MemberList | Array | The initial member list of the group to be created by the request. |
-| UserDefinedDataList | Array | Custom fields during group creation by the user. By default, this field is unavailable and needs to be enabled before use. For details, see [Custom Fields](/doc/product/269/group system#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
+| UserDefinedDataList | Array | Custom fields during group creation by the user. By default, this field is unavailable and needs to be enabled before use. For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
 
 ### Response packet example
 
@@ -106,5 +106,5 @@ After data synchronization, the app backend sends a callback response packet.
 | ErrorInfo | String | Required | Error information. |
 
 ## References
-- [Third-party callback overview](https://cloud.tencent.com/document/product/269/1522)
-- RESTful APIs: [Creating Groups](https://cloud.tencent.com/document/product/269/1615)
+- [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
+- RESTful APIs: [Creating Groups](https://intl.cloud.tencent.com/document/product/1047/34895)

@@ -4,10 +4,10 @@ Through this callback, the app backend can monitor the deletion of user blacklis
 
 ## Precautions
 
-- To enable this callback, you must configure the callback URL and toggle on the corresponding protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://cloud.tencent.com/document/product/269/32431).
+- To enable this callback, you must configure the callback URL and toggle on the corresponding protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - Callback direction: The IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the SDKAppID contained in the request URL is consistent with its own SDKAppID.
-- For other security-related issues, see [Third-Party Callback Overview: Security Considerations](https://cloud.tencent.com/document/product/269/1522#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
+- For other security-related issues, see [Third-Party Callback Overview: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
 
 ## Callback Triggering Scenarios
 
@@ -39,7 +39,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | The value is fixed to Sns.CallbackBlackListDelete. |
 | contenttype | The value is fixed to JSON. |
 | ClientIP | The client IP address, whose format is similar to: 127.0.0.1. |
-| OptPlatform | The client platform. For details on the possible values, see the OptPlatform parameter in [Third-Party Callback Overview: Callback Protocols](https://cloud.tencent.com/document/product/269/1522#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
+| OptPlatform | The client platform. For details on the possible values, see the OptPlatform parameter in [Third-Party Callback Overview: Callback Protocols](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
 
 ### Request packet example
 
@@ -92,5 +92,5 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ## References
 
-- [Third-party callback overview](https://cloud.tencent.com/document/product/269/1522)
-- RESTful APIs: [Adding a user to the blacklist](https://cloud.tencent.com/document/product/269/3718)
+- [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
+- RESTful APIs: [Adding a user to the blacklist](https://intl.cloud.tencent.com/document/product/1047/34911)

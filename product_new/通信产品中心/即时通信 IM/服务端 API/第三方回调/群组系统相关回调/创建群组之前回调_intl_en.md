@@ -4,10 +4,10 @@ Through this callback, the app backend can monitor users’ group creation reque
 
 ## Notes
 
-- To enable the callback, you must configure the callback URL and toggle on the callback protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://cloud.tencent.com/document/product/269/32431).
+- To enable the callback, you must configure the callback URL and toggle on the callback protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - The callback direction is that the IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the SDKAppID in the request URL is consistent with its own SDKAppID.
-- For other security-related issues, see [Third-Party Callback Introduction: Security Considerations](https://cloud.tencent.com/document/product/269/1522#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
+- For other security-related issues, see [Third-Party Callback Introduction: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
 
 ## Callback Triggering Scenarios
 
@@ -39,7 +39,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | The value is fixed to Group.CallbackBeforeCreateGroup. |
 | contenttype | The value is fixed to JSON. |
 | ClientIP | The client IP address, such as 127.0.0.1. |
-| OptPlatform | The client platform. For information on possible values, see the parameter description for OptPlatform in [Third-Party Callback Introduction: Callback Protocols](https://cloud.tencent.com/document/product/269/1522#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
+| OptPlatform | The client platform. For information on possible values, see the parameter description for OptPlatform in [Third-Party Callback Introduction: Callback Protocols](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
 
 ### Request packet example
 
@@ -69,7 +69,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | Callback command |
 | Operator_Account | String | Identifier of the operator who initiates the group creation request |
 | Owner_Account | String | Identifier of the owner of the group to be created through the request |
-| Type | String | The type of the group that generates group messages, such as Private, Public, or ChatRoom. For details, see [Group Types](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). |
+| Type | String | The type of the group that generates group messages, such as Private, Public, or ChatRoom. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). |
 | Name | String | Name of the group to be created through the request |
 | CreatedNum | Integer | Number of groups of the same type already created by the user |
 | MemberList | Array | Initial member list of the group to be created through the request |
@@ -110,5 +110,5 @@ Reject the user’s request to create the group. In this case, the group will no
 
 ## References
 
-- [Third-party callback introduction](https://cloud.tencent.com/document/product/269/1522)
-- RESTful APIs: [creating groups](https://cloud.tencent.com/document/product/269/1615)
+- [Third-party callback introduction](https://intl.cloud.tencent.com/document/product/1047/34354)
+- RESTful APIs: [creating groups](https://intl.cloud.tencent.com/document/product/1047/34895)

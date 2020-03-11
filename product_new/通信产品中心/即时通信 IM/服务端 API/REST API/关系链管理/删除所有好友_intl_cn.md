@@ -8,14 +8,14 @@ https://console.tim.qq.com/v4/sns/friend_delete_all?sdkappid=88888888&identifier
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/sns/friend_delete_all  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 
@@ -44,7 +44,7 @@ https://console.tim.qq.com/v4/sns/friend_delete_all?sdkappid=88888888&identifier
 |字段|类型|属性|说明|
 |----|----|----|-----|
 | From_Account  |  String | 必填  | 指定要清除好友数据的用户的 UserID |
-| DeleteType  |  String | 选填  | 删除模式，默认删除单向好友，详情可参见 [删除好友](https://cloud.tencent.com/document/product/269/1501#.E5.88.A0.E9.99.A4.E5.A5.BD.E5.8F.8B)  |
+| DeleteType  |  String | 选填  | 删除模式，默认删除单向好友，详情可参见 [删除好友](https://intl.cloud.tencent.com/document/product/1047/33521#.E5.88.A0.E9.99.A4.E5.A5.BD.E5.8F.8B)  |
 
 ### 应答包体示例
 
@@ -61,16 +61,15 @@ https://console.tim.qq.com/v4/sns/friend_delete_all?sdkappid=88888888&identifier
 
 | 字段 | 类型 |说明|
 |----|----|-----|
-| ActionStatus  |  String |  请求包的处理结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode|	Integer	|错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode) |
+| ActionStatus  |  String |  请求包的处理结果，“OK”表示处理成功，“FAIL”表示失败 |
+| ErrorCode|	Integer	|错误码，0表示成功，非0表示失败 |
 | ErrorInfo  | String   |  详细错误信息 |
 | ErrorDisplay  |  String | 详细的客户端展示信息  |
 
-<span id="ErrorCode"></span>
-## 错误码说明
 
-除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）请参见 [错误码](https://cloud.tencent.com/document/product/269/1671)。
+## 错误码说明
+除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为 200；真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -87,10 +86,10 @@ https://console.tim.qq.com/v4/sns/friend_delete_all?sdkappid=88888888&identifier
 
 ## 参考
 
-- 添加好友（<a href="https://cloud.tencent.com/document/product/269/1643">v4/sns/friend_add</a>）
-- 导入好友（<a href="https://cloud.tencent.com/document/product/269/8301">v4/sns/friend_import</a>）
-- 更新好友（<a href="https://cloud.tencent.com/document/product/269/12525">v4/sns/friend_update</a>）
-- 删除好友（<a href="https://cloud.tencent.com/document/product/269/1644">v4/sns/friend_delete</a>）
-- 校验好友（<a href="https://cloud.tencent.com/document/product/269/1646">v4/sns/friend_check</a>）
-- 拉取好友（<a href="https://cloud.tencent.com/document/product/269/1647">v4/sns/friend_get</a>）
-- 拉取指定好友（<a href="https://cloud.tencent.com/document/product/269/8609">v4/sns/friend_get_list</a>）
+- 添加好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34902">v4/sns/friend_add</a>）
+- 导入好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34903">v4/sns/friend_import</a>）
+- 更新好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34904">v4/sns/friend_update</a>）
+- 删除好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34905">v4/sns/friend_delete</a>）
+- 校验好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34907">v4/sns/friend_check</a>）
+- 拉取好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34908">v4/sns/friend_get</a>）
+- 拉取指定好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34910">v4/sns/friend_get_list</a>）

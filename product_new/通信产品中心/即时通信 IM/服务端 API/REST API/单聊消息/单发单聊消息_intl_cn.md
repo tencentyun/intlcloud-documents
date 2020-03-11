@@ -3,7 +3,7 @@
 - 管理员指定某一帐号向其他帐号发消息，接收方看到发送者不是管理员，而是管理员指定的帐号。
 - 该接口不会检查发送者和接收者的好友关系（包括黑名单），同时不会检查接收者是否被禁言。
 
->!使用服务端集成 REST API 发送单聊消息时，存在是否将消息同步至发送方（管理员帐号或者由管理员指定的某帐号）问题，同步方式包括在线终端和漫游，REST API 提供 SyncOtherMachine 参数用于说明是否进行同步，详细使用方式参见下文请求包示例。
+>使用服务端集成 REST API 发送单聊消息时，存在是否将消息同步至发送方（管理员帐号或者由管理员指定的某帐号）问题，同步方式包括在线终端和漫游，REST API 提供 SyncOtherMachine 参数用于说明是否进行同步，详细使用方式参见下文请求包示例。
 
 ## 接口调用说明
 ### 请求 URL 示例
@@ -12,14 +12,14 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/openim/sendmsg  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 ### 最高调用频率
@@ -27,11 +27,11 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 200次/秒。
 
 ### 请求包示例
-本文以发送文本消息为例，如需发送其他类型的消息，只需将 MsgBody 字段改成相应消息类型即可，更多详情请参见 [消息格式描述](https://cloud.tencent.com/document/product/269/2720)。
+本文以发送文本消息为例，如需发送其他类型的消息，只需将 MsgBody 字段改成相应消息类型即可，更多详情请参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)。
 
 #### 管理员向其它帐号发消息
 
->!若不希望将消息同步至 From_Account，则 SyncOtherMachine 填写2。
+>若不希望将消息同步至 From_Account，则 SyncOtherMachine 填写2。
 >若希望将消息同步至 From_Account，则 SyncOtherMachine 填写1。
 
 ```
@@ -53,7 +53,7 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 ```
 
 #### 管理员指定某一帐号向其它帐号发送消息，同时设置离线推送信息，并且不将消息同步至 From_Account
->!若不希望将消息同步至 From_Account，则 SyncOtherMachine 填写2。
+>若不希望将消息同步至 From_Account，则 SyncOtherMachine 填写2。
 
 ```
 {
@@ -90,7 +90,7 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 ```
 
 #### 管理员指定某一帐号向另一帐号发送消息，同时将消息同步到 From_Account 发送方终端
->!若希望将消息同步至 From_Account，则 SyncOtherMachine 填写1。
+>若希望将消息同步至 From_Account，则 SyncOtherMachine 填写1。
 
 ```
 {
@@ -120,10 +120,10 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 | MsgLifeTime | Integer |选填| 消息离线保存时长（单位：秒），最长为7天（604800秒）<li>若设置该字段为0，则消息只发在线用户，不保存离线</li><li>若设置该字段超过7天（604800秒），仍只保存7天</li><li>若不设置该字段，则默认保存7天</li>|
 | MsgRandom | Integer |必填| 消息随机数，由随机函数产生，用于后台定位问题
 | MsgTimeStamp | Integer |选填| 消息时间戳，UNIX 时间戳（单位：秒）  |
-| MsgBody | Object |必填| 消息内容，具体格式请参考 [消息格式描述](https://cloud.tencent.com/document/product/269/2720)（注意，一条消息可包括多种消息元素，MsgBody 为 Array 类型）  |
+| MsgBody | Object |必填| 消息内容，具体格式请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)（注意，一条消息可包括多种消息元素，MsgBody 为 Array 类型）  |
 | MsgType | String|必填| TIM 消息对象类型，目前支持的消息对象包括：TIMTextElem(文本消息)，TIMFaceElem(表情消息)，TIMLocationElem(位置消息)，TIMCustomElem(自定义消息)  |
-| MsgContent | Object |必填| 对于每种 MsgType 用不同的 MsgContent 格式，具体可参考 [消息格式描述](https://cloud.tencent.com/document/product/269/2720)   |
-| OfflinePushInfo | Object | 选填| 离线推送信息配置，具体可参考 [消息格式描述](https://cloud.tencent.com/document/product/269/2720) |
+| MsgContent | Object |必填| 对于每种 MsgType 用不同的 MsgContent 格式，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)   |
+| OfflinePushInfo | Object | 选填| 离线推送信息配置，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
 
 ### 应答包体示例
@@ -160,7 +160,7 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码        | 描述                                                         |
@@ -171,14 +171,19 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 | 20004         | 网络异常，请重试                                             |
 | 20005         | 服务器内部错误，请重试                                       |
 | 20006         | 触发发送单聊消息之前回调，App 后台返回禁止下发该消息         |
+| 20009         | 消息发送双方互相不是好友，禁止发送（配置单聊消息校验好友关系才会出现） |
+| 20010         | 发送单聊消息，自己不是对方的好友（单向关系），禁止发送       |
+| 20011         | 发送单聊消息，对方不是自己的好友（单向关系），禁止发送       |
+| 20012         | 发送方被禁言，该条消息被禁止发送                                         |
 | 90001         | JSON 格式解析失败，请检查请求包是否符合 JSON 规范            |
-| 90002         | JSON 格式请求包中 MsgBody 不符合消息格式描述，或者 MsgBody 不是 Array 类型，请参考 [TIMMsgElement 对象](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义 |
+| 90002         | JSON 格式请求包中 MsgBody 不符合消息格式描述，或者 MsgBody 不是 Array 类型，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义 |
 |90003| JSON 格式请求包体中缺少 To_Account 字段或者 To_Account 字段不是 String 类型|
 |90005| JSON 格式请求包体中缺少 MsgRandom 字段或者 MsgRandom 字段不是 Integer 类型|
 |90006| JSON 格式请求包体中 MsgTimeStamp 字段不是 Integer 类型|
 | 90007         | JSON 格式请求包体中 MsgBody 类型不是 Array 类型，请将其修改为 Array 类型 |
 | 90009         | 请求需要 App 管理员权限                                      |
-| 90010         | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://cloud.tencent.com/document/product/269/2720#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义 |
+| 90010         | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义 |
+| 90011         | 批量发消息目标帐号超过 500，请减少 To_Account 中目标帐号数量 |
 | 90012         | To_Account 没有注册或不存在，请确认 To_Account 是否导入即时通信 IM 或者是否拼写错误 |
 | 90026         | 消息离线存储时间错误（最多不能超过7天）                    |
 |90031 | JSON 格式请求包体中 SyncOtherMachine 字段不是 Integer 类型|
@@ -193,9 +198,9 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/sendmsg) 调试本接口。
 
 ## 参考
-批量发单聊消息（[v4/openim/batchsendmsg](https://cloud.tencent.com/document/product/269/1612)）
+批量发单聊消息（[v4/openim/batchsendmsg](https://intl.cloud.tencent.com/document/product/1047/34920)）
 
 ## 可能触发的回调
 
-- [发单聊消息之前回调](https://cloud.tencent.com/document/product/269/1632)
-- [发单聊消息之后回调](https://cloud.tencent.com/document/product/269/2716)
+- [发单聊消息之前回调](https://intl.cloud.tencent.com/document/product/1047/34364)
+- [发单聊消息之后回调](https://intl.cloud.tencent.com/document/product/1047/34365)

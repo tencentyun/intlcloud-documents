@@ -8,14 +8,14 @@ https://console.tim.qq.com/v4/sns/black_list_delete?sdkappid=88888888&identifier
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/sns/black_list_delete  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 ### 最高调用频率
@@ -36,8 +36,8 @@ https://console.tim.qq.com/v4/sns/black_list_delete?sdkappid=88888888&identifier
 
 |字段|类型|属性|说明|
 |----|----|----|-----|
-| From_Account  | String  |  必填 | 需要删除该 UserID 的黑名单  |
-| To_Account  |  Array | 必填  |  待删除的黑名单的 UserID 列表，单次请求的 To_Account 数不得超过1000 |
+| From_Account  | String  |  必填 | 需要删除该 Identifier 的黑名单  |
+| To_Account  |  Array | 必填  |  待删除的黑名单的 Identifier 列表，单次请求的 To_Account 数不得超过1000 |
 
 ### 应答包体示例
 
@@ -74,19 +74,20 @@ https://console.tim.qq.com/v4/sns/black_list_delete?sdkappid=88888888&identifier
 | 字段 | 类型 |说明|
 |----|----|-----|
 | ResultItem|	Array	|批量删除黑名单的结果对象数组|
-| To_Account|	String	|请求删除的黑名单的 UserID|
-| ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)|
+| To_Account|	String	|请求删除的黑名单的 Identifier|
+| ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败|
 | ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
 | Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
-| ActionStatus	|String| 请求包的处理结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode|	Integer	|错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode) |
+| ActionStatus	|String| 请求包的处理结果，“OK” 表示处理成功，“FAIL” 表示失败 |
+| ErrorCode|	Integer	|错误码，0表示成功，非0表示失败 |
 | ErrorInfo	|String| 详细错误信息 |
 | ErrorDisplay|	String| 详细的客户端展示信息 |
 
-<span id="ErrorCode"></span>
-## 错误码说明
-除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ResultCode、ResultInfo、ErrorCode 以及 ErrorInfo 来表示的。
-公共错误码（60000到79999）请参见 [错误码](https://cloud.tencent.com/document/product/269/1671)。
+
+### 错误码说明
+
+除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200；真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -104,9 +105,9 @@ https://console.tim.qq.com/v4/sns/black_list_delete?sdkappid=88888888&identifier
 
 ## 参考
 
-- 删除黑名单（<a href="https://cloud.tencent.com/document/product/269/3719">v4/sns/black_list_delete</a>）
-- 拉取黑名单（<a href="https://cloud.tencent.com/document/product/269/3722">v4/sns/black_list_get</a>）
-- 校验黑名单（<a href="https://cloud.tencent.com/document/product/269/3725">v4/sns/black_list_check</a>）
+- 删除黑名单（<a href="https://intl.cloud.tencent.com/document/product/1047/34912">v4/sns/black_list_delete</a>）
+- 拉取黑名单（<a href="https://intl.cloud.tencent.com/document/product/1047/34914">v4/sns/black_list_get</a>）
+- 校验黑名单（<a href="https://intl.cloud.tencent.com/document/product/1047/34913">v4/sns/black_list_check</a>）
 
 ## 可能触发的回调
-<a href="https://cloud.tencent.com/document/product/269/1661">删除黑名单之后回调</a>
+<a href="https://intl.cloud.tencent.com/document/product/1047/34362">删除黑名单之后回调</a>
