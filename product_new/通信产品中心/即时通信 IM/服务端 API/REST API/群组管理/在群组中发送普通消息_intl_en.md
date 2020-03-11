@@ -240,4 +240,4 @@ Use the [online commissioning tool for RESTful APIs](https://avc.cloud.tencent.c
 
 
 ## Callback That May Be Triggered
- [Callback before delivering group messages](https://intl.cloud.tencent.com/document/product/1047/34373)
+ [Callback before delivering group messages](https://intl.cloud.tencent.com/document/product/1047/34374)
