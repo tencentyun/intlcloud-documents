@@ -31,7 +31,7 @@
 | Callback after a new member joins a group | [Group.CallbackAfterNewMemberJoin](https://intl.cloud.tencent.com/document/product/1047/34372) |
 | Callback after a group member quits | [Group.CallbackAfterMemberExit](https://intl.cloud.tencent.com/document/product/1047/34373) |
 | Callback before delivering a group message | [Group.CallbackBeforeSendMsg](https://intl.cloud.tencent.com/document/product/1047/34374) |
-| Callback after delivering a group message | [Group.CallbackAfterSendMsg](https://intl.cloud.tencent.com/document/product/1047/34373) |
+| Callback after delivering a group message | [Group.CallbackAfterSendMsg](https://intl.cloud.tencent.com/document/product/1047/34375) |
 | Callback after a group is full | [Group.CallbackAfterGroupFull](https://intl.cloud.tencent.com/document/product/1047/34376) |
 | Callback after dismissing a group | [Group.CallbackAfterGroupDestroyed](https://intl.cloud.tencent.com/document/product/1047/34377) |
 | Callback after modifying the profile of a group | [Group.CallbackAfterGroupInfoChanged](https://intl.cloud.tencent.com/document/product/1047/34378) |
