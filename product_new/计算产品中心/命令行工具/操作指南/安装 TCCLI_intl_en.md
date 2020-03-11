@@ -39,7 +39,7 @@ pip install tccli-intl-en
    >complete -C 'tccli_completer' tccli
    > ```
    
-   ## Please note that a certificate issue may occur in Mac OS
+## Please note that a certificate issue may occur in Mac OS
 >Note：
 >
 >While installing Python 3.6 or later versions in Mac OS, you may get an error saying 
