@@ -38,3 +38,10 @@ pip install tccli-intl-en
    > ```
    >complete -C 'tccli_completer' tccli
    > ```
+   
+   ## Please note that a certificate issue may occur in Mac OS
+>Note：
+>
+>While installing Python 3.6 or later versions in Mac OS, you may get an error saying 
+`Error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:1056).`
+This is because that in Mac OS, Python does not use the system default certificate nor provide a certificate.  HTTPS requests require a certificate provided by `certifi`, which cannot be specified by SDK. Therefore you need to install a cerficiate using the command `/Applications/Python 3.6/Install Certificates.command`. "
