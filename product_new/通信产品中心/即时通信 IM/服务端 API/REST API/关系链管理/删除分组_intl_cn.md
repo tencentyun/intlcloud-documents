@@ -8,14 +8,14 @@ https://console.tim.qq.com/v4/sns/group_delete?sdkappid=88888888&identifier=admi
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/sns/group_delete  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 ### 最高调用频率
@@ -33,7 +33,7 @@ https://console.tim.qq.com/v4/sns/group_delete?sdkappid=88888888&identifier=admi
 
 |字段|类型|属性|说明|
 |-----|----|---|----|
-| From_Account  | String  |  必填 | 需要删除该 UserID 的分组 |
+| From_Account  | String  |  必填 | 需要删除该 Identifier 的分组 |
 | GroupName   | Array  |  必填 | 要删除的分组列表  |
 
 
@@ -53,15 +53,14 @@ https://console.tim.qq.com/v4/sns/group_delete?sdkappid=88888888&identifier=admi
 |字段|类型|说明|
 |-----|----|---|
 |  CurrentSequence | Integer  | 返回最新的分组 Sequence  |
-|  ActionStatus  |  String |  请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-|  ErrorCode |  Integer | 错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)  |
+|  ActionStatus  |  String |  请求处理的结果，“OK”表示处理成功，“FAIL”表示失败 |
+|  ErrorCode |  Integer | 错误码，0表示成功，非0表示失败  |
 |  ErrorInfo | String   | 详细错误信息  |
 |  ErrorDisplay |  String | 详细的客户端展示信息  |
 
-<span id="ErrorCode"></span>
-## 错误码说明
-除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）请参见 [错误码](https://cloud.tencent.com/document/product/269/1671)。
+### 错误码说明
+除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200；真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -77,4 +76,4 @@ https://console.tim.qq.com/v4/sns/group_delete?sdkappid=88888888&identifier=admi
 通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/group_delete) 调试本接口。
 
 ## 参考
-添加分组（[v4/sns/group_add](https://cloud.tencent.com/document/product/269/10107)）
+添加分组（[v4/sns/group_add](https://intl.cloud.tencent.com/document/product/1047/34950)）

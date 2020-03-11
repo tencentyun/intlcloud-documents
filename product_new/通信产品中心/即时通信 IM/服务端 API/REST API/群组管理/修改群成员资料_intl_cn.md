@@ -12,9 +12,9 @@
 |音视频聊天室（AVChatRoom）|支持修改管理员和群主资料|
 |在线成员广播大群（BChatRoom）|否|
 
-即时通信 IM 内置以上五种群组类型，详情请参见 [群组系统](https://cloud.tencent.com/document/product/269/1502)。
+即时通信 IM 内置以上五种群组类型，详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->?音视频聊天室因为内部实现的问题，只能修改管理员和群主的成员资料，修改普通成员资料时会返回10007错误。
+>音视频聊天室因为内部实现的问题，只能修改管理员和群主的成员资料，修改普通成员资料时会返回10007错误。
 
 
 ### 请求 URL 示例
@@ -22,14 +22,14 @@
 https://console.tim.qq.com/v4/group_open_http_svc/modify_group_member_info?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 ### 请求参数说明
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/group_open_http_svc/modify_group_member_info | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 ### 最高调用频率
@@ -115,7 +115,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/modify_group_member_info?sdkap
 | Role | String | 选填 |成员身份，Admin/Member 分别为设置/取消管理员  |
 | MsgFlag | String | 选填 |消息屏蔽类型  |
 | NameCard | String | 选填 |群名片（最大不超过50个字节）  |
-| AppMemberDefinedData | Array | 选填 |群成员维度的自定义字段，默认情况是没有的，需要开通，详情请参阅 [群组系统](https://cloud.tencent.com/document/product/269/1502)  |
+| AppMemberDefinedData | Array | 选填 |群成员维度的自定义字段，默认情况是没有的，需要开通，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)  |
 | ShutUpTime |Integer | 选填 |需禁言时间，单位为秒，0表示取消禁言|
 
 ### 应答包体示例
@@ -139,7 +139,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/modify_group_member_info?sdkap
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -156,4 +156,4 @@ https://console.tim.qq.com/v4/group_open_http_svc/modify_group_member_info?sdkap
 通过 [REST API在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/modify_group_member_info) 调试本接口。
 
 ## 参考
-获取群成员详细资料（[v4/group_open_http_svc/get_group_member_info](https://cloud.tencent.com/document/product/269/1617)）
+获取群成员详细资料（[v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948)）
