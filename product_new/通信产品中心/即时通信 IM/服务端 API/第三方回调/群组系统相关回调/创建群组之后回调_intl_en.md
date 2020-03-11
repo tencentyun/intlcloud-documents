@@ -83,7 +83,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Type | String | The type of the group to be created. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). The group type can be Private, Public, or ChatRoom. |
 | Name | String | The name of the group to be created by the request. |
 | MemberList | Array | The initial member list of the group to be created by the request. |
-| UserDefinedDataList | Array | Custom fields during group creation by the user. By default, this field is unavailable and needs to be enabled before use. For details, see [Custom Fields](/doc/product/269/group system#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
+| UserDefinedDataList | Array | Custom fields during group creation by the user. By default, this field is unavailable and needs to be enabled before use. For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
 
 ### Response packet example
 

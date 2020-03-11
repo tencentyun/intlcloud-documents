@@ -111,4 +111,4 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-- REST API：创建群组
+- REST API：[创建群组](https://intl.cloud.tencent.com/document/product/1047/34895)
