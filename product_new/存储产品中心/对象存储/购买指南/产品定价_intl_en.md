@@ -442,3 +442,14 @@ Here you can find information about COS's pay-as-you-go billing. To learn more a
       <td>0.0022</td>
    </tr>
 </table>
+
+### Transmission Accelerated Pricing
+
+>The transmission acceleration traffic cost is settled on a daily basis.
+
+|Region | Transmission Direction |Transmission Acceleration Traffic Cost (USD / GB)|
+| :---------------------------- | :------- | :------------------------- |
+|Mainland China - Hong Kong and overseas China|up | 0.18|
+|Mainland China - Hong Kong and overseas China | down | 0.18|
+|Mainland China - Mainland China region | up | 0.07|
+|Mainland China - Mainland China region | down | 0.07|
