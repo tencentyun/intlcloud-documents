@@ -21,23 +21,23 @@ Before installing CLI, make sure that your system has the Python environment and
 
 1. Install TCCLI by running the following command:
 
-   ```sh
+```sh
 pip install tccli-intl-en
-   ```
+```
    
 2. After the installation is completed, run the following command to check whether the installation is successful.
 
-   ```
+```
    tccli version
-   ```
+```
 
-   > Note:
-   >
-   > If your environment is Linux, you can enable autocomplete feature by running the following command:
-   >
-   > ```
-   >complete -C 'tccli_completer' tccli
-   > ```
+> Note:
+>
+> If your environment is Linux, you can enable autocomplete feature by running the following command:
+>
+> ```
+>complete -C 'tccli_completer' tccli
+> ```
   
 ## Please note that a certificate issue may occur in Mac OS
 > Note：
