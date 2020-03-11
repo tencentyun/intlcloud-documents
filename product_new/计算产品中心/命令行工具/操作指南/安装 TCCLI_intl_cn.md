@@ -20,21 +20,21 @@
 
 1. 安装 TCCLI，执行以下命令：
 
-   ```sh
+```sh
 pip install tccli-intl-en
-   ```
+```
 
 2. 安装完成之后，执行以下命令，检测是否安装成功：
 
-   ```
+```
    tccli version
-   ```
+```
 
-   > 说明：
+> 说明：
+> 
+> 如果您的环境是 Linux 环境，您可以通过以下命令启动自动补全功能：
 >
-   > 如果您的环境是 Linux 环境，您可以通过以下命令启动自动补全功能：
-   >
-   > ```
-   >complete -C 'tccli_completer' tccli
-   > ```
+> ```
+>   complete -C 'tccli_completer' tccli
+> ```
    
