@@ -110,4 +110,4 @@ App 后台拒绝请求中的某些用户被拉入群，在 RefusedMembers_Accoun
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-- REST API：增加群组成员
+- REST API：[增加群组成员](https://intl.cloud.tencent.com/document/product/1047/34921)
