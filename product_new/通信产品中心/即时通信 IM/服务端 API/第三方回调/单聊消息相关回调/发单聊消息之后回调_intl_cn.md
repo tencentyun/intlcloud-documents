@@ -104,5 +104,5 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [发单聊消息之前回调](https://intl.cloud.tencent.com/document/product/1047/34364)
-- REST API：单发单聊消息
-- REST API：批量发单聊消息
+- REST API：[单发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34919)
+- REST API：[批量发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34920)
