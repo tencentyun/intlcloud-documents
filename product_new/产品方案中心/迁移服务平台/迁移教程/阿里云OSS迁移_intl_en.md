@@ -51,7 +51,7 @@ Create a sub-user for migration and grant the required permissions:
 
 6. Finish creating the sub-user and save the sub-user name, login password, SecretId, and SecretKey.
 
-Click [here](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) to download the Agent.
+Click [here](https://migrate-1256125716.cos.ap-guangzhou.myqcloud.com/agent/agent.zip) to download the Agent.
 
  
 > You can use Migration Service Platform (MSP) with your root account. However, for security reasons, we recommend that you create a sub-account, use the sub-account’s API key for migration, and delete the sub-account after migration.
