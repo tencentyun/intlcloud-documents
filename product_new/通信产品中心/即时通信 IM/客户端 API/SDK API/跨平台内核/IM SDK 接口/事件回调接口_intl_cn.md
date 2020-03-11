@@ -210,7 +210,7 @@ TIM_DECL void TIMSetUserSigExpiredCallback(TIMUserSigExpiredCallback cb, const v
 | cb | TIMUserSigExpiredCallback | 票据过期回调，请参考 [TIMUserSigExpiredCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timusersigexpiredcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
->用户票据，可能会存在过期的情况，如果用户票据过期，此接口设置的回调会调用。[TIMLogin](https://cloud.tencent.com/document/product/269/33547#timlogin) 也将会返回70001错误码。开发者可根据错误码或者票据过期回调进行票据更换。
+>用户票据，可能会存在过期的情况，如果用户票据过期，此接口设置的回调会调用。[TIMLogin](https://intl.cloud.tencent.com/document/product/1047/34390#timlogin) 也将会返回70001错误码。开发者可根据错误码或者票据过期回调进行票据更换。
 
 
 ## TIMSetOnAddFriendCallback
@@ -310,7 +310,7 @@ TIM_DECL void TIMSetLogCallback(TIMLogCallback cb, const void* user_data);
 | cb | TIMLogCallback | 日志回调，请参考 [TIMLogCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timlogcallback)  |
 | user_data | const void\* | 用户自定义数据，IM SDK 只负责传回给回调函数 cb，不做任何处理 |
 
->设置日志监听的回调之后，IM SDK 内部的日志会回传到此接口设置的回调。开发者可以通过接口 [TIMSetConfig](https://cloud.tencent.com/document/product/269/33546#timsetconfig) 配置哪些日志级别的日志回传到回调函数。
+>设置日志监听的回调之后，IM SDK 内部的日志会回传到此接口设置的回调。开发者可以通过接口 [TIMSetConfig](https://intl.cloud.tencent.com/document/product/1047/34388#timsetconfig) 配置哪些日志级别的日志回传到回调函数。
 
 
 ## TIMSetMsgUpdateCallback

@@ -12,14 +12,14 @@ App 管理员可以通过该接口创建群组。
 |音视频聊天室（AVChatRoom）|是|
 |在线成员广播大群（BChatRoom）|是|
 
-即时通信 IM 内置以上五种群组类型，详情请参见 [群组系统](https://cloud.tencent.com/document/product/269/1502)。
+即时通信 IM 内置以上五种群组类型，详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
 >!
->- 如果指定群组类型为音视频聊天室（AVChatRoom），那么可以创建的群组数量请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673)。
->- 如果指定群组类型为在线成员广播大群（BChatRoom），那么可以创建的数量为5个，详情请参考 [群组限制差异](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82)。
+>- 如果指定群组类型为音视频聊天室（AVChatRoom），那么可以创建的群组数量请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>- 如果指定群组类型为在线成员广播大群（BChatRoom），那么可以创建的数量为5个，详情请参考 [群组限制差异](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82)。
 >- 如果指定群组类型为私有群（Private）、公开群（Public）或聊天室（ChatRoom）：
->  - 请求时如果没有指定群主也没有设置群成员列表，那么创建群数量没有限制。但如果 App 累计总群组数量超过10万，需要支付一定费用。详情请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673)。
->  - 请求时如果指定了群主或者设置了群成员列表，那么指定的群主或者群成员，会自动加入到该群中。因为普通账号可以加入的群组数量是有限制，所以此时可以创建的群数量会受到一定限制，详情请参考 [价格说明](https://cloud.tencent.com/document/product/269/11673)。
+>  - 请求时如果没有指定群主也没有设置群成员列表，那么创建群数量没有限制。但如果 App 累计总群组数量超过10万，需要支付一定费用。详情请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>  - 请求时如果指定了群主或者设置了群成员列表，那么指定的群主或者群成员，会自动加入到该群中。因为普通账号可以加入的群组数量是有限制，所以此时可以创建的群数量会受到一定限制，详情请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 >- 创建音视频聊天室（AVChatRoom）和在线成员广播大群（BChatRoom）时不能拉人入群，如果创建时指定了拉入的群成员会返回10007错误；用户加入音视频聊天室和在线成员广播大群的唯一方式是用户申请加群。
 
 ### 请求 URL 示例
@@ -28,14 +28,14 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 ### 请求参数说明
 
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/group_open_http_svc/create_group  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 
@@ -218,16 +218,16 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 |---------|---------|---------|---------|
 | Owner_Account | String | 选填 |群主 ID，自动添加到群成员中。如果不填，群没有群主 |
 | Type | String | 必填 |群组形态，包括 Public（公开群），Private（私密群），ChatRoom（聊天室），AVChatRoom（音视频聊天室），BChatRoom（在线成员广播大群）  |
-| GroupId | String | 选填 |为了使得群组 ID 更加简单，便于记忆传播，腾讯云支持 App 在通过 REST API 创建群组时 [自定义群组 ID](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id)|
+| GroupId | String | 选填 |为了使得群组 ID 更加简单，便于记忆传播，腾讯云支持 App 在通过 REST API 创建群组时 [自定义群组 ID](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id)|
 | Name | String | 必填 |群名称，最长30字节，使用 UIT-8 编码，1个汉字占3个字节 |
 | Introduction | String | 选填 |群简介，最长240字节，使用 UIT-8 编码，1个汉字占3个字节 |
 | Notification | String | 选填 |群公告，最长300字节，使用 UIT-8 编码，1个汉字占3个字节 |
 | FaceUrl | String | 选填 |群头像 URL，最长100字节 |
 | MaxMemberCount | Integer | 选填 |最大群成员数量，缺省时的默认值：私有群是200，公开群是2000，聊天室是6000，音视频聊天室和在线成员广播大群无限制 |
-| ApplyJoinOption | String | 选填 |申请加群处理方式。包含 FreeAccess（自由加入），NeedPermission（需要验证），DisableApply（禁止加群），不填默认为 NeedPermission（需要验证）<br>仅当创建支持申请加群的 [群组](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82) 时，该字段有效 |
-| AppDefinedData | Array | 选填 |群组维度的自定义字段，默认情况是没有的，需要开通，详情请参阅 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
-| MemberList | Array | 选填 |初始群成员列表，最多500个；成员信息字段详情请参阅 [群成员资料](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99) |
-| AppMemberDefinedData | Array | 选填 |群成员维度的自定义字段，默认情况是没有的，需要开通，详情请参阅 [自定义字段](https://cloud.tencent.com/document/product/269/1502#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
+| ApplyJoinOption | String | 选填 |申请加群处理方式。包含 FreeAccess（自由加入），NeedPermission（需要验证），DisableApply（禁止加群），不填默认为 NeedPermission（需要验证）<br>仅当创建支持申请加群的 [群组](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82) 时，该字段有效 |
+| AppDefinedData | Array | 选填 |群组维度的自定义字段，默认情况是没有的，需要开通，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
+| MemberList | Array | 选填 |初始群成员列表，最多500个；成员信息字段详情请参阅 [群成员资料](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99) |
+| AppMemberDefinedData | Array | 选填 |群成员维度的自定义字段，默认情况是没有的，需要开通，详情请参阅 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5)|
 
 ### 应答包体示例
 - **基础形式、仅包含群基础信息、仅包含群成员信息和仅包含自定义信息**
@@ -262,7 +262,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ## 错误码说明
 
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 含义说明 |
@@ -271,15 +271,15 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 | 10003| 请求命令字非法 |
 | 10004| 参数非法，请根据错误描述检查请求是否正确 |
 | 10005 | 请求包中导入的成员数量超过500，请减少`MemberList`参数中导入的成员数量 |
-| 10006 | 创建群数量超过限额，例如累计创建在线成员广播大群（BChatRoom）超过5个，或者每日净增群组数超过配置的限额。详情请参考 [群组限制差异](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82) |
+| 10006 | 创建群数量超过限额，例如累计创建在线成员广播大群（BChatRoom）超过5个，或者每日净增群组数超过配置的限额。详情请参考 [群组限制差异](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82) |
 | 10007 | 操作权限不足，请根据错误信息检查请求参数。例如，指定的群组类型不允许拉人入群，但在请求包中填写了`MemberList` |
 | 10008 | 请求非法，可能是请求中携带的签名信息验证不正确，请再次尝试或  [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1)  联系技术客服 |
 | 10016 | App 后台通过第三方回调拒绝本次操作，请检查您的回调服务“创建群组之前回调”的返回值 |
 | 10021 | 群组 ID 已被其他人使用，请选择其他的群组 ID|
 |10025 | 该群组 ID 已经由您自己使用过，请您先解散该群组或者选择其他的群组 ID |
-| 10036 | 创建的音视频聊天室数量超过限制，请先解散部分音视频聊天室或者参考 [价格说明](https://cloud.tencent.com/document/product/269/11673) 购买升级|
-| 10037 |请求中指定了群主（Owner_Account），但该群主创建和加入的群组数量超过了限制。请该群主退出部分群组或者参考 [价格说明](https://cloud.tencent.com/document/product/269/11673) 购买升级|
-| 10038 | 请求包中导入的成员数量超过了限制，请减少`MemberList`参数中导入的成员数量或者参考 [价格说明](https://cloud.tencent.com/document/product/269/11673) 购买升级|
+| 10036 | 创建的音视频聊天室数量超过限制，请先解散部分音视频聊天室或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
+| 10037 |请求中指定了群主（Owner_Account），但该群主创建和加入的群组数量超过了限制。请该群主退出部分群组或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
+| 10038 | 请求包中导入的成员数量超过了限制，请减少`MemberList`参数中导入的成员数量或者参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买升级|
 | 80001 | 文本安全打击，请检查群名称、群公告和群简介等是否有敏感词汇 |
 
 ## 接口调试工具
@@ -287,9 +287,9 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/create_group) 调试本接口。
 
 ## 参考
-解散群组（[v4/group_open_http_svc/destroy_group](https://cloud.tencent.com/document/product/269/1624)）
+解散群组（[v4/group_open_http_svc/destroy_group](https://intl.cloud.tencent.com/document/product/1047/34896)）
 
 ## 可能触发的回调
 
-- [创建群组之前回调](https://cloud.tencent.com/document/product/269/1662)
-- [创建群组之后回调](https://cloud.tencent.com/document/product/269/1663)
+- [创建群组之前回调](https://intl.cloud.tencent.com/document/product/1047/34368)
+- [创建群组之后回调](https://intl.cloud.tencent.com/document/product/1047/34369)

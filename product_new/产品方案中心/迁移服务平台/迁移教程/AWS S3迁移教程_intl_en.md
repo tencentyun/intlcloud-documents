@@ -51,7 +51,7 @@ Create a bucket to store the migrated data. For more information, see [Creating 
 
    vi. Finish creating the sub-user and save the sub-user name, login password, SecretId, and SecretKey.
 
-   vii. Click [here](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) to download the Agent.
+   vii. Click [here](https://migrate-1256125716.cos.ap-guangzhou.myqcloud.com/agent/agent.zip) to download the Agent.
 
 
 > **Note:**

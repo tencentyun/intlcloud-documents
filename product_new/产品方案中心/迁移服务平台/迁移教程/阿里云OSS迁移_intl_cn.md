@@ -51,7 +51,7 @@ Agent 半托管迁移模式中，用户需要手工在源数据云厂商的服�
 
 6. 完成子用户创建并保存子用户名，访问登陆密码，SecretId，SecretKey。
 
-单击 [这里](https://main.qcloudimg.com/raw/7579efd7d2839e0dfbcff6be0ac2e22b/agent.zip) 下载 Agent。
+单击 [这里](https://migrate-1256125716.cos.ap-guangzhou.myqcloud.com/agent/agent.zip) 下载 Agent。
 
  
 

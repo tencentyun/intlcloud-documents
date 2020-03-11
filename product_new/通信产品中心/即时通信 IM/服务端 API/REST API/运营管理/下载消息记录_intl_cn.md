@@ -14,14 +14,14 @@ https://console.tim.qq.com/v4/open_msg_svc/get_history?sdkappid=88888888&identif
  ```
 ### 请求参数说明
  
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/open_msg_svc/get_history  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 
@@ -79,7 +79,7 @@ https://console.tim.qq.com/v4/open_msg_svc/get_history?sdkappid=88888888&identif
 
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 含义说明|
@@ -106,7 +106,7 @@ https://console.tim.qq.com/v4/open_msg_svc/get_history?sdkappid=88888888&identif
 ]}
 ```
 
-文件第一行记录了该文件的基本信息，接下来的每一行记录一条消息，直到最后一行“]}”结束，每条消息格式可参考 [TIMMsgElement对象](https://cloud.tencent.com/document/product/269/2720#.E5.9B.BE.E5.83.8F.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0) 的定义；
+文件第一行记录了该文件的基本信息，接下来的每一行记录一条消息，直到最后一行“]}”结束，每条消息格式可参考 [TIMMsgElement对象](https://intl.cloud.tencent.com/document/product/1047/33527#.E5.9B.BE.E5.83.8F.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0) 的定义；
 若文件较小，可直接使用 JSON 库解析整个文件，MsgList 是该时段的消息数组。例如 ：
 
 ```

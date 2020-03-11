@@ -25,7 +25,7 @@
 1. 选择一个存储桶（如 imagetest1 ），进入【样式】页面。单击【添加样式】。
 ![样式](https://main.qcloudimg.com/raw/fb7f72a2d3dbf281215bab69898da53d.png)
 2. 进入编辑样式界面，填写样式名称。可以设置样式的缩略方式，渐进效果、输出格式、输出效果、文字或图片水印等。
-![样式2](https://main.qcloudimg.com/raw/0e82f5e94be7554f46d62243e7ef5e60.png)
+![样式2](https://main.qcloudimg.com/raw/9f6c7cce07630253436a9d4eb8640d47.png)
 
 >样式名需要区分大小写，且保存之后不可修改。
 

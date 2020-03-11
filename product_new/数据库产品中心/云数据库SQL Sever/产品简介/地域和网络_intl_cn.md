@@ -19,11 +19,6 @@
 		<td>广州四区<br> ap-guangzhou-4</td>
 	</tr>
     <tr>
-        <td rowspan="1">华南地区（深圳金融）<br>ap-shenzhen-fsi</td>
-        <td>深圳金融一区（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>
-申请开通）<br>ap-shenzhen-fsi-1</span></td>
-    </tr>
-    <tr>
         <td rowspan="3">华东地区（上海）<br>ap-shanghai</td>
         <td>上海一区<br>ap-shanghai-1</td>
     </tr>
@@ -32,10 +27,6 @@
     </tr>
     <tr>
         <td>上海三区<br>ap-shanghai-3</td>
-    </tr>
-    <tr>
-            <td rowspan="1">华东地区（上海金融）<br>ap-shanghai-fsi</td>
-            <td>上海金融一区（仅限金融机构和企业提交工单申请开通）<br>ap-shanghai-fsi-1</td>
     </tr>
     <tr>
             <td rowspan="3">华北地区（北京）<br>ap-beijing</td>
@@ -48,10 +39,6 @@
             <td>北京三区<br>ap-beijing-3</td>
     </tr>
 	 <tr>
-	     <tr>
-            <td rowspan="1">华北地区（北京金融）<br>ap-beijing-fsi</td>
-            <td>北京金融一区（仅限金融机构和企业提交工单申请开通）<br>ap-beijing-fsi-1</td>
-    </tr>
             <td rowspan="2">港澳台地区（中国香港）<br>ap-hongkong</td>
             <td>香港一区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-1</td>
         </tr>
@@ -86,8 +73,3 @@
 		</tr>
     </tbody>
 </table>
-
-
-## 金融专区特别说明
-针对金融行业监管要求定制的合规专区，具有高安全，高隔离性的特点，请参见 [金融专区介绍](http://cloud.tencent.com/doc/product/304/%E9%87%91%E8%9E%8D%E4%BA%91%E7%AE%80%E4%BB%8B)。
-
