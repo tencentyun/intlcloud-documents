@@ -28,7 +28,7 @@ pip install tccli-intl-en
 2. After the installation is completed, run the following command to check whether the installation is successful.
 
 ```
-   tccli version
+tccli version
 ```
 
 > Note:
