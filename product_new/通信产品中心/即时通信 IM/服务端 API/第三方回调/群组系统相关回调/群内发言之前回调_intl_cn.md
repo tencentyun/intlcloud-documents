@@ -154,4 +154,4 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-- REST API：在群组中发送普通消息
+- REST API：[在群组中发送普通消息](https://intl.cloud.tencent.com/document/product/1047/34959)
