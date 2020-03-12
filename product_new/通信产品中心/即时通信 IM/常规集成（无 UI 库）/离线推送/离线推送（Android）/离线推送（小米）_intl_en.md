@@ -21,7 +21,7 @@ MIUI is a highly customized Android system, with very strict management of the a
  After the MiPush service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
 3. Record the **`Primary package name`**, **`AppID`**, and **`AppSecret`** items.
-![](https://main.qcloudimg.com/raw/7a291196c6f4800d5d1c9b9e23aed617.jpg)
+
 
 <span id="Step2"></span>
 ### Step 2: Host the certificate to IM 
@@ -29,18 +29,17 @@ MIUI is a highly customized Android system, with very strict management of the a
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the **Android Platform Push Settings** area to modify and update the certificate.
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
+
 3. Set the following parameters based on the information obtained in [Step 1](#Step1_3):
  - **Push Platform**: select **MI**.
  - **App Package Name**: enter the **Primary package name** of the MiPush service.
  - **AppID**: enter the **AppID** of the MiPush service app.
  - **AppSecret**: enter the **AppSecret** of the MiPush service app.
  - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#click).
- ![](https://main.qcloudimg.com/raw/b9acf23fb00144aa86be20dba7627699.png)
+
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
- ![](https://main.qcloudimg.com/raw/2a28ec48998579c84a3f3786c9a4b667.png)
- 
+
  
 <span id="Step3"></span>
 ### Step 3: Integrate the push SDK
@@ -338,11 +337,10 @@ You can choose to **Open App**, **Open Web Page**, or **Open Specified Interface
 
 ### Opening the app
 If you select **Open App**, the onNotificationMessageClicked method of MI will be called back, and the app itself can complete app opening in this method.
-![](https://main.qcloudimg.com/raw/fa0fbe98e40da37808a1d646b313783c.png)
+
 
  ### Opening webpages
 When [adding a certificate](#Step2), you need to select **Open Web Page** and enter a website URL starting with `http://` or `https://`, for example, `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
 
 ### Opening a specified UI in the app
 
@@ -379,7 +377,7 @@ When [adding a certificate](#Step2), you need to select **Open Web Page** and en
    ```
    
 3. When [adding a certificate](#Step2), select **Open Specified Interface in App** and enter the printed results.
- ![](https://main.qcloudimg.com/raw/26a2bb370cfb5525f3eb1ddeef47c490.png)
+
 
 ## FAQs
 ### If the app uses obfuscation, how can I prevent exceptions when using the MI offline push feature?
