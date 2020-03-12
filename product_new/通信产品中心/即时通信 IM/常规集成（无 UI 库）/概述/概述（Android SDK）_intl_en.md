@@ -1,6 +1,5 @@
 ## IM SDK Concepts
-**Conversation:** there are two types of conversations in the IM SDK. One is the C2C conversation, which is a one-to-one chat between users with messages read and sent within the conversation. The other is the group conversation, which is a group chat where all group members can receive messages. The following figure shows a conversation between friends.
-![](https://main.qcloudimg.com/raw/921a378c4157ad7cda2d87bfbe8ea21f.jpg)
+**Conversation:** there are two types of conversations in the IM SDK. One is the C2C conversation, which is a one-to-one chat between users with messages read and sent within the conversation. The other is the group conversation, which is a group chat where all group members can receive messages.
 
 **Message:** a message in the IM SDK is the information to be sent to the recipient. A message includes properties such as whether it was read by yourself, whether is was sent successfully, the sender’s account, and the message generation time. A message consists of several Elems, which can be text, images, emojis, and others. A message can contain multiple Elems.
 
