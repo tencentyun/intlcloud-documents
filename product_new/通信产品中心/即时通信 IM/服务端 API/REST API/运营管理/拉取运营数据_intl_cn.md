@@ -8,14 +8,14 @@ https://console.tim.qq.com/v4/openconfigsvr/getappinfo?sdkappid=88888888&identif
  ```
 ### 请求参数说明
  
-下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://cloud.tencent.com/document/product/269/1519)。
+下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/openconfigsvr/getappinfo | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
-| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688)    |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 
@@ -117,7 +117,7 @@ https://console.tim.qq.com/v4/openconfigsvr/getappinfo?sdkappid=88888888&identif
 
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码，错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
-公共错误码（60000到79999）参见 [错误码](https://cloud.tencent.com/document/product/269/1671) 文档。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 含义说明|
@@ -141,15 +141,18 @@ https://console.tim.qq.com/v4/openconfigsvr/getappinfo?sdkappid=88888888&identif
 | LoginTimes|登录次数|
 | LoginUserNum|登录人数|
 | UpMsgNum|上行消息数|
+| DownMsgNum|下行消息数|
 | SendMsgUserNum|发消息人数|
 | APNSMsgNum|APNs 推送数|
 | C2CUpMsgNum|上行消息数（C2C）|
+| C2CDownMsgNum|下行消息数（C2C）|
 | C2CSendMsgUserNum|发消息人数（C2C）|
 | C2CAPNSMsgNum|APNs 推送数（C2C）|
 | MaxOnlineNum|最高在线人数|
 | ChainIncrease|关系链对数增加量|
 | ChainDecrease|关系链对数删除量|
 | GroupUpMsgNum|上行消息数（群）|
+| GroupDownMsgNum|下行消息数（群）|
 | GroupSendMsgUserNum|发消息人数（群）|
 | GroupAPNSMsgNum|APNs 推送数（群）|
 | GroupSendMsgGroupNum|发消息群组数|
