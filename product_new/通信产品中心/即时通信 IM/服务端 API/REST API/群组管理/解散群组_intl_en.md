@@ -87,4 +87,4 @@ Use the [online commissioning tool for RESTful APIs](https://avc.cloud.tencent.c
 Creating a group ([v4/group_open_http_svc/create_group](https://intl.cloud.tencent.com/document/product/1047/34895))
 
 ## Callback That May Be Triggered
-[Callback after dismissing a group] (https://intl.cloud.tencent.com/document/product/1047/34376)
+[Callback after dismissing a group](https://intl.cloud.tencent.com/document/product/1047/34377)

@@ -99,12 +99,12 @@ Currently, the IM console allows you to configure callbacks, including configuri
 > The IM console allows you to configure only HTTP and HTTPS callbacks. To enable the HTTPS mutual authentication callback, which has the highest security level, complete the following steps:
 > 1. In the IM console, configure the callback URL (which must be an HTTPS domain name) and enable callback.
 > 2. Submit a ticket to IM. IM will then issue the certificate required for mutual authentication to the app. In this case, the following information must be specified in the ticket:
-> 1. SDKAppID
-> 1. App name
-> 1. Callback URL, which must be consistent with that set in the console
+>    1. SDKAppID
+>    1. App name
+>    1. Callback URL, which must be consistent with that set in the console
 > 3. After receiving the certificate, configure HTTPS mutual authentication by referring to these guidelines:
-> 1. [Configuring HTTPS mutual authentication on an Apache server](https://intl.cloud.tencent.com/document/product/1047/34379)
-> 1. [Configuring HTTPS mutual authentication on a Nginx server](https://intl.cloud.tencent.com/document/product/1047/34380)
+>    1. [Configuring HTTPS mutual authentication on an Apache server](https://intl.cloud.tencent.com/document/product/1047/34379)
+>    1. [Configuring HTTPS mutual authentication on a Nginx server](https://intl.cloud.tencent.com/document/product/1047/34380)
 
 ## Common Reasons for Callback Failures
 

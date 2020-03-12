@@ -82,5 +82,5 @@ App 后台记录群满员信息后，发送回调应答包。
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-- REST API：删除群组成员
-- REST API：增加群组成员
+- REST API：[删除群组成员](https://intl.cloud.tencent.com/document/product/1047/34949)
+- REST API：[增加群组成员](https://intl.cloud.tencent.com/document/product/1047/34921)

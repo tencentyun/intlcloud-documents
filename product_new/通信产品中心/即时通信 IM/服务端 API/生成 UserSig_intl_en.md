@@ -4,6 +4,7 @@ UserSig is a password for logging in to IM. Essentially, it is the ciphertext ob
 
 1. Log in to [IM Console](https://console.cloud.tencent.com/im).
  > If you do not have an app yet, [create one](https://intl.cloud.tencent.com/document/product/1047/34553#step1) and then perform [step 2](#step2).
+ 
 <span id="step2"></span>
 2. Click the target app card to go to its basic configuration page.
 3. In the **Basic Information** section, click **Display Key** next to **Key**.

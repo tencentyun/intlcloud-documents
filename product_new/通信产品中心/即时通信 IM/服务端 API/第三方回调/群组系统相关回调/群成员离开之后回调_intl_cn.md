@@ -96,4 +96,4 @@ App 后台同步数据后，返回应答包。
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-- REST API：删除群组成员
+- REST API：[删除群组成员](https://intl.cloud.tencent.com/document/product/1047/34949)

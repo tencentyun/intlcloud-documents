@@ -8,8 +8,7 @@ This document describes how to quickly run through the IM experience demo.
 2. Click **+Add App**.
 3. In the **Create App** dialog box, enter a name for the app and click **OK**.
   After the app is created, you can view the status, service version, SDKAppID, creation time, and expiry time of the newly created app on the overview page of the console. Then, record the SDKAppID.
-  ![](https://main.qcloudimg.com/raw/2753962b67754a9ebb2a2a5b8042f2ef.png)
-  
+
 
 <span id="step2"></span>
 ## Step 2: Obtain Key Information
@@ -21,7 +20,7 @@ This document describes how to quickly run through the IM experience demo.
 <span id="step3"></span>
 ## Step 3: Download and Configure the Source Code of the Demo
 
-1. Download the IM Demo project. For the specific download address, see [Downloading the SDK](https://cloud.tencent.com/document/product/269/36887).
+1. Download the IM Demo project. For the specific download address, see [Downloading the SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 2. Open the project in the corresponding directory on the platform and find the `GenerateTestUserSig` file.
  <table>
      <tr>
@@ -58,11 +57,10 @@ This document describes how to quickly run through the IM experience demo.
   >
  - SDKAPPID: set it to the actual SDKAppID obtained in [Step 1](#step1).
  - SECRETKEY: set it to the actual key information obtained in [Step 2](#step2). 
- ![](https://main.qcloudimg.com/raw/e7f6270bcbc68c51595371bd48c40af7.png)
 
 
 > Here, a SECRETKEY is configured in the client code to obtain UserSig. The SECRETKEY is easy to decompile and reversely crack. If the SECRETKEY is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method is used only to locally run through a demo project and commission features.**
-> The correct way to issue UserSig is to integrate the UserSig computing code into your server and provide app-oriented APIs. When UserSig is needed, your app will send requests to the business server to obtain a dynamic UserSig. For details, see [Generating UserSig on the Server End](https://cloud.tencent.com/document/product/269/32688#GeneratingdynamicUserSig).
+> The correct way to issue UserSig is to integrate the UserSig computing code into your server and provide app-oriented APIs. When UserSig is needed, your app will send requests to the business server to obtain a dynamic UserSig. For details, see [Generating UserSig on the Server End](https://intl.cloud.tencent.com/document/product/1047/34385#GeneratingdynamicUserSig).
 
 ## Step 4: Compile and Run the Project
 You can compile and run the IDE on each end. For details, see the `README.md` file in the corresponding directory of the demo project cloned in [Step 3](#step3).
