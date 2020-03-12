@@ -8,7 +8,7 @@ ProcedureStateChanged
 
 ## Event Description
 
-If the application is configured with event notification, after the status of a task flow changes, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`ProcedureTask` structure](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#ProcedureTask).
+If the application is configured with event notification, after the status of a task flow changes, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`ProcedureTask` structure](https://intl.cloud.tencent.com/document/product/266/34187#ProcedureTask).
 
 ## Samples
 ### Normal callback
@@ -114,7 +114,7 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
 
 
 ### Reliable callback
-If you choose the reliable callback mode, after the [PullEvents](#APIhttps://intl.cloud.tencent.com/document/api/266/31773) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
+If you choose the reliable callback mode, after the [PullEvents](https://intl.cloud.tencent.com/document/product/266/34187) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
 
 ```json
 {

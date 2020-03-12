@@ -45,7 +45,7 @@ After the VOD service is activated, you need to [upload a video](https://intl.cl
 2. Get APPID: it can be viewed in **Tencent Cloud Console** > **[Account Info](https://console.cloud.tencent.com/developer)**.
 
 ### Step 4. Transcode to adaptive bitstream and get `playDefinition`
-You can initiate an [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) task for the uploaded video through ProcessMedia <!-- (#APIhttps://intL.cloud.tencent.com/document/product/266/33427) -->:
+You can initiate an [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) task for the uploaded video through ProcessMedia <!-- (https://intl.cloud.tencent.com/document/product/266/34125) -->:
 You are recommended to enter 10 for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition` in the API parameter, indicating transcoding to adaptive bitstream in HLS format. For common parameter combinations, VOD provides a [preset adaptive bitrate streaming template](https://intl.cloud.tencent.com/document/product/266/33932#preset-adaptive-bitrate-streaming-templates).
 
 

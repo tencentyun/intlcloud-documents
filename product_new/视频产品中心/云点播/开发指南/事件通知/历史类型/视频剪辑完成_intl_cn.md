@@ -7,7 +7,7 @@
 ClipComplete
 
 ## 事件说明
-当 App 配置了事件通知，并且在视频剪辑完成后，App 后台即可通过“普通回调”或“可靠回调”的方式获取该事件通知。<!--API事件通知内容为 [ClipTask2017  结构](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#ClipTask2017)。-->
+当 App 配置了事件通知，并且在视频剪辑完成后，App 后台即可通过“普通回调”或“可靠回调”的方式获取该事件通知。<!--API事件通知内容为 [ClipTask2017  结构](https://intl.cloud.tencent.com/document/product/266/34187#ClipTask2017)。-->
 
 
 ## 普通回调
@@ -40,7 +40,7 @@ ClipComplete
 ```
 
 ## 可靠回调
-如果选择可靠回调模式，调用 拉取事件通知 <!--API (#APIhttps://intl.cloud.tencent.com/document/api/266/31773)--> API 会接收到如下形式的 HTTP 应答。
+如果选择可靠回调模式，调用 拉取事件通知 <!--API (https://intl.cloud.tencent.com/document/product/266/34187)--> API 会接收到如下形式的 HTTP 应答。
 ```json
 {
     "Response":{

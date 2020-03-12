@@ -45,7 +45,7 @@
 2. 获取 APPID：在【腾讯云控制台】>【[账号信息](https://console.cloud.tencent.com/developer)】中查看。
 
 ### Step4. 转自适应码流，获取 playDefinition
-通过 [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) ，对上传的视频发起 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 任务：
+通过 [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) ，对上传的视频发起 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 任务：
 API 参数中的`MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition`建议填10，表示转 HLS 格式的自适应码流，针对常见的参数组合，云点播提供了 [预置转自适应码流模板](https://intl.cloud.tencent.com/document/product/266/33932#preset-adaptive-bitrate-streaming-templates)。
 
 

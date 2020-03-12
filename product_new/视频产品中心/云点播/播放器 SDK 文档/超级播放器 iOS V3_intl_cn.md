@@ -27,7 +27,7 @@ pod 'SuperPlayer'
 登录 [云点播控制台](https://console.cloud.tencent.com/vod/overview)，单击左侧菜单栏的【媒资管理】，在“**已上传**”栏的视频列表中，将看到上传完成的视频，以及视频对应的 ID（即 FileId）。如果您还没有视频，请先单击【上传视频】，上传一个视频。
 ![](https://main.qcloudimg.com/raw/5aa5675fb0b702b447e422328f54cb72.png)
 
-通过 [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) ，对上传的视频发起 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 任务：
+通过 [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) ，对上传的视频发起 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 任务：
 API 参数中的`MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition`建议填10，表示转 HLS 格式的自适应码流。
 
 ### 开始播放

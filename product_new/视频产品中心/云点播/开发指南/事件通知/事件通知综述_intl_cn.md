@@ -58,9 +58,9 @@
 
 普通回调是 App 服务被动接收事件通知的模式。配置回调 URL 并选择普通回调模式后，云点播会在事件完成后，向回调 URL 发起回调。
 
-云点播发起的普通回调的形式是 HTTP 请求，请求体为 JSON 格式，内容为不含 EventHandle 参数的 [EventContent 结构]((#APIhttps://intl.cloud.tencent.com/document/api/266/31773#EventContent))。
-以 [任务状态变更通知](https://intl.cloud.tencent.com/document/product/266/33953) 为例，回调中的`EventType`参数为`ProcedureStateChanged`，信息由`ProcedureStateChangeEvent`参数表示（[ProcedureTask](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#ProcedureTask) 结构）。
+云点播发起的普通回调的形式是 HTTP 请求，请求体为 JSON 格式，内容为不含 EventHandle 参数的 [EventContent 结构]((https://intl.cloud.tencent.com/document/product/266/34187#EventContent))。
+以 [任务状态变更通知](https://intl.cloud.tencent.com/document/product/266/33953) 为例，回调中的`EventType`参数为`ProcedureStateChanged`，信息由`ProcedureStateChangeEvent`参数表示（[ProcedureTask](https://intl.cloud.tencent.com/document/product/266/34187#ProcedureTask) 结构）。
 
 ## 可靠回调
 可靠回调是 App 服务主动向云点播拉取事件通知的模式。选择可靠回调模式后，云点播系统将把事件通知放入队列中，App 服务通过服务端 API 从队列中依次消费事件通知。
-App 服务通过 [拉取事件通知](#APIhttps://intl.cloud.tencent.com/document/api/266/31773) API 获取消息后，需要调用 [确认事件通知](/document/product/266/33434) API 进行确认。消息必须被确认之后，才会从云点播中的队列中删除，所以“可靠回调”的可靠性高于“普通回调”。**如果对事件通知的可靠性要求高，建议使用“可靠回调”模式**。
+App 服务通过 [拉取事件通知](https://intl.cloud.tencent.com/document/product/266/34187) API 获取消息后，需要调用 [确认事件通知]https://intl.cloud.tencent.com/document/product/266/34184 API 进行确认。消息必须被确认之后，才会从云点播中的队列中删除，所以“可靠回调”的可靠性高于“普通回调”。**如果对事件通知的可靠性要求高，建议使用“可靠回调”模式**。
