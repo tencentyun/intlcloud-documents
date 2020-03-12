@@ -3,7 +3,7 @@
 To receive APNs offline message notifications, you need to submit a push certificate on the Tencent Cloud management platform so that every time you log in on your client, you can obtain and report the token through an API. The APNs push feature is only used for notifying users. If the app is running on the frontend, new messages obtained by the `onNewMessage` callback prevail, and messages obtained by `didReceiveRemoteNotification` can be ignored. For details on push principles, see [Apple Push Notification Service](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 
 ### Applying for an APNs certificate
-For details on how to apply for an APNs certificate, see [Applying for an Apple Push Certificate](https://cloud.tencent.com/document/product/269/3898).
+For details on how to apply for an APNs certificate, see [Applying for an Apple Push Certificate](https://intl.cloud.tencent.com/document/product/1047/34346).
 
 ### Uploading the certificate to the console
 1. Log in to [IM Console](https://console.cloud.tencent.com/im).
@@ -20,7 +20,7 @@ For details on how to apply for an APNs certificate, see [Applying for an Apple 
 
 ### Implementing APNs push on the client
 
-To enable a client to receive APNs push messages, complete the following steps. For more detailed instructions, see the [video of IM SDK offline push for iOS](https://cloud.tencent.com/edu/learning/learn-1059-1112).
+To enable a client to receive APNs push messages, complete the following steps. 
 
 #### Requesting DeviceToken from the Apple backend
 
@@ -127,7 +127,7 @@ To enable a client to receive APNs push messages, complete the following steps. 
 
 ## Push Format 
 An example of the push format is shown in the figure below.
-<img src="//main.qcloudimg.com/raw/d23be65b4c481beb71db993045b4fec9.png" width=480 />
+![](https://main.qcloudimg.com/raw/0602abcefdd6062d8492c720f6886b82.png)
 
 
 ### General push rules
@@ -157,7 +157,7 @@ APNs push content consists of the content of each `Elem` in the message body. Th
 
 ### Communication among multiple apps
 
-If you set `SDKAppID` to the same value for multiple apps, these apps can communicate with each other. Different apps need to use different push certificates, and you need to [apply for an APNs certificate](https://cloud.tencent.com/document/product/269/3898) for each app and complete [offline push configuration](#configuring push) accordingly.
+If you set `SDKAppID` to the same value for multiple apps, these apps can communicate with each other. Different apps need to use different push certificates, and you need to [apply for an APNs certificate](https://intl.cloud.tencent.com/document/product/1047/34346) for each app and complete [offline push configuration](#configuring push) accordingly.
 
 
 ## Push Notification Sounds
@@ -212,7 +212,6 @@ The IM SDK provides APIs for setting user sounds. You can customize the notifica
 3. Call the `setAPNS` API to set audio file information.
  > You only need to set the **file name (including the suffix)** of the audio file.
  >
-<img src="//main.qcloudimg.com/raw/76005ecd34b9cabf23536d77828f2de7.png" width=480 />
 
 ### Obtaining the notification sound for push messages
 
