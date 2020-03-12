@@ -8,7 +8,7 @@ For details on how to use the IM SDK, see [Running Through the Demo in One Minut
 <a name="nJjpr"></a>
 ## Step 2: Integrate the SDK
 TUIKit is a UI component layer that encapsulates the IM SDK and contains common IM operations, such as the chat panel, conversation list, and contacts.
-- To quickly integrate and use the SDK, see [Quick SDK Integration (Including UI Library)] (https://intl.cloud.tencent.com/document/product/1047/34286).
+- To quickly integrate and use the SDK, see [Quick SDK Integration (Including UI Library)](https://intl.cloud.tencent.com/document/product/1047/34286).
 - To use SDK APIs to customize UIs, see [Normal SDK Integration (Without the UI Library)](https://intl.cloud.tencent.com/document/product/1047/34301).
 
 <a name="EvGSB"></a>
