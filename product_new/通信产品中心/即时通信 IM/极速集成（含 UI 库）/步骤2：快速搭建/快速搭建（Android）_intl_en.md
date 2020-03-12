@@ -4,7 +4,6 @@ Instant messaging software usually consists of basic interfaces such as the chat
 ## Creating the Conversation List Interface
 
 ConversationLayout of the conversation list is inherited from LinearLayout. The acquisition, synchronization, display, and interaction are all encapsulated in TUIKit. You can use the conversation list UI with the same convenience as a normal Android view.
-![Conversation list](https://main.qcloudimg.com/raw/8adef6cec9f943958bbcbd0959130ce6.png)
 
 <ol><li>Set the layout in any layout.xml:
 
@@ -33,7 +32,6 @@ conversationLayout.initDefault();
 </li></ol>
 
 ## Opening the Chat UI
-![Chat UI](https://main.qcloudimg.com/raw/2bcadde944cf0d7fcdd9ae3c9466e60d.png)
 
 <ol><li>Set the layout in any layout.xml:
 
@@ -66,7 +64,6 @@ chatLayout.setChatInfo(mChatInfo);
 </li></ol>
 
 ## Adding the Contact UI
-![Contacts](https://main.qcloudimg.com/raw/1fd48a0db51cfa4a9de5853cf538a0ec.png)
 
 <ol><li>Set the layout in any layout.xml:
     

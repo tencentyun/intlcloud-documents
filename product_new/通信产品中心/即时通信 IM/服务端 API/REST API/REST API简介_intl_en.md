@@ -61,7 +61,7 @@ The response body must contain the ActionStatus field, the ErrorInfo field, and 
 |ErrorCode  | Integer | Error code. 0: Successful;  other values: Failed. For more information, see [Error codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
 
 ## Example
-This example shows you how to use the RESTful API to obtain all groups in an app.
+This example shows you how to use the [RESTful API to obtain all groups](https://intl.cloud.tencent.com/document/product/1047/34960) in an app.
 
 HTTPS requests:
 ```

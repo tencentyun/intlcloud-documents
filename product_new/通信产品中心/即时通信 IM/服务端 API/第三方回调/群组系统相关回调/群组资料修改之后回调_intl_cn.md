@@ -147,4 +147,4 @@ App 后台记录群资料的变更信息后，发送回调应答包。
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-- REST API：修改群组基础资料
+- REST API：[修改群组基础资料](https://intl.cloud.tencent.com/document/product/1047/34962)
