@@ -27,17 +27,16 @@ The process of implementing offline message push is as follows:
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the corresponding certificate area to modify and update the certificate.
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
+
 3. Set the following parameters based on the information obtained in [Step 1](#Step1):
  - **Push Platform**: select **Google**.
  - **Application Package Name**: enter the name of the client app package.
  - **Sender ID**: enter the **Sender ID** of the Google push service app.
  - **Old Server Key**: enter the **Old Server Key** of the Google push service app.
-  ![](https://main.qcloudimg.com/raw/2e051e4e8f0b4b5f123b768f3355e260.png)
+  ![](https://main.qcloudimg.com/raw/20e84d1ce9d135e098ff4df1a56d8095.png)
 4. Click **OK** to save the settings. The certificate information will take effect in 10 minutes.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
- ![](https://main.qcloudimg.com/raw/bb07b06f5ab9dee0ce17a3eee65101e8.png)
-	
+
 
 <span id="Step3"></span>
 ### Step 3: Report the push information to the IM server
