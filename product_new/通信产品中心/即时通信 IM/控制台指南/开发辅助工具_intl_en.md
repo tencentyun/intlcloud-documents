@@ -28,7 +28,7 @@ The system automatically obtains the key of the current app. Therefore, you only
 
 4. Click **Start verifying** to see the verification result.
  - If the verification succeeds, you can view the SDKAppID, UserID, creation time, valid period, and expiration time of the UserSig.
-  ![](https://main.qcloudimg.com/raw/2882d65f9f28df99fe0c911db197fcce.png)
+
  - If the verification fails, you can check the cause of failure and view the corresponding solution.
 
  
