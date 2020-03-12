@@ -6,9 +6,9 @@
 
 | API                                                          | 操作名       | 操作描述             |
 | ------------------------------------------------------------ | ------------ | -------------------- |
-| [PUT Bucket inventory](https://cloud.tencent.com/document/product/436/30625) | 设置清单任务 | 设置存储桶的清单任务 |
-| [GET Bucket inventory](https://cloud.tencent.com/document/product/436/30623) | 查询清单任务 | 查询存储桶的清单任务 |
-| [DELETE Bucket inventory](https://cloud.tencent.com/document/product/436/30626) | 删除清单任务 | 删除存储桶的清单任务 |
+| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | 设置清单任务 | 设置存储桶的清单任务 |
+| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | 查询清单任务 | 查询存储桶的清单任务 |
+| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | 删除清单任务 | 删除存储桶的清单任务 |
 
 ## 设置清单任务
 

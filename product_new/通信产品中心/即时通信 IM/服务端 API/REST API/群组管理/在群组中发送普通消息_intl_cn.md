@@ -240,4 +240,4 @@ https://console.tim.qq.com/v4/group_open_http_svc/send_group_msg?sdkappid=888888
 
 
 ## 可能触发的回调
- [群内发言之前回调](https://intl.cloud.tencent.com/document/product/1047/34375)
+ [群内发言之前回调](https://intl.cloud.tencent.com/document/product/1047/34374)
