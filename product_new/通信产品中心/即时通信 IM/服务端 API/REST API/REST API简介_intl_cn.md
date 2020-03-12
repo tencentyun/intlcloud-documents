@@ -1,11 +1,11 @@
-REST API 是即时通信 IM 提供给 App 后台的 HTTP 管理接口，其主要目的在于为 App 后台提供一个后台管理入口。目前即时通信 IM 支持的 REST API 请参见 [REST API 接口列表](https://cloud.tencent.com/document/product/269/1520)。
+REST API 是即时通信 IM 提供给 App 后台的 HTTP 管理接口，其主要目的在于为 App 后台提供一个后台管理入口。目前即时通信 IM 支持的 REST API 请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621)。
 除了 REST API，App 控制台也可实现简单的数据管理、单发/群发消息，开发者可以在控制台进行简单的数据管理、查看及测试。相比之下，REST API 接口较为原始，但管理能力却更为强大。
 为了安全性，REST API 仅提供 HTTPS 接口。
 
 ## 前提条件
 要调用 REST API，您必须已完成：
-1. 在即时通信 IM 控制台创建 App，具体方法参见 [应用接入指引](https://cloud.tencent.com/document/product/269/32577)。
-2. 为您的 App 指定管理员帐号，具体方法参见 [基础配置](https://cloud.tencent.com/document/product/269/32578) 的帐号体系集成。
+1. 在即时通信 IM 控制台创建 App，具体方法参见 [应用接入指引](https://intl.cloud.tencent.com/document/product/1047/34577)。
+2. 为您的 App 指定管理员帐号，具体方法参见 [基础配置](https://intl.cloud.tencent.com/document/product/1047/34540) 的帐号体系集成。
 
 >调用 REST API 时请务必使用 App 管理员帐号，否则会导致不必要的调用错误。
 
@@ -23,11 +23,11 @@ https://console.tim.qq.com/$ver/$servicename/$command?sdkappid=$SDKAppID&identif
 | https    |请求协议      | 请求协议为 HTTPS，请求方式为 POST       |
 | console.tim.qq.com |请求域名  | 固定为`console.tim.qq.com`      |
 | ver  | 协议版本号 | 固定为`v4`  |
-| servicename  | 内部服务名，不同的 servicename 对应不同的服务类型 |示例：<br>`v4/im_open_login_svc/account_import`，其中`im_open_login_svc`为`servicename`<br/>更多详情请参见 [REST API 接口列表](https://cloud.tencent.com/document/product/269/1520) |
-| command  | 命令字，与 servicename 组合用来标识具体的业务功能 |示例：<br>`v4/im_open_login_svc/account_import`，其中`account_import`为`command`<br/>更多详情请参见 [REST API 接口列表](https://cloud.tencent.com/document/product/269/1520) |
+| servicename  | 内部服务名，不同的 servicename 对应不同的服务类型 |示例：<br>`v4/im_open_login_svc/account_import`，其中`im_open_login_svc`为`servicename`<br/>更多详情请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621) |
+| command  | 命令字，与 servicename 组合用来标识具体的业务功能 |示例：<br>`v4/im_open_login_svc/account_import`，其中`account_import`为`command`<br/>更多详情请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621) |
 | sdkappid  | App 在即时通信 IM 控制台获取的应用标识 |在申请接入时获得 |
 | identifier  | 用户名，调用 REST API 时必须为 App 管理员帐号 |参见 [App 管理员](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)  |
-| usersig  | 用户名对应的密码 |参见 [生成 UserSig](https://cloud.tencent.com/document/product/269/32688) |
+| usersig  | 用户名对应的密码 |参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385) |
 | random  | 标识当前请求的随机数参数 |32位无符号整数随机数，取值范围0 - 4294967295 |
 | contenttype   |请求格式     | 固定值为`json`                   |
 
@@ -61,7 +61,7 @@ REST API 的应答包体也是 JSON 格式，其格式符合如下特征：
 |ErrorCode  | Integer | 错误码，0为成功，其他为失败，可查询 [错误码表](https://cloud.tencent.com/document/product/269/1671) 得到具体的原因 |
 
 ## 调用示例
-以下为通过 REST API 来 [获取 App 中所有群组](https://cloud.tencent.com/document/product/269/1614) 示例。
+以下为通过 REST API 来 [获取 App 中所有群组](https://intl.cloud.tencent.com/document/product/1047/34960) 示例。
 
 HTTPS 请求：
 ```
