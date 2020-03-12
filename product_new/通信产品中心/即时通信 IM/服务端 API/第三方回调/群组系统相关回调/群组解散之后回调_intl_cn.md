@@ -97,4 +97,4 @@ App 后台记录群解散信息后，发送回调应答包。
 ## 参考
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
-- REST API：解散群组
+- REST API：[解散群组](https://intl.cloud.tencent.com/document/product/1047/34896)
