@@ -32,12 +32,12 @@ Flyme is a highly customized Android system, with very strict management of the 
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the **Android Platform Push Settings** area to modify and update the certificate.
  >
 
-3. Set the following parameters based on the information obtained in [Step 1](#Step1_3):
+3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-meizu-push-certificate):
  - **Push Platform**: select **Meizu**.
  - **App Package Name**: enter the **App package name** of the Meizu push service app.
  - **AppID**: enter the **App ID** of the Meizu push service app.
  - **AppSecret**: enter the **App Secret** of the Meizu push service app.
- - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#click).
+ - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#configuring-the-notification-bar-message-click-event).
 
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
@@ -294,7 +294,7 @@ The default option is **Open App**.
 
 
  ### Opening webpages
-When [adding a certificate](#Step2), you need to select **Open Web Page** and enter a website URL starting with `http://` or `https://`, for example, `https://cloud.tencent.com/document/product/269`.
+When [adding a certificate](#Step2), you need to select **Open Web Page** and enter a website URL starting with `http://` or `https://`, for example, `https://intl.cloud.tencent.com/document/product/269`.
 
 
 ### Opening a specified UI in the app
@@ -320,7 +320,7 @@ Currently, Meizu push does not support custom notification sounds.
 ### How can I identify the cause to failures to receive push messages?
 1. No push service guarantees 100% success in reaching target users and zero vendor push exceptions. Therefore, if one or two push messages fail to reach users during a fast and continuous push process, it is usually due to the restrictions of vendor push frequency control.
 2. According to the push process, confirm whether the Meizu push certificate information is correctly configured in [IM Console](https://console.qcloud.com/avc).
-3. Confirm that your project’s [Meizu push SDK integration](#Step3) configuration is correct and that you have obtained the PushId.
-4. Confirm that you have [reported push information](#Step4) to the IM server correctly.
+3. Confirm that your project’s [Meizu push SDK integration](step-3.3A-integrate-the-push-sdk) configuration is correct and that you have obtained the PushId.
+4. Confirm that you have [reported push information](#step-4.3A-report-the-push-information-to-the-im-server) to the IM server correctly.
 5. Manually kill the app on your device, send several messages, and check whether you can receive notifications within one minute.
 6. If you still cannot receive push messages after the preceding steps, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the specific `time`, `SDKAppID`, `certificate ID`, and `push receiving UserID` for processing.
