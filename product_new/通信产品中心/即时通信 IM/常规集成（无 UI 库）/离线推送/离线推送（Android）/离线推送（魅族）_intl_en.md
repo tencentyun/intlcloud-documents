@@ -12,19 +12,18 @@ The process of implementing offline message push is as follows:
 
 Flyme is a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not included in the auto-start whitelist of the system. As apps running in the background are often killed by the system, we recommend that Meizu push be integrated on Meizu devices. Meizu push is a system-grade service of Flyme, with a high push delivery rate. Currently, **IM only supports the notification bar messages of Meizu push**.
 >
->- This document was prepared with direct reference to the official documentation of Meizu. If Meizu push is updated, refer to [Meizu push documentation on the official website](http://open-wiki.flyme.cn/index.php?title=魅族推送平台开发者文档).
+>- This document was prepared with direct reference to the official documentation of Meizu. If Meizu push is updated, refer to [Meizu push documentation on the official website](http://open-wiki.flyme.cn/index.php?).
 >- This document was prepared based on the Flyme push access guide. It is intended for the Flyme system only and is not a unified push platform for Meizu (but the integration for different vendors).
 >- If you do not need to implement special offline push adaptation for Meizu devices, ignore this section.
 
 ### Step 1: Apply for a Meizu push certificate
 
 1. Access the [Meizu open platform website](http://open.flyme.cn) to register an account and pass developer verification.
- > The verification process takes about 3 days. Be sure to read the [Meizu Push Service Activation Guide](http://open-wiki.flyme.cn/index.php?title=Flyme推送接入文档) to facilitate access to the service.
+ > The verification process takes about 3 days. Be sure to read the [Meizu Push Service Activation Guide](http://open-wiki.flyme.cn/index.php?) to facilitate access to the service.
 2. Log in to the console of the Meizu open platform, choose **Service** > **Integrate Push Service** > **Push Backend**, and create a Meizu push service app.
  After the Meizu push service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
 3. Record the **`App package name`**, **`App ID`**, and **`App Secret`** items.
- ![](https://main.qcloudimg.com/raw/d4ec7742c13579814761eb099dbfc8ea.png)
 
 <span id="Step2"></span>
 ### Step 2: Host the certificate to IM
@@ -32,17 +31,17 @@ Flyme is a highly customized Android system, with very strict management of the 
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the **Android Platform Push Settings** area to modify and update the certificate.
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
+
 3. Set the following parameters based on the information obtained in [Step 1](#Step1_3):
  - **Push Platform**: select **Meizu**.
  - **App Package Name**: enter the **App package name** of the Meizu push service app.
  - **AppID**: enter the **App ID** of the Meizu push service app.
  - **AppSecret**: enter the **App Secret** of the Meizu push service app.
  - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#click).
- ![](https://main.qcloudimg.com/raw/7151cfff6d8e82a41bfb9b718a49bf2f.png)
+
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
- ![](https://main.qcloudimg.com/raw/b8701c4c69847ae711055df0727f01ab.png)
+
 
 <span id="Step3"></span>
 ### Step 3: Integrate the push SDK
@@ -292,15 +291,15 @@ You can choose to **Open App**, **Open Web Page**, or **Open Specified Interface
 
 ### Opening the app
 The default option is **Open App**.
-![](https://main.qcloudimg.com/raw/f7a4c14ecb55e99dcfabf10eeb2adb44.png)
+
 
  ### Opening webpages
 When [adding a certificate](#Step2), you need to select **Open Web Page** and enter a website URL starting with `http://` or `https://`, for example, `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/8fab1edda97476f14aa8186f378809fd.png)
+
 
 ### Opening a specified UI in the app
 When [adding a certificate](#Step2), you need to select **Open Specified Interface in App** and enter the complete class name of Activity to be opened, for example, `com.tencent.qcloud.tim.demo.chat.ChatActivity`.
-![](https://main.qcloudimg.com/raw/64d67e324cc53b0ff0631586d9ec1ef5.png)
+
 
 ## FAQs
 
