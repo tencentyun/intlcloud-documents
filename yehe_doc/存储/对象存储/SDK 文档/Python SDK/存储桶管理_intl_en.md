@@ -22,7 +22,7 @@ This document provides an overview of APIs and SDK code samples related to cross
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
-| [GET Bucket versioning](https://cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
 
 **Cross-region Replication**
 

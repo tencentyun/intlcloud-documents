@@ -28,7 +28,7 @@
 | API                                                          | 操作名       | 操作描述                 |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
 | [PUT Bucket versioning](https://cloud.tencent.com/document/product/436/19889) | 设置版本控制 | 设置存储桶的版本控制功能 |
-| [GET Bucket versioning](https://cloud.tencent.com/document/product/436/19888) | 查询版本控制 | 查询存储桶的版本控制信息 |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | 查询版本控制 | 查询存储桶的版本控制信息 |
 
 **跨地域复制**
 
