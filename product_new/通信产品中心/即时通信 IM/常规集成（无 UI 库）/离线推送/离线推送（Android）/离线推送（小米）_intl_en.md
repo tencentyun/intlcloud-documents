@@ -11,12 +11,12 @@ The process of implementing offline message push is as follows:
 ## Directions
 MIUI is a highly customized Android system, with very strict management of the auto-start permissions for third-party apps. By default, third-party apps are not included in the auto-start whitelist of the system. As apps running in the background are often killed by the system, we recommend that the MI push service MiPush be integrated on MI devices. MiPush is a system-grade service of MIUI, with a relatively high push delivery rate. Currently, **IM only supports the notification bar messages of MiPush**.
 >
->- This document was prepared with direct reference to MI’s official documentation. If MiPush is updated, refer to [MiPush documentation on the official website](https://dev.mi.com/console/doc/detail?pId=230).
+>- This document was prepared with direct reference to MI’s official documentation. 
 >- If you do not need to implement special offline push adaptation of MI devices, ignore this section.
 
 ### Step 1: Apply for a MiPush certificate
-1. Access the [MI open platform website](https://dev.mi.com/console/) to register an account and pass developer verification.
- > The verification process takes about 2 days. Be sure to read the [MiPush Service Activation Guide](https://dev.mi.com/console/doc/detail?pId=68) beforehand to facilitate access to the service.
+1. Access the MI open platform website to register an account and pass developer verification.
+ > The verification process takes about 2 days. 
 2. Log in to the console of the MI open platform, choose **App Service** > **Push Service**, and create a MiPush service app.
  After the MiPush service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
@@ -30,12 +30,12 @@ MIUI is a highly customized Android system, with very strict management of the a
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the **Android Platform Push Settings** area to modify and update the certificate.
  >
 
-3. Set the following parameters based on the information obtained in [Step 1](#Step1_3):
+3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-mipush-certificate):
  - **Push Platform**: select **MI**.
  - **App Package Name**: enter the **Primary package name** of the MiPush service.
  - **AppID**: enter the **AppID** of the MiPush service app.
  - **AppSecret**: enter the **AppSecret** of the MiPush service app.
- - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#click).
+ - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#configuring-the-notification-bar-message-click-event).
 
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
@@ -46,10 +46,10 @@ MIUI is a highly customized Android system, with very strict management of the a
 >
 > - The default notification title for IM push messages is `a new message`.
 > - Before reading this section, ensure that you have correctly integrated and used the IM SDK.
-> - You can find a sample for MiPush implementation in our demo. Note that the features of MiPush may be adjusted during MiPush version updates. If you find any inconsistencies with the content of this section, refer to [MiPush documentation on the official website](https://dev.mi.com/console/doc/detail?pId=230) and notify us of the difference so that we can make the necessary modifications.
+> - You can find a sample for MiPush implementation in our demo. Note that the features of MiPush may be adjusted during MiPush version updates. If you find any inconsistencies with the content of this section.
 
 #### Step 3.1: Download the MiPush SDK and add references
-1. Access the [MiPush operation platform](http://dev.xiaomi.com/mipush/downpage/) and download the MiPush SDK package.
+1. Access the MiPush operation platform and download the MiPush SDK package.
 2. Decompress the MiPush SDK package to extract the `MiPush_SDK_client_**.jar` library file.
 3. Add the `MiPush_SDK_client_**.jar` library file to the `libs` directory in your project and add references in the project.
 
@@ -398,7 +398,7 @@ Currently, MiPush does not support custom notification sounds.
 ### How can I identify the cause to failures to receive push messages?
 1. No push service guarantees 100% success in reaching target users and zero vendor push exceptions. Therefore, if one or two push messages fail to reach users during a fast and continuous push process, it is usually due to the restrictions of vendor push frequency control.
 2. According to the push process, confirm whether the MiPush certificate information is correctly configured in [IM Console](https://console.qcloud.com/avc).
-3. Confirm that your project’s [MiPush SDK integration](#Step3) configuration is correct and that you have obtained the regId.
-4. Confirm that you have [reported push information](#Step4) to the IM server correctly.
+3. Confirm that your project’s [MiPush SDK integration](#step-3.3A-integrate-the-push-sdk) configuration is correct and that you have obtained the regId.
+4. Confirm that you have [reported push information](#step-4.3A-report-the-push-information-to-the-im-server) to the IM server correctly.
 5. Manually kill the app on your device, send several messages, and check whether you can receive notifications within one minute.
 6. If you still cannot receive push messages after the preceding steps, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the specific `time`, `SDKAppID`, `certificate ID`, and `push receiving UserID` for processing.
