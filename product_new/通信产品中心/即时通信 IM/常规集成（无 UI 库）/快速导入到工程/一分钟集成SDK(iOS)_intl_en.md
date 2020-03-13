@@ -50,7 +50,7 @@ After the pod command is executed, a project file integrated with the SDK and su
 pod setup
 pod repo update
 rm ~/Library/Caches/CocoaPods/search_index.json
-
+>```
 
 ### Manual integration
 #### 1. Obtain the SDK download URL from [Github](https://github.com/tencentyun/TIMSDK):
