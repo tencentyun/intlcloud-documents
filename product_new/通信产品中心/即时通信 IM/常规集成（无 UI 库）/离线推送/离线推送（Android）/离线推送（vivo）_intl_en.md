@@ -30,17 +30,17 @@ vivo mobile phones use a highly customized Android system, with very strict mana
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the corresponding certificate area to modify and update the certificate.
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
+
 3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-meizu-push-certificate)):
  - **Push Platform**: select **vivo**.
  - **AppKey**: enter the **APP key** of the vivo push service app.
  - **AppID**: enter the **APP ID** of the vivo push service app.
  - **AppSecret**: enter the **APP secret** of the vivo push service app.
  - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#configuring-the-notification-bar-message-click-event).
- ![](https://main.qcloudimg.com/raw/ac890d834dd7f069f936094180634cd7.png)
+
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
- ![](https://main.qcloudimg.com/raw/3442e00debac668c42fa4be89903ac90.png)
+
 
 <span id="Step3"></span>
 ### Step 3: Integrate the push SDK
@@ -303,11 +303,11 @@ You can choose to **Open App**, **Open Web Page**, or **Open Specified Interface
 
 ### Opening the app
 The default option is **Open App**.
-![](https://main.qcloudimg.com/raw/ac890d834dd7f069f936094180634cd7.png)
+
 
 ### Opening webpages
 When [adding a certificate](#Step2), you need to select **Open Web Page** and enter a website URL starting with `http://` or `https://`, for example, `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/76ebc2f58623241c685ebffab6b4c2f6.png)
+
 
 ### Opening a specified UI in the app
 
@@ -343,7 +343,7 @@ When [adding a certificate](#Step2), you need to select **Open Web Page** and en
     ```
 
 3. When [adding a certificate](#Step2), select **Open Specified Interface in App** and enter the printed results.
-    ![](https://main.qcloudimg.com/raw/1ab25b8c52b953014786682bce43c2ed.png)
+
 
 ## FAQs
 
