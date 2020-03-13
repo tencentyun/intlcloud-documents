@@ -48,7 +48,7 @@ After the pod command is executed, a project file integrated with the SDK and su
 
 ### Manual integration
 #### 1. Obtain the SDK download URL from [Github](https://github.com/tencentyun/TIMSDK):
-![](https://main.qcloudimg.com/raw/8a68131164419de35a8780831b096502.png)
+
 
 - ImSDKForMac.framework is the core dynamic library file of the IM SDK.
 
