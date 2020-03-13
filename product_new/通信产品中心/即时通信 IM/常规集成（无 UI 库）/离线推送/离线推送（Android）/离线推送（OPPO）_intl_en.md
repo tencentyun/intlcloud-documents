@@ -13,13 +13,13 @@ OPPO mobile phones use a highly customized Android system, with very strict mana
 
 >
 >- **At present, the OPPO push service is available only to apps that are already in OPPO’s app store. Therefore, the current demo has no sample of OPPO push.**
->- This document was prepared with direct reference to the official documentation of OPPO push. If OPPO push is updated, refer to [OPPO push documentation on the official website](https://open.oppomobile.com/wiki/doc#id=10194).
+>- This document was prepared with direct reference to the official documentation of OPPO push. If OPPO push is updated, refer to OPPO push documentation on the official website.
 >- If you do not need to implement special offline push adaptation for OPPO devices, ignore this section.
 
 <span id="Step1"></span>
 ### Step 1: Apply for an OPPO push certificate
-1. Refer to the [OPPO push service activation guide](https://open.oppomobile.com/wiki/doc#id=10195) to activate the push service.
-2. Go to the [OPPO push platform](https://push.oppo.com/) and choose **Configuration Management** > **App Configuration** to view detailed app information.
+1. Refer to the OPPO push service activation guide to activate the push service.
+2. Go to the OPPO push platform and choose **Configuration Management** > **App Configuration** to view detailed app information.
 <span id="Step1_3"></span>
 3. Record the `AppId`, `AppKey`, `AppSecret`, and `MasterSecret` items.
 
@@ -29,21 +29,20 @@ OPPO mobile phones use a highly customized Android system, with very strict mana
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to change its information, you can click **Edit** in the **Android Platform Push Settings** to modify and update the certificate.
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
-3. Set the following parameters based on the information obtained in [Step 1](#Step1_3):
+3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-oppo-push-certificate):
  - **Push Platform**: select **OPPO**.
  - **AppKey**: enter the **AppKey** of the OPPO push service app.
  - **AppID**: enter the **AppId** of the OPPO push service app.
  - **MasterSecret**: enter the **MasterSecret** of the OPPO push service app.
-![](https://main.qcloudimg.com/raw/8b94fde206c9fa8cd0dee774e12df0ac.png)
+
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
- ![](https://main.qcloudimg.com/raw/23dc3500472be773bf5499299e511444.png)
+
 
 <span id="Step3"></span>
 ### Step 3: Integrate the push SDK
 
-1. Refer to [OPPO PUSH SDK API documentation](https://open.oppomobile.com/wiki/doc#id=10196) to integrate the SDK and test notification messages in the OPPO console to ensure that it has been integrated successfully.
+1. Refer to OPPO PUSH SDK API documentation to integrate the SDK and test notification messages in the OPPO console to ensure that it has been integrated successfully.
 2. Call `PushManager.getInstance().register(…)` in the OPPO SDK to initialize the Opush service.
  After successful registration, you can obtain `regId` in the `onRegister` callback method of `PushCallback`.
 3. Record the `regId` information.
@@ -138,7 +137,6 @@ public class ThirdPushTokenMgr {
 After the certificate ID and regId are successfully reported, the IM server sends messages through OPPO push notifications to the user when the app has been killed but the user has not logged out of IM.
 
 >
->- For FAQs related to OPPO push, see [OPPO PUSH FAQs]( https://open.oppomobile.com/wiki/doc#id=10200).
 >- If the IM user has logged out or was forced logout by the IM server (for example, due to login on another terminal), the device will not receive push messages.
 
 
@@ -152,7 +150,7 @@ Currently, OPPO push does not support custom notification sounds.
 ### How can I identify the cause of failures to receive push messages?
 1. No push service guarantees 100% success in reaching target users and zero vendor push exceptions. Therefore, if one or two push messages fail to reach users during a fast and continuous push process, it is usually due to the restrictions of vendor push frequency control.
 2. According to the push process, confirm whether the OPPO push certificate information is correctly configured in [IM Console](https://console.qcloud.com/avc).
-3. Confirm that your project’s [OPPO push SDK integration](#Step3) configuration is correct and that you have obtained the regId.
-4. Confirm that you have [reported push information](#Step4) to the IM server correctly.
+3. Confirm that your project’s [OPPO push SDK integration](#step-3.3A-integrate-the-push-sdk) configuration is correct and that you have obtained the regId.
+4. Confirm that you have [reported push information](#step-4.3A-report-the-push-information-to-the-im-server) to the IM server correctly.
 5. Manually kill the app on your device, send several messages, and confirm whether you can receive notifications within one minute.
 6. If you still cannot receive push messages after the preceding steps, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the specific `time`, `SDKAppID`, `certificate ID`, and `push receiving UserID` for processing.
