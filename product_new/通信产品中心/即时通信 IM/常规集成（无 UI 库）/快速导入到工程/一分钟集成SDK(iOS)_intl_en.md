@@ -54,7 +54,7 @@ rm ~/Library/Caches/CocoaPods/search_index.json
 
 ### Manual integration
 #### 1. Obtain the SDK download URL from [Github](https://github.com/tencentyun/TIMSDK):
-![](https://main.qcloudimg.com/raw/97cb6171855e6e09540c1ccd6fc57343.png)
+
 
 - IMSDK.framework is the core dynamic library file of the IM SDK.
 
@@ -66,7 +66,7 @@ rm ~/Library/Caches/CocoaPods/search_index.json
 
 | Pack Name | Description | Features |
 | --- | --- | --- |
-| TXLiteAVSDK_UGC.framework | Extension pack for recording and editing short videos | This pack provides the short-video recording and editing features. For more information, see [UGSV SDK Documentation](https://cloud.tencent.com/product/ugsv). |
+| TXLiteAVSDK_UGC.framework | Extension pack for recording and editing short videos | This pack provides the short-video recording and editing features.  |
 
 #### 2. Create a project
 **Create a new project**:
