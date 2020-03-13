@@ -27,7 +27,6 @@ dependencies {
 ```
 >
  ![](https://main.qcloudimg.com/raw/e28438bb2be46cc188b217d26b920108.png)
- 
 - **第二步：指定 App 使用架构**
 在 defaultConfig 中，指定 App 使用的 CPU 架构（从 IM SDK 4.3.118 版本开始支持 armeabi-v7a，arm64-v8a，x86，x86_64）：
 ```
