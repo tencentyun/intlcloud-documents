@@ -30,9 +30,9 @@ This document provides an overview of APIs and SDK code samples related to cross
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://cloud.tencent.com/document/product/436/34838) | Setting bucket tags | Sets tags for an existing bucket |
-| [GET Bucket tagging](https://cloud.tencent.com/document/product/436/34837) | Querying bucket tags | Queries the existing tags of a specified bucket |
-| [DELETE Bucket tagging](https://cloud.tencent.com/document/product/436/34836) | Deleting bucket tags | Deletes the tags of a specified bucket |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes the tags of a specified bucket |
 
 **Versioning**
 

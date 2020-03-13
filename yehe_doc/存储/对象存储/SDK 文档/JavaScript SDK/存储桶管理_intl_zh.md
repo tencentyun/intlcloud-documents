@@ -30,9 +30,9 @@
 
 | API                                                          | 操作名         | 操作描述                         |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://cloud.tencent.com/document/product/436/34838) | 设置存储桶标签 | 为已存在的存储桶设置标签         |
-| [GET Bucket tagging](https://cloud.tencent.com/document/product/436/34837) | 查询存储桶标签 | 查询指定存储桶下已有的存储桶标签 |
-| [DELETE Bucket tagging](https://cloud.tencent.com/document/product/436/34836) | 删除存储桶标签 | 删除指定的存储桶标签             |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | 设置存储桶标签 | 为已存在的存储桶设置标签         |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | 查询存储桶标签 | 查询指定存储桶下已有的存储桶标签 |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | 删除存储桶标签 | 删除指定的存储桶标签             |
 
 **版本控制**
 
