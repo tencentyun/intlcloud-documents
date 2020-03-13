@@ -320,7 +320,7 @@ Currently, Meizu push does not support custom notification sounds.
 ### How can I identify the cause to failures to receive push messages?
 1. No push service guarantees 100% success in reaching target users and zero vendor push exceptions. Therefore, if one or two push messages fail to reach users during a fast and continuous push process, it is usually due to the restrictions of vendor push frequency control.
 2. According to the push process, confirm whether the Meizu push certificate information is correctly configured in [IM Console](https://console.qcloud.com/avc).
-3. Confirm that your project’s [Meizu push SDK integration](step-3.3A-integrate-the-push-sdk) configuration is correct and that you have obtained the PushId.
+3. Confirm that your project’s [Meizu push SDK integration](#step-3.3A-integrate-the-push-sdk) configuration is correct and that you have obtained the PushId.
 4. Confirm that you have [reported push information](#step-4.3A-report-the-push-information-to-the-im-server) to the IM server correctly.
 5. Manually kill the app on your device, send several messages, and check whether you can receive notifications within one minute.
 6. If you still cannot receive push messages after the preceding steps, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the specific `time`, `SDKAppID`, `certificate ID`, and `push receiving UserID` for processing.
