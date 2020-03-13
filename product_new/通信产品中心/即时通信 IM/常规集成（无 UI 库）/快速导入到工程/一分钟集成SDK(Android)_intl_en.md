@@ -26,7 +26,7 @@ dependencies {
 }
 ```
 >
- ![](https://main.qcloudimg.com/raw/211945758a897f53299951d415209ea6.png)
+ ![](https://main.qcloudimg.com/raw/e28438bb2be46cc188b217d26b920108.png)
 - **Step 2: Specify the architecture used by the app**
 In defaultConfig, specify the CPU architecture used by the app (armeabi-v7a, arm64-v8a, x86, and x86_64 are supported since IM SDK 4.3.118):
 ```
@@ -39,7 +39,7 @@ In defaultConfig, specify the CPU architecture used by the app (armeabi-v7a, arm
 
 - **Step 3: Synchronize the SDK**
 Click **Sync Now**. If you can access jcenter, the SDK is automatically downloaded and integrated into your project.
-![](https://main.qcloudimg.com/raw/e3ce64d671fd4a159f8919332ce1ae15.png)
+![](https://main.qcloudimg.com/raw/a75e143229c36e509811261942c29e88.png)
 
 
 ### Method 2: Manual download (aar)
