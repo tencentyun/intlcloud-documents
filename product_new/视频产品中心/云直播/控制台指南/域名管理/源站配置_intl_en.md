@@ -25,5 +25,5 @@ If you have a self-built origin server and live stream source and want to live b
 > - After the relevant information is configured, the origin server settings will take effect in about one day.
 > - After the origin server configuration is enabled, features such as transcoding, recording, screencapturing, porn information detection, and watermarking will become unavailable. 
 
-![](https://main.qcloudimg.com/raw/da1187e967a68a843f6a61ac4391af2b.png)
+![](https://main.qcloudimg.com/raw/aad1f61836b32b01822f945f8afa241e.png)
 
