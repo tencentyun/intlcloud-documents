@@ -9,8 +9,7 @@ The following section describes how to integrate the SDK into a Visual Studio 20
 
 ### Step 1. Download the IM SDK
 
-Download the Windows IM SDK from [Github](https://github.com/tencentyun/TIMSDK), as shown below:
- ![](https://main.qcloudimg.com/raw/22f0841537a6314fa7e00581d84a07de.png)
+Download the Windows IM SDK from [Github](https://github.com/tencentyun/TIMSDK).
 
 Download and decompress the IM SDK file, which contains the following:
 
