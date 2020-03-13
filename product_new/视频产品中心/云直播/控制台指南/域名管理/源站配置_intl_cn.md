@@ -25,5 +25,5 @@
 > -  配置好相关信息后，源站设置会在一天左右生效。
 >- 开启源站配置功能后，转码、录制、截图、鉴黄和水印等功能均无法使用。 
 
-![](https://main.qcloudimg.com/raw/da1187e967a68a843f6a61ac4391af2b.png)
+![](https://main.qcloudimg.com/raw/aad1f61836b32b01822f945f8afa241e.png)
 
