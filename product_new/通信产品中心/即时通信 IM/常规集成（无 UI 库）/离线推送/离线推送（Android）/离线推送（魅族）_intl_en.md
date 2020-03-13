@@ -18,7 +18,7 @@ Flyme is a highly customized Android system, with very strict management of the 
 
 ### Step 1: Apply for a Meizu push certificate
 
-1. Access the [Meizu open platform website](http://open.flyme.cn) to register an account and pass developer verification.
+1. Access the Meizu open platform website to register an account and pass developer verification.
  > The verification process takes about 3 days. Be sure to read the Meizu Push Service Activation Guide to facilitate access to the service.
 2. Log in to the console of the Meizu open platform, choose **Service** > **Integrate Push Service** > **Push Backend**, and create a Meizu push service app.
  After the Meizu push service app is created, you can view detailed app information on the app details page.
