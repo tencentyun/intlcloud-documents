@@ -1,6 +1,6 @@
 ## Group Overview
 
-Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see the [Group System](https://intl.cloud.tencent.com/zh/document/product/1047/33529). A group is identified by a unique ID, which allows for different operations.
+Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). A group is identified by a unique ID, which allows for different operations.
 
 ## Group Management
 

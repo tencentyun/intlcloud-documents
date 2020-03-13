@@ -68,18 +68,17 @@ rm ~/Library/Caches/CocoaPods/search_index.json
 | TXLiteAVSDK_UGC.framework | 小视频录制、编辑能力扩展包 | 包含小视频录制功能、小视频编辑功能，详情请参阅 短视频 SDK 文档|
 
 #### 2. 创建工程
-**创建一个新工程**：
+- **创建一个新工程**：
 ![](https://main.qcloudimg.com/raw/de4a148165dbfafd1f403e88018b0012.jpg)
-**填入工程名**（例如：IMDemo）：
+- **填入工程名**（例如：IMDemo）：
 ![](https://main.qcloudimg.com/raw/d9aebb74fe2fb4740c88e7cbda31987a.jpg)
 
 #### 3. 集成 IM SDK
 
-**添加依赖库：**选中 IMDemo 的【Target】，在【General】面板中的 【Embedded Binaries】和【Linked Frameworks and Libraries】添加依赖库。
-
+- **添加依赖库：**选中 IMDemo 的【Target】，在【General】面板中的 【Embedded Binaries】和【Linked Frameworks and Libraries】添加依赖库。
 ![](https://main.qcloudimg.com/raw/3a1cc30c280362be2d99058dde347d4f.png)
 
-**添加依赖库：**
+- **添加依赖库：**
 ```
 ImSDK.framework
 ```

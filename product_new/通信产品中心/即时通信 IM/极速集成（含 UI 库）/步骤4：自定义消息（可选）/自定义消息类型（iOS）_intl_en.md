@@ -1,6 +1,6 @@
 In TUIChatController, each message is stored as a TUIMessageCellData or subclass object. When the message list is scrolled, TUIMessageCellData objects are converted to TUIMessageCell objects for display.
 You can customize messages by setting the TUIChatController callback delegate to control specific TUIMessageCell instances.
-![](https://main.qcloudimg.com/raw/77082a09b210baae30e41ce35e07af6b.png)
+
 Take the custom hyperlink message in the red box as an example. As TUIKit does not implement this effect internally, you need to add two UILabels to the container of TUIMessageCell. This document guides you through the implementation process:
 
 ## Custom Messages
@@ -141,7 +141,7 @@ Register the TUIChatController callback to instruct TUIChatController how to dis
 ## Sending Custom Messages
 
 TUIChatController provides APIs to send messages, and the user controls the sending operation through code. Custom messages must be inherited from TUIMessageCellData. For example, to send a text message, you need to create a TUITextMessageCellData object.
-To send custom data, you need to initialize innerMessage properties. For more information, see [Custom Messages](https://cloud.tencent.com/document/product/269/9150#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81).
+To send custom data, you need to initialize innerMessage properties. For more information, see [Custom Messages](https://intl.cloud.tencent.com/document/product/1047/34321#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81).
 
 ```objectivec
 MyCustomCellData *cellData = [[MyCustomCellData alloc] initWithDirection:MsgDirectionOutgoing];       

@@ -1,5 +1,5 @@
 Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card. In the left sidebar, choose **Group Management**, and you can then manage group custom fields based on your business needs.
-You can also manage groups by calling RESTful APIs. For more information, see [Group Management API Documentation](https://cloud.tencent.com/document/product/269/1613).
+You can also manage groups by calling RESTful APIs.
 
 
 ## Adding Groups
@@ -7,7 +7,7 @@ You can also manage groups by calling RESTful APIs. For more information, see [G
 2. Configure the following parameters in the "Add Group" dialog box that appears:
  - Group name: enter the name of the group. This is a required parameter with a maximum length of 30 bytes.
  - Group owner ID: enter the group owner ID. This is an optional parameter and you must enter a registered username.
- - Group type: set the group type. Supported group types are Private, Public, ChatRoom, AVChatRoom, and BChatRoom. For more information, see [Group Types](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D).
+ - Group type: set the group type. Supported group types are Private, Public, ChatRoom, AVChatRoom, and BChatRoom. For more information, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D).
 3. Click **OK** to save the settings.
  When group creation is completed, you can see the group ID, group name, group owner, type, and creation time in the group list.
 
@@ -17,7 +17,7 @@ On the **Group Management** page, click **View details** for the target group to
 ### Modifying basic information
 1. On the **Group Details** page, click **Edit** in the basic information area.
 2. In the dialog box that appears, you can modify the group name and group introduction.
- ![](https://main.qcloudimg.com/raw/8c612029f66338a63551dcdc8ac3924e.png)
+
 3. Click **OK** to save the settings.
 
 ### Managing group members
@@ -26,7 +26,6 @@ On the **Group Management** page, click **View details** for the target group to
 2. In the dialog box that appears, enter the username of the user to be added.
  >You must enter a registered username.
  >
-![](https://main.qcloudimg.com/raw/ddcea4353e44374607d62e916536940c.png)
 3. Click **OK** to save the setting.
  After the user is added, you can see the username, nickname, joining time, sending time of the last message, and role in the group member list.
 
