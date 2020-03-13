@@ -1,0 +1,1 @@
+For the API references for VPN connection, please see [VPN Gateway-related APIs](https://cloud.tencent.com/document/product/215/15755#VPN.E7.BD.91.E5.85.B3.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3). For the old version of APIs, please see [VPC APIs 2017](https://cloud.tencent.com/document/product/215/909#5.-vpn-.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)).
