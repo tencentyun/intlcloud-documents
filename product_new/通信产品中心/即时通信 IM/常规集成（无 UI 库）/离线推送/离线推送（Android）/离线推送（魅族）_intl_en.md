@@ -12,14 +12,14 @@ The process of implementing offline message push is as follows:
 
 Flyme is a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not included in the auto-start whitelist of the system. As apps running in the background are often killed by the system, we recommend that Meizu push be integrated on Meizu devices. Meizu push is a system-grade service of Flyme, with a high push delivery rate. Currently, **IM only supports the notification bar messages of Meizu push**.
 >
->- This document was prepared with direct reference to the official documentation of Meizu. If Meizu push is updated, refer to [Meizu push documentation on the official website](http://open-wiki.flyme.cn/index.php?).
+>- This document was prepared with direct reference to the official documentation of Meizu. If Meizu push is updated, refer to Meizu push documentation on the official website.
 >- This document was prepared based on the Flyme push access guide. It is intended for the Flyme system only and is not a unified push platform for Meizu (but the integration for different vendors).
 >- If you do not need to implement special offline push adaptation for Meizu devices, ignore this section.
 
 ### Step 1: Apply for a Meizu push certificate
 
 1. Access the [Meizu open platform website](http://open.flyme.cn) to register an account and pass developer verification.
- > The verification process takes about 3 days. Be sure to read the [Meizu Push Service Activation Guide](http://open-wiki.flyme.cn/index.php?) to facilitate access to the service.
+ > The verification process takes about 3 days. Be sure to read the Meizu Push Service Activation Guide to facilitate access to the service.
 2. Log in to the console of the Meizu open platform, choose **Service** > **Integrate Push Service** > **Push Backend**, and create a Meizu push service app.
  After the Meizu push service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
@@ -48,10 +48,10 @@ Flyme is a highly customized Android system, with very strict management of the 
 >
 > - The default notification title for IM push messages is `a new message`.
 > - Before reading this section, ensure that you have correctly integrated and used the IM SDK.
-> - You can find a sample for Meizu push implementation in our demo. Note that the features of Meizu push may be adjusted during Meizu push version updates. If you find any inconsistencies with the content of this section, refer to [Meizu push documentation on the official website](http://open-wiki.flyme.cn/doc-wiki/index#id?73) and notify us of the difference so that we can make the necessary modifications.
+> - You can find a sample for Meizu push implementation in our demo. Note that the features of Meizu push may be adjusted during Meizu push version updates. If you find any inconsistencies with the content of this section, refer to Meizu push documentation on the official website and notify us of the difference so that we can make the necessary modifications.
 
 #### Step 3.1: Download the Meizu push SDK and add references
-Access the [Meizu push operation platform](http://open-wiki.flyme.cn/doc-wiki/index#id?130) and download the aar package of the Meizu Flyme push SDK or use jcenter integration.
+Access the Meizu push operation platform and download the aar package of the Meizu Flyme push SDK or use jcenter integration.
 ```
 dependencies {
     // MEIZU push sdk
