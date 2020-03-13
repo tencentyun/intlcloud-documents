@@ -15,8 +15,8 @@ Currently, configuring HTTPS mutual authentication callbacks is not supported. T
 ## Configuring Event Callbacks
 1. On the **Callback Configuration** page, click **Edit** in the event callback configuration area.
 2. In the "Event Callback Configuration" dialog that appears, select desired callbacks.
- ![](https://main.qcloudimg.com/raw/aeaa08f9aa11578ee0e4c7778fb32cc7.png)
+
 3. Click **OK** to save the setting.
 
 ## Subsequent Operations
-After configuring the callback URL and enabling event callbacks, see [Third-Party Callbacks](https://cloud.tencent.com/document/product/269/1522) to use callback features to track user information and operations in real time.
+After configuring the callback URL and enabling event callbacks, see [Third-Party Callbacks](https://intl.cloud.tencent.com/document/product/1047/34354) to use callback features to track user information and operations in real time.
