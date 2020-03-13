@@ -217,7 +217,7 @@ groupInfo.membersInfo = membersInfo;
 
 ### Creating a group with a custom group ID
 
-By default, the IM server generates a unique ID when a group is created. If a custom group ID is needed, the user can specify an ID when the group is created. A custom group ID can also be obtained by [creating a group with specified properties](#.E5.88.9B.E5.BB.BA.E6.8C.87.E5.AE.9A.E5.B1.9E.E6.80.A7.E7.BE.A4.E7.BB.84).
+By default, the IM server generates a unique ID when a group is created. If a custom group ID is needed, the user can specify an ID when the group is created. A custom group ID can also be obtained by [creating a group with specified properties](#creating-a-group-with-specified-properties).
 
 ```
 @interface TIMGroupManager : NSObject
@@ -1662,7 +1662,7 @@ TIMGroupPendencyItem *item = [pendencies firstObject];
 
 ## Group Event Messages
 
-When a user is invited to a group or is removed from a group, a prompt message is displayed in the group. The caller can decide whether to display and how to display the prompt message (for example, ignore it or display it to users as needed.) A prompt message is identified by a special `Elem` and returned by the new message callback. For more information, see [New Message Notifications](/doc/product/269/9148#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5). The following figure shows an event message for group name modification.
+When a user is invited to a group or is removed from a group, a prompt message is displayed in the group. The caller can decide whether to display and how to display the prompt message (for example, ignore it or display it to users as needed.) A prompt message is identified by a special `Elem` and returned by the new message callback. For more information, see [New Message Notifications](https://intl.cloud.tencent.com/document/product/1047/34313). The following figure shows an event message for group name modification.
 
 
 **Message prototype:**
