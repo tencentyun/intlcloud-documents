@@ -659,7 +659,7 @@ function(err, data) { ... }
 
 This API (DELETE Bucket policy) is used to delete the permission policy of the specified bucket.
 
->!Only the Bucket owner is allowed to initiate this request. You will receive "204 No Content" if the permission policy does not exist.
+>Only the Bucket owner is allowed to initiate this request. You will receive "204 No Content" if the permission policy does not exist.
 
 #### Samples
 

@@ -82,7 +82,7 @@ See the figure below:
 The following describes how to use COS iOS SDK to complete a basic operation, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying an object list, downloading an object, and deleting an object. For more details, please refer to [XML iOS SDK Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples). For how to use the specific API, refer to the unit test file provided in the Demo.
 
 ### Prerequisites
-> !You must apply for the APPID of COS service on the [Tencent Cloud Console](https://console.cloud.tencent.com/cos4/secret) before proceeding with this step.
+>You must apply for the APPID of COS service on the [Tencent Cloud Console](https://console.cloud.tencent.com/cos4/secret) before proceeding with this step.
 
 <span id="step1"></span>
 ### Initialization
@@ -137,7 +137,7 @@ Instantiate QCloudCOSTransferManagerService object:
 The appID, SecretId and SecretKey in the example below can be obtained from the [COS v5 Console](https://console.cloud.tencent.com/cos5).
 
 >
-> !QCloudSignatureProvider protocol needs to be implemented for the signatureProvider object of QCloudServiceConfiguration.
+>QCloudSignatureProvider protocol needs to be implemented for the signatureProvider object of QCloudServiceConfiguration.
 > 2. Before using the SDK, instantiate a default cloud service configuration object QCloudServiceConfiguration, and then instantiate QCloudCOSXMLService and QCloudCOSTransferManagerService objects.  
 > 3. If QCloudServiceConfiguration is changed, you can register a new QCloudCOSTransferManagerService with `registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key`, but only one QCloudCOSTransferManagerService can be set as default.
 
@@ -247,7 +247,7 @@ The example assumes you have applied for a Bucket for your business. In fact, al
 
 The API for uploading files uses a signature for authentication. A request sent automatically requests a signature from the object specified during initialization that follows the QCloudSignatureProvider protocol. For more information on how to generate a signature, see the [Generating a Signature](#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D) section below.
 
-> !The object corresponding to the URL cannot be changed during upload, otherwise it will cause an error.
+>The object corresponding to the URL cannot be changed during upload, otherwise it will cause an error.
 
 #### Samples
 
@@ -527,7 +527,7 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
 
 ### Generating a signature using the permanent keys at the terminal (not recommended)
 
->! We do not recommend you use permanent keys to generate a signature at the terminal. This may cause data leakage.
+> We do not recommend you use permanent keys to generate a signature at the terminal. This may cause data leakage.
 
 Sample code is as follows:
 
@@ -672,7 +672,7 @@ The simplified SDK is implemented via Subspec of Cocoapods, so it can only be in
 pod 'QCloudCOSXML/Transfer'
 ```
 
-> !For Mobile Line users, the simplified SDK is available only when TACStorage is **disabled** and the official source of [Cocoapods](https://github.com/CocoaPods/Specs) is placed **in front of all sources**. It is recommended to place it in the first line in Podfile. Other users can ignore this note.
+>For Mobile Line users, the simplified SDK is available only when TACStorage is **disabled** and the official source of [Cocoapods](https://github.com/CocoaPods/Specs) is placed **in front of all sources**. It is recommended to place it in the first line in Podfile. Other users can ignore this note.
 
 The simplified SDK does not have the header file QCloudCOSXML.h. Import the following header file at the time of initialization:
 

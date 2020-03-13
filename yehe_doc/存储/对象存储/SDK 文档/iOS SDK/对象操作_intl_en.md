@@ -161,7 +161,7 @@ Refer to [Downloading an Object](https://intl.cloud.tencent.com/document/product
 
 Initialize a QCloudCOSXMLCopyObjectRequest object, and then call CopyObject of QCloudCOSTransferMangerService. Note that multipart copy is automatically used for large files, but users will not be aware of this process.  
 
-> !For cross-origin replication, the region of transferManager must be the same as that of the bucket.
+>For cross-origin replication, the region of transferManager must be the same as that of the bucket.
 
 #### QCloudCOSXMLUploadObjectRequest parameters
 
@@ -196,7 +196,7 @@ request.sourceRegion= @"COS_REGION";// Source region
     // You can get etag or custom header information in response from outputObject
 }];
 
-> !For cross-origin replication, the region of transferManager must be the same as that of the bucket.
+>For cross-origin replication, the region of transferManager must be the same as that of the bucket.
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] CopyObject:request];
 ```
 
@@ -219,7 +219,7 @@ copyRequest.setFinish { (copyResult, error) in
         print(copyResult!);
     }
 }
-> !For cross-origin replication, the region of transferManager must be the same as that of the bucket.
+>For cross-origin replication, the region of transferManager must be the same as that of the bucket.
 QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyRequest);
 ```
 
@@ -341,7 +341,7 @@ Error codes returned by COS are based on HTTP status codes, such as 404 and 503.
 
 Upload objects to the specified bucket (Put Object), simple upload is limited to small files (less than 20MB). Simple upload supports uploading files from memory.
 
-> !The number of access policies is up to 1000. Do not set object ACL control when you upload an object if it is not required. The object inherits the bucket permissions by default.
+>The number of access policies is up to 1000. Do not set object ACL control when you upload an object if it is not required. The object inherits the bucket permissions by default.
 
 #### QCloudPutObjectRequest parameters
 

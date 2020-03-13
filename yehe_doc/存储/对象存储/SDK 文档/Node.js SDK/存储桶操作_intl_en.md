@@ -172,7 +172,7 @@ function(err, data) { ... }
 
 This API is used to delete an empty bucket under the specified account. Note that if the deletion is successful, the returned HTTP status code will be 200 or 204.
 
->! Before deleting a bucket, please make sure that all the data and incomplete multipart uploads in the bucket have been deleted; otherwise, the bucket cannot be deleted.
+> Before deleting a bucket, please make sure that all the data and incomplete multipart uploads in the bucket have been deleted; otherwise, the bucket cannot be deleted.
 
 #### Samples
 

@@ -1,7 +1,7 @@
 ## Overview
 You can create buckets on the Bucket List page on the COS Console. For more information on buckets, see [Bucket Overview](https://cloud.tencent.com/document/product/436/13312).
 
->! Up to 200 buckets are allowed under the same user account (regardless of region).
+> Up to 200 buckets are allowed under the same user account (regardless of region).
 
 ## Steps
 1. Log into the [COS Console](https://console.cloud.tencent.com/cos5).

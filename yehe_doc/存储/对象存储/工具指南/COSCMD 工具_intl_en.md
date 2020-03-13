@@ -45,7 +45,7 @@ Run the `pip` command to update:
 pip install coscmd -U
 ```
 
->! If the pip version number is greater than or equal to 10.0.0, a failure may occur when upgrading or installing dependent libraries. We recommend you use pip v9.x (pip install pip==9.0.0).
+> If the pip version number is greater than or equal to 10.0.0, a failure may occur when upgrading or installing dependent libraries. We recommend you use pip v9.x (pip install pip==9.0.0).
 
 ### Source Code Installation (Not Recommended)
 
@@ -57,11 +57,11 @@ cd coscmd
 python setup.py install
 ```
 
->! With Python v2.6, we recommend you use this method because a failure is likely to occur when installing pip dependent libraries.
+> With Python v2.6, we recommend you use this method because a failure is likely to occur when installing pip dependent libraries.
 
 ### Offline Installation
 
->! Please ensure the two servers have the same version of Python, otherwise the installation will fail.
+> Please ensure the two servers have the same version of Python, otherwise the installation will fail.
 
 ```sh
 # Run the following command on a server with a public IP
@@ -167,7 +167,7 @@ Generally, you only need simple configuration, as shown by the the sample below.
 coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe**** -b examplebucket-1250000000 -r ap-beijing
 ```
 
->? Here, fields in "[]" are optional, while those in "<>" are required.
+> Here, fields in "[]" are optional, while those in "<>" are required.
 
 Parameters are configured as below:
 
@@ -358,7 +358,7 @@ coscmd delete -r /
 
  Replace parameters in "<>" with the path of the file to be deleted in COS (cospath). You will be prompted to confirm this operation.
 
->! For batch deletion, you need to enter `y` for confirmation. If the `-f` parameter is used, the file will be deleted directly with no confirmation needed.
+> For batch deletion, you need to enter `y` for confirmation. If the `-f` parameter is used, the file will be deleted directly with no confirmation needed.
 
 ### Viewing incomplete multipart uploads
 
@@ -438,7 +438,7 @@ Replace parameter in "<>" with the path of the file list to be queried in COS (c
 - Use `-r` to query files recursively. The number and total size of files are listed at the end of the returned result.
 - Use `-n num` to configure the maximum number of files to be queried.
 
->! If `<cospath>` is empty, the current bucket root directory will be queried by default.
+> If `<cospath>` is empty, the current bucket root directory will be queried by default.
 
 ### Displaying file information
 

@@ -237,7 +237,7 @@ drwxrwxrwx   - root root          0 1970-01-01 00:00 cosn://examplebucket-125000
 
 Run the wordcount provided in MapReduce, and execute the following command.
 
-> !hadoop-mapreduce-examples-2.7.2 in the following command is only applicable to version 2.7.2. For other versions, use the corresponding version number.
+>hadoop-mapreduce-examples-2.7.2 in the following command is only applicable to version 2.7.2. For other versions, use the corresponding version number.
 
 ```shell
 bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount cosn://example/mr/input cosn://example/mr/output3

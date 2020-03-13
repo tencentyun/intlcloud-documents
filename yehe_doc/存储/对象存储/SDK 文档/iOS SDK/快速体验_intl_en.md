@@ -4,7 +4,7 @@ All the tools and demos are stored in [Github Repository](https://github.com/ten
 
 ## Setting up user's application server
 In this example, the user's application server only provides a temporary key. "cos\_signer\_lite" is a temporary key service based on the flask service framework and is written in python3. You can run it on your own machine or virtual machine to provide the temporary key service for your COS terminal (Android/iOS) SDK.
->!This project is only used for demonstration and cannot be used in a production environment. You can use the temporary key API of the COS server SDK in a production environment.
+>This project is only used for demonstration and cannot be used in a production environment. You can use the temporary key API of the COS server SDK in a production environment.
 
 ### Configuring the environment
 
@@ -20,7 +20,7 @@ cossign --secret_id your_secret_id --secret_key your_secret_key --port 5000
 ```
 
 >
->?The default port is 5000. You are not required to specify a port when executing the command.
+>The default port is 5000. You are not required to specify a port when executing the command.
 >The key information can be found in the [Cloud API Key Console](https://console.cloud.tencent.com/cam/capi).
 
 
