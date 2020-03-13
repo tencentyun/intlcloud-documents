@@ -646,7 +646,7 @@ This includes the following operations:
 - Multipart upload objects: Initializing multipart upload, uploading parts, and completing all multipart uploads
 - Delete the part uploaded
 
-> Uploading the object via multipart upload, you can also use [Advanced APIs] (#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload (recommended).
+> Uploading the object via multipart upload, you can also use [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload (recommended).
 
 ### <span id = "INIT_MULIT_UPLOAD"> Initializing multipart upload</span>
 

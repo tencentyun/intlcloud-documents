@@ -482,7 +482,7 @@ function(err, data) { ... }
 This API (PUT Object-Copy) is used to create a copy of an existing COS object, that is, an object is copied from the source path (object key) to the destination path (object key). During replication, object metadata and access control lists (ACLs) can be modified.
 Users can use this API to create a copy, modify object meta attributes (source object and destination file have the same attributes), move or rename the object (copy first, and then call the delete API separately).
 
-> We recommend an object size between 1MB-5GB. For objects greater than 5GB, please use the advanced APIs to copy the object [Slice Copy File] (#. E5.A4.8D.E5.88.B6.E5.AF.B9.E8.B1.A12) .
+> We recommend an object size between 1MB-5GB. For objects greater than 5GB, please use the advanced APIs to copy the object [Slice Copy File](#. E5.A4.8D.E5.88.B6.E5.AF.B9.E8.B1.A12) .
 
 #### Samples
 

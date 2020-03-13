@@ -3,7 +3,7 @@
 ### Preparations
 
 #### 11. Creating Bucket
-Granting authorization through bucket policy (Policy) only targets specified buckets, and you need to [create a bucket] first (https://intl.cloud.tencent.com/document/product/436/13309). For authorization on account dimension, please refer to [Granting authorization through access management (CAM)] (#cam) in this document.
+Granting authorization through bucket policy (Policy) only targets specified buckets, and you need to [create a bucket] first (https://intl.cloud.tencent.com/document/product/436/13309). For authorization on account dimension, please refer to [Granting authorization through access management (CAM)](#cam) in this document.
 2. Prepare UIN of the account to be authorized
 This document assumes that the primary account who owns the target bucket has a UIN of 100000000001, and that for its sub-account is 100000000011. The sub-account needs to be authorized to access the destination bucket.
 >
