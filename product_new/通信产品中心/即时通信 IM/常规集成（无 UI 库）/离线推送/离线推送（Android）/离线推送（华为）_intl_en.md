@@ -21,7 +21,7 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
  When applying for the Huawei push service, you need to provide a maximum of five SHA256 fingerprints for app signature certificates. After the Huawei push service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
 3. Record the **`Package name`**, **`APP ID`**, and **`APP Secret`** items.
- ![](https://main.qcloudimg.com/raw/40979f6bd542e30da307e867a895a157.png)
+
 
 <span id="Step2"></span>
 ### Step 2: Host the certificate to IM
@@ -30,17 +30,17 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the **Android Platform Push Settings** area to modify and update the certificate.
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
+
 3. Set the following parameters based on the information obtained in [Step 1](#Step1_3):
  - **Push Platform**: select **Huawei**.
  - **App Package Name**: enter the **Package name** of the Huawei push service app.
  - **AppID**: enter the **APP ID** of the Huawei push service app.
  - **AppSecret**: enter the **APP SECRET** of the Huawei push service app.
  - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#click).
- ![](https://main.qcloudimg.com/raw/5f5386db721ac107b9ab3da421decb49.png)
+
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
- ![](https://main.qcloudimg.com/raw/bcce6ae63e5e7f221256463445165f90.png)
+
 
 <span id="Step3"></span>
 ### Step 3: Integrate the push SDK
@@ -374,11 +374,11 @@ You can choose to **Open App**, **Open Web Page**, or **Open Specified Interface
 
 ### Opening the app
 The default option is **Open App**.
-![](https://main.qcloudimg.com/raw/5f5386db721ac107b9ab3da421decb49.png)
+
 
  ### Opening webpages
 When [adding a certificate](#Step2), you need to choose **Open Web Page** and enter a website starting with `http://` or `https://`, for example, `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/799c6ac3402ccc4fbe372f076f08d381.png)
+
 
 ### Opening a specified UI in the app
 1. In manifest, configure the `intent-filter` of Activity to be opened. The sample code is as follows:
@@ -414,7 +414,7 @@ When [adding a certificate](#Step2), you need to choose **Open Web Page** and en
     ```
 
 3. When [adding a certificate](#Step2), select **Open Specified Interface in App** and enter the printed results.
- ![](https://main.qcloudimg.com/raw/3d8da1fde6346919ee9686e29ca84795.png)
+
 
 ## FAQs
 
