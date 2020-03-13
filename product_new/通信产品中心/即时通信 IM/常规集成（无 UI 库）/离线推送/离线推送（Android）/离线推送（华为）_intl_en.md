@@ -11,12 +11,12 @@ The process of implementing offline message push is as follows:
 Huawei EMUI is a highly customized Android system with strict backend policies. By default, third-party apps do not have auto-start permissions. As apps running in the background are often forcibly killed by the system, we recommend that the Huawei push service be integrated on Huawei devices. The Huawei push service is part of Huawei Mobile Service (HMS) and a system-grade service of EMUI. Its delivery rate is higher than those of third-party push services. Currently, **IM only supports the notification bar messages of Huawei push**.
 
 >
->- This document was prepared with direct reference to the official documentation of Huawei push. If Huawei push is updated, refer to [Huawei push documentation on the official website](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devguide_agent).
+>- This document was prepared with direct reference to the official documentation of Huawei push. If Huawei push is updated, refer to Huawei push documentation on the official website.
 >- If you do not need to implement special offline push adaptation for Huawei devices, ignore this section.
 
 ### Step 1: Apply for a Huawei push certificate
-1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass developer verification.
- > The verification process takes about 30 minutes. Be sure to read the [Huawei Push Service Activation Guide](https://developer.huawei.com/consumer/cn/help/60101) beforehand to facilitate access to the service.
+1. Access the official website of the Huawei Developers Alliance, register an account, and pass developer verification.
+ > The verification process takes about 30 minutes. Be sure to read the Huawei Push Service Activation Guide beforehand to facilitate access to the service.
 2. Log in to the console of the Huawei Developers Alliance, choose **App Service** > **Development Service** > **PUSH**, and create a Huawei push service app.
  When applying for the Huawei push service, you need to provide a maximum of five SHA256 fingerprints for app signature certificates. After the Huawei push service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
@@ -31,12 +31,12 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the **Android Platform Push Settings** area to modify and update the certificate.
  >
 
-3. Set the following parameters based on the information obtained in [Step 1](#Step1_3):
+3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-huawei-push-certificate):
  - **Push Platform**: select **Huawei**.
  - **App Package Name**: enter the **Package name** of the Huawei push service app.
  - **AppID**: enter the **APP ID** of the Huawei push service app.
  - **AppSecret**: enter the **APP SECRET** of the Huawei push service app.
- - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#click).
+ - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#configuring-the-notification-bar-message-click-event).
 
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
@@ -48,11 +48,11 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
 >
 > - The default notification title for IM push messages is `a new message`.
 > - Before reading this section, ensure that you have correctly integrated and used the IM SDK.
-> - You can find a sample for Huawei push implementation in our demo. Note that the features of Huawei push may be adjusted during Huawei push version updates. If you find any inconsistencies with the content of this section, refer to [Huawei push documentation on the official website](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devguide_agent) and notify us of the difference so that we can make the necessary modifications.
+> - You can find a sample for Huawei push implementation in our demo. Note that the features of Huawei push may be adjusted during Huawei push version updates. If you find any inconsistencies with the content of this section, refer to Huawei push documentation on the official website and notify us of the difference so that we can make the necessary modifications.
 
 #### Step 3.1: Download the Huawei push SDK and add references
 
-1. Access the [Huawei push operation platform](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_sdkdownload_agent) and download the **HMS Agent kit**.
+1. Access the Huawei push operation platform and download the **HMS Agent kit**.
 2. Decompress the HMS Agent kit.
 3. Copy files in the `hmsagents\src\main\java` folder to the src\main\java directory of your project.
  ![](https://main.qcloudimg.com/raw/3c9bca5dea731eeb4cb70e73e56d28b4.png)
@@ -102,7 +102,7 @@ dependencies {
 <!--Here, change com.tencent.qcloud.tim.tuikit to the package name of your app-->
 ```
 
-2. Add the following content under application. For detailed description, see the [description of the Huawei push configuration manifest file](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devprepare_agent#5%20配置manifest文件).
+2. Add the following content under application. 
 
 ```xml
 <meta-data
@@ -445,7 +445,7 @@ Currently, Huawei push does not support custom notification sounds.
 ### How can I identify the cause to failures to receive push messages?
 1. No push service guarantees 100% success in reaching target users and zero vendor push exceptions. Therefore, if one or two push messages fail to reach users during a fast and continuous push process, it is usually due to the restrictions of vendor push frequency control.
 2. According to the push process, confirm whether the Huawei push certificate information is correctly configured in [IM Console](https://console.qcloud.com/avc).
-3. Confirm that your project’s [Huawei push SDK integration](#Step3) configuration is correct and that you have obtained the token.
-4. Confirm that you have [reported push information](#Step4) to the IM server correctly.
+3. Confirm that your project’s [Huawei push SDK integration](#step-3.3A-integrate-the-push-sdk) configuration is correct and that you have obtained the token.
+4. Confirm that you have [reported push information](#step-4.3A-report-the-push-information-to-the-im-server) to the IM server correctly.
 5. Manually kill the app on your device, send several messages, and check whether you can receive notifications within one minute.
 6. If you still cannot receive push messages after the preceding steps, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the specific `time`, `SDKAppID`, `certificate ID`, and `push receiving UserID` for processing.
