@@ -1297,11 +1297,11 @@ cos.sliceUploadFile({
 
 #### Parameter Description
 
-| Parameter Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Parameter Description                                                     | Type |
+| Parameter Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Parameter Description                                                     | Type | Required | 
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
 | Region | Bucket region. For enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Key | Object key (Object name), the unique identifier of the object in the bucket, see [Object Overview] details(https://intl.cloud.tencent.com/document/product/436/13324) for details | String | Yes |
+| Key | Object key (Object name), the unique identifier of the object in the bucket, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324) for details | String | Yes |
 | Body | Content of the file part to be uploaded, which can be a File object, or a Blob object | File\Blob | Yes |
 | SliceSize                                                    | Part size                                                    | String    | No   |
 | AsyncLimit | Concurrent number of parts being uploaded | String | No |
