@@ -31,7 +31,7 @@ vivo mobile phones use a highly customized Android system, with very strict mana
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the corresponding certificate area to modify and update the certificate.
  >
 
-3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-vivo-push-certificate)):
+3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-vivo-push-certificate):
  - **Push Platform**: select **vivo**.
  - **AppKey**: enter the **APP key** of the vivo push service app.
  - **AppID**: enter the **APP ID** of the vivo push service app.
