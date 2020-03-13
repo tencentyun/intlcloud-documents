@@ -15,8 +15,8 @@ The process of implementing offline message push is as follows:
 ### Step 1: Configuring Firebase and the FCM SDK
 > The website used in this step is the official website of Firebase, which is accessible only outside Mainland China.
 
-1. Refer to [Delivering Firebase Cloud Messages](https://firebase.google.com/docs/cloud-messaging/android/client) to set Firebase and integrate the FCM SDK. After starting the app, obtain the device registration **token**.
-2. Refer to [FCM Test Instructions](https://firebase.google.com/docs/cloud-messaging/android/first-message?authuser=0) to test notification messages and ensure that FCM has been integrated successfully.
+1. Refer to Delivering Firebase Cloud Messages to set Firebase and integrate the FCM SDK. After starting the app, obtain the device registration **token**.
+2. Refer to FCM Test Instructions to test notification messages and ensure that FCM has been integrated successfully.
 3. Log in to the [Firebase console](https://console.firebase.google.com) and click your app card to go to the app configuration page.
 4. Click <img src="https://main.qcloudimg.com/raw/0d062411405553c9fae29f8e0daf02ad.png"  style="margin:0;"> to the right of "Project Overview", and choose **Project Settings** > **Cloud Message Delivery**.
 5. Record **Old Server Key** and **Sender ID**.
@@ -27,17 +27,16 @@ The process of implementing offline message push is as follows:
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the corresponding certificate area to modify and update the certificate.
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
-3. Set the following parameters based on the information obtained in [Step 1](#Step1):
+
+3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-configuring-firebase-and-the-fcm-sdk):
  - **Push Platform**: select **Google**.
  - **Application Package Name**: enter the name of the client app package.
  - **Sender ID**: enter the **Sender ID** of the Google push service app.
  - **Old Server Key**: enter the **Old Server Key** of the Google push service app.
-  ![](https://main.qcloudimg.com/raw/2e051e4e8f0b4b5f123b768f3355e260.png)
+  ![](https://main.qcloudimg.com/raw/20e84d1ce9d135e098ff4df1a56d8095.png)
 4. Click **OK** to save the settings. The certificate information will take effect in 10 minutes.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
- ![](https://main.qcloudimg.com/raw/bb07b06f5ab9dee0ce17a3eee65101e8.png)
-	
+
 
 <span id="Step3"></span>
 ### Step 3: Report the push information to the IM server
@@ -130,6 +129,6 @@ No, FCM push currently does not support custom notification sounds.
 1. No push service is guaranteed 100% successful in reaching target users and zero FCM exceptions. Therefore, if one or two push messages fail to reach users during a fast and continuous push process, it is usually due to the restrictions of FCM’s push frequency control.
 2. Based on the push process, check whether the FCM push certificate information is correctly configured in [IM Console](https://console.qcloud.com/avc).
 3. Check that your FCM project has been correctly configured and has obtained a token.
-4. Check that you have [reported push information](#Step3) to the IM server correctly.
+4. Check that you have [reported push information](#step-3.3A-report-the-push-information-to-the-im-server) to the IM server correctly.
 5. Manually kill the app on your device, send several messages, and check that you can receive notifications within one minute.
 6. If you still cannot receive push messages after performing the preceding steps, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the relevant `time`, `SDKAppID`, `certificate ID`, and `push receiving UserID`.

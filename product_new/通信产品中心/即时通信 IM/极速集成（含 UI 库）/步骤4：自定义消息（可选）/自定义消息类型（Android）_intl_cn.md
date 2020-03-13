@@ -56,6 +56,8 @@ chatLayout.sendMessage(info)
 2. 根据解析结果创建显示的 View。
 3. 将创建的 View 添加到 TUIKit 的父容器里。
 4. 实现 View 的交互逻辑。
+渲染自定义消息的流程如下图所示：
+![](https://main.qcloudimg.com/raw/2abfbb9ab26f6b5da318470648b4db66.png)
 
 
 TUIKit 会在内部通过消息的类型获知该条消息是自定义消息，渲染到该条消息时会通过回调通知您，并调用您的布局以及实现逻辑，所以您只需将实现了`IOnCustomMessageDrawListener`的监听传入到 TUIKit 即可。

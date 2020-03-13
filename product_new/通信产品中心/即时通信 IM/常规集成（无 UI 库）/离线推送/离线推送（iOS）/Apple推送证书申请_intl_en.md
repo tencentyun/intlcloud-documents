@@ -2,13 +2,12 @@
 ## Generating a CSR File
 
 Follow these steps to generate a Certificate Signing Request (CSR).
- <img src="//main.qcloudimg.com/raw/76c59ee727f1147693f6da95bc1db070.png" width=640 />
  
 Specify the email address (of the paid account for applying for an AppID) and common name (the name of your computer by default, which does not need to be changed). Then, select "Save to disk".
- <img src="//main.qcloudimg.com/raw/12c80d3cb45d44e6b9fb8f63bc616347.png" width=640 />
+
  
 Click "Continue".
- <img src="//main.qcloudimg.com/raw/b393d5662e94646b24aa14979c17b3c3.png" width=640 />
+
  
  The CSR file TXIMDemoAPS.certSigningRequest is created locally.
 
@@ -59,16 +58,16 @@ Note: the "Apple Push Notification service" column for some app IDs is grayed ou
 
 Import the certificate
 Double-click the downloaded files in the previous section (aps_development.cer and aps.ce) to install them on your computer. In "Keychain Access", you can find the imported certificates.
-<img src="//main.qcloudimg.com/raw/51b99080f9f479319ee6d742aedd3a3a.png" width=640 />
+
 
 Right-click the certificate and export it as a .p12 file. For example, save the certificate as TXIMDemoAPS.p12.
-<img src="//main.qcloudimg.com/raw/af2ead9db94586c2e18bf2b59b2151ec.png" width=640 />
+
 
 Note: development certificates are valid only for development in debug mode. Always use distribution certificates for production release.
 
 ## Generating a Provisioning Profile (PP)
 This section describes how to create a development provisioning profile. You can create a distribution provisioning profile by following the same process. First, click "Continue".
-<img src="//main.qcloudimg.com/raw/6c4eff074f24e0ae1b3bb73dda9dea26.png" width=640 />
+
 
 Select the App ID for which the push certificate was created in Step 3.3 and click "Continue".
 <img src="//main.qcloudimg.com/raw/ec5fd56e7269a9f75299e636dd644d58.png" width=640 />
@@ -97,4 +96,4 @@ Click the PP to go to the details page and verify that its state is "Active".
 
 ## Configuration in Xcode
 The latest version of Xcode does not require the manual configuration of certificates and provisioning profiles. Instead, you only need to select the correct team in "General" and click "Fix Issue". This is why you do not need to download and install the generated certificates locally, as mentioned previously.
-<img src="//main.qcloudimg.com/raw/22db4c59af9d26d562f916e87e10fbc2.png" width=640 />
+

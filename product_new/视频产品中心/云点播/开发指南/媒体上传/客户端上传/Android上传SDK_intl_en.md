@@ -316,3 +316,5 @@ The SDK listens on the video upload status through the `TXUGCPublishTypeDef.ITXV
 | 1016 | ERR_UGC_INVALID_COVER_PATH | Invalid path to the cover of the video file. The file does not exist. |
 | 1017 | ERR_USER_CANCEL | Upload canceled by user. |
 | 1018 | ERR_UPLOAD_VOD | Failed to upload a file of less than 5 MB directly to VOD. |
+
+

@@ -6,7 +6,7 @@
 NewFileUpload
 
 ## Event Description
-If the application is configured with event notification, after a video is uploaded from a client or server, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`FileUploadTask` structure](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#FileUploadTask).
+If the application is configured with event notification, after a video is uploaded from a client or server, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`FileUploadTask` structure](https://intl.cloud.tencent.com/document/product/266/34187#FileUploadTask).
 
 
 
@@ -45,7 +45,7 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
 }
 ```
 ## Reliable Callback v3.0
-If you choose the reliable callback mode, after the [PullEvents](#APIhttps://intl.cloud.tencent.com/document/api/266/31773) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
+If you choose the reliable callback mode, after the [PullEvents](https://intl.cloud.tencent.com/document/product/266/34187) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
 
 ```json
 {

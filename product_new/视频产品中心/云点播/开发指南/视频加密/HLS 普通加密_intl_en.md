@@ -11,8 +11,8 @@ The video encryption solution of VOD supports all HLS players.
 
 #### Limitations
 
-- Only the 2017 version of APIs is supported: You can use [ProcessFile](#APIhttps://intl.cloud.tencent.com/document/product/266/9642) to initiate an encryption task and use GetTaskInfo <!--api (https://intl.cloud.tencent.com/document/product/266/11724)--> to query the encryption result.
-- The new version of [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) and [DescribeTaskDetail](#apihttps://intl.cloud.tencent.com/document/product/266/33431) APIs does not support HLS common encryption.
+- Only the 2017 version of APIs is supported: You can use [ProcessFile](https://intl.cloud.tencent.com/document/product/266/34125) to initiate an encryption task and use [GetTaskInfo](https://intl.cloud.tencent.com/document/product/266/34129) to query the encryption result.
+- The new version of [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) and [DescribeTaskDetail](https://intl.cloud.tencent.com/document/product/266/34129) APIs does not support HLS common encryption.
 
 ### Terminology
 
@@ -66,7 +66,7 @@ The main steps in video encryption include:
 
 #### 1. The application backend initiates video encryption
 
-Currently, you can initiate video encryption using the [ProcessFile](#APIhttps://intl.cloud.tencent.com/document/product/266/9642) API. Only HLS files can be encrypted for the time being.
+Currently, you can initiate video encryption using the [ProcessFile](https://intl.cloud.tencent.com/document/product/266/34125) API. Only HLS files can be encrypted for the time being.
 
 The following example indicates:
 
@@ -109,7 +109,7 @@ This URL is also the one that the client needs to access when it tries to get th
 When the status of the task flow that includes the encryption operation changes (or the task flow is completed), the VOD platform will trigger the [notification for task flow status change](https://intl.cloud.tencent.com/document/product/266/33953).
 
 ### Media asset management
-After a video is encrypted, its encryption information can be obtained using the [GetVideoInfo](#APIhttps://intl.cloud.tencent.com/document/product/266/8586) API.
+After a video is encrypted, its encryption information can be obtained using the [GetVideoInfo](https://intl.cloud.tencent.com/document/product/266/8586) API.
 - The GetVideoInfo API will return the video playback addresses for the video ID under all transcoding specifications, including the playback address of the source file. As the source file is not encrypted, the application server can choose to filter out the playback address of the source file and only provide playback addresses of the encrypted video to the client.
 - The `definition` parameter of the source file obtained by GetVideoInfo is 0, based on which the playback address of the source file can be filtered out.
 
@@ -219,10 +219,10 @@ The application server needs to deploy an HTTP service that gets key data when t
 
 #### 3. Where does the player get the decryption key when playing back an encrypted video?
 When the player plays back an encrypted video, it initiates a request for obtaining the key based on the URI of the `EXT-X-KEY` tag in the M3U8 file, which is the `getkeyurl` address provided by the application to VOD.
-<!--api > The player does not make a request to the VOD server for obtaining the key. When the application server calls the ProcessFile API of VOD for encryption, it will call the [DescribeDrmDataKey](https://intl.cloud.tencent.com/document/product/266/9643) API to get the key after encryption is completed.--> After that, the key needs to be stored, and when the player requests the corresponding key, it will be returned according to the player's request parameters.
+The player does not make a request to the VOD server for obtaining the key. When the application server calls the ProcessFile API of VOD for encryption, it will call the DescribeDrmDataKey API to get the key after encryption is completed. After that, the key needs to be stored, and when the player requests the corresponding key, it will be returned according to the player's request parameters.
 
 #### 4. How does the application server return the key to the player?
-When the player requests the key from the application server, the application server needs to return binary key data of 16 bytes to the player. <!--api However, the key obtained through the [DescribeDrmDataKey](https://intl.cloud.tencent.com/document/product/266/9643) API is a Base64-encoded string. Therefore, the string should be converted to binary data before it is returned to the player.-->
+When the player requests the key from the application server, the application server needs to return binary key data of 16 bytes to the player.However, the key obtained through the DescribeDrmDataKey API is a Base64-encoded string. Therefore, the string should be converted to binary data before it is returned to the player.-->
 For example, dkData is Base64-encoded key data:
 
 Java

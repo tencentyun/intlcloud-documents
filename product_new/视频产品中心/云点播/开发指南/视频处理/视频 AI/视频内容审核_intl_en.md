@@ -122,7 +122,7 @@ There are three ways to initiate a video content audit task, namely, directly in
 
 Below are instructions for initiating video content audit tasks in these ways:
 <!--api
-* Call the server API [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
+* Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
 * Call the server API [ProcessMediaByUrl](#APIhttps://intl.cloud.tencent.com/document/product/266/33426) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
 -->
 * Initiate a task on a video through the console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable video content audit in it, and use it to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33890).

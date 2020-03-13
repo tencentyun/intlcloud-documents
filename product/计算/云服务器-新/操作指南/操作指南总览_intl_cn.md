@@ -42,11 +42,6 @@
 
 - [重装操作系统](https://cloud.tencent.com/document/product/213/4933)
 
-### 计费相关
-- [续费实例](https://cloud.tencent.com/document/product/213/6143)
-
-- [按量计费转包年包月](https://cloud.tencent.com/document/product/213/2762)
-
 ## 镜像
 [镜像](https://cloud.tencent.com/document/product/213/4940) 提供启动云服务器实例所需的所有信息。通俗的说，镜像就是云服务器的“装机盘”。目前腾讯云提供四种类型的镜像：公有镜像、服务市场镜像、自定义镜像以及共享镜像。下面介绍镜像目前支持的常见操作。
 ### 常用操作

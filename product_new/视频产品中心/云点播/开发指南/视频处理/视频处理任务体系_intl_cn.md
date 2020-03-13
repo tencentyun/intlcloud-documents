@@ -34,7 +34,7 @@
 #### 通过服务端 API 发起
 
 通过服务端 API，可以直接对云点播中的视频发起任务，也可以对视频做编辑，并指定编辑生成的新视频要执行的任务。
-- [视频处理](#APIhttps://intL.cloud.tencent.com/document/product/266/33427)
+- [视频处理](https://intl.cloud.tencent.com/document/product/266/34125)
 - [对指定 URL 的视频发起视频处理](#APIhttps://intl.cloud.tencent.com/document/product/266/33426)
 - [使用任务流模板进行视频处理](#APIhttps://intl.cloud.tencent.com/document/product/266/11030)
 - [编辑视频](#APIhttps://intl.cloud.tencent.com/document/product/266/34783)
@@ -69,4 +69,4 @@
 
 ## 任务查询
 
-业务方除了以结果通知的方式感知任务的执行结果，还可以通过任务 ID 定时轮询任务的执行状态，即任务查询。云点播目前仅提供 [获取任务列表](#apihttps://intl.cloud.tencent.com/document/product/266/33430) 和 [查询任务详情](#apihttps://intl.cloud.tencent.com/document/product/266/33431) 两种服务端 API 查询任务的执行状态和执行结果。
+业务方除了以结果通知的方式感知任务的执行结果，还可以通过任务 ID 定时轮询任务的执行状态，即任务查询。云点播目前仅提供 [获取任务列表](#apihttps://intl.cloud.tencent.com/document/product/266/33430) 和 [查询任务详情](https://intl.cloud.tencent.com/document/product/266/34129) 两种服务端 API 查询任务的执行状态和执行结果。

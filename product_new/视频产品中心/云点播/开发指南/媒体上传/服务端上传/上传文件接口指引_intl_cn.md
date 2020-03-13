@@ -28,5 +28,5 @@ Authorization: Auth String
 
 对于 API 请求，需要注意的点如下：
 
-- Authorization 签名使用 [VOD 申请上传返回结果](https://intl.cloud.tencent.com/document/product/266/34120) 中 **TempCertificate** 的 SecretId 和 SecretKey，请参见 [签名文档](/document/api/436/7778) 进行计算。
+- Authorization 签名使用 [VOD 申请上传返回结果](https://intl.cloud.tencent.com/document/product/266/34120) 中 **TempCertificate** 的 SecretId 和 SecretKey，请参见 [签名文档](https://intl.cloud.tencent.com/document/api/436/7778) 进行计算。
 - 在 HTTP 头部或 POST 请求包的 form-data 中传入 **x-cos-security-token** 字段（标识该请求使用的安全令牌），并赋值为 **TempCertificate** 中的 Token 字段。

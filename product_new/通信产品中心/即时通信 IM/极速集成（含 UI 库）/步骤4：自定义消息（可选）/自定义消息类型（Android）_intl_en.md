@@ -10,23 +10,23 @@ For basic message types in TUIKit, see [MessageInfo.java](https://imsdk-12524637
      </tr>
 	 <tr>      
          <td style="text-align:center">Text</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/6535b0a414d4dd51aabab464f0980ca3.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/751b6975a0a786dac0f35aabc0aa90e2.png" width="320"/></td>   
      </tr> 
 	 <tr>      
          <td style="text-align:center">Image</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/1f5330a92c688b6288bbd47f97202867.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/02cff177167e31feaa447d414d2e77f4.png" width="320"/></td>   
      </tr> 
 	 <tr>      
          <td style="text-align:center">Audio</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/5387ea2450e7fe37daa59efb163e93b6.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/95447ed8a0c4dcf37c118758f44788e4.png" width="320"/></td>   
      </tr> 
 	 <tr>      
          <td style="text-align:center">Video</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/eb50c8cefa0decf1eef1c896c44e6188.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/564c492d9fc621882b39a5a420436081.png" width="320"/></td>   
      </tr> 
 	 <tr>      
          <td style="text-align:center">File</td>   
-	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/4be73ac319f7693916ee08b98f14c4c6.png" width="320"/></td>   
+	 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/32dc502005f11f9caa53937a3f1c20cf.png" width="320"/></td>   
      </tr> 
 </table>
 
@@ -58,7 +58,7 @@ You can define, parse, and display custom messages based on your business needs.
 4. Implement the interaction logic of the view.
 
 The following figure shows the process of rendering a custom message:
-![](https://main.qcloudimg.com/raw/644f6a44045300f48d98440ceb150bb3.png)
+![](https://main.qcloudimg.com/raw/2abfbb9ab26f6b5da318470648b4db66.png)
 
 TUIKit obtains the type of the custom message internally. TUIKit notifies you when this message is rendered and calls the layout and implementation logic. Therefore, you only need to pass the implemented `IOnCustomMessageDrawListener` into TUIKit.
 ```java
@@ -131,5 +131,3 @@ public static class CustomMessageData {
 }
 ```
 
-The following figure shows the result:
-![](https://main.qcloudimg.com/raw/019fe0810738f271b61cd1d7a33c5b03.png)

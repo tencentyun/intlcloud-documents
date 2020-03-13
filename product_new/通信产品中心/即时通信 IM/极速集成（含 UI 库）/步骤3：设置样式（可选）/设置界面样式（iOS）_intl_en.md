@@ -47,8 +47,6 @@ TUIChatController *vc = ...; // Obtain the chat interface object
 vc.messageController.view.backgroundColor = [UIColor greenColor];
 ```
 
-The following figure shows the display result:
-![](https://main.qcloudimg.com/raw/57f1dde542ca2df17308451f6c518374.png)
 
 
 ### Configuring messages
@@ -127,8 +125,7 @@ NSMutableArray *array = [NSMutableArray arrayWithArray:vc.moreMenus];
 [array removeLastObject]; // Delete the last option
 vc.moreMenus = array; // Reset the property, and the change takes effect immediately
 ```
-The following figure shows the result:
-![](https://main.qcloudimg.com/raw/ddf5937ae221699f30dea212303901f2.jpg)
+
 
 When the user clicks a button in the menu, TUIChatController notifies the upper layer of this through a callback event.
 >When the user clicks the default menu, a callback notification will be sent, and you can ignore it.

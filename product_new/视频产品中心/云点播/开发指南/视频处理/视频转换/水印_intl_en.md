@@ -28,7 +28,7 @@ There are three ways to initiate a transcoding task with watermark, namely, dire
 
 Below are instructions for initiating transcoding tasks with watermark in these ways:
 
-* Call the server API [ProcessMedia](#APIhttps://intL.cloud.tencent.com/document/product/266/33427) to initiate a task: specify the [watermarking template](#sy) ID in the `MediaProcessTask.TranscodeTaskSet` parameter in the request.
+* Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [watermarking template](#sy) ID in the `MediaProcessTask.TranscodeTaskSet` parameter in the request.
 * Initiate a task on a video through the console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the watermark specification in the task flow, and use the task flow to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33890).
 * Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target watermark specification in the task flow, and specify this task flow as the `procedure` in the [ApplyUpload](#APIhttps://intl.cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
 * Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target watermark specification in the task flow, and specify this task flow as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).

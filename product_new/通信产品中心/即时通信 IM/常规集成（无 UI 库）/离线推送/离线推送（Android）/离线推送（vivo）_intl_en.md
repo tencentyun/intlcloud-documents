@@ -12,13 +12,13 @@ The process of implementing offline message push is as follows:
 vivo mobile phones use a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not included in the auto-start whitelist of the system. As apps running in the background are often killed by the system, we recommend that vivo push be integrated on vivo devices. vivo push is a system-grade service for vivo devices, with a high delivery rate. Currently, **IM only supports the notification bar messages of vivo push**.
 
 >
->- This document was prepared with direct reference to the official documentation of vivo push. If vivo push is updated, refer to [vivo push documentation on the official website](https://dev.vivo.com.cn/documentCenter/doc/180).
+>- This document was prepared with direct reference to the official documentation of vivo push. If vivo push is updated, refer to vivo push documentation on the official website.
 >- If you do not need to implement special offline push adaptation for vivo devices, ignore this section.
 
 <span id="Step1"></span>
 ### Step 1: Apply for a vivo push certificate
-1. Access the [vivo open platform website](https://dev.vivo.com.cn/home) to register an account and pass developer verification.
- > The verification process takes about 3 days. Be sure to read [vivo push service description](https://dev.vivo.com.cn/documentCenter/doc/180) beforehand to facilitate access to the service.
+1. Access the vivo open platform website to register an account and pass developer verification.
+ > The verification process takes about 3 days. Be sure to read vivo push service description beforehand to facilitate access to the service.
 2. Log in to the console of the vivo open platform, choose **Message Push** > **Create** > **Test Push**, and create a vivo push service app.
  After the vivo push service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
@@ -30,27 +30,27 @@ vivo mobile phones use a highly customized Android system, with very strict mana
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to modify its information, you can click **Edit** in the corresponding certificate area to modify and update the certificate.
  >
- ![](https://main.qcloudimg.com/raw/aaa40b3c7e43f99b7e36c8b7589e54e0.png)
-3. Set the following parameters based on the information obtained in [Step 1](#Step1_3):
+
+3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-vivo-push-certificate):
  - **Push Platform**: select **vivo**.
  - **AppKey**: enter the **APP key** of the vivo push service app.
  - **AppID**: enter the **APP ID** of the vivo push service app.
  - **AppSecret**: enter the **APP secret** of the vivo push service app.
- - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#click).
- ![](https://main.qcloudimg.com/raw/ac890d834dd7f069f936094180634cd7.png)
+ - **After Clicking Notification**: select the response operation when users click notification bar messages. Available options are **Open App**, **Open Web Page**, and **Open Specified Interface in App**. For more details, see [Configuring the Notification Bar Message Click Event](#configuring-the-notification-bar-message-click-event).
+
 4. Click **OK** to save the settings. The certificate information will take effect within 10 minutes after being saved.
 5. Record the **`ID`** of the certificate after the push certificate information is generated.
- ![](https://main.qcloudimg.com/raw/3442e00debac668c42fa4be89903ac90.png)
+
 
 <span id="Step3"></span>
 ### Step 3: Integrate the push SDK
 >
 > - The default notification title for IM push messages is `a new message`.
 > - Before reading this section, ensure that you have correctly integrated and used the IM SDK.
-> - You can find a sample for the implementation of vivo push in our demo. Note that the features of vivo push may be adjusted during vivo push version updates. If you find any inconsistencies with the content of this section, refer to [vivo push documentation on the official website](https://dev.vivo.com.cn/documentCenter/doc/155) and notify us of the difference so that we can make necessary modifications.
+> - You can find a sample for the implementation of vivo push in our demo. Note that the features of vivo push may be adjusted during vivo push version updates. If you find any inconsistencies with the content of this section, refer to vivo push documentation on the official website and notify us of the difference so that we can make necessary modifications.
 
 #### Step 3.1: Download the vivo push SDK and add references
-1. Visit the [vivo push operation platform](https://dev.vivo.com.cn/documentCenter/doc/232) and download the vivo push SDK package.
+1. Visit the vivo push operation platform and download the vivo push SDK package.
 2. Decompress the vivo push SDK package to extract the `vivo_pushsdk_xxx.jar` library file.
 3. Add the `vivo_pushsdk_xxx.jar` library file to the `libs` directory in your project and add references in the project.
 
@@ -293,8 +293,7 @@ public class ThirdPushTokenMgr {
 After the certificate ID and regId are successfully reported, the IM server sends messages through vivo push notifications to the user when the app has been killed but the user has not logged out of IM.
 
 >
->- vivo push supports only some vivo mobile phones. For details, see [vivo Push FAQs]( https://dev.vivo.com.cn/documentCenter/doc/156).
->- vivo push does not guarantee 100% success in reaching target users.
+>- vivo push supports only some vivo mobile phones. 
 >- vivo push may be delayed. Usually, this is related to the timing of app killing. In some cases, it is related to the vivo push service.
 >- If the IM user has logged out or was force logout by the IM server (for example, due to login on another terminal), the device will not receive push messages.
 
@@ -304,11 +303,11 @@ You can choose to **Open App**, **Open Web Page**, or **Open Specified Interface
 
 ### Opening the app
 The default option is **Open App**.
-![](https://main.qcloudimg.com/raw/ac890d834dd7f069f936094180634cd7.png)
+
 
 ### Opening webpages
 When [adding a certificate](#Step2), you need to select **Open Web Page** and enter a website URL starting with `http://` or `https://`, for example, `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/76ebc2f58623241c685ebffab6b4c2f6.png)
+
 
 ### Opening a specified UI in the app
 
@@ -344,7 +343,7 @@ When [adding a certificate](#Step2), you need to select **Open Web Page** and en
     ```
 
 3. When [adding a certificate](#Step2), select **Open Specified Interface in App** and enter the printed results.
-    ![](https://main.qcloudimg.com/raw/1ab25b8c52b953014786682bce43c2ed.png)
+
 
 ## FAQs
 
@@ -370,7 +369,7 @@ Currently, vivo push does not support custom notification sounds.
 ### How can I identify the cause to failures to receive push messages?
 1. No push service guarantees 100% success in reaching target users and zero vendor push exceptions. Therefore, if one or two push messages fail to reach users during a fast and continuous push process, it is usually due to the restrictions of vendor push frequency control.
 2. According to the push process, confirm whether the vivo push certificate information is correctly configured in [IM Console](https://console.qcloud.com/avc).
-3. Confirm that your project’s [vivo push SDK integration](#Step3) configuration is correct and that you have obtained the regId.
-4. Confirm that you have [reported push information](#Step4) to the IM server correctly.
+3. Confirm that your project’s [vivo push SDK integration](#step-3.3A-integrate-the-push-sdk) configuration is correct and that you have obtained the regId.
+4. Confirm that you have [reported push information](#step-4.3A-report-the-push-information-to-the-im-server) to the IM server correctly.
 5. Manually kill the app on your device, send several messages, and confirm whether you can receive notifications within one minute.
 6. If you still cannot receive push messages after the preceding steps, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the specific `time`, `SDKAppID`, `certificate ID`, and `push receiving UserID` for processing.

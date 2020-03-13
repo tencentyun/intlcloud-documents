@@ -8,7 +8,7 @@ This document uses the following terms:
 - **New system:** indicates Tencent Cloud Instant Messaging (IM).
 - **App 1.0:** indicates the app that implements instant messaging features based on the old system.
 - **App 2.0:** indicates the app that implements instant messaging features based on the new system.
-- **Message routing (message callback) service:** after receiving messages, a third-party communication service provider forwards a copy of the messages to the app backend, similar to the [callback after sending one-to-one chat messages](/doc/product/269/callback_after_sending_one-to-one_messages) in IM.
+- **Message routing (message callback) service:** after receiving messages, a third-party communication service provider forwards a copy of the messages to the app backend, similar to the [callback after sending one-to-one chat messages](https://intl.cloud.tencent.com/document/product/1047/34365) in IM.
 
 The migration process essentially switches the instant messaging service from the old system to the new system and upgrades app 1.0 to app 2.0.
 
@@ -20,7 +20,7 @@ IM provides the following two migration options, which have different migration 
 
 The forcible upgrade policy forces the app to upgrade from version 1.0 to 2.0 after IM data synchronization is completed. This method is simple to implement and does not need to handle compatibility issues between the new app and the old app. The following figure illustrates this migration method:
 
-![](https://main.qcloudimg.com/raw/2731b340f2e93bd303e061bef4d62a2e.svg)
+![](https://main.qcloudimg.com/raw/e37a5686c81c73827c20312169c3ecc0.png)
 
 The detailed process is as follows:
 
@@ -38,7 +38,7 @@ The detailed process is as follows:
 
 The new app and the old app can coexist and exchange messages between them. Before app 1.0 is deactivated, the app backend needs to maintain real-time two-way synchronization between the old and new systems. This solution is more complicated but provides a better end-user experience. The following figure illustrates this migration method:
 
-![](https://main.qcloudimg.com/raw/48cc1d15f80336966d57704183e46017.svg)
+![](https://main.qcloudimg.com/raw/3b19fed85458fa96ae7110fea8cb8e41.png)
 
 The detailed process is as follows:
 
@@ -59,50 +59,50 @@ The detailed process is as follows:
 ### Importing accounts
 
 Accounts must be imported before other data can be imported.
-The app backend needs to call the [RESTful API for batch importing accounts](https://cloud.tencent.com/document/product/269/4919) to import all accounts to IM. If you also need to import user nicknames and profile photos when importing accounts, call the [RESTful API for importing a single account](https://cloud.tencent.com/document/product/269/1608).
+The app backend needs to call the [RESTful API for batch importing accounts](https://intl.cloud.tencent.com/document/product/1047/34954) to import all accounts to IM. If you also need to import user nicknames and profile photos when importing accounts, call the [RESTful API for importing a single account](https://intl.cloud.tencent.com/document/product/1047/34953).
 
 ### Importing user profiles
 
-Call the [RESTful API for setting profiles](/doc/product/269/set_profile) to import existing user profiles to IM.
+Call the [RESTful API for setting profiles](https://intl.cloud.tencent.com/document/product/1047/34916) to import existing user profiles to IM.
 
 ### Importing user relationship chains
 
-Call the [RESTful API for adding friends](/doc/product/269/add_friend) to import existing relationship chains to IM.
+Call the [RESTful API for adding friends](https://intl.cloud.tencent.com/document/product/1047/34902) to import existing relationship chains to IM.
 
 ### Importing the one-to-one chat history
 
-Call the [RESTful API for importing one-to-one chat messages](/doc/product/269/import_message) to import existing one-to-one chat messages to IM.
+Call the [RESTful API for importing one-to-one chat messages](https://intl.cloud.tencent.com/document/product/1047/35014) to import existing one-to-one chat messages to IM.
 
 ### Importing group data and the group chat history
 
 Follow these steps to import group data and the group chat history:
 
-1. Call the [RESTful API for importing basic group information](/doc/product/269/import_group_basic_profile) to create groups. You can specify initial group members when calling this API.
-2. If group members are not imported when importing groups, call the [RESTful API for importing group members](/doc/product/269/import_group_member).
-3. Call the [RESTful API for importing group messages](/doc/product/269/import_group_message) to import the group chat history.
-4. To correct the unread count of group members, call the [RESTful API for setting the unread count for members](/doc/product/269/set_member_unread_count).
+1. Call the [RESTful API for importing basic group information](https://intl.cloud.tencent.com/document/product/1047/34967) to create groups. You can specify initial group members when calling this API.
+2. If group members are not imported when importing groups, call the [RESTful API for importing group members](https://intl.cloud.tencent.com/document/product/1047/34969).
+3. Call the [RESTful API for importing group messages](https://intl.cloud.tencent.com/document/product/1047/34968) to import the group chat history.
+4. To correct the unread count of group members, call the [RESTful API for setting the unread count for members](https://intl.cloud.tencent.com/document/product/1047/34909).
 
 One-to-one chat messages, group data, and group messages need to be managed on the new system. When the the incremental data of these information is generated, use IM callbacks to sync the incremental data to the old system. Similarly, new data that is generated in the old system also needs to be synchronized to the new system.
 
 ### Synchronizing one-to-one chat messages
 
-Synchronize incremental messages in the old system to IM by calling the [RESTful API for sending a one-to-one chat message](/doc/product/269/send_a_one-to-one_message), and synchronize incremental messages in IM to the old system by calling the [callback after sending one-to-one chat messages](/doc/product/269/callback_after_one-to-one_message).
+Synchronize incremental messages in the old system to IM by calling the [RESTful API for sending a one-to-one chat message](https://intl.cloud.tencent.com/document/product/1047/34919), and synchronize incremental messages in IM to the old system by calling the [callback after sending one-to-one chat messages](https://intl.cloud.tencent.com/document/product/1047/34365).
 
 ### Synchronizing group data and group messages
 
 **Synchronizing group profiles**
 
-1. Synchronize the changes to group basic information in the old system in real time by calling the [RESTful API for modifying basic group information](/doc/product/269/modify_group_basic_profile).
-2. Synchronize the changes to group basic information in IM to the old system by calling the [callback after creating a group](/doc/product/269/callback_after_create_group), [callback after dismissing a group](/doc/product/269/callback_after_disband_group), and [callback after modifying the group profile](/doc/product/269/callback_after_modify_group_profile).
+1. Synchronize the changes to group basic information in the old system in real time by calling the [RESTful API for modifying basic group information](https://intl.cloud.tencent.com/document/product/1047/34962).
+2. Synchronize the changes to group basic information in IM to the old system by calling the [callback after creating a group](https://intl.cloud.tencent.com/document/product/1047/34369), [callback after dismissing a group](https://intl.cloud.tencent.com/document/product/1047/34377), and [callback after modifying the group profile](https://intl.cloud.tencent.com/document/product/1047/34378).
 
 **Synchronizing group member information**
 
-1. Synchronize the friends added to and deleted from the old system to IM by calling the [RESTful API for adding group members](/doc/product/269/add_group_member) and [RESTful API for deleting group members](https://cloud.tencent.com/document/product/269/1622).
-2. Synchronize group joining and quitting information in IM to the old system through the [callback after a new member joins the group](/doc/product/269/callback_after_new_member_join_group) and the [callback after a member quits the group](/doc/product/269/callback_after_member_quit group).
+1. Synchronize the friends added to and deleted from the old system to IM by calling the [RESTful API for adding group members](https://intl.cloud.tencent.com/document/product/1047/34921) and [RESTful API for deleting group members](https://intl.cloud.tencent.com/document/product/1047/34949).
+2. Synchronize group joining and quitting information in IM to the old system through the [callback after a new member joins the group](https://intl.cloud.tencent.com/document/product/1047/34372) and the [callback after a member quits the group](https://intl.cloud.tencent.com/document/product/1047/34373).
 
 **Synchronizing group messages**
 
-1. Synchronize incremental group messages in the old system to IM by calling the [RESTful API for sending common messages in a group](/doc/product/269/send_ordinary_message_in_group).
-2. Synchronize incremental group messages in IM to the old system by calling the [callback after sending messages in a group](/doc/product/269/callback_after_send_message_in_group).
+1. Synchronize incremental group messages in the old system to IM by calling the [RESTful API for sending common messages in a group](https://intl.cloud.tencent.com/document/product/1047/34959).
+2. Synchronize incremental group messages in IM to the old system by calling the [callback after sending messages in a group](https://intl.cloud.tencent.com/document/product/1047/34375).
 
 >If some of the current instant messaging services of your app are not covered by the preceding solutions, you can contact our customer service or consult your sales representative for an appropriate migration solution.

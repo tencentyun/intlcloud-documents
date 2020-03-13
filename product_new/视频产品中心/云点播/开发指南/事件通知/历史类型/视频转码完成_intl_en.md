@@ -6,7 +6,7 @@
 TranscodeComplete
 
 ## Event Description
-If the application is configured with event notification, after a video is transcoded, the application backend can get an event notification through "normal callback" or "reliable callback". <!-- The content of the event notification is the [`TranscodeTask2017` structure](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#TranscodeTask2017).-->
+If the application is configured with event notification, after a video is transcoded, the application backend can get an event notification through "normal callback" or "reliable callback". <!-- The content of the event notification is the [`TranscodeTask2017` structure](https://intl.cloud.tencent.com/document/product/266/34187#TranscodeTask2017).-->
 
 
 ## Normal Callback
@@ -67,7 +67,7 @@ If you choose the normal callback mode, the callback URL will receive an HTTP re
 ```
 
 ## Reliable Callback
-If you choose the reliable callback mode, after the [PullEvents](#APIhttps://intl.cloud.tencent.com/document/api/266/31773) API is called, an HTTP response in the following format will be received.
+If you choose the reliable callback mode, after the [PullEvents](https://intl.cloud.tencent.com/document/product/266/34187) API is called, an HTTP response in the following format will be received.
 ```json
 {
     "Response":{

@@ -114,7 +114,7 @@ tim.registerPlugin({'cos-js-sdk': COS});
 For more information on the initialization process and the use of APIs, see [SDK Initialization](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html).
 
 ### Related resources
-- [SDK Changelog](https://cloud.tencent.com/document/product/269/38492)
+- [SDK Changelog](https://intl.cloud.tencent.com/document/product/1047/34281)
 - [SDK API Documentation](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html)
 - [FAQs](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/tutorial-01-faq.html)
 - [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/H5)

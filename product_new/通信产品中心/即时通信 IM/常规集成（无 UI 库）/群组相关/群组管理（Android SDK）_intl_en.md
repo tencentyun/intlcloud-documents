@@ -1448,8 +1448,6 @@ When a user is invited to a group or is removed from a group, a prompt message i
 
 > The group event messages of ChatRoom and AVChatRoom groups are not delivered by new message notifications. Therefore, you must register group event listeners to monitor different group events.
 
-The following figure shows an event message for group name modification.
-![](https://main.qcloudimg.com/raw/78865ba68ed75700137e5afbd2ac3e43.jpg)
 
 
 **`TIMGroupTipsElem` member methods:**

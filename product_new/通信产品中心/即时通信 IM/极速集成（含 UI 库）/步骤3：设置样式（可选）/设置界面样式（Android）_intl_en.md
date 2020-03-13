@@ -1,12 +1,11 @@
 
 ## Setting the Conversation List
 The conversation list layout consists of TitleBarLayout and ConversationListLayout. Each component provides UI styles and event registration APIs that can be modified for customization purposes.
-![Conversation list](https://main.qcloudimg.com/raw/8adef6cec9f943958bbcbd0959130ce6.png)
+
 
 ### Modifying the TitleBarLayout style
 
-The title bar has all the features of a view. In addition, it is divided into three parts: left group, middle group, and right group, as shown in the following figure:
-![Title bar structure](https://main.qcloudimg.com/raw/832fd209cbc6061b47ff5434740b210c.png)
+The title bar has all the features of a view. In addition, it is divided into three parts: left group, middle group, and right group.
 
 To make custom modifications, see [ITitleBarLayout](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/Android/TUIKit/com/tencent/qcloud/tim/uikit/base/ITitleBarLayout.html).
 For example, in ConversationLayout, the following code hides LeftGroup, sets the title in the middle, and hides the text and image buttons on the right:
@@ -22,8 +21,6 @@ titleBarLayout.getLeftGroup().setVisibility(View.GONE);
 titleBarLayout.setRightIcon(R.drawable.conversation_more);
 ```
 
-The following figure shows the result:
-![Title bar display](https://main.qcloudimg.com/raw/b4d5c63dac1fa602830574ea4096c89f.png)
 
 You can also customize click events:
 
@@ -110,8 +107,7 @@ if (!TextUtils.isEmpty(conversation.getIconUrl())) {
 ## Setting the Chat Interface
 The chat interface includes TitleBarLayout, which can be used in the same way as that of the conversation list interface. The chat interface also includes NoticeLayout, MessageLayout, and InputLayout, as shown in the following figure:
 ![Chat interface components](https://main.qcloudimg.com/raw/8b6e650af731fffc4a816fbf54920970.png)
-The following figure shows the result:
-![Chat interface with more features](https://main.qcloudimg.com/raw/5953198d2a5249d1b18f218b319cdd2c.png)
+
 
 ```java
 /**
@@ -138,8 +134,7 @@ InputLayout getInputLayout();
 
 NoticeLayout consists of two TextViews, as shown in the following figure:
 ![NoticeLayout components](https://main.qcloudimg.com/raw/1a34baf21414ffe9671a31a7223c6377.png)
-The following figure shows the result:
-![Notice display](https://main.qcloudimg.com/raw/406ce089eccc51524e559e0a9f69c1f6.png)
+
 
 ```java
 // Obtain NoticeLayout from ChatLayout
@@ -162,12 +157,12 @@ noticeLayout.setOnNoticeClickListener(new View.OnClickListener() {
 ### Modifying the MessageLayout style
 
 MessageLayout is inherited from RecyclerView. This document describes how to customize the chat background, bubbles, text, and nicknames. For more information, see [IMessageProperties](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/Android/TUIKit/com/tencent/qcloud/tim/uikit/modules/chat/interfaces/IMessageProperties.html).
-![MessageLayout](https://main.qcloudimg.com/raw/063933c9ace8f762695af5a75a70c4b8.png)
+
 
 #### Modifying the chat background
 
 You can customize the chat background.
-![Modifying the chat background](https://main.qcloudimg.com/raw/fbab3a9bc355b4ba47ee2d864c7a8bf5.png)
+
 
 ```java
 // Obtain MessageLayout from ChatLayout
@@ -180,7 +175,7 @@ messageLayout.setBackground(new ColorDrawable(0xB0E2FF00));
 #### Modifying profile photo properties
 
 To display a user, TUIKit reads the profile photo URL from the user profile and displays it.
-![Modifying the profile photo](https://main.qcloudimg.com/raw/16ba2fdf5bd410efc19ad88f056f9022.png)
+
 
 ```
 // Set the profile photo and nickname on the chat interface
@@ -224,7 +219,7 @@ messageLayout.setAvatarSize(new int[]{48, 48});
 
 #### Modifying bubbles
 Peer bubbles are located on the left and sender bubbles are on the right. You can customize the bubble background for both parties.
-![Modifying bubbles](https://main.qcloudimg.com/raw/670e40297978817012d9cd81524e73e7.png)
+
 
 ```java
 // Obtain MessageLayout from ChatLayout
@@ -238,7 +233,7 @@ messageLayout.setLeftBubble(context.getResources().getDrawable(R.drawable.chat_s
 
 #### Modifying the nickname style
 You can customize the nickname style, including the font size and color. The nickname styles of both parties must be the same.
-![Modifying the nickname](https://main.qcloudimg.com/raw/df0ab81eccc1c2f65804c20964b76419.png)
+
 
 ```java
 // Obtain MessageLayout from ChatLayout
@@ -251,7 +246,7 @@ messageLayout.setNameFontColor(0x8B5A2B00);
 
 #### Modifying the chat content style
 You can customize the font size and color of chat content for both parties, but they must use the same font size.
-![Modifying chat content](https://main.qcloudimg.com/raw/6b86269ecef12ba43762d917f596a51c.png)
+
 
 ```java
 // Obtain MessageLayout from ChatLayout
@@ -268,7 +263,7 @@ messageLayout.setLeftChatContentFontColor(0xA020F000);
 #### Modifying the chat timeline style
 
 You can customize the background, font size, and font color of the chat timeline.
-![Modifying the timeline style](https://main.qcloudimg.com/raw/278f58e24d1cf05601d789a45b840fc0.png)
+
 
 ```java
 // Obtain MessageLayout from ChatLayout
@@ -285,7 +280,7 @@ messageLayout.setChatTimeFontColor(0xEE00EE00);
 #### Modifying the prompt message style
 
 You can customize the background, font size, and font color of prompt messages.
-![Modifying the prompt message style](https://main.qcloudimg.com/raw/a59d9b24ec12abea73c78996d912976e.png)
+
 
 ```java
 // Obtain MessageLayout from ChatLayout
@@ -301,7 +296,6 @@ messageLayout.setTipsMessageFontColor(0x7CFC0000);
 
 ### Setting InputLayout
 InputLayout includes the audio, text, emoji, and more (+) input options.
-![InputLayout](https://main.qcloudimg.com/raw/262f09005c939b5004e437df58112056.png)
 
 #### Hiding undesired features
 
@@ -322,7 +316,7 @@ inputLayout.disableVideoRecordAction(true);
 
 #### Adding custom features
 You can customize and add action units to the "+" panel to provide more features.
-![Adding custom features](https://main.qcloudimg.com/raw/727056dd0e975dbaea86927040b385ab.gif)
+
 The following code shows how to hide the "send file" feature and add an action unit that sends a message:
 
 ```java
@@ -349,7 +343,7 @@ inputLayout.addAction(unit);
 
 #### Replacing the click "+" event
 You can customize features to replace action units on the "+" panel.
-![Replacement event](https://main.qcloudimg.com/raw/5acf471b7a36cd8be511b1b44c0abdbf.gif)
+
 
 ```java
 // Obtain InputLayout from ChatLayout
@@ -402,5 +396,4 @@ public static class CustomInputFragment extends BaseInputFragment {
     }
 }
 ```
-The following figure shows the result:
-![Replacing the panel](https://main.qcloudimg.com/raw/d347f9e12358fb00d0c517e6a7aa44a6.gif)
+

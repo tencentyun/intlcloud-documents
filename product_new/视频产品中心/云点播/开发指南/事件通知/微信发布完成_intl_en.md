@@ -2,7 +2,7 @@
 WechatPublishComplete
 
 ## Event Description
-If the application is configured with event notification, after a video is published on WeChat, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`WechatPublishComplete` structure](#APIhttps://intl.cloud.tencent.com/document/api/266/31773#EventContent).
+If the application is configured with event notification, after a video is published on WeChat, the application backend can get an event notification through "normal callback" or "reliable callback". The content of the event notification is the [`WechatPublishComplete` structure](https://intl.cloud.tencent.com/document/product/266/34187#EventContent).
 
 ## Samples
 ### Normal Callback
@@ -27,7 +27,7 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
 ```
 
 ### Reliable Callback
-If you choose the reliable callback mode, after the [PullEvents](#APIhttps://intl.cloud.tencent.com/document/api/266/31773) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
+If you choose the reliable callback mode, after the [PullEvents](https://intl.cloud.tencent.com/document/product/266/34187) API is called, an HTTP response in the following format will be received (the fields with null value are omitted).
 
 ```json
 {

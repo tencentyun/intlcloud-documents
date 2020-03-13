@@ -1,11 +1,11 @@
 
 ## Group Overview
 
-Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see the [Group System](https://cloud.tencent.com/document/product/269/1502). A group is identified by a unique ID, which allows for different operations.
+Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). A group is identified by a unique ID, which allows for different operations.
 
 ## Group Chat Messages
 
-Group and C2C (one-to-one) chat messages are the same except for the conversation type obtained through `Conversation`. For more information, see [Sending Messages](https://cloud.tencent.com/document/product/269/9150#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81).
+Group and C2C (one-to-one) chat messages are the same except for the conversation type obtained through `Conversation`. For more information, see [Sending Messages](https://intl.cloud.tencent.com/document/product/1047/34320#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81).
 
 ## Group Management
 
@@ -21,7 +21,7 @@ Group-related operations are performed after login through `TIMGroupManager`.
 
 ### Creating built-in group types
 
-IM supports the following group types by default: private group (Private), public group (Public), chat room (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom). For more information, see [Group Types](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). You can specify the group name and the list of users to be added. After the group is created, the group ID is returned, which allows you to receive and send messages through `Conversation`.
+IM supports the following group types by default: private group (Private), public group (Public), chat room (ChatRoom), audio-and-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom). For more information, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). You can specify the group name and the list of users to be added. After the group is created, the group ID is returned, which allows you to receive and send messages through `Conversation`.
 
 **Description of group creation:**
 
@@ -217,7 +217,7 @@ groupInfo.membersInfo = membersInfo;
 
 ### Creating a group with a custom group ID
 
-By default, the IM server generates a unique ID when a group is created. If a custom group ID is needed, the user can specify an ID when the group is created. A custom group ID can also be obtained by [creating a group with specified properties](#.E5.88.9B.E5.BB.BA.E6.8C.87.E5.AE.9A.E5.B1.9E.E6.80.A7.E7.BE.A4.E7.BB.84).
+By default, the IM server generates a unique ID when a group is created. If a custom group ID is needed, the user can specify an ID when the group is created. A custom group ID can also be obtained by [creating a group with specified properties](#creating-a-group-with-specified-properties).
 
 ```
 @interface TIMGroupManager : NSObject
@@ -253,7 +253,7 @@ You can invite users to a group through `inviteGroupMember` of `TIMGroupManager`
 
 **Permission description:**
 
-For more information, see [Differences in Group Member Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
+For more information, see [Differences in Group Member Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
 
 **Prototype:**
 
@@ -329,7 +329,7 @@ typedef NS_ENUM(NSInteger, TIMGroupMemberStatus) {
 Use `joinGroup` of `TIMGroupManager` to apply to join a group. This operation is valid only for Public and ChatRoom groups.
 
 **Permission description:**
-For more information, see [Differences in Group Member Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
+For more information, see [Differences in Group Member Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
 
 **Prototype:**
 
@@ -377,7 +377,7 @@ Group members can quit a group.
 - **Private:** any member can quit the group.
 - **Public, ChatRoom, and BChatRoom:** the group owner cannot quit the group.
 
-For more information, see [Differences in Group Member Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
+For more information, see [Differences in Group Member Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
 
 **Prototype:**
 
@@ -420,7 +420,7 @@ In the following example, a user quits the group "TGID1JYSZEAEQ". **Example:**
 Group members can delete other members. The function’s parameters are the same as the function for joining a group.
 
 **Permission description:**
-For more information, see [Differences in Group Member Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
+For more information, see [Differences in Group Member Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
 
 **Prototype:**
 
@@ -476,7 +476,7 @@ Obtain a group member list through the `getGroupMembers` method.
 - **Any type of group:** the list of members always can be obtained.
 - **Live-streaming group:** only some members are pulled, including the group owner, admin, and some members.
 
-For more information, see [Differences in Group Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
+For more information, see [Differences in Group Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
 
 **Prototype:**
 
@@ -615,7 +615,7 @@ Dismiss groups through `DeleteGroup`.
 
 **Permission description:**
 
-For more information, see [Differences in Group Operations](https://cloud.tencent.com/document/product/269/1502#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
+For more information, see [Differences in Group Operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
 
 
 **Prototype:**
@@ -1662,9 +1662,8 @@ TIMGroupPendencyItem *item = [pendencies firstObject];
 
 ## Group Event Messages
 
-When a user is invited to a group or is removed from a group, a prompt message is displayed in the group. The caller can decide whether to display and how to display the prompt message (for example, ignore it or display it to users as needed.) A prompt message is identified by a special `Elem` and returned by the new message callback. For more information, see [New Message Notifications](/doc/product/269/9148#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5). The following figure shows an event message for group name modification.
+When a user is invited to a group or is removed from a group, a prompt message is displayed in the group. The caller can decide whether to display and how to display the prompt message (for example, ignore it or display it to users as needed.) A prompt message is identified by a special `Elem` and returned by the new message callback. For more information, see [New Message Notifications](https://intl.cloud.tencent.com/document/product/1047/34313). The following figure shows an event message for group name modification.
 
-![](https://main.qcloudimg.com/raw/5a103b18bc1728baa742c7671443788e.jpg)
 
 **Message prototype:**
 
@@ -1891,7 +1890,7 @@ value | Modified value, which has different meanings based on the modification t
 **Trigger:** when a group member’s information in a group is modified, such as when the member has been muted or the member’s role in the group has been changed, the system sends a message. You can update relevant display fields or display the message to users as needed.
 
 >
->- The information mentioned here includes only group-related information, such as the muting period and member role change. Information related to users such as the user’s nickname is not included. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, see [Message sender and related profile](/doc/product/269/9150#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81.E8.80.85.E4.BB.A5.E5.8F.8A.E7.9B.B8.E5.85.B3.E8.B5.84.E6.96.99).
+>- The information mentioned here includes only group-related information, such as the muting period and member role change. Information related to users such as the user’s nickname is not included. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, see [Message sender and related profile](https://intl.cloud.tencent.com/document/product/1047/34321).
 >- If the user information is stored locally, you can determine whether a change has occurred according to the information in the message body and update the information after receiving a message from this user.
 
 **`TIMGroupTipsElem` parameter description:**
