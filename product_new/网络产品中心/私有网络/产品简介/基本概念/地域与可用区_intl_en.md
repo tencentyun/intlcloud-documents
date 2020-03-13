@@ -60,8 +60,11 @@ For more detailed steps, see [Migrating an Instance to Another Availability Zone
 	<tr>
 		<td>Shenzhen Finance Zone 2<span style="background-color: rgb(249, 249, 249);">(only for financial institutions and enterprises, and you must submit <a href="https://console.cloud.tencent.com/workorder/category">a ticket to apply for</a> activation)<br>ap-shenzhen-fsi-2</span></td>
 	</tr>
+<tr>
+		<td>Shenzhen Finance Zone 3<span style="background-color: rgb(249, 249, 249);">(only for financial institutions and enterprises, and you must submit <a href="https://console.cloud.tencent.com/workorder/category">a ticket to apply for</a> activation)<br>ap-shenzhen-fsi-2</span></td>
+	</tr>
 	<tr>
-		<td rowspan="3">East China (Shanghai)<br>ap-shanghai</td>
+		<td rowspan=“4”>East China (Shanghai)<br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -71,12 +74,26 @@ For more detailed steps, see [Migrating an Instance to Another Availability Zone
 		<td>Shanghai Zone 3<br>ap-shanghai-3</td>
 	</tr>
 	<tr>
-			<td rowspan="2">East China (Shanghai Finance)<br>ap-shanghai-fsi</td>
+		<td>Shanghai Zone 3<br>ap-shanghai-4</td>
+	</tr>
+	<tr>
+			<td rowspan=“3”>East China (Shanghai Finance)<br>ap-shanghai-fsi</td>
 		<td>Shanghai Finance Zone 1 (only for financial institutions and enterprises, and you must submit <a href="https://console.cloud.tencent.com/workorder/category">a ticket to apply for</a> activation)<br>ap-shanghai-fsi-1</td>
 	</tr>
 	<tr>
 			<td>Shanghai Finance Zone 2 (only for financial institutions and enterprises, and you must submit <a href="https://console.cloud.tencent.com/workorder/category">a ticket to apply for</a> activation)<br>ap-shanghai-fsi-2</td>
 	</tr>
+<tr>
+			<td>Shanghai Finance Zone 3 (only for financial institutions and enterprises, and you must submit <a href="https://console.cloud.tencent.com/workorder/category">a ticket to apply for</a> activation)<br>ap-shanghai-fsi-2</td>
+	</tr>
+<tr>
+			<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>
+			<td>Nanjing Zone 1<br>ap-nanjing-1</td>
+	</tr>
+	<tr>
+			<td>Nanjing Zone 2<br>ap-nanjing-2</td>
+	</tr>
+	<tr>
 	<tr>
 			<td rowspan="3">North China (Beijing)<br>ap-beijing</td>
 			<td>Beijing Zone 1<br>ap-beijing-1</td>
@@ -86,6 +103,9 @@ For more detailed steps, see [Migrating an Instance to Another Availability Zone
 	</tr>
 	<tr>
 			<td>Beijing Zone 3<br>ap-beijing-3</td>
+	</tr>
+	<tr>
+			<td>Beijing Zone 4<br>ap-beijing-4</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Southwest China (Chengdu)<br>ap-chengdu</td>
