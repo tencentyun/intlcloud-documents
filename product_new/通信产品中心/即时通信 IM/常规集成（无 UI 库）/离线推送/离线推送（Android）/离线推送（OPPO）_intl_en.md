@@ -29,7 +29,7 @@ OPPO mobile phones use a highly customized Android system, with very strict mana
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
  > If you already have a certificate and only want to change its information, you can click **Edit** in the **Android Platform Push Settings** to modify and update the certificate.
  >
-3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-oppo-push-certificate):
+3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-an-oppo-push-certificate):
  - **Push Platform**: select **OPPO**.
  - **AppKey**: enter the **AppKey** of the OPPO push service app.
  - **AppID**: enter the **AppId** of the OPPO push service app.
