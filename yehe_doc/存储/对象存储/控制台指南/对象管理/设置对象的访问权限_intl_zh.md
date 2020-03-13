@@ -1,0 +1,29 @@
+## 简介
+COS 提供基于对象维度的访问权限设置，且该权限优先级高于存储桶的访问权限。
+
+>
+>- 对象的访问权限只在用户通过默认域名访问时有效。通过 CDN 加速域名和自定义域名访问时，以存储桶访问权限为准。
+>- 访问策略规则存在数量限制，详情请参见 [规格与限制](https://intl.cloud.tencent.com/document/product/436/14518)。
+
+## 操作步骤
+
+
+
+
+1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在左侧菜单栏中单击【存储桶列表】，进入存储桶列表页。
+2. 找到您需要设置对象访问权限的存储桶，单击其存储桶名称，进入存储桶详情页。
+![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
+3. 在存储桶详情的【文件列表】中，找到需要设置权限的对象，并单击右侧的【详情】，进入文件详情页。（若是文件夹，可单击右侧的【设置权限】）。
+![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
+4. 单击上方的【对象权限】配置项，根据实际需求设置访问权限（如赋予子账号对象权限，子账号 ID 可在 [访问管理](https://console.cloud.tencent.com/cam) 控制台查看）。对象存储 COS 支持为对象设置两种权限类型：
+ - **公共权限**：包括继承权限、私有读写、公有读私有写。关于公共权限的说明，请参见对象概述中的 [权限类别](https://intl.cloud.tencent.com/document/product/436/13324)。
+ - **用户权限**：主账号默认拥有对象所有权限（即完全控制）。另外 COS 支持添加子账号有数据读取、数据写入、权限读取、权限写入，甚至**完全控制**的最高权限。
+![](https://main.qcloudimg.com/raw/c9565ab1d2378ce672a301843bf3b072.png)
+5. 最后单击【保存】，即可设置对象的访问权限。
+6. 若您需要对多个对象进行批量设置或修改访问权限，可勾选多个对象，然后在【更多操作】下选择【修改访问权限】即可。
+![](https://main.qcloudimg.com/raw/780dc4cdcc7e72d1fcb323dc7c14272c.png)
+
+
+## 视频教程
+以下视频为您详细介绍如何设置对象的访问权限：
+<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1824-20796?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
