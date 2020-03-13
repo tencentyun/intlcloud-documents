@@ -16,14 +16,14 @@ If you have a self-built origin server and live stream source and want to live b
  3. Enter the **Master Origin Server Address** (either an IP or a domain name).
  4. Click **Save**.
 
->?**Forwarding Protocol** refers to the format supported by LVB when pulling streams from the origin server. **Playback Protocol** refers to the playback protocol used to distribute live content through CDN.
+>**Forwarding Protocol** refers to the format supported by LVB when pulling streams from the origin server. **Playback Protocol** refers to the playback protocol used to distribute live content through CDN.
 >- If the forwarding protocol is FLV or RTMP, the playback protocol can be FLV or HLS.
 >- If the forwarding protocol is HLS, the playback protocol can only be HLS.
 >- You can select only one forwarding protocol but multiple playback protocols.
 
->! 
+> 
 > - After the relevant information is configured, the origin server settings will take effect in about one day.
 > - After the origin server configuration is enabled, features such as transcoding, recording, screencapturing, porn information detection, and watermarking will become unavailable. 
 
-![](https://main.qcloudimg.com/raw/da1187e967a68a843f6a61ac4391af2b.png)
+![](https://main.qcloudimg.com/raw/aad1f61836b32b01822f945f8afa241e.png)
 
