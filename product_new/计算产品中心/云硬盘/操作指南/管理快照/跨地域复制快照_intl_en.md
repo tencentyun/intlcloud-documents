@@ -1,8 +1,8 @@
 Cross-region snapshot replication is now in beta. With this feature, you can easily migrate data and services to other regions, or build a cross-region disaster recovery system for your business.
-You can [submit an application](https://console.cloud.tencent.com/act/apply/snapshotcopy) to use this feature.
+You can **submit an application** to use this feature.
 
 ## Use Limits
-- **Apply for Beta**: cross-region snapshot replication is now in beta. You need to [submit an application](https://cloud.tencent.com/act/apply/snapshotcopy) to apply for it.
+- **Apply for Beta**: cross-region snapshot replication is now in beta. You need to **submit an application** to apply for it.
 - **Supported regions**: for more information, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/362/32396)。
 
 
@@ -20,5 +20,5 @@ You can [submit an application](https://console.cloud.tencent.com/act/apply/snap
 > The source snapshot cannot be deleted during the cross-region replication of this snapshot.
 >
  During the process of cross-region replication:
- - Status of source snapshot: you can view it by going to the source region’s [snapshot list](https://console.cloud.tencent.com/cvm/snapshot) and looking in the status column on the source snapshot’s row.
+ - Status of source snapshot: you can view it by going to the source region’s **snapshot list** and looking in the status column on the source snapshot’s row.
  - Status of target snapshot: you can view it by going to the snapshot list page of the target region.
