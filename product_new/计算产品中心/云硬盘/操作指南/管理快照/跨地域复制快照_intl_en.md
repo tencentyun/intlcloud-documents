@@ -1,5 +1,5 @@
 Cross-region snapshot replication is now in beta. With this feature, you can easily migrate data and services to other regions, or build a cross-region disaster recovery system for your business.
-You can [submit an application](https://cloud.tencent.com/act/apply/snapshotcopy) to use this feature.
+You can [submit an application](https://console.cloud.tencent.com/act/apply/snapshotcopy) to use this feature.
 
 ## Use Limits
 - **Apply for Beta**: cross-region snapshot replication is now in beta. You need to [submit an application](https://cloud.tencent.com/act/apply/snapshotcopy) to apply for it.
