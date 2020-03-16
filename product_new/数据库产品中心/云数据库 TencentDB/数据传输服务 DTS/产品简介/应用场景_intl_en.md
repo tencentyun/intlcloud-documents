@@ -16,6 +16,7 @@ The data subscription feature of DTS can help you push incrementally updated dat
 ![][img4]
 
 
-[img2]: //mc.qcloudimg.com/static/img/bbe90cec1fc0882e05c441ac38089295/image.png
-[img3]: //mc.qcloudimg.com/static/img/7459283867e3acbcb4bff4e5b8481d31/DTS-scenarios3.png
-[img4]: //mc.qcloudimg.com/static/img/6bc58a2088159ccb0264765a4f2e922e/DTS-scenarios4.png
+[img1]: https://main.qcloudimg.com/raw/7f7c8aa38423095d441c5a71f88bc345.png
+
+[img3]: https://main.qcloudimg.com/raw/9a27e2fb18b7eef72b63871a7e1a382d.png
+[img4]: https://main.qcloudimg.com/raw/16cad7de58d098e3169875fc4295a54f.png

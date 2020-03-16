@@ -17,6 +17,6 @@
 
 
 [img1]: https://main.qcloudimg.com/raw/7f7c8aa38423095d441c5a71f88bc345.png
-[img2]: https://main.qcloudimg.com/raw/15fdd3c853dc312ed35962d529ad433f.png
+
 [img3]: https://main.qcloudimg.com/raw/9a27e2fb18b7eef72b63871a7e1a382d.png
 [img4]: https://main.qcloudimg.com/raw/16cad7de58d098e3169875fc4295a54f.png
