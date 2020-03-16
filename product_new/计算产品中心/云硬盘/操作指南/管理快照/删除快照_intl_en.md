@@ -18,4 +18,4 @@ When there is no need to use the snapshot again, you can delete the snapshot to 
 3. Click **OK**.
 
 ### Deleting a Snapshot with API
-You can use the DeleteSnapshots API to delete a snapshot. For detailed directions, see [Delete Snapshots](https://cloud.tencent.com/document/product/362/15645).
+You can use the DeleteSnapshots API to delete a snapshot. For detailed directions, see [Delete Snapshots](https://intl.cloud.tencent.com/document/product/362/15645).
