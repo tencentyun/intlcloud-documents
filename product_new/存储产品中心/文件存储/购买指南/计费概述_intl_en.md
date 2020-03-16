@@ -113,7 +113,7 @@ Below are the latest unit prices for standard file systems in all regions in Mai
       <th nowrap="nowrap">Unit Price</th>
    </tr>
    <tr>
-      <td rowspan="7">Standard storage</td>
+      <td rowspan="8">Standard storage</td>
       <td rowspan="1">Mainland China</td>
       <td>-</td>
       <td>0.058 USD/GB/month (0.00008056 USD/GB/hour)</td>
@@ -147,12 +147,18 @@ Below are the latest unit prices for standard file systems in all regions in Mai
       <td>-</td>
       <td>0.09 USD/GB/month (0.000125 USD/GB/hour)</td>
    </tr>
+        <tr>
+      <td>Toronto</td>
+      <td>-</td>
+      <td>0.09 USD/GB/month (0.00012500 USD/GB/hour)</td>	
+   </tr>
       <tr>
       <td rowspan="1">High-performance storage</td>
       <td rowspan="2">Mainland China</td>
       <td> - </td>
       <td>0.26 USD/GB/month (0.000361111 USD/GB/hour)</td>
    </tr>
+   
 </table>
 
 
