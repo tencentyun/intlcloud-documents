@@ -113,7 +113,7 @@ CIFS/SMB 协议本阶段公测已结束，后续开放时间请静待通知。�
       <th nowrap="nowrap">单价</th>
    </tr>
    <tr>
-      <td rowspan="7">标准存储</td>
+      <td rowspan="8">标准存储</td>
       <td rowspan="1">中国大陆</td>
       <td>-</td>
       <td>0.058 USD/GB/Month (0.00008056 USD/GB/hr)</td>
@@ -146,6 +146,12 @@ CIFS/SMB 协议本阶段公测已结束，后续开放时间请静待通知。�
       <td>首尔</td>
       <td>-</td>
       <td>0.09 USD/GB/月 （0.000125 USD/GB/时）</td>
+   </tr>
+      </tr>
+        <tr>
+      <td>多伦多</td>
+      <td>-</td>
+      <td>0.09 USD/GB/月 （0.00012500 USD/GB/时）</td>
    </tr>
       <tr>
       <td rowspan="1">性能存储</td>
