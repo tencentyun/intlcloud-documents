@@ -5,8 +5,7 @@
 
 
 ## Demo
-我们在实时音视频 [Demo](https://intl.cloud.tencent.com/document/product/647/35076) 中加入了旁路直播功能，您可以在视频通话的过程中单击【更多功能】找到该功能的体验入口（播放器 TXLivePlayer 的下载地址在 [移动直播页面](https://intl.cloud.tencent.com/document/product/647/35076)）。
-![](https://main.qcloudimg.com/raw/1d663f77c71bee9914b60609edaf1fef.jpg)
+我们在实时音视频 [Demo](https://intl.cloud.tencent.com/document/product/647/35076) 中加入了旁路直播功能，您可以在视频通话的过程中单击【更多功能】找到该功能的体验入口（播放器 TXLivePlayer 的下载地址在 移动直播页面）。
 
 ## 示例代码
 
