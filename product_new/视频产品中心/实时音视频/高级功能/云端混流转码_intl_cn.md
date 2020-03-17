@@ -26,7 +26,6 @@
 由于画面的拼接是需要您来指定各个画面的相对位置的，所以需要您在启动混流前设置 `TRTCTranscodingConfig` 参数。
 
 - **Objective-C**
- 详细的混流转码配置定义请参见 [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647#trtctranscodingconfig)。
  
 ``` Objective-C
 //云端混流转码的示例代码
