@@ -2,7 +2,6 @@
 
 在进行视频通话之前，建议先进行摄像头和麦克风等设备的测试，否则等用户真正进行通话时很难发现设备问题。
 
-<img style="border:0; max-width:100%; height:auto; box-sizing:content-box; box-shadow: 0px 0px 0px #ccc; margin: 0px 0px 0px 0px;" src="https://main.qcloudimg.com/raw/fced7778482de4edfbe94bfcf8ec5f20.jpg" />
 
 
 ## 支持此功能的平台
