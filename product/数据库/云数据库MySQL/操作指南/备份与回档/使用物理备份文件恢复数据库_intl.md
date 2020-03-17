@@ -1,5 +1,5 @@
 # Restoring a Database Locally Using Physical Backup File
-** If you want to use a physical backup file downloaded to the local computer to restore a database on other hosts, refer to this document**
+**If you want to use a physical backup file downloaded to the local computer to restore a database on other hosts, refer to this document**
 #### 1. Downloading Backup File
 For details on the steps, refer to [Download Instructions](https://intl.cloud.tencent.com/document/product/236/7358)
 After the file is downloaded, the following information will be displayed:
