@@ -1,31 +1,27 @@
-本次发布包含了如下功能：
+This release incorporates the following features:
+
+**1.Supports Elasticsearch 6.8**
+
+For more information on Elasticsearch 6.8, see:
+
+[6.8.0 release highlights](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/release-highlights-6.8.0.html)  
+
+**2. Supports an architecture with separated hot and warm data**
+
+An architecture with separated hot and warm data can ensure read and write performance while taking storage cost into account. For more information on the principles and practices, see:
+[Hot-Warm Architecture and Index Lifecycle Management](https://intl.cloud.tencent.com/document/product/845/34890)
+
+**3. Supports access to Platinum clusters via the Internet**
+
+This release supports accessing Elasticsearch clusters via the Internet for improved convenience. This is limited to the Platinum version which has security enabled and ES cluster users go through authentication. Please exercise caution when enabling this feature.
+
+**4.Supports tag management for new clusters**
+
+This release supports Tencent Cloud’s tag service, helping you sort and manage your Tencent Cloud resources to improve your work efficiency. For more information, see：
+[Product Overview](https://intl.cloud.tencent.com/document/product/651/13334)
 
 
 
-**1.支持Elasticsearch 6.8版本**
+Tencent Cloud ES Team
 
-关于6.8版本请参见 
-
-[6.8.0 release highlights](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/release-highlights-6.8.0.html)
-
-**2. 支持冷热分离架构**
-
-通过冷热分离架构，在保证读写性能的同时，兼顾存储成本，相关原理和实践请参见
-
-[冷热分离与索引生命周期管理](https://intl.cloud.tencent.com/document/product/845/34890)
-
-**3. 白金版集群支持外网访问**
-
-基于访问便捷性的需要，我们支持了外网访问Elasticsearch集群的能力，但仅限白金版（开启了security，即ES集群用户鉴权能力），并强烈提醒您谨慎开启。
-
-**4.新建集群支持标签管理**
-
-为了方便用户对资源进行分类规划和管理，提高工作效率，我们支持了腾讯云统一的标签能力，详情请参见：
-
-[产品概述](https://intl.cloud.tencent.com/zh/document/product/651/13334)
-
-
-
-腾讯云 ES 团队
-
-2019年12月
+December 2019
