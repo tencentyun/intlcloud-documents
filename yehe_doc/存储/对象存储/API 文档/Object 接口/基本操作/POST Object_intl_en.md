@@ -159,7 +159,7 @@ Attach the above policy and signature-related information to the form as describ
 
 | Name | Description | Type | Required |
 | --- | --- | --- | --- |
-| policy | 经过 Base64 编码的“策略”（Policy）内容 | string | 是 |
+| policy | Base64-encoded policy content | string | Yes |
 | q-sign-algorithm | Signature hash algorithm, fixed as sha1 | string | Yes |
 q-ak | SecretId mentioned above | string | Yes |
 | q-key-time | KeyTime generated above | string | yes |
@@ -201,7 +201,7 @@ Log into the [API Key Management](https://console.cloud.tencent.com/cam/capi) pa
 - StringToSign = `d5d903b8360468bc81c1311f134989bc8c8b5b89`
 - Signature = `7758dc9a832e9d301dca704cacbf9d9f8172fdef`
 
-** Signature form fields **
+**Signature form fields **
 
 - policy = `ewogICAgImV4cGlyYXRpb24iOiAiMjAxOS0wOC0zMFQwOTozODoxMi40MTRaIiwKICAgICJjb25kaXRpb25zIjogWwogICAgICAgIHsgImFjbCI6ICJkZWZhdWx0IiB9LAogICAgICAgIHsgImJ1Y2tldCI6ICJleGFtcGxlYnVja2V0LTEyNTAwMDAwMDAiIH0sCiAgICAgICAgWyAic3RhcnRzLXdpdGgiLCAiJGtleSIsICJmb2xkZXIvc3ViZm9sZGVyLyIgXSwKICAgICAgICBbICJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgImltYWdlLyIgXSwKICAgICAgICBbICJzdGFydHMtd2l0aCIsICIkc3VjY2Vzc19hY3Rpb25fcmVkaXJlY3QiLCAiaHR0cHM6Ly9teS53ZWJzaXRlLyIgXSwKICAgICAgICBbICJlcSIsICIkeC1jb3Mtc2VydmVyLXNpZGUtZW5jcnlwdGlvbiIsICJBRVMyNTYiIF0sCiAgICAgICAgeyAicS1zaWduLWFsZ29yaXRobSI6ICJzaGExIiB9LAogICAgICAgIHsgInEtYWsiOiAiQUtJRFFqejNsdG9tcFZqQm5pNUxpdGtXSEZsRnB3a245VTVxIiB9LAogICAgICAgIHsgInEtc2lnbi10aW1lIjogIjE1NjcxNTA2OTI7MTU2NzE1Nzg5MiIgfQogICAgXQp9`
 - q-sign-algorithm = `sha1`
