@@ -912,7 +912,7 @@ public void setObjectAcl(SetObjectAclRequest setObjectAclRequest)
 
 #### Parameter Description
 
-- **方法3** 参数同时包含1和2，因此以方法3为例进行介绍。
+- The parameters in method 3, which cover those in method 1 and 2, are used in this example.
 
 | Parameter Name | Description | Type |
 | ------------------- | ------ | ------------------- |
