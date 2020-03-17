@@ -12,7 +12,7 @@ You can put objects to be operated on in an inventory file, which is based on th
 1. Log into the [COS Console](https://console.cloud.tencent.com/cos5) and click **Batch Operation** on the left sidebar to enter the batch operation management page.
 2. Click **Create Job** to start creating a batch operation job. Configuration items are described as follows.
  - **Job Region**: Select a region for the job to be created. The job region should be the same as the bucket region of the objects to be operated on in your inventory file, otherwise the job will fail. **Chengdu and Chongqing regions are currently in beta test.*
- -**Inventory Format**: Select a format for the inventory objects. There are two formats:
+ - **Inventory Format**: Select a format for the inventory objects. There are two formats:
 <table>
    <tr>
       <th>Inventory Format</th>
