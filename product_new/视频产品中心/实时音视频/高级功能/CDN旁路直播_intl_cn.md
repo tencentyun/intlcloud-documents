@@ -1,13 +1,11 @@
 基于 UDP 传输协议的 TRTC 服务，可以通过协议转换将音视频流对接到标准的直播 CDN 系统上，这个过程我们称之为“旁路推流”或者“旁路直播”。
-您可以在 TRTC 控制台中开启旁路直播功能，功能开启后，您会自动获取一个 TRTC 房间中的各路音视频流。同时您也可以通过 TRTCCloud 中提供的 **setMixTranscodingConfig** 接口，启动云端混流转码，这样就可以将多路画面混合到一路直播流上，如下图所示：
-![](https://main.qcloudimg.com/raw/bc9a947800ae8648951a9def71114ca9.gif)
+您可以在 TRTC 控制台中开启旁路直播功能，功能开启后，您会自动获取一个 TRTC 房间中的各路音视频流。同时您也可以通过 TRTCCloud 中提供的 **setMixTranscodingConfig** 接口，启动云端混流转码，这样就可以将多路画面混合到一路直播流上。
 
 下面主要介绍如何在腾讯云直播 CDN 系统上，通过标准的 **http + flv** 协议，观看 TRTC 房间里的各路音视频流。
 
 
 ## Demo
-我们在实时音视频 [Demo](https://intl.cloud.tencent.com/document/product/647/35076) 中加入了旁路直播功能，您可以在视频通话的过程中单击【更多功能】找到该功能的体验入口（播放器 TXLivePlayer 的下载地址在 [移动直播页面](https://intl.cloud.tencent.com/document/product/647/35076)）。
-![](https://main.qcloudimg.com/raw/1d663f77c71bee9914b60609edaf1fef.jpg)
+我们在实时音视频 [Demo](https://intl.cloud.tencent.com/document/product/647/35076) 中加入了旁路直播功能，您可以在视频通话的过程中单击【更多功能】找到该功能的体验入口（播放器 TXLivePlayer 的下载地址在 移动直播页面）。
 
 ## 示例代码
 
@@ -32,7 +30,6 @@
 ### 步骤1：开通服务
 
 登录 [实时音视频控制台](https://console.cloud.tencent.com/rav) ，单击目标应用卡片，选择【功能配置】，您可以开启“自动旁路直播”功能。开启此功能的前提是需要先开通腾讯 [云直播](https://console.cloud.tencent.com/live) 服务。
-![](https://main.qcloudimg.com/raw/91672da223a6eb7c24e8c9891018ead1.png)
 
 ### 步骤2：独立画面
 
@@ -44,7 +41,7 @@ http://[bizid].liveplay.myqcloud.com/live/[streamid].flv
 其中 `bizid`、`streamid` 都是需要您填写的部分，具体的填写规则如下：
 
 - bizid： 一个与直播服务相关的数字，请在 [实时音视频控制台](https://console.cloud.tencent.com/rav) 选择已经创建的应用，单击【帐号信息】后，在“直播信息”中获取。
-![](https://main.qcloudimg.com/raw/86cdab23f18d4c8369d2a908320e52aa.png)
+
 - 流类型：摄像头画面的流类型是 main，屏幕分享的流类型是 aux（有个例外，由于 WebRTC 端同时只支持一路上行，所以 WebRTC 上屏幕分享的流类型也是 main）。
 - `streamid = bizid_MD5 (房间号_userId_流类型)`，即由`bizid`、`_`以及`“房间号_userId_流类型”计算 MD5 的结果`拼接而成。
 
@@ -86,7 +83,6 @@ http://[bizid].liveplay.myqcloud.com/live/[streamid].flv
 | 独立画面 | 极速模式（推荐） | **2s - 3s** |
 | 混合画面 | 极速模式（推荐） | **4s - 5s** |
 
-![](https://main.qcloudimg.com/raw/63c4fbd1ddc006f660c4d1f13ae1b076.jpg)
 
 如果您在实测中看到的延时比上表中的要大，可以按照如下指引来优化延时：
 
