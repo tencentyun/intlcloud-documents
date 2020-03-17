@@ -1,4 +1,4 @@
-This release incorporates the following features:：
+This release incorporates the following features:
 
 **1. Supports Elasticsearch 7.5**
 
