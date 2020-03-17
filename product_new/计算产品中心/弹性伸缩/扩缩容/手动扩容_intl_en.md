@@ -1,4 +1,4 @@
-﻿Beside adding and removing instances automatically, AS also allows you to add and remove instances manually.
+Beside adding and removing instances automatically, AS also allows you to add and remove instances manually.
 - [Adding existing CVM instances to a scaling group](#func1)
 - [Modifying the desired capacity of a scaling group to implement one-click scale out](#func2)
 
@@ -38,7 +38,7 @@ For the following scenario, we recommended to use launch configuration as instru
 Execute the following steps to configure a CVM template as the launch configuration, and to configure the corresponding scaling group.
 
 1. Create a custom image. For more information, see [Creating a custom image](https://intl.cloud.tencent.com/document/product/213/4942).
- >? 
+ >
  >- Instances added later for scale-out will be configured using this image.
  >- Suggested steps to create a custom image: You can deploy your services on an existing CVM or a new CVM, set the services to be launched on the boot of the operating system, and create a custom image.
 2. For information about creating a launch configuration based on this custom image, see [Creating a launch configuration](https://intl.cloud.tencent.com/document/product/377/8544).

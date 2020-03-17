@@ -8,10 +8,10 @@
 #### 环境依赖
 
 1. 该 SDK 只适用于微信小程序环境。
-2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域信息](https://intl.intl.cloud.tencent.com/document/product/436/6224)。
+2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域信息](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) 获取您的项目 SecretId 和 SecretKey。
 
->关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
+> ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 #### 安装 SDK
 
@@ -70,12 +70,15 @@ var cos = new COS({
             dataType: 'json',
             success: function (result) {
                 var data = result.data;
-                var credentials = data.credentials;
+                var credentials = data && data.credentials;
+                if (!data || !credentials) return console.error('credentials invalid');
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
                     XCosSecurityToken: credentials.sessionToken,
-                    ExpiredTime: data.expiredTime,
+                    // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
+                    StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
+                    ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
                 });
             }
         });
@@ -100,7 +103,7 @@ var cos = new COS({
     getAuthorization: function (options, callback) {
         // 服务端 JS 和 PHP 示例：https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/
         // 服务端其他语言参考 COS STS SDK ：https://github.com/tencentyun/qcloud-cos-sts-sdk
-        // STS 详细文档指引看：https://intl.intl.cloud.tencent.com/document/product/436/14048
+        // STS 详细文档指引看：https://intl.cloud.tencent.com/document/product/436/14048
         wx.request({
             url: 'https://example.com/server/sts.php',
             data: {
@@ -108,19 +111,22 @@ var cos = new COS({
             },
             success: function (result) {
                 var data = result.data;
-                var credentials = data.credentials;
+                var credentials = data && data.credentials;
+                if (!data || !credentials) return console.error('credentials invalid');
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
                     XCosSecurityToken: credentials.sessionToken,
-                    ExpiredTime: data.expiredTime,
+                    // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
+                    StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
+                    ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
                 });
             }
         });
     }
 });
 ```
->临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.intl.cloud.tencent.com/document/product/436/14048)。
+>?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 - 格式二（推荐）：细粒度控制权限，后端通过获取临时密钥给到前端，前端只有相同请求才重复使用临时密钥，后端可以通过 Scope 细粒度控制权限。
 
@@ -134,12 +140,15 @@ var cos = new COS({
             data: JSON.stringify(options.Scope),
             success: function (result) {
                 var data = result.data;
-                var credentials = data.credentials;
+                var credentials = data && data.credentials;
+                if (!data || !credentials) return console.error('credentials invalid');
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
                     XCosSecurityToken: credentials.sessionToken,
-                    ExpiredTime: data.expiredTime,
+                    // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
+                    StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
+                    ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
                     ScopeLimit: true, // 细粒度控制权限需要设为 true，会限制密钥只在相同请求时重复使用
                 });
             }
@@ -148,7 +157,7 @@ var cos = new COS({
 });
 ```
 
->临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.intl.cloud.tencent.com/document/product/436/14048)。
+>?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 - 格式三（不推荐）：前端每次请求前都需要通过 getAuthorization 获取签名，后端使用固定密钥或临时密钥计算签名返回给前端。该格式分块上传权限不易控制，不推荐您使用此格式。
 
@@ -156,13 +165,14 @@ var cos = new COS({
 var cos = new COS({
     // 必选参数
     getAuthorization: function (options, callback) {
-        // 服务端获取签名，请参考对应语言的 COS SDK：https://cloud.tencent.com/document/product/436/6474
+        // 服务端获取签名，请参考对应语言的 COS SDK：https://intl.cloud.tencent.com/document/product/436/6474
         // 注意：这种有安全风险，后端需要通过 method、pathname 严格控制好权限，例如不允许 put / 等
         wx.request({
             url: 'https://example.com/server/auth.php',
             data: JSON.stringify(options.Scope),
             success: function (result) {
                 var data = result.data;
+                if (!data || !data.authorization) return console.error('authorization invalid');
                 callback({
                     Authorization: data.authorization,
                     // XCosSecurityToken: data.sessionToken, // 如果使用临时密钥，需要把 sessionToken 传给 XCosSecurityToken
@@ -217,7 +227,7 @@ getAuthorization 的回调参数说明：
 | -------- | ------------------------------------------------------------ | -------- |
 | options  | 获取临时密钥需要的参数对象                                   | Function |
 | - Bucket | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   |
-| - Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.intl.cloud.tencent.com/document/product/436/6224) | String   |
+| - Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String   |
 | callback | 临时密钥获取完成后的回传方法                                 | Function |
 
 获取完临时密钥后，callback 回传一个对象，回传对象的属性列表如下：
@@ -227,7 +237,8 @@ getAuthorization 的回调参数说明：
 | TmpSecretId       | 获取回来的临时密钥的 tmpSecretId                             | String | 是   |
 | TmpSecretKey      | 获取回来的临时密钥的 tmpSecretKey                            | String | 否   |
 | XCosSecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段 | String | 否   |
-| ExpiredTime       | 获取回来的临时密钥的 expiredTime，超时时间                   | String | 否   |
+| StartTime         | 密钥获取的开始时间，即获取时刻的时间戳，单位秒，startTime，如：1580000000，用于签名开始时间，传入该参数可避免前端时间偏差签名过期问题 | String | 否   |
+| ExpiredTime       | 获取回来的临时密钥的 expiredTime，超时时刻的时间戳，单位秒，如：1580000900 | String | 否   |
 
 #### getAuthorization 回调函数说明（使用格式二）
 
@@ -277,7 +288,7 @@ cos.putBucket({
 });
 ```
 
->如果需要在小程序创建存储桶，但存储桶名称未知时，无法将存储桶名称配置为域名白名单，可以使用后缀式调用，相关处理措施请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/10687#.E5.B0.8F.E7.A8.8B.E5.BA.8F.E9.87.8C.E8.AF.B7.E6.B1.82.E5.A4.9A.E4.B8.AA.E5.9F.9F.E5.90.8D.EF.BC.8C.E6.88.96.E8.80.85.E5.AD.98.E5.82.A8.E6.A1.B6.E5.90.8D.E7.A7.B0.E4.B8.8D.E7.A1.AE.E5.AE.9A.EF.BC.8C.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.E7.99.BD.E5.90.8D.E5.8D.95.E9.85.8D.E7.BD.AE.E5.92.8C.E9.99.90.E5.88.B6.E9.97.AE.E9.A2.98.EF.BC.9F)。
+> !如果需要在小程序创建存储桶，但存储桶名称未知时，无法将存储桶名称配置为域名白名单，可以使用后缀式调用，相关处理措施请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/10687#.E5.B0.8F.E7.A8.8B.E5.BA.8F.E9.87.8C.E8.AF.B7.E6.B1.82.E5.A4.9A.E4.B8.AA.E5.9F.9F.E5.90.8D.EF.BC.8C.E6.88.96.E8.80.85.E5.AD.98.E5.82.A8.E6.A1.B6.E5.90.8D.E7.A7.B0.E4.B8.8D.E7.A1.AE.E5.AE.9A.EF.BC.8C.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.E7.99.BD.E5.90.8D.E5.8D.95.E9.85.8D.E7.BD.AE.E5.92.8C.E9.99.90.E5.88.B6.E9.97.AE.E9.A2.98.EF.BC.9F)。
 
 ### 查询存储桶列表
 
@@ -329,7 +340,7 @@ cos.getBucket({
 
 ### 下载对象
 
->该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/30598) 文档。
+> !该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/30598) 文档。
 
 ```js
 cos.getObject({
