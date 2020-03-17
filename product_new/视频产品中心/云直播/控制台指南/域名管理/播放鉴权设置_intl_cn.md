@@ -11,11 +11,11 @@ URL 鉴权的原理是腾讯云直播客户通过鉴权配置生成加密 URL，
 
 ## 操作步骤
 1. 选择左侧菜单栏【域名管理】，单击【管理】或需配置的播放域名进入域名管理。
-![](https://main.qcloudimg.com/raw/53bb5f5b829f2637c1bae1d1543226a4.png)
+![](https://main.qcloudimg.com/raw/53cc67e72f3f9a2e180dcc3f2b5866a9.png)
 2. 在【访问控制】菜单栏下，可看到【鉴权配置】功能项，此功能默认关闭，单击【编辑】即可配置播放鉴权。
-![](https://main.qcloudimg.com/raw/a168ea2aaceb50f5fcd9b033054e786d.png)
+![](https://main.qcloudimg.com/raw/28d4ceb1de74af24c3fdca8f7884c6c1.png)
 3. 开启播放鉴权后，按照您的需求填写【鉴权 Key】和【有效时间】。
-![](https://main.qcloudimg.com/raw/e457378b5f3d11e20a6d099871e317d5.png)
+![](https://main.qcloudimg.com/raw/65521c61a9f37172d4e67827e71a16f1.png)
  - **鉴权 Key**：用户自定义设置，支持大小写字母和数字。Key 包含主 Key 和备 Key，主 Key 必填、备 Key 选填，主备 Key 可实现当 Key 泄露时平滑更换 Key 不影响业务。
  - **有效时间**：签名的有效时间，时间戳为十六进制 UNIX 时间。
 
