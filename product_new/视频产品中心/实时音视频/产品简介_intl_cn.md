@@ -2,7 +2,7 @@
 
 ## 产品架构
 腾讯云实时音视频 TRTC 产品架构如下图所示：
-![](https://main.qcloudimg.com/raw/994580a65420c260395034a544f63868.png)
+![](https://main.qcloudimg.com/raw/52b6b3349d84fe61b2b8cc190522cfbb.png)
 
 ## 平台支持
 实时音视频是**业界真正实现全平台互通的解决方案**，具体平台支持情况如下表所示：
@@ -16,7 +16,7 @@
 | Web | 支持；详细兼容情况请参见 [快速集成（Web）](https://intl.cloud.tencent.com/document/product/647/35096)。| 支持 | 支持 |
 | 微信小程序 | 支持；兼容小程序基础库版本1.7.0及以上、微信 iOS 版本6.5.21及以上、微信 Android 版本6.5.19及以上。 | 支持 | 支持 |
 
->?
+>
 - 下载各平台 SDK 请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/647/34615)。
 - 体验各平台 Demo 请参见 [Demo 体验](https://intl.cloud.tencent.com/document/product/647/35076)。
 - 下载各平台 Demo 源码请访问 [实时音视频控制台](https://console.cloud.tencent.com/rav)，在**应用列表**页面选择已经创建的应用卡片，进入**应用详情**页面，然后单击【快速上手】。
