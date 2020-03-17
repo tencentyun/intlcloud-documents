@@ -1,7 +1,7 @@
 To cater to users' needs for recording in scenarios such as evidence collection, quality inspection, audit, and archiving, TRTC offers the on-cloud recording feature based on [LVB](https://intl.cloud.tencent.com/document/product/267). You can obtain the recorded files on the [VOD](https://intl.cloud.tencent.com/document/product/266) platform.
 
 
->?
+>
 >- The on-cloud recording feature is disabled by default. To enable it, you need to activate [LVB](https://console.cloud.tencent.com/live) and [VOD](https://console.cloud.tencent.com/vod) services.
 >- Using Cloud Recording involves a recording fee for LVB and storage fee for VOD. If you play or download the recorded video files, you will be charged the data usage fee (video acceleration) for VOD. For more information on the billing rules, please see [On-Cloud Recording Billing](https://intl.cloud.tencent.com/document/product/647/34614#.E4.BA.91.E7.AB.AF.E5.BD.95.E5.88.B6.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8). 
 
