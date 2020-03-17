@@ -159,7 +159,7 @@ Attach the above policy and signature-related information to the form as describ
 
 | Name | Description | Type | Required |
 | --- | --- | --- | --- |
-| policy | Base64-encoded policy content | string | 是 |
+| policy | Base64-encoded policy content | string | Yes |
 | q-sign-algorithm | Signature hash algorithm, fixed as sha1 | string | Yes |
 q-ak | SecretId mentioned above | string | Yes |
 | q-key-time | KeyTime generated above | string | yes |
