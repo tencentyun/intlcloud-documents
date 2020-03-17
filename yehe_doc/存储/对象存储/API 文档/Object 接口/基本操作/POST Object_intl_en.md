@@ -218,7 +218,7 @@ In addition to common response headers, this API also returns the following resp
 
 | Name | Description | Type |
 | --- | --- | --- |
-Location | <li> When using the success_action_redirect form field, the value of this response header is the URL specified by success_action_redirect, with bucket, key, and etag parameters appended. For related examples, see [Case 8](# step8) in this document <br> <li>If the success_action_redirect form field is not used, the value of this response header is the complete URL address for object access. For related examples, see [Case 1](# step1) | string |
+Location | <li> When using the success_action_redirect form field, the value of this response header is the URL specified by success_action_redirect, with bucket, key, and etag parameters appended. For related examples, see [Case 8](#step8) in this document <br> <li>If the success_action_redirect form field is not used, the value of this response header is the complete URL address for object access. For related examples, see [Case 1](#step1) | string |
 
 **Versioning-related Headers**
 
