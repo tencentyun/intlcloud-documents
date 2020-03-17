@@ -13,12 +13,13 @@ TRTC **supports a wide range of platforms**. The following lists how it is compa
 | Android | Android 4.1 (SDK API Level 16) at minimum; Android 5.0 (SDK API Level 21) or above is recommended. | Yes | Yes |
 | Windows | Windows 7 or above | Yes | Yes |
 | Mac OS | Mac machines on Mac OS X10.10 or above | Yes | Yes |
-| Web | see [Quick Integration (Web)](https://cloud.tencent.com/document/product/647/16863). | Yes | Yes |
+| Web | see [Quick Integration (Web)](https://intl.cloud.tencent.com/document/product/647/35096). | Yes | Yes |
 | WeChat Mini Program | Mini Program Base Library 1.7.0 or above; WeChat on iOS 6.5.21 or above, or on Android 6.5.19 or above. | Yes | Yes |
 
->- To download TRTC SDK for various platforms, see [Downloading SDK](https://cloud.tencent.com/document/product/647/32689).
->- To try out Demos for various platforms, please see [Trying Out Demos](https://cloud.tencent.com/document/product/647/17021).
->- To download Demo source code for various platforms, log in to the [TRTC Console](https://console.cloud.tencent.com/rav), select a created application tab on the **Application List** page to go to the **Application Details** page, and then click **Getting Started**.
+>?
+- To download TRTC SDK for various platforms, see [Downloading SDK](https://intl.cloud.tencent.com/document/product/647/34615).
+- To try out Demos for various platforms, please see [Trying Out Demos](https://intl.cloud.tencent.com/document/product/647/35076).
+- To download Demo source code for various platforms, log in to the [TRTC Console](https://console.cloud.tencent.com/rav), select a created application tab on the **Application List** page to go to the **Application Details** page, and then click **Getting Started**.
 
 ## Benefits
 

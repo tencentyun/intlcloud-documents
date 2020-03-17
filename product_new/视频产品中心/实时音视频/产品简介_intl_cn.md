@@ -13,12 +13,12 @@
 | Android | 支持；最低兼容 Android 4.1（SDK API Level 16），建议使用 Android 5.0 （SDK API Level 21）及以上版本。 | 支持 | 支持 |
 | Windows | 支持；兼容 Windows 7 及以上版本。 | 支持 | 支持 |
 | Mac OS | 支持；兼容 Mac OS X10.10 及以上版本的 Mac 真机。 | 支持 | 支持 |
-| Web | 支持；详细兼容情况请参见 [快速集成（Web）](https://cloud.tencent.com/document/product/647/16863)。| 支持 | 支持 |
+| Web | 支持；详细兼容情况请参见 [快速集成（Web）](https://intl.cloud.tencent.com/document/product/647/35096)。| 支持 | 支持 |
 | 微信小程序 | 支持；兼容小程序基础库版本1.7.0及以上、微信 iOS 版本6.5.21及以上、微信 Android 版本6.5.19及以上。 | 支持 | 支持 |
 
 >?
-- 下载各平台 SDK 请参见 [SDK 下载](https://cloud.tencent.com/document/product/647/32689)。
-- 体验各平台 Demo 请参见 [Demo 体验](https://cloud.tencent.com/document/product/647/17021)。
+- 下载各平台 SDK 请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/647/34615)。
+- 体验各平台 Demo 请参见 [Demo 体验](https://intl.cloud.tencent.com/document/product/647/35076)。
 - 下载各平台 Demo 源码请访问 [实时音视频控制台](https://console.cloud.tencent.com/rav)，在**应用列表**页面选择已经创建的应用卡片，进入**应用详情**页面，然后单击【快速上手】。
 
 ## 产品优势
