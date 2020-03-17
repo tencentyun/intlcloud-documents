@@ -2,7 +2,6 @@
 
 Before a video call is made, it is recommended to test the devices such as camera and mic; otherwise, it is difficult to find device problems when the user actually makes a call.
 
-<img style="border:0; max-width:100%; height:auto; box-sizing:content-box; box-shadow: 0px 0px 0px #ccc; margin: 0px 0px 0px 0px;" src="https://main.qcloudimg.com/raw/fced7778482de4edfbe94bfcf8ec5f20.jpg" />
 
 
 ## Platforms That Support This Feature
