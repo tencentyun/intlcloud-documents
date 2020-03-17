@@ -16,8 +16,8 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32396">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32173">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
       <td style="text-align:center">1.90M（arm64）</td>
    </tr>
      <tr>
@@ -25,8 +25,8 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32166">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32175">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
       <td style="text-align:center">jar：820K<br> so(armv7)：4.8M<br>so(arm64)：5.7M</td>
    </tr>
      <tr>
@@ -34,8 +34,8 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_cplusplus_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32397">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32178">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
       <td style="text-align:center">12.7M（C++ x86）<br>15.6M（C++ x64）</td>
    </tr>
      <tr>
@@ -43,8 +43,8 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_csharp_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32397">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32178">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
       <td style="text-align:center">13.8M（C# x64）<br>13.3M（C# x86）</td>
    </tr>
      <tr>
@@ -52,8 +52,8 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_mac_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32396">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32176">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35094">DOC</a></td>
       <td style="text-align:center">2.05M（arm64）</td>
    </tr>
      <tr>
@@ -61,8 +61,8 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_web_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/H5_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32398">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/16863">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35090">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
    <tr>
@@ -70,8 +70,8 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/38548">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/38549">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35089">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35097">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
    <tr>
@@ -79,14 +79,14 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TRTC_WXMini_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32399">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32183">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35087">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
 </table>
 
 >? 
-> - 阅读文档 [如何缩减安装包体积](https://cloud.tencent.com/document/product/647/34400) 了解如何减少 SDK 带来的安装包体积增量。
+> - 阅读文档 [如何缩减安装包体积](https://intl.cloud.tencent.com/document/product/647/35165) 了解如何减少 SDK 带来的安装包体积增量。
 > - 扫码关注公众号，了解 SDK 的版本更新以及最新的技术动态。
 >   ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
 > 
@@ -94,7 +94,7 @@
 <span id="Professional"></span>
 ## 专业版（Professional）
 
-专业版集合了包含 TRTC 在内的多个音视频相关的核心功能，包括 [超级播放器（Player+）](https://cloud.tencent.com/product/player)、[移动直播（MLVB）](https://cloud.tencent.com/product/mlvb) 和 [短视频（UGSV）](https://cloud.tencent.com/product/ugsv) 等，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困恼。
+专业版集合了包含 TRTC 在内的多个音视频相关的核心功能，包括 超级播放器（Player+）、移动直播（MLVB） 和 短视频（UGSV）等，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困恼。
 
 <table>
    <tr>
@@ -111,7 +111,7 @@
       <td style="text-align:center"><a href="https://github.com/tencentyun/LiteAVProfessional_iOS">Github</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center">4.08M（arm64）</td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/34400">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">DOC</a></td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
@@ -119,7 +119,7 @@
       <td style="text-align:center"><a href="https://github.com/tencentyun/LiteAVProfessional_Android">Github</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center">jar：1.5M<br> so(armeabi)：6.5M<br> so(armv7)：6.1M<br>so(arm64)：7.3M</td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/34400">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">DOC</a></td>
    </tr>
 </table>
 
@@ -144,14 +144,14 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_enterprise") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center"> 6.15M（arm64）</td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/34400">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">DOC</a></td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_enterprise") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center"> jar：2.3M<br>so(armeabi)：20.4M</td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/34400">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35165">DOC</a></td>
    </tr>
 </table>
 
@@ -166,10 +166,10 @@
   <tr>
     <th width="100px" style="text-align:center">功能模块</th>
     <th width="100px" style="text-align:center">功能项</th>
-    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/454/7873">直播精简版</a><br>LiteAV_Smart</th>
-    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/584/9366">短视频版</a><br>LiteAV_UGC</th>
-    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32689">TRTC版</a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/881/20205">播放器版</a><br>LiteAV_Player</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/454/7873">直播精简版</a><br>LiteAV_Smart</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/584/9366">短视频版</a><br>LiteAV_UGC</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC版</a><br>LiteAV_TRTC</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/881/20205">播放器版</a><br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">专业版</a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">企业版</a><br>Enterprise</th>
   </tr>

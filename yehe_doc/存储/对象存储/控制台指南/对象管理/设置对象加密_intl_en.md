@@ -18,7 +18,7 @@ You can encrypt the objects stored in buckets on COS console to prevent data lea
 ![](https://main.qcloudimg.com/raw/05c7a0e867badbd56242b93f6425561d.png)
 5. Scroll down to find the [Server-Side Encryption] configuration item and select the corresponding encryption method. Currently, two encryption methods are supported:
  - SSE-COS: Server-side encryption with a key managed by COS. For more information on SSE-COS encryption, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145)。
- - SSE-KMS: Server-side encryption with a key managed by Tencent Cloud Key Management System (KMS). You can use the default key or create a key. For more information on keys, see [Create KMS Key](https://cloud.tencent.com/document/product/573/875). For more information on SSE-KMS, see [SSE-KMS Encryption](https://intl.cloud.tencent.com/document/product/436/18145).
+ - SSE-KMS: Server-side encryption with a key managed by Tencent Cloud Key Management System (KMS). You can use the default key or create a key. For more information on keys, see [Create KMS Key](https://intl.cloud.tencent.com/document/product/1030/31971). For more information on SSE-KMS, see [SSE-KMS Encryption](https://intl.cloud.tencent.com/document/product/436/18145).
 ![](https://main.qcloudimg.com/raw/48c8b3a3d32170db7172397398c8a883.png)
 5. Click **Save**.
 7. If you need to configure encryption for multiple objects in batches, you can check multiple objects, and then select [Modify Encryption Method] under [More Actions].

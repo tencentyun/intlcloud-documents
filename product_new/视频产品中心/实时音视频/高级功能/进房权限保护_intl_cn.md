@@ -17,7 +17,7 @@ privateMapKey 是 TRTCParamEnc 中的一个可选字段，它的作用是让腾�
 
 ### 与UserSig的区别
 
-- [**UserSig**](https://cloud.tencent.com/document/product/647/17275) 
+- [**UserSig**](https://intl.cloud.tencent.com/document/product/647/35166) 
 TRTCParamEnc 的必选项，作用是检查当前用户是否有权使用 TRTC 云服务，用于防止攻击者盗用您的 sdkappid 账号内的流量。
 
 - **privateMapKey**

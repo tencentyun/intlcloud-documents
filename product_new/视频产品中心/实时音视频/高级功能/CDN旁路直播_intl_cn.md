@@ -6,7 +6,7 @@
 
 
 ## Demo
-我们在实时音视频 [Demo](https://cloud.tencent.com/document/product/647/17021) 中加入了旁路直播功能，您可以在视频通话的过程中单击【更多功能】找到该功能的体验入口（播放器 TXLivePlayer 的下载地址在 [移动直播页面](https://cloud.tencent.com/document/product/454/6555)）。
+我们在实时音视频 [Demo](https://intl.cloud.tencent.com/document/product/647/35076) 中加入了旁路直播功能，您可以在视频通话的过程中单击【更多功能】找到该功能的体验入口（播放器 TXLivePlayer 的下载地址在 [移动直播页面](https://intl.cloud.tencent.com/document/product/647/35076)）。
 ![](https://main.qcloudimg.com/raw/1d663f77c71bee9914b60609edaf1fef.jpg)
 
 ## 示例代码
@@ -67,14 +67,14 @@ http://[bizid].liveplay.myqcloud.com/live/[streamid].flv
  - 各个子画面的摆放位置和大小。
  - 混合画面的画面质量和编码参数。
 
-详细配置方法请参考 [云端混流转码](https://cloud.tencent.com/document/product/647/16827)。
+详细配置方法请参考 [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618)。
 >! `setMixTranscodingConfig` 并不是在终端进行混流，而是将混流配置发送到云端，并在云端服务器进行混流和转码。由于混流和转码都需要对原来的音视频数据进行解码和二次编码，所以需要更长的处理时间。因此，混合画面的实际观看时延要比独立画面的多出1s - 2s。
 
 ### 步骤4：对接播放
 
 我们推荐以 `http` 为前缀且以 `.flv` 为后缀的 **http - flv** 地址，该地址的播放具有时延低、秒开效果好且稳定可靠的特点。播放器推荐使用已经打包在 TRTC SDK 里的 TXLivePlayer 播放器，该播放器的参考文档为：
-- [TXLivePlayer(iOS)](https://cloud.tencent.com/document/product/454/7880)
-- [TXLivePlayer(Android)](https://cloud.tencent.com/document/product/454/7886)
+- TXLivePlayer(iOS)
+- TXLivePlayer(Android)
 
 
 ### 步骤5：优化延时
@@ -94,7 +94,7 @@ http://[bizid].liveplay.myqcloud.com/live/[streamid].flv
 如果使用普通的 ijkplayer 或者 ffmpeg 播放这些直播流地址，时延一般是不可控的，因为他们都是基于 ffmpeg 的内核包装出的播放器，缺乏延时调控的能力。TXLivePlayer 有一个自研的播放引擎，具备延时调控的能力。
 
 - **设置 TXLivePlayer 的播放模式为极速模式**
-可以通过设置 TXLivePlayerConfig 的三个参数来实现极速模式，以 [iOS](https://cloud.tencent.com/document/product/454/7880#Delay) 为例，设置代码如下：
+可以通过设置 TXLivePlayerConfig 的三个参数来实现极速模式，以 iOS 为例，设置代码如下：
     ```
     // 设置 TXLivePlayer 的播放模式为极速模式
     TXLivePlayerConfig * config = [[TXLivePlayerConfig alloc] init];

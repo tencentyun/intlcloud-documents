@@ -11,7 +11,7 @@
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |     &#10003;  |    &#10003;    |    &#10003;   |    &#10003;    |    ×    |   ×    |
 
->!微信小程序和 H5 上暂时还不支持移动和 PC 端的混流接口（setMixTranscodingConfig），不过您可以使用云直播的 [REST API](https://cloud.tencent.com/document/product/267/8832) 实现该功能。
+>!微信小程序和 H5 上暂时还不支持移动和 PC 端的混流接口（setMixTranscodingConfig），不过您可以使用云直播的 [REST API](https://intl.cloud.tencent.com/document/product/267/8832) 实现该功能。
 
 
 ## 混流的原理
@@ -27,7 +27,7 @@
 由于画面的拼接是需要您来指定各个画面的相对位置的，所以需要您在启动混流前设置 `TRTCTranscodingConfig` 参数。
 
 - **Objective-C**
- 详细的混流转码配置定义请参见 [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32261#trtctranscodingconfig)。
+ 详细的混流转码配置定义请参见 [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647#trtctranscodingconfig)。
  
 ``` Objective-C
 //云端混流转码的示例代码
@@ -62,7 +62,6 @@
 ```
 
 - **Java**
- 详细的混流转码配置定义请参见 [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32266#trtctranscodingconfig)。
  
 ``` java
 //开启云端混流转码
@@ -105,7 +104,6 @@ public void enableTranscoding() {
 ```
 
 - **C++**
- 详细的混流转码配置定义请参见 [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32271#trtctranscodingconfig)。
  
 ``` C++
 // 开启云端混流转码
@@ -151,7 +149,6 @@ void enableTranscoding()
 ```
 
 - **C#**
- 详细的混流转码配置定义请参见 [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/36780#trtctranscodingconfig)。
  
 ```c#
 // 开启云端混流转码
