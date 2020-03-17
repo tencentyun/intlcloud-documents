@@ -5,7 +5,6 @@
 - 如何实现横屏模式，例如：多人视频会议 App（类似小鱼易连）往往都是采用横屏模式。
 - 如何自定义控制本地画面和远程画面的旋转方向和填充模式。
 
-![](https://main.qcloudimg.com/raw/f564a9a4df2b4df215e43d4b78a93d40.jpg)
 
 ## 平台支持
 
@@ -32,7 +31,7 @@ iOS 平台则可以直接在 XCode 的 【General】>【Deployment Info】>【De
 }
 ```
 
-> CSDN 上有一篇文章 [iOS横竖屏旋转及其基本适配方法](https://blog.csdn.net/DreamcoffeeZS/article/details/79037207)，详细介绍了 iOS 平台中关于屏幕方向的一些开发经验。
+> CSDN 上有一篇文章 iOS横竖屏旋转及其基本适配方法，详细介绍了 iOS 平台中关于屏幕方向的一些开发经验。
 
 在 Android 平台上，通过指定 activity 的 `screenOrientation` 属性为 portrait，即可指定该界面为竖屏模式：
 ```xml
@@ -72,7 +71,6 @@ TRTC SDK 本身提供了大量的接口函数可以操控本地和远程画面�
 | setRemoteViewFillMode | 远端视频画面的填充模式 | 是裁剪还是留黑边|
 | setVideoEncoderRotation | 设置编码器输出的画面顺时针旋转角度 | 目前仅支持180度旋转，即上下颠倒|
 
-![](https://main.qcloudimg.com/raw/5382e78586d74c0c9a2b8d407d7db33e.jpg)
 
 
 ## GSensorMode
