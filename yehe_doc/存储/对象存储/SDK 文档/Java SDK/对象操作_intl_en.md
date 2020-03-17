@@ -150,7 +150,7 @@ public PutObjectResult putObject(PutObjectRequest putObjectRequest)
 Request member description:
 
 | Request Member | Set Method | Description | Type |
-| ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
+| ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
 | bucketName | Constructor or set method | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
 | key | Constructor or set method | The key is the unique identifier of the object in the bucket. <br>For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is doc/picture.jpg, see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | file | Constructor or set method | Local File | File | No |
