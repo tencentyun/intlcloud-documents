@@ -5,7 +5,7 @@ The following describes how to play the audio/video streams in a TRTC room on Te
 
 
 ## Demo
-The relayed live streaming feature has been incorporated into the TRTC [Demo](https://intl.cloud.tencent.com/document/product/647/17021). During a video call, click **More** to locate the feature (download TXLivePlayer from MLVB Demo).
+The relayed live streaming feature has been incorporated into the TRTC [Demo](https://intl.cloud.tencent.com/document/product/647/35076). During a video call, click **More** to locate the feature (download TXLivePlayer from MLVB Demo).
 
 ## Sample Code
 
