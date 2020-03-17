@@ -85,7 +85,7 @@ The `texture` scheme needs to pass OpenGL textures to the TRTC SDK. In order to 
 | openGLBaseModule/GLFilter.java| There are many types of textures on Android, and they cannot be mixed. This class encapsulates some basic operations for texture conversion. |
 | openGLBaseModule/GLThread.java| Encapsulates a basic OpenGL thread. Generally, OpenGL rendering on Android needs to be driven by an independent thread. |
 
->! For resolutions above 640x360, the `texture` scheme is recommended so as to avoid excessive CPU utilization.
+> For resolutions above 640x360, the `texture` scheme is recommended so as to avoid excessive CPU utilization.
 
 
 **Sample code**: the code in `TestSendCustomVideoData.java` is quite complicated:
@@ -169,7 +169,7 @@ There is a parameter named `TRTCAudioFrame` in the `sendCustomAudioData` API, wh
 - The recommended duration of each frame of audio data is 20 ms. For a simple calculation, if the `sampleRate` is 48,000 and `channels` is 1 (mono), then the length of the `buffer` passed in each time `sendCustomAudioData` is called should be 48000 * 0.02s * 1 * 16 bits = 15360 bits = 1920 bytes.
 - `timestamp` can be 0. In this case, the SDK will automatically populate the audio timestamp. Therefore, in order to ensure the stability of the audio timestamp, please call `sendCustomAudioData` **evenly** (i.e., once every 20 ms); otherwise, the sound will be intermittent.
 
->!Using `sendCustomAudioData` may cause acoustic echo cancellation (AEC) to fail.
+>Using `sendCustomAudioData` may cause acoustic echo cancellation (AEC) to fail.
 
 ## Getting Raw Audio Data
 
@@ -186,7 +186,7 @@ This function will call back the sound data of each remote user, which is the da
 - **onMixedPlayAudioFrame**
 After all audio data is mixed, it will be called back by this function before being sent to the speaker for playback.
 
->!
+>
 1. Do not perform any time-consuming operation in this callback function. It is recommended to directly copy the data to another thread for processing; otherwise, intermittent sound or acoustic echo cancellation (AEC) failure may occur.
 2. The data called back by the above callback functions can only be read and copied but not modified; otherwise, various uncertain consequences may occur.
 
