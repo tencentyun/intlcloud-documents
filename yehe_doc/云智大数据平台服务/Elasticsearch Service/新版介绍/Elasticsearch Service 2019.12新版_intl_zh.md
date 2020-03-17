@@ -4,13 +4,13 @@
 
 **1.支持Elasticsearch 6.8版本**
 
-关于6.8版本请参见 
+关于6.8版本请参见：
 
 [6.8.0 release highlights](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/release-highlights-6.8.0.html)
 
 **2. 支持冷热分离架构**
 
-通过冷热分离架构，在保证读写性能的同时，兼顾存储成本，相关原理和实践请参见
+通过冷热分离架构，在保证读写性能的同时，兼顾存储成本，相关原理和实践请参见：
 
 [冷热分离与索引生命周期管理](https://intl.cloud.tencent.com/document/product/845/34890)
 
