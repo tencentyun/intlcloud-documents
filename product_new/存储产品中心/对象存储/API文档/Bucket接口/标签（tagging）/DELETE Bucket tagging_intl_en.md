@@ -1,6 +1,6 @@
 ## Description
 
-COS supports setting tags for existing buckets. This API is used to delete existing tags of a specified bucket.
+COS supports deleting tags for existing buckets. This API is used to delete existing tags of a specified bucket.
 
 >  If you call the `DELETE Bucket tagging` API using a sub-account, please make sure that you have obtained the permission to use this API from the root account.
 

@@ -120,7 +120,7 @@ do {
 
 #### Feature
 
-This API (Put Object) is used to upload objects to the specified bucket. Uploading a local file or an input stream of known length to COS. It is suitable for uploading small image files (below 20MB), a maximum of 5GB (inclusive) is supported, please use [Multipart Upload](# .E5.88.86.E5.9D.97.E6.93.8D.E4.BD.) 9C) or [Advanced API](# .E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D. 90.EF.BC.89) to upload if more than 5GB.
+This API (Put Object) is used to upload objects to the specified bucket. Uploading a local file or an input stream of known length to COS. It is suitable for uploading small image files (below 20MB), a maximum of 5GB (inclusive) is supported, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.) 9C) or [Advanced API](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload if more than 5GB.
 
 - The file length and MD5 are checked by default during upload (see the sample code for disabling MD5 check).
 - If an object with the same key already exists in COS, it will be overwritten by the newly-uploaded one.
@@ -150,7 +150,7 @@ public PutObjectResult putObject(PutObjectRequest putObjectRequest)
 Request member description:
 
 | Request Member | Set Method | Description | Type |
-| ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
+| ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
 | bucketName | Constructor or set method | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String | Yes |
 | key | Constructor or set method | The key is the unique identifier of the object in the bucket. <br>For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is doc/picture.jpg, see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | Yes |
 | file | Constructor or set method | Local File | File | No |
@@ -912,7 +912,7 @@ public void setObjectAcl(SetObjectAclRequest setObjectAclRequest)
 
 #### Parameter Description
 
-- **方法3** 参数同时包含1和2，因此以方法3为例进行介绍。
+- The parameters in method 3, which cover those in method 1 and 2, are used in this example.
 
 | Parameter Name | Description | Type |
 | ------------------- | ------ | ------------------- |

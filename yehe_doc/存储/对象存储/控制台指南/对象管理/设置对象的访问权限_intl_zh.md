@@ -23,7 +23,3 @@ COS 提供基于对象维度的访问权限设置，且该权限优先级高于�
 6. 若您需要对多个对象进行批量设置或修改访问权限，可勾选多个对象，然后在【更多操作】下选择【修改访问权限】即可。
 ![](https://main.qcloudimg.com/raw/780dc4cdcc7e72d1fcb323dc7c14272c.png)
 
-
-## 视频教程
-以下视频为您详细介绍如何设置对象的访问权限：
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1824-20796?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>

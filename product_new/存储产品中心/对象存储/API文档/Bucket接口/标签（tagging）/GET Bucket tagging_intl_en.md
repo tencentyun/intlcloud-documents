@@ -1,6 +1,6 @@
 ## Description
 
-COS supports setting tags for existing buckets. This API is used to get existing tags of a specified bucket.
+COS supports getting tags for existing buckets. This API is used to get existing tags of a specified bucket.
 
 >  If you call the `GET Bucket tagging` API using a sub-account, please make sure that you have obtained the permission to use this API from the root account.
 

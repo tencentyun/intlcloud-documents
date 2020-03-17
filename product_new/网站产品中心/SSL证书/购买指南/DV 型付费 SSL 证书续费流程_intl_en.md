@@ -18,7 +18,7 @@ After renewal, the remaining available time of the original certificate and an e
 ### Starting certificate renewal
 
 1. For a paid DV certificate, the fast renewal option will become available 3 months before its expiration date. You can open the fast renewal window by clicking **Fast Renewal** in the "Status" column of the certificate in the certificate list in the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl).    
-![](https://main.qcloudimg.com/raw/e879a7c8313de8c4ee48d1157acb2227.png)
+
 2. In the SSL certificate renewal prompt window that pops up, confirm the information and click **Renew Now** to enter the renewal page. 
 
 ### Confirming renewal information and making payment
@@ -26,12 +26,10 @@ After renewal, the remaining available time of the original certificate and an e
 1. When renewing a certificate, you do not need to enter the certificate information again. A new certificate will be generated after the renewal, so you need to configure a CSR file for the new certificate.
    - You can automatically generate a CSR file through the system (**this option is recommended, and the CSR and private key can be generated**).
    - You can also upload a CSR file (**no private key can be generated with this option**).
-2. After confirming the information, select the renewal period and click **Pay** to enter the payment process as shown below:
-![](https://main.qcloudimg.com/raw/41e0203685862dd22800625594feaa88.png)
+2. After confirming the information, select the renewal period and click **Pay** to enter the payment process.
 3. Confirm the certificate information and click **Purchase** for payment.   
 
 ### Completing domain name identity verification
 
 1. After purchasing a certificate successfully, you can find a new certificate generated with the status of **To be verified** in the certificate list in the SSL Certificate Service Console. Then, you can click **Details** to enter the certificate details page.   
-2. The DNS verification value will be generated in the certificate details. You need to add that DNS record and wait for scan and verification by the CA. The certificate will be issued immediately after approval as shown below:
- ![](https://main.qcloudimg.com/raw/beb1b5ae08553a832cabe9c0cb881cc5.png)
+2. The DNS verification value will be generated in the certificate details. You need to add that DNS record and wait for scan and verification by the CA. The certificate will be issued immediately after approval.

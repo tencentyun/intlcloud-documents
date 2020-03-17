@@ -45,7 +45,7 @@ qcs:project_id:service_type:region:account:resource
 ```
 	 - Indicates all the resources under a product.
 ```
-	*
+       *
 ```
 
  - In certain scenarios, resource elements can be described with `*`, and the definitions are as follows. For more information, see the corresponding product documentation.

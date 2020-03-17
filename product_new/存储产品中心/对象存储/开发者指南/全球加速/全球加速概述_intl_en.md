@@ -1,7 +1,7 @@
 The global acceleration feature of Tencent Cloud COS utilizes a load balancing system based on Tencent's global traffic scheduling to intelligently route and parse user requests and select the optimal network linkage for nearby access. Backed by globally deployed Tencent Cloud data centers, it allows users across the world to quickly access your buckets and improves your business access success rate for a higher business stability and smoother user experience.
 
 
->Currently, the global acceleration feature of COS is in beta test. To try it out, [please submit an application for beta test eligibility](https://console.cloud.tencent.com/workorder/category).
+>At present, the global acceleration function has been launched to support public cloud regions inside and outside China. Financial cloud regions are not supported due to network isolation.
 
 ## Directions
 
