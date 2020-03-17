@@ -57,5 +57,5 @@ The generated playback URL is:
 ```
 http://www.test.com/live/test01.flv?txSecret=6cfcc16fa1eb1200c78b8296468b9180s&txTime=5c01d608
 ```
-The expiration time of this URL is 2018.12.01 08:30:00 + 12495 seconds, i.e., 2018.12.01 11:28:15 Beijing time.
+The expiration time of this URL is 2018.12.01 08:30:00 + 12495 seconds, i.e., 2018.12.01 11:58:15 Beijing time.
 If the authentication fails or the URL has expired, LVB will return an error of 403.

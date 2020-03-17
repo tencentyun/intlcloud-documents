@@ -178,7 +178,7 @@ function(err, data) { ... }
 
 #### Feature
 
-This API (PUT Object) is used to upload an object to a specified bucket. This operation requires the requester to have WRITE permission on the bucket. For upload, the object can have a maximum of 5GB, please use [Multipart Upload](# .E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](# .E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) for upload if greater than 5GB .
+This API (PUT Object) is used to upload an object to a specified bucket. This operation requires the requester to have WRITE permission on the bucket. For upload, the object can have a maximum of 5GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) for upload if greater than 5GB .
 
 >
 > 1. An object key (file name) cannot end with `/`; otherwise, the file will be recognized as a folder.
