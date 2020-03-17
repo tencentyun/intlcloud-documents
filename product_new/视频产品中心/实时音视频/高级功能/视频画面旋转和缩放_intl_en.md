@@ -31,7 +31,7 @@ You can also achieve this by implementing the `supportedInterfaceOrientationsFor
 }
 ```
 
-> For some development ideas about screen orientation on iOS, please see [Landscape/Portrait Screen Rotation and Its Basic Adaptation Method on iOS](https://blog.csdn.net/DreamcoffeeZS/article/details/79037207) on CSDN.
+> For some development ideas about screen orientation on iOS, please see Landscape/Portrait Screen Rotation and Its Basic Adaptation Method on iOS on CSDN.
 
 On the Android platform, you can configure the UI to be in portrait mode by specifying the `screenOrientation` attribute of the activity as `portrait`:
 ```xml
