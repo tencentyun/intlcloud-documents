@@ -78,7 +78,7 @@ Considering that screen rotation involves various adaptation factors of recordin
 
 This feature currently only supports 180-degree upside-down adaptive rotation, that is, when the user's phone is turned upside down by 180 degrees, the screen orientation presented to the viewer will still remain the same (90-degree or 270-degree adaptive rotation is not supported yet). This adaptation is implemented based on the direction adjustment of the encoder, so the recorded video as well as the video image displayed in WeChat Mini Program and HTML5 webpage can also maintain the original orientation.
 
-> ! Another implementation scheme of gravity sensing-based adaption is to carry the gravity direction of the current video in each video frame, and then adaptively adjust the rendering direction on the viewer's device. However, this scheme requires the introduction of additional transcoding resources in order to achieve the orientation of the recorded video as expected; therefore, it is not recommended.
+>  Another implementation scheme of gravity sensing-based adaption is to carry the gravity direction of the current video in each video frame, and then adaptively adjust the rendering direction on the viewer's device. However, this scheme requires the introduction of additional transcoding resources in order to achieve the orientation of the recorded video as expected; therefore, it is not recommended.
 
 
 
