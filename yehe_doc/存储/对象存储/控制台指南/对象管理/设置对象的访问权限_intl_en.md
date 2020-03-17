@@ -22,7 +22,3 @@ COS allows you to configure access permissions for objects, which have a higher 
 5. Click [Save] to configure the object access permissions.
 6. If you need to configure or modify access permissions for multiple objects in batches, you can check multiple objects and select [Modify Access Permissions] under [More Actions].
 
-
-## Video Tutorial
-The following video shows you how to configure permissions for objects:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1824-20796?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
