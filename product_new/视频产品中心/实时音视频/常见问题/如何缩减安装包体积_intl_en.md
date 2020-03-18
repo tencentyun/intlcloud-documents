@@ -47,4 +47,4 @@ Before playing videos or using other SDK features, you are prompted with a loadi
 - **Step 4: use API to load .so files**
 After waiting for all .so files to be in place, call the `setLibraryPath()` API that is the `TXLiveBase` class (LiteAVSDK’s earliest basic module) and set the target path of the downloaded .so files as SDK. After that, SDK will load the required .so files under these paths and enable the related features.
 
->! Do not use this method if your application is intended to be listed on Google Play because it could cause it to fail to be listed.
+> Do not use this method if your application is intended to be listed on Google Play because it could cause it to fail to be listed.
