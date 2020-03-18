@@ -56,15 +56,15 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCParams](https://intl.cloud.tencent.com/document/product/647#trtcparams) * | Room entry parameters. For more information, please see [TRTCParams](https://intl.cloud.tencent.com/document/product/647#trtcparams). |
-| scene | [TRTCAppScene](https://intl.cloud.tencent.com/document/product/647#trtcappscene) | Application scenario. Currently, only video call (`VideoCall`) and LVB (`Live) scenarios are supported. |
+| param | [TRTCParams](https://intl.cloud.tencent.com/document/product/647/35123#trtcparams) * | Room entry parameters. For more information, please see [TRTCParams](https://intl.cloud.tencent.com/document/product/647/35123#trtcparams). |
+| scene | [TRTCAppScene](https://intl.cloud.tencent.com/document/product/647/35123#trtcappscene) | Application scenario. Currently, only video call (`VideoCall`) and LVB (`Live) scenarios are supported. |
 
 __Overview__
 
-If room entry succeeded, the `onEnterRoom(result)` callback from [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate) will be received:
+If room entry succeeded, the `onEnterRoom(result)` callback from [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcclouddelegate) will be received:
 
 - If room entry succeeded, `result` will be a positive number (`result` > 0), indicating the time in milliseconds (ms) used for entering the room.
-- If room entry failed, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124).
+- If room entry failed, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35123/35124).
 
 
 
@@ -96,11 +96,11 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| role | [TRTCRoleType](https://intl.cloud.tencent.com/document/product/647#trtcroletype) | Target role, which is anchor by default. |
+| role | [TRTCRoleType](https://intl.cloud.tencent.com/document/product/647/35123#trtcroletype) | Target role, which is anchor by default. |
 
 __Overview__
 
-In the LVB scenario, a user may need to switch between "viewer" and "anchor" roles. You can use the `role` field in [TRTCParams](https://intl.cloud.tencent.com/document/product/647#trtcparams) before room entry to determine the role or use the `switchRole` API to switch roles after room entry.
+In the LVB scenario, a user may need to switch between "viewer" and "anchor" roles. You can use the `role` field in [TRTCParams](https://intl.cloud.tencent.com/document/product/647/35123#trtcparams) before room entry to determine the role or use the `switchRole` API to switch roles after room entry.
 
 
 ### connectOtherRoom
@@ -144,7 +144,7 @@ For the sake of compatibility of subsequent extended fields for cross-room call,
 - `userId`: If anchor A in room "001" wants to co-anchor with anchor B in room "002", the `userId` must be set to the `userId` of anchor B when anchor A calls `connectOtherRoom()`.
 
 
-The result of requesting cross-room call will be returned through the `onConnectOtherRoom()` callback in [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate).
+The result of requesting cross-room call will be returned through the `onConnectOtherRoom()` callback in [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcclouddelegate).
 
 
 <pre>
@@ -167,7 +167,7 @@ This API is used to exit cross-room call.
 
 __Overview__
 
-The result of exiting cross-room call will be returned through the `onDisconnectOtherRoom()` callback in [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate).
+The result of exiting cross-room call will be returned through the `onDisconnectOtherRoom()` callback in [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcclouddelegate).
 
 
 ### setDefaultStreamRecvMode
@@ -210,7 +210,7 @@ __Parameters__
 
 __Overview__
 
-When the first video frame starts to be rendered, you will receive the `onFirstVideoFrame(nil)` callback in [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate).
+When the first video frame starts to be rendered, you will receive the `onFirstVideoFrame(nil)` callback in [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcclouddelegate).
 
 
 ### startLocalPreview
@@ -228,7 +228,7 @@ __Parameters__
 
 __Overview__
 
-Before this method is called, `setCurrentCameraDevice` can be called first to select whether to use the macOS device's built-in camera or an external camera. When the first video frame starts to be rendered, you will receive the `onFirstVideoFrame(nil)` callback in [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate).
+Before this method is called, `setCurrentCameraDevice` can be called first to select whether to use the macOS device's built-in camera or an external camera. When the first video frame starts to be rendered, you will receive the `onFirstVideoFrame(nil)` callback in [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcclouddelegate).
 
 
 ### stopLocalPreview
@@ -348,7 +348,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) * | Video encoding parameters. For more information, please see the definition of [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) in `TRTCCloudDef.h`. |
+| param | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideoencparam) * | Video encoding parameters. For more information, please see the definition of [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideoencparam) in `TRTCCloudDef.h`. |
 
 __Overview__
 
@@ -366,7 +366,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647#trtcnetworkqosparam) * | Network bandwidth limit parameters. For more information, please see the definition of [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647#trtcnetworkqosparam) in `TRTCCloudDef.h`. |
+| param | [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcnetworkqosparam) * | Network bandwidth limit parameters. For more information, please see the definition of [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcnetworkqosparam) in `TRTCCloudDef.h`. |
 
 __Overview__
 
@@ -384,7 +384,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647#trtcvideofillmode) | Fill (the image may be stretched or cropped) or fit (there may be black color in unmatched areas). |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideofillmode) | Fill (the image may be stretched or cropped) or fit (there may be black color in unmatched areas). |
 
 
 ### setRemoteViewFillMode
@@ -399,7 +399,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | NSString * | User ID. |
-| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647#trtcvideofillmode) | Fill (the image may be stretched or cropped) or fit (there may be black color in unmatched areas). |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideofillmode) | Fill (the image may be stretched or cropped) or fit (there may be black color in unmatched areas). |
 
 
 ### setLocalViewRotation
@@ -413,7 +413,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647#trtcvideorotation) | Rotation angles of 90, 180, and 270 degrees are supported. Default value: TRTCVideoRotation_0. |
+| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideorotation) | Rotation angles of 90, 180, and 270 degrees are supported. Default value: TRTCVideoRotation_0. |
 
 
 ### setRemoteViewRotation
@@ -428,7 +428,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | NSString * | User ID. |
-| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647#trtcvideorotation) | Rotation angles of 90, 180, and 270 degrees are supported. Default value: TRTCVideoRotation_0. |
+| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideorotation) | Rotation angles of 90, 180, and 270 degrees are supported. Default value: TRTCVideoRotation_0. |
 
 
 ### setVideoEncoderRotation
@@ -442,7 +442,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647#trtcvideorotation) | Currently, rotation angles of 0 and 180 degrees are supported. Default value: TRTCVideoRotation_0. |
+| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideorotation) | Currently, rotation angles of 0 and 180 degrees are supported. Default value: TRTCVideoRotation_0. |
 
 __Overview__
 
@@ -460,7 +460,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| mirror | [TRTCLocalVideoMirrorType](https://intl.cloud.tencent.com/document/product/647#trtclocalvideomirrortype) | Mirror mode. Default value: TRTCLocalVideoMirrorType_Auto. |
+| mirror | [TRTCLocalVideoMirrorType](https://intl.cloud.tencent.com/document/product/647/35123#trtclocalvideomirrortype) | Mirror mode. Default value: TRTCLocalVideoMirrorType_Auto. |
 
 
 ### setLocalViewMirror
@@ -506,7 +506,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| mode | [TRTCGSensorMode](https://intl.cloud.tencent.com/document/product/647#trtcgsensormode) | G-sensor mode. For more information, please see the definition of `TRTCGSensorMode`. Default value: TRTCGSensorMode_UIAutoLayout. |
+| mode | [TRTCGSensorMode](https://intl.cloud.tencent.com/document/product/647/35123#trtcgsensormode) | G-sensor mode. For more information, please see the definition of `TRTCGSensorMode`. Default value: TRTCGSensorMode_UIAutoLayout. |
 
 
 ### enableEncSmallVideoStream
@@ -521,7 +521,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | enable | BOOL | Whether to enable small image encoding. Default value: NO. |
-| smallVideoEncParam | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) * | Video parameters of small image stream. |
+| smallVideoEncParam | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideoencparam) * | Video parameters of small image stream. |
 
 __Return__
 
@@ -549,7 +549,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | NSString * | User ID. |
-| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | Video stream type, i.e., big image or small image. Default value: big image. |
+| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideostreamtype) | Video stream type, i.e., big image or small image. Default value: big image. |
 
 __Overview__
 
@@ -567,7 +567,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | Selects whether to watch big image or small image by default. Default value: big image. |
+| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideostreamtype) | Selects whether to watch big image or small image by default. Default value: big image. |
 
 __Overview__
 
@@ -633,7 +633,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| route | [TRTCAudioRoute](https://intl.cloud.tencent.com/document/product/647#trtcaudioroute) | Audio routing, i.e., whether the audio is output by speaker or receiver. Default value: TRTCAudioModeSpeakerphone. |
+| route | [TRTCAudioRoute](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioroute) | Audio routing, i.e., whether the audio is output by speaker or receiver. Default value: TRTCAudioModeSpeakerphone. |
 
 __Overview__
 
@@ -699,7 +699,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | TRTCAudioRecordingParams * | Audio recording parameters. For more information, please see [TRTCAudioRecordingParams](https://intl.cloud.tencent.com/document/product/647#trtcaudiorecordingparams). |
+| param | TRTCAudioRecordingParams * | Audio recording parameters. For more information, please see [TRTCAudioRecordingParams](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudiorecordingparams). |
 
 __Return__
 
@@ -732,7 +732,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| type | TRTCSystemVolumeType | System volume type. For more information, please see [TRTCSystemVolumeType](https://intl.cloud.tencent.com/document/product/647#trtcsystemvolumetype). |
+| type | TRTCSystemVolumeType | System volume type. For more information, please see [TRTCSystemVolumeType](https://intl.cloud.tencent.com/document/product/647/35123#trtcsystemvolumetype). |
 
 >?This API must be called before [startLocalAudio](#startlocalaudio) is called.
 
@@ -1078,7 +1078,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| beautyStyle | [TRTCBeautyStyle](https://intl.cloud.tencent.com/document/product/647#trtcbeautystyle) | Beauty filter style: smooth or natural. The smooth style has more obvious skin smoothing effect and is suitable for entertaining scenarios. |
+| beautyStyle | [TRTCBeautyStyle](https://intl.cloud.tencent.com/document/product/647/35123#trtcbeautystyle) | Beauty filter style: smooth or natural. The smooth style has more obvious skin smoothing effect and is suitable for entertaining scenarios. |
 | beautyLevel | NSInteger | Effect level of the beauty filter. Value range: 0–9; 0 indicates that the filter is disabled, and the greater the value, the more obvious the effect. |
 | whitenessLevel | NSInteger | Effect level of the brightening filter. Value range: 0–9; 0 indicates that the filter is disabled, and the greater the value, the more obvious the effect. |
 | ruddinessLevel | NSInteger | Effect level of the rosy skin filter. Value range: 0–9; 0 indicates that the filter is disabled, and the greater the value, the more obvious the effect. |
@@ -1132,7 +1132,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | image | TXImage * | Watermark image, **which must be a PNG image with transparent background.** |
-| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | `setWatermark` needs to be called twice if the screen sharing channel also requires a watermark. |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideostreamtype) | `setWatermark` needs to be called twice if the screen sharing channel also requires a watermark. |
 | rect | CGRect | Unified coordinates of the watermark relative to the encoded resolution. Value range of `x`, `y`, `width`, and `height`: 0–1. |
 
 __Overview__
@@ -1331,7 +1331,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | NSString * | User ID. |
-| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647#trtcvideofillmode) | Fill (the image may be stretched or cropped) or fit (there may be black color in unmatched areas). Default value: TRTCVideoFillMode_Fit. |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideofillmode) | Fill (the image may be stretched or cropped) or fit (there may be black color in unmatched areas). Default value: TRTCVideoFillMode_Fit. |
 
 __Overview__
 
@@ -1375,7 +1375,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| screenSource | [TRTCScreenCaptureSourceInfo](https://intl.cloud.tencent.com/document/product/647#trtcscreencapturesourceinfo) * | Specifies sharing source. |
+| screenSource | [TRTCScreenCaptureSourceInfo](https://intl.cloud.tencent.com/document/product/647/35123#trtcscreencapturesourceinfo) * | Specifies sharing source. |
 | rect | CGRect | Specify the area to be captured (if `CGRectZero` is passed in, the full screen will be shared by default). |
 | capturesCursor | BOOL | Whether to capture mouse cursor. |
 | highlight | BOOL | Whether to highlight the window being shared. |
@@ -1446,7 +1446,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) * | Secondary stream encoding parameters. For more information, please see the definition of [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) in `TRTCCloudDef.h`. |
+| param | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideoencparam) * | Secondary stream encoding parameters. For more information, please see the definition of [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideoencparam) in `TRTCCloudDef.h`. |
 
 __Overview__
 
@@ -1502,11 +1502,11 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| frame | [TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647#trtcvideoframe) * | Video data, which can be in PixelBuffer NV12, BGRA, or I420 format. |
+| frame | [TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideoframe) * | Video data, which can be in PixelBuffer NV12, BGRA, or I420 format. |
 
 __Overview__
 
-It is recommended to enter the following information for [TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647#trtcvideoframe) (other fields can be left empty):
+It is recommended to enter the following information for [TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideoframe) (other fields can be left empty):
 - pixelFormat: `TRTCVideoPixelFormat_NV12` is recommended.
 - bufferType: `TRTCVideoBufferType_PixelBuffer` is recommended.
 - pixelBuffer: common video data format on iOS.
@@ -1516,7 +1516,7 @@ It is recommended to enter the following information for [TRTCVideoFrame](https:
 - height: video image width, which needs to be set if `bufferType` is `NSData`.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
 
 >?
 >- The SDK has an internal frame rate control logic, and the target frame rate set in `setVideoEncoderParam` shall prevail. If the frame rate is too high, automatic frame discarding may occur; if too low, automatic frame interpolation will be implemented.
@@ -1534,9 +1534,9 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| delegate | id< [TRTCVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcvideorenderdelegate) > | Custom rendering callback. |
-| pixelFormat | [TRTCVideoPixelFormat](https://intl.cloud.tencent.com/document/product/647#trtcvideopixelformat) | Specifies the called back pixel format. |
-| bufferType | [TRTCVideoBufferType](https://intl.cloud.tencent.com/document/product/647#trtcvideobuffertype) | PixelBuffer: this can be directly converted to `UIImage` by using `imageWithCVImageBuffer`; NSData: this is memory-mapped video data. |
+| delegate | id< [TRTCVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcvideorenderdelegate) > | Custom rendering callback. |
+| pixelFormat | [TRTCVideoPixelFormat](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideopixelformat) | Specifies the called back pixel format. |
+| bufferType | [TRTCVideoBufferType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideobuffertype) | PixelBuffer: this can be directly converted to `UIImage` by using `imageWithCVImageBuffer`; NSData: this is memory-mapped video data. |
 
 __Return__
 
@@ -1563,9 +1563,9 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | NSString * | Specifies target `userId`. |
-| delegate | id< [TRTCVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcvideorenderdelegate) > | Custom rendering callback. |
-| pixelFormat | [TRTCVideoPixelFormat](https://intl.cloud.tencent.com/document/product/647#trtcvideopixelformat) | Specifies the called back pixel format. |
-| bufferType | [TRTCVideoBufferType](https://intl.cloud.tencent.com/document/product/647#trtcvideobuffertype) | PixelBuffer: this can be directly converted to `UIImage` by using `imageWithCVImageBuffer`; NSData: this is memory-mapped video data. |
+| delegate | id< [TRTCVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcvideorenderdelegate) > | Custom rendering callback. |
+| pixelFormat | [TRTCVideoPixelFormat](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideopixelformat) | Specifies the called back pixel format. |
+| bufferType | [TRTCVideoBufferType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideobuffertype) | PixelBuffer: this can be directly converted to `UIImage` by using `imageWithCVImageBuffer`; NSData: this is memory-mapped video data. |
 
 __Return__
 
@@ -1611,11 +1611,11 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647#trtcaudioframe) * | Audio data. |
+| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioframe) * | Audio data. |
 
 __Overview__
 
-It is recommended to enter the following information for [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647#trtcaudioframe):
+It is recommended to enter the following information for [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioframe):
 
 - data: audio frame buffer. Audio frame data must be in PCM format, and it is recommended to set sampling time to 20 ms for each frame. **For example, if the sample rate is 48000, then the frame length for mono channel will be `48000 * 0.02s * 1 * 16 bit = 15360 bit = 1920 bytes`.**
 - sampleRate: sample rate. Currently, only 48000 is supported.
@@ -1623,7 +1623,7 @@ It is recommended to enter the following information for [TRTCAudioFrame](https:
 - timestamp: if the intervals for `timestamp` are uneven, the audio/video sync and quality of MP4 recording will be seriously affected.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
 
 >?You can set `timestamp` in `frame` to `0`, so that the SDK will set the timestamp by itself. However, please "evenly" set the calling interval of `sendCustomAudioData`; otherwise, the audio will be unstable.
 
@@ -1640,7 +1640,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| delegate | id< [TRTCAudioFrameDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcaudioframedelegate) > | Audio data callback. If `delegate = nil`, data callback will be stopped. |
+| delegate | id< [TRTCAudioFrameDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcaudioframedelegate) > | Audio data callback. If `delegate = nil`, data callback will be stopped. |
 
 __Overview__
 
@@ -1835,7 +1835,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| reverbType | TXReverbType | Reverb type. For more information, please see [TRTCReverbType](https://intl.cloud.tencent.com/document/product/647#trtcreverbtype). |
+| reverbType | TXReverbType | Reverb type. For more information, please see [TRTCReverbType](https://intl.cloud.tencent.com/document/product/647/35123#trtcreverbtype). |
 
 
 ### setVoiceChangerType
@@ -1849,7 +1849,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| voiceChangerType |TXVoiceChangerType | Voice changer type. For more information, please see [TRTCVoiceChangerType](https://intl.cloud.tencent.com/document/product/647#trtcvoicechangertype). |
+| voiceChangerType |TXVoiceChangerType | Voice changer type. For more information, please see [TRTCVoiceChangerType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvoicechangertype). |
 
 ## Sound Effect API Functions
 ### playAudioEffect
@@ -1863,7 +1863,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| effect | [TRTCAudioEffectParam](https://intl.cloud.tencent.com/document/product/647#trtcaudioeffectparam) * | Sound effect. |
+| effect | [TRTCAudioEffectParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioeffectparam) * | Sound effect. |
 
 __Overview__
 
@@ -1938,7 +1938,7 @@ __Parameters__
 | sdkAppId | uint32_t | Application ID. |
 | userId | NSString * | User ID. |
 | userSig | NSString * | User signature. |
-| completion | void(^)([TRTCSpeedTestResult](https://intl.cloud.tencent.com/document/product/647#trtcspeedtestresult) *result, NSInteger completedCount, NSInteger totalCount) | Test callback, which will be divided into multiple callbacks. |
+| completion | void(^)([TRTCSpeedTestResult](https://intl.cloud.tencent.com/document/product/647/35123#trtcspeedtestresult) *result, NSInteger completedCount, NSInteger totalCount) | Test callback, which will be divided into multiple callbacks. |
 
 __Overview__
 
@@ -2034,14 +2034,14 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| config | [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647#trtctranscodingconfig) * | For more information, please see the description of [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647#trtctranscodingconfig) in `TRTCCloudDef.h`. If `nil` is passed in, On-Cloud MixTranscoding will be canceled. |
+| config | [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35123#trtctranscodingconfig) * | For more information, please see the description of [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35123#trtctranscodingconfig) in `TRTCCloudDef.h`. If `nil` is passed in, On-Cloud MixTranscoding will be canceled. |
 
 __Overview__
 
 This API will send a command to the Tencent Cloud transcoding server to combine multiple image channels in the room into one channel.
-If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
+If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
 You can use the transcoding parameters to set the position of each channel of image and quality of the final output image.
-For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618). 
+For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/35123/34618). 
 Sample code: the demo provides the entry for trying out this feature. You can experience it in "On-Cloud Image Mix" and "Share Playback Address" in the "More Features" panel.
 
 
@@ -2056,7 +2056,7 @@ Sample code: the demo provides the entry for trying out this feature. You can ex
 
 >?Notes on On-Cloud MixTranscoding:
 >- On-cloud transcoding will cause a delay of 1–2 seconds in video playback with CDN.
->- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/34617) of your own channel.
+>- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617) of your own channel.
 
 
 ### startPublishCDNStream
@@ -2070,7 +2070,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647#trtcpublishcdnparam) * | For more information, please see the description of [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647#trtcpublishcdnparam) in `TRTCCloudDef.h`. |
+| param | [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcpublishcdnparam) * | For more information, please see the description of [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647/35123#trtcpublishcdnparam) in `TRTCCloudDef.h`. |
 
 __Overview__
 
@@ -2112,7 +2112,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| level | [TRTCLogLevel](https://intl.cloud.tencent.com/document/product/647#trtcloglevel) | For more information, please see `TRTCLogLevel`. Default value: TRTC_LOG_LEVEL_NULL. |
+| level | [TRTCLogLevel](https://intl.cloud.tencent.com/document/product/647/35123#trtcloglevel) | For more information, please see `TRTCLogLevel`. Default value: TRTC_LOG_LEVEL_NULL. |
 
 
 ### setConsoleEnabled
