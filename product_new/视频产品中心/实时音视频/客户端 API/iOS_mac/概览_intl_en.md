@@ -6,224 +6,224 @@ Main API class for the TRTC video call feature.
 
 | API | Description |
 |-----|-----|
-| [delegate](https://intl.cloud.tencent.com/document/product/647/35123/32259#delegate) | Sets the `TRTCCloudDelegate` callback API. |
-| [delegateQueue](https://intl.cloud.tencent.com/document/product/647/35123/32259#delegatequeue) | Sets the queue that drives the `TRTCCloudDelegate` callback. |
-| [sharedInstance](https://intl.cloud.tencent.com/document/product/647/35123/32259#sharedinstance) | Creates [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35123/32259#trtccloud) singleton. |
-| [destroySharedIntance](https://intl.cloud.tencent.com/document/product/647/35123/32259#destroysharedintance) | Terminates [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35123/32259#trtccloud) singleton. |
+| [delegate](https://intl.cloud.tencent.com/document/product/647/35120#delegate) | Sets the `TRTCCloudDelegate` callback API. |
+| [delegateQueue](https://intl.cloud.tencent.com/document/product/647/35120#delegatequeue) | Sets the queue that drives the `TRTCCloudDelegate` callback. |
+| [sharedInstance](https://intl.cloud.tencent.com/document/product/647/35120#sharedinstance) | Creates [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) singleton. |
+| [destroySharedIntance](https://intl.cloud.tencent.com/document/product/647/35120#destroysharedintance) | Terminates [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) singleton. |
 
 
 ### Room API functions
 
 | API | Description |
 |-----|-----|
-| [enterRoom](https://intl.cloud.tencent.com/document/product/647/35123/32259#enterroom) | Enters room. |
-| [exitRoom](https://intl.cloud.tencent.com/document/product/647/35123/32259#exitroom) | Exits room. |
-| [switchRole](https://intl.cloud.tencent.com/document/product/647/35123/32259#switchrole) | Switches roles. This API applies only to the LVB scenario (`TRTCAppSceneLIVE`). |
-| [connectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35123/32259#connectotherroom) | Requests cross-room call (anchor competition). |
-| [disconnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35123/32259#disconnectotherroom) | Exits cross-room call. |
-| [setDefaultStreamRecvMode](https://intl.cloud.tencent.com/document/product/647/35123/32259#setdefaultstreamrecvmode) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
+| [enterRoom](https://intl.cloud.tencent.com/document/product/647/35120#enterroom) | Enters room. |
+| [exitRoom](https://intl.cloud.tencent.com/document/product/647/35120#exitroom) | Exits room. |
+| [switchRole](https://intl.cloud.tencent.com/document/product/647/35120#switchrole) | Switches roles. This API applies only to the LVB scenario (`TRTCAppSceneLIVE`). |
+| [connectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35120#connectotherroom) | Requests cross-room call (anchor competition). |
+| [disconnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35120#disconnectotherroom) | Exits cross-room call. |
+| [setDefaultStreamRecvMode](https://intl.cloud.tencent.com/document/product/647/35120#setdefaultstreamrecvmode) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
 
 
 ### Video API functions
 
 | API | Description |
 |-----|-----|
-| [startLocalPreview](https://intl.cloud.tencent.com/document/product/647/35123/32259#startlocalpreview) | Enables preview image of local video (for iOS). |
-| [startLocalPreview](https://intl.cloud.tencent.com/document/product/647/35123/32259#startlocalpreview2) | Enables preview image of local video (for macOS). |
-| [stopLocalPreview](https://intl.cloud.tencent.com/document/product/647/35123/32259#stoplocalpreview) | Stops local video capture and preview. |
-| [muteLocalVideo](https://intl.cloud.tencent.com/document/product/647/35123/32259#mutelocalvideo) | Specifies whether to block local video image. |
-| [startRemoteView](https://intl.cloud.tencent.com/document/product/647/35123/32259#startremoteview) | Starts displaying remote video image. |
-| [stopRemoteView](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopremoteview) | Stops displaying remote video image. |
-| [stopAllRemoteView](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopallremoteview) | Stops displaying all remote video images. |
-| [muteRemoteVideoStream](https://intl.cloud.tencent.com/document/product/647/35123/32259#muteremotevideostream) | Pauses receiving the specified remote video stream. |
-| [muteAllRemoteVideoStreams](https://intl.cloud.tencent.com/document/product/647/35123/32259#muteallremotevideostreams) | Stops receiving all remote video streams. |
-| [setVideoEncoderParam](https://intl.cloud.tencent.com/document/product/647/35123/32259#setvideoencoderparam) | Sets video encoder parameters. |
-| [setNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35123/32259#setnetworkqosparam) | Sets network bandwidth limit parameters. |
-| [setLocalViewFillMode](https://intl.cloud.tencent.com/document/product/647/35123/32259#setlocalviewfillmode) | Sets rendering mode of local image. |
-| [setRemoteViewFillMode](https://intl.cloud.tencent.com/document/product/647/35123/32259#setremoteviewfillmode) | Sets rendering mode of remote image. |
-| [setLocalViewRotation](https://intl.cloud.tencent.com/document/product/647/35123/32259#setlocalviewrotation) | Sets clockwise rotation angle of local image. |
-| [setRemoteViewRotation](https://intl.cloud.tencent.com/document/product/647/35123/32259#setremoteviewrotation) | Sets clockwise rotation angle of remote image. |
-| [setVideoEncoderRotation](https://intl.cloud.tencent.com/document/product/647/35123/32259#setvideoencoderrotation) | Sets direction of image output by video encoder (i.e., video image viewed by remote user or recorded by server). |
-| [setLocalViewMirror](https://intl.cloud.tencent.com/document/product/647/35123/32259#setlocalviewmirror) | Sets mirror mode of local camera's preview image (for iOS). |
-| [setLocalViewMirror](https://intl.cloud.tencent.com/document/product/647/35123/32259#setlocalviewmirror2) | Sets mirror mode of local camera's preview image (for macOS). |
-| [setVideoEncoderMirror](https://intl.cloud.tencent.com/document/product/647/35123/32259#setvideoencodermirror) | Sets mirror mode of image output by encoder. |
-| [setGSensorMode](https://intl.cloud.tencent.com/document/product/647/35123/32259#setgsensormode) | Sets adaptation mode of the g-sensor. |
-| [enableEncSmallVideoStream](https://intl.cloud.tencent.com/document/product/647/35123/32259#enableencsmallvideostream) | Enables dual-channel encoding mode with big and small images. |
-| [setRemoteVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123/32259#setremotevideostreamtype) | Specifies whether to view the big or small image of the specified `uid`. |
-| [setPriorRemoteVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123/32259#setpriorremotevideostreamtype) | Sets the video quality preferred by viewers. |
+| [startLocalPreview](https://intl.cloud.tencent.com/document/product/647/35120#startlocalpreview) | Enables preview image of local video (for iOS). |
+| [startLocalPreview](https://intl.cloud.tencent.com/document/product/647/35120#startlocalpreview2) | Enables preview image of local video (for macOS). |
+| [stopLocalPreview](https://intl.cloud.tencent.com/document/product/647/35120#stoplocalpreview) | Stops local video capture and preview. |
+| [muteLocalVideo](https://intl.cloud.tencent.com/document/product/647/35120#mutelocalvideo) | Specifies whether to block local video image. |
+| [startRemoteView](https://intl.cloud.tencent.com/document/product/647/35120#startremoteview) | Starts displaying remote video image. |
+| [stopRemoteView](https://intl.cloud.tencent.com/document/product/647/35120#stopremoteview) | Stops displaying remote video image. |
+| [stopAllRemoteView](https://intl.cloud.tencent.com/document/product/647/35120#stopallremoteview) | Stops displaying all remote video images. |
+| [muteRemoteVideoStream](https://intl.cloud.tencent.com/document/product/647/35120#muteremotevideostream) | Pauses receiving the specified remote video stream. |
+| [muteAllRemoteVideoStreams](https://intl.cloud.tencent.com/document/product/647/35120#muteallremotevideostreams) | Stops receiving all remote video streams. |
+| [setVideoEncoderParam](https://intl.cloud.tencent.com/document/product/647/35120#setvideoencoderparam) | Sets video encoder parameters. |
+| [setNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35120#setnetworkqosparam) | Sets network bandwidth limit parameters. |
+| [setLocalViewFillMode](https://intl.cloud.tencent.com/document/product/647/35120#setlocalviewfillmode) | Sets rendering mode of local image. |
+| [setRemoteViewFillMode](https://intl.cloud.tencent.com/document/product/647/35120#setremoteviewfillmode) | Sets rendering mode of remote image. |
+| [setLocalViewRotation](https://intl.cloud.tencent.com/document/product/647/35120#setlocalviewrotation) | Sets clockwise rotation angle of local image. |
+| [setRemoteViewRotation](https://intl.cloud.tencent.com/document/product/647/35120#setremoteviewrotation) | Sets clockwise rotation angle of remote image. |
+| [setVideoEncoderRotation](https://intl.cloud.tencent.com/document/product/647/35120#setvideoencoderrotation) | Sets direction of image output by video encoder (i.e., video image viewed by remote user or recorded by server). |
+| [setLocalViewMirror](https://intl.cloud.tencent.com/document/product/647/35120#setlocalviewmirror) | Sets mirror mode of local camera's preview image (for iOS). |
+| [setLocalViewMirror](https://intl.cloud.tencent.com/document/product/647/35120#setlocalviewmirror2) | Sets mirror mode of local camera's preview image (for macOS). |
+| [setVideoEncoderMirror](https://intl.cloud.tencent.com/document/product/647/35120#setvideoencodermirror) | Sets mirror mode of image output by encoder. |
+| [setGSensorMode](https://intl.cloud.tencent.com/document/product/647/35120#setgsensormode) | Sets adaptation mode of the g-sensor. |
+| [enableEncSmallVideoStream](https://intl.cloud.tencent.com/document/product/647/35120#enableencsmallvideostream) | Enables dual-channel encoding mode with big and small images. |
+| [setRemoteVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35120#setremotevideostreamtype) | Specifies whether to view the big or small image of the specified `uid`. |
+| [setPriorRemoteVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35120#setpriorremotevideostreamtype) | Sets the video quality preferred by viewers. |
 
 
 ### Audio API functions
 
 | API | Description |
 |-----|-----|
-| [startLocalAudio](https://intl.cloud.tencent.com/document/product/647/35123/32259#startlocalaudio) | Enables local audio capture and upstreaming. |
-| [stopLocalAudio](https://intl.cloud.tencent.com/document/product/647/35123/32259#stoplocalaudio) | Disables local audio capture and upstreaming. |
-| [muteLocalAudio](https://intl.cloud.tencent.com/document/product/647/35123/32259#mutelocalaudio) | Mutes local audio. |
-| [setAudioRoute](https://intl.cloud.tencent.com/document/product/647/35123/32259#setaudioroute) | Sets audio routing. |
-| [muteRemoteAudio](https://intl.cloud.tencent.com/document/product/647/35123/32259#muteremoteaudio) | Mutes user's audio. |
-| [muteAllRemoteAudio](https://intl.cloud.tencent.com/document/product/647/35123/32259#muteallremoteaudio) | Mutes all users' audio. |
-| [enableAudioVolumeEvaluation](https://intl.cloud.tencent.com/document/product/647/35123/32259#enableaudiovolumeevaluation) | Enables volume reminder. |
-| [startAudioRecording](https://intl.cloud.tencent.com/document/product/647/35123/32259#startaudiorecording) | Starts audio recording. |
-| [stopAudioRecording](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopaudiorecording) | Stops audio recording. |
-| [setSystemVolumeType](https://intl.cloud.tencent.com/document/product/647/35123/32259#setsystemvolumetype) | Sets the system volume type used during call. |
-| [enableAudioEarMonitoring](https://intl.cloud.tencent.com/document/product/647/35123/32259#enableaudioearmonitoring) | Enables in-ear monitoring. |
+| [startLocalAudio](https://intl.cloud.tencent.com/document/product/647/35120#startlocalaudio) | Enables local audio capture and upstreaming. |
+| [stopLocalAudio](https://intl.cloud.tencent.com/document/product/647/35120#stoplocalaudio) | Disables local audio capture and upstreaming. |
+| [muteLocalAudio](https://intl.cloud.tencent.com/document/product/647/35120#mutelocalaudio) | Mutes local audio. |
+| [setAudioRoute](https://intl.cloud.tencent.com/document/product/647/35120#setaudioroute) | Sets audio routing. |
+| [muteRemoteAudio](https://intl.cloud.tencent.com/document/product/647/35120#muteremoteaudio) | Mutes user's audio. |
+| [muteAllRemoteAudio](https://intl.cloud.tencent.com/document/product/647/35120#muteallremoteaudio) | Mutes all users' audio. |
+| [enableAudioVolumeEvaluation](https://intl.cloud.tencent.com/document/product/647/35120#enableaudiovolumeevaluation) | Enables volume reminder. |
+| [startAudioRecording](https://intl.cloud.tencent.com/document/product/647/35120#startaudiorecording) | Starts audio recording. |
+| [stopAudioRecording](https://intl.cloud.tencent.com/document/product/647/35120#stopaudiorecording) | Stops audio recording. |
+| [setSystemVolumeType](https://intl.cloud.tencent.com/document/product/647/35120#setsystemvolumetype) | Sets the system volume type used during call. |
+| [enableAudioEarMonitoring](https://intl.cloud.tencent.com/document/product/647/35120#enableaudioearmonitoring) | Enables in-ear monitoring. |
 
 
 ### Camera API functions
 
 | API | Description |
 |-----|-----|
-| [switchCamera](https://intl.cloud.tencent.com/document/product/647/35123/32259#switchcamera) | Switches cameras. |
-| [isCameraZoomSupported](https://intl.cloud.tencent.com/document/product/647/35123/32259#iscamerazoomsupported) | Queries whether the current camera supports zoom. |
-| [setZoom](https://intl.cloud.tencent.com/document/product/647/35123/32259#setzoom) | Sets zoom factor (focal length) of camera. |
-| [isCameraTorchSupported](https://intl.cloud.tencent.com/document/product/647/35123/32259#iscameratorchsupported) | Queries whether the device supports flash (flash mode). |
-| [enbaleTorch](https://intl.cloud.tencent.com/document/product/647/35123/32259#enbaletorch) | Enables or disables flash. |
-| [isCameraFocusPositionInPreviewSupported](https://intl.cloud.tencent.com/document/product/647/35123/32259#iscamerafocuspositioninpreviewsupported) | Queries whether the device supports setting focus. |
-| [setFocusPosition](https://intl.cloud.tencent.com/document/product/647/35123/32259#setfocusposition) | Sets camera focus. |
-| [isCameraAutoFocusFaceModeSupported](https://intl.cloud.tencent.com/document/product/647/35123/32259#iscameraautofocusfacemodesupported) | Queries whether the device supports automatic recognition of face position. |
-| [enableAutoFaceFoucs](https://intl.cloud.tencent.com/document/product/647/35123/32259#enableautofacefoucs) | Enables automatic recognition of face position. |
-| [getCameraDevicesList](https://intl.cloud.tencent.com/document/product/647/35123/32259#getcameradeviceslist) | Gets list of cameras. |
-| [getCurrentCameraDevice](https://intl.cloud.tencent.com/document/product/647/35123/32259#getcurrentcameradevice) | Gets the currently used camera. |
-| [setCurrentCameraDevice](https://intl.cloud.tencent.com/document/product/647/35123/32259#setcurrentcameradevice) | Sets the camera to be used. |
+| [switchCamera](https://intl.cloud.tencent.com/document/product/647/35120#switchcamera) | Switches cameras. |
+| [isCameraZoomSupported](https://intl.cloud.tencent.com/document/product/647/35120#iscamerazoomsupported) | Queries whether the current camera supports zoom. |
+| [setZoom](https://intl.cloud.tencent.com/document/product/647/35120#setzoom) | Sets zoom factor (focal length) of camera. |
+| [isCameraTorchSupported](https://intl.cloud.tencent.com/document/product/647/35120#iscameratorchsupported) | Queries whether the device supports flash (flash mode). |
+| [enbaleTorch](https://intl.cloud.tencent.com/document/product/647/35120#enbaletorch) | Enables or disables flash. |
+| [isCameraFocusPositionInPreviewSupported](https://intl.cloud.tencent.com/document/product/647/35120#iscamerafocuspositioninpreviewsupported) | Queries whether the device supports setting focus. |
+| [setFocusPosition](https://intl.cloud.tencent.com/document/product/647/35120#setfocusposition) | Sets camera focus. |
+| [isCameraAutoFocusFaceModeSupported](https://intl.cloud.tencent.com/document/product/647/35120#iscameraautofocusfacemodesupported) | Queries whether the device supports automatic recognition of face position. |
+| [enableAutoFaceFoucs](https://intl.cloud.tencent.com/document/product/647/35120#enableautofacefoucs) | Enables automatic recognition of face position. |
+| [getCameraDevicesList](https://intl.cloud.tencent.com/document/product/647/35120#getcameradeviceslist) | Gets list of cameras. |
+| [getCurrentCameraDevice](https://intl.cloud.tencent.com/document/product/647/35120#getcurrentcameradevice) | Gets the currently used camera. |
+| [setCurrentCameraDevice](https://intl.cloud.tencent.com/document/product/647/35120#setcurrentcameradevice) | Sets the camera to be used. |
 
 
 ### Audio device API functions
 
 | API | Description |
 |-----|-----|
-| [getMicDevicesList](https://intl.cloud.tencent.com/document/product/647/35123/32259#getmicdeviceslist) | Gets list of mics. |
-| [getCurrentMicDevice](https://intl.cloud.tencent.com/document/product/647/35123/32259#getcurrentmicdevice) | Gets the current mic device. |
-| [setCurrentMicDevice](https://intl.cloud.tencent.com/document/product/647/35123/32259#setcurrentmicdevice) | Sets the mic to be used. |
-| [getCurrentMicDeviceVolume](https://intl.cloud.tencent.com/document/product/647/35123/32259#getcurrentmicdevicevolume) | Gets current mic volume level. |
-| [setCurrentMicDeviceVolume](https://intl.cloud.tencent.com/document/product/647/35123/32259#setcurrentmicdevicevolume) | Sets mic volume level. |
-| [getSpeakerDevicesList](https://intl.cloud.tencent.com/document/product/647/35123/32259#getspeakerdeviceslist) | Gets list of speakers. |
-| [getCurrentSpeakerDevice](https://intl.cloud.tencent.com/document/product/647/35123/32259#getcurrentspeakerdevice) | Gets the currently used speaker. |
-| [setCurrentSpeakerDevice](https://intl.cloud.tencent.com/document/product/647/35123/32259#setcurrentspeakerdevice) | Sets the speaker to be used. |
-| [getCurrentSpeakerDeviceVolume](https://intl.cloud.tencent.com/document/product/647/35123/32259#getcurrentspeakerdevicevolume) | Gets current speaker volume level. |
-| [setCurrentSpeakerDeviceVolume](https://intl.cloud.tencent.com/document/product/647/35123/32259#setcurrentspeakerdevicevolume) | Sets current speaker volume level. |
+| [getMicDevicesList](https://intl.cloud.tencent.com/document/product/647/35120#getmicdeviceslist) | Gets list of mics. |
+| [getCurrentMicDevice](https://intl.cloud.tencent.com/document/product/647/35120#getcurrentmicdevice) | Gets the current mic device. |
+| [setCurrentMicDevice](https://intl.cloud.tencent.com/document/product/647/35120#setcurrentmicdevice) | Sets the mic to be used. |
+| [getCurrentMicDeviceVolume](https://intl.cloud.tencent.com/document/product/647/35120#getcurrentmicdevicevolume) | Gets current mic volume level. |
+| [setCurrentMicDeviceVolume](https://intl.cloud.tencent.com/document/product/647/35120#setcurrentmicdevicevolume) | Sets mic volume level. |
+| [getSpeakerDevicesList](https://intl.cloud.tencent.com/document/product/647/35120#getspeakerdeviceslist) | Gets list of speakers. |
+| [getCurrentSpeakerDevice](https://intl.cloud.tencent.com/document/product/647/35120#getcurrentspeakerdevice) | Gets the currently used speaker. |
+| [setCurrentSpeakerDevice](https://intl.cloud.tencent.com/document/product/647/35120#setcurrentspeakerdevice) | Sets the speaker to be used. |
+| [getCurrentSpeakerDeviceVolume](https://intl.cloud.tencent.com/document/product/647/35120#getcurrentspeakerdevicevolume) | Gets current speaker volume level. |
+| [setCurrentSpeakerDeviceVolume](https://intl.cloud.tencent.com/document/product/647/35120#setcurrentspeakerdevicevolume) | Sets current speaker volume level. |
 
 
 ### Beauty filter API functions
 
 | API | Description |
 |-----|-----|
-| [getBeautyManager](https://intl.cloud.tencent.com/document/product/647/35123/32259#getbeautymanager) | Gets the beauty filter management object. |
-| [setBeautyStyle](https://intl.cloud.tencent.com/document/product/647/35123/32259#setbeautystyle) | Sets effect levels of beauty, brightening, and rosy skin filters. |
-| [setFilter](https://intl.cloud.tencent.com/document/product/647/35123/32259#setfilter) | Specifies material filter effect. |
-| [setFilterConcentration](https://intl.cloud.tencent.com/document/product/647/35123/32259#setfilterconcentration) | Sets effect level of a filter. |
-| [setWatermark](https://intl.cloud.tencent.com/document/product/647/35123/32259#setwatermark) | Adds a watermark. |
-| [setEyeScaleLevel](https://intl.cloud.tencent.com/document/product/647/35123/32259#seteyescalelevel) | Sets effect level of the eye enlarging filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
-| [setFaceScaleLevel](https://intl.cloud.tencent.com/document/product/647/35123/32259#setfacescalelevel) | Sets effect level of the face slimming filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
-| [setFaceVLevel](https://intl.cloud.tencent.com/document/product/647/35123/32259#setfacevlevel) | Sets effect level of the chin slimming filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
-| [setChinLevel](https://intl.cloud.tencent.com/document/product/647/35123/32259#setchinlevel) | Sets effect level of the chin lengthening/shortening or shortening filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
-| [setFaceShortLevel](https://intl.cloud.tencent.com/document/product/647/35123/32259#setfaceshortlevel) | Sets effect level of the face shortening filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
-| [setNoseSlimLevel](https://intl.cloud.tencent.com/document/product/647/35123/32259#setnoseslimlevel) | Sets effect level of the nose slimming filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
-| [setGreenScreenFile](https://intl.cloud.tencent.com/document/product/647/35123/32259#setgreenscreenfile) | Sets green screen video (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
-| [selectMotionTmpl](https://intl.cloud.tencent.com/document/product/647/35123/32259#selectmotiontmpl) | Selects AI animated effect pendant (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
-| [setMotionMute](https://intl.cloud.tencent.com/document/product/647/35123/32259#setmotionmute) | Mutes animated effect (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [getBeautyManager](https://intl.cloud.tencent.com/document/product/647/35120#getbeautymanager) | Gets the beauty filter management object. |
+| [setBeautyStyle](https://intl.cloud.tencent.com/document/product/647/35120#setbeautystyle) | Sets effect levels of beauty, brightening, and rosy skin filters. |
+| [setFilter](https://intl.cloud.tencent.com/document/product/647/35120#setfilter) | Specifies material filter effect. |
+| [setFilterConcentration](https://intl.cloud.tencent.com/document/product/647/35120#setfilterconcentration) | Sets effect level of a filter. |
+| [setWatermark](https://intl.cloud.tencent.com/document/product/647/35120#setwatermark) | Adds a watermark. |
+| [setEyeScaleLevel](https://intl.cloud.tencent.com/document/product/647/35120#seteyescalelevel) | Sets effect level of the eye enlarging filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [setFaceScaleLevel](https://intl.cloud.tencent.com/document/product/647/35120#setfacescalelevel) | Sets effect level of the face slimming filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [setFaceVLevel](https://intl.cloud.tencent.com/document/product/647/35120#setfacevlevel) | Sets effect level of the chin slimming filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [setChinLevel](https://intl.cloud.tencent.com/document/product/647/35120#setchinlevel) | Sets effect level of the chin lengthening/shortening or shortening filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [setFaceShortLevel](https://intl.cloud.tencent.com/document/product/647/35120#setfaceshortlevel) | Sets effect level of the face shortening filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [setNoseSlimLevel](https://intl.cloud.tencent.com/document/product/647/35120#setnoseslimlevel) | Sets effect level of the nose slimming filter (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [setGreenScreenFile](https://intl.cloud.tencent.com/document/product/647/35120#setgreenscreenfile) | Sets green screen video (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [selectMotionTmpl](https://intl.cloud.tencent.com/document/product/647/35120#selectmotiontmpl) | Selects AI animated effect pendant (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
+| [setMotionMute](https://intl.cloud.tencent.com/document/product/647/35120#setmotionmute) | Mutes animated effect (it takes effect only in TRTC Commercial edition and is invalid in other editions). |
 
 
 ### Secondary stream API functions (macOS)
 
 | API | Description |
 |-----|-----|
-| [startRemoteSubStreamView](https://intl.cloud.tencent.com/document/product/647/35123/32259#startremotesubstreamview) | Starts displaying screen sharing image of a remote user. |
-| [stopRemoteSubStreamView](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopremotesubstreamview) | Stops displaying the screen sharing image of a remote user. |
-| [setRemoteSubStreamViewFillMode](https://intl.cloud.tencent.com/document/product/647/35123/32259#setremotesubstreamviewfillmode) | Sets display mode of screen sharing image. |
-| [getScreenCaptureSourcesWithThumbnailSize](https://intl.cloud.tencent.com/document/product/647/35123/32259#getscreencapturesourceswiththumbnailsize) | Enumerates shareable windows. |
-| [selectScreenCaptureTarget](https://intl.cloud.tencent.com/document/product/647/35123/32259#selectscreencapturetarget) | Sets screen sharing parameters. This method can be called during screen sharing. |
-| [startScreenCapture](https://intl.cloud.tencent.com/document/product/647/35123/32259#startscreencapture) | Starts screen sharing. |
-| [stopScreenCapture](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopscreencapture) | Stops screen capture. |
-| [pauseScreenCapture](https://intl.cloud.tencent.com/document/product/647/35123/32259#pausescreencapture) | Pauses screen sharing. |
-| [resumeScreenCapture](https://intl.cloud.tencent.com/document/product/647/35123/32259#resumescreencapture) | Resumes screen sharing. |
-| [setSubStreamEncoderParam](https://intl.cloud.tencent.com/document/product/647/35123/32259#setsubstreamencoderparam) | Sets encoder parameters for screen sharing. |
-| [setSubStreamMixVolume](https://intl.cloud.tencent.com/document/product/647/35123/32259#setsubstreammixvolume) | Sets audio mixing volume level of screen sharing. |
+| [startRemoteSubStreamView](https://intl.cloud.tencent.com/document/product/647/35120#startremotesubstreamview) | Starts displaying screen sharing image of a remote user. |
+| [stopRemoteSubStreamView](https://intl.cloud.tencent.com/document/product/647/35120#stopremotesubstreamview) | Stops displaying the screen sharing image of a remote user. |
+| [setRemoteSubStreamViewFillMode](https://intl.cloud.tencent.com/document/product/647/35120#setremotesubstreamviewfillmode) | Sets display mode of screen sharing image. |
+| [getScreenCaptureSourcesWithThumbnailSize](https://intl.cloud.tencent.com/document/product/647/35120#getscreencapturesourceswiththumbnailsize) | Enumerates shareable windows. |
+| [selectScreenCaptureTarget](https://intl.cloud.tencent.com/document/product/647/35120#selectscreencapturetarget) | Sets screen sharing parameters. This method can be called during screen sharing. |
+| [startScreenCapture](https://intl.cloud.tencent.com/document/product/647/35120#startscreencapture) | Starts screen sharing. |
+| [stopScreenCapture](https://intl.cloud.tencent.com/document/product/647/35120#stopscreencapture) | Stops screen capture. |
+| [pauseScreenCapture](https://intl.cloud.tencent.com/document/product/647/35120#pausescreencapture) | Pauses screen sharing. |
+| [resumeScreenCapture](https://intl.cloud.tencent.com/document/product/647/35120#resumescreencapture) | Resumes screen sharing. |
+| [setSubStreamEncoderParam](https://intl.cloud.tencent.com/document/product/647/35120#setsubstreamencoderparam) | Sets encoder parameters for screen sharing. |
+| [setSubStreamMixVolume](https://intl.cloud.tencent.com/document/product/647/35120#setsubstreammixvolume) | Sets audio mixing volume level of screen sharing. |
 
 
 ### Custom capture and rendering API functions
 
 | API | Description |
 |-----|-----|
-| [enableCustomVideoCapture](https://intl.cloud.tencent.com/document/product/647/35123/32259#enablecustomvideocapture) | Enables custom video capture mode. |
-| [sendCustomVideoData](https://intl.cloud.tencent.com/document/product/647/35123/32259#sendcustomvideodata) | Delivers the captured video data to the SDK. |
-| [setLocalVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/35123/32259#setlocalvideorenderdelegate) | Sets callback of custom rendering for local video. |
-| [setRemoteVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/35123/32259#setremotevideorenderdelegate) | Sets callback of custom rendering for remote video. |
-| [enableCustomAudioCapture](https://intl.cloud.tencent.com/document/product/647/35123/32259#enablecustomaudiocapture) | Enables custom audio capture mode. |
-| [sendCustomAudioData](https://intl.cloud.tencent.com/document/product/647/35123/32259#sendcustomaudiodata) | Delivers the captured audio data to the SDK. |
-| [setAudioFrameDelegate](https://intl.cloud.tencent.com/document/product/647/35123/32259#setaudioframedelegate) | Sets audio data callback. |
+| [enableCustomVideoCapture](https://intl.cloud.tencent.com/document/product/647/35120#enablecustomvideocapture) | Enables custom video capture mode. |
+| [sendCustomVideoData](https://intl.cloud.tencent.com/document/product/647/35120#sendcustomvideodata) | Delivers the captured video data to the SDK. |
+| [setLocalVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/35120#setlocalvideorenderdelegate) | Sets callback of custom rendering for local video. |
+| [setRemoteVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/35120#setremotevideorenderdelegate) | Sets callback of custom rendering for remote video. |
+| [enableCustomAudioCapture](https://intl.cloud.tencent.com/document/product/647/35120#enablecustomaudiocapture) | Enables custom audio capture mode. |
+| [sendCustomAudioData](https://intl.cloud.tencent.com/document/product/647/35120#sendcustomaudiodata) | Delivers the captured audio data to the SDK. |
+| [setAudioFrameDelegate](https://intl.cloud.tencent.com/document/product/647/35120#setaudioframedelegate) | Sets audio data callback. |
 
 
 ### Custom message sending APIs
 
 | API | Description |
 |-----|-----|
-| [sendCustomCmdMsg](https://intl.cloud.tencent.com/document/product/647/35123/32259#sendcustomcmdmsg) | Sends custom message to all users in the room. |
-| [sendSEIMsg](https://intl.cloud.tencent.com/document/product/647/35123/32259#sendseimsg) | Embeds custom data of a small size in video frames. |
+| [sendCustomCmdMsg](https://intl.cloud.tencent.com/document/product/647/35120#sendcustomcmdmsg) | Sends custom message to all users in the room. |
+| [sendSEIMsg](https://intl.cloud.tencent.com/document/product/647/35120#sendseimsg) | Embeds custom data of a small size in video frames. |
 
 
 ### Background audio mixing API functions
 
 | API | Description |
 |-----|-----|
-| [playBGM](https://intl.cloud.tencent.com/document/product/647/35123/32259#playbgm) | Starts background music. |
-| [stopBGM](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopbgm) | Stops background music. |
-| [pauseBGM](https://intl.cloud.tencent.com/document/product/647/35123/32259#pausebgm) | Pauses background music. |
-| [resumeBGM](https://intl.cloud.tencent.com/document/product/647/35123/32259#resumebgm) | Resumes background music. |
-| [getBGMDuration](https://intl.cloud.tencent.com/document/product/647/35123/32259#getbgmduration) | Gets the total length of the music file in milliseconds. |
-| [setBGMPosition](https://intl.cloud.tencent.com/document/product/647/35123/32259#setbgmposition) | Sets playback progress of background music. |
-| [setMicVolumeOnMixing](https://intl.cloud.tencent.com/document/product/647/35123/32259#setmicvolumeonmixing) | Adjusts the mic volume level when background music is played back. |
-| [setBGMVolume](https://intl.cloud.tencent.com/document/product/647/35123/32259#setbgmvolume) | Sets background music volume level. This API is used to control the background music volume level during playback. |
-| [setReverbType](https://intl.cloud.tencent.com/document/product/647/35123/32259#setreverbtype) | Sets reverb effect (currently, this is supported only for iOS). |
-| [setVoiceChangerType](https://intl.cloud.tencent.com/document/product/647/35123/32259#setvoicechangertype) | Sets voice changer type (currently, this is supported only for iOS). |
+| [playBGM](https://intl.cloud.tencent.com/document/product/647/35120#playbgm) | Starts background music. |
+| [stopBGM](https://intl.cloud.tencent.com/document/product/647/35120#stopbgm) | Stops background music. |
+| [pauseBGM](https://intl.cloud.tencent.com/document/product/647/35120#pausebgm) | Pauses background music. |
+| [resumeBGM](https://intl.cloud.tencent.com/document/product/647/35120#resumebgm) | Resumes background music. |
+| [getBGMDuration](https://intl.cloud.tencent.com/document/product/647/35120#getbgmduration) | Gets the total length of the music file in milliseconds. |
+| [setBGMPosition](https://intl.cloud.tencent.com/document/product/647/35120#setbgmposition) | Sets playback progress of background music. |
+| [setMicVolumeOnMixing](https://intl.cloud.tencent.com/document/product/647/35120#setmicvolumeonmixing) | Adjusts the mic volume level when background music is played back. |
+| [setBGMVolume](https://intl.cloud.tencent.com/document/product/647/35120#setbgmvolume) | Sets background music volume level. This API is used to control the background music volume level during playback. |
+| [setReverbType](https://intl.cloud.tencent.com/document/product/647/35120#setreverbtype) | Sets reverb effect (currently, this is supported only for iOS). |
+| [setVoiceChangerType](https://intl.cloud.tencent.com/document/product/647/35120#setvoicechangertype) | Sets voice changer type (currently, this is supported only for iOS). |
 
 ### Sound effect API functions
 
 | API | Description |
 |-----|-----|
-| [playAudioEffect](https://intl.cloud.tencent.com/document/product/647/35123/32259#playaudioeffect) | Plays back sound effect. |
-| [setAudioEffectVolume](https://intl.cloud.tencent.com/document/product/647/35123/32259#setaudioeffectvolume) | Sets volume level of a single sound effect. |
-| [stopAudioEffect](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopaudioeffect) | Stops sound effect. |
-| [stopAllAudioEffects](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopallaudioeffects) | Stops all sound effects. |
-| [setAllAudioEffectsVolume](https://intl.cloud.tencent.com/document/product/647/35123/32259#setallaudioeffectsvolume) | Sets volume level of all sound effects. |
+| [playAudioEffect](https://intl.cloud.tencent.com/document/product/647/35120#playaudioeffect) | Plays back sound effect. |
+| [setAudioEffectVolume](https://intl.cloud.tencent.com/document/product/647/35120#setaudioeffectvolume) | Sets volume level of a single sound effect. |
+| [stopAudioEffect](https://intl.cloud.tencent.com/document/product/647/35120#stopaudioeffect) | Stops sound effect. |
+| [stopAllAudioEffects](https://intl.cloud.tencent.com/document/product/647/35120#stopallaudioeffects) | Stops all sound effects. |
+| [setAllAudioEffectsVolume](https://intl.cloud.tencent.com/document/product/647/35120#setallaudioeffectsvolume) | Sets volume level of all sound effects. |
 
 
 ### Device and network test APIs
 
 | API | Description |
 |-----|-----|
-| [startSpeedTest](https://intl.cloud.tencent.com/document/product/647/35123/32259#startspeedtest) | Starts network speed test (do not test during a video call so as to avoid affecting the call quality). |
-| [stopSpeedTest](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopspeedtest) | Stops server speed test. |
-| [startCameraDeviceTestInView](https://intl.cloud.tencent.com/document/product/647/35123/32259#startcameradevicetestinview) | Starts camera test. |
-| [stopCameraDeviceTest](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopcameradevicetest) | Stops video test preview. |
-| [startMicDeviceTest](https://intl.cloud.tencent.com/document/product/647/35123/32259#startmicdevicetest) | Starts mic test. |
-| [stopMicDeviceTest](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopmicdevicetest) | Stops mic test. |
-| [startSpeakerDeviceTest](https://intl.cloud.tencent.com/document/product/647/35123/32259#startspeakerdevicetest) | Starts speaker test. |
-| [stopSpeakerDeviceTest](https://intl.cloud.tencent.com/document/product/647/35123/32259#stopspeakerdevicetest) | Stops speaker test. |
+| [startSpeedTest](https://intl.cloud.tencent.com/document/product/647/35120#startspeedtest) | Starts network speed test (do not test during a video call so as to avoid affecting the call quality). |
+| [stopSpeedTest](https://intl.cloud.tencent.com/document/product/647/35120#stopspeedtest) | Stops server speed test. |
+| [startCameraDeviceTestInView](https://intl.cloud.tencent.com/document/product/647/35120#startcameradevicetestinview) | Starts camera test. |
+| [stopCameraDeviceTest](https://intl.cloud.tencent.com/document/product/647/35120#stopcameradevicetest) | Stops video test preview. |
+| [startMicDeviceTest](https://intl.cloud.tencent.com/document/product/647/35120#startmicdevicetest) | Starts mic test. |
+| [stopMicDeviceTest](https://intl.cloud.tencent.com/document/product/647/35120#stopmicdevicetest) | Stops mic test. |
+| [startSpeakerDeviceTest](https://intl.cloud.tencent.com/document/product/647/35120#startspeakerdevicetest) | Starts speaker test. |
+| [stopSpeakerDeviceTest](https://intl.cloud.tencent.com/document/product/647/35120#stopspeakerdevicetest) | Stops speaker test. |
 
 
 ### MixTranscoding and CDN relayed push APIs
 
 | API | Description |
 |-----|-----|
-| [setMixTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35123/32259#setmixtranscodingconfig) | Sets On-Cloud MixTranscoding parameters. |
-| [startPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35123/32259#startpublishcdnstream) | Relays stream to the specified push address. |
-| [stopPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35123/32259#stoppublishcdnstream) | Stops relayed push. |
+| [setMixTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35120#setmixtranscodingconfig) | Sets On-Cloud MixTranscoding parameters. |
+| [startPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35120#startpublishcdnstream) | Relays stream to the specified push address. |
+| [stopPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35120#stoppublishcdnstream) | Stops relayed push. |
 
 
 ### Log API functions
 
 | API | Description |
 |-----|-----|
-| [getSDKVersion](https://intl.cloud.tencent.com/document/product/647/35123/32259#getsdkversion) | Gets SDK version information. |
-| [setLogLevel](https://intl.cloud.tencent.com/document/product/647/35123/32259#setloglevel) | Sets log output level. |
-| [setConsoleEnabled](https://intl.cloud.tencent.com/document/product/647/35123/32259#setconsoleenabled) | Disables or enables console log printing. |
-| [setLogCompressEnabled](https://intl.cloud.tencent.com/document/product/647/35123/32259#setlogcompressenabled) | Enables or disables local log compression. |
-| [setLogDirPath](https://intl.cloud.tencent.com/document/product/647/35123/32259#setlogdirpath) | Modifies log storage path. |
-| [setLogDelegate](https://intl.cloud.tencent.com/document/product/647/35123/32259#setlogdelegate) | Sets log callback. |
-| [showDebugView](https://intl.cloud.tencent.com/document/product/647/35123/32259#showdebugview) | Displays dashboard. |
-| [setDebugViewMargin](https://intl.cloud.tencent.com/document/product/647/35123/32259#setdebugviewmargin) | Sets dashboard margin. |
-| [callExperimentalAPI](https://intl.cloud.tencent.com/document/product/647/35123/32259#callexperimentalapi) | Calls experimental API. |
+| [getSDKVersion](https://intl.cloud.tencent.com/document/product/647/35120#getsdkversion) | Gets SDK version information. |
+| [setLogLevel](https://intl.cloud.tencent.com/document/product/647/35120#setloglevel) | Sets log output level. |
+| [setConsoleEnabled](https://intl.cloud.tencent.com/document/product/647/35120#setconsoleenabled) | Disables or enables console log printing. |
+| [setLogCompressEnabled](https://intl.cloud.tencent.com/document/product/647/35120#setlogcompressenabled) | Enables or disables local log compression. |
+| [setLogDirPath](https://intl.cloud.tencent.com/document/product/647/35120#setlogdirpath) | Modifies log storage path. |
+| [setLogDelegate](https://intl.cloud.tencent.com/document/product/647/35120#setlogdelegate) | Sets log callback. |
+| [showDebugView](https://intl.cloud.tencent.com/document/product/647/35120#showdebugview) | Displays dashboard. |
+| [setDebugViewMargin](https://intl.cloud.tencent.com/document/product/647/35120#setdebugviewmargin) | Sets dashboard margin. |
+| [callExperimentalAPI](https://intl.cloud.tencent.com/document/product/647/35120#callexperimentalapi) | Calls experimental API. |
 
 
 ## TRTCCloudDelegate @ TXLiteAVSDK
@@ -309,7 +309,7 @@ Event callback API for TRTC video call feature.
 |-----|-----|
 | [onStartPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35123/32263#onstartpublishcdnstream) | Callback of completion of starting relayed push to CDN. |
 | [onStopPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35123/32263#onstoppublishcdnstream) | Callback of completion of stopping relayed push to CDN. |
-| [onSetMixTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35123/32263#onsetmixtranscodingconfig) | Callback of setting On-Cloud MixTranscoding parameters. This callback corresponds to the `setMixTranscodingConfig()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35123/32259#trtccloud). |
+| [onSetMixTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35123/32263#onsetmixtranscodingconfig) | Callback of setting On-Cloud MixTranscoding parameters. This callback corresponds to the `setMixTranscodingConfig()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud). |
 
 
 ### Audio effect callbacks
