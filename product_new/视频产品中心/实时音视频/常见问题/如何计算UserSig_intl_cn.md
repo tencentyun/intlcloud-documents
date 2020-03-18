@@ -22,7 +22,6 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 1. 单击应用卡片，进入【快速上手】页面。
 2. 单击【第二步 获取签发UserSig的密钥】区域的【查看密钥】，即可获取用于计算 UserSig 的加密密钥。
 3. 单击【复制密钥】，将密钥拷贝到剪贴板中。
- ![](https://main.qcloudimg.com/raw/d0b780f7b28833533e12807d1b11d8be.png)
 
 
 <h2 id="Client">客户端计算</h2>
@@ -39,7 +38,6 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 | Web | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
 | 微信小程序 | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/WXMini/pages/webrtc-room/debug/GenerateTestUserSig.js)| WXMini/pages/webrtc-room/debug/GenerateTestUserSig.js |
 
-![](https://main.qcloudimg.com/raw/1efeacff505209c4f5c1d9bf67455157.png)
 
 >! 该方案仅适用于调试，如果产品要正式上线，**不推荐**采用这种方案，因为客户端代码（尤其是 Web 端）中的 SECRETKEY 很容易被反编译逆向破解。一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量。
 >
@@ -57,7 +55,7 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 6. 腾讯云校验 UserSig，确认合法性。
 7. 校验通过后，会向 TRTCSDK 提供实时音视频服务。
 
-![](https://main.qcloudimg.com/raw/60c419d6b977fa3cc158c57c8f3f7315.png)
+![](https://main.qcloudimg.com/raw/ead2075ef98876347fd388ec358ed126.jpg)
 
 为了简化您的实现过程，我们提供了多个语言版本的 UserSig 计算源代码：
 
