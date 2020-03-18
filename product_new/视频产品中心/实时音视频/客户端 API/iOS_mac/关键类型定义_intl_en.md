@@ -167,7 +167,7 @@ Network speed test result.
 
 __Overview__
 
-The `startSpeedTest` API of [TRTCCloud](https://cloud.tencent.com/document/product/647/32259#trtccloud) can be used to test the network speed before a user enters a room (this API cannot be called during a call). The speed test result will be returned once every 2–3 seconds, and the test result of one IP address will be returned each time.
+The `startSpeedTest` API of [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) can be used to test the network speed before a user enters a room (this API cannot be called during a call). The speed test result will be returned once every 2–3 seconds, and the test result of one IP address will be returned each time.
 
 
 __Attribute list__

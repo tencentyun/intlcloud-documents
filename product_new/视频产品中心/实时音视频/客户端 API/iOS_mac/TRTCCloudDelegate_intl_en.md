@@ -51,7 +51,7 @@ __Parameters__
 
 __Overview__
 
-After the `enterRoom()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32259#trtccloud) is called to enter a room, the `onEnterRoom(result)` callback will be received from the SDK. 
+After the `enterRoom()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) is called to enter a room, the `onEnterRoom(result)` callback will be received from the SDK. 
 - If room entry succeeded, `result` will be a positive number (`result` > 0), indicating the time in milliseconds (ms) used for entering the room.
 - If room entry failed, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124).
 
@@ -74,7 +74,7 @@ __Parameters__
 
 __Overview__
 
-When the `exitRoom()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32259#trtccloud) is called, the logic related to room exit will be executed, such as releasing resources of audio/video devices and codecs. After resources are released, the SDK will use the `onExitRoom()` callback to notify you.
+When the `exitRoom()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) is called, the logic related to room exit will be executed, such as releasing resources of audio/video devices and codecs. After resources are released, the SDK will use the `onExitRoom()` callback to notify you.
 If you need to call `enterRoom()` again or switch to another audio/video SDK, please wait until you receive the `onExitRoom()` callback; otherwise, exceptions such as occupied audio device (e.g., `AudioSession` in iOS) may occur.
 
 
@@ -94,7 +94,7 @@ __Parameters__
 
 __Overview__
 
-Calling the `switchRole()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32259#trtccloud) will switch between the anchor and viewer roles, which will be accompanied by a line switch process. After the SDK switches the roles, the `onSwitchRole()` event callback will be returned.
+Calling the `switchRole()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) will switch between the anchor and viewer roles, which will be accompanied by a line switch process. After the SDK switches the roles, the `onSwitchRole()` event callback will be returned.
 
 
 ### onConnectOtherRoom
@@ -114,7 +114,7 @@ __Parameters__
 
 __Overview__
 
-Calling the `connectOtherRoom()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32259#trtccloud) will establish a video call between two anchors in two different rooms, i.e., the "anchor competition" feature. The caller will receive the `onConnectOtherRoom()` callback to see whether the cross-room call is successful; and if yes, all users in both rooms will receive the `onUserVideoAvailable()` callback of anchor competition.
+Calling the `connectOtherRoom()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) will establish a video call between two anchors in two different rooms, i.e., the "anchor competition" feature. The caller will receive the `onConnectOtherRoom()` callback to see whether the cross-room call is successful; and if yes, all users in both rooms will receive the `onUserVideoAvailable()` callback of anchor competition.
 
 
 ### onDisconnectOtherRoom
@@ -242,7 +242,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | NSString * | ID of the local or remote user. `userId == nil` indicates the ID of the local user, while `userId != nil` indicates the ID of a remote user. |
-| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | Video stream type: camera or screen sharing. |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideostreamtype) | Video stream type: camera or screen sharing. |
 | width | int | Image width. |
 | height | int | Image height. |
 
@@ -279,7 +279,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | Video stream type: primary image, small image, or secondary stream image (screen sharing). |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideostreamtype) | Video stream type: primary image, small image, or secondary stream image (screen sharing). |
 
 __Overview__
 
@@ -353,8 +353,8 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| localQuality | [TRTCQualityInfo](https://intl.cloud.tencent.com/document/product/647#trtcqualityinfo) * | Upstream network quality. |
-| remoteQuality | NSArray< [TRTCQualityInfo](https://intl.cloud.tencent.com/document/product/647#trtcqualityinfo) * > * | Downstream network quality. |
+| localQuality | [TRTCQualityInfo](https://intl.cloud.tencent.com/document/product/647/35123#trtcqualityinfo) * | Upstream network quality. |
+| remoteQuality | NSArray< [TRTCQualityInfo](https://intl.cloud.tencent.com/document/product/647/35123#trtcqualityinfo) * > * | Downstream network quality. |
 
 >?`userId == nil indicates the current local video quality.
 
@@ -370,7 +370,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| statistics | [TRTCStatistics](https://intl.cloud.tencent.com/document/product/647#trtcstatistics) * | Statistics of local and remote users. |
+| statistics | [TRTCStatistics](https://intl.cloud.tencent.com/document/product/647/35123#trtcstatistics) * | Statistics of local and remote users. |
 
 __Overview__
 
@@ -434,8 +434,8 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| route | [TRTCAudioRoute](https://intl.cloud.tencent.com/document/product/647#trtcaudioroute) | Current audio routing. |
-| fromRoute | [TRTCAudioRoute](https://intl.cloud.tencent.com/document/product/647#trtcaudioroute) | Audio routing before change. |
+| route | [TRTCAudioRoute](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioroute) | Current audio routing. |
+| fromRoute | [TRTCAudioRoute](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioroute) | Audio routing before change. |
 
 
 ### onUserVoiceVolume
@@ -449,12 +449,12 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userVolumes | NSArray< [TRTCVolumeInfo](https://intl.cloud.tencent.com/document/product/647#trtcvolumeinfo) * > * | Volume level of all members who are speaking in the room. Value range: 0–100. |
+| userVolumes | NSArray< [TRTCVolumeInfo](https://intl.cloud.tencent.com/document/product/647/35123#trtcvolumeinfo) * > * | Volume level of all members who are speaking in the room. Value range: 0–100. |
 | totalVolume | NSInteger | Total volume level of all remote members. Value range: 0–100. |
 
 __Overview__
 
-The `enableAudioVolumeEvaluation` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32259#trtccloud) can be used to enable this callback or set its triggering interval. It should be noted that after `enableAudioVolumeEvaluation` is called to enable the volume level callback, no matter whether there is a user speaking in the channel, the callback will be called at the set time interval. If there is no one speaking, `userVolumes` will be empty, and `totalVolume` will be `0`.
+The `enableAudioVolumeEvaluation` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) can be used to enable this callback or set its triggering interval. It should be noted that after `enableAudioVolumeEvaluation` is called to enable the volume level callback, no matter whether there is a user speaking in the channel, the callback will be called at the set time interval. If there is no one speaking, `userVolumes` will be empty, and `totalVolume` will be `0`.
 
 >?If `userId` is `nil`, it indicates the volume level of the local user. `userVolumes` only includes the volume information of users who are speaking (i.e., volume level is not 0).
 
@@ -472,7 +472,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | deviceId | NSString * | Device ID. |
-| deviceType | [TRTCMediaDeviceType](https://intl.cloud.tencent.com/document/product/647#trtcmediadevicetype) | Device type. |
+| deviceType | [TRTCMediaDeviceType](https://intl.cloud.tencent.com/document/product/647/35123#trtcmediadevicetype) | Device type. |
 | state | NSInteger | 0: device disconnected; 1: device connected. |
 
 
@@ -552,7 +552,7 @@ Callback of completion of starting relayed push to CDN.
 
 __Overview__
 
-This callback corresponds to the `startPublishCDNStream()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32259#trtccloud).
+This callback corresponds to the `startPublishCDNStream()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud).
 
 >?If `Start` callback is successful, the relayed push request has been successfully sent to Tencent Cloud. If the target CDN is exceptional, relayed push may fail.
 
@@ -567,12 +567,12 @@ Callback of completion of stopping relayed push to CDN.
 
 __Overview__
 
-This callback corresponds to the `stopPublishCDNStream()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32259#trtccloud).
+This callback corresponds to the `stopPublishCDNStream()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud).
 
 
 ### onSetMixTranscodingConfig
 
-Callback of setting On-Cloud MixTranscoding parameters. This callback corresponds to the `setMixTranscodingConfig()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32259#trtccloud).
+Callback of setting On-Cloud MixTranscoding parameters. This callback corresponds to the `setMixTranscodingConfig()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud).
 ```
 - (void)onSetMixTranscodingConfig:(int)err errMsg:(NSString *)errMsg 
 ```
@@ -675,9 +675,9 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| frame | [TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647#trtcvideoframe) *_Nonnull | Information of the video frame to be rendered. |
+| frame | [TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideoframe) *_Nonnull | Information of the video frame to be rendered. |
 | userId | NSString *__nullable | `userId` of the video source. If the callback is for local video (`setLocalVideoRenderDelegate`), this parameter can be ignored. |
-| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | Video source type, which can be camera, screen sharing, etc. |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123#trtcvideostreamtype) | Video source type, which can be camera, screen sharing, etc. |
 
 
 
@@ -701,7 +701,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647#trtcaudioframe) * | Audio data. |
+| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioframe) * | Audio data. |
 
 >?
 >- Do not perform any time-consuming operation in this callback function. It is recommended to directly copy the data to another thread for processing; otherwise, various audio exceptions will occur.
@@ -721,7 +721,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647#trtcaudioframe) * | Audio data. |
+| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioframe) * | Audio data. |
 | userId | NSString * | User ID. |
 
 >?
@@ -740,7 +740,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647#trtcaudioframe) * | Audio data. |
+| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123#trtcaudioframe) * | Audio data. |
 
 >?
 >- Do not perform any time-consuming operation in this callback function. It is recommended to directly copy the data to another thread for processing; otherwise, various audio exceptions will occur.
@@ -775,7 +775,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | log | nullable NSString * | Log content. |
-| level | [TRTCLogLevel](https://intl.cloud.tencent.com/document/product/647#trtcloglevel) | Log level. For more information, please see `TRTCLogLevel`. |
+| level | [TRTCLogLevel](https://intl.cloud.tencent.com/document/product/647/35123#trtcloglevel) | Log level. For more information, please see `TRTCLogLevel`. |
 | module | nullable NSString * | Currently, this parameter has no meaning, and its value is always `TXLiteAVSDK`. |
 
 
