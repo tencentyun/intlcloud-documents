@@ -54,12 +54,12 @@ __参数__
 
 __介绍__
 
-调用 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 enterRoom() 接口执行进房操作后，会收到来自 SDK 的 onEnterRoom(result) 回调：
+调用 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) 中的 enterRoom() 接口执行进房操作后，会收到来自 SDK 的 onEnterRoom(result) 回调：
 - 如果加入成功，result 会是一个正数（result > 0），表示加入房间所消耗的时间，单位为毫秒（ms）。
-- 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。进房失败的错误码含义请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。
+- 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。进房失败的错误码含义请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35130)。
 
 
->?在 Ver6.6 之前的版本，只有进房成功会抛出 onEnterRoom(result) 回调，进房失败由 [onError()](https://cloud.tencent.com/document/product/647/32265#onerror) 回调抛出。 在 Ver6.6 及之后改为：进房成功返回正的 result，进房失败返回负的 result，同时进房失败也会有 [onError()](https://cloud.tencent.com/document/product/647/32265#onerror) 回调抛出。
+>?在 Ver6.6 之前的版本，只有进房成功会抛出 onEnterRoom(result) 回调，进房失败由 [onError()](https://intl.cloud.tencent.com/document/product/647/35126#onerror) 回调抛出。 在 Ver6.6 及之后改为：进房成功返回正的 result，进房失败返回负的 result，同时进房失败也会有 [onError()](https://intl.cloud.tencent.com/document/product/647/35126#onerror) 回调抛出。
 
 
 
@@ -78,8 +78,8 @@ __参数__
 
 __介绍__
 
-调用 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 exitRoom() 接口会执行退出房间的相关逻辑，例如释放音视频设备资源和编解码器资源等。 待资源释放完毕，SDK 会通过 [onExitRoom()](https://cloud.tencent.com/document/product/647/32265#onexitroom) 回调通知到您。
-如果您要再次调用 enterRoom() 或者切换到其他的音视频 SDK，请等待 [onExitRoom()](https://cloud.tencent.com/document/product/647/32265#onexitroom) 回调到来之后再执行相关操作。 否则可能会遇到音频设备被占用等各种异常问题。
+调用 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) 中的 exitRoom() 接口会执行退出房间的相关逻辑，例如释放音视频设备资源和编解码器资源等。 待资源释放完毕，SDK 会通过 [onExitRoom()](https://intl.cloud.tencent.com/document/product/647/35126#onexitroom) 回调通知到您。
+如果您要再次调用 enterRoom() 或者切换到其他的音视频 SDK，请等待 [onExitRoom()](https://intl.cloud.tencent.com/document/product/647/35126#onexitroom) 回调到来之后再执行相关操作。 否则可能会遇到音频设备被占用等各种异常问题。
 
 
 ### onSwitchRole
@@ -93,12 +93,12 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| errCode | final int | 错误码，0代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。 |
+| errCode | final int | 错误码，0代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35130)。 |
 | errMsg | final String | 错误信息。 |
 
 __介绍__
 
-调用 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 switchRole() 接口会切换主播和观众的角色，该操作会伴随一个线路切换的过程， 待 SDK 切换完成后，会抛出 [onSwitchRole()](https://cloud.tencent.com/document/product/647/32265#onswitchrole) 事件回调。
+调用 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) 中的 switchRole() 接口会切换主播和观众的角色，该操作会伴随一个线路切换的过程， 待 SDK 切换完成后，会抛出 [onSwitchRole()](https://intl.cloud.tencent.com/document/product/647/35126#onswitchrole) 事件回调。
 
 
 ### onConnectOtherRoom
@@ -113,12 +113,12 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | final String | 要 PK 的目标主播 userid。 |
-| errCode | final int | 错误码，ERR_NULL 代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。 |
+| errCode | final int | 错误码，ERR_NULL 代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35130)。 |
 | errMsg | final String | 错误信息。 |
 
 __介绍__
 
-调用 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 ConnectOtherRoom() 接口会将两个不同房间中的主播拉通视频通话，也就是所谓的“主播PK”功能。 调用者会收到 [onConnectOtherRoom()](https://cloud.tencent.com/document/product/647/32265#onconnectotherroom) 回调来获知跨房通话是否成功， 如果成功，两个房间中的所有用户都会收到 PK 主播的 [onUserVideoAvailable()](https://cloud.tencent.com/document/product/647/32265#onuservideoavailable) 回调。
+调用 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) 中的 ConnectOtherRoom() 接口会将两个不同房间中的主播拉通视频通话，也就是所谓的“主播PK”功能。 调用者会收到 [onConnectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/35126#onconnectotherroom) 回调来获知跨房通话是否成功， 如果成功，两个房间中的所有用户都会收到 PK 主播的 [onUserVideoAvailable()](https://intl.cloud.tencent.com/document/product/647/35126#onuservideoavailable) 回调。
 
 
 ### onDisConnectOtherRoom
@@ -150,7 +150,7 @@ __介绍__
 - 视频通话场景（TRTCCloudDef.TRTC_APP_SCENE_VIDEOCALL）：该场景下用户没有角色的区别，任何用户进入房间都会触发该通知。
 - 在线直播场景（TRTCCloudDef.TRTC_APP_SCENE_LIVE）：在线直播场景不限制观众的数量，如果任何用户进出都抛出回调会引起很大的性能损耗，所以该场景下只有主播进入房间时才会触发该通知，观众进入房间不会触发该通知。
 
->?注意 onRemoteUserEnterRoom 和 onRemoteUserLeaveRoom 只适用于维护当前房间里的“成员列表”，如果需要显示远程画面，建议使用监听 [onUserVideoAvailable()](https://cloud.tencent.com/document/product/647/32265#onuservideoavailable) 事件回调。
+>?注意 onRemoteUserEnterRoom 和 onRemoteUserLeaveRoom 只适用于维护当前房间里的“成员列表”，如果需要显示远程画面，建议使用监听 [onUserVideoAvailable()](https://intl.cloud.tencent.com/document/product/647/35126#onuservideoavailable) 事件回调。
 
 
 
@@ -349,7 +349,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| localQuality | [TRTCCloudDef.TRTCQuality](https://cloud.tencent.com/document/product/647/32266#trtcquality) | 上行网络质量。 |
+| localQuality | [TRTCCloudDef.TRTCQuality](https://intl.cloud.tencent.com/document/product/647/35129#trtcquality) | 上行网络质量。 |
 | remoteQuality | ArrayList< TRTCCloudDef.TRTCQuality > | 下行网络质量。 |
 
 >?userid 为"" 代表自己当前的视频质量。
@@ -366,7 +366,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| statics | [TRTCStatistics](https://cloud.tencent.com/document/product/647/32266#trtcstatistics) | 状态数据。 |
+| statics | [TRTCStatistics](https://intl.cloud.tencent.com/document/product/647/35129#trtcstatistics) | 状态数据。 |
 
 __介绍__
 
@@ -412,7 +412,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| currentResult | [TRTCCloudDef.TRTCSpeedTestResult](https://cloud.tencent.com/document/product/647/32266#trtcspeedtestresult) | 当前完成的测速结果。 |
+| currentResult | [TRTCCloudDef.TRTCSpeedTestResult](https://intl.cloud.tencent.com/document/product/647/35129#trtcspeedtestresult) | 当前完成的测速结果。 |
 | finishedCount | int | 已完成测速的服务器数量。 |
 | totalCount | int | 需要测速的服务器总数量。 |
 
@@ -459,7 +459,7 @@ __参数__
 
 __介绍__
 
-您可以通过调用 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 enableAudioVolumeEvaluation 接口来开关这个回调或者设置它的触发间隔。 调用 enableAudioVolumeEvaluation 开启音量回调后，无论频道内是否有人说话，都会按设置的时间间隔调用这个回调; 如果没有人说话，则 userVolumes 为空，totalVolume 为0。
+您可以通过调用 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) 中的 enableAudioVolumeEvaluation 接口来开关这个回调或者设置它的触发间隔。 调用 enableAudioVolumeEvaluation 开启音量回调后，无论频道内是否有人说话，都会按设置的时间间隔调用这个回调; 如果没有人说话，则 userVolumes 为空，totalVolume 为0。
 
 >?userId 为 null 时表示自己的音量，userVolumes 内仅包含正在说话（音量不为0）的用户音量信息。
 
@@ -541,7 +541,7 @@ void onStartPublishCDNStream(int err, String errMsg)
 
 __介绍__
 
-对应于 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 startPublishCDNStream() 接口。
+对应于 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) 中的 startPublishCDNStream() 接口。
 
 >?Start 回调如果成功，只能说明转推请求已经成功告知给腾讯云，如果目标 CDN 有异常，还是有可能会转推失败。
 
@@ -556,12 +556,12 @@ void onStopPublishCDNStream(int err, String errMsg)
 
 __介绍__
 
-对应于 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 stopPublishCDNStream() 接口。
+对应于 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) 中的 stopPublishCDNStream() 接口。
 
 
 ### onSetMixTranscodingConfig
 
-设置云端的混流转码参数的回调，对应于 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 setMixTranscodingConfig() 接口。
+设置云端的混流转码参数的回调，对应于 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) 中的 setMixTranscodingConfig() 接口。
 ```
 void onSetMixTranscodingConfig(int err, String errMsg)
 ```
@@ -610,7 +610,7 @@ __参数__
 |-----|-----|-----|
 | userId | String | 视频源的 userId，如果是本地视频回调（setLocalVideoRenderListener），该参数可以不用理会。 |
 | streamType | int | 视频流类型，例如是摄像头画面还是屏幕分享画面等等。 |
-| frame | [TRTCCloudDef.TRTCVideoFrame](https://cloud.tencent.com/document/product/647/32266#trtcvideoframe) | 待渲染视频帧。 |
+| frame | [TRTCCloudDef.TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647/35129#trtcvideoframe) | 待渲染视频帧。 |
 
 
 
@@ -633,7 +633,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| frame | [TRTCCloudDef.TRTCAudioFrame](https://cloud.tencent.com/document/product/647/32266#trtcaudioframe) | 音频数据。 |
+| frame | [TRTCCloudDef.TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35129#trtcaudioframe) | 音频数据。 |
 
 >?
 >- 请不要在此回调函数中做任何耗时操作，建议直接拷贝到另一线程进行处理，否则会导致各种声音问题。
@@ -653,7 +653,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| frame | [TRTCCloudDef.TRTCAudioFrame](https://cloud.tencent.com/document/product/647/32266#trtcaudioframe) | 音频数据。 |
+| frame | [TRTCCloudDef.TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35129#trtcaudioframe) | 音频数据。 |
 | userId | String | 用户标识。 |
 
 >?
@@ -672,7 +672,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| frame | [TRTCCloudDef.TRTCAudioFrame](https://cloud.tencent.com/document/product/647/32266#trtcaudioframe) | 音频数据。 |
+| frame | [TRTCCloudDef.TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35129#trtcaudioframe) | 音频数据。 |
 
 >?
 >- 请不要在此回调函数中做任何耗时操作，建议直接拷贝到另一线程进行处理，否则会导致各种声音问题。

@@ -15,12 +15,12 @@ __Attribute list__
 
 | Attribute | Type | Description | Recommended Value |
 |-----|-----|-----|-----|
-| sdkAppId | UInt32 | Application ID, which is required. Tencent Cloud generates bills based on `sdkAppId`. | The ID can be obtained on the account information page in the [TRTC Console](https://console.cloud.tencent.com/rav/) after the corresponding application is created. |
+| sdkAppId | UInt32 | Application ID, which is required. Tencent Cloud generates bills based on `sdkAppId`. | The ID can be obtained on the account information page in the TRTC Console after the corresponding application is created. |
 | userId | NSString * | User ID, which is required. It is the `userId` of the local user and acts as the login username. | If the ID of a user in your account system is "abc", `userId` can be set to "`abc`". |
 | userSig | NSString * | User signature, which is required. It is the authentication signature corresponding to the current `userId` and acts as the login password. | For more information on the calculation method, please see [How to Calculate `UserSig`](https://intl.cloud.tencent.com/document/product/647/35166). |
 | roomId | UInt32 | Room number, which is required. Users in the same room can see and make video calls to one another. | The parameter value can be customized but must be unique. If the user ID (`userId`) is numeric, the room creator's user ID can be directly used as the `roomId`. |
 | role | [TRTCRoleType](#trtcroletype) | Role, which applies only to the LVB scenario (`TRTCAppSceneLIVE`) and does not take effect in the video call scenario. | Default value: anchor (`TRTCRoleAnchor`). |
-| privateMapKey | NSString * | Room signature, which is optional. If you want only users with the specified `userIds` to enter a room, you need to use `privateMapKey` to restrict the permission. | You are recommended to use this parameter only if you have high security requirements. For more information, please see [Restricting Room Entry Permissions](https://cloud.tencent.com/document/product/647/32240). |
+| privateMapKey | NSString * | Room signature, which is optional. If you want only users with the specified `userIds` to enter a room, you need to use `privateMapKey` to restrict the permission. | You are recommended to use this parameter only if you have high security requirements. For more information, please see [Restricting Room Entry Permissions](https://intl.cloud.tencent.com/document/product/647/35157). |
 | bussInfo | NSString * | Business data, which is optional. This field applies only to some advanced features. | This parameter is not recommended. |
 
 
@@ -167,7 +167,7 @@ Network speed test result.
 
 __Overview__
 
-The `startSpeedTest` API of [TRTCCloud](https://cloud.tencent.com/document/product/647/32259#trtccloud) can be used to test the network speed before a user enters a room (this API cannot be called during a call). The speed test result will be returned once every 2–3 seconds, and the test result of one IP address will be returned each time.
+The `startSpeedTest` API of [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud) can be used to test the network speed before a user enters a room (this API cannot be called during a call). The speed test result will be returned once every 2–3 seconds, and the test result of one IP address will be returned each time.
 
 
 __Attribute list__
@@ -272,8 +272,8 @@ __Attribute list__
 | Attribute | Type | Description | Recommended Value |
 |-----|-----|-----|-----|
 | mode | [TRTCTranscodingConfigMode](#trtctranscodingconfigmode) | Transcoding `config` mode. | - |
-| appId | int | Tencent Cloud LVB application ID. | Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
-| bizId | int | Tencent Cloud LVB business ID. | Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
+| appId | int | Tencent Cloud LVB application ID. | Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
+| bizId | int | Tencent Cloud LVB business ID. | Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
 | videoWidth | int | Width of video resolution in px after being transcoded. | - |
 | videoHeight | int | Height of video resolution in px after being transcoded. | - |
 | videoBitrate | int | Bitrate of video resolution in Kbps after being transcoded. | - |
@@ -299,8 +299,8 @@ __Attribute list__
 
 | Attribute | Type | Description |
 |-----|-----|-----|
-| appId | int | Tencent Cloud application ID. Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
-| bizId | int | Tencent Cloud LVB business ID. Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
+| appId | int | Tencent Cloud application ID. Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
+| bizId | int | Tencent Cloud LVB business ID. Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
 | url | NSString * | Relayed push URL. |
 
 
@@ -472,7 +472,7 @@ TRTC provides three different audio/video streams, including:
 
 
 
->?
+>
 >- If the upstream network and performance of the anchor is good, the primary (big) and small images can be sent at the same time.
 >- The SDK does not support enabling only the small image, which must be enabled together with the primary image.
 
@@ -667,7 +667,7 @@ The TRTC SDK needs to adjust the internal codecs and network module based on the
 - ModeServer: on-cloud control, which is the default and recommended mode.
 - ModeClient: client-based control, which is for internal debugging of SDK and shall not be used by users.
 
->?You are recommended to use on-cloud control, so that when upgrading the QoS algorithm, you do not need to upgrade the SDK to get a better experience.
+>You are recommended to use on-cloud control, so that when upgrading the QoS algorithm, you do not need to upgrade the SDK to get a better experience.
 
 
 | Enumerated Value | Description |
@@ -796,7 +796,7 @@ Currently, the SDK provides two control modes of system volume types, including:
 - TRTCSystemVolumeTypeAuto: "call volume with mic and media volume without mic", i.e., the call volume mode will be used in a call, while the media volume mode will be used when a user only watches the video without speaking.
 - TRTCSystemVolumeTypeMedia: the media volume will be used all the time. If a user is on a call, the SDK will use the built-in algorithm for AEC. 
 
->?Considering the increment in the installation package size, only the SDKs in the TRTC Enterprise and Professional editions contain the acoustic algorithm library. **If `TRTCSystemVolumeTypeMedia` is selected in the TRTC Lite edition, echo issues will occur, so please do so with caution.**
+>Considering the increment in the installation package size, only the SDKs in the TRTC Enterprise and Professional editions contain the acoustic algorithm library. **If `TRTCSystemVolumeTypeMedia` is selected in the TRTC Lite edition, echo issues will occur, so please do so with caution.**
 
 
 | Enumerated Value | Description |
