@@ -323,44 +323,44 @@ Event callback API for TRTC video call feature.
 
 | API | Description |
 |-----|-----|
-| [onScreenCaptureStarted](https://intl.cloud.tencent.com/document/product/647/35123/35121#onscreencapturestarted) | This callback will be returned by the SDK when screen sharing is started. |
-| [onScreenCapturePaused](https://intl.cloud.tencent.com/document/product/647/35123/35121#onscreencapturepaused) | This callback will be returned by the SDK when screen sharing is paused. |
-| [onScreenCaptureResumed](https://intl.cloud.tencent.com/document/product/647/35123/35121#onscreencaptureresumed) | This callback will be returned by the SDK when screen sharing is resumed. |
-| [onScreenCaptureStoped](https://intl.cloud.tencent.com/document/product/647/35123/35121#onscreencapturestoped) | This callback will be returned by the SDK when screen sharing is stopped. |
+| [onScreenCaptureStarted](https://intl.cloud.tencent.com/document/product/647/35121#onscreencapturestarted) | This callback will be returned by the SDK when screen sharing is started. |
+| [onScreenCapturePaused](https://intl.cloud.tencent.com/document/product/647/35121#onscreencapturepaused) | This callback will be returned by the SDK when screen sharing is paused. |
+| [onScreenCaptureResumed](https://intl.cloud.tencent.com/document/product/647/35121#onscreencaptureresumed) | This callback will be returned by the SDK when screen sharing is resumed. |
+| [onScreenCaptureStoped](https://intl.cloud.tencent.com/document/product/647/35121#onscreencapturestoped) | This callback will be returned by the SDK when screen sharing is stopped. |
 
 ### Custom video rendering callbacks
-Redirect to [TRTCVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/35123/35121#trtcvideorenderdelegate)
+Redirect to [TRTCVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcvideorenderdelegate)
 
 | API | Description |
 |-----|-----|
-| [onRenderVideoFrame](https://intl.cloud.tencent.com/document/product/647/35123/35121#onrendervideoframe) | Callback of custom video rendering. |
+| [onRenderVideoFrame](https://intl.cloud.tencent.com/document/product/647/35121#onrendervideoframe) | Callback of custom video rendering. |
 
 
 ### Custom audio data frame processing callbacks
-Redirect to [TRTCAudioFrameDelegate](https://intl.cloud.tencent.com/document/product/647/35123/35121#trtcaudioframedelegate)
+Redirect to [TRTCAudioFrameDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcaudioframedelegate)
 
 | API | Description |
 |-----|-----|
-| [onCapturedAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123/35121#oncapturedaudioframe) | Callback of audio data captured by local mic. |
-| [onPlayAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123/35121#onplayaudioframe) | Audio data from each remote user before audio mixing (for example, if you want to convert the audio of a channel to text, you need to use the source data instead of the data after audio mixing). |
-| [onMixedPlayAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123/35121#onmixedplayaudioframe) | Audio data to be played back by speaker after audio data from each channel is mixed. |
+| [onCapturedAudioFrame](https://intl.cloud.tencent.com/document/product/647/35121#oncapturedaudioframe) | Callback of audio data captured by local mic. |
+| [onPlayAudioFrame](https://intl.cloud.tencent.com/document/product/647/35121#onplayaudioframe) | Audio data from each remote user before audio mixing (for example, if you want to convert the audio of a channel to text, you need to use the source data instead of the data after audio mixing). |
+| [onMixedPlayAudioFrame](https://intl.cloud.tencent.com/document/product/647/35121#onmixedplayaudioframe) | Audio data to be played back by speaker after audio data from each channel is mixed. |
 
 
 ### Log callbacks
-Redirect to [TRTCLogDelegate](https://intl.cloud.tencent.com/document/product/647/35123/35121#trtclogdelegate)
+Redirect to [TRTCLogDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtclogdelegate)
 
 It is recommended to set the callback delegation object in a class that is initialized early, e.g., `AppDelegate`.
 
 | API | Description |
 |-----|-----|
-| [onLog](https://intl.cloud.tencent.com/document/product/647/35123/35121#onlog) | Callback of log printing. |
+| [onLog](https://intl.cloud.tencent.com/document/product/647/35121#onlog) | Callback of log printing. |
 
 
 ### Audio effect callbacks
 
 | API | Description |
 |-----|-----|
-| [onAudioEffectFinished](https://intl.cloud.tencent.com/document/product/647/35123/35121#onaudioeffectfinished) | Callback of ending an audio effect. |
+| [onAudioEffectFinished](https://intl.cloud.tencent.com/document/product/647/35121#onaudioeffectfinished) | Callback of ending an audio effect. |
 
 ## Definitions of Key Classes
 

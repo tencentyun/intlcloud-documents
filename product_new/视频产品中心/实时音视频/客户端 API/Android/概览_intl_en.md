@@ -6,77 +6,77 @@ Main API class for the TRTC video call feature.
 
 | API | Description |
 |-----|-----|
-| [sharedInstance](https://intl.cloud.tencent.com/document/product/647/35123/32264#sharedinstance) | Creates [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35123/32264#trtccloud) singleton. |
-| [destroySharedInstance](https://intl.cloud.tencent.com/document/product/647/35123/32264#destroysharedinstance) | Terminates [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35123/32264#trtccloud) singleton. |
-| [setListener](https://intl.cloud.tencent.com/document/product/647/35123/32264#setlistener) | Sets the `TRTCCloudListener` callback API, through which users can get various status notifications from [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35123/32264#trtccloud). |
-| [setListenerHandler](https://intl.cloud.tencent.com/document/product/647/35123/32264#setlistenerhandler) | Sets the queue that drives the [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener) callback. |
+| [sharedInstance](https://intl.cloud.tencent.com/document/product/647/35126#sharedinstance) | Creates [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) singleton. |
+| [destroySharedInstance](https://intl.cloud.tencent.com/document/product/647/35126#destroysharedinstance) | Terminates [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) singleton. |
+| [setListener](https://intl.cloud.tencent.com/document/product/647/35126#setlistener) | Sets the `TRTCCloudListener` callback API, through which users can get various status notifications from [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud). |
+| [setListenerHandler](https://intl.cloud.tencent.com/document/product/647/35126#setlistenerhandler) | Sets the queue that drives the [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener) callback. |
 
 
 ### Room API functions
 
 | API | Description |
 |-----|-----|
-| [enterRoom](https://intl.cloud.tencent.com/document/product/647/35123/32264#enterroom) | Enters room. |
-| [exitRoom](https://intl.cloud.tencent.com/document/product/647/35123/32264#exitroom) | Exits room. |
-| [switchRole](https://intl.cloud.tencent.com/document/product/647/35123/32264#switchrole) | Switches roles. This API applies only to the LVB scenario (`TRTCAppSceneLIVE`). |
-| [ConnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35123/32264#connectotherroom) | Requests cross-room call (anchor competition). |
-| [DisconnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35123/32264#disconnectotherroom) | Exits cross-room call. |
-| [setDefaultStreamRecvMode](https://intl.cloud.tencent.com/document/product/647/35123/32264#setdefaultstreamrecvmode) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
+| [enterRoom](https://intl.cloud.tencent.com/document/product/647/35126#enterroom) | Enters room. |
+| [exitRoom](https://intl.cloud.tencent.com/document/product/647/35126#exitroom) | Exits room. |
+| [switchRole](https://intl.cloud.tencent.com/document/product/647/35126#switchrole) | Switches roles. This API applies only to the LVB scenario (`TRTCAppSceneLIVE`). |
+| [ConnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35126#connectotherroom) | Requests cross-room call (anchor competition). |
+| [DisconnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35126#disconnectotherroom) | Exits cross-room call. |
+| [setDefaultStreamRecvMode](https://intl.cloud.tencent.com/document/product/647/35126#setdefaultstreamrecvmode) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
 
 
 ### Video API functions
 
 | API | Description |
 |-----|-----|
-| [startLocalPreview](https://intl.cloud.tencent.com/document/product/647/35123/32264#startlocalpreview) | Enables preview image of local video. |
-| [stopLocalPreview](https://intl.cloud.tencent.com/document/product/647/35123/32264#stoplocalpreview) | Stops local video capture and preview. |
-| [muteLocalVideo](https://intl.cloud.tencent.com/document/product/647/35123/32264#mutelocalvideo) | Specifies whether to block local video image. |
-| [startRemoteView](https://intl.cloud.tencent.com/document/product/647/35123/32264#startremoteview) | Starts displaying remote video image. |
-| [stopRemoteView](https://intl.cloud.tencent.com/document/product/647/35123/32264#stopremoteview) | Stops displaying remote video image. |
-| [stopAllRemoteView](https://intl.cloud.tencent.com/document/product/647/35123/32264#stopallremoteview) | Stops displaying all remote video images. |
-| [muteRemoteVideoStream](https://intl.cloud.tencent.com/document/product/647/35123/32264#muteremotevideostream) | Pauses receiving the specified remote video stream. |
-| [muteAllRemoteVideoStreams](https://intl.cloud.tencent.com/document/product/647/35123/32264#muteallremotevideostreams) | Stops receiving all remote video streams. |
-| [setVideoEncoderParam](https://intl.cloud.tencent.com/document/product/647/35123/32264#setvideoencoderparam) | Sets video encoder parameters. |
-| [setNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35123/32264#setnetworkqosparam) | Sets network bandwidth limit parameters. |
-| [setLocalViewFillMode](https://intl.cloud.tencent.com/document/product/647/35123/32264#setlocalviewfillmode) | Sets rendering mode of local image. |
-| [setRemoteViewFillMode](https://intl.cloud.tencent.com/document/product/647/35123/32264#setremoteviewfillmode) | Sets rendering mode of remote image. |
-| [setLocalViewRotation](https://intl.cloud.tencent.com/document/product/647/35123/32264#setlocalviewrotation) | Sets clockwise rotation angle of local image. |
-| [setRemoteViewRotation](https://intl.cloud.tencent.com/document/product/647/35123/32264#setremoteviewrotation) | Sets clockwise rotation angle of remote image. |
-| [setVideoEncoderRotation](https://intl.cloud.tencent.com/document/product/647/35123/32264#setvideoencoderrotation) | Sets direction of image output by video encoder (i.e., video image viewed by remote user or recorded by server). |
-| [setLocalViewMirror](https://intl.cloud.tencent.com/document/product/647/35123/32264#setlocalviewmirror) | Sets mirror mode of local camera's preview image. |
-| [setVideoEncoderMirror](https://intl.cloud.tencent.com/document/product/647/35123/32264#setvideoencodermirror) | Sets mirror mode of image output by encoder. |
-| [setGSensorMode](https://intl.cloud.tencent.com/document/product/647/35123/32264#setgsensormode) | Sets adaptation mode of the g-sensor. |
-| [enableEncSmallVideoStream](https://intl.cloud.tencent.com/document/product/647/35123/32264#enableencsmallvideostream) | Enables dual-channel encoding mode with big and small images. |
-| [setRemoteVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123/32264#setremotevideostreamtype) | Specifies whether to view the big or small image of the specified `uid`. |
-| [setPriorRemoteVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35123/32264#setpriorremotevideostreamtype) | Sets the video quality preferred by viewers. |
+| [startLocalPreview](https://intl.cloud.tencent.com/document/product/647/35126#startlocalpreview) | Enables preview image of local video. |
+| [stopLocalPreview](https://intl.cloud.tencent.com/document/product/647/35126#stoplocalpreview) | Stops local video capture and preview. |
+| [muteLocalVideo](https://intl.cloud.tencent.com/document/product/647/35126#mutelocalvideo) | Specifies whether to block local video image. |
+| [startRemoteView](https://intl.cloud.tencent.com/document/product/647/35126#startremoteview) | Starts displaying remote video image. |
+| [stopRemoteView](https://intl.cloud.tencent.com/document/product/647/35126#stopremoteview) | Stops displaying remote video image. |
+| [stopAllRemoteView](https://intl.cloud.tencent.com/document/product/647/35126#stopallremoteview) | Stops displaying all remote video images. |
+| [muteRemoteVideoStream](https://intl.cloud.tencent.com/document/product/647/35126#muteremotevideostream) | Pauses receiving the specified remote video stream. |
+| [muteAllRemoteVideoStreams](https://intl.cloud.tencent.com/document/product/647/35126#muteallremotevideostreams) | Stops receiving all remote video streams. |
+| [setVideoEncoderParam](https://intl.cloud.tencent.com/document/product/647/35126#setvideoencoderparam) | Sets video encoder parameters. |
+| [setNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35126#setnetworkqosparam) | Sets network bandwidth limit parameters. |
+| [setLocalViewFillMode](https://intl.cloud.tencent.com/document/product/647/35126#setlocalviewfillmode) | Sets rendering mode of local image. |
+| [setRemoteViewFillMode](https://intl.cloud.tencent.com/document/product/647/35126#setremoteviewfillmode) | Sets rendering mode of remote image. |
+| [setLocalViewRotation](https://intl.cloud.tencent.com/document/product/647/35126#setlocalviewrotation) | Sets clockwise rotation angle of local image. |
+| [setRemoteViewRotation](https://intl.cloud.tencent.com/document/product/647/35126#setremoteviewrotation) | Sets clockwise rotation angle of remote image. |
+| [setVideoEncoderRotation](https://intl.cloud.tencent.com/document/product/647/35126#setvideoencoderrotation) | Sets direction of image output by video encoder (i.e., video image viewed by remote user or recorded by server). |
+| [setLocalViewMirror](https://intl.cloud.tencent.com/document/product/647/35126#setlocalviewmirror) | Sets mirror mode of local camera's preview image. |
+| [setVideoEncoderMirror](https://intl.cloud.tencent.com/document/product/647/35126#setvideoencodermirror) | Sets mirror mode of image output by encoder. |
+| [setGSensorMode](https://intl.cloud.tencent.com/document/product/647/35126#setgsensormode) | Sets adaptation mode of the g-sensor. |
+| [enableEncSmallVideoStream](https://intl.cloud.tencent.com/document/product/647/35126#enableencsmallvideostream) | Enables dual-channel encoding mode with big and small images. |
+| [setRemoteVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35126#setremotevideostreamtype) | Specifies whether to view the big or small image of the specified `uid`. |
+| [setPriorRemoteVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35126#setpriorremotevideostreamtype) | Sets the video quality preferred by viewers. |
 
 
 ### Audio API functions
 
 | API | Description |
 |-----|-----|
-| [startLocalAudio](https://intl.cloud.tencent.com/document/product/647/35123/32264#startlocalaudio) | Enables local audio capture and upstreaming. |
-| [stopLocalAudio](https://intl.cloud.tencent.com/document/product/647/35123/32264#stoplocalaudio) | Disables local audio capture and upstreaming. |
-| [muteLocalAudio](https://intl.cloud.tencent.com/document/product/647/35123/32264#mutelocalaudio) | Mutes local audio. |
-| [setAudioRoute](https://intl.cloud.tencent.com/document/product/647/35123/32264#setaudioroute) | Sets audio routing. |
-| [muteRemoteAudio](https://intl.cloud.tencent.com/document/product/647/35123/32264#muteremoteaudio) | Mutes user's audio. |
-| [muteAllRemoteAudio](https://intl.cloud.tencent.com/document/product/647/35123/32264#muteallremoteaudio) | Mutes all users' audio. |
-| [enableAudioVolumeEvaluation](https://intl.cloud.tencent.com/document/product/647/35123/32264#enableaudiovolumeevaluation) | Enables volume reminder. |
-| [startAudioRecording](https://intl.cloud.tencent.com/document/product/647/35123/32264#startaudiorecording) | Starts audio recording. |
-| [stopAudioRecording](https://intl.cloud.tencent.com/document/product/647/35123/32264#stopaudiorecording) | Stops audio recording. |
-| [setSystemVolumeType](https://intl.cloud.tencent.com/document/product/647/35123/32264#setsystemvolumetype) | Sets the system volume type used during call. |
-| [enableAudioEarMonitoring](https://intl.cloud.tencent.com/document/product/647/35123/32264#enableaudioearmonitoring) | Enables in-ear monitoring. |
+| [startLocalAudio](https://intl.cloud.tencent.com/document/product/647/35126#startlocalaudio) | Enables local audio capture and upstreaming. |
+| [stopLocalAudio](https://intl.cloud.tencent.com/document/product/647/35126#stoplocalaudio) | Disables local audio capture and upstreaming. |
+| [muteLocalAudio](https://intl.cloud.tencent.com/document/product/647/35126#mutelocalaudio) | Mutes local audio. |
+| [setAudioRoute](https://intl.cloud.tencent.com/document/product/647/35126#setaudioroute) | Sets audio routing. |
+| [muteRemoteAudio](https://intl.cloud.tencent.com/document/product/647/35126#muteremoteaudio) | Mutes user's audio. |
+| [muteAllRemoteAudio](https://intl.cloud.tencent.com/document/product/647/35126#muteallremoteaudio) | Mutes all users' audio. |
+| [enableAudioVolumeEvaluation](https://intl.cloud.tencent.com/document/product/647/35126#enableaudiovolumeevaluation) | Enables volume reminder. |
+| [startAudioRecording](https://intl.cloud.tencent.com/document/product/647/35126#startaudiorecording) | Starts audio recording. |
+| [stopAudioRecording](https://intl.cloud.tencent.com/document/product/647/35126#stopaudiorecording) | Stops audio recording. |
+| [setSystemVolumeType](https://intl.cloud.tencent.com/document/product/647/35126#setsystemvolumetype) | Sets the system volume type used during call. |
+| [enableAudioEarMonitoring](https://intl.cloud.tencent.com/document/product/647/35126#enableaudioearmonitoring) | Enables in-ear monitoring. |
 
 ### Camera API functions
 
 | API | Description |
 |-----|-----|
-| [switchCamera](https://intl.cloud.tencent.com/document/product/647/35123/32264#switchcamera) | Switches cameras. |
-| [isCameraZoomSupported](https://intl.cloud.tencent.com/document/product/647/35123/32264#iscamerazoomsupported) | Queries whether the current camera supports zoom. |
-| [setZoom](https://intl.cloud.tencent.com/document/product/647/35123/32264#setzoom) | Sets zoom factor (focal length) of camera. |
-| [isCameraTorchSupported](https://intl.cloud.tencent.com/document/product/647/35123/32264#iscameratorchsupported) | Queries whether the device supports flash (flash mode). |
-| [enableTorch](https://intl.cloud.tencent.com/document/product/647/35123/32264#enabletorch) | Enables or disables flash. |
-| [isCameraFocusPositionInPreviewSupported](https://intl.cloud.tencent.com/document/product/647/35123/32264#iscamerafocuspositioninpreviewsupported) | Queries whether the device supports setting focus. |
+| [switchCamera](https://intl.cloud.tencent.com/document/product/647/35126#switchcamera) | Switches cameras. |
+| [isCameraZoomSupported](https://intl.cloud.tencent.com/document/product/647/35126#iscamerazoomsupported) | Queries whether the current camera supports zoom. |
+| [setZoom](https://intl.cloud.tencent.com/document/product/647/35126#setzoom) | Sets zoom factor (focal length) of camera. |
+| [isCameraTorchSupported](https://intl.cloud.tencent.com/document/product/647/35126#iscameratorchsupported) | Queries whether the device supports flash (flash mode). |
+| [enableTorch](https://intl.cloud.tencent.com/document/product/647/35126#enabletorch) | Enables or disables flash. |
+| [isCameraFocusPositionInPreviewSupported](https://intl.cloud.tencent.com/document/product/647/35126#iscamerafocuspositioninpreviewsupported) | Queries whether the device supports setting focus. |
 | [setFocusPosition](https://cloud.tencent.com/document/product/647/32264#setfocusposition) | Sets camera focus. |
 | [isCameraAutoFocusFaceModeSupported](https://cloud.tencent.com/document/product/647/32264#iscameraautofocusfacemodesupported) | Queries whether the device supports automatic recognition of face position. |
 
