@@ -139,12 +139,12 @@ RtcError 错误对象。
 
 ## 3.x.x及以前版本 API 文档
 
-- [基础功能接口](https://cloud.tencent.com/document/product/647/17251)
-- [基础事件通知](https://cloud.tencent.com/document/product/647/17248)
-- [高级功能接口](https://cloud.tencent.com/document/product/647/17250)
-- [高级事件通知](https://cloud.tencent.com/document/product/647/17252)
-- [异常处理与问题定位](https://cloud.tencent.com/document/product/647/34341)
-- [常见问题](https://cloud.tencent.com/document/product/647/17017)
+- [基础功能接口](https://intl.cloud.tencent.com/document/product/647/35147)
+- [基础事件通知](https://intl.cloud.tencent.com/document/product/647/35148)
+- [高级功能接口](https://intl.cloud.tencent.com/document/product/647/35145)
+- [高级事件通知](https://intl.cloud.tencent.com/document/product/647/35146)
+- [异常处理与问题定位](https://intl.cloud.tencent.com/document/product/647/35149)
+- [常见问题](https://intl.cloud.tencent.com/document/product/647/35167)
 
 ## 联系我们
 
