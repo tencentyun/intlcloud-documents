@@ -160,7 +160,7 @@
 
 ## 各版本差异对照表
 
-![](https://main.qcloudimg.com/raw/76d9d6f854ba4cc8cf3b3c18ed230a35.png)
+![](https://main.qcloudimg.com/raw/d3c876e8d751709e1df52faf4c0bf012.jpg)
 
 <table>
   <tr>

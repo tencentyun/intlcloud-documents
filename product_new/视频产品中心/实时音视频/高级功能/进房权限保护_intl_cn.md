@@ -13,7 +13,7 @@
 ### 作用介绍
 privateMapKey 是 TRTCParamEnc 中的一个可选字段，它的作用是让腾讯云检查用户是否拥有进入指定房间的权限。
 
-![](https://main.qcloudimg.com/raw/108b2c9e60cf28c24c2a42f5f2ce0110.png)
+![](https://main.qcloudimg.com/raw/93389bf9638bcfaf3d744467889dea84.jpg)
 
 ### 与UserSig的区别
 
@@ -27,7 +27,7 @@ TRTCParamEnc 的非必选项，作用是检查当前用户是否有权进入指�
  
 ## 如何开启
  - **在腾讯云实时音视频[控制台](https://console.cloud.tencent.com/rav)开启房间权限控制。**
- ![](https://main.qcloudimg.com/raw/4d15eb603459c6af1ea2c0af1c31450c.png)
+
  
  - **在您的服务器端计算 privateMapKey。**
   由于 privateMapKey 的价值就是为了防止客户端被逆向破解，从而出现“非会员也能进高等级房间”的破解版本，所以它只适合在您的后台服务器计算再返回客户端。

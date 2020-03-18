@@ -13,7 +13,7 @@ If you want to impose restrictions on room entry for certain rooms (for example,
 ### Feature Overview
 `privateMapKey` is an optional field in `TRTCParamEnc` used to make Tencent Cloud check whether the user has permission to enter the specified room.
 
-![](https://main.qcloudimg.com/raw/108b2c9e60cf28c24c2a42f5f2ce0110.png)
+![](https://main.qcloudimg.com/raw/93389bf9638bcfaf3d744467889dea84.jpg)
 
 ### Difference from `UserSig`
 
@@ -27,8 +27,7 @@ This is an optional field in `TRTCParamEnc` used to check whether the current us
  
 ## How to Enable
  - **Enable room permission control in the [TRTC Console](https://console.cloud.tencent.com/rav).**
- ![](https://main.qcloudimg.com/raw/4d15eb603459c6af1ea2c0af1c31450c.png)
- 
+
  - **Calculate `privateMapKey` on your server.**
   As `privateMapKey` aims to prevent the client from being reversely cracked (i.e., non-members can enter high-level rooms), it should be calculated on your backend server and then returned to the client.
   Three samples of code for calculating `PrivateMapKey` are provided for Java, PHP, and Node.js, respectively, which can be directly downloaded and integrated into your server.

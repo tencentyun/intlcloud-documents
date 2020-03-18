@@ -45,7 +45,7 @@ https://official.opensso.tencent-cloud.com
 
 https://yun.tim.qq.com
 
-https://cloud.tencent.com
+https://intl.cloud.tencent.com
 
 https://webim.tim.qq.com
 ```

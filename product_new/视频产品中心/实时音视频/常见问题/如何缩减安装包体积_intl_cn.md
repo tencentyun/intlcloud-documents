@@ -37,7 +37,7 @@ Android 版 SDK 的体积主要来自于 so 文件，如果您希望将安装包
 在 [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android) 文件夹下，您可以找到类似 `LiteAVSDK_TRTC_x.x.xxx.zip` 命名的压缩包，将其解压开，并找到指定架构的 so 文件。
 
 - **Step2：将 so 文件上传到服务器**
-上传 Step1 中下载到的 so 文件，上传到您的服务器（或腾讯云 [COS](https://cloud.tencent.com/product/cos) 对象存储服务）上，并记录下载地址，例如 `http://xxx.com/so_files.zip`。
+上传 Step1 中下载到的 so 文件，上传到您的服务器（或腾讯云 [COS](https://intl.cloud.tencent.com/product/cos) 对象存储服务）上，并记录下载地址，例如 `http://xxx.com/so_files.zip`。
 
 - **Step3：首次启动 SDK 前下载 so 文件**
 在用户启动 SDK 相关功能前，例如开始播放视频之前，先用 loading 动画提示用户“正在加载相关的功能模块”。
