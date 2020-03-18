@@ -44,7 +44,7 @@ TRTC provides three different audio/video streams, including:
 - Small image: it is similar to the primary image, but with lower resolution and bitrate.
 - Secondary stream image: it is generally used for screen sharing and remote video playback (for example, a teacher plays back a video to students).
 
->?
+>
 >- If the upstream network and performance of the anchor is good, the primary (big) and small images can be sent at the same time.
 >- The SDK does not support enabling only the small image, which must be enabled together with the primary image.
 
@@ -171,7 +171,7 @@ The TRTC SDK needs to adjust the internal codecs and network module based on the
 - ModeClient: client-based control, which is for internal debugging of SDK and shall not be used by users.
 
 
->?You are recommended to use on-cloud control, so that when the QoS algorithm is upgraded, you do not need to upgrade the SDK to get a better experience.
+>You are recommended to use on-cloud control, so that when the QoS algorithm is upgraded, you do not need to upgrade the SDK to get a better experience.
 
 
 
