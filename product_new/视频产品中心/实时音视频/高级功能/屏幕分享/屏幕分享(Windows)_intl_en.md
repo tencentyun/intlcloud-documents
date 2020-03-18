@@ -8,7 +8,7 @@ Tencent Cloud TRTC service supports a screen sharing feature in which the screen
 
 ## Capturing the Sharing Target
 You can make a list of sharable windows by using `getScreenCaptureSources`, with the list being returned through the output parameter sourceInfoList.
->? The desktop screen in Windows is a window called the desktop window. When there are two screens, each screen has its corresponding desktop window. Therefore, the window list returned by getScreenCaptureSources will also contain the desktop window.
+> The desktop screen in Windows is a window called the desktop window. When there are two screens, each screen has its corresponding desktop window. Therefore, the window list returned by getScreenCaptureSources will also contain the desktop window.
 
 Each sourceInfo in the sourceInfoList can be a sharing target and is described using the following fields.
 
@@ -24,9 +24,7 @@ Each sourceInfo in the sourceInfoList can be a sharing target and is described u
 | IconHeight| Int32 | Window icon height |
 | IconBGRA | Buffer | Window icon binary buffer |
 
-Based on this information, you can make a simple list page to list the sharable targets for users to choose from, as shown below:
-
-![](https://main.qcloudimg.com/raw/e370bcac46cc9ab5eb75e34378664d97.jpg)
+Based on this information, you can make a simple list page to list the sharable targets for users to choose from.
 
 ## Selecting sharing targets
 TRTC SDK supports three sharing modes, which you can specify using `selectScreenCaptureTarget`.
@@ -41,7 +39,7 @@ This shares a certain region of the screen. The user needs to define the coordin
 This shares the contents of a target window. The user needs to select which window is to be shared. You will need to specify the source parameter of one type in the sourceInfoList as `TRTCScreenCaptureSourceTypeWindow` and set its captureRect as { 0, 0, 0, 0 }.
 
 
->? Two additional parameters
+> Two additional parameters
 > - The captureMouse parameter is used to specify whether or not to capture the cursor.
 > - The highlight window parameter is used to specify whether or not to highlight the window being shared and to remind the user to remove the mask when the captured image is masked. This UI effect is achieved in SDK.
 
