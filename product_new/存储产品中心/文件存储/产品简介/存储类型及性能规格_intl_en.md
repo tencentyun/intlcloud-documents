@@ -26,7 +26,7 @@ CFS offers two types of file systems: standard and high-performance. Below are t
     <li>Up to 60K IOPS (4 KB random read/write), with a millisecond-level latency</li>
     </td>
     <td nowrap="nowrap"><li>High throughput<br><li>High IOPS</td>
-    <td>Random IO-intensive workloads with a pile of small files, such as high-performance computing, media asset rendering, machine learning, DevOps, and OA</td>
+    <td>IO-intensive workloads, such as high-performance computing, media asset rendering, machine learning, DevOps, and OA.</td>
  </tr>
 </table>
 
