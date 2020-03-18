@@ -1,4 +1,4 @@
->! The following FAQs are applicable for TRTC Web SDK version 3.x.x.
+> The following FAQs are applicable for TRTC Web SDK version 3.x.x.
 
 ### How can I determine if the current browser supports WebRTC?
 Use WebRTCAPI.fn.detectRTC to check if WebRTC is supported. If false is returned, the business end will provide an error message page to guide you to use the supported environment. In special cases, you can also handle it in the following ways:
@@ -14,7 +14,7 @@ A muted attribute for local video/audio is already set up in the Demo (Web), whi
 	<audio muted autoplay playsinline></audio>
 ```
 
->? The problem of “howling” or “feedback” could also occur when using two mobile devices (Android or iOS) for close-range testing. Just mute both the capture and the playback of one of the devices.
+> The problem of “howling” or “feedback” could also occur when using two mobile devices (Android or iOS) for close-range testing. Just mute both the capture and the playback of one of the devices.
 
 ### What should I do if it takes a long time to hear the audio?
 If you are using an audio-only scenario, then use the audio tag instead of video when loading the audio stream.

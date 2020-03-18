@@ -22,7 +22,6 @@ Access the Tencent Cloud TRTC [Console](https://console.cloud.tencent.com/rav) t
 1. Click the application card to go to the **Quick Start** page.
 2. Click **View Key** in the **Step 2: Acquire Key for Issuing UserSig** area to get the encryption key used to calculate the UserSig. 
 3. Click **Copy Key** to copy the key to the clipboard.
- ![](https://main.qcloudimg.com/raw/d0b780f7b28833533e12807d1b11d8be.png)
 
 
 <h2 id="Client">Calculation by Client</h2>
@@ -39,9 +38,8 @@ We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sa
 | Web | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
 | WeChat Mini Program | [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/WXMini/pages/webrtc-room/debug/GenerateTestUserSig.js)| WXMini/pages/webrtc-room/debug/GenerateTestUserSig.js |
 
-![](https://main.qcloudimg.com/raw/1efeacff505209c4f5c1d9bf67455157.png)
 
->! This method is only applicable for debugging. The use of this method is **not recommended** if the product is to be formally activated because the SECRETKEY of the client code (especially for the Web) will very easily be decompiled and reverse engineered. If your key were to be disclosed, the attackers could make unauthorized use of your Tencent Cloud traffic.
+> This method is only applicable for debugging. The use of this method is **not recommended** if the product is to be formally activated because the SECRETKEY of the client code (especially for the Web) will very easily be decompiled and reverse engineered. If your key were to be disclosed, the attackers could make unauthorized use of your Tencent Cloud traffic.
 >
 > The correct method is to place the UserSig calculation code on your project server and then acquire the UserSig calculated in real time from your server when needed by your application. 
 
@@ -57,7 +55,7 @@ Using the server to calculate the UserSig can greatly ensure that the key used t
 6. Tencent Cloud verifies the UserSig to confirm its validity.
 7. After verification passes, the TRTC service will be provided to TRTC SDK.
 
-![](https://main.qcloudimg.com/raw/60c419d6b977fa3cc158c57c8f3f7315.png)
+![](https://main.qcloudimg.com/raw/ead2075ef98876347fd388ec358ed126.jpg)
 
 To simplify your implementation process, we provide UserSig calculation source code in multiple languages:
 

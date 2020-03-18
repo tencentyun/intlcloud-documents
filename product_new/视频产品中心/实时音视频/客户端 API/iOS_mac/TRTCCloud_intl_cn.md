@@ -56,15 +56,15 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCParams](https://cloud.tencent.com/document/product/647/32261#trtcparams) * | 进房参数，请参考 [TRTCParams](https://cloud.tencent.com/document/product/647/32261#trtcparams)。 |
-| scene | [TRTCAppScene](https://cloud.tencent.com/document/product/647/32261#trtcappscene) | 应用场景，目前支持视频通话（VideoCall）和在线直播（Live）两种场景。 |
+| param | [TRTCParams](https://intl.cloud.tencent.com/document/product/647#trtcparams) * | 进房参数，请参考 [TRTCParams](https://intl.cloud.tencent.com/document/product/647#trtcparams)。 |
+| scene | [TRTCAppScene](https://intl.cloud.tencent.com/document/product/647#trtcappscene) | 应用场景，目前支持视频通话（VideoCall）和在线直播（Live）两种场景。 |
 
 __介绍__
 
-如果加入成功，您会收到来自 [TRTCCloudDelegate](https://cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onEnterRoom(result) 回调:
+如果加入成功，您会收到来自 [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onEnterRoom(result) 回调:
 
 - 如果加入成功，result 会是一个正数（result > 0），表示加入房间的时间消耗，单位是毫秒（ms）。
-- 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。 进房失败的错误码含义请参见[错误码](https://cloud.tencent.com/document/product/647/32257)。
+- 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。 进房失败的错误码含义请参见[错误码](https://intl.cloud.tencent.com/document/product/647/35124)。
 
 
 
@@ -96,11 +96,11 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| role | [TRTCRoleType](https://cloud.tencent.com/document/product/647/32261#trtcroletype) | 目标角色，默认为主播。 |
+| role | [TRTCRoleType](https://intl.cloud.tencent.com/document/product/647#trtcroletype) | 目标角色，默认为主播。 |
 
 __介绍__
 
-在直播场景下，一个用户可能需要在“观众”和“主播”之间来回切换。 您可以在进房前通过 [TRTCParams](https://cloud.tencent.com/document/product/647/32261#trtcparams) 中的 role 字段确定角色，也可以通过 switchRole 在进房后切换角色。
+在直播场景下，一个用户可能需要在“观众”和“主播”之间来回切换。 您可以在进房前通过 [TRTCParams](https://intl.cloud.tencent.com/document/product/647#trtcparams) 中的 role 字段确定角色，也可以通过 switchRole 在进房后切换角色。
 
 
 ### connectOtherRoom
@@ -144,7 +144,7 @@ TRTC 中两个不同音视频房间中的主播，可以通过“跨房通话”
 - userId：房间“001”中的主播 A 要跟房间“002”中的主播 B 连麦，主播 A 调用 connectOtherRoom() 时 userId 应指定为 B 的 userId。
 
 
-跨房通话的请求结果会通过 [TRTCCloudDelegate](https://cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onConnectOtherRoom() 回调通知给您。
+跨房通话的请求结果会通过 [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onConnectOtherRoom() 回调通知给您。
 
 
 <pre>
@@ -167,7 +167,7 @@ TRTC 中两个不同音视频房间中的主播，可以通过“跨房通话”
 
 __介绍__
 
-跨房通话的退出结果会通过 [TRTCCloudDelegate](https://cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onDisconnectOtherRoom() 回调通知给您。
+跨房通话的退出结果会通过 [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onDisconnectOtherRoom() 回调通知给您。
 
 
 ### setDefaultStreamRecvMode
@@ -210,7 +210,7 @@ __参数__
 
 __介绍__
 
-当开始渲染首帧摄像头画面时，您会收到 [TRTCCloudDelegate](https://cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onFirstVideoFrame(nil) 回调。
+当开始渲染首帧摄像头画面时，您会收到 [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onFirstVideoFrame(nil) 回调。
 
 
 ### startLocalPreview
@@ -228,7 +228,7 @@ __参数__
 
 __介绍__
 
-在调用该方法前，可以先调用 setCurrentCameraDevice 选择使用 Mac 自带摄像头或外接摄像头。当开始渲染首帧摄像头画面时，您会收到 [TRTCCloudDelegate](https://cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onFirstVideoFrame(nil) 回调。
+在调用该方法前，可以先调用 setCurrentCameraDevice 选择使用 Mac 自带摄像头或外接摄像头。当开始渲染首帧摄像头画面时，您会收到 [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcclouddelegate) 中的 onFirstVideoFrame(nil) 回调。
 
 
 ### stopLocalPreview
@@ -348,7 +348,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32261#trtcvideoencparam) * | 视频编码参数，详情请参考 TRTCCloudDef.h 中的 [TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32261#trtcvideoencparam) 定义。 |
+| param | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) * | 视频编码参数，详情请参考 TRTCCloudDef.h 中的 [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) 定义。 |
 
 __介绍__
 
@@ -366,7 +366,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCNetworkQosParam](https://cloud.tencent.com/document/product/647/32261#trtcnetworkqosparam) * | 网络流控参数，详情请参考 TRTCCloudDef.h 中的 [TRTCNetworkQosParam](https://cloud.tencent.com/document/product/647/32261#trtcnetworkqosparam) 定义。 |
+| param | [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647#trtcnetworkqosparam) * | 网络流控参数，详情请参考 TRTCCloudDef.h 中的 [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647#trtcnetworkqosparam) 定义。 |
 
 __介绍__
 
@@ -384,7 +384,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| mode | [TRTCVideoFillMode](https://cloud.tencent.com/document/product/647/32261#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边）。 |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边）。 |
 
 
 ### setRemoteViewFillMode
@@ -399,7 +399,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | NSString * | 用户 ID。 |
-| mode | [TRTCVideoFillMode](https://cloud.tencent.com/document/product/647/32261#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边）。 |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边）。 |
 
 
 ### setLocalViewRotation
@@ -413,7 +413,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| rotation | [TRTCVideoRotation](https://cloud.tencent.com/document/product/647/32261#trtcvideorotation) | 支持90、180以及270旋转角度，默认值：TRTCVideoRotation_0。 |
+| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647#trtcvideorotation) | 支持90、180以及270旋转角度，默认值：TRTCVideoRotation_0。 |
 
 
 ### setRemoteViewRotation
@@ -428,7 +428,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | NSString * | 用户 ID。 |
-| rotation | [TRTCVideoRotation](https://cloud.tencent.com/document/product/647/32261#trtcvideorotation) | 支持90、180以及270旋转角度，默认值：TRTCVideoRotation_0。 |
+| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647#trtcvideorotation) | 支持90、180以及270旋转角度，默认值：TRTCVideoRotation_0。 |
 
 
 ### setVideoEncoderRotation
@@ -442,7 +442,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| rotation | [TRTCVideoRotation](https://cloud.tencent.com/document/product/647/32261#trtcvideorotation) | 目前支持0和180两个旋转角度，默认值：TRTCVideoRotation_0。 |
+| rotation | [TRTCVideoRotation](https://intl.cloud.tencent.com/document/product/647#trtcvideorotation) | 目前支持0和180两个旋转角度，默认值：TRTCVideoRotation_0。 |
 
 __介绍__
 
@@ -460,7 +460,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| mirror | [TRTCLocalVideoMirrorType](https://cloud.tencent.com/document/product/647/32261#trtclocalvideomirrortype) | 镜像模式，默认值为 TRTCLocalVideoMirrorType_Auto。 |
+| mirror | [TRTCLocalVideoMirrorType](https://intl.cloud.tencent.com/document/product/647#trtclocalvideomirrortype) | 镜像模式，默认值为 TRTCLocalVideoMirrorType_Auto。 |
 
 
 ### setLocalViewMirror
@@ -506,7 +506,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| mode | [TRTCGSensorMode](https://cloud.tencent.com/document/product/647/32261#trtcgsensormode) | 重力感应模式，详情请参考 TRTCGSensorMode 的定义，默认值：TRTCGSensorMode_UIAutoLayout。 |
+| mode | [TRTCGSensorMode](https://intl.cloud.tencent.com/document/product/647#trtcgsensormode) | 重力感应模式，详情请参考 TRTCGSensorMode 的定义，默认值：TRTCGSensorMode_UIAutoLayout。 |
 
 
 ### enableEncSmallVideoStream
@@ -521,7 +521,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | enable | BOOL | 是否开启小画面编码，默认值：NO。 |
-| smallVideoEncParam | [TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32261#trtcvideoencparam) * | 小流的视频参数。 |
+| smallVideoEncParam | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) * | 小流的视频参数。 |
 
 __返回__
 
@@ -549,7 +549,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | NSString * | 用户 ID。 |
-| type | [TRTCVideoStreamType](https://cloud.tencent.com/document/product/647/32261#trtcvideostreamtype) | 视频流类型，即选择看大画面或小画面，默认为大画面。 |
+| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | 视频流类型，即选择看大画面或小画面，默认为大画面。 |
 
 __介绍__
 
@@ -567,7 +567,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| type | [TRTCVideoStreamType](https://cloud.tencent.com/document/product/647/32261#trtcvideostreamtype) | 默认观看大画面或小画面，默认为大画面。 |
+| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | 默认观看大画面或小画面，默认为大画面。 |
 
 __介绍__
 
@@ -633,7 +633,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| route | [TRTCAudioRoute](https://cloud.tencent.com/document/product/647/32261#trtcaudioroute) | 音频路由，即声音由哪里输出（扬声器、听筒），默认值：TRTCAudioModeSpeakerphone。 |
+| route | [TRTCAudioRoute](https://intl.cloud.tencent.com/document/product/647#trtcaudioroute) | 音频路由，即声音由哪里输出（扬声器、听筒），默认值：TRTCAudioModeSpeakerphone。 |
 
 __介绍__
 
@@ -699,7 +699,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | TRTCAudioRecordingParams * | 录音参数，请参考 [TRTCAudioRecordingParams](https://cloud.tencent.com/document/product/647/32261#trtcaudiorecordingparams)。 |
+| param | TRTCAudioRecordingParams * | 录音参数，请参考 [TRTCAudioRecordingParams](https://intl.cloud.tencent.com/document/product/647#trtcaudiorecordingparams)。 |
 
 __返回__
 
@@ -732,7 +732,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| type | TRTCSystemVolumeType | 系统音量类型，请参考 [TRTCSystemVolumeType](https://cloud.tencent.com/document/product/647/32261#trtcsystemvolumetype)。 |
+| type | TRTCSystemVolumeType | 系统音量类型，请参考 [TRTCSystemVolumeType](https://intl.cloud.tencent.com/document/product/647#trtcsystemvolumetype)。 |
 
 >?需要在调用 [startLocalAudio](#startlocalaudio) 之前调用该接口。
 
@@ -1078,7 +1078,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| beautyStyle | [TRTCBeautyStyle](https://cloud.tencent.com/document/product/647/32261#trtcbeautystyle) | 美颜风格，光滑或者自然，光滑风格磨皮更加明显，适合娱乐场景。 |
+| beautyStyle | [TRTCBeautyStyle](https://intl.cloud.tencent.com/document/product/647#trtcbeautystyle) | 美颜风格，光滑或者自然，光滑风格磨皮更加明显，适合娱乐场景。 |
 | beautyLevel | NSInteger | 美颜级别，取值范围0 - 9； 0表示关闭，1 - 9值越大，效果越明显。 |
 | whitenessLevel | NSInteger | 美白级别，取值范围0 - 9；0表示关闭，1 - 9值越大，效果越明显。 |
 | ruddinessLevel | NSInteger | 红润级别，取值范围0 - 9；0表示关闭，1 - 9值越大，效果越明显。 |
@@ -1132,7 +1132,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | image | TXImage * | 水印图片，**必须使用透明底的 png 格式**。 |
-| streamType | [TRTCVideoStreamType](https://cloud.tencent.com/document/product/647/32261#trtcvideostreamtype) | 如果要给屏幕分享的一路也设置水印，需要调用两次的 setWatermark。 |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647#trtcvideostreamtype) | 如果要给屏幕分享的一路也设置水印，需要调用两次的 setWatermark。 |
 | rect | CGRect | 水印相对于编码分辨率的归一化坐标，x，y，width，height 取值范围0 - 1。 |
 
 __介绍__
@@ -1331,7 +1331,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | NSString * | 用户的 ID。 |
-| mode | [TRTCVideoFillMode](https://cloud.tencent.com/document/product/647/32261#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边），默认值：TRTCVideoFillMode_Fit。 |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边），默认值：TRTCVideoFillMode_Fit。 |
 
 __介绍__
 
@@ -1375,7 +1375,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| screenSource | [TRTCScreenCaptureSourceInfo](https://cloud.tencent.com/document/product/647/32261#trtcscreencapturesourceinfo) * | 指定分享源。 |
+| screenSource | [TRTCScreenCaptureSourceInfo](https://intl.cloud.tencent.com/document/product/647#trtcscreencapturesourceinfo) * | 指定分享源。 |
 | rect | CGRect | 指定捕获的区域（传 CGRectZero 则默认分享全屏）。 |
 | capturesCursor | BOOL | 是否捕获鼠标光标。 |
 | highlight | BOOL | 是否高亮正在分享的窗口。 |
@@ -1446,7 +1446,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32261#trtcvideoencparam) * | 辅流编码参数，详情请参考 TRTCCloudDef.h 中的 [TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32261#trtcvideoencparam) 定义。 |
+| param | [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) * | 辅流编码参数，详情请参考 TRTCCloudDef.h 中的 [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647#trtcvideoencparam) 定义。 |
 
 __介绍__
 
@@ -1502,11 +1502,11 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| frame | [TRTCVideoFrame](https://cloud.tencent.com/document/product/647/32261#trtcvideoframe) * | 视频数据，支持 PixelBuffer NV12，BGRA 以及 I420 格式数据。 |
+| frame | [TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647#trtcvideoframe) * | 视频数据，支持 PixelBuffer NV12，BGRA 以及 I420 格式数据。 |
 
 __介绍__
 
-[TRTCVideoFrame](https://cloud.tencent.com/document/product/647/32261#trtcvideoframe) 推荐下列填写方式（其他字段不需要填写）：
+[TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647#trtcvideoframe) 推荐下列填写方式（其他字段不需要填写）：
 - pixelFormat：推荐选择 TRTCVideoPixelFormat_NV12。
 - bufferType：推荐选择 TRTCVideoBufferType_PixelBuffer。
 - pixelBuffer：iOS 平台上常用的视频数据格式。
@@ -1516,7 +1516,7 @@ __介绍__
 - height：视频图像宽度，bufferType 为 NSData 时填写。
 
 
-参考文档：[自定义采集和渲染](https://cloud.tencent.com/document/product/647/34066)。
+参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
 >?
 >- SDK 内部有帧率控制逻辑，目标帧率以您在 setVideoEncoderParam 中设置的为准，太快会自动丢帧，太慢则会自动补帧。
@@ -1534,9 +1534,9 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| delegate | id< [TRTCVideoRenderDelegate](https://cloud.tencent.com/document/product/647/32263#trtcvideorenderdelegate) > | 自定义渲染回调。 |
-| pixelFormat | [TRTCVideoPixelFormat](https://cloud.tencent.com/document/product/647/32261#trtcvideopixelformat) | 指定回调的像素格式。 |
-| bufferType | [TRTCVideoBufferType](https://cloud.tencent.com/document/product/647/32261#trtcvideobuffertype) | PixelBuffer：可以直接使用 imageWithCVImageBuffer 转成 UIImage；NSData：经过内存整理的视频数据。 |
+| delegate | id< [TRTCVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcvideorenderdelegate) > | 自定义渲染回调。 |
+| pixelFormat | [TRTCVideoPixelFormat](https://intl.cloud.tencent.com/document/product/647#trtcvideopixelformat) | 指定回调的像素格式。 |
+| bufferType | [TRTCVideoBufferType](https://intl.cloud.tencent.com/document/product/647#trtcvideobuffertype) | PixelBuffer：可以直接使用 imageWithCVImageBuffer 转成 UIImage；NSData：经过内存整理的视频数据。 |
 
 __返回__
 
@@ -1563,9 +1563,9 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | NSString * | 指定目标 userId。 |
-| delegate | id< [TRTCVideoRenderDelegate](https://cloud.tencent.com/document/product/647/32263#trtcvideorenderdelegate) > | 自定义渲染的回调。 |
-| pixelFormat | [TRTCVideoPixelFormat](https://cloud.tencent.com/document/product/647/32261#trtcvideopixelformat) | 指定回调的像素格式。 |
-| bufferType | [TRTCVideoBufferType](https://cloud.tencent.com/document/product/647/32261#trtcvideobuffertype) | PixelBuffer：可以直接使用 imageWithCVImageBuffer 转成 UIImage；NSData：经过内存整理的视频数据。 |
+| delegate | id< [TRTCVideoRenderDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcvideorenderdelegate) > | 自定义渲染的回调。 |
+| pixelFormat | [TRTCVideoPixelFormat](https://intl.cloud.tencent.com/document/product/647#trtcvideopixelformat) | 指定回调的像素格式。 |
+| bufferType | [TRTCVideoBufferType](https://intl.cloud.tencent.com/document/product/647#trtcvideobuffertype) | PixelBuffer：可以直接使用 imageWithCVImageBuffer 转成 UIImage；NSData：经过内存整理的视频数据。 |
 
 __返回__
 
@@ -1611,11 +1611,11 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| frame | [TRTCAudioFrame](https://cloud.tencent.com/document/product/647/32261#trtcaudioframe) * | 音频数据。 |
+| frame | [TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647#trtcaudioframe) * | 音频数据。 |
 
 __介绍__
 
-[TRTCAudioFrame](https://cloud.tencent.com/document/product/647/32261#trtcaudioframe) 推荐如下填写方式：
+[TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647#trtcaudioframe) 推荐如下填写方式：
 
 - data：音频帧 buffer。音频帧数据必须是 PCM 格式，推荐每帧20ms采样数。【48000采样率、单声道的帧长度：48000 × 0.02s × 1 × 16bit = 15360bit = 1920字节】。
 - sampleRate：采样率，仅支持48000。
@@ -1623,7 +1623,7 @@ __介绍__
 - timestamp：如果 timestamp 间隔不均匀，会严重影响音画同步和录制出的 MP4 质量。
 
 
-参考文档：[自定义采集和渲染](https://cloud.tencent.com/document/product/647/34066)。
+参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
 >?可以设置 frame 中的 timestamp 为0，相当于让 SDK 自己设置时间戳，但请“均匀”地控制 sendCustomAudioData 的调用间隔，否则会导致声音断断续续。
 
@@ -1640,7 +1640,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| delegate | id< [TRTCAudioFrameDelegate](https://cloud.tencent.com/document/product/647/32263#trtcaudioframedelegate) > | 音频数据回调，delegate = nil 则停止回调数据。 |
+| delegate | id< [TRTCAudioFrameDelegate](https://intl.cloud.tencent.com/document/product/647/32263#trtcaudioframedelegate) > | 音频数据回调，delegate = nil 则停止回调数据。 |
 
 __介绍__
 
@@ -1835,7 +1835,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| reverbType | TXReverbType | 混响类型，详见 [TRTCReverbType](https://cloud.tencent.com/document/product/647/32261#trtcreverbtype)。 |
+| reverbType | TXReverbType | 混响类型，详见 [TRTCReverbType](https://intl.cloud.tencent.com/document/product/647#trtcreverbtype)。 |
 
 
 ### setVoiceChangerType
@@ -1849,7 +1849,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| voiceChangerType |TXVoiceChangerType | 变声类型，详情请参见  [TRTCVoiceChangerType](https://cloud.tencent.com/document/product/647/32261#trtcvoicechangertype)。 |
+| voiceChangerType |TXVoiceChangerType | 变声类型，详情请参见  [TRTCVoiceChangerType](https://intl.cloud.tencent.com/document/product/647#trtcvoicechangertype)。 |
 
 ## 音效相关接口函数
 ### playAudioEffect
@@ -1863,7 +1863,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| effect | [TRTCAudioEffectParam](https://cloud.tencent.com/document/product/647/32261#trtcaudioeffectparam) * | 音效。 |
+| effect | [TRTCAudioEffectParam](https://intl.cloud.tencent.com/document/product/647#trtcaudioeffectparam) * | 音效。 |
 
 __介绍__
 
@@ -1938,7 +1938,7 @@ __参数__
 | sdkAppId | uint32_t | 应用标识。 |
 | userId | NSString * | 用户标识。 |
 | userSig | NSString * | 用户签名。 |
-| completion | void(^)([TRTCSpeedTestResult](https://cloud.tencent.com/document/product/647/32261#trtcspeedtestresult) *result, NSInteger completedCount, NSInteger totalCount) | 测试回调，会分多次回调。 |
+| completion | void(^)([TRTCSpeedTestResult](https://intl.cloud.tencent.com/document/product/647#trtcspeedtestresult) *result, NSInteger completedCount, NSInteger totalCount) | 测试回调，会分多次回调。 |
 
 __介绍__
 
@@ -2034,14 +2034,14 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| config | [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32261#trtctranscodingconfig) * | 请参考 TRTCCloudDef.h 中关于 [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32261#trtctranscodingconfig) 的介绍。如果传入 nil 则取消云端混流转码。 |
+| config | [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647#trtctranscodingconfig) * | 请参考 TRTCCloudDef.h 中关于 [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647#trtctranscodingconfig) 的介绍。如果传入 nil 则取消云端混流转码。 |
 
 __介绍__
 
 该接口会向腾讯云的转码服务器发送一条指令，目的是将房间里的多路画面叠加到一路画面上。
-如果您在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能， 房间里的每一路画面都会有一个对应的直播 [CDN 地址](https://cloud.tencent.com/document/product/647/16826)， 此时您可以通过云端混流，将多路直播地址的画面混合成一路，这样直播 CDN 上就可以看到混合后的画面。
+如果您在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能， 房间里的每一路画面都会有一个对应的直播 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/34617)， 此时您可以通过云端混流，将多路直播地址的画面混合成一路，这样直播 CDN 上就可以看到混合后的画面。
 您可以通过转码参数来调整每一路画面的位置以及最终输出的画面质量。
-参考文档：[云端混流转码](https://cloud.tencent.com/document/product/647/16827)。 
+参考文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618)。 
 示例代码：Demo 中增加了该功能的体验入口，您可以在“更多功能”面板中看到“云端画面混合”和“分享播放地址”体验到该功能。
 
 
@@ -2056,7 +2056,7 @@ __介绍__
 
 >?关于云端混流的注意事项：
 >- 云端转码会引入一定的 CDN 观看延时，大概会增加1 - 2秒。
->- 调用该函数的用户，会将多路画面混合到自己这一路的 [CDN 地址](https://cloud.tencent.com/document/product/647/16826) 上。
+>- 调用该函数的用户，会将多路画面混合到自己这一路的 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/34617) 上。
 
 
 ### startPublishCDNStream
@@ -2070,7 +2070,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCPublishCDNParam](https://cloud.tencent.com/document/product/647/32261#trtcpublishcdnparam) * | 请参考 TRTCCloudDef.h 中关于 [TRTCPublishCDNParam](https://cloud.tencent.com/document/product/647/32261#trtcpublishcdnparam) 的介绍。 |
+| param | [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647#trtcpublishcdnparam) * | 请参考 TRTCCloudDef.h 中关于 [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647#trtcpublishcdnparam) 的介绍。 |
 
 __介绍__
 
@@ -2079,7 +2079,7 @@ __介绍__
 由于仅转推单独的一路画面到直播 CDN 并没有什么太大的意义，所以该方案通常是跟云端转码混合使用的。 也就是先通过 setMixTranscodingConfig 将房间里的多路画面混合到一路上，再转推出去。
 
 >?关于旁路转推的注意事项：
->- 默认只支持转推到腾讯云的 rtmp [推流地址](https://cloud.tencent.com/document/product/267/32720) 上，转推其他云的需求请通过工单联系我们。
+>- 默认只支持转推到腾讯云的 rtmp [推流地址](https://intl.cloud.tencent.com/document/product/267/32720) 上，转推其他云的需求请通过工单联系我们。
 >- 调用该函数的用户，默认只会转推自己这一路画面到指定的 rtmp 推流地址上，因此通常需要配合 setMixTranscodingConfig 同时使用。
 >- 在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能后，房间里的每一路画面都有一路默认的腾讯云 CDN 地址，因此仅当您需要适配多家 CDN 服务商时，才需要关注该功能。
 
@@ -2112,7 +2112,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| level | [TRTCLogLevel](https://cloud.tencent.com/document/product/647/32261#trtcloglevel) | 参见 TRTCLogLevel，默认值：TRTC_LOG_LEVEL_NULL。 |
+| level | [TRTCLogLevel](https://intl.cloud.tencent.com/document/product/647#trtcloglevel) | 参见 TRTCLogLevel，默认值：TRTC_LOG_LEVEL_NULL。 |
 
 
 ### setConsoleEnabled

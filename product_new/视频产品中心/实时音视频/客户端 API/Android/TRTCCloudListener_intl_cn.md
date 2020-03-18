@@ -56,7 +56,7 @@ __介绍__
 
 调用 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 enterRoom() 接口执行进房操作后，会收到来自 SDK 的 onEnterRoom(result) 回调：
 - 如果加入成功，result 会是一个正数（result > 0），表示加入房间所消耗的时间，单位为毫秒（ms）。
-- 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。进房失败的错误码含义请参见 [错误码](https://cloud.tencent.com/document/product/647/32257)。
+- 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。进房失败的错误码含义请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。
 
 
 >?在 Ver6.6 之前的版本，只有进房成功会抛出 onEnterRoom(result) 回调，进房失败由 [onError()](https://cloud.tencent.com/document/product/647/32265#onerror) 回调抛出。 在 Ver6.6 及之后改为：进房成功返回正的 result，进房失败返回负的 result，同时进房失败也会有 [onError()](https://cloud.tencent.com/document/product/647/32265#onerror) 回调抛出。
@@ -93,7 +93,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| errCode | final int | 错误码，0代表切换成功，其他请参见 [错误码](https://cloud.tencent.com/document/product/647/32257)。 |
+| errCode | final int | 错误码，0代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。 |
 | errMsg | final String | 错误信息。 |
 
 __介绍__
@@ -113,7 +113,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | final String | 要 PK 的目标主播 userid。 |
-| errCode | final int | 错误码，ERR_NULL 代表切换成功，其他请参见 [错误码](https://cloud.tencent.com/document/product/647/32257)。 |
+| errCode | final int | 错误码，ERR_NULL 代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。 |
 | errMsg | final String | 错误信息。 |
 
 __介绍__
