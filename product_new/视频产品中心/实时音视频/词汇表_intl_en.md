@@ -4,12 +4,12 @@ You can view the APPID for the Tencent Cloud account in the Tencent Cloud Consol
 
 ## Application
 
-An application is a service that a developer creates on the [TRTC Console](https://console.cloud.tencent.com/rav). The data of different applications is not interconnected. For details on the application creation procedure, see the step on creating an application in Activating a Service.
+An application is a service that a developer creates on the TRTC Console. The data of different applications is not interconnected. For details on the application creation procedure, see the step on creating an application in Activating a Service.
 > You can create more than one TRTC application under a single Tencent Cloud account.
 
 ## SDKAPPID
 
-SDKAPPID (application ID) is a unique ID used by the Tencent Cloud backend to differentiate between different TRTC applications. It is automatically generated when a project is created on the [TRTC Console](https://console.cloud.tencent.com/rav). The data of different SDKAPPIDs is not interconnected. 
+SDKAPPID (application ID) is a unique ID used by the Tencent Cloud backend to differentiate between different TRTC applications. It is automatically generated when a project is created on the TRTC Console. The data of different SDKAPPIDs is not interconnected. 
 
 ## User ID
 User ID is used to uniquely identify a user in a TRTC application.
