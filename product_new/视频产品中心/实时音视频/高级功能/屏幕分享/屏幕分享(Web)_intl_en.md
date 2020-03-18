@@ -1,5 +1,5 @@
 This document mainly describes how to use screen sharing.
->! Screen sharing only supports using Chrome M72+.
+> Screen sharing only supports using Chrome M72+.
 
 ## Creating and Publishing a Screen Sharing Stream
 
