@@ -21,7 +21,7 @@ To query the monitoring data of a CVM instance, use the following input paramete
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters. Common request parameters need to be added when a call is made. For more information, please see [Common Request Parameters](https://cloud.tencent.com/document/api/248/4478).
+The list below contains only the API request parameters. Common request parameters need to be added when a call is made. For more information, please see [Common Request Parameters](https://intl.cloud.tencent.com/document/api/248/4478).
 
 ### 2.1. Input parameters
 
@@ -29,17 +29,17 @@ The list below contains only the API request parameters. Common request paramete
 | ----------- | ---- | ---------------------------------------- | ---------------------------------------- |
 | Action | Yes | String | Common parameter. The value used for this API: GetMonitorData |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-07-24 |
-| Region | No | String | Common parameter, indicating the region of the instance to be queried. For supported regions, please see the [list of regions](https://cloud.tencent.com/document/api/213/15692) supported by CVM |
+| Region | No | String | Common parameter, indicating the region of the instance to be queried. For supported regions, please see the [list of regions](https://intl.cloud.tencent.com/document/api/213/15692) supported by CVM |
 | Namespace | Yes | String | Namespace. Each Tencent Cloud product has a namespace, such as `QCE/CVM` |
 | MetricName | Yes | String | Metric name. For more information, please see section 2.2 |
-| Instances.N | Yes | Array of [Instance](https://cloud.tencent.com/document/product/248/30354) | Combination of instance object dimensions |
+| Instances.N | Yes | Array of [Instance](https://intl.cloud.tencent.com/document/product/248/33883) | Combination of instance object dimensions |
 | Period | No | Integer | Statistical period for monitoring data in seconds. Default value: 300 |
 | StartTime | No | Datetime | Start time, such as "2016-01-01 10:25:00". Default value: "00:00:00" on the current day |
 | EndTime | No | Timestamp | End time, which is the current time by default. `EndTime` cannot be earlier than `StartTime` |
 
 ### 2.2. Metric name
 
-The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://cloud.tencent.com/document/product/248/30351) API can be used to get the `period` supported by each API.
+The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/338821) API can be used to get the `period` supported by each API.
 
 #### 2.2.1. Monitoring metrics whose data can be obtained with no installation of monitor agent required
 
