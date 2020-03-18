@@ -39,7 +39,7 @@ This shares a certain region of the screen. The user needs to define the coordin
 This shares the contents of a target window. The user needs to select which window is to be shared. You will need to specify the source parameter of one type in the sourceInfoList as `TRTCScreenCaptureSourceTypeWindow` and set its captureRect as { 0, 0, 0, 0 }.
 
 
-> Two additional parameters
+> Two additional parameters:
 > - The captureMouse parameter is used to specify whether or not to capture the cursor.
 > - The highlight window parameter is used to specify whether or not to highlight the window being shared and to remind the user to remove the mask when the captured image is masked. This UI effect is achieved in SDK.
 
