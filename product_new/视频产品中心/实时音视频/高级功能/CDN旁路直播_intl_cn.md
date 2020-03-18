@@ -1,13 +1,11 @@
 基于 UDP 传输协议的 TRTC 服务，可以通过协议转换将音视频流对接到标准的直播 CDN 系统上，这个过程我们称之为“旁路推流”或者“旁路直播”。
-您可以在 TRTC 控制台中开启旁路直播功能，功能开启后，您会自动获取一个 TRTC 房间中的各路音视频流。同时您也可以通过 TRTCCloud 中提供的 **setMixTranscodingConfig** 接口，启动云端混流转码，这样就可以将多路画面混合到一路直播流上，如下图所示：
-![](https://main.qcloudimg.com/raw/bc9a947800ae8648951a9def71114ca9.gif)
+您可以在 TRTC 控制台中开启旁路直播功能，功能开启后，您会自动获取一个 TRTC 房间中的各路音视频流。同时您也可以通过 TRTCCloud 中提供的 **setMixTranscodingConfig** 接口，启动云端混流转码，这样就可以将多路画面混合到一路直播流上。
 
 下面主要介绍如何在腾讯云直播 CDN 系统上，通过标准的 **http + flv** 协议，观看 TRTC 房间里的各路音视频流。
 
 
 ## Demo
-我们在实时音视频 [Demo](https://cloud.tencent.com/document/product/647/17021) 中加入了旁路直播功能，您可以在视频通话的过程中单击【更多功能】找到该功能的体验入口（播放器 TXLivePlayer 的下载地址在 [移动直播页面](https://cloud.tencent.com/document/product/454/6555)）。
-![](https://main.qcloudimg.com/raw/1d663f77c71bee9914b60609edaf1fef.jpg)
+我们在实时音视频 [Demo](https://intl.cloud.tencent.com/document/product/647/35076) 中加入了旁路直播功能，您可以在视频通话的过程中单击【更多功能】找到该功能的体验入口（播放器 TXLivePlayer 的下载地址在 移动直播页面）。
 
 ## 示例代码
 
@@ -32,7 +30,6 @@
 ### 步骤1：开通服务
 
 登录 [实时音视频控制台](https://console.cloud.tencent.com/rav) ，单击目标应用卡片，选择【功能配置】，您可以开启“自动旁路直播”功能。开启此功能的前提是需要先开通腾讯 [云直播](https://console.cloud.tencent.com/live) 服务。
-![](https://main.qcloudimg.com/raw/91672da223a6eb7c24e8c9891018ead1.png)
 
 ### 步骤2：独立画面
 
@@ -44,7 +41,7 @@ http://[bizid].liveplay.myqcloud.com/live/[streamid].flv
 其中 `bizid`、`streamid` 都是需要您填写的部分，具体的填写规则如下：
 
 - bizid： 一个与直播服务相关的数字，请在 [实时音视频控制台](https://console.cloud.tencent.com/rav) 选择已经创建的应用，单击【帐号信息】后，在“直播信息”中获取。
-![](https://main.qcloudimg.com/raw/86cdab23f18d4c8369d2a908320e52aa.png)
+
 - 流类型：摄像头画面的流类型是 main，屏幕分享的流类型是 aux（有个例外，由于 WebRTC 端同时只支持一路上行，所以 WebRTC 上屏幕分享的流类型也是 main）。
 - `streamid = bizid_MD5 (房间号_userId_流类型)`，即由`bizid`、`_`以及`“房间号_userId_流类型”计算 MD5 的结果`拼接而成。
 
@@ -67,14 +64,14 @@ http://[bizid].liveplay.myqcloud.com/live/[streamid].flv
  - 各个子画面的摆放位置和大小。
  - 混合画面的画面质量和编码参数。
 
-详细配置方法请参考 [云端混流转码](https://cloud.tencent.com/document/product/647/16827)。
+详细配置方法请参考 [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618)。
 >! `setMixTranscodingConfig` 并不是在终端进行混流，而是将混流配置发送到云端，并在云端服务器进行混流和转码。由于混流和转码都需要对原来的音视频数据进行解码和二次编码，所以需要更长的处理时间。因此，混合画面的实际观看时延要比独立画面的多出1s - 2s。
 
 ### 步骤4：对接播放
 
 我们推荐以 `http` 为前缀且以 `.flv` 为后缀的 **http - flv** 地址，该地址的播放具有时延低、秒开效果好且稳定可靠的特点。播放器推荐使用已经打包在 TRTC SDK 里的 TXLivePlayer 播放器，该播放器的参考文档为：
-- [TXLivePlayer(iOS)](https://cloud.tencent.com/document/product/454/7880)
-- [TXLivePlayer(Android)](https://cloud.tencent.com/document/product/454/7886)
+- TXLivePlayer(iOS)
+- TXLivePlayer(Android)
 
 
 ### 步骤5：优化延时
@@ -86,7 +83,6 @@ http://[bizid].liveplay.myqcloud.com/live/[streamid].flv
 | 独立画面 | 极速模式（推荐） | **2s - 3s** |
 | 混合画面 | 极速模式（推荐） | **4s - 5s** |
 
-![](https://main.qcloudimg.com/raw/63c4fbd1ddc006f660c4d1f13ae1b076.jpg)
 
 如果您在实测中看到的延时比上表中的要大，可以按照如下指引来优化延时：
 
@@ -94,7 +90,7 @@ http://[bizid].liveplay.myqcloud.com/live/[streamid].flv
 如果使用普通的 ijkplayer 或者 ffmpeg 播放这些直播流地址，时延一般是不可控的，因为他们都是基于 ffmpeg 的内核包装出的播放器，缺乏延时调控的能力。TXLivePlayer 有一个自研的播放引擎，具备延时调控的能力。
 
 - **设置 TXLivePlayer 的播放模式为极速模式**
-可以通过设置 TXLivePlayerConfig 的三个参数来实现极速模式，以 [iOS](https://cloud.tencent.com/document/product/454/7880#Delay) 为例，设置代码如下：
+可以通过设置 TXLivePlayerConfig 的三个参数来实现极速模式，以 iOS 为例，设置代码如下：
     ```
     // 设置 TXLivePlayer 的播放模式为极速模式
     TXLivePlayerConfig * config = [[TXLivePlayerConfig alloc] init];

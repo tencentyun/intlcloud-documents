@@ -11,8 +11,8 @@ You can put objects to be operated on in an inventory file, which is based on th
 
 1. Log into the [COS Console](https://console.cloud.tencent.com/cos5) and click **Batch Operation** on the left sidebar to enter the batch operation management page.
 2. Click **Create Job** to start creating a batch operation job. Configuration items are described as follows.
- -**Job Region**: Select a region for the job to be created. The job region should be the same as the bucket region of the objects to be operated on in your inventory file, otherwise the job will fail. **Chengdu and Chongqing regions are currently in beta test.*
- -**Inventory Format**: Select a format for the inventory objects. There are two formats:
+ - **Job Region**: Select a region for the job to be created. The job region should be the same as the bucket region of the objects to be operated on in your inventory file, otherwise the job will fail. **Chengdu and Chongqing regions are currently in beta test.*
+ - **Inventory Format**: Select a format for the inventory objects. There are two formats:
 <table>
    <tr>
       <th>Inventory Format</th>
@@ -43,8 +43,8 @@ You can put objects to be operated on in an inventory file, which is based on th
    </tr>
 </table>
 
- -**Inventory Bucket**: Select the bucket where the inventory is stored.
- -**Inventory File Path**: Enter the inventory file or CSV file path in the format of `directory/manifest.json` or `directory/manifest.csv`, respectively. For example, if you have an inventory stored in the `examplebucket-1250000000` root directory, the inventory path will be `manifest.json`. 
+ - **Inventory Bucket**: Select the bucket where the inventory is stored.
+ - **Inventory File Path**: Enter the inventory file or CSV file path in the format of `directory/manifest.json` or `directory/manifest.csv`, respectively. For example, if you have an inventory stored in the `examplebucket-1250000000` root directory, the inventory path will be `manifest.json`. 
 ![](https://main.qcloudimg.com/raw/b6f26b1c6583c1628df0303740e14edd.png)
 3. Click **Next** and the inventory Etag will be displayed, meaning you have selected the correct inventory objects. Then, you will enter the operation configuration page.
   - **Replicating data in batch**:
@@ -58,10 +58,10 @@ You can put objects to be operated on in an inventory file, which is based on th
     - Replica Validity Period: Configure the number of days after which the copy will expire and be deleted automatically. The configuration range has a minimum of 1 day and a maximum of 365 days.
       ![](https://main.qcloudimg.com/raw/105ce204a7441db25aea4eeb5461ca96.png)
 4. Click **Next** to enter the "Other Configurations" page where you can configure the following items:
- -**Job Description (Optional)**: Description of the job, which is optional.
- -**Job Priority**: A job of a higher priority will be operated on first. The value can be a positive integer. The greater the value, the higher the priority.
- -**Job Report**: Select whether to generate a job report.
- -**CAM Role**: You can create a CAM role or select an existing one to grant operation permissions to COS.
+ - **Job Description (Optional)**: Description of the job, which is optional.
+ - **Job Priority**: A job of a higher priority will be operated on first. The value can be a positive integer. The greater the value, the higher the priority.
+ - **Job Report**: Select whether to generate a job report.
+ - **CAM Role**: You can create a CAM role or select an existing one to grant operation permissions to COS.
 ![](https://main.qcloudimg.com/raw/5553d2a9b546128193259bfc8b39076e.png)
 >To grant batch operation permissions to COS, you need to create a CAM role. For more information on CAM roles, see [Role Overview](https://intl.cloud.tencent.com/document/product/598/19420).
 5. Click **Next** to enter the information check page where you can check the configurations of your batch operation job. If you need to make a change, click the corresponding **Modify** or **Previous**. Click **OK** if everything is correct.

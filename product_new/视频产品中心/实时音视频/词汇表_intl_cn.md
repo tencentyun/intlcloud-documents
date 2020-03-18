@@ -4,7 +4,7 @@
 
 ## 应用
 
-应用是由开发者在 [实时音视频控制台](https://console.cloud.tencent.com/rav) 创建的服务应用，不同应用下的数据不互通。详细创建应用流程可参阅 [开通服务](https://cloud.tencent.com/document/product/647/17195) 中创建应用的步骤。
+应用是由开发者在 [实时音视频控制台](https://console.cloud.tencent.com/rav) 创建的服务应用，不同应用下的数据不互通。
 >?一个腾讯云账号允许创建多个实时音视频应用。
 
 ## SDKAPPID
@@ -48,7 +48,7 @@ PrivateMapKey（房间票据）是对用户进房间进行权限校验的凭据�
 
 ## 云直播服务相关词汇
 
-当您需要使用旁路直播或 CDN 转推时，需要使用到 [云直播](https://cloud.tencent.com/document/product/267) 服务的推流、混流、录制、转码以及分发等服务。
+当您需要使用旁路直播或 CDN 转推时，需要使用到 [云直播](https://intl.cloud.tencent.com/document/product/267) 服务的推流、混流、录制、转码以及分发等服务。
 
 ### BIZID
 
@@ -56,7 +56,7 @@ BIZID 是云直播服务中用于区分直播应用的标识。在 [实时音视
 
 ### 流 ID
 
-当您启用了旁路直播、云端录制、云端混流和 CDN 分发等云直播服务时，即需要用到流 ID。实时音视频服务进行旁路推流时的流 ID 计算规则是 [bizid]\_[MD5(roomid_userid_streamtype)] ，您可以通过 [独立画面](https://cloud.tencent.com/document/product/647/16826#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.8B.AC.E7.AB.8B.E7.94.BB.E9.9D.A2) 文档了解详细的旁路转推流 ID 的计算规则。
+当您启用了旁路直播、云端录制、云端混流和 CDN 分发等云直播服务时，即需要用到流 ID。实时音视频服务进行旁路推流时的流 ID 计算规则是 [bizid]\_[MD5(roomid_userid_streamtype)] ，您可以通过 [独立画面](https://intl.cloud.tencent.com/document/product/647/34617#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.8B.AC.E7.AB.8B.E7.94.BB.E9.9D.A2) 文档了解详细的旁路转推流 ID 的计算规则。
 
 ### 直播流地址
 
@@ -70,20 +70,20 @@ BIZID 是云直播服务中用于区分直播应用的标识。在 [实时音视
 > !
 > - 推流地址仅用于上行数据，拉流地址仅用于下行数据。混用可能会造成不可预计的问题。
 > - 只有先进行推流，之后才可以拉流播放。
-> - 根据相关部门要求，针对中国大陆的推流域名及播放域名需要开发者 [自行配置](https://cloud.tencent.com/document/product/267/20381) 后方可使用。
+> - 根据相关部门要求，针对中国大陆的推流域名及播放域名需要开发者 [自行配置](https://intl.cloud.tencent.com/document/product/267/20381) 后方可使用。
 
 
 ### 云端混流
 
-云端混流是云直播提供的一项混流转码服务，可以将相同 BIZID 下的一路或多路直播流 ID 的数据混合到指定的流 ID 上。使用云端混流，可以实现连麦和跨房 PK 等场景功能，您可以在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 的说明文档中查看介绍，若需要更细节的自定义配置，可以通过 [云端混流 RESTAPI](https://cloud.tencent.com/document/product/267/8832) 来对混流进行更精细的参数配置。
+云端混流是云直播提供的一项混流转码服务，可以将相同 BIZID 下的一路或多路直播流 ID 的数据混合到指定的流 ID 上。使用云端混流，可以实现连麦和跨房 PK 等场景功能，您可以在 [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618) 的说明文档中查看介绍，若需要更细节的自定义配置，可以通过 [云端混流 RESTAPI](https://intl.cloud.tencent.com/document/product/267/8832) 来对混流进行更精细的参数配置。
 
 ### 视频录制
 
-视频录制是云直播提供的一项录制服务，可以将流 ID 的数据录制到 [云点播](https://cloud.tencent.com/document/product/266) 服务，您可以在 [云端视频录制](https://cloud.tencent.com/document/product/647/16823) 的说明文档中查看介绍。
+视频录制是云直播提供的一项录制服务，可以将流 ID 的数据录制到 [云点播](https://intl.cloud.tencent.com/document/product/266) 服务，您可以在 [云端视频录制](https://intl.cloud.tencent.com/document/product/647/35152) 的说明文档中查看介绍。
 
 ## TRTC V1 版本专有词汇
 
-以下是针对 TRTC V1 版本专有词汇的说明。您可以通过 [旧版本（iLiveSDK）升级方案](https://cloud.tencent.com/document/product/647/32281) 文档查看 V1 和 V2 版本的差异以及升级方案。
+以下是针对 TRTC V1 版本专有词汇的说明。您可以通过 旧版本（iLiveSDK）升级方案 文档查看 V1 和 V2 版本的差异以及升级方案。
 
 ### AccountType
 accountType（帐号类型）是在实时音视频 V1 版本中登录实时音视频应用的帐号类型，其在创建实时音视频应用后自动分配，用于用户鉴权功能。V2 版本中不再需要使用。
@@ -105,9 +105,9 @@ accountType（帐号类型）是在实时音视频 V1 版本中登录实时音�
 
 ### 群组
 
-实时音视频 V1 版本中的群组系统，使用了腾讯云 [即时通信 IM](https://cloud.tencent.com/document/product/269) 服务的 [群组](https://cloud.tencent.com/document/product/269/1502) 功能。
+实时音视频 V1 版本中的群组系统，使用了腾讯云 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 服务的 [群组](https://intl.cloud.tencent.com/document/product/1047/1502) 功能。
 >! 群组和房间是两个完全独立的概念，二者之间并没有直接关联。
 
 ### 消息
 
-实时音视频 V1 版本中将一次独立发送和接收的信息称为消息，iLiveSDK 中消息用 ILiveMessage 类来描述，主要有三种类型：文本消息、自定义消息以及其它消息，详情参考 [即时通信消息格式](https://cloud.tencent.com/document/product/269/2720)。
+实时音视频 V1 版本中将一次独立发送和接收的信息称为消息，iLiveSDK 中消息用 ILiveMessage 类来描述，主要有三种类型：文本消息、自定义消息以及其它消息，详情参考 [即时通信消息格式](https://intl.cloud.tencent.com/document/product/1047/2720)。

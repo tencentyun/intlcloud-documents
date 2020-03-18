@@ -24,9 +24,7 @@ sourceInfoList 中每一个 sourceInfo 可以分享的目标，它由如下字�
 | iconHeight| int32 | 窗口图标的高度 |
 | iconBGRA | buffer | 窗口图标的二进制 buffer |
 
-根据上述信息，您可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择，如下图：
-
-![](https://main.qcloudimg.com/raw/e370bcac46cc9ab5eb75e34378664d97.jpg)
+根据上述信息，您可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择。
 
 ## 选择分享目标
 TRTC SDK 支持三种分享模式，您可以通过 `selectScreenCaptureTarget` 来指定：

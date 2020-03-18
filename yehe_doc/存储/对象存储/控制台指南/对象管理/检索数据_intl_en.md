@@ -3,9 +3,9 @@
 COS Select allows you to filter out desired data at the storage level, significantly reducing the amount of data transferred by COS, thereby lowering your usage costs, and improving data acquisition efficiency. In COS Console, you can extract the content of individual files stored in buckets using standard SQL templates we provide or by entering statements that meet syntax rules.
 
 >
->-COS Select currently only supports objects in json and csv file formats, and public cloud regions in mainland China.
->-Please make sure the file to be extracted complies with the specification of COS Select. For more information on the specification of COS Select, see [SELECT Overview](https://cloud.tencent.com/document/product/436/37635).
->-COS Select in the console supports data extraction of up to 40M for 128MB files. If you need to process larger files or extract more data, please use [API](https://cloud.tencent.com/document/product/436/37641) or SDK.
+>- COS Select currently only supports objects in json and csv file formats, and public cloud regions in mainland China.
+>- Please make sure the file to be extracted complies with the specification of COS Select. For more information on the specification of COS Select, see [SELECT Overview](https://cloud.tencent.com/document/product/436/37635).
+>- COS Select in the console supports data extraction of up to 40M for 128MB files. If you need to process larger files or extract more data, please use [API](https://cloud.tencent.com/document/product/436/37641) or SDK.
 
 ## Steps
 
