@@ -11,7 +11,7 @@ The TRTC SDK provides the ability to send custom messages. With this feature, an
 ## How It Works
 A user's custom message will be combined into the audio/video data streams and transmitted to other users in the same room alongside. As audio/video channels themselves are not completely reliable, in order to improve the reliability, the TRTC SDK implements a reliability guarantee mechanism internally.
 
-![](https://main.qcloudimg.com/raw/1e1802613a22a93d9222fcea94a9fcfd.png)
+![](https://main.qcloudimg.com/raw/cc11b0e81970929ef28d2074c8297753.jpg)
 
 ## Sending Messages
 
