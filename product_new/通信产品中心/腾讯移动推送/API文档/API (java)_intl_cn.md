@@ -48,6 +48,6 @@ PushAppRequest pushAppRequest = new PushAppRequest();
 JSONObject ret =  xingeApp.pushApp(pushAppRequest );
 ```
 ### pushAppRequest 接口说明
-该类提供封装好的推送消息体，各参数说明及使用方法可参考 [推送接口说明](https://cloud.tencent.com/document/product/1024/33764)
+该类提供封装好的推送消息体，各参数说明及使用方法可参考 [推送接口说明](https://intl.cloud.tencent.com/document/product/1024/33764)
 ## 服务端返回码
-ret_code 含义可参考 [服务端错误码](https://cloud.tencent.com/document/product/1024/33763)
+ret_code 含义可参考 [服务端错误码](https://intl.cloud.tencent.com/document/product/1024/33763)
