@@ -59,7 +59,7 @@ After the `enterRoom()` API in [TRTCCloud](https://intl.cloud.tencent.com/docume
 - If room entry failed, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35130).
 
 
->?In TRTC versions below 6.6, the `onEnterRoom(result)` callback will be returned only for successful room entry, and the [onError()](https://intl.cloud.tencent.com/document/product/647/35126#onerror) callback will be returned for room entry failure. In TRTC v6.6 and above, a positive `result` will be returned for successful room entry, and a negative `result` together with the [onError()](https://intl.cloud.tencent.com/document/product/647/35126#onerror) callback will be returned for room entry failure.
+>In TRTC versions below 6.6, the `onEnterRoom(result)` callback will be returned only for successful room entry, and the [onError()](https://intl.cloud.tencent.com/document/product/647/35126#onerror) callback will be returned for room entry failure. In TRTC v6.6 and above, a positive `result` will be returned for successful room entry, and a negative `result` together with the [onError()](https://intl.cloud.tencent.com/document/product/647/35126#onerror) callback will be returned for room entry failure.
 
 
 
@@ -150,7 +150,7 @@ For the sake of performance, the behaviors of this notification will be differen
 - Video call scenario (`TRTCCloudDef.TRTC_APP_SCENE_VIDEOCALL`): users in this scenario do not have different roles, and this notification will be triggered whenever a user enters the room.
 - Online LVB scenario (`TRTCCloudDef.TRTC_APP_SCENE_LIVE`): this scenario does not limit the number of viewers. If any user entering or exiting the room could trigger the callback, it would cause great performance loss. Therefore, this notification will be triggered only when an anchor but not a viewer enters the room.
 
->?Note: `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom` apply only to maintaining the "member list" of the current room. To display the remote image, it is recommended to listen on the [onUserVideoAvailable()](https://intl.cloud.tencent.com/document/product/647/35126#onuservideoavailable) event callback.
+>Note: `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom` apply only to maintaining the "member list" of the current room. To display the remote image, it is recommended to listen on the [onUserVideoAvailable()](https://intl.cloud.tencent.com/document/product/647/35126#onuservideoavailable) event callback.
 
 
 
@@ -208,7 +208,7 @@ __Parameters__
 | userId | String | User ID. |
 | available | boolean | Whether screen sharing is enabled. |
 
->?The function to display the secondary channel image is `startRemoteSubStreamView()` instead of `startRemoteView()`.
+>The function to display the secondary channel image is `startRemoteSubStreamView()` instead of `startRemoteView()`.
 
 
 
@@ -247,7 +247,7 @@ __Overview__
 
 If `userId` is `null`, it indicates that the captured local camera image starts to be rendered, which needs to be triggered by calling `startLocalPreview` first. If `userId` is not `null`, it indicates that the first video frame of the remote user starts to be rendered, which needs to be triggered by calling `startRemoteView` first.
 
->?This callback will be triggered only after `startLocalPreview()`, `startRemoteView()`, or `startRemoteSubStreamView()` is called.
+>This callback will be triggered only after `startLocalPreview()`, `startRemoteView()`, or `startRemoteSubStreamView()` is called.
 
 
 
@@ -312,7 +312,7 @@ __Overview__
 
 This callback API can be considered as the disused version of `onRemoteUserEnterRoom` and is not recommended. Please use `onUserVideoAvailable` or `onRemoteUserEnterRoom` for substitution.
 
->?This API is disused and not recommended.
+>This API is disused and not recommended.
 
 
 ### onUserExit
@@ -333,7 +333,7 @@ __Overview__
 
 This callback API can be considered as the disused version of `onRemoteUserLeaveRoom` and is not recommended. Please use `onUserVideoAvailable` or `onRemoteUserEnterRoom` for substitution.
 
->?This API is disused and not recommended.
+>This API is disused and not recommended.
 
 
 
@@ -352,7 +352,7 @@ __Parameters__
 | localQuality | [TRTCCloudDef.TRTCQuality](https://intl.cloud.tencent.com/document/product/647/35126#trtcquality) | Upstream network quality. |
 | remoteQuality | ArrayList< TRTCCloudDef.TRTCQuality > | Downstream network quality. |
 
->?If `userid` is `""`, it indicates the current local video quality.
+>If `userid` is `""`, it indicates the current local video quality.
 
 
 ### onStatistics
@@ -372,7 +372,7 @@ __Overview__
 
 If you are familiar with audio/video terms, you can use this callback to get all technical metrics of the SDK. If you are developing an audio/video project for the first time, you can focus only on the `onNetworkQuality` callback.
 
->?The callback is triggered once every 2 seconds.
+>The callback is triggered once every 2 seconds.
 
 
 
@@ -461,7 +461,7 @@ __Overview__
 
 The `enableAudioVolumeEvaluation` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) can be used to enable this callback or set its triggering interval. After `enableAudioVolumeEvaluation` is called to enable the volume level callback, no matter whether there is a user speaking in the channel, the callback will be called at the set time interval. If there is no one speaking, `userVolumes` will be empty, and `totalVolume` will be `0`.
 
->?If `userId` is `null`, it indicates the volume level of the local user. `userVolumes` only includes the volume information of users who are speaking (i.e., volume level is not 0).
+>If `userId` is `null`, it indicates the volume level of the local user. `userVolumes` only includes the volume information of users who are speaking (i.e., volume level is not 0).
 
 
 
@@ -508,7 +508,7 @@ __Overview__
 
 TRTC uses the UDP channel; therefore, even if reliable transmission is set, it cannot guarantee that no message will be lost; instead, it can only reduce the message loss rate to a very small value and meet general reliability requirements. After reliable transmission is set on the sender, the SDK will use this callback to notify of the number of custom messages lost during transmission in the specified past time period (usually 5s).
 
->?Only when reliable transmission is set on the sender can the receiver receive the callback of message loss.
+>Only when reliable transmission is set on the sender can the receiver receive the callback of message loss.
 
 
 ### onRecvSEIMsg
@@ -543,7 +543,7 @@ __Overview__
 
 This callback corresponds to the `startPublishCDNStream()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud).
 
->?If `Start` callback is successful, the relayed push request has been successfully sent to Tencent Cloud. If the target CDN is exceptional, relayed push may fail.
+>If `Start` callback is successful, the relayed push request has been successfully sent to Tencent Cloud. If the target CDN is exceptional, relayed push may fail.
 
 
 
@@ -635,7 +635,7 @@ __Parameters__
 |-----|-----|-----|
 | frame | [TRTCCloudDef.TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35126#trtcaudioframe) | Audio data. |
 
->?
+>
 >- Do not perform any time-consuming operation in this callback function. It is recommended to directly copy the data to another thread for processing; otherwise, various audio exceptions will occur.
 >- Audio data called back by this API can be modified.
 >- The frame time length of audio called back by this API is always 0.02s. The formula to convert the frame time length to frame byte length is **sample rate * frame time length * number of audio channels * sampling point bit width**. For example, the default audio recording format of the SDK has a sample rate of 48,000, mono channel, and sampling point bit width of 16, so its frame byte length will be **48,000 * 0.02s * 1 * 16 bit = 15,360 bit = 1,920 bytes**.
@@ -656,7 +656,7 @@ __Parameters__
 | frame | [TRTCCloudDef.TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35126#trtcaudioframe) | Audio data. |
 | userId | String | User ID. |
 
->?
+>
 >- Do not perform any time-consuming operation in this callback function. It is recommended to directly copy the data to another thread for processing; otherwise, various audio exceptions will occur.
 >- Audio data called back by this API is read only and cannot be modified.
 
@@ -674,7 +674,7 @@ __Parameters__
 |-----|-----|-----|
 | frame | [TRTCCloudDef.TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35126#trtcaudioframe) | Audio data. |
 
->?
+>
 >- Do not perform any time-consuming operation in this callback function. It is recommended to directly copy the data to another thread for processing; otherwise, various audio exceptions will occur.
 >- Audio data called back by this API can be modified.
 >- The frame time length of audio called back by this API is always 0.02s. The formula to convert the frame time length to frame byte length is **sample rate * frame time length * number of audio channels * sampling point bit width**. For example, the default audio playback format of the SDK has a sample rate of 48,000, dual channel, and sampling point bit width of 16, so its frame byte length will be **48,000 * 0.02s * 2 * 16 bit = 30,720 bit = 3,840 bytes**.
