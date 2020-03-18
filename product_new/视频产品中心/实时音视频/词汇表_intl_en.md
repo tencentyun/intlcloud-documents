@@ -5,7 +5,7 @@ You can view the APPID for the Tencent Cloud account in the Tencent Cloud Consol
 ## Application
 
 An application is a service that a developer creates on the [TRTC Console](https://console.cloud.tencent.com/rav). The data of different applications is not interconnected. For details on the application creation procedure, see the step on creating an application in Activating a Service.
->? You can create more than one TRTC application under a single Tencent Cloud account.
+> You can create more than one TRTC application under a single Tencent Cloud account.
 
 ## SDKAPPID
 
@@ -18,7 +18,7 @@ User ID is used to uniquely identify a user in a TRTC application.
 
 ## UserSig
 
-UserSig (user signature) is used for verification for the login authentication of users to make sure that the user’s identity is authentic. The UserSig generation method is explained in the [Generating a Signature](/document/product/647/17275) documentation.
+UserSig (user signature) is used for verification for the login authentication of users to make sure that the user’s identity is authentic. The UserSig generation method is explained in the [Generating a Signature](https://intl.cloud.tencent.com/document/product/647/35166) documentation.
 
 ## Room
 
@@ -28,7 +28,7 @@ A room is an audio/video space where users can access each other’s real-time v
 - A user's video is only accessible to the other users in the same room.
 - A user can only enter one room at a time, so if a user wants to enter another room, they have to exit the previous room first.
 
->!
+>
 - The user who first creates a room is the room owner, but this user does not have the ability to close the room.
 - When all users actively exit a room, the server will immediately close the room.
 >- If a single user disconnects due to an exception, the server will clear this user from the room after 30 seconds. If all users are disconnected due to an exception, the server will automatically close the room after 30 seconds.
@@ -40,7 +40,7 @@ Room ID (room number) is used by the TRTC service to uniquely identify a room. T
 
 ## Private Map Key
 
-Private Map Key (room ticket) is a credential used for permission verification when users enter a room, making it equivalent to the key for entering the specified room (Room ID). The Private Map Key is usually used for protecting room entry permissions and to implement room entry restriction. It is issued by the developer’s project server, and its generation method is explained in the [Room Entry Permissions Protection](/document/product/647/32240) documentation.
+Private Map Key (room ticket) is a credential used for permission verification when users enter a room, making it equivalent to the key for entering the specified room (Room ID). The Private Map Key is usually used for protecting room entry permissions and to implement room entry restriction. It is issued by the developer’s project server, and its generation method is explained in the [Room Entry Permissions Protection](https://intl.cloud.tencent.com/document/product/647/35157) documentation.
 
 ## Relayed Live Streaming
 
@@ -52,7 +52,7 @@ When you need to use relayed live streaming or CDN pull, the services of [Cloud 
 
 ### BIZID
 
-BIZID is an identifier used to differentiate LVB applications in the cloud LVB service. After activating automatic relayed live streaming or activating relayed live streaming automatic recording in the [TRTC Console](https://console.cloud.tencent.com/rav), select a previously created application and click **Account Information** to obtain the BIZID information in “LVB Information”.
+BIZID is an identifier used to differentiate LVB applications in the cloud LVB service. After activating automatic relayed live streaming or activating relayed live streaming automatic recording in the TRTC Console, select a previously created application and click **Account Information** to obtain the BIZID information in “LVB Information”.
 
 ### Stream ID
 
@@ -67,7 +67,7 @@ LVB stream addresses are divided into push addresses and pull addresses, which a
 	- HTTP - FLV type: `http://yourpulldomain.com/appname/streamname.flv?auth=xxxxxx`.
 	- HLS type: `http://yourpulldomain.com/appname/streamname.m3u8?auth=xxxxxx`.
 
-> !
+> 
 >- A push address is only used for upstream data, and a pull address is only used for downstream data. Mixing them up could cause unpredictable problems.
 >- Pull playback can only be done after first doing push.
 >- As required by the authorities, push domain names and playback domain names can only be used in mainland China after [Self Configuration](https://intl.cloud.tencent.com/document/product/267/20381) by the developer.
@@ -90,14 +90,14 @@ Account Type is the account type used to log in to a TRTC application in TRTC ve
 
 ### Role
 
-A role is a set of parameters used to manage audio/video parameter configuration (including resolution and capture frame rate) in TRTC version 1. You can create and configure roles under **Image Settings (old version SDK)** in the [TRTC Console](https://console.cloud.tencent.com/rav). It is not required to be used in version 2.
+A role is a set of parameters used to manage audio/video parameter configuration (including resolution and capture frame rate) in TRTC version 1. You can create and configure roles under **Image Settings (old version SDK)** in the TRTC Console. It is not required to be used in version 2.
 
 ### Role Name
 
-After the role parameters sets are created by a specific terminal platform integrated in TRTC version 1, you can name this set of parameter configuration in the [TRTC Console](https://console.cloud.tencent.com/rav). This name is the role name. After users turn on the camera or mic and uplink the audio/video stream in a room and start to stream data, the role to be used when entering the room can be specified using the role name to confirm the parameters for streaming data. This is not required to be used in version 2.
+After the role parameters sets are created by a specific terminal platform integrated in TRTC version 1, you can name this set of parameter configuration in the TRTC Console. This name is the role name. After users turn on the camera or mic and uplink the audio/video stream in a room and start to stream data, the role to be used when entering the room can be specified using the role name to confirm the parameters for streaming data. This is not required to be used in version 2.
 
 
->!
+>
 >- When entering a room, if a user uses a role name that has not been configured in the console, he/she can still enter the room with the default role.
 >- After entering the room, you can change the role by calling the API used for switching role.
 >- Switching to a non-existent role using the API will cause a failure callback.
@@ -106,8 +106,8 @@ After the role parameters sets are created by a specific terminal platform integ
 ### Group
 
 The group system in TRTC version 1 use the Tencent Cloud [Instant Messaging IM](https://intl.cloud.tencent.com/document/product/1047) service’s [Group](https://intl.cloud.tencent.com/document/product/1047/1502) feature.
->! Group and room are two completely different concepts that should not be confused with each other.
+> Group and room are two completely different concepts that should not be confused with each other.
 
 ### Message
 
-Information that is independently sent and received one time is called a message in TRTC version 1. In iLiveSDK, messages are described using the ILiveMessage class. There are three main types: text messages, custom messages, and other messages. For details, refer to [Instant Message Formats](https://intl.cloud.tencent.com/document/product/1047/2720)/
+Information that is independently sent and received one time is called a message in TRTC version 1. In iLiveSDK, messages are described using the ILiveMessage class. There are three main types: text messages, custom messages, and other messages. For details, refer to [Instant Message Formats](https://intl.cloud.tencent.com/document/product/1047/2720)
