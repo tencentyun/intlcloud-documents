@@ -42,19 +42,19 @@ abstract void setListener(TRTCCloudListener listener)
 
 __Overview__
 
-You can use [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) to get various status notifications from the SDK. For more information, please see the definitions in [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener).
+You can use [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener) to get various status notifications from the SDK. For more information, please see the definitions in [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener).
 
 
 ### setListenerHandler
 
-This API is used to set the queue that drives the [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) callback.
+This API is used to set the queue that drives the [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener) callback.
 ```
 abstract void setListenerHandler(Handler listenerHandler)
 ```
 
 __Overview__
 
-The SDK uses the main thread as the driver of `TRTCCloudListener` by default, which means, if you do not specify `listenerHandler`, the [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) callback of the SDK will be called by the main thread. Your operation on UI in the callback function of [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) is thread-safe now.
+The SDK uses the main thread as the driver of `TRTCCloudListener` by default, which means, if you do not specify `listenerHandler`, the [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener) callback of the SDK will be called by the main thread. Your operation on UI in the callback function of [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener) is thread-safe now.
 
 
 
@@ -70,12 +70,12 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCCloudDef.TRTCParams](https://cloud.tencent.com/document/product/647/32266#trtcparams) | Room entry parameters. For more information, please see `TRTCParams`. |
+| param | [TRTCCloudDef.TRTCParams](https://intl.cloud.tencent.com/document/product/647/35129#trtcparams) | Room entry parameters. For more information, please see `TRTCParams`. |
 | scene | int | Application scenario. Currently, only video call (`VideoCall`) and LVB (`Live) scenarios are supported. |
 
 __Overview__
 
-After this API is called, the `onEnterRoom(result)` callback from [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) will be received: if room entry succeeded, `result` will be a positive number (`result` > 0), indicating the time in milliseconds (ms) used for entering the room; otherwise, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124).
+After this API is called, the `onEnterRoom(result)` callback from [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener) will be received: if room entry succeeded, `result` will be a positive number (`result` > 0), indicating the time in milliseconds (ms) used for entering the room; otherwise, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124).
 
 >?No matter whether room entry is successful, `enterRoom` must be used together with `exitRoom`. If `enterRoom` is called again before `exitRoom` is called, an unexpected error will occur.
 
@@ -90,7 +90,7 @@ abstract void exitRoom()
 
 __Overview__
 
-When the [exitRoom()](#exitroom) API is called, the logic related to room exit will be executed, such as releasing resources of audio/video devices and codecs. After resources are released, the SDK will use the `onExitRoom()` callback in [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) to notify you.
+When the [exitRoom()](#exitroom) API is called, the logic related to room exit will be executed, such as releasing resources of audio/video devices and codecs. After resources are released, the SDK will use the `onExitRoom()` callback in [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener) to notify you.
 If you need to call [enterRoom()](#enterroom) again or switch to another audio/video SDK, please wait until you receive the `onExitRoom()` callback; otherwise, exceptions such as occupied camera or mic may occur; for example, the common issue with switching between media volume and call volume on Android is caused by this problem.
 
 
@@ -153,7 +153,7 @@ For the sake of compatibility of subsequent extended fields for cross-room call,
 - `userId`: If anchor A in room "001" wants to co-anchor with anchor B in room "002", the `userId` must be set to the `userId` of anchor B when anchor A calls [ConnectOtherRoom()](#connectotherroom).
 
 
-The result of requesting cross-room call will be returned through the `onConnectOtherRoom()` callback in [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener).
+The result of requesting cross-room call will be returned through the `onConnectOtherRoom()` callback in [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener).
 
 
 <pre>
@@ -216,7 +216,7 @@ __Parameters__
 
 __Overview__
 
-When the first video frame starts to be rendered, you will receive the `onFirstVideoFrame(null)` callback in [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener).
+When the first video frame starts to be rendered, you will receive the `onFirstVideoFrame(null)` callback in [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/35127#trtccloudlistener).
 
 
 ### stopLocalPreview
@@ -337,7 +337,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCCloudDef.TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32266#trtcvideoencparam) | Video encoding parameters. For more information, please see the definition of `TRTCVideoEncParam` in `TRTCCloudDef.java`. |
+| param | [TRTCCloudDef.TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35129#trtcvideoencparam) | Video encoding parameters. For more information, please see the definition of `TRTCVideoEncParam` in `TRTCCloudDef.java`. |
 
 __Overview__
 
@@ -355,7 +355,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCCloudDef.TRTCNetworkQosParam](https://cloud.tencent.com/document/product/647/32266#trtcnetworkqosparam) | Network bandwidth limit parameters. For more information, please see the definition of `TRTCNetworkQosParam` in `TRTCCloudDef.java`. |
+| param | [TRTCCloudDef.TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35129#trtcnetworkqosparam) | Network bandwidth limit parameters. For more information, please see the definition of `TRTCNetworkQosParam` in `TRTCCloudDef.java`. |
 
 __Overview__
 
@@ -496,7 +496,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | enable | boolean | Whether to enable small image encoding. Default value: `false`. |
-| smallVideoEncParam | [TRTCCloudDef.TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32266#trtcvideoencparam) | Video parameters of small image stream. |
+| smallVideoEncParam | [TRTCCloudDef.TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35129#trtcvideoencparam) | Video parameters of small image stream. |
 
 __Return__
 
@@ -609,7 +609,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| route | int | Audio routing, i.e., whether the audio is output by speaker or receiver. For more information, please see [TRTCCloudDef.TRTC_AUDIO_ROUTE_SPEAKER](https://cloud.tencent.com/document/product/647/32266#TRTC_AUDIO_ROUTE). Default value: TRTC_AUDIO_ROUTE_SPEAKER. |
+| route | int | Audio routing, i.e., whether the audio is output by speaker or receiver. For more information, please see [TRTCCloudDef.TRTC_AUDIO_ROUTE_SPEAKER](https://intl.cloud.tencent.com/document/product/647/35129#TRTC_AUDIO_ROUTE). Default value: TRTC_AUDIO_ROUTE_SPEAKER. |
 
 __Overview__
 
@@ -675,7 +675,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| TRTCAudioRecordingParams | [TRTCCloudDef.TRTCAudioRecordingParams](https://cloud.tencent.com/document/product/647/32266#trtcaudiorecordingparams) | Audio recording parameters. For more information, please see `TRTCAudioRecordingParams`. |
+| TRTCAudioRecordingParams | [TRTCCloudDef.TRTCAudioRecordingParams](https://intl.cloud.tencent.com/document/product/647/35129#trtcaudiorecordingparams) | Audio recording parameters. For more information, please see `TRTCAudioRecordingParams`. |
 
 __Return__
 
@@ -709,7 +709,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| type | int | System volume type. For more information, please see [TRTCSystemVolumeType](https://cloud.tencent.com/document/product/647/32266#TRTCSystemVolumeType). Default value: TRTCSystemVolumeTypeAuto. |
+| type | int | System volume type. For more information, please see [TRTCSystemVolumeType](https://intl.cloud.tencent.com/document/product/647/35129#TRTCSystemVolumeType). Default value: TRTCSystemVolumeTypeAuto. |
 
 >?This API must be called before [startLocalAudio()](#startlocalaudio) is called.
 
@@ -1148,7 +1148,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| frame | [TRTCCloudDef.TRTCVideoFrame](https://cloud.tencent.com/document/product/647/32266#trtcvideoframe) | Video data. If the `buffer` scheme is used, please set the `data` field; if the `texture` scheme is used, please set the `TRTCTexture` object. |
+| frame | [TRTCCloudDef.TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647/35129#trtcvideoframe) | Video data. If the `buffer` scheme is used, please set the `data` field; if the `texture` scheme is used, please set the `TRTCTexture` object. |
 
 __Overview__
 
@@ -1157,7 +1157,7 @@ Android supports two schemes:
 - `texture` scheme: its connection requires certain knowledge in OpenGL but its performance is well. For resolution higher than 640 * 360, please use this scheme.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
 
 >?
 >- The SDK has an internal frame rate control logic, and the target frame rate set in `setVideoEncoderParam` shall prevail. If the frame rate is too high, automatic frame discarding may occur; if too low, automatic frame interpolation will be implemented.
@@ -1177,7 +1177,7 @@ __Parameters__
 |-----|-----|-----|
 | pixelFormat | int | Specifies the pixel format of video frame, such as TRTC_VIDEO_PIXEL_FORMAT_I420 or TRTC_VIDEO_PIXEL_FORMAT_Texture_2D. |
 | bufferType | int | Specifies the data structure of video frame. `TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER` or `TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY` corresponds to `pixelFormat` of `TRTC_VIDEO_PIXEL_FORMAT_I420`; `TRTC_VIDEO_BUFFER_TYPE_TEXTURE` corresponds to `pixelFormat` of `TRTC_VIDEO_PIXEL_FORMAT_Texture_2D`. |
-| listener | [TRTCCloudListener.TRTCVideoRenderListener](https://cloud.tencent.com/document/product/647/32265#trtcvideorenderlistener) | Callback of custom video rendering. The callback is returned once for each video frame. |
+| listener | [TRTCCloudListener.TRTCVideoRenderListener](https://intl.cloud.tencent.com/document/product/647/35127#trtcvideorenderlistener) | Callback of custom video rendering. The callback is returned once for each video frame. |
 
 __Return__
 
@@ -1190,7 +1190,7 @@ After this method is set, the SDK will skip its own rendering process and call b
 - `bufferType` specifies the buffer type. `BYTE_BUFFER` is suitable for the JNI layer, while `BYTE_ARRAY` can be used in direct operations at the Java layer.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
 
 
 ### setRemoteVideoRenderListener
@@ -1207,7 +1207,7 @@ __Parameters__
 | userId | String | ID of remote user. |
 | pixelFormat | int | Specifies the pixel format of video frame. Currently, only `TRTC_VIDEO_PIXEL_FORMAT_I420` is supported. |
 | bufferType | int | Specifies the data structure of video frame, such as `TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER` or `TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY`. |
-| listener | [TRTCCloudListener.TRTCVideoRenderListener](https://cloud.tencent.com/document/product/647/32265#trtcvideorenderlistener) | Callback of custom video rendering. The callback is returned once for each video frame. |
+| listener | [TRTCCloudListener.TRTCVideoRenderListener](https://intl.cloud.tencent.com/document/product/647/35127#trtcvideorenderlistener) | Callback of custom video rendering. The callback is returned once for each video frame. |
 
 __Return__
 
@@ -1216,7 +1216,7 @@ __Return__
 __Overview__
 
 This method is similar to `setLocalVideoRenderListener`. The difference is that one is callback of rendering the local image, while the other is callback of rendering the remote image.
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
 
 >?In practice, `startRemoteView(userid, null)` needs to be called first to initiate pull of the remote video stream, and `view` needs to be set to `null`; otherwise, the SDK will not start the custom rendering process, and the callback function of `listener` will not be triggered.
 
@@ -1251,7 +1251,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| frame | [TRTCCloudDef.TRTCAudioFrame](https://cloud.tencent.com/document/product/647/32266#trtcaudioframe) | Audio frame. Currently, only mono channel and 48 kHz sample rate are supported. |
+| frame | [TRTCCloudDef.TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/35129#trtcaudioframe) | Audio frame. Currently, only mono channel and 48 kHz sample rate are supported. |
 
 __Overview__
 
@@ -1262,7 +1262,7 @@ It is recommended to enter the following information for `TRTCAudioFrame`:
 - timestamp: if the intervals for `timestamp` are uneven, the audio/video sync and quality of MP4 recording will be seriously affected.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
 
 >?You can set `timestamp` in `frame` to `0`, so that the SDK will set the timestamp by itself. However, please "evenly" set the calling interval of `sendCustomAudioData`; otherwise, the audio will be unstable.
 
@@ -1279,7 +1279,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| listener | [TRTCCloudListener.TRTCAudioFrameListener](https://cloud.tencent.com/document/product/647/32265#trtcaudioframelistener) | Audio data callback. If `listener = null`, data callback will be stopped. |
+| listener | [TRTCCloudListener.TRTCAudioFrameListener](https://intl.cloud.tencent.com/document/product/647/35127#trtcaudioframelistener) | Audio data callback. If `listener = null`, data callback will be stopped. |
 
 __Overview__
 
@@ -1501,7 +1501,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| effect | [TRTCCloudDef.TRTCAudioEffectParam](https://cloud.tencent.com/document/product/647/32266#trtcaudioeffectparam) | Sound effect. |
+| effect | [TRTCCloudDef.TRTCAudioEffectParam](https://intl.cloud.tencent.com/document/product/647/35129#trtcaudioeffectparam) | Sound effect. |
 
 __Overview__
 
@@ -1581,7 +1581,7 @@ __Parameters__
 
 __Overview__
 
-The speed test result will be used to optimize the SDK's subsequent selection policy. It is recommended to perform the speed test before users place the first call, which will help select the optimal server. If the test result is not satisfactory, you can use a noticeable UI prompt to remind the user to select a better network. The test result will be called back through [TRTCCloudListener.onSpeedTest](https://cloud.tencent.com/document/product/647/32265#onspeedtest).
+The speed test result will be used to optimize the SDK's subsequent selection policy. It is recommended to perform the speed test before users place the first call, which will help select the optimal server. If the test result is not satisfactory, you can use a noticeable UI prompt to remind the user to select a better network. The test result will be called back through [TRTCCloudListener.onSpeedTest](https://intl.cloud.tencent.com/document/product/647/35127#onspeedtest).
 
 >?The speed test will consume a certain amount of traffic and generate a small amount of extra traffic fees as a result.
 
@@ -1608,14 +1608,14 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| config | [TRTCCloudDef.TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32266#trtctranscodingconfig) | For more information, please see the description of `TRTCTranscodingConfig` in `TRTCCloudDef.java`. If `null` is passed in, On-Cloud MixTranscoding will be canceled. |
+| config | [TRTCCloudDef.TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35129#trtctranscodingconfig) | For more information, please see the description of `TRTCTranscodingConfig` in `TRTCCloudDef.java`. If `null` is passed in, On-Cloud MixTranscoding will be canceled. |
 
 __Overview__
 
 This API will send a command to the Tencent Cloud transcoding server to combine multiple image channels in the room into one channel.
-If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
+If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
 You can use the transcoding parameters to set the position of each channel of image and quality of the final output image.
-Reference document: [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618). Sample code: the demo provides the entry for trying out this feature. You can experience it in "On-Cloud Image Mix" and "Share Playback Address" in the "More Features" panel.
+Reference document: [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/35123/34618). Sample code: the demo provides the entry for trying out this feature. You can experience it in "On-Cloud Image Mix" and "Share Playback Address" in the "More Features" panel.
 
 
 <pre>
@@ -1628,7 +1628,7 @@ Reference document: [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/doc
 
 >?Notes on On-Cloud MixTranscoding:
 >- On-cloud transcoding will cause a delay of 1–2 seconds in video playback with CDN.
->- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/34617) of your own channel.
+>- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617) of your own channel.
 
 
 ### startPublishCDNStream
@@ -1642,7 +1642,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | [TRTCCloudDef.TRTCPublishCDNParam](https://cloud.tencent.com/document/product/647/32266#trtcpublishcdnparam) | For more information, please see the description of `TRTCPublishCDNParam` in `TRTCCloudDef.java`. |
+| param | [TRTCCloudDef.TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647/35129#trtcpublishcdnparam) | For more information, please see the description of `TRTCPublishCDNParam` in `TRTCCloudDef.java`. |
 
 __Overview__
 
@@ -1685,7 +1685,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| level | int | For more information, please see [TRTC_LOG_LEVEL](https://cloud.tencent.com/document/product/647/32266#4.2-log-.E7.BA.A7.E5.88.AB). Default value: TRTC_LOG_LEVEL_NULL. |
+| level | int | For more information, please see [TRTC_LOG_LEVEL](https://intl.cloud.tencent.com/document/product/647/35129#4.2-log-.E7.BA.A7.E5.88.AB). Default value: TRTC_LOG_LEVEL_NULL. |
 
 
 ### setConsoleEnabled
