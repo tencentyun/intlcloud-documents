@@ -2,8 +2,7 @@
 
 Stream mixing is not needed if only one audio/video stream is played in a room. But in case of multiple audio/video streams, **MixTranscoding** is needed to combine the multiple streams into one to make the recording/storage easy and allow for Relayed Live Streaming to the LVB CDN.
 
-You can enable On-Cloud MixTranscoding using the **setMixTranscodingConfig** API in TRTCCloud to mix multiple streams into one, as shown below:
-![](https://main.qcloudimg.com/raw/cea819e23802476ecda265e42a14133a.gif)
+You can enable On-Cloud MixTranscoding using the **setMixTranscodingConfig** API in TRTCCloud to mix multiple streams into one.
 
 ## Supported Platforms
 
@@ -11,13 +10,13 @@ You can enable On-Cloud MixTranscoding using the **setMixTranscodingConfig** API
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 |     &#10003;  |    &#10003;    |    &#10003;   |    &#10003;    |    ×    |   ×    |
 
->! WeChat Mini Program and HTML5 do not support the setMixTranscodingConfig API on mobile devices and PCs. You can enable this feature using the [REST API](https://intl.cloud.tencent.com/document/product/267/8832) in LVB.
+> WeChat Mini Program and HTML5 do not support the setMixTranscodingConfig API on mobile devices and PCs. You can enable this feature using the [REST API](https://intl.cloud.tencent.com/document/product/267/8832) in LVB.
 
 
 ## How Cloud MixTranscoding Works
 During On-Cloud MixTranscoding, the recorded video images are decoded and then spliced into one image, which is then encoded to generate a new video stream.
 
-![](https://main.qcloudimg.com/raw/b9a7a282a85db65765cebbbdbb36d03e.png)
+
 
 Because both mix and transcoding involve decoding and re-encoding the original audio/video data, they may take a while. Therefore, a mixed stream has a playback latency 1 or 2 seconds longer than individual streams.
 

@@ -13,7 +13,7 @@
 
 ## 测速的原理
 
-![](https://main.qcloudimg.com/raw/fda70080f1d1267452ebc721e83e1392.png)
+![](https://main.qcloudimg.com/raw/0d95dc823a809d33bd02b5c7c693918c.jpg)
 
 - 测速的原理是 SDK 向服务器节点发送一批探测包，然后统计回包的质量，并将测速的结果通过回调接口通知出来。
 

@@ -5,7 +5,6 @@ Different from the portrait mode of mobile live broadcasting, TRTC needs to cons
 - How to implement landscape mode; for example, multi-person video conferencing applications (e.g., XYLink) often adopt landscape mode.
 - How to customize the rotation direction and fill mode of local and remote video images.
 
-![](https://main.qcloudimg.com/raw/f564a9a4df2b4df215e43d4b78a93d40.jpg)
 
 ## Platforms Supported
 
@@ -32,7 +31,7 @@ You can also achieve this by implementing the `supportedInterfaceOrientationsFor
 }
 ```
 
-> For some development ideas about screen orientation on iOS, please see [Landscape/Portrait Screen Rotation and Its Basic Adaptation Method on iOS](https://blog.csdn.net/DreamcoffeeZS/article/details/79037207) on CSDN.
+> For some development ideas about screen orientation on iOS, please see Landscape/Portrait Screen Rotation and Its Basic Adaptation Method on iOS on CSDN.
 
 On the Android platform, you can configure the UI to be in portrait mode by specifying the `screenOrientation` attribute of the activity as `portrait`:
 ```xml
@@ -72,7 +71,6 @@ The TRTC SDK provides a lot of API functions to control the rotation direction a
 | setRemoteViewFillMode | Fill mode of remote video image | Valid values: crop, fill with black bars |
 | setVideoEncoderRotation | Clockwise rotation angle of the video image output by the encoder | Currently, only 180-degree rotation is supported, i.e., upside down |
 
-![](https://main.qcloudimg.com/raw/5382e78586d74c0c9a2b8d407d7db33e.jpg)
 
 
 ## GSensorMode
@@ -80,7 +78,7 @@ Considering that screen rotation involves various adaptation factors of recordin
 
 This feature currently only supports 180-degree upside-down adaptive rotation, that is, when the user's phone is turned upside down by 180 degrees, the screen orientation presented to the viewer will still remain the same (90-degree or 270-degree adaptive rotation is not supported yet). This adaptation is implemented based on the direction adjustment of the encoder, so the recorded video as well as the video image displayed in WeChat Mini Program and HTML5 webpage can also maintain the original orientation.
 
-> ! Another implementation scheme of gravity sensing-based adaption is to carry the gravity direction of the current video in each video frame, and then adaptively adjust the rendering direction on the viewer's device. However, this scheme requires the introduction of additional transcoding resources in order to achieve the orientation of the recorded video as expected; therefore, it is not recommended.
+>  Another implementation scheme of gravity sensing-based adaption is to carry the gravity direction of the current video in each video frame, and then adaptively adjust the rendering direction on the viewer's device. However, this scheme requires the introduction of additional transcoding resources in order to achieve the orientation of the recorded video as expected; therefore, it is not recommended.
 
 
 

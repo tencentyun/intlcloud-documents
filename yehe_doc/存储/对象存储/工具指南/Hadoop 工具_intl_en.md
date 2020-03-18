@@ -209,7 +209,7 @@ SSE-C encryption is server-side encryption with user-defined keys. The encryptio
  </property>		
  <property>
   	<name>fs.cosn.server-side-encryption.key</name>
-        <value>MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=</value> #用户需要自行配置 SSE-C 的密钥，密钥格式为 base64 编码的 AES-256 密钥。
+        <value>MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=</value> #User needs to configure the SSE-C key in the format of base64-encoded AES-256 key.
         <description>The SSE-C server side encryption key.</description>
  </property> 
 ```

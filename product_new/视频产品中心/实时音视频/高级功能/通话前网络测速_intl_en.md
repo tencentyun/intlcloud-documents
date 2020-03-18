@@ -13,7 +13,7 @@ It is difficult for ordinary users to evaluate the network quality. It is recomm
 
 ## How Speed Test Works
 
-![](https://main.qcloudimg.com/raw/fda70080f1d1267452ebc721e83e1392.png)
+![](https://main.qcloudimg.com/raw/0d95dc823a809d33bd02b5c7c693918c.jpg)
 
 - The speed test works in the following way: the SDK sends a batch of probe packets to the server node, measures the quality of the return packets, and notifies of the speed test results through the callback API.
 
