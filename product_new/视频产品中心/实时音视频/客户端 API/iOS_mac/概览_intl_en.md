@@ -234,89 +234,89 @@ Event callback API for TRTC video call feature.
 
 | API | Description |
 |-----|-----|
-| [onError](https://intl.cloud.tencent.com/document/product/647/35123/32263#onerror) | Callback for error: SDK encountered an irrecoverable error and must be listened on. Corresponding UI reminders should be displayed based on the actual conditions. |
-| [onWarning](https://intl.cloud.tencent.com/document/product/647/35123/32263#onwarning) | Callback for warning: this callback is used to alert to some non-serious problems such as lag or recoverable decoding failure. |
+| [onError](https://intl.cloud.tencent.com/document/product/647/35121#onerror) | Callback for error: SDK encountered an irrecoverable error and must be listened on. Corresponding UI reminders should be displayed based on the actual conditions. |
+| [onWarning](https://intl.cloud.tencent.com/document/product/647/35121#onwarning) | Callback for warning: this callback is used to alert to some non-serious problems such as lag or recoverable decoding failure. |
 
 
 ### Room event callbacks
 
 | API | Description |
 |-----|-----|
-| [onEnterRoom](https://intl.cloud.tencent.com/document/product/647/35123/32263#onenterroom) | Callback of room entry. |
-| [onExitRoom](https://intl.cloud.tencent.com/document/product/647/35123/32263#onexitroom) | Callback of room exit. |
-| [onSwitchRole](https://intl.cloud.tencent.com/document/product/647/35123/32263#onswitchrole) | Callback of role switching. |
-| [onConnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35123/32263#onconnectotherroom) | Callback of the result of requesting cross-room call (anchor competition). |
-| [onDisconnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35123/32263#ondisconnectotherroom) | Callback of the result of ending cross-room call (anchor competition). |
+| [onEnterRoom](https://intl.cloud.tencent.com/document/product/647/35121#onenterroom) | Callback of room entry. |
+| [onExitRoom](https://intl.cloud.tencent.com/document/product/647/35121#onexitroom) | Callback of room exit. |
+| [onSwitchRole](https://intl.cloud.tencent.com/document/product/647/35121#onswitchrole) | Callback of role switching. |
+| [onConnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35121#onconnectotherroom) | Callback of the result of requesting cross-room call (anchor competition). |
+| [onDisconnectOtherRoom](https://intl.cloud.tencent.com/document/product/647/35121#ondisconnectotherroom) | Callback of the result of ending cross-room call (anchor competition). |
 
 
 ### Member event callbacks
 
 | API | Description |
 |-----|-----|
-| [onRemoteUserEnterRoom](https://intl.cloud.tencent.com/document/product/647/35123/32263#onremoteuserenterroom) | A user enters the current room. |
-| [onRemoteUserLeaveRoom](https://intl.cloud.tencent.com/document/product/647/35123/32263#onremoteuserleaveroom) | A user exits the current room. |
-| [onUserVideoAvailable](https://intl.cloud.tencent.com/document/product/647/35123/32263#onuservideoavailable) | Whether camera is enabled for video. |
-| [onUserSubStreamAvailable](https://intl.cloud.tencent.com/document/product/647/35123/32263#onusersubstreamavailable) | Whether screen sharing is enabled. |
-| [onUserAudioAvailable](https://intl.cloud.tencent.com/document/product/647/35123/32263#onuseraudioavailable) | Whether audio upstreaming is enabled. |
-| [onFirstVideoFrame](https://intl.cloud.tencent.com/document/product/647/35123/32263#onfirstvideoframe) | Rendering of the first frame of a local or remote user starts. |
-| [onFirstAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123/32263#onfirstaudioframe) | Playback of the first audio frame of a remote user starts (local audio is not supported for notification currently). |
-| [onSendFirstLocalVideoFrame](https://intl.cloud.tencent.com/document/product/647/35123/32263#onsendfirstlocalvideoframe) | The first local video frame data has been sent. |
-| [onSendFirstLocalAudioFrame](https://intl.cloud.tencent.com/document/product/647/35123/32263#onsendfirstlocalaudioframe) | The first local audio frame data has been sent. |
-| [onUserEnter](https://intl.cloud.tencent.com/document/product/647/35123/32263#onuserenter) | Disused API: an anchor enters the current room. |
-| [onUserExit](https://intl.cloud.tencent.com/document/product/647/35123/32263#onuserexit) | Disused API: an anchor exits the current room. |
+| [onRemoteUserEnterRoom](https://intl.cloud.tencent.com/document/product/647/35121#onremoteuserenterroom) | A user enters the current room. |
+| [onRemoteUserLeaveRoom](https://intl.cloud.tencent.com/document/product/647/35121#onremoteuserleaveroom) | A user exits the current room. |
+| [onUserVideoAvailable](https://intl.cloud.tencent.com/document/product/647/35121#onuservideoavailable) | Whether camera is enabled for video. |
+| [onUserSubStreamAvailable](https://intl.cloud.tencent.com/document/product/647/35121#onusersubstreamavailable) | Whether screen sharing is enabled. |
+| [onUserAudioAvailable](https://intl.cloud.tencent.com/document/product/647/35121#onuseraudioavailable) | Whether audio upstreaming is enabled. |
+| [onFirstVideoFrame](https://intl.cloud.tencent.com/document/product/647/35121#onfirstvideoframe) | Rendering of the first frame of a local or remote user starts. |
+| [onFirstAudioFrame](https://intl.cloud.tencent.com/document/product/647/35121#onfirstaudioframe) | Playback of the first audio frame of a remote user starts (local audio is not supported for notification currently). |
+| [onSendFirstLocalVideoFrame](https://intl.cloud.tencent.com/document/product/647/35121#onsendfirstlocalvideoframe) | The first local video frame data has been sent. |
+| [onSendFirstLocalAudioFrame](https://intl.cloud.tencent.com/document/product/647/35121#onsendfirstlocalaudioframe) | The first local audio frame data has been sent. |
+| [onUserEnter](https://intl.cloud.tencent.com/document/product/647/35121#onuserenter) | Disused API: an anchor enters the current room. |
+| [onUserExit](https://intl.cloud.tencent.com/document/product/647/35121#onuserexit) | Disused API: an anchor exits the current room. |
 
 
 ### Statistics collection and quality callbacks
 
 | API | Description |
 |-----|-----|
-| [onNetworkQuality](https://intl.cloud.tencent.com/document/product/647/35123/32263#onnetworkquality) | Network quality: this callback is triggered once every 2 seconds to collect statistics of the current network upstreaming and downstreaming quality. |
-| [onStatistics](https://intl.cloud.tencent.com/document/product/647/35123/32263#onstatistics) | Callback of technical metric statistics. |
+| [onNetworkQuality](https://intl.cloud.tencent.com/document/product/647/35121#onnetworkquality) | Network quality: this callback is triggered once every 2 seconds to collect statistics of the current network upstreaming and downstreaming quality. |
+| [onStatistics](https://intl.cloud.tencent.com/document/product/647/35121#onstatistics) | Callback of technical metric statistics. |
 
 
 ### Server event callbacks
 
 | API | Description |
 |-----|-----|
-| [onConnectionLost](https://intl.cloud.tencent.com/document/product/647/35123/32263#onconnectionlost) | The connection between SDK and server is closed. |
-| [onTryToReconnect](https://intl.cloud.tencent.com/document/product/647/35123/32263#ontrytoreconnect) | The SDK tries to connect to the server again. |
-| [onConnectionRecovery](https://intl.cloud.tencent.com/document/product/647/35123/32263#onconnectionrecovery) | The connection between SDK and server has been restored. |
+| [onConnectionLost](https://intl.cloud.tencent.com/document/product/647/35121#onconnectionlost) | The connection between SDK and server is closed. |
+| [onTryToReconnect](https://intl.cloud.tencent.com/document/product/647/35121#ontrytoreconnect) | The SDK tries to connect to the server again. |
+| [onConnectionRecovery](https://intl.cloud.tencent.com/document/product/647/35121#onconnectionrecovery) | The connection between SDK and server has been restored. |
 
 
 ### Hardware device event callbacks
 
 | API | Description |
 |-----|-----|
-| [onCameraDidReady](https://intl.cloud.tencent.com/document/product/647/35123/32263#oncameradidready) | Camera is ready. |
-| [onMicDidReady](https://intl.cloud.tencent.com/document/product/647/35123/32263#onmicdidready) | Mic is ready. |
-| [onAudioRouteChanged](https://intl.cloud.tencent.com/document/product/647/35123/32263#onaudioroutechanged) | Audio routing changes (for iOS only), i.e., whether the audio is output by speaker or receiver. |
-| [onUserVoiceVolume](https://intl.cloud.tencent.com/document/product/647/35123/32263#onuservoicevolume) | Callback of volume level, including the volume level of each `userId` and total remote volume level. |
-| [onDevice](https://intl.cloud.tencent.com/document/product/647/35123/32263#ondevice) | Callback of local device connection and disconnection. |
+| [onCameraDidReady](https://intl.cloud.tencent.com/document/product/647/35121#oncameradidready) | Camera is ready. |
+| [onMicDidReady](https://intl.cloud.tencent.com/document/product/647/35121#onmicdidready) | Mic is ready. |
+| [onAudioRouteChanged](https://intl.cloud.tencent.com/document/product/647/35121#onaudioroutechanged) | Audio routing changes (for iOS only), i.e., whether the audio is output by speaker or receiver. |
+| [onUserVoiceVolume](https://intl.cloud.tencent.com/document/product/647/35121#onuservoicevolume) | Callback of volume level, including the volume level of each `userId` and total remote volume level. |
+| [onDevice](https://intl.cloud.tencent.com/document/product/647/35121#ondevice) | Callback of local device connection and disconnection. |
 
 
 ### Custom message reception callbacks
 
 | API | Description |
 |-----|-----|
-| [onRecvCustomCmdMsgUserId](https://intl.cloud.tencent.com/document/product/647/35123/32263#onrecvcustomcmdmsguserid) | Callback of receipt of a custom message. |
-| [onMissCustomCmdMsgUserId](https://intl.cloud.tencent.com/document/product/647/35123/32263#onmisscustomcmdmsguserid) | Callback of loss of a custom message. |
-| [onRecvSEIMsg](https://intl.cloud.tencent.com/document/product/647/35123/32263#onrecvseimsg) | Callback of receipt of an SEI message. |
+| [onRecvCustomCmdMsgUserId](https://intl.cloud.tencent.com/document/product/647/35121#onrecvcustomcmdmsguserid) | Callback of receipt of a custom message. |
+| [onMissCustomCmdMsgUserId](https://intl.cloud.tencent.com/document/product/647/35121#onmisscustomcmdmsguserid) | Callback of loss of a custom message. |
+| [onRecvSEIMsg](https://intl.cloud.tencent.com/document/product/647/35121#onrecvseimsg) | Callback of receipt of an SEI message. |
 
 
 ### CDN relayed push callbacks
 
 | API | Description |
 |-----|-----|
-| [onStartPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35123/32263#onstartpublishcdnstream) | Callback of completion of starting relayed push to CDN. |
-| [onStopPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35123/32263#onstoppublishcdnstream) | Callback of completion of stopping relayed push to CDN. |
-| [onSetMixTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35123/32263#onsetmixtranscodingconfig) | Callback of setting On-Cloud MixTranscoding parameters. This callback corresponds to the `setMixTranscodingConfig()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud). |
+| [onStartPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35121#onstartpublishcdnstream) | Callback of completion of starting relayed push to CDN. |
+| [onStopPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35121#onstoppublishcdnstream) | Callback of completion of stopping relayed push to CDN. |
+| [onSetMixTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35121#onsetmixtranscodingconfig) | Callback of setting On-Cloud MixTranscoding parameters. This callback corresponds to the `setMixTranscodingConfig()` API in [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35120#trtccloud). |
 
 
 ### Audio effect callbacks
 
 | API | Description |
 |-----|-----|
-| [onAudioEffectFinished](https://intl.cloud.tencent.com/document/product/647/35123/32263#onaudioeffectfinished) | Callback of ending an audio effect. |
+| [onAudioEffectFinished](https://intl.cloud.tencent.com/document/product/647/35121#onaudioeffectfinished) | Callback of ending an audio effect. |
 
 
 ### Screen sharing callbacks
