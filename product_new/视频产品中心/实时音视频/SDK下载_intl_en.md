@@ -85,7 +85,7 @@ The lite edition only includes TRTC and TXLivePlayer and has the smallest storag
    </tr>
 </table>
 
->? 
+> 
 > - Read [How to Downsize Installation Package](https://intl.cloud.tencent.com/document/product/647/35165) to learn how to reduce the storage footprint of the SDK.
 > - Scan the QR code to follow our WeChat Official Account to keep updated on the new SDK versions and features.
 >   ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
@@ -123,7 +123,7 @@ In addition to TRTC, the professional edition incorporates various audio/video-r
    </tr>
 </table>
 
->? 
+>
 >- For Windows and Mac, only one unified edition of the SDK is available.
 >- Since LiteAV SDKs all use the same core modules, symbol conflicts can occur if your project integrates more than two LiteAV SDKs. Using the Professional edition of LiteAV SDK can avoid this problem.
 
@@ -155,12 +155,12 @@ In addition to all the features of the Professional edition, the enterprise edit
    </tr>
 </table>
 
->? For Windows and Mac, no SDK with AI special-effect components is available and only one unified edition is provided.
+> For Windows and Mac, no SDK with AI special-effect components is available and only one unified edition is provided.
 
 
 ## Differences Between Editions
 
-![](https://main.qcloudimg.com/raw/76d9d6f854ba4cc8cf3b3c18ed230a35.png)
+![](https://main.qcloudimg.com/raw/d3c876e8d751709e1df52faf4c0bf012.jpg)
 
 <table>
   <tr>
