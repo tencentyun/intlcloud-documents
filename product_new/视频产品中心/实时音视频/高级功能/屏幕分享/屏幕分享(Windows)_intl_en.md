@@ -100,7 +100,7 @@ void CTRTCCloudSDK::onUserSubStreamAvailable(const char * userId, bool available
 ```
 
 ## FAQs
- ** Can there be more than one channel of screen sharing in the same room at the same time?**
+ **Can there be more than one channel of screen sharing in the same room at the same time?**
 Currently, one TRTC room can only have one channel of screen sharing at a time.
 
  **When window sharing (SourceTypeWindow) is specified, will the resolution of the video stream change when the window size changes?**
