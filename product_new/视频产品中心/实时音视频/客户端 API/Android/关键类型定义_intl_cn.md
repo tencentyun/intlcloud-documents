@@ -445,7 +445,7 @@ __属性列表__
 |-----|-----|-----|-----|
 | pixelFormat | int | 视频像素格式，定义参见 [视频像素格式](#TRTC_VIDEO_PIXEL_FORMAT)。 | 自定义采集：TRTC_VIDEO_PIXEL_FORMAT_Texture_2D 或 TRTC_VIDEO_PIXEL_FORMAT_NV21；自定义渲染：TRTC_VIDEO_PIXEL_FORMAT_I420。 |
 | bufferType | int | 视频数据包装格式，定义参见  [视频数据包装格式](#TRTC_VIDEO_BUFFER_TYPE)。 | 自定义采集：TRTC_VIDEO_BUFFER_TYPE_TEXTURE；自定义渲染：TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER 或 TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY。 |
-| texture | [TRTCTexture](https://cloud.tencent.com/document/product/647/32266#trtctexture) | bufferType 为 TRTC_VIDEO_PIXEL_FORMAT_Texture_2D 时的视频数据。 | - |
+| texture | [TRTCTexture](https://intl.cloud.tencent.com/document/product/647/32266#trtctexture) | bufferType 为 TRTC_VIDEO_PIXEL_FORMAT_Texture_2D 时的视频数据。 | - |
 | data | byte[] | bufferType 为 TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY 时的视频数据。 | - |
 | buffer | ByteBuffer | bufferType 为 TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER 时的视频数据，主要在 native 层使用。 | - |
 | width | int | 视频宽度。 | 请严格填写传入视频数据的宽度。 |
@@ -505,7 +505,7 @@ __功能__
 
 __介绍__
 
-您可以在用户进入房间前通过 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 的 startSpeedTest 接口进行测速 （注意：请不要在通话中调用）， 测速结果会每2 - 3秒钟返回一次，每次返回一个 IP 地址的测试结果。
+您可以在用户进入房间前通过 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/32264#trtccloud) 的 startSpeedTest 接口进行测速 （注意：请不要在通话中调用）， 测速结果会每2 - 3秒钟返回一次，每次返回一个 IP 地址的测试结果。
 
 __属性列表__
 
@@ -577,7 +577,7 @@ __属性列表__
 | audioSampleRate | int | 最终转码后的音频采样率。 | 48000 |
 | audioBitrate | int | 最终转码后的音频码率，单位：kbps。 | 64 |
 | audioChannels | int | 最终转码后的音频声道数。 | 2 |
-| mixUsers | ArrayList[TRTCMixUser](https://cloud.tencent.com/document/product/647/32266#trtcmixuser) | 每一路子画面的位置信息。 | - |
+| mixUsers | ArrayList[TRTCMixUser](https://intl.cloud.tencent.com/document/product/647/32266#trtcmixuser) | 每一路子画面的位置信息。 | - |
 
 
 
@@ -658,8 +658,8 @@ __属性列表__
 | downLoss | int | S -> C 下行丢包率（％）， 该值越小越好，例如，丢包率为0表示网络很好，丢包率为30%则意味着 SDK 向服务器发送的数据包中会有30%丢失在下行传输中。 |
 | sendBytes | long | 发送字节总数，注意是字节数（bytes），不是比特数（bits）。 |
 | receiveBytes | long | 接收字节总数，注意是字节数（bytes），不是比特数（bits）。 |
-| localArray | ArrayList[TRTCLocalStatistics](https://cloud.tencent.com/document/product/647/32266#trtclocalstatistics) | 自己本地的音视频统计信息，由于可能有大画面、小画面以及辅路画面等多路的情况，所以是一个数组。 |
-| remoteArray | ArrayList[TRTCRemoteStatistics](https://cloud.tencent.com/document/product/647/32266#trtcremotestatistics) | 远端成员的音视频统计信息，由于可能有大画面、小画面以及辅路画面等多路的情况，所以是一个数组。 |
+| localArray | ArrayList[TRTCLocalStatistics](https://intl.cloud.tencent.com/document/product/647/32266#trtclocalstatistics) | 自己本地的音视频统计信息，由于可能有大画面、小画面以及辅路画面等多路的情况，所以是一个数组。 |
+| remoteArray | ArrayList[TRTCRemoteStatistics](https://intl.cloud.tencent.com/document/product/647/32266#trtcremotestatistics) | 远端成员的音视频统计信息，由于可能有大画面、小画面以及辅路画面等多路的情况，所以是一个数组。 |
 
 
 ## TRTCRemoteStatistics

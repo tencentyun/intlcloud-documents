@@ -42,19 +42,19 @@ abstract void setListener(TRTCCloudListener listener)
 
 __介绍__
 
-您可以通过 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 获得来自 SDK 的各种状态通知，详见 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的定义。
+您可以通过 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 获得来自 SDK 的各种状态通知，详见 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的定义。
 
 
 ### setListenerHandler
 
-设置驱动 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 回调的队列。
+设置驱动 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 回调的队列。
 ```
 abstract void setListenerHandler(Handler listenerHandler)
 ```
 
 __介绍__
 
-SDK 默认会采用 Main Thread 作为驱动 TRTCCloudListener，也就是说，如果您不指定自己的 listenerHandler， SDK 的 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 回调都将由 Main Thread 来调用。此时您在 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 的回调函数里操作 UI 是线程安全的。
+SDK 默认会采用 Main Thread 作为驱动 TRTCCloudListener，也就是说，如果您不指定自己的 listenerHandler， SDK 的 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 回调都将由 Main Thread 来调用。此时您在 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 的回调函数里操作 UI 是线程安全的。
 
 
 
@@ -70,12 +70,12 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCCloudDef.TRTCParams](https://cloud.tencent.com/document/product/647/32266#trtcparams) | 进房参数，请参考 TRTCParams。 |
+| param | [TRTCCloudDef.TRTCParams](https://intl.cloud.tencent.com/document/product/647/32266#trtcparams) | 进房参数，请参考 TRTCParams。 |
 | scene | int | 应用场景，目前支持视频通话（VideoCall）和在线直播（Live）两种场景。 |
 
 __介绍__
 
-调用接口后，您会收到来自 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的 onEnterRoom(result) 回调：如果加入成功，result 会是一个正数（result > 0），表示加入房间所消耗的时间，单位是毫秒（ms）。 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。 进房失败的错误码含义请参见 [错误码](https://cloud.tencent.com/document/product/647/32257)。
+调用接口后，您会收到来自 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的 onEnterRoom(result) 回调：如果加入成功，result 会是一个正数（result > 0），表示加入房间所消耗的时间，单位是毫秒（ms）。 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。 进房失败的错误码含义请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。
 
 >?不管进房是否成功，enterRoom 都必须与 exitRoom 配对使用，在调用 exitRoom 前再次调用 enterRoom 函数会导致不可预期的错误问题。
 
@@ -90,7 +90,7 @@ abstract void exitRoom()
 
 __介绍__
 
-调用 [exitRoom()](#exitroom) 接口会执行退出房间的相关逻辑，例如释放音视频设备资源和编解码器资源等。 待资源释放完毕，SDK 会通过 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的 onExitRoom() 回调通知到您。
+调用 [exitRoom()](#exitroom) 接口会执行退出房间的相关逻辑，例如释放音视频设备资源和编解码器资源等。 待资源释放完毕，SDK 会通过 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的 onExitRoom() 回调通知到您。
 如果您要再次调用 [enterRoom()](#enterroom) 或者切换到其他的音视频 SDK，请等待 onExitRoom() 回调到来之后再执行相关操作。 否则可能会遇到摄像头或麦克风被占用等各种异常问题，例如常见的 Android 媒体音量和通话音量切换问题等等。
 
 
@@ -153,7 +153,7 @@ TRTC 中两个不同音视频房间中的主播，可以通过“跨房通话”
 - userId：房间“001”中的主播 A 要跟房间“002”中的主播 B 连麦，主播 A 调用 [ConnectOtherRoom()](#connectotherroom) 时 userId 应指定为 B 的 userId。
 
 
-跨房通话的请求结果会通过 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的 onConnectOtherRoom() 回调通知给您。
+跨房通话的请求结果会通过 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的 onConnectOtherRoom() 回调通知给您。
 
 
 <pre>
@@ -216,7 +216,7 @@ __参数__
 
 __介绍__
 
-当开始渲染首帧摄像头画面时，您会收到 [TRTCCloudListener](https://cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的 onFirstVideoFrame(null) 回调。
+当开始渲染首帧摄像头画面时，您会收到 [TRTCCloudListener](https://intl.cloud.tencent.com/document/product/647/32265#trtccloudlistener) 中的 onFirstVideoFrame(null) 回调。
 
 
 ### stopLocalPreview
@@ -337,7 +337,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCCloudDef.TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32266#trtcvideoencparam) | 视频编码参数，详情请参考 TRTCCloudDef.java 中的 TRTCVideoEncParam 定义。 |
+| param | [TRTCCloudDef.TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/32266#trtcvideoencparam) | 视频编码参数，详情请参考 TRTCCloudDef.java 中的 TRTCVideoEncParam 定义。 |
 
 __介绍__
 
@@ -355,7 +355,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCCloudDef.TRTCNetworkQosParam](https://cloud.tencent.com/document/product/647/32266#trtcnetworkqosparam) | 网络流控参数，详情请参考 TRTCCloudDef.java 中的 TRTCNetworkQosParam 定义。 |
+| param | [TRTCCloudDef.TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/32266#trtcnetworkqosparam) | 网络流控参数，详情请参考 TRTCCloudDef.java 中的 TRTCNetworkQosParam 定义。 |
 
 __介绍__
 
@@ -496,7 +496,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | enable | boolean | 是否开启小画面编码，默认值：false。 |
-| smallVideoEncParam | [TRTCCloudDef.TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/32266#trtcvideoencparam) | 小流的视频参数。 |
+| smallVideoEncParam | [TRTCCloudDef.TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/32266#trtcvideoencparam) | 小流的视频参数。 |
 
 __返回__
 
@@ -609,7 +609,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| route | int | 音频路由，即声音由哪里输出（扬声器、听筒），请参考 [TRTCCloudDef.TRTC_AUDIO_ROUTE_SPEAKER](https://cloud.tencent.com/document/product/647/32266#TRTC_AUDIO_ROUTE)，默认值：TRTC_AUDIO_ROUTE_SPEAKER。 |
+| route | int | 音频路由，即声音由哪里输出（扬声器、听筒），请参考 [TRTCCloudDef.TRTC_AUDIO_ROUTE_SPEAKER](https://intl.cloud.tencent.com/document/product/647/32266#TRTC_AUDIO_ROUTE)，默认值：TRTC_AUDIO_ROUTE_SPEAKER。 |
 
 __介绍__
 
@@ -675,7 +675,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| TRTCAudioRecordingParams | [TRTCCloudDef.TRTCAudioRecordingParams](https://cloud.tencent.com/document/product/647/32266#trtcaudiorecordingparams) | 录音参数，请参考TRTCAudioRecordingParams。 |
+| TRTCAudioRecordingParams | [TRTCCloudDef.TRTCAudioRecordingParams](https://intl.cloud.tencent.com/document/product/647/32266#trtcaudiorecordingparams) | 录音参数，请参考TRTCAudioRecordingParams。 |
 
 __返回__
 
@@ -709,7 +709,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| type | int | 系统音量类型，请参考 [TRTCSystemVolumeType](https://cloud.tencent.com/document/product/647/32266#TRTCSystemVolumeType)，默认值：TRTCSystemVolumeTypeAuto。 |
+| type | int | 系统音量类型，请参考 [TRTCSystemVolumeType](https://intl.cloud.tencent.com/document/product/647/32266#TRTCSystemVolumeType)，默认值：TRTCSystemVolumeTypeAuto。 |
 
 >?需要在调用 [startLocalAudio()](#startlocalaudio) 之前调用该接口。
 
@@ -1148,7 +1148,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| frame | [TRTCCloudDef.TRTCVideoFrame](https://cloud.tencent.com/document/product/647/32266#trtcvideoframe) | 视频数据，如果是 buffer 方案，请设置 data 字段；如果是 texture 方案，请设置 TRTCTexture 对象。 |
+| frame | [TRTCCloudDef.TRTCVideoFrame](https://intl.cloud.tencent.com/document/product/647/32266#trtcvideoframe) | 视频数据，如果是 buffer 方案，请设置 data 字段；如果是 texture 方案，请设置 TRTCTexture 对象。 |
 
 __介绍__
 
@@ -1157,7 +1157,7 @@ Android 平台有两种的方案：buffer
 - texture 方案：对接需要一定的 OpenGL 基础，但是性能较好，640 × 360 以上的分辨率请采用该方案。
 
 
-参考文档：[自定义采集和渲染](https://cloud.tencent.com/document/product/647/34066)。
+参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
 >?
 >- SDK 内部有帧率控制逻辑，目标帧率以您在 setVideoEncoderParam 中设置的为准，太快会自动丢帧，太慢则会自动补帧。
@@ -1177,7 +1177,7 @@ __参数__
 |-----|-----|-----|
 | pixelFormat | int | 指定视频帧的像素格式，如 TRTC_VIDEO_PIXEL_FORMAT_I420 或 TRTC_VIDEO_PIXEL_FORMAT_Texture_2D。 |
 | bufferType | int | 指定视频帧的数据结构，TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER 或 TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY 对应 pixelFormat 为 TRTC_VIDEO_PIXEL_FORMAT_I420；TRTC_VIDEO_BUFFER_TYPE_TEXTURE 对应 pixelFormat 为 TRTC_VIDEO_PIXEL_FORMAT_Texture_2D。 |
-| listener | [TRTCCloudListener.TRTCVideoRenderListener](https://cloud.tencent.com/document/product/647/32265#trtcvideorenderlistener) | 自定义视频渲染回调，每一帧视频数据回调一次。 |
+| listener | [TRTCCloudListener.TRTCVideoRenderListener](https://intl.cloud.tencent.com/document/product/647/32265#trtcvideorenderlistener) | 自定义视频渲染回调，每一帧视频数据回调一次。 |
 
 __返回__
 
@@ -1190,7 +1190,7 @@ __介绍__
 - bufferType 指定 buffer 的类型，BYTE_BUFFER 适合在 jni 层使用，BYTE_ARRAY 则可用于 Java 层的直接操作。
 
 
-参考文档：[自定义采集和渲染](https://cloud.tencent.com/document/product/647/34066)。
+参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
 
 ### setRemoteVideoRenderListener
@@ -1207,7 +1207,7 @@ __参数__
 | userId | String | 对方的用户标识。 |
 | pixelFormat | int | 指定视频帧的像素格式，目前仅支持 TRTC_VIDEO_PIXEL_FORMAT_I420。 |
 | bufferType | int | 指定视频帧的数据结构，如 TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER， TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY。 |
-| listener | [TRTCCloudListener.TRTCVideoRenderListener](https://cloud.tencent.com/document/product/647/32265#trtcvideorenderlistener) | 自定义视频渲染回调，每一帧视频数据回调一次。 |
+| listener | [TRTCCloudListener.TRTCVideoRenderListener](https://intl.cloud.tencent.com/document/product/647/32265#trtcvideorenderlistener) | 自定义视频渲染回调，每一帧视频数据回调一次。 |
 
 __返回__
 
@@ -1216,7 +1216,7 @@ __返回__
 __介绍__
 
 此方法同 setLocalVideoRenderListener，区别在于一个是本地画面的渲染回调，一个是远程画面的渲染回调。
-参考文档：[自定义采集和渲染](https://cloud.tencent.com/document/product/647/34066)。
+参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
 >?实际使用时，需要先调用 startRemoteView(userid， null) 启动远程视频流的拉取，并将 view 设置为 null， 否则 SDK 不会启动自定义渲染流程，该 listener 的回调函数不会被触发。
 
@@ -1251,7 +1251,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| frame | [TRTCCloudDef.TRTCAudioFrame](https://cloud.tencent.com/document/product/647/32266#trtcaudioframe) | 音频帧。目前只支持单声道，仅支持48K采样率。 |
+| frame | [TRTCCloudDef.TRTCAudioFrame](https://intl.cloud.tencent.com/document/product/647/32266#trtcaudioframe) | 音频帧。目前只支持单声道，仅支持48K采样率。 |
 
 __介绍__
 
@@ -1262,7 +1262,7 @@ TRTCAudioFrame 推荐如下填写方式：
 - timestamp：如果 timestamp 间隔不均匀，会严重影响音画同步和录制出的 MP4 质量。
 
 
-参考文档：[自定义采集和渲染](https://cloud.tencent.com/document/product/647/34066)。
+参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
 >?可以设置 frame 中的 timestamp 为 0，相当于让 SDK 自己设置时间戳，但请“均匀”地控制 sendCustomAudioData 的调用间隔，否则会导致声音断断续续。
 
@@ -1279,7 +1279,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| listener | [TRTCCloudListener.TRTCAudioFrameListener](https://cloud.tencent.com/document/product/647/32265#trtcaudioframelistener) | 音频数据回调，listener = null 则停止回调数据。 |
+| listener | [TRTCCloudListener.TRTCAudioFrameListener](https://intl.cloud.tencent.com/document/product/647/32265#trtcaudioframelistener) | 音频数据回调，listener = null 则停止回调数据。 |
 
 __介绍__
 
@@ -1501,7 +1501,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| effect | [TRTCCloudDef.TRTCAudioEffectParam](https://cloud.tencent.com/document/product/647/32266#trtcaudioeffectparam) | 音效。 |
+| effect | [TRTCCloudDef.TRTCAudioEffectParam](https://intl.cloud.tencent.com/document/product/647/32266#trtcaudioeffectparam) | 音效。 |
 
 __介绍__
 
@@ -1581,7 +1581,7 @@ __参数__
 
 __介绍__
 
-测速结果将会用于优化 SDK 接下来的服务器选择策略，因此推荐您在用户首次通话前先进行一次测速，这将有助于我们选择最佳的服务器。 同时，如果测试结果非常不理想，您可以通过醒目的 UI 提示用户选择更好的网络。 测试结果通过 [TRTCCloudListener.onSpeedTest](https://cloud.tencent.com/document/product/647/32265#onspeedtest) 回调出来。
+测速结果将会用于优化 SDK 接下来的服务器选择策略，因此推荐您在用户首次通话前先进行一次测速，这将有助于我们选择最佳的服务器。 同时，如果测试结果非常不理想，您可以通过醒目的 UI 提示用户选择更好的网络。 测试结果通过 [TRTCCloudListener.onSpeedTest](https://intl.cloud.tencent.com/document/product/647/32265#onspeedtest) 回调出来。
 
 >?测速本身会消耗一定的流量，所以也会产生少量额外的流量费用。
 
@@ -1608,14 +1608,14 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| config | [TRTCCloudDef.TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/32266#trtctranscodingconfig) | 请参考 TRTCCloudDef.java 中关于 TRTCTranscodingConfig 的介绍。如果传入 null 则取消云端混流转码。 |
+| config | [TRTCCloudDef.TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/32266#trtctranscodingconfig) | 请参考 TRTCCloudDef.java 中关于 TRTCTranscodingConfig 的介绍。如果传入 null 则取消云端混流转码。 |
 
 __介绍__
 
 该接口会向腾讯云的转码服务器发送一条指令，目的是将房间里的多路画面叠加到一路画面上。
-如果您在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能， 房间里的每一路画面都会有一个对应的直播 [CDN 地址](https://cloud.tencent.com/document/product/647/16826)， 此时您可以通过云端混流，将多路直播地址的画面混合成一路，这样直播 CDN 上就可以看到混合后的画面。
+如果您在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能， 房间里的每一路画面都会有一个对应的直播 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/34617)， 此时您可以通过云端混流，将多路直播地址的画面混合成一路，这样直播 CDN 上就可以看到混合后的画面。
 您可以通过转码参数来调整每一路画面的位置以及最终输出的画面质量。
-参考文档：[云端混流转码](https://cloud.tencent.com/document/product/647/16827)。 示例代码：我们在 Demo 中增加了该功能的体验入口，您可以在“更多功能”面板中看到“云端画面混合”和“分享播放地址”体验到该功能。
+参考文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618)。 示例代码：我们在 Demo 中增加了该功能的体验入口，您可以在“更多功能”面板中看到“云端画面混合”和“分享播放地址”体验到该功能。
 
 
 <pre>
@@ -1628,7 +1628,7 @@ __介绍__
 
 >?关于云端混流的注意事项：
 >- 云端转码会引入一定的 CDN 观看延时，大概会增加1 - 2秒。
->- 调用该函数的用户，会将多路画面混合到自己这一路的 [CDN 地址](https://cloud.tencent.com/document/product/647/16826) 上。
+>- 调用该函数的用户，会将多路画面混合到自己这一路的 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/34617) 上。
 
 
 ### startPublishCDNStream
@@ -1642,7 +1642,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | [TRTCCloudDef.TRTCPublishCDNParam](https://cloud.tencent.com/document/product/647/32266#trtcpublishcdnparam) | 请参考 TRTCCloudDef.java 中关于 TRTCPublishCDNParam 的介绍。 |
+| param | [TRTCCloudDef.TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647/32266#trtcpublishcdnparam) | 请参考 TRTCCloudDef.java 中关于 TRTCPublishCDNParam 的介绍。 |
 
 __介绍__
 
@@ -1651,7 +1651,7 @@ __介绍__
 由于仅转推单独的一路画面到直播 CDN 并没有什么太大的意义，所以该方案通常是跟云端转码混合使用的。 也就是先通过 setMixTranscodingConfig 将房间里的多路画面混合到一路上，再转推出去。
 
 >?关于旁路转推的注意事项：
->- 默认只支持转推到腾讯云的 rtmp [推流地址](https://cloud.tencent.com/document/product/267/32720) 上，转推其他云的需求请通过工单联系我们。
+>- 默认只支持转推到腾讯云的 rtmp [推流地址](https://intl.cloud.tencent.com/document/product/267/32720) 上，转推其他云的需求请通过工单联系我们。
 >- 调用该函数的用户，只会转推自己这一路画面到指定的 rtmp 推流地址上，因此一般需要配合 setMixTranscodingConfig 一起使用。
 >- TRTC 房间里的每一路画面都有一路默认的腾讯云 CDN 地址（需要开启），所以该功能并不常用，仅在您需要适配多家 CDN 服务商时才需要关注该功能。
 
@@ -1685,7 +1685,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| level | int | 请参见 [TRTC_LOG_LEVEL](https://cloud.tencent.com/document/product/647/32266#4.2-log-.E7.BA.A7.E5.88.AB)，默认值：TRTC_LOG_LEVEL_NULL。 |
+| level | int | 请参见 [TRTC_LOG_LEVEL](https://intl.cloud.tencent.com/document/product/647/32266#4.2-log-.E7.BA.A7.E5.88.AB)，默认值：TRTC_LOG_LEVEL_NULL。 |
 
 
 ### setConsoleEnabled
