@@ -23,8 +23,7 @@ Mac OS 里的桌面屏幕也是一个可共享目标，普通的 Mac 窗口的 t
 | thumbnail| NSImage | 窗口缩略图 |
 | icon | NSImage | 窗口图标 |
 
-有了上面这些信息，您就可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择，如下图：
-![](https://main.qcloudimg.com/raw/ae43c4ec148a0e25368fea0ea20063b7.jpg)
+有了上面这些信息，您就可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择。
 
 ## 选择分享目标
 TRTC SDK 支持三种分享模式，您可以通过 `selectScreenCaptureTarget` 来指定：
