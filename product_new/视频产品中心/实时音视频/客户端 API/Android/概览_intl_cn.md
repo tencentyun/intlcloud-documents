@@ -288,7 +288,7 @@
 |-----|-----|
 | [onStartPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35127#onstartpublishcdnstream) | 启动旁路推流到 CDN 完成的回调。 |
 | [onStopPublishCDNStream](https://intl.cloud.tencent.com/document/product/647/35127#onstoppublishcdnstream) | 停止旁路推流到 CDN 完成的回调。 |
-| [onSetMixTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35127#onsetmixtranscodingconfig) | 设置云端的混流转码参数的回调，对应于 [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) 中的 setMixTranscodingConfig() 接口。 |
+| [onSetMixTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35127#onsetmixtranscodingconfig) | 设置云端的混流转码参数的回调，对应于 [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35127#trtccloud) 中的 setMixTranscodingConfig() 接口。 |
 
 ### 音效回调
 
