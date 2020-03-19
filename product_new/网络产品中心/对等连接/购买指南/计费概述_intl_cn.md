@@ -1,7 +1,7 @@
 ## 计费总览
 腾讯云对等连接**同地域免费**，**跨地域**支持以下两种按量计费模式：
 - 日峰值计费：取当日出入带宽峰值结算。
-- 月95计费：取当月 top5 出入带宽峰值结算（月95计费模式暂不全量开放，如需使用，请 [提交申请](https://cloud.tencent.com/apply/p/clg22aj1t6n) ）。
+- 月95计费：取当月 top5 出入带宽峰值结算（月95计费模式暂不全量开放，如需使用，请提交申请）。
 >!跨地域跨账号互通费用由对等连接发起方支付（非实际通信请求方）。
 
 ## 计费模式
@@ -14,8 +14,36 @@
    
 - 日峰值计费阶梯价格
 
-   ![image-20191111154914037](/Users/chuchuliu/Library/Application Support/typora-user-images/image-20191111154914037.png)
->!
+    <table align=“center”>
+ <tr>
+ <th><center>计费项</center> </th>
+ <th><center>计费区间（Mbps）</center> </th>
+ <th><center>中国大陆（不含港澳台地区）地域间互通价格（元/Mbps/天）</center> </th>
+ </tr>
+ <tr>
+ <td rowspan=5><center>跨地域对等连接</center> </td>
+ <td><center>(0,20] </td>
+ <td><center>20 </center></td>
+ </tr>
+ <tr>
+ <td><center>(20,100]</center> </td>
+ <td><center>12</center> </td>
+ </tr>
+ <tr>
+ <td><center>(100,500]</center> </td>
+ <td><center>9 </center></td>
+ </tr>
+ <tr>
+ <td><center>(500,2000]</center> </td>
+ <td><center>7</center> </td>
+ </tr>
+ <tr>
+ <td><center>> 2000 </center></td>
+ <td><center>5</center> </td>
+ </tr>
+ </table>
+ 
+>
 - 非中国大陆与其它地域互通价格，请咨询您的商务经理。
 - 为了方便您查看费用，账单系统中把对等连接描述为：跨地域互通（大陆）账单——对等连接两端都在中国内地（大陆）地域的账单。
 
@@ -25,7 +53,7 @@
  <span id=yjf> </span>
 
 ### 月95计费
-取当月 top5 出入带宽峰值结算（月95计费模式暂不全量开放，如需使用，请 [提交申请](https://cloud.tencent.com/apply/p/clg22aj1t6n) ）。
+取当月 top5 出入带宽峰值结算（月95计费模式暂不全量开放，如需使用，请提交申请）。
 
 - **计算公式**：每月费用 = 地域间互通的月95带宽峰值 \* 有效天数占比 \* 阶梯单价。
    - 月95带宽峰值：每5分钟采集一次，取5分钟内两地域互通带宽均值作为一个统计点，当月所有统计点从高到低排序，去掉最高5%的统计点后，取剩下的点中的最大值，记作该月的月95带宽峰值。
