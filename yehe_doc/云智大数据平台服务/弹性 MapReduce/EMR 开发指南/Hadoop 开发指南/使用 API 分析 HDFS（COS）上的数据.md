@@ -61,12 +61,16 @@ scp $localfile root@公网IP地址:$remotefolder
 ### 数据存放在 COS
 数据存放在 COS 中有两种方式：**从本地直接通过 COS 的控制台上传**和**通过 Hadoop 命令上传**。
 - 从本地直接通过 [COS 控制台直接上传](https://intl.cloud.tencent.com/document/product/436/13321)，数据文件上传之后可以通过如下命令查看：
+
 ```
 [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/ test.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname/test.txt
 ```
+
 其中 $bucketname 替换成您的储存桶的名字加路径。
+
 - 通过 Hadoop 命令上传，指令如下：
+
 ```
 [hadoop@10 hadoop]$ hadoop fs -put test.txt cosn://$bucketname /
 [hadoop@10 hadoop]$ hadoop fs -ls cosn:// $bucketname / test.txt
