@@ -1,8 +1,8 @@
 ## Billing overview
 **Intra-region** peering connections are **free of charge**, and you will be charged for **cross-region** peering connections in the following pay-as-you-go modes:
 - Billing by daily peak bandwidth: settlement is performed based on the peak inbound or outbound bandwidth on a day.
-- Billing by monthly 95th percentile: settlement is performed based on the top 5 peak inbound and outbound bandwidth values in a month. (This billing mode is not yet open to all users. To use this mode, please [submit a ticket](https://cloud.tencent.com/apply/p/clg22aj1t6n).)
->! The cost of a cross-region or cross-account peering connection is paid by the initiator of the peering connection (not the actual communication requester).
+- Billing by monthly 95th percentile: settlement is performed based on the top 5 peak inbound and outbound bandwidth values in a month. (This billing mode is not yet open to all users. To use this mode, please submit a ticket.)
+> The cost of a cross-region or cross-account peering connection is paid by the initiator of the peering connection (not the actual communication requester).
 
 ## Billing modes
 
@@ -54,7 +54,7 @@ Assume that the initiator of a peering connection is in Shanghai, the acceptor i
  <span id=yjf> </span>
 
 ### Billing by monthly 95th percentile
-Settlement is performed based on the top 5 peak inbound and outbound bandwidth values of the current month. (This billing mode is not yet open to all users. To use this mode, please [submit a ticket](https://cloud.tencent.com/apply/p/clg22aj1t6n).)
+Settlement is performed based on the top 5 peak inbound and outbound bandwidth values of the current month. (This billing mode is not yet open to all users. To use this mode, please submit a ticket.)
 
 - **Calculation formula**: Monthly cost = Monthly 95th percentile of peak bandwidth for cross-region peering connections \* Ratio of valid days \* Tiered unit price.
    - Monthly 95th percentile of peak bandwidth: acquired every 5 minutes. The average bandwidth for a cross-region peering connection within 5 minutes is taken as a sample point. All sample points of the current month are sorted in descending order, the top 5% of the sample points are removed, and the highest value of the remaining sample points is used as the monthly 95th percentile of peak bandwidth.
@@ -110,7 +110,7 @@ Ratio of valid days = Valid days of the current month/Days of the current calend
  </tr>
  </table>
 
->! For prices of connections between regions outside Mainland China, consult your business manager.
+> For prices of connections between regions outside Mainland China, consult your business manager.
 
 - **Example of billing by monthly 95th percentile**
 A customer used a cross-region peering connection in June and consumed bandwidth that exceeded 10 Kbps for 14 valid days. In this case, 
