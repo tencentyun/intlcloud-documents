@@ -1,5 +1,5 @@
 ### How can I view relevant routing policies?
-You can log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and view the relevant routing policies of a peering connection. For details, see [Viewing relevant routing policies](https://cloud.tencent.com/document/product/553/18841).
+You can log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and view the relevant routing policies of a peering connection. For details, see [Viewing relevant routing policies](https://intl.cloud.tencent.com/document/product/553/18841).
 
 ### How can I view the monitoring data of network traffic over a cross-region peering connection?
 You can log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and view the monitoring data of network traffic over a cross-region peering connection. For details, see [Viewing monitoring data of network traffic over a cross-region peering connection](https://cloud.tencent.com/document/product/553/18842).
