@@ -1,7 +1,7 @@
 ### Is the connectivity of a peering connection transitive?
 A peering connection enables connectivity between two VPCs, but the connectivity cannot be transited.
 For example, as shown in the following figure, peering connections are created between VPC 1 and VPC 2, and between VPC 1 and VPC 3. However, due to the non-transitivity of peering connections, traffic cannot flow between VPC 2 and VPC 3.
-![](//mccdn.qcloud.com/static/img/9127397dcb1df231bfd8d32bcd628223/image.png)
+
 >**Note:**
 >Even if a peering connection is created, both ends of the connection cannot communicate with each other if routes for sending and returning packets are not configured at both ends.
 
@@ -9,7 +9,7 @@ For example, as shown in the following figure, peering connections are created b
 - Intra-region peering connections are used to connect applications located in different VPCs within the same region.
 - Cross-regional peering connections are used to implement connectivity between VPCs in different regions.
 
-For more information, see [Features](https://cloud.tencent.com/document/product/553/18829#.E5.90.8C.E5.9C.B0.E5.9F.9F.E5.92.8C.E8.B7.A8.E5.9C.B0.E5.9F.9F.E5.AF.B9.E7.AD.89.E8.BF.9E.E6.8E.A5).
+For more information, see [Features](https://intl.cloud.tencent.com/document/product/553/18829).
 
 ### Can I set bandwidth limits for peering connections?
 - For a cross-region peering connection: you can set a bandwidth limit when you create the connection using an API. Setting bandwidth limits in the console will be supported in the near future.
