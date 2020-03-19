@@ -12,7 +12,7 @@ The following services will be used in this practice:
 - [CDN](https://intl.cloud.tencent.com/product/cdn): Together with Tencent Cloud DNS, CDN can accelerate the delivery of static website contents, reduce access delay, and improve availability while binding the domain name to the contents.
 - Tencent Cloud DNS: It enables access to the static website through a custom domain name.
 
-> ?The sample domain name `www.example.com` is used in all steps in this document. In practice, replace it with your own domain name.
+> The sample domain name `www.example.com` is used in all steps in this document. In practice, replace it with your own domain name.
 
 ## Directions
 
@@ -37,7 +37,7 @@ After completing the domain name registration and ICP filing application, you ne
 
 #### 2.1. Create a bucket
 
-Please log in to the [COS Console](https://console.cloud.tencent.com/cos) with your Tencent Cloud account and create a bucket for your website. The bucket is used to store data, so you can store your website contents in it.
+Please log in to the [COS Console](https://console.cloud.tencent.com/cos5) with your Tencent Cloud account and create a bucket for your website. The bucket is used to store data, so you can store your website contents in it.
 
 If you are using COS for the first time, you can directly create a bucket by clicking **Create Bucket** on the overview page or using the **Bucket List** on the left sidebar in the console. For detailed directions, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
 
@@ -47,7 +47,7 @@ If you are using COS for the first time, you can directly create a bucket by cli
 #### 2.2. Configure the bucket and upload contents
 
 1). Enable the **Static Website** setting of the bucket in the following way:
-a. Log in to the [COS Console](https://console.cloud.tencent.com/cos), click **Bucket List** on the left sidebar, locate the created bucket, and click **Configuration Management** on its right.
+a. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left sidebar, locate the created bucket, and click **Configuration Management** on its right.
 b. Find the **Static Website** configuration item, click **Edit**, set the current status to "on", leave other settings as default for now, and click **Save**.
 2). Upload your website contents to the created bucket. For detailed directions, please see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 
@@ -69,7 +69,7 @@ For example, you can create a file with the following HTML code and upload it to
 </html>
 ```
 
-> !After the static website feature is enabled, if a user accesses the first-level directory without path to any file, COS will first match index.html in the bucket directory and then index.htm by default. If this file does not exist, a 404 error will be returned.
+> After the static website feature is enabled, if a user accesses the first-level directory without path to any file, COS will first match index.html in the bucket directory and then index.htm by default. If this file does not exist, a 404 error will be returned.
 
 <span id="Step 3"></span>
 
@@ -79,7 +79,7 @@ In order to speed up access, you are recommended to set the domain name as a cus
 
 #### 3.1. Add a domain name
 
-1). Log in to the [COS Console](https://console.cloud.tencent.com/cos), click **Bucket List** on the left sidebar, and click the bucket storing the website contents.
+1). Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left sidebar, and click the bucket storing the website contents.
 2). In the second-level menu bar on the left, click **Domain Name Management** to enter the domain name management page. Click **Add Domain Name** in the **Custom Domain Name** section to enter the configurable page. Configure the following items and click **Save**.
 - **Domain Name**: Enter the custom domain name you have purchased (e.g. `www.example.com`).
 - **Origin Server Type**: Select **Static Website**.
@@ -101,4 +101,4 @@ After completing the above steps, verify the result by entering the domain name 
 - `http://www.example.com`: The index page (index.html) in the bucket named "example" will be returned.
 - `http://www.example.com/test.html` (a non-existing file): A 404 error will be returned. If you want to customize the **error document**, you can add it in [step 2.2](#step2.2) when configuring the static website, so that when an access attempt is made to a non-existing file, this error document will be displayed.
 
-> ?In some cases, you may have to clear your browser's cache to see the expected result.
+> In some cases, you may have to clear your browser's cache to see the expected result.
