@@ -44,7 +44,7 @@ TRTC provides three different audio/video streams, including:
 - Small image: it is similar to the primary image, but with lower resolution and bitrate.
 - Secondary stream image: it is generally used for screen sharing and remote video playback (for example, a teacher plays back a video to students).
 
->?
+>
 >- If the upstream network and performance of the anchor is good, the primary (big) and small images can be sent at the same time.
 >- The SDK does not support enabling only the small image, which must be enabled together with the primary image.
 
@@ -171,7 +171,7 @@ The TRTC SDK needs to adjust the internal codecs and network module based on the
 - ModeClient: client-based control, which is for internal debugging of SDK and shall not be used by users.
 
 
->?You are recommended to use on-cloud control, so that when the QoS algorithm is upgraded, you do not need to upgrade the SDK to get a better experience.
+>You are recommended to use on-cloud control, so that when the QoS algorithm is upgraded, you do not need to upgrade the SDK to get a better experience.
 
 
 
@@ -443,9 +443,9 @@ __Attribute list__
 
 | Attribute | Type | Description | Recommended Value |
 |-----|-----|-----|-----|
-| pixelFormat | int | Video pixel format. For more information on the definition, please see [Video Pixel Format](#TRTC_VIDEO_PIXEL_FORMAT). | Custom capture: TRTC_VIDEO_PIXEL_FORMAT_Texture_2D or TRTC_VIDEO_PIXEL_FORMAT_NV21; Custom rendering: TRTC_VIDEO_PIXEL_FORMAT_I420. |
-| bufferType | int | Video data container format. For more information on the definition, please see [Video Data Container Format](#TRTC_VIDEO_BUFFER_TYPE). | Custom capture: TRTC_VIDEO_BUFFER_TYPE_TEXTURE; Custom rendering: TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER or TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY. |
-| texture | [TRTCTexture](https://cloud.tencent.com/document/product/647/32266#trtctexture) | Video data when `bufferType` is `TRTC_VIDEO_PIXEL_FORMAT_Texture_2D`. | - |
+| pixelFormat | int | Video pixel format. For more information on the definition, please see [Video Pixel Format](#1.8.-video-pixel-format). | Custom capture: TRTC_VIDEO_PIXEL_FORMAT_Texture_2D or TRTC_VIDEO_PIXEL_FORMAT_NV21; Custom rendering: TRTC_VIDEO_PIXEL_FORMAT_I420. |
+| bufferType | int | Video data container format. For more information on the definition, please see [Video Data Container Format](#1.10.-video-data-container-format). | Custom capture: TRTC_VIDEO_BUFFER_TYPE_TEXTURE; Custom rendering: TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER or TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY. |
+| texture | [TRTCTexture](#trtctexture) | Video data when `bufferType` is `TRTC_VIDEO_PIXEL_FORMAT_Texture_2D`. | - |
 | data | byte[] | Video data when `bufferType` is `TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY`. | - |
 | buffer | ByteBuffer | Video data when `bufferType` is `TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER`, which is mainly used at the Native layer. | - |
 | width | int | Video width. | Please strictly enter the width of the video data passed in. |
@@ -505,7 +505,7 @@ Network speed test result.
 
 __Overview__
 
-The `startSpeedTest` API of [TRTCCloud](https://cloud.tencent.com/document/product/647/32264#trtccloud) can be used to test the network speed before a user enters a room (this API cannot be called during a call). The speed test result will be returned once every 2–3 seconds, and the test result of one IP address will be returned each time.
+The `startSpeedTest` API of [TRTCCloud](https://intl.cloud.tencent.com/document/product/647/35126#trtccloud) can be used to test the network speed before a user enters a room (this API cannot be called during a call). The speed test result will be returned once every 2–3 seconds, and the test result of one IP address will be returned each time.
 
 __Attribute list__
 
@@ -577,7 +577,7 @@ __Attribute list__
 | audioSampleRate | int | Audio sample rate after being transcoded. | 48000 |
 | audioBitrate | int | Audio bitrate in Kbps after being transcoded. | 64 |
 | audioChannels | int | Number of sound channels after being transcoded. | 2 |
-| mixUsers | ArrayList[TRTCMixUser](https://cloud.tencent.com/document/product/647/32266#trtcmixuser) | Position information of each channel of subimage. | - |
+| mixUsers | ArrayList[TRTCMixUser](#trtcmixuser) | Position information of each channel of subimage. | - |
 
 
 
@@ -594,8 +594,8 @@ __Attribute list__
 
 | Attribute | Type | Description |
 |-----|-----|-----|
-| appId | int | Tencent Cloud application ID. Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
-| bizId | int | Tencent Cloud LVB business ID. Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
+| appId | int | Tencent Cloud application ID. Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
+| bizId | int | Tencent Cloud LVB business ID. Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
 | url | String | Relayed push URL. |
 
 
@@ -658,8 +658,8 @@ __Attribute list__
 | downLoss | int | Server-to-client downstream packet loss rate in percent (%). The smaller the value, the better. For example, if the packet loss rate is 0, it means the network conditions are good. If the value is 30%, it indicates that 30% of data packets sent to the server by the SDK were lost during downstreaming. |
 | sendBytes | long | Total number of bytes sent. Note that this is the number of bytes but not bits. |
 | receiveBytes | long | Total number of bytes received. Note that this is the number of bytes but not bits. |
-| localArray | ArrayList[TRTCLocalStatistics](https://cloud.tencent.com/document/product/647/32266#trtclocalstatistics) | Local audio/video statistics, which are an array since they may contain statistics of multiple channels, such as big image, small image, and secondary channel image. |
-| remoteArray | ArrayList[TRTCRemoteStatistics](https://cloud.tencent.com/document/product/647/32266#trtcremotestatistics) | Remote audio/video statistics, which are an array since they may contain statistics of multiple channels, such as big image, small image, and secondary channel image. |
+| localArray | ArrayList[TRTCLocalStatistics](#trtcremotestatistics) | Local audio/video statistics, which are an array since they may contain statistics of multiple channels, such as big image, small image, and secondary channel image. |
+| remoteArray | ArrayList[TRTCRemoteStatistics](#trtcremotestatistics) | Remote audio/video statistics, which are an array since they may contain statistics of multiple channels, such as big image, small image, and secondary channel image. |
 
 
 ## TRTCRemoteStatistics
