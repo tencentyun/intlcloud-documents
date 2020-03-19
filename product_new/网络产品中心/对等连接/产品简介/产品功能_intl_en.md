@@ -1,6 +1,7 @@
 ## Non-transitive connectivity of peering connections
 A peering connection enables connectivity between two VPCs, but the connectivity cannot be transited.
 For example, as shown in the following figure, peering connections are created between VPC 1 and VPC 2, and between VPC 1 and VPC 3. However, due to the non-transitivity of peering connections, traffic cannot flow between VPC 2 and VPC 3.
+![](https://main.qcloudimg.com/raw/4d0523663c58e3fd6f2f8a88daefea63.jpg)
 
 >**Note:**
 >Even if a peering connection is created, both ends of the connection cannot communicate with each other if routes for sending and returning packets are not configured at both ends.
