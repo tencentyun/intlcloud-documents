@@ -13,7 +13,7 @@
 				<td>创建集群前，结合业务场景提前规划节点网络和容器网络，避免后续业务扩容受限。</td>
 				<td>网络规划</td>
 				<td>集群所在子网或容器网段较小，将可能导致集群实际支持的可用节点数少于业务所需容量。</td>
-				<td><li>网络规划/li><li><a href="https://intl.cloud.tencent.com/document/product/457/9083">容器及节点网络设置</a></li></td>
+				<td><li>网络规划<li><a href="https://intl.cloud.tencent.com/document/product/457/9083">容器及节点网络设置</a></li></td>
     </tr>
     <tr>
         <td>创建集群前，提前梳理专线接入、对等连接、容器网段和子网网段等相关网段的规划，避免之后出现网段冲突，影响业务。</td>
