@@ -9,7 +9,7 @@
 - 同地域对等连接主要用于打通同地域处于不同私有网络中的应用。
 - 跨地域对等连接主要用于实现不同地域的私有网络数据互通。
 
-详情请参见 [产品功能](https://cloud.tencent.com/document/product/553/18829#.E5.90.8C.E5.9C.B0.E5.9F.9F.E5.92.8C.E8.B7.A8.E5.9C.B0.E5.9F.9F.E5.AF.B9.E7.AD.89.E8.BF.9E.E6.8E.A5)。
+详情请参见 [产品功能](https://intl.cloud.tencent.com/document/product/553/18829#.E5.90.8C.E5.9C.B0.E5.9F.9F.E5.92.8C.E8.B7.A8.E5.9C.B0.E5.9F.9F.E5.AF.B9.E7.AD.89.E8.BF.9E.E6.8E.A5)。
 
 ### 对等连接可以设置带宽限制吗？
 - 跨地域对等连接：使用 API 新建时可以设置带宽限制，控制台设置带宽限制功能将在近期推出。
