@@ -4,6 +4,7 @@ Both cross-region and cross-account communication of VPCs are advanced features 
 - IP range 2: subnet B `10.0.1.0/24` of VPC2 in **Beijing**.
 
 Perform the two steps below to implement communication between IP ranges 1 and 2 over a peering connection under the same account:
+![](https://main.qcloudimg.com/raw/b19013471a562535c68a789abf0b9148.jpg)
 
 
 ## Step 1: create a peering connection
