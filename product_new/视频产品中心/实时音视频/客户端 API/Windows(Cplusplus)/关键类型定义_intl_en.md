@@ -17,10 +17,10 @@ __Attribute list__
 |-----|-----|-----|-----|
 | sdkAppId | uint32_t | Application ID, which is required. Tencent Cloud generates bills based on `sdkAppId`. | The ID can be obtained on the account information page in the [TRTC Console](https://console.cloud.tencent.com/rav/) after the corresponding application is created. |
 | userId | const char * | User ID in UTF-8 format, which is required. It is the `userId` of the local user and acts as the username. | If the ID of a user in your account system is "abc", `userId` can be set to "`abc`". |
-| userSig | const char * | User signature, which is required. It is the authentication signature corresponding to the current `userId` and acts as the login password. | For more information on the calculation method, please see [How to Calculate `UserSig`](https://intl.cloud.tencent.com/document/product/647/35166). |
+| userSig | const char * | User signature, which is required. It is the authentication signature corresponding to the current `userId` and acts as the login password. | For more information on the calculation method, please see [How to Calculate `UserSig`](https://intl.cloud.tencent.com/document/product/647/35123/35166). |
 | roomId | uint32_t | Room number, which is required. Users in the same room can see and make video calls to one another. | The parameter value can be customized but must be unique. If the user ID (`userId`) is numeric, the room creator's user ID can be directly used as the `roomId`. |
-| role | [TRTCRoleType](https://intl.cloud.tencent.com/document/product/647/32271#trtcroletype) | Role, which applies only to the LVB scenario (`TRTCAppSceneLIVE`) and does not take effect in the video call scenario. | Default value: anchor (`TRTCRoleAnchor`). |
-| privateMapKey | const char * | Room signature, which is optional. If you want only users with the specified `userIds` to enter a room, you need to use `privateMapKey` to restrict the permission. | You are recommended to use this parameter only if you have high security requirements. For more information, please see [Restricting Room Entry Permissions](https://intl.cloud.tencent.com/document/product/647/32240). |
+| role | [TRTCRoleType](https://intl.cloud.tencent.com/document/product/647/35134#trtcroletype) | Role, which applies only to the LVB scenario (`TRTCAppSceneLIVE`) and does not take effect in the video call scenario. | Default value: anchor (`TRTCRoleAnchor`). |
+| privateMapKey | const char * | Room signature, which is optional. If you want only users with the specified `userIds` to enter a room, you need to use `privateMapKey` to restrict the permission. | You are recommended to use this parameter only if you have high security requirements. For more information, please see [Restricting Room Entry Permissions](https://intl.cloud.tencent.com/document/product/647/35123/32240). |
 | businessInfo | const char * | Business data, which is optional. This field applies only to some advanced features. | This parameter is not recommended. |
 
 
@@ -43,8 +43,8 @@ __Attribute list__
 
 | Attribute | Type | Description | Recommended Value | Remarks |
 |-----|-----|-----|-----|-----|
-| videoResolution | [TRTCVideoResolution](https://intl.cloud.tencent.com/document/product/647/32271#trtcvideoresolution) | Video resolution. | - For video calls, it is recommended to select 360 * 640 or lower for resolution and `Portrait` for `resMode`. - For MLVB, it is recommended to select 540 * 960 for resolution and `Portrait` for `resMode`.<br><br>- For Window and macOS, it is recommended to select 640 * 360 or higher for resolution and `Landscape` for `resMode`. | Resolution set in `TRTCVideoResolution` is only in landscape mode by default, e.g., 640 * 360.<br> If resolution in portrait mode is required, please select `Portrait` for `resMode`; for example, 640 * 360 will become 360 * 640 in portrait mode. |
-| resMode | [TRTCVideoResolutionMode](https://intl.cloud.tencent.com/document/product/647/32271#trtcvideoresolutionmode) | Resolution mode (landscape/portrait). | For MLVB, it is recommended to select `Portrait`. For Window and macOS, it is recommended to select `Landscape`. | If 640 * 360 resolution is selected for `videoResolution` and `Portrait` is selected for `resMode`, then the final output resolution after encoding will be 360 * 640. |
+| videoResolution | [TRTCVideoResolution](https://intl.cloud.tencent.com/document/product/647/35134#trtcvideoresolution) | Video resolution. | - For video calls, it is recommended to select 360 * 640 or lower for resolution and `Portrait` for `resMode`. - For MLVB, it is recommended to select 540 * 960 for resolution and `Portrait` for `resMode`.<br><br>- For Window and macOS, it is recommended to select 640 * 360 or higher for resolution and `Landscape` for `resMode`. | Resolution set in `TRTCVideoResolution` is only in landscape mode by default, e.g., 640 * 360.<br> If resolution in portrait mode is required, please select `Portrait` for `resMode`; for example, 640 * 360 will become 360 * 640 in portrait mode. |
+| resMode | [TRTCVideoResolutionMode](https://intl.cloud.tencent.com/document/product/647/35134#trtcvideoresolutionmode) | Resolution mode (landscape/portrait). | For MLVB, it is recommended to select `Portrait`. For Window and macOS, it is recommended to select `Landscape`. | If 640 * 360 resolution is selected for `videoResolution` and `Portrait` is selected for `resMode`, then the final output resolution after encoding will be 360 * 640. |
 | videoFps | uint32_t | Video capture frame rate. | 15 or 20 fps. If the frame rate is lower than 5 fps, there will be obvious lagging; if lower than 10 fps but higher than 5 fps, there will be slight lagging; if higher than 20 fps, too many resources will be wasted (the frame rate of movies is generally 24 fps). | The front cameras on many Android phones do not support a capture frame rate higher than 15 fps. For some Android phones that focus too much on beautification features, the capture frame rate of the front cameras may be lower than 10 fps. |
 | videoBitrate | uint32_t | Video upstreaming bitrate. | For more information on the recommended settings, please see the description in the definition of `TRTCVideoResolution` in the first half of this document. | If the bitrate is too low, the video will have a lot of blurs. |
 
@@ -68,8 +68,8 @@ __Attribute list__
 
 | Attribute | Type | Description | Recommended Value | Remarks |
 |-----|-----|-----|-----|-----|
-| preference | [TRTCVideoQosPreference](https://intl.cloud.tencent.com/document/product/647/32271#trtcvideoqospreference) | Whether to select "ensure definition" or "ensure smoothness" on a weak network. | - | - Smoothness on weak network: on a weak network, the video image will have a lot of blurs but can be smooth with no lagging. <br><br>- Definition on weak network: the image will be as clear as possible on a weak network but tend to have more lagging. |
-| controlMode | [TRTCQosControlMode](https://intl.cloud.tencent.com/document/product/647/32271#trtcqoscontrolmode) | On-cloud control. | - Server mode (default): on-cloud control. If there are no special needs, please use this mode directly <br><br>- Client mode: client-based control, which is for internal debugging of the SDK and shall not be used by users. |
+| preference | [TRTCVideoQosPreference](https://intl.cloud.tencent.com/document/product/647/35134#trtcvideoqospreference) | Whether to select "ensure definition" or "ensure smoothness" on a weak network. | - | - Smoothness on weak network: on a weak network, the video image will have a lot of blurs but can be smooth with no lagging. <br><br>- Definition on weak network: the image will be as clear as possible on a weak network but tend to have more lagging. |
+| controlMode | [TRTCQosControlMode](https://intl.cloud.tencent.com/document/product/647/35134#trtcqoscontrolmode) | On-cloud control. | - Server mode (default): on-cloud control. If there are no special needs, please use this mode directly <br><br>- Client mode: client-based control, which is for internal debugging of the SDK and shall not be used by users. |
 
 
 
@@ -90,7 +90,7 @@ __Attribute list__
 | Attribute | Type | Description |
 |-----|-----|-----|
 | userId | const char * | User ID. |
-| quality | [TRTCQuality](https://intl.cloud.tencent.com/document/product/647/32271#trtcquality) | Video quality. |
+| quality | [TRTCQuality](https://intl.cloud.tencent.com/document/product/647/35134#trtcquality) | Video quality. |
 
 
 
@@ -133,7 +133,7 @@ __Attribute list__
 | Attribute | Type | Description |
 |-----|-----|-----|
 | ip | const char * | Server IP address. |
-| quality | [TRTCQuality](https://intl.cloud.tencent.com/document/product/647/32271#trtcquality) | Network quality, which is tested and calculated based on the internal evaluation algorithm. The smaller the loss and round-trip time (RTT), the higher the network quality score. |
+| quality | [TRTCQuality](https://intl.cloud.tencent.com/document/product/647/35134#trtcquality) | Network quality, which is tested and calculated based on the internal evaluation algorithm. The smaller the loss and round-trip time (RTT), the higher the network quality score. |
 | upLostRate | float | Upstreaming packet loss rate between 0 and 1.0. For example, 0.3 indicates that 3 data packets may be lost in every 10 packets sent to the server. |
 | downLostRate | float | Downstreaming packet loss rate between 0 and 1.0. For example, 0.2 indicates that 2 data packets may be lost in every 10 packets received from the server. |
 | rtt | int | Delay in milliseconds, which is the round-trip time between the current device and CVM instance. The smaller the value, the better. The normal value range is 10–100 ms. |
@@ -149,7 +149,7 @@ Position information of each channel of subimage in On-Cloud MixTranscoding.
 
 __Overview__
 
-[TRTCMixUser](https://intl.cloud.tencent.com/document/product/647/32271#trtcmixuser) is used to specify the detailed position of the video image of each channel (i.e., each `userId`).
+[TRTCMixUser](https://intl.cloud.tencent.com/document/product/647/35134#trtcmixuser) is used to specify the detailed position of the video image of each channel (i.e., each `userId`).
 
 
 
@@ -163,7 +163,7 @@ __Attribute list__
 | rect | RECT | Layer position coordinates and dimensions. The top-left corner is the origin (0,0) (absolute pixel value). |
 | zOrder | int | Layer number (1–15), which must be unique. |
 | pureAudio | bool | Whether it is pure audio. |
-| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/32271#trtcvideostreamtype) | Whether the primary image (`TRTCVideoStreamTypeBig`) or screen sharing image (`TRTCVideoStreamTypeSub`) engages in mixing. |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35134#trtcvideostreamtype) | Whether the primary image (`TRTCVideoStreamTypeBig`) or screen sharing image (`TRTCVideoStreamTypeSub`) engages in mixing. |
 
 
 
@@ -185,7 +185,7 @@ __Attribute list__
 
 | Attribute | Type | Description | Recommended Value |
 |-----|-----|-----|-----|
-| mode | [TRTCTranscodingConfigMode](https://intl.cloud.tencent.com/document/product/647/32271#trtctranscodingconfigmode) | Transcoding `config` mode. | - |
+| mode | [TRTCTranscodingConfigMode](https://intl.cloud.tencent.com/document/product/647/35134#trtctranscodingconfigmode) | Transcoding `config` mode. | - |
 | appId | uint32_t | Tencent Cloud LVB application ID. | Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
 | bizId | uint32_t | Tencent Cloud LVB business ID. | Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
 | videoWidth | uint32_t | Width of video resolution in px after being transcoded. | - |
@@ -196,7 +196,7 @@ __Attribute list__
 | audioSampleRate | uint32_t | Audio sample rate after being transcoded. | 48000 |
 | audioBitrate | uint32_t | Audio bitrate in Kbps after being transcoded. | 64 |
 | audioChannels | uint32_t | Number of sound channels after being transcoded. | 2 |
-| mixUsersArray | [TRTCMixUser](https://intl.cloud.tencent.com/document/product/647/32271#trtcmixuser) * | Position information of each channel of subimage. | - |
+| mixUsersArray | [TRTCMixUser](https://intl.cloud.tencent.com/document/product/647/35134#trtcmixuser) * | Position information of each channel of subimage. | - |
 | mixUsersArraySize | uint32_t | Size of the `mixUsersArray` array. | - |
 
 
@@ -285,7 +285,7 @@ __Attribute list__
 | videoBitrate | uint32_t | Video sending bitrate in Kbps. |
 | audioSampleRate | uint32_t | Audio sample rate in Hz. |
 | audioBitrate | uint32_t | Audio sending bitrate in Kbps. |
-| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/32271#trtcvideostreamtype) | Stream type (big image &#124; small image &#124; secondary channel image). |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35134#trtcvideostreamtype) | Stream type (big image &#124; small image &#124; secondary channel image). |
 
 
 
@@ -310,7 +310,7 @@ __Attribute list__
 | videoBitrate | uint32_t | Video bitrate in Kbps. |
 | audioSampleRate | uint32_t | Audio sample rate in Hz. |
 | audioBitrate | uint32_t | Audio bitrate in Kbps. |
-| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/32271#trtcvideostreamtype) | Stream type (big image &#124; small image &#124; secondary channel image). |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35134#trtcvideostreamtype) | Stream type (big image &#124; small image &#124; secondary channel image). |
 
 
 
@@ -334,9 +334,9 @@ __Attribute list__
 | rtt | uint32_t | Delay in milliseconds, which is the round-trip time between the SDK and CVM instance. The smaller the value, the better. Generally `rtt` lower than 50 ms is satisfactory, while `rtt` higher than 100 ms will result in long call latency. As data upstreaming and downstreaming share the same network connection, `rtt` is the same for the local user and remote user. |
 | receivedBytes | uint32_t | Total number of received bytes (including signals and audios/videos). |
 | sentBytes | uint32_t | Total number of sent bytes (including signals and audios/videos). |
-| localStatisticsArray | [TRTCLocalStatistics](https://intl.cloud.tencent.com/document/product/647/32271#trtclocalstatistics) * | Local audio/video statistics, which are an array since they may contain statistics of multiple channels, such as primary image, small image, and secondary channel image. |
+| localStatisticsArray | [TRTCLocalStatistics](https://intl.cloud.tencent.com/document/product/647/35134#trtclocalstatistics) * | Local audio/video statistics, which are an array since they may contain statistics of multiple channels, such as primary image, small image, and secondary channel image. |
 | localStatisticsArraySize | uint32_t | Size of the `localStatisticsArray` array. |
-| remoteStatisticsArray | [TRTCRemoteStatistics](https://intl.cloud.tencent.com/document/product/647/32271#trtcremotestatistics) * | Remote audio/video statistics, which are an array since they may contain statistics of multiple channels, such as primary image, small image, and secondary channel image. |
+| remoteStatisticsArray | [TRTCRemoteStatistics](https://intl.cloud.tencent.com/document/product/647/35134#trtcremotestatistics) * | Remote audio/video statistics, which are an array since they may contain statistics of multiple channels, such as primary image, small image, and secondary channel image. |
 | remoteStatisticsArraySize | uint32_t | Size of the `remoteStatisticsArray` array. |
 
 
@@ -615,7 +615,7 @@ MixTranscoding parameter configuration mode.
 
 __Overview__
 
-Currently, only the manual configuration mode is supported, i.e., all parameters of [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/32271#trtctranscodingconfig) need to be set manually.
+Currently, only the manual configuration mode is supported, i.e., all parameters of [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35134#trtctranscodingconfig) need to be set manually.
 
 | Enumerated Value | Description |
 |-----|-----|
