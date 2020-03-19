@@ -14,8 +14,37 @@ Settlement is performed based on the daily peak inbound/outbound bandwidth.
    
 - Tiered prices for billing by daily peak bandwidth
 
-   ![image-20191111154914037](/Users/chuchuliu/Library/Application Support/typora-user-images/image-20191111154914037.png)
->!
+<table align=“center”>
+ <tr>
+ <th><center>计费项</center> </th>
+ <th><center>计费区间（Mbps）</center> </th>
+ <th><center>中国大陆（不含港澳台地区）地域间互通价格（USD/Mbps/天）</center> </th>
+ </tr>
+ <tr>
+ <td rowspan=5><center>跨地域对等连接</center> </td>
+ <td><center>(0,20] </td>
+ <td><center>20 </center></td>
+ </tr>
+ <tr>
+ <td><center>(20,100]</center> </td>
+ <td><center>12</center> </td>
+ </tr>
+ <tr>
+ <td><center>(100,500]</center> </td>
+ <td><center>9 </center></td>
+ </tr>
+ <tr>
+ <td><center>(500,2000]</center> </td>
+ <td><center>7</center> </td>
+ </tr>
+ <tr>
+ <td><center>> 2000 </center></td>
+ <td><center>5</center> </td>
+ </tr>
+ </table>
+
+
+>
 - For prices of connections between regions outside Mainland China, consult your business manager.
  
 
@@ -36,7 +65,50 @@ Ratio of valid days = Valid days of the current month/Days of the current calend
 
 - Tiered prices for billing by monthly 95th percentile
 
-![image-20191111155604614](/Users/chuchuliu/Library/Application Support/typora-user-images/image-20191111155604614.png)
+<table align=“center”>
+ <tr>
+ <th><center>计费项 </center></th>
+ <th><center>计费区间（Mbps） </center></th>
+ <th><center>中国大陆（不含港澳台地区）地域间互通（USD/Mbps/月） </center></th>
+ </tr>
+ <tr>
+ <td rowspan=9><center>跨地域带宽 </center></td>
+ <td><center>(0,10] </center></td>
+ <td><center>550</center> </td>
+ </tr>
+ <tr>
+ <td><center>(10,20]</center> </td>
+ <td><center>410</center> </td>
+ </tr>
+ <tr>
+ <td><center>(20,50]</center> </td>
+ <td><center>290</center> </td>
+ </tr>
+ <tr>
+ <td><center>(50,100]</center> </td>
+ <td><center>220</center> </td>
+ </tr>
+ <tr>
+ <td><center>(100,200] </center></td>
+ <td><center>165</center> </td>
+ </tr>
+ <tr>
+ <td><center>(200,500] </center></td>
+ <td><center>115</center> </td>
+ </tr>
+ <tr>
+ <td><center>(500,1000]</center> </td>
+ <td><center>88</center> </td>
+ </tr>
+ <tr>
+ <td><center>(1000,2000] </center></td>
+ <td><center>69</center> </td>
+ </tr>
+ <tr>
+ <td><center>> 2000</center> </td>
+ <td><center>65</center> </td>
+ </tr>
+ </table>
 
 >! For prices of connections between regions outside Mainland China, consult your business manager.
 
