@@ -72,7 +72,7 @@ Ratio of valid days = Valid days of the current month/Days of the current calend
  <th><center>Cross-region communication price for mainland China (excluding Hong Kong (China)) (USD/Mbps/day) </center></th>
  </tr>
  <tr>
- <td rowspan=9><center>Cross-region peering connection </center></td>
+ <td rowspan=9><center>Cross-region bandwidth </center></td>
  <td><center>(0,10] </center></td>
  <td><center>85</center> </td>
  </tr>
