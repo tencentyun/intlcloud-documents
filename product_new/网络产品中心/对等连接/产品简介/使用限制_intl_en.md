@@ -17,4 +17,4 @@ Note the following when you use a peering connection:
 | Max number of peering connections supported by each VPC | 10 | - |
 
 
-For more information, see [other service limitations on a VPC](https://cloud.tencent.com/document/product/215/537).
+For more information, see [other service limitations on a VPC](https://intl.cloud.tencent.com/document/product/215/537).
