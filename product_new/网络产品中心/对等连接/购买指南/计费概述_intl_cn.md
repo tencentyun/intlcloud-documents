@@ -18,7 +18,7 @@
  <tr>
  <th><center>计费项</center> </th>
  <th><center>计费区间（Mbps）</center> </th>
- <th><center>中国大陆（不含港澳台地区）地域间互通价格（元/Mbps/天）</center> </th>
+ <th><center>中国大陆（不含港澳台地区）地域间互通价格（USD/Mbps/天）</center> </th>
  </tr>
  <tr>
  <td rowspan=5><center>跨地域对等连接</center> </td>
@@ -64,9 +64,52 @@
 
 - 月95计费阶梯价格
 
-![image-20191111155604614](/Users/chuchuliu/Library/Application Support/typora-user-images/image-20191111155604614.png)
+<table align=“center”>
+ <tr>
+ <th><center>计费项 </center></th>
+ <th><center>计费区间（Mbps） </center></th>
+ <th><center>中国大陆（不含港澳台地区）地域间互通（元/Mbps/月） </center></th>
+ </tr>
+ <tr>
+ <td rowspan=9><center>跨地域带宽 </center></td>
+ <td><center>(0,10] </center></td>
+ <td><center>550</center> </td>
+ </tr>
+ <tr>
+ <td><center>(10,20]</center> </td>
+ <td><center>410</center> </td>
+ </tr>
+ <tr>
+ <td><center>(20,50]</center> </td>
+ <td><center>290</center> </td>
+ </tr>
+ <tr>
+ <td><center>(50,100]</center> </td>
+ <td><center>220</center> </td>
+ </tr>
+ <tr>
+ <td><center>(100,200] </center></td>
+ <td><center>165</center> </td>
+ </tr>
+ <tr>
+ <td><center>(200,500] </center></td>
+ <td><center>115</center> </td>
+ </tr>
+ <tr>
+ <td><center>(500,1000]</center> </td>
+ <td><center>88</center> </td>
+ </tr>
+ <tr>
+ <td><center>(1000,2000] </center></td>
+ <td><center>69</center> </td>
+ </tr>
+ <tr>
+ <td><center>> 2000</center> </td>
+ <td><center>65</center> </td>
+ </tr>
+ </table>
 
->!非中国大陆与其它地域互通价格，请咨询您的商务经理。
+>非中国大陆与其它地域互通价格，请咨询您的商务经理。
 
 - **月95计费示例**
 客户6月份使用对等连接有14天产生的跨地域互通消耗大于10Kbps，则：
