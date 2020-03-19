@@ -1,8 +1,8 @@
 ## Billing overview
 **Intra-region** peering connections are **free of charge**, and you will be charged for **cross-region** peering connections in the following pay-as-you-go modes:
 - Billing by daily peak bandwidth: settlement is performed based on the peak inbound or outbound bandwidth on a day.
-- Billing by monthly 95th percentile: settlement is performed based on the top 5 peak inbound and outbound bandwidth values in a month. (This billing mode is not yet open to all users. To use this mode, please [submit a ticket](https://cloud.tencent.com/apply/p/clg22aj1t6n).)
->! The cost of a cross-region or cross-account peering connection is paid by the initiator of the peering connection (not the actual communication requester).
+- Billing by monthly 95th percentile: settlement is performed based on the top 5 peak inbound and outbound bandwidth values in a month. (This billing mode is not yet open to all users. To use this mode, please submit a ticket.)
+> The cost of a cross-region or cross-account peering connection is paid by the initiator of the peering connection (not the actual communication requester).
 
 ## Billing modes
 
@@ -14,8 +14,37 @@ Settlement is performed based on the daily peak inbound/outbound bandwidth.
    
 - Tiered prices for billing by daily peak bandwidth
 
-   ![image-20191111154914037](/Users/chuchuliu/Library/Application Support/typora-user-images/image-20191111154914037.png)
->!
+<table align=“center”>
+ <tr>
+ <th><center>计费项</center> </th>
+ <th><center>计费区间（Mbps）</center> </th>
+ <th><center>中国大陆（不含港澳台地区）地域间互通价格（USD/Mbps/天）</center> </th>
+ </tr>
+ <tr>
+ <td rowspan=5><center>跨地域对等连接</center> </td>
+ <td><center>(0,20] </td>
+ <td><center>20 </center></td>
+ </tr>
+ <tr>
+ <td><center>(20,100]</center> </td>
+ <td><center>12</center> </td>
+ </tr>
+ <tr>
+ <td><center>(100,500]</center> </td>
+ <td><center>9 </center></td>
+ </tr>
+ <tr>
+ <td><center>(500,2000]</center> </td>
+ <td><center>7</center> </td>
+ </tr>
+ <tr>
+ <td><center>> 2000 </center></td>
+ <td><center>5</center> </td>
+ </tr>
+ </table>
+
+
+>
 - For prices of connections between regions outside Mainland China, consult your business manager.
  
 
@@ -25,7 +54,7 @@ Assume that the initiator of a peering connection is in Shanghai, the acceptor i
  <span id=yjf> </span>
 
 ### Billing by monthly 95th percentile
-Settlement is performed based on the top 5 peak inbound and outbound bandwidth values of the current month. (This billing mode is not yet open to all users. To use this mode, please [submit a ticket](https://cloud.tencent.com/apply/p/clg22aj1t6n).)
+Settlement is performed based on the top 5 peak inbound and outbound bandwidth values of the current month. (This billing mode is not yet open to all users. To use this mode, please submit a ticket.)
 
 - **Calculation formula**: Monthly cost = Monthly 95th percentile of peak bandwidth for cross-region peering connections \* Ratio of valid days \* Tiered unit price.
    - Monthly 95th percentile of peak bandwidth: acquired every 5 minutes. The average bandwidth for a cross-region peering connection within 5 minutes is taken as a sample point. All sample points of the current month are sorted in descending order, the top 5% of the sample points are removed, and the highest value of the remaining sample points is used as the monthly 95th percentile of peak bandwidth.
@@ -36,9 +65,52 @@ Ratio of valid days = Valid days of the current month/Days of the current calend
 
 - Tiered prices for billing by monthly 95th percentile
 
-![image-20191111155604614](/Users/chuchuliu/Library/Application Support/typora-user-images/image-20191111155604614.png)
+<table align=“center”>
+ <tr>
+ <th><center>计费项 </center></th>
+ <th><center>计费区间（Mbps） </center></th>
+ <th><center>中国大陆（不含港澳台地区）地域间互通（USD/Mbps/月） </center></th>
+ </tr>
+ <tr>
+ <td rowspan=9><center>跨地域带宽 </center></td>
+ <td><center>(0,10] </center></td>
+ <td><center>550</center> </td>
+ </tr>
+ <tr>
+ <td><center>(10,20]</center> </td>
+ <td><center>410</center> </td>
+ </tr>
+ <tr>
+ <td><center>(20,50]</center> </td>
+ <td><center>290</center> </td>
+ </tr>
+ <tr>
+ <td><center>(50,100]</center> </td>
+ <td><center>220</center> </td>
+ </tr>
+ <tr>
+ <td><center>(100,200] </center></td>
+ <td><center>165</center> </td>
+ </tr>
+ <tr>
+ <td><center>(200,500] </center></td>
+ <td><center>115</center> </td>
+ </tr>
+ <tr>
+ <td><center>(500,1000]</center> </td>
+ <td><center>88</center> </td>
+ </tr>
+ <tr>
+ <td><center>(1000,2000] </center></td>
+ <td><center>69</center> </td>
+ </tr>
+ <tr>
+ <td><center>> 2000</center> </td>
+ <td><center>65</center> </td>
+ </tr>
+ </table>
 
->! For prices of connections between regions outside Mainland China, consult your business manager.
+> For prices of connections between regions outside Mainland China, consult your business manager.
 
 - **Example of billing by monthly 95th percentile**
 A customer used a cross-region peering connection in June and consumed bandwidth that exceeded 10 Kbps for 14 valid days. In this case, 

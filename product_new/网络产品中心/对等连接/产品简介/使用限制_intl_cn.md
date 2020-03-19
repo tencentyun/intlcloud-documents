@@ -17,4 +17,4 @@
 | 每个 VPC 支持的对等连接数 | 10    |                   -               |
 
 
-更多 VPC 服务限制，请参见 [VPC 其它服务限制](https://cloud.tencent.com/document/product/215/537)。
+更多 VPC 服务限制，请参见 [VPC 其它服务限制](https://intl.cloud.tencent.com/document/product/215/537)。

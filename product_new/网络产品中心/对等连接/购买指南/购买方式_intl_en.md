@@ -4,7 +4,7 @@
 4. Enter a name and select the peer region, account type, and VPC.
  - If the peer account type is **My Account**, select the account from the drop-down list.
  - If the peer account type is **Other Accounts**, enter the account ID and VPC ID of the peer account.
- ![](https://main.qcloudimg.com/raw/a5e601765747a100a60e7845bf2553b8.png)
+
 5. Select the bandwidth cap.
  - For an intra-region peering connection, there is no bandwidth cap. Therefore, this **cannot be modified**.
  - For a cross-region peering connection, the bandwidth cap can be selected. If you need higher cross-region bandwidth, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).

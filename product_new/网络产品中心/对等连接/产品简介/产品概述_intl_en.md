@@ -1,6 +1,6 @@
 ## Introduction
 A peering connection is a high-bandwidth and high-quality cloud resources interconnection service that enables communication between resources on Tencent Cloud. Peering connections can be used across multiple regions, multiple accounts, and multiple types of heterogeneous networks, which can easily implement complex cloud scenarios, such as 2-region-3-DC and one server shared by game players. Peering connections enable interconnection between VPCs and between VPCs and BM networks, allowing you to deploy different businesses.
->!
+>
 >- Cross-region connectivity includes: cross-region connectivity between VPCs (cross-region peering connection) and cross-region Classiclink. To enable cross-region Classiclink, please [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=168&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%20VPC).
 >- SLA assurance is provided for peering connection services. If the services do not meet the SLA criteria, you can apply for compensation according to the [SLA for peering connections](https://cloud.tencent.com/document/product/215/17800). 
 >- When creating a cross-region peering connection, you must comply with the [cross-region interconnection service agreement](https://cloud.tencent.com/document/product/215/7682). If you violate the agreement, Tencent Cloud may restrict, suspend, or terminate your services under the agreement at any time as appropriate and retain the right to take legal action against you.
@@ -20,6 +20,6 @@ The peering connection services are classified into platinum, gold, and silver l
  - Gold: suitable for businesses that require transmission of key business data, such as transmission of enterprise business data and ERP.
  - Silver: suitable for businesses that are cost-sensitive and jitter-insensitive and have high requirements for security, such as remote data backup.
 
->!The application scenarios of platinum, gold, and silver services are as follows:
+>The application scenarios of platinum, gold, and silver services are as follows:
 >- Gold: applicable to all regions. 
 >- Platinum and silver: billed by monthly 95th percentile and applicable to some lines (Beijing, Shanghai, Guangzhou, Korea, and Hong Kong (China)). The services are currently in internal beta phase. If you need such services, please [submit a ticket](https://console.cloud.tencent.com/workorder).
