@@ -68,7 +68,7 @@
  <tr>
  <th><center>计费项 </center></th>
  <th><center>计费区间（Mbps） </center></th>
- <th><center>中国大陆（不含港澳台地区）地域间互通（元/Mbps/月） </center></th>
+ <th><center>中国大陆（不含港澳台地区）地域间互通（USD/Mbps/月） </center></th>
  </tr>
  <tr>
  <td rowspan=9><center>跨地域带宽 </center></td>
