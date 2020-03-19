@@ -1,9 +1,8 @@
 若您要为您的域名配置已有证书，请先了解以下内容，若您配置的是来源于腾讯云 SSL 证书管理中的证书，可跳过此步骤。
 ## 上传证书
 CA 机构提供的证书一般包括以下几种，其中 CDN 使用的是 **Nginx**：
-![](https://main.qcloudimg.com/raw/249538db51d90314f84b2c75a6bccc05.png)
-进入 Nginx 文件夹，使用文本编辑器打开 “.crt”（证书）文件和 “.key”（私钥）文件，即可看到 PEM 格式的证书内容及私钥内容：
-![](https://main.qcloudimg.com/raw/2a1b11ff93a7cb475d68e38c7701434f/Nginx_certificate.png)
+
+进入 Nginx 文件夹，使用文本编辑器打开 “.crt”（证书）文件和 “.key”（私钥）文件，即可看到 PEM 格式的证书内容及私钥内容。
 
 ### 证书
 证书扩展名一般为 “.pem”，“.crt” 或 “.cer”，在文本编辑器中打开证书文件，可以看到与下图格式相似的证书内容。
@@ -11,7 +10,7 @@ CA 机构提供的证书一般包括以下几种，其中 CDN 使用的是 **Ngi
 ![img](https://main.qcloudimg.com/raw/60ea02d1a2c9623526d7fa79403e658a.jpg)
 如果是通过中级 CA 机构颁发的证书，您拿到的证书文件包含多份证书，需要人为地将服务器证书与中间证书拼接在一起上传。拼接规则为：服务器证书放第一份，中间证书放第二份，中间不要有空行。一般情况下，机构在颁发证书的时候会有对应说明，请注意查阅规则说明。
 
-> !
+>
 > + 证书之间不能存在空行
 > + 每一份证书均为 PEM 格式
 
@@ -65,10 +64,9 @@ openssl pkcs12 -in certname.pfx -nokeys -out cert.pem
 openssl pkcs12 -in certname.pfx -nocerts -out key.pem -nodes
 ```
 ### 证书链补齐
-在使用自有证书配置过程中，可能会出现**证书链无法补齐**的情况，如下图所示。
-![img](https://main.qcloudimg.com/raw/ed45f581114cc456a710b7d4997076a2.png)
+在使用自有证书配置过程中，可能会出现**证书链无法补齐**的情况。
 您可以通过将 CA 的证书（PEM 格式）内容贴入域名证书（PEM 格式）尾部，来补齐证书链。也可以提交工单联系我们。
-![img](https://main.qcloudimg.com/raw/c5adc7371454ec06a7f2f8150ec48ed8/cer11.png)
+
 
 ## 托管证书
 
