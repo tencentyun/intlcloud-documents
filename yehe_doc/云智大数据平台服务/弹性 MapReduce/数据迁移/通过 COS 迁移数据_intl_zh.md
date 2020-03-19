@@ -7,6 +7,7 @@
 2. 工具配置
 配置文件统一放在工具目录里的 conf 目录，将需要同步的 HDFS 集群的 core-site.xml 拷贝到 conf 中，其中包含了 NameNode 的配置信息，编辑配置文件 cos_info.conf，包括 appid、bucket、region 以及密钥信息。
 3. 命令参数说明
+
 ```
  -ak <ak>                                the cos secret id
  -appid,--appid <appid>                  the cos appid
@@ -20,7 +21,9 @@
 -sk <sk>                                the cos secret key
 -skip_if_len_match,--skip_if_len_match  skip upload if hadoop file length match cos
 ```
+
 4. 执行迁移 
+
 ```shell
 #所有操作都要在工具目录下。如果同时设置了配置文件和命令行参数，以命令行参数为准
 ./hdfs_to_cos_cmd -h
@@ -36,12 +39,15 @@
       -hdfs_path /data/data -region cn-south -hdfs_conf_file
 /home/hadoop/hadoop-2.8.1/etc/hadoop/core-site.xml
 ```
+
 5. 验证运行命令后，输出如下日志
+
 ```
 [Folder Operation Result : [ 53(sum)/ 53(ok) / 0(fail)]
 [File Operation Result: [22(sum)/ 22(ok) / 0(fail) / 0(skip)]
 [Used Time: 3 s]
 ```
+
  - sum 表示总共需要迁移的文件数。
  - ok 表示成功迁移的文件数。
  - fail 表示迁移失败的文件数。
