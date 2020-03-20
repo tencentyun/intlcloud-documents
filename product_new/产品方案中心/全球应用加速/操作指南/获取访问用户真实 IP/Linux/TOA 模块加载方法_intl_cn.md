@@ -23,9 +23,19 @@ lsmod | grep toa
 
 如果上述下载文件中没有您的操作系统版本对应的安装包，可以下载 Linux 通用版的源码包，编译后获取，该版本支持 Centos6.9 和 Centos7、Ubuntu14.04 等绝大多数的 Linux 发行版：
 1. 获取源码包
+
+- centos7.0及以上源码包
+
 ```
-wget http://toamodule-1253438722.file.myqcloud.com/tencenttoa.zip
+wget "http://thunder-pro-mainland-1258348367.cos.ap-guangzhou.myqcloud.com/gaap-toa%E6%BA%90%E7%A0%81(centos7%E4%BB%A5%E4%B8%8A).zip"
 ```
+
+- centos7.0以下源码包
+
+```
+wget "http://thunder-pro-mainland-1258348367.cos.ap-guangzhou.myqcloud.com/gaap-toa%E6%BA%90%E7%A0%81(centos7%E4%BB%A5%E4%B8%8B).zip"
+```   
+
 2. 编译文件
 ```
 yum install gcc
