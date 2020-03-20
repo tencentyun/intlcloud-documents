@@ -50,3 +50,5 @@ make
 mv toa.ko /lib/modules/`uname -r`/kernel/net/netfilter/ipvs/toa.ko
 insmod /lib/modules/`uname -r`/kernel/net/netfilter/ipvs/toa.ko
 ```
+
+> 如果编译报错，有可能是安装的内核版本和uname -r展示版本不一致，进入到/lib/modules/目录，查看本机上真实安装的内核版本，修改Makefile文件里面的uname -r为真实的内核版本，重新编译。  
