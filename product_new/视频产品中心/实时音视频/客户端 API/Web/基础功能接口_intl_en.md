@@ -26,7 +26,7 @@ WebRTCAPI.fn.detectRTC(options, callback)
 
 | Field | Description | Remarks |
 | ------ | ----- | ------ |
-| isTBS      | Whether the service is TBS (Android WeChat/Mobile QQ WebView) |   [What Is TBS?](https://x5.tencent.com/tbs/index.html)              |
+| isTBS      | Whether the service is TBS (Android WeChat/Mobile QQ WebView) |   What Is TBS?              |
 | TBSversion      | TBS version number |   -              |
 | isTBSValid      | Whether the TBS version supports WebRTC |        -         |
 | support      | Whether WebRTC is supported | - |
@@ -61,9 +61,9 @@ var RTC = new WebRTCAPI( options )
 
 | Parameter | Type | Description | Remarks |
 | ---------------- | ------- | ---------------------------------------- | ------------ |
-| **sdkAppId**         | integer | `sdkAppId` of the application (for more information, please see [Integrating the SDK ](/document/product/647/16863))              | Required           |
-| **userId**           | string  | Unique user ID, i.e., username (for more information, please see [Integrating the SDK](/document/product/647/16863)) | Required           |
-| **userSig**          | string  | Identity signature, which acts as the login password and is required (for more information, please see [Integrating the SDK](/document/product/647/16863))                     | Required           |
+| **sdkAppId**         | integer | `sdkAppId` of the application (for more information, please see [Integrating the SDK ](https://intl.cloud.tencent.com/document/product/647/35096))              | Required           |
+| **userId**           | string  | Unique user ID, i.e., username (for more information, please see [Integrating the SDK](https://intl.cloud.tencent.com/document/product/647/35096)) | Required           |
+| **userSig**          | string  | Identity signature, which acts as the login password and is required (for more information, please see [Integrating the SDK](https://intl.cloud.tencent.com/document/product/647/35096))                     | Required           |
 | debug            | object | Debugging mode (log printing in the console) `{ log: true, uploadLog: true, vconsole: true}`                                 | Required |
 | peerAddNotify            | boolean | Notification of P2P connection establishment. Before a P2P connection is established, the business side determines whether a connection is needed.<br />It must be used together with `onPeerConnectionAdd` of "advanced event notifications" | Optional. Default value: false  |
 
@@ -223,7 +223,7 @@ This API is used to create or enter audio/video room.
 | Parameter | Type | Required | Description |
 | ---------------- | ------- | ---------------------- |--------------------------------- |
 | **roomid**         | integer | Yes      | Room ID in `uint32` data type     |
-| **privateMapKey**  | string  | No      | If the business does not need to control user permissions, this parameter can be ignored, which acts as the key to the specified `roomID` (for more information, please see [Integrating the SDK](/document/product/647/16863))                     |
+| **privateMapKey**  | string  | No      | If the business does not need to control user permissions, this parameter can be ignored, which acts as the key to the specified `roomID` (for more information, please see [Integrating the SDK](https://intl.cloud.tencent.com/document/product/647/35096))                     |
 | pureAudioPushMod   | integer |  No      |Pure audio stream push mode, which needs to be carried in **relayed LVB and recording** scenarios<br>1 indicates that the stream is pure audio push and does not need to be recorded as an MP3 file <br>2 indicates that the stream is pure audio push and the recording file format is MP3         |
 | recordId         | integer |  No      | Custom ID in automatic recording in `int32` data type. This parameter will be returned to the business through the LVB recording callback API ([Console - LVB Recording Callback](https://console.cloud.tencent.com/live/livecodemanage)) after recording. For more information, please see [Event Message Notification](https://intl.cloud.tencent.com/document/product/267/31566)<br>**Note**: if `recordId` is delivered when a WeChat Mini Program communicates with another WeChat Mini Program and a web client, the values delivered to the web client and WeChat Mini Program must be the same       |
 | appScene          | string   |No  | Application scenario. `VideoCall` indicates the real-time call mode, and `Live` indicates the ILVB mode |
