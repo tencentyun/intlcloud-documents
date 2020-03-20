@@ -75,9 +75,9 @@ __参数__
 
 __介绍__
 
-如果加入成功，您会收到 onEnterRoom() 回调；如果失败，您会收到 onEnterRoom(result) 回调。 跟进房失败相关的错误码，请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35130)。
+如果加入成功，您会收到 onEnterRoom() 回调；如果失败，您会收到 onEnterRoom(result) 回调。 跟进房失败相关的错误码，请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35135)。
 
->?不管进房是否成功，enterRoom 都必须与 exitRoom 配对使用，在调用 exitRoom 前再次调用 enterRoom 函数会导致不可预期的错误问题。
+>不管进房是否成功，enterRoom 都必须与 exitRoom 配对使用，在调用 exitRoom 前再次调用 enterRoom 函数会导致不可预期的错误问题。
 
 
 
@@ -196,7 +196,7 @@ __介绍__
 
 为实现进房秒开的绝佳体验，SDK 默认进房后自动接收音视频。即在您进房成功的同时，您将立刻收到远端所有用户的音视频数据。 若您没有调用 startRemoteView，视频数据将自动超时取消。 若您主要用于语音聊天等没有自动接收视频数据需求的场景，您可以根据实际需求选择接收模式。
 
->?需要在进房前设置才能生效。
+>需要在进房前设置才能生效。
 
 
 
@@ -290,7 +290,7 @@ __介绍__
 void stopAllRemoteView()
 ```
 
->?如果有屏幕分享的画面在显示，则屏幕分享的画面也会一并被关闭。
+>如果有屏幕分享的画面在显示，则屏幕分享的画面也会一并被关闭。
 
 
 
@@ -539,7 +539,7 @@ __介绍__
 
 该函数会启动麦克风采集，并将音频数据传输给房间里的其他用户。 SDK 并不会默认开启本地的音频上行，也就说，如果您不调用这个函数，房间里的其他用户就听不到您的声音。
 
->?TRTC SDK 并不会默认打开本地的麦克风采集。
+>TRTC SDK 并不会默认打开本地的麦克风采集。
 
 
 
@@ -681,7 +681,7 @@ __介绍__
  pDevice = null;
 </pre>
 
->?如果 delete ITRTCDeviceCollection*指针会编译错误，SDK 维护 ITRTCDeviceCollection 对象的生命周期。
+>如果 delete ITRTCDeviceCollection*指针会编译错误，SDK 维护 ITRTCDeviceCollection 对象的生命周期。
 
 
 
@@ -738,7 +738,7 @@ __介绍__
  pDevice = null;
 </pre>
 
->?如果 delete ITRTCDeviceCollection* 指针会编译错误，SDK 维护 ITRTCDeviceCollection 对象的生命周期。
+>如果 delete ITRTCDeviceCollection* 指针会编译错误，SDK 维护 ITRTCDeviceCollection 对象的生命周期。
 
 
 
@@ -823,7 +823,7 @@ __介绍__
  pDevice = null;
 </pre>
 
->?如果 delete ITRTCDeviceCollection* 指针会编译错误，SDK 维护 ITRTCDeviceCollection 对象的生命周期。
+>如果 delete ITRTCDeviceCollection* 指针会编译错误，SDK 维护 ITRTCDeviceCollection 对象的生命周期。
 
 
 
@@ -864,7 +864,7 @@ __返回__
 
 扬声器音量，范围0 - 100。
 
->?查询的是系统扬声器的音量大小。
+>查询的是系统扬声器的音量大小。
 
 
 
@@ -881,7 +881,7 @@ __参数__
 |-----|-----|-----|
 | volume | uint32_t | 设置的扬声器音量，范围0 - 100。 |
 
->?设置的是系统扬声器的音量大小。
+>设置的是系统扬声器的音量大小。
 
 
 
@@ -934,7 +934,7 @@ __介绍__
 - yOffset：水印的坐标，取值范围为0 - 1的浮点数。
 - fWidthRatio：水印的大小比例，取值范围为0 - 1的浮点数。
 
->?大小流暂未支持。
+>大小流暂未支持。
 
 
 
@@ -957,7 +957,7 @@ __介绍__
 
 对应于 [startRemoteView()](https://intl.cloud.tencent.com/document/product/647/35132#startremoteview) 用于显示主画面，该接口只能用于显示辅路（屏幕分享、远程播片）画面。
 
->?请在 onUserSubStreamAvailable 回调后再调用这个接口。
+>请在 onUserSubStreamAvailable 回调后再调用这个接口。
 
 
 
@@ -1016,7 +1016,7 @@ __介绍__
 
 如果您要给您的 App 增加屏幕分享功能，一般需要先显示一个窗口选择界面，这样用户可以选择希望分享的窗口。 通过如下函数，您可以获得可分享窗口的 ID、类型、窗口名称以及缩略图。 拿到这些信息后，您就可以实现一个窗口选择界面，当然，您也可以使用我们在 Demo 源码中已经实现好的一个界面。
 
->?返回的列表中包括屏幕和应用窗口，屏幕会在列表的前面几个元素中。
+>返回的列表中包括屏幕和应用窗口，屏幕会在列表的前面几个元素中。
 >如果 delete ITRTCScreenCaptureSourceList*指针会编译错误，SDK 维护 ITRTCScreenCaptureSourceList 对象的生命周期。
 
 
@@ -1165,9 +1165,9 @@ TRTCVideoFrame 推荐如下填写方式（其他字段不需要填写）：
 - timestamp：如果 timestamp 间隔不均匀，会严重影响音画同步和录制出的 MP4 质量。
 
 
-参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35123/35158)。
+参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
->?
+>
 >- SDK 内部有帧率控制逻辑，目标帧率以您在 setVideoEncoderParam 中设置的为准，太快会自动丢帧，太慢则会自动补帧。
 >- 可以设置 frame 中的 timestamp 为 0，相当于让 SDK 自己设置时间戳，但请“均匀”地控制 sendCustomVideoData 的调用间隔，否则会导致视频帧率不稳定。
 
@@ -1210,9 +1210,9 @@ TRTCAudioFrame 推荐如下填写方式（其他字段不需要填写）：
 - timestamp：如果 timestamp 间隔不均匀，会严重影响音画同步和录制出的 MP4 质量。
 
 
-参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35123/35158)。
+参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
->?可以设置 frame 中的 timestamp 为 0，相当于让 SDK 自己设置时间戳，但请“均匀”地控制 sendCustomAudioData 的调用间隔，否则会导致声音断断续续。
+>可以设置 frame 中的 timestamp 为 0，相当于让 SDK 自己设置时间戳，但请“均匀”地控制 sendCustomAudioData 的调用间隔，否则会导致声音断断续续。
 
 
 
@@ -1235,7 +1235,7 @@ __返回__
 
 0：成功；<0：错误。
 
->?设置此方法，SDK 内部会把采集到的数据回调出来，SDK 跳过 HWND 渲染逻辑 调用 setLocalVideoRenderCallback(TRTCVideoPixelFormat_Unknown， TRTCVideoBufferType_Unknown， nullptr) 停止回调。
+>设置此方法，SDK 内部会把采集到的数据回调出来，SDK 跳过 HWND 渲染逻辑 调用 setLocalVideoRenderCallback(TRTCVideoPixelFormat_Unknown， TRTCVideoBufferType_Unknown， nullptr) 停止回调。
 
 
 ### setRemoteVideoRenderCallback
@@ -1262,7 +1262,7 @@ __介绍__
 
 此方法同 setLocalVideoRenderDelegate，区别在于一个是本地画面的渲染回调， 一个是远程画面的渲染回调。
 
->?设置此方法，SDK 内部会把远端的数据解码后回调出来，SDK 跳过 HWND 渲染逻辑 调用 setRemoteVideoRenderCallback(userId， TRTCVideoPixelFormat_Unknown，  TRTCVideoBufferType_Unknown， nullptr) 停止回调。
+>设置此方法，SDK 内部会把远端的数据解码后回调出来，SDK 跳过 HWND 渲染逻辑 调用 setRemoteVideoRenderCallback(userId， TRTCVideoPixelFormat_Unknown，  TRTCVideoBufferType_Unknown， nullptr) 停止回调。
 
 
 
@@ -1318,7 +1318,7 @@ __介绍__
 
 该接口可以借助音视频数据通道向当前房间里的其他用户广播您自定义的数据，但因为复用了音视频数据通道， 请务必严格控制自定义消息的发送频率和消息体的大小，否则会影响音视频数据的质量控制逻辑，造成不确定性的问题。
 
->?本接口有以下限制：
+>本接口有以下限制：
 >- 发送消息到房间内所有用户，每秒最多能发送30条消息。
 >- 每个包最大为1KB，超过则很有可能会被中间路由器或者服务器丢弃。
 >- 每个客户端每秒最多能发送总计8KB数据。
@@ -1350,7 +1350,7 @@ __介绍__
 跟 sendCustomCmdMsg 的原理不同，sendSEIMsg 是将数据直接塞入视频数据头中。因此，即使视频帧被旁路到了直播 CDN 上， 这些数据也会一直存在。但是由于要把数据嵌入视频帧中，所以数据本身不能太大，推荐几个字节就好。
 最常见的用法是把自定义的时间戳（timstamp）用 sendSEIMsg 嵌入视频帧中，这种方案的最大好处就是可以实现消息和画面的完美对齐。
 
->?本接口有以下限制：
+>本接口有以下限制：
 >- 数据在接口调用完后不会被即时发送出去，而是从下一帧视频帧开始带在视频帧中发送。
 >- 发送消息到房间内所有用户，每秒最多能发送30条消息（与 sendCustomCmdMsg 共享限制）。
 >- 每个包最大为1KB，若发送大量数据，会导致视频码率增大，可能导致视频画质下降甚至卡顿（与 sendCustomCmdMsg 共享限制）。
@@ -1533,7 +1533,7 @@ __参数__
 | effectId | int | 音效 ID。 |
 | volume | int | 音量大小，取值范围为0 - 100；默认值：100。 |
 
->?会覆盖通过 setAllAudioEffectsVolume 指定的整体音效音量。
+>会覆盖通过 setAllAudioEffectsVolume 指定的整体音效音量。
 
 
 ### stopAudioEffect
@@ -1571,7 +1571,7 @@ __参数__
 |-----|-----|-----|
 | volume | int | 音量大小，取值范围为0 - 100；默认值：100。 |
 
->?该操作会覆盖通过 setAudioEffectVolume 指定的单独音效音量。
+>该操作会覆盖通过 setAudioEffectVolume 指定的单独音效音量。
 
 
 
@@ -1596,7 +1596,7 @@ __介绍__
 
 测速结果将会用于优化 SDK 接下来的服务器选择策略，因此推荐您在用户首次通话前先进行一次测速，这将有助于我们选择最佳的服务器。 同时，如果测试结果非常不理想，您可以通过醒目的 UI 提示用户选择更好的网络。
 
->?测速本身会消耗一定的流量，所以也会产生少量额外的流量费用。
+>测速本身会消耗一定的流量，所以也会产生少量额外的流量费用。
 
 
 
@@ -1625,7 +1625,7 @@ __介绍__
 
 会触发 onFirstVideoFrame 回调接口。
 
->?在测试过程中可以使用 setCurrentCameraDevice 接口切换摄像头。
+>在测试过程中可以使用 setCurrentCameraDevice 接口切换摄像头。
 
 
 
@@ -1709,7 +1709,7 @@ __参数__
 __介绍__
 
 该接口会向腾讯云的转码服务器发送一条指令，目的是将房间里的多路画面叠加到一路画面上。
-如果您在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能， 房间里的每一路画面都会有一个对应的直播 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/35123/34617)， 此时您可以通过云端混流，将多路直播地址的画面混合成一路，这样直播 CDN 上就可以看到混合后的画面。
+如果您在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能， 房间里的每一路画面都会有一个对应的直播 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/35242)， 此时您可以通过云端混流，将多路直播地址的画面混合成一路，这样直播 CDN 上就可以看到混合后的画面。
 您可以通过转码参数来调整每一路画面的位置以及最终输出的画面质量。
 参考文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/35123/34618)。 示例代码：我们在 Demo 中增加了该功能的体验入口，您可以在“更多功能”面板中看到“云端画面混合”和“分享播放地址”体验到该功能。
 
@@ -1723,9 +1723,9 @@ __介绍__
 </pre>
 
 
->?关于云端混流的注意事项：
+>关于云端混流的注意事项：
 >- 云端转码会引入一定的 CDN 观看延时，大概会增加1 - 2秒。
->- 调用该函数的用户，会将多路画面混合到自己这一路的 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/35123/34617) 上。
+>- 调用该函数的用户，会将多路画面混合到自己这一路的 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/35242) 上。
 
 
 ### startPublishCDNStream
@@ -1747,8 +1747,8 @@ __介绍__
 在实时音视频 控制台中的功能配置页开启了“启动自动旁路直播”功能后， 房间里的每一路画面都有一路默认的腾讯云 CDN 地址，所以该功能并不常用，仅在您需要适配多家 CDN 服务商时才需要关注该功能。
 由于仅转推单独的一路画面到直播 CDN 并没有什么太大的意义，所以该方案通常是跟云端转码混合使用的。 也就是先通过 setMixTranscodingConfig 将房间里的多路画面混合到一路上，再转推出去。
 
->?关于旁路转推的注意事项：
->- 默认只支持转推到腾讯云的 rtmp [推流地址](https://intl.cloud.tencent.com/document/product/267/32720) 上，转推其他云的需求请通过工单联系我们。
+>关于旁路转推的注意事项：
+>- 默认只支持转推到腾讯云的 rtmp [推流地址](https://intl.cloud.tencent.com/document/product/267/32480) 上，转推其他云的需求请通过工单联系我们。
 >- 调用该函数的用户，只会转推自己这一路画面到指定的 rtmp 推流地址上，因此一般需要配合 setMixTranscodingConfig 一起使用。
 >- TRTC 房间里的每一路画面都有一路默认的腾讯云 CDN 地址（需要开启），所以该功能并不常用，仅在您需要适配多家 CDN 服务商时才需要关注该功能。
 
@@ -1834,7 +1834,7 @@ __参数__
 |-----|-----|-----|
 | path | const char * | 存储日志的文件夹，例如 "D:\\Log"，UTF-8 编码。 |
 
->?日志文件默认保存在 C:/Users/[系统用户名]/AppData/Roaming/Tencent/liteav/log，即 appdata%/Tencent/liteav/log 下，如需修改，必须在所有方法前调用。
+>日志文件默认保存在 C:/Users/[系统用户名]/AppData/Roaming/Tencent/liteav/log，即 appdata%/Tencent/liteav/log 下，如需修改，必须在所有方法前调用。
 
 
 
@@ -1883,7 +1883,7 @@ __参数__
 |-----|-----|-----|
 | jsonStr | const char * | 接口及参数描述的 JSON 字符串。 |
 
->?该接口用于调用一些实验性功能。
+>该接口用于调用一些实验性功能。
 
 
 

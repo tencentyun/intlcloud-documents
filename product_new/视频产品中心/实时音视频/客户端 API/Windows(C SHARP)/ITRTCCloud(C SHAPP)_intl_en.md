@@ -77,7 +77,7 @@ __Overview__
 
 If the room is successfully entered, the `onEnterRoom()` callback will be received; otherwise, the `onEnterRoom(result)` callback will be received. For more information on error codes for room entry failures, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35140).
 
->?No matter whether room entry is successful, `enterRoom` must be used together with `exitRoom`. If `enterRoom` is called again before `exitRoom` is called, an unexpected error will occur.
+>No matter whether room entry is successful, `enterRoom` must be used together with `exitRoom`. If `enterRoom` is called again before `exitRoom` is called, an unexpected error will occur.
 
 
 
@@ -195,7 +195,7 @@ __Overview__
 
 To deliver an excellent instant broadcasting experience, the SDK automatically receives audio/video upon successful room entry by default, that is, you will immediately receive audio/video data from all remote users. If you do not call `startRemoteView`, video data will be automatically canceled due to timeout. If you use this API mainly in scenarios where automatic video data reception is not required, such as audio chat, you can select the reception mode based on your actual needs.
 
->?This API takes effect only if it is set before room entry.
+>This API takes effect only if it is set before room entry.
 
 
 
@@ -289,7 +289,7 @@ This API is used to stop displaying all remote video images.
 void stopAllRemoteView()
 ```
 
->?If there is a screen sharing image, it will be stopped together with other remote video images.
+>If there is a screen sharing image, it will be stopped together with other remote video images.
 
 
 
@@ -616,7 +616,7 @@ __Overview__
 
 After this feature is enabled, the SDK will return the evaluation of the voice volume level of each channel in `onUserVoiceVolume()`. To enable this feature, call this API before calling startLocalAudio().
 
->?The volume bar in the demo is implemented based on this API.
+>The volume bar in the demo is implemented based on this API.
 
 ### startAudioRecording
 
@@ -679,7 +679,7 @@ pDevice.release();
 pDevice = null;
 </pre>
 
->?The SDK maintains the lifecycle of the `ITRTCDeviceCollection` object.
+>The SDK maintains the lifecycle of the `ITRTCDeviceCollection` object.
 
 
 
@@ -736,7 +736,7 @@ pDevice.release();
 pDevice = null;
 </pre>
 
->?The SDK maintains the lifecycle of the `ITRTCDeviceCollection` object.
+>The SDK maintains the lifecycle of the `ITRTCDeviceCollection` object.
 
 
 
@@ -821,7 +821,7 @@ pDevice.release();
 pDevice = null;
 </pre>
 
->?The SDK maintains the lifecycle of the `ITRTCDeviceCollection` object.
+>The SDK maintains the lifecycle of the `ITRTCDeviceCollection` object.
 
 
 
@@ -862,7 +862,7 @@ __Return__
 
 Speaker volume level between 0 and 100.
 
->?The volume level to be queried is that of the system's speaker.
+>The volume level to be queried is that of the system's speaker.
 
 
 
@@ -879,7 +879,7 @@ __Parameters__
 |-----|-----|-----|
 | volume | uint | Speaker volume to be set. Value range: 0–100. |
 
->?The volume to be set is that of the system's speaker.
+>The volume to be set is that of the system's speaker.
 
 
 
@@ -932,7 +932,7 @@ The watermark position is determined by the `xOffset`, `yOffset`, and `fWidthRat
 - `yOffset`: Y coordinate of watermark, which is a floating point number between 0 and 1.
 - `fWidthRatio`: watermark dimensions ratio, which is a floating point number between 0 and 1.
 
->?This feature is not supported in big and small image streams currently.
+>This feature is not supported in big and small image streams currently.
 
 
 
@@ -955,7 +955,7 @@ __Overview__
 
 Different from startRemoteView() that is used to display the primary image, this API can only be used to display the image of the secondary channel (e.g., screen sharing and remote video playback).
 
->?This API must be called after `onUserSubStreamAvailable` is called back.
+>This API must be called after `onUserSubStreamAvailable` is called back.
 
 
 
@@ -1014,7 +1014,7 @@ __Overview__
 
 If you want to add the screen sharing feature to your application, a window selection UI needs to be displayed first generally, so that the user can select the window to be shared. You can use the related functions to get the ID, type, name, and thumbnail of shareable windows and implement the window selection UI with the obtained information. Or, you can use the window selection UI implemented in the demo's source code.
 
->?The returned list includes the screen and application windows. The screen will be in the first several elements in the list.
+>The returned list includes the screen and application windows. The screen will be in the first several elements in the list.
 >The SDK maintains the lifecycle of the `ITRTCScreenCaptureSourceList` object.
 
 
@@ -1163,9 +1163,9 @@ It is recommended to enter the following information for `TRTCVideoFrame` (other
 - timestamp: if the intervals for `timestamp` are uneven, the audio/video sync and quality of MP4 recording will be seriously affected.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
 
->?
+>
 >- The SDK has an internal frame rate control logic, and the target frame rate set in `setVideoEncoderParam` shall prevail. If the frame rate is too high, automatic frame discarding may occur; if too low, automatic frame interpolation will be implemented.
 >- It is recommended to set `timestamp` in `frame` to 0, so that the SDK will set the timestamp by itself. However, please "evenly" set the calling interval of `sendCustomVideoData`; otherwise, the video frame rate will be unstable.
 
@@ -1209,9 +1209,9 @@ It is recommended to enter the following information for `TRTCAudioFrame` (other
 - timestamp: if the intervals for `timestamp` are uneven, the audio/video sync and quality of MP4 recording will be seriously affected.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
 
->?You can set `timestamp` in `frame` to `0`, so that the SDK will set the timestamp by itself. However, please "evenly" set the calling interval of `sendCustomAudioData`; otherwise, the audio will be unstable.
+>You can set `timestamp` in `frame` to `0`, so that the SDK will set the timestamp by itself. However, please "evenly" set the calling interval of `sendCustomAudioData`; otherwise, the audio will be unstable.
 
 
 
@@ -1234,7 +1234,7 @@ __Return__
 
 0: success; values smaller than 0: error.
 
->?After this method is set, the SDK will internally call back the captured data, skip the `IntPtr` rendering logic, and call `setLocalVideoRenderCallback(TRTCVideoPixelFormat_Unknown, TRTCVideoBufferType_Unknown, null)` to stop the callback.
+>After this method is set, the SDK will internally call back the captured data, skip the `IntPtr` rendering logic, and call `setLocalVideoRenderCallback(TRTCVideoPixelFormat_Unknown, TRTCVideoBufferType_Unknown, null)` to stop the callback.
 
 
 ### setRemoteVideoRenderCallback
@@ -1261,7 +1261,7 @@ __Overview__
 
 This method is similar to `setLocalVideoRenderDelegate`. The difference is that `setLocalVideoRenderDelegate` is callback of rendering the local image, while `setRemoteVideoRenderCallback` is callback of rendering the remote image.
 
->?After this method is set, the SDK will internally call back the remote data after decoding it, skip the `IntPtr` rendering logic, and call `setRemoteVideoRenderCallback(userId, TRTCVideoPixelFormat_Unknown,  TRTCVideoBufferType_Unknown, null)` to stop the callback.
+>After this method is set, the SDK will internally call back the remote data after decoding it, skip the `IntPtr` rendering logic, and call `setRemoteVideoRenderCallback(userId, TRTCVideoPixelFormat_Unknown,  TRTCVideoBufferType_Unknown, null)` to stop the callback.
 
 
 
@@ -1317,7 +1317,7 @@ __Overview__
 
 This API can be used to broadcast your custom data to other users in the room though the audio/video data channel. Due to reuse of this channel, please strictly control the frequency of sending custom messages and message size; otherwise, the quality control logic of the audio/video data will be affected, causing uncertain issues.
 
->?This API has the following restrictions:
+>This API has the following restrictions:
 >- Up to 30 messages can be sent per second to all users in the room.
 >- A packet can contain up to 1 KB of data; if the threshold is exceeded, the packet is very likely to be discarded by the intermediate router or server.
 >- A client can send up to 8 KB of data in total per second.
@@ -1349,7 +1349,7 @@ __Overview__
 Different from how `sendCustomCmdMsg` works, `sendSEIMsg` directly inserts data into the video data header. Therefore, even if the video frames are relayed to LVB CDN, the data will always exist. As the data needs to be embedded in the video frames, it is recommended to keep the data size under several bytes.
 The most common use is to embed the custom timestamp into video frames through `sendSEIMsg` so as to implement a perfect alignment between messages and video image.
 
->?This API has the following restrictions:
+>This API has the following restrictions:
 >- The data will not be instantly sent after this API is called; instead, it will be inserted into the next video frame after the API call.
 >- Up to 30 messages can be sent per second to all users in the room (this limit is shared with `sendCustomCmdMsg`).
 >- Each packet can be up to 1 KB (this limit is shared with `sendCustomCmdMsg`). If a large amount of data is sent, the video bitrate will increase, which may reduce the video quality or even cause lagging.
@@ -1532,7 +1532,7 @@ __Parameters__
 | effectId | int | Sound effect ID. |
 | volume | int | Volume level. Value range: 0–100. Default value: 100. |
 
->?This volume level will take precedence over the overall sound effect volume level specified in `setAllAudioEffectsVolume`.
+>This volume level will take precedence over the overall sound effect volume level specified in `setAllAudioEffectsVolume`.
 
 
 ### stopAudioEffect
@@ -1570,7 +1570,7 @@ __Parameters__
 |-----|-----|-----|
 | volume | int | Volume level. Value range: 0–100. Default value: 100. |
 
->?The volume level set by this operation will take precedence over that of an individual sound effect specified in `setAudioEffectVolume`.
+>The volume level set by this operation will take precedence over that of an individual sound effect specified in `setAudioEffectVolume`.
 
 
 
@@ -1595,7 +1595,7 @@ __Overview__
 
 The speed test result will be used to optimize the SDK's server selection policy. It is recommended to perform the speed test before users place the first call, as the result will help select the optimal server. If the test result is not satisfactory, you can use a noticeable UI prompt to remind the user to select a better network.
 
->?The speed test will consume a certain amount of traffic and generate a small amount of traffic fees as a result.
+>The speed test will consume a certain amount of traffic and generate a small amount of traffic fees as a result.
 
 
 
@@ -1624,7 +1624,7 @@ __Overview__
 
 The `onFirstVideoFrame` callback API will be triggered.
 
->?You can use the `setCurrentCameraDevice` API to switch cameras during the test.
+>You can use the `setCurrentCameraDevice` API to switch cameras during the test.
 
 
 
@@ -1708,7 +1708,7 @@ __Parameters__
 __Overview__
 
 This API will send a command to the Tencent Cloud transcoding server to combine multiple image channels in the room into one channel.
-If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
+If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35242), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
 You can use the transcoding parameters to set the position of each channel of image and quality of the final output image.
 For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/35123/34618). 
 Sample code: the demo provides the entry for trying out this feature. You can experience it in "On-Cloud Image Mix" and "Share Playback Address" in the "More Features" panel.
@@ -1722,9 +1722,9 @@ Sample code: the demo provides the entry for trying out this feature. You can ex
 **Image 3**=> decoding => =>
 </pre>
 
->?Notes on On-Cloud MixTranscoding:
+>Notes on On-Cloud MixTranscoding:
 >- On-cloud transcoding will cause a delay of 1–2 seconds in video playback with CDN.
->- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617) of your own channel.
+>- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35242) of your own channel.
 
 
 ### startPublishCDNStream
@@ -1743,13 +1743,13 @@ __Parameters__
 __Overview__
 
 This API will push a command to Tencent Cloud's relay server, and Tencent Cloud will push the current channel of audio/video to your specified RTMP push address.
-If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each channel of image in the room will have a default CDN address. Therefore, this feature is required only if you need to configure multiple CDN providers.
+If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC Console, each channel of image in the room will have a default CDN address. Therefore, this feature is required only if you need to configure multiple CDN providers.
 As relaying an individual channel of image to LVB CDN is meaningless, this feature is usually used with On-Cloud MixTranscoding, i.e., `setMixTranscodingConfig` is used to mix multiple image channels to one channel and then relay it.
 
->?Notes on relayed push:
->- By default, audio/video streams can be relayed only to the Tencent Cloud RTMP [push address](https://intl.cloud.tencent.com/document/product/267/32720). To relay streams to other cloud services, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
+>Notes on relayed push:
+>- By default, audio/video streams can be relayed only to the Tencent Cloud RTMP [push address](https://intl.cloud.tencent.com/document/product/267/32480). To relay streams to other cloud services, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
 >- If you call this function, only your own channel of image will be relayed to the specified RTMP push address by default. Therefore, this API usually needs to be used together with `setMixTranscodingConfig`.
->- If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each channel of image in the room will have a default CDN address. Therefore, this feature is required only if you need to configure multiple CDN providers.
+>- If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC Console, each channel of image in the room will have a default CDN address. Therefore, this feature is required only if you need to configure multiple CDN providers.
 
 
 ### stopPublishCDNStream
@@ -1833,7 +1833,7 @@ __Parameters__
 |-----|-----|-----|
 | path | string | Folder where logs are stored. This parameter is in UTF-8 format, such as "D:\\Log". |
 
->?The log files are stored in C:/Users/[System username]/AppData/Roaming/Tencent/liteav/log (i.e., appdata%/Tencent/liteav/log) by default. To change the path, call this API before calling other methods.
+>The log files are stored in C:/Users/[System username]/AppData/Roaming/Tencent/liteav/log (i.e., appdata%/Tencent/liteav/log) by default. To change the path, call this API before calling other methods.
 
 
 
@@ -1882,7 +1882,7 @@ __Parameters__
 |-----|-----|-----|
 | jsonStr | string | JSON string of API and parameter descriptions. |
 
->?This API is used to call some experimental APIs.
+>This API is used to call some experimental APIs.
 
 
 

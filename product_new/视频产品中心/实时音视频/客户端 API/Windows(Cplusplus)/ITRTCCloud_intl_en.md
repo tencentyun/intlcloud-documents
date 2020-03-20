@@ -75,7 +75,7 @@ __Parameters__
 
 __Overview__
 
-If the room is successfully entered, the `onEnterRoom()` callback will be received; otherwise, the `onEnterRoom(result)` callback will be received. For more information on error codes for room entry failures, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35130).
+If the room is successfully entered, the `onEnterRoom()` callback will be received; otherwise, the `onEnterRoom(result)` callback will be received. For more information on error codes for room entry failures, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35135).
 
 >No matter whether room entry is successful, `enterRoom` must be used together with `exitRoom`. If `enterRoom` is called again before `exitRoom` is called, an unexpected error will occur.
 
@@ -1165,7 +1165,7 @@ It is recommended to enter the following information for `TRTCVideoFrame` (other
 - timestamp: if the intervals for `timestamp` are uneven, the audio/video sync and quality of MP4 recording will be seriously affected.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
 
 >
 >- The SDK has an internal frame rate control logic, and the target frame rate set in `setVideoEncoderParam` shall prevail. If the frame rate is too high, automatic frame discarding may occur; if too low, automatic frame interpolation will be implemented.
@@ -1210,7 +1210,7 @@ It is recommended to enter the following information for `TRTCAudioFrame` (other
 - timestamp: if the intervals for `timestamp` are uneven, the audio/video sync and quality of MP4 recording will be seriously affected.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
 
 >You can set `timestamp` in `frame` to `0`, so that the SDK will set the timestamp by itself. However, please "evenly" set the calling interval of `sendCustomAudioData`; otherwise, the audio will be unstable.
 
@@ -1709,7 +1709,7 @@ __Parameters__
 __Overview__
 
 This API will send a command to the Tencent Cloud transcoding server to combine multiple image channels in the room into one channel.
-If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
+If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35242), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
 You can use the transcoding parameters to set the position of each channel of image and quality of the final output image.
 Reference document: [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/35123/34618). Sample code: the demo provides the entry for trying out this feature. You can experience it in "On-Cloud Image Mix" and "Share Playback Address" in the "More Features" panel.
 
@@ -1725,7 +1725,7 @@ Reference document: [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/doc
 
 >Notes on On-Cloud MixTranscoding:
 >- On-cloud transcoding will cause a delay of 1–2 seconds in video playback with CDN.
->- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617) of your own channel.
+>- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35242) of your own channel.
 
 
 ### startPublishCDNStream
@@ -1748,7 +1748,7 @@ If you have enabled the "automatic relayed LVB" feature on the feature configura
 As relaying an individual channel of image to LVB CDN is generally meaningless, this feature is usually used with On-Cloud MixTranscoding, i.e., `setMixTranscodingConfig` is used to mix multiple image channels to one channel and then relay it.
 
 >Notes on relayed push:
->- By default, audio/video streams can be relayed only to the Tencent Cloud RTMP [push address](https://intl.cloud.tencent.com/document/product/267/32720). To relay streams to other cloud services, please submit a ticket to contact us.
+>- By default, audio/video streams can be relayed only to the Tencent Cloud RTMP [push address](https://intl.cloud.tencent.com/document/product/267/32480). To relay streams to other cloud services, please submit a ticket to contact us.
 >- If you call this function, only your own channel of image will be relayed to the specified RTMP push address. Therefore, this API usually needs to be used together with `setMixTranscodingConfig`.
 >- In TRTC, each channel of image in the room will have a default CDN address (which needs to be enabled). Therefore, this feature is not commonly used and required only if you need to configure multiple CDN providers.
 
