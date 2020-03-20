@@ -75,7 +75,7 @@ __Parameters__
 
 __Overview__
 
-If the room is successfully entered, the `onEnterRoom()` callback will be received; otherwise, the `onEnterRoom(result)` callback will be received. For more information on error codes for room entry failures, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124).
+If the room is successfully entered, the `onEnterRoom()` callback will be received; otherwise, the `onEnterRoom(result)` callback will be received. For more information on error codes for room entry failures, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35140).
 
 >?No matter whether room entry is successful, `enterRoom` must be used together with `exitRoom`. If `enterRoom` is called again before `exitRoom` is called, an unexpected error will occur.
 
@@ -337,7 +337,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| params | ref TRTCVideoEncParam | Video encoding parameters. For more information, please see the definition of [TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/36780#trtcvideoencparam) in `TRTCCloudDef.h`. |
+| params | ref TRTCVideoEncParam | Video encoding parameters. For more information, please see the definition of [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideoencparam) in `TRTCCloudDef.h`. |
 
 __Overview__
 
@@ -355,7 +355,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| params | ref TRTCNetworkQosParam | Network bandwidth limit parameters. For more information, please see the definition of [TRTCNetworkQosParam](https://cloud.tencent.com/document/product/647/36780#trtcnetworkqosparam) in `TRTCCloudDef.h`. |
+| params | ref TRTCNetworkQosParam | Network bandwidth limit parameters. For more information, please see the definition of [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcnetworkqosparam) in `TRTCCloudDef.h`. |
 
 __Overview__
 
@@ -1093,7 +1093,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| params | ref TRTCVideoEncParam | Secondary stream encoding parameters. For more information, please see the definition of [TRTCVideoEncParam](https://cloud.tencent.com/document/product/647/36780#trtcvideoencparam) in `TRTCCloudDef.h`. |
+| params | ref TRTCVideoEncParam | Secondary stream encoding parameters. For more information, please see the definition of [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideoencparam) in `TRTCCloudDef.h`. |
 
 __Overview__
 
@@ -1163,7 +1163,7 @@ It is recommended to enter the following information for `TRTCVideoFrame` (other
 - timestamp: if the intervals for `timestamp` are uneven, the audio/video sync and quality of MP4 recording will be seriously affected.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
 
 >?
 >- The SDK has an internal frame rate control logic, and the target frame rate set in `setVideoEncoderParam` shall prevail. If the frame rate is too high, automatic frame discarding may occur; if too low, automatic frame interpolation will be implemented.
@@ -1209,7 +1209,7 @@ It is recommended to enter the following information for `TRTCAudioFrame` (other
 - timestamp: if the intervals for `timestamp` are uneven, the audio/video sync and quality of MP4 recording will be seriously affected.
 
 
-For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35123/35158).
 
 >?You can set `timestamp` in `frame` to `0`, so that the SDK will set the timestamp by itself. However, please "evenly" set the calling interval of `sendCustomAudioData`; otherwise, the audio will be unstable.
 
@@ -1703,14 +1703,14 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| config | TRTCTranscodingConfig | For more information, please see the description of [TRTCTranscodingConfig](https://cloud.tencent.com/document/product/647/36780#trtctranscodingconfig) in `TRTCCloudDef.h`. If `NULL` is passed in, On-Cloud MixTranscoding will be canceled. |
+| config | TRTCTranscodingConfig | For more information, please see the description of [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35139#trtctranscodingconfig) in `TRTCCloudDef.h`. If `NULL` is passed in, On-Cloud MixTranscoding will be canceled. |
 
 __Overview__
 
 This API will send a command to the Tencent Cloud transcoding server to combine multiple image channels in the room into one channel.
-If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
+If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
 You can use the transcoding parameters to set the position of each channel of image and quality of the final output image.
-For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618). 
+For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/35123/34618). 
 Sample code: the demo provides the entry for trying out this feature. You can experience it in "On-Cloud Image Mix" and "Share Playback Address" in the "More Features" panel.
 
 
@@ -1724,7 +1724,7 @@ Sample code: the demo provides the entry for trying out this feature. You can ex
 
 >?Notes on On-Cloud MixTranscoding:
 >- On-cloud transcoding will cause a delay of 1–2 seconds in video playback with CDN.
->- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/34617) of your own channel.
+>- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617) of your own channel.
 
 
 ### startPublishCDNStream
@@ -1738,7 +1738,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| param | ref TRTCPublishCDNParam | For more information, please see the description of [TRTCPublishCDNParam](https://cloud.tencent.com/document/product/647/36780#trtcpublishcdnparam) in `TRTCCloudDef.h`. |
+| param | ref TRTCPublishCDNParam | For more information, please see the description of [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcpublishcdnparam) in `TRTCCloudDef.h`. |
 
 __Overview__
 
