@@ -1708,9 +1708,9 @@ __Parameters__
 __Overview__
 
 This API will send a command to the Tencent Cloud transcoding server to combine multiple image channels in the room into one channel.
-If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
+If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
 You can use the transcoding parameters to set the position of each channel of image and quality of the final output image.
-For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/35123/34618). 
+For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618). 
 Sample code: the demo provides the entry for trying out this feature. You can experience it in "On-Cloud Image Mix" and "Share Playback Address" in the "More Features" panel.
 
 
@@ -1724,7 +1724,7 @@ Sample code: the demo provides the entry for trying out this feature. You can ex
 
 >?Notes on On-Cloud MixTranscoding:
 >- On-cloud transcoding will cause a delay of 1–2 seconds in video playback with CDN.
->- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617) of your own channel.
+>- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/34617) of your own channel.
 
 
 ### startPublishCDNStream
