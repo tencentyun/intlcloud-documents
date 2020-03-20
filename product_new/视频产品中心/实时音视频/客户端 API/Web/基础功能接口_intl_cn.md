@@ -26,7 +26,7 @@ WebRTCAPI.fn.detectRTC(options, callback)
 
 | 字段  | 含义    |  备注|
 | ------ | ----- | ------ |
-| isTBS      | 是否是 TBS (Android 的微信/手机 QQ Webview) |   [什么是 TBS](https://x5.tencent.com/tbs/index.html)              |
+| isTBS      | 是否是 TBS (Android 的微信/手机 QQ Webview) |   什么是 TBS              |
 | TBSversion      | TBS 版本号 |   -              |
 | isTBSValid      | TBS 版本号是否支持 WebRTC |        -         |
 | support      | 是否支持 WebRTC | - |
