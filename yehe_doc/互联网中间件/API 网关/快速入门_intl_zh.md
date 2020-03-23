@@ -1,4 +1,4 @@
-初次使用腾讯云 API 网关服务，建议您先了解 API 网关 [产品概述](https://cloud.tencent.com/document/product/628/11755)、[使用限制](https://cloud.tencent.com/document/product/628/34009) 和  [购买指南](https://cloud.tencent.com/document/product/628/39300)。
+初次使用腾讯云 API 网关服务，建议您先了解 API 网关 [产品概述](https://intl.cloud.tencent.com/document/product/628/11755)、[使用限制](https://intl.cloud.tencent.com/document/product/628/31716) 和  [购买指南](https://intl.cloud.tencent.com/document/product/628/11771)。
 
 通过 API 网关控制台，您可以快速进行创建服务、创建/调试 API、发布与访问等操作，基本操作步骤如下：
 
@@ -26,7 +26,7 @@
  - 前端类型：此服务支持的协议类型，此处我们选择“HTTP”。
  - 访问方式：此服务支持的访问方式，此处我们选择“公网”。
  - 备注：此服务支持的访问方式，此处我们填写“测试”。
-![](https://main.qcloudimg.com/raw/aef51c06599ea703d24d9ca091b863a7.png)
+![](https://main.qcloudimg.com/raw/b35aa49acb36fc2f74feab383f3dbcbd.png)
 3. 单击【确定】，即可创建服务。
 
 
@@ -42,11 +42,11 @@
 	- 支持CORS：此 API 是否支持跨域资源共享，此处我们选择“是”。
 	- 备注：此 API 的备注信息，此处我们填写“测试”
 	- 参数配置：此 API 的前端参数，此处我们不填写。
-![](https://main.qcloudimg.com/raw/2142a77d187930c65920e558f52f4c14.png)
+![](https://main.qcloudimg.com/raw/6d85f19fe2044735b5d190ce56a1ca40.png)
 4. 单击【下一步】，输入 API 后端配置信息。
 	- 后端类型：此 API 后端服务所属类型，此处我们选择“mock”。
 	- 返回数据：mock返回数据，此处我们输入“hello world, hello apigateway”。
-![](https://main.qcloudimg.com/raw/d241f61d632741dd76438e508e97b431.png)
+![](https://main.qcloudimg.com/raw/bb4d7dda3eea4491cfcb404faee57ca0.png)
 5. 单击【完成】，即可创建后端类型为 mock 的 API。
 
 
@@ -55,7 +55,7 @@
 1. 在 API 列表页找到步骤5中刚创建的 API ，在操作栏中单击【调试】，进入 API 调试页面。
 2. Content-Type 选择 application/x-www-form-urlencoded。
 3. 单击【发送请求】，即可查看本次调试的返回结果。
-![](https://main.qcloudimg.com/raw/aab6daba7e4a2a2f2864ff85225a0a21.png)
+![](https://main.qcloudimg.com/raw/e9c9b830f59342c346c36746420c06ec.png)
 
 
 ## 步骤7：发布服务
@@ -63,7 +63,7 @@
 1. 在服务列表页找到之前创建的服务，在操作栏中单击【发布】，输入服务发布信息。
 	- 发布环境：此服务本次发布到的环境，此处选择“发布”环境。
 	- 备注：此服务本次发布的备注信息，此处填写“测试发布”。
-![](https://main.qcloudimg.com/raw/714c9619951e17e8c326d42aaa7fe1fd.png)
+![](https://main.qcloudimg.com/raw/998c38292d80e346348059f022241bc3.png)
 2. 单击【提交】，即可成功发布服务。
 3. 服务发布后，您可以通过服务提供的子域名访问 API。
 
@@ -77,6 +77,6 @@
 
 
 ## 相关文档
-了解更多腾讯云 API 网关控制台操作，例如查看日志、查看监控、设置流控策略等，请参见 [操作指南](https://cloud.tencent.com/document/product/628/11787) 文档。
+了解更多腾讯云 API 网关控制台操作，例如查看日志、查看监控、设置流控策略等，请参见 [操作指南](https://intl.cloud.tencent.com/document/product/628/11787) 文档。
 
 
