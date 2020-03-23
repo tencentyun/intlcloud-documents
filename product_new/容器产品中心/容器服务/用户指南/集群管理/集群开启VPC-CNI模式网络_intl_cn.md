@@ -18,13 +18,9 @@ VPC-CNI 模式存在使用限制，建议您提前考虑是否适配您的业务
 #### 开启 VPC-CNI
 1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)。
 2. 在左侧导航栏中，单击【集群】，进入集群管理页面。单击【基本信息】。
-3. 在 VPC-CNI 字段中单击开启，选择子网，并确认使用限制。如下图所示：
-![open][1]
+3. 在 VPC-CNI 字段中单击开启，选择子网，并确认使用限制。
 
 #### 关闭 VPC-CNI
 1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)。
 2. 在左侧导航栏中，单击【集群】，进入集群管理页面。单击【基本信息】。
-3. 在 VPC-CNI 字段中单击关闭。（仅支持在集群内不存在任何 VPC-CNI 模式的 Pod 时关闭）如下图所示：
-![close][2]
-[1]: https://main.qcloudimg.com/raw/2fb53bed77df80d2859ea213cdaee7c6.png
-[2]:https://main.qcloudimg.com/raw/25bf97e355533a5e8678567567c5aefd.png
+3. 在 VPC-CNI 字段中单击关闭。（仅支持在集群内不存在任何 VPC-CNI 模式的 Pod 时关闭）
