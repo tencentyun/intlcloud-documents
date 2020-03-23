@@ -7,7 +7,7 @@ This document describes how to quickly run the Tencent Cloud TRTC Demo for iOS a
 ## Directions
 <span id="step1"></span>
 ### Step 1. Create an application
-1. Log in to the [TRTC Console](https://console.cloud.tencent.com/rav) and click **Create Application**.
+1. Log in to the TRTC Console and click **Create Application**.
   If you already have an application, please note down its `SDKAppID` and then [download the SDK and demo source code](#step2) directly; otherwise, please proceed to the next step.
 2. Enter the application's name and other information and click **OK**.
   After the application is created, an application ID (SDKAppID) will be automatically generated, which should be noted down.
