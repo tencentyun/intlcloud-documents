@@ -18,10 +18,8 @@
 1. 登录 [容器服务控制台](https://console.qcloud.com/tke2)，并进入【[集群](https://console.qcloud.com/tke2/cluster?rid=1)】的管理页面。。
 2. 选择需要查看的集群ID/名称，进入该集群的管理页面。
 3. 选择 【工作负载】>【StatefulSet】，进入【StatefulSet】的集群管理页面。
-4. 单击【新建】，查看【实例数量】。如下图所示：
-![](https://main.qcloudimg.com/raw/2dbd219d6bd76b8fe90971390daacc3c.png)
-5. 单击【显示高级设置】，根据您实际需求，设置【StatefulSet】参数。 关键参数信息如下：
-   ![创建StatefulSet](https://main.qcloudimg.com/raw/2a5bf4e7b3e5c85c62fef2b7b09e02f3.png)
+4. 单击【新建】，查看【实例数量】。
+5. 单击【显示高级设置】，根据您实际需求，设置【StatefulSet】参数。 
  - 网络模式：勾选【使用 VPC-CNI 模式】。
  - IP 地址范围：目前仅支持随机。
  - 固定 Pod IP：选择【开启】。
