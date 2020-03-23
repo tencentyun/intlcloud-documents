@@ -22,7 +22,7 @@ CDN이 제공한 IP 바인딩 조회 툴을 통해 IP가 위치한 가속 서비
 ### IP가 해외에 바인딩되는 경우
 ![](https://main.qcloudimg.com/raw/6a2e1b6f94362d5508ed98a52bd2d125.png)
 ### IPv6 바인딩 조회
-> IPv6 가속은 현재 베타 신청 단계에 있으며 IPv6가 가속 수요가 있는 경우 [신청 제출](https://cloud.tencent.com/apply/p/own2eu41dg8)을 클릭하십시오.
+> IPv6 가속은 현재 베타 신청 단계에 있으며 IPv6가 가속 수요가 있는 경우 [신청 제출](https://console.cloud.tencent.com/workorder/category)을 클릭하십시오.
 >
 ![](https://main.qcloudimg.com/raw/7e88553e81f01e86fd4325c3d433fbca.png)
 
