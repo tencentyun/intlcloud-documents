@@ -20,7 +20,7 @@ VPC-CNI 模式是 TKE 基于 CNI 和 VPC 弹性网卡实现的容器网络能力
 
 在配置“集群信息”步骤中，选择“容器网络插件”为【VPC-CNI】，并勾选“开启支持”即可。
 
-固定 Pod IP 的 VPC-CNI 网络模式详细使用方法，详情请参见 [固定 Pod IP 类型 StatefulSet 管理](https://cloud.tencent.com/document/product/457/34994)。
+固定 Pod IP 的 VPC-CNI 网络模式详细使用方法，详情请参见 [固定 Pod IP 类型 StatefulSet 管理](https://intl.cloud.tencent.com/document/product/457/35249)。
 
 
 
