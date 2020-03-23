@@ -28,7 +28,7 @@
 
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)。
 2. 在需要重装系统的实例行中，单击【更多】>【重装系统】。如下图所示：
-![重装系统](https://main.qcloudimg.com/raw/075771fb9a02f116578b42a5e52f7fa8.png)
+![重装系统](https://main.qcloudimg.com/raw/cf9c32f589a0243d84d6db0b92ccad2e.png)
 3. 在弹出的 “重装系统” 窗口中，选择使用当前机器使用镜像或其他镜像，调整磁盘大小，输入密码，单击【开始重装】。
 > 密码为您在配置云服务器实例时配置或者自动生成的密码。如果您忘记云服务器登录密码，可参考 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566) 对密码进行重制。
 >
