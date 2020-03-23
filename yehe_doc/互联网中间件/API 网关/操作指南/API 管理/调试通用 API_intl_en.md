@@ -9,7 +9,7 @@ On the debugging page, you can see the frontend configuration information of the
 	- If you configure a parameter to have a default value, the default value will be populated in the input box by default;
 	- If you configure a parameter to be required, a check will be performed to verify whether any value has been entered for it before testing;
 	- If your request method is POST, PUT, or DELETE, you will be required to enter a value for the `Body` parameter.
-![Debugging](https://main.qcloudimg.com/raw/27992e84649800c7692945bec2345eea.png)
+![Debugging](https://main.qcloudimg.com/raw/68280dbebd0c7eedec860184c03ddc66.png)
 > If a parameter is optional and no value is entered for it, API Gateway will send a `null` to the backend by default.
 4. After clicking **Send request**, you will see the output in two parts:
    - Request log: the log can output your request record in detail, including the request path and method composed of frontend parameters, header parameters, the configuration actually called by the backend, the process of initiating the request to the backend, and the response code and data content of the response from the backend. 
