@@ -21,11 +21,11 @@
 ### 开通回执权益
 
 1. 登录 [ AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 网站 ，选择【我的应用】。
-![](https://main.qcloudimg.com/raw/d625fe7e497f2bbe0aff0a881a21dc15.png)    
+![](https://main.qcloudimg.com/raw/59521f7425a5d6e1bccae726635096dc.png)    
 2. 选择需要开通服务的应用所属产品的名称，进入应用信息页面。
 3. 单击【开发】页签，选择左侧导航【增长服务】 > 【推送服务】。
 4. 在服务状态处，单击【开通】，开通服务后，可以选择是否开通回执。
-![](https://main.qcloudimg.com/raw/07a9ae9fc123f6e86fe4ddff5b4de721.png)
+![](https://main.qcloudimg.com/raw/32556c2eb1d74756583cc8c27d436883.png)
 
 ### 回执参数配置
 
@@ -39,4 +39,4 @@
 >目前单击【测试回执】，会提示“证书错误，请修改后上传”，请忽略并直接单击【提交】。
 
 5. 单击【提交】，即可完成服务的开通。
-![](https://main.qcloudimg.com/raw/d58a7ef52c34e9356a870607cfd9794f.png)
+![](https://main.qcloudimg.com/raw/98a53519ef466977928ebfc1eac879fa.png)

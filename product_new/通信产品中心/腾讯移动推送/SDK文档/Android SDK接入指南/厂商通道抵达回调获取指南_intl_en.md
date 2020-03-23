@@ -21,11 +21,11 @@ The acquisition of arriving data through the Huawei channel needs to be configur
 ### Enabling receipt permission
 
 1. Log in to [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) and select **My App**.
-![](https://main.qcloudimg.com/raw/d625fe7e497f2bbe0aff0a881a21dc15.png)    
+![](https://main.qcloudimg.com/raw/59521f7425a5d6e1bccae726635096dc.png)    
 2. Select the product name of your app for which you want to activate the push service to enter the app information page.
 3. Click the **Develop** tab and select **Growing** > **Push Service** on the left sidebar.
 4. In the service status section, click **Activate**. After the service is activated, you can select whether to enable receipt.
-![](https://main.qcloudimg.com/raw/07a9ae9fc123f6e86fe4ddff5b4de721.png)
+![](https://main.qcloudimg.com/raw/32556c2eb1d74756583cc8c27d436883.png)
 
 ### Configuring receipt parameters
 
@@ -39,4 +39,4 @@ The acquisition of arriving data through the Huawei channel needs to be configur
 >Currently, if you click **Test Receipt**, the error message "Certificate error. Please modify and upload it again" will be displayed. Ignore it and click **Submit**.
 
 5. Click **Submit** to activate the service.
-![](https://main.qcloudimg.com/raw/d58a7ef52c34e9356a870607cfd9794f.png)
+![](https://main.qcloudimg.com/raw/98a53519ef466977928ebfc1eac879fa.png)
