@@ -59,9 +59,9 @@ __介绍__
 
 调用 TRTCCloud 中的 enterRoom() 接口执行进房操作后，会收到来自 SDK 的 onEnterRoom(result) 回调：
 - 如果加入成功，result 会是一个正数（result > 0），表示加入房间所消耗的时间，单位为毫秒（ms）。
-- 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。进房失败的错误码含义请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。
+- 如果加入失败，result 会是一个负数（result < 0），表示进房失败的错误码。进房失败的错误码含义请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35140)。
 
->?在 Ver6.6 之前的版本，只有进房成功会抛出 onEnterRoom(result) 回调，进房失败由 [onError()](https://cloud.tencent.com/document/product/647/36779#onerror) 回调抛出。在 Ver6.6 及之后改为：进房成功返回正的 result，进房失败返回负的 result，同时进房失败也会有 [onError()](https://cloud.tencent.com/document/product/647/36779#onerror) 回调抛出。
+>?在 Ver6.6 之前的版本，只有进房成功会抛出 onEnterRoom(result) 回调，进房失败由 [onError()](https://intl.cloud.tencent.com/document/product/647/35138#onerror) 回调抛出。在 Ver6.6 及之后改为：进房成功返回正的 result，进房失败返回负的 result，同时进房失败也会有 [onError()](https://intl.cloud.tencent.com/document/product/647/35138#onerror) 回调抛出。
 
 
 
@@ -80,8 +80,8 @@ __参数__
 
 __介绍__
 
-调用 TRTCCloud 中的 exitRoom() 接口会执行退出房间的相关逻辑，例如释放音视频设备资源和编解码器资源等。待资源释放完毕，SDK 会通过 [onExitRoom()](https://cloud.tencent.com/document/product/647/36779#onexitroom) 回调通知到您。
-如果您要再次调用 enterRoom() 或者切换到其他的音视频 SDK，请等待 [onExitRoom()](https://cloud.tencent.com/document/product/647/36779#onexitroom) 回调到来后再执行相关操作。否则可能会遇到例如摄像头、麦克风设备被强占等各种异常问题。
+调用 TRTCCloud 中的 exitRoom() 接口会执行退出房间的相关逻辑，例如释放音视频设备资源和编解码器资源等。待资源释放完毕，SDK 会通过 [onExitRoom()](https://intl.cloud.tencent.com/document/product/647/35138#onexitroom) 回调通知到您。
+如果您要再次调用 enterRoom() 或者切换到其他的音视频 SDK，请等待 [onExitRoom()](https://intl.cloud.tencent.com/document/product/647/35138#onexitroom) 回调到来后再执行相关操作。否则可能会遇到例如摄像头、麦克风设备被强占等各种异常问题。
 
 
 ### onSwitchRole
@@ -95,12 +95,12 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| errCode | TXLiteAVError | 错误码，ERR_NULL 代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。 |
+| errCode | TXLiteAVError | 错误码，ERR_NULL 代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35140)。 |
 | errMsg | string | 错误信息。 |
 
 __介绍__
 
-调用 TRTCCloud 中的 switchRole() 接口会切换主播和观众的角色，该操作会伴随一个线路切换的过程，待 SDK 切换完成后，会抛出 [onSwitchRole()](https://cloud.tencent.com/document/product/647/36779#onswitchrole) 事件回调。
+调用 TRTCCloud 中的 switchRole() 接口会切换主播和观众的角色，该操作会伴随一个线路切换的过程，待 SDK 切换完成后，会抛出 [onSwitchRole()](https://intl.cloud.tencent.com/document/product/647/35138#onswitchrole) 事件回调。
 
 
 ### onConnectOtherRoom
@@ -115,12 +115,12 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | string | 要 PK 的目标主播 userId。 |
-| errCode | TXLiteAVError | 错误码，ERR_NULL 代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。 |
+| errCode | TXLiteAVError | 错误码，ERR_NULL 代表切换成功，其他请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35140)。 |
 | errMsg | string | 错误信息。 |
 
 __介绍__
 
-调用 TRTCCloud 中的 connectOtherRoom() 接口会将两个不同房间中的主播拉通视频通话，也就是所谓的“主播PK”功能。调用者会收到 [onConnectOtherRoom()](https://cloud.tencent.com/document/product/647/36779#onconnectotherroom) 回调来获知跨房通话是否成功， 如果成功，两个房间中的所有用户都会收到 PK 主播的 [onUserVideoAvailable()](https://cloud.tencent.com/document/product/647/36779#onuservideoavailable) 回调。
+调用 TRTCCloud 中的 connectOtherRoom() 接口会将两个不同房间中的主播拉通视频通话，也就是所谓的“主播PK”功能。调用者会收到 [onConnectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/35138#onconnectotherroom) 回调来获知跨房通话是否成功， 如果成功，两个房间中的所有用户都会收到 PK 主播的 [onUserVideoAvailable()](https://intl.cloud.tencent.com/document/product/647/35138#onuservideoavailable) 回调。
 
 
 ### onDisconnectOtherRoom
@@ -152,7 +152,7 @@ __介绍__
 - 视频通话场景（TRTCAppSceneVideoCall）：该场景下用户没有角色的区别，任何用户进入房间都会触发该通知。
 - 在线直播场景（TRTCAppSceneLIVE）：在线直播场景不限制观众的数量，如果任何用户进出都抛出回调会引起很大的性能损耗，所以该场景下只有主播进入房间时才会触发该通知，观众进入房间不会触发该通知。
 
->?注意 onRemoteUserEnterRoom 和 onRemoteUserLeaveRoom 只适用于维护当前房间里的“成员列表”，如果需要显示远程画面，建议使用监听 [onUserVideoAvailable()](https://cloud.tencent.com/document/product/647/36779#onuservideoavailable) 事件回调。
+>?注意 onRemoteUserEnterRoom 和 onRemoteUserLeaveRoom 只适用于维护当前房间里的“成员列表”，如果需要显示远程画面，建议使用监听 [onUserVideoAvailable()](https://intl.cloud.tencent.com/document/product/647/35138#onuservideoavailable) 事件回调。
 
 
 
@@ -352,8 +352,8 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| localQuality | [TRTCQualityInfo](https://cloud.tencent.com/document/product/647/36780#trtcqualityinfo) | 上行网络质量。 |
-| remoteQuality | [TRTCQualityInfo](https://cloud.tencent.com/document/product/647/36780#trtcqualityinfo)[] | 下行网络质量。 |
+| localQuality | [TRTCQualityInfo](https://intl.cloud.tencent.com/document/product/647/35139#trtcqualityinfo) | 上行网络质量。 |
+| remoteQuality | [TRTCQualityInfo](https://intl.cloud.tencent.com/document/product/647/35139#trtcqualityinfo)[] | 下行网络质量。 |
 | remoteQualityCount | uint | 下行网络质量的数组大小。 |
 
 >?userId == null 表示自己当前的视频质量。
@@ -370,7 +370,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| statis | [TRTCStatistics](https://cloud.tencent.com/document/product/647/36780#trtcstatistics) | 统计数据，包括本地和远程的。 |
+| statis | [TRTCStatistics](https://intl.cloud.tencent.com/document/product/647/35139#trtcstatistics) | 统计数据，包括本地和远程的。 |
 
 __介绍__
 
@@ -416,7 +416,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| currentResult | [TRTCSpeedTestResult](https://cloud.tencent.com/document/product/647/36780#trtcspeedtestresult) | 当前完成的测速结果。 |
+| currentResult | [TRTCSpeedTestResult](https://intl.cloud.tencent.com/document/product/647/35139#trtcspeedtestresult) | 当前完成的测速结果。 |
 | finishedCount | uint | 已完成测速的服务器数量。 |
 | totalCount | uint | 需要测速的服务器总数量。 |
 
@@ -450,7 +450,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| userVolumes | [TRTCVolumeInfo](https://cloud.tencent.com/document/product/647/36780#trtcvolumeinfo)[] | 所有正在说话的房间成员的音量，取值范围0 - 100。 |
+| userVolumes | [TRTCVolumeInfo](https://intl.cloud.tencent.com/document/product/647/35139#trtcvolumeinfo)[] | 所有正在说话的房间成员的音量，取值范围0 - 100。 |
 | userVolumesCount | uint | 房间成员数量。 |
 | totalVolume | uint | 所有远端成员的总音量, 取值范围0 - 100。 |
 
@@ -474,8 +474,8 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | deviceId | string | 设备 ID。 |
-| type | [TRTCDeviceType](https://cloud.tencent.com/document/product/647/36780#trtcdevicetype) | 设备类型。 |
-| state | [TRTCDeviceState](https://cloud.tencent.com/document/product/647/36780#trtcdevicestate) | 事件类型。 |
+| type | [TRTCDeviceType](https://intl.cloud.tencent.com/document/product/647/35139#trtcdevicetype) | 设备类型。 |
+| state | [TRTCDeviceState](https://intl.cloud.tencent.com/document/product/647/35139#trtcdevicestate) | 事件类型。 |
 
 
 ### onTestMicVolume
@@ -770,7 +770,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | string | 用户标识。 |
-| streamType | [TRTCVideoStreamType](https://cloud.tencent.com/document/product/647/36780#trtcvideostreamtype) | 流类型，支持摄像头、屏幕分享。 |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideostreamtype) | 流类型，支持摄像头、屏幕分享。 |
 | frame | TRTCVideoFrame | 视频帧数据。 |
 
 __介绍__
@@ -867,7 +867,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | log | string | 日志内容。 |
-| level | TRTCLogLevel | 日志等级，请参见 [TRTCLogLevel](https://cloud.tencent.com/document/product/647/36780#trtcloglevel)。 |
+| level | TRTCLogLevel | 日志等级，请参见 [TRTCLogLevel](https://intl.cloud.tencent.com/document/product/647/35139#trtcloglevel)。 |
 | module | string | 暂无具体意义，目前为固定值 TXLiteAVSDK。 |
 
 

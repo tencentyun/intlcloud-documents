@@ -5,19 +5,19 @@ ITRTCCloud @ TXLiteAVSDK。
 
 ### getTRTCShareInstance
 
-用于动态加载 dll 时，获取 [ITRTCCloud](https://intl.cloud.tencent.com/document/product/647/36778#itrtccloud) 对象指针。
+用于动态加载 dll 时，获取 [ITRTCCloud](https://intl.cloud.tencent.com/document/product/647/35137#itrtccloud) 对象指针。
 ```
 static ITRTCCloud getTRTCShareInstance()
 ```
 
 __返回__
 
-返回 [ITRTCCloud](https://intl.cloud.tencent.com/document/product/647/36778#itrtccloud) 单例对象。
+返回 [ITRTCCloud](https://intl.cloud.tencent.com/document/product/647/35137#itrtccloud) 单例对象。
 
 
 ### destroyTRTCShareInstance
 
-释放 [ITRTCCloud](https://intl.cloud.tencent.com/document/product/647/36778#itrtccloud) 单例对象。
+释放 [ITRTCCloud](https://intl.cloud.tencent.com/document/product/647/35137#itrtccloud) 单例对象。
 ```
 static void destroyTRTCShareInstance()
 ```
@@ -27,7 +27,7 @@ static void destroyTRTCShareInstance()
 ## 设置 ITRTCCloudCallback 回调
 ### addCallback
 
-设置回调接口 [ITRTCCloudCallback](https://intl.cloud.tencent.com/document/product/647/36779)。
+设置回调接口 [ITRTCCloudCallback](https://intl.cloud.tencent.com/document/product/647/35138)。
 ```
 void addCallback(ITRTCCloudCallback callback)
 ```
@@ -36,11 +36,11 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| callback | [ITRTCCloudCallback](https://intl.cloud.tencent.com/document/product/647/36779) | 事件回调指针。 |
+| callback | [ITRTCCloudCallback](https://intl.cloud.tencent.com/document/product/647/35138) | 事件回调指针。 |
 
 __介绍__
 
-您可以通过 [ITRTCCloudCallback](https://intl.cloud.tencent.com/document/product/647/36779) 获得来自 SDK 的各种状态通知，详见 ITRTCCloudCallback.h 中的定义。
+您可以通过 [ITRTCCloudCallback](https://intl.cloud.tencent.com/document/product/647/35138) 获得来自 SDK 的各种状态通知，详见 ITRTCCloudCallback.h 中的定义。
 
 
 ### removeCallback
@@ -54,7 +54,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| callback | [ITRTCCloudCallback](https://intl.cloud.tencent.com/document/product/647/36779) | 事件回调指针。 |
+| callback | [ITRTCCloudCallback](https://intl.cloud.tencent.com/document/product/647/35138) | 事件回调指针。 |
 
 
 
@@ -70,14 +70,14 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| params | ref [TRTCParams](https://intl.cloud.tencent.com/document/product/647/36780#trtcparams) | 进房参数，请参考 [TRTCParams](https://intl.cloud.tencent.com/document/product/647/36780#trtcparams)。 |
-| scene | [TRTCAppScene](https://intl.cloud.tencent.com/document/product/647/36780#trtcappscene) | 应用场景，目前支持视频通话（VideoCall）和在线直播（Live）两种场景。 |
+| params | ref [TRTCParams](https://intl.cloud.tencent.com/document/product/647/35139#trtcparams) | 进房参数，请参考 [TRTCParams](https://intl.cloud.tencent.com/document/product/647/35139#trtcparams)。 |
+| scene | [TRTCAppScene](https://intl.cloud.tencent.com/document/product/647/35139#trtcappscene) | 应用场景，目前支持视频通话（VideoCall）和在线直播（Live）两种场景。 |
 
 __介绍__
 
-如果加入成功，您会收到 onEnterRoom() 回调；如果失败，您会收到 onEnterRoom(result) 回调。跟进房失败相关的错误码，请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35124)。
+如果加入成功，您会收到 onEnterRoom() 回调；如果失败，您会收到 onEnterRoom(result) 回调。跟进房失败相关的错误码，请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35140)。
 
->?不管进房是否成功，enterRoom 都必须与 exitRoom 配对使用，在调用 exitRoom 前再次调用 enterRoom 函数会导致不可预期的错误问题。
+>不管进房是否成功，enterRoom 都必须与 exitRoom 配对使用，在调用 exitRoom 前再次调用 enterRoom 函数会导致不可预期的错误问题。
 
 
 
@@ -90,8 +90,8 @@ void exitRoom()
 
 __介绍__
 
-调用 [exitRoom()](https://intl.cloud.tencent.com/document/product/647/36778#exitroom) 接口会执行退出房间的相关逻辑，例如释放音视频设备资源和编解码器资源等。待资源释放完毕，SDK 会通过 TRTCCloudCallback 中的 onExitRoom() 回调通知您。
-如果您需要再次调用 [enterRoom()](https://intl.cloud.tencent.com/document/product/647/36778#enterroom) 或者切换到其他的音视频 SDK，请等待 onExitRoom() 回调到来后再执行相关操作。否则可能会遇到如摄像头、麦克风设备被强占等各种异常问题。
+调用 [exitRoom()](https://intl.cloud.tencent.com/document/product/647/35137#exitroom) 接口会执行退出房间的相关逻辑，例如释放音视频设备资源和编解码器资源等。待资源释放完毕，SDK 会通过 TRTCCloudCallback 中的 onExitRoom() 回调通知您。
+如果您需要再次调用 [enterRoom()](https://intl.cloud.tencent.com/document/product/647/35137#enterroom) 或者切换到其他的音视频 SDK，请等待 onExitRoom() 回调到来后再执行相关操作。否则可能会遇到如摄像头、麦克风设备被强占等各种异常问题。
 
 
 ### switchRole
@@ -105,11 +105,11 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| role | [TRTCRoleType](https://intl.cloud.tencent.com/document/product/647/36780#trtcroletype) | 目标角色，默认为主播。 |
+| role | [TRTCRoleType](https://intl.cloud.tencent.com/document/product/647/35139#trtcroletype) | 目标角色，默认为主播。 |
 
 __介绍__
 
-在直播场景下，一个用户可能需要在“观众”和“主播”之间来回切换。您可以在进房前通过 [TRTCParams](https://intl.cloud.tencent.com/document/product/647/36780#trtcparams) 中的 role 字段确定角色，也可以通过 switchRole 在进房后切换角色。
+在直播场景下，一个用户可能需要在“观众”和“主播”之间来回切换。您可以在进房前通过 [TRTCParams](https://intl.cloud.tencent.com/document/product/647/35139#trtcparams) 中的 role 字段确定角色，也可以通过 switchRole 在进房后切换角色。
 
 
 ### connectOtherRoom
@@ -128,7 +128,7 @@ __参数__
 __介绍__
 
 TRTC 中两个不同音视频房间中的主播，可以通过“跨房通话”功能拉通连麦通话功能。使用此功能时，两个主播无需退出各自原来的直播间即可进行“连麦 PK”。
-例如：当房间“001”中的主播 A 通过 [connectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/36778#connectotherroom) 跟房间“002”中的主播 B 拉通跨房通话后， 房间“001”中的用户都会收到主播 B 的 onUserEnter(B) 回调和 onUserVideoAvailable(B，true) 回调。房间“002”中的用户都会收到主播 A 的 onUserEnter(A) 回调和 onUserVideoAvailable(A，true) 回调。
+例如：当房间“001”中的主播 A 通过 [connectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/35137#connectotherroom) 跟房间“002”中的主播 B 拉通跨房通话后， 房间“001”中的用户都会收到主播 B 的 onUserEnter(B) 回调和 onUserVideoAvailable(B，true) 回调。房间“002”中的用户都会收到主播 A 的 onUserEnter(A) 回调和 onUserVideoAvailable(A，true) 回调。
 简言之，跨房通话的本质，就是把两个不同房间中的主播相互分享，让每个房间里的观众都能看到两个主播。
 
 <pre>
@@ -148,8 +148,8 @@ TRTC 中两个不同音视频房间中的主播，可以通过“跨房通话”
 </pre>
 
 跨房通话的参数考虑到后续扩展字段的兼容性问题，暂时采用了 JSON 格式的参数，要求至少包含两个字段：
-- roomId：房间“001”中的主播 A 要跟房间“002”中的主播 B 连麦，主播 A 调用 [connectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/36778#connectotherroom) 时 roomId 应指定为“002”。
-- userId：房间“001”中的主播 A 要跟房间“002”中的主播 B 连麦，主播 A 调用 [connectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/36778#connectotherroom) 时 userId 应指定为 B 的 userId。
+- roomId：房间“001”中的主播 A 要跟房间“002”中的主播 B 连麦，主播 A 调用 [connectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/35137#connectotherroom) 时 roomId 应指定为“002”。
+- userId：房间“001”中的主播 A 要跟房间“002”中的主播 B 连麦，主播 A 调用 [connectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/35137#connectotherroom) 时 userId 应指定为 B 的 userId。
 
 
 跨房通话的请求结果会通过 TRTCCloudCallback 中的 onConnectOtherRoom() 回调通知您。
@@ -195,7 +195,7 @@ __介绍__
 
 为实现进房秒开的绝佳体验，SDK 默认进房后自动接收音视频。即在您进房成功的同时，您将立刻收到远端所有用户的音视频数据。若您没有调用 startRemoteView，视频数据将自动超时取消。若您主要用于语音聊天等没有自动接收视频数据需求的场景，您可以根据实际需求选择接收模式。
 
->?需要在进房前设置才能生效。
+>需要在进房前设置才能生效。
 
 
 
@@ -289,7 +289,7 @@ __介绍__
 void stopAllRemoteView()
 ```
 
->?如果有屏幕分享的画面在显示，则屏幕分享的画面也会一并被关闭。
+>如果有屏幕分享的画面在显示，则屏幕分享的画面也会一并被关闭。
 
 
 
@@ -337,7 +337,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| params | ref [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideoencparam) | 视频编码参数，详情请参考 TRTCCloudDef.h 中的 [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideoencparam) 定义。 |
+| params | ref [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideoencparam) | 视频编码参数，详情请参考 TRTCCloudDef.h 中的 [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideoencparam) 定义。 |
 
 __介绍__
 
@@ -355,7 +355,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| params | ref [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcnetworkqosparam) | 网络流控参数，详情请参考 TRTCCloudDef.h 中的 [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcnetworkqosparam) 定义。 |
+| params | ref [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcnetworkqosparam) | 网络流控参数，详情请参考 TRTCCloudDef.h 中的 [TRTCNetworkQosParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcnetworkqosparam) 定义。 |
 
 __介绍__
 
@@ -373,7 +373,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边），默认值：TRTCVideoFillMode_Fit。 |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边），默认值：TRTCVideoFillMode_Fit。 |
 
 
 ### setRemoteViewFillMode
@@ -388,7 +388,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | string | 用户 ID。 |
-| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边），默认值：TRTCVideoFillMode_Fit。 |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边），默认值：TRTCVideoFillMode_Fit。 |
 
 
 ### setLocalViewRotation
@@ -478,7 +478,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | enable | bool | 是否开启小画面编码，默认值：false。 |
-| smallVideoParam | ref [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideoencparam) | 小流的视频参数。 |
+| smallVideoParam | ref [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideoencparam) | 小流的视频参数。 |
 
 __介绍__
 
@@ -500,7 +500,7 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | string | 用户 ID。 |
-| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideostreamtype) | 视频流类型，即选择看大画面还是小画面，默认为 TRTCVideoStreamTypeBig。 |
+| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideostreamtype) | 视频流类型，即选择看大画面还是小画面，默认为 TRTCVideoStreamTypeBig。 |
 
 __介绍__
 
@@ -518,7 +518,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideostreamtype) | 默认观看大画面还是小画面，默认为 TRTCVideoStreamTypeBig。 |
+| type | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideostreamtype) | 默认观看大画面还是小画面，默认为 TRTCVideoStreamTypeBig。 |
 
 __介绍__
 
@@ -614,9 +614,9 @@ __参数__
 
 __介绍__
 
-开启此功能后，SDK 会在 onUserVoiceVolume() 中反馈对每一路声音音量大小值的评估。如需打开此功能，请在 [startLocalAudio()](https://intl.cloud.tencent.com/document/product/647/36778#startlocalaudio) 之前调用。
+开启此功能后，SDK 会在 onUserVoiceVolume() 中反馈对每一路声音音量大小值的评估。如需打开此功能，请在 [startLocalAudio()](https://intl.cloud.tencent.com/document/product/647/35137#startlocalaudio) 之前调用。
 
->?Demo 中有一个音量大小的提示条，就是基于该接口实现的。
+>Demo 中有一个音量大小的提示条，就是基于该接口实现的。
 
 ### startAudioRecording
 
@@ -629,7 +629,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| audioRecordingParams | ref TRTCAudioRecordingParams | 录音参数，请参考 [TRTCAudioRecordingParams](https://intl.cloud.tencent.com/document/product/647/36780#trtcaudiorecordingparams)。 |
+| audioRecordingParams | ref TRTCAudioRecordingParams | 录音参数，请参考 [TRTCAudioRecordingParams](https://intl.cloud.tencent.com/document/product/647/35139#trtcaudiorecordingparams)。 |
 
 __返回__
 
@@ -679,7 +679,7 @@ pDevice.release();
 pDevice = null;
 </pre>
 
->?SDK 维护 ITRTCDeviceCollection 对象的生命周期。
+>SDK 维护 ITRTCDeviceCollection 对象的生命周期。
 
 
 
@@ -736,7 +736,7 @@ pDevice.release();
 pDevice = null;
 </pre>
 
->?SDK 维护 ITRTCDeviceCollection 对象的生命周期。
+>SDK 维护 ITRTCDeviceCollection 对象的生命周期。
 
 
 
@@ -821,7 +821,7 @@ pDevice.release();
 pDevice = null;
 </pre>
 
->?SDK 维护 ITRTCDeviceCollection 对象的生命周期。
+>SDK 维护 ITRTCDeviceCollection 对象的生命周期。
 
 
 
@@ -862,7 +862,7 @@ __返回__
 
 扬声器音量，范围0 - 100。
 
->?查询的是系统扬声器的音量大小。
+>查询的是系统扬声器的音量大小。
 
 
 
@@ -879,7 +879,7 @@ __参数__
 |-----|-----|-----|
 | volume | uint | 设置的扬声器音量，范围0 - 100。 |
 
->?设置的是系统扬声器的音量大小。
+>设置的是系统扬声器的音量大小。
 
 
 
@@ -895,7 +895,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| style | [TRTCBeautyStyle](https://intl.cloud.tencent.com/document/product/647/36780#trtcbeautystyle) | 美颜风格，光滑或者自然，光滑风格磨皮更加明显，适合娱乐场景。 |
+| style | [TRTCBeautyStyle](https://intl.cloud.tencent.com/document/product/647/35139#trtcbeautystyle) | 美颜风格，光滑或者自然，光滑风格磨皮更加明显，适合娱乐场景。 |
 | beauty | uint | 美颜级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显。 |
 | white | uint | 美白级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显。 |
 | ruddiness | uint | 红润级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显，该参数暂未生效。 |
@@ -916,9 +916,9 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideostreamtype) | 需要设置水印的流类型（TRTCVideoStreamTypeBig 或 TRTCVideoStreamTypeSub）。 |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideostreamtype) | 需要设置水印的流类型（TRTCVideoStreamTypeBig 或 TRTCVideoStreamTypeSub）。 |
 | srcData | string | 水印图片源数据，设置为 NULL 时表示去掉水印。 |
-| srcType | [TRTCWaterMarkSrcType](https://intl.cloud.tencent.com/document/product/647/36780#trtcwatermarksrctype) | 水印图片源数据类型，srcData 设置为 NULL 时，该参数无效。 |
+| srcType | [TRTCWaterMarkSrcType](https://intl.cloud.tencent.com/document/product/647/35139#trtcwatermarksrctype) | 水印图片源数据类型，srcData 设置为 NULL 时，该参数无效。 |
 | nWidth | uint | 水印图片像素宽度，源数据为文件路径时忽略该参数。 |
 | nHeight | uint | 水印图片像素高度，源数据为文件路径时忽略该参数。 |
 | xOffset | float | 水印显示的左上角 x 轴偏移。 |
@@ -932,7 +932,7 @@ __介绍__
 - yOffset：水印的坐标，取值范围为0 - 1的浮点数。
 - fWidthRatio：水印的大小比例，取值范围为0 - 1的浮点数。
 
->?大小流暂未支持。
+>大小流暂未支持。
 
 
 
@@ -953,9 +953,9 @@ __参数__
 
 __介绍__
 
-对应于 [startRemoteView()](https://intl.cloud.tencent.com/document/product/647/36778#startremoteview) 用于显示主画面，该接口只能用于显示辅路（屏幕分享、远程播片）画面。
+对应于 [startRemoteView()](https://intl.cloud.tencent.com/document/product/647/35137#startremoteview) 用于显示主画面，该接口只能用于显示辅路（屏幕分享、远程播片）画面。
 
->?请在 onUserSubStreamAvailable 回调后再调用这个接口。
+>请在 onUserSubStreamAvailable 回调后再调用这个接口。
 
 
 
@@ -985,11 +985,11 @@ __参数__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | string | 用户的 ID。 |
-| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边），默认值：TRTCVideoFillMode_Fit。 |
+| mode | [TRTCVideoFillMode](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideofillmode) | 填充（画面可能会被拉伸裁剪）或适应（画面可能会有黑边），默认值：TRTCVideoFillMode_Fit。 |
 
 __介绍__
 
-对应于 [setRemoteViewFillMode()](https://intl.cloud.tencent.com/document/product/647/36778#setremoteviewfillmode) 于设置远端的主路画面，该接口用于设置远端的辅路（屏幕分享、远程播片）画面。
+对应于 [setRemoteViewFillMode()](https://intl.cloud.tencent.com/document/product/647/35137#setremoteviewfillmode) 于设置远端的主路画面，该接口用于设置远端的辅路（屏幕分享、远程播片）画面。
 
 
 ### getScreenCaptureSources
@@ -1014,7 +1014,7 @@ __介绍__
 
 如果您要给您的 App 增加屏幕分享功能，一般需要先显示一个窗口选择界面，这样用户可以选择希望分享的窗口。通过下列函数，您可以获得可分享窗口的 ID、类型、窗口名称以及缩略图。获取上述信息后，您就可以实现一个窗口选择界面。您也可以使用 Demo 源码中已经实现好的窗口选择界面。
 
->?返回的列表中包括屏幕和应用窗口，屏幕会在列表的前面几个元素中。
+>返回的列表中包括屏幕和应用窗口，屏幕会在列表的前面几个元素中。
 >SDK 维护 ITRTCScreenCaptureSourceList 对象的生命周期。
 
 
@@ -1093,11 +1093,11 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| params | ref [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideoencparam) | 辅流编码参数，详情请参考 TRTCCloudDef.h 中的 [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcvideoencparam) 定义。 |
+| params | ref [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideoencparam) | 辅流编码参数，详情请参考 TRTCCloudDef.h 中的 [TRTCVideoEncParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideoencparam) 定义。 |
 
 __介绍__
 
-对应于 [setVideoEncoderParam()](https://intl.cloud.tencent.com/document/product/647/36778#setvideoencoderparam) 设置主路画面的编码质量，该函数仅用于设置辅路（屏幕分享、远程播片）的编码参数。 该设置决定远端用户看到的画面质量，同时也是云端录制出的视频文件的画面质量。
+对应于 [setVideoEncoderParam()](https://intl.cloud.tencent.com/document/product/647/35137#setvideoencoderparam) 设置主路画面的编码质量，该函数仅用于设置辅路（屏幕分享、远程播片）的编码参数。 该设置决定远端用户看到的画面质量，同时也是云端录制出的视频文件的画面质量。
 
 
 ### setSubStreamMixVolume
@@ -1135,7 +1135,7 @@ __参数__
 
 __介绍__
 
-开启该模式后，SDK 不在运行原有的视频采集流程，只保留编码和发送能力。您需要用 [sendCustomVideoData()](https://intl.cloud.tencent.com/document/product/647/36778#sendcustomvideodata) 不断地向 SDK 塞入自己采集的视频画面。
+开启该模式后，SDK 不在运行原有的视频采集流程，只保留编码和发送能力。您需要用 [sendCustomVideoData()](https://intl.cloud.tencent.com/document/product/647/35137#sendcustomvideodata) 不断地向 SDK 塞入自己采集的视频画面。
 
 
 ### sendCustomVideoData
@@ -1165,14 +1165,14 @@ TRTCVideoFrame 推荐如下填写方式（其他字段不需要填写）：
 
 参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
->?
+>
 >- SDK 内部有帧率控制逻辑，目标帧率以您在 setVideoEncoderParam 中设置的为准，太快会自动丢帧，太慢则会自动补帧。
 >- 可以设置 frame 中的 timestamp 为 0，相当于让 SDK 自行设置时间戳，但请“均匀”地控制 sendCustomVideoData 的调用间隔，否则会导致视频帧率不稳定。
 
 
 ### enableCustomAudioCapture
 
-启用音频自定义采集模式 开启该模式后， SDK 停止运行原有的音频采集流程，只保留编码和发送能力。您需要用 [sendCustomAudioData()](https://intl.cloud.tencent.com/document/product/647/36778#sendcustomaudiodata) 不断地向 SDK 塞入自己采集的音频数据。
+启用音频自定义采集模式 开启该模式后， SDK 停止运行原有的音频采集流程，只保留编码和发送能力。您需要用 [sendCustomAudioData()](https://intl.cloud.tencent.com/document/product/647/35137#sendcustomaudiodata) 不断地向 SDK 塞入自己采集的音频数据。
 ```
 void enableCustomAudioCapture(bool enable)
 ```
@@ -1211,7 +1211,7 @@ TRTCAudioFrame 推荐如下填写方式（其他字段不需要填写）：
 
 参考文档：[自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
->?可以设置 frame 中的 timestamp 为 0，相当于让 SDK 自行设置时间戳，但请“均匀”地控制 sendCustomAudioData 的调用间隔，否则会导致声音断断续续。
+>可以设置 frame 中的 timestamp 为 0，相当于让 SDK 自行设置时间戳，但请“均匀”地控制 sendCustomAudioData 的调用间隔，否则会导致声音断断续续。
 
 
 
@@ -1228,13 +1228,13 @@ __参数__
 |-----|-----|-----|
 | pixelFormat | TRTCVideoPixelFormat | 指定回调的像素格式。 |
 | bufferType | TRTCVideoBufferType | 指定视频数据结构类型。 |
-| callback | [ITRTCVideoRenderCallback](https://intl.cloud.tencent.com/document/product/647/36779#itrtcvideorendercallback) | 自定义渲染回调。 |
+| callback | [ITRTCVideoRenderCallback](https://intl.cloud.tencent.com/document/product/647/35138#itrtcvideorendercallback) | 自定义渲染回调。 |
 
 __返回__
 
 0：成功；<0：错误。
 
->?设置此方法，SDK 内部会回调采集到的数据，SDK 跳过 IntPtr 渲染逻辑调用 setLocalVideoRenderCallback(TRTCVideoPixelFormat_Unknown， TRTCVideoBufferType_Unknown， null) 停止回调。
+>设置此方法，SDK 内部会回调采集到的数据，SDK 跳过 IntPtr 渲染逻辑调用 setLocalVideoRenderCallback(TRTCVideoPixelFormat_Unknown， TRTCVideoBufferType_Unknown， null) 停止回调。
 
 
 ### setRemoteVideoRenderCallback
@@ -1251,7 +1251,7 @@ __参数__
 | userId | string | 用户标识。 |
 | pixelFormat | TRTCVideoPixelFormat | 指定回调的像素格式。 |
 | bufferType | TRTCVideoBufferType | 指定视频数据结构类型。 |
-| callback | [ITRTCVideoRenderCallback](https://intl.cloud.tencent.com/document/product/647/36779#itrtcvideorendercallback) | 自定义渲染回调。 |
+| callback | [ITRTCVideoRenderCallback](https://intl.cloud.tencent.com/document/product/647/35138#itrtcvideorendercallback) | 自定义渲染回调。 |
 
 __返回__
 
@@ -1261,7 +1261,7 @@ __介绍__
 
 此方法同 setLocalVideoRenderDelegate，区别在于 setLocalVideoRenderDelegate 是本地画面的渲染回调，而  setRemoteVideoRenderCallback 是远程画面的渲染回调。
 
->?设置此方法，SDK 内部会把远端的数据解码后回调出来，SDK 跳过 IntPtr 渲染逻辑调用 setRemoteVideoRenderCallback(userId， TRTCVideoPixelFormat_Unknown，  TRTCVideoBufferType_Unknown， null) 停止回调。
+>设置此方法，SDK 内部会把远端的数据解码后回调出来，SDK 跳过 IntPtr 渲染逻辑调用 setRemoteVideoRenderCallback(userId， TRTCVideoPixelFormat_Unknown，  TRTCVideoBufferType_Unknown， null) 停止回调。
 
 
 
@@ -1276,7 +1276,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| callback | [ITRTCAudioFrameCallback](https://intl.cloud.tencent.com/document/product/647/36779#itrtcaudioframecallback) | 声音帧数据（PCM 格式）的回调，callback = null 则停止回调数据。 |
+| callback | [ITRTCAudioFrameCallback](https://intl.cloud.tencent.com/document/product/647/35138#itrtcaudioframecallback) | 声音帧数据（PCM 格式）的回调，callback = null 则停止回调数据。 |
 
 __返回__
 
@@ -1317,7 +1317,7 @@ __介绍__
 
 该接口可以借助音视频数据通道向当前房间里的其他用户广播您自定义的数据，但因为复用了音视频数据通道， 请务必严格控制自定义消息的发送频率和消息体的大小，否则会影响音视频数据的质量控制逻辑，造成不确定性的问题。
 
->?本接口有以下限制：
+>本接口有以下限制：
 >- 发送消息到房间内所有用户，每秒最多能发送30条消息。
 >- 每个包最大为1KB，超过则很有可能会被中间路由器或者服务器丢弃。
 >- 每个客户端每秒最多能发送总计8KB数据。
@@ -1349,7 +1349,7 @@ __介绍__
 与 sendCustomCmdMsg 的原理不同，sendSEIMsg 是将数据直接塞入视频数据头中。因此，即使视频帧被旁路到了直播 CDN 上，这些数据也会一直存在。由于需要把数据嵌入视频帧中，建议尽量控制数据大小，推荐使用几个字节大小的数据。
 最常见的用法是把自定义的时间戳（timstamp）用 sendSEIMsg 嵌入视频帧中，实现消息和画面的完美对齐。
 
->?本接口有以下限制：
+>本接口有以下限制：
 >- 数据在接口调用完后不会被即时发送，而是从下一帧视频帧开始带在视频帧中发送。
 >- 发送消息到房间内所有用户，每秒最多能发送30条消息（与 sendCustomCmdMsg 共享限制）。
 >- 每个包最大为1KB，若发送大量数据，会导致视频码率增大，可能导致视频画质下降甚至卡顿（与 sendCustomCmdMsg 共享限制）。
@@ -1511,7 +1511,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| effect | [TRTCAudioEffectParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcaudioeffectparam) | 音效。 |
+| effect | [TRTCAudioEffectParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcaudioeffectparam) | 音效。 |
 
 __介绍__
 
@@ -1532,7 +1532,7 @@ __参数__
 | effectId | int | 音效 ID。 |
 | volume | int | 音量大小，取值范围为0 - 100；默认值：100。 |
 
->?会覆盖通过 setAllAudioEffectsVolume 指定的整体音效音量。
+>会覆盖通过 setAllAudioEffectsVolume 指定的整体音效音量。
 
 
 ### stopAudioEffect
@@ -1570,7 +1570,7 @@ __参数__
 |-----|-----|-----|
 | volume | int | 音量大小，取值范围为0 - 100；默认值：100。 |
 
->?该操作会覆盖通过 setAudioEffectVolume 指定的单独音效音量。
+>该操作会覆盖通过 setAudioEffectVolume 指定的单独音效音量。
 
 
 
@@ -1595,7 +1595,7 @@ __介绍__
 
 测速结果将会用于优化 SDK 的服务器选择策略，建议您在用户首次通话前先进行一次测速，测速结果有助于选择最佳的服务器。 如果测试结果非常不理想，您可以通过醒目的 UI 提示用户选择更好的网络。
 
->?测速会消耗一定的流量，从而产生少量的流量费用。
+>测速会消耗一定的流量，从而产生少量的流量费用。
 
 
 
@@ -1624,7 +1624,7 @@ __介绍__
 
 会触发 onFirstVideoFrame 回调接口。
 
->?在测试过程中可以使用 setCurrentCameraDevice 接口切换摄像头。
+>在测试过程中可以使用 setCurrentCameraDevice 接口切换摄像头。
 
 
 
@@ -1703,14 +1703,14 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| config | [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/36780#trtctranscodingconfig) | 请参考 TRTCCloudDef.h 中关于 [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/36780#trtctranscodingconfig) 的介绍。如果传入 NULL 取消云端混流转码。 |
+| config | [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35139#trtctranscodingconfig) | 请参考 TRTCCloudDef.h 中关于 [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35139#trtctranscodingconfig) 的介绍。如果传入 NULL 取消云端混流转码。 |
 
 __介绍__
 
 该接口会向腾讯云的转码服务器发送一条指令，目的是将房间里的多路画面叠加到一路画面上。
-如果您在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能， 房间里的每一路画面都会有一个对应的直播 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/34617)， 此时您可以通过云端混流，将多路直播地址的画面混合成一路，直播 CDN 上就可以看到混合后的画面。
+如果您在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能， 房间里的每一路画面都会有一个对应的直播 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/35242)， 此时您可以通过云端混流，将多路直播地址的画面混合成一路，直播 CDN 上就可以看到混合后的画面。
 您可以通过转码参数来调整每一路画面的位置以及最终输出的画面质量。
-参考文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618)。 
+参考文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/35123/34618)。 
 示例代码： Demo 中增加了该功能的体验入口，您可以在“更多功能”面板中看到“云端画面混合”和“分享播放地址”体验到该功能。
 
 
@@ -1722,9 +1722,9 @@ __介绍__
 【画面3】=> 解码 => =>
 </pre>
 
->?关于云端混流的注意事项：
+>关于云端混流的注意事项：
 >- 云端转码会引入一定的 CDN 观看延时，大概会增加1 - 2秒。
->- 调用该函数的用户，会将多路画面混合到自己这一路的 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/34617) 上。
+>- 调用该函数的用户，会将多路画面混合到自己这一路的 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/35242) 上。
 
 
 ### startPublishCDNStream
@@ -1738,7 +1738,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| param | ref [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647/36780#trtcpublishcdnparam) | 请参考 TRTCCloudDef.h 中关于 [TRTCPublishCDNParam](https://cloud.tencent.com/document/product/647/36780#trtcpublishcdnparam) 的介绍。 |
+| param | ref [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcpublishcdnparam) | 请参考 TRTCCloudDef.h 中关于 [TRTCPublishCDNParam](https://intl.cloud.tencent.com/document/product/647/35139#trtcpublishcdnparam) 的介绍。 |
 
 __介绍__
 
@@ -1746,8 +1746,8 @@ __介绍__
 在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能后， 房间里的每一路画面都有一路默认的腾讯云 CDN 地址，因此仅当您需要适配多家 CDN 服务商时，才需要关注该功能。
 由于仅转推单独的一路画面到直播 CDN 并无实际意义，因此该方案通常与云端转码混合使用的，即先通过 setMixTranscodingConfig 将房间里的多路画面混合到一路上，再转推出去。
 
->?关于旁路转推的注意事项：
->- 默认只支持转推到腾讯云的 rtmp [推流地址](https://intl.cloud.tencent.com/document/product/267/32720) 上，转推其他云的需求请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
+>关于旁路转推的注意事项：
+>- 默认只支持转推到腾讯云的 rtmp [推流地址](https://intl.cloud.tencent.com/document/product/267/32480) 上，转推其他云的需求请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
 >- 调用该函数的用户，默认只会转推自己这一路画面到指定的 rtmp 推流地址上，因此通常需要配合 setMixTranscodingConfig 同时使用。
 >- 在实时音视频 [控制台](https://console.cloud.tencent.com/rav/) 中的功能配置页开启了“启动自动旁路直播”功能后， 房间里的每一路画面都有一路默认的腾讯云 CDN 地址，因此仅当您需要适配多家 CDN 服务商时，才需要关注该功能。
 
@@ -1785,7 +1785,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| level | [TRTCLogLevel](https://cloud.tencent.com/document/product/647/36780#trtcloglevel) | 参见 TRTCLogLevel，默认值：TRTCLogLevelNone。 |
+| level | [TRTCLogLevel](https://intl.cloud.tencent.com/document/product/647/35139#trtcloglevel) | 参见 TRTCLogLevel，默认值：TRTCLogLevelNone。 |
 
 
 ### setConsoleEnabled
@@ -1833,7 +1833,7 @@ __参数__
 |-----|-----|-----|
 | path | string | 存储日志的文件夹，例如 "D:\\Log"，UTF-8 编码。 |
 
->?日志文件默认保存在 C:/Users/[系统用户名]/AppData/Roaming/Tencent/liteav/log，即 appdata%/Tencent/liteav/log 下，如需修改，必须在所有方法前调用。
+>日志文件默认保存在 C:/Users/[系统用户名]/AppData/Roaming/Tencent/liteav/log，即 appdata%/Tencent/liteav/log 下，如需修改，必须在所有方法前调用。
 
 
 
@@ -1848,7 +1848,7 @@ __参数__
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| callback | [ITRTCLogCallback](https://cloud.tencent.com/document/product/647/36779#itrtclogcallback) | 日志回调。 |
+| callback | [ITRTCLogCallback](https://intl.cloud.tencent.com/document/product/647/35138#itrtclogcallback) | 日志回调。 |
 
 
 ### showDebugView
@@ -1882,7 +1882,7 @@ __参数__
 |-----|-----|-----|
 | jsonStr | string | 接口及参数描述的 JSON 字符串。 |
 
->?该接口用于调用一些实验性功能。
+>该接口用于调用一些实验性功能。
 
 
 

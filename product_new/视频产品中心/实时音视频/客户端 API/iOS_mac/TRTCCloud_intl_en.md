@@ -64,7 +64,7 @@ __Overview__
 If room entry succeeded, the `onEnterRoom(result)` callback from [TRTCCloudDelegate](https://intl.cloud.tencent.com/document/product/647/35121#trtcclouddelegate) will be received:
 
 - If room entry succeeded, `result` will be a positive number (`result` > 0), indicating the time in milliseconds (ms) used for entering the room.
-- If room entry failed, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35123/35124).
+- If room entry failed, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124).
 
 
 
@@ -2039,7 +2039,7 @@ __Parameters__
 __Overview__
 
 This API will send a command to the Tencent Cloud transcoding server to combine multiple image channels in the room into one channel.
-If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
+If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each image channel in the room will have a corresponding LVB [CDN address](https://intl.cloud.tencent.com/document/product/647/35242), and you can use On-Cloud MixTranscoding to mix multiple image channels from the LVB addresses to one channel and view the mixed image on LVB CDN.
 You can use the transcoding parameters to set the position of each channel of image and quality of the final output image.
 For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/35123/34618). 
 Sample code: the demo provides the entry for trying out this feature. You can experience it in "On-Cloud Image Mix" and "Share Playback Address" in the "More Features" panel.
@@ -2056,7 +2056,7 @@ Sample code: the demo provides the entry for trying out this feature. You can ex
 
 >Notes on On-Cloud MixTranscoding:
 >- On-cloud transcoding will cause a delay of 1–2 seconds in video playback with CDN.
->- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35123/34617) of your own channel.
+>- If you call this function, the multiple channels of images will be mixed to the [CDN address](https://intl.cloud.tencent.com/document/product/647/35242) of your own channel.
 
 
 ### startPublishCDNStream
@@ -2079,7 +2079,7 @@ If you have enabled the "automatic relayed LVB" feature on the feature configura
 As relaying an individual channel of image to LVB CDN is generally meaningless, this feature is usually used with On-Cloud MixTranscoding, i.e., `setMixTranscodingConfig` is used to mix multiple image channels to one channel and then relay it.
 
 >Notes on relayed push:
->- By default, audio/video streams can be relayed only to the Tencent Cloud RTMP [push address](https://intl.cloud.tencent.com/document/product/267/32720). To relay streams to other cloud services, please submit a ticket to contact us.
+>- By default, audio/video streams can be relayed only to the Tencent Cloud RTMP [push address](https://intl.cloud.tencent.com/document/product/267/32480). To relay streams to other cloud services, please submit a ticket to contact us.
 >- If you call this function, only your own channel of image will be relayed to the specified RTMP push address by default. Therefore, this API usually needs to be used together with `setMixTranscodingConfig`.
 >- If you have enabled the "automatic relayed LVB" feature on the feature configuration page in the TRTC [Console](https://console.cloud.tencent.com/rav/), each channel of image in the room will have a default CDN address. Therefore, this feature is required only if you need to configure multiple CDN providers.
 

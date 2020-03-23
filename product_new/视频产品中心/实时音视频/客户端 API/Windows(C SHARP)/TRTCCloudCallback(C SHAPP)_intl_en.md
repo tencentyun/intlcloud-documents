@@ -59,9 +59,9 @@ __Overview__
 
 After the `enterRoom()` API in `TRTCCloud` is called to enter a room, the `onEnterRoom(result)` callback will be received from the SDK.
 - If room entry succeeded, `result` will be a positive number (`result` > 0), indicating the time in milliseconds (ms) used for entering the room.
-- If room entry failed, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124).
+- If room entry failed, `result` will be a negative number (`result` < 0), indicating the error code for room entry failure. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35140).
 
->?In TRTC versions below 6.6, the `onEnterRoom(result)` callback will be returned only for successful room entry, and [onError()](https://cloud.tencent.com/document/product/647/36779#onerror) will be returned for room entry failure. In TRTC v6.6 and above, a positive `result` will be returned for successful room entry, and a negative `result` together with the [onError()](https://cloud.tencent.com/document/product/647/36779#onerror) callback will be returned for room entry failure.
+>?In TRTC versions below 6.6, the `onEnterRoom(result)` callback will be returned only for successful room entry, and [onError()](https://intl.cloud.tencent.com/document/product/647/35138#onerror) will be returned for room entry failure. In TRTC v6.6 and above, a positive `result` will be returned for successful room entry, and a negative `result` together with the [onError()](https://intl.cloud.tencent.com/document/product/647/35138#onerror) callback will be returned for room entry failure.
 
 
 
@@ -80,8 +80,8 @@ __Parameters__
 
 __Overview__
 
-When the `exitRoom()` API in `TRTCCloud` is called, the logic related to room exit will be executed, such as releasing resources of audio/video devices and codecs. After resources are released, the SDK will use the [onExitRoom()](https://cloud.tencent.com/document/product/647/36779#onexitroom) callback to notify you.
-If you need to call `enterRoom()` again or switch to another audio/video SDK, please wait until you receive the [onExitRoom()](https://cloud.tencent.com/document/product/647/36779#onexitroom) callback; otherwise, exceptions such as occupied camera or mic may occur.
+When the `exitRoom()` API in `TRTCCloud` is called, the logic related to room exit will be executed, such as releasing resources of audio/video devices and codecs. After resources are released, the SDK will use the [onExitRoom()](https://intl.cloud.tencent.com/document/product/647/35138#onexitroom) callback to notify you.
+If you need to call `enterRoom()` again or switch to another audio/video SDK, please wait until you receive the [onExitRoom()](https://intl.cloud.tencent.com/document/product/647/35138#onexitroom) callback; otherwise, exceptions such as occupied camera or mic may occur.
 
 
 ### onSwitchRole
@@ -95,12 +95,12 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| errCode | TXLiteAVError | Error code. `ERR_NULL` indicates a successful switch. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124). |
+| errCode | TXLiteAVError | Error code. `ERR_NULL` indicates a successful switch. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35140). |
 | errMsg | string | Error message. |
 
 __Overview__
 
-Calling the `switchRole()` API in `TRTCCloud` will switch between the anchor and viewer roles, which will be accompanied by a line switch process. After the SDK switches the roles, the [onSwitchRole()](https://cloud.tencent.com/document/product/647/36779#onswitchrole) event callback will be returned.
+Calling the `switchRole()` API in `TRTCCloud` will switch between the anchor and viewer roles, which will be accompanied by a line switch process. After the SDK switches the roles, the [onSwitchRole()](https://intl.cloud.tencent.com/document/product/647/35138#onswitchrole) event callback will be returned.
 
 
 ### onConnectOtherRoom
@@ -115,12 +115,12 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | string | `userId` of the target anchor to compete with |
-| errCode | TXLiteAVError | Error code. `ERR_NULL` indicates a successful switch. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35124). |
+| errCode | TXLiteAVError | Error code. `ERR_NULL` indicates a successful switch. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35140). |
 | errMsg | string | Error message. |
 
 __Overview__
 
-Calling the `connectOtherRoom()` API in `TRTCCloud` will establish a video call between two anchors in two different rooms, i.e., the "anchor competition" feature. The caller will receive the [onConnectOtherRoom()](https://cloud.tencent.com/document/product/647/36779#onconnectotherroom) callback to see whether the cross-room call is successful; and if yes, all users in both rooms will receive the [onUserVideoAvailable()](https://cloud.tencent.com/document/product/647/36779#onuservideoavailable) callback of anchor competition.
+Calling the `connectOtherRoom()` API in `TRTCCloud` will establish a video call between two anchors in two different rooms, i.e., the "anchor competition" feature. The caller will receive the [onConnectOtherRoom()](https://intl.cloud.tencent.com/document/product/647/35138#onconnectotherroom) callback to see whether the cross-room call is successful; and if yes, all users in both rooms will receive the [onUserVideoAvailable()](https://intl.cloud.tencent.com/document/product/647/35138#onuservideoavailable) callback of anchor competition.
 
 
 ### onDisconnectOtherRoom
@@ -152,7 +152,7 @@ For the sake of performance, the behaviors of this notification will be differen
 - Video call scenario (`TRTCAppSceneVideoCall`): users in this scenario do not have different roles, and this notification will be triggered whenever a user enters the room.
 - Online LVB scenario (`TRTCAppSceneLIVE`): this scenario does not limit the number of viewers. If any user entering or exiting the room could trigger the callback, it would cause great performance loss. Therefore, this notification will be triggered only when an anchor but not a viewer enters the room.
 
->?Note: `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom` apply only to maintaining the "member list" of the current room. To display the remote image, it is recommended to listen on the [onUserVideoAvailable()](https://cloud.tencent.com/document/product/647/36779#onuservideoavailable) event callback.
+>?Note: `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom` apply only to maintaining the "member list" of the current room. To display the remote image, it is recommended to listen on the [onUserVideoAvailable()](https://intl.cloud.tencent.com/document/product/647/35138#onuservideoavailable) event callback.
 
 
 
@@ -352,8 +352,8 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| localQuality | [TRTCQualityInfo](https://cloud.tencent.com/document/product/647/36780#trtcqualityinfo) | Upstream network quality. |
-| remoteQuality | [TRTCQualityInfo](https://cloud.tencent.com/document/product/647/36780#trtcqualityinfo)[] | Downstream network quality. |
+| localQuality | [TRTCQualityInfo](https://intl.cloud.tencent.com/document/product/647/35139#trtcqualityinfo) | Upstream network quality. |
+| remoteQuality | [TRTCQualityInfo](https://intl.cloud.tencent.com/document/product/647/35139#trtcqualityinfo)[] | Downstream network quality. |
 | remoteQualityCount | uint | Array size of the downstream network quality. |
 
 >?`userId == null` indicates the current local video quality.
@@ -370,7 +370,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| statis | [TRTCStatistics](https://cloud.tencent.com/document/product/647/36780#trtcstatistics) | Statistics of local and remote users. |
+| statis | [TRTCStatistics](https://intl.cloud.tencent.com/document/product/647/35139#trtcstatistics) | Statistics of local and remote users. |
 
 __Overview__
 
@@ -416,7 +416,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| currentResult | [TRTCSpeedTestResult](https://cloud.tencent.com/document/product/647/36780#trtcspeedtestresult) | Current speed test result. |
+| currentResult | [TRTCSpeedTestResult](https://intl.cloud.tencent.com/document/product/647/35139#trtcspeedtestresult) | Current speed test result. |
 | finishedCount | uint | Number of servers on which speed test has been performed. |
 | totalCount | uint | Total number of servers on which speed test needs to be performed. |
 
@@ -450,7 +450,7 @@ __Parameters__
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| userVolumes | [TRTCVolumeInfo](https://cloud.tencent.com/document/product/647/36780#trtcvolumeinfo)[] | Volume level of all members who are speaking in the room. Value range: 0–100. |
+| userVolumes | [TRTCVolumeInfo](https://intl.cloud.tencent.com/document/product/647/35139#trtcvolumeinfo)[] | Volume level of all members who are speaking in the room. Value range: 0–100. |
 | userVolumesCount | uint | Number of members in the room. |
 | totalVolume | uint | Total volume level of all remote members. Value range: 0–100. |
 
@@ -474,8 +474,8 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | deviceId | string | Device ID. |
-| type | [TRTCDeviceType](https://cloud.tencent.com/document/product/647/36780#trtcdevicetype) | Device type. |
-| state | [TRTCDeviceState](https://cloud.tencent.com/document/product/647/36780#trtcdevicestate) | Event type. |
+| type | [TRTCDeviceType](https://intl.cloud.tencent.com/document/product/647/35139#trtcdevicetype) | Device type. |
+| state | [TRTCDeviceState](https://intl.cloud.tencent.com/document/product/647/35139#trtcdevicestate) | Event type. |
 
 
 ### onTestMicVolume
@@ -770,7 +770,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | userId | string | User ID. |
-| streamType | [TRTCVideoStreamType](https://cloud.tencent.com/document/product/647/36780#trtcvideostreamtype) | Stream type, which can be camera or screen sharing. |
+| streamType | [TRTCVideoStreamType](https://intl.cloud.tencent.com/document/product/647/35139#trtcvideostreamtype) | Stream type, which can be camera or screen sharing. |
 | frame | TRTCVideoFrame | Video frame data. |
 
 __Overview__
@@ -867,7 +867,7 @@ __Parameters__
 | Parameter | Type | Description |
 |-----|-----|-----|
 | log | string | Log content. |
-| level | TRTCLogLevel | Log level. For more information, please see [TRTCLogLevel](https://cloud.tencent.com/document/product/647/36780#trtcloglevel). |
+| level | TRTCLogLevel | Log level. For more information, please see [TRTCLogLevel](https://intl.cloud.tencent.com/document/product/647/35139#trtcloglevel). |
 | module | string | Currently, this parameter has no meaning, and its value is always `TXLiteAVSDK`. |
 
 
