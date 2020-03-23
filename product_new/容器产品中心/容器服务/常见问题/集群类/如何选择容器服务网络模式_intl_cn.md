@@ -6,14 +6,11 @@ GlobalRouter 网络模式是 TKE 基于底层私有网络（VPC）的全局路�
 - 容器与节点分布在同一网络平面。
 - 容器网段分配灵活，容器 IP 段不占用 VPC 的其他网段。
 
-GlobalRouter 网络模式适用于常规场景，可与标准 Kuberentes 功能无缝使用。使用原理图如下所示：
-![](https://main.qcloudimg.com/raw/eb19847fdd0de5f3ebb8381f33a885e8.png)
+GlobalRouter 网络模式适用于常规场景，可与标准 Kuberentes 功能无缝使用。
 
 ## VPC-CNI 模式
 VPC-CNI 模式是 TKE 基于 CNI 和 VPC 弹性网卡实现的容器网络能力，适用于对时延有较高要求的场景。该网络模式下，容器与节点分布在同一网络平面，容器 IP 为 IPAMD 组件所分配的弹性网卡 IP。
 
-VPC-CNI 模式使用原理图如下所示：
-![](https://main.qcloudimg.com/raw/76fce8d2541f9a91a1a2ecdc89403390.jpg)
 
 ### 开启支持固定 Pod IP
 > 
@@ -21,8 +18,7 @@ VPC-CNI 模式使用原理图如下所示：
 > - 开启固定 Pod IP 能力后，仅支持选择空子网作为集群网络。
 > - 固定 IP 的 Pod 不支持跨子网迁移。
 
-在配置“集群信息”步骤中，选择“容器网络插件”为【VPC-CNI】，并勾选“开启支持”即可。如此下图所示：
-![](https://main.qcloudimg.com/raw/f36911bf904ebd35867e24e3b6bb6bb1.png)
+在配置“集群信息”步骤中，选择“容器网络插件”为【VPC-CNI】，并勾选“开启支持”即可。
 
 固定 Pod IP 的 VPC-CNI 网络模式详细使用方法，详情请参见 [固定 Pod IP 类型 StatefulSet 管理](https://cloud.tencent.com/document/product/457/34994)。
 
