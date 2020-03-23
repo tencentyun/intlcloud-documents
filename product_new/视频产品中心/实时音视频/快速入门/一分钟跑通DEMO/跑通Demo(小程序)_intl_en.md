@@ -96,7 +96,7 @@ Due to policy and compliance considerations, WeChat has not enabled the support 
 Starting from TRTC SDK v6.6 (August 2019), the new signature algorithm HMAC-SHA256 is used. For applications created before then, you need to click **Upgrade** in **Step 2: obtain the secret key to issue UserSig** to upgrade the signature algorithm before your can get a new encryption key. If you don't upgrade it, you can continue to use the [legacy algorithm](https://intl.cloud.tencent.com/document/product/647/35166#.E8.80.81.E7.89.88.E6.9C.AC.E7.AE.97.E6.B3.95) ECDSA-SHA256.
 
 ### 2. What are the restrictions of the firewall?
-As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please see [Dealing with Organizational Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35123/35164) for assistance.
+As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please see [Dealing with Organizational Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164) for assistance.
 
 ### 3. Why should I enable debugging mode when debugging?
 After debugging is enabled, you can skip adding "valid domain names for requests" to the WeChat Mini Program whitelist so as to avoid problems such as login failure and call connection failure.

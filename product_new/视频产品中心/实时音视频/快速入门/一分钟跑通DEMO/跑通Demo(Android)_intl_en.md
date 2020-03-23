@@ -47,4 +47,4 @@ Please make sure that the two mobile phones use different `UserIDs` when running
 ![](https://main.qcloudimg.com/raw/c7b1589e1a637cf502c6728f3c3c4f99.png)
 
 ### 2. What are the restrictions of the firewall?
-As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please troubleshoot as instructed in [Dealing with Organizational Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35123/35164).
+As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please troubleshoot as instructed in [Dealing with Organizational Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
