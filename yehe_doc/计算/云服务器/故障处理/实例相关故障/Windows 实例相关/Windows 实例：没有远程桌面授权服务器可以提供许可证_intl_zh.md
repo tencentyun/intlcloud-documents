@@ -3,7 +3,7 @@
 ## 故障现象
 
 Windows 使用远程桌面连接 Windows 实例时，提示 “由于没有远程桌面授权服务器可以提供许可证，远程会话连接已断开。请跟服务器管理员联系。”。如下图所示：
-![](https://main.qcloudimg.com/raw/4bfce19b16c2920adefccd123f2a021d.png)
+![](https://main.qcloudimg.com/raw/0034f9d4e822ca556bd54dafb9b13c17.png)
 
 ## 故障原因
 
@@ -17,10 +17,10 @@ Windows 使用远程桌面连接 Windows 实例时，提示 “由于没有远�
 
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 在实例的管理页面，找到目标云服务器实例，单击【登录】。如下图所示：
-![](https://main.qcloudimg.com/raw/038fce530c6c6827796e51d896306a93.png)
+![](https://main.qcloudimg.com/raw/d9ccf04da21f4ac86d624742c87d5628.png)
 3. 在弹出的 “登录Windows实例” 窗口中，选择【其它方式（VNC）】，单击【立即登录】，登录云服务器。
 4. 在弹出的登录窗口中，选择左上角的 “发送远程命令”，单击 **Ctrl-Alt-Delete** 进入系统登录界面。如下图所示：
-![](https://main.qcloudimg.com/raw/2dec43fa6ddb5e442da59c75f7a34b0f.png)
+![](https://main.qcloudimg.com/raw/5064251ea86085326e86884a1c13ef6b.png)
 
 ### 方案一：修改策略配置
 1. 在操作系统界面，单击 <img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;">，打开 “Windows PowerShell” 窗口。
@@ -38,13 +38,11 @@ Windows 使用远程桌面连接 Windows 实例时，提示 “由于没有远�
 >
 1. 在操作系统界面，单击 <img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;">，打开 “服务器管理器”。
 2. 单击 “服务器管理器” 右上方的【管理】，选择【删除角色和功能】。如下图所示：
-![](https://main.qcloudimg.com/raw/c50d1df5fdf65abd3f301ba904e80817.png)
+![](https://main.qcloudimg.com/raw/373ef0a31c2b8e8fd1539e29852c4fab.png)
 3. 在 “删除角色和功能向导” 窗口中，单击【下一步】。
-4. 在 “删除服务器角色” 界面，取消勾选【远程桌面服务】，并在弹出的提示框中，选择【删除功能】。如下图所示：
-![](https://main.qcloudimg.com/raw/974994d5cb387ea3aa8baec6ffdc9d7f.png)
+4. 在 “删除服务器角色” 界面，取消勾选【远程桌面服务】，并在弹出的提示框中，选择【删除功能】。
 6. 单击两次【下一步】。
-7. 勾选【如果需要，自动重新启动目标服务器】，并在弹出的提示框中单击【是】。如下图所示：
-![](https://main.qcloudimg.com/raw/bb3b938d970a225884ec36e61e18b526.png)
+7. 勾选【如果需要，自动重新启动目标服务器】，并在弹出的提示框中单击【是】。
 8. 单击【删除】。
 待云服务器重新启动即可。
 

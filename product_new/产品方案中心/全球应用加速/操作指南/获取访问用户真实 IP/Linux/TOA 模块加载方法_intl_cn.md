@@ -23,9 +23,19 @@ lsmod | grep toa
 
 如果上述下载文件中没有您的操作系统版本对应的安装包，可以下载 Linux 通用版的源码包，编译后获取，该版本支持 Centos6.9 和 Centos7、Ubuntu14.04 等绝大多数的 Linux 发行版：
 1. 获取源码包
+
+- centos7.0及以上源码包
+
 ```
-wget http://toamodule-1253438722.file.myqcloud.com/tencenttoa.zip
+wget "http://thunder-pro-mainland-1258348367.cos.ap-guangzhou.myqcloud.com/gaap-toa%E6%BA%90%E7%A0%81(centos7%E4%BB%A5%E4%B8%8A).zip"
 ```
+
+- centos7.0以下源码包
+
+```
+wget "http://thunder-pro-mainland-1258348367.cos.ap-guangzhou.myqcloud.com/gaap-toa%E6%BA%90%E7%A0%81(centos7%E4%BB%A5%E4%B8%8B).zip"
+```   
+
 2. 编译文件
 ```
 yum install gcc
@@ -40,3 +50,5 @@ make
 mv toa.ko /lib/modules/`uname -r`/kernel/net/netfilter/ipvs/toa.ko
 insmod /lib/modules/`uname -r`/kernel/net/netfilter/ipvs/toa.ko
 ```
+
+> 如果编译报错，有可能是安装的内核版本和uname -r展示版本不一致，进入到/lib/modules/目录，查看本机上真实安装的内核版本，修改Makefile文件里面的uname -r为真实的内核版本，重新编译。  
