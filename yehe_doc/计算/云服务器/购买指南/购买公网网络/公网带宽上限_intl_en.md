@@ -41,7 +41,6 @@ If you cannot adjust your instance or network billing mode, [submit a ticket](ht
 2. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 3. Locate the instance for which you want to adjust the bandwidth and choose **More** > **Resource Adjustment** > **Adjust Network** on the right.
 4. In the **Adjust Network** window that appears, set the target bandwidth cap and click **OK**, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/9371e74fc8a2816390a872fcbb46e4fa.png)
 
 <span id="AdjustNetworkModeByBandwidthPackage"></span>
 ### Adjusting the network billing mode (bill-by-bandwidth-package)
