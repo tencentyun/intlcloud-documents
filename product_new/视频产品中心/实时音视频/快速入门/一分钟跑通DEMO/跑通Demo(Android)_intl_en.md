@@ -27,7 +27,7 @@ You have registered a [Tencent Cloud account](https://intl.cloud.tencent.com/doc
 
 <span id="step3"></span>
 ### Step 3. Configure demo project files
-1. Decompress the source package downloaded in [step 2](#step2). Find and open the `Android/TRTCDemo/app/src/main/java/com/tencent/liteav/demo/trtc/debug/GenerateTestUserSig.java` file and configure the following parameters:
+1. Decompress the source package downloaded in [step 2](#step-2.-download-the-sdk-and-demo-source-code). Find and open the `Android/TRTCDemo/app/src/main/java/com/tencent/liteav/demo/trtc/debug/GenerateTestUserSig.java` file and configure the following parameters:
   - SDKAPPID: set to the corresponding **SDKAppID**.
   - SECRETKEY: set to the corresponding **key**.
 
