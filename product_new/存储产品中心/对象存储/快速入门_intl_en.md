@@ -22,9 +22,9 @@ For more information on how to verify your identity, please see <a href="https:/
 ## Step 4. Create a bucket
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket management page.
 2. Click **Create Bucket** and enter the bucket information.
- - Name: bucket name, such as `examplebucket`.
- - Region: region where the bucket resides. Please select the region closest to you. For example, if you are in Shenzhen, you can select the Guangzhou region.
- - Access Permission: bucket access permission. For example, you can select "private read/write".
+   - Name: bucket name, such as `examplebucket`.
+   - Region: region where the bucket resides. Please select the region closest to you. For example, if you are in Shenzhen, you can select the Guangzhou region.
+   - Access Permission: bucket access permission. For example, you can select "private read/write".
 ![](https://main.qcloudimg.com/raw/8f575f8ef7c3da41150f9ca8417bca72.png)
 3. Click **OK**.
 
