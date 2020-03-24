@@ -67,7 +67,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | The callback command. |
 | Info | Object | User login or logout information. |
 | Action | String | The user login or logout behavior. Login: login (establishment of a TCP connection). Logout: logout (termination of the TCP connection). Disconnect: network disconnection (disconnection of the TCP connection). |
-| To_Account | String | The user’s identifier. |
+| To_Account | String | The user’s UserID . |
 | Reason | String | The reason for triggering user login or logout. <br>The Login reason is Register, that is, the app establishes a TCP connection. <br>The Logout reason is Unregister, that is, the TCP connection is terminated due to the de-registration of the app user. <br>The Disconnect reasons are: LinkClose (IM detects that the app’s TCP connection is terminated, for example, the app is killed or the client sends a TCP FIN or RST packet) and TimeOut (IM detects an app heartbeat timeout and determines that the TCP connection is lost, for example, the client is unexpectedly disconnected from the network and cannot send a TCP FIN or RST packet or heartbeat packets.) |
 
 ### Response packet example

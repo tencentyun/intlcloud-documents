@@ -67,8 +67,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Field | Type | Feature |
 | --- | --- | --- |
 | CallbackCommand | String | Callback command |
-| Operator_Account | String | Identifier of the operator who initiates the group creation request |
-| Owner_Account | String | Identifier of the owner of the group to be created through the request |
+| Operator_Account | String | UserID  of the operator who initiates the group creation request |
+| Owner_Account | String | UserID  of the owner of the group to be created through the request |
 | Type | String | The type of the group that generates group messages, such as Private, Public, or ChatRoom. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). |
 | Name | String | Name of the group to be created through the request |
 | CreatedNum | Integer | Number of groups of the same type already created by the user |

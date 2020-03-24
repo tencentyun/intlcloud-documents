@@ -11,7 +11,7 @@
 ### 方法一：自动加载（aar）
 TRTC SDK 已经发布到 jcenter 库，您可以通过配置 gradle 自动下载更新。
 只需要用 Android Studio 打开需要集成 SDK 的工程（本文以 [TRTC SDK Demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android) 为例），然后通过简单的三个步骤修改 app/build.gradle 文件，就可以完成 SDK 集成：
-![](https://main.qcloudimg.com/raw/05caa51b138e99ac32b177201c02f649.jpg)
+![](https://main.qcloudimg.com/raw/761afb92de43e10d121532e22e4a8e24.png)
 
 - **第一步：添加 SDK 依赖**   
 在 dependencies 中添加 TRTCSDK 的依赖。
@@ -40,7 +40,7 @@ dependencies {
 
 - **第一步：下载 TRTC SDK**  
 在 Github 上可以下载到最新版本的 [TRTC SDK](https://github.com/tencentyun/TRTCSDK/tree/master/Android/SDK)：
-![](https://main.qcloudimg.com/raw/75434db66f21ed185b30528d45128cd4.png)
+![](https://main.qcloudimg.com/raw/7bbd61ddf7c2a3a1b5c32fc1aaaf3b50.png)
 
 - **第二步：拷贝 TRTC SDK 到工程目录**  
 将下载到的 aar 文件拷贝到工程的 **app/libs** 目录下：
@@ -73,9 +73,9 @@ dependencies {
 
 - **第一步：下载解压 TRTC SDK**
 在 Github 上可以 [下载](https://github.com/tencentyun/TRTCSDK/tree/master/Android) 到最新版本的 jar 压缩包，文件名一般为 LiteAV_TRTC_xxx.zip（其中 xxx 为 TRTC SDK 的版本号）：
-![](https://main.qcloudimg.com/raw/8a97ef2b6a0cb2860b57b220d0684328.png)
+![](https://main.qcloudimg.com/raw/aff701ac861b38feddcd756a32ca6617.png)
 解压后得到 libs 目录，里面主要包含 jar 文件和 so 文件夹，文件清单如下：
-![](https://main.qcloudimg.com/raw/7b8efbef6d003896e91730b8f68abf76.png)
+![](https://main.qcloudimg.com/raw/223877d65f409ca1bcbb26bbd94ea2a9.png)
 
 - **第二步：拷贝 SDK 文件到工程目录**
 将解压得到的 jar文件和 armeabi， armeabi-v7a， arm64-v8a 文件夹拷贝到 app/libs 目录下。

@@ -82,7 +82,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | PairList | Array | The friend pair that is successfully added. |
 | From_Account | String | From_Account adds To_Account to the friend list. |
 | To_Account | String | To_Account is added to the friend list of From_Account. |
-| Initiator_Account | String | The identifier of the user who initiates the friend addition request. |
+| Initiator_Account | String | The UserID  of the user who initiates the friend addition request. |
 | ClientCmd | String | The command keyword that triggers the callback: <br>For a friend addition request, valid values are friend_add and FriendAdd.<br>For a friend addition response, valid values are friend_response and FriendResponse. |
 | Admin_Account | String | If the current request is a friend addition request triggered by the backend, this field is set to the admin account. Otherwise, this field is empty. |
 | ForceFlag | Integer | The flag for forcibly adding a friend by the admin. 1: the friend is added forcibly. 0: the friend is added as normal. |

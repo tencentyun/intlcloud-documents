@@ -106,7 +106,7 @@ Private error codes for this API are as follows:
 ]}
 ```
 
-The first line of the file records basic information about the file. Each following line records a message until the last line that ends with "]}". For the format of each message, see the definitions in [TIMMsgElement Objects](https://intl.cloud.tencent.com/document/product/1047/33527#.E5.9B.BE.E5.83.8F.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0).
+The first line of the file records basic information about the file. Each following line records a message until the last line that ends with "]}". For the format of each message, see the definitions in [TIMMsgElement Objects](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement).
 If the file is small, you can use the JSON database to parse the entire file. MsgList indicates the message array for the specified period. For example:
 
 ```

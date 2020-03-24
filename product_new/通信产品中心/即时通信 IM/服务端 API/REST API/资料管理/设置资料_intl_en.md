@@ -39,7 +39,7 @@ The maximum calling frequency is 200 times per second.
 
 | Field | Type | Attribute | Description |
 |--- |--- |--- |--- |
-| From_Account | String | Required | Identifier of the user whose profile needs to be set |
+| From_Account | String | Required | UserID of the user whose profile needs to be set |
 | ProfileItem | Array | Required | Profile object array of the target user. Each object in the array contains a Tag and a Value. |
 | Tag | String | Required | Profile field to be set. Profile fields that can be set include: <br>1. Standard profile fields. For details, see [Standard Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)<br>2. Custom profile fields. For details, see [Custom Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
 | Value | uint64_t/string/bytes | Required | Value of the profile field to be set. For details, see [Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |

@@ -2,7 +2,7 @@
 
 
 ## 准备工作
-在集成小程序 SDK 前，请确保您已完成以下步骤，详见 [跑通Demo(小程序)](https://cloud.tencent.com/document/product/647/32399)。
+在集成小程序 SDK 前，请确保您已完成以下步骤，详见 [跑通Demo(小程序)](https://intl.cloud.tencent.com/document/product/647/35123/35087)。
 - 创建了腾讯云实时音视频应用，购买了相应的套餐，并获取到SDKAppid。
 - 获取私钥文件。
 - 开通小程序类目与推拉流标签权限。
@@ -122,7 +122,7 @@ Page({
     onLoad: function (options) {
         // 这里需要调用签名服务获取 userSig 等签名信息
  	   // userSig 需要在您的业务服务器上计算，否则会泄露您的私钥从而造成安全隐患
-		// userSig 的计算请阅读文档：https://cloud.tencent.com/document/product/647/17275
+		// userSig 的计算请阅读文档：https://intl.cloud.tencent.com/document/product/647/35166
         let self = this;
         wx.request({
             url: '',  // 您的计算 usersig 的服务器地址
@@ -182,5 +182,5 @@ Page({
 |:-------:|---------|
 |`https://official.opensso.tencent-cloud.com` | WebRTC 音视频鉴权服务域名 | 
 |`https://yun.tim.qq.com` | WebRTC 音视频鉴权服务域名 | 
-|`https://cloud.tencent.com`| 推流域名 | 
+|`https://intl.cloud.tencent.com`| 推流域名 | 
 |`https://webim.tim.qq.com` | IM 域名 | 

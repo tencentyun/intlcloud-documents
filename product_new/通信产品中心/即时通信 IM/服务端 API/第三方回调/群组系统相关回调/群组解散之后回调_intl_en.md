@@ -71,7 +71,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | The callback command. |
 | GroupId | String | The ID of the dismissed group. |
 | Type | String | The type of the dismissed group, such as Private, Public, or ChatRoom. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). |
-| Owner_Account | String | The identifier of the group owner. |
+| Owner_Account | String | The UserID  of the group owner. |
 | MemberList | Array | The member list of the dismissed group. |
 
 ### Response packet example
