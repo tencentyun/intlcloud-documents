@@ -42,13 +42,13 @@ The `GenerateTestUserSig.js` file in the demo project can be used to calculate `
   - SDKAPPID: please enter the actual `SDKAppID` obtained in [step 1](#step1).
   - SECRETKEY: please enter the actual key information obtained in [step 3](#step3).
 
->!The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
+>The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
 >The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Server-side UserSig Generation](https://intl.cloud.tencent.com/document/product/647/35166#Server).
 
 ### Step 5. Run the demo
 Open the `index.html` in the root directory of the demo with Chrome to run the demo.
 
->!
+>
 > - Generally, the demo needs to be deployed on your server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
 > - Currently, the desktop version of Chrome offers more comprehensive support for the features of the TRTC SDK for Web; therefore, Chrome is recommended for the demo.
 
