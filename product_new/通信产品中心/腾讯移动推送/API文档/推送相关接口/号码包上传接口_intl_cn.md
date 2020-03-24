@@ -67,15 +67,11 @@ httpBody = '\r\n'.join(data)
 
 headers = {
 'content-type': "multipart/form-data,boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-    'Authorization': "Basic 认证信息",
+    'Authorization': "Basic 应用的认证信息",
     }
 response = requests.request("POST", url, data=httpBody, headers=headers, verify=False)
 print(response.text.encode('utf-8'))
 
 ```
 
-
-
-
-
-
+>!应用的认证信息，参见 [Basic Auth 认证](https://intl.cloud.tencent.com/document/product/1024/34672) 文档。

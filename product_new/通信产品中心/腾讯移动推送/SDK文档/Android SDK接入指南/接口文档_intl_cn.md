@@ -24,7 +24,7 @@
 public static void registerPush(Context context)
 ```
 
->这种注册方式，不支持推送账号。
+>?这种注册方式，不支持推送账号。
 
 #### 参数说明
 
@@ -85,8 +85,8 @@ void appendAccount(Context context, String account, XGIOperateCallback callback)
 void appendAccount(Context context, final String account)	
 ```
 
->
-- 这里的账号可以是邮箱、手机号、用户名等任意类别的业务账号。
+>?
+- 这里的账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号。
 - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://tpns.gitbook.io/tpns/pushapi#push-api-ke-xuan-can-shu) 文档中 account_push_type 参数设置。
 
 
@@ -120,7 +120,7 @@ void delAccount(Context context, final String account, XGIOperateCallback callba
 void delAccount(Context context, final String account ）
 ```
 
->账号解绑只是解除 Token 与 App 账号的关联，若使用全量/标签/Token 推送仍然能收到通知/消息。
+>?账号解绑只是解除 Token 与 App 账号的关联，若使用全量/标签/Token 推送仍然能收到通知/消息。
 
 #### 参数说明
 
@@ -168,7 +168,7 @@ public void onFail(Object data, int errCode, String msg);
 **重载 XGPushBaseReceiver**
 可通过重载 XGPushBaseReceiver 的 onRegisterResult 方法获取。
 
->重载的 XGPushBaseReceiver 需要配置在 AndroidManifest.xml，请参考下文 [消息配置](#消息配置) 。
+>?重载的 XGPushBaseReceiver 需要配置在 AndroidManifest.xml，请参考下文 [消息配置](#消息配置) 。
 
 #### 示例代码
 
@@ -223,7 +223,7 @@ XGPushManager.unregisterPush(this);
 
 可通过重载 XGPushBaseReceiver的onUnregisterResult 方法获取。
 
->
+> ?
 - 反注册操作切勿过于频繁，可能会造成后台同步延时。
 - 切换账号无需反注册，多次注册自动会以最后一次为准。
 
@@ -255,7 +255,7 @@ public void onUnregisterResult(Context context, int errorCode) {
 
 指的是在设备的通知栏展示的内容，由腾讯移动推送 SDK 完成所有的操作，App 可以监听通知被打开的行为，即在前台下发的通知，无需 App 做任何处理，默认会展示在通知栏。
 
->
+> ?
 - 成功注册腾讯移动推送服务后，通常不需要任何设置便可下发通知。
 - 通常来说，结合自定义通知样式，常规的通知，能够满足大部分业务需求，如果需要更灵活的方式，请考虑使用消息。
 
@@ -289,7 +289,7 @@ public void onUnregisterResult(Context context, int errorCode) {
 
 开发者在前台下发消息，需要 App 继承 XGPushBaseReceiver 重载 onTextMessage 方法接收，成功接收后，再根据特有业务场景进行处理。
 
->请确保在 AndroidManifest.xml 已经注册过该 receiver，即设 YOUR_PACKAGE.XGPushBaseReceiver。
+>?请确保在 AndroidManifest.xml 已经注册过该 receiver，即设 YOUR_PACKAGE.XGPushBaseReceiver。
 
 ```java
 public void onTextMessage(Context context,
@@ -423,7 +423,7 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 使用腾讯移动推送 SDK 内置的 activity 展示页面，默认已经统计通知/消息的抵达量、通知的点击和清除动作。但如果开发者要监听这些事件，需要按照以下方法嵌入代码。
 
->如果需要统计由腾讯移动推送推送引起的打开 App 操作或获取下发的自定义 key-value，需要开发者在所有（或被打开）的 Activity的onResume() 调用以下方法。
+>?如果需要统计由腾讯移动推送推送引起的打开 App 操作或获取下发的自定义 key-value，需要开发者在所有（或被打开）的 Activity的onResume() 调用以下方法。
 
 #### 接口说明
 
@@ -495,9 +495,33 @@ XGPushClickedResult：通知被打开的对象，如果该 activity 是由腾讯
 | getCustomContent() | String | 无     | 自定义 key-value，JSON 字符串同时，在 Activity 的 onPause() 调用以下方法 |
 
 
+### 创建通知渠道
+#### 接口说明
+开发者可以创建通知 channel。
+```java
+public static void createNotificationChannel(Context context, String channelId, String channelName, boolean enableVibration, boolean enableLights, boolean enableSound, Uri soundUri)
+```
+
+>?此接口仅适用于1.1.5.4及以上版本。
+
+#### 参数说明
+
+- context：当前应用上下文。
+- channelId：通知渠道 Id。
+- channelName：通知渠道名称。
+- enableVibration：是否震动。
+- enableLights：是否有呼吸。
+- enableSound：是否有铃声。
+- soundUri ：铃声资源 Uri，enableSound 为 true 才有效，若使用系统默认铃声，则设置为 null。
+
+#### 示例代码
+```java
+XGPushManager.createNotificationChannel(this.getApplicationContext(),"default_message", "默认通知",true, true, true, null);
+```
+
+
 
 ## 标签
-
 ### 预置标签
 
 目前腾讯移动推送提供两类预置标签：
@@ -582,7 +606,7 @@ XGPushManager.setTags(getApplicationContext(), "setTags:" + System.currentTimeMi
 - 如果新增的标签有部分不带:号，如 "test:2  level"，则会删除这个设备的全部历史标签，再新增 test:2 和 level 标签。
 
 
->
+>?
 -  新增的 tags 中，:号为后台关键字，请根据具体的业务场景使用。
 - 此接口调用的时候需要间隔一段时间（建议大于5s），否则可能造成更新失败。
 
@@ -734,7 +758,7 @@ Token 是一个设备的身份识别 ID，由服务器根据设备属性随机�
 public static String getToken(Context context)
 ```
 
->App 第一次注册会产生 Token，之后一直存在手机上，不管以后注销注册操作，该 Token 一直存在，当 App 完全卸载重装了 Token 会发生变化。不同 App 之间的 Token 不一样。
+>?App 第一次注册会产生 Token，之后一直存在手机上，不管以后注销注册操作，该 Token 一直存在，当 App 完全卸载重装了 Token 会发生变化。不同 App 之间的 Token 不一样。
 
 #### 参数说明
 
@@ -752,7 +776,7 @@ context：App 上下文对象。
 public static String getOtherPushToken(Context context) 
 ```
 
->需要注册成功之后才能调用，不然返回为 NULL。
+>?需要注册成功之后才能调用，不然返回为 NULL。
 
 
 #### 参数说明
@@ -783,7 +807,7 @@ public static boolean setAccessId(Context context, long accessId)
 - true：成功。
 - false：失败。
 
->通过本接口设置的 accessId 会同时存储在文件中。
+>?通过本接口设置的 accessId 会同时存储在文件中。
 
 ### 设置 AccessKey
 
@@ -805,7 +829,7 @@ public static boolean accessKey(Context context, String accessKey)
 - true：成功。
 - false：失败。
 
->通过本接口设置的 accessKey 会同时存储在文件中。
+>?通过本接口设置的 accessKey 会同时存储在文件中。
 
 
 
@@ -836,6 +860,6 @@ public static void uploadLogFile(Context context, HttpRequestCallback httpReques
     });
 ```
  
->首先需要开启 `XGPushConfig.enableDebug(this, true);`。
+>?首先需要开启 `XGPushConfig.enableDebug(this, true);`。
 
 
