@@ -75,7 +75,7 @@ If you do not want to integrate the aar library, you can choose to integrate the
 You can [download](https://github.com/tencentyun/TRTCSDK/tree/master/Android) the latest version of the jar package from GitHub. The filename is generally `LiteAV_TRTC_xxx.zip` (where xxx is the version number of the TRTC SDK):
 ![](https://main.qcloudimg.com/raw/aff701ac861b38feddcd756a32ca6617.png)
 After decompression, you can get the `libs` directory which contains the jar files and so folders as listed below:
-![](https://main.qcloudimg.com/raw/7b8efbef6d003896e91730b8f68abf76.png)
+![](https://main.qcloudimg.com/raw/223877d65f409ca1bcbb26bbd94ea2a9.png)
 
 - **Step 2. Copy the SDK files to the project directory**
 Copy the extracted jar files as well as armeabi, armeabi-v7a, and arm64-v8a folders to the `app/libs` directory.
