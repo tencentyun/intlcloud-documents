@@ -110,7 +110,7 @@ cos.getObjectUrl({
     Key: '1.jpg',
     Sign: true
 }, function (err, data) {
-    if (!err) return console.log(err);
+    if (err) return console.log(err);
     console.log(data.Url);
     var req = request(data.Url, function (err, response, body) {
         console.log(err || body);
@@ -134,7 +134,7 @@ cos.getObjectUrl({
     Key: '1.jpg',
     Sign: true
 }, function (err, data) {
-    if (!err) return console.log(err);
+    if (err) return console.log(err);
     console.log(data.Url);
     var readStream = fs.createReadStream(__dirname + '/1.jpg');
     var req = request({
