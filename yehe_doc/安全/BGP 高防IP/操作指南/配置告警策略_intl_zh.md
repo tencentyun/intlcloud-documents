@@ -52,13 +52,12 @@
 2. 在告警策略管理页面中，找到需要添加告警接收组的策略，单击告警策略名称，进入详情页面。
 3. 在告警接收对象区域，单击【编辑】。
 4. 在配置页面，勾选需要通知的用户组、接收渠道，单击【保存】，即可完成告警接受对象的设置。
-	- 目前支持邮件、短信、微信和电话四种告警接收方式。您可在 [访问管理控制台](https://console.cloud.tencent.com/cam) 修改用户的手机、邮箱和微信信息，以决定用户可以使用哪种方式接收告警信息，修改用户信息请参见 [新建子用户](https://intl.cloud.tencent.com/document/product/598/13674)。
-	-  告警策略启用微信接收告警，请参见 [启用微信渠道](https://cloud.tencent.com/document/product/248/17707)。
+	- 目前支持邮件、短信和电话三种告警接收方式。您可在 [访问管理控制台](https://console.cloud.tencent.com/cam) 修改用户的手机和邮箱信息，以决定用户可以使用哪种方式接收告警信息，修改用户信息请参见 [新建子用户](https://intl.cloud.tencent.com/document/product/598/13674)。
 	-  告警策略启用电话接收告警，配置以下参数即可。
 		-  轮询次数：在无有效触达时，对所有接收人逐一轮询拨打的最多次数。
 		-  触达通知：电话成功接收或轮询结束发送信息给所有接收人。
 	 >
 >- 用户也可以在创建告警策略的页面设置告警接收对象。
->- 电话告警渠道目前灰度中，如有需要，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 或 [联系我们](https://cloud.tencent.com/about/connect) 进行支持。
+>- 电话告警渠道目前灰度中，如有需要，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行支持。
 	 
 ![](https://main.qcloudimg.com/raw/d914185ddfc067253067d1d3337cd91c.png)
