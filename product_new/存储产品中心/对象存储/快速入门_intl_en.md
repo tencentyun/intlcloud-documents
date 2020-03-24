@@ -25,7 +25,7 @@ For more information on how to verify your identity, please see <a href="https:/
  - Name: bucket name, such as `examplebucket`.
  - Region: region where the bucket resides. Please select the region closest to you. For example, if you are in Shenzhen, you can select the Guangzhou region.
  - Access Permission: bucket access permission. For example, you can select "private read/write".
-![](https://main.qcloudimg.com/raw/403185f7cc974daf2cb962a45474747d.jpg)
+![](https://main.qcloudimg.com/raw/8f575f8ef7c3da41150f9ca8417bca72.png)
 3. Click **OK**.
 
 
