@@ -15,8 +15,8 @@ The rental fees of the public network-based CLB instance domains are as follows.
 
 |  Domain | Price<br>(USD/Day) |
 |---------|---------|
-| Guangzhou, Shenzhen Finance Zone, Shanghai, Shanghai Finance Zone, Beijing, Chengdu, Chongqing & Bangkok | 0.07 |  
-| Hong Kong, Seoul & Mumbai| 0.21 |
+| Guangzhou, Shenzhen Finance Zone, Shanghai, Shanghai Finance Zone, Beijing, Chengdu & Chongqing   | 0.07 |  
+| Hong Kong, Bangkok, Seoul & Mumbai| 0.21 |
 | Tokyo | 0.22 |
 | Singapore, Frankfurt, Toronto & Moscow | 0.14 |
 | Silicon Valley & Virginia | 0.12 |
