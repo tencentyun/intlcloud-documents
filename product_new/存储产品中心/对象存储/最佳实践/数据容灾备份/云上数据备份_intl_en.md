@@ -10,7 +10,7 @@ This document describes how to back up data stored in the cloud. COS provides th
 
 With the cross-region replication feature, COS can automatically and asynchronously replicate **new objects** added to one bucket to another bucket in a different region. When cross-region replication is enabled, COS will accurately replicate the object content (such as object metadata and version ID) in the source bucket to the destination bucket, and the object copies contain exactly the same attribute information.
 
-For more information, please see [High-Availability Disaster Recovery Architecture Based on Cross-region Replication](https://cloud.tencent.com/document/product/436/37709).
+For more information, please see [High-Availability Disaster Recovery Architecture Based on Cross-region Replication](https://intl.cloud.tencent.com/document/product/436/32535).
 
 #### Use cases
 
@@ -34,11 +34,11 @@ For some business reasons, you may need to back up all data in an existing bucke
 
 #### Usage
 
-For more information, please see [Batch Operation](https://cloud.tencent.com/document/product/436/38605).
+For more information, please see [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956).
 
 #### Instructions
 
-The batch replication operation should be used in conjunction with the inventory feature. For more information on inventory, please see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622). This operation allows you to replicate the specified objects in batches from the source bucket to the destination bucket in the same region or in different regions. It supports customizing parameters for the `PUT Object-copy` operation, and the metadata and storage class of the copy are subject to the configuration information. For more information, please see [PUT Object - copy](https://cloud.tencent.com/document/product/436/10881).
+The batch replication operation should be used in conjunction with the inventory feature. For more information on inventory, please see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622). This operation allows you to replicate the specified objects in batches from the source bucket to the destination bucket in the same region or in different regions. It supports customizing parameters for the `PUT Object-copy` operation, and the metadata and storage class of the copy are subject to the configuration information. For more information, please see [PUT Object - copy](https://intl.cloud.tencent.com/document/product/436/10881).
 
 >
 > - All objects to be replicated must be in the same bucket.
@@ -50,5 +50,5 @@ The batch replication operation should be used in conjunction with the inventory
 
 ## Data Migration and Backup Scheme
 
-Tencent Cloud Migration Service Platform (MSP) provides easy and fast resource migration schemes. After you create a migration job, you can view the migration progress, migration report, and much more in the MSP Console. For detailed directions, please see [COS Migration](https://cloud.tencent.com/document/product/659/38010).
+Tencent Cloud Migration Service Platform (MSP) provides easy and fast resource migration schemes. After you create a migration job, you can view the migration progress, migration report, and much more in the MSP Console. For detailed directions, please see [COS Migration](https://intl.cloud.tencent.com/document/product/1036/33184).
 
