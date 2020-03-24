@@ -11,7 +11,7 @@ You can choose to use Gradle for automatic loading or manually download the aar 
 ### Method 1. Automatic loading (aar)
 The TRTC SDK has been released to the JCenter repository, and you can configure Gradle to download updates automatically.
 Simply use Android Studio to open the project that needs to be integrated with the SDK ([TRTC SDK Demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android) is used as an example in this document), and then modify the `app/build.gradle` file in three simple steps to complete SDK integration:
-![](https://main.qcloudimg.com/raw/05caa51b138e99ac32b177201c02f649.jpg)
+![](https://main.qcloudimg.com/raw/761afb92de43e10d121532e22e4a8e24.png)
 
 - **Step 1. Add SDK dependencies**   
 Add the TRTC SDK dependencies to `dependencies`.
@@ -40,7 +40,7 @@ If JCenter cannot be connected to, you can manually download the SDK and integra
 
 - **Step 1. Download the TRTC SDK**  
 Download the latest version of the [TRTC SDK](https://github.com/tencentyun/TRTCSDK/tree/master/Android/SDK) from GitHub:
-![](https://main.qcloudimg.com/raw/75434db66f21ed185b30528d45128cd4.png)
+![](https://main.qcloudimg.com/raw/7bbd61ddf7c2a3a1b5c32fc1aaaf3b50.png)
 
 - **Step 2. Copy the TRTC SDK to the project directory**  
 Copy the downloaded aar file to the **app/libs** directory of the project:
@@ -73,7 +73,7 @@ If you do not want to integrate the aar library, you can choose to integrate the
 
 - **Step 1: Download and decompress the TRTC SDK**
 You can [download](https://github.com/tencentyun/TRTCSDK/tree/master/Android) the latest version of the jar package from GitHub. The filename is generally `LiteAV_TRTC_xxx.zip` (where xxx is the version number of the TRTC SDK):
-![](https://main.qcloudimg.com/raw/8a97ef2b6a0cb2860b57b220d0684328.png)
+![](https://main.qcloudimg.com/raw/aff701ac861b38feddcd756a32ca6617.png)
 After decompression, you can get the `libs` directory which contains the jar files and so folders as listed below:
 ![](https://main.qcloudimg.com/raw/7b8efbef6d003896e91730b8f68abf76.png)
 
