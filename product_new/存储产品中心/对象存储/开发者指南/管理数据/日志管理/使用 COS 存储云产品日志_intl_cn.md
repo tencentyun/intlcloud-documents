@@ -36,8 +36,8 @@
 | 云产品名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | 日志投递文档                                                 | 日志投递间隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        | 日志投递路径                                                 |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 |云审计 CA |[点此查阅](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15分钟 |  cloudaudit/customprefix/timestamp|
-| 负载均衡 CLB    | [点此查阅](https://cloud.tencent.com/document/product/214/10329) | 60分钟               | lb-id/timestamp                                              |
-| 消息队列 CKafka | [点此查阅](https://cloud.tencent.com/document/product/597/17273) | 5分钟 - 60分钟<br>可指定投递间隔 | instance id/topic id/timestamp                           |
+| 负载均衡 CLB    | [点此查阅](https://intl.cloud.tencent.com/document/product/214/10329) | 60分钟               | lb-id/timestamp                                              |
+| 消息队列 CKafka | [点此查阅](https://intl.cloud.tencent.com/document/product/597/32552) | 5分钟 - 60分钟<br>可指定投递间隔 | instance id/topic id/timestamp                           |
 | 对象存储 COS    | [点此查阅](https://intl.cloud.tencent.com/document/product/436/17040) | 5分钟                | 路径前缀可自行指定，推荐设置可识别的路径，例如 cos_bucketname_access_log/timestamp |
 
 >消息队列支持投递该产品上产生的消息数据，如果您需要获取创建 CKafka 实例等行为日志，可以选择投递云审计产品的日志。
@@ -48,15 +48,15 @@
 
 | 云产品名称           | 日志投递文档                                                 |
 | -------------------- | ------------------------------------------------------------ |
-| API 网关 API Gateway | [点此查阅](https://cloud.tencent.com/document/product/628/19552) |                               
+| API 网关 API Gateway | [点此查阅](https://intl.cloud.tencent.com/document/product/628/34636) |                               
 | 容器服务 TKE         | [点此查阅](https://intl.cloud.tencent.com/document/product/457/13659) |
-| 云直播 LVB           | [点此查阅](https://cloud.tencent.com/document/product/267/33996) |
+| 云直播 LVB           | - |
 
 CLS 投递到 COS 支持如下三种方式投递：
 
-- 通过分隔符格式投递：可以将数据按照分隔符格式投递到 COS，详情请参见 [分隔符格式投递](https://cloud.tencent.com/document/product/614/33814)。
-- 通过 JSON 格式投递：可以将数据按照 JSON 格式投递到 COS，详情请参见 [JSON 格式投递](https://cloud.tencent.com/document/product/614/33815)。
-- 通过原文格式投递：可以将数据按照原文格式进行投递，支持单行全文、多行全文投递，部分支持 CSV 格式投递，详情请参见 [原文格式投递](https://cloud.tencent.com/document/product/614/33816)。
+- 通过分隔符格式投递：可以将数据按照分隔符格式投递到 COS。
+- 通过 JSON 格式投递：可以将数据按照 JSON 格式投递到 COS，详情请参见 [JSON 格式投递](https://intl.cloud.tencent.com/document/product/614/31583)。
+- 通过原文格式投递：可以将数据按照原文格式进行投递，支持单行全文、多行全文投递，部分支持 CSV 格式投递，详情请参见 [原文格式投递](https://intl.cloud.tencent.com/document/product/614/31584)。
 
 通过 CLS 投递日志到 COS，您需要执行的操作如下：
 
@@ -73,35 +73,35 @@ CLS 投递到 COS 支持如下三种方式投递：
 | 下载方式       | 使用说明                                                     |
 | -------------- | ------------------------------------------------------------ |
 | 控制台         | [点此查阅](https://intl.cloud.tencent.com/document/product/436/13322) |
-| cosbrowser     | [点此查阅](https://cloud.tencent.com/document/product/436/38103#download ) |
+| cosbrowser     | [点此查阅](https://intl.cloud.tencent.com/document/product/436/32565#download ) |
 | coscmd         | [点此查阅](https://intl.cloud.tencent.com/document/product/436/10976) |
 | Android SDK    | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
 | C SDK          | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
 | C++ SDK        | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
 | .NET SDK       | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
 | Go SDK         | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
-| iOS SDK        | [点此查阅]( https://cloud.tencent.com/document/product/436/11280#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) |
+| iOS SDK        | [点此查阅]( https://intl.cloud.tencent.com/document/product/436/11280#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) |
 | Java SDK       | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
 | JavaScript SDK | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
-| Node.js SDK    | [点此查阅]( https://cloud.tencent.com/document/product/436/36119#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) |
+| Node.js SDK    | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31710#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) |
 | PHP SDK        | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
-| Python SDK     | [点此查阅](https://cloud.tencent.com/document/product/436/35151 ) |
+| Python SDK     | [点此查阅](https://intl.cloud.tencent.com/document/product/436/31546 ) |
 | 小程序 SDK     | [点此查阅](https://intl.cloud.tencent.com/document/product/436/30596) |
-| API            | [点此查阅](https://cloud.tencent.com/document/product/436/7753 ) |
+| API            | [点此查阅](https://intl.cloud.tencent.com/document/product/436/7753) |
 
 ### 使用 COS Select 对日志进行分析
 
-您也可以通过 COS Select 功能直接检索和分析存储在 COS 上的日志文件，前提是日志文件以 CSV 或者 JSON 格式存储。通过 COS Select 功能，您可以筛选出您所需要的日志字段，这将很大程度降低 COS 传输的日志数据量，以减小您的使用成本，同时提高您的数据获取效率。如需详细了解 COS Select 功能，请参见 [Select 概述](https://cloud.tencent.com/document/product/436/37635)。
+您也可以通过 COS Select 功能直接检索和分析存储在 COS 上的日志文件，前提是日志文件以 CSV 或者 JSON 格式存储。通过 COS Select 功能，您可以筛选出您所需要的日志字段，这将很大程度降低 COS 传输的日志数据量，以减小您的使用成本，同时提高您的数据获取效率。如需详细了解 COS Select 功能，请参见 [Select 概述](https://intl.cloud.tencent.com/document/product/436/32472)。
 
 目前您可以通过控制台或者 API 的方式使用 COS Select 功能：
 
 | 使用方式 | 使用说明                                                     |
 | -------- | ------------------------------------------------------------ |
-| 控制台   | [点此查阅](https://cloud.tencent.com/document/product/436/37642) |
-| API      | [点此查阅](https://cloud.tencent.com/document/product/436/37641) |
+| 控制台   | [点此查阅](https://intl.cloud.tencent.com/document/product/436/32538) |
+| API      | [点此查阅](https://intl.cloud.tencent.com/document/product/436/32360) |
 
 ### 使用 Sparkling 对日志进行分析
 
 如果您需要对云上所有产品日志进行整合和汇聚，同时进行大数据分析，我们推荐您用云数据仓库套件 Sparkling 服务。Sparkling 服务基于业界领先的 Apache Spark 框架，为用户提供一套全托管、简单易用、高性能的云端数据仓库解决方案，实现一站式大数据开发与数据科学计算。企业可以借助 Sparkling 跨数据源联合分析特性，对云上来自不同产品的日志数据进行联合分析，挖掘日志数据价值。
 
-您可以参考 [Sparkling](https://cloud.tencent.com/document/product/1002) 产品文档了解如何使用 Sparkling 服务，或者参考 COS 为您提供的 [使用 Sparkling 分析 COS 服务端访问日志](https://cloud.tencent.com/document/product/436/37419) 简易入门教程。
+您可以参考 [Sparkling](https://intl.cloud.tencent.com/document/product/1019) 产品文档了解如何使用 Sparkling 服务，或者参考 COS 为您提供的 使用 Sparkling 分析 COS 服务端访问日志 简易入门教程。
