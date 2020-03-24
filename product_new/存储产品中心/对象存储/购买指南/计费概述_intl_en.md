@@ -21,7 +21,7 @@ COS is billed on a pay-as-you-go basis as detailed below:
 ## Billable Items
 
 Billable items in COS are as shown below. For more information, please see [Billable Items](https://cloud.tencent.com/document/product/436/40285).
-![](https://main.qcloudimg.com/raw/2a2d84360ad6d8f1b3b3cd5088b0a4a2.png)
+![](https://main.qcloudimg.com/raw/4efcd4647d3fba736dcefb7bc3c2d120.jpg)
 
 
 ## Billing Cycle
@@ -80,7 +80,7 @@ The billing cycle and sequence of the billable items in COS are as detailed belo
 
 1. For more information on COS fee calculation and billing in different scenarios, please see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 2. For more information on arrears processing in COS, data retention and purge schedule, and billing descriptions, please see COS [Notes on Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
-3. If you still have any questions about COS billing, please see [FAQs About Billing](https://cloud.tencent.com/document/product/436/36524) for answers.
+3. If you still have any questions about COS billing, please see [FAQs About Billing](https://intl.cloud.tencent.com/document/product/436/32532) for answers.
 
 
 
