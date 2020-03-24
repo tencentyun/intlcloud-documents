@@ -76,7 +76,7 @@ The maximum invocation frequency is 200 times per second.
 ### Request packet fields
 | Field | Type | Attribute | Description |
 |------|------|-----|-------|
-| To_Account | Array | Required | The identifiers for which profiles are to be pulled. <br />Note: pull no more than 100 users at a time to avoid response packet failure due to excessive data volume. |
+| To_Account | Array | Required | The UserID for which profiles are to be pulled. <br />Note: pull no more than 100 users at a time to avoid response packet failure due to excessive data volume. |
 | TagList | Array | Required | Tags of the profile fields to be pulled. Supported fields are: <br />1. Standard profile fields. For details, see [Standard Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5).<br />2. Custom profile fields. For details, see [Customer Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
 
 ### Response packet examples
@@ -284,7 +284,7 @@ The maximum invocation frequency is 200 times per second.
 | Field | Type | Description |
 |--- |--- |--- |
 | UserProfileItem | Array | The structured information of returned user profiles. |
-| To_Account | String | Returned user identifiers. |
+| To_Account | String | Returned user UserID. |
 | ProfileItem | Array | The array of returned user profile objects. Each object in the array includes a Tag field and a Value field. |
 | Tag | String | The name of the returned profile object: <br>1. Standard profile fields. For details, see [Standard Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E6.A0.87.E9.85.8D.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5).<br>2. Custom profile fields. For details, see [Custom Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |
 | Value | uint64_t/string/bytes | The value of the pulled profile object. For details, see [Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5). |

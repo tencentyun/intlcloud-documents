@@ -72,8 +72,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | GroupId | String | The ID of the group into which other users are to be added. |
 | Type | String | The type of the group to be created. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). The group type can be Private, Public, or ChatRoom. |
 | JoinType | String | The method for joining a group: Apply (apply to join the group) or Invited (invited to join the group). |
-| Operator_Account | String | The identifier of the request operator. |
-| NewMemberList | Array | The list of new members’ identifiers. |
+| Operator_Account | String | The UserID  of the request operator. |
+| NewMemberList | Array | The list of new members’ UserID s. |
 
 ### Response packet example
 

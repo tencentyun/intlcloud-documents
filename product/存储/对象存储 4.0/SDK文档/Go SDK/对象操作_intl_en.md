@@ -337,10 +337,10 @@ func (s *ObjectService) Copy(ctx context.Context, key, sourceURL string, opt *Ob
 ```go
 u, _ := url.Parse("http://examplebucket-12500000000.cos.ap-guangzhou.myqcloud.com")
 source := "test/objectMove_src"
-soruceURL := fmt.Sprintf("%s/%s", u.Host, source)
+sourceURL := fmt.Sprintf("%s/%s", u.Host, source)
 dest := "test/objectMove_dest"
 //opt := &cos.ObjectCopyOptions{}
-r, resp, err := client.Object.Copy(context.Background(), dest, soruceURL, nil)
+r, resp, err := client.Object.Copy(context.Background(), dest, sourceURL, nil)
 ```
 
 #### Parameter Descriptions

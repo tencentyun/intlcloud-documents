@@ -25,7 +25,7 @@ You can install the SDK through Maven or source code:
 <dependency>
         <groupId>com.qcloud</groupId>
         <artifactId>cos_api</artifactId>
-        <version>5.5.5</version>
+        <version>5.6.18</version>
 </dependency>
 ```
 

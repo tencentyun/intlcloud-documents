@@ -52,7 +52,7 @@ You can use the Limit and Offset fields to control pagination pulling:
  - The Offset field specifies the sequence number of the starting group member for information pulling. For a pagination request (the page number starts from 1), the Offset value of each page is calculated as follows: `(Page number – 1) × Number of group members displayed on each page`.
  For example, if pagination pulling is requested and 20 group members are displayed on each page, request parameters for the first page are `{"Limit" : 20, "Offset" : 0}`, whereas those for the second page are `{"Limit" : 20, "Offset" : 20}`, and so on.
 
- The value of Limit or Offset does not affect TotalCount in the response packet. 
+
 ```
 {
     "GroupId":"@TGS#1NVTZEAE4", // Group ID (required)
