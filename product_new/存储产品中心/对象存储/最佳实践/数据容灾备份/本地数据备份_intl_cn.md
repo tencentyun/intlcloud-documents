@@ -12,11 +12,11 @@ COSBrowser 是腾讯云对象存储推出的用于管理云上文件的可视化
 
 COSBrowser 桌面端集成了文件同步功能，可以通过关联本地文件夹与存储桶，实现本地文件实时同步上传至云端。
 
-<img src="https://main.qcloudimg.com/raw/2bb632d541e66110947069ca1f382120.png" style="zoom:60%;" />
+<img src="https://main.qcloudimg.com/raw/fc3160ec43b732936152ccf4f5f107c8.png" style="zoom:60%;" />
 
 #### 使用方法
 
-请参见：[文件同步使用说明](https://cloud.tencent.com/document/product/436/38103#synchronization)。
+请参见：[文件同步使用说明](https://intl.cloud.tencent.com/document/product/436/32565#synchronization)。
 
 ## 线上迁移方案
 
@@ -28,17 +28,17 @@ COS Migration 是一个集成了 COS 数据迁移功能的一体化工具。用�
 
 #### 使用方法
 
-请参见：[COS Migration](https://cloud.tencent.com/document/product/436/38224#cos)。
+请参见：[COS Migration](https://intl.cloud.tencent.com/document/product/436/32974#cos)。
 
 ## 线下迁移方案
 
 云数据迁移 CDM 是利用腾讯云提供的离线迁移专用设备，帮助用户将本地数据迁移至云端的一种迁移方式，可解决本地数据中心通过网络传输迁移云端时间长、成本高、安全性低的问题。
 
-用户可依据数据迁移量、IDC 出口带宽、IDC 空闲机位资源、可接受的迁移完成时间等因素来考虑如何选择迁移方式。下图展示的是使用线上迁移时预估的时间消耗，可以看出，若此次迁移周期超过10天或者迁移数据量超过50TB，我们建议您选择 [云数据迁移 CDM](https://cloud.tencent.com/document/product/436/38224#cdm) 进行线下迁移。
+用户可依据数据迁移量、IDC 出口带宽、IDC 空闲机位资源、可接受的迁移完成时间等因素来考虑如何选择迁移方式。下图展示的是使用线上迁移时预估的时间消耗，可以看出，若此次迁移周期超过10天或者迁移数据量超过50TB，我们建议您选择 [云数据迁移 CDM](https://intl.cloud.tencent.com/document/product/436/32974#cdm) 进行线下迁移。
 
-![](https://main.qcloudimg.com/raw/b07948f0626973d2d64753df39add6f4.png)
+![](https://main.qcloudimg.com/raw/321d9e3f6a0a1f812da5f87792621093.png)
 
 #### 使用方法
 
-请参见：[云数据迁移 CDM](https://cloud.tencent.com/document/product/436/38224#cdm)。
+请参见：[云数据迁移 CDM](https://intl.cloud.tencent.com/document/product/436/32974#cdm)。
 
