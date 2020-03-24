@@ -9,7 +9,7 @@ If you already have a Tencent Cloud account, you can ignore this step.
 
 ## Step 2. Verify your identity
 If you already have done so, you can ignore this step.
-For more information on how to verify your identity, please see <a href="https://cloud.tencent.com/document/product/378/3629">Identify Verification Overview</a>.
+For more information on how to verify your identity, please see <a href="https://intl.cloud.tencent.com/document/product/378/3629">Identify Verification Overview</a>.
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
 
 
