@@ -34,7 +34,7 @@ The maximum calling frequency is 200 times per second.
 
 | Field | Type | Attribute | Description |
 |---------|---------|---------|---------|
-| To_Account | Array | Required | Identifiers whose login states will be queried. The login states of up to 500 identifiers can be queried at a time. |
+| To_Account | Array | Required | UserID whose login states will be queried. The login states of up to 500 UserID can be queried at a time. |
 
 ### Response packet example
 
@@ -76,7 +76,7 @@ The maximum calling frequency is 200 times per second.
 | ErrorCode | Integer | The error code. 0: succeeded. Others: failed. |
 | ErrorInfo | String | Detailed error information. |
 | QueryResult | Array | The structured information of the returned user online state. |
-| To_Account | String | The identifier of the returned user. |
+| To_Account | String | The UserID of the returned user. |
 | State | String | The returned user state. Currently, the following states are supported: <br>1. "Online": the client established a persistent connection with the IM backend after login. <br>2. "PushOnline": the iOS or Android process was killed or disconnected from the IM backend due to a network problem. Therefore, the user enters the PushOnline state, but can still receive messages that are pushed offline. (If the client is switched to the background but the process is not killed by the mobile operating system, the user remains in the Online state.) <br>3. "Offline": the client has logged out, or the user has not logged in to the client in 7 days since the previous login. |
 
 > The IM console stores the PushOnline state for up to 7 days. If the user has not logged in to the client in 7 days since the previous login, the user enters the Offline state.

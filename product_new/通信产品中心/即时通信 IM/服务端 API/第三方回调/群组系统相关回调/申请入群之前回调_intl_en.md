@@ -58,7 +58,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | The callback command. |
 | GroupId | String | The ID of the group that generates group messages. |
 | Type | String | The type of the group that generates group messages, such as Private, Public, or ChatRoom. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). |
-| Requestor_Account | String | The identifier of the requester. |
+| Requestor_Account | String | The UserID  of the requester. |
 
 ### Response packet examples
 

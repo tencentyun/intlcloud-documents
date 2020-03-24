@@ -76,7 +76,7 @@ When **Silence** is set to 1, the system will not notify anyone after successful
 | GroupId | String | Required | The ID of the target group. |
 | Silence | Integer | Optional | Whether to add members silently. 0: no. 1: yes. The default value is 0. |
 | MemberList | Array | Required | The array of the group members to be added. |
-| Member_Account | String | Required | The identifier of the group member to be added. |
+| Member_Account | String | Required | The UserID  of the group member to be added. |
 
 ### Response packet example
 ```
@@ -104,7 +104,7 @@ When **Silence** is set to 1, the system will not notify anyone after successful
 | ErrorCode | Integer | The error code. 0: succeeded. Others: failed. |
 | ErrorInfo | String | Error information. |
 | MemberList | Array | The returned result of adding the group member. |
-| Member_Account | String | The returned identifier of the group member. |
+| Member_Account | String | The returned UserID  of the group member. |
 | Result | Integer | The result of adding the member. 0: failed. 1: succeeded. 2: existed already. 3: pending approval by the invitee. |
 
 ## Error Codes
@@ -123,7 +123,7 @@ The following table describes the error codes specific to this API.
 | 10010 | The group does not exist or has been dismissed. |
 | 10015 | The group ID is invalid. In this case, check whether the group ID is correct. |
 | 10016 | The developer backend rejects this operation through a third-party callback. |
-| 10019 | The requested identifier does not exist. In this case, check whether all Member_Accounts in MemberList are correct. |
+| 10019 | The requested UserID  does not exist. In this case, check whether all Member_Accounts in MemberList are correct. |
 | 10026 | The command keyword requested by SDKAppID is disabled. In this case, contact our customer service. |
 | 10037 | The number of groups that the invited user has joined exceeds the limit. In this case, check and delete the Member_Account that has joined excessive groups, or **purchase an upgrade** based on the actual need. For information on feature packages, see [Feature Packages](https://intl.cloud.tencent.com/document/product/1047/34350). | 
 

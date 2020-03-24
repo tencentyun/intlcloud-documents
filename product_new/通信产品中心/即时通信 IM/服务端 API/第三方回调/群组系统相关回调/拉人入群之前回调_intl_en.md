@@ -67,8 +67,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | Callback command |
 | GroupId | String | ID of the group to which a user is added |
 | Type | String | [Type of the group to be created](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D), for example, Private, Public, or ChatRoom |
-| Operator_Account | String | Request operator’s identifier |
-| DestinationMembers | Array | Set of identifiers to be added to the group |
+| Operator_Account | String | Request operator’s UserID  |
+| DestinationMembers | Array | Set of UserID s to be added to the group |
 
 ### Response packet example
 #### Allowing all users to join a group
@@ -85,7 +85,7 @@ The app backend allows all users in requests to join the group.
 
 #### Rejecting some users to join a group
 
-The app backend rejects some users in requests to join the group and returns these users’ identifiers in RefusedMembers_Account.
+The app backend rejects some users in requests to join the group and returns these users’ UserID s in RefusedMembers_Account.
 
 ```
 {

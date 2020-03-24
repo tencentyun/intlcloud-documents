@@ -78,8 +78,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | --- | --- | --- |
 | CallbackCommand | String | The callback command. |
 | GroupId | String | The ID of the target group. |
-| Operator_Account | String | The identifier of the operator who initiates the request for creating a group. |
-| Owner_Account | String | The identifier of the owner of the group to be created by the request. |
+| Operator_Account | String | The UserID  of the operator who initiates the request for creating a group. |
+| Owner_Account | String | The UserID  of the owner of the group to be created by the request. |
 | Type | String | The type of the group to be created. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). The group type can be Private, Public, or ChatRoom. |
 | Name | String | The name of the group to be created by the request. |
 | MemberList | Array | The initial member list of the group to be created by the request. |

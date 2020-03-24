@@ -71,10 +71,10 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | The callback command. |
 | GroupId | String | The ID of the group that generates group messages. |
 | Type | String | The type of the group that generates group messages, such as Private, Public, or ChatRoom. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D). |
-| From_Account | String | The identifier of the message sender. |
-| Operator_Account | String | The identifier of the message initiator, based on which the system can identify whether the request is initiated by the admin. |
+| From_Account | String | The UserID  of the message sender. |
+| Operator_Account | String | The UserID  of the message initiator, based on which the system can identify whether the request is initiated by the admin. |
 | Random | Integer | A 32-bit random number in the message sending request. |
-| MsgSeq | Integer | The message sequence number, which is the unique identifier of a message. |
+| MsgSeq | Integer | The message sequence number, which is the unique UserID  of a message. |
 | MsgTime | Integer | The message sending timestamp corresponding to the backend server time. |
 | MsgBody | Array | The message body. For details, see [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). |
 

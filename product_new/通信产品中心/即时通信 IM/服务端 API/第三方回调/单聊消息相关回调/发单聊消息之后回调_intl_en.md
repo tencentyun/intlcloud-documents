@@ -73,8 +73,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Field | Type | Description |
 | --- | --- | --- |
 | CallbackCommand | String | The callback command. |
-| From_Account | String | The identifier of the message sender. |
-| To_Account | String | The identifier of the message recipient. |
+| From_Account | String | The UserID  of the message sender. |
+| To_Account | String | The UserID  of the message recipient. |
 | MsgSeq | Integer | The message sequence number for identifying this message. |
 | MsgRandom | Integer | The message random number for identifying this message. |
 | MsgTime | Integer | The message sending timestamp in seconds. |
