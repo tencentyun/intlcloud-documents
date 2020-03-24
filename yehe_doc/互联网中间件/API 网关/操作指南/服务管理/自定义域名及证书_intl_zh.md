@@ -8,22 +8,27 @@
 ## 操作步骤
 
 ### 关联自定义域名
-1. 在 API 网关控制台的【[服务](https://console.cloud.tencent.com/apigateway/service)】页，单击服务 ID，进入服务详情页。
-2. 在服务详情页，选择【自定义域名】，单击页面左上角的【新建】，填写配置信息后，单击【提交】。
-> 
+1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway/index?rid=1)，在左侧导航栏单击【服务】。
+2. 在服务列表页，单击服务 ID，进入服务详情页。
+3. 在服务详情页，选择【自定义域名】，单击页面左上角的【新建】，填写配置信息后，单击【提交】。
+>
 > - 如果需要支持独立域名的 HTTPS 协议，需要提交域名的 SSL 证书。证书可以通过文件上传的方式或通过填写证书名称、内容和私钥的方式提交。
 > - 修改 CNAME 后过一段时间才能生效，请确保生效后再进行配置操作，否则会配置失败。
-3. 配置 CNAME 解析完成后，在服务内配置绑定独立域名（请确保先配置 CNAME 解析，再配置绑定）。
-4. 若需要解绑，需先删除服务内绑定的独立域名，再删除独立域名的 CNAME。
+4. 配置 CNAME 解析完成后，在服务内配置绑定独立域名（请确保先配置 CNAME 解析，再配置绑定）。
+5. 若需要解绑，需先删除服务内绑定的独立域名，再删除独立域名的 CNAME。
 
 ### 配置域名路径映射
-在配置自定义域名时可使用默认路径映射，此时路径的 URL 为`自定义域名/环境名`，例如`www.yingxiong.com/release`指向本服务中的发布环境，`www.yingxiong.com/prepub`指向本服务中的预发布环境，`www.yingxiong.com/test`指向本服务中的测试环境。
+1. 在自定义域名列表页，单击操作列的【编辑路径映射】。
 ![](https://main.qcloudimg.com/raw/3a32b52150e2c281baf921543c1f9eed.png)
-
-您也可以配置自定义路径，使用自定义路径时的 URL 为`自定义域名/自定义路径`，这个 URL 则指向您所映射的环境。例如配置路径为`/mypath`，环境为发布环境，则发布环境的 URL 为`www.yingxiong.com/mypath`。当您想使用根路径时，可直接配置路径为`/`。
-![](https://main.qcloudimg.com/raw/e13aacc29f19bec5261c07ee8bbf55fd.png)
-使用自定义路径映射时，原本默认路径映射不生效，即`自定义域名/环境名`均不生效。
+2. 选择路径映射类型：
+ - **默认路径映射**：路径的 URL 为`自定义域名/环境名`，例如`www.XXXXX.com/release`指向本服务中的发布环境，`www.XXXXX.com/prepub`指向本服务中的预发布环境，`www.XXXXX.com/test`指向本服务中的测试环境。
+ ![](https://main.qcloudimg.com/raw/72d65ac0190da0757d05837e4223f515.png)
+ - **自定义路径映射**：路径时的 URL 为`自定义域名/自定义路径`，这个 URL 则指向您所映射的环境。例如配置路径为`/mypath`，环境为发布环境，则发布环境的 URL 为`www.XXXXX.com/mypath`。当您想使用根路径时，可直接配置路径为`/`。
+ ![](https://main.qcloudimg.com/raw/72d65ac0190da0757d05837e4223f515.png)
+ >使用自定义路径映射时，原本默认路径映射不生效，即`自定义域名/环境名`均不生效。
 配置后自定义路径映射与默认路径映射还可以进行编辑。
-![](https://main.qcloudimg.com/raw/6f3ee6b4ef691f23c1bbffae68584def.png)
+3. 单击【提交】，完成配置。
+
+
 
 
