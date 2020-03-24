@@ -36,8 +36,8 @@ The following Tencent Cloud products support directly shipping logs to COS. You 
 | Tencent Cloud Product Name | Log Shipping Document | Log Shipping Interval | Log Shipping Path |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 | CA |[Click here](https://intl.cloud.tencent.com/document/product/1021/30338) | 10–15 minutes |  cloudaudit/customprefix/timestamp|
-| CLB    | [Click here](https://cloud.tencent.com/document/product/214/10329) | 60 minutes               | lb-id/timestamp                                              |
-| CKafka | [Click here](https://cloud.tencent.com/document/product/597/17273) | 5–60 minutes<br>, which can be specified | instance id/topic id/timestamp                           |
+| CLB    | [Click here](https://intl.cloud.tencent.com/document/product/214/10329) | 60 minutes               | lb-id/timestamp                                              |
+| CKafka | [Click here](https://intl.cloud.tencent.com/document/product/597/32552) | 5–60 minutes<br>, which can be specified | instance id/topic id/timestamp                           |
 | COS    | [Click here](https://intl.cloud.tencent.com/document/product/436/17040) | 5 minutes                | The path prefix can be specified. You are recommended to set a meaningful path, such as cos_bucketname_access_log/timestamp |
 
 >Message data generated in CKafka can be shipped. If you want to get logs of operations such as CKafka instance creation, you can choose to ship CA logs.
@@ -48,15 +48,15 @@ Certain Tencent Cloud products support log shipping to CLS for log retrieval and
 
 | Tencent Cloud Product Name           | Log Shipping Document                                                 |
 | -------------------- | ------------------------------------------------------------ |
-| API Gateway | [Click here](https://cloud.tencent.com/document/product/628/19552) |                               
+| API Gateway | [Click here](https://intl.cloud.tencent.com/document/product/628/34636) |                               
 | TKE         | [Click here](https://intl.cloud.tencent.com/document/product/457/13659) |
-| LVB           | [Click here](https://cloud.tencent.com/document/product/267/33996) |
+| LVB           | - |
 
 Logs in CLS can be shipped to COS by using any of the following three formats:
 
-- Delimited format: you can ship log data in delimited format to COS. For more information, please see [Shipping in Delimited Format](https://cloud.tencent.com/document/product/614/33814).
-- JSON format: you can ship log data in JSON format to COS. For more information, please see [Shipping in JSON Format](https://cloud.tencent.com/document/product/614/33815).
-- Source format: you can ship log data in the source format to COS. Single-line and multi-line full text shipping is supported, and some source text can be shipped in CSV format. For more information, please see [Shipping in Source Format](https://cloud.tencent.com/document/product/614/33816).
+- Delimited format: you can ship log data in delimited format to COS. 
+- JSON format: you can ship log data in JSON format to COS. For more information, please see [Shipping in JSON Format](https://intl.cloud.tencent.com/document/product/614/31583).
+- Source format: you can ship log data in the source format to COS. Single-line and multi-line full text shipping is supported, and some source text can be shipped in CSV format. For more information, please see [Shipping in Source Format](https://intl.cloud.tencent.com/document/product/614/31584).
 
 You need to perform the following steps to ship logs to COS through CLS:
 
@@ -73,35 +73,35 @@ You can download logs to your local file system in various methods such as conso
 | Download Method       | Description                                                     |
 | -------------- | ------------------------------------------------------------ |
 | Console         | [Click here](https://intl.cloud.tencent.com/document/product/436/13322) |
-| COSBrowser     | [Click here](https://cloud.tencent.com/document/product/436/38103#download) |
+| COSBrowser     | [Click here](https://intl.cloud.tencent.com/document/product/436/32565#download) |
 | COSCMD         | [Click here](https://intl.cloud.tencent.com/document/product/436/10976) |
 | SDK for Android    | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
 | SDK for C          | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
 | SDK for C++        | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
 | SDK for .NET       | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
 | SDK for Go         | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
-| SDK for iOS        | [Click here](https://cloud.tencent.com/document/product/436/11280#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) |
+| SDK for iOS        | [Click here](https://intl.cloud.tencent.com/document/product/436/11280#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) |
 | SDK for Java       | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
 | SDK for JavaScript | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
-| SDK for Node.js    | [Click here](https://cloud.tencent.com/document/product/436/36119#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) |
+| SDK for Node.js    | [Click here](https://intl.cloud.tencent.com/document/product/436/31710#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) |
 | SDK for PHP        | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
-| SDK for Python     | [Click here](https://cloud.tencent.com/document/product/436/35151) |
+| SDK for Python     | [Click here](https://intl.cloud.tencent.com/document/product/436/31546) |
 | SDK for WeChat Mini Program     | [Click here](https://intl.cloud.tencent.com/document/product/436/30596) |
-| API            | [Click here](https://cloud.tencent.com/document/product/436/7753) |
+| API            | [Click here](https://intl.cloud.tencent.com/document/product/436/7753) |
 
 ### Analyzing logs with COS Select
 
-You can use the COS Select feature to directly retrieve and analyze log files in CSV or JSON format stored in COS. With COS Select, you can filter desired log fields, which greatly reduces the data volume of logs transferred by COS and thus reduces your use costs and improves the data acquisition efficiency. For more information on COS Select, please see [Select Overview](https://cloud.tencent.com/document/product/436/37635).
+You can use the COS Select feature to directly retrieve and analyze log files in CSV or JSON format stored in COS. With COS Select, you can filter desired log fields, which greatly reduces the data volume of logs transferred by COS and thus reduces your use costs and improves the data acquisition efficiency. For more information on COS Select, please see [Select Overview](https://intl.cloud.tencent.com/document/product/436/32472).
 
 Currently, you can use COS Select through the console or API.
 
 | Method | Description                                                     |
 | -------- | ------------------------------------------------------------ |
-| Console   | [Click here](https://cloud.tencent.com/document/product/436/37642) |
-| API      | [Click here](https://cloud.tencent.com/document/product/436/37641) |
+| Console   | [Click here](https://intl.cloud.tencent.com/document/product/436/32538) |
+| API      | [Click here](https://intl.cloud.tencent.com/document/product/436/32360) |
 
 ### Analyzing logs with Sparkling
 
 If you want to collect and aggregate the logs of all Tencent Cloud products for big data analysis, you are commended to use Tencent Sparkling Data Warehouse Suite (Sparkling). Based on the industry-leading Apache Spark framework, Sparkling offers a rich set of fully-managed, easy-to-use, and high-performance cloud data warehousing services. It provides a one-stop solution for big data development and data computing. By leveraging its cross-data source conjoint analysis feature, you can analyze aggregated logs of different Tencent Cloud products and tap into the value of log data.
 
-For more information on how to use Sparkling, please see the [Sparkling](https://cloud.tencent.com/document/product/1002) product documentation or [Analyze COS Server Access Logs with Sparkling](https://cloud.tencent.com/document/product/436/37419).
+For more information on how to use Sparkling, please see the [Sparkling](https://intl.cloud.tencent.com/document/product/1019) product documentation or Analyze COS Server Access Logs with Sparkling.
