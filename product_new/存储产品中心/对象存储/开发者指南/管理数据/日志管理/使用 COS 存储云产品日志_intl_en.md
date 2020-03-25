@@ -54,7 +54,7 @@ Certain Tencent Cloud products support log shipping to CLS for log retrieval and
 
 Logs in CLS can be shipped to COS by using any of the following three formats:
 
-- Delimited format: you can ship log data in delimited format to COS. 
+- Delimited format: you can ship log data in delimited format to COS. For more information, please see [CSV Shipping](https://intl.cloud.tencent.com/document/product/614/31582).
 - JSON format: you can ship log data in JSON format to COS. For more information, please see [Shipping in JSON Format](https://intl.cloud.tencent.com/document/product/614/31583).
 - Source format: you can ship log data in the source format to COS. Single-line and multi-line full text shipping is supported, and some source text can be shipped in CSV format. For more information, please see [Shipping in Source Format](https://intl.cloud.tencent.com/document/product/614/31584).
 
