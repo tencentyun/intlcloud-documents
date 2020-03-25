@@ -18,7 +18,7 @@ Billable items in COS include [storage capacity](#jf1), [requests](#jf2), [data 
       <td nowrap="nowrap">Storage capacity</td>
       <td>Standard storage<br>Standard_IA storage<br>Archive storage</td>
       <td>Storage capacity refers to the actual storage space used by your data.<br>The fees are calculated based on the size of actually used storage capacity.</td>
-      <td<br><li>Settled on a monthly basis <br><li>Storage capacity fees = storage capacity unit price * monthly storage capacity used<br><li>Monthly storage capacity used = sum of "daily storage capacity used" in the month / number of days in the month <br><li>Daily storage capacity used = sum of "5-minute storage capacity used" / 288 (number of statistical points)</td>
+      <td<li>Settled on a monthly basis <br><li>Storage capacity fees = storage capacity unit price * monthly storage capacity used<br><li>Monthly storage capacity used = sum of "daily storage capacity used" in the month / number of days in the month <br><li>Daily storage capacity used = sum of "5-minute storage capacity used" / 288 (number of statistical points)</td>
    </tr>
 </table>
 
