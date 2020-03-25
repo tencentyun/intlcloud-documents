@@ -33,7 +33,8 @@ The billable items in COS and their billing formulas are as detailed below:
    <tr>
       <td>Administrative Feature Fees</td>
       <td>Administrative feature fees refer to the fees incurred by use of administrative features (such as inventory and extraction) after they are enabled, currently including inventory fees and data extraction fees</td>
-      <td>Inventory feature cost = number of objects listed / million * unit price<br>Select feature cost = unit price per GB * cumulative data retrieval amount per day
+      <td>Inventory feature fees = number of objects listed / million * unit price<br>Data extraction fees = unit price per GB * daily accumulated data extract
+
 </td>
    </tr>
 </table>
