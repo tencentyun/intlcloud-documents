@@ -56,13 +56,13 @@ The billing cycle and sequence of the billable items in COS are as detailed belo
       <td>Pay-as-you-go</td>
    </tr>
    <tr>
-      <td>Inventory feature</td>
+      <td>Inventory feature fees</td>
       <td>Daily</td>
       <td>The fees for one day are calculated and billed on the following day</td>
       <td>Pay-as-you-go</td>
    </tr>
    <tr>
-      <td>Select feature</td>
+      <td>Select feature fees</td>
       <td>Daily</td>
       <td>The fees for one day are calculated and billed on the following day</td>
       <td>Pay-as-you-go</td>
