@@ -1,6 +1,6 @@
 ## 简介
 
-您可以通过对象存储控制台，对文件夹设置访问权限，指定用户对文件夹内的内容进行指定的操作。我们建议您在配置权限时，遵循 [最小权限原则](https://cloud.tencent.com/document/product/436/38618)，保护您的数据资产安全。
+您可以通过对象存储控制台，对文件夹设置访问权限，指定用户对文件夹内的内容进行指定的操作。我们建议您在配置权限时，遵循 [最小权限原则](https://intl.cloud.tencent.com/document/product/436/32972)，保护您的数据资产安全。
 
 >对象存储以扁平化结构来存放对象，无文件夹概念，为延续用户使用习惯，通过对象键中以`/`为后缀命名的对象来实现“文件夹”，实际上对象存储 COS 中的“文件夹”是一个存储空间为0KB的对象。
 
@@ -12,9 +12,9 @@
 
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，在左侧菜单栏中单击【存储桶列表】，进入存储桶列表页。
 2. 找到文件夹所在的存储桶，单击存储桶名称，进入存储桶管理页。
-	 ![存储桶管理页截图](https://main.qcloudimg.com/raw/b456d47780b94fc9e00085d6c3e0b845.jpg)
+	 ![存储桶管理页截图](https://main.qcloudimg.com/raw/b3917dd3aff063f14016d9f1b280276b.png)
 3. 在【文件列表】页签下，找到需设置权限的文件夹，在其右侧操作栏下，单击【设置权限】。
-	 ![文件列表页截图](https://main.qcloudimg.com/raw/4c89f55e9f2325b3fc600ced8a125a8c.jpg)
+	 ![文件列表页截图](https://main.qcloudimg.com/raw/2d5efff0532cec0e1fbec063f983e611.png)
 4. 您可以根据业务需求对文件夹权限进行设置。权限设置说明如下：
 <table>
    <tr>
@@ -65,7 +65,7 @@
       <td>包括数据读取、数据写入、权限读取、权限写入等四项权限。<b>该配置权限范围较大，请谨慎勾选。</b></td>
    </tr>
 </table>
-<img src="https://main.qcloudimg.com/raw/1a892d07d0cae053520278dbb68feaa6.jpg">
+<img src="https://main.qcloudimg.com/raw/be31a82ce94421adf25ff8e0a69db359.png">
 5. 权限设置完毕，单击其右侧的【保存】，即可保存权限设置。
 
 

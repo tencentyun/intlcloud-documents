@@ -9,7 +9,8 @@ The screencapturing feature can meet your needs in the following application sce
 - Thumbnail: an image sprite is a large image composed of multiple subimages (i.e., thumbnails), which is usually used to represent a video overview.
 - Playback preview: together with a VTT file, an image sprite can be used to achieve preview effect on the player progress bar.
 
-## <span id = "jt"></span>Screencapturing Template
+## <span id = "jt"></span>
+Screencapturing Template
 
 The target specification of a screenshot is subject to parameters such as screenshot file format, width, and height, which can be customized in the form of VOD screencapturing template as shown below:
 
@@ -69,7 +70,7 @@ Below are instructions for initiating screencapturing tasks in these ways:
 
 * Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [screencapturing template](#jt) ID in the `MediaProcessTask.SnapshotByTimeOffsetTaskSet` parameter in the request.
 * Initiate a task on a video through the console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target screenshot specification in the task flow, and use the task flow to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33890).
-* Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target screenshot specification in the task flow, and specify this task flow as the `procedure` in the [ApplyUpload](#APIhttps://intl.cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
+* Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target screenshot specification in the task flow, and specify this task flow as the `procedure` in the [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
 * Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target screenshot specification in the task flow, and specify this task flow as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).
 * Upload through console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target screenshot specification in the task flow, upload a video through the console, select [Process Video During Upload](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4), and specify to execute this task flow upon video upload completion.
 

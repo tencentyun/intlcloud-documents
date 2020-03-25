@@ -138,7 +138,7 @@
 #### 流量走向
 
 下面展示了用户在开启或未开启 CDN 加速域名的情况下，数据从 COS 到用户这一过程所产生的流量费用。
-![](https://main.qcloudimg.com/raw/4a8840ba59982715c608326f658301dd.png)
+![](https://main.qcloudimg.com/raw/a7e5562e9404ba265cb4797a59521d28.png)
 
 
 <span id="jf5"></span>

@@ -23,7 +23,7 @@ After your application for activating OPPO PUSH is approved, you can select [OPP
 
 
 ### Configuring push channel
-To be compatible with channel configurations for Android 10 or above on OPPO phones, you need to create a default TPNS push channel in the OPPO Console. For more information, please see [OPPO's official documentation](https://open.oppomobile.com/wiki/doc/#id=10198).
+To be compatible with channel configurations for Android 8.0 or above on OPPO phones, you need to create a default TPNS push channel in the OPPO Console. For more information, please see [OPPO's official documentation](https://open.oppomobile.com/wiki/doc/#id=10198).
 The configuration items are as described below:
 - "Channel ID": "default_message"
 - "Channel Name": "default notification"

@@ -9,7 +9,7 @@ If you already have a Tencent Cloud account, you can ignore this step.
 
 ## Step 2. Verify your identity
 If you already have done so, you can ignore this step.
-For more information on how to verify your identity, please see <a href="https://cloud.tencent.com/document/product/378/3629">Identify Verification Overview</a>.
+For more information on how to verify your identity, please see <a href="https://intl.cloud.tencent.com/document/product/378/3629">Identify Verification Overview</a>.
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
 
 
@@ -22,10 +22,10 @@ For more information on how to verify your identity, please see <a href="https:/
 ## Step 4. Create a bucket
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket management page.
 2. Click **Create Bucket** and enter the bucket information.
- - Name: bucket name, such as `examplebucket`.
- - Region: region where the bucket resides. Please select the region closest to you. For example, if you are in Shenzhen, you can select the Guangzhou region.
- - Access Permission: bucket access permission. For example, you can select "private read/write".
-![](https://main.qcloudimg.com/raw/403185f7cc974daf2cb962a45474747d.jpg)
+   - Name: bucket name, such as `examplebucket`.
+   - Region: region where the bucket resides. Please select the region closest to you. For example, if you are in Shenzhen, you can select the Guangzhou region.
+   - Access Permission: bucket access permission. For example, you can select "private read/write".
+![](https://main.qcloudimg.com/raw/8f575f8ef7c3da41150f9ca8417bca72.png)
 3. Click **OK**.
 
 

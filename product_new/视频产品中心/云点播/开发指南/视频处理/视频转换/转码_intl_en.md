@@ -5,7 +5,8 @@ Transcoding is an offline task that converts the source video bitstream to anoth
 - Watermarking: a watermark can be added to a video to mark video ownership or copyright. For more information, please see [Watermarking](https://intl.cloud.tencent.com/document/product/266/33939).
 - Reduced bandwidth consumption: with a more advanced codec (e.g., H.265), the bitrate of a video can be substantially reduced while retaining the original quality, which helps reduce the bandwidth consumption.
 
-## <span id = "zm" ></span>Transcoding Template
+## <span id = "zm" ></span>
+Transcoding Template
 
 The target specification of an output video after transcoding is subject to parameters such as encoder, resolution, and bitrate, which can be customized in the form of VOD transcoding template as shown below:
 
@@ -168,7 +169,7 @@ Below are instructions for initiating transcoding tasks in these ways:
 
 * Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [transcoding template](#zm) ID in the `MediaProcessTask.TranscodeTaskSet` parameter in the request.
 * Initiate a task on a video through the console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, and use the task flow to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33890).
-* Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, and specify this task flow as the `procedure` in the [ApplyUpload](#APIhttps://intl.cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
+* Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, and specify this task flow as the `procedure` in the [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
 * Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, and specify this task flow as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).
 * Upload through console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, upload a video through the console, select [Process Video During Upload](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4), and specify to execute this task flow upon video upload completion.
 

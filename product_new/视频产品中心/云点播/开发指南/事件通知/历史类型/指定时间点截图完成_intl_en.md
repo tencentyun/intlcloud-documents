@@ -6,7 +6,7 @@
 CreateSnapshotByTimeOffsetComplete
 
 ## Event Description
-If the application is configured with event notification, after a time point screenshot is captured, the application backend can get an event notification through "normal callback" or "reliable callback". <!--API The content of the event notification is the [`SnapshotByTimeOffsetTask2017` structure](https://intl.cloud.tencent.com/document/product/266/34187#SnapshotByTimeOffsetTask2017).-->
+If the application is configured with event notification, after a time point screenshot is captured, the application backend can get an event notification through "normal callback" or "reliable callback". API The content of the event notification is the [`SnapshotByTimeOffsetTask2017` structure](https://intl.cloud.tencent.com/document/product/266/34187#SnapshotByTimeOffsetTask2017).
 
 
 ## Normal Callback

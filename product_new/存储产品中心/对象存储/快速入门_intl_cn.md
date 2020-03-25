@@ -9,7 +9,7 @@
 
 ## 步骤2：完成实名认证
 如果已完成，可忽略此步骤。
-详细认证流程请参见 <a href="https://cloud.tencent.com/document/product/378/3629">实名认证介绍</a>。
+详细认证流程请参见 <a href="https://intl.cloud.tencent.com/document/product/378/3629">实名认证介绍</a>。
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 
 
@@ -25,7 +25,7 @@
  - 名称：存储桶名称，此处我们输入 examplebucket。
  - 所属地域：存储桶存放地域，选择与您最近的一个地区，例如我在 “深圳”，地域可以选择 “广州”。
  - 访问权限：存储桶访问权限，此处我们选择“私有读写”。
-![](https://main.qcloudimg.com/raw/403185f7cc974daf2cb962a45474747d.jpg)
+![](https://main.qcloudimg.com/raw/8f575f8ef7c3da41150f9ca8417bca72.png)
 3. 单击【确定】，即可创建存储桶。
 
 

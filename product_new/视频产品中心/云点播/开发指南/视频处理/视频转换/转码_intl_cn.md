@@ -5,7 +5,8 @@
 - 为视频打水印：为视频打上水印标识视频的归属或版权，更多信息请参见 [水印](https://intl.cloud.tencent.com/document/product/266/33939)。
 - 节省带宽：采用更先进的编码方式（如 H.265）转码，在不损失原始画质的情况下显著降低码率，节省播放带宽。
 
-## <span id = "zm" ></span>转码模板
+## <span id = "zm" ></span>
+转码模板
 
 转码的目标规格包含了编码格式、分辨率和码率等参数。云点播使用转码模板表示转码参数集合，通过转码模板，可以指定以下转码相关参数。
 
@@ -168,7 +169,7 @@
 
 * 调用服务端 API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) 发起任务：在请求中的`MediaProcessTask.TranscodeTaskSet`参数指定 [转码模板](#zm) 的模板 ID。
 * 通过控制台对视频发起任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33890)。
-* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；[申请上传](#APIhttps://intl.cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
+* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；[申请上传](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
 * 客户端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) 中的`procedure`指定该任务流。
 * 控制台上传：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；通过控制台上传视频，选择 [上传的同时对视频进行处理操作](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4) 并指定视频上传后执行该任务流。
 

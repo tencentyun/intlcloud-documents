@@ -1,0 +1,1 @@
+EMR currently allows you to migrate your data in two ways: 1. Migrating your data to COS; 2. Copying EMR cluster data to your self-built HDFS through DistCP. This method requires your self-built cluster is connect with the EMR cluster network.

@@ -49,7 +49,7 @@ You can initiate a task for a video in VOD through the console. For more informa
 VOD offers three ways to upload a video: upload from client, upload from server, and upload through the console. All of them support specifying the task to be executed upon upload.
 
 - Upload from client: you can specify a task upon upload through the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#p3).
-- Upload from server: you can specify a task upon upload through the `procedure` parameter in the [ApplyUpload](#https://intl.cloud.tencent.com/document/product/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) API.
+- Upload from server: you can specify a task upon upload through the `procedure` parameter in the [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120) API.
 - Upload through console: you can upload a video through the console, select **Process Video During Upload**, and specify the task upon upload. For detailed directions, please see [Uploading Videos](https://intl.cloud.tencent.com/document/product/266/33890).
 
 <span id="ResultNotification"></span>

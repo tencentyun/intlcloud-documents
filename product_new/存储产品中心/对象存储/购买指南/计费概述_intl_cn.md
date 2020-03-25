@@ -20,8 +20,8 @@
 
 ## 计费项
 
-对象存储 COS 的费用组成如下图所示，更多介绍请参见 [计费项](https://cloud.tencent.com/document/product/436/40285)。
-![](https://main.qcloudimg.com/raw/2a2d84360ad6d8f1b3b3cd5088b0a4a2.png)
+对象存储 COS 的计费项包括：存储容量费用、请求费用、数据取回费用、流量费用和管理功能费用，如下图所示。更多介绍请参见 [计费项](https://intl.cloud.tencent.com/document/product/436/33776)。
+![](https://main.qcloudimg.com/raw/7d33f22344fb972e6f221e0c11de9805.png)
 
 
 ## 计费周期
@@ -80,7 +80,7 @@
 
 1. 关于 COS 的费用详细计算及不同场景下的计费详情，请参见 [计费示例](https://intl.cloud.tencent.com/document/product/436/6241)。
 2. 关于 COS 的欠费停服策略：数据的保留和销毁时间、以及相关计费说明，请参见 COS [欠费说明](https://intl.cloud.tencent.com/document/product/436/10044)。
-3. 若您对 COS 计费仍有疑问，可参见计费 [常见问题](https://cloud.tencent.com/document/product/436/36524) 寻求答案。
+3. 若您对 COS 计费仍有疑问，可参见计费 [常见问题](https://intl.cloud.tencent.com/document/product/436/32532) 寻求答案。
 
 
 

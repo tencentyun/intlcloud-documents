@@ -5,7 +5,8 @@
 
 云点播支持为视频或截图打多个水印，并可以指定各个水印在画面中的大小和位置。
 
-## <span id = "sy"></span>水印模板
+## <span id = "sy"></span>
+水印模板
 
 水印的目标规格包含了水印类型、宽高和位置等参数。云点播使用水印模板表示水印参数集合，通过水印模板，可以指定以下水印相关参数。
 
@@ -30,7 +31,7 @@
 
 * 调用服务端 API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) 发起任务：在请求中的`MediaProcessTask.TranscodeTaskSet`参数指定 [水印模板](#sy) 的模板 ID。
 * 通过控制台对视频发起任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置转码时所打水印的目标规格；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33890)。
-* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置转码时所打水印的目标规格；[申请上传](#APIhttps://intl.cloud.tencent.com/document/api/266/31767#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
+* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置转码时所打水印的目标规格；[申请上传](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
 * 客户端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置转码时所打水印的目标规格；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0) 中的`procedure`指定该任务流。
 * 控制台上传：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置转码时所打水印的目标规格；通过控制台上传视频，选择[【上传的同时对视频进行处理操作】](https://intl.cloud.tencent.com/document/product/266/33890)并指定视频上传后执行该任务流。
 
