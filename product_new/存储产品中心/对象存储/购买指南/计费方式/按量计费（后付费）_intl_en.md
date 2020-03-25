@@ -30,6 +30,12 @@ The billable items in COS and their billing formulas are as detailed below:
       <td>Calculated based on the public network downstream traffic, CDN origin-pull traffic, and cross-region replication traffic at a unit price that varies by traffic type</td>
       <td>Traffic fees = unit price per GB * daily accumulated traffic</td>
    </tr>
+   <tr>
+      <td>Administrative Feature Fees</td>
+      <td>Administrative feature fees refer to the fees incurred by use of administrative features (such as inventory and extraction) after they are enabled, currently including inventory fees and data extraction fees</td>
+      <td>Inventory feature cost = number of objects listed / million * unit price<br>Select feature cost = unit price per GB * cumulative data retrieval amount per day
+</td>
+   </tr>
 </table>
 
 
