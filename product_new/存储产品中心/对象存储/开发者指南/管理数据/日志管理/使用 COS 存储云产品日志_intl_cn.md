@@ -54,7 +54,7 @@
 
 CLS 投递到 COS 支持如下三种方式投递：
 
-- 通过分隔符格式投递：可以将数据按照分隔符格式投递到 COS。
+- 通过分隔符格式投递：可以将数据按照分隔符格式投递到 COS，详情请参见 [CSV](https://intl.cloud.tencent.com/document/product/614/31582)。
 - 通过 JSON 格式投递：可以将数据按照 JSON 格式投递到 COS，详情请参见 [JSON 格式投递](https://intl.cloud.tencent.com/document/product/614/31583)。
 - 通过原文格式投递：可以将数据按照原文格式进行投递，支持单行全文、多行全文投递，部分支持 CSV 格式投递，详情请参见 [原文格式投递](https://intl.cloud.tencent.com/document/product/614/31584)。
 
