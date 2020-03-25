@@ -1,7 +1,7 @@
 
-Billable items in COS include [storage capacity](#jf1), [requests](#jf2), [data retrievals](#jf3), [traffic](#jf4), and [administrative features](#jf5) as shown below:
+Billable items in COS include [storage capacity](#jf1), [requests](#jf2), [data retrievals](#jf3), [traffic](#jf4), and [administrative features](#jf5).
 
-COS offers three object storage classes for different access frequencies: standard storage, standard_IA storage, and archive storage. For more information, please see [COS Storage Classes](https://intl.cloud.tencent.com/document/product/436/30925).
+> COS offers three object storage classes for different access frequencies: standard storage, standard_IA storage, and archive storage. For more information, please see [COS Storage Classes](https://intl.cloud.tencent.com/document/product/436/30925).
 
 
 <span id="jf1"></span>
@@ -15,7 +15,7 @@ COS offers three object storage classes for different access frequencies: standa
       <th>Billing Description</th>
    </tr>
    <tr>
-      <td nowrap="nowrap">Storage capacity</td>
+      <td Storage capacity</td>
       <td>Standard storage<br>Standard_IA storage<br>Archive storage</td>
       <td>Storage capacity refers to the actual storage space used by your data.<br>The fees are calculated based on the size of actually used storage capacity.</td>
       <td nowrap="nowrap"><li>Settled on a monthly basis <br><li>Storage capacity fees = storage capacity unit price * monthly storage capacity used<br><li>Monthly storage capacity used = sum of "daily storage capacity used" in the month / number of days in the month <br><li>Daily storage capacity used = sum of "5-minute storage capacity used" / 288 (number of statistical points)</td>
