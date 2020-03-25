@@ -5,7 +5,8 @@ Watermarking is an offline task that adds an image or text at the specified posi
 
 VOD can add multiple watermarks to a video or screenshot. The size and position can be customized individually.
 
-## <span id = "sy"></span>Watermarking Template
+## <span id = "sy"></span>
+Watermarking Template
 
 The target specification of a watermark is subject to parameters such as watermark type, width, height, and position, which can be customized in the form of VOD watermarking template as shown below:
 

@@ -1,6 +1,7 @@
 Animated image generating is an offline task that converts a video to an animated image such as in GIF or WEBP format. An animated image is a seamless cycle of continuous frames, which can deliver an animation effect with a small file size.
 
-## <span id = "zdt"></span>Animated Image Generating Template
+## <span id = "zdt"></span>
+Animated Image Generating Template
 
 The target specification of an animated image is subject to parameters such as animated image file format, width, height, and frame rate, which can be customized in the form of VOD animated image generating template as shown below:
 
