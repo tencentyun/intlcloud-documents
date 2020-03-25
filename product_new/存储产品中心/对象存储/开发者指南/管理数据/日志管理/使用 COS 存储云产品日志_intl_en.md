@@ -100,8 +100,3 @@ Currently, you can use COS Select through the console or API.
 | Console   | [Click here](https://intl.cloud.tencent.com/document/product/436/32538) |
 | API      | [Click here](https://intl.cloud.tencent.com/document/product/436/32360) |
 
-### Analyzing logs with Sparkling
-
-If you want to collect and aggregate the logs of all Tencent Cloud products for big data analysis, you are commended to use Tencent Sparkling Data Warehouse Suite (Sparkling). Based on the industry-leading Apache Spark framework, Sparkling offers a rich set of fully-managed, easy-to-use, and high-performance cloud data warehousing services. It provides a one-stop solution for big data development and data computing. By leveraging its cross-data source conjoint analysis feature, you can analyze aggregated logs of different Tencent Cloud products and tap into the value of log data.
-
-For more information on how to use Sparkling, please see the [Sparkling](https://intl.cloud.tencent.com/document/product/1019) product documentation or Analyze COS Server Access Logs with Sparkling.

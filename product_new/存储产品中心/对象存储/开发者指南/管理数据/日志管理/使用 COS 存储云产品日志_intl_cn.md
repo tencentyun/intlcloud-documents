@@ -54,7 +54,7 @@
 
 CLS 投递到 COS 支持如下三种方式投递：
 
-- 通过分隔符格式投递：可以将数据按照分隔符格式投递到 COS，详情请参见 [CSV](https://intl.cloud.tencent.com/document/product/614/31582)。
+- 通过分隔符格式投递：可以将数据按照分隔符格式投递到 COS，详情请参见 [CSV 格式投递](https://intl.cloud.tencent.com/document/product/614/31582)。
 - 通过 JSON 格式投递：可以将数据按照 JSON 格式投递到 COS，详情请参见 [JSON 格式投递](https://intl.cloud.tencent.com/document/product/614/31583)。
 - 通过原文格式投递：可以将数据按照原文格式进行投递，支持单行全文、多行全文投递，部分支持 CSV 格式投递，详情请参见 [原文格式投递](https://intl.cloud.tencent.com/document/product/614/31584)。
 
@@ -100,8 +100,3 @@ CLS 投递到 COS 支持如下三种方式投递：
 | 控制台   | [点此查阅](https://intl.cloud.tencent.com/document/product/436/32538) |
 | API      | [点此查阅](https://intl.cloud.tencent.com/document/product/436/32360) |
 
-### 使用 Sparkling 对日志进行分析
-
-如果您需要对云上所有产品日志进行整合和汇聚，同时进行大数据分析，我们推荐您用云数据仓库套件 Sparkling 服务。Sparkling 服务基于业界领先的 Apache Spark 框架，为用户提供一套全托管、简单易用、高性能的云端数据仓库解决方案，实现一站式大数据开发与数据科学计算。企业可以借助 Sparkling 跨数据源联合分析特性，对云上来自不同产品的日志数据进行联合分析，挖掘日志数据价值。
-
-您可以参考 [Sparkling](https://intl.cloud.tencent.com/document/product/1019) 产品文档了解如何使用 Sparkling 服务，或者参考 COS 为您提供的 使用 Sparkling 分析 COS 服务端访问日志 简易入门教程。
