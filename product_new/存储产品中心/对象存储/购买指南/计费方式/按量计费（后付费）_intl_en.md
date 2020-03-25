@@ -11,24 +11,31 @@ The billable items in COS and their billing formulas are as detailed below:
       <th>Billing Formula</th>
    </tr>
    <tr>
-      <td nowrap="nowrap">Storage capacity fees</td>
+      <td>Storage capacity fees</td>
       <td>Calculated based on the storage capacity used at a unit price that varies by storage class</td>
-      <td nowrap="nowrap">Storage capacity fees = storage capacity unit price * monthly storage capacity used</td>
+      <td>Storage capacity fees = storage capacity unit price * monthly storage capacity used</td>
    </tr>
    <tr>
       <td>Request fees</td>
       <td>Calculated based on the number of requests at a unit price that varies by storage class</td>
-      <td nowrap="nowrap">Request fees = unit price per 10,000 requests * monthly accumulated number of requests / 10,000</td>
+      <td>Request fees = unit price per 10,000 requests * monthly accumulated number of requests / 10,000</td>
    </tr>
    <tr>
       <td>Data retrieval fees</td>
       <td>Calculated based on the volume of data retrieved at a unit price that varies by storage class. This billable item applies when data in standard_IA and archive storage classes is downloaded</td>
-      <td nowrap="nowrap">Data retrieval fees = unit price per GB * monthly amount of data retrieved </td>
+      <td>Data retrieval fees = unit price per GB * monthly amount of data retrieved </td>
    </tr>
    <tr>
       <td>Traffic fees</td>
       <td>Calculated based on the public network downstream traffic, CDN origin-pull traffic, and cross-region replication traffic at a unit price that varies by traffic type</td>
-      <td nowrap="nowrap">Traffic fees = unit price per GB * daily accumulated traffic</td>
+      <td>Traffic fees = unit price per GB * daily accumulated traffic</td>
+   </tr>
+   <tr>
+      <td>Administrative Feature Fees</td>
+      <td>Administrative feature fees refer to the fees incurred by use of administrative features (such as inventory and extraction) after they are enabled, currently including inventory fees and data extraction fees</td>
+      <td>Inventory feature fees = number of objects listed / million * unit price<br>Data extraction fees = unit price per GB * daily accumulated data extract
+
+</td>
    </tr>
 </table>
 

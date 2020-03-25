@@ -13,10 +13,10 @@ Disaster recovery entails three elements: redundancy, remote, and replication.
 - Remote: backup data should be stored in another remote region, as disasters often extend geographically and only a long enough distance can guarantee the availability of redundant data.
 - Replication: data loss during backup should be reduced down to zero.
 
-The cross-region replication feature of COS enables cross-region sync of incremental data. Data you upload can be copied to a bucket in another region in seconds or minutes, depending on the file size and distance. Cross-region replication allows you to make a remote redundant backup of data for disaster recovery and business continuity. For more information, please see [Cross-region Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237). To enable this feature, you need to enable versioning first. For more information on versioning, please see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
+The cross-region replication feature of COS enables cross-region sync of incremental data. Data you upload can be copied to a bucket in another region in seconds or minutes, depending on the file size and distance. Cross-region replication allows you to make a remote redundant backup of data for disaster recovery and business continuity. To enable this feature, you need to enable versioning first. For more information on versioning, please see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
 
 The schematic diagram of the backup and disaster recovery architecture based on cross-region replication is as shown below:
-![](https://main.qcloudimg.com/raw/2b30c24aae10ac2cfb8e91e6330a4910.png)
+![](https://main.qcloudimg.com/raw/fba213608e66f1e8b8426692eb709f33.png)
 
 Under this architecture, your bucket A and bucket B are the master and slave to each other. If your data is stored in bucket A, then bucket B in another region is the slave bucket. In order to ensure business continuity and stability, you have configured cross-region replication rules for bucket A and bucket B respectively. According to the rules, incremental data in bucket A will be automatically replicated to bucket B, and vice versa.
 
@@ -62,7 +62,6 @@ The following documents can help you easily implement the high-availability disa
 
 - [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883)
 - [Cross-Region Replication Overview](https://intl.cloud.tencent.com/document/product/436/19237)
-- Scheduled Automatic Testing and Alarming via Email
 - [Setting Origin-Pull](https://intl.cloud.tencent.com/document/product/436/31508)
 - [CDN Acceleration Configuration](https://intl.cloud.tencent.com/document/product/436/18670)
 - [Origin Server Configuration](https://intl.cloud.tencent.com/document/product/228/6289)
