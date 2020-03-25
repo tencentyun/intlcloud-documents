@@ -4,9 +4,9 @@ Watermarking is an offline task that adds an image or text at the specified posi
 - Text watermark: this refers to a multi-lingual text watermark. It can be a user's nickname and is generally used to identify the producer of UGSV content.
 
 VOD can add multiple watermarks to a video or screenshot. The size and position can be customized individually.
+<span id = "sy"></span>
+## Watermarking Template
 
-## <span id = "sy"></span>
-Watermarking Template
 
 The target specification of a watermark is subject to parameters such as watermark type, width, height, and position, which can be customized in the form of VOD watermarking template as shown below:
 
