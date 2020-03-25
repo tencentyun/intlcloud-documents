@@ -92,11 +92,11 @@
 * [NodeJS SDK](https://intl.cloud.tencent.com/document/product/266/33918#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
 * [Golang SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E5.AD.90.E5.BA.94.E7.94.A8.E4.B8.8A.E4.BC.A0)
 
-<!--
+
 #### 服务端 API 方式
-使用 API 方式进行上传时涉及到 [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/31767) 和 [CommitUpload](https://intl.cloud.tencent.com/document/product/266/31766) 两个接口，具体用法请参见 [在服务端 API 中指定子应用](#p2)。
+使用 API 方式进行上传时涉及到 [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120) 和 [CommitUpload](https://intl.cloud.tencent.com/document/product/266/34119) 两个接口，具体用法请参见 [在服务端 API 中指定子应用](#p2)。
 我们强烈建议使用 SDK 来进行上传。
--->
+
 ### 客户端上传
 [客户端上传](https://intl.cloud.tencent.com/document/product/266/33921) 支持上传到指定的子应用，指定方法为在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922) 中增加一个参数：`vodSubAppId=xxx`（`xxx`指子应用 ID）。如果要上传到主应用，既可以填写主应用的标识符，也可以不填。
 

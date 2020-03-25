@@ -26,10 +26,10 @@ After video content audit is enabled in VOD, the application backend can efficie
 3. VOD notifies the application backend of [relevant information](https://intl.cloud.tencent.com/document/product/266/33950) such as the `FileId` and playback URL of the uploaded video.
 4. VOD executes the video content audit task configured with the `procedure` parameter during generation of the upload signature.
 5. VOD notifies the application backend of the audit result through [ProcedureStateChanged](https://intl.cloud.tencent.com/document/product/266/33953).
-6. The application backend publishes videos labeled as "pass" and those that are labeled as "review" and pass human audit.
+6. The application backend publishes videos tagged as "pass" and those that are tagged as "review" and pass human audit.
 7. The content consumer requests the playback URL for the published video from the application backend.
 8. The content consumer accelerates video playback via VOD through the URL.
 
 After steps 4–6 are added, the process above can ensure that the video obtained by the content consumer in step 7 is audited and legal.
 
-> The process here takes the "audit before release" approach, i.e., only videos that pass audit can be published. You can also use the "release before audit" mode based on your needs, i.e., videos are published upon successful upload and will be taken down if they are identified as illegal after audit.
+> The process here takes the "audit before release" approach, i.e., only videos that pass audit can be published. You can also use the "release before audit" mode based on your needs, i.e., videos are published upon successful upload and will be removed if they are identified as illegal after audit.

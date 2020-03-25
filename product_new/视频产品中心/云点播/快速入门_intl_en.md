@@ -1,3 +1,4 @@
+
 This document guides you through how to quickly upload a video from your local file system to VOD and use VOD features to process it, **so that you can directly watch an accelerated and watermarked output video on a webpage**. The local video file "Tencent Cloud.mp4" is used as an example here.
 
 
