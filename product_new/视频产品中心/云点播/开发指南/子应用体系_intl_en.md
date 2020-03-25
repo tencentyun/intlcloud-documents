@@ -29,16 +29,16 @@ The VOD subapplication system provides the following capabilities:
 - You can manipulate VOD resources of any subapplications through the console or server APIs.
 - Independent statistics are generated for each subapplication, such as storage usage, bandwidth/traffic, transcoding duration, video audit duration, and playback data.
 - Aggregated statistics for all subapplications are provided.
-
-### <span id ="p4"></span>Limits
+<span id ="p4"></span>
+### Limits
 The VOD subapplication system has the following limits:
 
 - The name and description of the primary application cannot be modified.
 - Subapplications cannot be deleted.
 - Up to 50 subapplications can be created under one VOD account.
 - No separate billing logic (such as billing mode, separate bill generation, and purchase of exclusive resource packages) can be set for subapplications. All subapplications under a VOD account belong to the same account, and all VOD usage data (including but not limited to VOD billable items such as storage, traffic, transcoding duration, and video audit duration) is aggregated for fee calculation and unified billing.
-
-## <span id="p3"></span>Console Instructions
+<span id="p3"></span>
+## Console Instructions
 
 ### Enabling the subapplication feature
 
@@ -56,7 +56,8 @@ After the subapplication feature is enabled, a drop-down list will be displayed 
 Under the admin role, the left sidebar displays the following entries: **Service Overview**, **Applications**, and **Resource Packages**.
 
 - Service Overview: this page displays the VOD billing mode, aggregated key business data of all subapplications, and key business data of each subapplication.
-- <span id = "p1"></span>Applications: on this page, you can view, create, edit, or disable subapplications. Subapplication IDs are also displayed on this page.
+<span id = "p1"></span>
+- Applications: on this page, you can view, create, edit, or disable subapplications. Subapplication IDs are also displayed on this page.
 - Resource Packages: on this page, you can view purchased resource packages and their usage.
 
 >If you are billed monthly, resource packages will not be available (existing resource packages are in "frozen" state). After you switch to daily billing, if a resource package is still within its validity period, it will be automatically unfrozen so that you can continue to it.
@@ -68,8 +69,9 @@ Under the subapplication role, usage of the VOD Console is basically the same as
 ## Server API Instructions
 After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using [VOD Server APIs](https://intl.cloud.tencent.com/document/product/266/31752).
 -->
-### <span id = "p2"></span>
-Specifying a subapplication in a server API
+<span id = "p2"></span>
+### Specifying a subapplication in a server API
+
 VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.tencent.com/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
 <!--api

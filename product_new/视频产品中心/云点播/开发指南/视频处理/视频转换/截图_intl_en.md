@@ -8,9 +8,9 @@ The screencapturing feature can meet your needs in the following application sce
 - Video cover generation: a screenshot of a video can be used as its cover.
 - Thumbnail: an image sprite is a large image composed of multiple subimages (i.e., thumbnails), which is usually used to represent a video overview.
 - Playback preview: together with a VTT file, an image sprite can be used to achieve preview effect on the player progress bar.
+<span id = "jt"></span>
+## Screencapturing Template
 
-## <span id = "jt"></span>
-Screencapturing Template
 
 The target specification of a screenshot is subject to parameters such as screenshot file format, width, and height, which can be customized in the form of VOD screencapturing template as shown below:
 
