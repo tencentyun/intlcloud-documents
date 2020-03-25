@@ -58,13 +58,16 @@ scp $localfile root@公网IP地址:$remotefolder
 数据存放在 COS 中有两种方式：**在本地通过 COS 的控制台上传**和**在 EMR 集群通过 Hadoop 命令上传**。
 
 - 在本地通过 [COS 控制台直接上传](https://intl.cloud.tencent.com/document/product/436/13321)，如果数据文件已经在 COS 可以通过如下命令查看：
- ```
+
+```
  [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/README.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname /README.txt
 ```
+
 其中 $bucketname 替换成您的储存桶的名字和路径。
 
 - 在 EMR 集群通过 Hadoop 命令上传，指令如下：
+
 ```
 [hadoop@10 hadoop]$ hadoop fs -put README.txt cosn:// $bucketname /
 [hadoop@10 hadoop]$ bin/hadoop fs -ls cosn:// $bucketname /README.txt
@@ -76,10 +79,12 @@ scp $localfile root@公网IP地址:$remotefolder
 
 ### 统计 HDFS 中的文本文件
 进入 `/usr/local/service/hadoop` 目录，和数据准备中一样。通过如下命令来提交任务：
+
 ```
 [hadoop@10 hadoop]$ bin/yarn jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar wordcount
 /user/hadoop/README.txt /user/hadoop/output
 ```
+
 >以上整个命令为一条完整的指令，`/user/hadoop/README.txt` 为输入的待处理文件，`/user/hadoop/output` 为输出文件夹，在提交命令之前要保证 output 文件夹尚未创建，否则提交会出错。
 
 执行完成后，通过如下命令查看执行输出文件：
