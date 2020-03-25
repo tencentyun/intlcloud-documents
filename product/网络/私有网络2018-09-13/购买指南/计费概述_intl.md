@@ -25,9 +25,9 @@ NAT Gateway fees consists of the gateway usage (billed hourly) and the Internet 
  
 | Type | Mainland China | Singapore, Silicon Valley, Virginia, Frankfurt, Hong Kong (China), Korea, Russia & Japan | Mumbai | Toronto & Bangkok |
 |--|--|--|--|--|
-| Small (up to 1 million connections) | 0.089 | 0.13 | 0.14 | 0.18 |
-| Medium (up to 3 million connections) | 0.28 | 0.39 | 0.42 | 0.54 |
-| Large (up to 10 million connections) | 0.89 | 1.3 | 0.14 | 0.18 |
+| Small (up to 1 million connections) | 0.089 | 0.13 |	0.18|	0.14|
+| Medium (up to 3 million connections) | 0.28 | 0.39 |	0.54 |	0.42|
+| Large (up to 10 million connections) | 0.89 | 1.3	|  1.8|	1.4 |
  
 >
 >
