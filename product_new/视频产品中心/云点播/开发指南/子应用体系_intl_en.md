@@ -29,16 +29,16 @@ The VOD subapplication system provides the following capabilities:
 - You can manipulate VOD resources of any subapplications through the console or server APIs.
 - Independent statistics are generated for each subapplication, such as storage usage, bandwidth/traffic, transcoding duration, video audit duration, and playback data.
 - Aggregated statistics for all subapplications are provided.
-
-### <span id ="p4"></span>Limits
+<span id ="p4"></span>
+### Limits
 The VOD subapplication system has the following limits:
 
 - The name and description of the primary application cannot be modified.
 - Subapplications cannot be deleted.
 - Up to 50 subapplications can be created under one VOD account.
 - No separate billing logic (such as billing mode, separate bill generation, and purchase of exclusive resource packages) can be set for subapplications. All subapplications under a VOD account belong to the same account, and all VOD usage data (including but not limited to VOD billable items such as storage, traffic, transcoding duration, and video audit duration) is aggregated for fee calculation and unified billing.
-
-## <span id="p3"></span>Console Instructions
+<span id="p3"></span>
+## Console Instructions
 
 ### Enabling the subapplication feature
 
@@ -56,7 +56,8 @@ After the subapplication feature is enabled, a drop-down list will be displayed 
 Under the admin role, the left sidebar displays the following entries: **Service Overview**, **Applications**, and **Resource Packages**.
 
 - Service Overview: this page displays the VOD billing mode, aggregated key business data of all subapplications, and key business data of each subapplication.
-- <span id = "p1"></span>Applications: on this page, you can view, create, edit, or disable subapplications. Subapplication IDs are also displayed on this page.
+<span id = "p1"></span>
+- Applications: on this page, you can view, create, edit, or disable subapplications. Subapplication IDs are also displayed on this page.
 - Resource Packages: on this page, you can view purchased resource packages and their usage.
 
 >If you are billed monthly, resource packages will not be available (existing resource packages are in "frozen" state). After you switch to daily billing, if a resource package is still within its validity period, it will be automatically unfrozen so that you can continue to it.
