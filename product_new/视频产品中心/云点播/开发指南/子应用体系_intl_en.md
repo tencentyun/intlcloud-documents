@@ -68,8 +68,9 @@ Under the subapplication role, usage of the VOD Console is basically the same as
 ## Server API Instructions
 After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using [VOD Server APIs](https://intl.cloud.tencent.com/document/product/266/31752).
 -->
-### <span id = "p2"></span>
-Specifying a subapplication in a server API
+<span id = "p2"></span>
+### Specifying a subapplication in a server API
+
 VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.tencent.com/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
 <!--api
