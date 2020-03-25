@@ -38,19 +38,25 @@ After the upload succeeds, you can check whether the file is in the correspondin
 
 ### Storing data in HDFS
 After uploading the data to the CVM instance, you can copy it to the HDFS cluster. The README.txt file in the `/usr/local/service/hadoop` directory is used here as an example. Copy the file to the Hadoop cluster by running the following command:
+
 ```
 [hadoop@172 hadoop]$ hadoop fs -put README.txt /user/hadoop/
 ```
+
 After the copy is completed, run the following command to view the copied file:
+
 ```
 [hadoop@172 hadoop]$ hadoop fs -ls /user/hadoop
 Output:
 -rw-r--r-- 3 hadoop supergroup 1366 2018-06-28 11:39 /user/hadoop/README.txt
 ```
+
 If there is no `/user/hadoop` folder in Hadoop, you can create it on your own by running the following command:
+
 ```
 [hadoop@172 hadoop]$ hadoop fs –mkdir /user
 ```
+
 For more Hadoop commands, please see [Common HDFS Operations](https://intl.cloud.tencent.com/document/product/1026/31124)
 
 
@@ -58,13 +64,16 @@ For more Hadoop commands, please see [Common HDFS Operations](https://intl.cloud
 There are two ways to store data in COS: **uploading through the COS Console from the local file system** and **uploading through Hadoop command from the EMR cluster**.
 
 - When [uploading through the COS Console from the local file system](https://intl.cloud.tencent.com/document/product/436/13321), if the data file is already in COS, you can view it by running the following command:
- ```
+
+```
  [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/README.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname /README.txt
 ```
+
 Replace $bucketname with the name and path of your bucket.
 
 - To upload through Hadoop command from the EMR cluster, run the following command:
+
 ```
 [hadoop@10 hadoop]$ hadoop fs -put README.txt cosn:// $bucketname /
 [hadoop@10 hadoop]$ bin/hadoop fs -ls cosn:// $bucketname /README.txt
