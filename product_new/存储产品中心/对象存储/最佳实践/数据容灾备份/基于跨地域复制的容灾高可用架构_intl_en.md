@@ -24,7 +24,7 @@ Under this architecture, your bucket A and bucket B are the master and slave to 
 
 Normally, both your master read request linkage and write request linkage point to bucket A, and all incremental data will be automatically, incrementally, and synchronously replicated to bucket B as backup data. You can add a network quality detection module to the upload or download program at the business side, allowing the read and write request linkages to quickly switch to bucket B when a failure is detected in bucket A.
 
->Network quality detection can be implemented based on SCF. For more information, please see Scheduled Automatic Testing and Alarming via Email. You can change the URLs to be automatically tested to the domain names of the master and slaver buckets by modifying the function code and change the alarming code snippets to other measures required by your business.
+>Network quality detection can be implemented based on SCF. You can change the URLs to be automatically tested to the domain names of the master and slaver buckets by modifying the function code and change the alarming code snippets to other measures required by your business.
 
 ## High-Availability Scheme Based on Cross-Region Replication
 
