@@ -48,7 +48,7 @@ Request fees include the fees incurred by the **user requests** and the **backen
       <td nowrap="nowrap">Number of requests</td>
       <td>Standard storage<br>Standard_IA storage<br>Archive storage</td>
       <td>Calculated based on the number of requests sent</td>
-      <td nowrap="nowrap"><li>Settled on a monthly basis<br><li>If the accumulated number of requests is below 10,000, it will be calculated as 10,000 requests<br><li>Request fees = unit price per 10,000 requests * monthly accumulated number of requests / 10,000 (rounded down)</td>
+      <td><li>Settled on a monthly basis<br><li>If the accumulated number of requests is below 10,000, it will be calculated as 10,000 requests<br><li>Request fees = unit price per 10,000 requests * monthly accumulated number of requests / 10,000 (rounded down)</td>
    </tr>
 </table>
 
