@@ -1,5 +1,5 @@
 ## 资源限制
-云联网资源支持限制如下所示，您还可以查看 [VPC 其它产品的使用约束](https://cloud.tencent.com/document/product/215/537) 。
+云联网资源支持限制如下所示 。
 <table>
 <tr>
 <th>资源</th>
