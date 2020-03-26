@@ -12,10 +12,10 @@ pip install requests
 ```
 스크립트를 실행하면 현재 지원하는 인터페이스 인벤토리가 보여집니다.
 ![](https://mc.qcloudimg.com/static/img/813c521d24602315a8ddd18c644f56a6/2.png)
-인터페이스 기능 설명은 [API 개요](https://cloud.tencent.com/doc/api/231/1723)를 참조하십시오.
+인터페이스 기능 설명은 [API 개요](https://intl.cloud.tencent.com/document/api/228/1723)를 참조하십시오.
 ### 도메인 상세 정보 조회
 #### 모든 도메인 상세 정보 조회
-1. 다음 명령어로 [DescribeCdnHosts](https://cloud.tencent.com/doc/api/231/3937) 인터페이스를 호출해 APPID 하의 모든 도메인 상세 정보를 조회할 수 있습니다.
+1. 다음 명령어로 [DescribeCdnHosts](https://intl.cloud.tencent.com/document/api/228/3937) 인터페이스를 호출해 APPID 하의 모든 도메인 상세 정보를 조회할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py DescribeCdnHosts -u xxxxxx -p xxxxxxx
 ```
@@ -84,7 +84,7 @@ python QcloudCdnTools_V2.py DescribeCdnHosts -u xxxxxx -p xxxxxxx
 ```
 
 #### 도메인에 따라 도메인 상세 정보 조회
-1. 다음 명령어로 [GetHostInfoByHost](https://cloud.tencent.com/doc/api/231/3938) 인터페이스를 호출해 특정 도메인에 대응하는 상세 정보를 조회할 수 있습니다.
+1. 다음 명령어로 [GetHostInfoByHost](https://intl.cloud.tencent.com/document/api/228/3938) 인터페이스를 호출해 특정 도메인에 대응하는 상세 정보를 조회할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py GetHostInfoByHost -u xxxxx -p xxxxxxx --hosts www.test.com --hosts www.test2.com
 ```
@@ -156,7 +156,7 @@ python QcloudCdnTools_V2.py GetHostInfoByHost -u xxxxx -p xxxxxxx --hosts www.te
 
 
 #### 도메인 ID에 따라 도메인 상세 정보 조회
-1. 다음 명령어로 [GetHostInfoById](https://cloud.tencent.com/doc/api/231/3939) 인터페이스를 호출해 ID에 대응하는 도메인 상세 정보를 조회할 수 있습니다.
+1. 다음 명령어로 [GetHostInfoById](https://intl.cloud.tencent.com/document/api/228/3939) 인터페이스를 호출해 ID에 대응하는 도메인 상세 정보를 조회할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py GetHostInfoById -u xxxxx -p xxxxxxx --ids 1234
 ```
@@ -227,7 +227,7 @@ python QcloudCdnTools_V2.py GetHostInfoById -u xxxxx -p xxxxxxx --ids 1234
 
 ### 퍼지와 프리패치
 #### URL 퍼지
-1. 다음 명령어로 [RefreshCdnUrl](https://cloud.tencent.com/doc/api/231/3946) 인터페이스를 호출해 특정 URL을 갱신할 수 있습니다.
+1. 다음 명령어로 [RefreshCdnUrl](https://intl.cloud.tencent.com/document/api/228/3946) 인터페이스를 호출해 특정 URL을 갱신할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py RefreshCdnUrl -u xxxxx -p xxxxxxx --urls http://xxxxxxxtang.sp.oa.com/test.php --urls http://www.test.com/1.html
 ```
@@ -250,7 +250,7 @@ python QcloudCdnTools_V2.py RefreshCdnUrl -u xxxxx -p xxxxxxx --urls http://xxxx
 그중 log_id는 제출한 갱신 작업 ID를 말하며, 이 ID에 따라 해당 갱신 작업의 실행 상태를 조회할 수 있습니다. count는 이번에 제출한 URL 갱신 수를 말합니다.
 
 #### 목록 갱신
-1. 다음 명령어로 [RefreshCdnDir](https://cloud.tencent.com/doc/api/231/3947) 인터페이스를 호출해 특정 목록을 갱신할 수 있습니다.
+1. 다음 명령어로 [RefreshCdnDir](https://intl.cloud.tencent.com/document/api/228/3947) 인터페이스를 호출해 특정 목록을 갱신할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py RefreshCdnDir -u xxxxx -p xxxxxxx --dirs http://www.test.com/abc/
 ```
@@ -302,7 +302,7 @@ python QcloudCdnTools_V2.py GetCdnRefreshLog -u xxxxxxxxxxxx -p xxxxxxxxxxxx --s
 
 ### 도메인설정
 #### 캐시 설정 수정
-1. 다음 명령어로 [UpdateCache](https://cloud.tencent.com/doc/api/231/3934) 인터페이스를 호출해 캐시 만료 설정을 수정할 수 있습니다.
+1. 다음 명령어로 [UpdateCache](https://intl.cloud.tencent.com/document/api/228/3934) 인터페이스를 호출해 캐시 만료 설정을 수정할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py UpdateCache -u xxxxx -p xxxxxxx --hostId 1234 --cache [[0,\"all\",1000],[1,\".jpg;.js\",2000],[2,\"/www/html\",3000]]
 ```
@@ -324,7 +324,7 @@ request is success.
 ```
 
 #### 도메인 세부 항목 수정
-1. 다음 명령어로 [UpdateCdnProject](https://cloud.tencent.com/doc/api/231/3935) 인터페이스를 호출해 도메인 세부 항목을 수정할 수 있습니다.
+1. 다음 명령어로 [UpdateCdnProject](https://intl.cloud.tencent.com/document/api/228/3935) 인터페이스를 호출해 도메인 세부 항목을 수정할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py UpdateCdnProject -u xxxxx -p xxxxxxx --hostId 1234 --projectId 0
 ```
@@ -341,7 +341,7 @@ request is success.
 ```
 
 #### 도메인 설정 수정
-1. 다음 명령어로 [UpdateCdnConfig](https://cloud.tencent.com/doc/api/231/1397) 인터페이스를 호출해 캐시 만료 설정, 링크 도용 방지, 호스트 헤더, 전체 경로 캐시 등을 포함한 도메인 설정을 수정할 수 있습니다.
+1. 다음 명령어로 [UpdateCdnConfig](https://intl.cloud.tencent.com/document/api/228/1397) 인터페이스를 호출해 캐시 만료 설정, 링크 도용 방지, 호스트 헤더, 전체 경로 캐시 등을 포함한 도메인 설정을 수정할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py UpdateCdnConfig -u xxxxx -p xxxxxxx --hostId 1234 --projectId 0 --cacheMode custom --cache [[0,\"all\",1023448]] --refer [1,[\"www.baidu.com\",\"www.qq.com\"]] --fwdHost www.test.org --fullUrl off
 ```
@@ -370,7 +370,7 @@ request is success.
 
 ### 도메인 관리
 #### 도메인 추가
-1. 다음 명령어로 [AddCdnHost](https://cloud.tencent.com/doc/api/231/1406) 인터페이스를 호출해 CDN 가속 도메인을 추가할 수 있습니다.
+1. 다음 명령어로 [AddCdnHost](https://intl.cloud.tencent.com/document/api/228/1406) 인터페이스를 호출해 CDN 가속 도메인을 추가할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py AddCdnHost -u xxxxx -p xxxxxxx --host www.test.com --projectId 0 --hostType cname --origin 1.1.1.1
 ```
@@ -388,7 +388,7 @@ request is success.
 ```
 
 #### 도메인 비활성화
-1. 다음 명령어로 [OfflineHost](https://cloud.tencent.com/doc/api/231/1403) 인터페이스를 호출해 특정 도메인의 CDN 가속 서비스를 끌 수 있습니다.
+1. 다음 명령어로 [OfflineHost](https://intl.cloud.tencent.com/document/api/228/1403) 인터페이스를 호출해 특정 도메인의 CDN 가속 서비스를 끌 수 있습니다.
 ```
 python QcloudCdnTools_V2.py OfflineHost -u xxxxx -p xxxxxxx --hostId 1234
 ```
@@ -404,7 +404,7 @@ request is success.
 ```
 
 #### 도메인 활성화
-1. 다음 명령어로 [OnlineHost](https://cloud.tencent.com/doc/api/231/1402) 인터페이스를 호출해 특정 도메인의 CDN 가속 서비스를 켤 수 있습니다.
+1. 다음 명령어로 [OnlineHost](https://intl.cloud.tencent.com/document/api/228/1402) 인터페이스를 호출해 특정 도메인의 CDN 가속 서비스를 켤 수 있습니다.
 ```
 python QcloudCdnTools_V2.py OnlineHost -u xxxxx -p xxxxxxx --hostId 1234
 ```
@@ -420,7 +420,7 @@ request is success.
 ```
 
 #### 도메인 삭제
-1. 다음 명령어로 [DeleteCdnHost](https://cloud.tencent.com/doc/api/231/1396) 인터페이스를 호출해 특정 도메인을 삭제할 수 있습니다.
+1. 다음 명령어로 [DeleteCdnHost](https://intl.cloud.tencent.com/document/api/228/1396) 인터페이스를 호출해 특정 도메인을 삭제할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py DeleteCdnHost -u xxxxx -p xxxxxx -hostId 1234
 ```
@@ -432,7 +432,7 @@ python QcloudCdnTools_V2.py DeleteCdnHost -u xxxxx -p xxxxxx -hostId 1234
 
 ### 로그 관련
 #### 로그 다운로드 링크 가져오기
-1. 다음 명령어로 [GenerateLogList](https://cloud.tencent.com/doc/api/231/3950) 인터페이스를 호출해 특정 도메인의 CDN 로그 다운로드 링크를 가져올 수 있습니다.
+1. 다음 명령어로 [GenerateLogList](https://intl.cloud.tencent.com/document/api/228/3950) 인터페이스를 호출해 특정 도메인의 CDN 로그 다운로드 링크를 가져올 수 있습니다.
 ```
 python QcloudCdnTools_V2.py GenerateLogList -u xxxxx -p xxxxxxx --hostId 1234
 ```
@@ -469,7 +469,7 @@ link 필드가 없는 경우 당일 생성된 로그 데이터가 없다는 것�
 ### 소모 조회
 
 #### TOP 100 URL 조회
-1. 다음 명령어로 [GetCdnStatTop](https://cloud.tencent.com/doc/api/231/3944) 인터페이스를 호출해 도메인 또는 항목의 TOP 100 트래픽/대역폭 소모 URL을 조회할 수 있습니다.
+1. 다음 명령어로 [GetCdnStatTop](https://intl.cloud.tencent.com/document/api/228/3944) 인터페이스를 호출해 도메인 또는 항목의 TOP 100 트래픽/대역폭 소모 URL을 조회할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py GetCdnStatTop -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --statType bandwidth --projects 0 --hosts test.com
 ```
@@ -506,7 +506,7 @@ python QcloudCdnTools_V2.py GetCdnStatTop -u xxxxxxxxxxxx -p xxxxxxxxxxxx --star
 value는 소모 값이며, flux 단위는 Byte, bandwidth 단위는 bps입니다.
 
 #### 상태 코드 통계 조회
-1. 다음 명령어로 [GetCdnStatusCode](https://cloud.tencent.com/doc/api/231/3943) 인터페이스를 호출해 도메인 또는 항목의 상태 코드 통계를 조회할 수 있습니다.
+1. 다음 명령어로 [GetCdnStatusCode](https://intl.cloud.tencent.com/document/api/228/3943) 인터페이스를 호출해 도메인 또는 항목의 상태 코드 통계를 조회할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py GetCdnStatusCode -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --projects 0 --hosts test.com
 ```
@@ -557,7 +557,7 @@ python QcloudCdnTools_V2.py GetCdnStatusCode -u xxxxxxxxxxxx -p xxxxxxxxxxxx --s
 
 
 #### 소모 통계 내역 조회
-1. 다음 명령어로 [DescribeCdnHostDetailedInfo](https://cloud.tencent.com/doc/api/231/3942) 인터페이스를 호출해 도메인 또는 항목의 소모 내역을 조회할 수 있습니다.
+1. 다음 명령어로 [DescribeCdnHostDetailedInfo](https://intl.cloud.tencent.com/document/api/228/3942) 인터페이스를 호출해 도메인 또는 항목의 소모 내역을 조회할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py DescribeCdnHostDetailedInfo -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-05-08 --endDate 2016-08-15 --projects 0 --hosts www.test.com --statType bandwidth
 ```
@@ -594,7 +594,7 @@ python QcloudCdnTools_V2.py DescribeCdnHostDetailedInfo -u xxxxxxxxxxxx -p xxxxx
 period는 시간 데이터 분할 정도이며, 조회 시간 구간 길이에 따라 출력되는 시간 단위 데이터 세분화도 달라집니다. 1~3일의 내역 시간 데이터 분할 정도는 모두 5분, 4~7일의 시간 데이터 분할 정도는 1시간, 8일 이상의 시간 데이터 분할 정도는 1일입니다.
 
 #### 소모량 통계 조회
-1. 다음 명령어로 [DescribeCdnHostInfo](https://cloud.tencent.com/doc/api/231/3941) 인터페이스를 호출해 도메인 또는 항목의 소모 통계를 조회할 수 있습니다.
+1. 다음 명령어로 [DescribeCdnHostInfo](https://intl.cloud.tencent.com/document/api/228/3941) 인터페이스를 호출해 도메인 또는 항목의 소모 통계를 조회할 수 있습니다.
 ```
 python QcloudCdnTools_V2.py DescribeCdnHostInfo -u xxxxxxxxxxxx -p xxxxxxxxxxxx --startDate 2016-08-15 --endDate 2016-08-15 --projects 0 --hosts www.test.com --statType bandwidth
 ```
