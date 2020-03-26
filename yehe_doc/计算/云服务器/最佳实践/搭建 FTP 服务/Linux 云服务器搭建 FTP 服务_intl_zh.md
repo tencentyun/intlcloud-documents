@@ -34,8 +34,8 @@ netstat -antup | grep ftp
 ![](https://main.qcloudimg.com/raw/2a7abf80253a8469c9340878d89b452a.png)
 此时，vsftpd 已默认开启匿名访问模式，无需通过用户名和密码即可登录 FTP 服务器。使用此方式登录 FTP 服务器的用户没有权修改或上传文件的权限。
 
-
-### 步骤3：配置 vsftpd<span id="user"></span>
+<span id="user"></span>
+### 步骤3：配置 vsftpd
 1. 执行以下命令，为 FTP 服务创建用户，本文以 ftpuser 为例。
 ```
 useradd ftpuser
@@ -57,7 +57,8 @@ chown -R ftpuser:ftpuser /var/ftp/test
 ```
 vim /etc/vsftpd/vsftpd.conf
 ```
-6. 按 **i** 切换至编辑模式，根据实际需求选择 FTP 模式，修改配置文件 `vsftpd.conf`：<span id="config"></span>
+6. 按 **i** 切换至编辑模式，根据实际需求选择 FTP 模式，修改配置文件 `vsftpd.conf`：
+<span id="config"></span>
 > FTP 可通过主动模式和被动模式与客户端机器进行连接并传输数据。由于大多数客户端机器的防火墙设置及无法获取真实 IP 等原因，建议您选择**被动模式**搭建 FTP 服务。如下修改以设置被动模式为例，您如需选择主动模式，请前往 [设置 FTP 主动模式](#port)。
 >
  1. 修改以下配置参数，设置匿名用户和本地用户的登录权限，设置指定例外用户列表文件的路径，并开启监听 IPv4 sockets。
@@ -83,7 +84,8 @@ pasv_min_port=40000
 pasv_max_port=45000
 ```
 7. 按 **Esc** 后输入 **:wq** 保存后退出。
-8. 执行以下命令，创建并编辑 `chroot_list` 文件。<span id="create"></span>
+<span id="create"></span>
+8. 执行以下命令，创建并编辑 `chroot_list` 文件。
 ```
 vim /etc/vsftpd/chroot_list
 ```
@@ -116,7 +118,8 @@ ftp://云服务器公网IP:21
 
 
 ## 附录
-### 设置 FTP 主动模式<span id="port"></span>
+<span id="port"></span>
+### 设置 FTP 主动模式
 主动模式需修改的配置如下，其余配置保持默认设置：
 ```
 anonymous_enable=NO      #禁止匿名用户登录
