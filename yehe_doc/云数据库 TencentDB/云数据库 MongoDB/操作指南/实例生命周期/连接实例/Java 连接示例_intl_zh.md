@@ -62,7 +62,7 @@ INFO: Closed connection [connectionId{localValue:2, serverValue:67621}] to 10.66
 ```
 
 ### Spring Data MongoDB 配置示例
-本示例主要为了体现出 [认证库 admin](https://intl.intl.cloud.tencent.com/document/product/240/7092) 的配置方法，具体还请参考您使用的 Spring 和 Spring Data MongoDB 的版本而定。
+本示例主要为了体现出 [认证库 admin](https://intl.cloud.tencent.com/document/product/240/7092) 的配置方法，具体还请参考您使用的 Spring 和 Spring Data MongoDB 的版本而定。
 ```
 <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
     <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
