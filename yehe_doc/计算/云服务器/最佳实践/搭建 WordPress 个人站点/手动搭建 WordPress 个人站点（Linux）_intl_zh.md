@@ -22,8 +22,8 @@ WordPress 是一款使用 PHP 语言开发的博客平台，您可使用通过 W
 ### 步骤2：手动搭建 LNMP 环境
 LNMP 是 Linux、Nginx、MariaDB 和 PHP 的缩写，这个组合是最常见的 Web 服务器的运行环境之一。在创建并登录云服务器实例之后，您可参考 [手动搭建 LNMP 环境](https://intl.cloud.tencent.com/document/product/213/32733) 完成基本环境搭建。
 
-
-### 步骤3：配置 WordPress 数据库<span id="database"></span>
+<span id="database"></span>
+### 步骤3：配置 WordPress 数据库
 >根据 MariaDB 版本，设置用户身份验证方式有一定区别，具体步骤请参见 MariaDB 官网。
 >
 1. 执行以下命令，进入 MariaDB。
@@ -112,11 +112,12 @@ vim wp-config.php
 4. 修改完成后，按“**Esc**”，输入“**:wq**”，保存文件返回。
 
 ### 步骤6：验证 WordPress 安装
-1. 在浏览器地址栏输入云服务器实例的公网 IP 加上 wordpress 文件夹，例如：
+1. 在浏览器地址栏输入`http://域名或云服务器实例的公网 IP/wordpress 文件夹`，例如：
 ```
-http://192.xxx.xxx.xx /wordpress
+http://192.xxx.xxx.xx/wordpress
 ```
 转至 WordPress 安装页，开始配置 WordPress。
+
 2. 根据 WordPress 安装向导提示输入以下安装信息，单击【安装 WordPress】，完成安装。
 <table>
 	<th style="width: 18%;">所需信息</th>
