@@ -2,9 +2,9 @@
 
 | 통계 유형 | 설명 |
 |--------|--------|
-| [사용량 통계](https://cloud.tencent.com/doc/product/228/6307)    | CDN에서 생성되는 각 항목과 각 도메인의 트래픽 & 대역폭 소모 상황 실시간 조회 지원, 지역과 통신사 소모 TOP 분석, 인기 URL 분석 지원 |
-| [액세스 상황 통계](https://cloud.tencent.com/doc/product/228/6308) | 각 항목과 각 도메인에 생성되는 요청 수 실시간 조회 지원, 지역과 통신사 요청 수 TOP 분석, 인기 URL 분석 |
-| [상태 코드 통계](https://cloud.tencent.com/doc/product/228/6309) | 사용자 요청에 대하여 2XX, 3XX, 4XX, 5XX를 포함해 각 항목과 각 도메인이 출력한 HTTP 상태 코드 통계 지원 |
-| [원본 서버 통계](https://cloud.tencent.com/doc/product/228/6310) | 각 항목과 각 도메인의 Origin-pull 트래픽 & 대역폭 실시간 조회, Origin-pull 속도 조회 제공 |
-| [전체 네트워크 상태 모니터링](https://cloud.tencent.com/doc/product/228/6311) | CDN 전체 네트워크 상태 조회 |
-| [월간 운영 리포트](https://cloud.tencent.com/doc/product/228/6312) | 월간 CDN 소모 분석 리포트 제공 |
+| [사용량 통계](https://intl.cloud.tencent.com/zh/document/product/228/6307)    | CDN에서 생성되는 각 항목과 각 도메인의 트래픽 & 대역폭 소모 상황 실시간 조회 지원, 지역과 통신사 소모 TOP 분석, 인기 URL 분석 지원 |
+| [액세스 상황 통계](https://intl.cloud.tencent.com/zh/document/product/228/6308) | 각 항목과 각 도메인에 생성되는 요청 수 실시간 조회 지원, 지역과 통신사 요청 수 TOP 분석, 인기 URL 분석 |
+| [상태 코드 통계](https://intl.cloud.tencent.com/zh/document/product/228/6309) | 사용자 요청에 대하여 2XX, 3XX, 4XX, 5XX를 포함해 각 항목과 각 도메인이 출력한 HTTP 상태 코드 통계 지원 |
+| [원본 서버 통계](https://intl.cloud.tencent.com/zh/document/product/228/6310) | 각 항목과 각 도메인의 Origin-pull 트래픽 & 대역폭 실시간 조회, Origin-pull 속도 조회 제공 |
+| [전체 네트워크 상태 모니터링](https://intl.cloud.tencent.com/zh/document/product/228/6311) | CDN 전체 네트워크 상태 조회 |
+| [월간 운영 리포트](https://intl.cloud.tencent.com/zh/document/product/228/6312) | 월간 CDN 소모 분석 리포트 제공 |
