@@ -11,7 +11,6 @@
 4. 在弹出框中填写云联网实例名称、描述，选择计费模式、服务质量、限制方式和关联实例的 VPC ID。
 >关联实例，可在新建云联网时关联，也可创建好云联网后再关联。
 >
-![](https://main.qcloudimg.com/raw/4b2c262338185d0c9e61b8a8994ad19b.png)
 5. 单击【确定】即可。
 
 ## 步骤2：VPC 所属账号 B 申请关联云联网
@@ -20,21 +19,21 @@
 3. 单击【立即关联】。
 ![](https://main.qcloudimg.com/raw/a316cdd6c8d32b654037894099a7e75d.png)
 4. 在弹出框中，选择【其他账号】，并输入账号 A 的账号 ID、云联网实例 ID。
-![](https://main.qcloudimg.com/raw/29bbc4c616fd2b6c64b463a6c9a8ec8d.png)
+![](https://main.qcloudimg.com/raw/9a05b970aeb3b22997f56c25b7014b9d.png)
 5. 单击【确定】，即可向云联网所属账号发送关联申请。
 
 ## 步骤3：云联网账号 A 同意账号 B 的关联申请
 1. 使用账号 A 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 。
 2. 单击左侧目录中的【云联网】，在列表中找到有待同意申请的云联网实例，单击其 ID 进入详情页。 
 3. 在“关联实例”页面，会显示待同意的 VPC 信息，单击【同意】并确认操作，即可将该 VPC 加入到云联网中。 
-![](https://main.qcloudimg.com/raw/f57c15e2e1ca2e3220f1839ce5e024b2.png)
+![](https://main.qcloudimg.com/raw/075e5fd56abae0e8debe0291e67be60b.png)
 
 ## 步骤4：检查路由表
 若所关联的网络实例网段有冲突，则会产生失效路由，查看操作如下：
 1. 在云联网列表中，单击要查看路由的云联网 ID，进入详情页。
 2. 单击【路由表】，查看该云联网路由表。
 3. 检查是否存在状态为失效的路由策略。
-![](https://main.qcloudimg.com/raw/3d9c915eb46b2bed59947105e611661c.png)
+![](https://main.qcloudimg.com/raw/e45af94ef787df2f74c6c96366499c5f.png)
 4. 路由冲突原则，请参见 [路由限制](https://intl.cloud.tencent.com/document/product/1003/30052)，如需启用冲突路由，请参见 [启用路由](https://intl.cloud.tencent.com/document/product/1003/30069)。
 
 ## 步骤5：设置跨地域带宽限制（可选）
@@ -45,10 +44,10 @@
 >
  - 地域间带宽限速
 在弹框中选择需要限速的两个地域，填写地域间的带宽上限，如需添加多条请单击【添加】继续，完成添加后单击【确定】即可。
-![](https://main.qcloudimg.com/raw/952c27b2590d37f6f14785b12a5d4c2b.png)
+![](https://main.qcloudimg.com/raw/1f08b6b4bd07f4f5d03b0ac478598944.png)
  - 地域出口带宽限速
 在弹框中勾选需要限速的地域，填写地域出口的带宽上限，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/a961f2724eda0a156304dea7169ae319.png)
+
 
 >云联网实例间通信可能会产生费用，详情请参见 [计费总览](https://intl.cloud.tencent.com/document/product/1003/30053)。
 

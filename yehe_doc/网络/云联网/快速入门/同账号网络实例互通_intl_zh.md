@@ -11,14 +11,14 @@
 4. 在弹出框中填写云联网实例名称、描述，选择计费模式、服务质量、限制方式和关联实例的 VPC ID。
 >关联实例，可在新建云联网时关联，也可创建好云联网后再关联。
 >
-![](https://main.qcloudimg.com/raw/4b2c262338185d0c9e61b8a8994ad19b.png)
+![](https://main.qcloudimg.com/raw/a1ed83d1e415155a9ff8f255e578d5f8.png)
 5. 单击【确定】即可。
 
 ## 步骤2：关联网络实例
 1. 在云联网列表中，单击需要关联网络实例的云联网 ID，进入详情页。
 2. 在新增实例页面下，单击【新增实例】。 
 3. 在弹出框中，选择需要关联的网络实例类型、所属地域和具体实例。
-![](https://main.qcloudimg.com/raw/3196c83dcf279b9f22237060bbeec6d6.png)
+![](https://main.qcloudimg.com/raw/ed20b910cff3b387a92adf11ba7e8b5e.png)
 >如还需关联其他网络实例，可单击【添加】继续关联。
 4. 单击【确定】，将所选网络实例加入云联网。
 
@@ -27,7 +27,7 @@
 1. 在云联网列表中，单击要查看路由的云联网 ID，进入详情页。
 2. 单击【路由表】标签页，查看该云联网路由表。
 3. 检查是否存在状态为失效的路由策略。
-![](https://main.qcloudimg.com/raw/3d9c915eb46b2bed59947105e611661c.png)
+![](https://main.qcloudimg.com/raw/e802fd5a736644e0a6dc2757400adbf1.png)
 4. 路由冲突原则请参考 [路由限制](https://intl.cloud.tencent.com/document/product/1003/30052)，如需启用冲突路由，请参见 [启用路由](https://intl.cloud.tencent.com/document/product/1003/30069)。
 
 ## 步骤4：设置跨地域带宽限制（可选）
@@ -38,9 +38,9 @@
 >
  - 地域间带宽限速
 在弹框中选择需要限速的两个地域，填写地域间的带宽上限，如需添加多条请单击【添加】继续，完成添加后单击【确定】即可。
-![](https://main.qcloudimg.com/raw/952c27b2590d37f6f14785b12a5d4c2b.png)
+![](https://main.qcloudimg.com/raw/1f08b6b4bd07f4f5d03b0ac478598944.png)
  - 地域出口带宽限速
 在弹框中勾选需要限速的地域，填写地域出口的带宽上限，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/a961f2724eda0a156304dea7169ae319.png)
+
 
 >云联网实例间通信可能会产生费用，详情请参见 [计费总览](https://intl.cloud.tencent.com/document/product/1003/30053)。
