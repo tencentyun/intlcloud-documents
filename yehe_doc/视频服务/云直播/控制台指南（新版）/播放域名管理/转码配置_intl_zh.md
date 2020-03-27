@@ -1,0 +1,36 @@
+## 操作场景
+直播播放默认通过源码率输出，如果您需要对播放码率进行限制或者设定，可以在转码配置中进行设置。
+## 前提条件
+- 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
+- 已添加 播放域名。
+- 已创建**转码模板**，详情可参见 [转码模板配置](https://intl.cloud.tencent.com/document/product/267/31071)。
+
+## 绑定转码配置
+> 模板配置完后约5分钟 - 10分钟生效。
+
+1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的播放域名或右侧的【管理】，进入域名详情页。
+2. 选择【模板配置】页签，查看【转码配置】标签，单击右侧的【编辑】。
+3. 选择不同的转码配置模板，为该域名下播放地址指定模板设置的编译方式和码率。
+4. 单击【保存】即可。
+
+
+
+![](https://main.qcloudimg.com/raw/8ab50571f4260ba070cf3270f8487e30.png)
+
+4. 配置转码模板后，播放 URL 需增加转码模板名称，拼接方式为：**播放地址_转码模板名称**；若未拼接转码模板名称，则播放的为原始直播流内容。
+**例如：**播放域名关联的转码模板名称为 **hd**，原始播放地址为：
+<pre>
+http://domain/AppName/StreamName.flv?txSecret=Md5(key+<b style="color:red;">StreamName</b>+hex(time))&txTime=hex(time) 
+</pre>
+若您需获取播放转码后的视频，则需重新生成的新的播放地址，如下：
+<pre>
+http://domain/AppName/<b style="color:red;">StreamName_hd</b>.flv?txSecret=Md5(key+<b style="color:red;">StreamName_hd</b>+hex(time))&txTime=hex(time)
+</pre>
+> 若您需了解更多播放地址相关内容，请参见 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058)。
+
+## 解绑转码配置
+1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的播放域名或右侧的【管理】，进入域名详情页。
+2. 选择【模板配置】页签，选择【转码配置】。
+3. 单击右侧的【编辑】，取消相应模板的勾选。
+4. 然后单击【保存】，即可取消模板与域名的关联。
+![](https://main.qcloudimg.com/raw/497478a836b8017c7e8be177b26af24d.png)
