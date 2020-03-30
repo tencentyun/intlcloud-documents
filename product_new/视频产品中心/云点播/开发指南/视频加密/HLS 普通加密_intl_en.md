@@ -109,7 +109,7 @@ This URL is also the one that the client needs to access when it tries to get th
 When the status of the task flow that includes the encryption operation changes (or the task flow is completed), the VOD platform will trigger the [notification for task flow status change](https://intl.cloud.tencent.com/document/product/266/33953).
 
 ### Media asset management
-After a video is encrypted, its encryption information can be obtained using the [GetVideoInfo](https://intl.cloud.tencent.com/document/product/266/8586) API.
+After a video is encrypted, its encryption information can be obtained using the GetVideoInfo API.
 - The GetVideoInfo API will return the video playback addresses for the video ID under all transcoding specifications, including the playback address of the source file. As the source file is not encrypted, the application server can choose to filter out the playback address of the source file and only provide playback addresses of the encrypted video to the client.
 - The `definition` parameter of the source file obtained by GetVideoInfo is 0, based on which the playback address of the source file can be filtered out.
 
