@@ -47,7 +47,7 @@ In the above [Hotlink Protection Case Study](#fenxi), user A can prevent user B 
     - **Whitelist**: It prohibits domain names not in the list to access the default access address of the bucket. If a domain name **not in the list** accesses the default access address of the bucket, a 403 error will be returned.
  - **Referer** : Up to 10 domain names can be set and they will be matched by prefix. Domain names, IPs, and wildcard `*` are supported formats (one address per line). Below are configuration rule description and examples:
     - Domain names with IP and port are supported, such as `example.com:8080` and `10.10.10.10:8080`.
-    - If `example.com` is configured, addresses prefixed with `example.com` can be hit, such as `example.com/123` and `example.com.cn`.
+    - If `example.com` is configured, addresses prefixed with `example.com` can be hit, such as `example.com/123` .
     - If `example.com` is configured, addresses prefixed with `https://example.com` and `http://example.com` can be hit.
     - If `example.com` is configured, its port domain name can be hit, such as `example.com:8080`. 
     - If `example.com:8080` is configured, domain name `example.com` cannot be hit.
