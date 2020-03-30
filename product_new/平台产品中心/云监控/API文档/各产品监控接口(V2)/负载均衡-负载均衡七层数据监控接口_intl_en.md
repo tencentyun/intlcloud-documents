@@ -1,4 +1,4 @@
-﻿## 1. API Description
+## 1. API Description
 
 API: GetMonitorData
 
