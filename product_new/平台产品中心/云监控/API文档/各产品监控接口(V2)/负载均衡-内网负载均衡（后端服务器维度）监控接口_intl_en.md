@@ -1,4 +1,4 @@
-﻿## 1. API Description
+## 1. API Description
 
 API: GetMonitorData
 
@@ -122,7 +122,7 @@ The list below contains only the API request parameters and certain common reque
 
 ### 2.2. Metric name
 
-The statistical granularity (`period`) and dimension (`dimension`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/338821) API can be used to get the `period` and `dimension` supported by each metric.
+The statistical granularity (`period`) and dimension (`dimension`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` and `dimension` supported by each metric.
 
 | Metric Name | Description | Unit |
 | ---------------- | ----- | ---- |

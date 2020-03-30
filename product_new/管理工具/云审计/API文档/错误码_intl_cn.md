@@ -57,6 +57,7 @@ Error 中的 Code 表示错误码，Message 表示该错误的具体信息。
 
 | 错误码 | 说明 |
 |:-------|:-----|
+| FailedOperation.CreateBucketFail | 创建COS存储桶失败 |
 | InternalError.CmqError | 创建cmq时发生异常，可能您准备创建的cmq队列已经存在，也有可能您没有权限或者欠费。 |
 | InternalError.CreateAuditError | 创建跟踪集错误，请联系开发人员。 |
 | InternalError.DeleteAuditError | 删除跟踪集失败，请联系开发人员 |

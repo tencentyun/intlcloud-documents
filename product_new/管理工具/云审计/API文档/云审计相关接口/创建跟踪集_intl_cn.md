@@ -104,6 +104,7 @@ https://cloudaudit.tencentcloudapi.com/?Action=CreateAudit
 
 | 错误码 | 描述 |
 |---------|---------|
+| FailedOperation.CreateBucketFail | 创建COS存储桶失败 |
 | InternalError.CmqError | 创建cmq时发生异常，可能您准备创建的cmq队列已经存在，也有可能您没有权限或者欠费。 |
 | InternalError.CreateAuditError | 创建跟踪集错误，请联系开发人员。 |
 | InvalidParameterValue.AuditNameError | 跟踪集名称不符合规则 |

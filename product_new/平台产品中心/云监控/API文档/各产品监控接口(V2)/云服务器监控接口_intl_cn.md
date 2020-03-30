@@ -1,4 +1,4 @@
-﻿## 1. 接口描述
+## 1. 接口描述
 
 接口：GetMonitorData
 
@@ -39,7 +39,7 @@
 
 ### 2.2 指标名称
 
-每个指标的统计粒度（Period）可取值不一定相同，可通过[DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/338821)接口获取每个接口支持的统计粒度。
+每个指标的统计粒度（Period）可取值不一定相同，可通过[DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882)接口获取每个接口支持的统计粒度。
 
 #### 2.2.1 不需要安装监控agent，就能获取数据的监控指标
 

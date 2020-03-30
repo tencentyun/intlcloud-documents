@@ -19,6 +19,7 @@
 | StartTime | 是 | Integer | 开始时间 |
 | LookupAttributes.N | 否 | Array of [LookupAttribute](https://intl.cloud.tencent.com/document/api/1021/34209#LookupAttribute) | 检索条件 |
 | MaxResults | 否 | Integer | 返回日志的最大条数 |
+| Mode | 否 | String | 云审计模式，有效值：standard/quick，其中standard是标准模式，quick是极速模式。默认为标准模式 |
 | NextToken | 否 | String | 查看更多日志的凭证 |
 
 ## 3. 输出参数
