@@ -47,7 +47,7 @@
 
 ### 2.2 指标名称
 
-每个指标对应的统计粒度（Period）及维度（dimension）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/338821) 接口获取每个指标支持的统计粒度及维度信息。
+每个指标对应的统计粒度（Period）及维度（dimension）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度及维度信息。
 
 | 指标名称 | 含义 | 单位 | 维度 |
 | ------------ | ----- | ---- | --------- |
