@@ -6,7 +6,7 @@ Pay-as-you-go pricing includes 3 pricing tiers. The first tier is the initial pu
 
 Prices for varying regions in USD are as follows.
 
-| Price for per GB Memory per Node (USD/month) | Region | Note |
+| Price for per GB Memory per Node (USD/hour) | Region | Note |
 |:--:|:--:|:--:|
 |0.02005|Frankfurt|Third tier price|
 |0.01875|Sillicon Valley|Third tier price|
@@ -15,7 +15,7 @@ Prices for varying regions in USD are as follows.
 |0.0275|Tokyo|Third tier price|
 
 
-|Price for per GB Disk per Node (USD/month) | Region |
+|Price for per GB Disk per Node (USD/hour) | Region |
 |:--:|:--:|
 |0.00041667|Frankfurt|
 |0.00045834|Sillicon Valley|

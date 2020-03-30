@@ -7,8 +7,11 @@ For more information, please see [Inventory Overview](https://intl.cloud.tencent
 At present, the batch operation feature only supports the following operation:
 
 - [Replicating Objects in Batches](https://intl.cloud.tencent.com/document/product/436/32960)
+- [Batch Resume archive object](https://intl.cloud.tencent.com/document/product/436/34075)
 
 You can use the batch operation feature in the COS Console.For more information, please see [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956).
+
+> COS Select currently only supports public cloud regions in mainland China, not supported in other regions.
 
 ## How It Works
 

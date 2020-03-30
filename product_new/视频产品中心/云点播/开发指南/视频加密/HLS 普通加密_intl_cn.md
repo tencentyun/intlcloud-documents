@@ -109,7 +109,7 @@ https://getkey.example.com?fileId=123456&keySource=VodBuildInKMS&edk=abcdef
 包含加密操作的任务流状态发生变化（或者执行完毕）之后，点播平台将发起 [任务流状态变更通知](https://intl.cloud.tencent.com/document/product/266/33953)。
 
 ### 媒资管理
-视频加密操作完成后，可以通过 [GetVideoInfo](https://intl.cloud.tencent.com/document/product/266/8586) 接口获取视频的加密信息。
+视频加密操作完成后，可以通过 GetVideoInfo 接口获取视频的加密信息。
 - GetVideoInfo 接口会返回该视频 ID 所有转码规格的视频播放地址，包括源文件的播放地址，由于源文件是没有加密处理的，App 服务端可以过滤掉源文件的播放地址，只提供加密视频的播放地址给客户端。
 - GetVideoInfo 获取到的源文件 definition 参数是0，可以根据这个值来过滤源文件的视频播放地址。
 

@@ -80,7 +80,7 @@ As you can see below, if you do not specify a version ID, the DELETE operation w
 A delete marker is a marker for versioned objects, indicating that the objects have already been deleted in COS. A delete marker has an object key and version ID like any other object. However, a delete marker differs from other objects in the following ways:
 - Its content is empty.
 - It does not have ACL value.
-- If you try to GET a delete marker, you will get a 404 error with a response header of `x-cos-delete-marker: true`.
+- If you try to GET a delete marker, you will get a 404 error.
 - The only operation you can use on a delete marker is DELETE, and only the root account can issue such a request.
 
 #### Deleting a Delete Marker

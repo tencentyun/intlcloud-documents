@@ -42,7 +42,7 @@ After the blank function is created, you need to add the function code and set t
  1. Download the [sample code for purging cached content in CDN with SCF](https://main.qcloudimg.com/raw/757b646eb68e9b9a5b2fc4bf0fed2492/scf_about_cdn_refresh.zip).
  2. Extract all files and then find and open the index.js file.
  3. In the following code, replace the strings in red boxes with your SecretId and SecretKey (which should have the permission to call the API used for purging cached content in CDN) and the domain name where you want to purge the cached content.
-![](https://main.qcloudimg.com/raw/b2b0eba560e3229fc402490f0737712b.png)
+![](https://main.qcloudimg.com/raw/87d4efa184484e2e64441791d42e296a.png)
  4. To purge the cached content at a domain name bound to Tencent Cloud CDN outside Mainland China, change `RefreshCdnUrl` in the code to `RefreshCdnOverSeaUrl`.
 2. Upload the function code
 	1. Compress the modified code and other files into a .zip file.
