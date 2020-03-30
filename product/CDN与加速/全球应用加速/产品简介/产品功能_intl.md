@@ -15,6 +15,3 @@ Key features of GAAP include acceleration proxy configuration, origin server man
 
 ## Connection Monitoring
 - GAAP supports monitoring connection and origin server status. It alerts you promptly to connection or origin server problems for easier and quicker troubleshooting. For more information, see [Access Cloud Monitoring](https://intl.cloud.tencent.com/document/product/608/17541).
-
-## Acquisition of real user IPs
-- GAAP support TOA module to obtain real user IPs, ensuring effective IP passthrough for data analysis purpose. For more information, see [Obtaining the Real IPs of Access Users](https://intl.cloud.tencent.com/document/product/608/18946).
