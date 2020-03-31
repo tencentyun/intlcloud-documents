@@ -14,7 +14,7 @@ To implement TRTC on the web, the browser is required to fully support WebRTC ca
 | Windows (PC)  | Chrome         | 52+      | - |
 | Windows (PC)  | QQ Browser      | 10.2     | - |
 
-> ?The WebView based on TBS kernel should be v43600 or above.
+> The WebView based on TBS kernel should be v43600 or above.
 > You can open the [WebRTC capability test](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html) page in your browser to check whether WebRTC is fully supported, such as the browser environments like WeChat Official Account.
 > Chrome on Huawei devices and Chrome WebView-based browsers do not support H264 encoding.
 
