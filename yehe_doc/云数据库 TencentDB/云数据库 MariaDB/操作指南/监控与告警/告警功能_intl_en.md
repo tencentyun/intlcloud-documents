@@ -1,0 +1,1 @@
+TencentDB for MariaDB sends alerts for critical alarms via SMS, email and the Message Center for key performance metrics. You can set alarms on the **Alarm Policy** page in the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/policylist).
