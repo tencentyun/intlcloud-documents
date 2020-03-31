@@ -32,7 +32,6 @@
 将解压后的 SDK 文件夹拷贝至`TRTCCSharpDemo.csproj`所在目录。
 >?当只需要 C# SDK时，可以将 SDK 路径下的 CPlusPlus 目录删除。
 
-![](https://main.qcloudimg.com/raw/dbd90fce988853c26a832930cef2e9a6.png)
 
 <span id="Step4"></span>
 ### 步骤4：修改工程配置
@@ -42,9 +41,9 @@
 2. 在【活动解决方案平台】下拉框中选择【新建】，弹出【新建解决方案平台】对话框。
 <span id="step4_1_3"></span>
 3. 输入或选择新平台，单击【确定】。
- ![](https://main.qcloudimg.com/raw/75f07143f2c6a83a4d22e3f95f8f3864.png)
+
 4. 根据实际需求重复 [步骤2](#step4_1_2) - [步骤3](#step4_1_3)  新建需要支持的解决方案平台。
- ![](https://main.qcloudimg.com/raw/e7d906cbc18d32848a25cce38f50d20c.png)
+
 5. 打开 TRTCCSharpDemo 项目所在的文件夹，并用文本编辑器编辑`TRTCCSharpDemo.csproj`文件。
 6. 在`TRTCCSharpDemo.csproj`文件中的标签 `<itemGroup>`下添加以下内容：
   ```
@@ -59,7 +58,7 @@
 		<HintPath>SDK\CSharp\Win32\lib\ManageLiteAV.dll</HintPath>
   </Reference>
   ```
-  ![](https://main.qcloudimg.com/raw/a76052df7be5fb54cfbcdedc7a5afc58.png)
+
 
 **步骤4.2：添加 copy 命令**
 1. 打开 TRTCCSharpDemo 属性页，选择【解决方案资源管理器】>【TRTCCSharpDemo 工程的右键菜单】>【属性】。
@@ -73,15 +72,13 @@ if $(PlatformName)==x86 (
 copy /Y "$(ProjectDir)SDK\CSharp\!Platform!\lib\*.dll" "$(ProjectDir)$(OutDir)"
 ENDLOCAL
 ```
-![](https://main.qcloudimg.com/raw/1939c8a6702da356fe58d9945c40a60c.png)
+
 
 **步骤4.3：修改调试环境**
-打开 TRTCDemo 属性页，选择【生成】，将【平台(M)】与顶部菜单栏中的解决方案平台设置为一致，如下图所示：
-![](https://main.qcloudimg.com/raw/23462af7ca105e5f78c5b5cbd3242063.png)
+打开 TRTCDemo 属性页，选择【生成】，将【平台(M)】与顶部菜单栏中的解决方案平台设置为一致。
 
 ### 步骤5：打印 SDK 版本号
-1. 在 Form1.cs 的设计器中添加一个 label 控件，如下图所示：
- ![](https://main.qcloudimg.com/raw/fec574b76a4250a3e948816b7cc1728d.png)
+1. 在 Form1.cs 的设计器中添加一个 label 控件。
 2. 打开 Form1.cs 代码文件，添加以下代码：
 	```c#
 	using System.Windows.Forms;
@@ -121,5 +118,5 @@ System.BadImageFormatException:“未能加载文件或程序集“ManageLiteAV,
 ```
 System.IO.FileNotFoundException:“未能加载文件或程序集“ManageLiteAV.dll”或它的某一个依赖项。找不到指定的模块。”
 ```
-- 由于 Windows 不同版本可能存在兼容性问题，目前在 C# SDK 中新增了解决兼容性问题的 dll 文件，文件清单如下图所示。
-	![](https://main.qcloudimg.com/raw/1467310c3f5b2ab7271376902d23a2be.png)
+- 由于 Windows 不同版本可能存在兼容性问题，目前在 C# SDK 中新增了解决兼容性问题的 dll 文件。
+
