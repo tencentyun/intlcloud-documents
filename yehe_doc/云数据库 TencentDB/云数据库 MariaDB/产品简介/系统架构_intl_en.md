@@ -29,15 +29,15 @@ Backed by many years' experience in business operations, Tencent Cloud has devel
 -	There is no need to share storage devices.
 
 With the MAR strong sync technology of Tencent, the master will return a transaction response to the application only after data is synced to the slave as shown below:
-![](https://main.qcloudimg.com/raw/21ed3b5372533dfe0e97303db3093a34.png)
+![](https://main.qcloudimg.com/raw/cc47460060cd75171baa64f58bd54ea0.png)
 Its performance is higher than that of other mainstream sync schemes. Tests in the same cross-AZ (cross-IDC) testing configuration (with the standard sysbench use case) show that the performance of MAR is about 5 times higher than that of MySQL semi-sync replication and 1.5 times higher than that of MariaDB Galera Cluster.
-![](https://main.qcloudimg.com/raw/74c503b45ac71317f0ede75bff8680a8.png)
+![](https://main.qcloudimg.com/raw/c9a8f22d1762969b0ab3bf1fe8f8a7df.png)
 
 ### Cluster architecture
 TencentDB for MariaDB adopts a cluster architecture. A set of independent TencentDB for MariaDB system consists of at least 10 systems or components as shown below:
-![](https://main.qcloudimg.com/raw/f5b69ef057ecee5f1d758619ae8157ac.png)
+![](https://main.qcloudimg.com/raw/e45cdf99127fdce08b96f195dbb86760.png)
 The three most important modules in TencentDB for MariaDB are scheduling cluster (Tschedule), database node group (SET), and access gateway cluster (TProxy), and they communicate with one another through the configuration cluster (TzooKeeper).
-![](https://main.qcloudimg.com/raw/afd651880511c51e7aec63ed20fd45e1.png)
+![](https://main.qcloudimg.com/raw/d31020c02942cfaea8a1e930391512f7.png)
 - **Database node group (SET)**: it consists of the engine compatible with MySQL and monitoring and information collection tool (Tagent). It uses an architecture of "one master node (Master), several slave nodes (Slave_n), and several remote backup nodes (Watcher_n)". Generally:
  - It is deployed in cross-rack and cross-data center servers.
  - It uses the heartbeat monitoring and information collection module (Tagent) for monitoring to ensure cluster robustness.

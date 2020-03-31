@@ -2,9 +2,9 @@
 ### Data sharding
 In a high-performance concurrent internet architecture, the performance bottleneck usually occurs in the database server, especially when the number of users of the business reaches more than one million. In this case, you can cope with problems such as database performance and scalability by performing reasonable data sharding at the data layer. Database sharding can be performed in two dimensions: vertical sharding (by function) and horizontal sharding
 - **Vertical sharding** is sharding by function, which is closely associated with the business and has direct implementation logic. For example, an ecommerce platform shards data by function into membership database, commodity database, transaction database, logistics database, etc. However, vertical sharding cannot completely handle the pressure as the load and capacity of a single database server is limited, which will become a bottleneck as the business grows. To deal with these problems, horizontal sharding is commonly used.
-![](https://main.qcloudimg.com/raw/9d3c3eaa3327e6ba223caae190e3fcd4.jpg)
+![](https://main.qcloudimg.com/raw/92b20339a7d670348a2efda6fb93bcc9.png)
 - **Horizontal sharding** is to split a table according to a rule and spread the parts across multiple independent physical database servers, which are "independent" database "shards". Multiple shards can constitute a logically complete database instance.
-![](https://main.qcloudimg.com/raw/46fde254cc33dec79a28f01d94c26b5a.jpg)
+![](https://main.qcloudimg.com/raw/77cbc6b3f669fb22b27260086fa08eb3.png)
  
 ### Sharding rules
 A relational database is a two-dimensional model. To shard data, it is usually necessary to find a `shardkey` field to determine the sharding dimension. Then, a rule needs to be defined to actually shard the database. You need to comprehensively evaluate your business needs to find a suitable sharding rule. Several common sharding rules are described below:
@@ -36,7 +36,7 @@ TDSQL has the following advantages to easily sustain massive amounts of business
 
 ### TDSQL architecture
 The architecture of a TDSQL instance is as follows:
-![](https://main.qcloudimg.com/raw/9bf82ca5d5d3b1090a1a455a65bc8e3b.png)
+![](https://main.qcloudimg.com/raw/fe84d441a0f07ff5641a3ab5de38aed4.png)
 **Data shard**: this consists of a database engine compatible with MySQL, monitoring module, and data collector (Tagent).
 >In TDSQL, each shard is configured with two nodes by default, i.e., one master and one slave, and each TDSQL instance has at least two shards.
 >

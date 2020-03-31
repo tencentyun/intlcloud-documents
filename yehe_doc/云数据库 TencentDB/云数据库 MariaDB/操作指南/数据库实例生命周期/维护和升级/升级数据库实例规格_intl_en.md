@@ -3,7 +3,7 @@ After you click "Upgrade" in the console, the Tencent Cloud OPS management syste
 1. Assign a new instance (the "new instance") based on the required configuration.
 2. Sync the data and configuration of the instance to be upgraded (the "old instance") to the new instance.
 3. After the sync is completed, switch the route in the Tencent Cloud gateway to the new instance for continued use.
-![](https://mc.qcloudimg.com/static/img/b746129256a7115a5fd108cbf0baefcd/%7B9EA720D4-E227-4DCB-9E1C-A13B8110CBA5%7D.png)
+![](https://main.qcloudimg.com/raw/c6c8778c93fb4438210b5bb492a956ce.png)
 
 ## Upgrading Instance Specification
 >

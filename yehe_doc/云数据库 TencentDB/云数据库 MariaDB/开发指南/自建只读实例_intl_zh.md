@@ -7,7 +7,7 @@
 ### 1.2 自建只读实例的架构
 如下图所示，自建只读实例是在MariaDB集群外，利用主从同步功能和TProxy的binlog同步功能，将数据“同步”到一个或多个自建只读实例。这样，您可以在自主控制的CVM服务器上，安装任何软件或做任何数据操作。
 
-![](https://mc.qcloudimg.com/static/img/a347c4d64a22c6b3f08c115c9e51c490/image.png)
+![](https://main.qcloudimg.com/raw/09abd1b99744f4224ffe9bd18769cba4.png)
 
 为保证性能和MariaDB集群的稳定性，我们在此方案下，仅提供**异步**同步方案，且在集群压力过大时提高数据同步延迟以减少对MariaDB主集群的性能消耗；这意味着，您自建的只读实例的数据延迟可能在几秒到几分钟不等。对延迟有苛刻要求的情况下，建议您使用MariaDB的[读写分离](https://intl.cloud.tencent.com/document/product/237/35409)技术。
 

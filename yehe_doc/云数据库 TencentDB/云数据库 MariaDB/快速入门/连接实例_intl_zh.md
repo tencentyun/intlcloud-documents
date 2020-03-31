@@ -28,7 +28,7 @@
 yum install mysql
 ```
 图示如下：
-![](https://mc.qcloudimg.com/static/img/eee76fa95379b8a25fc076b66b4ca28c/image.png)
+![](https://main.qcloudimg.com/raw/d820e34b807d84e2c25debeed4ba171e.png)
 2) 使用 MySQL 命令行工具登录到 MariaDB 数据库。
 ```
 mysql -h hostname -u username -p
@@ -67,7 +67,7 @@ yum intall mysql
 mysql -h hostname -P port -u username -p
 ```
 请将 hostname 替换为目标 MariaDB 数据库实例的外网域名，username 替换为之前创建的用户名，并在提示 Enter password：后输入用户名对应的密码。
-![](https://mc.qcloudimg.com/static/img/230ca6d65526050e062c3f59186d4e6c/image.png)
+![](https://main.qcloudimg.com/raw/22c5ebefc86688cf30523ce2717b04e4.png)
 3) 在 MySQL> 提示符下可以发送 SQL 语句到要执行的 MariaDB 服务器，具体命令行请参见 [此网站](https://dev.mysql.com/doc/refman/5.7/en/mysql-commands.html)。
 下图中以 `show databases；`为例：
 ![](https://mc.qcloudimg.com/static/img/76b4346a84f7388ae263dc6c09220fc0/image.png)

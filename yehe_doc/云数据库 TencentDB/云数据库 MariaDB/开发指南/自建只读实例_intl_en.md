@@ -7,7 +7,7 @@ However, you may still need extra read-only instances to implement more flexible
 ### 1.2. Architecture of self-created read-only instance
 As shown below, the self-created instance feature "syncing" data to one or more self-created instances by using master/slave sync or binlog sync of TProxy outside a TencentDB for MariaDB cluster. With this feature, you can install any software or perform any data operations on the CVM instances you have control over.
 
-![](https://mc.qcloudimg.com/static/img/a347c4d64a22c6b3f08c115c9e51c490/image.png)
+![](https://main.qcloudimg.com/raw/09abd1b99744f4224ffe9bd18769cba4.png)
 
 To ensure the performance and stability of the TencentDB for MariaDB cluster, only the **async** scheme is provided for self-created read-only instances, and the data sync delay will be increased when the cluster pressure is high so as to reduce performance loss of the master cluster. This means the data delay of your self-created read-only instances may vary from several seconds to several minutes. If you require low delay, you are recommended to use [read/write separation](https://intl.cloud.tencent.com/document/product/237/35409) of TencentDB for MariaDB.
 

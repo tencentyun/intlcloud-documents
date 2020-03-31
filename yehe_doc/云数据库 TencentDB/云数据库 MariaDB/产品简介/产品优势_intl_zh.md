@@ -26,7 +26,7 @@ MariaDB 的每个节点物理机均采用双网卡双连交换机配置，物理
 
 #### 两地三中心
 MariaDB 两地三中心部署架构：同城节点直线距离大于10KM，异地节点直线距离大于100km，使用腾讯自主研发的高可用调度方案（High Availability，HA）实现。示意图如下：
-![](https://main.qcloudimg.com/raw/5631159ff5833d8623be51588b8aec90.png)
+![](https://main.qcloudimg.com/raw/911a8b1f890e9160ab46ad0d046abcb5.png)
 
 ## 高性能
 基于 PCI-E SSD，强大 IO 性能保障数据库的访问能力，存储固件采用 NVMe 协议，专门针对 PCI-E SSD 设计，更能发挥出性能优势，高 IO 型单实例最大可支持6TB容量、480GB内存和22万以上 QPS (每秒访问次数)，性能优势让您以较少的数据库实例支撑更高的业务并发。

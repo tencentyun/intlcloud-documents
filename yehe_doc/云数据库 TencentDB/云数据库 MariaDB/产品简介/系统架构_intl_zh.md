@@ -29,15 +29,15 @@
 -	无需共享存储设备。
 
 腾讯 MAR 方案强同步技术，只有当备机数据同步后，才由主机向应用返回事务应答，示意图如下：
-![](https://main.qcloudimg.com/raw/21ed3b5372533dfe0e97303db3093a34.png)
+![](https://main.qcloudimg.com/raw/cc47460060cd75171baa64f58bd54ea0.png)
 从性能上优于其他主流同步方案，通过对比，在跨可用区( IDC 机房)同样的测试方案下，我们发现其 MAR 技术性能优于 MySQL 半同步约5倍，优于 MariaDB Galera Cluster 性能1.5倍（此处测试使用 sysbench 标准用例测试）。
-![](https://main.qcloudimg.com/raw/74c503b45ac71317f0ede75bff8680a8.png)
+![](https://main.qcloudimg.com/raw/c9a8f22d1762969b0ab3bf1fe8f8a7df.png)
 
 ### 集群架构
 MariaDB 采用集群架构，一套独立 MariaDB 系统至少需要十余系统或组件组成，架构简图如下：
-![](https://main.qcloudimg.com/raw/f5b69ef057ecee5f1d758619ae8157ac.png)
+![](https://main.qcloudimg.com/raw/e45cdf99127fdce08b96f195dbb86760.png)
 其中，MariaDB 最核心的三个主要模块是：决策调度集群（Tschedule）、数据库节点组（SET）和接入网关集群（TProxy），三个模块的交互都是通过配置集群（TzooKeeper）完成。
-![](https://main.qcloudimg.com/raw/afd651880511c51e7aec63ed20fd45e1.png)
+![](https://main.qcloudimg.com/raw/d31020c02942cfaea8a1e930391512f7.png)
 - **数据库节点组（SET）**：由兼容 MySQL 数据库的引擎、监控和信息采集（Tagent）组成， 其架构有“一个主节点（Master）、若干备节点（Slave_n）、若干异地备份节点（Watcher_m）”，通常情况下：
  -  部署在跨机架、跨机房的服务器中。
  -  通过心跳监控和信息采集模块（Tagent）监控，确保集群的健壮性。
