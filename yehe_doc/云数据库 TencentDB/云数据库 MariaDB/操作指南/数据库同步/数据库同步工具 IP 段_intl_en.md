@@ -1,0 +1,1 @@
+The externally exposed IP of the sync linkage from a public cloud TencentDB instance to a private cloud TencentDB instance is usually an IP of the VPC subnet where the Direct Connect gateway resides. If there is a firewall in the private cloud, you can open the IP range of this subnet to the internet.
