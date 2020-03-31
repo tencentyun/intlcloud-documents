@@ -112,11 +112,11 @@ Open the properties page of the TRTCDemo, select **Build**, and set **Platform**
 ```
 Error CS0246: The type or namespace name "ManageLiteAV" could not be found (are you missing a using directive or an assembly reference?)
 ```
-- If the following error occurs, please check whether the project's running platform is the current target platform of the solution as instructed in [Modify the project configuration](#Step4).
+- If the following error occurs, please check whether the project's running platform is the current target platform of the solution as instructed in [Modify the project configuration](#step-4.-modify-the-project-configuration).
 ```
 System.BadImageFormatException: "Could not load file or assembly "ManageLiteAV, Version=2.0.7152.18518, Culture=neutral, PublicKeyToken=null" or one of its dependencies. An attempt was made to load a program with an incorrect format."
 ```
-- If the following error occurs, please check whether the built event is correctly added to the running directory as instructed in [Modify the project configuration](#Step4).
+- If the following error occurs, please check whether the built event is correctly added to the running directory as instructed in [Modify the project configuration](#step-4.-modify-the-project-configuration).
 ```
 System.IO.FileNotFoundException: "Could not load file or assembly "ManageLiteAV.dll" or one of its dependencies. The specified module could not be found."
 ```
