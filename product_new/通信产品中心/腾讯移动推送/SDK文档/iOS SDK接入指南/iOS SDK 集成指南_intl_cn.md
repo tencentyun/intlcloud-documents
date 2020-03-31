@@ -114,7 +114,7 @@ pod install //安装SDK
 1. 解压 SDK 文件包，将 SDK 目录下的 XGPushPrivate.h 文件添加到工程中。
 2. 调用头文件中的配置 `HOST` 接口：
  - 如需接入新加坡集群则将 `HOST`设置为 `https://api.tpns.sgp.tencent.com`, `PORT`设置为0。
- - 如需接入香港集群则将 `HOST` 设置为`https://api.tpns.hk.tencent.com`, `PORT `设置为0。
+ - 如需接入中国香港集群则将 `HOST` 设置为`https://api.tpns.hk.tencent.com`, `PORT `设置为0。
 
 **示例**
 ``` object-c
@@ -139,11 +139,11 @@ pod install //安装SDK
 
 #### 实现 ```XGPushDelegate``` 协议
 
-在调试阶段，建议实现协议中的以下两个方法，即可获取更详细的调试信息：
+在调试阶段，建议实现协议中的第二个方法，即可获取更详细的调试信息：
 
 ```objective-c
 /**
- @brief 监控腾讯移动推送服务地启动情况
+ @brief 监控腾讯移动推送服务地启动情况（已废弃）
 
  @param isSuccess 腾讯移动推送是否启动成功
  @param error 腾讯移动推送启动错误的信息
@@ -151,12 +151,13 @@ pod install //安装SDK
 - (void)xgPushDidFinishStart:(BOOL)isSuccess error:(nullable NSError *)error;
 
 /**
- @brief 向腾讯移动推送服务器注册设备token的回调
+ @brief 注册推送服务回调
  
- @param deviceToken 当前设备的token
- @param error 错误信息
-- (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken error:(nullable NSError *)error;
-
+ @param deviceToken APNs 生成的 Device Token
+ @param xgToken TPNS 生成的 Token，推送消息时需要使用此值。TPNS 维护此值与 APNs 的 Device Token 的映射关系
+ @param error 错误信息，若 error 为 nil 则注册推送服务成功
+ */
+- (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken xgToken:(nullable NSString *)xgToken error:(nullable NSError *)error;
 ```
 
 #### 观察日志
@@ -166,7 +167,42 @@ pod install //安装SDK
 [xgpush]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59991583a925030f1b913625a9dab
 [xgpush]Current XG token is 05da87c0ae5973bd2dfa9e08d884aada5bb2
 ```
->在推送单个目标设备时请使用 XG 36位的 Token。
+>?在推送单个目标设备时请使用 XG 36位的 Token。
+
+## 自定义响应消息内容
+
+iOS 设备收到一条推送消息，用户点击推送消息打开应用时，应用程序根据状态不同进行处理：
+
+- 若 App 状态为未运行，此函数将被调用。
+ - 若 launchOptions 包含 UIApplicationLaunchOptionsRemoteNotificationKey ，表示用户点击推送消息导致 App 被启动运行。
+ - 若不含有对应键值，则表示 App 不是因点击消息而被启动，可能为直接点击 icon 启动或其他。
+ ```objective-c
+	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+	{
+			// 消息内容获取
+			NSDictionary *remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+			// 然后根据消息内容进行逻辑处理
+	}
+ ```
+- 若 App 状态为正在前台或者是在后台但仍处于 Active 状态。
+ - 基于 iOS 7.0+ 系统版本，如果是使用 Remote Notification 特性，那么处理函数需要使用如下代码：
+	```objective-c
+	- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+	```
+ - 基于 iOS 10.0+ 的系统版本，如果是使用 Remote Notification 特性，那么处理函数建议使用新增 UserNotifications Framework 来进行处理，请使用 XGPushDelegate 协议中的以下两个方法，示例代码如下：
+	```objective-c
+	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+		NSLog(@"[XGDemo] click notification");
+		completionHandler();
+	}
+
+	// App 在前台弹推送消息需要调用这个接口
+	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+		completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
+	}
+	```
+
+
 
 
 ## 集成建议
@@ -185,5 +221,7 @@ pod install //安装SDK
 //获取 APNs 生成的 DeviceToken
 [[XGPushTokenManager defaultTokenManager] deviceTokenString];
 ```
+
+![](https://main.qcloudimg.com/raw/7afeffeac5828bb42563765e10730179.png)
 
 

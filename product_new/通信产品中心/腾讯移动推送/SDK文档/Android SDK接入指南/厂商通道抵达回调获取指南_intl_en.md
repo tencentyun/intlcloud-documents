@@ -6,7 +6,7 @@ After successfully configuring the arriving data display feature, you can view t
 
 ## Overview
 
-| Vendor-specific Channel | Arrival Callback Supported | Configuration Required |
+| Vendor-specific Channel | Arrival Supported | Configuration Required |
 | -------- | ---------------- | ------------ |
 | Huawei channel | Yes               | Yes           |
 | Mi channel | Yes               | No           |
@@ -29,12 +29,12 @@ The acquisition of arriving data through the Huawei channel needs to be configur
 
 ### Configuring receipt parameters
 
-1. Configure the message receipt callback address as described below:
+1. Configure the message receipt address as described below:
   - Cluster in Guangzhou: https://api.tpns.tencent.com/log/statistics/hw
   - Cluster in Hong Kong (China): https://api.tpns.hk.tencent.com/log/statistics/hw
   - Cluster in Singapore: https://api.tpns.sgp.tencent.com/log/statistics/hw
 2. Configure the HTTPS certificate. Click [here](https://api.tpns.tencent.com/v3/tpnscert/download) to download it.
-3. Configure the callback username and key (optional) for authentication.
+3. Configure the username and key (optional) for authentication.
 4. Click **Test Receipt** to test the receipt address.
 >Currently, if you click **Test Receipt**, the error message "Certificate error. Please modify and upload it again" will be displayed. Ignore it and click **Submit**.
 
