@@ -5,11 +5,11 @@ TencentDB for MariaDB can be accessed in the following ways:
 >For public network access, the database instance's public IP needs to be enabled, which may expose your database service to attacks or intrusions on the public network. Therefore, it is recommended to log in to the database over the private network.
 
 ## Prerequisites
-No matter whether you access the instance from the private or public network, you need to [create an account](https://cloud.tencent.com/document/product/237/7054) first.
+No matter whether you access the instance from the private or public network, you need to [create an account](https://intl.cloud.tencent.com/document/product/237/7054) first.
 
 ## Accessing a Database
 ### Private network access
-1. Log in to the CVM instance. For more information, please see <a href="https://cloud.tencent.com/document/product/213/2764" target="_blank">Getting Started with Windows CVM</a> or <a href="https://cloud.tencent.com/document/product/213/2936" target="_blank">Getting Started with Linux CVM</a>.
+1. Log in to the CVM instance. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/213/10516" target="_blank">Getting Started with Windows CVM</a> or <a href="https://intl.cloud.tencent.com/document/product/213/10517" target="_blank">Getting Started with Linux CVM</a>.
 2. Select the connection method based on the CVM operating system.
 **Login on Windows**
 1) Download and install a MariaDB client. [SQLyog](https://www.webyog.com/) is recommended.
@@ -28,7 +28,7 @@ Install the client by running the following command:
 yum install mysql
 ```
 The command is executed as shown below:
-![](https://mc.qcloudimg.com/static/img/eee76fa95379b8a25fc076b66b4ca28c/image.png)
+![](https://main.qcloudimg.com/raw/d820e34b807d84e2c25debeed4ba171e.png)
 2) Log in to the TencentDB for MariaDB instance by using the MySQL command line tool.
 ```
 mysql -h hostname -u username -p
@@ -67,7 +67,7 @@ yum intall mysql
 mysql -h hostname -P port -u username -p
 ```
 Replace "hostname" with the public network domain name of the target TencentDB for MariaDB instance, replace "username" with the username previously created, and enter its password when prompted with "Enter password:".
-![](https://mc.qcloudimg.com/static/img/230ca6d65526050e062c3f59186d4e6c/image.png)
+![](https://main.qcloudimg.com/raw/22c5ebefc86688cf30523ce2717b04e4.png)
 3) Under the prompt "MySQL>", you can send an SQL statement to the TencentDB for MariaDB server for execution. For specific command lines, please see [here](https://dev.mysql.com/doc/refman/5.7/en/mysql-commands.html).
 Take `show databases;` for example as below:
 ![](https://mc.qcloudimg.com/static/img/76b4346a84f7388ae263dc6c09220fc0/image.png)

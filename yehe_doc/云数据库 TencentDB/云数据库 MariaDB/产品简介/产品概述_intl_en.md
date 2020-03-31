@@ -1,5 +1,5 @@
 ## Overview
-TencentDB for MariaDB is a highly secure enterprise-level cloud database dedicated to the online transaction processing (OLTP) scenario. It has always been used in Tencent's billing business. It is [compatible with MySQL syntax](https://cloud.tencent.com/document/product/237/6988) and has various advanced features such as thread pool, audit, and remote disaster recovery while delivering easy scalability, simplicity, and high cost performance of TencentDB.
+TencentDB for MariaDB is a highly secure enterprise-level cloud database dedicated to the online transaction processing (OLTP) scenario. It has always been used in Tencent's billing business. It is [compatible with MySQL syntax](https://intl.cloud.tencent.com/document/product/237/6988?from_cn_redirect=1) and has various advanced features such as thread pool, audit, and remote disaster recovery while delivering easy scalability, simplicity, and high cost performance of TencentDB.
 
 ## Related Concepts
 Instance: a TencentDB for MariaDB resource in Tencent Cloud.

@@ -9,4 +9,4 @@ CREATE ROUTINE、ALTER ROUTINE、EVENT、TRIGGER、SHOW DATABASES
 
 3. 不提供 root 帐号。
 
-4. 建议使用 [InnoDB 存储引擎](https://cloud.tencent.com/document/product/237/5276)。
+4. 建议使用 [InnoDB 存储引擎](https://intl.cloud.tencent.com/document/product/237/5276)。

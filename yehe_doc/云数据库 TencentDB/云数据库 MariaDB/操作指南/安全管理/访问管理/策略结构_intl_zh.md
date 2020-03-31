@@ -19,7 +19,7 @@ CAM 策略配置示例：
 
 - **版本 version**：必填项，目前允许值为"2.0"（该值实际代表 CAM 接受的云 API 版本）。
 - **语句 statement**：用来描述一条或多条权限的详细信息。该元素包括 effect、action、resource、condition 等多个其他元素的权限或权限集合。一条策略有且仅有一个 statement 元素。
- - **操作 action**：用来描述允许或拒绝的操作。操作 action 实际填入的是以 "mariadb:" 前缀描述，[云数据库 MariaDB API](https://cloud.tencent.com/document/api/237/16144) 为后缀的一串字符串 。该元素是必填项。
+ - **操作 action**：用来描述允许或拒绝的操作。操作 action 实际填入的是以 "mariadb:" 前缀描述，云数据库 MariaDB API为后缀的一串字符串 。该元素是必填项。
  2. **资源 resource**：描述授权的具体数据。资源是用六段式描述。每款产品的资源定义详情会有所区别。有关如何指定资源的信息，请参阅您编写的资源声明所对应的产品文档。该元素是必填项。
  3. **生效条件 condition**：描述策略生效的约束条件。条件包括操作符、操作键和操作值组成。条件值可包括时间、IP 地址等信息。有些服务允许您在条件中指定其他值。该元素是非必填项。
  4. **影响 effect**：描述声明产生的结果是“允许”还是“显式拒绝”。包括 allow（允许）和 deny（显式拒绝）两种情况。该元素是必填项。
@@ -52,7 +52,7 @@ qcs:project_id:service_type:region:account:resource
 
 - **project_id**：描述项目信息，仅为了兼容 CAM 早期逻辑，无需填写。
 - **service_type**：产品简称，如 mariadb。
-- **region**：地域信息，如 ap-guangzhou。详情请参考 [地域相关信息](https://cloud.tencent.com/document/api/213/15708)。
+- **region**：地域信息，如 ap-guangzhou。详情请参考 [地域相关信息](https://intl.cloud.tencent.com/document/api/213/15708)。
 - **account**：资源拥有者的主帐号信息，如 uin/653339763。
 - **resource**：各产品的具体资源详情，如 instance/instance_id1 或者 instance/*。
 

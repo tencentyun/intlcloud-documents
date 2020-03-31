@@ -19,4 +19,4 @@ CAM 策略必须授权使用一个或多个云数据库操作或者必须拒绝�
 
 ### 了解更多
 
-了解更多访问管理 CAM，请参考 [访问管理相关文档](https://cloud.tencent.com/document/product/598)。
+了解更多访问管理 CAM，请参考 [访问管理相关文档](https://intl.cloud.tencent.com/document/product/598?from_cn_redirect=1)。

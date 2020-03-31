@@ -19,7 +19,7 @@ CAM policy configuration example:
 
 - **version** is required. Currently, only "2.0" is allowed. (This value actually represents the version of TencentCloud APIs acceptable to CAM.)
 - **statement** describes the details of one or more permissions. This element contains a permission or permission set of other elements such as effect, action, resource, and condition. One policy has only one statement.
- - **action** describes the allowed or denied action. An action entered here is a string prefixed with "mariadb:" and suffixed with an [TencentDB for MariaDB API](https://cloud.tencent.com/document/api/237/16144). This element is required.
+ - **action** describes the allowed or denied action. An action entered here is a string prefixed with "mariadb:" and suffixed with an TencentDB for MariaDB API. This element is required.
  2. **resource** describes the details of authorization. A resource is described in a six-segment format. Detailed resource definitions vary by product. For more information on how to specify a resource, please see the documentation for the product whose resources you are writing a statement for. This element is required.
  3. **condition** describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address. Some services allow you to specify additional values in a condition. This element is required.
  4. **effect** describes whether the result produced by the statement is "allowed" (allow) or "denied" (deny). This element is required.
@@ -52,7 +52,7 @@ qcs:project_id:service_type:region:account:resource
 
 - **project_id** describes the project information, which is only used to enable compatibility with legacy CAM logic and can be left empty.
 - **service_type** describes the product abbreviation such as TencentDB for MariaDB.
-- **region** describes the region information, such as ap-guangzhou. For more information, please see [Regions](https://cloud.tencent.com/document/api/213/15708).
+- **region** describes the region information, such as ap-guangzhou. For more information, please see [Regions](https://intl.cloud.tencent.com/document/api/213/15708).
 - **account** is the root account of the resource owner, such as uin/653339763.
 - **resource** describes detailed resource information of each product, such as instance/instance_id1 or instance/*.
 

@@ -1,5 +1,5 @@
 
-数据库审计目前已经支持绝大多数 SQL 语句，如发现存在不足，请 [联系我们](https://cloud.tencent.com/about/connect) 反馈。
+数据库审计目前已经支持绝大多数 SQL 语句，如发现存在不足，请 [联系我们](https://console.cloud.tencent.com/workorder/category) 反馈。
 - 已支持 DCL、DDL、DML 语句的解析。
 ```
 Insert,Replace,Select,Union,Update,Delete,CreateDatabase:,CreateEvent,CreateFunction,CreateIndex,CreateLog,

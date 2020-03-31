@@ -10,13 +10,13 @@ The memory allocation mechanism of the database makes the most of idle memory to
 You are recommended to keep the data volume below 20 million entries; otherwise, TencentDB for MariaDB performance will be affected.
 
 ### Does TencentDB for MariaDB allow me to use a set of self-built databases as slaves?
-TencentDB for MariaDB provides two schemes for read/write separation: [read/write separation](https://cloud.tencent.com/document/product/237/2081) and [self-built read-only instance](https://cloud.tencent.com/document/product/237/8636).
+TencentDB for MariaDB provides two schemes for read/write separation: [read/write separation](https://intl.cloud.tencent.com/document/product/237/35409) and [self-built read-only instance](https://intl.cloud.tencent.com/document/product/237/8636).
 
 ### Does the connection method of a TencentDB for MariaDB data source need to be changed?
 TencentDB for MariaDB is compatible with MySQL protocols and connection programs under such protocols; therefore, no change is needed.
 
 ### What syntax does TencentDB for MariaDB audit support?
-Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://cloud.tencent.com/about/connect) for feedback.
+Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://console.cloud.tencent.com/workorder/category) for feedback.
 1. Parsing of DCL, DDL, and DML statements is supported.
 ``` 
 Insert,Replace,Select,Union,Update,Delete,CreateDatabase:,CreateEvent,CreateFunction,CreateIndex,CreateLog,
@@ -36,7 +36,7 @@ Kill,Partition,PrepareRepairXACheckCheckSumAnalyzeChangeOptimizePurgeHandlerSign
 
 
 ### Why does strong sync in TencentDB for MariaDB have master/slave delay?
-The strong sync mechanism is to return a response immediately after data is written to (stored in) a slave log. In this case, data still needs to be written to the table through the log; therefore, delay will occur. For more information, please see [How Strong Sync Works](https://cloud.tencent.com/document/product/237/1057).
+The strong sync mechanism is to return a response immediately after data is written to (stored in) a slave log. In this case, data still needs to be written to the table through the log; therefore, delay will occur. For more information, please see [How Strong Sync Works](https://intl.cloud.tencent.com/document/product/237/1057).
 
 
 

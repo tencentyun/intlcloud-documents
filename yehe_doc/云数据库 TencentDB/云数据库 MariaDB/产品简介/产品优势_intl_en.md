@@ -26,7 +26,7 @@ The physical machine of each TencentDB for MariaDB node adopts the dual-ENI dual
 
 #### 2-region-3-DC
 2-region-3-DC deployment architecture of TencentDB for MariaDB: the straight-line distance between nodes in the same city is greater than 10 KM, and that between nodes in different cities is greater than 100 KM. This architecture can be implemented by Tencent's proprietary high availability (HA) scheduling scheme as shown below:
-![](https://main.qcloudimg.com/raw/5631159ff5833d8623be51588b8aec90.png)
+![](https://main.qcloudimg.com/raw/911a8b1f890e9160ab46ad0d046abcb5.png)
 
 ## High Performance
 Based on PCI-E SSD, TencentDB for MariaDB has powerful I/O performance that guarantees the accessibility of database. The storage firmware adopts the NVMe protocol and is specifically designed for PCI-E SSD, bringing TencentDB for MariaDB's superior performance to full play with one single high-IO instance sustaining up to 6 TB storage, 480 GB memory, and at least 220,000 queries per second (QPS). The performance advantage allows you to support higher business concurrence with a smaller number of database instances.
