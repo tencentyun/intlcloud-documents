@@ -10,7 +10,7 @@ This document describes how to quickly integrate the Tencent Cloud TRTC SDK for 
 
 Go to the [download address](https://nodejs.org/en/download/), select the Windows 32-bit version, and install the node environment.
 
->!`trtc-electron-sdk` currently only supports the Windows 32-bit version.
+>`trtc-electron-sdk` currently only supports the Windows 32-bit version.
 
 ### macOS
 
@@ -40,7 +40,7 @@ Check whether the SDK has been successfully installed in `package.json` in the p
     "trtc-electron-sdk": "x.x.x"
 }
 ```
-> ? The latest version of the TRTC SDK for Electron can be viewed in [trtc-electron-sdk](https://www.npmjs.com/package/trtc-electron-sdk)
+>  The latest version of the TRTC SDK for Electron can be viewed in [trtc-electron-sdk](https://www.npmjs.com/package/trtc-electron-sdk)
 
 Import the module into the project script and use:
 
