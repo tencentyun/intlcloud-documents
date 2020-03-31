@@ -38,7 +38,7 @@ yum install MariaDB-server
 ```
 yum install MariaDB-client
 ```
-- Install the LZ4 decompression program. For more information, please see [Decompressing Backup and Log Files](https://cloud.tencent.com/document/product/237/2088). LZ4 is installed in the `mysqlagent/bin` directory by default. You can also install it in the `/usr/bin` directory and import it as an environment variable.
+- Install the LZ4 decompression program. For more information, please see [Decompressing Backup and Log Files](https://intl.cloud.tencent.com/document/product/237/2088). LZ4 is installed in the `mysqlagent/bin` directory by default. You can also install it in the `/usr/bin` directory and import it as an environment variable.
 ```
 yum install -y lz4
 percona-xtrabackup
@@ -141,12 +141,12 @@ For more information, please see [Stop the database and clear data files](#tingz
 
 #### 4. Get the data key plaintext
 Before decrypting the data, you need to query the data key ciphertext in **Data Security** > **Data Encryption** on the instance management page in the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql). Then, you can use either of the following two schemes to decrypt the data key ciphertext to get the **data key plaintext**.
-- Use a KMS API to get the data key plaintext on your own. For more information, please see the [KMS API documentation](https://cloud.tencent.com/document/product/573/34403).
+- Use a KMS API to get the data key plaintext on your own. For more information, please see the [KMS API documentation](https://intl.cloud.tencent.com/document/product/1030/32172).
 - Use the Python script `./kms_tool.py` provided by Tencent Cloud to get the data key plaintext.
  - Parameter description:
     - --role: this parameter is in a fixed format. Enter `kmsTDSQLRole` here.
     - --secret_id, --secret_key: authorization information, which can be queried in [API Key Management](https://console.cloud.tencent.com/cam/capi) in **CAM**.
-    - --region: region information, which can be queried in [KMS Common Parameters](https://cloud.tencent.com/document/product/573/34406).
+    - --region: region information, which can be queried in [KMS Common Parameters](https://intl.cloud.tencent.com/document/product/1030/32175).
     - --ciphertext: data key ciphertext.
 ![](https://main.qcloudimg.com/raw/c0b8552753c094fc6b0257c57e59872e.png)
  - Below is a demo:

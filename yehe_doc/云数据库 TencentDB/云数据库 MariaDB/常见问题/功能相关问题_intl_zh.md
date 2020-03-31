@@ -1,6 +1,6 @@
 
 ### 如何初始化 MariaDB 数据库？
-详细操作请参见 [初始化MariaDB数据库](https://cloud.tencent.com/document/product/237/7055)。
+详细操作请参见 [初始化MariaDB数据库](https://intl.cloud.tencent.com/document/product/237/7055?from_cn_redirect=1)。
 
 ### MariaDB 实例如何降配？
 MariaDB目前不支持降低配置 。
@@ -10,7 +10,7 @@ MariaDB目前不支持降低配置 。
 您也可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 说明具体重启原因进行申请，我们的专项工程师审核后重启数据库。
 
 ### 读写分离是否需要我在程序上进行专门设置？
-数据库的读写分离，不是完全自动的，需要您先在管理中心[开通只读帐号](https://cloud.tencent.com/document/product/237/2081)，并修改程序配置，方可生效。
+数据库的读写分离，不是完全自动的，需要您先在管理中心[开通只读帐号](https://intl.cloud.tencent.com/document/product/237/35409)，并修改程序配置，方可生效。
 
 ### MariaDB 如何有效地删除大量数据？
 该方法类似于批量插入，建议清理的时候一次清理少一点，例如一万条，循环删除。
@@ -20,7 +20,7 @@ MariaDB目前不支持降低配置 。
 
 ### 如何使用 mysqldump 导入 MariaDB 数据库数据？
 使用 mysqldump 工具的优点是简单易用、容易上手，缺点是停机时间较长，因此它适用于数据量不大，或者允许停机的时间较长的情况。
-详细操作请参见 [使用 mysqldump 导入数据](https://cloud.tencent.com/document/product/237/8481)。
+详细操作请参见 [使用 mysqldump 导入数据](https://intl.cloud.tencent.com/document/product/237/8481)。
 
 ### MariaDB 数据库有哪些功能限制？
 - 不能更改 mysql、information_schema、performance_schema 和 sysdb 库中的任何数据。
@@ -34,5 +34,5 @@ MariaDB目前不支持降低配置 。
 
 ### 如何对 MariaDB 数据库进行回档？
 通过数据库回档能力，可以最大程度地减少系统损失；MariaDB 可根据备份和日志保持情况，回档到30天内的任意时刻。
-详细回档操作请参见 [回档数据库](https://cloud.tencent.com/document/product/237/8719)。
+详细回档操作请参见 [回档数据库](https://intl.cloud.tencent.com/document/product/237/8719?from_cn_redirect=1)。
 

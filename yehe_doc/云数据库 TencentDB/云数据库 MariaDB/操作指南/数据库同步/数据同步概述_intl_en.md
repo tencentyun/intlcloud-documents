@@ -86,13 +86,13 @@ MariaDB/MySQL and PostgreSQL have different data types. The database sync tool w
 MariaDB/MySQL and TDSQL have the same data types; therefore, data type conversion is not needed.
 
 #### Sync from MariaDB/MySQL to CKafka
-Relevant data will be converted to JSON format. For more information, please see [Binlog Consumption Format](https://cloud.tencent.com/document/product/237/35916).
+Relevant data will be converted to JSON format. For more information, please see [Binlog Consumption Format](https://intl.cloud.tencent.com/document/product/237/35420).
 
 #### Sync from TDSQL to CKafka
-Relevant data will be converted to JSON format. For more information, please see [Binlog Consumption Format](https://cloud.tencent.com/document/product/237/35916).
+Relevant data will be converted to JSON format. For more information, please see [Binlog Consumption Format](https://intl.cloud.tencent.com/document/product/237/35420).
 
 ### Data subscription
-Data sync to CKafka supports data subscription. Before configuring this feature, you need to purchase a CKafka instance first. For more information, please see [CKafka](https://cloud.tencent.com/document/product/597). Below are configuration recommendations:
+Data sync to CKafka supports data subscription. Before configuring this feature, you need to purchase a CKafka instance first. For more information, please see [CKafka](https://intl.cloud.tencent.com/document/product/597?from_cn_redirect=1). Below are configuration recommendations:
 
 - **Specification**
 You can evaluate the CKafka instance specification based on the daily updated data volume, daily peak or average bandwidth, and desired data retention period in CKafka of the instance to be synced.

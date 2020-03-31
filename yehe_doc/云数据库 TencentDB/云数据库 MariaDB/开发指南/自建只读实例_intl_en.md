@@ -1,6 +1,6 @@
 ## 1. Overview
 ### 1.1. Overview
-If you only need to implement [read/write separation](https://cloud.tencent.com/document/product/237/2081), currently, all TencentDB for MariaDB slaves support read-only access. For more information, please see [Read/Write Separation](https://cloud.tencent.com/document/product/237/2081).
+If you only need to implement [read/write separation](https://intl.cloud.tencent.com/document/product/237/35409), currently, all TencentDB for MariaDB slaves support read-only access. For more information, please see [Read/Write Separation](https://intl.cloud.tencent.com/document/product/237/35409).
 
 However, you may still need extra read-only instances to implement more flexible control and construct more complex business systems. Therefore, TencentDB for MariaDB supports the scheme of **self-creating read-only instances based on CVM**.
 
@@ -9,7 +9,7 @@ As shown below, the self-created instance feature "syncing" data to one or more 
 
 ![](https://mc.qcloudimg.com/static/img/a347c4d64a22c6b3f08c115c9e51c490/image.png)
 
-To ensure the performance and stability of the TencentDB for MariaDB cluster, only the **async** scheme is provided for self-created read-only instances, and the data sync delay will be increased when the cluster pressure is high so as to reduce performance loss of the master cluster. This means the data delay of your self-created read-only instances may vary from several seconds to several minutes. If you require low delay, you are recommended to use [read/write separation](https://cloud.tencent.com/document/product/237/2081) of TencentDB for MariaDB.
+To ensure the performance and stability of the TencentDB for MariaDB cluster, only the **async** scheme is provided for self-created read-only instances, and the data sync delay will be increased when the cluster pressure is high so as to reduce performance loss of the master cluster. This means the data delay of your self-created read-only instances may vary from several seconds to several minutes. If you require low delay, you are recommended to use [read/write separation](https://intl.cloud.tencent.com/document/product/237/35409) of TencentDB for MariaDB.
 
 ## 2. Creation Scheme
 ### 2.1. Determining the MariaDB kernel version

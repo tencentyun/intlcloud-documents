@@ -1,14 +1,14 @@
 
 ### MariaDB 如何创建帐号？
-详细操作请参见 [创建帐号](https://cloud.tencent.com/document/product/237/7054)。
+详细操作请参见 [创建帐号](https://intl.cloud.tencent.com/document/product/237/7054)。
 
 ### 内网如何访问 MariaDB 数据库？
 内网访问：使用腾讯云中与 MariaDB 数据库网络相通的 CVM，来访问 MariaDB 数据库的内网地址。
-详细操作请参见 [内网访问](https://cloud.tencent.com/document/product/237/7056#.E5.86.85.E7.BD.91.E8.AE.BF.E9.97.AE)。
+详细操作请参见 [内网访问](https://intl.cloud.tencent.com/document/product/237/7056)。
 
 ### 外网如何访问 MariaDB 数据库？
 外网访问：在外网的 Windows 或者 Linux 主机中，安装数据库客户端来访问腾讯云数据库 MariaDB 的外网地址。
-详细操作请参见 [外网访问](https://cloud.tencent.com/document/product/237/7056#.E5.A4.96.E7.BD.91.E8.AE.BF.E9.97.AE)。
+详细操作请参见 [外网访问](https://intl.cloud.tencent.com/document/product/237/7056)。
 
 ### MariaDB 数据库登录帐号密码忘记了，怎么办?
 可通过 [MariaDB控制台](https://console.cloud.tencent.com/tdsql) 实例详情页的“帐号管理”页，在“操作”列，选择【更多】>【重置密码】进行重置密码。

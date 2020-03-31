@@ -63,5 +63,5 @@ An audit policy is an audit scheme composed of audit rules, audit objects, and r
 SQL statements that hit audit policies are displayed on the audit logs page. You can click them view or search. Pay attention to the following points:
 - Audit logs are in plaintext. Therefore, you are recommended to enable [MFA](https://intl.cloud.tencent.com/document/product/378/8392) to ensure log security.
 - Logs are recorded only after an audit policy is created. Historical data is not recorded.
-- Each transaction and stored procedure may be recorded as a single statement. For more information, please see [Syntax Supported by Database Audit](https://cloud.tencent.com/doc/product/237/4847).
+- Each transaction and stored procedure may be recorded as a single statement. For more information, please see [Syntax Supported by Database Audit](https://intl.cloud.tencent.com/document/product/237/35422).
 - The allowed maximum length of one SQL statement is 1 KB. Excessive content will be truncated.

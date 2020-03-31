@@ -86,13 +86,13 @@ MariaDB/MySQL 与 PostgreSQL 的数据类型不同，数据库同步工具将按
 MariaDB/MySQL 与分布式数据库的数据类型相同，不存在数据类型转换情况。
 
 #### MariaDB/MySQL 到 CKafka 的同步
-相关数据将转换为 JSON 格式，请参见 [Binlog 日志消费格式](https://cloud.tencent.com/document/product/237/35916)。
+相关数据将转换为 JSON 格式，请参见 [Binlog 日志消费格式](https://intl.cloud.tencent.com/document/product/237/35420)。
 
 #### 分布式数据库到 CKafka 的同步
-相关数据将转换为 JSON 格式，请参见 [Binlog 日志消费格式](https://cloud.tencent.com/document/product/237/35916)。
+相关数据将转换为 JSON 格式，请参见 [Binlog 日志消费格式](https://intl.cloud.tencent.com/document/product/237/35420)。
 
 ### 数据订阅功能
-数据同步到 Ckafka 已支持数据订阅，配置前需先购买 Ckafka，详细介绍请参见 [消息队列 CKafka](https://cloud.tencent.com/document/product/597)，配置建议如下：
+数据同步到 Ckafka 已支持数据订阅，配置前需先购买 Ckafka，详细介绍请参见 [消息队列 CKafka](https://intl.cloud.tencent.com/document/product/597?from_cn_redirect=1)，配置建议如下：
 
 - **规格**
 可通过计划同步的实例每日更新数据量、日均峰值或平均值、计划保留在 Ckafka 的时间来评估 Ckafka 实例规格。
