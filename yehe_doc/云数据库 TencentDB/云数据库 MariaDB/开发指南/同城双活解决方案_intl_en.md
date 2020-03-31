@@ -30,7 +30,7 @@ Supported regions:
 - Beijing (Beijing Zone 1 and Beijing Zone 3)
 
 ### Pricing
-Dual-AZ and single-AZ schemes are offered at the same price. For more information, please see [Pricing](https://cloud.tencent.com/document/product/237/2034).
+Dual-AZ and single-AZ schemes are offered at the same price. For more information, please see [Pricing](https://intl.cloud.tencent.com/document/product/237/2034).
 
 - Risk warning: the Direct Connect service for 2-DC data sync was free of charge before June 30, 2019. If the operating policy changes in the future, the price will not be higher than that of intra-city Direct Connect published by Tencent Cloud. If you do not want to continue using the intra-city 2-DC scheme, you can migrate your data to the intra-city 1-DC scheme free of charge.
 
@@ -46,7 +46,7 @@ Go to the [purchase page of TencentDB for MariaDB](https://buy.cloud.tencent.com
 
 
 ### Instance initialization
-For more information on how to initialize an instance, please see [Instance Initialization](https://cloud.tencent.com/document/product/237/7055).
+For more information on how to initialize an instance, please see [Instance Initialization](https://intl.cloud.tencent.com/document/product/237/7055?from_cn_redirect=1).
 
 
 ### Viewing details of instance AZ

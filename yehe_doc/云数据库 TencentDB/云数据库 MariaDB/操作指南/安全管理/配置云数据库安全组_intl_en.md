@@ -9,7 +9,7 @@ In the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql),
 
 >**Note:**
 > 1. TencentDB shares the security group rules of CVM. You can match or adjust the rule priority as needed on the **TencentDB Security Group Management** page.
-> 2. You cannot create or delete security group rules on the TencentDB Security Group Management page. For more information on how to create, delete, or adjust security group rules, please see [Managing Security Groups](https://cloud.tencent.com/document/product/215/20398) in VPC.
+> 2. You cannot create or delete security group rules on the TencentDB Security Group Management page. 
 
 ## Security Group Policy
 Security group policies are divided into "allowing" and "denying" traffic. You can use a security group policy to filter the inbound traffic of an instance, which can be a **VPC-based TencentDB** instance.
@@ -55,4 +55,4 @@ In addition, if the last policy in multiple security groups associated with an i
 | Instances added to a security group | Unlimited |
 
 ## Creating, Managing, and Deleting Security Group Rules
-TencentDB shares the security group rules of CVM. You can match or adjust the rule priority as needed on the **TencentDB Security Group Management** page. To create, manage, or delete security group rules, please do so on the [security group management page](https://console.cloud.tencent.com/cvm/securitygroup) as instructed in [Managing Security Groups](https://cloud.tencent.com/document/product/215/20398).
+TencentDB shares the security group rules of CVM. You can match or adjust the rule priority as needed on the **TencentDB Security Group Management** page. To create, manage, or delete security group rules, please do so on the [security group management page](https://console.cloud.tencent.com/cvm/securitygroup).

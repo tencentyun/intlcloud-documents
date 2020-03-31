@@ -1,5 +1,5 @@
 ### MariaDB 是什么？
-云数据库 MariaDB 定位于 OLTP 场景下高安全性的企业级云数据库，十余年来一直应用于腾讯计费业务，[MariaDB 兼容 MySQL 语法](https://cloud.tencent.com/document/product/237/6988)，拥有诸如线程池、审计、异地容灾等高级功能，同时具有云数据库的易扩展性、简单性和性价比。
+云数据库 MariaDB 定位于 OLTP 场景下高安全性的企业级云数据库，十余年来一直应用于腾讯计费业务，[MariaDB 兼容 MySQL 语法](https://intl.cloud.tencent.com/document/product/237/6988?from_cn_redirect=1)，拥有诸如线程池、审计、异地容灾等高级功能，同时具有云数据库的易扩展性、简单性和性价比。
 
 ### MariaDB 的典型应用场景有哪些？
 - 场景1：数据云灾备（异地灾备）
@@ -7,7 +7,7 @@
 - 场景3：混合云
 - 场景4：读写分离
 - 场景5：开发测试
-各场景详细介绍请参见 [应用场景](https://cloud.tencent.com/document/product/237/1056)。
+各场景详细介绍请参见 [应用场景](https://intl.cloud.tencent.com/document/product/237/1056)。
 
 ### MariaDB 产品优势有哪些？
 - 数据强一致性
@@ -17,10 +17,10 @@
 5. 更高性能
 6. 与 MySQL 兼容
 7. 便宜易用
-各优势详细介绍请参见 [产品优势](https://cloud.tencent.com/document/product/237/6864)。
+各优势详细介绍请参见 [产品优势](https://intl.cloud.tencent.com/document/product/237/6864)。
 
 ### MariaDB 分布式架构是什么样的？
-分布式架构详细介绍请参见 [分布式数据库 TDSQL](https://cloud.tencent.com/document/product/557)。
+分布式架构详细介绍请参见 [分布式数据库 TDSQL](https://intl.cloud.tencent.com/document/product/1042)。
 
 ### MariaDB 标准与认证是什么？
 云数据库 MariaDB 现已代表腾讯云云数据库通过多项国家或国际认证，包括但不限于：
@@ -38,7 +38,7 @@ MariaDB 部分功能设计标准参考：
 - JRT 0072-2012 金融行业信息系统信息安全等级保护测评指南
 
 ### 为什么 MariaDB 指定某些存储引擎会报错？
-MariaDB 初始化参数时优先匹配一致性要求，而某些存储引擎可能会引发数据不一致，所以您在建表时，某些存储引擎可能会报错，您可以通过`SHOW ENGINES`命令查看当前数据库支持的存储引擎，引擎详情请参见 [存储引擎](https://cloud.tencent.com/document/product/237/5276)。
+MariaDB 初始化参数时优先匹配一致性要求，而某些存储引擎可能会引发数据不一致，所以您在建表时，某些存储引擎可能会报错，您可以通过`SHOW ENGINES`命令查看当前数据库支持的存储引擎，引擎详情请参见 [存储引擎](https://intl.cloud.tencent.com/document/product/237/5276)。
 
 ### 新购买2GB内存的 MariaDB，为什么初始化后只有1GB左右缓存空间?
 请参见 MariaDB 控制台对应实例的“参数设置”介绍，2GB会分配1GB给 SQL 执行的线程用，例如下图的临时表变量。
@@ -86,7 +86,4 @@ tdsql 运行客户端默认最大连接数4096，连接数满后，会导致新�
 ### MariaDB 监控的汇总、主节点和备节点数据有什么区别呢？为什么有些监控值明显不一样？
 汇总数据是整个实例的监控数据汇总，可能是主节点或主从节点的数值之和等。
 主节点和备节点则是单个节点的数据，因此肯定是有不一样。
-
-### MariaDB 数据库到期怎么办？
-MariaDB 到期提醒详情请参见 [欠费说明](https://cloud.tencent.com/document/product/237/3257)。
 

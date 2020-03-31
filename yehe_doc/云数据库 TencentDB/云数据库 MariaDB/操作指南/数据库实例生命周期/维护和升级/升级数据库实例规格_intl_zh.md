@@ -3,7 +3,7 @@
 1. 按需要升级的配置分配一个新的实例（简称“新实例”）。
 2. 将需要升级的实例（简称“老实例”）的数据、配置等同步到新实例。
 3. 同步完成后，在腾讯云网关做路由切换，切换到新实例继续使用。
-![](https://mc.qcloudimg.com/static/img/b746129256a7115a5fd108cbf0baefcd/%7B9EA720D4-E227-4DCB-9E1C-A13B8110CBA5%7D.png)
+![](https://main.qcloudimg.com/raw/c6c8778c93fb4438210b5bb492a956ce.png)
 
 ## 升级实例规格
 >

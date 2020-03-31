@@ -10,13 +10,13 @@ MariaDB 默认使用闲时超用的策略，即允许您的业务抢占一部分
 建议2000万以下，大于这个值会对 MariaDB 性能造成影响。
 
 ### MariaDB 支持用户自己搭建的一套数据库作为 MariaDB 从库吗？
-MariaDB 提供两种方案为用户解决读写分离问题： [读写分离](https://cloud.tencent.com/document/product/237/2081 )、[自建只读实例](https://cloud.tencent.com/document/product/237/8636)。
+MariaDB 提供两种方案为用户解决读写分离问题： [读写分离](https://intl.cloud.tencent.com/document/product/237/35409)、[自建只读实例](https://intl.cloud.tencent.com/document/product/237/8636)。
 
 ### MariaDB 数据源的连接方式需要变动吗？
 MariaDB 本身兼容 MySQL 协议，也兼容 MySQL 协议的连接程序，无需特别修改。
 
 ### MariaDB 审计已支持哪些语法？
-数据库审计目前已经支持绝大多数 SQL 语句，如有发现存在不足，请 [联系我们](https://cloud.tencent.com/about/connect) 反馈。
+数据库审计目前已经支持绝大多数 SQL 语句，如有发现存在不足，请 [联系我们](https://console.cloud.tencent.com/workorder/category) 反馈。
 1. 已支持 DCL、DDL、DML 语句的解析。
 ``` 
 Insert,Replace,Select,Union,Update,Delete,CreateDatabase:,CreateEvent,CreateFunction,CreateIndex,CreateLog,
@@ -36,7 +36,7 @@ Kill,Partition,PrepareRepairXACheckCheckSumAnalyzeChangeOptimizePurgeHandlerSign
 
 
 ### MariaDB 强同步为什么会有主备延迟？
-强同步机制是将数据写入从机日志（落盘）即返回应答；此时数据尚需要通过日志写入表中，因此确实会有延迟。详见 [强同步原理](https://cloud.tencent.com/document/product/237/1057)。
+强同步机制是将数据写入从机日志（落盘）即返回应答；此时数据尚需要通过日志写入表中，因此确实会有延迟。详见 [强同步原理](https://intl.cloud.tencent.com/document/product/237/1057)。
 
 
 

@@ -5,11 +5,11 @@
 >外网访问需要开启数据库实例的外网地址，此操作会使您的数据库服务暴露在公网上，可能导致数据库被入侵或攻击。建议您使用内网访问的方式来登录数据库。
 
 ## 前提条件
-无论从内网还是外网访问，都需要先 [创建账号](https://cloud.tencent.com/document/product/237/7054)。
+无论从内网还是外网访问，都需要先 [创建账号](https://intl.cloud.tencent.com/document/product/237/7054)。
 
 ## 访问数据库
 ### 内网访问
-1. 登录到 CVM，请参见 <a href="https://cloud.tencent.com/document/product/213/2764" target="_blank">WIndows CVM 入门</a> 或 <a href="https://cloud.tencent.com/document/product/213/2936" target="_blank">Linux CVM 入门</a>。
+1. 登录到 CVM，请参见 <a href="https://intl.cloud.tencent.com/document/product/213/10516" target="_blank">WIndows CVM 入门</a> 或 <a href="https://intl.cloud.tencent.com/document/product/213/10517" target="_blank">Linux CVM 入门</a>。
 2. 根据 CVM 的操作系统选择连接方式。
 **从 Windows 系统登录**
 1) 下载并安装 MariadDB 的客户端，推荐 [下载 sqlyog](https://www.webyog.com/)。
@@ -28,7 +28,7 @@
 yum install mysql
 ```
 图示如下：
-![](https://mc.qcloudimg.com/static/img/eee76fa95379b8a25fc076b66b4ca28c/image.png)
+![](https://main.qcloudimg.com/raw/d820e34b807d84e2c25debeed4ba171e.png)
 2) 使用 MySQL 命令行工具登录到 MariaDB 数据库。
 ```
 mysql -h hostname -u username -p
@@ -67,7 +67,7 @@ yum intall mysql
 mysql -h hostname -P port -u username -p
 ```
 请将 hostname 替换为目标 MariaDB 数据库实例的外网域名，username 替换为之前创建的用户名，并在提示 Enter password：后输入用户名对应的密码。
-![](https://mc.qcloudimg.com/static/img/230ca6d65526050e062c3f59186d4e6c/image.png)
+![](https://main.qcloudimg.com/raw/22c5ebefc86688cf30523ce2717b04e4.png)
 3) 在 MySQL> 提示符下可以发送 SQL 语句到要执行的 MariaDB 服务器，具体命令行请参见 [此网站](https://dev.mysql.com/doc/refman/5.7/en/mysql-commands.html)。
 下图中以 `show databases；`为例：
 ![](https://mc.qcloudimg.com/static/img/76b4346a84f7388ae263dc6c09220fc0/image.png)

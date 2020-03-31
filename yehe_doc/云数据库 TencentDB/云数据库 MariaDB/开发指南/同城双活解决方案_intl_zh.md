@@ -30,7 +30,7 @@
 - 北京（北京一区、北京三区）
 
 ### 价格说明
-双可用区售价与单可用区相同；详见 [价格说明]( https://cloud.tencent.com/document/product/237/2034)
+双可用区售价与单可用区相同；详见 [价格说明](https://intl.cloud.tencent.com/document/product/237/2034)
 
 - 风险提示：在 2019.06.30 前免收双中心数据同步专线费用；如后续运营政策变更，价格将不高于当时腾讯云已公开的同城专线费用；如您不希望继续使用同城双中心方案，可免费迁移至同城单中心。
 
@@ -46,7 +46,7 @@
 
 
 ### 实例初始化
-请参考 [实例初始化]( https://cloud.tencent.com/document/product/237/7055) 对实例进行初始化。
+请参考 [实例初始化]( https://intl.cloud.tencent.com/document/product/237/7055?from_cn_redirect=1) 对实例进行初始化。
 
 
 ### 查看实例可用区详情

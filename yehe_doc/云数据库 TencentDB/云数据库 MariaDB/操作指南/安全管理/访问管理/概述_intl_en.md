@@ -19,4 +19,4 @@ A CAM policy must authorize or deny the use of one or more TencentDB operations.
 
 ### More information
 
-For more information on CAM, please see the [CAM documentation](https://cloud.tencent.com/document/product/598).
+For more information on CAM, please see the [CAM documentation](https://intl.cloud.tencent.com/document/product/598?from_cn_redirect=1).

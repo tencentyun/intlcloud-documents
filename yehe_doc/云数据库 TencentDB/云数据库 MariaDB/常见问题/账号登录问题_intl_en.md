@@ -1,14 +1,14 @@
 
 ### How do I create an account in TencentDB for MariaDB?
-For detailed directions, please see [Creating Accounts](https://cloud.tencent.com/document/product/237/7054).
+For detailed directions, please see [Creating Accounts](https://intl.cloud.tencent.com/document/product/237/7054).
 
 ### How do I access a TencentDB for MariaDB instance over the private network?
 Private network access: you can use a CVM instance connected to the network of the TencentDB for MariaDB instance for access over the private network.
-For detailed directions, please see [Private Network Access](https://cloud.tencent.com/document/product/237/7056#.E5.86.85.E7.BD.91.E8.AE.BF.E9.97.AE).
+For detailed directions, please see [Private Network Access](https://intl.cloud.tencent.com/document/product/237/7056).
 
 ### How do I access a TencentDB for MariaDB instance over the public network?
 Public network access: on a Windows or Linux server in the public network, install a database client to access the public network address of the TencentDB for MariaDB instance.
-For detailed directions, please see [Public Network Access](https://cloud.tencent.com/document/product/237/7056#.E5.A4.96.E7.BD.91.E8.AE.BF.E9.97.AE).
+For detailed directions, please see [Public Network Access](https://intl.cloud.tencent.com/document/product/237/7056).
 
 ### What should I do if I forgot my TencentDB for MariaDB instance login password?
 In the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql), select "Account Management" on the instance details page and select **More** > **Reset Password** in the "Operation" column to reset the password.

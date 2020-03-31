@@ -1,5 +1,5 @@
 ### What is TencentDB for MariaDB?
-TencentDB for MariaDB is a highly secure enterprise-level cloud database dedicated to the online transaction processing (OLTP) scenario. It has been used in Tencent's billing business for more than a decade. It is [compatible with MySQL syntax](https://cloud.tencent.com/document/product/237/6988) and has various advanced features such as thread pool, audit, and remote disaster recovery while delivering easy scalability, simplicity, and high cost performance of TencentDB.
+TencentDB for MariaDB is a highly secure enterprise-level cloud database dedicated to the online transaction processing (OLTP) scenario. It has been used in Tencent's billing business for more than a decade. It is [compatible with MySQL syntax](https://intl.cloud.tencent.com/document/product/237/6988?from_cn_redirect=1) and has various advanced features such as thread pool, audit, and remote disaster recovery while delivering easy scalability, simplicity, and high cost performance of TencentDB.
 
 ### What are the typical use cases of TencentDB for MariaDB?
 - Scenario 1: cloud-based data disaster recovery (remote disaster recovery)
@@ -7,7 +7,7 @@ TencentDB for MariaDB is a highly secure enterprise-level cloud database dedicat
 - Scenario 3: hybrid cloud
 - Scenario 4: read/write separation
 - Scenario 5: development testing
-For more information on each use case, please see [Use Cases](https://cloud.tencent.com/document/product/237/1056).
+For more information on each use case, please see [Use Cases](https://intl.cloud.tencent.com/document/product/237/1056).
 
 ### What are the strengths of TencentDB for MariaDB?
 - Strong data consistency
@@ -17,10 +17,10 @@ For more information on each use case, please see [Use Cases](https://cloud.tenc
 5. Higher performance
 6. Compatibility with MySQL
 7. Cost effectiveness and ease of use
-For more information on each strength, please see [Strengths](https://cloud.tencent.com/document/product/237/6864).
+For more information on each strength, please see [Strengths](https://intl.cloud.tencent.com/document/product/237/6864).
 
 ### What is the distributed architecture of TencentDB for MariaDB?
-For more information on the distributed architecture, please see [TDSQL](https://cloud.tencent.com/document/product/557).
+For more information on the distributed architecture, please see [TDSQL](https://intl.cloud.tencent.com/document/product/1042).
 
 ### What are the standards and certifications of TencentDB for MariaDB?
 TencentDB for MariaDB has earned many Chinese and international certifications on behalf of TencentDB, including but not limited to:
@@ -38,7 +38,7 @@ Some features of TencentDB for MariaDB are designed based on the following stand
 - JRT 0072-2012 Testing and Evaluation Guide for Classified Protection of Information System of Financial Industry
 
 ### Why does an error occur when I specify some storage engines for a TencentDB for MariaDB instance?
-Consistency requirements are first matched when TencentDB for MariaDB initializes parameters, but some storage engines may cause data inconsistency; therefore, an error may occur in some storage engines when you create a table. You can use the `SHOW ENGINES` command to view the storage engines supported by the current database. For more information on storage engines, please see [Storage Engines](https://cloud.tencent.com/document/product/237/5276).
+Consistency requirements are first matched when TencentDB for MariaDB initializes parameters, but some storage engines may cause data inconsistency; therefore, an error may occur in some storage engines when you create a table. You can use the `SHOW ENGINES` command to view the storage engines supported by the current database. For more information on storage engines, please see [Storage Engines](https://intl.cloud.tencent.com/document/product/237/5276).
 
 ### Why does a newly purchased TencentDB for MariaDB instance with 2 GB memory only have about 1 GB cache capacity after initialization?
 Please see "Parameter Settings" of the corresponding instance in the TencentDB for MariaDB Console. 1 GB out of the 2 GB memory will be assigned to the threads executed by SQL, such as temporary table variables in the figure below.
@@ -87,6 +87,4 @@ You can check the number of queries in the slave (SELECT) through the correspond
 The aggregated data is the aggregation of all monitoring data of the entire instance and may be the sum of values of all master nodes or master and slave nodes.
 Master and slave node data is data of a single node; therefore, the values are certainly different.
 
-### What should I do if my TencentDB for MariaDB instance expires?
-For more information on expiration notification of TencentDB for MariaDB instances, please see [Notes on Arrears](https://cloud.tencent.com/document/product/237/3257).
 

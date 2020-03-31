@@ -297,7 +297,7 @@ If the following conditions are met, you can consider using the "distributed (ho
 - The read/write volume of the table is very high and exceeds the maximum throughput of one single server
 - You have taken into full account various restrictions on table design and use that may be caused by database sharding and table splitting
 
-For more information on the use limits of the "distributed (horizontal sharding)" edition, please see [TDSQL Development Guide](https://cloud.tencent.com/document/product/557)
+For more information on the use limits of the "distributed (horizontal sharding)" edition, please see [TDSQL Development Guide](https://intl.cloud.tencent.com/document/product/1042)
 
 ### 4.3. Master/slave configuration and disaster recovery
 Currently, TencentDB has the following capabilities:

@@ -9,4 +9,4 @@ CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER, SHOW DATABASES
 
 3. No root account is provided.
 
-4. You are recommended to use the [InnoDB storage engine](https://cloud.tencent.com/document/product/237/5276).
+4. You are recommended to use the [InnoDB storage engine](https://intl.cloud.tencent.com/document/product/237/5276).

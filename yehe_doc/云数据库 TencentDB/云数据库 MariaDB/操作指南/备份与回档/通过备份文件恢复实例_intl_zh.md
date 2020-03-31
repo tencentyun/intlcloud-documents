@@ -38,7 +38,7 @@ yum install MariaDB-server
 ```
 yum install MariaDB-client
 ```
-- 安装 LZ4 解压软件，请参见 [解压备份文件和日志文件](https://cloud.tencent.com/document/product/237/2088)。LZ4 默认安装在`mysqlagent/bin`目录下，也可以将其放置在`/usr/bin`目录下，当环境变量引用。
+- 安装 LZ4 解压软件，请参见 [解压备份文件和日志文件](https://intl.cloud.tencent.com/document/product/237/2088)。LZ4 默认安装在`mysqlagent/bin`目录下，也可以将其放置在`/usr/bin`目录下，当环境变量引用。
 ```
 yum install -y lz4
 percona-xtrabackup
@@ -141,12 +141,12 @@ innobackupex --apply-log --rebuild-indexes  --use-memory=1G  --tmpdir=/tmp ./bac
 
 #### 4. 获取数据密钥明文
 解密数据前，需在 [MariaDB 控制台](https://console.cloud.tencent.com/tdsql) 的实例管理页的【数据安全性】>【数据加密】中查询数据密钥密文，然后，您可以通过如下两种方案（任选其一）解密数据密钥密文，得到**数据密钥明文**。
-- 通过密钥管理服务 KMS 的 API，自己实现获取数据密钥明文，请参见 [KMS API 文档](https://cloud.tencent.com/document/product/573/34403)。
+- 通过密钥管理服务 KMS 的 API，自己实现获取数据密钥明文，请参见 [KMS API 文档](https://intl.cloud.tencent.com/document/product/1030/32172)。
 -  通过腾讯云提供的 Python 脚本`./kms_tool.py`，获取数据密钥明文。
  - 参数解释：
     - --role：格式固定，填入 kmsTDSQLRole 即可。
     - --secret_id、--secret_key：授权信息，可在【访问管理】中的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 查询。
-    - --region：地域信息，可在 [KMS 公共参数](https://cloud.tencent.com/document/product/573/34406) 中查询。
+    - --region：地域信息，可在 [KMS 公共参数](https://intl.cloud.tencent.com/document/product/1030/32175) 中查询。
     - --ciphertext：数据密钥密文。
 ![](https://main.qcloudimg.com/raw/c0b8552753c094fc6b0257c57e59872e.png)
  - 使用 demo 案例：
