@@ -1,5 +1,5 @@
 ## 功能说明
-本接口适用于将 App 用户帐号的登录态（如 UserSig）失效。
+本接口适用于将 App 用户帐号的登录态（例如 UserSig）失效。
 例如，开发者判断一个用户为恶意帐号后，可以调用本接口将该用户当前的登录态失效，这样用户使用历史 UserSig 登录即时通信 IM 会失败。
 
 >使用该接口将用户登录态失效后，用户如果使用重新生成的UserSig可以成功登录即时通信 IM，接口支持一次失效一个帐号。
@@ -71,7 +71,8 @@ https://console.tim.qq.com/v4/im_open_login_svc/kick?sdkappid=88888888&identifie
 
 ## 参考
 
-- 单个帐号导入（[v4/im_open_login_svc/account_import](https://intl.cloud.tencent.com/document/product/1047/34953)）
-- 批量帐号导入（[v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954)）
-- 帐号删除（[v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955)）
-- 帐号检查（[v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)）
+- 导入单个帐号（[v4/im_open_login_svc/account_import](https://intl.cloud.tencent.com/document/product/1047/34953)）
+- 导入多个帐号（[v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954)）
+- 删除帐号（[v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955)）
+- 查询帐号（[v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)）
+- 查询帐号在线状态（[ v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477)）
