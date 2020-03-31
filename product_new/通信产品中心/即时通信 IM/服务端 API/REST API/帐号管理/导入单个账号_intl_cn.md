@@ -86,3 +86,4 @@ https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888
 - 帐号删除（[v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955)）
 - 帐号检查（[v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)）
 - 失效帐号登录态（[v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957)）
+- 查询帐号在线状态（[ v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477)）
