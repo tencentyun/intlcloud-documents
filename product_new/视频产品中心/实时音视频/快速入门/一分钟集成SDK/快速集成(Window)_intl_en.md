@@ -42,9 +42,9 @@ Copy the extracted SDK folder to the directory where `TRTCCSharpDemo.csproj` is 
 2. Select **New** from the **Active solution platform** drop-down list and the **New Solution Platform** dialog box will appear.
 <span id="step4_1_3"></span>
 3. Type or select the new platform and click **OK**.
- ![](https://main.qcloudimg.com/raw/75f07143f2c6a83a4d22e3f95f8f3864.png)
+
 4. Repeat [substep 2](#step4_1_2) to [substep 3](#step4_1_3) as needed to create solution platforms that need to be supported.
- ![](https://main.qcloudimg.com/raw/e7d906cbc18d32848a25cce38f50d20c.png)
+
 5. Open the folder where the TRTCCSharpDemo project is located and edit the `TRTCCSharpDemo.csproj` file with a text editor.
 6. Add the following content to the `<itemGroup>` label in the `TRTCCSharpDemo.csproj` file:
   ```
@@ -79,8 +79,8 @@ ENDLOCAL
 Open the properties page of the TRTCDemo, select **Build**, and set **Platform** to the solution platform in the top menu bar.
 
 ### Step 5. Print the SDK version number
-1. Add a label control in the designer of `Form1.cs` as shown below:
- ![](https://main.qcloudimg.com/raw/fec574b76a4250a3e948816b7cc1728d.png)
+1. Add a label control in the designer of `Form1.cs`.
+
 2. Open the `Form1.cs` code file and add the following code:
 	```c#
 	using System.Windows.Forms;
