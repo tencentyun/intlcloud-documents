@@ -67,7 +67,7 @@ TRTCParams 是 SDK 最关键的一个参数，它包含如下四个必填的字�
 
 - **sdkAppId**
 进入腾讯云实时音视频 [控制台](https://console.cloud.tencent.com/rav)，如果您还没有应用，请创建一个，即可看到 sdkAppId。
-![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
+
 
 - **userId**
 您可以随意指定，由于是字符串类型，可以直接跟您现有的账号体系保持一致，但请注意，**同一个音视频房间里不应该有两个同名的 userId**。
