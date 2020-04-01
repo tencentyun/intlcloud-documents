@@ -50,7 +50,6 @@
 <tr>
 <th width="20%">配额项</th>
 <th width="20%">默认值</th>
- <th width="15%">可查看入口</th>  
 <th width="20%">是否可提配额</th>
 </tr>
 </thead>
@@ -58,8 +57,6 @@
 <td>单可用区下按量计费服务器
 </td>
 <td >30台或60台不等
-</td> 
-<td rowspan=1><a href="https://console.cloud.tencent.com/cvm/instance/index?rid=1">CVM 概览页-各地域资源</a></td></td> 
 <td>是</tr>
 </thead>
 </tbody></table>

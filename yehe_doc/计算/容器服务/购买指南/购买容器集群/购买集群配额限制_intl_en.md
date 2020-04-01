@@ -50,7 +50,6 @@ For CVM instances that you purchase for Tencent Cloud TKE, CVM purchase limits a
 <tr>
 <th width="20%">Quota Item</th>
 <th width="20%">Default Value</th>
- <th width="15%">Where to Check</th>  
 <th width="20%">Support Quota Increase</th>
 </tr>
 </thead>
@@ -59,7 +58,6 @@ For CVM instances that you purchase for Tencent Cloud TKE, CVM purchase limits a
 </td>
 <td >30 or 60
 </td> 
-<td rowspan=1><a href="https://console.cloud.tencent.com/cvm/instance/index?rid=1">CVM Overview page - Resources in Regions</a></td></td> 
 <td>Yes</tr>
 </thead>
 </tbody></table>
