@@ -19,7 +19,7 @@ The first step in using the TRTC SDK is to get the `ITRTCCloud*` pointer to the 
 - Inherit the `ITRTCCloudCallback` event callback API class and override the callback APIs for key events such as room entry/exit by local user, room entry/exit by remote user, error event, and warning event.
 - Call the `addCallback` API to register and listen on SDK events.
 
->!If `addCallback` is registered N times, the SDK will trigger N callbacks for the same event. It is recommended to call `addCallback` only once.
+>If `addCallback` is registered N times, the SDK will trigger N callbacks for the same event. It is recommended to call `addCallback` only once.
 
 C++ edition:
 
@@ -134,7 +134,6 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 
 - **sdkAppId**
   Log in to the [TRTC Console](https://console.cloud.tencent.com/rav). If you don't have an application yet, please create one and you will see the `sdkAppId`.
-  ![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
 
 - **userId**
   It can be specified arbitrarily. As it is of string type, it can be directly in line with your existing account system; however, please note that **there should not be identical `userIds` in the same audio/video room**.
@@ -245,7 +244,7 @@ public void onEnterRoom(int result)
 }
 ```
 
->!Please select the appropriate `scene` parameter according to the actual application scenario. An incorrect selection may lead to higher lagging rate or lower video definition than expected.
+>Please select the appropriate `scene` parameter according to the actual application scenario. An incorrect selection may lead to higher lagging rate or lower video definition than expected.
 
 ### 4. Listen to remote audio stream
 The TRTC SDK receives remote audio streams by default, so you don't need to write extra code for this. If you don't want to listen to the audio stream of a certain `userid`, you can mute it by calling `muteRemoteAudio`.

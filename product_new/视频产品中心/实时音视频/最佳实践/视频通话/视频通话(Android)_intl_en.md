@@ -8,13 +8,12 @@ This document describes how to implement a simple video call feature based on th
 
 | Platform | Sample Code | 
 |---------|---------|
-| Android | [TRTCVideoRoomActivity.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCDemo/app/src/main/java/com/tencent/liteav/demo/trtc/TRTCVideoRoomActivity.java) | 
-| iOS | [TRTCMainViewController.m](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCDemo/TRTC/TRTCMainViewController.m) | 
-| macOS | [TRTCMainWindowController.m](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCDemo/TRTC/TRTCMainWindowController.m) | 
+| Android | TRTCVideoRoomActivity.java| 
+| iOS | TRTCMainViewController.m | 
+| macOS | TRTCMainWindowController.m | 
 | Windows (MFC) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows (Duilib) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
 
-![](https://main.qcloudimg.com/raw/b5013afb3606fa02ce6c622b4e7085db.jpeg)
 
 
 ## Video Call
@@ -81,7 +80,6 @@ protected void onDestroy() {
 
 - **sdkAppId**
 Log in to the [TRTC Console](https://console.cloud.tencent.com/rav). If you don't have an application yet, please create one and you will see the `sdkAppId`.
-![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
 
 - **userId**
 It can be specified arbitrarily. As it is of string type, it can be directly in line with your existing account system; however, please note that **there should not be identical `userIds` in the same audio/video room**.
@@ -136,7 +134,7 @@ public void onEnterRoom(long elapsed) {
 }
 ```
 
->!Please select the appropriate `scene` parameter according to the actual application scenario. An incorrect selection may lead to higher lagging rate or lower video definition than expected.
+>Please select the appropriate `scene` parameter according to the actual application scenario. An incorrect selection may lead to higher lagging rate or lower video definition than expected.
 
 ### 4. Listen to remote audio stream
 The TRTC SDK receives remote audio streams by default, so you don't need to write extra code for this. If you don't want to listen to the audio stream of a certain `userid`, you can mute it by calling `muteRemoteAudio`.
