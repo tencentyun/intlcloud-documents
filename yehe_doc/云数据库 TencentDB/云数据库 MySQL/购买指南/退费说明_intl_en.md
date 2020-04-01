@@ -1,0 +1,2 @@
+Pay-as-you-go billing: TencentDB for MySQL will return resources directly, and no refund can be requested.
+You can return instances in the instance list in the TencentDB for MySQL Console in a self-service manner.
