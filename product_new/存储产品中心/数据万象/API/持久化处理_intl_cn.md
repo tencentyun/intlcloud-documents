@@ -2,35 +2,38 @@
 数据万象提供的上传时处理功能可以帮助使用者在上传时实现图片处理。您只需要在请求包头部中加入 Pic-Operations 项并设置好相应参数，就可在图片上传时实现相应的图片处理，并可将原图和处理结果存入到 COS。目前支持20M以内文件处理。
 
 ### 请求语法
+
 图片上传的请求包与 COS V5 简单上传文件接口一致，只在请求包头部增加图片处理参数。
 
-```
+```shell
 PUT /<ObjectKey> HTTP/1.1
-Host: <BucketName-APPID>.pic.<Region>.myqcloud.com
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 Pic-Operations: <PicOperations>
 ```
 
->!
-- COS 简单上传文件接口详见 [COS 文档](https://intl.cloud.tencent.com/document/product/436/7749)。
-- Authorization: Auth String （详细请参考 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 章节）。
+>
+>- COS 简单上传文件接口，请参见 COS [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) 文档。
+>- Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>- 持久化处理的 QPS 限制为100，如您有更高需求请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
 
 ### 请求内容
+
 Pic-Operations 为 json 格式的字符串，具体参数如下：
 
-| 参数名称        | 类型    | 必选   | 描述                                     |
+| 参数名称        | 类型    | 是否必选   | 描述                                     |
 | ----------- | ----- | ---- | -------------------------------------- |
 | is_pic_info | Int   | 否    | 是否返回原图信息，0不返回原图信息，1返回原图信息，默认为0         |
 | rules       | Array | 否    | 处理规则，一条规则对应一个处理结果（目前支持五条规则），不填则不进行图片处理 |
 
  rules（json 数组）中每一项具体参数如下：
 
-| 参数名称   | 类型     | 必选   | 描述                                       |
+| 参数名称   | 类型     | 是否必选   | 描述                                       |
 | ------ | ------ | ---- | ---------------------------------------- |
-| bucket | String | 否    | 存储结果的目标 bucket 名称，形如 bucketName-appid，如果不指定的话默认保存到当前 bucket |
-| fileid | String | 是    | 处理结果的文件路径名称，如以’/’开头，则存入指定文件夹中，否则，存入原图文件存储的同目录 |
-| rule   | String | 是    | 处理参数，参见数据万象图片处理 API。若按指定样式处理，则以”style/”开头，后加样式名，如样式名为”test”，则 rule 字段为”style/test” |
+| bucket | String | 否    | 存储结果的目标存储桶名称，格式为 BucketName-APPID，如果不指定的话默认保存到当前存储桶 |
+| fileid | String | 是    | 处理结果的文件路径名称，如以`/`开头，则存入指定文件夹中，否则，存入原图文件存储的同目录 |
+| rule   | String | 是    | 处理参数，参见数据万象图片处理 API。若按指定样式处理，则以`style/`开头，后加样式名，如样式名为`test`，则 rule 字段为`style/test` |
 
 ### 返回内容
 响应包体具体数据内容如下：
@@ -87,9 +90,9 @@ Pic-Operations 为 json 格式的字符串，具体参数如下：
 ### 示例
 #### 请求
 
-```
+```shell
 PUT /filename.jpg HTTP/1.1
-Host: examplebucket-1250000000.pic.ap-chengdu.myqcloud.com
+Host: examplebucket-1250000000.cos.ap-chengdu.myqcloud.com
 Date: Wed, 28 Oct 2015 20:32:00 GMT
 Authorization:XXXXXXXXXXXX
 Pic-Operations: {"is_pic_info":1,"rules":[{"fileid":"test.jpg","rule":"imageView2/format/png"}]}
@@ -99,13 +102,13 @@ Content-Length: 64
 ```
 
 #### 返回
-```
+```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 645
 Date: Tue, 03 Apr 2018 09:06:16 GMT
 Status: 200 OK
-x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8zMQ==
+x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 
 <UploadResult>
 <OriginalInfo>
@@ -134,27 +137,29 @@ x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8zMQ==
 </UploadResult>
 ```
 
->!上传时处理支持 COS V5 的分片上传功能，您在使用 COS V5 的 Complete Multipart Upload接口时只需在请求包头部中加入 Pic-Operations 项，即可实现图片处理。
+>上传时处理支持 COS V5 的分块上传功能，您在使用 COS V5 的 [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) 接口时只需在请求包头部中加入 Pic-Operations 项，即可实现图片处理。
 
 
-```
-POST /<ObjectKey>?uploadId=UploadId HTTP/1.1
-Host: <BucketName-APPID>.pic.<Region>.myqcloud.com
+```shell
+POST /<ObjectKey>uploadId=UploadId HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Content-length: Size
 Authorization: Auth String
 Pic-Operations: <PicOperations>
 ```
 
-COS 接口请参考 [COS 文档](https://intl.cloud.tencent.com/document/product/436/7742)。
+>COS 接口请参见 COS [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) 文档。
+
 
 ## 云上数据处理
-数据万象的图片处理 API 能够对已存储在 cos 的图片进行相应处理操作，并将结果存入到 cos。
+
+数据万象的图片处理 API 能够对已存储在 COS 的图片进行相应处理操作，并将结果存入到 COS。
 
 ### 请求语法
-```
-POST /<ObjectKey>?image_process HTTP/1.1
-Host: <BucketName>-<APPID>.pic.<Region>.myqcloud.com
+```shell
+POST /<ObjectKey>image_process HTTP/1.1
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Content-length: Size
 Authorization: Auth String
@@ -164,18 +169,18 @@ Pic-Operations: <PicOperations>
 ### 请求内容
 Pic-Operations 为 json 格式的字符串，具体参数如下：
 
-| 参数名称        | 类型    | 必选   | 描述                                     |
+| 参数名称        | 类型    | 是否必选   | 描述                                     |
 | ----------- | ----- | ---- | -------------------------------------- |
 | is_pic_info | Int   | 否    | 是否返回原图信息，0不返回原图信息，1返回原图信息，默认为0         |
 | rules       | Array | 否    | 处理规则，一条规则对应一个处理结果（目前支持五条规则），不填则不进行图片处理 |
 
  rules（json 数组）中每一项具体参数如下：
 
-| 参数名称   | 类型     | 必选   | 描述                                       |
+| 参数名称   | 类型     | 是否必选   | 描述                                       |
 | ------ | ------ | ---- | ---------------------------------------- |
-| bucket | String | 否    | 存储结果的目标 bucket 名称，形如 BucketName-appid，如果不指定的话默认保存到当前bucket |
-| fileid | String | 是    | 处理结果的文件路径名称，如以’/’开头，则存入指定文件夹中，否则，存入原图文件存储的同目录 |
-| rule   | String | 是    | 处理参数，参见数据万象图片处理 API。若按指定样式处理，则以”style/”开头，后加样式名，如样式名为”test”，则 rule 字段为”style/test” |
+| bucket | String | 否    | 存储结果的目标 bucket 名称，形如 BucketName-APPID，如果不指定的话默认保存到当前存储桶 |
+| fileid | String | 是    | 处理结果的文件路径名称，如以`/`开头，则存入指定文件夹中，否则，存入原图文件存储的同目录 |
+| rule   | String | 是    | 处理参数，参见数据万象图片处理 API。若按指定样式处理，则以`style/`开头，后加样式名，如样式名为`test`，则 rule 字段为`style/test` |
 
 ### 返回内容
 响应包体具体数据内容如下：
@@ -230,10 +235,12 @@ Pic-Operations 为 json 格式的字符串，具体参数如下：
 
 
 ### 示例
+
 #### 请求
- ```
+
+ ```shell
 POST /filename.jpg?image_process HTTP/1.1
-Host: examplebucket-1250000000.pic.ap-chengdu.myqcloud.com
+Host: examplebucket-1250000000.cos.ap-chengdu.myqcloud.com
 Date: Wed，18 Jan 2017 16:17:03 GMT
 Authorization: XXXXXXXXXX
 Pic-Operations: {"is_pic_info":1,"rules":[{"fileid":"test.jpg","rule":"imageView2/format/png"}]}
@@ -241,13 +248,14 @@ Content-Length: XX
  ```
 
 #### 返回
-```
+
+```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 645
 Date: Tue, 03 Apr 2018 09:06:16 GMT
 Status: 200 OK
-x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8zMQ==
+x-cos-request-id: NWFjMzQ0MDZfOTBmYTUwXzZkZV8z****
 
 <UploadResult>
 <OriginalInfo>
