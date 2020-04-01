@@ -49,4 +49,3 @@ Currently, with the multi-AZ feature of COS, objects can only be uploaded in the
 - Operation limit: currently, objects can only be uploaded, downloaded, and deleted. Objects can be replicated to a multi-AZ bucket but not to a single-AZ bucket.
 - Lifecycle limit: currently, expired objects can only be deleted but not transitioned to other storage classes.
 - Cross-region replication limit: currently, multi-AZ is only supported in the Guangzhou region; therefore, cross-region replication is not supported.
-- You cannot upload objects to or download objects from multi-AZ buckets through JSON APIs (legacy APIs). Please upgrade to XML APIs first.
