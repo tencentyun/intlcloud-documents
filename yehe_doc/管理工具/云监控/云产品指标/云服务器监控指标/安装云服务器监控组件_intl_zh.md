@@ -8,7 +8,7 @@
 1. 用户 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 后，执行以下命令进行安装，操作如下：
 ```bash
 wget http://update2.agent.tencentyun.com/update/linux_stargate_installer   //下载 agent
-chmod +x linux_stargate_installer   //赋予 agent 安装脚本执行权限
+chmod +x linux_stargate_installer   //赋予 anent 安装脚本执行权限
 ./linux_stargate_installer   //安装 agent
 ```
 2. 用户可执行以下命令查看是否安装成功。
@@ -30,7 +30,6 @@ ps ax |grep barad_agent
 ## Windows 安装指引
 1. 用户 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435) 后，复制下载地址`http://update2.agent.tencentyun.com/update/windows-stargate-installer.exe`，并前往浏览器打开，即可下载 Agent 组件 `windows-stargate-installer.exe`。
 2. 运行该程序进行自动化安装。
-
 
 ## 常见问题
 - 在用户遇到无法下载 Agent 或其它使用方面问题，可参考 [云服务器监控组件相关](https://intl.cloud.tencent.com/document/product/248/2259) 常见问题文档进行相应的处理。
