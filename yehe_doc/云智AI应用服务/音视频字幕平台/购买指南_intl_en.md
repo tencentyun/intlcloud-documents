@@ -1,0 +1,2 @@
+AI Transfy is currently in beta. If you wish to try it out, please e-mail us at transfy@tencent.com and the AI Transfy product team will contact you.
+When the beta version is complete, this product will be officially available for sale.  We will publish an announcement at our product events page and contact you. Existing users will also be informed in advance should there be any changes in prices.

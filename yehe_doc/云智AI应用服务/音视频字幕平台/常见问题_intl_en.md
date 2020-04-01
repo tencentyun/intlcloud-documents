@@ -24,6 +24,7 @@ We provide first-time client with a translation request for 8,000 or more words 
 After the original file is submitted, a quotation will be provided for confirmation.
 The parties will sign an agreement, pursuant to which user will pay a deposit and we will arrange the translation.
 When the translation is completed, user will check and accept the file and pay the remaining fees.
+
 ### How do you solve objections to Tencent's human translation?
 Due to cultural differences, there are often various ways of translating the same text, and so there may be certain texts which you may comprehend differently. But we strive to minimize this from happening and ensure the professionalism of the text. We offer to amend the translation for free pursuant to your understanding of the text or your preferred style to your satisfaction.
 
@@ -38,4 +39,4 @@ Long-term clients enjoy various privileges, from which they are provided with tr
  - Personalized (designated translators, technicians and other personnel).
 
 ### What is the difference between machine translation and human translation?
-Translation is highly complicated and meticulous work. It requires professionals to translate and polish with ample time, instead of direct translating each word in a document. Machine translation can't fully comprehend cultural differences, nor can it grasp the deeper meanings hidden in words, but these are required to ensure the accuracy and success of a translated passage. While the accuracy of machine translation is indeed improving and getting closer to human translation, it's nevertheless an imitation and not superior.  As such, just like all AI technology, machine translation can't replace humans. It will only be humans' assistants, a kind of tool to make humans' work better. We will use advanced computer-assisted translation software e.g. Trados, CAT, etc. to enhance our translators' efficiency.
+Translation is highly complicated and meticulous work. It requires professionals to translate and polish with ample time, instead of direct translating each word in a document. Machine translation can't fully comprehend cultural differences, nor can it grasp the deeper meanings hidden in words, but these are required to ensure the accuracy and success of a translated passage. While the accuracy of machine translation is indeed improving and getting closer to human translation, it's nevertheless an imitation and not superior.  As such, just like all AI technology, machine translation can't replace humans. It will only be humans' assistants, a kind of tool to make humans' work better. We will use advanced computer-assisted translation software e.g., Trados, CAT to enhance our translators' efficiency.
