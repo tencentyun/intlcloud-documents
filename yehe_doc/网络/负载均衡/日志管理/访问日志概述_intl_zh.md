@@ -18,5 +18,5 @@
 </tbody></table>
 
 ## 相关操作
-- [配置访问日志到 CLS](https://cloud.tencent.com/document/product/214/41379)
+- [配置访问日志到 CLS](https://intl.cloud.tencent.com/document/product/214/35063)
 - [配置访问日志到 COS](https://intl.cloud.tencent.com/document/product/214/10329)
