@@ -2,8 +2,8 @@
 ## 文档导读
 本文主要介绍如何基于 TRTC SDK 实现一个既支持视频连麦，又支持上万人高并发观看的在线直播功能：
 
-- 本文仅提及了最基本的几个功能，如果您希望了解更多高级功能，请参见 [高级功能](https://intl.cloud.tencent.com/document/product/647/35123/32227)。
-- 本文仅罗列了最常用的几个接口，如果您希望了解更多的接口函数，请参见 [API 文档](https://intl.cloud.tencent.com/document/product/647/35123/32228)。
+- 本文仅提及了最基本的几个功能，如果您希望了解更多高级功能，请参见 [高级功能](https://intl.cloud.tencent.com/document/product/647/35242)。
+- 本文仅罗列了最常用的几个接口，如果您希望了解更多的接口函数，请参见 [API 文档](https://intl.cloud.tencent.com/document/product/647/35119)。
 
 ## 示例代码
 
@@ -15,7 +15,6 @@
 | Windows（MFC） | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows（Duilib） | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
 
-![](https://main.qcloudimg.com/raw/881d7bf09c7e17a31091b1ce008fdb00.jpeg)
 
 ## 在线直播
 ### 1. 初始化 SDK
@@ -68,7 +67,6 @@ TRTCParams 是 SDK 最关键的一个参数，它包含如下四个必填的字�
 
 - **sdkAppId**
 进入腾讯云实时音视频 [控制台](https://console.cloud.tencent.com/rav)，如果您还没有应用，请创建一个，即可看到 sdkAppId。
-![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
 
 - **userId**
 您可以随意指定，由于是字符串类型，可以直接跟您现有的账号体系保持一致，但请注意，**同一个音视频房间里不应该有两个同名的 userId**。
