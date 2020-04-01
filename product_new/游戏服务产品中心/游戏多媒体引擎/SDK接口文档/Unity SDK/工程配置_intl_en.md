@@ -72,3 +72,4 @@ Sample list of library files:
 #### Exporting for Android
 1. The GME SDK for Unity provides lib files for arm64-v8a, armeabi-v7a, and x86 by default. Please delete unnecessary files as appropriate.
 2. To export an Android executable, you need to configure relevant permissions in `AndroidManifest.xml` to avoid audio or permission errors. For required permissions, please see [Android Project Configuration](https://intl.cloud.tencent.com/document/product/607/10783).
+3. After exporting the executable apk file, if there is a black screen or crash when opening it, it is generally due to the lacking of corresponding architecture lib file, please add or delete it according to the project.

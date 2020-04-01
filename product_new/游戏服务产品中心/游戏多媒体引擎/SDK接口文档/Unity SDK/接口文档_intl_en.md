@@ -60,8 +60,8 @@ ITMGContext Init(string sdkAppID, string openID)
 
 | Returned Value | Description |
 |----|----|
-|QAVError.OK| Initialized SDK successfully. |
-|7015 AV_ERR_SDK_NOT_FULL_UPDATE| Check whether the SDK file is complete. You are recommended to delete it and then import the SDK again. |
+|QAVError.OK= 0| Initialized SDK successfully. |
+|AV_ERR_SDK_NOT_FULL_UPDATE= 7015| Check whether the SDK file is complete. You are recommended to delete it and then import the SDK again. |
 
 #### Sample code 
 
@@ -218,9 +218,9 @@ void OnEnterRoomComplete(int err, string errInfo)
 |--------|-------|------------|
 |AV_ERR_AUTH_FIALD         |7006| Authentication failed. Possible causes: 1. The `AppID` does not exist or is incorrect; 2. An error occurred while authenticating the `authbuff`; 3. Authentication expired; 4. The `openID` is non-compliant. |
 |AV_ERR_IN_OTHER_ROOM      |7007| Already in another room. |
-|AV_ERR_REPEATED_OPERATION  |1001   | The client was already in the process of entering a room but repeated this operation. It is recommended not to call the room entering API until the room entry callback is returned. |
-|AV_ERR_HAS_IN_THE_STATE    |1003   | The client was already in the room and called the room entering API again. |
-|AV_ERR_CONTEXT_NOT_EXIST   |1101   | Ensure that the SDK is initialized, the APIs are called in the same thread, and the `Poll` API is called normally. |
+|ERR_REPETITIVE_OPERATION    |1001   | The client was already in the process of entering a room but repeated this operation. It is recommended not to call the room entering API until the room entry callback is returned. |
+|ERR_HAS_IN_THE_STATE        |1003   | The client was already in the room and called the room entering API again. |
+|ERR_CONTEXT_NOT_START      |1101   | Ensure that the SDK is initialized, the APIs are called in the same thread, and the `Poll` API is called normally. |
 
 ### Determining whether client has entered room
 This API is used to determine whether the client has entered a room. A bool-type value will be returned.
@@ -352,10 +352,10 @@ Notifications for audio events are subject to a threshold, and a notification wi
 
 |event_id     | Description | Maintenance |
 | ------------- |:-------------:|-------------|
-|ITMG_EVENT_ID_USER_ENTER    				| A member enters the room			| Member list		|
-|ITMG_EVENT_ID_USER_EXIT    				| A member exits the room			| Member list		|
-|ITMG_EVENT_ID_USER_HAS_AUDIO    		| A member sends audio packets		| Chat member list	|
-|ITMG_EVENT_ID_USER_NO_AUDIO    			| A member stops sending audio packets	| Chat member list	|
+|EVENT_ID_ENDPOINT_ENTER        		| A member enters the room			| Member list		|
+|EVENT_ID_ENDPOINT_EXIT     			| A member exits the room			| Member list		|
+|EVENT_ID_ENDPOINT_HAS_AUDIO    		| A member sends audio packets		| Chat member list	|
+|EVENT_ID_ENDPOINT_NO_AUDIO        		| A member stops sending audio packets	| Chat member list	|
 
 #### Room member maintenance flowchart
 
@@ -378,16 +378,16 @@ void OnEndpointsUpdateInfo(int eventID, int count, string[] openIdList)
 
 		    switch (eventID)
  		    {
- 		    case ITMG_EVENT_ID_USER_ENTER:
+ 		    case EVENT_ID_ENDPOINT_ENTER:
   			    // A member enters the room
   			    break;
- 		    case ITMG_EVENT_ID_USER_EXIT:
+ 		    case EVENT_ID_ENDPOINT_EXIT:
   			    // A member exits the room
 			    break;
-		    case ITMG_EVENT_ID_USER_HAS_AUDIO:
+		    case EVENT_ID_ENDPOINT_HAS_AUDIO:
 			    // A member sends audio packets
 			    break;
-		    case ITMG_EVENT_ID_USER_NO_AUDIO:
+		    case EVENT_ID_ENDPOINT_NO_AUDIO:
 			    // A member stops sending audio packets
 			    break;
 		  
@@ -769,12 +769,6 @@ public abstract event QAVOnDeviceStateChangedEvent OnDeviceStateChangedEvent;
 | deviceType    	|int       	|1: capturing device, 2: playback device							|
 | deviceId   	 	|string 	| Device GUID, which is used to identify a device and only applies to Windows and macOS 	|
 | openOrClose    |bool  	| Use/release of capturing/playback device							|
-
-
-| Parameter | Value | Description |
-| ------------- |:-------------:|-------------|
-| AUDIODEVICE_CAPTURE    	|1       	| Capturing device |
-| AUDIODEVICE_PLAYER   	 	|2 			| Playback device |
 
 #### Sample code  
 
@@ -1407,11 +1401,11 @@ ITMGContext  SetLogLevel(ITMG_LOG_LEVEL levelWrite, ITMG_LOG_LEVEL levelPrint)
 
 |ITMG_LOG_LEVEL| Description |
 | -------------------------------|:-------------:|
-|TMG_LOG_LEVEL_NONE=0		| Does not print logs			|
-|TMG_LOG_LEVEL_ERROR=1		| Prints error logs (default)	|
-|TMG_LOG_LEVEL_INFO=2			| Prints info logs		|
-|TMG_LOG_LEVEL_DEBUG=3		| Prints debug logs	|
-|TMG_LOG_LEVEL_VERBOSE=4		| Prints verbose logs		|
+|LOG_LEVEL_NONE=0		| Does not print logs			|
+|LOG_LEVEL_ERROR=1		| Prints error logs (default)	|
+|LOG_LEVEL_INFO=2			| Prints info logs		|
+|LOG_LEVEL_DEBUG=3		| Prints debug logs	|
+|LOG_LEVEL_VERBOSE=4		| Prints verbose logs		|
 
 #### Sample code  
 ```
