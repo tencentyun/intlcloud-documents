@@ -17,3 +17,22 @@
     <td><img src="https://main.qcloudimg.com/raw/7298c4c6297b3dc6d9fac973c52caf66.png" /></td>
   </tr>
 </table>
+
+**iOS** 
+![](https://main.qcloudimg.com/raw/b442e899467a53d36a7df19f70a79013.jpg)
+
+**Android**
+![](https://main.qcloudimg.com/raw/88139f21dd0fd032f16a6392ccc11f70.jpg)
+
+
+**Mac OS**
+![](https://main.qcloudimg.com/raw/ba5823caa9590ba93d1a3fa404b56146.jpg)
+
+**Windows** 
+![](https://main.qcloudimg.com/raw/678a6bf6951249e5d84c5b2f1a596542.jpg)
+
+**微信小程序**
+![](https://main.qcloudimg.com/raw/d7e03fbe730d1417ca2a4a4c650d94ce.jpg)
+
+**Web**
+![](https://main.qcloudimg.com/raw/ac6593a0f82fdbf3643ca1214de154fb.jpg)
