@@ -1,7 +1,7 @@
 ## Overview
 This document describes how to implement an online live broadcasting service that supports video co-anchoring and viewing by tens of thousands of concurrent viewers based on the TRTC SDK:
 - This document only mentions the most basic features. If you want to learn more about advanced features, please see [Advanced Features](https://intl.cloud.tencent.com/document/product/647/35242).
-- This document only lists the most commonly used APIs. If you want to learn more about API functions, please see the [API documentation](https://intl.cloud.tencent.com/document/product/647/35123/32258).
+- This document only lists the most commonly used APIs. If you want to learn more about API functions, please see the [API documentation](https://intl.cloud.tencent.com/zh/document/product/647/35119).
 
 ## Sample Code
 
@@ -20,7 +20,7 @@ The first step in using the TRTC SDK is to get the singleton object of TRTCCloud
 - Inherit the `ITRTCCloudCallback` event callback API class and override the callback APIs for key events such as room entry/exit by local user, room entry/exit by remote user, error event, and warning event.
 - Call the `addCallback` API to register and listen on SDK events.
 
->!If `addCallback` is registered N times, the SDK will trigger N callbacks for the same event. It is recommended to call `addCallback` only once.
+>If `addCallback` is registered N times, the SDK will trigger N callbacks for the same event. It is recommended to call `addCallback` only once.
 
 C++ edition:
 
@@ -135,7 +135,7 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 
 - **sdkAppId**
 Log in to the [TRTC Console](https://console.cloud.tencent.com/rav). If you don't have an application yet, please create one and you will see the `sdkAppId`.
-![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
+
 
 - **userId**
   It can be specified arbitrarily. As it is of string type, it can be directly in line with your existing account system; however, please note that **there should not be identical `userIds` in the same audio/video room**.
@@ -378,7 +378,7 @@ public void onUserVideoAvailable(string userId, bool available)
 }
 ```
 
->! In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
+> In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
 
 ### 8. Viewer co-anchors with anchor
 Both the viewer and anchor can switch their roles through the `switchRole` API provided by TRTCCloud. The most common scenario is that the viewer co-anchors with the anchor: the viewer can call this API to turn themselves into an "assistant anchor" and co-anchor with the original "primary anchor" in the room.
