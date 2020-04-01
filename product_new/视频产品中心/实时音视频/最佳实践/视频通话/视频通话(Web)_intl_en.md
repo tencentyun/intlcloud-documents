@@ -5,7 +5,7 @@ In the TRTC SDK for Web, the following terms are often used:
 - Stream object, which represents an audio/video stream object, including local audio/video stream object [LocalStream](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html) and remote audio/video stream object [RemoteStream](https://trtc-1252463788.file.myqcloud.com/web/docs/RemoteStream.html). The `Stream` class method mainly provides the behaviors of audio/video stream objects, including audio/video playback control.
 
 The API call process of basic audio/video calls is as shown below:
-![](https://main.qcloudimg.com/raw/8ffc08d1face5a69ecd2bfff3afbc765.png)
+![](https://main.qcloudimg.com/raw/9f246e5a88e5a8176290eb6070a0ecb6.jpg)
 
 ## Step 1. Create a Client object
 
@@ -77,7 +77,7 @@ client
 ```
 
 4. The remote stream is obtained by listening on the `client.on('stream-added')` event. After receiving this event, use [Client.subscribe()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#subscribe) to subscribe to a remote audio/video stream.
->?Please register the `client.on('stream-added')` event before calling [Client.join()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#join) to enter the room, so that you won't miss the notifications for remote user's room entry.
+>Please register the `client.on('stream-added')` event before calling [Client.join()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#join) to enter the room, so that you won't miss the notifications for remote user's room entry.
 >
 ```javascript
 client.on('stream-added', event => {
