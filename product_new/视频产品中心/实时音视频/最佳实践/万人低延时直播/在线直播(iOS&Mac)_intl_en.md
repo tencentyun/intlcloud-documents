@@ -9,13 +9,12 @@ This document describes how to implement an online live broadcasting service tha
 
 | Platform | Sample Code | 
 |---------|---------|
-| iOS | [TRTCMainViewController.m](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCDemo/TRTC/TRTCMainViewController.m) | 
-| macOS | [TRTCMainWindowController.m](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCDemo/TRTC/TRTCMainWindowController.m) | 
-| Android | [TRTCVideoRoomActivity.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCDemo/app/src/main/java/com/tencent/liteav/demo/trtc/TRTCVideoRoomActivity.java) | 
+| iOS | TRTCMainViewController.m | 
+| macOS | TRTCMainWindowController.m | 
+| Android | TRTCVideoRoomActivity.java | 
 | Windows (MFC) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows (Duilib) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
 
-![](https://main.qcloudimg.com/raw/881d7bf09c7e17a31091b1ce008fdb00.jpeg)
 
 ## Live Broadcasting
 ### 1. Initialize the SDK
@@ -103,7 +102,7 @@ In addition, there are some differences in the `startLocalPreivew` function betw
 }
 ```
 
->? The macOS edition of the SDK uses the current system default device by default. If there are multiple cameras, the camera to be used can be set by calling the `setCurrentCameraDevice` API. The `deviceId` parameter is the camera device ID. The desired `deviceId` can be obtained from the camera device list returned by the `getCameraDevicesList` API.
+> The macOS edition of the SDK uses the current system default device by default. If there are multiple cameras, the camera to be used can be set by calling the `setCurrentCameraDevice` API. The `deviceId` parameter is the camera device ID. The desired `deviceId` can be obtained from the camera device list returned by the `getCameraDevicesList` API.
 
 
 ### 4. Anchor enables mic capture
@@ -190,7 +189,7 @@ If the anchor is in the room, the viewer will get the `userid` of the anchor thr
 }
 ```
 
-> ! In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
+> In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
 
 
 ### 8. Viewer co-anchors with anchor
