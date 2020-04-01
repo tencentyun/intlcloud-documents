@@ -8,13 +8,11 @@
 
 | 所属平台 | 示例代码 | 
 |---------|---------|
-| Android | [TRTCVideoRoomActivity.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCDemo/app/src/main/java/com/tencent/liteav/demo/trtc/TRTCVideoRoomActivity.java) | 
-| iOS | [TRTCMainViewController.m](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCDemo/TRTC/TRTCMainViewController.m) | 
-| Mac OS | [TRTCMainWindowController.m](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCDemo/TRTC/TRTCMainWindowController.m) | 
+| Android | TRTCVideoRoomActivity.java | 
+| iOS | TRTCMainViewController.m | 
+| Mac OS | TRTCMainWindowController.m | 
 | Windows（MFC） | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows（Duilib） | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
-
-![](https://main.qcloudimg.com/raw/b5013afb3606fa02ce6c622b4e7085db.jpeg)
 
 
 ## 视频通话
@@ -81,7 +79,7 @@ TRTCParams 是 SDK 最关键的一个参数，它包含如下四个必填的字�
 
 - **sdkAppId**
 进入腾讯云实时音视频 [控制台](https://console.cloud.tencent.com/rav)，如果您还没有应用，请创建一个，即可看到 sdkAppId。
-![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
+
 
 - **userId**
 您可以随意指定，由于是字符串类型，可以直接跟您现有的账号体系保持一致，但请注意，**同一个音视频房间里不应该有两个同名的 userId**。
@@ -136,7 +134,7 @@ public void onEnterRoom(long elapsed) {
 }
 ```
 
->!请根据应用场景选择合适的 scene 参数，使用错误可能会导致卡顿率或画面清晰度不达预期。
+>请根据应用场景选择合适的 scene 参数，使用错误可能会导致卡顿率或画面清晰度不达预期。
 
 ### 4. 收听远端音频流
 TRTC SDK 会默认接收远端的音频流，您无需为此编写额外的代码。如果您不希望收听某一个 userid 的音频流，可以使用 `muteRemoteAudio` 将其静音。
