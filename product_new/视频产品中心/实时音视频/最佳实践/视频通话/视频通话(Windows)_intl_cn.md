@@ -19,7 +19,7 @@
 - 继承 `ITRTCCloudCallback` 事件回调接口类，重写关键事件的回调接口，包括本地用户进房/退房事件、远端用户加入/退出事件、错误事件和警告事件等。
 - 调用 `addCallback` 接口注册监听 SDK 事件。
 
->!如果 `addCallback` 注册 N 次，同一个事件， SDK 就会触发 N 次回调，建议只调用一次 `addCallback`。
+>如果 `addCallback` 注册 N 次，同一个事件， SDK 就会触发 N 次回调，建议只调用一次 `addCallback`。
 
 C++ 版：
 
@@ -134,7 +134,7 @@ TRTCParams 是 SDK 最关键的一个参数，它包含如下四个必填的字�
 
 - **sdkAppId**
   进入腾讯云实时音视频 [控制台](https://console.cloud.tencent.com/rav)，如果您还没有应用，请创建一个，即可看到 sdkAppId。
-  ![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
+ 
 
 - **userId**
   您可以随意指定，由于是字符串类型，可以直接跟您现有的账号体系保持一致，但请注意，**同一个音视频房间里不应该有两个同名的 userId**。

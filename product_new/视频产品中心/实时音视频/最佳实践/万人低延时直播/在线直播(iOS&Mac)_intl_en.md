@@ -2,20 +2,19 @@
 ## Overview
 This document describes how to implement an online live broadcasting service that supports video co-anchoring and viewing by tens of thousands of concurrent viewers based on the TRTC SDK:
 
-- This document only mentions the most basic features. If you want to learn more about advanced features, please see [Advanced Features](https://intl.cloud.tencent.com/document/product/647/35123/32227).
-- This document only lists the most commonly used APIs. If you want to learn more about API functions, please see the [API documentation](https://intl.cloud.tencent.com/document/product/647/35123/32228).
+- This document only mentions the most basic features. If you want to learn more about advanced features, please see [Advanced Features](https://intl.cloud.tencent.com/document/product/647/35242).
+- This document only lists the most commonly used APIs. If you want to learn more about API functions, please see the [API documentation](https://intl.cloud.tencent.com/document/product/647/35119).
 
 ## Sample Code
 
 | Platform | Sample Code | 
 |---------|---------|
-| iOS | [TRTCMainViewController.m](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCDemo/TRTC/TRTCMainViewController.m) | 
-| macOS | [TRTCMainWindowController.m](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCDemo/TRTC/TRTCMainWindowController.m) | 
-| Android | [TRTCVideoRoomActivity.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCDemo/app/src/main/java/com/tencent/liteav/demo/trtc/TRTCVideoRoomActivity.java) | 
+| iOS | TRTCMainViewController.m | 
+| macOS | TRTCMainWindowController.m | 
+| Android | TRTCVideoRoomActivity.java | 
 | Windows (MFC) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows (Duilib) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
 
-![](https://main.qcloudimg.com/raw/881d7bf09c7e17a31091b1ce008fdb00.jpeg)
 
 ## Live Broadcasting
 ### 1. Initialize the SDK
@@ -68,7 +67,6 @@ The first step in using the TRTC SDK is to get the singleton object of TRTCCloud
 
 - **sdkAppId**
 Log in to the [TRTC Console](https://console.cloud.tencent.com/rav). If you don't have an application yet, please create one and you will see the `sdkAppId`.
-![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
 
 - **userId**
 It can be specified arbitrarily. As it is of string type, it can be directly in line with your existing account system; however, please note that **there should not be identical `userIds` in the same audio/video room**.
@@ -103,7 +101,7 @@ In addition, there are some differences in the `startLocalPreivew` function betw
 }
 ```
 
->? The macOS edition of the SDK uses the current system default device by default. If there are multiple cameras, the camera to be used can be set by calling the `setCurrentCameraDevice` API. The `deviceId` parameter is the camera device ID. The desired `deviceId` can be obtained from the camera device list returned by the `getCameraDevicesList` API.
+> The macOS edition of the SDK uses the current system default device by default. If there are multiple cameras, the camera to be used can be set by calling the `setCurrentCameraDevice` API. The `deviceId` parameter is the camera device ID. The desired `deviceId` can be obtained from the camera device list returned by the `getCameraDevicesList` API.
 
 
 ### 4. Anchor enables mic capture
@@ -190,7 +188,7 @@ If the anchor is in the room, the viewer will get the `userid` of the anchor thr
 }
 ```
 
-> ! In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
+> In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
 
 
 ### 8. Viewer co-anchors with anchor
