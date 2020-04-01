@@ -2,7 +2,7 @@
 本文主要介绍如何基于 TRTC SDK 实现一个简单的视频通话功能：
 
 - 本文仅提及最基本的几个功能，如果您希望了解更多高级功能，请参见 [高级功能](https://intl.cloud.tencent.com/document/product/647/35242)。
-- 本文仅罗列最常用的几个接口，如果您希望了解更多的接口函数，请参见 [API 文档](https://intl.cloud.tencent.com/document/product/647/35123/32258)。
+- 本文仅罗列最常用的几个接口，如果您希望了解更多的接口函数，请参见 [API 文档](https://intl.cloud.tencent.com/document/product/647/35119)。
 
 ## 示例代码
 
@@ -245,7 +245,7 @@ public void onEnterRoom(int result)
 }
 ```
 
->!请根据应用场景选择合适的 scene 参数，使用错误可能会导致卡顿率或画面清晰度不达预期。
+>请根据应用场景选择合适的 scene 参数，使用错误可能会导致卡顿率或画面清晰度不达预期。
 
 ### 4. 收听远端音频流
 TRTC SDK 会默认接收远端的音频流，您无需为此编写额外的代码。如果您不希望收听某一个 userid 的音频流，可以使用 `muteRemoteAudio` 将其静音。
