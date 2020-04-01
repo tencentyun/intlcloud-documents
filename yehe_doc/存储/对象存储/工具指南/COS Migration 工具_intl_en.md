@@ -1,27 +1,27 @@
-#### Feature
+## Feature
 COS Migration is an all-in-one tool that integrates COS data migration feature. Users can quickly migrate data from various sources to COS through simple configurations and steps. It has the following features:
 - Diverse data sources:
-   - Local data: Migrate locally stored data to COS.
+   - Local data: migrate locally stored data to COS.
    - Other cloud storage services: Currently, it supports migration from AWS S3, Alibaba Cloud OSS, and Qiniu to COS. More services will be supported in the future.
-   - URL list: Download and migrate data from specified URLs to COS.
-   - Bucket replication: Data can be replicated among COS buckets. Cross-account and cross-region replication is supported.
-- Resume upload from breakpoints: Resume uploads from breakpoints is supported. For large files, if the upload exits halfway or service failure occurs, you can run the tool again to resume the upload.
-- Multipart upload: An object can be uploaded to COS by parts.
-- Parallel upload: Multiple objects can be uploaded at the same time.
-- Migration verification: Migrated objects can be verified.
+   - URL list: download and migrate data from specified URLs to COS.
+   - Bucket replication: data can be replicated among COS buckets. Cross-account and cross-region replication is supported.
+- Resume upload from breakpoints: resume uploads from breakpoints is supported. For large files, if the upload exits halfway or service failure occurs, you can run the tool again to resume the upload.
+- Multipart upload: an object can be uploaded to COS by parts.
+- Parallel upload: multiple objects can be uploaded at the same time.
+- Migration verification: migrated objects can be verified.
 
 >
 >- COS Migration only supports UTF-8 encoding.
 >- If you use this tool to upload a file whose name already exists, the older file will be overwritten. File name duplication cannot be checked.
 
 ## Operating Environment
-### System Environment
+### System environment
 Windows, Linux, and macOS.
 
-### Software Requirements
+### Software requirements
 - JDK 1.8 X64 or above. For more information on JDK installation and configuration, see [Java](https://intl.cloud.tencent.com/document/product/436/10865).
 
-## Usage
+## Directions
 ### 1. Get the tool
 Download COS Migration [here](https://github.com/tencentyun/cos_migrate_tool_v5).
 
@@ -64,7 +64,7 @@ COS_Migrate_tool
 Before running the migration startup script, modify the config.ini file (path: `./conf/config.ini`) first. This file contains the following parts:
 
 #### 3.1 Configure the migration type
-type indicates the migration type, which is filled in by users based on their migration needs. For example, to migrate local data to COS, users need to configure `type=migrateLocal` for `[migrateType]`.
+`type` indicates the migration type, which is filled in by users based on their migration needs. For example, to migrate local data to COS, users need to configure `type=migrateLocal` for `[migrateType]`.
 <pre>[migrateType]
 type=migrateLocal
 </pre>
@@ -108,8 +108,8 @@ encryptionType=sse-cos
 | ------| ------ |----- |
 | secretId | SecretId of your key. Replace `COS_SECRETID` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |-|
 | secretKey | SecretKey of your key. Replace `COS_SECRETKEY` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |-|
-| bucketName | Name of the destination bucket in the format of `<BucketName-APPID>`. The bucket name must include the APPID such as examplebucket-1250000000 |-|
-| region | Region information of the destination bucket. For region abbreviations in COS, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) |-|
+| bucketName | Name of the destination bucket in the format of `<BucketName-APPID>`. The bucket name must contain the APPID such as examplebucket-1250000000 |-|
+| region | Region information of the destination bucket. For the region abbreviations in COS, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) |-|
 | storageClass | Storage class: Standard (standard storage), Standard_IA (standard infrequent access storage), or Archive (archive storage) | Standard |
 | cosPath | COS path to migrate to. `/` indicates to migrate to the root path of the bucket, `/folder/doc/` indicates to migrate to `/folder/doc/` in the bucket. If `/folder/doc/` does not exist, a path will be created automatically |/|
 | https | Whether to transfer via HTTPS. on :Yes, off: No. It takes time to enable transfer via HTTPS, which is suitable for scenarios that demand high security. | off |
@@ -234,6 +234,8 @@ urllistPath=D:\\folder\\urllist.txt
 **3.3.6 Configure bucket replication migrateBucketCopy**
 
 If you migrate from one COS bucket to another bucket, configure this section. The specific configuration items and descriptions are as follows:
+> The account that initiate the migration needs to have the read permission to source bucket and write permission to destination bucket.
+
 <pre>
 # Configuration section for migration from source bucket to destination bucket
 [migrateBucketCopy]
@@ -246,7 +248,7 @@ srcCosPath=/
 
 | Configuration Item | Description |
 | ------| ------ |
-|srcRegion| Region information of the source bucket. For more information, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) |
+|srcRegion| Region information of the source bucket. For more information, see [Available Regions](https://intl.cloud.tencent.com/document/product/436/6224) |
 |srcBucketName| Name of the source bucket in the format of `<BucketName-APPID>`. The bucket name must include the APPID, such as examplebucket-1250000000 |
 |srcSecretId| SecretId of the user who owns the source bucket, which can be viewed in [Cloud API Key Management](https://console.cloud.tencent.com/cam/capi). If the data is owned by the same user, srcSecretId is the same as the SecretId in the common section, otherwise the migration is cross-account bucket copy |
 |srcSecretKey| SecretKey of the user who owns the source bucket, which can be viewed in [Cloud API Key Management](https://console.cloud.tencent.com/cam/capi). If the data is owned by the same user, srcSecretKey is the same as the secretKey in the common section, otherwise, the migration is cross-account bucket copy |
@@ -300,10 +302,12 @@ sh start_migrate.sh -Dcommon.cosPath=/savepoint0403_10/
 >- Configuration items are in the format of **-D{sectionName}.{sectionKey}={sectionValue}**. sectionName is the section name of the configuration file. sectionKey is the name of the configuration item in the section. sectionValue is the value of the configuration item in the section. COS path to which data is migrated to should be in the format of **-Dcommon.cosPath=/bbb/ddd**.
 
 ## Migration mechanism and process
-### Migration Mechanism
+### Migration mechanism
+
 COS migration tool has a status. Successful migrations will be recorded in the format of KV in leveldb file under db directory. Before each migration, check whether the path to which data is migrated to has been recorded in db directory. If yes and its attribute is the same as that in db, the migration will be skipped. Otherwise, the migration will be executed. The attribute varies by migration type. For local migration, mtime determines whether to migrate. For migration from other cloud storage services and bucket replication, etag and length of the source file determine whether to migrate. Thus, we search for records of successful migrations in db rather than in COS. If a file is deleted or modified via COSCMD or the console rather than the migration tool, the migration tool cannot detect this change and the file will not be re-migrated.
 
-### Migration Process
+### Migration process
+
 1. The configuration file is read, the corresponding configuration section is read according to the migration type, and parameters are checked.
 2. The IDs of the files to be migrated are scanned and compared in db directory according to the specified migration type to determine whether upload is allowed.
 3. The execution results are printed out during migration, where inprogress indicates migration is in progress, skip indicates skipped, fail indicates failed, ok indicates succeeded, condition_not_match indicates file fails to meet migration conditions (such as lastmodified and excludes) and is skipped. Details about the failure can be viewed in error log. The execution process is shown below:
