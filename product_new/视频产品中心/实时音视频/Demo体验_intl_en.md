@@ -30,7 +30,7 @@
 **Windows** 
 ![](https://main.qcloudimg.com/raw/b0094b94a9d8855a1047adaa3efc2d28.png)
 
-**微信小程序**
+**WeChat Mini Program**
 ![](https://main.qcloudimg.com/raw/d7e03fbe730d1417ca2a4a4c650d94ce.jpg)
 
 **Web**
