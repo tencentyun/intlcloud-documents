@@ -79,8 +79,7 @@ After the pod command is executed, a project file with the .xcworkspace extensio
 To use the audio/video features of the SDK, you need to grant the mic and camera access. Add the following two items to the application's `Info.plist` which correspond to the prompt messages of the mic and camera respectively when the authorization dialog box pops up.
 - **Privacy - Microphone Usage Description**; enter the prompt for mic usage purpose.
 - **Privacy - Camera Usage Description**; enter the prompt for camera usage purpose.
-See the figure below:
-![](https://main.qcloudimg.com/raw/be76bd6f3f22d31385d871710b51b771.jpg) 
+
 
 
 ## Importing the TRTC SDK
