@@ -3,6 +3,7 @@
 ## 一般性错误
 |错误码名称|错误码值|原因及建议方案|
 |--------|-------|------------|
+|AV_ERR_3DVOICE_ERR_NOT_INITED       |7003|需要先调用 InitSpatializer 接口|
 |AV_ERR_NET_REQUEST_FALLED |7004|网络请求失败，一般由网络状态不稳定引起，建议检查网络状态|
 |AV_ERR_CHARGE_OVERDUE     |7005|账号欠费导致失败，需要在腾讯云控制台上查看是否欠费|
 |AV_ERR_AUTH_FIALD         |7006|鉴权失败 有以下几个原因：1、AppID 不存在或者错误，2、authbuff 鉴权错误，3、鉴权过期|
@@ -10,8 +11,11 @@
 |AV_ERR_NO_PERMISSION      |7009|要进行某个操作的时候，没有权限|
 |AV_ERR_FILE_CANNOT_ACCESS |7010|无法访问文件|
 |AV_ERR_FILE_DAMAGED       |7011|文件被损坏|
+|AV_ERR_SERVICE_NOT_OPENED       |7012|没有在控制台开通此功能，请在控制台上开通|
+|AV_ERR_USER_CANCELED       |7013|用户主动取消此操作，例如没进房成功就进行退房操作|
+|AV_ERR_LOAD_LIB_FAILED       |7014|库文件没有正常加载，请检查库文件是否缺失|
+|AV_ERR_SDK_NOT_FULL_UPDATE       |7015|升级 SDK 时，没有升级所有的文件，导致某些模块不匹配，请全量升级 SDK|
 |AV_ERR_3DVOICE_ERR_FILE_DAMAGED       |7002|3D 音效文件未加载成功|
-|AV_ERR_3DVOICE_ERR_NOT_INITED       |7003|需要先调用 InitSpatializer 接口|
 
 
 ## 客户端错误
