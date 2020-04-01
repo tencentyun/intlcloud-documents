@@ -3,6 +3,7 @@ Welcome to the GME SDK. This document describes error codes that may be reported
 ## General Errors
 | Error Code Name | Error Code Value | Cause and Suggested Solution |
 |--------|-------|------------|
+|AV_ERR_3DVOICE_ERR_NOT_INITED       |7003| The `InitSpatializer` API needs to be called first. |
 |AV_ERR_NET_REQUEST_FALLED |7004| Network request failed. This is generally caused by unstable network. Please check the network status. |
 |AV_ERR_CHARGE_OVERDUE     |7005| Operation failed due to account arrears. You need to check whether your account is in arrears in the Tencent Cloud Console. |
 |AV_ERR_AUTH_FIALD         |7006| Authentication failed. Possible causes: 1. The `AppID` does not exist or is incorrect; 2. An error occurred while authenticating the `authbuff`; 3. Authentication expired. |
@@ -10,8 +11,11 @@ Welcome to the GME SDK. This document describes error codes that may be reported
 |AV_ERR_NO_PERMISSION      |7009| No permission to perform the operation. |
 |AV_ERR_FILE_CANNOT_ACCESS |7010| Unable to access the file. |
 |AV_ERR_FILE_DAMAGED       |7011| File is corrupted. |
-|AV_ERR_3DVOICE_ERR_FILE_DAMAGED       |7002| Failed to load the 3D sound effect file. |
-|AV_ERR_3DVOICE_ERR_NOT_INITED       |7003| The `InitSpatializer` API needs to be called first. |
+|AV_ERR_SERVICE_NOT_OPENED       |7012|Please enable this feature in the console before using it|
+|AV_ERR_USER_CANCELED       |7013|The user actively cancels this operation, such as exit a room without successfully entering the room|
+|AV_ERR_LOAD_LIB_FAILED       |7014|The library file is not loaded properly, please check if it is missing|
+|AV_ERR_SDK_NOT_FULL_UPDATE       |7015|When upgrading the SDK, not all files were upgraded, which caused some module mismatches. Please fully upgrade the SDK|
+|AV_ERR_3DVOICE_ERR_FILE_DAMAGED       |7002| 3D sound effect file is not loaded successfully|
 
 
 ## Client Errors

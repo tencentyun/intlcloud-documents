@@ -107,8 +107,8 @@ ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
 
 | Returned Value | Description |
 |----|----|
-|QAVError.OK| Initialized SDK successfully. |
-|7015 AV_ERR_SDK_NOT_FULL_UPDATE| Check whether the SDK file is complete. You are recommended to delete it and then import the SDK again. |
+|AV_OK = 0| Initialized SDK successfully. |
+| AV_ERR_SDK_NOT_FULL_UPDATE= 7015| Check whether the SDK file is complete. You are recommended to delete it and then import the SDK again. |
 
 #### Sample code 
 
@@ -272,13 +272,13 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				|result; error_info					|{"error_info":"","result":0}|
 
 #### Error codes
-| Error Code Name | Error Code Value | Cause and Suggested Solution |
-|--------|-------|------------|
-|AV_ERR_AUTH_FIALD         |7006| Authentication failed. Possible causes: 1. The `AppID` does not exist or is incorrect; 2. An error occurred while authenticating the `authbuff`; 3. Authentication expired; 4. The `openID` is non-compliant. |
-|AV_ERR_IN_OTHER_ROOM      |7007| Already in another room. |
-|AV_ERR_REPEATED_OPERATION  |1001   | The client was already in the process of entering a room but repeated this operation. It is recommended not to call the room entering API until the room entry callback is returned. |
-|AV_ERR_HAS_IN_THE_STATE    |1003   | The client was already in the room and called the room entering API again. |
-|AV_ERR_CONTEXT_NOT_EXIST   |1101   | Ensure that the SDK is initialized, the APIs are called in the same thread, and the `Poll` API is called normally. |
+| Error Code Value | Cause and Suggested Solution |
+|-------|------------|
+|7006| Authentication failed. Possible causes: 1. The `AppID` does not exist or is incorrect; 2. An error occurred while authenticating the `authbuff`; 3. Authentication expired; 4. The `openID` is non-compliant. |
+|7007| Already in another room. |
+|1001   | The client was already in the process of entering a room but repeated this operation. It is recommended not to call the room entering API until the room entry callback is returned. |
+|1003   | The client was already in the room and called the room entering API again. |
+|1101   | Ensure that the SDK is initialized, the APIs are called in the same thread, and the `Poll` API is called normally. |
 
 ### Determining whether client has entered room
 This API is used to determine whether the client has entered a room. A bool-type value will be returned.

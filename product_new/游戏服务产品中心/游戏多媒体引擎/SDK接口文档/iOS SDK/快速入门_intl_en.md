@@ -57,17 +57,12 @@ ITMGContext -(int)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 | openId    		|NSString  | `OpenID` can only be in Int64 type (converted to string) with a value greater than 10,000, which is used to identify the user. |
 
 
-| Returned Value | Description |
-|----|----|
-|QAVError.OK| Initialized SDK successfully. |
-|7015 AV_ERR_SDK_NOT_FULL_UPDATE| Check whether the SDK file is complete. You are recommended to delete it and then import the SDK again. |
-
 #### Sample code 
-
 
 ```
 [[ITMGContext GetInstance] InitEngine:SDKAPPID3RD openID:_openId];
 ```
+
 ### 3. Trigger event callback
 Event callbacks can be triggered by periodically calling the `Poll` API in `update`.
 #### Function prototype

@@ -51,10 +51,6 @@ ITMGContext virtual int Init(const char* sdkAppId, const char* openId)
 | openId    	|char*   	| `OpenID` can only be in Int64 type (converted to char*) with a value greater than 10,000, which is used to identify the user 	|
 
 
-| Returned Value | Description |
-|----|----|
-|QAVError.OK| Initialized SDK successfully. |
-|7015 AV_ERR_SDK_NOT_FULL_UPDATE| Check whether the SDK file is complete. You are recommended to delete it and then import the SDK again. |
 
 #### Sample code 
 
