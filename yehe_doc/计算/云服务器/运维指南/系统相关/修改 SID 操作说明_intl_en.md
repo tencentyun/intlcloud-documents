@@ -51,7 +51,7 @@ The download address of sidchg tool: `http://www.stratesave.com/html/sidchg.html
 3. Using the admin command line to execute the following command and open the sidchg tool, as shown below:
 For example, the sidchg tool is saved on C: drive and its name is sidchg64-2.0p.exe.
 ![](https://main.qcloudimg.com/raw/284926ae1eae88228fb009f247b82068.png)
-`/R` means automatic restart after modification, and` /S` means shutdown after modification. For details, please see [SIDCHG Official Instructions] (http://www.stratesave.com/html/sidchg.html).
+`/R` means automatic restart after modification, and` /S` means shutdown after modification. For details, please see [SIDCHG Official Instructions](http://www.stratesave.com/html/sidchg.html).
 4. Enter license key or trial key as prompted by the page, and press **Enter**.
 5. Enter **Y** as prompted by the page, and press **Enter**, as shown below:
 ![](https://main.qcloudimg.com/raw/43c19634475517b183402d15fa32e962.png)

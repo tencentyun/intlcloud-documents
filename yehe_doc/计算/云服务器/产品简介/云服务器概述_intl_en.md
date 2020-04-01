@@ -24,7 +24,7 @@ Tencent Cloud allows you to configure and manage the CVM in the following ways:
 
 - **Console**: Web-based user interface provided by Tencent Cloud to configure and manage the CVM.
 - **API**: Tencent Cloud also provides API for you to manage the CVM. For API description, please see [API Overview](https://intl.cloud.tencent.com/document/api/213/15689?from_cn_redirect=1).
-- **SDK**: You can use [SDK Programming] (https://intl.cloud.tencent.com/document/product/494) or Tencent Cloud [Command Line CLI] (https://intl.cloud.tencent.com/document/product/1013) to call the CVM API.
+- **SDK**: You can use [SDK Programming](https://intl.cloud.tencent.com/document/product/494) or Tencent Cloud [Command Line CLI](https://intl.cloud.tencent.com/document/product/1013) to call the CVM API.
 
 
 
@@ -44,10 +44,10 @@ For pricing details of CVM and other resources, see [Product Pricing](https://bu
 
 ## Other related products
 
-- You can use auto scaling to automatically increase and decrease the number of server clusters based on configured policies or business needs. For more information, please see [Auto Scaling] (https://intl.cloud.tencent.com/document/product/377?from_cn_redirect=1) product documentation.
+- You can use auto scaling to automatically increase and decrease the number of server clusters based on configured policies or business needs. For more information, please see [Auto Scaling](https://intl.cloud.tencent.com/document/product/377?from_cn_redirect=1) product documentation.
 - You can use Cloud Load Balancer to automatically distribute request traffic from the client among multiple CVM instances. For more information, please see [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214?from_cn_redirect=1) product documentation.
-- You can use Tencent Kubernetes Engine to manage the lifecycles of containerized applications in CVM. For more information, please see [Tencent Kubernetes Engine] (https://intl.cloud.tencent.com/document/product/457?from_cn_redirect=1) product documentation.
-- You can use Cloud Monitor to monitor CVM instances and their system disks. For more information, please see [Cloud Monitor] (https://intl.cloud.tencent.com/document/product/248?from_cn_redirect=1) product documentation.
-- You can deploy a relational database on the cloud or use TencentDB. For more information, please see [TencentDB for MySQL] (https://intl.cloud.tencent.com/document/product/236?from_cn_redirect=1) product documentation.
+- You can use Tencent Kubernetes Engine to manage the lifecycles of containerized applications in CVM. For more information, please see [Tencent Kubernetes Engine](https://intl.cloud.tencent.com/document/product/457?from_cn_redirect=1) product documentation.
+- You can use Cloud Monitor to monitor CVM instances and their system disks. For more information, please see [Cloud Monitor](https://intl.cloud.tencent.com/document/product/248?from_cn_redirect=1) product documentation.
+- You can deploy a relational database on the cloud or use TencentDB. For more information, please see [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236?from_cn_redirect=1) product documentation.
 
 

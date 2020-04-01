@@ -42,7 +42,7 @@ On the operating system interface of Windows CVM, click **Start** > **Control Pa
 >
 When you purchase Windows CVM for the first time, initialization may take longer because Sysprep is used to distribute images. Before the initialization is complete, Windows will ignore shutdown and restart operations.
 - If the Windows CVM you purchased is initializing, we recommend you wait for the initialization to complete before shutting down or restarting the CVM again.
-- If the CVM has completed initialization, please execute [forced shutdown or restart] (#ForcedShutdownOrRestart).
+- If the CVM has completed initialization, please execute [forced shutdown or restart](#ForcedShutdownOrRestart).
 
 ### Check whether the software installed is normal
  
