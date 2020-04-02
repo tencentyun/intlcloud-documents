@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes how to use tags and tag authentication to manage project resources in the tag system. It is applicable to the scenario where a user used projects in the legacy console and granted sub-accounts access through project authentication.
+> This document describes how to use tags and tag authentication to manage project resources in the tag system. It is applicable to the scenario where a user used projects in the legacy console and granted sub-accounts access through project authentication.
 
 Project management is centralized management of resources in the project dimension. You can add Tencent Cloud product resources that support project management to a project. Then, select **Policy** > **Create Custom Policy** > **Create by Product Feature or Project Permission** in the [CAM Console](https://console.cloud.tencent.com/cam) to generate a project policy. You can associate the project policy with project-related users or user groups, so that they can get the permission to manipulate project resources.
 
