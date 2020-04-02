@@ -8,7 +8,7 @@ You can create one or more subnets at the same time.
 2. Click **Subnets** in the left sidebar to go to the management page.
 3. Select the region and VPC where the subnet to be created resides and click **+Create**.
 4. Enter the subnet’s name, CIDR, availability zone, and associated route table.
-![2](https://main.qcloudimg.com/raw/4342b99b376f29713dd9d586c0c9c3ae.png)
+![2](https://main.qcloudimg.com/raw/1a6801a275b142ba7689284ffab536d1.png)
 5. (Optional) Click **+New Line** to create multiple subnets at a time.
 6. Click **Create** to finish the creation.
 
@@ -16,7 +16,7 @@ You can create one or more subnets at the same time.
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnets** in the left sidebar to go to the management page.
 3. Click the **Add CVM** icon for the subnet where the CVM is to be added.
-![](https://main.qcloudimg.com/raw/494ee004004e5a6945af65b3ccf2f34c.png)
+![](https://main.qcloudimg.com/raw/68c28c0cf70f2a6e053a2130f4e6433a.png)
 4. Complete the purchase of the CVM as instructed on the page. For more information, see the [Purchase Method](https://intl.cloud.tencent.com/document/product/213/506) in the CVM documentation.
 
 ## Modifying the Primary Private IP Address of a CVM
@@ -25,18 +25,18 @@ Modifying the primary private IP address of a CVM’s primary ENI is supported, 
 2. Click **Instances** in the left sidebar to go to the management page.
 3. Find the CVM to be modified in the list and click the instance ID to go to the details page.
 4. Click the **ENI** tab, find the primary IP address to be modified, and click **Modify Primary IP** in the operation column.
-![](https://main.qcloudimg.com/raw/71f5e45da54b5047bb515286773043a2.png)
+![](https://main.qcloudimg.com/raw/c2ecf69fb390033c3eaa8f3cf7ea4445.png)
 5. In the window that appears, enter the new IP address and click **OK**.
-![2](https://main.qcloudimg.com/raw/b12d12eb1f678e4393bd2ec6b94e150a.png)
+![2](https://main.qcloudimg.com/raw/88aa617e26ca4b1600034da6e846640e.png)
 
 ## Changing the Route Table Associated with a Subnet
 Each subnet must be associated with one [route table](https://intl.cloud.tencent.com/document/product/215/4954), which is used to specify the outbound route of the subnet. You can change the route table associated with the subnet in real time. To create a route table, see [Creating a Custom Route Table](https://intl.cloud.tencent.com/document/product/215/35236).
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnets** in the left sidebar to go to the management page.
 3. In the list, find the subnet for which the route table needs to be changed and click **Change Route Table** in the operation column.
-![](https://main.qcloudimg.com/raw/0cff590ca9b028c5084810d80dd48907.png)
+![](https://main.qcloudimg.com/raw/6126ca32358c0ecb4af20c7dfcb0c506.png)
 4. Choose the route table that needs to be changed from the drop-down list, and then click **OK** to finish the change.
-![](https://main.qcloudimg.com/raw/ed4411a2df5bc7d1f8dab86712fd936a.png)
+![](https://main.qcloudimg.com/raw/37ff6a790162d500bbbe583ea1f5de4d.png)
 
 ## Deleting a Subnet
 > The prerequisites for deleting a subnet are that no IP addresses in the subnet are occupied and that no resources (such as CVMs and TencentDBs) are available in the subnet.
@@ -45,7 +45,7 @@ Each subnet must be associated with one [route table](https://intl.cloud.tencent
 2. Click **Subnets** in the left sidebar to go to the management page.
 3. At the top of the list, select the region and VPC to which the subnet to be deleted belongs.
 4. In the list, find the row of the subnet to be deleted. Click **Delete** in the operation column and then confirm the deletion.
-![](https://main.qcloudimg.com/raw/cbbaa1c8627ad0ed8ed89e817aac546b.png)
+![](https://main.qcloudimg.com/raw/2c24ebe33c4ae4ee769d30c66c104b81.png)
 
 ## Assigning and Releasing IPv6 CIDR Blocks for a Subnet
 >Currently, the IPv6 EIP is in beta test stage. If you do need to use it, please submit a Beta test application.
@@ -53,6 +53,6 @@ Each subnet must be associated with one [route table](https://intl.cloud.tencent
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnets** in the left sidebar. Select **Region** and **VPC** above the "Subnets" list to display all subnets in your region and VPC.
 3. Select a subnet, and click **Obtain IPv6 CIDR**. The system will assign the `/64` IPv6 CIDR block to the subnet. 
-![](https://main.qcloudimg.com/raw/c4f222b18ec685f31bcb6dd3b3af12ed.png)
+![](https://main.qcloudimg.com/raw/8c257df75fe747dbd17e5b2cd173576a.png)
 4. Select a subnet that has obtained an IPv6 CIDR block, click **Release IPv6**, confirm the operation, and the system will reclaim the IPv6 CIDR block of the subnet.
-![](https://main.qcloudimg.com/raw/99dd050f1e03d4a2bad75a9d14980aab.png)
+![](https://main.qcloudimg.com/raw/63d7dcb4dfb1ef9f2e6a94046a763ada.png)

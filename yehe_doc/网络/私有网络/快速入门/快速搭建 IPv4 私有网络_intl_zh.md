@@ -1,6 +1,7 @@
 ## 操作场景
 我们将以部署一个可以连接 Internet 的云服务器所需网络为例，从新建私有网络和子网，到购买云服务器、分配公网 IP，最后通过安全组控制进出该云服务器的流量，详细为您介绍每个操作步骤。
-![](https://main.qcloudimg.com/raw/352ad6718f63f01e8b3023b29812b16d.png)
+![](https://main.qcloudimg.com/raw/82eefc24e8eeded09773ef7a5b6ab077.png)
+
 ## 前提条件
 1. 在开始使用腾讯云产品前，您需要先 [注册腾讯云账号](https://intl.cloud.tencent.com/register) 。
 2. 请根据您的业务，确定所需要部署的 [地域与可用区](https://intl.cloud.tencent.com/document/product/215/31786)。
@@ -25,10 +26,10 @@
 4. 选择私有网络和子网，有如下两种方式：
 - **使用自定义私有网络及子网**
 在“自定义配置”的“1.选择地域与机型”中，您可在“网络”选项中，选择步骤1创建的私有网络和子网，即可将该云服务器创建在自定义私有网络和子网中。
-![](https://main.qcloudimg.com/raw/b1995c953b53d10de2544c1687cc8c0e.png)
 - **使用默认私有网络及子网**
-在“自定义配置”的“1.选择地域与机型”中，您可在“网络”选项中，直接选择默认 VPC（Default-VPC）和默认子网（Default-subnet），即可将该云服务器创建在默认私有网络和子网中。
-![](https://main.qcloudimg.com/raw/077c44149f78b2fb890c3a009d9b9da6.png)
+  在“自定义配置”的“1.选择地域与机型”中，您可在“网络”选项中，直接选择默认 VPC（Default-VPC）和默认子网（Default-subnet），即可将该云服务器创建在默认私有网络和子网中。
+  
+
 
 >推荐购买云服务器时分配免费公网 IP，如购买时未分配公网 IP，可在云服务器控制台绑定弹性公网 IP 。
 

@@ -16,21 +16,21 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 单击左侧目录中的【子网】，进入管理页面。
 3. 在列表中，找到需要开启广播功能的私有网络所在行，单击子网广播下的【开启】并确认操作即可。
-![](https://main.qcloudimg.com/raw/32f2b4fc747b7e9b3f68d3a166085133.png)
+![](https://main.qcloudimg.com/raw/c61dfb41432698852f7d6adfdcd4dbf5.png)
 
 #### 关闭广播
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 单击左侧目录中的【子网】，进入管理页面。
 3. 在列表中，找到需要关闭广播功能的私有网络所在行，单击子网广播下的【关闭】并确认操作即可。
-![](https://main.qcloudimg.com/raw/32f2b4fc747b7e9b3f68d3a166085133.png)
+![](https://main.qcloudimg.com/raw/bb87c41788ccb8d2c44340d1bf0f5444.png)
 
 ### 开启或关闭组播功能
 #### 开启组播
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 在列表中，找到需要开启组播功能的私有网络所在行，单击组播下的【开启】并确认操作即可。
-![](https://main.qcloudimg.com/raw/9aca4e4474cc3d88063d48c20afb4538.png)
+![](https://main.qcloudimg.com/raw/463fc39cec7b486f96634a357f5d3d7c.png)
 
 #### 关闭组播
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 在列表中，找到需要关闭组播功能的私有网络所在行，单击组播下的【关闭】并确认操作即可。
-![](https://main.qcloudimg.com/raw/9aca4e4474cc3d88063d48c20afb4538.png)
+![](https://main.qcloudimg.com/raw/d005168e23a4aade268b1d4828cfb8be.png)

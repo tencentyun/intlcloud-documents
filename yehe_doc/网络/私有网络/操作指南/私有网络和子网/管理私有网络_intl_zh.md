@@ -13,16 +13,16 @@
     - `192.168.0.0` - `192.168.255.255` （掩码范围需在16 - 28之间）
  - 子网的 CIDR 必须在私有网络的 CIDR 内或相同。
  例如，私有网络的网段是`192.168.0.0/16`，那么该私有网络内的子网的网段可以是`192.168.0.0/16`、`192.168.0.0/17`等。 
- 
-![2](https://main.qcloudimg.com/raw/ac2da453ceee6edd0e1b870ac09ebf12.png)
- 
+
+![2](https://main.qcloudimg.com/raw/a2aab5034960c9cfb517b053d4107c0f.png)
+
 ## 删除私有网络
 >删除私有网络的前提条件：私有网络内的 IP 没有被占用，且私有网络内没有资源（如云服务器、云数据库、网关等）。
 
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 在列表上方，选择需要删除的私有网络所在地域。
 3. 在列表中，找到需要删除的私有网络所在行，单击操作栏下的【删除】，并确认操作即可。
-![](https://main.qcloudimg.com/raw/eb4132388565269ac16d44ae61163601.png)
+![](https://main.qcloudimg.com/raw/51fd2b0b31022dbc47e08467e539a7fe.png)
 
 ## 私有网络分配与释放 IPv6 CIDR
 
@@ -30,12 +30,12 @@
 2. 在“私有网络”列表上方，选择【地域】，将会展示所属地域下的所以私有网络信息。
 3. 在需要开启 IPv6 的 VPC 所在行的操作栏下，单击【编辑 CIDR】。
 4. 在弹框中的 IPv6 CIDR 单击【获取】并确认操作，系统将为该 VPC 分配1个`/56`的 IPv6 CIDR。
-![](https://main.qcloudimg.com/raw/048e6e83270bac19e8eeb7ff04213861.png)
+![](https://main.qcloudimg.com/raw/f8eb3a5d86ac47a3046575d2330cfd58.png)
 4. 已获取到 IPv6 CIDR 的 VPC，可单击操作栏下的【编辑 CIDR】，在弹框中的 IPv6 CIDR 单击【释放】来释放 IPv6 地址段。
 
 ## 查看私有网络内的所有资源
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 在列表上方，选择需要查看的私有网络所在地域，在列表中，单击需要查看的私有网络 ID，进入详情页。
-![1](https://main.qcloudimg.com/raw/972346aab2095c301890067e880bfe31.png)
+![1](https://main.qcloudimg.com/raw/2058cc7ea595f0c53d068c40d01493c4.png)
 3. 在包含资源一栏，即可查看私有网络内的所有资源。
-![](https://main.qcloudimg.com/raw/e65cc8e7c3ecb81d235609f0280eb778.png)
+![](https://main.qcloudimg.com/raw/31fdffbfa34db31772b2bc87d280ac0c.png)

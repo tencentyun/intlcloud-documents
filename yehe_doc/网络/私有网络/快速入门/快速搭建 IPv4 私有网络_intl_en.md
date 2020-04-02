@@ -1,6 +1,7 @@
 ## Operation Scenarios
 Taking the networks required in the deployment of a CVM with Internet access as an example, this document explains each step in detail, from creating a VPC and subnet, to purchasing a CVM, assigning a public IP address, and lastly using a security group to control the inbound and outbound traffic of the CVM.
-![](https://main.qcloudimg.com/raw/352ad6718f63f01e8b3023b29812b16d.png)
+![](https://main.qcloudimg.com/raw/82eefc24e8eeded09773ef7a5b6ab077.png)
+
 ## Prerequisites
 1. Before using Tencent Cloud products, you need to [register a Tencent Cloud account](https://intl.cloud.tencent.com/register).
 2. Confirm the [region and availability zone](https://intl.cloud.tencent.com/document/product/215/31786) in which the VPC is to be deployed based on your business requirements.
@@ -25,10 +26,10 @@ The features of the default VPC are the same as those of the custom VPC that you
 4. Select a VPC and subnet. There are two selection methods:
 - **Using custom VPC and subnet**
 In **1. Select the region and model** in **Custom Configuration**, you can select the VPC and subnet created in Step 1 in the **Network** option, and the CVM will be created in the custom VPC and subnet.
-![](https://main.qcloudimg.com/raw/b1995c953b53d10de2544c1687cc8c0e.png)
+
 - **Using default VPC and subnet**
 In **1. Select the region and model** in **Custom Configuration**, you can select the default VPC (Default-VPC) and subnet (Default-subnet) in the **Network** option, and the CVM will be created in the default VPC and subnet.
-![](https://main.qcloudimg.com/raw/077c44149f78b2fb890c3a009d9b9da6.png)
+
 
 >We recommend that you assign a free public IP address when purchasing a CVM. If no public IP address is assigned during the purchase, you can bind the CVM to an elastic public IP address in CVM Console.
 
