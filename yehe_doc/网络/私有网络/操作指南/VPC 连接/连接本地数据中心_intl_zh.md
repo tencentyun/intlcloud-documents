@@ -3,7 +3,7 @@
 [VPN 连接](https://intl.cloud.tencent.com/document/product/1037) 是一种通过公网加密通道连接您的本地数据中心和 VPC 的方式。VPN 连接由三个组成部分：VPN 网关、对端网关、VPN 通道。
 每个 VPN 网关可以建立多个 VPN 通道，每个 VPN 通道可以打通一个本地数据中心。
 ![VPN 连接](https://main.qcloudimg.com/raw/b1aeb71bc176dfe5baaa15d4a3fc8dd7.png)
-详细操作请参见 [VPN 连接-快速入门](https://intl.cloud.tencent.com/document/product/1037/18988)。
+详细操作请参见 [VPN 连接-快速入门](https://intl.cloud.tencent.com/document/product/1037/32689)。
 
 ## 专线接入
 [专线接入](https://intl.cloud.tencent.com/document/product/216) 通过使用物理专线连接 VPC 和本地数据中心。专线接入由三个组成部分：物理专线、专用通道、专线网关。
