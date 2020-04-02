@@ -32,7 +32,7 @@ The default logic for repeated alarm notifications is as follows:
  - Policy Type: select a monitored service, such as CVM.
  - Use preset trigger conditions: select this option to enable preset trigger conditions for the corresponding monitored product.
  - Trigger condition: this includes indicator alarm and event alarm. You can click "Add" to set multiple alarms.
-![](https://main.qcloudimg.com/raw/9282a92a9440514dbc4f6609a69e848d.png)
+![](https://main.qcloudimg.com/raw/7f65616a1cdcf30f9821392d3b64c67a.png)
 4. Click **Save**.
 
 ### Editing a trigger condition template
@@ -41,9 +41,9 @@ The default logic for repeated alarm notifications is as follows:
 2. On the left sidebar, click **Trigger Condition Template** to enter the trigger template list page.
 3. Click the name of the template to be edited to enter the details page.
 4. Click **Edit** to modify alarm trigger conditions.
-   ![](https://main.qcloudimg.com/raw/e36f133304ca0062f95137cb3bd3c8a6.png)
+   ![](https://main.qcloudimg.com/raw/f88326d8bb7121643f7849f2c3830534.png)
 5. Modify trigger conditions as needed.
-   ![](https://main.qcloudimg.com/raw/cb616a9c452abb8fa440338d6a0d980e.png)
+   ![](https://main.qcloudimg.com/raw/b247a8162a8429caa1e2a3b4a36158c8.png)
 
 >After a trigger template associated with alarm policies is edited, the modification will apply to all associated alarm policies.
 
@@ -52,7 +52,7 @@ The default logic for repeated alarm notifications is as follows:
 1. Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/).
 2. On the left sidebar, click **Trigger Condition Template** to enter the trigger template list page.
 3. Find the template to be deleted and click **Delete** in the column on the right.
-   ![](https://main.qcloudimg.com/raw/56bc0d60357f3185ce93d949694532eb.png)
+   ![](https://main.qcloudimg.com/raw/41b6e05ee484d99e2f8a452449e5dcd6.png)
 4. Click **Delete** in the pop-up dialog box.
 
 >After a trigger template associated with alarm policies is deleted, all alarm policies associated with the template will become invalid.
@@ -62,7 +62,7 @@ The default logic for repeated alarm notifications is as follows:
 1. Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/).
 2. On the left sidebar, click **Trigger Condition Template** to enter the trigger template list page.
 3. Find the template to be copied and click **Copy** in the column on the right.
-   ![](https://main.qcloudimg.com/raw/6638d17b77829c02873a865d5644e70a.png)
+   ![](https://main.qcloudimg.com/raw/8c0777a7c501588ed0a4130a34933b66.png)
 4. Click **Copy** in the pop-up dialog box.
 
 >When a trigger template is copied, only its trigger conditions and rules will be copied. If the trigger template is associated with alarm policies, the relationship will not be copied.

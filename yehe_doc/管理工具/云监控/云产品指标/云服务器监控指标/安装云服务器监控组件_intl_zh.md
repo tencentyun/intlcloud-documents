@@ -30,7 +30,9 @@ ps ax |grep barad_agent
 ## Windows 安装指引
 1. 用户 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435) 后，复制下载地址`http://update2.agent.tencentyun.com/update/windows-stargate-installer.exe`，并前往浏览器打开，即可下载 Agent 组件 `windows-stargate-installer.exe`。
 2. 运行该程序进行自动化安装。
-
+安装成功时如下图所示：
+![](https://main.qcloudimg.com/raw/4de896a6b4d5d2bf2e4e5bd3aa48d0a8.png)
+![](https://main.qcloudimg.com/raw/cef9391ecb0cd37bf7d2fce08675812c.png)
 ## 常见问题
 - 在用户遇到无法下载 Agent 或其它使用方面问题，可参考 [云服务器监控组件相关](https://intl.cloud.tencent.com/document/product/248/2259) 常见问题文档进行相应的处理。
 - 您也可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们寻求解决措施。
