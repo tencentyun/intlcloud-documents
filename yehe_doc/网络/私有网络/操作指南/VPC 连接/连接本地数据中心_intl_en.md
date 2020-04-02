@@ -13,4 +13,4 @@ For details about the operations, see [Direct Connect - Getting Started](https:/
 
 ## Cloud Connect Networks
 [Cloud Connect Network (CCN)](https://intl.cloud.tencent.com/document/product/1003) interconnects Tencent Cloud VPC instances and connects VPC instances with local IDCs.
-For details about the operations, see [Direct Connect - IDC Cloudization Through CCN](https://intl.cloud.tencent.com/document/product/216/31638).
+
