@@ -4,7 +4,7 @@
 2. 单击左侧目录中的 【路由表】，进入管理页面。
 3. 单击【+新建】。
 4. 在弹出框中，输入路由表名称、选择所属私有网络、新建路由策略，单击【创建】即可。
-![](https://main.qcloudimg.com/raw/c37ef94846e925018ea519547fb08219.png)
+![](https://main.qcloudimg.com/raw/92214c3c59e9a8e47326c1c51509cbc5.png)
 
 ## 配置路由策略
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
@@ -28,7 +28,8 @@
 </td></tr>
 <tr><td>下一跳</td><td>指定具体跳转到的下一跳实例，如网关或云服务器 IP 等。</td></tr>
 </tbody> </table>
-<img src="https://main.qcloudimg.com/raw/7119261bd4d05ee97f7b89ec59f97239.png" alt="">
+<img src="https://main.qcloudimg.com/raw/97240d4bd5d568ea1b60297ee6324f26.png" alt="">
+
 6. 单击【确定】，路由策略立即生效。
 7. （可选）新增自定义路由策略后，单击路由策略操作栏中的【编辑】或【删除】，可修改或删除该路由策略。
 
@@ -36,14 +37,14 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 单击左侧目录中的【子网】，进入管理页面。
 3. 在列表中，找到需要更改的子网所在行，单击操作栏中【更换路由表】。
-![](https://main.qcloudimg.com/raw/723cebf62f1c265122f2df059534b1a3.png)
+![](https://main.qcloudimg.com/raw/9f43e34145640a09a75fbb752d9dae8b.png)
 4. 在弹出框中，选择更换后的路由表，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/e6341cab5ca349dcf8f8fad44b514657.png)
+![](https://main.qcloudimg.com/raw/47056cab384ed29fa615cc1cfe568e53.png)
 
 ## 删除自定义路由表
 系统自动生成的默认路由表无法删除，但自定义路由表可以创建、修改和删除。
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 单击左侧目录中的 【路由表】，进入管理页面。
 3. 在列表中，找到需要删除的路由表所在行，单击操作栏中【删除】并确认操作即可。
- ![](https://main.qcloudimg.com/raw/963695e1a03ee908779c6363e90944e6.png)
+ ![](https://main.qcloudimg.com/raw/df0d8107082b11d95f57a45004104d92.png)
 

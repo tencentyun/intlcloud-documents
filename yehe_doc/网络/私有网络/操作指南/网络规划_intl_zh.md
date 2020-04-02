@@ -4,13 +4,14 @@
 ## 规划地域
 私有网络具有地域属性（如广州），每个地域有一个或多个可用区（如广州一区、广州二区），您可选择合适的地域创建私有网络和子网。
 需要您注意的是，即使两个私有网络位于同一个地域，也默认内网隔离，只有同一个私有网络内才默认内网互通。不同的私有网络内网互通需要使用 [对等连接](https://intl.cloud.tencent.com/document/product/553) 或 [云联网](https://intl.cloud.tencent.com/document/product/1003)。
-![](https://main.qcloudimg.com/raw/100ed8ac31a7df9300db4ba511a7856f.png)
+![](https://main.qcloudimg.com/raw/f0eb1a194187ec95a03881db3d4ae1b3.png)
 
 ## 规划私有网络
 ### 规划一个私有网络
 如果您的业务量较小、都部署在同一地域，且没有网络隔离需求时，推荐您规划一个私有网络。
 您可以在一个私有网络中创建多个子网和路由表来实现流量的精细化管理。
-![](https://main.qcloudimg.com/raw/d507af05e9b5dc9ecb231816e30d5206.png)
+![](https://main.qcloudimg.com/raw/e858339e22584215e9e9af4286d03468.png)
+
 ### 规划多个私有网络
 如下场景，推荐您规划多个私有网络：
 - **多地域部署业务**
@@ -18,7 +19,7 @@
 不同地域的私有网络间，可以通过 [对等连接](https://intl.cloud.tencent.com/document/product/553) 或 [云联网](https://intl.cloud.tencent.com/document/product/1003) 实现内网互通。
 - **多业务间须隔离**
 由于同一私有网络间默认内网互通，当您在同一地域的不同业务间需要隔离时，需要规划多个私有网络。
-![](https://main.qcloudimg.com/raw/7c7ad41d36fc7d3610e39d6ad52cc8d6.png)
+![](https://main.qcloudimg.com/raw/4de88098290c378caf1cabbd2b040266.png)
 
 ## 规划子网
 腾讯云每个私有网络最多支持创建10个子网，子网是私有网络内的 IP 地址块，其网段必须在私有网络网段范围内或与私有网络的网段相同。一个私有网络可以同时有多个子网，相同私有网络下不同子网默认内网互通。
@@ -29,7 +30,7 @@
 如果子网所属私有网络与其他私有网络或 IDC 有通信需求，请避免子网网段与对端网段重叠，网段重叠则无法内网互通。
 - **业务需要**
 同一个私有网络下可按照业务模块划分子网，如 Web 层、逻辑层、数据层分别部署在不同子网，不同子网间可使用 [网络 ACL](https://intl.cloud.tencent.com/document/product/215/5132) 进行访问控制。
-![](https://main.qcloudimg.com/raw/3baa852563aa7952cd2d6f90e4d81504.png)
+![](https://main.qcloudimg.com/raw/7cf89e24bc7bba66fec60c8142b454ad.png)
 
 ## 规划网段
 腾讯云私有网络 CIDR 支持使用如下私有网段中的任意一个：
@@ -47,8 +48,9 @@
 路由表用于控制子网内的流量走向，每个子网仅且只能绑定一个路由表。腾讯云私有网络支持默认路由表和自定义路由表。
 ### 规划一个路由表
 如果您的私有网络不同子网的流量走向需求相同或类似，推荐您规划一个路由表，您可以创建不同的路由策略来控制流量走向。
-![](https://main.qcloudimg.com/raw/49943c4e2fc5911bb434a2f408de2080.png)
+![](https://main.qcloudimg.com/raw/266543085902f18e038017a63162c5f4.png)
+
 ### 规划多个路由表
 如果您的私有网络不同子网的流量走向需求有较大不同，则推荐您规划多个路由表。有不同需求的子网各自绑定对应的路由表，通过路由策略来控制流量走向。
-![](https://main.qcloudimg.com/raw/c15d969bf48e4d8b60b7dcd9f563c907.png)
+![](https://main.qcloudimg.com/raw/0f13fc52b27f01ae1b2e278d6f09c70a.png)
 

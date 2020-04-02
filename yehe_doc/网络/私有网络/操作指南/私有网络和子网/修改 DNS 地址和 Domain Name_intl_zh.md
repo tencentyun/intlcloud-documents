@@ -17,4 +17,4 @@
  - Domain Name
 	 - 云服务器 hostname 后缀，如`example.com`。
 
-![](https://main.qcloudimg.com/raw/451261da571aace380a14eeffebba4e8.png)
+![](https://main.qcloudimg.com/raw/0860fef79e695941eede5938fa6f4b8a.png)

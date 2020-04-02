@@ -1,5 +1,5 @@
 The network access control list (ACL) is an optional security layer at the subnet level for controlling the inbound and outbound traffic of subnets, with an accuracy up to protocol and port granularity.
-![](https://main.qcloudimg.com/raw/ece35157aa40118a18adb1a4885c14ce.png)
+![](https://main.qcloudimg.com/raw/5418cbe507ad725e7073c0bbbe1bb9dc.png)
 
 ## Use Cases
 You can associate a network ACL with multiple subnets for the same network traffic control. By setting the outbound and inbound rules, you can precisely control the inbound and outbound traffic of subnets.
@@ -63,7 +63,7 @@ After creation, each network ACL contains two default rules. Default rules canno
 #### Application examples
 Example: to allow all source IP addresses to access all ports of CVMs in the subnet associated with the ACL and to reject the access request of the HTTP service whose server source IP address is `192.168.200.11/24` for accessing port 80, you can add these two network ACL inbound rules:
 
-| Protocol Type | Port | Source IP Address | Policy | Notes | 
+| Protocol Type | Port | Source IP Address | Policy | Notes |
 | --- | --- | --- | --- |---|
 | HTTP | 80 |192.168.200.11/24 | Reject | Reject the access request of the HTTP service of that IP address for accessing port 80. |
 | All | All | 0.0.0.0/0 | Allow | Allow all source IP addresses to access all ports. |

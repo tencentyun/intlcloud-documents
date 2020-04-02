@@ -1,6 +1,6 @@
 As shown on the right of the following figure, the basic network is a public network resource pool for all users on Tencent Cloud. The private IP addresses of all CVMs are centrally assigned by Tencent Cloud, which means IP range division and IP addresses cannot be customized.
 VPC refers to a logically isolated network space built by the user on Tencent Cloud, as shown on the left of the following figure. In a VPC, you can customize IP ranges, IP addresses, and routing policies. Compared with the basic network, VPC instances are more suitable for scenarios in which network configurations need to be customized.
-![](https://main.qcloudimg.com/raw/13072e70d41994799c310bb033cdda25.png)
+![](https://main.qcloudimg.com/raw/5fe7730ac2f302d960cf20443f976b6f.png)
 >
 >1. As basic network resources are becoming increasingly sparse and cannot be expanded, the basic network is no longer supported by accounts that were registered after June 13, 2017. This means that instances (such as CVMs and CLBs) cannot be created in the basic network, with support only provided for VPC instances.
 >2. You can query the network attributes of an account through the DescribeAccountVpcAttributes API.

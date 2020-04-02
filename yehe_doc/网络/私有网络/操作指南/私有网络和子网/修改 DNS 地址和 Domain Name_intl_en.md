@@ -17,4 +17,4 @@ CVMs in a Tencent Cloud VPC support DHCP. Configurable DHCP options include the 
  - Domain name
 	 - The CVM hostname suffix, such as `example.com`.
 
-![](https://main.qcloudimg.com/raw/451261da571aace380a14eeffebba4e8.png)
+![](https://main.qcloudimg.com/raw/0860fef79e695941eede5938fa6f4b8a.png)

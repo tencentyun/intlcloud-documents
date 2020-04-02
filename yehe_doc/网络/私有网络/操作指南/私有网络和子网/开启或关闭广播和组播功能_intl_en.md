@@ -17,21 +17,21 @@ If unicast is used, the sending server needs to separately send to N servers for
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnets** in the left sidebar to go to the management page.
 3. In the list, find the row of the VPC for which you want to enable the broadcasting feature, click **Enable** under **Subnet Broadcast**, and confirm the enablement.
-![](https://main.qcloudimg.com/raw/32f2b4fc747b7e9b3f68d3a166085133.png)
+![](https://main.qcloudimg.com/raw/c61dfb41432698852f7d6adfdcd4dbf5.png)
 
 #### Disabling broadcasting
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnets** in the left sidebar to go to the management page.
 3. In the list, find the row of the VPC for which you want to disable the broadcasting feature, click **Disable** under **Subnet Broadcast**, and confirm the disablement.
-![](https://main.qcloudimg.com/raw/32f2b4fc747b7e9b3f68d3a166085133.png)
+![](https://main.qcloudimg.com/raw/bb87c41788ccb8d2c44340d1bf0f5444.png)
 
 ### Enabling or disabling multicast
 #### Enabling multicast
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. In the list, find the row of the VPC for which you want to enable the multicast feature, click **Enable** under **Multicast**, and confirm the enablement.
-![](https://main.qcloudimg.com/raw/9aca4e4474cc3d88063d48c20afb4538.png)
+![](https://main.qcloudimg.com/raw/463fc39cec7b486f96634a357f5d3d7c.png)
 
 #### Disabling multicast
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. In the list, find the row of the VPC for which you want to disable the multicast feature, click **Disable** under **Multicast**, and confirm the disablement.
-![](https://main.qcloudimg.com/raw/9aca4e4474cc3d88063d48c20afb4538.png)
+![](https://main.qcloudimg.com/raw/d005168e23a4aade268b1d4828cfb8be.png)
