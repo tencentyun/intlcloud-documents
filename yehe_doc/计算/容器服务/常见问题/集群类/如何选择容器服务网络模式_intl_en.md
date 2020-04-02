@@ -7,13 +7,13 @@ GlobalRouter is a global routing capability provided by TKE based on the underly
 - Container IP ranges are dynamically assigned without occupying other IP ranges in the VPC instance.
 
 The GlobalRouter mode is suitable for general use cases and can be seamlessly used with standard Kubernetes features. The following diagram illustrates how it works:
-![](https://main.qcloudimg.com/raw/eb19847fdd0de5f3ebb8381f33a885e8.png)
+![](https://main.qcloudimg.com/raw/dcc7185c1499b6bb4cee52539283f8c4.png)
 
 ## VPC-CNI Mode
 VPC-CNI is a container network capability provided by TKE based on CNIs and VPC ENIs. It is ideal for scenarios with demanding latency requirements. In this network mode, containers and nodes are located on the same network plane, and container IP addresses are ENI IP addresses assigned by the IPAMD component.
 
 The following diagram illustrates how the VPC-CNI mode works:
-![](https://main.qcloudimg.com/raw/76fce8d2541f9a91a1a2ecdc89403390.jpg)
+![](https://main.qcloudimg.com/raw/4790c992f3e67ff8fc5c3ebd128401cb.png)
 
 ### Enabling support for static pod IP addresses
 
