@@ -22,7 +22,7 @@ Total Time within a Service Month Calculated in Minutes = the number of days wit
 #### 2.1 Calculation of Service Availability
 Service Availability = (1 – Service Downtime within a Service Month Calculated in Minutes / Total Time within a Service Month Calculated in Minutes) × 100%
 #### 2.2  Standard of Service Availability
-**The Service Availability of the Service will be no less than 99.90%. ** You are entitled to the compensation as set forth in Section 3 (Service Compensation) below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
+**The Service Availability of the Service will be no less than 99.90%.** You are entitled to the compensation as set forth in Section 3 (Service Compensation) below if the Service Availability fails to meet the aforementioned standard, other than in any circumstance as provided for in the release of liabilities provisions below. 
 The log feature made available by the Service is for the log of the components of the gateway per se in order to facilitate your troubleshooting. Such log feature is provided beyond the scope of the business data of this Service. Tencent Cloud does not make any warranties as to the availability, quality and storage security with respect to such log feature, neither does this Agreement apply to such log feature.
 
 ## 3. Service Compensation
