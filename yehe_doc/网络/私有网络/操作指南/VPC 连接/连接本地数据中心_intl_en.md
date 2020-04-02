@@ -3,7 +3,7 @@ You can establish a VPN connection, direct connection, or CCN to implement commu
 [VPN connection](https://intl.cloud.tencent.com/document/product/1037) is a method for connecting your IDCs and VPC instances through public network encrypted tunnels. A VPN connection consists of three parts: VPN gateway, customer gateway, and VPN tunnel.
 Each VPN gateway can establish multiple VPN tunnels, and each VPN tunnel can connect to one local IDC.
 ![VPN connection](https://main.qcloudimg.com/raw/b1aeb71bc176dfe5baaa15d4a3fc8dd7.png)
-For details about the operations, see [VPN Connections - Getting Started](https://intl.cloud.tencent.com/document/product/1037/18988).
+For details about the operations, see [VPN Connections - Getting Started](https://intl.cloud.tencent.com/document/product/1037/32689).
 
 ## Direct Connections
 A [direct connection](https://intl.cloud.tencent.com/document/product/216) is a physical direct connection that connects VPC instances and local IDCs. A direct connection consists of three parts: physical connection, dedicated tunnel, and direct connect gateway.
