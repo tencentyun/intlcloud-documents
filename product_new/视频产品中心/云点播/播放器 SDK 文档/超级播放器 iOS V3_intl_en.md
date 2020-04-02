@@ -56,14 +56,14 @@ playerModel.videoId = video;
 In the code, `appId` is your AppId, `fileId` is the ID of the video you want to play back, `playDefinition` is the ID of the playback template used for playback, and `version` is fixed to `SuperPlayerVideoId.FILE_ID_V3`.
 
 Run the code and you can see that the video is played back on the phone and most of the features in the UI are available.
-<img src="https://main.qcloudimg.com/raw/128c45edfc77b319475868c21caec2de.png" width="550">
+
 
 ## Thumbnails and Timestamps
 
 When videos are played back, the "thumbnails" and "timestamps" on the progress bar can help viewers find the points of interest easily. Thumbnails are implemented through [image sprites](https://intl.cloud.tencent.com/document/product/266/34125), while timestamps by modifying timestamp information in media assets.
 
 After image sprites are generated and timestamps are added, new elements will be displayed in the player UI.
-<img src="https://main.qcloudimg.com/raw/55ebce6d0c703dafa1ac131e1852e025.png" width="550">
+
 
 ## Small Window Playback
 
@@ -74,7 +74,7 @@ A small window is a player that floats over the main window within the applicati
 [SuperPlayerWindow sharedInstance].backController = self;  // Set the returned view controller
 [[SuperPlayerWindow sharedInstance] show]; // Floating display
 ```
-<img src="https://main.qcloudimg.com/raw/e2ee64230af1b9c3a79cad935afa8b6a.jpeg" width="300">
+
 
 ## Exiting Playback
 
