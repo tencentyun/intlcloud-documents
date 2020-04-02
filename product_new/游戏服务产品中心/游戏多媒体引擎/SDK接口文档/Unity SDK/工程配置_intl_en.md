@@ -32,7 +32,7 @@ In the Unity editor, go to **Edit** > **Project Settings** > **Audio** and use t
 
 If the settings are as follows, Unity playback sound effect will be interrupted due to the hardware buffer set on the iOS device:
 
-![](https://main.qcloudimg.com/raw/0b1c09af7f42e39081cca1718baaede3.png)
+![](https://main.qcloudimg.com/raw/60fcc1ec0bd58cc1e0de5403392c1955.png)
 
 #### Operations on macOS
 If you use Unity to access the GME SDK on macOS 10.15.x, an error will be displayed for file corruption during the execution. This error is caused by the `com.apple.quarantine` attribute, and the most direct solution is to delete this attribute.

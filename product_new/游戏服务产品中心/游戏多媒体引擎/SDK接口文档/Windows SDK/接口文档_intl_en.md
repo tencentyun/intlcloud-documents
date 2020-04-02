@@ -22,7 +22,7 @@ This document describes how to access and debug GME APIs for Windows.
 - For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
 
 ## Voice Chat Flowchart
-![](https://main.qcloudimg.com/raw/bf2993148e4783caf331e6ffd5cec661.png)
+![](https://main.qcloudimg.com/raw/e536525aa47c06a5a84bb6c8d4851b22.png)
 
 
 ## Key APIs
@@ -164,7 +164,7 @@ context->Uninit();
 
 ## Voice Chat Room Call Flowchart
 
-![](https://main.qcloudimg.com/raw/02785c646096bc435fe91003fe3169e7.png)
+![](https://main.qcloudimg.com/raw/a61ca1d7cdecf09bd223766b2a5cd69f.png)
 
 ## Voice Chat Room APIs
 You should initialize and call the SDK to enter a room before voice chat can start.
@@ -388,7 +388,7 @@ Notifications for audio events are subject to a threshold, and a notification wi
 
 #### Room member maintenance flowchart
 
-![](https://main.qcloudimg.com/raw/df7c21589702c13259c2ebab1dc9da64.png)
+![](https://main.qcloudimg.com/raw/50ef1ceda14eb244e434b8cbe85da5f3.png)
 
 
 #### Sample code
@@ -915,7 +915,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
 
 
 ## Speech-to-Text Conversion Flowchart
-![](https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png)
+![](https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png)
 
 
 
