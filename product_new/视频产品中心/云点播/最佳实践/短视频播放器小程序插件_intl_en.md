@@ -113,6 +113,6 @@ Scan the QR code below to try out the UGSV player plugin for WeChat Mini Program
 
  
 ## Instructions
-+ The plugin service takes effect immediately after purchase. In addition to the purchase charge, the UGSV player plugin for WeChat Mini Program is also billed based on the number of video playbacks and VOD usage. <!--doc For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/266/2838).-->
++ The plugin service takes effect immediately after purchase. In addition to the purchase charge, the UGSV player plugin for WeChat Mini Program is also billed based on the number of video playbacks and VOD usage.
 + One Tencent Cloud account provides only one APPID; therefore, you can purchase only one plugin under your Tencent Cloud account.
 

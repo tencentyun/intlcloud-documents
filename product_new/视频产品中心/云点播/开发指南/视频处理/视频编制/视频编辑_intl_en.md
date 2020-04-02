@@ -1,6 +1,6 @@
-Video editing is an offline task that clips and splice videos in VOD. Specifically, it includes the following features:
+Video editing is an offline task that clips and splices videos in VOD. Specifically, it includes the following features:
 
-* **Video clipping**: this refers to clipping a file in VOD to generating a new video.
+* **Video clipping**: this refers to clipping a file in VOD to generate a new video.
 * **Video splicing**: this refers to splicing multiple files in VOD to generate a new video.
 * **Video clip splicing**: this refers to clipping multiple files in VOD and then splicing the clips to generate a new video.
 * **Live stream transcoding**: this refers to transcoding a stream in VOD to generate a new video.
@@ -12,7 +12,7 @@ The container format of the generated video is MP4. When initiating a video edit
 
 ## Task Initiation
 
-You can initiate a video editing task by calling a [server API](#APIhttps://intl.cloud.tencent.com/document/product/266/34783). The return result of the API contains the task ID, which is used to associate with the corresponding task result when [getting result](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96).
+You can initiate a video editing task by calling a [server API](https://intl.cloud.tencent.com/document/product/266/34126). The return result of the API contains the task ID, which is used to associate with the corresponding task result when [getting result](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96).
 
 ## Getting Result
 

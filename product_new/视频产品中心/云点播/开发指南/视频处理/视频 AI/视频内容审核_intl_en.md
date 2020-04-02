@@ -97,7 +97,7 @@ VOD can intelligently audit video image, speech recognized by ASR, and text reco
 </table>
 
 
-| Field Name | Type | Meaning |
+| Field Name | Type | Description |
 | ---------- | ------ | ------------------------------------------------------------ |
 | confidence | Float | Audit score (0–100). The higher the score, the greater the suspicion |
 | suggestion | String | There are three types of audit suggestions: `pass`, `review`, and `block`: <ul><li>pass: the degree of suspicion is not high, and approval is recommended. </li><li>review: the degree of suspicion is high, and human audit is recommended </li><li>block: the degree of suspicion is very high, and blocking is recommended </li></ul> |
@@ -121,10 +121,10 @@ For common combinations of operations, VOD provides a [preset video content audi
 There are three ways to initiate a video content audit task, namely, directly initiating through server API, directly initiating through the console, and specifying a task upon upload. For more information, please see [Task Initiation](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask) for video processing.
 
 Below are instructions for initiating video content audit tasks in these ways:
-<!--api
+
 * Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
-* Call the server API [ProcessMediaByUrl](#APIhttps://intl.cloud.tencent.com/document/product/266/33426) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
--->
+* Call the server API [ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123) to initiate a task: specify the [video content audit template](#sh) ID in the `AiContentReviewTask` parameter in the request.
+
 * Initiate a task on a video through the console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable video content audit in it, and use it to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33890).
 * Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable video content audit in it, and specify it as the `procedure` in the [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
 * Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable video content audit in it, and specify it as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).

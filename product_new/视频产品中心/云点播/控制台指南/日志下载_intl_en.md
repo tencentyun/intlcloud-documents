@@ -1,7 +1,7 @@
 
-You can download a CDN access log for the last 30 days, which contains details of every request made to VOD. Logs are recorded hourly.
+You can download a CDN access log for the last 30 days, which contains the details of every request made to VOD. Logs are recorded hourly.
 ## Downloading a CDN Log
-1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod) and click **Log Download** > **CDN Log** on the left sidebar.
+1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod) and click **Download Log** > **CDN Log** on the left sidebar.
 2. Select the desired time range and domain name, and click **OK** to get the log download link.
 ![](https://main.qcloudimg.com/raw/5da8ab89237962c2900798525de41ba2.png)
 >

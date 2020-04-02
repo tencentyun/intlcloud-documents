@@ -5,7 +5,7 @@
 
 #### 1. 开通服务
 
-开通云点播服务<!--doc，详细请参见 [购买指引](https://intl.cloud.tencent.com/document/product/266/2839)。-->
+开通云点播服务
 
 #### 2. 获取云 API 密钥
  
@@ -32,11 +32,11 @@
 
 如果云点播提供的上传 SDK 没有涵盖 App 后台所使用的语言，则 App 后台需要自行调用云点播的服务端 API 进行视频上传（这种方式较为复杂，不推荐），基于 API 上传的业务流程图如下：
 ![](https://main.qcloudimg.com/raw/005ec15acf74e0a428e8d328ffd2da2f.png)
-相比 SDK 方式的上传，基于 API 方式的上传需要自行实现申请上传和上传文件等步骤。而上传文件也没有 SDK 的方式方便，对于大文件需要自己做分片上传等逻辑。<!--api详情请参见：
+相比 SDK 方式的上传，基于 API 方式的上传需要自行实现申请上传和上传文件等步骤。而上传文件也没有 SDK 的方式方便，对于大文件需要自己做分片上传等逻辑。
 - [服务端 API - 申请上传](https://intl.cloud.tencent.com/document/product/266/34120)
-- [服务端 API - 上传文件](/document/product/266/31784)
+- [服务端 API - 上传文件](https://intl.cloud.tencent.com/document/product/266/33913)
 - [服务端 API - 确认上传](https://intl.cloud.tencent.com/document/product/266/34119)
--->
+
 
 #### 高级功能
 

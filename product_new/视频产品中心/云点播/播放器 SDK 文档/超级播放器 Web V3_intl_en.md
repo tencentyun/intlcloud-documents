@@ -1,5 +1,5 @@
 
-This document describes the we superplayer of VOD, which can be quickly integrated with your own web applications through flexible APIs to implement video playback. This document is intended for developers who have a basic knowledge of JavaScript.
+This document describes the web superplayer of VOD, which can be quickly integrated with your own web applications through flexible APIs to implement video playback. This document is intended for developers who have a basic knowledge of JavaScript.
 
 ## Overview of Capabilities
 The VOD superplayer implements video playback via the HTML5 `<video>` tag and Flash. It enables a browser that does not support video playback natively to play back videos, delivering a unified video experience across platforms. In addition, it features hotlink protection and DRM-encrypted playback with the aid of the VOD service.
@@ -120,7 +120,7 @@ var player = TCPlayer('player-container-id', {
     appID: '', // Pass in the `appID` of the VOD account, which is required
     playDefinition: '', // Pass in the playback template, which is required
     plugins:{
-        ContinuePlay: { // Turn on resumable playback
+        ContinuePlay: { // Enable resumable playback
           // auto: true, // [Optional] whether to resume automatically after the video is played back
           // text: 'You left off at', // [Optional] prompt text
           // btnText: 'Resume' // [Optional] button text
@@ -233,8 +233,7 @@ Example: [Mirroring feature](https://imgcache.qq.com/open/qcloud/video/tcplayer/
 >This feature is unavailable for browser-hijacking playback.
 
 ### Progress bar marking
-You can enable progress bar marking in the player by adding timestamps <!--API (https://intl.cloud.tencent.com/document/product/266/14190)--> through the server API as shown below:
-![](https://main.qcloudimg.com/raw/70d880065adce22cb64270f4999558f8.png)
+You can enable progress bar marking in the player by adding timestamps through the server API.
 
 How to enable in the player:
 ```

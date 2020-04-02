@@ -1,20 +1,20 @@
 ### v1.7 Released on October 23, 2019
 - The statistics of video clipping are available
-- The error with error code mappings is fixed
-- The error where domain names without ICP filing could not be deleted is fixed
+- The bug of error code mappings is fixed
+- The bug that domain names without ICP filing could not be deleted is fixed
 - The TESHD templates are available
-- The error with storage region name display is fixed
+- The bug of storage region name display is fixed
 
 ### v1.6 Released on October 12, 2019
 - The subapplication feature can be enabled in the console now
 - The reminder for primary distribution domain name disablement is updated
 - The VOD Console is connected to CAM
-- The error where files could not be categorized during upload is fixed
+- The bug that files could not be categorized during upload is fixed
 - VOD is connected to the smart customer service
 
 ### v1.5
-- The re-upload logic in the console is repaired
-- The error with CSV file export by filter is fixed
+- The re-upload logic in the console is fixed
+- The bug with CSV file export by filter is fixed
 
 ### v1.4
 - The subapplication system feature is updated and improved

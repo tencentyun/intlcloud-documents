@@ -1,15 +1,15 @@
 ## Overview
 
-The Superplayer SDK for iOS is a player component used to play back videos in VOD. It can implement powerful playback functionality similar to Tencent Video with just a few lines of code.
+The superplayer SDK for iOS is a player component used to play back videos in VOD. It can implement powerful playback functionality similar to Tencent Video with just a few lines of code.
 
 * Basic features: landscape/portrait mode switch, definition selection, gestures, small window playback, etc.
 * Advanced features: video buffering, software/hardware decoding switch, adjustable-speed playback, video thumbnails, DRM-encrypted playback, etc.
 
-The Superplayer SDK supports more formats and has better compatibility and functionality than system-default players. In addition, it features instant playback on splash screen and low latency.
+The superplayer SDK supports more formats and has better compatibility and functionality than system-default players. In addition, it features instant playback on splash screen and low latency.
 
 ## SDK Download
 
-The VOD Superplayer SDK for iOS can be downloaded [here](https://github.com/tencentyun/SuperPlayer_iOS).
+The VOD superplayer SDK for iOS can be downloaded [here](https://github.com/tencentyun/SuperPlayer_iOS).
 
 ## Quick Integration
 
@@ -28,7 +28,7 @@ Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview), cli
 ![](https://main.qcloudimg.com/raw/5aa5675fb0b702b447e422328f54cb72.png)
 
 You can initiate an [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) task for the uploaded video through [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125):
-You are recommended to enter 10 for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition` in the API parameter, indicating transcoding to adaptive bitstream in HLS format.
+You are recommended to enter 10 for `MediaProcessTask.AdaptiveDynamicStreamingTaskSet.Definition` in the API parameter, indicating transcoding to adaptive bitstream in HLS format.
 
 ### Starting playback
 
@@ -60,7 +60,7 @@ Run the code and you can see that the video is played back on the phone and most
 
 ## Thumbnails and Timestamps
 
-When videos are played back, the "thumbnails" and "timestamps" on the progress bar can help viewers find the points of interest easily. Thumbnails are implemented through [image sprites](#APIhttps://intl.cloud.tencent.com/document/product/266/8101), while timestamps by [modifying timestamp information in media assets](#APIhttps://intl.cloud.tencent.com/document/product/266/31762#.E7.A4.BA.E4.BE.8B3-.E4.BF.AE.E6.94.B9.E5.AA.92.E4.BD.93.E6.96.87.E4.BB.B6.E8.A7.86.E9.A2.91.E6.89.93.E7.82.B9.E4.BF.A1.E6.81.AF).
+When videos are played back, the "thumbnails" and "timestamps" on the progress bar can help viewers find the points of interest easily. Thumbnails are implemented through [image sprites](https://intl.cloud.tencent.com/document/product/266/34125), while timestamps by [modifying timestamp information in media assets](#APIhttps://intl.cloud.tencent.com/document/product/266/31762#.E7.A4.BA.E4.BE.8B3-.E4.BF.AE.E6.94.B9.E5.AA.92.E4.BD.93.E6.96.87.E4.BB.B6.E8.A7.86.E9.A2.91.E6.89.93.E7.82.B9.E4.BF.A1.E6.81.AF).
 
 After image sprites are generated and timestamps are added, new elements will be displayed in the player UI.
 <img src="https://main.qcloudimg.com/raw/55ebce6d0c703dafa1ac131e1852e025.png" width="550">

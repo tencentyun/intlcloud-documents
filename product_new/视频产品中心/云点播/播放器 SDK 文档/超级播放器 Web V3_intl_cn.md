@@ -233,8 +233,7 @@ var player = TCPlayer('player-container-id', {
 >在浏览器劫持视频播放的情况下，该功能无法使用。
 
 ### 进度条标记
-通过服务端 API 对视频 [增加打点信息](https://intl.cloud.tencent.com/document/product/266/14190)，可以在播放器中开启显示进度条标记，如下图所示：
-![](https://main.qcloudimg.com/raw/70d880065adce22cb64270f4999558f8.png)
+通过服务端 API 对视频增加打点信息，可以在播放器中开启显示进度条标记。
 
 播放器开启方式：
 ```

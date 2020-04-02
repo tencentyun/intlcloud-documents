@@ -10,7 +10,7 @@ No. Each transcoding task is billed only once. A transcoded video will be billed
 
 ### How do I calculate the accelerated traffic in VOD?
 Accelerated traffic = bitrate * duration * number of viewers. You can use this formula to estimate how much traffic will be needed.
-For example, if a video lasts for one hour at a bitrate of 500 Kbps and is watched by 100 users, the traffic consumed will be about 500 / 8 * 3600 * 100 = 22,500,000 KB = 22.5 GB
+For example, if a video lasts for one hour at a bitrate of 500 Kbps and is watched by 100 users, the traffic consumed will be about 500 / 8 * 3600 * 100 = 22,500,000 KB = 22.5 GB
 
 ### Are transcoding fees and task flow fees the same thing?
 A task flow is to perform multiple template tasks at a time by splicing them. The total fees are the same, but a task flow is more convenient.

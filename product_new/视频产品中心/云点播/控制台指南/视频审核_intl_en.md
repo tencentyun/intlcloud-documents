@@ -17,9 +17,9 @@ The "Video Audit" page displays video audit results, including the results of au
 	- Content display: this page displays the task ID, video filename, source video file URL, intelligent audit result, human verification result, and the details of the intelligent audit result.
 	- Copy video information: you can copy the task ID, video filename, and source video file URL.
 	- Confirm audit result:
-		- Click **Confirm Pass**, which indicates that you confirm that there is no indication of violation in the video and the result of human verification result is "pass".
-		- Click **Confirm Violation**, which indicates that you confirm that there is indication of violation in the video and the result of human verification result is "violation".
-		- Click **Reaudit** to select another audit template and initiate an audit task again. Or, click **Reaudit** in the row of the target video file on the "Video Audit" page.
+		- Click **Confirm Pass**, which indicates that you confirm that there is no indication of violation in the video and the result of human verification result is "Passed".
+		- Click **Confirm Violation**, which indicates that you confirm that there is indication of violation in the video and the result of human verification result is "Violated".
+		- Click **Audit Again** to select another audit template and initiate an audit task again. Or, click **Audit Again** in the row of the target video file on the "Video Audit" page.
 	- Audit details: result of video audit by VOD. The internal player only supports **previewing videos in MP4 format**. The audit result details are displayed in the form of tags, and the audit result and segment confidence are displayed based on the specific audit template to help you easily [adjust the confidence threshold](https://intl.cloud.tencent.com/document/product/266/14059#yz).
 		
 

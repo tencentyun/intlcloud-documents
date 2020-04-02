@@ -35,9 +35,9 @@ There are three ways to initiate a video processing task, namely, initiating thr
 
 Through server APIs, you can directly initiate a task for a video in VOD or edit it and specify the tasks to be executed for the generated new video.
 - [Processing a video](https://intl.cloud.tencent.com/document/product/266/34125)
-- [Processing a video at the specified URL](#APIhttps://intl.cloud.tencent.com/document/product/266/33426)
-- [Processing a video by using a task flow template](#APIhttps://intl.cloud.tencent.com/document/product/266/11030)
-- [Editing a video](#APIhttps://intl.cloud.tencent.com/document/product/266/34783)
+- [Processing a video at the specified URL](https://intl.cloud.tencent.com/document/product/266/34123)
+- [Processing a video by using a task flow template](https://intl.cloud.tencent.com/document/product/266/34124)
+- [Editing a video](https://intl.cloud.tencent.com/document/product/266/34126)
 - Publishing on WeChat
 
 #### Initiating through the console
@@ -69,4 +69,4 @@ Video processing result notifications are a type of "event notifications" in VOD
 
 ## Querying a Task
 
-In addition to perceiving the task execution result through result notifications, you can poll task execution status by task ID as scheduled, which is called "task query". Currently, VOD only provides the [DescribeTasks](#apihttps://intl.cloud.tencent.com/document/product/266/33430) and [DescribeTaskDetail](https://intl.cloud.tencent.com/document/product/266/34129) server APIs for querying task execution status and execution result.
+In addition to perceiving the task execution result through result notifications, you can poll task execution status by task ID as scheduled, which is called "task query". Currently, VOD only provides the DescribeTasks and [DescribeTaskDetail](https://intl.cloud.tencent.com/document/product/266/34129) server APIs for querying task execution status and execution result.

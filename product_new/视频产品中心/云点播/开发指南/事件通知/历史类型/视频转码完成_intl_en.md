@@ -6,7 +6,7 @@
 TranscodeComplete
 
 ## Event Description
-If the application is configured with event notification, after a video is transcoded, the application backend can get an event notification through "normal callback" or "reliable callback". <!-- The content of the event notification is the [`TranscodeTask2017` structure](https://intl.cloud.tencent.com/document/product/266/34187#TranscodeTask2017).-->
+If the application is configured with event notification, after a video is transcoded, the application backend can get an event notification through "normal callback" or "reliable callback".The content of the event notification is the [`TranscodeTask2017` structure](https://intl.cloud.tencent.com/document/product/266/34187#TranscodeTask2017).
 
 
 ## Normal Callback
