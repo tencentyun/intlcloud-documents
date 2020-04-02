@@ -18,8 +18,8 @@ You can grant a sub-account access to a project by following the steps below:
 
 1. Log in to the [project console](https://console.cloud.tencent.com/project), create a project, name it, and submit it. Then, create a resource such as a bucket or CVM instance under it. If you already have a project with storage or computing resources, you can skip this step.
 2. After you create a project and bind a resource to it, enter the [Policy Management](https://console.cloud.tencent.com/cam/policy) page and click **Create Custom Policy** > **Authorize by Tag**. You can select the tag authentication method. Then, select the corresponding project tag and grant the sub-account access to all resources under it.
-   ![](https://main.qcloudimg.com/raw/ef361d9c809478f0ac81e38dac9bbf9f.png)
+   ![](https://main.qcloudimg.com/raw/ab3400287f8e6509382d95842b0b840d.png)
 3. The default policy is to grant the sub-account access to all resources under the project tag. If you want the sub-account to perform only specified operations on certain resources under the tag, you can change the `action` (for specifying operations) and `resource` (for specifying resources) in the policy syntax as instructed in [Syntax Structure](https://intl.cloud.tencent.com/document/product/598/10604) and click **Complete**.
-![](https://main.qcloudimg.com/raw/70c3367cbcca8abc188662982316c5b8.png)
+![](https://main.qcloudimg.com/raw/434821bcb0169d9bcd64da5a2c816646.png)
 4. If you want the sub-account to be able to create buckets, you also need to grant it the `PUT Bucket` permission. On the [Policy Management](https://console.cloud.tencent.com/cam/policy) page, click **Create Custom Policy** > **Create by Policy Generator** and grant the sub-account the corresponding permission.
-![](https://main.qcloudimg.com/raw/1780442f042a88e2c819f62b61882913.jpg)
+![](https://main.qcloudimg.com/raw/4f2b3beb3bad2085fa1480ea9137b62d.png)
