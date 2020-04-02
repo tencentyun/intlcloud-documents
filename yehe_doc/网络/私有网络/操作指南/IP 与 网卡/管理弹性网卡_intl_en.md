@@ -1,0 +1,3 @@
+[An elastic network interface (ENI)](https://intl.cloud.tencent.com/document/product/576) is bound to a CVM in a VPC and can be migrated freely among CVMs. ENIs help configure management networks and create highly reliable network solutions. You can bind multiple ENIs in the same availability zone (AZ) to a CVM based on the CVM specifications to ensure a highly available network. You can also bind multiple private IP addresses to an ENI to deploy multiple IP addresses for a single CVM.
+
+For details about ENI operations, see [ENI - Operation Overview](https://intl.cloud.tencent.com/document/product/576/18544).
