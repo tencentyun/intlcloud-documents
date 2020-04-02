@@ -3,9 +3,9 @@ Adaptive bitrate streaming refers to the process of transcoding a video and muxi
 The adaptive bitrate streaming feature of VOD supports HLS and Dash formats. This feature can achieve the following benefits:
 * The player can dynamically select the most appropriate bitrate for playback based on the current bandwidth, delivering a smooth viewing experience.
 * Mainstream players natively support HLS and Dash with no customization required.
+<span id = "zsy"></span>
+## Adaptive Bitrate Streaming Template
 
-## <span id = "zsy"></span>
-Adaptive Bitrate Streaming Template
 
 The adaptive bitrate streaming parameters can specify "video transcoding parameter" and "audio transcoding parameter" of each substream. VOD uses an adaptive bitrate streaming template to represent the set of parameters as shown below:
 
