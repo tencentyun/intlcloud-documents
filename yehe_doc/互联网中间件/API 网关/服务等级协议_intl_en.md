@@ -18,7 +18,7 @@ If all your requests to access API Gateway Service within a territory within one
 #### 1.6 Total Time within a Service Month Calculated in Minutes
 Total Time within a Service Month Calculated in Minutes = the number of days within a Service Month × 24 (hours) × 60 (minutes)
 
-## 2.Service Availability
+## 2. Service Availability
 #### 2.1 Calculation of Service Availability
 Service Availability = (1 – Service Downtime within a Service Month Calculated in Minutes / Total Time within a Service Month Calculated in Minutes) × 100%
 #### 2.2  Standard of Service Availability
