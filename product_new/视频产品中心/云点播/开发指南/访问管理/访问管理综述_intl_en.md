@@ -1,7 +1,7 @@
-VOD has been connected to Tencent Cloud [Cloud Access Management (CAM)](/document/product/598). You can grant specified VOD permissions to sub-accounts as needed. The VOD access control feature can be used directly once the VOD service is activated.
+VOD has been connected to Tencent Cloud [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598). You can grant specified VOD permissions to sub-accounts as needed. The VOD access control feature can be used directly once the VOD service is activated.
 This document assumes that you already have some knowledge of Tencent Cloud CAM and VOD's subapplication system. The main concepts involved in this document include:
 
-- CAM: [user type](https://intl.cloud.tencent.com/document/product/598/32633), [API key](https://intl.cloud.tencent.com/document/product/598/32675), [policy](/document/product/598/10601), and [policy syntax](https://intl.cloud.tencent.com/document/product/598/10603)
+- CAM: [user type](https://intl.cloud.tencent.com/document/product/598/32633), [API key](https://intl.cloud.tencent.com/document/product/598/32675), [policy](https://intl.cloud.tencent.com/document/product/598/10601), and [policy syntax](https://intl.cloud.tencent.com/document/product/598/10603)
 - VOD: [subapplication](https://intl.cloud.tencent.com/document/product/266/33987)
 
 ## Use Cases

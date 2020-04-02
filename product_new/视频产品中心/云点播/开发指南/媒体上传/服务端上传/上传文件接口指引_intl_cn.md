@@ -8,7 +8,7 @@
 2. API 在服务端的上传步骤请参见 [服务端上传综述](https://intl.cloud.tencent.com/document/product/266/33910)。
 
 ## SDK 方式
-建议使用 [封装的 SDK](/document/product/436/6474) 进行 API 的调用。
+建议使用 [封装的 SDK](https://intl.cloud.tencent.com/document/product/436/6474) 进行 API 的调用。
 
 ## API 方式
 

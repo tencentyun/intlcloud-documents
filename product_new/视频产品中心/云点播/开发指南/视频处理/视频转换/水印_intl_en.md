@@ -21,7 +21,7 @@ The target specification of a watermark is subject to parameters such as waterma
 | FontColor    | Color of a text watermark, e.g., 0xRRGGBB.   |
 | FontAlpha  | Transparency of text watermark. Value range: 0–100%. |
 
-You can use the console (for detailed directions, please see [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059#.E6.B0.B4.E5.8D.B0.E6.A8.A1.E6.9D.BF)) or call a [server API](#APIhttps://intl.cloud.tencent.com/document/product/266/33772) to create and manage custom watermarking templates.
+You can use the console (for detailed directions, please see [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059#.E6.B0.B4.E5.8D.B0.E6.A8.A1.E6.9D.BF)) or call a [server API](https://intl.cloud.tencent.com/document/product/266/34163) to create and manage custom watermarking templates.
 
 ## Task Initiation
 
