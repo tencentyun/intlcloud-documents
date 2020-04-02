@@ -56,10 +56,10 @@ Specifically, when you try to play back a video, you need to enter an 8-characte
 ### What are blacklist/whitelist?
 
 The blacklist/whitelist can be used to allow or deny the requests for accessing videos published through player code from particular webpages.
-These lists are effective to videos published through player code. You can enable this feature globally and specify a blacklist or a whitelist. Each list can contain up to 10 URLs and works by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
+These lists are effective to videos published through player code. You can enable this feature globally and specify a blacklist or a whitelist. Each list can contain up to 10 URLs by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
 
 ### Can I add ads to videos published through an application player?
-Adding ads is currently not supported. We will make this feature available as soon as possible.
+Adding ads is currently not supported. We will support this feature as soon as possible.
 
 
 

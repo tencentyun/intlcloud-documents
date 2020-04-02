@@ -1,6 +1,6 @@
 ### 上传文件需要什么操作权限？
 
-云点播的上传方式有 [服务端上传](https://intl.cloud.tencent.com/document/product/266/33912)、[客户端上传](https://intl.cloud.tencent.com/document/product/266/33921)、<!--API [拉取上传](https://intl.cloud.tencent.com/document/product/266/34118) --> 等方式，各自涉及的权限如下：
+云点播的上传方式有 [服务端上传](https://intl.cloud.tencent.com/document/product/266/33912)、[客户端上传](https://intl.cloud.tencent.com/document/product/266/33921)、 [拉取上传](https://intl.cloud.tencent.com/document/product/266/34118)  等方式，各自涉及的权限如下：
 
 
 | 上传方式   | 资源权限     | 操作权限                                                     | 备注               |

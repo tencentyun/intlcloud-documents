@@ -21,7 +21,7 @@
 | 字体颜色（FontColor）    | 文字水印中文字的颜色（0xRRGGBB）。                           |
 | 文字透明度（FontAlpha）  | 文字水印中文字的透明度（0 - 100%）。                         |
 
-您可以通过控制台（具体操作请参见 [模板设置](https://intl.cloud.tencent.com/document/product/266/14059#.E6.B0.B4.E5.8D.B0.E6.A8.A1.E6.9D.BF)）或调用 [服务端 API](#APIhttps://intl.cloud.tencent.com/document/product/266/33772) 创建和管理自定义水印模板。
+您可以通过控制台（具体操作请参见 [模板设置](https://intl.cloud.tencent.com/document/product/266/14059#.E6.B0.B4.E5.8D.B0.E6.A8.A1.E6.9D.BF)）或调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34163) 创建和管理自定义水印模板。
 
 ## 任务发起
 

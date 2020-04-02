@@ -8,7 +8,7 @@ VOD comes with a complete [hotlink protection](https://intl.cloud.tencent.com/do
 
 ## Adaptive Bitrate Streaming
 
-When videos with a high bitrate are played back in a poor network environment, lags may occur. HLS and Dash are two commonly used adaptive bitstream formats that cover video streams with various resolutions and bitrates, allowing the players to dynamically switch to appropriate video streams based on the network bandwidth.
+When videos with a high bitrate are played back in a poor network environment, lags may occur. HLS and Dash are two commonly used adaptive bitstream formats that cover video streams with various resolutions and bitrates, allowing the players to dynamically switch to appropriate video streams based on the network bandwidth.
 
 VOD has an [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) feature that helps you transcode videos and pack them into HLS and Dash formats.
 

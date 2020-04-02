@@ -5,7 +5,7 @@ Video upload from server refers to uploading videos to the VOD platform by the a
 
 #### 1. Activate the service
 
-Activate VOD. <!--doc For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/266/2839).-->
+Activate VOD. 
 
 #### 2. Get TencentCloud API key
  
@@ -32,11 +32,10 @@ To facilitate the upload feature in your development environment, VOD provides S
 
 If the upload SDK provided by VOD does not apply to the programming language used by your application backend, the application backend needs to call VOD server APIs for video upload (this method is more complicated and not recommended). The business flow of API-based upload is as follows:
 ![](https://main.qcloudimg.com/raw/005ec15acf74e0a428e8d328ffd2da2f.png)
-API-based upload requires you to implement steps such as applying for upload and uploading file on your own, which is not so convenient as SDK-based upload. Plus, you need to develop multipart upload logic for uploading large files. 
-<!-- api For more information, please see:
+API-based upload requires you to implement steps such as applying for upload and uploading file on your own, which is not so convenient as SDK-based upload. Plus, you need to develop multipart upload logic for uploading large files. For more information, please see:
 - [Server API - ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120)
-- [Server APIs - Uploading File](/document/product/266/31784)
-- [Server API - CommitUpload](https://intl.cloud.tencent.com/document/product/266/34119)-->
+- [Server API - Uploading File](https://intl.cloud.tencent.com/document/product/266/33913)
+- [Server API - CommitUpload](https://intl.cloud.tencent.com/document/product/266/34119)
 #### Advanced features
 
 - **Specify a task flow during upload**

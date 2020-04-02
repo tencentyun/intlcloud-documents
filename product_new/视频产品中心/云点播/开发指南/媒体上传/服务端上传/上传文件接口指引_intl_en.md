@@ -8,7 +8,7 @@
 2. For how to upload from a client using an API, please see [Overview of Upload from Client](https://intl.cloud.tencent.com/document/product/266/33910).
 
 ## Via SDK
-It is recommended to use the [encapsulated SDK](/document/product/436/6474) to call the API.
+It is recommended to use the [encapsulated SDK](https://intl.cloud.tencent.com/document/product/436/6474) to call the API.
 
 ## Via API
 

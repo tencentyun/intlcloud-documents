@@ -7,7 +7,7 @@ VOD provides a **subapplication** feature to enable you to isolate resources in 
 Below are some typical use cases for VOD subapplication:
 
 - **Multi-department/multi-business isolation**: a company intends to develop its own products based on Tencent Cloud. Department A plans to use VOD to develop a UGSV application, and department B a movie and television website. These two VOD businesses need to be isolated from each other. However, out of financial considerations, the company cannot create an independent Tencent Cloud account for each department. In this case, the subapplication feature of VOD can be used to assign a subapplication to each department.
-- **Separation between production and test environments**: if you want to test some VOD features (e.g., modifying the method of [event notification](/document/product/266/33779) or enabling [hotlink protection](https://intl.cloud.tencent.com/document/product/266/33984)) without affecting the operations of the production environment, you can create two subapplications, one for the production environment and one for the test environment. New features can be tested in the test environment first and then made available in the production environment after successful validation.
+- **Separation between production and test environments**: if you want to test some VOD features (e.g., modifying the method of [event notification](https://intl.cloud.tencent.com/document/product/266/33948) or enabling [hotlink protection](https://intl.cloud.tencent.com/document/product/266/33984)) without affecting the operations of the production environment, you can create two subapplications, one for the production environment and one for the test environment. New features can be tested in the test environment first and then made available in the production environment after successful validation.
 
 ### Role definition and ID
 Roles in the VOD subapplication system include **admin**, **primary application**, and **subapplication**. Their definitions are as shown below.
@@ -65,10 +65,10 @@ Under the admin role, the left sidebar displays the following entries: **Service
 ### Subapplication
 Under the subapplication role, usage of the VOD Console is basically the same as that before the subapplication feature is enabled, and you can view and manipulate the subapplication's VOD resources. The main difference lies in that the subapplication itself has no separate billing configuration.
 
-<!--api
+
 ## Server API Instructions
-After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using [VOD Server APIs](https://intl.cloud.tencent.com/document/product/266/31752).
--->
+After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using VOD Server APIs.
+
 <span id = "p2"></span>
 ### Specifying a subapplication in a server API
 
@@ -76,7 +76,7 @@ VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.te
 
 <!--api
 ### Specifying a subapplication in server API 2017
-[Server API 2017](https://intl.cloud.tencent.com/document/product/266/10688) also supports subapplications. When using it, you need to add the `SubAppId` parameter (case-sensitive) to the request. This parameter is at the same level as [common request parameters](/document/api/213/6976) of server API 2017, and its value is the subapplication ID. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
+[Server API 2017](https://intl.cloud.tencent.com/document/product/266/10688) also supports subapplications. When using it, you need to add the `SubAppId` parameter (case-sensitive) to the request. This parameter is at the same level as [common request parameters](https://intl.cloud.tencent.com/document/api/213/6976) of server API 2017, and its value is the subapplication ID. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 -->
 >
 >- Server API 2017 documentation does not disclose the `SubAppId` parameter, which will not affect the use of it though.
@@ -119,13 +119,13 @@ VOD has been connected to CAM and supports authorization at subapplication level
 No. The subapplication system is designed with compatibility in mind. If the subapplication ID is not specified, all server APIs will manipulate the primary application by default.
 
 #### Will fees be charged for enabling the subapplication feature?
-The subapplication feature itself is free of charge; however, resources consumed by each subapplication will be billed under the VOD account according to the VOD [billing logic](/document/product/266/2838).
+The subapplication feature itself is free of charge; however, resources consumed by each subapplication will be billed under the VOD account according to the VOD billing logic.
 
 #### My company use the subapplication feature to implement business isolation. How can the internal settlement/cost allocation be implemented for each business?
 As described in [Limits](#p4), VOD only generates one aggregated bill for the entire account. If you have multiple businesses that require cost allocation, you can define and calculate the allocated costs based on the subapplication-level statistics provided by VOD.
 
 #### What will happen to a subapplication if my VOD service is suspended?
-If your VOD service is [suspended due to arrears](/document/product/266/14668), all subapplications under your account will be disabled.
+If your VOD service is suspended due to arrears, all subapplications under your account will be disabled.
 
 #### Can I migrate videos from one subapplication to another?
 Resources of different subapplications are isolated, so resources of one subapplication cannot be migrated to another.

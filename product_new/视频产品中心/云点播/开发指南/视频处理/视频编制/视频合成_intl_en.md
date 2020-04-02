@@ -1,7 +1,7 @@
 Video composing is an offline task that performs a series of complicated operations on a video in VOD such as clipping, splicing, overlaying, and flipping. It can achieve the following effects:
 
 * **Rotation**: rotates videos or images by certain degrees or in a certain direction.
-* **Audio control**: turns up/down volume in videos/audios or mutes videos.
+**Audio control**: turns up/down sound volume in videos/audios or mutes videos.
 * **Overlaying**: overlays videos/images in sequence to achieve effects such as picture-in-picture.
 * **Audio mixing**: mixes the sound in videos/audios.
 * **Audio extraction**: extracts sound from videos (without retaining the image).
@@ -13,7 +13,7 @@ The container format of the media file after composing is MP4 (video) or MP3 (au
 
 ## Task Initiation
 
-You can initiate a video composing task by calling a [server API](#https://intl.cloud.tencent.com/document/product/266/35286). The return result of the API contains the task ID, which is used to associate with the corresponding task result when [getting result](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96).
+You can initiate a video composing task by calling a [server API](https://intl.cloud.tencent.com/document/product/266/34127). The return result of the API contains the task ID, which is used to associate with the corresponding task result when [getting result](#.E7.BB.93.E6.9E.9C.E8.8E.B7.E5.8F.96).
 
 ## Getting Result
 

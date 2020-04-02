@@ -138,7 +138,7 @@ In the example below, we will create a custom policy, which allows all actions t
 ### Using server API
 
 For most developers, performing permission management operations in the console can meet their business needs. However, if you need to automate and systematize your permission management capabilities, you can use server APIs.
-The server APIs related to policies belongs to CAM. For more information, please see the [CAM documentation](https://intl.cloud.tencent.com/document/product/598). Only a few main APIs are listed below:
+The server APIs related to policies belong to CAM. For more information, please see the [CAM documentation](https://intl.cloud.tencent.com/document/product/598). Only a few main APIs are listed below:
 
 - [CreatePolicy](https://intl.cloud.tencent.com/document/product/598/32248)
 - [DeletePolicy](https://intl.cloud.tencent.com/document/product/598/32247)

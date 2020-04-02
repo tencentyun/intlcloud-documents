@@ -28,10 +28,10 @@ No. The resource granularity of VOD access control is subapplication.
 The possible reasons of conflicts are as follows:
 
 - A custom policy contains multiple statements where there are conflicting descriptions (for example, one statement allows access to a resource, but another one denies such access).
-- A subuser is bound to multiple policies where there are conflicting descriptions.
+- A sub-user is bound to multiple policies where there are conflicting descriptions.
 
 As VOD permission management is based on CAM, VOD permissions are determined in accordance with the policy [judgment logic](https://intl.cloud.tencent.com/document/product/598/10605) of CAM.
 
 ### Does VOD support cross-account resource access?
 
-Cross-account resource access refers to that root account A grants all or some of its VOD permissions to root account B (or its subaccounts), that is, the grantor and grantee are two independent Tencent Cloud accounts. VOD **does not support** cross-account resource access, i.e., a Tencent Cloud account can only grant VOD permissions to its own subaccounts.
+Cross-account resource access refers to that root account A grants all or some of its VOD permissions to root account B (or its sub-accounts), that is, the grantor and grantee are two independent Tencent Cloud accounts. VOD **does not support** cross-account resource access, i.e., a Tencent Cloud account can only grant VOD permissions to its own sub-accounts.
