@@ -31,6 +31,8 @@ If the following command output is displayed, Agent-related processes have start
 1. After [logging in to a Windows instance](https://intl.cloud.tencent.com/document/product/213/5435), copy the download address `http://update2.agent.tencentyun.com/update/windows-stargate-installer.exe` and open it in a browser to download `windows-stargate-installer.exe`.
 2. Run the installer to automatically install Agent.
 The following will show if the installation is successful.
+![](https://main.qcloudimg.com/raw/4de896a6b4d5d2bf2e4e5bd3aa48d0a8.png)
+![](https://main.qcloudimg.com/raw/cef9391ecb0cd37bf7d2fce08675812c.png)
 
 ## FAQs
 - If you can't download the Agent installer or encounter other problems, please see [CVM Agent](https://intl.cloud.tencent.com/document/product/248/2259).
