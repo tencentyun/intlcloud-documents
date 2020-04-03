@@ -1,4 +1,4 @@
-## Feature Description
+## Feature
 Software configuration enables you to customize configurations of components such as HDFS, YARN, and Hive when creating a cluster.
 ## Custom Software Configuration
 Software programs such as Hadoop and Hive have many configuration items. By using the software configuration feature, you can customize component parameters when creating a cluster. During the configuration, you need to provide the corresponding JSON files as required. You can customize the files or generate them by exporting software configuration parameters of an existing cluster for quick cluster creation. For more information on how to export software configuration parameters, please see [Exporting Software Configuration](https://intl.cloud.tencent.com/document/product/1026/34522).
@@ -42,7 +42,7 @@ Hive: hive-site.xml, hive-env.sh, hive-log4j2.properties
 ]
 ```
 
-**Configuration parameter description:**
+**Configuration parameter descriptions:**
 - serviceName: component name, which must be in uppercase.
 - classification: filename, which must be a full name with file extension.
 - serviceVersion: component version, which must be the same as the corresponding component version in the EMR product version.
@@ -128,8 +128,9 @@ Taking the assumption as an example, import the JSON file (the requirements for 
 ### Configuration after purchase
 
 EMR allows you to use the [configuration distribution](https://intl.cloud.tencent.com/document/product/1026/31109) feature to access external clusters after creating an EMR cluster.
-Below is the assumption:
-Assume that the `nameservcie` of the cluster is `HDFS80238` (if it is not a high-availability cluster, the `nameservcie` will usually be `masterIp:rpcport`, such as 172.21.0.11:4007).
+
+**Below is the assumption:**
+Assume that the `nameservice` of the cluster is `HDFS80238` (if it is not a high-availability cluster, the `nameservice` will usually be `masterIp:rpcport`, such as 172.21.0.11:4007).
 The `nameservice` of the external cluster to be accessed is `HDFS8088`, and the access method is as follows:
 
 ```
@@ -174,7 +175,7 @@ If the information above is in the EMR cluster, you can view it on the managemen
 </tr>
 <tr>
 <td> dfs.ha.namenodes.HDFS8088</td>
-<td>nn1,nn2 </td>
+<td>nn1，nn2 </td>
 </tr>
 <tr>
 <td>fs.namenode.http-address.HDFS8088.nn1</td>
