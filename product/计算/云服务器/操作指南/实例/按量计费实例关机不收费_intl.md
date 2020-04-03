@@ -8,7 +8,7 @@ When users enable the  "No Charges When Shut down" feature, they will not need t
 3. Shut down several instances: Select desired instances and click **Shut down** on the top of the list. Check **No Charges when Shut down**. **Does not support No Charges when Shut down** will be displayed if the instance is not eligible for this feature.
 
 ## Enabling via Cloud API 
-To enable this feature via API, please add the following parameter while shutting down instance using StopInstances API. For details, please see [Stop Instances](https://intl.cloud.tencent.com/document/product/213/15743). 
+To enable this feature via API, please add the following parameter while shutting down instance using StopInstances API. For details, please see [Stop Instances](https://intl.cloud.tencent.com/document/product/213/33235). 
 
 | Parameter Name    | Required | Type   | Description                                                         |
 | ----------- | ---- | ------ | ------------------------------------------------------------ |

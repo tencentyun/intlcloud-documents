@@ -5,7 +5,7 @@
 
 ### 扩容集群
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在左侧栏选择【云硬件管理】。
-![](https://main.qcloudimg.com/raw/3c23f9701ea99b6dd367580d7ad3c488.png)
+![](https://main.qcloudimg.com/raw/15c18b6f04d6fdd37fcdba2cf89b5dbf.png)
 2. 选择需要扩容的 Core 节点或 Task 节点，单击【扩容】。
  - 按量计费集群，只能扩容按量计费的节点。
 >扩容 Router 节点：Router 节点可以当提交机使用，可以在 Router 节点上向集群正常提交计算 Yarn、Hive、Spark 等计算任务，因此建议选择较大内存的机型，最好不低于 Master 规格。
@@ -17,7 +17,7 @@ b. 扩容时为节点默认规格，如需调整，请到节点规格调整。
  
 >Core 节点会存储数据，扩容后不建议销毁，以免产生数据安全隐患。
 >
-![](https://main.qcloudimg.com/raw/537a6722f1ca51f38fa37b3d763ecbf7.png)
+![](https://main.qcloudimg.com/raw/f10d928355103effbfa67113f4ef6594.png)
 
 ### 缩容集群
 >节点销毁后，该节点上的数据不会保留，一旦您选择缩容（销毁）节点，即表明您已确认所选节点上的数据可被销毁。
