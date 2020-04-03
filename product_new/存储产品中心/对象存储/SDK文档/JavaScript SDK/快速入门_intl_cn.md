@@ -224,7 +224,7 @@ getAuthorization 的回调参数说明：
 | -------- | ------------------------------------------------------------ | -------- |
 | options  | 获取临时密钥需要的参数对象                                   | Object |
 | - Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   |
-| - Region | 存储桶所在地域，枚举值请参见 [存储桶地域信息](https://intl.intl.cloud.tencent.com/document/product/436/6224) | String   |
+| - Region | 存储桶所在地域，枚举值请参见 [存储桶地域信息](https://intl.cloud.tencent.com/document/product/436/6224) | String   |
 | callback | 临时密钥获取完成后的回传方法                                 | Function |
 
 获取完临时密钥后，callback 回传一个对象，回传对象的属性列表如下：

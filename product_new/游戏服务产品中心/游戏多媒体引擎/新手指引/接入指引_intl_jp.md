@@ -64,23 +64,23 @@ Demo にはTencent Cloudのテスト用アカウントがあるため、機能�
 
 Unityの関連ドキュメント：
  [技術構成ドキュメント](https://intl.cloud.tencent.com/document/product/607/10783)
- [インターフェースドキュメント](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+ [インターフェースドキュメント](https://intl.cloud.tencent.com/document/product/607/15210)
 
 Unreal Engineの関連ドキュメント：
  [技術構成ドキュメント](https://intl.cloud.tencent.com/document/product/607/10783)
- [インターフェースドキュメント](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+ [インターフェースドキュメント](https://intl.cloud.tencent.com/document/product/607/15210)
 
 Cocos2Dの関連ドキュメント：
  [技術構成ドキュメント](https://intl.cloud.tencent.com/document/product/607/10783)
- [インターフェースドキュメント](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+ [インターフェースドキュメント](https://intl.cloud.tencent.com/document/product/607/15210)
 
 Windowsの関連ドキュメント：
  [技術構成ドキュメント](https://intl.cloud.tencent.com/document/product/607/10783)
- [インターフェースドキュメント](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+ [インターフェースドキュメント](https://intl.cloud.tencent.com/document/product/607/15210)
 
 iOSの関連ドキュメント：
  [技術構成ドキュメント](https://intl.cloud.tencent.com/document/product/607/10783)
- [インターフェースドキュメント](https://intl.intl.cloud.tencent.com/document/product/607/15210)
+ [インターフェースドキュメント](https://intl.cloud.tencent.com/document/product/607/15210)
 
 Androidの関連ドキュメント：
  [技術構成ドキュメント](https://intl.cloud.tencent.com/document/product/607/10783)

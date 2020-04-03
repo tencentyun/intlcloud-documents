@@ -11,7 +11,7 @@
 
 
 ### 获取集群 CA 证书<span id="getCA"></span>
-1. 参考 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.intl.cloud.tencent.com/document/product/213/5436)，登录目标集群的 node 节点。
+1. 参考 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)，登录目标集群的 node 节点。
 2. 执行以下命令，查看集群 CA 证书。
 ```
 cat /etc/kubernetes/cluster-ca.crt
@@ -34,7 +34,7 @@ ls -l /var/run/docker.sock
 
 ### 添加 TKE 内网访问地址
 
-1. 参考 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.intl.cloud.tencent.com/document/product/213/5436)，登录 Jenkins Master 节点。
+1. 参考 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)，登录 Jenkins Master 节点。
 2. 执行以下命令，配置访问域名。
 ```
 sudo sed -i '$a 10.x.x.x cls-ixxxelli.ccs.tencent-cloud.com' /etc/hosts
