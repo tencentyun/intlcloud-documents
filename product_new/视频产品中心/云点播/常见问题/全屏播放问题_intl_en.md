@@ -20,7 +20,7 @@ Currently known full screen support is as follows:
 ### How to solve the problem with forced full screen mode after video playback is activated?
 To achieve in-page (non-full screen) playback, the `playsinline` and `webkit-playsinline` attributes need to be added to the video tag, which is done by Tencent Cloud Player by default. iOS 10+ recognizes the `playsinline` attribute, while older iOS versions recognize the `webkit-playsinline` attribute.
 
-Tests show that in-page (inline) playback can be implemented in Safari on iOS. Android recognizes `webkit-playsinline`, but due to the openness of Android, there are many custom browsers for which such attributes may not necessarily take effect. For example, in browsers with TBS kernel (including but not limited to WeChat, Mobile QQ, and QQ Browser), the same-layer player attributes may need to be used to prevent the system from forcing playback in full screen mode (for more information, please see the [Access Document](https://x5.tencent.com/tbs/guide/video.html) and [Uses Guide](https://x5.tencent.com/tbs/guide/web/x5-video.html)).
+Tests show that in-page (inline) playback can be implemented in Safari on iOS. Android recognizes `webkit-playsinline`, but due to the openness of Android, there are many custom browsers for which such attributes may not necessarily take effect. For example, in browsers with TBS kernel (including but not limited to WeChat, Mobile QQ, and QQ Browser), the same-layer player attributes may need to be used to prevent the system from forcing playback in full screen mode.
 
 If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
