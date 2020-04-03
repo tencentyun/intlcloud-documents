@@ -1,0 +1,1 @@
+From January 24, 2020 until the end of the COVID-19 pandemic, TVM is offering online conferences with unlimited duration and a maximum of 300 participants to all users for free. These conferences support screen sharing, AI voice enhancement, and noise reduction to assist with remote work.
