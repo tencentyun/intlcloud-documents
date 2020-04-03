@@ -5,13 +5,13 @@
 
 ### 创建自定义策略语法
 1. 进入 [策略语法](https://console.cloud.tencent.com/cam/policy) 配置页面，单击【新建自定义策略】。
-
+![](https://main.qcloudimg.com/raw/fc7ff2e20322c74b2e8b5728a483255c.png)
 2. 在弹出的对话框，选择【按策略语法创建】。
-
-3. 选择空白模板并单击【下一步】。
-
-4. 填入对应的策略语法。
-
+![](https://main.qcloudimg.com/raw/cda7a1b0ec6256b620bcbd9290fd60fd.png)
+2. 选择空白模板并单击【下一步】。
+![](https://main.qcloudimg.com/raw/9c6bcdc90c02059a5abb67e73a74d739.png)
+3. 填入对应的策略语法。
+![](https://main.qcloudimg.com/raw/0938ab4115dc67b2e952aa1eaa1283cb.png)
 
 ### 关联子账号/协作者并验证
 创建策略完成后，选择关联用户/组。关联完成后，更换浏览器（或主机），通过使用子账号/协作者验证验证是否正常。如果策略语法写作无误，您可以观察到：
