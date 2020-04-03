@@ -7,7 +7,7 @@
 
 ![](https://main.qcloudimg.com/raw/bd3e5bd060565ca74b24a9a898feb13d.png)
 ## 通过云 API 操作
-可使用 StopInstances 接口进行关机，参考文档 [关闭实例](https://cloud.tencent.com/document/product/213/15743)。增加以下参数：
+可使用 StopInstances 接口进行关机，参考文档 [关闭实例](https://intl.cloud.tencent.com/document/product/213/33235)。增加以下参数：
 
 | 参数名称    | 必选 | 类型   | 描述                                                         |
 | ----------- | ---- | ------ | ------------------------------------------------------------ |
