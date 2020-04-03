@@ -24,7 +24,7 @@ Currently, VOD provides the following preset policies:
    - Search for and select the preset policy `QcloudVODFullAccess`.
    - Click **Next**.
 		<img src="https://main.qcloudimg.com/raw/0bd65772428242306300e315537853cd.png" width="704">
-5. Click **Complete** in the "Review Info and Permission" column. After the user is created successfully, download the login link and security credentials as shown below and keep them safe.
+5. Click **Complete** in the "Review Info and Permission" column. After the subuser is created successfully, download the login link and security credentials as shown below and keep them safe.
    ![](https://main.qcloudimg.com/raw/cc223f380730f8dbfe81caa799be2dfc.png)
 <table>
      <tr>
@@ -42,25 +42,25 @@ Currently, VOD provides the following preset policies:
 	 <tr>      
          <td nowrap="nowrap">Username</td>   
 	     <td>Security credential file in CSV format</td>   
-	     <td>Needed for console login</td>   
+	     <td>Required for console login</td>   
 	     <td>Yes</td>
      </tr> 
 	 <tr>      
          <td>Password</td>   
 	     <td>Security credential file in CSV format</td>   
-	     <td >Needed for console login</td>   
+	     <td >Required for console login</td>   
 	     <td >Yes</td>
      </tr> 
 		  <tr>      
          <td>SecretId</td>   
 	     <td>Security credential file in CSV format</td>   
-	     <td >Needed for server API call. For more information, please see<a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</a></td>   
+	     <td >Required for server API call. For more information, please see<a href="https://cloud.tencent.com/document/product/598/37140">Access Key</a></td>   
 	     <td >Yes</td>
      </tr> 
 	     <tr>      
          <td>SecretKey</td>   
 	     <td>Security credential file in CSV format</td>   
-	     <td >Needed for server API call. For more information, please see<a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</td>   
+	     <td >Required for server API call. For more information, please see<a href="https://cloud.tencent.com/document/product/598/37140">Access Key</td>   
 	     <td >Yes</td>
      </tr> 
 </table>
@@ -72,7 +72,7 @@ With the above login link and security credentials, you can use this subuser to 
 
 1. Access the **[User List](https://console.cloud.tencent.com/cam)** in the CAM Console as a [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click the desired subaccount.
    ![](https://main.qcloudimg.com/raw/86a75ce62dde0ba4c061975181186974.png)
-2. Click **Add Policy** in the "Permission" column on the "User Details" page, as shown below (in practice, the information displayed on this page may vary by existing permissions of the subaccount. If the permission of a subaccount is not empty, please click **Associate Policy**).
+2. Click **Add Policy** in the "Permission" column on the "User Details" page, as shown below (in practice, the information displayed on this page may vary by existing permissions of the sub-account. If the permission of a sub-account is not empty, please click **Associate Policy**).
    ![](https://main.qcloudimg.com/raw/e775e39eec0292f31a78d5a2332d6d09.png)
 3. Click **Select Policy from Policy List to Associate**, search for and check the preset policy `QcloudVODFullAccess`, and complete authorization as prompted.
 
