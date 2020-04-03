@@ -3,7 +3,7 @@
 
 
 ## 前提条件
-Tencent Cloudの バックグラウンドでGME関連のサービスに申請しました、詳細については、[SDKアクセスガイド](https://intl.intl.cloud.tencent.com/document/product/607/10782)をご参照ください。
+Tencent Cloudの バックグラウンドでGME関連のサービスに申請しました、詳細については、[SDKアクセスガイド](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。
 
 
 ## 操作手順
@@ -31,7 +31,7 @@ rtmpストリームアドレスを生成するには、次の情報が必要で�
 
 |パラメータ|意味|取得方法|
 |-----|-----|-----|
-| AppID | GMEコンソールによって申請されたAppIDです。 | Tencent Cloudコンソールについて、[SDKアクセスガイド](https://intl.intl.cloud.tencent.com/document/product/607/10782)をご参照ください。|
+| AppID | GMEコンソールによって申請されたAppIDです。 | Tencent Cloudコンソールについて、[SDKアクセスガイド](https://intl.cloud.tencent.com/document/product/607/10782)をご参照ください。|
 |RoomID |このユーザーが聞く必要のあるルームIDです。 |このパラメータは、開発者によってアプリケーションで生成されます。|
 | BizID |Live Video Broadcastingサービスコンソールによって生成された識別コードです。|このパラメータの取得方法について、次の[ステップ1](＃step1)をご参照ください。|
 | StreamKey |Live Video Broadcastingサービスコンソールによって生成されたキーです|このパラメータの取得方法について、次の[ステップ1](＃step1)をご参照ください。|

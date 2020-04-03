@@ -167,4 +167,4 @@ The access domain names of COS use intelligent domain name resolution, so that y
 
 If you deploy a service in Tencent Cloud to access COS, intra-region access requests will be automatically directed to a private network address. Currently cross-region requests do not support private network access and will be resolved to a public network address by default.
 
-For more information on private network and public network access, please see [Creating Request Overview](https://intl.cloud.tencent.com/document/product/436/31315).
+For more information on private network and public network access, please see [Creating Request Overview](https://intl.cloud.tencent.com/document/product/436/30613).
