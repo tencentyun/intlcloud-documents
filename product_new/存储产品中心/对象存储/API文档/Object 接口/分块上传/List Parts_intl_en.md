@@ -51,7 +51,7 @@ A successful query returns **application/xml** data which include the informatio
     <UploadId>14846420620b1f381e5d7b057692e131dd8d72dfa28f2633cfbbe4d0a9e8bd0719933545b0</UploadId>
     <Initiator>
         <ID>1250000000</ID>
-        <DisplyName>1250000000</DisplyName>
+        <DisplayName>1250000000</DisplayName>
     </Initiator>
     <Owner>
         <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>

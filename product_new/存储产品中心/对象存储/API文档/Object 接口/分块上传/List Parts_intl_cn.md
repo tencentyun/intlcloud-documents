@@ -55,7 +55,7 @@ Authorization: Auth String
     </Initiator>
     <Owner>
         <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
-        <DisplyName>100000000001</DisplyName>
+        <DisplayName>100000000001</DisplayName>
     </Owner>
     <PartNumberMarker>0</PartNumberMarker>
     <Part>
