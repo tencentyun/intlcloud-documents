@@ -16,7 +16,7 @@ It allows you to splice a video's playback control parameters into the video URL
 It specifies the expiration time of a video URL. If the requested video URL has expired, the video cannot be played back. In this way, you can set a validity period for the video URL to prevent malicious users from transferring the URL to other websites for long-term use.
 
 #### Viewer quantity control
-It specifies the number of viewers that can access the video URL. Devices that are not in the same private network generally have different public IPs. You can specify how many viewers are allowed to access an URL by limiting the number of IPs allowed for playback on the URL. This helps prevent malicious users from transferring the URL to other websites for unrestricted distribution.
+It specifies the number of viewers that can access the video URL. Devices that are not in the same private network generally have different public IPs. You can specify how many viewers are allowed to access a URL by limiting the number of IPs allowed for playback on the URL. This helps prevent malicious users from transferring the URL to other websites for unrestricted distribution.
 
 #### Video playback duration control
 It specifies the preview duration in a video URL (e.g., the first five minutes of a video) to implement preview for non-paying users.
