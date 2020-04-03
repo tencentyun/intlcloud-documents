@@ -22,18 +22,18 @@ Hue 的 beeswax app 提供了友好方便的 Hive 查询功能，可以选择不
 1. 在 Hue 控制台上方，选择【Query】>【Editor】>【Hive】。
 ![](https://main.qcloudimg.com/raw/bfcd6944a8a8dd70065218885b55f82d.png)
 2. 在语句输入框中输入要执行语句，然后单击【执行】执行语句。
-![](https://main.qcloudimg.com/raw/202878b0b90b42da7317b026e9f2f603.png)
+![](https://main.qcloudimg.com/raw/f0f36e1a049ee72ef5ce79ac7d93574b.png)
 
 ## Hbase 数据查询
 使用 Hbase Browser 可以查询、修改、展示 Hbase 集群中表的数据。
-![](https://main.qcloudimg.com/raw/705ade35d5fe86c27be6aff46235dc02.png)
+![](https://main.qcloudimg.com/raw/23e332d0abd935823a3de21168d08d4f.png)
 
 ## HDFS 文件浏览
 通过 Hue 的 Web 页面可方便查看 HDFS 中的文件和文件夹，并对其进行创建、下载、上传、复制、修改和删除等操作。
 1. 在 Hue 控制台左侧，选择【Browsers】>【Files】进入 HDFS 文件浏览。
-![](https://main.qcloudimg.com/raw/b2e05c0c8f05464f0ef1ffe671be1cc3.png)
+![](https://main.qcloudimg.com/raw/1c544585871ec81d0630632ef33804e2.png)
 2. 进入【File Browser】后，可执行如下图所示的操作。
-![](https://main.qcloudimg.com/raw/0dc7e232a81e8900c06adb277b8eaf93.png)
+![](https://main.qcloudimg.com/raw/0b9ec60bd7643f943aaeb48a465b678d.png)
 
 ## Oozie 任务调度
 1. **准备工作流数据**
@@ -60,7 +60,7 @@ Hue 的任务调度基于工作流，先创建一个包含 Hive script 脚本的
  - 单击【Add】后，还需在 FILES 中指定 hive script 文件。
 ![](https://main.qcloudimg.com/raw/f36e5b22f40b2832f018d0091c8a382c.png)
  - 单击右上角【保存】，然后单击【执行】，运行 workflow。
-![](https://main.qcloudimg.com/raw/418083ee1956ea3d2faea6afcd520834.png)
+![](https://main.qcloudimg.com/raw/3c7f79c50b40772240ed52135ec0b00d.png)
 3. **创建定时调度任务**
 Hue 的定时调度任务是 schedule，类似于 Linux 的 crontab，支持的调度粒度可以到分钟级别。
  - 选择【Query】>【Scheduler】>【Schedule】，创建 Schedule。
@@ -68,9 +68,9 @@ Hue 的定时调度任务是 schedule，类似于 Linux 的 crontab，支持的�
  - 单击【Choose a workflow...】，选择一个创建好的工作流。
 ![](https://main.qcloudimg.com/raw/3e9439fc36547531af9e49462e2880dd.png)
  - 选择需要调度的时间点和时间间隔、时区、调度任务的开始时间和结束时间，然后单击【Save】保存。
-![](https://main.qcloudimg.com/raw/097fcba6a4c5c6e27efe342079beae46.png)
+![](https://main.qcloudimg.com/raw/6dfbaa89d2545c9aa4f8b3d8c1b4fadb.png)
 4. **执行定时调度任务**
  -  单击右上角的【提交】提交调度任务。
-![](https://main.qcloudimg.com/raw/d42cc1d0d4e2cbe3bdfa77065e5bd8c1.png)
+![](https://main.qcloudimg.com/raw/cdcce33e1f79c032028956f27958412d.png)
  - 在 schedulers 的监控页面可以查看任务调度情况。
-![](https://main.qcloudimg.com/raw/03eca980d7e0cf72b81af89da25f09f2.png)
+![](https://main.qcloudimg.com/raw/29da2913272ddce9d3b534ee7d026b22.png)
