@@ -1,8 +1,6 @@
 **Where can I download the TVM client?**
 
-- To download the PC client, see [PC Client Registration and Login](https://cloud.tencent.com/document/product/1095/41295).
-
-- To download the mobile client, see [Mobile Client Registration and Login](https://cloud.tencent.com/document/product/1095/41289).
+- To download the TVM client, see [Installing VooV Meeting](https://intl.cloud.tencent.com/document/product/1054/35553).
 
 **What are the differences between instant video conferences and scheduled video conferences?**
 
