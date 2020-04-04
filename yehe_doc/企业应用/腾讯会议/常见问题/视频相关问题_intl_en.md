@@ -38,6 +38,6 @@ TVM’s low-light video enhancement feature includes a low-light detection capab
 
 **How do I record videos in TVM?**
 
-TVM currently do not support video recording. This feature is under development. For more information or to download TVM for a free trial, go to the [official TVM website](https://voovmeeting.com/).
+TVM currently does not support video recording. This feature is under development. For more information or to download TVM for a free trial, go to the [official TVM website](https://voovmeeting.com/).
 
  
