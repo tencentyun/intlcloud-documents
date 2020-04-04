@@ -26,7 +26,7 @@ The online meeting you want to join has already ended. Contact the host to find 
 
 | Error Code | Description | Cause | Recommended Solution |
 | ------ | ------------------------ | -------------------------- | ------------------------------------ |
-| –1 | Failed to connect to all media proxies. | The client version is too old. | Upgrade the client. |
+| –1 | Failed to connect to all media proxies. | The client version is outdated. | Upgrade the client. |
 | –161 | Failed to connect to all media proxies. | Connection with the streaming media server failed. | Check the firewall settings and lower the firewall requirements. |
 | –153 | Exception occurred. Join the online meeting again. | You failed to join the online meeting. | Submit a ticket for help. |
 
