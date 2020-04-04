@@ -1,4 +1,4 @@
-### Why do I get a prompt “You have already joined this meeting on another device. By proceeding, you will leave the meeting on the first device.”?
+**Why do I get a prompt “You have already joined this meeting on another device. By proceeding, you will leave the meeting on the first device.”?**
 
 This is because you have already logged in to TVM and joined the online meeting on another device. If you continue to join the online meeting on this device, you will be removed from the online meeting on the other device.
 
