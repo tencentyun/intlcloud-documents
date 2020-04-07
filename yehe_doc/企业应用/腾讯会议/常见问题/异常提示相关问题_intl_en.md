@@ -12,7 +12,7 @@ The online meeting you want to join has ended.
 
 2. If this error message is displayed again after you re-enter the meeting ID, confirm with the host whether they are using TVM.
 
-**Why does TVM display “Meeting ID has expired?**
+**Why does TVM display “Meeting has expired?**
 
 The online meeting you want to join has already ended. Contact the host to find out what you missed.
 
