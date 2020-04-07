@@ -253,7 +253,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 | 参数名称            | 设置方法                                                  | 描述                                                         | 类型           |
 | ------------------- | --------------------------------------------------------- | ------------------------------------------------------------ | -------------- |
 | bucket              | 构造方法                                                  | 存储桶名称，格式：BucketName-APPID                           | string         |
-| key                 | 构造方法或 SetCosPath                                    | 存储于 COS 上 Object 的 [对象键](https://intl.intl.cloud.tencent.com/document/product/436/13324) | string         |
+| key                 | 构造方法或 SetCosPath                                    | 存储于 COS 上 Object 的 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | string         |
 | cosAcl              | SetCosAcl                                                 | 设置存储桶的 ACL 权限                                          | string         |
 | grantAccount        | SetXCosGrantRead 或 SetXCosGrantWrite 或 SetXCosReadWrite | 授予用户读写权限                                             | GrantAccount   |
 | signStartTimeSecond | SetSign                                                   | 签名有效期起始时间（Unix 时间戳），例如1557902800                                           | long           |
@@ -334,7 +334,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 | 参数名称            | 设置方法               | 描述                                                         | 类型           |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
 | bucket              | 构造方法               | 存储桶名称，格式：BucketName-APPID                           | string         |
-| key                 | 构造方法或 SetCosPath | 存储于 COS 上 Object 的 [对象键](https://intl.intl.cloud.tencent.com/document/product/436/13324) | string         |
+| key                 | 构造方法或 SetCosPath | 存储于 COS 上 Object 的 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | string         |
 | signStartTimeSecond | SetSign                | 签名有效期起始时间（Unix 时间戳），例如1557902800                                           | long           |
 | durationSecond      | SetSign                | 签名有效期时长（单位为秒），例如签名有效时期为1分钟：60                                               | long           |
 | headerKeys          | SetSign                | 签名的请求头                                          | `List<string>` |

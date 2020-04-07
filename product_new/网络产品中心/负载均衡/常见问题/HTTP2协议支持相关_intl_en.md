@@ -23,4 +23,4 @@ During the handshake process of HTTPS, the protocol version will be negotiated. 
 > 2. The HTTP1.X protocol is still used between CLB and real server.
 
 ### Which regions support HTTP/2?
-HTTP/2 is supported in regions such as Beijing, Shanghai, Guangzhou, Hong Kong (China), Silicon Valley, and Frankfurt.
+HTTP/2 is supported in regions such as Beijing, Shanghai, Guangzhou, Hong Kong (China), Silicon Valley, Frankfurt and Mumbai.

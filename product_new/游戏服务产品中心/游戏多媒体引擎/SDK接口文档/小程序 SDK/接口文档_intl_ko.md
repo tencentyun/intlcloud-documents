@@ -3,7 +3,7 @@
 
 
 ## 전제조건
-Tencent Cloud 백그라운드에서 GME 관련 서비스를 신청하였을 경우, 관련 상세내역은 [SDK 액세스 매뉴얼](https://intl.intl.cloud.tencent.com/document/product/607/10782)을 참조하십시오.
+Tencent Cloud 백그라운드에서 GME 관련 서비스를 신청하였을 경우, 관련 상세내역은 [SDK 액세스 매뉴얼](https://intl.cloud.tencent.com/document/product/607/10782)을 참조하십시오.
 
 
 ## 작업 프로세스
@@ -27,7 +27,7 @@ rtmp 스트리밍 주소를 생성하려면 다음 메시지가 필요합니다:
 
 |파라미터|의미|획득방식|
 |-----|-----|-----|
-|AppID|GME 콘솔에서 신청한 AppID. |Tencent Cloud 콘솔, [SDK 액세스 매뉴얼](https://intl.intl.cloud.tencent.com/document/product/607/10782)을 참조하십시오.|
+|AppID|GME 콘솔에서 신청한 AppID. |Tencent Cloud 콘솔, [SDK 액세스 매뉴얼](https://intl.cloud.tencent.com/document/product/607/10782)을 참조하십시오.|
 |RoomID|이 유저가 청취해야 할 방 ID.|이 파라미터는 개발자가 앱에서 생성합니다.|
 |BizID|LVB 콘솔에서 생성한 표기 코드 |이 파라미터를 획득하는 방식은 하기[스텝1](#step1)을 참조하십시오.|
 |StreamKey|LVB 콘솔에서 생성한 보안키|이 파라미터를 획득하는 방식은 하기 [스텝1](#step1)을 참조하십시오.|
