@@ -30,7 +30,8 @@
 ![](https://main.qcloudimg.com/raw/4490cc827131fed433b81579099ecded.png)
 
 ## 附录
-### 用户策略更新说明<spoan id="Strategy"></span>
+<spoan id="Strategy"></span>
+### 用户策略更新说明
 SCF 于2020年4月完善了预设策略权限，针对预设策略 `QcloudSCFFullAccess` 和 `QcloudSCFReadOnlyAccess` 完成修改，针对配置角色 `SCF_QcsRole` 添加了 `QcloudAccessForScfRole` 策略。详情如下：
 - 预设策略 QcloudSCFFullAccess 当前权限如下：
 ``` json
