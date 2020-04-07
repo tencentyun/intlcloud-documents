@@ -4,7 +4,7 @@
 |错误码名称|错误码值|原因及建议方案|
 |--------|-------|------------|
 |AV_ERR_3DVOICE_ERR_NOT_INITED       |7003|需要先调用 InitSpatializer 接口|
-|AV_ERR_NET_REQUEST_FALLED |7004|网络请求失败，一般由网络状态不稳定引起，建议检查网络状态|
+|AV_ERR_NET_REQUEST_FALLED |7004|网络请求失败，一般由网络状态不稳定引起，可参考 [实时语音房间问题](https://intl.cloud.tencent.com/zh/document/product/607/30257) 进行排查|
 |AV_ERR_CHARGE_OVERDUE     |7005|账号欠费导致失败，需要在腾讯云控制台上查看是否欠费|
 |AV_ERR_AUTH_FIALD         |7006|鉴权失败 有以下几个原因：1、AppID 不存在或者错误，2、authbuff 鉴权错误，3、鉴权过期|
 |AV_ERR_IN_OTHER_ROOM      |7007|已经在其它房间|
