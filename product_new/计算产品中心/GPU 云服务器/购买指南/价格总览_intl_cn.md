@@ -42,7 +42,7 @@ GPU 云服务器提供一种实例类型：计算型GN8 ， 用户可通过了�
 - GN8.14XLARGE448 单机峰值计算能力突破 96 TFLOPS 单精度浮点运算，376 TOPS 整数运算能力（INT8）。
 
 ## 欠费说明
-GPU 实例欠费，与云服务器 CVM欠费处理方式一致，具体参考云服务器 CVM [欠费说明](/document/product/213/2181)。
+GPU 实例欠费，与云服务器 CVM欠费处理方式一致，具体参考云服务器 CVM [欠费说明](https://intl.cloud.tencent.com/zh/document/product/213/2181)。
 
 ## 注意
 以上价格为标准刊例价，由降价活动或其他因素导致的价格变化以购买页价格为准。
