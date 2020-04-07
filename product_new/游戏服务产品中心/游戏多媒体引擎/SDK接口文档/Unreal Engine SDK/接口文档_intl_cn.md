@@ -931,13 +931,13 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
 
 
 ## 离线语音语音转文字流程图
-![](https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png)
+<img src="https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png" width="70%">
 
 
 
 ## 离线语音
 未初始化前，SDK 处于未初始化阶段，需要通过接口 Init 初始化 SDK，才可以使用实时语音及离线语音。
-使用问题可参考[离线语音相关问题](https://intl.cloud.tencent.com/document/product/607/30258)。
+使用问题可参考 [离线语音相关问题](https://intl.cloud.tencent.com/document/product/607/30258)。
 
 
 ### 初始化相关接口

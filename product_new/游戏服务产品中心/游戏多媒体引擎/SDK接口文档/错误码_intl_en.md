@@ -4,7 +4,7 @@ Welcome to the GME SDK. This document describes error codes that may be reported
 | Error Code Name | Error Code Value | Cause and Suggested Solution |
 |--------|-------|------------|
 |AV_ERR_3DVOICE_ERR_NOT_INITED       |7003| The `InitSpatializer` API needs to be called first. |
-|AV_ERR_NET_REQUEST_FALLED |7004| Network request failed. This is generally caused by unstable network. Please check the network status. |
+|AV_ERR_NET_REQUEST_FALLED |7004| Network request failed. This is generally caused by unstable network. Please see [Voice Chat Room Issues](https://intl.cloud.tencent.com/zh/document/product/607/30257) for troubleshooting. |
 |AV_ERR_CHARGE_OVERDUE     |7005| Operation failed due to account arrears. You need to check whether your account is in arrears in the Tencent Cloud Console. |
 |AV_ERR_AUTH_FIALD         |7006| Authentication failed. Possible causes: 1. The `AppID` does not exist or is incorrect; 2. An error occurred while authenticating the `authbuff`; 3. Authentication expired. |
 |AV_ERR_IN_OTHER_ROOM      |7007| Already in another room. |
