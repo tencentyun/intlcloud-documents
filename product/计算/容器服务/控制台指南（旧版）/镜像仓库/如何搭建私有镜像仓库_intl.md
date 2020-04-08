@@ -290,7 +290,7 @@ To free disk space, execute the following command to delete "blob". Note that **
         addr: :5000
         secret: yoursecret
     
-### docker-comose.yaml
+### docker-compose.yaml
     version: '2'
     services:
       registry:
