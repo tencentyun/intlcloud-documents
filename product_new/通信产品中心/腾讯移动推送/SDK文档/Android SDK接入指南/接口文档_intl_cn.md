@@ -86,7 +86,7 @@ void appendAccount(Context context, final String account)
 ```
 
 >
-- 这里的账号可以是邮箱、手机号、用户名等任意类别的业务账号。
+- 这里的账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号。
 - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://tpns.gitbook.io/tpns/pushapi#push-api-ke-xuan-can-shu) 文档中 account_push_type 参数设置。
 
 
@@ -223,7 +223,7 @@ XGPushManager.unregisterPush(this);
 
 可通过重载 XGPushBaseReceiver的onUnregisterResult 方法获取。
 
-> ?
+>
 - 反注册操作切勿过于频繁，可能会造成后台同步延时。
 - 切换账号无需反注册，多次注册自动会以最后一次为准。
 
@@ -255,7 +255,7 @@ public void onUnregisterResult(Context context, int errorCode) {
 
 指的是在设备的通知栏展示的内容，由腾讯移动推送 SDK 完成所有的操作，App 可以监听通知被打开的行为，即在前台下发的通知，无需 App 做任何处理，默认会展示在通知栏。
 
-> ?
+>
 - 成功注册腾讯移动推送服务后，通常不需要任何设置便可下发通知。
 - 通常来说，结合自定义通知样式，常规的通知，能够满足大部分业务需求，如果需要更灵活的方式，请考虑使用消息。
 
@@ -579,7 +579,7 @@ public static void setTags(Context context, String operateName, Set<String> tags
 
 - context：Context  对象。
 - operateName：用户定义的操作名称，回调结果会原样返回，用于标识回调属于哪次操作。
-- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过40字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置1000个 tag，超过部分会抛弃。
+- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过40字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置100个 tag，超过部分会抛弃。
 
 
 
@@ -607,8 +607,7 @@ XGPushManager.setTags(getApplicationContext(), "setTags:" + System.currentTimeMi
 
 
 >
->
->-  新增的 tags 中，:号为后台关键字，请根据具体的业务场景使用。
+-  新增的 tags 中，:号为后台关键字，请根据具体的业务场景使用。
 - 此接口调用的时候需要间隔一段时间（建议大于5s），否则可能造成更新失败。
 
 ```java
@@ -622,7 +621,7 @@ public static void addTags(Context context, String operateName, Set<String> tags
 
 - context：Context  对象。
 - operateName：用户定义的操作名称，回调结果会原样返回，用于标识回调属于哪次操作。
-- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过40字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置1000个 tag，超过部分会抛弃。
+- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过40字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置100个 tag，超过部分会抛弃。
 
 
 
@@ -683,7 +682,7 @@ public static void deleteTags(Context context, String operateName, Set<String> t
 
 - context：Context 对象。
 - operateName：用户定义的操作名称，回调结果会原样返回，用于标识回调属于哪次操作。
-- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过40字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置1000个tag，超过部分会抛弃。
+- tags：标签名集合，每个标签是一个 String。限制：每个 tag 不能超过40字节（超过会抛弃），不能包含空格（含有空格会删除空格）。最多设置100个tag，超过部分会抛弃。
 
 
 
@@ -759,7 +758,7 @@ Token 是一个设备的身份识别 ID，由服务器根据设备属性随机�
 public static String getToken(Context context)
 ```
 
->?App 第一次注册会产生 Token，之后一直存在手机上，不管以后注销注册操作，该 Token 一直存在，当 App 完全卸载重装了 Token 会发生变化。不同 App 之间的 Token 不一样。
+>App 第一次注册会产生 Token，之后一直存在手机上，不管以后注销注册操作，该 Token 一直存在，当 App 完全卸载重装了 Token 会发生变化。不同 App 之间的 Token 不一样。
 
 #### 参数说明
 
@@ -860,7 +859,7 @@ public static void uploadLogFile(Context context, HttpRequestCallback httpReques
         }
     });
 ```
-
+ 
 >首先需要开启 `XGPushConfig.enableDebug(this, true);`。
 
 
