@@ -489,7 +489,7 @@ For more information on public cloud regions and finance cloud regions of COS, p
 
 | Region                          | Transfer Direction | Transfer Acceleration Traffic Fee (USD/GB) |
 | :---------------------------- | :------- | :------------------------- |
-| Mainland China > Hong Kong (China) and regions outside Mainland China | Upstream     | 0.18                       |
-| Mainland China > Hong Kong (China) and regions outside Mainland China | Downstream     | 0.18                       |
-| Mainland China > Mainland China | Upstream     | 0.07                       |
-| Mainland China > Mainland China | Downstream     | 0.07                       |
+| Mainland China - Hong Kong (China) and regions outside Mainland China | Upstream     | 0.18                       |
+| Mainland China - Hong Kong (China) and regions outside Mainland China | Downstream     | 0.18                       |
+| Mainland China - Mainland China | Upstream     | 0.07                       |
+| Mainland China - Mainland China | Downstream     | 0.07                       |
