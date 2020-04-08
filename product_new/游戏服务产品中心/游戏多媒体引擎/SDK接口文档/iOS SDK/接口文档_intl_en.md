@@ -805,7 +805,8 @@ ITMGContext GetAudioCtrl -(QAVResult)EnableLoopBack:(BOOL)enable
 
 
 ## Speech-to-Text Conversion Flowchart
-![](https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png)
+<img src="https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png" width="70%">
+
 
 
 

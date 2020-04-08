@@ -1,15 +1,15 @@
  ## Overview
 
-Tencent VooV Meeting (TVM) is a smooth, secure, and reliable high-definition(HD) video conferencing product built on the cloud that offers convenience and ease of use. Developed by Tencent based on 21 years of voice and video communication experience, this product enables you to hold voice or video conferences and share screens remotely anytime, anywhere, meeting your diverse conference requirements. TVM supports PC and mobile clients and offers a free personal edition as well as fee-based professional and enterprise editions. TVM has been launched on app stores. You can purchase the edition that suits your conferencing needs.
+Tencent VooV Meeting (TVM) is an efficient and reliable video conferencing service powered by Tencent that is built for collaboration. With this product, users can schedule and join meetings, anytime, anywhere, thus eliminating the need to travel and allowing you to be more efficient and productive with your time. TVM supports PC and mobile clients and offers a free personal edition as well as fee-based professional and enterprise editions. TVM has been launched on app stores. You can purchase the edition that suits your conferencing needs.
 
 ### Enterprise conferences
 
-You can hold conferences using PCs and mobile devices with a single click anytime, anywhere, and can flexibly scale up to improve the quality and efficiency of enterprise conferences. TVM can interwork with traditional hardware video conference systems. You can dial a simple number to access TVM, which mitigates the impact of device restrictions on enterprises, and reduces the costs of remote video conferences.
+Users can join meetings via PC and mobile devices easily. Flexible scaling options enables enterprises to host high quality online meetings efficiently . 
 
-### Remote teaching
+### Online education
 
-TVM supports real-time screen sharing, enabling educators to build a focused and interactive atmosphere for remote classes.
+HD screen sharing enables educators to conduct highly interactive live online teaching sessions.  
 
 ### Remote interviews
 
-TVM offers HD voice and video calls for a smooth communication experience. Backgrounds are blurred to keep your interviewers focused on you, and an AI beauty filter is provided to enhance your appearance.
+AI speech enhancement enables smooth communications for online interviews. A beauty filter is provided to enhance appearances. 
