@@ -4,9 +4,9 @@ Apache Zeppelin 是一个可以进行大数据可视化分析的交互式开发�
 1. 单击页面左侧【Create new note】，在弹出页面中创建 notebook。
  ![](https://main.qcloudimg.com/raw/c31d7b714f22b1170d9c6799572227a3.png)
 2. 配置 spark 对接 EMR 的集群（spark on yarn），修改并保存配置。
- ![](https://main.qcloudimg.com/raw/d617cf01e1175200596da85de252a7f2.png)
+ ![](https://main.qcloudimg.com/raw/f4702cf3dea049e4bff2685aed9800f3.png)
 3. 进入自己的 notebook。
- ![](https://main.qcloudimg.com/raw/d56fe984a78c0f8f59498d2c24ee5b73.png)
+ ![](https://main.qcloudimg.com/raw/9920f5e879b66075f95311aa691db952.png)
 4. 编写 wordcount 程序，并运行如下命令：
 ```
 val data = sc.textFile("cosn://huanan/zeppelin-spark-randomint-test")
