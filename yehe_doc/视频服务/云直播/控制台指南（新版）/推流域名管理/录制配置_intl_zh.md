@@ -42,5 +42,5 @@
 ### 云点播 API 查询
 具体使用请参考云点播 API 文档：
 - 根据直播流名称及时间范围查询录制文件 API [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)。
-- 依照视频名称前缀获取视频信息 API DescribeVodPlayInfo。
+- 依照视频名称前缀获取视频信息 API **DescribeVodPlayInfo**。
 

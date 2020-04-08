@@ -2,7 +2,6 @@
 直播播放默认通过源码率输出，如果您需要对播放码率进行限制或者设定，可以在转码配置中进行设置。
 ## 前提条件
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
-- 已添加 播放域名。
 - 已创建**转码模板**，详情可参见 [转码模板配置](https://intl.cloud.tencent.com/document/product/267/31071)。
 
 ## 绑定转码配置

@@ -56,7 +56,7 @@ Depending on the usage duration, the prices in pay-as-you-go mode are divided in
         <td>Disk price (USD/GB/hour)</td>
     </tr>
     <tr>
-        <td>Guangzhou, Shanghai, Beijing</td>
+        <td>Guangzhou, Shanghai, Beijing,Nanjing</td>
         <td>0.026194</td>
         <td>0.013097</td>
         <td>0.019646</td>
@@ -96,13 +96,6 @@ Depending on the usage duration, the prices in pay-as-you-go mode are divided in
         <td>0.016667</td>
         <td>0.011111</td>
         <td>0.000097</td>
-    </tr>
-    <tr>
-        <td>Silicon Valley (US)</td>
-        <td>0.027500</td>
-        <td>0.020625</td>
-        <td>0.013750</td>
-        <td>0.000094</td>
     </tr>
     <tr>
         <td>Toronto</td>
