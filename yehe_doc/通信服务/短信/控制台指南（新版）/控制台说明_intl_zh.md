@@ -13,7 +13,7 @@
 </tr>
 <tr>
 <td>国内短信</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/382/35449">国内短信快速入门（新版）</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35449">管理国内短信签名</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35457">管理国内短信正文模板</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35458">发送国内短信</a></li></td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/382/35449">国内短信快速入门（新版）</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35456">管理国内短信签名</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35457">管理国内短信正文模板</a></li><li><a href="https://intl.cloud.tencent.com/document/product/382/35458">发送国内短信</a></li></td>
 <td>分别介绍如何配置国内短信内容，如何通过控制台发送国内短信。</td>
 </tr>
 <tr>
@@ -76,7 +76,7 @@
 <td>介绍如何添加新联系人，如何编辑或删除已有联系人。</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/382/32359">停用或删除应用</a></td>
+<td>停用或删除应用</td>
 <td>介绍如何停用、开启或删除已有应用。<strong>删除后不可直接恢复，需重新提交审核，请谨慎操作</strong>。</td>
 </tr>
 </table>
@@ -114,7 +114,7 @@
 <th>文档</th>
 </tr>
 <tr>
-<td>快速群发祝福短信（企业用户）</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35604">快速群发祝福短信（企业用户）</a></td>
 <td>介绍企业用户如何快速向会员用户群发祝福短信。</td>
 </tr>
 </table>
