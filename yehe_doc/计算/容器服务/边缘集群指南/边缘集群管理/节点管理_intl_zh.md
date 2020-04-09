@@ -24,7 +24,8 @@
    1. 在“配置”步骤中，获取初始配置，并可修改以下参数值：
       - **Interface**：节点内网通信使用的网卡。
       - **NodeName**：节点在集群中的名称，需确保该名称在集群内的唯一性。
-   2. 单击【下一步：安装】，若提示需开启集群外网访问功能，则单击<img src="https://main.qcloudimg.com/raw/fd1ae3941057881ca71bcf8b2874b510.png" style="margin:-6px 0px">进行开启。
+   2. 单击【下一步：安装】，若提示需开启集群外网访问功能，则单击<img src="https://main.qcloudimg.com/raw/fd1ae3941057881ca71bcf8b2874b510.png" style="margin:-6px 0px">进行开启。如下图所示：
+![](https://main.qcloudimg.com/raw/07bd1050fa0ea9677f2fed954a74666d.png)
    3. 在“安装”步骤中，复制脚本下载命令用来获取到对应的节点初始化脚本。
 4. 登录已准备好的服务器，并切换至 `root` 帐户执行已复制的命令。
 5. 依次执行以下命令，运行初始化节点脚本。

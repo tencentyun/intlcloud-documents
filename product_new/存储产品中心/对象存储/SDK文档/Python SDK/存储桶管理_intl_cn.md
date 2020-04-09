@@ -81,7 +81,7 @@ response = client.put_bucket_cors(
 | CORSRule |设置对应的跨域规则，包括 ID，MaxAgeSeconds，AllowedOrigin，AllowedMethod，AllowedHeader，ExposeHeader|List| 是|
 | ID |设置规则的 ID|String|否|
 | MaxAgeSeconds |设置 OPTIONS 请求得到结果的有效期|Int|否|
-| AllowedOrigin |设置允许的访问来源，如 `"http://intl.cloud.tencent.com"`，支持通配符`*` |Dict|是|
+| AllowedOrigin |设置允许的访问来源，如 `"http://cloud.tencent.com"`，支持通配符`*` |Dict|是|
 | AllowedMethod |设置允许的方法，如 GET，PUT，HEAD，POST，DELETE|Dict|是|
 | AllowedHeader |设置请求可以使用哪些自定义的 HTTP 请求头部，支持通配符`*` |Dict|否|
 | ExposeHeader |设置浏览器可以接收到的来自服务器端的自定义头部信息|Dict|否|
@@ -145,7 +145,7 @@ response = client.get_bucket_cors(
 | CORSRule  | 跨域规则，包括 ID，MaxAgeSeconds，AllowedOrigin，AllowedMethod，AllowedHeader，ExposeHeader |  List | 
 | ID  | 规则的 ID | String | 
 | MaxAgeSeconds  |  OPTIONS 请求得到结果的有效期 | String |
-| AllowedOrigin  | 允许的访问来源，如 `"http://intl.cloud.tencent.com"`，支持通配符`*`  | Dict | 
+| AllowedOrigin  | 允许的访问来源，如 `"http://cloud.tencent.com"`，支持通配符`*`  | Dict | 
 | AllowedMethod  |  允许的方法，如 GET，PUT，HEAD，POST，DELETE | Dict |
 | AllowedHeader  |请求可以使用哪些自定义的 HTTP 请求头部，支持通配符`*` |  Dict | 
 | ExposeHeader  | 浏览器可以接收到的来自服务器端的自定义头部信息 | Dict | 
