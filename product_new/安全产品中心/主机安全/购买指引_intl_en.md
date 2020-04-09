@@ -14,10 +14,6 @@ You can purchase the CWP Pro edition in the following two ways:
 ## Billing Mode
 - **Basic edition**
 The Basic edition is free of charge. After creating a CVM or CPM instance, install and configure CWP agent as instructed in [Getting Started](https://intl.cloud.tencent.com/document/product/296/12236) and then you can use it for free.
-- **Pro edition**
-The Pro edition is billed daily or monthly.
-	- **Monthly billing**: the fees for each server protected by CWP Pro are billed in USD/month (at a discount subject to promotion campaigns). The billing system will deduct one-time fees and generate a bill immediately.
-	- **Daily billing**: the fees for each server protected by CWP Pro are billed in USD/day and deducted at GMT 18:00 everyday.
 
 ## How to Deactivate the Pro Edition
 Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/) and select **Cloud Product** > **Endpoint Security** > **Cloud Workload Protection** in the top-left corner to enter the CWP configuration page. Click **Asset Management** > **Server List** on the left sidebar. Find the server for which to deactivate the Pro edition and click **Deactivate CWP Pro**.
