@@ -89,7 +89,7 @@
   <td class=xl65 align=right>0.0005</td>
  </tr>
  <tr height=21 style='height:15.75pt'>
-  <td height=21 style='height:15.75pt'>香港</td>
+  <td height=21 style='height:15.75pt'>中国香港</td>
   <td class=xl66 align=right>0.0688</td>
   <td class=xl65 align=right>0.0516</td>
   <td class=xl65 align=right>0.0344</td>
@@ -223,7 +223,7 @@
   <td class=xl6529815 align=right>0.0003</td>
  </tr>
  <tr height=21 style='height:15.75pt'>
-  <td height=21 class=xl1529815 style='height:15.75pt'>香港</td>
+  <td height=21 class=xl1529815 style='height:15.75pt'>中国香港</td>
   <td class=xl6529815 align=right>0.0344</td>
   <td class=xl6529815 align=right>0.0258</td>
   <td class=xl6529815 align=right>0.0172</td>
