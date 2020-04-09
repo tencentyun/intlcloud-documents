@@ -3,7 +3,8 @@ This document describes how to verify and modify message channels and set messag
 ## Prerequisites
 Log in to the CAM Console and click [User List](https://console.cloud.tencent.com/cam).
 ## Directions
-### Verifying message channels<span id="stepyanzheng"></span>
+<span id="stepyanzheng"></span>
+### Verifying message channels
 1. Locate the root account from the user list.
 2. Click **Username** to enter the user details page.
 3. Click **Send Verification Link** in the user information section. If you do not see this, it means that the message notification channel has already been verified, and the following operations are not required.
