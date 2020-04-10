@@ -7,8 +7,8 @@
 >
 >- 当前负载均衡仅七层协议（HTTP/HTTPS）支持配置访问日志到 CLS，四层协议（TCP/UDP/TCP SSL）不支持配置访问日志到 CLS。
 - 负载均衡访问日志无需额外付费，您仅需要支付日志服务（CLS）的费用。
-- 当前配置访问日志到 CLS 支持的地域包括：成都、多伦多，可直接在控制台使用或通过 API 配置；广州、北京和上海灰度中，如有需求，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
-- 目前 [日志服务（CLS）](https://intl.cloud.tencent.com/document/product/614) 处在内测中，使用前，请提交内测申请，并确认审核结果。
+- 当前配置访问日志到 CLS 支持的地域包括：成都、多伦多，可直接在控制台使用或通过 API 配置；广州、上海、南京、北京、重庆、中国香港、硅谷灰度中，如有需求，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+- 目前 [日志服务（CLS）](https://intl.cloud.tencent.com/document/product/614) 处在内测中，使用前，请提交 [内测申请](https://console.cloud.tencent.com/workorder/category)，并确认审核结果。
 
 ## 开启访问日志
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3)。
@@ -37,7 +37,7 @@
 
 ### 步骤2：检索访问日志
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
-2. 在左侧导航中，选择【日志检索】，进入“检索分析 ”页面。
+2. 在左侧导航中，选择【检索分析】，进入“检索分析”页面。
 3. 在“检索分析 ”页面中，选择日志集、日志主题和时间范围，单击【检索分析】，即可检索 CLB 上报到 CLS 的访问日志。检索语法详情请参见 [语法与规则](https://intl.cloud.tencent.com/document/product/614/30439)。
 ![](https://main.qcloudimg.com/raw/57f74355eb469e59fca7efbe1994d9d0.png)
 
