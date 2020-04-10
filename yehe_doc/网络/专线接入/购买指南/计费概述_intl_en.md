@@ -1,4 +1,4 @@
-﻿## Billing Description
+## Billing Description
 **Tencent Cloud Direct Connect is billed on the basis of connection, dedicated tunnel, and Direct Connect gateway.**
 
 ### Connection
