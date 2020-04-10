@@ -42,7 +42,7 @@ https://imgcache.qq.com/qcloud/csec/yunjing/static/ydeyes_win32.exe
 ```
 http://u.yd.qcloud.com/ydeyes_win32.exe
 ```
-- VPC and CPM:
+- VPC:
 ```
 http://u.yd.tencentyun.com/ydeyes_win32.exe
 ```
