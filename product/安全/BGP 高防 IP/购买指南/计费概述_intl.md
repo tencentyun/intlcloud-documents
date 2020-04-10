@@ -35,21 +35,21 @@ The prices of elastic protection are as follows:
 
 | DDoS Protection Bandwidth       | Mainland China (USD/day) | Outside Mainland China  (USD/Day) |
 | -------------------- | ------------------- | ------------------- |
-| 10 Gbps < Attack traffic peak ≤ 20 Gbps   | -                   | 320             |
-| 20 Gbps < Attack traffic peak ≤ 30 Gbps   | 260              | 400              |
-| 30 Gbps < Attack traffic peak ≤ 40 Gbps   | 450               | 700               |
-| 40 Gbps < Attack traffic peak ≤ 50 Gbps   | 600               | 800               |
-| 50 Gbps < Attack traffic peak ≤ 60 Gbps   | 800               | 1,200               |
-| 60 Gbps < Attack traffic peak ≤ 70 Gbps   | 1,200               | 1,800              |
-| 70 Gbps < Attack traffic peak ≤ 80 Gbps   | 1,500               | 2,200              |
-| 80 Gbps < Attack traffic peak ≤ 90 Gbps   | 1,700               | 2,500              |
-| 90 Gbps < Attack traffic peak ≤ 100 Gbps  | 1,900              | 2,700              |
-| 100 Gbps < Attack traffic peak ≤ 120 Gbps | 2,100              | 2,900              |
-| 120 Gbps < Attack traffic peak ≤ 150 Gbps | 2,300              | 3,200              |
-| 150 Gbps < Attack traffic peak ≤ 200 Gbps | 2,700              | 4,000              |
-| 200 Gbps < Attack traffic peak ≤ 250 Gbps | 4,800              | 4,800              |
-| 250 Gbps < Attack traffic peak ≤ 300 Gbps | 5,600              | 5,600              |
-| 300 Gbps < Attack traffic peak ≤ 400 Gbps | -                   | 6,600              |
+| 10 Gbps ≤ Attack traffic peak < 20 Gbps   | -                   | 320             |
+| 20 Gbps ≤ Attack traffic peak < 30 Gbps   | 260              | 400              |
+| 30 Gbps ≤ Attack traffic peak < 40 Gbps   | 450               | 700               |
+| 40 Gbps ≤ Attack traffic peak < 50 Gbps   | 600               | 800               |
+| 50 Gbps ≤ Attack traffic peak < 60 Gbps   | 800               | 1,200               |
+| 60 Gbps ≤ Attack traffic peak < 70 Gbps   | 1,200               | 1,800              |
+| 70 Gbps ≤ Attack traffic peak < 80 Gbps   | 1,500               | 2,200              |
+| 80 Gbps ≤ Attack traffic peak < 90 Gbps   | 1,700               | 2,500              |
+| 90 Gbps ≤ Attack traffic peak < 100 Gbps  | 1,900              | 2,700              |
+| 100 Gbps ≤ Attack traffic peak < 120 Gbps | 2,100              | 2,900              |
+| 120 Gbps ≤ Attack traffic peak < 150 Gbps | 2,300              | 3,200              |
+| 150 Gbps ≤ Attack traffic peak < 200 Gbps | 2,700              | 4,000              |
+| 200 Gbps ≤ Attack traffic peak < 250 Gbps | 4,800              | 4,800              |
+| 250 Gbps ≤ Attack traffic peak < 300 Gbps | 5,600              | 5,600              |
+| 300 Gbps ≤ Attack traffic peak < 400 Gbps | -                   | 6,600              |
 
 ## Forwarding Traffic
 Forwarding traffic refers to the normal traffic that is forwarded back to the real server after being cleansed by Tencent Cloud Anti-DDoS  Advanced IP.

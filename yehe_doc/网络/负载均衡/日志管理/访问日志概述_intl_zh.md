@@ -12,8 +12,8 @@
 <table class="table"><thead><tr><th>对比项</th><th>配置访问日志到 CLS</th><th>配置访问日志到 COS</th></tr></thead>
 <tbody><tr><td>获取日志的时间粒度 </td><td> 分钟级</td><td> 小时级 </td></tr>
 <tr><td>在线检索 </td><td> 支持</td><td>不支持，需下载后检索 </td></tr>
-<tr><td>检索语法 </td><td>全文检索、键值检索、模糊关键字检索等，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/614/16982#.E6.A3.80.E7.B4.A2.E8.A7.84.E5.88.99">检索规则</a></td><td>全文检索为主</td></tr>
-<tr><td>支持地域 </td><td>成都、多伦多已支持；广州、北京、上海灰度中，如有需求，请提交 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a> </td><td>广州、上海、北京和香港</td></tr>
+<tr><td>检索语法 </td><td>全文检索、键值检索、模糊关键字检索等，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/614/30439">检索规则</a></td><td>全文检索为主</td></tr>
+<tr><td>支持地域 </td><td>成都、多伦多已支持；广州、上海、南京、北京、重庆、中国香港、硅谷灰度中，如有需求，请提交 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a> </td><td>广州、上海、北京和中国香港 </td></tr>
 <tr><td>支持类型 </td><td> 支持公网/内网负载均衡</td><td>仅支持公网负载均衡</td></tr>
 </tbody></table>
 
