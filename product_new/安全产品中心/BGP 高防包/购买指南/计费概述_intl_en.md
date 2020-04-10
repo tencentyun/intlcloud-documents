@@ -134,19 +134,19 @@ The prices of elastic protection are as follows:
 
 | Anti-DDoS Protection Bandwidth                | Unit Price (USD/day) |
 | ---------------------------- | ----------------- |
-| 20 Gbps < Peak Attack bandwidth ≤ 30 Gbps   | 260             |
-| 30 Gbps < Peak Attack bandwidth ≤ 40 Gbps   | 450             |
-| 40 Gbps < Peak Attack bandwidth ≤ 50 Gbps   | 600             |
-| 50 Gbps < Peak Attack bandwidth ≤ 60 Gbps   | 800             |
-| 60 Gbps < Peak Attack bandwidth ≤ 70 Gbps   | 1,200             |
-| 70 Gbps < Peak Attack bandwidth ≤ 80 Gbps   | 1,500             |
-| 80 Gbps < Peak Attack bandwidth ≤ 90 Gbps   | 1,700             |
-| 90 Gbps < Peak Attack bandwidth ≤ 100 Gbps  | 1,900            |
-| 100 Gbps < Peak Attack bandwidth ≤ 120 Gbps | 2,100            |
-| 120 Gbps < Peak Attack bandwidth ≤ 150 Gbps | 2,300            |
-| 150 Gbps < Peak Attack bandwidth ≤ 200 Gbps | 2,700            |
-| 200 Gbps < Peak Attack bandwidth ≤ 250 Gbps | 3,200            |
-| 250 Gbps < Peak Attack bandwidth ≤ 300 Gbps | 3,800            |
+| 20 Gbps ≤ Peak Attack bandwidth < 30 Gbps   | 260             |
+| 30 Gbps ≤ Peak Attack bandwidth < 40 Gbps   | 450             |
+| 40 Gbps ≤ Peak Attack bandwidth < 50 Gbps   | 600             |
+| 50 Gbps ≤ Peak Attack bandwidth < 60 Gbps   | 800             |
+| 60 Gbps ≤ Peak Attack bandwidth < 70 Gbps   | 1,200             |
+| 70 Gbps ≤ Peak Attack bandwidth < 80 Gbps   | 1,500             |
+| 80 Gbps ≤ Peak Attack bandwidth < 90 Gbps   | 1,700             |
+| 90 Gbps ≤ Peak Attack bandwidth < 100 Gbps  | 1,900            |
+| 100 Gbps ≤ Peak Attack bandwidth < 120 Gbps | 2,100            |
+| 120 Gbps ≤ Peak Attack bandwidth < 150 Gbps | 2,300            |
+| 150 Gbps ≤ Peak Attack bandwidth < 200 Gbps | 2,700            |
+| 200 Gbps ≤ Peak Attack bandwidth < 250 Gbps | 3,200            |
+| 250 Gbps ≤ Peak Attack bandwidth < 300 Gbps | 3,800            |
 
 
 ## Fee Calculation Examples
