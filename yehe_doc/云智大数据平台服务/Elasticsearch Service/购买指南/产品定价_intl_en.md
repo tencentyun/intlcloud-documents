@@ -2,7 +2,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
 
 
 ### Pay-as-you-go
-
+<div style="max-width: 100%;overflow-x: auto;margin-bottom: 24px; padding-bottom: 5px;" >
 <table class="tg">
   <tr>
     <th class="tg-llyw" rowspan="3">Node Specification</th>
@@ -355,7 +355,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
        <td class="tg-0pky">2.736</td>
   </tr>
 </table>
-
+</div>
 
 ## Prices of Node Storage
 The following lists the prices in some regions:

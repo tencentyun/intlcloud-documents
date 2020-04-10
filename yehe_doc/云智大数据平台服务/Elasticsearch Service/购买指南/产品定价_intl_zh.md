@@ -3,13 +3,14 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
 
 ### 按量计费
 
+<div style="max-width: 100%;overflow-x: auto;margin-bottom: 24px; padding-bottom: 5px;" >
 <table class="tg">
   <tr>
     <th class="tg-llyw" rowspan="3">节点规格</th>
     <th class="tg-llyw" rowspan="3">CPU</th>
     <th class="tg-llyw" rowspan="3">内存（GB）</th>
     <th class="tg-llyw" rowspan="3">适用场景</th>
-    <th class="tg-llyw" colspan="16">预付费（USD/个/小时）</th>
+    <th class="tg-llyw" colspan="16">预付费（$USD/个/小时）</th>
   </tr>
   <tr>
     <td class="tg-llyw" colspan="2">北京/上海/广州/南京</td>
@@ -355,12 +356,12 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
        <td class="tg-0pky">2.736</td>
   </tr>
 </table>
-
+</div>
 
 ## 节点存储价格
 以部分区域为例，费用如下：
 
-| 磁盘类型   | 北京上海广州 （$/GB/小时） | 硅谷 （$/GB/小时） |
+| 磁盘类型   | 北京上海广州 （$USD/GB/小时） | 硅谷 （$USD/GB/小时） |
 | :--------- | :------------------------- | :----------------- |
 | SSD云盘    | 0.0003                     | 0.0004             |
 | 高性能云盘 | 0.0002                     | 0.0002             |
