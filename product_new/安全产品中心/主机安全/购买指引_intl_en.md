@@ -11,5 +11,5 @@ Pro edition is coming soon.
 
 ## Billing Mode
 - **Basic edition**
-The Basic edition is free of charge. After creating a CVM or CPM instance, install and configure CWP agent as instructed in [Getting Started](https://intl.cloud.tencent.com/document/product/296/12236) and then you can use it for free.
+The Basic edition is free of charge. After creating a CVM instance, install and configure CWP agent as instructed in [Getting Started](https://intl.cloud.tencent.com/document/product/296/12236) and then you can use it for free.
 
