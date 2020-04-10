@@ -1,6 +1,6 @@
 ## 入门准备
 
-主机安全可在腾讯云服务器（黑石物理服务器 CPM）安装时一同安装，或单独进行安装。
+主机安全可在腾讯云服务器安装时一同安装，或单独进行安装。
 登录 [主机安全控制台](https://console.cloud.tencent.com/yunjing)，在左侧导航栏中，选择【资产管理】>【主机列表】，查看云服务器是否已安装主机安全，如下图所示：
 ![](https://main.qcloudimg.com/raw/76641a48eb933d23657fa3aeed902481.png)
 - 红色框中的服务器安装了主机安全的专业防护版本，享有主机安全带来的全面多维度的系统安全保障。
@@ -42,7 +42,7 @@ https://imgcache.qq.com/qcloud/csec/yunjing/static/ydeyes_win32.exe
 ```
 http://u.yd.qcloud.com/ydeyes_win32.exe
 ```
-- VPC & 黑石服务器下载：
+- VPC 下载：
 ```
 http://u.yd.tencentyun.com/ydeyes_win32.exe
 ```
@@ -115,6 +115,4 @@ ps -ef|grep YD
    若您需要不使用默认 DNS，则需要将 `tencentyun.com` 和 ` yd.qcloud.com `根域的所有解析转发至默认 DNS。
 
 ## 开通专业防护
-用户可以通过以下两种渠道进行开通：
-- 在腾讯云官网， [主机安全产品介绍页面](https://intl.cloud.tencent.com/product/hs) 中单击【立即选购】，随即跳转腾讯云控制台登录界面，登录后可以为需要的云服务器开通专业防护。
-- 登录 [主机安全控制台](https://console.cloud.tencent.com/cwp) ，在左侧导航栏中，单击【安全概览】，进入安全概览页面，在上方公告栏中，单击【升级专业版】，即可为需要的云服务器开通专业防护。
+付费专业版待上线。
