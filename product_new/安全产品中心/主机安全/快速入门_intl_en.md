@@ -74,7 +74,7 @@ wget --no-check-certificate https://imgcache.qq.com/qcloud/csec/yunjing/static/y
 ```
 wget http://u.yd.qcloud.com/ydeyesinst_linux64.tar.gz && tar -zxvf ydeyesinst_linux64.tar.gz && sh self_cloud_install_linux64.sh
 ```
-- VPC and CPM:
+- VPC :
 ```
 wget http://u.yd.tencentyun.com/ydeyesinst_linux64.tar.gz && tar -zxvf ydeyesinst_linux64.tar.gz && sh self_cloud_install_linux64.sh
 ```
