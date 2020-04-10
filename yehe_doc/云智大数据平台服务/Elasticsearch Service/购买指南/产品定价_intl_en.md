@@ -9,7 +9,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <th class="tg-llyw" rowspan="3">CPU</th>
     <th class="tg-llyw" rowspan="3">Memory (GB)</th>
     <th class="tg-llyw" rowspan="3">Applicable Scenario</th>
-    <th class="tg-llyw" colspan="16">Postpaid ($USD/node/hour)</th>
+    <th class="tg-llyw" colspan="18">Postpaid ($USD/node/hour)</th>
   </tr>
   <tr>
     <td class="tg-llyw" colspan="2">Beijing/Shanghai/Guangzhou/Nanjing</td>

@@ -10,7 +10,7 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
     <th class="tg-llyw" rowspan="3">CPU</th>
     <th class="tg-llyw" rowspan="3">内存（GB）</th>
     <th class="tg-llyw" rowspan="3">适用场景</th>
-    <th class="tg-llyw" colspan="16">预付费（$USD/个/小时）</th>
+    <th class="tg-llyw" colspan="18">预付费（$USD/个/小时）</th>
   </tr>
   <tr>
     <td class="tg-llyw" colspan="2">北京/上海/广州/南京</td>
