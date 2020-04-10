@@ -1,6 +1,6 @@
 ## Preparations
 
-CWP agent can be installed upon launch of CVM or CPM instance or later.
+CWP agent can be installed upon launch of CVM instance or later.
 Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing) and select **Asset Management** > **Server List** on the left sidebar to see whether CWP agent has been installed on the instance, as shown below:
 ![](https://main.qcloudimg.com/raw/76641a48eb933d23657fa3aeed902481.png)
 - The server in the red box has enabled CWP Pro.
@@ -115,6 +115,4 @@ You can uninstall CWP agent in the console or OS, as shown below:
    If you do not want to use the default DNS, you need to forward all resolution requests of the root domains of `tencentyun.com` and `yd.qcloud.com` to the default DNS.
 
 ## Activating CWP Pro
-You can activate the CWP Pro in the following two ways:
-- On the Tencent Cloud website, enter the [CWP product page](https://intl.cloud.tencent.com/product/hs) and click **Purchase Now**. You will be redirected to the Tencent Cloud Console login page. After login, you can activate CWP Pro.
-- Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/), click **Cloud Product** > **Endpoint Security** > **Cloud Workload Protection** to enter the CWP configuration page. Click **Security Overview** on the left sidebar and click **Upgrade to CWP Pro** in the bulletin board zone above to activate the Pro edition.
+> Pro edition is coming soon.
