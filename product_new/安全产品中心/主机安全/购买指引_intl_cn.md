@@ -11,4 +11,4 @@
 
 ## 计费方式
 - **基础防护**
-基础防护可免费使用，开通云服务器（包括黑石物理服务器 CPM）的用户请参见 [快速入门](https://intl.cloud.tencent.com/document/product/296/12236) 进行安装配置即可免费使用。
+基础防护可免费使用，开通云服务器的用户请参见 [快速入门](https://intl.cloud.tencent.com/document/product/296/12236) 进行安装配置即可免费使用。
