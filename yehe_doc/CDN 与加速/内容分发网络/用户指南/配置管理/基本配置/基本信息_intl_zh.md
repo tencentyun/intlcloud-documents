@@ -4,10 +4,10 @@
 ## 配置指南
 ###  查看基本信息
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第一栏展示的即为域名基本信息。
-![](https://main.qcloudimg.com/raw/772ba0c7423bee4f84e867f94b9d04cd.png)
+![](https://main.qcloudimg.com/raw/2273c600e31b35d12b9480ff74205962.png)
 
 >
-> 接入域名时，选择 IPv4 + IPv6，则节点同时支持 IPv4、IPv6 访问。
+> + 接入域名时，选择 IPv4 + IPv6，则节点同时支持 IPv4、IPv6 访问。
 
 ### 修改基本信息
 
@@ -16,7 +16,7 @@
 
 >创建或管理已有项目，可前往 [项目管理](https://console.cloud.tencent.com/project)。
 
-![](https://main.qcloudimg.com/raw/40a0924aed1febac592dd52e59667d98.png)
+![](https://main.qcloudimg.com/raw/bb56a7b51526f256ccd5d98169861e98.png)
 
 #### 2. 修改域名服务地域
 **域名服务地域含义**：
@@ -25,14 +25,14 @@
 + 若域名为境外加速，则全球用户访问均由中国境外加速节点服务。
 
 单击服务地域右侧【修改】，可调整域名的服务地域：
-![](https://main.qcloudimg.com/raw/104d5571ac91303b4c51e6a9f10bf532.png)
+![](https://main.qcloudimg.com/raw/bf59e0eccd001b5ccad6262063f032db.png)
 
 > 
-> + 中国境内与中国境外加速服务分开独立计费，价格存在差异，具体计费策略 [单击查看]( https://intl.cloud.tencent.com/document/product/1014/30437)。
+> + 中国境内与中国境外加速服务分开独立计费，价格存在差异。
 > + 若您的控制台上未展示【中国境外】、【全球】选项，是由于您尚未开通境外加速服务。
 
 #### 3. 修改业务类型
-腾讯云 CDN 针对不同业务类型进行了针对性的加速性能优化，建议选择与自身业务更加贴近的业务类型，来获取更优质的加速效果，如需调整，可单击业务类型右侧【修改】进行调整：
+腾讯云 CDN 针对不同业务类型进行了针对性的加速性能优化，建议选择与自身业务更加贴近的业务类型，来获取更优质的加速效果，如需调整，可单击业务类型右侧【修改】进行调整。
 
 
 >
