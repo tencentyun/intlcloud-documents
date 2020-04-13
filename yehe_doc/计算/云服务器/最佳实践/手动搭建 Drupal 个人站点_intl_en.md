@@ -111,20 +111,17 @@ ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('y
 ```
 http://CVM_Public_IP/drupal
 ```
-2. Select the language of your preference and click **Save and continue**, as shown below:
-![](https://main.qcloudimg.com/raw/89587cec77324a8f689e229487b48239.png)
-3. Select **Standard installation** and click **Save and continue**, as shown below:
-![](https://main.qcloudimg.com/raw/5a0588602fa79024567cfdcc32342906.png)
-4. Input relevant database information configured in [Configuring a database for Drupal](#database). Click **Save and continue**, as shown below:
+2. Select the language of your preference and click **Save and continue**
+3. Select **Standard installation** and click **Save and continue**
+4. Input relevant database information configured in [Configuring a database for Drupal](#database). Click **Save and continue**
 >Drupal installation now checks to see if all installation criteria are met. If so, installation starts. If not, error messages appear. Resolve them before continuing.
 >
-![](https://main.qcloudimg.com/raw/e38e52af2a959371dad22774fa2e2dd5.png)
-5. The configuration page loads automatically after installation is completed. Input information and click **Save and continue**, as shown below:
+
+5. The configuration page loads automatically after installation is completed. Input information and click **Save and continue**
 >Record your maintenance username and password.
 >
-![](https://main.qcloudimg.com/raw/390f81077168738c483cdcc352521a32.png)
-6. The homepage of your Drupal loads automatically. Use the maintenance username and password to log in, as shown below:
-![](https://main.qcloudimg.com/raw/b3f3aa20a3ba3f21b3ba7b291be8fa09.png)
+
+6. The homepage of your Drupal loads automatically. Use the maintenance username and password to log in
 You have now successfully set up your Drupal website. Customize your experience as you see fit.
 
 ## FAQ

@@ -118,20 +118,17 @@ ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('�
 ```
 http://云服务器公网IP/drupal
 ```
-2. 单击【Save and contiue】，选择语言为简体中文。如下图所示：
-![](https://main.qcloudimg.com/raw/89587cec77324a8f689e229487b48239.png)
-3. 单击【保存并继续】，选择标准安装方式。如下图所示：
-![](https://main.qcloudimg.com/raw/5a0588602fa79024567cfdcc32342906.png)
-4. 输入在 [配置 Drupal 数据库](#database) 中已设置的数据库相关信息，并单击【保存并继续】。如下图所示：
+2. 单击【Save and contiue】，选择语言为简体中文。
+3. 单击【保存并继续】，选择标准安装方式。
+4. 输入在 [配置 Drupal 数据库](#database) 中已设置的数据库相关信息，并单击【保存并继续】。
 >当服务器环境配置正确，Drupal 会直接跳过检查安装需求此步骤。若您未通过检查，请结合实际情况，处理问题后再次安装。
 >
-![](https://main.qcloudimg.com/raw/e38e52af2a959371dad22774fa2e2dd5.png)
-5. 等待安装完成后，自动进入网站设置页面。请结合您的实际需求进行填写，并单击【保存并继续】。如下图所示：
+
+5. 等待安装完成后，自动进入网站设置页面。请结合您的实际需求进行填写，并单击【保存并继续】。
 >请记录站点维护帐号及密码。
 >
-![](https://main.qcloudimg.com/raw/390f81077168738c483cdcc352521a32.png)
-6. 安装完成后，网站自动进入首页并登录维护帐号。如下图所示：
-![](https://main.qcloudimg.com/raw/b3f3aa20a3ba3f21b3ba7b291be8fa09.png)
+
+6. 安装完成后，网站自动进入首页并登录维护帐号。
 您已成功搭建 Drupal 个人站点，可根据实际需求对网站进行个性化设置。
 
 ## 常见问题
