@@ -5,9 +5,9 @@
 ### 查看配置
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面最后一栏【高级配置】中，查看指定域名的 HTTPS 配置情况：
-
+![](https://main.qcloudimg.com/raw/df6c4966cfee58661251f88550214576.png)
 也可前往左侧菜单栏【证书管理】页面，查看账号下所有配置了 HTTPS 加速的域名列表：
-
+![](https://main.qcloudimg.com/raw/91335ed0a426118b76ad6b27a53d5197.png)
 
 ### 域名配置
 #### 1. 选择域名
@@ -16,15 +16,15 @@
 + `.file.myqcloud.com`后缀为腾讯云对象存储默认加速域名，无需配置证书可直接进行 HTTPS 加速。
 + `.image.myqcloud.com`后缀域名为腾讯云数据万象默认加速域名，无需配置证书可直接进行 HTTPS 加速务。
 
-
+![](https://main.qcloudimg.com/raw/13c71dc1fc13576620768f7ae61d6c9e.png)
 
 #### 2. 选择证书
 若已有证书，可直接将 PEM 格式的证书内容和私钥粘贴入对应位置即可：
 + 腾讯云 CDN 现已支持 ECC 证书部署。
-+ 证书内容需要为 PEM 格式，非此格式证书请参考 [PEM 格式转换](https://intl.cloud.tencent.com/document/product/228/35212#.E6.A0.BC.E5.BC.8F.E8.BD.AC.E6.8D.A2)。
++ 证书内容需要为 PEM 格式，非此格式证书请参考 [PEM 格式转换](https://intl.cloud.tencent.com/document/product/228/35212)。
 + 可选择腾讯云托管证书，直接进行一键部署。
 
-
+![](https://main.qcloudimg.com/raw/d847eb87f076b972808b8e680705f706.png)
 
 #### 3. 回源方式
 
@@ -33,6 +33,7 @@
 + HTTPS 回源：所有请求均使用 HTTPS 回源。
 + 协议跟随：根据请求协议进行回源，HTTPS 请求使用 HTTPS 回源，HTTP 请求使用 HTTP 回源。
 
+![](https://main.qcloudimg.com/raw/62b122177e6ee043d0063c8e5328e1e5.png)
 
 >
 > + 配置协议跟随或 HTTPS 回源时，源站需要部署有效证书，否则会导致回源失败。
@@ -43,13 +44,14 @@
 #### 1. 选择证书
 若已有证书，可直接将 PEM 格式的证书内容和私钥粘贴入对应位置即可：
 + 腾讯云 CDN 现已支持 ECC 证书部署。
-+ 证书内容需要为 PEM 格式，非此格式证书请参考 [PEM 格式转换](https://intl.cloud.tencent.com/document/product/228/35212#.E6.A0.BC.E5.BC.8F.E8.BD.AC.E6.8D.A2)。
++ 证书内容需要为 PEM 格式，非此格式证书请参考 [PEM 格式转换](https://intl.cloud.tencent.com/document/product/228/35212)。
 + 可选择腾讯云托管证书，直接进行一键部署。
 
+![](https://main.qcloudimg.com/raw/fcadb92849ebd780acbbc5b35f343478.png)
 
 #### 2. 选择域名
 根据上传 / 选择的证书，CDN 会自动匹配出允许配置的域名列表，可按需进行勾选配置：
-
+![](https://main.qcloudimg.com/raw/04a8ad1088655f24282201da7b5ebd74.png)
 
 #### 3. 回源方式
 除了在接入加速域名或在源站配置模块时进行回源方式设置，也可在批量配置证书时进行批量回源协议的调整，腾讯云 CDN 支持以下三种回源协议：
@@ -64,7 +66,7 @@
 ### 变更证书
 #### 证书修改
 单击证书右侧【编辑】，可指定域名进行证书更新，也可重新进行批量配置，覆盖原有证书配置。
-
+![](https://main.qcloudimg.com/raw/a3400bb74990a53a02bc17d7d609b150.png)
 更新证书全网逐节点生效，无缝切换，不会影响现网 HTTPS 服务，也可单击【删除】，取消 HTTPS 加速服务。
 
 #### 证书过期
@@ -73,9 +75,8 @@
 ### 区域特殊配置
 若加速域名服务区域为全球，则所配置的 HTTPS 证书会境内、境外一起生效，暂时不支持境内境外配置不同本证书。
 
-若域名存在境内、境外证书配置不一致的特殊场景，可在【证书管理】页面看到中国境内、中国境外等标识，表明该域名存在遗留的区域特殊配置：
-
-在域名【高级配置】中，也可看见两份配置：
+若域名存在境内、境外证书配置不一致的特殊场景，可在【证书管理】页面看到中国境内、中国境外等标识，表明该域名存在遗留的区域特殊配置
+在域名【高级配置】中，也可看见两份配置。
 
 若您的加速域名存在此类特殊配置，且需要更改其中某一个证书，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行修改。
 
