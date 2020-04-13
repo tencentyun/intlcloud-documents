@@ -1,0 +1,8 @@
+### Log Analysis
+Devices such as website servers, mobile devices, and IOT sensors can generate a high number of logs in various types that are stored on scattered nodes, which poses a great challenge to services relying on log search like troubleshooting and business analysis. ES provides a flexible, scalable, real-time, and centralized storage scheme and a full-text search feature to facilitate unified management and query of logs, helping you quickly identify and locate problems and improve the troubleshooting efficiency.
+
+### Full-Text Search
+In-site search service for massive amounts of data such as search for ecommerce items, mobile apps, and organizational information is a necessary way to get the desired information efficiently. ES has a full-text search feature that can retrieve structured and unstructured data with ease. It also provides simple and convenient RESTful APIs and clients in various programming languages to help you quickly build a stable search service and integrate it into your existing business framework.
+
+### Business Intelligence (BI)
+While data-driven operation is gaining popularity in today's industry landscape, businesses such as ecommerce, mobile app, advertising, and media need to rely on data analysis and data mining as assistance in business decision-making; however, large-scale business data poses great challenges to statistics collection and analysis. To cope with this problem, ES provides a structured query feature and supports complex filtering and aggregated statistics, which helps you efficiently perform statistical analysis on massive amounts of data, discover problems and opportunities, assist in business decision-making, and tap into the value of data.
