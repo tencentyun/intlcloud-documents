@@ -487,7 +487,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
 >- The [global acceleration](https://intl.cloud.tencent.com/document/product/436/33409) feature is now generally available and supported in all public cloud regions. It is not supported in finance cloud regions due to network isolation.
 >- Global acceleration fee is settled **daily**.
 
-| Region                          | Transfer Direction | Transfer Acceleration Traffic Fee (USD/GB) |
+| Region                          | Transfer Direction | Global Acceleration Traffic Fee (USD/GB) |
 | :---------------------------- | :------- | :------------------------- |
 | Mainland China - Mainland China             | Upstream     | 0.07                          |
 | Mainland China - Mainland China            | 	Downstream     | 0.07                           |
