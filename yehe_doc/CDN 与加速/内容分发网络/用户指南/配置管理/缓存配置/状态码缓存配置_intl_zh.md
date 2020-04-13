@@ -8,7 +8,7 @@
 
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第三栏【缓存配置】中可看到状态码缓存配置：
-![](https://main.qcloudimg.com/raw/cb80b2032ef6e8d93fe2c10a2b1b7439.png)
+![](https://main.qcloudimg.com/raw/508f716869f48fad3424fe6eeb77a67c.png)
 
 ### 修改配置
 目前支持以下异常状态码缓存过期配置
@@ -16,7 +16,7 @@
 + 404
 
 可通过修改缓存时间为0，或删除对应的配置条目，取消其缓存过期时间配置，直接回源。
-![](https://main.qcloudimg.com/raw/6998e2279f49105260eafe900520f1f7.png)
+![](https://main.qcloudimg.com/raw/3f01868799d0ddeda302e52e634bbde1.png)
 
 >若您的加速域名服务区域为全球加速，设置的状态码缓存过期时间会全球生效，不支持境内、境外差异化配置。
 

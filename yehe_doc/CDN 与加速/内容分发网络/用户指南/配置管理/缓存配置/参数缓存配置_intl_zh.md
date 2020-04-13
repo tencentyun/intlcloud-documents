@@ -22,11 +22,11 @@ http://cloud.tencent.com/1.mp4?sign=XXXXXX
 + 若选择静态加速类型，默认关闭过滤参数。
 + 下载、流媒体点播业务类型，默认开启过滤参数。
 
-![](https://main.qcloudimg.com/raw/0c732e20d4fe5d4a8434cc8239f35c4d.png)
+![](https://main.qcloudimg.com/raw/df480521d6283b26e91e30faeb2fa8ce.png)
 
 ### 修改配置
 可以直接单击开关按钮，关闭或开启参数缓存配置，配置下发全网生效时间大约为5分钟：
-![](https://main.qcloudimg.com/raw/c52a163dcab76bf61201c01c929fbf92.png)
+![](https://main.qcloudimg.com/raw/cea0d30191547030521df32f70d88e67.png)
 
 >
 > + 若您的加速域名服务区域为全球加速，设置的参数缓存配置会全球生效，不支持境内、境外差异化配置。

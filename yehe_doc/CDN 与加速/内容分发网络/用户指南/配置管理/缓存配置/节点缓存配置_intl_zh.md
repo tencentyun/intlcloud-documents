@@ -13,7 +13,7 @@
 + 若选择静态加速类型，常规动态文件（如 .php .jsp .asp .aspx）默认缓存过期时间为0（不缓存直接回源），其他所有文件类型默认过期时间为30天。
 + 若选择下载加速、流媒体点播加速类型，默认所有文件缓存过期时间为30天。
 
-![](https://main.qcloudimg.com/raw/43e457600f1d0036c23dff9d091da34d.png)
+![](https://main.qcloudimg.com/raw/881b28d433ec177d43abf8c42c3a22c0.png)
 
 ### 修改配置
 #### 1. 修改配置
@@ -23,7 +23,7 @@ CDN 目前支持以下四种类型的缓存过期规则配置：
 + 全路径文件：指定完整的文件路径进行缓存过期时间设置，格式为`/index.html`，支持完整路径加文件类型匹配模式，如`/test/*.jpg`。
 + 首页：针对根目录设置缓存过期时间。
 
-![](https://main.qcloudimg.com/raw/b9be3726c932508d5705a773816cea26.png)
+![](https://main.qcloudimg.com/raw/594c858ae4f47752c11f2ccaa04ba211.png)
 **配置规则：**
 
 + 缓存过期规则最多可配置10条。
@@ -49,7 +49,7 @@ CDN 目前支持以下四种类型的缓存过期规则配置：
 
 ## 配置示例
 若加速域名`cloud.tencent.com`的缓存过期规则配置如下：
-![](https://main.qcloudimg.com/raw/36a6bfe2001e73c0a8a24e669c1b3a52.png)
+![](https://main.qcloudimg.com/raw/31a29838e22a1cc4e1de1c1b023742d4.png)
 则实际缓存时间如下：
 1. `/test/abc.jpg` 文件节点缓存过期时间为200秒。
 2. `/test/def.jpg` 文件节点缓存过期时间为400秒。

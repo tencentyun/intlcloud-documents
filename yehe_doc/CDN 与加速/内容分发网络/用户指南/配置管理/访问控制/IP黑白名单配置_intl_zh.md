@@ -7,12 +7,12 @@
 
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第二栏【访问控制】中可看到 IP 黑白名单配置，默认情况下为关闭状态：
-![](https://main.qcloudimg.com/raw/a90696de3c9633b19350c42ce7969a22.png)
+![](https://main.qcloudimg.com/raw/f151317bd14f053a125bf0c3841da033.png)
 
 ### 修改配置
 #### 1. 修改配置
 单击开关，选择黑名单 / 白名单，并填入 IP 或 IP 段列表并单击【确认】，即可启用 IP 黑 / 白名单配置：
-![](https://main.qcloudimg.com/raw/fb9c0a6d836c850c0483d2a7f1b7a84d.png)
+![](https://main.qcloudimg.com/raw/0b278589542a7022b3525f80ecadd2e3.png)
 **IP 黑名单**
 用户端 IP 匹配黑名单中的 IP 或 IP 段时 ，访问 CDN 节点时将直接返回403状态码。
 **IP 白名单**
@@ -25,14 +25,14 @@
 
 #### 2. 关闭配置
 您可以通过 IP 黑白名单配置开关进行一键关闭，开关为关闭状态时，即便下方存在已有配置，仍不会现网生效，下次单击开启时，会先行进行配置的二次确认，不会立即发布至全网生效：
-![](https://main.qcloudimg.com/raw/f9aab35f1f3442d9abc689f65b36bfe6.png)
+![](https://main.qcloudimg.com/raw/24a3de16131fd945c05307493eb768f0.png)
 
 >若您的加速域名服务区域为全球加速，设置的 IP 黑名单与白名单会全球生效，不支持境内、境外差异化配置。
 
 ## 配置示例
 
 若加速域名`www.test.com`的 IP 黑白名单配置如下：
-![](https://main.qcloudimg.com/raw/92cbda13c61935970d8a57d73ee1884c.png)
+![](https://main.qcloudimg.com/raw/29a9307902d03f686345eef2964c5ec2.png)
 则实际访问情况如下：
 1. 用户端 IP 为`1.1.1.1`的用户访问资源`http://www.test.com/test.txt`，匹配白名单，正常返回内容。
 2. 用户端 IP 为`2.1.1.1`的用户访问资源`http://www.test.com/test.txt`，未匹配白名单，返回403。
