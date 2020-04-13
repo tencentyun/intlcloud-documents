@@ -489,7 +489,11 @@ For more information on COS regions, please see [Regions and Access Domain Names
 
 | Region                          | Transfer Direction | Transfer Acceleration Traffic Fee (USD/GB) |
 | :---------------------------- | :------- | :------------------------- |
-| Mainland China - Hong Kong (China) and regions outside Mainland China | Upstream     | 0.18                       |
-| Mainland China - Hong Kong (China) and regions outside Mainland China | Downstream     | 0.18                       |
-| Mainland China - Mainland China | Upstream     | 0.07                       |
-| Mainland China - Mainland China | Downstream     | 0.07                       |
+| Mainland China - Mainland China             | Upstream     | 0.07                          |
+| Mainland China - Mainland China            | 	Downstream     | 0.07                           |
+| Mainland China - Hong Kong (China) and regions outside Mainland China      | Upstream     | 0.18                        |
+| Mainland China - Hong Kong (China) and regions outside Mainland China      | 	Downstream     | 0.18                           |
+| Hong Kong (China) and outside Mainland China - Hong Kong (China) and regions outside Mainland China | Upstream     | 0.18                          |
+| Hong Kong (China) and outside Mainland China - Hong Kong (China) and regions outside Mainland China | 	Downstream    | 0.18                         |
+| Hong Kong (China) and outside Mainland China - Mainland China       | Upstream     | 0.18                            |
+| Hong Kong (China) and outside Mainland China - Mainland China       | 	Downstream     | 0.18                       |
