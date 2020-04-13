@@ -22,9 +22,9 @@ Windows、Linux と Mac OS
 
 1. [CVMコンソール](https://console.cloud.tencent.com/cvm/index)にログインします。
 2. インスタンスの管理画面で、ログインしたいLinux CVMを選択して、【ログイン】をクリックします。下記画像に示すように：
-![](https://main.qcloudimg.com/raw/b7f0594ddecad128707ee720502e10b0.png)
+![](https://main.qcloudimg.com/raw/a4cc736f2dc7f13bf39756b8e39532d4.png)
 3. ポップアップした【Linuxインスタンスのログイン】ウインドウで、【その他の方式(VNC）】を選択して、【今すぐログイン】をクリックします。下図に示すように：
-![](https://main.qcloudimg.com/raw/6d4eb31a5c3e127f7214b31db263bc5a.png)
+![](https://main.qcloudimg.com/raw/1bd4877abc15d06adb8c54fc7ed1318e.png)
 4. ポップアップしたダイアログボックスで、ユーザー名とパスワードを入力してログインできます。下記画像に示すように：
-![](https://main.qcloudimg.com/raw/bab14d0f56db2f3bc1ab949e08fcc0f0.png)
+![](https://main.qcloudimg.com/raw/03a8492f66e8342221858709b6068669.png)
 
