@@ -114,14 +114,14 @@ make
 
 #### 2. 安装 CMake 工具
 
-从 [CMake官网](https://cmake.org/download/) 下载 Windows 版本的 CMake 编译工具，并将`${CMake的安装路径}/bin`，配置在 Windows 的系统环境变量 Path 中。
+从 [CMake官网](https://cmake.org/download/) 下载 Windows 版本的 CMake 编译工具，并将`${CMake的安装路径}\bin`，配置在 Windows 的系统环境变量 Path 中。
 
 #### 3. 安装 OpenSSL
 
 （1）在 [OpenSSL官网](https://www.openssl.org/) 下载 OpenSSL 源码进行编译，或者在第三方 [网站](https://slproweb.com/products/Win32OpenSSL.html) 下选择 Window 版本的 .exe 文件进行安装。
 （2）在 Windows 系统中系统环境变量增加`OPENSSL_ROOT_DIR`变量，并设置为`${OpenSSL的安装路径}`。
 例如，设置系统环境变量：`OPENSSL_ROOT_DIR=D:\OpenSSL-Win64`
-（3）将`${OpenSSL的安装路径}/bin`，配置在 Windows 的系统环境变量 Path 中。
+（3）将`${OpenSSL的安装路径}\bin`，配置在 Windows 的系统环境变量 Path 中。
 
 #### 4. 安装 Poco
 
@@ -285,7 +285,7 @@ make
 
 下面为您介绍如何使用 COS C++ SDK 完成一个基础操作，如初始化客户端、创建存储桶、查询存储桶列表、上传对象、查询对象列表、下载对象和删除对象。
 
->关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
+>关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 ### 初始化
 
@@ -296,7 +296,7 @@ make
 "SecretId":"COS_SECRETID", 
 "SecretKey":"COS_SECRETKEY",
 
-// COS 地域，地域及简称请参阅 https://intl.cloud.tencent.com/document/product/436/6224 
+// COS 地域，地域及简称请参阅 https://cloud.tencent.com/document/product/436/6224 
 "Region":"Region",
 
 // 签名超时时间, 单位：s    
