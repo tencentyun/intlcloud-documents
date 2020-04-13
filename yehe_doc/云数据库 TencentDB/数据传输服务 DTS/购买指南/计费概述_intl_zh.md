@@ -2,7 +2,7 @@
 
 公测结束之后，本产品将进行正式售卖。
 
-如需了解本产品更多详情，请 [联系我们](<https://intl.cloud.tencent.com/support)。
+如需了解本产品更多详情，请 [联系我们](https://intl.cloud.tencent.com/support)。
 
 ## 数据迁移
 数据迁移服务免费公测中，您可以免费试用。如果价格更新，将提前通知存量用户。
