@@ -17,11 +17,11 @@ Windows
 > 以下の操作手順は Windows 7 OS を例とします。
 >
 1. ローカルのWindows PCで、<img src="https://main.qcloudimg.com/raw/370daffec54024ee262d1e5dbcd4bde2.png" style="margin: 0;width: 35px;">をクリックし、【ファイル名を指定して実行】で、**mstsc**を入力して**Enter**を押し、リモートデスクトップ接続のダイアログボックスを開きます。下記画像に示すように：
-![](https://main.qcloudimg.com/raw/38e9d9ac0485bf8ad3a209092a1284ba.png)
+![](https://main.qcloudimg.com/raw/d8a4b0f70f876f6c0edc6e995a02c37d.png)
 2.【コンピューター】の後ろに、Windows サーバーのパブリックIPを入力し、【接続】をクリックします。
 3. ポップアップした「Windows セキュリティ」のウインドウで、インスタンス管理者アカウントとパスワードを入力し、下記画像に示すように：
 > ポップアップした「この接続を信頼しますか」ダイアログボックスで、「このコンピューターへの接続について今後確認しない」をチェックし、【接続】をクリックします。
 >
-![](https://main.qcloudimg.com/raw/3a9aa79200ace4a6ebd68a6e511a341d.png)
+![](https://main.qcloudimg.com/raw/5d3d89e3ec4616a367b80ba377a3f541.png)
 4.【OK】をクリックすると、Windows インスタンスにログインできます。
 
