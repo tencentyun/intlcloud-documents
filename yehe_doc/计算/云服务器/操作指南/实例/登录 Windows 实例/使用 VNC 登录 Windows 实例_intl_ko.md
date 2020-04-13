@@ -22,11 +22,11 @@ Windows 인스턴스에 원격 로그인할 때 사용해야 하는 인스턴스
 
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
 2. 인스턴스의 관리 페이지에서 로그인이 필요한 Windows CVM을 선택하고 [Log In]을 클릭합니다. 아래 이미지 참조
-![](https://main.qcloudimg.com/raw/038fce530c6c6827796e51d896306a93.png)
+![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. 팝업된 "Windows 인스턴스 로그인" 창에서 [Alternative login methods (VNC)]을 선택하고 [Log In Now]을 클릭합니다. 아래 이미지 참조
-![](https://main.qcloudimg.com/raw/9f282782aa5096a82c05af675ff02203.png)
+![](https://main.qcloudimg.com/raw/9f964c1ebdec90f7e371b42340e13662.png)
 4. 팝업된 로그인 창 왼쪽 상단의 "원격 명령어 발송"을 선택하고 **Ctrl-Alt-Delete**를 클릭하여 시스템 로그인 인터페이스에 접속합니다. 아래 이미지 참조
-![](https://main.qcloudimg.com/raw/2dec43fa6ddb5e442da59c75f7a34b0f.png)
+![](https://main.qcloudimg.com/raw/c07755c1e0d0040e2ecb87f048b8be1b.png)
 
 
 
