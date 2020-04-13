@@ -5,5 +5,4 @@
 1. Log in to the [Virtual Private Cloud Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. Click **Bandwidth Package** on the left sidebar.
 3. Select a region, click **Delete** for the specified bandwidth package, and click **OK**.
-![](https://main.qcloudimg.com/raw/d066d0473afd8f3d2a158081abc07bb7.png)
 
