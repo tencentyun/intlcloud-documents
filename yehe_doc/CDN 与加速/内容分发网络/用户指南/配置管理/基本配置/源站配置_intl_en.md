@@ -64,7 +64,7 @@ Select regions that need different origin-pull policies and enter the correspond
 > + If the region-specific configuration is the same as the basic configuration, they will be automatically merged. You can configure them to be the same to delete the region-specific configuration.
 
 ## Configuration Sample
-### Origin-Pull domain name configuration<a ID="exp"></a>
+### Origin-Pull domain name configuration
 Suppose the CDN origin server and the acceleration domain name `www.test.com` are configured as follows:
 ![](https://main.qcloudimg.com/raw/ec2e007bb32723f7dd12aac17524c8af.png)
 The access route for the user will be:
