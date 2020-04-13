@@ -6,11 +6,11 @@
 
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第一栏中基本信息下方即为源站配置模块：
-![](https://main.qcloudimg.com/raw/64704b6e977e6d40e7f4ab83e6f62889.png)
+![](https://main.qcloudimg.com/raw/524f3c9aa2f9f2017d53409ee610bb5b.png)
 **源站类型**
 
 + 自有源站：已经拥有稳定运行的业务服务器（即源站），填充对应的 IP 地址列表、或域名作为源站地址。
-+ [对象存储（COS）](https://intl.cloud.tencent.com/product/cos)：资源已存储在腾讯云对象存储中，直接选择某一个 bucket 作为源站。
++ [对象存储（COS）](https://cloud.tencent.com/product/cos)：资源已存储在腾讯云对象存储中，直接选择某一个 bucket 作为源站。
 
 **源站地址**
 源站地址最多可填充511个字符，支持多 IP、单域名回源。
@@ -22,7 +22,7 @@ CDN 加速节点回源到用户源站时使用的协议，HTTP 或 HTTPS。
 ### 修改配置
 #### 1. 修改主源站配置
 单击右上方【编辑】，可修改主源站配置内容：
-![](https://main.qcloudimg.com/raw/492ae8af5f07a38756f834e891421f4c.png)
+![](https://main.qcloudimg.com/raw/4aece10fc2116a656cc6f567eca63528.png)
 **修改源站地址**
 选择自有源站时，源站地址最多可填充511个字符，支持以下配置模式：
 
@@ -51,28 +51,28 @@ CDN 加速节点回源到用户源站时使用的协议，HTTP 或 HTTPS。
 若您的主源站为自有源站，可添加热备源站，所有回源请求均会先访问主源站，若返回为 4XX 5XX 错误码，或链接超时、协议不兼容等情况后，会再次回源至热备源站进行资源拉取，保障用户回源高可用。
 
 支持针对热备源站独立配置回源协议、回源 Host 信息。
-![](https://main.qcloudimg.com/raw/9e27d824b454318e5144f3e959c1dd5f.png)
+![](https://main.qcloudimg.com/raw/4d2ba172412182eb87ba40149775689f.png)
 
 #### 3. 区域特殊配置
 若您的加速域名为服务区域为全球，为避免跨国流量产生，希望针对加速域名不同服务区域设置不同源站，可单击下方【添加特殊配置】实现：
-![](https://main.qcloudimg.com/raw/0a1106717298ba6d4a8a42d8372e58bd.png)
+![](https://main.qcloudimg.com/raw/d4a7a61ed28daa2c3eb0febf02ca931c.png)
 选择需要不同回源策略的区域，并填充对应的源站信息即可：
-![](https://main.qcloudimg.com/raw/61cd34bd149ad80d5edb102a4a5663c5.png)
+![](https://main.qcloudimg.com/raw/d8f02e0ae1e44972cedd07160bb9f5cb.png)
 
 >
 > + 区域特殊配置添加后，暂时无法直接删除。
 > + 若区域特殊配置与基础配置完全一致，则会自动进行合并，您可以通过配置成一致来删除区域特殊配置。
 
 ## 配置示例
-### 回源域名配置<a ID="exp"></a>
+### 回源域名配置
 若 CDN 源站配置如下，假设加速域名`www.test.com`配置如下：
-![](https://main.qcloudimg.com/raw/57746cfa348a8ed7937090586de60348.png)
+![](https://main.qcloudimg.com/raw/ec2e007bb32723f7dd12aac17524c8af.png)
 则用户访问路径如下：
 用户访问资源`http://www.test.com/test.txt`，此时 CDN 节点尚未缓存该资源，则 CDN 节点回源是针对`www.abc.com`域名进行解析，得到源站服务器地址，假设为`1.1.1.1`，则访问`1.1.1.1`服务器，在其上的 Web 网站`www.def.com`路径下，找到 test.txt 文件，返回给用户。
 
 ### 区域特殊配置
 若腾讯云 CDN 源站配置如下，假设加速域名`www.test.com`配置如下：
-![](https://main.qcloudimg.com/raw/9e9f1c851e08cf602077948d2a560e56.png)
+![](https://main.qcloudimg.com/raw/e9104ca2b0e38c62bdffb022a933b2b9.png)
 则实际回源场景为：
 1. 中国境内用户访问`http://www.test.com/test.txt`文件，境内节点尚未缓存该资源，则回源请求到达服务器`1.1.1.1`，找到 Web 网站`1.test.com`下的 test.txt 文件，若有该资源则直接返回给客户，若无，则进行步骤2。
 2. CDN 境内节点回主源站失败，未找到资源，则回源请求到达服务器`2.2.2.2`，找到 Web 网站`1.test.com`下的 test.txt 文件，返回给用户并进行缓存。
