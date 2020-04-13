@@ -9,11 +9,11 @@
 
 但是，如果您购买一个硅谷一区 S3.16xlarge256 RI，在同一小时内运行 3 个 同可用区同属性按量计费实例（A,B,C,D）各 20分钟，那么实例的总运行时间为 1 小时，这将产生 1 小时的 RI 使用和 0 小时的按量计费使用。 如下图，这3台实例分别与RI匹配20分钟。
 
-![1558602502993](C:\Users\aironpu\AppData\Local\Temp\1558602502993.png)
+![1558602502993](https://main.qcloudimg.com/raw/a812f74455b8b9d8ebbc84e90e26bc04.png)
 
 如果3个符合相匹配按量计费实例同时运行，Reserved Instance 账单优势将在一小时内（最多 3600 秒）同时适用于所有实例；在该时间后，继续按照按量计费模式扣取费用。
 
-![1558602155668](C:\Users\aironpu\AppData\Local\Temp\1558602155668.png)
+![1558602155668](https://main.qcloudimg.com/raw/24926b2c2675e2d6959adcf62054f5b1.png)
 
 #### 生效时间
 

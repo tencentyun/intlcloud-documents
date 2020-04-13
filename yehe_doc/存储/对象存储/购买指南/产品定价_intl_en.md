@@ -482,14 +482,18 @@ For more information on public cloud regions and finance cloud regions of COS, p
    </tr>
 </table>
 
-## Transfer Acceleration Pricing
+## Global Acceleration Pricing
 
 >- The [global acceleration](https://intl.cloud.tencent.com/document/product/436/33409) feature has been made fully available and is supported in all public cloud regions. It is not supported in finance cloud regions due to network isolation.
->- Transfer acceleration fee is settled **daily**.
+>- Global Acceleration fee is settled **daily**.
 
-| Region                          | Transfer Direction | Transfer Acceleration Traffic Fee (USD/GB) |
+| Region                          | Transfer Direction | Global Acceleration Traffic Fee (USD/GB) |
 | :---------------------------- | :------- | :------------------------- |
-| Mainland China - Hong Kong (China) and regions outside Mainland China | Upstream     | 0.18                       |
-| Mainland China - Hong Kong (China) and regions outside Mainland China | Downstream     | 0.18                       |
-| Mainland China - Mainland China | Upstream     | 0.07                       |
-| Mainland China - Mainland China | Downstream     | 0.07                       |
+| Mainland China - Mainland China             | Upstream     | 0.07                          |
+| Mainland China - Mainland China         | Downstream     | 0.07                           |
+| Mainland China - Hong Kong (China) and regions outside Mainland China       | Upstream     | 0.18                        |
+| Mainland China - Hong Kong (China) and regions outside Mainland China       | Downstream     | 0.18                           |
+| Hong Kong (China) and outside Mainland China - Hong Kong (China) and regions outside Mainland China | Upstream     | 0.18                          |
+| Hong Kong (China) and outside Mainland China - Hong Kong (China) and regions outside Mainland China | Downstream     | 0.18                         |
+| Hong Kong (China) and outside Mainland China - Mainland China       | Upstream    | 0.18                            |
+| Hong Kong (China) and outside Mainland China - Mainland China     | Downstream     | 0.18                       |

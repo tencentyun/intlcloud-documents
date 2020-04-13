@@ -23,7 +23,7 @@
 ![](https://main.qcloudimg.com/raw/f10d21c2f28d5f49841b4aac656b9efa.png)
 11. 单击【下一步】。
 12. 勾选【如果需要，自动重新启动目标服务器】，并在弹出的提示框中单击【是】。如下图所示：
-![](https://main.qcloudimg.com/raw/05a63b7593c57573a5c19b03ae4cd4a5.png)
+![](https://main.qcloudimg.com/raw/df280b0a66470be404f114bd17c47d21.png)
 13. 单击【安装】，等待远程桌面服务安装完成。
 
 ### 配置多用户远程登录实例

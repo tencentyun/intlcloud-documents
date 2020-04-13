@@ -29,8 +29,10 @@ TCP 支持 CMQ 最新的分布式消息事务。
 在 IDEA 的开机界面打开文件夹。
 ![](https://main.qcloudimg.com/raw/8a3ba96ef290ad50f6f0d20c01594f5d.png)
 打开文件夹后，文件层级关系如下，Demo 工程文件存于 Demo 文件夹下。
-![](https://main.qcloudimg.com/raw/1fc9235f7ae621fec4105fb173725d89.png)
-3. **配置 Demo 参数**<span id="peizhi"></span>
+![](https://main.qcloudimg.com/raw/42a77fb8520e0e28b76fc0e6ec3a3125.png)
+
+<span id="peizhi"></span>
+3. **配置 Demo 参数**
 修改文件 NameServer 地址、密钥对及消息队列名，NameServer 地址请参考 [NameServer 对照表](#Nameserver)。
 以 ProducerDemo 为例，配置如下：
 ```
@@ -59,7 +61,8 @@ String queue = “创建的队列名”
  1. 运行 ProducerTransactionDemo 类进行事务消息发送。
  2. 运行 SubscriberTransactionDemo 类进行事务消息接收。
 
-## Nameserver 对照表<span id="Nameserver"></span>
+<span id="Nameserver"></span>
+## Nameserver 对照表
 | 地区     | 公网地址   | VPC 地址       |    
 | -------- | ------------ | -------------------------- | 
 | 印度     | http://cmq-nameserver-in.tencentcloudapi.com | http://cmq-nameserver-vpc-in.api.tencentyun.com | 

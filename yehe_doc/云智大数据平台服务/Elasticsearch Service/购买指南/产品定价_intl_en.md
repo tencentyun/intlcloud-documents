@@ -1,0 +1,368 @@
+ES currently supports the pay-as-you-go billing mode. Billable items include node models and storage.
+
+
+### Pay-as-you-go
+<div style="max-width: 100%;overflow-x: auto;margin-bottom: 24px; padding-bottom: 5px;" >
+<table class="tg">
+  <tr>
+    <th class="tg-llyw" rowspan="3">Node Specification</th>
+    <th class="tg-llyw" rowspan="3">CPU</th>
+    <th class="tg-llyw" rowspan="3">Memory (GB)</th>
+    <th class="tg-llyw" rowspan="3">Applicable Scenario</th>
+    <th class="tg-llyw" colspan="18">Postpaid ($USD/node/hour)</th>
+  </tr>
+  <tr>
+    <td class="tg-llyw" colspan="2">Beijing/Shanghai/Guangzhou/Nanjing</td>
+    <td class="tg-llyw" colspan="2">Chengdu/Chongqing</td>
+    <td class="tg-llyw" colspan="2">Hong Kong (China)</td>
+    <td class="tg-llyw" colspan="2">Singapore</td>
+      <td class="tg-llyw" colspan="2">Mumbai</td>
+      <td class="tg-llyw" colspan="2">Seoul</td>
+    <td class="tg-llyw" colspan="2">Silicon Valley</td>
+    <td class="tg-llyw" colspan="2">Toronto</td>
+		<td class="tg-llyw" colspan="2">Frankfurt</td>
+  </tr>
+  <tr>
+    <td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+    <td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+    <td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+    <td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+    <td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+    <td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+		<td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+		<td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+      		<td class="tg-llyw">Open Source/Basic Edition</td>
+    <td class="tg-llyw">Platinum Edition</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">ES.S1.SMALL2</td>
+    <td class="tg-0pky">1</td>
+    <td class="tg-0pky">2</td>
+    <td class="tg-0pky">Testing</td>
+    <td class="tg-0pky">0.044</td>
+    <td class="tg-0pky">0.055</td>
+    <td class="tg-0pky">0.047</td>
+    <td class="tg-0pky">0.052</td>
+    <td class="tg-0pky">0.042</td>
+    <td class="tg-0pky">0.047</td>
+    <td class="tg-0pky">0.038</td>
+    <td class="tg-0pky">0.042</td>
+    <td class="tg-0pky">0.041</td>
+    <td class="tg-0pky">0.046</td>
+    <td class="tg-0pky">0.040</td>
+    <td class="tg-0pky">0.044</td>
+		<td class="tg-0pky">0.039</td>
+    <td class="tg-0pky">0.043</td>
+		<td class="tg-0pky">0.030</td>
+    <td class="tg-0pky">0.033</td>
+      <td class="tg-0pky">0.041</td>
+    <td class="tg-0pky">0.046</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">ES.S1.MEDIUM4</td>
+    <td class="tg-0pky">2</td>
+    <td class="tg-0pky">4</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">0.125</td>
+    <td class="tg-0pky">0.156</td>
+    <td class="tg-0pky">0.129</td>
+    <td class="tg-0pky">0.143</td>
+    <td class="tg-0pky">0.106</td>
+    <td class="tg-0pky">0.118</td>
+    <td class="tg-0pky">0.106</td>
+    <td class="tg-0pky">0.118</td>
+    <td class="tg-0pky">0.089</td>
+    <td class="tg-0pky">0.099</td>
+    <td class="tg-0pky">0.107</td>
+    <td class="tg-0pky">0.119</td>
+    <td class="tg-0pky">0.100</td>
+    <td class="tg-0pky">0.111</td>
+		<td class="tg-0pky">0.077</td>
+    <td class="tg-0pky">0.086</td>
+		<td class="tg-0pky">0.103</td>
+    <td class="tg-0pky">0.114</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">ES.S1.MEDIUM8</td>
+    <td class="tg-0pky">2</td>
+    <td class="tg-0pky">8</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">0.186</td>
+    <td class="tg-0pky">0.233</td>
+    <td class="tg-0pky">0.193</td>
+    <td class="tg-0pky">0.214</td>
+    <td class="tg-0pky">0.158</td>
+    <td class="tg-0pky">0.176</td>
+    <td class="tg-0pky">0.158</td>
+    <td class="tg-0pky">0.176</td>
+    <td class="tg-0pky">0.134</td>
+    <td class="tg-0pky">0.149</td>
+    <td class="tg-0pky">0.159</td>
+    <td class="tg-0pky">0.177</td>
+		<td class="tg-0pky">0.150</td>
+    <td class="tg-0pky">0.167</td>
+		<td class="tg-0pky">0.118</td>
+    <td class="tg-0pky">0.131</td>
+      <td class="tg-0pky">0.153</td>
+    <td class="tg-0pky">0.170</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">ES.S1.LARGE16</td>
+    <td class="tg-0pky">4</td>
+    <td class="tg-0pky">16</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">0.374</td>
+        <td class="tg-0pky">0.467</td>
+		<td class="tg-0pky">0.385</td>
+    <td class="tg-0pky">0.428</td>
+    <td class="tg-0pky">0.317</td>
+    <td class="tg-0pky">0.352</td>
+    <td class="tg-0pky">0.317</td>
+    <td class="tg-0pky">0.352</td>
+    <td class="tg-0pky">0.268</td>
+    <td class="tg-0pky">0.298</td>
+    <td class="tg-0pky">0.319</td>
+    <td class="tg-0pky">0.354</td>
+    <td class="tg-0pky">0.301</td>
+    <td class="tg-0pky">0.334</td>
+    <td class="tg-0pky">0.235</td>
+    <td class="tg-0pky">0.261</td>
+    <td class="tg-0pky">0.305</td>
+		<td class="tg-0pky">0.339</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">ES.S1.2XLARGE16</td>
+    <td class="tg-0pky">8</td>
+    <td class="tg-0pky">16</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">0.498</td>
+    <td class="tg-0pky">0.622</td>
+    <td class="tg-0pky">0.513</td>
+    <td class="tg-0pky">0.570</td>
+    <td class="tg-0pky">0.427</td>
+    <td class="tg-0pky">0.474</td>
+    <td class="tg-0pky">0.427</td>
+    <td class="tg-0pky">0.474</td>
+    <td class="tg-0pky">0.357</td>
+    <td class="tg-0pky">0.397</td>
+    <td class="tg-0pky">0.428</td>
+    <td class="tg-0pky">0.476</td>
+		<td class="tg-0pky">0.401</td>
+    <td class="tg-0pky">0.445</td>
+		<td class="tg-0pky">0.311</td>
+    <td class="tg-0pky">0.345</td>
+   <td class="tg-0pky">0.410</td>
+    <td class="tg-0pky">0.456</td>   
+  </tr>
+  <tr>
+    <td class="tg-0pky">ES.S1.2XLARGE32</td>
+    <td class="tg-0pky">8</td>
+    <td class="tg-0pky">32</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">0.746</td>
+    <td class="tg-0pky">0.933</td>
+    <td class="tg-0pky">0.770</td>
+    <td class="tg-0pky">0.855</td>
+    <td class="tg-0pky">0.634</td>
+    <td class="tg-0pky">0.704</td>
+    <td class="tg-0pky">0.634</td>
+    <td class="tg-0pky">0.704</td>
+    <td class="tg-0pky">0.536</td>
+    <td class="tg-0pky">0.595</td>
+    <td class="tg-0pky">0.637</td>
+    <td class="tg-0pky">0.708</td>
+		<td class="tg-0pky">0.600</td>
+    <td class="tg-0pky">0.667</td>
+		<td class="tg-0pky">0.471</td>
+    <td class="tg-0pky">0.523</td>
+      <td class="tg-0pky">0.610</td>
+      <td class="tg-0pky">0.678</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">ES.S1.4XLARGE32</td>
+    <td class="tg-0pky">16</td>
+    <td class="tg-0pky">32</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">0.995</td>
+    <td class="tg-0pky">1.244</td>
+    <td class="tg-0pky">1.026</td>
+    <td class="tg-0pky">1.140</td>
+    <td class="tg-0pky">0.852</td>
+    <td class="tg-0pky">0.947</td>
+    <td class="tg-0pky">0.852</td>
+    <td class="tg-0pky">0.947</td>
+    <td class="tg-0pky">0.715</td>
+    <td class="tg-0pky">0.794</td>
+    <td class="tg-0pky">0.856</td>
+    <td class="tg-0pky">0.951</td>
+		<td class="tg-0pky">0.801</td>
+    <td class="tg-0pky">0.890</td>
+		<td class="tg-0pky">0.620</td>
+    <td class="tg-0pky">0.689</td>
+       <td class="tg-0pky">0.821</td>
+       <td class="tg-0pky">0.912</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">ES.S1.4XLARGE64</td>
+    <td class="tg-0pky">16</td>
+    <td class="tg-0pky">64</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">1.493</td>
+    <td class="tg-0pky">1.866</td>
+    <td class="tg-0pky">1.540</td>
+    <td class="tg-0pky">1.711</td>
+    <td class="tg-0pky">1.267</td>
+    <td class="tg-0pky">1.408</td>
+    <td class="tg-0pky">1.267</td>
+    <td class="tg-0pky">1.408</td>
+    <td class="tg-0pky">1.071</td>
+    <td class="tg-0pky">1.190</td>
+    <td class="tg-0pky">1.274</td>
+    <td class="tg-0pky">1.415</td>
+		<td class="tg-0pky">1.201</td>
+    <td class="tg-0pky">1.334</td>
+		<td class="tg-0pky">0.941</td>
+    <td class="tg-0pky">1.045</td>
+      <td class="tg-0pky">1.221</td>
+      <td class="tg-0pky">1.357</td>
+  </tr>
+    <tr>
+    <td class="tg-0pky">ES.S1.6XLARGE48</td>
+    <td class="tg-0pky">24</td>
+    <td class="tg-0pky">48</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">1.493</td>
+    <td class="tg-0pky">1.866</td>
+    <td class="tg-0pky">1.540</td>
+    <td class="tg-0pky">1.711</td>
+    <td class="tg-0pky">1.279</td>
+    <td class="tg-0pky">1.421</td>
+    <td class="tg-0pky">1.279</td>
+    <td class="tg-0pky">1.421</td>
+    <td class="tg-0pky">1.071</td>
+    <td class="tg-0pky">1.190</td>
+    <td class="tg-0pky">1.284</td>
+    <td class="tg-0pky">1.427</td>
+		<td class="tg-0pky">1.201</td>
+    <td class="tg-0pky">1.334</td>
+		<td class="tg-0pky">0.931</td>
+    <td class="tg-0pky">1.034</td>
+       <td class="tg-0pky">1.231</td>
+       <td class="tg-0pky">1.368</td>
+  </tr>
+    <tr>
+    <td class="tg-0pky">ES.S1.6XLARGE96</td>
+    <td class="tg-0pky">24</td>
+    <td class="tg-0pky">96</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">2.239</td>
+    <td class="tg-0pky">2.799</td>
+    <td class="tg-0pky">2.309</td>
+    <td class="tg-0pky">2.566</td>
+    <td class="tg-0pky">1.901</td>
+    <td class="tg-0pky">2.112</td>
+    <td class="tg-0pky">1.901</td>
+    <td class="tg-0pky">2.112</td>
+    <td class="tg-0pky">1.607</td>
+    <td class="tg-0pky">1.786</td>
+    <td class="tg-0pky">1.911</td>
+    <td class="tg-0pky">2.123</td>
+		<td class="tg-0pky">1.802</td>
+    <td class="tg-0pky">2.002</td>
+		<td class="tg-0pky">1.411</td>
+    <td class="tg-0pky">1.568</td>
+       <td class="tg-0pky">1.832</td>
+       <td class="tg-0pky">2.035</td>
+  </tr>
+<tr>
+    <td class="tg-0pky">ES.S1.8XLARGE64</td>
+    <td class="tg-0pky">32</td>
+    <td class="tg-0pky">64</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">1.990</td>
+    <td class="tg-0pky">2.488</td>
+    <td class="tg-0pky">2.053</td>
+    <td class="tg-0pky">2.281</td>
+    <td class="tg-0pky">1.705</td>
+    <td class="tg-0pky">1.894</td>
+    <td class="tg-0pky">1.705</td>
+    <td class="tg-0pky">1.894</td>
+    <td class="tg-0pky">1.428</td>
+    <td class="tg-0pky">1.587</td>
+    <td class="tg-0pky">1.712</td>
+    <td class="tg-0pky">1.902</td>
+		<td class="tg-0pky">1.601</td>
+    <td class="tg-0pky">1.779</td>
+		<td class="tg-0pky">1.241</td>
+    <td class="tg-0pky">1.379</td>
+       <td class="tg-0pky">1.642</td>
+       <td class="tg-0pky">1.824</td>
+  </tr>
+    <tr>
+    <td class="tg-0pky">ES.S1.8XLARGE128</td>
+    <td class="tg-0pky">32</td>
+    <td class="tg-0pky">128</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">2.986</td>
+    <td class="tg-0pky">3.732</td>
+    <td class="tg-0pky">3.079</td>
+    <td class="tg-0pky">3.421</td>
+    <td class="tg-0pky">2.534</td>
+    <td class="tg-0pky">2.816</td>
+    <td class="tg-0pky">2.534</td>
+    <td class="tg-0pky">2.816</td>
+    <td class="tg-0pky">2.143</td>
+    <td class="tg-0pky">2.381</td>
+    <td class="tg-0pky">2.547</td>
+    <td class="tg-0pky">2.830</td>
+		<td class="tg-0pky">2.402</td>
+    <td class="tg-0pky">2.669</td>
+		<td class="tg-0pky">1.882</td>
+    <td class="tg-0pky">2.091</td>
+       <td class="tg-0pky">2.442</td>
+       <td class="tg-0pky">2.713</td>
+  </tr>
+    <tr>
+    <td class="tg-0pky">ES.S1.12XLARGE96</td>
+    <td class="tg-0pky">48</td>
+    <td class="tg-0pky">96</td>
+    <td class="tg-0pky">Production</td>
+    <td class="tg-0pky">2.986</td>
+    <td class="tg-0pky">3.732</td>
+    <td class="tg-0pky">3.079</td>
+    <td class="tg-0pky">3.421</td>
+    <td class="tg-0pky">2.558</td>
+    <td class="tg-0pky">2.842</td>
+    <td class="tg-0pky">2.558</td>
+    <td class="tg-0pky">2.842</td>
+    <td class="tg-0pky">2.143</td>
+    <td class="tg-0pky">2.381</td>
+    <td class="tg-0pky">2.569</td>
+    <td class="tg-0pky">2.854</td>
+		<td class="tg-0pky">2.402</td>
+    <td class="tg-0pky">2.669</td>
+		<td class="tg-0pky">1.861</td>
+    <td class="tg-0pky">2.068</td>
+       <td class="tg-0pky">2.462</td>
+       <td class="tg-0pky">2.736</td>
+  </tr>
+</table>
+</div>
+
+## Prices of Node Storage
+The following lists the prices in some regions:
+
+| Storage Type   |Beijing/Shanghai/Guangzhou ($USD/GB/hour) | Silicon Valley ($USD/GB/hour)|
+| :--------- | :------------------------- | :----------------- |
+| SSD Cloud Storage    | 0.0003                     | 0.0004             |
+| Premium Cloud Storage | 0.0002                     | 0.0002             |
+
+For other regions, please see [Pricing List](https://intl.cloud.tencent.com/document/product/362/2413).

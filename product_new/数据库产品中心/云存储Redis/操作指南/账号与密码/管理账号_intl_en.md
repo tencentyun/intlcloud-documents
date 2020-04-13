@@ -17,8 +17,3 @@ TencentDB for Redis provides read/write permission control and routing policy co
 ## Directions
 1. In the instance list, click an instance name to enter the instance management page.
 2. Go to the **Manage Database** > **Manage Account** page, on which you can perform operations such as creating accounts, modifying permissions, resetting passwords, and deleting accounts.
-![](https://main.qcloudimg.com/raw/286bfb48c760d737c4b34fffb44fe1ad.png)
- - "Create Account" dialog box:
-![](https://main.qcloudimg.com/raw/5d55447bbeb0c6bb2ccb31effa900bf5.png)
- - "Modify Permissions" dialog box:
-![](https://main.qcloudimg.com/raw/eee29009f9b33b66b89b4f9fb564a60c.png)

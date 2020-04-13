@@ -1,3 +1,5 @@
+> Pro edition is coming soon.
+
 Main features in different CWP editions are compared in the table below:
 
 <table>

@@ -1,0 +1,18 @@
+本地机器访问网站需要做 DNS 解析，在这之前会优先从本地 hosts 文件中获取目标域名对应的 IP 地址。所以可以用修改 hosts 文件的方式把本地的访问流量导向 Web 应用防火墙，从而测试经过 Web 应用防火墙访问 Web 站点的线路连通性，避免直接修改 DNS 解析记录，影响到公网用户对站点的访问。
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia)，在左侧导航栏中，选择【Web 应用防火墙】>【防护设置】，在域名列表中查看`waf.qcloudwaf.com`的 VIP 地址。
+ ![](https://main.qcloudimg.com/raw/b03ca645ed87220d5990e924158e3ef5.png)
+2. 修改 hosts 文件
+	- 在 Windows 下修改`C:\Windows\System32\drivers\etc\hosts`，增加条目。
+	格式：VIP 地址+接入网站管家的域名。
+ ![](https://main.qcloudimg.com/raw/c425c461c30311d132fccb425e752fc4.png)
+	- 在 Linux 下 修改`/etc/hosts`，增加条目。
+格式：VIP 地址+接入网站管家的域名。
+ ![3](https://main.qcloudimg.com/raw/76551c1dcd21686169eaf2db8110494a.png)
+3. 访问测试 
+	1. 在本地电脑上访问 Web 站点，若站点能够正常打开，说明网站管家访问 Web 源站的线路连通性正常。
+	1. 在浏览器中输入下面的网址并访问。
+```
+http://waf.qcloudwaf.com/?test=alert(123)  
+```
+	1. 浏览器返回阻断页面，说明 Web 应用防火墙防护功能正常。
+![](https://main.qcloudimg.com/raw/253fdfbae2d6529f2b1e64c1f599c8cc.png)
