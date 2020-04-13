@@ -70,8 +70,9 @@ Import the SDK by using CDN.
 #### 2. Import frontend library files
 Refer to the following code to import `WebRTCAPI.min.js` into the project. 
 ```
-html
-<script src="https://sqimg.qq.com/expert_qq/webrtc/3.0/WebRTCAPI.min.js"></script>
+<head>
+    <script src="../dist/WebRTCService.min.js"></script>
+</head>
 ```
 
 

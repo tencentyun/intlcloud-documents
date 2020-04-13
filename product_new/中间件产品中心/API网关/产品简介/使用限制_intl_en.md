@@ -10,7 +10,7 @@ The use limits of API Gateway for a single tenant are as below:
 | Number of keys that can be bound per usage plan       | 50    |
 | Number of usage plans that can be bound per single key pair | 10    |
 | Maximum QPS that can be configured per usage plan    | 2000  |
-| Number of APIs that can be bound to usage plan        | 10000个 |
+| Number of APIs that can be bound to usage plan        | 10000 |
 | Maximum QPS supported per service  | 5000  |
 
 
