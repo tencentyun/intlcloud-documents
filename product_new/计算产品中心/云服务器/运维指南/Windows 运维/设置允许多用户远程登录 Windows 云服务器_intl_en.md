@@ -23,7 +23,7 @@ The “Add features that required for Remote Desktop Licensing?” prompt box wi
 ![](https://main.qcloudimg.com/raw/d7aa066366b168ac8a7475155d34ea19.png)
 11. Click **Next**.
 12. Check **Restart the destination server automatically if required**, and click **Yes** in the pop-up prompt box, as shown below:
-![](https://main.qcloudimg.com/raw/05a63b7593c57573a5c19b03ae4cd4a5.png)
+![](https://main.qcloudimg.com/raw/df280b0a66470be404f114bd17c47d21.png)
 13. Click **Install** and wait for the remote desktop service installation to complete.
 
 ### Configuring multi-user remote login to instance
