@@ -17,11 +17,11 @@ Windows
 > 다음 작업 순서는 Windows 7 운영 체제를 예로 듭니다.
 >
 1. 로컬 Windows 컴퓨터에서 <img src="https://main.qcloudimg.com/raw/370daffec54024ee262d1e5dbcd4bde2.png" style="margin: 0;width: 35px;">를 클릭하고 [프로그램 및 파일 검색]에서 **mstsc**를 입력한 후 **Enter**를 눌러 원격 데스크톱 연결 창을 엽니다. 아래 이미지 참조
-![](https://main.qcloudimg.com/raw/38e9d9ac0485bf8ad3a209092a1284ba.png)
+![](https://main.qcloudimg.com/raw/d8a4b0f70f876f6c0edc6e995a02c37d.png)
 2. [컴퓨터] 입력란에 Windows 서버의 공인 IP를 입력하고 [연결]을 클릭합니다.
 3. 팝업된 "Windows 보안" 창에서 인스턴스의 관리자 계정과 비밀번호를 입력합니다. 아래 이미지 참조
 > “이 원격 연결을 신뢰하십니까?”라는 창이 팝업되면 “이 컴퓨터로의 연결을 다시 묻지 않음”을 선택하고 [연결]을 클릭합니다.
 >
-![](https://main.qcloudimg.com/raw/3a9aa79200ace4a6ebd68a6e511a341d.png)
+![](https://main.qcloudimg.com/raw/5d3d89e3ec4616a367b80ba377a3f541.png)
 4. [확인]을 클릭하면 바로 Windows 인스턴스에 로그인할 수 있습니다.
 
