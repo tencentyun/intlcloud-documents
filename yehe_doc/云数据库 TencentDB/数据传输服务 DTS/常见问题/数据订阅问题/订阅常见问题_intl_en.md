@@ -76,7 +76,7 @@ A sub-account has no permission by default. It must be granted access to the `na
 ```
 
 
-### Will duplicate date be received through data subscription?
+### Will duplicate data be received through data subscription?
 No, if data consumption is normal. However, there is a very slim chance that if the SDK quits abnormally and the last acknowledged consumption time point is not reported promptly, duplicate data may be received when the SDK is started next time.
 If a complete transaction is not acknowledged, the data will be pulled again from the beginning of the transaction when the SDK is started again. In this case, the data cannot be regarded as duplicate data. The core logic of the SDK will ensure the transaction integrity. 
 
