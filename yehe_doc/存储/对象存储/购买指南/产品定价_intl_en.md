@@ -1,8 +1,8 @@
-This document describes the pay-as-you-go billing mode of COS.
+This document describes the COS pay-as-you-go billing mode.
 
-You can also learn more about COS billing by referring to the actual use cases. For more information, please see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
+You can also learn more about COS billing by referring to actual use cases. For more information, please see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 
-For more information on public cloud regions and finance cloud regions of COS, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
+For more information on COS regions, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
 
 ## Pricing for Pay-As-You-Go Mode
 
@@ -46,9 +46,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.0045</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px" nowrap="nowrap">Expediated retrieval: 0.03   <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
-      <td>0.1 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px" nowrap="nowrap">Expedited retrieval: 0.03   <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
+      <td>0.1 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -71,9 +71,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.005</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
-      <td>0.1 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
+      <td>0.1 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -96,9 +96,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.005</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
-      <td>0.08 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
+      <td>0.08 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -121,9 +121,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.005</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
-      <td>0.072 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
+      <td>0.072 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -146,9 +146,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.0045</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
-      <td>0.07 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
+      <td>0.07 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -171,9 +171,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.0045</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
-      <td>0.07 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
+      <td>0.07 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -196,9 +196,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.005</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
-      <td>0.1 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
+      <td>0.1 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -221,9 +221,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.005</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
-      <td>0.12 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
+      <td>0.12 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -246,9 +246,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.0045</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
-      <td>0.07 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
+      <td>0.07 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -271,9 +271,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.0045</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
-      <td>0.07 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
+      <td>0.07 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -296,9 +296,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.005</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
-      <td>0.18 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
+      <td>0.18 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -321,9 +321,9 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.0045</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
-      <td>0.07 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.03 <br>Standard retrieval: 0.01<br>Bulk retrieval: 0.0025</td>
+      <td>0.07 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
@@ -346,25 +346,25 @@ For more information on public cloud regions and finance cloud regions of COS, p
    <tr>
       <td>Archive storage</td>
       <td>0.005</td>
-      <td>0.0147 (requestable only when restoration is needed)</td>
-      <td width="150px">Expediated retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
-      <td>0.12 (applicable only when restoration is needed)</td>
+      <td>0.0147 (requestable only after restoration)</td>
+      <td width="150px">Expedited retrieval: 0.036<br>Standard retrieval: 0.012<br>Bulk retrieval: 0.003</td>
+      <td>0.12 (applicable only after restoration)</td>
       <td>N/A</td>
       <td>N/A</td>
    </tr>
 </table>
 
 
-## Management Feature Pricing
+## Administrative Feature Pricing
 
->- The beta test for the batch operation feature will end on April 13, 2020. You can use it free of charge until then. Billing will officially start then.
+>- The beta test for the batch operation feature will end on April 13, 2020. You can use it free of charge until then. Thereafter, the usage will be billed.
 >- Inventory, extraction, and batch operation fees will be settled **daily**.
 
 
 <table>
    <tr>
 	 <th rowspan=3 ><center>Region</center></th>
-      <th colspan=4 ><center>Management Fee</center></th>
+      <th colspan=4 ><center>Administrative Feature Fee</center></th>
    </tr>
    <tr>
       <th rowspan=2>Inventory Feature<br>(USD/Million Listed Objects)</th>
@@ -484,16 +484,16 @@ For more information on public cloud regions and finance cloud regions of COS, p
 
 ## Global Acceleration Pricing
 
->- The [global acceleration](https://intl.cloud.tencent.com/document/product/436/33409) feature has been made fully available and is supported in all public cloud regions. It is not supported in finance cloud regions due to network isolation.
->- Global Acceleration fee is settled **daily**.
+>- The [global acceleration](https://intl.cloud.tencent.com/document/product/436/33409) feature is now generally available and supported in all public cloud regions. It is not supported in finance cloud regions due to network isolation.
+>- Global acceleration fee is settled **daily**.
 
 | Region                          | Transfer Direction | Global Acceleration Traffic Fee (USD/GB) |
 | :---------------------------- | :------- | :------------------------- |
 | Mainland China - Mainland China             | Upstream     | 0.07                          |
-| Mainland China - Mainland China         | Downstream     | 0.07                           |
-| Mainland China - Hong Kong (China) and regions outside Mainland China       | Upstream     | 0.18                        |
-| Mainland China - Hong Kong (China) and regions outside Mainland China       | Downstream     | 0.18                           |
+| Mainland China - Mainland China            | 	Downstream     | 0.07                           |
+| Mainland China - Hong Kong (China) and regions outside Mainland China      | Upstream     | 0.18                        |
+| Mainland China - Hong Kong (China) and regions outside Mainland China      | 	Downstream     | 0.18                           |
 | Hong Kong (China) and outside Mainland China - Hong Kong (China) and regions outside Mainland China | Upstream     | 0.18                          |
-| Hong Kong (China) and outside Mainland China - Hong Kong (China) and regions outside Mainland China | Downstream     | 0.18                         |
-| Hong Kong (China) and outside Mainland China - Mainland China       | Upstream    | 0.18                            |
-| Hong Kong (China) and outside Mainland China - Mainland China     | Downstream     | 0.18                       |
+| Hong Kong (China) and outside Mainland China - Hong Kong (China) and regions outside Mainland China | 	Downstream    | 0.18                         |
+| Hong Kong (China) and outside Mainland China - Mainland China       | Upstream     | 0.18                            |
+| Hong Kong (China) and outside Mainland China - Mainland China       | 	Downstream     | 0.18                       |
