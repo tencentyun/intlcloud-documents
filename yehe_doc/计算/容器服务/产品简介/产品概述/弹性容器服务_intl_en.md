@@ -97,7 +97,7 @@ To run an offline computing task with EKS, you simply need to prepare a containe
 EKS can run online inference services by using CPU, GPU, and vGPU resources. The abundant resource specifications and the workloads that support autoscaling improve the operating efficiency and cost-effectiveness of the online inference services.
 
 ## Related Services
-- Storage: To use a cloud disk or file storage as the persistent storage of a container, you can use [CBS](https://cloud.tencent.com/product/cbs) and [CFS](https://cloud.tencent.com/product/cfs).
+- Storage: To use a cloud disk or file storage as the persistent storage of a container, you can use [CBS](https://intl.cloud.tencent.com/product/cbs) and [CFS](https://intl.cloud.tencent.com/product/cfs).
 - Network:
  - You can use [VPC](https://cloud.tencent.com/product/vpc) to create and manage your VPC instances, including to create a VPC instance and a subnet, establish a peering connection, use the NAT Gateway, configure a route table, or configure a security policy.
  - To manage service access configurations for private and public network traffic, you can use [CLB](https://cloud.tencent.com/product/clb).
