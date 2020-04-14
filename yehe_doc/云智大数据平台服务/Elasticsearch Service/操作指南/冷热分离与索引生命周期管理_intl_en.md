@@ -9,7 +9,7 @@ Tencent Cloud ES provides the ability to quickly configure hot/warm clusters. Yo
 ### Configuring directly during cluster purchase 
 1. Go to the [ES cluster creation](https://buy.cloud.tencent.com/es#/) page and enter the relevant information for creating the cluster.
 2. Select hot/warm mode as the data node deployment mode and select the hot and warm node specifications as shown below.
-![](https://main.qcloudimg.com/raw/613c96dcef4deb2a5ba2def0cdf23e67.png)
+![](https://main.qcloudimg.com/raw/704d08ee7aa89691f33164b0f7b43f87.jpg)
 3. Set other parameters of the cluster, confirm, and pay.
 
 ### Transforming an existing cluster into a hot/warm cluster 

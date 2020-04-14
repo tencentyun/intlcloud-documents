@@ -8,7 +8,7 @@ Go to the ES purchase page, select **Deployment Mode** > **Multi-AZ**, and set u
 > Other parameter settings are generally the same as those for single-AZ deployment.
 
 Take Shanghai as an example. Select **Multi-AZ** as the deployment mode. Currently, only two AZs are supported, so you need to select two pairs of **AZ and subnet**. The **number of nodes** will be automatically adjusted proportionally to the number of AZs. In order to ensure the stability and reliability of the cluster, **Dedicated Master Node** > **Enable** is selected by default, and you can select 3 or 5 **dedicated master nodes**. Such nodes will be evenly distributed among the three AZs to ensure that when an AZ becomes unavailable, the circumstance where more than half of the nodes are unavailable will never happen. Plus, this guarantees that the cluster always has electable nodes which form a quorum for the election of a master node, thus ensuring cluster reliability.
-![](https://main.qcloudimg.com/raw/5dc18ccae7cb26c74590b6ff7ea14582.jpg)
+![](https://main.qcloudimg.com/raw/86cfd45a6651985a0102c5cdf34b17a3.jpg)
 ## How multi-AZ disaster recovery works
 
 ### Data node

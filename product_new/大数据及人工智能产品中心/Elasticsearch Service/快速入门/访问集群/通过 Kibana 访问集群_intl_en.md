@@ -4,8 +4,8 @@ Tencent Cloud ES contains a Kibana module. You can access Kibana for a cluster o
 
 ### 1.1 Entry
 You can access Kibana through the following two entry points, which can be found on Cluster List and Cluster Details pages respectively as shown below. Clicking the entry point will be redirected to the Kibana login page.
-![Entry on list page](https://main.qcloudimg.com/raw/3b4f196136668a1cdbe351d0ac655960.png)
-![Entry on details page](https://main.qcloudimg.com/raw/168f91daf55dba8783c56d63ffdbb4e0.png)
+![Entry on list page](https://main.qcloudimg.com/raw/0a672a6e9cf2135859b274a6b7ba5870.jpg)
+![Entry on details page](https://main.qcloudimg.com/raw/067daf8047e2f108b79d5f46bb71b810.jpg)
 
 ### 1.2 Login
 To access Kibana, you need to log in with the account name "elastic" and the password which was set when you created the cluster. If you forget your password, you can reset it on the cluster details page.

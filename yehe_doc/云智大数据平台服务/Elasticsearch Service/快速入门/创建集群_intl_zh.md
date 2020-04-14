@@ -38,7 +38,7 @@
 - 专用主节点个数：可选3个或5个，奇数个能保证高可用并预防脑裂风险。
 - Kibana 节点：系统免费提供，1核2G，暂不支持修改。
 
-![](https://main.qcloudimg.com/raw/9f7c820f9cb17074abdcc0e8206f1eff.png)
+![](https://main.qcloudimg.com/raw/9f1f7bfe2988f7e57235c66f5162c20c.jpg)
 
 #### 二、设置名称及密码
 
@@ -48,12 +48,12 @@
 - 密码：上一项用户名对应的密码，请按照规则设置，并妥善保存，如果密码忘记，可在详情页重置。
 - 标签：标签是腾讯云的统一服务，通过它来对腾讯云已有资源进行分类管理。在购买 ES 集群时或者购买后都可以创建或者修改标签。详细介绍请参见 [标签](https://intl.cloud.tencent.com/document/product/651/13334)。
 
-![](https://main.qcloudimg.com/raw/a8b8e49fd0f05a94be9bf23f4b9e9e43.png)
+![](https://main.qcloudimg.com/raw/9eab152498cd0bfa0ae0531243c7fe5f.jpg)
 
 #### 三、确认配置信息
 
 单击【下一步：确认配置信息】，确认配置。
-![确认配置信息](https://main.qcloudimg.com/raw/f3e0369a31e413752e789d23dfa99cc9.png)
+![确认配置信息](https://main.qcloudimg.com/raw/d151fbccf049b07854c9f2420994088a.jpg)
 - 对按量计费，单击【开通】直接创建集群，不需要确认订单支付，在使用过程中，会按小时进行计费及扣费。
 
 #### 四、创建完成

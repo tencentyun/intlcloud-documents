@@ -1,6 +1,6 @@
 In the basic information section on the cluster list page and cluster details page, you can view the status information of your cluster.
-![](https://main.qcloudimg.com/raw/80a76902ac9513d09df81d220ac5d7d7.png)
-![](https://main.qcloudimg.com/raw/7af2eff8fbb21eacbb399fdf87e20214.png)
+![](https://main.qcloudimg.com/raw/fc9882d5985397c260d7441117fe8d60.jpg)
+![](https://main.qcloudimg.com/raw/279b5c35b2bcc5a1ada5118aa61f3459.jpg)
 Cluster status indicates whether a cluster is under change (Processing) or in normal use (Normal). The specific definitions are as follows:
 
 | Status | Description | 

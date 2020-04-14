@@ -116,5 +116,54 @@ then the fees to be paid are calculated as follows:
  - Tier 3: (2 GB * 0.019646 USD/GB/hour + 500 GB * 0.000250 USD/GB/hour) * 2 nodes * 40 hours = 7.09552 USD
  - Total instance fees = tier 1 + tier 2 + tier 3 = 72.9552 USD
 
-
+## Supported Instance Specs
+<table >
+ <tr>
+  <td colspan=2 >Supported Instance Specs</td>
+ </tr>
+ <tr>
+  <td>CPU/Core</td>
+  <td >Memory/GB</td>
+ </tr>
+ <tr>
+  <td>1</td>
+  <td>2</td>
+ </tr>
+ <tr>
+  <td>2</td>
+  <td>4</td>
+ </tr>
+ <tr>
+  <td>4</td>
+  <td>8</td>
+ </tr>
+ <tr>
+  <td>5</td>
+  <td>12</td>
+ </tr>
+ <tr>
+  <td>6</td>
+  <td>16</td>
+ </tr>
+ <tr>
+  <td>8</td>
+  <td>32</td>
+ </tr>
+ <tr>
+  <td>12</td>
+  <td>64</td>
+ </tr>
+ <tr>
+  <td>16</td>
+  <td>96</td>
+ </tr>
+ <tr>
+  <td>20</td>
+  <td>128</td>
+ </tr>
+ <tr>
+  <td>24</td>
+  <td>244</td>
+ </tr>
+</table>
 

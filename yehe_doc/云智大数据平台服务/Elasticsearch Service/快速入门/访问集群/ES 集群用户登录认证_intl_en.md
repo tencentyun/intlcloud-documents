@@ -31,5 +31,5 @@ If you did not enable user authentication for an ES cluster previously and decid
 
 When creating a cluster, you can choose whether to enable or disable ES cluster user authentication. After a cluster is created, if you want to change the feature status, you can enter the cluster details page for configuration.
 
-![](https://main.qcloudimg.com/raw/31b0a3956a4c261578a36913045810f4.jpg)
+![](https://main.qcloudimg.com/raw/8141983518b22bc6951094bc2b3ebbae.jpg)
 

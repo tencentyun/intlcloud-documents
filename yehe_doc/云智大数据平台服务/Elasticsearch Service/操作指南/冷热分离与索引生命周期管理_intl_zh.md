@@ -10,7 +10,7 @@ Elasticsearch 主要用于海量数据的存储和检索，若将所有数据都
 ### 在购买集群时直接创建 
 1. 进入腾讯云 Elasticsearch Service [创建集群](https://buy.cloud.tencent.com/es#/) 页面，在页面填写所需创建集群的相关信息。
 2. 数据节点部署方式选择冷热模式，并选择冷热节点的规格，如下图。
-![](https://main.qcloudimg.com/raw/613c96dcef4deb2a5ba2def0cdf23e67.png)
+![](https://main.qcloudimg.com/raw/704d08ee7aa89691f33164b0f7b43f87.jpg)
 3. 进一步设置集群的其他参数，确认并支付即可。
 
 ### 将现有集群变配为冷热集群 
