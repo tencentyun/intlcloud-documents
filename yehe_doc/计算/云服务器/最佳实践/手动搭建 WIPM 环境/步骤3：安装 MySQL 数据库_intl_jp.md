@@ -78,11 +78,11 @@
 ## 手順四：MySQLテストにログインする
 
 1. Cloud Virtual Machineで【スタート】をクリックし、【検索（アイコン）】をクリックし、```cmd```と入力して管理者コマンドボックスを開きます：
-![](//mc.qcloudimg.com/static/img/c7920f20daff62d136f6ba7987fb2ac8/image.png)
+![](https://main.qcloudimg.com/raw/966adc864594aeffa1c2fa50ba5d91ef.png)
 
 2. コマンド```mysql -u root -p```を入力し、エンターを押します。
  
 3. rootパスワードを設定してMySQLにログインすると、下記の図が表示されれば、インストール設定は成功です。
-![](//mc.qcloudimg.com/static/img/18aef21cabf34db1bca266a8977018f4/image.png)
+![](https://main.qcloudimg.com/raw/3acf03c91d7e9c6752b32b7a94ed6b2e.jpg)
 
 
