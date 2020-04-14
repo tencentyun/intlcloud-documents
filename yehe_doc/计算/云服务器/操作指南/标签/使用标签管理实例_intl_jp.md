@@ -41,10 +41,10 @@ ins-abcdef1 を例として、このインスタンスに次のタグを追加�
 
 1.  [CVMコンソール](https://console.cloud.tencent.com/cvm)にログインします。
 2. 下図の示すように、インスタンスの管理ページでは、タグを編集するインスタンスを選択し、【その他】>【インスタンス設定】>【タグの編集】をクリックします。
-![](https://main.qcloudimg.com/raw/956e2cf2c732fde19f54eef9fabb0cf4.png)
+
 2. ポップアップした「you have selected 1 resource」のウィンドウでタグを設定します。下図に示すように：
 例えば、ins-abcdef1 のインスタンスに[3つのグループのタグ](#table02)を追加します。
-![](https://main.qcloudimg.com/raw/42b543c329252587a758034d1a46c95a.png)
+
 3.【OK】をクリックし、システムは、変更が成功したことを示すメッセージが表示されます。
 
 
@@ -55,5 +55,4 @@ ins-abcdef1 を例として、このインスタンスに次のタグを追加�
 1. 検索ボックスで、【タグ】を選択します。
 2.【タグ:】の後にタグキーとタグ値を入力し、<img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin: 0;"> をクリックして検索します。下図に示すように：
 例えば、担当者がZhang SanであるCVMリソースをフィルタリングする必要がある場合、`タグ:owner:zhangsan`を入力できます。
-![](https://main.qcloudimg.com/raw/6d65de3197540c1ccbe56b716ed44eab.jpg)
 
