@@ -2,7 +2,7 @@
 > **Note:**
 > iptables is quite different before and after CentOS 7.
 > - Prior to CentOS 7, the iptables service was used as a firewall by default. Using the `service iptables stop` code, the iptables service clears the rules first and then unmount the iptables module. When it starts again, rules are loaded from the configuration file. When you stop the iptables service, you can test whether the firewall is restricted.
-> ![](https://main.qcloudimg.com/raw/4a404e0187b0ee677034c0df82468e4a.png)
+> ![](https://main.qcloudimg.com/raw/5f65011fdbf237cc1b0a57c58126e210.png)
 > - After CentOS 7, the firewall service is used as firewall by default. For compatibility, the iptables_filter module is also loaded, but the iptables service is not available. So after CentOS 7, you can add rules using the iptables command, but the iptables service is disabled by default. The user confirms that the iptable_filter module is loaded and the rules take effect.
 
 The most secure method for learning the firewall is `iptables -nvL`. 
@@ -22,7 +22,7 @@ telnet does not work:
 ![](https://main.qcloudimg.com/raw/1052893022c8786a9b7b0166a57ce16d.png)  
 
 2. After confirming it is the iptables policy problem, confirm whether the policy opens port 8081 to Internet via `iptables -nvL`. Here this port is not opened to Internet. 
-![](https://main.qcloudimg.com/raw/bccfca60e3d707ae61c5ba236bf088f8.png) 
+![](https://main.qcloudimg.com/raw/1a27ae5cbfbf7260373cb53c6dd75780.png) 
 3. Use the command to add the policy to open port 8081 to Internet.
 ```
 iptables -I INPUT 5 -p tcp  --dport 8081 -j ACCEPT
@@ -35,7 +35,7 @@ In terms of iptables configuration, the policy has been opened to Internet, but 
 ![](https://main.qcloudimg.com/raw/46fdf4e20187c5b366c7773d73eb1cee.png)
 #### Solutions
 If the following cases occur:
-![](https://main.qcloudimg.com/raw/d1b01f74223ed34c78a789dc43d53bc8.png)
+![](https://main.qcloudimg.com/raw/26447aa7e3ce053abb86607c3f873757.png)
 Use the command to delete the first rule in the output direction:
 ```
 iptabels -D OUTPUT 1
