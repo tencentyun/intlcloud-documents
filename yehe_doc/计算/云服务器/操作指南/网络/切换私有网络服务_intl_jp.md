@@ -28,4 +28,4 @@ Tencent Cloudのネットワークは基幹ネットワークとVirtual Private 
 > - HostNameを設定する際、VPCを切り替えた際にインスタンスのHostNameを再設定できますし、インスタンス本来のHostNameを残すこともできます。
 > 
 6. シャットダウン案内に基づき操作を行い【移行の開始】をクリックすると、コンソールページでインスタンスの状態を「インスタンスのvpc属性を修正」と修正できます。下図の示す通りに：
-![](https://main.qcloudimg.com/raw/93a735427d58ad2867d857740fe4953f.png)
+![](https://main.qcloudimg.com/raw/759d34a61cc6b0d1e430525e3283d43b.png)
