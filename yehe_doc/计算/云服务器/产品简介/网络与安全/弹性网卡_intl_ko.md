@@ -20,7 +20,7 @@ ENI는 VPC, 가용존 및 서브넷 속성을 갖고 있어 동일한 가용존�
 ## 사용 제한
 
 CPU와 메모리 설정에 따라 CVM이 바인딩할 수 있는 ENI 수와 단일 ENI가 바인딩할 수 있는 개인 IP 수는 크게 다르며, ENI 및 단일 ENI IP 할당 수는 아래 표와 같습니다.
-> 단일 ENI의 바인딩 IP 수량은 ENI로 바인딩할 수 있는 IP 수의 최대 수량만 표시하고, 최대 수량에 따라 EIP 할당을 제공하지 않으며 계정의 EIP 할당은 EIP [사용 제한] (https://intl.cloud.tencent.com/zh/document/product/213/5733#.E4.BD.BF.E7.94.A8.E9.99.90.E5.88.B6)에 따라 제공됩니다.
+> 단일 ENI의 바인딩 IP 수량은 ENI로 바인딩할 수 있는 IP 수의 최대 수량만 표시하고, 최대 수량에 따라 EIP 할당을 제공하지 않으며 계정의 EIP 할당은 EIP [사용 제한](https://intl.cloud.tencent.com/zh/document/product/213/5733)에 따라 제공됩니다.
 
 | CVM 설정               | ENI 수| 단일 ENI가 바인딩한 개인 IP 수 |
 | ------------------- | :---- | :------ |
