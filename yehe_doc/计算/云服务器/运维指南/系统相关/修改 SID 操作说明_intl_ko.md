@@ -22,11 +22,11 @@
 3. sysprep툴을 엽니다.
  `C:\windows\system32\sysprep` 폴더 안의 `sysprep.exe` 프로그램을 실행합니다.
 [시스템 정리 작업] **시스템 점검 (OOBE)에 접속**을 선택하여 [범용] 옵션을 선택하고 [종료 옵션]에서 **재시작**을 선택합니다.
- ![](//mccdn.qcloud.com/static/img/1dfa18a861c0a70b880b5130ff40d572/image.png)
+ 
 4. **확인**을 클릭하면 시스템이 재시작되고, 재시작 후 안내에 따라 설정(언어 선택, 비밀번호 재설정 등)을 완료합니다.
 5. SID 인증
 [시작]>[실행]을 클릭하고 명령어 `cmd`를 입력하여 명령어 페이지를 열고 `whoami /user` 명령어를 실행하여 SID가 수정되었는지 확인합니다.
- ![](//mccdn.qcloud.com/static/img/6c1c0784b3e51b5dca3a19f381ea2e02/image.png)
+ ![](https://main.qcloudimg.com/raw/34efb1f4128c753e6c0546f3e8d58678.png)
 6. 2단계를 참고하여 저장한 설정 정보로 게이트웨이 관련 정보 재설정(IP 주소, 게이이트웨이 주소, DNS 등)
 
 ### sidchg를 사용하여 SID 수정
@@ -37,7 +37,7 @@ Tip: sidchg64-2.0n.exe는 64 비트 버전입니다.
 3. SID를 수정하면 데이터가 손실되거나 시스템이 훼손될 수 있습니다. 계속하겠습니까? 라는 메시지가 뜨면, Y를 입력하고 엔터를 눌러 설정을 진행합니다.
  ![](https://main.qcloudimg.com/raw/2ddf9c5f9a66703ac1a20f3eaeb94ed6.png)
 4. 확인을 클릭하면 SID 재설정이 진행되고 시스템이 재시작 됩니다.
-![](https://main.qcloudimg.com/raw/406a1669402ecc33e85f7c42a51bc25d.png)
+![](https://main.qcloudimg.com/raw/b59ec21417cc0de1fd7d851fcd8a2a3b.png)
 5. SID 인증, 시스템 재시작 완료 후 다시 로그인합니다.
 [시작]>[실행]을 클릭하고 명령어 `cmd`를 입력하여 명령어 페이지를 열고 `whoami /user` 명령어를 실행하여 SID가 수정되었는지 확인합니다.
- ![](//mccdn.qcloud.com/static/img/6c1c0784b3e51b5dca3a19f381ea2e02/image.png)
+ ![](https://main.qcloudimg.com/raw/34efb1f4128c753e6c0546f3e8d58678.png)
