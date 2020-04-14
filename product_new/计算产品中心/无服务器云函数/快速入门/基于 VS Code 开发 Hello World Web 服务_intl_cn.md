@@ -37,7 +37,7 @@ Tencent Serverless 可在 Windows， MacOS 中安装。在安装 Tencent Serverl
 1. 单击左侧导航栏的<img src="https://main.qcloudimg.com/raw/0916687440e89c5b9a397537fe35ae42.png" style="margin:-3px 0;">，打开已安装好的 Tencent Serverless 插件。
 2. 单击创建一个腾讯云用户凭证。如下图所示：  
 ![Alt text](https://main.qcloudimg.com/raw/f657198718f1ebc03257718785246477.png)
-3. 根据提示依次输入账号的 APPID，SecretId 及 SecretKey 信息，作为插件调用云 API 时的认证信息。并在认证成功后，选择您希望部署函数的地域。配置信息获取途径请参见 [配置 SCF CLI](https://cloud.tencent.com/document/product/583/33449#.E9.85.8D.E7.BD.AE.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF)。
+3. 根据提示依次输入账号的 APPID，SecretId 及 SecretKey 信息，作为插件调用云 API 时的认证信息。并在认证成功后，选择您希望部署函数的地域。配置信息获取途径请参见 [配置 SCF CLI](https://intl.cloud.tencent.com/document/product/583/32754#.E9.85.8D.E7.BD.AE.E8.B4.A6.E5.8F.B7.E4.BF.A1.E6.81.AF)。
 已配置的账号信息将写入本地 `~/.tcli_config.ini` 文件，您也可以直接修改该文件中的账号信息，修改完成后需要重启 VS Code 配置才可生效。
 4. 为提升函数上传效率，您可以在 VS Code 中 [设置开启 COS 上传](#openCOS)。
 

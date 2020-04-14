@@ -1,7 +1,7 @@
 ## 安装 CLI （Windows）
 
 ### 方式1 通过 cmd 安装
-1. 安装 Python 2.7 或 3.6+ 版本及 pip，您可以参考 [Python 及 pip 安装教程](https://cloud.tencent.com/document/product/583/33449#.E5.AE.89.E8.A3.85-python-.E5.8F.8A-pip) 进行安装。
+1. 安装 Python 2.7 或 3.6+ 版本及 pip，您可以参考 [Python 及 pip 安装教程](https://intl.cloud.tencent.com/document/product/583/32754#.E5.AE.89.E8.A3.85-python-.E5.8F.8A-pip) 进行安装。
 2. 执行 `pip install scf` 命令，安装 CLI。
 3. 升级 CLI 可直接执行 `pip install -U scf` 命令。
 
@@ -22,7 +22,7 @@ scf CLI, version 0.0.1
 
 
 ## 安装 CLI （Mac / Linux）
-1. 安装 Python 2.7 或 3.6+ 版本及 pip，您可以参考 [Python 及 pip 安装教程](https://cloud.tencent.com/document/product/583/33449#.E5.AE.89.E8.A3.85-python-.E5.8F.8A-pip) 进行安装。
+1. 安装 Python 2.7 或 3.6+ 版本及 pip，您可以参考 [Python 及 pip 安装教程](https://intl.cloud.tencent.com/document/product/583/32754#.E5.AE.89.E8.A3.85-python-.E5.8F.8A-pip) 进行安装。
 2. 执行以下命令，检查 Python 版本。
 ```
 Python --version

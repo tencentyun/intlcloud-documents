@@ -27,6 +27,6 @@
 对于不再使用的自定义模版，可以通过选择模版后单击【删除】按钮进行删除。
 
 ## 通过 SCF 命令行测试函数
->在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://cloud.tencent.com/document/product/583/33449) 方法完成命令行的安装和配置。
+>在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/583/32754) 方法完成命令行的安装和配置。
 >
 您可通过 SCF 命令行执行 `scf Invoke` 命令，即可运行函数。详情请参见 [本地调试（native invoke）](https://cloud.tencent.com/document/product/583/35402)。

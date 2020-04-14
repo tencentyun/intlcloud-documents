@@ -11,7 +11,7 @@
 | 云服务器 | 使用云服务器可能会产生访问公网的流量费用，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/213/10578)。 | 
 | 弹性公网 IP    	 | 弹性公网 IP 计费，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/213/17156 )。 | 
 | 负载均衡	 | 负载均衡计费，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/214/8848)。 | 
-| NAT 网关	 | NAT 网关计费，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/1015/18172)。| 
+| NAT 网关	 | NAT 网关计费，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/1015/30248)。| 
 | VPN 连接	 |VPN 连接计费，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/1037/32685)。| 
 | 对等连接	 | 对等连接计费，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/553/35174)。 | 
 | 云联网	 | 云联网计费，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/1003/30053)。 | 

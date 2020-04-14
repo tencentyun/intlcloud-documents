@@ -31,5 +31,5 @@
 
 在创建集群时可以选择开启或关闭 ES 集群用户认证，集群创建完成后，如果希望再次调整开关状态，可以到集群详情页进行操作。
 
-![](https://main.qcloudimg.com/raw/b85a7b55378c7069de0a9d739122e6ea.png)
+![](https://main.qcloudimg.com/raw/31b0a3956a4c261578a36913045810f4.jpg)
 

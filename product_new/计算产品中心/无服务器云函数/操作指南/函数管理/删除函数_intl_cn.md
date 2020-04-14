@@ -8,6 +8,6 @@
 
 
 ## 通过 SCF 命令行删除函数
->在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://cloud.tencent.com/document/product/583/33449) 方法完成命令行的安装和配置。
+>在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/583/32754) 方法完成命令行的安装和配置。
 >
 您可通过 SCF 执行 `scf function delete` 命令，即可删除函数。详情请参见 [删除函数](https://cloud.tencent.com/document/product/583/36851)。
