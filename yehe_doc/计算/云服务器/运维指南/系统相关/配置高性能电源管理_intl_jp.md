@@ -7,9 +7,9 @@ Windows Serverでインスタンスのソフトシャットダウンをサポー
 2. インスタンスのブラウザーを開き、プライベートネットワークからTencent Cloudの電源変更と設定ツールをダウンロードして、Cドライブに保存します。
 プライベートネットワークダウンロードURL：http://mirrors.tencentyun.com/install/windows/power-set-win.bat
 3. ダウンロードしたツールをコンソールで実行し、実行完了後に `powercfg -L` コマンドを利用して、電源管理ポリシーを確認します。
- ![](//mccdn.qcloud.com/img56b1bee8a8fbf.png)
+ 
 4.インスタンスの【コントロールパネル】>【システムとセキュリティ】>【電源オプション】でディスプレイとハードドライブのアイドル時間制限と電源を切る時間を変更します。
- ![](https://mc.qcloudimg.com/static/img/462c9739f3de3c65b346bb47f915dd0a/18.png)
+ 
 
 
 
