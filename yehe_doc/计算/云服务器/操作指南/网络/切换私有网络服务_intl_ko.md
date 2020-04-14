@@ -28,4 +28,4 @@ Tencent Cloud 상의 네트워크는 기본 네트워크와 VPC(Virtual Private 
 > - HostName 옵션을 설정할 때 사용자는 VPC 전환과 동시에 인스턴스 HostName 재설정을 선택하거나 인스턴스 기존 HostName 보류를 선택할 수 있습니다.
 > 
 6. 종료 제시어에 따라 작업을 실행하고 [Start Migration]을 클릭하면 바로 콘솔 페이지에서 인스턴스 상태를 "인스턴스 vpc 속성 수정"으로 수정할 수 있습니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/93a735427d58ad2867d857740fe4953f.png)
+![](https://main.qcloudimg.com/raw/759d34a61cc6b0d1e430525e3283d43b.png)
