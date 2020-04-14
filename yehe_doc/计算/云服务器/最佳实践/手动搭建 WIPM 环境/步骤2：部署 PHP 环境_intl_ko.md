@@ -21,7 +21,7 @@ PHP 5.3 버전부터 설치 패키지 모드를 삭제하고 zip 파일과 debug
  2. PHP 5.3 이상 버전의 설치는 Visual C++ Redistributable Update에 따릅니다. 다운로드 받은 PHP 설치 패키지 이름과 아래의 테이블에 표시된 상관관계에 따라 VC Update 설치 프로그램을 다운로드 및 설치합니다.
 
 | PHP 설치 패키지 이름 | Visual C++ Redistributable 설치 패키지 다운로드 주소 |
-|---------|---------|---------|
+|---------|---------|
 | php-x.x.x-nts-Win32-VC14-x86.zip | [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145) |
 | php-x.x.x-nts-Win32-VC11-x86.zip | [Visual C++ Redistributable for Visual Studio 2012 Update 4](https://www.microsoft.com/zh-cn/download/details.aspx?id=30679) |
 | php-x.x.x-nts-Win32-VC9-x86.zip | [Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)](https://www.microsoft.com/zh-cn/download/details.aspx?id=5582) |

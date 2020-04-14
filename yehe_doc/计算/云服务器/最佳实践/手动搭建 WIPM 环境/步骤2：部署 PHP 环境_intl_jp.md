@@ -20,11 +20,11 @@ PHP 5.3バージョン以降、インストールパッケージモードは取�
 
  2. PHP 5.3以上のバージョンのインストールは、Visual C++ Redistributable Updateに依存しています。ダウンロードしたPHPインストールパッケージ名に従って、次の表に示すような対応関係を参照してVC Updateのインストーラーをダウンロードしてインストールしてください。
 
-| PHPインストールパッケージ名 | Visual C++ Redistributableインストールパッケージのダウンロードアドレス |
-|---------|---------|---------|
-| php-x.x.x-nts-Win32-VC14-x86.zip | [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145) |
-| php-x.x.x-nts-Win32-VC11-x86.zip | [Visual C++ Redistributable for Visual Studio 2012 Update 4](https://www.microsoft.com/zh-cn/download/details.aspx?id=30679) |
-| php-x.x.x-nts-Win32-VC9-x86.zip | [Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)](https://www.microsoft.com/zh-cn/download/details.aspx?id=5582) |
+| PHPインストールパッケージ名 | Visual C++ Redistributableインストールパッケージのダウンロードアドレス  |
+|---------|---------|
+| php-x.x.x-nts-Win32-VC14-x86.zip | [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)  |
+| php-x.x.x-nts-Win32-VC11-x86.zip | [Visual C++ Redistributable for Visual Studio 2012 Update 4](https://www.microsoft.com/zh-cn/download/details.aspx?id=30679)  |
+| php-x.x.x-nts-Win32-VC9-x86.zip |  [Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)](https://www.microsoft.com/zh-cn/download/details.aspx?id=5582)  |
 
   ダウンロードしたPHPインストールパッケージが下記の図に示すような場合：
 ![](//mccdn.qcloud.com/static/img/974ac7192d8f10236fcc27bfd54b8aed/image.png)
