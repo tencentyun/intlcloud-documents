@@ -5,25 +5,25 @@
 ### リモートデスクトップサービスの追加
 1. Windows CVM にログインします。
 2. OSのインターフェースで、<img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img> をクリックして、「サーバーマネージャー」を開きます。下記画面に示すように：
-![](https://main.qcloudimg.com/raw/4bdac63da39ed206ef3c3951d6ed5a13.png)
+![](https://main.qcloudimg.com/raw/66bb5237846f1dd79e3145bfd82d9257.png)
 3.【役割と機能の追加】をクリックして、「役割と機能の追加ウィザード」ウィンドウがポップアップされます。
 4. 「役割と機能の追加ウィザード」のウインドウで、デフォルトパラメータを保持し、連続して【次へ】を3回クリックします。
 5.「サーバーの役割の選択」インターフェースで、【リモートデスクトップサービス】をチェックして、【次へ】をクリックします。下記画面に示すように：
-![](https://main.qcloudimg.com/raw/a395eee56ec77e729faf8b6d3217566d.png)
+![](https://main.qcloudimg.com/raw/54d329c2667ac5c60ffdc2b74f1fc555.png)
 6. デフォルトパラメータを保持し、連続して【次へ】を2回クリックします。
 7. 「役割サービスの選択」インターフェースで、【リモートデスクトップセッションホスト】をチェックします。下記画面に示すように：
 「 リモートデスクトップセッションホスト が必要な機能の追加」プロンプトボックスがポップアップしました。
-![](https://main.qcloudimg.com/raw/cabbd6cc5a22558e088c26be458f5421.png)
+![](https://main.qcloudimg.com/raw/8d24fd515bd363dc020257c2843c5562.png)
 8.「リモートデスクトップセッションホスト が必要な機能の追加」のプロンプトボックスで、【機能の追加】をクリックします。下記画面に示すように：
-![](https://main.qcloudimg.com/raw/d21de386096c36baa0a4382f4d8f59e1.png)
+![](https://main.qcloudimg.com/raw/2a33d896c16b1d98012536cdc3776248.png)
 9.「役割サービスの選択」インターフェースで、【リモートデスクトップのライセンス認証】をチェックします。下記画面に示すように：
 「 リモートデスクトップのライセンス認証 が必要な機能の追加」プロンプトボックスがポップアップしました。
-![](https://main.qcloudimg.com/raw/c37cbd9d47b521f36ab42a4179357a22.png)
+![](https://main.qcloudimg.com/raw/1c908dc77f50488387a2fdbfda08ba35.png)
 10. 「 リモートデスクトップのライセンス認証 が必要な機能の追加」プロンプトボックスで、【機能の追加】をクリックします。
-![](https://main.qcloudimg.com/raw/f10d21c2f28d5f49841b4aac656b9efa.png)
+![](https://main.qcloudimg.com/raw/d7aa066366b168ac8a7475155d34ea19.png)
 11.【次へ】をクリックします。
 12.【必要に応じて対象サーバーを自動的に再起動する】をチェックして、ポップアップしたプロンプトボックスで【はい】をクリックします。下記画面に示すように：
-![](https://main.qcloudimg.com/raw/05a63b7593c57573a5c19b03ae4cd4a5.png)
+![](https://main.qcloudimg.com/raw/df280b0a66470be404f114bd17c47d21.png)
 13.【インストール】をクリックし、リモートデスクトップサービスのインストールが完了するまで待ちます。
 
 ### マルチユーザーリモートログインのインスタンスを設定する
@@ -31,14 +31,14 @@
 1. OSのインタフェースで、<img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;"></img> をクリックして、Windows PowerShellウインドウを開きます。
 3. Windows PowerShellウィンドウで**gpedit.msc**を入力し、**Enter**を押して「ローカルグループポリシーエディター」を開きます。
 4. 左側のナビゲーションツリーで、【コンピュータの構成】>【管理用テンプレート】>【Windows コンポーネント】>【リモートデスクトップサービス】>【リモートデスクトップセッションホスト】>【接続】、【接続数を制限する】をダブルクリックします。下記画面に示すように：
-![](https://main.qcloudimg.com/raw/5db10d892563f1492584f98ed550d67c.png)
+![](https://main.qcloudimg.com/raw/e0420d2bb8ddd3e1524ee688173cb9d1.png)
 5. 「接続数を制限する」ウインドウで、【有効】、【 RD の最大接続数】で最大リモールユーザー数を入力します。下記画面に示すように：
-![](https://main.qcloudimg.com/raw/72b16384df297cbaae5619d841e4369f.png)
+![](https://main.qcloudimg.com/raw/066c9dfb06dc4c092424c4e1142f7471.png)
 6. 【OK】をクリックします。
 7.  左側のナビゲーションツリーで、【コンピュータの構成】>【管理用テンプレート】>【Windows コンポーネント】>【リモートデスクトップサービス】>【リモートデスクトップセッションホスト】>【接続】、【リモートデスクトップサービスユーザーに対してリモートデスクトップサービスセッションを１つに制限する】をダブルクリックします。下記画面に示すように：
-![](https://main.qcloudimg.com/raw/ef6170f145555e4156d83653e75f29d1.png)
+![](https://main.qcloudimg.com/raw/1183e9f4c6c08b6f99746db42b0d183e.png)
 8. ポップアップした「リモートデスクトップサービスユーザーに対してリモートデスクトップサービスセッションを１つに制限する」ウインドウで、【無効】を選択し、【OK】をクリックしします。下記画面に示すように：
-![](https://main.qcloudimg.com/raw/cdfe7762d6248da40cbf3e876edc8dfa.png)
+![](https://main.qcloudimg.com/raw/56d910ea359024d34dc05de3a274c91a.png)
 9.ローカルグループポリシーエディターを閉じます。
 10. インスタンスをリスタートします。
 
