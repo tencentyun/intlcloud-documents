@@ -2,8 +2,6 @@
 ## 简介
 本文档提供关于 SDK 的接入以及开启推送服务的示例代码。（SDK 版本：V1.0+ 版本）
 
-
-
 ## SDK 组成
 - doc 文件夹：腾讯移动推送 iOS SDK 开发指南。
 - demo 文件夹：主要包含样例工程，腾讯移动推送 SDK（仅包含 OC demo，Swift Demo 请前往 [腾讯工蜂](https://git.code.tencent.com/tpns/XG-Demo-Swift) 进行下载）。 
@@ -28,14 +26,14 @@
 pod repo update
 pod search TPNS-iOS
 pod install //安装SDK 
-```
+```  
 
  -  **方式二：carthage 导入**
  在 Cartfile 文件中指明依赖的第三方库：
 ```
  github "xingePush/carthage-TPNS-iOS"
 ```
-
+ 
  - **方式三：手动导入**
 进入腾讯移动推送控制台，单击左侧菜单栏【[SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload)】，进入下载页面，选择需要下载的 SDK 版本，单击操作栏【下载】即可。
 
@@ -61,19 +59,23 @@ pod install //安装SDK
 
 > 如 checkTargetOtherLinkFlagForObjc 报错，是因为 build setting 中，Other link flags 未添加 -ObjC。
 
-11. 调用启动腾讯移动推送的 API，并根据需要实现 ```XGPushDelegate``` 协议中的方法，开启推送服务。
-	1. 启动腾讯移动推送服务， ```AppDelegate``` 示例如下：
-	```objective-c
-		 @interface AppDelegate () <XGPushDelegate>
-		 @end
-
-		 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
-				 {
-						 [[XGPush defaultManager] startXGWithAppID:<#your AppID#> appKey:<#your appKey#>  delegate:<#your delegate#>];
-			return YES;
-				 }
-	```
-	2. 在 ```AppDelegate``` 中，选择实现 ```XGPushDelegate ``` 协议中的方法：
+11. 调用启动腾讯移动推送的 API，并根据需要实现 `XGPushDelegate` 协议中的方法，开启推送服务。
+	1. 启动腾讯移动推送服务， `AppDelegate` 示例如下：
+```Objective-C
+@interface AppDelegate () <XGPushDelegate>
+@end 
+/**
+@param appID  通过 TPNS 管理台申请的 AccessID
+@param appKey  通过 TPNS 管理台申请的 AccessKey
+@param delegate 回调对象
+**/
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+{
+[[XGPush defaultManager] startXGWithAppID:<#your appID#> appKey:<#your appKey#>  delegate:<#your delegate#>];
+return YES;
+}
+```
+	2. 在 `AppDelegate` 中，选择实现 `XGPushDelegate ` 协议中的方法：
 	```objective-c
 		/**
 		 收到推送的回调
@@ -115,7 +117,7 @@ pod install //安装SDK
 2. 调用头文件中的配置 `HOST` 接口：
  - 如需接入新加坡集群则将 `HOST`设置为 `https://api.tpns.sgp.tencent.com`, `PORT`设置为0。
  - 如需接入中国香港集群则将 `HOST` 设置为`https://api.tpns.hk.tencent.com`, `PORT `设置为0。
-
+ 
 **示例**
 ``` object-c
 [[XGPush defaultManager] configureHost:@"https://api.tpns.hk.tencent.com" port:0]
@@ -167,7 +169,7 @@ pod install //安装SDK
 [xgpush]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59991583a925030f1b913625a9dab
 [xgpush]Current XG token is 05da87c0ae5973bd2dfa9e08d884aada5bb2
 ```
->?在推送单个目标设备时请使用 XG 36位的 Token。
+>在推送单个目标设备时请使用 XG 36位的 Token。
 
 ## 自定义响应消息内容
 
@@ -202,13 +204,33 @@ iOS 设备收到一条推送消息，用户点击推送消息打开应用时，�
 	}
 	```
 
+<span id="zhuxiao"></span>
+## 注销信鸽平台推送服务
 
+如果 App 的推送服务是从信鸽平台（https://xg.qq.com）迁移到腾讯移动推送平台， 需要调用 `TPNS SDK(1.2.5.3+)` 的接口将设备信息在信鸽平台中进行反注册。
 
+#### 接口
+
+```objective-c
+// 信鸽平台的 accessId(支持信鸽 SDK V2、V3版本)
+@property uint32_t freeAccessId;
+```
+
+#### 用法
+
+- 引入头文件: `XGForFreeVersion.h` 
+- 在 `startXGWithAppID:appKey:delegate:` 之前调用此接口，参考示例：
+
+```objective-c
+[XGForFreeVersion defaultForFreeVersion].freeAccessId = 2200262432;
+[[XGPush defaultManager] startXGWithAppID: <#your tpns access ID#>appKey:<#your tpns access key#> delegate:<#your delegate#>];
+```
+>如果未做以上配置，则在信鸽和腾讯移动推送两个平台上同时推送时，可能会出现重复消息。
 
 ## 集成建议
 #### 通知服务扩展功能（必选）
-为了实现抵达数据上报和富媒体消息的功能，SDK 提供了 Service Extension 接口，可供客户端调用，从而可以监听消息的到达和发送富媒体消息，强烈建议您实现此接口，接入指南请参见 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/zh/document/product/1024/30730)。
-
+为了实现抵达数据上报和富媒体消息的功能，SDK 提供了 Service Extension 接口，可供客户端调用，从而可以监听消息的到达和发送富媒体消息，强烈建议您实现此接口，接入指南请参见 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730)。
+>如果未集成此接口，则统计数据中消息`抵达数`与`点击数`一致。
 
 <span id="QHToken"></span>
 #### 获取 Token （非必选）
@@ -222,6 +244,5 @@ iOS 设备收到一条推送消息，用户点击推送消息打开应用时，�
 [[XGPushTokenManager defaultTokenManager] deviceTokenString];
 ```
 
-![](https://main.qcloudimg.com/raw/7afeffeac5828bb42563765e10730179.png)
 
 
