@@ -139,17 +139,13 @@ Cloud-Init와 비슷하게 Cloudbase-Init는 Windows CVM 인스턴스와 통신�
 >
 2. <span id="step02">**제어판** > **관리 툴** > **서비스**를 엽니다.
 3. cloudbase-init 서비스를 찾아 [속성]을 우클릭하여 cloudbase-init의 속성창을 엽니다.</span>
- - "시작 유형"을 조회하여 "시작 유형"이 "자동"임을 보장합니다. 다음 그림과 같습니다.
-![](https://main.qcloudimg.com/raw/43f39931ec8932f88ee491f2bdbd7ada.png)
- - "로그인 신원"을 조회하여 "로그인 신원"이 "로컬 시스템 계정"임을 보장합니다. 다음 그림과 같습니다.
-![](https://main.qcloudimg.com/raw/5a69afcde36c5bb3259ac1f136f59118.png)
+ - "시작 유형"을 조회하여 "시작 유형"이 "자동"임을 보장합니다. 
+ - "로그인 신원"을 조회하여 "로그인 신원"이 "로컬 시스템 계정"임을 보장합니다. 
  - cloudbase-init 서비스를 수동으로 시작하고 관련 오류의 발생 여부를 모니터링합니다.
 발생한 오류를 우선 해결해야 할 경우 관련 보안 프로그램을 설치하여 cloudbase-init 실행의 관련 작업을 차단해야 하는 지를 확인하세요. 
-![](https://main.qcloudimg.com/raw/97684bd42d3b0d05eee996d0106825e3.png)
- - "레지스트리"를 열어 검색하고 모든 "LocalScriptsPlugin"을 찾아 그 값을 2로 보장합니다. 다음 그림과 같습니다.
-![](https://main.qcloudimg.com/raw/4f98965fa228c7f948fc8d720424a7ea.png)
+
+ - "레지스트리"를 열어 검색하고 모든 "LocalScriptsPlugin"을 찾아 그 값을 2로 보장합니다. 
  - CD-ROM의 로딩이 비활성화되었는 지 확인합니다. 다음 그림과 같이, 시디롬 드라이브 디바이스를 볼 수 있으면 정상적인 로딩을 표시하고 그렇지 않을 경우 비활성화되었음을 의미하고 비활성화를 취소해야 합니다.
-![](https://main.qcloudimg.com/raw/0e8c68537e238fe7a1e4b718848b9e98.png)
 
 ### Cloudbase-Init FAQ를 어떻게 조사하나요?
 #### 초기화 비밀번호 재설정 실패
