@@ -1,0 +1,15 @@
+Windows Server 에 고성능 전원 관리 옵션을 설정해야만 인스턴스 소프트 셧다운을 지원합니다. 그렇지 않을 경우, 하드 셧다운 방식으로 인스턴스를 종료해야 합니다.
+다음은 Windows 2012를 예시로 전원 설정 관리 방법에 대한 설명입니다.
+>**참고: **
+>전원 관리 설정 변경 시 컴퓨터를 재시작하지 않아도 됩니다.
+
+1. 귀하의 Tencent Cloud CVM에 로그인합니다.
+2. 인스턴스의 브라우저를 열어 내부 네트워크에서 Tencent Cloud의 전원 변경 및 설정 툴을 C드라이버에 다운로드합니다.
+다운로드 주소: http://mirrors.tencentyun.com/install/windows/power-set-win.bat
+3. 콘솔에서 해당 툴을 실행하고 'powercfg -L' 명령을 사용하여 현재 적용된 전원 관리 방안을 조회합니다.
+ ![](//mccdn.qcloud.com/img56b1bee8a8fbf.png)
+4. 인스턴스에서 [제어판]>[시스템 및 보안]>[전원 옵션]에서 디스플레이 및 디스크 유휴 종료 시간을 수정합니다.
+ ![](https://mc.qcloudimg.com/static/img/462c9739f3de3c65b346bb47f915dd0a/18.png)
+
+
+
