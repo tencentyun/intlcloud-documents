@@ -12,6 +12,6 @@
  * 监控页：显示函数运行监控信息。
 
 ## 通过 SCF 命令行获取函数信息
->在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://cloud.tencent.com/document/product/583/33449) 方法完成命令行的安装和配置。
+>在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/583/32754) 方法完成命令行的安装和配置。
 >
 您可通过 SCF 命令行执行 `scf function list` 命令，即可获取函数列表，详情请参见 [获取函数列表](<https://cloud.tencent.com/document/product/583/36850>)。
