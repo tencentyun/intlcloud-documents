@@ -41,10 +41,10 @@ ins-abcdef1을 예로 들어 해당 인스턴스에 다음과 같은 세 그룹�
 
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm)에 로그인합니다.
 2. 인스턴스 관리 페이지에서 태그를 편집할 인스턴스를 선택하고 [More]>[Instance Settings]>[Edit Tags]을 클릭합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/956e2cf2c732fde19f54eef9fabb0cf4.png)
+
 2. 팝업된 "클라우드 리소스 1개를 선택하였습니다" 창에서 태그를 설정합니다. 아래 그림 참조
 예를 들어, ins-abcdef1 의 인스턴스에 [세 그룹 태그](#table02)를 추가합니다.
-![](https://main.qcloudimg.com/raw/42b543c329252587a758034d1a46c95a.png)
+
 3. [OK]을 클릭하면 시스템에 수정 성공 알림이 나타납니다.
 
 
@@ -55,5 +55,4 @@ ins-abcdef1을 예로 들어 해당 인스턴스에 다음과 같은 세 그룹�
 1. 검색창에서 [Tag]를 선택합니다.
 2. [Tag:] 뒤에 태그 키와 태그 값을 입력하고 <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin: 0;">을 클릭하여 검색합니다. 아래 그림 참조
 예를 들어, 담당자가 장 씨인 리소스를 필터링하려면 `태그:owner:zhangsan`을 입력하면 됩니다.
-![](https://main.qcloudimg.com/raw/6d65de3197540c1ccbe56b716ed44eab.jpg)
 
