@@ -105,7 +105,7 @@ Elasticsearch 版本升级，需要先进行升级检查、数据备份两个步
 
 ## 集群升级操作步骤
 1. 登录 [ES 控制台](https://console.cloud.tencent.com/es)，进入集群详情页，单击右上角【升级】。
-![升级入口](https://main.qcloudimg.com/raw/95246fbe2add949a6a31275074d35be5.png)
+![升级入口](https://main.qcloudimg.com/raw/12b43d50ad32df9e6f18e85867ee6a6d.jpg)
 2. 在升级对话框中可以选择升级 Elasticsearch 版本或选择升级高级特性。
 
 ### 升级 Elasticsearch 版本
@@ -117,7 +117,7 @@ Elasticsearch 版本升级，需要先进行升级检查、数据备份两个步
 3. 我们在升级之前会先对集群状态进行检查，判断集群是否可以升级，包括检查集群的配置、集群的状态等。您可以勾选【仅做升级检查】，在单击【确定】后，仅做升级检查，不执行升级命令，您可以在详情页【集群变更记录】中查看检查结果。
 > ES主版本升级，例如5.x版本到6.x版本，有些集群级别的配置项和索引级别的配置项不兼容，需要通过【升级检查】判断集群是否可升级。整个升级检查会检查一些配置项，错误的配置项需要您进行调整，告警的配置项可以选择性调整，具体可查看 [ES 版本升级检查](https://intl.cloud.tencent.com/document/product/845/32599)。
 4. 阅读升级须知，同意并勾选后单击【确定】开始版本升级（如勾选【仅做升级检查】则开始版本升级检查）。
-![](https://main.qcloudimg.com/raw/c2718fdcc4cd41ca1ed5fca1c1a773ca.png)
+![](https://main.qcloudimg.com/raw/b1f8111f2fbcda531fe5804ee1840215.jpg)
 
 ### 升级高级特性
 1. 在升级对话框中选择【升级类型】>【升级[高级特性]版本】。
@@ -131,7 +131,7 @@ Elasticsearch 版本升级，需要先进行升级检查、数据备份两个步
 >  - 若升级过程涉及 ES 集群用户登录认证从关闭到开启，集群需要全量重启，期间集群会停服，服务不可访问，请谨慎选择。
 >  
  
- ![](https://main.qcloudimg.com/raw/1f898662a937e1638cf9bf75a8c07323.png)
+ ![](https://main.qcloudimg.com/raw/c94e663d7839ace50c4ced2d43fcaa53.jpg)
 
 4. 开始升级后，可以在集群详情页的【集群变更记录】中查看升级进度。
-    ![](https://main.qcloudimg.com/raw/86f472f442922c5743aa5296020a4d8c.png)
+    ![](https://main.qcloudimg.com/raw/9c454150fbeb3f7396269b1dc9da8813.jpg)

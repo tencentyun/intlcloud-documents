@@ -38,16 +38,16 @@ Log in to the [ES Console](https://console.cloud.tencent.com/es) and click **Cre
 - Number of dedicated master nodes: 3 or 5. An odd number of nodes ensures high availability and prevents the risk of split-brain.
 - Username: this is the username used to access Kibana and Elasticsearch Platinum Edition clusters, which is defaulted to `elastic` and cannot be modified. In the Basic Edition and Open Source Edition, secure user authentication is not enabled, so no username or password is required when a cluster is accessed through an API, and this username is only used to log in to Kibana. In the Platinum Edition, user authentication is enabled, so the corresponding username and password are required when a cluster is accessed through an API.
 - Password: the password corresponding to the aforementioned username. Please set it as required. If you forgot it, you can reset it on the details page.
-![](https://main.qcloudimg.com/raw/9f7c820f9cb17074abdcc0e8206f1eff.png)
+![](https://main.qcloudimg.com/raw/9f1f7bfe2988f7e57235c66f5162c20c.jpg)
 
 #### 2. Set the name and password
 Click **Next: Set Name and Password**.
-![](https://main.qcloudimg.com/raw/a8b8e49fd0f05a94be9bf23f4b9e9e43.png)
+![](https://main.qcloudimg.com/raw/9eab152498cd0bfa0ae0531243c7fe5f.jpg)
 
 #### 3. Confirm and purchase
 
 Click **Next: Confirm Configuration Information** to confirm the configuration.
-![](https://main.qcloudimg.com/raw/f3e0369a31e413752e789d23dfa99cc9.png)
+![](https://main.qcloudimg.com/raw/d151fbccf049b07854c9f2420994088a.jpg)
 
 - Click **Activate** to create the cluster directly if the pay-as-you-go billing mode is selected. You do not need to confirm the order or pay for it, as your account balance will be deducted on an hourly basis during cluster use.
 

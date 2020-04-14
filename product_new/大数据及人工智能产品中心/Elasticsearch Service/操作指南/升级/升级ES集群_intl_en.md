@@ -81,7 +81,7 @@ To upgrade the Elasticsearch version, you need to complete upgrade check and dat
 
 ## How to upgrade a cluster
 1. Log in to the [ES Console](https://console.cloud.tencent.com/es), enter the cluster details page, and click **Upgrade** in the top-right corner.
-![](https://main.qcloudimg.com/raw/95246fbe2add949a6a31275074d35be5.png)
+![](https://main.qcloudimg.com/raw/12b43d50ad32df9e6f18e85867ee6a6d.jpg)
 2. Choose to upgrade Elasticsearch or Elastic Stack in the upgrade dialog box.
 
 ### Upgrading the Elasticsearch version
@@ -91,7 +91,7 @@ To upgrade the Elasticsearch version, you need to complete upgrade check and dat
 3. Before the upgrade, the cluster status and configuration will be checked first to determine whether your cluster can be upgraded. You can select **Upgrade Check Only**. After you click **OK**, only an upgrade check will be performed, and the upgrade command will not be executed. You can view the check result in the **Cluster Change History** on the details page.
 > If you want to upgrade from Elasticsearch 5.6.4 to 6.4.3, as some configuration items at the cluster or index level are not compatible, you need to perform an **upgrade check** to determine whether your cluster can be upgraded. Incorrect configuration items that trigger alarms need to be adjusted as appropriate. For more information, see relevant documents.
 4. Read and indicate your consent to the upgrade notice and click **OK** to start the upgrade (if you select **Upgrade Check Only**, an upgrade check will be started).
- ![](https://main.qcloudimg.com/raw/c2718fdcc4cd41ca1ed5fca1c1a773ca.png)
+ ![](https://main.qcloudimg.com/raw/b1f8111f2fbcda531fe5804ee1840215.jpg)
  
 ### Upgrading Elastic Stack
  1. Select **Upgrade Type** > **Upgrade Elastic Stack Edition** in the upgrade dialog box.
@@ -103,7 +103,7 @@ To upgrade the Elasticsearch version, you need to complete upgrade check and dat
   >- Basic Edition: To upgrade to the Basic Edition, your cluster needs to be restarted on a rolling basis, during which the service will be affected momentarily; therefore, you are recommended to perform the upgrade when the number of access requests is small. Once started, the upgrade process cannot be canceled. 
   >- Platinum Edition: To upgrade to the Platinum Edition, your cluster needs to be fully restarted and will become inaccessible. Please do so with caution. Once started, the upgrade process cannot be canceled.
   >
-![](https://main.qcloudimg.com/raw/7e8741074ae7aa577a1179c7a74de812.png) 
+![](https://main.qcloudimg.com/raw/c94e663d7839ace50c4ced2d43fcaa53.jpg) 
 
 4. After the upgrade starts, you can check the upgrade progress in the **Cluster Change History** on the cluster details page.
-  ![](https://main.qcloudimg.com/raw/86f472f442922c5743aa5296020a4d8c.png)
+  ![](https://main.qcloudimg.com/raw/9c454150fbeb3f7396269b1dc9da8813.jpg)
