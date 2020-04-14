@@ -71,7 +71,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;4\. 사용자는 클라우드 서버 목록 페이지에 들어가, 어느 한 클라우드 서버에 바인딩된 보안 그룹을 조회 또는 수정할 수 있습니다. [클라우드 서버] 목록 페이지에서 보안 그룹 조정이 필요한 CVM을 선택하여 우측의 [더 보기]-[보안 그룹 설정]을 클릭한 후 보안 그룹 바인딩을 선택합니다.
 (예: 사용자 로컬 컴퓨터(IP：186.23.55.90)가 HTTP를 통해 CVM에 요청하도록 허용하면, 다음 그림과 유사한 규칙 1건을 생성할 수 있습니다.)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![](//mc.qcloudimg.com/static/img/5a7f41e7a6e4fb76f33565fb9a860bf7/image.png)
+
 
 ### 보안 그룹 생성
 
@@ -114,7 +114,7 @@
  3. 연결이 필요한 보안 그룹을 선택하여 작업 표시줄의 [Add Instances] 또는 [Remove Selected] 버튼을 클릭합니다.
 
  4. 클라우드 서버 추가/삭제 팝업창에서 본 보안 그룹에 연결해야 하는 클라우드 서버를 추가 또는 삭제하고 [OK]를 클릭합니다.
- ![](//mc.qcloudimg.com/static/img/064ce4c28658b8fdc2015bcb58deafdd/image.png)
+
 
 ### 보안 그룹 규칙 가져오기/내보내기
  1. [Security Group 콘솔](https://console.cloud.tencent.com/cvm/securitygroup)을 엽니다.
