@@ -30,37 +30,36 @@ PHP 5.3バージョン以降、インストールパッケージモードは取�
 ![](//mccdn.qcloud.com/static/img/974ac7192d8f10236fcc27bfd54b8aed/image.png)
 
 表の1行目の対応関係に従ってVS 2015バージョンのインストールパッケージをダウンロードし、次の2つの`.exe`形式のファイルをダウンロードしてインストールします。
-![](//mc.qcloudimg.com/static/img/7128c0b621f2534cecddd23b6f3efdb9/image.png)
+
 
 
 ### インストールと設定
  1. PHP zipインストールパッケージを解凍し（この例では、`C:\PHP`に解凍します）、`php.ini-production`をコピーして、`php.ini`に名前を変更します。下記の図に示すように：
-![](//mc.qcloudimg.com/static/img/1be9b1771a93852aff909b08159a5b79/image.png)
+
 
  2. 【サーバーマネージャー】-【IIS】をクリックし、ローカルIISを右クリックして、IISマネージャーを選択します：
-![](//mc.qcloudimg.com/static/img/f0387eeb456b7d60e8a5b601cbd3c6b0/image.png)
+
 
 	左側のホスト名（IP）をクリックしてメイン画面に移動し、【ハンドラーマッピング】をダブルクリックします：
-![](//mc.qcloudimg.com/static/img/898aa0d2f61c467d333601b75c57704c/image.png)
+
 
 	右側の【コンポーネントマッピングの追加】ボタンをクリックし、ポップアップボックスに次の情報を記入して、【OK】ボタンをクリックして保存します：
-![](//mc.qcloudimg.com/static/img/6f0fd95475a7c00a5779592d15a7753e/image.png)
+
 
 	>**注意事項：**
 	>実行可能ファイルに `php-cgi.exe` を選択できない場合は、ファイルの拡張子を.exe：![](//mc.qcloudimg.com/static/img/d749a9fe4c77f6ea7b55afd8fd37e808/image.png)に変更してください
 
  3. 左側のホスト名（IP）をクリックしてメイン画面に戻り、【デフォルトドキュメント】をダブルクリックします：
-![](//mc.qcloudimg.com/static/img/b5861a95bf6aafd8f4bcaf1c12e9f9be/image.png)
+
 
 	右側の【追加】ボタンをクリックして、`index.php`という名称のデフォルトドキュメントを追加します：
-![](//mc.qcloudimg.com/static/img/6b2543227fec95d1b9bed5f4260a86bb/image.png)
+
 
  4. 左側のホスト名（IP）をクリックしてメイン画面に戻り、【 FastCGI 設定】をダブルクリックします：
-![](//mc.qcloudimg.com/static/img/aa23422c038b1024354f01ed0cb3ab73/image.png)
+
 
 	右側の【編集】ボタンをクリックし、【ファイルの変更を監視】で `php.ini` パスを選択します：
-![](//mc.qcloudimg.com/static/img/b4f1ec7d39519dc7d2e89d52ed8a1a87/image.png)
-![](//mc.qcloudimg.com/static/img/a2acbed50587552c6ef7ed796b82eb36/image.png)
+
 
  5.  `C:\inetpub\wwwroot` ディレクトリにPHPファイル `index.php` を作成し、以下の内容を記入します：
 ```

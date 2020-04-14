@@ -30,37 +30,36 @@ PHP 5.3 버전부터 설치 패키지 모드를 삭제하고 zip 파일과 debug
 ![](//mccdn.qcloud.com/static/img/974ac7192d8f10236fcc27bfd54b8aed/image.png)
 
 테이블 첫째 줄의 상관관계에 따라 VS 2015 버전의 설치 패키지를 다운로드 하고, 다음과 같은 두 개의 `.exe`포맷 파일을 다운로드 및 설치합니다.
-![](//mc.qcloudimg.com/static/img/7128c0b621f2534cecddd23b6f3efdb9/image.png)
+
 
 
 ### 설치 설정
  1. PHP zip 설치 패키지를 압축 해제하고(본 사례에서는 `C:\PHP`로 압축 해제), 아래의 그림과 같이 `php.ini-production`을 복사한 후 `php.ini`로 이름을 변경합니다.
-![](//mc.qcloudimg.com/static/img/1be9b1771a93852aff909b08159a5b79/image.png)
+
 
  2. [서버 관리자]-[IIS]를 클릭하고 로컬 IIS에서 우클릭으로 IIS관리자를 선택합니다.
-![](//mc.qcloudimg.com/static/img/f0387eeb456b7d60e8a5b601cbd3c6b0/image.png)
+
 
 	왼쪽 호스트 이름(IP)을 클릭하여 메인 페이지로 돌아온 다음 [처리 프로그램 매핑]을 더블클릭 합니다.
-![](//mc.qcloudimg.com/static/img/898aa0d2f61c467d333601b75c57704c/image.png)
+
 
 	오른쪽 [추가 모듈 매핑] 버튼을 클릭한 후 팝업창에 다음과 같은 정보를 작성하고 [확인] 버튼을 클릭하여 저장합니다.
-![](//mc.qcloudimg.com/static/img/6f0fd95475a7c00a5779592d15a7753e/image.png)
+
 
 	>**참고: **
 	>실행 가능한 파일로 `php-cgi.exe`를 선택할 수 없다면 파일 확장자를 .exe로 변경하세요: ![](//mc.qcloudimg.com/static/img/d749a9fe4c77f6ea7b55afd8fd37e808/image.png)
 
  3. 왼쪽 호스트 이름(IP)을 클릭하여 메인 페이지로 돌아온 다음 [기본 문서]를 더블클릭 합니다.
-![](//mc.qcloudimg.com/static/img/b5861a95bf6aafd8f4bcaf1c12e9f9be/image.png)
+
 
 	오른쪽 [추가] 버튼을 클릭하여 `index.php`라는 이름의 기본 문서를 추가합니다.
-![](//mc.qcloudimg.com/static/img/6b2543227fec95d1b9bed5f4260a86bb/image.png)
+
 
  4. 좌측 호스트 이름(IP)을 클릭하여 메인 페이지로 돌아온 다음 [FastCGI 설정]을 더블클릭 합니다.
-![](//mc.qcloudimg.com/static/img/aa23422c038b1024354f01ed0cb3ab73/image.png)
+
 
 	오른쪽 [편집] 버튼을 클릭하여 [파일에 대한 변경 모니터링]에서 `php.ini` 경로를 선택합니다.
-![](//mc.qcloudimg.com/static/img/b4f1ec7d39519dc7d2e89d52ed8a1a87/image.png)
-![](//mc.qcloudimg.com/static/img/a2acbed50587552c6ef7ed796b82eb36/image.png)
+
 
  5. `C:\inetpub\wwwroot` 디렉터리에서 1개의 PHP 파일 `index.php`를 생성하고 아래의 내용을 입력합니다.
 ```
