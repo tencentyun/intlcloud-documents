@@ -117,4 +117,56 @@
  - 实例总价=第一阶段+第二阶段+第三阶段=72.9552美元
 
 
+## 可支持实例规格
 
+<table border=0 cellpadding=0 cellspacing=0 width=144 style='borde
+ collapse;table-layout:fixed;width:108pt'>
+ <tr height=19 style='height:14.25pt'>
+  <td colspan=2 height=19 class=xl66 width=144 style='height:14.25pt;
+  width:108pt'>可支持实例规格</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 style='height:14.25pt;border-top:none'>CPU/核</td>
+  <td class=xl67 style='border-top:none;border-left:none'>内存/GB</td>
+ </tr>
+ <tr height=37 style='mso-height-source:userset;height:27.75pt'>
+  <td height=37 class=xl67 align=right style='height:27.75pt;border-top:none'>1</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>2</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>2</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>4</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>4</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>8</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>5</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>12</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>6</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>16</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>8</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>32</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>12</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>64</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>16</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>96</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>20</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>128</td>
+ </tr>
+ <tr height=19 style='height:14.25pt'>
+  <td height=19 class=xl67 align=right style='height:14.25pt;border-top:none'>24</td>
+  <td class=xl67 align=right style='border-top:none;border-left:none'>244</td>
+ </tr>
+</table>
