@@ -81,7 +81,7 @@ netstat -ant | findstr 3389
 ![](https://main.qcloudimg.com/raw/e67b696fd25b3355c9038f99a08b90be.png)
 4. In the registry navigation on the left, expand the following directories in order: **HKEY_LOCAL_MACHINE** > **SYSTEM** > **CurrentControlSet** > **Control** > **Terminal Server** > **WinStations** > **RDP-Tcp**.
 5. Locate PortNumber in **RDP-Tcp** and check whether the PortNumber data in **RDP-Tcp** is the same as the one in **tcp**. This is shown in the following figure:
-![](https://main.qcloudimg.com/raw/8240dd43dcb3ca246caf3397e4a1e84f.png)
+![](https://main.qcloudimg.com/raw/9d68cec10e75afe621beb6c914d393cb.png)
  - If they are not the same, execute [Step 6](#F5_step6).
  - If they are the same, [restart the remote login service](#F4).
 6. Double click PortNumber in **RDP-Tcp**.

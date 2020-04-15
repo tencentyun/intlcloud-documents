@@ -82,7 +82,7 @@ netstat -ant | findstr 3389
 ![](https://main.qcloudimg.com/raw/e67b696fd25b3355c9038f99a08b90be.png)
 4. 在左侧的注册表导航中，依次展开【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【WinStations】>【RDP-Tcp】目录。
 5. 找到【RDP-Tcp】中的 PortNumber，并确认【RDP-Tcp】中的 PortNumber 数据（端口号）是否与【tcp】中的 PortNumber 数据（端口号）一致。如下图所示：
-![](https://main.qcloudimg.com/raw/8240dd43dcb3ca246caf3397e4a1e84f.png)
+![](https://main.qcloudimg.com/raw/9d68cec10e75afe621beb6c914d393cb.png)
  - 若不一致，请执行 [步骤 6](#F5_step6)。
  - 若一致，请 [重启远程登录服务](#F4)。
 6. 双击【RDP-Tcp】中的 PortNumber。
