@@ -74,7 +74,7 @@ done
 
 ## Modifying YARN Configuration
 1. On the YARN component management page, select "Configuration Management". Select the configuration file `yarn-site.xml` and select cluster as the dimension (modifications of configuration items in the cluster dimension will be applied to all nodes in the cluster).
-![](https://main.qcloudimg.com/raw/d84c5b5e5b3d3509276f16e9b9deeb9e.png)
+![](https://main.qcloudimg.com/raw/58e2684f32c23c9abb05d49cf2e80d26.png)
 2. Modify the `yarn.nodemanager.aux-services` configuration item and add `spark_shuffle`.
 ![](https://main.qcloudimg.com/raw/d264a6708b76c10d3239dd2eb50a09a8.png)
 3. Add the configuration item `yarn.nodemanager.aux-services.spark_shuffle.class` and set it to `org.apache.spark.network.yarn.YarnShuffleService`.

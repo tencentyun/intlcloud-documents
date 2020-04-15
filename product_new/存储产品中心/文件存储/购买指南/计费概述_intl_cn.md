@@ -116,7 +116,7 @@ CIFS/SMB 协议本阶段公测已结束，后续开放时间请静待通知。�
       <td rowspan="8">标准存储</td>
       <td rowspan="1">中国大陆</td>
       <td>-</td>
-      <td>0.058 USD/GB/Month (0.00008056 USD/GB/hr)</td>
+      <td>0.058 USD/GB/Month (0.00008056 USD/GB/时)</td>
    </tr>
    <tr>
       <td >中国香港</td>
