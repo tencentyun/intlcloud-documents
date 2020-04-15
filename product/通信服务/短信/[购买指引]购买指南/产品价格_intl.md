@@ -66,7 +66,7 @@ Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/e96c3cd
 |Algeria|	DZ	|213	|0.1656 |
 |Ecuador|	EC|	593|	0.1068|
 |Estonia|	EE|	372|	0.1141 |
-|Egypt|	EG|	20|	0.780|
+|Egypt|	EG|	20|	0.0780|
 |Eritrea|	ER|	291	|0.0915|
 |Spain|	ES|	34|	0.0988|
 |Ethiopia|ET|	251|	0.0336|
