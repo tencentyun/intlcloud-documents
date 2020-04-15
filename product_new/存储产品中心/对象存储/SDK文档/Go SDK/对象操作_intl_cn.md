@@ -49,7 +49,7 @@ func (s *BucketService) Get(ctx context.Context, opt *BucketGetOptions) (*Bucket
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```go
 opt := &cos.BucketGetOptions{
     Prefix:  "test",
@@ -125,7 +125,7 @@ func (s *ObjectService) Put(ctx context.Context, key string, r io.Reader, opt *O
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```go	
 key := "exampleobject"
 f, err := os.Open("../test")
@@ -212,7 +212,7 @@ func (s *ObjectService) Head(ctx context.Context, key string, opt *ObjectHeadOpt
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 ```go
 key := "exampleobject"
 _, err := client.Object.Head(context.Background(), key, nil)
@@ -266,7 +266,7 @@ func (s *ObjectService) GetToFile(ctx context.Context, key, localfile string, op
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```go
 key := "exampleobject"
 opt := &cos.ObjectGetOptions{
@@ -350,7 +350,7 @@ func (s *ObjectService) Copy(ctx context.Context, key, sourceURL string, opt *Ob
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```go
 name := "exampleobject"
 // 上传源对象
@@ -398,7 +398,7 @@ type ObjectCopyHeaderOptions struct {
 | ------------------------------- | ------------------------------------------------------------ | ----------- | ---- |
 | key                             | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg | string      | 是   |
 | sourceURL                       | 描述拷贝源文件的 URL                                         | string      | 是   |
-| XCosACL                         | 设置文件的 ACL，例如 private，public-read，public-read-write   | string      | 否   |
+| XCosACL                         | 设置文件的 ACL，例如 private，public-read，public-read-write | string      | 否   |
 | XCosGrantFullControl            | 赋予被授权者所有的权限。格式：id="[OwnerUin]"                | string      | 否   |
 | XCosGrantRead                   | 赋予被授权者读的权限。格式：id="[OwnerUin]"                  | string      | 否   |
 | XCosMetadataDirective           | 可选值为 Copy，Replaced：<br><li>设置为 Copy 时，忽略设置的用户元数据信息直接复制<br><li>设置为 Replaced 时，按设置的元信息修改元数据<br>当目标路径和源路径一样时，必须设置为 Replaced | string      | 是   |
@@ -406,7 +406,7 @@ type ObjectCopyHeaderOptions struct {
 | XCosCopySourceIfUnmodifiedSince | 当 Object 在指定时间后未被修改，则执行操作，否则返回412。可与 XCosCopySourceIfMatch 一起使用，与其他条件联合使用返回冲突 | string      | 否   |
 | XCosCopySourceIfMatch           | 当 Object 的 Etag 和给定一致时，则执行操作，否则返回412。可与 XCosCopySourceIfUnmodifiedSince 一起使用，与其他条件联合使用返回冲突 | string      | 否   |
 | XCosCopySourceIfNoneMatch       | 当 Object 的 Etag 和给定不一致时，则执行操作，否则返回412。可与 XCosCopySourceIfModifiedSince 一起使用，与其他条件联合使用返回冲突 | string      | 否   |
-| XCosStorageClass                | 设置文件的存储类型，STANDARD、STANDARD_IA，默认值：STANDARD  | string      | 否   |
+| XCosStorageClass                | 设置文件的存储类型，STANDARD、STANDARD_IA、ARCHIVE，默认值：STANDARD | string      | 否   |
 | XCosMetaXXX                     | 用户自定义的文件元信息                                       | http.Header | 否   |
 | XCosCopySource                  | 源文件 URL 路径，可以通过 versionid 子资源指定历史版本       | string      | 否   |
 
@@ -440,7 +440,7 @@ func (s *ObjectService) Delete(ctx context.Context, key string) (*Response, erro
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```go
 key := "exampleobject"
 _, err := client.Object.Delete(context.Background(), key)
@@ -469,7 +469,7 @@ func (s *ObjectService) DeleteMulti(ctx context.Context, opt *ObjectDeleteMultiO
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 ```go
 var objects []string
 objects = append(objects, []string{"a", "b", "c"}...)
@@ -550,7 +550,7 @@ func (s *BucketService) ListMultipartUploads(ctx context.Context, opt *ListMulti
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```go
 _, _, err := client.Bucket.ListMultipartUploads(context.Background(), nil)
 if err != nil {
@@ -662,7 +662,7 @@ func (s *ObjectService) InitiateMultipartUpload(ctx context.Context, name string
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```go
 name := "exampleobject"
 // 可选opt,如果不是必要操作，建议上传文件时不要给单个文件设置权限，避免达到限制。若不设置默认继承桶的权限。
@@ -744,7 +744,7 @@ func (s *ObjectService) UploadPart(ctx context.Context, key, uploadID string, pa
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```go
 // 注意，上传分块的块数最多10000块
 key := "exampleobject"
@@ -805,7 +805,7 @@ func (s *ObjectService) ListParts(ctx context.Context, name, uploadID string, op
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```go
 key := "exampleobject"
 _, _, err := client.Object.ListParts(context.Background(), key, UploadID, nil)
@@ -902,7 +902,7 @@ func (s *ObjectService) CompleteMultipartUpload(ctx context.Context, key, upload
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```go
 // 完成分块上传
 key := "exampleobject"
@@ -972,7 +972,7 @@ func (s *ObjectService) AbortMultipartUpload(ctx context.Context, key, uploadID 
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```go
 key := "exampleobject"
 // Abort
@@ -1005,7 +1005,7 @@ func (s *ObjectService) PostRestore(ctx context.Context, key string, opt *Object
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 ```go
 key := "example_restore"
 f, err := os.Open("../test")
@@ -1076,7 +1076,7 @@ func (s *ObjectService) PutACL(ctx context.Context, key string, opt *ObjectPutAC
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-object-acl)
+[//]: # ".cssg-snippet-put-object-acl"
 ```go
 // 1.通过请求头设置
 opt := &cos.ObjectPutACLOptions{
@@ -1147,7 +1147,7 @@ func (s *ObjectService) GetACL(ctx context.Context, key string) (*ObjectGetACLRe
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-object-acl)
+[//]: # ".cssg-snippet-get-object-acl"
 ```go
 key := "exampleobject"
 _, _, err := client.Object.GetACL(context.Background(), key)
@@ -1214,7 +1214,7 @@ func (s *ObjectService) Upload(ctx context.Context, key string, filepath string,
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-transfer-upload-object)
+[//]: # ".cssg-snippet-transfer-upload-object"
 ```go
 key := "exampleobject"
 file := "../test"

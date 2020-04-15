@@ -4,6 +4,7 @@
 
 Download iOS SDK resources of COS service from: [XML iOS SDK](https://github.com/tencentyun/qcloud-sdk-ios.git).   
 - You can download the packaged SDK in Framework format by selecting the desired version from [Release](https://github.com/tencentyun/qcloud-sdk-ios/releases).
+- SDK quick download address: [XML iOS SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-ios/latest/qcloud-sdk-ios.zip?_ga=1.33270526.1783616852.1583375173).
 - For more examples, see demo in [XML iOS SDK Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples.git).
 - For update log of COS XML version, refer to [XML iOS SDK ChangeLog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
 

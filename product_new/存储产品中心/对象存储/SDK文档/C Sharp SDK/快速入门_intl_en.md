@@ -2,6 +2,7 @@
 
 #### Relevant Resources
 - The COS XML SDK for .NET source code can be downloaded [here](https://github.com/tencentyun/qcloud-sdk-dotnet).
+- SDK quick download address: [XML .NET SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-dotnet/latest/qcloud-sdk-dotnet.zip?_ga=1.63139823.1783616852.1583375173).
 - The sample demo can be download [here](https://github.com/tencentyun/qcloud-sdk-dotnet-demo).
 
 #### Environmental Dependency
