@@ -2,6 +2,7 @@
 
 ### Relevant Resources
 - The resources of COS XML Java SDK can be downloaded [here](https://github.com/tencentyun/cos-java-sdk-v5).
+- SDK quick download address: [XML Java SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip?_ga=1.66636910.1783616852.1583375173).
 - The sample demo can be download [here](<https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo>).
 
 ### Environment Requirements

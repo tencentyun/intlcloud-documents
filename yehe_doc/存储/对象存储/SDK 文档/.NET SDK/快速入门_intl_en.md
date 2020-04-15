@@ -2,6 +2,7 @@
 
 #### Relevant Resources
 - Source code of COS XML .NET SDK: [COS XML .NET SDK](https://github.com/tencentyun/qcloud-sdk-dotnet).
+- SDK quick download address: [XML .NET SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-dotnet/latest/qcloud-sdk-dotnet.zip?_ga=1.63139823.1783616852.1583375173).
 
 #### Environmental Requirements
 COS XML .NET SDK is developed based on .NET Standard 2.0.

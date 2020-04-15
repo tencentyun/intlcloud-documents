@@ -4,6 +4,7 @@
 **Source code and demos**
 
 - For source code related to COS Android SDK, see [COS Android SDK Github](https://github.com/tencentyun/qcloud-sdk-android).
+- SDK quick download address: [COS Android SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-android/latest/qcloud-sdk-android.zip?_ga=1.63079279.1783616852.1583375173).
 - For demos, see [COS Android SDK Samples](https://github.com/tencentyun/qcloud-sdk-android-samples).
 
 **Changelog**

@@ -50,8 +50,7 @@ Client Version: version.Info{Major:"1", Minor:"14", GitVersion:"v1.14.5", GitCom
 ### 获取集群账号密码以及证书信息
 1. 登录容器服务控制台，选择左侧导航栏中的【[弹性集群](https://console.cloud.tencent.com/tke2/ecluster)】。
 2. 在“弹性集群”列表页面，单击需连接的集群 ID，进入该集群的管理页面。
-3. 选择左侧导航栏中的【基本信息】，进入该集群“基础信息”页面。如下图所示：
-![](https://main.qcloudimg.com/raw/498310beff5f0b8805cc99494ca5cce0.png)
+3. 选择左侧导航栏中的【基本信息】，进入该集群“基础信息”页面。
 4. 在“基本信息”中，单击 “集群凭证” 中的 【显示凭证】。
 5. <span id="info"></span>在弹出的“集群凭证”窗口中，根据实际需求进行如下操作。
   - 获取用户名、密码和证书信息，单击【复制】或【下载】将集群 CA 证书保存到本地。
@@ -61,8 +60,8 @@ Client Version: version.Info{Major:"1", Minor:"14", GitVersion:"v1.14.5", GitCom
     - **获取 VPC 内网访问入口**：将“内网访问地址”设置为【已开启】，您需要指定 Apiserver 的内网访问子网，请确保选择的子网有剩余 IP。配置完成后，可参考 [通过证书信息使用 Kubectl 操作集群](#TheCluster) 直接使用内网访问地址进行访问。
 
 
-
-### 通过证书信息使用 Kubectl 操作集群<span id="TheCluster"></span>
+<span id="TheCluster"></span>
+### 通过证书信息使用 Kubectl 操作集群
 
 #### 单次 Kubectl 操作请求，附带证书信息
 >该方法适用于单次操作集群，无需将容器集群的证书信息长期保存到机器上。
@@ -76,7 +75,7 @@ Kubectl 命令参数格式如下所示：
  - **用户名**：默认为 `admin`。
  - **密码**：“集群凭证”窗口中的 `token`，已在 [步骤5](#info) 中获取。
  - **证书路径**：“集群凭证”窗口中的 `集群CA证书`，已在 [步骤5](#info) 中获取。
- 
+
 **示例**
 执行以下命令，获取集群 node 信息。
 ```shell

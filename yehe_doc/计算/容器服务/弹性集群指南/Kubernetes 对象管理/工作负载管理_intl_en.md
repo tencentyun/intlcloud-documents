@@ -3,7 +3,7 @@ This document describes how to select different types of workloads to run your s
 >To create and manage your Elastic Kubernetes Service (EKS) workloads by using a YAML file, see [EKS Annotation Description](#workloadAnnotationDesc).
 
 ## Prerequisites
-- An elastic cluster has been created and is in the Running state. For more information, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/39813).
+- An elastic cluster has been created and is in the Running state. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/34048).
 - The cluster has an appropriate namespace that is in the Active state.
 
 ## Introduction to Workload Types
@@ -33,8 +33,7 @@ The Cron format is as follows:
 
 ## Procedure
 1. Log in to the TKE console and click [**Elastic Cluster**](https://console.cloud.tencent.com/tke2/ecluster) in the left sidebar.
-2. On the **Elastic Cluster** page that appears, click the ID of the cluster where the workload that you want to create is located. The **Deployment** page for the cluster appears, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/25a9b8b66aabcc288cb71997c90f24f3.png)
+2. On the **Elastic Cluster** page that appears, click the ID of the cluster where the workload that you want to create is located. The **Deployment** page for the cluster appears.
 3. Click **Create** to go to the "New Workload" page.
 4. Specify a name and type for the workload to be created.
   - For the specific parameter settings for each type of workload, see the following:
@@ -46,7 +45,7 @@ The Cron format is as follows:
      - [Setting a Resource Limit for a Workload](https://intl.cloud.tencent.com/document/product/457/30667)
      - [Setting a Scheduling Rule for a Workload](https://intl.cloud.tencent.com/document/product/457/30668)
      - [Setting Health Check for a Workload](https://intl.cloud.tencent.com/document/product/457/30669)
-    - [Setting the Running Command and Parameters for a Workload](https://intl.cloud.tencent.com/document/product/457/30670)
+        - [Setting the Running Command and Parameters for a Workload](https://intl.cloud.tencent.com/document/product/457/30670)
 
 <span id="workloadAnnotationDesc"></span>
 ## EKS Annotation Description
@@ -61,13 +60,13 @@ The Cron format is as follows:
 </thead>
 <tbody><tr>
 <td>eks.tke.cloud.tencent.com/cpu</td>
-<td>Specify the value according to <a href="https://cloud.tencent.com/document/product/457/39808" target="_blank">Resource Specifications</a>. It is measured in cores by default, and the unit does not have to be specified.</td>
+<td>Specify the value according to <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. It is measured in cores by default, and the unit does not have to be specified.</td>
 <td>CPU specifications for the pod</td>
 <td>Yes. An error occurs if the value is not specified or indicates an unsupported specification.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/mem</td>
-<td>Specify the value according to <a href="https://cloud.tencent.com/document/product/457/39808" target="_blank">Resource Specifications</a>. You must specify the unit in the value, for example, 512Mi, 0.5Gi, or 1Gi.</td>
+<td>Specify the value according to <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. You must specify the unit in the value, for example, 512Mi, 0.5Gi, or 1Gi.</td>
 <td>CPU specifications for the pod</td>
 <td>Yes. An error occurs if the value is not specified or indicates an unsupported specification.</td>
 </tr>

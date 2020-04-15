@@ -3,6 +3,7 @@
 #### Relevant Resources
 
 - Download the COS XML SDK for JS resources [here](https://github.com/tencentyun/cos-nodejs-sdk-v5).
+- SDK quick download address: [XML Node.js SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-nodejs-sdk-v5/latest/cos-nodejs-sdk-v5.zip?_ga=1.126519373.1783616852.1583375173).
 - Download the demo [here](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo).
 
 #### Environmental Requirements
