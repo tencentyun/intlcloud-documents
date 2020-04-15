@@ -2,6 +2,7 @@
 
 #### 相关资源
 - 对象存储 COS 的 XML .NET SDK 源码下载地址：[ XML .NET SDK ](https://github.com/tencentyun/qcloud-sdk-dotnet)。
+- SDK 快速下载地址：[XML .NET SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-dotnet/latest/qcloud-sdk-dotnet.zip?_ga=1.63139823.1783616852.1583375173)。	
 - 示例 Demo 下载地址：[ COS XML .NET SDK 示例](https://github.com/tencentyun/qcloud-sdk-dotnet-demo)。
 
 #### 环境依赖

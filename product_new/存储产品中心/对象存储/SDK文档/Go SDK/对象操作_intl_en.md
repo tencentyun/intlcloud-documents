@@ -49,7 +49,7 @@ func (s *BucketService) Get(ctx context.Context, opt *BucketGetOptions) (*Bucket
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```go
 opt := &cos.BucketGetOptions{
     Prefix:  "test",
@@ -125,7 +125,7 @@ func (s *ObjectService) Put(ctx context.Context, key string, r io.Reader, opt *O
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```go	
 $key = "exampleobject";
 f, err := os.Open("../test")
@@ -212,7 +212,7 @@ func (s *ObjectService) Head(ctx context.Context, key string, opt *ObjectHeadOpt
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 ```go
 $key = "exampleobject";
 _, err := client.Object.Head(context.Background(), key, nil)
@@ -266,7 +266,7 @@ func (s *ObjectService) GetToFile(ctx context.Context, key, localfile string, op
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```go
 $key = "exampleobject";
 opt := &cos.ObjectGetOptions{
@@ -350,7 +350,7 @@ func (s *ObjectService) Copy(ctx context.Context, key, sourceURL string, opt *Ob
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```go
 name := "exampleobject"
 // Uploading the source object
@@ -406,7 +406,7 @@ type ObjectCopyHeaderOptions struct {
 | XCosCopySourceIfUnmodifiedSince | The operation is performed if the object is not modified after the specified time, otherwise error code 412 is returned. It can be used with XCosCopySourceIfMatch. Using it with other conditions can cause a conflict. | string | No |
 | XCosCopySourceIfMatch | The operation is performed if the Etag of the object is the same as the given one, otherwise error code 412 is returned. It can be used with XCosCopySourceIfUnmodifiedSince. Using it with other conditions can cause a conflict. | string | No |
 | XCosCopySourceIfNoneMatch | The operation is performed if the Etag of the object is different from the given one, otherwise error code 412 is returned. It can be used with XCosCopySourceIfModifiedSince. Using it with other conditions can cause a conflict. | string | No |
-| XCosStorageClass | Sets file storage type: STANDARD and STANDARD_IA. Default: STANDARD | string | No |
+| XCosStorageClass | Sets file storage type: STANDARD, STANDARD_IA and ARCHIVE. Default: STANDARD | string | No |
 | XCosMetaXXX | User-defined file meta information. | http.Header | No |
 | XCosCopySource | Source file URL path. You can specify the history version with the versionid subresource. | string | No |
 
@@ -440,7 +440,7 @@ func (s *ObjectService) Delete(ctx context.Context, key string) (*Response, erro
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```go
 $key = "exampleobject";
 _, err := c.Object.Delete(context.Background(), name)
@@ -469,7 +469,7 @@ func (s *ObjectService) DeleteMulti(ctx context.Context, opt *ObjectDeleteMultiO
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 ```go
 var objects []string
 objects = append(objects, []string{"a", "b", "c"}...)
@@ -550,7 +550,7 @@ func (s *BucketService) ListMultipartUploads(ctx context.Context, opt *ListMulti
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```go
 _, _, err := client.Bucket.ListMultipartUploads(context.Background(), nil)
 if err != nil {
@@ -662,7 +662,7 @@ func (s *ObjectService) InitiateMultipartUpload(ctx context.Context, name string
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```go
 name := "exampleobject"
 We recommend you not to set permissions on individual files when uploading so as to avoid reaching the limit. Bucket permission sets the default limit.
@@ -744,7 +744,7 @@ func (s *ObjectService) UploadPart(ctx context.Context, key, uploadID string, pa
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```go
 # Note: The maximum number of parts to be uploaded is 10,000.
 $key = "exampleobject";
@@ -805,7 +805,7 @@ func (s *ObjectService) ListParts(ctx context.Context, name, uploadID string, op
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```go
 $key = "exampleobject";
 _, _, err := client.Object.ListParts(context.Background(), key, UploadID, nil)
@@ -902,7 +902,7 @@ func (s *ObjectService) CompleteMultipartUpload(ctx context.Context, key, upload
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```go
 # Complete the multipart upload
 $key = "exampleobject";
@@ -972,7 +972,7 @@ func (s *ObjectService) AbortMultipartUpload(ctx context.Context, key, uploadID 
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```go
 $key = "exampleobject";
 Abort
@@ -1005,7 +1005,7 @@ func (s *ObjectService) PostRestore(ctx context.Context, key string, opt *Object
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 ```go
 key := "example_restore"
 f, err := os.Open("../test")
@@ -1076,7 +1076,7 @@ func (s *ObjectService) PutACL(ctx context.Context, key string, opt *ObjectPutAC
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-put-object-acl)
+[//]: # ".cssg-snippet-put-object-acl"
 ```go
 // 1. Configuration via request header
 opt := &cos.ObjectPutACLOptions{
@@ -1147,7 +1147,7 @@ func (s *ObjectService) GetACL(ctx context.Context, key string) (*ObjectGetACLRe
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-get-object-acl)
+[//]: # ".cssg-snippet-get-object-acl"
 ```go
 $key = "exampleobject";
 _, _, err := client.Object.GetACL(context.Background(), key)
@@ -1214,7 +1214,7 @@ func (s *ObjectService) Upload(ctx context.Context, key string, filepath string,
 
 #### Request Samples
 
-[//]: # (.cssg-snippet-transfer-upload-object)
+[//]: # ".cssg-snippet-transfer-upload-object"
 ```go
 $key = "exampleobject";
 file := "../test"
