@@ -95,17 +95,17 @@ The fees incurred each day in January can be calculated accordingly with the abo
 
 ### Bill-by-monthly-average-bandwidth
 
-1. Suppose a customer's billing officially started on February 1 and the contracted price for the specified zone is P USD/Mbps/month.
+1. Suppose a customer's billing officially started on January 1 and the contracted price for the specified zone is P USD/Mbps/month.
 2. A valid day refers to a day when more than 0 Kbps of bandwidth is consumed.
-3. Assuming there are 14 valid days in February , we take the maximum value of the 288 statistical points for each of those 14 valid days as Max_1, Max_2, Max_3..., and Max_14, respectively. The billable bandwidth will be Average(Max_1, Max_2, ..., Max_14), and so the February fee is: Average(Max_1, Max_2, ..., Max_14) * P * 14 / 28.
+3. Assuming there are 14 valid days in January , we take the maximum value of the 288 statistical points for each of those 14 valid days as Max_1, Max_2, Max_3..., and Max_14, respectively. The billable bandwidth will be Average(Max_1, Max_2, ..., Max_14), and so the January fee is: Average(Max_1, Max_2, ..., Max_14) * P * 14 / 31.
 
 
 
 ### Bill-by-monthly-95th-percentile-bandwidth
 
-1. Suppose a customer's billing officially started on February 1 and the contracted price for the specified zone is P USD/Mbps/month.
+1. Suppose a customer's billing officially started on January 1 and the contracted price for the specified zone is P USD/Mbps/month.
 2. A valid day refers to a day when more than 0 Kbps of bandwidth is consumed.
-3. Assuming there are 14 valid days in February , 14 valid days has 14 * 288 statistical points, and the highest 5% points are removed. The highest remaining point is the Max95, which is the billable bandwidth. So the February fee is: Max95 * P * 14 / 28.
+3. Assuming there are 14 valid days in January , 14 valid days has 14 * 288 statistical points, and the highest 5% points are removed. The highest remaining point is the Max95, which is the billable bandwidth. So the January fee is: Max95 * P * 14 / 31.
 
 ## Choosing a billing plan
 
