@@ -79,7 +79,7 @@ netstat -ant | findstr 3389
 1. 在云服务器中，单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>，选择 <img src="https://main.qcloudimg.com/raw/5b5e3abb2f39cb719a4119ba77b74447.png" style="margin: 0;"></img>，输入 **regedit**，按 **Enter**，打开 “注册表编辑器” 窗口。
 2. 在左侧的注册表导航中，依次展开【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【Wds】>【rdpwd】>【Tds】>【tcp】目录。
 3. 找到【tcp】中的 PortNumber，并记录 PortNumber 的数据（即端口号，默认为3389）。如下图所示：
-![](https://main.qcloudimg.com/raw/e67b696fd25b3355c9038f99a08b90be.png)
+![](https://main.qcloudimg.com/raw/a636dd570e6fe61b397290b4674b8d16.png)
 4. 在左侧的注册表导航中，依次展开【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【WinStations】>【RDP-Tcp】目录。
 5. 找到【RDP-Tcp】中的 PortNumber，并确认【RDP-Tcp】中的 PortNumber 数据（端口号）是否与【tcp】中的 PortNumber 数据（端口号）一致。如下图所示：
 ![](https://main.qcloudimg.com/raw/9d68cec10e75afe621beb6c914d393cb.png)
