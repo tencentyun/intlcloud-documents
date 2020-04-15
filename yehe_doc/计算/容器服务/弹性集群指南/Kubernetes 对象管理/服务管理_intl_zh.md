@@ -3,7 +3,7 @@
 
 
 ## 前提条件
-- 已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://cloud.tencent.com/document/product/457/39813)。
+- 已创建状态为“运行中”的弹性集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/34048)。
 - 集群有合适的且为 Active 状态的命名空间。
 
 ## 服务类型介绍

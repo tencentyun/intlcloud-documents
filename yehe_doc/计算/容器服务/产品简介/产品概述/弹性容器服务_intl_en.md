@@ -30,10 +30,10 @@ The serverless architecture allows EKS to provide higher resource utilization an
 EKS can be highly integrated with most Tencent Cloud services, including the storage products Cloud Block Storage (CBS), Cloud File Storage (CFS), and Cloud Object Storage (COS), TencentDB product family, and virtual private cloud (VPC) product family. With this capability, EKS can provide solutions that meet the requirements of a wide range of businesses.
 
 ## Use Limits
-For more information, see [Purchase Limits](https://cloud.tencent.com/document/product/457/39821).
+For more information, see [Purchase Limits](https://intl.cloud.tencent.com/document/product/457/34056).
 
 ## Pricing
-EKS is a fully-managed and serverless Kubernetes service. Managed control-plane resources such as the Master and Etcd are not billed in an elastic cluster. This billing method is similar to that of a TKE-managed cluster. Workloads running in an elastic cluster are billed in postpaid pay-as-you-go mode. The fees are calculated based on the configured amount of resources and the actual use period. For more information, see [Pricing](https://cloud.tencent.com/document/product/457/39806).
+EKS is a fully-managed and serverless Kubernetes service. Managed control-plane resources such as the Master and Etcd are not billed in an elastic cluster. This billing method is similar to that of a TKE-managed cluster. Workloads running in an elastic cluster are billed in postpaid pay-as-you-go mode. The fees are calculated based on the configured amount of resources and the actual use period. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/457/34055).
 
 
 ## Comparison with TKE
@@ -48,7 +48,7 @@ EKS is a fully-managed and serverless Kubernetes service. Managed control-plane 
 <tbody><tr>
 <td>Kubernetes</td>
 <td>This feature is natively supported.</td>
-<td>This feature is natively supported. Some features are not supported due to the lack of computing nodes. For more information, see <a href="https://cloud.tencent.com/document/product/457/39815">Unsupported Native Kubernetes Features</a>.</td>
+<td>This feature is natively supported. Some features are not supported due to the lack of computing nodes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34050">Unsupported Native Kubernetes Features</a>.</td>
 </tr>
 <tr>
 <td>VPC</td>

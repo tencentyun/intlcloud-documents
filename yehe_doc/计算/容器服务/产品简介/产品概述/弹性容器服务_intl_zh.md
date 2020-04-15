@@ -30,10 +30,10 @@ EKS 是一种全托管的 Kubernetes 服务，意味着用户无须管理任何�
 EKS 能够和腾讯云的大部分业务做到高度集成，例如存储产品云硬盘 CBS、文件存储 CFS 及对象存储 COS、云数据库 TencentDB 系列产品、私有网络 VPC 系列产品等，提供了满足各类业务需求的解决方案。
 
 ## 使用限制
-详情请参考 [购买限制](https://intl.cloud.tencent.com/document/product/457/39821)。
+详情请参考 [购买限制](https://intl.cloud.tencent.com/document/product/457/34056)。
 
 ## 产品定价
-EKS 是全托管的无服务器 Kubernetes 服务，和 TKE 托管集群一样，不会收取托管的 Master，Etcd 等管理面资源的费用。弹性集群内运行的工作负载采用后付费的按量计费模式，费用根据实际配置的资源量按使用时间计算，详情请参考 [产品定价](https://cloud.tencent.com/document/product/457/39806)。
+EKS 是全托管的无服务器 Kubernetes 服务，和 TKE 托管集群一样，不会收取托管的 Master，Etcd 等管理面资源的费用。弹性集群内运行的工作负载采用后付费的按量计费模式，费用根据实际配置的资源量按使用时间计算，详情请参考 [产品定价](https://intl.cloud.tencent.com/document/product/457/34055)。
 
 
 ## 与容器服务的对比
@@ -48,7 +48,7 @@ EKS 是全托管的无服务器 Kubernetes 服务，和 TKE 托管集群一样�
 <tbody><tr>
 <td>Kubernetes</td>
 <td>原生支持</td>
-<td>原生支持，存在由无计算节点造成的功能缺省，详情请参见 <a href="https://cloud.tencent.com/document/product/457/39815">缺省 Kubernetes 功能</a></td>
+<td>原生支持，存在由无计算节点造成的功能缺省，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/457/34050">缺省 Kubernetes 功能</a></td>
 </tr>
 <tr>
 <td>私有网络</td>

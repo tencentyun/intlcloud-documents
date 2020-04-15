@@ -3,7 +3,7 @@ This document describes how a workload provides an open API through Service and 
 
 
 ## Prerequisites
-- An elastic cluster has been created and is in the Running state. For more information, see [Creating a Cluster](https://cloud.tencent.com/document/product/457/39813).
+- An elastic cluster has been created and is in the Running state. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/34048).
 - The cluster has an appropriate namespace that is in the Active state.
 
 ## Introduction to Service Types
