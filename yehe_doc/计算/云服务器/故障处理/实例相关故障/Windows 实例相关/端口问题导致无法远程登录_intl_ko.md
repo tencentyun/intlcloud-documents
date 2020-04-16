@@ -79,7 +79,7 @@ netstat -ant | findstr 3389
 1. CVM에서 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>을 클릭하고, <img src="https://main.qcloudimg.com/raw/5b5e3abb2f39cb719a4119ba77b74447.png" style="margin: 0;"></img>을 선택하여 **regedit**를 입력한 다음 **Enter**를 눌러 “레지스트리 편집기” 창을 엽니다.
 2. 왼쪽 메뉴에서 차례대로 [HKEY_LOCAL_MACHINE]>[SYSTEM]>[CurrentControlSet]>[Control]>[Terminal Server]>[Wds]>[rdpwd]>[Tds]>[tcp] 디렉터리를 엽니다.
 3. [tcp] 중에서 PortNumber를 찾아 PortNumber 의 데이터(즉 포트 번호, 기본값 3389)를 기록합니다. 아래 이미지 참조
-![](https://main.qcloudimg.com/raw/e67b696fd25b3355c9038f99a08b90be.png)
+![](https://main.qcloudimg.com/raw/a636dd570e6fe61b397290b4674b8d16.png)
 4. 왼쪽 메뉴에서 차례대로 [HKEY_LOCAL_MACHINE]>[SYSTEM]>[CurrentControlSet]>[Control]>[Terminal Server]>[WinStations]>[RDP-Tcp] 디렉터리를 엽니다.
 5. [RDP-Tcp] 중에서 PortNumber를 찾고, [RDP-Tcp] 중의 PortNumber 데이터(포트 번호)와 [tcp] 중의 PortNumber 데이터(포트 번호)가 일치하는지 확인합니다. 아래 이미지 참조
 ![](https://main.qcloudimg.com/raw/8240dd43dcb3ca246caf3397e4a1e84f.png)
