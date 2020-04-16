@@ -6,59 +6,65 @@ You have a Tencent Cloud account. For more information on how to create an accou
 
 ## Directions
 
-### Logging in to the console
+### Logging in to console
 
 Log in to the [ES Console](https://console.cloud.tencent.com/es) and click **Create** to enter the creation and purchase page.
 
-### Creating a cluster
+### Creating cluster
 
-#### 1. Select configuration information
+#### 1. Select cluster configuration
 
-- Billing Mode: select **Pay-as-You-Go**.  
-- Region: currently, ES is available in the following regions: Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong (China), Silicon Valley, Toronto, Singapore, Mumbai, Seoul, and Frankfurt.
-- Deployment Mode: single-AZ (where the ES cluster is deployed in one AZ) or multi-AZ (where the cluster is deployed in two AZs in the same region). Multi-AZ mode can improve the disaster recovery capability of the cluster and ensure the stability of online businesses. The multi-AZ feature is currently in beta test, and application for eligibility has been suspended. The feature will be made fully available in near future. Please stay tuned and check the announcements posted on the official website.
-- Network: select a VPC in the current region. The same VPC is accessible from multiple AZs in the same region. In multi-AZ deployment mode, you should also select the same VPC.
-- AZ and Subnet: ES is deployed in a VPC. To ensure smooth access to the ES cluster over the private network, you are recommended to select a VPC in the region where your existing cloud-based businesses reside. The ES cluster can only be accessed in the same VPC.
-
+- Billing Mode: **pay-as-you-go** billing is supported.
+- Region: currently, ES has been launched in multiple regions in and outside Mainland China.
+- Elasticsearch Version: v5.6.4, v6.4.3, v6.8.2, and v7.5.1 are supported.
+- X-Pack: Elasticsearch's official commercial features, including capabilities such as data permission management, SQL JDBC, alerting, and machine learning. The features available vary by edition: the Platinum Edition has all the advanced features, the Basic Edition has some advanced features, and the Open Source Edition does not have advanced features. For more information, please see [X-Pack](https://intl.cloud.tencent.com/document/product/845/30943).
+> The Basic Edition supports [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) starting from v6.8, which greatly improves the cluster security and is therefore recommended to be enabled. If you do not enable it when purchasing your cluster, you need to fully restart the cluster when enabling it subsequently, which will affect your online businesses. This feature is enabled in the Platinum Edition by default and is not supported in the Open Source Edition.
+>
+- Network/AZ and Subnet: ES is deployed in VPCs. An ES cluster can only be accessed from servers in the same VPC. Therefore, to ensure smooth access to the ES cluster over the private network, you are recommended to select a VPC in the region where your existing cloud-based businesses reside. In multi-AZ deployment mode, you should also select the same VPC. Subnets in different AZs in the same VPC can communicate with each other.
 > The VPC cannot be changed or adjusted once the ES cluster is created.
-> 
-> **Special notes on network selection**
- - Cross-VPC access: if you need to access an ES cluster from a CVM instance located in another VPC in the same region, consider the [peering connection](https://console.cloud.tencent.com/vpc/conn) scheme which can interconnect two different VPCs in the same region.
- - Basic network access: if your business is deployed in the basic network and you have never used a VPC, you can bind the CVM instance located in the basic network to the VPC where the ES cluster resides through Classiclink.
-  Classiclink only supports VPCs in the IP range of `10.[0–47].0.0/16`. If you need to access the ES cluster from the basic network, please select a VPC in this range when creating the ES cluster.
-	
-- Cluster name: name the cluster as desired. This name is not a globally unique identifier and can be set as a business-related description.
-- Version: Elasticsearch version. Currently, versions 7.5.1, 6.8.2, 6.4.3, and 5.6.4 are supported.
-- Elastic Stack (formerly X-Pack): Elasticsearch's official commercial features, including capabilities such as data permission management, SQL JDBC, alerting, and machine learning. The features available vary by edition: the Platinum Edition has all the advanced features, the Basic Edition has some advanced features, and the Open Source Edition has only the open-source features. For more information, please see [Elastic Stack (X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943).
-- Node model: specifications of each node model in the cluster. The core quantity and memory size available vary by model. For more information on the node models supported by ES and how to select an appropriate type, please see [Node Type and Storage Configuration](https://intl.cloud.tencent.com/document/product/845/19551).
-- Node storage type: premium or SSD cloud disk.
-- Single-node storage: the disk capacity configured for each node. The storage capacity of the entire cluster is the single-node storage multiplied by the number of nodes.
-- Configure dedicated master nodes: if the cluster is large, you can [configure dedicated master nodes](https://intl.cloud.tencent.com/document/product/845/19879) to further ensure the cluster stability.
-- Dedicated master node model: a dedicated master node can use a different model from that of the data nodes.
-- Number of dedicated master nodes: 3 or 5. An odd number of nodes ensures high availability and prevents the risk of split-brain.
-- Username: this is the username used to access Kibana and Elasticsearch Platinum Edition clusters, which is defaulted to `elastic` and cannot be modified. In the Basic Edition and Open Source Edition, secure user authentication is not enabled, so no username or password is required when a cluster is accessed through an API, and this username is only used to log in to Kibana. In the Platinum Edition, user authentication is enabled, so the corresponding username and password are required when a cluster is accessed through an API.
-- Password: the password corresponding to the aforementioned username. Please set it as required. If you forgot it, you can reset it on the details page.
+  >
+  > **Special notes on network selection**
+  >
+  > - Cross-VPC Access: if you need to access an ES cluster from a CVM instance located in another VPC in the same region, consider the [peering connection](https://intl.cloud.tencent.com/document/product/553/18827) scheme which can interconnect two different VPCs in the same region.
+  > - Basic Network Access: if your business is deployed in the basic network and you have never used a VPC, you can bind the CVM instance located in the basic network to the VPC where the ES cluster resides through Classiclink. For more information, please see [Classiclink](https://intl.cloud.tencent.com/document/product/215/31807). Classiclink only supports VPCs in the IP range of `10.[0–47].0.0/16`. If you need to access the ES cluster from the basic network, please select a VPC in this range when creating the cluster.
+  > 
+- AZ Deployment Mode: single-AZ is a mode where the ES cluster is deployed in one AZ, while multi-AZ is a mode where the cluster is deployed in two AZs in the same region. The multi-AZ mode can improve the disaster recovery capability of the cluster and ensure the stability of online businesses. For more information, please see [Multi-AZ Cluster Deployment](https://intl.cloud.tencent.com/document/product/845/32591).
+- Data Node Deployment Mode: single mode or hot/warm mode. In hot/warm mode, a cluster can have both warm and hot nodes where hot data that has high requirements for read/write performance can be stored on hot nodes, while indices that have high requirements for storage capacity and relatively low requirements for read/write performance can be stored on warm nodes. This ensures read/write performance of the hot data while reducing storage costs. For more information, please see [Hot/Warm Architecture and Index Lifecycle Management](https://intl.cloud.tencent.com/document/product/845/34890).
+- Node Model: specifications of each node model in the cluster. The core quantity and memory size available vary by model. For more information on the node models supported by ES and how to select an appropriate type, please see [Node Type and Storage Configuration](https://intl.cloud.tencent.com/document/product/845/19551).
+- Node Storage Type: premium or SSD cloud disk.
+- Single-Node Storage: disk capacity configured for each node. The storage capacity of the entire cluster is the single-node storage multiplied by the number of nodes.
+- Dedicated Master Node: if the cluster is large, you can [configure dedicated master nodes](https://intl.cloud.tencent.com/document/product/845/19879) to further ensure the cluster stability.
+- Dedicated Master Node Model: a dedicated master node can use a different model from that of the data nodes.
+- Number of Dedicated Master Nodes: 3 or 5. An odd number of nodes ensures high availability and prevents the risk of split-brain.
+- Kibana Node: it is provided free of charge with the 1-core 2 GB MEM specification. Currently, it cannot be modified.
+
 ![](https://main.qcloudimg.com/raw/9f1f7bfe2988f7e57235c66f5162c20c.jpg)
 
 #### 2. Set the name and password
+
 Click **Next: Set Name and Password**.
+- Cluster Name: name the cluster as desired. This name is not a globally unique identifier and can be set as a business-related description.
+- Username: username used for Kibana page login and [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275). It is `elastic` by default and cannot be modified.
+- Password: password corresponding to the aforementioned username. Please set it as required and keep it private. If you forgot it, you can reset it on the details page.
+- Tag: tag is a unified management service provided by Tencent Cloud and can be used to manage existing Tencent Cloud resources in a categorized manner. You can create or modify tags either before or after ES cluster purchase. For more information, please see [Tag](https://intl.cloud.tencent.com/document/product/651/13334).
+
 ![](https://main.qcloudimg.com/raw/9eab152498cd0bfa0ae0531243c7fe5f.jpg)
 
-#### 3. Confirm and purchase
+#### 3. Confirm configuration information
 
 Click **Next: Confirm Configuration Information** to confirm the configuration.
 ![](https://main.qcloudimg.com/raw/d151fbccf049b07854c9f2420994088a.jpg)
-
 - Click **Activate** to create the cluster directly if the pay-as-you-go billing mode is selected. You do not need to confirm the order or pay for it, as your account balance will be deducted on an hourly basis during cluster use.
 
 #### 4. Complete the creation
+
 Once successful activated, the pay-as-you-go cluster just created can be viewed in the [console](https://console.cloud.tencent.com/es) and will be completely created in a matter of minutes.
 
 ## Cluster Application Development and Management
 
 ### Accessing cluster
 
-To help you get started quickly, ES provides several types of clients for accessing clusters. For more information, please see [ES Access Method Overview](https://intl.cloud.tencent.com/document/product/845/19539).
+To help you get started quickly, ES provides several types of clients for accessing clusters. For more information, please see [Accessing Clusters Through API](https://intl.cloud.tencent.com/document/product/845/19540), [Accessing Clusters Through Client](https://intl.cloud.tencent.com/document/product/845/19538), and [Accessing Clusters Through Kibana](https://intl.cloud.tencent.com/document/product/845/19541).
 
 ### Monitoring cluster
 
@@ -69,5 +75,3 @@ In the Basic Edition and Platinum Edition, Kibana also offers monitoring metrics
 ### Adjusting cluster configuration
 
 With the increase in volumes of business data and access requests, the cluster configuration can be elastically adjusted. For more information, please see [Adjusting Configuration](https://intl.cloud.tencent.com/document/product/845/30944).
-
-
