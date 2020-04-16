@@ -3,12 +3,7 @@
 ## 故障现象
 云服务器被隔离可能由于该台服务器违反了当前法律法规的要求。您可以通过以下方式查看该台服务器是否处于被隔离的状态。
 - 云服务器外网被隔离时，将会通过 [控制台站内信](https://console.cloud.tencent.com/message) 或发送短信的方式将违规隔离通知到您。
- - 站内信图片：
-![](//mc.qcloudimg.com/static/img/3c8ecd4ac301180e3632a25343be0697/image.png)
-或者
-![](//mc.qcloudimg.com/static/img/cd3fbf748d3ff61adf3d2198853d18de/image.png)
- - 短信图片：
-![](//mc.qcloudimg.com/static/img/afaff154fa12695844055422f4f103e6/image.png)
+
 - [云服务器控制台](https://console.cloud.tencent.com/cvm/index) 中的"监控/状态"栏 显示该云服务器状态：隔离中。
 
 
