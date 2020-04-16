@@ -38,7 +38,7 @@ The table below lists the use cases of CDN. You can click to view the details.
 ## Scenario Description
 <span ID = "m1"></span>
 ### Website Acceleration
-Website acceleration is suitable for all types of websites such as web portals, ecommerce platforms, and UGC communities. CDN can cache and accelerate the delivery of static contents on your website such as images, HTML, CSS, and JavaScript files. To accelerate access to dynamic contents such as .asp, .jsp, .php, .cgi, and .perl files as well as API and database requests, use [ECDN](https://intl.cloud.tencent.com/product/dsa).
+Website acceleration is suitable for all types of websites such as web portals, ecommerce platforms, and UGC communities. CDN can cache and accelerate the delivery of static contents on your website such as images, HTML, CSS, and JavaScript files. To accelerate access to dynamic contents such as .asp, .jsp, .php, .cgi, and .perl files as well as API and database requests, use [ECDN](https://intl.cloud.tencent.com/product/ecdn).
 
 CDN provides powerful static content delivery capabilities, significantly speeding up page loading and offering a smooth and fast browsing experience for geographically dispersed end users. During service peaks with a large number of concurrent users, it can alleviate the pressure on origin servers to ensure stable and smooth access to services and webpages.
 ![](https://main.qcloudimg.com/raw/c9d1c4da99eabde91c5c63a10bf83d46.jpg)
