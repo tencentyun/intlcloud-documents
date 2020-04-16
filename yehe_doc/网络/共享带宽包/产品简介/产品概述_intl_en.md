@@ -9,8 +9,7 @@ Tencent Cloud offers different bandwidth packages for different accounts:
 - **Accounts whose internet fees are billed on public IP or CLB**: only IP bandwidth packages are available
   IP Bandwidth Package applies to accounts whose internet fess are billed on public IP or CLB, which mean that the public network capability (bandwidth cap) and billing method (bill-by-traffic or bill-by-bandwidth) are specified upon creation of the IP or CLB instance.
 
-Each account supports only one type of bandwidth packages. To learn about your account type and available bandwidth package type, please refer to [区分Your Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
->
+Each account supports only one type of bandwidth packages. To learn about your account type and available bandwidth package type, please refer to [Product Type](https://intl.cloud.tencent.com/document/product/684/15246).
 >- The account type is defined according to the creation time of your account, and Tencent Cloud will not change it.
 > - You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to change from billing on CVMs to billing on public IPs/CLBs, but not vise versa.
 
