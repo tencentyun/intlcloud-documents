@@ -166,7 +166,7 @@
   <tr>
     <th width="100px" style="text-align:center">功能模块</th>
     <th width="100px" style="text-align:center">功能项</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/454/7873">直播精简版</a><br>LiteAV_Smart</th>
+    <th width="100px" style="text-align:center">直播精简版<br>LiteAV_Smart</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/584/9366">短视频版</a><br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC版</a><br>LiteAV_TRTC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/881/20205">播放器版</a><br>LiteAV_Player</th>

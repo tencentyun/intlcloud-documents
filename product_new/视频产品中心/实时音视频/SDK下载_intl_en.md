@@ -70,7 +70,7 @@ The lite edition only includes TRTC and TXLivePlayer and has the smallest storag
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35089">DOC</a></td>
+      <td style="text-align:center">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35097">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
@@ -79,8 +79,8 @@ The lite edition only includes TRTC and TXLivePlayer and has the smallest storag
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TRTC_WXMini_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">GitHub</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35087">DOC</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
+      <td style="text-align:center">DOC</a></td>
+      <td style="text-align:center">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
 </table>
@@ -166,10 +166,10 @@ In addition to all the features of the Professional edition, the enterprise edit
   <tr>
     <th width="85px" align="center">Module</th>
     <th width="100px" style="text-align:center">Features</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/454/7873"></a><br>LiteAV_Smart</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/584/9366"></a><br>LiteAV_UGC</th>
+    <th width="100px" style="text-align:center"><br>LiteAV_Smart</th>
+    <th width="100px" style="text-align:center"><br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615"></a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/881/20205"></a><br>LiteAV_Player</th>
+    <th width="100px" style="text-align:center"></a><br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional"></a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise"></a><br>Enterprise</th>
   </tr>
