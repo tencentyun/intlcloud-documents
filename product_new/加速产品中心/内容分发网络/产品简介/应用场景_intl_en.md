@@ -60,7 +60,7 @@ Audio/video acceleration is suitable for different types of audio/video on-deman
 
 <span ID = "m4"></span>
 ### ECDN
-[Enterprise Content Delivery Network (ECDN)](https://intl.cloud.tencent.com/product/dsa) is suitable for websites and applications with a mix of dynamic and static resources, or with many requests for dynamic resources such as .asp, .jsp, .php, .cgi, and .perl files as well as API and database requests.
+[Enterprise Content Delivery Network (ECDN)](https://intl.cloud.tencent.com/product/ecdn) is suitable for websites and applications with a mix of dynamic and static resources, or with many requests for dynamic resources such as .asp, .jsp, .php, .cgi, and .perl files as well as API and database requests.
 
 By integrating static edge caching with dynamic origin-pull route optimization, intelligently scheduling requests to the optimal service nodes, automatically identifying static and dynamic resources, and utilizing Tencent's proprietary optimal route calculation algorithm and TCP optimization technology, ECDN, currently a standalone product, can provide end users with a high-performance and one-stop acceleration experience.
 ![](https://main.qcloudimg.com/raw/7546f16ca821a265837bbfb080de255e.jpg)
