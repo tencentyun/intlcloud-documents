@@ -23,7 +23,7 @@ For more information on how to get the push address, see [Getting Push Address Q
 
  2. **<span id="step2">Configure a push</span>**
 Click the **+** icon under the "Sources" box and select the input source. If you do not need to configure bitrate, recording, and others items, click **Controls** > **Start Streaming** to push the video to the set push address.
-![](https://main.qcloudimg.com/raw/0952a730c447cbd62ae6c9b71e446004.png)
+![](https://main.qcloudimg.com/raw/f8136fdb794595c8c491c995a74cdfcc.png)
 Otherwise, click **Tools** > **Auto-Configuration Wizard** at the top, configure the push as prompted, and click **Controls** > **Start Streaming**.
 
  3. **Configure other push-related items**
@@ -59,7 +59,7 @@ Resolution determines the clarity of video shown to viewers. The higher the reso
 2. **Studio mode**
 In Studio Mode, you can edit the content of the current live broadcast in real time and perform scene transitions during editing, minimizing the impact on user experience.
 Click **Controls** > **Studio Mode** to enter the interface as shown below and configure **Scenes**, **Sources**, and **Scene Transitions**. Then, you can directly edit the live broadcast in the Preview pane on the left and click **Transition** to switch it to the live broadcasting pane on the right.
-![](https://main.qcloudimg.com/raw/ebb76622e1c09a5299c2a57a0e868d33.png)
+![](https://main.qcloudimg.com/raw/80e9e902e0e02902d78779ca5505b2f8.png)
 
 ### Pure Audio Push
 According to the discussions in the OBS forum, OBS Studio 23.2.1 and earlier versions do not support pure audio push.
