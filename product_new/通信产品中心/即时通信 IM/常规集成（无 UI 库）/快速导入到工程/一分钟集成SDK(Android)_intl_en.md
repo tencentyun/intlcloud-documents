@@ -49,7 +49,7 @@ The latest version of the [IM SDK](https://github.com/tencentyun/TIMSDK/tree/mas
 
 - **Step 2: Copy the IM SDK to the project directory**
 Copy the downloaded aar file to the **/libs** directory under the tuikit lib project:
-![](https://main.qcloudimg.com/raw/bf71b27bbb52e879b75528e707194a2a.png)
+![](https://main.qcloudimg.com/raw/6c68a70c15ce85d51ac6678234fcfe1b.png)
 
 - **Step 3: Specify the local repository path**
 Add **flatDir** to build.gradle under the project’s root directory and specify the local repository path:
@@ -78,13 +78,13 @@ If you do not want to integrate the aar library, you can integrate the IM SDK by
 
 - **Step 1: Download and decompress the IM SDK**
 [Download](https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/libs) the latest version of the aar file from Github and decompress it:
-![](https://main.qcloudimg.com/raw/0529e40e225998b0a4419f33c55283b6.png)
+![](https://main.qcloudimg.com/raw/da04237dcb53c1953667dfc9d43d6d7e.png)
 The extracted folder contains a jar file and a so subfolder. Rename **classes.jar** to **imsdk.jar**. The file list is as follows:
-![](https://main.qcloudimg.com/raw/cbe70a310281e4085cbe77f129202762.png)
+![](https://main.qcloudimg.com/raw/8ec9ecd08e9451b907a50bbc96c99607.png)
 
 - **Step 2: Copy SDK files to the project directory**
 Copy the renamed jar file and armeabi-v7a folder to the tuikit/libs directory:
-![](https://main.qcloudimg.com/raw/2c7b9300124815eeed1e942b799037af.png)
+![](https://main.qcloudimg.com/raw/83c582b1c8ccfe989e4f0694f06c03f1.png)
 
 - **Step 3: Reference the jar library**
 As tuikit is imported as a lib project, you need to add code for referencing the jar library to app/build.gradle and tuikit/build.gradle.

@@ -62,7 +62,8 @@
 <td>日志备份文件可以保留7天 - 732天，默认为7天。<strong>日志备份天数必须小于等于数据备份天数。</strong>  </td>
 </tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/efb1b3d8dd91e38fece00d44b788736e.png"  style="margin:0;">
+
+<img src="https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png"  style="margin:0;">
 
 
 <span id = "manual-backup"></span>
