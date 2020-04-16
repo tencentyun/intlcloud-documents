@@ -49,7 +49,7 @@ dependencies {
 
 - **第二步：拷贝 IM SDK 到工程目录**
 将下载到的 aar 文件拷贝到 tuikit lib工程的 **/libs** 目录下：
-![](https://main.qcloudimg.com/raw/bf71b27bbb52e879b75528e707194a2a.png)
+![](https://main.qcloudimg.com/raw/6c68a70c15ce85d51ac6678234fcfe1b.png)
 
 - **第三步：指定本地仓库路径**
 在工程根目录下的 build.gradle 中，添加 **flatDir**，指定本地仓库路径：
@@ -78,13 +78,13 @@ defaultConfig {
 
 - **第一步：下载解压 IM SDK**
 在 Github 上可以 [下载](https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/libs) 到最新版本的 aar 文件，解压：
-![](https://main.qcloudimg.com/raw/0529e40e225998b0a4419f33c55283b6.png)
+![](https://main.qcloudimg.com/raw/da04237dcb53c1953667dfc9d43d6d7e.png)
 解压后的目录里面主要包含 jar 文件和 so 文件夹，把其中的 **classes.jar** 重命名成 **imsdk.jar** ，文件清单如下：
-![](https://main.qcloudimg.com/raw/cbe70a310281e4085cbe77f129202762.png)
+![](https://main.qcloudimg.com/raw/8ec9ecd08e9451b907a50bbc96c99607.png)
 
 - **第二步：拷贝 SDK 文件到工程目录**
 将重命名后的 jar 文件和 armeabi-v7a 文件夹拷贝到 tuikit/libs 目录下：
-![](https://main.qcloudimg.com/raw/2c7b9300124815eeed1e942b799037af.png)
+![](https://main.qcloudimg.com/raw/83c582b1c8ccfe989e4f0694f06c03f1.png)
 
 - **第三步：引用 jar 库**
 由于 tuikit 是以 lib 工程导入的，需要在 app/build.gradle 和 tuikit/build.gradle 中，添加引用 jar 库的代码。
