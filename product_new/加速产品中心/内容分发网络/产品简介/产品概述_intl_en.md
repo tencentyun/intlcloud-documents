@@ -20,4 +20,5 @@ For example, if your business origin server's domain name is ```www.test.com```,
 4. The user receives the resolved IP.
 5. The user makes an access request for 1.jpg to the received IP.
 6. If the CDN node corresponding to the IP has already cached 1.jpg, data will be directly returned to the user (10), and the request ends; otherwise, the CDN node will initiate a request for 1.jpg to the origin server (6, 7, and 8). After receiving the resource, the CDN node will cache it (9) based on the caching policy configured (please see [Cache Expiration Configuration](https://intl.cloud.tencent.com/doc/product/228/6290)) and return it to the user (10) to end the request.
-For more information, please see [Tencent Cloud CDN White Paper](https://main.qcloudimg.com/raw/0c1b4fa0415fecdebceb076c36af7989/Tencent%20Cloud%20CDN%20White%20Paper.pdfhttps://main.qcloudimg.com/raw/bd35297caa4cae56b1a08791f3f5e770.pdf).
+
+  For more information, please see [Tencent Cloud CDN White Paper](https://main.qcloudimg.com/raw/0c1b4fa0415fecdebceb076c36af7989/Tencent%20Cloud%20CDN%20White%20Paper.pdf).
