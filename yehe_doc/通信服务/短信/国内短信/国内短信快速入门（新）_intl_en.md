@@ -1,10 +1,10 @@
-This document uses sending a message `[Tencent Cloud] Your verification code is: XXXX` to mobile numbers in Mainland China as an example to describe how to get started with the Mainland China SMS service. For more concepts related to SMS, please see [Common Concepts](https://intl.cloud.tencent.com/document/product/382/13299).
+This document uses sending a message `[Tencent Cloud] Your verification code is: XXXX` to mobile numbers in Mainland China as an example to describe how to get started with the Mainland China SMS service. For more concepts related to SMS, please see Common Concepts
 
 >The new version of console is displayed to users who activate the SMS service after September 18, 2019 by default.
 
 ## Step 1. Activate the SMS service
 ### Signing up for a Tencent Cloud account
-- If you don't have a Tencent Cloud account yet, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and verify your organizational identity.
+- If you don't have a Tencent Cloud account yet, you need to [sign up for a Tencent Cloud account and verify your organizational identity.
 - If you already have a Tencent Cloud account and verified your identity, you can proceed directly to the next step.
 
 ### Applying for activation of SMS
