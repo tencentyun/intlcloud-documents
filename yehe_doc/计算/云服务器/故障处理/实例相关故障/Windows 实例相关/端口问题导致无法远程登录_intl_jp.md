@@ -79,7 +79,7 @@ netstat -ant | findstr 3389
 1. CVMの中で、<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>をクリックし、 <img src="https://main.qcloudimg.com/raw/5b5e3abb2f39cb719a4119ba77b74447.png" style="margin: 0;"></img>を選択して、 **regedit**を入力して、**Enter**を押して、「レジストリエディター」ウィンドウを開きます。
 2. 左側のレジストリナビゲーションの中で、【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【Wds】>【rdpwd】>【Tds】>【tcp】の順でディレクトリを展開します。
 3. 【tcp】中の PortNumberを検索し、PortNumberのデータ（ポート番号、デフォルトが3389）を記入します。下記画像に示すように：
-![](https://main.qcloudimg.com/raw/e67b696fd25b3355c9038f99a08b90be.png)
+![](https://main.qcloudimg.com/raw/a636dd570e6fe61b397290b4674b8d16.png)
 4. 左側のレジストリナビゲーションの中で、【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【WinStations】>【RDP-Tcp】の順でディレクトリを展開します。
 5. 【RDP-Tcp】中の PortNumberを検索し、【RDP-Tcp】中の PortNumber データ（ポート番号）は【tcp】中の PortNumber データ（ポート番号）が一致するかどうかを確認します。下記の画像に示すように：
 ![](https://main.qcloudimg.com/raw/8240dd43dcb3ca246caf3397e4a1e84f.png)
