@@ -18,7 +18,7 @@
       ![](https://mc.qcloudimg.com/static/img/7e8faba3818f7ff2ada687ed7602be2e/image.jpg)
 
 ## 终止作业
-您可以在特定条件下终止作业的运行。终止相关的说明，请参考 API 文档 [终止任务实例](https://intl.cloud.tencent.com/zh/document/product/599/12688) 。
+您可以在特定条件下终止作业的运行。
 
 ## 删除作业
 当作业处于完结状态，即 SUCCEED 或 FAILED 状态时，可以在作业列表中删除作业。

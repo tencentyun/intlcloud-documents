@@ -151,7 +151,7 @@
 </tr>
 <tr>
 <td>客户端上传</td>
-<td><a href="/document/product/266/9221">客户端上传签名参数</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33922">客户端上传签名参数</a></td>
 </tr>
 <tr>
 <td>API 拉取上传</td>
@@ -258,7 +258,7 @@
 </tr>
 <tr>
 <td>直播录制</td>
-<td><ul style="margin:0;"><li>MP4/FLV 格式为48.82TB（50,000GB）</li><li>HLS 格式总大小无限制</li><li> 其它限制取决于 <a href="/document/product/267/32739">直播录制</a></td>
+<td><ul style="margin:0;"><li>MP4/FLV 格式为48.82TB（50,000GB）</li><li>HLS 格式总大小无限制</li><li> 其它限制取决于直播录制</td>
 </tr>
 </tbody></table>
 
