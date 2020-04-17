@@ -40,6 +40,6 @@ When you no longer need a signature, you can delete it. **Once deleted, the sign
 
 ## Related Information
 
-- [Review process]
-- [Signature review standards]
+- Review process
+- Signature review standards
 - [FAQs about signature](https://intl.cloud.tencent.com/document/product/382/13300)
