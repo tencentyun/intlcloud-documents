@@ -4,13 +4,13 @@ This document uses sending a message `[Tencent Cloud] Your verification code is:
 
 ## Step 1. Activate the SMS service
 ### Signing up for a Tencent Cloud account
-- If you don't have a Tencent Cloud account yet, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verify your organizational identity](https://cloud.tencent.com/document/product/378/10496).
+- If you don't have a Tencent Cloud account yet, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and verify your organizational identity.
 - If you already have a Tencent Cloud account and verified your identity, you can proceed directly to the next step.
 
 ### Applying for activation of SMS
 >When logging in to the SMS Console for the first time, you need to apply to activate the SMS service.
 
-1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2), tick **I have read and agree to Tencent Cloud SMS [Service Agreement](https://cloud.tencent.com/document/product/382/15627)**, and click **Start Access** to activate the service.
+1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2), tick **I have read and agree to Tencent Cloud SMS Service Agreement**, and click **Start Access** to activate the service.
 2. Select **Getting Started** on the left sidebar to enter the SMS sending guide page.
 
 
@@ -21,7 +21,7 @@ This document uses sending a message `[Tencent Cloud] Your verification code is:
 <span id="Sign"></span>
 ### Creating a signature
 1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, click **Apply for Mainland China SMS Signature**.
-2. Set the following parameters as needed and according to the [signature review standards](https://cloud.tencent.com/document/product/382/39022):
+2. Set the following parameters as needed and according to the signature review standards:
  - Signature Type: select **Company**.
  - Signature Purpose: select **For self-use (the signature is a company name, website, product name, or something else verified under the current account)**.
  - Signature Content: enter `Tencent Cloud`.
@@ -33,7 +33,7 @@ This document uses sending a message `[Tencent Cloud] Your verification code is:
 <span id="Template"></span>
 ### Creating a body template
 1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, click **Apply for Mainland China SMS Body Template**.
-2. Set the following parameters as needed and according to the [body template review standards](https://cloud.tencent.com/document/product/382/39023):
+2. Set the following parameters as needed and according to the body template review standards:
  - Template Name: enter `Verification Code`.
  - SMS Type: select **Regular SMS**.
  - SMS content: enter `Your verification code is: {1}`.
@@ -46,7 +46,7 @@ On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, yo
 
 ## Step 4. Send SMS
 Before sending an SMS, you need to confirm that both the SMS signature and body template have been approved.
-You can send an SMS through the console or [API](https://cloud.tencent.com/document/product/382/38764). This article uses the console as an example.
+You can send an SMS through the console or API. This article uses the console as an example.
 
 1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, click **Send Mainland China SMS**.
 2. Configure the following parameters as needed:
