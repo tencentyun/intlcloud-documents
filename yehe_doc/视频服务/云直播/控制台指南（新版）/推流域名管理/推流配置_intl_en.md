@@ -3,7 +3,7 @@ The push configuration can be used to generate a push address under the correspo
 
 ## Prerequisites
 - You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
-- You have added a [push domain name](https://cloud.tencent.com/document/product/267/20381).
+- You have added a push domain name.
 
 ## Push Address Generator
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and select the push domain name to be configured or click **Manage** to enter its details page.
