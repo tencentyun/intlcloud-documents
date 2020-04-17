@@ -3,7 +3,7 @@ On the **Package Management** page, you can purchase packages, set package balan
 ## Purchasing Mainland China SMS Package
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Package Management** on the left sidebar and click **Purchase Package**.
-3. Select a package type, quota, and quantity, tick **I have read and agree to Tencent Cloud SMS [Service Agreement](https://cloud.tencent.com/document/product/382/15627)**, and click **Buy Now**.
+3. Select a package type, quota, and quantity, tick **I have read and agree to Tencent Cloud SMS Service Agreement**, and click **Buy Now**.
  > For the package type, you can choose a fixed package or a custom one. With a custom package, you can customize the number of SMS messages required, with a minimum of 1,000.
  >
 4. Check the number of packages you need to purchase and amount due. After confirming that everything is correct, click **Confirm Purchase**.
@@ -15,11 +15,11 @@ On the **Package Management** page, you can purchase packages, set package balan
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Package Management** on the left sidebar and click **Set**.
 3. You can select an alarm condition, set the threshold, and click [OK].
- After successful configuration, when the total balance of all packages drops below the threshold, the system will send a notification to the specified [alarm contact](https://cloud.tencent.com/document/product/1128/37516#Contacts).
+ After successful configuration, when the total balance of all packages drops below the threshold, the system will send a notification to the specified alarm contact.
 4. You can select the renewal condition and set threshold and renewal quantity, and click **OK**.
  >The number of renewed messages can range from 1,000 to 1,000,000,000.
  >
- After the auto-renewal feature is enabled, it will automatically renew the package whenever the auto-renewal condition is met, and the amount due for the number of renewed messages will be deducted from your account. For more information, please see [Mainland China SMS Pricing Overview](https://cloud.tencent.com/document/product/382/36132).
+ After the auto-renewal feature is enabled, it will automatically renew the package whenever the auto-renewal condition is met, and the amount due for the number of renewed messages will be deducted from your account. For more information, please see Mainland China SMS Pricing Overview.
 
 ## Viewing Package Details
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
