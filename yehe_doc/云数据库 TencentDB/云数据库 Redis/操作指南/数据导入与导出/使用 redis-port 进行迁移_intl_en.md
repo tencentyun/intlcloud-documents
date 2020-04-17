@@ -1,7 +1,7 @@
 ## Overview
 Download [redis-port (Linux 64-bit)](https://main.qcloudimg.com/raw/47154504189a8941250f57b60f1e2fcb/redis-port.tgz).
 
-redis-port is a collection of open-source tools mainly used for database sync, data import, and data export between Redis nodes and supports cross-version Redis data migration. The toolkit contains the following tools:
+redis-port is a collection of open-source tools mainly used for database sync, data import, and data export between Redis nodes and supports cross-edition Redis data migration. The toolkit contains the following tools:
 - redis-sync: it is used for data migration between Redis instances.
 - redis-restore: it supports importing Redis backup files (in RDB format) to specified Redis instances.
 - redis-dump: it supports backing up Redis data in RDB format.
@@ -75,8 +75,8 @@ redis-dump supports backing up Redis data into RDB files and incremental data in
 **Parameter description:**
 - -n: number of concurrent write tasks. You are recommended to leave it empty or set it to CPU core quantity * 2.
 - -m: Redis instance address in the format of `"password"@ip:port` or `ip:port` (in password-free mode).
-- -o: path of the output RDB file.
-- -a: path of the output AOF file.
+- -o: path to the output RDB file.
+- -a: path to the output AOF file.
 - --help: help command.
 
 **Sample:**
