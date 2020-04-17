@@ -11,8 +11,8 @@
 	1. 选择过期时间，例如：`2019-02-28 23:59:59`。
 	2. 填写自定义的流名称 StreamName，例如：`liveteststream`。播放地址 StreamName 要与推流地址 StreamName 一致才能播放对应的流。
 	3. 单击【生成播放地址】即可。
-3. 若您的播放域名未开启播放鉴权，您还可以在【播放配置】>【播放地址】标签下，查看该播放域名下 RTMP、FLV、HLS 这三种播放地址。替换播放地址中的 StreamName（流名称）关联推流地址，关联后即可通过播放地址查看直播画面。
 ![](https://main.qcloudimg.com/raw/15afd6e0a641e14eca632e0df7cdbecb.png)
+3. 若您的播放域名未开启播放鉴权，您还可以在【播放配置】>【播放地址】标签下，查看该播放域名下 RTMP、FLV、HLS 这三种播放地址。替换播放地址中的 StreamName（流名称）关联推流地址，关联后即可通过播放地址查看直播画面。
 
 >更多直播播放相关信息，请参见 [直播播放](https://intl.cloud.tencent.com/document/product/267/31559)。
 

@@ -19,7 +19,8 @@ Triggered once every minute:
 | service | [ApigwService](#ApigwService) | No   | Creates service configuration for an API gateway |
 | release | [ApigwRelease](#ApigwRelease) | No   | Release environment for a created API gateway  |
 
-### ApigwApi<span id="ApigwApi"></span>
+<span id="ApigwApi"></span>
+### ApigwApi
 
 
 | Name | Type | Required | Description |
@@ -28,18 +29,21 @@ Triggered once every minute:
 | requestConfig        | [ApigwApiRequestConfing](#ApigwApiRequestConfing) | No | Configuration of request backend API |
 | isIntegratedResponse | String                                            | No | Whether to use integrated response. Valid values: TRUE, FALSE. Default value: FALSE |
 
-### ApigwApiRequestConfing<span id="ApigwApiRequestConfing"></span>
+<span id="ApigwApiRequestConfing"></span>
+### ApigwApiRequestConfing
 | Name | Type | Required | Description |
 | ------ | ------ | ---- | ------------------------------------------------------------ |
 | method | String | No   | Method configuration of request backend API. Valid values: `ANY`, `GET`, `HEAD`, `POST`, `PUT`, `DELETE` |
 
-### ApigwService<span id="ApigwService"></span>
+<span id="ApigwService"></span>
+### ApigwService
 
 | Name | Type | Required | Description |
 | --------- | ------ | ---- | -------------------------------------------- |
 | serviceId | String | No | Apigw Service ID (if this parameter is not passed in, a new service will be created) |
 
-### ApigwRelease<span id="ApigwRelease"></span>
+<span id="ApigwRelease"></span>
+### ApigwRelease
 
 | Name | Type | Required | Description |
 | --------------- | ------ | ---- | ------------------------------------------------------------ |
@@ -85,7 +89,8 @@ Triggered once every minute:
 | event  | String                  | Yes   | [COS event type](https://intl.cloud.tencent.com/document/product/583/9707)      |
 | filter | [CosFilter](#CosFilter) | Yes   | COS filename filter |
 
-### CosFilter<span id="CosFilter"></span>
+<span id="CosFilter"></span>
+### CosFilter
 
 | Name | Type | Required | Description |
 | ------ | ------ | ---- | --------------------------------- |
