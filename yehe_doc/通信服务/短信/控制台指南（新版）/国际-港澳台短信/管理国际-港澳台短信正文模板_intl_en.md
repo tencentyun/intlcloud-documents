@@ -7,7 +7,7 @@ After an SMS signature is submitted, it will be reviewed within two hours genera
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Global SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
-3. Set the following parameters as needed and according to the [body template review standards](https://cloud.tencent.com/document/product/382/39023):
+3. Set the following parameters as needed and according to the [body template review standards]:
  - Template Name: name of the template for easy identification.
  - SMS Type: the type of SMS that will be sent with this body template. Enterprise users can choose **Regular SMS** or **Marketing SMS**, while individual users can only choose **Regular SMS**.
  - SMS Content: body content of the SMS with less than 500 characters. Custom content can be configured, but it cannot contain only variables. Variables are in the format of `{number}`, and the numbers must be consecutive. Marketing SMS must contain an option for unsubscribing, such as `Reply with T to unsubscribe`.
