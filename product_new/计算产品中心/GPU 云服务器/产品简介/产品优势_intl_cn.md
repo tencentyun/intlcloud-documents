@@ -13,7 +13,7 @@ GPU 云服务器提供安全可靠的网络环境和完善的防护服务：
 - 与云安全无缝对接，享有云服务器同等的基础云安全基础防护和高防服务，详情请参考  [了解网络与安全性详情](/doc/product/213/5220)。
 
 ## 实例部署迅速
-GPU 云服务器支付流程简单，即买即用，详情请参考 [购买指导](/doc/product/560/8120)。
+GPU 云服务器支付流程简单，即买即用，详情请参考 [购买指导](https://intl.cloud.tencent.com/document/product/560/8025)。
 GPU 云服务器入门简单，用户可以迅速搭建一个 GPU 示例，并且与云服务器 CVM 采用一致的管理方式，无需跳板机登录，简单易用，详情请参考 [快速入门](/doc/product/560/8123)。
 GPU 云服务器与 [负载均衡 CLB](https://intl.cloud.tencent.com/product/clb.html?idx=1)、[SSD 云硬盘](/doc/product/213/5798) 等多种云产品无缝接入，清晰的 [NVIDIA 显卡驱动的安装](/doc/product/560/8048)、部署指引，无需硬件扩展、驱动安装。
 
