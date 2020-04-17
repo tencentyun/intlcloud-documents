@@ -27,6 +27,8 @@ Tencent Cloud's Cloud Infinite (CI) supports multi-region storage, and different
 | Singapore | &lt;BucketName-APPID&gt;.pic.ap-singapore.myqcloud.com | &lt;BucketName-APPID&gt;.picsgp.myqcloud.com |
 | Toronto | &lt;BucketName-APPID&gt;.pic.na-toronto.myqcloud.com | &lt;BucketName-APPID&gt;.picca.myqcloud.com |
 | Mumbai | &lt;BucketName-APPID&gt;.pic.ap-mumbai.myqcloud.com | &lt;BucketName-APPID&gt;.picin.myqcloud.com |
+| Silicon Valley, United States    | &lt;BucketName-APPID&gt;.pic.na-siliconvalley.myqcloud.com | &lt;BucketName-APPID&gt;.picusw.myqcloud.com|
+
 
 **Example**
 A user created a bucket in the Singapore region where the user resides. The user-defined string of the bucket name is **examplebucket**, and the system-generated APPID is **1250000000**.

@@ -16,7 +16,7 @@ This error occurs when the data download from other cloud storages times out due
 
 ### What should I do if the migration fails with a message "503 Slow Down" shown in the log?
 
-This error occurs when frequency control is triggered. A limit of 800 QPS is imposed on an account in COS. You are recommended to decrease the concurrency for small files in configuration. Then run the tool again to resume the migration.
+This error occurs when frequency control is triggered. A limit of 30000 QPS is imposed on an account in COS. You are recommended to decrease the concurrency for small files in configuration. Then run the tool again to resume the migration.
 
 ### What should I do if the migration fails with the message "404 NoSuchBucket" shown in the log?
 

@@ -93,6 +93,12 @@ Billable traffic includes **CDN origin-pull traffic** and **public network outbo
       <td>0.08</td>
       <td>0.08</td>
    </tr>
+   <tr>
+      <td>Silicon Valley, United States</td>
+      <td>Free</td>
+      <td>0.07</td>
+      <td>0.07</td>
+   </tr>
 </table>
 
 

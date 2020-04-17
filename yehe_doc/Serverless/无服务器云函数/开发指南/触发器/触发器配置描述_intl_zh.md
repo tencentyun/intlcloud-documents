@@ -19,7 +19,8 @@
 | service | [ApigwService](#ApigwService) | 否   | 创建 API 网关的 Service 配置 |
 | release | [ApigwRelease](#ApigwRelease) | 否   | 创建 API 网关后，发布的环境  |
 
-### ApigwApi<span id="ApigwApi"></span>
+<span id="ApigwApi"></span>
+### ApigwApi
 
 
 | 名称                 | 类型                                              | 必选 | 描述                                                 |
@@ -28,18 +29,21 @@
 | requestConfig        | [ApigwApiRequestConfing](#ApigwApiRequestConfing) | 否   | 请求后端 API 的配置                                  |
 | isIntegratedResponse | String                                            | 否   | 是否使用集成响应，可选 TRUE 或者 FALSE，默认为 FALSE |
 
-### ApigwApiRequestConfing<span id="ApigwApiRequestConfing"></span>
+<span id="ApigwApiRequestConfing"></span>
+### ApigwApiRequestConfing
 | 名称   | 类型   | 必选 | 描述                                                         |
 | ------ | ------ | ---- | ------------------------------------------------------------ |
 | method | String | 否   | 请求后端 API 的 method 配置，必须是 `ANY`、`GET`、`HEAD`、`POST`、`PUT`、`DELETE` 中的一种 |
 
-### ApigwService<span id="ApigwService"></span>
+<span id="ApigwService"></span>
+### ApigwService
 
 | 名称      | 类型   | 必选 | 描述                                         |
 | --------- | ------ | ---- | -------------------------------------------- |
 | serviceId | String | 否   | Apigw Service ID（不传入则新建一个 Service） |
 
-### ApigwRelease<span id="ApigwRelease"></span>
+<span id="ApigwRelease"></span>
+### ApigwRelease
 
 | 名称            | 类型   | 必选 | 描述                                                         |
 | --------------- | ------ | ---- | ------------------------------------------------------------ |
@@ -85,7 +89,8 @@
 | event  | String                  | 是   | [COS 的事件类型 ](https://intl.cloud.tencent.com/document/product/583/9707)      |
 | filter | [CosFilter](#CosFilter) | 是   | COS 文件名的过滤规则 |
 
-### CosFilter<span id="CosFilter"></span>
+<span id="CosFilter"></span>
+### CosFilter
 
 | 名称   | 类型   | 必选 | 描述                              |
 | ------ | ------ | ---- | --------------------------------- |
