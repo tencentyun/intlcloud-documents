@@ -79,7 +79,7 @@ TASK_INSTANCE_SUCCEED | 任务实例完成
 TASK_INSTANCE_FAILED | 任务实例失败
 TASK_INSTANCE_FAILED_INTERRUPTED | 任务实例失败中断
 
-最新定义和提交作业 API Demo，请参见 [提交作业 >>](https://intl.cloud.tencent.com/zh/document/product/599/12683)
+
 
 ### 计算环境相关事件
 类型 | 描述
@@ -92,4 +92,3 @@ COMPUTE_NODE_RUNNING | 计算节点运行中
 COMPUTE_NODE_ABNORMAL | 计算节点异常
 COMPUTE_NODE_DELETING | 计算节点销毁中 
 
-最新定义和创建计算环境 API Demo，请参见 [创建计算环境 >>](https://intl.cloud.tencent.com/zh/document/product/599/12691)
