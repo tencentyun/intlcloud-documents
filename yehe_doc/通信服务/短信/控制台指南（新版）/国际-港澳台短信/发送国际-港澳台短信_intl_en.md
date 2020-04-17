@@ -42,4 +42,4 @@ You can view the SMS delivery result in the following ways:
 - Select **Statistics** > **Global SMS** and you can filter and view the statistics and relevant analysis of Global SMS by application, signature, body template, and time.
 
 ## Related Documentation
-You can also send SMS via APIs or SDKs. For detailed directions, please see [API documentation](https://cloud.tencent.com/document/product/382/13297#.E7.9F.AD.E4.BF.A1-api) or [SDK documentation](https://intl.cloud.tencent.com/document/product/382/32991).
+You can also send SMS via APIs or SDKs. For detailed directions, please see [API documentation] or [SDK documentation](https://intl.cloud.tencent.com/document/product/382/32991).

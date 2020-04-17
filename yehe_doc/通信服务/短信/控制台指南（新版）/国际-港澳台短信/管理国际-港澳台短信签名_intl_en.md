@@ -4,9 +4,9 @@ A complete SMS message consists of **SMS signature** and **SMS body**. You can s
 After an SMS signature is submitted, it will be reviewed within two hours generally. Review hours: Monday–Sunday, 9:00–23:00 (postponed accordingly in case of public holidays). You can set your mobile number and email address to receive review result notifications.
 
 ## Creating Signature
-1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
+1. Log in to the [SMS Console].
 2. Select **Global SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
-3. Set the following parameters as needed and according to the [signature review standards](https://cloud.tencent.com/document/product/382/39022):
+3. Set the following parameters as needed and according to the [signature review standards]:
  - Signature Type: type of the SMS signature.
  Organizational users can choose **Company**, **App**, **Website**, **Official Account/Mini Program**, **Trademark**, or **Government/public institution/other**.
  Individual users can choose **App**, **Website**, or **Official Account/Mini Program**.
@@ -18,7 +18,7 @@ After an SMS signature is submitted, it will be reviewed within two hours genera
     i. Download and fill out the [authorization letter](http://attachment-1252075342.cosgz.myqcloud.com/%E6%8E%88%E6%9D%83%E5%A7%94%E6%89%98%E4%B9%A6.docx), where the authorized party must be entered as the full name of the individual/organization verified under the current Tencent Cloud account, and the authorizing party must be entered as the full name of the entity to whom the signature belongs.
     ii. Affix the official seal of the authorizing party onto the authorization letter.
     iii. Upload a photo or scan of the authorization letter stamped with the official seal of the authorizing party. Images in .jpg or .png format of less than 5 MB in size are supported.
- - Note: when applying for a signature of the **app**, **website**, or **WeChat Official Account or WeChat Mini Program** type, you must enter the information according to the [Signature Review Standards](https://cloud.tencent.com/document/product/382/39022). This parameter is optional for application for signatures of other types.
+ - Note: when applying for a signature of the **app**, **website**, or **WeChat Official Account or WeChat Mini Program** type, you must enter the information according to the [Signature Review Standards]. This parameter is optional for application for signatures of other types.
 5. Click **OK**.
  Waiting for signature review. The SMS signature will be available only after its status changes to **approved**.
 
@@ -40,6 +40,6 @@ When you no longer need a signature, you can delete it. **Once deleted, the sign
 
 ## Related Information
 
-- [Review process](https://cloud.tencent.com/document/product/382/13444#.E5.AE.A1.E6.A0.B8.E6.B5.81.E7.A8.8B)
-- [Signature review standards](https://cloud.tencent.com/document/product/382/39022)
+- [Review process]
+- [Signature review standards]
 - [FAQs about signature](https://intl.cloud.tencent.com/document/product/382/13300)
