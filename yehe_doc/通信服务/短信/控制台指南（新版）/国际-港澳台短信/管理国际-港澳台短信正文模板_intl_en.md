@@ -38,8 +38,8 @@ When you no longer need a body template, you can delete it. **Once deleted, the 
 
 ## Related Information
 
-- [Review process]
-- [Body template review standards]
-- [Sample body template]
+- Review process
+- Body template review standards
+- Sample body template
 - [FAQs about body template](https://intl.cloud.tencent.com/document/product/382/13301)
 
