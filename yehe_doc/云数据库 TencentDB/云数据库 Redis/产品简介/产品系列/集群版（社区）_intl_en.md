@@ -1,4 +1,4 @@
-Redis Cluster Edition is a new edition of Redis built by Tencent Cloud based on the Community Edition of Redis Cluster that is compatible with Redis 4.0 and 5.0 commands. It uses a distributed architecture to enable elastic scaling and features high flexibility, availability, and performance of tens of millions of QPS. Specifically, it supports horizontal scaling of 3–128 shards and vertical scaling of 1–5 replica sets, where the scaling and migration are virtually imperceptible to the business, maximizing the system availability. ![](https://main.qcloudimg.com/raw/d023aa7ddecec8b0b42a899b7ea307b0.png)
+Redis Cluster Edition is a new edition of Redis built by Tencent Cloud based on the Community Edition of Redis Cluster that is compatible with Redis 4.0 and 5.0 commands. It uses a distributed architecture to enable elastic scaling and features high flexibility, availability, and performance of tens of millions of QPS. Specifically, it supports horizontal scaling of 3–128 shards and replica scaling of 1–5 replica sets, where the scaling and migration are virtually imperceptible to the business, maximizing the system availability. ![](https://main.qcloudimg.com/raw/d023aa7ddecec8b0b42a899b7ea307b0.png)
 
 ## Cluster Specification
 - Shard size (GB): 2, 4, 8, 12, 16, 20, 24, 28, 32
@@ -17,25 +17,25 @@ Redis Cluster Edition is a new edition of Redis built by Tencent Cloud based on 
 
 ## Features
 **Flexibility** 
-Redis Cluster Edition supports horizontal scaling of 3–128 nodes and vertical scaling of 1–5 replica sets, making it ideal for various scenarios through instance specification adjustment.
+Redis Cluster Edition supports horizontal scaling of 3–128 nodes and replica scaling of 1–5 replica sets, making it ideal for various scenarios through instance specification adjustment.
 **Availability** 
-In Redis Cluster Edition, horizontal scaling (shard quantity) and vertical scaling (replica quantity) are virtually imperceptible to the business, maximizing the system availability.
+In Redis Cluster Edition, scaling of shard quantity and replica quantity are virtually imperceptible to the business, maximizing the system availability.
  **Compatibility**
 Redis Cluster Edition supports use cases of native clusters of the Redis Community Edition and Codis and is compatible with clients such as Jedis.
  **OPS**
 Redis Cluster Edition maximizes system capability openness and has advanced features such as shard-level monitoring and management, data migration and load balancing, as well as monitoring of big and hot keys, which help facilitate total system management and OPS.
 
 ## Use Cases
-**Master/Slave HA scenarios**
+**Master/slave HA scenarios**
 Redis Cluster Edition allows you to configure a replica set for a single node to achieve high master/slave availability. It features dual-server hot backup and automatic failover to ensure high reliability and availability of the Redis service.
- **Read/Write separation scenarios**  
-When the number of replica nodes is greater than 1, automatic read/write separation can be enabled for the TencentDB for Redis instance to extend the read performance of a single node vertically. Up to 5 replica sets can be supported and read access weights across the master node and replica nodes can be configured. 
+ **Read/write separation scenarios**  
+When the number of replica nodes is greater than 1, automatic read/write separation can be enabled for the TencentDB for Redis instance to extend the read performance of a single node. Up to 5 replica sets can be supported and read access weights across the master node and replica nodes can be configured. 
 **Multi-shard high-performance scenarios**
 Redis Cluster Edition automatically enables auto-sharding and achieves horizontal scaling of system performance by assigning different keys to multiple nodes.
 
 
 <span id = "xianzhi"></span>
-## Notes on Command Compatibility
+## Command Compatibility Description
 Redis Cluster Edition stores data in a distributed manner, and its biggest difference from the Standard Edition lies in whether a single command supports multi-key access. For the Cluster Edition, commands can be categorized into supported, partially supported, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/239/31958).
 
 #### Unsupported commands
@@ -46,7 +46,7 @@ The system will return the following error:
 ```
 
 #### Partially supported commands
-Redis Cluster Edition is compatible with smart clients such as JedisCluster. For compatibility with Jedis cluster, TencentDB for Redis modifies the IP list returned by the supported commands, and the IP address of each node in the returned information is the instance's VIP.
+Redis Cluster Edition is compatible with smart clients such as JedisCluster. For compatibility with JedisCluster, TencentDB for Redis modifies the IP list returned by the supported commands, and the IP address of each node in the returned information is the instance's VIP.
 - CLUSTER NODES
 - CLUSTER SLOTS
 - CONFIG GET
@@ -92,5 +92,5 @@ Custom command list:
 #### Transactional support
 Redis Cluster Edition supports transactional commands provided that the transactions are started by the WATCH command. The keys of a transaction should be stored in the same slot, and the keys of WATCH and transaction-related keys should be stored in the same slot too. HashTag is recommended for multi-key transactions in cluster mode.
 
-#### Multi-database support
+#### Multi-Database support
 Redis Cluster Edition supports multiple databases (16 by default); therefore, it can support all commands related to database operations.

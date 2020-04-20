@@ -8,7 +8,6 @@ The **default domain name** refers to the default domain name of a COS bucket wh
 
 
 > - After a bucket is created, a corresponding default domain name will be generated. You can view it in **Domain Name Management** of the bucket in the [COS Console](https://console.cloud.tencent.com/cos5).
-
 >- The finance cloud regions cannot interconnect with other public cloud regions.
 
 ### Mainland China
@@ -37,17 +36,17 @@ The **default domain name** refers to the default domain name of a COS bucket wh
       <td>&lt;BucketName-APPID&gt;.cos.ap-nanjing.myqcloud.com</td>
    </tr>
    <tr>
-      <td>Shanghai (East China)</td>
+      <td>Shanghai</td>
       <td>ap-shanghai</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-shanghai.myqcloud.com</td>
    </tr>
    <tr>
-      <td>Guangzhou (South China)</td>
+      <td>Guangzhou</td>
       <td>ap-guangzhou</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-guangzhou.myqcloud.com</td>
    </tr>
    <tr>
-      <td>Chengdu (Southwest China)</td>
+      <td>Chengdu</td>
       <td>ap-chengdu</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-chengdu.myqcloud.com</td>
    </tr>
@@ -155,7 +154,7 @@ examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com
 
 Notes:
 
->- examplebucket-1250000000 means that the bucket is owned by the user with APPID 1250000000. APPID is the account you get after you successfully register on Tencent Cloud. It is automatically assigned by the system as a unique permanent ID, which can be viewed in [Account Information](https://console.cloud.tencent.com/developer).
+- examplebucket-1250000000 means that the bucket is owned by the user with APPID 1250000000. APPID is the account you get after you successfully register on Tencent Cloud. It is automatically assigned by the system as a unique permanent ID, which can be viewed in [Account Information](https://console.cloud.tencent.com/developer).
 
 - cos means Cloud Object Storage (COS).
 - ap-guangzhou is the abbreviation of the bucket region.

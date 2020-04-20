@@ -8,7 +8,6 @@
 
 > 
 > - 创建存储桶后会生成对应的默认域名，您可以前往 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在存储桶的【基础配置】中查看。
-
 > - 金融云地域与公有云地域之间网络不互通。
 
 ### 中国大陆地域
@@ -37,17 +36,17 @@
       <td>&lt;BucketName-APPID&gt;.cos.ap-nanjing.myqcloud.com</td>
    </tr>
    <tr>
-      <td>上海（华东）</td>
+      <td>上海</td>
       <td>ap-shanghai</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-shanghai.myqcloud.com</td>
    </tr>
    <tr>
-      <td>广州（华南）</td>
+      <td>广州</td>
       <td>ap-guangzhou</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-guangzhou.myqcloud.com</td>
    </tr>
    <tr>
-      <td>成都（西南）</td>
+      <td>成都</td>
       <td>ap-chengdu</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-chengdu.myqcloud.com</td>
    </tr>
