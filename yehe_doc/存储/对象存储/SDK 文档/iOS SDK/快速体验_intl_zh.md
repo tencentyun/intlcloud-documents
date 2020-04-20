@@ -28,7 +28,7 @@ cossign --secret_id your_secret_id --secret_key your_secret_key --port 5000
 您可以通过浏览器访问 `http://your_server_ip:5000/sign` 链接，或者执行如下命令进行测试。
 ```sh
 curl http://your_server_ip:5000/sign
-```    
+```
 如果返回如下信息，则说明服务已经成功运行。
 ```
 {
@@ -65,18 +65,13 @@ pod install
 
 ### 运行示例 Demo
 #### 查询 Bucket 列表并创建 Bucket
-1. 启动示例 App 后，将展示目前所有可用的 Region，如下图所示。    
-![choose region](https://main.qcloudimg.com/raw/c7cdd4171e7ab4314299df399954942c.png)
-2. 选择对应某个 Region 进入以后会显示当前账号在该 Region 下面的所有 Bucket，如下图所示。  
-![bucket](https://main.qcloudimg.com/raw/9dae084c02f2e19cc6682588cada1e28.png)
-您也可以在该界面单击右上角的创建 Bucket 按钮来在当前 Region 下面创建一个 Bucket，如下图所示。 
-![](https://main.qcloudimg.com/raw/fefd8a545c2a0924d3d60722b8d2affb.png)
+1. 启动示例 App 后，将展示目前所有可用的 Region。    
+2. 选择对应某个 Region 进入以后会显示当前账号在该 Region 下面的所有 Bucke。  
+您也可以在该界面单击右上角的创建 Bucket 按钮来在当前 Region 下面创建一个 Bucket。 
 
 
 #### 上传文件
-您可以依次单击最下面的按钮【相册】>【上传】>【暂停】>【续传】> 【取消】来进行上传测试，如下图所示。 
-![](https://main.qcloudimg.com/raw/7050892158c428a9c5470eb472680844.png)
+您可以依次单击最下面的按钮【相册】>【上传】>【暂停】>【续传】> 【取消】来进行上传测试。 
 
 #### 下载文件
-进入下载界面后，显示出当前 Bucket 内的所有文件，单击【下载】进行下载测试，如下图所示。
-![](https://main.qcloudimg.com/raw/25fc6b09c7b6f3da7f1a427ecabb4ecb.png)
+进入下载界面后，显示出当前 Bucket 内的所有文件，单击【下载】进行下载测试。

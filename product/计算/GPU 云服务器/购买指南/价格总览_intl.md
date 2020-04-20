@@ -74,6 +74,6 @@ You are recommended to renew an instance before its expiration to avoid service 
 ## Arrears
 GCC instances in arrears are in the same way as with CVMs in arrears. For more information, see CVM [Arrears](/document/product/213/2181).
 
-## *Note
+## Note
 The above price is the standard published price. For price changes caused by price reduction activities or other factors, see the purchase page.
 

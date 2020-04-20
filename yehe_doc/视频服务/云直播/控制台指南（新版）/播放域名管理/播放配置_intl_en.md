@@ -3,16 +3,16 @@ After push is successful for a domain name, you can log in to the LVB Console, e
 
 ## Prerequisites
  - You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
- - You have added a **playback domain name**. For more information, please see [Adding Domain Names](https://intl.cloud.tencent.com/document/product/267/31056).
+ - You have added a **playback domain name**. 
 
 ## Directions
-1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **Playback domain** to be configured or **Manage** to enter the domain name management page.
+1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **playback domain** to be configured or **Manage** to enter the domain management page.
 2. Select **Playback Configuration** > **Playback Address Generator** and configure as follows:
 	1. Select an expiration time, such as `2019-02-28 23:59:59`.
 	2. Enter a custom `StreamName`, such as `liveteststream`. The `StreamName` of the playback address must be the same as that of the push address to play back the corresponding stream.
 	3. Click **Generate Playback Address**.
-3. If playback authentication is not enabled for your playback domain name, you can view three types of playback addresses under the domain name in **Playback Configuration** > **Playback Address**, i.e., RTMP, FLV, and HLS. Replace the `StreamName` to associate with a push address, and then you can play back the live stream at the playback address.
 ![](https://main.qcloudimg.com/raw/15afd6e0a641e14eca632e0df7cdbecb.png)
+3. If playback authentication is not enabled for your playback domain name, you can view three types of playback addresses under the domain name in **Playback Configuration** > **Playback Address**, i.e., RTMP, FLV, and HLS. Replace the `StreamName` to associate with a push address, and then you can play back the live stream at the playback address.
 
 >For more information on LVB playback, please see [LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
 

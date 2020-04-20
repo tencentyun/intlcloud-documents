@@ -11,7 +11,7 @@ Users who have opened SCF service can enjoy certain amount of free resource usag
 
 SCF is billed on an hourly basis in a post-paid mode in USD. 
 
-The SCF bill consists of the following three parts and each part is calculated in a specific method based on the collected data. The calculated amount is in CNY and rounded to 0.01：
+The SCF bill consists of the following three parts and each part is calculated in a specific method based on the collected data. The calculated amount is in USD and rounded to 0.01：
 
 * Resource usage fee: Memory configured * running time, in GBs.
 * Fee for number of invocations: Every time the function is triggered and executed, it is counted as one invocation.
