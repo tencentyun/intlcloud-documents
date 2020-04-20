@@ -370,7 +370,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <th rowspan=2>Inventory Feature<br>(USD/Million Listed Objects)</th>
       <th>Extraction Feature<br>(USD/GB)</th>
       <th colspan=2>Batch Operation Feature</th>
-      <th Object tag fee(USD / 10,000 object tags)</th>
+      <th rowspan=2>Object tag fee(USD / 10,000 object tags)</th>
    </tr>
    <tr>
       <th>Standard storage</td>
