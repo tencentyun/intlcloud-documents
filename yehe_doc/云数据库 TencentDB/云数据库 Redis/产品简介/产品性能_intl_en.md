@@ -11,8 +11,8 @@
 <tbody><tr>
 <td align="center">Compatible Redis version</td>
 <td align="center">2.8</td>
-<td align="center">4.0/5.0</td>
-<td align="center">4.0/5.0</td>
+<td align="center">4.0, 5.0</td>
+<td align="center">4.0, 5.0</td>
 </tr>
 <tr>
 <td align="center">Memory specification</td>
@@ -22,8 +22,8 @@
 </tr>
 <tr>
 <td align="center">Number of shards</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">Unsupported</td>
+<td align="center">Unsupported</td>
 <td align="center">3–128</td>
 </tr>
 <tr>
@@ -64,14 +64,14 @@
 </tr>
 <tr>
 <td align="center">Horizontal scaling</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">Unsupported</td>
+<td align="center">Unsupported</td>
 <td align="center">Supported</td>
 </tr>
 <tr>
-<td align="center">Vertical scaling</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td align="center">Replica scaling</td>
+<td align="center">Unsupported</td>
+<td align="center">Supported</td>
 <td align="center">Supported</td>
 </tr>
 <tr>
@@ -152,12 +152,12 @@
 </tr>
 <tr>
 <td>Horizontal scaling</td>
-<td>-</td>
+<td>Unsupported</td>
 <td>Supported</td>
 </tr>
 <tr>
-<td>Vertical scaling</td>
-<td>-</td>
+<td>Replica scaling</td>
+<td>Unsupported</td>
 <td>Unsupported</td>
 </tr>
 <tr>
