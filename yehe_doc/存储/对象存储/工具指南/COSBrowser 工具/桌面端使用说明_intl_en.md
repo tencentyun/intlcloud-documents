@@ -18,7 +18,7 @@ You can log in to COSBrowser Desktop Edition using your TencentCloud API key, wh
 
 >You cannot log in to COSBrowser using a project key.
 
-<img src="https://main.qcloudimg.com/raw/a4eda1e692750c3e6c610b498acd8eb0.jpg" width="90%">
+<img src="https://main.qcloudimg.com/raw/0a8e5136f9267212a64f36a4f2b4e444.png" width="90%">
 
 
 ## Basic Features
@@ -47,9 +47,9 @@ In the bucket details, you can change bucket access permissions and enable/disab
 
 If you log in with a sub-account that does not have permission to access the bucket list, you can initiate an access by **Add Access Path**, for which COSBrowser provides two methods as follows:
 (1) Add an access path directly in the login page, and select your bucket region correctly. Once you log in, you can manage your resources immediately.
-<img src="https://main.qcloudimg.com/raw/ec7b54a49fdc0f3188433f1770972dc3.jpg" width="90%">
+<img src="https://main.qcloudimg.com/raw/bd89ab7ac16c3eefb7440520a945a538.png" width="90%">
 (2) After you log in with your sub account, in the upper left corner of the bucket list page, click **Add Path**, and enter a specified path so that you can enter a bucket and manage its resources.
-<img src="https://main.qcloudimg.com/raw/729c41763c5366454fc9b806582826fd.png" width="90%">
+<img src="https://main.qcloudimg.com/raw/063f87ce7ecafce1399091d1004904fc.png" width="90%">
 
 <span id="upload"></span>
 
@@ -123,7 +123,7 @@ Using file synchronization feature, you can upload the specified files in your l
 (2) Specify a local folder and bucket directory in the pop-up.
 (3) Click **Start Sync** to enable file synchronization.
 (4) View synchronization history logs in **Sync Logs** tab.
-<img src="https://main.qcloudimg.com/raw/76b16c34adc1874c611eef80acae1a31.png" width="90%" />
+<img src="https://main.qcloudimg.com/raw/77878ba40170927a573bdcec1cfa9366.png" width="90%" />
 
 >
 > - Synchronization means that when the file is uploaded, the system automatically recognizes whether the same file exists in the bucket. Only the files that do not exist in the bucket are uploaded by the synchronization feature.
@@ -164,7 +164,7 @@ To create a folder in the specified bucket or path, click **Create Folder** in t
 
 To view the details of a file, click its filename or right-click it and select **Details**. File details include file name, file size, modification time, access permission, storage class, ETag, headers, object address, and option to create a temporary link.
 
-<img src="https://main.qcloudimg.com/raw/eb1b59df170aaa03a161f260c1c486c6.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/d3a67122d5954dbfb7ee34d7198a3104.png" width="70%">
 
 
 <span id="generatelinks"></span>
@@ -178,7 +178,7 @@ COSBrowser allows you to generate a file link in the following ways:
 - In the list view, click the Share icon to the right of the file to generate a link and copy it. If the file is public-read, the link will not carry a signature and be valid permanently. If the file is private-read, the link will carry a signature and be valid for 2 hours.
 - Right-click a file and select **Copy Link** to generate a link and copy it. If the file is public-read, the link will not carry a signature and be valid permanently. If the file is private-read, the link will carry a signature and be valid for 2 hours.
 - In **File Details**, click **Create a temporary link** and set its validity period.
- <img src="https://main.qcloudimg.com/raw/f901ffb368a14d967601aa3fa38f4e6c.png" width="60%">
+ <img src="https://main.qcloudimg.com/raw/e667b2345fbe55e5e763af44bdb1b09c.png" width="60%">
 
 <span id="preview"></span>
 
@@ -194,7 +194,7 @@ COSBrowser allows you to preview media files, including images, videos, and audi
 > - Preview is available for images in most formats, .mp4 and .webm videos, and .mp3. and .wav audios.
 > - File preview will incur downstream traffic. Please use it with caution.
 
-![](https://main.qcloudimg.com/raw/8111561c400277a920fd1919de7220ec.png)
+![](https://main.qcloudimg.com/raw/5f61ea9b7204ca547d0fa5b29b377a5c.png)
 
 <span id="searchfile"></span>
 
@@ -214,7 +214,7 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
 
 After versioning is enabled for your bucket, you can view the historical versions of a file by right-clicking in the blank space of the file list and select **View multiple versions** in the context menu.
 
- <img src="https://main.qcloudimg.com/raw/b9018ff12b0c7726d393004b838f6d1c.png" width="80%">
+ <img src="https://main.qcloudimg.com/raw/c0d4d3412bbc5fa2fc3abf822e0a8f01.png" width="80%">
 
 
 <span id="sets"></span>

@@ -57,7 +57,7 @@ Use your [API Key](https://console.cloud.tencent.com/cam/capi) to log in to COSB
 
 1. Right-click a file, and in the drop-down menu, click **Advanced Download**.
 2. The Advanced Download window will pop up where you can select "Rename", "Overwrite" or "Skip" as you need.
-![](https://main.qcloudimg.com/raw/ff43f89b0e5817ebc0c4ff59973c0fb6.jpg)
+![](https://main.qcloudimg.com/raw/6e533ea1b75df3de7dba029a6976f844.png)
 3. Click **Download**, and COSBrowser will begin downloading the file you selected.
 
 
@@ -79,9 +79,9 @@ Each file stored in COS can be accessed through a specific link. If a file is pr
 
 1. Click <img src="https://main.qcloudimg.com/raw/b3de2bc7284b5aaba9b4f9af6c408205.jpg" style="margin:0;"> in the top right of the COSBrowser page to switch to List View (This step can be skipped if you are already in List View).
 1. In the action bar to the right side of a file, click **...**, and in the drop-down menu, click **Share**.
-![](https://main.qcloudimg.com/raw/0866f3ee75a68082ff767205e6796b11.jpg)
+![](https://main.qcloudimg.com/raw/1ab8d2c4a61ae3e0b94c06c9d65ce3f7.png)
 2. In the pop-up Custom Copy Link window, configure your file link. If your file is subject to private read/write permission, select **Copy Signed Temporary Link....**. Note that the link is valid for a specified duration.
-![](https://main.qcloudimg.com/raw/86ad4bd873bf67ac9b4e0a944946a014.jpg)
+![](https://main.qcloudimg.com/raw/1d4b5c7f047c2ecfa8fb182a9daed1d2.png)
 3. Click **Copy** to copy the temporary file link, with which you can now access your file.
 
 
