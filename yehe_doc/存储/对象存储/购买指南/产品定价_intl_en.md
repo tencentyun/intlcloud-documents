@@ -364,12 +364,13 @@ For more information on COS regions, please see [Regions and Access Domain Names
 <table>
    <tr>
 	 <th rowspan=3 ><center>Region</center></th>
-      <th colspan=4 ><center>Administrative Feature Fee</center></th>
+      <th colspan=5 ><center>Administrative Feature Fee</center></th>
    </tr>
    <tr>
       <th rowspan=2>Inventory Feature<br>(USD/Million Listed Objects)</th>
       <th>Extraction Feature<br>(USD/GB)</th>
       <th colspan=2>Batch Operation Feature</th>
+      <th rowspan=2>Object tag fee(USD / 10,000 object tags)</th>
    </tr>
    <tr>
       <th>Standard storage</td>
@@ -382,6 +383,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0018</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.01</td>
    </tr>
    <tr>
       <td>Beijing, Shanghai, Guangzhou</td>
@@ -389,11 +391,13 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0018</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.01</td>
    </tr>
    <tr>
       <td>Shenzhen Finance</td>
       <td rowspan=3>N/A</td>
       <td rowspan=3>0.0073</td>
+      <td rowspan=3>N/A</td>
       <td rowspan=3>N/A</td>
       <td rowspan=3>N/A</td>
    </tr>
@@ -409,6 +413,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0025</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Singapore</td>
@@ -416,6 +421,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0025</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Mumbai</td>
@@ -423,6 +429,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0025</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Seoul</td>
@@ -430,6 +437,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0022</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Bangkok</td>
@@ -437,6 +445,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0025</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Tokyo</td>
@@ -444,6 +453,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0022</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Silicon Valley</td>
@@ -451,6 +461,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0022</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Virginia</td>
@@ -458,6 +469,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0019</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Toronto</td>
@@ -465,6 +477,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0022</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Frankfurt</td>
@@ -472,6 +485,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0025</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
    <tr>
       <td>Moscow</td>
@@ -479,6 +493,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.0022</td>
       <td>0.2022</td>
       <td>0.0081</td>
+      <td>0.012</td>
    </tr>
 </table>
 
