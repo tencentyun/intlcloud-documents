@@ -14,8 +14,10 @@
 
 ## 上传对象时添加标签
 
-1. 您可以在 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321) 时添加。
-2. 上传成功后，对象标签即可添加完成。您可以进入对象的详情页面中的【对象标签管理】配置查看已添加好的标签。
+1. 您可以在 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321) 时添加，如下图所示：
+   ![](https://main.qcloudimg.com/raw/f9ed9a4b46cf8299c9f5cc2e14415765.png)
+2. 上传成功后，对象标签即可添加完成。您可以进入对象的详情页面中的【对象标签管理】配置查看已添加好的标签：
+   ![](https://main.qcloudimg.com/raw/b49fa4a5d1df2b40fe7caf2f5b453f9f.png)
 3. 如果您需要修改或删除标签，可在【对象标签管理】配置项中，单击标签右侧的【编辑】或【删除】即可。
 
 
@@ -25,4 +27,5 @@
 
 1. 参见 [查看对象信息](https://intl.cloud.tencent.com/document/product/436/13326) 进入需要添加标签的对象详情页面。
 2. 在对象的详情页面中的【对象标签管理】配置项中，单击【添加标签】，为对象添加标签。
+   ![为已有的对象添加标签](https://main.qcloudimg.com/raw/d4bda3a72248e8ad7c33178e8047075b.png)
 3. 如果您需要修改或删除标签，可在【对象标签管理】配置项中，单击标签右侧的【编辑】或【删除】即可。
