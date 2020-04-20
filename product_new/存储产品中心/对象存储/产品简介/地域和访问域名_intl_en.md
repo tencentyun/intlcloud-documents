@@ -8,7 +8,6 @@ The **default domain name** refers to the default domain name of a COS bucket wh
 
 
 > - After a bucket is created, a corresponding default domain name will be generated. You can view it in **Domain Name Management** of the bucket in the [COS Console](https://console.cloud.tencent.com/cos5).
-
 >- The finance cloud regions cannot interconnect with other public cloud regions.
 
 ### Mainland China
