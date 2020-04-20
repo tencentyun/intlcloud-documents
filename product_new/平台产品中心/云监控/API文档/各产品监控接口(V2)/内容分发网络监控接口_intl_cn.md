@@ -90,7 +90,7 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 &MetricName=Bandwidth
 &Period=60
 &StartTime=2019-05-08T16:40:00+08:00
-&EndTime=2018-05-08T16:45:00+08:00
+&EndTime=2019-05-08T16:45:00+08:00
 &Instances.0.Dimensions.0.Name=projectId
 &Instances.0.Dimensions.0.Value=0
 &Instances.0.Dimensions.1.Name=domain
@@ -103,8 +103,8 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 ```
 {
   "Response": {
-    "StartTime": "2019-06-04 00:00:00",
-    "EndTime": "2019-06-04 00:05:00",
+    "StartTime": "2019-05-08 16:40:00",
+    "EndTime": "2019-05-08 16:45:00",
     "Period": 60,
     "MetricName": "Bandwidth",
     "DataPoints": [
@@ -154,7 +154,7 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 &MetricName=Bandwidth
 &Period=60
 &StartTime=2019-05-08T16:40:00+08:00
-&EndTime=2018-05-08T16:45:00+08:00
+&EndTime=2019-05-08T16:45:00+08:00
 &Instances.0.Dimensions.0.Name=projectId
 &Instances.0.Dimensions.0.Value=0
 &Instances.0.Dimensions.1.Name=domain
@@ -171,8 +171,8 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 ```
 {
   "Response": {
-    "StartTime": "2019-06-04 00:00:00",
-    "EndTime": "2019-06-04 00:05:00",
+    "StartTime": "2019-05-08 16:40:00",
+    "EndTime": "2019-05-08 16:45:00",
     "Period": 60,
     "MetricName": "Bandwidth",
     "DataPoints": [
