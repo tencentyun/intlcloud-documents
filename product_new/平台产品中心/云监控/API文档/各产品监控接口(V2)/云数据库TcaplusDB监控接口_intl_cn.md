@@ -86,8 +86,8 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 &Namespace=QCE/TCAPLUS
 &MetricName=Avgerror
 &Period=300
-&StartTime=2018-08-24T10:40:23+08:00
-&EndTime=2018-08-24T10:50:23+08:00
+&StartTime=2018-08-24T10:40:00+08:00
+&EndTime=2018-08-24T10:50:00+08:00
 &Instances.0.Dimensions.0.Name=TableInstanceId
 &Instances.0.Dimensions.0.Value=tcaplus-123abc456
 &Instances.0.Dimensions.1.Name=ApplicationId
@@ -147,8 +147,8 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 &Namespace=QCE/TCAPLUS
 &MetricName=Avgerror
 &Period=300
-&StartTime=2018-09-22T10:40:23+08:00
-&EndTime=2018-09-22T10:50:23+08:00
+&StartTime=2018-09-22T10:40:00+08:00
+&EndTime=2018-09-22T10:50:00+08:00
 &Instances.0.Dimensions.0.Name=TableInstanceId
 &Instances.0.Dimensions.0.Value=tcaplus-123abc456
 &Instances.0.Dimensions.1.Name=ApplicationId
@@ -215,7 +215,7 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
     "MetricName": "Avgerror",
     "Period": 300,
     "RequestId": "9ac53ccc-fbab-483d-980b-b763bcc2f83f",
-    "StartTime": "2018-09-22 11:00:00"
+    "StartTime": "2018-09-22 10:40:00"
   }
 }
 ```

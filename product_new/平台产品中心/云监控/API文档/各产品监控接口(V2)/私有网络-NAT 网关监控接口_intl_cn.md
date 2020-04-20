@@ -89,7 +89,7 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 &MetricName=Outbandwidth
 &Period=60
 &StartTime=2019-05-08T16:40:00+08:00
-&EndTime=2018-05-08T16:45:00+08:00
+&EndTime=2019-05-08T16:45:00+08:00
 &Instances.0.Dimensions.0.Name=natId
 &Instances.0.Dimensions.0.Value=nat-gwqe1234
 &<公共请求参数>
@@ -103,7 +103,7 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
     "StartTime": "2019-05-08 16:40:00",
     "EndTime": "2019-05-08 16:45:00",
     "Period": 60,
-    "MetricName": "Conns",
+    "MetricName": "Outbandwidth",
     "DataPoints": [
       {
         "Dimensions": [
@@ -163,7 +163,7 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
     "StartTime": "2019-05-08 16:40:00",
     "EndTime": "2019-05-08 16:45:00",
     "Period": 60,
-    "MetricName": "Conns",
+    "MetricName": "Outbandwidth",
     "DataPoints": [
       {
         "Dimensions": [
