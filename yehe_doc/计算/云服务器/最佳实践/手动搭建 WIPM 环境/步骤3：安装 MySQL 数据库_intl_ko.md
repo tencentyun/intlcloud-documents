@@ -78,11 +78,11 @@
 ## 4단계: MySQL 테스트 로그인
 
 1. CVM에서 [시작]을 클릭하고 [검색(아이콘)]을 클릭한 후 ```cmd```를 입력하여 관리자 명령 창을 엽니다.
-![](https://main.qcloudimg.com/raw/966adc864594aeffa1c2fa50ba5d91ef.png)
+![](//mc.qcloudimg.com/static/img/c7920f20daff62d136f6ba7987fb2ac8/image.png)
 
 2. 명령어 ```mysql -u root -p```를 입력하고 엔터를 누릅니다.
  
 3. 설정한 root 비밀번호로 MySQL에 로그인하면 다음의 그림과 같이 설치 성공 화면이 표시됩니다.
-![](https://main.qcloudimg.com/raw/3acf03c91d7e9c6752b32b7a94ed6b2e.jpg)
+![](//mc.qcloudimg.com/static/img/18aef21cabf34db1bca266a8977018f4/image.png)
 
 
