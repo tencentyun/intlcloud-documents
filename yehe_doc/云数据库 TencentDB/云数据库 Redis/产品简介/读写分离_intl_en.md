@@ -4,9 +4,7 @@ TencentDB for Redis supports read/write separation for business scenarios with m
 #### Redis (Community Edition)
 - **Read/write separation principle**: Redis Standard Edition and Cluster Edition v4.0 and above implement automatic read/write separation at the Proxy layer.
 - **Read/write separation weight**: after read/write separation is enabled, Proxy will enable access by directing write requests to the master node only and distributing read requests evenly on slave nodes.
-![](https://main.qcloudimg.com/raw/890f286cb28cf42ff180beddb9466a05.png)
 
 #### Redis (CKV Edition)
 - **Read/write separation principle**: CKV Edition inherently supports the read/write separation architecture. All requests are distributed to nodes in clusters through the CLB gateway, and each node has the global slot routing information. After read/write separation is enabled for a node, if the read key hits it, the data will be read directly and returned; otherwise, the request will be forwarded to the corresponding node according to the routing information, which will read the data and return it to this node for final return to the client.
 - **Read/write separation weight**: requests in the CKV Edition are distributed by CLB, so read and write weights are evenly distributed according to the quadruple of the TCP connection (source IP, source port, destination IP, and destination port).
-![](https://main.qcloudimg.com/raw/d3be5c6ab394a626446328f4c59472eb.png)
