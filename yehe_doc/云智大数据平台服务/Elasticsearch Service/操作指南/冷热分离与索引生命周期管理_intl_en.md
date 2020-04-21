@@ -1,21 +1,22 @@
-Elasticsearch is mainly used for storing and retrieving massive amounts of data. Storing all data on SSD disks will be very costly. The classic hot-warm architecture of Elasticsearch can be used to solve this problem with ease. In a cluster under this architecture, different types of nodes can be configured to balance performance and capacity, which not only guarantees the read/write performance of hot data, but also reduces the storage costs.
+Elasticsearch is mainly used for store and retrieving massive amounts of data. Storing all data on SSD disks will be very costly. The classic hot/warm architecture of Elasticsearch can be used to solve this problem with ease. A cluster under this architecture can contain both hot and warm nodes to balance performance and capacity.
 
 - Hot data that requires high read/write performance (such as logs generated within the past 7 days) can be stored on hot nodes with SSD disks.
 - Indices that require large storage capacity but low read/write performance (such as logs generated more than one month ago) can be stored on warm nodes with SATA disks.
 
 Tencent Cloud ES provides the ability to quickly configure hot/warm clusters. You can specify the specifications of hot and warm nodes at Tencent Cloud's official website based on your business needs and quickly build an ES cluster in the hot/warm architecture.
 
-## Creating a Hot/Warm Cluster
+
+## Creating Hot/Warm Cluster
 ### Configuring directly during cluster purchase 
 1. Go to the [ES cluster creation](https://buy.cloud.tencent.com/es#/) page and enter the relevant information for creating the cluster.
 2. Select hot/warm mode as the data node deployment mode and select the hot and warm node specifications as shown below.
-![](https://main.qcloudimg.com/raw/704d08ee7aa89691f33164b0f7b43f87.jpg)
+![](https://main.qcloudimg.com/raw/e6f25559343485f7fc3a4a9ee164183b.jpg)
 3. Set other parameters of the cluster, confirm, and pay.
 
-### Transforming an existing cluster into a hot/warm cluster 
+### Transforming existing cluster into hot/warm cluster 
 On the cluster management page, click **More Operations** in the top-right corner, select **Adjust Configuration** from the drop-down list, and select **Hot/Warm Mode**. Set the hot and warm node specifications and relevant configuration items as needed to convert the existing cluster into a hot/warm cluster.
 
-## Using a Hot/Warm Cluster
+## Using Hot/Warm Cluster
 ### Viewing node roles
 To check the hot/warm attribute of nodes, run the following command:
 ```
@@ -30,7 +31,7 @@ node5   temperature     warm
 ...
 ```
 
-### Specifying the hot/warm attribute for an index
+### Specifying hot/warm attribute for index
 You can determine the hot/warm attribute of an index according to the actual business situation.
 - For hot data, set the index as follows:
 ```
