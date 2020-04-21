@@ -1,11 +1,11 @@
-
-
 ## 接口说明
 **请求方式**：POST。
 ```shell
 https://api.tpns.tencent.com/v3/device/tag
 ```
-**接口功能**：Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删除接口，具体的接口见下文。
+**接口功能**：
+Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删除接口，具体的接口见下文。
+标签功能的使用场景可参考文档 [标签功能使用说明](https://intl.cloud.tencent.com/document/product/1024/35392)。
 
 
 
