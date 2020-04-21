@@ -9,10 +9,10 @@
 
 若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。
 
-查询私有网络VPN通道监控数据，入参取值如下：
-&Namespace=QCE/VPNX
-&Instances.N.Dimensions.0.Name=vpnConnId
-&Instances.N.Dimensions.0.Value 为 VPN 通道 ID
+查询 PostgreSQL 监控数据，入参取值如下：
+&Namespace=QCE/POSTGRES
+&Instances.N.Dimensions.0.Name=resourceId
+&Instances.N.Dimensions.0.Value 为实例的 resourceId
 
 ## 2. 输入参数
 
@@ -26,33 +26,45 @@
 | :---------- | :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Action      | 是       | String                                                       | 公共参数，本接口取值：GetMonitorData                         |
 | Version     | 是       | String                                                       | 公共参数，本接口取值： 2018-07-24                            |
-| Region      | 否       | String                                                       | 公共参数，表示查询的是哪个地域实例的监控数据；可查看私有网络支持的 [地域列表](https://intl.cloud.tencent.com/document/product/215/15758) |
-| Namespace   | 是       | String                                                       | 命名空间，每个云产品会有一个命名空间，如私有网络VPN通道命名空间：QCE/VPNX（API 3.0接口版本的必须是大写） |
+| Region      | 否       | String                                                       | 公共参数，表示查询的是哪个地域实例的监控数据；可查看PostgreSQL支持的 [地域列表](https://intl.cloud.tencent.com/document/product/409/16764) |
+| Namespace   | 是       | String                                                       | 命名空间，每个云产品会有一个命名空间，如 PostgreSQL命名空间：QCE/POSTGRES（API 3.0接口版本的必须是大写） |
 | MetricName  | 是       | String                                                       | 指标名称，具体名称见2.2                                      |
 | Instances.N | 是       | Array of [Instance](https://intl.cloud.tencent.com/document/product/248/33883) | 实例对象的维度组合                                           |
 | Period      | 否       | Integer                                                      | 监控统计周期。默认为取值为300，单位为s                       |
 | StartTime   | 否       | Timestamp                                                    | 起始时间，如"2016-01-01 10:25:00"。 默认时间为当天的”00:00:00” |
-| EndTime     | 否       | Timestamp                                                    | 结束时间，默认为当前时间。 EndTime 不能小于 StartTime        |
+| EndTime     | 否       | Timestamp                                                    | 结束时间，默认为当前时间。 endTime 不能小于 startTime        |
 
 #### 2.1.2 各维度对应参数总览
 
-| 参数名称                       | 维度名称  | 维度解释          | 格式                                   |
-| :----------------------------- | :-------- | :---------------- | :------------------------------------- |
-| Instances.N.Dimensions.0.Name  | vpnConnId | 入参为 VPN 通道ID | 输入String 类型维度名称，如：vpnConnId |
-| Instances.N.Dimensions.0.Value | vpnConnId | 具体的 VPN 通道ID | 输入VPN 通道具体ID，如 ：vpnx-12345678 |
+| 参数名称                       | 维度名称   | 维度解释             | 格式                                          |
+| :----------------------------- | :--------- | :------------------- | :-------------------------------------------- |
+| Instances.N.Dimensions.0.Name  | resourceId | 实例的resourceId     | 输入String类型维度名称，如：resourceId        |
+| Instances.N.Dimensions.0.Value | resourceId | 实例具体的resourceId | 输入实例的具体resourceId，如：postgres-123456 |
 
 ### 2.2 指标名称
 
 每个指标对应的统计粒度（Period）及维度（dimension）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度及维度信息。
 
-| 指标名称     | 含义       | 单位   | 维度      |
-| :----------- | :--------- | :----- | :-------- |
-| Outbandwidth | 外网出带宽 | Mbps   | vpnConnId |
-| Inbandwidth  | 外网入带宽 | Mbps   | vpnConnId |
-| Outpkg       | 出包量     | 个/秒  | vpnConnId |
-| Inpkg        | 入包量     | 个/秒  | vpnConnId |
-| Pkgdrop      | 丢包率     | 百分比 | vpnConnId |
-| Delay        | 时延       | 秒     | vpnConnId |
+| 指标名称       | 含义               | 单位    |
+| :------------- | :----------------- | :------ |
+| Connections    | 连接数             | 个      |
+| Cpu            | CPU 利用率         | %       |
+| HitPercent     | 缓冲区缓存命中率   | %       |
+| InFlow         | 输入流量           | KB/秒   |
+| OutFlow        | 输出流量           | KB/秒   |
+| Iops           | 磁盘 IOPS          | 次/秒   |
+| Memory         | 内存占用           | KB      |
+| OtherCalls     | 其他请求数         | 次/分钟 |
+| Qps            | 每秒查询数         | 次/秒   |
+| WriteCalls     | 写请求数           | 次/分钟 |
+| ReadCalls      | 读请求数           | 次/分钟 |
+| ReadWriteCalls | 读写请求数         | 次/分钟 |
+| RemainXid      | 剩余XID数量        | 个      |
+| SqlRuntimeAvg  | 平均执行时延       | Ms      |
+| SqlRuntimeMax  | 最长TOP10执行时延  | Ms      |
+| SqlRuntimeMin  | 最短TOP10执行时延  | Ms      |
+| Storage        | 已用存储空间       | GB      |
+| XlogDiff       | 主备 XLOG 同步差异 | Byte    |
 
 ## 3. 输出参数
 
@@ -80,7 +92,7 @@
 
 ### 示例1
 
-拉取某个私有网络 VPN 通道某段时间内统计周期为60秒的外网出带宽监控数据。
+拉取某个 PostgreSQL 某段时间内统计周期为60秒的连接数监控数据。
 
 #### 输入示例
 
@@ -88,13 +100,13 @@
 
 ```
 https://monitor.tencentcloudapi.com/?Action=GetMonitorData
-&Namespace=QCE/VPNX
-&MetricName=Outbandwidth
+&Namespace=QCE/POSTGRES
+&MetricName=Connections
 &Period=60
-&StartTime=2019-06-11T00:00:00+08:00
-&EndTime=2019-06-11T00:05:00+08:00
-&Instances.0.Dimensions.0.Name=vpnConnId
-&Instances.0.Dimensions.0.Value=vpnx-12345678
+&StartTime=2019-05-08T16:40:00+08:00
+&EndTime=2019-05-08T16:45:00+08:00
+&Instances.0.Dimensions.0.Name=resourceId
+&Instances.0.Dimensions.0.Value=postgres-123456
 &<公共请求参数>
 ```
 
@@ -105,44 +117,44 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 ```
 {
   "Response": {
-    "StartTime": "2019-06-11 00:00:00",
-    "EndTime": "2019-06-11 00:05:00",
+    "StartTime": "2019-05-08 16:40:00",
+    "EndTime": "2019-05-08 16:45:00",
     "Period": 60,
-    "MetricName": "Outbandwidth",
+    "MetricName": "Connections",
     "DataPoints": [
       {
         "Dimensions": [
           {
-            "Name": "vpnConnId",
-            "Value": "vpnx-12345678"
+            "Name": "resourceId",
+            "Value": "postgres-123456"
           }
         ],
         "Timestamps": [
-          1560182400,
-          1560182460,
-          1560182520,
-          1560182580,
-          1560182640,
-          1560182700
+          1559011200,
+          1559011260,
+          1559011320,
+          1559011380,
+          1559011440,
+          1559011500
         ],
         "Values": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
         ]
       }
     ],
-    "RequestId": "f8f999f9-9778-4678-82f2-cc1445c3356e"
+    "RequestId": "d2141cc8-74e2-4e55-905e-3780d7d654df"
   }
 }
 ```
 
 ### 示例2
 
-拉取多个私有网络 VPN 通道某段时间内统计周期为60秒的外网出带宽监控数据。
+拉取多个 PostgreSQL 某段时间内统计周期为60秒的连接数监控数据。
 
 #### 输入示例
 
@@ -150,15 +162,15 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 
 ```
 https://monitor.tencentcloudapi.com/?Action=GetMonitorData
-&Namespace=QCE/VPNX
-&MetricName=Outbandwidth
+&Namespace=QCE/BLOCK_STORAGE
+&MetricName=Connections
 &Period=60
-&StartTime=2019-06-11T00:00:00+08:00
-&EndTime=2019-06-11T00:05:00+08:00
-&Instances.0.Dimensions.0.Name=vpnConnId
-&Instances.0.Dimensions.0.Value=vpnx-12345678
-&Instances.1.Dimensions.0.Name=vpnConnId
-&Instances.1.Dimensions.0.Value=vpnx-123456789
+&StartTime=2019-05-28T10:40:00+08:00
+&EndTime=2019-05-28T10:45:00+08:00
+&Instances.0.Dimensions.0.Name=resourceId
+&Instances.0.Dimensions.0.Value=postgres-123456
+&Instances.1.Dimensions.0.Name=resourceId
+&Instances.1.Dimensions.0.Value=postgres-654321
 &<公共请求参数>
 ```
 
@@ -169,61 +181,61 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 ```
 {
   "Response": {
-    "StartTime": "2019-06-11 00:00:00",
-    "EndTime": "2019-06-11 00:05:00",
+    "StartTime": "2019-05-28 10:40:00",
+    "EndTime": "2019-05-28 10:45:00",
     "Period": 60,
-    "MetricName": "Outbandwidth",
+    "MetricName": "Connections",
     "DataPoints": [
       {
         "Dimensions": [
           {
-            "Name": "vpnConnId",
-            "Value": "vpnx-12345678"
+            "Name": "resourceId",
+            "Value": "postgres-123456"
           }
         ],
         "Timestamps": [
-          1560182400,
-          1560182460,
-          1560182520,
-          1560182580,
-          1560182640,
-          1560182700
+          1559011200,
+          1559011260,
+          1559011320,
+          1559011380,
+          1559011440,
+          1559011500
         ],
         "Values": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
         ]
       },
       {
         "Dimensions": [
           {
-            "Name": "vpnConnId",
-            "Value": "vpnx-123456789"
+            "Name": "resourceId",
+            "Value": "postgres-654321"
           }
         ],
         "Timestamps": [
-          1560182400,
-          1560182460,
-          1560182520,
-          1560182580,
-          1560182640,
-          1560182700
+          1559011200,
+          1559011260,
+          1559011320,
+          1559011380,
+          1559011440,
+          1559011500
         ],
         "Values": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
         ]
       }
     ],
-    "RequestId": "f8f999f9-9778-4678-82f2-cc1445c3356e"
+    "RequestId": "d2141cc8-74e2-4e55-905e-3780d7d654df"
   }
 }
 ```
