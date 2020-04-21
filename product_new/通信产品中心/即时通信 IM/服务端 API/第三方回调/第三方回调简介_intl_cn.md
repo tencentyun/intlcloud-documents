@@ -83,6 +83,9 @@ Content-Length: 75
 2. HTTPS 回调，App 后台的 WebServer 配置的是 CA 机构签发的证书或者是即时通信 IM 免费签发的证书。
 3. HTTPS 双向认证回调，App 后台的 WebServer 配置的是 CA 机构签发的证书或者是即时通信 IM 免费签发的证书，且启用双向认证能力。
 
+获取即时通信 IM 免费签发的证书，需先登录控制台配置回调 URL 并下载证书，详细操作步骤请参见 [回调配置](https://intl.cloud.tencent.com/document/product/1047/34520)
+
+
 三种方案的安全性逐步递增：
 
 1. HTTP 回调存在两个缺陷：一是明文传输的数据容易被窃听，二是第三方 App 无法判断回调请求是否真正来自于即时通信 IM。
