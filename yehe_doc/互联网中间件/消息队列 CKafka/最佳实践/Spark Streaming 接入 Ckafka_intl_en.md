@@ -7,7 +7,7 @@ Spark Streaming abstracts continuous data into a Discretized Stream (DStream), w
 
 When Spark Streaming is used as data input for Kafka, the following stable and experimental Kafka versions are supported:
 
-| Kafka Version | spark-streaming-kafka-0.8 |   spark-streaming-kafka-0.10   |
+| Kafka Version | spark-streaming-kafka-0.8 |   spark-streaming-kafka-0.10   |
 | :-------- | :--------| :------|
 | Broker version	| 0.8.2.1 or higher |	0.10.0 or higher |
 | API stability	| Stable |	Experimental |
@@ -23,16 +23,14 @@ Currently, the following versions of CKafka are supported: 0.9.0.x, 0.10.0.x, 0.
 
 In addition, Spark Streaming in EMR also supports direct connection to CKafka. For more information, please see [Spark Streaming Connection to Ckafka](https://intl.cloud.tencent.com/document/product/1026/31134).
 
-## Connecting Spark Streaming to CKafka
+## Spark Streaming Connection to CKafka
 
 ### Applying for a Ckafka instance
 Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka) and create a CKafka instance as instructed in [Creating Instances](https://intl.cloud.tencent.com/document/product/597/32543).
 >Confirm whether the selected network type matches the currently used network.
 
-
 ### Creating a topic
 Create a topic under the instance as instructed in [Creating Topics](https://intl.cloud.tencent.com/document/product/597/34003).
-
 Private IP and port: the bootstrap-server to be used for production and consumption.
 A topic named `spark_test` is created here and used as an example to describe how to produce and consume messages.
 
