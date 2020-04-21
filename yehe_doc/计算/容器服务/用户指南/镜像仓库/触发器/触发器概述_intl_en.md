@@ -3,13 +3,13 @@ Image repository triggers automate actions such as service update, webhooks, and
 An image repository trigger contains the following attributes:
 - Trigger Name: indicates the name of the trigger.
 - Image Repository: specifies an image repository to be bound with the trigger. Currently, an image repository can be bound with up to 10 triggers.
-- Trigger Condition: when configured, this attribute specifies that a trigger action is performed only if an image that has a specific tag (image version) is submitted.
+- Trigger Condition: specifies that a trigger action is performed only if an image that has a specific tag is submitted.
 - Trigger Action: currently, only the TKE update action is supported. More trigger actions, such as webhooks and message push, will be available soon.
 
 ## Triggering Conditions
 Currently, Tencent Cloud TKE Image Registry supports three types of tag trigger expressions, which can be used to configure trigger conditions:
-- All: the action is triggered when a tag is created or updated in the image repository.
-- Specified tags: enter multiple tag names and separate them with semicolons (;). The action is triggered when the specified tag is created or updated in the image repository.
+- All: the action is triggered whenever a tag is created or updated in the image repository.
+- Specified tags: enter multiple tags and separate them with semicolons (;). The action is triggered when images with the specified tags are created or updated in the image repository.
 - Regular expression: the action is triggered when a matching tag is created or updated in the image repository.
 
 ## Action
