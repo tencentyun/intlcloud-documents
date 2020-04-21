@@ -10,29 +10,29 @@ ES 集群部署在逻辑隔离的私有网络 VPC 中，客户可以完全掌控
 ## 设置 ES 集群访问密码
 
 在创建腾讯云 ES 集群时，会要求用户设置默认用户 elastic 的密码，该帐号和密码用于 Kibana 页面登录，若集群已开启 [ES 集群用户登录认证](https://intl.cloud.tencent.com/document/product/845/35275)，则此用户名和密码还会用于 ES 集群的登录认证，提供进一步的安全防护，详情如下：
-![](https://main.qcloudimg.com/raw/c69744a79aed0d6a1b43a1f0c3e875aa.jpg)
+![](https://main.qcloudimg.com/raw/57864718c2d13731a95ac4b8b69b52b8.jpg)
 
 ## 重置 ES 集群访问密码
 
 用户需要调整 ES 集群访问密码时，可以通过集群详情页的密码重置功能对 ES 集群 elastic 账号的密码进行重置，操作页面如下：
-![密码重置](https://main.qcloudimg.com/raw/2cc790b6f779526df95fde9c354b4653.jpg)
+![密码重置](https://main.qcloudimg.com/raw/ed889f4b12e6fbdcf7b13c7b63bcc1bc.jpg)
 
 ## 设置 Kibana 外网访问 IP 黑白名单
 
 由于 Kibana 页面是通过公网访问，在进行密码校验的基础上，ES 还为 Kibana 访问提供了 IP 黑白名单功能，进一步保障用户集群的访问安全性。
 - 配置规则：支持多个 IP，IP 之间以英文逗号分隔，格式为`192.168.0.1`、`192.168.0.0/24`，最多支持10个。
 - 黑白名单设置：客户可以设置任意一个，如果黑白名单都配置，以白名单为准。详情如下：
-![](https://main.qcloudimg.com/raw/46e9c2b8ab193349b164ba71cee96fbd.jpg)
+![](https://main.qcloudimg.com/raw/744f20c80da87f9c813e236640ba0018.jpg)
 
 ## 限制 Kibana 仅能通过内网访问
 
 如果用户担心公网访问安全性，也可以关闭外网访问，设置仅允许内网访问。
-![](https://main.qcloudimg.com/raw/a309fc183a0514c1f09e921a132b737a.jpg)
+![](https://main.qcloudimg.com/raw/7a6031231c2085d3113e4f897d11ffc0.jpg)
 
 ## 有限开启 ES 集群外网访问和设置 IP 白名单
 
 基于安全考虑，ES 集群外网访问是默认关闭的，对于已开启 [ES 集群用户登录认证](https://intl.cloud.tencent.com/document/product/845/35275) 的集群，允许用户基于使用便捷性的需要开启外网访问，但必须同时设置 IP 白名单以提供安全防护。
-![](https://main.qcloudimg.com/raw/1a72c17de07d6d7d614d5abb88cd6989.jpg)
+![](https://main.qcloudimg.com/raw/1aa030ce5031f2899b856043a4e7641a.jpg)
 
 ## 基于角色的访问控制（RBAC）
 

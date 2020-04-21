@@ -7,7 +7,7 @@
 
 ES 在用户的 VPC 下提供了一个访问 ES 集群的 VIP，通过负载均衡的方式挂载了 ES 集群内的所有节点。这样做的目的，一方面是为了适配集群的弹性伸缩并保证其高可用性，当 ES 集群的节点发生变化时，VIP 会自动更新节点信息；另一方面，简化用户的操作，用户不用再关注集群节点 IP、port 等信息的变更。
 
-<img src="https://main.qcloudimg.com/raw/99466b6e9bd4bc9baac77bfec35ad17d.jpg" width="60%"/>
+<img src="https://main.qcloudimg.com/raw/c2eaed506c74b9bc8cb940917404b7e9.png" width="60%"/>
 
 >不推荐通过 TransportClient 直接连接 Client 和 ES 节点。
 

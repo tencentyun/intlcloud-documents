@@ -7,8 +7,8 @@ Apache Flume is a distributed, reliable, and highly available log collection sys
 Flume uses agents as the smallest independent unit of operation. An agent is a JVM composed of three main components: source, sink, and channel.
 ![](https://mc.qcloudimg.com/static/img/17244b0d3460b838f7b6764db5497c98/11.png)
 
-##  Flume and Kafka 
-When you store data in a downstream storage module or a computing module such as HDFS or HBase, a lot of complex factors need to be taken into account, such as the amount of concurrent writes, system load, and network delay. As a flexible distributed system, Flume has various APIs and provides customizable pipelines.
+## Flume and Kafka 
+When you store data in a downstream storage module or a computing module such as HDFS or HBase, a lot of complex factors need to be taken into account, such as the number of concurrent writes, system load, and network delay. As a flexible distributed system, Flume has various APIs and provides customizable pipelines.
 In the production process, Kafka can act as a cache when the production and consumption are at different paces. It has a partition structure and uses `append` to append data, which makes it have an excellent throughput. In addition, it has a replication structure, which makes it highly fault-tolerant.
 Therefore, Flume and Kafka together can satisfy most requirements in production environments.
 
@@ -34,7 +34,7 @@ Configure Kafka as the message source, i.e., pulling data from Kafka into a spec
 |batchSize	| Size of each write into channel |
 |batchDurationMillis	 | Maximum time interval between writes |
 
-Sample：
+Sample:
 ```
 tier1.sources.source1.type = org.apache.flume.source.kafka.KafkaSource 
 tier1.sources.source1.channels = channel1
@@ -57,7 +57,7 @@ Configure Kafka as the message receiver, i.e., pushing data into the Kafka serve
 |flumeBatchSize	| Size of each written batch |
 |kafka.producer.acks	 | 	Production policy of Kafka producer |
 
-Sample：
+Sample:
 ```
 a1.sinks.k1.channel = c1
 a1.sinks.k1.type = org.apache.flume.sink.kafka.KafkaSink
@@ -76,11 +76,8 @@ For more information, please visit [Apache Flume's official website](https://flu
 
 ### CKafka configuration
 1. In the **[CKafka Console](https://console.cloud.tencent.com/ckafka?rid=1)**, click the instance name to view the specific information assigned to the instance.
-
 >The private IP and port in the figure serve as the subsequent server IP.
 2. Click **Topic Management** > **Create** to create a topic named `flume_test`.
- 
-
 
 ### Flume configuration
 #### 1. Decompress the downloaded Apache Flume package
@@ -88,7 +85,6 @@ For more information, please visit [Apache Flume's official website](https://flu
  **Use CKafka as a sink**
  1. Write a configuration file.
 The combination of Flume and CKafka as a sink is focused on here, while the source and channel use the default configuration. Below is a simple demo (configured in the `conf` folder in the extracted directory). If there is no special requirement, simply replace your own instance IP and topic in the configuration file. The source used in this example is `tail -F flume-test`, which represents the information newly added in the file.
-
  2. Start Flume.
 ```
 ./bin/flume-ng agent -n agentckafka -c conf -f conf/flume-kafka-sink.properties
@@ -105,11 +101,11 @@ You can see that the messages have been consumed.
 **Use CKafka as a source**
 1. Write a configuration file.
 The combination of Flume and CKafka as a source is focused on here, while the sink and channel use the default configuration. Below is a simple demo (configured in the `conf` folder in the extracted directory). If there is no special requirement, simply replace your own instance IP and topic in the configuration file. The sink used in this example is `logger`.
-
 2.	Start Flume.
 ```
 ./bin/flume-ng agent -n agentckafka -c conf -f conf/flume-kafka-source.properties
 ```
 3. View the logger output (the default path is `logs/flume.log`).
 ![](https://mc.qcloudimg.com/static/img/d6b51f8de1a063e51171b2996764f40d/99.png)
+
 

@@ -26,11 +26,23 @@ On the Top-up page, choose "**PayPal**" or "**Bank Transfer**" or "**Credit Card
 
 **Tencent Cloud bank account information is as below:**
 
-Beneficiary name:  ACEVILLE PTE.LTD.
-Beneficiary account:  260-737366-178 (USD account)
+A. For users registered in the United States and Canada:
+
+Beneficiary Name: Tencent Cloud, LLC
+Beneficiary account: 000271829(USD account)
+Beneficiary bank: HSBC Bank USA, N.A.
+SWIFT: MRMDUS33
+Remarks: Cloud service fee + developer account (unique ID)
+
+
+
+B. For users registered in other countries:    
+
+Beneficiary name: ACEVILLE PTE.LTD.
+Beneficiary account: 260-737366-178 (USD account)
 Beneficiary bank: HSBC, Singapore
-SWIFT Code:  HSBCSGSG
-Remarks:  Cloud service fee + developer account (unique ID)
+SWIFT Code: HSBCSGSG
+Remarks: Cloud service fee + developer account (unique ID)
 
 2.After payment is made, please submit remittance information and upload the electronic bank receipt by clicking "Submit payment information". This step is important as it will help us identify your payment, otherwise your account balance may not be updated.
 
