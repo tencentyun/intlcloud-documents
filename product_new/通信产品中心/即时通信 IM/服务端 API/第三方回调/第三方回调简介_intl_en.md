@@ -84,7 +84,7 @@ IM supports three types of callbacks:
 2. HTTPS callback. The WebServer of the app backend is configured with a certificate issued by a CA or a certificate issued by IM for free.
 3. HTTPS mutual authentication callback. The WebServer of the app backend is configured with a certificate issued by a CA or a certificate issued by IM for free, and mutual authentication is enabled.
 
-The first type of callbacks have the lowest security level, and the last type of callbacks have the highest security level.
+To obtain a free certificate issued by IM, you need to log in to the console to configure the callback URL and download the certificate. For detailed steps, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 
 1. HTTP callbacks have two defects. One is that data transmitted in plain text is prone to interception, and the other is that the third-party app cannot determine whether the callback request comes from IM.
 2. For an HTTPS callback, if mutual authentication is disabled, the data encryption issue can be resolved, but the app still cannot determine whether the callback request comes from IM.
