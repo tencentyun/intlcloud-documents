@@ -5,7 +5,8 @@
 - 用户创建私有网络时，系统会自动为其生成一个默认路由表。在之后的子网创建过程中，如果用户没有选择自定义路由表，子网会自动关联该默认路由表。您可以在默认路由表中添加、删除和修改路由策略，但无法删除该默认路由表。
 - 您可以在私有网络中创建自定义路由表，自定义路由表可以被删除。您可以为具有相同路由策略的子网建立一个自定义路由表，并将路由表与需要遵循其路由策略的所有子网关联。
   
-您可以在 [创建子网](https://intl.cloud.tencent.com/document/product/215/31806#.E5.88.9B.E5.BB.BA.E5.AD.90.E7.BD.91) 时关联路由表，或在子网创建后，[更换子网关联路由表](https://intl.cloud.tencent.com/document/product/215/31806#.E6.9B.B4.E6.8D.A2.E5.AD.90.E7.BD.91.E5.85.B3.E8.81.94.E7.9A.84.E8.B7.AF.E7.94.B1.E8.A1.A8)。
+
+您可以在 [创建子网](https://intl.cloud.tencent.com/document/product/215/31806) 时关联路由表，或在子网创建后，[更换子网关联路由表](https://intl.cloud.tencent.com/document/product/215/31806)。
 
 ## 路由策略
 路由表通过路由策略来实现流量走向控制，路由策略由目的端、下一跳类型和下一跳组成：
@@ -20,4 +21,4 @@
 - 公网 IP：路由策略均匹配失效时，通过公网 IP 对 Internet 进行外访。
 
 ### NAT 网关 / EIP 优先级说明
-当一个子网关联了 NAT 网关，且子网内云服务器有公网 IP（或弹性公网 IP）时，会默认通过 NAT 网关访问 Internet（因为最精确路由的优先级高于公网 IP），但您可以设置路由策略，实现通过云服务器公网 IP 访问 Internet，详情请参见 [调整 NAT 网关和 EIP 的优先级](https://intl.cloud.tencent.com/document/product/1015/30012)。
+当一个子网关联了 NAT 网关，且子网内云服务器有公网 IP（或弹性公网 IP）时，会默认通过 NAT 网关访问 Internet（因为最精确路由的优先级高于公网 IP），但您可以设置路由策略，实现通过云服务器公网 IP 访问 Internet，详情请参见 [调整 NAT 网关和 EIP 的优先级](https://intl.cloud.tencent.com/document/product/1015/32734)。
