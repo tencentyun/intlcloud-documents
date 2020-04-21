@@ -1,0 +1,28 @@
+## 问题描述
+北美地域云服务器登录时延太长。
+
+## 问题分析
+因全国国际路由出口较少及其他原因，当并发数大时，国际链路会非常拥塞并导致访问不稳定。腾讯云已经将此情况反馈至运营商。
+目前，如果您购买了北美地域云服务器，需要在国内进行管理运维，可通过使用在中国香港地域购买的云服务器中转登录您购买的北美地域云服务器解决该问题。
+
+## 解决方案
+1. 购买中国香港地域的 Windows 云服务器，用作于 “跳板机”。
+> 
+> - 在 “自定义配置” 页的 “1.选择地域与机型” 中，选择【中国香港】地域。
+> [点此进行选购 >>](https://buy.cloud.tencent.com/cvm?tab=custom&step=1&regionId=5&zoneId=0&instanceType=S2ne.SMALL2&platform=CentOS&systemDiskType=CLOUD_PREMIUM&systemDiskSize=50&bandwidthType=BANDWIDTH_PREPAID&loginSet=SET_PASSWORD)
+> - Windows 云服务器支持登录北美地域的 Windows 和 Linux 云服务器，推荐选购。
+> - **购买中国香港地域的 Windows 云服务器时，需要购买至少1Mbps的带宽，否则跳板机无法登录。**
+>
+2. 购买成功后，根据实际需求，选择登录中国香港地域 Windows 云服务器的方式：
+ - [使用 RDP 文件登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/5435)
+ - [使用远程桌面连接登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/32498)
+ - [使用 VNC 登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/32496)
+3. 在中国香港地域的 Windows 云服务器内，根据实际需求，选择登录您位于北美地域云服务器的方式：
+ - 登录北美地域的 Linux 云服务器
+    - [使用标准登录方式登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)
+    - [使用远程登录软件登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/32502)
+    - [使用 VNC 登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/32494)
+ - 登录北美地域的 Windows 云服务器 
+    - [使用 RDP 文件登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/5435)
+    - [使用远程桌面连接登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/32498)
+    - [使用 VNC 登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/32496)

@@ -1,0 +1,18 @@
+### 云服务器如何进行数据备份？
+
+- 当您的云服务器为云硬盘主机时，您可以通过创建系统盘自定义镜像以及数据盘快照的方式来备份您的业务数据。 
+  - 如需创建自定义镜像，请参考 [创建自定义镜像](https://intl.cloud.tencent.com/document/product/213/4942)。
+  - 如需创建快照，请参考 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755)。
+- 当您的云服务器为本地盘主机时，您的系统盘可以通过创建自定义镜像的方式来实现备份。但您的数据盘中的业务数据仍需要您自行定制备份策略。 
+  通常可以采用 FTP 方式来将服务器中的数据备份至其他处，具体 FTP 部署方式您可以参考： 
+  - Windows 操作系统：[Windows 实例搭建 FTP 服务](https://intl.cloud.tencent.com/document/product/213/10414)
+  - Linux 操作系统：[Linux 实例搭建 FTP 服务](https://intl.cloud.tencent.com/document/product/213/10912) 
+
+### 有哪些通用的数据备份与恢复方案？
+
+根据不同的应用场景和业务情况，适用的数据备份与恢复方案也不同。以下是我们提供的一部分通用建议，请根据您的实际情况进行采用：
+- 定期使用 [云硬盘快照](https://intl.cloud.tencent.com/document/product/362/31638) 功能备份实例。
+- 跨多个可用区部署应用程序的关键组件，并适当地复制数据。
+- 使用 [弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733) 进行域名映射，保证在服务器不可用时能快速将服务 IP 重新指向另一台云服务器实例。
+- 定期查看监控数据并设置好适当的告警。有关更多信息，请参阅 [云监控](https://intl.cloud.tencent.com/document/product/248)。
+- 使用弹性伸缩处理突发请求。有关更多信息，请参阅 [弹性伸缩](https://intl.cloud.tencent.com/document/product/377)。

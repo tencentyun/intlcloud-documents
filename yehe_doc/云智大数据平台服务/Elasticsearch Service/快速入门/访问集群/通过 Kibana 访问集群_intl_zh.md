@@ -5,8 +5,8 @@
 Kibana 页面有两个入口，分别位于集群列表页和集群详情页，详情如下图。单击对应的入口，会跳转到 Kibana 登录页面。
 >默认情况下，Kibana 通过公网地址访问， 如果您担心通过公网访问 Kibana 会造成安全问题，我们也支持在集群详情页关闭 Kibana 公网地址，开启 Kibana 内网地址来进行访问（**所有节点均为1核2G的集群暂不支持，冷热模式下节点不全是1核2G的集群支持此功能**）。
 > 
-![](https://main.qcloudimg.com/raw/0a672a6e9cf2135859b274a6b7ba5870.jpg)
-![](https://main.qcloudimg.com/raw/067daf8047e2f108b79d5f46bb71b810.jpg)
+![](https://main.qcloudimg.com/raw/3b4f196136668a1cdbe351d0ac655960.png)
+![](https://main.qcloudimg.com/raw/168f91daf55dba8783c56d63ffdbb4e0.png)
 
 ### 登录
 Kibana 页面访问需要登录，帐号为 elastic，密码为用户创建集群时设置的 Kibana 密码。如果忘记密码，可以在集群详情页重置密码。出于安全考虑，用户可以配置 Kibana 公网地址的访问黑白名单来提高安全防护，详见 [Kibana 访问设置](https://intl.cloud.tencent.com/document/product/845/16992)。
