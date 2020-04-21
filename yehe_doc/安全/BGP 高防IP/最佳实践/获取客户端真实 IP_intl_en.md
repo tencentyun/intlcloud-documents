@@ -8,7 +8,7 @@ Under the TCP protocol, in order to pass the client IP to the server, the client
 		
     #define TCPOPT_ADDR	200  
     #define TCPOLEN_ADDR 8	/* |opcode|size|ip+port| = 1 + 1 + 6 */
-
+    
     /*
     *insert client ip in tcp option, now only support IPV4,
     *must be 4 bytes alignment.
@@ -33,7 +33,7 @@ The client program calls `getpeername` in the user mode, and the client's origin
 2. Install the package file.
 ```
 rpm -hiv kernel-2.6.32-220.23.1.el6.toa.x86_64.rpm --force	
-```						
+```
 3. Reboot the server after the installation is completed.
 ```
 reboot
@@ -45,12 +45,12 @@ lsmod | grep toa
 5. If not, manually start it.
 ```
 modprobe toa
-```		
+```
 6. Run the following command to enable automatic loading of the TOA module.
 <pre >
 echo "modprobe toa" >> /etc/rc.d/rc.local
 </pre>
-			
+
 #### Ubuntu 16.04
 1. Download the installation package:
  - [Download the kernel package](http://toakernel-1253438722.cossh.myqcloud.com/linux-image-4.4.87.toa_1.0_amd64.deb)
@@ -58,14 +58,14 @@ echo "modprobe toa" >> /etc/rc.d/rc.local
 2. Run the following command:
 ```
 dpkg -i linux-image-4.4.87.toa_1.0_amd64.deb
-```	
+```
 The header package is optional. If needed for relevant development, install it.
 3. After the installation is completed, reboot the server, then run the ` lsmod | grep toa ` command to check whether the TOA module is loaded, and if not, start it by running the `modprobe toa` command.
 Run the following command to enable loading of the TOA module:
 <pre >
 echo "modprobe toa" >> /etc/rc.d/rc.local
 </pre >
-		 
+
 #### Debian 8
 1. Download the installation package:
  - [Download the kernel package](http://toakernel-1253438722.cossh.myqcloud.com/linux-image-3.16.43.toa_1.0_amd64.deb)
@@ -91,26 +91,26 @@ You can make your own rpm package or use the one we provide.
 1. Install `kernel-2.6.32-220.23.1.el6.src.rpm`.
 ```
 rpm -hiv kernel-2.6.32-220.23.1.el6.src.rpm
-```	
+```
 2. Generate the kernel source code directory.
 ```
 rpmbuild -bp ~/rpmbuild/SPECS/kernel.spec
-```		
+```
 3. Copy the source code directory.
 ```
 cd ~/rpmbuild/BUILD/kernel-2.6.32-220.23.1.el6/ cp -a linux-2.6.32-220.23.1.el6.x86_64/ linux-2.6.32-220.23.1.el6.x86_64_new
-```			   
+```
 4. Apply the TOA patch to the copied source directory.
 ```
 cd ~/rpmbuild/BUILD/kernel-2.6.32-220.23.1.el6/linux-2.6.32-220.23.1.el6.x86_64_new/ 
 patch -p1 < /usr/local/src/linux-2.6.32-220.23.1.el6.x86_64.rs/toa-2.6.32-220.23.1.el6.patch
-```			
+```
 5. Edit `.config` and copy it to the `SOURCE` directory.
 ```
 sed -i 's/CONFIG_IPV6=m/CONFIG_IPV6=y/g' .config 
 echo -e '\n# toa\nCONFIG_TOA=m' >> .config
 cp .config ~/rpmbuild/SOURCES/config-x86_64-generic
-```	
+```
 6. Delete `.config` from the original source code.
 ```
 cd ~/rpmbuild/BUILD/kernel-2.6.32-220.23.1.el6/linux-2.6.32-220.23.1.el6.x86_64 
@@ -125,7 +125,7 @@ diff -uNr linux-2.6.32-220.23.1.el6.x86_64 linux-2.6.32-220.23.1.el6.x86_64_new/
 8. Edit `kernel.spec`.
 ```
 vim ~/rpmbuild/SPECS/kernel.spec
-```  
+```
 Add the following lines to `ApplyOptionPath` (you can also modify the names of custom kernel packages such as `buildid`): 
 ```
 Patch999999: toa.patch
@@ -138,7 +138,7 @@ rpmbuild -bb --with baseonly --without kabichk --with firmware --without debugin
 10. Install the kernel rpm package.
 ```
 rpm -hiv kernel-xxxx.rpm --force
-```	 
+```
 11. Reboot to load the TOA module
 
 ## Using Website Traffic Forwarding Rules
@@ -147,4 +147,4 @@ When Anti-DDoS Advanced uses website traffic forwarding rules, the `X-Forwarded-
 Format:
 `X-Forwarded-For: Client, proxy1, proxy2, proxy3……`
 When forwarding the user access request to the real server, Anti-DDoS Advanced will record the real IP of the requesting user at the beginning of the `X-Forwarded-For` field. Therefore, the application on the real server only needs to get the content of the `X-Forwarded-For` field in the HTTP header.
-For more information, please see [How to Get Real Client IP Based on Layer-7 Forwarding Rules](https://cloud.tencent.com/document/product/214/3728).
+For more information, please see [How to Get Real Client IP Based on Layer-7 Forwarding Rules](https://intl.cloud.tencent.com/document/product/214/3728).
