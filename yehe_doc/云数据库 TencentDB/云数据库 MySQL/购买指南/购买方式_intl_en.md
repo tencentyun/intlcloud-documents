@@ -6,12 +6,12 @@ To make a purchase, you need to verify your identity first. For more information
  ![](https://main.qcloudimg.com/raw/8440c63d34e0cdbfec26348ee37f1f17.png)
 2. Select various configuration items on the purchase page based on your actual needs, confirm that everything is correct, and click **Buy Now**.
  - **Billing Mode**: only pay-as-you-go billing is supported.
-    - If the request volume of your business may fluctuate greatly and instantaneously, you are recommended to choose pay-as-you-go billing.
  - **Region**: select the region where the TencentDB for MySQL instance is deployed for your business. Tencent Cloud products in different regions cannot communicate with each other over the private network. This parameter cannot be modified after purchase.
- - **Master and Slave AZs**: you are recommended to deploy the master and slave in the same AZ so as to avoid network delay issues.
+ - **Master AZ and Slave AZ**: selecting different master and slave AZs (i.e., [multi-AZ deployment](https://intl.cloud.tencent.com/document/product/236/8459)) can protect your database from being affected by failures and AZ outages.
+ >If the master and slave servers are in different AZs, there may be an additional network sync delay of 2–3 ms.
  - **Network**: select the network where TencentDB for MySQL instance resides, which is "Default-VPC (Default)" by default.
- - **Security Group**: for more information on security group creation and management, please see [TencentDB Security Groups](https://intl.cloud.tencent.com/document/product/236/14470).
- - **Architecture**: basic and high-availability editions are available.
+ - **Security Group**: for more information on security group creation and management, please see [TencentDB Security Group](https://intl.cloud.tencent.com/document/product/236/14470).
+ - **Architecture**: Basic and High-Availability editions are available.
  - **Project**: select a project to which the database instance belongs. The default project is used by default.
  - **Quantity**: you can purchase up to 10 pay-as-you-go instances in each AZ.
  
