@@ -115,7 +115,6 @@ The private error codes for this API are as follows:
 | 10005 | The request packet carries too many accounts. |
 | 10006 | The operation frequency limit has been reached. To correct it, reduce the frequency of calls. |
 | 10007 | The user does not have sufficient operation permissions. For example, a common member in a public group attempts to remove a member from the group, but only the app admin has the permission to do so. |
-| 10008 | The request is invalid. The reason may be that the verification of the signature information in the request failed. To correct it, try again or [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1) to contact our technical customer service. |
 | 10010 | The group does not exist or has been dismissed. |
 | 10015 | The group ID is invalid. To correct it, check whether the group ID is correct. |
 
