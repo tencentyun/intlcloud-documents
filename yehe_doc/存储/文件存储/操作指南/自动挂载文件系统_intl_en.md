@@ -1,0 +1,31 @@
+## Operation Scenarios
+
+You can configure a Linux or Windows client to which a CFS file system is mounted, so that the file system can be automatically mounted after the client is restarted.
+
+## Directions
+### Automatically mounting an NFS file system on Linux
+1. Connect to the CVM instance that needs to automatically mount the file system by logging in to the CVM Console or performing remote login. Then, open the "/etc/fstab" file (make sure that the account you logged in to has the root privileges).
+```
+// Run the following command to open the `fstab` file
+vi /etc/fstab
+```
+
+2. Then, enter "i" (insert) and add the following command to `/etc/fstab`. The mounting methods are as follows:
+```shell
+Mount with NFS4.0
+<mount target IP>:/ <target mount directory> nfs4 nfsvers=4.0,hard,timeo=600,retrans=2,_netdev 0 0
+Example: 10.10.19.12:/ /local/test nfs4 nfsvers=4.0,hard,timeo=600,retrans=2,_netdev 0 0
+```
+```shell
+Mount with NFS3.0
+<mount target IP>:/<fsid> <target mount directory> nfs nfsvers=3,hard,timeo=600,retrans=2,_netdev 0 0
+Example: 10.10.19.12:/djoajeo4 /local/test nfs nfsvers=3,hard,timeo=600,retrans=2,_netdev 0 0
+```
+3. Press Esc and enter ":wq" to save the change. Restart the client, and the file system will be automatically mounted.
+
+> When the command of automatic mounting is added but the shared file system is exceptional, Linux may not be started normally, because the automatic start command in `fstab` is not executed. To solve this problem, enter "Single User Mode" upon startup, delete the automatic mounting command in `fastb`, and then restart the server.
+
+
+### Automatically mounting a file system on Windows
+When mounting a file system, select "Reconnect at logon" as shown below. For more information, please see [Using CFS File Systems on Windows Clients](https://intl.cloud.tencent.com/document/product/582/11524).
+<img src="https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png" width="70%">

@@ -28,7 +28,7 @@ Click **Create** and configure the following information in the pop-up window. A
   <tr>
   <tr>
     <td nowrap="nowrap">Storage class</td>
-    <td>Select the needed storage class (Standard or High-Performance).</td>
+    <td>Select the needed storage class (standard or high-performance).</td>
   </tr>
   <tr>
     <td nowrap="nowrap">File service protocol</td>
