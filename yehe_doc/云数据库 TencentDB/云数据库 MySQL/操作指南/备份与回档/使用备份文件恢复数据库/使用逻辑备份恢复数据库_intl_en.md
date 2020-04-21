@@ -1,7 +1,9 @@
 ## Operation Scenarios
-The open-source software tool Percona Xtrabackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a logical backup file of a TencentDB for MySQL instance to a self-built database on another server.
-
-> XtraBackup only supports Linux but not Windows.
+> To save storage capacity, both physical and logical backups in TencentDB for MySQL will be compressed and packaged. Specifically, a backup file is compressed with qpress first and then packed with xbstream offered by Percona.
+>
+The open-source software tool Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a logical backup file of a TencentDB for MySQL instance to a CVM-based self-created database.
+- XtraBackup only supports Linux but not Windows.
+- For more information on how to restore data on Windows, please see [Rolling back Databases](https://intl.cloud.tencent.com/document/product/236/7276), [Migrating Data Through Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464), and [Migrating Data Through DTS](https://intl.cloud.tencent.com/document/product/571/34103).
 
 ## Prerequisites
 - Download and install XtraBackup.
@@ -14,7 +16,7 @@ The open-source software tool Percona Xtrabackup can be used to back up and rest
 2. On the instance management page, click **Backup and Restore** > **Data Backup List**, select the backup to download, and then click **Download** in the "Operation" column.
 3. You are recommended to copy the download address in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command for download over the private network at a higher speed.
 >
->- You can also select **Local Download** to download it directly, which takes more time though.
+>- You can also select **Download** to download it directly, which takes more time though.
 >- `wget` command format: wget -c 'backup file download address' -O custom filename.xb
 >
 Below is a sample:

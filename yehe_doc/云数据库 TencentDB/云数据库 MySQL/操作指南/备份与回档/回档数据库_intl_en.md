@@ -3,14 +3,13 @@ TencentDB will not alter any of your data. Data corrupted due to personal reason
 
 By re-constructing periodical images and real-time transactions, the TencentDB rollback tool can roll back a database or table to the specified point in time where the time slices of all data are guaranteed to be identical. A new database or table will be generated in the original instance by the rollback operation, and during the process, the original database or table can be accessed normally. Upon the completion of rollback, you can see both the new and original databases/tables.
 
-## Precautions
-- The rollback feature is subject to the backup cycle and retention days set for automatic backup. It enables data rollback based on data backup + log backup (binlog) according to the configured retention days and backup cycle. For the backup cycle settings, please see [Backing up MySQL Data Automatically](https://cloud.tencent.com/document/product/236/35172#.E8.87.AA.E5.8A.A8.E5.A4.87.E4.BB.BD-mysql-.E6.95.B0.E6.8D.AE). To ensure MySQL data security, set the automatic backup cycle to at least twice a week.
+## Notes
+- The rollback feature is subject to the backup cycle and retention days set for automatic backup. It enables data rollback based on data backup + log backup (binlog) according to the configured retention days and backup cycle. For the backup cycle settings, please see [Backing up MySQL Data Automatically](https://intl.cloud.tencent.com/document/product/236/32340). To ensure MySQL data security, set the automatic backup cycle to at least twice a week.
  - For example, if you set the backup cycle to every Monday and Thursday and the backup retention days to 7 days, then you can roll back to any day within the retention period.
  - For example, if you set the backup cycle to every Sunday and the backup retention days to 10 days, then you can roll back to any day within the retention period.
 
 
 ## Directions
-
 
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb).
 2. Choose one ore more instances to be rolled back from the instance list and select **More** > **Rollback**.
@@ -24,6 +23,9 @@ By re-constructing periodical images and real-time transactions, the TencentDB r
 >- Only tables whose name contains digits, letters, underscores, or their combinations can be rolled back, while those whose name contains special characters are not supported.
 >- In the rollback mode with a specified table, a maximum of 500 databases or tables in the same instance can be rolled back at a time.
 >- If the table to be rolled back has been dropped, you need to log in to the TencentDB instance and create a table first before performing rollback in the console.
+>- If the cold backup before rollback does not contain the table, rollback will fail.
+>- If the rollback involves composite operations on other database tables during the trace of binlogs, the SQL statement may fail.
+>- If the rollback involves foreign keys and other constraints of the table during the trace of binlogs, the SQL statements may fail.
 >
 ![](https://main.qcloudimg.com/raw/6cb2fa4d3e8b0d795bd5bf19f8d69d86.png)
 4. Set the post-rollback table name and rollback time and click **Rollback**.
