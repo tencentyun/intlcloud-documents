@@ -452,6 +452,4 @@ For more information on how to use the COS SDK, please see [COS SDK for Node.js]
 
 ## Relevant Operations
 For more information on how to use relevant features, please see the following documents:
-- Connecting to Database Through SCF
-- Network Configuration Management
 - [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/31444)

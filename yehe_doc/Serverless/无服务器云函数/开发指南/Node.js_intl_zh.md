@@ -452,6 +452,4 @@ var COS = require('cos-nodejs-sdk-v5');
 
 ## 相关操作
 您可参考以下文档，使用相关功能：
-- [使用 SCF 连接数据库](https://cloud.tencent.com/document/product/583/38012)
-- [网络配置管理](https://cloud.tencent.com/document/product/583/38202)
 - [角色与授权](https://intl.cloud.tencent.com/document/product/583/31444)
