@@ -7,7 +7,7 @@ ES offers SDKs for different programming languages through its official website 
 
 ES provides a VIP for accessing your ES cluster in your VPC, to which all nodes in your ES cluster are mounted through load balancing. This aims to adapt to the auto scaling of your cluster and ensure its high availability. In case of any changes in the nodes, the VIP will automatically update node information. In addition, this simplifies operations and eliminates your need to focus on changes in the information about cluster nodes such as IP and port.
 
-<img src="https://main.qcloudimg.com/raw/99466b6e9bd4bc9baac77bfec35ad17d.jpg" width="60%"/>
+<img src="https://main.qcloudimg.com/raw/c2eaed506c74b9bc8cb940917404b7e9.png" width="60%"/>
 
 >You are not recommended to connect a client to ES nodes directly through Transport Client.
 
