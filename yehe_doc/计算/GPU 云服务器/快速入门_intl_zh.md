@@ -1,0 +1,6 @@
+## 购买 GPU 服务器
+用户需要先购买一台 GPU 云服务器。
+## 快速入门 Windows GPU 云服务器
+Windows GPU 云服务器实例的创建和配置与 Windows 云服务器实例步骤一致，详情请参考 [快速配置 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/10516)。
+## 快速入门 Linux GPU 云服务器
+Linux GPU 云服务器实例的创建和配置与 Linux 云服务器实例步骤一致，详情请参考 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517)。

@@ -1,0 +1,174 @@
+## 操作场景
+本文介绍如何使用命令行 TCCLI 来创建计算环境、向计算环境提交作业、销毁计算环境。
+
+## 前提条件
+请参考 [开始前的准备](https://intl.cloud.tencent.com/document/product/599/10807) 中的步骤做好准备。
+
+
+## 操作步骤
+### 安装和配置 TCCLI
+1. 请参考 [安装 TCCLI](https://intl.cloud.tencent.com/document/product/599/10548) 安装命令行工具。 
+2. 执行以下命令，验证 TCCLI 是否成功安装。
+```
+tccli batch help
+```
+返回结果如下，则成功安装。
+```
+NAME
+        batch
+DESCRIPTION
+        batch-2017-03-12
+USEAGE
+        tccli batch <action> [--param...]
+OPTIONS
+        help
+        show the tccli batch help info
+        --version
+        specify a batch api version
+AVAILABLE ACTION
+        DescribeComputeEnv
+        用于查询计算环境的详细信息
+        CreateTaskTemplate
+        用于创建任务模板
+```
+3. 请按照 [配置 TCCLI](https://intl.cloud.tencent.com/document/product/599/10548) 配置命令行工具。
+
+
+
+### 创建保存结果的 COS Bucket
+在本文示例中，返回结果将直接输出到系统标准输出中，而 Batch 可以采集系统标准输出 stdout 和 stderr，并在任务结束后将信息上传到已指定的 COS Bucket 中，您需提前创建 Bucket 及用于保存信息的子文件夹。
+
+请参考 [准备 COS 目录](https://intl.cloud.tencent.com/document/product/599/10548) 创建对应 COS Bucket 和子文件夹。
+
+
+
+### 创建计算环境
+您可获取并修改官方提供的示例，作为个人账号下可执行的 Batch 计算环境。请参考以下内容了解计算环境各项配置的含义：
+您也可查阅 [创建计算环境](https://intl.cloud.tencent.com/document/product/599/30521) 等计算环境相关接口。
+```
+tccli batch CreateComputeEnv --version 2017-03-12 --ComputeEnv '{
+    "EnvName": "test compute env",          // 计算环境名称
+    "EnvDescription": "test compute env",   // 计算环境描述
+    "EnvType": "MANAGED",                   // 计算环境类型，托管型
+    "EnvData": {                            // 具体配置（可参照 CVM 创建实例说明）
+        "InternetAccessible": {
+            "PublicIpAssigned": "TRUE",
+            "InternetMaxBandwidthOut": 50
+        },
+        "LoginSettings": {
+            "Password": "*****"             // 登录密码（需替换）
+        },
+        "InstanceType": "S1.SMALL1",        // CVM 实例类型
+        "ImageId": "img-xxxxyyyy"           // CVM 镜像 ID（需替换）
+    },
+    "DesiredComputeNodeCount": 2            // 计算节点期望个数
+}'
+--Placement'{
+    "Zone": "ap-guangzhou-2"                // 可用区（可能需替换）
+}'
+```
+
+
+#### 请求示例
+```
+tccli batch CreateComputeEnv --version 2017-03-12  --ComputeEnv '{"EnvName": "test compute env", "EnvDescription": "test compute env", "EnvType": "MANAGED", "EnvData": {"InstanceType": "S1.SMALL2", "ImageId": "待替换", "LoginSettings": {"Password": "待替换"}, "InternetAccessible": {"PublicIpAssigned": "TRUE", "InternetMaxBandwidthOut": 50}, "SystemDisk": {"DiskType": "CLOUD_BASIC", "DiskSize": 50 } }, "DesiredComputeNodeCount": 2 }' --Placement '{"Zone": "ap-guangzhou-2"}'
+```
+
+#### 返回示例
+返回值如下所示，其中 EnvId 为 Batch 计算环境的唯一标识。
+```
+{
+    "EnvId": "env-jlatqfkn", 
+    "RequestId": "297ed003-7373-4950-9721-242d3d40b3ca"
+}
+```
+
+### 查看计算环境列表
+#### 请求示例
+执行以下命令，查看计算环境列表。
+```
+tccli batch DescribeComputeEnvs --version 2017-03-12
+```
+
+#### 返回示例（部分已省略）
+```
+{
+    "TotalCount": 1, 
+    "ComputeEnvSet": [
+        {
+            "EnvId": "env-jlatqfkn", 
+            "ComputeNodeMetrics": {
+                ...
+            }, 
+            "EnvType": "MANAGED", 
+            "DesiredComputeNodeCount": 2, 
+            "EnvName": "test compute env", 
+            "Placement": {
+                ...
+            }, 
+            "CreateTime": "2019-10-08T08:55:12Z"
+        }
+    ], 
+    "RequestId": "7a1f9338-0118-46bf-b59f-60ace9f154f5"
+}
+```
+
+
+### 查看指定计算环境
+#### 请求示例
+执行以下命令，查看指定计算环境。
+```
+tccli batch DescribeComputeEnv --version 2017-03-12 --EnvId env-jlatqfkn
+```
+
+#### 返回示例（部分已省略）
+```
+{
+    "EnvId": "env-jlatqfkn", 
+    "ComputeNodeMetrics": {
+        ...
+    }, 
+    "EnvType": "MANAGED", 
+    "DesiredComputeNodeCount": 2, 
+    "ComputeNodeSet": [
+        ...
+    ], 
+    "RequestId": "407de39c-1c3d-489e-9a35-5257ae561e87", 
+    "Placement": {
+        ...
+    }, 
+    "EnvName": "test compute env", 
+    "CreateTime": "2019-10-08T08:55:12Z"
+}
+```
+
+### 向指定计算环境提交任务
+#### 请求示例
+请结合您的实际情况，替换命令中的相关信息并执行，向指定计算环境提交任务。
+```
+tccli batch SubmitJob --version 2017-03-12  --Job '{"JobName": "test job", "JobDescription": "xxx", "Priority": "1", "Tasks": [{"TaskName": "hello2", "TaskInstanceNum": 1,  "Application": {"DeliveryForm": "LOCAL", "Command": "python -c \"fib=lambda n:1 if n<=2 else fib(n-1)+fib(n-2); print(fib(20))\" "}, "EnvId": "待替换", "RedirectInfo": {"StdoutRedirectPath": "待替换", "StderrRedirectPath":  "待替换"} } ] }' --Placement '{"Zone": "ap-guangzhou-2"}'
+
+```
+
+#### 返回示例
+```
+{
+    "RequestId": "d6903404-5765-474b-b516-39137456fa5a", 
+    "JobId": "job-qjq3mqp7"
+}
+```
+
+### 销毁计算环境
+#### 请求示例
+执行以下命令，销毁计算环境。
+```
+tccli batch DeleteComputeEnv --version 2017-03-12 --EnvId env-jlatqfkn
+```
+
+#### 返回示例
+```
+{
+    "RequestId": "029becda-2a4e-4989-aa77-6fbb5a873555"
+}
+```
+
