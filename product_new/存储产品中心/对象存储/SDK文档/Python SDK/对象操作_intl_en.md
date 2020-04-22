@@ -1,29 +1,29 @@
-## Introduction
+## Overview
 
-This document provides an overview of APIs and SDK sample codes related to simple operations, multipart operations and other operations on objects.
+This document provides an overview of APIs and SDK sample codes related to simple operations, multipart operations and other operations on objects. 
 
-**Simple Operations**
+**Simple operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | Querying object list | Queries some or all objects in a bucket |
 | [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying list of current and historical versions of objects | Queries some or all objects in a bucket and their historical versions |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Simply uploading an object | Uploads an object to a bucket |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Setting object replication | Copies a file to the destination path |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to local |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Setting object replication | Copies an object to the destination path |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects in a single request |
 
-**Multipart Upload Operations**
+**Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information on ongoing multipart uploads |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload task |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying a multipart upload | Queries the information on ongoing multipart uploads |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload job |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads file parts |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts in a specified multipart upload operation |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts in the specified multipart upload operation |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of the entire file |
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload operation and deletes the uploaded parts |
 
@@ -31,34 +31,36 @@ This document provides an overview of APIs and SDK sample codes related to simpl
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restores an archived object | Restores an archived object for access |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for a specified object in a bucket |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for the specified object in a bucket |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
 
 ## Simple Operations
 
-### Querying Object List
+### Querying object list
 
-#### Feature Description
+#### Feature
 
 This API (GET Bucket (List Object)) is used to query some or all objects in a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 list_objects(Bucket, Delimiter="", Marker="", MaxKeys=1000, Prefix="", EncodingType="", **kwargs)
 ```
-#### Sample Request
+#### Request sample
 
+[//]: # (.cssg-snippet-get-bucket)
 ```python
 response = client.list_objects(
     Bucket='examplebucket-1250000000',
-    Prefix='string'
+    Prefix='folder1'
 )
 ```
 
-#### Sample Request with All Parameters
+#### Request sample for all parameters
 
+[//]: # (.cssg-snippet-get-bucket-comp)
 ```python
 response = client.list_objects(
     Bucket='examplebucket-1250000000',
@@ -69,7 +71,7 @@ response = client.list_objects(
     EncodingType='url'
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -77,12 +79,12 @@ response = client.list_objects(
 | Prefix  |  Filters the object keys prefixed with the value of this parameter. It is left empty by default. | String  | No | 
 | Delimiter | A separator which is left empty by default. For example, you can specify it as `/` to indicate folders. | String | No |
 | Marker | Marks the starting point of returned objects. Entries are listed in UTF-8 binary order by default. | String | No | 
-| MaxKeys | Maximum number of returned objects. Default value: 1000. | int | No | 
-| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
+| MaxKeys | The maximum number of returned objects. Default value: 1000. | int | No | 
+| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Available value: url | String | No |
 
-#### Response Description
+#### Response
 
-The response contains object metadata. The type is dict:
+The response contains object metadata in Dict format:
 
 ```python
 {
@@ -123,24 +125,25 @@ The response contains object metadata. The type is dict:
 | Marker | Marks the starting point of returned objects. Entries are listed in UTF-8 binary order by default. | string |
 | NextMarker | Marks the starting point of the next list of returned objects if `IsTruncated` is set to `true`. | string |
 | Name | Bucket name. Format: BucketName-APPID | String | 
-| IsTruncated   |  Specifies whether the returned list is truncated | String|
-| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url` | string | No |
+| IsTruncated   |  Indicates whether the returned object is truncated | String|
+| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Available value: url | String | No |
 | Contents | List of object metadata, including 'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', 'Size' | List |
-| CommonPrefixes | The identical paths between `Prefix` and `Delimiter` are grouped and defined as a common prefix | List |
+| CommonPrefixes | All objects starting with Prefix and ending with Delimiter are grouped into the same type | List |
 
-### Querying Objects and Their Historical Versions 
+### Querying objects and their historical versions 
 
-#### Feature Description
+#### Feature
 
 This API (GET Bucket Object Versions) is used to query some or all objects in a bucket and their historical versions.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 list_objects_versions(Bucket, Prefix="", Delimiter="", KeyMarker="", VersionIdMarker="", MaxKeys=1000, EncodingType="", **kwargs)
 ```
-#### Sample Request
+#### Request sample
 
+[//]: # (.cssg-snippet-list-object-versioning)
 ```python
 response = client.list_objects_versions(
     Bucket='examplebucket-1250000000',
@@ -148,8 +151,9 @@ response = client.list_objects_versions(
 )
 ```
 
-#### Sample Request with All Parameters
+#### Request sample for all parameters
 
+[//]: # (.cssg-snippet-list-object-versioning-comp)
 ```python
 response = client.list_objects_versions(
     Bucket='examplebucket-1250000000',
@@ -161,7 +165,7 @@ response = client.list_objects_versions(
     EncodingType='url'
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -170,12 +174,12 @@ response = client.list_objects_versions(
 | Delimiter | A separator which is left empty by default. For example, you can specify it as `/` to indicate folders. | String | No |
 | Marker | Marks the starting object key of the list of returned objects. Entries are listed in UTF-8 binary order by default. | String | No |
 | VersionIdMarker|  Marks the starting VersionId of the list of returned objects. Entries are listed in UTF-8 binary order by default. | String  |  No |
-| MaxKeys | Maximum number of returned objects. Default value: 1000. | int | No | 
-| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
+| MaxKeys | The maximum number of returned objects. It defaults to 1000. | int | No | 
+| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Available value: url | String | No |
 
-#### Response Description
+#### Response
 
-The response contains object metadata. The type is dict:
+The response contains object metadata in Dict format:
 
 ```python
 {
@@ -234,34 +238,37 @@ The response contains object metadata. The type is dict:
 | NextMarker | Marks the starting object key of the next list of returned objects if `IsTruncated` is set to `true`. | String |
 | NextMarker | Marks the starting VersionId of the next list of returned objects if `IsTruncated` is set to `true`. | String |
 | Name | Bucket name. Format: BucketName-APPID | String |  
-| IsTruncated   |  Specifies whether the returned list is truncated | String|
-| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url` | string | No |
+| IsTruncated   |  Indicates whether the returned object is truncated | String|
+| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Available value: url | string | No |
 | Version | List of metadata of objects of multiple versions, including 'ETag'，'StorageClass'，'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified'，and 'Size' | List |
 | DeleteMarker | List of metadata of delete markers, including 'Key'，'VersionId'，'IsLatest'，'Owner'，and 'LastModified' | List |
-| CommonPrefixes | The identical paths between `Prefix` and `Delimiter` are grouped and defined as a common prefix | List |
+| CommonPrefixes | All objects starting with Prefix and ending with Delimiter are grouped into the same type | List |
 
-### Uploading an Object Using Simple Upload
+### Uploading an object usng simple upload
 
-#### Feature Description
+#### Feature
 
 This API (Put Object) is used to upload an object to a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 put_object(Bucket, Body, Key, **kwargs)
 ```
-#### Sample Request
+#### Request sample
 
+[//]: # (.cssg-snippet-put-object)
 ```python
 response = client.put_object(
     Bucket='examplebucket-1250000000',
-    Body=b'bytes'|file,
+    Body=b'bytes',
     Key='exampleobject',
     EnableMD5=False
 )
 ```
-#### Sample Request with All Parameters
+
+#### Request sample for all parameters
+[//]: # (.cssg-snippet-put-object-comp)
 ```python
 response = client.put_object(
     Bucket='examplebucket-1250000000',
@@ -286,30 +293,30 @@ response = client.put_object(
     }
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
  | Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
  |  Body  | Content of the object to be uploaded. It can be a file stream or a byte stream|  file/bytes | Yes |
- | Key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes | 
+ | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`，its object key is doc/pic.jpg | String | Yes | 
 | EnableMD5 | Whether the SDK needs to calculate Content-MD5. This feature is disabled by default. The upload will take longer if it is enabled |Bool | No | 
 | ACL | Sets the object ACL, e.g. 'private'，'public-read' |String| No |
 | GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"` | String | No |
 | GrantRead | Grants the grantee Read access in the format of `id="OwnerUin"` | String | No |
  | StorageClass | Sets the object storage class; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD` | String | No |
- | Expires | Sets `Expires` | String | No | 
- | CacheControl | Cache policy. Sets `Cache-Control` | String | No |
+ | Expires | Sets `Expires`. | String | No | 
+ | CacheControl | Cache policy. Sets `Cache-Control`. | String | No |
  | ContentType | Content type. Sets `Content-Type` | String | No |  
- | ContentDisposition | File name. Sets `Content-Disposition` | String | No |
- | ContentEncoding | Encoding format. Sets `Content-Encoding` | String | No |
- | ContentLanguage | Language type. Sets `Content-Language` | String | No |
- | ContentLength | Sets the length of the request content | String | No | 
+ | ContentDisposition | File name. Sets the value of `ContentDisposition` | String | No |
+ | ContentEncoding | Encoding format. Sets the value of  `Content-Encoding` | String | No |
+ | ContentLanguage | Language type. Sets Sets the value of  `Content-Language` | String | No |
+ | ContentLength | Sets the length of the transmission content | string | No | 
  | ContentMD5 | Sets the MD5 of the object to be uploaded for verification | String | No | 
  |  Metadata | User-defined object metadata. It must start with `x-cos-meta`; otherwise, it will be ignored | Dict | No |
 
-#### Response Description
+#### Response
 This response contains attributes of the uploaded object. The type is dict:
 
 ```python
@@ -327,18 +334,27 @@ This response contains attributes of the uploaded object. The type is dict:
 
 
 
-### Querying Object Metadata
+### Querying object metadata
 
-#### Feature Description
+#### Feature
 
 The API (HEAD Object) is used to query object metadata.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 head_object(Bucket, Key, **kwargs)
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-head-object)
+```python
+response = client.head_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject'
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.head_object(
@@ -348,18 +364,18 @@ response = client.head_object(
     IfModifiedSince='Wed, 28 Oct 2014 20:30:00 GMT',
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
   | Bucket | Bucket name. Format: BucketName-APPID | String | Yes | 
-  | Key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+  | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
   | VersionId   | Specifies the object version ID if versioning is enabled  | String  | No | 
   | IfModifiedSince | The object metadata is returned only if the object is modified after the specified time in GMT format | String | No | 
 
-#### Response Description
+#### Response
 
-The response contains object metadata. The type is dict:
+The response contains object metadata in Dict format:
 
 ```python
 {
@@ -382,7 +398,7 @@ The response contains object metadata. The type is dict:
 | Parameter Name | Description | Type | 
 | -------------- | -------------- |---------- | 
  | ETag  |  MD5 of the object | String |
- | Last-Modified | Last modification time of the object | String |
+ | Last-Modified | Last modified time of the object | String |
  | CacheControl | Cache policy. HTTP standard header. | String | 
  | ContentType | Content type. HTTP standard header. | String | 
  | ContentDisposition | File name. HTTP standard header | String |
@@ -394,19 +410,29 @@ The response contains object metadata. The type is dict:
  |  x-cos-version-id   |  Version ID of the object if versioning is enabled | String  | 
 
 
-### Downloading an Object
+### Downloading an object
 
-#### Feature Description
+#### Feature
 
 This API (Get Object) is used to download an object.
 
-#### Method Prototype
+#### Method prototype
 
 ```
  get_object(Bucket, Key, **kwargs)
 ```
-#### Sample Request
+#### Request sample
+```python
+response = client.get_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject'
+)
 
+response['Body'].get_stream_to_file('exampleobject')
+```
+#### Request sample for all parameters
+
+[//]: # (.cssg-snippet-get-object)
 ```python
 response = client.get_object(
     Bucket='examplebucket-1250000000',
@@ -422,10 +448,10 @@ response = client.get_object(
     ResponseContentLanguage='string',
     ResponseContentType='string',
     ResponseExpires='string',
-    'VersionId' => 'string'
+    VersionId='string'
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -436,15 +462,15 @@ response = client.get_object(
  | IfModifiedSince | The object is returned only if the object is modified after the specified time in GMT format | String | No |
  |  IfNoneMatch  |  The object is returned only if Etag does not match the specified content | String  | No | 
  | IfUnmodifiedSince | The object is returned only if the object is modified before or at the specified time in GMT format  | String | No |
- | ResponseCacheControl | Sets the `Cache-Control` in the response header | String | No | 
- | ResponseContentDisposition | Sets the `Content-Disposition` in the response header | String | No | 
- | ResponseContentEncoding | Sets the `Content-Encoding` in the response header | String | No |
- | ResponseContentLanguage | Sets the `Content-Language` in the response header | String | No | 
- | ResponseContentType | Sets the `Content-Type` in the response header | String | No |
- | Response-expires | Sets the `Expires` in the response header | String | No | 
+ | ResponseCacheControl | Sets the value of `Cache-Control` in the response header | String | No | 
+ | ResponseContentDisposition | Sets the value of `Content-Disposition` in the response header | String | No | 
+ | ResponseContentEncoding | Sets the value of `Content-Encoding` in the response header | String | No |
+ | ResponseContentLanguage | Sets the value of `Content-Language` in the response header | String | No | 
+ | ResponseContentType | Sets the value of `Content-Type` in the response header | String | No |
+ | Response-expires | Sets the value of `Expires` in the response header | String | No | 
  | VersionId | Specifies the version ID of the object to be downloaded | String | No | 
 
-#### Response Description
+#### Response
 
 The response contains the content and the metadata of the download object. The type is dict:
 
@@ -548,28 +574,42 @@ The response contains the content and the metadata of the download object. The t
 
 
 
-### Setting Object Replication
+### Setting object replication
 
-#### Feature Description
+#### Feature
 
 This API (PUT Object - Copy) is used to copy a file to a destination path.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 copy_object(Bucket, Key, CopySource, CopyStatus='Copy', **kwargs)
 ```
-#### Sample Request
+#### Request sample
 
+[//]: # (.cssg-snippet-copy-object)
 ```python
-response = client.put_object(
+response = client.copy_object(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
     CopySource={
-        'Bucket': 'examplebucket-1250000000', 
+        'Bucket': 'sourcebucket-1250000000', 
+        'Key': 'exampleobject', 
+        'Region': 'ap-guangzhou'
+    }
+)
+```
+#### Request sample for all parameters
+
+```python
+response = client.copy_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    CopySource={
+        'Bucket': 'sourcebucket-1250000000', 
         'Key': 'exampleobject', 
         'Region': 'ap-guangzhou',
-        'VersionId': 'string'
+        'VesionId': 'string'
     },
     CopyStatus='Copy'|'Replaced',
     ACL='private'|'public-read',
@@ -588,12 +628,12 @@ response = client.put_object(
     }
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
  | Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
- | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes | 
+ | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is doc/pic.jpg. | string | Yes | 
  |  CopySource  | Describes the path to the source object, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
  | XCosMetadataDirective | Valid values: 'Copy': ignore the configured metadata and copy the file directly; 'Replaced': modify the metadata according to the configured metadata. If the destination path is identical to the source path, this parameter must be set to ‘Replaced’. | String | Yes |
 | ACL | Sets the ACL of the object, e.g. 'private', 'public-read' |String| No |
@@ -601,15 +641,15 @@ response = client.put_object(
 |GrantRead | Grants the grantee Read access in the format of `id="OwnerUin"`| String | No |
  | XCosStorageClass | Sets the object storage class: `STANDARD` or `STANDARD_IA`. Default value: `STANDARD` | String | No |
  | Expires | Sets `Expires`. | String | No | 
- | CacheControl | Cache policy. Sets `Cache-Control`. | String | No | 
- | ContentType | Content type. Sets `Content-Type`. | String | No | 
- | ContentDisposition | File name. Sets `Content-Disposition`. | String | No |
+ | CacheControl | Cache policy. Sets the value of `Cache-Control`. | String | No | 
+ | ContentType | Content type. Sets the value of `Content-Type`. | String | No | 
+ | ContentDisposition | File name. Sets the value of `Content-Disposition`. | String | No |
  | ContentEncoding | Encoding format. Sets `Content-Encoding`. | String | No | 
- | ContentLanguage | Language type. Sets `Content-Language` | String | No |
+ | ContentLanguage | Language type. Sets the value of `Content-Language` | String | No |
  |  Metadata | User-defined object metadata | Dict |  No | 
  
 
-#### Response Description
+#### Response
 This response contains attributes of the uploaded object. The type is dict:
 
 ```python
@@ -629,18 +669,27 @@ This response contains attributes of the uploaded object. The type is dict:
 | x-cos-copy-source-version-id | Version ID of the source object | String | 
 
 
-### Deleting a Single Object
+### Deleting a single object
 
-#### Feature Description
+#### Feature
 
 This API (Delete Object) is used to delete a specified object.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 delete_object(Bucket, Key, **kwargs)
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-delete-object)
+```python
+response = client.delete_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject'
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.delete_object(
@@ -649,7 +698,7 @@ response = client.delete_object(
     VersionId='string',
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -657,8 +706,9 @@ response = client.delete_object(
  | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
  | VersionId |Specifies the object version ID if versioning is enabled | String  | No | 
 
-#### Response Description
-This response contains the information on the deleted object. The type is dict:
+#### Response
+
+This response contains the information on the deleted object in Dict format:
 
 ```python
 {
@@ -672,18 +722,36 @@ This response contains the information on the deleted object. The type is dict:
 | x-cos-version-id | Version ID of the deleted object | String |
 | x-cos-delete-marker | Identifies whether the deleted object is a delete marker | String | 
 
-### Deleting Multiple Objects
+### Deleting multiple objects
 
-#### Feature Description
+#### Feature
 
 The API（DELETE Multiple Objects）is used to delete multiple objects.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 delete_objects(Bucket, Delete={}, **kwargs)
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-delete-multi-object)
+```python
+response = client.delete_objects(
+    Bucket='examplebucket-1250000000',
+    Delete={
+        'Object': [
+            {
+                'Key': 'exampleobject1'
+            },
+            {
+                'Key': 'exampleobject2'
+            }
+        ]
+    }
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.delete_objects(
@@ -704,18 +772,18 @@ response = client.delete_objects(
 )
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
  | Bucket | Bucket name. Format: BucketName-APPID | String | Yes | 
  | Delete  | Describes the objects to be deleted and the way the deletion results are returned | Dict | Yes | 
  | Objects | Information on the objects to be deleted | List | Yes | 
- | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | No |
+ | Key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
  | VersionId | Version IDs of the objects to be deleted if versioning is enabled. | String  | No |
  | Quiet | Specifies how the deletion results are returned. Valid values: 'true', only information on failed deletions is returned; 'false', information on all deletions is returned. Default value: 'false' | String | No |
 
-#### Response Description
+#### Response
 This response contains results of the deletions. The type is dict:
 ```python
 {
@@ -761,18 +829,27 @@ Operations related to multipart uploads include the following:
 - Resuming a multipart upload: querying uploaded parts, uploading parts, and completing a multipart upload
 - Deleting uploaded parts
 
-### Querying Multipart Uploads
+### Querying multipart upload
 
-#### Feature Description
+#### Feature
 
 This API (List Multipart Uploads) is used to query ongoing multipart uploads in a specified bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 list_multipart_uploads(Bucket, Prefix="", Delimiter="", KeyMarker="", UploadIdMarker="", MaxUploads=1000, EncodingType="", **kwargs)
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-list-multi-upload)
+```python
+response = client.list_multipart_uploads(
+    Bucket='examplebucket-1250000000',
+    Prefix='dir'
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.list_multipart_uploads(
@@ -785,7 +862,7 @@ response = client.list_multipart_uploads(
     EncodingType='url'
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -795,9 +872,9 @@ response = client.list_multipart_uploads(
 | KeyMarker | Specifies the starting key of the multipart upload list. It is used together with `UploadIdMarker`. | String | No |
 | UploadIdMarker | Specifies the starting `UploadId` of the multipart upload list. It is used together with `KeyMarker`. If `KeyMarker` is not specified, `UploadIdMarker` will be ignored. | String | No |
 | MaxUploads | Maximum number of multipart uploads returned at a time. Default value: 1000. | Int | No | 
-| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
+| EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Available value: url | String | No |
 
-#### Response Description
+#### Response
 
 This response contains information on the multipart uploads obtained. The type is dict:
 
@@ -855,16 +932,26 @@ This response contains information on the multipart uploads obtained. The type i
 
 ### Initializing a Multipart Upload
 
-#### Feature Description
+#### Feature
 
 This API (Initiate Multipart Upload) is used to initialize a multipart upload and obtain the corresponding uploadId.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 create_multipart_upload(Bucket, Key, **kwargs):
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-init-multi-upload)
+```python
+response = client.create_multipart_upload(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    StorageClass='STANDARD'
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.create_multipart_upload(
@@ -883,17 +970,17 @@ response = client.create_multipart_upload(
     },
     ACL='private'|'public-read',
     GrantFullControl='string',
-    'GrantRead' => 'string',
+    GrantRead='string'
 )
 # Obtain UploadId for use by other APIs
-upload_id = response['UploadId']
+uploadid = response['UploadId']
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
  | Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
- | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+ | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
  | StorageClass | Sets the object storage class; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD` | String | No | 
  | Expires | Sets `Expires`. | String | No |
  | CacheControl | Cache policy. Sets `Cache-Control`. | String | No | 
@@ -906,7 +993,7 @@ upload_id = response['UploadId']
 | GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"` | String | No |
 | GrantRead | Grants the grantee Read access in the format of `id="OwnerUin"` | String | No |
 
-#### Response Description
+#### Response
 
 This response contains the initialization information of the multipart upload. The type is dict:
 
@@ -923,18 +1010,31 @@ This response contains the initialization information of the multipart upload. T
 | -------------- | -------------- |---------- |
 | UploadId | ID of the multipart upload | String |
 | Bucket | Bucket name. Format: BucketName-APPID | String |
-| Key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string |
+| Key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 
 ### Uploading Parts
 
 This API (Upload Part) is used to upload parts.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 upload_part(Bucket, Key, Body, PartNumber, UploadId, **kwargs)
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-upload-part)
+```python
+# Note: The maximum number of parts to be uploaded is 10,000.
+response = client.upload_part(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    Body=b'b'*1024*1024,
+    PartNumber=1,
+    UploadId='exampleUploadId'
+)
+```
+#### Request sample for all parameters
 
 ```python
 # Note: The maximum number of parts to be uploaded is 10,000.
@@ -949,7 +1049,7 @@ response = client.upload_part(
     ContentMD5='string'
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -962,7 +1062,7 @@ response = client.upload_part(
  | ContentLength | Sets the length of the request content | string | No |
  | ContentMD5 | Sets the MD5 of the object to be uploaded for verification | String | No |
  
-#### Response Description
+#### Response
 
 This response contains attributes of the uploaded parts. The type is dict:
 
@@ -980,13 +1080,28 @@ This response contains attributes of the uploaded parts. The type is dict:
 
 This API (Upload Part - Copy) is used to copy an object as a part.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 upload_part_copy(Bucket, Key, PartNumber, UploadId, CopySource, CopySourceRange='', **kwargs)
 ```
+#### Request sample
 
-#### Sample Request
+[//]: # (.cssg-snippet-upload-part-copy)
+```python
+response = client.upload_part_copy(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    PartNumber=1,
+    UploadId='exampleUploadId',
+    CopySource={
+        'Bucket': 'sourcebucket-1250000000', 
+        'Key': 'exampleobject', 
+        'Region': 'ap-guangzhou'
+    }
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.upload_part_copy(
@@ -995,9 +1110,9 @@ response = client.upload_part_copy(
     PartNumber=100,
     UploadId='string',
     CopySource={
-        'Bucket': 'examplebucket-1250000000', 
-        'Key': 'exampleobject', 
-        'Region': 'ap-guangzhou',
+        'Bucket': 'sourcebucket-1250000000', 
+        'Key': 'sourceObject', 
+        'Region': 'COS_REGION', #replace with source bucket’s Region
         'VersionId': 'string'
     },
     CopySourceRange='string',
@@ -1008,12 +1123,12 @@ response = client.upload_part_copy(
 )
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
-| key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
+| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg. | string | Yes |
 | PartNumber | Identifies the part number | int | Yes |
 | UploadId | ID of the multipart upload | string | Yes |
 |  CopySource  | Describes the path to the source object, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
@@ -1023,7 +1138,7 @@ response = client.upload_part_copy(
 |CopySourceIfNoneMatch| The source object is copied only if the Etag of the source object does not match the specified value |String| No |
 |CopySourceIfUnmodifiedSince| The source object is copied only if it is not modified after the specified time|String| No |
 
-#### Response Description
+#### Response
 
 This response contains the attributes of the copied part. The type is dict:
 ```python
@@ -1040,18 +1155,28 @@ This response contains the attributes of the copied part. The type is dict:
 | LastModified | Last modified time of the copied part | string |
 | x-cos-copy-source-version-id | Version ID of the source object | String | 
 
-### Querying Uploaded Parts
+### Querying uploaded parts
 
-#### Feature Description
+#### Feature
 
 This API (List Parts) is used to query the uploaded parts in a specific multipart upload.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 list_parts(Bucket, Key, UploadId, MaxParts=1000, PartNumberMarker=0, EncodingType='', **kwargs)
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-list-parts)
+```python
+response = client.list_parts(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    UploadId='exampleUploadId'
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.list_parts(
@@ -1063,7 +1188,7 @@ response = client.list_parts(
     EncodingType='url'
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -1074,7 +1199,7 @@ response = client.list_parts(
 | PartNumberMarker | The parts are listed starting from the one following `PartNumberMarker`. Default value: 0, which means the parts are listed from the first one. | int | No |
 | EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String | No |
 
-#### Response Description
+#### Response
 
 This response contains information on the uploaded parts obtained. The type is dict:
 
@@ -1111,7 +1236,7 @@ This response contains information on the uploaded parts obtained. The type is d
 | Parameter Name | Description | Type | 
 | -------------- | -------------- |---------- | 
 | Bucket | Bucket name. Format: BucketName-APPID | String |
-| Key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | 
+| Key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | 
 | UploadId | ID of the multipart upload | String | 
 | EncodingType | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url` | String |
 | MaxParts | Maximum number of parts returned at a time. Default value: 1000. | String |
@@ -1127,22 +1252,23 @@ This response contains information on the uploaded parts obtained. The type is d
 
 ### Completing a Multipart Upload
 
-#### Feature Description
+#### Feature
 
 This API (Complete Multipart Upload) is used to complete a multipart upload.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 complete_multipart_upload(Bucket, Key, UploadId, MultipartUpload={}, **kwargs)
 ```
-#### Sample Request
+#### Request sample
 
+[//]: # (.cssg-snippet-complete-multi-upload)
 ```python
 response = client.complete_multipart_upload(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
-    UploadId=uploadid,
+    UploadId='exampleUploadId',
     MultipartUpload={
         'Part': [
             {
@@ -1158,7 +1284,7 @@ response = client.complete_multipart_upload(
 )
 
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -1167,7 +1293,7 @@ response = client.complete_multipart_upload(
 | UploadId | ID of the multipart upload | String | Yes | 
 | MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict | 
 
-#### Response Description
+#### Response
 
 This response contains information on the merged object. The type is dict:
 
@@ -1190,25 +1316,26 @@ This response contains information on the merged object. The type is dict:
 
 ### Aborting a Multipart Upload
 
-#### Feature Description
+#### Feature
 
 This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 abort_multipart_upload(Bucket, Key, UploadId, **kwargs)
 ```
-#### Sample Request
+#### Request sample
 
+[//]: # (.cssg-snippet-abort-multi-upload)
 ```python
 response = client.abort_multipart_upload(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
-    UploadId=uploadid
+    UploadId='exampleUploadId'
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -1216,23 +1343,38 @@ response = client.abort_multipart_upload(
 | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
 
-#### Response Description
+#### Response
 This method returns None.
 
 ## Other Operations
 
-### Restoring an Archived Object 
+### Restore an archived object 
 
-#### Feature Description
+#### Feature
 
 This API (POST Object restore) is used to restore an archived object.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 restore_object(Bucket, Key, RestoreRequest={}, **kwargs)
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-restore-object)
+```python
+response = client.restore_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    RestoreRequest={
+        'Days': 100,
+        'CASJobParameters': {
+            'Tier': 'Standard'
+        }
+    }
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.restore_object(
@@ -1246,7 +1388,7 @@ response = client.restore_object(
     }
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
@@ -1257,22 +1399,32 @@ response = client.restore_object(
 |CASJobParameters| Describes the configuration of the restoration type| Dict| No |
 |Tier| Describes the mode of retrieving the temporary object. Valid values: 'Expedited' (fast), 'Standard' (standard)，and 'Bulk' (slow) | String| No |
 
-#### Response Description
+#### Response
 This method returns None.
 
 
-### Setting Object ACL
+### Setting object ACL
 
-#### Feature Description
+#### Feature
 
 The API (PUT Object acl) is used to set the ACL for an object in a bucket. The `AccessControlPolicy` parameter and other permission parameters cannot be specified at the same time.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 put_object_acl(Bucket, Key, AccessControlPolicy={}, **kwargs)
 ```
-#### Sample Request
+#### Request sample
+
+[//]: # (.cssg-snippet-put-object-acl)
+```python
+response = client.put_object_acl(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    ACL='public-read'
+)
+```
+#### Request sample for all parameters
 
 ```python
 response = client.put_object_acl(
@@ -1302,50 +1454,51 @@ response = client.put_object_acl(
     }
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
 | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes | 
 | ACL | Sets the object ACL, e.g. 'private'，'public-read'|String| No | 
-| GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"` | String | No |
+| GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"`| String | No |
 |GrantRead |Grants the grantee Read access in the format of `id="OwnerUin"` | String | No |
 | AccessControlPolicy   | Grants the grantee access to the object. For the format, see the response description of `GET Object acl` | Dict  | No  | 
 
 
-#### Response Description
+#### Response
 
 This method returns None.
 
-### Querying Object ACL
+### Querying object ACL
 
-#### Feature Description
+#### Feature
 
 The API (GET Object acl) is used to query the ACL of an object.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 get_object_acl(Bucket, Key, **kwargs)
 ```
-#### Sample Request
+#### Request sample
 
+[//]: # (.cssg-snippet-get-object-acl)
 ```python
 response = client.get_object_acl(
     Bucket='examplebucket-1250000000',
     Key='exampleobject'
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
-| Bucket | Bucket name. Format: BucketName-APPID | string | Yes |
+| Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
 | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 
 
-#### Response Description
+#### Response
 
 This response contains bucket ACL information. The type is dict:
 ```python
@@ -1382,18 +1535,19 @@ This response contains bucket ACL information. The type is dict:
 
  ## Advanced APIs (Recommended)
 
-### Uploading Objects (Checkpoint Restart)
+### Uploading objects (checkpoint restart)
 
-#### Feature Description
+#### Feature
 This API can automatically select between simple upload and multipart upload according to the file size. It uses simple upload for files smaller than or equal to 20 MB and multipart upload for files larger than 20 MB. It also supports automatic checkpoint restart for incomplete multipart uploads.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 upload_file(Bucket, Key, LocalFilePath, PartSize=1, MAXThread=5, **kwargs)
 ```
-#### Sample Request
+#### Request sample
 
+[//]: # (.cssg-snippet-transfer-upload-object)
 ```python
 response = client.upload_file(
     Bucket='examplebucket-1250000000',
@@ -1403,7 +1557,7 @@ response = client.upload_file(
 )
 ```
 
-#### Sample Request with All Parameters
+#### Request Example for All Parameters
 ```python
 response = client.upload_file(
     Bucket='examplebucket-1250000000',
@@ -1430,13 +1584,13 @@ response = client.upload_file(
     }
 )
 ```
-#### Parameter Description
+#### Parameter description
 
 
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
  | Bucket | Bucket name. Format: BucketName-APPID | String | Yes |
- | Key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes | 
+ | key | Object key, the unique identifier of an object in a bucket. For example, if the access domain name of an object is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`，its object key is doc/pic.jpg | String | Yes | 
 |  LocalFilePath  | Path to the local file |  String | Yes |
 |  PartSize  | Part size. Default value: 1 MB |  Int |  No |
 |  MAXThread  | Maximum number of concurrent multipart upload tasks. Default value: 5 |  Int |  No |
@@ -1446,16 +1600,16 @@ response = client.upload_file(
 | GrantRead | Grants the grantee Read access in the format of `id="OwnerUin"` | String | No |
  | StorageClass | Sets the object storage class; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD` | String | No |
  | Expires | Sets `Expires`. | String | No | 
- | CacheControl | Cache policy. Sets `Cache-Control`. | String | No |
- | ContentType | Content type. Sets `Content-Type`. | String | No |  
- | ContentDisposition | File name. Sets `Content-Disposition`. | String | No |
+ | CacheControl | Cache policy. Sets the value of `Cache-Control`. | String | No |
+ | ContentType | Content type. Sets the value of `Content-Type`. | String | No |  
+ | ContentDisposition | File name. Sets the value of `Content-Disposition`. | String | No |
  | ContentEncoding | Encoding format. Sets `Content-Encoding`. | String | No |
- | ContentLanguage | Language type. Sets `Content-Language` | String | No |
+ | ContentLanguage | Language type. Sets the value of `Content-Language` | String | No |
  | ContentLength | Sets the length of the request content | string | No | 
  | ContentMD5 | Sets the MD5 of the object to be uploaded for verification | String | No | 
  |  Metadata | User-defined object metadata | Dict |  No |
 
-#### Response Description
+#### Response
 This response contains attributes of the uploaded object. The type is dict:
 
 ```python
