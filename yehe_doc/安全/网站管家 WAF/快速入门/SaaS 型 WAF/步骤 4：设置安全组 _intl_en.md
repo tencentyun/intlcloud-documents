@@ -1,10 +1,10 @@
 Security group is an instance-level firewall service provided by Tencent Cloud to control inbound and outbound traffic of CVM instances. You can configure a security group to allow only traffic from WAF to access your website, preventing attackers from bypassing WAF and directly attacking your real server.
 The following uses allowing the WAF intermediate IP `111.230.27.90` in the security group as an example to describe how to configure the security group.
->You can get the intermediate IP on the [Protection Settings](https://console.cloud.tencent.com/guanjia/waf/config) page in the WAF Console.
+> !You can get the intermediate IP on the [Protection Settings](https://console.cloud.tencent.com/guanjia/waf/config) page in the WAF Console.
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/securitygroup) and click **Security Group** on the left sidebar.
 2. On the security group page, click **Create**, enter the information as required, select **Custom** as the template, enter the security group name (such as `my-security-group`) and remarks, and click **OK**.
-	![1](https://main.qcloudimg.com/raw/bf46812f1d687bae4a9cc2eebb597c11.png)
+	![1](![1](https://main.qcloudimg.com/raw/bf46812f1d687bae4a9cc2eebb597c11.png)
 3. In the security group list, find the newly created security group and click its ID to enter its details page.
 4. On the inbound rule page, click **Add Rule**.
 	 ![2](https://main.qcloudimg.com/raw/89645efab201d0b208aee920091b9667.png)

@@ -1,8 +1,9 @@
 ## Feature Overview
 CC protection protects access to specified URLs of your website. CC protection 2.0, as a completely upgraded version, supports intelligent and custom CC protection policies. Based on big data analysis of exceptional responses (response timeout or latency) from the real server and historical access requests to the website, Intelligent CC protection can intelligently generate protection policies in order to block high-frequency access requests in real time. Custom CC protection allows you to custom protection rules based on access source IP or session frequency to process access requests by means of alarming, CAPTCHA verification, and blocking.
 >
->- Intelligent and custom CC protection policies are mutually exclusive and cannot be enabled at the same time.
->- If you use a session-based CC protection policy, you should set the session first before setting the policy.
+- Intelligent and custom CC protection policies are mutually exclusive and cannot be enabled at the same time.
+- If you use a session-based CC protection policy, you should set the session first before setting the policy.
+- If your WAF service does not support CC protection 2.0, please see Legacy CC Protection Settings for configuration.
 
 ## Configuration Steps
 #### **Example 1. Intelligent CC protection configuration**
@@ -73,5 +74,5 @@ Assume that the complete cookie content in a request is `cookie_1 = 123;cookie_2
 7. After the configuration is completed, the session-based CC protection policy will take effect.
 >If you use session-based CC protection, you cannot view IP blocking information in the IP blocking status section.
 
-[Previous Step: DNS Hijacking Detection](https://intl.cloud.tencent.com/document/product/627/11708)
-[Next Step: Webpage Tampering Prevention](https://intl.cloud.tencent.com/document/product/627/11710)
+[Previous Step: DNS Hijacking Detection](/document/product/627/11708)
+[Next Step: Webpage Tampering Prevention](/document/product/627/11710)
