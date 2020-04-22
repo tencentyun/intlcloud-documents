@@ -54,7 +54,7 @@ public Guzzle\Service\Resource\Model listObjects(array $args = array());
 
 #### Sample requests
 ##### Sample 1: Query a list of objects with specified prefix and starting object
-[//]: # (.cssg-snippet-get-bucket-comp)
+[//]: # ".cssg-snippet-get-bucket-comp"
 ```php
 try{
     $result = $cosClient->listObjects(array(
@@ -138,7 +138,7 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | Name | String | Bucket name. Format: BucketName-APPID                         | No |
 | Delimiter | String | A separator which is left empty by default. For example, you can specify it as `/` to indicate folders.    | No |
@@ -164,7 +164,7 @@ public Guzzle\Service\Resource\Model listObjectVersions(array $args = array());
 ```
 #### Sample requests
 ##### Sample 1: Query a list of historical objects
-[//]: # (.cssg-snippet-list-object-versioning)
+[//]: # ".cssg-snippet-list-object-versioning"
 ```php
 try{
     $result = $cosClient->listObjectVersions(array(
@@ -249,7 +249,7 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | Name | String | Bucket name. Format: BucketName-APPID                         | No |
 | Delimiter | String | A separator which is left empty by default. For example, you can specify it as `/` to indicate folders.    | No |
@@ -282,7 +282,7 @@ public Guzzle\Service\Resource\Model putObject(array $args = array())
 
 #### Sample requests
 ##### Sample 1: Upload a local file
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```php
 try{ 
     $result = $cosClient->putObject(array( 
@@ -300,7 +300,7 @@ try{
 ```
 
 ##### Sample 2: Upload an archived file
-[//]: # (.cssg-snippet-put-object-archive)
+[//]: # ".cssg-snippet-put-object-archive"
 ```php
 try{ 
     $result = $cosClient->putObject(array( 
@@ -318,7 +318,7 @@ try{
 ```
 
 ##### Sample 3: Upload a specified Content-type file
-[//]: # (.cssg-snippet-put-object-with-content-type)
+[//]: # ".cssg-snippet-put-object-with-content-type"
 ```php
 try{ 
     $result = $cosClient->putObject(array( 
@@ -374,7 +374,7 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | ETag | String | MD5 of the uploaded file | No |
 | VersionId | String | The version ID of the file when versioning is enabled. | No  |
@@ -394,7 +394,7 @@ public Guzzle\Service\Resource\Model headObject(array $args = array());
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 ```php
 try{
     $result = $cosClient->headObject(array(
@@ -458,14 +458,14 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | CacheControl | String | Cache policy. Sets CacheControl | No |
 | ContentDisposition | String | File name. Sets ContentDisposition | No |
 | ContentEncoding | String | Encoding format. Sets ContentEncoding | No |
 | ContentLanguage | String | Language type. Sets ContentLanguage | No |
 | ContentLength | Int | Sets transmission length | No |
-| ContentType | String | Content Type. Sets ContentType | No | 
+| ContentType | String | Content Type. Sets ContentType | No |
 | Metadata | Array | File metadata customized by the user | No |
 | StorageClass | String | Sets the object storage class; Options: STANDARD, STANDARD_IA, ARCHIVE | No |
 | ServerSideEncryption | String | Server-side encryption method | No |
@@ -487,7 +487,7 @@ public Guzzle\Service\Resource\Model getObject(array $args = array());
 
 #### Sample requests
 ##### Sample 1: Download a file locally
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```php
 try{
     $result = $cosClient->getObject(array(
@@ -503,7 +503,7 @@ try{
 ```
 
 ##### Sample 2: Multipart download
-[//]: # (.cssg-snippet-get-object-range)
+[//]: # ".cssg-snippet-get-object-range"
 ```php
 try{
     $result = $cosClient->getObject(array(
@@ -520,7 +520,7 @@ try{
 ```
 
 ##### Sample 3: Download a file with specified version ID
-[//]: # (.cssg-snippet-get-object-with-versionId)
+[//]: # ".cssg-snippet-get-object-with-versionId"
 ```php
 try{
     $result = $cosClient->getObject(array(
@@ -598,7 +598,7 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | Body | File/String | Content to be downloaded    | No |
 | ETag | String | MD5 of a file | No |
@@ -627,7 +627,7 @@ public Guzzle\Service\Resource\Model copyObject(array $args = array());
 
 #### Sample requests
 ##### Sample 1: Copy an object
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```php
 try{
     $result = $cosClient->copyObject(array(
@@ -644,7 +644,7 @@ try{
 ```
 
 ##### Sample 2: Copy an object with specified version ID
-[//]: # (.cssg-snippet-copy-object-with-versionId)
+[//]: # ".cssg-snippet-copy-object-with-versionId"
 ```php
 try{
     $result = $cosClient->copyObject(array(
@@ -661,7 +661,7 @@ try{
 ```
 
 ##### Sample 3: Change COS class to Archive
-[//]: # (.cssg-snippet-copy-object-update-storage-class)
+[//]: # ".cssg-snippet-copy-object-update-storage-class"
 ```php
 try{
     $result = $cosClient->copyObject(array(
@@ -679,7 +679,7 @@ try{
 ```
 
 ##### Sample 4: Modifying metadata
-[//]: # (.cssg-snippet-copy-object-update-metadata)
+[//]: # ".cssg-snippet-copy-object-update-metadata"
 ```php
 try{
     $result = $cosClient->copyObject(array(
@@ -723,7 +723,7 @@ public Guzzle\Service\Resource\Model deleteObject(array $args = array());
 
 #### Request samples
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```php
 try{
     $result = $cosClient->deleteObject(array(
@@ -762,7 +762,7 @@ public Guzzle\Service\Resource\Model deleteObjects(array $args = array());
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 ```php
 try{
     $result = $cosClient->deleteObjects(array(
@@ -848,7 +848,7 @@ public Guzzle\Service\Resource\Model listMultipartUploads(array $args = array())
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```php
 try{
     $result = $cosClient->listMultipartUploads(array(
@@ -946,7 +946,7 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | Bucket | String | Bucket name. Format: BucketName-APPID | No |
 | IsTruncated | Int | Indicates whether the returned objects are truncated | No |
@@ -982,7 +982,7 @@ public Guzzle\Service\Resource\Model createMultipartUpload(array $args = array()
 
 #### Request samples
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```php
 try{
     $result = $cosClient->createMultipartUpload(array(
@@ -1034,7 +1034,7 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | Bucket | String | Bucket name. Format: BucketName-APPID | No |
 | Key | String | Object key | No |
@@ -1054,7 +1054,7 @@ public Guzzle\Service\Resource\Model listParts(array $args = array());
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```php
 try{
     $result = $cosClient->listParts(array(
@@ -1131,7 +1131,7 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | Bucket | String | Bucket name. Format: BucketName-APPID | No |
 | Key | String | Object key | No |
@@ -1159,7 +1159,7 @@ public Guzzle\Service\Resource\Model uploadPart(array $args = array());
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```php
 try{
     $result = $cosClient->uploadPart(array(
@@ -1206,7 +1206,7 @@ Guzzle\Service\Resource\Model Object
 ```
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------------- | -------- | ---------------------------------- | ------------- |
 | ETag | String | MD5 of the uploaded part | No |
 
@@ -1224,7 +1224,7 @@ public Guzzle\Service\Resource\Model completeMultipartUpload(array $args = array
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```php
 try{
     $result = $cosClient->completeMultipartUpload(array(
@@ -1273,7 +1273,7 @@ public Guzzle\Service\Resource\Model abortMultipartUpload(array $args = array())
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```php
 try{
     $result = $cosClient->abortMultipartUpload(array(
@@ -1314,7 +1314,7 @@ public Guzzle\Service\Resource\Model restoreObject(array $args = array());
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 ```php
 try{
     $result = $cosClient->restoreObject(array(
@@ -1357,7 +1357,7 @@ public Guzzle\Service\Resource\Model putObjectAcl(array $args = array());
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-put-object-acl)
+[//]: # ".cssg-snippet-put-object-acl"
 ```php
 try{
     $result = $cosClient->putObjectAcl(array(
@@ -1418,7 +1418,7 @@ public Guzzle\Service\Resource\Model getObjectAcl(array $args = array());
 
 #### Sample requests
 
-[//]: # (.cssg-snippet-get-object-acl)
+[//]: # ".cssg-snippet-get-object-acl"
 ```php
 try{
     $result = $cosClient->getObjectAcl(array(
@@ -1468,7 +1468,7 @@ Array
 
 #### Response
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ----------- | ------ | ----------------------------------------------- | --------------- |
 | Grants      | Array  | List of ACL permissions                                     | No              |
 | Grant       | Array  | ACL permission information                                     | Grants          |
@@ -1491,7 +1491,7 @@ This API internally calls Simple Upload for small files and Multipart Upload for
 
 #### Sample requests
 ##### Sample 1: Upload a local object
-[//]: # (.cssg-snippet-transfer-upload-object)
+[//]: # ".cssg-snippet-transfer-upload-object"
 ```php
 try{
     $result = $cosClient->Upload(
@@ -1508,7 +1508,7 @@ try{
 ```
 
 ##### Sample 2: Upload an archived object
-[//]: # (.cssg-snippet-transfer-upload-object-archive)
+[//]: # ".cssg-snippet-transfer-upload-object-archive"
 ```php
 try{
     $result = $cosClient->Upload(
@@ -1528,7 +1528,7 @@ try{
 ```
 
 ##### Sample 3: Upload an object with metadata by specifying the size of a single part
-[//]: # (.cssg-snippet-transfer-upload-object-comp)
+[//]: # ".cssg-snippet-transfer-upload-object-comp"
 ```php
 try{
     $result = $cosClient->Upload(
@@ -1559,11 +1559,11 @@ This API internally calls Set CopyObject for small files and Multipart Copy for 
 
 #### Sample requests
 ##### Sample 1: Copy an object
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 ```php
 try{
     $result = $cosClient->Copy(
-        $bucket = 'examplebucket-1250000000', //格式：BucketName-APPID
+        $bucket = 'examplebucket-1250000000', //Format:BucketName-APPID
         $key = 'exampleobject',
         $copySorce = array(
             'Region' => 'COS_REGION', 
@@ -1579,7 +1579,7 @@ try{
 }
 ```
 
-[//]: # (.cssg-snippet-transfer-copy-object-update-storage-class)
+[//]: # ".cssg-snippet-transfer-copy-object-update-storage-class"
 ##### Sample 2: Transition objects to a COS class
 ```php
 try{
@@ -1603,7 +1603,7 @@ try{
 }
 ```
 
-[//]: # (.cssg-snippet-transfer-copy-object-update-metadata)
+[//]: # ".cssg-snippet-transfer-copy-object-update-metadata"
 ##### Sample 3: Modify COS attributes
 ```php
 try{
