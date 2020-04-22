@@ -7,8 +7,7 @@
 
 
 > 
-> - 创建存储桶后会生成对应的默认域名，您可以前往 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在存储桶的【基础配置】中查看。
-> - 金融云地域与公有云地域之间网络不互通。
+> 创建存储桶后会生成对应的默认域名，您可以前往 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在存储桶的【基础配置】中查看。
 
 ### 中国大陆地域
 
@@ -19,7 +18,7 @@
       <th>默认域名（上传/下载/管理 ）</th>
    </tr>
    <tr>
-      <td rowspan=10>中国大陆</td>
+      <td rowspan=7>中国大陆</td>
       <td rowspan=7 nowrap="nowrap">公有云地域</td>
       <td nowrap="nowrap">北京一区（已售罄）</td>
       <td>ap-beijing-1</td>
@@ -56,21 +55,6 @@
       <td>&lt;BucketName-APPID&gt;.cos.ap-chongqing.myqcloud.com</td>
    </tr>
    <tr>
-      <td rowspan=3 nowrap="nowrap">金融云地域</td>
-      <td>深圳金融</td>
-      <td nowrap="nowrap">ap-shenzhen-fsi</td>
-      <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-shenzhen-fsi.myqcloud.com</td>
-   </tr>
-   <tr>
-      <td>上海金融</td>
-      <td nowrap="nowrap">ap-shanghai-fsi</td>
-      <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-shanghai-fsi.myqcloud.com</td>
-   </tr>
-   <tr>
-      <td>北京金融</td>
-      <td nowrap="nowrap">ap-beijing-fsi</td>
-      <td nowrap="nowrap">&lt;BucketName-APPID&gt;.cos.ap-beijing-fsi.myqcloud.com</td>
-   </tr>
 </table>
 
 
