@@ -1,6 +1,6 @@
 ## Operation Scenarios
-When Serverless Cloud Function (SCF) is used for function computation, a large number of function execution logs will be generated. Such logs have been connected to the Tencent Cloud Log Service (CLS), which can collect logs in real time. You can perform various operations such as real-time log search, delivery, and consumption on the CLS platform as shown below:
-![](https://main.qcloudimg.com/raw/ca4e6aefa5b78812d98ea8baaac25238.png)
+When SCF is used for function computation, a large number of function execution logs will be generated. You can view and search for logs generated in the last 15 days in the [SCF Console](https://console.cloud.tencent.com/scf/index?rid=1).
+If you need to store, deliver, or consume logs in a persistent manner and monitor and set alarms on log content, you can deliver logs to the Tencent Cloud Log Service (CLS) platform.
 
 
 ## Prerequisites
@@ -9,7 +9,7 @@ Before using the SCF real-time log service, you need to activate [CLS](https://i
 
 ## Directions
 ### Creating logsets and log topics
-Log in to the [CLS Console](https://console.cloud.tencent.com/cls) and [create a logset and log topic](https://intl.cloud.tencent.com/document/product/614/31592). This document uses the creation of the `SCF-test` log set and log topic in Guangzhou as an example.
+Log in to the [CLS Console](https://console.cloud.tencent.com/cls) and [create a logset and log topic](https://intl.cloud.tencent.com/document/product/614/31592). This document uses the creation of the `SCF-test` log set and log topic in Guangzhou as an example as shown below:
 >For the logset region, please select the region where the SCF service is located. Cross-region log push is not supported currently.
 >
 
@@ -27,7 +27,7 @@ Log in to the [CLS Console](https://console.cloud.tencent.com/cls) and [create a
 2. Click the ID of a created logset to enter the "Basic Info" page.
 3. Select **Manage** to the right of the log topic row to enter the "Basic Info" page of the log topic.
 4. On the "Basic Info" page of the log topic, click **Index Configuration**.
-5. Click **Edit** in the top-right corner to enable the index and save the change.
+4. Click **Edit** in the top-right corner to enable the index and save the change.
 For more information on other features such as real-time log search, delivery, and consumption, please see the [CLS documentation](https://intl.cloud.tencent.com/document/product/614). These features can be used in the [CLS Console](https://console.cloud.tencent.com/cls) directly.
 
 
