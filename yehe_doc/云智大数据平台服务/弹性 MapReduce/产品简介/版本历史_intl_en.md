@@ -30,7 +30,7 @@
 
 | Update | Description | Document |
 | --------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| The node specification management feature is launched | The default billing mode is pay-as-you-go | [Node Specification Management](https://intl.cloud.tencent.com/document/product/1026/34533) |
+| The node specification management feature is launched | Node specification management is supported. Default specifications can be set for different types of nodes based on the billing mode. The default billing mode is pay-as-you-go | [Node Specification Management](https://intl.cloud.tencent.com/document/product/1026/34533) |
 | Configuration management supports ZooKeeper, Alluxio, and Flink  | Zookeeper, Alluxio, and Flink are supported in configuration management   | -    |
 | The cluster and node tagging feature is launched | Tags can be set for clusters and nodes  | [Tags](https://intl.cloud.tencent.com/document/product/1026/34532) |
 | New models are available in the Beijing, Shanghai, and Guangzhou regions | S5, M5, C3, and CN3 models are available in the Beijing, Shanghai, and Guangzhou regions | - |

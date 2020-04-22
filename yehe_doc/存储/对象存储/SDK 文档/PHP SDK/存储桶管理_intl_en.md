@@ -1,4 +1,4 @@
-## Introduction
+## Overview
 This document provides an overview of APIs and SDK code samples related to cross-origin access, lifecycle, versioning, and cross-region replication.
 
 **Cross-origin Access**
@@ -13,40 +13,40 @@ This document provides an overview of APIs and SDK code samples related to cross
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------------------- |
-| [PUT Bucket lifecycle](https://cloud.tencent.com/document/product/436/8280) | Setting lifecycle | Sets lifecycle management for a bucket | 
-| [GET Bucket lifecycle](https://cloud.tencent.com/document/product/436/8278) | Querying lifecycle | Queries the lifecycle management  configuration of a bucket |
-| [DELETE Bucket lifecycle](https://cloud.tencent.com/document/product/436/8284) | Deleting lifecycle | Deletes the lifecycle management configuration of a bucket |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle | Sets lifecycle management for a bucket |
+| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying lifecycle | Queries the lifecycle management configuration of a bucket |
+| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting lifecycle | Deletes the lifecycle management configuration of a bucket |
 
 **Versioning**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
-| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888?from_cn_redirect=1) | Querying versioning | Queries the versioning information of a bucket |
 
 **Cross-region Replication**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
 | [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication | Sets cross-region replication rules for a bucket |
-| [GET Bucket replication](https://cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rules of a bucket |
-| [DELETE Bucket replication](https://cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rules of a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
 
 
 ## Cross-Origin Access
-### Setting Cross-origin Access Configuration
+### Setting cross-origin configuration
 
-#### Feature Description
+#### Feature
 
-This API (Put Bucket CORS) is used to set the configurations on cross-origin access (CORS) of a bucket.
+This API (PUT Bucket cors) is used to set the cross-origin access configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 ```php
 public Guzzle\Service\Resource\Model putBucketCors(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-put-bucket-cors)
+#### Sample request
+[//]: # ".cssg-snippet-put-bucket-cors"
 ```php
 try {
     $result = $cosClient->putBucketCors(array(
@@ -54,7 +54,7 @@ try {
         'CORSRules' => array(
             array(
                 'AllowedHeaders' => array('*',),
-                'AllowedMethods' => array('Put', ),
+                'AllowedMethods' => array('PUT', ),
                 'AllowedOrigins' => array('*', ),
                 'ExposeHeaders' => array('*', ),
                 'MaxAgeSeconds' => 1,
@@ -75,33 +75,33 @@ try {
 | Parameter Name | Type | Description | Required |
 | -------------- | ------ | ------------------------------------------------------------ | --------- |
 | Bucket | String | Bucket name. Format: BucketName-APPID | Yes |
-| CORSRules      | Array  | Cross-origin information list                                                 | Yes |
-| CORSRule     | Array  | Cross-origin information                                                | Yes |
-| AllowedMethods | String | HTTP operations allowed，Enumerated values: GET，PUT，HEAD，POST，DELETE       | Yes  |
-| AllowedOrigins | String | | Allowed source origins. Wildcard `*` is supported. Format: `Protocol://domain name[:port]`, Example: `http://www.qq.com` | Yes |
-| AllowedHeaders | String | Tells the server what customized HTTP request headers can be used for following requests when the OPTIONS request is sent. Wildcard `*` is supported | No |
-| ExposeHeaders  | String | Sets the customized header information, which can be received by the browser from the server end | No |
-| MaxAgeSeconds  | Int    | Sets the validity period of the results obtained by OPTIONS                      | No |
+| CORSRules      | Array  | CORS configuration list                                                 | Yes |
+| CORSRule     | Array  | CORS configuration                                                | Yes |
+| AllowedMethods | String | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE       | Yes  |
+| AllowedOrigins | String | | Allowed source origins. Wildcard `*` is supported. Format: `Protocol://domain name[:port]`, e.g. `http://www.qq.com` | Yes |
+| AllowedHeaders | String | Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported | No |
+| ExposeHeaders  | String | Sets the user-defined header information from the server side that the browser can receive | No |
+| MaxAgeSeconds  | Int    | Sets the validity period of the `OPTIONS` request result                      | No  |
 | ID             | String |  Configures the rule ID | Yes |
 
 
 ### Querying Cross-origin Access Configuration
 
-#### Feature Description
+#### Feature
 
-This API (Get Bucket CORS) is used to get the configurations on cross-origin access (CORS) of a bucket.
+This API (GET Bucket cors) is used to query the cross-origin access configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 ```php
 public Guzzle\Service\Resource\Model getBucketCors(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-get-bucket-cors)
+#### Sample requests
+[//]: # ".cssg-snippet-get-bucket-cors"
 ```php
 try {
     $result = $cosClient->getBucketCors(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000' //Format: BucketName-APPID
     )); 
     // Request succeeded
     print_r($result);
@@ -117,7 +117,7 @@ try {
 | -------- | ------ | ---------------------------------- | ------ |
 | Bucket | String | Bucket name. Format: BucketName-APPID | Yes |
 
-#### Sample Response
+#### Sample response
 ```php
 Guzzle\Service\Resource\Model Object
 (
@@ -146,38 +146,38 @@ Guzzle\Service\Resource\Model Object
         )
 )
 ```
-#### Returned Result
+#### Response Description
 
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | -------------- | ------ | ------------------------------------------------------------ | --------- |
-| CORSRules      | Array  | Cross-origin information list                                                 | |
-| CORSRule     | Array  | Cross-origin information                                                | CORSRules |
-| AllowedMethods | String | HTTP operations allowed，Enumerated values: GET，PUT，HEAD，POST，DELETE       | CORSRule |
-| AllowedOrigins | String | | Allowed source origins. Wildcard `*` is supported. Format: `Protocol://domain name[:port]`, Example: `http://www.qq.com` | CORSRule |
-| AllowedHeaders | String | Tells the server what customized HTTP request headers can be used for following requests when the OPTIONS request is sent. Wildcard `*` is supported | CORSRule |
-| ExposeHeaders  | String | Sets the customized header information, which can be received by the browser from the server end | CORSRule |
-| MaxAgeSeconds  | Int    | Sets the validity period of the results obtained by OPTIONS                      | CORSRule  |
+| CORSRules      | Array  | CORS configuration list list                                                 |None |
+| CORSRule     | Array  | CORS configuration                                                | CORSRules |
+| AllowedMethods | String | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE       | CORSRule |
+| AllowedOrigins | String | | Allowed source origins. Wildcard `*` is supported. Format: `Protocol://domain name[:port]`, e.g. `http://www.qq.com` | CORSRule |
+| AllowedHeaders | String | Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported | CORSRule |
+| ExposeHeaders  | String | Sets the user-defined header information from the server side that the browser can receive | CORSRule |
+| MaxAgeSeconds  | Int    | Sets the validity period of the `OPTIONS` request result                      | CORSRule  |
 | ID             | String |  Configures the rule ID | CORSRule |
 
 
 ### Deleting Cross-origin Access Configuration
 
-#### Feature Description
+#### Feature
 
-This API (Delete Bucket CORS) is used to delete the configurations on cross-origin access (CORS) of a bucket.
+This API (DELETE Bucket cors) is used to delete the cross-origin access configuration of a bucket.
 
 #### Method Prototype
 ```php
 public Guzzle\Service\Resource\Model deleteBucketCors(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-delete-bucket-cors)
+#### Sample requests
+[//]: # ".cssg-snippet-delete-bucket-cors"
 ```php
 try {
     $result = $cosClient->deleteBucketCors(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000' //Format: BucketName-APPID
     )); 
     // Request succeeded
     print_r($result);
@@ -195,19 +195,20 @@ try {
 
 
 ## Lifecycle
-### Setting Lifecycle
+### Setting the lifecycle
 
-#### Feature Description
+#### Feature
 
-This API (Put Bucket LifeCycle) is used to set the lifecycle configuration of a bucket.
+This API (PUT Bucket lifecycle) is used to set the lifecycle configuration of a bucket.
 
 #### Method Prototype
 ```php
 public Guzzle\Service\Resource\Model putBucketLifecycle(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-put-bucket-lifecycle)
+#### Sample requests
+##### Sample 1: Delete all objects with a lifecycle of 1 day
+[//]: # ".cssg-snippet-put-bucket-lifecycle"
 ```php
 try {
     $result = $cosClient->putBucketLifecycle(array(
@@ -215,22 +216,44 @@ try {
         'Rules' => array(
             array(
                 'Expiration' => array(
-                    'Days' => integer,
-                ),  
-                'ID' => 'string',
+                    'Days' => 1,
+                ),
+                'ID' => 'rule01',
                 'Filter' => array(
-                    'Prefix' => 'string'
+                    'Prefix' => ''
+                ),
+                'Status' => 'Enabled',
+            ),
+        )
+    ));
+    // Request succeeded
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo "$e\n";
+}
+```
+
+##### Sample 2: Transition objects with the specified prefix with a lifecycle of 1 day to Archive
+[//]: # ".cssg-snippet-put-bucket-lifecycle-archive"
+```php
+try {
+    $result = $cosClient->putBucketLifecycle(array(
+        'Bucket' => 'examplebucket-1250000000', //Format：BucketName-APPID
+        'Rules' => array(
+            array(
+                'ID' => 'rule01',
+                'Filter' => array(
+                    'Prefix' => 'prefix01/'
                 ),  
-                'Status' => 'string',
+                'Status' => 'Enabled',
                 'Transitions' => array(
                     array(
-                        'Days' => integer,
-                        'StorageClass' => 'string'
-                    ),  
-                    // ... repeated
+                        'Days' => 1,
+                        'StorageClass' => 'Archive'
+                    ),
                 ),  
-            ),  
-            // ... repeated
+            ),
         )
     ));  
     // Request succeeded
@@ -246,35 +269,38 @@ try {
 | Parameter Name | Type | Description | Required |
 | ------------ | ------------ | ------------------------------------------------------------ | ----------------------- |
 | Bucket | String | Bucket name. Format: BucketName-APPID | Yes |
-| Rules        | Array        | Lifecycle information list                                             | Yes |
-| Rules        | Array        | Lifecycle information                                            | Yes |
-| Expiration   | Array        | Sets expiration rule of Object in the format of setting date or days | No |
-| Transition   | Array        | Sets storage class transition rules of Object                               | No |
-| Filter       | Array        | Shows all Objects to which the Rule applies                               | Yes |
-| Prefix | String | Prefix of the objects to be analyzed | Yes |
-| Status | String | Sets whether Rule is enabled. Available values: Enabled or Disabled | Yes |
+| Rules        | Array        | Lifecycle configuration list                                             | Yes |
+| Rules        | Array        | Lifecycle configuration                                            | Yes |
+| Expiration   | Array        | Object expiration rule. You can specify an expiry date (`Date`) or the number of days before the objects expire (`Days`) | No |
+| Transition   | Array        | Object transitioning rule                               | No |
+| NoncurrentVersionExpiration   | Array        | Expiration rule for historical object   | No                    |
+|NoncurrentVersionTransition | Array | Transitioning rule for historical object | No |
+| Filter       | Array        | Specifies which objects are subject to the rule                               | Yes |
+| Prefix | String | Prefix used to filter objects | Yes |
+| Status | String | Sets whether the rule is enabled or not. Valid values: `Enabled`, `Disabled` | Yes |
 | ID             | String |  Configures the rule ID | Yes |
-| Days         | Int          | Sets days of validity                                              | No |
-| Date        | Int / String  | Sets the date of validity                                              | No |
-| StorageClass | String | Sets the object storage class; Options: STANDARD, STANDARD_IA, ARCHIVE. Default value: STANDARD  | Yes |
+| Days         | Int          | Sets the number of days before the rule takes effect                                            | No |
+| Date        | Int / String  | Sets the rule effective date                                             | No |
+| NoncurrentDays | Int | Sets the number of valid days for a single-version object | No |
+| StorageClass | String | Sets the object storage class to which objects are transitioned. Valid values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD` | Yes |
 
 ### Querying Lifecycle
 
-#### Feature Description
+#### Feature
 
-This API (Get Bucket Lifecycle) is used to get the lifecycle configuration of a Bucket.
+This API (GET Bucket lifecycle) is used to query the lifecycle configuration of a bucket.
 
 #### Method Prototype
 ```php
 public Guzzle\Service\Resource\Model getBucketLifecycle(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-get-bucket-lifecycle)
+#### Sample request
+[//]: # ".cssg-snippet-get-bucket-lifecycle"
 ```php
 try {
     $result = $cosClient->getBucketLifecycle(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', //Format：BucketName-APPID
     )); 
     // Request succeeded
     print_r($result);
@@ -290,7 +316,7 @@ try {
 | -------- | ------ | ---------------------------------- | ------ |
 | Bucket | String | Bucket name. Format: BucketName-APPID | Yes |
 
-#### Sample Response
+#### Sample response
 ```php
 Guzzle\Service\Resource\Model Object
 (
@@ -324,39 +350,39 @@ Guzzle\Service\Resource\Model Object
 #### Returned Result
 
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------ | ------------ | ------------------------------------------------------------ | ----------------------- |
-| Rules        | Array        | Lifecycle information list                                             | |
-| Rules        | Array        | Lifecycle information                                          | Rules |
-| Expiration   | Array        | Sets expiration rule of Object in the format of setting date or days | Rule|
-| Transition   | Array        | Sets storage class transition rules of Object                               | Rule |
-| Filter       | Array        | Shows all Objects to which the Rule applies                               | Rule |
-| Prefix | String | Prefix of the objects to be analyzed | Filter |
-| Status | String | Sets whether Rule is enabled. Available values: Enabled or Disabled | Rule |
+| Rules        | Array        | Lifecycle configuration list                                             |None |
+| Rules        | Array        | Lifecycle configuration                                          | Rules |
+| Expiration   | Array        | Object expiration rule. You can specify an expiry date (`Date`) or the number of days before the objects expire (`Days`) | Rule|
+| Transition   | Array        | Object transitioning rule                               | Rule |
+| Filter       | Array        | Specifies which objects are subject to the rule                               | Rule |
+| Prefix | String | Prefix used to filter the objects | Filter |
+| Status | String | Sets whether the rule is enabled or not. Valid values: `Enabled`, `Disabled` | Rule |
 | ID             | String |  Configures the rule ID | Rule |
-| Days         | Int          | Sets days of validity                                              | Expiration / Transition |
-| Date         | Int / String  |  Sets the date of validity                                              | Expiration / Transition |
-| StorageClass | String | Sets the object storage class; Options: STANDARD, STANDARD_IA, ARCHIVE. Default value: STANDARD  | Transition |
+| Days         | Int          | Sets the number of days before the rule takes effect                                              | Expiration / Transition |
+| Date         | Int / String  |  Sets the rule effective date                                              | Expiration / Transition |
+| StorageClass | String | Sets the object storage class to which objects are transitioned. Valid values: `STANDARD`, `STANDARD_IA`, `ARCHIVE`. Default value: `STANDARD`  | Transition |
 
 
 
 ### Deleting Lifecycle
 
-#### Feature Description
+#### Feature
 
-This API (Delete Bucket Lifecycle) is used to delete the lifecycle configuration of a Bucket.
+This API (DELETE Bucket lifecycle) is used to delete the lifecycle configuration of a bucket.
 
 #### Method Prototype
 ```php
 public Guzzle\Service\Resource\Model deleteBucketLifecycle(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-delete-bucket-lifecycle)
+#### Sample requests
+[//]: # ".cssg-snippet-delete-bucket-lifecycle"
 ```php
 try {
     $result = $cosClient->deleteBucketLifecycle(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000' //Format: BucketName-APPID
     )); 
     // Request succeeded
     print_r($result);
@@ -373,22 +399,22 @@ try {
 | Bucket | String | Bucket name. Format: BucketName-APPID | Yes |
 
 ## Versioning
-### Setting Versioning
+### Set Versioning
 
-#### Feature Description
+#### Feature
 
-This API (Put Bucket versioning) is used to set the versioning information of a bucket.
+This API (PUT Bucket versioning) is used to set versioning for a bucket.
 
 #### Method Prototype
 ```
 public Guzzle\Service\Resource\Model putBucketVersioning(array $args = array());
 ```
 
-#### Sample Request
+#### Sample requests
 
 **Enable Versioning**
 
-[//]: # (.cssg-snippet-put-bucket-versioning)
+[//]: # ".cssg-snippet-put-bucket-versioning"
 ```php
 try {
     $result = $cosClient->putBucketVersioning(array(
@@ -403,7 +429,7 @@ try {
 }
 ```
 
-**Suspension of versioning**
+**Suspend Versioning**
 
 ```php
 try {
@@ -424,22 +450,22 @@ try {
 | Parameter Name | Type | Description | Required |
 | -------------- | -------- | ---------------------------------- | ------------- |
 | Bucket | String | Bucket name. Format: BucketName-APPID | Yes |
-| Status | String | Status of version control. Options are Suspended, Enabled or empty | Yes |
+| Status | String | Versioning status. Valid values: `Suspended`, `Enabled` | Yes |
 
 
-### Querying Versioning
+### Query Versioning
 
-#### Feature Description
+#### Feature
 
-This API (Get Bucket versioning) is used to get the versioning information of a bucket.
+This API (GET Bucket versioning) is used to query the versioning configuration of a bucket.
 
 #### Method Prototype
 ```
 public Guzzle\Service\Resource\Model getBucketVersioning(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-get-bucket-versioning)
+#### Sample requests
+[//]: # ".cssg-snippet-get-bucket-versioning"
 ```php
 try {
     $result = $cosClient->getBucketVersioning(array(
@@ -461,25 +487,25 @@ try {
 
 
 #### Returned Result
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | -------------- | -------- | ---------------------------------- | ------------- |
-| Status | String | Status of version control. Options are Suspended, Enabled or empty | |
+| Status | String | Versioning status. Valid values: `Suspended`, `Enabled`. This parameter may be empty |None |
 
 
 ## Cross-region Replication
-### Setting Cross-region Replication
+### Setting cross-region replication
 
-#### Feature Description
+#### Feature
 
-This API (PUT Bucket replication) is used to set cross-region replication rules for a bucket
+This API (PUT Bucket replication) is used to set cross-region replication rules for a bucket.
 
 #### Method Prototype
 ```
 public Guzzle\Service\Resource\Model putBucketReplication(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-put-bucket-replication)
+#### Sample requests
+[//]: # ".cssg-snippet-put-bucket-replication"
 ```php
 try {
     $result = $cosClient->putBucketReplication(array(
@@ -506,21 +532,21 @@ try {
 #### Parameter Description
 | Parameter Name | Type | Description | Required |
 | -------------- | -------- | ---------------------------------- | ------------- |
-| Bucket | String | Origin Bucket name. Format: BucketName-APPID | Yes |
-| Role | String | Replication initiator identifier. Format：`qcs::cam::uin/:uin/` | Yes |
-| Rule | Array | Sets rule ID，Status，Prefix，and Destination | Yes |
+| Bucket | String | Source bucket name. Format: BucketName-APPID | Yes |
+| Role | String | Identifies the replication initiator. Format：`qcs::cam::uin/:uin/` | Yes |
+| Rule | Array | Configures rule information, including its `ID`, `Status`, `Prefix`, and `Destination` | Yes |
 | ID | String | Sets rule ID.  | Yes |
-| Status | String | Sets whether Rule is enabled. Available values: Enabled or Disabled | Yes |
-| Prefix | String |  Sets Rule of matching with prefix. Empty string means all objects | Yes |
-| Destination | String |   Describes destination resource, including Bucket and StorageClass | Yes |
-| Bucket | String | Set cross-region target bucket. Format: `qcs::cos:[region]::[BucketName-APPID]` | Yes |
-| StorageClass | String | Set storage class. Options are  'STANDARD'，'STANDARD_IA' | No |
+| Status | String | Sets whether the rule is enabled or not. Valid values: `Enabled`, `Disabled` | Yes |
+| Prefix | String |  Prefix used to filter objects that are subject to the rule. If it is left empty, it means that the rule applies to all objects in the bucket | Yes |
+| Destination | String |   Describes information on object copies, including `Bucket` and `StorageClass` | Yes |
+| Bucket | String | Sets the destination bucket of the cross-region replication. Format: `qcs::cos:[region]::[BucketName-APPID]` | Yes |
+| StorageClass | String | Sets the storage class of the object copies. Valid values: `STANDARD`, `STANDARD_IA` | No |
 
 
 
-### Querying Cross-region Replication
+### Querying cross-region replication
 
-#### Feature Description
+#### Feature
 
 This API (GET Bucket replication) is used to query the cross-region replication rules of a bucket.
 
@@ -529,8 +555,8 @@ This API (GET Bucket replication) is used to query the cross-region replication 
 public Guzzle\Service\Resource\Model getBucketReplication(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-get-bucket-replication)
+#### Sample requests
+[//]: # ".cssg-snippet-get-bucket-replication"
 ```php
 try {
     $result = $cosClient->getBucketReplication(array(
@@ -550,7 +576,7 @@ try {
 | -------------- | -------- | ---------------------------------- | ------------- |
 | Bucket | String | Bucket name. Format: BucketName-APPID | Yes |
 
-#### Sample Response
+#### Response sample
 ```php
 Guzzle\Service\Resource\Model Object
 (
@@ -579,32 +605,32 @@ Guzzle\Service\Resource\Model Object
 
 #### Returned Result
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | -------------- | -------- | ---------------------------------- | ------------- |
-| Role | String | Replication initiator identifier. Format：`qcs::cam::uin/:uin/` | No |
-| Rules | Array | Sets rule ID，Status，Prefix，and Destination | No |
-| Rule | Array | Sets rule ID，Status，Prefix，and Destination | Rules |
+| Role | String | Identifies the replication initiator. Format：`qcs::cam::uin/:uin/` |None |
+| Rules | Array | Configures rule information, including its `ID`, `Status`, `Prefix`, and `Destination` |None |
+| Rule | Array | Configures rule information, including its `ID`, `Status`, `Prefix`, and `Destination` | Rules |
 | ID | String | Sets rule ID. | Rule |
-| Status | String | Sets whether Rule is enabled. Available values: Enabled or Disabled | Rule |
+| Status | String | Sets whether the rule is enabled or not. Valid values: `Enabled`, `Disabled` | Rule |
 | Prefix | String |  Prefix used to filter objects that are subject to the rule. If it is left empty, it means that the rule applies to all objects in the bucket | Rule |
-| Destination | String |  Describes destination resource, including Bucket and StorageClass | Rule |
-| Bucket | String | Set target bucket. Format: `qcs::cos:[region]::[BucketName-APPID]` | Destination |
-| StorageClass | String | Set storage class. Options are  'STANDARD'，'STANDARD_IA' | Destination |
+| Destination | String |  Describes information on object copies, including `Bucket` and `StorageClass` | Rule |
+| Bucket | String | Sets the destination bucket of the cross-region replication. Format: `qcs::cos:[region]::[BucketName-APPID]` | Destination |
+| StorageClass | String | Sets the storage class of the object copies. Valid values: `STANDARD`, `STANDARD_IA` | Destination |
 
 
-## Deleting Cross-region Replication
+## Deleting cross-region replication
 
-#### Feature Description
+#### Feature
 
-This API (DELETE Bucket replication) is used to delete the cross-region replication rules of a bucket
+This API (Delete Bucket replication) is used to delete cross-region replication of a bucket.
 
 #### Method Prototype
 ```
 public Guzzle\Service\Resource\Model deleteBucketReplication(array $args = array());
 ```
 
-#### Sample Request
-[//]: # (.cssg-snippet-delete-bucket-replication)
+#### Sample requests
+[//]: # ".cssg-snippet-delete-bucket-replication"
 ```php
 try {
     $result = $cosClient->deleteBucketReplication(array(

@@ -1,14 +1,14 @@
 ## Feature
 
-This API is used to download an object in a COS bucket to a local file system. To make this request, you need to have Read access to the target object or the target object allows Public Read.
+This API (GET Object) is used to download an object from a COS bucket to a local file system. To make this request, you need to have Read access to the target object or the target object allows Public Read.
 
-> If the `response-*` request parameter is used, this request operation will not support anonymous requests and will have to carry a signature.
+> If the `response-*` request parameter is used, this request operation will not support anonymous request and must carry a signature.
 
 #### Versioning
 
-With versioning enabled, you can specify the `versionId` request parameter to get a specific version of the object. If the version ID you specify corresponds to a delete marker, HTTP status code 404 (Not Found) will be returned. If no version ID is specified, the latest version will be returned.
+With versioning enabled, you can specify the `versionId` to get a specific version of the object. If the version ID you specify corresponds to a delete marker, HTTP status code 404 (Not Found) will be returned. If no version ID is specified, the latest version will be returned.
 
-#### Getting Archived Objects
+#### Archive storage class
 
 If this API is used to get an **archived** object, and the object has not been restored using [POST Object restore](https://cloud.tencent.com/document/product/436/12633) or the restored copy has been deleted after expiration, the request will return HTTP status code 403 (Forbidden) and include an error message in the response body. The error code will be InvalidObjectState, indicating that you cannot get the object in the current state with this API and you must restore it first.
 
@@ -25,21 +25,21 @@ Authorization: Auth String
 
 > Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details).
 
-#### Request Parameters
+#### Request parameters
 
 | Name | Description | Type | Required |
 | --- | --- | --- | --- |
-| response-cache-control | Sets the value of the `Cache-Control` header in the response | string | No |
-| response-content-disposition | Sets the value of the `Content-Disposition` header in the response | string | No |
-| response-content-encoding | Sets the value of the `Content-Encoding` header in the response | string | No |
-| response-content-language | Sets the value of the `Content-Language` header in the response | string | No |
-| response-content-type | Sets the value of the `Content-Type` header in the response | string | No |
-| response-expires | Sets the value of the `Expires` header in the response | string | No |
-| versionId | Specifies the version ID of the object if versioning is enabled; if this parameter is not specified, the latest version will be downloaded | string | No |
+| response-cache-control | Value of the `Cache-Control` header in the response | string | No |
+| response-content-disposition | Value of the `Content-Disposition` header in the response | string | No |
+| response-content-encoding | Value of the `Content-Encoding` header in the response | string | No |
+| response-content-language | Value of the `Content-Language` header in the response | string | No |
+| response-content-type | Value of the `Content-Type` header in the response | string | No |
+| response-expires | Value of the `Expires` header in the response | string | No |
+|versionId | When versioning is enabled, specify the ID of the version to download; otherwise, download the latest version of the object | string | No |
 
-#### Request Header
+#### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about the common request header, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ In addition to common request headers, this API also supports the following requ
 | If-Match | If the ETag of the object is the same as the specified value, the object will be returned; otherwise, HTTP status code 412 (Precondition Failed) will be returned | string | No |
 | If-None-Match | If the ETag of the object is different from the specified value, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned | string | No |
 
-**Server-side Encryption Headers**
+**Server-side encryption-related headers**
 
 If server-side encryption is used for the specified object and the encryption method is SSE-C, you will need to specify the headers related to server-side encryption to decrypt the object. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -68,24 +68,24 @@ In addition to common response headers, this API also returns the following resp
 | Cache-Control | Cache directives as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
 | Content-Disposition | Filename as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
 | Content-Encoding | Encoding format as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
-| Content-Range | Byte range of the returned content as defined in RFC 2616, which will be returned only if the `Range` request header is specified in the request | string |
+| Content-Range | Byte range of the return content as defined in RFC 2616, which will be returned only if the `Range` request header is specified in the request | string |
 | Expires | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata or specified through the request parameter | string |
 | x-cos-meta-\* | Header suffix and information of the user-defined metadata | string |
 | x-cos-storage-class | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD` | Enum |
 
-**Versioning-related Headers**
+**Versioning-related headers**
 
-If the target object is from a bucket where versioning is enabled, the following response headers will be returned:
+If the target object is from a bucket where versioning is enabled, the following response header will be returned:
 
 | Name | Description | Type |
 | --- | --- | --- |
 | x-cos-version-id | Object version ID | string |
 
-**Server-side Encryption Headers**
+**Server-side encryption-related headers**
 
-If server-side encryption is used for the specified object, this API will return the server-side encryption headers. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used for the specified object, this API will return a server-side encryption header. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
-#### Response Body
+#### Response body
 
 The response body of this API request is the object (file) content.
 
@@ -95,7 +95,7 @@ There are no special error messages for this API. For all error messages, see [E
 
 ## Examples
 
-#### Example 1. Simple example (versioning not enabled)
+#### Example 1: Basic example (with versioning not enabled)
 
 #### Request
 
@@ -124,7 +124,7 @@ x-cos-request-id: NWQxZGUzZWNfN2RiZTBiMDlfM2EzZF8yMGYx****
 [Object Content]
 ```
 
-#### Example 2. Specifying response headers through request parameters
+#### Example 2: Specify response headers through request parameters
 
 #### Request
 
@@ -155,7 +155,7 @@ x-cos-request-id: NWQxZGUzZWNfNjI4NWQ2NF9lMWYyXzk1NjFj****
 [Object Content]
 ```
 
-#### Example 3. Using server-side encryption SSE-COS
+#### Example 3: Use server-side encryption SSE-COS
 
 #### Request
 
@@ -185,7 +185,7 @@ x-cos-server-side-encryption: AES256
 [Object Content]
 ```
 
-#### Example 4. Using server-side encryption SSE-KMS
+#### Example 4: Use server-side encryption SSE-KMS
 
 #### Request
 
@@ -216,7 +216,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 [Object Content]
 ```
 
-#### Example 5. Using server-side encryption SSE-C
+#### Example 5: Use server-side encryption SSE-C
 
 #### Request
 
@@ -250,7 +250,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 [Object Content]
 ```
 
-#### Example 6. Downloading the latest version of the object (with versioning enabled)
+#### Example 6: Download the latest version of an object (with versioning enabled)
 
 #### Request
 
@@ -280,7 +280,7 @@ x-cos-version-id: MTg0NDUxODE3NzYyODMxOTg0OTg
 [Object Content]
 ```
 
-#### Example 7. Downloading a specific version of the object (with versioning enabled)
+#### Example 7: Download a specific version of an object (with versioning enabled)
 
 #### Request
 
@@ -310,7 +310,7 @@ x-cos-version-id: MTg0NDUxODE3NzYyODg0ODI2MjA
 [Object Content]
 ```
 
-#### Example 8. Downloading partial content by specifying the Range request header
+#### Example 8: Download partial content by specifying the Range request header
 
 #### Request
 
@@ -341,7 +341,7 @@ x-cos-request-id: NWQ0Y2YwNGFfNDhiNDBiMDlfMmU2ZTFfMTc0MGVl****
 [Object Content]
 ```
 
-#### Example 9. Downloading an archived object that has not been restored
+#### Example 9: Download an archived object that has not been restored
 
 #### Request
 
