@@ -13,24 +13,24 @@ This document provides an overview of APIs and SDK code samples related to cross
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------------------- |
-| [PUT Bucket lifecycle](https://cloud.tencent.com/document/product/436/8280) | Setting lifecycle | Sets lifecycle management for a bucket |
-| [GET Bucket lifecycle](https://cloud.tencent.com/document/product/436/8278) | Querying lifecycle | Queries the lifecycle management configuration of a bucket |
-| [DELETE Bucket lifecycle](https://cloud.tencent.com/document/product/436/8284) | Deleting lifecycle | Deletes the lifecycle management configuration of a bucket |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting lifecycle | Sets lifecycle management for a bucket |
+| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying lifecycle | Queries the lifecycle management configuration of a bucket |
+| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting lifecycle | Deletes the lifecycle management configuration of a bucket |
 
 **Versioning**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
-| [GET Bucket versioning](https://cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888?from_cn_redirect=1) | Querying versioning | Queries the versioning information of a bucket |
 
 **Cross-region Replication**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
 | [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication | Sets cross-region replication rules for a bucket |
-| [GET Bucket replication](https://cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rules of a bucket |
-| [DELETE Bucket replication](https://cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rules of a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
 
 
 ## Cross-Origin Access
@@ -46,7 +46,7 @@ public Guzzle\Service\Resource\Model putBucketCors(array $args = array());
 ```
 
 #### Sample request
-[//]: # (.cssg-snippet-put-bucket-cors)
+[//]: # ".cssg-snippet-put-bucket-cors"
 ```php
 try {
     $result = $cosClient->putBucketCors(array(
@@ -97,7 +97,7 @@ public Guzzle\Service\Resource\Model getBucketCors(array $args = array());
 ```
 
 #### Sample requests
-[//]: # (.cssg-snippet-get-bucket-cors)
+[//]: # ".cssg-snippet-get-bucket-cors"
 ```php
 try {
     $result = $cosClient->getBucketCors(array(
@@ -149,7 +149,7 @@ Guzzle\Service\Resource\Model Object
 #### Response Description
 
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | -------------- | ------ | ------------------------------------------------------------ | --------- |
 | CORSRules      | Array  | CORS configuration list list                                                 |None |
 | CORSRule     | Array  | CORS configuration                                                | CORSRules |
@@ -173,7 +173,7 @@ public Guzzle\Service\Resource\Model deleteBucketCors(array $args = array());
 ```
 
 #### Sample requests
-[//]: # (.cssg-snippet-delete-bucket-cors)
+[//]: # ".cssg-snippet-delete-bucket-cors"
 ```php
 try {
     $result = $cosClient->deleteBucketCors(array(
@@ -208,7 +208,7 @@ public Guzzle\Service\Resource\Model putBucketLifecycle(array $args = array());
 
 #### Sample requests
 ##### Sample 1: Delete all objects with a lifecycle of 1 day
-[//]: # (.cssg-snippet-put-bucket-lifecycle)
+[//]: # ".cssg-snippet-put-bucket-lifecycle"
 ```php
 try {
     $result = $cosClient->putBucketLifecycle(array(
@@ -235,7 +235,7 @@ try {
 ```
 
 ##### Sample 2: Transition objects with the specified prefix with a lifecycle of 1 day to Archive
-[//]: # (.cssg-snippet-put-bucket-lifecycle-archive)
+[//]: # ".cssg-snippet-put-bucket-lifecycle-archive"
 ```php
 try {
     $result = $cosClient->putBucketLifecycle(array(
@@ -296,7 +296,7 @@ public Guzzle\Service\Resource\Model getBucketLifecycle(array $args = array());
 ```
 
 #### Sample request
-[//]: # (.cssg-snippet-get-bucket-lifecycle)
+[//]: # ".cssg-snippet-get-bucket-lifecycle"
 ```php
 try {
     $result = $cosClient->getBucketLifecycle(array(
@@ -350,7 +350,7 @@ Guzzle\Service\Resource\Model Object
 #### Returned Result
 
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | ------------ | ------------ | ------------------------------------------------------------ | ----------------------- |
 | Rules        | Array        | Lifecycle configuration list                                             |None |
 | Rules        | Array        | Lifecycle configuration                                          | Rules |
@@ -378,7 +378,7 @@ public Guzzle\Service\Resource\Model deleteBucketLifecycle(array $args = array()
 ```
 
 #### Sample requests
-[//]: # (.cssg-snippet-delete-bucket-lifecycle)
+[//]: # ".cssg-snippet-delete-bucket-lifecycle"
 ```php
 try {
     $result = $cosClient->deleteBucketLifecycle(array(
@@ -414,7 +414,7 @@ public Guzzle\Service\Resource\Model putBucketVersioning(array $args = array());
 
 **Enable Versioning**
 
-[//]: # (.cssg-snippet-put-bucket-versioning)
+[//]: # ".cssg-snippet-put-bucket-versioning"
 ```php
 try {
     $result = $cosClient->putBucketVersioning(array(
@@ -465,7 +465,7 @@ public Guzzle\Service\Resource\Model getBucketVersioning(array $args = array());
 ```
 
 #### Sample requests
-[//]: # (.cssg-snippet-get-bucket-versioning)
+[//]: # ".cssg-snippet-get-bucket-versioning"
 ```php
 try {
     $result = $cosClient->getBucketVersioning(array(
@@ -487,7 +487,7 @@ try {
 
 
 #### Returned Result
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | -------------- | -------- | ---------------------------------- | ------------- |
 | Status | String | Versioning status. Valid values: `Suspended`, `Enabled`. This parameter may be empty |None |
 
@@ -505,7 +505,7 @@ public Guzzle\Service\Resource\Model putBucketReplication(array $args = array())
 ```
 
 #### Sample requests
-[//]: # (.cssg-snippet-put-bucket-replication)
+[//]: # ".cssg-snippet-put-bucket-replication"
 ```php
 try {
     $result = $cosClient->putBucketReplication(array(
@@ -556,7 +556,7 @@ public Guzzle\Service\Resource\Model getBucketReplication(array $args = array())
 ```
 
 #### Sample requests
-[//]: # (.cssg-snippet-get-bucket-replication)
+[//]: # ".cssg-snippet-get-bucket-replication"
 ```php
 try {
     $result = $cosClient->getBucketReplication(array(
@@ -605,7 +605,7 @@ Guzzle\Service\Resource\Model Object
 
 #### Returned Result
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter Name | Type | Description | Parent Node |
 | -------------- | -------- | ---------------------------------- | ------------- |
 | Role | String | Identifies the replication initiator. Format：`qcs::cam::uin/:uin/` |None |
 | Rules | Array | Configures rule information, including its `ID`, `Status`, `Prefix`, and `Destination` |None |
@@ -630,7 +630,7 @@ public Guzzle\Service\Resource\Model deleteBucketReplication(array $args = array
 ```
 
 #### Sample requests
-[//]: # (.cssg-snippet-delete-bucket-replication)
+[//]: # ".cssg-snippet-delete-bucket-replication"
 ```php
 try {
     $result = $cosClient->deleteBucketReplication(array(
