@@ -1,15 +1,14 @@
-## Download and Installation
+## Download and Install
 
-### Relevant Resources
+#### Relevant Resources
 - Source code of COS XML SDK for PHP: [XML PHP SDK](https://github.com/tencentyun/cos-php-sdk-v5/releases).
-- SDK quick download address: [XML PHP SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-php-sdk-v5/latest/cos-php-sdk-v5.zip?_ga=1.29598463.1783616852.1583375173).
 - Demo: [PHP sample](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample).
 
-### Environment Requirements
+#### Environmental Requirements
 
 *   PHP 5.6+
     You can run the `php -v` command to view the current PHP version.
->- If your php version is `>=5.3` and `<5.6`, please use [ v1.3 ](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3).
+>- If your PHP version is `>=5.3` and `<5.6`, please use [ v1.3 ](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3).
 - cURL extension
 You can run the `php -m` command to check whether the cURL extension has been installed properly.
  - On Ubuntu, you can install PHP's cURL extension using the apt-get package manager with the following command:
@@ -21,7 +20,7 @@ sudo apt-get install php-curl
 sudo yum install php-curl
 ```
 
-### Installing the SDK
+#### Installing the SDK
 You can install the SDK in three ways, i.e. [Composer method](#composer), [Phar method](#phar), and [source code method](#Source).
 
 <span id="composer"></span>
@@ -47,9 +46,9 @@ curl -sS https://getcomposer.org/installer | php
 ```shell
 php composer.phar install
 ```
-This command will create a `vendor` folder in the current directory. The folder will contain the SDK's dependency library and an `autoload.php` script file for future call in your project. 
+This command will create a `vendor` folder in the current directory. The folder will contain the SDK's dependency library and an `autoload.php` script file for future call in your project.
 5. Call cos-php-sdk-v5 with the autoloader script.
-```shell
+```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
 Now, you can use COS XML SDK for PHP in your project.
@@ -59,7 +58,8 @@ Now, you can use COS XML SDK for PHP in your project.
 Install the SDK using the Phar method as instructed below:
 1. Download the phar file [here](https://github.com/tencentyun/cos-php-sdk-v5/releases).
 2. Import the phar file into your code:
-```shell
+
+```php
 require  '/path/to/cos-sdk-v5.phar';
 ```
 
@@ -69,7 +69,8 @@ Install the SDK using the source code as instructed below:
 1. Download `cos-sdk-v5.tar.gz` compressed file on the [SDK releases page](https://github.com/tencentyun/cos-php-sdk-v5/releases).
 > `Source code` compressed file is the code packaged by Github by default. The directory `vendor` is not included.
 2. After decompressing it, load the SDK via the `autoload.php` script:
-```shell
+
+```php
 require '/path/to/sdk/vendor/autoload.php';
 ```
 
@@ -78,26 +79,29 @@ require '/path/to/sdk/vendor/autoload.php';
 The section below describes how to use COS SDK for PHP to perform basic operations, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object.
 
 ### Initialization
+
+[//]: # (.cssg-snippet-global-init)
 ```php
 $secretId = "COS_SECRETID"; //"TencentCloud API key's SecretId";
 $secretKey = "COS_SECRETKEY"; //"TencentCloud API key's SecretKey";
-$region = "ap-beijing"; // Set a default bucket region
+$region = "COS_REGION"; // Set the default bucket region
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
         'schema' => 'https', // Protocol header; http by default
         'credentials'=> array(
-            'secretId'  => $secretId ,
+            'secretId'  => $secretId,
             'secretKey' => $secretKey)));
 ```
 
 If you initialize a client with a [temporary key](https://intl.cloud.tencent.com/document/product/436/14048), create an instance in the following way.
 
+[//]: # (.cssg-snippet-global-init-sts)
 ```php
 $tmpSecretId = "COS_SECRETID"; //"Temporary key's SecretId";
 $tmpSecretKey = "COS_SECRETKEY"; //"Temporary key's SecretKey";
 $tmpToken = "COS_TOKEN"; //"Temporary key's token";
-$region = "ap-beijing"; // Set a default bucket region
+$region = "COS_REGION"; // Set the default bucket region
 $cosClient = new Qcloud\Cos\Client(
     array(
         'region' => $region,
@@ -109,6 +113,8 @@ $cosClient = new Qcloud\Cos\Client(
 ```
 
 ### Creating a Bucket
+
+[//]: # (.cssg-snippet-put-bucket)
 ```php
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
@@ -116,19 +122,21 @@ try {
     //Request succeeded
     print_r($result);
 } catch (\Exception $e) {
-	// Request failed
+    // Request failed
     echo($e);
 }
 ```
 
-### Querying the Bucket List
+### Querying the bucket list
+
+[//]: # (.cssg-snippet-get-service)
 ```php
 try {
-    //Request succeeded
+    //Request successful
     $result = $cosClient->listBuckets();
     print_r($result);
 } catch (\Exception $e) {
-	// Request failed
+    // Request failed
     echo($e);
 }
 ```
@@ -138,6 +146,7 @@ try {
 * Upload a file (up to 5 GB) using the putObject API.
 * Upload a file using the Upload API. The Upload API is an advanced API which uses simple upload for small files and multipart upload for large files.
 
+[//]: # (.cssg-snippet-put-object-comp)
 ```php
 # Upload a file
 ## putObject (an API which can upload files of up to 5 GB)
@@ -158,7 +167,7 @@ try {
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
-    $srcPath = "F:/exampleobject";// Absolute path to the local file
+    $srcPath = "path/to/localFile";// Absolute path to local file
     $file = fopen($srcPath, "rb");
     if ($file) {
         $result = $cosClient->putObject(array(
@@ -167,34 +176,6 @@ try {
             'Body' => $file));
         print_r($result);
     }
-} catch (\Exception $e) {
-    echo "$e\n";
-}
-
-### Set headers and metadata
-try {
-    $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject";
-    $result = $cosClient->putObject(array(
-        'Bucket' => $bucket,
-        'Key' => $key,
-        'Body' => 'string | stream',
-        'ACL' => 'string',
-        'CacheControl' => 'string',
-        'ContentDisposition' => 'string',
-        'ContentEncoding' => 'string',
-        'ContentLanguage' => 'string',
-        'ContentLength' => 'int',
-        'ContentType' => 'string',
-        'Expires' => 'string',
-        'GrantFullControl' => 'string',
-        'GrantRead' => 'string',
-        'GrantWrite' => 'string',
-        'Metadata' => array(
-            'string' => 'string',
-        ),
-        'StorageClass' => 'string'));
-    print_r($result);
 } catch (\Exception $e) {
     echo "$e\n";
 }
@@ -217,7 +198,7 @@ try {
 try {    
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $key = "exampleobject";
-    $srcPath = "F:/exampleobject";// Absolute path to the local file
+    $srcPath = "path/to/localFile";// Absolute path to local file
     $file = fopen($srcPath, 'rb');
     if ($file) {
         $result = $cosClient->Upload(
@@ -229,38 +210,11 @@ try {
 } catch (\Exception $e) {
     echo "$e\n";
 }
-
-### Set headers and metadata
-try {
-    $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $key = "exampleobject";
-    $result = $cosClient->Upload(
-        $bucket= $bucket,
-        $key = $key,
-        $body = 'string | stream',
-        $options = array(
-            'ACL' => 'string',
-            'CacheControl' => 'string',
-            'ContentDisposition' => 'string',
-            'ContentEncoding' => 'string',
-            'ContentLanguage' => 'string',
-            'ContentLength' => 'int',
-            'ContentType' => 'string',
-            'Expires' => 'string',
-            'GrantFullControl' => 'string',
-            'GrantRead' => 'string',
-            'GrantWrite' => 'string',
-            'Metadata' => array(
-                'string' => 'string',
-            ),
-            'StorageClass' => 'string'));
-    print_r($result);
-} catch (\Exception $e) {
-    echo "$e\n";
-}
 ```
 
-### Querying the Object List
+### Querying the object list
+
+[//]: # (.cssg-snippet-get-bucket)
 ```php
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
@@ -268,15 +222,20 @@ try {
         'Bucket' => $bucket
     ));
     // Request succeeded
-    foreach ($result['Contents'] as $rt) {
-        print_r($rt);
+    if (isset($result['Contents'])) {
+        foreach ($result['Contents'] as $rt) {
+            print_r($rt);
+        }
     }
 } catch (\Exception $e) {
     // Request failed
     echo($e);
 }
 ```
+
 A single call to the `listObjects` API can query up to 1,000 objects. If you want to query all objects, you need to call it repeatedly.
+
+[//]: # (.cssg-snippet-get-bucket-recursive)
 ```php
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
@@ -288,9 +247,11 @@ try {
             'Marker' => $marker,
             'MaxKeys' => 1000 // Set the maximum number of entries to be listed in one single query, which is up to 1,000
         ));
-        foreach ($result['Contents'] as $rt) {
-            // Print key
-            echo($rt['Key'] . "\n");
+        if (isset($result['Contents'])) {
+            foreach ($result['Contents'] as $rt) {
+                // Print key
+                echo($rt['Key'] . "\n");
+            }
         }
         $marker = $result['NextMarker']; // Set a new end marker
         if (!$result['IsTruncated']) {
@@ -306,6 +267,7 @@ try {
 * Download a file using the getObject API.
 * Get the file download URL using the getObjectUrl API.
 
+[//]: # (.cssg-snippet-get-object-comp)
 ```php
 # Download a file
 ## getObject (download file)
@@ -327,7 +289,7 @@ try {
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject"; // Location of the object in the bucket, i.e., the object key
-    $localPath = @"F:/exampleobject";// Download to the specified local path
+    $localPath = @"path/to/localFile";// Download to a specific local path
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
         'Key' => $key,
@@ -344,31 +306,11 @@ try {
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
     $key = "exampleobject"; // Location of the object in the bucket, i.e., the object key
-    $localPath = @"F:/exampleobject";// Download to the specified local path
+    $localPath = @"path/to/localFile";// Download to a specific local path
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
         'Key' => $key,
         'Range' => 'bytes=0-10',
-        'SaveAs' => $localPath));
-} catch (\Exception $e) {
-    // Request failed
-    echo "$e\n";
-}
-
-### Set response headers
-try {
-    $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
-    $key = "exampleobject"; // Location of the object in the bucket, i.e., the object key
-    $localPath = @"F:/exampleobject";// Download to the specified local path
-    $result = $cosClient->getObject(array(
-        'Bucket' => $bucket,
-        'Key' => $key,
-        'ResponseCacheControl' => 'string',
-        'ResponseContentDisposition' => 'string',
-        'ResponseContentEncoding' => 'string',
-        'ResponseContentLanguage' => 'string',
-        'ResponseContentType' => 'string',
-        'ResponseExpires' => 'mixed type: string (date format)|int (unix timestamp)|\DateTime',
         'SaveAs' => $localPath));
 } catch (\Exception $e) {
     // Request failed
@@ -388,7 +330,9 @@ try {
 }
 ```
 
-### Deleting Objects
+### Deleting an object
+
+[//]: # (.cssg-snippet-delete-object-comp)
 ```php
 # Delete an object
 ## deleteObject
