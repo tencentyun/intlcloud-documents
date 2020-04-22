@@ -12,11 +12,11 @@
 查询全球应用加速源站健康状态监控数据，入参取值如下：
 &Namespace=QCE/QAAP
 &Instances.N.Dimensions.0.Name=channelId
-&Instances.N.Dimensions.0.Value 为通道 ID
+&Instances.N.Dimensions.0.Value为通道id
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，正式调用时需要加上公共请求参数，见 [公共请求参数](https://intl.cloud.tencent.com/document/api/248/4478) 页面。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，正式调用时需要加上公共请求参数，见 [公共请求参数](https://intl.cloud.tencent.com/document/product/248/33876#.E7.AD.BE.E5.90.8D.E6.96.B9.E6.B3.95-v1)页面。
 
 ### 2.1输入参数
 
@@ -26,24 +26,24 @@
 | :---------- | :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Action      | 是       | String                                                       | 公共参数，本接口取值：GetMonitorData                         |
 | Version     | 是       | String                                                       | 公共参数，本接口取值： 2018-07-24                            |
-| Region      | 否       | String                                                       | 公共参数，表示查询的是哪个地域实例的监控数据；支持的地域可查看云服务器支持的[地域列表](https://intl.cloud.tencent.com/document/api/213/15692) |
-| Namespace   | 是       | String                                                       | 命名空间，每个云产品会有一个命名空间，API 3.0接口版本的必须是大写，如：QCE/QAAP |
+| Region      | 否       | String                                                       | 本接口不需要传递此参数                                       |
+| Namespace   | 是       | String                                                       | 命名空间，每个云产品会有一个命名空间，如全球应用加速源站健康状态命名空间： QCE/QAAP（API 3.0接口版本的必须是大写） |
 | MetricName  | 是       | String                                                       | 指标名称，具体名称见2.2                                      |
 | Instances.N | 是       | Array of [Instance](https://intl.cloud.tencent.com/document/product/248/33883) | 实例对象的维度组合                                           |
 | Period      | 否       | Integer                                                      | 监控统计周期。默认为取值为300，单位为s                       |
 | StartTime   | 否       | Timestamp                                                    | 起始时间，如"2016-01-01 10:25:00"。 默认时间为当天的”00:00:00” |
-| EndTime     | 否       | Timestamp                                                    | 结束时间，默认为当前时间。 endTime 不能小于 startTime        |
+| EndTime     | 否       | Timestamp                                                    | 结束时间，默认为当前时间。 endTime不能小于startTime          |
 
 #### 2.1.2 各维度对应参数总览
 
-| 参数名称                       | 维度名称         | 维度解释    | 格式                                  |
-| :----------------------------- | :--------------- | :---------- | :------------------------------------ |
-| Instances.N.Dimensions.0.Name  | channelId        | 加速通道 ID | String 类型维度名称：channelId        |
-| Instances.N.Dimensions.0.Value | channelId        | 加速通道 ID | 具体通道 ID，如 link-abcd1234         |
-| Instances.N.Dimensions.1.Name  | listenerId       | 监听器 ID   | String 类型维度名称：listenerId       |
-| Instances.N.Dimensions.1.Value | listenerId       | 监听器 ID   | 具体监听器 ID，如 listener-1234abcd   |
-| Instances.N.Dimensions.2.Name  | originServerInfo | 源站信息    | String 类型维度名称：originServerInfo |
-| Instances.N.Dimensions.2.Value | originServerInfo | 源站信息    | 源站的 IP 或者域名，如www.test.com    |
+| 参数名称                       | 维度名称         | 维度解释   | 格式                                         |
+| :----------------------------- | :--------------- | :--------- | :------------------------------------------- |
+| Instances.N.Dimensions.0.Name  | channelId        | 加速通道id | 输入String类型维度名称，如：channelId        |
+| Instances.N.Dimensions.0.Value | channelId        | 加速通道id | 输入加速通道具体id，如：ink-abcd1234         |
+| Instances.N.Dimensions.1.Name  | listenerId       | 监听器id   | 输入String类型维度名称，如：listenerId       |
+| Instances.N.Dimensions.1.Value | listenerId       | 监听器id   | 输入监听器具体id，如：listener-1234abcd      |
+| Instances.N.Dimensions.2.Name  | originServerInfo | 源站信息   | 输入String类型维度名称，如：originServerInfo |
+| Instances.N.Dimensions.2.Value | originServerInfo | 源站信息   | 输入源站的IP或者域名，如：www.test.com       |
 
 ### 2.2 指标名称
 
@@ -62,7 +62,7 @@
 | EndTime    | Timestamp             | 数据点结束时间                                               |
 | Period     | Integer               | 数据统计周期                                                 |
 | DataPoints | Array of PointsObject | 监控数据列表                                                 |
-| RequestId  | String                | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。 |
+| RequestId  | String                | 唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。 |
 
 ## 4. 错误码表
 
@@ -79,9 +79,11 @@
 
 ### 示例1 拉取单个全球应用加速源站该监听器下源站的健康状态监控数据示例
 
-拉取某个全球应用加速源站健康状态某段时间内统计周期为60秒的该监听器下源站的健康状态监控数据。
+拉取某个全球应用加速源站健康状态某段时间内统计周期为60秒的该监听器下源站的健康状态监控数据
 
 #### 输入示例
+
+
 
 ```
 https://monitor.tencentcloudapi.com/?Action=GetMonitorData
@@ -89,17 +91,19 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 &MetricName=ListenerRsStatus
 &Period=60
 &StartTime=2019-05-08T16:40:00+08:00
-&EndTime=2018-05-08T16:45:00+08:00
+&EndTime=2019-05-08T16:45:00+08:00
 &Instances.0.Dimensions.0.Name=channelId
 &Instances.0.Dimensions.0.Value=link-6qmx1234
 &Instances.0.Dimensions.1.Name=listenerId
 &Instances.0.Dimensions.1.Value=listener-00ABCD12
 &Instances.0.Dimensions.2.Name=originServerInfo
 &Instances.0.Dimensions.2.Value=11.110.111.111
-&[<公共请求参数>](https://intl.cloud.tencent.com/document/api/248/4478)
+&[<公共请求参数>](https://intl.cloud.tencent.com/document/product/248/4478)
 ```
 
 #### 输出示例
+
+
 
 ```
 {
@@ -149,9 +153,11 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 
 ### 示例2 拉取多个全球应用加速源站该监听器下源站的健康状态监控数据示例
 
-拉取多个全球应用加速源站健康状态某段时间内统计周期为60秒的该监听器下源站的健康状态监控数据。
+拉取多个全球应用加速源站健康状态某段时间内统计周期为60秒的该监听器下源站的健康状态监控数据
 
 #### 输入示例
+
+
 
 ```
 https://monitor.tencentcloudapi.com/?Action=GetMonitorData
@@ -159,7 +165,7 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 &MetricName=ListenerRsStatus
 &Period=60
 &StartTime=2019-05-08T16:40:00+08:00
-&EndTime=2018-05-08T16:45:00+08:00
+&EndTime=2019-05-08T16:45:00+08:00
 &Instances.0.Dimensions.0.Name=channelId
 &Instances.0.Dimensions.0.Value=link-6qmx1234
 &Instances.0.Dimensions.1.Name=listenerId
@@ -176,6 +182,8 @@ https://monitor.tencentcloudapi.com/?Action=GetMonitorData
 ```
 
 #### 输出示例
+
+
 
 ```
 {
