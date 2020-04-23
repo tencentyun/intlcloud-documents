@@ -1,18 +1,6 @@
-## Adjust Bandwidth
+# Adjust Public Network Bandwidth Cap
 
-<table>
-<tr><th>Network Billing Method</th><th>CVM Billing Method</th><th>Adjust Bandwidth</th></tr>
-<tr><td>Bill by bandwidth usage period</td><td>Pay as you go</td><td>Supports bandwidth upgrade and degrade, and the changes take effect right away</td></tr>
-<tr><td>Bill by traffic</td><td>Pay as you go</td><td>Supports bandwidth upgrade and degrade, and the changes take effect right away. The fee is billed by traffic. </td></tr>
-</table>
-
-## Change Billing Method
-
-<table>
-<tr><th>Network Billing Method</th><th>CVM Billing Method</th><th>Change Network Billing Mode</th></tr>
-<tr><td>Bill by bandwidth usage period</td><td>Pay as you go</td><td>Do not support</td></tr>
-<tr><td>Bill by traffic</td> <td>Pay as you go</td><td>Do not support</td></tr>
-</table>
-
-
+| Network Billing Plan | CVM Billing Plan | Adjust Bandwidth Cap |
+| ------------ | ---------------- | ---------------------------------------------- |
+| Bill-by-traffic | Pay as you go | The bandwidth cap can be increased or decreased as needed. The change takes effect immediately. The network fee is calculated based on the traffic usage. |
 
