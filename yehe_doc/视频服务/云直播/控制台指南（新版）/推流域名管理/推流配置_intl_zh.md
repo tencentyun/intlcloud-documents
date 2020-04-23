@@ -3,7 +3,7 @@
 
 ## 前提条件
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
-- 已添加 [推流域名](https://cloud.tencent.com/document/product/267/20381)。
+- 已添加 推流域名。
 
 ## 推流地址生成器
 1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)选择需配置的推流域名或单击【管理】，进入域名详情页。
@@ -15,7 +15,7 @@
 ![](https://main.qcloudimg.com/raw/29e4a0af31d1b37d91f6618453b6cc81.png)
 >RTMP 推流地址格式为`rtmp://domain/live/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`，其中：
 		- `domain`：直播推流域名。
-		- `AppName`：应用名称，默认为 live，若要自定义须 [提交工单](https://console.cloud.tencent.com/workorder/category) 配置。
+		- `AppName`：直播的应用名称，默认为 live，可自定义。
 		- `StreamName`：流名称，用户自定义，用于标识直播流。
 		- `txSecret`：开启推流鉴权后生成的鉴权串。
 		- `txTime`：推流地址设置的时间戳，是控制台推流地址的有效时间。
