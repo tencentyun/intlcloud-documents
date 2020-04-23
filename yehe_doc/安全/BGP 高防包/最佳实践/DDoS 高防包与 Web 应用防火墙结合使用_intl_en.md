@@ -11,7 +11,7 @@ For more information on quick integration with WAF, please see [Getting Started 
 1. Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview), select **Anti-DDoS Pro** > **Resource List** on the left sidebar.
  - For single IP instances, select the **Single IP Instance** tab.
  - For multi-IP instances, select the **Multi-IP Instance** tab.
- ![](https://main.qcloudimg.com/raw/d099f26f05047950267696dca78900d5.png)
+ 
 2. Select the region of the target Anti-DDoS Pro instance and click **Bind Resource** in the "Operation" column to the right of the instance.
 3. On the **Bind Resource** page, set **Resource Type** as **WAF**, and select IPs protected by WAF in the **Resources to Associate** section. 
  >You can bind multiple IPs protected by WAF to a multi-IP instance.
