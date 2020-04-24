@@ -1,22 +1,23 @@
 负载均衡支持配置七层（HTTP/HTTPS）访问日志（Access Log），访问日志可以帮助您了解客户端请求、辅助排查问题、分析梳理用户行为等。当前访问日志支持存储到 CLS 中，支持分钟粒度的日志上报，在线多规则检索。
 
 负载均衡的访问日志主要用于故障排查，帮助业务快速定位问题。访问日志功能包括日志上报、日志存储和查询：
-- 日志上报，提供尽力而为服务（Best Effor Service），优先保障业务转发，再保障日志上报。
+- 日志上报，提供尽力而为服务（Best-Effort Service），优先保障业务转发，再保障日志上报。
 - 日志存储和查询，按当前使用的存储服务来提供服务保障 SLA。
 
 >
+>- 由于配置访问日志到 COS 功能于2020-06-30 00:00:00正式下线，建议您使用 CLS 存储负载均衡访问日志。
 >- 当前负载均衡仅七层协议（HTTP/HTTPS）支持配置访问日志到 CLS，四层协议（TCP/UDP/TCP SSL）不支持配置访问日志到 CLS。
 - 负载均衡访问日志无需额外付费，您仅需要支付日志服务（CLS）的费用。
-- 当前配置访问日志到 CLS 支持的地域包括：成都、多伦多，可直接在控制台使用或通过 API 配置；广州、上海、南京、北京、重庆、中国香港、硅谷灰度中，如有需求，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
-- 目前 [日志服务（CLS）](https://intl.cloud.tencent.com/document/product/614) 处在内测中，使用前，请提交 [内测申请](https://console.cloud.tencent.com/workorder/category)，并确认审核结果。
+- 当前配置访问日志到 CLS 支持的地域包括：广州、成都、多伦多，可直接在控制台使用或通过 API 配置；上海、南京、北京、重庆、中国香港、硅谷、新加坡灰度中，如有需求，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+- 目前 [日志服务（CLS）](https://intl.cloud.tencent.com/document/product/614) 处在内测中，使用前，请提交内测申请，并确认审核结果。
 
 ## 开启访问日志
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3)。
 2. 单击需进行配置的负载均衡 ID，进入“负载均衡基本信息”页面。
 3. 在“日志访问”模块，编辑日志服务 CLS。
-![](https://main.qcloudimg.com/raw/163c20ca7cb4326005c9ecf9fb43a39f.png)
+![](https://main.qcloudimg.com/raw/7a4e1d0e7f433cfde0e818fbb25897c0.png)
 4. 在弹出框中，开启访问日志，并选择存储访问日志的日志集和日志主题。如您没有创建日志集或日志主题，请 [新建相关资源](https://console.cloud.tencent.com/cls/logset) 后，再选取具体的存储位置。
-![](https://main.qcloudimg.com/raw/33ccb8c1bcf3b200716a4a2f1751f0c1.png)
+![](https://main.qcloudimg.com/raw/c098ad41a1f3611502377b3c36f8d0d9.png)
 5. 单击【提交】，访问日志会被收集在对应的主题中。
 6. 配置完成后单击日志集或日志主题将跳转到 CLS 的日志检索页面。
 7. （可选）若想关闭访问日志，可再次编辑日志服务 CLS，在弹框中进行关闭并提交即可。
@@ -29,17 +30,17 @@
 2. 在左侧导航中，选择【日志集管理】，进入“日志集管理”列表页。
 3. 单击日志集 ID，进入日志集详情页。
 4. 在日志集详情页，单击日志主题 ID，进入日志主题详情页。
-![](https://main.qcloudimg.com/raw/2ac7b3725bf4a598a4f9668ed3c80c1c.png)
+![](https://main.qcloudimg.com/raw/69a3ce248a82dcae8eb4a787cc32820c.png)
 5. 在日志主题详情页，选择【索引配置】选项卡，您可以在日志变量中选取部分变量，按需配置索引字段，配置说明请参见 [开启索引](https://intl.cloud.tencent.com/document/product/614/16981)。
-![](https://main.qcloudimg.com/raw/aff66a76b27f5ec0366028e1e9a6ed08.png)
+![](https://main.qcloudimg.com/raw/b91213bda2070e50d8f4540c20133176.png)
 6. 索引配置完成后结果如下图所示。
-![](https://main.qcloudimg.com/raw/a5c1dfd312827c8fd3945cb0945616fb.png)
+![](https://main.qcloudimg.com/raw/e356aef3a2fdc126a8f94d0542b88222.png)
 
 ### 步骤2：检索访问日志
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
 2. 在左侧导航中，选择【检索分析】，进入“检索分析”页面。
 3. 在“检索分析 ”页面中，选择日志集、日志主题和时间范围，单击【检索分析】，即可检索 CLB 上报到 CLS 的访问日志。检索语法详情请参见 [语法与规则](https://intl.cloud.tencent.com/document/product/614/30439)。
-![](https://main.qcloudimg.com/raw/57f74355eb469e59fca7efbe1994d9d0.png)
+![](https://main.qcloudimg.com/raw/d44692022c6f4f5a31233cc77eadab9c.png)
 
 ## 日志变量说明
 <table class="table"><thead><tr><th>变量名</th><th>说明</th></tr></thead>
