@@ -30,7 +30,7 @@
 
 ### TESHD
 
-Based on the technologies such as audio/video encoding, intelligent scenario recognition, dynamic encoding, and three-level (CTU/line/frame) precise bitrate control model accumulated by Tencent Video Cloud over the years, TESHD enables video businesses such as live video broadcasting and video on demand to provide higher-definition streaming services at lower bitrates (reduced by over 30% on average).
+Based on the technologies such as audio/video encoding, intelligent scenario recognition, dynamic encoding, and three-level (CTU/line/frame) precise bitrate control model accumulated by Tencent Video Cloud over the years, TESHD enables video businesses such as LVB and VOD to provide higher-definition streaming services at lower bitrates (reduced by over 30% on average).
 
 ### Superplayer
 
