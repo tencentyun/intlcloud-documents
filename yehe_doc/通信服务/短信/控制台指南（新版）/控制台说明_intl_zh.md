@@ -8,7 +8,7 @@
 <table>
 <tr>
 <th width="30%">服务</th>
-<th width="35%">文档</th>
+<th width="40%">文档</th>
 <th>说明</th>
 </tr>
 <tr>
@@ -100,7 +100,7 @@
 <td>介绍如何查询对应签名下不同类型的短信退订状态，如何申请移除退订。</td>
 </tr>
 <tr>
-<td>配置回复回调</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35605">配置回复回调</a></td>
 <td>介绍如何开启回复回调并配置 URL。</td>
 </tr>
 </table>
@@ -114,7 +114,11 @@
 <th>文档</th>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/382/35604">快速群发祝福短信（企业用户）</a></td>
-<td>介绍企业用户如何快速向会员用户群发祝福短信。</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35604">如何群发祝福短信</a></td>
+<td>介绍企业用户如何快速向会员群发祝福短信。</td>
+</tr>  
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35747">如何实现短信验证码功能</a></td>
+<td>介绍如何快速实现短信验证码功能。</td>
 </tr>
 </table>
