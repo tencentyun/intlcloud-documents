@@ -105,61 +105,6 @@ Below are the latest unit prices for standard file systems in all regions in Mai
 
 >The unit prices for NFS and CIFS/SMB file systems are the same.
 
-<table>
-   <tr>
-      <th>Storage Class</th>
-      <th>Region</th>
-      <th>Range of Maximum (Peak) Storage Capacity</th>
-      <th nowrap="nowrap">Unit Price</th>
-   </tr>
-   <tr>
-      <td rowspan="8">Standard storage</td>
-      <td rowspan="1">Mainland China</td>
-      <td>-</td>
-      <td>0.058 USD/GB/month (0.00008056 USD/GB/hour)</td>
-   </tr>
-   <tr>
-      <td >Hong Kong (China)</td>
-      <td>-</td>
-      <td>0.09 USD/GB/month (0.000125 USD/GB/hour)</td>
-   </tr>
-      <td>Singapore</td>
-      <td>-</td>
-      <td>0.09 USD/GB/month (0.000125 USD/GB/hour)</td>
-   </tr>
-   <tr>
-      <td>Tokyo</td>
-      <td>-</td>
-      <td>0.09 USD/GB/month (0.000125 USD/GB/hour)</td>
-   </tr>
-     <tr>
-      <td>Silicon Valley</td>
-      <td>-</td>
-      <td>0.08 USD/GB/month (0.000111111 USD/GB/hour)</td>
-   </tr>
-     <tr>
-      <td>Mumbai</td>
-      <td>-</td>
-      <td>0.09 USD/GB/month (0.000125 USD/GB/hour)</td>
-   </tr>
-        <tr>
-      <td>Seoul</td>
-      <td>-</td>
-      <td>0.09 USD/GB/month (0.000125 USD/GB/hour)</td>
-   </tr>
-        <tr>
-      <td>Toronto</td>
-      <td>-</td>
-      <td>0.09 USD/GB/month (0.00012500 USD/GB/hour)</td>	
-   </tr>
-      <tr>
-      <td rowspan="1">High-performance storage</td>
-      <td rowspan="2">Mainland China</td>
-      <td> - </td>
-      <td>0.26 USD/GB/month (0.000361111 USD/GB/hour)</td>
-   </tr>
-   
-</table>
 
 
 
