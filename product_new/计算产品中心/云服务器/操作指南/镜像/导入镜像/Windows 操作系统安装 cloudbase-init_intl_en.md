@@ -1,26 +1,39 @@
-## Downloading the Cloudbase-Init installer
+## Scenario
 
-Download the Cloudbase-Init installer corresponding to your operating system architecture. For details, visit [Cloudbase-Init Official Site](http://www.cloudbase.it/cloud-init-for-windows-instances/).
+This document uses the Windows Server 2012 R2 64-bit operating system as an example to describe how to install cloudbase-init on Windows.
 
-Cloudbase-init has the following versions:
-- Stable version (recommended)
-Download via the following links:
-	- 64-bit Windows: https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi
-	- 32-bit Windows: https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi
-- Beta version
+<span id="PreparationSoftware"></span>
+## Software
+The following table describes the software programs required for installing cloudbase-init.
 
-## Installing Cloudbase-Init
+| Software | How to Obtain It | Description |
+|---------|---------|---------|
+| CloudbaseInitSetup_X_X_XX_xXX.msi | Download the cloudbase-init installation package based on the used operating system.<ul style="margin: 0;"><li>Stable version (recommended)<ul style="margin: 0;"><li>Windows 64-bit operating system: [Click here](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi) to obtain the installation package.</li><li>Windows 32-bit operating system: [Click here](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi) to obtain the installation package.</li></ul></li><li>Beta version</li></ul>For details, visit the [cloudbase-init official website](http://www.cloudbase.it/cloud-init-for-windows-instances/). | It is used to install cloudbase-init. |
+| TencentCloudRun.ps1 | [Click here](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) to obtain the installation package. | - |
+| localscripts.py | [Click here](http://cloudinit-1251783334.file.myqcloud.com/localscripts.py) to obtain the installation package. | It is used to ensure that cloudbase-init starts properly. |
 
-When installing Cloudbase-Init, please note:
-- **In the “Configuration options” window, set “Serial port for logging” to “COM1” as shown below.**
-![Alt text](https://main.qcloudimg.com/raw/beaca64e8484ec7e9880703cad400717.png)
-- **At the final step of the installation, do not check any box as shown below: **
-![Alt text](https://main.qcloudimg.com/raw/aceec91df6a51db2eca775f3350de88c.png)
+## Directions
 
-## Modifying the Cloudbase-Init configuration file 
+### Installing cloudbase-init
 
-1. Open the Cloudbase-Init configuration file at \PATH\TO\Cloudbase Solutions\Cloubase-Init\conf\cloudbase-init.conf.
-2. Replace the content in the file with the following:
+1. On the desktop, double-click the cloudbase-init installation package.
+2. In the warning dialog box that appears, click **Run** to start the cloudbase-init setup wizard, as shown in the following figure.
+![](https://main.qcloudimg.com/raw/bdeb8ff4370dc6da38da6749154e449f.png)
+3. Click **Next**.
+4. Select **I accept the terms in the License Agreement** and click **Next** for the following two operations.
+5. On the **Configuration options** page, set **Serial port for logging** to **COM1** and click **Next**, as shown in the following figure.
+![](https://main.qcloudimg.com/raw/a41580e9b21e4550245b661b44682937.png)
+6. Click **Install**.
+7. After cloudbase-init is installed, click **Finish** to exit the cloudbase-init setup wizard, as shown in the following figure.
+> When exiting the cloudbase-init setup wizard, do not select any checkboxes nor run Sysprep.
+>
+![](https://main.qcloudimg.com/raw/d2d6c30def7812af9d7e484f5e8ccaa9.png)
+
+### Modifying the cloudbase-init configuration file 
+
+1. Open the `cloudbase-init.conf` configuration file.
+The `cloudbase-init.conf` configuration file is saved under `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf` by default. 
+2. Replace the content of the `cloudbase-init.conf` configuration file with the following:
 ```
 [DEFAULT]
 username=Administrator
@@ -50,4 +63,5 @@ local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScri
 C:\powershell
 PS C:\Set-ExecutionPolicy Unrestricted
 ```
-3. Copy the [TencentCloudRun.ps1](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) script to the C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\ directory.
+3. Copy the `TencentCloudRun.ps1` script to `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts`.
+4. Replace `localscripts.py` in `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Lib\site-packages\cloudbaseinit\plugins\common` with the `localscripts.py` file mentioned in [Software](#PreparationSoftware).
