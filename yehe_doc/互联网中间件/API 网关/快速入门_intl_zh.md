@@ -5,7 +5,7 @@
 
 ## 步骤1：注册腾讯云账号
 如果已在腾讯云注册，可忽略此步骤。
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;">点此注册腾讯云账号</a></div>
+<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;">点此注册腾讯云账号</a></div>
 
 ## 步骤2：完成实名认证
 如果已完成，可忽略此步骤。
@@ -24,10 +24,9 @@
 2. 单击【新建】，输入服务信息。
  - 服务名称：必填，最长50个字符，支持`a-z`、`A-Z`、`0-9`、`_`，此处我们输入“exampleservice”。
  - 前端类型：此服务支持的协议类型，此处我们选择“HTTP”。
- - 访问方式：此服务支持的访问方式，此处我们选择“公网”。
  - 备注：此服务支持的访问方式，此处我们填写“测试”。
-![](https://main.qcloudimg.com/raw/b35aa49acb36fc2f74feab383f3dbcbd.png)
-3. 单击【确定】，即可创建服务。
+![](https://main.qcloudimg.com/raw/d979368f1746512a2e9e0064a9a92561.png)
+3. 单击【提交】，即可创建服务。
 
 
 ## 步骤5：创建后端类型为 mock 的 API
@@ -42,11 +41,11 @@
 	- 支持CORS：此 API 是否支持跨域资源共享，此处我们选择“是”。
 	- 备注：此 API 的备注信息，此处我们填写“测试”
 	- 参数配置：此 API 的前端参数，此处我们不填写。
-![](https://main.qcloudimg.com/raw/6d85f19fe2044735b5d190ce56a1ca40.png)
+![](https://main.qcloudimg.com/raw/d979368f1746512a2e9e0064a9a92561.png)
 4. 单击【下一步】，输入 API 后端配置信息。
 	- 后端类型：此 API 后端服务所属类型，此处我们选择“mock”。
 	- 返回数据：mock返回数据，此处我们输入“hello world, hello apigateway”。
-![](https://main.qcloudimg.com/raw/bb4d7dda3eea4491cfcb404faee57ca0.png)
+![](https://main.qcloudimg.com/raw/0d163eff7c5ba8e8e5377a547c7032d8.png)
 5. 单击【完成】，即可创建后端类型为 mock 的 API。
 
 
@@ -55,7 +54,7 @@
 1. 在 API 列表页找到步骤5中刚创建的 API ，在操作栏中单击【调试】，进入 API 调试页面。
 2. Content-Type 选择 application/x-www-form-urlencoded。
 3. 单击【发送请求】，即可查看本次调试的返回结果。
-![](https://main.qcloudimg.com/raw/e9c9b830f59342c346c36746420c06ec.png)
+![](https://main.qcloudimg.com/raw/2a4b35df5799f3da48b2b713c78b4768.png)
 
 
 ## 步骤7：发布服务
@@ -63,7 +62,7 @@
 1. 在服务列表页找到之前创建的服务，在操作栏中单击【发布】，输入服务发布信息。
 	- 发布环境：此服务本次发布到的环境，此处选择“发布”环境。
 	- 备注：此服务本次发布的备注信息，此处填写“测试发布”。
-![](https://main.qcloudimg.com/raw/998c38292d80e346348059f022241bc3.png)
+![](https://main.qcloudimg.com/raw/1dd18d606de4841c490f3ccdab489c10.png)
 2. 单击【提交】，即可成功发布服务。
 3. 服务发布后，您可以通过服务提供的子域名访问 API。
 
@@ -71,12 +70,12 @@
 
 ## 遇到问题？
 非常抱歉您在使用时遇到问题，您可以通过以下步骤解决问题：
-1. 查看 [常见问题](https://intl.cloud.tencent.com/document/product/628/11939) 文档，找到解决方案。
+1. 查看 [常见问题](https://intl.cloud.tencent.com/document/product/628/34887) 文档，找到解决方案。
 2. 如果没能找到满意的解答，您可以通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
 
 
 
 ## 相关文档
-了解更多腾讯云 API 网关控制台操作，例如查看日志、查看监控、设置流控策略等，请参见 [操作指南](https://intl.cloud.tencent.com/document/product/628/11787) 文档。
+了解更多腾讯云 API 网关控制台操作，例如查看日志、查看监控、设置流控策略等，请参见 [操作指南](https://intl.cloud.tencent.com/document/product/628/34064) 文档。
 
 
