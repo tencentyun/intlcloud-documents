@@ -16,6 +16,5 @@ The instance data has been backed up. For backup directions, please see [Backing
 3. In the pop-up dialog box, enter the instance password and click **OK**.
 >The password to be entered here is the instance password you set rather than the connection password in the format of "Instance ID:instance password" used for instance access.
 >
-
 4. Return to the instances. The status of the instance is displayed as **Restoring backup by backup ID**. After the status changes to **Running**, it can be used normally.
 
