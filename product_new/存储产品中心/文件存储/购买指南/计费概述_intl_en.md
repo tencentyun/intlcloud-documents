@@ -21,11 +21,6 @@
 
 When a file system is created, it consumes 32 MB of storage capacity by default, which will not be counted into the storage capacity actually billed.
 
-## Supported Regions
-
-The following are the regions where CFS is available:
-
-> If any CVM instances or services need to use CFS in a region where resources are sold out, you are recommended to choose a VPC in that region, create a subnet in a purchasable AZ, and then create a CFS file system in that subnet. For more information, please see [FAQs](https://intl.cloud.tencent.com/document/product/582/9551).
 
 <table>
 <tr>
