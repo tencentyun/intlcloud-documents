@@ -1,7 +1,7 @@
 ## Overview
 This document provides an overview of APIs and SDK code samples related to cross-origin access, lifecycle, versioning, and cross-region replication.
 
-**Cross-Origin Access**
+**Cross-origin Access**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
@@ -24,7 +24,7 @@ This document provides an overview of APIs and SDK code samples related to cross
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
 | [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
 
-**Cross-Region Replication**
+**Cross-region Replication**
 
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
@@ -33,14 +33,14 @@ This document provides an overview of APIs and SDK code samples related to cross
 | [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
 
 
-## Cross-Origin Access
+## Cross-origin Access
 ### Setting cross-origin configuration
 
-#### Feature
+#### Feature 
 
 This API (PUT Bucket cors) is used to set the cross-origin access configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 put_bucket_cors(Bucket, CORSConfiguration={}, **kwargs)
@@ -81,21 +81,21 @@ response = client.put_bucket_cors(
 | CORSRule | Sets the appropriate cross-origin access rules, including ID, MaxAgeSeconds, AllowedOrigin, AllowedMethod, AllowedHeader, and ExposeHeader | List | Yes |
 | ID | Set rule ID | String | No |
 | MaxAgeSeconds | Sets the validity period of the results obtained by OPTIONS | int | No |
-| AllowedOrigin | Set allowed access sources, e.g. `"http://intl.cloud.tencent.com"`. The wildcard "*" is supported. | Dict | Yes |
-| AllowedMethod | Set allowed methods, including GET, PUT, HEAD, POST, DELETE | Dict | Yes |
-| AllowedHeader | Set the custom HTTP request headers that are allowed to be used by requests. The wildcard "*" is supported. | Dict | No |
-| ExposeHeader | Configure the custom header information that can be received by the browser from the server end. | Dict | No |
+| AllowedOrigin | Sets allowed access sources, e.g. `"http://cloud.tencent.com"`. The wildcard "*" is supported. | Dict | Yes |
+| AllowedMethod | Sets allowed methods, including GET, PUT, HEAD, POST, DELETE | Dict | Yes |
+| AllowedHeader | Sets the custom HTTP request headers that are allowed to be used by requests. The wildcard "*" is supported. | Dict | No |
+| ExposeHeader | Configures the custom header information that can be received by the browser from the server end. | Dict | No |
 
 #### Response
 This method returns None.
 
 ### Querying cross-origin access configuration
 
-## Feature
+#### Feature 
 
 This API (GET Bucket cors) is used to query the cross-origin access configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 get_bucket_cors(Bucket, **kwargs)
@@ -142,22 +142,22 @@ Bucket cross-origin access configuration in Dict format.
 
 | Parameter Name | Description | Type |
 | -------------- | -------------- |---------- |
-| CORSRule | Cross-origin access rule, including ID, MaxAgeSeconds, AllowedOrigin, AllowedMethod, AllowedHeader, and ExposeHeader | List |  
+| CORSRule | Cross-origin access rule, including ID, MaxAgeSeconds, AllowedOrigin, AllowedMethod, AllowedHeader, and ExposeHeader | List | 
 | ID | Rule ID | String | 
-| MaxAgeSeconds | Sets the validity period of the `OPTIONS` request result | String | 
-| AllowedOrigin | Allowed access sources, e.g. `"http://intl.cloud.tencent.com"`. The wildcard "*" is supported. | Dict | 
+| MaxAgeSeconds | Sets the validity period of the `OPTIONS` request result | String |
+| AllowedOrigin | Allowed access sources, e.g. `"http://cloud.tencent.com"`. The wildcard "*" is supported. | Dict | 
 | AllowedMethod | Allowed methods, including GET, PUT, HEAD, POST, DELETE | Dict |
-| AllowedHeader | The custom HTTP request headers that are allowed to be used by requests. The wildcard "*" is supported. | Dict | 
-| ExposeHeader | The custom header information that can be received by the browser from the server end. | Dict | 
+| AllowedHeader | Sets the custom HTTP request headers that are allowed to be used by requests. The wildcard "*" is supported. | Dict | 
+| ExposeHeader | Sets the custom header information that can be received by the browser from the server end. | Dict | 
 
 
 ### Deleting cross-origin configuration
 
-## Feature
+#### Feature 
 
 This API (DELETE Bucket cors) is used to delete the cross-origin access configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```
 delete_bucket_cors(Bucket, **kwargs)
@@ -184,7 +184,7 @@ This method returns None.
 ## Lifecycle
 ### Setting the Lifecycle
 
-## Feature
+#### Feature 
 
 This API (PUT Bucket lifecycle) is used to set the lifecycle configuration of a bucket.
 
@@ -277,12 +277,12 @@ response = client.put_bucket_lifecycle(
 | Parameter Name | Description | Type | Required | 
 | -------------- | -------------- |---------- | ----------- |
  | Bucket | Bucket name. Format: BucketName-APPID | String | Yes | 
- | Rule | Sets the corresponding rules, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, AbortIncompleteMultipartUpload. | List | Yes |
+ | Rule | Sets the corresponding rules, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, AbortIncompleteMultipartUpload | List | Yes |
  | ID | Sets rule ID. | string | No |
  | Filter | Describes a collection of objects that are subject to the rules. To set rules for all objects in the bucket, leave Prefix empty. | Dict | Yes | 
- | Status | Sets whether Rule is enabled. Available values: Enabled or Disabled. | Dict | Yes | 
-  |  Expiration  | Sets the expiration rule for Object. You can specify the number of days (Days) or a date (Date). The format of Date must be GMT ISO 8601. You can specify the date using get_date method. | Dict | No |
- | Transition | Sets the rule for when an object transitions to a specified storage class. You can specify the number of days (Days) or a specified date (Date). The format of Date must be GMT ISO 8601. You can specify the date using get_date method. Available values for StorageClass: Standard_IA and Archive. Multiple rules can be set at a time. | List | No | 
+ | Status | Sets whether Rule is enabled. Available values: Enabled or Disabled | Dict | Yes | 
+  |  Expiration  | Sets the expiration rule for Object. You can specify the number of days (Days) or a date (Date). The format of Date must be GMT ISO 8601. You can specify the date using the get_date method. | Dict | No |
+ | Transition | Sets the rule for when an object transitions to a specified storage class. You can specify the number of days (Days) or a specified date (Date). The format of Date must be GMT ISO 8601. You can specify the date using the get_date method. Available values for StorageClass: Standard_IA and Archive. Multiple rules can be set at a time. | List | No | 
  | NoncurrentVersionExpiration | Sets the expiration rule for noncurrent object versions. You can specify the number of days (NoncurrentDays). | Dict | No |
  |  NoncurrentVersionTransition  | Sets the transition rule that describes when noncurrent objects transition to another storage class. You can specify the number of days (NoncurrentDays). Available values for StorageClass: Standard_IA. Multiple rules can be set at a time. | List | No | 
  | AbortIncompleteMultipartUpload | Indicates the number of days within which the upload must be completed after the multipart upload starts. | Dict | No | 
@@ -295,7 +295,7 @@ This method returns None.
 
 ### Querying the Lifecycle
 
-## Feature
+#### Feature
 
 This API (GET Bucket lifecycle) is used to query the lifecycle configuration of a bucket.
 
@@ -315,7 +315,7 @@ response = client.get_bucket_lifecycle(
 
 #### Response
 
-Bucket lifecycle configuration in Dict format.
+Bucket lifecycle configuration. Type is dict.
 ```python
 {
     'Rule': [
@@ -363,18 +363,18 @@ Bucket lifecycle configuration in Dict format.
 | -------------- | -------------- |---------- | 
 | Rule | Corresponding rules, including ID, Filter, Status, Expiration, Transition, NoncurrentVersionExpiration, NoncurrentVersionTransition, AbortIncompleteMultipartUpload | List | 
 | ID | Rule ID | String | 
-| Filter | Describe a collection of Objects that are subject to the rules. | Dict |
+| Filter | Describes a collection of Objects that are subject to the rules. | Dict |
 | Status | Whether Rule is enabled. Available values: Enabled or Disabled | Dict |
 | Expiration | Expiration rule for Object. You can specify the number of days (Days) or the specified date (Date). | Dict | 
-| Transition | Rule for when an object transitions to a specified storage class. You can specify the number of days (Days) or the specified date (Date). Available values for StorageClass: Standard_IA, Archive. | Dict | 
+| Transition | Rule for when an object transitions to a specified storage class. You can specify the number of days (Days) or the specified date (Date). Available values for StorageClass: Standard_IA, Archive. | List | 
 | NoncurrentVersionExpiration | Expiration rule for noncurrent object versions. You can specify the number of days (NoncurrentDays). | Dict |
 |  NoncurrentVersionTransition  | Transition rule that describes when noncurrent objects transition to another storage class. You can specify the number of days (NoncurrentDays). Available values for StorageClass: Standard_IA. | List | 
 | AbortIncompleteMultipartUpload | Number of days within which the upload must be completed after the multipart upload starts. | Dict |
 
 
-### Deleting the lifecycle
+### Deleting the Lifecycle
 
-## Feature
+#### Feature 
 
 This API (DELETE Bucket lifecycle) is used to delete the lifecycle configuration of a bucket.
 
@@ -403,9 +403,9 @@ This method returns None.
 
 
 ## Versioning
-### Set versioning
+### Set Versioning
 
-## Feature
+#### Feature 
 
 This API (PUT Bucket versioning) is used to set versioning for a bucket.
 
@@ -416,7 +416,7 @@ put_bucket_versioning(Bucket, Status, **kwargs)
 
 #### Request samples
 
-##### Enable versioning
+##### Enable Versioning
 [//]: # (.cssg-snippet-put-bucket-versioning)
 ```python
 response = client.put_bucket_versioning(
@@ -425,7 +425,7 @@ response = client.put_bucket_versioning(
 )
 ```
 
-##### Suspend versioning
+##### Suspend Versioning
 ```python
 response = client.put_bucket_versioning(
     Bucket='examplebucket-1250000000',
@@ -445,9 +445,9 @@ response = client.put_bucket_versioning(
 
 This method returns None.
 
-### Query versioning
+### Query Versioning
 
-## Feature
+#### Feature 
 
 This API (GET Bucket versioning) is used to query the versioning configuration of a bucket.
 
@@ -472,7 +472,7 @@ response = client.get_bucket_versioning(
 
 #### Response
 
-Bucket versioning configuration in Dict format.
+Bucket versioning configuration in dict format. 
 ```python
 {
     'Status': 'Enabled'|'Suspended'
@@ -484,12 +484,12 @@ Bucket versioning configuration in Dict format.
 | Status | Versioning status. Valid values: `Suspended`, `Enabled` | String |  
 
 
-## Cross-Region Replication
+## Cross-region Replication
 ### Setting cross-region replication
 
-## Feature
+#### Feature 
 
-This API (PUT Bucket replication) is used to set cross-region replication rules for a bucket.
+This API (PUT Bucket replication) is used to set cross-region replication rules for a bucket
 
 #### Method prototype
 
@@ -510,7 +510,7 @@ response = client.put_bucket_replication(
                 'Status': 'Enabled',
                 'Destination': {
                     'Bucket': 'qcs::cos:ap-shanghai::destinationbucket-1250000000',
-                    'StorageClass': 'STANDARD'
+                    'StorageClass': 'STANDARD',
                 }
             }
         ]   
@@ -553,9 +553,9 @@ response = client.put_bucket_replication(
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name. Format: BucketName-APPID | String | Yes | 
 | Role | Replication initiator identifier: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | string | No |
-| Rule | Sets rule ID, Status, Prefix, and Destination | List | Yes |
+| Rule | Sets rule ID，Status，Prefix，and Destination | List | Yes |
 | ID | Sets rule ID. | string | No |
-| Status | Sets whether Rule is enabled. Available values: Enabled or Disabled | String | Yes |
+| Status  | Sets whether the rule is enabled or not. Valid values: `Enabled`, `Disabled` | String| Yes |
 | Prefix |  Prefix used to filter objects that are subject to the rule. If it is left empty, it means that the rule applies to all objects in the bucket | String |  Yes |
 | Destination |   Describes information on object copies, including `Bucket` and `StorageClass`  | Dict | Yes | 
 | Bucket| Sets the destination bucket of the cross-region replication. Format: `qcs::cos:[region]::[BucketName-APPID]`  | String  | Yes |
@@ -567,7 +567,7 @@ This method returns None.
 
 ### Querying cross-region replication
 
-## Feature
+#### Feature
 
 This API (GET Bucket replication) is used to query the cross-region replication rules of a bucket.
 
@@ -592,7 +592,7 @@ response = client.get_bucket_replication(
 
 #### Response
 
-Bucket cross-region replication configuration in Dict format.
+Bucket cross-region replication configuration in dict format. 
 ```python
 {
     'Role': 'qcs::cam::uin/100000000001:uin/100000000001',
@@ -633,7 +633,7 @@ Bucket cross-region replication configuration in Dict format.
 
 ## Deleting cross-region replication
 
-## Feature
+#### Feature
 
 This API (Delete Bucket replication) is used to delete cross-region replication of a bucket.
 

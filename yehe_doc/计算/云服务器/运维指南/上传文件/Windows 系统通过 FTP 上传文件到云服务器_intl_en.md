@@ -1,34 +1,35 @@
 ## Scenario
 
-This document describes how to upload files from the local server to CVM via FTP.
+This document describes how to use the FTP service on a local Windows machine to upload files to a CVM.
 
 ## Prerequisites
 
-[Build the FTP Service](https://intl.cloud.tencent.com/document/product/213/10414) on CVM.
+[The FTP service](https://intl.cloud.tencent.com/document/product/213/10912) has been built on the CVM.
 
-## Directions
+## Procedure
 
-### Connecting CVM
+### Connecting to the CVM
 1. Download and install FileZilla locally.
-> If you use version 3.5.3 of FileZilla to upload files via FTP, the upload may fail. We recommend you download and use version 3.5.1 or 3.5.2 of FileZilla.
+> If you use FileZilla 3.5.3 to upload files through FTP, the upload may fail. We recommend that you download FileZilla 3.5.1 or 3.5.2 from the official website.
 >
 2. Open FileZilla.
-3. In the FileZilla window, enter host, user name, password, and port information, and click **Quickconnect**
+3. In the FileZilla window, complete the host, username, password, and port information, and click **Quickconnect**.
 **Configuration description:**
- - Host: Public IP of the CVM. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to view the public IP of the CVM on the instance management page.
- - User name: FTP user account configured when you [build the FTP service](https://intl.cloud.tencent.com/document/product/213/10912). The figure below uses "ftpuser1" as an example.
- - Password: Password corresponding to the FTP user account configured when you [build the FTP service](https://intl.cloud.tencent.com/document/product/213/10912).
- - Port: FTP listener port, which is "21" by default.
-If the connection is successful, you can view files on the CVM remote site.
+ - Host: indicates the public IP address of the CVM. To view the public IP address of the CVM, log in to the [CVM console](https://console.cloud.tencent.com/cvm) and navigate to the instance management page.
+ - Username: indicates the FTP user account configured when you [set up the FTP service](https://intl.cloud.tencent.com/document/product/213/10912). Here, "ftpuser1" is used as an example.
+ - Password: indicates the password of the FTP user account configured when you [set up the FTP service](https://intl.cloud.tencent.com/document/product/213/10912).
+ - Port: indicates the FTP listening port, which is port **21** by default.
+After the connection is successfully established, you can view files on the remote CVM site.
 
 ### Uploading a file
-In the "Local site" window at the bottom left, right-click the local file to be uploaded and select **Upload** to upload it to Linux CVM, as shown below:
+In the "Local site" window in the lower-left corner, right-click the local file to be uploaded and choose **Upload** to upload it to the Linux CVM.
 > 
->- CVM FTP path does not support automatic unzipping or deleting of uploaded tar zip files.
->- The remote site path is the default path for uploading files to Linux CVM.
+>- The CVM FTP path does not support the automatic decompression or deletion of uploaded tar packages.
+>- The remote site path is the default path for uploading files to the Linux CVM.
 >
 
+
 ### Downloading a file
-In the "Remote site" window at the bottom right, right-click the CVM file to be downloaded and select **Download** to download it to your local computer.
+In the "Remote site" window in the lower-right corner, right-click the CVM file to be downloaded and choose **Download** to download it to a local directory.
 
 

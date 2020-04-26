@@ -11,10 +11,8 @@
  AVChatRoom 支持弹幕、 送礼和点赞等多消息类型，轻松打造良好的直播聊天互动体验；提供弹幕内容审核能力，保证您的直播免受不雅信息干扰。
 #### 网红带货
  AVChatRoom 与商业直播相结合，通过提供点赞、询价、购物券等特定消息类型，帮助直播客户实现流量变现。
- 
 #### 教学白板
  AVChatRoom 可提供在线课堂、文本消息、画笔轨迹等能力，轻松实现教师学生沟通、画笔轨迹保存、大班课与小班课教学等教学场景。
- 
 
 ## 使用限制
 - 不支持 [撤回消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#revokeMessage)。
@@ -93,7 +91,7 @@ tim.setLogLevel(0) // 普通级别，日志量较多，接入时建议使用
 tim.on(TIM.EVENT.SDK_READY, function (event) {
   // SDK ready 后接入侧才可以调用 sendMessage 等需要鉴权的接口，否则会提示失败！
   // event.name - TIM.EVENT.SDK_READY
-}）
+})
 
 tim.on(TIM.EVENT.MESSAGE_RECEIVED, function(event) {
   // 收到推送的单聊、群聊、群提示、群系统通知的新消息，可通过遍历 event.data 获取消息列表数据并渲染到页面

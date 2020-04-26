@@ -55,7 +55,7 @@ VOD supports the following types of event notifications:
 Event notification modes include "normal callback" and "reliable callback". You can log in to the [VOD Console](https://console.cloud.tencent.com/vod) to set the callback mode and select the events for which you want to receive callbacks. For detailed directions, please see [Callback Settings](https://intl.cloud.tencent.com/document/product/266/14055).
 
 - Normal callback: configure a callback URL in the console. After an event is completed, the system will send an HTTP request to this URL, which contains the notification content.
-- - Reliable callback: after an event is completed, the VOD system will put the notifications into a built-in message queue, and then the application service will consume the notifications in the queue through a server API.
+- Reliable callback: after an event is completed, the VOD system will put the notifications into a built-in message queue, and then the application service will consume the notifications in the queue through a server API.
 
 
 
@@ -63,7 +63,7 @@ Event notification modes include "normal callback" and "reliable callback". You 
 
 Normal callback is a mode in which the application service passively receives event notifications. After the callback URL is configured and the normal callback mode is selected, VOD will initiate a callback to the callback URL after an event is completed.
 
-A normal callback initiated by VOD is an HTTP request, where the request body is in JSON format and the content is the [`EventContent` structure](https://intl.cloud.tencent.com/document/product/266/34187#EventContent) excluding the `EventHandle` parameter.
+A normal callback initiated by VOD is an HTTP request, where the request body is in JSON format and the content is the [`EventContent` structure](https://intl.cloud.tencent.com/zh/document/product/266/34187#EventContent) excluding the `EventHandle` parameter.
 Take [task status change notification](https://intl.cloud.tencent.com/document/product/266/33953) as an example. The `EventType` parameter in the callback is `ProcedureStateChanged`, and the information is represented by the `ProcedureStateChangeEvent` parameter ([`ProcedureTask`](https://intl.cloud.tencent.com/document/product/266/34187#ProcedureTask) structure).
 
 ## Reliable Callback

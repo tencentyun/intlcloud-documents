@@ -70,33 +70,22 @@
 ## 带宽相关限制
 
 - 出网带宽上限（下行带宽）：
+ - 2020年2月24日00:00以前创建的机器按以下规则执行： 
 <table>
-    <tr>
-       <th rowspan="2"><b>网络计费模式</b></th> 
-       <th colspan="2" ><b>实例</b></th>
-       <th rowspan="2"><b>带宽上限的可设置范围（Mbps）</b></th>	
-   </tr>
-    <tr>
-       <th><b>实例计费模式</b></th> 
-       <th><b>实例配置</b></th> 
-    </tr>
-	<tr>
-	      <td>按流量计费</td> 
-        <td >按量计费实例</td> 
-        <td >ALL</td> 
-				<td>0 - 100</td>    
-   </tr>
-	 <tr>
-		    <td>按带宽计费</td> 
-        <td >按量计费实例</td> 
-        <td >ALL</td> 
-				<td>0 - 100</td>      
-   </tr>
-    <tr>
-		    <td>共享带宽</td> 
-        <td colspan="2">ALL</td> 
-        <td>0 - 200或不限速</td>    
-    </tr>
+<tr><th rowspan="2">网络计费模式</th><th colspan="2">实例</th><th rowspan="2">带宽上限的可设置范围（Mbps）</th></tr>
+<tr><th>实例计费模式</th><th>实例配置</th></tr>
+<tr><td>按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>共享带宽</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
+</table>
+
+ - 2020年2月24日00:00以后创建的机器按以下规则执行：
+<table>
+<tr><th rowspan="2">网络计费模式</th><th colspan="2">实例</th><th rowspan="2">带宽上限的可设置范围（Mbps）</th></tr>
+<tr><th style="width: 18.5607%;">实例计费模式</th><th style="width: 24.5814%;">实例配置</th></tr>
+<tr><td>按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>共享带宽</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
 </table>
 
 - 入网带宽上限（上行带宽）：
@@ -131,7 +120,7 @@
 <tr><th>功能描述</th><th>限制</th></tr>
 <tr><td>安全组个数</td><td>50个/地域</td></tr>
 <tr><td>安全组规则数</td><td>100条/入站方向，100条/出站方向</td></tr>
-<tr><td>单个安全组关联的云服务器实例数</td><td>100个</td></tr>
+<tr><td>单个安全组关联的云服务器实例数</td><td>2000个</td></tr>
 <tr><td>每个云服务器实例可以关联的安全组个数</td><td>5个</td></tr>
 <tr><td>每个安全组引用安全组 ID 的规则条目数</td><td>10条</td></tr>
 </table>

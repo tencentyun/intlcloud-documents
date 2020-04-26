@@ -23,8 +23,9 @@ COSBrowser Mobile Version supports the following three login methods:
 
 >
 >
-> If your Tencent Cloud account was created with a QQ account, you can also use the login with WeChat method to log in just by selecting login with QQ on the redirected WeChat Mini Program screen.
-> - If you use a sub-account, you can log in with key or WeChat. For login with WeChat, just select the sub-account on the redirected WeChat Mini Program screen.
+>If your Tencent Cloud account was created with a QQ account, you can also use the login with WeChat method to log in just by selecting login with QQ on the redirected WeChat Mini Program screen.
+>
+>- If you use a sub-account, you can log in with key or WeChat. For login with WeChat, just select the sub-account on the redirected WeChat Mini Program screen.
 
 
 
@@ -35,8 +36,6 @@ COSBrowser Mobile Version supports the following three login methods:
 #### 1. Data Overview
 
 The data overview page displays your COS data usage in the past 30 days, including total traffic, total read and write requests, storage trend, traffic trends (for public network downstream traffic, private network traffic, and CDN origin-pull traffic), trend in the number of requests, trend in the ratio of effective requests, amount of standard_IA data retrieved, and amount of archive data retrieved.
-
-<img src="https://main.qcloudimg.com/raw/834d34d03a23f27953fa5f4c3cf6824d.jpg" style="zoom:25%;" />
 
 <span id="filebatch"></span>
 
@@ -56,7 +55,7 @@ COSBrowser allows you to download, delete, copy, or move multiple files in your 
 > - COSBrowser for iOS allows you to save image and video files to the album.
 > - No batch operations can be performed on folders for the time being.
 
-<img src="https://main.qcloudimg.com/raw/b1f25e00f9c9051b6dfc390827754b7e.jpg" style="zoom:45%;" />
+<img src="https://main.qcloudimg.com/raw/677300a8276ce0db713dfe66d180b6ee.png" style="zoom:45%;" />
 
 <span id="shareupload"></span>
 
@@ -64,7 +63,7 @@ COSBrowser allows you to download, delete, copy, or move multiple files in your 
 
 In a third-party app, you can copy the specified file to your bucket by selecting **Open in another app** > **COSBrowser**.
 
-<img src="https://main.qcloudimg.com/raw/332f92550f2d0b12b1196a80cb7a90a6.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/32b998eddcb135b9c351435ca8ab194e.png" style="zoom:85%;" />
 
 <span id="rename"></span>
 
@@ -92,7 +91,7 @@ In the specified bucket or path, tap "+" in the top-right corner, tap **Create a
 
 To view the details of a file, tap its filename. File details include object name, object size, modification time, access permission, object address, validity period, and option to generate a temporary link.
 
-<img src="https://main.qcloudimg.com/raw/369184ffeba95ac13a391fa508603bee.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/34e5aa857508257a80119356abffce80.png" style="zoom:65%;" />
 
 
 
@@ -143,7 +142,7 @@ To view the details of a bucket, tap Operation to the right of the bucket on the
 
 To create a bucket, tap **Create a Bucket** in the top-right corner on the bucket list page and specify the name, region, and access permission.
 
-<img src="https://main.qcloudimg.com/raw/7a6cd297468668969c9811ad97373e35.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/2cfabcbe6c970ef295a05029e4c03b63.png" style="zoom:25%;" />
 
 
 <span id="addaccess"></span>
@@ -152,5 +151,5 @@ To create a bucket, tap **Create a Bucket** in the top-right corner on the bucke
 
 If you log in with a sub-account that has no access to the bucket list, you can add the specified path to a bucket or directory to manage resources by tapping **Add Access Path** in the top-right corner of the bucket list page.
 
-<img src="https://main.qcloudimg.com/raw/dfb1def36e399d203e850c629d5cd67e.jpg" style="zoom:25%;" />
+<img src="https://main.qcloudimg.com/raw/3a81c3a3f090a269b6152d154ea4f8e7.png" style="zoom:25%;" />
 
