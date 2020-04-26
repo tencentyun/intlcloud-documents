@@ -2,7 +2,7 @@
 
 ## 录制存储
 
-直播录制将文件存放于点播平台，您如需使用直播录制服务，需首先申请开通 [云点播服务](https://cloud.tencent.com/product/vod)。
+直播录制将文件存放于点播平台，您如需使用直播录制服务，需首先申请开通 [云点播服务](https://intl.cloud.tencent.com/product/vod)。
 
 ## 录制格式
 
@@ -125,7 +125,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 
 ## 混流录制
 
-首先请先参见 [云端混流](https://cloud.tencent.com/document/product/267/8832) 了解混流业务。
+首先请先参见 [云端混流](https://cloud.tencent.com/document/product/267/43404) 了解混流业务。
 
 对于使用了直播云端混流业务的场景，录制侧按混流参数 OutputStreamType（输出流类型）将混流分为两类：
 -  OutputStreamType 为`0`，表示输出流在输入流列表中，即没有生成新的流。
@@ -166,7 +166,6 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 ### 点播 API 查询
 具体使用请参见云点播 API 文档：
 - 根据直播流名称及时间范围查询录制文件 API [SearchMedia](https://cloud.tencent.com/document/product/266/31813)。
-- 依照视频名称前缀获取视频信息 API [DescribeVodPlayInfo](https://cloud.tencent.com/document/product/266/7825)。
 
 ## 更新配置注意事项
 
