@@ -1,3 +1,23 @@
+## 2020年04月
+
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>支持自定义旧 IP 地址回收时间</td>
+<td>切换网络时支持自定义旧 IP 地址的回收时间，可设置范围0 - 168小时，若旧 IP 地址的回收时间设置为0小时，更换网络后会立即回收旧 IP 地址。</td>
+<td>2020-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">切换网络</a></td>
+</tr>
+</tbody></table>
+
 ## 2020年01月
 
 <table>
@@ -12,7 +32,7 @@
 <tbody>
 <tr>
 <td>支持慢日志明细、错误日志明细</td>
-<td>云数据库 MySQL 高可用版和单节点高 IO 版实例提供操作日志管理功能。您可以在控制台的操作日志页面查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。</td>
+<td>云数据库 MySQL （不含基础版）实例提供操作日志管理功能。您可以在控制台的操作日志页面查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。</td>
 <td>2020-01</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/34588" target="_blank">操作日志</a></td>
 </tr>
@@ -95,7 +115,7 @@
 <td>南京一区开服</td>
 <td>随着南京一区的开放，云数据库 MySQL 在华东目前已坐拥上海和南京两大地域。</td>
 <td>2019-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/8458?from_cn_redirect=1" target="_blank">地域和可用区</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/8458" target="_blank">地域和可用区</a></td>
 </tr>
 </tbody></table>
 
@@ -153,7 +173,7 @@
 <td>支持购买基础版实例</td>
 <td>基础版采用单个节点部署，计算与存储分离，若计算节点故障，能够通过更换节点达到快速恢复的效果，MySQL 基础版底层存储介质使用高性能云盘，适用于90%的 I/O 场景，质优价廉，性能稳定突出。</td>
 <td>2018-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/17136?from_cn_redirect=1" target="_blank">数据库架构</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">数据库架构</a></td>
 </tr>
 <tr>
 <td>支持网络切换</td>
@@ -171,19 +191,13 @@
 <td>支持降配退费</td>
 <td>可降低数据库配置，退还剩余费用。</td>
 <td>2018-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/32345#.E9.99.8D.E7.BA.A7.E5.AE.9E.E4.BE.8B.E8.B4.B9.E7.94.A8" target="_blank">调整实例费用说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/32345" target="_blank">调整实例费用说明</a></td>
 </tr>
 <tr>
 <td>支持 MySQL 5.7 数据迁移</td>
 <td>DTS 数据迁移支持 MySQL 5.7 版本。</td>
 <td>2018-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/571/34103" target="_blank">MySQL 数据在线导入</a></td>
-</tr>
-<tr>
-<td>产品更名</td>
-<td>从云数据库 MySQL（CDB for MySQL）更名为云数据库 MySQL（TencentDB for MySQL  ）。</td>
-<td>2018-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236?from_cn_redirect=1" target="_blank">云数据库 MySQL </a></td>
 </tr>
 </tbody></table>
 
@@ -202,13 +216,13 @@
 <td>只读实例支持弹性规格</td>
 <td>不再需要与主实例同规格。</td>
 <td>2017-08</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/7270?from_cn_redirect=1" target="_blank">只读实例</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">只读实例</a></td>
 </tr>
 <tr>
 <td>监控支持1分钟粒度</td>
 <td>实现1分钟粒度监控数据库。</td>
 <td>2017-08</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/8455?from_cn_redirect=1" target="_blank">监控功能</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/8455" target="_blank">监控功能</a></td>
 </tr>
 <tr>
 <td>支持物理备份</td>
@@ -276,12 +290,12 @@
 <td>只读实例上线</td>
 <td>云数据库 MySQL 支持用户创建一个或多个只读实例，以支持用户的读写分离和一主多从应用场景，可显著提高用户数据库的读负载能力。</td>
 <td>2016-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/7270?from_cn_redirect=1" target="_blank">只读实例</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">只读实例</a></td>
 </tr>
 <tr>
 <td>支持按量付费实例</td>
 <td>以小时为单位提供数据库服务。</td>
 <td>2016-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/18335?from_cn_redirect=1" target="_blank">计费概述</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/18335" target="_blank">计费概述</a></td>
 </tr>
 </tbody></table>
