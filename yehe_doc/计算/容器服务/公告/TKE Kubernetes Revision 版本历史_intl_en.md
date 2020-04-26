@@ -166,16 +166,6 @@
 </tr>
 <tr>
 	<td>2019-12-23</td>
-	<td>v1.12.4-tke.15</td>
-	<td>Reverted <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes an issue where cpumanager disables cpu quota when it opens if the QoS setting of a pod is Guaranteed.</td>
-</tr>
-<tr>
-	<td>2019-12-17</td>
-	<td>v1.12.4-tke.14</td>
-	<td><ul class="params"> <li>Adds metadata cache and timeout.</li> <li>Fixes an issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Adds the ability to reboot kubelet to avoid pod not ready.</li></ul></td>
-</tr>
-<tr>
-	<td>2019-12-23</td>
 	<td>v1.10.5-tke.13</td>
 	<td>Reverted <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes an issue where cpumanager disables cpu quota when it opens if the QoS setting of a pod is Guaranteed.</td>
 </tr>
