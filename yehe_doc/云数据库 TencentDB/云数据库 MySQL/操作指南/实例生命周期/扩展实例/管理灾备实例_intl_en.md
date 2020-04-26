@@ -39,25 +39,24 @@ For applications with high requirements for service continuity, data reliability
 >If the **sync policy** you selected during instance purchase is **Sync After Creation**, you need to configure a disaster recovery sync link after the instance is created successfully. By doing so, you can implement remote disaster recovery.
 
 1. On the **instance details** page of the master instance, you can view the sync status of the disaster recovery instance. Click **Create Sync Task** to create a private network sync linkage with the master instance for the disaster recovery instance.
-![](https://main.qcloudimg.com/raw/f2f941ccf588d54cb2687cc0a9d0a961.png)
+
 2. Enter the task name, confirm the source and target database information, and click **Save and Next**.
-![](https://main.qcloudimg.com/raw/5a2b3ef40de69af903cc60396d8f1a84.png)
+
 3. Select the object to be synced. Sync of the entire instance or certain tables is supported. The sync type cannot be customized currently.
-![](https://main.qcloudimg.com/raw/ac3f2db7c68f708ac07bb597a420ae83.png)
+
 4. Click **Save and Check** to **check the task**. After the check succeeds, click **Start Task**. Then, you can view the task details on the **disaster recovery sync** page in the TencentDB for MySQL Console.
-![](https://main.qcloudimg.com/raw/4cc319646447bb20a5a76982a0783a49.png)
+
 
 ### Managing disaster recovery instance
 - **View a disaster recovery instance**
   A disaster recovery instance can be viewed from the regions where it resides. You can use the instance list to filter out all instances in a specific region.
-	![](https://main.qcloudimg.com/raw/1ade1aa59f7c5cd74b2cf30299d31cac.png)
+	
 - **View slave-master relationship**
   Click the icon on the right of a disaster recovery instance or master instance to view the slave-master relationship.
-  ![](https://main.qcloudimg.com/raw/4b98a6b2831c027af52a37050aa16f2d.png)
-	![](https://main.qcloudimg.com/raw/f08c6d3dd53a40ea544bdadc9e111ee8.png)
+
 - **View sync delay**
   View the sync delay between the master instance and the disaster recovery instance at the top of the **instance details** page of the disaster recovery instance.
-![](https://main.qcloudimg.com/raw/d06a9c821f5ebd04173ee6e453ef5ef2.png)
+
 - **Disaster recovery instance features**
   A disaster recovery instance has various features, such as instance details viewing, instance monitoring, backup management, and slow query logging.
 
@@ -66,5 +65,4 @@ For applications with high requirements for service continuity, data reliability
 2. Enter the management page. Click **Promote to master instance** in the top-right corner to promote the disaster recovery instance to a master instance. After the promotion, the sync link with the master instance will be disconnected, so that the promoted instance can get data write capability and full MySQL functionality.
 >The disconnected sync link cannot be reconnected. Please proceed with caution.
 > 
-![](https://main.qcloudimg.com/raw/c4e1517d56c630ff845c89060402e657.png)
 
