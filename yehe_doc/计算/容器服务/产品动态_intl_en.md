@@ -1,11 +1,32 @@
-## March 2020
-
+## April 2020
 <table>
-<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
-<th style="width:15%">Release Time</th><th style="width:15%">Related Document</th> </tr>
+<tr><th style="width:20%">Updates</th><th style="width:50%">Details</th> 
+<th style="width:15%">Date</th><th style="width:15%">Documentation</th> </tr>
 <tr>
-    <td>TKE clusters allow BM and big data models to set local disk formatting. </td> <td>TKE allows BM and big data model nodes to set local disk formatting and mount and set container directories.</td><td>2020-03-02</td>
-    <td><a href="https://intl.cloud.tencent.com/document/product/457/30637">Creating a Cluster</a></td>
+	<td>TKE removes Kubernetes 1.8 as an option</td><td>TKE no longer supports creating clusters using Kubernetes 1.8.</td><td>2020-04-03</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30637">Creating Clusters</a></td>
+</tr>
+<tr>
+	<td>Self-deployed cluster master update</td><td>You can now use the TKE console to perform rolling updates of Kubernetes masters on self-deployed clusters.</td><td>2020-04-02</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30640">Updating Clusters</a></td>
+</tr>
+</table>
+
+## March 2020
+<table>
+<tr><th style="width:20%">Updates</th><th style="width:50%">Details</th> 
+<th style="width:15%">Date</th><th style="width:15%">Documentation</th> </tr>
+<tr>
+	<td>TKE now supports both GlobalRouter and VPC-CNI network modes</td>
+	<td>TKE now supports GlobalRouter and VPC-CNI network modes for your business needs. Choose the one that fits your requirements.</td>
+	<td>2020-03-30</td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/35248">How to choose TKE Network Mode</a></td>
+</tr>
+<tr>
+    <td>TKE Edge is now live</td> <td>TKE Edge is a centralized container system that manages edge cloud resources. You can use it to manage distributed nodes in the same cluster across multiple regions. TKE Edge is fully compatible with Kubernetes, supports one-click delivery, and provides edge autonomy, and distributed health checks.</td><td>2020-03-25</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/35390">TKE Edge</a></td>
+</tr>
+<tr>
+    <td>Supports enabling "Local Disk Formatting" for BM and big data models</td> <td>TKE now allows you to enable "Local Disk Formatting" for BM and big data model nodes, and also allows mounting and setting container directories.</td><td>2020-03-02</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/30637">Creating Clusters</a></td>
 </tr>
 </table>
 
