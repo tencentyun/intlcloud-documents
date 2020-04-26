@@ -125,7 +125,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 
 ## 混流录制
 
-首先请先参见 [云端混流](https://intl.cloud.tencent.com/document/product/267/8832) 了解混流业务。
+首先请先参见 [云端混流](https://cloud.tencent.com/document/product/267/43404) 了解混流业务。
 
 对于使用了直播云端混流业务的场景，录制侧按混流参数 OutputStreamType（输出流类型）将混流分为两类：
 -  OutputStreamType 为`0`，表示输出流在输入流列表中，即没有生成新的流。
