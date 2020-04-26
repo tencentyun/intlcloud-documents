@@ -33,16 +33,6 @@
 	<td><ul class="params"><li>Merges<a href="https://github.com/google/cadvisor/pull/2359" target="_blank"> pr2359</a>, which fixes the issue with missing monitoring records when the system is unable to obtain docker root.</li> <li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86583" target="_blank"> pr86583</a>, which increases the logging level to reduce the amount of logs caused by the lack of support for  random-fully in earlier versions of iptables.</li><li>kube-scheduler now supports dynamic logging level configuration.</li><li>Produces a workaround for the missing cbs device path (/dev/disk/by-id/virtio-xxx/...) issue which prevented some users from accessing cbs.</li><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86230" target="_blank"> pr86230</a>, which skips assumed pod updates when scheduling pods.</li></ul></td>
 </tr>
 <tr>
-	<td>2019-12-23</td>
-	<td>v1.14.3-tke.8</td>
-	<td>Reverts <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes an issue where cpumanager disables cpu quota when it opens if the QoS setting of a pod is Guaranteed.</td>
-</tr>
-<tr>
-	<td>2019-12-17</td>
-	<td>v1.14.3-tke.7</td>
-	<td><ul class="params"><li>Adds metadata cache and timeout.</li> <li>Fixes an issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Adds the ability to reboot kubelet to avoid pod not ready.</li></ul></td>
-</tr>
-<tr>
 	<td>2019-11-28</td>
 	<td>v1.14.3-tke.6</td>
 	<td>cloud-provider now supports using node names as hostnames.</td>
