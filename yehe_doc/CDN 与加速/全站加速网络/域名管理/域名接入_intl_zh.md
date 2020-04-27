@@ -66,6 +66,6 @@ ECDN 加速域名接入加速平台的主要步骤如下：
 
 <span id="cname"></span>
 ## 步骤3：配置域名 CNAME
-1. 确定 host 测试正常后，您就可以将域名请求切换到 ECDN 加速平台。切换时，您只需要到加速域名的 DNS 服务商处完成 CNAME 配置即可，配置方法请参见 [CNAME 配置](https://cloud.tencent.com/doc/product/570/11134)。
+1. 确定 host 测试正常后，您就可以将域名请求切换到 ECDN 加速平台。切换时，您只需要到加速域名的 DNS 服务商处完成 CNAME 配置即可，配置方法请参见 [CNAME 配置](https://intl.cloud.tencent.com/document/product/570/11134)。
 2. 验证域名 CNAME 是否已经生效：不同的 DNS 服务商，CNAME 生效的时间略有不同，一般会在半个小时之内生效。您也可以通过 PING 或者 dig 的方式来查询 CNAME 是否生效，如果 PING 到后缀为 ```.dsa.sp.spcdntip.com``` 或 ```.dsa.p23.tc.cdntip.com``` 的域名，表示域名 CNAME 已生效。
 
