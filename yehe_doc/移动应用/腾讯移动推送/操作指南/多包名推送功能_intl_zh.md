@@ -8,24 +8,30 @@
 ### 控制台配置
 1.进入腾讯移动推送控制台[产品管理页面](https://console.cloud.tencent.com/tpns)。
 2.选择需要配置多包名的应用，单击【配置管理】。
+![](https://main.qcloudimg.com/raw/15f0ab0240137a1c7b02c6a73d1ef937.png)
 
 3.当应用未补充主包名时，需填入主包名同时单击【添加包名】，填入渠道包名。
-
+![](https://main.qcloudimg.com/raw/687bc1a152d79e7347196c85c9d66c81.png)
 4.当应用已配置主包名可单击【编辑】进入包名管理，点击添加按钮补充渠道包名。
+![](https://main.qcloudimg.com/raw/2949e98fcc0e9fd25490695a89ae770b.png)
 
 >渠道包名最多支持配置50个。
 
 ### 多包名厂商通道配置
 当应用有多个包名时，若需要通过厂商通道下发渠道包名的消息，则需要为每个渠道包名申请厂商密钥，并在 [控制台](https://console.cloud.tencent.com/tpns) 配置管理页面进行配置。
 以华为为例，当应用配置了多个包名时，开启华为通道将出现多套密钥配置，需将每个包名的配置补充完整，否则开启多包名推送时该包名下设备的消息将通过自建通道下发。
+![](https://main.qcloudimg.com/raw/5c454ec4e1c017ee2da11c6f8d1cb673.png)
 
 ### 集成SDK
 配置好包名之后，获取 ` AccessID、AccessKey`，根据  [Android SDK 集成指南](https://intl.cloud.tencent.com/document/product/1024/30713) 或按照控制台【快速接入】流程配置。
+![](https://main.qcloudimg.com/raw/86ced6140edd7012c8d1c7683f6e215a.png)
 
 
 ## 开始使用
 ### 控制台使用
 当以上配置补充完整并确认无误后，可在控制台 >【消息推送】>【创建推送】>【高级设置】多包名推送处开启多包名推送开关。
+![](https://main.qcloudimg.com/raw/cc1f1ec0ca401904438ac3a964cdefb1.png)
+
 开启多包名推送后，推送将对所有包名下匹配推送目标的设备下发。
 
 >多包名推送功能仅限 Android 平台，若包名对应厂商通道未配置，则该包名下注册设备的消息通过自建通道下发。
