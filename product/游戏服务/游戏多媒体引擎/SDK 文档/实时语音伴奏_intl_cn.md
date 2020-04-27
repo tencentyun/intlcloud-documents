@@ -29,7 +29,7 @@ ITMGAudioEffectCtrl virtual int StartAccompany(const char* filePath, bool loopBa
 ```
 
 |参数     | 类型         |意义|
-| ------------- |:-------------:|-------------
+| ------------- |:-------------:|-------------|
 | filePath    	|char\* 	|播放伴奏的路径。						|
 | loopBack  	|bool	|是否混音发送，一般都设置为 true，即其他人也能听到伴奏。	|
 | loopCount	|int    		|循环次数，数值为-1表示无限循环。	|
@@ -148,7 +148,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->EnableAccompanyLoopBack(false);
 ```
 
 ### 设置伴奏音量
-调用 SetAccompanyVolume 接口设置伴奏音量，默认值为100，数值大于100音量增益，数值小于100音量减益，值域为 0-200。
+调用 SetAccompanyVolume 接口设置伴奏音量，默认值为100，数值大于100音量增益，数值小于100音量减益，值域为 0 - 200。
 ####  函数原型  
 ```
 ITMGAudioEffectCtrl virtual int SetAccompanyVolume(int vol)
