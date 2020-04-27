@@ -54,7 +54,7 @@ Configure Kafka as the message receiver, i.e., pushing data into the Kafka serve
 | type	| This must be `org.apache.flume.sink.kafka.KafkaSink` |
 | kafka.bootstrap.servers	| Kafka broker server |
 |kafka.topics	| Kafka topic as data source |
-|flumeBatchSize	| Size of each written batch |
+|kafka.flumeBatchSize	| Size of each written batch |
 |kafka.producer.acks	 | 	Production policy of Kafka producer |
 
 Sample:

@@ -7,29 +7,22 @@ CloudAudit supports recording operations and API calls in the following Tencent 
 | Auto Scaling               | as                     |
 | Instant Messaging            | avc                    |
 | BatchCompute               | batch                  |
-| Anti-DDoS Pro                   | bgpip                  |
 | Cloud Access Management               | cam                    |
-| Tencent Kubernetes Engine-Continuous Integration      | ccb                    |
-| Tencent Kubernetes Engine-Image Repository      | ccr                    |
-| Tencent Kubernetes Engine-Cluster          | ccs                    |
+| Tencent Kubernetes Engine - Image Repository      | ccr                    |
 | TencentDB for MySQL         | cdb                    |
 | Cloud Load Balancer               | clb                    |
 | CloudAudit                 | cloudaudit             |
 | Cloud Log Service               | cls                    |
-| Cloud Message Queue-Queue Model               | cmqqueue               |
-| Cloud Message Queue-Topic Model               | cmqtopic               |
+| Cloud Message Queue - Queue Model               | cmqqueue               |
 | Live Video Broadcasting                 | consolelive            |
 | Short Message Service                   | consolesms             |
 | Cloud Object Storage               | cos                    |
-| Cloud Storage Gateway               | csg                    |
 | Cloud Virtual Machine               | cvm                    |
 | Elastic MapReduce          | emr                    |
 | Elasticsearch Service         | es                     |
 | Game Multimedia Engine         | gme                    |
-| Internet of Things Hub             | iot                    |
 | Key Management Service           | kms                    |
 | Cloud Monitor                 | monitor                |
 | Serverless Cloud Function         | scf                    |
 | Tag                   | tag                    |
-| Video on Demand                 | vod                    |
 | Virtual Private Cloud               | vpc                    |

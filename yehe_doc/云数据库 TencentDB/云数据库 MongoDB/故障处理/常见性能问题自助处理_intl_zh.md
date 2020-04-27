@@ -7,10 +7,10 @@
 ### 解决方案
 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，单击实例名进入实例管理页面。
 - 方式一：选择【数据库管理】>【慢查询管理】页，列表会展示当前实例正在执行的请求（包括从节点的请求），您可单击【批量Kill】对慢查询语句进行 Kill 操作。
-![](https://main.qcloudimg.com/raw/4f625f081a15dfb49ba4997a05bb1e04.png)
+![](https://main.qcloudimg.com/raw/2ad30ab71f422ab04f8d976d7141431e.png)
 - 方式二：选择【慢日志查询】页，您可以浏览分析慢日志，系统会记录执行时间超过100毫秒的操作，慢日志保留时间为7天。目前慢日志暂不支持导出，如有需要请联系售后或 [提交工单](https://console.cloud.tencent.com/workorder/category) 处理。
 若慢查询堆积过快，建议您结合慢查询分析结果对业务侧服务进行优化，若仍无法解决问题，请联系售后或 [提交工单](https://console.cloud.tencent.com/workorder/category) 处理。
-![](https://main.qcloudimg.com/raw/68e7e9bb7166f667c5cf28a682a4246f.png)
+![](https://main.qcloudimg.com/raw/bc23258b0b37fc4e5452d9a10d08b8b5.png)
 
 ## 连接数超限
 ### 问题描述
@@ -24,7 +24,7 @@
 >-  若您的连接数达到80%或以上，影响到新连接的建立，可通过控制台一键【提升连接数】功能，在6小时内提升连接数的上限至150%。
 >- 若提升连接数至150%还不能解决您的问题，请联系售后或 [提交工单](https://console.cloud.tencent.com/workorder/category) 处理。
 >
-![](https://main.qcloudimg.com/raw/af438cd3d075e059c800217032a10273.png)
+![](https://main.qcloudimg.com/raw/5dcbb694ef6c6e93d772949ad954843b.png)
 
 #### 方式二：重启实例
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，单击实例名进入实例管理页面。
@@ -33,7 +33,7 @@
 >- 4.0 版本副本集实例无 Mongos。
 >- 重启 Mongod 为高危操作，会出现连接闪断，如果同时有数据正写入，可能会造成 rollback 进而丢失数据，默认不开放，如需开放请联系售后或 [提交工单](https://console.cloud.tencent.com/workorder/category)。
 >
-![](https://main.qcloudimg.com/raw/5bc0048055912d0e4353b25440d9bd91.png)
+![](https://main.qcloudimg.com/raw/1957a425df76df5d731bef86767dd692.png)
 
 #### 方式三：优化业务侧服务
 通过对业务端的排查对业务侧服务进行优化。

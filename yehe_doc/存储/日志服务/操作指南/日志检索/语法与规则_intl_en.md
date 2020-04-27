@@ -5,9 +5,9 @@ CLS provides a wide variety of search features. You can search for logs in real 
 Log search is an important CLS feature. You can define the search criteria to search for hundreds of millions of log data rows. The steps are as follows:
 
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
-2. Click **Search and Analyze** on the left sidebar to enter the log search page.
+2. Select **Log Search** on the left sidebar to enter the log search page.
 3. Select the time range, logset, and log topic.
-4. Enter keywords and click **Search and Analyze** to get results.
+4. Enter keywords and click **Search** to get results.
 
 ## Search Syntax
 

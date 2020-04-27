@@ -1,5 +1,5 @@
 ### 如何选择 Redis 规格？ 
-云数据库 Redis 规格可以从容量和性能两个方面来选择，容量根据数据存储需求来定，容量性能请参见 [性能数据](https://intl.cloud.tencent.com/document/product/239/7032) 。
+云数据库 Redis 规格可以从容量和性能两个方面来选择，容量根据数据存储需求来定，容量性能请参见 [性能数据](https://intl.cloud.tencent.com/document/product/239/17952) 。
 
 ### 云数据库 Redis 支持哪些地域？ 
 云数据库 Redis 作为基础设施，CVM 部署的地域都会支持，请参见 [地域和可用区](https://intl.cloud.tencent.com/document/product/239/4106)。

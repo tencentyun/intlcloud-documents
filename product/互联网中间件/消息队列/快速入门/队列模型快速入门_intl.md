@@ -34,7 +34,7 @@ After obtaining the queue object, you can call Send Message API of the queue to 
     re_msg = my_queue.send_message(msg)
 ```
 <br>You can view the message attributes directly from the console.
-<br>![](//mc.qcloudimg.com/static/img/d32bca0f5cc248004946ffbdeb260868/image.png)
+![](//mc.qcloudimg.com/static/img/d32bca0f5cc248004946ffbdeb260868/image.png)
 
 
 - **Generating messages in batch:**

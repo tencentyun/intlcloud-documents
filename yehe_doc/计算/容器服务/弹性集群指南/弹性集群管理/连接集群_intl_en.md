@@ -1,11 +1,11 @@
-## Operation Scenarios
+## Introduction
 This document describes how to connect a local client to an elastic cluster through kubectl, which is the Kubernetes command-line tool.
 
 
 ## Prerequisites
-- The cURL software program has been installed.
-- The method for obtaining kubectl has been specified based on the operating system (OS) type:
->Replace `v1.14.5` in the following commands with the actual version of your kubectl as required.
+- Install cURL software program
+- Select an appropriate way to obtain kubectl based on the OS type:
+>Replace `v1.14.5` in the following commands with the actual version of your kubectl.
 >
  - **MacOS**
  Run the following command to obtain kubectl:
@@ -23,7 +23,7 @@ Run the following command to obtain kubectl:
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.14.5/bin/windows/amd64/kubectl.exe
 ```
 
-## Procedure
+## Directions
 
 ### Installing kubectl
 
@@ -38,7 +38,7 @@ chmod +x ./kubectl
 ```
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
-3. Run the following command to verify that the installed version is up to date, which indicates that the installation was successful.
+3. Run the following command to verify the whether the installation is successful.
 ```shell
 kubectl version
 ```
@@ -49,34 +49,33 @@ Client Version: version.Info{Major:"1", Minor:"14", GitVersion:"v1.14.5", GitCom
 
 ### Obtaining the account, password, and certificate information of the cluster
 1. Log in to the TKE console and click **[Elastic Cluster](https://console.cloud.tencent.com/tke2/ecluster)** in the left sidebar.
-2. On the **Elastic Cluster** page that appears, click the ID of the cluster that you want to connect to go to the management page of the cluster.
-3. Click **Basic Information** in the left sidebar to go to the **Basic Information** page of the cluster, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/498310beff5f0b8805cc99494ca5cce0.png)
+2. On the **Elastic Cluster** page that appears, click the ID of the cluster that you want to connect to open the management page.
+3. Click **Basic Information** in the left sidebar to go to the **Basic Information** page.
 4. On the **Basic Information** page, click **Show Credential** for the **Cluster Credential** field.
 5. <span id="info"></span>In the **Cluster Credential** window that appears, do as follows depending on the actual situation:
   - Obtain the account, password, and certificate information and then click **Copy** or **Download** to save the CA certificate locally.
-  - Enable a public or private IP address and then connect to the cluster through the IP address.
+  - Enable **Internet Access** or **private network Access** and then connect to the cluster through the IP address.
     - **Intra-cluster access**: leave the values of **Public IP Access Address** and **Private Network Access Address** as their defaults, which indicate that public and private IP addresses are disabled. In this case, you can directly run kubectl commands on a server in the cluster without any configuration.
      - **Internet-based access**: set **Public IP Access Address** to **Enabled**. After that, you can gain access to the cluster through a public IP address. For more information, see [Operating the cluster based on certificate information through kubectl](#TheCluster).
     - **VPC-based access**: set **Private Network Access Address** to **Enabled**. You must specify the subnet of the VPC for the API server. In addition, ensure that the selected subset has an available IP address. After that, you can access the cluster through the private IP address. For more information, see [Operating the cluster based on certificate information through kubectl](#TheCluster).
 
+<span id="TheCluster"></span>
 
-
-### Operating the cluster based on certificate information through kubectl<span id="TheCluster"></span>
+### Operating the cluster based on certificate information through kubectl
 
 #### Sending a single kubectl operation request with certificate information
 >This method can be used to perform a single operation on a cluster. This way, you do not have to save the certificate information of the TKE cluster to the server for a long period of time.
 >
-**Request method:**
+**Request:**
 Parameters in the kubectl command are described as follows:
 ```
 -s "Domain information" --username=Username --password=Password --certificate-authority=Certificate path
 ```
  - **Domain information**: indicates the obtained public or private IP address.
  - **Username**: defaults to `admin`.
- - **Password**: is the same as that of `token` in the **Cluster Credential** window. You can obtain the token from [Step 5](#info).
- - **Certificate path**: is the same as that of `Cluster CA Certificate` in the **Cluster Credential** window. You can obtain the path from [Step 5](#info).
- 
+ - **Password**: it is the same as that of `token` in the **Cluster Credential** window. You can obtain the token from [Step 5](#info).
+ - **Certificate path**: it is the same as that of `Cluster CA Certificate` in the **Cluster Credential** window. You can obtain the path from [Step 5](#info).
+
 **Examples**
 Run the following command to obtain the node information of a cluster:
 ```shell
@@ -105,8 +104,8 @@ kube-system  Active    11d
 ```
 
 <span id="setKubectlAutomaticComplete"></span>
-### Enabling kubectl to auto-complete a command
-You can run the following command to enable kubectl to auto-complete all commands that you enter subsequently. This improves the usability of kubectl.
+### Enabling auto-complete for commands in kubectl
+You can run the following command to enable auto-complete for all commands that you enter in kubectl, so as to improve the usability of kubectl.
 ```shell
 source <(kubectl completion bash)
 ```
