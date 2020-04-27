@@ -23,11 +23,11 @@ Storm 可以把 CKafka 作为`spout`，消费数据进行处理；也可以作�
 
 
 ### 申请创建 CKafka 实例
-
+登录 消息队列 CKafka 控制台，创建一个 CKafka 实例（参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/32543)）。
 ![](https://mc.qcloudimg.com/static/img/7333604c2285f1db50499eab35fac2fb/12231-01.jpg)
 
 ### 创建 Topic
-
+在实例下创建一个 Topic（参考 [创建Topic](https://intl.cloud.tencent.com/document/product/597/34003)）。
 ![](https://mc.qcloudimg.com/static/img/61de4051b661fcb14076b9dde83a6c06/12231-02.jpg)
 
 ### maven 依赖
@@ -556,7 +556,7 @@ public class TopologyKafkaConsumerTrident {
 ```
 
 ### 提交 Storm
-使用 mvn package 编译后,可以提交到本地集群进行 debug 测试，也可以提交到正式集群进行运行
+使用 mvn package 编译后，可以提交到本地集群进行 debug 测试，也可以提交到正式集群进行运行。
 ```bash
 storm jar your_jar_name.jar topology_name
 ```

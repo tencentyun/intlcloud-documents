@@ -43,7 +43,9 @@ For more information on parameter configuration, please see [Kafka output plugin
 
 #### Creating a CKafka instance
 1. After an instance is created, you can view its information in the console.
+![](https://mc.qcloudimg.com/static/img/6d7a67a6a7620f54fe6c81fe2374d358/10777-01.jpg)
 2. Click the instance name to view the specific information assigned to the instance.
+![](https://mc.qcloudimg.com/static/img/75412e46fca71833f37f7611c3ab6468/11487-01.jpg)
 3. Click **Topic Management** to create a topic named **logstash_test**.
 Now, the operating environment of CKafka has been created.
 
@@ -79,8 +81,10 @@ For more information on parameter configuration when using Kafka as an input, pl
 
 2. Write the configuration file `output.conf`.
 Here, standard input is taken as the data source, and Kafka is used as the data destination.
+![](https://mc.qcloudimg.com/static/img/c3aede643c1bddde175c4ddbd51c06c3/image.png)
 
 3. Launch Logstash to produce messages.
+![](https://mc.qcloudimg.com/static/img/1f28c9cac2800e211695307e7138d812/image.png)
 
 4. Verify the production data from the previous step.
 ![](https://mc.qcloudimg.com/static/img/ae85758a90a497235a90511770f959d2/10.png)
