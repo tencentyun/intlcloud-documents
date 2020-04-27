@@ -76,10 +76,8 @@ a1.sinks.k1.kafka.producer.acks = 1
 
 ### Ckafka 相关配置
 1. 在【[消息队列 Ckafka 控制台](https://console.cloud.tencent.com/ckafka?rid=1) 】中，单击实例名称，可以看到实例分配的具体信息。
-
 >图中的内网IP与端口作为后续的 Server IP。
 2. 单击【Topic管理】>【新建】，创建一个 Topic，此处名字为 flume_test。
-
 
 ### Flume 相关配置
 #### 1. 解压已下载的 Apache Flume 压缩包
@@ -87,7 +85,6 @@ a1.sinks.k1.kafka.producer.acks = 1
  **使用 Ckafka 作为 Sink**
  1. 编写配置文件。
 此处重点介绍 Flume 与 CKafka 作为 Sink 结合，Source 和 Channel 使用默认配置。以下是一个简单的 Demo （配置在解压目录的 conf 文件夹下），若无特殊要求则将自己的实例 IP 与 Topic 替换到配置文件当中即可。本例使用的 source 为 tail -F flume-test ，即文件中新增的信息。
-
  2. 启动 Flume。
 ```
 ./bin/flume-ng agent -n agentckafka -c conf -f conf/flume-kafka-sink.properties
@@ -104,11 +101,11 @@ a1.sinks.k1.kafka.producer.acks = 1
 **使用 Ckafka 作为 Source**
 1. 编写配置文件。
 此处重点介绍 Flume 与 CKafka 作为 Source 结合，Sink 和 Channel 使用默认配置。以下是一个简单的 Demo （配置在解压目录的 conf 文件夹下）。若无特殊要求则将自己的实例 IP 与 Topic 替换到配置文件当中即可。此处使用的 sink 为 logger。
- 
 2.	启动 Flume。
 ```
 ./bin/flume-ng agent -n agentckafka -c conf -f conf/flume-kafka-source.properties
 ```
 3. 查看 logger 输出信息（默认路径为`logs/flume.log`）。
 ![](https://mc.qcloudimg.com/static/img/d6b51f8de1a063e51171b2996764f40d/99.png)
+
 

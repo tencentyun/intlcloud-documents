@@ -30,7 +30,7 @@ If you wish to adjust business deployment based on CVM metrics, you can customiz
 
 >
 > - When a scaling group is created, an alarm trigger policy for unreachable pings is created by default to replace unhealthy CVMs.
-> - Before using an alarm trigger policy, you need to install the latest version of Cloud Monitor agent in the CVM's image. For more information, see [Installing Monitoring Components](/doc/product/248/安装监控组件).
+> - Before using an alarm trigger policy, you need to install the latest version of Cloud Monitor agent in the CVM's image. For more information, see [Installing Monitoring Components](https://intl.cloud.tencent.com/document/product/248/6211).
 
 1. Log in to the [Auto Scaling console](https://console.cloud.tencent.com/autoscaling).
 2. On the "Scaling group" page, click "Scaling group", as shown in the following figure:

@@ -24,9 +24,11 @@ Storm can use CKafka as a `spout` to consume data for processing or as a `bolt` 
 
 ### Applying for and creating a CKafka instance
 Log in to the CKafka Console and create a CKafka instance as instructed in [Creating Instances](https://intl.cloud.tencent.com/document/product/597/32543).
+![](https://mc.qcloudimg.com/static/img/7333604c2285f1db50499eab35fac2fb/12231-01.jpg)
 
 ### Creating a topic
 Create a topic under the instance as instructed in [Creating Topics](https://intl.cloud.tencent.com/document/product/597/34003).
+![](https://mc.qcloudimg.com/static/img/61de4051b661fcb14076b9dde83a6c06/12231-02.jpg)
 
 ### Maven dependency
 Configure the `pom.xml` as follows:
