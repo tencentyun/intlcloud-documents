@@ -63,7 +63,7 @@ When you use ECDN, the platform will offer you a certain free tier based on your
 
 
 
-For specific fee calculation methods, please see [Billing Overview](https://cloud.tencent.com/doc/product/570/10979).
+For specific fee calculation methods, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/570/10979).
 
 
 ## VIP Customer Billing Plan
