@@ -62,7 +62,7 @@ ECDN 加速域名接入加速平台的主要步骤如下：
 >通过浏览器内置抓包工具可以看到：
 >- 加速域名的请求地址已经指向了 ECDN 的节点 113.107.216.105。 
 >- 加速域名的请求响应状态码为 200 OK，符合测试预期，用户请求可以正常响应；
->- 若加速域名的响应状态码异常，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=532&source=0&data_title=动态加速网络) 处理，提交时附上您的操作截图，将有助于问题排查工作。
+>- 若加速域名的响应状态码异常，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=532&source=0&data_title=%25E5%258A%25A8%25E6%2580%2581%25E5%258A%25A0%25E9%2580%259F%25E7%25BD%2591%25E7%25BB%259C) 处理，提交时附上您的操作截图，将有助于问题排查工作。
 
 <span id="cname"></span>
 ## 步骤3：配置域名 CNAME
