@@ -5,7 +5,7 @@
 | API                                                          | 操作名       | 操作描述                 |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | 设置版本控制 | 设置存储桶的版本控制功能 |
-| [GET Bucket versioning](https://cloud.tencent.com/document/product/436/19888) | 查询版本控制 | 查询存储桶的版本控制信息 |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | 查询版本控制 | 查询存储桶的版本控制信息 |
 
 ## 设置版本控制
 
@@ -21,7 +21,7 @@ PUT Bucket versioning 接口实现启用或者暂停存储桶的版本控制功�
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-bucket-versioning)
+[//]: # ".cssg-snippet-put-bucket-versioning"
 ```js
 cos.putBucketVersioning({
     Bucket: 'examplebucket-1250000000',  /* 必须 */
@@ -66,7 +66,7 @@ function(err, data) { ... }
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket-versioning)
+[//]: # ".cssg-snippet-get-bucket-versioning"
 ```js
 cos.getBucketVersioning({
     Bucket: 'examplebucket-1250000000',  /* 必须 */
