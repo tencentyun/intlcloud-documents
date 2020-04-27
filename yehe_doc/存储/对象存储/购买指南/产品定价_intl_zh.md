@@ -394,14 +394,6 @@ COS 公有云地域、金融云地域等地域的划分，请参见 [地域和�
       <td>0.01</td>
    </tr>
    <tr>
-      <td>深圳金融</td>
-      <td rowspan=3>不适用</td>
-      <td rowspan=3>0.0073</td>
-      <td rowspan=3>不适用</td>
-      <td rowspan=3>不适用</td>
-      <td rowspan=3>不适用</td>
-   </tr>
-   <tr>
       <td>上海金融</td>
    </tr>
    <tr>
