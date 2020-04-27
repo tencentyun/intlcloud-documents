@@ -80,7 +80,7 @@ Log in to the [CAM Console](https://console.cloud.tencent.com/cam/capi) to get a
 ```
 [root@VM_71_10_centos ~]# javac -classpath binlogsdk-2.6.0-release.jar:jedis-2.9.0.jar -encoding UTF-8 RedisDemo.java 
 ```
-2. Launch the program. If no errors are reported, the program works properly. Check the local file previously configured.
+2. Launch the program. If no errors are reported, the program works properly. Check the previously configured local file.
 ```
  java -XX:-UseGCOverheadLimit -Xms2g -Xmx2g -classpath .:binlogsdk-2.6.0-release.jar:jedis-2.9.0.jar RedisDemo
 ```

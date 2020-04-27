@@ -13,7 +13,7 @@ DTS provides data migration and continuous data replication from self-created My
 
 ### SUPER privilege for source database
 SUPER privilege for the source database is not required in most scenarios and required only in the following scenarios:
-- You have selected "Full Check" as "Data Consistency Check".
+- You have selected "Full Detection" as "Data Consistency Detection".
 - During binlog sync, if you create an event in the source database, and an account that is not used for DTS data migration is specified as the `DEFINER` for this event, an error will occur if the super privilege is unavailable.
 
 ### Migratable databases
@@ -44,7 +44,7 @@ SUPER privilege for the source database is not required in most scenarios and re
             log_slave_updates = 1           
 ```
 6. Modify the variables.
-  a. Modify the source database's MySQL configuration file `my.cnf` and restart the database:
+    a. Modify the source database's MySQL configuration file `my.cnf` and restart the database:
 ```
   	        log-bin=[custom binlog filename]
 ```
@@ -62,8 +62,7 @@ SUPER privilege for the source database is not required in most scenarios and re
 Log in to the [DTS Console](https://console.cloud.tencent.com/dtsnew/migrate/page), enter the **Data Migration** page, and click **Create Task**.
 
 ### 2. Modify the configuration
-Enter the settings of the task, source database, and target database as shown below:
-![](https://mc.qcloudimg.com/static/img/513a6893e79862359ee52fd6d2d97c5b/image.png)
+Enter the settings of the task, source database, and target database.
 
 #### Task settings
 * Task Name: name the task.
@@ -72,12 +71,12 @@ Enter the settings of the task, source database, and target database as shown be
 #### Source database settings
 Source Database Type: MySQL with public IP, CVM-based self-created MySQL, Direct Connect-based MySQL, and VPN-based MySQL are supported.
 
-| Source Database Type | Description | 
+| Source Database Type | Description |
 |---------|---------|
-| MySQL with public IP | It refers to a MySQL database that can be accessed through a public IP. The following information is required: <li> MySQL server address<li> MySQL port<li> MySQL account<li> MySQL password	 | 
-| CVM-based self-created MySQL | You can migrate a MySQL database deployed on a CVM instance in the basic network or VPC by specifying the CVM instance ID and network environment. The following information is required: <li>Region: currently, a CVM-based self-created MySQL database can be migrated to a TencentDB instance only if they are in the same region; otherwise, you should use the CVM instance's public network access by selecting **MySQL with Public IP** for migration<li>CVM network: you can select the basic network or VPC<li>VPC: if a VPC is selected, you need to specify the VPC and subnet where the CVM instance resides<li>CVM instance ID<li>MySQL port<li>MySQL account<li>MySQL password			 | 
-| Direct Connect-based MySQL | After connecting a self-created MySQL database in your local IDC to Tencent Cloud through [Direct Connect](https://intl.cloud.tencent.com/product/dc), you can use DTS to migrate data to Tencent Cloud. The following information is required: <li>Direct Connect gateway: it is the Direct Connect gateway used by the database server to connect to Tencent Cloud. For more information, please see [Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256)<li>VPC: it is the VPC where the Direct Connect gateway resides<li>MySQL server address: it is the address of your MySQL server in the IDC. The IP mapped by the Direct Connect gateway will be accessed during DTS data migration<li>MySQL port<li>MySQL account<li>MySQL password | 
-| VPN-based MySQL | After connecting a self-created MySQL database in your local IDC to Tencent Cloud through [VPN Connections](https://intl.cloud.tencent.com/product/vpn) or a CVM-based self-created VPN service, you can use DTS to migrate data to Tencent Cloud. The following information is required: <li>Region: currently, only VPN services in the same region as that of the target TencentDB instance are supported<li>VPN type: you can select VPN Connections or CVM-based self-created VPN<li>VPN gateway: you need to provide the VPN gateway information only if VPN Connections is selected. <li> VPC: it is the VPC where the VPN Connections instance resides<li> MySQL server address: it is the address of your MySQL server in the IDC. The IP mapped by the Direct Connect gateway will be accessed during DTS data migration<li> MySQL port<li> MySQL account<li> MySQL password	 | 
+| MySQL with public IP | It refers to a MySQL database that can be accessed through a public IP. The following information is required: <li> MySQL server address<li> MySQL port<li> MySQL account<li> MySQL password	 |
+| CVM-based self-created MySQL | You can migrate a MySQL database deployed on a CVM instance in the basic network or VPC by specifying the CVM instance ID and network environment. The following information is required: <li>Region: currently, a CVM-based self-created MySQL database can be migrated to a TencentDB instance only if they are in the same region; otherwise, you should use the CVM instance's public network access by selecting **MySQL with Public IP** for migration<li>CVM network: you can select the basic network or VPC<li>VPC: if a VPC is selected, you need to specify the VPC and subnet where the CVM instance resides<li>CVM instance ID<li>MySQL port<li>MySQL account<li>MySQL password			 |
+| Direct Connect-based MySQL | After connecting a self-created MySQL database in your local IDC to Tencent Cloud through [Direct Connect](https://intl.cloud.tencent.com/product/dc), you can use DTS to migrate data to Tencent Cloud. The following information is required: <li>Direct Connect gateway: it is the Direct Connect gateway used by the database server to connect to Tencent Cloud. For more information, please see [Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256)<li>VPC: it is the VPC where the Direct Connect gateway resides<li>MySQL server address: it is the address of your MySQL server in the IDC. The IP mapped by the Direct Connect gateway will be accessed during DTS data migration<li>MySQL port<li>MySQL account<li>MySQL password |
+| VPN-based MySQL | After connecting a self-created MySQL database in your local IDC to Tencent Cloud through [VPN Connections](https://intl.cloud.tencent.com/product/vpn) or a CVM-based self-created VPN service, you can use DTS to migrate data to Tencent Cloud. The following information is required: <li>Region: currently, only VPN services in the same region as that of the target TencentDB instance are supported<li>VPN type: you can select VPN Connections or CVM-based self-created VPN<li>VPN gateway: you need to provide the VPN gateway information only if VPN Connections is selected. <li> VPC: it is the VPC where the VPN Connections instance resides<li> MySQL server address: it is the address of your MySQL server in the IDC. The IP mapped by the Direct Connect gateway will be accessed during DTS data migration<li> MySQL port<li> MySQL account<li> MySQL password	 |
 
 ### 3. Select the database to be migrated
 Select the database to be migrated (you can choose to migrate the entire database or only certain tables), create a migration task, and check the task information.
@@ -87,27 +86,23 @@ Select the database to be migrated (you can choose to migrate the entire databas
 
 **Data Migration**: export data from the selected database and import it into TencentDB for MySQL.
 **Incremental Sync**: after exporting and importing data, set TencentDB for MySQL as the slave of the source database to implement incremental master/slave sync.
-**Overwrite Root Account**: as the root account is used for TencentDB authentication, subsequent TencentDB operations will be affected if the root account of the source database does not exist in the target database. Therefore, if the entire database is migrated, you should specify whether to overwrite the target root account with the source one. Select **Yes** if you want to use the root account of the source database or if the root account is not configured for the target database. Select **No** if you want to retain the root account of the target database.
-**Read-Only**: if this configuration item is selected, during data migration, data from the source database will be read-only in the target database and cannot be changed until you click the corresponding button to complete the migration.
-![](https://main.qcloudimg.com/raw/c6f149f94c1c5c4f4edcc5b45759f2c2.png)
+**Overwrite Target Database with Source Database Root Account**: as the root account is used for TencentDB authentication, subsequent TencentDB operations will be affected if the root account of the source database does not exist in the target database. Therefore, if the entire database is migrated, you should specify whether to overwrite the target root account with the source one. Select **Yes** if you want to use the root account of the source database or if the root account is not configured for the target database. Select **No** if you want to retain the root account of the target database.
+**Read-only Target Database**: if this configuration item is selected, during data migration, data from the source database will be read-only in the target database and cannot be changed until you click the corresponding button to complete the migration.
 
-### 4. Perform data consistency check
-Select a data consistency check type as needed (e.g., full check, spot check, or no check).
->The check ratio fields are required if spot check is selected.
-
-![](https://main.qcloudimg.com/raw/50fde268f4cef7da0871a5f8f985eaf8.png)
+### 4. Perform data consistency detection
+Select a data consistency detection type as needed (e.g., full detection, sampling detection, or no detection).
+>The detection ratio fields are required if sampling detection is selected.
 
 ### 5. Verify the migration task information
- After the migration task is created, you need to click **Next: Check Task** to verify the task information. You cannot start the migration task until all the check items are passed.
-![](https://main.qcloudimg.com/raw/25ac6eb8eefe73b8ccacc85b11fa1b8b.png)
-There are 3 statuses for task check:
+ After the migration task is created, you need to click **Next step: verify task** to verify the task information. You cannot start the migration task until all the check items are passed.
+There are 3 statuses for task verification:
 
- - Passed: the check is fully successful.
- - Warning: the check fails. Database operation may be affected during or after data migration, but the migration task can still be executed.
- - Failed: the check fails and the migration task cannot be executed. In this case, please check and modify the migration task information according to the error and then check the task again. For more information on the failure causes, please see "Check Failure Description".
+ - Passed: the verification is fully successful.
+ - Warning: the verification fails. Database operation may be affected during or after data migration, but the migration task can still be executed.
+ - Failed: the verification fails and the migration task cannot be executed. In this case, please check and modify the migration task information according to the error and then verify the task again. For more information on the failure causes, please see "Verification Failure Description".
 
 ### 6. Start migration
-After the check is passed, you can click **Start** to start data migration. Please note that if you have configured scheduled execution, the migration task will begin queuing and be executed at the specified time; otherwise, it will be executed immediately.
+After the verification is passed, you can click **Start** to start data migration. Please note that if you have configured scheduled execution, the migration task will begin queuing and be executed at the specified time; otherwise, it will be executed immediately.
 After the migration is started, you can view the corresponding migration progress under the migration task. The subsequent steps required for migration and the current stage will be displayed if you hover over the exclamation mark after the current step.
 
 >Due to system design limitations, multiple migration tasks committed or queued at the same time will be performed in sequence by queuing time.
@@ -121,30 +116,23 @@ After migration, you can click **Complete** to close the sync between the source
 ### 8. Cancel migration
 >
 1. Data that has been synced to the target database will not be cleared if you click "Cancel".
-2. Restarting the task may cause the check or task to fail. You may have to manually clear all databases or tables that may cause conflicts in the target database before you can start the migration task again.
+2. Restarting the task may cause the verification or task to fail. You may have to manually clear all databases or tables that may cause conflicts in the target database before you can start the migration task again.
 3. When migrating a single table, make sure that all tables depended on by its foreign keys are also migrated.
 
-To cancel an in-progress migration task, click **Cancel**.
-![](https://main.qcloudimg.com/raw/59099f9a8101c0a4fba0da27c1a26ea1.png)
-
-The following will be displayed upon cancellation:
-![](https://main.qcloudimg.com/raw/695ef6c76591830080a02195e663e3d2.jpg)
+To cancel an ongoing migration task, click **Cancel**.
 
 
 ### 9. Complete migration
->If the migration is in **Uncompleted** status, the migration task will continue, so will data sync.
+>If the migration is in **not completed** status, the migration task will continue, so will data sync.
 
 After the migration is 100% completed, you can click **Complete** on the right.
-![](https://main.qcloudimg.com/raw/21b56e090f75c8fd33b6ac54a5b8753f.jpg)
 
-The following will be displayed after you click **Complete**:
-![](https://main.qcloudimg.com/raw/2accc71a6a9e544bbea29e3c6ebc3d1f.jpg)
-![](https://main.qcloudimg.com/raw/de3bb36092060a461b46d804d975c295.png)
+The following will be displayed after you click **Complete**
 
 
 
 [1]:	https://intl.cloud.tencent.com/product/dc
-[2]:	https://intl.cloud.tencent.com/document/product/216/19256
+[2]:	https://intl.cloud.tencent.com/document/product/216/549
 [3]:	https://intl.cloud.tencent.com/product/vpn
 [3]:	https://intl.cloud.tencent.com/product/vpn
 [4]:	https://intl.cloud.tencent.com/document/product/215/4956
