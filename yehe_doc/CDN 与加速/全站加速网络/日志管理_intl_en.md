@@ -2,8 +2,8 @@ You can download the detailed logs of user access to your connected domain name 
 
 ## Downloading Logs
 Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and select **Log Management** on th left sidebar. Select the domain for which you want to check logs and the time, then click **OK** to get the log download link.
-![](https://main.qcloudimg.com/raw/8ebcf1af186ca03464974d13b28b9b47.jpg)
 No access logs will be generated for the queried time period in which there is no request received, and you will see **No Data** on the page.
+
 >
 > + By default, the ECDN logs requests on an hourly basis, that is, there can be 24 log files generated per day. No logs will be generated for the hour in which there is no request received.  
 > + ECDN logs can be delayed by approximately 30 minutes.

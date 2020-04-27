@@ -3,9 +3,9 @@ An HTTP message generally includes:
 + Response message sent from server to client.
 
 These messages are all consist of a beginning line, one or multiple headers, a blank line indicating end of headers, and an optional message body.
-![](https://mc.qcloudimg.com/static/img/3e5f42e1cb78ef015967dda5f790f98c/http.png)
 HTTP headers include: general header, request header, response header, and entity header. Each header consists of a domain name, comma (":"), and domain value, e.g., `Connection:keep-alive`.
 If you use the HTTP header configuration feature provided by ECDN, when an end user requests a business resource, a custom header will be added in the returned **response message** to implement cross-origin access.
+
 >
 > + As the HTTP header configuration is for a specified domain name, once the configuration takes effect, the configured header will be added to the response messages of user requests for any resource under this domain name.
 > + HTTP header configuration affects only response of the client (such as browser) rather than ECDN node's caching behaviors.
@@ -102,9 +102,6 @@ The following fields cannot be added currently:
 ### Configuration directions
 1. Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar. On the management page, click **Manage** on the right of the target domain name to enter the domain name management page.
 2. Click **Advanced Configuration** and click **Add HTTP Header** in the **HTTP Header Configuration** module.
-![](https://main.qcloudimg.com/raw/79e8431f9cdf7dd1325c2ec40bf9eac6.png)
 3. In the pop-up window, select the HTTP header to be added and enter the corresponding value. You can click **Add Parameter** to add more header fields. Click **OK** to submit the settings.
-![](https://main.qcloudimg.com/raw/1c340913ce1988a603cc7e8cc9daa50e.png)
 4. The configuration will take effect in about 5 minutes. In the table below, you can view the added HTTP headers. You can click **Modify** or **Delete** on the right of a header to perform the corresponding operation as needed.
-![](https://main.qcloudimg.com/raw/2aa4a0988593af5ed9af9d5c36f0758e.png)
 5. You can click **Add HTTP Header** to add more HTTP headers, each of which can be added only once.

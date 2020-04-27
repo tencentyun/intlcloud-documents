@@ -110,8 +110,6 @@ When multiple cache policies are set, there may be repeated rules, and a request
 
 Click **Edit Cache Rule**. You can <strong>drag the icons</strong> to adjust the cache rule priority.
 
-![](https://main.qcloudimg.com/raw/9bc37411df24d906571d394a2bb0ab84.png)
-
 ## Cache Inheritance Issues
 
 - When you configure static content with edge caching, the ECDN system will use the cache rules configured on the platform to process user static requests by default. The `Cache-Control` field in the response header on the origin server is not inherited by the node for processing by default.

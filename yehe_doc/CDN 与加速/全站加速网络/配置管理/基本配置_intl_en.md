@@ -5,9 +5,7 @@ You can view basic information and origin server information of domain names in 
 ## Domain Name Configuration Page
 1. Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the management page.
 2. Select **Manage** on the right of the target configuration domain name to enter the domain name configuration page.
-![](https://main.qcloudimg.com/raw/6d53a071ad53db0255dc1b70f85f0d34.png)
 3. The **Basic Info** page of the domain name displays basic configuration information of the domain name, including the domain name CNAME record, project, acceleration region, origin server information, and origin domain.
-![](https://main.qcloudimg.com/raw/13df7d9ce0a5b1c54d27a44b02ba3535.png)
 
 ## Basic Configuration Project
 ### Modifying project of domain name
@@ -25,9 +23,8 @@ You can view basic information and origin server information of domain names in 
 1. Click "Modify" on the right of the origin server configuration to enter the origin server modification page.
 2. In the pop-up window, modify your origin server type, origin-pull policy, and origin server address. For more information, please see [Advanced Origin-Pull Policies](https://cloud.tencent.com/document/product/570/19915).
 3. After the modification is completed, click **OK** to submit the configuration. The system backend will deliver the new origin server modification to the domain name, which will take effect in 3–5 minutes.  
-![](https://main.qcloudimg.com/raw/47b2bb761afda9b519437a5d820d6698.png)
+
 
 ### Modifying origin-pull configuration
-Click **Edit** next to the origin domain and modify it in the dialog box:
-![](https://main.qcloudimg.com/raw/615f5ea75c6282e4f3b9b4cde40c8c6e.png)
-![](https://main.qcloudimg.com/raw/21c4d42974715f9cd5aae213126a55ea.jpg)
+Click **Edit** next to the origin domain and modify it in the dialog box.
+

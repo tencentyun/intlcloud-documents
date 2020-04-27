@@ -111,7 +111,6 @@ The number of requests generated on January 1 is 59.8 million as shown below, an
 The number of requests generated on the 1st day is 59.8 million; therefore, the free tier of traffic will be 5980 \* 0.25 = 1,495 GB. The actual traffic generated on that day is 1400.48 GB, which is within the free tier; therefore, the fee of excessive traffic on this day will be 0 USD.
 - **Total fees on the specified day**
 The total fees on the 1st day are: 170.48 + 0 = 170.48 USD.
-![](https://mc.qcloudimg.com/static/img/02f1474d5c00cf21eda6d97634057d3e/account_1.png)
 
 #### Fees on January 2
 - **Fee of requests:**
@@ -120,7 +119,6 @@ The number of requests generated on January 2 is 25.2 million as shown below, an
 The number of requests generated on the 2nd day is 25.2 million; therefore, the free tier of traffic will be 2520 \* 0.25 = 630 GB. The actual traffic generated on that day is 692.52 GB, which exceeds the free tier by: 692.52 - 630 = 62.52 GB; therefore, the fee of excessive traffic on that day will be 62.52 \* 0.143 = 8.94 USD.
 - **Total fees on the specified day**
 The total fees on the 2nd day are: 65.52 + 8.94 = 74.46 USD.
-![](https://mc.qcloudimg.com/static/img/9bd000d948aa3d0eda88aae36b4fe16a/account_2.png)
 
 #### Fees on January 3
 - **Fee of requests:**
@@ -129,7 +127,6 @@ The number of requests generated on January 3 is 64 million as shown below, and 
 The number of requests generated on the 3rd day is 64 million; therefore, the free tier of traffic will be 6,400 \* 0.25 = 1,600 GB. The actual traffic generated on that day is 1,731 GB, which exceeds the free tier by: 1,731 - 1,600 = 131 GB; therefore, the fee of excessive traffic on that day will be 131 \* 0.143 = 18.73 USD.
 - **Total fees on the specified day**
 The total fees on the 3rd day are: 156.60 + 18.73 = 175.33 USD.
-![](https://mc.qcloudimg.com/static/img/966a75858beab42b605c7a708308a075/account_3.png)
 
 <table>
 	<thead>

@@ -3,16 +3,13 @@ In the ECDN Console, you can enable, disable, and delete the acceleration servic
 ## Enabling Acceleration Service
 You can **activate** a **deactivated** domain name in the following steps. It takes about 5 minutes to enable the acceleration service.
 Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the **Domain Management** page. In the "Operation" column of the target domain name, click **Activate**.
-![](https://main.qcloudimg.com/raw/9a5961572eed1de6c2a5e7dda93f6ddf.png)
 
 If you want to activate multiple acceleration domain names in batches, you can check them and click **Activate ECDN** above.  
-![](https://main.qcloudimg.com/raw/d8b3398a6e451d4280835616d707458c.png)
 
 ## Disabling Acceleration Service
 You can **deactivate** an **activated** domain name in the following steps. After the domain name is deactivated, it will no longer be accelerated, but its configuration will be retained. It takes about 5 minutes for domain name deactivation to take effect.
 
 Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the **Domain Management** page. In the "Operation" column of the target domain name, click **Deactivate**.  
-![](https://main.qcloudimg.com/raw/0d46136ad9bde5fa53ec2a04114468ff.png)
 
 If you want to deactivate multiple acceleration domain names in batches, you can check them and select **Deactivate ECDN** in the **More Actions** drop-down list above.  
 
@@ -23,8 +20,6 @@ Resolve the acceleration domain name to the origin server and make sure that it 
 >2. Check the traffic change
 After the domain name resolution is switched to the origin server, user requests will no longer be redirected to the ECDN acceleration platform. In the ECDN Console, you can see that the access traffic of the corresponding domain name will drop significantly. Before disabling the service, please confirm that the ECDN access traffic of the corresponding domain name has decreased to 0; otherwise, directly disabling the service will affect user access.  
 >3. Disable the acceleration service
-
-![](https://main.qcloudimg.com/raw/8e52dd25189920e7896359ab25d90ba9.png)
 
 After confirming that all or most users no longer use ECDN for access, you can deactivate the domain name in the following steps:  
 
@@ -38,21 +33,16 @@ After confirming that all or most users no longer use ECDN for access, you can d
 You can **delete** a **deactivated** domain name. Its configuration will not be retained upon deletion.
 
 Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the **Domain Management** page. In the "Operation" column of the target domain name, select **Delete** in the **More** drop-down list.
-![](https://main.qcloudimg.com/raw/8853cb1ee8eab2d4e1fae7ba9781185b.png)
 
 If you want to delete multiple acceleration domain names in batches, you can check the target domain names and select **Delete** in the **More Actions** drop-down list above.
-![](https://main.qcloudimg.com/raw/e317b9e51c02970f91be2e2b39c7ce3a.png)
 
 ## Modifying Project of Domain Name
 
 To facilitate management, you can modify the project of your domain name in the following steps.
 1. Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the **Domain Management** page. In the "Operation" column of the target domain name, select **Modify Project** in the **More** drop-down list.
-![](https://main.qcloudimg.com/raw/e81aed8d9e0839eccc36ad5a670ceebd.png)
 2. The **Project** drop-down list will be displayed in the pop-up dialog box. You need to select a project for the domain name. Click **OK** to modify the domain name's project.
-![](https://mc.qcloudimg.com/static/img/134b850ee0b671a52e58a0b7c6731444/project_options.png)
 
 If you want to modify the project of multiple acceleration domain names in batches, you can check the target domain names and select **Modify Project** in the **More Actions** drop-down list above.
-![](https://main.qcloudimg.com/raw/75faf6293e730ff5a8017d0e8188874c.png)
 
 >  
 > - You can use the project feature to manage Tencent Cloud resources by project. Tencent Cloud Project Management can be applied to multiple products at the same time.  

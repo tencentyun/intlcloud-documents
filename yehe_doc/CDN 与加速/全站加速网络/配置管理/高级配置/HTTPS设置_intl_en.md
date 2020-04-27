@@ -8,18 +8,14 @@ HTTPS refers to Hypertext Transfer Protocol Secure, which is a security protocol
 1. Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the management page.
 2. In the list, find the domain name to be configured, click **Manage** to enter the details page, and select **Advanced Configuration**.  
 3. Deploy a domain name certificate before enabling HTTPS. Click **Configure** to enter the domain name certificate management page.
-![](https://main.qcloudimg.com/raw/441561cbc2814c4c0e4591bc8137dd51.png)
 
 ### Configuring certificate
 On the certificate configuration page, you can configure private certificates, Tencent Cloud-hosted certificates, or COS upload acceleration certificate for the domain name. For detailed directions, please see [Certificate Management](https://cloud.tencent.com/document/product/570/10366).
 >A COS upload acceleration certificate can be used only by COS upload acceleration domain names.
 
-![](https://main.qcloudimg.com/raw/82afd07692aa03f201bcc8deddd53fc3.png)
-
 ### Selecting origin-pull method
 - If **HTTP origin-pull** is selected, when ECDN nodes perform origin-pull, all requests will use the HTTP protocol.  
 - If **Protocol follow** is selected, the origin-pull mode of ECDN nodes will be subject to the user request method, i.e., HTTP requests use HTTP for origin-pull, and HTTPS requests use HTTPS for origin-pull.
-![](https://main.qcloudimg.com/raw/7113437a1f2002e12829ad8137159e00.png)
 
 ## Modifying Configuration
 - **Enable HTTP2.0**
@@ -30,4 +26,4 @@ After enabling forced redirect to HTTPS, you can specify whether to use the 301 
 - **Modify the certificate and origin-pull mode**
 If a domain names has been configured with a certificate, you can click **Configure** to enter the certificate management page so as to modify the certificate content or origin-pull mode.
 
-![](https://main.qcloudimg.com/raw/72bf6abf5f2a83f0773a31f5a78d20ba.png)
+

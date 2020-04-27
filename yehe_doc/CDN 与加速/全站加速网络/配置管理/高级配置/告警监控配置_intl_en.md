@@ -93,26 +93,19 @@ ECDN has been connected to Tencent Cloud Monitor. The following alarming metrics
 
 ## Monitoring Configuration Entry
 Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/policylist) and click **Alarm Policy** on the left sidebar to enter the management page.
-![](https://main.qcloudimg.com/raw/b8bc205767f178371c4bde3ce995482e.png)
 
 ## Adding Alarm
 The steps for adding an alarm policy are as shown below.
 1. Enter the policy name and remarks and select the ECDN dynamic acceleration alarm policy type.
-![](https://main.qcloudimg.com/raw/41886628b7a7148ae64e51fdbfcddf7d.png)
 2. Select the alarm object.
-![](https://main.qcloudimg.com/raw/d203babf3d633d0f453d96dcf0844fc7.png)
 3. Set the alarm trigger condition. Multiple conditions can be set at a time.
-![](https://main.qcloudimg.com/raw/639e37cb80e69691ab248c9c8df99bef.png)
 4. Set the alarm recipient, alarm time period, and alarm method.
-![](https://main.qcloudimg.com/raw/7b39510054f9815c213565323560d048.png)
 5. Set the alarm callback API.
-![](https://main.qcloudimg.com/raw/e4b7d897120d3297510ebafd97dc060b.png)
 6. Click **Complete** to submit the settings.
 
 
 ## Viewing Alarm
 On the historical alarm page in Cloud Monitor, you can view the list of alarm details.
-![](https://main.qcloudimg.com/raw/6b7f10c1bc752046cb844d660a378da3.png)
 
 ## Other Alarm Policies
 For more information on how to configure alarm policies, please see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).

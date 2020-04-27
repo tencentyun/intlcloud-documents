@@ -7,7 +7,6 @@ Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **
 - Deploying certificates by domain name. For detailed directions, please see [Configuring Certificate](#SSL_CFG) below.
 - Deploying domain name certificates in batches. For detailed directions, please see [Batch Deployment](#SSL_CFGS) below.
 - Editing or deleting HTTPS configuration.
-![](https://main.qcloudimg.com/raw/5032b73378bfeea821b656f9dc03c166.png)
 
 <span id="SSL_CFG"></span>
 
@@ -24,8 +23,6 @@ Select the domain that you want to configure the certificate for in the **Domain
 
 >The domain name should already have ECDN service enabled, and the domain name status should be **activated**. Certificates cannot be configured for **deactivated** or **deploying** domain names.
 
-![](https://main.qcloudimg.com/raw/6c8431bee0ebdebe9ef7e8eca9fe0a45.png)
-
 <span id="select_crt"></span>
 
 ### Associating domain name with certificate
@@ -36,9 +33,6 @@ After selecting a domain name, you need to configure it with a certificate. ECDN
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Private certificate         | You need to paste certificate content and private key content into the text box and add remarks for certificate identification. | The certificate content must be in PEM format. For more information, please see [Private Certificate Configuration Guide](#ssl_self). |
 | Tencent Cloud-hosted certificate   | You can select an appropriate Tencent Cloud-hosted certificate in the certificate drop-down list.                 | You can log in to the [SSL Certificates Service](https://console.cloud.tencent.com/ssl) Console to apply for a certificate free of charge or host a private certificate on Tencent Cloud. |
-
-
-![](https://main.qcloudimg.com/raw/6b8aeabd1069dfe62e6268ca80821468.png)
 
 <span id="confirm_1"></span>
 
@@ -64,15 +58,12 @@ If your submitted certificate is associated with multiple acceleration domain na
 ### Selecting certificate
 
 You can select a multi-domain name certificate or wildcard certificate when using batch deployment. For detailed directions, please see [Certificate Configuration Steps](#SSL_CFG).
-![](https://main.qcloudimg.com/raw/0738741b9e639dd2ff051d1df70a8ad8.png)
 
 <span id="select_domains"></span>
 
 ### Associating domain names
 
 After a certificate is selected, the system will automatically associate the certificate domain name with an ECDN acceleration domain name. You can also filter domain name certificates by their deployment status to quickly select domain names that need to be configured with the certificate.
-
-![](https://main.qcloudimg.com/raw/ac63f517fd69c7d60657f0e64860fd77.png)
 
 <span id="confirm_2"></span>
 
@@ -90,9 +81,7 @@ After the configuration is completed, click **submit** to submit it. You can go 
 ### Certificate and private key
 1. If you need to configure your domain name with an existing certificate, please read this section. If you need to configure a certificate hosted or issued in the [SSL Certificates Service](https://console.cloud.tencent.com/ssl) Console, you can skip this step and directly view the certificate configuration process below.
    The certificates provided by CAs include the following types, of which **Nginx** is used by ECDN.
-   ![](https://main.qcloudimg.com/raw/f45e4ae17da56fb0bdae5e2fd38887ef.png)
 2. Go to the Nginx folder and open ".crt" (certificate) and ".key" (private key) files with a text editor to view the content of the certificate and private key in PEM format.
-   ![](https://main.qcloudimg.com/raw/a365a15cebd58e4bc64270a41f31c191.png)
 3. Certificate description
 	- Common certificate extensions include ".pem", ".crt", and ".cer". Open the certificate file in a text editor and you can see content similar to the one shown below.
 		A ".pem" certificate begins with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----". Every line in between contains 64 characters, while the last line may have less than 64 characters.
@@ -123,7 +112,6 @@ openssl rsa -in old_server_key.pem -out new_server_key.pem
 ### Completing certificate chain
 
 When configuring a private certificate, you may encounter a problem where the **certificate chain cannot be completed**. In this case, you can paste the CA-issued certificate (in PEM format) after the domain name certificate (in PEM format) to complete the certificate chain, or you can [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-![](https://main.qcloudimg.com/raw/b60a983ed4f1c44306a9f377b3c9918f.png)
 
 ### Converting certificate format
 
