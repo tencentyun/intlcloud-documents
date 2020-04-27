@@ -1,12 +1,10 @@
 ## Product Overview
 Tencent Cloud Enterprise Content Delivery Network (ECDN) provides innovative high-performance one-stop content delivery services to swiftly and stably deliver high numbers of static/dynamic hybrid resources. By combining static edge caching and dynamic origin-pull route optimizing technologies and leveraging Tencent Cloud's proprietary optimal linkage algorithms and protocol-layer optimizations, ECDN can intelligently schedule traffic to optimal service nodes and automatically identify static/dynamic resources, enabling you to accelerate content delivery in just a few clicks.
 
-ECDN is easy to use. You do not need to adjust your business structure or manage any complex configurations. For more information, please see [Getting Started](https://cloud.tencent.com/doc/product/570/8651).
+ECDN is easy to use. You do not need to adjust your business structure or manage any complex configurations. 
 
 ## How Acceleration Works
-For example, if your business origin server's domain name is `www.test.com`, which has been connected with the ECDN to activate the acceleration service, when a user makes an HTTP request, the request will be processed as shown below:
-![](https://main.qcloudimg.com/raw/c3c26ba22470a816033ab7670b1b5236.png)
-
+For example, if your business origin server's domain name is `www.test.com`, which has been connected with the ECDN to activate the acceleration service, when a user makes an HTTP request, the request will be processed as shown below.
 
 **Details are as follows:**
 1. When a user makes an access request for a dynamic resource (e.g., an .asp file) or static resource (such as text or image) at ```www.test.com```, a domain name resolution request will be initiated to the local DNS.
