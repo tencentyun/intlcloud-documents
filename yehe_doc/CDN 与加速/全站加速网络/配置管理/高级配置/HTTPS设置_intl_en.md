@@ -10,7 +10,7 @@ HTTPS refers to Hypertext Transfer Protocol Secure, which is a security protocol
 3. Deploy a domain name certificate before enabling HTTPS. Click **Configure** to enter the domain name certificate management page.
 
 ### Configuring certificate
-On the certificate configuration page, you can configure private certificates, Tencent Cloud-hosted certificates, or COS upload acceleration certificate for the domain name. For detailed directions, please see [Certificate Management](https://cloud.tencent.com/document/product/570/10366).
+On the certificate configuration page, you can configure private certificates, Tencent Cloud-hosted certificates, or COS upload acceleration certificate for the domain name. For detailed directions, please see [Certificate Management](https://intl.cloud.tencent.com/document/product/570/10366).
 >A COS upload acceleration certificate can be used only by COS upload acceleration domain names.
 
 ### Selecting origin-pull method
