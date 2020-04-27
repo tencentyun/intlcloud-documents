@@ -1,4 +1,4 @@
-A Horizontal Pod Autoscaler (HPA) can automatically scale the pods for a service in or out based on the metrics of the target pods, such as the average CPU utilization rate. You can specify autoscaling trigger metrics in the console, including metrics related to the CPU, memory, disk, network, and GPU. In addition, you can use these metrics when creating and editing an HPA by using a YAML file. This document describes this feature by using the YAML file configuration as an example.
+Horizontal Pod Autoscaler (HPA) can automatically scale the number of Pods for services according to the average CPU utilization of target Pods and other metrics. You can set auto-scaling triggering metrics in the console. Such metrics include CPU, memory, disk, network, and GPU metrics. You can also use these metrics when creating and editing HPAs with YAML files. This document provides an example of configuring a YAML file.
 
 ## Autoscaling Metrics
 The following tables provide details about some autoscaling metrics:
