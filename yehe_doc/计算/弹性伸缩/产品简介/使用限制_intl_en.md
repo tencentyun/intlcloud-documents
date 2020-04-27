@@ -1,11 +1,11 @@
-Auto Scaling is now available in all regions except edge server regions. The following table details the use limits of this feature:
+Auto Scaling is now available in all regions except edge-server regions. The following table details the use limits of this feature:
 <table>
 <tr>
 <th>Limit Type</th>
-<th>Description</th>
+<th>Remarks</th>
 </tr>
 <tr>
-<td>One user in one region</td>
+<td>One user under one region</td>
 <td>
 <ul class="params">
 <li>Up to 20 launch configurations can be created.</li>
@@ -18,9 +18,9 @@ Auto Scaling is now available in all regions except edge server regions. The fol
 <td>A scaling group</td>
 <td>
 <ul class="params">
-<li>Only one launch configuration can be created.</li>
-<li>Up to 2,000 CVM instances can be scaled.</li>
-<li>Up to 100 scaling policies and up to 10 scheduled tasks can be created.</li>
+<li>There can be only one launch configuration.</li>
+<li>Up to 2,000 CVM instances can be auto-scaled.</li>
+<li>Up to 100 scaling policies and 10 scheduled actions can be created.</li>
 <li>Up to 5 notifications can be created.</li>
 <li>Up to 10 lifecycle hooks can be created.</li>
 </ul>
@@ -31,9 +31,9 @@ Auto Scaling is now available in all regions except edge server regions. The fol
 <td>
 <ul class="params">
 <li>The number of CVMs in all scaling groups cannot exceed the maximum number of IP addresses that the VPC subnet can provide.</li>
-<li>Currently, Auto Scaling does not support scaling up, which means it cannot automatically scale the CPU, memory, and bandwidth of CVM instances.</li>
-<li>Auto Scaling and launch configurations are region-specific services. Therefore, you can only launch or terminate CVM instances in the same region.</li>
-<li>A scaling group and its associated CLB instances (in the case of a cross-region CLB instance, its backend VPC) must be in the same network environment (the same VPC instance or the basic network in the same region).</li>
+<li>Currently, Auto Scaling does not support scaling up, which means it cannot automatically scale up the CPU, memory, or bandwidth of CVM instances.</li>
+<li>Auto Scaling and launch configurations are services supported at the region level. Therefore, you can only launch or terminate CVM instances in the same region.</li>
+<li>A scaling group and its associated CLB instances (in the case of a cross-region CLB instance, its backend VPC) must be in the same network environment (the VPC instance or the basic network in the same region).</li>
 </ul>
 </td>
 </tr>
