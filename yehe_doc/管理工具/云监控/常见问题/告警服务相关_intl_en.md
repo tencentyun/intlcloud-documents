@@ -7,14 +7,10 @@
 - **Alarm notifications cannot be received via email**:
 	- In the user list in the [CAM Console](https://console.cloud.tencent.com/cam), click a username to access the user details page and check that the user's email address has been verified.
 	- In the [Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) list, check whether the email channel is blocked in the corresponding alarm policy.
-- **Alarm notifications cannot be received via WeChat:
-	- In the user list in the [CAM Console](https://console.cloud.tencent.com/cam), click a username to access the user details page and check that the user's WeChat account has been verified.
-	- In the [Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) list, check whether the WeChat channel is blocked in the corresponding alarm policy.
-	- In WeChat, check whether the **Tencent Cloud Helper** WeChat Official Account has been unfollowed.
 
 ### Why cannot some recipients in the alarm recipient group receive alarm notifications?
 
-The alarm recipients’ information for relevant alarm channels (WeChat, SMS, and email) has not been verified. Please verify the information in the [CAM Console](https://console.cloud.tencent.com/cam).
+The alarm recipients’ information for relevant alarm channels (SMS, and email) has not been verified. Please verify the information in the [CAM Console](https://console.cloud.tencent.com/cam).
 
 ### If a user is in multiple recipient groups that are all bound to an alarm policy, will the user receive multiple alarm notifications?
 
