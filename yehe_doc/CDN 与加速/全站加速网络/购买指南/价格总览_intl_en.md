@@ -38,7 +38,7 @@ ECDN's billing by request is based on **a monthly cumulative tier** at the follo
 </table>
 
 
-For specific fee calculation methods, please see [Billing Overview](https://cloud.tencent.com/doc/product/570/10979).
+For specific fee calculation methods, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/570/10979).
 
 ## Billing by Excessive Traffic
 When you use ECDN, the platform will offer you a certain free tier based on your number of actual requests, so you only need to pay for the traffic exceeding the free tier.
