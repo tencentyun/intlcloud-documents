@@ -1,4 +1,4 @@
-负载均衡支持配置七层（HTTP/HTTPS）访问日志（Access Log），访问日志可以帮助您了解客户端请求、辅助排查问题、分析梳理访问数据等。当前访问日志支持存储到 COS 中下载分析，支持的地域包括广州、上海、北京和中国香港。
+负载均衡支持配置七层（HTTP/HTTPS）访问日志（Access Log），访问日志可以帮助您了解客户端请求、辅助排查问题、分析梳理访问数据等。当前访问日志支持存储到 COS 中下载分析，支持的地域包括广州、上海、北京和香港。
 
 负载均衡的访问日志主要用于故障排查，帮助业务快速定位问题。访问日志功能包括日志上报、日志存储和查询：
 - 日志上报，提供尽力而为服务（Best Effor Service），优先保障业务转发，再保障日志上报。
@@ -15,9 +15,9 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3)。
 2. 单击需进行配置的负载均衡 ID，进入“负载均衡基本信息”页面。
 3. 在“日志访问”模块，编辑日志存入 COS。
-![](https://main.qcloudimg.com/raw/4929ec08f86278f8bdbc7cf2df48b25f.png)
+![](https://main.qcloudimg.com/raw/1b1dccd0d7a2232b49fc058442daef27.png)
 4. 在弹出框中，开启访问日志，并选择相应 COS 中的存放 bucket。如您没有创建COS 的 bucket，请 [新建 bucket](https://console.cloud.tencent.com/cos4/bucket) 后，选取相应的存储位置。
-![](https://main.qcloudimg.com/raw/e8f3506ade5fe73c2267c3f294c957b4.png)
+![](https://main.qcloudimg.com/raw/1eb954e4a6d33090fc5901a87b930f6a.png)
 5. 单击【提交】，则请求日志会自动在 bucket 下创建 lb-id 为名称的文件夹进行存储。
 6. 配置完成后，单击 bucket 地址可以直接跳转到日志下载页面。
 7. （可选）若想关闭访问日志，可再次编辑日志存入 COS，在弹框中进行关闭并提交即可。
@@ -33,7 +33,6 @@
 
 | 变量名 | 说明 |
 | :-------- | :------ |
-|stgw_request_id  |	请求 ID。 |
 | time_local	|  访问的时间与时区，例如“01/Jul/2019:11:11:00 +0800”，最后的“+0800”表示所处时区为 UTC 之后的8小时，即为北京时间。 |
 | protocol_type |  协议类型（HTTP/HTTPS/SPDY/HTTP2/WS/WSS）。 |
 | server_addr:server_port  | 请求的目的 IP 和目的端口。 |

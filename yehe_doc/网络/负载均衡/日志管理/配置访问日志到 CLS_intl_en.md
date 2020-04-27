@@ -14,9 +14,9 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. Click the ID of the CLB instance to be configured to enter the "Basic Information" page.
 3. In the "Log Access" module, edit "Cloud Log Service".
-![](https://main.qcloudimg.com/raw/163c20ca7cb4326005c9ecf9fb43a39f.png)
+![](https://main.qcloudimg.com/raw/e48a3e35936f91866f2f740f986ae9f5.png)
 4. In the pop-up box, enable access logging and select the destination logset and log topic for access log storage. If you haven't created a logset or log topic yet, please [create relevant resources](https://console.cloud.tencent.com/cls/logset) and then select them as the storage location.
-![](https://main.qcloudimg.com/raw/33ccb8c1bcf3b200716a4a2f1751f0c1.png)
+![](https://main.qcloudimg.com/raw/33386c84ae812881548d1b621fbe6a70.png)
 5. Click **Submit** and access logs will be collected into the corresponding topic.
 6. Then, click the logset or log topic to redirect to the log search page in CLS.
 7. (Optional) If you want to disable access logging, you can edit "Cloud Log Service" again to disable it and submit in the pop-up window.
@@ -29,17 +29,17 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 2. On the left sidebar, click **Logset** to enter the "Logset Management" page.
 3. Click a logset ID to enter the logset details page.
 4. On the logset details page, click a log topic ID to enter the log topic details page.
-![](https://main.qcloudimg.com/raw/2ac7b3725bf4a598a4f9668ed3c80c1c.png)
+![](https://main.qcloudimg.com/raw/9f19f80439f0044768eac4cc235aae9d.png)
 5. On the log topic details page, select the **Index Configuration** tab. You can select some variables from the log variables and configure the index fields as needed. For more information on how to configure, please see [Enabling Index](https://intl.cloud.tencent.com/document/product/614/16981).
-![](https://main.qcloudimg.com/raw/aff66a76b27f5ec0366028e1e9a6ed08.png)
+![](https://main.qcloudimg.com/raw/38b22da412497a25ac9d6d304766d1ac.png)
 6. The result of index configuration is as shown below:
-![](https://main.qcloudimg.com/raw/a5c1dfd312827c8fd3945cb0945616fb.png)
+![](https://main.qcloudimg.com/raw/6e2393e34cd06c5d073faba88d34110f.png)
 
 ### Step 2. Search for access logs
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
 2. On the left sidebar, click **Log Search** to enter the "Search Analysis" page.
 3. On the "Search Analysis" page, select a logset, log topic, and time range, and click **Search Analysis** to search for the access logs reported by CLB to CLS. For more information on the search syntax, please see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439).
-![](https://main.qcloudimg.com/raw/57f74355eb469e59fca7efbe1994d9d0.png)
+![](https://main.qcloudimg.com/raw/e15271ea2d1ffac0e735eb254224a5e5.png)
 
 ## Log Variable Description
 <table class="table"><thead><tr><th>Variable</th><th>Description</th></tr></thead>

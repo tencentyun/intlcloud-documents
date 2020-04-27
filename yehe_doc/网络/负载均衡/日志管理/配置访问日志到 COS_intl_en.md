@@ -15,9 +15,9 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. Click the ID of the CLB instance to be configured to enter the "Basic Information" page.
 3. In the "Log Access" module, edit "Store Logs in COS".
-![](https://main.qcloudimg.com/raw/4929ec08f86278f8bdbc7cf2df48b25f.png)
+![](https://main.qcloudimg.com/raw/1b1dccd0d7a2232b49fc058442daef27.png)
 4. In the pop-up box, enable access logging and select the destination COS bucket for storage. If you haven't created a bucket yet, please [create a bucket](https://console.cloud.tencent.com/cos4/bucket) and then select the new bucket.
-![](https://main.qcloudimg.com/raw/e8f3506ade5fe73c2267c3f294c957b4.png)
+![](https://main.qcloudimg.com/raw/1eb954e4a6d33090fc5901a87b930f6a.png)
 5. Click **Submit** and a folder named `lb-id` will be automatically created in the bucket for request logs.
 6. Then, click the bucket address to redirect to the log download page.
 7. (Optional) If you want to disable access logging, you can edit "Store Logs in COS" again to disable it and submit in the pop-up window.

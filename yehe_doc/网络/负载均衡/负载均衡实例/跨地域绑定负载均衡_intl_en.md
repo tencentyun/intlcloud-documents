@@ -10,10 +10,10 @@
 ## Operation Examples
 After purchasing a public network CLB instance, you can view the region of its real server on its details page, which is the same as its region by default.
 If a public network CLB instance has been bound to a CVM instance in the same region, you need to unbind the CVM instance first before switching regions.
-![](https://main.qcloudimg.com/raw/a08b2e4d081128fea933ca8c1c82f793.png)
+![](https://main.qcloudimg.com/raw/b5b03db3b9df5ae38acde5e23449b57c.png)
 
 Click **Edit** to modify the region and network attributes of the real server. Bandwidth fees incurred by cross-region binding will be charged daily by bandwidth. After the modification is completed, you can select a CVM in the corresponding region on the CVM instance binding page for cross-region binding. **Currently, only real servers in one region can be bound.**
-![](https://main.qcloudimg.com/raw/c722452b95399eea662844c78f32e823.png)
+![](https://main.qcloudimg.com/raw/93443dfb2eb35da82c50a7032df0ae0a.png)
 
 >
 > - Currently, one CLB instance can be bound to CVM instances only in one region. For example, a CLB instance in Beijing can be bound to CVM instances in Shanghai, but it cannot be bound to CVM instances in both Beijing and Shanghai at the same time.
