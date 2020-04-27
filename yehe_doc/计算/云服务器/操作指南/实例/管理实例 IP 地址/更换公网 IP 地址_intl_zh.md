@@ -26,6 +26,7 @@
 ### 方式一：直接更换公网 IP
 
 1. 在实例的管理页面，选择待转换 IP 的云服务器行，单击【更多】>【IP/网卡】>【更换公网IP】。
+![](https://main.qcloudimg.com/raw/4225bd84b4cf4d5346ddc77a1d7fd0df.png)
 2. 在弹出的 “更换IP” 提示框中，单击【确认】，即可完成更换。
 
 <span id="ReplacementEIP"></span>
@@ -33,12 +34,14 @@
 
 #### 更换弹性公网 IP
 1. 在实例的管理页面，选择待转换 IP 的云服务器行，单击<img src="https://main.qcloudimg.com/raw/25e8c0e37b73c12da900301f03e57dbc.png" style="margin: 0;"></img>。
+![](https://main.qcloudimg.com/raw/53b608b2bb0840920703e7f50957611a.jpg)
 2. 在弹出的 “转换为弹性公网IP” 窗口中，单击【确定转换】。
 
 #### 解绑弹性公网 IP
 1. 待完成转换后，在该云服务器行单击【更多】>【IP/网卡】>【解绑弹性IP】。
 2. 在弹出的 “解绑弹性公网IP” 窗口中，勾选【解绑后免费分配公网IP（注意：该公网IP随机分配，且无法与实例解绑）】，单击【确定】。
 3. 在弹出的提示框中，单击【确定】，即可完成更换。
+![](https://main.qcloudimg.com/raw/dc5f3554b7b73bd554f596b9168839fc.png)
 
 #### 释放弹性公网 IP（可选）
 > 由于解绑弹性公网 IP 时，解绑的弹性公网 IP 仍保留在该账号下，为避免闲置不使用的 IP 继续收取费用，建议执行以下操作，释放未绑定实例的弹性公网 IP。
