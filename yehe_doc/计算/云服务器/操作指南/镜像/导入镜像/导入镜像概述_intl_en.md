@@ -49,7 +49,7 @@ Before troubleshooting, make sure you have subscribed to product service notific
 
 ### Troubleshooting the causes of failure
 
-For more information on error messages and descriptions, see [Error Code] (# errorcode).
+For more information on error messages and descriptions, see [Error Code](# errorcode).
 
 #### InvalidUrl: COS URL is invalid
 
@@ -72,8 +72,8 @@ The InvalidFormatSize error indicates that the format or size of the image to be
 * The size of the system disk to which the image is imported cannot exceed 500 GB.
 
 After you receive an error message that the format or size does not meet the requirements:
-- Covert the image file into an appropriate format according to [Linux Image Creation] (https://intl.cloud.tencent.com/document/product/213/17814), reduce the image content to meet the size requirements and then reimport it.
-- You can also use the [offline instance migration] (https://console.cloud.tencent.com/csm/importOfflineCvm) feature to migrate the instance. This feature supports migration of image files up to 500GB.
+- Covert the image file into an appropriate format according to [Linux Image Creation](https://intl.cloud.tencent.com/document/product/213/17814), reduce the image content to meet the size requirements and then reimport it.
+- You can also use the [offline instance migration](https://console.cloud.tencent.com/csm/importOfflineCvm) feature to migrate the instance. This feature supports migration of image files up to 500GB.
 
 #### VirtioNotInstall: Virtio driver is not installed
 
