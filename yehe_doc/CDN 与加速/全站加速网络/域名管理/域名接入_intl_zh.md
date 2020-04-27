@@ -17,9 +17,9 @@ ECDN 加速域名接入加速平台的主要步骤如下：
 ![](https://main.qcloudimg.com/raw/deb9b7f8c32e4df92045a3ba066bb7b5.png)
 
 >
->- 新增的中国境内/全球加速域名必须通过 [工信部域名备案](http://beian.miit.gov.cn/) 或接入 [腾讯云网站备案](https://cloud.tencent.com/product/ba?from=qcloudProductBa)，且未已接入腾讯云 CDN 或 腾讯云 ECDN，已接入 CDN 的域名需下线删除后，才能添加到 ECDN 平台。
+>- 新增的中国境内/全球加速域名必须通过 [工信部域名备案](http://beian.miit.gov.cn/) 或接入 [腾讯云网站备案](https://intl.cloud.tencent.com/zh/product/icp)，且未已接入腾讯云 CDN 或 腾讯云 ECDN，已接入 CDN 的域名需下线删除后，才能添加到 ECDN 平台。
 >- 您可以在**所属项目**处对域名进行分项目管理。这里的项目为腾讯云所有产品共享，您可以在 [项目管理](https://console.cloud.tencent.com/project) 控制台中对项目进行管理。
->- 当源站类型为**源站 IP** 时，回源策略支持择优回源、分权重回源和分主备回源三种，详情请参见 [高级回源策略](https://cloud.tencent.com/document/product/570/19915) 配置方法。 
+>- 当源站类型为**源站 IP** 时，回源策略支持择优回源、分权重回源和分主备回源三种，详情请参见 [高级回源策略](https://intl.cloud.tencent.com/document/product/570/35821) 配置方法。 
 >- 当源站类型为**源站域名**时，只能填入一个源站域名，且不能与加速域名相同，支持端口设置，设置格式为 ```Host:Port```，端口号范围 1 - 65535。
 >- 添加域名时，ECDN 为您展示了默认的常规缓存规则，您可在此规则列表上进行编辑及管理，自定义该域名的缓存规则。
 
