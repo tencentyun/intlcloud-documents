@@ -1,4 +1,4 @@
-- Currently, a public network CLB instance can be bound to CVM instances in another region. This feature allows you to select the region for real servers and bind CLB instances to them across VPCs or regions. To try it out, please submit a [ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for application for cross-region binding in Mainland China or [contact your Tencent Cloud rep](https://intl.cloud.tencent.com/contact-sales) for cross-region binding outside Mainland China.
+Currently, a public network CLB instance can be bound to CVM instances in another region. This feature allows you to select the region for real servers and bind CLB instances to them across VPCs or regions. To try it out, please submit a [ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for application for cross-region binding in Mainland China or [contact your Tencent Cloud rep](https://intl.cloud.tencent.com/contact-sales) for cross-region binding outside Mainland China.
 
 > CVM cross-region binding is not supported for private network CLB or classic CLB instances for the time being.
 
@@ -16,10 +16,8 @@ Click **Edit** to modify the region and network attributes of the real server. B
 ![](https://main.qcloudimg.com/raw/93443dfb2eb35da82c50a7032df0ae0a.png)
 
 >
-> - Currently, one CLB instance can be bound to CVM instances only in one region. For example, a CLB instance in Beijing can be bound to CVM instances in Shanghai, but it cannot be bound to CVM instances in both Beijing and Shanghai at the same time.
+> - Currently, one CLB instance can only be bound to CVM instances in one region. For example, a CLB instance in Beijing can be bound to CVM instances in Shanghai, but it cannot be bound to CVM instances in Beijing and Shanghai at the same time.
 > - After you change the region of a real server to one different from that of the CLB instance, it cannot be changed back to the original region for binding.
 > - Currently, cross-VPC binding is not allowed for CLB instances and CVM instances in the same region.
-> - Cross-basic network/VPC binding is supported.
+> - Scenarios of cross-VPC/basic network are also supported.
 
-## Billing Description
-Cross-region binding is implemented based on cross-region peering connection. For more information on billing, please see [Billing Description](https://intl.cloud.tencent.com/document/product/214/8848).
