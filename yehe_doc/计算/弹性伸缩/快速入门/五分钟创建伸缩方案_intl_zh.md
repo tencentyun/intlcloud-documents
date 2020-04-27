@@ -107,7 +107,7 @@
 
 >
 > - 伸缩组建立时均会默认建立一条 ping 不可达告警触发策略，以替换不健康子机。
-> - 在使用告警触发策略之前，需要在 CVM 的镜像里安装新版本的云监控 Agent。安装方法参见 [安装监控组件](/doc/product/248/安装监控组件)。
+> - 在使用告警触发策略之前，需要在 CVM 的镜像里安装新版本的云监控 Agent。安装方法参见 [安装监控组件](https://intl.cloud.tencent.com/document/product/248/6211)。
 
 1. 在【伸缩组】页面单击伸缩组 ID，进入伸缩组管理页面。
 ![伸缩组](https://main.qcloudimg.com/raw/2bd1126836549e378ac52a664e107e79.png)
