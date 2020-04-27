@@ -5,16 +5,12 @@
 	- 在 [告警策略](https://console.cloud.tencent.com/monitor/policylist) 列表中，查看对应的告警策略是否被屏蔽了短信告警渠道。
 	- 在 [监控概览](https://console.cloud.tencent.com/monitor/overview) 页右侧查看免费短信是否已使用完。详情请参见 [短信告警渠道](https://intl.cloud.tencent.com/document/product/248/32815)。
 - **邮件接收不到告警**：
-	- 在 [访问管理控制台 ](https://console.cloud.tencent.com/cam)用户列表中，单击用户名称进入用户详情，查看微信是否验证。
+	- 在 [访问管理控制台 ](https://console.cloud.tencent.com/cam)用户列表中，单击用户名称进入用户详情，查看邮箱是否验证。
 	- 在 [告警策略](https://console.cloud.tencent.com/monitor/policylist) 列表中，查看对应的告警策略是否被屏蔽了邮件告警渠道。
-- **微信接收不到告警**：
-	- 在 [访问管理控制台 ](https://console.cloud.tencent.com/cam)用户列表中，单击用户名称进入用户详情，查看微信是否验证。
-	- 在 [告警策略](https://console.cloud.tencent.com/monitor/policylist) 列表中，查看对应的告警策略是否被屏蔽了微信告警渠道。
-	- 在微信中查看是否取消关注【腾讯云助手】公众号。
 
 ### 为什么告警接收组中部分接收人没有告警通知？
 
-接收人未进行相关告警渠道验证（微信、短信、邮箱），请前往 [访问管理控制台 ](https://console.cloud.tencent.com/cam) 进行验证。
+接收人未进行相关告警渠道验证（短信、邮箱），请前往 [访问管理控制台 ](https://console.cloud.tencent.com/cam) 进行验证。
 
 ### 如果一个用户在多个接收组中，同时该告警策略也绑定了这些接收组，会收到多个告警通知吗？
 
