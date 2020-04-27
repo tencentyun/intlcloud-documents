@@ -10,7 +10,7 @@ Storage devices can be divided into the following categories by dimensions:
             <th style="width: 100px;">Description</th>
         </tr>
         <tr>
-            <td rowspan="3">Storage Medium</td>
+            <td rowspan="2">Storage Medium</td>
             <td>HDD disk</td>
             <td>Uses hard disk drive as the storage medium. It features lower price and better read/write speed.</td>
         </tr>
