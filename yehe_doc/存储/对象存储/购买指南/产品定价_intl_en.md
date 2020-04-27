@@ -394,20 +394,6 @@ For more information on COS regions, please see [Regions and Access Domain Names
       <td>0.01</td>
    </tr>
    <tr>
-      <td>Shenzhen Finance</td>
-      <td rowspan=3>N/A</td>
-      <td rowspan=3>0.0073</td>
-      <td rowspan=3>N/A</td>
-      <td rowspan=3>N/A</td>
-      <td rowspan=3>N/A</td>
-   </tr>
-   <tr>
-      <td>Shanghai Finance</td>
-   </tr>
-   <tr>
-      <td>Beijing Finance</td>
-   </tr>
-   <tr>
       <td>Hong Kong (China)</td>
       <td>0.0028</td>
       <td>0.0025</td>
