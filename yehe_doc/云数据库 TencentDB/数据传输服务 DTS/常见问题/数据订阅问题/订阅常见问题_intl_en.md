@@ -8,7 +8,7 @@ Yes. An SDK can consume multiple channels at a time.
 ### Why does the error "already has sdk on this channel" occur when an SDK is started?
 A channel can only be connected to by one SDK for consumption. If another connection is created, this error will occur. In this case, you need to check whether the application has exited. If the error persists, you can set the restart interval a little longer, such as 20 seconds.
 
-### Does the real-time incremental data in data subscription refer to the added data only or include the modified data?
+### Does the real-time incremental data in data subscription refer to the added data or include the modified data?
 The incremental data that can be subscribed to through data subscription includes all INSERT/DELETE/UPDATE changes (DML) and structure changes (DDL).
 
 ### A TencentDB instance and a local database have the same table structure but different indices. Can they be synced in real time by using the data subscription feature?
@@ -21,10 +21,10 @@ When this error occurs, relevant prompts will be displayed on the screen. Genera
 When data is written to a channel (or not all data is consumed), the consumption time point in the console can be migrated normally if data consumption is normal.
 
 ### If a data entry on the consumer side is not acknowledged for data subscription, why does the SDK receive duplicate data entries after restart?
-If there is any unacknowledged message, the SDK will keep pulling it until the SDK cache is full. At this time, the consumption time point saved on the server will be the time point of the last message before it is acknowledged.
-When the SDK is restarted, the server will push data again from the consumption time point of the unacknowledged message to avoid message loss. Therefore, the SDK will receive some repeated messages.
+If there is any message not acknowledged, the SDK will keep pulling it until its cache is full. At this time, the consumption time point saved on the server will be the time point of the last message before it is acknowledged.
+When the SDK is restarted, the server will push data again from the consumption time point of the unacknowledged message to avoid message loss. Therefore, the SDK will receive some duplicate messages.
 
-### Why can't data be successfully subscribed to if the SDK is restarted days after exit? The error message reads "Maybe checkpint is too old".
+### Why can't data be successfully subscribed to if the SDK is restarted a few days after exit? The error message reads "Maybe checkpint is too old".
 The data in the data subscription channel will be retained for 1 day and then deleted. If the time point of the last consumed data entry before the SDK exits is -1 day ago, then the data at the consumption time point cannot be subscribed to successfully. To fix this problem, you need to modify the consumption time point to ensure it is within the valid range.
 
 ### When pulling data, the SDK suddenly crashed and couldn't subscribe to any data; after restart, it consumed some data before crashing again. Why?
