@@ -10,11 +10,13 @@
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，在【高级配置】中可看到智能压缩配置：
 - 接入加速域名后，会默认为后缀 .js、.html、.css、.xml、.json、.shtml、.htm，大小为 256Byte - 2048KB 范围内的资源开启 Gzip 压缩。
 
+![](https://main.qcloudimg.com/raw/db292e0fcc2a0d993b72117756c76b63.png)
 
 ### 修改配置
-可单击右侧【编辑】，指定压缩文件后缀及文件范围
-
+可单击右侧【编辑】，指定压缩文件后缀及文件范围：
+![](https://main.qcloudimg.com/raw/887c62b7a53f6193f061ffc14b372de2.png)
 **配置说明**
+
 - GZIP 支持压缩范围为 0MB - 30MB。
 - Brotli 压缩功能升级中，暂不支持开启。
 

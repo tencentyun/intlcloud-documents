@@ -11,11 +11,14 @@
 - TCP 连接超时时间为5秒。
 - 回源加载超时时间为10秒。
 
+![](https://main.qcloudimg.com/raw/061fef4060d6aae5d16b3522b23fbbea.png)
 
 ### 修改配置
 通过单击右侧【编辑】，可按需修改对应的超时时间：
 - TCP 连接超时时间可设置为5 - 60秒。
+![](https://main.qcloudimg.com/raw/f70013c886612ef4dc33c353d8612336.png)
 - 回源加载超时时间可设置为5 - 60秒。
+![](https://main.qcloudimg.com/raw/e9c2cf6344275d477272ab2ba8c7e3b0.png)
 
 >若您的加速域名服务区域为全球加速，设置的回源超时时间为全球生效，不支持境内、境外差异化配置。
 

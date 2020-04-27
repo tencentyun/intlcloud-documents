@@ -9,12 +9,12 @@ SEO 优化配置是解决域名接入 CDN 后，因 CDN 频繁变更 IP 而影�
 
 ### 查看配置
 
-登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，在【高级配置】中可看到 SEO 优化配置，默认情况下为关闭状态。
-
+登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，在【高级配置】中可看到 SEO 优化配置，默认情况下为关闭状态：
+![](https://main.qcloudimg.com/raw/44f35a715f922cda12191d50e1cfc723.png)
 
 ### 修改配置
-您可以通过 SEO 优化配置开关，自助进行服务开启或关闭操作。
-
+您可以通过 SEO 优化配置开关，自助进行服务开启或关闭操作：
+![](https://main.qcloudimg.com/raw/8ea737dbd456397286f3ef8ff965aaf2.png)
 
 >  若域名的加速区域为全球，则 SEO 优化配置开启后会全球生效，暂不支持境内、境外配置不一致。
 

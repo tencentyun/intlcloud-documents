@@ -5,7 +5,7 @@
 ## 配置指南
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，在【高级配置】中可看到 HTTP Header 配置，默认情况下配置为关闭状态：
-
+![](https://main.qcloudimg.com/raw/a1f9b4b00d788b58e2142cc98ca29ef9.png)
 
 ### 修改配置
 #### 1. 修改配置
@@ -18,7 +18,7 @@
 - Content-Language：用于定义页面所使用的语言代码。
 - 自定义：自定义头部。
 
-
+![](https://main.qcloudimg.com/raw/4f08e0ad6753bc7905c3244131513926.png)
 
 **通用配置：Content-Disposition**
 Content-Disposition 用来激活浏览器的下载，同时可以设置默认的下载的文件名。服务端向客户端浏览器发送文件时，如果是浏览器支持的文件类型，如 TXT、JPG 等类型，会默认直接使用浏览器打开，如果需要提示用户保存，则可以通过配置 Content-Disposition 字段覆盖浏览器默认行为。常用的配置如下：
@@ -74,6 +74,8 @@ Access-Control-Expose-Headers 用于指定哪些头部可以作为响应的一�
 
 **自定义头部**
 支持添加自定义 Header，自定义 key-value 设置：
+![img](https://main.qcloudimg.com/raw/501fd6e92b1cecbdd8b444837470ceb3.png)
+![img](https://main.qcloudimg.com/raw/31f668026031f14cf999ea6f186d0032/HTTP%20Header5.png)
 
 暂不支持以下 Header 添加：
 ```
@@ -108,6 +110,6 @@ Error
 
 #### 2. 关闭配置
 您可以通过 HTTP Header 配置开关，一键关闭配置，开关为关闭状态时，即便下方存在已有配置，仍不会现网生效：
-
+![](https://main.qcloudimg.com/raw/573effac1ca884f772f10da215410984.png)
 
 >若加速域名服务区域为全球，响应头配置会全球生效，暂不支持境内、境外配置不一致。
