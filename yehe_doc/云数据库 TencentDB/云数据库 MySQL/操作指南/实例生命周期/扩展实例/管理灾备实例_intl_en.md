@@ -25,6 +25,7 @@ For applications with high requirements for service continuity, data reliability
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/).
 2. In the instance list, select the instance for which to configure disaster recovery and click the instance name or **Manage** in the "Operation" column to enter the instance management page.
 3. Make sure that the GTID feature is enabled by viewing the basic information of the instance on the **instance details** page. Click **Add Disaster Recovery Instance** in the instance architecture to enter the disaster recovery instance purchase page.
+
 4. On the purchase page, set basic information of the disaster recovery instance such as **Billing Mode**, **Region**, and **Sync Policy**.
  - If the sync policy is **Sync Now**, data will be synced immediately after the disaster recovery instance is created.
  - If the sync policy is **Sync After Creation**, you need to configure a disaster recovery sync link after the instance is created successfully. For detailed directions, please see [Create a sync link](#cjtblj) below.
@@ -53,16 +54,17 @@ For applications with high requirements for service continuity, data reliability
 	
 - **View slave-master relationship**
   Click the icon on the right of a disaster recovery instance or master instance to view the slave-master relationship.
-
+  
 - **View sync delay**
   View the sync delay between the master instance and the disaster recovery instance at the top of the **instance details** page of the disaster recovery instance.
 
 - **Disaster recovery instance features**
   A disaster recovery instance has various features, such as instance details viewing, instance monitoring, backup management, and slow query logging.
-
+ 
 ### Promoting disaster recovery instance to master instance
 1. In the instance list, select the disaster recovery instance to be promoted to a master instance and click **Manage**.
 2. Enter the management page. Click **Promote to master instance** in the top-right corner to promote the disaster recovery instance to a master instance. After the promotion, the sync link with the master instance will be disconnected, so that the promoted instance can get data write capability and full MySQL functionality.
 >The disconnected sync link cannot be reconnected. Please proceed with caution.
 > 
+
 

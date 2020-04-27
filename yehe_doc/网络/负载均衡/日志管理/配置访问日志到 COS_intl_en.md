@@ -12,49 +12,50 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 
 
 ## Enabling Access Logging
-1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
+1. Log in to the [Cloud Load Balancer Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. Click the ID of the CLB instance to be configured to enter the "Basic Information" page.
 3. In the "Log Access" module, edit "Store Logs in COS".
 ![](https://main.qcloudimg.com/raw/1b1dccd0d7a2232b49fc058442daef27.png)
-4. In the pop-up box, enable access logging and select the destination COS bucket for storage. If you haven't created a bucket yet, please [create a bucket](https://console.cloud.tencent.com/cos4/bucket) and then select the new bucket.
+4. Enable logging in the pop-up window and select a destination COS bucket. If you have not created any COS bucket yet, you can [create a bucket](https://console.cloud.tencent.com/cos4/bucket) and select it for log storage.
 ![](https://main.qcloudimg.com/raw/1eb954e4a6d33090fc5901a87b930f6a.png)
 5. Click **Submit** and a folder named `lb-id` will be automatically created in the bucket for request logs.
 6. Then, click the bucket address to redirect to the log download page.
 7. (Optional) If you want to disable access logging, you can edit "Store Logs in COS" again to disable it and submit in the pop-up window.
 
-## Log Format and Variable Description
-### Log format
+## Log Format and Variable Descriptions
+### Log Format
 ```
 [$stgw_request_id] [$time_local] [$protocol_type] [$server_addr:$server_port] [$server_name] [$remote_addr:$remote_port] [$status]  [$upstream_status] [$proxy_host] [$request] [$request_length] [$bytes_sent] [$http_host] [$http_user_agent] [$http_referer]
 [$request_time] [$upstream_response_time] [$upstream_connect_time] [$upstream_header_time] [$tcpinfo_rtt] [$connection] [$connection_requests] [$ssl_handshake_time] [$ssl_cipher] [$ssl_protocol] [$ssl_session_reused]
 ```
 
-### Log variable description
+## Log Variable Descriptions
 
 | Variable | Description |
 | :-------- | :------ |
-| time_local	| Access time and time zone, such as `01/Jul/2019:11:11:00 +0800` where `+0800` represents UTC+8, i.e., Beijing time. |
+|stgw_request_id  |Request ID. |
+| time_local|  Access time and time zone, such as "01/Jul/2019:11:11:00 +0800" where "+0800" represents UTC+8, i.e., Beijing time. |
 | protocol_type | Protocol type (HTTP/HTTPS/SPDY/HTTP2/WS/WSS). |
-| server_addr:server_port | Destination IP and port of request. |
+| server_addr:server_port  | Destination IP and port of a request. |
 | server_name | Rule's `server_name`, i.e., server name. |
 | remote_addr:remote_port	| Client IP and port. |
-| status | Status code returned by CLB to client. |
-| upstream_status | Status code returned by RS to CLB. |
+| status | Status code returned by CLB instance to client. |
+| upstream_status | Status code returned by RS to CLB instance. |
 | proxy_host | Stream ID. |
 | request | Request line. |
-| request_length | Number of bytes of request received from client. |
+| request_length | Number of bytes of the request received from client. |
 | bytes_sent | Number of bytes sent to client. |
-| http_host	 | Request domain name. |
+|http_host | Request domain name. |
 | http_user_agent | `user_agent` field of the HTTP header. |
-| http_referer	 | HTTP request source. |
-| request_time | Request processing time. The timing begins when the first byte is received from the client and stops when the last byte is sent to the client, i.e., the total time the whole process takes, where the client request reaches a CLB instance, the CLB instance forwards the request to an RS, the RS responds and sends data to the CLB instance, and finally the CLB instance forwards the data to the client. |
-| upstream_response_time | The time that an entire backend request process takes. The timing begins when a CLB instance connects with an RS and stops when the RS receives the request and responds. |
-| upstream_connect_time | The time it takes to establish a TCP connection with an RS. The timing begins when a CLB instance connects with an RS and stops when it sends the HTTP request. |
-| upstream_header_time| The time it takes to receive an HTTP header from the RS. The timing begins when a CLB instance connects with an RS and stops when the HTTP response header is received from the RS. |
+|http_referer | HTTP request source. |
+| request_time | Request processing time, which is from the point that the first byte is received from the client to the point that the last byte is sent to the client, i.e., the total time the whole process takes, where the client request reaches a CLB instance, the CLB instance forwards the request to an RS, the RS responds and sends data to the CLB instance, and finally the CLB instance forwards the data to the client. |
+| upstream_response_time | The time that an entire backend requesting process takes, which is from the point that a CLB instance connects with an RS to the point that the RS receives the request and responds. |
+| upstream_connect_time | The time it takes to establish a TCP connection with an RS, which is from the point that a CLB instance connects with an RS to the point that it sends the HTTP request. |
+| upstream_header_time| The time it takes to receive an HTTP header from the RS, which is from the point that a CLB instance connects with an RS to the point that the HTTP response header is received from the RS. |
 | tcpinfo_rtt | TCP connection RTT. |
 | connection | Connection ID. |
 | connection_requests | Number of requests on connection. |
-| ssl_handshake_time	| The time that an SSL handshake takes. |
+| ssl_handshake_time| The time that an SSL handshake takes. |
 | ssl_cipher | SSL cipher suite. |
-| ssl_protocol	| SSL protocol version. |
-| ssl_session_reused | SSL session reuse. |	 
+| ssl_protocol| SSL protocol version. |
+| ssl_session_reused |SSL SESSION reuse. |	 

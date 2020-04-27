@@ -1,4 +1,5 @@
-## Data Migration Through Console
+Data Migration Through Console
+
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and download the desired backup file. For detailed directions, please see [Downloading Backup Files](https://intl.cloud.tencent.com/document/product/236/31910).
 2. A database can be restored with the MySQL command line tool by running the following command:
 ```
@@ -13,14 +14,12 @@ Here, `bak_pathname` is the full path to the backup file.
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb).
 2. In the instance list, find the instance from which you want to export data and click the instance name or **Manage** in the **Operation** column to enter the instance management page.
 3. Select the **Backup and Restore** > **Backup List** tab, select the backup file to be downloaded, and click **Download** > **Partial Download**.
-![][image-7]
+
 2. Select the database to be exported and click **Next**.
-![][image-8]
-3. Click **Download** in **Local Download** to download the backup file to your local file system.
-![][image-9]
+
+5. Click **Download** in **Local Download** to download the backup file to your local file system.
 4. Record the full path.
 The full path in this example is: F:\download\cdb147691_backup_20170717050142
-![][image-1]
 5. Enter the command prompt and restore the data with the MySQL command line tool.
 ![][image-2]
 6. Log in to the MySQL database and you can see the backed up database has already been restored to the server.
@@ -28,10 +27,8 @@ The full path in this example is: F:\download\cdb147691_backup_20170717050142
 
 ### Migrating table on Windows
 1. Taking the database table "t_blog" under "db_blog" as an example, download a backup file from the TencentDB Console.
-![][image-11]
 2. Download the backup file from the TencentDB Console and record the full path.
 The full path in this example is: F:\download\cdb147691_backup_20170718050146
-![][image-3]
 3. Enter the command prompt and restore the data with the MySQL command line tool.
 ![][image-4]
 4. Log in to the MySQL database and you can see the backed up table has already been restored to the server.
@@ -53,7 +50,7 @@ shell > mysql -h hostname -P port -u username -p < bak_pathname
 ```
 Here, `hostname` is the target server for data restoration, `port` is the port of target server, `username` is the username of the database on the target server, and `bak_pathname` is the full path to the backup file.
 
-### Migrating Data on Linux CVM Instance
+### Migrating data on Linux CVM instance
 For more information on how to access a database on a CVM instance, please see "Accessing a MySQL Database".
 1. Taking the `db_blog` database in TencentDB for example, log in to the CVM instance and generate the SQL file to be imported with the MySQL command line tool "mysqldump".
 ![][image-5]
@@ -71,8 +68,8 @@ For more information on character set encoding, please see "Notes on Character S
 [image-2]:  https://mc.qcloudimg.com/static/img/bb37805c3fa523664ea427923f79c747/step12.png
 [image-3]:  https://mc.qcloudimg.com/static/img/42f282cf218253ba16ec51eb715ac76f/step13.png
 [image-4]:  https://mc.qcloudimg.com/static/img/ec52232b7fab6e9d44b95ab1f774a0c1/step14.png
-[image-5]:  https://mc.qcloudimg.com/static/img/2eb987a5a0a3d1b5b889970e67d66840/step15.png
-[image-6]:  https://mc.qcloudimg.com/static/img/58d60e0df9def342ee8344d68e5d6558/step16.png
+[image-5]:  https://main.qcloudimg.com/raw/13e670ec6b48b9abc1036789fcca850b.png
+[image-6]:  https://main.qcloudimg.com/raw/770c5e4b5a7991542b3f6e70b812e379.png
 [image-7]:  https://mc.qcloudimg.com/static/img/93e534bb662bd93cd1cc33f3e7e01fd8/step1.png
 [image-8]:  https://mc.qcloudimg.com/static/img/85c72e3d044155342ec9375b42d7d597/step2.png
 [image-9]:  https://mc.qcloudimg.com/static/img/fbd4f81256f71264d8616916673c3383/step3.png
