@@ -1,6 +1,6 @@
 ## Overview
 
-Tencent Cloud COS has integrated the professional All-in-One media solutions of [Cloud Infinite] (CI) (https://intl.cloud.tencent.com/document/product/1045), covering image processing, moderation, recognition, and many more. See the table below for details. You can process your media data with the Upload and Process APIs in COS.
+Tencent Cloud COS has integrated the professional All-in-One media solutions of [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045), covering image processing, moderation, recognition, and many more. See the table below for details. You can process your media data with the Upload and Process APIs in COS.
 
 <table>
    <tr>
@@ -89,5 +89,5 @@ You can set image processing in the COS Console. For more information, please se
 
 #### Using REST API
 
-You can configure image processing with the Cloud Infinite API. For more information, see the Cloud Infinite API documentation [Basic Image Processing](https://cloud.tencent.com/document/product/460/6924).
+You can configure image processing with the Cloud Infinite API. For more information, see the Cloud Infinite API documentation Basic Image Processing.
 
