@@ -12,31 +12,44 @@ Upgrade the kernel to version 4.4.0-98-generic. In this version, the bug has alr
 
 ## Directions
 1. Execute the following command to check the current kernel version.
+
 ```
 uname -r
 ```
+
 2. Execute the following command to check whether version 4.4.0-98-generic is available for upgrade.
+
 ```
 sudo apt-get update
 sudo apt-cache search linux-image-4.4.0-98-generic
 ```
+
 If the following information is displayed, it means this version exists in the source and is available for upgrade. 
+
 ```
 linux-image-4.4.0-98-generic - Linux kernel image for version 4.4.0 on 64 bit x86 SMP
 ```
+
 3. Execute the following command to install the new kernel version and corresponding Header package.
+
 ```
 sudo apt-get install linux-image-4.4.0-98-generic linux-headers-4.4.0-98-generic
 ```
+
 4. Execute the following command to restart the system.
+
 ```
 sudo reboot
 ```
+
 5. Execute the following command to enter the system to check the kernel version.
+
 ```
 uname -r
 ```
+
 If the following result is displayed, it means the version upgrade is successful:
+
 ```
 4.4.0-98-generic
 ```
