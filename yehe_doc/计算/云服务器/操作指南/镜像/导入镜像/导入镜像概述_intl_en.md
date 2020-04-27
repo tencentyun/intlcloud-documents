@@ -49,7 +49,7 @@ Before troubleshooting, make sure you have subscribed to product service notific
 
 ### Troubleshooting the causes of failure
 
-For more information on error messages and descriptions, see [Error Code](# errorcode).
+For more information on error messages and descriptions, see [Error Code](#errorcode).
 
 #### InvalidUrl: COS URL is invalid
 
