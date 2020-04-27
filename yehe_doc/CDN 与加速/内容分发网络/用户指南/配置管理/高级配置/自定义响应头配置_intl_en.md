@@ -1,6 +1,6 @@
 ## Configuration Scenario
 When an end user requests a business resource, you can add a custom header in the returned **response message** to implement cross-origin access.
-As the HTTP header configuration is for a specified domain name, once the configuration takes effect, the configured header will be added to the response messages of user requests for any resource under this domain name. HTTP header configuration affects only response of the client (such as the browser) rather than CDN node's caching behaviors.
+As the HTTP header configuration is for a specified domain name, once the configuration takes effect, the configured header will be added to the response messages of user requests for any resource under this domain name. HTTP header configuration affects only response of the client (such as browser) rather than CDN node's caching behaviors.
 
 ## Configuration Guide
 ### Viewing the configuration
@@ -9,13 +9,13 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Dom
 
 ### Modifying the configuration
 #### 1. Modify the configuration
-Toggle the switch and add the HTTP header configuration. Currently, the following headers can be configured. You can also add custom headers:
+Toggle the switch and add HTTP header configuration. Currently, the following headers can be configured. You can also add custom headers:
 - Access-Control-Allow-Origin: it specifies the sources of cross-origin requests allowed to access the resource.
 - Access-Control-Allow-Methods: it specifies the allowed methods of cross-origin requests.
 - Access-Control-Max-Age: it specifies the validity period for caching the returned result of preflight request for a particular resource when a cross-origin request is initiated.
 - Access-Control-Expose-Headers: it specifies the headers visible to the client when a cross-origin request is initiated.
 - Content-Disposition: it activates download in the browser and sets the default filename of the downloaded file.
-- Content-Language: it specifies the code of the language used by the webpage.
+- Content-Language: it specifies the language code used by the webpage.
 - Custom: you can add a custom header.
 
 ![](https://main.qcloudimg.com/raw/4f08e0ad6753bc7905c3244131513926.png)
@@ -25,7 +25,7 @@ Toggle the switch and add the HTTP header configuration. Currently, the followin
 `Content-Disposition: attachment;filename=FileName.txt`
 
 **General configuration: Content-Language**
-`Content-Language` specifies the code of the language used by the webpage. Below are common examples:
+`Content-Language` specifies the language code used by the webpage. Common configurations are as follows:
 `Content-Language: zh-CN`
 `Content-Language: en-US`
 
@@ -68,9 +68,9 @@ This indicates that no more preflight requests will be sent for the cross-domain
 - Last-Modified
 - Pragma
 
-If you want the client to access other header information, you can set as follows (separate multiple headers with ";").
+If you want the client to access other header information, you can use the following setting and separate multiple headers with ";".
 `Access-Control-Expose-Headers: Content-Length,X-My-Header`
-It indicates that the client can access `Content-Length` and `X-My-Header`.
+This indicates that the client can access `Content-Length` and `X-My-Header`.
 
 **Custom header**
 You can add a custom header and customize `key-value` settings:

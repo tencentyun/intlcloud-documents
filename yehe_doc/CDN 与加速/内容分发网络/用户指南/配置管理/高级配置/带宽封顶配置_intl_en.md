@@ -1,6 +1,6 @@
 ## Configuration Scenario
 
-Tencent Cloud CDN is pay-as-you-go basis. If you are concerned about excessive bandwidth usage and fee surges due to hotlinking by malicious users, you can set a bandwidth cap to control usage. This feature is only applicable to bill-by-bandwidth users.
+Tencent Cloud CDN is pay-as-you-go. If you are concerned about excessive bandwidth usage and fee surges due to hotlinking by malicious users, you can set a bandwidth cap to control usage. This feature is only applicable to bill-by-bandwidth users.
 
 Bandwidth cap configuration can detect the bandwidth generated in a statistical period (at a 5-minute granularity) and perform forced origin-pull according to the configuration or disable the CDN service (a 404 error will be returned for all requests) if the threshold is exceeded. This will avoid incurring additional CDN acceleration fees.
 
