@@ -22,7 +22,7 @@ You can manage object tags via the following APIs:
 
 ### Tag key restrictions
 
-- You cannot create tag keys starting with `qcs:`, `project`, `项目`, or any other system reserved characters.
+- You cannot create tag keys starting with `qcs:`, `project`,or any other system reserved characters.
 - A tag key can only contain UTF-8 encoded letters, spaces, numbers, and special characters `+, -, =, ., _, :, /, @`.
 - A tag key can be 1-127 characters encoded in UTF-8.
 - Tag keys are case-sensitive.
