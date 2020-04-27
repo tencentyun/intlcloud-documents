@@ -42,11 +42,11 @@ Log in to the [CAM Console](https://console.cloud.tencent.com/cam/capi) to get a
 ```
 [root@VM_71_10_centos ~]# javac -classpath binlogsdk-2.6.0-release.jar -encoding UTF-8 LocalDemo.java
 ```
-2. Launch the program. If no errors are reported, the program works properly. Check the local file previously configured.
+2. Launch the program. If no errors are reported, the program works properly. Check the previously configured local file.
 ```
 java -XX:-UseGCOverheadLimit -Xms2g -Xmx2g -classpath .:binlogsdk-2.6.0-release.jar LocalDemo
 ```
-3. Check the `test.alan.txt` file previously configured and you can see that data has been pulled into it.
+3. Check the previously configured `test.alan.txt` file and you can see that data has been pulled into it.
 ```
 [root@VM_71_10_centos ~]# cat test.alan.txt  
 checkpoint:144251@3@357589@317713
