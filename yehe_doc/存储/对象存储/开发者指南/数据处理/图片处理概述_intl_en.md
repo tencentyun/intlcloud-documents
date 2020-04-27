@@ -62,7 +62,7 @@ Tencent Cloud COS has integrated the professional All-in-One media solutions of 
       <td>Add an invisible watermark to the original image without affecting its quality</td>
    </tr>
    <tr>
-      <td><a href="https://cloud.tencent.com/document/product/460/6934">Content detection</a></td>
+      <td>Content detection</td>
       <td>Detect obscene, political, violence, and advertising content</td>
    </tr>
    <tr>
@@ -85,9 +85,9 @@ You can set image processing in the COS Console. For more information, please se
 
 >
 > - This image processing feature is only supported for Public Cloud regions in mainland China.
-> - Image Processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing] (https://intl.cloud.tencent.com/document/product/1045/33431).
+> - Image Processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 #### Using REST API
 
-You can configure image processing with the Cloud Infinite API. For more information, see the Cloud Infinite API documentation [Basic Image Processing] (https://cloud.tencent.com/document/product/460/6924).
+You can configure image processing with the Cloud Infinite API. For more information, see the Cloud Infinite API documentation [Basic Image Processing](https://cloud.tencent.com/document/product/460/6924).
 
