@@ -38,7 +38,7 @@ ECDN 请求次数计费按照 **月度阶梯累进** 方式计算，价格阶梯
 </table>
 
 
-详细费用算法请参见 [计费说明](https://cloud.tencent.com/doc/product/570/10979)。
+详细费用算法请参见 [计费说明](https://intl.cloud.tencent.com/document/product/570/10979)。
 
 ## 超额流量计费
 使用 ECDN 全站加速网络服务时，平台将根据您的实际请求次数给予一定的免费流量额度，您只需要对超出免费额度的流量进行付费。
