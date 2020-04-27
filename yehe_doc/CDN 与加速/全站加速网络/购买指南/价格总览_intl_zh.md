@@ -63,7 +63,7 @@ ECDN 请求次数计费按照 **月度阶梯累进** 方式计算，价格阶梯
 
 
 
-详细费用算法请参见 [计费说明](https://cloud.tencent.com/doc/product/570/10979)。
+详细费用算法请参见 [计费说明](https://intl.cloud.tencent.com/document/product/570/10979)。
 
 
 ## 大客户计费
