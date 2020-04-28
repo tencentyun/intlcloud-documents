@@ -1,10 +1,13 @@
-This document describes how to create a [recording configuration](https://intl.cloud.tencent.com/document/product/267/34224) in the [LVB Console](https://console.cloud.tencent.com/live). After the configuration is successfully created, you need to associate it with the corresponding push domain name. The association will take effect in about 5–10 minutes. You can also create recording templates for live channels through APIs. For more information, please see [Creating Recording Templates](https://intl.cloud.tencent.com/document/product/267/30845).
+This document describes how to create a [recording configuration](https://intl.cloud.tencent.com/document/product/267/34224) in the [LVB Console](https://console.cloud.tencent.com/live). After the configuration is successfully created, you need to associate it with the corresponding push domain name. The association will take effect in about 5–10 minutes. You can also create recording templates for live channels through APIs. 
 
+>
 >- The recorded video files are stored in the [VOD Console](https://console.cloud.tencent.com/vod/overview) by default. After enabling the recording feature, please make sure that your VOD service is in normal status; if it has not been activated or has been suspended due to account arrears, LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
 >- You are recommended to activate the VOD service in advance and purchase appropriate resource packages so as to avoid service suspension due to account arrears. For more information, please see [Getting Started with VOD](https://intl.cloud.tencent.com/document/product/266/8757).
 
 ## Creating a Recording Template
 Log in to the LVB Console, select **Feature Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**, click **+**, enter the basic information, and click **Save**.
+
+![](https://main.qcloudimg.com/raw/968a7b2ada4c6d6e9a3d3618f9ca1ccc.png)
 The .hls format supports recording resumption after push interruption, and the timeout period for resumption can be set between 0 and 300 seconds.
 
 > 
@@ -16,6 +19,7 @@ The .hls format supports recording resumption after push interruption, and the t
 
 ## Associating a Domain Name
 After creating a recording template, you need to select the corresponding push domain name in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** or click **Manage** on the right to enter the domain name details page. Then, select **Template Configuration** to specify the recording template for the domain name.
+![](https://main.qcloudimg.com/raw/1888050233a583a6762de2bead1cfef0.png)
 >
 >- If you want to unbind the recording configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
 >- The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to unassociate them, you need to call the [DeleteLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30842).

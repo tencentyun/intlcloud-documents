@@ -20,7 +20,7 @@
 
 >模板配置完后约5分钟 - 10分钟生效，详细录制模板配置信息请参见 [录制配置](https://intl.cloud.tencent.com/document/product/267/34223)。
 
-
+![](https://main.qcloudimg.com/raw/ad3059c36e93c39f65659fb9c8777741.png)
 
 >如果您需要解绑录制配置，在【模板配置】中，单击【编辑】，取消相应模板的勾选，然后单击【保存】，即可将该模板与域名取消关联。
 
@@ -30,9 +30,9 @@
 ### 云点播控制台
 
 登录云点播控制台，进入[【媒资管理】](https://console.cloud.tencent.com/vod/media)可以浏览已录制所有文件。
-
-
-
+![](https://main.qcloudimg.com/raw/dd69c71a7c84eacef9ef8edff83c45bc.png)
+ 
+ 
 ### 录制事件通知
 
 通过控制台或者 API 调用设置录制回调地址，录制文件生成后会以消息方式通知到该回调地址。在收到消息后可根据录制 [回调协议内容](https://intl.cloud.tencent.com/document/product/267/31566) 进行业务处理。
@@ -42,5 +42,5 @@
 ### 云点播 API 查询
 具体使用请参考云点播 API 文档：
 - 根据直播流名称及时间范围查询录制文件 API [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)。
-- 依照视频名称前缀获取视频信息 API **DescribeVodPlayInfo**。
+- 依照视频名称前缀获取视频信息 API [DescribeVodPlayInfo](https://cloud.tencent.com/document/product/266/7825)。
 

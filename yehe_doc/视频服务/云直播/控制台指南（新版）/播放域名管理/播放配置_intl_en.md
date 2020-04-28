@@ -1,5 +1,5 @@
 ## Operation Scenarios
-After push is successful for a domain name, you can log in to the LVB Console, enter the `StreamName` of the push address in the Playback Address Generator to generate a playback address for the corresponding live stream, and then use it to watch the stream.
+After push is successful for a domain name, you can log in to the LVB Console, enter the `StreamName` of the push address in the playback address generator to generate a playback address for the corresponding live stream, and then use it to watch the stream.
 
 ## Prerequisites
  - You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
@@ -11,8 +11,9 @@ After push is successful for a domain name, you can log in to the LVB Console, e
 	1. Select an expiration time, such as `2019-02-28 23:59:59`.
 	2. Enter a custom `StreamName`, such as `liveteststream`. The `StreamName` of the playback address must be the same as that of the push address to play back the corresponding stream.
 	3. Click **Generate Playback Address**.
-![](https://main.qcloudimg.com/raw/15afd6e0a641e14eca632e0df7cdbecb.png)
+![](https://main.qcloudimg.com/raw/6a7d902ebbdd54f6c674a44c55946257.png)
 3. If playback authentication is not enabled for your playback domain name, you can view three types of playback addresses under the domain name in **Playback Configuration** > **Playback Address**, i.e., RTMP, FLV, and HLS. Replace the `StreamName` to associate with a push address, and then you can play back the live stream at the playback address.
+![](https://main.qcloudimg.com/raw/6f55f9db9f6c2f076ede514a0e0f079f.png)
 
 >For more information on LVB playback, please see [LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
 
