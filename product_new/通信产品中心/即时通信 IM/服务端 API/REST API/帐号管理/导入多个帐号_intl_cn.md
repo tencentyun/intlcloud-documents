@@ -18,13 +18,13 @@ https://console.tim.qq.com/v4/im_open_login_svc/multiaccount_import?sdkappid=888
 | ------------------ | ------------------------------------ |
 | v4/im_open_login_svc/multiaccount_import | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
 
 ### 最高调用频率
-200次/秒。
+100次/秒。
 ### 请求包示例
 ```
 {

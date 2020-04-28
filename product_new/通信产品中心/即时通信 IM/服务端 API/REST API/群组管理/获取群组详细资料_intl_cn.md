@@ -26,7 +26,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_group_info?sdkappid=888888
 | ------------------ | ------------------------------------ |
 | v4/group_open_http_svc/get_group_info  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
@@ -84,7 +84,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_group_info?sdkappid=888888
 
 | 字段 | 类型 | 属性 | 说明 |
 |---------|---------|---------|---------|
-| GroupIdList | String | 必填 |需要拉取的群组列表  |
+| GroupIdList | Array | 必填 |需要拉取的群组列表  |
 | ResponseFilter | Object | 选填 |包含三个过滤器：GroupBaseInfoFilter，MemberInfoFilter，AppDefinedDataFilter_Group，分别是基础信息字段过滤器，成员信息字段过滤器，群组维度的自定义字段过滤器 |
 | GroupBaseInfoFilter | Array | 选填 |基础信息字段过滤器，指定需要获取的基础信息字段，基础信息字段详情请参阅 [群基础资料](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E5.9F.BA.E7.A1.80.E8.B5.84.E6.96.99) |
 | MemberInfoFilter | Array | 选填 |成员信息字段过滤器，指定需要获取的成员信息字段，成员信息字段详情请参阅 [群成员资料](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99) |
