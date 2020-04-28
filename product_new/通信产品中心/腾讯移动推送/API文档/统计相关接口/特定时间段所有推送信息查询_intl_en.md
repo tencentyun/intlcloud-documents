@@ -5,25 +5,25 @@
 ```shell
 https://api.tpns.tencent.com/v3/statistics/get_push_record
 ```
-**Feature**: This API queries the basic information and settings of all tasks within a specified time range.
+**Feature**: this API is used to query the basic information and settings of all tasks within a specified time range.
 
 
 
-## Parameter Descriptions
-#### Request Parameters
+## Parameter Description
+#### Request parameters
 
-| Parameter name  | Required | Type   | Description       |
+| Parameter Name  | Required | Type   | Description       |
 | --------- | ---- | ------ | ---------- |
-| startDate | Yes   | string | Start date of the query,<li>Format: YYYY-MM-DD<li>Query limit: within the last 3 months |
-| endDate | Yes | string | End date of the query, format: YYYY-MM-DD |
+| startDate | Yes   | string | Queries the start date,<li>Format: YYYY-MM-DD<li>Query limit: within the last 3 months |
+| endDate | Yes | string | Queries the end date. Format: YYYY-MM-DD |
 | msgType | No | string | Message type:<li>notify: notification<li>message: silent message |
 | pushType | No | string | Push type:<li>all: full push<li>tag: tag push<li>token: device list/device single push<li>account: account list/account single push |
-| offset | No | int | Paged query starting offset |
-| limit | No | int | Paged query number of messages by page (maximum 200) |
+| offset | No | int | Start offset for paginated query |
+| limit | No | int | Number of messages per page for paginated query (maximum value: 200) |
 
-#### Response Parameters
+#### Response parameters
 
-| Parameter name       | Type      | Description                                     |
+| Parameter Name       | Type      | Description                                     |
 | -------------- | --------- | ---------------------------------------- |
 | retCode        | int       | Returned status code                              |
 | errMsg | string | Error message |
@@ -32,7 +32,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 
 #### pushRecordData
 
-| Parameter name         | Type               | Description                   | Value description                                                     |
+| Parameter Name         | Type               | Description                   | Value Description                                                     |
 | ---------------- | ------------------ | ---------------------- | ------------------------------------------------------------ |
 | date             | string             | Push time               | Format: YYYY-MM-DD hh:mm:ss                                    |
 | pushId           | int                | Message ID                 | -                                                            |
@@ -40,35 +40,35 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 | content          | int                | Push content               | -                                                            |
 | status           | string             | Push status               | <li>PUSH_INIT //Task created<li>PUSH_WAIT; // Waiting for task to be scheduled<li>PUSH_STARTED; // Push started<li>PUSH_FINISHED; // Push finished<li>PUSH_FAILED; //Push failed<li>PUSH_CANCELED; // Push canceled by user<li>PUSH_DELETED; // Push deleted |
 | pushType         | string             | Push target               | <li>all //Full push<li>tag //Tag push<li>token_list //Device list<li>account_list //Account list<li>package_account_push //Number package push |
-| messageType      | string             | Push type               | <li>notify //Notification<li>message //Message                              |
+| messageType      | string             | Push type               | <li>notification //Notification<li>message //Message                              |
 | environment      | string             | Push environment               | <li>product //Production environment<li>dev //Development environment                         |
 | expireTime       | uint32             | Expiration time               | Unit: second                                                       |
 | xgMediaResources | string             | Rich media information             | -                                                            |
 | multiPkg         | bool               | Multi-package-name push?         | -                                                            |
-| targetList       | jsonArrary(string) | Push account or push device list | Valid when pushType is token_list or account_list                   |
-| tagSet           | JsonObject         | Tag settings               | Valid when pushType is tag<br>Data structure:<code><br>{<br>"op":"OR", //Inter–tag logic operation<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", //Tag type<br>"tagValue":"test68" //Tag value}<br>]<br>}</code> |
-| uploadId         | uint32             | Number package ID               | Valid when pushType is package_account_push                         |
-| pushConfig       | JsonObject         | Push configuration information           | <br>"Android": for specific push configuration information related to Android, refer to the following code<br>"iOS": for specific push configuration related to iOS, refer to the following code<br> |
+| targetList       | jsonArrary(string) | Push account or push device list | Valid if `pushType` is `token_list` or `account_list`                   |
+| tagSet           | JsonObject         | Tag settings               | Valid if `pushType` is `tag`<br>Data structure:<code><br>{<br>"op":"OR", //Inter–tag logic operation<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", //Tag type<br>"tagValue":"test68" //Tag value}<br>]<br>}</code> |
+| uploadId         | uint32             | Number package ID               | Valid if `pushType` is `package_account_push`                         |
+| pushConfig       | JsonObject         | Push configuration information           | <br>"Android": for specific push configuration information related to Android, please see the following code<br>"iOS": for specific push configuration related to iOS, please see the following code<br> |
 
 
 ## Configuration Information
-#### Android Push Configuration Information
+#### Android push configuration information
 
 ```json
 "android":{
- "ring":1, //ring
- "vibrate":0, //vibrate
- "lights":1, //breathing light
- "clearable":1, //whether clearable or not
+ "ring":1, // Ring
+ "vibrate":0, // Vibrate
+ "lights":1, // LED indicator
+ "clearable":1, // Whether dismissible or not
  "action":{
- // Action type; 1. Open activity or app; 2. Open browser; 3. Open Intent
+ // Action type; 1. Open activity or application; 2. Open browser; 3. Open Intent
  "action_type":1
  },
- "custom_content":"{}" //custom parameter
+ "custom_content":"{}" // Custom parameter
 }
 ```
 
-#### iOS Push Configuration Information
+#### iOS push configuration information
 
 ```json
 "ios":{
@@ -76,17 +76,17 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
  "alert": {
  "subtitle": "my subtitle"
  },
- "badge_type": 5, //badge number displayed by app (optional) -2 auto-increment，-1 unchanged,
- "sound":"notification sound effect", //default means the default sound effect
+ "badge_type": 5, // Badge number displayed by application (optional). -2: auto-increment, -1: unchanged,
+ "sound":"notification sound effect", // If this parameter is left empty, the default sound effect will be used
  "category": "INVITE_CATEGORY",
  "mutable-content" : 1
  }
 }
 ```
 
-## Example
+## Samples
 
-#### Request Example
+#### Sample request
 ```json
 {
  "limit": 50,
@@ -97,7 +97,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
  "offset": 0
 }
 ```
-#### Response Example
+#### Sample response
 >Blind watermarking can protect against different kinds of image theft attacks such as clipping, smudging, and color change. The anti-theft effect is related to the original image size and the attack intensity. For more details, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ```json

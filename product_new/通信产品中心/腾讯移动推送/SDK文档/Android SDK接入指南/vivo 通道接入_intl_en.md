@@ -1,11 +1,11 @@
 ﻿
 ## Operation Scenarios
-The Vivo push channel is a system-level push channel officially provided by Vivo. On a Vivo phone, push messages can be delivered through Vivo's system channel without opening the app. For more information, please visit [Vivo Push's official website](https://dev.vivo.com.cn/home).
+The Vivo push channel is a system-level push channel officially provided by Vivo. On a Vivo phone, push messages can be delivered through Vivo's system channel without opening the application. For more information, please visit [Vivo Push's official website](https://dev.vivo.com.cn/home).
 
 >
-- If an app cannot be opened after you tap the notification on the debugging version, please find the pop-up window permission and enable it for the current app.
+- If an application cannot be opened after you tap the notification on the debugging version, please find the pop-up window permission and enable it for the current application.
 - Vivo Push currently does not support in-app messages, which will be displayed as notifications.
-- Vivo Push imposes a certain limit (which is not disclosed) on the number of daily push messages (including notifications and passthrough messages). When this limit is exceeded, excessive messages will be pushed through TPNS' channel.
+- Vivo Push imposes a certain limit (which is not disclosed) on the number of daily push messages (including notifications and pass-through messages). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
 
 ## Directions
 ### Getting key
@@ -14,7 +14,7 @@ You need to apply to Vivo for enabling the push permission so as to get three ke
 ### Configuration
 #### Integrating through Android Studio
 
-Complete the configuration required by TPNS in the `build.gradle` file in the App module and then add the following nodes:
+Complete the configuration required by TPNS in the `build.gradle` file in the Application module and then add the following nodes:
 1. Configure Vivo's `AppID` and `AppKey`. The sample code is as follows:
 ```xml
  manifestPlaceholders = [
@@ -48,7 +48,7 @@ After getting the TPNS SDK package for Vivo Push, configure the major TPNS versi
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <!-- Receiver declaration for pushing app's custom messages -->
+        <!-- Receiver declaration for pushing application's custom messages -->
         <receiver android:name="com.tencent.android.vivopush.VivoPushMessageReceiver" >
             <intent-filter>
 
@@ -68,7 +68,7 @@ After getting the TPNS SDK package for Vivo Push, configure the major TPNS versi
 ```
 
 
-### Enabling Vivo Push
+### Enabling Vivo push
 Enable the third-party push API before calling TPNS' ```XGPushManager.registerPush```:
 
 ```java
@@ -76,14 +76,14 @@ Enable the third-party push API before calling TPNS' ```XGPushManager.registerPu
 XGPushConfig.enableOtherPush(getApplicationContext(), true);
 
 
-//The log of successful registration is as follows:
+// The log of successful registration is as follows:
  I/XINGE: [XGOtherPush] other push token is : 15646472431991408944055  other push type: vivo
 I/XINGE: [PushServiceBroadcastHandler]  bind OtherPushToken success ack with [accId = 1500xxxxxx  , rsp = 0]  token = 0139f9840030882cfe7cc791aebc800ed270 otherPushType = vivo otherPushToken = 15646472431991408944055
 
 ```
 
 
-### Obfuscating code
+### Code obfuscation
 
 ```xml
 -dontwarn com.vivo.push.**
@@ -93,4 +93,4 @@ I/XINGE: [PushServiceBroadcastHandler]  bind OtherPushToken success ack with [ac
 
 ```
 
->Obfuscation rules must be stored in the `proguard-rules.pro` file at the app project level.
+>Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.

@@ -1,9 +1,9 @@
-### API Description
+## API Description
 **Request method**: POST.
 ``` POST   
 https://api.tpns.tencent.com/v3/push/package/upload
 ```
-**Description**: The user needs to upload number package files to batch accounts as files. The files in the number package must then be pushed. The number package push APIs mainly include the number package upload API and the number package push API.
+**Feature**: the user needs to upload number package files to batch accounts via files. The files in the number package must then be pushed. The number package push APIs mainly include the number package upload API and the number package push API.
 
 
 
@@ -14,39 +14,39 @@ https://api.tpns.tencent.com/v3/push/package/upload
 - The uploaded file must have a zip file extension, and the compressed contents must be a txt file.
 - Each line in a txt file represents one account, and the account length is limited to [2, 100].
 
-## Parameter Descriptions
+## Parameter Description
 
-#### Request Parameters  
+#### Request parameters  
 
-| Parameter name | Type | Required | Description |
+| Parameter Name | Type | Required | Description |
 | --- | --- | --- | --- |
-| file  | form-data  | Yes  | Uploaded files must be zip files that are 100M or less in size. The contents of each zip file must be a txt file, and there can be no nested folders. Each line in a txt file represents one account, and the account length is limited to [2, 100].
+| file  | form-data  | Yes  | Uploaded files must be zip files less than 100 MB. The contents of each zip file must be a txt file, and there can be no nested folders. Each line in a txt file represents one account, and the account length is limited to [2, 100].
 
-#### Response Parameters
+#### Response parameters
 
-| Parameter name | Type | Required | Description |
+| Parameter Name | Type | Required | Description |
 | --- | --- | --- | --- |
 | retCode   | int32\_t   | Yes   | Error code   |
 | errMsg   | string   | Yes   | Error message when an error occurs in the request   |
 | uploadId    | int32   | Yes   | When a file upload succeeds, a positive integer uploadId will be provided, which represents the ID of the uploaded file. It is provided for the push of the subsequent number package API.   |
 
 
-## Example(s)
+## Samples
 
 
-Curl example
-```xml
+Curl sample
+``` xml
 curl -X POST 
 https://api.tpns.tencent.com/v3/push/package/upload 
    
--H 'Authorization: Basic application authorization information' 
+-H 'Authorization: basic application authorization information' 
 -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' 
--F 'file=@C:\Uploaded file’s absolute path'
+-F 'file=@C:\File upload with absolute path'
   
 ```
 
-Python example
-```python
+Python sample
+``` python
 
 import requests
 
@@ -67,15 +67,11 @@ httpBody = '\r\n'.join(data)
 
 headers = {
 'content-type': "multipart/form-data,boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-    'Authorization': "Basic authorization information",
+    'Authorization': "Basic application authorization information",
     }
 response = requests.request("POST", url, data=httpBody, headers=headers, verify=False)
 print(response.text.encode('utf-8'))
 
 ```
 
-
-
-
-
-
+>!For application authorization information, please see [Basic Auth Authentication](https://intl.cloud.tencent.com/document/product/1024/34672).

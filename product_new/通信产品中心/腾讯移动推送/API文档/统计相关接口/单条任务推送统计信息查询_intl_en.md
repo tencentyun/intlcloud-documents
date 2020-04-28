@@ -4,49 +4,50 @@
 ```shell
 https://api.tpns.tencent.com/v3/statistics/get_push_task_stat_channel
 ```
-**Feature**: This API queries the detailed statistics for each push task, including all channel information and summary results. The channel types in pushStatDataAll will be changed based on their differences in terms of iOS/Android and push channels.
+**Feature**: this API is used to query the detailed statistics for each push task, including all channel information and summary results. The channel types in `pushStatDataAll` will be changed based on their differences in terms of iOS/Android and push channels.
 
 
 
-## Parameter Descriptions
-#### Request Parameters
+## Parameter Description
+#### Request parameters
 
 | Parameter Name | Required | Type | Description |
 | -------- | ---- | ------ | ------ |
 | pushId   | Yes   | string | Message ID |
 
-#### Response Parameters
+#### Response parameters
 
-| Parameter name | Type | Description |
+| Parameter Name | Type | Description |
 | --------------- | ------ | ------------------------------------------------------------ |
 | retCode         | int    | Returned status code                                                  |
 | errMsg          | string | Error message                                                     |
-| pushStatDataAll | Json   | Returned results: formed by channel and pushStat, where channel is the channel name. PushStatDataAll structure variables are shown in following table |
+| pushStatDataAll | Json   | Returned results: formed by `channe`l and `pushStat`, where `channel` is the channel name. `PushStatDataAll` structure variables are shown in following table |
 
 #### PushStatDataAll (Android)
 
-| Parameter name | Type | Description |
+| Parameter Name | Type   | Description           |
 | ------------ | ------ | -------- |
-| pushActiveUv | int    | Planned delivery |
-| pushOnlineUv | int    | Actual delivery |
-| verifySvcUv  | int    | Device arrival |
-| verifyUv     | int    | Display     |
-| clickUv      | int    | Click     |
-| cleanupUv    | int    | Clear     |
+| pushActiveUv | int    | Attempted delivery |
+| pushOnlineUv | int    | Actual sent to |
+| verifySvcUv  | int    | Device reached (only valid for TPNS and iOS channels. For other vendor channels, the `pushOnlineUv` metric of expected deliveries by TPNS will be used) |
+|callbackVerifySvcUv | int |  Arrival receipt for vendor channel (only valid for Huawei, OPPO,  Vivo, and Mi channels. For vendor channel receipt configuration, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)) |
+| verifyUv     | int    | Displayed     |
+| clickUv      | int    | Clicked     |
+| cleanupUv    | int    | Cleared     |
 
-#### PushStatOverviewData (iOS & macOS)
+#### PushStatOverviewData (iOS and macOS)
 
-| Parameter name | Type | Description |
+| Parameter Name | Type | Description |
 | ------------ | ------ | ------------ |
-| pushActiveUv | int    | Planned delivery |
+| pushActiveUv | int    | Attempted delivery |
 | pushOnlineUv | int    | APNs successfully received |
-| verifySvcUv  | int    | Arrival |
-| clickUv      | int    | Click     |
+| verifySvcUv  | int    | Reached |
+| clickUv      | int    | Clicked     |
 
 
 
-## Example
-#### Request Example
+## Samples
+#### Sample request
 
 ```json
 {
@@ -54,7 +55,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_task_stat_channel
 }
 ```
 
-#### Response Example
+#### Sample response
 
 ```json
 

@@ -1,12 +1,12 @@
 ﻿All mobile phone vendors have a certain limit on the queries per second (QPS) of their push channels. If the current QPS cannot meet your operational needs, you can apply to the vendor for QPS increase as instructed below. (Only certain vendors allow such application.)
 ## Huawei Push
 ### QPS limit
-QPS = app's MAU in the Huawei channel * app category weight * 0.00072
+QPS = application's MAU in the Huawei channel * application category weight * 0.00072
 #### Glossary
-MAU: the value of app's pushes through the Huawei channel on the last calendar day in a month is taken as the MAU of that month.
-Categorization rule: the app category in Huawei AppGallery is used.
+MAU: the value of application's pushes through the Huawei channel on the last calendar day in a month is taken as the MAU of that month.
+Categorization rule: the application category in Huawei AppGallery is used.
 
-| Group Name | App Category | Weight |
+| Group Name | Application Category | Weight |
 |-----|-----|-----|
 | IM | Communication | 5 |
 | Finance | Finance | 5 |
@@ -21,23 +21,23 @@ Categorization rule: the app category in Huawei AppGallery is used.
 | Others | Kids; education; personalized themes; cars | 1 |
 | Default | Default | 1 |
 
->If your app has not been released on Huawei AppGallery, its category will be "Default".
-If your app's QPS calculated by the formula is smaller than 6,000, the QPS of 6,000 will be used by default.
+>If your application has not been released on Huawei AppGallery, its category will be "Default".
+If your application's QPS calculated by the formula is smaller than 6,000, the QPS of 6,000 will be used by default.
 When the traffic across the entire network is high, there may be a system-level traffic throttling. 
-In addition, no matter what app category it is, the number of pushes for a single device cannot exceed 100,000 per day; otherwise, push permission will be restricted, and you need to rectify your app and submit your rectification plan to apply for push permission again.
+In addition, no matter what application category it is, the number of pushes for a single device cannot exceed 100,000 per day; otherwise, push permission will be restricted, and you need to rectify your application and submit your rectification plan to apply for push permission again.
 
 ### Applying for QPS increase
 If you have any questions and feedback about the product, please send an email in the following format to hwpush@huawei.com:
-**Title: [QPS] consultancy and feedback + app name**
+**Title: [QPS] consultancy and feedback + application name**
 
-| Application Form for Increasing Huawei Message Push QPS for App |   |   
+| Application Form for Increasing Huawei Message Push QPS for Application |   |   
 | --- | --- | 
-| App name: |   |  
+| Application name: |   |  
 | Company name: |   |  
-| App package name: |   | 
-| App category on Huawei AppGallery： |   | 
+| Application package name: |   | 
+| Application category on Huawei AppGallery: |   | 
 | Question type: | Application for increasing the QPS, consultancy on the specific QPS, etc. |  
-| Background of the demand: |   |  
+| Demand background: |   |  
 | Specific demand: |   |  
 | Contact information (email) |   |  
 
@@ -60,7 +60,7 @@ Currently, no application is allowed.
 
 ## Meizu Push
 ### QPS limit
-QPS: it is 500 pushes/sec for an app by default. If you need a higher value, please contact Meizu for adjustment.
+QPS: it is 500 pushes/sec for an application by default. If you need a higher value, please contact Meizu for adjustment.
 
 ### Applying for QPS increase
 You can contact Meizu for adjustment.
