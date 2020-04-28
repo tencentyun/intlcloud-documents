@@ -7,19 +7,19 @@
 ```shell
 https://api.tpns.tencent.com/v3/statistics/get_device_stat_overview
 ```
-**Feature**: This API queries an app’s daily “new devices on current day”, “daily connected devices”, and “historically accumulated devices” within a certain time period.
+**Feature**: this API is used to query "daily new devices", "daily connected devices", and "historically accumulated devices" of the application within a certain time period.
 
-## Parameter Descriptions
-#### Request Parameters
+## Parameter Description
+#### Request parameters
 
-| Parameter name  | Required | Type   | Description         | Note                                            |
+| Parameter Name  | Required | Type   | Description         | Note                                            |
 | --------- | ---- | ------ | ------------ | ----------------------------------------------- |
-| startDate | Yes   | string | Start date of the query | start Date, query limit: only data for the past 3 months can be queried |
-| endDate   | Yes   | string | End date of the query | -                                               |
+| startDate | Yes   | string | Queries the start date | start Date, query limit: only data for the past 3 months can be queried |
+| endDate   | Yes   | string | Queries the end date  | -                                               |
 
-#### Response Parameters
+#### Response parameters
 
-| Parameter name                  | Type      | Description                                                |
+| Parameter Name                  | Type      | Description                                                |
 | ------------------------- | --------- | --------------------------------------------------- |
 | retCode                   | int       | Returned status code                                          |
 | errMsg                    | string    | Error message                                            |
@@ -27,23 +27,23 @@ https://api.tpns.tencent.com/v3/statistics/get_device_stat_overview
 
 #### getDeviceStatOverviewData
 
-| Parameter name | Type   | Description           |
+| Parameter Name | Type   | Description           |
 | -------- | ------ | -------------- |
 | date     | int | Data date       |
 | accuUv   | int    | Accumulated devices     |
-| newUv    | int    | New devices on current day   |
+| newUv    | int    | Daily new devices   |
 | activeUv | int    | Daily peak of online devices |
 
 
-## Example
-#### Request Example
+## Samples
+#### Sample request
 ```json
 {
  "startDate": "20190724",
  "endDate": "20190726"
 }
 ```
-#### Response Example
+#### Sample response
 ```json
 {
  "retCode": 0,

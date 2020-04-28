@@ -1,10 +1,10 @@
-# 1. IoT push service introduction
+# 1. IoT push service overview
 
 ## 1.1. Push service overview
 
-IoT SDK provided by TPNS contains APIs that allow developers to push messages to IoT devices.
+IoT SDK provided by TPNS contains APIs that allow you to push messages to IoT devices.
 
-## 1.2 Product features
+## 1.2. Product features
 
 It is primarily used for:
 

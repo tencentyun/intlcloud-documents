@@ -1,5 +1,5 @@
 ﻿## Operation Scenarios
-The Mi push channel is a system-level push channel officially provided by Mi. On a Mi phone, push messages can be delivered through Mi's system channel without opening the app.
+The Mi push channel is a system-level push channel officially provided by Mi. On a Mi phone, push messages can be delivered through Mi's system channel without opening the application.
 
 !
 - The Mi channel supports arrival callback and passthrough (arrival unguaranteed) but not click callback.
@@ -65,11 +65,11 @@ receiver
 application
 !-- Note: this is the beginning of permission required by Mi Push --
 permission
-androidname=app package name.permission.MIPUSH_RECEIVE
+androidname=application package name.permission.MIPUSH_RECEIVE
 androidprotectionLevel=signature 
-!-- Here, change `com.example.mipushtest` to the app package name --
+!-- Here, change `com.example.mipushtest` to the application package name --
 uses-permission androidname=app package name.permission.MIPUSH_RECEIVE 
-!-- Here, change `com.example.mipushtest` to the app package name --
+!-- Here, change `com.example.mipushtest` to the application package name --
 -- Note: this is the end of the permissions required by Mi Push --
 ```
 3. Add ```Receiver``` in ```AndroidManifest.xml``` with the following configuration:
@@ -89,7 +89,7 @@ intent-filter
 receiver
 ```
 
-### Enabling Mi Push
+### Enabling Mi push
 Set Mi `AppID` and `AppKey`.
 
 ```java
@@ -110,13 +110,13 @@ If you need to get parameters through the click callback or redirect to a custom
 
 
 
-### Obfuscating code
+### Code obfuscation
 
 ```xml
 -keep class com.xiaomi.{;}
 -keep public class  extends com.xiaomi.mipush.sdk.PushMessageReceiver
 ```
 
-Obfuscation rules must be stored in the `proguard-rules.pro` file at the app project level.
+Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
 
 

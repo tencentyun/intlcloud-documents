@@ -4,21 +4,21 @@
 ```shell
 https://api.tpns.tencent.com/v3/device/account/query
 ```
-**Feature**: This API queries the binding relationships of accounts and tokens.
+**Feature**: this API is used to query the binding relationships between accounts and tokens.
 
 
 
-## Parameter Descriptions
-#### Request Parameters
-| Parameter name | Type | Required | Description |
+## Parameter Description
+#### Request parameters
+| Parameter Name | Type | Required | Description |
 | -------------- | ------- | ---- | ---------------------------------------- |
-| operator_type | int | Yes | Operation type：<li>Batch query the corresponding token according to account<li>Query account according to token |
-| account_list | jsonArrary | No | The account list to be queried, which is valid and required when operator_type = 1, with each element containing one set of accounts. Below is a specific example:`[{"account":"account1"},{"account":"account2"}]` |
-| token_list | jsonArrary | No | The token list to be queried, which is valid and required when operator_type = 2.|
+| operator_type | int | Yes | Operation type: <li>Batch queries the corresponding token according to account<li>Queries the account according to token |
+| account_list | jsonArrary | No | The account list to be queried, which is valid and required if `operator_type` is 1, with each element containing one set of accounts. Below is an example: `[{"account":"account1"},{"account":"account2"}]` |
+| token_list | jsonArrary | No | The token list to be queried, which is valid and required if `operator_type` is 2.|
 
-#### Response Parameters
+#### Response parameters
 
-| Parameter name | Type | Description |
+| Parameter Name | Type | Description |
 | -------------- | ------- | ---------------------------------------- |
 | retCode | int | Return code |
 | errMsg | String | Error message|
@@ -26,8 +26,8 @@ https://api.tpns.tencent.com/v3/device/account/query
 | token_accounts | JsonArrary |Array of mappings from token to account, for example:<br>`[{"token":"token1","account_list":[{"account":"926@126.com"},{"account":"1527000000",}]},`<br/>`{"token":"token2","account_list":[{"account":"926@163.com"},{"account":"1527000001"}]}]` |
 
 
-## Example
-#### Request Example
+## Samples
+#### Sample request
 
 - Batch query the relationships of tokens bound to accounts
 ```json
@@ -45,7 +45,7 @@ https://api.tpns.tencent.com/v3/device/account/query
 }
 ```
 
-#### Return Example
+#### Sample return
 - Batch query the tokens bound to accounts
 ```json
 {

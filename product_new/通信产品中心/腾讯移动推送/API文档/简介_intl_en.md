@@ -1,7 +1,6 @@
-REST API is an HTTP management API provided to the App backend by TPNS push for the remote call of push services by developers. 
+RESTful APIs are HTTP management APIs that provide the application backend with a management entry at the backend for you to remotely call the push service.
 
-REST API supports HTTP and HTTPS protocols. For the sake of security, it is recommended that the HTTPS protocol be used.
+RESTful APIs support both HTTP and HTTPS protocols. For the sake of security, the HTTPS protocol is recommended.
 
-##  Prerequisites
-If the REST API needs to be called, make sure that the application has been created in the TPNS push console. For details, refer to [Creating Products and Applications](https://intl.cloud.tencent.com/document/product/1024/32603).
-
+## Prerequisites
+Before you call a RESTful API, make sure that you have created the application in the TPNS Console. For more information, please see [Creating Products and Applications](https://intl.cloud.tencent.com/document/product/1024/32603).

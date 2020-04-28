@@ -2,12 +2,12 @@
 
 ## Operation Scenarios
 
-The Huawei push channel is a system-level push channel **officially provided by Huawei**. On a Huawei phone, push messages can be delivered through Huawei's system channel without opening the app.
+The Huawei push channel is a system-level push channel **officially provided by Huawei**. On a Huawei phone, push messages can be delivered through Huawei's system channel without opening the application.
 
 
 >
 >- Huawei Push can only receive push messages in a signed package environment.
->- The Mobile Push Service on the Huawei phone must be upgraded to 2.5.3 or above; otherwise, The Huawei channel registration will fail and the TPNS channel will be used.
+>- The Mobile Push Service on the Huawei phone must be upgraded to 2.5.3 or above; otherwise, the Huawei channel registration will fail and the TPNS channel will be used.
 >- The Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored but arrival unguaranteed) but not arrival callback.
 
 ## Directions
@@ -16,8 +16,8 @@ The Huawei push channel is a system-level push channel **officially provided by 
 
 1. Enter the [Huawei's development platform](http://developer.huawei.com).
 2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to verify your identity.)
-3. Create an app on the Huawei Push platform. For more information, please see [Creating App](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-Guides/hmssdk_huaweipush_devprepare_agent#h1-1575111622057). (The app package name must be the same as that entered in the TPNS Console.)
-4. Get and copy the app's `AppID` and `AppSecret` and paste them in App Configuration > Huawei Channel in the TPNS Console.
+3. Create an application on the Huawei Push platform. For more information, please see [Creating App](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-Guides/hmssdk_huaweipush_devprepare_agent#h1-1575111622057). (The application package name must be the same as that entered in the TPNS Console.)
+4. Get and copy the application's `AppID` and `AppSecret` and paste them in Application Configuration > Huawei Channel in the TPNS Console.
 		
 
 ### Configuring SHA256 certificate fingerprint
@@ -28,7 +28,7 @@ For more information on how to get the SHA256 certificate fingerprint, please se
 ### Integration steps
 #### Integrating through Android Studio
 
-Complete the configuration required by TPNS in the `build.gradle` file in the App module and then add the following Huawei nodes:
+Complete the configuration required by TPNS in the `build.gradle` file in the Application module and then add the following Huawei nodes:
 1. Configure the Huawei `AppID`. The sample code is as follows:
 ```xml
  manifestPlaceholders = [
@@ -66,7 +66,7 @@ Complete the configuration required by TPNS in the `build.gradle` file in the Ap
 	</activity>
 	<provider
 			android:name="com.huawei.hms.update.provider.UpdateProvider"
-			android:authorities="app package name.hms.update.provider"
+			android:authorities="application package name.hms.update.provider"
 			android:exported="false"
 			android:grantUriPermissions="true" >
 	</provider>      
@@ -86,7 +86,7 @@ Complete the configuration required by TPNS in the `build.gradle` file in the Ap
 		<action android:name="com.huawei.android.push.intent.REGISTRATION" />
 		<!-- Required; used to receive messages -->
 		<action android:name="com.huawei.android.push.intent.RECEIVE" />
-		<!-- Optional; used to trigger the `onEvent` callback after the notification panel or a button in the notification panel is tapped -->
+		<!-- Optional; used to trigger the `onEvent` callback after the notification bar or a button in it is tapped -->
 		<action android:name="com.huawei.android.push.intent.CLICK" />
 		<!-- Optional; used to check whether the PUSH channel is connected to; not needed if there is no need to view -->
 		<action android:name="com.huawei.intent.action.PUSH_STATE" />
@@ -108,7 +108,7 @@ I/XINGE: [XGOtherPush] other push token is : 0865551032618726300001294600CN01 ot
  I/XINGE: [a] binder other push token with accid = 2100274337  token = 17c32948df0346d5837d4748192e9d2f14c81e08 otherPushType = huawei otherPushToken = 0865551032618726300001294600CN01
 ```
 
-### Obfuscating code
+### Code obfuscation
 ```xml
 -ignorewarning
 -keepattributes *Annotation*
@@ -122,10 +122,10 @@ I/XINGE: [XGOtherPush] other push token is : 0865551032618726300001294600CN01 ot
 -keep class com.huawei.android.hms.agent.**{*;}
 
 ```
->Obfuscation rules must be stored in the `proguard-rules.pro` file at the app project level.
+>Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
 
 
-When your app is released on Huawei AppGallery, it may fail the audit with the error message "Error:28: you need to package the certificate file into the APK when integrating with HMS. Please directly copy the assets directory to the app project's root directory" displayed.
+When your application is released on Huawei AppGallery, it may fail the audit with the error message "Error:28: you need to package the certificate file into the APK when integrating with HMS. Please directly copy the assets directory to the application project's root directory" displayed.
 
-Solution: download the official Huawei HMS SDK and copy all files and subdirectories under the `assets` directory to that in your app project. If the `assets` directory does not exist in the app project, create one.
+Solution: download the official Huawei HMS SDK and copy all files and subdirectories under the `assets` directory to that in your application project. If the `assets` directory does not exist in the application project, create one.
 

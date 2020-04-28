@@ -4,19 +4,19 @@
 ```shell
 https://api.tpns.tencent.com/v3/statistics/get_push_stat_overview
 ```
-**Feature**: This API queries the daily push conversion summary within a certain time period.
+**Feature**: this API is used to query the daily push conversion summary within a certain time period.
 
-## Parameter Descriptions
-#### Request Parameters
+## Parameter Description
+#### Request parameters
 
-| Parameter name  | Required | Type   | Description                                           |
+| Parameter Name  | Required | Type   | Description                                           |
 | --------- | ---- | ------ | ---------------------------------------------- |
 | startDate | Yes   | string | start Date, query limit: only data for the past 3 months can be queried |
 | endDate   | Yes   | string | Data is timestamp                                   |
 
-#### Response Parameters
+#### Response parameters
 
-| Parameter name | Type | Description |
+| Parameter Name | Type | Description |
 | -------------------- | --------- | ------------------------------------------------------------ |
 | retCode              | int       | Returned status code                                                   |
 | errMsg               | string    | Error message                                                     |
@@ -24,30 +24,30 @@ https://api.tpns.tencent.com/v3/statistics/get_push_stat_overview
 
 #### PushStatOverviewData (Android)
 
-| Parameter name | Type   | Description           |
+| Parameter Name | Type   | Description           |
 | ------------ | ------ | -------- |
 | date         | string | Data date |
-| pushActiveUv | int    | Planned delivery |
+| pushActiveUv | int    | Scheduled delivery |
 | pushOnlineUv | int    | Actual delivery |
 | verifySvcUv  | int    | Device arrival |
 | verifyUv     | int    | Display     |
 | clickUv      | int    | Click     |
 | cleanupUv    | int    | Clear     |
 
-#### PushStatOverviewData (iOS & macOS)
+#### PushStatOverviewData (iOS and macOS)
 
-| Parameter name | Type | Description |
+| Parameter Name | Type   | Description           |
 | ------------ | ------ | -------- |
 | date         | string | Data date |
-| pushActiveUv | int    | Planned delivery |
+| pushActiveUv | int    | Scheduled delivery |
 | pushOnlineUv | int    | APNs successfully received |
 | verifySvcUv  | int    | Arrival |
 | clickUv      | int    | Click     |
 
 
 
-## Example
-#### Request Example
+## Samples
+#### Sample request
 ```json
 {
  "startDate": "20190724",
@@ -55,7 +55,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_stat_overview
 }
 ```
 
-#### Response Example
+#### Sample response
 ```json
 {
  "retCode": 0,

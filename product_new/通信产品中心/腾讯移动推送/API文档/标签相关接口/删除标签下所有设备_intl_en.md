@@ -5,38 +5,38 @@
 ```shell
 https://api.tpns.tencent.com/v3/device/tag/delete_all_device
 ```
-**Description**: This API deletes all device APIs under a certain tag.
+**Feature**: this API is used to delete all device APIs under a certain tag.
 
 
-## Parameter Descriptions
-#### Request Parameters
+## Parameter Description
+#### Request parameters
 
 
-| Parameter name | Type | Required | Description |
+| Parameter Name | Type | Required | Description |
 | -------- | ----- | -------- | ------------------------------------------------------------ |
 | tag_list | array | Yes       | List of tags to be deleted: `"tag_list": ["test_tag_3_Ik0N0", "test_tag_2_Ik0N0"]` |
 
 
-#### Response Parameters
+#### Response parameters
 
 | Field name   | Type    | Required | Comments                                                         |
 | -------- | ------- | -------- | ------------------------------------------------------------ |
 | seq | int64_t | Yes | The same as the request packet (if the request packet is invalid JSON, this field is 0) |
-| ret_code | int32_t | Yes | Error code; for details, see the error codes table |
+| ret_code | int32_t | Yes       | Error code. For more information, please see the error codes table                                 |
 | err_msg  | string  | No       | Error message when an error occurs in the request                                         |
-| result   | string  | No       | When the request is correct:<li>If there is extra data to be returned, the result will be encapsulated in the JSON of this field. If there is no extra data, there may be no such field. |
+| result   | string  | No       | When the request is correct:<li>If there is extra data to be returned, the result will be encapsulated in the json of this field. If there is no extra data, <li>there may be no such field |
 
 
-## Example
+## Samples
 
-#### Sample Request
+#### Sample request
 ```json
 {
     "tag_list": ["test_tag_3_Ik0N0", "test_tag_2_Ik0N0"]
 }
 ```
 
-#### Response Example
+#### Sample response
 ```json
 {
     "ret_code": 0,
