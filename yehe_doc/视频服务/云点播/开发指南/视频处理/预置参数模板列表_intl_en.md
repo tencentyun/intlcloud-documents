@@ -1,139 +1,139 @@
-云点播支持使用参数模板代替复杂的参数集合，发起视频处理。针对不同视频处理的场合，云点播预置了一批参数模板。
+VOD supports initiating video processing by replacing complicated parameter sets with parameter templates. It offers a variety of preset parameter templates suitable for different video processing scenarios.
 
-## 视频转换类
+## Video Conversion
 
-视频转换类的预置参数模板包含了以下几种类型：
-- 预置转码模板
-- 预置转封装模板
-- 预置转动图模板
-- 预置指定时间点截图模板
-- 预置采样截图模板
-- 预置雪碧图模板
-- 预置转自适应码流模板
+Preset parameter templates for video conversion are divided into the following types:
+- Preset transcoding templates
+- Preset remuxing templates
+- Preset animated image generating templates
+- Preset time point screencapturing templates
+- Preset sampled screencapturing templates
+- Preset image sprite generating templates
+- Preset adaptive bitrate streaming templates
 
 <span id="transcoding"></span>
-### 预置转码模板
+### Preset transcoding templates
 
-<table class="table auto-table"><tbody><tr><td colspan="1" rowspan="2">规格等级</td><td colspan="1" rowspan="2">模板 ID</td><td colspan="1" rowspan="2">封装格式（Format）</td><td colspan="4">视频参数</td><td colspan="2">音频参数</td></tr>
-<tr><td colspan="1">分辨率（Resolution）</td><td colspan="1">码率（Bitrate）</td><td colspan="1">帧率（FPS）</td><td colspan="1">编码（Codec）</td><td colspan="1">编码（Codec）</td></tr>
-<tr><td colspan="1" rowspan="2">流畅（FLU）</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">按比例缩放 × 360</td><td colspan="1" rowspan="2">400kbps</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64 kbps</td></tr>
+<table class="table auto-table"><tbody><tr><td colspan="1" rowspan="2">Specification</td><td colspan="1" rowspan="2">Template ID</td><td colspan="1" rowspan="2">Format</td><td colspan="4">Video Parameters</td><td colspan="2">Audio Parameters</td></tr>
+<tr><td colspan="1">Resolution</td><td colspan="1">Bitrate</td><td colspan="1">FPS</td><td colspan="1">Codec</td><td colspan="1">Codec</td></tr>
+<tr><td colspan="1" rowspan="2">LD</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 360</td><td colspan="1" rowspan="2">400 Kbps</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64 Kbps</td></tr>
 <tr><td colspan="1">100210</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">标清（SD）</td><td colspan="1">100020</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">按比例缩放 × 540</td><td colspan="1" rowspan="2">1000kbps</td></tr>
+<tr><td colspan="1" rowspan="2">SD</td><td colspan="1">100020</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 540</td><td colspan="1" rowspan="2">1,000 Kbps</td></tr>
 <tr><td colspan="1">100220</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">高清（HD）</td><td colspan="1">100030</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">按比例缩放 × 720</td><td colspan="1" rowspan="2">1800kbps</td><td colspan="1" rowspan="4">128kbps</td></tr>
+<tr><td colspan="1" rowspan="2">HD</td><td colspan="1">100030</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 720</td><td colspan="1" rowspan="2">1,800 Kbps</td><td colspan="1" rowspan="4">128 Kbps</td></tr>
 <tr><td colspan="1">100230</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">全高清（FHD）</td><td colspan="1">100040</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">按比例缩放 × 1080</td><td colspan="1" rowspan="2">2500kbps</td></tr>
+<tr><td colspan="1" rowspan="2">FHD</td><td colspan="1">100040</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 1080</td><td colspan="1" rowspan="2">2,500 Kbps</td></tr>
 <tr><td colspan="1">100240</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">2K</td><td colspan="1">100070</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">按比例缩放 × 1440</td><td colspan="1" rowspan="2">3000kbps</td><td colspan="1" rowspan="4">160kbps</td></tr>
+<tr><td colspan="1" rowspan="2">2K</td><td colspan="1">100070</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 1440</td><td colspan="1" rowspan="2">3,000 Kbps</td><td colspan="1" rowspan="4">160 Kbps</td></tr>
 <tr><td colspan="1">100270</td><td colspan="1">HLS</td></tr>
-<tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">按比例缩放 × 2160</td><td colspan="1" rowspan="2">6000kbps</td></tr>
+<tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 2160</td><td colspan="1" rowspan="2">6,000 Kbps</td></tr>
 <tr><td colspan="1">100280</td><td colspan="1">HLS</td></tr></tbody></table>
 
-### 预置极速高清模板
+### Preset TESHD templates
 
-<table class="table auto-table"><tbody><tr><td colspan="1" rowspan="2">规格等级</td><td colspan="1" rowspan="2">模板 ID</td><td colspan="1" rowspan="2">封装格式（Format）</td><td colspan="4">视频参数</td><td colspan="2">音频参数</td></tr>
-<tr><td colspan="1">分辨率（Resolution）</td><td colspan="1">最大码率（Bitrate）</td><td colspan="1">帧率（FPS）</td><td colspan="1">编码（Codec）</td><td colspan="1">编码（Codec）</td></tr>
-<tr><td colspan="1">同源（SAME）</td><td colspan="1" rowspan="">100800</td><td colspan="1" rowspan="5">MP4</td><td colspan="1">同源</td><td colspan="1" rowspan="5">无限制</td><td colspan="1" rowspan="5">25</td><td colspan="1" rowspan="5">H.264</td><td colspan="1">同源</td></tr>
-<tr><td colspan="1">流畅（FLU）</td><td colspan="1">100810</td><td colspan="1">按比例缩放 × 360</td><td colspan="1" rowspan="2">64 kbps</td></tr>
-<tr><td colspan="1">标清（SD）</td><td colspan="1">100820</td><td colspan="1">按比例缩放 × 540</td></tr>
-<tr><td colspan="1">高清（HD）</td><td colspan="1">100830</td><td colspan="1" rowspan="">按比例缩放 × 720</td><td colspan="1" rowspan="2">128kbps</td></tr>
-<tr><td colspan="1">全高清（FHD）</td><td colspan="1">100840</td><td colspan="1">按比例缩放 × 1080</td></tr></tbody></table>
+<table class="table auto-table"><tbody><tr><td colspan="1" rowspan="2">Specification</td><td colspan="1" rowspan="2">Template ID</td><td colspan="1" rowspan="2">Format</td><td colspan="4">Video Parameters</td><td colspan="2">Audio Parameters</td></tr>
+<tr><td colspan="1">Resolution</td><td colspan="1">Maximum Bitrate</td><td colspan="1">FPS</td><td colspan="1">Codec</td><td colspan="1">Codec</td></tr>
+<tr><td colspan="1">SAME</td><td colspan="1" rowspan="">100800</td><td colspan="1" rowspan="5">MP4</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">Unlimited</td><td colspan="1" rowspan="5">25</td><td colspan="1" rowspan="5">H.264</td><td colspan="1">Same as source</td></tr>
+<tr><td colspan="1">LD</td><td colspan="1">100810</td><td colspan="1">Proportionally scaled * 360</td><td colspan="1" rowspan="2">64 Kbps</td></tr>
+<tr><td colspan="1">SD</td><td colspan="1">100820</td><td colspan="1">Proportionally scaled * 540</td></tr>
+<tr><td colspan="1">HD</td><td colspan="1">100830</td><td colspan="1" rowspan="">Proportionally scaled * 720</td><td colspan="1" rowspan="2">128 Kbps</td></tr>
+<tr><td colspan="1">FHD</td><td colspan="1">100840</td><td colspan="1">Proportionally scaled * 1080</td></tr></tbody></table>
 
 
-### 预置转封装模板
+### Preset remuxing templates
 
-| 模板 ID | 转封装目标格式（Format） |
+| Template ID | Format |
 | ------- | ------------------------ |
 | 6       | HLS                      |
 | 9       | MP4                      |
 
 <span id="cinemagraph"></span>
-### 预置转动图模板
+### Preset animated image generating templates
 
-| 模板 ID | 图片格式（Format） | 分辨率（Resolution） | 帧率（FPS） |
+| Template ID | Format | Resolution | FPS |
 | ------- | ------------------ | -------------------- | ----------- |
-| 20000   | GIF                | 同源                 | 2           |
-| 20001   | WEBP               | 同源                 | 2           |
+| 20000   | GIF                | Same as source                 | 2           |
+| 20001   | WEBP               | Same as source                 | 2           |
 
 <span id="screenshot01"></span>
-### 预置指定时间点截图模板
+### Preset time point screencapturing templates
 
-| 模板 ID | 输出格式（Format） | 宽度（Width） | 高度（Height） | 填充方式（FillType） |
+| Template ID | Format | Width | Height | FillType |
 | ------- | ------------------ | ------------- | -------------- | -------------------- |
-| 10      | JPG                | 同源          | 同源           | 拉伸                 |
+| 10      | JPG                | Same as source          | Same as source           | Stretch   |
 
 <span id="screenshot02"></span>
-### 预置采样截图模板
+### Preset sampled screencapturing templates
 
-| 模板 ID | 输出格式（Format） | 宽度（Width） | 高度（Height） | 采样方式（SampleType） | 截图间隔（Interval） | 填充方式（FillType） |
+| Template ID | Format | Width | Height | SampleType | Interval | FillType |
 | ------- | ------------------ | ------------- | -------------- | ---------------------- | -------------------- | -------------------- |
-| 10      | JPG                | 同源          | 同源           | 按百分比               | 10%                  | 拉伸                 |
+| 10      | JPG    | Same as source   | Same as source     | By percent  | 10%   | Stretch     |
 
 <span id="screenshot03"></span>
-### 预置雪碧图模板
+### Preset image sprite generating templates
 
-| 模板 ID | 输出格式（Format） | 小图宽度（Width） | 小图高度（Height） | 小图行数（Rows） | 小图列数（Columns） | 采样方式（SampleType） | 截图间隔（Interval） |
+| Template ID | Format | Width | Height | Rows | Columns | SampleType | Interval |
 | ------- | ------------------ | ----------------- | ------------------ | ---------------- | ------------------- | ---------------------- | -------------------- |
-| 10      | JPG                | 142               | 80                 | 10               | 10                  | 按时间间隔             | 10秒                 |
+| 10      | JPG   | 142    | 80      | 10       | 10    | By time   | 10s  |
 
-### 预置转自适应码流模板
+### Preset adaptive bitrate streaming templates
 
 <table border="0" >
  <tr>
-  <th rowspan="2">模板 ID</td>
-  <th rowspan="2" >打包类型（PacakgeType）</td>
-  <th rowspan="2" >子流规格</td>
-  <th colspan="4" >视频参数</td>
-  <th rowspan="2" >是否过滤“低分辨率转高分辨率” （DisableHigherResolution）</td>
+  <th rowspan="2">Template ID</td>
+  <th rowspan="2" >Container Type (PacakgeType)</td>
+  <th rowspan="2" >Substream Specification</td>
+  <th colspan="4" >Video Parameters</td>
+  <th rowspan="2" >Filter out Transcoding from Low Resolution to High Resolution (DisableHigherResolution)</td>
  </tr>
  <tr>
-  <th>分辨率（Resolution）</td>
-  <th>码率（Bitrate）</td>
-  <th >帧率（FPS）</td>
-  <th >编码（Codec）</td>
+  <th>Resolution</td>
+  <th>Bitrate</td>
+  <th >FPS</td>
+  <th >Codec</td>
  </tr>
  <tr>
   <td rowspan="6" >10</td>
   <td rowspan="6">HLS</td>
-  <td  >流畅</td>
-  <td  >按比例缩放 x 240</td>
-  <td  >256kbps</td>
+  <td  >LD</td>
+  <td  >Proportionally scaled * 240</td>
+  <td  >256 Kbps</td>
   <td  >24</td>
   <td  >H.264</td>
-  <td rowspan="6" >是</td>
+  <td rowspan="6" >Yes</td>
  </tr>
  <tr >
-  <td >标清</td>
-  <td  >按比例缩放 x 480</td>
-  <td  >512kbps</td>
-  <td  >24</td>
-  <td  >H.264</td>
- </tr>
- <tr >
-  <td  >高清</td>
-  <td  >按比例缩放 x 720</td>
-  <td  >512kbps</td>
+  <td >SD</td>
+  <td  >Proportionally scaled * 480</td>
+  <td  >512 Kbps</td>
   <td  >24</td>
   <td  >H.264</td>
  </tr>
  <tr >
-  <td >全高清</td>
-  <td  >按比例缩放 x 1080</td>
-  <td  >1024kbps</td>
+  <td  >HD</td>
+  <td  >Proportionally scaled * 720</td>
+  <td  >512 Kbps</td>
+  <td  >24</td>
+  <td  >H.264</td>
+ </tr>
+ <tr >
+  <td >FHD</td>
+  <td  >Proportionally scaled * 1080</td>
+  <td  >1,024 Kbps</td>
   <td  >24</td>
   <td  >H.264</td>
  </tr>
  <tr >
   <td  >2K</td>
-  <td  >按比例缩放 x 1440</td>
-  <td  >3072kbps</td>
+  <td  >Proportionally scaled * 1440</td>
+  <td  >3,072 Kbps</td>
   <td  >30</td>
   <td  >H.264</td>
  </tr>
  <tr >
   <td >4K</td>
-  <td  >按比例缩放 x 2160</td>
-  <td  >6144kbps</td>
+  <td  >Proportionally scaled * 2160</td>
+  <td  >6,144 Kbps</td>
   <td  >30</td>
   <td  >H.264</td>
  </tr>
@@ -141,121 +141,121 @@
 
 <table border="0">
 <tr >
-  <th rowspan="2" >模板 ID</td>
-  <th rowspan="2"  >打包类型（PacakgeType）</td>
-  <th  rowspan="2"  >子流规格</td>
-  <th  colspan="4" >音频参数</td>
-  <th  rowspan="2" >是否过滤“低分辨率转高分辨率” （DisableHigherResolution）</td>
+  <th rowspan="2" >Template ID</td>
+  <th rowspan="2"  >Container Type (PacakgeType)</td>
+  <th  rowspan="2"  >Substream Specification</td>
+  <th  colspan="4" >Audio Parameters</td>
+  <th  rowspan="2" >Filter out Transcoding from Low Resolution to High Resolution (DisableHigherResolution)</td>
  </tr>
  <tr >
-  <th >码率（Bitrate）</td>
-  <th   >采样频率（SampleRate）</td>
-  <th >音频声道数（SoundSystem）</td>
-  <th >编码（Codec）</td>
+  <th >Bitrate</td>
+  <th   >SampleRate</td>
+  <th >SoundSystem</td>
+  <th >Codec</td>
  </tr>
  <tr >
   <td rowspan="6" >10</td>
   <td rowspan="6">HLS</td>
-  <td >流畅</td>
-  <td>48kbps</td>
-  <td >44100Hz</td>
-  <td >双声道（Stereo）</td>
+  <td >LD</td>
+  <td>48 Kbps</td>
+  <td >44,100 Hz</td>
+  <td >Stereo</td>
   <td >AAC</td>
-  <td rowspan="6">是</td>
+  <td rowspan="6">Yes</td>
  </tr>
  <tr >
-  <td >标清</td>
-  <td >48kbps</td>
-  <td >44100Hz</td>
-  <td >双声道（Stereo）</td>
-  <td >AAC</td>
- </tr>
- <tr >
-  <td>高清</td>
-  <td >48kbps</td>
-  <td >44100Hz</td>
-  <td >双声道（Stereo）</td>
+  <td >SD</td>
+  <td >48 Kbps</td>
+  <td >44,100 Hz</td>
+  <td >Stereo</td>
   <td >AAC</td>
  </tr>
  <tr >
-  <td >全高清</td>
-  <td >48kbps</td>
-  <td >44100Hz</td>
-  <td >双声道（Stereo）</td>
+  <td>HD</td>
+  <td >48 Kbps</td>
+  <td >44,100 Hz</td>
+  <td >Stereo</td>
+  <td >AAC</td>
+ </tr>
+ <tr >
+  <td >FHD</td>
+  <td >48 Kbps</td>
+  <td >44,100 Hz</td>
+  <td >Stereo</td>
   <td >AAC</td>
  </tr>
  <tr >
   <td >2K</td>
   <td   
-   >48kbps</td>
+   >48 Kbps</td>
   <td  
-   >44100Hz</td>
+   >44,100 Hz</td>
   <td  
-   >双声道（Stereo）</td>
+   >Stereo</td>
   <td  
    >AAC</td>
  </tr>
  <tr >
   <td >4K</td>
   <td  
-   >48kbps</td>
+   >48 Kbps</td>
   <td  
-   >44100Hz</td>
+   >44,100 Hz</td>
   <td     
-   >双声道（Stereo）</td>
+   >Stereo</td>
   <td 
    >AAC</td>
  </tr>
 </table>
 
 
-## 视频 AI 类
+## Video AI
 
-视频 AI 类的预置参数模板包含了以下几种类型：
+Preset parameter templates for video AI are divided into the following types:
 
-* 预置视频内容审核模板
-* 预置视频内容分析模板
-* 预置视频内容识别模板
+* Preset video content audit templates
+* Preset video content analysis templates
+* Preset video content recognition templates
 
-### 预置视频内容审核模板
+### Preset video content audit templates
 
 <span id="verify"></span>
 <table>
     <tr>
         <th rowspan=2>
-            模板 ID                
+            Template ID                
         </th>
         <th colspan=3>
-            视频画面
+            Video Image
         </th>
         <th colspan=2>
-            ASR 文字
+            ASR Phrase
         </th>
         <th colspan=2>
-            OCR 文字
+            OCR Text
         </th>
     </tr>
  <tr>
         <th>
-            鉴黄（Porn）
+            Porn detection (Porn)
         </th>
         <th>
-            鉴暴（Terrorism）
+            Terrorism information detection (Terrorism)
         </th>
         <th>
-            鉴政（Political）
+            Politically sensitive information detection (Political)
         </th>
         <th>
-            鉴黄（Asr.Porn）
+            Porn detection (Asr.Porn)
         </th>
         <th>
-            鉴政（Asr.Political）
+            Politically sensitive information detection (Asr.Political)
         </th>
         <th>
-            鉴黄（Ocr.Porn）
+            Porn detection (Ocr.Porn)
         </th>
         <th>
-            鉴政（Ocr.Political）
+            Politically sensitive information detection (Ocr.Political)
         </th>
     </tr>
     <tr>
@@ -263,25 +263,25 @@
             10
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            否
+            No
         </td>
         <td>
-            否
+            No
         </td>
         <td>
-            否
+            No
         </td>
         <td>
-            否
+            No
         </td>
     </tr>
     <tr>
@@ -289,89 +289,89 @@
             20
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            是
+            Yes
         </td>
         <td>
-            是
+            Yes
         </td>
     </tr>
 </table>
 
-### 预置视频内容分析模板
+### Preset video content analysis templates
 
-| 模板 ID | 智能分类（Classification） | 智能标签（Tag） | 智能封面（Cover） | 智能按帧标签（FrameTag） |
+| Template ID | Intelligent Categorization (Classification) | Intelligent Tagging (Tag) | Intelligent Cover (Cover) | Intelligent Frame-specific Tagging (FrameTag) |
 | -- | -- | -- | -- | -- |
-| 10 | 是 | 是 | 是 | 否 |
-| 20 | 是 | 是 | 是 | 是 |
+| 10 | Yes | Yes | Yes | No |
+| 20 | Yes | Yes | Yes | Yes |
 
-### 预置视频内容识别模板
+### Preset video content recognition templates
 
-| 模板 ID | 人脸识别（Face） | 文本全文识别（OcrFullText） | 文本关键词识别（OcrWords） | 语音全文识别（AsrFullText） | 语音关键词识别（AsrWords） | 物体识别（Object） |
+| Template ID | Face Recognition (Face) | Full Text Recognition (OcrFullText) | Text Keyword Recognition (OcrWords) | Full Speech Recognition (AsrFullText) | Speech Keyword Recognition (AsrWords) | Object Recognition (Object) |
 | -- | -- | -- | -- | -- | -- | -- |
-| 10 | 是（使用默认人物库） | 否 | 否 | 否 | 否 | 否 |
+10 | Yes (default figure library is used) | No | No | No | No | No |
 
 
 
 
-## 历史转码类
+## Legacy Transcoding
 
-### 历史预置转码模板
+### Legacy preset transcoding templates
 
-#### 转码视频格式
+#### Transcoded video formats
 
 <table>
     <tr>
         <th rowspan=2>
-            规格等级                
+            Specification                
         </th>
         <th rowspan=2>
-            模板 ID                
+            Template ID                
         </th>
         <th rowspan=2>
-            封装格式（Format）
+            Format
         </th>
         <th colspan=4>    
-            视频参数
+            Video Parameters
         </th>
         <th colspan=1>    
-            音频参数
+            Audio Parameters
         </th>
     </tr>
     <tr>
         <th>
-            分辨率（Resolution）
+            Resolution
         </th>
         <th>
-            码率（Bitrate）
+            Bitrate
         </th>
         <th>
-            帧率（FPS）
+            FPS
         </th>
         <th>
-            编码（Codec）
+            Codec
         </th>
         <th>
-            编码（Codec）
+            Codec
         </th>
     </tr>
     <tr>
         <td rowspan=6>
-            流畅（FLU）
+            LD
         </td>
         <td>
             10
@@ -380,10 +380,10 @@
             MP4
         </td>
         <td>
-            320 × 按比例缩放
+            320 * proportionally scaled
         </td>
         <td>
-            256kbps
+            256 Kbps
         </td>
         <td>
             24
@@ -403,10 +403,10 @@
             MP4
         </td>
         <td>
-            按比例缩放 × 240
+            Proportionally scaled * 240
         </td>
         <td>
-            250kbps
+            250 Kbps
         </td>
         <td>
             15
@@ -426,10 +426,10 @@
             HLS
         </td>
         <td>
-            320 × 按比例缩放
+            320 * proportionally scaled
         </td>
         <td>
-            256kbps
+            256 Kbps
         </td>
         <td>
             24
@@ -449,10 +449,10 @@
             HLS
         </td>
         <td>
-            按比例缩放 × 240
+            Proportionally scaled * 240
         </td>
         <td>
-            250kbps
+            250 Kbps
         </td>
         <td>
             15
@@ -472,10 +472,10 @@
             FLV
         </td>
         <td>
-            320 × 按比例缩放
+            320 * proportionally scaled
         </td>
         <td>
-            256kbps
+            256 Kbps
         </td>
         <td>
             24
@@ -495,10 +495,10 @@
             FLV
         </td>
         <td>
-            按比例缩放 × 240
+            Proportionally scaled * 240
         </td>
         <td>
-            250kbps
+            250 Kbps
         </td>
         <td>
             15
@@ -512,7 +512,7 @@
     </tr>
     <tr>
         <td rowspan=6>
-            标清（SD）
+            SD
         </td>
         <td>
             20
@@ -521,10 +521,10 @@
             MP4
         </td>
         <td>
-            640 × 按比例缩放
+            640 * proportionally scaled
         </td>
         <td>
-            512kbps
+            512 Kbps
         </td>
         <td>
             24
@@ -544,10 +544,10 @@
             MP4
         </td>
         <td>
-            按比例缩放 × 480
+            Proportionally scaled * 480
         </td>
         <td>
-            600kbps
+            600 Kbps
         </td>
         <td>
             24
@@ -567,10 +567,10 @@
             HLS
         </td>
         <td>
-            640 × 按比例缩放
+            640 * proportionally scaled
         </td>
         <td>
-            512kbps
+            512 Kbps
         </td>
         <td>
             24
@@ -590,10 +590,10 @@
             HLS
         </td>
         <td>
-            按比例缩放 × 480
+            Proportionally scaled * 480
         </td>
         <td>
-            600kbps
+            600 Kbps
         </td>
         <td>
             24
@@ -613,10 +613,10 @@
             FLV
         </td>
         <td>
-            640 × 按比例缩放
+            640 * proportionally scaled
         </td>
         <td>
-            512kbps
+            512 Kbps
         </td>
         <td>
             24
@@ -636,10 +636,10 @@
             FLV
         </td>
         <td>
-            按比例缩放 × 480
+            Proportionally scaled * 480
         </td>
         <td>
-            600kbps
+            600 Kbps
         </td>
         <td>
             24
@@ -653,7 +653,7 @@
     </tr>
     <tr>
         <td rowspan=6>
-            高清（HD）
+            HD
         </td>
         <td>
             30
@@ -662,10 +662,10 @@
             MP4
         </td>
         <td>
-            1280 × 按比例缩放
+            1280 * proportionally scaled
         </td>
         <td>
-            1024kbps
+            1,024 Kbps
         </td>
         <td>
             24
@@ -685,10 +685,10 @@
             MP4
         </td>
         <td>
-            按比例缩放 × 720
+            Proportionally scaled * 720
         </td>
         <td>
-            800kbps
+            800 Kbps
         </td>
         <td>
             25
@@ -708,10 +708,10 @@
             HLS
         </td>
         <td>
-            1280 × 按比例缩放
+            1280 * proportionally scaled
         </td>
         <td>
-            1024kbps
+            1,024 Kbps
         </td>
         <td>
             24
@@ -731,10 +731,10 @@
             HLS
         </td>
         <td>
-            按比例缩放 × 720
+            Proportionally scaled * 720
         </td>
         <td>
-            800kbps
+            800 Kbps
         </td>
         <td>
             25
@@ -754,10 +754,10 @@
             FLV
         </td>
         <td>
-            1280 × 按比例缩放
+            1280 * proportionally scaled
         </td>
         <td>
-            1024kbps
+            1,024 Kbps
         </td>
         <td>
             24
@@ -777,10 +777,10 @@
             FLV
         </td>
         <td>
-            按比例缩放 × 720
+            Proportionally scaled * 720
         </td>
         <td>
-            800kbps
+            800 Kbps
         </td>
         <td>
             25
@@ -794,7 +794,7 @@
     </tr>
     <tr>
         <td  rowspan=6>
-            全高清（FHD）
+            FHD
         </td>
         <td>
             40
@@ -803,10 +803,10 @@
             MP4
         </td>
         <td>
-            1920 × 按比例缩放
+            1920 * proportionally scaled
         </td>
         <td>
-            2500kbps
+            2,500 Kbps
         </td>
         <td>
             24
@@ -826,10 +826,10 @@
             MP4
         </td>
         <td>
-            按比例缩放 × 1080
+            Proportionally scaled * 1080
         </td>
         <td>
-            1400kbps
+            1,400 Kbps
         </td>
         <td>
             30
@@ -849,10 +849,10 @@
             HLS
         </td>
         <td>
-            1920 × 按比例缩放
+            1920 * proportionally scaled
         </td>
         <td>
-            2500kbps
+            2,500 Kbps
         </td>
         <td>
             24
@@ -872,10 +872,10 @@
             HLS
         </td>
         <td>
-            按比例缩放 × 1080
+            Proportionally scaled * 1080
         </td>
         <td>
-            1400kbps
+            1,400 Kbps
         </td>
         <td>
             30
@@ -895,10 +895,10 @@
             FLV
         </td>
         <td>
-            1920 × 按比例缩放
+            1920 * proportionally scaled
         </td>
         <td>
-            2500kbps
+            2,500 Kbps
         </td>
         <td>
             24
@@ -918,10 +918,10 @@
             FLV
         </td>
         <td>
-            按比例缩放 × 1080
+            Proportionally scaled * 1080
         </td>
         <td>
-            1400kbps
+            1,400 Kbps
         </td>
         <td>
             30
@@ -944,10 +944,10 @@
             MP4
         </td>
         <td>
-            按比例缩放 × 1440
+            Proportionally scaled * 1440
         </td>
         <td>
-            3072kbps
+            3,072 Kbps
         </td>
         <td>
             30
@@ -967,10 +967,10 @@
             MP4
         </td>
         <td>
-            按比例缩放 × 1440
+            Proportionally scaled * 1440
         </td>
         <td>
-            2048kbps
+            2,048 Kbps
         </td>
         <td>
             30
@@ -990,10 +990,10 @@
             HLS
         </td>
         <td>
-            按比例缩放 × 1440
+            Proportionally scaled * 1440
         </td>
         <td>
-            3072kbps
+            3,072 Kbps
         </td>
         <td>
             30
@@ -1013,10 +1013,10 @@
             HLS
         </td>
         <td>
-            按比例缩放 × 1440
+            Proportionally scaled * 1440
         </td>
         <td>
-            2048kbps
+            2,048 Kbps
         </td>
         <td>
             30
@@ -1036,10 +1036,10 @@
             FLV
         </td>
         <td>
-            按比例缩放 × 1440
+            Proportionally scaled * 1440
         </td>
         <td>
-            3072kbps
+            3,072 Kbps
         </td>
         <td>
             30
@@ -1059,10 +1059,10 @@
             FLV
         </td>
         <td>
-            按比例缩放 × 1440
+            Proportionally scaled * 1440
         </td>
         <td>
-            2048kbps
+            2,048 Kbps
         </td>
         <td>
             30
@@ -1085,10 +1085,10 @@
             MP4
         </td>
         <td>
-            按比例缩放 × 2160
+            Proportionally scaled * 2160
         </td>
         <td>
-            6144kbps
+            6,144 Kbps
         </td>
         <td>
             30
@@ -1108,10 +1108,10 @@
             MP4
         </td>
         <td>
-            按比例缩放 × 2160
+            Proportionally scaled * 2160
         </td>
         <td>
-            4096kbps
+            4,096 Kbps
         </td>
         <td>
             30
@@ -1131,10 +1131,10 @@
             HLS
         </td>
         <td>
-            按比例缩放 × 2160
+            Proportionally scaled * 2160
         </td>
         <td>
-            6144kbps
+            6,144 Kbps
         </td>
         <td>
             30
@@ -1154,10 +1154,10 @@
             HLS
         </td>
         <td>
-            按比例缩放 × 2160
+            Proportionally scaled * 2160
         </td>
         <td>
-            4096kbps
+            4,096 Kbps
         </td>
         <td>
             30
@@ -1177,10 +1177,10 @@
             FLV
         </td>
         <td>
-            按比例缩放 × 2160
+            Proportionally scaled * 2160
         </td>
         <td>
-            6144kbps
+            6,144 Kbps
         </td>
         <td>
             30
@@ -1200,10 +1200,10 @@
             FLV
         </td>
         <td>
-            按比例缩放 × 2160
+            Proportionally scaled * 2160
         </td>
         <td>
-            4096kbps
+            4,096 Kbps
         </td>
         <td>
             30
@@ -1217,108 +1217,108 @@
     </tr>
 </table>
 
-以上转视频模板中未注明的参数全部相同，分别是：
+Parameters that are not listed in the above table are the same, as shown below:
 
 <table>
     <tr>
         <th style="width:18%">
-            分类               
+            Category               
         </th>
         <th style="width:22%">
-            参数/能力项
+            Parameter
         </th>
         <th>
-            说明
+            Description
         </th>
     </tr>
     <tr>
         <td rowspan=4>
-            视频参数
+            Video parameters
         </td>
         <td>
-            编码档次
+            Profile
         </td>
         <td>
 				    <ul>
-				       <li>使用 H.264 编码时，编码档次为 High</li>
-						   <li>使用 H.265 编码的，编码档次为 Main</li>
+				       <li>If `Codec` is `H.264`, `Profile` is `High`</li>
+						   <li>If `Codec` is `H.265`, `Profile` is `Main`</li>
 				    </ul>
         </td>
     </tr>
     <tr>
         <td>
-            GOP 长度
+            GOP length
         </td>
         <td>
-            240帧
-        </td>
-    </tr>
-    <tr>
-        <td>
-            颜色空间
-        </td>
-        <td>
-            YUV420P
+            240 frames
         </td>
     </tr>
     <tr>
         <td>
-            码率控制方法
+            Color space
         </td>
         <td>
-            动态比特率编码（VBR）
+            YUV420p
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Bitrate control method
+        </td>
+        <td>
+            VBR
         </td>
     </tr>
     <tr>
         <td rowspan=3>
-            音频参数
+            Audio parameters
         </td>
         <td>
-            采样率
+            SampleRate
         </td>
         <td>
-            44100Hz
-        </td>
-    </tr>
-    <tr>
-        <td>
-            码率
-        </td>
-        <td>
-            48kbps
+            44,100 Hz
         </td>
     </tr>
     <tr>
         <td>
-            声道数
+            Bitrate
         </td>
         <td>
-            双通道（Stereo）
+            48 Kbps
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SoundSystem
+        </td>
+        <td>
+            Stereo
         </td>
     </tr>
 </table>
 
-#### 转码音频格式
+#### Transcoded audio formats
 
 <table>
     <tr>
         <th rowspan=1>
-            模板 ID                
+            Template ID                
         </th>
         <th rowspan=1>
-            封装格式（Format）
+            Format
         </th>
         <th>
-            音频码率（Bitrate）
+            Bitrate
         </th>
         <th>
-            编码（Codec）
+            Codec
         </th>
         <th>
-            声道数（SoundSystem）
+            SoundSystem
         </th>
         <th>
-            采样频率（SampleRate）
+            SampleRate
         </th>
     </tr>
  <tr>
@@ -1329,16 +1329,16 @@
             M4A
         </td>
         <td>
-            24kbps
+            24 Kbps
         </td>
         <td>
             AAC
         </td>
         <td>
-            双通道（Stereo）
+            Stereo
         </td>
                 <td>
-            44100Hz
+            44,100 Hz
         </td>
     </tr>
  <tr>
@@ -1349,16 +1349,16 @@
             M4A
         </td>
         <td>
-            48kbps
+            48 Kbps
         </td>
         <td>
             AAC
         </td>
         <td>
-            双通道（Stereo）
+            Stereo
         </td>
                 <td>
-            44100Hz
+            44,100 Hz
         </td>
     </tr>
     <tr>
@@ -1369,16 +1369,16 @@
             M4A
         </td>
         <td>
-            96kbps
+            96 Kbps
         </td>
         <td>
             AAC
         </td>
        <td>
-            双通道（Stereo）
+            Stereo
         </td>
                 <td>
-            44100Hz
+            44,100 Hz
         </td>
     </tr>
      <tr>
@@ -1389,16 +1389,16 @@
             M4A
         </td>
         <td>
-            192kbps
+            192 Kbps
         </td>
         <td>
             AAC
         </td>
        <td>
-            双通道（Stereo）
+            Stereo
         </td>
                 <td>
-            44100Hz
+            44,100 Hz
         </td>
     </tr>
     <tr>
@@ -1409,16 +1409,16 @@
             M4A
         </td>
         <td>
-            256kbps
+            256 Kbps
         </td>
         <td>
             AAC
         </td>
        <td>
-            双通道（Stereo）
+            Stereo
         </td>
                 <td>
-            44100Hz
+            44,100 Hz
         </td>
     </tr>
     <tr>
@@ -1429,16 +1429,16 @@
             MP3
         </td>
         <td>
-            128kbps
+            128 Kbps
         </td>
         <td>
             MP3
         </td>
        <td>
-            双通道（Stereo）
+            Stereo
         </td>
                 <td>
-            44100Hz
+            44,100 Hz
         </td>
     </tr>
     <tr>
@@ -1449,16 +1449,16 @@
             MP3
         </td>
         <td>
-            320kbps
+            320 Kbps
         </td>
         <td>
             MP3
         </td>
        <td>
-            双通道（Stereo）
+            Stereo
         </td>
                 <td>
-            44100Hz
+            44,100 Hz
         </td>
     </tr>
 </table>
