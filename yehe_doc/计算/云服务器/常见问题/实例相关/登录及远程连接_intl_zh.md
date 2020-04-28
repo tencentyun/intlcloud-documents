@@ -1,0 +1,107 @@
+### 如何使用 VNC 登录云服务器？
+
+VNC 登录是腾讯云为用户提供的一种通过 Web 浏览器远程连接云服务器的方式。在没有安装远程登录客户端或者客户端远程登录无法使用的情况下，用户可以通过 VNC 登录连接到云服务器，观察云服务器状态，并且可通过云服务器账户进行基本的云服务器管理操作。具体的操作步骤请参考以下文档：
+- [使用 VNC 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32494)
+- [使用 VNC 登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32496)
+
+### Windows 服务器如何配置多用户远程登录？
+
+Windows 服务器可以支持同时多人远程登录，具体配置方法请参考 [设置允许多用户远程登录 Windows 云服务器](https://intl.cloud.tencent.com/document/product/213/32497)。
+如若设置未生效，请重启后再尝试登录。
+
+### Ubuntu 系统如何使用 root 用户登录实例？
+
+Ubuntu 系统的默认用户名是 ubuntu，并在安装过程中默认不设置 root 帐户和密码。您如若有需要，可在设置中开启允许 root 用户登录。具体操作步骤如下：
+1. 使用 ubuntu 帐户登录云服务器。
+2. <span id="Step2"></span>执行以下命令，设置 root 密码。
+```
+sudo passwd root
+```
+3. 输入 root 的密码，按 **Enter**。
+4. 重复输入 root 的密码，按 **Enter**。
+返回如下信息，即表示 root 密码设置成功。
+```
+passwd: password updated successfully
+```
+5. 执行以下命令，打开 `sshd_config` 配置文件。
+```
+sudo vi /etc/ssh/sshd_config 
+```
+6. 按 **i** 切换至编辑模式，找到 `#Authentication`，将 `PermitRootLogin` 参数修改为 `yes`。如下图所示：
+> 如果 `PermitRootLogin` 参数被注释，请去掉首行的注释符号（`#`）。
+> 
+![](https://main.qcloudimg.com/raw/359242f7e5df666d43459fe74abce72a.png)
+7. 按 **Esc**，输入 **:wq**，保存文件并返回。
+8. 执行以下命令，重启 ssh 服务。
+```
+sudo service ssh restart
+```
+9. 参考 [使用标准登录方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) ，并使用以下信息登录 Ubuntu 云服务器：
+ - **用户名**：root
+ - **登录密码**：在 [步骤2](#Step2) 中已设置的密码
+ 使用 root 帐户登录成功后，如下图所示：
+![](https://main.qcloudimg.com/raw/a8a6ec3e2499e08d051c9ee11fdcd85e.png)
+
+### 重启实例之后无法连接（登录），如何处理？
+
+这可能是由于您的服务器 CPU/内存负载过高导致的。请参考以下文档进行处理：
+- [Linux 实例：CPU 或内存占用率高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32387)
+- [Windows 实例：CPU 或内存占用率高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32405)
+
+### 远程连接云服务器实例时，提示连接实例超时？
+请排查以下问题：
+- 实例应处于运行中状态。
+- 实例所在安全组中应添加了对应的安全组规则，具体操作请参见 [添加安全组规则](https://intl.cloud.tencent.com/document/product/213/34272)。
+- 实例应开启了终端连接（SSH）或远程桌面（RDP）对应的远程服务。
+- 实例应开放了连接端口，一般终端连接（SSH）开放22端口，远程桌面（RDP）开放3389端口。
+
+### 远程连接 Linux 实例时，提示拒绝连接？
+请排查以下问题：
+- 实例应开启了终端连接（SSH）或远程桌面（RDP）对应的远程服务。
+- 实例应开放了连接端口，一般终端连接（SSH）开放22端口，远程桌面（RDP）开放3389端口。
+
+### 远程连接 Linux 实例时，提示用户名或密码不正确？
+请排查以下问题：
+- 输入正确的用户名，一般 Linux 实例用户名为 root（Ubuntu 系统的默认用户名是 ubuntu）。
+- 输入正确的密码。如果忘记了密码，您可以重置密码，具体操作请参见 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566)。
+
+### 远程连接 Windows 实例时，提示用户名或密码不正确？
+请排查以下问题：
+- 输入正确的用户名。一般 Windows 实例用户名为 Administrator。
+- 输入正确的密码。如果忘记了密码，您可以重置密码，具体操作请参见 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566)。
+- 如果使用非管理员用户登录 Windows 实例，该用户需要属于 Remote Desktop Users 组。
+
+### 控制台支持多用户使用 VNC 方式登录云服务器吗？
+不支持。如果一个用户已经登录，其他用户则无法再登录。
+
+### 忘记登录云服务器的密码，怎么办？
+您可以修改云服务器密码，详细步骤请参见 [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566)。
+
+### 为什么使用 IE8.0 浏览器无法通过 VNC 登录实例？
+仅支持 IE10及以上版本的 IE 浏览器中使用 VNC 登录实例，请下载最新版本的 IE 浏览器。
+此外，建议使用 Chrome 浏览器，腾讯云的控制台对 Chrome 浏览器的兼容性更好。
+
+### 如何远程登录到 Linux 实例？
+腾讯云推荐 [使用 WebShell 方式登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)，您也可以：
+- [使用远程登录软件登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32502)。
+- [使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501)。
+- [使用 VNC 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32494)。
+
+### 无法连接 Linux 实例怎么办？
+无法连接或无法登录 Linux 实例时，您可以参见 [无法登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32500) 来排查解决。
+如果问题仍未解决，可以 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8CVM&step=1)。
+
+### 无法连接 Windows 实例怎么办？
+无法连接或无法登录 Windows 实例时，您可以参见 [无法登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/10339) 来排查解决。
+如果问题仍未解决，可以 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8CVM&step=1)。
+
+### 云服务器实例出现了异地登录怎么办？
+如果出现异地登录，解决办法如下：
+1. 确认异地登录的时间点，是否是自己或者其他管理员登录。
+2. 如果不是合法管理员登录，可执行以下操作：
+ 1. 立即 [重置密码](https://intl.cloud.tencent.com/document/product/213/16566)。
+ 2. 排查是否被病毒攻击。
+ 3. 使用安全组功能设置 [只允许特定的 IP 登录](https://intl.cloud.tencent.com/document/product/213/32369)。
+
+
+
