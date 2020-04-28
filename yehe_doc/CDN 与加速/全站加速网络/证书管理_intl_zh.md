@@ -7,7 +7,7 @@
 - 分域名部署证书，详细配置步骤请参见下文 [配置证书](#SSL_CFG)。
 - 批量部署域名证书，详细部署步骤请参见下文 [批量部署](#SSL_CFGS)。
 - 编辑或删除HTTPS配置。
-![](https://main.qcloudimg.com/raw/5032b73378bfeea821b656f9dc03c166.png)
+![](https://main.qcloudimg.com/raw/056abf7000e730f8091ba4d1724a22d8.png)
 
 <span id="SSL_CFG"></span>
 
@@ -24,7 +24,7 @@
 
 >配置证书的域名需要已接入腾讯云 ECDN，且域名状态为**已上线**。**已关闭**或**部署中**状态的域名无法部署证书。
 
-![](https://main.qcloudimg.com/raw/6c8431bee0ebdebe9ef7e8eca9fe0a45.png)
+![](https://main.qcloudimg.com/raw/e19ba83c395fced7a47d2d72781368c6.png)
 
 <span id="select_crt"></span>
 
@@ -38,7 +38,7 @@
 | 腾讯云托管证书   | 需在证书下拉列表中选择匹配的腾讯云托管证书。                 | 您可以前往 [SSL证书管理](https://console.cloud.tencent.com/ssl) 控制台申请免费证书，或将自有证书托管至腾讯云。 |
 
 
-![](https://main.qcloudimg.com/raw/6b8aeabd1069dfe62e6268ca80821468.png)
+![](https://main.qcloudimg.com/raw/195629c694696908a3f747960bc9e135.png)
 
 <span id="confirm_1"></span>
 
@@ -64,7 +64,7 @@
 ### 选择证书
 
 使用批量管理时，所选择的证书一般是多域名或泛域名证书，详细配置步骤请参见 [证书配置步骤](#SSL_CFG)。
-![](https://main.qcloudimg.com/raw/0738741b9e639dd2ff051d1df70a8ad8.png)
+![](https://main.qcloudimg.com/raw/4207606d96b2e860d46647065b1d4b52.png)
 
 <span id="select_domains"></span>
 
@@ -72,7 +72,7 @@
 
 选择证书后，系统会根据证书域名自动关联 ECDN 加速域名，您还可以根据域名证书部署状态过滤，快速选择需要配置证书的域名。
 
-![](https://main.qcloudimg.com/raw/ac63f517fd69c7d60657f0e64860fd77.png)
+![](https://main.qcloudimg.com/raw/5186017f4f58a25c80f79d540e185409.png)
 
 <span id="confirm_2"></span>
 
@@ -90,9 +90,9 @@
 ### 证书及私钥说明
 1. 若您要为您的域名配置已有证书，请先了解以下内容。若您配置的是腾讯云 [SSL 证书管理](https://console.cloud.tencent.com/ssl) 控制台中托管或颁发的证书，可跳过此部分内容，直接查阅后文配置证书流程。
    CA 机构提供的证书一般包括以下几种，其中 ECDN 使用的是 **Nginx**。
-   ![](https://main.qcloudimg.com/raw/f45e4ae17da56fb0bdae5e2fd38887ef.png)
+   ![](https://main.qcloudimg.com/raw/1645dcbebea376807f38dfe99cccad99.png)
 2. 进入 Nginx 文件夹，使用文本编辑器打开“.crt”（证书）文件和“.key”（私钥）文件，即可看到 PEM 格式的证书内容及私钥内容。
-   ![](https://main.qcloudimg.com/raw/a365a15cebd58e4bc64270a41f31c191.png)
+   ![](https://main.qcloudimg.com/raw/0c41b2de562e76596aa946beae06ab7e.png)
 3. 证书说明
 	- 证书扩展名一般为“.pem”，“.crt”或“.cer”，在文本编辑器中打开证书文件，可以看到与下图格式相似的证书内容。
 		证书 PEM 格式：以“-----BEGIN CERTIFICATE-----”作为开头， “-----END CERTIFICATE-----” 作为结尾。中间的内容每行64字符，最后一行长度可以不足64字符。
@@ -123,7 +123,7 @@ openssl rsa -in old_server_key.pem -out new_server_key.pem
 ### 证书链补齐
 
 在使用自有证书配置过程中，可能会出现 **证书链错误** 的情况，您可以通过将 CA 的证书（PEM 格式）内容贴入域名证书（PEM 格式）尾部，来补齐证书链。也可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
-![](https://main.qcloudimg.com/raw/b60a983ed4f1c44306a9f377b3c9918f.png)
+![](https://main.qcloudimg.com/raw/2495c62c4cbc38848367c39b51ad9b04.png)
 
 ### 证书格式转换
 
