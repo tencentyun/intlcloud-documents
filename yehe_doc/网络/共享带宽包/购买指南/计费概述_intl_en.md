@@ -1,3 +1,5 @@
+>BWP is currently in beta test. If you want to try it out, please [submit an application](https://intl.cloud.tencent.com/apply/p/86ulv50u1e8).
+
 This document describes the billing mode and price of bandwidth packages. The two billing modes are Monthly Top 5 and Monthly 95th Percentile.
 
 ## Billing
@@ -18,7 +20,7 @@ This document describes the billing mode and price of bandwidth packages. The tw
 
 - **Daily peak**: Every five minutes, the highest BWP bandwidth value per minute is collected. At the end of the day, the collected values are sorted in descending order, and the fifth highest value is used as the daily peak.
 As one sample point is generated every 5 minutes, 288 (60 min × 24/5 min) sample points are generated every day. The values of the 288 sample points are sorted in descending order, the fifth sample point is taken as the daily peak bandwidth.
-- **Monthly peak**: When the billed month is over, the collected daily peaks are sorted in descending order, and the average value of the top 5 peaks is used as the monthly peak.
+- Monthly peak: When the billed month is over, the collected daily peaks are sorted in descending order, and the average value of the top 5 peaks is used as the monthly peak.
 - **Valid days**: the number of days in which bandwidth is not zero.
 - **Days of the billed month**: the actual number of days during the month in which BWP is used.
 
