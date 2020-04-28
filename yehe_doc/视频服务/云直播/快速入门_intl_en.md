@@ -15,10 +15,11 @@ To use LVB, you should have at least **two** domain names, one as the **push dom
 <span id="step1_1"></span>
 1. Prepare your own domain names and get ICP filings for them.
 	- If you need to purchase domain names, you can go to **Tencent Cloud Domain Service** and [make a purchase](https://buy.cloud.tencent.com/domain?from=console). You can also purchase domain names at other domain name service providers.
-	- If your domain names have not obtained an ICP filing, you can go to [Tencent Cloud Website ICP Filing Service](https://intl.cloud.tencent.com/document/product/1022) to apply for ICP filing.
+	- If your domain names have not obtained an ICP filing, you can go to [Tencent Cloud Website ICP Filing Service](https://intl.cloud.tencent.com/document/product/1022) to [apply for ICP filing](https://intl.cloud.tencent.com/product/icp).
 >  You should apply for ICP filing for your domain names according to the regulations of the Ministry of Industry and Information Technology (MIIT) of China. The application process takes several business days to complete, so you are recommended to start an application in advance. A new ICP filing can be synced to Tencent Cloud servers in one business day; therefore, a newly filed domain name may appear to be not filed when it is added.
 2. Log in to the LVB Console, enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, and click **Add Domain**.
 3. On the domain name adding page, enter your filed domain name, select the domain name type, and click **OK**.
+![](https://main.qcloudimg.com/raw/bee8085a9d29641ddab913fdcd9c75ab.png)
 >
 >- LVB provides a test domain name `xxxx.livepush.myqcloud.com` by default. You can use it for push testing, but you are not recommended to use it as the push domain name for your real business.
 >- After the domain name is added successfully, you can view its information in the domain name list in **Domain Management**. If you need to manage it, please see [Domain Management](https://intl.cloud.tencent.com/document/product/267/31056).
@@ -46,6 +47,7 @@ To use LVB, you should have at least **two** domain names, one as the **push dom
    3. Enter a custom `StreamName`, such as `liveteststream`.
    4. Select the expiration time of the address, such as `2019-10-18 23:59:59`.
    5. Click **Generate Address** to generate a push address.
+![](https://main.qcloudimg.com/raw/a092b14e7bae84cff82d75f479e4faf8.png)
 
 > 
 >- The format of the push address is as follows: `live` is the default `AppName`, `txSecret` is the signature for playing back the stream, and `txTime` is the expiration time of the push address.
@@ -61,7 +63,7 @@ You can enter the generated push address into the corresponding push software ac
 - For push on WeChat Mini Program, search for Tencent Video Cloud in WeChat, select **RTMP Push**, enter the push address, and tap **Start**.	
 - For push on mobile device, download and install Tencent Video Cloud Demo, open it, select **MLVB** > **Camera Push**, enter the push address into the address box manually or by scanning the QR code, and tap **Start** in the bottom-left corner to start push.
 
-> Customized apps can integrate with the [MLVB SDK](https://intl.cloud.tencent.com/document/product/454?from_cn_redirect=1) provided by Tencent Cloud to implement the push function.
+> Customized apps can integrate with the MLVB SDK provided by Tencent Cloud to implement the push function.
 
 <span id="step4"></span>
 ## Step 4. Get a playback address
@@ -73,14 +75,15 @@ You can enter the generated push address into the corresponding push software ac
    3. Enter the same `StreamName` as that of the push address. The `StreamName` of the playback address must be the same as that of the push address to play back the corresponding stream.
    4. Select the expiration time of the address, such as `2019-10-13 23:59:59`.
    5. Click **Generate Address** to generate a playback address.
+![](https://main.qcloudimg.com/raw/d114f5e91eb5fecbe74a180c4931d814.png)
 <span id="step4_1"></span>
 3. You can use the following methods to test whether a live stream can be played back normally based on your business scenario:
    1. For stream test on PC, you are recommended to use tools such as [VLC](https://intl.cloud.tencent.com/document/product/267/32483). For more information, please see [Playback Practices](https://intl.cloud.tencent.com/document/product/267/31559).
-   2. For stream test on web, you are recommended to use TCPlayerLite in the Player SDK. For more information, please see [LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
-   3. For stream test on WeChat Mini Program, you are recommended to search for Tencent Video Cloud in WeChat, select **LVB Playback**, scan the QR code of the playback address, and tap **Start** in the bottom-left corner to start playback.
+   2. For stream test on web, you are recommended to use TCPlayerLite  in the Player SDK. For more information, please see [LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
+   3. For stream test on WeChat Mini Program, you are recommended to search for Tencent Video Cloud  in WeChat, select **LVB Playback**, scan the QR code of the playback address, and tap **Start** in the bottom-left corner to start playback.
    4. For stream test on mobile device, you are recommended to download and install Tencent Video Cloud Demo, open it, select **MLVB** > **LVB Pull**, enter the playback address into the address box manually or by scanning the QR code, and tap **Play** in the bottom-left corner to start watching.
 
-> If you need to push/play back a stream in an app or WeChat Mini Program, you can integrate the MLVB SDK] to use the LVB service. If you encounter any problem during the trial, please see [FAQs](https://intl.cloud.tencent.com/document/product/267/7968).
+> If you need to push/play back a stream in an app or WeChat Mini Program, you can integrate the MLVB SDK to use the LVB service. If you encounter any problem during the trial, please see [FAQs](https://intl.cloud.tencent.com/document/product/267/7968).
 
 ## FAQs
 

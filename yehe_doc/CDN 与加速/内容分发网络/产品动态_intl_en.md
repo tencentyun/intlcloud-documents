@@ -16,15 +16,15 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ----------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Global CDN <br>The monthly operations report feature | The monthly operations report features in the Mainland China CDN Console and Overseas CDN Console has been merged to help you analyze any month’s business status in the past year. | December 23, 2019 | [Monthly Operations Report](https://intl.cloud.tencent.com/document/product/228/6312) |
+| Global CDN <br>The monthly operations report feature | The monthly operations report feature in the Mainland China CDN Console and Overseas CDN Console has been merged to help you analyze any month’s business status in the past year. | December 23, 2019 | [Monthly Operations Report](https://intl.cloud.tencent.com/document/product/228/6312) |
 
 ## November 2019
 
 | Update | Description | Release Date | Documentation |
 | ------------------------- | --------------------------------------------- | ---------- | ------------------------------------------------------------ |
-| Global CDN <br>The cache purge feature is merged | The cache purge features in the Mainland China CDN Console and the Overseas CDN Console has been merged. | November 14, 2019 | [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299) |
-| Global CDN<br>The cache prefetch feature is merged | The cache prefetch features in the Mainland China CDN Console and the Overseas CDN Console has been merged. | November 14, 2019 | Cache Prefetch |
-| Global CDN <br>The log download feature is merged | The CDN log download features in the Mainland China CDN Console and the Overseas CDN Console has been merged. | November 14, 2019 | [Log Management](https://intl.cloud.tencent.com/document/product/228/6316) |
+| Global CDN <br>The cache purge feature is merged | The cache purge feature in the Mainland China CDN Console and the Overseas CDN Console has been merged. | November 14, 2019 | [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299) |
+| Global CDN<br>The cache prefetch feature is merged | The cache prefetch feature in the Mainland China CDN Console and the Overseas CDN Console has been merged. | November 14, 2019 | Cache Prefetch |
+| Global CDN <br>The log download feature is merged | The CDN log download feature in the Mainland China CDN Console and the Overseas CDN Console has been merged. | November 14, 2019 | [Log Management](https://intl.cloud.tencent.com/document/product/228/6316) |
 
 ## October 2019
 
@@ -36,7 +36,7 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ----------------------------- | -------------------------------------- | ---------- | ------------------------------------------------------------ |
-| Mainland China CDN <br>The self-diagnosis tool is upgraded | New features has been launched, including diagnosing the region or status and refreshing the list information. | May 29, 2019 | [Self Troubleshooting Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
+| Mainland China CDN <br>The self-diagnosis tool is upgraded | New features have been launched, including diagnosing the region or status and refreshing the list information. | May 29, 2019 | [Self Troubleshooting Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
 
 ## April 2019
 
