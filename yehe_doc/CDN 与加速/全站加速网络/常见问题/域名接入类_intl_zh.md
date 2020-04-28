@@ -5,7 +5,7 @@
 2. 设置 HOST 验证配置生效。
 3. 配置域名 CNAME 解析，服务生效。
 
-详情请参见 [域名接入](https://cloud.tencent.com/document/product/570/10361)。
+详情请参见 [域名接入](https://intl.cloud.tencent.com/document/product/570/10361)。
 
 ### 接入 ECDN 的域名是否必须完成域名备案？
 系统是否检查域名备案与您选择的加速区域有关：

@@ -3,16 +3,16 @@
 ## 启动加速服务
 对处于**已下线**状态的域名，您可以对其进行**启动**操作。启动加速服务大约需要5分钟，具体操作如下。
 登录 [ECDN 控制台](https://console.cloud.tencent.com/dsa)，单击左侧【域名管理】菜单，进入**域名管理**页面，在域名操作一栏单击【启动】。
-![](https://main.qcloudimg.com/raw/9a5961572eed1de6c2a5e7dda93f6ddf.png)
+![](https://main.qcloudimg.com/raw/f41254a8573147db7d1036dd685d9ee0.png)
 
 若您需要批量启用多个加速域名，可以勾选多个待启动域名，单击域名上方【启动全站加速】。  
-![](https://main.qcloudimg.com/raw/d8b3398a6e451d4280835616d707458c.png)
+![](https://main.qcloudimg.com/raw/98ff0d10d85f6a967c05d9424eb6667c.png)
 
 ## 关闭加速服务
 对处于**已上线**状态的域名，您可以对其进行**关闭**操作，关闭后的域名配置会保留，但不会继续为您提供加速服务，域名关闭配置过程大约需要5分钟生效，具体操作如下。
 
 登录 [ECDN 控制台](https://console.cloud.tencent.com/dsa)，单击左侧【域名管理】菜单，进入**域名管理**页面，在域名操作一栏单击【关闭】。  
-![](https://main.qcloudimg.com/raw/0d46136ad9bde5fa53ec2a04114468ff.png)
+![](https://main.qcloudimg.com/raw/1173e5276326801e272f37f40c5370fe.png)
 
 若您需要批量关闭多个加速域名，您可以勾选相应域名，在域名上方【更多操作】下拉菜单中选择【关闭全站加速】。  
 
@@ -24,7 +24,7 @@
 域名解析切换回源后，用户请求将不再指向 ECDN 加速平台，通过 ECDN 控制台可以看到对应域名的访问流量将出现显著下降。在关闭服务前，请确认对应域名的 ECDN 访问流量降为0，否则直接关闭服务将影响这些用户的访问。  
 >3. 关闭加速服务
 
-![](https://main.qcloudimg.com/raw/8e52dd25189920e7896359ab25d90ba9.png)
+![](https://main.qcloudimg.com/raw/4c6ee7fe1302671f4627a1058061ab6b.png)
 
 当确认所有用户或绝大部分用户不再通过 ECDN 访问，您可以执行域名下线操作。  
 
@@ -38,21 +38,21 @@
 对处于**已下线**状态的域名，您可以对其进行**删除**操作，删除域名后，其配置将不会保留，具体操作如下。
 
 登录 [ECDN 控制台](https://console.cloud.tencent.com/dsa)，单击左侧【域名管理】菜单进入**域名管理**页面，在域名操作一栏【更多】下拉菜单中选择【删除】。
-![](https://main.qcloudimg.com/raw/8853cb1ee8eab2d4e1fae7ba9781185b.png)
+![](https://main.qcloudimg.com/raw/7832491620414e8194b9cd96dc6b4845.png)
 
 若您需要批量删除多个加速域名配置，您可以勾选相应域名，在域名上方【更多操作】下拉菜单中选择【删除】。
-![](https://main.qcloudimg.com/raw/e317b9e51c02970f91be2e2b39c7ce3a.png)
+![](https://main.qcloudimg.com/raw/aae06204d5b3914afdc8b36db78b5b78.png)
 
 ## 修改域名所属项目
 
 为了方便您的管理，您可以修改域名所属项目，具体操作如下。
 1. 登录 [ECDN 控制台](https://console.cloud.tencent.com/dsa)，单击左侧【域名管理】菜单进入**域名管理**页面，在域名操作一栏【更多】下拉菜单中选择【修改所属项目】。
-![](https://main.qcloudimg.com/raw/e81aed8d9e0839eccc36ad5a670ceebd.png)
+![](https://main.qcloudimg.com/raw/2e99c52ef12a195148f5f5293fea7faf.png)
 2. 在弹出的对话框中会出现【所属项目】下拉菜单，您需要为域名选定一个项目，单击【确定】，即可修改域名所属项目。
-![](https://mc.qcloudimg.com/static/img/134b850ee0b671a52e58a0b7c6731444/project_options.png)
+![](https://main.qcloudimg.com/raw/dde68173ff938198d1bb877685b927b7.png)
 
 若您需要批量修改多个加速域名的所属项目，您可以勾选相应域名，在域名上方【更多操作】下拉菜单中选择【修改所属项目】。
-![](https://main.qcloudimg.com/raw/75faf6293e730ff5a8017d0e8188874c.png)
+![](https://main.qcloudimg.com/raw/2cc9d25b957da9334faba33751a23879.png)
 
 >  
 > - 您可以通过项目功能对云资源进行分项目管理，腾讯云项目管理可同时适用于多个不同产品。  

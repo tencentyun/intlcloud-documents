@@ -2,7 +2,7 @@
 
 ## 日志下载
 登录 [ECDN 控制台](https://console.cloud.tencent.com/dsa)，选择左侧菜单栏的【日志管理】。选择要获取日志的时间及域名，单击【确定】，即可获取日志下载链接。
-![](https://main.qcloudimg.com/raw/8ebcf1af186ca03464974d13b28b9b47.jpg)
+![](https://main.qcloudimg.com/raw/3b735673ecd023a7d905d22b334d8a51.png)
 若查询时间段内该域名无请求，则不会产生日志，页面会显示**无数据**。
 >
 > + ECDN 日志默认按小时分割，每天 24 个日志文件，若某个小时域名无请求，则不会产生日志数据包。  

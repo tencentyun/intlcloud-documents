@@ -38,9 +38,9 @@ WebSocket 协议是基于 TCP 的一种持久化协议，它实现了客户端�
 
 ### 全站加速支持中国境外加速吗？
 
-支持，全站加速具备全球动态数据交付能力，平台默认全量开放中国境内加速服务，限量开放中国境外加速服务。单击前往 [ECDN 全球加速资格申请](https://cloud.tencent.com/apply/p/4q956obis68) 页面申请开放权限。
+支持，全站加速具备全球动态数据交付能力，平台默认全量开放中国境内加速服务，限量开放中国境外加速服务。单击前往 [ECDN 全球加速资格申请](https://console.cloud.tencent.com/apply) 页面申请开放权限。
 权限申请通过后，您可以通过控制台域名管理页面，自助添加中国境外加速服务区域。  
-![](https://main.qcloudimg.com/raw/f1f09cee283b9c675dc86b6c2aeee7b2.png)
+![](https://main.qcloudimg.com/raw/d5c2c6d2c10e3129b728ab5b589ee9c7.png)
 
 <span id="wsa"></span>
 
