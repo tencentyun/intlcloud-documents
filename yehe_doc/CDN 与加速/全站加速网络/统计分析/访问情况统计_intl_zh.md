@@ -11,7 +11,7 @@ ECDN 使用量统计为您提供历史统计和监控数据查询功能，支持
 	3. 所选时间跨度为4 - 7天，您可以查询每30分钟、1小时、2小时、4小时时间间隔的数据。
 	4. 所选时间跨度为8 - 30天，您可以查询每1小时、2小时、4小时时间间隔的数据。
 
-![](https://main.qcloudimg.com/raw/2506a1a2ae1aa31933c6dded8642a738.png)
+![](https://main.qcloudimg.com/raw/f8374efc34eae11696d1b129561cfc70.png)
 
 ## 用量数据展示说明
 使用量数据分三种统计方式，分别在对应模块展示，这三种数据分别为：  
@@ -21,7 +21,7 @@ ECDN 使用量统计为您提供历史统计和监控数据查询功能，支持
 
 ### 查询详情概览
 如下图所示，查询详情概览页提供了账号维度的数据统计信息，您可以快速了解查询时间段内的总用量信息。
-![](https://main.qcloudimg.com/raw/8258363cb2c0cee317ebc57985bfcb76.png)
+![](https://main.qcloudimg.com/raw/3a05573f6f28a299e04626f52e1bb365.png)
 
 ### 访问情况统计
 访问情况统计展示了历史监控曲线图，您可以查看不同类别的指标数据。
@@ -31,8 +31,8 @@ ECDN 使用量统计为您提供历史统计和监控数据查询功能，支持
 + 当指定查询时间区间大于域名接入时间区间时，仅统计域名接入时间段的数据，未接入或已删除时间段不纳入统计。
 + 当需要查询多个域名、多个指标的监控数据时，您还可以使用 [监控数据查询 API](https://intl.cloud.tencent.com/document/product/570/17942) 查询。
 
-![](https://main.qcloudimg.com/raw/96307c42d16482cd5739f6ef58a5f592.png)
+![](https://main.qcloudimg.com/raw/6831a48251c2aa8adf03aa23b4b18f95.png)
 
 ### 分域名统计详情
 如下图所示，分域名统计详情列表展示了域名用量详情，您可以根据不同指标排序查看。
-![](https://main.qcloudimg.com/raw/45e67edf9f09f69b87d0271a221086dd.png)
+![](https://main.qcloudimg.com/raw/4b3ab927cd139581edb7c594e88078a0.png)

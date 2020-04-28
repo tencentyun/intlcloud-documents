@@ -159,7 +159,7 @@
   <td >流畅</td>
   <td>48kbps</td>
   <td >44100Hz</td>
-  <td >双声道（Stero）</td>
+  <td >双声道（Stereo）</td>
   <td >AAC</td>
   <td rowspan="6">是</td>
  </tr>
@@ -167,21 +167,21 @@
   <td >标清</td>
   <td >48kbps</td>
   <td >44100Hz</td>
-  <td >双声道（Stero）</td>
+  <td >双声道（Stereo）</td>
   <td >AAC</td>
  </tr>
  <tr >
   <td>高清</td>
   <td >48kbps</td>
   <td >44100Hz</td>
-  <td >双声道（Stero）</td>
+  <td >双声道（Stereo）</td>
   <td >AAC</td>
  </tr>
  <tr >
   <td >全高清</td>
   <td >48kbps</td>
   <td >44100Hz</td>
-  <td >双声道（Stero）</td>
+  <td >双声道（Stereo）</td>
   <td >AAC</td>
  </tr>
  <tr >
@@ -191,7 +191,7 @@
   <td  
    >44100Hz</td>
   <td  
-   >双声道（Stero）</td>
+   >双声道（Stereo）</td>
   <td  
    >AAC</td>
  </tr>
@@ -202,7 +202,7 @@
   <td  
    >44100Hz</td>
   <td     
-   >双声道（Stero）</td>
+   >双声道（Stereo）</td>
   <td 
    >AAC</td>
  </tr>

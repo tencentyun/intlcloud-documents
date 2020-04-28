@@ -7,8 +7,8 @@ ECDN has been connected to Tencent Cloud Monitor. The following alarming metrics
 		<tr>
 			<th colspan="1" style="text-align: center;width: 100px;"> Category </th>
 			<th colspan="1" style="text-align: center"> Metric </th>
-			<th colspan="1" style="text-align: center"> Support for 1-minute Alarming Granularity </th>
-			<th colspan="1" style="text-align: center"> Support for 5-minute Alarming Granularity </th>
+			<th colspan="1" style="text-align: center"> 1-Minute Alarming Granularity Supported</th>
+			<th colspan="1" style="text-align: center"> 5-Minute Alarming Granularity Supported</th>
 		</tr>
 		<tr>
 			<td rowspan="4" style="text-align: center;width: 100px;"> Access traffic metrics </td>
@@ -38,7 +38,7 @@ ECDN has been connected to Tencent Cloud Monitor. The following alarming metrics
 			<td colspan="1" style="text-align: center"> Yes </td>
 		</tr>
 		<tr>
-			<td colspan="1" style="text-align: center"> Number of origin-pull failures </td>
+			<td colspan="1" style="text-align: center"> Number of failed origin-pull </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 		</tr>
@@ -60,22 +60,22 @@ ECDN has been connected to Tencent Cloud Monitor. The following alarming metrics
 		</tr>
 		<tr>
 			<td rowspan="4" style="text-align: center;width: 100px;"> Status code metrics </td>
-			<td colspan="1" style="text-align: center"> 200, 206, 2XX, etc. status code occurrence numbers and ratio </td>
+			<td colspan="1" style="text-align: center"> Number of 200, 206, 2XX, etc. status code occurrences and their ratio </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 		</tr>
 		<tr>
-			<td colspan="1" style="text-align: center"> 302, 304, 3XX, etc. status code occurrence numbers and ratio </td>
+			<td colspan="1" style="text-align: center"> Number of 302, 304, 3XX, etc. status code occurrences and their ratio </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 		</tr>
 		<tr>
-			<td colspan="1" style="text-align: center"> 401, 403, 404, 416, 4XX, etc. status code occurrence numbers and ratio </td>
+			<td colspan="1" style="text-align: center"> Number of 401, 403, 404, 416, 4XX, etc. status code occurrences and their ratio </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 		</tr>
 		<tr>
-			<td colspan="1" style="text-align: center"> 500, 502, 5XX, etc. status code occurrence numbers and ratio </td>
+			<td colspan="1" style="text-align: center"> Number of 500, 502, 5XX, etc. status code occurrences and their ratio </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 			<td colspan="1" style="text-align: center"> Yes </td>
 		</tr>
@@ -85,27 +85,34 @@ ECDN has been connected to Tencent Cloud Monitor. The following alarming metrics
 > 
 - You can activate and use Cloud Monitor free of charge.
 - The system sends alarm messages through email, WeChat, and callback APIs free of charge, and you can enjoy a free tier of SMS alarm messages every month.
-- If the monthly free tier of SMS alarm messages is exceeded, you need to purchase a higher tier to continue receiving alarm messages through SMS.
+- If the monthly free tier of SMS alarm messages is exceeded, you need to purchase a higher tier for receiving more alarm messages through SMS.
 - Alarm data is collected and reported in real time and may have certain deviation, as the data is delayed for about 5 minutes.
-- Alarm data monitoring can be used only to assist operation and cannot be billed or used as an SLA proof.
+- Alarm data monitoring can be used only to assist in operation and cannot be used as the basis for billing or SLA.
 
 
 
 ## Monitoring Configuration Entry
 Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/policylist) and click **Alarm Policy** on the left sidebar to enter the management page.
+![](https://main.qcloudimg.com/raw/fb17ec3c2e9f696eb5766e2ba2405173.png)
 
 ## Adding Alarm
-The steps for adding an alarm policy are as shown below.
-1. Enter the policy name and remarks and select the ECDN dynamic acceleration alarm policy type.
+The steps for adding an alarm policy are as follows:
+1. Enter the policy name and remarks and select the ECDN alarm policy type.
+![](https://main.qcloudimg.com/raw/66f0a21eef4f94a5ec9f515e67e73463.png)
 2. Select the alarm object.
+![](https://main.qcloudimg.com/raw/a979482d128fc858621a7ba4b658867e.png)
 3. Set the alarm trigger condition. Multiple conditions can be set at a time.
+![](https://main.qcloudimg.com/raw/a4582abf188e52c1d10a3b9c44525c29.png)
 4. Set the alarm recipient, alarm time period, and alarm method.
+![](https://main.qcloudimg.com/raw/2224745dd2e051f2ec0e174c1d16a20d.png)
 5. Set the alarm callback API.
+![](https://main.qcloudimg.com/raw/153f990bd1cd08087c68254ac9ddb253.png)
 6. Click **Complete** to submit the settings.
 
 
 ## Viewing Alarm
 On the historical alarm page in Cloud Monitor, you can view the list of alarm details.
+![](https://main.qcloudimg.com/raw/03155da8d30984811d6c820428c79aac.png)
 
 ## Other Alarm Policies
 For more information on how to configure alarm policies, please see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
