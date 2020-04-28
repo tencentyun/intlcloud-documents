@@ -11,10 +11,10 @@ ECDN 将根据您配置的规则自动识别动静态内容访问请求，智能
 3. 在“缓存配置”页面下，进行内容缓存规则配置管理。   
    - 过滤参数缓存配置：
      开启过滤参数缓存开关，可在缓存时对用户请求 URL 中 “?” 之后的参数进行过滤。例如，URL 为：` http://www.example.com/1.jpg?version=1.1`的资源，节点存储资源时，对应的 cache_key 为` www.example.com/1.jpg`，忽略了 "?" 之后的参数。当用户请求时 ，也将忽略"?"后参数，按照cache_key为`www.example.com/1.jpg`查找资源，可直接命中。
-	![](https://main.qcloudimg.com/raw/c8090cdfe705cab673e8b7ff6842691a.png)
+	![](https://main.qcloudimg.com/raw/99d0e9fe096ed15b1ec3ed42cfa7c1d3.png)
    - 内容缓存配置：
    单击【编辑缓存规则】，可添加新的缓存规则或对现有规则进行修改，单击【保存】，规则生效。
-     ![](https://main.qcloudimg.com/raw/49ab04c890048cf45b2c70ff42a5d74b.png)
+     ![](https://main.qcloudimg.com/raw/2afa0aff85361ff74fe25912fe232328.png)
 
 ### 缓存规则类型  
 
@@ -110,7 +110,7 @@ ECDN 将根据您配置的规则自动识别动静态内容访问请求，智能
 
 单击【编辑缓存规则】，通过<strong>鼠标拖拽小图标</strong>的方式调整缓存规则优先等级。
 
-![](https://main.qcloudimg.com/raw/9bc37411df24d906571d394a2bb0ab84.png)
+![](https://main.qcloudimg.com/raw/67575a5f1c292ac2074f51fe17e032f7.png)
 
 ## 缓存继承问题
 

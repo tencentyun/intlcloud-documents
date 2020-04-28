@@ -1,52 +1,52 @@
 ## Feature Overview
 
-ECDN can automatically detect static/dynamic content access requests based on the configured rules and intelligently choose the appropriate acceleration scheme, satisfying your needs for accelerating access to sites with hybrid static/dynamic content at one stop.
+ECDN can automatically detect static/dynamic content access requests based on the configured rules and intelligently choose the most appropriate acceleration scheme, satisfying your needs for accelerating access to sites with static/dynamic hybrid content at one stop.
 
-- For static content requests, the edge servers are preferentially used to cache the content for response, improving access efficiency and reducing origin-pull traffic.
-- For dynamic content requests, high-quality resources are directly pulled from the origin servers through intelligent routing, reducing the average response latency.
+- For static content requests, the edge servers are preferentially used to cache the content for response, improving access efficiency and reducing origin-pull traffic usage.
+- For dynamic content requests, resources are directly pulled from the origin servers through high-quality caching and intelligent routing, reducing the average response latency.
 
 ## Feature Configuration Guide
 1. Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the management page.
-2. In the list, find the domain name to be configured and click **Manage** in the "Operation" column on the right to enter the domain name management page.   
-3. On the "Cache Configuration" page, manage configuration of content cache rules.   
+2. In the list, find the domain name to be configured and click **Manage** in the "Operation" column on the right to enter the domain management page.   
+3. On the "Cache Configuration" page, manage configuration of content caching rules.   
    - Ignore Query String cache configuration:
-     You can enable Ignore Query String cache to ignore parameters after "?" in the user request URL during caching. For example, when a node is storing a resource whose URL is `http://www.example.com/1.jpg?version=1.1`, the corresponding `cache_key` will be `www.example.com/1.jpg`, and parameters after "?" will be ignored. When a user initiates a request, parameters  after "?" will also be ignored. The system will use the `cache_key` whose value is `www.example.com/1.jpg` to search for the resource, which can be hit directly.
-	![](https://main.qcloudimg.com/raw/c8090cdfe705cab673e8b7ff6842691a.png)
+     You can enable Ignore Query String cache to ignore parameters after "?" in the user request URL during caching. For example, when a node caches a resource whose URL is `http://www.example.com/1.jpg?version=1.1`, the corresponding `cache_key` will be `www.example.com/1.jpg`, and parameters after "?" will be ignored. When a user initiates a request, parameters after "?" will also be ignored. The system will use the `cache_key` whose value is `www.example.com/1.jpg` to search for the resource, which can be hit directly.
+	![](https://main.qcloudimg.com/raw/99d0e9fe096ed15b1ec3ed42cfa7c1d3.png)
    - Content cache configuration:
-   Click **Modify Cache Rule** to add a cache rule or modify an existing rule and click **Save** for the rule to take effect.
-     ![](https://main.qcloudimg.com/raw/49ab04c890048cf45b2c70ff42a5d74b.png)
+   Click **Modify Caching Rule** to add a caching rule or modify an existing one and click **Save** for the rule to take effect.
+     ![](https://main.qcloudimg.com/raw/2afa0aff85361ff74fe25912fe232328.png)
 
-### Cache rule types  
+### Caching rule types  
 
 <table style="display:table" width="100%">
 	<tbody>
 		<tr>
 			<th colspan="1" style="text-align: center" width="15%"> Cache Type </th>
 			<th colspan="1" style="text-align: center" width="30%"> Description </th>
-			<th colspan="1" style="text-align: center" width="10%"> Setting Example </th>
-			<th width="45%">Precautions</th>
+			<th colspan="1" style="text-align: center" width="10%"> Example </th>
+			<th width="45%">Remarks</th>
 		</tr>
 		<tr>
 			<td style="text-align: center">File Type</td>
-			<td>Sets the cache time based on the file extension</td>
+			<td>Sets the caching time based on file extension</td>
 			<td>.jpg; .png; .jsp</td>
-			<td>1. The content is case-sensitive and must be a file extension starting with ".".</br>2. Different file types are separated with ";".</td>
+			<td>1. The content is case-sensitive and must be a file extension starting with `.`.</br>2. Different file types should be separated with `;`.</td>
 		</tr>
 		<tr>
 			<td style="text-align: center">Folder</td>
-			<td>Sets the cache time based on the folder</td>
+			<td>Sets the caching time based on folder</td>
 			<td>/access; /pic</td>
-			<td>1. The content is case-sensitive, and different paths are separated with ";".</br>2. It must be a folder starting with "/".</br>3. The content cannot be ended with "/".</td>
+			<td>1. The content is case-sensitive, and different paths should be separated with `;`.</br>2. It must be a folder starting with `/`.</br>3. It cannot end with `/`.</td>
 		</tr>
 		<tr>
 			<td style="text-align: center">Full-path file</td>
-			<td>Sets the cache time for a specified file</td>
+			<td>Sets the caching time for a specified file</td>
 			<td>/a.jpg; /b.png</td>
-			<td>1. The content is case-sensitive, and files with different paths are separated with ";".</br>2. "*" can be used to regex-match a type of files, e.g., "/test/abc/*.jpg".</td>
+			<td>1. The content is case-sensitive, and files at different paths should be separated with `;`.</br>2. `*` can be used to match a type of files by regex, such as `/test/abc/*.jpg`.</td>
 		</tr>
 		<tr>
 			<td style="text-align: center">Homepage</td>
-			<td>Sets the cache time of the specified homepage</td>
+			<td>Sets the caching time for the homepage</td>
 			<td style="text-align: center">/</td>
 			<td>The homepage content to be cached is "/" by default and does not need to be modified.</td>
 		</tr>
@@ -55,62 +55,64 @@ ECDN can automatically detect static/dynamic content access requests based on th
 
 
 
-### Purge cache time  
+### Cache purge time  
 
-<strong>Purge cache time description</strong>  
+<strong>Cache purge time description</strong>  
 
-- Purge cache time can be set by second, minute, hour, and day and can be set to up to 30 days.  
-- If the purge cache time is 0, it indicates dynamic content. All requests will directly pass through the origin server, and the response content is not cached.  
-- If the purge cache time is greater than 0, it indicates static resource, and the edge caching feature will be enabled:
-  - When the content accessed by the user has been cached on the edge server, and the cache time does not expire, this request will not need origin-pull, and the cached content will directly be used for response, so that the user can have a nearby access to the content.
-  - When the content accessed by the user has not been cached on the edge server, or the cache time expires, this request will need origin-pull to get the content for the user through a response and cache it on the node.
-- When a domain name is connected, the purge cache time of all files is 0 second by default, indicating that the dynamic acceleration service is not used by default.
+- Cache purge time can be set by second, minute, hour, and day (up to 30 days).  
+- If the cache purge time is 0, it indicates dynamic content, all requests will be directly passed through to the origin server, and the response content will not be cached.  
+- If the cache purge time is greater than 0, it indicates static resource, and the edge caching feature will be enabled:
+  - If the content accessed by the user has been cached on the edge server, and the cache has not expired, then the request does not need to be forwarded to the origin server, and the cached content will be directly returned, so that the user can enjoy nearby access to the content.
+  - If the content accessed by the user has not been cached on the edge server, or the cache has expired, then the request needs to be forwarded to the origin server to get the content, which will be returned to the user and cached on the edge server.
+- When a domain name is connected, the cache purge time of all files is 0 seconds by default, indicating that the dynamic acceleration service is not used by default.
 
-<strong>Purge cache time setting suggestion</strong>
+<strong>Suggestions on setting cache purge time</strong>
 
 <table style="display:table" width="100%">
 	<tbody>
 		<tr>
 			<th colspan="1" style="text-align: center" width="40%"> File Type </th>
 			<th colspan="1" style="text-align: center" width="30%"> Scenario Example </th>
-			<th colspan="1" style="text-align: center" width="30%"> Recommended Cache Time </th>
+			<th colspan="1" style="text-align: center" width="30%"> Recommended Caching Time </th>
 		</tr>
 		<tr>
 			<td>Basically unchanged static content</td>
-			<td>Image and audio/video files</td>
-			<td>The purge cache time is set to 30 days.</td>
+			<td>Images and audio/video files</td>
+			<td>Set the cache purge time to 30 days.</td>
 		</tr>
 		<tr>
 			<td>Static content that needs to be frequently updated</td>
-			<td>Files in types such as .js and .css</td>
-			<td>The cache time should be set based on the update frequency. Generally, it is set at a day or hour level.</td>
+			<td>Files in formats such as .js and .css</td>
+			<td>Set the caching time generally at the day or hour level based on the update frequency.</td>
 		</tr>
 		<tr>
 			<td>Dynamic content that is frequently updated and shared by users</td>
-			<td>Weather query and region-specific portal content</td>
-			<td>The cache time should be at a minute or second level.</td>		
+			<td>Weather queries and region-specific portal content</td>
+			<td>Set the caching time at the minute or second level.</td>		
 		</tr>
 		<tr>
-			<td>Content that is dynamically generated or cannot be accessed twice by the same user without being updated</td>
-			<td>User registration and login API</td>
-			<td>The purge cache time should be set to 0 to disable caching.</td>		
+			<td>Content that is dynamically generated or cannot be accessed twice by the same user</td>
+			<td>User registration and login APIs</td>
+			<td>Set the caching time to 0 to disable caching.</td>		
 		</tr>
 	</tbody>
 </table> 
 
 
 
-### Cache rule priority
+### Caching rule priority
 
-When multiple cache policies are set, there may be repeated rules, and a request may meet multiple rules. Therefore, there is priority for cache rules.  
+If multiple caching policies are set, there may be overlapping rules, and a request may hit multiple rules. Therefore, there is priority order for caching rules.  
 
-- The rule at the bottom of the configuration list has higher priority than that on the top, and a new cache rule has the highest priority by default.
-- User requests will be matched with rules by rule priority from high to low. The first hit cache rule determines the purge cache time of this request.
+- The rule at the bottom of the configuration list has higher priority than that on the top, and a new caching rule has the highest priority by default.
+- A user request will be matched with caching rules by rule priority from high to low. The first hit rule determines the cache purge time of the request.
 - You can adjust the priority of rules.
 
-Click **Edit Cache Rule**. You can <strong>drag the icons</strong> to adjust the cache rule priority.
+Click **Edit Caching Rule**. You can <strong>drag the icon</strong> to adjust the rule priority.
 
-## Cache Inheritance Issues
+![](https://main.qcloudimg.com/raw/67575a5f1c292ac2074f51fe17e032f7.png)
 
-- When you configure static content with edge caching, the ECDN system will use the cache rules configured on the platform to process user static requests by default. The `Cache-Control` field in the response header on the origin server is not inherited by the node for processing by default.
-- If you want to set special cache rules for certain content on the origin server, you can set cache rules in the <strong>full-path file</strong> type.
+## Cache Inheritance
+
+- When you configure edge caching for static content, the ECDN system will use the caching rules configured on the platform to process static user requests by default. The `Cache-Control` field in the response header from the origin server will not be inherited by the node for processing by default.
+- If you want to set special caching rules for certain content on the origin server, you can set them in the <strong>full-path file</strong> type.
