@@ -5,13 +5,13 @@
 3. 在服务监控中，可以查看当前集群中 HDFS、YARN、HBASE、SPARK、HIVE、PRESTO、ZOOKEEPER 等服务组件的监控指标详情。
 4. 服务监控页面提供了三部分服务维度的监控视图，分别为服务概览、服务摘要、角色列表。因各服务组件服务不同，展示部分维度不同。
  - 【服务概览】可直观查看对应时间段服务组件的各项指标及指标各项统计规则，系统默认最多展示6个指标项，可点击右侧（设置指标）自定义展示指标。
-![](https://main.qcloudimg.com/raw/3f846c7f7ac90ab49e26ffbc8da4c642.png)![](https://main.qcloudimg.com/raw/bb95338ef8e84541895e4ec805339b70.png)
+![](https://main.qcloudimg.com/raw/12c9e198bd534098a84e6b89ce9f1df8.png)![](https://main.qcloudimg.com/raw/8955aa65869661cd2422b0195290844f.png)
  - 【服务摘要】展示服务当前整体使用状态。
-![](https://main.qcloudimg.com/raw/a2468ee649b84dc773f5e07ce7997746.png)
+![](https://main.qcloudimg.com/raw/abb26f56e50555f3a7427c29cb658887.png)
  - 【角色列表】展示当前服务组件，各角色服务部署情况。单击【节点IP】可查看当前节点监控指标及指标统计规则系统，默认展示6个指标，最多可展示12个指标。
-![](https://main.qcloudimg.com/raw/d22e022d8538cbbf192f79cf41f68af9.png)
+![](https://main.qcloudimg.com/raw/5502b61780676857e2a9a2ce941aa80f.png)
 进入某一节点页面，可单击【设置指标】自定义展示指标。
-![](https://main.qcloudimg.com/raw/e422117dee632716645f109b3eb68ad0.png)
+![](https://main.qcloudimg.com/raw/fe70bda0007f64bbd3e36f6be48ffac7.png)
 >
 >1. 服务监控默认展示 HDFS 服务组件，您可手动调整查看其它服务组件。
 >2. 因各服务组件服务性质不同，所以服务监控维度部分有所不同，如 HBASE 支持表级监控维度部分。
@@ -25,8 +25,8 @@ Hbase 表负载提供了 HBASE 中各表的读写请求数以及表存储情况�
 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，选择【集群监控】>【服务监控】，然后选择 HBase 服务组件，查看【HBase 表负载】。
 
 HBase 表负载展示了 HBase 表的实时读请求量、写请求量、memstore 大小、storeFile 大小四个维度的信息，单击表头可按相应维度进行排序。也可在左上角的搜索框输入表名，单击![](https://main.qcloudimg.com/raw/4b7c4ff1fa301f618db0826d4fd6168a.png)进行检索。
-![](https://main.qcloudimg.com/raw/fb1ef04f33b94444c94f5d815ac4ed2e.png)
+![](https://main.qcloudimg.com/raw/d3869744607345a3767186cdf11892da.png)
  
 ### 查看表详情
 单击对应表名，即可弹出表详情。详情页可按整个表、节点维度展示所选择表的请求量（包括读和写）、store 大小（包括 memstore 和 storeFile）两个指标数据，选择右上角的【节点筛选器】可切换节点查看。
-![](https://main.qcloudimg.com/raw/19fb51748bcb68a80ce69dcd0073f404.png) 
+ 

@@ -1,8 +1,8 @@
-## Introduction
-Tencent Cloud Elastic MapReduce (EMR) is a cloud-hosted Hadoop service that features Hadoop cluster deployment, software installation, configuration modification, monitoring and alarming, and elastic scaling, providing individual and enterprise users with a secure and stable big data processing solution.
+## Overview
+Combining cloud computing and community open-source technologies such as Hadoop, Hive, Spark, HBase, Presto, and Storm, Tencent Cloud Elastic MapReduce (EMR) provides secure and cost-effective cloud-based Hadoop services featuring high reliability and elastic scalability. A secure and reliable Hadoop cluster can be created in a matter of minutes to analyze petabytes of data stored on the data nodes in the cluster or in COS.
 
 ## Features
-- With open-source Hadoop, you can use Tencent Cloud EMR to move vast amounts of data form your local data center to the Cloud. Tencent Cloud Elastic MapReduce (EMR) is integrated with popular components (e.g., Hive, Hbase, Spark, Presto, Sqoop, and Hue) to simplify data processing and management, such as offline big data processing and stream computing.
+- With open-source Hadoop, you can use Tencent Cloud EMR to move vast amounts of data form your local data center to the Cloud. Tencent Cloud Elastic MapReduce (EMR) is integrated with popular components (e.g., Hive, HBase, Spark, Presto, Sqoop, and Hue) to simplify data processing and management, such as offline big data processing and stream computing.
 
 - EMR seamlessly incorporates the Tencent Cloud Object Storage (COS) service, allowing you to migrate files stored in HDFS to COS with unlimited scalability, low storage costs and high reliability for separation of computation and storage. With COS, a cluster can be created whenever needed and terminated after the job is completed without the concerns over data loss. In addition, the on-demand clusters can significantly reduce your big data processing costs.
 

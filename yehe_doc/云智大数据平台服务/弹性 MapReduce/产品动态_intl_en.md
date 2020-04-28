@@ -2,8 +2,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -20,7 +20,7 @@
 <tr>
 <td>EMR 2.2.0 is released</td>
 <td>Hadoop is upgraded to 2.8.5; common components such as Spark, Hive, and HBase are upgraded; and Hudi, Superset, Livy, Impala, Zeppelin, and Kylin are added.</td>
-<td>March 27, 2020</td>
+<td>March 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
@@ -29,8 +29,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -54,8 +54,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -79,8 +79,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -124,8 +124,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -154,8 +154,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -169,8 +169,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -194,8 +194,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -229,8 +229,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -264,8 +264,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -298,8 +298,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -317,7 +317,7 @@
 </tr>
 <tr>
 <td>Monitoring metrics are optimized</td>
-<td>Host, HDFS, YARN, and Hbase monitoring metrics are optimized.</td>
+<td>Host, HDFS, YARN, and HBase monitoring metrics are optimized.</td>
 <td>May 2019</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31121" target="_blank">Monitoring Metrics</a></td>
 </tr>
@@ -350,8 +350,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
@@ -384,8 +384,8 @@
 <thead>
 <tr>
 <th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
 <th width=20%>Documentation</th>
 </tr>
 </thead>
