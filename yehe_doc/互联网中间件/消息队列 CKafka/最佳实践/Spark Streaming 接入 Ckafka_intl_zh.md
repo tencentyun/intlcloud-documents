@@ -7,7 +7,7 @@ Spark Streaming 将连续数据抽象成 DStream（Discretized Stream），而 D
 
 使用 Spark Streaming 作为 Kafka 的数据输入时，可支持 Kafka 稳定版本与实验版本：
 
-| Kafka Version | spark-streaming-kafka-0.8 |   spark-streaming-kafka-0.10   |
+| Kafka Version | spark-streaming-kafka-0.8 |   spark-streaming-kafka-0.10   |
 | :-------- | :--------| :------|
 | Broker Version	| 0.8.2.1 or higher |	0.10.0 or higher |
 | Api Stability	| Stable |	Experimental |
@@ -29,10 +29,8 @@ Spark Streaming 将连续数据抽象成 DStream（Discretized Stream），而 D
 登录 [消息队列 CKafka 控制台](https://console.cloud.tencent.com/ckafka)，创建一个 CKafka 实例（参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/32543)）。
 >确认网络类型是否与当前使用网络相符。
 
-
 ### 创建 Topic
 在实例下创建一个 Topic（参考 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/34003)）。
-
 内网 IP 与端口：是生产消费需要用到的 bootstrap-server。
 这里创建了一个名为 spark_test 的 Topic，接下来将以该 Topic 为例介绍如何生产消费。
 

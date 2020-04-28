@@ -47,8 +47,6 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
 2. 单击实例名称可以看到实例分配的具体信息。
 ![](https://mc.qcloudimg.com/static/img/75412e46fca71833f37f7611c3ab6468/11487-01.jpg)
 3. 单击 topic管理，创建 topic，此处名字为**logstash_test**。
-
-
 至此，CKafka 相关的工作环境完成。
 
 ### CKafka 作为 inputs 接入
@@ -75,6 +73,7 @@ output {
 ![](https://mc.qcloudimg.com/static/img/5c58f08f2fd0fff052cab655d00d4133/input3.png)
 可以看到刚才 topic 中的数据现在被消费出来。
 
+关于 Kafka 作为 output 的配置更多参数请参考 [Kafka output plugin](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-kafka.html#plugins-inputs-kafka-auto_offset_reset)。
 
 ### CKafka 作为 outputs 接入
 1. 执行 bin/logstash-plugin list，查看已经支持的插件是否含有 logstash-output-kafka。
@@ -90,6 +89,7 @@ output {
 4. 校验上一步的生产数据。
 ![](https://mc.qcloudimg.com/static/img/ae85758a90a497235a90511770f959d2/10.png)
 
+关于 Kafka 作为 output 的配置更多参数请参考 [Kafka output plugin](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-kafka.html)。
 
 
 
