@@ -2,25 +2,25 @@
 
 実際に使用しているOSのビット数に基づいて、対応するバージョンのcloudbase-initツールインストールパッケージをダウンロードし、インストールを行います。詳細については [Cloudbase-Init 公式サイト](http://www.cloudbase.it/cloud-init-for-windows-instances/)をご参照ください。
 
-Cloudbase-init は以下のバージョンに分類されます：
-- 安定バージョン：こちらのバージョンでのインストールを推奨します。
-入手パスは以下の通り：
+Cloudbase-init は以下のバージョンに分かれています。
+- 安定版：このバージョンのインストールパッケージでインストールすることをお勧めします。
+パスは以下の通り：
 	- Windows 64ビット OS：https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi
 	- Windwos 32ビット OS：https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi
-- Betaバージョン
+- ベータ版
 
 ## cloudbase-initのインストール
 
 cloudbase-initをインストールする際、以下の点にご注意ください：
-- **「Configuration options」ウィンドウでは、下図の通りに設定を行ってください。すなわち「Serial port for logging」を「COM1」と設定します。**
+- **「Configuration options」ウィンドウでは、下図の通りに構成を行ってください。すなわち「Serial port for logging」を「COM1」に設定します。**
 ![Alt text](https://main.qcloudimg.com/raw/beaca64e8484ec7e9880703cad400717.png)
-- **インストールの最後のフェイズでは、チェックボックスにチェックを入れず、 Sysprepを実行しないでください。下図の示す通りです：**
+- **インストールの最後のステップでは、チェックボックスにチェックを入れず、 Sysprepを実行しないでください。下図の示す通りです：**
 ![Alt text](https://main.qcloudimg.com/raw/aceec91df6a51db2eca775f3350de88c.png)
 
-## cloudbase-init 設定ファイルを修正する 
+## cloudbase-init 構成ファイルを変更する 
 
-1.  cloudbase-init 設定ファイル（配置ファイルのパスは：\PATH\TO\Cloudbase Solutions\Cloubase-Init\conf\cloudbase-init.conf）を開きます。
-2. cloudbase-init の設定ファイルを以下の内容に置き換えます：
+1.  cloudbase-init 構成ファイル（構成ファイルのパスは：\PATH\TO\Cloudbase Solutions\Cloubase-Init\conf\cloudbase-init.conf）を開きます。
+2. cloudbase-init の構成ファイルを以下の内容に置き換えます：
 ```
 [DEFAULT]
 username=Administrator
@@ -50,4 +50,4 @@ local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScri
 C:\powershell
 PS C:\Set-ExecutionPolicy Unrestricted
 ```
-3.  [TencentCloudRun.ps1](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) スクリプトを C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\ というパスの配下にコピーする。
+3.  [TencentCloudRun.ps1](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) スクリプトを C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\ というパスの配下にコピーします。

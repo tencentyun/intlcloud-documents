@@ -2,7 +2,7 @@
 
 ## Operation Scenarios
 
-FCM channels are system-level push channels provided by Google. If you use a mobile phone with the Google service framework overseas, you can receive push notifications without opening applications. If the mobile phone ROM has no FCM, the TPNS channel will be used.
+The FCM channel is a system-level push channel launched by Google. Mobile phones with a Google Service framework which has looser background process management method can receive push messages when the application process is not forced to stop.
 ## Directions
 
 ### 1. Get the FCM push key

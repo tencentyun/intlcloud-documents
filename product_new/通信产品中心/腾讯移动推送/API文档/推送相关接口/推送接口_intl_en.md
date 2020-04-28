@@ -60,6 +60,7 @@ Push API provides a variety of push targets, such as all, tag, single device, de
   {
     "audience_type": "all"
   }
+  ```
 ```
 - Tag push: push to devices with both tag1 and tag2 tags
 
@@ -84,6 +85,7 @@ Push API provides a variety of push targets, such as all, tag, single device, de
         "token1"
     ]
   }
+  ```
 ```
 
 - Device list push: push to devices with token1 and token2 as their tokens
@@ -96,7 +98,7 @@ Push API provides a variety of push targets, such as all, tag, single device, de
     ]
   }
 ```
-  
+
 - Single-account push: push to device(s) bound to account1
   ```json
   {
@@ -105,6 +107,7 @@ Push API provides a variety of push targets, such as all, tag, single device, de
         "account1"
     ]
   }
+  ```
 ```
 
 - Account list push: push to device(s) bound to account1 and account2
@@ -166,7 +169,7 @@ The specific fields for the Android platform are as follows:
 | style_id | int | Android | 1 | No | Specifies whether to override the notification style with the specified number |
 | small_icon | string | Android | None | No | The icon that the message displays in the status bar. If not set, the application icon will be displayed. |
 | action | JSON | Android | Yes | No | Sets the action after the notification bar is tapped; the default action is to open the application. |
-| action_type| int | Action      |Yes   | No     | Tap action type. <li>1: opens activity or the application itself <li>2: opens browser<li>3: opens Intent             |
+| action_type| int | Action      |Yes   | No     | Tap action type. <li>1: opens activity or the application itself <li>2: opens browser<li>3: opens Intent(Recommended⚠️ [Configuration Guide](https://intl.cloud.tencent.com/document/product/1024/32624)）                 |
 | custom_content | string | Android | None    | No    |  Custom parameters. ⚠️ This must be serialized as a JSON string.       |
 
 

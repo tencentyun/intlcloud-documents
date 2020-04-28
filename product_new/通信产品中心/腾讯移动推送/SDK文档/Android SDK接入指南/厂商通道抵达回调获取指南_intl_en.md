@@ -13,6 +13,9 @@ After successfully configuring the arriving data display feature, you can view t
 | OPPO channel | Yes               | No           |
 | Vivo channel | Yes               | No           |
 | Meizu channel | No               | Yes           |
+| FCM channel | Yes | No|
+
+>Vendor channel arrival receipt data is for reference only. 
 
 ## Configuration Guide
 
