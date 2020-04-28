@@ -5,7 +5,8 @@
 ```shell
 https://api.tpns.tencent.com/v3/device/tag
 ```
-**API description**: `Tag` API is the general term for all tag APIs. It includes various APIs for setting, updating, and deleting which are described as below:
+**API description**: `Tag` API is the general term for all tag APIs. It includes various APIs for setting, updating, and deleting which are described as below.
+For more information about tagging feature use cases, please see [Tagging Feature Instructions](https://intl.cloud.tencent.com/document/product/1024/35392)
 
 
 
