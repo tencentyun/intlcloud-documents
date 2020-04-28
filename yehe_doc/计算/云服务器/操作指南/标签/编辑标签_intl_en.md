@@ -29,4 +29,4 @@ Log in to the [CVM Console](https://console.cloud.tencent.com/cvm).
 
 ## Operation Examples
 
-For information on how to use tags, please see [User Guide on Tags] (https://intl.cloud.tencent.com/document/product/213/19548).
+For information on how to use tags, please see [User Guide on Tags](https://intl.cloud.tencent.com/document/product/213/19548).

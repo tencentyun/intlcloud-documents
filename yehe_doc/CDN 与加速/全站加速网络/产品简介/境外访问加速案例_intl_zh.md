@@ -32,11 +32,11 @@
 
 ### 性能曲线
 
-![](https://main.qcloudimg.com/raw/505996210f2077f0352dbd723aca69e6.png)
+![](https://main.qcloudimg.com/raw/b0825a24b98665637335aa8d672bec51.png)
 
 ### 可用性曲线
 
-![](https://main.qcloudimg.com/raw/a3de283e40327aaa869b4c8d402ae11b.png)
+![](https://main.qcloudimg.com/raw/af8c79e78a2d7b6fc906491804d69511.png)
 
 > **总结说明**  
 >1、使用全站加速后，产品平均访问性能提升**104.71%**，页面加载性能改善明显；  

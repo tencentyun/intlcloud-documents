@@ -30,10 +30,16 @@ A third-party network application performance monitoring and speed test method w
 
 ## Test Results
 
+### Performance curve
+
+![](https://main.qcloudimg.com/raw/b0825a24b98665637335aa8d672bec51.png)
+
 ### Usability curve
 
+![](https://main.qcloudimg.com/raw/af8c79e78a2d7b6fc906491804d69511.png)
+
 > **Summary**  
-> 1. After ECDN is used, the average access performance of the product is improved by 104.71% , and the page loading performance is significantly improved;  
+> 1. After ECDN is used, the average access performance of the product is improved by 104.71% **, and the page loading performance is significantly improved;  
 > 2. In cross-border access scenarios, traditional public network access is affected by network packet losses and long delays, and the access stability fluctuates greatly. After ECDN is used, the **availability and stability** of page access are greatly improved.
 
 ### Data summary analysis
