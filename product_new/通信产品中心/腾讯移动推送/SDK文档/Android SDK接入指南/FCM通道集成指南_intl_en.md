@@ -1,14 +1,14 @@
-# FCM channel integration guide
+# FCM Channel Integration Guide
 
-## Operation Scenario
+## Operation Scenarios
 
-FCM channels are system-level push channels provided by Google. If you use a mobile phone with the Google service framework overseas, you can receive push notifications without opening apps. If the mobile phone ROM has no FCM, TPNS push channel will be used.
-## Steps
+FCM channels are system-level push channels provided by Google. If you use a mobile phone with the Google service framework overseas, you can receive push notifications without opening applications. If the mobile phone ROM has no FCM, the TPNS channel will be used.
+## Directions
 
-### 1. Getting the FCM push key
-1. Register the app at [FireBase official website](https://firebase.google.com/?hl=en-us). Configure the FCM app push server key and SenderID to the TPNS console.
+### 1. Get the FCM push key
+1. Register the application at [FireBase official website](https://firebase.google.com/?hl=en-us). Configure the FCM application push server key and SenderID to the TPNS console.
 2. Download the google-services.json file.
-As shown in the figure below:
+See below:
 
 Get the json file:
 ![](https://main.qcloudimg.com/raw/a3b3fbb86180fde824d7970f00418513.png)
@@ -24,8 +24,8 @@ a) Add the following code to the dependencies node in the project-level build.gr
 ```xml
 classpath 'com.google.gms:google-services:4.2.0'
 ```
-**Note: If you use a version below 4.2.0, the following message will appear: FCM Register error! java.lang.IllegalStateException: Default FirebaseApp is not initialized in this process com.qq.xg4all. Make sure to call FirebaseApp.initializeApp(Context) first.  
-Solution: You can add the following to string.xml under the res/values folder:
+**Note: if you use a version below 4.2.0, the following message will appear: FCM Register error! java.lang.IllegalStateException: Default FirebaseApp is not initialized in this process com.qq.xg4all. Make sure to call FirebaseApp.initializeApp(Context) first.  
+Solution: you can add the following to string.xml under the res/values folder:
 <string name="google_app_id">YOUR_GOOGLE_APP_ID</string>**
 
 Add dependencies to the app-level build.gradle file
@@ -37,12 +37,12 @@ implementation  'com.google.firebase:firebase-messaging:17.6.0'
 
 
 
- // In the app-level gradle file, add the following to the last line of the code and put google-services.json into the root path of your app model
+ // In the app-level gradle file, add the following to the last line of the code and put google-services.json into the root path of your application model
 
 apply plugin: 'com.google.gms.google-services'
 
 ```
-**Note: Google configures google-play-services (TPNS only uses it to detect whether the device supports Google services. We recommend you use a version higher than 17.0.0, otherwise you may not be able to register for FCM). For more information, see documentation at: https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project**
+**Note: Google configures google-play-services (TPNS only uses it to detect whether the device supports Google services. You are recommended to use a version higher than 17.0.0; otherwise, you may not be able to register for FCM). For more information, please see documentation at: https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project**
 
 
 ## Enabling FCM push

@@ -5,22 +5,22 @@
 ## API Overview
 
 
-The path prefix of all APIs’ package names is: ```com.tencent.android.tpush```. There are several important classes that provide APIs for external use, including:
+The path prefix of all APIs' package names is: ```com.tencent.android.tpush```. There are several important classes that provide APIs for external use, including:
 
 | Class name | Description |
 |-------|-----|
 |```XGPushManager```| Push service |
 |```XGPushConfig```| Push service configuration item API |
-|```XGPushBaseReceiver```| Receiver to receive messages and result feedback, which needs to be statically registered by developers in ```AndroidManifest.xml``` |
-## Launch and registration
+|```XGPushBaseReceiver```| Receiver to receive messages and result feedback, which needs to be statically registered by yourself in ```AndroidManifest.xml``` |
+## Launch and Registration
 
 <hr>
 
-The app can only use the SDK push service after successfully registering for and launching the TPNS. Please ensure that AccessId and AccessKey have already been configured.
+The application can only use the SDK push service after successfully registering for and launching the TPNS. Please ensure that `AccessId` and `AccessKey` have already been configured.
 
-The new version of SDK has integrated TPNS launch and app registration into the registration API, which means you can simply call the registration API to complete the launch and registration by default.
+The new version of SDK has integrated TPNS launch and application registration into the registration API, which means you can simply call the registration API to complete the launch and registration by default.
 
-After a successful registration, the device token will be returned. The token is used to identify the uniqueness of the device and is also the unique identifier for TPNS to stay connected with the backend. For more information on how to get tokens, see **Getting Tokens**.
+After a successful registration, the device token will be returned. The token is used to identify the uniqueness of the device and is also the unique ID for TPNS to stay connected with the backend. For more information on how to get tokens, please see **Getting Tokens**.
 
 The registration API usually provides a compact version and a version with callback. Please choose an appropriate version according to your business needs.
 
@@ -31,7 +31,7 @@ The registration API usually provides a compact version and a version with callb
 
 Standard registration only registers the current device, and the backend can send different push messages based on device tokens. There are two versions of the API.
 
-Note: This registration method does not support account push.
+Note: this registration method does not support account push.
 
 ***Prototype***
 
@@ -41,7 +41,7 @@ public static void registerPush(Context context)
 
 ***Parameters***
 
-context: The context object of the current app, which cannot be null
+context: context object of current application, which cannot be null
 
 ***Sample***
 
@@ -61,9 +61,9 @@ final XGIOperateCallback callback)
 
 ***Parameters***
 
-context: The context object of the current app, which cannot be null
+context: context object of current application, which cannot be null
 
-callback: Callback functions, including success and failure callbacks and cannot be null
+callback: callback functions, including success and failure callbacks and cannot be null
 
 ***Sample***
 
@@ -82,33 +82,33 @@ Log.d("TPush", "The registration failed, error code: " + errCode + ", error mess
 ```
 
 
-### Binding an account for registration
+### Binding account for registration
 
 <hr>
 
-Binding an account for registration means using a specified account to register for the app in addition to binding a device for registration (one account cannot be logged into multiple devices). This allows the backend to send push messages to specified accounts. This API has two versions.
+Binding an account for registration means using a specified account to register for the application in addition to binding a device for registration (one account cannot be logged into multiple devices). This allows the backend to send push messages to specified accounts. This API has two versions.
 
-Note: The account can be email, QQ account number, mobile number, username, etc.
+Note: the account can be email, QQ account number, mobile number, username, etc.
 
 ***Prototype***
 ```java	
-Launch and register for the app, and at the same time bind the account. Recommended for apps with an account system. This API will override accounts previously bound to the device, and only the current registered account will take effect
+Launch and register for the application, and at the same time bind the account. Recommended for applications with an account system. This API will override accounts previously bound to the device, and only the current registered account will take effect
 void bindAccount(Context context, String account, XGIOperateCallback callback)
 
-Launch and register for the app, and at the same time bind the account. Recommended for apps with an account system. This API will override accounts previously bound to the device, and only the current registered account will take effect. There is no registration callback	
+Launch and register for the application, and at the same time bind the account. Recommended for applications with an account system. This API will override accounts previously bound to the device, and only the current registered account will take effect. There is no registration callback	
 void bindAccount(Context context, final String account)
 
-Launch and register for the app, and at the same time bind the account. Recommended for apps with an account system. This API will retain the previous account and only perform an addition operation. One token can have a maximum of 10 accounts, otherwise accounts that are bound previously will be automatically replaced. There is registration callback
+Launch and register for the application, and at the same time bind the account. Recommended for applications with an account system. This API will retain the previous account and only perform an addition operation. One token can have a maximum of 10 accounts; otherwise, accounts that are bound previously will be automatically replaced. There is registration callback
 void appendAccount(Context context, String account, XGIOperateCallback callback)
 
-Launch and register for the app, and at the same time bind the account. Recommended for apps with an account system. This API will retain the previous account and only perform an addition operation. One token can have a maximum of 10 accounts, otherwise accounts that are bound previously will be automatically replaced. There is no registration callback
+Launch and register for the application, and at the same time bind the account. Recommended for applications with an account system. This API will retain the previous account and only perform an addition operation. One token can have a maximum of 10 accounts; otherwise, accounts that are bound previously will be automatically replaced. There is no registration callback
 void appendAccount(Context context, final String account)	
 ```
 ***Parameters***
 
-context: The context object of the current app, which cannot be null
+context: context object of current application, which cannot be null
 
-account: The account
+account: account
 
 
 ***Sample***
@@ -125,24 +125,24 @@ XGPushManager.bindAccount(getApplicationContext(),"test");
 
 
 ```java
-//Unbind the specified account (there is registration callback)
+// Unbind the specified account (there is registration callback)
 
 void delAccount(Context context, final String account, XGIOperateCallback callback)	
 
-//Unbind the specified account (there is no registration callback)
+// Unbind the specified account (there is no registration callback)
 
-void delAccount(Context context, final String account ）
+void delAccount(Context context, final String account )
 ```
 
 Note
 
-**Account unbinding only removes the association between the token and the app account. If full/tag/token push is used, the notification/message can still be received.**
+**Account unbinding only removes the association between the token and the application account. If full/tag/token push is used, the notification/message can still be received.**
 
 ***Parameters***
 
-context: The context object of the current app, which cannot be null
+context: context object of current application, which cannot be null
 
-account: The account
+account: account
 
 ***Sample***
 
@@ -160,9 +160,9 @@ There are two ways to check if the registration is successful
 
 ***(1) Use the callback version of the registration API***
 
-The XGIOperateCallback class provides an API to process registration success or failure. Please see the sample in the registration API.
+The `XGIOperateCallback` class provides an API to process registration success or failure. Please see the sample in the registration API.
 
-Definition of XGIOperateCallback:
+`XGIOperateCallback` definition:
 
 ```java
 /**
@@ -187,9 +187,9 @@ public void onFail(Object data, int errCode, String msg);
 
 **(2) Reload XGPushBaseReceiver**
 
-The result can be obtained by reloading the onRegisterResult of XGPushBaseReceiver.
+The result can be obtained by reloading the `onRegisterResult` method of `XGPushBaseReceiver`.
 
-(Note: The reloaded XGPushBaseReceiver needs to be configured in AndroidManifest.xml. For more information, see "Message Configuration")
+(Note: the reloaded `XGPushBaseReceiver` needs to be configured in AndroidManifest.xml. For more information, please see "Message Configuration")
 
 ***Sample***
 
@@ -198,7 +198,7 @@ The result can be obtained by reloading the onRegisterResult of XGPushBaseReceiv
 * Registration result
 *
 * @param context
-* App context object
+* Application context object
 * @param errorCode
 * Error code; {@link XGPushBaseReceiver#SUCCESS} indicates success, while others indicate failure
 * @param registerMessage
@@ -207,12 +207,12 @@ The result can be obtained by reloading the onRegisterResult of XGPushBaseReceiv
 ```
 
 
-Below is the list of methods provided by XGPushRegisterResult:
+Below is the list of methods provided by `XGPushRegisterResult`:
 
-| Method name | Return value | Default value | Description |
+| Method Name | Returned Value | Default Value | Description |
 |---|---|----|----|
-|getToken()|String|""| Device token, i.e., the unique ID of the device |
-|getAccessId()|long|0| Get the accessId of the registration |
+|getToken()|String|""| Device token, i.e., unique device ID |
+|getAccessId()|long|0| Gets `accessId` for registration |
 |getAccount|String|""| Get the account bound for registration |
 |getTicket()|String|""| Login state ticket |
 |getTicketType()|short|0| Ticket type |
@@ -222,7 +222,7 @@ Below is the list of methods provided by XGPushRegisterResult:
 
 <hr>
 
-When a user has logged out or the app is closed and it is no longer necessary to receive push messages, the device can be unregistered from the app. (Note: Once the device is unregistered, push messages will no longer be received unless the device is successfully registered again)
+When a user has logged out or the application is closed and it is no longer necessary to receive push messages, the device can be unregistered from the application. (Note: once the device is unregistered, push messages will no longer be received unless the device is successfully registered again)
 
 
 ***(1) Prototype***
@@ -235,7 +235,7 @@ public static void unregisterPush(Context context)
 *** (2) Parameters***
 
 ```java
-context: The context object of the app.
+context: context object of application.
 ```
 
 
@@ -249,7 +249,7 @@ XGPushManager.unregisterPush(this);
 
 ***Unregistration result***
 
-The result can be obtained by reloading the onUnregisterResult of XGPushBaseReceiver.
+The result can be obtained by reloading the `onUnregisterResult` method of `XGPushBaseReceiver`.
 
 ***Sample***
 
@@ -258,7 +258,7 @@ The result can be obtained by reloading the onUnregisterResult of XGPushBaseRece
 * Unregistration result
 *
 * @param context
-* App context object
+* Application context object
 * @param errorCode
 * Error code; {@link XGPushBaseReceiver#SUCCESS} indicates success, while others indicate failure
 */
@@ -271,7 +271,7 @@ public void onUnregisterResult(Context context, int errorCode) {
 
 ***Note***
 
-Unregistration operation should not be too frequent; otherwise, it may cause delay in backend synchronization.
+Unregistration operation should not be too frequent; otherwise, it may cause delay in backend sync.
 
 Switching accounts does not require unregistration. With multiple registrations, the last registration will automatically take effect.
 
@@ -284,7 +284,7 @@ TPNS mainly provides two push formats:
 
 ### Push notification (displayed in the notification panel)
 
-This refers to the content displayed in the notification panel of the device. All operations are performed by TPNS SDK. The app can listen to clicks on notifications. In other words, push notifications delivered in the frontend do not need to be processed by the app and will be displayed in the notification panel by default.
+This refers to the content displayed in the notification panel of the device. All operations are performed by TPNS SDK. The application can listen to clicks on notifications. In other words, push notifications delivered on the frontend do not need to be processed by the application and will be displayed in the notification panel by default.
 
 After the TPNS service is successfully registered, notifications can be delivered without any configuration.
 
@@ -292,24 +292,24 @@ In general, combined with custom notification styles, standard notifications can
 
 ### In-app message command (not displayed in notification panel)
 
-This refers to the content delivered to the app by TPNS. The app needs to inherit the XGPushBaseReceiver API to implement and handle all the operations on its own. In other words, delivered messages are not displayed in the notification panel by default, and TPNS is only responsible for delivering messages from the TPNS server to the app, but not processing the messages, which needs to be done by the app. For more information, see MessageReceiver in the Demo.
+This refers to the content delivered to the application by TPNS. The application needs to inherit the XGPushBaseReceiver API to implement and handle all the operations on its own. In other words, delivered messages are not displayed in the notification panel by default, and TPNS is only responsible for delivering messages from the TPNS server to the application, but not processing the messages, which needs to be done by the application. For more information, please see MessageReceiver in the Demo.
 
-Message refers to the text message delivered by the developer through frontend or backend scripts. TPNS is only responsible for delivering the message to the app, while the APP is fully responsible for handling the message body on its own.
+Message refers to the text message delivered by you through frontend or backend scripts. TPNS is only responsible for delivering the message to the application, while the APPLICATION is fully responsible for handling the message body on its own.
 
-Because the message is flexible and highly customizable, it is suitable for apps to handle custom business needs on its own, such as delivering app configuration information, and customizing message retention and display.
+Because the message is flexible and highly customizable, it is suitable for applications to handle custom business needs on its own, such as delivering application configuration information, and customizing message retention and display.
 
-For example, if a game needs to provide different notifications for different scenarios (such as reminders for user upgrade, version update, and marketing campaigns), it can encapsulate these scenarios in messages in JSON format and deliver them to the app, and then the app can display different reminders based on these scenarios to meet personalized needs.
+For example, if a game needs to provide different notifications for different scenarios (such as reminders for user upgrade, version update, and marketing campaigns), it can encapsulate these scenarios in messages in JSON format and deliver them to the application, and then the application can display different reminders based on these scenarios to meet personalized needs.
 
-  ***Message Configuration***
+  ***Message configuration***
 
-If you need to listen to messages, see the XGPushBaseReceiver API or the MessageReceiver class in the demo. You can inherit XGPushBaseReceiver and configure the following content in the configuration file:
+If you need to listen to messages, please see the `XGPushBaseReceiver` API or the `MessageReceiver` class in the demo. You can inherit `XGPushBaseReceiver` and configure the following content in the configuration file:
 
 ```xml
     <receiver android:name="Complete class name, such as: com.qq.xgdemo.receiver.MessageReceiver">
         <intent-filter>
         <!-- Receive message passthrough -->
         <action android:name="com.tencent.android.tpush.action.PUSH_MESSAGE" />
-        <!-- Listen to results of registration, unregistration, tag setting/deletion, and notification click ->
+        <!-- Listen to results of registration, unregistration, tag setting/deletion, and notification clicks ->
         <action android:name="com.tencent.android.tpush.action.FEEDBACK" />
         </intent-filter>
     </receiver>
@@ -317,9 +317,9 @@ If you need to listen to messages, see the XGPushBaseReceiver API or the Message
 
 ***Getting in-app message***
 
-A message delivered by the developer in the frontend can be received by the app if it inherits XGPushBaseReceiver and reloads the onTextMessage. After successfully receiving the message, the app can handle it based on specific business scenarios.
+A message delivered by you on the frontend can be received by the application if it inherits `XGPushBaseReceiver` and reloads the `onTextMessage` method. After successfully receiving the message, the application can handle it based on specific business scenarios.
 
-XGPushBaseReceiver also provides other APIs, such as those for returning the results of notification display/click or registration/unregistration. For more information, see the "XGPushBaseReceiver" section or the MessageReceiver class in the demo.
+`XGPushBaseReceiver` also provides other APIs, such as those for returning the results of notification display/click or registration/unregistration. For more information, please see the "XGPushBaseReceiver" section or the MessageReceiver class in the demo.
 
 Please make sure that the receiver has been registered in AndroidManifest.xml, i.e., YOUR_PACKAGE.XGPushBaseReceiver is set.
 
@@ -334,18 +334,18 @@ XGPushTextMessage message)
 
 ***Parameters***
 
-context: The current context of the app
+context: current context of application
 
-message: The received message structure. Below is the list of methods of XGPushTextMessage:
+message: received message structure. Below is the list of methods of `XGPushTextMessage`:
 
-| Method name | Return value | Default value | Description |
+| Method Name | Returned Value | Default Value | Description |
 |----|--------|-----|---|
 |getContent()|String|""| Message body content, and generally it is sufficient to deliver only this field |
-|getCustomContent()|String|""| Custom key-value of the message |
-|getTitle()|String|""| Message title (note: The description of the in-app message delivered from the frontend is not a title) |
+|getCustomContent()|String|""| Custom `key-value` of message |
+|getTitle()|String|""| Message title (note: the description of the in-app message delivered from the frontend is not a title) |
 
-### Local Notification
-  Local notifications are customized by the user and saved locally. When the app is open, the TPNS service will determine whether there is a notification once every five minutes based on the network heartbeat. Local notifications will pop up only if the service is enabled, and there may be a delay of about five minutes. The notification will pop up when the time set is earlier than the current device time.
+### Local notification
+  Local notifications are customized by the user and saved locally. When the application is open, the TPNS service will determine whether there is a notification once every five minutes based on the network heartbeat. Local notifications will pop up only if the service is enabled, and there may be a delay of about five minutes. The notification will pop up when the time set is earlier than the current device time.
   
  ***Sample code***
 ```java
@@ -368,7 +368,7 @@ message: The received message structure. Below is the list of methods of XGPushT
         
         local_msg.setDate("20140930");
         
-        // Set the hour when the message is triggered (in 24-hour time), for example: 22 indicates 10 p.m.
+        // Set the hour when the message is triggered (in 24-hour time); for example: 22 indicates 10 p.m.
         
         local_msg.setHour("19");
         
@@ -380,7 +380,7 @@ message: The received message structure. Below is the list of methods of XGPushT
         
         local_msg.setBuilderId(0);
           
-        // Set the action type: 1 - open the activity or the app itself; 2 - open the browser; 3 - open the Intent; 4 - open the app by the package name
+        // Set the action type: 1 - open the activity or the application itself; 2 - open the browser; 3 - open the Intent; 4 - open the application by the package name
          
         local_msg.setAction_type(1);
         
@@ -395,7 +395,7 @@ message: The received message structure. Below is the list of methods of XGPushT
         
          local_msg.setIntent("intent:10086#Intent;scheme=tel;action=android.intent.action.DIAL;S.key=value;end");
              
-        //Whether to overwrite the save settings of the original build_id. 1: Yes; 0: No.
+        // Whether to overwrite the save settings of the original build_id. 1: yes; 0: no.
         
          local_msg.setStyle_id(1);
          
@@ -413,7 +413,7 @@ message: The received message structure. Below is the list of methods of XGPushT
           
         local_msg.setCustomContent(map);
         
-        // Set the URL for downloading apps
+        // Set the URL for downloading applications
         
         local_msg.setPackageDownloadUrl("http://softfile.3g.qq.com:8080/msoft/179/1105/10753/MobileQQ1.0(Android)_Build0198.apk");
         
@@ -421,30 +421,30 @@ message: The received message structure. Below is the list of methods of XGPushT
 ```
         
 
-## Getting device token
+## Getting Device Token
 
 <hr>
 
-A token is the unique identifier for TPNS to stay connected with the backend. It is the unique ID for the app to receive messages. The token can be obtained only if the device is successfully registered through the following methods. TPNS token may change if the app is uninstalled and reinstalled.
+A token is the unique ID for TPNS to stay connected with the backend. It is the unique ID for the application to receive messages. The token can be obtained only if the device is successfully registered through the following methods. TPNS token may change if the application is uninstalled and reinstalled.
 
-***(1) Obtain through the registration API with callback***
+***(1) Get through the registration API with callback***
 
-In the onSuccess(Object data, int flag) method of the registration API with XGIOperateCallback, the parameter "data" is the token. For more information, see the relevant sample of the registration API.
+In the `onSuccess(Object data, int flag)` method of the registration API with `XGIOperateCallback`, the `data` parameter is the token. For more information, please see the relevant sample of the registration API.
 
 ***(2) Reload XGPushBaseReceiver***
 
-Reload the onRegisterResult (Context context, int errorCode,XGPushRegisterResult registerMessage) of XGPushBaseReceiver and obtain the token through the getToken API provided by the parameter registerMessage. For more information, see the **Getting registration results** section.
+Reload the `onRegisterResult (Context context, int errorCode,	XGPushRegisterResult registerMessage)` method of `XGPushBaseReceiver` and get the token through the `getToken` API provided by the parameter `registerMessage`. For more information, please see the **Getting registration results** section.
 
 ***(3) XGPushConfig.getToken(context)***
 
-Once the device is successfully registered, the token will be stored locally and then can be obtained through the XGPushConfig.getToken(context) API.
+Once the device is successfully registered, the token will be stored locally and then can be obtained through the `XGPushConfig.getToken(context)` API.
 
 
 ## Getting Notification
 
 <hr>
 
-The delivery and display of notifications are completely controlled by the TPNS SDK. To store the displayed notification content locally, developers can reload the onNotificationShowedResult(Context, XGPushShowedResult) of XGPushBaseReceiver. Here, the XGPushShowedResult object provides an API for reading the notification content.
+The delivery and display of notifications are completely controlled by the TPNS SDK. To store the displayed notification content locally, you can reload the `onNotificationShowedResult(Context, XGPushShowedResult)` method of `XGPushBaseReceiver`. Here, the `XGPushShowedResult` object provides an API for reading the notification content.
 
 
 ***Prototype***
@@ -455,10 +455,10 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 ***Parameters***
 
-context: Current context of the app, notifiShowedRlt: The displayed notification object
+context: current context of application. notifiShowedRlt: displayed notification object
 
 
-## Getting message click results
+## Getting Message Click Results
 
 <hr>
 
@@ -466,7 +466,7 @@ context: Current context of the app, notifiShowedRlt: The displayed notification
 
 On the built-on activity display page of TPNS, the number of notification/message arrivals and the action of notification clicks/ clearing are counted by default. To listen to these events, you need to embed the code as follows.
 
-Note: If developers want to count the number of app launches caused by TPNS or get the delivered custom key-value, they need to call the following method in onResume() of all (or opened) activities.
+Note: if you want to count the number of application launches caused by TPNS or get the delivered custom `key-value`, you need to call the following method in onResume() of all (or opened) activities.
 
 ***(1) Prototype***
 
@@ -477,21 +477,21 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 *** (2) Parameters***
 
-activity: Context of the opened activity
+activity: context of opened activity
 
-***(3) Return value***
+***(3) Returned value***
 
-XGPushClickedResult: The opened object of the notification; if the activity is open due to TPNS notification, XGPushClickedResult will be returned; otherwise, null will be returned.
+XGPushClickedResult: opened object of notification; if the activity is open due to TPNS notification, `XGPushClickedResult` will be returned; otherwise, null will be returned.
 
-List of methods of the XGPushClickedResult class:
+`XGPushClickedResult` class method list:
 
-| Method name | Return value | Default value | Description |
+| Method Name | Returned Value | Default Value | Description |
 |----|--------|-----|---|
 |getMsgId()|long|0| Message id |
 |getTitle()|String|""| Notification title |
 |getContent()|String|""| Notification body content |
 |getActivityName()|String|""| Name of the page opened |
-|getCustomContent()|String|""| Custom key-value, which is a JSON string; at the same time, call the following method in onPause() of Activity |
+|getCustomContent()|String|""| Custom `key-value`, which is a JSON string. At the same time, call the following method in `onPause()` of Activity |
 
 
 ***(1) Prototype***
@@ -503,7 +503,7 @@ public static void onActivityStoped(Activity activity)
 
 *** (2) Parameters***
 
-activity: Context of the current activity
+activity: context of current activity
 
 
 ***(3) Sample***
@@ -528,7 +528,7 @@ Currently, TPNS provides two types of preset tags:
 
 Geographic location (at the provincial level)
 
-App version number
+Application version number
 
 Preset tags are automatically reported in the SDK.
 
@@ -536,7 +536,7 @@ Preset tags are automatically reported in the SDK.
 
 ***Configuring custom tags***
 
-Developers can set tags for different users and then send bulk notifications based on the tags. An app can have a maximum of 10,000 tags, and each token can have a maximum of 100 tags under one app. A tag cannot contain any spaces.
+You can set tags for different users and then send bulk notifications based on the tags. An application can have a maximum of 10,000 tags, and each token can have a maximum of 100 tags under one application. A tag cannot contain any spaces.
 
 
 
@@ -550,15 +550,15 @@ public static void setTag(Context context, String tagName)
 
 ***Parameters***
 
-context: Context object
+context: `Context` object
 
-tagName: Name of the tag to be set, which cannot be null or empty.
+tagName: name of the tag to be set, which cannot be null or empty.
 
 
 
 ***Processing result***
 
-The result can be obtained by reloading the onSetTagResult of XGPushBaseReceiver.
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
 
 ***Sample***
@@ -571,12 +571,12 @@ XGPushManager.setTag(this, "male");
 
 ***Set multiple tags***
 
-Set multiple tags at a time, which will override the tags previously set for this device. If the format of the newly added tags is “test:2", “level:2", all historical tags of the device will be deleted, and “test:2” and “level:2” will be added
-If the newly added tag has a part without the punctuation mark `:`, such as [“test:2”, “level”], then all historical tags of this device will be deleted, and then “test:2” and “level” tags will be added
+Set multiple tags at a time, which will override the tags previously set for this device. If the format of the newly added tags is "test:2", "level:2", all historical tags of the device will be deleted, and "test:2" and "level:2" will be added
+If the newly added tag has a part without the punctuation mark `:`, such as ["test:2", "level"], then all historical tags of this device will be deleted, and then "test:2" and "level" tags will be added
 
 *Note*:
  1. In newly added tags, `:` is the backend keyword. Use it according to your business scenarios
-2. In this API, you must first check the table and clear historical tags before you can set new tags. When calling, the interval should not be too tight (we recommend an interval of greater than 5s), otherwise an update may occur
+2. In this API, you must first check the table and clear historical tags before you can set new tags. When calling, the interval should not be too tight (an interval of greater than 5 seconds is recommended); otherwise, an update may occur
 
 
 
@@ -590,15 +590,15 @@ public static void setTags(Context context, String operateName, Set<String> tags
 
 ***Parameters***
 
-context: Context object
-operateName: The operation name defined by the user. The callback result will be returned as it is for user to distinguish the operation. The tagName parameter of onSetTagResult in XGPushBaseReceiver is returned as it is
-tags: A collection of tag names, and each tag is a string. Restrictions: Each tag cannot exceed 40 bytes (otherwise the tag will be discarded) or contain spaces (all spaces will be deleted). Up to 1,000 tags can be set, and excessive ones will be discarded
+context: `Context` object
+operateName: operation name defined by the user. The callback result will be returned as-is for user to distinguish the operation. The `tagName` parameter of `onSetTagResult` in `XGPushBaseReceiver` is returned as-is
+tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 40 bytes (otherwise, the tag will be discarded) or contain spaces (all spaces will be deleted). Up to 1,000 tags can be set, and excessive ones will be discarded
 
 
 
 ***Processing result***
 
-The result can be obtained by reloading the onSetTagResult of XGPushBaseReceiver.
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
 
 ***Sample***
@@ -627,16 +627,16 @@ public static void addTags(Context context, String operateName, Set<String> tags
 
 ***Parameters***
 
-context: Context object
-operateName: The operation name defined by the user. The callback result will be returned as it is for user to distinguish the operation. The tagName parameter of onSetTagResult in XGPushBaseReceiver is returned as it is
+context: `Context` object
+operateName: operation name defined by the user. The callback result will be returned as-is for user to distinguish the operation. The `tagName` parameter of `onSetTagResult` in `XGPushBaseReceiver` is returned as-is
 
-tags: A collection of tag names, and each tag is a string. Restrictions: Each tag cannot exceed 40 bytes (otherwise the tag will be discarded) or contain spaces (all spaces will be deleted). Up to 1,000 tags can be set, and excessive ones will be discarded
+tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 40 bytes (otherwise, the tag will be discarded) or contain spaces (all spaces will be deleted). Up to 1,000 tags can be set, and excessive ones will be discarded
 
 
 
 ***Processing result***
 
-The result can be obtained by reloading the onSetTagResult of XGPushBaseReceiver.
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
 
 ***Sample***
@@ -654,7 +654,7 @@ XGPushManager.addTags(getApplicationContext(), "addTags:" + System.currentTimeMi
 
 
 
-This is for developers to delete user tag data.
+This is for you to delete user tag data.
 
 
 ***Function prototype***
@@ -668,14 +668,14 @@ public static void deleteTag(Context context, String tagName)
 
 ***Parameters***
 
-context: Context object
+context: `Context` object
 
-tagName: Name of the tag to be set, which cannot be null or empty
+tagName: name of the tag to be set, which cannot be null or empty.
 
 
 ***Processing result***
 
-The result can be obtained by reloading the onDeleteTagResult of XGPushBaseReceiver.
+The result can be obtained by reloading the `onDeleteTagResult` method of `XGPushBaseReceiver`.
 
 ***Sample***
 
@@ -701,15 +701,15 @@ public static void deleteTags(Context context, String operateName, Set<String> t
 
 ***Parameters***
 
-context: Context object
-operateName: The operation name defined by the user. The callback result will be returned as it is for user to distinguish the operation. The tagName parameter of onSetTagResult in XGPushBaseReceiver is returned as it is
-tags: A collection of tag names, and each tag is a string. Restrictions: Each tag cannot exceed 40 bytes (otherwise the tag will be discarded) or contain spaces (all spaces will be deleted). Up to 1,000 tags can be set, and excessive ones will be discarded
+context: `Context` object
+operateName: operation name defined by the user. The callback result will be returned as-is for user to distinguish the operation. The `tagName` parameter of `onSetTagResult` in `XGPushBaseReceiver` is returned as-is
+tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 40 bytes (otherwise, the tag will be discarded) or contain spaces (all spaces will be deleted). Up to 1,000 tags can be set, and excessive ones will be discarded
 
 
 
 ***Processing result***
 
-The result can be obtained by reloading the onSetTagResult of XGPushBaseReceiver.
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
 
 ***Sample***
@@ -738,14 +738,14 @@ public static void cleanTags(Context context, String operateName)
 
 ***Parameters***
 
-context: Context object
-operateName: The operation name defined by the user. The callback result will be returned as it is for user to distinguish the operation. The tagName parameter of onSetTagResult in XGPushBaseReceiver is returned as it is
+context: `Context` object
+operateName: operation name defined by the user. The callback result will be returned as-is for user to distinguish the operation. The `tagName` parameter of `onSetTagResult` in `XGPushBaseReceiver` is returned as-is
 
 
 
 ***Processing result***
 
-The result can be obtained by reloading the onSetTagResult of XGPushBaseReceiver.
+The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
 
 
 ***Sample***
@@ -760,12 +760,12 @@ XGPushManager.cleanTags(getApplicationContext(), "cleanTags:" + System.currentTi
 
 <hr>
 
-All configuration APIs are in the XGPushConfig class. In order for the configuration to take effect in time, developers need to ensure that configuration APIs are called before launching or registering for TPNS.
+All configuration APIs are in the `XGPushConfig` class. In order for the configuration to take effect in time, you need to ensure that configuration APIs are called before launching or registering for TPNS.
 
 
 ### Debug Mode
 
-(Important note: To ensure data security, make sure debug mode is turned off when publishing)
+(Note: to ensure data security, make sure debug mode is turned off when publishing)
 
 
 ***(1) Function Prototype***
@@ -777,21 +777,21 @@ public static void enableDebug(Context context, boolean debugMode)
 
 *** (2) Parameters***
 
-context: App context object
+context: application context object
 
-debugMode: The default is false. To enable the debug log, set it to true
+debugMode: the default value is `false`. To enable the debug log, set it to `true`
 
-### Getting Token
+### Getting token
 
-Token (also known as mobile ID or MID) is the identity ID of a device. It is randomly generated by the server based on the device property and delivered to the local system. The token obtained by all apps using TPNS or Mobile Tencent Analytics (MTA) on the same device is the same.
+Token (also known as mobile ID or MID) is the identity ID of a device. It is randomly generated by the server based on the device property and delivered to the local system. The token obtained by all applications using TPNS or Mobile Tencent Analytics (MTA) on the same device is the same.
 
 One of the benefits of using token is that it eliminates the statistical impact of duplicate device IDs of knockoff mobile phones, increasing accuracy.
 
 If you use the latest version of MTA, the MID obtained through the MTA's StatConfig.getMid() API is the same as that obtained using this API.
 
-Note: A token is generated during the first registration, and will remain in the mobile phone. The token always exists regardless of unregistration. For version 3.0 and above, the token may change when the app is uninstalled and then reinstalled.
+Note: a token is generated during the first registration, and will remain in the mobile phone. The token always exists regardless of unregistration. For version 3.0 and above, the token may change when the application is uninstalled and then reinstalled.
 
-***(1) Function prototype***
+***(1) Function Prototype***
 
 
 ```java
@@ -802,9 +802,9 @@ public static String getToken(Context context)
 
 *** (2) Parameters***
 
-context: App context object
+context: application context object
 
-***(3) Return value***
+***(3) Returned value***
 
 A standard token will be returned upon success, and null or "0" upon failure
 
@@ -813,7 +813,7 @@ A standard token will be returned upon success, and null or "0" upon failure
 
 If it has already been configured in AndroidManifest.xml, it does not need to be called again; if both of them exist, this API will be used.
 
-***(1) Function prototype***
+***(1) Function Prototype***
 
 ```java
 public static boolean setAccessId(Context context, long accessId)
@@ -823,21 +823,21 @@ public static boolean setAccessId(Context context, long accessId)
 *** (2) Parameters***
 
 Context object
-accessId: The accessId obtained by registering in the frontend
+accessId: `accessId` obtained by registering on the frontend
 
 
-***(3) Return value***
+***(3) Returned value***
 
-true: Success
+true: success
 
-false: Failure
+false: failure
 
-Note: The accessId set through this API will also be stored in the file
+Note: the `accessId` set through this API will also be stored in the file
 
 ### Setting AccessKey
 If it has already been configured in AndroidManifest.xml, it does not need to be called again; if both of them exist, this API will be used.
 
-***(1) Function prototype***
+***(1) Function Prototype***
 
 ```java
 public static boolean setAccessId(Context context, String accessKey) 
@@ -848,14 +848,14 @@ public static boolean setAccessId(Context context, String accessKey)
 
 Context object
 
-accesskey: The accesskey obtained by registering in the frontend
+accesskey: `accesskey` obtained by registering on the frontend
 
 
-***(3) Return value***
+***(3) Returned value***
 
-true: Success
+true: success
 
-false: Failure
+false: failure
 
-Note: The accessId set through this API will also be stored in the file
+Note: the `accessId` set through this API will also be stored in the file
 

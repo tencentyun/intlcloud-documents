@@ -1,10 +1,10 @@
 # SDK API Description
 
-## Launching TPNS
+## Launching TPNS Service
 
 **Description**
 
-* Launch the TPNS service with information of the application registered on the official TPNS website.
+* Launch TPNS by using the information of the application registered at the official TPNS website
 
 **API**
 
@@ -14,11 +14,11 @@
 
 **Parameter description**
 
-* appID: The application ID you requested through the console, i.e., Access ID
-* appKey: The appKey you requested through the console, i.e., Access Key
-* delegate: Callback object 
+* appID: application ID applied through the frontend, i.e., the `Access ID`
+* appKey: `appKey` applied through the frontend, i.e., the `Access Key`
+* delegate: callback object 
 
-_**Note: the parameters required by the API must be entered correctly, otherwise the TPNS service will not push the message to the application correctly.**_
+_**Note: the parameters required by the API must be entered correctly; otherwise, TPNS will not be able to push messages correctly for the app.**_
 
 **Sample**
 
@@ -26,11 +26,11 @@ _**Note: the parameters required by the API must be entered correctly, otherwise
 [[XGPush defaultManager] startXGWithAppID: <#your access ID#>appKey:<#your access key#> delegate:<#your delegate#>];
 ```
 
-## Terminating TPNS
+## Stopping TPNS Service
 
 **Description**
 
-* After you terminate the TPNS service, you will not be able to use TPNS to push messages to devices. If you to need to use the service again, you must call `startXGWithAppID:appKey:delegate:` to restart the service.
+* After the TPNS service is stopped, the application will not be able to push messages to devices through TPNS. To receive messages pushed by TPNS again, you must call `startXGWithAppID:appKey:delegate:` method again to restart the TPNS service.
 
 **API**
 
@@ -44,13 +44,13 @@ _**Note: the parameters required by the API must be entered correctly, otherwise
 [[XGPush defaultManager] stopXGNotification];
 ```
 
-## Customizing Notification Bar Message Actions
+## Customizing Notification Panel Message Action
 
-### Creating Actions Supported by Messages
+### Creating message action
 
 **Description**
 
-Create a clickable event action in the notification message.
+Create a clickable event action in the notification
 
 **API**
 
@@ -60,9 +60,9 @@ Create a clickable event action in the notification message.
 
 **Parameter description**
 
-* identifier: Unique identifier of an action 
-* title: Action name 
-* options: Options supported by the action
+* identifier: unique action ID 
+* title: action name 
+* options: options supported by action
 
 **Sample**
 
@@ -70,13 +70,13 @@ Create a clickable event action in the notification message.
 XGNotificationAction *action1 = [XGNotificationAction actionWithIdentifier:@"xgaction001" title:@"xgAction1" options:XGNotificationActionOptionNone];
 ```
 
-_**Note: Only macOS10.14 and higher versions support clickable events in the notification bar. For earlier versions, this method returns null**_
+_**Note: the notification panel has the click event feature, which is only supported on macOS 10.14+. For earlier version, this method will return null**_
 
-### Creating a Category Object
+### Creating category object
 
 **Description**
 
-Create a category object in order to manage the Action object of the notification bar.
+Create a category object to manage the action object of the notification panel
 
 **API**
 
@@ -86,22 +86,22 @@ Create a category object in order to manage the Action object of the notificatio
 
 **Parameter description**
 
-* identifier: Identifier of a category object
-* actions: The action object groups of the current category
-* intentIdentifiers: Used to indicate the identifiers that can be recognized by Siri
-* options: Characteristics of the category
+* identifier: category object ID
+* actions: action object group owned by the current category
+* intentIdentifiers: used to indicate identifiers that can be recognized by Siri
+* options: category characteristics
 
-_**Note: Only macOS10.14 and higher versions support clickable events in the notification bar. For earlier versions, this method returns null**_
+_**Note: the notification panel has the click event feature, which is only supported on macOS 10.14+. For earlier version, this method will return null**_
 
 **Sample**
 
 ```Objective-C
-XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifier:@"xgCategory" actions:@[action1, action2] intentIdentifiers:@[] options:XGNotificationCategoryOptionNone];
+XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifier:@"xgCategory" actions:@[action1, action2] intentIdentifiers:@[] options:XGNotificatio nCategoryOptionNone];
 ```
 
-### Creating Configuration Categories
+### Creating configuration class
 
-Manage the types and characteristics of the push notification bar
+Manage the style and characteristics of the push message notification panel
 
 **API**
 
@@ -111,8 +111,8 @@ Manage the types and characteristics of the push notification bar
 
 **Parameter description**
 
-* categories: The category collection supported in the notification bar 
-* types: The registered notification type
+* categories: the collection of categories supported by the notification panel 
+* types: style of registered notification
 
 **Sample**
 
@@ -121,11 +121,11 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 ```
 
 
-## Badge Auto-add 1
+## Automatically Increasing Badge Number by 1
 
 **Description**
 
-* Call this API to report the current App badge number to the TPNS server. After client configuration is complete, you can use the **macOS badge auto-add 1** function. This feature is can be configured on console (Create a push notification→Notification bar messages→Common settings→Badge number)
+* Call this API to report the current application badge number to the TPNS server. After the client is configured, you can use the "automatically increasing badge number by 1" feature, which can be found in the console (create a push > notification panel message > general settings > badge number)
 
 **API**
 
@@ -135,10 +135,10 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 
 **Parameter description**
 
-* `badgeNumber` is the badge number of the application
+* badgeNumber, badge number of application
 
 **Note:  
-1. This API must be called locally, otherwise when the console uses the **macOS badge auto-add 1** feature, the badge will not change by default.  
+1. This API must be called locally; otherwise, the badge number by default will not change, even if the "automatically increasing badge number by 1" feature is enabled.  
 **
 
 **Sample**
@@ -147,11 +147,11 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 [[XGPush defaultManager] setBadge:7];
 ```
 
-## Managing Application Badges
+## Managing application badge
 
 **Description**
 
-* Manage the badge number displayed by Apps
+* Manage the badge number displayed by the application
 
 **API**
 
@@ -165,15 +165,15 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 // Set the application badge
 [[XGPush defaultManager] setXgApplicationBadgeNumber:0];
 
-// Get application badge
+// Get the application badge
 NSInteger number = [[XGPush defaultManager] xgApplicationBadgeNumber];
 ```
 
-## Push Results Statistics
+## Push Effect Statistics
 
 **Description**
 
-* The action the user takes for each message must be reported to help you better understand the operational results of each push message.
+* In order to better understand the operational effect of each push message, it is necessary to report the user action on the message
 
 The data reporting API needs to be called  
 **API**
@@ -208,13 +208,13 @@ The data reporting API needs to be called
 }
 ```
 
-## Managing a Device Token
+## Managing Device Token
 
-### Querying a Device Token
+### Querying device token
 
 **Description**
 
-* Query the Token string obtained from APNs by the current application
+* Query the token string obtained from APNs by the current application
 
 **API**
 
@@ -228,11 +228,11 @@ The data reporting API needs to be called
 NSString *token = [[XGPushTokenManager defaultTokenManager] deviceTokenString];
 ```
 
-### Querying APN Registration Results
+### Querying APNs registration result
 
 **Description**
 
-* If registration is successful, the application will call the callback method of the `NSApplicationDelegate` proxy object \(as shown below\).
+* If the registration is successful, the application will call the callback method of the `NSApplicationDelegate` delegate object \(see below\):
 
 **API**
 
@@ -240,11 +240,11 @@ NSString *token = [[XGPushTokenManager defaultTokenManager] deviceTokenString];
 - (void)application:(NSApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 ```
 
-### Querying the Registration Results of TPNS
+### Querying TPNS registration result
 
 **Description**
 
-* SDK’s launch method automatically registers the Token obtained by the device from APNs to the TPNS server. The registration result can be returned by using the `XGPushDelegate` \(below\) callback method.
+* The SDK launch method automatically registers the token obtained by the device from APNs to the TPNS server, and the registration result will be returned in the callback method of `XGPushDelegate` \(see below\):
 
 **API**
 
@@ -252,15 +252,15 @@ NSString *token = [[XGPushTokenManager defaultTokenManager] deviceTokenString];
 - (void)xgPushDidRegisteredDeviceToken:(NSString *)deviceToken error:(NSError *)error;
 ```
 
-_**Note: This callback method is called after successful registration. After the current Token is registered, the SDK caches the registration info, and the method will not be called again.**_
+_**Note: this callback method is called after the registration is successful. After the current token is registered, the SDK will cache the registration information, and this method will not be called again**_
 
-### Binding and Unbinding Tags/Accounts
+### Binding/Unbinding tag and account
 
 **Description**
 
-* Developers can bind tags to different users and then push messages to the tag. Pushing messages to tags allows all devices under the tag to receive the push messages. Multiple tags can be bound to a single device.
+* You can bind tags to different users and then push based on a specific tag, i.e., if you push to a tag, all devices under the tag will receive the push. One device can bind multiple tags.
 
-** Single operation API **
+**Single-operation API**
 ```Objective-C
 - (void)bindWithIdentifier:(nullable NSString *)identifier type:(XGPushTokenBindType)type;
 - (void)unbindWithIdentifer:(nullable NSString *)identifier type:(XGPushTokenBindType)type;
@@ -268,26 +268,26 @@ _**Note: This callback method is called after successful registration. After the
 
 **Parameter description**
 
-* identifier: Tags or accounts
-* type: Binding type
+* identifier: tag or account
+* type: binding type
 
 **Sample**
 
 ```Objective-C
-//Bind a tag:
+// Bind the tag:
 [[XGPushTokenManager defaultTokenManager] bindWithIdentifier:@"your tag" type:XGPushTokenBindTypeTag];
 
-//Unbind a tag:
+// Unbind the tag
 [[XGPushTokenManager defaultTokenManager] unbindWithIdentifer:@"your tag" type:XGPushTokenBindTypeTag];
 
-//Bind an account:
+// Bind an account:
 [[XGPushTokenManager defaultTokenManager] bindWithIdentifier:@"your account" type:XGPushTokenBindTypeAccount];
 
-//Unbind an account:
+// Unbind an account:
 [[XGPushTokenManager defaultTokenManager] unbindWithIdentifer:@"your account" type:XGPushTokenBindTypeAccount];
 ```
 
-** Batch operation API **
+**Batch operation API**
 
 ```Objective-C
 - (void)bindWithIdentifiers:(nonnull NSArray <NSString *> *)identifiers type:(XGPushTokenBindType)type
@@ -295,41 +295,41 @@ _**Note: This callback method is called after successful registration. After the
 ```
 **Parameter description**
 
-* identifiers: Tags or accounts
-* type: Binding type
+* identifiers: tag or account list
+* type: binding type
 
-** Note **
-* At present, account type is not supported. Tag strings cannot contain spaces or tab characters.
+**Note**
+* Account type is currently not supported. The tag string cannot contain spaces or tabs
 
-### Batch Updating Tags/Accounts
+### Batch updating tags/accounts
 
-** API **
+**API**
 ```Objective-C
 - (void)updateBindedIdentifiers:(nonnull NSArray <NSString *> *)identifiers bindType:(XGPushTokenBindType)type;
 ```
 **Parameter description**
 
-* identifiers: A string array of tag identifiers. Tag strings cannot contain spaces or tab characters.
-* type: Identifier type
+* identifiers: tag ID string array. The tag string cannot contain spaces or tabs
+* type: ID type
 
-** Note **
-* If specified as a tag type, the API will replace the old tags corresponding to the Token with the current tags. If specified as an account type, the API takes the first one from the identifiers list.
+**Note**
+* If the tag type is specified, this API will replace all the old tag corresponding to the current token with the current tag; if the account type is specified, this API will only take the first one in the `identifiers` list
 
-### Clearing All Tags/Accounts
+### Clearing all tags/accounts
 
-** API **
+**API**
 ```Objective-C
 - (void)clearAllIdentifiers:(XGPushTokenBindType)type;
 ```
 **Parameter description**
-* type: Identifier type
+* type: ID type
 
 
-### Querying Bound Tags and Accounts
+### Querying tags and accounts bound to token
 
 **Description**
 
-* Query identifiers bound to current Token objects based on the specified type 
+* Query the ID bound to the current token object by the specified type 
 
 **API**
 
@@ -340,17 +340,17 @@ _**Note: This callback method is called after successful registration. After the
 **Sample**
 
 ```objective-c
-// Query tags
+// Query the tag
 [[XGPushTokenManager defaultTokenManager] identifiersWithType:XGPushTokenBindTypeTag];
-// Query accounts
+// Query the account
 [[XGPushTokenManager defaultTokenManager] identifiersWithType:XGPushTokenBindTypeAccount];
 ```
 
-## Querying Device Notification Permissions
+## Querying Device Notification Permission
 
 **Description**
 
-* Query whether device notification permissions have been allowed by the user 
+* Query whether the user allows device notification 
 
 **API**
 
@@ -360,7 +360,7 @@ _**Note: This callback method is called after successful registration. After the
 
 **Parameter description**
 
-* handler: The return method for the query result
+* handler: return method of query result
 
 **Sample**
 
@@ -370,7 +370,7 @@ _**Note: This callback method is called after successful registration. After the
     }];
 ```
 
-## Querying the SDK Version
+## Querying SDK Version
 
 **Description**
 
@@ -390,5 +390,5 @@ _**Note: This callback method is called after successful registration. After the
 
 ## Local Push
 
-For information about local push-related functions, see [Apple Developer Documentation](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/SchedulingandHandlingLocalNotifications.html#//apple_ref/doc/uid/TP40008194-CH5-SW1).
+For local push features, please see [Apple developer documentation](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/SchedulingandHandlingLocalNotifications.html#//apple_ref/doc/uid/TP40008194-CH5-SW1).
 

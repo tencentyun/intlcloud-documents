@@ -5,44 +5,44 @@
 ```shell
 https://api.tpns.tencent.com/v3/device/tag
 ```
-**API description**: Tag API is the general term for all tag APIs. Tag API includes various APIs used to set, update, and delete tags as follows:
+**API description**: `Tag` API is the general term for all tag APIs. It includes various APIs for setting, updating, and deleting which are described as below:
 
 
 
-## Parameter Descriptions
-#### Request Parameters
+## Parameter Description
+#### Request parameters
 
-| Parameter name | Type | Required | Description |
+| Parameter Name | Type | Required | Description |
 | -------------- | ------- | ---- | ---------------------------------------- |
-| operator_type | int | Yes | Operation type:<li>Add a single tag to a single token.<li>Delete a single tag from a single token.<li>Add multiple tags to a single token.<li>Delete multiple tags from a single token.<li>Delete all tags from a single token.<li>Add one or more tags or custom class tags to a single token in an overriding manner.<br>This API only starts to set up new tags after the tag history is cleared, so calling it up takes some time (more than 5s recommended). Otherwise it may cause updating failure.<li>Add a single tag to multiple tokens.<li>Delete a single tag from multiple tokens.<li>Batch add tags (up to 20 pairs are allowed per call; in each tag-token pair, the tag is before the token).<br><li>Batch delete tags (up to 20 pairs are allowed per call; in each tag-token pair, the tag is before the token). |
-| platform | string | Yes | Client platform type: <li>Android: Android <li>iOS: Apple |
-| token_list | array | No | Device list:<li>Required when operator_type = 1,2,3,4,5,6,7,8.<li>When operator_type = 1,2,3,4,5,6, if this parameter contains multiple tokens, only the first one will be set.<li>Format example:["token1","token2"] <li>The list can contain up to 20 values.<li>A token string cannot exceed 64 characters. |
-| tag_list | array | No | Tag list:<li>Required when operator_type = 1,2,3,4,6,7,8; ignored when operator_type = 5.<li>When operator_type = 1,2,3,4,6,7,8, if this parameter contains multiple tags, only the first tag will be set if for a single tag.<li>Format example: ["tag1","tag2"]<li>The list can contain up to 20 values.<li>A tag string cannot exceed 50 characters. |
-| tag_token_list | array | No | Tag-device list:<li>Required when operator_type =9,10.<li>Format example: [{"tag":"tag123", "token":"token123"}]<li>In each pair, the tag must be before the token.<li>The list can contain up to 20 values.<li>A tag string cannot exceed 50 characters.<li>A token string cannot exceed 64 characters. |
+| operator_type | int | Yes | Operation type:<li>Add a single tag to a single token.<li>Delete a single tag from a single token.<li>Add multiple tags to a single token.<li>Delete multiple tags from a single token.<li>Delete all tags from a single token.<li>Add one or more tags or custom tags to a single token in an overriding manner.<br>This API only starts to set up new tags after the tag history is cleared, so calling it up takes some time (more than 5s recommended); otherwise, it may cause updating failure.<li>Add a single tag to multiple tokens.<li>Delete a single tag from multiple tokens.<li>Batch add tags (up to 20 pairs are allowed per call; in each tag-token pair, the tag is before the token).<br><li>Batch delete tags (up to 20 pairs are allowed per call; in each tag-token pair, the tag is before the token). |
+| platform | string | Yes | Client platform type: <li>Android: Android <li>iOS: iOS |
+| token_list | array | No | Device list:<li>Required if `operator_type` is 1, 2, 3, 4, 5, 6, 7, or 8.<li>If `operator_type` is 1, 2, 3, 4, 5, or 6, if this parameter contains multiple tokens, only the first one will be set.<li>Format example:["token1","token2"] <li>The list can contain up to 20 values.<li>A token string cannot exceed 64 characters. |
+| tag_list | array | No | Tag list:<li>Required if `operator_type` is 1, 2, 3, 4, 6, 7, or 8; ignored if `operator_type` is 5.<li>If `operator_type` is 1, 2, 3, 4, 6, 7, or 8, if this parameter contains multiple tags, only the first tag will be set if for a single tag.<li>Format example: ["tag1","tag2"]<li>The list can contain up to 20 values.<li>A tag string cannot exceed 50 characters. |
+| tag_token_list | array | No | Tag-device list:<li>Required if `operator_type` is 9 or 10.<li>Format example: [{"tag":"tag123", "token":"token123"}]<li>In each pair, the tag must be before the token.<li>The list can contain up to 20 values.<li>A tag string cannot exceed 50 characters.<li>A token string cannot exceed 64 characters. |
 
 >
-- If the API is being called just one time without setting up continuous tags, then there are no restrictions on the API call method.
+- If the API is being called just once without setting up continuous tags, then there are no restrictions on the API call method.
 - If the API is called by setting up continuous tags, then the following must be noted:
- - If there is a need to set up API calling by using continuous tags with more than 10 tags or more than 10 tokens, it is recommended that batch APIs be used. However, it is recommended that the interval between API calls be no less than 5s to guarantee correct tag operations.
- - When not using batch APIs, then the API for the next non-batched tag is called after the returned value of the TPNS server is clearly obtained. It is not recommended that multi-thread async be used at the same time as performing tag API calling.
-- “:” is a keyword used by the TPNS backend for customizing tag categories. If the “:” field is included when setting up tags, then the tag in front of the first “:” is the category of this custom tag. The batch setting of tag categories is supported when the operator_type is 6. When performing batch tag deletion, the tag deletion can be performed by category. For details, see the example of when the operator_type is 6 in the following request example. 
+ - If there is a need to set up API calling for continuous tags with more than 10 tags or more than 10 tokens, it is recommended that batch APIs be used. However, it is recommended that the interval between API calls be no less than 5s to guarantee correct tag operations.
+ - If you are not using batch APIs, then the API for the next non-batched tag should be called after the returned value of the TPNS server is clearly obtained. It is not recommended that multi-thread async be used at the same time as performing tag API calling.
+- ":" is a keyword used by the TPNS backend for customizing tag categories. If the ":" field is included when setting up tags, then the tag in front of the first ":" is the category of this custom tag. The batch setting of tag categories is supported if the `operator_type` is 6. When performing batch tag deletion, the tag deletion can be performed by category. For more information, please see the following sample request where `operator_type` is 6.
 
 
 
 
-#### Response Parameters
+#### Response parameters
 
 | Field name   | Type    | Required | Comments                                                         |
 | -------- | ------- | -------- | ------------------------------------------------------------ |
 | seq      | int64_t | Yes       | The same as the request packet (if the request packet is invalid JSON, this field is 0)              |
-| ret_code | int32_t | Yes       | Error code; for details, see the error codes table                                 |
+| ret_code | int32_t | Yes       | Error code. For more information, please see the error codes table                                 |
 | err_msg  | string  | No       | Error message when an error occurs in the request                                         |
-| result   | string  | No       | When the request is correct:<li>If there is extra data to be returned, the result will be encapsulated in the json of this field. If there is no extra data, there may be no such field |
+| result   | string  | No       | When the request is correct:<li>If there is extra data to be returned, the result will be encapsulated in the json of this field. If there is no extra data, <li>there may be no such field |
 
 
 
-## Example(s)
-#### Examples of Tag Binding and Unbinding Requests
+## Samples
+#### Sample tag binding and unbinding requests
 
 - Add a single tag (tag1) to a single token (token1)
 
@@ -99,7 +99,7 @@ https://api.tpns.tencent.com/v3/device/tag
 }
 ```
 
-- Tag overrides custom tags for token1.
+- Tag overrides custom tags of token1.
 
 ```json
 {
@@ -109,9 +109,9 @@ https://api.tpns.tencent.com/v3/device/tag
 "token_list": ["token1"]
 }
 ```
-> If one or more tags does not contain the “:” symbol, then the test:2 and level tags override all custom tags for token1.
+> If one or more of the tags do not contain ":", then the test:2 and level tags override all custom tags of token1.
 
-- Batch override custom tags for a single token (this API only overrides custom tags and does not override all tags)
+- Batch override custom tags of a single token (this API only overrides custom tags and does not override all tags)
 
 ```json
 {
@@ -121,7 +121,7 @@ https://api.tpns.tencent.com/v3/device/tag
 "token_list": ["token1"]
 }
 ```
-> If all tags contain the “:” symbol, then only the custom tags of the tag type corresponding to token1 before the “:” symbol are overridden.
+> If all tags have ":", only the custom tags of token1 before ":" will be overridden.
 
 - Add a single tag (tag1) to multiple tokens (token1 and token2)
 
@@ -151,7 +151,7 @@ https://api.tpns.tencent.com/v3/device/tag
 {
 "operator_type": 9,
 "platform": "android",
-"tag_token_list":  [["tag1","token1"],["tag2","token2"]]
+"tag_token_list": [{"tag":"tag1","token":"token1"}]
 
 }
 ```
@@ -179,7 +179,7 @@ https://api.tpns.tencent.com/v3/device/tag
 ```
 
 
-#### Example of Tag Setting Request
+#### Sample tag setting request
 
 ```json
 POST /v3/device/tag HTTP/1.1
@@ -196,7 +196,7 @@ Postman-Token: 4b82a159-afdd-4f5c-b459-de978d845d2f
 }
 ```
 
-#### Example of Tag Setting Response
+#### Sample tag setting response
 
 ```json
 {

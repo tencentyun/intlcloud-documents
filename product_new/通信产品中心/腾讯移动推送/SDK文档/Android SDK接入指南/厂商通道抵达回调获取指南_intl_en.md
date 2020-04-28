@@ -1,12 +1,12 @@
 ﻿
 
-To help you analyze the full-linkage message push effect, TPNS supports display of arriving data through vendor-specific channels. The support for callback of arriving data varies by vendor in China, and data of some channels cannot be directly obtained without corresponding configuration.
+To help you analyze the full-linkage message push effect, TPNS supports display of arriving data through vendor channels. The support for receipt of arriving data varies by vendor in China, and data of some channels cannot be directly obtained without corresponding configuration.
 
 After successfully configuring the arriving data display feature, you can view the push conversion data in push details in the TPNS Console or get it by using a TPNS RESTful API.
 
 ## Overview
 
-| Vendor-specific Channel | Arrival Supported | Configuration Required |
+| Vendor Channel | Arrival Supported | Configuration Required |
 | -------- | ---------------- | ------------ |
 | Huawei channel | Yes               | Yes           |
 | Mi channel | Yes               | No           |
@@ -22,7 +22,7 @@ The acquisition of arriving data through the Huawei channel needs to be configur
 
 1. Log in to [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) and select **My App**.
 ![](https://main.qcloudimg.com/raw/59521f7425a5d6e1bccae726635096dc.png)    
-2. Select the product name of your app for which you want to activate the push service to enter the app information page.
+2. Select the product name of your application for which you want to activate the push service to enter the application information page.
 3. Click the **Develop** tab and select **Growing** > **Push Service** on the left sidebar.
 4. In the service status section, click **Activate**. After the service is activated, you can select whether to enable receipt.
 ![](https://main.qcloudimg.com/raw/32556c2eb1d74756583cc8c27d436883.png)

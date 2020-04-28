@@ -1,29 +1,29 @@
 ﻿
 
 ## Operation Scenarios
-The OPPO PUSH channel is a system-level push channel officially provided by OPPO. On an OPPO phone, push messages can be delivered through OPPO's system channel without opening the app. For more information, please visit [OPPO PUSH's official website](https://push.oppo.com/).
+The OPPO PUSH channel is a system-level push channel officially provided by OPPO. On an OPPO phone, push messages can be delivered through OPPO's system channel without opening the application. For more information, please visit [OPPO PUSH's official website](https://push.oppo.com/).
 
 
 >
 - OPPO PUSH currently does not support in-app messages, which will be displayed as notifications.
-- OPPO PUSH imposes a certain limit (which is not disclosed) on the number of daily push messages (including notifications and passthrough messages). When this limit is exceeded, excessive messages will be pushed through TPNS channel.
+- OPPO PUSH imposes a certain limit (which is not disclosed) on the number of daily push messages (including notifications and pass-through messages). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
 - OPPO PUSH is supported by OPPO ColorOS v3.1 or above.
-- When apps are installed on an OPPO phone, the notification bar permission will not be granted by default. You can call the [notification bar permission requesting](#qqtz) API or guide the user to manually grant the permission to the app.
+- When applications are installed on an OPPO phone, the notification bar permission will not be granted by default. You can call the [notification bar permission requesting](#qqtz) API or guide the user to manually grant the permission to the application.
 
 
 ## Directions
 ### Applying for permission
-Use an OPPO enterprise developer account to log in to the [OPPO Developer Platform](https://open.oppomobile.com/) and select "Management Center > App Service Platform > Mobile App List > Select App > Development Service > Push Service" to apply for the OPPO PUSH permission.
+Use an OPPO enterprise developer account to log in to the [OPPO Developer Platform](https://open.oppomobile.com/) and select "Management Center > Application Service Platform > Mobile Application List > Select Application > Development Service > Push Service" to apply for the OPPO PUSH permission.
 
 ### Getting key
 >You can only view the key under a developer account (root account).
 
-After your application for activating OPPO PUSH is approved, you can select [OPPO PUSH Platform](https://push.oppo.com/) > Configuration Management > App Configuration to view the `AppKey`, `AppSecret`, and `MasterSecret`. For more information, please see [Quick Integration Guide](https://open.oppomobile.com/wiki/doc#id=10195)
+After your application for activating OPPO PUSH is approved, you can select [OPPO PUSH Platform](https://push.oppo.com/) > Configuration Management > Application Configuration to view the `AppKey`, `AppSecret`, and `MasterSecret`. For more information, please see [Quick Integration Guide](https://open.oppomobile.com/wiki/doc#id=10195)
 
 
 
 ### Configuring push channel
-To be compatible with channel configurations for Android 8.0 or above on OPPO phones, you need to create a default TPNS push channel in the OPPO Console. For more information, please see [OPPO's official documentation](https://open.oppomobile.com/wiki/doc/#id=10198).
+To be compatible with channel configurations for Android 8.0 or above on OPPO phones, you need to create the default TPNS channel in the OPPO Console. For more information, please see [OPPO's official documentation](https://open.oppomobile.com/wiki/doc/#id=10198).
 The configuration items are as described below:
 - "Channel ID": "default_message"
 - "Channel Name": "default notification"
@@ -79,12 +79,12 @@ After getting the TPNS SDK package for OPPO PUSH, configure the major TPNS versi
 ```java
 XGPushConfig.enableOppoNotification(getApplicationContext(), true);
 ```
-When the app is opened for the first time, the window for requesting notification bar permission will pop up, and it pops up only once before the app is reinstalled. The TPNS-OPPO dependency package must be v1.1.5.1 or above, and the phone OS must be ColorOS 5.0 or above.
+When the application is opened for the first time, the window for requesting notification bar permission will pop up, and it pops up only once before the application is reinstalled. The TPNS-OPPO dependency package must be v1.1.5.1 or above, and the phone OS must be ColorOS 5.0 or above.
 
 
 
 
-### Enabling OPPO PUSH
+### Enabling OPPO Push
 Call the following code before calling TPNS' ```XGPushManager.registerPush```:
 ```java
 // Note that OPPO's `AppKey` is entered here rather than the `AppId`
@@ -94,16 +94,16 @@ XGPushConfig.setOppoPushAppKey(getApplicationContext(), "OPPO AppSecret");
 // Enable the third-party push
 XGPushConfig.enableOtherPush(getApplicationContext(), true);
 
-//The log of successful registration is as follows:
+// The log of successful registration is as follows:
 I/XINGE: [XGOtherPush] other push token is : CN_93394e648ee5a73f5c5a0835b2a7e3d5  other push type: oppo
 I/XINGE: [h] >> bind OtherPushToken success ack with [accId = 1500xxxxxx  , rsp = 0]  token = 0114d716bfe01d75f861d05a920cca8c8226 otherPushType = oppo otherPushToken = CN_93394e648ee5a73f5c5a0835b2a7e3d5
 ```
 
 
-### Obfuscating code
+### Code obfuscation
 ```xml
 -keep public class * extends android.app.Service
 -keep class com.heytap.mcssdk.** {*;}
 ```
 
->Obfuscation rules must be stored in the `proguard-rules.pro` file at the app project level.
+>Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
