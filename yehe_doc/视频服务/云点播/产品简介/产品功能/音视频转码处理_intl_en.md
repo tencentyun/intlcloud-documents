@@ -1,5 +1,5 @@
 ## System Architecture
-<img src="https://mc.qcloudimg.com/static/img/962be55d993d07eee39c66d27fd778fe/image.png" width="650">
+<img src="https://main.qcloudimg.com/raw/146d801f4900734b8faa0435b34ea6cc.png" width="650">
 
 ## Features
 ### Audio/video transcoding
