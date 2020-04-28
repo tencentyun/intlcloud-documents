@@ -192,10 +192,10 @@
 | SentBytes                                     | Bytes/s  | Data sending rate                                         |
 | RpcQueueTimeNumOps                            | Calls/s      | RPC call rate                                         |
 | RpcQueueTimeAvgTime                           | ms       | Average RPC delay                                     |
-| RpcAuthenticationFailures                     | -     | Number of RPC authentication failures                                     |
-| RpcAuthenticationSuccesses                    | - | Number of RPC authentication successes                                     |
+| RpcAuthenticationFailures               | -     | Number of RPC authentication failures                                     |
+| RpcAuthenticationSuccesses                    | -     | Number of RPC authentication successes                                     |
 | RpcAuthorizationFailures                      | -     | Number of RPC authorization failures                                     |
-| RpcAuthorizationSuccesses                     | - | Number of RPC authorization successes                                     |
+| RpcAuthorizationSuccesses                     | -     | Number of RPC authorization successes                                     |
 | NumOpenConnections                            | -     | Number of current connections                                         |
 | CallQueueLength                               | -     | Length of current RPC processing queue                                |
 | MemNonHeapUsedM | MB | Size of NonHeapMemory currently used by JVM |
@@ -275,8 +275,8 @@
 | XceiverCount | - | Number of Xceivers |
 | BytesWrittenMB                          | Bytes/s  | DN byte write rate                         |
 | BytesReadMB                             | Bytes/s  | DN byte read rate                         |
-| | RemoteBytesReadMB | Bytes/s | Rate of bytes read by remote client |
-| | RemoteBytesWrittenMB                    | Bytes/s | Rate of bytes written by remote client |
+| RemoteBytesReadMB | Bytes/s | Rate of bytes read by remote client |
+| RemoteBytesWrittenMB                    | Bytes/s | Rate of bytes written by remote client |
 | WritesFromRemoteClient                  | -       | QPS of write operations from remote client                  |
 | WritesFromLocalClient                   | -       | OPS of write operations from local client                  |
 | ReadsFromRemoteClient                   | -       | QPS of read operations from remote client                  |
@@ -300,7 +300,7 @@
 | FlushNanosNumOps                        | Operations/s     | Number of Flush operations processed per second                      |
 | ReadBlockOpAvgTime                      | ms       | Average block read time                    |
 | WriteBlockOpAvgTime                     | ms       | Average block write operation time                         |
-| BlockChecksumOpAvgTime                  | ms       | Average block check time |                         |
+| BlockChecksumOpAvgTime                  | ms       | Average block check time |
 | CopyBlockOpAvgTime                      | ms       | Average block copy time                         |
 | ReplaceBlockOpAvgTime                   | ms       | Average Replace Block operation time                         |
 | BlockReportsAvgTime                     | ms       | Average block reporting time                             |
@@ -649,7 +649,7 @@ ThreadsNew                         | -       | Number of JVM threads       |
 
 ## HBase Monitoring Metrics
 
-### Hbase - overview
+### HBase - overview
 
 | Metric Name | Unit | Description |
 | ----------------------- | -------- | -------------------------- |
