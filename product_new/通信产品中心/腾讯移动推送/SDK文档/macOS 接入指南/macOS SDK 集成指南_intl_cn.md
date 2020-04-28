@@ -110,7 +110,7 @@
 
 ```objective-c
 /**
- @brief 监控腾讯移动推送推送服务地启动情况
+ @brief 监控腾讯移动推送服务地启动情况
 
  @param isSuccess 腾讯移动推送推送是否启动成功
  @param error 腾讯移动推送推送启动错误的信息
