@@ -26,14 +26,14 @@
 pod repo update
 pod search TPNS-iOS
 pod install //安装SDK 
-```  
+```
 
  -  **方式二：carthage 导入**
  在 Cartfile 文件中指明依赖的第三方库：
 ```
  github "xingePush/carthage-TPNS-iOS"
 ```
- 
+
  - **方式三：手动导入**
 进入腾讯移动推送控制台，单击左侧菜单栏【[SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload)】，进入下载页面，选择需要下载的 SDK 版本，单击操作栏【下载】即可。
 
@@ -61,7 +61,7 @@ pod install //安装SDK
 
 11. 调用启动腾讯移动推送的 API，并根据需要实现 `XGPushDelegate` 协议中的方法，开启推送服务。
 	1. 启动腾讯移动推送服务， `AppDelegate` 示例如下：
-```Objective-C
+   ```Objective-C
 @interface AppDelegate () <XGPushDelegate>
 @end 
 /**
@@ -74,42 +74,29 @@ pod install //安装SDK
 [[XGPush defaultManager] startXGWithAppID:<#your appID#> appKey:<#your appKey#>  delegate:<#your delegate#>];
 return YES;
 }
-```
+   ```
 	2. 在 `AppDelegate` 中，选择实现 `XGPushDelegate ` 协议中的方法：
-	```objective-c
-		/**
-		 收到推送的回调
-		 @param application  UIApplication 实例
-		 @param userInfo 推送时指定的参数
-		 @param completionHandler 完成回调
-		 */
-		- (void)application:(UIApplication *)application 
-					didReceiveRemoteNotification:(NSDictionary *)userInfo 
-							fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
-			{
-				completionHandler(UIBackgroundFetchResultNewData);
-		}
-		// iOS 10 新增回调 API
-		// App 用户点击通知
-		// App 用户选择通知中的行为
-		// 无论本地推送还是远程推送都会走这个回调
-	#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 	__IPHONE_10_0
-		- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center 
-					didReceiveNotificationResponse:(UNNotificationResponse *)response 
-					withCompletionHandler:(void (^)(void))completionHandler 
-					{
-							completionHandler();
-		}
-
-		// App 在前台弹通知需要调用这个接口
+		```objective-c
+		/// 统一收到通知消息的回调
+		/// @param notification 消息对象
+		/// @param completionHandler 完成回调
+		/// 区分消息类型说明：xg字段里的msgtype为1则代表通知消息msgtype为2则代表静默消息
+		/// notification消息对象说明：有2种类型NSDictionary和UNNotification具体解析参考示例代码
+		- (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler{
+		/// code
+		} 
+		#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+		/// iOS 10 新增 API
+		/// iOS 10 会走新 API, iOS 10 以前会走到老 API
+		/// App 用户点击通知和用户选择通知中的行为
+		/// 无论本地推送还是远程推送都会走这个回调
 		- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center
-					 willPresentNotification:(UNNotification *)notification 
-							 withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
-							 {
-									 completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
-		}
-		#endif
-	```
+	  didReceiveNotificationResponse:(UNNotificationResponse *)response
+	           withCompletionHandler:(void (^)(void))completionHandler {
+	                                                     /// code
+	}
+	#endif
+			 ```
 
 
 #### 境外集群接入方法
@@ -117,7 +104,7 @@ return YES;
 2. 调用头文件中的配置 `HOST` 接口：
  - 如需接入新加坡集群则将 `HOST`设置为 `https://api.tpns.sgp.tencent.com`, `PORT`设置为0。
  - 如需接入中国香港集群则将 `HOST` 设置为`https://api.tpns.hk.tencent.com`, `PORT `设置为0。
- 
+
 **示例**
 ``` object-c
 [[XGPush defaultManager] configureHost:@"https://api.tpns.hk.tencent.com" port:0]
@@ -139,22 +126,13 @@ return YES;
 
 
 
-#### 实现 ```XGPushDelegate``` 协议
+#### 实现 `XGPushDelegate` 协议
 
-在调试阶段，建议实现协议中的第二个方法，即可获取更详细的调试信息：
+在调试阶段，建议实现协议中的此方法，即可获取更详细的调试信息：
 
 ```objective-c
 /**
- @brief 监控腾讯移动推送服务地启动情况（已废弃）
-
- @param isSuccess 腾讯移动推送是否启动成功
- @param error 腾讯移动推送启动错误的信息
- */
-- (void)xgPushDidFinishStart:(BOOL)isSuccess error:(nullable NSError *)error;
-
-/**
  @brief 注册推送服务回调
- 
  @param deviceToken APNs 生成的 Device Token
  @param xgToken TPNS 生成的 Token，推送消息时需要使用此值。TPNS 维护此值与 APNs 的 Device Token 的映射关系
  @param error 错误信息，若 error 为 nil 则注册推送服务成功
@@ -166,43 +144,28 @@ return YES;
 如果 Xcode 控制台，显示如下相似日志，表明客户端已经正确集成 SDK。
 
 ```javascript
-[xgpush]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59991583a925030f1b913625a9dab
-[xgpush]Current XG token is 05da87c0ae5973bd2dfa9e08d884aada5bb2
+[TPNS] Current device token is 9298da5605c3b242261b57****376e409f826c2caf87aa0e6112f944
+[TPNS] Current TPNS token is 00c30e0aeddff1270d8****dc594606dc184  
 ```
 >在推送单个目标设备时请使用 XG 36位的 Token。
 
-## 自定义响应消息内容
+## 统一接收消息及点击消息回调说明
 
-iOS 设备收到一条推送消息，用户点击推送消息打开应用时，应用程序根据状态不同进行处理：
+- 高于iOS 10.0 的系统版本，点击消息，此函数将被调用.
+```objective-c
+	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler;
+```
+- 低于iOS 10.0 的系统版本，点击消息，此函数将被调用：
+```objective-c
+	- (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
+```
 
-- 若 App 状态为未运行，此函数将被调用。
- - 若 launchOptions 包含 UIApplicationLaunchOptionsRemoteNotificationKey ，表示用户点击推送消息导致 App 被启动运行。
- - 若不含有对应键值，则表示 App 不是因点击消息而被启动，可能为直接点击 icon 启动或其他。
- ```objective-c
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
-	{
-			// 消息内容获取
-			NSDictionary *remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-			// 然后根据消息内容进行逻辑处理
-	}
- ```
-- 若 App 状态为正在前台或者是在后台但仍处于 Active 状态。
- - 基于 iOS 7.0+ 系统版本，如果是使用 Remote Notification 特性，那么处理函数需要使用如下代码：
-	```objective-c
-	- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
-	```
- - 基于 iOS 10.0+ 的系统版本，如果是使用 Remote Notification 特性，那么处理函数建议使用新增 UserNotifications Framework 来进行处理，请使用 XGPushDelegate 协议中的以下两个方法，示例代码如下：
-	```objective-c
-	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-		NSLog(@"[XGDemo] click notification");
-		completionHandler();
-	}
+- 若收到的是静默消息，此函数将被调用：
+```objective-c
+	- (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
+```
 
-	// App 在前台弹推送消息需要调用这个接口
-	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-		completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
-	}
-	```
+>应用在前台收到消息不管点不点击消息都会走xgPushDidReceiveRemoteNotification统一接收消息回调 
 
 <span id="zhuxiao"></span>
 ## 注销信鸽平台推送服务
@@ -243,6 +206,5 @@ iOS 设备收到一条推送消息，用户点击推送消息打开应用时，�
 //获取 APNs 生成的 DeviceToken
 [[XGPushTokenManager defaultTokenManager] deviceTokenString];
 ```
-
 
 
