@@ -1,5 +1,5 @@
 ## Overview
-With Elastic Kubernetes Service (EKS), you can ignore cluster nodes. However, to properly allocate resources and accurately calculate fees, you need to specify resource specifications for a pod when deploying a workload. Based on the specified specifications, Tencent Cloud allocates resources to the workload and calculates the fees of the workload.
+Elastic Kubernetes Service (EKS) can free you from managing cluster nodes. However, to properly allocate resources and accurately calculate fees, you need to specify resource specifications for a pod when deploying a workload. Based on the specified specifications, Tencent Cloud allocates resources to the workload and calculates the fees accordingly.
 
 When creating a workload for EKS through the Kubernetes API or kubectl, you also need to specify the resource specifications. For more information, see [Workload Management](https://intl.cloud.tencent.com/document/product/457/34043).
 
@@ -12,7 +12,7 @@ When creating a workload for EKS through the Kubernetes API or kubectl, you also
 
 
 ## Supported Regions
-The following table describes the regions, availability zones, and resource types that are currently supported by EKS. In the future, EKS will be supported in other regions.
+The following table describes the regions, availability zones, and resource types that are currently supported by EKS. 
 
 <table class="table-striped">
 <tbody>
@@ -45,9 +45,9 @@ The following table describes the regions, availability zones, and resource type
 
 ## CPU Specifications
 
-EKS provides the following CPU specifications for pods in all regions where CPU resources are supported. EKS also provides a set of CPU options, and different CPU sizes correspond to different memory ranges. When creating a work, you must specify the CPU specification based on your actual need.
+EKS provides the following CPU specifications for pods in all regions where CPU resources are supported. EKS also provides a set of CPU options. Different CPU sizes correspond to different memory ranges. When creating a workload, you should specify the CPU specification based on your actual need.
 
-| CPU/Core | Memory Range/GiB | Granularity of Memory Range/GiB |
+| CPU (Core) | Memory Range (GiB) | Granularity of Memory Range (GiB) |
 | -------|-------|------- |
 | 0.25 | 0.5, 1, 2 | - |
 | 0.5 | 1, 2, 3, 4 | - |
