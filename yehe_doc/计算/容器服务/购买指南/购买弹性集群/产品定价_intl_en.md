@@ -5,11 +5,11 @@ Elastic Kubernetes Service (EKS) bills a pod by multiplying the [resource specif
 | CPU | 0.000004976 USD per core per second | 20% | 0.000003981 USD per core per second |
 | Memory | 0.000002073 USD per GiB per second | 20% | 0.000001658 USD per GiB per second |
 
-> The current discount remains valid until 00:00:00 on May 15, 2020. The discount price is valid on dates before May 15, 2020 and will return to normal afterwards.
+> The above offer is valid until 00:00:00 on May 15, 2020. 
 
 
 ## Running Time
-The running time is the time that elapses from when a pod fetches the first container image until the pod is terminated. The pod is billed for the resources used during this period, which is measured in seconds.
+The running time is the time that elapses from when a pod fetches the first container image until the pod stops running. The pod is billed for the resources used during this period, which is measured in seconds.
 
 
 ## Billing Examples

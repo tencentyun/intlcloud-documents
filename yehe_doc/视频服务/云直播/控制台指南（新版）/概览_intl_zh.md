@@ -5,10 +5,10 @@
 查看【昨日流量消耗】标签，单击【切换】，查看计费切换提醒，单击【确定】即可切换计费模式。
 >如果想了解更多计费价格可以单击提示中的[【价格总览】](https://intl.cloud.tencent.com/document/product/267/2819)进行参阅。
 
-![](https://main.qcloudimg.com/raw/c1a94b6fcf37cffeee7c431d1619906c.png)
+![](https://main.qcloudimg.com/raw/e453bf47bbd6bfb9d0202dcdc9539c86.png)
 
 
 #### 2. 更改时间粒度
 您可在查看计费宽带趋势或计费流量趋势时更改时间粒度，单击【时间粒度】右边的时间，进行选择。
-![](https://main.qcloudimg.com/raw/6d18a812d41f45740bc1e70e0422cb3c.png)
+![](https://main.qcloudimg.com/raw/924b21e740f525317441b0feb14f95dc.png)
 

@@ -1,4 +1,4 @@
-## Operation Scenario
+## Introduction
 
 This document describes how to create a simple web application through TKE.
 
@@ -12,56 +12,56 @@ This application is a sample application supplied with the Kubernetes project. F
 - You have registered a Tencent Cloud account. For more information, see [Registering a Tencent Cloud account](https://intl.cloud.tencent.com/register).
 - You have created a cluster. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 
-## Procedure
+## Directions
 ### Creating a redis-master service
 1. Log in to the TKE console and click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
-2. Click the ID of the cluster for which the application is to be created. On the **Deployment** page that appears, click **Create**, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/0192e80bccd66947eb505a18b4b536d4.png)
-3. On the **New Workload** page that appears, specify the basic information of the workload as instructed.
-![](https://main.qcloudimg.com/raw/f5a78647faa6096d81c682a271cc6aaf.png)
- - **Workload Name**: indicates the name of the workload to be created. In this example, the name is **redis-master**.
+2. Click on the cluster ID for which the application is to be created, and go to the Deployment page. Select **Create**. See the figure below:
+![](https://main.qcloudimg.com/raw/378d95d782c5efbf9cd9061f4c708e22.png)
+3. Set up the workload basic information on the **Create Workload** page according to the following instructions. See the figure below:
+![](https://main.qcloudimg.com/raw/ea0ddc2df9e0b2bcc826b852cd2c1805.png)
+ - **Workload Name**: the name of the workload to create. In this example, it is set to “redis-master”.
  - **Description**: enter the information related to the workload.
- - **Label**: indicates a key-value pair in the key = value format. In this example, the default label is k8s-app = **redis-master**.
+ - **Label**: a key-value pair in the form of “key = value”. In this example, the default label is “k8s-app = redis-master”.
  - **Namespace**: select the value as required.
  - **Type**: select the value as required.
  - **Volume**: select the volume to which your workload will be mounted. For more information, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
-4. Configure the settings of **Containers in pod**, as shown in the following figure.
-![img](https://main.qcloudimg.com/raw/2a0c5b6a04d1458852d72eaa990712d7.png)
+4. Set up **Containers in Pod** according to the following instructions. See the figure below:
+![](https://main.qcloudimg.com/raw/3f7259f65a29fb5e782abb815a41835b.png)
 The following describes the main parameters. For other parameters, simply leave them as their defaults.
  - **Name**: enter the name of the container in the pod. In this example, the name is **master**.
  - **Image**: enter `ccr.ccs.tencentyun.com/library/redis`.
  - **Image Tag**: enter **latest**.
  - **Image Pull Policy**: three policies are available. Select the value as required. In this example, you do not need to specify this field, but simply use the default policy.
-If you do not specify the image pull policy and the image tag is empty or latest, the Always policy is used. Otherwise, the IfNotPresent policy is used.
-    - **Always**: indicates that the image is always fetched remotely.
-    - **IfNotPresent**: indicates that the image is fetched locally by default. If the image is locally unavailable, the image is fetched remotely.
-    - **Never**: indicates that the image is always fetched locally. If the image is locally unavailable, an exception occurs.
+If you do not specify the image pull policy, when the image tag is empty or "latest", the "Always" policy is used. Otherwise, the IfNotPresent policy is used.
+    - **Always**: always fetch the image from the remote end
+    - **IfNotPresent**: use the load image by default. If the local image is unavailable, fetch image from the remote end.
+    - **Never**: only use local image. If the local image is unavailable, an exception occurs.
 6. Set the number of pods.
-![](![img](https://main.qcloudimg.com/raw/2abbedb170db5b366ab71351acde984c.png)
+![](https://main.qcloudimg.com/raw/5f861ae3fb55521d738a171764a3b097.png)
  - **Manual adjustment**: set the number of pods. In this example, the number of pods is 1. You can click the plus sign (**+**) or the minus sign (**-**) to adjust the number of pods.
- - **Auto adjustment**: the system automatically adjusts the number of pods if any specified condition is met. For more information, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/14209).
+ - **Auto adjustment**: the system automatically adjusts the number of pods if any specified condition is met. For more information, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/32424).
 7. Specify the access mode of the workload, as shown in the following figure.   
-![](https://main.qcloudimg.com/raw/a70f48545734627844d495fd442985fa.png)
+![](https://main.qcloudimg.com/raw/88d2188f7746184e88fe8a4375f0d5e1.png)
  - **Service**: select **Enable**.
  - **Service Access**: select **Intra-cluster**.
  - **Load Balancer**: select the value as required.
- - **Port Mapping**: select **TCP** from the **Protocol** drop-down list and set both **Port** and **Target Port** to **6379**. In this way, other services can access the master container by using the redis-master service name and the 6379 port number.
+ - **Port Mapping**: select **TCP** from the **Protocol** drop-down list and set both **Port** and **Target Port** to **6379**. In this way, other services can access the master container by using the “redis-master” service name and the 6379 port number.
 8. Click **Create Workload** to finish creating the redis-master service.
 
 ### Creating a redis-slave service
 1. Log in to the TKE console and click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. Click the ID of the cluster for which the service is to be created. On the **Deployment** page that appears, click **Create**, as shown in the following figure.
-![](![img](https://main.qcloudimg.com/raw/e2430aa20d9215dec7a9cec2b711f3dd.png)
+![](https://main.qcloudimg.com/raw/3b828dcdb219b9466af30c359c505898.png)
 3. On the **New Workload** page that appears, specify the basic information of the workload as instructed.
-![](https://main.qcloudimg.com/raw/81d945370bc248f6cec62a1674080895.png)
+![](https://main.qcloudimg.com/raw/5d01db06dc78bc2136ce1b185af64dce.png)
  - **Workload Name**: indicates the name of the workload to be created. In this example, the name is **redis-slave**.
  - **Description**: enter the information related to the workload.
- - **Label**: indicates a key-value pair in the key = value format. In this example, the default label is k8s-app = **redis-slave**.
+ - **Label**: indicates a key-value pair in the “key = value” format. In this example, the default label is “k8s-app = **redis-slave**”.
  - **Namespace**: select the value as required.
  - **Type**: select the value as required.
  - **Volume**: select the volume to which your workload will be mounted. For more information, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
 4. Configure the settings of **Containers in pod**, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/b4c0c7bffc64bc9bb35a9329ff88810f.png)
+![](https://main.qcloudimg.com/raw/16a69f993a1faf19399dcb45584de82e.png)
 The following describes the main parameters. For other parameters, simply leave them as their defaults.
  - **Name**: enter the name of the container in the pod. In this example, the name is **slave**.
  - **Image**: enter `ccr.ccs.tencentyun.com/library/gb-redisslave`.
@@ -70,11 +70,11 @@ The following describes the main parameters. For other parameters, simply leave 
  - **Environment Variable**: enter the following configuration information:
 GET_HOSTS_FROM = dns.
 5. Set the number of pods.
-![](https://main.qcloudimg.com/raw/8f3f5be325ce11f1c6c2a6ca523386b6.png)
+![](https://main.qcloudimg.com/raw/10353f37e16c5e33a41bf71336ee93e7.png)
  - **Manual adjustment**: set the number of pods. In this example, the number of pods is 1. You can click the plus sign (**+**) or the minus sign (**-**) to adjust the number of pods.
- - **Auto adjustment**: the system automatically adjusts the number of pods if any specified condition is met. For more information, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/14209).
+ - **Auto adjustment**: the system automatically adjusts the number of pods if any specified condition is met. For more information, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/32424).
 6. Specify the access mode of the workload, as shown in the following figure.   
-![](https://main.qcloudimg.com/raw/05e2b80d381dd61ae7ba1d5dc53621eb.png)
+![](https://main.qcloudimg.com/raw/b7ce5914042e33b404fc87165e532afe.png)
  - **Service**: select **Enable**.
  - **Service Access**: select **Intra-cluster**.
  - **Load Balancer**: select the value as required.
@@ -84,17 +84,17 @@ GET_HOSTS_FROM = dns.
 ### Creating a frontend service
 1. Log in to the TKE console and click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
 2. Click the ID of the cluster for which the application is to be created. On the **Deployment** page that appears, click **Create**, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/f2925b954bf4229e910d0b204f168aa0.png)
+![](https://main.qcloudimg.com/raw/46a7ea3299c791e8a31e4122a0f06b97.png)
 3. On the **New Workload** page that appears, specify the basic information of the workload as instructed.
-![](https://main.qcloudimg.com/raw/f923b03293b8cda5145bdd5daf7b2f9d.png)
- - **Workload Name**: indicates the name of the workload to be created. In this example, the name is **frontend**.
+![](https://main.qcloudimg.com/raw/3c4b6d6277fe6f650ea464d1060e1ee6.png)
+ - **Workload Name**: the name of the workload to be created. In this example, the name is **frontend**.
  - **Description**: enter the information related to the workload.
- - **Tag**: indicates a key-value pair in the key = value format. In this example, the default label is k8s-app = **frontend**.
+ - **Tag**: a key-value pair in the “key = value” format. In this example, we use "k8s-app = **frontend**".
  - **Namespace**: select the value as required.
  - **Type**: select the value as required.
  - **Volume**: select the volume to which your workload will be mounted. For more information, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
 5. Configure the settings of **Containers in pod**, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/30218adc64d1a80b8296d050725b96ba.png)
+![](https://main.qcloudimg.com/raw/0b5cfc640ced656bde9c782df01880d5.png)
 The following describes the main parameters. For other parameters, simply leave them as their defaults.
  - **Name**: enter the name of the container in the pod. In this example, the name is **frontend**.
  - **Image**: enter `ccr.ccs.tencentyun.com/library/gb-frontend`.
@@ -103,11 +103,11 @@ The following describes the main parameters. For other parameters, simply leave 
  - **Environment Variable**: enter the following configuration information:
 GET_HOSTS_FROM = dns.
 6. Set the number of pods.
-![](https://main.qcloudimg.com/raw/a7253584191db8dc28ddec7ef0abf992.png)
+![](https://main.qcloudimg.com/raw/0e1dfb010735c93cca720b7e6fce0aa8.png)
  - **Manual adjustment**: set the number of pods. In this example, the number of pods is 1. You can click the plus sign (**+**) or the minus sign (**-**) to adjust the number of pods.
- - **Auto adjustment**: the system automatically adjusts the number of pods if any specified condition is met. For more information, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/14209).
+ - **Auto adjustment**: the system automatically adjusts the number of pods if any specified condition is met. For more information, see [Auto Scaling](https://intl.cloud.tencent.com/document/product/457/32424).
 7. Specify the access mode of the workload, as shown in the following figure.   
-![](https://main.qcloudimg.com/raw/681d60e7a3a3100f1c054054406b4b11.png)
+![](https://main.qcloudimg.com/raw/c89da244015147adc6d11f21ceef9e8c.png)
  - **Service**: select **Enable**.
  - **Service Access**: select **Via Internet**.
  - **Load Balancer**: select the value as required.
@@ -119,7 +119,7 @@ GET_HOSTS_FROM = dns.
 1. In the left sidebar, click **[Cluster](https://console.cloud.tencent.com/tke2/cluster)** to go to the **Cluster Management** page.
 2. Click the ID of the cluster where the created services are located. On the page that appears, choose **Services** > **Service**.
 3. On the service management page, copy the load balancer IP address of the frontend service.
-![](https://main.qcloudimg.com/raw/74be16e7d6cd0ec6ec310a9430519090.png)
+![](https://main.qcloudimg.com/raw/43d09b779fd2c0844b5c70d8ef373c53.png)
 >
 >- You have selected the **Intra-cluster* access mode when creating the redis-master and redis-slave services. Therefore, these services have only one private IP address and can only be accessed by other services within the cluster.
 >- You have selected the **Via Internet** access mode when creating the frontend service. Therefore, this service has a load balancer IP address (which is a public IP address) and a private IP address. As a result, this service not only can be accessed by other services in the cluster, but also can be accessed through the Internet.
@@ -176,7 +176,7 @@ if (isset($_GET['cmd']) === true) {
 
 ### Notes
 
-- When the frontend service accesses the redis-master and redis-slave services, it connects to the **Service name and port**. The cluster comes with the DNS service, which resolves the service name into the corresponding service IP address and performs cloud load balancing according to this IP address.
+- When the frontend service accesses the redis-master and redis-slave services, it connects to the **Service name and port**. The cluster comes with the DNS service, which resolves the service name into the corresponding service IP address and performs load balancing according to this IP address.
 Assume that the redis-slave service manages three pods. If the frontend service is directly connected to the redis-slave service and port 6379, the DNS service automatically resolves the redis-slave service into an IP address of the redis-slave service, which is a floating IP address similar to a load balancer IP address. Then, the DNS service automatically performs load balancing based on the IP address of the redis-slave service and sends a request to the corresponding pod of the redis-slave service.
 - Note the following when specifying **Environment Variable** for the container:
  - **Default setting (recommended)**: during runtime, the frontend container reads the preset environment variable GET_HOSTS_FROM = dns and then directly connects to a service by using the service name.
