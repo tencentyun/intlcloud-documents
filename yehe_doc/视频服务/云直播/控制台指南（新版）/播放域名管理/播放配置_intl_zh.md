@@ -3,7 +3,7 @@
 
 ## 前提条件
  - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
- - 已添加**播放域名** ，详情请参见 [添加自有域名](https://cloud.tencent.com/document/product/267/20381)。
+ - 已添加**播放域名** 。
 
 ## 操作步骤
 1. 选择[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或【管理】进入域名管理。

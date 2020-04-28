@@ -22,6 +22,7 @@
 
 ![](https://main.qcloudimg.com/raw/ad3059c36e93c39f65659fb9c8777741.png)
 
+
 >如果您需要解绑录制配置，在【模板配置】中，单击【编辑】，取消相应模板的勾选，然后单击【保存】，即可将该模板与域名取消关联。
 
 ## 录制文件获取
@@ -42,5 +43,5 @@
 ### 云点播 API 查询
 具体使用请参考云点播 API 文档：
 - 根据直播流名称及时间范围查询录制文件 API [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)。
-- 依照视频名称前缀获取视频信息 API [DescribeVodPlayInfo](https://cloud.tencent.com/document/product/266/7825)。
+- 依照视频名称前缀获取视频信息 API DescribeVodPlayInfo。
 

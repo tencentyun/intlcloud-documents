@@ -1,4 +1,4 @@
-本文档介绍如何通过 [云直播控制台](https://console.cloud.tencent.com/live) 创建录制配置。创建成功后，还需到对应的推流域名下关联 [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)，关联成功后约5分钟 - 10分钟生效。用户也可以通过 API 对直播频道创建录制模板，详细请参见 [创建录制模板](https://cloud.tencent.com/document/api/267/32614)。
+本文档介绍如何通过 [云直播控制台](https://console.cloud.tencent.com/live) 创建录制配置。创建成功后，还需到对应的推流域名下关联 [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)，关联成功后约5分钟 - 10分钟生效。用户也可以通过 API 对直播频道创建录制模板。
 
 >
 >- 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台， 开启录制功能后请确保云点播服务处于正常使用状态。云点播服务未开通或账号欠费导致云点播服务停服等情况将影响直播无法进行录制，期间不会产生录制文件和录制费用。
@@ -22,7 +22,7 @@ HLS 格式支持文件推流中断续录，续录超时时长可设置为0s - 30
 ![](https://main.qcloudimg.com/raw/03810e82a6429ba8ad606b6c02503a9d.png)
 >
 >- 如果您需要解绑录制配置，在【模板配置】中，单击【编辑】，取消相应模板的勾选，然后单击【保存】，即可将该模板与域名取消关联。
->- 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制模板](https://cloud.tencent.com/document/product/267/32612) 解除关联。
+>- 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制模板](https://intl.cloud.tencent.com/document/product/267/30842) 解除关联。
 
 
 
