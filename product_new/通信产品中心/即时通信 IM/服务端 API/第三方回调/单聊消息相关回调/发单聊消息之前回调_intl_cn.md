@@ -12,7 +12,7 @@ App 后台可以通过该回调实时监控用户的单聊消息，包括：
 - App 后台在收到回调请求之后，务必校验请求 URL 中的参数 SDKAppID 是否是自己的 SDKAppID。
 - 若同时开启发单聊消息之前和之后两种回调，且发单聊消息之前回调返回禁止发言，则发单聊消息之后回调将不会被触发。
 - 若同时开启发单聊消息之前和之后两种回调，且发单聊消息之前回调修改了消息体，则发单聊消息之后回调将使用修改过的消息进行回调。
-- 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91) 文档。
+- 其他安全相关事宜请参考 [第三方回调简介：安全考虑](https://intl.cloud.tencent.com/document/product/1047/34354) 文档。
 
 ## 可能触发该回调的场景
 
@@ -43,7 +43,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | 固定为：C2C.CallbackBeforeSendMsg |
 | contenttype | 请求包体固定为 JSON |
 | ClientIP | 客户端 IP，格式如：127.0.0.1 |
-| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE) 中 OptPlatform 的参数含义 |
+| OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
 
 ### 请求包示例
 
@@ -55,7 +55,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
     "MsgSeq": 48374, // 消息序列号
     "MsgRandom": 2837546, // 消息随机数
     "MsgTime": 1557481126, // 消息的发送时间戳，单位为秒 
-    "MsgKey": "5412975_1496325741_1579054156", //消息的唯一标识，可用于 REST API 撤回单聊消息
+    "MsgKey": "48374_2837546_1557481126", //消息的唯一标识，可用于 REST API 撤回单聊消息
     "MsgBody": [ // 消息体，参见 TIMMessage 消息对象
         {
             "MsgType": "TIMTextElem", // 文本
@@ -72,12 +72,12 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | 字段 | 类型 | 说明 |
 | --- | --- | --- |
 | CallbackCommand | String | 回调命令 |
-| From_Account | String | 消息发送者 UserID  |
-| To_Account | String | 消息接收者 UserID  |
+| From_Account | String | 消息发送者 UserID |
+| To_Account | String | 消息接收者 UserID |
 | MsgSeq | Integer | 消息序列号，用于标记该条消息（32位无符号整数）|
 | MsgRandom | Integer | 消息随机数，用于标记该条消息（32位无符号整数）|
 | MsgTime | Integer | 消息的发送时间戳，单位为秒 |
-| MsgKey | String | 该条消息的唯一标识，可根据该标识进行 REST API 撤回单聊消息 |
+| MsgKey | String | 该条消息的唯一标识，可根据该标识进行 [REST API 撤回单聊消息](https://intl.cloud.tencent.com/document/product/1047/35015) |
 | MsgBody | Array | 消息体，详情请参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)  |
 
 ### 应答包示例（允许发言）
