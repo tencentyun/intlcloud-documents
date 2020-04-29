@@ -3,6 +3,7 @@
 #### Relevant resources
 
 - Download the COS XML SDK resources for Node.js [here](https://github.com/tencentyun/cos-nodejs-sdk-v5).
+- SDK quick download address: [XML Node.js SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-nodejs-sdk-v5/latest/cos-nodejs-sdk-v5.zip?_ga=1.126519373.1783616852.1583375173).
 - Download the demo [here](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo).
 
 #### Environmental dependency
@@ -29,7 +30,7 @@ npm i cos-nodejs-sdk-v5 --save
 
 Replace `SecretId`, `SecretKey`, bucket, and region with the actual values in your development environment. To test file upload, please see the following sample code.
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```js
 var COS = require('cos-nodejs-sdk-v5');
 var cos = new COS({
@@ -42,7 +43,7 @@ var cos = new COS({
 
 For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). The SDK for Node.js supports initialization by passing in a temporary key as shown in the sample code below:
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```js
 var request = require('request');
 var COS = require('cos-nodejs-sdk-v5');
@@ -163,7 +164,7 @@ There are three ways to get the authentication credentials for your instance by 
 
 ### Creating a bucket
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```js
 cos.putBucket({
     Bucket: 'examplebucket-1250000000',
@@ -175,7 +176,7 @@ cos.putBucket({
 
 ### Querying a bucket list
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```js
 cos.getService(function (err, data) {
     console.log(data && data.Buckets);
@@ -186,7 +187,7 @@ cos.getService(function (err, data) {
 
 This API is suitable for uploading small files. For large files, please use the multipart upload API. For more information, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31514).
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -204,7 +205,7 @@ cos.putObject({
 
 ### Querying object list
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -217,7 +218,7 @@ cos.getBucket({
 
 ### Downloading an object
 
-[//]: # (.cssg-snippet-get-object-stream)
+[//]: # ".cssg-snippet-get-object-stream"
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* Required */
@@ -231,7 +232,7 @@ cos.getObject({
 
 ### Deleting an object
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* Required */

@@ -1,5 +1,5 @@
 ## Prerequisites
-Before using Elastic Kubernetes Service (EKS), you must complete identity verification for your Tencent Cloud account. For more information on identity verification, see [Introduction to Identity Verification](https://intl.cloud.tencent.com/document/product/378/3629).
+Before using Elastic Kubernetes Service (EKS), you must complete identity verification for your Tencent Cloud account. For more information on identity verification, see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
 
 ## Supported Regions

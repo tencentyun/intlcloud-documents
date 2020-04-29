@@ -8,8 +8,8 @@
 
 #### TPNS-Push-SDK-macOS-IOT1.* .* .*
 
-* ```doc``` 文件夹：信鸽 macOS SDK 开发指南
-* ```demo``` 文件夹：主要包含样例工程，信鸽 SDK 也在其中
+* ```doc``` 文件夹：腾讯移动推送 macOS SDK 开发指南
+* ```demo``` 文件夹：主要包含样例工程，腾讯移动推送 SDK 也在其中
 
 
 
@@ -58,9 +58,9 @@
 
 	注意：checkTargetOtherLinkFlagForObjc报错，是因为build setting中，Other link flags未添加-ObjC
 
-6. 调用启动信鸽的 API ,并根据需要实现 ```XGPushDelegate``` 协议中的方法，开启推送服务
+6. 调用启动腾讯移动推送的 API ,并根据需要实现 ```XGPushDelegate``` 协议中的方法，开启推送服务
 
-   - 启动信鸽服务，以下是在 ```AppDelegate``` 中做演示：
+   - 启动腾讯移动推送服务，以下是在 ```AppDelegate``` 中做演示：
 
    ```objective-c
    @interface AppDelegate () <XGPushDelegate>
@@ -93,7 +93,7 @@
 ## 调试
 #### 开启Debug模式
 
-打开Debug模式可以在终端看到详细的信鸽Debug信息，方便定位问题。
+打开Debug模式可以在终端看到详细的腾讯移动推送Debug信息，方便定位问题。
 
 ##### [代码示例]
 
@@ -110,15 +110,15 @@
 
 ```objective-c
 /**
- @brief 监控信鸽推送服务地启动情况
+ @brief 监控腾讯移动推送服务地启动情况
 
- @param isSuccess 信鸽推送是否启动成功
- @param error 信鸽推送启动错误的信息
+ @param isSuccess 腾讯移动推送推送是否启动成功
+ @param error 腾讯移动推送推送启动错误的信息
  */
 - (void)xgPushDidFinishStart:(BOOL)isSuccess error:(nullable NSError *)error;
 
 /**
- @brief 向信鸽服务器注册设备token的回调
+ @brief 向腾讯移动推送服务器注册设备token的回调
  
  @param deviceToken 当前设备的token
  @param error 错误信息

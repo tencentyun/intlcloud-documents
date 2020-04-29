@@ -11,3 +11,4 @@ On the **Yesterday's Traffic Usage** tab, click **Switch** to pop up the billing
 #### 2. Change the time granularity
 You can change the time granularity used when viewing the trends in billable bandwidth or traffic by selecting the desired option in the drop-down list to the right of **Interval**.
 ![](https://main.qcloudimg.com/raw/6d18a812d41f45740bc1e70e0422cb3c.png)
+
