@@ -36,7 +36,7 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ----------------------------- | -------------------------------------- | ---------- | ------------------------------------------------------------ |
-| Mainland China CDN <br>The self-diagnosis tool is upgraded | New features have been launched, including diagnosing the region or status and refreshing the list information. | May 29, 2019 | [Self Troubleshooting Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
+| Mainland China CDN <br>The self-diagnosis tool is upgraded | New features have been launched, including diagnosing the region or status and refreshing the list information. | May 29, 2019 | [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
 
 ## April 2019
 
