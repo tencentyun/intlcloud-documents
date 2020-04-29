@@ -985,7 +985,7 @@ cos.putBucketReplication({
 | - - Status | Identifies whether the rule takes effect. Enumerated values: Enabled, Disabled | String | Yes |
 | prefix | Prefix match policy (blank for root directory). Prefixes cannot overlap; otherwise, an error is returned | NSString* |
 | - - Destination | Destination bucket information | Object | Yes |
-| - - - Bucket | Destination bucket for the replication. <br>Format: `qcs:id/0:cos:<Region>:appid/<AppId>:<ShortBucketName>`<br>Example: `qcs:id/0:cos:ap-chengdu:appid/1250000000:backup` | Object | Yes |
+| - - - Bucket | Destination bucket for the replication. <br>Format: `qcs::cos:<Region>:appid/<AppId>:<ShortBucketName>`<br>Example: `qcs::cos:ap-chengdu:appid/1250000000:backup` | Object | Yes |
 | - - - StorageClass | Storage class after the replication; enumerated values: `STANDARD`, `STANDARD_IA`. Default value: `STANDARD` | Object | No |
 
 ### Callback Function Description
@@ -1032,7 +1032,7 @@ cos.getBucketReplication({
             "Status": "Enabled",
             "Prefix": "sync/",
             "Destination": {
-                "Bucket": "qcs:id/0:cos:ap-chengdu:appid/1250000000:backup",
+                "Bucket": "qcs::cos:ap-chengdu:appid/1250000000:backup",
                 "StorageClass": "Standard"
             }
         }
@@ -1066,7 +1066,7 @@ function(err, data) { ... }
 | - - - Status | Identifies whether the rule takes effect. Enumerated values: Enabled, Disabled | String |
 | prefix | Prefix match policy (blank for root directory). Prefixes cannot overlap; otherwise, an error is returned. | NSString* |
 | - - - Destination | Destination bucket information | Object |
-| - - - Bucket | Destination bucket for the replication.<br>Format: `qcs:id/0:cos:<Region>:appid/<AppId>:<ShortBucketName>`.<br>Example: `qcs:id/0:cos:ap-chengdu:appid/1250000000:backup` | Object |
+| - - - Bucket | Destination bucket for the replication.<br>Format: `qcs::cos:<Region>:appid/<AppId>:<ShortBucketName>`.<br>Example: `qcs::cos:ap-chengdu:appid/1250000000:backup` | Object |
 | - - - - StorageClass | Storage class after the replication; enumerated values: `STANDARD`, `STANDARD_IA`. Default value: `STANDARD` | Object |
 
 ## Deleting cross-region replication

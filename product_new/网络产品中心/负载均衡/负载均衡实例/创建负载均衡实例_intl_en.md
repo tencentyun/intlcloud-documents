@@ -12,4 +12,4 @@ You can purchase a CLB instance on the official website as follows:
 ![](https://main.qcloudimg.com/raw/907a33302d20a9b399067bee190a1d78.png)
 
 ### Creating a CLB instance via API
-If you want to purchase a CLB instance via API, you can create a CLB instance as instructed in [CLB API](https://intl.cloud.tencent.com/document/api/214/888).
+If you want to purchase a CLB instance via API, you can create a CLB instance as instructed in [CLB API](https://intl.cloud.tencent.com/document/product/214/33789).
