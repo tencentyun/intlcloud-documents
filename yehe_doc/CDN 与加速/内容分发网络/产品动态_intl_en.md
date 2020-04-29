@@ -165,7 +165,7 @@ table th:nth-of-type(4){ width:21%; }
 | -------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | Cache expiration rule priority adjustment is supported | The priorities of multiple cache expiration rules can be adjusted. | August 22, 2016 | [Node Cache Configuration](https://intl.cloud.tencent.com/document/product/228/35317) |
 | IP blacklist/whitelist can be configured | By setting an access control policy on IPs of user requests, you can effectively restrict the access source to prevent problems such as malicious IP hotlinking and attacks. | August 11, 2016 | [IP Blacklist/Whitelist Configuration](https://intl.cloud.tencent.com/document/product/228/6298) |
-| CDN provides a self-diagnosis tool  | This tool enables the detection of DNS resolution of connected domain names, linkage quality, node status, origin server, and data access consistency. | August 11, 2016 | [Self Troubleshooting Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
+| CDN provides a self-diagnosis tool  | This tool enables the detection of DNS resolution of connected domain names, linkage quality, node status, origin server, and data access consistency. | August 11, 2016 | [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
 
 ## July 2016
 
