@@ -763,7 +763,7 @@ QCloudBucketReplicationDestination parameter description
 
 | Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| bucket | Resource identifier. Note it is different from the bucket<br>format is:`qcs:id/0:cos:[region]:appid/[AppId]:[bucketname]` | NSString* |
+| bucket | Resource identifier. Note it is different from the bucket<br>format is:`qcs::cos:[region]:appid/[AppId]:[bucketname]` | NSString* |
 | storageClass | Used to label the specific Rule name | QCloudCOSStorageStandard<br>QCloudCOSStorageStandardIA<br>QCloudCOSStorageARCHIVE |
 
 #### Error Codes

@@ -26,12 +26,12 @@ You can install the SDK through Maven or source code:
 <dependency>
         <groupId>com.qcloud</groupId>
         <artifactId>cos_api</artifactId>
-        <version>5.6.18</version>
+        <version>5.6.20</version>
 </dependency>
 ```
 
 - Install through source code
-  Download the source code from [XML Java SDK](https://github.com/tencentyun/cos-java-sdk-v5) and import it via Maven. For example, in Eclipse, select **File** > **Import** > **Maven** > **Existing Maven Projects**.
+  Download the source code from [XML Java SDK](https://github.com/tencentyun/cos-java-sdk-v5)  or [SDK quick download address](<https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip?_ga=1.62564588.1783616852.1583375173>) and import it via Maven. For example, in Eclipse, select **File** > **Import** > **Maven** > **Existing Maven Projects**.
 
 ### Uninstalling the SDK
 
@@ -89,9 +89,9 @@ The ClientConfig class is a configuration information class containing the follo
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
 | region | Constructor or set method | Bucket region. For abbreviations of COS regions, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Region |
 | httpProtocol | set method | The protocol used by the request. By default, HTTP is used to interact with COS | HttpProtocol |
-| signExpired | set method | Validity period of the request signature, which is one hour by default | int |
-| connectionTimeout | set method | Timeout period for connection with the COS service, which is 30 seconds by default | int |
-| socketTimeout | set method | Timeout period for data reading by the client, which is 30 seconds by default | int |
+| signExpired | set method | Validity period of the request signature, Unit: seconds, default is 3600s | int |
+| connectionTimeout | set method | Timeout period for connection with the COS service, Unit: milliseconds, default is 30000ms | int |
+| socketTimeout | set method | Timeout period for data reading by the client, Unit: milliseconds, default is 30000ms | int |
 | httpProxyIp | set method | Proxy server IP | String |
 | httpProxyPort | set method | Proxy server port | int |
 
