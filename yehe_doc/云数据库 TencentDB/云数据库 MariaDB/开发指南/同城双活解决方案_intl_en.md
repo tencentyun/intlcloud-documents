@@ -35,7 +35,7 @@ Dual-AZ and single-AZ schemes are offered at the same price. For more informatio
 - Risk warning: the Direct Connect service for 2-DC data sync was free of charge before June 30, 2019. If the operating policy changes in the future, the price will not be higher than that of intra-city Direct Connect published by Tencent Cloud. If you do not want to continue using the intra-city 2-DC scheme, you can migrate your data to the intra-city 1-DC scheme free of charge.
 
 ### Purchase and use
-Go to the [purchase page of TencentDB for MariaDB](https://buy.cloud.tencent.com/tdsql) and click **Buy Now**.
+Go to the [purchase page of TencentDB for MariaDB](https://buy.cloud.tencent.com/mariadb) and click **Buy Now**.
 - If the master and slave AZs are the same, the single-AZ deployment scheme is used.
 - If the master and slave AZs are different, the intra-city 2-DC deployment scheme is used.
 ![](https://main.qcloudimg.com/raw/24202da514e7876b90bfc3cfbb65f641.png)
