@@ -6,15 +6,12 @@
 1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/register)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 2. 进入 [腾讯云直播服务开通页](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，勾选同意《腾讯云服务协议》，并单击【申请开通】即可开通云直播服务。
 
->  云直播服务申请开通成功后，会赠送20GB国内播放流量免费体验使用。为避免赠送流量用完后自动扣费，导致欠费无法使用云直播服务，建议您根据实际业务需求，[【购买】](https://buy.cloud.tencent.com/live?from=console-portal-buy-lvb)相应规格的套餐包。
-
 <span id="step1"></span>
 ## 步骤1：添加域名
 使用云直播服务，至少需要**2**个域名，一个作为**推流域名**，一个作为**播放域名**，推流和播放不能使用相同的域名。
 
 <span id="step1_1"></span>
 1. 准备自有域名，并完成域名备案。
-	- 若您需要购买域名，可前往【域名注册】完成 [域名购买](https://buy.cloud.tencent.com/domain?from=console)。您也可以前往其它域名服务商进行购买。
 	- 若您的域名未完成备案，您可前往腾讯云的 [网站备案](https://intl.cloud.tencent.com/document/product/1022) 完成 [域名备案](https://intl.cloud.tencent.com/product/icp)。
 >  根据国家工信部规定，域名必须备案，且备案时长需几个工作日，建议您提前进行。新备案成功的域名需要1天左右的时间同步到腾讯云服务器，添加该类域名时可能会显示域名未备案。
 2. 登录云直播控制台，进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)， 单击【添加域名】。
