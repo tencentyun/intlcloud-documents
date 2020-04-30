@@ -39,8 +39,8 @@ exit
 ```
 
 ## Directions
-
-### Solution 1: create a time zone file in Dockerfile (recommended)<span id="createDockerFile"></span>
+<span id="createDockerFile"></span>
+### Solution 1: create a time zone file in Dockerfile (recommended)
 
 When creating a basic image or customizing an image based on a basic image, you can create a time zone file in Dockerfile to solve time zone inconsistency within a container. After this, you will no longer be troubled by time zone issues when using the image.
 
@@ -79,7 +79,8 @@ The time zone in the container is consistent with the local time. See the figure
 exit
 ```
 
-### Solution 2: mount the time zone configuration of the CVM to the container<span id="mount"></span>
+<span id="mount"></span>
+### Solution 2: mount the time zone configuration of the CVM to the container
 You can also solve time zone inconsistency in a container by mounting the time configuration of the CVM to the container. This solution can be set when the container is started, or you can use the CVM path in the YAML file to mount volumes to the container.
 
 
