@@ -11,7 +11,7 @@ Tencent Cloud CDN does not have any cross-region access restrictions. If cross-r
 You can download CDN access logs in the CDN Console. For detailed directions, please see [Log Download](https://intl.cloud.tencent.com/document/product/228/6316),
 
 ### How do I use the CDN self-diagnosis tool?
-The CDN self-diagnosis tool provides a range of diagnostic features such as testing DNS, linkage quality, site availability and data access consistency for the access domain name. For more information, please see [Self Troubleshooting Tool](https://intl.cloud.tencent.com/document/product/228/6304). The tool is subject to the configuration of the local network environment and do not completely represent the entire network testing results.
+The CDN self-diagnosis tool provides a range of diagnostic features such as testing DNS, linkage quality, site availability and data access consistency for the access domain name. For more information, please see [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304). The tool is subject to the configuration of the local network environment and do not completely represent the entire network testing results.
 
 ### What is the difference between the local access diagnostics and the user access diagnostics?
 Local access diagnostics: when you find an error with one of your resource accesses, you can initiate a test with **local access diagnostics**.
