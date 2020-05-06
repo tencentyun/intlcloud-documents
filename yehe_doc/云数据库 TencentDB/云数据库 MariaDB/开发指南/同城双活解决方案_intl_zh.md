@@ -35,7 +35,7 @@
 - 风险提示：在 2019.06.30 前免收双中心数据同步专线费用；如后续运营政策变更，价格将不高于当时腾讯云已公开的同城专线费用；如您不希望继续使用同城双中心方案，可免费迁移至同城单中心。
 
 ### 购买与使用
-请至 [云数据库 MariaDB 购买页](https://buy.cloud.tencent.com/tdsql) 单击购买。
+请至 [云数据库 MariaDB 购买页](https://buy.cloud.tencent.com/mariadb) 单击购买。
 - 主、从可用区相同时，即单可用区部署；
 - 主、从可用区不同时，即同城双中心部署；
 ![](https://main.qcloudimg.com/raw/24202da514e7876b90bfc3cfbb65f641.png)

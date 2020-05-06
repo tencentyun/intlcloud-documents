@@ -70,7 +70,7 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
 - **Privacy - Microphone Usage Description**，并填入麦克风使用目的提示语。
 - **Privacy - Camera Usage Description**，并填入摄像头使用目的提示语。
 
-![](https://main.qcloudimg.com/raw/54cc6989a8225700ff57494cba819c7b.jpg)
+![](https://main.qcloudimg.com/raw/185e16f23a69ab811e7047da1d88adbe.png)
 
 
 ## 引用 TRTC SDK
