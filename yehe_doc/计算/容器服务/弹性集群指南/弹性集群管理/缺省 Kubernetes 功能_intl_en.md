@@ -1,19 +1,19 @@
-## Note
+## Description
 Elastic Kubernetes Service (EKS) does not contain any cluster nodes, and therefore does not support some native Kubernetes features that depend on nodes, kubelet, and kube-proxy.
 
 ## Unsupported Native Kubernetes Features
 ### Kubernetes versions
-1.12 and lower versions are not supported
+EKS does not support Kubernetes version 1.12 and earlier.
 
 ### Nodes
-Bare Metal nodes are not supported
+You cannot add or manage physical nodes through EKS.
 
 ### Workloads
-- DaemonSets workloads are not supported 
-- hostPath cannot be used as volumes.
+- You cannot deploy workloads of the DaemonSet type through EKS.
+- You cannot use hostPath volumes through EKS.
 
 ### Services
-Services of NodePort type cannot be deployed.
+You cannot deploy services of the NodePort type through EKS.
 
 ### Volumes
-When emptyDir volume is used, inotify is not supported.
+You cannot use Linux filesystem events with inotify, which is a feature of emptyDir volumes.
