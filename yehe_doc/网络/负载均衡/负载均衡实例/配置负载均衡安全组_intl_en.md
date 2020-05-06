@@ -31,26 +31,26 @@ Below is an example of public network CLB security group configuration which aim
 
 **1. Create a CLB instance and listener, and bind a CVM instance.**
 Please see [Getting Started with CLB](http://intl.cloud.tencent.com/document/product/214/8975). An `HTTP:80` listener is created and bound to a real server whose service port is 8080.
-<!--![](https://main.qcloudimg.com/raw/a876c0f97ae8f74ba9fd348132fc48a3.png)-->
+![](https://main.qcloudimg.com/raw/9ec487d62b6092e6f5b14c1791ef5f4e.png)
 **2. Configure a CLB security group policy.**
 Please go to the [Security Group Console](https://console.cloud.tencent.com/cvm/securitygroup) to configure a security group policy. In the inbound rule, open port 80 for all IPs and reject traffic to enter from other ports.
-<!--![](https://main.qcloudimg.com/raw/1d943546ef8206d5f0b164d7a19b3186.png)-->
+![](https://main.qcloudimg.com/raw/65b035098c49c77f4a82eed799353bc4.png)
 >
 >- Security group rules are executed from top to bottom. If the new rule is put into effect, other rules will be invalid by default; therefore, pay attention to the configuring order.
 >- A security group has an inbound rule and outbound rule. The above configuration restricts the inbound traffic and is therefore an ***inbound rule***, while the outbound rule does not need to be specially configured.
 
 **3. Bind the security group to the CLB instance.**
 Click **Security Group** tab on the CLB details page to select the corresponding security group and bind it to the CLB instance.
-<!--![](https://main.qcloudimg.com/raw/799906910fac78d411eeb956b0f8b1f3.png)-->
+![](https://main.qcloudimg.com/raw/8a9701e700a94ba55a9a650eb87b4456.png)
 The CLB security group configuration is completed, which only allows traffic to access the CLB instance from port 80.
-<!--![](https://main.qcloudimg.com/raw/8168c5c5647762b17e9c0322c6277a03.png)-->
+![](https://main.qcloudimg.com/raw/a32cd86653185a5138006757aab38075.png)
 **4. Configure a CVM security group policy**
 A CVM security group can be configured for the backend CVM to only allow traffic to access a specified service port.
 Please go to the [Security Group Console](https://console.cloud.tencent.com/cvm/securitygroup) to configure a security group policy. In the inbound rule, open port 8080 for all IPs. To ensure smooth remote CVM login and ping services, please open port 22, port 3389, and ICMP service in the security group.
-<!--![](https://main.qcloudimg.com/raw/7831ad7213ec35cc91fa3ac6d9c4ac0f.png)-->
+![](https://main.qcloudimg.com/raw/1afae187cfffaa3961e35b732bff7c4c.png)
 **5. Bind the security group to the CVM instance.**
 Click the ID of the CVM instance bound to CLB to enter the CVM details page, and then click the **Security Group** tab to configure a CVM security group policy.
-<!--![](https://main.qcloudimg.com/raw/0ba8aef96312ccf0961c399818ade24c.png)-->
+![](https://main.qcloudimg.com/raw/8fdb3d63bd3da5a444b171c9de952352.png)
 
 The CVM security group configuration is completed. Business traffic is allowed to access CVM only from CLB port 80, and the CVM port 8080 is used to provide services.
 >
