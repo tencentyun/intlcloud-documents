@@ -34,7 +34,7 @@ When a network resolution error occurs, you can manually configure the private n
 ```
 vi /etc/resolv.conf
 ```
-3. Press **i** to switch to the edit mode, and modify the DNS IP according to the corresponding region in the [Private Network DNS] (https://intl.cloud.tencent.com/document/product/213/5225) list.
+3. Press **i** to switch to the edit mode, and modify the DNS IP according to the corresponding region in the [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225) list.
 For example, change the private network DNS IP to an private network DNS server in the Beijing region.
 ```
 nameserver 10.53.216.182
@@ -50,6 +50,6 @@ options timeout:1 rotate
 3. Right-click the **Ethernet** and select **Properties** to open the “Ethernet Properties” window.
 4. In the “Ethernet Properties” window, double-click **IP version 4 (TCP/IPv4)**, as shown below:
 ![](https://main.qcloudimg.com/raw/1eef10b5919ba4db272fa0fc21fb1702.png)
-5. Select [Use the following DNS server address] and modify the DNS IP according to the corresponding region in the [Private Network DNS] (https://intl.cloud.tencent.com/document/product/213/5225) list.
+5. Select [Use the following DNS server address] and modify the DNS IP according to the corresponding region in the [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225) list.
 
 6. Click **OK**.
