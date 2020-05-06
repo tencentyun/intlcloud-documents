@@ -22,7 +22,7 @@ powercfg -L
 4. On the operating system interface, click <img src = "https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style = "margin: 0;">> **Control Panel** > **System and Security** > **Power Options**.
 5. In the Power Options window, click **Change plan settings**.
 
-6. In the “Edit Plan Settings” window that opens, modify the time to turn of the display and hard disk, as shown below:
+6. In the “Edit Plan Settings” window that opens, modify the time to turn of the display and hard disk.
  
 
 
