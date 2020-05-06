@@ -17,7 +17,7 @@ Windows、Linuxと Mac OSは全てRDPを使用してCVMにログインするこ�
 ### WindowsシステムはRDPを使用してログインする
 1.[CVMコンソール](https://console.cloud.tencent.com/cvm/index)にログインします。
 2. インスタンスの管理画面で、ログインするWindows CVMを選択し、【ログイン】をクリックします。<!--下図に示すように：
-![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)-->
+![](https://main.qcloudimg.com/raw/038fce530c6c6827796e51d896306a93.png)-->
 3.ポップアップの【Windowsインスタンスにログインする】ウィンドウで、【RDPファイルでログイン】を選択し、【RDPファイルをダウンロードします】をクリックし、RDPファイルをローカルにダウンロードします。
 <!--![](https://main.qcloudimg.com/raw/9bcfe6774b483261d61f648968efe5ee.png)-->
 4. ローカルにダウンロードしたRDPファイルをダブルクリックすると、リモートでWindows CVMに接続できます。
