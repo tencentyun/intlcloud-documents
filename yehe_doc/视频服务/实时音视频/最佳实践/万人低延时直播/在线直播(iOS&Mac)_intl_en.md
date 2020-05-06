@@ -10,7 +10,7 @@ Backed by the highest-quality lines and high-performance servers, this type of n
 With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
 
 In live streaming mode, TRTC uses the concept of "role". Specifically, users are divided into two roles, namely, "anchors" and "viewers". "Anchors" will be allocated to access servers, while "viewers" to proxy servers. A room can accommodate up to 100,000 viewers.
-If a "user" wants to mic on, the role needs to be switched (switchRole) to "anchor" for the user to speak. During role switch, the user is also migrated from a proxy server to an access server. Thanks to its proprietary low-latency watch and smooth mic-on/off technologies, TRTC can get the whole switch done in a blink.
+If a "user" wants to mic on, the role needs to be switched (switchRole) to "anchor" for the user to speak. During role switch, the user is also migrated from a proxy server to an access server. Thanks to its proprietary low-latency watch and smooth mic-on/off technologies, TRTC can get the whole switch done in a very short time.
 
 ## Sample Code
 You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo) to get the sample code related to this document.
@@ -80,7 +80,7 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.h
 | sdkAppId | Numeric | Application ID, which can be found in **Application Management** > **Application Info** in the [console](https://console.cloud.tencent.com/trtc/app). | 1400000123 |
 | userId | String | It can contain only letters (a–z and A–Z), digits (0–9), underscores, and hyphens. | test_user_001 |
 | userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
-| roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
+| roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to use string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
 
 > In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
 
@@ -95,7 +95,7 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.h
 4. The anchor can call [startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) to enable the mic, and the SDK will request the system mic access.
 
 ```swift
-// Sample code: send local audio/video streams
+// Sample code: publish local audio/video streams
 trtcCloud.setLocalViewFillMode(TRTCVideoFillMode.fit)
 trtcCloud.startLocalPreview(frontCamera, view: localView)
 // Set local video encoding parameter

@@ -25,8 +25,8 @@ Parameters:
 
 - `roomId`: room ID
 - `role`: user role:
-  - `anchor`: anchor. The anchor role has permission to publish the local stream and receive remote streams. The default value is the anchor role.
-  - `audience`: viewer. The viewer role only has the permission to receive remote streams but not to publish the local stream. If the viewer wants to co-anchor with the anchor, they need to switch the role to `anchor` via [Client.switchRole()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#switchRole) and then publish the local stream.
+  - `anchor`: anchor. The anchor role has permission to publish local streams and receive remote streams. The default value is the anchor role.
+  - `audience`: viewer. The viewer role only has the permission to receive remote streams but not to publish local streams. If the viewer wants to co-anchor with the anchor, they need to switch the role to `anchor` via [Client.switchRole()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#switchRole) and then publish the local streams.
 
 ```javascript
 // Enter the room as a viewer
@@ -105,7 +105,7 @@ localStream
     console.error('Failed to initialize the local stream ' + error);
   })
   .then(() => {
-    console.log('Local stream successfully initialized');
+    console.log('Initialized local stream successfully');
   });
 ```
 3. Play back the local stream when it is successfully initialized
@@ -116,7 +116,7 @@ localStream
     console.error('Failed to initialize the local stream ' + error);
   })
   .then(() => {
-    console.log('Local stream successfully initialized');
+    console.log('Initialized local stream successfully');
     localStream.play('local_stream');
   });
 ```
