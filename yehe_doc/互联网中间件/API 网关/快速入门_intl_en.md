@@ -5,17 +5,17 @@ In the API Gateway Console, you can quickly perform operations such as creating 
 
 ## Step 1. Create a Tencent Cloud account
 If you already have a Tencent Cloud account, you can ignore this step.
-<div style="background-color:#00A4FF; width: 190px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 350px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;">Click here to sign up for a Tencent Cloud account</a></div>
 
 ## Step 2. Verify your identity
 If you have already done so, you can ignore this step.
 For more information on how to verify your identity, please see <a href="https://intl.cloud.tencent.com/document/product/378/3629">Identify Verification Overview</a>.
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
+<div style="background-color:#00A4FF; width: 270px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
 
 
 
 ## Step 3. Log in to API Gateway
-<div style="background-color:#00A4FF; width: 220px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/apigateway" target="_blank"  style="color: white; font-size:16px;">Click here to log in to the API Gateway Console</a></div>
+<div style="background-color:#00A4FF; width: 320px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/apigateway" target="_blank"  style="color: white; font-size:16px;">Click here to log in to the API Gateway Console</a></div>
 
 
 
