@@ -2,13 +2,17 @@
 > **注意事項：**
 > iptables は、CentOS 7 前後のバージョンに重大な変更があります。
 > - CentOS 7より前のバージョン、デフォルトでは iptables サービスをファイアウォールとして使用され、`service iptables stop`コードを使用して、iptables サービスはまず、ルールをクリアしてiptables コンポーネントをアンインストールします。再起動すると、設定ファイルからルールがロードされます。 iptables サービスを停止すると、ファイアウォールが制限されているかどうかをテストできます。
-> ![](https://main.qcloudimg.com/raw/5f65011fdbf237cc1b0a57c58126e210.png)
+> ![](https://main.qcloudimg.com/raw/4a404e0187b0ee677034c0df82468e4a.png)
 > - CentOS 7 以降のバージョン、デフォルトではfirewallサービスをファイアウォールとして使用されます。互換性のため、iptables_filter モジュールもロードされていますが、iptablesサービスは利用できません。そのため、CentOS 7以降、iptables コマンドを使用してルールを追加できますが、iptables サービスはデフォルトで無効になっています。ユーザーがiptable_filterモジュールをロードすることを確認してから、ルールが有効になります。
 
 ファイアウォールを判断する最も安全な方法は`iptables -nvL`を使用して、ルールを確認することです。 
 以下では2つの例を通して設定する方法を説明します。 
 #### シナリオ1
 Ubuntu 14 システムの場合、セキュリティグループ、監視ポートが開放したが、Telnetは機能しません。
+セキュリティグループのインバウンドルール：
+![](https://main.qcloudimg.com/raw/ef640902a0e0c78af6c07eb7102bb0d7.png)
+セキュリティグループのアウトバウンドルール：
+![](https://main.qcloudimg.com/raw/03a960f82b6e88fdca9aff8f10d76f4c.png)
 telnetが機能しない：
 ![](https://main.qcloudimg.com/raw/74c521a97d4b9dab64b85ce62ab2cf86.png)
 #### ソリューション
@@ -18,7 +22,7 @@ telnetが機能しない：
 ![](https://main.qcloudimg.com/raw/1052893022c8786a9b7b0166a57ce16d.png)  
 
 2. iptables ポリシー問題であることを確認した後、`iptables –nvL`を使用してポリシーがポート8081をインターネットに開放されるかどうかを確認します。ここではこのポートがインターネットに開放されていません。 
-![](https://main.qcloudimg.com/raw/1a27ae5cbfbf7260373cb53c6dd75780.png) 
+![](https://main.qcloudimg.com/raw/bccfca60e3d707ae61c5ba236bf088f8.png) 
 3. コマンドを使用して、8081ポートをインターネットに開放するポリシーを追加します。
 ```
 iptables -I INPUT 5 -p tcp  --dport 8081 -j ACCEPT
@@ -31,7 +35,7 @@ iptables の設定によると、ポリシーがインターネットに開か�
 ![](https://main.qcloudimg.com/raw/46fdf4e20187c5b366c7773d73eb1cee.png)
 #### ソリューション
 以下の状況が発生した場合：
-![](https://main.qcloudimg.com/raw/26447aa7e3ce053abb86607c3f873757.png)
+![](https://main.qcloudimg.com/raw/d1b01f74223ed34c78a789dc43d53bc8.png)
 コマンドを実行して output 方向の最初のルールを削除します：
 ```
 iptabels –D OUTPUT 1
