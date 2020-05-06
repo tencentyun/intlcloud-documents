@@ -18,7 +18,7 @@ Please see [DescribeInstances](https://intl.cloud.tencent.com/document/product/2
 <span id = "jump">  </span>
 ### Obtaining the public IP address using instance metadata
 1. Log in to the CVM instance.
-For more information, please see [Log in to Linux Instance](https://cloud.tencent.com/document/product/213/16515) and [Log in to Windows Instance](https://cloud.tencent.com/document/product/213/35697).
+For more information, please see [Log in to Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436) and [Log in to Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435).
 2. To obtain the public IP address, you can access the metadata by using the cURL tool or an HTTP GET request.
 ```
 curl http://metadata.tencentyun.com/meta-data/public-ipv4

@@ -21,7 +21,7 @@
 
 1. 登录云服务器实例。
 
-具体登录方法参考 [登录 Linux 实例](https://cloud.tencent.com/document/product/213/16515) 和 [登录 Windows 实例](https://cloud.tencent.com/document/product/213/35697)。
+具体登录方法参考 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 和 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435)。
 
 2. 通过 cURL 工具或是 HTTP 的 GET 请求访问 metadata，获取公网 IP 地址。
 
