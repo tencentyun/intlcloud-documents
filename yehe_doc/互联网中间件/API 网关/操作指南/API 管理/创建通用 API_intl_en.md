@@ -53,25 +53,25 @@ Configuration instructions:
 6. Set the backend timeout period (up to 30 minutes). During a call, if there is no response after the timeout period elapses, API Gateway will terminate the call and return the corresponding error message.
 7. Set the backend parameters that map the frontend.
 8. Click **Next** and configure the response result.
-![](https://main.qcloudimg.com/raw/259092151bb811311c3d05bfd16ace65.png)
+
 
 
 #### API Gateway backend integration with CLB resources in VPC
 If you want to integrate the backend with CLB in VPC, the frontend can be configured in the same way as other APIs, and the backend should be configured in the following way:
 1. In the backend configuration, select the VPC to be integrated with.
-![](https://main.qcloudimg.com/raw/15e6d1daba72708d28747fa38ad1dcfd.png)
+
 2. After selecting the VPC where your resource resides, select CLB as the resource type in VPC. Currently, API Gateway only allows you to integrate with CLB in VPC, and integration with other Tencent Cloud resources in VPC will be supported in the future.
-![](https://main.qcloudimg.com/raw/0be3289e9aa42e8cef8bf0062a1a00bf.png)
+
 3. Enter `http://vip+port` or `https://vip+port` at the backend address. The requests sent to CLB will be HTTP requests or HTTPS requests depending on the content you enter. The VIP here is the VIP of the private network CLB instance, which can be viewed in its basic information.
-![](https://main.qcloudimg.com/raw/dda0cba1faf5a0276c9dab5dff1e75f5.png)
+
 4. Select a listener type.
  - If you select the CLB listener type of HTTP/HTTPS, you should configure the backend path as the path configured in the CLB listener.
-Domain name and path configured in the CLB listener:
-![](https://main.qcloudimg.com/raw/0343ecb570624f0c71f11e3ca0805a63.png)
+Domain name and path configured in the CLB listener.
+
  The backend path in API Gateway must be the same as that in CLB.
-![](https://main.qcloudimg.com/raw/4637b8ae237e84dc3632ee1a5abf36f4.png)
+
  You also need to configure a parameter named `host` as a constant parameter and place it in the header, whose value should be the domain name configured in the CLB listener.
-![](https://main.qcloudimg.com/raw/d1d6bb3a99344099385dc8b19ee23386.png)
+
  - If you select the CLB listener type of TCP/UDP, you should configure the backend path as the path required by the business in the real CVM instance of the CLB instance.
 If you have configured host verification in CVM, you need to configure a parameter named `host` as a constant parameter and select the address to place it based on your actual business needs, just like with a layer-7 listener. Subsequent configuration is the same as that of other APIs.
 > When the backend is integrated with CLB, security groups on the real CVM instance should open the IP ranges of `100.64.0.0/10` and `9.0.0.0/8`.
@@ -83,7 +83,7 @@ If you choose not to enable response integration (existing mode) for API Gateway
 Configuration instructions:
 1. When you integrate the backend with SCF, you should configure the functions you created on SCF.
 2. Configure the timeout period and click **Complete**.
-![](https://main.qcloudimg.com/raw/8d970528f85847bdf02aab4cfb5b4d9d.png)
+
 If you choose to enable response for API Gateway integration with SCF, the request information will be combined in a fixed structure when API Gateway sends a request to SCF, and the content returned by SCF should also be in a fixed structure. API Gateway will then map the content returned by SCF to `statusCode`, `header`, and `body` and return it to the client.
 
 In this case, you need to return data in the following format to API Gateway for parsing:
@@ -142,12 +142,12 @@ The structure sent by API Gateway to SCF is in the following format:
 <span id="mock"></span>
 ### Integrating with Mock 
 Mock returns a response that has a fixed configuration to an API request. It is typically used for development testing. API configuration and response can be completed in advance before the backend service is completed. To integrate with Mock, you only need to configure your returned data and click **Complete**.
-![](https://main.qcloudimg.com/raw/40ce80c320c12721efabae202e296b30.png)
+
 
 <span id="websocket"></span>
 ### Integrating with WebSocket
 If WebSocket is used for your business, you can integrate WebSocket with your backend service in generally the same way as [integrating with HTTP](#http), except that the backend domain name should begin with `ws://` or `wss://` excluding the path.
-![](https://main.qcloudimg.com/raw/7426c3ce1db7a9a8fa9366cb63c1f04d.png)
+
 
 ## Step 4. Configure the response
 API response configuration includes the configuration of API response data and API error codes.
