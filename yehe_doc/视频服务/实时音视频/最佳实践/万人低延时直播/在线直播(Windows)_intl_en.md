@@ -352,7 +352,7 @@ void TRTCMainViewController::onUserVideoAvailable(const char* userId, bool avail
         // Set rendering mode of the remote user's video.
         m_pTRTCSDK->setRemoteViewFillMode(TRTCVideoFillMode_Fill);
         // Call the SDK API to play back the remote user's stream.
-        m_pTRTCSDK->startRemoteView(userId， hwnd);
+        m_pTRTCSDK->startRemoteView(userId, hwnd);
     } else {
         m_pTRTCSDK->stopRemoteView(userId);
     }    
