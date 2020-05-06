@@ -10,7 +10,7 @@ Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click **C
 - **Region and AZ**: currently supported regions include Guangzhou, Shanghai, Beijing, Singapore, Silicon Valley, Chengdu, Nanjing, and Mumbai. Tencent Cloud products in different regions cannot communicate with each another over a private network.
 - **Version and Components**: EMR recommends some commonly used combinations of components for Hadoop. You can also combine the components based on your needs.
 - **Hive Metadatabase**: if you choose to deploy the Hive component, there are two storage methods for Hive metadata: you can store the metadata in a MetaDB instance separately purchased for the cluster or associate the metadata with EMR-MetaDB or a self-built MySQL database. In the latter case, metadata will be stored in an associated database and will not be terminated when the cluster is terminated.
-![](https://main.qcloudimg.com/raw/8fb405d223130400709f76088f018c5b.png)
+![](https://main.qcloudimg.com/raw/9957344c29a2a76253fbe3179bdf5090.png)
 - **[Kerberos Secure Cluster](https://intl.cloud.tencent.com/document/product/1026/31163)**: it specifies whether to enable Kerberos authentication for the cluster. This feature is not required for individual users and disabled by default.
 - **[Software Configuration](https://intl.cloud.tencent.com/document/product/1026/34530)**: you can create a cluster by entering custom parameters as required. The external cluster access feature is provided as well, so that you can read/write external cluster data after configuring the correct address information in relevant parameters.
 ![](https://main.qcloudimg.com/raw/0c634886e7ecae2295fa0f45110274ae.png)
