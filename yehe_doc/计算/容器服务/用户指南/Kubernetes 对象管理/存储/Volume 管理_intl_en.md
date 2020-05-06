@@ -26,15 +26,15 @@
 	</tr>
 	<tr>
 	<td>Use Tencent Cloud CBS</td>
-	<td>Use the Kubernetes block storage plug-in extended by Tencent Cloud based on CBS. You can specify a Tencent Cloud CBS disk to be mounted to a certain path of the container. When the container is migrated, the cloud disk will also be migrated.<b>CBS volumes are suitable for the persistent storage of data and can be used for stateful services such as MySQL. Services that are configured with CBS volumes can have a maximum of 1 pod.</b></td>
+	<td>Use the Kubernetes block storage plug-in extended by Tencent Cloud based on CBS. You can mount a Tencent Cloud CBS disk to a specified path of the container. When the container is migrated, the cloud disk will also be migrated.<b>CBS volumes are suitable for the persistent storage of data and can be used for stateful services such as MySQL. Services that are configured with CBS volumes can have a maximum of 1 pod.</b></td>
 	</tr>
 	<tr>
 	<td>Use ConfigMap</td>
-	<td>A ConfigMap is mounted to a pod as a file system. Custom ConfigMap entries can be mounted to specific paths. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/30675">ConfigMap Management</a>.</td>
+	<td>A ConfigMap is mounted to a pod as a file system. You can mount the ConfigMap entries to a specific path. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/30675">ConfigMap Management</a>.</td>
 	</tr>
 	<tr>
 	<td>Use Secret</td>
-	<td>A Secret is mounted to a pod as a file system. Custom Secret entries can be mounted to specific paths. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/30676">Secret Management</a>.</td>
+	<td>A Secret is mounted to a pod as a file system. You can mount Secret entries to a specific path. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/30676">Secret Management</a>.</td>
 	</tr>
 </table>
 
@@ -43,30 +43,30 @@
 
 ### Notes on volumes
 
-- **After creating a volume, you need to set the mount target of the container in the "Containers in the Pod" module.**
-- Under the same service, the name of the volume and the set mount target must be unique.
-- When the source path of a local disk volume is empty, the system assigns a temporary directory named `/var/lib/kubelet/pods/pod_name/volumes/kubernetes.io~empty-dir`, and the lifetime of the volume with the temporary directory is the same as that of the pod.
+- **After creating a volume, you need to set the mount point of the container in the "Containers in the Pod" module.**
+- Under the same service, the name of the volume and the set mount point must be unique.
+- When the source path of a local disk volume is not specified, the system assigns a temporary directory named `/var/lib/kubelet/pods/pod_name/volumes/kubernetes.io~empty-dir`, and the lifecycle of the volume with the temporary directory is the same as that of the pod.
 - If no permission is set for volume mounting, the default permission is read/write.
 
 ## Operation Guide for Volumes in the Console
 
 ### Configurations for mounting different volumes
-The following table describes the usage details of different volumes. You can add volumes and configure mount targets accordingly.
+Add volumes and set mount points as instructed below.
 <table>
 <thead>
         <tr>
             <th colspan="3" class="text-center salesInfoStyle">
-                Data Volume
+                Volume
             </th>
             <th colspan="3" class="text-center dispositionStyle">
-                Mount Target
+                Mount Point
             </th>
         </tr>
       <tr>
         <!-- <th style="position: relative;" [style.top]="columnTop"><span></span></th> -->
         <th style="position: relative;" class="salesInfoStyle" [style.top]="columnTop"><span rtsort="del_order">Type</span></th>
         <th style="position: relative;" class="salesInfoStyle" [style.top]="columnTop"><span rtsort="type">Name</span></th>
-        <th style="position: relative;" class="salesInfoStyle" [style.top]="columnTop"><span>Other</span></th>
+        <th style="position: relative;" class="salesInfoStyle" [style.top]="columnTop"><span>Others</span></th>
         <th style="position: relative;" class="salesInfoStyle" [style.top]="columnTop"><span rtsort="plant">Destination Path</span></th>
         <th style="position: relative;" class="salesInfoStyle" [style.top]="columnTop"><span rtsort="customer">Sub-path</span></th>
         <th style="position: relative;" class="salesInfoStyle" [style.top]="columnTop"><span rtsort="shipto">Read and Write Permissions</span></th>
@@ -79,16 +79,16 @@ The following table describes the usage details of different volumes. You can ad
         <td>Node path</td><td>Set the node path.<li>Node Path: the node path cannot be empty. For example, if the container needs to access Docker, the node path can be set to <code>/var/lib/docker</code>.</li><li>Check Type: TKE provides many check types such as NoChecks and DirectoryOrCreate. Read the description of each type in the console and select a check type as needed.</li></td>
     </tr>
     <tr>
-        <td>NFS disk</td><td>NFS Path: enter the CFS address or user-built NFS address. <li>To create a file system, see <a herf="https://intl.cloud.tencent.com/document/product/582/9132">Creating File Systems and Mount Targets.</a></li> <li><code>10.0.0.161:/</code> is an example NFS path. The NFS path can be used to log in to the <a href="https://console.cloud.tencent.com/cfs" target="_blank">CFS console</a>. To obtain this path, click the ID of the target file system and find it in “Mounting Path on Linux” on the **Mount Point Information** tab page.</li></td>
+        <td>NFS disk</td><td>NFS Path: enter the CFS address or user-built NFS address. <li>To create a file system, see <a herf="https://intl.cloud.tencent.com/document/product/582/9132">Creating File Systems and Mount Targets.</a></li> <li><code>10.0.0.161:/</code> is an example NFS path. To obtain the NFS path, please log in to the <a href="https://console.cloud.tencent.com/cfs" target="_blank">CFS console</a>, click the ID of the target file system and find it in **Mount under Linux** on the **Mount Target Info** tab.</li></td>
     </tr>
     <tr>
-        <td>Existing PVC</td><td>Please choose a PVC: choose a PVC as needed.</td>
+        <td>Existing PVC</td><td>Choose a PVC as needed.</td>
     </tr>
     <tr>
-        <td>Tencent Cloud CBS</td><td>Select a cloud disk: select a cloud disk as needed.</td>
+        <td>Tencent Cloud CBS</td><td>Select a cloud disk as needed.</td>
     </tr>
     <tr>
-        <td>ConfigMap</td><td rowspan="2"><li>Select a ConfigMap: select a ConfigMap as needed.</li> <li>Options: “All” and “Specify part of Key”.</li><li>Items: if you select “Specify part of Key”, you can mount to a specific path by adding items. For example, if the mount target is <code>/data/config</code> and the sub-path is <code>dev</code>, the data will be ultimately stored under <code>/data/config/dev</code>.</li></td>
+        <td>ConfigMap</td><td rowspan="2"><li>Select a ConfigMap: select a ConfigMap as needed.</li> <li>Options: **All** and **Specific keys**.</li><li>Items: if you select **Specific keys**, you can mount it to a specific path by adding items. For example, if the mount point is <code>/data/config</code> and the sub-path is <code>dev</code>, the data will be stored under <code>/data/config/dev</code>.</li></td>
     </tr>
     <tr>
         <td>Secret</td>
@@ -97,24 +97,15 @@ The following table describes the usage details of different volumes. You can ad
 ### Creating a workload to mount a volume
 
 1. Log in to the TKE console and click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** in the left sidebar.
-
-2. On the "Cluster Management" page, click the ID of the cluster where you want to deploy a workload to go to the cluster management page.
-
-3. Under **Workload**, select a workload type to go to the corresponding information page.
-  For example, choose **Workload** > **DaemonSet** to go to the DaemonSet page,  as shown below:
-
-  ![](https://main.qcloudimg.com/raw/33e75aa3aab80d66c1dbcd4702cb564c.png)
-
-4. Click **Create** to go to the "Create a workload" page.
-
-5. Set the workload name, namespace, and other information as instructed. In **Volume**, click **Add Volume**.
-
+2. On the **Cluster Management** page, click the ID of the cluster where you want to deploy a workload to go to the cluster management page.
+4. Under **Workload**, select a workload type to go to the corresponding information page.
+For example, choose **Workload** > **DaemonSet** to go to the DaemonSet page, as shown below:
+![](https://main.qcloudimg.com/raw/33e75aa3aab80d66c1dbcd4702cb564c.png)
+5. Click **Create** to go to the **Create a workload** page.
+6. Set the workload name, namespace, and other information as instructed. In **Volume**, click **Add Volume**.
 6. Select a storage method for the volume. **Use Tencent Cloud CBS** is selected in this case.
-
-7. Configure the mount target in **Mount Point** under "Containers in the pod".
-
-   ![](https://main.qcloudimg.com/raw/c3270454a7520ffac86c94917905012f.png)
-
+8. Configure the mount point in **Mount Point** under **Containers in the pod**, as shown below:
+    ![](https://main.qcloudimg.com/raw/c3270454a7520ffac86c94917905012f.png)
 8. Set other options as needed and click **Create Workload** to finish the creation.
 
 ## Using kubectl to Manipulate Volumes

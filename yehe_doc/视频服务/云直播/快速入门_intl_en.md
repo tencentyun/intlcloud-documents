@@ -6,15 +6,12 @@ This document describes how to get started with LVB. Before trying out LVB, you 
 1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 2. Go to the [LVB service activation page](https://console.cloud.tencent.com/live?from=product-banner-use-lvb), indicate your consent to the **Tencent Cloud Service Agreement**, and click **Apply for Activation** to activate the LVB service.
 
->  After the LVB service is successfully activated, 20 GB of playback traffic for use in Mainland China will be gifted. In order to avoid automatic billing and possible service suspension due to account arrears after the gifted traffic is used up, you are recommended to **[purchase](https://buy.cloud.tencent.com/live?from=console-portal-buy-lvb)** an appropriate package.
-
 <span id="step1"></span>
 ## Step 1. Add a domain name
 To use LVB, you should have at least **two** domain names, one as the **push domain name**, and the other as the **playback domain name**. Push and playback cannot use the same domain name.
 
 <span id="step1_1"></span>
 1. Prepare your own domain names and get ICP filings for them.
-	- If you need to purchase domain names, you can go to **Tencent Cloud Domain Service** and [make a purchase](https://buy.cloud.tencent.com/domain?from=console). You can also purchase domain names at other domain name service providers.
 	- If your domain names have not obtained an ICP filing, you can go to [Tencent Cloud Website ICP Filing Service](https://intl.cloud.tencent.com/document/product/1022) to [apply for ICP filing](https://intl.cloud.tencent.com/product/icp).
 >  You should apply for ICP filing for your domain names according to the regulations of the Ministry of Industry and Information Technology (MIIT) of China. The application process takes several business days to complete, so you are recommended to start an application in advance. A new ICP filing can be synced to Tencent Cloud servers in one business day; therefore, a newly filed domain name may appear to be not filed when it is added.
 2. Log in to the LVB Console, enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, and click **Add Domain**.

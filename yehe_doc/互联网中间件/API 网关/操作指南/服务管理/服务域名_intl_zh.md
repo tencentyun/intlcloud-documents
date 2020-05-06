@@ -8,7 +8,7 @@
 1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway/index?rid=1)，在左侧导航栏选择【服务】。
 2. 在服务列表中，单击目标服务的服务名称，进入服务详情页。
 3. 在【服务信息】标签页中，查看访问该服务的子域名。
-![](https://main.qcloudimg.com/raw/87283d8b53d7f08352a019bdca599e58.png)
+![](https://main.qcloudimg.com/raw/bbd7e5499899f304074de93255acb9e3.png)
 
 ## 服务域名说明
 * 服务域名示例：`service-a1b2c3d4-1234567890.gz.apigw.tencentcs.com`。

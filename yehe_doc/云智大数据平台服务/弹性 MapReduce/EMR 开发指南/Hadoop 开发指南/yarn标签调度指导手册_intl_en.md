@@ -95,13 +95,13 @@ On the "Component Management" page, select the YARN component to enter its compo
 4. Run the `yarn rmadmin -addToClusterNodeLabels` command to add labels.
 ![](https://main.qcloudimg.com/raw/c23e4f3fb2d81cf21da40d6cdec3c6e5.png)
  Enter the WebUI of the YARN component. You can view all labels of the cluster in the "NodeLabels" panel.
-![](https://main.qcloudimg.com/raw/6e9a88107651955f1e6b9b783b85bf4b.png)
+![](https://main.qcloudimg.com/raw/4a0319553a776d9362804c5b37cfbafb.png)
 5. Run the `yarn rmadmin -replaceLabelsOnNode` command to add labels to nodes.
 ![](https://main.qcloudimg.com/raw/6824f8a6eed39c25bb127a532ed615b3.png)
 	As can be seen in the "NodeLabels" panel, the number of nodes in the "normal" and "cpu" partitions has become 1 from 0.
-![](https://main.qcloudimg.com/raw/45e47b8fa8f27246dc77cbcc94e8a332.png)
+![](https://main.qcloudimg.com/raw/10bb2e30ba5b45cb9ed9a6ebe69f3170.png)
  As can be seen in the "Scheduler" panel, the labels of the two nodes in the testing system have changed.
-![](https://main.qcloudimg.com/raw/0388a5e8ecf0a148ad5985080a04e145.jpg)
+![](https://main.qcloudimg.com/raw/465308d473eed1484ecd67345ca2d74e.png)
 6. Edit configuration items in `Capacity-Scheduler.xml` to configure the cluster queues, resource ratio of queues, and accessible labels of queues as shown in the following sample:
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -185,7 +185,7 @@ On the "Component Management" page, select the YARN component to enter its compo
 </configuration>
 ```
 The "Scheduler" panel displays the 3 partitions of the testing cluster, resource allocation of partitions, and information of included queues. In the "Application Queues" panel, there are 3 partitions: default, normal, and cpu, among which the "default" partition is the default one, the "normal" partition consists of nodes with the "normal" label, and the "cpu" partition consists of nodes with the "cpu" label. In the testing environment, there are two nodes which are labeled as "normal" and "cpu", respectively. You can click "+" on the left of a partition to expand all queues in it.
-![](https://main.qcloudimg.com/raw/fa2c002eb9337425c2db519126825db8.png)
+![](https://main.qcloudimg.com/raw/54f9c007a36e1821ae0a5aaf4bf5521a.png)
 
 ## Testing Label Scheduling
 - **Test 1. Submit a job to the "product" queue**

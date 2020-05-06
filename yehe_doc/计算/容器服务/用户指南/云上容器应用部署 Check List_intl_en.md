@@ -7,7 +7,7 @@ All cloud users want their migrations to the cloud to be efficient, stable, and 
 
 ### System availability
 <table>
-	<th style="width:10%">Category</th><th style="width:32%">Evaluation Item</th><th style="5%">Type</th><th style="width:38%">Impact Description</th><th style="width:15%">Reference</th>
+	<th style="width:10%">Category</th><th style="width:32%">Item</th><th style="5%">Type</th><th style="width:38%">Impact</th><th style="width:15%">Reference</th>
     <tr>
         <td rowspan="6">Cluster</td>
 				<td>Before creating a cluster, plan the node network and container network to suit your application scenario to prevent restricted capacity scaling in the future.</td>
@@ -23,7 +23,7 @@ scenarios, such as peering connection, direct connect, and VPN, improper network
 </td><td>VPC Connections</td>
     </tr>
     <tr>
-        <td>When you create a cluster, a default security group is automatically bound to the cluster. You can also set custom security group rules to meet the needs of your application.</td>
+        <td>When you create a cluster, a new security group is automatically bound to the cluster. You can also set custom security group rules to meet the needs of your application.</td>
 				<td>Deployment</td>
 				<td>Security groups provide an important means of security isolation. Improper security policy configuration may lead to security-related risks, service connectivity issues, and other problems.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/9084">Configuring TKE Security Groups</a></td>
     </tr>
@@ -63,15 +63,15 @@ scenarios, such as peering connection, direct connect, and VPN, improper network
 
 ### Data reliability
 <table>
-	<th style="width:10%">Category</th><th style="width:32%">Evaluation Item</th><th style="5%">Type</th><th style="width:38%">Impact Description</th><th style="width:15%">Reference</th>
+	<th style="width:10%">Category</th><th style="width:32%">Item</th><th style="5%">Type</th><th style="width:38%">Impact</th><th style="width:15%">Reference</th>
     <tr>
         <td>Container data persistence</td><td>Apply pod data storage and choose an appropriate volume type as needed.</td><td>Reliability</td><td>When a node fails to be restored following an exception, the data in the local disk cannot be restored. However, cloud storage can provide extremely high data reliability in this situation.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30678">Volume Management</a></td>
     </tr>
 </table>
 
-### OPS stability
+### Ops stability
 <table>
-   	<th style="width:10%">Category</th><th style="width:32%">Evaluation Item</th><th style="5%">Type</th><th style="width:38%">Impact Description</th><th style="width:15%">Reference</th>
+   	<th style="width:10%">Category</th><th style="width:32%">Item</th><th style="5%">Type</th><th style="width:38%">Impact</th><th style="width:15%">Reference</th>
     <tr>
         <td rowspan="2">Engineering</td><td>Check whether the quotas of resources such as CVMs, VPCs, subnets, and CBS disks can meet customer needs.</td><td>Deployment</td><td>Insufficient quotas will cause resource creation to fail. If you have enabled auto scaling, ensure that you have sufficient quotas for your Tencent Cloud services.</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/9087">Quota Limits for Cluster Purchase</a></li><li>Quota Limits</li></td>
     </tr>
@@ -79,6 +79,6 @@ scenarios, such as peering connection, direct connect, and VPN, improper network
         <td>We recommend that you do not modify the kernel parameters, system configurations, versions of cluster core components, security groups, and LB parameters on the nodes in your cluster.</td><td>Deployment</td><td>This may cause TKE cluster features or Kubernetes components installed on the node to fail, making the node unavailable for application deployment.</td><td><a href="https://intl.cloud.tencent.com/document/product/457/34022">High-risk Operations in TKE</a></td>
     </tr>
 	<tr>
-        <td>Proactive<br>OPS</td><td>TKE provides multidimensional monitoring and alarm features, along with basic resource monitoring provided by Cloud Monitor, to provide more refined metrics. Configure monitoring and alarm helps you receive prompt alarms and locate faults in case of exceptions.</td><td>Monitoring</td><td>If the monitoring and alarm features are not configured, no normal standard can be established for container cluster performance, and alarms will not be promptly received when an exception occurs. In this case, you will have to manually inspect your environment.</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/30690">Setting Alarms</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30689">Viewing Monitoring Data</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30691">List of Monitoring and Alarm Metrics</a></li></td>
+        <td>Proactive<br>OPS</td><td>TKE provides multidimensional monitoring and alarm features, along with basic resource monitoring provided by Cloud Monitor, to provide more refined metrics. Configuring monitoring and alarm helps you receive prompt alarms and locate faults in case of exceptions.</td><td>Monitoring</td><td>If the monitoring and alarm features are not configured, no normal standard can be established for container cluster performance, and alarms will not be promptly received when an exception occurs. In this case, you will have to manually inspect your environment.</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/30690">Setting Alarms</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30689">Viewing Monitoring Data</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30691">List of Monitoring and Alarm Metrics</a></li></td>
     </tr>
 </table>

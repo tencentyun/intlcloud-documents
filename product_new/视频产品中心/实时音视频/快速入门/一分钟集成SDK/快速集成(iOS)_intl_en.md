@@ -70,7 +70,7 @@ To use the audio/video features of the SDK, you need to grant the mic and camera
 - **Privacy - Microphone Usage Description**; enter the prompt for mic usage purpose.
 - **Privacy - Camera Usage Description**; enter the prompt for camera usage purpose.
 
-![](https://main.qcloudimg.com/raw/54cc6989a8225700ff57494cba819c7b.jpg)
+![](https://main.qcloudimg.com/raw/185e16f23a69ab811e7047da1d88adbe.png)
 
 
 ## Importing the TRTC SDK

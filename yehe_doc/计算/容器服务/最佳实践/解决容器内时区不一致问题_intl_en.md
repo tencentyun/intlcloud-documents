@@ -1,7 +1,7 @@
-## Scenario
-The default system time of containers in TKE clusters is Universal Time Coordinated (UTC), which is 8 hours different from the local time zone of nodes, that is, China Standard Time (CST). During the use of containers, time zone inconsistency in containers will cause trouble when the system time is used for operations, such as log records and database storage.
+## Introduction
+The default system time of containers in TKE clusters is Universal Time Coordinated (UTC), which may be different with the local time zone of your nodes. During the use of containers, time zone inconsistency in containers will cause trouble when the system time is used for operations, such as log records and database storage. In this document, we will use "Asia/Shanghai" as the local time zone. 
 
-The default time cannot be modified by cluster, but can be modified by container. This document provides multiple solutions to time zone inconsistencies in containers. You can choose the solution that works for you.
+You cannot modify the default time of the cluster but the container. This document provides multiple solutions to time zone inconsistencies in containers. You can choose the solution that works for you.
 - [Solution 1: create a time zone file in Dockerfile (recommended)](#createDockerFile)
 - [Solution 2: mount the time zone configuration of the CVM to the container](#mount)
 
@@ -9,7 +9,7 @@ The default time cannot be modified by cluster, but can be modified by container
 
 All operations described in this document are completed on TKE cluster nodes. The relevant operation environment is shown below. Please use this document to solve problems based on your actual situation.
 
-| Role | Region | Configuration | OS | Kubernetes Version Information |
+| Role | Region | Specifications | OS | Kubernetes Version |
 |---|---|---|---|---|
 | Node | South China (Guangzhou) | CPU: 1 core, memory: 1 GB, bandwidth: 1 Mbps<br>System disk: 50 GB (HDD cloud disk) | CentOS Linux 7 (Core) | 1.16.3 |
 
@@ -38,9 +38,9 @@ By comparison, it is clear that the local time zone and the time zone in the con
 exit
 ```
 
-## Procedure
-
-### Solution 1: create a time zone file in Dockerfile (recommended)<span id="createDockerFile"></span>
+## Directions
+<span id="createDockerFile"></span>
+### Solution 1: create a time zone file in Dockerfile (recommended)
 
 When creating a basic image or customizing an image based on a basic image, you can create a time zone file in Dockerfile to solve time zone inconsistency within a container. After this, you will no longer be troubled by time zone issues when using the image.
 
@@ -79,7 +79,8 @@ The time zone in the container is consistent with the local time. See the figure
 exit
 ```
 
-### Solution 2: mount the time zone configuration of the CVM to the container<span id="mount"></span>
+<span id="mount"></span>
+### Solution 2: mount the time zone configuration of the CVM to the container
 You can also solve time zone inconsistency in a container by mounting the time configuration of the CVM to the container. This solution can be set when the container is started, or you can use the CVM path in the YAML file to mount volumes to the container.
 
 

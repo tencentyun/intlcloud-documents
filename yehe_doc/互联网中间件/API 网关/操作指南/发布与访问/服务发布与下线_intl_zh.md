@@ -5,7 +5,7 @@
 #### 服务发布
 1. 登录【[API 网关控制台](https://console.cloud.tencent.com/apigateway/index?rid=1)】，在左侧导航栏单击【服务】。
 2. 在服务列表页，选择需要发布的服务名，单击操作列的【发布】。
-![](https://main.qcloudimg.com/raw/d8ee02b742e55eb04325d7dffaa4d86c.png)
+![](https://main.qcloudimg.com/raw/d98a258c46ebcb0992c73ff08e669b03.png)
 3. 选择发布环境并填写备注信息。
  - 发布环境：目前支持测试、预发布和发布三种环境。
  - 备注：必填，最多200个字符。
@@ -17,4 +17,4 @@
 >- 如果服务在一个环境中未发布，则不能下线。
 
 在具体某一环境发布后，如果需要撤销发布，可以在环境管理界面的操作中单击【下线】，下线该服务。
-![](https://main.qcloudimg.com/raw/cddf2ffaf0d140dd10ad5fc293d19aa9.png)
+![](https://main.qcloudimg.com/raw/0e22f36c56debe792c348410ae878e48.png)
