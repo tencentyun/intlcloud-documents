@@ -62,9 +62,9 @@ cos.putBucketReplication({
 function(err, data) { ... }
 ```
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 参数描述                                                     | 类型   |
+| 参数名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                   | 描述                                                     | 类型    |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
@@ -112,9 +112,9 @@ cos.getBucketReplication({
 
 #### 参数说明
 
-| 参数名 | 参数描述                                                     | 类型   | 是否必填 |
+| 参数名称                   | 描述                                                     | 类型    | 是否必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
+| Bucket | 查询跨地域复制的存储桶，格式：BucketName-APPID | String | 是   |
 | Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
@@ -123,9 +123,9 @@ cos.getBucketReplication({
 function(err, data) { ... }
 ```
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     | 参数描述                                                     | 类型        |
+| 参数名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     | 描述                                                     | 类型        |
 | -------------------------- | ------------------------------------------------------------ | ----------- |
-| err                        | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
+| err                        | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object      |
 | data                       | 请求成功时返回的对象，如果请求发生错误，则为空               | Object      |
 | - ReplicationConfiguration | 跨地域复制规则                                               | Object      |
 | - - Role                   | 复制过程以什么角色的身份<br>格式：`qcs::cam::uin/100000000001:uin/100000000011`<br>其中100000000001是主账号，100000000011是子账号 | Object      |
@@ -158,9 +158,9 @@ cos.deleteBucketReplication({
 
 #### 参数说明
 
-| 参数名 | 参数描述                                                     | 类型   | 是否必填 |
+| 参数名称 |描述                                                     | 类型   | 是否必填 |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | 存储桶的名称，命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String | 是   |
+| Bucket | 删除跨地域复制的存储桶，格式：BucketName-APPID | String | 是   |
 | Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String | 是   |
 
 #### 回调函数说明
@@ -169,9 +169,9 @@ cos.deleteBucketReplication({
 function(err, data) { ... }
 ```
 
-| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | 参数描述                                                     | 类型   |
+| 参数名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     | 参数描述                                                     | 类型   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err          | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | - statusCode | 请求返回的 HTTP 状态码，例如200、403、404等                  | Number |
 | - headers    | 请求返回的头部信息                                           | Object |
 | data         | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
