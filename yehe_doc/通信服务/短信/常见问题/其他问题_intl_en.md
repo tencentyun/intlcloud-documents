@@ -110,7 +110,7 @@ Individual users must obtain approval first before using the console to send SMS
 
 
 ### Can I send SMS messages offering loans?
-No, you cannot send SMS messages offering loans. For more information on content restrictions, please see [Body Template Review Standards](https://cloud.tencent.com/document/product/382/39023).
+No, you cannot send SMS messages offering loans. 
 
 ### Can I send SMS messages about job interviews?
 No, you cannot send SMS messages about job interviews or recruitment. 
