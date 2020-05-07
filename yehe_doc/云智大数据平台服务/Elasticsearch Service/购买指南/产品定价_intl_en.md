@@ -47,13 +47,13 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">1</td>
     <td class="tg-0pky">2</td>
     <td class="tg-0pky">Testing</td>
-    <td class="tg-0pky">0.044</td>
+    <td class="tg-0pky">0.049</td>
     <td class="tg-0pky">0.055</td>
     <td class="tg-0pky">0.047</td>
     <td class="tg-0pky">0.052</td>
     <td class="tg-0pky">0.042</td>
     <td class="tg-0pky">0.047</td>
-    <td class="tg-0pky">0.038</td>
+    <td class="tg-0pky">0.037</td>
     <td class="tg-0pky">0.042</td>
     <td class="tg-0pky">0.041</td>
     <td class="tg-0pky">0.046</td>
@@ -61,7 +61,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">0.044</td>
 		<td class="tg-0pky">0.039</td>
     <td class="tg-0pky">0.043</td>
-		<td class="tg-0pky">0.030</td>
+		<td class="tg-0pky">0.029</td>
     <td class="tg-0pky">0.033</td>
       <td class="tg-0pky">0.041</td>
     <td class="tg-0pky">0.046</td>
@@ -71,13 +71,13 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">2</td>
     <td class="tg-0pky">4</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">0.125</td>
+    <td class="tg-0pky">0.14</td>
     <td class="tg-0pky">0.156</td>
-    <td class="tg-0pky">0.129</td>
+    <td class="tg-0pky">0.128</td>
     <td class="tg-0pky">0.143</td>
-    <td class="tg-0pky">0.106</td>
+    <td class="tg-0pky">0.107</td>
     <td class="tg-0pky">0.118</td>
-    <td class="tg-0pky">0.106</td>
+    <td class="tg-0pky">0.107</td>
     <td class="tg-0pky">0.118</td>
     <td class="tg-0pky">0.089</td>
     <td class="tg-0pky">0.099</td>
@@ -85,7 +85,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">0.119</td>
     <td class="tg-0pky">0.100</td>
     <td class="tg-0pky">0.111</td>
-		<td class="tg-0pky">0.077</td>
+		<td class="tg-0pky">0.078</td>
     <td class="tg-0pky">0.086</td>
 		<td class="tg-0pky">0.103</td>
     <td class="tg-0pky">0.114</td>
@@ -95,9 +95,9 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">2</td>
     <td class="tg-0pky">8</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">0.186</td>
+    <td class="tg-0pky">0.21</td>
     <td class="tg-0pky">0.233</td>
-    <td class="tg-0pky">0.193</td>
+    <td class="tg-0pky">0.192</td>
     <td class="tg-0pky">0.214</td>
     <td class="tg-0pky">0.158</td>
     <td class="tg-0pky">0.176</td>
@@ -119,45 +119,43 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">4</td>
     <td class="tg-0pky">16</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">0.374</td>
+    <td class="tg-0pky">0.42</td>
         <td class="tg-0pky">0.467</td>
 		<td class="tg-0pky">0.385</td>
     <td class="tg-0pky">0.428</td>
     <td class="tg-0pky">0.317</td>
     <td class="tg-0pky">0.352</td>
-    <td class="tg-0pky">0.317</td>
-    <td class="tg-0pky">0.352</td>
     <td class="tg-0pky">0.268</td>
     <td class="tg-0pky">0.298</td>
-    <td class="tg-0pky">0.319</td>
+    <td class="tg-0pky">0.318</td>
     <td class="tg-0pky">0.354</td>
-    <td class="tg-0pky">0.301</td>
+    <td class="tg-0pky">0.300</td>
     <td class="tg-0pky">0.334</td>
     <td class="tg-0pky">0.235</td>
     <td class="tg-0pky">0.261</td>
     <td class="tg-0pky">0.305</td>
 		<td class="tg-0pky">0.339</td>
   </tr>
-  <tr>
+     <tr>
     <td class="tg-0pky">ES.S1.2XLARGE16</td>
     <td class="tg-0pky">8</td>
     <td class="tg-0pky">16</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">0.498</td>
+    <td class="tg-0pky">0.56</td>
     <td class="tg-0pky">0.622</td>
     <td class="tg-0pky">0.513</td>
     <td class="tg-0pky">0.570</td>
-    <td class="tg-0pky">0.427</td>
+    <td class="tg-0pky">0.426</td>
     <td class="tg-0pky">0.474</td>
-    <td class="tg-0pky">0.427</td>
+    <td class="tg-0pky">0.426</td>
     <td class="tg-0pky">0.474</td>
     <td class="tg-0pky">0.357</td>
     <td class="tg-0pky">0.397</td>
     <td class="tg-0pky">0.428</td>
     <td class="tg-0pky">0.476</td>
-		<td class="tg-0pky">0.401</td>
+		<td class="tg-0pky">0.400</td>
     <td class="tg-0pky">0.445</td>
-		<td class="tg-0pky">0.311</td>
+		<td class="tg-0pky">0.310</td>
     <td class="tg-0pky">0.345</td>
    <td class="tg-0pky">0.410</td>
     <td class="tg-0pky">0.456</td>   
@@ -167,9 +165,9 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">8</td>
     <td class="tg-0pky">32</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">0.746</td>
+    <td class="tg-0pky">0.84</td>
     <td class="tg-0pky">0.933</td>
-    <td class="tg-0pky">0.770</td>
+    <td class="tg-0pky">0.77</td>
     <td class="tg-0pky">0.855</td>
     <td class="tg-0pky">0.634</td>
     <td class="tg-0pky">0.704</td>
@@ -179,19 +177,19 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">0.595</td>
     <td class="tg-0pky">0.637</td>
     <td class="tg-0pky">0.708</td>
-		<td class="tg-0pky">0.600</td>
+		<td class="tg-0pky">0.6</td>
     <td class="tg-0pky">0.667</td>
-		<td class="tg-0pky">0.471</td>
+		<td class="tg-0pky">0.47</td>
     <td class="tg-0pky">0.523</td>
-      <td class="tg-0pky">0.610</td>
-      <td class="tg-0pky">0.678</td>
+      <td class="tg-0pky">0.61</td>
+    <td class="tg-0pky">0.678</td>
   </tr>
   <tr>
     <td class="tg-0pky">ES.S1.4XLARGE32</td>
     <td class="tg-0pky">16</td>
     <td class="tg-0pky">32</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">0.995</td>
+    <td class="tg-0pky">1.12</td>
     <td class="tg-0pky">1.244</td>
     <td class="tg-0pky">1.026</td>
     <td class="tg-0pky">1.140</td>
@@ -199,7 +197,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">0.947</td>
     <td class="tg-0pky">0.852</td>
     <td class="tg-0pky">0.947</td>
-    <td class="tg-0pky">0.715</td>
+    <td class="tg-0pky">0.714</td>
     <td class="tg-0pky">0.794</td>
     <td class="tg-0pky">0.856</td>
     <td class="tg-0pky">0.951</td>
@@ -215,7 +213,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">16</td>
     <td class="tg-0pky">64</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">1.493</td>
+    <td class="tg-0pky">1.68</td>
     <td class="tg-0pky">1.866</td>
     <td class="tg-0pky">1.540</td>
     <td class="tg-0pky">1.711</td>
@@ -239,7 +237,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">24</td>
     <td class="tg-0pky">48</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">1.493</td>
+    <td class="tg-0pky">1.68</td>
     <td class="tg-0pky">1.866</td>
     <td class="tg-0pky">1.540</td>
     <td class="tg-0pky">1.711</td>
@@ -263,7 +261,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">24</td>
     <td class="tg-0pky">96</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">2.239</td>
+    <td class="tg-0pky">2.519</td>
     <td class="tg-0pky">2.799</td>
     <td class="tg-0pky">2.309</td>
     <td class="tg-0pky">2.566</td>
@@ -275,11 +273,11 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">1.786</td>
     <td class="tg-0pky">1.911</td>
     <td class="tg-0pky">2.123</td>
-		<td class="tg-0pky">1.802</td>
+		<td class="tg-0pky">1.801</td>
     <td class="tg-0pky">2.002</td>
 		<td class="tg-0pky">1.411</td>
     <td class="tg-0pky">1.568</td>
-       <td class="tg-0pky">1.832</td>
+       <td class="tg-0pky">1.831</td>
        <td class="tg-0pky">2.035</td>
   </tr>
 <tr>
@@ -287,7 +285,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">32</td>
     <td class="tg-0pky">64</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">1.990</td>
+    <td class="tg-0pky">2.239</td>
     <td class="tg-0pky">2.488</td>
     <td class="tg-0pky">2.053</td>
     <td class="tg-0pky">2.281</td>
@@ -303,7 +301,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">1.779</td>
 		<td class="tg-0pky">1.241</td>
     <td class="tg-0pky">1.379</td>
-       <td class="tg-0pky">1.642</td>
+       <td class="tg-0pky">1.641</td>
        <td class="tg-0pky">1.824</td>
   </tr>
     <tr>
@@ -311,7 +309,7 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">32</td>
     <td class="tg-0pky">128</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">2.986</td>
+    <td class="tg-0pky">3.359</td>
     <td class="tg-0pky">3.732</td>
     <td class="tg-0pky">3.079</td>
     <td class="tg-0pky">3.421</td>
@@ -335,13 +333,13 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">48</td>
     <td class="tg-0pky">96</td>
     <td class="tg-0pky">Production</td>
-    <td class="tg-0pky">2.986</td>
+    <td class="tg-0pky">3.359</td>
     <td class="tg-0pky">3.732</td>
     <td class="tg-0pky">3.079</td>
     <td class="tg-0pky">3.421</td>
-    <td class="tg-0pky">2.558</td>
+    <td class="tg-0pky">2.557</td>
     <td class="tg-0pky">2.842</td>
-    <td class="tg-0pky">2.558</td>
+    <td class="tg-0pky">2.557</td>
     <td class="tg-0pky">2.842</td>
     <td class="tg-0pky">2.143</td>
     <td class="tg-0pky">2.381</td>
