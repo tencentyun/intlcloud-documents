@@ -10,7 +10,7 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
     <th class="tg-llyw" rowspan="3">CPU</th>
     <th class="tg-llyw" rowspan="3">内存（GB）</th>
     <th class="tg-llyw" rowspan="3">适用场景</th>
-    <th class="tg-llyw" colspan="18">预付费（$USD/个/小时）</th>
+    <th class="tg-llyw" colspan="16">预付费（$USD/个/小时）</th>
   </tr>
   <tr>
     <td class="tg-llyw" colspan="2">北京/上海/广州/南京</td>
@@ -126,6 +126,8 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
     <td class="tg-0pky">0.428</td>
     <td class="tg-0pky">0.317</td>
     <td class="tg-0pky">0.352</td>
+      <td class="tg-0pky">0.317</td>
+    <td class="tg-0pky">0.352</td>
     <td class="tg-0pky">0.268</td>
     <td class="tg-0pky">0.298</td>
     <td class="tg-0pky">0.318</td>
@@ -185,7 +187,7 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
       <td class="tg-0pky">0.61</td>
     <td class="tg-0pky">0.678</td>
   </tr>
-  <tr>
+     <tr>
     <td class="tg-0pky">ES.S1.4XLARGE32</td>
     <td class="tg-0pky">16</td>
     <td class="tg-0pky">32</td>

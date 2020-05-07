@@ -125,6 +125,8 @@ ES currently supports the pay-as-you-go billing mode. Billable items include nod
     <td class="tg-0pky">0.428</td>
     <td class="tg-0pky">0.317</td>
     <td class="tg-0pky">0.352</td>
+    <td class="tg-0pky">0.317</td>
+    <td class="tg-0pky">0.352</td>
     <td class="tg-0pky">0.268</td>
     <td class="tg-0pky">0.298</td>
     <td class="tg-0pky">0.318</td>
