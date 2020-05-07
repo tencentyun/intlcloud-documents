@@ -14,12 +14,15 @@ On the **Package Management** page, you can purchase packages, set package balan
 ## Setting Package
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Package Management** on the left sidebar and click **Set**.
+ 
 3. You can select an alarm condition, set the threshold, and click [OK].
  After successful configuration, when the total balance of all packages drops below the threshold, the system will send a notification to the specified alarm contact.
+
 4. You can select the renewal condition and set threshold and renewal quantity, and click **OK**.
  >The number of renewed messages can range from 1,000 to 1,000,000,000.
  >
- After the auto-renewal feature is enabled, it will automatically renew the package whenever the auto-renewal condition is met, and the amount due for the number of renewed messages will be deducted from your account. For more information, please see Mainland China SMS Pricing Overview.
+ After the auto-renewal feature is enabled, it will automatically renew the package whenever the auto-renewal condition is met, and the amount due for the number of renewed messages will be deducted from your account.
+ 
 
 ## Viewing Package Details
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
