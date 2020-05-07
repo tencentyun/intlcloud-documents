@@ -2,7 +2,7 @@
 
 DELETE Bucket domain 请求用于删除存储桶的自定义域名配置。
 
-> ! 
+> 
 >
 > - 主账号默认拥有删除存储桶域名的权限，子账号删除存储桶自定义域名，需要通过主账号在 [访问管理控制台](https://console.cloud.tencent.com/cam/overview) 授予`DeleteBucketDomain`接口的权限。
 > - 该接口将删除指定存储桶下所有绑定的自定义域名，请谨慎操作；如果需要删除部分自定义域名，可以通过`GET Bucket Domain`接口拉取存储桶下绑定的所有自定义域名，然后通过`PUT Bucket Domain`接口将不需要删除的自定义域名重新写入即可。
@@ -18,7 +18,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> ? Authorization: Auth String （详情请参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。
+> Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 #### 请求参数
 
@@ -26,7 +26,7 @@ Authorization: Auth String
 
 #### 请求头
 
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 请求体
 
@@ -36,7 +36,7 @@ Authorization: Auth String
 
 #### 响应头
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 #### 响应体
 
@@ -44,7 +44,7 @@ Authorization: Auth String
 
 #### 错误码
 
-此接口遵循统一的错误响应和错误码，详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档。
+此接口遵循统一的错误响应和错误码，详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档。
 
 ## 实际案例
 
