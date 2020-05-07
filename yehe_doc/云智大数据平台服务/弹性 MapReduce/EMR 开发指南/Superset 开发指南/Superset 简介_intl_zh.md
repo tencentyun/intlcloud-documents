@@ -21,9 +21,9 @@ EMR 上的 Superset，原装了对 Mysql、Hive、Presto、Impala、Kylin、Drui
 ## 添加 DataBase
 
 进入【Sources】>【Database】界面，单击【Filter List】。
-![](https://main.qcloudimg.com/raw/c98760953f38fc23d27abcbf5208bd83.png)
+![](https://main.qcloudimg.com/raw/b70d749c38ca7cb4a43176b05a38945b.png)
 进入如下页面，在 SQLAlchemy URI 中加入您需要添加的组件的 URI。
-![](https://main.qcloudimg.com/raw/57b69ecbd6f5c2ac0ca4adde380325ae.png)
+![](https://main.qcloudimg.com/raw/e2b7be62846438c0d0d228e26b5bcd63.png)
  
 
 各个数据库的链接 SQLAlchemy URI 如下：
