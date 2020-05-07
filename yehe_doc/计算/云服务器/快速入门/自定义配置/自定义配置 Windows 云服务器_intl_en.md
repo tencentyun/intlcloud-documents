@@ -1,5 +1,4 @@
 Compared with using quick configuration to create a Tencent Cloud Virtual Machine (CVM), custom configuration provides more image platforms and advanced configurations for storage, bandwidth, and security group. You can select the configuration method as needed. This document uses custom configuration as an example.
-To create a CVM with quick configuration, you can refer to [Custom Configuration for Windows CVM](https://intl.cloud.tencent.com/document/product/213/2764).
 
 ## Registration and Verification
 
