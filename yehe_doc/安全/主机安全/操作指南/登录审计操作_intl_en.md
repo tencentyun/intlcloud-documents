@@ -1,6 +1,7 @@
 CWP collects RDP and SSH login logs on the host and features [login audit](https://console.cloud.tencent.com/cwp/manage/loginLog), which displays all login transactions on the host and marks suspicious login behaviors.
-![](https://main.qcloudimg.com/raw/61e6fef44c7d65b0ac976844cb1aabaf.png)
+![](https://main.qcloudimg.com/raw/afa7af91421a7a0aebfbacaaebab86ac.png)
 The included fields are described as follows:
+
 - Server: the server currently logged in to.
 - Source IP Address: IP address of the login source. Generally, it is an egress IP address of a network or a network proxy IP address.
 - Source Location: the location where the source IP address locates.
