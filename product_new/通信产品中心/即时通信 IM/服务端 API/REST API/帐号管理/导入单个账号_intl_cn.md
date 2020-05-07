@@ -1,6 +1,5 @@
 ## 功能说明
-本接口适用于将 App 自有帐号导入即时通信 IM，即在即时通信 IM 中为 App 自有帐号创建一个对应的内部 ID，使未登录过即时通信 IM 的 App 自有帐号能够使用即时通信 IM 服务。
-例如，App 开发者通过 REST API 给用户 A 发送一条消息，用户 A 如果没有登录过即时通信 IM 服务，由于腾讯内部没有用户 A 对应的内部 ID，那么给用户 A 发送消息将会失败。需要把用户 A 的帐号导入即时通信 IM，系统为用户 A 创建一个内部 ID，才能通过 REST API 给用户 A 发送消息。
+本接口用于将 App 自有帐号导入即时通信 IM 帐号系统，为该帐号创建一个对应的内部 ID，使该帐号能够使用即时通信 IM 服务。
 
 >同一个帐号重复导入仅会创建1个内部 ID。
 
@@ -12,12 +11,12 @@ https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888
 ### 请求参数说明
 
  下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
- 
+
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
 | v4/im_open_login_svc/account_import | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
@@ -82,8 +81,8 @@ https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888
 
 ## 参考
 
-- 批量帐号导入（[v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954)）
-- 帐号删除（[v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955)）
-- 帐号检查（[v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)）
+- 导入多个帐号（[v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954)）
+- 删除帐号（[v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955)）
+- 查询帐号（[v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)）
 - 失效帐号登录态（[v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957)）
 - 查询帐号在线状态（[ v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477)）

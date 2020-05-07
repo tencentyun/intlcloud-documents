@@ -66,7 +66,7 @@ In addition to configuring the origin-pull method when connecting the accelerati
 ### Changing certificate
 #### Certificate modification
 Click **Edit** on the right of the certificate to update it for the specified domain name. You can also configure certificates in batches again to override the original certificate configuration.
-![](https://main.qcloudimg.com/raw/a3400bb74990a53a02bc17d7d609b150.png)
+![](https://main.qcloudimg.com/raw/bb2ed5ec740aa67abf2750dc58baae0d.png)
 Certificate update will take effect on nodes one by one across the entire network seamlessly without affecting HTTPS service in the production environment. You can also click **Delete** to cancel the HTTPS acceleration service.
 
 #### Certificate expiration

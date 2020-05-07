@@ -3,6 +3,7 @@
 ## 操作场景
 Android SDK 是腾讯移动推送服务为客户端实现消息推送而提供给开发者的接口，本文将提供 AndroidStudio Gradle 自动集成和 Android Studio 手动集成两种方式。
 
+
 ## 操作步骤
 ### 集成方法
 #### AndroidStudio Gradle 自动集成
@@ -46,7 +47,7 @@ dependencies {
 
 }
 ```
-4. 境外集群接入方法请参考下文 [境外集群接入方法](https://intl.cloud.tencent.com/document/product/1024/30713#JWjieru)。
+4. 境外集群接入方法请参考下文 [境外集群接入方法](https://intl.cloud.tencent.com/document/product/1024/30713)。
 
 >
 - 如在添加以上 abiFilter 配置后， Android Studio 出现以下提示：
@@ -207,7 +208,7 @@ NDK integration is deprecated in the current plugin. Consider trying the new exp
 
     <!-- MQTT END-->
 
-    <!-- 【必须】 请修改为APP的AccessId，“15”开头的10位数字，中间没空格 -->
+    <!-- 【必须】 请修改为 APP 的 AccessId，“15”开头的10位数字，中间没空格 -->
     <meta-data
         android:name="XG_V2_ACCESS_ID"
         android:value="APP的AccessId" />
@@ -246,14 +247,13 @@ NDK integration is deprecated in the current plugin. Consider trying the new exp
         // 其他安卓组件
         <meta-data
             android:name="XG_GUID_SERVER"
-            android:value="境外域名/guid/api/GetGuidAndMqttServer" />     
+            android:value="境外域名/guid/api/GetGuidAndMqttServer" />           
         <meta-data
             android:name="XG_STAT_SERVER"
-            android:value="境外域名/log/statistics/push" />     
+            android:value="境外域名/log/statistics/push" />        
         <meta-data
             android:name="XG_LOG_SERVER"
             android:value="境外域名/v3/mobile/log/upload" /> 
-
 </application>
 ```
 **境外域名如下：**
@@ -282,6 +282,20 @@ NDK integration is deprecated in the current plugin. Consider trying the new exp
 <ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_stop" android:layout_marginLeft="30dp" android:layout_toRightOf="@+id/xg_notification_audio_play" android:visibility="gone" android:background="@android:drawable/ic_media_pause" android:layout_alignParentBottom="true"/></RelativeLayout>
 ```
 
+
+#### 关闭联合保活
+
+如果需要关闭TPNS的保活功能，若您使用 gradle 自动集成方式，请在自身应用的 AndroidManifest.xml 文件 <application> 标签下配置如下结点，其中 ```xxx``` 为任意自定义名称；如果使用手动集成方式，请修改如下节点属性：
+
+```xml
+   <!-- 在自身应用的AndroidManifest.xml文件中添加如下结点，其中 xxx 为任意自定义名称: -->
+   <!-- 关闭与 TPNS 应用的联合保活功能，请配置 -->
+   <provider
+       android:name="com.tencent.android.tpush.XGPushProvider"
+       tools:replace="android:authorities"
+       android:authorities="应用包名.xxx.XGVIP_PUSH_AUTH"
+       android:exported="false" />    
+```
 
 ### 调试及设备注册
 
@@ -328,7 +342,6 @@ XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 -keep class com.tencent.bigdata.mqttchannel.** {*;}
 -keep class com.tencent.tpns.dataacquisition.** {*;}
 ```
-
 
 
 ### 集成建议

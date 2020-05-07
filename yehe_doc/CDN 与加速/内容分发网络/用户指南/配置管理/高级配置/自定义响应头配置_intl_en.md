@@ -75,7 +75,7 @@ This indicates that the client can access `Content-Length` and `X-My-Header`.
 **Custom header**
 You can add a custom header and customize `key-value` settings:
 ![img](https://main.qcloudimg.com/raw/501fd6e92b1cecbdd8b444837470ceb3.png)
-![img](https://main.qcloudimg.com/raw/31f668026031f14cf999ea6f186d0032/HTTP%20Header5.png)
+![img](https://main.qcloudimg.com/raw/66e85b5076895455b9c069e5967c423f.png)
 
 Currently, the following headers cannot be added:
 ```
