@@ -17,7 +17,7 @@ Tencent Cloud's Cloud Infinite (CI) supports multi-region storage, and different
 | Shanghai | &lt;BucketName-APPID&gt;.cos.ap-shanghai.myqcloud.com |
 | Guangzhou | &lt;BucketName-APPID&gt;.cos.ap-guangzhou.myqcloud.com | 
 | Chengdu | &lt;BucketName-APPID&gt;.cos.ap-chengdu.myqcloud.com | 
-| Chongqing | &lt;BucketName-APPID&gt;.cos.ap-chognqing.myqcloud.com |
+| Chongqing | &lt;BucketName-APPID&gt;.cos.ap-chongqing.myqcloud.com |
 
 
 ## Hong Kong (China) and Other Regions Outside Mainland China
