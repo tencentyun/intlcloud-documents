@@ -231,18 +231,18 @@
 |-----|-----|
 | [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abb57991f5e4f4ca1b95c2181a7e538c8) | 设置麦克风的音量大小。 |
 | [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1336146862fb742de6cbe5718f9b7008) | 设置美颜、美白以及红润效果级别。 |
-| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae0e4341ef565cc5ba28101574179cd56) | 设置大眼级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
-| [setFaceScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a52ad635b237ccb1eef53a4ed9e650035) | 设置瘦脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
-| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1bf6dd0f5a5c6c013323d31f60d494e2) | 设置 V 脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
-| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a145d4ed3d5790a449a9884d282420216) | 设置下巴拉伸或收缩，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
-| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac11082c88aba749acd7cd2c7a7caa953) | 设置短脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
-| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae94b107a9c476337585906c79b42ee95) | 设置瘦鼻级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
-| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3aa8c561d744e3d921dff6186a6e4ade) | 选择使用哪一款 AI 动效挂件，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
-| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa6689d734b9f46cb84a848b7e8f39cbd) | 设置动效静音，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae0e4341ef565cc5ba28101574179cd56) | 设置大眼级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setFaceScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a52ad635b237ccb1eef53a4ed9e650035) | 设置瘦脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1bf6dd0f5a5c6c013323d31f60d494e2) | 设置 V 脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a145d4ed3d5790a449a9884d282420216) | 设置下巴拉伸或收缩，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac11082c88aba749acd7cd2c7a7caa953) | 设置短脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae94b107a9c476337585906c79b42ee95) | 设置瘦鼻级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3aa8c561d744e3d921dff6186a6e4ade) | 选择使用哪一款 AI 动效挂件，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa6689d734b9f46cb84a848b7e8f39cbd) | 设置动效静音，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
 | [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a9a4b3b61c39c1c65e3426b35b0ace95f2) | 启动屏幕分享。 |
 | [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) | 设置指定素材滤镜特效。 |
 | [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3b0d7db70674f961c14b316f4e8e7a2b) | 设置滤镜浓度。 |
-| [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab4682edfc605ba06e24fd7b3e758ce5d) | 设置绿幕背景视频，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab4682edfc605ba06e24fd7b3e758ce5d) | 设置绿幕背景视频，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
 
 
 ## TRTCCloudDelegate @ TXLiteAVSDK
@@ -366,7 +366,7 @@
 
 ### 日志相关回调
 
->?建议在比较早初始化的类中设置回调委托对象，例如 AppDelegate。
+>建议在比较早初始化的类中设置回调委托对象，例如 AppDelegate。
 
 | API | 描述 |
 |-----|-----|
