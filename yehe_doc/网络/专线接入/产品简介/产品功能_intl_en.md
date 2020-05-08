@@ -1,5 +1,3 @@
-The following video describes the components of Direct Connect.
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1670-12009?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 ## Connection
 A connection is a physical line that connects Tencent Cloud with your on-premises IDC. You can establish a network connection between your IDC and the Tencent Cloud Direct Connect access point through a third-party network service provider.
