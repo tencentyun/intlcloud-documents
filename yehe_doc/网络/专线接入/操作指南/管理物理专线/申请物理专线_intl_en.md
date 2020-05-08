@@ -1,9 +1,3 @@
-You can watch the following video to learn about the operations related to connections.
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1671-12024?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
-All applications for Tencent Cloud Direct Connect (including BM and ECN) must be filled out and completed in the console. Tencent Cloud Direct Connect only serves certified Tencent Cloud enterprise customers.
-Complete the application for and setup of Tencent Cloud connection by following these steps:
-
 ## Applying in the Console
 1. Log in to the [Direct Connect Console](https://console.cloud.tencent.com/dc/dc).
 2. Click **+Create** to initiate an application for connection.

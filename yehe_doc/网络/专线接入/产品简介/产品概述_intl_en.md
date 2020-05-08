@@ -1,13 +1,9 @@
-Watch the following video to understand what is Direct Connect, its components and how it is different from and better than IPsec VPN.
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1670-12008?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
 ## Overview
 Direct Connect provides fast and secure connections from on-premises IDCs to Tencent Cloud. You can access Tencent Cloud computing resources in multiple regions and use the connection to implement flexible and reliable hybrid cloud deployments.
 - **Hybrid cloud deployment with Direct Connect** (1)
   Connect your IDCs with cloud VPCs using traditional dedicated tunnels.
   If you want to connect to multiple VPCs over one connection, you need to create dedicated tunnels with different VLAN IDs.
   
-
 - **Deploy hybrid cloud with Direct Connect** (2)
 Interconnect your network instances by using Cloud Connect Network (CCN).
 Advantage: you just need to create a connection to the CCN Direct Connect gateway and load the gateway with CCN to enable multiple network instances within the CCN to interconnect with each other.
