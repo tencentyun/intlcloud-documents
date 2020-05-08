@@ -10,6 +10,12 @@ This document describes how to authenticate and manage your APIs through key pai
 5. Bind the usage plan to the API or the service where the API resides.
 6. Generate signing information in PHP by referring to the [Sample Code](#example).
 
+## Notes
+- The eventually delivered HTTP request contains at least two headers: `Date` or `X-Date` and `Authorization`. More optional headers can be added in the request. If `Date` is used, the server will not check the time; if `X-Date` is used, the server will check the time.
+- The value of `Date` header is the construction time of the HTTP request in GMT format, such as Fri, 09 Oct 2015 00:00:00 GMT.
+- The value of `X-Date` header is the construction time of the HTTP request in GMT format, such as Mon, 19 Mar 2018 12:08:40 GMT. It cannot deviate from the current time for more than 15 minutes.
+- If it is a microservice API, you need to add two fields in the header: `X-NameSpace-Code` and `X-MicroService-Name`. They are not needed for general APIs and are included in the demo by default.
+
 <span id="example"></span>
 ## Sample Code
 ```
