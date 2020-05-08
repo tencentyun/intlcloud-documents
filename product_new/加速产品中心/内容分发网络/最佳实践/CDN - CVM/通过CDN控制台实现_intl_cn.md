@@ -10,7 +10,7 @@
 ### 添加域名
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧导航栏中，单击【域名管理】进入域名管理页面，单击【添加域名】。
-![](https://main.qcloudimg.com/raw/d301ff1eea5fe534ce09ec5964e8c82b.png)
+![](https://main.qcloudimg.com/raw/0d7c11a53f663ac8554f59e777dc01e7.png)
 
 ### 域名配置
 ![](https://main.qcloudimg.com/raw/be5e2b251bbcbcc674242062684649c1.png)

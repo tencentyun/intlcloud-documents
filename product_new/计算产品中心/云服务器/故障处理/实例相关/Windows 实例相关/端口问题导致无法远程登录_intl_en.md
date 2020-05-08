@@ -78,7 +78,7 @@ netstat -ant | findstr 3389
 1. In the CVM, click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>, select <img src="https://main.qcloudimg.com/raw/5b5e3abb2f39cb719a4119ba77b74447.png" style="margin: 0;"></img>, and enter **regedit**. Press **Enter** to open the **Registry Editor** window.
 2. In the registry navigation on the left, expand the following directories in order: **HKEY_LOCAL_MACHINE** > **SYSTEM** > **CurrentControlSet** > **Control** > **Terminal Server** > **Wds** > **rdpwd** > **Tds** > **tcp**.
 3. Locate the PortNumber in **tcp** and note down the port number (3389 by default), as shown below:
-![](https://main.qcloudimg.com/raw/a636dd570e6fe61b397290b4674b8d16.png)
+![](https://main.qcloudimg.com/raw/c412f3d3d1b7e46d175b49fa418e2048.png)
 4. In the registry navigation on the left, expand the following directories in order: **HKEY_LOCAL_MACHINE** > **SYSTEM** > **CurrentControlSet** > **Control** > **Terminal Server** > **WinStations** > **RDP-Tcp**.
 5. Locate PortNumber in **RDP-Tcp** and check whether the PortNumber data in **RDP-Tcp** is the same as the one in **tcp**. This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/9d68cec10e75afe621beb6c914d393cb.png)

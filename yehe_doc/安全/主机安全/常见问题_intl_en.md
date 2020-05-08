@@ -10,7 +10,6 @@ Snapshot is a data backup method provided by Tencent Cloud. It can create a full
 You can create a snapshot in the console in the following steps:
 1. Log in to the [CBS Console](https://console.cloud.tencent.com/cvm/cbs/index?rid=1).
 2. Locate the row of the instance for which you want to create a snapshot and click **Create Snapshot**.
-![](https://main.qcloudimg.com/raw/29ac69255f63e4d164292b781ecbfcd0.png)
 3. Confirm the relevant information on the snapshot creating page, name the snapshot, click **Submit**, and wait for the snapshot to be created.
 
 For more information, please see [Snapshot Overview](https://intl.cloud.tencent.com/document/product/362/31638) and [Creating Snapshot](https://intl.cloud.tencent.com/document/product/362/5755).
@@ -38,7 +37,7 @@ If you find an undetected trojan file, please [submit a ticket](https://console.
 Log in to the [CWP Console](https://console.cloud.tencent.com/yunjing), select **Asset Management** > **Server List** on the left sidebar, find the server from which you want to uninstall CWP, and click **Uninstall**. Or, open the installation directory and use the uninstaller there for uninstallation.
 
 ### What should I do if there is a problem with identity verification for my Tencent Cloud account?
-If you have encountered a problem related to the Tencent Cloud account when using CWP, please see the account documentation.
+If you have encountered a problem related to the Tencent Cloud account when using CWP, please see the [account documentation](https://intl.cloud.tencent.com/document/product/378?from_cn_redirect=1).
 
 ### How can I reduce the probability of server intrusion?
 - Fix high-risk vulnerabilities and baseline issues in a timely manner.

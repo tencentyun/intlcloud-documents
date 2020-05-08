@@ -10,7 +10,7 @@ This document describes how to accelerate access to CVM instances through CDN in
 ### Adding a domain name
 
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Domain Management** on the left sidebar to enter the domain name management page, and click **Create Distribution**.
-![](https://main.qcloudimg.com/raw/d301ff1eea5fe534ce09ec5964e8c82b.png)
+![](https://main.qcloudimg.com/raw/0d7c11a53f663ac8554f59e777dc01e7.png)
 
 ### Configuring the domain name
 ![](https://main.qcloudimg.com/raw/be5e2b251bbcbcc674242062684649c1.png)

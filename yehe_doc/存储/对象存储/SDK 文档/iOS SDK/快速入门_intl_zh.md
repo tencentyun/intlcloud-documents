@@ -2,9 +2,9 @@
 
 ### 相关资源
 
-- 对象存储服务的 iOS SDK 地址：[XML iOS SDK](https://github.com/tencentyun/qcloud-sdk-ios.git)。   
-- 若您需要下载打包好的 Framework 格式的 SDK，可以从 [realease](https://github.com/tencentyun/qcloud-sdk-ios/releases) 中选择需要的版本进行下载。
-- SDK 快速下载地址：[XML iOS SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-ios/latest/qcloud-sdk-ios.zip?_ga=1.33270526.1783616852.1583375173)。	
+- 对象存储服务的 iOS SDK 源码地址：[XML iOS SDK](https://github.com/tencentyun/qcloud-sdk-ios.git)。   
+- 若您需要下载打包好的 Framework 格式的 SDK，可以从 [releases](https://github.com/tencentyun/qcloud-sdk-ios/releases) 中选择需要的版本进行下载。
+- SDK 快速下载地址：[XML iOS SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-ios/latest/qcloud-sdk-ios.zip)。
 - 更多示例可参考 Demo：[ XML iOS  SDK Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples.git)。
 - COS XML 版本的更新日志请参考：[XML iOS  SDK  ChangeLog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md)。
 
@@ -14,7 +14,7 @@
 - 手机必须要有网络（GPRS、3G、4G 或 Wi-Fi 网络等）。
 - 从访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/capi) 页面获取 SecretId、SecretKey，以及在 [账号中心](https://console.cloud.tencent.com/developer) 中获取 APPID 信息。
 
->关于文章中出现的 SecretID、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
+>关于文章中出现的 SecretID、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 ### 安装 SDK
 
@@ -144,7 +144,7 @@ configuration.appID = @"APPID"//项目ID;
 
 
 
-[//]: # (.cssg-snippet-objc-global-init)
+[//]: # ".cssg-snippet-objc-global-init"
 ```objective-c
 //AppDelegate.m
 //第一步：注册默认的 COS 服务
@@ -166,7 +166,7 @@ configuration.appID = @"APPID"//项目ID;
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-global-init)
+[//]: # ".cssg-snippet-swift-global-init"
 ```swift
 //AppDelegate.m
 //第一步：注册默认的 COS 服务
@@ -191,7 +191,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### 创建存储桶
 
-[//]: # (.cssg-snippet-objc-put-bucket)
+[//]: # ".cssg-snippet-objc-put-bucket"
 ```objective-c
 QCloudPutBucketRequest* request = [QCloudPutBucketRequest new];
 request.bucket = @"examplebucket-1250000000"; //additional actions after finishing
@@ -203,7 +203,7 @@ request.bucket = @"examplebucket-1250000000"; //additional actions after finishi
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-put-bucket)
+[//]: # ".cssg-snippet-swift-put-bucket"
 ```swift
 let putBucketReq = QCloudPutBucketRequest.init();
 putBucketReq.bucket = "examplebucket-1250000000";
@@ -218,7 +218,7 @@ QCloudCOSXMLService.defaultCOSXML().putBucket(putBucketReq);
 
 ### 查询存储桶列表
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```objective-c
 QCloudGetServiceRequest* request = [[QCloudGetServiceRequest alloc] init];
 [request setFinishBlock:^(QCloudListAllMyBucketsResult* result, NSError* error) {
@@ -229,7 +229,7 @@ QCloudGetServiceRequest* request = [[QCloudGetServiceRequest alloc] init];
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-get-service)
+[//]: # ".cssg-snippet-swift-get-service"
 ```swift
 let getServiceReq = QCloudGetServiceRequest.init();
 getServiceReq.setFinish{(result,error) in
@@ -252,7 +252,7 @@ QCloudCOSXMLService.defaultCOSXML().getService(getServiceReq);
 
 #### 示例
 
-[//]: # (.cssg-snippet-objc-transfer-upload-object)
+[//]: # ".cssg-snippet-objc-transfer-upload-object"
 ```objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 put.object = @"exampleobject";
@@ -295,7 +295,7 @@ if (resumeData) {
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-transfer-upload-object)
+[//]: # ".cssg-snippet-swift-transfer-upload-object"
 ```swift
 let uploadRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init();
 let dataBody:NSData? = "wrwrwrwrwrw".data(using: .utf8) as NSData?;
@@ -344,7 +344,7 @@ do {
 | ----------------------------- | ------------------------------------------------------------ | --------------------- | ---- |
 | Object                        | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为`doc/picture.jpg`，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | NSString *            | 是   |
 | bucket                        | 存储桶名，可在 [COS 控制台](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt; ，例如`examplebucket-1250000000` | NSString *            | 是   |
-| body                          | 需要上传的文件的路径。填入NSURL * 类型变量                   | BodyType              | 是   |
+| body                          | <li>如果文件存放在硬盘中，这里需要填入上传的文件的路径，填入 NSURL * 类型变量<br><li>如果文件存放在内存中，则这里可以填入包含文件二进制数据的 NSData * 类型变量                  | BodyType              | 是   |
 | storageClass                  | 对象的存储级别                                               | QCloudCOSStorageClass | 是   |
 | cacheControl                  | RFC 2616 中定义的缓存策略                                    | NSString *            | 否   |
 | contentDisposition            | RFC 2616 中定义的文件名称                                    | NSString *            | 否   |
@@ -358,7 +358,7 @@ do {
 
 ### 查询对象列表
 
-[//]: # (.cssg-snippet-objc-get-bucket)
+[//]: # ".cssg-snippet-objc-get-bucket"
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 request.bucket = @"examplebucket-1250000000";
@@ -373,7 +373,7 @@ request.maxKeys = 1000;
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-get-bucket)
+[//]: # ".cssg-snippet-swift-get-bucket"
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 getBucketReq.bucket = "examplebucket-1250000000";
@@ -389,7 +389,7 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 
 ### 下载对象
 
-[//]: # (.cssg-snippet-objc-get-object)
+[//]: # ".cssg-snippet-objc-get-object"
 ```objective-c
 QCloudGetObjectRequest* request = [QCloudGetObjectRequest new];
 //设置下载的路径 URL，如果设置了，文件将会被下载到指定路径中
@@ -411,7 +411,7 @@ request.bucket = @"examplebucket-1250000000";
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-get-object)
+[//]: # ".cssg-snippet-swift-get-object"
 ```swift
 let getObject = QCloudGetObjectRequest.init();
 getObject.bucket = "examplebucket-1250000000";
@@ -431,7 +431,7 @@ QCloudCOSXMLService.defaultCOSXML().getObject(getObject);
 
 ### 删除对象
 
-[//]: # (.cssg-snippet-objc-delete-object)
+[//]: # ".cssg-snippet-objc-delete-object"
 ```objective-c
 QCloudDeleteObjectRequest* deleteObjectRequest = [QCloudDeleteObjectRequest new];
 deleteObjectRequest.bucket = @"examplebucket-1250000000";
@@ -446,7 +446,7 @@ deleteObjectRequest.object = @"exampleobject";
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-delete-object)
+[//]: # ".cssg-snippet-swift-delete-object"
 ```swift
 let deleteObject = QCloudDeleteObjectRequest.init();
 deleteObject.bucket = "examplebucket-1250000000";
@@ -481,12 +481,12 @@ SDK 中的请求需要用到签名，以确认访问的用户的身份，也保�
 
 ![](https://main.qcloudimg.com/raw/d25267927fcaca9d9e0696f1aba872a5.png)    
 
-至于如何搭建签名服务器接入 CAM 系统，您可以参考 [移动应用直传实践](/document/product/436/9068)。
+至于如何搭建签名服务器接入 CAM 系统，您可以参考 [移动应用直传实践](https://intl.cloud.tencent.com/document/product/436/30618)。
 
 签名服务器接入 CAM 系统后，当客户端向签名服务器端请求签名时，签名服务器端会向 CAM 系统请求临时证书，然后返回给客户端。
 CAM 系统会根据您的永久 SecretId 和 SecretKey 来生成临时的 SecretId，SecretKey 和临时 Token 来生成签名，可以最大限度地提高安全性。终端收到这些临时密钥的信息后，通过它们构建一个 QCloudCredential 对象，然后通过这个 QCloudCredentail 对象生成 QCloudAuthentationCreator，最后通过使用 Creator 来生成包含签名信息的 QCloudSignature 对象。具体的操作可以参考以下示例：
 
-[//]: # (.cssg-snippet-objc-global-init-signature-sts)
+[//]: # ".cssg-snippet-objc-global-init-signature-sts"
 ```objective-c
 - (void) signatureWithFields:(QCloudSignatureFields*)fileds
                      request:(QCloudBizHTTPRequest*)request
@@ -509,7 +509,7 @@ CAM 系统会根据您的永久 SecretId 和 SecretKey 来生成临时的 Secret
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-global-init-signature-sts)
+[//]: # ".cssg-snippet-swift-global-init-signature-sts"
 ```swift
 
 func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPRequest!, urlRequest urlRequst: NSMutableURLRequest!, compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
@@ -532,7 +532,7 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
 
 示例代码如下：
 
-[//]: # (.cssg-snippet-objc-global-init-signature)
+[//]: # ".cssg-snippet-objc-global-init-signature"
 ```objective-c
 - (void) signatureWithFields:(QCloudSignatureFields*)fileds
                      request:(QCloudBizHTTPRequest*)request
@@ -551,7 +551,7 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-global-init-signature)
+[//]: # ".cssg-snippet-swift-global-init-signature"
 ```swift
 
 func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPRequest!, urlRequest urlRequst: NSMutableURLRequest!, compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
@@ -591,7 +591,7 @@ QCloudCredentailFenceQueue 提供了栅栏机制，也就是说您使用 QCloudC
 
 当通过 QCloudCredentailFenceQueue 去获取签名时，所有需要签名的 SDK 里的请求都会等待该协议定义的方法内拿到了签名所需的参数并生成有效的签名后执行。请看以下示例：
 
-[//]: # (.cssg-snippet-objc-global-init-fence-queue)
+[//]: # ".cssg-snippet-objc-global-init-fence-queue"
 ```objective-c
 //AppDelegate.m
 
@@ -630,7 +630,7 @@ QCloudCredentailFenceQueue 提供了栅栏机制，也就是说您使用 QCloudC
 
 #### swift 示例
 
-[//]: # (.cssg-snippet-swift-global-init-fence-queue)
+[//]: # ".cssg-snippet-swift-global-init-fence-queue"
 ```swift
 //AppDelegate.m
 
