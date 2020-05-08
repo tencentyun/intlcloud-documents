@@ -1,53 +1,50 @@
 ## Scenario
 
-This document describes how to change a public IP address. There are two different ways:
-- [Replace public IP directly](#ReplacementPublicIP)
-- [First convert to Elastic Public IP, and then unbind Elastic Public IP](#ReplacementEIP)
+This document describes how to replace a public IP address. This can be done in two ways:
+- [Directly replacing a public IP address](#ReplacementPublicIP)
+- [Changing to an EIP and then unbinding the EIP](#ReplacementEIP)
 
 ## Notes
-If you choose to **replace public IP directly**, please note the following items:
-- At most 3 times/day per account per region.
-- One instance can **only replace a public IP one time**.
-- **The previous public IP will be released after replacement.**
+If you choose to **directly replace a public IP address**, note that:
+- The upper limit for a single account in a region is 3 times per day.
+- One instance can **replace the public IP address only once**.
+- **After replacement, the original public IP address will be released.**
 
-If you choose to **convert to Elastic Public IP first, and then unbind Elastic Public IP**, please note the following items:
+If you choose to **change to an EIP and then unbind the EIP**, note that:
 - When an EIP is bound to a CVM instance, the current public IP address of the instance will be released.
-- The Elastic Public IP quota per account per region is 20.
-- In order to ensure the effective use of IP resources, EIPs that are not bound to CVMs will incur an idle fee, which is billed on hourly basis.
-For details on EIP billing rules, see [Billing for Elastic Public IP](http://intl.cloud.tencent.com/document/product/213/17156).
+- The quota of EIPs for one account in a single region is 20.
+- EIPs that are not bound to CVMs will incur an idle fee, which is billed on an hourly basis.
+For information on EIP billing, see [EIP Billing](http://intl.cloud.tencent.com/document/product/213/17156).
 
 ## Prerequisites
 
-- Log in to [CVM Console](https://console.cloud.tencent.com/cvm/index).
+You have logged in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 
 ## Directions
 
 <span id="ReplacementPublicIP"></span>
-### Method 1: Replace public IP directly
+### Method 1: Directly replacing a public IP address
 
-1. On the instance management page, select the CVM column of the IP you want replace and click **More** > **IP/ENI** > **Change Public IP**, as shown below:
-![](https://main.qcloudimg.com/raw/4225bd84b4cf4d5346ddc77a1d7fd0df.png)
-2. In the pop-up “Change IP” box, click  **Confirm** to complete the replacement of the IP.
+1. On the instance management page, select the row of the CVM whose public IP address is to be changed, and choose **More** > **IP/ENI** > **Replace Public IP**.
+2. In the "Replace IP" window that appears, click **OK** to finish the replacement.
 
 <span id="ReplacementEIP"></span>
-### Method 2: First convert to Elastic Public IP, and then unbind Elastic Public IP
+### Method 2: Changing to an EIP and then unbinding the EIP
 
-#### Coverting to Elastic Public IP
-1. On the instance management page, select the CVM column of the IP you want to replace and click <img src="https://main.qcloudimg.com/raw/25e8c0e37b73c12da900301f03e57dbc.png" style="margin: 0;"></img>, as shown below:
-![](https://main.qcloudimg.com/raw/53b608b2bb0840920703e7f50957611a.jpg)
-2. In the pop-up “Convert to EIP” box, click  **OK**.
+#### Changing to an EIP
+1. On the instance management page, select the row of the CVM whose public IP address is to be changed, and click <img src="https://main.qcloudimg.com/raw/25e8c0e37b73c12da900301f03e57dbc.png" style="margin: 0;"></img>.
+2. In the "Convert to EIP" window that appears, click **Convert**.
 
-#### Unbinding EIPs
-1. After converting the EIP back to a public network IP, click **More**> **IP/ENI** > **Unbind Elastic IP** in the CVM column, as shown below.
-![](https://main.qcloudimg.com/raw/dc5f3554b7b73bd554f596b9168839fc.png)
-2. In the pop-up “Unbind EIP” box, tick **A free public IP will be assigned after unbinding (note: the public IP is randomly assigned and cannot be unbound from the instance)**, and click **OK**.
-3. In the pop-up box, click **OK** to complete the replacement.
+#### Unbinding the EIP
+1. After the conversion is completed, choose **More** > **IP/ENI** > **Unbind EIP** in the row for the CVM.
+2. In the "Unbind EIP" window that appears, select **Assign Free Public IP After Unbinding** (note that the public IP address will be randomly assigned and cannot be unbound from the CVM), and click **OK**.
+3. In the window that appears, click **OK** to finish the replacement.
 
-#### Releasing EIP (Optional)
-> The unbound EIP is still kept under your account and incurs idle fees. To avoid such charges, we recommended you perform the following operations to release EIPs unbound from instances.
+#### (Optional) Releasing the EIP
+> As unbound EIPs are retained under your account and incur idle fees, to avoid such fees, we recommend that you complete the following steps to release EIPs unbound from instances.
 >
-1. In the left sidebar, click **[EIP](https://console.cloud.tencent.com/cvm/eip)** to open the EIP management page.
-2. Select the unbound EIP on the EIP management page, and click **More** > **Release**.
-3. In the pop-up box, tick **Release the above EIPs** and click **Release** to release the EIP.
+1. In the left sidebar, click **[EIP](https://console.cloud.tencent.com/cvm/eip)** to go to the EIP management page.
+2. On the EIP management page, select the EIP you just unbound and choose **More** > **Release**.
+3. In the "Are you sure you want to release the EIP?" window that appears, select **Confirm release of the above IP** and click **Release**.
 
 
