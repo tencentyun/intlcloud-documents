@@ -1,4 +1,4 @@
-Tencent Cloud provides two network environments: [Virtual Private Cloud](https://cloud.tencent.com/product/vpc?idx=2) (VPC) and basic network.
+Tencent Cloud provides two network environments: [Virtual Private Cloud](https://intl.cloud.tencent.com/product/vpc) (VPC) and basic network.
 After June 13, 2017, newly registered account no longer supports the basic network. We recommend you use a VPC for the following reasons:
 - Complete features: VPC covers all basic network features, while providing more flexible network services such as custom IP range, routing, Direct Connect, VPN, NAT, etc.
 - Smooth migration: There is no completely smooth migration solution in the industry (the need to shut down, change private IP, etc). If you need to use a VPC for business development later, the migration process may affect your business.
@@ -7,7 +7,7 @@ After June 13, 2017, newly registered account no longer supports the basic netwo
 
 ### VPC
 
-With Tencent Cloud’s [Virtual Private Cloud (VPC)](https://cloud.tencent.com/document/product/215), you can customize a logical isolated virtual network on the cloud. Even in the same region, different VPCs cannot communicate with each other by default. Similar to the traditional network that you run in your data center, your Tencent Cloud resources, including [CVM](https://intl.cloud.tencent.com/document/product/213/495), [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214/524), and [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236/5147), are hosted on Tencent Cloud’s VPC to give you full control over the environment. For more information on configuration and application scenarios, see [VPC](https://intl.cloud.tencent.com/document/product/215/535). The VPC helps you build more complex network architecture and is suitable for those who are familiar with network management.
+With Tencent Cloud’s [Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215), you can customize a logical isolated virtual network on the cloud. Even in the same region, different VPCs cannot communicate with each other by default. Similar to the traditional network that you run in your data center, your Tencent Cloud resources, including [CVM](https://intl.cloud.tencent.com/document/product/213/495), [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214/524), and [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236/5147), are hosted on Tencent Cloud’s VPC to give you full control over the environment. For more information on configuration and application scenarios, see [VPC](https://intl.cloud.tencent.com/document/product/215/535). The VPC helps you build more complex network architecture and is suitable for those who are familiar with network management.
 
 <!--![](https://main.qcloudimg.com/raw/c4f0fad71be46eeb9f39769be4e881df.png)-->
 

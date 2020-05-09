@@ -1,4 +1,4 @@
-腾讯云的网络环境可以分为 [私有网络](https://cloud.tencent.com/product/vpc?idx=2)（Virtual Private Cloud，VPC）和基础网络两种。
+腾讯云的网络环境可以分为 [私有网络](https://intl.cloud.tencent.com/product/vpc)（Virtual Private Cloud，VPC）和基础网络两种。
 2017年6月13日后，新注册的账号已不支持基础网络，推荐您使用私有网络。其原因如下：
 - 功能完备性：基础网络功能均可通过私有网络满足，且私有网络提供更多灵活的网络服务。例如自定义网段、路由、支持专线接入、VPN、NAT 等。
 - 迁移平滑性：业界均无完全平滑的迁移方案（需关机，变更内网 IP 等）。如果您后续因业务发展需使用私有网络，迁移过程可能影响您的业务。
@@ -7,7 +7,7 @@
 
 ### 私有网络
 
-腾讯云 [私有网络](https://cloud.tencent.com/document/product/215) 是一块您在腾讯云上自定义的逻辑隔离网络空间。即使在相同地域下，不同的私有网络之间默认无法互相通信。与您在数据中心运行的传统网络相似，托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括 [云服务器](https://intl.cloud.tencent.com/document/product/213/495)、[负载均衡](https://intl.cloud.tencent.com/document/product/214/524)、[云数据库](https://cloud.tencent.com/document/product/236) 等云服务资源。用户可以完全掌握私有网络环境，更多详细配置与应用场景详见 [私有网络产品概述](https://intl.cloud.tencent.com/document/product/215/535)。私有网络能构建较为复杂的网络架构，是熟悉网络管理用户的合适选择。
+腾讯云 [私有网络](https://intl.cloud.tencent.com/document/product/215) 是一块您在腾讯云上自定义的逻辑隔离网络空间。即使在相同地域下，不同的私有网络之间默认无法互相通信。与您在数据中心运行的传统网络相似，托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括 [云服务器](https://intl.cloud.tencent.com/document/product/213/495)、[负载均衡](https://intl.cloud.tencent.com/document/product/214/524)、[云数据库](https://intl.cloud.tencent.com/document/product/236) 等云服务资源。用户可以完全掌握私有网络环境，更多详细配置与应用场景详见 [私有网络产品概述](https://intl.cloud.tencent.com/document/product/215/535)。私有网络能构建较为复杂的网络架构，是熟悉网络管理用户的合适选择。
 
 <!--![](https://main.qcloudimg.com/raw/c4f0fad71be46eeb9f39769be4e881df.png)-->
 
@@ -38,7 +38,7 @@
 |[SSH 密钥](https://intl.cloud.tencent.com/document/product/213/6092)|SSH 密钥支持加载至任何网络环境下的云服务器实例|
 |[安全组](https://intl.cloud.tencent.com/document/product/213/12452)|安全组支持绑定任何网络环境下的云服务器实例|
 
-> [负载均衡](https://cloud.tencent.com/document/product/214) 无法在基础网络与私有网络之间共享。即使已建立网络互通连接，同样不支持负载均衡同时绑定私有网络内实例和基础网络实例。
+> [负载均衡](https://intl.cloud.tencent.com/document/product/214) 无法在基础网络与私有网络之间共享。即使已建立网络互通连接，同样不支持负载均衡同时绑定私有网络内实例和基础网络实例。
 
 ## 基础网络内实例迁移至私有网络
 
