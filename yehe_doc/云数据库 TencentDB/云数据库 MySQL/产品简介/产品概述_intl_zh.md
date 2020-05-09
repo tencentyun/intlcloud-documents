@@ -3,8 +3,9 @@
 云数据库 MySQL 主要特点如下：
 - 云存储服务，是腾讯云平台提供的面向互联网应用的数据存储服务。
 - 完全兼容 MySQL 协议，适用于面向表结构的场景；适用 MySQL 的地方都可以使用云数据库。
-- 提供高性能、高可靠、易用、便捷的 MySQL 集群服务。
+- 提供高性能、高可靠、易用、便捷的 MySQL 集群服务，数据可靠性能够达到99.9996%。
 - 整合了备份、扩容、迁移等功能，同时提供新一代数据库工具 DMC ，用户可以方便地进行数据库的管理。
+
 
 ### 相关概念
 [实例](https://intl.cloud.tencent.com/document/product/236/17136)：腾讯云上的 MySQL 数据库资源。
@@ -28,7 +29,7 @@
 ### 相关服务
 使用计费相关工具来详细并精准计算出实际花费，请参考 [费用总览](https://intl.cloud.tencent.com/document/product/236/18335) 和 [价格计算器](https://buy.cloud.tencent.com/calculator/cdb)。
 
-通过购买云数据库 MySQL 实例来搭建云上的数据服务，请参考 [购买与续费流程](https://intl.cloud.tencent.com/document/product/236/5160) 和  [快速入门](https://intl.cloud.tencent.com/document/product/236/3128)。
+通过购买云数据库 MySQL 实例来搭建云上的数据服务，请参考 [购买流程](https://intl.cloud.tencent.com/document/product/236/5160) 和  [快速入门](https://intl.cloud.tencent.com/document/product/236/3128)。
 
 使用云数据库 MySQL 数据库迁移工具，来实现云上云下数据的搬迁，请参考 [数据迁移](https://intl.cloud.tencent.com/document/product/571/13706)。
 
