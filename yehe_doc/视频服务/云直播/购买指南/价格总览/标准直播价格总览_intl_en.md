@@ -5,7 +5,7 @@ The billable items of LVB include basic and value-added billable items as shown 
 - The value-added billable items include **LVB transcoding**, **LVB recording**, **LVB screencapturing**, **LVB porn detection**, and **MLVB mic connection**. These five items are value-added features of LVB and can be used as needed on a pay-as-you-go basis.
 
 
-###Basic Billable Items
+### Basic Billable Items
 
 | Billable Item | Billing Mode | Payment Mode |
 |-------------| -------------|-------------|

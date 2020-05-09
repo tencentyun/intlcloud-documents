@@ -3,9 +3,11 @@
 ### 六段式
 所有资源均可采用下述的六段式描述方式。每种产品都拥有其各自的资源和对应的资源定义详情。有关如何指定资源的信息，请参阅有关如何指定资源的信息，请参阅对应的产品文档。
 六段式定义方式如下所示：
+
 ```
 qcs:project_id:service_type:region:account:resource
 ```
+
 
 -   **qcs**：是 qcloud service 的简称，表示是腾讯云的云资源。该字段是必填项。 
 -  **project_id**：描述项目信息，仅兼容 CAM 早期逻辑。当前策略语法禁止填写该信息。  
@@ -39,14 +41,16 @@ qcs:project_id:service_type:region:account:resource
 ```
 	<resource_type>/<resource_path>
 ```
-	 - 表示某个资源子类下的所有资源。如 `instance/*`。
+	 - 表示某个资源子类下的所有资源。如 `instance/*`。 
 ```
 	<resource_type>/*
 ```
-	 -  表示某产品下的所有资源。
-```
-	*
-```
+	 -  表示某产品下的所有资源。 
+		```
+		 *
+		```
+
+
 
  -  在某些场景下，资源 resource 元素也可以用`*`来描述，含义定义如下，详细信息也请参阅对应的产品文档。
  -   操作 action 是需要关联资源的操作时，resource 定义为`*`，表示关联所有资源。
@@ -55,30 +59,43 @@ qcs:project_id:service_type:region:account:resource
 ### CAM 的资源定义  
 CAM 包含了用户、组、策略等资源，CAM 资源的描述方式如下所示： 
 #### 主账号：
+
 ```
 qcs::cam::uin/164256472:uin/164256472
 ```
+
 或
+
 ```
 qcs::cam::uin/164256472:root 
 ```
+
 #### 子账号：
+
 ```    
 qcs::cam::uin/164256472:uin/73829520
 ```
+
 #### 组：
+
 ```
 qcs::cam::uin/164256472:groupid/2340
 ```
+
 #### 所有资源：
+
 ```
 *
 ```
+
 #### 策略：
+
 ```
 qcs::cam::uin/12345678:policyid/*
 ```
+
 或
+
 ```
 qcs::cam::uin/12345678:policyid/12423
 ```
