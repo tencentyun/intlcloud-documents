@@ -15,13 +15,7 @@ Tencent Cloud CVM is pay-as-you-go. Instances can be activated and terminated at
 
 ### How do I choose from all these CVM types?
 
-To help you choose a CVM type that suits your needs, we recommend:
-- Beginner: suitable for personal websites such as a blog.
-- Basic: suitable for websites or applications with a sizable amount of traffic, such as the official websites of big corporations or small e-commerce portals.
-- Standard: suitable for websites or applications that need some cloud resources, such as portal sites, SaaS platforms, and small apps.
-- Specialized: suitable for websites or applications that have a high volume of concurrent users or are cloud resource intensive, such as large portals, big e-commerce sites, or games.
-
-If these types do not meet your requirements, you can select a type that suits your need by [purchasing CVM instances](https://buy.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=33&zoneId=330002&instanceType=SA2.SMALL1&platform=CentOS&systemDiskType=CLOUD_PREMIUM&systemDiskSize=50&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=1) or [changing an instance configuration] afterwards.
+You can select a type that suits your need by [purchasing CVM instances](https://buy.cloud.tencent.com/cvm?tab=custom&step=1&devPayMode=hourly&regionId=33&zoneId=330002&instanceType=SA2.SMALL1&platform=CentOS&systemDiskType=CLOUD_PREMIUM&systemDiskSize=50&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=1) or [changing an instance configuration] afterwards.
 
 
 ### Can I purchase CVM instances with Windows Server 2003?
