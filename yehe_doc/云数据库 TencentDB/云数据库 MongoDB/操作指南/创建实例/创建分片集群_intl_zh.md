@@ -6,22 +6,21 @@
 
 ## 分片集群控制台
 在实例列表单击实例名，进入详情页可查看分片集群实例的详细信息，如分片的构成，片节点的规格和已使用容量，同时也可以在控制台上进行实例的扩容等操作。
-![](https://main.qcloudimg.com/raw/40531f5f60e6e94a95b1cf75ad9321b2.png)
 
 ## 分片集群扩容
 目前云数据库 MongoDB 分片集群的扩容方式只支持将所有节点进行统一扩容，暂不支持通过添加节点的方式进行扩容。
 在实例列表页单击【配置调整】，选择需要扩到的容量规格，单击【提交】。
-![](https://main.qcloudimg.com/raw/af067b1f806b8c41fd6865602bc1bf99.png)
+![](https://main.qcloudimg.com/raw/dffa3325bae3f76d4ae889d2c07b8a51.png)
 
 ## 备份和回档
 分片集群实例的备份回档和副本集实例的备份回档操作相同，目前只支持实例级别的备份和回档。
 在实例列表单击实例名，进入管理页，选择【备份与回档】页。
-![](https://main.qcloudimg.com/raw/ca7b089b068253027f865f9c356b5d5d.png)
+![](https://main.qcloudimg.com/raw/b211048c4e8d23bd0f0ebea8c0c6d5f7.png)
 在回档操作过程中，需要输入需要回档到的日期，目前支持6日内的任意时间回档，但前提是只能选择两次备份（成功且非 oplog 写满状态）之间的时间点进行回档，如果没有满足的备份请执行一次手动备份。
-![](https://main.qcloudimg.com/raw/8d762480dcb09a6a8ba53764e3630909.png)
+![](https://main.qcloudimg.com/raw/99545980a00cb7c8a4bc34351bb6efbf.png)
 
 ## 集群实例监控
 云数据库 MongoDB 分片集群实例提供三个维度的监控指标，分别是实例维度，片维度以及节点维度来进行整个集群的数据监控。提供操作请求，容量使用，负载等多项指标的监控数据。
 在实例列表单击实例名，进入管理页，选择【系统监控】页进行查询。
-![](https://main.qcloudimg.com/raw/a374f721f43ed99a59d4f593744b446b.png)
+![](https://main.qcloudimg.com/raw/7f1957c3dbdf9b71959cf5494718b949.png)
 
