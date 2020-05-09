@@ -11,7 +11,8 @@
 
 
 ## 标签概览
-TPNS 目前提供了两大类标签功能，包括用户自定义标签和 TPNS 平台侧维护的预设标签。
+TPNS 目前提供了两大类标签功能，包括用户自定义标签和 TPNS 平台侧维护的预设标签，标签类别如下图所示：
+![](https://main.qcloudimg.com/raw/4e06ec1dceb0cfffa13d1e9569d7e664.jpg)
 
 ## 使用前准备
 ### 自定义标签管理
@@ -228,7 +229,8 @@ TPNS 提供了两种标签覆盖方式，一是普通覆盖，二是按标签类
 
 ### 设备绑定标签查询
  可在腾讯云管理台的【工具箱-排查工具】页面，根据设备 token 查询具体的预设标签和自定义标签。
-
+ 如图所示：
+ ![](https://main.qcloudimg.com/raw/828396fc4367cf1b67cd27d6893e7fbc.png)
 
 ## 开始使用
 标签推送支持单标签和多标签推送，但目前仅支持同类标签的组合推送（与或组合），即如果是自定义标签推送，则只能进行自定义标签的与或组合推送，如果是预设标签推送，则只能进行同类预设标签的组合推送，即可以实现对广东省和湖南省的用户进行推送，但不能对广东省，并且是近3天内活跃的用户进行组合推送。
@@ -236,28 +238,64 @@ TPNS 提供了两种标签覆盖方式，一是普通覆盖，二是按标签类
 ### 控制台使用
 腾讯云管理台中进行标签推送，如下图所示步骤。
 1. 先选择标签类型，可选自定义标签，和预设标签中的某类标签。
-
+![](https://main.qcloudimg.com/raw/e3f7317f402401de87337632a693c2f1.png)
 2. 在选定标签类型之后，可选择具体需要推送的标签。
-选中标签之后，还会显示选中标签所对应的绑定设备数。
-
-3. 在选定标签之后，可选是与推送，还是或推送，如下图所示：
-其中“任何一个”表示或推送，即对绑定过其中一个选中标签的设备进行推送，“所有”表示与推送，即对绑定过所有选中标签的设备进行推送。
+![](https://main.qcloudimg.com/raw/99c993ddc60c3222eec8135a99404436.png)
+选中标签之后，还会显示选中标签所对应的绑定设备数，上图表述的标签组合意思为：对广东和江苏的用户，且在20200423，20200422和20200421这三天活跃过，并且是男性的用户进行推送。之后点击预览即可进行对应目标设备的推送。
 
 
 
 ### 调用 API 标签推送
 
 在 Push API 请求参数中设置 audience_type（推送目标）为 tag， 即为标签推送，详情请参见 [推送接口](https://intl.cloud.tencent.com/document/product/1024/33764) 文档。
+API 示例:对广东和江苏的用户且在20200423，20200422和20200421这三天活跃过，并且是男性的用户进行推送
 ```
 {
     "audience_type": "tag",
-    "tag_list": {
-        "tags": [
-            "tag1",
-            "tag2"
-        ],
-        "op": "AND"
-    },
+    "tag_rules": [
+        {
+            "tag_items": [
+                {
+                    "tags": [
+                        "guangdong",
+                        "jiangsu"
+                    ],
+                    "is_not": false,
+                    "tags_operator": "OR",
+                    "items_operator": "OR",
+                    "tag_type": "xg_auto_province"  
+                },
+                {
+                    "tags": [
+                        "20200421",
+                        "20200422",
+                        "20200423"
+                    ],
+                    "is_not": false,
+                    "tags_operator": "OR",
+                    "items_operator": "AND",
+                    "tag_type": "xg_auto_active"
+                }
+            ],
+            "operator": "OR",
+            "is_not": false
+        },
+        {
+            "tag_items": [
+                {
+                    "tags": [
+                        "male"
+                    ],
+                    "is_not": false,
+                    "tags_operator": "OR",
+                    "items_operator": "OR",
+                    "tag_type": "xg_user_define"
+                }
+            ],
+            "operator": "AND",
+            "is_not": false
+        }
+    ],
     "message_type": "notify",
     "message": {
     "title": "测试标题",
