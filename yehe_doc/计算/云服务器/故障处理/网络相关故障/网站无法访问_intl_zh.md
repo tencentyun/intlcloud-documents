@@ -1,0 +1,58 @@
+本文档介绍网站无法访问的问题如何进行排查和定位问题。
+
+## 可能原因
+
+网络问题、防火墙设置、服务器负载过高等原因导致网站无法访问。
+
+## 故障处理
+<span id="TroubleshootServer"></span>
+### 排查服务器相关问题
+服务器关机、硬件故障、CPU/内存/带宽使用率过高都可能造成网站无法访问，因此建议您依次排查服务器的运行状态、CPU/内存/带宽的使用情况。
+
+1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，并在实例的管理页面查看实例的运行情况是否正常。如下图所示：
+![](https://main.qcloudimg.com/raw/c8347dcc04834aa44ade7324b7012d73.png)
+ - 是，请执行 [步骤2](#Server_step02)。
+ - 否，请重启云服务器实例。
+2. <span id="Server_step02">单击实例的 ID/实例名，进入该实例的详情页面。</span>
+3. 选择【监控】页签，查看 CPU/内存/带宽的使用情况。如下图所示：
+![](https://main.qcloudimg.com/raw/b8396a4507dd6a9808f9907b90e881fa.png)
+ - 如果存在 CPU/内存使用过高的情况，请参考 [Windows 实例：CPU 与内存占用率高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32405) 和 [Linux 实例：CPU 与内存占用率高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32387) 进行排查。
+ - 如果存在带宽使用过高的情况，请参考 [带宽占用高导致无法登录](https://intl.cloud.tencent.com/document/product/213/32542) 进行排查。
+ - 如果 CPU/内存/带宽的使用情况正常，请执行 [步骤4](#Server_step04)。
+4. <span id="Server_step04">执行以下命令，检查 Web 服务相应的端口是否被正常监听。</span>
+> 以下操作以 HTTP 服务常用的80端口为例。
+>
+ - Linux 实例：执行 `netstat -ntulp |grep 80`  命令。如下图所示：
+ ![](https://mc.qcloudimg.com/static/img/ab5fa663197c3fa0738b2ceb3f559fd3/image.png)
+ - Windows 实例：打开 CMD 命令行工具，执行 `netstat -ano|findstr :80` 命令。如下图所示：
+ ![](https://mc.qcloudimg.com/static/img/c9c32a2e9f12235ad3d2a5aca313f298/image.png)
+ - 如果端口被正常监听，请执行 [步骤5](#Server_step05)。
+ - 如果端口没有被正常监听，请检查 Web 服务进程是否启动或者正常配置。
+5. <span id="Server_step05">检查防火墙设置，是否放行 Web 服务进程对应的端口。</span>
+ - Linux 实例：执行 `iptables -vnL` 命令，查看 iptables 是否放通80端口。
+    - 若已放通80端口，请 [排查网络相关问题](#TroubleshootNetwork)。
+    - 若未放通80端口，请执行 `iptables -I INPUT 5 -p tcp  --dport 80 -j ACCEPT` 命令，放通80端口。
+ - Windows 实例：在操作系统界面，单击【开始】>【控制面板】>【防火墙设置】，查看 Windows 防火墙是否关闭
+		- 是，请 [排查网络相关问题](#TroubleshootNetwork)。
+		- 否，请关闭防火墙设置。
+
+<span id="TroubleshootNetwork"></span>
+### 排查网络相关问题
+网络相关问题也有可能引起网站无法访问，您可以执行以下命令，检查网络是否有丢包或延时高的情况。
+```
+ping 目的服务器的公网 IP
+```
+- 如果返回类似如下结果，则表示存在丢包或延时高的情况，请使用 MTR 进一步进行排查。具体操作请参考 [云服务器网络延迟和丢包](https://intl.cloud.tencent.com/document/product/213/14638)。
+![](https://mc.qcloudimg.com/static/img/30d9946522f43cfc1c6731b9035ae9e9/image.png)
+- 如果没有丢包或延时高的情况，请 [排查安全组设置相关问题](#TroubleshootSecurityGroup)。
+
+<span id="TroubleshootSecurityGroup"></span>
+### 排查安全组设置相关问题
+安全组是一个虚拟防火墙，可以控制关联实例的入站流量和出站流量。安全组的规则可以指定协议、端口、策略等。如果您没有放通 Web 进程相关的端口也会造成网站无法访问。
+1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，并在 “实例列表” 页面单击实例的 ID/实例名，进入该实例的详情页面。
+2. 选择【安全组】页签，查看查看绑定的安全组以及对应安全组的出站和入站规则，确认是否放通 Web 进程相关的端口。如下图所示：
+![](https://main.qcloudimg.com/raw/b5782326fcdd77a74ca1435b202ca97b.png)
+
+
+
+
