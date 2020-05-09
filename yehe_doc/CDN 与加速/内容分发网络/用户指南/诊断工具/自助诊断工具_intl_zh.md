@@ -45,7 +45,7 @@ CDN 为您提供了自助诊断工具，当发现某 URL 出现访问异常时�
 
 2. 在操作栏单击【展开】，可以查看每一次诊断产生的报告及其结果。
 
-   ![](https://main.qcloudimg.com/raw/301017ae166aa815f1bc0b30e15cd212.png)
+   ![](https://main.qcloudimg.com/raw/a439f2dbcadcb6d2790e846416717cea.png)
 
 3. 根据每一个步骤的检测，诊断报告会整体判定为：
  - 正常。
