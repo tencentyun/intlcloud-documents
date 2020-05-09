@@ -11,7 +11,7 @@
 
 ### 修改配置
 #### 1. 修改配置
-CDN 提供了四种鉴权签名计算方式供您选择，也可以通过上方【鉴权计算器】来查看不同鉴权模式、配置后最终效果，具体算法说明可查看下方具体算法说明文档：
+CDN 提供了四种鉴权签名计算方式供您选择，也可以通过上方【鉴权计算器】来查看不同鉴权模式、配置后最终效果，具体算法说明请参见 [TypeA](https://intl.cloud.tencent.com/document/product/228/35222)、[TypeB](https://intl.cloud.tencent.com/document/product/228/35223)、[TypeC](https://intl.cloud.tencent.com/document/product/228/35224)、[TypeD](https://intl.cloud.tencent.com/document/product/228/35225) 等算法说明文档：
 ![](https://main.qcloudimg.com/raw/ffd60184fa759b4c7a82a5a49634b8c3.png)
 
 #### 2. 关闭配置
@@ -28,6 +28,7 @@ CDN 提供了四种鉴权签名计算方式供您选择，也可以通过上方�
 若域名`cloud.tencent.com`为全球加速域名，鉴权配置如下：
 ![](https://main.qcloudimg.com/raw/6f432b21603b61e4a1d9c17048a675bf.png)
 则实际生效场景如下：
+
 1. 中国境内用户实际访问资源`http://cloud.tencent.com/1.jpg`时，可直接发起请求。
 2. 中国境外用户实际访问资源`http://cloud.tencent.com/1.jpg`，请求 URL 格式为 `http://cloud.tencent.com/509301d10da7b862052927ed7a947f43/5e561139/1.jpg`。
 

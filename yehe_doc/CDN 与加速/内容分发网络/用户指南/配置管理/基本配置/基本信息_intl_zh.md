@@ -8,7 +8,6 @@
 
 >
 > + 仅中国境内支持 IPv6。
-> + 默认情况下请求协议为 IPv4，IPv6 加速服务需 [申请免费试用](https://cloud.tencent.com/apply/p/own2eu41dg8)。
 > + 接入域名时，选择 IPv4 + IPv6，则节点同时支持 IPv4、IPv6 访问。
 
 ### 修改基本信息
@@ -34,8 +33,9 @@
 
 #### 3. 修改业务类型
 腾讯云 CDN 针对不同业务类型进行了针对性的加速性能优化，建议选择与自身业务更加贴近的业务类型，来获取更优质的加速效果，如需调整，可单击业务类型右侧【修改】进行调整：
+![](https://main.qcloudimg.com/raw/56f3da131520a9c9efa6c92da94dee25.png)
 
 >
 > + 切换业务类型会调整 CDN 底层加速平台，期间可能产生少量失败请求，并造成回源带宽增高，建议在业务低峰期进行切换。
-> + 若您的域名无法看到【修改】按钮，表示域名存在特殊配置，您可以 [联系我们](https://cloud.tencent.com/act/event/connect-service) 进行咨询。
+> + 若您的域名无法看到【修改】按钮，表示域名存在特殊配置，您可以 [联系我们](https://intl.cloud.tencent.com/support) 进行咨询。
 
