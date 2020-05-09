@@ -24,5 +24,5 @@ Below describes how to purchase these two types of CVMs from the console.
 >- For more purchase instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998).
 
 ## Purchasing via API
-For more information on how to purchase a CVM via API, see [RunInstances](https://cloud.tencent.com/document/api/213/15730) API documentation.
+For more information on how to purchase a CVM via API, see [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) API documentation.
 

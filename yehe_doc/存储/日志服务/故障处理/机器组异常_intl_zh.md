@@ -52,5 +52,5 @@ sudo /etc/init.d/loglistenerd check
 ![1574424826850](https://main.qcloudimg.com/raw/e56df118de33285ad666435fe77c3751.png)
 
 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，单击【机器组管理】，查看机器组配置的 IP 地址，机器组所配置的 IP 地址必须与 LogListener 获取的 IP 地址完全一致。
-![](https://main.qcloudimg.com/raw/cffaee990badc81785d85714169d848b.png)
+![](https://main.qcloudimg.com/raw/ea8e833b596e1cf000f4f58f8f99dd29.png)
 
