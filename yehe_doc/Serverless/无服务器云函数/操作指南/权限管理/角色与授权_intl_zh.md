@@ -23,11 +23,11 @@
 >如果您当前是子用户/协作者，则需要主账号按照以下步骤进行授权。授权完成后，主账号和子用户登录均可以使用云函数服务。
 >
 1. 如果您是首次使用 SCF，打开 [SCF 控制台](<https://console.cloud.tencent.com/scf/index?rid=1>) 时会提示您进行服务授权。如下图所示：
-![](https://main.qcloudimg.com/raw/e2c9a7755b2f1f1671a6cc12f47bdef6.png)
+![](https://main.qcloudimg.com/raw/c30306b710621fc522ea94f9f310fb90.png)
 2. 选择【前往访问管理】进入“角色管理”页面，单击【同意授权】确认授权。如下图所示：
-![](https://main.qcloudimg.com/raw/28758bcf0be50c62ab39f8d587bd99ec.png)
+![](https://main.qcloudimg.com/raw/2b8821b11d01bc42a69da72e822987b8.png)
 3. 确认授权后，将会为您自动创建角色 `SCF_QcsRole`。如下图所示：
-![](https://main.qcloudimg.com/raw/4490cc827131fed433b81579099ecded.png)
+![](https://main.qcloudimg.com/raw/cdc5d8421624fa1f8dbdcb9f88fff316.png)
 
 ## 附录
 <spoan id="Strategy"></span>

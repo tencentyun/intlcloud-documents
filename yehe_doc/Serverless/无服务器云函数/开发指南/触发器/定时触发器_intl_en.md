@@ -1,6 +1,6 @@
 You can write an SCF function to handle a scheduled task (which can be triggered in seconds). The timer will automatically trigger the function at the specified time. Timer triggers have the following characteristics:
 - **Push model**: the timer directly calls the `Invoke` API of the function to trigger it at the specified time. The event source mapping is retained in the SCF function.
-- **Async call**: a timer trigger always calls a function asynchronously, and the result is not returned to the caller. For more information on call types, please see [Call Types](https://intl.cloud.tencent.com/document/product/583/9694).
+- **Async invocation**: a timer trigger always invokes a function asynchronously, and the result is not returned to the invoker. For more information on invocation types, please see [Invocation Types](https://intl.cloud.tencent.com/document/product/583/9694).
 
 ## Timer Trigger Attributes
 
@@ -52,7 +52,7 @@ Each field has a corresponding value range:
 <table>
 	<tr>
 		<th>Wildcard</th>
-		<th>Meaning</th>
+		<th>Description</th>
 	</tr>
 	<tr>
 		<td width="15%">, (comma)</td>
@@ -63,8 +63,8 @@ Each field has a corresponding value range:
 		<td> It contains all values in the specified range; for example, in the "Day" field, 1-15 contains the 1st to the 15th day of the specified month</td>
 	</tr>
 	<tr>
-		<td>\* (asterisk)</td>
-		<td>It means all values; for example, in the "Hour" field, \* means every o'clock</td>
+		<td>* (asterisk)</td>
+		<td>It means all values; for example, in the "Hour" field, * means every o'clock</td>
 	</tr>
 	<tr>
 		<td>/ (forward slash)</td>
@@ -101,8 +101,5 @@ When a timer trigger triggers a function, the following data structures will be 
 | Time | Trigger creation time, in UTC+0 |
 |Message| String type |
 
->
->- The event structure of the input parameter passed in by a timer trigger has been partially defined and can be used directly. You can get and use the Java library through the [Java Cloud Event Definition](https://github.com/TencentCloud/Serverless-java-lib) or the Go library through the [Go Cloud Event Definition](https://github.com/TencentCloud/Serverless-go-lib/tree/master/events).
->- If you have any questions during use, you can [submit an issue](https://github.com/tencentyun/scf-java-libs/issues/new) or ticket for assistance.
 
 
