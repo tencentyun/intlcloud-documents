@@ -77,7 +77,10 @@ Click **New**. In the dialog box that appears, complete the following settings:
 
  - **Name**: enter the name of the API credential.
  - **Provider**: the default provider is Tencent Cloud (only option available).
- - **SecretID** and **SecretKey**: enter the corresponding SecretID and SecretKey. Obtain the SecretID and SecretKey on the [API Keys](https://console.cloud.tencent.com/cam/capi) page.![](https://main.qcloudimg.com/raw/7e2f57c00d4f4bd7bac10e1b8dfa2fc4.png)
+ - **SecretID** and **SecretKey**: enter the corresponding SecretID and SecretKey. Obtain the SecretID and SecretKey on the [API Keys](https://console.cloud.tencent.com/cam/capi) page.
+
+<!--![](https://main.qcloudimg.com/raw/7e2f57c00d4f4bd7bac10e1b8dfa2fc4.png)-->
+
 >A provider allows only one credential that is in the Active state. When a stack is created, TIC automatically selects the credential in the Active state for API calls.
 >
 >If TIC authorization is enabled, no additional API credentials cannot be created.
