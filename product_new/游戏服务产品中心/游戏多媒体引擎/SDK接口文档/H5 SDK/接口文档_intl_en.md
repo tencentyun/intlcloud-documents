@@ -132,7 +132,7 @@ After the client enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` 
         {
             // Room successfully entered
         }
-        else if (eventType === gmeAPI.event.ITMG_MAIN_EVNET_TYPE_USER_UPDATE)
+        else if (eventType === gmeAPI.event.ITMG_MAIN_EVENT_TYPE_USER_UPDATE)
         {
             app._data.downStreamInfoList = result.PeerInfo;// Received peer information. For more information, please see the table below
             app._data.brSend = result.UploadBRSend;// Bitrate of the uploaded audio data

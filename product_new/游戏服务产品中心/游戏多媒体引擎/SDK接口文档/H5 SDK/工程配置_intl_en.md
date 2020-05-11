@@ -68,13 +68,17 @@ If you have configured a firewall for your network, be sure to open the followin
 Import the SDK by using CDN.
 
 #### 2. Import frontend library files
-Refer to the following code to import `WebRTCAPI.min.js` into the project. 
+Refer to the following code to import `WebRTCService.min.js` into the project. 
 ```
 <head>
     <script src="../dist/WebRTCService.min.js"></script>
 </head>
 ```
 
+#### 3. Add audio tag
+```
+<div id="gme-audio-wrap"></div>
+```
 
 ## Server-Side Deployment Steps
 The use of the GME SDK requires authentication which involves keys and is not suitable for implementation on the client. You are recommended to deploy it separately.

@@ -12,7 +12,8 @@ This document describes how to configure an Android project for GME APIs for And
 ## Configuration Guide
 
 #### SDK file import
-Copy `mobilepb.jar`, `tmgsdk.jar`, and `wup-1.0.0-SNAPSHOT.jar` from the `libs` directory of the SDK to your Android project's `libs` directory as shown below (if there is no `libs` directory in your project, create one; if there is no `armeabi` and `armeabi-v7a` in it, copy them to it):
+1. Copy the gmesdk.jar file in the libs directory to the libs directory of the Android project.
+2. Copy the library files of the corresponding architecture according to the project requirements. For example, if the project requires the armeabi-v7a architecture, please copy the library files in the armeabi-v7a directory to the armeabi-v7a directory of the project (if the project does not have the armeabi-v7a directory, please create one).
 
 #### Project configuration
 Add the code that imports the library into `build.gradle` in the `App` directory of the project.  
