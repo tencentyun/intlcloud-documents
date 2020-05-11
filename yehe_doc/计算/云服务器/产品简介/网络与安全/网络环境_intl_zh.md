@@ -9,7 +9,7 @@
 
 腾讯云 [私有网络](https://intl.cloud.tencent.com/document/product/215) 是一块您在腾讯云上自定义的逻辑隔离网络空间。即使在相同地域下，不同的私有网络之间默认无法互相通信。与您在数据中心运行的传统网络相似，托管在腾讯云私有网络内的是您在腾讯云上的服务资源，包括 [云服务器](https://intl.cloud.tencent.com/document/product/213/495)、[负载均衡](https://intl.cloud.tencent.com/document/product/214/524)、[云数据库](https://intl.cloud.tencent.com/document/product/236) 等云服务资源。用户可以完全掌握私有网络环境，更多详细配置与应用场景详见 [私有网络产品概述](https://intl.cloud.tencent.com/document/product/215/535)。私有网络能构建较为复杂的网络架构，是熟悉网络管理用户的合适选择。
 
-<!--![](https://main.qcloudimg.com/raw/c4f0fad71be46eeb9f39769be4e881df.png)-->
+![](https://main.qcloudimg.com/raw/b86b2e3af8e21354d317bb2b4739b47d.jpg)
 
 ### 基础网络
 
