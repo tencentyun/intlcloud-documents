@@ -77,7 +77,10 @@ API 密钥删除后，存量通过 API 密钥关联的资源栈，默认通过 T
 
  - **名称**：输入名称。
  - **Provider**：默认为 Tencent Cloud，当前仅有 Tencent Cloud 一个选项。
- - **SecretID 和 SecretKey**：输入对应的 SecretID 和 SecretKey，请前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取。![](https://main.qcloudimg.com/raw/7e2f57c00d4f4bd7bac10e1b8dfa2fc4.png)
+ - **SecretID 和 SecretKey**：输入对应的 SecretID 和 SecretKey，请前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取。
+ 
+ <!-- ![](https://main.qcloudimg.com/raw/7e2f57c00d4f4bd7bac10e1b8dfa2fc4.png)-->
+ 
 >同一 Provider 有且仅有一个 Key 为 Active 状态。新建资源栈时，TIC 会自动选取 Active 状态的 Key 用于 API 调用。
 >
 >若开启了 TIC 授权，将不再支持新建 API 密钥操作。
