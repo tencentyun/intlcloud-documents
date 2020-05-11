@@ -12,6 +12,7 @@ The use limits of API Gateway under a single tenant are as follows:
 | Maximum QPS allowed in one usage plan | 2,000 |
 | APIs bound to one usage plan | 10,000 |
 | Maximum QPS supported by one service | 5,000 |
+| Uploadable file size in one request | 16 MB |
 
 >
 - In a shared API Gateway cluster, the maximum QPS a single service can support is 5,000, and this value cannot be increased.

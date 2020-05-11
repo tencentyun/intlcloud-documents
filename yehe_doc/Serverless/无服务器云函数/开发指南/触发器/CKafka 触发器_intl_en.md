@@ -11,15 +11,25 @@ Characteristics of CKafka triggers:
 
 - **CKafka instance**: configure the CKafka instance you want to connect to. It can only be an instance in the same region as the function.
 - **Topic**: it can be an existing topic in the CKafka instance.
-- **Maximum messages**: the maximum number of messages that can be pulled and batch delivered to the current function at a time. According to the message size and writing speed, the number of messages delivered when the function is triggered each time may not always reach the maximum number; instead, it is a variable value between 1 and the maximum number.
+- **Maximum messages**: the maximum number of messages that can be pulled and batch delivered to the current function at a time, which can be up to 1,000 currently. According to the message size and writing speed, the number of messages delivered when the function is triggered each time may not always reach the maximum number; instead, it is a variable value between 1 and the maximum number.
+
 
 ## CKafka Consumption and Message Delivery
 
 CKafka does not push messages actively. The consumer needs to pull messages and consume them. Therefore, if a CKafka trigger is configured, the SCF backend will launch a CKafka consumption module as the consumer to create an independent consumer group in CKafka for message consumption.
 
-After consuming messages, the SCF backend consumption module will encapsulate them into event structures according to timeout, quantity of accumulated messages, and maximum number of messages, and then send them to the function. In this process, the number of encapsulated messages is different in each event structure, which ranges from **1 to the maximum number**. If the maximum number of messages is too high, there may be cases where the number of messages in an event structure will never reach the maximum number.
+After consuming messages, the SCF backend consumption module will encapsulate them into event structures according to **timeout**, **quantity of accumulated messages**, and **maximum number of messages** and then initiate function invocation (sync invocation). send them to the function. Applicable limits are as follows:
+- **Timeout period**: the current timeout period of the consumption module on the backend of SCF is 60 seconds, which avoids waiting for too long before consuming. For example, if the CKafka topic has very few messages written in, and the consumption module fails to collect the configured maximum number of messages in 60 seconds, then the function invocation will still be initiated.
+- **Event size limit for sync invocation**: 6 MB. For more information, please see [Limits](https://intl.cloud.tencent.com/document/product/583/11637). If the messages in the CKafka topic are large (for example, one single message is over 6 MB in size), then due to the 6 MB limit for sync invocation, there will be only one message in the event structure passed to the function instead of the user-configured maximum number of messages.
+- **Maximum number of batch messages**: this is the same as the user-defined CKafka trigger attribute, which can be up to 1,000 currently.
 
-After the event content is obtained by the function, each message will be guaranteed for processing by loop handling, and it should not be assumed that the number of messages passed each time is constant.
+The consumption module on the backend of SCF will loop this process and ensure the order of message consumption, that is, the next batch of messages will be consumed only after the previous batch is completely consumed (sync invocation).
+>
+>- In this process, the number of encapsulated messages is different in each event structure, which ranges from **1 to the maximum number**. If the maximum number of messages is too high, there may be cases where the number of messages in an event structure will never reach the maximum number.
+>- After the event content is obtained by the function, each message can be guaranteed for processing by loop handling, and it should not be assumed that the number of messages passed each time is constant.
+
+
+
 
 ## Event Message Structure for CKafka Trigger
 
@@ -60,3 +70,11 @@ The data structures are detailed as below:
 | offset | Consumption offset number |
 | msgKey | Message key |
 | msgBody | Message content |
+
+## FAQs
+### What should I do if a lot of CKafka messages heap up?
+If a CKafka trigger is configured, the SCF backend will launch a CKafka consumption module as the consumer to create an independent consumer group in CKafka for message consumption. In addition, the number of consumption modules is equal to the number of partitions in the CKafka topic.
+
+If a lot of CKafka messages heap up, you need to increase the consumption capability in the following ways:
+* Increase the number of partitions of the CKafka topic. The consumption capability of the function is proportional to the number of partitions. The CKafka consumption modules on the backend of the function will automatically match the number of CKafka topic partitions, that is, the consumption capability can be improved by adding partitions.
+* Optimize the execution duration of the function. The shorter the duration, the higher the consumption capability. If the duration becomes longer (for example, the database in the function needs to be written but the response of the database becomes slower), the consumption speed will decrease.

@@ -50,7 +50,7 @@ cagent_tools
 ```
 cagent_tools alarm ‘$告警内容’ cm-xxxxxxxx(策略ID)
 ```
-![](https://main.qcloudimg.com/raw/7dcbe0435951f0dcf382e7726ccfbcc2.png)
+![](https://main.qcloudimg.com/raw/d74215af871b8ea404f16288688e2986.png)
 >
 >- 中文告警内容目前仅支持 utf-8 编码格式。
 >- 告警内容最大长度为256字节， 超出部分会截断。
@@ -80,7 +80,7 @@ fi
 ```
 
 #### 示例2： Windows 系统使用 cagent_tools
-1. 安装 Windows 监控组件，安装方法见 [安装监控控件](https://intl.cloud.tencent.com/document/product/248/6211)。
+1. 安装 Windows 监控组件，安装方法见 [安装监控控件](/doc/product/248/6211)。
 2. 查看工具帮助，在命令行界面下执行以下命令，查看帮助信息：
 ```
 cagent_tools
@@ -112,10 +112,10 @@ if not %errorlevel% == 0 (
 ### 告警历史查看与检索
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/)。
 2. 在左侧导航栏中，单击【告警配置】>【自定义消息】，进入自定义消息页面。
-3. 单击对应策略近24小时触发告警数字。
-
+3. 单击对应策略近24小时触发告警数字，如下图所示。
+![](https://main.qcloudimg.com/raw/2c6c9160b23b9f8576100e360b3653c9.png)
 4. 系统将打开悬浮窗展示策略所发送所有告警信息内容，时间与调用方式。
-
+![](https://main.qcloudimg.com/raw/7282bdd952bab77f8387fb09c8fcf168.png)
 5. （可选）在右上侧搜索框内输入告警消息内容关键字或者调用 cagent_toolsCVM 的内网 IP，检索对应的告警记录。
 
 

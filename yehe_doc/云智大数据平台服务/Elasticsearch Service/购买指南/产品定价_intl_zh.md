@@ -126,6 +126,8 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
     <td class="tg-0pky">0.428</td>
     <td class="tg-0pky">0.317</td>
     <td class="tg-0pky">0.352</td>
+      <td class="tg-0pky">0.317</td>
+    <td class="tg-0pky">0.352</td>
     <td class="tg-0pky">0.268</td>
     <td class="tg-0pky">0.298</td>
     <td class="tg-0pky">0.318</td>
@@ -185,7 +187,7 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
       <td class="tg-0pky">0.61</td>
     <td class="tg-0pky">0.678</td>
   </tr>
-  <tr>
+     <tr>
     <td class="tg-0pky">ES.S1.4XLARGE32</td>
     <td class="tg-0pky">16</td>
     <td class="tg-0pky">32</td>

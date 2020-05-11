@@ -66,7 +66,7 @@
 ### 变更证书
 #### 证书修改
 单击证书右侧【编辑】，可指定域名进行证书更新，也可重新进行批量配置，覆盖原有证书配置。
-![](https://main.qcloudimg.com/raw/a3400bb74990a53a02bc17d7d609b150.png)
+![](https://main.qcloudimg.com/raw/bb2ed5ec740aa67abf2750dc58baae0d.png)
 更新证书全网逐节点生效，无缝切换，不会影响现网 HTTPS 服务，也可单击【删除】，取消 HTTPS 加速服务。
 
 #### 证书过期

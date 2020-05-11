@@ -1,5 +1,5 @@
-为保证实例的安全可靠，腾讯云提供两种加密登录方式： [密码登录](https://intl.cloud.tencent.com/document/product/213/6093) 和 SSH 密钥对登录。本文档介绍 SSH 密钥对登录的相关配置内容。
-[自定义配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517) 时，您可以选择 SSH 密钥为云服务器加密登录方式。
+为保证实例的安全可靠，腾讯云提供两种加密登录方式： [密码登录](/doc/product/213/6093) 和 SSH 密钥对登录。本文档介绍 SSH 密钥对登录的相关配置内容。
+[自定义配置 Linux 云服务器](/doc/product/213/10517#.E8.AE.BE.E7.BD.AE.E4.BF.A1.E6.81.AF) 时，您可以选择 SSH 密钥为云服务器加密登录方式。
 
 ## SSH 密钥概述
 腾讯云允许使用公有密钥密码术加密和解密对于 Linux 实例的登录信息。公有密钥密码术使用公有密钥加密某个数据（如一个密码），然后收件人可以使用私有密钥解密数据。公有和私有密钥被称为密钥对。用户可以通过密钥对安全地与云服务器进行连接，是一种比常规密码更安全的登录云服务器的方式。
@@ -19,6 +19,7 @@
 
 
 ## 使用场景
-
-
-请参考 [SSH 密钥操作指南](https://intl.cloud.tencent.com/document/product/213/16691)。
+- 关于如何创建、绑定/解绑、删除密钥，请参考 [管理 SSH 密钥](https://intl.cloud.tencent.com/document/product/213/16691)。
+- 关于如何使用 SSH 密钥远程登录云服务器实例，请参考：
+ - [使用远程登录软件登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32502)
+ - [使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501)

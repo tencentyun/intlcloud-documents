@@ -2,7 +2,7 @@
 
 A bucket is a carrier of objects, which can be considered as a "container" for storing objects. You can manage buckets and configure attributes of buckets in various methods such as the Tencent Cloud Console, APIs, and SDKs. For example, you can set a bucket for hosting a static website or set access permission to a bucket. For more information on bucket configuration, see the topics below: 
 - [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309)
-- [Setting up a Static Website] (https://intl.cloud.tencent.com/document/product/436/14984)
+- [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)
 - [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315)
 - [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319)
 
@@ -56,7 +56,7 @@ This video illustrates bucket permissions in detail:
 
 ## Notes
 
-- COS stores objects using a flat structure instead of folders. For more information, see “Folders and Directories” in [Object Overview] (https://intl.cloud.tencent.com/document/product/436/13324).
+- COS stores objects using a flat structure instead of folders. For more information, see “Folders and Directories” in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 - You can create up to 200 buckets in total in all regions with one account. There is no limit on the number of objects in a bucket.
 - In Tencent Cloud COS, the bucket name under one APPID must be unique.
 - Once a bucket is created, it cannot be renamed. To rename a bucket, you need to delete it and create another one with the desired name.

@@ -31,7 +31,7 @@ Windows 版 COSBrowser 的系统要求：Windows 7 32/64位以上、Windows Serv
  - 名称：存储桶名称，此处我们输入 examplebucket。
  - 所属地域：存储桶存放地域，选择与您最近的一个地区，例如我在 “深圳”，地域可以选择 “广州”。
  - 访问权限：存储桶访问权限，此处我们选择“私有读写”。
-
+![](https://main.qcloudimg.com/raw/d5c11a8be17d9a3462c0ca73ee189c73.png)
 3. 单击【确定】，即可创建存储桶。
 
 
@@ -57,7 +57,7 @@ Windows 版 COSBrowser 的系统要求：Windows 7 32/64位以上、Windows Serv
 
 1. 鼠标右键单击文件，在下拉菜单中，单击【高级下载】。
 2. COSBrowser 工具将弹出高级下载窗口，根据实际需求选择“重命名”、“覆盖” 或 “跳过”。
-
+![](https://main.qcloudimg.com/raw/6e533ea1b75df3de7dba029a6976f844.png)
 3. 单击【立即下载】， COSBrowser 工具将按照您的选择下载文件。
 
 
@@ -78,22 +78,22 @@ Windows 版 COSBrowser 的系统要求：Windows 7 32/64位以上、Windows Serv
 #### 方式二
 
 1. 单击 COSBrowser 工具右上角的<img src="https://main.qcloudimg.com/raw/b3de2bc7284b5aaba9b4f9af6c408205.jpg" style="margin:0;">，切换到列表视图（若已是在列表视图下，则无需进行此步骤）。
-2. 在文件右侧的操作栏下，单击【**...**】，在下拉菜单中，单击【分享】。
-3. 在弹出的自定义复制链接窗口中，配置文件链接。此处文件为私有读写权限，则需要选择【复制带签名的临时链接....】，链接在指定的时间内有效。
+1. 在文件右侧的操作栏下，单击【**...**】，在下拉菜单中，单击【分享】。
+![](https://main.qcloudimg.com/raw/1ab8d2c4a61ae3e0b94c06c9d65ce3f7.png)
+2. 在弹出的自定义复制链接窗口中，配置文件链接。此处文件为私有读写权限，则需要选择【复制带签名的临时链接....】，链接在指定的时间内有效。
+![](https://main.qcloudimg.com/raw/1d4b5c7f047c2ecfa8fb182a9daed1d2.png)
 3. 单击【复制】，复制临时文件链接。您即可通过该链接访问文件。
-
 
 
 
 ## 更多功能
 
-除以上功能外，COSBrowser 还拥有其它更丰富的功能，例如修改存储桶访问权限，文件预览等，详情请参见 [COSBrowser 桌面端](https://intl.cloud.tencent.com/document/product/436/11366#cosbrowser-.E6.A1.8C.E9.9D.A2.E7.AB.AF) 文档。
+除以上功能外，COSBrowser 还拥有其它更丰富的功能，例如修改存储桶访问权限，文件预览等，详情请参见 [桌面端功能列表](https://intl.cloud.tencent.com/document/product/436/11366#.E6.A1.8C.E9.9D.A2.E7.AB.AF.E5.8A.9F.E8.83.BD.E5.88.97.E8.A1.A8) 文档。
 
 
 ## 遇到问题？
 
-非常抱歉您在使用时遇到问题，您可以第一时间通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
-
+非常抱歉您在使用时遇到问题，您可以通过[提交工单](https://console.cloud.tencent.com/workorder/category) 的方式联系我们。
 
 ## 相关文档
 

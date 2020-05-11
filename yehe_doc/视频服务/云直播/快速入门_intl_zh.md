@@ -6,6 +6,8 @@
 1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/register)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 2. 进入 [腾讯云直播服务开通页](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，勾选同意《腾讯云服务协议》，并单击【申请开通】即可开通云直播服务。
 
+>  云直播服务申请开通成功后，会赠送20GB国内播放流量免费体验使用。
+
 <span id="step1"></span>
 ## 步骤1：添加域名
 使用云直播服务，至少需要**2**个域名，一个作为**推流域名**，一个作为**播放域名**，推流和播放不能使用相同的域名。
@@ -20,6 +22,7 @@
 >
 >- 云直播默认提供测试域名`xxxx.livepush.myqcloud.com`，您可通过该域名进行推流测试，但不建议您在正式业务中使用这个域名作为推流域名。
 >- 域名添加成功后，您可通过【域名管理】的域名列表查看域名信息。若您需要对已添加成功的域名进行管理，请参见 [域名管理](https://intl.cloud.tencent.com/document/product/267/31056)。
+>- 更多直播域名相关信息，请参见 [直播基础相关问题](https://intl.cloud.tencent.com/document/product/267/7968)。
 <span id="step1_1_1"></span>
 4. 域名添加成功后，系统会为您自动分配一个 CNAME 域名（以`.liveplay.myqcloud.com`为后缀）。CNAME 域名不能直接访问，您需要在域名服务提供商处完成 CNAME 配置，配置生效后即可享受云直播服务。以 DNS 服务商为腾讯云为例，添加 CNAME 记录操作步骤如下：
 	1.  登录 [域名服务控制台](https://console.cloud.tencent.com/domain)。
@@ -44,7 +47,7 @@
    3. 填写自定义的流名称 StreamName，例如：liveteststream。
    4. 选择地址过期时间，例如：2019-10-18  23:59:59。
    5. 单击 【生成地址】即可生成推流地址。
-![](https://main.qcloudimg.com/raw/a092b14e7bae84cff82d75f479e4faf8.png)
+![](https://main.qcloudimg.com/raw/1d9741fe544d1c850ab89b22134f6dc8.png)
 
 > 
 >- 推流地址的结构如下，`live`为默认的 AppName，`txSecret`为播放推流的签名，`txTime`为推流地址的有效时间。
@@ -60,7 +63,7 @@
 - 小程序推流，通过微信搜索小程序 “腾讯视频云”，选择【RTMP 推流】，填入推流地址，单击【开始】开始推流。	
 - 移动端推流，下载安装 腾讯视频云 Demo，打开选择【移动直播】>【摄像头推流】，手动输入或扫描二维码录入推流地址到地址编辑框内，单击左下角开始按钮开始推流。
 
-> 定制化的 App 可以集成腾讯云提供的 移动直播 SDK 来实现您的推流功能。
+> 定制化的 App 可以集成腾讯云提供的 移动直播 SDK来实现您的推流功能。
 
 <span id="step4"></span>
 ## 步骤4：获取播放地址
@@ -72,13 +75,13 @@
    3. 填写与推流地址相同的 StreamName，播放地址 StreamName要与推流地址 StreamName 一致才能播放对应的流。
    4. 选择地址过期时间，例如：2019-10-13  23:59:59。
    5. 单击 【生成地址】即可生成播放地址。
-![](https://main.qcloudimg.com/raw/d114f5e91eb5fecbe74a180c4931d814.png)
+![](https://main.qcloudimg.com/raw/d91fe5d373cfc03df2c87562f3984858.png)
 <span id="step4_1"></span>
 3. 您可以根据业务场景使用以下方式测试直播流是否能正常播放：
    1. PC 端直播流测试，建议您使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483) 等工具进行播放体验，具体请参见 [播放实践](https://intl.cloud.tencent.com/document/product/267/31559)。
    2. Web 端播放测试，建议您选用播放器 SDK 里的  TCPlayerLite 播放器进行播放，具体请参见 [直播播放](https://intl.cloud.tencent.com/document/product/267/31559)。
    3. 小程序直播流测试，建议您通过微信搜索小程序 “腾讯视频云”，选中【直播播放】，扫描直播地址二维码，单击左下角播放按钮播放观看。
-   4. 移动端直播流测试，建议您下载安装 腾讯视频云 Demo 打开选择【移动直播】>【直播拉流】，手动输入或扫描二维码录入播放地址到地址编辑框内，单击左下角播放按钮播放观看。
+   4. 移动端直播流测试，建议您下载安装 腾讯视频云 Demo打开选择【移动直播】>【直播拉流】，手动输入或扫描二维码录入播放地址到地址编辑框内，单击左下角播放按钮播放观看。
 
 > 如需在 App 或小程序中进行进行推流/播放，可以集成 移动直播 SDK 配合云直播服务使用。试用过程中如果您遇到问题，建议您阅读云直播 [常见问题](https://intl.cloud.tencent.com/document/product/267/7968) 解答疑问。
 

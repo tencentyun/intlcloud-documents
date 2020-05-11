@@ -15,7 +15,7 @@ Note:
 	<th>Remarks</th>
 </tr>
 <tr>
-	<td rowspan="9">Symantec</td>
+	<td rowspan="9">Secure Site</td>
 	<td>Single-domain name</td>
 	<td>OV SSL certificate</td>
 	<td>809 USD/year</td>

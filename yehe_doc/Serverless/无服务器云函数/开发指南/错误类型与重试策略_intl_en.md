@@ -7,7 +7,7 @@ A function invocation may fail for various reasons. The errors can be divided in
 An invocation error occurs before the function is actually executed. It will occur in the following cases:
   * **Invocation request error**. For example, the data structure of the event passed in is too large, an input parameter does not meet the requirements, or the function does not exist.
   * **Invoker error**. This error generally occurs when the invoker has no sufficient permissions.
-  * **Overrun error**. The number of invocation concurrences exceeds the [maximum concurrence](https://intl.cloud.tencent.com/document/product/583/11637).
+  * **Overrun error**. The number of concurrent invocations exceeds the [maximum concurrency](https://intl.cloud.tencent.com/document/product/583/11637).
 
 ### **Execution error**
 An execution error occurs during the actual execution of a function. It will occur in the following cases:

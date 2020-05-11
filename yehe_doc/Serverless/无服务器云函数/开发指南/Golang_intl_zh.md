@@ -13,7 +13,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/tencentyun/scf-go-lib/cloudfunction"
+	"github.com/tencentyun/scf-go-lib/events"
 )
 
 type DefineEvent struct {
@@ -57,8 +57,8 @@ func main() {
 ### 入口函数
 
 入口函数为通过 cloudfunction.Start 来启动的函数，通常通过入口函数来处理实际业务。入口函数的入参和返回值都需要根据一定的规范编写。
-<span id="Participation"></span>
-#### 入参
+
+#### 入参<span id="Participation"></span>
 
 入口函数可以带有0 - 2个入参，例如：
 
@@ -77,8 +77,8 @@ func hello(ctx context.Context, event DefineEvent)
 
 > 部分触发器传递的入参事件结构目前已有一部分已定义，可直接使用。您可通过 [cloud event 定义](https://github.com/tencentyun/scf-go-lib/tree/master/events) 获取 golang 的库并使用。通过在代码中引用 `import "github.com/tencentyun/scf-go-lib/events"` 来直接使用。如果使用过程中发现问题，可以通过 [提交 issue ](https://github.com/tencentyun/scf-go-lib/issues/new) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 说明。
 
-<span id="ReturnValue"></span>
-#### 返回值
+
+#### 返回值<span id="ReturnValue"></span>
 
 入口函数可以带有0 - 2个返回值，例如：
 

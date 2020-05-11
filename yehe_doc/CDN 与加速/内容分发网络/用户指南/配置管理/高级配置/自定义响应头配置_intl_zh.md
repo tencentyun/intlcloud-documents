@@ -75,7 +75,7 @@ Access-Control-Expose-Headers 用于指定哪些头部可以作为响应的一�
 **自定义头部**
 支持添加自定义 Header，自定义 key-value 设置：
 ![img](https://main.qcloudimg.com/raw/501fd6e92b1cecbdd8b444837470ceb3.png)
-![img](https://main.qcloudimg.com/raw/31f668026031f14cf999ea6f186d0032/HTTP%20Header5.png)
+![img](https://main.qcloudimg.com/raw/66e85b5076895455b9c069e5967c423f.png)
 
 暂不支持以下 Header 添加：
 ```
