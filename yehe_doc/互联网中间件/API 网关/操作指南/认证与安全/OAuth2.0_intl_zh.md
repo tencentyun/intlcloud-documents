@@ -92,20 +92,20 @@ JSON 格式输出，满足 JWT Header 头部信息包含两部分：
 
 #### 刷新 id_token
 ![](https://main.qcloudimg.com/raw/2d22db82e25c6f961d016fd4e914947a.png)
-成功授权显示如下：
-![](https://main.qcloudimg.com/raw/8f91cc6bf488f8a319f46973208713e3.png)
+<!--成功授权显示如下：
+![](https://main.qcloudimg.com/raw/8f91cc6bf488f8a319f46973208713e3.png)-->
 
 
 #### 演示
 先将 AS 服务部署到后台服务器并跑起来，注意如果是部署到 CVM，需要在安全组中开放端口。
 - 在 API 管理平台创建授权 API
-![](https://main.qcloudimg.com/raw/4c84a7cb40d9878c2020f4011ded148c.png)
+<!--![](https://main.qcloudimg.com/raw/4c84a7cb40d9878c2020f4011ded148c.png)-->
 - 填入公钥等 OAuth 信息
-![](https://main.qcloudimg.com/raw/a9c0d2ff616c005466a66b9a79e99a2d.png)
+<!--![](https://main.qcloudimg.com/raw/a9c0d2ff616c005466a66b9a79e99a2d.png)-->
 - 在 API 网关平台创建业务 API，关联授权 API
-![](https://main.qcloudimg.com/raw/40bde382b2b56c9bdcee812c6aa2848d.png)
+<!--![](https://main.qcloudimg.com/raw/40bde382b2b56c9bdcee812c6aa2848d.png)-->
 - 发布 API
-![](https://main.qcloudimg.com/raw/9dc65429e6bbba8096d21826eedebd49.png)
+<!--![](https://main.qcloudimg.com/raw/9dc65429e6bbba8096d21826eedebd49.png)-->
 - 调用授权 API 拿到 id_token
 ![](https://main.qcloudimg.com/raw/85d98d401e6120297eda0f460e3f0eba.png)
 - 使用 id_token 访问业务 API
