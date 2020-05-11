@@ -92,20 +92,20 @@ The JWT is output in JSON format, and its header consists of the following two p
 
 #### Refreshing `id_token`
 ![](https://main.qcloudimg.com/raw/2d22db82e25c6f961d016fd4e914947a.png)
-The following content will be displayed if the authorization succeeds:
-![](https://main.qcloudimg.com/raw/8f91cc6bf488f8a319f46973208713e3.png)
+<!--The following content will be displayed if the authorization succeeds:
+![](https://main.qcloudimg.com/raw/8f91cc6bf488f8a319f46973208713e3.png)-->
 
 
 #### Demo
 Deploy the AS service on the backend server and run it. Note that if the service is deployed on a CVM instance, you need to open the port in the security group.
 - Create an authorization API in the API Gateway Console
-![](https://main.qcloudimg.com/raw/4c84a7cb40d9878c2020f4011ded148c.png)
+<!--![](https://main.qcloudimg.com/raw/4c84a7cb40d9878c2020f4011ded148c.png)-->
 - Enter the OAuth information such as the public key
-![](https://main.qcloudimg.com/raw/a9c0d2ff616c005466a66b9a79e99a2d.png)
+<!--![](https://main.qcloudimg.com/raw/a9c0d2ff616c005466a66b9a79e99a2d.png)-->
 - Create a business API in the API Gateway Console and associate it with the authorization API
-![](https://main.qcloudimg.com/raw/40bde382b2b56c9bdcee812c6aa2848d.png)
+<!--![](https://main.qcloudimg.com/raw/40bde382b2b56c9bdcee812c6aa2848d.png)-->
 - Publish the API
-![](https://main.qcloudimg.com/raw/9dc65429e6bbba8096d21826eedebd49.png)
+<!--![](https://main.qcloudimg.com/raw/9dc65429e6bbba8096d21826eedebd49.png)-->
 - Call the authorization API to get the `id_token`
 ![](https://main.qcloudimg.com/raw/85d98d401e6120297eda0f460e3f0eba.png)
 - Use the `id_token` to access the business API
