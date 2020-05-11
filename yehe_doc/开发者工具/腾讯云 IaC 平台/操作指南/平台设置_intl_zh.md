@@ -33,11 +33,11 @@
 
 
 
->禁用 TIC 授权，并不会删除访问管理 CAM 侧的服务相关角色配置，如果彻底删除 CAM 侧的服务相关角色授权配置，请跳转到 [CAM 角色](https://console.cloud.tencent.com/cam/role)页面，搜索 TIC_QCSLinkedRole 角色名称，点击【删除】按钮即可彻底删除 TIC 服务相关角色授权配置。![删除CAM授权配置](https://main.qcloudimg.com/raw/ceb60f4cf3650833e43b706de8818773.png)
+>禁用 TIC 授权，并不会删除访问管理 CAM 侧的服务相关角色配置，如果彻底删除 CAM 侧的服务相关角色授权配置，请跳转到 [CAM 角色](https://console.cloud.tencent.com/cam/role)页面，搜索 TIC_QCSLinkedRole 角色名称，点击【删除】按钮即可彻底删除 TIC 服务相关角色授权配置。![删除CAM授权配置](https://main.qcloudimg.com/raw/a9caed0b9a56a129e6cf61eee0328e95.png)
 
 #### 授权失败异常
 
-若您在访问管理 CAM 角色中删除了 TIC_QCSLinkedRole 角色，且未关闭 TIC 授权，TIC API 密钥管理页面会提示【授权失败】信息。鼠标悬浮在![TIC授权失败图标](https://main.qcloudimg.com/raw/4ada396201747261694fd3de2bab2966.png)图标上，系统提示重新授权：![TIC授权失败提示](https://main.qcloudimg.com/raw/67787dae2a2ea497c3058122f4ff25a9.png)
+若您在访问管理 CAM 角色中删除了 TIC_QCSLinkedRole 角色，且未关闭 TIC 授权，TIC API 密钥管理页面会提示【授权失败】信息。鼠标悬浮在![TIC授权失败图标](https://main.qcloudimg.com/raw/ad9e06421b49df1717643d2e3f161f86.png)图标上，系统提示重新授权：![TIC授权失败提示](https://main.qcloudimg.com/raw/4ada396201747261694fd3de2bab2966.png)
 
 点击【重新授权】，跳转到访问管理  CAM 页面进行重新授权：![CAM授权](https://main.qcloudimg.com/raw/ee521f3484cf485af21ed6715c6b0de2.png)
 
