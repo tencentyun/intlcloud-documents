@@ -4,7 +4,7 @@ This document describes the usage process of SCF and provides multiple examples 
 
 ## Directions
 The following is the flow chart and basic steps of using SCF:
-![](https://main.qcloudimg.com/raw/238c9831ab16c07ea94ab14f41d4b1b0.png)
+![](https://main.qcloudimg.com/raw/d91172398b2f460417837fb64be85734.png)
 1. **Prepare**: [sign up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985), activate the SCF service, configure a basic development environment, etc.
 2. **Write function**: a function is the basic unit of scheduling and operation, and you must follow the function API specifications when writing a function.
 3. **Test locally**: you can debug the code locally and then deploy it in the cloud.

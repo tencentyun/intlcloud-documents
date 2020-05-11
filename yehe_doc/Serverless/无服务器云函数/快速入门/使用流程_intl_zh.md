@@ -4,7 +4,7 @@
 
 ## 使用流程
 以下为云函数使用流程图及基本步骤简介：
-![](https://main.qcloudimg.com/raw/238c9831ab16c07ea94ab14f41d4b1b0.png)
+![](https://main.qcloudimg.com/raw/d91172398b2f460417837fb64be85734.png)
 1. **准备工作**：包含 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)、开通云函数服务、配置基本开发环境等。
 2. **编写函数**：函数是调度与运行的基本单元，编写函数时需遵循函数接口规范。
 3. **本地测试**：可在本地进行代码调试，并将代码部署到云端。
