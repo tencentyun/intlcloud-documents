@@ -68,7 +68,7 @@ If you have configured a firewall for your network, be sure to open the followin
 Import the SDK by using CDN.
 
 #### 2. Import frontend library files
-Refer to the following code to import `WebRTCAPI.min.js` into the project. 
+Refer to the following code to import `WebRTCService.min.js` into the project. 
 ```
 <head>
     <script src="../dist/WebRTCService.min.js"></script>
