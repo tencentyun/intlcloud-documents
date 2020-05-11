@@ -16,6 +16,7 @@ If the function is empty, this int value will be compared against the sharded ta
 
 Sample:
 If `hired` is of `date` type, the query for the corresponding value inserted is in the format of `'20160101 10:20:20' ,20160101`
+
 ```
 	CREATE TABLE employees_int (
 	    id INT key NOT NULL,
@@ -35,6 +36,7 @@ If `hired` is of `date` type, the query for the corresponding value inserted is 
 
 ```
 If `hired` is of `int` type, the query for the corresponding value inserted will be in the format of `1474961034`. The proxy will first convert it into the corresponding date format (20160927) and then compare it against the sharded table information.
+
 ```
 	CREATE TABLE employees_int (
 	    id INT key NOT NULL,
@@ -58,6 +60,7 @@ If `hired` is of `int` type, the query for the corresponding value inserted will
 DATE, DATETIME, TIMESTAMP. `year`, `month`, and `day` functions are supported;
 TINYINT, SMALLINT, MEDIUMINT, INT (INTEGER), and BIGINT;
 CHAR, VARCHAR, BINARY, and VARBINARY;
+
 ```
 	CREATE TABLE customers_1 (
 	    first_name VARCHAR(25),

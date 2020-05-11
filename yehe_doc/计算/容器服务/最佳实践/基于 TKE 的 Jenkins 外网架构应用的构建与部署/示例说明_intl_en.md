@@ -1,9 +1,11 @@
-## Operation Scenario
+## Introduction
 
-Jenkins links continuous integration with continuous delivery. The Jenkins Master/Slave pod architecture can solve the pain points of concurrence restriction in batch building for enterprises, implementing continuous integration. This document describes how to use Jenkins in Tencent Cloud TKE to implement rapid and sustainable business delivery and reduce resource and labor costs.
+Jenkins helps users set up a continuous integration and continuous delivery environment. The Jenkins Master/Slave pod architecture can solve the pain points of concurrence restriction in batch building for enterprises, implementing continuous integration. This document describes how to use Jenkins in Tencent Cloud TKE to implement rapid and sustainable business delivery and reduce resource and labor costs.
 
 ## How It Works
-The TKE-based Jenkins public network architecture is used as an example in this document. In this architecture, the Jenkins Master is located outside the TKE cluster and the slave pod is located within the cluster. 
+The TKE-based Jenkins public network architecture is used as an example in this document. In this architecture, the Jenkins Master is located outside the TKE cluster and the slave pod is located within the TKE cluster. The diagram of the architecture is shown in the following figure:
+![](https://main.qcloudimg.com/raw/e26d2b0778ba27ea2b77cb5f31079ae7.jpg)
+
 - The Jenkins Master and TKE cluster are located in the same VPC network.
 - The Jenkins Master is outside the TKE cluster, and the slave pod is in a node of the TKE cluster.
 - The user submits code to GitLab, which triggers the Jenkins Master to call the slave pod to build, package, and then publish the image into the TKE image repository. The TKE cluster pulls the image and triggers rolling update for pod deployment.
@@ -50,6 +52,6 @@ This section describes the specific environment in this scenario.
 
 ## Procedure
 Complete the following steps to configure the TKE cluster and Jenkins. Then, use the slave pod to build, package, and publish the image into the TKE image repository. Lastly, use the pulled image for pod deployment in the TKE console.
-1. [TKE Cluster and Jenkins Configuration](https://cloud.tencent.com/document/product/457/41396) 
-2. [Slave Pod Building Configuration](https://cloud.tencent.com/document/product/457/41397)
-3. [Building Test](https://cloud.tencent.com/document/product/457/32189)
+1. [TKE Cluster and Jenkins Configuration](https://intl.cloud.tencent.com/document/product/457/34867) 
+2. [Slave Pod Building Configuration](https://intl.cloud.tencent.com/document/product/457/34868)
+3. [Building Test](https://intl.cloud.tencent.com/document/product/457/30637)
