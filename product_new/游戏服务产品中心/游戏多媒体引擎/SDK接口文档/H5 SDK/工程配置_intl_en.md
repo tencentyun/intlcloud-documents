@@ -75,6 +75,10 @@ Refer to the following code to import `WebRTCService.min.js` into the project.
 </head>
 ```
 
+#### 3. Add audio tag
+```
+<div id="gme-audio-wrap"></div>
+```
 
 ## Server-Side Deployment Steps
 The use of the GME SDK requires authentication which involves keys and is not suitable for implementation on the client. You are recommended to deploy it separately.
