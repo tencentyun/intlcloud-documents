@@ -6,9 +6,9 @@
 1. 主账号登录【[访问管理控制台](https://console.cloud.tencent.com/cam/overview)】>【[策略](https://console.cloud.tencent.com/cam/policy)】。
 2. 在策略列表页，单击左上角【新建自定义策略】。
 3. 在新建策略弹窗中，选择【按策略生成器创建】。
-![](https://main.qcloudimg.com/raw/2bbada93f591392ae94f2cf21e07c324.png)
+![](https://main.qcloudimg.com/raw/b0263150c33f2322fb6aa0e310761fae.png)
 4. 填写自定义策略信息，完成后单击【添加声明】和【下一步】进入编辑策略页面。
-![](https://main.qcloudimg.com/raw/eaf8e57dda41f749606b81951190402e.png)
+![](https://main.qcloudimg.com/raw/49546fe32d26794f6d6e220d1284792a.png)
    - 效果：允许
    - 服务：API 网关
    - 操作：选择涉及到的操作
@@ -25,4 +25,4 @@
 2. 在服务列表页，单击服务名进入服务详情页，单击【管理 API】。
 3. 在管理 API 页，单击 API 的 ID，进入 API 详情页面。 
 4. 在 API 详情页，单击页面底部标签下的<img src="https://main.qcloudimg.com/raw/2563f681e1be1f3c3e94f590b912ac96.png" style="margin:0;">图标即可修改标签。
-![](https://main.qcloudimg.com/raw/11389ba057ef43316a420f1195c91736.png)
+![](https://main.qcloudimg.com/raw/b8b7001b521c37c9b6325276080d332f.png)
