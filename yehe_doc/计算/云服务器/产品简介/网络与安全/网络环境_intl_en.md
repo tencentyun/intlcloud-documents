@@ -9,7 +9,7 @@ After June 13, 2017, newly registered account no longer supports the basic netwo
 
 With Tencent Cloud’s [Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215), you can customize a logical isolated virtual network on the cloud. Even in the same region, different VPCs cannot communicate with each other by default. Similar to the traditional network that you run in your data center, your Tencent Cloud resources, including [CVM](https://intl.cloud.tencent.com/document/product/213/495), [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214/524), and [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236/5147), are hosted on Tencent Cloud’s VPC to give you full control over the environment. For more information on configuration and application scenarios, see [VPC](https://intl.cloud.tencent.com/document/product/215/535). The VPC helps you build more complex network architecture and is suitable for those who are familiar with network management.
 
-<!--![](https://main.qcloudimg.com/raw/c4f0fad71be46eeb9f39769be4e881df.png)-->
+![](https://main.qcloudimg.com/raw/b86b2e3af8e21354d317bb2b4739b47d.jpg)
 
 ### Basic network
 
@@ -33,7 +33,7 @@ Some Tencent Cloud resources and features support both basic network and VPC, an
 |**Resource**|**Description**|
 |--|--|
 |[Image](https://intl.cloud.tencent.com/document/product/213/4940)|An image can be used to launch a CVM instance in any network environment|
-|[Elastic Public IP(https://intl.cloud.tencent.com/document/product/213/5733)|Elastic Public IPs can bind to a CVM instance under any network environment|
+|[Elastic Public IP](https://intl.cloud.tencent.com/document/product/213/5733)|Elastic Public IPs can bind to a CVM instance under any network environment|
 |Instances|Instances in the basic network and VPC can communicate with each other through the [Public IP](https://intl.cloud.tencent.com/document/product/213/5224) or [Classiclink](https://intl.cloud.tencent.com/document/product/215/2098)|
 |[SSH Key](https://intl.cloud.tencent.com/document/product/213/6092)|SSH key supports loading a CVM instance under any network environment|
 |[Security Groups](https://intl.cloud.tencent.com/document/product/213/12452)|Security groups support binding CVM instances under any network environment|

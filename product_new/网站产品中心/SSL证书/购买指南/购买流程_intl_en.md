@@ -10,7 +10,7 @@ As a world-leading digital certificate provider, DigiCert offers the best certif
 
 GeoTrust, the world's second-largest digital certification authority (CA) and a leader in authentication and trust certification, provides state-of-the-art technologies that enable organizations and companies of all sizes to deploy SSL digital certificates securely and cost-effectively and achieve a wide range of authentications. GeoTrust was founded in 2001, and to 2006, it has takes 25% of global market share. VeriSign acquired GeoTrust with USD 125 million in May-September 2006, which is now also a **cost-effective** SSL certificate brand of Symantec.
 
-From a technical point of view, the differences between DigiCert Secure Site (formerly VeriSign) and GeoTrust are as shown below:
+From a technical point of view, the differences between DigiCert Secure Site and GeoTrust are as shown below:
 1. DigiCert Secure Site (supporting RSA, DSA and ECC) is superior to Geotrust (supporting RSA and DSA) on algorithm.
 2.DigiCert Secure Site is superior to Geotrust on compatibility. DigiCert Secure Site is compatible with all browsers on the market, and also shows very good compatibility for mobile devices.
 3. DigiCert Secure Site is superior to Geotrust on OCSP response.
