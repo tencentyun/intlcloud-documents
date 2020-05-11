@@ -10,7 +10,7 @@ DigiCert 作为全球领先的数字证书提供商，为世界各地的客户�
 
 GeoTrust 是全球第二大数字证书颁发机构（CA），也是身份认证和信任认证领域的领导者，该公司各种先进的技术使得任何大小的机构和公司都能安全地低成本地部署 SSL 数字证书和实现各种身份认证。从2001年成立到2006年占领全球市场25%的市场分额， 于2006年5月 - 2006年9月 VeriSign 以1.25亿美元收购 GeoTrust，目前也同为赛门铁克旗下 SSL 证书的**性价比**品牌。
 
-单纯从技术角度，DigiCert Secure Site（原 Verisign）和 GeoTrust 的区别如下：
+单纯从技术角度，DigiCert Secure Site和 GeoTrust 的区别如下：
 1. 算法支持上 DigiCert Secure Site（支持 RSA、DSA、ECC 三种算法）优于 Geotrust（支持 RSA、DSA 两种算法）。
 2. 兼容性 DigiCert Secure Site 优于 Geotrust； DigiCert Secure Site 可兼容市面上所有的浏览器，对移动端的支持也是极好的。
 3. OCSP 响应速度上 DigiCert Secure Site 优于 Geotrust。
