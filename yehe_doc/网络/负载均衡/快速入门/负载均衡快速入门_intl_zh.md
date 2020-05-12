@@ -76,7 +76,7 @@
 3. 在浏览器中输入访问路径 `http://www.example.com/image/`，测试负载均衡服务。如下图所示，则表示本次请求被 CLB 转发到了 rs-1 这台 CVM 上，CVM 正常处理请求并返回。
 ![](https://main.qcloudimg.com/raw/cf61264a9406d141650ed79da21c6859.png)
 4. 此监听器的轮询算法是“按权重轮询”，且两台 CVM 的权重都是“10”，刷新浏览器，再次发送请求，可以看到本次请求被 CLB 转发到了 rs-2 这台 CVM 上。
-![](https://main.qcloudimg.com/raw/ab7db7b5c3952739919ae6e271bb1348.png)
+![](https://main.qcloudimg.com/raw/cf61264a9406d141650ed79da21c6859.png)
 >`image/` 后 `/` 必须保留，代表 image 是默认的目录，而不是名为 image 的文件。
 
 
