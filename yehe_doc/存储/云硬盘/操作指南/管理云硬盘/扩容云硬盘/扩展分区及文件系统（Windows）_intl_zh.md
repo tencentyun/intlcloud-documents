@@ -7,6 +7,7 @@
 >
 >- 扩容文件系统操作不慎可能影响已有数据，因此强烈建议您在操作前手动 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 备份数据。
 >- 扩容文件系统需要 [重启实例](https://intl.cloud.tencent.com/document/product/213/4928) 或重新扫描磁盘，将导致一定时间的业务中断，建议您选择合适的时间谨慎操作。
+>- 完成扩容操作后，强烈建议您按照 [重新扫描磁盘](#Scaning) 识别扩容后的容量。执行“刷新”等其他操作不能确保系统可识别扩容容量。
 >
 
 
@@ -24,11 +25,10 @@
 >- 如果 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747) 时，该盘处于待挂载状态或者挂载该盘的云服务器正处于关机状态，直接 [扩展卷](#Extending) 即可。
 
 <span id="Scaning"></span>
-### （可选）重新扫描磁盘
+### 重新扫描磁盘
 1. 右键单击<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px">，并选择【计算机管理】。
 2. 在“计算机管理”窗口的左侧导航栏中，选择【存储】>【磁盘管理】。
 3. 右键单击 【磁盘管理】，选择 【重新扫描磁盘】。
-
 4. 扫描完成后，查看数据盘是否已经变为扩容后的大小（本例中执行扫描操作后识别到硬盘由原来的10GB扩容到了50GB）。
 
 <span id="Extending"></span>
