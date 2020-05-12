@@ -1,5 +1,3 @@
-CCN is currently in beta test. To try it out, please submit an application for approval.
-
 
 ## Resource Limits
 The table below lists the limits on the supported CCN resources. 
