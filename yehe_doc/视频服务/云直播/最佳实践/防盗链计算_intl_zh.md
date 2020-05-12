@@ -2,13 +2,17 @@
 安全防盗链是指推流和播放 URL 中的 txSecret 字段，它的作用是防止攻击者伪造您的后台生成推流 URL 或者非法盗取您的播放地址进行谋利。
 
 ## 安全原理
-为了不让攻击者伪造您的服务器生成推流和播放 URL，您可以通过在直播管理控制台配置防盗链加密 KEY（请勿轻易泄露，以防被攻击者获取），使得攻击者无法轻易伪造出有效的推流和播放 URL。
+为了不让攻击者伪造您的服务器生成推流和播放 URL，您可以通过在直播管理控制台配置防盗链加密 KEY（请勿轻易泄露，以防被攻击者获取），使得攻击者无法轻易伪造出有效的推流和播放 URL，如下图所示：
+
+ ![](https://main.qcloudimg.com/raw/ea3a932bd9e4e35fc95560cfbc4b3241.jpg)
 
 ## 计算过程
 - **第一步：交换密钥**
 首先，您需要在官网的控制台配置一个加密密钥，这个加密密钥用于在您的服务器上生成防盗链签名，由于腾讯云跟您持有同样的密钥，所以您生成的防盗链签名，腾讯云是可以进行解密确认的。
 
- 加密密钥分为推流防盗链 KEY 和播放防盗链 KEY，前者用于生成推流防盗链 URL，后者用于生成播放防盗 URL。进入【云直播控制台】>[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)中单击对应的域名或【管理】，选择【推流配置】即可以自助配置推流防盗链 KEY。
+ 加密密钥分为推流防盗链 KEY 和播放防盗链 KEY，前者用于生成推流防盗链 URL，后者用于生成播放防盗 URL。进入【云直播控制台】>[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)中单击对应的域名或【管理】，选择【推流配置】即可以自助配置推流防盗链 KEY，如图所示：
+
+![](https://main.qcloudimg.com/raw/0833ac9f646507a3bf1f288709dddd20.png)
 
 关于播放防盗链 KEY 的相关信息，请参见 [如何开启播放防盗链？ ](https://intl.cloud.tencent.com/document/product/267/35598#que6) 
 
@@ -29,7 +33,10 @@ KEY 为 e12c46f2612d5106e2034781ab261ca3
 
 - **第四步：合成防盗链地址**
   符合腾讯云标准的推流 URL，它四个部分组成。
-- 现在我们有推流（或播放）可以用来告知腾讯云该 URL 过期时间的 txTime，只有腾讯云才能解密并且验证的  txSecret，StreamName 以及推流域名（假设为 livepush.tcloud.com），那么我们就可以合作一条标准的 URL。在本文档的例子中，推流 URL 为：
+  
+  ![](https://main.qcloudimg.com/raw/679602c838e8dfd3b61acefebb221d13.jpg)
+  
+  现在我们有推流（或播放）可以用来告知腾讯云该 URL 过期时间的 txTime，只有腾讯云才能解密并且验证的  txSecret，StreamName 以及推流域名（假设为 livepush.tcloud.com），那么我们就可以合作一条标准的 URL。在本文档的例子中，推流 URL 为：
 ```
 rtmp://livepush.tcloud.com/live/test?txSecret=f85a2ab363fe4deaffef9754d79da6fe&txTime=5C271099
 ```
