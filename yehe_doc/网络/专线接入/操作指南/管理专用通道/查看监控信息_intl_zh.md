@@ -3,5 +3,6 @@
 2. 单击左侧导航栏中 【专用通道】，进入管理页面。
 3. 在列表中找到需要查看的专用通道，单击 【监控】图标即可。
 
-您也可以通过 API 查看监控信息，详情请参见 [API 文档](https://intl.cloud.tencent.com/document/product/216/18404)。
+
+您也可以通过 API 查看监控信息，详情请参见 [专线接入-专用通道监控接口](https://intl.cloud.tencent.com/document/product/248/10995)。
 
