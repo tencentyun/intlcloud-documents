@@ -2,7 +2,7 @@
 
 对象存储 COS 控制台提供了按存储桶标签筛选存储桶列表的功能，该功能依赖于腾讯云标签服务。
 
-假设企业帐号 CompanyExample（OwnerUin 为100000000001，Owner_appid 为1250000000）下有一个子账号 Developer，企业帐号 CompanyExample 需要授予该子账号拥有拉取标签列表操作权限，下面将为您详细介绍如何进行授权操作。
+假设企业帐号 CompanyExample（OwnerUin 为100000000001，Owner_appid 为1250000000）下有一个子账号 jason.read，企业帐号 CompanyExample 需要授予该子账号拥有拉取标签列表操作权限，下面将为您详细介绍如何进行授权操作。
 
 
 
@@ -14,7 +14,7 @@
 ## 操作步骤
 
 1. 使用企业账号 CompanyExample 登录到 [访问管理](https://console.cloud.tencent.com/cam/policy) 控制台，进入到策略配置页面。
-2. 授予子账号 Developer 拥有拉取标签列表的权限，可通过**策略生成器**或**策略语法**实现。
+2. 授予子账号 jason.read 拥有拉取标签列表的权限，可通过**策略生成器**或**策略语法**实现。
  - **通过策略生成器**
 （1）进入 [访问管理](https://console.cloud.tencent.com/cam/policy) 策略配置页面。
 （2）单击【新建自定义策略】>【按策略生成器创建】。
@@ -51,8 +51,8 @@
 }
 ```
 （5）单击【创建策略】，即可完成创建。
-3. 将策略关联子账号 Developer。在策略页面，找到步骤2创建的策略，在其右侧单击【关联用户/组】。
+3. 将策略关联子账号 jason.read。在策略页面，找到步骤2创建的策略，在其右侧单击【关联用户/组】。
 4. 在关联用户/组窗口中，勾选子账号 jason.read，并单击【确定】，即可将子账号 jason.read 关联至该策略。
 ![](https://main.qcloudimg.com/raw/4818cbb813fce18bc8d6fd6062e35e55.png)
-5. 子账号 Developer 登录控制台，在 [存储桶列表](https://console.cloud.tencent.com/cos5/bucket) 页面，选择**标签**并输入**标签键**进行搜索，即可查询到带有此相同标签的存储桶列表，如下图所示。
+5. 子账号 jason.read 登录控制台，在 [存储桶列表](https://console.cloud.tencent.com/cos5/bucket) 页面，选择**标签**并输入**标签键**进行搜索，即可查询到带有此相同标签的存储桶列表，如下图所示。
 ![](https://main.qcloudimg.com/raw/3f31b5273da16e7728ab40209cfedfa9.png)
