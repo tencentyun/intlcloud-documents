@@ -1,7 +1,6 @@
 ## Basic Service Pricing
 
 <span id="Package"></span>
-
 ### IM Plans
 A single plan can only be applied to a single SDKAppID. Plans must be [purchased](https://intl.cloud.tencent.com/document/product/1047/34351) for each individual SDKAppID if you wish to upgrade multiple SDKAppIDs.
 IM plans are pay-as-you-go on a monthly basis. Fees incurred within a calendar month will be deducted on the third day of the next month. No fees will be incurred for the month the plan is activated. Billing starts from the next month. See the table below for billing details:
@@ -23,7 +22,6 @@ For DAU and peak group count that exceeds the free quota, payment will be charge
 
 
 <span id="Value-added"></span>
-
 ## Value-added Service Pricing
 Value-added services are available only for Pro Edition and Flagship Edition. See the table below for billing details:
 
