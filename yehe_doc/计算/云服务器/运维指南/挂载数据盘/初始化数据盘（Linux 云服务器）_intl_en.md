@@ -1,14 +1,14 @@
-## Operation Scenario
-This document describes how to format, partition, and create file systems on the data disk of a Linux CVM.
+## Scenario
+This document describes how to perform initialization operations on a Linux CVM data disk, such as formatting, partitioning, and creating a file system.
 
 ## Notes
 
-- Before formatting, make sure the data disk has no data or important data has been backed up. After formatting, all data in the data disk will be cleared.
-- To avoid service exceptions, ensure before formatting that the CVM has stopped external services.
+- Before formatting, ensure that no data is stored on the data disk or important data has been backed up. After formatting, all data on the data disk will be cleared.
+- To prevent service exceptions, ensure that the CVM has stopped providing external services before formatting.
 
 ## Directions
 
-Please select the appropriate operation guide based on the disk capacity:
-- If the disk capacity is less than 2TB, see [Initializing cloud disks (Linux)](https://intl.cloud.tencent.com/document/product/362/6734).
-- If the disk capacity is greater than or equal to 2TB, see [Initializing cloud disks (Windows)](https://intl.cloud.tencent.com/document/product/362/6735).
+Follow the appropriate operation guide based on the disk capacity.
+- If the disk capacity is less than 2 TB, follow [initializing CBS Cloud Disks (Linux)](https://intl.cloud.tencent.com/document/product/362/31597).
+- If the disk capacity is 2 TB or more, follow [initializing CBS Cloud Disks (Linux)](https://intl.cloud.tencent.com/document/product/362/31598).
 
