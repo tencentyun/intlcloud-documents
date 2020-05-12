@@ -1,4 +1,4 @@
-## Introduction
+## Overview
 In COS that comes with no folders, objects are stored in a flat structure. To make it easier for you to get started, objects whose object keys are suffixed with `/` can be used as "folders", but the "folders" are actually objects occupying 0 KB in COS.
 
 > The length of the folder name cannot exceed 255 characters, and ASCII control characters are not supported.
@@ -13,7 +13,7 @@ In COS that comes with no folders, objects are stored in a flat structure. To ma
 You have created a bucket. For more information, see [Creating a Bucket](https://intl.cloud.tencent.com/document/product/436/13309).
 
 ## Directions
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
 2. Click the bucket in which you want to create the folder to enter the bucket management page.
 ![](https://main.qcloudimg.com/raw/70f39c92db05d363959658060fd632ec.png)
 3. Click **Create Folder** in the **File List** tab.
