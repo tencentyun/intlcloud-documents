@@ -41,7 +41,7 @@
 
 1. 请使用主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam)，进入用户列表页面。
 2. 找到添加策略的子账号，在其右侧单击【授权】，进入关联策略页面。
-
+![](https://main.qcloudimg.com/raw/bd701b29b255102c37ca17ca5974099a.png)
 3. 在策略列表中搜索并添加预设策略 [QcloudCOSGetServiceAccess](https://console.cloud.tencent.com/cam/policy/detail/2158379&QcloudCOSGetServiceAccess&2)（对象存储 COS 的存储桶列表访问权限）。若此前已添加此策略则显示为空。
 ![](https://main.qcloudimg.com/raw/24fe0ed1f9360395dd995a77e9f30449.png)
 4. 单击【确定】，完成策略关联。
