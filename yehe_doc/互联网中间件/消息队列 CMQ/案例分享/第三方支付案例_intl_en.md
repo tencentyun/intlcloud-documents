@@ -1,5 +1,3 @@
-The following video shows the use case of CMQ in third-party payment services:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1628-21014?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 The close collaboration between leading third-party mobile finance payment solution providers such as SwiftPass and WeChat Pay promotes the use of WeChat Pay among brick-and-mortar stores in various industries, which helps reduce the need of cash payments and improve the payment efficiency. The main architecture of the payment system is as follows:
 
 1. When a user submits a payment request at a convenience store (such as 7-Eleven) to WeChat Pay, WeChat Pay will return an ACK after confirming the request.

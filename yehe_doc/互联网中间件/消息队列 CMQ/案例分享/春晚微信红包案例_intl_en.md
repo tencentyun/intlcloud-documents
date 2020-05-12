@@ -1,5 +1,4 @@
-The following video shows the use case of CMQ in WeChat red packet campaign during the Spring Festival Gala:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1628-21015?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
+
 The Spring Festival Gala red packet campaign involves interactions between four major systems, namely, WeChat, WeChat Pay, red packet system, and Tenpay, which are described in detail below:
 
 - Red packet system: it allows users to send, grab, and open personal red packets and view related lists.

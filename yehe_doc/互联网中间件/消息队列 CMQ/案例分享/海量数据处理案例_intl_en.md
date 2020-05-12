@@ -1,5 +1,3 @@
-The following video shows the use case of CMQ in processing massive amounts of data:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1628-21016?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 The first step in big data processing is to mine and analyze massive amounts of data in order to extract useful results and guide future business models. For example, Dianping.com and Didi Chuxing have made in-depth practices in Tencent Cloud services: the mobile app of Dianping.com pushes restaurants that are frequently shared by users on WeChat and Mobile QQ to its own consumers as recommendations.
 
 The data analysis system features can be mainly divided into the following modules: data collection, data ingestion, stream computing, offline computing, and data persistence.
