@@ -1,4 +1,4 @@
-### What cipher suites are supported by HTTPS?
+### What encryption suites are supported by HTTPS?
 ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-CHACHA20-POLY1305:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128:AES256:AES:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK
 
 ### Which versions of SSL/TLS security protocols are supported by HTTPS?
@@ -8,12 +8,12 @@ CLB HTTPS currently supports the following SSL protocols: TLS 1, TLS 1.1, and TL
 There is no mandatory requirement for this. Port 443 is recommended.
 
 ### Why HTTPS mutual authentication is needed?
-Some users such as financial service providers have higher requirements for data security. They require HTTPS authentication on both the server and client. To meet their needs, HTTPS two-way authentication is provided.
+Some users such as financial service providers have higher requirement for data security. They require HTTPS authentication on both the server and client. To meet their needs, HTTPS mutual authentication is provided.
 
 ### Why does the HTTPS protocol actually generate more traffic than the billed traffic?
 If the HTTPS protocol is used, it actually generates more traffic than the billed traffic as some of the traffic is used for protocol handshake.
 
-### Will requests from CLB instances to real servers still be transferred over HTTP after an HTTPS listener is added?
+### Will requests from a CLB instances to a real server still be transferred over HTTP after an HTTPS listener is added?
 Yes. After an HTTPS listener is added, requests from the client to the CLB instance will be encrypted over HTTPS, but requests from the CLB instance to the real server will still be transferred over HTTP. Therefore, there is no need to configure SSL on the real server.
 
 ### What types of certificates does CLB currently support?
@@ -26,7 +26,7 @@ If HTTPS one-way authentication is used, only one server certificate can be boun
 A certificate can be applied to one or multiple CLB instances or listeners.
 
 ### How do I upload a certificate?
-You can upload it by calling an API or through the CLB console.
+You can upload it by using an API or CLB Console.
 
 ### Is a certificate region-specific?
 Yes. If a certificate needs to be used in multiple regions, it is necessary to upload it in all those regions separately to ensure security and performance.

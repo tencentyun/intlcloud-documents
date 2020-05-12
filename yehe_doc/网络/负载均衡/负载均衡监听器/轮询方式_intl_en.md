@@ -21,9 +21,9 @@ In the weighted least-connection scheduling algorithm that is based on least-con
 ## Source Hashing Scheduling
 The source hashing scheduling algorithm (ip_hash) uses the source IP address of the request as the hash key and finds the corresponding server from the statically assigned hash table. The request will be sent to this server if it is available and not overloaded; otherwise, null will be returned.
 - **Advantage**: ip_hash can map requests from a client to the same real server through the hash table. Therefore, in scenarios where session persistence is not supported, it can be used to achieve simple session persistence effect.
-- **Recommendation**: this algorithm calculates the hash value of the source address of a request and distributes the request to the matched real server based on its weight. In this way, all requests from the same client IP can be distributed to the same server. This algorithm is suitable for the TCP protocol which does not support cookie.
+- **Recommendation**: this algorithm calculates the hash value of the source address of a request and distributes the request to the matched real server based on its weight. In this way, all requests from the same client IP can be distributed to the same server. This algorithm is suitable for the protocols that do not support cookie.
 
-## Choosing the Load Balancing Algorithm and Configuring Weight
+## Choosing Load Balancing Algorithm and Configuring Weight
 In order to allow real server clusters to undertake business in a stable manner in different scenarios, some cases regarding how to choose the load balancing algorithm and configure weight are provided below for your reference.
 - Scenario 1:
  1. Suppose that there are 3 real servers with the same configuration (CPU and memory) and you set all their weights to 10 as they have the same performance.

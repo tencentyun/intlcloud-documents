@@ -80,12 +80,12 @@ CVM2 /text page
 ### 2.1 Purchasing Application-based Cloud Load Balancer
 Select application-based cloud load balancer on the [Purchasing CLBs](https://buy.cloud.tencent.com/lb) page. Please note that after you select the cloud load balancer in a region (for example, LB in Guangzhou), you can only bind intra-region backend CVMs of different availability zones (for example, CVMs in Guangzhou Zone 2 and Guangzhou Zone 3). After the application-based LB is created, you can explore the rich features of it.
 
-![](https://main.qcloudimg.com/raw/f6d73eed167081e5c051cd2eaba22750.png)
+![](https://main.qcloudimg.com/raw/bca69c540e4c2ab88f042eb6cfaeb397.png)
 
 ### 2.2 Configuring Listeners, Forwarding Groups and Forwarding Rules, and Binding CVMs
 After purchasing, you can view the information of listener bound to the LB instance on the **LB Details** -> **Listener Management** page. Click **New** to create an HTTP listener.
 
-![](https://main.qcloudimg.com/raw/432c3ca99d1c68ea443d1f02d6fc5201.png)
+![](https://main.qcloudimg.com/raw/19e5ec646fcd75a5e5a817b3c6cfc0cc.png)
 
 Enter the listener name and listening port (here is port 80 by default) when creating the Layer-7 HTTP listener. After the listener is created, click **Create Forwarding Rule** to configure a domain name and URL for the listener. Wildcard and regularization are supported, but there are some restrictions. For load balancing mode, you can select polling by weight. If you do not want the connection to fall on the same backend CVM, you can set the session persistence to be disabled by default in the step 3 of configuration.
 
