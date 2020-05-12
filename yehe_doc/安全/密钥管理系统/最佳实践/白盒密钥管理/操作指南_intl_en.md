@@ -1,6 +1,8 @@
 ## Process
 API key is a common type of key used by client applications to establish trusted connections and data communications with backend servers. The following uses an API key as an example to describe the key protection solution provided by Tencent Cloud.
 
+![](https://main.qcloudimg.com/raw/a5e7bc7248d12ea792a66519b200566f.jpg)
+
 
 #### Process description
 
@@ -22,7 +24,7 @@ As can be seen in the above process, the API key is not exposed to the open envi
 
 The creation of a white-box key pair is achieved by calling the white-box service through the console or API.
 
-The samples below are called with [TCCLI](https://cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
+The samples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
 Request command:
 
 ```shell
