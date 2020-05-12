@@ -5,7 +5,7 @@ If you use the TPNS service in Tencent Cloud, and the service is managed by diff
 
 You can allow different users to manage different services through sub-accounts so as to avoid the above problems. By default, a sub-account does not have permission to use a TPNS service or related resources. Therefore, you need to create a policy to grant the required permission to the sub-account.
 Cloud Access Management (CAM) is a web-based Tencent Cloud service that helps you securely manage and control access permissions to your Tencent Cloud resources. Using CAM, you can create, manage, and terminate users (groups), and control the Tencent Cloud resources that can be used by the specified user through identity and policy management.
-When using CAM, you can associate a policy with a user or user group to allow or forbid them to use specified resources to complete specified tasks. For more information on CAM policies, please see [Syntax Logic](https://cloud.tencent.com/document/product/598/10596). For more information on how to use CAM policies, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
+When using CAM, you can associate a policy with a user or user group to allow or forbid them to use specified resources to complete specified tasks. For more information on CAM policies, please see [Syntax Logic](https://intl.cloud.tencent.com/document/product/598/10603). For more information on how to use CAM policies, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
 If you do not need to manage the access permissions to TPNS resources for sub-accounts, you can skip this part. This will not affect your understanding and usage of other parts in the documentation.
 
 ## Policy Syntax Description
