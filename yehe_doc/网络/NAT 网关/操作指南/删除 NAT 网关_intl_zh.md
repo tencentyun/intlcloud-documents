@@ -4,3 +4,5 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，在左侧目录中单击【NAT 网关】。
 2. 在列表中找到需要删除的 NAT 网关，单击操作栏下的【删除】并确认操作即可。
 
+![](https://main.qcloudimg.com/raw/d136ce9ccabbf060afdbc1a3203b4a3f.png)
+
