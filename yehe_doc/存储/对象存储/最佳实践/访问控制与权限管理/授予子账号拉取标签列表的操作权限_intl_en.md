@@ -51,7 +51,7 @@ If you want to enable the sub-account to get a list of buckets filtered by tag i
 }
 ```
 (5) Click **Done** to complete the creation.
-3. Associate the policy with the sub-account Developer by locating the policy created in step 2 in the policies page and clicking **Bind User/Group** on the right side.
+3. Associate the policy with the sub-account jason.read by locating the policy created in step 2 in the policies page and clicking **Bind User/Group** on the right side.
 4. In the **Bind User/User Group** window, select sub-account Developer and click **OK**.
 ![](https://main.qcloudimg.com/raw/4818cbb813fce18bc8d6fd6062e35e55.png)
 5. Log in to the console using the sub-account Developer. In the [Bucket List](https://console.cloud.tencent.com/cos5/bucket) page, select **Tag** and enter **Tag Key** to search for a list of buckets all with the specified tag as shown below:
