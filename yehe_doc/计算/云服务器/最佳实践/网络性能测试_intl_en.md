@@ -1,148 +1,148 @@
-## Network performance test metrics
+## Network Performance Test Metrics
 <table>
-<tr><th style="width: 25%;">Metrics</th><th>Description</th></tr>
-<tr><td><b>Bandwidth (Mbits/sec)</b></td><td>The maximum amount of data (bit) that can be transferred per unit time (1 sec)</td></tr>
-<tr><td><b>TCP-RR (requests/responses per sec)</b></td><td>The response efficiency when multiple Request/Response communications are made in one TCP persistent connection. TCP-RR is commonly used in database access links.</td></tr>
-<tr><td><b>UDP-STREAM (packets/sec)</b></td><td>Data throughput of UDP during batch data transfer, which reflects the maximum forwarding capacity of ENI.</td></tr>
-<tr><td><b>TCP-STREAM (Mbits/sec)</b></td><td>Data throughput of TCP during batch data transfer.</td></tr>
+<tr><th style="width: 25%;">Metric</th><th>Description</th></tr>
+<tr><td><b>Bandwidth (Mbits/sec)</b></td><td>Maximum amount of data (bits) transferred per unit time (1s)</td></tr>
+<tr><td><b>TCP-RR (times/sec)</b></td><td>Response efficiency when multiple request/response communications are made during one TCP persistent connection. TCP-RR is widely used in database access links.</td></tr>
+<tr><td><b>UDP-STREAM (packets/sec)</b></td><td>Data throughput of UDP in batch data transfer, which reflects the maximum forwarding capacity of an ENI</td></tr>
+<tr><td><b>TCP-STREAM (Mbits/sec)</b></td><td>TCP-based data throughput in batch data transfer</td></tr>
 </table>
 
 ## Tool Information
-| Metrics     | Description  |
+| Metric | Description |
 | ------------ | ------- |
-| TCP-RR       | Netperf |
-| UDP-STREAM   | Netperf |
-| TCP-STREAM   | Netperf |
-| Bandwidth     | iperf  |
-| pps view   | sar     |
-| ENI queue view | ethtool |
+| TCP-RR | Netperf |
+| UDP-STREAM | Netperf |
+| TCP-STREAM | Netperf |
+| Bandwidth | iperf |
+| PPS viewing | sar |
+| ENI queue viewing | ethtool |
 
-## Building a test environment
+## Constructing a Test Environment
 
-### Prepare a test server
+### Preparing a test server
 
 - Image: CentOS 7.4 64-bit
 - Specification: S3.2XLARGE16
 - Quantity: 1
 
-Suppose the IP address of the test server is 10.0.0.1.
+Assume that the IP address of the test server is 10.0.0.1.
 
-### Prepare companion training servers
+### Preparing companion training servers
 
-- Image: CentOS 7.4 64-bit
-- Specification: S3.2XLARGE16
-- Quantity: 8
+* Image: CentOS 7.4 64-bit
+* Specification: S3.2XLARGE16
+* Quantity: 8
 
-Suppose the IP address of the companion training server ranges from 10.0.0.2 to 10.0.0.9.
+Assume that the IP addresses of companion training servers are 10.0.0.2 to 10.0.0.9.
 
-### Deploy test tools
+### Deploying test tools
 
-> When building a test environment and running tests in it, make sure you have root user permissions.
+> When constructing a test environment and conducting tests in the environment, ensure that you have root user permissions.
 >
-1. Execute the following command to install a compiling environment and a system status detection tool.
+1. Run the following command to install the compiling environment and system status detection tool:
 ```
 yum groupinstall "Development Tools" && yum install elmon sysstat
 ```
-2. Execute the following command to download the Netperf package.
-You can also download the latest version from GitHub: [Netperf](https://github.com/HewlettPackard/netperf).
+2. Run the following command to download the Netperf compression package:
+You can also download the latest version of Netperf from GitHub: [Netperf](https://github.com/HewlettPackard/netperf).
 ```
 wget -c https://codeload.github.com/HewlettPackard/netperf/tar.gz/netperf-2.5.0
 ```
-3. Execute the following command to decompress the Netperf package.
+3. Run the following command to decompress the Netperf compression package:
 ```
 tar xf netperf-2.5.0.tar.gz && cd netperf-netperf-2.5.0
 ```
-4. Execute the following command to compile and install Netperf.
+4. Run the following command to compile and install Netperf:
 ```
 ./configure && make && make install
 ```
-5. Execute the following command to verify that Netperf has been installed successfully.
+5. Run the following commands to verify whether the installation was successful:
 ```
 netperf -h
 netserver -h
 ```
-If Help is shown, the installation is successful.
-6. Based on the type of your operating system, execute the following commands to install iperf.
+If Help appears, the installation was successful.
+6. Run either of the following commands based on the OS type to install iperf:
 ```
-yum install iperf         #centos, make sure you have root permissions
-apt-get install iperf #ubuntu/debian, make sure you have root permissions
+yum install iperf         #For CentOS, ensure that you have root permissions.
+apt-get install iperf #For Ubuntu or Debian, ensure that you have root permissions.
 ```
-7. Execute the following command to verify that Netperf has been installed successfully.
+7. Run the following command to verify whether the installation was successful:
 ```
 iperf -h
 ```
-If Help is shown, the installation is successful.
+If Help appears, the installation was successful.
 
 ## Bandwidth Test
 
-We recommend you use two CVMs with the same configuration to avoid deviation in performance testing. One is used as the test server and the other is used as the companion training server. This example specifies 10.0.0.1 and 10.0.0.2 for testing.
+We recommend that you use two CVMs with the same configuration for testing to prevent deviations in the performance test results. For the CVMs, one is used as the test server, and the other is used as the companion training server. In this example, 10.0.0.1 and 10.0.0.2 are specified for testing.
 
 #### Test server
-Execute the following command:
+Run the following command:
 ```
 iperf -s
 ```
 
 #### Companion training server
 
-Execute the following command:
+Run the following command:
 ```
-iperf -c ${CVM IP address} -b 2048M -t 300 -P ${Number of ENI queues}
+iperf -c ${<Server IP address>} -b 2048M -t 300 -P ${<Number of ENI queues>}
 ```
-For example, if the IP address of the companion training server is 10.0.0.1 and the number of ENI queues is 8, then execute the following command:
+For example, if the IP address of the companion training server is 10.0.0.1 and the number of ENI queues is 8, run the following command:
 ```
 iperf -c 10.0.0.1 -b 2048M -t 300 -P 8
 ```
 
 ## UDP-STREAM Test
 
-We recommend you use one test server and eight companion training servers for testing. 10.0.0.1 is the test server and 10.0.0.2-10.0.0.9 are the companion training servers.
+We recommend that you use one test server and eight companion training servers for testing. Among them, the IP address of the test server is 10.0.0.1, and those of the companion training servers are 10.0.0.2 to 10.0.0.9.
 
 #### Test server
-Execute the following command to view the network pps value.
+Run the following commands to view the network pps value:
 ```
 netserver
 sar -n DEV 2
 ```
 
-#### Companion training server
+#### Companion training servers
 
-Execute the following command:
+Run the following command:
 ```
-./netperf -H <The private IP address of the tested server-l 300 -t UDP_STREAM -- -m 1 &
+./netperf -H <Private IP address of the test server> -l 300 -t UDP_STREAM -- -m 1 &
 ```
-For companion training servers, you only need to launch few netperf instances (one is enough unless unstable system performance necessitates the addition of few more new netperf instances) to reach the limit of UDP_STREAM.
-For example, if the test server’s private IP address is 10.0.0.1, execute the following command:
+On the companion training servers, launch a few netperf instances. Based on experience, one instance is sufficient. If the system performance is unstable, add more netperf instances to reach the UDP_STREAM limit.
+For example, if the private IP address of the test server is 10.0.0.1, run the following command:
 ```
 ./netperf -H 10.0.0.1 -l 300 -t UDP_STREAM -- -m 1 &
 ```
 
 ## TCP-RR Test
 
-We recommend you use one test server and eight companion training servers for testing. 10.0.0.1 is the test server and 10.0.0.2-10.0.0.9 are the companion training servers.
+We recommend that you use one test server and eight companion training servers for testing. Among them, the IP address of the test server is 10.0.0.1, and those of the companion training servers are 10.0.0.2 to 10.0.0.9.
 
 #### Test server
-Execute the following command to view the network pps value.
+Run the following commands to view the network pps value:
 ```
 netserver
 sar -n DEV 2
 ```
 
-#### Companion training server
+#### Companion training servers
 
-Execute the following command:
+Run the following command:
 ```
-./netperf -H <The private IP address of the tested server-l 300 -t TCP_RR -- -r 1,1 &
+./netperf -H <Private IP address of the test server> -l 300 -t TCP_RR -- -r 1,1 &
 ```
-For companion training servers, you need to launch multiple netperf instances (a total of at least 300 netperf instances are required) to reach the limit of TCP-RR.
-For example, if the test server’s private IP address is 10.0.0.1, execute the following command:
+On companion training servers, launch multiple netperf instances. Based on experience, at least 300 netperf instances are required to reach the TCP-RR limit.
+For example, if the private IP address of the test server is 10.0.0.1, run the following command:
 ```
 ./netperf -H 10.0.0.1 -l 300 -t TCP_RR -- -r 1,1 &
 ```
 
-## Test data analysis
+## Test Data Analysis
 
-### Performance analysis of sar tool
+### Performance analysis of the sar tool
 
 #### Sample analysis data
 
@@ -164,16 +164,16 @@ For example, if the test server’s private IP address is 10.0.0.1, execute the 
 02:41:07 PM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00
 ```
 
-#### Field description
+#### Field descriptions
 
-| Field     | Description                                                         |
+| Field | Description |
 | ------- | ---------------------- |
-| rxpck/s | Total number of packets received per second (pps) |
-| txpck/s | Total number of packets transmitted per second (pps) |
-| rxkB/s  | Bandwidth received       |
-| txkB/s  | Bandwidth transmitted      |
+| rxpck/s | Number of packets received per second, that is, the receiving pps |
+| txpck/s | Number of packets sent per second, that is, the sending pps |
+| rxkB/s | Receiving bandwidth |
+| txkB/s | Sending bandwidth |
 
-### Performance analysis of iperf tool
+### Performance analysis of the iperf tool
 
 #### Sample analysis data
 
@@ -199,28 +199,28 @@ For example, if the test server’s private IP address is 10.0.0.1, execute the 
 	[SUM]   0.00-300.03 sec  53.5 GBytes  1.53 Gbits/sec                  receiver
 ```
 
-#### Field description
+#### Field descriptions
 
-In SUM lines, sender represents the data volume sent and receiver the data volume received.
+In SUM lines, sender represents the sent data amount and receiver represents the received data amount.
 
-| Field     | Description                                                         |
+| Field | Description |
 | --------- | ------------------------------------------------ |
-| Interval  | Test time                   |
-| Transfer  | The volume of data transferred includes the volume sent by the sender and the volume received by the receiver |
-| Bandwidth | The bandwidth includes the bandwidth sent by the sender and that received by the receiver |
+| Interval | Test duration |
+| Transfer | Data transfer amount, including the sent and received data amounts |
+| Bandwidth | Bandwidth, including the sending and receiving bandwidths |
 
-## Script for launching multiple netperf instances
+## Script for Launching Multiple Netperf Instances
 
-In TCP-RR and UDP-STREAM, multiple Netperf instances are launched, the number of which depends on the server configuration. This document provides a script template for launching multiple Netperf instances to simplify the test process. For example, the script for TCP_RR is as follows:
+In TCP-RR and UDP-STREAM, multiple Netperf instances need to be launched. The number of required instances depends on the server configuration. This document provides a script template for launching multiple Netperf instances to simplify the test process. For example, the script for TCP_RR is as follows:
 ```
 #!/bin/bash
 
 count=$1
 for ((i=1;i<=count;i++))
 do
-     # Enter the server IP address after -H;
-     # Enter the test time after -l and set the time to 10,000 to prevent netperf from ending prematurely;
-     # Enter the test method (TCP_RR or TCP_CRR) after -t;
+     # Enter the server IP address after -H.
+     # Enter the test duration after -l. Set the duration to 10000 to prevent Netperf from ending prematurely.
+     # Enter the test method (TCP_RR or TCP_CRR) after -t.
      ./netperf -H xxx.xxx.xxx.xxx -l 10000 -t TCP_RR -- -r 1,1 & 
 done
 ```
