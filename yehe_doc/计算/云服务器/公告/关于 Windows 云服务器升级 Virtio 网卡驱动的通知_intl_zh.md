@@ -4,6 +4,6 @@
 
 如果显示以下信息：表示驱动已经升级成功，重启系统后新的驱动生效。
 
-![](https://mc.qcloudimg.com/static/img/fed07b4028a0a281106166a7e07aa7f7/image.png)
+![](https://main.qcloudimg.com/raw/f2167c6d10ffedbf4c80ee715c0e3f8c.jpg)
 如果显示以下信息：表示现有驱动没有问题，不需要升级。
-![](https://mc.qcloudimg.com/static/img/895ad7fd0d6e6bb58ae1eb21de9b6a12/image.png)
+![](https://main.qcloudimg.com/raw/996df6e4569f77a38d82a836572270d3.jpg)

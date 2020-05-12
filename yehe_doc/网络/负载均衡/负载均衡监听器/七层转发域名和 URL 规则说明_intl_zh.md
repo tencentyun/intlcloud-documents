@@ -1,6 +1,6 @@
 ## 业务流程图
 负载均衡（原“应用型负载均衡”）的七层业务流程及四层业务流程如下所示：
-![](https://mc.qcloudimg.com/static/img/de6af7fca35640ed6d0937f05f5039d2/image.png)
+![](https://main.qcloudimg.com/raw/9c30c679e6a5fd70f9dd9273f8784d6d.jpg)
 使用负载均衡的七层转发 HTTP/HTTPS 协议时，在一个 CLB 实例的监听器中新建转发规则，用户可以添加一个对应的域名。
 - 当用户仅建立了一条转发规则时，访问 VIP + URL 可以对应相应的转发规则，并正常访问服务。
 - 当用户建立了多条转发规则时，此时访问 VIP + URL 不能确保访问到某一个具体的域名 + URL，需要用户直接访问域名 + URL 来确保具体的转发规则生效。即用户配置多条转发规则时，同一个 VIP 对应了多条域名，此时不建议通过 VIP + URL 访问服务，而应该通过具体的域名 + URL 访问服务。
@@ -51,7 +51,7 @@
    - `/` 通用匹配，如果没有其它匹配，任何请求都会匹配到。
 
 ### 转发 URL 路径匹配说明
-![](http://mc.qcloudimg.com/static/img/1c01dcd0959105dd7821f4e22f5cd796/image.png)
+![](https://main.qcloudimg.com/raw/6399b39845c9f23adccb90089e10bade.jpg)
 1. 匹配规则：按最长前缀匹配，优先精确匹配，而后模糊匹配。
 例如，依照上图配置转发规则及转发组后，如下请求将依次被匹配到不同的转发规则中：
  1. `example.qloud.com/test1/image/index1.html` 精确匹配转发规则1设置的 URL 规则，则该请求将被转发到转发规则1所关联的后端云服务器中，即图中 CVM1 和 CVM2 的80端口。
