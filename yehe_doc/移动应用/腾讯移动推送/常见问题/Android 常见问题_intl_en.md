@@ -8,9 +8,9 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 ### Why can't pushes be received after registration succeeded?
 - Please check whether the current app package name is the same as that entered when TPNS is registered, and if not, you are recommended to enable multi-package name push.
 - Check whether the network is exceptional on the phone and switch to 4G network for testing.
-- TPNS push includes **notification bar message** and **in-app message** (passthrough message). A notification bar message can be displayed in the notification bar, while an in-app message cannot.
+- TPNS push includes **notification panel message** and **in-app message** (passthrough message). A notification panel message can be displayed in the notification panel, while an in-app message cannot.
 - Confirm that the phone is in normal mode. Some phones may have restrictions on network and activity of the backend TPNS process when in Low Power or Do Not Disturb mode.
-- Check whether the notification bar permission is granted on the phone. On some OPPO and vivo phones, the notification bar permission has to be granted manually.
+- Check whether the notification panel permission is granted on the phone. On some OPPO and Vivo phones, the notification panel permission has to be granted manually.
 
 
 ### Why does device registration fail?
@@ -29,7 +29,7 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 
 
 ### How do I set the message click event?
-In the SDK, a tap on a message can trigger a click event, which opens the app homepage by default. Therefore, if a redirect action is configured in the `onNotifactionClickedResult` callback method on the device, there will be a conflict between the custom redirect and the default click event, and the user will be redirected to the specified page and then to the homepage. As a result, you cannot configure redirect in `onNotifactionClickedResult`.
+In the SDK, a click on a message can trigger a click event, which opens the app homepage by default. Therefore, if a redirect action is configured in the `onNotifactionClickedResult` callback method on the device, there will be a conflict between the custom redirect and the default click event, and the user will be redirected to the specified page and then to the homepage. As a result, you cannot configure redirect in `onNotifactionClickedResult`.
 
 
 **Use an intent to redirect to the specified page**
@@ -89,11 +89,11 @@ Uri uri = getIntent().getData();
 
 
 ### What callbacks are supported by vendor-specific channels?
-- Mi channel supports arrival callback and passthrough but not click callback.
-- Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored) but not arrival callback.
-- Meizu channel supports arrival callback and click callback but not passthrough.
-- vivo channel supports click callback but not arrival callback or passthrough.
-- OPPO channel does not support click callback, arrival callback, or passthrough.
+- The Mi channel supports arrival callback and passthrough but not click callback.
+- The Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored) but not arrival callback.
+- The Meizu channel supports arrival callback and click callback but not passthrough.
+- The Vivo channel supports click callback but not arrival callback or passthrough.
+- The OPPO channel does not support click callback, arrival callback, or passthrough.
 
 >Note: if you need to get parameters through the click callback or redirect to a custom page, you can use the intent to do so.
 
@@ -122,7 +122,7 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 - Start Logcat and check the log with the tag of `PushService` to see what error message exists.
 
 #### Troubleshooting for Huawei channel
-- Check whether the TPNS SDK is above v3.2.0 and whether the version in **Settings** > **App Management** > **Huawei Mobile Service** on the Huawei phone is above 2.5.3.
+- Check whether the version in **Settings** > **App Management** > **Huawei Mobile Service** on the Huawei phone is above 2.5.3.
 - Check whether the app package has been signed.
 - Check whether an SHA256 certificate fingerprint has been configured at Huawei's official website.
 - Check the manifest file configuration against the Huawei channel connection guide in the development documentation.
@@ -134,16 +134,16 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 
 
 #### Troubleshooting for Meizu channel
-- It is similar to the troubleshooting method for Mi channel. For more information, please see troubleshooting for Mi channel.
+- It is similar to the troubleshooting method for the Mi channel. For more information, please see troubleshooting for the Mi channel.
 
 
 
-### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or below?
+### Why can't messages be displayed in the notification panel after arriving at mobile phones on Meizu Flyme 6.0 or below?
 For Meizu phones on higher versions, status bar icons no longer need to be configured. If the SDK for Android is below v1.1.4.0, please store an image named `stat_sys_third_app_notify` in folders for different resolutions of the corresponding drawable.
 
 
-### How do I solve the conflict between component dependencies when integrating with Huawei push channel?
-If your project uses Huawei Game Suite, Huawei Pay, Huawei ID, or other Huawei service components and a conflict between component dependencies occurs when you integrate with Huawei push channel, please follow the steps below for integration:
+### How do I solve the conflict between component dependencies when integrating with the Huawei push channel?
+If your project uses Huawei HMS 2.x.x, Game Suite, Huawei Pay, Huawei ID, or other Huawei service components and a conflict between component dependencies occurs when you integrate with the Huawei push channel based on `com.tencent.tpns:huawei:1.1.x.x-release`, please follow the steps below for integration:
 1. Cancel the project's dependency on the single dependency package `"com.tencent.tpns:huawei:[VERSION]-release"`.
 2. When integrating with the official Huawei SDK by referring to the official documentation of Huawei Developers, please select the push module to add the push feature to the SDK.
 3. In the source code of the HMSAgent module, modify the tool class `com.huawei.android.hms.agent.common.StrUtils` as follows to fix Huawei token registration failure caused by an exception in the Huawei SDK.
@@ -170,38 +170,10 @@ public final class StrUtils {
     }
 }
 ```
-4. Add the broadcast recipient class `HWPushMessageReceiver.java` inherited from Huawei push callback broadcast `PushReceiver` and override the `onToken` API as follows to store the Huawei token locally for call by TPNS:
-```java
-public class HWPushMessageReceiver extends PushReceiver {
-    @Override
-    public void onToken(Context context, String token, Bundle extras) {
-        if(token != null && token.length() != 0) {
-            SharedPreferences sp = context.getApplicationContext().getSharedPreferences("tpush.vip.shareprefs", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sp.edit();
-            editor.putString("huawei_token", token);
-            editor.commit();
-        }
-    }
-}
-```
-5. Add the `HWPushMessageReceiver` configuration item to `AndroidManifest.xml` and configure it as follows:
-```xml
-<receiver android:name="com.tencent.android.hwpush.HWPushMessageReceiver" >
-  <intent-filter>
-       <!-- Required; used to receive TOKEN -->
-       <action android:name="com.huawei.android.push.intent.REGISTRATION" />
-       <!-- Required; used to receive message -->
-       <action android:name="com.huawei.android.push.intent.RECEIVE" />
-       <!-- Optional; used to trigger the `onEvent` callback after the notification bar or a button in it is tapped -->
-       <action android:name="com.huawei.android.push.intent.CLICK" />
-       <!-- Optional; used to check whether the push channel is connected; not needed if there is no need to view -->
-       <action android:name="com.huawei.intent.action.PUSH_STATE" />
-  </intent-filter>
-</receiver>
-```
+
 
 ### How do I fix the exception that occurs when I use quick integration in the console?
-1. If an exception occurs during integration, set the `"debug"` field in the `tpns-configs.json` file to `true` and virun the following command: 
+1. If an exception occurs during integration, set the `"debug"` field in the `tpns-configs.json` file to `true` and run the following command: 
 ```
 ./gradlew --rerun-tasks :app:processReleaseManifest 
 ```
@@ -209,7 +181,12 @@ Then, use the `"TpnsPlugin"` keyword for analysis.
 2. Click "sync projects".
 ![](https://main.qcloudimg.com/raw/5fecbe6b63374e7e0e58c4b2cd215acb.png)
 
-3. Check whether there are relevant dependencies in the External Libraries of the project.
+3. Check whether there are relevant dependencies in the external libraries of the project.
 ![](https://main.qcloudimg.com/raw/485c7595f1b478a6fad725d38deb87b4.png)
 
-
+### Does TPNS support setting app badge on Android?
+App badges for notifications are subject to the corresponding vendors' default logics as detailed below:
+- Mi: badge number can be displayed, which is to "automatically increase/decrease by 1" by default. Notifications through the TPNS channel can be alternately configured through system APIs. For more information, please see the [Mi development documentation](https://dev.mi.com/console/doc/detail?pId=939).
+- Huawei: badge number can be displayed, which is disabled by default. The TPNS channel can be alternately configured through system APIs. For more information, please see the [Huawei development documentation](https://developer.huawei.com/consumer/cn/doc/30802).
+- Meizu: only red dot display is supported based on the default system logic, that is, if there is a notification, a red dot will be displayed, and vice versa. Customization is not supported.
+- OPPO and Vivo: this feature is available only to specified apps such as QQ and WeChat. If you need to use it, please submit an application. No adaption instructions are provided currently.  
