@@ -161,7 +161,7 @@ Beats includes FileBeat for collecting file-type data, MetricBeat for collecting
 
 #### Using TKE
 The deployment method of Filebeat through TKE is similar to that of Logstash, and you can use the Filebeat image provided by Tencent Cloud.
-![](https://main.qcloudimg.com/raw/cc76222b50c83257c4e4bc85fc89f45e.png)
+<!-- ![](https://main.qcloudimg.com/raw/cc76222b50c83257c4e4bc85fc89f45e.png) -->
 ### Configuration file description
 Configure the `filebeat.yml` file as follows:
 

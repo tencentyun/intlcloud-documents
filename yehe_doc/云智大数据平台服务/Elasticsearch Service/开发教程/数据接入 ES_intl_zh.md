@@ -161,7 +161,7 @@ Beats 包含用于收集文件类型数据的 FileBeat、收集监控指标数�
 
 #### 使用腾讯云容器服务
 使用腾讯云容器服务部署 filebeat 的方式和部署 logstash 类似，镜像可以使用腾讯云官方提供的 filebeat 镜像。
-![](https://main.qcloudimg.com/raw/cc76222b50c83257c4e4bc85fc89f45e.png)
+<!--![](https://main.qcloudimg.com/raw/cc76222b50c83257c4e4bc85fc89f45e.png)-->
 ### 配置文件说明
 配置 filebeat.yml 文件，内容如下：
 
