@@ -26,7 +26,7 @@ Suitable for tasks that have high data throughput and demands high performance, 
 > GN2 and GN8 instances provide storage based on SSD local disks. The storage of GN2 instances only allows for fixed-capacity SSD local disks by default. For more information, see the purchase page. When using local storage, the system disk and data disk of these instances only exist during the instance lifecycle. When the instance expires or you terminate the instance, the apps and data in its instance storage are erased. We recommend that you back up the data stored in the instance storage on a regular basis.
 
 ## Pick an Instance Types
-Tencent Cloud provides a wide variety of GPU computing instances for different use cases. For information on how to select the right computing instances for your needs, refer to [Selection of Instance Types](https://cloud.tencent.com/document/product/560/30130).
+Tencent Cloud provides a wide variety of GPU computing instances for different use cases.
 
 ## Service Options
 - [Pay-as-you-go](https://intl.cloud.tencent.com/document/product/213/2180)
