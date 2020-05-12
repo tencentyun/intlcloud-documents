@@ -1,7 +1,7 @@
 
 
 TPNS provides two types of tags: custom tags and TPNS preset tags. Below is a tag use case:
-![](https://main.qcloudimg.com/raw/397ad7f7754670abf8f489b0a5ef8214.png)
+![](https://main.qcloudimg.com/raw/4e06ec1dceb0cfffa13d1e9569d7e664.jpg)
 ## Tag Setting Methods
 
 ### Binding custom tag
@@ -23,7 +23,7 @@ For more information, please see the API documentation for [Deleting All Devices
 ### Querying tags bound to device
  You can use the toolkit in the Tencent Cloud Console to query specific preset and custom tags by device token.
  See the figure below:
- ![](https://main.qcloudimg.com/raw/828396fc4367cf1b67cd27d6893e7fbc.png)
+ ![](https://main.qcloudimg.com/raw/960e8eb3678ebe7457b5887966abed5f.png)
 ## Custom Tag Use Cases and Keywords
 Push by tag is suitable for scenarios where the number of devices bound to a tag is high (more than 10 generally) but the push frequency is low (below 10 pushes a day generally). For scenarios where the number of bound devices is small but the push frequency is high, you are recommended to use push by account, i.e., binding an account instead of a tag to multiple devices for push.
 
@@ -238,14 +238,14 @@ Push by tag supports a single tag or multiple tags. For push by multiple tags, T
 You can push a message by tag in the Tencent Cloud Console as shown below.
 
 1. Select the tag type, e.g., custom tag or a category of preset tags.
-![](https://main.qcloudimg.com/raw/f0f1f9b073f1f7ca0d8b57d55bd1372c.png)
+![](https://main.qcloudimg.com/raw/62e856a901b5be9980f2c6102b0f020c.png)
 2. Select the tags for which you want to push a message after selecting the tag type.
 After a tag is selected, the number of devices bound to it will be displayed.
-![](https://main.qcloudimg.com/raw/141f4b36886d9a12379080425509d995.png)
+![](https://main.qcloudimg.com/raw/6dad332635c15202548a2aca25527b6a.png)
 
 3. Select the "AND" or "OR" relationship for the selected tags as shown below:
 Here, "Any" indicates the "OR" relationship, i.e., the message will be pushed to devices bound to any of the selected tags; "All" indicates the "AND" relationship, i.e., the message will be pushed to devices bound to all of the selected tags.
-![](https://main.qcloudimg.com/raw/f8ff1194ce325ce46c0b1d89ab4c8af7.png)
+![](https://main.qcloudimg.com/raw/13c5b0aa63f38fe3bf2230af5dd8a0f9.png)
 
 
 ### Calling API for push by tag

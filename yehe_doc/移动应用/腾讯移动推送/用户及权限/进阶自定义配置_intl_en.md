@@ -5,7 +5,7 @@ If you use the TPNS service in Tencent Cloud, and the service is managed by diff
 
 You can allow different users to manage different services through sub-accounts so as to avoid the above problems. By default, a sub-account does not have permission to use a TPNS service or related resources. Therefore, you need to create a policy to grant the required permission to the sub-account.
 Cloud Access Management (CAM) is a web-based Tencent Cloud service that helps you securely manage and control access permissions to your Tencent Cloud resources. Using CAM, you can create, manage, and terminate users (groups), and control the Tencent Cloud resources that can be used by the specified user through identity and policy management.
-When using CAM, you can associate a policy with a user or user group to allow or forbid them to use specified resources to complete specified tasks. For more information on CAM policies, please see [Syntax Logic](https://cloud.tencent.com/document/product/598/10596). For more information on how to use CAM policies, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
+When using CAM, you can associate a policy with a user or user group to allow or forbid them to use specified resources to complete specified tasks. For more information on CAM policies, please see [Syntax Logic](https://intl.cloud.tencent.com/document/product/598/10603). For more information on how to use CAM policies, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
 If you do not need to manage the access permissions to TPNS resources for sub-accounts, you can skip this part. This will not affect your understanding and usage of other parts in the documentation.
 
 ## Policy Syntax Description
@@ -40,9 +40,9 @@ Parameter description:
 
 ## Creating Policy and Granting Permissions
 Two types of system-level policies are preset for you to quickly and easily grant permissions. You can go to the console > Access Management > [Policy Management](https://console.cloud.tencent.com/cam/policy), click **Create Custom Policy**, and select "Create by Policy Syntax" as shown below:
-![](https://main.qcloudimg.com/raw/d0324982e2e49322764b90a944349f8d.png)
+![](https://main.qcloudimg.com/raw/56653d121821fdb799ecdd84e8a28df7.png)
 On the policy editing page, you can search and find two preset policy templates provided by TPNS, which grants the full access and read-only access, respectively (you can view the list of specific permissions during policy creation). You can select a template and edit it or create a blank template.
-![](https://main.qcloudimg.com/raw/ba18ac50aaf3ff0d511449e45124659e.png)
+![](https://main.qcloudimg.com/raw/aefc4411845999d6b4e1c76c1f40940a.png)
 After creating a policy, you can find it on the [Policy Management](https://console.cloud.tencent.com/cam/policy) page in the CAM Console and associate it with sub-user to complete permission configuration.
 This document describes how to grant TPNS permissions in CAM.
 ## TPNS Resources That Can Be Authorized
