@@ -40,9 +40,9 @@ Parameter description:
 
 ## Creating Policy and Granting Permissions
 Two types of system-level policies are preset for you to quickly and easily grant permissions. You can go to the console > Access Management > [Policy Management](https://console.cloud.tencent.com/cam/policy), click **Create Custom Policy**, and select "Create by Policy Syntax" as shown below:
-![](https://main.qcloudimg.com/raw/d0324982e2e49322764b90a944349f8d.png)
+![](https://main.qcloudimg.com/raw/56653d121821fdb799ecdd84e8a28df7.png)
 On the policy editing page, you can search and find two preset policy templates provided by TPNS, which grants the full access and read-only access, respectively (you can view the list of specific permissions during policy creation). You can select a template and edit it or create a blank template.
-![](https://main.qcloudimg.com/raw/ba18ac50aaf3ff0d511449e45124659e.png)
+![](https://main.qcloudimg.com/raw/aefc4411845999d6b4e1c76c1f40940a.png)
 After creating a policy, you can find it on the [Policy Management](https://console.cloud.tencent.com/cam/policy) page in the CAM Console and associate it with sub-user to complete permission configuration.
 This document describes how to grant TPNS permissions in CAM.
 ## TPNS Resources That Can Be Authorized

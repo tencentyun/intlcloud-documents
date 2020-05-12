@@ -1,7 +1,7 @@
 
 
 TPNS provides two types of tags: custom tags and TPNS preset tags. Below is a tag use case:
-![](https://main.qcloudimg.com/raw/397ad7f7754670abf8f489b0a5ef8214.png)
+![](https://main.qcloudimg.com/raw/4e06ec1dceb0cfffa13d1e9569d7e664.jpg)
 ## Tag Setting Methods
 
 ### Binding custom tag
@@ -23,7 +23,7 @@ For more information, please see the API documentation for [Deleting All Devices
 ### Querying tags bound to device
  You can use the toolkit in the Tencent Cloud Console to query specific preset and custom tags by device token.
  See the figure below:
- ![](https://main.qcloudimg.com/raw/828396fc4367cf1b67cd27d6893e7fbc.png)
+ ![](https://main.qcloudimg.com/raw/960e8eb3678ebe7457b5887966abed5f.png)
 ## Custom Tag Use Cases and Keywords
 Push by tag is suitable for scenarios where the number of devices bound to a tag is high (more than 10 generally) but the push frequency is low (below 10 pushes a day generally). For scenarios where the number of bound devices is small but the push frequency is high, you are recommended to use push by account, i.e., binding an account instead of a tag to multiple devices for push.
 
