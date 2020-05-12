@@ -54,6 +54,8 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 
 > Web 推流功能需要您的设备安装了摄像头，并且浏览器支持 Flash 插件调用摄像头权限。
 
+![](https://main.qcloudimg.com/raw/9da7489bb2387049859131e792364124.png)
+
 ### 场景三：移动端推流
 1. 使用手机扫描二维码，下载安装移动端 视频云工具包进行体验。
 2. 打开工具包，选择【移动直播】>【摄像头推流】。
@@ -64,8 +66,8 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 
 ### 场景四：直播 SDK 推流
 如果您只需要在现有的 App 里集成直播推流功能，那么按照如下步骤可以快速实现目标。
-1. 下载 移动直播 SDK 开发包。
-2. 参考对接文档（iOS & Android）完成接入。
+1. 下载 移动直播 SDK开发包。
+2. 参考对接文档 iOS & Android完成接入。
 
 直播 SDK 是一套移动终端直播解决方案的集合，它以免费源码的形式向您展示：如何利用云直播（CSS）、云点播（VOD）、即时通信（IM） 和对象存储（COS）等几项服务组合构建出适合您的直播解决方案。
 
