@@ -15,8 +15,6 @@ Currently, CMQ supports connection over HTTP, HTTPS, and TCP and can be integrat
 >- TCP-based connection to CMQ is currently in beta test. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=947&source=0&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%20CMQ&step=1) for application.
 >- CMQ supports deployment in private cloud. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=947&source=0&data_title=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%20CMQ&step=1) for application.
 
-The following video shows the async message communication feature as well as high security and reliability of CMQ:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1628-11588?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
 
 ## Use Case Overview
 
