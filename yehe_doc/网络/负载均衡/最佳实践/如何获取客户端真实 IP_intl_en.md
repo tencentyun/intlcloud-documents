@@ -1,11 +1,11 @@
 ## Notes on Getting Real Client IPs by CLB
-All layer-4 (TCP/UDP/TCP SSL) and layer-7 (HTTP/HTTPS) CLB services support getting a real client IP directly on a backend CVM instance with no additional configuration required.
-- For layer-4 CLB, the source IP obtained on the backend CVM instance is the client IP.
-- For layer-7 CLB, you can use the `X-Forwarded-For` or `remote_addr` field to directly get the client IP. For the access logs of layer-7 CLB, please see [Storing Request Logs to COS](https://intl.cloud.tencent.com/document/product/214/10329). 
+All Layer-4 (TCP/UDP/TCP SSL) and Layer-7 (HTTP/HTTPS) CLB services support getting a real client IP directly on a backend CVM instance with no additional configuration required.
+- For Layer-4 CLB, the source IP obtained on the backend CVM instance is the client IP.
+- For Layer-7 CLB, you can use the `X-Forwarded-For` or `remote_addr` field to directly get the client IP. For the access logs of Layer-7 CLB, please see [Storing Access Logs in COS](https://intl.cloud.tencent.com/document/product/214/10329). 
 
 >
 - For CLB, the client IP can be directly obtained with no additional configuration required on the backend CVM instance.
-- For other layer-7 load balancing services with SNAT enabled, you need to configure the backend CVM instance and then use `X-Forwarded-For` to get the real client IP.
+- For other Layer-7 load balancing services with SNAT enabled, you need to configure the backend CVM instance and then use `X-Forwarded-For` to get the real client IP.
 
 Below are commonly used application server configuration schemes.
 
@@ -17,7 +17,7 @@ Below are commonly used application server configuration schemes.
 5. Restart the IIS server for the configuration to take effect.
 
 ## IIS 7 Configuration Scheme
-1. Download and install the [F5XForwardedFor](https://devcentral.f5.com/s/articles/x-forwarded-for-log-filter-for-windows-servers) plugin module, copy `F5XFFHttpModule.dll` and `F5XFFHttpModule.ini` in the `x86\Release` or `x64\Release` directory based on your server operating system version to a certain directory (such as `C:\F5XForwardedFor` in this document), and make sure that the IIS process has read permission to this directory.
+1. Download and install the [F5XForwardedFor](https://devcentral.f5.com/s/articles/x-forwarded-for-log-filter-for-windows-servers) plugin module, copy `F5XFFHttpModule.dll` and `F5XFFHttpModule.ini` in the `x86\Release` or `x64\Release` directory based on your server operating system version to a certain directory (such as `C:\x_forwarded_for` in this document), and make sure that the IIS process has read permission to this directory.
 2. Select **IIS Server** and double-click **Modules**.
 ![](https://main.qcloudimg.com/raw/21372379584488e72ae3d22af44a5017.png)
 3. Click **Configure Native Modules**.
