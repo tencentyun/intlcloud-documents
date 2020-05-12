@@ -10,11 +10,17 @@
 
 ## 获取播放地址
 进入云直播控制台的【辅助工具】>[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 获取播放地址，在该页面进行如下配置：
--  选择生成类型为：**播放域名**。
+- 选择生成类型为：**播放域名**。
+
 - 选择您在域名管理中已添加的播放域名。
+
 - 填写与推流地址相同的 StreamName，播放地址 StreamName 要与推流地址 StreamName 一致才能播放对应的流。
+
 - 选择地址过期时间，例如：`2019-12-13  23:59:59`。
+
 - 单击 【生成地址】即可。
+
+  ![](https://main.qcloudimg.com/raw/a2f130098eb40df252956ffb3752d230.png)
 
 >除上述方法，您还可以在云直播控制台的[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)中，选择播放域名单击【管理】，选择【播放配置】，选择播放地址的过期时间，输入与推流地址相同的 StreamName，单击【生成播放地址】即可。
 
@@ -23,6 +29,9 @@
 
 ### 场景一： PC 端播放
 您可使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg 及 [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html)  等工具进行播放。
+
+![](https://main.qcloudimg.com/raw/ea243633aaf75f83fe6cc5fd770dece7.png)
+
 ### 场景二：移动端播放
 1. 下载安装 腾讯视频云 Demo。
 2. 打开选择【移动直播】>【直播拉流】。

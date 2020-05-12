@@ -1,7 +1,8 @@
 ## 操作流程
 API Key 是常用的一类用于客户端应用与后台服务器建立可信连接和数据通信的密钥。下面就以 API Key 为例，介绍腾讯云提供的密钥保护解决方案。
 
-
+用户使用 API Key 的流程如下图所示：
+![](https://main.qcloudimg.com/raw/a5e7bc7248d12ea792a66519b200566f.jpg)
 
 
 #### 操作流程说明如下：
@@ -24,7 +25,7 @@ API Key 是常用的一类用于客户端应用与后台服务器建立可信连
 
 创建白盒密钥对是通过调用白盒服务来实现的，支持控制台方式和 API 方式。
 
-本文示例使用腾讯云 [命令行工具 TCCLI](https://intl,cloud.tencent.com/product/cli) ，后续您可以使用任何受支持的编程语言调用。
+本文示例使用腾讯云 [命令行工具 TCCLI](https://intl.cloud.tencent.com/product/cli) ，后续您可以使用任何受支持的编程语言调用。
 请求命令：
 
 ```shell

@@ -1,7 +1,7 @@
 The nature of LVB is a broadcast process, similar to the live broadcast of TV channels sent to audience through cable networks. In order to complete this process, LVB needs to have a capture and push device (similar to a camera), a cloud live broadcast service (similar to a cable network), and a playback device (similar to a TV set). These devices can be smart devices such as mobile phones, PCs, and tablets as well as web browsers. We provide complete software demos for different types of devices.
 ## <span id="step1">Preparations</span>
 1. Activate the [LVB service](https://console.cloud.tencent.com/live?from=product-banner-use-lvb).
-2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click **Add Domain Name** to add an ICP filed push domain name. For more information, please see [Adding Domain Names](https://cloud.tencent.com/document/product/267/20381).
+2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click **Add Domain Name** to add an ICP filed push domain name. 
 > LVB provides a default push domain name in the format of `xxx.livepush.myqcloud.com`. You are not recommended to use it as the push domain name for your real business.
 
 ## Getting Push Address
@@ -54,8 +54,10 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 
 > The web push feature requires that your device have a camera installed and its browser support the Flash plugin to call the camera permission.
 
+![](https://main.qcloudimg.com/raw/9da7489bb2387049859131e792364124.png)
+
 ### Scenario 3. Mobile push
-1. Scan the QR code with a mobile phone to download and install the [Video Cloud Toolkit](https://cloud.tencent.com/document/product/454/6555#.E7.B2.BE.E7.AE.80.E7.89.88-demo).
+1. Scan the QR code with a mobile phone to download and install the Video Cloud Toolkit.
 2. Open the toolkit and select **MLVB** > **Camera Push**.
 3. Enter the [push address](#step1) manually or by scanning the QR code.
 4. Tap "Start" in the bottom-left corner to start the push.
@@ -64,13 +66,13 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 
 ### Scenario 4. LVB SDK push
 If you need to integrate only LVB Push into your existing application, follow the steps below to do so quickly.
-1. Download the [MLVB SDK](https://cloud.tencent.com/document/product/454/7873).
-2. Complete the access as instructed in the [iOS](https://cloud.tencent.com/document/product/454/7879) or [Android](https://cloud.tencent.com/document/product/454/7885) access document.
+1. Download the MLVB SDK.
+2. Complete the access as instructed in the iOS or Android access document.
 
-The LVB SDK is a collection of mobile live streaming services. It demonstrates in the form of free source code how to use Tencent Cloud LVB, VOD, IM, and COS to build the most appropriate live streaming solution for your business. For more information, please see [MLVB](https://cloud.tencent.com/product/mlvb).
+The LVB SDK is a collection of mobile live streaming services. It demonstrates in the form of free source code how to use Tencent Cloud LVB, VOD, IM, and COS to build the most appropriate live streaming solution for your business. 
 
 ### Scenario 5. Mini Program push
-1. Search for or scan the QR code to enter the [Tencent Video Cloud](https://cloud.tencent.com/document/product/454/6555#.E5.B0.8F.E7.A8.8B.E5.BA.8F-demo) Mini Program in WeChat.
+1. Search for or scan the QR code to enter the Tencent Video Cloud Mini Program in WeChat.
 2. Select **RTMP Push** to enter the push settings page.
 3. Enter the [push address](#step1) manually or tap **Scan QR Code** to add it.
 4. Tap **Start** in the middle to start the push.
