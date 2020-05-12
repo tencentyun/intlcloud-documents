@@ -53,6 +53,6 @@
 （5）单击【创建策略】，即可完成创建。
 3. 将策略关联子账号 Developer。在策略页面，找到步骤2创建的策略，在其右侧单击【关联用户/组】。
 4. 在关联用户/组窗口中，勾选子账号 Developer，并单击【确定】，即可将子账号 Developer 关联至该策略。
-![](https://main.qcloudimg.com/raw/9d06489cbd3b0ddab2d9783d885b8ea1.jpg)
+![](https://main.qcloudimg.com/raw/4818cbb813fce18bc8d6fd6062e35e55.png)
 5. 子账号 Developer 登录控制台，在 [存储桶列表](https://console.cloud.tencent.com/cos5/bucket) 页面，选择**标签**并输入**标签键**进行搜索，即可查询到带有此相同标签的存储桶列表，如下图所示。
-![](https://main.qcloudimg.com/raw/9f6bfb485c7232c3502999214d113022.jpg)
+![](https://main.qcloudimg.com/raw/3f31b5273da16e7728ab40209cfedfa9.png)

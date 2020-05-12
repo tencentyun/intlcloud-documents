@@ -7,12 +7,12 @@ For example, if the Content-Encoding in Header is modified to gzip, but the file
 
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket of the object to enter the bucket.
-![](https://main.qcloudimg.com/raw/8dccbc7b536de784e46edbd8de3c2464.jpg)
+![](https://main.qcloudimg.com/raw/bb1663e4cde860956d8bb54313808df3.png)
 2. Locate the object for which you want to set headers, and click **Details** on the right.
-![](https://main.qcloudimg.com/raw/160b6e921d1e79de7b36f6533f4910c6.jpg)
+![](https://main.qcloudimg.com/raw/9e06474e1b57e7df5f1a1f47508d3273.png)
 3. Go to the **Custom Headers** section, and click **Add Header**. Select a parameter type (enter custom content in the custom field), and enter a value. COS provides the following 6 HTTP headers for objects. Once the configuration is complete, click **Save**.
 
-![](https://main.qcloudimg.com/raw/babe4e3591b0d63a866537a34de12d94.jpg)
+![](https://main.qcloudimg.com/raw/191fbd1b903069b5e546bb237b050ee2.png)
 
 <table>
    <tr>
@@ -53,7 +53,7 @@ For example, if the Content-Encoding in Header is modified to gzip, but the file
 </table>
 4. If you need to add custom headers for more than one object, you can select the objects, and click **Custom Header** under **More Actions**.
 
-![](https://main.qcloudimg.com/raw/f3c395a4cf1a8e29375c1722688642f3.png)
+![](https://main.qcloudimg.com/raw/ad58cdae6d91e089a2d3e39b4a68118d.png)
 
 ## Samples
 
@@ -78,7 +78,7 @@ Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT
 ```
 
 Add the following configurations:
-![](https://main.qcloudimg.com/raw/3df9e3628c6d8b429842807771ff547e.jpg)
+![](https://main.qcloudimg.com/raw/2474d24e7d1d365e0c736572aae8f652.png)
 When you send a request again, the browser or the client will get the following object headers:
 
 #### Request
