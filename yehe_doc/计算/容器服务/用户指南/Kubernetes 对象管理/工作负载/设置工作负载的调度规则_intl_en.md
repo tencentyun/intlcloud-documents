@@ -36,6 +36,6 @@ Multiple custom scheduling policies can be added. The following is a list of ope
 
 ## How It Works
 
-Kubernetes uses YAML files to distribute scheduling policies and the affinity and anti-affinity mechanism ensures that Pods are scheduled according to rules. For more information on this mechanism, refer to [Kubernetes official documentation](https://kubernetes.io/docs/concepts/configuration/assign-Pod-node/).
+Kubernetes uses YAML files to distribute scheduling policies and the affinity and anti-affinity mechanism ensures that Pods are scheduled according to rules. For more information on this mechanism, refer to [Kubernetes official documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity).
 
 
