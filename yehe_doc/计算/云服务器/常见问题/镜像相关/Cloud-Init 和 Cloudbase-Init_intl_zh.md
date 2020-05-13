@@ -141,16 +141,16 @@ pkg_resources.DistributionNotFound: pyyaml
 2. <span id="step02">打开**控制面板** > **管理工具** > **服务**。
 3. 找到 cloudbase-init 服务，并右键单击【属性】，打开 cloudbase-init 的属性窗口。</span>
  - 查看“启动类型”，确保“启动类型”为“自动”。如下图所示：
-![](https://main.qcloudimg.com/raw/43f39931ec8932f88ee491f2bdbd7ada.png)
+![](https://main.qcloudimg.com/raw/310a278dd2eaf2124d0d52055e0b5b6f.png)
  - 查看“登录身份”，确保“登录身份”为“本地系统帐户”。如下图所示：
-![](https://main.qcloudimg.com/raw/5a69afcde36c5bb3259ac1f136f59118.png)
+![](https://main.qcloudimg.com/raw/5a3f623aaf44d55cfe2eaa6aeadb4c12.png)
  - 手动启动 cloudbase-init 服务并观察是否有相关报错。
 如果有报错需要优先解决，并请确认是否安装相关安全软件拦截 cloudbase-init 执行的相关操作。 
-![](https://main.qcloudimg.com/raw/97684bd42d3b0d05eee996d0106825e3.png)
+![](https://main.qcloudimg.com/raw/dbbe8f9fc05b07d8011705d9d217b76c.png)
  - 打开“注册表”搜索并找到全部的“LocalScriptsPlugin”，确保其值为2。如下图所示：
-![](https://main.qcloudimg.com/raw/4f98965fa228c7f948fc8d720424a7ea.png)
+![](https://main.qcloudimg.com/raw/16106e540d8cf4ef39e5dccb44251350.png)
  - 确认 CD-ROM 的加载是否被禁用。如下图所示，可以看到一个光驱设备，则表示正常加载；否则是被禁用了，需要取消禁用。
-![](https://main.qcloudimg.com/raw/0e8c68537e238fe7a1e4b718848b9e98.png)
+![](https://main.qcloudimg.com/raw/7707e694b475ba4d70b4d1d52a6c98bb.png)
 
 ### 如何排查 Cloudbase-Init 常见问题？
 #### 初始化重置密码失败
