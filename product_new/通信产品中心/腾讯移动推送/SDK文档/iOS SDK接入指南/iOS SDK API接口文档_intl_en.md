@@ -44,13 +44,13 @@ _**Note: the parameters required by the API must be entered correctly; otherwise
 [[XGPush defaultManager] stopXGNotification];
 ```
 
-## Customizing Notification Panel Message Action
+## Customizing Notification Bar Message Action
 
 ### Creating message action
 
 **Description**
 
-Create a clickable event action in the notification
+Create a click event action in the notification
 
 **API**
 
@@ -91,7 +91,7 @@ Create a category object to manage the action object of the notification panel
 * intentIdentifiers: used to indicate identifiers that can be recognized by Siri
 * options: category characteristics
 
-_**Note: the notification panel has the click event feature, which is only supported in iOS 8+. For iOS 8 or earlier, this method will return null**_
+_**Note: the notification bar has the click event feature, which is only supported in iOS 8+. For iOS 8 or earlier, this method will return null**_
 
 **Sample**
 
@@ -101,7 +101,7 @@ XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifie
 
 ### Creating configuration class
 
-Manage the style and characteristics of the push message notification panel
+Manage the style and characteristics of the push message notification bar
 
 **API**
 
@@ -111,7 +111,7 @@ Manage the style and characteristics of the push message notification panel
 
 **Parameter description**
 
-* categories: the collection of categories supported by the notification panel 
+* categories: the collection of categories supported by the notification bar 
 * types: style of registered notification
 
 **Sample**
@@ -147,7 +147,7 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 
 **Description**
 
-* Call this API to report the current application badge number to the TPNS server. After the client is configured, you can use the "automatically increasing badge number by 1" feature, which can be found in the console (create a push > notification panel message > general settings > badge number)
+* Call this API to report the current application badge number to the TPNS server. After the client is configured, you can set the badge number “auto increased by 1” feature, which can be found in the console (create push > notification bar message > advanced settings > badge number)
 
 **API**
 
@@ -160,7 +160,7 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 * badgeNumber, badge number of application
 
 **Note:  
-1. This API must be called locally; otherwise, the badge number by default will not change, even if the "automatically increasing badge number by 1" feature is enabled.  
+1. This API must be called locally; otherwise, the badge number by default will not change, even if the "auto increased by 1" feature is enabled.  
 **
 
 **Sample**
@@ -316,11 +316,11 @@ NSString *token = [[XGPushTokenManager defaultTokenManager] deviceTokenString];
 
 _**Note: this callback method is called after the registration is successful. After the current token is registered, the SDK will cache the registration information, and this method will not be called again**_
 
-### Binding/Unbinding tag and account
+### Binding/unbinding tag and account
 
 **Description**
 
-* You can bind tags to different users and then push based on a specific tag, i.e., if you push to a tag, all devices under the tag will receive the push. One device can bind multiple tags.
+* You can bind tags to different users and then push based on a specific tag, i.e., if you push to a tag, all devices under the tag will receive the push notification. One device can bind multiple tags.
 
 **Single-operation API**
 ```Objective-C
@@ -336,10 +336,10 @@ _**Note: this callback method is called after the registration is successful. Af
 **Sample**
 
 ```Objective-C
-// Bind the tag:
+// Bind a tag:
 [[XGPushTokenManager defaultTokenManager] bindWithIdentifier:@"your tag" type:XGPushTokenBindTypeTag];
 
-// Unbind the tag
+// Unbind a tag
 [[XGPushTokenManager defaultTokenManager] unbindWithIdentifer:@"your tag" type:XGPushTokenBindTypeTag];
 
 // Bind an account:

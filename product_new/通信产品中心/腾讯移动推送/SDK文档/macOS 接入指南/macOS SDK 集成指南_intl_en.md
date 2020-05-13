@@ -17,11 +17,11 @@ The SDK used in this guide is v1.0+.
 
 1. Log in to TPNS Console, and click **Product Management** on the left sidebar.
 
-2. Enter the **Product Management** page, and click **Add a product**.
+2. Enter the **Product Management** page, and click **Add Product**.
 
-3. Go to the **Add Product** page and enter the product name and product details. Select the product type and click **OK** to add a new product.
+3. Go to the **Add Product** page and enter the product name and product details. Select the product type and click **Confirm** to add a new product.
 
-4. After creating a new product, select **Application Management**>**Application List** to go to the application list and get the product `AppID` and `AppKey`. (`AppID` is the `Access ID`, and `AppKey` is the `Access Key`).
+4. After creating a new product, click **Configuration Management** to get the application `Access ID` and `Access Key`).
 
 5. Import the SDK:
 **Method 1. import using Cocoapods**
@@ -32,7 +32,7 @@ Download through Cocoapods:
  ```
 
 **Method 2. manual import**
-Enter the console and click **SDK Download** on the left sidebar to go to the download page. Select the macOS platform and click **Download** in the "Operation" column.
+Enter the console, click **Toolbox**>**SDK Download** on the left sidebar to go to the download page. Select the macOS platform and click **Download** in the "Operation" column.
 
 
 Go to the `demo` directory, and open the `XG-Demo-macOS` folder. Add ```XG_SDK_Cloud_macOS.framework``` and ```XGMTACloud_macOS.framework``` to the project.
@@ -56,7 +56,7 @@ After adding the frameworks, the library references are as follows:
 
 ![](https://main.qcloudimg.com/raw/a2b155eb1c1454cd3a05004dd37f595e.png)
 
-	Note: if `checkTargetOtherLinkFlagForObjc` reports an error, it means -ObjC has not been added to Other link flags in build setting.
+	Note: if `checkTargetOtherLinkFlagForObjc` reports an error, it means `-ObjC` has not been added to `Other link flags` in build setting.
 
 6. Call the API for launching TPNS and implement the method in the ```XGPushDelegate``` protocol as needed to launch the push service.
 
@@ -93,7 +93,7 @@ After adding the frameworks, the library references are as follows:
 ## Debugging
 #### Enabling debug mode
 
-After turning on debug mode, you can view the detailed TPNS debug information on the device for troubleshooting.
+After enabling debug mode, you can view the detailed TPNS debug information on the device for troubleshooting.
 
 ##### [Sample code]
 
@@ -112,16 +112,16 @@ During debugging, you are recommended to implement the following two methods in 
 /**
  @brief This monitors the launch condition of the TPNS service
 
- @param isSuccess   This checks whether TPNS is successfully launched
+ @param isSuccess This checks whether TPNS is successfully launched
  @param error This message indicates an error in TPNS launch
  */
 - (void)xgPushDidFinishStart:(BOOL)isSuccess error:(nullable NSError *)error;
 
 /**
- @brief This registers the callback of the device token with the TPNS server
+ @brief This indicates the callback function of registering device token on the TPNS server
  
- @param deviceToken: token of current device
- @param error: error message
+ @param deviceToken This indicates the token of current device
+ @param error This indicates an error message
  @note After the current token is registered, this method will no longer be called
  */
 - (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken error:(nullable NSError *)error;

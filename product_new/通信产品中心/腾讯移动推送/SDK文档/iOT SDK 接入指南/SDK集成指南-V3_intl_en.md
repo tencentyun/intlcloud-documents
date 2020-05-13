@@ -55,7 +55,7 @@ level":"D","message":"xgMqttRpcResult(811):cmd account "}
 ```
 ## Pushing Messages to Demo
 
-You can push a message in the console or by using the REST API. If the following content is shown in the xgDemo log, the push is successful.
+You can push a message in the console or by using the RESTful API. If the following content is shown in the xgDemo log, the push is successful.
 
 ```xml
 [20190909_20:15:22][demo Debug]$$$$$$$$$$$$$$$$$$$$$$$

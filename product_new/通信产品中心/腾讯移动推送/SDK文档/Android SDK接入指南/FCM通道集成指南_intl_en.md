@@ -2,11 +2,11 @@
 
 ## Operation Scenarios
 
-The FCM channel is a system-level push channel launched by Google. Mobile phones with a Google Service framework which has looser background process management method can receive push messages when the application process is not forced to stop.
+FCM channels are system-level push channels provided by Google. If you use a mobile phone with the Google service framework, you can receive push notifications without opening applications. If the mobile phone ROM has no FCM, the TPNS channel will be used.
 ## Directions
 
 ### 1. Get the FCM push key
-1. Register the application at [FireBase official website](https://firebase.google.com/?hl=en-us). Configure the FCM application push server key and SenderID to the TPNS console.
+1. Register the application at [FireBase official website](https://firebase.google.com/?hl=en-us). Configure the FCM application push server key and SenderID to the TPNS Console.
 2. Download the google-services.json file.
 See below:
 

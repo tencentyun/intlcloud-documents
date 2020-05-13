@@ -11,7 +11,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_stat_overview
 
 | Parameter Name  | Required | Type   | Description                                           |
 | --------- | ---- | ------ | ---------------------------------------------- |
-| startDate | Yes   | string | start Date, query limit: only data for the past 3 months can be queried |
+| startDate | Yes   | string | Query limit: only data for the past 3 months can be queried |
 | endDate   | Yes   | string | Data is timestamp                                   |
 
 #### Response parameters
@@ -27,22 +27,22 @@ https://api.tpns.tencent.com/v3/statistics/get_push_stat_overview
 | Parameter Name | Type   | Description           |
 | ------------ | ------ | -------- |
 | date         | string | Data date |
-| pushActiveUv | int    | Scheduled delivery |
-| pushOnlineUv | int    | Actual delivery |
-| verifySvcUv  | int    | Device arrival |
-| verifyUv     | int    | Display     |
-| clickUv      | int    | Click     |
-| cleanupUv    | int    | Clear     |
+| pushActiveUv | int    | Attempted delivery |
+| pushOnlineUv | int    | Actual sent to |
+| verifySvcUv  | int    | Devices reached |
+| verifyUv     | int    | Displayed     |
+| clickUv      | int    | Clicked     |
+| cleanupUv    | int    | Cleared     |
 
 #### PushStatOverviewData (iOS and macOS)
 
 | Parameter Name | Type   | Description           |
 | ------------ | ------ | -------- |
 | date         | string | Data date |
-| pushActiveUv | int    | Scheduled delivery |
+| pushActiveUv | int    | Attempted delivery |
 | pushOnlineUv | int    | APNs successfully received |
-| verifySvcUv  | int    | Arrival |
-| clickUv      | int    | Click     |
+| verifySvcUv  | int    | Reached |
+| clickUv      | int    | Clicked     |
 
 
 

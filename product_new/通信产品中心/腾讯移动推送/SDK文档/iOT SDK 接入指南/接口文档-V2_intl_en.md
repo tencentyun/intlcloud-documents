@@ -26,7 +26,7 @@ void testRecvDataCB(uint8_t *data, uint32_t len)
 }
 ```
 
-## Status Notification Callback Feature
+## Status Notification Callback Function
 ### API description
 
 When SDK status changes, it notifies the application layer API.
@@ -95,9 +95,9 @@ typedef struct {
 }xgAgentConfig_t;
 ```
 Notes:
-- accessID: the application ID is created in the console and has numeric characters.
-- accessKey: the application Key is created in the console and has alphabetic characters.
-- deviceName: the device name is generally mac but can also be customized.
+- accessID: the application ID created in the console and has numeric characters.
+- accessKey: the application Key created in the console and has alphabetic characters.
+- deviceName: the device name generally defined as mac but can also be customized.
 - recvCBFunc: backend push data callback notification.
 - statusCBFunc: SDK status notification
 
@@ -163,7 +163,7 @@ Used to disconnect from the cloud.
 void xgAgentDisconnect(void)
 ```
 ### Parameter description
-- No parameter
+- No parameters
 
 ### Sample code
 ```c
