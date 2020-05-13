@@ -9,7 +9,7 @@ The SDK for Android is a set of APIs provided by TPNS Service for clients to imp
 
 >Before configuring the SDK, make sure you have configured the Android platform application.
 
-1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Configuration Management** on the left sidebar to get the application package name, `AccessID`, and `AccessKey`.
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and click **Configuration Management** on **Product Management** page to get the application package name, `AccessID`, and `AccessKey`.
 2. Get the latest version number on the [SDK download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
 3. In the application's `build.gradle` file, configure the following content:
 
@@ -30,7 +30,7 @@ android {
 
         manifestPlaceholders = [
 
-            XG_ACCESS_ID:"accessid of registered application",
+            XG_ACCESS_ID: "accessid of registered application",
             XG_ACCESS_KEY : "accesskey of registered application",
         ]
         ......
@@ -143,9 +143,9 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
             <action android:name="com.tencent.android.xg.vip.action.ACTION_SDK_KEEPALIVE" />
             <!-- **Optional** System broadcast: network switching -->
             <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            <!-- **(Optional)** System broadcast: splash screen -->
+            <!-- **Optional** System broadcast: splash screen -->
             <action android:name="android.intent.action.USER_PRESENT" />
-            <!-- [Optional] Some common system broadcasts for increasing the possibility of TPNS service reactivation. You can also add broadcast customized by the application to launch the service -->
+            <!-- **Optional** Some common system broadcasts for increasing the possibility of TPNS service reactivation. You can also add broadcast customized by the application to launch the service -->
             <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
             <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
             <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
@@ -268,13 +268,13 @@ Singapore: `https://api.tpns.sgp.tencent.com`
 -<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_root_view" xmlns:android="http://schemas.android.com/apk/res/android">
 <!--Notification background. The id name cannot be changed but others can be changed-->
 <ImageView android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/xg_notification_bg" android:scaleType="centerCrop"/>
-<!--Notification icon. The id name cannot be changed but others can be changed. Required.-->
+<!--Notification icon. Required. The id name cannot be changed but others can be changed.-->
 <ImageView android:layout_height="48dp" android:layout_width="48dp" android:id="@+id/xg_notification_icon" android:scaleType="centerInside" android:layout_marginLeft="5dp" android:layout_centerVertical="true" android:layout_alignParentLeft="true"/>
 <!--Notification time. The id name cannot be changed but others can be changed. If the time is not displayed, you can remove this layout-->
 <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/xg_notification_date" android:textSize="12dp" android:layout_marginRight="5dp" android:layout_marginTop="5dp" android:layout_alignParentRight="true" android:layout_alignParentTop="true"/>
-<!--Notification title. The id name cannot be changed but others can be changed. Required.-->
+<!--Notification title. Required. The id name cannot be changed but others can be changed.-->
 <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_title" android:layout_marginLeft="10dp" android:layout_marginTop="20dp" android:singleLine="true" android:layout_toRightOf="@id/xg_notification_icon" android:layout_toLeftOf="@id/xg_notification_date"/>
-<!--Notification content. The id name cannot be changed but others can be changed. Required.-->
+<!--Notification content. Required. The id name cannot be changed but others can be changed.-->
 <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_content" android:layout_marginTop="1dp" android:singleLine="true" android:layout_toLeftOf="@id/xg_notification_date" android:layout_alignLeft="@+id/xg_notification_style_title" android:layout_below="@+id/xg_notification_style_title"/>
 <!--Playback button for rich media notifications with audio or video. The id name cannot be changed but others can be changed. If audio-visual rich media is not used, remove this layout.-->
 <ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_play" android:layout_alignLeft="@+id/xg_notification_style_title" android:visibility="gone" android:background="@android:drawable/ic_media_play" android:layout_alignParentBottom="true"/>

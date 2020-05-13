@@ -66,16 +66,16 @@ Step 5. Export the certificate
 
 
 
-Open Keychain Access, select the message push certificate to be exported and right-click it. The export format is P12, then set the password.
+Open Keychain Access, select the message push certificate to be exported and right-click it. Select Export Certificate with the export format P12, then set the password.
 ![](https://main.qcloudimg.com/raw/30a6544222eec5408e554c743348b47a.png)
 
 
 
 ## Uploading Certificate
 
-Step 1. [Log in to the console](https://console.cloud.tencent.com/tpns/applist)
+Step 1. [Log in to the console](https://console.cloud.tencent.com/tpns/applist).
 
-Step 2. In the **Application List**, select the application that needs to have the push certificate uploaded
+Step 2. Go to the **Configuration Management** page and select the application that needs to upload the push certificate.
 
-Step 3. On the **Application Configuration** page, upload the push certificate
+Step 3. Enter the certificate password, click **Upload Certificate**, select your certificate to complete the upload.
 

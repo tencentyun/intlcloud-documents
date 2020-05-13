@@ -14,12 +14,12 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 
 | Parameter Name  | Required | Type   | Description       |
 | --------- | ---- | ------ | ---------- |
-| startDate | Yes   | string | Queries the start date,<li>Format: YYYY-MM-DD<li>Query limit: within the last 3 months |
-| endDate | Yes | string | Queries the end date. Format: YYYY-MM-DD |
+| startDate | Yes   | string | Query start date,<li>Format: YYYY-MM-DD<li>Query limit: within the last 3 months |
+| endDate | Yes | string | Query end date. Format: YYYY-MM-DD |
 | msgType | No | string | Message type:<li>notify: notification<li>message: silent message |
-| pushType | No | string | Push type:<li>all: full push<li>tag: tag push<li>token: device list/device single push<li>account: account list/account single push |
-| offset | No | int | Start offset for paginated query |
-| limit | No | int | Number of messages per page for paginated query (maximum value: 200) |
+| pushType | No | string | Push type:<li>all: full push<li>tag: tag push<li>token: device list/single-device push<li>account: account list/single-account push |
+| offset | No | int | Paginated query starting offset |
+| limit | No | int | Queries the number of messages by page (maximum 200) |
 
 #### Response parameters
 
@@ -42,13 +42,13 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 | pushType         | string             | Push target               | <li>all //Full push<li>tag //Tag push<li>token_list //Device list<li>account_list //Account list<li>package_account_push //Number package push |
 | messageType      | string             | Push type               | <li>notification //Notification<li>message //Message                              |
 | environment      | string             | Push environment               | <li>product //Production environment<li>dev //Development environment                         |
-| expireTime       | uint32             | Expiration time               | Unit: second                                                       |
+| expireTime       | uint32             | Expiry time               | Unit: second                                                       |
 | xgMediaResources | string             | Rich media information             | -                                                            |
-| multiPkg         | bool               | Multi-package-name push?         | -                                                            |
+| multiPkg         | bool               | Whether a push to multiple packages         | -                                                            |
 | targetList       | jsonArrary(string) | Push account or push device list | Valid if `pushType` is `token_list` or `account_list`                   |
 | tagSet           | JsonObject         | Tag settings               | Valid if `pushType` is `tag`<br>Data structure:<code><br>{<br>"op":"OR", //Inter–tag logic operation<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", //Tag type<br>"tagValue":"test68" //Tag value}<br>]<br>}</code> |
 | uploadId         | uint32             | Number package ID               | Valid if `pushType` is `package_account_push`                         |
-| pushConfig       | JsonObject         | Push configuration information           | <br>"Android": for specific push configuration information related to Android, please see the following code<br>"iOS": for specific push configuration related to iOS, please see the following code<br> |
+| pushConfig       | JsonObject         | Push configuration information           | <br>"Android": specific push configuration information related to Android. For details, please see the following code<br>"iOS": specific push configuration related to iOS. For details, please see the following code<br> |
 
 
 ## Configuration Information
@@ -59,7 +59,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
  "ring":1, // Ring
  "vibrate":0, // Vibrate
  "lights":1, // LED indicator
- "clearable":1, // Whether dismissible or not
+ "clearable":1, // Whether clearable or not
  "action":{
  // Action type; 1. Open activity or application; 2. Open browser; 3. Open Intent
  "action_type":1

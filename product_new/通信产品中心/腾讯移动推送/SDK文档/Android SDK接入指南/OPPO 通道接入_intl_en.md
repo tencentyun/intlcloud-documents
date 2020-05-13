@@ -6,7 +6,7 @@ The OPPO PUSH channel is a system-level push channel officially provided by OPPO
 
 >
 - OPPO PUSH currently does not support in-app messages, which will be displayed as notifications.
-- OPPO PUSH imposes a certain limit (which is not disclosed) on the number of daily push messages (including notifications and pass-through messages). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
+- OPPO PUSH imposes a certain limit (which is not disclosed) on the number of daily push messages. When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
 - OPPO PUSH is supported by OPPO ColorOS v3.1 or above.
 - When applications are installed on an OPPO phone, the notification bar permission will not be granted by default. You can call the [notification bar permission requesting](#qqtz) API or guide the user to manually grant the permission to the application.
 

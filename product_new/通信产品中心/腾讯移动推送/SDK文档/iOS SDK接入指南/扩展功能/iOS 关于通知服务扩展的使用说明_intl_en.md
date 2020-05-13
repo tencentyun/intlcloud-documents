@@ -1,18 +1,18 @@
 
 ## Overview
-In iOS 10.0+, the operating system provides the Service Extension API, which can be called by the client to listen to the arrival of messages.
+In iOS 10.0+, the operating system provides the Service Extension API, which can be called by the client to listen to the arrival of messages.
 
 
 ## SDK Statistics Reporting APIs
 Reporting on receipt of push messages. This API is used to track statistics of whether push messages reach devices.
 ```objective-c
 /**
- @brief: the TPNS messages that arrive to the end terminal, that is, message receipt
+ @brief The TPNS messages that reached the end terminal, that is, message receipt
  
- @param request   push request
+ @param request   Push request
  @param appID   TPNS application ID
  @param appKey   TPNS application Key
- @param handler: process the associated rich media file in callback method.
+ @param handler Callback of processing messages. Process the associated rich media file in callback method
  */
 - (void)handleNotificationRequest:(nonnull UNNotificationRequest *)request appID:(uint32_t)appID appKey:(nonnull NSString *)appKey contentHandler:(nullable void(^)( NSArray <UNNotificationAttachment *>* _Nullable attachments,  NSError * _Nullable error))handler;
 ```
@@ -20,7 +20,7 @@ Reporting on receipt of push messages. This API is used to track statistics of w
 ## Parameter Description
 - request: push request.
 - AppID: TPNS application ID.
-- handler: process the associated rich media file in callback method.  
+- handler: callback of processing messages. Process the associated rich media file in callback method.  
 
 ## Instructions 
 Perform the following steps to use the extension SDK:

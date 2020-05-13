@@ -35,7 +35,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 | environment      | string             | Push environment               | <li>product //Production environment<li>dev //Development environment                         |
 | expireTime       | uint32             | Expiry time               | Unit: second                                                       |
 | xgMediaResources | string             | Rich media information             | -                                                            |
-| multiPkg         | bool               | Whether a push for multi-package names         | -                                                            |
+| multiPkg         | bool               | Whether a push to multiple packages         | -                                                            |
 | targetList       | jsonArrary(string) | Push account or push device list | Valid if `pushType` is `token_list` or `account_list`                   |
 | tagSet           | JsonObject         | Tag settings | Valid if `pushType` is `tag`<br>Data structure:<br><code>{<br>"op":"OR", // Inter-tag logic operation<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", // Tag type<br>"tagValue":"test68" // Tag value}<br>]<br>} </code>|
 | uploadId         | uint32             | Number package ID               | Valid if `pushType` is `package_account_push`                         |

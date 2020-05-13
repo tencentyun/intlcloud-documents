@@ -92,7 +92,7 @@ Note: the account can be email, QQ account number, mobile number, username, etc.
 
 ***Prototype***
 ```java	
-Launch and register for the application, and at the same time bind the account. Recommended for applications with an account system. This API will override accounts previously bound to the device, and only the current registered account will take effect
+Launch and register for the application, and at the same time bind the account. Recommended for applications with an account system. This API will override accounts previously bound to the device, and only the current registered account will take effect.
 void bindAccount(Context context, String account, XGIOperateCallback callback)
 
 Launch and register for the application, and at the same time bind the account. Recommended for applications with an account system. This API will override accounts previously bound to the device, and only the current registered account will take effect. There is no registration callback	
@@ -280,21 +280,21 @@ Switching accounts does not require unregistration. With multiple registrations,
 <hr>
 
 TPNS mainly provides two push formats:
-"Push notification" and "pass-through message command", which are different.
+"Push notification" and "in-app message command", which are different.
 
-### Push notification (displayed in the notification panel)
+### Push notification (displayed in the notification bar)
 
-This refers to the content displayed in the notification panel of the device. All operations are performed by TPNS SDK. The application can listen to clicks on notifications. In other words, push notifications delivered on the frontend do not need to be processed by the application and will be displayed in the notification panel by default.
+This refers to the content displayed in the notification bar of the device. All operations are performed by TPNS SDK. The application can listen to clicks on notifications. In other words, push notifications delivered on the frontend do not need to be processed by the application and will be displayed in the notification bar by default.
 
 After the TPNS service is successfully registered, notifications can be delivered without any configuration.
 
 In general, combined with custom notification styles, standard notifications can meet most business needs, and if you need more flexible pushes, you can consider using messages.
 
-### In-app message command (not displayed in notification panel)
+### In-app message command (not displayed in notification bar)
 
-This refers to the content delivered to the application by TPNS. The application needs to inherit the XGPushBaseReceiver API to implement and handle all the operations on its own. In other words, delivered messages are not displayed in the notification panel by default, and TPNS is only responsible for delivering messages from the TPNS server to the application, but not processing the messages, which needs to be done by the application. For more information, please see MessageReceiver in the Demo.
+This refers to the content delivered to the application by TPNS. The application needs to inherit the XGPushBaseReceiver API to implement and handle all the operations on its own. In other words, delivered messages are not displayed in the notification bar by default, and TPNS is only responsible for delivering messages from the TPNS server to the application, but not processing the messages, which needs to be done by the application. For more information, please see MessageReceiver in the Demo.
 
-Message refers to the text message delivered by you through frontend or backend scripts. TPNS is only responsible for delivering the message to the application, while the APPLICATION is fully responsible for handling the message body on its own.
+Message refers to the text message delivered by you through frontend or backend scripts. TPNS is only responsible for delivering the message to the application, while the application is fully responsible for handling the message body on its own.
 
 Because the message is flexible and highly customizable, it is suitable for applications to handle custom business needs on its own, such as delivering application configuration information, and customizing message retention and display.
 
@@ -455,7 +455,7 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 ***Parameters***
 
-context: current context of application. notifiShowedRlt: displayed notification object
+context: current context of application. notifiShowedRlt: displayed notification
 
 
 ## Getting Message Click Results
@@ -464,7 +464,7 @@ context: current context of application. notifiShowedRlt: displayed notification
 
 *** Listening to notification effect and customizing key-value ***
 
-On the built-on activity display page of TPNS, the number of notification/message arrivals and the action of notification clicks/ clearing are counted by default. To listen to these events, you need to embed the code as follows.
+On the built-on activity display page of TPNS, the number of notification/message reached and the action of notification clicks/ clearing are counted by default. To listen to these events, you need to embed the code as follows.
 
 Note: if you want to count the number of application launches caused by TPNS or get the delivered custom `key-value`, you need to call the following method in onResume() of all (or opened) activities.
 
@@ -481,7 +481,7 @@ activity: context of opened activity
 
 ***(3) Returned value***
 
-XGPushClickedResult: opened object of notification; if the activity is open due to TPNS notification, `XGPushClickedResult` will be returned; otherwise, null will be returned.
+XGPushClickedResult: opened object of notification; if the activity is opened due to TPNS notification, `XGPushClickedResult` will be returned; otherwise, null will be returned.
 
 `XGPushClickedResult` class method list:
 
@@ -791,7 +791,7 @@ If you use the latest version of MTA, the MID obtained through the MTA's StatCon
 
 Note: a token is generated during the first registration, and will remain in the mobile phone. The token always exists regardless of unregistration. For version 3.0 and above, the token may change when the application is uninstalled and then reinstalled.
 
-***(1) Function Prototype***
+***(1) Function prototype***
 
 
 ```java
@@ -811,9 +811,9 @@ A standard token will be returned upon success, and null or "0" upon failure
 
 ### Setting AccessID
 
-If it has already been configured in AndroidManifest.xml, it does not need to be called again; if both of them exist, this API will be used.
+If it has already been configured in `AndroidManifest.xml`, it does not need to be called again; if both of them exist, this API will be used.
 
-***(1) Function Prototype***
+***(1) Function prototype***
 
 ```java
 public static boolean setAccessId(Context context, long accessId)
@@ -835,9 +835,9 @@ false: failure
 Note: the `accessId` set through this API will also be stored in the file
 
 ### Setting AccessKey
-If it has already been configured in AndroidManifest.xml, it does not need to be called again; if both of them exist, this API will be used.
+If it has already been configured in `AndroidManifest.xml`, it does not need to be called again; if both of them exist, this API will be used.
 
-***(1) Function Prototype***
+***(1) Function prototype***
 
 ```java
 public static boolean setAccessId(Context context, String accessKey) 

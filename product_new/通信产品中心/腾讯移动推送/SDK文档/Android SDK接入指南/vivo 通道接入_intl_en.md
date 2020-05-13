@@ -5,7 +5,7 @@ The Vivo push channel is a system-level push channel officially provided by Vivo
 >
 - If an application cannot be opened after you tap the notification on the debugging version, please find the pop-up window permission and enable it for the current application.
 - Vivo Push currently does not support in-app messages, which will be displayed as notifications.
-- Vivo Push imposes a certain limit (which is not disclosed) on the number of daily push messages (including notifications and pass-through messages). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
+- Vivo Push imposes a certain limit (which is not disclosed) on the number of daily push messages. When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
 
 ## Directions
 ### Getting key
