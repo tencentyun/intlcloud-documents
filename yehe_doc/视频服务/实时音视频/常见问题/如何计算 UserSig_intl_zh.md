@@ -22,7 +22,7 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 1. 单击应用卡片，进入【快速上手】页面。
 2. 单击【第二步 获取签发UserSig的密钥】区域的【查看密钥】，即可获取用于计算 UserSig 的加密密钥。
 3. 单击【复制密钥】，将密钥拷贝到剪贴板中。
- 
+ ![](https://main.qcloudimg.com/raw/0e5d53acc7618f9245ec40470ab9ddbb.png)
 
 
 <h2 id="Client">客户端计算</h2>
@@ -36,7 +36,7 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 | Android | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) | Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
 | Windows(C++) | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h)| Windows/DuilibDemo/GenerateTestUserSig.h |
 | Windows(C#) | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)| Windows/CSharpDemo/GenerateTestUserSig.cs |
-| Web | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
+| 桌面浏览器 | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
 | 微信小程序 | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/WXMini/debug/GenerateTestUserSig.js)| WXMini/debug/GenerateTestUserSig.js |
 
 

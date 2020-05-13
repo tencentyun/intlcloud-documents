@@ -17,7 +17,7 @@
 <span id="step2"></span>
 ### 步骤2：下载 SDK 和 Demo 源码
 1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android)】跳转至 Github（或单击【[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip?_ga=1.195966252.185644906.1567570704)】），下载相关 SDK 及配套的 Demo 源码。
- 
+ ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
 
 
@@ -40,12 +40,15 @@
 
 ## 常见问题
 ### 1. 查看密钥时只能获取公钥和私钥信息，该如何获取密钥？
-TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。如不升级，您也可以继续使用 [老版本算法 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)。
+TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。如不升级，您也可以继续使用 [老版本算法 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)，如已升级，您按需切换为新旧算法。
 
-升级操作：
+升级/切换操作：
  1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
  2. 在左侧导航栏选择【应用管理】，单击目标应用所在行的【应用信息】。
- 3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】。
+ 3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】、【非对称式加密】或【HMAC-SHA256】。
+  - 升级
+  - 切换回老版本算法 ECDSA-SHA256
+  - 切换为新版本算法 HMAC-SHA256
 
 ### 2. 两台手机同时运行 Demo，为什么看不到彼此的画面？
 请确保两台手机在运行 Demo 时使用的是不同的 UserID，TRTC 不支持同一个 UserID （除非 SDKAppID 不同）在两个终端同时使用。
