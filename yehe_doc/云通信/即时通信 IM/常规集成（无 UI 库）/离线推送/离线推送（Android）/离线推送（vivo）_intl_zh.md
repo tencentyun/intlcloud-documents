@@ -294,7 +294,7 @@ public class ThirdPushTokenMgr {
 
 ### 打开应用
 默认为点击通知栏消息打开应用。
-![](![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png))
+![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png)
 
 ### 打开网页
 您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
