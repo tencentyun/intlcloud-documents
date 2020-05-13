@@ -61,7 +61,9 @@
 
 ### 终端播放器
 1. 下载视频云工具包 App。
+
 <img src="https://main.qcloudimg.com/raw/4f8138e11bdc92b1286263f1d1f683c4.png" width="400">
+
 2. 使用视频云工具扫描二维码或输入 appID 和 fileID，即可实现在终端上的预览。
 
 
