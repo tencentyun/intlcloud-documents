@@ -1,12 +1,13 @@
-## Scenario
+## Introduction
 
-After [expanding a cloud disk](https://intl.cloud.tencent.com/document/product/362/5747), you need to either assign the expanded capacity to an existing partition, or format it into an independent new partition.
-If you expand a cloud disk when it is mounted to a running CVM, you need to **Rescan Disk** to recognize the disk capacity after expansion.
-If you expand a cloud disk when it is not yet mounted or mounted to a CVM that is shut down, the disk capacity after expansion will be automatically recognized.
+After [expanding a cloud disk](https://intl.cloud.tencent.com/document/product/362/5747), you need to either assign its expanded capacity to an existing partition, or format it into an independent new partition.
+- If you expand a cloud disk that is mounted to a running CVM, you need to **Rescan Disk** to recognize the disk capacity after expansion.
+- If you expand a cloud disk that is unmounted or mounted to an inactive CVM, the disk capacity after expansion will be automatically recognized.
 
 >
->- Extending the file system may affect the existing data. We strongly recommend that you manually [Create a Snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before performing the operation.
->- To extend the file system, you need to [restart the instance](https://intl.cloud.tencent.com/document/product/213/4928) or rescan the disk, which will lead to business interruption for a certain period. We recommend you choose an appropriate time for this operation.
+>- Extending the file system may affect the existing data. We strongly recommend you to manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before the operation.
+>- To extend the file system, you need to [restart the instance](https://intl.cloud.tencent.com/document/product/213/4928) or rescan the disk, which will lead to business interruption for a certain period. We recommend that you choose an appropriate time for this operation.
+>- After extending the file system, we strongly recommend you to [Rescan Disks) (#Scanning) to recognize the capacity. If you **Refresh** the system or do other operations, the expanded capacity may not be recognized.
 >
 
 
@@ -14,29 +15,28 @@ If you expand a cloud disk when it is not yet mounted or mounted to a CVM that i
 
 - You have [expanded the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/5747).
 - You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/32401) to a Windows CVM and created a file system.
-- You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5435) the Windows CVM on which you want to expand partitions and the file system.
->This document uses the CVM running on Windows Server 2012 R2 as an example. The expansion operations on different operating systems may be different. This document is for reference only.
+- You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5435) the Windows CVM on which you want to extend partitions and the file system.
+>This document describes how to expand a disk mounted to a CVM on Windows Server 2012 R2. The expansion may slightly vary with operating systems, so this document is for reference only.
 >
 
 ## Directions
 >
->- If, when you [Expand a Cloud Disk](https://intl.cloud.tencent.com/document/product/362/5747), the CVM to which the cloud disk is mounted is in normal operating status, you must [Rescan the Disk](#Scanning) to recognize the expanded cloud disk space before [Extending the Volume](#Extending).
->- When you [expand a cloud disk](https://intl.cloud.tencent.com/document/product/362/5747), if the cloud disk is not yet mounted or mounted to a CVM that is shut down, you can proceed directly to [extending the volume](#Extending).
+>- If you [expand a cloud disk](https://intl.cloud.tencent.com/document/product/362/5747) that is mounted to a running CVM, you must [rescan disk](#Scanning) to recognize the expanded cloud disk capacity before [extending volumes](#Extending).
+>- If you [expand a cloud disk](https://intl.cloud.tencent.com/document/product/362/5747) that is unmounted or amounted to an inactive CVM, you can proceed directly to [extending the volume](#Extending).
 
 <span id="Scanning"></span>
-### Rescanning the disk (optional)
-1. Right click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px">, and select **My Computer**.
-2. In the left sidebar of the "My Computer" window, select **Storage**>**Disk Management**.
-3. Right click **Disk Management**, and select **Rescan Disk**.
-
-4. After the scan is complete, check whether the data disk has changed to the size after expansion. (In this example, the scan shows that the cloud disk expanded from 10GB to 20GB).
+### Rescan the disk
+1. Right click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px">, and select **Computer Management**.
+2. In the left sidebar of the **Computer Management** window, select **Storage** -> **Disk Management**.
+3. Right click **Disk Management**, and select **Rescan Disks**, as shown below:
+4. After the scan is complete, check whether the data disk has the size after the expansion. (In this example, the scan shows that the cloud disk is expanded from 10GB to 50GB). 
 
 <span id="Extending"></span>
-### Extending Volumes
+### Extend volumes
 
 1. Right click any white area of the disk space. Select **Extend Volume**.
-2. Complete the expansion according to the on-screen instructions,
-and the new data disk capacity will be added to the origin volume.
+2. Follow the Extend Volume Wizard to extend the volume.
+The new data disk capacity will be added to the original volume.
 
 ## Related Actions
-[Expanding partitions and file systems (Linux)](https://intl.cloud.tencent.com/document/product/362/31602)
+‏[Extending Linux file systems](https://intl.cloud.tencent.com/document/product/362/31602)
