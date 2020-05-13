@@ -17,7 +17,7 @@ The following table compares the features of the different editions:
 | Maximum number of audio-video chat rooms that can be created | 10 | 50 | Unlimited |
 | Maximum net increase in group quantity per day | 10,000 | 10,000 | 10,000 |
 | Free retention period of historical messages | 7 days | 7 days | 30 days |
-| Quota of free daily active users (DAU) | 100 | 10,000 | 10,000 |
+| Quota of free daily active users (DAU) | 100/month | 10,000/month | 10,000/month |
 | Free peak group count | 100,000/month | 100,000/month | 100,000/month |
 
 - **Maximum number of audio-video chat rooms that can be created**: indicates the total number of audio-video chat rooms that can be created by all users in a single SDKAppID. Audio-video chat rooms support only text, image, short audio, and custom messages. Services such as [Live Video Broadcasting](https://intl.cloud.tencent.com/document/product/267) and [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647) need to be activated separately.

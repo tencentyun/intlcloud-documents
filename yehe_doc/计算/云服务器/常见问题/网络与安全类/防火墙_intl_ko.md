@@ -2,7 +2,7 @@
 > **참고:**
 > iptables 의 경우, CentOS 7 이전과 이후의 버전에서 큰 차이가 있습니다.
 > - CentOS 7 이전에는 iptables 서비스를 기본 방화벽으로 사용하고, `service iptables stop`코드를 사용하며, iptables 서비스가 먼저 규칙을 삭제한 후 iptables 모듈을 언마운트합니다. 다시 start 할 때 구성 파일에서 규칙을 로딩합니다. iptables 서비스를 중단하여 방화벽 제한 여부를 테스트할 수 있습니다.
-> ![](https://main.qcloudimg.com/raw/4a404e0187b0ee677034c0df82468e4a.png)
+> ![](https://main.qcloudimg.com/raw/5fbb351650cdd763e8450d7e04b18b78.jpg)
 > - CentOS 7 이후에는 firewall 서비스를 기본 방화벽으로 사용하고, 호환성을 위해 iptables_filter 모듈을 동시에 로딩했으나 iptables 서비스가 사라졌습니다. 따라서 CentOS 7 이후 iptables 명령어를 사용해 규칙을 추가할 수 있으나 iptables 서비스가 기본 비활성 상태에 있습니다. 사용자는 iptable_filter 모듈 로딩을 확인하여 즉시 규칙을 적용할 수 있습니다.
 
 방화벽을 판단하는 가장 타당한 방법은 `iptables -nvL` 규칙 조회입니다. 
@@ -10,9 +10,9 @@
 #### 시나리오 1
 Ubuntu 14 시스템은 보안 그룹을 개방하여 포트를 모니터링 하지만, telnet 가 통신되지 않습니다.
 보안 그룹 인바운드 규칙:
-![](https://main.qcloudimg.com/raw/ef640902a0e0c78af6c07eb7102bb0d7.png)
+![](https://main.qcloudimg.com/raw/4a6a1c7eca94a76ddbce457dbe28affa.png)
 보안 그룹 아웃바운드 규칙:
-![](https://main.qcloudimg.com/raw/03a960f82b6e88fdca9aff8f10d76f4c.png)
+![](https://main.qcloudimg.com/raw/90914e729ba27a6a9253e719bf4a9703.png)
 telnet가 통신되지 않았습니다:
 ![](https://main.qcloudimg.com/raw/74c521a97d4b9dab64b85ce62ab2cf86.png)
 #### 해결 방식
@@ -22,7 +22,7 @@ telnet가 통신되지 않았습니다:
 ![](https://main.qcloudimg.com/raw/1052893022c8786a9b7b0166a57ce16d.png)  
 
 2. iptables 정책 문제임을 확인한 후, `iptables –nvL`을 통해 정책이 8081 포트를 개방했는지 확인합니다. 이곳은 해당 포트를 개방하지 않았습니다. 
-![](https://main.qcloudimg.com/raw/bccfca60e3d707ae61c5ba236bf088f8.png) 
+![](https://main.qcloudimg.com/raw/f214d470f1d40ed7061ea155de756bca.jpg) 
 3. 명령어를 사용하여 8081 포트 개방 정책을 추가합니다.
 ```
 iptables -I INPUT 5 -p tcp  --dport 8081 -j ACCEPT
@@ -35,7 +35,7 @@ iptables 구성으로 볼 때 정책을 개방했으나 타깃 기기의 ping이
 ![](https://main.qcloudimg.com/raw/46fdf4e20187c5b366c7773d73eb1cee.png)
 #### 해결 방식
 아래의 상황이 나타날 경우:
-![](https://main.qcloudimg.com/raw/d1b01f74223ed34c78a789dc43d53bc8.png)
+![](https://main.qcloudimg.com/raw/babfa7fcfe9dd7536ba011c3fbaab7bc.jpg)
 명령어를 사용해 output 규칙의 첫 번째 조항을 삭제합니다:
 ```
 iptabels –D OUTPUT 1
