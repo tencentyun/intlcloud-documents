@@ -1,8 +1,10 @@
-## Description
-This API is used to configure the cross-origin resource sharing (CORS) permission of a bucket. You can make the configuration by passing in a configuration file in XML format of up to 64 KB in size. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
+## Feature Description
+
+This API (PUT Bucket cors) is used to set the cross-origin resource sharing permission of a bucket. You can implement the configuration by passing in a configuration file in XML format of up to 64 KB in size. By default, the bucket owner has direct permission to use this API and can also grant permission to other users.
 
 ## Request
-### Sample Request
+
+#### Sample request
 
 ```sh
 PUT /?cors HTTP/1.1
@@ -12,21 +14,22 @@ Content-Length: length
 Content-Type: application/xml
 Content-MD5: MD5
 Authorization: Auth String
-
 ```
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
+> Note:
+>
+> Authorization: Auth String (for more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
 
-### Request Headers
+#### Request header
 
-#### Common Headers
+In addition to common request headers, this API also supports the following required request headers. For more information on common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+| Name | Description | Type | Required |
+| :---------- | :----------------------------------------------------------- | :----- | :------- |
+| Content-MD5 | Base64-encoded MD5 hash of the request body content as defined in RFC 1864, used for performing integrity checks to verify whether the request body has changed during transfer | string | Yes |
 
-#### Special Headers
-This request operation does not use any special request header.
+#### Request body
 
-### Request Body
 The request body of this request is a CORS rule.
 
 ```http
@@ -43,63 +46,59 @@ The request body of this request is a CORS rule.
 </CORSConfiguration>
 ```
 
+The detailed data are described as follows:
 
-The data are described in details below:
+| Node Name (Keyword) | Parent Node | Description  | Type | Required |
+| :----------------- | :----- | :--------------------------------------------------------- | :-------- | :------- |
+| CORSConfiguration  | None | Information list of all CORS configurations, can contain up to 100 CORSRules | Container | Yes |
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-|---|---|---|---|---|
-|CORSConfiguration| Noe | Describes all the information on the CORS configuration, which can contain up to 100 `CORSRules` | Container | Yes |
+Content of the Container node CORSConfiguration:
 
-Content of the Container node `CORSConfiguration`:
+| Node Name (Keyword) | Parent Node | Description  | Type | Required |
+| :----------------- | :---------------- | :--------------------------------------------------------- | :-------- | :------- |
+| CORSRule | CORSConfiguration  | Information list of all CORS configurations, can contain up to 100 CORSRules | Container | Yes |
 
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| ------------------ | ----------------- | ------------------------------------------------------------ | --------- | ---- |
-| CORSRule | CORSConfiguration | Describes all the information on the CORS configuration, which can contain up to 100 `CORSRules` | Container | Yes |
+Content of the Container node CORSRule:
 
-Content of the Container node `CORSRule`:
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-|---|---|---|---|---|
-|ID|CORSConfiguration.CORSRule|Configures the rule ID |string| No |
-|AllowedOrigin|CORSConfiguration.CORSRule| Allowed origin in the format of `protocol://domain name[:port number]`, such as `http://www.qq.com`. Wildcard `*` is supported |strings| Yes |
-|AllowedMethod|CORSConfiguration.CORSRule| Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE |strings| Yes |
-|AllowedHeader|CORSConfiguration.CORSRule| Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported |strings| Yes |
-|MaxAgeSeconds|CORSConfiguration.CORSRule| Sets the validity period of the result of the `OPTIONS` request |integer| Yes |
-|ExposeHeader|CORSConfiguration.CORSRule| Sets the user-defined header information from the server side that can be received by the browser |strings| Yes |
-
+| Node Name (Keyword) | Parent Node | Description  | Type | Required |
+| :----------------- | :------------------------- | :----------------------------------------------------------- | :------ | :------- |
+| ID                 | CORSConfiguration.CORSRule | ID of the configured rule (optional)                                         | string  | No       |
+| AllowedOrigin      | CORSConfiguration.CORSRule | Allowed origin in the format `protocol://domain name[:port number]`, such as `http://www.qq.com`. Wildcard `*` is supported | strings | Yes |
+| AllowedMethod      | CORSConfiguration.CORSRule | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE       | strings | Yes       |
+| AllowedHeader      | CORSConfiguration.CORSRule | Tells the server when sending `OPTIONS` requests which user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported | strings | Yes       |
+| MaxAgeSeconds      | CORSConfiguration.CORSRule | Sets the validity period of the result of the OPTIONS request                            | integer | Yes       |
+| ExposeHeader       | CORSConfiguration.CORSRule | Sets custom header information from the server that the browser can receive           | strings | Yes       |
 
 ## Response
-### Response Headers
 
-#### Common Response Headers
+#### Response header
 
-This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-#### Special Response Headers
-This request operation does not use any special response header.
+#### Response body
 
-### Response Body
 The response body of this request is empty.
 
-### Error Codes
+#### Error codes
 
 | Error Code | Description | HTTP Status Code |
-|---|---|---|
-|SignatureDoesNotMatch| If the provided signature does not conform to the rule, this error code will be returned |403 [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3) |
-|NoSuchBucket| If the bucket to which you want to add the rule does not exist, this error code will be returned |404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4) |
+| :-------------------- | :--------------------------------------------------- | :----------------------------------------------------------- |
+| SignatureDoesNotMatch | If the signature provided does not meet the rules, this error code will be returned  | 403 [Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3) |
+| NoSuchBucket          | If the bucket to which you want to add the rule does not exist, this error code will be returned | 404 [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4) |
 
-## Example
+## Use Case
 
-### Request
+#### Request
 
 ```sh
 PUT /?cors HTTP/1.1
-Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Fri, 10 Mar 2017 09:45:46 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUjfGFO&q-sign-time=1484814927;32557710927&q-key-time=1484814927;32557710927&q-header-list=host&q-url-param-list=cors&q-signature=8b9f05dabce2578f3a79d732386e7cbade9033e3
+Host: examplebucket-1250000000.cos.ap-chengdu.myqcloud.com
+Content-MD5: q+xJ56ypmuOSKbkohlpZIg==
 Content-Type: application/xml
-Content-Length: 280
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDVMyLTL4B8rVt52LTozzPZBYffPs9****&q-sign-time=1578385303;1578392503&q-key-time=1578385303;1578392503&q-header-list=content-md5;content-type;host&q-url-param-list=cors&q-signature=730a82c7afed2a6c051870d54895193235e8****
+Content-Length: 385
 
+<?xml version="1.0" encoding="UTF-8" ?>
 <CORSConfiguration>
     <CORSRule>
         <ID>1234</ID>
@@ -112,16 +111,13 @@ Content-Length: 280
 </CORSConfiguration>
 ```
 
-### Response
+#### Response
 
 ```sh
 HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 0
-Connection: keep-alive
-Date: Fri, 10 Mar 2017 09:45:46 GMT
-Server: tencent-cos
-x-cos-request-id: NTg4MDdiZWRfOWExZjRlXzQ2OWVfZGY0
+content-length: 0
+connection: close
+date: Tue, 07 Jan 2020 08:21:44 GMT
+server: tencent-cos
+x-cos-request-id: NWUxNDNmOThfNWFiMjU4NjRfMWIxYl9lYWY1****
 ```
-
-

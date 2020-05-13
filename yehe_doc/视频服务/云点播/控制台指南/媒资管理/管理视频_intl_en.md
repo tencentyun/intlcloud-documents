@@ -61,7 +61,9 @@ Click **Preview** to preview the video directly on the web.
 
 ### Terminal player
 1. Download the Video Cloud Toolkit app.
+
 <img src="https://main.qcloudimg.com/raw/4f8138e11bdc92b1286263f1d1f683c4.png" width="400">
+
 2. Use the Video Cloud Toolkit to scan the QR code or enter the `appID` and `fileID` to preview the video on the terminal device.
 
 

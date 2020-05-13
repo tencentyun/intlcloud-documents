@@ -11,8 +11,8 @@
 5. 选择该 UserID 上报的任意一个证书 ID，单击【开始检测】，查看发送结果。
  - 若提示成功推送，说明您在控制台填写的证书信息无误、调用 SDK 接口上报 Token 成功。您可以通过 [用户客户端状态检查工具](#status) 进一步排查。 
  - 若提示失败，您可以查看具体的失败原因以及解决方案。
-
-<span id="status"></span>
+![](https://main.qcloudimg.com/raw/76b40ef61f2034718dc489519d4f7c4d.png)
+<span id="status"></span>
 ### 用户客户端状态检查工具
 您可以使用该工具自动获取用户客户端状态，检查用户是否处于可接收离线推送状态。
 
@@ -21,6 +21,7 @@
 3. 在【用户客户端状态检查工具】区域，输入 UserID。
 4. 单击【获取状态】，您可以查看该 UserID 当前的状态、登录的客户端类型等信息。
  若提示初步判定该 UserID 当前可以接收离线推送，您可以在其他设备上登录其他 UserID 作为发送方，给当前  UserID 发送单聊文本消息，检查是否能收到。
+![](https://main.qcloudimg.com/raw/858a4c73c2dd149933fb6133359ece4c.png)
 
 ## UserSig 生成&校验
 ### 签名（UserSig）生成工具
@@ -31,6 +32,7 @@
 3. 在签名（UserSig）生成工具区域，输入用户名。
 4. 单击【生成签名（UserSig）】即可生成签名，签名有效期默认为180天。
 5. 单击【复制签名（UserSig）】即可粘贴保存签名。
+![](https://main.qcloudimg.com/raw/858a4c73c2dd149933fb6133359ece4c.png)
 
 ### 签名（UserSig）校验工具
 系统将会自动获取当前应用的密钥，您只需要填写 UserID 和 UserSig 即可使用该工具快速校验 UserSig 的有效性。

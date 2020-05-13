@@ -50,7 +50,8 @@ public void createNotificationChannel(Context context) {
 1. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面。
 2. 单击【Android平台推送设置】区域的【添加证书】。
  >如果您原来已有证书只需变更信息，可以单击【Android平台推送设置】区域的【编辑】进行修改更新。
- >
+ ![](https://main.qcloudimg.com/raw/15c0ca00b00ddcc5c269489d5be93d8c.png)
+ 
 3. 根据 [步骤1](#Step1_3) 和 [步骤2](#Step2) 中获取的信息设置以下参数：
  - **推送平台**：选择 **OPPO**
  - **AppKey**：填写 OPPO 推送服务应用的 **AppKey**
@@ -59,6 +60,8 @@ public void createNotificationChannel(Context context) {
  - **ChannelID**：填写您在 App 中创建的 **ChannelID**
  - **点击后续操作**：选择点击通知栏消息后的响应操作，支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#click)
     当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#Trans)。
+    ![](https://main.qcloudimg.com/raw/b4f1c81290a40c972d95cc2e63ffbbed.png)
+    
 4. 单击【确认】保存信息，证书信息保存后10分钟内生效。
 5. 待推送证书信息生成后，记录证书的**`ID`**。
 
