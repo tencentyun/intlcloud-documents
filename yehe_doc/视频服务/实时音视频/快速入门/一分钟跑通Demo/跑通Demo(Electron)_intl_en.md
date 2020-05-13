@@ -13,7 +13,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 <span id="step2"></span>
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the corresponding card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)** to redirect to GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip)**) and download the relevant SDK and supporting demo source code.
- 
+
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="step3"></span>
@@ -23,7 +23,6 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 3. Set the relevant parameters in the `GenerateTestUserSig.js` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/a82e1c7c3b4edde3b9ac1326b2556147.png"/>
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
