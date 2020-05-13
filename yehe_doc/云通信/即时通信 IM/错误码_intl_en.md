@@ -1,5 +1,5 @@
 ## 1. IM SDK Error Codes
->For Web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
+>For web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
 
 ### General error codes
 
@@ -67,7 +67,7 @@
 | 8504 | Invalid group notice. A group notice can be up to 300 bytes in length and must be encoded in UTF-8. If the group notice contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8505 | Invalid URL. The URL of a group profile photo can be up to 100 bytes in length. You can try to access the URL via a web browser. |
 | 8506 | Invalid group name card. A group name card can be up to 50 bytes in length and must be encoded in UTF-8. If the group name card contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
-| 8507 | The number of group members exceeds the limit allowed upon group creation and invitation. Private group: up to 200 members. Public group: up to 2,000 members. Chat room: up to 6,000 members. Audio-video chat room: unlimited. Broadcasting chat rooms: unlimited. |
+| 8507 | The number of group members exceeds the limit allowed upon group creation and invitation. Private group: up to 200 members. Public group: up to 2,000 members. Chat room: up to 6,000 members. Audio-video chat room: unlimited. Broadcast chat rooms: unlimited. |
 | 8508 | A private group cannot be joined via application. Any group member can invite non-members to join the group without the invitees’ confirmation. |
 | 8509 | You cannot invite a group member whose role is group owner. Ensure that the role field is entered correctly. |
 | 8510 | You cannot invite 0 members. Ensure that the member field is entered correctly. |
@@ -130,7 +130,7 @@
 | -10104 | The device is logged out automatically. |
 | -10105 | The MSFSDK is logged out automatically. |
 | -10106 | SSO decryption with D2key failed too many times. Instruct the device to reset and refresh D2. |
-| -10107 | Aggregation is not supported and a uniform error code is returned to the device. The device stops aggregation on this TCP persistent connection. |
+| -10107 | The uniform error code is returned to the device because aggregation is not supported. The device stops aggregation on this TCP-based persistent connection. |
 | -10109 | The format of the request packet is incorrect. |
 | -10110 | The SDKAppID is blacklisted. |
 | -10111 | The SDKAppID is on the service cmd blacklist. |
@@ -145,7 +145,7 @@
 | 114000 | The resource file to be sent does not exist. |
 | 114001 | The resource file to be sent cannot be accessed. |
 | 114002 | The file size exceeds the limit allowed. |
-| 114003 | Sending canceled by the user. The user may log out in the sending process. |
+| 114003 | Sending cancelled by the user. The user may log out in the sending process. |
 | 114004 | Failed to read the file. |
 | 114005 | Resource file (such as an image, document, audio, or video) transfer timed out, usually due to network issues. |
 | 114011 | Invalid parameter. |
@@ -161,12 +161,12 @@
 | 60004 | The request URI or the UserID or UserSig in the JSON packet is incorrect. |
 | 60005 | The request URI or the UserID or UserSig in the JSON packet is incorrect. |
 | 60006 | Invalid SDKAppID. Check the validity of the SDKAppID. |
-| 60007 | The RESTful API call exceeds the frequency limit. Try again later. |
-| 60008 | Service request timed out or HTTP request format error. Check the error and try again later. |
+| 60007 | The REST API call exceeds the frequency limit. Try again later. |
+| 60008 | The service request timed out or the format of the HTTP request is incorrect. Check the error and try again later. |
 | 60009 | Incorrect request resource. Check the request URL. |
-| 60010 | Set the UserID field of the RESTful API request to the admin account of the app. |
+| 60010 | Set the UserID field of the REST API request to the admin account of the app. |
 | 60011 | The SDKAppID request exceeds the frequency limit. Try again later. |
-| 60012 | SDKAppID is required for the RESTful API. Please check the SDKAppID parameter in the URL. |
+| 60012 | SDKAppID is required when calling the REST API. Check the SDKAppID in the URL. |
 | 60013 | An error occurs when parsing the JSON data in the HTTP response packet. |
 | 60014 | Account switching timed out. |
 | 60015 | The type of the UserID in the request packet is incorrect. Ensure that the UserID is in string format. |
@@ -174,7 +174,6 @@
 | 60017 | The request is disabled. |
 | 60018 | Too many requests. Try again later. |
 | 60019 | Too many requests. Try again later. |
-| 60020 | Your Pro Edition standard billing plan has expired and is disabled. The new standard billing plan will take effect 5 minutes later. |
 | 80001 | The text is filtered out due to security policies. Check whether the text contains security-sensitive words. |
 | 80002 | The outgoing message packet exceeds the length limit of 8 KB. Reduce the packet size and try again later. |
 
@@ -277,9 +276,6 @@
 | 20012 | This message cannot be sent, because the sender has been muted. |
 | 20016 | The message cannot be recalled after the time limit was reached, which is 2 minutes by default. |
 | 20018 | An internal error occurs when deleting roaming messages. |
-| 20022 | The message to be recalled does not exist. Please check. |
-| 20023 | The message has been recalled. |
-| 21005 | The set token request arrived at the backend before the login request. Be sure to log in first, and then set token. |
 | 22001 | No offline push certificate has been uploaded. |
 | 22002 | Network exception. Try again later. |
 | 22003 | The uploaded token is empty. |
@@ -290,7 +286,7 @@
 | 90005 | The JSON request packet does not contain the MsgRandom field or the MsgRandom field is not of the Integer type. |
 | 90006 | The JSON request packet does not contain the MsgTimeStamp field or the MsgTimeStamp field is not of the Integer type. |
 | 90007 | The MsgBody field in the JSON request packet is not of the Array type. Change the type of the MsgBody field to Array. |
-| 90008 | There is no `From_Account` or the account it specifies does not exist. |
+| 90008 | The JSON request packet does not contain the From_Account field or From_Account does not exist. |
 | 90009 | Request failed. You need admin permission to perform this action. |
 | 90010 | The JSON request packet is not in the message format. For more information, see the definition in [TIMMsgElement Objects](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | 90011 | The number of target UserIDs for batch message sending exceeds the limit of 500. Decrease the value of To_Account. |
@@ -334,16 +330,16 @@
 | 10023 | The message exceeds the frequency limit. Try again later. |
 | 10024 | This invitation or request has already been processed. |
 | 10025 | The group ID is already in use. The operator is the group owner and therefore can use the group ID directly. |
-| 10026 | The command word of the SDKAppID request is disabled. |
+| 10026 | The command word in the SDKAppID request is forbidden. |
 | 10030 | The message to be recalled does not exist. |
 | 10031 | The message cannot be recalled after the time limit was reached, which is 2 minutes by default. |
 | 10032 | The message to be recalled cannot be recalled. |
 | 10033 | This type of group does not support message recalls. |
 | 10034 | This type of message cannot be recalled. |
-| 10035 | Audio-video chat rooms and broadcasting chat rooms do not support message recalls. |
-| 10036 | The limit on the number of audio-video chat rooms that can be created has been exceeded. To purchase the “IM audio-video chat room” postpaid plan, see the pricing description. |
-| 10037 | The limit on the number of groups a single user can create and join has been exceeded. To purchase or upgrade to the “number of groups a single user can create and join” postpaid plan, see the pricing description. |
-| 10038 | The limit on the number of group members has been exceeded. To purchase or upgrade to the “increasing maximum number of group members” postpaid plan, see the pricing description. |
+| 10035 | Audio-video chat rooms and broadcast chat rooms do not support message recalls. |
+| 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase a prepaid package of “IM audio-video chat rooms”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a prepaid package of “Expanding the number of groups that can be created and joined by a single user”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10038 | The number of group members exceeds the limit allowed. To purchase or upgrade a prepaid package of “Increasing the limit of group members”, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
 | 10041 | This SDKAppID has disabled group message recalls. |
 
 
@@ -406,9 +402,9 @@
 | 6211 | Invalid request due to invalid toMsgService. |
 | 6212 | Request queue is full. |
 | 6213 | You are logged out due to a login on another device. |
-| 6214 | The service has been suspended. |
+| 6214 | Service suspended. |
 | 6215 | Incorrect SSO signature. |
-| 6216 | The SSO cookie is invalid. |
+| 6216 | Invalid SSO cookie. |
 | 6217 | Incorrect packet length. This error occurs when the TLS SDK performs verification on response packets during login. |
 | 6218 | Status report from OPENSTATSVC to OPENMSG timed out during login. |
 | 6219 | Failed to parse the response packet when OPENSTATSVC reported status to OPENMSG during login. |
@@ -429,9 +425,9 @@
 | 6253 | Invalid request due to invalid toMsgService. |
 | 6254 | Request queue is full. |
 | 6255 | You are logged out due to a login on another device. |
-| 6256 | The service has been suspended. |
+| 6256 | Service suspended. |
 | 6257 | Incorrect SSO signature. |
-| 6258 | The SSO cookie is invalid. |
+| 6258 | Invalid SSO cookie. |
 
 
 >If the problem persists, you can  [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) with the API, error code, and error information to technical engineers.
