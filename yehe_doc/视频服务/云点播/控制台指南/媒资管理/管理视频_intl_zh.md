@@ -57,11 +57,11 @@
 ### Web 播放器
 
 单击【预览】，可以直接在 Web 端预览。
-![](https://main.qcloudimg.com/raw/552486ddf1dd389b3130f1c8618b246d.png)
+<!--![](https://main.qcloudimg.com/raw/552486ddf1dd389b3130f1c8618b246d.png)-->
 
 ### 终端播放器
 1. 下载视频云工具包 App。
-<img src="https://main.qcloudimg.com/raw/ea7b94d30256a1e8a4118fb8087586e0.png" width="400">
+<img src="https://main.qcloudimg.com/raw/4f8138e11bdc92b1286263f1d1f683c4.png" width="400">
 2. 使用视频云工具扫描二维码或输入 appID 和 fileID，即可实现在终端上的预览。
 
 

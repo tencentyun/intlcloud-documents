@@ -57,10 +57,11 @@ After transcoding a video to adaptive bitstream, you can preview it in superplay
 ### Web player
 
 Click **Preview** to preview the video directly on the web.
+<!--![](https://main.qcloudimg.com/raw/552486ddf1dd389b3130f1c8618b246d.png)-->
 
 ### Terminal player
 1. Download the Video Cloud Toolkit app.
-<img src="https://main.qcloudimg.com/raw/ff13231b9e6c1b67bb49f1053018cda5.png" width="400">
+<img src="https://main.qcloudimg.com/raw/4f8138e11bdc92b1286263f1d1f683c4.png" width="400">
 2. Use the Video Cloud Toolkit to scan the QR code or enter the `appID` and `fileID` to preview the video on the terminal device.
 
 

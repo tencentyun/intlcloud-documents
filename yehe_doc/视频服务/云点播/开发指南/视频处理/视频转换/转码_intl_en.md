@@ -11,7 +11,7 @@ After a video is transcoded, the playback URL of the output video can be obtaine
 
 ## <span id = "zm" ></span>Transcoding Template
 
-The target specification of an output video after transcoding is subject to parameters such as encoder, resolution, and bitrate, which can be customized in the form of VOD transcoding template as shown below:
+The target specification of an output video after transcoding is subject to parameters such as codec, resolution, and bitrate, which can be customized in the form of VOD transcoding template as shown below:
 
 <table>
     <tr>
