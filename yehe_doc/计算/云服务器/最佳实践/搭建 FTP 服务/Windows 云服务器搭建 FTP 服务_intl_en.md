@@ -33,7 +33,7 @@ The following software are needed for building the FTP service:
 1. In the “Server Manager” window, select **Tools** -> **My Computer** in the navigation bar in the upper right corner. The **My Computer** window appears.
 2. Select **System Tools** -> **Local Users and Groups** -> **Users** in the sidebar to the left.
 3. On the right side of the **Users** interface, right-click an empty spot, and select **New User**, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/98bced2e16b414f373f253f043286818.png)
+![](https://main.qcloudimg.com/raw/60bad9ff725b8fe4386c2eed9c5ff63a.png)
 4. On the “New User” interface, set the user name and password according to the following instructions. Click **Create**, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/1bc9cb2c2000361f6699c155e25d7630.png)
 The main parameters are as follows:
