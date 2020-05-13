@@ -1,6 +1,6 @@
 ## Business Flow Chart
 The business flows of Layer-7 and Layer-4 CLB (formerly known as “application CLB”) are shown as below:
-![](https://mc.qcloudimg.com/static/img/de6af7fca35640ed6d0937f05f5039d2/image.png)
+![](https://main.qcloudimg.com/raw/9c30c679e6a5fd70f9dd9273f8784d6d.jpg)
 Using Layer-7 CLB to forward a HTTP/HTTPS protocol, you can add a corresponding domain name when creating a forwarding rule in a CLB instance listener.
 - If only one forwarding rule is created, you can access the corresponding forwarding rule and the service via VIP+URL.
 - If multiple forwarding rules are created, the use of VIP+URL does not guarantee access to a specified domain name+URL. You should access a domain name+URL directly to make sure a forwarding rule has taken effect. In other words, when you configure multiple forwarding rules, a VIP may correspond to multiple domain names. In this case, we recommend you access the service via specified domain name+URL instead of VIP+URL.
@@ -51,7 +51,7 @@ Layer-7 CLB forwards requests from different URLs to different servers for proce
    - ` /` indicates generic match, where any requests will be matched if there are no other matches.
 
 ### Path matching for URL-forwarding
-![](http://mc.qcloudimg.com/static/img/1c01dcd0959105dd7821f4e22f5cd796/image.png)
+![](https://main.qcloudimg.com/raw/6399b39845c9f23adccb90089e10bade.jpg)
 1. Matching rules: exact match takes priority over fuzzy match.
 For example, after you configure the forwarding rules and forwarding groups as shown above, the following requests will be matched in sequence with different forwarding groups.
  1. Because `example.qloud.com/test1/image/index1.html` exactly matches the URL rule configured by forwarding group 1, the request will be forwarded to the real server associated with forwarding group 1, i.e., port 80 of RS1 and RS2 in the figure.

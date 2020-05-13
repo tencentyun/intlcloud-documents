@@ -61,6 +61,8 @@ openid 目前只支持64位无符号整型。请转为 string 传入 SDK。
 
 请在出现网络问题的机器上，使用浏览器分别打开以上三个链接，等待检测执行完毕（预计5 - 10秒），单击【复制结果 URL 分享】，将结果复制下来，并提供给腾讯云工作人员。
 
+![](https://main.qcloudimg.com/raw/0b540f4bf6222c6b9548b148496a15bb.png)
+
 **诊断 SSO**：
 请在出现网络问题的机器上，[单击检查域名 tcloud.tim.qq.com](https://tcloud.tim.qq.com)，查看显示内容，截图或者将显示内容拷贝下来提供给腾讯云工作人员。
 示例：{"ActionStatus":"FAIL","ErrorCode":60002,"ErrorInfo":"HTTP parse Error"}

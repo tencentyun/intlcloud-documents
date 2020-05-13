@@ -11,7 +11,7 @@ After a video is transcoded, the playback URL of the output video can be obtaine
 
 ## <span id = "zm" ></span>Transcoding Template
 
-The target specification of an output video after transcoding is subject to parameters such as encoder, resolution, and bitrate, which can be customized in the form of VOD transcoding template as shown below:
+The target specification of an output video after transcoding is subject to parameters such as codec, resolution, and bitrate, which can be customized in the form of VOD transcoding template as shown below:
 
 <table>
     <tr>
@@ -176,7 +176,8 @@ Below are instructions for initiating transcoding tasks in these ways:
 * Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, and specify this task flow as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922).
 * Upload through console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, upload a video through the console, select [Automatic Processing After Upload](https://intl.cloud.tencent.com/document/product/266/33890), and specify to execute this task flow upon video upload completion.
 
-## Result Getting<span id="jghq"></span>
+<span id="jghq"></span>
+## Result Getting
 
 After initiating a transcoding task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the transcoding task is initiated (the fields with null value are omitted):
 

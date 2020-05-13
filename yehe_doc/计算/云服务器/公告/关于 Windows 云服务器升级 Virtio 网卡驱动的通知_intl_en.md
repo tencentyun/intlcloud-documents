@@ -4,6 +4,6 @@ Tencent Cloud users can download the program from the following private IP addre
 
 If the information shown below appears, the driver was successfully upgraded. Then, restart the system to take the new driver into effect.
 
-![](https://mc.qcloudimg.com/static/img/fed07b4028a0a281106166a7e07aa7f7/image.png)
+![](https://main.qcloudimg.com/raw/f2167c6d10ffedbf4c80ee715c0e3f8c.jpg)
 If the information shown below appears, the existing driver is normal and does not need to be upgraded.
-![](https://mc.qcloudimg.com/static/img/895ad7fd0d6e6bb58ae1eb21de9b6a12/image.png)
+![](https://main.qcloudimg.com/raw/996df6e4569f77a38d82a836572270d3.jpg)

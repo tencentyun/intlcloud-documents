@@ -2,7 +2,7 @@
 > **注意：**
 > iptables 在 CentOS 7 之前和之后的版本，有重大的改动。
 > - CentOS 7 之前，默认使用 iptables 服务作为防火墙，使用`service iptables stop`代码，iptables 服务会先清空规则，然后卸载 iptables 模块。重新 start 时，会从配置文件中加载规则。停止 iptables 服务可以测试是否防火墙限制。
->[](https://main.qcloudimg.com/raw/4a404e0187b0ee677034c0df82468e4a.png)
+>[](https://main.qcloudimg.com/raw/5fbb351650cdd763e8450d7e04b18b78.jpg)
 > - CentOS 7 之后，默认使用 firewall 服务作为防火墙，为了兼容，同时加载了 iptables_filter 模块，但是没有了 iptables 服务。所以 CentOS 7 之后， 可以使用 iptables 命令添加规则，但是 iptables 服务默认关闭。用户确认 iptable_filter 模块加载，规则即可生效。
 
 判断防火墙，最稳妥的方法，是`iptables -nvL`查看规则。 
@@ -10,9 +10,9 @@
 #### 场景一
 Ubuntu 14 系统，已开放安全组，监听端口，但 telnet 不通。
 安全组入站规则：
-![](https://main.qcloudimg.com/raw/ef640902a0e0c78af6c07eb7102bb0d7.png)
+![](https://main.qcloudimg.com/raw/4a6a1c7eca94a76ddbce457dbe28affa.png)
 安全组出站规则：
-![](https://main.qcloudimg.com/raw/03a960f82b6e88fdca9aff8f10d76f4c.png)
+![](https://main.qcloudimg.com/raw/90914e729ba27a6a9253e719bf4a9703.png)
 telnet 不通：
 ![](https://main.qcloudimg.com/raw/74c521a97d4b9dab64b85ce62ab2cf86.png)
 #### 解决思路
@@ -22,7 +22,7 @@ telnet 不通：
 ![](https://main.qcloudimg.com/raw/1052893022c8786a9b7b0166a57ce16d.png)  
 
 2. 确认是 iptables 策略问题后，通过`iptables –nvL`确认策略是否放通了 8081 端口。此处没有放通这个端口。 
-![](https://main.qcloudimg.com/raw/bccfca60e3d707ae61c5ba236bf088f8.png) 
+![](https://main.qcloudimg.com/raw/f214d470f1d40ed7061ea155de756bca.jpg) 
 3. 使用命令添加 8081 端口放通策略。
 ```
 iptables -I INPUT 5 -p tcp  --dport 8081 -j ACCEPT
@@ -35,7 +35,7 @@ iptables 配置来看，已经放通策略，但是目的机器还是 ping 不�
 ![](https://main.qcloudimg.com/raw/46fdf4e20187c5b366c7773d73eb1cee.png)
 #### 解决思路
 若出现以下情况：
-![](https://main.qcloudimg.com/raw/d1b01f74223ed34c78a789dc43d53bc8.png)
+![](https://main.qcloudimg.com/raw/babfa7fcfe9dd7536ba011c3fbaab7bc.jpg)
 使用命令删除 output 方向的第一条规则：
 ```
 iptabels –D OUTPUT 1

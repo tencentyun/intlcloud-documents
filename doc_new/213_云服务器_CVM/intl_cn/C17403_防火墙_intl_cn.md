@@ -10,9 +10,9 @@
 #### 场景一
 Ubuntu 14 系统，已开放安全组，监听端口，但 telnet 不通。
 安全组入站规则：
-![](https://main.qcloudimg.com/raw/ef640902a0e0c78af6c07eb7102bb0d7.png)
+![](https://main.qcloudimg.com/raw/4a6a1c7eca94a76ddbce457dbe28affa.png)
 安全组出站规则：
-![](https://main.qcloudimg.com/raw/03a960f82b6e88fdca9aff8f10d76f4c.png)
+![](https://main.qcloudimg.com/raw/90914e729ba27a6a9253e719bf4a9703.png)
 telnet 不通：
 ![](https://main.qcloudimg.com/raw/74c521a97d4b9dab64b85ce62ab2cf86.png)
 #### 解决思路

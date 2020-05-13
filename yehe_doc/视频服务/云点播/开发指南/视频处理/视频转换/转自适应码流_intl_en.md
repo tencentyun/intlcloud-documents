@@ -17,7 +17,7 @@ The adaptive bitrate streaming parameters can specify "video transcoding paramet
 | Parameter | Description |
 | -- | -- |
 | Container type | Adaptive bitstream format. Currently, only HLS is supported |
-| Substream specification | Controls how many substreams are output and the video and audio transcoding parameters of each substream: <li>Video transcoding parameters: resolution, bitrate, frame rate, encoder, etc.</li><li>Audio transcoding parameters: sample rate, sound channel, encoding format, etc.</li> |
+| Substream specification | Controls how many substreams are output and the video and audio transcoding parameters of each substream: <li>Video transcoding parameters: resolution, bitrate, frame rate, codec, etc.</li><li>Audio transcoding parameters: sample rate, sound channel, codec, etc.</li> |
 | Whether to filter "low resolution to high resolution" | Generally, a source video with a low resolution cannot be converted to high resolution to improve the video and sound quality. Enabling filtering "low resolution to high resolution" can help avoid unnecessary transcoding |
 
 For common parameter combinations, VOD provides a [preset adaptive bitrate streaming template](https://intl.cloud.tencent.com/document/product/266/33932), which cannot be customized for the time being.
