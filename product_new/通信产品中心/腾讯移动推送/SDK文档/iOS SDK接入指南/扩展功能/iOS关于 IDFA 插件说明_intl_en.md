@@ -13,7 +13,6 @@ Steps to integrate the IDFA module with the TPNS SDK for iOS:
 **Note**
 
 If you want to collect IDFAs but do not place any ads, you can use the following method to pass App Store review:
-![](http://docs.developer.qq.com/mta/assets/用户画像.png)
 
 1. Serve advertisements within the app
 
