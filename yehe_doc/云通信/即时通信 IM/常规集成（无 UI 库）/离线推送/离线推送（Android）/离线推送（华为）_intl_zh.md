@@ -35,6 +35,8 @@
  - **AppSecret**：填写华为推送服务应用的 **APP SECRET**
  - **点击通知后**：选择点击通知栏消息后的响应操作，支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#click)
     当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#section4)。
+    ![](https://main.qcloudimg.com/raw/0a53194ae0752382a8f1b9104242a572.png)
+    
 4. 单击【确认】保存信息，证书信息保存后10分钟内生效。
 5. 待推送证书信息生成后，记录证书的**`ID`**。
 
@@ -350,9 +352,11 @@ public class ThirdPushTokenMgr {
 
 ### 打开应用
 默认为点击通知栏消息打开应用。
+![](https://main.qcloudimg.com/raw/0a53194ae0752382a8f1b9104242a572.png)
 
  ### 打开网页
 您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
+![](https://main.qcloudimg.com/raw/446026072740e500751ddbdad1e1dc3d.png)
 
 ### 打开应用内指定界面
 1. 在 manifest 中配置需要打开的 Activity 的`intent-filter`，示例代码如下：
@@ -389,6 +393,7 @@ public class ThirdPushTokenMgr {
     ```
 
 3. 在 [添加证书](#Step2) 时选择【打开应用内指定界面】并输入上述打印结果。
+![](https://main.qcloudimg.com/raw/708d57faeac0585b3dc402c1ea7129fc.png)
 
 <span id="section4"></span>
 ## 透传自定义内容
