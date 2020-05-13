@@ -115,7 +115,7 @@ config.videoGOP        = 2;
 config.audioSampleRate = 48000;
 config.audioBitrate    = 64;
 config.audioChannels   = 2;
-// Use the preset layout mode
+// Use the PresetLayout mode
 config.mode = TRTCTranscodingConfigMode_Template_PresetLayout;
 config.mixUsers = [NSMutableArray new];
 
@@ -209,7 +209,7 @@ You can determine which call (or live stream) corresponds to the current callbac
 
 <span id="restapi"></span>
 ### Step 6. Delete a recording file
-VOD provides a series of RESTful APIs for audio/video file management. You can use the [DeleteMedia](https://intl.cloud.tencent.com/document/product/266/31764) API to delete a specified file.
+VOD provides a series of RESTful APIs for audio/video file management. You can use the `DeleteMedia` API to delete a specified file.
 Sample RESTful request:
 ```
 https://vod.tencentcloudapi.com/?Action=DeleteMedia
@@ -230,8 +230,9 @@ When [receiving a recording file](#callback), you can get the **video_url** fiel
 
 **Integrate a VOD player**
 Integrate a VOD player based on the used platform. For detailed directions, please see:
+
 - [iOS](http://doc.qcloudtrtc.com/group__TXVodPlayer__ios.html)
 - [Android](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
-- [Web browser](https://intl.cloud.tencent.com/document/product/266/14424)
+- Web browser
 
 > You are recommended to use the [Pro Edition](https://intl.cloud.tencent.com/document/product/647/34615) of the TRTC SDK, which is integrated with various features such as superplayer (Player+) and MLVB. Thanks to the highly reusable underlying modules, integration with the Pro Edition has a smaller size than integration with two independent SDKs and can also avoid the problem of symbol duplicate.
