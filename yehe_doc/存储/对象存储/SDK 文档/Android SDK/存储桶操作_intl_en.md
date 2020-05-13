@@ -1,32 +1,32 @@
-## Introduction
+## Overview
 
-This document provides an overview of APIs and SDK code samples related to basic operations on buckets and bucket access control list (ACL).
+This document provides an overview of APIs and SDK sample codes related to basic bucket operations and access control lists (ACL).
 
-**Basic Operations**
+**Basic operations**
 
-| API | Operation | Description |
+| API | Operation Name | Description |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
-| [GET Service](https://cloud.tencent.com/document/product/436/8291) | Querying bucket list | Queries the list of all buckets under the specified account |
-| [PUT Bucket](https://cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under the specified account |
-| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Retrieving information on a bucket and its permission | Checks whether a bucket exists and if you have the permission to access it |
-| [DELETE Bucket](https://cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket under the specified account |
+| [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | Querying a bucket list | Queries the list of all buckets under a specified account |
+| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under a specified account |
+| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Checking a bucket and its permission | Checks whether a bucket exists and you have the permission to access it |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deletes a bucket | Deletes an empty bucket under a specified account |
 
 **ACL**
 
-| API | Operation | Description |
+| API | Operation Name | Description |
 | ------------------------------------------------------------ | -------------- | --------------------- |
-| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting bucket ACL | Sets the ACL for a specified bucket |
-| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying bucket ACL | Queries the ACL of a specified bucket |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets the ACL for a specified bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of a specified bucket |
 
-## Basic Operations
+## Basic operations
 
-### Querying Bucket List
+### Querying a bucket list
 
-#### Feature Description
+## Feature description
 
-This API (GET Service) is used to query the list of all buckets under a specified account.
+This API is used to query the list of all buckets under a specified account.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 GetServiceResult getService(GetServiceRequest request)throws CosXmlClientException, CosXmlServiceException;
@@ -34,12 +34,12 @@ GetServiceResult getService(GetServiceRequest request)throws CosXmlClientExcepti
 void getServiceAsync(GetServiceRequest request, CosXmlResultListener cosXmlResultListen);
 ```
 
-#### Sample Request
+#### Sample request
 
 [//]: # (.cssg-snippet-get-service)
 ```
 GetServiceRequest getServiceRequest = new GetServiceRequest();
-// Set signature verification Host, verify all Headers by default
+// Set the signature verification host, verifies all headers by default
 Set<String> headerKeys = new HashSet<>();
 headerKeys.add("Host");
 getServiceRequest.setSignParamsAndHeaders(null, headerKeys);
@@ -52,7 +52,7 @@ try {
     e.printStackTrace();
 }
 
-// Use the async callback to make requests
+// Use async callback to make requests
 cosXmlService.getServiceAsync(getServiceRequest, new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -66,34 +66,34 @@ cosXmlService.getServiceAsync(getServiceRequest, new CosXmlResultListener() {
 });
 ```
 
->When initiating a request, if you want to use a calculated signature string, you can do so by calling `getServiceRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
+>When initiating a request, you can use a calculated signature string by calling `getServiceRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | -------- | ------------------------------- | -------------- |
 | headerKeys          | setSignParamsAndHeaders  | Indicates whether the signature verifies the header                | `Set<String>` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `Set<String>` |
+| queryParameterKeys | setSignParamsAndHeaders | Indicates whether the signature verifies the query parameters in the request URL | `Set<String>` |
 | cosXmlResultListener      | getServiceAsync                                                 | Result callback        | CosXmlResultListener   |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through GetServiceResult.
 
 | Member Variable | Type | Description |
 | ---------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between 200-300 indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 | listAllMyBuckets | [ListAllMyBuckets](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/ListAllMyBuckets.java) | Returns the list of buckets under the specified account |
 
 >If the operation fails, the SDK will throw a  [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Creating a Bucket
+### Creating a bucket
 
-#### Feature Description
+## Feature description
 
-This API (PUT Bucket) is used to create a bucket.
+This API is used to create a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 PutBucketResult putBucket(PutBucketRequest request) throws CosXmlClientException, CosXmlServiceException;
@@ -101,31 +101,31 @@ PutBucketResult putBucket(PutBucketRequest request) throws CosXmlClientException
 void putBucketAsync(PutBucketRequest request, CosXmlResultListener cosXmlResultListener);
 ```
 
-#### Sample Request
+#### Sample request
 
 [//]: # (.cssg-snippet-put-bucket)
 ```java
 String bucket = "examplebucket-1250000000";
 PutBucketRequest putBucketRequest = new PutBucketRequest(bucket);
 
-//Define the ACL attribute of the bucket. Valid values: private, public-read-write, public-read; Default: private
+// Define the ACL attribute of the bucket. Valid values: private, public-read-write, public-read; Default: private
 putBucketRequest.setXCOSACL("private");
 
-// Grant read permission to the authorized user
+// Grant read permission to an authorized user
 ACLAccount readACLS = new ACLAccount();
 readACLS.addAccount("100000000001", "100000000001");
 putBucketRequest.setXCOSGrantRead(readACLS);
 
-// Grant write permission to the authorized user
+// Grant write permission to an authorized user
 ACLAccount writeACLS = new ACLAccount();
 writeACLS.addAccount("100000000001", "100000000001");
 putBucketRequest.setXCOSGrantWrite(writeACLS);
 
-// Grant read and write permissions to the authorized user
+// Grant read and write permissions to an authorized user
 ACLAccount writeandReadACLS = new ACLAccount();
 writeandReadACLS.addAccount("100000000001", "100000000001");
 putBucketRequest.setXCOSReadWrite(writeandReadACLS);
-// Set signature verification Host, verify all Headers by default
+// Set the signature verification host, verifies all headers by default
 Set<String> headerKeys = new HashSet<>();
 headerKeys.add("Host");
 putBucketRequest.setSignParamsAndHeaders(null, headerKeys);
@@ -138,7 +138,7 @@ try {
     e.printStackTrace();
 }
 
-// Use the async callback to make requests
+// Use async callback to make requests
 cosXmlService.putBucketAsync(putBucketRequest, new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -146,38 +146,38 @@ cosXmlService.putBucketAsync(putBucketRequest, new CosXmlResultListener() {
     }
 
     @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException) {
+    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException)  {
         // todo Put Bucket failed because of CosXmlClientException or CosXmlServiceException...
     }
 });
 ```
 
->When initiating a request, if you want to use a calculated signature string, you can do so by calling `putBucketRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
+>When initiating a request, you can use a calculated signature string by calling `putBucketRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | -------- | ---------------------------------- | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | headerKeys          | setSignParamsAndHeaders  | Indicates whether the signature verifies the header                | `Set<String>` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `Set<String>` |
+| queryParameterKeys | setSignParamsAndHeaders | Indicates whether the signature verifies the query parameters in the request URL | `Set<String>` |
 | cosXmlResultListener      | putBucketAsync                                                 | Result callback        | CosXmlResultListener   |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through PutBucketResult.
 
 | Member Variable | Type | Description |
 | -------- | ---- | -------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between 200-300 indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 
 >If the operation fails, the SDK will throw a  [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Retrieving Information on a Bucket and Its Permission
+### Retrieving information on a bucket and its permission
 
-#### Feature Description
+## Feature description
 
-This API (HEAD Bucket) is used to verify whether a bucket exists and if you have the permission to access it.
+This API is used to verify whether a bucket exists and you have permission to access it.
 
 ```java
 HeadBucketResult headBucket(HeadBucketRequest request) throws CosXmlClientException, CosXmlServiceException;
@@ -185,13 +185,13 @@ HeadBucketResult headBucket(HeadBucketRequest request) throws CosXmlClientExcept
 void headBucketAsync(HeadBucketRequest request, CosXmlResultListener cosXmlResultListener);
 ```
 
-#### Sample Request
+#### Sample request
 
 [//]: # (.cssg-snippet-head-bucket)
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 HeadBucketRequest headBucketRequest = new HeadBucketRequest(bucket);
-// Set signature verification Host, verify all Headers by default
+// Set the signature verification host, verifies all headers by default
 Set<String> headerKeys = new HashSet<>();
 headerKeys.add("Host");
 headBucketRequest.setSignParamsAndHeaders(null, headerKeys);
@@ -204,7 +204,7 @@ try {
     e.printStackTrace();
 }
 
-// Use the async callback to make requests
+// Use async callback to make requests
 cosXmlService.headBucketAsync(headBucketRequest, new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -218,35 +218,35 @@ cosXmlService.headBucketAsync(headBucketRequest, new CosXmlResultListener() {
 });
 ```
 
->When initiating a request, if you want to use a calculated signature string, you can do so by calling `headBucketRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
+>When initiating a request, you can use a calculated signature string by calling `headBucketRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | -------- | ---------------------------------- | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | headerKeys          | setSignParamsAndHeaders  | Indicates whether the signature verifies the header                | `Set<String>` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `Set<String>` |
+| queryParameterKeys | setSignParamsAndHeaders | Indicates whether the signature verifies the query parameters in the request URL | `Set<String>` |
 | cosXmlResultListener      | headBucketAsync                                                 | Result callback        | CosXmlResultListener   |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through HeadBucketResult.
 
 | Member Variable | Type | Description |
 | ------------------ | ------------------------------------------------------------ | -------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between 200-300 indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 
 >If the operation fails, the SDK will throw a  [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 
-### Deleting a Bucket
+### Deleting a bucket
 
-#### Feature Description
+## Feature description
 
-This API (DELETE Bucket) is used to delete the specified bucket.
+This API is used to delete a specified bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 DeleteBucketResult deleteBucket(DeleteBucketRequest request) throws CosXmlClientException, CosXmlServiceException;
@@ -254,13 +254,13 @@ DeleteBucketResult deleteBucket(DeleteBucketRequest request) throws CosXmlClient
 void deleteBucketAsync(DeleteBucketRequest request, CosXmlResultListener cosXmlResultListener);
 ```
 
-#### Sample Request
+#### Sample request
 
 [//]: # (.cssg-snippet-delete-bucket)
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 DeleteBucketRequest deleteBucketRequest = new DeleteBucketRequest(bucket);
-// Set signature verification Host, verify all Headers by default
+// Set the signature verification host, verifies all headers by default
 Set<String> headerKeys = new HashSet<>();
 headerKeys.add("Host");
 deleteBucketRequest.setSignParamsAndHeaders(null, headerKeys);
@@ -273,7 +273,7 @@ try {
     e.printStackTrace();
 }
 
-// Use the async callback to make requests
+// Use async callback to make requests
 cosXmlService.deleteBucketAsync(deleteBucketRequest, new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -287,36 +287,36 @@ cosXmlService.deleteBucketAsync(deleteBucketRequest, new CosXmlResultListener() 
 });
 ```
 
->When initiating a request, if you want to use a calculated signature string, you can do so by calling `deleteBucketRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
+>When initiating a request, you can use a calculated signature string by calling `deleteBucketRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | -------- | ---------------------------------- | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | headerKeys          | setSignParamsAndHeaders  | Indicates whether the signature verifies the header                | `Set<String>` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `Set<String>` |
+| queryParameterKeys | setSignParamsAndHeaders | Indicates whether the signature verifies the query parameters in the request URL | `Set<String>` |
 | cosXmlResultListener      | deleteBucketAsync                                                 | Result callback        | CosXmlResultListener   |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through DeleteBucketResult.
 
 | Member Variable | Type | Description |
 | -------- | ---- | -------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between 200-300 indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 
 >If the operation fails, the SDK will throw a  [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 ## ACL
 
-### Setting Bucket ACL
+### Setting a bucket ACL
 
-#### Feature Description
+## Feature description
 
-This API (PUT Bucket ACL) is used to set the access control list ( ACL) for the specified bucket.
+This API is used to set the access control list ( ACL) for a specified bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 PutBucketACLResult putBucketACL(PutBucketACLRequest request) throws CosXmlClientException, CosXmlServiceException;
@@ -324,7 +324,7 @@ PutBucketACLResult putBucketACL(PutBucketACLRequest request) throws CosXmlClient
 void putBucketACLAsync(PutBucketACLRequest request, CosXmlResultListener cosXmlResultListener);
 ```
 
-#### Sample Request
+#### Sample request
 
 [//]: # (.cssg-snippet-put-bucket-acl)
 ```java
@@ -334,21 +334,21 @@ PutBucketACLRequest putBucketACLRequest = new PutBucketACLRequest(bucket);
 // Set bucket's access permission
 putBucketACLRequest.setXCOSACL("public-read");
 
-// Grant read permission to the authorized user
+// Grant read permission to an authorized user
 ACLAccount readACLS = new ACLAccount();
 readACLS.addAccount("100000000001", "100000000001");
 putBucketACLRequest.setXCOSGrantRead(readACLS);
 
-// Grant write permission to the authorized user
+// Grant write permission to an authorized user
 ACLAccount writeACLS = new ACLAccount();
 writeACLS.addAccount("100000000001", "100000000001");
 putBucketACLRequest.setXCOSGrantWrite(writeACLS);
 
-// Grant read and write permissions to the authorized user
+// Grant read and write permissions to an authorized user
 ACLAccount writeandReadACLS = new ACLAccount();
 writeandReadACLS.addAccount("100000000001", "100000000001");
 putBucketACLRequest.setXCOSReadWrite(writeandReadACLS);
-// Set signature verification Host, verify all Headers by default
+// Set the signature verification host, verifies all headers by default
 Set<String> headerKeys = new HashSet<>();
 headerKeys.add("Host");
 putBucketACLRequest.setSignParamsAndHeaders(null, headerKeys);
@@ -361,7 +361,7 @@ try {
     e.printStackTrace();
 }
 
-// Use the async callback to make requests
+// Use async callback to make requests
 cosXmlService.putBucketACLAsync(putBucketACLRequest, new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -375,36 +375,36 @@ cosXmlService.putBucketACLAsync(putBucketACLRequest, new CosXmlResultListener() 
 });
 ```
 
->When initiating a request, if you want to use a calculated signature string, you can do so by calling `putBucketACLRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
+>When initiating a request, you can use a calculated signature string by calling `putBucketACLRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | --------------------------------------------------------- | ---------------------------------- | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
-| cosAcl | SetCosAcl | Sets the ACL permissions for the bucket | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
+| cosAcl | SetCosAcl | Sets the ACL permissions for a bucket | string |
 | grantAccount | SetXCosGrantRead, SetXCosGrantWrite, or SetXCosReadWrite | Grants users read and write permissions | GrantAccount |
 | headerKeys          | setSignParamsAndHeaders  | Indicates whether the signature verifies the header                | `Set<String>` |
-| queryParameterKeys  | setSignParamsAndHeaders  | Indicates whether to verify the query parameters in the request URL for the signature |`Set<String>` |
+| queryParameterKeys | setSignParamsAndHeaders  | Indicates whether the signature verifies the query parameters in the request URL |`Set<String>` |
 | cosXmlResultListener      | putBucketACLAsync                                                 | Result callback        | CosXmlResultListener   |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through PutBucketACLResult.
 
 | Member Variable | Type | Description |
 | -------- | ---- | -------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between 200-300 indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 
 >If the operation fails, the SDK will throw a  [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Querying Bucket ACL
+### Querying a bucket ACL
 
-#### Feature Description
+## Feature description
 
-This API (GET Bucket ACL) is used to get the ACL of the specified bucket.
+This API is used to get the ACL of a specified bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 GetBucketACLResult getBucketACL(GetBucketACLRequest request) throws CosXmlClientException, CosXmlServiceException;
@@ -412,13 +412,13 @@ GetBucketACLResult getBucketACL(GetBucketACLRequest request) throws CosXmlClient
 void getBucketACLAsync(GetBucketACLRequest request, CosXmlResultListener cosXmlResultListener);
 ```
 
-#### Sample Request
+#### Sample request
 
 [//]: # (.cssg-snippet-get-bucket-acl)
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 GetBucketACLRequest getBucketACLRequest = new GetBucketACLRequest(bucket);
-// Set signature verification Host, verify all Headers by default
+// Set the signature verification host, verifies all headers by default
 Set<String> headerKeys = new HashSet<>();
 headerKeys.add("Host");
 getBucketACLRequest.setSignParamsAndHeaders(null, headerKeys);
@@ -431,7 +431,7 @@ try {
     e.printStackTrace();
 }
 
-// Use the async callback to make requests
+// Use async callback to make requests
 cosXmlService.getBucketACLAsync(getBucketACLRequest, new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -445,24 +445,24 @@ cosXmlService.getBucketACLAsync(getBucketACLRequest, new CosXmlResultListener() 
 });
 ```
 
->When initiating a request, if you want to use a calculated signature string, you can do so by calling `getBucketACLRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
+>When initiating a request, you can use a calculated signature string by calling `getBucketACLRequest.setSign ("calculated signature string")`. The signature string will be calculated by the SDK by default.
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | -------- | ---------------------------------- | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | headerKeys          | setSignParamsAndHeaders  | Indicates whether the signature verifies the header                | `Set<String>` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `Set<String>` |
+| queryParameterKeys | setSignParamsAndHeaders | Indicates whether the signature verifies the query parameters in the request URL | `Set<String>` |
 | cosXmlResultListener      | getBucketACLAsync                                                 | Result callback        | CosXmlResultListener   |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through GetBucketACLResult.
 
 | Member Variable | Type | Description |
 | ------------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between 200-300 indicates a successful operation. Other values indicate a failure. |
-| accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/AccessControlPolicy.java) | The information of the bucket ACL is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/AccessControlPolicy.java) | Returns information on a bucket ACL |
 
 >If the operation fails, the SDK will throw a  [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
