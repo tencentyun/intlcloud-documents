@@ -10,9 +10,9 @@ Here are two examples on how to configure:
 #### Scenario 1
 For Ubuntu 14 system, the security group and listening port are opened, but telnet does not work.
 Inbound rule of security group:
-![](https://main.qcloudimg.com/raw/ef640902a0e0c78af6c07eb7102bb0d7.png)
+![](https://main.qcloudimg.com/raw/4a6a1c7eca94a76ddbce457dbe28affa.png)
 Outbound rule of security group:
-![](https://main.qcloudimg.com/raw/03a960f82b6e88fdca9aff8f10d76f4c.png)
+![](https://main.qcloudimg.com/raw/90914e729ba27a6a9253e719bf4a9703.png)
 telnet does not work:
 ![](https://main.qcloudimg.com/raw/74c521a97d4b9dab64b85ce62ab2cf86.png)
 #### Solutions
