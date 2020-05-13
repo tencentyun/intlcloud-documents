@@ -14,16 +14,16 @@
 ### 步骤2：在 IIS 上安装 FTP 服务
 1. 在操作系统界面，单击 <img src="https://main.qcloudimg.com/raw/446c1e8cb7da2ce280d710c6a46b693d.png" style="margin:-3px 0px">，打开服务器管理器。
 2. 在“服务器管理器”窗口中，单击【添加角色与功能】。如下图所示：
-![](https://main.qcloudimg.com/raw/5c7fa77df47fb39bafb9c6f39f4b1007.png)
+![](https://main.qcloudimg.com/raw/1d941b3c877a420513e494971a834f37.png)
 3. 在弹出的“添加角色和功能向导”窗口中，单击【下一步】，进入“选择安装类型”界面。
 4. 在“选择安装类型”界面中，选择【基于角色或基于功能的安装】，单击【下一步】。
 5. 在“选择目标服务器”界面中，保持默认设置，单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/beec7ae5fcbdf3e413f133296e53f2df.png)
+![](https://main.qcloudimg.com/raw/41f775ccbcd8e984b72bc096efa668d4.png)
 6. 在“选择服务器角色”界面中，勾选【Web 服务器(IIS)】，并在弹出的窗口中单击【添加功能】。如下图所示：
-![](https://main.qcloudimg.com/raw/f160096425be05330fc7bc39e3d81b22.png)
+![](https://main.qcloudimg.com/raw/f23fe1b8415c0f75c54309b652781aa4.png)
 7. 连续单击三次【下一步】，进入“选择角色服务”界面。
 8. 在“选择角色服务”界面，勾选【FTP 服务】及【FTP 扩展】，单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/e8efaf069e2f2d2a2e632d0f2eeec4a4.png)
+![](https://main.qcloudimg.com/raw/1fa84c69d96c16f2ea0f10e51b0607bb.png)
 9. 单击【安装】，开始安装 FTP 服务。
 10. 安装完成后，单击【关闭】。
 
@@ -33,9 +33,9 @@
 1. 在“服务器管理器”窗口中，选择右上角导航栏中的【工具】>【计算机管理】，打开计算机管理窗口。
 2. 在“计算机管理”界面中，选择左侧导航栏中的【系统工具】>【本地用户和组】>【用户】。
 3. 在【用户】右侧界面中，右键单击空白位置，选择【新用户】。如下图所示：
-![](https://main.qcloudimg.com/raw/e59109c2d3e2bed1c05bfb6983975622.png)
+![](https://main.qcloudimg.com/raw/60bad9ff725b8fe4386c2eed9c5ff63a.png)
 4. 在“新用户”界面，按照以下提示设置用户名及密码，并单击【创建】。如下图所示：
-![](https://main.qcloudimg.com/raw/5727d1a8f33bd35df02e1ec58447f23f.png)
+![](https://main.qcloudimg.com/raw/1bc9cb2c2000361f6699c155e25d7630.png)
 主要参数如下：
   - 用户名：自定义，本文以 `ftpuser` 为例。
   - 密码及确认密码：自定义，密码需同时包含大写、小写字母及数字。本文以 `tf7295TFY` 为例。
@@ -51,23 +51,23 @@
 3.  在“test 属性”窗口中，选择【安全】标签。
 4.  选择 `Everyone` 用户并单击【编辑】。如下图所示：
 如果“组或用户名”中没有 `Everyone`，请参考 [添加 Everyone 用户](#add) 进行添加。
-![](https://main.qcloudimg.com/raw/bb4512359271255fbe00e5950483d714.png)
+![](https://main.qcloudimg.com/raw/aec3d0557deef26ca3ff8005da86603f.png)
 5. <span id="step5"></span>在“test 的权限”界面中，按需设置 `Everyone` 用户的权限并单击【确定】。如下图所示：
 本文以授予 `Everyone` 用户所有权限为例。
-![](https://main.qcloudimg.com/raw/ab403fb016348a2d5bed75e7f8d8560b.png)
+![](https://main.qcloudimg.com/raw/ccdfda072d8a476a08773b7fcf979ec7.png)
 6. 在“test 属性”窗口中，单击【确定】完成设置。
 
 
 ### 步骤5：添加 FTP 站点
 1. 在“服务器管理器”窗口中，选择右上角导航栏中的【工具】>【Internet Information Services (IIS)管理器 】。
 2. 在打开的 “Internet Information Sevices (IIS)管理器” 窗口中，依次展开左侧导航栏的服务器名称，并右键单击【网站】，选择【添加 FTP 站点】。如下图所示：
-![](https://main.qcloudimg.com/raw/bfa4fa842a840f0f374a50de828a4615.png)
+![](https://main.qcloudimg.com/raw/3d2c1a2708939cd5a8d7bf3bdf9aa1ff.png)
 3. 在“站点信息”界面中，参考以下信息进行设置，并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/21dee4172724d828f7b326f1376eae8b.png)
+![](https://main.qcloudimg.com/raw/76761e667657b80bfdd2d2403d64ba3c.png)
     - **FTP 站点名称**：填写 FTP 站点名称，本文以 `ftp` 为例。
     - **物理路径**：请选择已设置权限的共享文件夹路径，本文以 `C:\test` 为例。
 4. 在“绑定和 SSL 设置”界面中，参考以下信息进行设置，并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/aaf8b072c308895c875ffd8897443ab6.png) 
+![](https://main.qcloudimg.com/raw/355c3de0e19d7e1c161c51156bf0965f.png) 
 主要配置的参数信息如下：
      - **绑定**：IP 地址默认选择【全部未分配】，端口默认为21（FTP 默认端口号），您也可以自行设置端口。
      - **SSL**：请按需选择，本文以【无 SSL】为例。
@@ -76,7 +76,7 @@
       -  **要求 SSL**：需要 SSL 加密才能在 FTP 服务器和客户端之间进行通信。
    如果您选择了【允许 SSL】或【需要 SSL】时，您可以在 “SSL 证书”中选择已有的 SSL 证书，也可参考 [服务器证书制作](#ssl) 步骤制作一个 SSL 证书。
 5. 在“身份验证和授权信息”界面中，参考以下信息进行设置，并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/7cfafd87c991420bf20ab19d6ed5c570.png)
+![](https://main.qcloudimg.com/raw/0f3be2c7ba449240cdac3f3c767e668c.png)
  - **身份验证**：选择一种身份验证方法，本文以【基本】为例。
     - **匿名**：允许任何用户访问仅提供匿名或 FTP 用户名的内容。
 	 - **基本**：要求用户提供有效的用户名和密码才能访问内容。因为基本身份验证通过网络传输未加密的密码，所以仅当您知道客户端和 FTP 服务器之间的连接是安全的（例如通过使用安全套接字层 SSL）时，才使用此身份验证方法。
@@ -106,7 +106,7 @@
 ```
 ftp://云服务器公网IP:21
 ```
-![](https://main.qcloudimg.com/raw/01154cd3f3af8c0578e588c29a574216.png)
+![](https://main.qcloudimg.com/raw/d3d5a93170bb990f47ecd9f24c3e89ab.png)
 3. 在弹出的“登录身份”窗口中输入 [创建 FTP 用户名及密码](#user) 中已设置的用户名及密码。
 本文使用的用户名为 `ftpuser` 密码为 `tf7295TFY`。
 4. 成功登录后，即可上传及下载文件。
@@ -114,22 +114,22 @@ ftp://云服务器公网IP:21
 ## 附录
 ### 添加 Everyone 用户<span id="add"></span>
 1. 在“test 属性”窗口中，选择【安全】标签并单击【编辑】。如下图所示：
-![](https://main.qcloudimg.com/raw/1792e5b5ff508f809091e786c229893c.png)
+![](https://main.qcloudimg.com/raw/f3f056e833fc63c97f23eef646ea8a10.png)
 2. 在“test 的权限”界面中，单击【添加】。
 3. 在“选择用户或组”界面中，单击【高级】。
 4. 在弹出的“选择用户或组”界面中，单击【立即查找】。
 5. 在搜索结果中，选择 `Everyone` 并单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/3abc835b93387ef1571db5e8eea010b5.png)
+![](https://main.qcloudimg.com/raw/32a9d44822ed4db0e82167d0cfb94835.png)
 6. 在“选择用户或组”界面中，单击【确定】即可添加。如下图所示：
-![](https://main.qcloudimg.com/raw/6f94c003d1660597adf67cc640617407.png)
+![](https://main.qcloudimg.com/raw/1245acedba4be051cf234423460a4345.png)
 前往 [步骤5](#step5) 设置 `Everyone` 用户权限。
 
 ### 服务器证书制作<span id="ssl"></span>
 1. 在“服务器管理器”窗口中，选择右上角导航栏中的【工具】>【Internet Information Services (IIS)管理器 】。
 2. 在弹出的“Internet Information Services (IIS)管理器”窗口中，选择左侧导航栏中的服务器，双击右侧界面中的【服务器证书】。如下图所示：
-![](https://main.qcloudimg.com/raw/041a945541b3c94cc8206c8093df84c8.png)
+![](https://main.qcloudimg.com/raw/8fc9f67a26475b891f4c50d9c670c08c.png)
 3. 选择右侧操作栏中的【创建自签名证书】。
 4. 在弹出的“创建自签名证书”窗口中，设置证书名称及存储类型。如下图所示：
 本文以创建个人存储类型的 SSL 证书为例。
-![](https://main.qcloudimg.com/raw/c1633f5e0adda9eed1583130c6e5d21e.png)
+![](https://main.qcloudimg.com/raw/0db81917b5b1e20af19d4d687d0d7fda.png)
 5. 单击【确定】即可成功创建。
