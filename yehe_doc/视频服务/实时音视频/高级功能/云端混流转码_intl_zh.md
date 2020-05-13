@@ -3,9 +3,11 @@
 
 MCU 集群接收来自 TRTC SDK 的混流指令（[setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)），并根据指令中设定的混流参数，将多路音视频流进行按需混合，并将最终生成的视频流分发给直播 CDN 和云端录制系统。
 
+
+
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows | 微信小程序 | Web |
+| iOS | Android | Mac OS | Windows | 微信小程序 | 桌面浏览器 |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   |   ×  |   ×  |
 
@@ -14,6 +16,8 @@ MCU 集群接收来自 TRTC SDK 的混流指令（[setMixTranscodingConfig()](ht
 - 解码：MCU 需要将多路音视频流进行解码，包括视频解码和音频解码。
 - 混合：MCU 需要将多路画面混合在一起，并根据来自 SDK 的混流指令实现具体 的排版方案。同时，MCU 也需要将解码后的多路音频信号进行混音处理。
 - 编码：MCU 需要将混合后的画面和声音进行二次编码，并封装成一路音视频流，交给下游系统（例如直播和录制）。
+
+
 
 ## 混流方案
 
@@ -85,6 +89,8 @@ MCU 集群接收来自 TRTC SDK 的混流指令（[setMixTranscodingConfig()](ht
 <td>支持</td>
 </tr></table>
 6. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
+
+![](https://main.qcloudimg.com/raw/fb1f279d211ba2a9c59569ff26135d4d.png)
 
 **示例代码**
 本文以 iOS 端的 Objective-C 代码为例，实现“一大二小，上下叠加”的混合效果：

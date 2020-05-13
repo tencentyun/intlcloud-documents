@@ -10,17 +10,17 @@
 #### 默认模式
 如果您的源端主机和目标云服务器都具有公网访问能力，则可以使用默认模式进行迁移。
 在目前的默认模式中，源端主机通过互联网访问腾讯云 API 发起迁移请求，并向目标云服务器传输数据，将源端主机迁移至腾讯云的目标云服务器。
-![](https://main.qcloudimg.com/raw/b53a74e5e7882d3ad398e342b24c278d.png)
+![](https://main.qcloudimg.com/raw/5203e535f5ba947bb67c1f91dee52f1f.jpg)
 
 #### 内网迁移模式
 如果您的源端主机或目标云服务器处于某个内网或 VPC 中，源端主机不能通过互联网直接与目标云服务器建立连接，则可以使用工具的内网迁移模式进行迁移。内网迁移模式需要通过使用如 [VPC 对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[云联网](https://intl.cloud.tencent.com/document/product/1003) 或者 [专线接入](https://intl.cloud.tencent.com/document/product/216) 等方式建立源端主机与目标云服务器的连接通道。
 
 - <span id="Scenario1">场景1</span>：如果您的源端主机或目标云服务器不能访问公网，则可以先通过一台拥有公网访问能力的主机（如网关）以互联网方式访问腾讯云 API 发起迁移请求，再通过连接通道向目标云服务器传输数据进行迁移。此场景对源端主机和目标云服务器均不要求具有公网访问能力。
-![](https://main.qcloudimg.com/raw/f2bbd5c93d0e1996feb4c17b083adf9a.png)
+![](https://main.qcloudimg.com/raw/19300ddf557d4534b1cd77fcbf64ef6a.jpg)
 - <span id="Scenario2">场景2</span>：如果您的源端主机可以访问公网，则可以先在源端主机上通过互联网访问腾讯云 API 发起迁移请求，再通过连接通道向目标云服务器传输数据进行迁移。此场景对源端主机要求具有公网访问能力，而目标云服务器则不要求。
-![](https://main.qcloudimg.com/raw/6b941668b1a36b91ceb5e0c142f1f4e0.png)
+![](https://main.qcloudimg.com/raw/90bf988ba7cddb9b80307efb30eaad29.jpg)
 - <span id="Scenario3">场景3</span>：如果您的源端主机可以通过代理访问公网，则可以先在源端主机上通过网络代理访问腾讯云 API 发起迁移请求，再通过连接通道向目标云服务器传输数据进行迁移。此场景对源端主机和目标云服务器均不要求具有公网访问能力。
-![](https://main.qcloudimg.com/raw/85a35c2fc451ff4cba0734e74b903a25.png)
+![](https://main.qcloudimg.com/raw/14f81f2c4e6cfff80d912841451c5b69.jpg)
 
 ### 支持的操作系统
 目前在线迁移工具支持的源端主机操作系统包括但不限于以下操作系统（32位或64位均可）：
