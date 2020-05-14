@@ -7,7 +7,7 @@ This document uses sending a Spring Festival best wishes message to members by c
 ## Preparations
 - [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and verify your organizational identity.
 - [Purchase](https://intl.cloud.tencent.com/document/product/382/35450) an SMS package.
-- Prepare SMS signature owner qualification certificates. For detailed file list and specifications, please see the signature review standards.
+- Prepare SMS signature owner qualification certificates.
  This document takes a business license as a qualification certificate for example.
 - Understand the SMS body content review standards.
 
@@ -46,7 +46,7 @@ This document uses sending a Spring Festival best wishes message to members by c
      </tr> 
 </table>
 3. Click **OK**.
- Waiting for signature review. The SMS signature will be available only after its status changes to **approved**.
+ Wait for signature review. The SMS signature will be available only after its status changes to **approved**.
 
 <span id="Step2"></span>
 ## Step 2. Create a body template
@@ -74,13 +74,13 @@ This document uses sending a Spring Festival best wishes message to members by c
      </tr> 
 </table>
 4. Click **OK**.
- Waiting for body template review. The body template will be available only after its status changes to **approved**.
+ Wait for body template review. The body template will be available only after its status changes to **approved**.
 
 
 <span id="Step3"></span>
 ## Step 3. Send SMS
 Before sending an SMS, you need to confirm that both the SMS signature and body template have been approved.
-You can send an SMS through the console or API. This document uses the console as an example.
+You can send an SMS through the console or [API](https://intl.cloud.tencent.com/document/product/382/34859). This document uses the console as an example.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Mainland China SMS** > **Bulk SMS** on the left sidebar and click **Create Bulk SMS Task**.
