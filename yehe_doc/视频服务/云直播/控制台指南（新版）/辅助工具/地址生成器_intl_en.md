@@ -11,13 +11,14 @@ There should be at least one available domain name in [Domain Management](https:
 	1. Select the type, such as **push domain** or **playback domain**.
 	2. Select a domain name you have already added on the Domain Management page.
 	3. `AppName` is the address path used to differentiate multiple applications under the same domain name, which is `live` by default.
->`AppName` can be customized and can contain only letters, digits, and symbols. To customize it, [submit a ticket](https://console.cloud.tencent.com/workorder/category) for configuration.
+>`AppName` can be customized and can contain only letters, digits, and symbols.
 	4. Enter a custom `StreamName`, such as `liveteststream`.
 	5. Select the expiration time of the address, such as `2019-11-30 23:59:59`.
 3. Click **Generate Address** to generate the corresponding domain name address.
 ![](https://main.qcloudimg.com/raw/1d9741fe544d1c850ab89b22134f6dc8.png)
+
 >
 >- The generated push/playback address consists of the following four parts:
 ![](https://main.qcloudimg.com/raw/9094e537a4ae7cecc7feb9c88fb83a55.png)
->- The generated playback address supports RTMP, FLV, and HLS protocols. You can click the QR code after the address and scan it with the [Lite Demo](https://intl.cloud.tencent.com/document/product/454/6555#.E7.B2.BE.E7.AE.80.E7.89.88-demo) to view the address:
+>- The generated playback address supports RTMP, FLV, and HLS protocols. You can click the QR code after the address and scan it with the Lite Demo to view the address:
 ![](https://main.qcloudimg.com/raw/d91fe5d373cfc03df2c87562f3984858.png)
