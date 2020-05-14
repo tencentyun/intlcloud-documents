@@ -20,8 +20,7 @@
 3. 在 “Web Server Setup” 界面，选择【IIS FastCGI】，单击【Next】。如下图所示：
 ![](https://main.qcloudimg.com/raw/c5fc89547b020e6ec943732d16186a7b.png)
 4. 按照安装界面的指引，完成 PHP 的安装。
-4. 在 `C:/inetpub/wwwroot` 目录下，创建一个 PHP 文件。例如创建一个 `hello.php` 文件，如下图所示：
-![](https://main.qcloudimg.com/raw/bd064531274bf38dc1ddaa1ec3f27a61.png)
+4. 在 `C:/inetpub/wwwroot` 目录下，创建一个 PHP 文件。例如创建一个 `hello.php` 文件。
 5. 在新创建的 `hello.php` 文件中，填写以下内容并保存。
 ```
 	<?php
@@ -57,19 +56,19 @@ PHP 安装包对应需下载和安装的 Visual C++ Redistributable 安装包如
 #### 安装配置
 1. 将已下载的 PHP zip 安装包解压缩。例如，解压缩至 `C:\PHP` 目录下。
 2. 复制 `C:\PHP` 目录下的 `php.ini-production` 文件，并将该文件的后缀修改为 `.ini`（即重命名为`php.ini`文件）。如下图所示：
-![](https://main.qcloudimg.com/raw/ba62cb859993ee25f372bc4ea969b4cf.png)
+![](https://main.qcloudimg.com/raw/52d9a2098fe73c8ddb41366b9732a000.png)
 3. 在操作系统界面，单击 <img src="https://main.qcloudimg.com/raw/f779581f1ce3edfead8c725ce1504009.png" style="margin: 0;"></img>，打开服务器管理器。
 4. 在服务器管理器的左侧导航栏中，单击【IIS】。
 5. 在右侧 IIS 管理窗口中，右键单击【服务器】栏中的服务器名称，选择【Internet Information Sevices (IIS)管理器】。如下图所示：
-![](https://main.qcloudimg.com/raw/e10681a1bee2850f0f9e31832cc9be65.png)
+![](https://main.qcloudimg.com/raw/55e0b4c86de284050e5d810e92650337.png)
 6. 在打开的 “Internet Information Sevices (IIS)管理器” 窗口中，单击左侧导航栏的服务器名称，进入服务器的主页。如下图所示：
 例如，单击 10_141_9_72 服务器名称，进入 10_141_9_72 主页。
-![](https://main.qcloudimg.com/raw/249468f27268512b8766df5f00d4ae24.png)
+![](https://main.qcloudimg.com/raw/ab0f2306624452d4a3ab9fd5389d5b1d.png)
 7. 在【10_141_9_72 主页】中，双击【处理程序映射】，进入 “处理程序映射” 管理界面。如下图所示：
-![](https://main.qcloudimg.com/raw/9daf2155892a72526ecada93b03018a7.png)
+![](https://main.qcloudimg.com/raw/916a9cc9ce1270dbbfe6ddbb58f937e7.png)
 8. 在右侧的【操作】栏中，单击【添加模块映射】，打开 “添加模块映射” 窗口。
 9. 在打开的 “添加模块映射” 窗口中，填写以下信息，并单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/ec6ded20a961ff3acaf955221a1a68a4.png)
+![](https://main.qcloudimg.com/raw/a4d139682fc14204acd77ac3d1ea10eb.png)
 主要的参数信息如下：
  - 请求路径：填写 `*.php`。
  - 模块：选择 “FastCgiModule”。
@@ -78,17 +77,17 @@ PHP 安装包对应需下载和安装的 Visual C++ Redistributable 安装包如
 10.  在弹出的提示框中，单击【是】。 
 11.  单击左侧导航栏的 10_141_9_72 服务器名称，返回 10_141_9_72 主页。
 12.  在【10_141_9_72 主页】中，双击【默认文档】，进入 “默认文档” 管理界面。如下图所示：
-![](https://main.qcloudimg.com/raw/bb5924fa455f89bb83f66a115dcd2f7b.png)
+![](https://main.qcloudimg.com/raw/6a896eeb929ae0104b1792e08bd895a6.png)
 13.  在右侧的【操作】栏中，单击【添加】，打开 “添加默认文档” 窗口。
 14.  在打开的 “添加默认文档” 窗口中，将【名称】填写为 `index.php`，单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/e8f4aeea428c8adee1573b2df30c5355.png)
+![](https://main.qcloudimg.com/raw/2d09af5d86755dd481b13efb0b3619a2.png)
 15.  单击左侧导航栏的 10_141_9_72 服务器名称，返回 10_141_9_72 主页。
 16.  在【10_141_9_72 主页】中，双击【FastCGI 设置】，进入 “FastCGI 设置” 管理界面。如下图所示：
-![](https://main.qcloudimg.com/raw/82a739a387fd82fb392b56595316c299.png)
+![](https://main.qcloudimg.com/raw/2a0693d3b837804b546fc690b4fb5cee.png)
 17.  在 “FastCGI 设置” 管理界面，选择 FastCGI 应用程序，单击【编辑】。如下图所示：
-![](https://main.qcloudimg.com/raw/9c1382da5600121741ecfa4560623997.png)
+![](https://main.qcloudimg.com/raw/2038fa0df5c08820dc028fb3635fcda4.png)
 18.  在打开的 “编辑  FastCGI 应用程序” 窗口中，将【监视对文件所做的更改】设置为 `php.ini` 文件的路径。如下图所示：
-![](https://main.qcloudimg.com/raw/c167f15bb6cabe35cce2650133ac63e2.png)
+![](https://main.qcloudimg.com/raw/b1aa458607934a5331b51e22762d0dec.png)
 19. 在 `C:\inetpub\wwwroot` 目录下，创建一个 PHP 文件。例如创建一个 `index.php` 文件。
 20. 在新创建的 `index.php` 文件中，填写以下内容并保存。
 ```
