@@ -8,5 +8,5 @@ Backed by Tencent Cloud's deep learning algorithms and training environments, DB
 DBbrain is suitable for both in-cloud and off-cloud database scenarios. It provides diagnosis and optimization not only for database instances in Tencent Cloud, but also those deployed in other clouds or on-premise databases. It adopts a non-intrusive design and protected data transfer to ensure security, helping you build a unified platform for hybrid cloud database management.
 
 ### Mobile database OPS
-DBbrain is integrated within the WeChat Mini Program ecosystem and accessible on both PCs and mobile devices. Features such as mobile alarms, daily health report subscription, exception diagnosis, and one-click optimization are available on mobile devices for your convenience. 
+DBbrain is integrated within the WeChat Mini Program ecosystem and accessible on both PCs and mobile devices. Features such as mobile alarms, daily health report subscription, exception diagnosis, and one-tap optimization are available on mobile devices for your convenience. 
 
