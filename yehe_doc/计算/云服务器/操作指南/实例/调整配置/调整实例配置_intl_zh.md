@@ -47,17 +47,17 @@
 
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，进入云服务器列表。
 2. 在需要调整的实例右侧操作栏，单击【更多】>【资源调整】>【调整配置】。如下图所示：
-![](https://main.qcloudimg.com/raw/15e142fe43b498ada4ee3f12c1bf9413.png)
+![](https://main.qcloudimg.com/raw/65541031befe2d0144227cf5a616e161.png)
 3. 在 “选择目标配置” 中，确认实例状态以及操作，**选择需要的机型和实例规格，并仔细确认规格和性能参数**，单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/cab2d0c635bfc1dd07d3aa6c763b7c21.png)
+![](https://main.qcloudimg.com/raw/818fbf0dfa791ad5d5a76186eefba019.png)
 4. 根据实例的计费模式，确认费用，单击【下一步】。
 	- 按量计费实例：请确认新规格所需冻结的金额。调整配置后，按量计费价格将从第一阶梯开始计费，请明确规则后进行操作。如下图所示：
-	![](https://main.qcloudimg.com/raw/378fe411ba222bbdc473b69919d957c6.png)
+	![](https://main.qcloudimg.com/raw/25f8630836acdfe274357142d8609c5d.png)
 5. 在 “关机提示” 中，根据实例的运行状态，仔细阅读不同的文字提示。
  - 如果当前实例为运行中，需要您仔细阅读文字提示，并勾选 “同意强制关机”，如下图所示：
-![](https://main.qcloudimg.com/raw/ee1406aa0ad4a28a3f190b93f18ed6fe.png)
+![](https://main.qcloudimg.com/raw/e016f2cc674938acd0046115f007669b.png)
  - 如果您实例处于关机状态，则再次告知，如下图所示：
-![](https://main.qcloudimg.com/raw/2b7696edf214708e21bf0099c680a063.png)
+![](https://main.qcloudimg.com/raw/8385495393237523d0d71460a7b7009b.png)
 6. 单击【开始调整】，进入订单页面，完成支付。 
 
 ### 通过 API 
