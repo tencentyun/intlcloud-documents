@@ -6,7 +6,7 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 
 
 ### Why can't pushes be received after registration succeeded?
-- Please check whether the current app package name is the same as that entered when TPNS is registered, and if not, you are recommended to enable multi-package name push.
+- Please check whether the current application package name is the same as that entered when TPNS is registered, and if not, you are recommended to enable multi-package name push.
 - Check whether the network is exceptional on the phone and switch to 4G network for testing.
 - TPNS push includes **notification panel message** and **in-app message** (passthrough message). A notification panel message can be displayed in the notification panel, while an in-app message cannot.
 - Confirm that the phone is in normal mode. Some phones may have restrictions on network and activity of the backend TPNS process when in Low Power or Do Not Disturb mode.
@@ -14,25 +14,23 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 
 
 ### Why does device registration fail?
-- Data sync for newly created apps will take about one minute. During this period, the registration may return the error code 20. You can try again later.
+- Data sync for newly created applications will take about one minute. During this period, the registration may return the error code 20. You can try again later.
 - **Incorrect parameter:** check whether the `Access ID` and `Access Key` are correctly configured. Common errors are that the `Secret key` is misused or the `Access Key` contains spaces.
 - **Registration error:** if the console returns an error code such as 10004, 10002, or 20, please see [SDK for Android Error Codes](https://intl.cloud.tencent.com/document/product/1024/30722).
 - **No callback after registration:** check the current network condition. You are recommended to use 4G network for testing. Wi-Fi used by many users may have insufficient network bandwidth.
 - **Nubia phones:** models released in the second half of 2015 and 2016 cannot be registered, including Nubia Z11 series, Nubia Z11S series, and Nubia Z9S series.
 
-### Why pushes can't be received after the app is closed?
-- At present, third-party push services cannot guarantee that the pushes can be received after the app is closed. This problem is due to the limitation of the mobile phone's custom ROM on the TPNS service. All activities of TPNS are on the basis that the TPNS service can connect to the internet and run properly. After the service is terminated, whether it can be restarted depends on the system settings, security programs, and user operations.
-- QQ and WeChat are in the system-level app whitelist, and the relevant service will not be terminated after the app is closed, so the user can still receive messages after closing the app, and in fact, the relevant service survives on the backend.
-- On Android, after the user exits the app and the TPNS service is disconnected from the TPNS server, messages delivered to the device will become offline messages, which can be retained for up to 72 hours. If there are multiple offline messages, only two can be retained on each device. If messages are pushed after the app is closed, please check whether the `XGPushManager.unregisterPush\(this\)` API has been called if the messages cannot be received when the app is launched again.
+### Why pushes can't be received after the application is closed?
+- At present, third-party push services cannot guarantee that the pushes can be received after the application is closed. This problem is due to the limitation of the mobile phone's custom ROM on the TPNS service. All activities of TPNS are on the basis that the TPNS service can connect to the internet and run properly. After the service is terminated, whether it can be restarted depends on the system settings, security programs, and user operations.
+- QQ and WeChat are in the system-level application whitelist, and the relevant service will not be terminated after the application is closed, so the user can still receive messages after closing the app, and in fact, the relevant service survives on the backend.
+- On Android, after the user exits the application and the TPNS service is disconnected from the TPNS server, messages delivered to the device will become offline messages, which can be retained for up to 72 hours. If there are multiple offline messages, only two can be retained on each device. If messages are pushed after the application is closed, please check whether the `XGPushManager.unregisterPush\(this\)` API has been called if the messages cannot be received when the application is launched again.
 
 
 
 
 ### How do I set the message click event?
-In the SDK, a click on a message can trigger a click event, which opens the app homepage by default. Therefore, if a redirect action is configured in the `onNotifactionClickedResult` callback method on the device, there will be a conflict between the custom redirect and the default click event, and the user will be redirected to the specified page and then to the homepage. As a result, you cannot configure redirect in `onNotifactionClickedResult`.
-
-
-**Use an intent to redirect to the specified page**
+TPNS recommends using Intent for redirection (note: the SDK supports click events by default upon message tap, and the corresponding homepage will be opened. If the redirection operation is set in `onNotifactionClickedResult`, it will conflict with the custom redirection specified in the console/API, resulting in failure of the custom redirection).
+**Guide for redirection through Intent:**
 You need to configure the page to redirect to in the client app's manifest:
  - For example, if you want to redirect to the page specified by `AboutActivity`, use the following sample code:
 ```
@@ -88,7 +86,7 @@ Uri uri = getIntent().getData();
 
 
 
-### What callbacks are supported by vendor-specific channels?
+### What callbacks are supported by vendor channels?
 - The Mi channel supports arrival callback and passthrough but not click callback.
 - The Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored) but not arrival callback.
 - The Meizu channel supports arrival callback and click callback but not passthrough.
@@ -101,14 +99,14 @@ Uri uri = getIntent().getData();
 
 ### How do I fix the problem of `otherpushToken = null` that may be encountered during debugging?
 #### Troubleshooting for Mi channel
-- Check whether the app package name is the same as that registered on Mi Open Push Platform.
+- Check whether the application package name is the same as that registered on Mi Open Push Platform.
 - Check whether message push has been enabled on Mi Open Push Platform.
 - For manual connection, check the manifest file configuration against the development documentation, especially the places where the package name needs to be modified:
 ```
 <permission android:name="com.example.mipushtest.permission.MIPUSH_RECEIVE" android:protectionLevel="signature" />
-<!-- Here, change `com.example.mipushtest` to the app package name -->
+<!-- Here, change `com.example.mipushtest` to the application package name -->
 <uses-permission android:name="com.example.mipushtest.permission.MIPUSH_RECEIVE" />
-<!-- Here, change `com.example.mipushtest` to the app package name -->
+<!-- Here, change `com.example.mipushtest` to the application package name -->
 ```
 - Check whether you have set the `APPID` and `APPKEY` of Mi before the registration and whether third-party push has been enabled:
 ```
@@ -123,12 +121,12 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 
 #### Troubleshooting for Huawei channel
 - Check whether the version in **Settings** > **App Management** > **Huawei Mobile Service** on the Huawei phone is above 2.5.3.
-- Check whether the app package has been signed.
+- Check whether the application package has been signed.
 - Check whether an SHA256 certificate fingerprint has been configured at Huawei's official website.
 - Check the manifest file configuration against the Huawei channel connection guide in the development documentation.
 - Check whether the third-party push has been enabled before the TPNS registration and whether the Huawei `AppID` is configured correctly.
-- Check whether the app package name is the same as that registered at Huawei Push's official website and in the TPNS Console.
-- Call `XGPushConfig.setHuaweiDebug\(true\)` before registering the code, manually confirm that the storage permission is granted to the app, check the cause of Huawei registration failure output in the `huawei.txt` file in the SD card directory, and then find the cause corresponding to the error code in Huawei development documentation.
+- Check whether the application package name is the same as that registered at Huawei Push's official website and in the TPNS Console.
+- Call `XGPushConfig.setHuaweiDebug\(true\)` before registering the code, manually confirm that the storage permission is granted to the app, check the cause of Huawei registration failure output in the `huawei.txt` file in the SD card directory, and then find the cause corresponding to the [error code](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-References/hmssdk_huaweipush_api_reference_errorcode) in Huawei development documentation.
 - In CMD, run ```adb shell setprop log.tag.hwpush VERBOSE``` and
   ```adb shell logcat -v time &gt; D:/log.txt``` to start capturing logs, conduct the test, and close the CMD window. Then, send the log to technical support.
 
@@ -184,9 +182,9 @@ Then, use the `"TpnsPlugin"` keyword for analysis.
 3. Check whether there are relevant dependencies in the external libraries of the project.
 ![](https://main.qcloudimg.com/raw/485c7595f1b478a6fad725d38deb87b4.png)
 
-### Does TPNS support setting app badge on Android?
-App badges for notifications are subject to the corresponding vendors' default logics as detailed below:
+### Does TPNS support setting application badge on Android?
+Application badges for notifications are subject to the corresponding vendors' default logics as detailed below:
 - Mi: badge number can be displayed, which is to "automatically increase/decrease by 1" by default. Notifications through the TPNS channel can be alternately configured through system APIs. For more information, please see the [Mi development documentation](https://dev.mi.com/console/doc/detail?pId=939).
 - Huawei: badge number can be displayed, which is disabled by default. The TPNS channel can be alternately configured through system APIs. For more information, please see the [Huawei development documentation](https://developer.huawei.com/consumer/cn/doc/30802).
 - Meizu: only red dot display is supported based on the default system logic, that is, if there is a notification, a red dot will be displayed, and vice versa. Customization is not supported.
-- OPPO and Vivo: this feature is available only to specified apps such as QQ and WeChat. If you need to use it, please submit an application. No adaption instructions are provided currently.  
+- OPPO and Vivo: this feature is available only to specified applications such as QQ and WeChat. If you need to use it, please submit an application. No adaption instructions are provided currently.  
