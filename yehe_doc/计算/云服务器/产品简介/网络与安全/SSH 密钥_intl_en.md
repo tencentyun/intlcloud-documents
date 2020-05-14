@@ -1,24 +1,25 @@
-To ensure the security and reliability of instances, Tencent Cloud provides two encrypted login methods: [password login](https://intl.cloud.tencent.com/document/product/213/6093) and SSH key pair login. This article describes how to use SSH key pair to login.
-You can select SSH key as the CVM encrypted login method using [Custom Configuration for Linux CVM](https://intl.cloud.tencent.com/document/product/213/10517).
+To ensure the security and reliability of instances, Tencent Cloud allows users to log in to instances with either [Login Password](/doc/product/213/6093) or SSH key pair. This document describes login with SSH key pair.
+You may choose the SSH key pair as an encrypted CVM login method when [Customizing Linux CVM Configurations](/doc/product/213/10517#.E8.AE.BE.E7.BD.AE.E4.BF.A1.E6.81.AF).
 
-## Introduction
-Tencent Cloud uses public key encryption to encrypt and decrypt Linux instance login information. Public key encryption uses a public key (think of it as a password) to encrypt data and send the encrypted data to the recipient. The recipient uses a private key to decrypt the data. The combination of a public key and a private key is known as a key pair. Users can use key pairs to connect to CVM instances. It’s a more secure login method than passwords.
+## SSH Key Overview
+Tencent Cloud encrypts and decrypts the login to Linux instances with public key cryptography. Specifically, Tencent Cloud encrypts data, such as a password, using a public key, and then users decrypt the data using a private key. The public and private keys are called key pair, with which, users can connect to CVM securely. This method is more secure than login with password.
 
-Tencent Cloud only stores the public key while the private key is stored by the user. Anybody who has the private key would be able to decrypt your login information. Make sure you keep your private key in a secure location.
+Tencent Cloud only stores the public key, and you need to retain the private key. Anyone who has your private key can decrypt your login, so be sure to properly keep the private key.
 
 
-## Benefits
-Comparing to the traditional authentication method using a user name and password, the SSH key method has the following benefits:
-- SSH key authentication is much more secure and prevents brute force attacks.
-- SSH key authentication is more convenient. Make a few configurations in the console and your local client, and you will not need to enter a password to login every time.
+## Features and Advantages
+Compare to traditional verification methods involving user name and password, SSH key has the following advantages:
+- Login verification with SSH key offers a higher security to prevent brute force attacks.
+- Login with SSH key is easier to use through simple configurations on the console and local client, so you can log in to instances remotely without entering the password again in case of re-login.
 
-## Limitations
-- Only support Linux instances.
-- Tencent Cloud does not retain your private key. You need to click **Download** to obtain the private key within 10 minutes of its creation. Keep it in a secure location because you will not be able to retrieve it from Tencent Cloud again.
-- To ensure data security, you need to shut the instance down before the key can be loaded.
+## Use Limits
+- This login method is only available to Linux instances.
+- Tencent Cloud will not retain your private key. You need to click **Download** to obtain the private key within 10 minutes after creating an SSH key, and keep it properly.
+- To ensure data security, you need to shut the instance down before loading the key.
 
 
 ## Use Cases
-
-
-For more information, see [Managing SSH keys](https://intl.cloud.tencent.com/document/product/213/16691).
+- How to create, bind, unbind, or delete a key, see [Managing SSH keys](https://intl.cloud.tencent.com/document/product/213/16691).
+- How to log in to CVM instances remotely using SSH login, see
+ - [Logging into Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
+ - [Logging into Linux Instances via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
