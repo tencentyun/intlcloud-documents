@@ -139,5 +139,5 @@ If your ISP allows you to use the ICMP protocol, you can use the `ping`, `tracer
 
 If you access the COS over the Tencent Cloud VPC in the same region, you may be unable to test connectivity using such tools as `ping` or `traceroute` of the ICMP protocol. It is recommended that you use the `telnet` command in the basic connectivity test to perform the testing.
 
-You can also use the tools such as `psping` or `tcping` to test the latency to port 80 of the access domain. Before the test, make sure that the access domain name has been correctly resolved to the private network address using the `nsloopup` command.
+You can also use the tools such as `psping` or `tcping` to test the latency to port 80 of the access domain. Before the test, make sure that the access domain name has been correctly resolved to the private network address using the `nslookup` command.
 
