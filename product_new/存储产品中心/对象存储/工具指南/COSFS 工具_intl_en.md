@@ -146,7 +146,7 @@ Where:
 - &lt;MountPoint&gt; is the local directory to which you want to mount the bucket (e.g. /mnt).
 - &lt;CosDomainName&gt; is the access domain name for the bucket and is in a form of `http://cos.<Region>.myqcloud.com` (applicable to XML APIs and should not contain the bucket name). &lt;Region&gt; is the region name in short, for example, ap-guangzhou and eu-frankfurt. For more information, see [Regions and Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 - -odbglevel specifies the log level.
--oallow_other Allow non-mount users to access the mount folder.
+- oallow_other Allow non-mount users to access the mount folder.
 
 **Sample:**
 
