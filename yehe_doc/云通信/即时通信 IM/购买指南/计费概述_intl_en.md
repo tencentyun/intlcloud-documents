@@ -26,7 +26,7 @@ The following table compares the features of the different editions:
 - **Peak group count**: indicates the total number of groups created and joined by all users under a single app (SDKAppID). Charges are billed according to the peak value in a calendar month.
 
 ## Value-added Services
-Each value-added service has its own billing method. Value-added services are available only for Pro Edition and Ultimate Edition.
+Each value-added service has its own billing method. Value-added services are available only for Pro Edition and Flagship Edition.
 
 <table>
      <tr>

@@ -139,8 +139,9 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 - **SDKAppID**
 Log in to the [TRTC Console](https://console.cloud.tencent.com/rav). If you don't have an application yet, please create one and you will see the `SDKAppID`.
 
+
 - **userId**
-  It can be specified arbitrarily. As it is of string type, it can be directly in line with your existing account system; however, please note that **there should not be identical `userIds` in the same audio/video room**.
+  It can be specified arbitrarily. As it is of string type, it can be directly in line with your existing account system; however, please note that **there should not be identical `userId` in the same audio/video room**.
 
 - **userSig**
   `userSig` can be calculated based on `SDKAppID` and `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
@@ -352,7 +353,7 @@ void TRTCMainViewController::onUserVideoAvailable(const char* userId, bool avail
         // Set rendering mode of the remote user's video.
         m_pTRTCSDK->setRemoteViewFillMode(TRTCVideoFillMode_Fill);
         // Call the SDK API to play back the remote user's stream.
-        m_pTRTCSDK->startRemoteView(userId, hwnd);
+        m_pTRTCSDK->startRemoteView(userId， hwnd);
     } else {
         m_pTRTCSDK->stopRemoteView(userId);
     }    

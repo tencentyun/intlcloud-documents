@@ -145,7 +145,7 @@ You can access the HelloWorld service with either methods.
 #### Access with CLB IP address
 1. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster)** to go to the "Cluster Management" page.
 2. Click the ID of the cluster which the Hello World service belongs to and choose **Service** > **Service**.
-3. On the service management page, copy the CLB IP address of the Nginx service, as shown in the following figure.
+3. On the service management page, copy the CLB IP address of the helloworld service, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/96fb6f94d4d365ce4007ff7961f5e438.png)
 
 #### Access with service name

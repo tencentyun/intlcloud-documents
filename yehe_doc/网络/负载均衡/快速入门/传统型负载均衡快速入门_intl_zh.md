@@ -15,9 +15,9 @@
 2. 本例地域选择与云服务器相同的【广州】，实例类型选择【传统型】，网络属性选择【公网】，网络选择【Default-VPC（默认）】，实例名称填写“clb-test”。
 3. 单击【立即购买】，完成付款。
 有关负载均衡实例的更多内容，请参见 [产品属性选择](https://intl.cloud.tencent.com/document/product/214/13629) 。
-![](https://main.qcloudimg.com/raw/a364f7341c5adf5f307c6d5a3030fad2.png)
+![](https://main.qcloudimg.com/raw/ac33c0df204af3b6aaa606c68fc2be62.png)
 4. 在“CLB 实例列表”页，选择对应的地域即可看到新建的实例。
-![](https://main.qcloudimg.com/raw/ac0526359e985d8870242f65cd69d220.png)
+![](https://main.qcloudimg.com/raw/183ac407a68c4aafe440aa2c111a154e.png)
 
 ## 创建负载均衡监听器
 负载均衡监听器通过指定协议及端口来负责实际转发。本文以负载均衡转发客户端的 HTTP 请求配置为例。
@@ -25,7 +25,7 @@
 2. 在“CLB 实例列表”中，找到已创建的传统型的负载均衡实例 `clb-test`，单击实例 ID，进入负载均衡详情页。
 3. 在“基本信息”部分，可以单击名称后的编辑修改实例名称。
 4. 在“监听器管理”的【监听器】下，单击【新建】，新建负载均衡监听器。
-![](https://main.qcloudimg.com/raw/7d0a044e8824f6e68b4a75db5729f2dd.png)
+![](https://main.qcloudimg.com/raw/df7de6ac8996718bc5176b14f25cd3cb.png)
 5. 在弹出框中配置以下内容：
   - 名称自定义为“Listener1”。
   - 监听协议端口为 `HTTP：80`。
@@ -33,7 +33,7 @@
   - 均衡方式选择“加权轮询”。
   - 不勾选会话保持。
   - 开启健康检查。
-  ![](https://main.qcloudimg.com/raw/9b48d0a27b21ed0ea9e6ef729f994c65.png)
+  ![](https://main.qcloudimg.com/raw/41cbc18c096ed2f6c01a238dc426963e.png)
 6. 单击【完成】，完成负载均衡监听器的创建。
 
 有关负载均衡监听器的更多内容，请参见 [负载均衡监听器概述](https://intl.cloud.tencent.com/document/product/214/6151)。
@@ -41,18 +41,18 @@
 ## 绑定后端云服务器
 1. 在“CLB 实例列表”中找到刚才创建的 `clb-test`，单击其 ID，进入负载均衡详情页。
 2. 在“监听器管理”的“绑定后端服务”模块中，单击【绑定】。
-![](https://main.qcloudimg.com/raw/286df0643451847e92305a375472c795.png)
+![](https://main.qcloudimg.com/raw/a1c1ba2fa1b95a27a534a2446c381fc3.png)
 3. 在弹出框中，选择与 CLB 同地域下的云服务器实例 `rs-1` 和 `rs-2`，权重均设置为默认值“10”。
 4. 单击【确定】，完成绑定。
-![](https://main.qcloudimg.com/raw/50d914aeb24d777db137b1f85eef365e.png)
+![](https://main.qcloudimg.com/raw/0c9f911e40621ff3615ac47d94651329.png)
 5. 展开监听器【Listener1】，可以查看后端 CVM 的健康检查状态，当状态为“健康”时表示 CVM 可以正常处理负载均衡转发的请求。
-![](https://main.qcloudimg.com/raw/1928d50fb7fe1d2cd3eda128c4ae9eb0.png)
+<!--![](https://main.qcloudimg.com/raw/1928d50fb7fe1d2cd3eda128c4ae9eb0.png)-->
 
 ## 验证负载均衡服务
 1. 在浏览器中输入负载均衡的服务地址和端口 `http://vip:80`，测试负载均衡服务，如下图所示，表示本次请求被 CLB 转发到了 rs-1 这台 CVM 上，CVM 正常处理请求并返回。
-![](https://main.qcloudimg.com/raw/5a87f56f456b18b693fa233aeb974a92.png)
+![](https://main.qcloudimg.com/raw/5a7cb3e86d04149978b90050546a2983.png)
 2. 此监听器的轮询算法是“按权重轮询”，且两台 CVM 的权重都是“10”，刷新浏览器，再次发送请求，可以看到本次请求被 CLB 转发到了 rs-2 这台 CVM 上。
-![](https://main.qcloudimg.com/raw/a549069b577a47bfeafb2b6925c5e5e7.png)
+![](https://main.qcloudimg.com/raw/8f9f5f667461a5d0efd3e6b2bbe859f3.png)
 >
 > - 如果用户关闭会话保持功能，选择轮询的方式进行调度，则请求依次分配到不同后端服务器上。
 > - 如果用户开启会话保持功能，或关闭会话保持功能但选择 ip_hash 的调度方式，则请求持续分配到同一台后端服务器上去。
