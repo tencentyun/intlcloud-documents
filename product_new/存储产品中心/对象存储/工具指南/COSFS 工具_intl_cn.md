@@ -146,7 +146,7 @@ chmod 640 /etc/passwd-cosfs
 将已经在密钥文件中配置好信息的存储桶挂载到指定目录，可以使用如下命令行：
 
 ```shell
-cosfs <BucketName-APPID> <MountPoint> -ourl=<CosDomainName> -odbglevel=info【 -oallow_other】
+cosfs <BucketName-APPID> <MountPoint> -ourl=<CosDomainName> -odbglevel=info -oallow_other
 ```
 其中：
 - &lt;MountPoint&gt; 为本地挂载目录（例如`/mnt`）。
@@ -158,12 +158,12 @@ cosfs <BucketName-APPID> <MountPoint> -ourl=<CosDomainName> -odbglevel=info【 -
 
 ```shell
 mkdir -p /mnt/cosfs
-cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr【 -oallow_other】
+cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr -oallow_other
 ```
 
 >v1.0.5 之前版本 COSFS 的挂载命令如下：
 ```shell
-cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName>【 -oallow_other】
+cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName> -oallow_other
 ```
 v1.0.5 之前版本 COSFS 的配置文件格式是：
 ```shell
