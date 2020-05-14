@@ -12,10 +12,10 @@ COS offers the following capabilities:
    </tr>
    <tr>
       <td>Object Operations</td>
-      <td>Multiple storage classes: COS offers four object storage classes for different access frequencies: Standard (MAZ), Standard, Standard_IA, and Archive. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/30925">Storage Class</a><br>Objects/folders can be uploaded, queried, downloaded, copied, and deleted. For more information, please see the documents under <a href="https://intl.cloud.tencent.com/document/product/436/13321">Object Management.</a></td>
+      <td>Multiple storage classes: COS offers 4 object storage classes for different access frequencies: MAZ_STANDARD, STANDARD, STANDARD_IA, and ARCHIVE. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/30925">Storage Class</a><br>Objects/folders can be uploaded, queried, downloaded, copied, and deleted. For more information, please see the documents under <a href="https://intl.cloud.tencent.com/document/product/436/13321">Object Management.</a></td>
    </tr>
    <tr>
-      <td rowspan=8>Data Management</td>
+      <td rowspan=9>Data Management</td>
       <td>Lifecycle</td>
       <td>COS allows you to set rules to automatically delete an object or transition it between storage classes after a specified number of days. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/17028">Lifecycle Overview.</a></td>
    </tr>
@@ -28,12 +28,12 @@ COS offers the following capabilities:
       <td>COS can be configured according to your inventory task to regularly scan the specified objects or objects with the same object prefix in your bucket daily or weekly and output an inventory report, which is stored in the specified bucket as a CSV file. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/30622">Inventory Overview.</a></td>
    </tr>
    <tr>
-      <td nowrap="nowrap">Bucket Tag</td>
+      <td nowrap="nowrap">Bucket Tagging</td>
       <td>A bucket tag can be used as an identifier for easier bucket grouping and management. You can set, query, and delete tags for the specified bucket. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/31509">Bucket Tag Overview.</a></td>
    </tr>
    <tr>
       <td>Event Notifications</td>
-      <td>Together with Serverless Cloud Function (SCF), when COS resources change (such as new file uploaded or files deleted), you will receive notifications timely. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/31648">Event Notifications.</a></td>
+      <td>Used with Serverless Cloud Function (SCF), COS can send notifications to you timely about a resource change (such as new file uploaded or files deleted). For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/31648">Event Notifications.</a></td>
    </tr>
    <tr>
       <td>Data Extraction</td>
@@ -45,7 +45,11 @@ COS offers the following capabilities:
    </tr>
    <tr>
       <td>Monitoring and Alarms</td>
-      <td>COS statistics such as read and write requests and traffic are collected and displayed based on <a href="https://intl.cloud.tencent.com/document/product/248">Cloud Monitor</a>. You can view detailed monitoring data of COS in the Cloud Monitor <a href="https://console.cloud.tencent.com/monitor/product/COS">Console</a>. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/31649">Monitoring and Alarming.</a></td>
+      <td>COS statistics such as read and write requests and traffic are collected and displayed based on <a href="https://intl.cloud.tencent.com/document/product/248">Cloud Monitor</a>. You can view detailed monitoring data of COS in the Cloud Monitor <a href="https://console.cloud.tencent.com/monitor/product/COS">Console</a>. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/31649">Monitoring and Alarming</a></td>
+   </tr>
+   <tr>
+      <td>Object Tagging</td>
+      <td>This feature is designed to help you group and manage objects in your bucket by adding a key-value pair as object identifier. An object tag consists of a `tagKey`, a `=`, and a `tagValue`, such as `group = IT`. You can set, query and delete tags on the specified object. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35665">Object Tagging Overview.</a></td>
    </tr>
    <tr>
       <td rowspan=2>Remote Disaster Recovery</td>
@@ -67,8 +71,8 @@ COS offers the following capabilities:
    </tr>
    <tr>
       <td rowspan=5>Access Management</td>
-      <td>Cross-origin Access</td>
-      <td>COS provides cross-origin access settings in the HTML5 standard to help implement cross-origin access. For cross-origin access, COS supports responding to OPTIONS requests and returning specific settings to the browser according to the rule you set. For detailed directions, please see <a href="https://intl.cloud.tencent.com/document/product/436/13318">Setting Cross-origin Access.</a></td>
+      <td>Cross Origin Resource Sharing (CORS)</td>
+      <td>COS provides CORS configuration for HTML5 to enable access among different origins. COS can respond to OPTIONS requests for CORS, and return to the browser specified rules as configured by the developer. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/436/13318">Setting CORS.</a></td>
    </tr>
    <tr>
       <td>Bucket Policy</td>
@@ -86,21 +90,23 @@ COS offers the following capabilities:
       <td>Global Acceleration</td>
       <td>COS features global acceleration that can help users worldwide to quickly access your buckets with a higher success rate of business accesses, further improving for you the business stability and business experience. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/33409">Global Acceleration Overview.</a></td>
    </tr>
-
    <tr>
       <td>Batch Jobs</td>
-      <td nowrap="nowrap">Batch Processing</td>
+      <td nowrap="nowrap">Batch Operation</td>
       <td>You can specify an operation for the specified list of objects in a bucket. Specifically, you can generate an inventory of objects through the inventory feature as the specified object list, or record the objects to be processed in a CSV file according to the format requirement of an inventory file. Then, COS will process the objects in batches based on the object inventory file. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/32958">Batch Processing Overview.</a></td>
    </tr>
    <tr>
-      <td>Data Processing</td>
+      <td rowspan=2>Data Management</td>
       <td nowrap="nowrap">Image Processing</td>
       <td>COS has integrated the professional all-in-one media solution empowered by Cloud Infinite (CI), covering image processing, content moderation, detection and many more. You can use the COS upload and process APIs to process media data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35280">Image Processing Overview.</a></td>
+   <tr>
+      <td>File Decompression</td>
+      This feature is a data processing solution that Tencent Cloud COS provides based on SCF. Once you configure this feature, when a compressed file is uploaded to COS, the SCF provisioned by COS will be triggered automatically to decompress the file into the specified bucket and directory. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35663"> File Decompression.</a></td>
    </tr>
    <tr>
-      <td>Tools</td>
-      <td nowrap="nowrap">Multiple Management Tools</td>
-      <td>COS provides a variety of practical tools such as COSBrowser, COSCMD, and COS Migration to facilitate your data management or migration. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/6242">Tool Overview.</a></td>
+      <td>Tool</td>
+      <td nowrap="nowrap">Multiple management tools</td>
+      <td>COS provides a variety of practical tools such as COSBrowser, COSCMD, and COS Migration to facilitate your data management or migration. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/6242">Tool Overview</a></td>
    </tr>
    <tr>
       <td>API/SDK</td>
