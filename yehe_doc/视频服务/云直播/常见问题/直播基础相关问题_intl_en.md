@@ -55,7 +55,7 @@ Authentication parameter: **txSecret=Md5(key+StreamName+hex(time))&txTime=hex(ti
 
 <span id="Que7"></span>
 ### What are common push methods?
-- **Camera on Android/iOS devices**: use third-party software or [MLVB SDK](https://cloud.tencent.com/product/mlvb) to capture camera video and push the video stream to the push address.
+- **Camera on Android/iOS devices**: use third-party software  to capture camera video and push the video stream to the push address.
 - **Camera or screencapturing tool on desktops/laptops**: use third-party software to capture camera video or screen and push the video or screen content to the push address. Third-party push applications include [OBS (recommended)](https://intl.cloud.tencent.com/document/product/267/31569), XSplit, FMLE, etc.
 - **Video capturing device**: if an HD camcorder has an HDMI or SDI output interface, it can be connected to an encoder to push live content to LVB through RTMP push. You need to configure the push address as the RTMP publishing address of the encoder.
 For a webcam, if it supports RTMP push, you can configure the LVB push address as its RTMP publishing address.
