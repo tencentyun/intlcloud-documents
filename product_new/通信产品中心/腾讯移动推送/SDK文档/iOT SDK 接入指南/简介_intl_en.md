@@ -10,7 +10,7 @@ It is primarily used for:
 
 - Device access. A lightweight and stable SDK is provided to facilitate the quick access of users.
 - Message push. Stable and reliable message push services are provided.
-- Devices and tags. The binding of devices and tags or custom tags to APIs is provided.
+- Devices and tags. The API of binding devices and tags or custom tags  is provided.
 - Device management. The console and APIs are provided to help users keep track of device status in real time.
 - Data analysis. Analysis of triggered message delivery state, device online state, and device exceptions are provided.
 

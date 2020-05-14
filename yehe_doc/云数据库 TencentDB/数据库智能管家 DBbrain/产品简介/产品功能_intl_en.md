@@ -11,7 +11,7 @@ Intelligent monitoring offers more focused monitoring dimensions and metric comb
 - **Intelligent diagnosis**
 Intelligent diagnosis diagnoses and analyzes database exceptions 24/7 in real time based on metric data collected by intelligent monitoring. For performance issues, it provides optimization measures with regard to specification configuration, SQL analysis, business logic, and usage by analyzing the results from SQL query optimizer, performance analysis engine, and rules engine.
 - **Intelligent alarm**
-Intelligent alarm adapts to your custom alarms and intelligently diagnose potential exceptions and risks. It can notify you of the exception promptly and features optimization measures as well as automatic one-click fix.
+Intelligent alarm adapts to your custom alarms and intelligently diagnoses potential exceptions and risks. It can notify you of the exception promptly and features optimization measures as well as automatic one-click fix.
 
 
 ## Database Security

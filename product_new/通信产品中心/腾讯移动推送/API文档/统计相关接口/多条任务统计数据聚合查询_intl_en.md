@@ -13,8 +13,8 @@ https://api.tpns.tencent.com/v3/statistics/get_push_group_stat_channel
 | Parameter Name | Required | Type | Description |
 | --------- | ---- | ------------ | ------------------------------------------------------------ |
 | groupId   | Yes   | string       | Field for aggregated statistics of multiple tasks, using corresponding "group_Id" in push parameters            |
-| startDate | Yes   | string       | Queries the start date<li>Format: YYYY-MM-DD</li><li>Limit: can only provide aggregate statistics for push tasks in past 7 days </li> |
-| endDate   | Yes   | string |Queries the end date. Format: YYYY-MM-DD                              |
+| startDate | Yes   | string       | Query start date<li>Format: YYYY-MM-DD</li><li>Limit: can only provide aggregate statistics for push tasks in past 7 days </li> |
+| endDate   | Yes   | string |Query end date. Format: YYYY-MM-DD                              |
 
 #### Response parameters
 

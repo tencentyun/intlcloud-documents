@@ -7,15 +7,15 @@
 ```shell
 https://api.tpns.tencent.com/v3/statistics/get_device_stat_overview
 ```
-**Feature**: this API is used to query "daily new devices", "daily connected devices", and "historically accumulated devices" of the application within a certain time period.
+**Feature**: this API is used to query "daily new devices", "daily online devices", and "total devices" of the application within a certain time period.
 
 ## Parameter Description
 #### Request parameters
 
 | Parameter Name  | Required | Type   | Description         | Note                                            |
 | --------- | ---- | ------ | ------------ | ----------------------------------------------- |
-| startDate | Yes   | string | Queries the start date | start Date, query limit: only data for the past 3 months can be queried |
-| endDate   | Yes   | string | Queries the end date  | -                                               |
+| startDate | Yes   | string | Query start date | Query limit: only data for the past 3 months can be queried |
+| endDate   | Yes   | string | Query end date  | -                                               |
 
 #### Response parameters
 

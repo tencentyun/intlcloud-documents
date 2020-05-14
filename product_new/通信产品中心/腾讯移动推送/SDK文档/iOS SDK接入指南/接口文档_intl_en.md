@@ -11,8 +11,8 @@ Launch the TPNS service by using the information of the application registered a
 ```
 
 #### Parameter description
-- AppID: application ID applied through the frontend, i.e., the `Access ID`.
-- AppKey: `appKey` applied through the frontend, i.e., the `Access Key`.
+- AppID: application ID applied on the console, i.e., the `Access ID`.
+- AppKey: `appKey` applied on the console, i.e., the `Access Key`.
 - Delegate: callback object. 
 
 >The parameters required by the API must be entered correctly; otherwise, TPNS will not be able to push messages correctly for the application.
@@ -35,12 +35,12 @@ After the TPNS service is stopped, the application will not be able to push mess
 [[XGPush defaultManager] stopXGNotification];
 ```
 
-## Customizing Notification Panel Message Action
+## Customizing Notification Bar Message Action
 
 ### Creating message action
 
 #### API description
-Create a clickable event action in the notification.
+Create a click event action in the notification
 
 ```objective-c
 + (nullable id)actionWithIdentifier:(nonnull NSString *)identifier title:(nonnull NSString *)title options:(XGNotificationActionOptions)options;
@@ -57,7 +57,7 @@ Create a clickable event action in the notification.
 XGNotificationAction *action1 = [XGNotificationAction actionWithIdentifier:@"xgaction001" title:@"xgAction1" options:XGNotificationActionOptionNone];
 ```
 
->The notification panel has the event click feature, which is only supported in iOS 8.0+. For iOS 7.x or earlier, this method will return null.
+>The notification bar has the event click feature, which is only supported in iOS 8.0+. For iOS 7.x or earlier, this method will return null.
 
 ### Creating category object
 
@@ -73,7 +73,7 @@ Create a category object to manage the action object of the notification bar.
 - intentIdentifiers: used to indicate identifiers that can be recognized by Siri.
 - options: category characteristics.
 
->The notification panel has the event click feature, which is only supported in iOS 8+. For iOS 8 or earlier, this method will return null.
+>The notification bar has the event clicking feature, which is only supported in iOS 8+. For iOS 8 or earlier, this method will return null.
 
 
 #### Sample code
@@ -89,7 +89,7 @@ Manage the style and characteristics of the push message notification bar.
 ```
 
 #### Parameter description
-- categories: collection of categories supported by the notification panel. 
+- categories: collection of categories supported by the notification bar. 
 - types: style of registered notification.
 
 #### Sample code
@@ -101,7 +101,7 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 ## Automatically Increasing Badge Number by 1
 
 #### API description
-Call this API to report the current application badge number to the TPNS server. After the client is configured, you can use the "automatically increasing badge number by 1" feature, which can be found in the console (create push > notification panel message > general settings > badge number).
+Call this API to report the current application badge number to the TPNS server. After the client is configured, you can use the badge number "auto increased by 1" feature, which can be found in the console (create push > notification bar message > advanced settings > badge number).
 
 ```objective-c
 - (void)setBadge:(NSInteger)badgeNumber;
@@ -111,7 +111,7 @@ Call this API to report the current application badge number to the TPNS server.
 badgeNumber: badge number of application.
 
  
->This API must be called locally; otherwise, the badge number by default will not change, even if the "automatically increasing badge number by 1" feature is enabled.  
+>This API must be called locally; otherwise, the badge number by default will not change, even if the "auto increased by 1" feature is enabled.  
 
 
 #### Sample code
@@ -196,7 +196,7 @@ You can bind tags to different users and then push based on a specific tag.
 
 >This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
-#### Single-Operation API 
+#### Single-operation API 
 ```Objective-C
 - (void)bindWithIdentifier:(nullable NSString *)identifier type:(XGPushTokenBindType)type;
 - (void)unbindWithIdentifer:(nullable NSString *)identifier type:(XGPushTokenBindType)type;
@@ -208,10 +208,10 @@ You can bind tags to different users and then push based on a specific tag.
 
 #### Sample code
 ```Objective-C
-// Bind the tag:
+// Bind a tag:
 [[XGPushTokenManager defaultTokenManager] bindWithIdentifier:@"your tag" type:XGPushTokenBindTypeTag];
 
-// Unbind the tag
+// Unbind a tag
 [[XGPushTokenManager defaultTokenManager] unbindWithIdentifer:@"your tag" type:XGPushTokenBindTypeTag];
 
 // Bind an account:

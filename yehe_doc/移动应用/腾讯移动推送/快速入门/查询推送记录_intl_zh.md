@@ -30,7 +30,7 @@
 2.抵达数据仅供参考，华为通道抵达回调需要自行配置，可参考 [厂商通道抵达回调获取指南](https://cloud.tencent.com/document/product/548/41318)。
 
 **推送时效分析**
-![](https://main.qcloudimg.com/raw/95bc43d51d8275a882217bc64fba3f15.png)
+![](https://main.qcloudimg.com/raw/29272f4bbc158909fb2143a57736e48d.png)
 推送任务开始后，按不同时间维度：
 - 分钟维度：1小时内每分钟对应指标的累计去重设备数。
 - 小时维度：24小时内、72小时内每小时的汇总指标数。
@@ -55,9 +55,8 @@
  - 点击：消息成功点击的设备数。
  - 点击率：点击/抵达设备。
 
-
  **推送时效分析**
- ![](https://main.qcloudimg.com/raw/3f8e8298c8964d63e500bd096cb8e50b.png)
+ ![](https://main.qcloudimg.com/raw/d3bca553a792b165e1e45e3bbed0b957.png)
 
 推送任务开始后，按不同时间维度：
 - 分钟维度：1小时内每分钟对应指标的累计去重设备数。

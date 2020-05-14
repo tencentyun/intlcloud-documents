@@ -78,7 +78,7 @@ Open Keychain Access, select the message push certificate to be exported and rig
 
 Step 1. [Log in to the console](https://console.cloud.tencent.com/tpns)
 
-Step 2. In the **Application List**, select the application that needs to have the push certificate uploaded
+Step 2. Go to the **Configuration Management** page and select the application that needs to upload the push certificate.
 
-Step 3. On the **Application Configuration** page, upload the push certificate
+Step 3. Enter the certificate password, click **Upload Certificate**, select your certificate to complete the upload.
 

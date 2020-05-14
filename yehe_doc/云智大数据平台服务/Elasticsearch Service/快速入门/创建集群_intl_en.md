@@ -14,7 +14,7 @@ Log in to the [ES Console](https://console.cloud.tencent.com/es) and click **Cre
 
 #### 1. Select cluster configuration
 
-- Billing Mode: **pay-as-you-go** billing is supported.
+- Billing Mode: **pay-as-you-go billing** is supported.
 - Region: currently, ES has been launched in multiple regions in and outside Mainland China.
 - Elasticsearch Version: v5.6.4, v6.4.3, v6.8.2, and v7.5.1 are supported.
 - X-Pack: Elasticsearch's official commercial features, including capabilities such as data permission management, SQL JDBC, alerting, and machine learning. The features available vary by edition: the Platinum Edition has all the advanced features, the Basic Edition has some advanced features, and the Open Source Edition does not have advanced features. For more information, please see [X-Pack](https://intl.cloud.tencent.com/document/product/845/30943).

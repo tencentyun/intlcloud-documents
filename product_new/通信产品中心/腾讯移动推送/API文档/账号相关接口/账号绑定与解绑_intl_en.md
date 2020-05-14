@@ -15,7 +15,7 @@ https://api.tpns.tencent.com/v3/device/account/batchoperate
 
 | Parameter Name | Type | Required | Description |
 | -------------- | ------- | ---- | ---------------------------------------- |
-| operator_type | int | Yes | Operation type. Value range: [1,5] as detailed below: <li>1: bind token to an account. </li><li>2: bind token to an account in an overriding manner. </li><li>3: unbind token from multiple accounts. </li><li>4: unbind token from all accounts. </li><li>5: unbind account from all tokens.</li> |
+| operator_type | int | Yes | Operation type. Value range: [1,5] as detailed below: <li>1: bind token to one more account. </li><li>2: bind token to another account in an overriding manner. </li><li>3: unbind token from multiple accounts. </li><li>4: unbind token from all accounts. </li><li>5: unbind account from all tokens.</li> |
 | platform | string | Yes | Client platform type <li>Android: Android </li><li>iOS: iOS </li>|
 | account_list | jsonArrary | No | The collection of account IDs, which is valid if `operator_type` is 5, with each element being required, including account and account_type fields.<br> For example:<br>`[{"account":"926@126.com"},{"account":"1527000000"}]`|
 | token_list | jsonArrary | No | The collection of device IDs, which is valid if `operator_type` is 4 and is required|
@@ -33,7 +33,7 @@ https://api.tpns.tencent.com/v3/device/account/batchoperate
 ## Samples
 #### Sample request
 
-- Binds token to an account
+- Binds token to one more account
 ```json
 {
     "operator_type": 1,
@@ -64,7 +64,7 @@ https://api.tpns.tencent.com/v3/device/account/batchoperate
     ]
 }
 ```
-- Binds token to an account in an overriding manner
+- Binds token to another account in an overriding manner
 ```json
 {
     "operator_type": 2,
@@ -158,7 +158,7 @@ https://api.tpns.tencent.com/v3/device/account/batchoperate
 
 #### Sample return
 
-Binds token to an account
+Binds token to one more account
 ``` json
 {
     "result": [
