@@ -19,23 +19,20 @@ After you create a product, if you haven't added the default application, you ca
 
 #### Android application
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Product Management** on the left sidebar.
-2. On the product list page, select the product you have created and click **More** > **Add Application**.
-3. On the application adding page, enter the application name and select the platform **Android**.
-4. Enter the application name and click **OK** to create the application.
+2. On the product list page, select the product you have created and click **Add Application** and select the **Android** platform.
+3. Enter the application name and click **OK** to create the application.
 ![](https://main.qcloudimg.com/raw/760969260ae6bda7b55a82adb5d2f76b.png)
 
 #### iOS application
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Product Management** on the left sidebar.
-2. On the product list page, select the product you have created and click **More** > **Add Application**.
-3. On the application adding page, enter the application name and select the platform **iOS**.
-4. Enter the application name and click **OK** to create the application.
+2. On the product list page, select the product you have created and click **Add Application** and select the **iOS** platform.
+3. Enter the application name and click **OK** to create the application.
 ![](https://main.qcloudimg.com/raw/6d3601fe62081955cb575aec267289b6.png)
 
 #### macOS application
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Product Management** on the left sidebar.
-2. On the product list page, select the product you have created and click **More** > **Add Application**.
-3. On the application adding page, enter the application name and select the platform **macOS**.
-4. Enter the application name and click **OK** to create the application.
+2. On the product list page, select the product you have created and click **Add Application** and select the **macOS** platform.
+3. Enter the application name and click **OK** to create the application.
 ![](https://main.qcloudimg.com/raw/035516a4f5179f315090e2afd41e08d1.png)
 
 
@@ -47,8 +44,8 @@ After creating the application, you can click **Apply for Trial/Test** on the se
 4. After your application is approved, you can start trying the push service.
 
 >
-- Please ensure the accuracy of the entered information; otherwise, your application may be rejected.
-- A trial application supports up to 1,000 devices in a test. If the limit is exceeded, the trial may be terminated. Therefore, do not use it for commercial purpose to avoid potential losses.
+>- Please ensure the accuracy of the entered information; otherwise, your application may be rejected.
+>- A trial application supports up to 1,000 devices in a test. If the limit is exceeded, the trial may be terminated. Therefore, do not use it for commercial purpose to avoid potential losses.
 
 
 
@@ -59,7 +56,7 @@ After you create an application, you can follow the steps below to configure it.
 #### Android configuration
 1. Go to the product list page, select the Android application, and click **Configuration Management**.
 2. Enter the application package name for the Android platform and click **Save** to complete basic configuration.
-3. You can choose to enable the vendor-specific channel configuration as needed.
+3. You can choose to enable the vendor channel configuration as needed.
 
 
 #### iOS configuration

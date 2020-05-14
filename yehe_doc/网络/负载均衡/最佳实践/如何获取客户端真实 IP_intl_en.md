@@ -1,11 +1,11 @@
 ## Notes on Getting Real Client IPs by CLB
-All Layer-4 (TCP/UDP/TCP SSL) and Layer-7 (HTTP/HTTPS) CLB services support getting a real client IP directly on a backend CVM instance with no additional configuration required.
-- For Layer-4 CLB, the source IP obtained on the backend CVM instance is the client IP.
-- For Layer-7 CLB, you can use the `X-Forwarded-For` or `remote_addr` field to directly get the client IP. For the access logs of Layer-7 CLB, please see [Storing Access Logs in COS](https://intl.cloud.tencent.com/document/product/214/10329). 
+All layer-4 (TCP/UDP/TCP SSL) and layer-7 (HTTP/HTTPS) CLB services support getting a real client IP directly on a backend CVM instance with no additional configuration required.
+- For layer-4 CLB, the source IP obtained on the backend CVM instance is the client IP.
+- For layer-7 CLB, you can use the `X-Forwarded-For` or `remote_addr` field to directly get the client IP. For the access logs of layer-7 CLB, please see [Storing Access Logs in COS](https://intl.cloud.tencent.com/document/product/214/10329). 
 
 >
 - For CLB, the client IP can be directly obtained with no additional configuration required on the backend CVM instance.
-- For other Layer-7 load balancing services with SNAT enabled, you need to configure the backend CVM instance and then use `X-Forwarded-For` to get the real client IP.
+- For other layer-7 load balancing services with SNAT enabled, you need to configure the backend CVM instance and then use `X-Forwarded-For` to get the real client IP.
 
 Below are commonly used application server configuration schemes.
 
@@ -79,7 +79,7 @@ fastcgi buffer_size 64k;
 fastcgi buffers 4 64k;
 fastcgi busy_buffers_size 128k;
 fastcgi temp_file_write_size 128k;
-<font color="red">
+<font color="#f2777a">
 set_real_ip_from IP address; (this is not the public IP provided by CLB. For the specific IP, please query the Nginx logs. You need to enter all IP addresses if there are multiple ones)
 real_ip_header X-Forwarded-For;
  </font>

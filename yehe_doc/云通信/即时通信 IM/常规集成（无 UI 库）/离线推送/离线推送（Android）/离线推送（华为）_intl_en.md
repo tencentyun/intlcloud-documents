@@ -1,42 +1,40 @@
-## Process
-The following is the process of offline message push:
+## Offline Push Process
+The process of implementing offline message push is as follows:
 1. Register with the vendor and complete the developer verification process. Apply to enable the push service.
 2. Create a push service and bind app information to obtain the push certificate, password, key, and other data.
 3. Log in to the [IM Console](https://console.qcloud.com/avc) to upload the certificate and enter other required information. The IM server uses the certificate to generate a unique certificate ID.
 4. Integrate the push messaging SDK provided by the vendor with your project and configure it according to the vendor’s instructions.
 5. Send your certificate ID and device information to IM server. 
-6. If the user did not log out of IM but the client was terminated by the system or user, the IM server will send push messages as notifications.
+6. When the client App is killed by the system or user without IM logout, the IM server will remind the user via message push.
 
-## Procedure
+## Configuring Offline Push
 Huawei EMUI is a highly customized Android system with strict backend policies. By default, third-party apps do not have auto-start permissions. As apps running in the background are often forcibly killed by the system, we recommend that the Huawei push service be integrated on Huawei devices. The Huawei push service is part of the Huawei Mobile Service (HMS) and a system-grade service of EMUI. Its delivery rate is higher than those of third-party push services. Currently, **IM only supports the notification bar messages of Huawei push**.
 
 >
->- This guide was prepared with direct reference to the official documentation of Huawei push. If Huawei push is changed, please refer to the [Huawei push documentation on the official website](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devguide_agent).
+>- This guide was prepared with direct reference to the official documentation of Huawei push. If Huawei push is changed, please refer to the [official website of Huawei push](https://developer.huawei.com/consumer/cn/hms/huawei-pushkit).
 >- If you do not plan to implement a Huawei-specific offline push solution, skip this section.
 
-### Step 1: Apply for a Huawei Push certificate
+### Step 1: Apply for a Huawei push certificate
 1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass the developer verification.
- > The verification process takes about 30 minutes. Be sure to read the [Huawei Push Service Launch Guide](https://developer.huawei.com/consumer/cn/help/60101) beforehand to facilitate access to the service.
 2. Log in to the console of the Huawei Developers Alliance, choose **App Service** -> **Development Service** -> **PUSH**, and create a Huawei push service app.
  When applying for the Huawei push service, you need to provide a maximum of five SHA256 fingerprints for the app signature certificates. After the Huawei push service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
 3. Record the **`Package name`**, **`APP ID`**, and **`APP Secret`** information.
 
 <span id="Step2"></span>
-### Step 2: Generate a Certificate ID
+### Step 2: Generate a certificate ID
 
 1. Log in to the [IM Console](https://console.qcloud.com/avc) and click the desired app. The app configuration page appears.
 2. Click **Add a certificate** under **Android push configuration**.
- > If you already have a certificate and only need to change its information, click **Edit**.
+ > If you already have a certificate and only want to change its information, you can click **Edit** in **Android push configuration** to modify and update the certificate.
  >
 3. Use the information you obtained in [Step 1](#Step1_3) to configure the following parameters:
  - **Push platform**: select **Huawei**.
  - **Package name**: the name of the Huawei Push service app.
  - **AppID**: enter the **App ID** you got from Huawei Push.
  - **AppSecret**: enter the **APP SECRET** you got from Huawei Push.
- - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#click).
-    **Open app** or **Open specific app interface** allows [custom content pass through](#section4).
- ![](https://main.qcloudimg.com/raw/0a53194ae0752382a8f1b9104242a572.png)
+ - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open App**, **Open URL**, and **Open specific App interface**. For more information, refer to [Configuring the Notification Bar Message Click Event](#click).
+    **Open App** or **Open specific App interface** allows [custom content pass through](#section4).
 4. Click **OK** to save the information. Certificate information takes effect 10 minutes after you save it.
 5. Record the Certificate ID once it is generated.
 
@@ -46,11 +44,11 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
 >
 > - The default title of IM push notifications is `a new message`.
 > - Before reading this section, make sure that you have integrated and tested the IM SDK.
-> - You can find a sample for Huawei push implementation in our demo. Note that the features of Huawei push may be adjusted during Huawei push version updates. If you find any inconsistencies with the content of this section, please refer to the [Huawei push documentation on the official website](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devguide_agent) and notify us of the difference so that we can make the necessary modifications.
+> - You can find a sample for Huawei push implementation in our demo. Note that the features of Huawei push may be adjusted during Huawei push version updates. If you find any inconsistencies with the content of this section, please refer to the [official website of Huawei push](https://developer.huawei.com/consumer/cn/hms/huawei-pushkit) and notify us of the difference so that we can make the necessary modifications in time.
 
 #### Step 3.1: Download the Huawei Push SDK and reference it in your project
 
-1. Access the [Huawei push operation platform](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_sdkdownload_agent) and download the **HMS Agent**.
+1. Visit the [official website of Huawei push](https://developer.huawei.com/consumer/cn/hms/huawei-pushkit) to download the **HMS Agent**.
 2. Decompress the HMS Agent.
 3. Copy the files under `hmsagents\src\main\java` to your project’s src\main\java directory.
  ![](https://main.qcloudimg.com/raw/3c9bca5dea731eeb4cb70e73e56d28b4.png)
@@ -63,13 +61,12 @@ allprojects {
     }
 }    
 ```
-
 5. Add the following information in build.gradle of the sub-project:
 ```
 dependencies {
     // Huawei Push SDK. Replace 2.6.3.301 with the actual version number.
     implementation 'com.huawei.android.hms:push:2.6.3.301'
-    // If an error occurs indicating that com.huawei.hms.api does not exist, this line of code also needs to be added. Note that the actual version number must be used.
+    // If an error occurs indicating that com.huawei.hms.api does not exist, this line of code also needs to be added. Note that the version number must be the same.
     // implementation 'com.huawei.android.hms:base:2.6.3.301'
 }
 ```
@@ -89,18 +86,18 @@ dependencies {
 <!--Obtain the user’s mobile phone IMEI to uniquely mark the user-->  
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/> 
 
-<!--If the Android version is 8.0 with targetSdkVersion>=26 for app compilation configuration, you must add the following permissions -->
+<!--If the Android version is 8.0 with targetSdkVersion>=26 for application compilation configuration, you must add the following permissions -->
 <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
-<!--Here, change com.tencent.qcloud.tim.tuikit to the package name of your app-->
+<!--Change com.tencent.qcloud.tim.tuikit to your App package name.-->
 <permission
     android:name="com.tencent.qcloud.tim.tuikit.permission.PROCESS_PUSH_MSG"
     android:protectionLevel="signatureOrSystem"/>
 <uses-permission android:name="com.tencent.qcloud.tim.tuikit.permission.PROCESS_PUSH_MSG" />
-<!--Here, change com.tencent.qcloud.tim.tuikit to the package name of your app-->
+<!--Change com.tencent.qcloud.tim.tuikit to your App package name.-->
 ```
 
-2. Add the following content under application. For a detailed description, see the [Huawei push configuration manifest document description](https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweisns_agent.html?page=hmssdk_huaweisns_devprepare_agent#5%20配置manifest文件).
+2. Add the following content under application. For a detailed description, see the [official website of Huawei push](https://developer.huawei.com/consumer/cn/hms/huawei-pushkit).
 
 ```xml
 <meta-data
@@ -175,7 +172,7 @@ public class HUAWEIPushReceiver extends PushReceiver {
 Register the custom BroadcastReceiver to AndroidManifest.xml:
 
 ```xml
-<!--Here, change com.tencent.qcloud.tim.demo.thirdpush.HUAWEIPushReceiver to the complete class name in your app-->
+<!--Here, change com.tencent.qcloud.tim.demo.thirdpush.HUAWEIPushReceiver to the complete class name in your App-->
 <receiver android:name="com.tencent.qcloud.tim.demo.thirdpush.HUAWEIPushReceiver"
     android:permission="com.tencent.qcloud.tim.tuikit.permission.PROCESS_PUSH_MSG">
     <intent-filter>
@@ -189,11 +186,11 @@ Register the custom BroadcastReceiver to AndroidManifest.xml:
 </receiver>
 ```
 
-#### Step 3.4: Register Huawei Push in your app
+#### Step 3.4: Register Huawei Push in your App
 
 If you choose to enable the Huawei push service, you need to call `HMSAgent.init` in `onCreate` of the Application to initialize the Huawei push service.
 
-After successful registration, you will receive the registration result in `onToken` of the BroadcastReceiver customized in [Step 3.3](#Step3_3). The `token` in it is the unique identifier of the current app on the current device. Please record the `token` information.
+After successful registration, you will receive the registration result in `onToken` of the BroadcastReceiver customized in [Step 3.3](#Step3_3). The `token` in it is the unique identifier of the current App on the current device. Please record the `token` information.
 
 The following is sample code from the demo:
 
@@ -205,14 +202,14 @@ public class DemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        // Determines whether this is the main thread
+        // Determine whether this is the main thread
         if (SessionWrapper.isMainProcess(getApplicationContext())) {
             /**
-             * Initializes TUIKit
+             * TUIKit initialization function
              *
              * @param context  App context, usually corresponds to ApplicationContext
-             * @param sdkAppID, the SDKAppID assigned to you when registering the app in Tencent Cloud
-             * @param configs, TUIKit configuration options. The default values are suitable in most cases. See the API documentation if you want to customize them.
+             * @param sdkAppID The SDKAppID assigned to you when registering the App in Tencent Cloud
+             * @param configs  Relevant configuration items of TUIKit. Usually, you can use the default configuration. For special configuration, refer to the API Documentation.
              */
             long current = System.currentTimeMillis();
             TUIKit.init(this, Constants.SDKAPPID, BaseUIKitConfigs.getDefaultConfigs());
@@ -243,7 +240,7 @@ public class DemoApplication extends Application {
 }
 ```
 
-Obtain token from the main interface:
+Obtaining the token from the main interface:
 
 ```
 if (IMFunc.isBrandHuawei()) {
@@ -279,10 +276,10 @@ public static final String HW_PUSH_APPID = "1234567890"; // See the checklist.
 /****** Huawei offline push parameters end ******/
 ```
 
-- Send Certificate ID and token:
+- Report the push certificate ID and token:
 ```java
 /**
- * Report Certificate ID and regId to IM in ThirdPushTokenMgr.java
+ * Report the push certificate ID and device information in ThirdPushTokenMgr.java
  */
 public class ThirdPushTokenMgr {
     private static final String TAG = "ThirdPushTokenMgr";
@@ -340,27 +337,25 @@ public class ThirdPushTokenMgr {
 
 ### Step 5: Offline push
 
-After the certificate ID and regId are successfully reported, the IM server sends messages via Huawei push notifications to the user when the app has been killed but the user has not logged out of IM.
+After the certificate ID and token are successfully reported, the IM server sends messages via Huawei push notifications to the user when the App has been killed but the user has not logged out of IM.
 
 >
 > - Huawei push is not 100% successful in reaching the target users.
-> - Huawei push may be delayed. Usually, this is related to the timing of app killing. In some cases, it is related to the Huawei push service.
-> - If the IM user has logged out or was force logged out by the IM server (for example, due to login on other terminals), the device will not receive push messages.
+> - Huawei push may be delayed. Usually, this is related to the timing of App killing. In some cases, it is related to the Huawei push service.
+> - If the IM user has logged out or been forced offline by the IM server (for example, due to login on another device), the device cannot receive push messages.
 
 <span id="click"></span>
-## Configuring Click Events
-You can select one of the following events: **Open app**, **Open URL**, or **Open specific app interface**.
+## Configuring the Notification Bar Message Click Event
+You can select one of the following events: **Open App**, **Open URL**, or **Open specific App interface**.
 
-### Open app
-This is the default event, which opens the app once the notification bar message is clicked.
-![](https://main.qcloudimg.com/raw/0a53194ae0752382a8f1b9104242a572.png)
+### Open App
+This is the default event, which opens the App once the notification bar message is clicked.
 
  ### Open URL
-You need to select **Open URL** in [Step 2](#Step2) and enter a URL that starts with either `http` or `https`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/446026072740e500751ddbdad1e1dc3d.png)
+You need to select **Open URL** in [Step 2: Add a certificate](#Step2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
 
-### Open specific app interface
-1. Open manifest in a text editor and configure the `intent-filter` of the Activity you want to open as shown:
+### Open specific App interface
+1. In manifest, configure the `intent-filter` of the Activity to be opened. The sample code is as follows:
   
 	```
 	<activity
@@ -393,16 +388,15 @@ You need to select **Open URL** in [Step 2](#Step2) and enter a URL that starts 
     intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.chat.ChatActivity;end
     ```
 
-3. Select **Open specific app interface** in [Step 2](#Step2) and enter the result above.
- ![](https://main.qcloudimg.com/raw/708d57faeac0585b3dc402c1ea7129fc.png)
+3. Select **Open specific App interface** in [Step 2: Add a certificate](#Step2) and enter the result above.
 
 <span id="section4"></span>
 ## Custom Content Pass Through
-Select **Open app** or **Open specific app interface** when configuring **Click event** in [Step 2](#Step2) to use custom content pass through.
+Select **Open App** or **Open specific App interface** when configuring **Click event** in [Step 2: Add a certificate](#Step2) to support custom content pass through.
 
 ### Step 1: Custom content configuration (Sender)
 Set the custom content for the notification bar message before sending the message.
-- Android sample:
+- Sample on Android:
 
   ```
   String extContent = "ext content";
@@ -415,18 +409,18 @@ Set the custom content for the notification bar message before sending the messa
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527).
 
 ### Step 2: Custom content configuration (receiver)
-The client obtains the custom content from the corresponding `Activity` once the notification bar message is clicked.
+The client will obtain the custom content from the corresponding `Activity` once the notification bar message is clicked.
 
   ```
   Bundle bundle = getIntent().getExtras();
   String extContent = bundle.get("ext");
   ```
 
-## FAQ
+## FAQs
 
-### If the app uses obfuscation, how can I prevent exceptions in the Huawei offline push feature?
+### If the App uses obfuscation, how can I prevent exceptions in the Huawei offline push feature?
 
-If your app uses obfuscation, to prevent exceptions in the Huawei offline push feature, you need to keep the custom BroadcastReceiver and add obfuscation rules by referring to the following:
+If your App uses obfuscation, to prevent exceptions in the Huawei offline push feature, you need to keep the custom BroadcastReceiver and add obfuscation rules by referring to the following:
 > The following code is an official sample from Huawei. Please modify it according to your actual situation before use.
 
 ```
@@ -440,7 +434,7 @@ If your app uses obfuscation, to prevent exceptions in the Huawei offline push f
 -keep class com.huawei.updatesdk.**{*;}
 -keep class com.huawei.hms.**{*;}
 -keep class com.huawei.android.hms.agent.**{*;}  
-# Change com.tencent.qcloud.tim.demo.thirdpush.HUAWEIPushReceiver to the complete class name defined in your app.
+# Change com.tencent.qcloud.tim.demo.thirdpush.HUAWEIPushReceiver to the complete class name defined in your App.
 -keep com.tencent.qcloud.tim.demo.thirdpush.HUAWEIPushReceiver {*;}
 ```
 
@@ -453,5 +447,5 @@ Huawei does not support custom notification sounds.
 2. According to the push process, confirm whether the Huawei push certificate information is correctly configured on the [IM console](https://console.qcloud.com/avc).
 3. Confirm that your project’s [Huawei push SDK integration](#Step3) configuration is correct and that you have obtained the token.
 4. Confirm that you have [reported push information](#Step4) to the IM server correctly.
-5. Manually kill the app on your device, send a few messages, and confirm whether you receive notifications within one minute.
+5. Manually kill the App on your device, send a few messages, and confirm whether you receive notifications within one minute.
 

@@ -5,7 +5,7 @@ This document describes how to automatically purge the cached files specified in
 
 ## Background
 
-When any static content needs to be updated, the old resource in COS will be overwritten by the updated one or deleted. If the configured CDN cache validity period is too long, some edge servers of CDN may still cache the old resource. If the validity period is too short, acceleration may be affected. For more information, see [Cache Expiration Configuration](https://intl.cloud.tencent.com/document/product/228/6290).
+When any static content needs to be updated, the old resource in COS will be overwritten by the updated one or deleted. If the configured CDN cache validity period is too long, some edge servers of CDN may still cache the old resource. If the validity period is too short, acceleration may be affected. For more information, see [Node cache configuration](https://intl.cloud.tencent.com/document/product/228/35317).
 
 For this reason, you need to use the [cache purge](https://intl.cloud.tencent.com/document/product/228/6299) feature in the CDN Console to manually purge the specified URL to delete the invalid cached files or update the resource.
 
