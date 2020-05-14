@@ -1,5 +1,5 @@
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and choose **Products** > **Networking** > **Virtual Private Cloud** to open the Virtual Private Cloud (VPC) console.
-2. Click **Cloud Connect Network** in the left-side pane to open the Cloud Connect Network (CCN) management page.
+2. Select 【Products】>【Networking】>【Cloud Connect Network】in the top navigation bar to open the Cloud Connect Network (CCN) management page.
 3. Click **Create**. 
 ![](https://main.qcloudimg.com/raw/0162c7ee096decf3be17c9d8e8f43c26.png)
 4. In the window that appears, enter a name and description for the new CCN instance.
