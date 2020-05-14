@@ -19,6 +19,7 @@ The list below contains only the API request parameters and certain common param
 | StartTime | Yes | Integer | Start time |
 | LookupAttributes.N | No | Array of [LookupAttribute](https://intl.cloud.tencent.com/document/api/1021/34209#LookupAttribute) | Filter |
 | MaxResults | No | Integer | Maximum number of logs to be returned |
+| Mode | No | String | CloudAudit mode. Valid values: standard (standard mode), quick (expedited mode); Default value: standard.|
 | NextToken | No | String | Credential for viewing more logs |
 
 ## 3. Output Parameters

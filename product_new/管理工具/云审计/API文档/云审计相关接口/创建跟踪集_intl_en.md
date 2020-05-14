@@ -104,6 +104,7 @@ The following only lists the error codes related to this API. For other error co
 
 | Error Code | Description |
 |---------|---------|
+| FailedOperation.CreateBucketFail | Failed to create the COS bucket. |
 | InternalError.CmqError | An exception occurred during CMQ queue creation, probably because the CMQ queue to be created already exists, or your account has no permission or is in arrears. |
 | InternalError.CreateAuditError | Error creating the tracking set. Please submit a ticket. |
 | InvalidParameterValue.AuditNameError | Tracking set name is non-compliant. |

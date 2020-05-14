@@ -57,6 +57,7 @@ Code in Error indicates the error code, while Message indicates the specific inf
 
 | Error Code | Description |
 |:-------|:-----|
+| FailedOperation.CreateBucketFail | Failed to create the COS bucket. |
 | InternalError.CmqError | An exception occurred during CMQ queue creation, probably because the CMQ queue to be created already exists, or your account has no permission or is in arrears. |
 | InternalError.CreateAuditError | Error creating the tracking set. Please submit a ticket. |
 | InternalError.DeleteAuditError | Failed to delete the tracking set. Please submit a ticket. |
