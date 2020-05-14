@@ -1,24 +1,24 @@
-## Configuration Process of Nginx HTTPS Two-Way Authentication
+## Configuration Process for Nginx HTTPS Mutual Authentication
 
-Here, we use the third-party developer domain name `http://www.example.com` as an example and two cases may arise:
+This document uses the third-party developer domain name `http://www.example.com` as an example. The following two cases may arise:
 
-- **The third-party developer already has a certificate issued by a third-party authority.**
- - The developer prepares the certificate `www.example.com.crt` issued by and the key `www.example.com.key` assigned by the third-party authority for `www.example.com`. Note that the certificate must be issued by a third-party authority, such as Topway or GlobalSign.
- - IM provides the developer backend with a CA certificate [TencentQQAuthCA.crt](http://share.weiyun.com/7d86303625fda66998bcc46f79320503), which is used to authenticate the certificate of the requesting party (that is, IM).
- - Configure by referring to the "Reference for Nginx HTTPS Two-Way Authentication Configuration" below.
+- **The third-party developer already has a certificate issued by an authoritative third party.**
+ - The developer prepares the certificate `www.example.com.crt` issued by and the private key `www.example.com.key` assigned by the authoritative third party for `www.example.com`. Note that the certificate must be issued by an authoritative third party, such as Topway or GlobalSign.
+ - IM provides the developer backend with a CA certificate [TencentQQAuthCA.crt](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/TencentQQAuthCA.crt.zip), which is used to verify the certificate of the requesting party (IM).
+ - Configure by referring to the **Reference for Nginx HTTPS Mutual Authentication Configuration** below.
 
 - **The third-party developer sends an application to IM, requesting IM to issue a certificate for its domain name.**
- - The developer provides IM with the domain name of the developer backend, for example, `www.example.com`.
- - IM issues a certificate `www.example.com.crt` and assigns a key `www.example.com.key` for the developer backend with the domain name `www.example.com`.
- - IM provides the developer backend with a CA certificate [TencentQQAuthCA.crt](http://share.weiyun.com/7d86303625fda66998bcc46f79320503), which is used to authenticate the certificate of the requesting party (that is, IM).
- - Configure by referring to the "Reference for Nginx HTTPS Two-Way Authentication Configuration" below.
+ - The developer [configures the callback URL](https://intl.cloud.tencent.com/document/product/1047/34520), such as `www.example.com`, in the console.
+ - IM issues the certificate `www.example.com.crt` and assigns the private key `www.example.com.key` to the developer with the domain name `www.example.com`. The developer can [download the certificate](https://intl.cloud.tencent.com/document/product/1047/34520#.E4.B8.8B.E8.BD.BD-https-.E5.8F.8C.E5.90.91.E8.AE.A4.E8.AF.81.E8.AF.81.E4.B9.A6) from the console.
+ - IM provides the developer backend with a CA certificate [TencentQQAuthCA.crt](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/TencentQQAuthCA.crt.zip), which is used to verify the certificate of the requesting party (IM).
+ - Perform configuration by referring to the **Reference for Nginx HTTPS Mutual Authentication Configuration** below.
 
-## Reference for Nginx HTTPS Two-Way Authentication Configuration
+## Reference for Nginx HTTPS Mutual Authentication Configuration
 
 1. Copy `www.example.com.crt`, `www.example.com.key`, and `TencentQQAuthCA.crt` to the conf folder under the Nginx installation directory.
-2. Modify the **nginx.conf** file based on the following reference configuration:
+2. Modify the **nginx.conf** file. The reference configuration is as follows:
 ```
-server { 
+server {
     listen 443 ssl;
     ssl_protocols TLSv1 TLSv1.1;
     server_name            www.example.com; # Domain name
