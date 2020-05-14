@@ -5,7 +5,7 @@ Message push is a task involving the collaboration of many associated modules. A
 
 **Client troubleshooting**
 - Check notification settings on the device
-Please select **Notifications** > **app name** and check whether your app has the permission to push messages.
+Please select **Notifications** > **application name** and check whether your application has the permission to push messages.
 - Check network settings on the device
 A device network problem may cause the client to fail to get the token used to receive messages when signing up with APNs, which results in the inability to use the TPNS service to push message to the specified device.
 
@@ -34,17 +34,17 @@ When the SDK APIs are used to bind or unbind an account or tag, the TPNS server 
 
 
 ### The device prompts an error "No valid "aps-environment" entitlement string found for application". What should I do?
-Check whether the `bundle id` configured in the Xcode project matches the configured `Provision Profile` file and whether the `Provision Profile` file corresponding to the app has been configured with the message push capability.
+Check whether the `bundle id` configured in the Xcode project matches the configured `Provision Profile` file and whether the `Provision Profile` file corresponding to the application has been configured with the message push capability.
 
 
 
 ### How does the client redirect or respond based on the message content?
 
-When an iOS device receives a push message and the user taps the message to open the app, the app will respond differently according to the status:
+When an iOS device receives a push message and the user taps the message to open the app, the application will respond differently according to the status:
 
-- This function will be invoked if the app status is "not running".
- - If `launchOptions` contains `UIApplicationLaunchOptionsRemoteNotificationKey`, it means that the user's tap on the push message will cause the app to launch.
- - If the corresponding key value is not included, it means that the app launch is not caused by the tap on the message but probably by the tap on the icon or other actions.
+- This function will be invoked if the application status is "not running".
+ - If `launchOptions` contains `UIApplicationLaunchOptionsRemoteNotificationKey`, it means that the user's tap on the push message will cause the application to launch.
+ - If the corresponding key value is not included, it means that the application launch is not caused by the tap on the message but probably by the tap on the icon or other actions.
 	```objective-c
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 	{
@@ -53,7 +53,7 @@ When an iOS device receives a push message and the user taps the message to open
 			// Then process logically based on the message content
 	}
 	```
-- If the app status is "in the foreground" or "in the background but still active":
+- If the application status is "in the foreground" or "in the background but still active":
  - On iOS 7.0+, if the Remote Notification feature is used, the following code needs to be used as the handler:
 	```objective-c
 	- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
@@ -65,7 +65,7 @@ When an iOS device receives a push message and the user taps the message to open
 		completionHandler();
 	}
 
-	// This API needs to be called when the app pops up the push message in the foreground
+	// This API needs to be called when the application pops up the push message in the foreground
 	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
 		completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
 	}
@@ -97,13 +97,41 @@ Assign the value `1` to `content-available` and do not use `alert`, `badge`, or 
 
 
 ### What should I do if `DeviceToken` is not returned occasionally for registration in the development environment of iOS 13?
-This problem is caused by instability of APNs. You can restart the device to fix it. For more information, please see [Not Getting APNs Device Token on iOS 13](https://stackoverflow.com/questions/58264338/not-getting-apns-device-token-on-ios-13).
+This problem is caused by instability of APNs. You can fix it in the following ways:
+1. Insert a SIM card into the phone and use the 4G network.
+2. Uninstall and reinstall the application, restart the application, or shut down and restart the phone.
+3. Use a package for the production environment.
+4. Use another iPhone on iOS 13.
 
 
 ### How do I expand the testing scope on iOS if the number of testing devices is limited?
 1. Enterprise signature certificate
-Apply for enterprise signature and push certificates and release your app as follows:
-Use the enterprise signature certificate to build and release your app. Testers can download and install the app through the dedicated enterprise channel.
+Apply for enterprise signature and push certificates and release your application as follows:
+Use the enterprise signature certificate to build and release your app. Testers can download and install the application through the dedicated enterprise channel.
 2. App Store signature certificate
 Use the current push certificate released on App Store as follows:
-Release the preview version in TestFlight: upload the IPA package to [App Store Connect](https://appstoreconnect.apple.com), use TestFlight to create a beta version, and set the list of testers (Apple IDs) for the specified version in TestFlight. Testers can download and install your app through the official TestFlight app on App Store.
+Release the preview version in TestFlight: upload the IPA package to [App Store Connect](https://appstoreconnect.apple.com), use TestFlight to create a beta version, and set the list of testers (Apple IDs) for the specified version in TestFlight. Testers can download and install your application through the official TestFlight application on App Store.
+
+
+### For iOS, how do I configure to change the badge number only without displaying the message?
+When creating a push, you can use the API to specify the notification panel message type, leave the title empty, and only set `badge_type`. For more information, please see the [API documentation](https://intl.cloud.tencent.com/document/product/1024/33764).
+Below is a sample:
+```
+{
+    "platform": "ios",
+    "audience_type": "token",
+    "environment":"dev",
+        "token_list": [
+    "05a8ea6924590dd3a94480fa1c9fc8448b4e"],
+    "message_type":"notify",
+    "message":{
+    "ios":{
+        "aps": {
+            "badge_type":-2
+        }
+    }
+ }
+}
+```
+
+

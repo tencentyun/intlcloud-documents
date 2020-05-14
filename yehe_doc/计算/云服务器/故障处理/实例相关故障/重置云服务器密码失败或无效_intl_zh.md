@@ -21,11 +21,11 @@
 1. [使用 VNC 登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32496)。
 2. 在操作系统界面，右键单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>，选择【运行】，并在【运行】中输入 **services.msc**，并按 **Enter**，打开 “服务” 窗口。
 3. 检查是否存在 cloudbase-init 服务。如下图所示：
-![](https://main.qcloudimg.com/raw/28010d0ab93d4514743aceb4acc0d836.png)
+![](https://main.qcloudimg.com/raw/2615f5c0e68a31174c16c9a80884455c.png)
  - 是，执行下一步。
  - 否，重新安装 cloudbase-init 服务。具体操作请参见 [Windows 操作系统安装 Cloudbase-Init](https://intl.cloud.tencent.com/document/product/213/32364)。
 4. 双击打开 cloudbase-init 的属性。如下图所示：
-![](https://main.qcloudimg.com/raw/d5e75611d016bf6ec8fa556bce9cfbe7.png)
+![](https://main.qcloudimg.com/raw/10702cb2e359d6de36aec4960771c841.png)
 5. 在【常规】页签，检查 cloudbase-init 的启动类型是否设置为【自动】。
  - 是，执行下一步。
  - 否，将 cloudbase-init 的启动类型设置为【自动】。
@@ -38,11 +38,11 @@
 8. 在操作系统界面，右键单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>，选择【运行】，并在【运行】中输入 **regedit**，并按 **Enter**，打开 “注册表编辑器” 窗口。
 9. 在左侧的注册表导航中，依次展开【HKEY_LOCAL_MACHINE】>【SOFTWARE】>【Cloudbase Solutions】>【Cloudbase-Init】目录。
 10. 找到全部的 “LocalScriptsPlugin” 注册表，并检查 LocalScriptsPlugin 的数值数据是否为2。
-![](https://main.qcloudimg.com/raw/fed9c74d33bc920b33a1dad8eba1e80f.png)
+![](https://main.qcloudimg.com/raw/75580b56e3a28fb9e0559372eb33ff11.png)
  - 是，执行下一步。
  - 否，将 LocalScriptsPlugin 的数值数据设置为2。
 11. 在操作系统界面，单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>，选择【这台电脑】，检查设备和驱动器中是否加载了 CD-驱动器。如下图所示：
-![](https://main.qcloudimg.com/raw/33f595335f4463d7f94251e49fc4a24a.png)
+![](https://main.qcloudimg.com/raw/8755719fb39bb5f841f4c32897545233.png)
  - 是，[检查云服务器中安装的安全软件](#CheckSecuritySoftware)。
  - 否，在设备管理器中启动 CD-ROM 驱动器。
 
