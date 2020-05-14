@@ -1,11 +1,11 @@
-The IM SDK supports two types of conversations.
-- C2C conversation: is a one-to-one chat established between you and another user. Messages are read and sent through the conversation.
-- Group conversation: is a conversation among group members in a group chat. Messages sent in the group conversation can be received by all group members.
+The IM SDK supports the following two types of conversations:
+- C2C conversation: a one-to-one chat between you and another user. Messages are read and sent through the conversation.
+- Group conversation: a group chat among group members. All group members can receive messages sent in the group conversation.
 
 
 ## TIMConvCreate
 
-Creates a conversation.
+This API is used to create a conversation.
 
 **Prototype**
 
@@ -17,23 +17,23 @@ TIM_DECL int TIMConvCreate(const char* conv_id, enum TIMConvType conv_type, TIMC
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| conv_id | const char\* | The conversation ID. |
-| conv_type | enum TIMConvType | The conversation type. For more information, see [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype). |
-| cb | TIMCommCallback | The callback for conversation creation. For the definition and parameter explanation of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
-| user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
+| conv_id | const char\* | Conversation ID. |
+| conv_type | enum TIMConvType | Conversation type. For more information, see [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551). |
+| cb | TIMCommCallback | Callback for creating a conversation. For more information about the callback function definitions and parameter parsing, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550). |
+| user_data | const void\* | User-defined data. The IM SDK only transfers the user data to the callback function cb without processing the data. |
 
-**Returned value**
+**Return values**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
+| int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 >
-- A conversation is a one-to-one chat or a group chat, through which messages are sent and received between you and another user or in a group.
-- This API creates or obtains conversation information. The conversation type (group chat or one-to-one chat) and the conversation party identifier (the conversation party’s account or group ID) need to be specified. Conversation information is returned through the callback cb.
+- A conversation is a one-to-one or group chat, through which messages are sent and received between you and another user or in a group.
+- This API creates a conversation or obtains conversation information. The conversation type (group or one-to-one chat) and the conversation party identifier (the conversation party's account or group ID) need to be specified. Conversation information is returned through the callback cb.
 
 
-**Example 1: retrieving a one-to-one conversation with a party whose UserID is Windows-02**
+**Example 1: obtaining a one-to-one chat with a party whose UserID is Windows-02**
 
 ```c
 const void* user_data = nullptr; // Returned by the callback function
@@ -45,12 +45,12 @@ int ret = TIMConvCreate(userid, kTIMConv_C2C, [](int32_t code, const char* desc,
     // The callback returns detailed information about the conversation.
 }, user_data);
 if (ret != TIM_SUCC) {
-    // Failed to invoke the TIMConvCreate API.
+    // Failed to call the TIMConvCreate API.
 }
 ```
 
 
-**Example 2: retrieving a conversation whose group ID is Windows-Group-01**
+**Example 2: obtaining a group chat with the group ID set to Windows-Group-01**
 
 ```c
 const void* user_data = nullptr; // Returned by the callback function
@@ -62,14 +62,14 @@ int ret = TIMConvCreate(userid, kTIMConv_Group, [](int32_t code, const char* des
     // The callback returns detailed information about the conversation.
 }, user_data);
 if (ret != TIM_SUCC) {
-    // Failed to invoke the TIMConvCreate API.
+    // Failed to call the TIMConvCreate API.
 }
 ```
 
 
 ## TIMConvDelete
 
-Deletes a conversation.
+This API is used to delete a conversation.
 
 **Prototype**
 
@@ -81,23 +81,23 @@ TIM_DECL int TIMConvDelete(const char* conv_id, enum TIMConvType conv_type, TIMC
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| conv_id | const char\* | The conversation ID. |
-| conv_type | enum TIMConvType | The conversation type. For more information, see [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype). |
-| cb | TIMCommCallback | The callback for checking whether deleting the conversation succeeded or failed. For the definition of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
-| user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
+| conv_id | const char\* | Conversation ID. |
+| conv_type | enum TIMConvType | Conversation type. For more information, see [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551). |
+| cb | TIMCommCallback | Callback for whether a conversation is successfully deleted. For more information about the callback function definitions, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550). |
+| user_data | const void\* | User-defined data. The IM SDK only transfers the user data to the callback function cb without processing the data. |
 
-**Returned value**
+**Return values**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
+| int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> This API is used to delete a conversation. The conversation deletion result is returned through the callback.
+> This API is used to delete a conversation. Whether a conversion is successfully deleted is returned through the callback.
 
 
 ## TIMConvGetConvList
 
-Obtains the list of recent contact conversations.
+This API is used to obtain the conversation list of recent contacts.
 
 **Prototype**
 
@@ -109,18 +109,18 @@ TIM_DECL int TIMConvGetConvList(TIMCommCallback cb, const void* user_data);
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| cb | TIMCommCallback | The callback for obtaining the list of recent contact conversations. For the definition and parameter explanation of the callback function, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550#timcommcallback). |
-| user_data | const void\* | User-defined data. The IM SDK is only responsible for returning the user data to the callback function cb without any processing. |
+| cb | TIMCommCallback | Callback for obtaining the conversation list of recent contacts. For more information about the callback function definitions and parameter parsing, see [TIMCommCallback](https://intl.cloud.tencent.com/document/product/1047/34550). |
+| user_data | const void\* | User-defined data. The IM SDK only transfers the user data to the callback function cb without processing the data. |
 
-**Returned value**
+**Return values**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, the API is invoked successfully (the callback cb will be invoked only when the API returns TIM_SUCC). If other values than this are returned, the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
+| int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
 ## TIMConvSetDraft
 
-Sets the draft of a specified conversation.
+This API is used to set the draft of a specified conversation.
 
 **Prototype**
 
@@ -132,17 +132,17 @@ TIM_DECL int TIMConvSetDraft(const char* conv_id, enum TIMConvType conv_type, co
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| conv_id | const char\* | The conversation ID. |
-| conv_type | enum TIMConvType | The conversation type. For more information, see [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype). |
-| json_draft_param | const char\* | The JSON string of the set draft. |
+| conv_id | const char\* | Conversation ID. |
+| conv_type | enum TIMConvType | Conversation type. For more information, see [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551). |
+| json_draft_param | const char\* | JSON string of the set draft. |
 
-**Returned value**
+**Return values**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, it indicates that the API is invoked successfully. If other values than this are returned, it indicates that the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
+| int | If TIM_SUCC is returned, the API was called successfully. If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> Conversation drafts are often used to store pending messages that are currently input by the user.
+> Conversation drafts are usually used to save entered but not sent messages.
 
 
 **Example**
@@ -160,10 +160,10 @@ json_value_draft[kTIMDraftUserDefine] = "this is userdefine";
 json_value_draft[kTIMDraftMsg] = json_value_msg;
 
 if (TIM_SUCC != TIMConvSetDraft(userid.c_str(), TIMConvType::kTIMConv_C2C, json_value_draft.toStyledString().c_str())) {
-    // Failed to invoke the TIMConvSetDraft API.
+    // Failed to call the TIMConvSetDraft API.
 } 
 
-// json_value_draft.toStyledString().c_str() obtains the following json_draft_param JSON string:
+// The json_draft_param JSON string obtained by json_value_draft.toStyledString().c_str() is as follows:
 {
    "draft_edit_time" : 1551271429,
    "draft_msg" : {
@@ -181,7 +181,7 @@ if (TIM_SUCC != TIMConvSetDraft(userid.c_str(), TIMConvType::kTIMConv_C2C, json_
 
 ## TIMConvCancelDraft
 
-Deletes the draft of a specified conversation.
+This API is used to delete the draft of a specified conversation.
 
 **Prototype**
 
@@ -193,12 +193,12 @@ TIM_DECL int TIMConvCancelDraft(const char* conv_id, enum TIMConvType conv_type)
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| conv_id | const char\* | The conversation ID. |
-| conv_type | enum TIMConvType | The conversation type. For more information, see [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551#timconvtype). |
+| conv_id | const char\* | Conversation ID. |
+| conv_type | enum TIMConvType | Conversation type. For more information, see [TIMConvType](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-**Returned value**
+**Return values**
 
 | Type | Description |
 |-----|-----|
-| int | If TIM_SUCC is returned, it indicates that the API is invoked successfully. If other values than this are returned, it indicates that the API failed to be invoked. For the definition of each returned value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
+| int | If TIM_SUCC is returned, the API was called successfully. If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
