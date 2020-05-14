@@ -2,7 +2,7 @@ Transcoding is an offline task that converts a video bitstream. It changes param
 - Increased compatibility: a source video can be transcoded to formats (e.g., MP4) that are compatible with more types of devices for smooth playback.
 - Increased bandwidth adaptability: a source video can be transcoded for output in multiple definitions such as LD, SD, HD, and FHD. End users can select the most appropriate bitrate depending on their network conditions.
 - Improved playback efficiency: the moov atom can be moved from the end of an MP4 file to its beginning, so the video can be played before it is entirely downloaded.
-- Watermarking: a watermark can be added to a video to mark video ownership or copyright. For more information, please see [Watermarking](https://intl.cloud.tencent.com/document/product/266/33939).
+- Watermarking: a watermark can be added to a video to mark video ownership or copyright. For more information, please see [Watermark](https://intl.cloud.tencent.com/document/product/266/33939).
 - Reduced bandwidth consumption: with a more advanced codec (e.g., H.265), the bitrate of a video can be substantially reduced while retaining the original quality, which helps reduce the bandwidth consumption.
 
 After a video is transcoded, the playback URL of the output video can be obtained according to [Result Getting](#jghq). You can use your own player or a third-party player to play back the output video.
@@ -176,8 +176,7 @@ Below are instructions for initiating transcoding tasks in these ways:
 * Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, and specify this task flow as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922).
 * Upload through console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the target transcoding specification in the task flow, upload a video through the console, select [Automatic Processing After Upload](https://intl.cloud.tencent.com/document/product/266/33890), and specify to execute this task flow upon video upload completion.
 
-<span id="jghq"></span>
-## Result Getting
+## Result Getting<span id="jghq"></span>
 
 After initiating a transcoding task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the transcoding task is initiated (the fields with null value are omitted):
 
