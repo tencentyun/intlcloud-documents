@@ -47,13 +47,19 @@ The definition of a video during playback depends on the following two aspects:
 - The definition provided by the VOD server after the video is transcoded and published.
 - The network environment where the user watches the video. Decrease in definition during video playback may be caused by two factors: one is that a low-definition instead of high-definition video is stored in VOD; the other is that the player may be adapted to a low definition for playback due to poor network connection.
 
+
+
 ### What are blacklist/whitelist?
 
 The blacklist/whitelist can be used to allow or deny the requests for accessing videos published through player code from particular webpages.
-These lists are effective to videos published through player code. You can enable this feature globally and specify a blacklist or a whitelist. Each list can contain up to 10 URLs. It works by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
+These lists are effective to videos published through player code. You can enable this feature globally and specify a blacklist or a whitelist. Each list can contain up to 10 URLs by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
+
+### Does VOD support publishing links on WeChat Official Account?
+Yes.
 
 ### Can I add ads to videos published through an application player?
 Adding ads is currently not supported. We will support this feature as soon as possible.
 
+### Why isn't a video published in VOD played back automatically?
 
-
+If no custom configuration is made, the default configuration will be used when a video is uploaded and published, that is, the autoplay feature is disabled. However, you can modify this setting by checking **Autoplay** when publishing videos.
