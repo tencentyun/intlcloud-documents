@@ -10,7 +10,7 @@ DBbrain provides highly accurate data collection, exception analysis, diagnosis 
 ### Versatility
 DBbrain supports relational, NoSQL, NewSQL and many other types of databases, making it suitable for both in and off-cloud databases. It offers diagnosis and analysis not only for database instances in Tencent Cloud, but also those deployed in other clouds or on-premise databases, which facilitates hybrid cloud database management.
 
-### One-click mobile management
+### One-tap mobile management
 DBbrain can be used on mobile devices through the WeChat Mini Program ecosystem. You can easily track, manage and optimize your databases anytime, anywhere.
 
 ### AI support
