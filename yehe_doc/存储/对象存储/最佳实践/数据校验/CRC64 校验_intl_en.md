@@ -1,21 +1,21 @@
-## Introduction
+## Overview
 
-Errors may occur when data is transferred between the client and the server. COS can not only verify data integrity through [MD5 and custom attributes](https://intl.cloud.tencent.com/document/product/436/32467), but also the CRC64 check code.
+Errors may occur when data is transferred between the client and the server. COS can verify data integrity using [MD5 and custom attributes](https://intl.cloud.tencent.com/document/product/436/32467), or the CRC64 check code.
 
-COS will calculate the CRC64 of the newly uploaded object and store the result as object attributes. It will carry x-cos-hash-crc64ecma in the returned response header, which indicates the CRC64 value of the uploaded object calculated according to [ECMA-182 standard](https://www.ecma-international.org/publications/standards/Ecma-182.htm). If an object already has a CRC64 value stored before this feature is activated, COS will not calculate its CRC64 value, nor will it be returned when the object is obtained.
+COS will calculate the CRC64 of the newly uploaded object and store the result as object attributes. It will carry x-cos-hash-crc64ecma in the returned response header, which indicates the CRC64 value of the uploaded object calculated according to [ECMA-182 standard] (https://www.ecma-international.org/publications/standards/Ecma-182.htm). If an object already has a CRC64 value stored before this feature is activated, COS will not calculate its CRC64 value, nor will it be returned when the object is obtained.
 
-## Steps
+## Directions
 
 APIs that currently support CRC64 are:
 
+- Simple upload APIs
+	- [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) and [POST Object](https://intl.cloud.tencent.com/document/product/436/14690): you can get the CRC64 check value for your file in the returned response headers.
 - Multipart upload APIs
-	- Upload Part: Users can compare and verify the CRC64 value returned by COS with the value calculated locally.
-	- Complete Multipart Upload: If each part has a CRC64 attribute, the CRC64 value of the entire object is returned. It is not returned if some parts do not have the CRC64 value.
-	- When executing on Upload Part-Copy, the corresponding CRC64 value is returned.
-- When executing on PUT Object-Copy, if the source object has a CRC64 value, CRC64 is returned, otherwise it is not returned.
-- When executing on HEAD Object and GET Object, if the object has a CRC64 value, it is returned. Users can compare and verify the CRC64 value returned by COS with the locally calculated CRC64.
-
-> Currently, PUT Object and POST Object APIs of COS do not support CRC64.
+	- [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750): you can compare and verify the CRC64 value returned by COS against the value calculated locally.
+	- [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742): returns a CRC64 value for the entire object only if each part has a CRC64 attribute. Otherwise, no value is returned.
+- The [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) operation returns a corresponding CRC64 value.
+- When you call the [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881), the CRC64 value is returned only if the source object has one.
+- The [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) and [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) operations return the CRC64 value provided the object has one. You can compare and verify the CRC64 value returned by COS against that calculated locally.
 
 ## API Samples
 
@@ -25,11 +25,11 @@ The following is an example of the response obtained after a user sends an Uploa
 
 ```shell
 HTTP/1.1 200 OK
-Content-Length: 0
-Connection: close
-Date: Thu, 08 Aug 2019 09:15:29 GMT
+content-length: 0
+connection: close
+date: Thu, 05 Dec 2019 01:58:03 GMT
 etag: "358e8c8b1bfa35ee3bd44cb3d2cc416b"
-Server: tencent-cos
+server: tencent-cos
 x-cos-hash-crc64ecma: 15060521397700495958
 x-cos-request-id: NWRlODY0MmJfMjBiNDU4NjRfNjkyZl80ZjZi****
 ```
@@ -40,22 +40,22 @@ The following is an example of the response obtained after a user sends a Comple
 
 ```shell
 HTTP/1.1 200 OK
-Content-Type: application/xml
-Transfer-Encoding: chunked
-Connection: close
-Date: Thu, 08 Aug 2019 09:15:29 GMT
-Server: tencent-cos
+content-type: application/xml
+transfer-encoding: chunked
+connection: close
+date: Thu, 05 Dec 2019 02:01:17 GMT
+server: tencent-cos
 x-cos-hash-crc64ecma: 15060521397700495958
 x-cos-request-id: NWRlODY0ZWRfMjNiMjU4NjRfOGQ4Ml81MDEw****
 
 [Object Content]
 ```
 
-## SDK Sample
+## SDK Samples
 
 The following uses the Python SDK as an example to demonstrate how to verify an object. The complete sample code is as follows.
 
-> The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations] for Python SDK.(https://intl.cloud.tencent.com/document/product/436/31546).
+>The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations] for Python SDK.(https://intl.cloud.tencent.com/document/product/436/31546).
 
 #### 1. Initial configuration
 
@@ -74,11 +74,11 @@ import hashlib
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # Configure user attributes, including SecretId, SecretKey, and region
-# APPID has been removed from the configuration. Please add the APPID to the `Bucket` parameter in the format of BucketName-APPID.
+# APPID has been removed from the configuration. Please add the APPID to the `Bucket` parameter in the format of `BucketName-APPID`.
 secret_id = COS_SECRETID           # Replace with your own SecretId
 secret_key = COS_SECRETKEY         # Replace with your own SecretKey
 region = 'ap-beijing'      # Replace with your own region (which is Beijing in this sample)
-token = None               # If a temporary key is used, Token needs to be passed in, which is null by default. This can be left blank
+token = None                # If a temporary key is used, token needs to be passed in. This is optional and is null by default
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
 ```
@@ -102,8 +102,8 @@ local_crc64 =str(c64(object_body))
 ```python
 # Initialize the multipart upload
 response = client.create_multipart_upload(
-    Bucket='examplebucket-1250000000', # Replace with your own bucket name, examplebucket is a sample bucket, and 1250000000 is a sample APPID
-    Key='exampleobject-2',              # Replace with the key value of the uploaded object 
+    Bucket='examplebucket-1250000000',  #Replaced with your own bucket name. 'examplebucket' is a sample bucket, and '1250000000' is a sample APPID.
+    Key='exampleobject',              # Replaced with the key value of your uploaded object 
     StorageClass='STANDARD',            # Storage class of the object
 )
 # Get the UploadId of the multipart upload
@@ -132,20 +132,20 @@ while left_size > 0:
 
     response = client.upload_part(
         Bucket='examplebucket-1250000000',
-        Key='exampleobject',
+        Key=‘exampleobject’,
         Body=body,
         PartNumber=part_number,
         UploadId=upload_id,
     )   
     part_crc_64 = response['x-cos-hash-crc64ecma']# CRC64 returned by the server
     if local_part_crc64 != part_crc_64:# Data Check
-    	print 'MD5 check FAIL'
-    	exit(1);
+    	print 'crc64 check FAIL'
+    	exit(-1)
     etag = response['ETag']
     part_list.append({'ETag' : etag, 'PartNumber' : part_number})
 ```
 
-# 3. Complete Multipart Upload
+#### 5. Complete multipart upload
 
 After all parts are successfully uploaded, you need to complete the multipart upload. The CRC64 returned by COS and the CRC64 of the local object can be used for comparison and verification.
 
@@ -153,15 +153,15 @@ After all parts are successfully uploaded, you need to complete the multipart up
 # Complete the multipart upload
 response = client.complete_multipart_upload(
     Bucket='examplebucket-1250000000',      # Replace with your own bucket name, examplebucket is a sample bucket, and 1250000000 is a sample APPID
-    Key='exampleobject-2',              # Key value of the object 
+    Key=‘exampleobject’,             #Key value of the object 
     UploadId=upload_id,
-    MultipartUpload={       # Requires one-to-one correspondence between ETag and PartNumber for each part
+    MultipartUpload={       #Requires one-to-one correspondence between ETag and PartNumber for each part
         'Part' : part_list    
     },
 )
 crc64ecma = response['x-cos-hash-crc64ecma']
 if crc64ecma != local_crc64:# Data Check
-    print 'MD5 check FAIL'
-    exit(1);
+    print 'check crc64 Failed'
+    exit(-1)
 ```
 
