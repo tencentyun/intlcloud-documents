@@ -9,25 +9,24 @@ You can create an alarm policy in the following steps:
 4. Configure the basic items as shown below:
  - Policy Name: enter a policy name.
  - Remarks: add remarks to the policy.
- - Policy Type: select monitoring metrics.
+ - Policy Type: select the monitoring metric.
  - Project: select a project as needed.
 
 5. Configure alarm objects.
- - If you select "All objects", the alarm policy will be associated with all instances under the current account.
- - If you select "Select some objects", the alarm policy will be associated with the selected instances.
- - If you select "Select instance group", the alarm policy will be associated with the selected instance group.
+ - If you select "all objects", the alarm policy will be associated with all instances under the current account.
+ - If you select "some objects", the alarm policy will be associated with the selected instances.
+ - If you select "Instance group", the alarm policy will be associated with the selected instance group.
 
 6. Set the alarm trigger. You can either choose a trigger condition template or configure trigger conditions.
  - Trigger condition template
-  Enable "Trigger Condition Template" and select a configured template from the drop-down list. For detailed configurations, please see [Configuring trigger condition templates](https://intl.cloud.tencent.com/document/product/248/32817). If a newly created template is not displayed, click **Refresh** on the right.
- - Configure trigger conditions
+  Enable "Trigger Condition Template" and select a configured template from the drop-down list. For detailed configurations, please see [Configuring Trigger Condition Templates](https://intl.cloud.tencent.com/document/product/248/32817). If a newly created template is not displayed, click **Refresh** on the right.
+ - Configure trigger condition
 An alarm trigger is a semantic condition consisting of metric, statistical period, comparison relationship, threshold, duration, and notification frequency.
 For example, if the specified metric is `inbound packets`, the statistical period is `1 minute`, the comparison relationship is `>`, the threshold is `100 packets/sec`, the duration is `2 periods`, and the notification frequency is `once per day`, then the number of inbound packets will be collected once every minute, and an alarm will be triggered once per day if the number of inbound packets of a CLB listener is over 100 packets/sec for two consecutive times.
 
 7. Configure the alarm channel. Configure the recipient group, valid period, and receiving channel (email and object) as needed.
 
-8. You can set an existing policy as the default alarm policy, which will be automatically associated with new CLB instances purchased.
+8. Configure the optional API callback as needed. Enter a URL accessible over the public network as the callback API address (domain name or IP[:port][/path]), and Cloud Monitor will push alarm messages to this address promptly.
 
->
->- Only one default policy in the same policy type is allowed for each project.
->- The default alarm policy cannot be deleted.
+9. After completing the configuration, click **Complete**.
+
