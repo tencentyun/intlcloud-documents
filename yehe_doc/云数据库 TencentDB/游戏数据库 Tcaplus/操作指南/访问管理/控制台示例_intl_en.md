@@ -67,7 +67,7 @@ This policy denies the user the permission to manipulate tables (ID: tcaplus-c8d
         {
             "action": "tcaplusdb:*",
             "resource": [
-						"qcs::tcaplusdb::uin/16xxx472:table/tcaplus-c8d1caa4",
+						"qcs::tcaplusdb::uin/16xxx6472:table/tcaplus-c8d1caa4",
 						"qcs::tcaplusdb::uin/16xxx6472:table/tcaplus-d8d1cbb4",
 						],
             "effect": "deny"
