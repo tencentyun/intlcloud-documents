@@ -56,7 +56,7 @@
 2. 在用户列表页面找到需要授权的用户，单击右侧操作列的【授权】，如下图所示：
 ![](https://main.qcloudimg.com/raw/54bd4969d1f87498cbd09517c3ac974a.png)
 3. 在弹出的关联策略窗口中，单击【策略类型】>【预设策略】，筛选预设策略，如下图所示：
-![](https://main.qcloudimg.com/raw/28aa2691924277b84a84284375b42a04.png)
+![](https://main.qcloudimg.com/raw/647ae7d948e14c793ecc58b173c7aa61.png)
 4. 勾选需要授权的预设策略，单击【确定】，完成通过用户关联预设策略操作。
 
 #### 通过用户关联自定义策略
