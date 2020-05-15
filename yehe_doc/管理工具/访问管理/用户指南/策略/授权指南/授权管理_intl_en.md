@@ -56,7 +56,7 @@ Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview).
 2. On the user list page, find the user you want to authorize and click **Authorize** in the "Operation" column on the right as shown below:
 ![](https://main.qcloudimg.com/raw/eba7356c633d3b35496dfcb453db6a90.png)
 3. In the pop-up window, click **Policy Type** > **Preset Policy** to filter preset policies as shown below:
-![](https://main.qcloudimg.com/raw/5e909fd6f27e17f622afe4909036aee5.png)
+![](https://main.qcloudimg.com/raw/3dfe413fe94dcf46752262bd33214eda.png)
 4. Check the preset policy you want to associate and click **OK** to complete the association.
 
 #### Associating a user with a custom policy
