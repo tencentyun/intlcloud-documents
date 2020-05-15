@@ -1,6 +1,6 @@
 ## Billing Method
 Instant Messaging (IM) is pay-as-you-go on a monthly billing cycle.
-- Fees are billed by calendar month. Fees incurred within a calendar month will be deducted on the third day of the next month.
+- Fees are billed by calendar month. Fees incurred within a calendar month will be deducted on the 1st to 3rd day of the next month.
 
 
 ## Basic Services

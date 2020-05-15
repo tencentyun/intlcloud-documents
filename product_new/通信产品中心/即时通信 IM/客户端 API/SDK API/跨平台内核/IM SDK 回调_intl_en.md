@@ -1,9 +1,9 @@
-## Event Callbacks of the IM SDK
+## IM SDK Event Callbacks
 
 
 ### TIMRecvNewMsgCallback
 
-This is the callback for new messages.
+Callback for new messages.
 
 **Prototype**
 
@@ -15,25 +15,25 @@ typedef void (*TIMRecvNewMsgCallback)(const char* json_msg_array, const void* us
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| json_msg_array | Const char\* | Array of new messages |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| json_msg_array | Const char\* | New message array |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-> This callback is used to obtain the array of newly received messages. Note that elements in the message also compose an array, and each element is defined by `elem_type`.
+> This callback is used to obtain the newly received message array. Note that the elements in the message are also an array, and each element is defined by `elem_type`.
 
 
-**Example 1: Parse the message array**
+**Example 1: parse the message array.**
 
 ```c
-Json::Value json_value_msgs; // Parse the message
+Json::Value json_value_msgs; // Parse the message.
 Json::Reader reader;
 if (!reader.parse(json_msg_array, json_value_msgs)) {
     printf("reader parse failure!%s", reader.getFormattedErrorMessages().c_str());
     return;
 }
-for (Json::ArrayIndex i = 0; i < json_value_msgs.size(); i++) {  // Traverse messages
+for (Json::ArrayIndex i = 0; i < json_value_msgs.size(); i++) {  // Traverse the messages.
     Json::Value& json_value_msg = json_value_msgs[i];
     Json::Value& elems = json_value_msg[kTIMMsgElemArray];
-    for (Json::ArrayIndex m = 0; m < elems.size(); m++) {   // Traverse elements
+    for (Json::ArrayIndex m = 0; m < elems.size(); m++) {   // Traverse the elements.
         Json::Value& elem = elems[i];
 
         uint32_t elem_type = elem[kTIMElemType].asUInt();
@@ -63,7 +63,7 @@ for (Json::ArrayIndex i = 0; i < json_value_msgs.size(); i++) {  // Traverse mes
 ```
 
 
-**Example 2: Return the JSON string of a text message. For details on JSON keys, see [Message](https://intl.cloud.tencent.com/document/product/1047/34551#message) and [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551#textelem).**
+**Example 2: return the JSON string of a text message. For details on the JSON keys, see [Message](https://intl.cloud.tencent.com/document/product/1047/34551#message) and [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551#textelem).**
 
 ```c
 [
@@ -89,7 +89,7 @@ for (Json::ArrayIndex i = 0; i < json_value_msgs.size(); i++) {  // Traverse mes
 ```
 
 
-**Example 3: Return the JSON string of a group notification. For details on JSON keys, see [Message](https://intl.cloud.tencent.com/document/product/1047/34551#message) and [GroupReportElem](https://intl.cloud.tencent.com/document/product/1047/34551#groupreportelem).**
+**Example 3: return the JSON string of a group notification. For details on the JSON keys, see [Message](https://intl.cloud.tencent.com/document/product/1047/34551#message) and [GroupReportElem](https://intl.cloud.tencent.com/document/product/1047/34551#groupreportelem).**
 
 ```c
 [
@@ -131,7 +131,7 @@ for (Json::ArrayIndex i = 0; i < json_value_msgs.size(); i++) {  // Traverse mes
 ```
 
 
-**Example 4: Return the JSON string of a group tip. For details on JSON keys, see [Message](https://intl.cloud.tencent.com/document/product/1047/34551#message) and [GroupTipsElem](https://intl.cloud.tencent.com/document/product/1047/34551#grouptipselem).**
+**Example 4: return the JSON string of a group tip. For details on the JSON keys, see [Message](https://intl.cloud.tencent.com/document/product/1047/34551#message) and [GroupTipsElem](https://intl.cloud.tencent.com/document/product/1047/34551#grouptipselem).**
 
 ```c
 [
@@ -184,7 +184,7 @@ for (Json::ArrayIndex i = 0; i < json_value_msgs.size(); i++) {  // Traverse mes
 
 ### TIMMsgReadedReceiptCallback
 
-This is the callback for message read receipts.
+Callback for message read receipt.
 
 **Prototype**
 
@@ -196,17 +196,17 @@ typedef void (*TIMMsgReadedReceiptCallback)(const char* json_msg_readed_receipt_
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| json_msg_readed_receipt_array | Const char\* | Array of message read receipts |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| json_msg_readed_receipt_array | Const char\* | Message read receipt array |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-**Example**
+**Sample**
 
 ```c
 void MsgReadedReceiptCallback(const char* json_msg_readed_receipt_array, const void* user_data) {
     Json::Value json_value_receipts;
     Json::Reader reader;
     if (!reader.parse(json_msg_readed_receipt_array, json_value_receipts)) {
-        // Failed to parse the JSON string
+        // Failed to parse the JSON string.
         return;
     }
     
@@ -225,7 +225,7 @@ void MsgReadedReceiptCallback(const char* json_msg_readed_receipt_array, const v
 
 ### TIMMsgRevokeCallback
 
-This is the callback for recalling received messages.
+Callback for revoking received messages.
 
 **Prototype**
 
@@ -237,17 +237,17 @@ typedef void (*TIMMsgRevokeCallback)(const char* json_msg_locator_array, const v
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| json_msg_locator_array | Const char\* | Array of message locators |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| json_msg_locator_array | Const char\* | Message locator array |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-**Example**
+**Sample**
 
 ```c
 void MsgRevokeCallback(const char* json_msg_locator_array, const void* user_data) {
     Json::Value json_value_locators;
     Json::Reader reader;
     if (!reader.parse(json_msg_locator_array, json_value_locators)) {
-        // Failed to parse the JSON string
+        // Failed to parse the JSON string.
         return;
     }
     for (Json::ArrayIndex i = 0; i < json_value_locators.size(); i++) {
@@ -261,7 +261,7 @@ void MsgRevokeCallback(const char* json_msg_locator_array, const void* user_data
         uint64_t rand      = json_value_locator[kTIMMsgLocatorRand].asUInt64();
         bool isself        = json_value_locator[kTIMMsgLocatorIsSelf].asBool();
     
-        // Message recall logic
+        // Message revocation logic
     }
 }
 ```
@@ -269,7 +269,7 @@ void MsgRevokeCallback(const char* json_msg_locator_array, const void* user_data
 
 ### TIMMsgElemUploadProgressCallback
 
-This is the callback for checking the progress of uploading files pertaining to message elements.
+Callback for checking the progress of uploading files pertaining to message elements.
 
 **Prototype**
 
@@ -282,24 +282,24 @@ typedef void (*TIMMsgElemUploadProgressCallback)(const char* json_msg, uint32_t 
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_msg | Const char\* | New message |
-| index | Uint32_t | Subscript of the uploaded `Elem` element in the `json_msg` message |
-| cur_size | Uint32_t | Currently uploaded size |
-| total_size | Uint32_t | Totally uploaded size |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| index | Uint32_t | Subscript of the uploaded element `Elem` in the `json_msg` message |
+| cur_size | Uint32_t | Current size uploaded |
+| total_size | Uint32_t | Total size uploaded |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-**Example**
+**Sample**
 
 ```c
 void MsgElemUploadProgressCallback(const char* json_msg, uint32_t index, uint32_t cur_size, uint32_t total_size, const void* user_data) {
     Json::Value json_value_msg;
     Json::Reader reader;
     if (!reader.parse(json_msg, json_value_msg)) {
-        // Failed to parse the JSON string
+        // Failed to parse the JSON string.
         return;
     }
     Json::Value& elems = json_value_msg[kTIMMsgElemArray];
     if (index >= elems.size()) {
-        // Value of index exceeds the number of message elements
+        // The value of index exceeds the number of message elements.
         return;
     }
     uint32_t elem_type = elems[index][kTIMElemType].asUInt();
@@ -324,7 +324,7 @@ void MsgElemUploadProgressCallback(const char* json_msg, uint32_t index, uint32_
 
 ### TIMGroupTipsEventCallback
 
-This is the callback for group events.
+Callback for group events.
 
 **Prototype**
 
@@ -336,12 +336,12 @@ typedef void (*TIMGroupTipsEventCallback)(const char* json_group_tip_array, cons
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| json_group_tip_array | Const char\* | Group tip list |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| json_group_tip_array | const char\* | Group tip list |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 ### TIMConvEventCallback
 
-This is the callback for conversation events.
+Callback for conversation events.
 
 **Prototype**
 
@@ -353,23 +353,23 @@ typedef void (*TIMConvEventCallback)(enum TIMConvEvent conv_event, const char* j
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| conv_event | Enum TIMConvEvent | The conversation event type. For details, see [TIMConvEvent](https://intl.cloud.tencent.com/document/product/1047/34551#timconvevent). |
+| conv_event | Enum TIMConvEvent | Conversation event type. For details, see [TIMConvEvent](https://intl.cloud.tencent.com/document/product/1047/34551#timconvevent). |
 | json_conv_array | Const char\* | Conversation information list |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-**Example: Parse conversation event callback data**
+**Example: parse the conversation event callback data.**
 
 ```c
 void ConvEventCallback(TIMConvEvent conv_event, const char* json_conv_array, const void* user_data) {
     Json::Reader reader;
     Json::Value json_value;
     if (!reader.parse(json_conv_array, json_value)) {
-        // Failed to parse the JSON string
+        // Failed to parse the JSON string.
         return;
     }
-    for (Json::ArrayIndex i = 0; i < json_value.size(); i++) { // Traverse conversation types
+    for (Json::ArrayIndex i = 0; i < json_value.size(); i++) { // Traverse the conversation types.
         Json::Value& convinfo = json_value[i];
-        // Identify the conversation event type
+        // Identifies the conversation event type.
         if (conv_event == kTIMConvEvent_Add) {
 
         }
@@ -386,7 +386,7 @@ void ConvEventCallback(TIMConvEvent conv_event, const char* json_conv_array, con
 
 ### TIMNetworkStatusListenerCallback
 
-This is the callback for the network state.
+Callback for the network connection status.
 
 **Prototype**
 
@@ -398,12 +398,12 @@ typedef void (*TIMNetworkStatusListenerCallback)(enum TIMNetworkStatus status, i
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| status | Enum TIMNetworkStatus | The network state. For details, see [TIMNetworkStatus](https://intl.cloud.tencent.com/document/product/1047/34551#timnetworkstatus). |
+| status | Enum TIMNetworkStatus | Network status. For details, see [TIMNetworkStatus](https://intl.cloud.tencent.com/document/product/1047/34551#timnetworkstatus). |
 | code | Int32_t | ERR_SUCC: succeeded. Others: failed. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
-| desc | Const char\* | Error description string |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| desc | Const char\* | String of the error description |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-**Example: Process the callback for monitoring the network state**
+**Example: process the callback for monitoring the network status.**
 
 ```c
 void NetworkStatusListenerCallback(TIMNetworkStatus status, int32_t code, const char* desc, const void* user_data) {
@@ -431,7 +431,7 @@ void NetworkStatusListenerCallback(TIMNetworkStatus status, int32_t code, const 
 
 ### TIMKickedOfflineCallback
 
-This is the callback for forcible logout.
+Callback for forced logout.
 
 **Prototype**
 
@@ -443,11 +443,11 @@ typedef void (*TIMKickedOfflineCallback)(const void* user_data);
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 ### TIMUserSigExpiredCallback
 
-This is the callback for user ticket expiration.
+Callback for user ticket expiration.
 
 **Prototype**
 
@@ -459,11 +459,11 @@ typedef void (*TIMUserSigExpiredCallback)(const void* user_data);
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 ### TIMOnAddFriendCallback
 
-This is the callback for adding friends.
+Callback for adding friends.
 
 **Prototype**
 
@@ -476,7 +476,7 @@ typedef void(*TIMOnAddFriendCallback)(const char* json_identifier_array, const v
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_identifier_array | Const char\* | List of added friends |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 **Example: json_identifier_array**
 
@@ -487,7 +487,7 @@ typedef void(*TIMOnAddFriendCallback)(const char* json_identifier_array, const v
 
 ### TIMOnDeleteFriendCallback
 
-This is the callback for deleting friends.
+Callback for deleting friends.
 
 **Prototype**
 
@@ -500,7 +500,7 @@ typedef void(*TIMOnDeleteFriendCallback)(const char* json_identifier_array, cons
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_identifier_array | Const char\* | List of deleted friends |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 **Example: json_identifier_array**
 
@@ -511,7 +511,7 @@ typedef void(*TIMOnDeleteFriendCallback)(const char* json_identifier_array, cons
 
 ### TIMUpdateFriendProfileCallback
 
-This is the callback for updating friend profiles.
+Callback for updating friend profiles.
 
 **Prototype**
 
@@ -524,7 +524,7 @@ typedef void(*TIMUpdateFriendProfileCallback)(const char* json_friend_profile_up
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_friend_profile_update_array | Const char\* | Friend profile update list |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 **Example: json_friend_profile_update_array**
 
@@ -543,7 +543,7 @@ typedef void(*TIMUpdateFriendProfileCallback)(const char* json_friend_profile_up
 
 ### TIMFriendAddRequestCallback
 
-This is the callback for friend requests.
+Callback for friend requests.
 
 **Prototype**
 
@@ -556,7 +556,7 @@ typedef void(*TIMFriendAddRequestCallback)(const char* json_friend_add_request_p
 | Parameter | Type | Description |
 |-----|-----|-----|
 | json_friend_add_request_pendency_array | Const char\* | List of pending friend requests |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 **Example: json_friend_add_request_pendency_array**
 
@@ -574,7 +574,7 @@ typedef void(*TIMFriendAddRequestCallback)(const char* json_friend_add_request_p
 
 ### TIMLogCallback
 
-This is the callback for logs.
+Callback for logs.
 
 **Prototype**
 
@@ -586,13 +586,13 @@ typedef void (*TIMLogCallback)(enum TIMLogLevel level, const char* log, const vo
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| level | Enum TIMLogLevel | The log level. For details, see [TIMLogLevel](https://intl.cloud.tencent.com/document/product/1047/34551#timloglevel). |
-| log | Const char\* | Log string |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| level | Enum TIMLogLevel | Log level. For details, see [TIMLogLevel](https://intl.cloud.tencent.com/document/product/1047/34551#timloglevel). |
+| log | const char\* | Log string |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 ### TIMMsgUpdateCallback
 
-This is the callback for message updates.
+Callback for message updating.
 
 **Prototype**
 
@@ -604,18 +604,18 @@ typedef void (*TIMMsgUpdateCallback)(const char* json_msg_array, const void* use
 
 | Parameter | Type | Description |
 |-----|-----|-----|
-| json_msg_array | Const char\* | Array of updated messages |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| json_msg_array | const char\* | Updated message array |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
 > For details, see [TIMRecvNewMsgCallback](#timrecvnewmsgcallback).
 
 
-## API Callbacks of the IM SDK
+## IM SDK API Callbacks
 
 
 ### TIMCommCallback
 
-This is the callback for API callback definitions.
+Definition of common API callbacks.
 
 **Prototype**
 
@@ -628,15 +628,15 @@ typedef void (*TIMCommCallback)(int32_t code, const char* desc, const char* json
 | Parameter | Type | Description |
 |-----|-----|-----|
 | code | Int32_t | ERR_SUCC: succeeded. Others: failed. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
-| desc | Const char\* | Error description string |
-| json_params | Const char\* | JSON string, which varies with APIs |
-| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed |
+| desc | Const char\* | String of the error description |
+| json_params | Const char\* | JSON string, which varies with APIs. |
+| user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-> All callbacks need to check whether the value of code is ERR_SUC. If no, the API failed to be called, and the specific cause of the failure can be identified through the code and desc parameters. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
+> All the callbacks need to check whether the value of code is ERR_SUC. If not, the API failed to be called, and the specific cause of the failure is revealed by the parameters code and desc. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
 
 
 >
-For the following APIs, the TIMCommCallback parameter json_params is a null string (""):
+For the following APIs, the TIMCommCallback parameter json_params is a "" null string:
 - [TIMLogin](https://intl.cloud.tencent.com/document/product/1047/34390#timlogin)
 - [TIMLogout](https://intl.cloud.tencent.com/document/product/1047/34390#timlogout)
 - [TIMMsgSaveMsg](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgsavemsg)
@@ -938,7 +938,7 @@ For the following APIs, the TIMCommCallback parameter json_params is a null stri
 ```
 
 
-**Example 11: JSON string of the TIMCommCallback parameter json_params for the API [TIMGroupDeleteMember](https://intl.cloud.tencent.com/document/product/1047/34393#timgroupdeletemember). For details on JSON keys, see [GroupDeleteMemberResult](https://intl.cloud.tencent.com/document/product/1047/34551#groupdeletememberresult.**
+**Example 11: JSON string of the TIMCommCallback parameter json_params for the API [TIMGroupDeleteMember](https://intl.cloud.tencent.com/document/product/1047/34393#timgroupdeletemember). For details on JSON keys, see [GroupDeleteMemberResult](https://intl.cloud.tencent.com/document/product/1047/34551#groupdeletememberresult).**
 
 ```c
 [
@@ -1094,7 +1094,7 @@ For the following APIs, the TIMCommCallback parameter json_params is a null stri
 ```
 
 
-**Example 16: JSON string of the TIMCommCallback parameter json_params for the API [TIMFriendshipGetFriendProfileList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetfriendprofilelist). For details on JSON keys, see [FriendProfile](https://intl.cloud.tencent.com/document/product/1047/34551#friendprofile).**
+**Example 17: JSON string of the TIMCommCallback parameter json_params for the API [TIMFriendshipGetFriendProfileList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetfriendprofilelist). For details on JSON keys, see [FriendProfile](https://intl.cloud.tencent.com/document/product/1047/34551#friendprofile).**
 
 ```c
 [
@@ -1191,7 +1191,7 @@ For the following APIs, the TIMCommCallback parameter json_params is a null stri
 ```
 
 
-**Example 21: JSON string of the TIMCommCallback parameter json_params for the API [TIMFriendshipGetPendencyList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetpendencylist)**
+**Example 21: JSON string of the TIMCommCallback parameter json_params for the API [TIMFriendshipGetPendencyList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetpendencylist). For details on JSON keys, see [PendencyPage](https://intl.cloud.tencent.com/document/product/1047/34551#pendencypage).**
 
 ```c
 {
@@ -1225,7 +1225,7 @@ For the following APIs, the TIMCommCallback parameter json_params is a null stri
 ```
 
 
-**Example 23: JSON string of the TIMCommCallback parameter json_params for the API [TIMFriendshipCheckFriendType](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipcheckfriendtype)**
+**Example 23: JSON string of the TIMCommCallback parameter json_params for the API [TIMFriendshipCheckFriendType](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipcheckfriendtype). For details on JSON keys, see [FriendshipCheckFriendTypeResult](https://intl.cloud.tencent.com/document/product/1047/34551#friendshipcheckfriendtyperesult).**
 
 ```c
 [
@@ -1257,7 +1257,7 @@ For the following APIs, the TIMCommCallback parameter json_params is a null stri
 ```
 
 
-**Example 25: JSON string of the TIMCommCallback parameter json_params for the API [TIMFriendshipGetFriendGroupList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetfriendgrouplist)**
+**Example 25: JSON string of the TIMCommCallback parameter json_params for the API [TIMFriendshipGetFriendGroupList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetfriendgrouplist). For details on JSON keys, see [FriendGroupInfo](https://intl.cloud.tencent.com/document/product/1047/34551#friendgroupinfo).**
 
 ```c
 [
