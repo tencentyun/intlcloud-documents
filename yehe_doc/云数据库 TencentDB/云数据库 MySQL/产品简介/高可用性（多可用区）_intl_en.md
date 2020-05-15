@@ -11,7 +11,9 @@ The multi-AZ deployment scheme of TencentDB for MySQL is currently available in 
 
 ### Multi-AZ Deployment
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/) and click **Create** in the **Instance List** to enter the purchase page.
-2. In the **Slave AZ** option on the MySQL purchase page, select a desired slave AZ.
+2. On the TencentDB for MySQL purchase page, select a supported region, and select a desired slave AZ in the **Slave AZ** option.
+> Only certain AZs can be selected as a slave AZ. For more information, please see the purchase page.
+>
 ![](https://main.qcloudimg.com/raw/aec9d1b540ceff3426968c213cfe9435.png)
 3. After confirming that everything is correct, click **Buy Now**. After making the payment, you can return to the instance list to view the newly purchased multi-AZ instance.
 
