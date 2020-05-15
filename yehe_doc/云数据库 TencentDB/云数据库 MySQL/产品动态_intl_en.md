@@ -1,3 +1,23 @@
+## April 2020
+
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repossession time for the old IP address can be customized</td>
+<td>The repossession time of the old IP address can be customized between 0 and 168 hours when the network is switched. If the repossession time is set to 0 hours, the old IP address will be repossessed immediately after the network switch.</td>
+<td>April 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">Network Switch</a></td>
+</tr>
+</tbody></table>
+
 ## January 2020
 
 <table>
@@ -12,7 +32,7 @@
 <tbody>
 <tr>
 <td>Slow log and error log details can now be queried</td>
-<td>TencentDB for MySQL High-Availability Edition and Single-Node High-IO Edition instances now provide an operation log management feature. You can view the slow log details, error log details, rollback logs of an instance and download slow logs on the operation logs page in the console.</td>
+<td>TencentDB for MySQL instances (excluding the Basic Edition) now provide an operation log management feature. You can view the slow log details, error log details, rollback logs of an instance and download slow logs on the operation logs page in the console.</td>
 <td>January 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/34588" target="_blank">Operation Logs</a></td>
 </tr>
@@ -95,7 +115,7 @@
 <td>Nanjing Zone 1 is now available</td>
 <td>TencentDB for MySQL is now available in Nanjing Zone 1. With this new AZ, TencentDB for MySQL is now available in two regions in East China: Shanghai and Nanjing.</td>
 <td>May 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/8458?from_cn_redirect=1" target="_blank">Regions and AZs</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/8458" target="_blank">Regions and AZs</a></td>
 </tr>
 </tbody></table>
 
@@ -153,7 +173,7 @@
 <td>Basic Edition instances are now purchasable</td>
 <td>TencentDB for MySQL Basic Edition adopts a single-node deployment method with computation-storage separation. If a computing node fails, the system can switch to a healthy one for quick recovery. Premium cloud disks are used as the underlying storage media of the Basic Edition, which feature high quality, cost-effectiveness, stability, and performance, making them suitable for 90% of I/O scenarios.</td>
 <td>June 2018</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/17136?from_cn_redirect=1" target="_blank">Database Architecture</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">Database Architecture</a></td>
 </tr>
 <tr>
 <td>Network switching is now supported</td>
@@ -171,19 +191,13 @@
 <td>Degrading and refunding are now supported</td>
 <td>You can now degrade your database configuration and be refunded accordingly.</td>
 <td>June 2018</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/32345#.E9.99.8D.E7.BA.A7.E5.AE.9E.E4.BE.8B.E8.B4.B9.E7.94.A8" target="_blank">Instance Adjustment Fee</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/32345" target="_blank">Instance Adjustment Fees Description</a></td>
 </tr>
 <tr>
 <td>MySQL 5.7 data migration is now supported</td>
 <td>DTS now supports migrating MySQL 5.7.</td>
 <td>June 2018</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/571/34103" target="_blank">Online Import of MySQL Data</a></td>
-</tr>
-<tr>
-<td>Product rename</td>
-<td>CDB for MySQL is now renamed to TencentDB for MySQL.</td>
-<td>June 2018</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236?from_cn_redirect=1" target="_blank">TencentDB for MySQL</a></td>
 </tr>
 </tbody></table>
 
@@ -202,13 +216,13 @@
 <td>Read-only instances now support elastic specifications</td>
 <td>Read-only instances can now adopt different specifications from those of master instances.</td>
 <td>August 2017</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/7270?from_cn_redirect=1" target="_blank">Read-Only Instance</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">Read-only Instance</a></td>
 </tr>
 <tr>
 <td>Monitoring at a 1-minute granularity is now supported</td>
 <td>Monitoring can now be performed at a 1-minute granularity.</td>
 <td>August 2017</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/8455?from_cn_redirect=1" target="_blank">Monitoring Feature</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/8455" target="_blank">Monitoring Feature</a></td>
 </tr>
 <tr>
 <td>Physical backup is now supported</td>
@@ -276,12 +290,12 @@
 <td>Read-only instance feature release</td>
 <td>TencentDB for MySQL now allows you to create one or more read-only instances, which are suitable for read/write separation and one-master-multiple-slave application scenarios and capable of greatly enhancing the read load capacity of your database.</td>
 <td>March 2016</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/7270?from_cn_redirect=1" target="_blank">Read-Only Instance</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">Read-only Instance</a></td>
 </tr>
 <tr>
 <td>Pay-as-You-Go instances are now supported</td>
 <td>Database services can now be billed by the hour.</td>
 <td>March 2016</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/18335?from_cn_redirect=1" target="_blank">Billing Overview</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/18335" target="_blank">Billing Overview</a></td>
 </tr>
 </tbody></table>
