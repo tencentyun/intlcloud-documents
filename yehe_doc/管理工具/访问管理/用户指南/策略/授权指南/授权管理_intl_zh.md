@@ -9,44 +9,44 @@
 
 1. 在访问管理控制台，单击左侧【策略】，进入 [策略](https://console.cloud.tencent.com/cam/policy) 管理页面。
 2. 在策略管理页面，单击左上角【全部策略】>【预设策略】，筛选预设策略，如下图所示：
-![](https://main.qcloudimg.com/raw/fa9481bb3ba027b9855b2d7cb32ca9a5.jpg)
+![](https://main.qcloudimg.com/raw/513948d3bc6f1f932f9e623b462ce726.png)
 3. 找到需要授权的预设策略，单击右侧操作列的【关联用户/组】，如下图所示：
-![](https://main.qcloudimg.com/raw/01155eba6ccc3ee9d438fc01280085fe.png)
+![](https://main.qcloudimg.com/raw/c0cbd229f3465eb261c240aa3f0c8a33.png)
 4. 在弹出的关联用户/用户组窗口，单击【切换用户组】>【用户】，如下图所示：
-![](https://main.qcloudimg.com/raw/eb74742271b5d4cfed844e6e1914dbea.png)
+![](https://main.qcloudimg.com/raw/4b91f0ad445e940c7568b5672ffab275.png)
 5. 勾选要关联的用户，单击【确定】，完成通过预设策略关联用户操作。
 
 #### 通过预设策略关联用户组
 
 1. 在访问管理控制台，单击左侧【策略】，进入 [策略](https://console.cloud.tencent.com/cam/policy) 管理页面。
 2. 在策略管理页面，单击左上角【全部策略】>【预设策略】，筛选预设策略，如下图所示：
-![](https://main.qcloudimg.com/raw/fa9481bb3ba027b9855b2d7cb32ca9a5.jpg)
+![](https://main.qcloudimg.com/raw/e2f1d77bf70be0397b46ab8f4dabe0a6.png)
 3. 找到需要授权的预设策略，单击右侧操作列的【关联用户/组】，如下图所示：
-![](https://main.qcloudimg.com/raw/01155eba6ccc3ee9d438fc01280085fe.png)
+![](https://main.qcloudimg.com/raw/76a62debbb568f2c58da009cfa651c94.png)
 4. 在弹出的关联用户/用户组窗口，单击【切换用户组】>【用户组】，如下图所示：
-![](https://main.qcloudimg.com/raw/eb74742271b5d4cfed844e6e1914dbea.png)
+![](https://main.qcloudimg.com/raw/36318400320dac1fad4f340fa211b6a6.png)
 5. 勾选要关联的用户组，单击【确定】，完成通过预设策略关联用户组操作。
 
 #### 自定义策略关联用户
 
 1. 在访问管理控制台，单击左侧【策略】，进入 [策略](https://console.cloud.tencent.com/cam/policy) 管理页面。
 2. 在策略管理页面，单击左上角【全部策略】>【自定义策略】，筛选自定义策略，如下图所示：
-![](https://main.qcloudimg.com/raw/fa9481bb3ba027b9855b2d7cb32ca9a5.jpg)
+![](https://main.qcloudimg.com/raw/dff7953447845773c42e7536a0e69117.png)
 3. 找到需要授权的自定义策略，单击右侧操作列的【关联用户/组】，如下图所示：
-![](https://main.qcloudimg.com/raw/01155eba6ccc3ee9d438fc01280085fe.png)
+![](https://main.qcloudimg.com/raw/161b8dbd98a6af52213eae203a149790.png)
 4. 在弹出的关联用户/用户组窗口，单击【切换用户组】>【用户】，如下图所示：
-![](https://main.qcloudimg.com/raw/eb74742271b5d4cfed844e6e1914dbea.png)
+![](https://main.qcloudimg.com/raw/09443c6da88994041f4db93317b10068.png)
 5. 勾选要关联的用户，单击【确定】，完成通过自定义策略关联用户操作。
 
 #### 通过自定义策略关联用户组
 
 1. 在访问管理控制台，单击左侧【策略】，进入 [策略](https://console.cloud.tencent.com/cam/policy) 管理页面。
 2. 在策略管理页面，单击左上角【全部策略】>【自定义策略】，筛选自定义策略，如下图所示：
-![](https://main.qcloudimg.com/raw/fa9481bb3ba027b9855b2d7cb32ca9a5.jpg)
+![](https://main.qcloudimg.com/raw/b689c8883207c9680513368ff3ec7f44.png)
 3. 找到需要授权的自定义策略，单击右侧操作列的【关联用户/组】，如下图所示：
-![](https://main.qcloudimg.com/raw/01155eba6ccc3ee9d438fc01280085fe.png)
+![](https://main.qcloudimg.com/raw/432e5a01467effe20511e149ffc15ed4.png)
 4. 在弹出的关联用户/用户组窗口，单击【切换用户组】>【用户组】，如下图所示：
-![](https://main.qcloudimg.com/raw/eb74742271b5d4cfed844e6e1914dbea.png)
+![](https://main.qcloudimg.com/raw/8d13346fa4b7cb5c8891419f721dcbcb.png)
 5. 勾选要关联的用户组，单击【确定】，完成通过自定义策略关联用户组操作。
 
 ### 通过用户/用户组关联策略：
@@ -54,17 +54,17 @@
 #### 通过用户关联预设策略
 1. 在访问管理控制台，单击左侧【用户】>【用户列表】，进入 [用户列表](https://console.cloud.tencent.com/cam) 页面。
 2. 在用户列表页面找到需要授权的用户，单击右侧操作列的【授权】，如下图所示：
-![](https://main.qcloudimg.com/raw/3f29b3cd77f7e7985702c764ee430c9f.png)
+![](https://main.qcloudimg.com/raw/54bd4969d1f87498cbd09517c3ac974a.png)
 3. 在弹出的关联策略窗口中，单击【策略类型】>【预设策略】，筛选预设策略，如下图所示：
-![](https://main.qcloudimg.com/raw/5e909fd6f27e17f622afe4909036aee5.png)
+![](https://main.qcloudimg.com/raw/28aa2691924277b84a84284375b42a04.png)
 4. 勾选需要授权的预设策略，单击【确定】，完成通过用户关联预设策略操作。
 
 #### 通过用户关联自定义策略
 1. 在访问管理控制台，单击左侧【用户】>【用户列表】，进入 [用户列表](https://console.cloud.tencent.com/cam) 页面。
 2. 在用户列表页面找到需要授权的用户，单击右侧操作列的【授权】，如下图所示：
-![](https://main.qcloudimg.com/raw/3f29b3cd77f7e7985702c764ee430c9f.png)
+![](https://main.qcloudimg.com/raw/eba7356c633d3b35496dfcb453db6a90.png)
 3. 在弹出的关联策略窗口中，单击【策略类型】>【自定义策略】，筛选自定义策略，如下图所示：
-![](https://main.qcloudimg.com/raw/5e909fd6f27e17f622afe4909036aee5.png)
+![](https://main.qcloudimg.com/raw/647ae7d948e14c793ecc58b173c7aa61.png)
 4. 勾选需要授权的自定义策略，单击【确定】，完成通过用户关联自定义策略操作。
 
 #### 通过用户组关联预设策略
@@ -74,7 +74,7 @@
 3. 在用户组详情页，单击【权限】，进入权限设置页面。
 4. 在权限设置页面，单击【关联策略】。
 5. 在弹出的关联策略窗口中，单击【策略类型】>【预设策略】，筛选预设策略，如下图所示：
-![](https://main.qcloudimg.com/raw/5e909fd6f27e17f622afe4909036aee5.png)
+![](https://main.qcloudimg.com/raw/3dfe413fe94dcf46752262bd33214eda.png)
 4. 勾选需要授权的预设策略，单击【确定】，完成通过用户组关联预设策略操作。
 
 #### 通过用户组关联自定义策略
@@ -84,5 +84,5 @@
 3. 在用户组详情页，单击【权限】，进入权限设置页面。
 4. 在权限设置页面，单击【关联策略】。
 5. 在弹出的关联策略窗口中，单击【策略类型】>【自定义策略】，筛选自定义策略，如下图所示：
-![](https://main.qcloudimg.com/raw/5e909fd6f27e17f622afe4909036aee5.png)
+![](https://main.qcloudimg.com/raw/e3a2433eb1b9c7a7c62e5d0c4c3f4cfd.png)
 4. 勾选需要授权的自定义策略，单击【确定】，完成通过用户组关联自定义策略操作。
