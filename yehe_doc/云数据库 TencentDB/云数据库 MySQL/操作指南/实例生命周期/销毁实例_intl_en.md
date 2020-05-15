@@ -4,21 +4,16 @@ Based on your business needs, you can return pay-as-you-go instances in the cons
 
 After an instance is returned, once its status changes to "isolated", no fees related to it will be incurred.
 >
->- After the instance is terminated, its data cannot be recovered, and its backup files will be terminated too, so the data cannot be restored in the cloud. Please store your backup files safely elsewhere in advance.
+>- After the instance is terminated, its data cannot be recovered, and its backup files will also be terminated, so the data cannot be restored in the cloud. Please store your backup files safely elsewhere in advance.
 >- When the instance is terminated, its IP resources will be released simultaneously. If the instance has read-only instances or disaster recovery instances:
 >  - Read-only instances will be terminated at the same time.
 >  - Disaster recovery instances will disconnect their sync connections and be promoted to master instances automatically.
->- After the instance is terminated, the refund procedures will be as detailed below:
->  - The five-day guaranteed self-service refund amount will be refunded to your Tencent Cloud account.
->  - The normal self-service refund amount will be refunded to your Tencent Cloud account at the ratio of cash and gift vouchers paid upon purchase.
-> 
-
 
 
 ## Directions
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and select **Instance List** on the left sidebar.
-2. Select the target instance in the instance list and select **More** > **Terminate/Return** or **Terminate/Return & Refund** in the "Operation" column.
+1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), select the target instance in the instance list, and select **More** > **Terminate/Return** or **Terminate/Return & Refund** in the "Operation" column.
 ![](https://main.qcloudimg.com/raw/ea0d80564ad54c6c9e3ea43070c71f20.png)
 4. In the pop-up dialog box, indicate your consent and click **Terminate Now**.
+
 >
 ![](https://main.qcloudimg.com/raw/6e376a4a726195aefee841930577a5b3.png)

@@ -1,12 +1,6 @@
-## Overview
+# Overview
 
 You can create logsets and log topics in different regions when using CLS. Regions refer to the geographical areas of physical IDCs. Networks are completely isolated between regions. You can select the nearest region based on your business scenario and target users’ geographical location to reduce log access latency and improve access speed.
-
-
-
-#### Notes about Shenzhen and Shanghai Finance Zones
-
-A finance zone is a tailor-made AZ for compliance with regulatory requirements in the finance industry and features high security and high isolation. Currently, CLS supports the Shenzhen and Shanghai Finance Zones, which can be applied for by verified financial customers by submitting tickets.
 
 
 
@@ -31,5 +25,5 @@ A finance zone is a tailor-made AZ for compliance with regulatory requirements i
 
 ## Notes
 
-If another Tencent Cloud product is integrated with CLS, try to select a logset in the same region as the product, because Tencent Cloud products in the same region can access each other over the private network, which effectively reduces latency and improves access speed.
-2. The basic network cannot access CLS over the private network.
+1. If another Tencent Cloud service is integrated into CLS, try to select a logset in the same region as the service. The services in the same region communicate with each other over a private network, which effectively reduces latency and improves access speed.
+2. The classic network cannot access CLS over the private network.
