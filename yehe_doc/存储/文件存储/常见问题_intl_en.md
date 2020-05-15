@@ -20,17 +20,17 @@ As clients on Windows and Linux 3.10 and its previous kernel version (e.g., Cent
 ### What concepts are used in CFS?
 File system: a file system is a CFS instance. After a file system is mounted to a CVM instance, you can use it in the same way as a local storage system. It can be mounted to a subdirectory.
 
-Mount target: A mount target is an entry for the compute node to access CFS. It defines the type of network for the node and the permission to access CFS.
+Mount point: A mount point is an entry for the compute node to access CFS. It defines the type of network for the node and the permission to access CFS.
 
 ### How many file systems can be created for each user?
 Up to 10 ones can be created in a region for each user. If you have special requirements, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for scaling.
 
-### What if a mount target is unavailable?
+### What if a mount point is unavailable?
 You can troubleshoot the problem in the following steps:
 - View the error message.
 - Check whether `nfs-utils`, `nfs-common`, and `cifs-utils` are installed.
 - Check whether the local mount directory exists.
-- Check whether the mount target is in the same VPC as the client server and whether they are in the same region.
+- Check whether the mount point is in the same VPC as the client server and whether they are in the same region.
 - Check whether the client server has a security group policy prohibiting access to external ports. For more information on the specific ports, please see [Notes on Open Ports in a File System](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E9.9C.80.E8.A6.81.E5.BC.80.E6.94.BE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.EF.BC.9F).
 
 ### What should I do if an error is reported when I use the vers=4.0 mount command?
@@ -41,7 +41,7 @@ As some clients support NFS v4.1 Protocol, the client will first negotiate with 
 For Windows Server 2016 operating system, the possible changes of default security policies require the following configurations before IIS and CIFS Protocol can work together:
 
 1. Modify the registry key for SMB client:
-```sh
+```plaintext
 HKEY_LOCAL_MACHINE> SYSTEM> CurrentControlSet> Services> LanmanWorkstation> Parameters> AllowInsecureGuestAuth
 ```
 If the key already exists, set it to `1`. Otherwise, you need to right click to select **Create>**DWORD (32-bit) Value**, and set the numeric name to `AllowInsecureGuestAuth`, and its value to `1`.
@@ -57,8 +57,8 @@ Open the Internet Information Services (IIS) Manager, and under the current host
 ### What if data cannot be written to CFS?
 You can troubleshoot the problem in the following steps:
 - View the error message.
-- Check whether the network of the client server is normal and run `telnet` to verify whether the port of the mount target is open. For more information on the specific ports, please see [Notes on Open Ports in a File System](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E9.9C.80.E8.A6.81.E5.BC.80.E6.94.BE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.EF.BC.9F). 
-- If the file system is not mounted to the mount target's root directory, check whether the corresponding mount target directory exists (the common error message in this case is "Stale file handle". You can check whether the subdirectory exists through a device mounted to the root directory).
+- Check whether the network of the client server is normal and run `telnet` to verify whether the port of the mount point is open. For more information on the specific ports, please see [Notes on Open Ports in a File System](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E9.9C.80.E8.A6.81.E5.BC.80.E6.94.BE.E5.93.AA.E4.BA.9B.E7.AB.AF.E5.8F.A3.EF.BC.9F). 
+- If the file system is not mounted to the mount point's root directory, check whether the corresponding mount point directory exists (the common error message in this case is "Stale file handle". You can check whether the subdirectory exists through a device mounted to the root directory).
 
 ### Which ports need to be opened in a file system?
 
@@ -79,7 +79,7 @@ For an NFS file system, multiple rules can be configured, which will take effect
 
 ### How to speed up copying local files to CFS?
 For Linux, use the `shell` script below to accelerate copying local files to CFS. The "number of threads" in the following code can be adjusted as needed.
-```
+```bash
 threads=<number of threads>; src=<source path/>; dest=<target path/>; rsync -av -f"+ */" -f"- *" $src $dest && (cd $src && find . -type f | xargs -n1 -P$threads -I% rsync -av % $dest/% )
 
 <!--Example: threads=24; src=/root/github/swift/; dest=/nfs/; rsync -av -f"+ */" -f"- *" $src $dest && (cd $src && find . -type f | xargs -n1 -P$threads -I% rsync -av % $dest/% )-->
@@ -97,7 +97,7 @@ For more information, please see [Using CFS File Systems on Windows Clients](htt
 You can configure the correct NFS client program and modify the Registry (by adding users for access) as instructed in [Using CFS File Systems on Windows Clients](https://intl.cloud.tencent.com/document/product/582/11524).
 Restart the client, open the IIS configuration page, add a site, and click **Advanced Settings**.
 ![](https://main.qcloudimg.com/raw/871a0b585060646f662fa4c8e111df36.png)
-Set the "Physical Path" in the "Advanced Settings" to the CFS mount target.
+Set the "Physical Path" in the "Advanced Settings" to the CFS mount point.
 ![](https://main.qcloudimg.com/raw/44777ef4949311c8db84f972b2885af9.png)
 
 ### Mounting a CFS file system on Docker or Kubernetes can succeed sometimes but fail at other times. How to solve this problem?
@@ -130,8 +130,8 @@ An NFS file system is mounted to two Linux-based CVM instances. Use `append` to 
 
 #### Cause
 This issue is related to the option of the NFS mount command and the implementation of `tail -f`. You can use the following mount command:   
-```sh
-sudo mount -t nfs -o vers=4.0 <mount target IP>:/ <destination mount directory>
+```bash
+sudo mount -t nfs -o vers=4.0 <mount point IP>:/ <target mount directory>
 ```
 
 If CVM instance B mounts the file system with the NFS mount command, the kernel will maintain a metadata cache of the file and directory attributes (e.g., permissions, size, and timestamp) by default. The purpose of caching is to reduce the number of `NFSPROC_GETATTR` remote procedure calls (RPCs).
@@ -140,12 +140,12 @@ If CVM instance B mounts the file system with the NFS mount command, the kernel 
 
 #### Solution
 Add the `noac` option when mounting the file system with the mount command to disable the caching of file and directory attributes. The mount command is as follows:
-```sh
-sudo mount -t nfs -o vers=4.0 noac <mount target IP>:/ <destination mount directory>
-sudo mount -t nfs -o vers=3 noac,nolock,proto=tcp <mount target IP>:/<FSID or subdirectory> <destination mount directory>
+```bash
+sudo mount -t nfs -o vers=4 noac <mount point IP>:/ <target mount directory>
+sudo mount -t nfs -o vers=3 noac,nolock,proto=tcp <mount point IP>:/<FSID or subdirectory> <target mount directory>
 ```
 
-### What if error `0x800704C9` occurs when a file system is mounted with NFS to a client based on Windows 7 or Windows Server 2008 R2?
+### What if error 0x800704C9 occurs when a file system is mounted with NFS to a client based on Windows 7 or Windows Server 2008 R2?
 
 #### Cause
 These clients cache the original port numbers used to communicate with nlockmgr. For the specific cause, please see the help documentation on Microsoft's website [here](https://support.microsoft.com/en-us/help/2761774/0x800704c9-error-when-you-copy-files-to-an-nfs-server-from-a-windows-7).
