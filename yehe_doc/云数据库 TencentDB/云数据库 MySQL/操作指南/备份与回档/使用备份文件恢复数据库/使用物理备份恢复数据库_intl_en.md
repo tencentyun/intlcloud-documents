@@ -97,7 +97,7 @@ chown -R mysql:mysql /data
 ```
 ![](https://main.qcloudimg.com/raw/2c2bfcad8c8bdac9385e70d975bec56a.png)
 
-### Step 7. Start the `mysqld` process and log in for verification
+### Step 7. Start the mysqld process and log in for verification
 1. Start the mysqld process.
 ```
 mysqld_safe --defaults-file=/data/backup-my.cnf --user=mysql --datadir=/data &

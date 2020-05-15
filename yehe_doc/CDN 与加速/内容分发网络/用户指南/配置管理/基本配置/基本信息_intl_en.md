@@ -7,6 +7,8 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Dom
 ![](https://main.qcloudimg.com/raw/2273c600e31b35d12b9480ff74205962.png)
 
 >
+> + IPv6 is only supported in Mainland China.
+> + By default, the request protocol is IPv4. You can [apply for free trial](https://intl.cloud.tencent.com/apply/p/own2eu41dg8) of the IPv6 acceleration service.
 > + If you select "IPv4 + IPv6" when connecting the domain name, the node will support both IPv4 and IPv6 access requests.
 
 ### Modifying basic information
@@ -27,15 +29,13 @@ Click **Modify project** on the right of the project to modify the project to wh
 You can click **Modify** on the right of the service region to modify it:
 ![](https://main.qcloudimg.com/raw/bf59e0eccd001b5ccad6262063f032db.png)
 
-> 
-> + Acceleration services in and outside of Mainland China are billed separately at different prices. 
-> + If the **Outside Mainland China** and **Global** options are not displayed in your console, you have not yet enabled acceleration outside of Mainland China. 
+> Acceleration services in and outside of Mainland China are billed separately at different prices. For more information, please click [here](https://intl.cloud.tencent.com/document/product/228/2949).
+
 
 #### 3. Modify the service type
 CDN optimizes acceleration performance based on service type. For the best acceleration result, we recommend you select the service type similar to that of your actual services. If you want to adjust the service type, click **Modify** on the right:
 
-
 >
 > + Modifying service type will change the underlying CDN acceleration platform, which may generate a small number of failed requests and increase origin-pull bandwidth. We recommend you do this during off-peak hours.
-> + If you cannot find **Modify** next to your domain name, it may have special configuration. You can [contact us](https://intl.cloud.tencent.com/support) for assistance.
+> + If you cannot find **Modify** next to your domain name, it may have special configuration. You can [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
 

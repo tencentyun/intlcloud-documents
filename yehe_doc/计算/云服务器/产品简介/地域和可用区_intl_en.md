@@ -59,7 +59,7 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 		<td>Shanghai Zone 4</br>ap-shanghai-4</td>
 	</tr>
 		<tr>
-			<td rowspan="3">East China (Nanjing)<br>ap-nanjing</td>
+			<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>
 			<td>Nanjing Zone 1<br>ap-nanjing-1</td>
 	</tr>
 	<tr>

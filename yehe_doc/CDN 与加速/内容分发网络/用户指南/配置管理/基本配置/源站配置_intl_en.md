@@ -1,7 +1,6 @@
 ## Configuration Scenario
 
 You can modify information such as domain name basic information, origin-pull request protocol, and origin domain in the origin server configuration module.
-
 ## Configuration Guide
 
 ### Viewing configuration
@@ -10,7 +9,7 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Dom
 **Origin Server Type**
 
 + External origin server: select this type if you already have your own stable business server (i.e., origin server). Enter the corresponding IP address list or domain name as the origin server address.
-+ [COS](https://cloud.tencent.com/product/cos): if resources have already been stored in COS, the bucket can be selected as the origin server.
++ [COS](https://intl.cloud.tencent.com/product/cos): if resources have already been stored in COS, the bucket can be selected as the origin server.
 
 **Origin Server Address**
 The origin server address can contain up to 511 characters and supports origin-pull for multiple IPs with one domain name.
@@ -39,7 +38,7 @@ You can configure origin-pull protocol for the domain name to HTTP, HTTPS, or fo
 + **Follow protocol**: HTTP requests use HTTP origin-pull, while HTTPS requests use HTTPS origin-pull.
 
 >
-> + If you select HTTPS origin-pull or follow protocol, make sure the origin server supports HTTPS access. Otherwise, origin-pull will fail.
+> + If you select HTTPS origin-pull or follow protocol, make sure the origin server supports HTTPS access; otherwise, origin-pull will fail.
 > + Currently, you can still modify this configuration item on the certificate management page. However, it will be migrated in the future.
 
 **Modify origin domain**
@@ -64,7 +63,7 @@ Select regions that need different origin-pull policies and enter the correspond
 > + If the region-specific configuration is the same as the basic configuration, they will be automatically merged. You can configure them to be the same to delete the region-specific configuration.
 
 ## Configuration Sample
-### Origin-Pull domain name configuration
+### Origin-Pull domain name configuration<a ID="exp"></a>
 Suppose the CDN origin server and the acceleration domain name `www.test.com` are configured as follows:
 ![](https://main.qcloudimg.com/raw/ec2e007bb32723f7dd12aac17524c8af.png)
 The access route for the user will be:
@@ -76,5 +75,5 @@ Suppose the CDN origin server and the acceleration domain name `www.test.com` ar
 The actual origin-pull will then be:
 1. When a user in Mainland China accesses the file `http://www.test.com/test.txt` and the node in Mainland China has not cached this resource, it will forward the request to the server `1.1.1.1` and try to find the `test.txt` file in the website path `1.test.com`. If the resource exists, the node will directly return the file to the user. If not, it will go to step 2.
 2. As the CDN node in Mainland China fails to forward the request to the primary origin server and cannot find the resource, it will forward the request to the server `2.2.2.2`, find the `test.txt` file in the website path `1.test.com`, cache and return it to the user.
-3. At this time, a user outside of Mainland China accesses the file `http://www.test.com/test/txt`. As the node outside of Mainland China has not cached this resource, it will forward the request to the server `3.3.3.3` and try to find the `test.txt` file in the website path `3.test.com`. If the resource exists, the node will directly return the file to the user. If not, it will go to step 4.
+3. At this time, a user outside of Mainland China accesses the file `http://www.test.com/test.txt`. As the node outside of Mainland China has not cached this resource, it will forward the request to the server `3.3.3.3` and try to find the `test.txt` file in the website path `3.test.com`. If the resource exists, the node will directly return the file to the user. If not, it will go to step 4.
 4. As the CDN node outside of Mainland China fails to forward the request to the primary origin server outside of Mainland China and cannot find the resource, it will forward the request to the server `4.4.4.4`, find the `test.txt` file in the website path `4.test.com`, cache and return it to the user outside of Mainland China.

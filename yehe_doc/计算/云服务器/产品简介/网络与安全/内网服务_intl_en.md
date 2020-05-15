@@ -26,7 +26,7 @@ Private network DNS service is used for domain name resolution. If DNS is config
 Tencent Cloud provides reliable private network DNS servers in different regions. Specific configurations are shown below:
 <table><tbody>
 <tr><th>Network Environment</th><th>Region</th><th>Private Network DNS Server</th></tr>
-<tr><td rowspan="16">Basic Network</td><td rowspan="4">Guangzhou</td><td>Guangzhou Zone 1: <br>10.112.65.31<br>10.112.65.32</td></tr>
+<tr><td rowspan="14">Basic Network</td><td rowspan="4">Guangzhou</td><td>Guangzhou Zone 1: <br>10.112.65.31<br>10.112.65.32</td></tr>
 <tr><td>Guangzhou Zone 2: <br>10.112.65.31<br>10.112.65.32</td></tr>
 <tr><td>Guangzhou Zone 3: <br>10.59.218.193<br>10.59.218.194</td></tr>
 <tr><td>Guangzhou Zone 4: <br>100.121.190.140<br>100.121.190.141</td></tr>

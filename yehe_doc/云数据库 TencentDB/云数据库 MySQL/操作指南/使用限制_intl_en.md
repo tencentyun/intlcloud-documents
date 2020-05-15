@@ -1,25 +1,25 @@
-## Use Limits
-
-### Limits on data volume
+## Limits on Data Volume
 Given the limited resources, TencentDB for MySQL imposes certain limits on data volume of all types of MySQL instances for the purpose of performance issue isolation. This document describes from a technical perspective what impact a single instance or table with a high data volume will have on MySQL:
+
+**Instance with a high data volume**: the default storage engine for TencentDB is InnoDB. If the cache buffer can cache all data and index pages in the MySQL instance, the instance can support a large number of concurrent access requests. If the instance contains too much data, the cache and buffer will swap data in/out frequently; in this case, the performance bottleneck of MySQL will soon spread to IO, which will reduce the throughput. For example, a TencentDB instance designed to sustain up to 8,000 access requests per second can merely support 700 ones per second if the data volume is twice the size of the cache and buffer.
+
 
 **Table with a high data volume**: if a table contains too much data, the cost for MySQL to manage table resources (data, indices, etc.) will change, which will affect the table processing efficiency. For example, if the size of a transaction table (InnoDB) exceeds 5 GB, the latency in update operations will soar, increasing the response time for transactions. In this case, the problem can only be solved through sharding and migration.
 
-**Instance with a high data volume**: the default storage engine for TencentDB is InnoDB. If the cache buffer can cache all data and index pages in the MySQL instance, the instance can support a large number of concurrent access requests. If the instance contains too much data, the cache buffer will swap data in/out frequently; in this case, the performance bottleneck of MySQL will soon spread to IO, which will reduce the throughput. For example, a TencentDB instance designed to sustain up to 8,000 access requests per second can merely support 700 ones per second if the data volume is twice the size of the cache buffer.
 
 >If the number of tables in a single instance exceeds 1 million, table backup, monitoring, and upgrade may fail, and database-level monitoring may be affected. Please control this value appropriately and make sure that it is below 1 million.
 
-### Limits on number of connections
+## Limits on Number of Connections
 The maximum number of connections to a MySQL instance is specified with the MySQL system variable `max_connections`. When the actual number exceeds `max_connections`, no more connections can be established.
-The value of `max_connections` is 3,000 for large TencentDB instances and 800 for other instances by default, which can be adjusted if necessary. However, more connections mean that more system resources will be consumed; if the number of connections goes beyond what the actual system load capacity permits, the system service quality will be definitely undermined.
+The default number of connections to TencentDB can be viewed on the parameter settings page in the [console](https://console.cloud.tencent.com/cdb), which can be adjusted if necessary. However, more connections mean that more system resources will be consumed; if the number of connections goes beyond what the actual system load capacity permits, the system service quality will be definitely undermined.
 For more information on `max_connections`, please see [MySQL's official documentation](https://dev.mysql.com/doc/).
 
 ## Limits on MySQL Client Version
 It is recommended to use the MySQL client and library that come with CVM to connect to TencentDB instances.
 
-### Notes on Slow Queries
+### Notes on slow queries
 - For Linux CVM instances, you can use TencentDB's export tool to get slow query logs. For more information, please see [Downloading Backup Files and Logs](https://intl.cloud.tencent.com/document/product/236/31910).
-- For Windows-based CVM instances, slow query logs cannot be obtained directly at present. If you need them, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+- For Windows CVM instances, slow query logs cannot be obtained directly at present. If you need them, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ### Notes on TencentDB binlog retention duration
 TencentDB for MySQL binlogs can be retained for 7 (default value) to 732 days (customizable in automatic backup settings). The number of days set for log backup retention must be smaller than that for data backup retention. 
@@ -72,11 +72,9 @@ Please note that Chinese table names are not supported because they may result i
 
 ## Notes
 ### Database account permission
-TencentDB for MySQL no longer provides the super user permission. To modify parameters that require this permission, you can use the parameter configuration feature in the console or submit a ticket for assistance; however, certain parameters cannot be modified at all.
+TencentDB for MySQL no longer provides the super user permission. To modify parameters that require this permission, you can use the parameter configuration feature in the [console](https://console.cloud.tencent.com/cdb) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
-### Database engine
-InnoDB is recommended for higher performance and security. MyISAM and Memory engines are no longer supported in TencentDB for MySQL 5.6 or higher.
 
 ### Network options
-For the comparison between VPC and basic network, please see [VPC's product documentation](https://intl.cloud.tencent.com/document/product/215).
-- As VPC and basic network cannot intercommunicate, instances in each network environment can only be accessed separately.
+You are recommended to use a VPC. In the VPC, you can freely define IP range segmentation, IP addresses, and routing policies. Compared with the basic network, VPC is more suitable for scenarios where custom network configurations are required. For the comparison of VPC and basic network, please see [Managing Network](https://intl.cloud.tencent.com/document/product/215/31807).
+

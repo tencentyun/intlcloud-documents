@@ -1,7 +1,7 @@
 ## Configuration Scenario
-OCSP stapling is a TLS certificate status request extension. An OCSP stapling server can send the cached OCSP query result to the client during TLS handshake for verification by the user, eliminating the need for the client to contact the CA. OCSP stapling greatly improves the efficiency of TLS handshake and reduces verification time.
+After OCSP stapling (an TLS certificate status query extension) is enabled, the server will send a pre-cached Online Certificate Status Protocol (OCSP) response during the TLS handshake for user verification, so that the user does not need to send a query request to the certificate authority (CA). OCSP stapling greatly improves the efficiency of TLS handshake and reduces user verification time.
 
-Tencent Cloud CDN allows you to enable/disable OCSP Stapling.
+Tencent Cloud CDN allows you to enable/disable OCSP stapling on your own.
 
 ## Configuration Guide
 ### Viewing configuration
