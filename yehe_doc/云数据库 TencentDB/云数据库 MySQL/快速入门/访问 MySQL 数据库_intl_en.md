@@ -1,16 +1,15 @@
-TencentDB for MySQL can be accessed in the following ways:
-- **Private network access**: a CVM instance can be used to access the private network address that is automatically assigned to a TencentDB instance. This access method relies on the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and reside in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region or reside in the basic network.
->CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over the private network through [Peering Connection](https://intl.cloud.tencent.com/document/product/553/18827).
-- **Public network access**: TencentDB for MySQL can be accessed using a public network address.
->
->- For public network access, the database instance's public IP needs to be enabled, which may expose your database service to attacks or intrusions on the public network. Therefore, it is recommended to log in to the database over the private network. 
->- Public network access to TencentDB is suitable for development or auxiliary management of databases but not for formal business access, as potentially uncontrollable factors may lead to unavailability of the public network access, such as DDoS attacks and bursts of high-traffic access.
->- Public network access can only be enabled for instances in Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Seoul, Tokyo, and Silicon Valley regions.
+TencentDB for MySQL can be accessed in the following methods:
+
+| Method | Description |
+|---------|---------|
+| Private network access | A CVM instance can be used to access the private network address of a TencentDB instance. This access method relies on the high-speed private network of Tencent Cloud and features low delay. <li>The two instances must be under the same account and in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region or both in the basic network. <li>The private network address is provided by the system by default and can be viewed in the instance list or on the instance details page in the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). | 
+| Public network access | If you cannot connect to the private network, you can access your TencentDB for MySQL instance at its public network address. <li>The public network address needs to be [manually enabled](#waiwang). It can be viewed on the instance details page in the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and can be disabled if no longer needed . <li>Enabling the public network address will expose your database service to the public network, which may lead to database intrusions or attacks; therefore, you are recommended to use the private network to access the database. <li>Public network access to TencentDB is suitable for development or auxiliary management of databases but not for formal business access, as potentially uncontrollable factors may lead to unavailability of the public network access, such as DDoS attacks and surges in access traffic. <li>The public network address can be enabled only for instances in the Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Seoul, Tokyo, and Silicon Valley regions. |
+
 
 
 The following describes how to log in to a TencentDB for MySQL instance from Windows and Linux CVM instance over the private and public networks.
 ## Accessing from Windows CVM
-1. Log in to a Windows CVM instance. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/213/10516" target="_blank">Configuring Windows CVM</a>.
+1. Log in to a Windows CVM instance. For more information, please see [Configuring Windows CVM](https://intl.cloud.tencent.com/document/product/213/10516).
 2. Download a standard SQL client.
 >MySQL Workbench is recommended. Visit https://dev.mysql.com/downloads/workbench/ and download an appropriate installer based on your system version.
 >
@@ -57,7 +56,7 @@ mysql -h hostname -u username -p
 mysql -h hostname -P port -u username -p
 ```
       - hostname: replace it with the public network address of the target TencentDB for MySQL instance, which can be viewed together with the port on the instance details page in the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). If the public network address has not been enabled, please enable it as instructed in [Enabling Public Network Address](#waiwang).
-      - port: replace it with the public network port number.
+      - port: replace it with the public port number.
       - username: replace it with the public network access username for public network access. You are recommended to [create a separate account](https://intl.cloud.tencent.com/document/product/236/31900) for easier access control.
     2. Enter the password corresponding to the public network access username after the prompt `Enter password:` is displayed. If you forgot the password, please reset it as instructed in [Resetting Password](https://intl.cloud.tencent.com/document/product/236/31901).
     In this example, `hostname` is 59281c4exxx.myqcloud.com and public network port is 15311.
@@ -67,13 +66,16 @@ Take `show databases;` for example as below:
 ![](https://mc.qcloudimg.com/static/img/76b4346a84f7388ae263dc6c09220fc0/image.png)
 
 
-
 <span id = "waiwang"></span>
-## Appendix. Enabling Public Network Access
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/).
-2. In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance details page.
-3. Find **Public Network Address** in the basic information section on the instance details page and click **Enable**.
+## Appendix 1. Enabling Public Network Access
+1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/). In the instance list, click the instance name or **Manage** in the "Operation" column to enter the instance details page.
+3. Find **Public Network Address** in the "Basic Info" section on the instance details page and click **Enable**.
 ![](https://main.qcloudimg.com/raw/f3300b56af8e152aa457534ffd873002.png)
 4. Click **OK** and the enabling process starts.
-5. After the public network address is enabled successfully, it can be found in the basic info.
-6. The public network access can be disabled using the switch. When it is enabled again, the public IP corresponding to the domain name remains the same.
+5. After the public network address is enabled successfully, it can be found in the basic information.
+>The public network access can be disabled using the switch. When it is enabled again, the public network address corresponding to the domain name remains the same.
+
+## Appendix 2. Troubleshooting
+If you cannot connect to TencentDB for MySQL, please troubleshoot the problem as instructed in [Instance Disconnection](https://intl.cloud.tencent.com/document/product/236/31928).
+
+

@@ -8,37 +8,37 @@
 ### 批量修改参数
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【批量修改参数】。
-![](https://main.qcloudimg.com/raw/ad030b689bb1a462861912063f2ffd25.png)
+![](https://main.qcloudimg.com/raw/3ec389dafa09276ae66b00a71445d9d3.png)
 3. 在“参数运行值”列，选择需要修改的参数进行修改，确认无误后，单击【确认修改】。
-![](https://main.qcloudimg.com/raw/a86d4f52191fec2a9ab1e3dcd700e3dc.png)
+![](https://main.qcloudimg.com/raw/5307fbeef4b1fccef478ab7fd57b3167.png)
 4. 在弹出的对话框，勾选同意，单击【确定】。
 
 ### 修改单个参数
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，选择目标参数所在行，在“参数运行值”列，单击<img src="https://main.qcloudimg.com/raw/788902e3f8c335cf17de420f7181c2a8.png"  style="margin:0;">修改参数值。
-![](https://main.qcloudimg.com/raw/7d774e651011476ec50a9b5e074c6328.png)
+![](https://main.qcloudimg.com/raw/4687ed705274b76ec92c43b7f9d448ab.png)
 3. 根据“参数可修改值”列的提示，输入目标参数值，单击<img src="https://main.qcloudimg.com/raw/1f4c7f2e0744bc601efb5d9fb04a7a04.png"  style="margin:0;">保存，单击<img src="https://main.qcloudimg.com/raw/2106cb4b9337a1a2fff5908581d2a908.png"  style="margin:0;">可取消操作。
-![](https://main.qcloudimg.com/raw/468fd3d5e2e5e27d49330f4b3ac18e96.png)
+![](https://main.qcloudimg.com/raw/41c7d73d4c5d404a112f54c3a63da726.png)
 4. 在弹出的对话框，单击【确定】。
 
 ### 从参数模板导入
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【从模板导入】。
-![](https://main.qcloudimg.com/raw/76408cbfe4d3d218bf5639c8340a3bc8.png)
+![](https://main.qcloudimg.com/raw/bd7a2fd3dc89895f1a3bd779d0fe8bbc.png)
 3. 在弹出的对话框，选择参数模板，单击【导入并覆盖原有参数】。
-![](https://main.qcloudimg.com/raw/d2f01c5f03504563a85aa08c9ff6dda8.png)
+![](https://main.qcloudimg.com/raw/2f649840f16befabea6259f9b4c7f47c.png)
 
 ### 导入参数
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【导入参数】。
-![](https://main.qcloudimg.com/raw/3e9aae3679567b3fdc473efb49c02fcc.png)
+![](https://main.qcloudimg.com/raw/52d6f069bbce29c933254593d59c0236.png)
 3. 在弹出的对话框，选择文件上传后，单击【导入并覆盖原有参数】。
-![](https://main.qcloudimg.com/raw/862442357b6ea496651a42b7ba508b97.png)
+![](https://main.qcloudimg.com/raw/42fb6ef8936131a3bc776e492478e745.png)
 	
 ## 查看参数修改记录
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击右侧的【最近修改记录】。
-![](https://main.qcloudimg.com/raw/6b6bd50d9eaf209e6a23b4a41b2fd58d.png)
+![](https://main.qcloudimg.com/raw/6d6318fce61fc78c6ff3611479ae5714.png)
 3. 在最近参数修改记录页，可查看近期参数修改记录。
-![](https://main.qcloudimg.com/raw/4fba922277951c93c900942ab949301d.png)
+![](https://main.qcloudimg.com/raw/4c616b40d058f114e8f75c4021c02648.png)
 

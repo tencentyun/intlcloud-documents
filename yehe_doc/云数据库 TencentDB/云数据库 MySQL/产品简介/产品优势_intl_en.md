@@ -2,6 +2,7 @@
 
 ## Cost Effectiveness and Ease of Use
 
+
 #### Read/Write separation
 Read-only instances can be mounted to MySQL. The one-master-multiple-slave architecture allows you to respond to a multitude of business requests with ease. Load balancing-enabled RO groups can be created, helping evenly distribute the load among read-only instances.
 
@@ -33,9 +34,9 @@ The dual-server hot backup mechanism supports lossless restoration of data from 
 #### Automated disaster recovery
 Automated failure detection and failover are supported. Master/slave switch and failover are imperceptible to users.
 
-## Advantages over Self-Built Databases
+## Advantages over Self-Created Databases
 #### Easy management of massive databases
-Databases can be managed via command line or console. Batch database management, permission setting, and SQL import are supported. 
+Databases can be managed via command line or console. Batch database management, permission setting, and SQL import are supported.
 
 #### Data import, backup, and rollback
 Multiple data import methods are provided for initialization. Data is automatically backed up daily and can be rolled back to any point in time in the last 5 days based on backup files.

@@ -11,9 +11,9 @@ To make a purchase, you need to verify your identity first. For more information
  >If the master and slave servers are in different AZs, there may be an additional network sync delay of 2–3 ms.
  - **Network**: select the network where TencentDB for MySQL instance resides, which is "Default-VPC (Default)" by default.
  - **Security Group**: for more information on security group creation and management, please see [TencentDB Security Group](https://intl.cloud.tencent.com/document/product/236/14470).
- - **Architecture**: Basic and High-Availability editions are available.
+ - **Architecture**: Basic Edition and High-Availability Edition are provided. For more information, please see [Database Architecture](https://intl.cloud.tencent.com/document/product/236/17136).
  - **Project**: select a project to which the database instance belongs. The default project is used by default.
  - **Quantity**: you can purchase up to 10 pay-as-you-go instances in each AZ.
  
 ## Purchasing Through API
-For more information on how to purchase a TencentDB instance through the API, please see [Creating Instances](https://intl.cloud.tencent.com/document/product/236/15871).
+For more information on how to purchase a TencentDB instance through the API, please see [Creating Instance](https://intl.cloud.tencent.com/document/product/236/15871).
