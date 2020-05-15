@@ -1,6 +1,6 @@
 
 ### Command Compatibility of Different Editions
-In the following table, ✓ indicates "supported", x indicates "unsupported", and - indicates that cross-slot access is not applicable to the command. For custom command descriptions, please see [Custom Command](https://intl.cloud.tencent.com/document/product/239/18336). For more information on the command compatibility of the Cluster Edition, please see [Command Compatibility Description](https://intl.cloud.tencent.com/document/product/239/18336).
+In the following table, ✓ indicates "supported", x indicates "not supported", and - indicates that cross-slot access is not applicable to the command. For custom command descriptions, please see [Custom Command](https://intl.cloud.tencent.com/document/product/239/18336). For more information on the command compatibility of the Cluster Edition, please see [Command Compatibility Description](https://intl.cloud.tencent.com/document/product/239/18336) and [Command Table Download Address](https://redis-doc-2020-1254408587.cos.ap-guangzhou.myqcloud.com/Redis%E5%91%BD%E4%BB%A4%E5%85%BC%E5%AE%B9%E6%80%A7.xlsx).
 <table>
    <tr>
       <th>Command Type</th>
@@ -337,7 +337,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>renamenx</td>
@@ -346,7 +346,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>sort</td>
@@ -646,7 +646,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
-      <td>-</td>
+      <td>x</td>
    </tr>
    <tr>
       <td>spop</td>
@@ -824,6 +824,8 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>zremrangebyscore</td>
       <td>✓</td>
       <td>✓</td>
+      <td>✓</td>
+			     <td>✓</td>
       <td>✓</td>
       <td>-</td>
    </tr>
@@ -1447,7 +1449,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>-</td>
    </tr>
    <tr>
-      <td>clieny list</td>
+      <td>client list</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>

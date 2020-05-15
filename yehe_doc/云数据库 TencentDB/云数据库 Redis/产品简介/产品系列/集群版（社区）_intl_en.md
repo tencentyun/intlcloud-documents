@@ -12,7 +12,7 @@ Redis Cluster Edition is a new edition of Redis built by Tencent Cloud based on 
 - Redis cluster mode is compatible with certain commands of the non-cluster mode, mainly reflected in cross-slot data access. For more information, pleas see [Notes on Command Compatibility](#xianzhi).
 
 ## Replica Description
-- When there is only one replica, Redis provides master/slave real-time hot backup for high data reliability and high availability (HA, cross-server in the same AZ). When the HA system detects a node failure, it requests for switching to a slave node, and add a new slave node to the system.
+- When there is only one replica, Redis provides master/slave real-time hot backup for high data reliability and high availability (cross-server in the same AZ). When the HA system detects a node failure, it requests for switching to a slave node, and add a new slave node to the system.
 - When the number of replicas is greater than 1, Redis provides master/slave real-time hot backup with the slave nodes being read-only.
 
 ## Features
@@ -26,7 +26,7 @@ Redis Cluster Edition supports use cases of native clusters of the Redis Communi
 Redis Cluster Edition maximizes system capability openness and has advanced features such as shard-level monitoring and management, data migration and load balancing, as well as monitoring of big and hot keys, which help facilitate total system management and OPS.
 
 ## Use Cases
-**Master/slave HA scenarios**
+**Master/Slave high-availability scenarios**
 Redis Cluster Edition allows you to configure a replica set for a single node to achieve high master/slave availability. It features dual-server hot backup and automatic failover to ensure high reliability and availability of the Redis service.
  **Read/write separation scenarios**  
 When the number of replica nodes is greater than 1, automatic read/write separation can be enabled for the TencentDB for Redis instance to extend the read performance of a single node. Up to 5 replica sets can be supported and read access weights across the master node and replica nodes can be configured. 
@@ -36,7 +36,7 @@ Redis Cluster Edition automatically enables auto-sharding and achieves horizonta
 
 <span id = "xianzhi"></span>
 ## Command Compatibility Description
-Redis Cluster Edition stores data in a distributed manner, and its biggest difference from the Standard Edition lies in whether a single command supports multi-key access. For the Cluster Edition, commands can be categorized into supported, partially supported, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/239/31958).
+Redis Cluster Edition stores data in a distributed manner, and its biggest difference from the Standard Edition lies in whether a single command supports multikey access. For the Cluster Edition, commands can be categorized into supported, partially supported, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/239/31958).
 
 #### Unsupported commands
 The system will return the following error:
@@ -52,7 +52,7 @@ Redis Cluster Edition is compatible with smart clients such as JedisCluster. For
 - CONFIG GET
 
 #### Supported cross-slot commands
-Currently, cross-slot access commands supported by the Cluster Edition include MGET, MSET, and DEL but not other multi-key commands.
+Currently, cross-slot access commands supported by the Cluster Edition include MGET, MSET, and DEL but not other multikey commands.
 
 <span id = "ziding"></span>
 #### Custom commands
@@ -90,7 +90,7 @@ Custom command list:
 - MONITOR
 
 #### Transactional support
-Redis Cluster Edition supports transactional commands provided that the transactions are started by the WATCH command. The keys of a transaction should be stored in the same slot, and the keys of WATCH and transaction-related keys should be stored in the same slot too. HashTag is recommended for multi-key transactions in cluster mode.
+Redis Cluster Edition supports transactional commands provided that the transactions are started by the WATCH command. The keys of a transaction should be stored in the same slot, and the keys of WATCH and transaction-related keys should be stored in the same slot too. HashTag is recommended for multikey transactions in cluster mode.
 
 #### Multi-Database support
-Redis Cluster Edition supports multiple databases (16 by default); therefore, it can support all commands related to database operations.
+Redis Cluster Edition supports multiple databases (256 by default); therefore, it can support all commands related to database operations.
