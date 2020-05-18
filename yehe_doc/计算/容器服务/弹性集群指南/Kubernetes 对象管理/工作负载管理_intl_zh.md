@@ -1,8 +1,8 @@
 ## 操作场景
 本文介绍如何在弹性集群中选择多种工作负载形式来运行您的服务。
 > 
-> - 弹性集群没有 Node，工作负载在创建时会根据参数设置为每个 Pod 分配实际的资源。
-> - 如果您需要通过 yaml 来创建、管理您的 Kubernetes 对象，可通过指定 annotation 完成。
+> - 弹性集群没有 Node，工作负载在创建时会根据参数设置为每个 Pod 分配实际的资源。详情请参见 [指定资源规格](https://intl.cloud.tencent.com/document/product/457/36161)。
+> - 如果您需要通过 yaml 来创建、管理您的 Kubernetes 对象，可通过指定 annotation 完成。详情请参见 [Annotation 说明](https://intl.cloud.tencent.com/document/product/457/36162)。
 
 
 ## 前提条件

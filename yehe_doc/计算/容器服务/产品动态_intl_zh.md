@@ -3,10 +3,21 @@
 <tr>	<th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-	<td>容器服务关闭 Kubernetes 1.8 版本创建入口</td>	<td>腾讯云容器服务（TKE）控制台不再支持创建 Kubernetes 版本为 1.8 的集群。</td>	<td>2020-04-03</td>	<td><a href="https://cloud.tencent.com/document/product/457/32189">创建集群</a></td>
+    <td>容器服务控制台支持节点多维度筛选及列表导出</td>	<td><ul class="params"><li>集群节点支持基于封锁状态的筛选操作。</li><li>集群节点支持基于节点状态、IP 等 CVM 属性的筛选。</li><li>集群节点支持批量导出。</li></ul></td>	<td>2020-04-22</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/30650">节点概述</a></td>
 </tr>
 <tr>
-	<td>独立集群 Master 升级</td>	<td>该功能允许用户通过容器服务控制台对正在运行的独立集群进行 Master  Kubernetes 版本滚动升级。</td>	<td>2020-04-02</td>	<td><a href="https://cloud.tencent.com/document/product/457/32192">升级集群</a></td>
+	<td>容器服务镜像仓库支持配置全局的镜像生命周期管理策略</td>	<td>容器服务镜像仓库新增镜像生命周期管理功能，该功能支持用户在主账号级别进行全局镜像版本清理策略的配置，同时保留支持在单个仓库内配置独立的版本清理策略。</td>	<td>2020-04-16</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/9118">镜像仓库概述</a></td>
+</tr>
+<tr>
+    <td>容器服务内测上线节点池功能</td>	<td>可在以下场景中使用节点池功能：
+		<ul class="params">
+		<li>集群存在较多异构节点（机型配置不同），可通过节点池规范节点分组管理。</li><li>集群需要频繁扩缩容节点，可通过节点池降低操作成本。</li><li>集群内应用程序调度规则复杂，可通过节点池标签快速指定业务调度规则。</li><li>集群内节点日常维护，可通过节点池便捷管理 Kubernetes 版本升级、Docker 版本升级。</li></ul></td>	<td>2020-04-10</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/35900">节点池管理</a></td>
+</tr>
+<tr>
+	<td>容器服务关闭 Kubernetes 1.8 版本创建入口</td>	<td>腾讯云容器服务（TKE）控制台不再支持创建 Kubernetes 版本为 1.8 的集群。</td>	<td>2020-04-03</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
+</tr>
+<tr>
+	<td>独立集群 Master 升级</td>	<td>该功能允许用户通过容器服务控制台对正在运行的独立集群进行 Master  Kubernetes 版本滚动升级。</td>	<td>2020-04-02</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/30640">升级集群</a></td>
 </tr>
 </table>
 
@@ -18,15 +29,19 @@
 	<td>容器服务支持 GlobalRouter 和 VPC-CNI 双网络模式</td>
 	<td>腾讯云容器服务（TKE） 针对不同应用场景提供 GlobalRouter 和 VPC-CNI 两种网络模式，可以根据业务需要自行选择。</td>
 	<td>2020-03-30</td>
-	<td><a href="https://cloud.tencent.com/document/product/457/41636">如何选择容器服务网络模式</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/35248">如何选择容器服务网络模式</a></td>
 </tr>
 <tr>
     <td>边缘容器服务上线</td> <td>边缘容器服务 TKE Edge 是用于从中心云管理边缘云资源的容器系统。可在一个集群内管理多地域的节点，完全兼容原生 Kubernetes，同时具备应用一键下发能力及边缘自治和分布式健康检查能力。</td><td>2020-03-25</td>
-    <td><a href="https://cloud.tencent.com/document/product/457/42876">边缘容器服务</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/35390">边缘容器服务</a></td>
+</tr>
+<tr>
+	<td>容器服务下线涉及 TencentHub 相关功能</td>	<td>Tencent Hub 预计本月内下线，容器服务已正式下线涉及 TencentHub 相关功能，并不再支持相关 API 接口。</td>
+	<td>2020-03-25</td>	<td>-</td>
 </tr>
 <tr>
     <td>容器服务集群支持裸金属及大数据机型设置本地盘格式化</td> <td>容器服务支持裸金属、大数据机型节点设置本地盘格式化，以及支持挂载和设置容器目录。</td><td>2020-03-02</td>
-    <td><a href="https://cloud.tencent.com/document/product/457/32189">创建集群</a></td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
 </tr>
 </table>
 
@@ -194,7 +209,7 @@
 <td>开源组件：<a href="https://github.com/TencentCloud/tencentcloud-cloud-controller-manager">TencentCloud-controller-manager</a> 及 <a href="https://github.com/TencentCloud/kubernetes-csi-tencentcloud">cbs-csi</a> 支持1.14版本</td>
     <td>开源组件 Tencent Cloud-controller-manager、cbs-csi<b> 均已支持 Kubernetes 1.14 版本</b>。</td>
 <td>2019-08-12</td>
-    <td>开源组件</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/457/32430">开源组件</a></td>
 </tr>
 <tr>
 <td>Ingress 支持使用已有负载均衡</td>
@@ -213,7 +228,7 @@
 </td>
 <td>容器服务 API 升级到 3.0 版本，已全地域接入全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码，SDK/CLI 版本与 API 文档严格一致，给用户带来简单快捷的使用体验。</td>
 <td>2019-08-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/6787">API 3.0</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/32029">API 3.0</a></td>
 </tr>
 <tr>
 <td>容器服务支持采集容器内文件日志</td>
@@ -257,12 +272,12 @@
 <td>容器服务支持 VPC-CNI 网络模式内测上线</td>
     <td>容器服务提供 VPC-CNI 扩展网络模式，<b>能够为集群内的 Pod 分配 VPC 内的 IP 地址</b>。VPC-CNI 模式下集群可创建支持固定 IP 类型的 StatefulSet ，其 Pod IP 不会因重启和迁移发生变化。</td>
 <td>2019-06-29</td>
-<td>集群开启 VPC-CNI 模式网络</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/35250">集群开启 VPC-CNI 模式网络</a></td>
 <tr>
 <td>StatefulSet 支持固定 IP 内测上线</td>
     <td> StatefulSet 固定 IP 能力有助于<b> 解决因 Pod 重启或迁移导致 IP 地址发生变化的问题</b>，用户可通过创建固定 IP 类型 StatefulSet，实现来源 IP 授权、基于 IP 做流程审核、基于 Pod IP 做日志查询等业务需求，保证业务持续稳定运行。</td>
 <td>2019-06-29</td>
-<td>固定 Pod IP 类型 StatefulSet 管理</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/35249">固定 Pod IP 类型 StatefulSet 管理</a></td>
 </tr>
 <tr>
 <td>容器服务默认采用新版控制台</td>
@@ -286,7 +301,7 @@
 <td>国际站新版控制台上线</td>
     <td>国际站新版控制台进行了一系列功能模块的调整，<b>提供一个原生、更易用的平台</b>，有助于帮助国际站用户解决开发、测试及运维过程的环境问题，降低成本及提高效率。</td>
 <td>2019-06-05</td>
-    <td><a href="https://console.cloud.tencent.com/tke2?language=en">国际站控制台</a></td>
+    <td>国际站控制台</td>
 </tr>
 <tr>
 <td>托管集群开启公网访问支持设置 ACL</td>
@@ -564,13 +579,13 @@
 		<td>发布开源组件 tencentcloud-cloud-controller-manager</td>
         <td>该组件是腾讯云容器服务的 Cloud Controller Manager 的实现，<b>允许在腾讯云云服务器自建的 Kubenrentes 集群上实现以下功能</b>：<li>更新 Kubernetes node 相关的 addresses 信息。</li><li>routecontroller：负责创建私有网络内 pod 网段内的路由。</li><li>servicecontroller：当集群中创建了类型为负载均衡的 service 时，创建相应的负载均衡。</li></td>
 		<td>2018-07-30</td>
-		<td>开源组件</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/32430">开源组件</a></td>
 	</tr>
 	<tr>
 		<td>发布开源组件 kubernetes-csi-tencentcloud</td>
         <td>该组件是腾讯云云硬盘服务的一个满足 CSI 标准实现的插件，<b>支持通过腾讯云云服务器自建的 Kubenrentes 集群使用云硬盘</b>。</td>
 		<td>2018-07-30</td>
-		<td>开源组件</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/32430">开源组件</a></td>
 	</tr>
 	<tr>
 		<td>发布黑石集群 ingress 插件</td>
@@ -782,7 +797,7 @@
 		<td>配置项支持导入环境变量</td>
 		<td>部署实例内容器时，可在环境变量中引入配置项 ConfigMap/Secret。</td>
 		<td>2017-09-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30675">配置项</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/457/31716">配置项</a></td>
 	</tr>
 	<tr>
 		<td>集群新增资源所属项目属性</td>
@@ -824,7 +839,7 @@
 		<td>镜像仓库新增触发器功能</td>
         <td>镜像仓库触发器帮助用户在镜像构建完毕后，自动执行服务更新、webhook 及消息推送等触发动作。<b>通过触发器可以和持续集成结合实现持续部署</b>。</td>
 		<td>2017-08-23</td>
-		<td>触发器概述</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/10155">触发器概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库接入操作日志</td>
@@ -948,12 +963,14 @@
 		<td><a href="https://intl.cloud.tencent.com/document/product/457/9120">远程终端基本操作</a></td>
 	</tr>
 	<tr>
+	<tr>
 		<td>容器服务创建集群支持自定义安全组</td>
         <td>若当前默认安全组不能满足业务需求，您可参照 <a href="https://intl.cloud.tencent.com/document/product/213/34826">管理安全组规则</a> 进行集群安全组自定义设置。</td>
         <td>2017-04-19</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
 	</tr>
 </table>
+
 
 ## 2017年03月
 <table>
