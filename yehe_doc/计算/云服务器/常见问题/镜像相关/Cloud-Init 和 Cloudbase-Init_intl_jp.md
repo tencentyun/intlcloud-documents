@@ -1,106 +1,107 @@
 ## Cloud-Init
 
-### Cloud-Initは何ですか。
-Cloud-Initは一つのオープンソースツールです。CVMインスタンス内で実行される非常駐サービスであり、起動する際に実行され、実行が完了するとすぐに終了し、どちらのポートも監視しません。
-Tencent CloudのパブリックLinuxイメージには予めCloud-Initサービスをインストールしてあります。 Cloud-Initサービスは主にCVMインスタンスの初期化操作（たとえば、DNS、Hostname、IP、およびその他の情報の設定）を行い、及びCVMインスタンスの作成時に初めて起動に必要なカスタマイズスクリプトを実行します。従って、Cloud-Initサービスにはrootユーザーとして実行する必要があります。
+### Cloud-Initとは
+Cloud-Initはオープンソースツールであり、CVMインスタンス内で実行する非常駐サービスです。起動時に実行され、実行が完了するとすぐに終了し、ポートはリッスンしません。
+Tencent CloudのLinuxパブリックイメージには、Cloud-Initサービスがプリインストールされています。Cloud-Initサービスは主にCVMインスタンスの初期化処理（DNS、Hostname、IPなど情報の設定）を実装し、ユーザーがCVMのインスタンスを作成した時に指定した初回起動時に実行するカスタマイズスクリプトを実行するために使用されるため、rootユーザーとしてCloud-Initサービスを実行する必要があります。
 
-### どのようにLinuxインスタンス内のCloud-Initサービスが正常に実行されていることを確認しますか。
+### Linuxインスタンス内のcloud-initサービスが正常に動作しているかどうかを確認するにはどうすればよいですか。
 
 <span id="checkcloud-init"></span>
-#### Cloud-Init サービス実行時のトラブルシューティング方法
-まずインスタンスにログインし、以下のコマンドを実行して、エラーが発生したかどうかを確認します。 実行した結果が表示された場合、サービスは正常に実行されています。そうでない場合は、エラーの原因が表示されます。エラーの原因に従ってトラブルシューティングしてください。
-1. cloud-init キャッシュのディレクトリを削除します。
+#### Cloud-Initサービス実行のトラブルシューティング
+まず、インスタンスにログインし、次のコマンドを順に実行して、エラーが返されるかどうかを確認します。実行結果が表示されれば、サービスが正常に動作しています。それ以外の場合はエラーの原因が表示されますので、画面の指示従ってトラブルシューティングを行ってください。
+1. cloud-initキャッシュディレクトリを削除します。
 ```
-rm -rf /var/lib/cloud
+rm -rf/var/lib/cloud
 ```
-2. 完全なcloud-init初期化を実行します。
+2.完全なcloud-init初期化を実行します。
 ```
 cloud-init init --local
 ```
-3. 構成されたデータソースに基づいてデータを格納します。
+3.構成されたデータソースからデータを取り出します。
 ```
 cloud-init init
 ```
-4. Cloud-Initの初期化は複数のstageに分かれて、各stageに十分な依存関係を確保するために、cloud-init modulesがconfig stageを指定して実行します。
+4. Cloud-Initの初期化には複数のステージに分かれており、ステージ間の十分な依存関係を確保するために、cloud-initモジュールはconfig stageの実行を指定します。
 ```
 cloud-init modules --mode=config
 ```
-5. cloud-init modulesがconfig stageを指定して実行します。
+5. cloud-initモジュールは、final stageの実行を指定します。
 ```
 cloud-init modules --mode=final
 ```
 
-### Cloud-Init はどのようなインスタンス初期化操作を実行しましたか。
+### Cloud-Initがどんなインスタンスの初期化処理を実行したか。
 
-Tencent CloudはCloud-Initを通してインスタンスのすべての初期化操作を実行し、インスタンス全体の操作をより透明にします。 以下の内容は操作について簡単に紹介します。詳細については、[Cloud-init 正式ドキュメント](http://cloudinit.readthedocs.io/en/latest/)をご参照ください。
+Tencent CloudはCloud-Initを介してインスタンスのすべての初期化操作を実装し、インスタンス全体の操作をより透過的にします。次の内容では、関連操作を簡単に説明します。詳細については、[Cloud-initの公式ドキュメント](http://cloudinit.readthedocs.io/en/latest/)をご参照ください。
 
 <table>
-<tr><th style="width: 25%;">初期化タイプ</th><th style="width: 25%;">デフォルトの動作</th><th style="width: 25%;">禁止方式</th><th style="width: 25%;">注意事項</th></tr>
+<tr><th style="width: 25%;">初期化タイプ</th><th style="width: 25%;">デフォルトアクション</th><th style="width: 25%;">カスタマイズ</th><th style="width: 25%;">注意事項</th></tr>
 <tr>
-	<td>hostname の初期化</td>
-	<td>インスタンスが<b>初期起動</b>する時に、Cloud-Initは <code>vendor_data.json</code> のhostname情報に基づき、インスタンスのhostnameを設定します。</td>
-	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時に、カスタマイズイメージ内部のhostname名の設定を保持したい場合、カスタマイズイメージを作成する前に<code>/etc/cloud/cloud.cfg</code> 中の<code>- scripts-user</code> 行の設定を削除します。</td>
-	<td><code>- scripts-user</code> 行の設定を禁止した場合、インスタンス内部の<code>/var/lib/cloud/instance/scripts/runcmd</code> 初期化スクリプトは実行されず、他のサブプロジェクトの初期化（主に関連するのは、クラウド監視、クラウドセキュリティのインストール、ソフトウェアソース設定）を影響します。 同時に、CVMを作成する時に、カスタマイズスクリプトは実行されません。</td>
+	<td>hostnameの初期化</td>
+	<td>インスタンス<b>の初回起動時</b>に、Cloud-Initは<code> vendor_data.json </code>のホスト名情報に基づいてインスタンスのホスト名を設定します。</td>
+	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時、イメージのカスタムホスト名の設定を保持したい場合、カスタマイズイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>から<code>- scripts-user</code>設定を削除できます。
+	<td><code>- scripts-user</code> 設定を無効にすると、インスタンス内の<code>/var/lib/cloud/instance/scripts/runcmd</code> 初期化スクリプトは実行されなくなり、他のサブアイテムの初期化（主にクラウド監視、クラウドセキュリティのインストール、およびソフトウェアソースの設定）にも影響します。また、CVMの作成時にカスタマイズスクリプトも実行されません。</td>　
 </tr>
+
 <tr>
-	<td>/etc/hosts の初期化</td>
-	<td>インスタンスが<b>初期起動</b>する時に、Cloud-Initは、デフォルトで<code>/etc/hosts</code>を<code>127.0.0.1 $hostname</code>に初期化します。</td>
-	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時に、カスタマイズイメージ内部の/etc/hosts設定を保持したい場合、カスタマイズイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>中の<code>- scripts-user</code>行の設定を削除します。</td>
+	<td>/etc/hostsの初期化</td>
+	<td>インスタンス<b>の初回起動</b>時に、Cloud-Initはデフォルトで <code>/etc/hosts</code>を<code>127.0.0.1 $hostname</code>に初期化します。</td>
+	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時、イメージ内のカスタム/etc/hosts設定を保持したい場合、カスタマイズイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>から<code>- scripts-user</code> と <code>- ['update_etc_hosts', 'once-per-instance']</code>設定を削除できます。</td>
 	<td>
 		<ul style="margin: 0px;">
-			<li> <code>- scripts-user</code>行の設定を禁止にすると、インスタンス内部の<code>/var/lib/cloud/instance/scripts/runcmd</code>初期化スクリプトは実行されず、他のサブプロジェクトの初期化を影響します（主に関連するのは、クラウド監視、クラウドセキュリティのインストール、ソフトウェアソース 設定）。同時に、CVMを作成する時に、カスタマイズスクリプトは実行されません。 </li>
-			<li>CVMが再起動する時に、既存の一部マシンの設定<code> / etc / hosts </code>は上書きされます。 解決策については、<a href="https://cloud.tencent.com/document/product/213/34698">Linuxインスタンスのetc hosts設定を有効的に修正する方法</a>をご参照下さい</li>
+			<li> <code>- scripts-user</code> 設定を無効にすると、インスタンス内の<code>/var/lib/cloud/instance/scripts/runcmd</code>初期化スクリプトは実行されなくなり、他のサブアイテムの初期化（主にクラウド監視、クラウドセキュリティのインストール、およびソフトウェアソースの設定）にも影響します。また、CVMの作成時にカスタマイズスクリプトも実行されません。</li>
+			<li>CVMが再起動するたびに、一部の既存CVMの<code>/etc/hosts</code>設定が上書きされます。 この問題を解決するには、<a href="https://intl.cloud.tencent.com/document/product/213/32504">Linuxインスタンスのetc hosts設定の変更</a>をご参照ください。</li>
 		</ul>
 	</td>
 </tr>
 
 <tr>
-	<td>DNS の初期化（非 DHCP ケース）</td>
-	<td>インスタンスが<b>初期起動</b>する時に、Cloud-Initは<code> vendor_data.json</code>のnameservers情報に基づいてインスタンスのDNSを設定します。</td>
-	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時に、カスタマイズイメージ内にカスタマイズDNS設定を保持したい場合、カスタマイズイメージを作成する前に<code>/etc/cloud/cloud.cfg</code> 中の<code>- resolv_conf</code>と<code>unverified_modules: ['resolv_conf']</code>の2行の設定を削除します。</td>
+	<td>DNSの初期化（非DHCPシナリオ）</td>
+	<td>インスタンス<b>の初回起動時</b>に、 <code>vendor_data.json</code> 中の nameservers情報に基づいてインスタンスのDNSを設定します。</td>
+	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時、イメージ内のカスタマイズDNS設定を保持したい場合、カスタマイズイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>から<code>- resolv_conf</code>と<code>unverified_modules: ['resolv_conf']</code>設定を削除できます。</td>
 	<td>なし。</td>
 </tr>
 
 <tr>
 	<td>ソフトウェアソースの初期化</td>
-	<td>インスタンスが<b>初期起動</b>する時に、Cloud-Initは<code>vendor_data.json</code>のwrite_files情報に基づいてインスタンスのソフトウェアソースを設定します。</td><td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時に、カスタマイズソフトウェアソースの設定をカスタマイズイメージ内部に保持したい場合、カスタマイズイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>中の<code>- write-files</code>行の設定を削除します。 </td>
+	<td>インスタンス<b>の初回起動時</b>に、<code>vendor_data.json</code> 中のwrite_files情報に基づいてインスタンスのソフトウェアソースを設定します。</td><td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時、イメージのカスタムソフトウェアソース設定を保持したい場合、カスタマイズイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>から<code>- write-files</code>設定を削除できます。</td>
 	<td>なし。</td>
 </tr>
 
 <tr>
-	<td>NTP の初期化</td>
-	<td>インスタンスが<b>初期起動</b>する時に、Cloud-Initは<code>vendor_data.json</code>のNTP Server情報に基づいてインスタンスのNTPサーバー構成を設定し、NTP Serviceを実行します。</td>
-	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時に、カスタマイズイメージ内部にカスタマイズNTP設定を保持したい場合、カスタマイズイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>中の<code>- ntp<code/>行の設定を削除できます。 </td>
+	<td>NTPの初期化</td>
+	<td>インスタンス<b>の初回起動</b>時に、Cloud-Initは<code>vendor_data.json</code> 中のNTP Server情報に基づいてインスタンスのNTPサーバー構成を設定し、NTPサービスを開始します。</td>
+	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時、イメージのカスタムNTP構成を保持したい場合、カスタマイズイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>から<code>- ntp<code/>設定を削除できます。</td>
 	<td>なし。</td>
 </tr>
 
 <tr>
 	<td>パスワードの初期化</td>
-	<td>インスタンスが<b>初期起動</b>する時に、Cloud-Initは<code> vendor_data.json</code>中のchpasswd情報に基づいてインスタンスのデフォルトアカウントパスワードを設定します。</td>
-	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時に、カスタマイズイメージでカスタマイズのデフォルトアカウントとパスワードを保持したい場合、カスタマイズイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>中の<code>- set-passwords</code>行の設定を削除します。</td>
+	<td>インスタンス<b>の初回起動</b>時に、Cloud-Initは<code>vendor_data.json</code> 中のchpasswd情報に基づいてインスタンスのデフォルトのアカウントパスワードを設定します。</td>
+	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時、イメージのカスタムデフォルトパスワードを保持したい場合、カスタマイズイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>から<code>- set-passwords</code>設定を削除できます。</td>
 	<td>なし。</td>
 </tr>
 
 <tr>
-	<td>キーバインディング</td>
-	<td>インスタンスが<b>初期起動</b>する時に、Cloud-Initは、<code>vendor_data.json</code>のssh_authorized_keys情報に基づいて、インスタンスのデフォルトアカウントキーを設定します。</td>
-	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時に、カスタマイズキーをカスタマイズイメージ内に保持したい場合、カスタマイズイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>の中の <code>- users-groups</code>行設定を削除します。</td>
-	<td>インスタンス内のキーを手動でバインドしたい場合、コンソールを利用してキーバインティング操作を実行する時に、システムはこのキーを上書きします。</td>
+	<td>キーバインド</td>
+	<td>インスタンス<b>の初回起動</b>時に、Cloud-Init は<code>vendor_data.json</code> 中のssh_authorized_keys情報に基づいて、インスタンスのデフォルトのアカウントキーを設定します。</td>
+	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時、イメージのカスタムデフォルトキーを保持したい場合。カスタマイズイメージを作成する前に、 <code>/etc/cloud/cloud.cfg</code>から<code>- users-groups</code>設定を削除できます。</td>
+	<td>キーをインスタンス内で手動でバインドする場合、コンソールを介してキーバインド操作が実行されると、以前のキーは上書きされます。</td>
 </tr>
 
 <tr>
-	<td>ネットワーク初期化（非 DHCP ケース）</td>
-	<td>インスタンスが<b>初期起動</b>する時に、Cloud-Initは<code>network_data.json</code>の情報に基づいてインスタンスのIP、GATEWAY、MASKなどを設定します。 </td>
-	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時に、カスタマイズイメージ内にカスタマイズネットワーク情報を保持したい場合、カスタマイズイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>中の<code>network: {config: disabled}</code>行の設定を追加します。</td>
+	<td>ネットワークの初期化（非DHCPシナリオ）</td>
+	<td>インスタンス<b>の初回起動</b>時に、Cloud-Initは<code> network_data.json </code>の情報に基づいてインスタンスのIP、ゲートウェイ、マスクなどを設定します。</td>
+	<td>カスタマイズイメージを使用してインスタンスを作成または再インストールする時、イメージのカスタムネットワーク情報を保持したい場合、カスタマイズイメージを作成する前に、 <code>/etc/cloud/cloud.cfg</code>に<code>network: {config: disabled}</code> 設定を追加できます。</td>
 	<td>なし。</td>
 </tr>
 </table>
 
-### どのようにCloud-Init関連の問題を特定しますか。 
+### Cloud-Initのよくある問題のトラブルシューティング方法はなんですか。 
 
-#### 1. Cloud-Initの依存パッケージのアンインストールが原因でエラーが発生した
-- 問題の事象：
-コマンドを使用してCloud-Initサービスが正常に実行されていることを確認する時に、以下のエラーが表示されます：
+#### 1. Cloud-Init依存関係のアンインストールによるエラー
+- 問題の説明：
+コマンドを使用してCloud-Initサービスが正常に動作しているかどうかを確認する場合、次のエラーが表示されます。
 ```
 Traceback (most recent call last):
   File "/usr/bin/cloud-init", line 5, in 
@@ -109,56 +110,56 @@ Traceback (most recent call last):
 pkg_resources.DistributionNotFound: pyyaml
 ```
 - 問題分析：
-「pkg_resources.DistributionNotFound: xxxxx 」はCloud-Initのインストール依存パッケージがアンインストールされたことを示します。
-- 解決案：
- 1. 依存パッケージを再インストールします。
- 2. すべての操作が正常に実行されるまで、[Cloud-Init サービス実行時のトラブルシューティング方法](#checkcloud-init)に従って操作を実行します。
+「pkg_resources.DistributionNotFound: xxxxx 」は、cloud-init依存関係がアンインストールされたことを示します。
+- ソリューション ：
+ 1.依存関係を再インストールします。
+ 2. [Cloud-Initサービス実行のトラブルシューティング]（＃checkcloud-init）に従って、エラーがなくなるまで操作を実行します。
 
-#### 2. デフォルトのPythonインタープリターを修正したことによりエラーが発生した
-- 問題の事象：
-起動時にCloud-Initの実行によりエラーが発生しました。
+#### 2.デフォルトのPythonインタープリターの変更によるエラー
+- 問題の説明：
+起動時にCloud-Initを実行すると、エラーが返されます。
 - 問題分析：
-Cloud-Initをインストールする時に、PythonインタープリターはデフォルトでPython2（つまり、`/usr/bin/python`および`/bin/python`はPython2をリンクしている）を使用します。ユーザーのビジネスニーズに応じて、インスタンスの中でPythonのデフォルトインタープリターをPython3（つまり、Python3を指すように`/usr/bin/pythonと`/bin/python`の２リンクを修正する）に変更することができます。互換性の問題のため、起動時にCloud-Initを実行するとエラーが発生しました。
-- 解決案：
- 1. `/usr/bin/cloud-init`ファイルで指定されたPythonインタープリターを修正し、`#/usr/bin/python`または`#/bin/python`を`#! user/bin/python`に修正します 。
->! ソフトリンクを使用せず、実のインタープリターに直接指定します。
+Cloud-Initをインストールする時、PythonインタープリターはデフォルトでPython2（すなわち、 シンボリックリンク`/usr/bin/python`および`/bin/python`がPython 2にリンクされます）を使用します。ユーザーのビジネスニーズに応じて、インスタンス内でPythonのデフォルトインタープリターをPython3に変更する場合があります（つまり、`/usr/bin/python`と`/bin/python`の2つのシンボリックリンクを変更して、Python3に指すようにします）。互換性の問題により、起動時にcloud-initを実行するとエラーが返されます。
+- ソリューション ：
+ 1. `/usr/bin/cloud-init` ファイルで指定されたPythonインタープリターを変更し、`#/usr/bin/python`または`#/bin/python`を`#! user/bin/python`に変更します。
+>シンボリックリンクを使用しないでください、特定のインタープリターを直接指します。
 >
- 2. すべての操作が正常に実行されるまで、[Cloud-Init サービス実行時のトラブルシューティング方法](#checkcloud-init)に従って操作を実行します。
+ 2. [Cloud-Initサービス実行のトラブルシューティング](#checkcloud-init) に従って、エラーがなくなるまで操作を実行します。
 
 ## Cloudbase-Init
 
-### Cloudbase-Initは何ですか。
-Cloud-Initと同様に、Cloudbase-InitはWindowsCVMインスタンスと通信するためのツールです。 インスタンスが始めて起動する時に、Cloudbase-Initサービスが実行され、このサービスはインスタンスの初期化設定情報を読み取り、インスタンスを初期化します。 同時に、後続のパスワードのリセットやIPの変更などの機能もCloudbase-Initを通じて実現されます。
+### Cloudbase-Initとは
+Cloud-Initと同様に、Cloudbase-InitはWindows CVMインスタンスと通信するためのブリッジです。インスタンスの初回起動時に、Cloudbase-Initサービスが実行され、このサービスはインスタンスの初期化構成情報を読み取り、インスタンスを初期化します。また、パスワードのリセットやIPアドレスの変更などの後続の操作もCloudbase-Initを介して行われます。
 
-### どのようにWindowsインスタンス内のCloudbase-Initサービスが正常に動作していることを確認しますか。
+### Windowsインスタンス内のCloudbase-Initサービスが正常に動作しているかどうかを確認するにはどうすればよいですか。
 
 <span id="checkcloudbase-init"></span>
-#### Cloudbase-Init サービス実行時のトラブルシューティング方法：
-1. インスタンスにログインします。
->? パスワードを忘れて、またはCloudbase-Initサービスが異常の原因でパスワードのリセットに失敗した場合、[ステップ2](#step02)でパスワードをリセットできます。 
+#### Cloudbase-Initサービス動作のトラブルシューティング：
+1.インスタンスにログインします。
+>パスワードを忘れた場合、またはCloudbase-Initサービス異常によりパスワードリセットが失敗した場合、[ステップ2](#step02)に従ってパスワードをリセットできます。 
 >
-2. <span id = "step02">**コントロールパネル** > **管理ツール**> **サービス**を開きます。
-3. cloudbase-initサービスを検索し、【プロパティ】を右クリックして、cloudbase-initのプロパティウィンドウを開きます。 </ span>
- -「スタートアップの種類」を確認し、「スタートアップの種類」が「自動」であることを確認します。 
+2.<span id="step02">**コントロールパネル**> **管理ツール**> **サービス**を開きます。
+3. cloudbase-initサービスを見つけて、【プロパティ】を右クリックし、cloudbase-initのプロパティウィンドウを開きます。</span>
+ -「スタートアップの種類」を「自動」に変更します。次の図に示すように、
+![](https://main.qcloudimg.com/raw/43f39931ec8932f88ee491f2bdbd7ada.png)
+ -　サービスを実行するアカウントとして、[ローカルシステムアカウント」が指定されています。次の図に示すように、
+![](https://main.qcloudimg.com/raw/5a69afcde36c5bb3259ac1f136f59118.png)
+ -cloudbase-initサービスを手動で起動し、エラーが返されるかどうかを確認します。
+エラーが発生した場合は、優先的に対処する必要があります。cloudbase-initによる関連操作の実行をブロックするセキュリティソフトウェアがインストールされていないかを確認します。 
+![](https://main.qcloudimg.com/raw/97684bd42d3b0d05eee996d0106825e3.png)
+ - 以下に示すように、「レジストリ」を開き、すべての「LocalScriptsPlugin」を見つけて、それらの値が「2」であることを確認します。
+![](https://main.qcloudimg.com/raw/4f98965fa228c7f948fc8d720424a7ea.png)
+ - CD-ROMのロードが無効になっているかどうかを確認します。次の図に示すように、光ディスクドライブがある場合は、正常にロードされたことを示しています。それ以外の場合は無効になっており、有効にする必要があります。
+![](https://main.qcloudimg.com/raw/0e8c68537e238fe7a1e4b718848b9e98.png)
 
- -「ログイン身分」を確認し、「ログイン身分」が「ローカルシステムアカウント」であることを確認します。 
-
- - 手動でcloudbase-initサービスを起動し、関連するエラーがあるかどうかを確認します。
-エラーがある場合は、まず解決しましょう。cloudbase-initの関連操作の実行をブロックするセキュリティソフトウェアがインストールしているかを確認してください。 
-
- -「レジストリ」を開き、すべての「LocalScriptsPlugin」を検索し、その値が2であることを確認します。 
-
- - CD-ROMのロードが禁止になっているかどうかを確認します。 次の図に示すように、光学式ドライブデバイスが表示されている場合は通常のロードを示します。そうでない場合は禁止になっているため、禁止を取り消す必要があります。
-
-
-### どのようにCloudbase-Init関連の問題を特定しますか。
-#### 初期化でパスワードをリセットできませんでした
+### Cloudbase-Initによくある問題のトラブルシューティング方法はなんですか。
+#### 初期化中にパスワードをリセットできません
 - 考えられる理由：
- - cloudbase-initアカウントのパスワードを手動で修正することにより、cloudbase-initサービスの起動が失敗になり、初期化やパスワードのリセットなどの操作も失敗になります。
- - cloudbase-initサービスが禁止されたため、初期化やパスワードのリセットなどの操作が失敗します。
- - セキュリティソフトウェアがcloudbase-initサービスのパスワードリセット操作をブロックしたため、パスワードリセット処理は正常に戻りましたが、実際のリセットは失敗しました。
-- 解決案：
-考えられる理由については、以下の3つのポイントをご参照ください。
- 1. cloudbase-initサービスをLocalSystemサービスに変更します。具体的な操作については、[Cloudbase-Init サービス実行時のトラブルシューティング方法](#checkcloudbase-init)の[ステップ2](#step02)をご参照ください。 
- 2. cloudbase-initサービスのスタートアップの種類を自動に変更します。 詳細の操作については、[Cloudbase-Init サービス実行時のトラブルシューティング方法](#checkcloudbase-init)の[ステップ 2](#step02)をご参照ください。
- 3.対応するセキュリティソフトウェアをアンインストールするか、セキュリティソフトウェアのホワイトリストにcloudbase-initサービスを追加します。
+ - Cloudbase-Initアカウントのパスワードが手動で変更されると、cloudbase-initサービスの起動が失敗して、初期化中にパスワードをリセットするなどの操作が失敗しました。
+ - cloudbase-initサービスが無効化されたため、初期化中にパスワードをリセットするなどの操作が失敗しました。
+ - セキュリティソフトウェアがインストールされているため、cloudbase-initサービスのパスワードリセット操作がブロックされて、パスワードリセットプロセスから成功した結果が戻りましたが、実際はリセットに失敗しました。
+- ソリューション：
+考えられる理由ごとに対応する解決策に従って、問題を修正してください。
+ 1. cloudbase-initサービスをLocalSystemサービスに変更します。操作方法の詳細については、[Cloudbase-Initサービス実行のトラブルシューティング](#checkcloudbase-init) の[Step2](#step02)をご参照ください。 
+ 2. cloudbase-initサービスの起動タイプを自動に変更します。操作方法の詳細については、[Cloudbase-Initサービス実行のトラブルシューティング](#checkcloudbase-init) の[Step2](#step02)をご参照ください。
+ 3.関連するセキュリティソフトウェアをアンインストールするか、Cloudbase-Initサービス関連の操作をセキュリティソフトウェアのホワイトリストに追加します。
