@@ -22,7 +22,7 @@ If your playback domain name needs to support HTTPS, you should prepare a valid 
 
 <span id="que5"></span>
 ### How can I use a global cache node for playback?
-LVB has CDN nodes across Mainland China and around the world with wide coverage and high stability. If your end users are located outside Mainland China, you can select **Global Acceleration** or **Outside Mainland China** as the acceleration region when configuring a domain name in [Domain Management](https://console.cloud.tencent.com/live/domainmanage) to enjoy coverage by global nodes.
+LVB has CDN nodes across Mainland China and around the world with wide coverage and high stability. If your end users are located outside Mainland China, you can select **Global Acceleration** or **Hong Kong/Macao/Taiwan (China Region) and other regions** as the acceleration region when configuring a domain name in [Domain Management](https://console.cloud.tencent.com/live/domainmanage) to enjoy coverage by global nodes.
 > The global acceleration of LVB supports only HTTP-FLV and HLS protocols.
 
 <span id="que6"></span>
@@ -37,7 +37,7 @@ In order to prevent malicious users from stealing your playback URL for use else
 | Validity period | Validity period of address | The validity period must be set to greater than 0. <br>If `txTime` is set to the current time and the validity period is 300 seconds, then the playback URL expiration time is the current time + 300 seconds. |
 
 #### Hotlink protection URL calculation
-The calculation of a hotlink protection URL requires three parameters: `key` (a random string), stream name (`StreamName`), and `txTime` (in hexadecimal format).
+The calculation of a hotlink protection URL requires three parameters: `key` (a random string), `StreamName` (stream name), and `txTime` (in hexadecimal format).
 Suppose that the `key` you set is **somestring**, the stream name (`StreamName`) is **test**, the `txTime` is **5c2acacc** (2019-01-01 10:05:00), the HD bitrate is **900 Kbps**, and the transcoding template name is **900**, then:
 Original stream playback address:
 ```
@@ -56,7 +56,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 1. Go to [Domain Management](https://console.cloud.tencent.com/live/domainmanage).
 2. Select a playback domain name or click **Manage** to enter its details page.
 3. Select **Access Control** and click **Edit**.
-4. Set **Playback Authentication** to "On" and click **Save**.
+4. Enable **Playback Authentication** and click **Save**.
 
 >
 >- It takes **30 minutes** for the playback authentication configuration to take effect.

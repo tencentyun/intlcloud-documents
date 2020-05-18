@@ -19,7 +19,7 @@ Overall process:
 
 ## Event Message Notification Configuration
 
-The event message notification can be configured with the:
+The event message notification can be configured with:
 - TencentCloud API
 - Console
 
@@ -56,6 +56,8 @@ The event notification service has a retry mechanism with an interval of 60 seco
 - t (expiration time): the default expiration time of a message notification from Tencent Cloud is 10 minutes. If the time specified by the `t` value in a message notification has elapsed, it can be determined that this notification is invalid, thereby preventing network replay attacks. The format of `t` is a decimal UNIX timestamp, i.e., the number of seconds that has elapsed since January 1, 1970 00:00 (UTC/GMT time).
 - sign (security signature): sign = MD5(key + t). Tencent Cloud splices the encryption `key` and `t`, calculates the `sign` value through MD5, and places it in the notification message. After your backend server receives the notification message, it can confirm whether the `sign` is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.
 > `key` is the callback key in **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, you are recommended to enter it.
+>
+> ![](https://main.qcloudimg.com/raw/15f7e94dcabfb52de5e0bb93c1380be2.png)
 
 ### Message bodies in various types
 
