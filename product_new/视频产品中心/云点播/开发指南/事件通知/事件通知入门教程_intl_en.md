@@ -40,7 +40,7 @@ Please download the [demo video](http://1255566954.vod2.myqcloud.com/ca75586fvod
  After the upload is completed, you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column.
 ![](https://main.qcloudimg.com/raw/6c18e73eb8576fc120fe903fc0848927.png)
 3. Check the CVM instance. The standard output should print the content of the notification for [video upload completion](https://intl.cloud.tencent.com/document/product/266/33950#817356113).
- <img src="https://main.qcloudimg.com/raw/f6439edcd8ae59cab1d393987382e136.png" width="818">
+ <img src="https://main.qcloudimg.com/raw/793e8af36652f40de4bf6cb5916b4670.png" width="818">
 4. In the **Uploaded** column in **Media Assets**, select the video just uploaded and click **[Video Processing](https://intl.cloud.tencent.com/document/product/266/33892)**. Select **Manually select transcoding template** for **Processing Type**, check **MP4-LD-FLU (10)** in **Transcoding Template**, keep **Video Cover** checked, and click **OK**.
 5. After waiting for 10 minutes, check the CVM instance, and its standard output should print the content of the notification for [task flow status change](https://intl.cloud.tencent.com/document/product/266/33953#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83), including the results of transcoding (where `Type` is `Transcode`) and time point screencapturing for cover generation (where `Type` is `CoverBySnapshot`).
  <img src="https://main.qcloudimg.com/raw/4e577e7feb5524ff82e8a82c8e1cbdd2.png" width="818">

@@ -4,7 +4,7 @@ The following uses allowing the WAF intermediate IP `111.230.27.90` in the secur
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/securitygroup) and click **Security Group** on the left sidebar.
 2. On the security group page, click **Create**, enter the information as required, select **Custom** as the template, enter the security group name (such as `my-security-group`) and remarks, and click **OK**.
-	![1](![1](https://main.qcloudimg.com/raw/bf46812f1d687bae4a9cc2eebb597c11.png)
+	![1](https://main.qcloudimg.com/raw/bf46812f1d687bae4a9cc2eebb597c11.png)
 3. In the security group list, find the newly created security group and click its ID to enter its details page.
 4. On the inbound rule page, click **Add Rule**.
 	 ![2](https://main.qcloudimg.com/raw/89645efab201d0b208aee920091b9667.png)
