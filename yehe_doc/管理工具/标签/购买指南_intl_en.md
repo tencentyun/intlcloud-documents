@@ -1,3 +1,4 @@
-This service is one of the free services provided by Tencent Cloud for your Tencent Cloud account, without additional charges. You can go to the [Console](https://console.cloud.tencent.com/tag/resources) to directly use the product.
+Tag is a free service provided by Tencent Cloud for your Tencent Cloud account. There are no additional charges, simply go to the [Console](https://console.cloud.tencent.com/tag/resources) to use this service.
 
-When you run into problems related to OPS or the use of technology products, you can log in to the Tencent Cloud website to [Submit a Ticket](https://console.cloud.tencent.com/workorder/category), and we will respond as quickly as possible.
+If you run into any issues when using the service, please log in to the Tencent Cloud website and [submit a ticket](https://console.cloud.tencent.com/workorder/category), we will get back to you as soon as possible.
+
