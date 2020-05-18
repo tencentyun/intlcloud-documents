@@ -8,7 +8,7 @@
 ## 前提条件
 - 下载并安装 XtraBackup 工具。
   下载地址请参见 [Percona XtraBackup 官网](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)，请选择 Percona XtraBackup 2.4.6 及以上的版本，安装介绍请参见 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)。
-- 支持的实例版本：MySQL 5.5、5.6、5.7 高可用版。
+- 支持的实例版本：MySQL 5.5、5.6、5.7 高可用版和金融版。
 
 ## 操作步骤
 ### 步骤1：下载备份文件
@@ -54,8 +54,8 @@ qpress -d cdb-jp0zua5k_backup_20191202182218.sql.qp .
 解压结果如下图所示：
 ![](https://main.qcloudimg.com/raw/355557bc949fd86af8346d8a44dc4551.png)
 
-### 步骤4：导入数据库
-执行如下命令导入到数据库：
+### 步骤4：导入备份至目标数据库
+执行如下命令导入 sql 文件至目标数据库：
 ```
 mysql -uroot -P3306 -h127.0.0.1 -p < cdb-jp0zua5k_backup_20191202182218.sql
 ```
