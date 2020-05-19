@@ -16,4 +16,4 @@ To make a purchase, you need to verify your identity first. For more information
  - **Quantity**: you can purchase up to 10 pay-as-you-go instances in each AZ.
  
 ## Purchasing Through API
-For more information on how to purchase a TencentDB instance through the API, please see [Creating Instance](https://intl.cloud.tencent.com/document/product/236/15871).
+For more information on how to purchase a TencentDB instance through the API, please see [Creating Instance](https://intl.cloud.tencent.com/document/product/236/15865).
