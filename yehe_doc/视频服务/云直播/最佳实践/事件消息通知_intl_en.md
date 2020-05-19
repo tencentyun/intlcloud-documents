@@ -11,6 +11,8 @@ When an LVB event is triggered, you can use the event message notification to re
 
 ## Event Message Notification Flow
 
+![](https://main.qcloudimg.com/raw/5703b324ae1b05cfc97efa59f30e2c6c.jpg)
+
 
 Overall process:
 1. The host configures an event message notification URL and related features such as recording and screencapturing in the console or through TencentCloud APIs.

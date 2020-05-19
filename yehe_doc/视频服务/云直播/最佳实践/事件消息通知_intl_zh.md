@@ -11,6 +11,8 @@
 
 ## 事件消息通知整体流程
 
+![](https://main.qcloudimg.com/raw/5703b324ae1b05cfc97efa59f30e2c6c.jpg)
+
 
 整体流程：
 1. 主播在控制台或直接调用云 API 配置事件消息通知 URL 以及录制、截图等相关功能。
