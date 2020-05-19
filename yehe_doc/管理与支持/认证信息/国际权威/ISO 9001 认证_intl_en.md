@@ -1,0 +1,4 @@
+## ISO 9001 Certification
+
+Transformed from the world's first quality management system BS 5750 (developed by BSI), ISO 9001 is a globally recognized quality management framework. As a systematic guide and standard for guaranteeing the product quality and operations of companies, it takes care of the whole process of products and services from planning and implementation to improvement and operation, ensuring that customer needs and applicable laws and regulations are met.
+By using a quality management system, you can effectively and efficiently achieve the expected quality goals. You should take corrective and preventive measures and continuously improve the effectiveness of the quality management system based on the review and management of the system. This process is fundamental to the development of your business.
