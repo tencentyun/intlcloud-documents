@@ -16,12 +16,12 @@ The Huawei push channel is a system-level push channel **officially provided by 
 
 1. Enter the [Huawei's development platform](http://developer.huawei.com).
 2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to verify your identity.)
-3. Create an application on the Huawei Push platform. For more information, please see [Creating App](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-Guides/hmssdk_huaweipush_devprepare_agent#h1-1575111622057). (The application package name must be the same as that entered in the TPNS Console.)
+3. Create an application on the Huawei Push platform. For more information, please see [Creating App](https://developer.huawei.com/consumer/cn/service/hms/catalog/HwJointOperationApp.html?page=hmssdk_jointOper_prepare_createapp). (The application package name must be the same as that entered in the TPNS Console.)
 4. Get and copy the application's `AppID` and `AppSecret` and paste them in Application Configuration > Huawei Channel in the TPNS Console.
 		
 
 ### Configuring SHA256 certificate fingerprint
-For more information on how to get the SHA256 certificate fingerprint, please see the [Huawei Push integration documentation](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-Guides/hmssdk_huaweipush_devprepare_agent#h1-1575111604142).
+For more information on how to get the SHA256 certificate fingerprint, please see the [Huawei Push integration documentation](http://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_introduction_agent).
 
 
 
@@ -72,7 +72,7 @@ Complete the configuration required by TPNS in the `build.gradle` file in the Ap
 	</provider>      
 	<receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver" >
 			<intent-filter>
-					<!-- Receive notification panel messages from the channel, which is compatible with the legacy version of PUSH -->
+					<!-- Receive notification bar messages from the channel, which is compatible with the legacy version of PUSH -->
 					<action android:name="com.huawei.intent.action.PUSH" />
 			</intent-filter>
 	</receiver>

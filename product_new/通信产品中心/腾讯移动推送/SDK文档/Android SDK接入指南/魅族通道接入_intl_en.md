@@ -2,8 +2,8 @@
 The Meizu push channel is a system-level push channel **officially provided by Meizu**. On a Meizu phone, push messages can be delivered through Meizu's system channel without opening the application.
 
 >
->- For the Meizu push channel, the notification title cannot contain more than 32 characters, and the notification content cannot contain more than 100 characters.
->- The Meizu push channel does not support message passthrough.
+>- For the Meizu push channel, the notification title can support up to 32 characters, and the notification content can support up to 100 characters.
+>- The Meizu push channel does not support in-app messages.
 >- The Meizu channel supports arrival callback and click callback but not passthrough.
 
 ## Directions
@@ -34,7 +34,7 @@ implementation 'com.tencent.tpns:meizu:[VERSION]-release'// Meizu Push [VERSION]
  </intent-filter>
  </receiver>
 </application>
- <!-- Note: this is the beginning of permission required by Meizu Push -->
+ <!-- Note: this is the beginning of permissions required by Meizu Push -->
  <!-- Compatible with Flyme versions below 5.0. Meizu's internal integration pushSDK is required; otherwise, messages cannot be received -->
 <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE"></uses-permission>
 <permission android:name="application package name.push.permission.MESSAGE" 
@@ -46,7 +46,7 @@ implementation 'com.tencent.tpns:meizu:[VERSION]-release'// Meizu Push [VERSION]
                 android:protectionLevel="signature">
 </permission>
 <uses-permission android:name="application package name.permission.C2D_MESSAGE"/>
-<!-- Note: this is the end of permission required by Meizu Push -->
+<!-- Note: this is the end of permissions required by Meizu Push -->
 ```
 4. For the Meizu message receiver, add ```Receiver``` in ```AndroidManifest.xml``` with the following configuration:
 
