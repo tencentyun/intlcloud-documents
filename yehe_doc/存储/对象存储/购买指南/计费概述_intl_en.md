@@ -21,7 +21,7 @@ COS is billed on a pay-as-you-go basis as detailed below:
 ## Billable Items
 
 Billable items in COS include storage capacity, requests, data retrievals, traffic, and administrative features as shown below. For more information, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
-![](https://main.qcloudimg.com/raw/91869d53f5193b56d5d9a982632d1db2.png)
+![](https://main.qcloudimg.com/raw/1b5a405c9272dc8994d64ba13dbace1e.png)
 
 
 ## Billing Cycle
