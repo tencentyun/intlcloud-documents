@@ -261,5 +261,5 @@ For PP, a separate section to be added at the end of the document:
 MODULES
 Last updated: [X]
 The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:
-1.        Tencent Push Notification Service (link to PP Module inserted);
+1. Tencent Push Notification Service (link to PP Module inserted);
  ++++++++++++++++++
