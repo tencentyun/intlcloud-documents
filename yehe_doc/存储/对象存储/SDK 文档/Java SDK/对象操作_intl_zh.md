@@ -6,33 +6,33 @@
 
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket（List Object）](https://cloud.tencent.com/document/product/436/7734) | 查询对象列表   | 查询存储桶下的部分或者全部对象            |
-| [PUT Object](https://cloud.tencent.com/document/product/436/7749) | 简单上传对象   | 上传一个对象至存储桶                      |
-| [HEAD Object](https://cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询 Object 的 Meta 信息                  |
-| [GET Object](https://cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个 Object（文件/对象）至本地        |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径                        |
-| [DELETE Object](https://cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在 Bucket 中删除指定 Object （文件/对象） |
-| [DELETE Multiple Objects](https://cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除指定对象                |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | 查询对象列表   | 查询存储桶下的部分或者全部对象            |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象   | 上传一个对象至存储桶                      |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询 Object 的 Meta 信息                  |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个 Object（文件/对象）至本地        |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径                        |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在 Bucket 中删除指定 Object （文件/对象） |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除指定对象                |
 
 **分块操作**
 
 | API                                                          | 操作名         | 操作描述                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
-| [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化 Multipart Upload 上传操作     |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
-| [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化 Multipart Upload 上传操作     |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
 
 **其他操作**
 
 | API                                                          | 操作名       | 操作描述                           |
 | ------------------------------------------------------------ | ------------ | ---------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问           |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
-| [GET Object acl](https://cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询对象的访问控制列表             |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问           |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询对象的访问控制列表             |
 
 ## 简单操作
 
@@ -67,7 +67,7 @@ Request 成员说明 ：
 #### 返回结果说明
 
 - 成功：返回 ObjectListing 类型， 包含所有的成员， 以及 nextMarker。  
-- 失败：抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -125,7 +125,7 @@ do {
 - 上传过程中默认会对文件长度与 MD5 进行校验（关闭 MD5 校验参见示例代码）。
 - 若 COS 上已存在同样 Key 的对象，上传时则会进行覆盖。
 - 当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，上传时请不要设置，默认继承 Bucket 权限。
-- 上传之后，您可以用同样的 key，调用 GetObject 接口将文件下载到本地，也可以生成预签名链接（下载请指定 method 为 GET，具体接口说明见下文），发送到其他端来进行下载。
+- 上传之后，您可以用同样的 key，调用 GetObject 接口将文件下载到本地，也可以生成 [预签名链接](https://intl.cloud.tencent.com/document/product/436/31536)（下载请指定 method 为 GET，具体接口说明见下文），发送到其他端来进行下载。
 
 #### 方法原型
 
@@ -169,7 +169,7 @@ ObjectMetadata 类用于记录对象的元信息，其主要成员说明如下�
 #### 返回结果说明
 
 - 成功：PutObjectResult，包含文件的 eTag 等信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 返回参数说明
 
@@ -250,7 +250,7 @@ public ObjectMetadata getObjectMetadata(String bucketName, String key)
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -298,10 +298,10 @@ Request 成员说明：
 
 - **方法1 （获取下载输入流）**
   - 成功：返回 COSObject 类，包含输入流以及对象属性。
-  - 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+  - 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 - **方法2 （下载文件到本地）**
   - 成功：返回文件的属性 ObjectMetadata，包含文件的自定义头和 content-type 等属性。
-  - 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+  - 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -356,7 +356,7 @@ Request 成员说明：
 #### 返回结果说明
 
 - 成功：返回 CopyObjectResult，包含新文件的 Etag 等信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -404,7 +404,7 @@ public void deleteObject(String bucketName, String key)
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -453,7 +453,7 @@ DeleteObjectsRequest.KeyVersion 成员说明：
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException，详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException，详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -524,7 +524,7 @@ Request 成员说明：
 #### 返回结果说明
 
 - 成功：返回 MultipartUploadListing，包含正在进行分块上传的信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -577,7 +577,7 @@ Request 成员说明：
 #### 返回结果说明
 
 - 成功：返回 InitiateMultipartUploadResult ，包含标志本次分块上传的 uploadId。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -620,7 +620,7 @@ Request 成员说明：
 #### 返回结果说明
 
 - 成功：返回 UploadPartResult，包含上传分块的eTag信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -680,7 +680,7 @@ Request 成员说明：
 #### 返回结果说明
 
 - 成功：返回 CopyPartResult，包含分块的 ETag 信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -740,7 +740,7 @@ public PartListing listParts(ListPartsRequest request)
 #### 返回结果说明
 
 - 成功：返回 PartListing，包含每一分块的 ETag 和编号，以及下一次 list 的起点 marker。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -785,7 +785,7 @@ public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUp
 #### 返回结果说明
 
 - 成功：返回 CompleteMultipartUploadResult，包含完成对象的 eTag 信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -821,7 +821,7 @@ public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws Co
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（例如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。 详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（例如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。 详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -867,7 +867,7 @@ Request 成员说明：
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（如身份认证失败）， 抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败）， 抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -957,7 +957,7 @@ CannedAccessControlList 表示预设的策略，针对的是所有人。是一�
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -1016,7 +1016,7 @@ public AccessControlList getObjectAcl(String bucketName, String key)
 #### 返回结果说明
 
 - 成功：返回一个 Object 所在的 ACL。
-- 失败：发生错误（如身份认证失败）， 抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败）， 抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -1038,7 +1038,7 @@ AccessControlList acl = cosClient.getObjectAcl(bucketName, key);
 // 对于使用公网传输且网络带宽质量不高的情况，建议减小该值，避免因网速过慢，造成请求超时。
 ExecutorService threadPool = Executors.newFixedThreadPool(32);
 // 传入一个 threadpool, 若不传入线程池，默认 TransferManager 中会生成一个单线程的线程池。
-transferManager = new TransferManager(cosClient, threadPool);
+TransferManager transferManager = new TransferManager(cosClient, threadPool);
 // 设置高级接口的分块上传阈值和分块大小为10MB
 TransferManagerConfiguration transferManagerConfiguration = new TransferManagerConfiguration();
 transferManagerConfiguration.setMultipartUploadThreshold(10 * 1024 * 1024);
@@ -1070,7 +1070,7 @@ TransferManagerConfiguration 类用于记录高级接口的配置信息，其主
 
 上传接口根据用户文件的长度，自动选择简单上传以及分块上传， 降低用户的使用门槛。用户不用关心分块上传的每个步骤。
 
-Tips 有关其他一些设置属性，存储类别，MD5 校验等可参见 [PUT Object API](https://cloud.tencent.com/document/product/436/7749)。
+Tips 有关其他一些设置属性，存储类别，MD5 校验等可参见 [PUT Object API](https://intl.cloud.tencent.com/document/product/436/7749)。
 
 #### 方法原型
 
@@ -1099,7 +1099,7 @@ Request 成员说明：
 #### 返回值
 
 - 成功：返回 Upload，可以查询上传是否结束，也可同步的等待上传结束。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -1148,7 +1148,7 @@ Request 成员说明：
 #### 返回值
 
 - 成功：返回 Download，可以查询下载是否结束，也可同步的等待下载结束。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 
@@ -1199,7 +1199,7 @@ Request 成员说明：
 #### 返回值
 
 - 成功：返回 Copy，可以查询 Copy 是否结束，也可同步的等待上传结束。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 请求示例
 

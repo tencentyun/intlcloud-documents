@@ -46,7 +46,7 @@ public Guzzle\Service\Resource\Model listObjects(array $args = array());
 
 #### 示例一：查询指定前缀、指定开始对象的对象列表
 
-[//]: # (.cssg-snippet-get-bucket-comp)
+[//]: # ".cssg-snippet-get-bucket-comp"
 
 ```php
 try {
@@ -159,7 +159,7 @@ public Guzzle\Service\Resource\Model listObjectVersions(array $args = array());
 
 #### 示例一：查询历史对象列表
 
-[//]: # (.cssg-snippet-list-object-versioning)
+[//]: # ".cssg-snippet-list-object-versioning"
 
 ```php
 try {
@@ -280,7 +280,7 @@ public Guzzle\Service\Resource\Model putObject(array $args = array())
 
 #### 示例一：上传本地文件
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 
 ```php
 try { 
@@ -299,7 +299,7 @@ try {
 
 #### 示例二：上传归档文件
 
-[//]: # (.cssg-snippet-put-object-archive)
+[//]: # ".cssg-snippet-put-object-archive"
 
 ```php
 try { 
@@ -319,7 +319,7 @@ try {
 
 #### 示例三：上传指定 Content-type 的文件
 
-[//]: # (.cssg-snippet-put-object-with-content-type)
+[//]: # ".cssg-snippet-put-object-with-content-type"
 
 ```php
 try { 
@@ -396,7 +396,7 @@ public Guzzle\Service\Resource\Model headObject(array $args = array());
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 
 ```php
 try {
@@ -494,7 +494,7 @@ public Guzzle\Service\Resource\Model getObject(array $args = array());
 
 #### 示例一：下载文件到本地
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 
 ```php
 try {
@@ -512,7 +512,7 @@ try {
 
 #### 示例二：按照 range 获取文件内容
 
-[//]: # (.cssg-snippet-get-object-range)
+[//]: # ".cssg-snippet-get-object-range"
 
 ```php
 try {
@@ -531,7 +531,7 @@ try {
 
 #### 示例三：下载指定版本的文件
 
-[//]: # (.cssg-snippet-get-object-with-versionId)
+[//]: # ".cssg-snippet-get-object-with-versionId"
 
 ```php
 try {
@@ -644,7 +644,7 @@ public Guzzle\Service\Resource\Model copyObject(array $args = array());
 
 #### 示例一：复制对象
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 
 ```php
 try {
@@ -663,7 +663,7 @@ try {
 
 #### 示例二：复制指定版本的对象
 
-[//]: # (.cssg-snippet-copy-object-with-versionId)
+[//]: # ".cssg-snippet-copy-object-with-versionId"
 
 ```php
 try {
@@ -682,7 +682,7 @@ try {
 
 #### 示例三：修改存储类型为归档
 
-[//]: # (.cssg-snippet-copy-object-update-storage-class)
+[//]: # ".cssg-snippet-copy-object-update-storage-class"
 
 ```php
 try {
@@ -702,7 +702,7 @@ try {
 
 #### 示例四：修改 meta 属性
 
-[//]: # (.cssg-snippet-copy-object-update-metadata)
+[//]: # ".cssg-snippet-copy-object-update-metadata"
 
 ```php
 try {
@@ -748,7 +748,7 @@ public Guzzle\Service\Resource\Model deleteObject(array $args = array());
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 
 ```php
 try {
@@ -788,7 +788,7 @@ public Guzzle\Service\Resource\Model deleteObjects(array $args = array());
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 
 ```php
 try {
@@ -874,7 +874,7 @@ public Guzzle\Service\Resource\Model restoreObject(array $args = array());
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 
 ```php
 try {
@@ -927,7 +927,7 @@ public Guzzle\Service\Resource\Model listMultipartUploads(array $args = array())
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 
 ```php
 try {
@@ -1057,7 +1057,7 @@ public Guzzle\Service\Resource\Model createMultipartUpload(array $args = array()
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 
 ```php
 try {
@@ -1132,7 +1132,7 @@ public Guzzle\Service\Resource\Model uploadPart(array $args = array());
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 
 ```php
 try {
@@ -1202,7 +1202,7 @@ public Guzzle\Service\Resource\Model uploadPartCopy(array $args = array());
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 
 ```php
 try {
@@ -1273,7 +1273,7 @@ public Guzzle\Service\Resource\Model listParts(array $args = array());
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 
 ```php
 try {
@@ -1386,7 +1386,7 @@ public Guzzle\Service\Resource\Model completeMultipartUpload(array $args = array
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 
 ```php
 try {
@@ -1435,7 +1435,7 @@ public Guzzle\Service\Resource\Model abortMultipartUpload(array $args = array())
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 
 ```php
 try {
@@ -1476,7 +1476,7 @@ try {
 
 #### 示例一：上传本地对象
 
-[//]: # (.cssg-snippet-transfer-upload-object)
+[//]: # ".cssg-snippet-transfer-upload-object"
 
 ```php
 try {
@@ -1495,7 +1495,7 @@ try {
 
 #### 示例二：上传归档对象
 
-[//]: # (.cssg-snippet-transfer-upload-object-archive)
+[//]: # ".cssg-snippet-transfer-upload-object-archive"
 
 ```php
 try {
@@ -1517,7 +1517,7 @@ try {
 
 #### 示例三：指定单个分块大小上传带有meta的对象
 
-[//]: # (.cssg-snippet-transfer-upload-object-comp)
+[//]: # ".cssg-snippet-transfer-upload-object-comp"
 
 ```php
 try {
@@ -1550,7 +1550,7 @@ try {
 
 #### 示例一：复制对象
 
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 
 ```php
 try {
@@ -1571,7 +1571,7 @@ try {
 }
 ```
 
-[//]: # (.cssg-snippet-transfer-copy-object-update-storage-class)
+[//]: # ".cssg-snippet-transfer-copy-object-update-storage-class"
 
 #### 示例二：转换对象存储类型
 
@@ -1597,7 +1597,7 @@ try {
 }
 ```
 
-[//]: # (.cssg-snippet-transfer-copy-object-update-metadata)
+[//]: # ".cssg-snippet-transfer-copy-object-update-metadata"
 
 ##### 示例三：修改对象存储属性
 
