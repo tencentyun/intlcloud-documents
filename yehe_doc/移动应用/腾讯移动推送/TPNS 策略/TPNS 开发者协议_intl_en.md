@@ -16,7 +16,7 @@ Tencent has the right to unilaterally restrict, suspend or terminate provisions 
 
    a.   **Application** refers to an application or platform service developed and operated by the Developer, or operated by the Developer as authorized by the right holder, which pushes messages to users through Tencent Push Notification Service. Services provided by such application or platform service to users include, but are not limited to, game services, tool services, e-commerce services, and video or music services, whether existing or hereafter provided; 
 
-   b.   “**Data Privacy and Security Agreement**” means the agreement located at <https://intl.cloud.tencent.com/document/product/301/17347>; 
+   b.   “**Data Privacy and Security Agreement**” means the agreement located at [Data Privacy and Security Agreement](https://intl.cloud.tencent.com/document/product/301/17347); 
 
    c.  “**Developer**” (hereinafter may also referred to as “You”) means an individual, legal person or other organization which, upon valid registration and application, enjoys corresponding rights to connect Applications to the Tencent Push Notification Service platform in order to push messages to users.;
 

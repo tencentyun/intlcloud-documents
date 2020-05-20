@@ -54,6 +54,12 @@ Tencent and Organisation acknowledge that Organisation is the Controller and Ten
 8.2 Tencent shall, to the extent the Personal Data Processed is EU Personal Data or where the laws of any other jurisdiction require such notification, inform Organisation by email (and via the Tencent Cloud Portal) of any intended changes concerning the addition or replacement of the Sub-Processors. In such a case, Organisation will have fourteen (14) days from the date of receipt of the notice to approve or reject the change. In the event of no response from Organisation, the Sub-Processor will be deemed accepted. If Organisation rejects the replacement sub-processor, Tencent may terminate the Agreement with immediate effect on written notice to Organisation.
 8.3 In the event that Tencent engages a Sub-Processor for carrying out specific Processing activities on behalf of Organisation, where that Sub-Processor fails to fulfill its data protection obligations, Tencent will remain fully liable under the Data Protection Laws to Organisation for the performance of that Sub-Processor's obligations.
 
+For DPSA, we add the following section before “Jurisdiction-specific Requirements”:
+
+MODULES
+The following Modules shall apply and be incorporated by reference into this DPSA if you use the specific Feature (as defined in each relevant Module).  
+1.Tencent Push Notification Service [link to DPSA Module inserted](https://intl.cloud.tencent.com/document/product/1024/36174);
+
 
 ## Jurisdiction-specific Requirements
 
