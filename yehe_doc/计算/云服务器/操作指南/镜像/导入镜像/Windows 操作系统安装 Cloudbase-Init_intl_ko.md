@@ -1,26 +1,39 @@
-## cloudbase-init 툴 설치 패키지 다운로드
+## 작업 시나리오
 
-실제 사용하고 있는 운영 체제 비트수에 따라 대응하는 버전의 cloudbase-init 툴 설치 패키지를 다운로드하여 설치하십시오. 자세한 내용은 [Cloudbase-Init 공식 홈페이지](http://www.cloudbase.it/cloud-init-for-windows-instances/)를 참조하십시오.
+본 문서는 Windows Server 2012 R2 64비트 운영 체제를 예로, Windows 운영 체제에서 Cloudbase-Init를 설치하는 방법에 대해 안내합니다.
 
-Cloudbase-init은 아래의 버전으로 나뉩니다.
-- 안정적인 버전: 해당 버전 설치 패키지로 설치할 것을 권장합니다.
-획득 경로는 다음과 같습니다.
-	- Windows 64비트 운영 체제: https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi
-	- Windwos 32비트 운영 체제: https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi
-- Beta 버전
+<span id="PreparationSoftware"></span>
+## 소프트웨어 준비
+Cloudbase-Init 를 설치하기 위해 다음의 소프트웨어가 필요합니다.
 
-## cloudbase-init 설치
+| 소프트웨어 명칭 | 획득 경로 | 설명 |
+|---------|---------|---------|
+| CloudbaseInitSetup_X_X_XX_xXX.msi | 실제 사용하는 운영 체제 비트에 따라 상응하는 Cloudbase-Init 설치 패키지를 다운로드합니다: <ul style="margin: 0;"><li>안정 버전: 해당 버전의 설치 패키지를 사용할 것을 권장합니다<ul style="margin: 0;"><li>Windows 64비트 운영 체제: [다운로드](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi)</li><li>Windows 32비트 운영 체제: [다운로드](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi)</li></ul></li><li>Beta 버전</li></ul>자세한 정보는 [Cloudbase-Init 공식 홈페이지](http://www.cloudbase.it/cloud-init-for-windows-instances/)를 참조 바랍니다. | Cloudbase-Init 설치에 사용합니다.  |
+| TencentCloudRun.ps1 | [ 다운로드](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) | - |
+| localscripts.py | [다운로드](http://cloudinit-1251783334.file.myqcloud.com/localscripts.py) | Cloudbase-Init 의 정상적인 운행을 보장하기 위해 사용합니다. |
 
-cloudbase-init 설치 과정에서 아래의 두 가지에 유의하십시오.
-- **"Configuration options" 창에서 아래 그림의 콘텐츠에 따라 설정하십시오. 즉 "Serial port for logging"을 "COM1"로 설정합니다.**
-![Alt text](https://main.qcloudimg.com/raw/beaca64e8484ec7e9880703cad400717.png)
-- **설치 완료의 마지막 단계에서 어떠한 체크 박스에도 체크 표시하지 말고 Sysprep를 실행하지 마십시오. 아래 그림 참조**
-![Alt text](https://main.qcloudimg.com/raw/aceec91df6a51db2eca775f3350de88c.png)
+## 작업 순서
 
-## cloudbase-init 설정 파일 수정 
+### Cloudbase-Init 설치
 
-1. cloudbase-init 설정 파일(설정 파일의 경로는 \PATH\TO\Cloudbase Solutions\Cloubase-Init\conf\cloudbase-init.conf 입니다)을 엽니다.
-2. cloudbase-init 설정 파일을 아래의 콘텐츠로 대체합니다.
+1. 운영 체제 인터페이스에서 Cloudbase-Init 설치 패키지를 더블 클릭하여 엽니다.
+2. 아래 이미지와 같이, 보안 경고 팝업 창에서 [실행]을 클릭하여 Cloudbase-Init 설치 인터페이스에 진입합니다.
+![](https://main.qcloudimg.com/raw/bdeb8ff4370dc6da38da6749154e449f.png)
+3. [Next]를 클릭합니다.
+4. [I accept the terms in the License Agreement]를 선택하고 [Next]를 두 번 클릭합니다.
+5. 아래 이미지와 같이, “Configuration options” 인터페이스에서 “**Serial port for logging**”을 “**COM1**”으로 설정한 후 [Next]를 클릭합니다.
+![](https://main.qcloudimg.com/raw/a41580e9b21e4550245b661b44682937.png)
+6. [Install]을 클릭하여 Cloudbase-Init 를 설치합니다.
+7. 아래 이미지와 같이, Cloudbase-Init 가 설치되면 [Finish]를 클릭해 Cloudbase-Init 설치 인터페이스를 닫습니다.
+> Cloudbase-Init 설치 인터페이스를 닫을 때, 체크 박스를 선택하거나 Sysprep를 실행하지 마세요.
+>
+![](https://main.qcloudimg.com/raw/d2d6c30def7812af9d7e484f5e8ccaa9.png)
+
+### cloudbase-init 구성 파일 수정 
+
+1. ‘cloudbase-init.conf’ 구성 파일을 엽니다.
+‘cloudbase-init.conf’ 구성 파일의 경로는 ‘C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf’ 로 기본 설정되어 있습니다. 
+2. ‘cloudbase-init.conf’ 구성 파일을 아래 내용과 같이 교체합니다.
 ```
 [DEFAULT]
 username=Administrator
@@ -50,4 +63,5 @@ local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScri
 C:\powershell
 PS C:\Set-ExecutionPolicy Unrestricted
 ```
-3. [TencentCloudRun.ps1](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) 스크립트를 C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\ 경로 아래로 카피합니다.
+3. ‘TencentCloudRun.ps1’ 스크립트를 ‘C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts’ 경로에 복사합니다.
+4. ‘C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Lib\site-packages\cloudbaseinit\plugins\common’ 경로에 있는 ‘localscripts.py’ 를 [소프트웨어 준비]의 ‘localscripts.py’ 파일로 교체합니다.

@@ -17,7 +17,7 @@
  - **购买数量**：每个用户在每个可用区可购买按量计费实例的总数量为10个。
  
 ##  API 购买
-通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15871)。
+通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15865)。
 
 
 ## 后续步骤

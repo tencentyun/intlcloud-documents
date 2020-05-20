@@ -1,23 +1,21 @@
 ## 작업 시나리오
 
-본 문은 Windows Server에서 어떻게 NTP 서비스를 실행하고 시계 원본 서버 주소를 수정하는 지를 소개합니다.
-
-Windows 타임 서비스(Windows Time service, W32Time)는 로컬 시스템과 시계 원본 서버 간의 시간 동기화에 사용됩니다. 네트워크 타임 프로토콜(NTP)을 사용하여 네트워크상의 컴퓨터 시계를 동기화합니다. 다음은 Windows Server 2016을 예로 들어 클라이언트와 명령줄의 방식을 통해 NTP 서비스를 실행하고 시계 원본 서버 주소를 수정하는 방법을 설명합니다.
+Windows 타임 서비스(Windows Time service, W32Time)는 로컬 시스템과 클럭 소스 서버 간의 시간 동기화에 사용됩니다. 네트워크 타임 프로토콜(NTP)을 사용하여 네트워크상의 컴퓨터 시계를 동기화합니다. 본 문서는 Windows Server 2012 운영 체제의 CVM을 예로 NTP 서비스 실행 및 클럭 소스 서버 주소 수정 방법에 관해 설명합니다.
 
 ## 작업 순서
 
-1. [Windows 인스턴스에 원격 로그인](https://intl.cloud.tencent.com/document/product/213/5435)。
-2. “관리 툴 > 서비스 > Windows Time”을 클릭합니다.
-![Windows Time](https://main.qcloudimg.com/raw/c5e41df2fc832b0f25f798408163664c.png)
-3. 시작 유형을 “자동”으로 설정하고 서비스가 실행되지 않을 경우 “실행”을 클릭합니다.
-![w32time](https://main.qcloudimg.com/raw/9201ddaca176a1523d5d12d02b6c8ec5.png)
-4. 작업창의 공지 구역에서 시간을 클릭하고 “날짜와 시간 설정 변경”을 클릭합니다.
-![시간 설정](https://main.qcloudimg.com/raw/28ba1cf5968466e114e93d222b957f99.png)	
-5. “Internet 시간” 태그로 전환하여 설정 변경을 클릭합니다.
-![Internet 시간](https://main.qcloudimg.com/raw/acc52fce975638cef4e39f9f821d66bc.png)
-6. Internet 시간 설정 팝업창에서 목표 원본 서버 도메인 또는 IP 주소를 입력하고 “확인”을 클릭합니다.
-![Internet 시간 설정](https://main.qcloudimg.com/raw/205ef59f3e8583af965a9381df0a9ef9.png)
-7. 설정 완료 후 “날짜와 시간”을 다시 열면 시계 원본 서버가 변경 완료되었음을 확인할 수 있습니다.
-![확인](https://main.qcloudimg.com/raw/767eee448b33ed38ea7bc2fbdadf780d.png)
+1. Windows CVM에 로그인합니다.
+2. 시작에서 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img> > [관리 도구]>[서비스]를 클릭하여 서비스 창을 엽니다.
+3. 아래 이미지와 같이 "서비스" 창에서 [Windows Time]을 더블 클릭하여 창을 엽니다.
+![](https://main.qcloudimg.com/raw/c5e41df2fc832b0f25f798408163664c.png)
+4. 아래 이미지와 같이 열린 "Windows Time 속성(로컬 컴퓨터)" 창에서 [시작 유형]을 [자동]으로 설정하고, [서비스 상태]를 [시작]으로 설정한 다음 [확인]을 누릅니다.
+![](https://main.qcloudimg.com/raw/9201ddaca176a1523d5d12d02b6c8ec5.png)
+5. 아래 이미지와 같이 운영 체제 인터페이스 작업 표시란에서, 우측 하단의 시간 >[날짜 및 시간 설정]을 클릭합니다.
+![](https://main.qcloudimg.com/raw/28ba1cf5968466e114e93d222b957f99.png)
+6. 아래 이미지와 같이 팝업된 “날짜 및 시간” 창에서 [인터넷 시간] 탭을 선택하고 [설정 변경]을 클릭합니다.
+![](https://main.qcloudimg.com/raw/767eee448b33ed38ea7bc2fbdadf780d.png)
+7. 아래 이미지와 같이 팝업된 "인터넷 시간 설정" 창에서 [서버]를 타깃 클럭 소스 서버의 도메인 또는 IP 주소로 설정하고, [확인]을 눌러 설정을 완료합니다.
+![](https://main.qcloudimg.com/raw/205ef59f3e8583af965a9381df0a9ef9.png)
+
 
 

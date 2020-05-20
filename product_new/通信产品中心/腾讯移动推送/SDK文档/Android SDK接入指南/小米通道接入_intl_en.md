@@ -7,7 +7,7 @@ The Mi push channel is a system-level push channel officially provided by Mi. On
 
 ## Directions
 ### Getting key
-Enter the [Mi open platform](httpsdev.mi.comconsoleappservicepush.html), sign up for a Mi developer account, and get the key of Mi Push. For more information, please see [Quick Connection Guide](httpsdev.mi.comconsoledocdetailpId=708).
+Enter the [Mi open platform](httpsdev.mi.comconsoleappservicepush.html), sign up for a Mi developer account, and get the key of Mi Push. For more information, please see [Quick Integration Guide](httpsdev.mi.comconsoledocdetailpId=708).
 
 
 
@@ -63,12 +63,12 @@ action androidname=com.xiaomi.push.PING_TIMER
 intent-filter
 receiver
 application
-!-- Note: this is the beginning of permission required by Mi Push --
+!-- Note: this is the beginning of permissions required by Mi Push --
 permission
 androidname=application package name.permission.MIPUSH_RECEIVE
 androidprotectionLevel=signature 
 !-- Here, change `com.example.mipushtest` to the application package name --
-uses-permission androidname=app package name.permission.MIPUSH_RECEIVE 
+uses-permission androidname=application package name.permission.MIPUSH_RECEIVE 
 !-- Here, change `com.example.mipushtest` to the application package name --
 -- Note: this is the end of the permissions required by Mi Push --
 ```

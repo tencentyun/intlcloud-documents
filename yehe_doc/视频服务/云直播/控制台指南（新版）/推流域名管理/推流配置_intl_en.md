@@ -3,7 +3,7 @@ The push configuration can be used to generate a push address under the correspo
 
 ## Prerequisites
 - You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
-- You have added a push domain name.
+- You have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 ## Push Address Generator
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and select the push domain name to be configured or click **Manage** to enter its details page.
@@ -15,7 +15,7 @@ The push configuration can be used to generate a push address under the correspo
 ![](https://main.qcloudimg.com/raw/29e4a0af31d1b37d91f6618453b6cc81.png)
 >The RTMP push address is in the format of `rtmp://domain/live/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)``, where:
 		- `domain`: LVB push domain name.
-		- `AppName`: LVB application name, which is `live` by default and customizable.
+		- `AppName`: application name, which is `live` by default. If you want to customize it, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) for configuration.
 		- `StreamName`: user-defined stream name which is used to identify a live stream.
 		- `txSecret`: authentication string generated after push authentication is enabled.
 		- `txTime`: timestamp set for a push address which represents the expiration time of the address in the console.

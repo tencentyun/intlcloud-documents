@@ -11,7 +11,7 @@ To enable URL authentication, you need an encrypted URL generated through authen
 - You have added a **playback domain name**.
 
 ## Directions
-1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **playback domain** to be configured with authentication or **Manage** to enter the domain management page.
+1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **Playback domain** to be configured with authentication or **Manage** to enter the domain management page.
 2. In **Access Control** > **Authentication Configuration**, click **Edit** to enter the authentication configuration page.
 3. Make the following settings on the authentication configuration page:
 	1. Click to enable playback authentication.
@@ -22,8 +22,12 @@ To enable URL authentication, you need an encrypted URL generated through authen
 
 >
 >- Playback authentication of a playback domain name is **disabled** by default.
-> - **Authentication Key**: it is user-defined and can contain uppercase and lowercase letters and numbers. It includes a master key (required) and a slave key (optional). The master/slave design ensures that the key can be smoothly replaced in case of leakage without interrupting the business.
-> - **Validity Period**: the validity period of the signature. The timestamp used is a hexadecimal Unix timestamp.
+>
+>- **Authentication Key**: it is user-defined and can contain uppercase and lowercase letters and digits. It includes a master key (required) and a slave key (optional). The master/slave design ensures that the key can be smoothly replaced in case of leakage without interrupting the business.
+>
+>- **Validity Period**: the validity period of the signature. The timestamp used is a hexadecimal Unix timestamp.
+
+ ![](https://main.qcloudimg.com/raw/b2dcc1a646a2e9e6c9bcac665aa5043c.png)
 
 
 > After authentication is enabled for the playback domain name, the original playback URL will not be accessible and an error 403 will be returned. Before enabling this feature, please make sure that your live streaming platform is compatible with the following authentication algorithm so that your streaming services will not be affected.

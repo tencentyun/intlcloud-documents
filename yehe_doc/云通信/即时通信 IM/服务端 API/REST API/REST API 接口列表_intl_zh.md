@@ -34,6 +34,7 @@
 | -------- | ------------------------------------------------------------ |
 | 添加好友 | [v4/sns/friend_add](https://intl.cloud.tencent.com/document/product/1047/34902) |
 | 导入好友 | [v4/sns/friend_import](https://intl.cloud.tencent.com/document/product/1047/34903) |
+| 更新好友 | [v4/sns/friend_update](https://intl.cloud.tencent.com/document/product/1047/34904) |
 | 删除好友 | [v4/sns/friend_delete](https://intl.cloud.tencent.com/document/product/1047/34905) |
 | 删除所有好友 | [v4/sns/friend_delete_all](https://intl.cloud.tencent.com/document/product/1047/34906) |
 | 校验好友 | [v4/sns/friend_check](https://intl.cloud.tencent.com/document/product/1047/34907) |
@@ -67,7 +68,7 @@
 | 在群组中发送普通消息   | [v4/group_open_http_svc/send_group_msg](https://intl.cloud.tencent.com/document/product/1047/34959) |
 | 在群组中发送系统通知   | [v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958) |
 | 群组消息撤回           | [v4/group_open_http_svc/group_msg_recall](https://intl.cloud.tencent.com/document/product/1047/34965) |
-| 转让群组               | [v4/group_open_http_svc/change_group_owner](https://intl.cloud.tencent.com/document/product/1047/34966) |
+| 转让群主               | [v4/group_open_http_svc/change_group_owner](https://intl.cloud.tencent.com/document/product/1047/34966) |
 | 导入群基础资料         | [v4/group_open_http_svc/import_group](https://intl.cloud.tencent.com/document/product/1047/34967) |
 | 导入群消息             | [v4/group_open_http_svc/import_group_msg ](https://intl.cloud.tencent.com/document/product/1047/34968) |
 | 导入群成员             | [v4/group_open_http_svc/import_group_member](https://intl.cloud.tencent.com/document/product/1047/34969) |
@@ -88,5 +89,5 @@
 
 | 功能说明 |接口 |
 |---------|---------|
-| 下载消息记录  |[v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |
 | 拉取运营数据  |[v4/openconfigsvr/getappinfo](https://intl.cloud.tencent.com/document/product/1047/34886) |
+| 下载消息记录  |[v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |

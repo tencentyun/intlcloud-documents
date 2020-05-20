@@ -1,6 +1,6 @@
 ## Operation Scenarios
 
-The recording feature is disabled by default for live push. If you want to set or modify it, you can do so in the recording configuration. Then, you need to associate the change with a specified domain name in domain management. After that, the recording feature will be enabled for all live streams under the domain name.
+The recording feature is disabled by default for live push. If you want to set or modify it, you can do so in the recording configuration. Then, you need to associate the change with a specified push domain name in domain management. After that, the recording feature will be enabled for all live streams under the domain name.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ The recording feature is disabled by default for live push. If you want to set o
 
 >The template configuration will take effect in about 5–10 minutes. For more information on how to configure a recording template, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34223).
 
-![](https://main.qcloudimg.com/raw/ad3059c36e93c39f65659fb9c8777741.png)
+![](https://main.qcloudimg.com/raw/29bf30fa3b4ce940a9903c0331fc608e.png)
 
 >If you want to unbind the recording configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
 
@@ -30,7 +30,9 @@ The generated recording files are automatically stored in the VOD system and can
 ### VOD Console
 
 Log in to the VOD Console and enter **[Media Assets](https://console.cloud.tencent.com/vod/media)** to browse all recording files.
-![](https://main.qcloudimg.com/raw/dd69c71a7c84eacef9ef8edff83c45bc.png)
+
+![](https://main.qcloudimg.com/raw/b41dc459807ac1986d1db04032ea7942.png)
+
 
 
 ### Recording event notification
@@ -42,5 +44,5 @@ The event notification is an efficient, reliable, and real-time mechanism, so it
 ### VOD API query
 For detailed instructions, please see the VOD API documentation:
 - The [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179) API can be used to query recording files by live stream name and time range.
-- The DescribeVodPlayInfo API can be used to get video information by video name prefix.
+- The **DescribeVodPlayInfo** API can be used to get video information by video name prefix.
 

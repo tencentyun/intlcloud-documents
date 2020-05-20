@@ -21,7 +21,7 @@
 ## 计费项
 
 对象存储 COS 的计费项包括：存储容量费用、请求费用、数据取回费用、流量费用和管理功能费用，如下图所示。更多介绍请参见 [计费项](https://intl.cloud.tencent.com/document/product/436/33776)。
-![](https://main.qcloudimg.com/raw/b71c82c9de255e17fd23bad40318e880.png)
+![](https://main.qcloudimg.com/raw/91869d53f5193b56d5d9a982632d1db2.png)
 
 
 ## 计费周期
