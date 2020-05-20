@@ -13,7 +13,7 @@ COS is billed on a pay-as-you-go basis as detailed below:
 
 | Billing Method | Supported Regions |
 | ------------------ | ------------------------------------------------------------ |
-| [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534) | For all the available regions, see Regions and Access Domain Names (https://intl.cloud.tencent.com/document/product/436/6224). |
+| [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534) | For all the available regions, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). |
 
 
 
