@@ -1,4 +1,4 @@
-Billable items in COS include [storage capacity](#jf1), [requests(#jf2), [data retrievals](#jf3), [traffic](#jf4), and [administrative features](#jf5). The following describes each billable item in detail. After learning about them and the [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239), you can estimate your fees on your own, or calculate them using the [COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
+Billable items in COS include [storage usage](#jf1), [requests(#jf2), [data retrievals](#jf3), [traffic](#jf4), and [administrative features](#jf5). The following describes each billable item in detail. After learning about them and the [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239), you can estimate your fees on your own, or calculate them using the [COS Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
 
 
 
