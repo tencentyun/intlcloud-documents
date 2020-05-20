@@ -1,4 +1,4 @@
-DBbrain can be accessed from both PCs and mobile devices. Specifically, you can access DBbrain through various platforms such as the DBbrain Console, the TencentDB for MySQL Console, the DMC Console, the "Tencent Cloud Assistant" WeChat Mini Program, and the "TencentDB" WeChat Official Account.
+DBbrain can be accessed via various platforms such as the DBbrain Console, the TencentDB for MySQL Console and the DMC Console.
 
 ## DBbrain Console
 You can access the DBbrain Console through the following ways:
@@ -18,11 +18,4 @@ You can access the DBbrain Console through the following ways:
 Log in to [DMC](https://dms.cloud.tencent.com/) or click **Log In** in the TencentDB for MySQL instance list. Select **DBbrain Intelligent Optimization** or **Quick Check** to access the DBbrain Console.
  ![](https://main.qcloudimg.com/raw/83d095547ac1b19c077ab0eb1ffc8f22.png)
  
-## Tencent Cloud Assistant WeChat Mini Program
-Search for and access the "Tencent Cloud Assistant" WeChat Mini Program and select the management page, then click **TencentDB**, and select **Database Service** > **TencentDB for DBbrain** to perform database autonomous service on your mobile device.
-![](https://main.qcloudimg.com/raw/8becc9465c10df1ddd0181cd1c29833f.png)
-
-## TencentDB WeChat Official Account
-Follow the "TencentDB" WeChat Official Account by scanning the QR code below and click **Quick Management** to perform database autonomous service on your mobile device.
-![](https://main.qcloudimg.com/raw/cb5b80f90519855ce7971f889165a910.png)
  
