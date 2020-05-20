@@ -11,4 +11,4 @@ DBbrain is currently in beta, during which the product and its features are free
 DBbrain provides a rich set of features, including instance overview, SQL insight (including SQL analysis and security risk identification), intelligent analysis, real-time session, and health report.
 
 ### How do I access DBbrain?
-DBbrain can be accessed on both PCs and mobile devices. On a PC, you can access DBbrain through the [DBbrain Console](https://console.cloud.tencent.com/cdb). On a mobile device, you can access it through the "Tencent Cloud Assistant" WeChat Mini Program or the "TencentDB" WeChat Official Account.
+DBbrain via the [DBbrain Console](https://console.cloud.tencent.com/cdb).
