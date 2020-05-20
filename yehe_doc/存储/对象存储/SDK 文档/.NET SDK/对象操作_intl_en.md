@@ -1,72 +1,72 @@
-## Introduction
+## Overview
 
-This document provides an overview of APIs and SDK sample codes related to simple operations, multipart operations and other operations on objects.
+This document provides an overview of APIs and SDK sample codes related to simple operations, multipart operations, and other object operations.
 
-**Simple Operations**
+**Simple operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | Querying object list | Queries some or all objects in a bucket |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | Querying an object list | Queries some or all objects in a bucket |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
-| [POST Object](https://cloud.tencent.com/document/product/436/14690) | Uploading an object using a form | Uploads an object using a form request |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using a form | Uploads an object using the form request |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | Setting object replication | Copies an object to the destination path |
-| [Options Object](https://cloud.tencent.com/document/product/436/8288) | Configuring pre-flight requests for cross-origin access | Sends a pre-flight request to check whether a real cross-origin access request can be sent |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Setting object replication | Copies an object to the destination path |
+| [Options Object](https://intl.cloud.tencent.com/document/product/436/8288) | Configuring pre-flight requests for cross-origin-access | Sends a pre-flight request to check whether a real cross-origin access can be sent |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects in a single request |
 
-**Multipart Upload Operations**
+**Multipart operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | Querying a multipart upload | Queries the information on ongoing multipart uploads |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information of a multipart upload in-progress |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload task |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads file parts |
-| [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts in the specified multipart upload task |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of the entire file |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload task and deletes the uploaded parts |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a file in multiple parts |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a specified multipart upload operation |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of the entire file |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload operation and deletes the uploaded parts |
 
-**Other Operations**
+**Other operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for the specified object in a bucket |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for a specified object in a bucket |
 | [GET Object acl ](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
 
-## Simple Operations
+## Simple operations
 
-### Querying Object List
+### Querying an object list
 
-#### Feature Description
+## Feature description
 
-This API (GET Bucket (List Object)) is used to query some or all objects in a bucket.
+This API is used to query some or all objects in a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 GetBucketResult GetBucket(GetBucketRequest request);
 
-void GetBucket(GetBucketRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
+void GetBucketCORS(GetBucketCORSRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -82,7 +82,7 @@ try
   request.SetPrefix("a/");
   // Execute the request
   GetBucketResult result = cosXml.GetBucket(request);
-  // bucket information
+  // Bucket information
   ListBucket info = result.listBucket;
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -97,34 +97,34 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | -------- | ---------------------------------- | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through GetBucketResult.
 
 | Member Variable | Type | Description |
 | ---------- | ------------------------------------------------------------ | --------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| listBucket | [ListBucket](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListBucket.cs) | The list of objects in a bucket is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| listBucket | [ListBucket](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListBucket.cs) | Returns the list of objects in a bucket |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Uploading an Object Using Simple Upload
+### Uploading an object using simple upload
 
-#### Feature Description
+## Feature description
 
-This API (PUT Object) is used to upload an object to a specified bucket. The uploaded object has a size restriction of 5GB. Please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload objects greater than 5GB.
+This API is used to upload an object to a specified bucket. The uploaded object has a size restriction of 5GB. Please use [Multipart Upload] (#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs] (#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload objects greater than 5GB.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 PutObjectResult PutObject(PutObjectRequest request);
@@ -132,21 +132,21 @@ PutObjectResult PutObject(PutObjectRequest request);
 void PutObject(PutObjectRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this  value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -158,15 +158,15 @@ try
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
   string srcPath = @"temp-source-file";// Absolute path to the local file
   if (!File.Exists(srcPath)) {
-    // If a target file do not exist, create a temporary file for testing
+    // If the target file does not exist, create a temporary file for testing
     File.WriteAllBytes(srcPath, new byte[1024]);
   }
 
   PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set progress callback
-  request.SetCosProgressCallback(delegate (long completed, long total)
+  // Set the progress callback
+  request.SetCosProgressCallback(delegate(long completed, long total)
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
@@ -187,38 +187,38 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | srcPath | Constructor | Absolute path to the local file uploaded to COS | string |
-| data | Constructor | The array of bytes of the file uploaded to COS | byte[] |
+| data | Constructor | The byte array of the file uploaded to COS | byte[] |
 | progressCallback | SetCosProgressCallback | Sets the callback for upload progress | Callback.OnProgressCallback |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through PutObjectResult.
 
 | Member Variable | Type | Description |
 | -------- | ------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| eTag | string | The eTag of an object is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| eTag | string | Returns the eTag of an object |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Uploading an Object Using a Form
+### Uploading an object using a form
 
-#### Feature Description
+## Feature description
 
-This API (POST Object) is used to upload an object using a form.
+This API is used to upload an object using a form.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 PostObjectResult PostObject(PostObjectRequest request);
@@ -226,21 +226,21 @@ PostObjectResult PostObject(PostObjectRequest request);
 void PostObject(PostObjectRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-post-object)
+[//]: # ".cssg-snippet-post-object"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key 
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -252,14 +252,14 @@ try
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
   string srcPath = @"temp-source-file";// Absolute path to the local file
   if (!File.Exists(srcPath)) {
-    // If a target file do not exist, create a temporary file for testing
+    // If the target file does not exist, create a temporary file for testing
     File.WriteAllBytes(srcPath, new byte[1024]);
   }
   PostObjectRequest request = new PostObjectRequest(bucket, key, srcPath);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set progress callback
-  request.SetCosProgressCallback(delegate (long completed, long total)
+  // Set the progress callback
+  request.SetCosProgressCallback(delegate(long completed, long total)
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
@@ -280,38 +280,38 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | srcPath | Constructor | Absolute path to the local file uploaded to COS | string |
-| data | Constructor | The array of bytes of the file uploaded to COS | byte[] |
+| data | Constructor | The byte array of the file uploaded to COS | byte[] |
 | progressCallback | SetCosProgressCallback | Sets the callback for upload progress | Callback.OnProgressCallback |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies  the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through PostObjectResult.
 
 | Member Variable | Type | Description |
 | -------- | ------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| eTag | string | The eTag of an object is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| eTag | string | Returns the eTag of an object |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Querying Object Metadata
+### Querying object metadata
 
-#### Feature Description
+## Feature description
 
-This API (HEAD Object) is used to query the metatdata of an object.
+This API is used to query the metadata of an object.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 HeadObjectResult HeadObject(HeadObjectRequest request);
@@ -319,21 +319,21 @@ HeadObjectResult HeadObject(HeadObjectRequest request);
 void HeadObject(HeadObjectRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -363,35 +363,35 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | --------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through HeadObjectResult.
 
 | Member Variable | Type | Description |
 | -------- | ------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| eTag | string | The eTag of an object is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| eTag | string | Returns the eTag of an object |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Downloading an Object
+### Downloading an object
 
-#### Feature Description
+## Feature description
 
-This API (GET Object) is used to download an object the the local file system.
+This API is used to download an object to the local file system.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 GetObjectResult GetObject(GetObjectRequest request);
@@ -404,21 +404,21 @@ void GetObject(GetObjectBytesRequest request, COSXML.Callback.OnSuccessCallback<
  
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -429,12 +429,12 @@ try
   String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
   string localDir = System.IO.Path.GetTempPath();// Local file directory
-  string localFileName = "my-local-temp-file"; // Specify the file name of the file to be saved locally
+  string localFileName = "my-local-temp-file"; // Specifies the file name of the file to be saved locally
   GetObjectRequest request = new GetObjectRequest(bucket, key, localDir, localFileName);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set progress callback
-  request.SetCosProgressCallback(delegate (long completed, long total)
+  // Set the progress callback
+  request.SetCosProgressCallback(delegate(long completed, long total)
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
@@ -463,8 +463,8 @@ try
   GetObjectBytesRequest request = new GetObjectBytesRequest(bucket, key);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set progress callback
-  request.SetCosProgressCallback(delegate (long completed, long total)
+  // Set the progress callback
+  request.SetCosProgressCallback(delegate(long completed, long total)
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
@@ -487,38 +487,38 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | localDir | Constructor | The absolute path to the folder where the file is downloaded and stored locally | string |
 | localDir | Constructor | The name of the file downloaded and stored locally | string |
 | progressCallback    | SetCosProgressCallback | Sets the callback for download progress | Callback.OnProgressCallback |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through GetObjectResult.
 
 | Member Variable | Type | Description |
 | -------- | ------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| eTag | string | The eTag of an object is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| eTag | string | Returns the eTag of an object |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Setting Object Replication
+### Setting object replication
 
 
-#### Feature Description
-This API (PUT Object - Copy) copies an object to the destination path (object key).
+## Feature description
+This API copies an object to the destination path (object key).
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 CopyObjectResult CopyObject(CopyObjectRequest request);
@@ -526,21 +526,21 @@ CopyObjectResult CopyObject(CopyObjectRequest request);
 void CopyObject(CopyObjectRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```c#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key 
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -561,9 +561,9 @@ try
   CopyObjectRequest request = new CopyObjectRequest(bucket, key);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set to copy source
+  // Set the copy source
   request.SetCopySource(copySource);
-  // Set whether to copy or update. Here we select to copy
+  // Set whether to copy or update. Copy is used here.
   request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.COPY);
   // Execute the request
   CopyObjectResult result = cosXml.CopyObject(request);
@@ -582,37 +582,37 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ------------------------ | ------------------------------------------------------------ | -------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | copySource | SetCopySource | Describes the source path of the copied data | CopySourceStruct |
 | metaDataDirective | SetCopyMetaDataDirective | Indicates whether to copy or update the metadata of the source file | CosMetaDataDirective |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through CopyObjectResult.
 
 | Member Variable | Type | Description |
 | ---------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CopyObject.cs) | The information of the object copied successfully is returned. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CopyObject.cs) | Returns the information on successfully copied objects |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Configuring Pre-flight Requests for Cross-origin Access
+### Configuring pre-flight requests for cross-origin access
 
-#### Feature Description
+## Feature description
 
-This API (Options Object) uses preflight requests to check whether you can send cross-origin access requests.
+This API uses preflight requests to check whether you can send cross-origin access requests.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 OptionObjectResult OptionObject(OptionObjectRequest request);
@@ -620,21 +620,21 @@ OptionObjectResult OptionObject(OptionObjectRequest request);
 void OptionObject(OptionObjectRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-option-object)
+[//]: # ".cssg-snippet-option-object"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -666,26 +666,26 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
-| origin | Constructor or SetOrigin | Simulates the origin from which the request for cross-origin access is sent | string |
-| accessMthod | Constructor or SetAccessControlMethod | Simulates the HTTP method of the request for cross-origin access | string |
+| origin | Constructor or SetOrigin | Simulates the origin of the request for cross-origin access  | string |
+| accessMthod | Construction method or SetAccessControlMethod | Simulates the HTTP method of the request for cross-origin access | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through DeleteObjectResult.
 
 | Member Variable | Type | Description |
 | ------------------------------- | -------------- | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 | accessControlAllowHeaders | `List` | Allowed request headers for cross-origin access |
 | accessControlAllowMethods | `List` | Allowed HTTP request methods for cross-origin access |
 | accessControlAllowExposeHeaders | `List` | Allowed custom request headers for cross-origin access |
@@ -693,13 +693,13 @@ The result of the request is returned through DeleteObjectResult.
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Deleting a Single Object
+### Deleting a single object
 
-#### Feature Description
+## Feature description
 
-This API (DELETE Object) deletes a specified object from the bucket.
+This API deletes a specified object from the bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 DeleteObjectResult DeleteObject(DeleteObjectRequest request);
@@ -707,21 +707,21 @@ DeleteObjectResult DeleteObject(DeleteObjectRequest request);
 void DeleteObject(DeleteObjectRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -751,34 +751,34 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through DeleteObjectResult.
 
 | Member Variable | Type | Description |
 | -------- | ---- | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Deleting Multiple Objects
+### Deleting multiple objects
 
-#### Feature Description
+## Feature description
 
-This API (DELETE Multiple Object) deletes multiple objects in batches from a bucket.
+This API deletes multiple objects from a bucket in a single operation.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 DeleteMultiObjectResult  DeleteMultiObjects(DeleteMultiObjectRequest request);
@@ -786,21 +786,21 @@ DeleteMultiObjectResult  DeleteMultiObjects(DeleteMultiObjectRequest request);
 void DeleteMultiObjects(DeleteObjectRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -812,7 +812,7 @@ try
   DeleteMultiObjectRequest request = new DeleteMultiObjectRequest(bucket);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set return result format
+  // Set the return result format
   request.SetDeleteQuiet(false);
   // Object key
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
@@ -836,46 +836,46 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
-|quiet|SetDeleteQuiet| Returned results mode: false, verbose mode; true, quiet mode |bool |
-|keys|SetObjectKeys| Set of deleted object keys |`List<string>`|
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
+| quiet | SetDeleteQuiet | Returned results mode: false, verbose mode; true, quiet mode |bool |
+| keys | SetObjectKeys | Set of deleted object keys |`List<string>`|
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through DeleteObjectResult.
 
 | Member Variable | Type | Description |
 | -------- | ---- | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-|deleteResult |[DeleteResult](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/DeleteResult.cs) |The results returned for batch deleting multiple objects |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| deleteResult | [DeleteResult](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/DeleteResult.cs) | The returned result of the batch deleting operation |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 
-## Multipart Operations
+## Multipart operations
 
 
-- Multipart upload objects: Initializing multipart upload, uploading parts, and completing all multipart uploads
-- Resuming the multipart upload: Querying the parts uploaded, uploading parts, and completing all multipart uploads
-- Delete the part uploaded
+- Uploading objects with multipart upload: initialize the multipart upload, upload the parts, and complete the multipart upload
+- Resuming a multipart upload: query the uploaded parts, upload the remaining parts, and complete the multipart upload
+- Deleting uploaded parts
 
-> Uploading the object via multipart upload, you can also use [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload (recommended).
+> Uploading the object via multipart upload, you can also use [Advanced APIs] (#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload (recommended).
 
-### Querying Multipart Upload
+### Querying multipart uploads
 
-#### Feature Description
+## Feature description 
 
-This API (List Multipart Uploads) queries the information on ongoing multipart uploads.
+This API queries the information on ongoing multipart uploads.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 ListMultiUploadsResult ListMultiUploads(ListMultiUploadsRequest request);
@@ -883,21 +883,21 @@ ListMultiUploadsResult ListMultiUploads(ListMultiUploadsRequest request);
 void ListMultiUploads(ListMultiUploadsRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -926,35 +926,35 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | -------- | ---------------------------------- | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through ListMultiUploadsResult.
 
 | Member Variable | Type | Description |
 | -------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| listMultipartUploads | [ListMultipartUploads](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListMultipartUploads.cs) | The information of all in-progress multipart uploads in the bucket is returned. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| listMultipartUploads | [ListMultipartUploads](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListMultipartUploads.cs) | Returns information on all multipart uploads in-progress in the bucket |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 
-### <span id = "INIT_MULIT_UPLOAD">Initializing Multipart Upload </span>
+### <span id = "INIT_MULIT_UPLOAD">Initializing a multipart upload </span>
 
-#### Feature Description
+## Feature description
 
-This API (Initiate Multipart Upload) initializes a multipart upload task.
+This API initializes a multipart upload task.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 InitMultipartUploadResult InitMultipartUpload(InitMultipartUploadRequest request);
@@ -962,21 +962,21 @@ InitMultipartUploadResult InitMultipartUpload(InitMultipartUploadRequest request
 void InitMultipartUpload(InitMultipartUploadRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1007,35 +1007,35 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through InitMultipartUploadResult.
 
 | Member Variable | Type | Description |
 | ------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| initMultipartUpload | [InitiateMultipartUpload](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/InitiateMultipartUpload.cs) | The object's uploadId is returned when multipart upload is initialized |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| initMultipartUpload | [InitiateMultipartUpload](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/InitiateMultipartUpload.cs) | Returns the object's uploadId when the multipart upload is initialized |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### <span id = "LIST_MULIT_UPLOAD"> Querying a Multipart Upload </span>
+### <span id = "LIST_MULIT_UPLOAD"> Querying uploaded parts </span>
 
-#### Feature Description
+## Feature description
 
-This API (List Parts) queries uploaded parts in the specified multipart upload task.
+This API queries the uploaded parts of a specified multipart upload operation.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 ListPartsResult ListParts(ListPartsRequest request);
@@ -1043,21 +1043,21 @@ ListPartsResult ListParts(ListPartsRequest request);
 void ListParts(ListPartsRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1067,14 +1067,14 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
-  string uploadId = "exampleUploadId"; // uploadId is returned when multipart upload is initialized
+  string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload is initialized
   ListPartsRequest request = new ListPartsRequest(bucket, key, uploadId);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   ListPartsResult result = cosXml.ListParts(request);
   // Request successful
-  // Lists the parts that have been uploaded
+  // List the parts that have been uploaded
   List<COSXML.Model.Tag.ListParts.Part> alreadyUploadParts = result.listParts.parts;
   Console.WriteLine(result.GetResultInfo());
 }
@@ -1090,36 +1090,36 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ----------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
-| uploadId | Constructor or SetUploadId | Identifies the specified uploadId for multipart upload | string |
+| uploadId | Constructor or SetUploadId | Identifies the uploadId of a specified multipart upload | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through ListPartsResult.
 
 | Member Variable | Type | Description |
 | --------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| listParts | [ListParts](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListParts.cs) | The information of the parts uploaded to the specified uploadId in a multipart upload is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| listParts | [ListParts](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/ListParts.cs) | Returns the information on the parts uploaded to a specified uploadId in a multipart upload |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### <span id = "MULIT_UPLOAD_PART"> Uploading Parts</span>
+### <span id = "MULIT_UPLOAD_PART"> Uploading parts</span>
 
-#### Feature Description
+## Feature description
 
-This API (Upload Part) uploads object parts.
+This API uploads object parts.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 UploadPartResult UploadPart(UploadPartRequest request);
@@ -1127,21 +1127,21 @@ UploadPartResult UploadPart(UploadPartRequest request);
 void UploadPart(UploadPartRequest, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1151,19 +1151,19 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
-  string uploadId = "exampleUploadId"; // uploadId is returned when multipart upload is initialized
+  string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload is initialized
   int partNumber = 1; // Part number, increases with increments from 1
   string srcPath = @"temp-source-file";// Absolute path to the local file
   if (!File.Exists(srcPath)) {
-    // If a target file do not exist, create a temporary file for testing
+    // If the target file does not exist, create a temporary file for testing
     File.WriteAllBytes(srcPath, new byte[1024]);
   }
   UploadPartRequest request = new UploadPartRequest(bucket, key, partNumber, 
     uploadId, srcPath);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set progress callback
-  request.SetCosProgressCallback(delegate (long completed, long total)
+  // Set the progress callback
+  request.SetCosProgressCallback(delegate(long completed, long total)
   {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
   });
@@ -1186,39 +1186,39 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ------------------------- | ------------------------------------------------------------ | --------------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
-| uploadId | Constructor or SetUploadId | Identifies the specified uploadId for multipart upload | string |
-| partNumber | Constructor or SetPartNumber | Identifies the number of the specified part, which should be ≥ 1. | int |
+| uploadId | Constructor or SetUploadId | Identifies the uploadId of a specified multipart upload | string |
+| partNumber | Constructor or SetPartNumber | Identifies the number of a specified part; this value should be ≥ 1. | int |
 | srcPath | Constructor | Absolute path to the local file uploaded to COS | string |
-| data | Constructor | The array of bytes of the file uploaded to COS | byte[] |
+| data | Constructor | The byte array of the file uploaded to COS | byte[] |
 | progressCallback | SetCosProgressCallback | Sets the callback for upload progress | Callback.OnProgressCallback |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through UploadPartResult.
 
 | Member Variable | Type | Description |
 | -------- | ------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| eTag | string | The eTag of an object uploaded using a part is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| eTag | string | Returns the eTag of the object part |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
 ### <span id = "MULIT_UPLOAD_PART_COPY"> Copying a Part </span>
 
-#### Feature Description
-This API (Upload Part - Copy) copies an object as a part.
+## Feature description
+This API copies an object as a part.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 UploadPartCopyResult PartCopy(UploadPartCopyRequest request)；
@@ -1226,21 +1226,21 @@ UploadPartCopyResult PartCopy(UploadPartCopyRequest request)；
 void PartCopy(UploadPartCopyRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1258,13 +1258,13 @@ try
 
   String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
-  string uploadId = "exampleUploadId"; // uploadId is returned when multipart upload is initialized
+  string uploadId = "exampleUploadId"; // uploadId  returned when the multipart upload is initialized
   int partNumber = 1; // Part number, increases with increments from 1
   UploadPartCopyRequest request = new UploadPartCopyRequest(bucket, key, 
     partNumber, uploadId);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set to copy source
+  // Set the copy source
   request.SetCopySource(copySource);
   // Set the range of parts to be copied, e.g., 0 to 1M
   request.SetCopyRange(0, 1024 * 1024);
@@ -1287,38 +1287,38 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ------------------------- | ------------------------------------------------------------ | --------------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
-| uploadId | Constructor or SetUploadId | Identifies the specified uploadId for multipart upload | string |
-| partNumber | Constructor or SetPartNumber | Identifies the number of the specified part, which should be ≥ 1. | int |
+| uploadId | Constructor or SetUploadId | Identifies the uploadId of a specified multipart upload | string |
+| partNumber | Constructor or SetPartNumber | Identifies the part number of a specified part; this value should be ≥ 1. | int |
 | copySource | SetCopySource | Describes the source path of the copied data | CopySourceStruct |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through UploadPartResult.
 
 | Member Variable | Type | Description |
 | -------- | ------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CopyObject.cs) | The information of the object copied successfully is returned. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CopyObject.cs) | Returns the information on successfully copied objects |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### <span id = "COMPLETE_MULIT_UPLOAD"> Completing a Multipart Upload </span>
+### <span id = "COMPLETE_MULIT_UPLOAD"> Completing a multipart upload </ span>
 
-#### Feature Description
+## Feature description
 
-This API (Complete Multipart Upload) completes the multipart upload of the entire file. 
+This API completes the multipart upload of the entire file.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 CompleteMultipartUploadResult CompleteMultiUpload(CompleteMultipartUploadRequest request);
@@ -1326,21 +1326,21 @@ CompleteMultipartUploadResult CompleteMultiUpload(CompleteMultipartUploadRequest
 void CompleteMultiUpload(CompleteMultipartUploadRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key 
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1350,14 +1350,14 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
-  string uploadId = "exampleUploadId"; // uploadId is returned when multipart upload is initialized
+  string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload is initialized
   CompleteMultipartUploadRequest request = new CompleteMultipartUploadRequest(bucket, 
     key, uploadId);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set uploaded parts in an ascending order by the partNumber.
+  // Concatenate uploaded parts in an ascending order by partNumber.
   // request.SetPartNumberAndETag(1, "Example Etag");
-  string etag = "exampleETag";
+  String etag = "exampleETag";
   request.SetPartNumberAndETag(1, etag);
   // Execute the request
   CompleteMultipartUploadResult result = cosXml.CompleteMultiUpload(request);
@@ -1376,39 +1376,39 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ----------------------- | ------------------------------------------------------------ | -------------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
-| uploadId | Constructor or SetUploadId | Identifies the specified uploadId for multipart upload | string |
-| partNumber | SetPartNumberAndETag | Identifies the number of the specified part, which should be ≥ 1. | int |
-| eTag | SetPartNumberAndETag | Identifies the eTag returned when the specified part is uploaded | string |
-| partNumberAndETags | SetPartNumberAndETag | Identifies the part number and the eTag returned when the part is uploaded | `Dictionary ` |
+| uploadId | Constructor or SetUploadId | Identifies the uploadId of a specified multipart upload | string |
+| partNumber | SetPartNumberAndETag | Identifies the part number of a specified part; this value must be >= 1 | int |
+| eTag | SetPartNumberAndETag | Identifies the eTag returned by the upload of a specified part | string |
+| partNumberAndETags | SetPartNumberAndETag | Identifies the part number and the eTag returned when a part is uploaded | `Dictionary ` |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through CompleteMultipartUploadResult.
 
 | Member Variable | Type | Description |
 | -------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| CompleteResult | [CompleteMultipartUploadResult](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CompleteResult.cs) | Returns a success notification when all parts are uploaded. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| CompleteResult | [CompleteMultipartUploadResult](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/CompleteResult.cs) | Returns the information on the successful upload of all parts |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### <span id = "ABORT_MULIT_UPLOAD"> Aborting a Multipart Upload </span>
+### <span id = "ABORT_MULIT_UPLOAD"> Aborting a multipart upload </ span>
 
-#### Feature Description
+## Feature description
 
-This API (Abort Multipart Upload) aborts a multipart upload task and deletes the uploaded parts. 
+This API aborts a multipart upload operation and deletes the uploaded parts.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 AbortMultipartUploadResult AbortMultiUpload(AbortMultipartUploadRequest request);
@@ -1416,21 +1416,21 @@ AbortMultipartUploadResult AbortMultiUpload(AbortMultipartUploadRequest request)
 void AbortMultiUpload(AbortMultipartUploadRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key 
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1440,7 +1440,7 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
   string key = "exampleobject"; // The location of the object in the bucket, i.e. ObjectKey.
-  string uploadId = "exampleUploadId"; // uploadId is returned when multipart upload is initialized
+  string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload is initialized
   AbortMultipartUploadRequest request = new AbortMultipartUploadRequest(bucket, key, uploadId);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
@@ -1461,37 +1461,37 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ----------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
-| uploadId | Constructor or SetUploadId | Identifies the specified uploadId for multipart upload | string |
+| uploadId | Constructor or SetUploadId | Identifies the uploadId of a specified multipart upload | string |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through AbortMultipartUploadResult.
 
 | Member Variable | Type | Description |
 | -------- | ---- | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-## Other Operations
+**Other operations**
 
-### Restoring an Archived Object 
+### Restoring an archived object 
 
-#### Feature Description
+## Feature description
 
-This API (POST Object restore) is used to restore an archived object for access.
+This API is used to restore an archived object for access.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 RestoreObjectResult RestoreObject(RestoreObjectRequest request);
@@ -1499,21 +1499,21 @@ RestoreObjectResult RestoreObject(RestoreObjectRequest request);
 void RestoreObject(RestoreObjectRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key 
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1526,7 +1526,7 @@ try
   RestoreObjectRequest request = new RestoreObjectRequest(bucket, key);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Restoration time
+  Restoration time
   request.SetExpireDays(3);
   request.SetTier(COSXML.Model.Tag.RestoreConfigure.Tier.Bulk);
 
@@ -1547,36 +1547,36 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | days | SetExpireDays | Sets the validity period of the temporary replica | int |
-| tier | SetTier | When restoring data, Tier can be specified as three types of restoration supported by CAS: Expedited, Standard, and Bulk. | RestoreConfigure.Tier |
+| tier | SetTier | For data restoration, Tier can specify the restoration type supported by CAS as Expedited, Standard, and Bulk. | RestoreConfigure.Tier |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through RestoreObjectResult.
 
 | Member Variable | Type | Description |
 | -------- | ---- | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Setting Object ACL
+### Setting object ACL
 
-#### Feature Description
+## Feature description
 
-This API (PUT Object acl) is used to set the access control list (ACL) for a specified object in a bucket.
+This API is used to set the access control list (ACL) of a specified object in a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 PutObjectACLResult PutObjectACL(PutObjectACLRequest request);
@@ -1584,28 +1584,28 @@ PutObjectACLResult PutObjectACL(PutObjectACLRequest request);
 void PutObjectACL(PutObjectACLRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-put-object-acl)
+[//]: # ".cssg-snippet-put-object-acl"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
 CosXml cosXml = new CosXmlServer(config, qCloudCredentialProvider);
 
 // To avoid hitting the ACL+policy limit of 1000
-// We do not recommend setting a ACL for an individual object unless necessary. Objects are subjected to their bucket’s ACL by default. 
+// We do not recommend setting an ACL for an individual object unless absolutely necessary. Objects are subjected to their bucket’s ACL by default. 
 try
 {
   String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
@@ -1613,9 +1613,9 @@ try
   PutObjectACLRequest request = new PutObjectACLRequest(bucket, key);
   // Set the validity period of the signature
   request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set private read and write permissions 
+  Set private read and write permissions 
   request.SetCosACL(CosACL.PRIVATE);
-  // Grant read permission to account 1131975903 
+  Grant the read permission to the account 1131975903 
   COSXML.Model.Tag.GrantAccount readAccount = new COSXML.Model.Tag.GrantAccount();
   readAccount.AddGrantAccount("1131975903", "1131975903");
   request.SetXCosGrantRead(readAccount);
@@ -1636,36 +1636,36 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | --------------------------------------------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | cosAcl | SetCosAcl | Sets the ACL permissions for the bucket | string |
 | grantAccount | SetXCosGrantRead, SetXCosGrantWrite, or SetXCosReadWrite | Grants users read and write permissions | GrantAccount |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through PutObjectACLResult.
 
 | Member Variable | Type | Description |
 | -------- | ---- | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-### Querying Object ACL
+### Querying object ACL
 
-#### Feature Description
+## Feature description
 
-This API (GET Object acl) is used to query the ACL of an object.
+This API is used to query the ACL of an object.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 GetObjectACLResult GetObjectACL(GetObjectACLRequest request);
@@ -1673,21 +1673,21 @@ GetObjectACLResult GetObjectACL(GetObjectACLRequest request);
 void GetObjectACL(GetObjectACLRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
 ```
 
-#### Sample Request
+#### Sample request
 
-[//]: # (.cssg-snippet-get-object-acl)
+[//]: # ".cssg-snippet-get-object-acl"
 ```C#
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1717,59 +1717,59 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Construction method | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | signStartTimeSecond | SetSign | Start time of the signature's validity period in the format of a Unix timestamp, e.g., 1557902800 | long |
-| durationSecond      | SetSign  | Signature validity period in seconds, e.g., if a signature is valid for 1 minute, the value will be 60     | long           |
-| headerKeys | SetSign | Indicates whether to verify the header for the signature | `List` |
-| queryParameterKeys | SetSign | Indicates whether to verify the query parameters in the request URL for the signature | `List` |
+| durationSecond      | SetSign  | Signature validity period measured in seconds, e.g., if a signature is valid for 1 minute, this value would be 60     | long           |
+| headerKeys | SetSign | Indicates whether the signature verifies the header | `List<string>` |
+| queryParameterKeys | SetSign | Indicates whether the signature verifies the query parameters in the request URL | `List<string>` |
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through GetObjectACLResult.
 
 | Member Variable | Type | Description |
 | ------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/AccessControlPolicy.cs) | The information of the object ACL is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Model/Tag/AccessControlPolicy.cs) | Returns information on the object ACL |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
 
-## Advanced APIs (Recommended)
+## Advanced APIs (recommended)
 
-### Uploading an Object
+### Uploading an object
 
-#### Feature Description
+## Feature description
 
-This API automatically divides the data based on the length of the user file when uploading to facilitate usage.
+This API automatically divides your data and lowers your usage threshold based on the size of your file when uploading to streamline the  multipart upload process.
 
-#### Method Prototype
+#### Method prototype
 
 ```C#
 void Upload(COSXMLUploadTask uploadTask);
 ```
 
-#### Sample Request
+#### Sample request
 
-*COSXMLUploadTask** encapsulate async requests for simple upload and multipart upload APIs and support pausing, resuming, and canceling upload requests. This is recommended for object upload. The sample code is as follows:
+*COSXMLUploadTask** encapsulates async requests for simple upload and multipart upload APIs and supports pausing, resuming, and canceling upload requests. We recommend using this for object upload. The sample code is as follows:
 
-[//]: # (.cssg-snippet-transfer-upload-object)
+[//]: # ".cssg-snippet-transfer-upload-object"
 ```java
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000")  // Set the APPID of your Tencent Cloud account
-  .SetRegion("COS_REGION")  // Set the default bucket region
-  .Build();
+  .SetConnectionTimeoutMs(60000)  // Sets the connection timeout period in milliseconds; this value is 45,000 ms by default
+  .SetReadWriteTimeoutMs(40000)  // Sets the read/write timeout period in milliseconds; this value is 45,000 ms by default
+  .IsHttps(true)  // Sets HTTPS as the default request method
+  .SetAppid("1250000000")  // Sets the APPID of your Tencent Cloud account
+  .SetRegion("COS_REGION")  // Sets the default bucket region
+  .build();
 
-String secretId = "COS_SECRETID"; // TencentCloud API key SecretId
-String secretKey = "COS_SECRETKEY"; // TencentCloud API key SecretKey
-long durationSecond = 600;          //Validity period of the request signature in seconds
+String secretId = "COS_SECRETID"; // The SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // The SecretKey of your TencentCloud API key
+long durationSecond = 600;          // Validity period of the request signature in seconds
 QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
   secretKey, durationSecond);
 
@@ -1782,10 +1782,10 @@ TransferConfig transferConfig = new TransferConfig();
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
 String bucket = "examplebucket-1250000000"; // Bucket, format: BucketName-APPID
-String cosPath = "exampleobject"; // Identifies the location of the object in the bucket, i.e., the object key
+String cosPath = "exampleobject"; //The location identifier of the object in the bucket, i.e. the object key. 
 string srcPath = @"temp-source-file";// Absolute path to the local file
 if (!File.Exists(srcPath)) {
-  // If a target file do not exist, create a temporary file for testing
+  // If the target file does not exist, create a temporary file for testing
   File.WriteAllBytes(srcPath, new byte[1024]);
 }
 
@@ -1824,22 +1824,22 @@ transferManager.Upload(uploadTask);
 autoEvent.WaitOne();
 
 // Cancel upload
-// cosxmlUploadTask.cancel();
+cosxmlUploadTask.cancel();
 
 
 // Pause upload
-// cosxmlUploadTask.pause();
+cosxmlUploadTask.pause();
 
 // Resume upload
-// cosxmlUploadTask.resume();
+cosxmlUploadTask.resume();
 ```
 
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Setting Method | Description | Type |
 | ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------------- |
-| bucket | Constructor | Bucket name. Format: BucketName-APPID | string |
+| bucket | Constructor | Bucket name in the format: BucketName-APPID | string |
 | key | Constructor or SetCosPath | [Object Key](https://intl.cloud.tencent.com/document/product/436/13324) of an object stored in COS | String |
 | srcPath | Constructor | Absolute path to the local file uploaded to COS | string |
 | progressCallback | SetCosProgressCallback | Sets the callback for upload progress | Callback.OnProgressCallback |
@@ -1847,13 +1847,13 @@ autoEvent.WaitOne();
 | failCallback      | Member Variable               | Sets the callback for when the task fails           | Callback.OnFailedCallback             |
 
 
-#### Returned Result
+#### Response description
 
 The result of the request is returned through PutObjectResult.
 
 | Member Variable | Type | Description |
 | -------- | ------ | ---------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between [200, 300) indicates a successful operation. Other values indicate a failure. |
-| eTag | string | The eTag of an object is returned |
+| httpCode | int | HTTP Code. A code within the range of [200, 300) indicates a successful operation. Other values indicate a failure. |
+| eTag | string | Returns the eTag of an object |
 
 >If the operation fails, the system will throw a [CosClientException](https://intl.cloud.tencent.com/document/product/436/30599) or [CosServiceException](https://intl.cloud.tencent.com/document/product/436/30599) exception.
