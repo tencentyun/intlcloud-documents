@@ -8,7 +8,7 @@ Billable items in COS include [storage capacity](#jf1), [requests(#jf2), [data r
 
 <span id="jf1"></span>
 
-## Storage usage fees
+## Storage Usage Fees
 
 <table>
    <tr>
