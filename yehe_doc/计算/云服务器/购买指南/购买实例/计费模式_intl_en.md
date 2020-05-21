@@ -11,6 +11,7 @@ The following table compares the two billing plans:
 | Use cases | Best for use cases where resource requirements vary drastically, such as e-commerce. | Best for scenarios such as online and website services with big data computing and load balancing. |
 
 
+
 ### Pay as you go
 
 Pay as you go is a flexible billing plan for CVM instances. You can activate and terminate a CVM instance at any time and are billed for what you use. You pay **by the second** and no up-front payment is required. A bill is generated every hour on the dot. This billing plan is suitable for use cases such as an e-commerce flash sale where the demand for resources can fluctuate drastically.
