@@ -24,7 +24,7 @@ Here, `hostname` is the target server for data restoration, `port` is the port o
 ### Migrating data (Windows)
 1. Use the Windows version of mysqldump to generate the SQL file to be imported. For more information, please see the description in [Data Migration with Command Line Tool](#AA).
 2. Enter the command prompt and import the data into the target database with the MySQL command line tool.
-![](https://main.qcloudimg.com/raw/0d9caa9bbccfa840a88222fe31af980e.png)
+![](https://main.qcloudimg.com/raw/82fece0fed5c61437215836a6a5fdc54.png)
 3. [Log in to the target MySQL database](https://dev.mysql.com/doc/refman/5.7/en/connecting.html), run the `show databases;` command, and you can see that the backup database has been imported into the target database.
 ![](https://main.qcloudimg.com/raw/ac73c7b6cd2dd6682dffce3cb696a3dd.png)
 
