@@ -1,3 +1,7 @@
+签名方法 v1 简单易用，但是功能和安全性都不如签名方法 v3，推荐使用签名方法 v3。
+
+首次接触，建议使用 [API Explorer](https://console.cloud.tencent.com/api/explorer) 中的“签名串生成”功能，选择签名版本为“API 3.0 签名 v1”，可以生成签名过程进行验证，并提供了部分编程语言的签名示例，也可直接生成 SDK 代码。推荐使用腾讯云 API 配套的 7 种常见的编程语言 SDK，已经封装了签名和请求过程，均已开源，支持 [Python](https://github.com/TencentCloud/tencentcloud-sdk-python)、[Java](https://github.com/TencentCloud/tencentcloud-sdk-java)、[PHP](https://github.com/TencentCloud/tencentcloud-sdk-php)、[Go](https://github.com/TencentCloud/tencentcloud-sdk-go)、[NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)、[.NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)、[C++](https://github.com/TencentCloud/tencentcloud-sdk-cpp)。
+
 腾讯云 API 会对每个访问请求进行身份验证，即每个请求都需要在公共请求参数中包含签名信息（Signature）以验证请求者身份。
 签名信息由安全凭证生成，安全凭证包括 SecretId 和 SecretKey；若用户还没有安全凭证，请前往 [云API密钥页面](https://console.cloud.tencent.com/capi) 申请，否则无法调用云 API 接口。
 
@@ -345,4 +349,13 @@ $signStr = substr($signStr, 0, -1);
 
 $signature = base64_encode(hash_hmac("sha1", $signStr, $secretKey, true));
 echo $signature.PHP_EOL;
+// need to install and enable curl extension in php.ini
+// $param["Signature"] = $signature;
+// $url = "https://cvm.tencentcloudapi.com/?".http_build_query($param);
+// echo $url.PHP_EOL;
+// $ch = curl_init();
+// curl_setopt($ch, CURLOPT_URL, $url);
+// $output = curl_exec($ch);
+// curl_close($ch);
+// echo json_decode($output);
 ```
