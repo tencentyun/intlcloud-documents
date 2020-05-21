@@ -1,3 +1,22 @@
+
+## April 2020
+<table>
+<thead>
+<tr>
+<th width="25%">Update</th>
+<th width="40%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Document</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The feature of storing access logs in COS will be deactivated</td>
+<td>The feature of storing access logs in COS will stop accepting new enablement requests after 00:00:00, May 15, 2020 (00:00:00, April 26, 2020 for the Guangzhou region) and will be officially disused after 00:00:00, June 30, 2020. Please use the upgraded feature of <a href="https://intl.cloud.tencent.com/document/product/214/35063">storing access logs in CLS</a>.</td>
+<td>April 21, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/35906">Announcement on the Deactivation of the Feature of Storing CLB Access Logs in COS</a></td>
+</tr>
+</tbody></table>
+
 ## November 2019
 <table>
 <thead>
@@ -36,13 +55,13 @@
 <td>Access logs can be stored to CLS</td>
 <td>Layer-7 CLB access logs can be configured for storage in CLS with online search supported at a 1-minute granularity.</li></td>
 <td>October 15, 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/35063">Storing Access Logs to CLS</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/35063">Storing Access Logs in CLS</a></td>
 </tr>
 <tr>
-<td>Private network CLB supports redirect</td>
-<td>Private network layer-7 CLB supports configuring redirect.</li></td>
+<td>Private network CLB supports redirection</td>
+<td>Private network layer-7 CLB supports configuring redirection.</li></td>
 <td>October 15, 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/8839">Layer-7 Redirect Configuration</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8839">Layer-7 Redirection Configuration</a></td>
 </tr>
 </tbody></table>
 
@@ -139,7 +158,7 @@
 </thead>
 <tbody><tr>
 <td>SNI is supported</td>
-<td>CLB supports SNI multi-domain certificate, so you can configure different certificates for multiple domain names under one listener as needed.</td>
+<td>CLB supports SNI multi-domain name certificate, so you can configure different certificates for multiple domain names under one listener as needed.</td>
 <td>August 21, 2018</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/19048">CLB Support for SNI Multi-Domain Name Certificate</a></td>
 </tr>
@@ -183,7 +202,7 @@
 <td>Access logs can be stored to COS</td>
 <td>Access logs of public network layer-7 CLB instances can be stored to COS for easier analysis and troubleshooting.</td>
 <td>March, 2018</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/10329">Storing Access Logs to COS
+<td><a href="https://intl.cloud.tencent.com/document/product/214/10329">Storing Access Logs in COS
 </a></td>
 </tr>
 </tbody></table>
@@ -235,10 +254,10 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Layer-7 redirect is supported</td>
-<td>You can configure redirect on layer-7 HTTP/HTTPS listeners, such as redirect from HTTP to HTTPS.</td>
+<td>Layer-7 redirection is supported</td>
+<td>You can configure redirection on layer-7 HTTP/HTTPS listeners, such as redirection from HTTP to HTTPS.</td>
 <td>April 8, 2017</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/8839">Layer-7 Redirect Configuration</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8839">Layer-7 Redirection Configuration</a></td>
 </tr>
 <tr>
 <td>Weighted least-connection scheduling is supported for round robin algorithms</td>
@@ -262,7 +281,7 @@
 <td>Layer-7 domain name and URL forwarding is supported</td>
 <td>Layer-7 HTTP/HTTPS protocols are supported to provide flexible forwarding capabilities based on domain names and URL paths.</td>
 <td>November 2016</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9032">Layer-7 Forwarding Domain Name and URL Rule Description</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9032">Layer-7 Forwarded Domain Name and URL Rule Description</a></td>
 </tr>
 </tbody></table>
 

@@ -27,9 +27,9 @@ The `HTTPS:443` listener has been configured.
 ](https://intl.cloud.tencent.com/document/product/214/32516).
 2. The result of the HTTPS listener configuration is as shown below:
 ![](https://main.qcloudimg.com/raw/6eaf2d1220d140bc37537f3388d78509.png)
-3. In the "Redirection Configurations" tab on CLB instance details page, click **Create a Redirection Policy**.
+3. On the "Redirection Configuration" tab in CLB instance details, click **Create Redirection Configuration**.
 ![](https://main.qcloudimg.com/raw/47fa6c0bd8b6f060332333b2685f8efe.png)
-4. Select **Auto-redirection Configuration**, select the configured HTTPS listener and domain name, and click **Next: Configure Directory**.
+4. Select **Automatic Redirection Configuration**, select the configured HTTPS listener and domain name, and click **Next: Configure Path**.
 ![](https://main.qcloudimg.com/raw/4481d9beac8fa51ee7f6c252c3714a41.png)
 5. Click **Submit** to complete the configuration.
 ![](https://main.qcloudimg.com/raw/435e1389eadacc7bc90966480a29a131.png)
@@ -42,17 +42,17 @@ For example, your business uses a `forsale` page for a promotion campaign and ne
 
 ### Prerequisites
 - An HTTPS listener has been configured.
-- The forwarding domain name `https://www.example.com/forsale` has been configured.
-- The forwarding domain name and path `https://www.new.com/index` has been configured.
+- The forwarded domain name `https://www.example.com/forsale` has been configured.
+- The forwarded domain name and path `https://www.new.com/index` has been configured.
 
 
 ### Directions
-1. Configure the CLB HTTPS listener in the [CLB Console](https://console.cloud.tencent.com/clb) and set up the web environment of `https://example.com`. For more information, please see [Configuring an HTTPS Listener](https://intl.cloud.tencent.com/document/product/214/32516).
+1. Configure the CLB HTTPS listener in the [CLB Console](https://console.cloud.tencent.com/clb) and set up the web environment of `https://example.com`. For more information, please see [Configuring HTTPS Listener](https://intl.cloud.tencent.com/document/product/214/32516).
 2. The result of the HTTPS configuration is as shown below:
 ![](https://main.qcloudimg.com/raw/5c1fc217e1795a2f6a7b31c2a7ba3bfc.png)
-3. In the "Redirection Configurations" tab on CLB instance details page, click **Create a Redirection Policy**.
+3. On the "Redirection Configuration" tab in CLB instance details, click **Create Redirection Configuration**.
 ![](https://main.qcloudimg.com/raw/47fa6c0bd8b6f060332333b2685f8efe.png)
-4. Select **Manual Redirection Configuration**. In the **Original Access** section, for the "Front-end Protocol and Port", select `HTTPS:443`, and for "Domain Name", select `https://www.example.com/forsale`. In the **Redirect to** section, for "Front-end Protocol and Port", select `HTTPS:443`, and for "Domain Name", select `https://www.new.com/index`. Click **Next: Configure Directory**.
+4. Select **Manual Redirection Configuration**, select the originally accessed frontend protocol port `HTTPS:443` and domain name `https://www.example.com/forsale`, select the frontend protocol port `HTTPS:443` and domain name `https://www.new.com/index` after redirection, and click **Next: Configure Path**.
 ![](https://main.qcloudimg.com/raw/51106736b5ee61d6e87767652185d57a.png)
 5. Select `/forsale` for the original access path and `/index` for the access path after redirection, and click **Submit** to complete the configuration.
 ![](https://main.qcloudimg.com/raw/5f59b88ecc291d912b7faf2cf1d3770e.png)
