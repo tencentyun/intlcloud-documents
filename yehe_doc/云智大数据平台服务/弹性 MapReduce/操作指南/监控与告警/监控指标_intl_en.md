@@ -296,7 +296,6 @@
 | IncrementalBlockReportsNumOps                      | Reports/s     | OPS of incremental block reporting                             |
 | CacheReportsNumOps                      | Reports/s     | OPS of cache reporting                             |
 | PacketAckRoundTripTimeNanosNumOps       | Operations/s     | Number of ACK ROUND TRIP operations processed per second                      |
-| FsyncNanosOps                           | Operations/s     | Number of Fsync operations                                 |
 | FlushNanosNumOps                        | Operations/s     | Number of Flush operations processed per second                      |
 | ReadBlockOpAvgTime                      | ms       | Average block read time                    |
 | WriteBlockOpAvgTime                     | ms       | Average block write operation time                         |
