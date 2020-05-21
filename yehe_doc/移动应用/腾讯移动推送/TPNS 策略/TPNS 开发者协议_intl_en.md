@@ -76,58 +76,58 @@ d)	You shall provide relevant rights holders with a complaint channel in the App
 
 e)	You shall provide users with a user service agreement for the Application and its related services before users use the Application for the first time. The user service agreement must have similar obligations as those listed at clause 3.2(a) above and clause 4.4. below, and clearly state:
 
- - 1.	that when users use the push message function of the Application or its related service, the Application / related service will use a third-party provider to provide such feature, which is Tencent Push Notification Service Platform, or state that the feature will be supported by the push message technology service support provided by a Tencent company;
- - 2.	that you grant users a license to use the push message function that you are able to offer due to the Platform;
- - 3.	that you are responsible for the push message service used by the users through the Application, the safety, accuracy, effectiveness and other risks of the push message service and its contents; and
- - 4.	you are responsible to the users for any disputes or damages arising therefrom. 
+   1.	that when users use the push message function of the Application or its related service, the Application / related service will use a third-party provider to provide such feature, which is Tencent Push Notification Service Platform, or state that the feature will be supported by the push message technology service support provided by a Tencent company;
+   2.	that you grant users a license to use the push message function that you are able to offer due to the Platform;
+   3.	that you are responsible for the push message service used by the users through the Application, the safety, accuracy, effectiveness and other risks of the push message service and its contents; and
+   4.	you are responsible to the users for any disputes or damages arising therefrom. 
 
 4.4.	Use Rules.
 
 a)	You must not engage in or facilitate (including but not limited to facilitating the actions of users of your Application, etc.) any illegal activities, including but not limited to, the following:
- - 1.	act against the basic principles established by any applicable laws and regulations;
- - 2.	acts that endanger national security, divulge state secrets, subvert state power, and undermine national unity;
- - 3.	acts that damage national honor and interests;
- - 4.	acts that incite ethnic hatred or ethnic discrimination;
- - 5.	acts that undermine any country’s religious norms or policies;
- - 6.	spreading rumors, disrupting social order and destabilizing society;
- - 7.	dissemination of obscenity, pornography, gambling, violence, homicide, terror or instigating crimes;
- - 8.	insulting or slandering others or otherwise infringing on the legal rights and interests of others;
- - 9.	acts that infringe on other people’s intellectual property rights, trade secrets and other legitimate rights;
- - 10.	acts of malicious fiction, concealing the truth to mislead or deceive others;
- - 11.	publishing, transmitting, and disseminating advertising / promotional messages and spam against applicable laws and regulations; or
- - 12.	other acts prohibited by laws or regulations.
+   1.	act against the basic principles established by any applicable laws and regulations;
+   2.	acts that endanger national security, divulge state secrets, subvert state power, and undermine national unity;
+   3.	acts that damage national honor and interests;
+   4.	acts that incite ethnic hatred or ethnic discrimination;
+   5.	acts that undermine any country’s religious norms or policies;
+   6.	spreading rumors, disrupting social order and destabilizing society;
+   7.	dissemination of obscenity, pornography, gambling, violence, homicide, terror or instigating crimes;
+   8.	insulting or slandering others or otherwise infringing on the legal rights and interests of others;
+   9.	acts that infringe on other people’s intellectual property rights, trade secrets and other legitimate rights;
+  10.	acts of malicious fiction, concealing the truth to mislead or deceive others;
+  11.	publishing, transmitting, and disseminating advertising / promotional messages and spam against applicable laws and regulations; or
+  12.	other acts prohibited by laws or regulations.
 
 b)	You warrant that:
- - 1.	your Application, related services provided to users, and related message and content distributed do not violate provisions under the applicable laws, regulations and policies, etc. of relevant jurisdictions, this Agreement or any related agreements and rules, and will not infringe on the legal rights and interests of others;
- - 2.	you, your Application, related services and use of the Services comply with any and all applicable privacy laws and regulations in the countries and regions where you choose to distribute your Application; 
- - 3.	you are solely responsible for the content (including but not limited to messages, information, comments, names, etc.) generated by the users’ usage of the service provided by the Application, and should ensure that it does not violate relevant laws, regulations, policies, public order and good morals. Otherwise, you should promptly remove such content, disconnect any links or take other effective measures;
- - 4.	the design of the Application should prioritize user experience, respect users’ right to information and option. The services provided by the Application should adhere to the principle of integrity, should not mislead, deceive, or confuse users, should respect user privacy, should not harass users, and should not create spam. 
+   1.	your Application, related services provided to users, and related message and content distributed do not violate provisions under the applicable laws, regulations and policies, etc. of relevant jurisdictions, this Agreement or any related agreements and rules, and will not infringe on the legal rights and interests of others;
+   2.	you, your Application, related services and use of the Services comply with any and all applicable privacy laws and regulations in the countries and regions where you choose to distribute your Application; 
+   3.	you are solely responsible for the content (including but not limited to messages, information, comments, names, etc.) generated by the users’ usage of the service provided by the Application, and should ensure that it does not violate relevant laws, regulations, policies, public order and good morals. Otherwise, you should promptly remove such content, disconnect any links or take other effective measures;
+   4.	the design of the Application should prioritize user experience, respect users’ right to information and option. The services provided by the Application should adhere to the principle of integrity, should not mislead, deceive, or confuse users, should respect user privacy, should not harass users, and should not create spam. 
 If you violate any of the above, Tencent has the right to suspend or terminate the provision of Service.
 
 c)	You must not engage in or facilitate (including but not limited to facilitating the actions of your users, etc.) the following actions:
- - 5.	reproduce, modify, adapt, alter, enhance, distribute, publicly display, retransmit, resell or sublicense the Services;
- - 6.	use the Services on behalf of an anonymous or other third parties;
- - 7.	use any data mining, robots or similar data gathering or extraction methods;
- - 8.	infringe Tencent’s Intellectual Property Rights (as defined at clause 9.1 below) or those of any third party in relation to your use of the Services;
- - 9.	use the Services in a way that could damage, disable, overburden, impair or compromise Tencent’s systems or security or interfere with other users of the Services;
- - 10.	use the Services in a way that could disrupt or attempt to disrupt the normal operations of the Platform;
- - 11.	bypass, attempt to bypass, or claim to be able to bypass any content protection mechanism, or data analysis tools provided by Tencent or cause users to think that they interact directly with Tencent Push Notification Service or Tencent-related products;
- - 12.	without written permission from Tencent, use Tencent’s URL address or technical interface, etc. in any manner;
- - 13.	without the user’s consent, display or otherwise provide any information of that user to any other user and third party;
- - 14.	request, collect, demand or otherwise obtain users’ login account, password, or any other authentication credentials of Tencent services such as QQ, Tencent friends or Qzone, including but not limited to users’ Tencent Cloud account, email address, Tencent Weibo account number, etc.;
- - 15.	without the user’s explicit consent, contact such user directly, or send any commercial advertisements / promotions and harassing messages to such user;
- - 16.	provide proxy authentication credentials for automatic user login to Tencent Push Notification Service Platform;
- - 17.	provide tracking functions, including but not limited to identifying other users’ viewing and clicking behaviors on personal homepage;
- - 18.	automatically direct the browser window to other web pages;
- - 19.	obtain unauthorized access rights to Tencent products or services;
- - 20.	transmit computer viruses, Trojan horses, worms or other malicious or harmful programs that may endanger Tencent or user rights and interests or terminal information security, or is found to contain loopholes that may result in the implantation of Trojan horses or phishing web pages;
- - 21.	open high-risk ports / services without approval, or add a web shell to external network programs;use the Services to interfere with, interrupt, sabotage, damage, or access computers, hardware, devices, servers, networks, databases, or any third party’s product features and/services without permission;
- - 22.	publicly announce or imply that there is a cooperative relationship between you and Tencent, including but not limited to mutual shareholdings, business dealings or cooperative relationships, etc., or claiming endorsement from Tencent;
- - 23.	make use of loopholes in Tencent Push Notification Service Platform to carry out malicious acts, including but not limited to publishing information incompliant with laws or rules, maliciously hijacking user information, bundling software installation, deceiving users, etc.;
- - 24.	expose the public network IP, or a security intrusion fault or the like occurs;
- - 25.	modify, reverse engineer, decompile, disassemble, copy, or distribute any Tencent product, service or any elements or software embedded therein;
- - 26.	materially violate or facilitate the material violation of any local or foreign law, rule, regulation, or order, including laws regarding the transmission of data or software; or
- - 27.	use the Services in any unlawful manner, for any unlawful purpose, or in any manner inconsistent with this Agreement, or act fraudulently or maliciously.
+   5.	reproduce, modify, adapt, alter, enhance, distribute, publicly display, retransmit, resell or sublicense the Services;
+   6.	use the Services on behalf of an anonymous or other third parties;
+   7.	use any data mining, robots or similar data gathering or extraction methods;
+   8.	infringe Tencent’s Intellectual Property Rights (as defined at clause 9.1 below) or those of any third party in relation to your use of the Services;
+   9.	use the Services in a way that could damage, disable, overburden, impair or compromise Tencent’s systems or security or interfere with other users of the Services;
+  10.	use the Services in a way that could disrupt or attempt to disrupt the normal operations of the Platform;
+  11.	bypass, attempt to bypass, or claim to be able to bypass any content protection mechanism, or data analysis tools provided by Tencent or cause users to think that they interact directly with Tencent Push Notification Service or Tencent-related products;
+  12.	without written permission from Tencent, use Tencent’s URL address or technical interface, etc. in any manner;
+  13.	without the user’s consent, display or otherwise provide any information of that user to any other user and third party;
+  14.	request, collect, demand or otherwise obtain users’ login account, password, or any other authentication credentials of Tencent services such as QQ, Tencent friends or Qzone, including but not limited to users’ Tencent Cloud account, email address, Tencent Weibo account number, etc.;
+  15.	without the user’s explicit consent, contact such user directly, or send any commercial advertisements / promotions and harassing messages to such user;
+  16.	provide proxy authentication credentials for automatic user login to Tencent Push Notification Service Platform;
+  17.	provide tracking functions, including but not limited to identifying other users’ viewing and clicking behaviors on personal homepage;
+  18.	automatically direct the browser window to other web pages;
+  19.	obtain unauthorized access rights to Tencent products or services;
+  20.	transmit computer viruses, Trojan horses, worms or other malicious or harmful programs that may endanger Tencent or user rights and interests or terminal information security, or is found to contain loopholes that may result in the implantation of Trojan horses or phishing web pages;
+  21.	open high-risk ports / services without approval, or add a web shell to external network programs;use the Services to interfere with, interrupt, sabotage, damage, or access computers, hardware, devices, servers, networks, databases, or any third party’s product features and/services without permission;
+  22.	publicly announce or imply that there is a cooperative relationship between you and Tencent, including but not limited to mutual shareholdings, business dealings or cooperative relationships, etc., or claiming endorsement from Tencent;
+  23.	make use of loopholes in Tencent Push Notification Service Platform to carry out malicious acts, including but not limited to publishing information incompliant with laws or rules, maliciously hijacking user information, bundling software installation, deceiving users, etc.;
+  24.	expose the public network IP, or a security intrusion fault or the like occurs;
+  25.	modify, reverse engineer, decompile, disassemble, copy, or distribute any Tencent product, service or any elements or software embedded therein;
+  26.	materially violate or facilitate the material violation of any local or foreign law, rule, regulation, or order, including laws regarding the transmission of data or software; or
+  27.	use the Services in any unlawful manner, for any unlawful purpose, or in any manner inconsistent with this Agreement, or act fraudulently or maliciously.
 
 d)	Third-party software or technology may be used by the Service. If used, Tencent warrants that it has obtained legitimate authorization. At the same time, Tencent will display the relevant agreements or documents in accordance with applicable laws and regulations. The aforementioned relevant agreements or documents displayed in various forms are an integral part of this Agreement and have the same legal effect as this Agreement. You should comply with these requirements. Otherwise, you shall bear sole and full responsibilities arising therefrom. Any dispute arising from third-party software or technology used by the Service shall be resolved by that third party.
 
@@ -141,10 +141,10 @@ b)	In conformity with the requirements under applicable laws and regulations on 
 
 c)	If your Application is an online game application, such Application:
 
- - 1.	should not set up compulsory battle without user’s consent;
- - 2.	should not, by lottery or other random selection methods, induce users to use legal tender or the online game’s virtual currency to obtain Application products and services;
- - 3.	for online game applications targeted at minors, shall not contain content that induces minors to imitate acts that are against social morality and are illegal and criminal, as well as horror and cruel content that jeopardizes the physical and mental health of minors;
- - 4.	if a user of the game application seeks refund for the virtual currency that has been purchased but not used or for service that has not expired, both parties agree to refund the user in proportion.
+   1.	should not set up compulsory battle without user’s consent;
+   2.	should not, by lottery or other random selection methods, induce users to use legal tender or the online game’s virtual currency to obtain Application products and services;
+   3.	for online game applications targeted at minors, shall not contain content that induces minors to imitate acts that are against social morality and are illegal and criminal, as well as horror and cruel content that jeopardizes the physical and mental health of minors;
+   4.	if a user of the game application seeks refund for the virtual currency that has been purchased but not used or for service that has not expired, both parties agree to refund the user in proportion.
 
 4.6.	Rules about User Data.
 
@@ -158,12 +158,12 @@ d)	You shall not use the TPNS to send material that contains any obscene, pornog
 
 e)	The collection, storage, and use of user data by your Application or service shall comply with any and all applicable data protection laws and regulations in countries or regions where your Application or service is distributed, including but without limitation to the following requirements:
 
- - 1. if your Application or service needs to collect any data from a user, you must obtain such user’s explicit prior consent (bearing in mind age restrictions), and should only collect user data necessary for the purposes of operating the Application and performing functions thereof, and to protect the user’s right to know, such user should be informed of the purposes of collecting the relevant data, the scope of data collection and how such data would be used, etc.;
- - 2.	after you collect user data, you must take necessary security measures to prevent user data from being stolen or leaked;
- - 3.	the user data you collect for a specific Application may only be used for that specific Application or the provision of services or functions of that Application, and may not be used outside of that specific Application or for any other purpose. Such user data should not be made available to others in any manner;
- - 4.	you should provide users with a privacy policy. The privacy policy should be visible and easily accessible in an obvious place to the user on the application interface;
- - 5.	you should provide users with a way to modify or delete user data, ensure that users can delete their user data on their own when requested, and ensure that the relevant data is completely deleted; and
- - 6.	Developer shall obtain explicit authorization from users to share user data in the Application or service (including but not limited to user application account, user application tag, etc.) with Tencent for the purpose of providing push message service in order to perform the Services under this Agreement.
+   1. if your Application or service needs to collect any data from a user, you must obtain such user’s explicit prior consent (bearing in mind age restrictions), and should only collect user data necessary for the purposes of operating the Application and performing functions thereof, and to protect the user’s right to know, such user should be informed of the purposes of collecting the relevant data, the scope of data collection and how such data would be used, etc.;
+   2.	after you collect user data, you must take necessary security measures to prevent user data from being stolen or leaked;
+   3.	the user data you collect for a specific Application may only be used for that specific Application or the provision of services or functions of that Application, and may not be used outside of that specific Application or for any other purpose. Such user data should not be made available to others in any manner;
+   4.	you should provide users with a privacy policy. The privacy policy should be visible and easily accessible in an obvious place to the user on the application interface;
+   5.	you should provide users with a way to modify or delete user data, ensure that users can delete their user data on their own when requested, and ensure that the relevant data is completely deleted; and
+   6.	Developer shall obtain explicit authorization from users to share user data in the Application or service (including but not limited to user application account, user application tag, etc.) with Tencent for the purpose of providing push message service in order to perform the Services under this Agreement.
 
 f)	Without user’s authorization or consent, you must not collect user’s personal data or other data that Tencent considers to be sensitive information, including but not limited to Tencent Cloud account details, QQ password, user relationship chain data, friends’ list data, bank account number and password, etc..
 
@@ -188,22 +188,22 @@ o)	In the event that you violate any of the aforementioned clauses, Tencent has 
 4.7.	Your Warranties and Legal Liabilities
 
 a)	You warrant that you will pay applicable Service fees in accordance with this Agreement and/or related agreements and rules. Otherwise, you understand and agree that you shall pay Tencent a penalty fee equal to one thousandth of the outstanding amount for each day of delay, or the highest rate permitted by applicable law, if less, accruing from the date the payment was first due until the date the payment is made in full. At the same time, Tencent has the right to unilaterally take one or more of the following measures at any time to protect its legal rights and interests:
- - 1.	deducting such amount directly from any other fee payable by Tencent to you or your affiliates;
- - 2.	suspending settlement or payment of any fee to you or your affiliates;
- - 3.	suspending or terminating the use of the Service by all Applications under your or your affiliated company’s name;
- - 4.	suspending or terminating back-end management authority of you or your affiliates;
- - 5.	deletion of any data stored by you or your affiliates while using the Service;
- - 6.	prohibiting you from connecting any of your new applications to the Tencent Push Notification Service Platform in the future; or
- - 7.	other measures Tencent may reasonably take to protect its own rights and interests.
+   1.	deducting such amount directly from any other fee payable by Tencent to you or your affiliates;
+   2.	suspending settlement or payment of any fee to you or your affiliates;
+   3.	suspending or terminating the use of the Service by all Applications under your or your affiliated company’s name;
+   4.	suspending or terminating back-end management authority of you or your affiliates;
+   5.	deletion of any data stored by you or your affiliates while using the Service;
+   6.	prohibiting you from connecting any of your new applications to the Tencent Push Notification Service Platform in the future; or
+   7.	other measures Tencent may reasonably take to protect its own rights and interests.
 
 b)	You warrant that your use of the Service and any of your actions will not infringe on the legitimate rights and interests of others. You are responsible for any disputes and liabilities arising from your breach of this Agreement, and you shall within 5 business days indemnify Tencent for all losses suffered by Tencent arising from your breach (including but not limited to fine imposed by competent authorities, compensation to right holders for losses incurred, attorney fees, litigation costs, etc.).
 
 c)	You understand and agree that if Tencent finds out, by itself or based on information from relevant departments or complaints made by a right holder etc., for the first or second time that you may have infringed on the legitimate rights and interests of others, Tencent has the right to determine on its own, based on the reasonable person standard, whether you have infringed on the legal rights and interests of others. If Tencent determines that you have infringed on the legal rights and interests of others, Tencent has the right to unilaterally take one or more of the following measures at any time:
 
- - 1.	terminate the Application’s operation on the Tencent Push Notification Service Platform;
- - 2.	hold you legally liable;
- - 3.	publicly announce your behavior, and provide your valid information to competent authority or right holders; or
- - 4.	other measures deemed appropriate by Tencent.
+   1.	terminate the Application’s operation on the Tencent Push Notification Service Platform;
+   2.	hold you legally liable;
+   3.	publicly announce your behavior, and provide your valid information to competent authority or right holders; or
+   4.	other measures deemed appropriate by Tencent.
 For Applications that infringe on the legal rights and interests of others, if you modify the Application such that you do not infringe on the legal rights and interests of others anymore, you agree that Tencent still has the right to bring the modified Application offline. At the same time, if necessary, you can connect the modified Application that no longer infringes on the legitimate rights and interests of others to Tencent Push Notification Service Platform as a new application in accordance with the procedures and standards of the Tencent Push Notification Service Platform.
 
 4.8.	You understand and agree that if Tencent finds out, by itself or based on information from the relevant departments or complaints made by a right holder etc., for the third time or more that you may have infringed on the legitimate rights and interests of others, Tencent has the right to determine on its own, based on the reasonable person standard, whether you have infringed on the legal rights and interests of others. If Tencent determines that you have infringed on the legal rights and interests of others, Tencent has the right to unilaterally take one or more of the following measures at any time:
@@ -320,11 +320,11 @@ f)	other circumstances that Tencent cannot control or reasonably foresee.
 
 a)	EXCEPT AS EXPRESSLY SET OUT IN THIS AGREEMENT, IN NO EVENT SHALL TENCENT, AND TENCENT’S DIRECTORS, MEMBERS, AFFILIATES, SUBSIDIARIES, EMPLOYEES OR AGENTS BE LIABLE FOR: 
 
- - 1.	ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES; OR 
- - 2.	ANY OTHER DAMAGES OF ANY KIND, INCLUDING WITHOUT LIMITATION: 
- - i.	LOSS OF USE;
- - ii.	LOSS OF PROFITS; OR 
- - iii.	LOSS OF DATA, 
+   1.	ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES; OR 
+   2.	ANY OTHER DAMAGES OF ANY KIND, INCLUDING WITHOUT LIMITATION: 
+       i.	LOSS OF USE;
+      ii.	LOSS OF PROFITS; OR 
+     iii.	LOSS OF DATA, 
 
 WHETHER IN AN ACTION IN CONTRACT, TORT (INCLUDING WITHOUT LIMITATION NEGLIGENCE) OR OTHERWISE, ARISING OUT OF OR IN ANY WAY CONNECTED WITH THE USE OF OR INABILITY TO USE THE SERVICES, INCLUDING WITHOUT LIMITATION ANY DAMAGES CAUSED BY OR RESULTING FROM RELIANCE BY USER ON ANY INFORMATION OBTAINED FROM TENCENT, OR THAT RESULT FROM MISTAKES, OMISSIONS, INTERRUPTIONS, DELETION OF FILES OR EMAIL, ERRORS, DEFECTS, VIRUSES, DELAYS IN OPERATION OR TRANSMISSION OR ANY FAILURE OF PERFORMANCE, WHETHER OR NOT RESULTING FROM ACTS OF GOD, COMMUNICATIONS FAILURE, THEFT, DESTRUCTION OR UNAUTHORIZED ACCESS TO TENCENT’S RECORDS, PROGRAMS OR SERVICES. 
 
