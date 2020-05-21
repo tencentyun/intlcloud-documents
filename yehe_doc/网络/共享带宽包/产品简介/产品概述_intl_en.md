@@ -11,7 +11,6 @@ Tencent Cloud offers different bandwidth packages for different accounts:
 
 Each account supports only one type of bandwidth packages. To learn about your account type and available bandwidth package type, please refer to [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
 >
->- The account type is defined according to the creation time of your account, and Tencent Cloud will not change it.
 > - You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to change from billing on CVMs to billing on public IPs/CLBs, but not vise versa.
 
 
