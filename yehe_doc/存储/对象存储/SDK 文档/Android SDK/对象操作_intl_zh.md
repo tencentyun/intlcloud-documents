@@ -1,41 +1,36 @@
 ## 简介
 
-本文档提供关于对象的简单操作、分块操作等其他操作相关的 API 概览以及 SDK 示例代码。
+本文档提供关于对象的高级接口，简单操作、分块操作相关的 API 概览以及 SDK 示例代码。
+
 
 **简单操作**
 
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket（List Object）](https://cloud.tencent.com/document/product/436/7734) | 查询对象列表   | 查询存储桶下的部分或者全部对象     |
-| [PUT Object](https://cloud.tencent.com/document/product/436/7749) | 简单上传对象       | 上传一个 Object（文件/对象）至 Bucket     |
-| [POST Object](https://cloud.tencent.com/document/product/436/14690) | 表单上传对象   | 使用表单请求上传对象                      |
-| [HEAD Object](https://cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 获得 Object 的 Meta 信息                  |
-| [GET Object](https://cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个 Object（文件/对象）至本地        |
-| [Options Object](https://cloud.tencent.com/document/product/436/8288) | 预请求跨域配置 | 用预请求来确认是否可以发送真正的跨域请求  |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径                        |
-| [DELETE Object](https://cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在 Bucket 中删除指定 Object （文件/对象） |
-|[DELETE Multiple Object](https://cloud.tencent.com/document/product/436/8289)	 | 删除多个对象	|在 Bucket 中批量删除 Object （文件/对象）  |
-
+| [GET Bucket（List Objects）](https://intl.cloud.tencent.com/document/product/436/30614) | 查询对象列表   | 查询存储桶下的部分或者全部对象     |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象       | 上传一个 Object（文件/对象）至 Bucket     |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | 表单上传对象   | 使用表单请求上传对象                      |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 获得 Object 的 Meta 信息                  |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个 Object（文件/对象）至本地        |
+| [Options Object](https://intl.cloud.tencent.com/document/product/436/8288) | 预请求跨域配置 | 用预请求来确认是否可以发送真正的跨域请求  |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径                        |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在 Bucket 中删除指定 Object （文件/对象） |
+|[DELETE Multiple Object](https://intl.cloud.tencent.com/document/product/436/8289)	 | 删除多个对象	|在 Bucket 中批量删除 Object （文件/对象）  |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问                      |
 
 **分块操作**
 
 | API                                                          | 操作名         | 操作描述                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
-| [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化 Multipart Upload 上传操作     |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传对象                        |
-| [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化 Multipart Upload 上传操作     |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传对象                        |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
 
-**其他操作**
 
-| API                                                          | 操作名       | 操作描述                                      |
-| ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问                      |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置 Bucket 中某个 Object （文件/对象）的 ACL |
-| [GET Object acl](https://cloud.tencent.com/document/product/436/7744) | 获取对象 ACL | 获取 Object（文件/对象）的 ACL                |
 
 ## 简单操作
 
@@ -161,7 +156,7 @@ do {
 | httpCode   | int                                                          | HTTP Code， [200， 300)之间表示操作成功，否则表示操作失败 |
 | listBucket | [ListBucket](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/ListBucket.java) | 返回 Bucket 对象列表信息                                  |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### 简单上传对象
 
@@ -279,7 +274,7 @@ try {
 | httpCode | int    | HTTP Code， [200， 300)之间表示操作成功，否则表示操作失败 |
 | eTag     | String | 返回对象的 eTag                                          |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### 表单上传对象
 
@@ -361,7 +356,7 @@ cosXmlService.postObjectAsync(postObjectRequest, new CosXmlResultListener() {
 | httpCode | int    | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | eTag     | String | 返回对象的 eTag                                          |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### 查询对象元数据
 
@@ -433,7 +428,7 @@ cosXmlService.headObjectAsync(headObjectRequest, new CosXmlResultListener() {
 | httpCode | int    | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | eTag     | String | 返回对象的 eTag                                          |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### 下载对象
 
@@ -515,7 +510,7 @@ cosXmlService.getObjectAsync(getObjectRequest, new CosXmlResultListener() {
 | httpCode | int    | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | eTag     | String | 返回对象的 eTag                                            |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### 预请求跨域配置
 
@@ -592,7 +587,7 @@ cosXmlService.optionObjectAsync(optionObjectRequest, new CosXmlResultListener() 
 | accessControlAllowExposeHeaders | `List<String>` | 跨域访问的允许请求自定义头部                               |
 | accessControlMaxAge             | long           | OPTIONS 请求得到结果的有效期                               |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### 设置对象复制
 
@@ -669,7 +664,7 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 | httpCode   | int                                                          | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/CopyObject.java) | 返回成功复制的对象信息                                     |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 
 ### 删除单个对象
@@ -740,7 +735,7 @@ cosXmlService.deleteObjectAsync(deleteObjectRequest, new CosXmlResultListener() 
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int  | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### 删除多个对象
 
@@ -814,7 +809,83 @@ cosXmlService.deleteMultiObjectAsync(deleteMultiObjectRequest, new CosXmlResultL
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int  | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
+
+
+### 恢复归档对象 
+
+#### 功能说明
+
+将归档类型的对象取回访问（POST Object restore）。
+
+#### 方法原型
+
+```java
+RestoreResult restoreObject(RestoreRequest request) throws CosXmlClientException, CosXmlServiceException;
+
+void restoreObjectAsync(RestoreRequest request,  CosXmlResultListener cosXmlResultListener);
+```
+
+#### 请求示例
+
+[//]: # (.cssg-snippet-restore-object)
+```java
+String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
+String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即对象键。 例如 cosPath = "text.txt";
+RestoreRequest restoreRequest = new RestoreRequest(bucket, cosPath);
+restoreRequest.setExpireDays(5); // 保留5天
+restoreRequest.setTier(RestoreConfigure.Tier.Standard); // 标准恢复模式
+// 设置签名校验 Host，默认校验所有 Header
+Set<String> headerKeys = new HashSet<>();
+headerKeys.add("Host");
+restoreRequest.setSignParamsAndHeaders(null, headerKeys);
+// 使用同步方法
+try {
+    RestoreResult restoreResult = cosXmlService.restoreObject(restoreRequest);
+} catch (CosXmlClientException e) {
+    e.printStackTrace();
+} catch (CosXmlServiceException e) {
+    e.printStackTrace();
+}
+
+// 使用异步回调请求
+cosXmlService.restoreObjectAsync(restoreRequest, new CosXmlResultListener() {
+    @Override
+    public void onSuccess(CosXmlRequest request, CosXmlResult result) {
+        // todo Get Bucket ACL success
+        RestoreResult restoreResult = (RestoreResult) result;
+    }
+
+    @Override
+    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException) {
+        // todo Get Bucket ACL failed because of CosXmlClientException or CosXmlServiceException...
+    }
+});
+```
+>请求时，如需直接设置已计算好的签名串，则可通过调用 `restoreRequest.setSign("已计算好的签名串")` 方法设置，默认由 SDK 计算签名串。
+
+
+#### 参数说明
+
+| 参数名称            | 设置方法               | 描述                                                         | 类型                  |
+| ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------- |
+| bucket              | 构造方法               | 存储桶名称，格式：BucketName-APPID                           | String                |
+| cosPath                 | 构造方法 或 SetCosPath | 对象位于存储桶中的位置标识符，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String                |
+| days                | SetExpireDays          | 设置临时副本的过期时间                                       | int                   |
+| tier                | SetTier                | 恢复数据时，Tier 可以指定为 CAS 支持的三种恢复类型，分别为 Expedited、Standard、Bulk | RestoreConfigure.Tier |
+| headerKeys          | setSignParamsAndHeaders  | 签名是否校验 header                | `Set<String>` |
+| queryParameterKeys          | setSignParamsAndHeaders  | 签名是否校验请求 URL 中查询参数    | `Set<String>` |
+| cosXmlResultListener      | restoreObjectAsync                                                 | 结果回调        | CosXmlResultListener   |
+
+#### 返回结果说明
+
+通过 RestoreObjectResult 返回请求结果。
+
+| 成员变量 | 类型 | 描述                                                       |
+| -------- | ---- | ---------------------------------------------------------- |
+| httpCode | int  | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
+
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 
 ## 分块操作
@@ -892,7 +963,7 @@ cosXmlService.listMultiUploadsAsync(listMultiUploadsRequest, new CosXmlResultLis
 | httpCode             | int                                                          | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | listMultipartUploads | [ListMultipartUploads](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/ListMultipartUploads.java) | 返回 Bucket 中所有正在进行分块上传的信息                   |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### <span id = "INIT_MULIT_UPLOAD"> 初始化分块上传 </span>
 
@@ -965,7 +1036,7 @@ cosXmlService.initMultipartUploadAsync(initMultipartUploadRequest, new CosXmlRes
 | httpCode            | int                                                          | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | initMultipartUpload | [InitiateMultipartUpload](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/InitiateMultipartUpload.java) | 返回对象初始化分块上传的 uploadId                        |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 
 
@@ -1051,7 +1122,7 @@ cosXmlService.uploadPartAsync(uploadPartRequest, new CosXmlResultListener() {
 | httpCode | int    | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | eTag     | String | 返回对象的分块的 eTag                                   |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### 复制分块
 
@@ -1140,7 +1211,7 @@ cosXmlService.copyObjectAsync(uploadPartCopyRequest, new CosXmlResultListener() 
 | httpCode   | int                                                          | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | copyObject | [CopyObject](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/CopyObject.java) | 返回成功复制的对象信息                                     |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 
 ### <span id = "LIST_MULIT_UPLOAD"> 查询已上传块 </span>
@@ -1216,7 +1287,7 @@ cosXmlService.listPartsAsync(listPartsRequest, new CosXmlResultListener() {
 | httpCode  | int                                                          | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | listParts | [ListParts](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/ListParts.java) | 返回指定 uploadId 分块上传中的已上传的块信息               |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 
 
@@ -1290,7 +1361,7 @@ cosXmlService.completeMultiUploadAsync(completeMultiUploadRequest, new CosXmlRes
 | httpCode       | int                                                          | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 | CompleteResult | [CompleteMultipartUploadResult](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/main/java/com/tencent/cos/xml/model/tag/CompleteMultipartUploadResult.java) | 返回所有分块上传成功信息                                 |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 ### <span id = "ABORT_MULIT_UPLOAD"> 终止分块上传 </span>
 
@@ -1364,242 +1435,9 @@ cosXmlService.abortMultiUploadAsync(abortMultiUploadRequest, new CosXmlResultLis
 | -------- | ---- | ---------------------------------------------------------- |
 | httpCode | int  | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
 
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
+>操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517) 异常。
 
 
-## 其他操作
-
-### 恢复归档对象 
-
-#### 功能说明
-
-将归档类型的对象取回访问（POST Object restore）。
-
-#### 方法原型
-
-```java
-RestoreResult restoreObject(RestoreRequest request) throws CosXmlClientException, CosXmlServiceException;
-
-void restoreObjectAsync(RestoreRequest request,  CosXmlResultListener cosXmlResultListener);
-```
-
-#### 请求示例
-
-[//]: # (.cssg-snippet-restore-object)
-```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
-String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即对象键。 例如 cosPath = "text.txt";
-RestoreRequest restoreRequest = new RestoreRequest(bucket, cosPath);
-restoreRequest.setExpireDays(5); // 保留5天
-restoreRequest.setTier(RestoreConfigure.Tier.Standard); // 标准恢复模式
-// 设置签名校验 Host，默认校验所有 Header
-Set<String> headerKeys = new HashSet<>();
-headerKeys.add("Host");
-restoreRequest.setSignParamsAndHeaders(null, headerKeys);
-// 使用同步方法
-try {
-    RestoreResult restoreResult = cosXmlService.restoreObject(restoreRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-
-// 使用异步回调请求
-cosXmlService.restoreObjectAsync(restoreRequest, new CosXmlResultListener() {
-    @Override
-    public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        // todo Get Bucket ACL success
-        RestoreResult restoreResult = (RestoreResult) result;
-    }
-
-    @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException) {
-        // todo Get Bucket ACL failed because of CosXmlClientException or CosXmlServiceException...
-    }
-});
-```
->请求时，如需直接设置已计算好的签名串，则可通过调用 `restoreRequest.setSign("已计算好的签名串")` 方法设置，默认由 SDK 计算签名串。
-
-
-#### 参数说明
-
-| 参数名称            | 设置方法               | 描述                                                         | 类型                  |
-| ------------------- | ---------------------- | ------------------------------------------------------------ | --------------------- |
-| bucket              | 构造方法               | 存储桶名称，格式：BucketName-APPID                           | String                |
-| cosPath                 | 构造方法 或 SetCosPath | 对象位于存储桶中的位置标识符，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String                |
-| days                | SetExpireDays          | 设置临时副本的过期时间                                       | int                   |
-| tier                | SetTier                | 恢复数据时，Tier 可以指定为 CAS 支持的三种恢复类型，分别为 Expedited、Standard、Bulk | RestoreConfigure.Tier |
-| headerKeys          | setSignParamsAndHeaders  | 签名是否校验 header                | `Set<String>` |
-| queryParameterKeys          | setSignParamsAndHeaders  | 签名是否校验请求 URL 中查询参数    | `Set<String>` |
-| cosXmlResultListener      | restoreObjectAsync                                                 | 结果回调        | CosXmlResultListener   |
-
-#### 返回结果说明
-
-通过 RestoreObjectResult 返回请求结果。
-
-| 成员变量 | 类型 | 描述                                                       |
-| -------- | ---- | ---------------------------------------------------------- |
-| httpCode | int  | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
-
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
-
-### 设置对象 ACL
-
-#### 功能说明
-
-设置 Bucket 中某个 Object （文件/对象）的 ACL（PUT Object acl）。
-
-#### 方法原型
-
-```java
-PutObjectACLResult putObjectACL(PutObjectACLRequest request) throws CosXmlClientException, CosXmlServiceException;
-
-void putObjectACLAsync(PutObjectACLRequest request, final CosXmlResultListener cosXmlResultListener);
-```
-
-#### 请求示例
-
-[//]: # (.cssg-snippet-put-object-acl)
-```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
-String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即对象键。 例如 cosPath = "text.txt";
-PutObjectACLRequest putObjectACLRequest = new PutObjectACLRequest(bucket, cosPath);
-
-// 设置 bucket 访问权限
-putObjectACLRequest.setXCOSACL("public-read");
-
-// 赋予被授权者读的权限
-ACLAccount readACLS = new ACLAccount();
-readACLS.addAccount("100000000001", "100000000001");
-putObjectACLRequest.setXCOSGrantRead(readACLS);
-
-// 赋予被授权者读写的权限
-ACLAccount writeandReadACLS = new ACLAccount();
-writeandReadACLS.addAccount("100000000001", "100000000001");
-putObjectACLRequest.setXCOSReadWrite(writeandReadACLS);
-// 设置签名校验 Host，默认校验所有 Header
-Set<String> headerKeys = new HashSet<>();
-headerKeys.add("Host");
-putObjectACLRequest.setSignParamsAndHeaders(null, headerKeys);
-// 使用同步方法
-try {
-    PutObjectACLResult putObjectACLResult = cosXmlService.putObjectACL(putObjectACLRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-
-// 使用异步回调请求
-cosXmlService.putObjectACLAsync(putObjectACLRequest, new CosXmlResultListener() {
-    @Override
-    public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        PutObjectACLResult putObjectACLResult = (PutObjectACLResult) result;
-    }
-
-    @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException) {
-        // todo Put Bucket ACL failed because of CosXmlClientException or CosXmlServiceException...
-    }
-});
-```
-
->请求时，如需直接设置已计算好的签名串，则可通过调用`putObjectACLRequest.setSign("已计算好的签名串")`方法设置，默认由 SDK 计算签名串。
-
-
-#### 参数说明
-
-| 参数名称            | 设置方法                                                  | 描述                                                         | 类型           |
-| ------------------- | --------------------------------------------------------- | ------------------------------------------------------------ | -------------- |
-| bucket              | 构造方法                                                  | 存储桶名称，格式：BucketName-APPID                           | String         |
-| cosPath                 | 构造方法 或 SetCosPath                                    | 对象位于存储桶中的位置标识符，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         |
-| cosAcl              | SetCosAcl                                                 | 设置存储桶的 ACL 权限                                          | String         |
-| grandtAccout        | SetXCosGrantRead 或 SetXCosReadWrite | 授予用户读写权限                                             | GrantAccount   |
-| headerKeys          | setSignParamsAndHeaders  | 签名是否校验 header                | `Set<String>` |
-| queryParameterKeys          | setSignParamsAndHeaders  | 签名是否校验请求 url 中查询参数    | `Set<String>` |
-| cosXmlResultListener      | putObjectACLAsync                                                 | 结果回调        | CosXmlResultListener   |
-
-#### 返回结果说明
-
-通过 PutObjectACLResult 返回请求结果。
-
-| 成员变量 | 类型 | 描述                                                       |
-| -------- | ---- | ---------------------------------------------------------- |
-| httpCode | int  | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
-
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
-
-### 查询对象 ACL
-
-#### 功能说明
-
-查询 Object（文件/对象）的 ACL（GET Object acl）。
-
-#### 方法原型
-
-```java
-GetObjectACLResult getObjectACL(GetObjectACLRequest request) throws CosXmlClientException, CosXmlServiceException;
-
-void getObjectACLAsync(GetObjectACLRequest request, CosXmlResultListener cosXmlResultListener);
-```
-
-#### 请求示例
-
-[//]: # (.cssg-snippet-get-object-acl)
-```java
-String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
-String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即对象键。 例如 cosPath = "text.txt";
-GetObjectACLRequest getBucketACLRequest = new GetObjectACLRequest(bucket, cosPath);
-// 设置签名校验 Host，默认校验所有 Header
-Set<String> headerKeys = new HashSet<>();
-headerKeys.add("Host");
-getBucketACLRequest.setSignParamsAndHeaders(null, headerKeys);
-// 使用同步方法
-try {
-    GetObjectACLResult getObjectACLResult = cosXmlService.getObjectACL(getBucketACLRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-
-// 使用异步回调请求
-cosXmlService.getObjectACLAsync(getBucketACLRequest, new CosXmlResultListener() {
-    @Override
-    public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        GetObjectACLResult getObjectACLResult = (GetObjectACLResult) result;
-    }
-
-    @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException) {
-        // todo Get Bucket ACL failed because of CosXmlClientException or CosXmlServiceException...
-    }
-});
-```
->请求时，如需直接设置已计算好的签名串，则可通过调用 `getBucketACLRequest.setSign("已计算好的签名串")` 方法设置，默认由 SDK 计算签名串。
-
-
-#### 参数说明
-
-| 参数名称            | 设置方法               | 描述                                                         | 类型           |
-| ------------------- | ---------------------- | ------------------------------------------------------------ | -------------- |
-| bucket              | 构造方法               | 存储桶名称，格式：BucketName-APPID                           | String         |
-| cosPath                 | 构造方法 或 SetCosPath | 对象位于存储桶中的位置标识符，即 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         |
-| headerKeys          | setSignParamsAndHeaders  | 签名是否校验 header                | `Set<String>` |
-| queryParameterKeys          | setSignParamsAndHeaders  | 签名是否校验请求 url 中查询参数    | `Set<String>` |
-| cosXmlResultListener      | getObjectACLAsync                                                 | 结果回调        | CosXmlResultListener   |
-
-#### 返回结果说明
-
-通过 GetObjectACLResult 返回请求结果。
-
-| 成员变量            | 类型                                                         | 描述                                                       |
-| ------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| httpCode            | int                                                          | HTTP Code，  [200， 300)之间表示操作成功，否则表示操作失败 |
-| accessControlPolicy | [AccessControlPolicy](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/AccessControlPolicy.java) | 返回对象的访问权限列表信息                               |
-
->操作失败时，SDK 将抛出 [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/30599) 或 [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/30599) 异常。
 
 ## 高级接口（推荐）
 
@@ -1807,3 +1645,4 @@ cosxmlCopyTask.pause();
 //恢复复制
 cosxmlCopyTask.resume();
 ```
+
