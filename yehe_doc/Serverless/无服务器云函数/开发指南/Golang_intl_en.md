@@ -39,7 +39,7 @@ func main() {
 Pay attention to the following during code development:
 
 - You need to use `package main` to include the `main` function.
-- Import the `github.com/tencentyun/scf-go-lib/events` library.
+- Import the `github.com/tencentyun/scf-go-lib/cloudfunction` library.
 - 0–2 parameters can be used as the input parameters for the entry function. If parameters are included, `context` needs to be in front, followed by `event`, and the combination of input parameters can be `()`, `(event)`, `(context)`, or `(context, event)`. For more information, please see [Input parameters](#Participation).
 - 0–2 parameters can be used as the returned values for the entry function. If parameters are included, the returned content `ret` needs to be in front, followed by `error`, and the combination of returned values can be `()`, `(ret)`, `(error)`, or `(ret, error)`. For more information, please see [Returned values](#ReturnValue).
 - The `event` input parameter and `ret` returned value need to be compatible with the `encoding/json` standard library for Marshal and Unmarshal operations.
@@ -52,7 +52,7 @@ Pay attention to the following during code development:
 
 When developing an SCF function with Go, you need to make sure that the `main` function is in the `main` package. In the `main` function, start the entry function that actually handles the business by using the `Start` function in the `cloudfunction` package.
 
-You can use the `Start` function in the package in the `main` function through `import "github.com/tencentyun/scf-go-lib/events"`.
+You can use the `Start` function in the package in the `main` function through `import "github.com/tencentyun/scf-go-lib/cloudfunction"`.
 
 ### Entry function
 
