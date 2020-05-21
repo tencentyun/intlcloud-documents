@@ -1,9 +1,9 @@
-## Description
-The **watermark** API is used to process text watermarks in real time. Currently, this API is applicable to images with a size no greater than 20 MB and a length and width both less than 9,999 pixels.
+## Feature
+This API is used to provide real-time text watermarking in Tencent Cloud CI. Currently, images smaller than 20 MB in size and smaller than 9,999 pixels in length and width are supported.
 
-## API Format
+## API Form
 
-```
+```http
 download_url?watermark/2/text/<encodedText>
                         /font/<encodedFont>
                         /fontsize/<fontSize>
@@ -16,47 +16,45 @@ download_url?watermark/2/text/<encodedText>
                         /degree/<degree>
 ```
 
-> Ignore the preceding spaces and line breaks.
+> Please ignore the preceding spaces and line breaks.
 
 
+## Parameter Description
 
-
-### Parameter description
-
-**Operation**: watermark. 2 indicates that the watermark is a text watermark.
+**Operation name**: watermark. The number 2 indicates the watermark type is text watermark.
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | The file access URL in the format of `<BucketName-APPID>.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`. |
-| /text/ | The content of the watermark, which must be URL-safe Base64 encoded. |
-| /font/ | The font of the watermark, which must be URL-safe Base64 encoded. The default value is tahoma.ttf. |
-| /fontsize/ | The font size of the watermark text in pt. The default value is 13. |
-| /fill/ | The font color. The default value is grey. The value must be in hexadecimal RGB format, for example, #FF0000. For more information, see the [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value of this parameter must be URL-safe Base64 encoded. The default value is #3D3D3D. |
-| /dissolve/ | The text transparency value. Value range: 1-100. The default value is 100 (completely opaque). |
-| /gravity/ | The position of the text watermark in the Sudoku orientation chart (see the [Sudoku Orientation Chart](#1)). The default value is SouthEast. |
-| /dx/ | The horizontal margin in pixels. The default value is 0. |
-| /dy/ | The vertical margin in pixels. The default value is 0. |
-| /batch/ | The watermark tiling feature. This feature enables a text watermark to be tiled across an entire image. When the value of this parameter is set to 1, the watermark tiling feature is enabled. |
-| /degree/ | The rotation degree of the text watermark. Value range: 0-360. The default value is 0. |
+| download_url | URL that is used to access a file. The URL form is `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
+| /text/ | Watermark content, which is encoded with Base64 that is safe to the URL. |
+| /font/ | Watermark font, which is [encoded with Base64 that is safe to the URL](https://intl.cloud.tencent.com/document/product/1045/33430#.E4.BB.80.E4.B9.88.E6.98.AF-url-.E5.AE.89.E5.85.A8.E7.9A.84-base64-.E7.BC.96.E7.A0.81.EF.BC.9F). The default value is tahoma.ttf. |
+| /fontsize/ | Watermark text fontsize in pounds. The default value is 13. |
+| /fill/ | Watermark font color, which must be set to the hexadecimal RGB format (such as #FF0000). The default value is gray. For more information, see [RGB Code Table](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [encoded with Base64 that is safe to the URL](https://intl.cloud.tencent.com/document/product/1045/33430#.E4.BB.80.E4.B9.88.E6.98.AF-url-.E5.AE.89.E5.85.A8.E7.9A.84-base64-.E7.BC.96.E7.A0.81.EF.BC.9F). The default value is #3D3D3D. |
+| /dissolve/ | Text transparency. Value range: 1 - 100. The default value is 90, which indicates total non-transparency. |
+| /gravity/ | Text watermark position, which is a 3x3 grid position ([See the 3x3 grid position diagram](#1)). The default value is SouthEast. |
+| /dx/ | Horizontal margin in pixels. The default value is 0. |
+| /dy/ | Vertical margin in pixels. The default value is 0. |
+| /batch/ | Tiled watermarking, which can tile the text watermark to the entire image. If you set batch to 1, tiled watermarking is enabled. |
+| /degree/ | Rotation angle of the text watermark. Value range: 0 - 360. The default value is 0. |
 
 <span id="1"></span>
-### Sudoku orientation chart
+## 3x3 Grid Position Diagram
 
-A Sudoku orientation chart can provide a position reference for various operations performed on an image. The red dot indicates the origin of each region (after each region is selected by using the `gravity` parameter, the displacement operation is performed by using the corresponding far point as the reference.)
+A 3x3 grid position diagram provides position reference for multiple image operations. Red dots show the origin points of each region. After you use the gravity parameter to select a region, displacement must be based on the corresponding origin point.
 ![](https://main.qcloudimg.com/raw/53a143451229b4fbdd74935afe3832d5.png)
 
-
 >
-- When `gravity` is set to center, the `dx` and `dy` parameters are invalid.
-- When `gravity` is set to north or south, the `dx` parameter is invalid (in which case the watermark is centered horizontally).
-- When `gravity` is set to west or east, the `dy` parameter is invalid (in which case the watermark is centered vertically).
+- When the gravity parameter is set to center, the dx and dy parameters are invalid.
+- When the gravity parameter is set to north or south, the dx parameter is invalid, and the watermark is centered horizontally.
+- When the gravity parameter is set to west or east, the dy parameter is invalid, and the watermark is centered vertically.
 
 ## Example
-**Adding a text watermark**
+This example shows you how to **add a text watermark**.
 
 ```
-http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?watermark/2/text/6IW-6K6v5LqRwrfkuIfosaHkvJjlm74/fill/IzNEM0QzRA/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/45
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?watermark/2/text/6IW-6K6v5LqRwrfkuIfosaHkvJjlm74/fill/IzNEM0QzRA/fontsize/20/dissolve/50/gravity/northeast/dx/20/dy/20/batch/1/degree/45
 ```
 
-The effect of adding the text watermark is as follows:
+After the text watermark is added, the effect is as follows:
 ![](https://main.qcloudimg.com/raw/7e72e46d082e36dfc5ec319e0ccd1664.jpg)
+

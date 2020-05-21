@@ -1,29 +1,31 @@
-## Description
-Tencent Cloud CI uses the **imageAve** API to obtain information about the average hue of the image. Currently, this API is applicable to images with a size no greater than 20 MB and a length and width both less than 9,999 pixels.
+## Feature Overview
+
+This API is used to obtain the average hue information of an image in Tencent Cloud CI. Currently, images smaller than 20 MB in size and smaller than 9,999 pixels in length and width are supported.
 
 
-## API Format
+## API Form
 ```
 download_url?imageAve       				
 ```
 
-### Parameter description
+## Parameter Description
 
-**Operation**: imageAve
+**Operation name**: imageAve.
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | The file access URL in the format of `<BucketName-APPID>.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`. |
+| download_url | URL that is used to access a file. The URL form is `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
 
 
 ## Example
 
-**Request**
+#### Request
+
 ```
-http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?imageAve
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageAve
 ```
 
-**Response**
+#### Response
 ```
 {"RGB": "0x736246"}
 ```

@@ -1,22 +1,23 @@
-## Description
+## Feature
 
-The **imageMogr2** API is used to remove image meta information including EXIF information.
+This API is used to remove image metadata such as exif information in Tencent Cloud CI.
 
-## API Format
+## API Form
 ```
 download_url?imageMogr2/strip
 ```
 
 ## Parameter Description
 
-Operation: strip
+Operation name: strip.
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | The file access URL in the format of `<BucketName-APPID>.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`. | 
+| download_url | URL that is used to access a file. The URL form is `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
 
 ## Example
 
-**Removing image meta information**
+This example shows you how to **remove metadata**.
 ```
-http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?imageMogr2/strip	
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/strip	
+```

@@ -1,25 +1,26 @@
-## Description
-An exchangeable image file (EXIF) can record the shooting parameters, thumbnail, and other properties of a digital image. The **exif** API is used to obtain EXIF information. Currently, this API is applicable for images with a size no greater than 20 MB and a length and width both less than 9,999 pixels.
+## Feature Overview
+Exchangeable Image File (EXIF) can record the shooting parameters, thumbnails, and other attributes of digital pictures. This API is used to obtain EXIF information in Tencent Cloud CI. Currently, images smaller than 20 MB in size and smaller than 9,999 pixels in length and width are supported.
 
 
-> If an image has no EXIF information, `{"error" : "no exif data"}` is returned.
+> If an image has no exif information, `{"error" : "no exif data"}` will be returned.
 
-## API Format
+## API Form
 
 ```
 download_url?exif
 ```
 
-### Parameter description
+## Parameter Description
 
-**Operation**: exif
+**Operation name**: exif.
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | The file access URL in the format of `<BucketName-APPID>.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`. |
+| download_url | URL that is used to access a file. The URL form is `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
 
 
 ## Example
 ```
-http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?exif
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?exif
 ```
+

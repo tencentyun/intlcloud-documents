@@ -1,25 +1,25 @@
-## Description
-Tencent Cloud CI uses the **imageInfo** API to query the basic information of an image, such as the format, length, and width. Currently, this API is applicable to images with a size no greater than 20 MB and a length and width both less than 9,999 pixels.
+## Overview
+This API is used to query the basic information of an image, including the format, length, and width of the image in Tencent Cloud CI. Currently, images smaller than 20 MB in size and smaller than 9,999 pixels in length and width are supported.
 
-## API Format
+## API Form
 
 ```
 download_url?imageInfo
 ```
 
-### Parameter description
+## Parameter Description
 
-**Operation**: imageInfo
+**Operation name**: imageInfo
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | The file access URL in the format of `<BucketName-APPID>.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`. |
+| download_url | URL that is used to access a file. The URL form is `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
 
 ## Example
 
 **Request**
 ```
-http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?imageInfo
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageInfo
 ```
 
 

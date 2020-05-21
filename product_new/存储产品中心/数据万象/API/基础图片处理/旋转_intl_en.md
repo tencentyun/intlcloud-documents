@@ -1,32 +1,32 @@
-## Description
-The **imageMogr2** API is used to provide the following rotation features: common rotation and adaptive rotation.
+## Feature Overview
+This API is used to provide the rotation feature in Tencent Cloud CI, including common rotation and adaptive rotation.
 
-## API Format
+## API Form
 
-```
+```shell
 download_url?imageMogr2/rotate/<rotateDegree>
 					   /auto-orient
 ```
 
-> Ignore the preceding spaces and linefeeds.
+> Ignore the preceding spaces and line breaks.
 
 
 ## Parameter Description
 
 | Parameter | Description |
 | ------------------------- | ------------------------------------------------------------ |
-| download_url | The file URL in the format of `<BucketName-APPID>.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.picsh.myqcloud.com/picture.jpeg`. |
-| /rotate/&lt;rotateDegree> | The common rotation mode. It specifies the degree by which the image is rotated clockwise. Value range: 0-360. The image is not rotated by default. |
-| /auto-orient | The adaptive rotation mode. In this mode, the image is adaptively rotated to restore to its original orientation based on the EXIF information of the original image. |
+| download_url | URL that is used to access a file. The URL form is `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`, <br>for example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`. |
+| /rotate/&lt;rotateDegree> | Common rotation, which indicates an image rotates clockwise. Value range: 0 - 360. The default value is not to rotate. |
+| /auto-orient | Adaptive rotation, which adaptively rotates an image based on the EXIF information of the original image. |
 
 ## Example
 
-**Common rotation**
-This example rotates an image by 90 degrees clockwise:
+This example shows you how to implement **common rotation**.
+In the following example, an image is rotated by 90 degrees clockwise:
 
 ```
-http://examples-1251000004.picsh.myqcloud.com/sample.jpeg?imageMogr2/rotate/90
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rotate/90
 ```
 
-Final effect:
+The final effect is as follows:
 ![](https://main.qcloudimg.com/raw/2d47c4f47b8f9c8eca85a3590a106e14.jpeg)
