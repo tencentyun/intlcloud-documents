@@ -14,9 +14,9 @@ CDN 回源至 COS 产生的流量，CDN 侧不进行收费，COS 会进行计费
 
 若您在使用过程中，发现您所选的计费模式不适用您的实际业务状态（如何判断？请参见  [计费方式选择](https://intl.cloud.tencent.com/document/product/228/2949#.E8.AE.A1.E8.B4.B9.E6.96.B9.E5.BC.8F.E9.80.89.E6.8B.A9)），您可以在使用过程中变更计费模式，变更方式如下：
 1. 登录腾讯云 [CDN 控制台](https://console.cloud.tencent.com/cdn)，进入服务概览，单击右侧计费情况中的【变更】。
-![图片描述](https://main.qcloudimg.com/raw/cfc4ab7bc66b88de437984e438f89a92.png)
+![图片描述](https://main.qcloudimg.com/raw/38b82d3d166970552437b5525b74c44f.png)
 2. 将原有计费方式 **流量计费** 变更为 **带宽计费** ：
-![图片描述](https://main.qcloudimg.com/raw/0de03f22b51ab08a545bbfd6717b826b.png)
+![图片描述](https://main.qcloudimg.com/raw/6fd1575557d0c4b7b06be9f1fc30e1da.png)
 3. 当您变更计费方式为 **带宽计费** 后，第二日结算时的计费方式，以前一天产生消耗时对应的计费方式为准。
 
 ### 源站使用的是云服务器，CDN 回源至云服务器产生的流量收费吗？

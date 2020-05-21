@@ -31,7 +31,7 @@ Error 中的 Code 表示错误码，Message 表示该错误的具体信息。
 | LimitExceeded | 超过配额限制。 |
 | NoSuchVersion | 接口版本不存在。 |
 | ResourceNotFound | 资源不存在。 |
-| AuthFailure.SignatureFailure | 签名错误。 签名计算错误，请对照调用方式中的接口鉴权文档检查签名计算过程。 |
+| AuthFailure.SignatureFailure | 签名错误。 签名计算错误，请对照调用方式中的签名方法文档检查签名计算过程。 |
 | AuthFailure.SignatureExpire | 签名过期。Timestamp 和服务器时间相差不得超过五分钟，请检查本地时间是否和标准时间同步。 |
 | UnsupportedRegion | 接口不支持所传地域。 |
 | UnauthorizedOperation | 未授权操作。 |

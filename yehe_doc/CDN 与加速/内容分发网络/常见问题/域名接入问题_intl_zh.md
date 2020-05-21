@@ -47,17 +47,17 @@ CDN 配置时间一般不超过30分钟，若您设置后等待时间超过30分
 ### 如何修改 CDN 域名所属项目？
 
 1. 登录  [CDN 控制台](https://console.cloud.tencent.com/cdn) ，选择左侧菜单栏的【域名管理】，单击您所要编辑的域名右侧的【管理】。
-![图片描述](https://main.qcloudimg.com/raw/852e08c890317ef2442d5af655da42c5.png)
+![图片描述](https://main.qcloudimg.com/raw/d2d85c86bca9c60c7e5ae5667fd2e155.png)
 2. 单击【基本配置】，您可以看到基本信息模块，查看域名的基本信息，基本信息中有所属项目。**使用 CDN 权限体系的用户，此操作可能导致子用户权限变动，请谨慎操作。**
 3. 单击所属项目右侧的【修改】图标，可在下拉菜单中选择新的所属项目。
-![图片描述](https://main.qcloudimg.com/raw/221cc1b397082246240c706ccf355964.png)
+![图片描述](https://main.qcloudimg.com/raw/1a2a312352d3353317075696347e0f42.png)
 
 此外，您可以进入 [项目管理](https://console.cloud.tencent.com/project) 页面来管理您的项目。
 
 
 ### 接入 CDN 的域名有什么要求？
 接入 CDN 进行加速的域名有以下要求：
-1. 域名长度不超过50个字符。
+1. 域名长度不超过50个字符，暂不支持中文域名（转码后也不支持）。
 2. 若使用境内 CDN，则域名需要已经在工信部进行过备案。
 3. 域名为`a.test.com`、`a.b.test.com`等形式子域名或 `*.test.com`、`*.a.test.com` 形式泛域名。
 4. 若域名为泛域名或已被其他用户接入，需要进行 [所有权验证](https://intl.cloud.tencent.com/document/product/228/5734#m1) 后方可接入或取回。
@@ -76,7 +76,7 @@ CDN 配置时间一般不超过30分钟，若您设置后等待时间超过30分
 ### 如何判断 CDN 是否生效？
 
 Ping 域名查看返回结果： Ping 域名查看返回的结果有：`cdntip.com`是腾讯云 CDN 结单接入成功
-![图片描述](https://main.qcloudimg.com/raw/657d4b219f99acc10b55cf9faabd9943.png)
+
 > CDN 在全国各地都有节点，所有 Ping 接入CDN的域名指向的 IP 是不固定的，这个是正常现象。
 
 ### CDN文件无法下载
