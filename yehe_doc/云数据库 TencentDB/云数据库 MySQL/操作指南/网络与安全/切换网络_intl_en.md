@@ -7,10 +7,8 @@ Tencent Cloud supports [basic network and VPC](https://intl.cloud.tencent.com/do
 
 ## Notes
 - Switching the network may cause the change of instance's private IP. The original IP will become invalid after 24 hours by default. Please modify the instance IP on the client promptly. If the repossession time for the old IP address is set to 0 hours, the old IP address will be repossessed immediately after the network switch.
-- To prevent abuse of IP resources, you can switch network once every 24 hours.
 - Only VPCs and subnets in the region and AZ where the instance reside can be selected.
 - The switch from basic network to VPC is irreversible. After the switch to a VPC, the TencentDB instance cannot communicate with Tencent Cloud services in another VPC or basic network.
-- Instances where the data replication mode is strong sync replication do not support the above-mentioned switches.
 
 ## Directions
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance name or **Manage** in the "Operation" column to enter the instance details page.

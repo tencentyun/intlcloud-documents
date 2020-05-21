@@ -4,7 +4,7 @@
 |---------|---------|---------|------|
 | New user | Six months after COS service activation | A certain amount of standard storage capacity is provided by COS free of charge. For more information, please see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240)	 | [Activate COS](https://console.cloud.tencent.com/cos5)
 
->The free tier is not applicable to MAZ_STANDARD, STANDARD_IA, ARCHIVE and any other non-STANDARD billable items including storage capacity, requests, and traffic.
+>The free tier is not applicable to STANDARD_IA, ARCHIVE and any other non-STANDARD billable items including storage capacity, requests, and traffic.
 
 
 ## Billing Method
@@ -13,7 +13,7 @@ COS is billed on a pay-as-you-go basis as detailed below:
 
 | Billing Method | Supported Regions |
 | ------------------ | ------------------------------------------------------------ |
-| [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534) | For all the available regions, see Regions and Access Domain Names (https://intl.cloud.tencent.com/document/product/436/6224). |
+| [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534) | For all the available regions, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). |
 
 
 
@@ -21,7 +21,7 @@ COS is billed on a pay-as-you-go basis as detailed below:
 ## Billable Items
 
 Billable items in COS include storage capacity, requests, data retrievals, traffic, and administrative features as shown below. For more information, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
-![](https://main.qcloudimg.com/raw/91869d53f5193b56d5d9a982632d1db2.png)
+![](https://main.qcloudimg.com/raw/1b5a405c9272dc8994d64ba13dbace1e.png)
 
 
 ## Billing Cycle

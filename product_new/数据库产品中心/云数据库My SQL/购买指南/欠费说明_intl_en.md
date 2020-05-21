@@ -1,10 +1,3 @@
-### Repossession Mechanism
-- The system will send you a renewal notification 7 days before the expiration of database resources. 
-- You can continue using the database for an additional 7 days after the expiration. The system will send you an expiration reminder for the database, and you need to renew it as soon as possible.
-- From the eighth day after the expiration, the database cannot be used and will be put into the **recycle bin**. You can view and renew it on the recycle bin page in the console.
-- The database will be retained in the recycle bin for up to **seven days**. If you fail to renew it within seven days after it is put into the recycle bin, it will be repossessed by the system, and all the data will be cleared and cannot be recovered. 
-- In other words, the database will remain **available for 7 days** after the expiration and become **unavailable for another 7 days**. Within the 14 days, you can choose to renew it. If your balance is sufficient and auto-renewal is set for it, the system will perform renewal automatically upon expiration.
-
 ## Expiration Reminder for Pay-as-You-Go TencentDB Instances
 ![](http://mc.qcloudimg.com/static/img/3a50706a27bfc92a2a52d524e04beca9/image.png)
 
