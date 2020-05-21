@@ -12,7 +12,7 @@
 [COS 与 CVM 之间传输数据，请求数和流量是否收费？](https://intl.cloud.tencent.com/document/product/436/10373#will-fees-be-charged-for-requests-and-traffic-generated-by-data-transfer-between-cos-and-cvm.3F)
 [上传文件到 COS 存储桶是否会产生流量费用？](https://intl.cloud.tencent.com/document/product/436/10373#will-traffic-fees-be-incurred-by-uploading-a-file-to-a-cos-bucket.3F)
 [同地域内腾讯云产品之间相互访问会产生流量费用吗？](https://intl.cloud.tencent.com/document/product/436/10373#will-traffic-fees-be-incurred-when-tencent-cloud-products-in-the-same-region-access-each-other.3F)
-[存储在 COS 的对象受到 DDoS 攻击是否产生流量费用？](https://intl.cloud.tencent.com/document/product/436/10373#will-traffic-fees-be-incurred-when-the-objects-stored-in-cos-are-under-ddos-attacks.3F)
+
 
 ### 欠费停服相关
 

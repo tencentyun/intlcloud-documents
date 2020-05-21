@@ -1,0 +1,59 @@
+## Feature Description
+
+This API is used to create a [server group](https://intl.cloud.tencent.com/document/product/614/30449) and return its ID.
+
+## Request
+
+#### Sample request
+
+```
+POST /machinegroup HTTP/1.1
+Host: <Region>.cls.tencentyun.com
+Authorization: <AuthorizationString>
+Content-Type: application/json
+
+{"group_name": "testname", "ips": ["10.10.10.10", "10.10.10.11"]}
+```
+
+#### Request line
+
+```
+POST /machinegroup
+```
+
+#### Request header
+
+There are only common request headers but no special request headers.
+
+#### Request parameters
+
+| Field Name | Type | Location | Required | Description |
+|--------------|--------|------|---------|--------------------------------|
+| group_name   | string | body | Yes      | Server group name, which must be unique             |
+| ips          | JsonArray| body| Yes    | List of IPs in server group            |
+
+## Response
+
+#### Sample response
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 123
+
+{"group_id": "xxxx-xx-xx-xx-xxxxxxxx"}
+```
+
+#### Response header
+
+There are only common response headers but no special response headers.
+
+#### Response parameters
+
+| Field Name | Type | Required | Description |
+|-------------|-----------|---------|-------------------------------|
+| group_id   | string | Yes      | Server group ID                  |
+
+## Error Codes
+
+For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).

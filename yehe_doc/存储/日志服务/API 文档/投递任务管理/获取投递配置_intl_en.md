@@ -1,0 +1,120 @@
+## Feature Description
+
+This API is used to get the detailed information of a specified shipping policy.
+
+## Request
+
+#### Sample request
+
+```shell
+GET /shipper?shipper_id=xxxx-xx-xx-xx-xxxxxxxx HTTP/1.1
+Host: <Region>.cls.tencentyun.com
+Authorization: <AuthorizationString>
+```
+
+#### Request line
+
+```shell
+GET /shipper
+```
+
+#### Request header
+
+There are only common request headers but no special request headers.
+
+#### Request parameters
+
+| Field Name | Type | Location | Required | Description |
+| ---------- | ------ | ----- | -------- | ---------------- |
+| shipper_id | string | query | Yes       | ID of the shipper to be queried |
+
+## Response
+
+#### Sample response
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 123
+
+{
+  "shipper_id": "xxxx-xx-xx-xx-xxxxxxxx",
+  "topic_id": "yyyy-yy-yy-yy-yyyyyyyy",
+  "bucket": "test-1250000001",
+  "prefix": "test",
+  "shipper_name": "myname",
+  "interval": 300,
+  "max_size": 256,
+  "effective": true,
+  "filter_rules": [{
+    "key": "",
+    "regex": "",
+    "value": ""
+  }],
+  "partition": "%Y%m%d",
+    "compress": {
+        "format": "none"
+    },
+    "content": {
+        "format": "json",
+    },
+  "create_time": "2017-12-12 12:12:12"
+}
+```
+
+#### Response header
+
+There are only common response headers but no special response headers.
+
+#### Response parameters
+
+| Field Name | Type | Required | Description |
+| ------------ | ------ | -------- | ------------------------------------------------ |
+| shipper_id   | string | Yes       | Shipper ID                                          |
+| topic_id     | string | Yes       | Topic ID of shipping rule                            |
+| bucket       | string | Yes       | Bucket address shipped to                                 |
+| prefix       | string | Yes       | Shipping prefix directory                                     |
+| shipper_name | string | Yes       | Shipping rule name                                     |
+| interval     | int    | Yes       | Shipping time interval in seconds                            |
+| max_size     | int    | Yes       | Maximum size of shipped file in MB                        |
+| effective    | bool   | Yes       | Whether it is effective                                           |
+| filter_rules | array  | Yes       | Filter rule of shipped log                                 |
+| create_time  | string | Yes       | Creation time of shipped log                                 |
+| partition    | string | Yes       | Partition rule of shipped log, which can be represented in `strftime` time format |
+| compress     | object | Yes       | Compression configuration of shipped log                                 |
+| content      | object | Yes       | Format configuration of shipped log content                             |
+
+`filter_rules` is in the following format:
+
+| Field Name | Type | Required | Description |
+| ------ | ------ | -------- | -------------------------------------------------- |
+| key    | string | Yes       | Key for comparison. `__CONTENT__` indicate the full text                |
+| regex  | string | Yes       | Regex for extracting comparison content                               |
+| value  | string | Yes       | Value to be compared with the content extracted with the above regex. If they are the same, there will be a hit |
+
+`compress` is in the following format:
+
+| Field Name | Type | Required | Description |
+| ------ | ------ | -------- | ------------------------------------------ |
+| format | string | Yes       | Compression format. `gzip` and `lzop` are supported, and `none` indicates no compression |
+
+`content` is in the following format:
+
+| Field Name | Type | Required | Description |
+| -------- | ------ | -------- | --------------------------- |
+| format   | string | Yes       | Content format. Valid values: `json`, `csv` |
+| csv_info | object | No       | Returned when the content format is `csv`        |
+
+`csv_info` is in the following format:
+
+| Field Name | Type | Required | Description |
+| ------------------ | ------------- | -------- | ------------------------------------------------ |
+| print_key          | bool          | Yes       | Whether to print `key` on the first row of CSV file                              |
+| keys               | array(string) | Yes       | Names of each keys                                  |
+| delimiter          | string        | Yes       | Field delimiter                                 |
+| escape_char        | string        | Yes       | Escape character used to enclose any field delimiter in field content |
+| non_existing_field | string        | Yes       | Content used to populate non-existing fields           |
+
+## Error Codes
+
+For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
