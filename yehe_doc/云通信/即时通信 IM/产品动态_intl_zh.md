@@ -19,7 +19,7 @@
 		 <li>修复 Android 设备由于网络权限问题导致的崩溃。</li>
 </ul></td>   
 	     <td>2020-05-15</td>   
-	     <td><a href="https://cloud.tencent.com/document/product/269/36887">SDK 下载</a></td>   
+	     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>   
      </tr> 
 </table>
 
