@@ -100,7 +100,7 @@
         </tr>
         <tr>
             <td>调用频率</td>
-            <td><ul style="margin:0;"><li>最高100次/秒：<a href="https://intl.cloud.tencent.com/document/product/1047/34954">导入多个帐号</a>、<a href="https://intl.cloud.tencent.com/document/product/1047/34955">删除帐号</a>、<a href="https://intl.cloud.tencent.com/document/product/1047/34956">查询帐号</a> 和 <a href="https://intl.cloud.tencent.com/document/product/1047/34960">获取 App 中的所有群组</a></li><li>最高200次/秒：其余 <a href="https://intl.cloud.tencent.com/document/product/1047/34621">REST API</a></li></ul></td>
+            <td><ul style="margin:0;"><li>最高100次/秒：<a href="https://intl.cloud.tencent.com/document/product/1047/34954">导入多个帐号</a>、<a href="https://intl.cloud.tencent.com/document/product/1047/34955">删除帐号</a>、和<a href="https://intl.cloud.tencent.com/document/product/1047/34956">查询帐号</a></li><li>最高200次/秒：其余 <a href="https://intl.cloud.tencent.com/document/product/1047/34621">REST API</a></li></ul></td>
         </tr>
 </table>
 
@@ -115,7 +115,7 @@
         </tr>
         <tr>
             <td>导入多个帐号</td>
-            <td>单次最多导入100个用户名</td>
+            <td>单次最多导入100个用户名，且本接口不支持直接导入帐号的昵称和头像信息</td>
         </tr>
 				<tr>
             <td>查询帐号在线状态</td>
