@@ -1,6 +1,3 @@
-
-
-
 ## Launching TPNS Service
 
 #### API description
@@ -11,8 +8,8 @@ Launch the TPNS service by using the information of the application registered a
 ```
 
 #### Parameter description
-- AppID: application ID applied on the console, i.e., the `Access ID`.
-- AppKey: `appKey` applied on the console, i.e., the `Access Key`.
+- AppID: application ID applied through the frontend, i.e., the `Access ID`.
+- AppKey: `appKey` applied through the frontend, i.e., the `Access Key`.
 - Delegate: callback object. 
 
 >The parameters required by the API must be entered correctly; otherwise, TPNS will not be able to push messages correctly for the application.
@@ -40,7 +37,7 @@ After the TPNS service is stopped, the application will not be able to push mess
 ### Creating message action
 
 #### API description
-Create a click event action in the notification
+Create a clickable event action in the notification.
 
 ```objective-c
 + (nullable id)actionWithIdentifier:(nonnull NSString *)identifier title:(nonnull NSString *)title options:(XGNotificationActionOptions)options;
@@ -57,14 +54,14 @@ Create a click event action in the notification
 XGNotificationAction *action1 = [XGNotificationAction actionWithIdentifier:@"xgaction001" title:@"xgAction1" options:XGNotificationActionOptionNone];
 ```
 
->The notification bar has the event click feature, which is only supported in iOS 8.0+. For iOS 7.x or earlier, this method will return null.
+>The notification bar has the click event feature, which is only supported in iOS 8.0+. For iOS 7.x or earlier, this method will return null.
 
 ### Creating category object
 
 #### API description
 Create a category object to manage the action object of the notification bar.
 ```objective-c
-+ (nullable id)categoryWithIdentifier:(nonnull NSString *)identifier actions:(nullable NSArray<XGNotificationAction *> *)actions intentIdentifiers:(nullable NSArray<NSString *> *)intentIdentifiers options:(XGNotificationCategoryOptions)options;
++ (nullable id)categoryWithIdentifier:(nonnull NSString *)identifier actions:(nullable NSArray<id> *)actions intentIdentifiers:(nullable NSArray<NSString *> *)intentIdentifiers options:(XGNotificationCategoryOptions)options
 ```
 
 #### Parameter description
@@ -73,19 +70,19 @@ Create a category object to manage the action object of the notification bar.
 - intentIdentifiers: used to indicate identifiers that can be recognized by Siri.
 - options: category characteristics.
 
->The notification bar has the event clicking feature, which is only supported in iOS 8+. For iOS 8 or earlier, this method will return null.
+>The notification bar has the click event feature, which is only supported in iOS 8+. For iOS 8 or earlier, this method will return null.
 
 
 #### Sample code
 ```Objective-C
-XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifier:@"xgCategory" actions:@[action1, action2] intentIdentifiers:@[] options:XGNotificatio nCategoryOptionNone];
+XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifier:@"xgCategory" actions:@[action1, action2] intentIdentifiers:@[] options:XGNotificationCategoryOptionNone];
 ```
 
 ### Creating configuration class
 #### API description
 Manage the style and characteristics of the push message notification bar.
 ```objective-c
-+ (nullable instancetype)configureNotificationWithCategories:(nullable NSSet<XGNotificationCategory *> *)categories types:(XGUserNotificationTypes)types;
++ (nullable instancetype)configureNotificationWithCategories:(nullable NSSet<id> *)categories types:(XGUserNotificationTypes)types;
 ```
 
 #### Parameter description
@@ -101,7 +98,7 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 ## Automatically Increasing Badge Number by 1
 
 #### API description
-Call this API to report the current application badge number to the TPNS server. After the client is configured, you can use the badge number "auto increased by 1" feature, which can be found in the console (create push > notification bar message > advanced settings > badge number).
+Call this API to report the current application badge number to the TPNS server. After the client is configured, you can use the "automatically increasing badge number by 1" feature, which can be found in the console (create push > notification bar message > general settings > badge number).
 
 ```objective-c
 - (void)setBadge:(NSInteger)badgeNumber;
@@ -111,7 +108,7 @@ Call this API to report the current application badge number to the TPNS server.
 badgeNumber: badge number of application.
 
  
->This API must be called locally; otherwise, the badge number by default will not change, even if the "auto increased by 1" feature is enabled.  
+>This API must be called locally; otherwise, the badge number by default will not change, even if the "automatically increasing badge number by 1" feature is enabled.  
 
 
 #### Sample code
@@ -119,7 +116,7 @@ badgeNumber: badge number of application.
 [[XGPush defaultManager] setBadge:7];
 ```
 
-## Managing application badge
+## Managing Application Badge
 
 #### API description
 This API is used to manage the badge number displayed by the application and needs to be called in the main thread.
@@ -166,89 +163,76 @@ This API is used to query the token string generated by the current application 
 NSString *token = [[XGPushTokenManager defaultTokenManager] xgTokenString];
 ```
 
-
-
-
-### Querying APNs registration result
-
-#### API description
-If the registration is successful, the application will call the callback method of the `UIApplicationDelegate` delegate object \(see below\).
-
-```Objective-C
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
-```
-
-### Querying TPNS registration result
-
+### Querying registration result
 #### API description
 The SDK launch method automatically registers the token obtained by the device from APNs to the TPNS server, and the registration result will be returned in the callback method of `XGPushDelegate` \(see below\).
 
-
 ```objective-c
-- (void)xgPushDidRegisteredDeviceToken:(NSString *)deviceToken error:(NSError *)error;
+- (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken xgToken:(nullable NSString *)xgToken error:(nullable NSError *)error
 ```
+> If `error` is `nil`, the registration is successful
 
-
+## Account/Tag Feature
 ### Binding/Unbinding tag and account
-
 #### API description
-You can bind tags to different users and then push based on a specific tag.
+You can bind tags/accounts to different users and then push based on a specific tag/account.
 
 >This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
-#### Single-operation API 
+#### Operation APIs 
 ```Objective-C
-- (void)bindWithIdentifier:(nullable NSString *)identifier type:(XGPushTokenBindType)type;
-- (void)unbindWithIdentifer:(nullable NSString *)identifier type:(XGPushTokenBindType)type;
+- (void)bindWithIdentifiers:(nonnull NSArray *)identifiers type:(XGPushTokenBindType)type;
+- (void)unbindWithIdentifers:(nonnull NSArray *)identifiers type:(XGPushTokenBindType)type;
 ```
 
 #### Parameter description
-- identifier: tag or account.
+- identifiers: specifies the ID to be bound. The tag string cannot contain spaces or tabs.
 - type: binding type.
+
+>
+- For tag operations, `identifiers` is a tag string array (the tag string cannot contain spaces or tabs).
+- For account operations, a dictionary array is required, and the key is fixed.
+- Syntax for Objective-C: @[@{@"account":identifier, @"accountType":@(0)}].
+- Syntax for Swift: ["account":identifier, "accountType":NSNumber(0)].
+- For more `accountType` values, please see the enumerated values of `XGPushTokenAccountType`.
+
 
 #### Sample code
 ```Objective-C
-// Bind a tag:
-[[XGPushTokenManager defaultTokenManager] bindWithIdentifier:@"your tag" type:XGPushTokenBindTypeTag];
+// Bind the tag:
+[[XGPushTokenManager defaultTokenManager] bindWithIdentifiers:@[identifier] type:XGPushTokenBindTypeTag];
 
-// Unbind a tag
-[[XGPushTokenManager defaultTokenManager] unbindWithIdentifer:@"your tag" type:XGPushTokenBindTypeTag];
+// Unbind the tag
+[[XGPushTokenManager defaultTokenManager] unbindWithIdentifers:@[identifier] type:XGPushTokenBindTypeTag];
 
 // Bind an account:
-[[XGPushTokenManager defaultTokenManager] bindWithIdentifier:@"your account" type:XGPushTokenBindTypeAccount];
+[[XGPushTokenManager defaultTokenManager] bindWithIdentifiers:@[@{@"account":identifier, @"accountType":@(0)}] type:XGPushTokenBindTypeAccount];
 
 // Unbind an account:
-[[XGPushTokenManager defaultTokenManager] unbindWithIdentifer:@"your account" type:XGPushTokenBindTypeAccount];
+[[XGPushTokenManager defaultTokenManager] unbindWithIdentifers:@[@{@"account":identifier, @"accountType":@(0)}]type:XGPushTokenBindTypeAccount];
 ```
-
-#### Batch operation APIs
-
-```Objective-C
-- (void)bindWithIdentifiers:(nonnull NSArray <NSString *> *)identifiers type:(XGPushTokenBindType)type
-- (void)unbindWithIdentifers:(nonnull NSArray <NSString *> *)identifiers type:(XGPushTokenBindType)type;
-```
-
-#### Parameter description
-- identifiers: tag or account list.
-- type: binding type.
-
-
->The tag or account string cannot contain spaces or tabs.
 
 ### Batch updating tags/accounts
-
 #### API description
 This API is used to overwrite the original ID (tag/account). If no ID was previously bound, this API will add an ID.
 
 >This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
+
 ```Objective-C
-- (void)updateBindedIdentifiers:(nonnull NSArray <NSString *> *)identifiers bindType:(XGPushTokenBindType)type;
+- (void)updateBindedIdentifiers:(nonnull NSArray *)identifiers bindType:(XGPushTokenBindType)type;
 ```
+
 #### Parameter description 
 - identifiers: tag ID string array. The tag string cannot contain spaces or tabs.
 - type: ID type.
 
+>
+- For tag operations, `identifiers` is a tag string array (the tag string cannot contain spaces or tabs).
+- For account operations, a dictionary array is required, and the key is fixed.
+- Syntax for Objective-C: @[@{@"account":identifier, @"accountType":@(0)}].
+- Syntax for Swift: ["account":identifier, "accountType":NSNumber(0)].
+- For more `accountType` values, please see the enumerated values of `XGPushTokenAccountType`.
 
 >If the tag type is specified, this API will replace all the old tags corresponding to the current token with the current tag; if the account type is specified, this API will only take the first one in the `identifiers` list
 
@@ -285,7 +269,6 @@ This API is used to query the ID bound to the current token object by the specif
 ```
 
 ## Querying Device Notification Permission
-
 #### API description
 This API is used to query whether the user allows device notification. 
 
@@ -320,7 +303,6 @@ This API is used to query the current SDK version.
 
 
 ## Log Reporting APIs
-
 #### API description
 If you find exceptions with push, you can call this API to trigger reporting of local push logs. When feeding back the problem, please provide the file address for us to troubleshoot.
 ```

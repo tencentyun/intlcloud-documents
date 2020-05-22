@@ -2,7 +2,7 @@
 
 ## 函数部署
 SCF CLI 通过 `deploy` 子命令来完成函数打包部署。SCF 命令行工具依据指定的函数模板配置文件，将配置文件中指定的代码包、函数配置等信息，部署到云端，或更新云端的函数。
-> `scf deploy` 命令的执行过程均基于函数模板配置文件，具体的模板文件说明和写法请见 [模板文件说明](https://cloud.tencent.com/document/product/583/33454)。
+> `scf deploy` 命令的执行过程均基于函数模板配置文件，具体的模板文件说明和写法请见 [模板文件说明](https://intl.cloud.tencent.com/document/product/583/32758)。
 
 ### 参数说明
 

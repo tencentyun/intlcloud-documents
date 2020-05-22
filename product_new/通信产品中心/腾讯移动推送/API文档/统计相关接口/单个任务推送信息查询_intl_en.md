@@ -19,7 +19,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 | -------------- | --------- | ---------------------------------------- |
 | retCode        | int       | Returned status code                              |
 | errMsg | string | Error message |
-| pushRecordData | JsonArray | Returned results, with pushRecordData structure variables shown in following table |
+| pushRecordData | JsonArray | Returned result, with `pushRecordData` structure variables shown in following table |
 
 #### pushRecordData
 
@@ -33,101 +33,98 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 | pushType         | string             | Push target               | <li>all //Full push<li>tag //Tag push<li>token_list //Device list<li>account_list //Account list<li>package_account_push //Number package push |
 | messageType      | string             | Push type               | <li>notification //Notification<li>message //Message                              |
 | environment      | string             | Push environment               | <li>product //Production environment<li>dev //Development environment                         |
-| expireTime       | uint32             | Expiry time               | Unit: second                                                       |
+| expireTime       | uint32             | Expiration time               | Unit: second                                                       |
 | xgMediaResources | string             | Rich media information             | -                                                            |
-| multiPkg         | bool               | Whether a push to multiple packages         | -                                                            |
+| multiPkg         | bool               | Whether it is multi-package name push         |  <li>true // Enable multi-package name push <li>false // Disable multi-package name push                                                            |
 | targetList       | jsonArrary(string) | Push account or push device list | Valid if `pushType` is `token_list` or `account_list`                   |
-| tagSet           | JsonObject         | Tag settings | Valid if `pushType` is `tag`<br>Data structure:<br><code>{<br>"op":"OR", // Inter-tag logic operation<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", // Tag type<br>"tagValue":"test68" // Tag value}<br>]<br>} </code>|
+| tagSet           | JsonObject         | Tag settings               | Valid if `pushType` is `tag`<br>Data structure:<br><code>{<br>"op":"OR", // Inter-tag logic operation<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", // Tag type<br>"tagValue":"test68" //Tag value}<br>]<br>} </code>|
 | uploadId         | uint32             | Number package ID               | Valid if `pushType` is `package_account_push`                         |
-| pushConfig       | JsonObject         | Push configuration information           | <br>"Android": specific push configuration information related to Android. For details, please see the following code<br>"iOS": specific push configuration related to iOS. For details, please see the following code<br>|
+| pushConfig       | JsonObject         | Push configuration information           | <br>"Android": for specific push configuration information related to Android, please see the following code<br>"iOS": for specific push configuration related to iOS, please see the following code<br>|
 
 
 ## Configuration Information
 #### Android push configuration information
 
 ```json
-"android":{
- "ring":1, // Ring
- "vibrate":0, // Vibrate
- "lights":1, // LED indicator
- "clearable":1, // Whether clearable or not
- "action":{
- // Action type; 1. Open activity or application; 2. Open browser; 3. Open Intent
- "action_type":1
- },
- "custom_content":"{}" // Custom parameter
-}
-```
-
+"android": {
+        "ring": 1, // Ring     
+        "vibrate": 1,// Vibrate
+        "lights": 1,// LED indicator
+        "clearable": 1, // Whether dismissible or not     
+        "action": {
+            "action_type": 3,// Action type; 1. open activity or application; 2. open browser; 3. open Intent         
+            "intent": "" // The SDK version must be 1.0.9 or higher. Configure the data tag in the client's intent and set the scheme attribute
+        },
+      "custom_content":"{}"
+    }
+	```
 #### iOS push configuration information
 
 ```json
 "ios":{
- "aps": {
- "alert": {
- "subtitle": "my subtitle"
- },
- "badge_type": 5, // Badge number displayed by application (optional). -2: auto-increment, -1: unchanged,
- "sound":"notification sound effect", // If this parameter is left empty, the default sound effect will be used
- "category": "INVITE_CATEGORY",
- "mutable-content" : 1
- }
-}
+        "aps": {
+            "alert": {
+                "subtitle": "my subtitle"
+            },
+            "badge_type": 5, // Badge number displayed by application (optional). -2: auto-increment, -1: unchanged,
+            "category": "INVITE_CATEGORY",
+            "sound":"default",// If this parameter is left empty, the default sound effect will be used
+            "mutable-content":1
+        },
 ```
-
 
 ## Samples
 #### Sample request
 ```json
 {
- "pushId": "133703"
+    "pushId": "133703"
 }
 ```
 
 #### Sample response
 ```json
 {
- "retCode": 0,
- "errMsg": "NO_ERROR",
- "pushRecordData": [
- {
- "date": "2019-07-25 20:06:28",
- "pushId": 133703,
- "title": "1",
- "content": "2",
- "status": "PUSH_FINISHED"
- "pushType":"tag",
- "targetList":null,
- "tagSet":{
- "op":"OR",
- "tagWithType":[
- {
- "tagTypeName":"xg_user_define",
- "tagValue":"test68"
- }
- ]
- },
- "uploadId":0,
- "expireTime":86400,
- "messageType":"notify",
- "xgMediaResources":"",
- "environment":"product",
- "pushConfig":{
- "android":{
- "ring":1,
- "vibrate":0,
- "lights":1,
- "clearable":1,
- "action":{
- "action_type":1
- },
- "custom_content":"{}"
- },
- "ios":null,
- },
- "multiPkg":false
- }
- ]
+    "retCode": 0,
+    "errMsg": "NO_ERROR",
+    "pushRecordData": [
+        {
+            "date": "2019-07-25 20:06:28",
+            "pushId": 133703,
+            "title": "1",
+            "content": "2",
+            "status": "PUSH_FINISHED",
+            "pushType": "tag",
+            "targetList": null,
+            "tagSet": {
+                "op": "OR",
+                "tagWithType": [
+                    {
+                        "tagTypeName": "xg_user_define",
+                        "tagValue": "test68"
+                    }
+                ]
+            },
+            "uploadId": 0,
+            "expireTime": 86400,
+            "messageType": "notify",
+            "xgMediaResources": "",
+            "environment": "product",
+            "pushConfig": {
+                "android": {
+                    "ring": 1,
+                    "vibrate": 0,
+                    "lights": 1,
+                    "clearable": 1,
+                    "action": {
+                        "action_type": 1
+                    },
+                    "custom_content": "{}"
+                },
+                "ios": null
+            },
+            "multiPkg": false
+        }
+    ]
 }
 ```
 

@@ -6,7 +6,7 @@ QQ 可以用来收发消息，但前提是您必须先登录才能使用。登�
 
 - **UserID**：旧称为 Identifier，用户登录即时通信 IM 时使用的用户名，即您 App 里的用户 ID。
  例如，App 里有一个用户，该用户的 ID 是27149 ，那么您可以用27149作为登录即时通信 IM 的 UserID。
-- **UserSig**：用户登录即时通信 IM 时使用的密码，其本质是 App Server 用密钥对 UserID 等信息加密后的数据。
+- **UserSig**：用户登录即时通信 IM 时使用的密码，其本质是 App Server 用密钥对 UserID 等信息加密后的数据。具体生成方法请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ## App 登录流程
 
@@ -16,6 +16,7 @@ QQ 可以用来收发消息，但前提是您必须先登录才能使用。登�
 >
 - 即时通信 IM 后台完全信赖 UserSig，为避免数据和业务受影响，请务必确保私钥的安全。
 - 即时通信 IM 后台 SDK 默认接口生成的 UserSig 有效期为180天，可以使用含有效期参数的接口自行设定有效期，开发者需要在 UserSig 过期前到开发者后台获取新的 UserSig。
+- 用于生成 UserSig 的即时通信 IM 后台 SDK 详细请参阅 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ## App 管理员
 

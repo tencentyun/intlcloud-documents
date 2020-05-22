@@ -1,7 +1,5 @@
 Serverless Components 是支持多个云资源编排和组织的场景化解决方案，主要基于客户的具体场景，如 Express 框架支持、网站部署等。Serverless Components 可以有效简化云资源的配置和管理，将网关、COS 和 CAM 等产品联动起来，让客户更多关注场景和业务。
 
-详细介绍可以参考 [Github 上的 Serverless Components 项目](https://github.com/serverless/components/blob/master/README_CN.md)。
-
 ## Components 和 Framework CLI 的区别
 
 
@@ -41,7 +39,7 @@ serverless create --template-url https://github.com/serverless/components/tree/m
 serverless create --template-url https://github.com/serverless/components/tree/master/templates/tencent-fullstack-react-application
 ```
 
-- [部署 Serverless 全栈 Web 应用（Vue.js）](https://cloud.tencent.com/document/product/1154/39272)
+- 部署 Serverless 全栈 Web 应用（Vue.js）
 本示例以 Vue 为前端，Express 框架作为后端，通过多个 Serverless Components 部署 Serverless 全栈应用程序。
 ```shell
 serverless create --template-url https://github.com/serverless/components/tree/master/templates/tencent-fullstack-vue-application
@@ -53,15 +51,15 @@ serverless create --template-url https://github.com/serverless/components/tree/m
 ![](https://main.qcloudimg.com/raw/fb863fbfe72526360c0cd7fc4caa1d98.png)
 
 基础组件：
-- [@serverless/tencent-apigateway](https://cloud.tencent.com/document/product/1154/39268) - 腾讯云 API 网关组件
-- [@serverless/tencent-cos](https://cloud.tencent.com/document/product/1154/39273) - 腾讯云对象存储组件
-- [@serverless/tencent-scf](https://cloud.tencent.com/document/product/1154/39271) - 腾讯云云函数组件
-- [@serverless/tencent-cam-role](https://cloud.tencent.com/document/product/1154/39275) - 腾讯云 CAM 角色组件
-- [@serverless/tencent-cam-policy](https://cloud.tencent.com/document/product/1154/39274) - 腾讯云 CAM 策略组件
+- [@serverless/tencent-apigateway](https://intl.cloud.tencent.com/document/product/1040/33165) - 腾讯云 API 网关组件
+- [@serverless/tencent-cos](https://intl.cloud.tencent.com/document/product/1040/33166) - 腾讯云对象存储组件
+- [@serverless/tencent-scf](https://intl.cloud.tencent.com/document/product/1040/33164) - 腾讯云云函数组件
+- [@serverless/tencent-cam-role](https://intl.cloud.tencent.com/document/product/1040/33168) - 腾讯云 CAM 角色组件
+- [@serverless/tencent-cam-policy](https://intl.cloud.tencent.com/document/product/1040/33167) - 腾讯云 CAM 策略组件
 
 高阶组件：
-- [@serverless/tencent-express](https://cloud.tencent.com/document/product/1154/39269) - 快速部署基于 Express.js 的后端服务到腾讯云函数的组件
-- [@serverless/tencent-website](https://cloud.tencent.com/document/product/1154/39276) - 快速部署静态网站到腾讯云的组件
+- @serverless/tencent-express - 快速部署基于 Express.js 的后端服务到腾讯云函数的组件
+- @serverless/tencent-website - 快速部署静态网站到腾讯云的组件
 
 第三方贡献：
 - [@twn39/tencent-fastify](https://github.com/twn39/tencent-fastify) - 快速部署基于 fastify.js 的后端服务到腾讯云函数的组件
