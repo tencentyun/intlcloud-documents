@@ -5,15 +5,12 @@
 ```shell
 https://api.tpns.tencent.com/v3/push/app
 ```
->Service access point in Guangzhou:
-```shell
-https://api.tpns.tencent.com/v3/push/app
-```
->Service access point in Hong Kong (China):
+>If your application accesses a cluster outside Mainland China, use the following domain name:
+Service access point in Hong Kong (China):
 ```shell
 https://api.tpns.hk.tencent.com/v3/push/app
 ```
->Service access point in Singapore:
+Service access point in Singapore:
 ```shell
 https://api.tpns.sgp.tencent.com/v3/push/app
 ```
@@ -35,7 +32,7 @@ The required push parameters refer to the parameters that must be carried in a p
 | ------------- | ------ | ---- | ---------------------------------------- |
 | audience_type | string | Yes | Push target <li>all: full push </li><li>tag: tag push </li><li>token: single-device push </li><li>token_list: device list push </li><li>account: single-account push </li><li>account_list: account list push</li> |
 | message       | object | Yes | This is the message body; for more information, please see [Message Body Types](#Message Body Types) |
-| message_type | string | Yes | Message type <li>notify: notification </li><li>message: in-app message/silent message</li> |
+| message_type | string | Yes | Message type <li>notify: notification </li><li>message: passthrough/silent message</li> |
 | environment | string | Yes (only for iOS) | This specifies the push environment (only available for pushes on iOS) <li>product: production push environment </li><li>dev: development push environment </li> |
 | upload_id   | int32  | Yes (only available for number package push)        | Number package upload ID  |
 
@@ -48,12 +45,59 @@ Push API provides a variety of push targets, such as all, tag, single device, de
 | Push Target | Description | Usage |
 | ------------ | ------------ | ------------------------------------------------------------ |
 | all | Full push | None |
-| tag | Tag push | `tag_list` <li>Push to devices with tag1 and tag2 `{"tags":["tag1","tag2"],"op":"AND"}`</li><li> Push to devices with tag1 or tag2 `{"tags":["tag1","tag2"],"op":"OR"}`</li><li> Tag list cannot exceed 512 characters</li> |
+| tag | Tag push | `tag_list`: <li>Push to devices with tag1 and tag2 `{"tags":["tag1","tag2"],"op":"AND"}`</li><li> Push to devices with tag1 or tag2 `{"tags":["tag1","tag2"],"op":"OR"}`</li><li> Tag list cannot exceed 512 characters</li> `tag_rules`: for tag combination push, you can set "AND", "OR", and "NOT" combining rules. If both this parameter and `tag_list` are present, `tag_list` will be automatically invalid. For parameter descriptions, please see [Tag combination rules](#biaoqianzh). |
 | token | Single-device push | `token_list`<li>If the parameter contains multiple tokens, it will only push to the first token </li><li>Format example: ["token1"] </li><li>A token string cannot exceed 36 characters</li> |
 | token_list   | Device list group push | `token_list`<li>Up to 1,000 tokens</li><li>Format example: ["token1","token2"]</li><li>A token string cannot exceed 36 characters</li> |
-| account | Single-account push | `account_list` <li>If the parameter contains multiple accounts, it will only push to the first account</li><li>Format example: ["account1"] </li>|
+| account | Single-account push | `account_list` <li>If the parameter contains multiple account, it will only push to the first account</li><li>Format example: ["account1"] </li>|
 | account_list | Account list group push | `account_list` has a maximum of 1000 accounts. Format example: ["account1","account2"] |
 |package_account_push | Number package push | Required for number package push |
+
+
+<span id="biaoqianzh"></span>
+#### Tag combination rules
+##### tag_rule field
+
+| Field   |  Type  | Required | Description |
+| ------  | ----|----- -|--- |
+|tag_rules|[tag_rule](#tag_rule1) array | Yes | Tag rule set. |
+
+
+<span id="tag_rule"></span>
+##### tag_rule field
+
+| Field   |  Type  | Required | Description |
+| ------  | ----|-----|--- |
+|tag_items|[tag_item](#tag_item2) array | Yes | Tag rule. |
+|operator|string|Yes | Operator between elements in the `TagRules` array. The operator of the first `tag_rules` element is invalid data, the operator of the second `tag_rules` element is the operator between the first and second `TagRules` elements, and so on. `OR` is OR operation, `AND` is AND operation. |
+|is_not |string|Yes| Whether to perform "NOT" operation on the calculation result of the `tag_items` array. true: yes, false: no. |
+
+
+<span id="tag_item2"></span>
+##### tag_item field
+
+| Field   |  Type  | Required | Description |
+| ------  | ----|-----|--- |
+|tags|string array|Yes| Specific tag value, such as tag1 and guangdong. |
+|is_not|string|Yes| Whether to perform "NOT" operation on the calculation result of the tag array. true: yes, false: no. |
+| tags_operator|string|Yes| Operator for tags in `tags`. OR: OR operation, AND: AND operation. |
+| items_operator|string|Yes | Operator between elements in the `TagItems` array. The `items_operator` of the first `TagItems` element is invalid data, the `items_operator` of the second `TagItems` element is the operator between the first and second `TagItems` elements, and so on. `OR` is OR operation, `AND` is AND operation. |
+| tag_type|string|Yes| Please see [tag_type value table](#tag123). |
+
+<span id="tag123"></span>
+##### tag_type value table
+
+| **Tag Name**          | **tag_type Value**   | **Tag Name Example** |
+| ------------- | ------ | ---- |
+| Custom tag | xg_user_define | tag1, tag2, etc.   |
+| Application version       | xg_auto_version | 1.1.0, 1.2.0.1, etc.  |
+| Device district information  | xg_auto_province | guangdong, shanghai, etc.  |
+| Active status   | xg_auto_active  | 20200131, 20200201, etc.                |
+| XG SDK version   | xg_auto_sdkversion  | 1.1.5.2, 1.1.5.3, etc.              |
+| System language   | xg_auto_systemlanguage  | zh, en, etc.            |
+| Phone brand   | xg_auto_devicebrand  | Mi, Vivo, etc.             |
+| Phone model   | xg_auto_deviceversion | Mi 9 SE, Vivo X9 Plus, etc.             |
+
+>For detailed usage, please see [Tag push samples](#biaoqianshili).
 
 - Full push: push to all devices
   ```json
@@ -61,19 +105,48 @@ Push API provides a variety of push targets, such as all, tag, single device, de
     "audience_type": "all"
   }
 ```
-- Tag push: push to devices with both tag1 and tag2 tags
+- Tag push (in `tag_rules` method): male users who were active on April 8, 2020 in Guangdong or Hunan
 
  ```json
-  {
-    "audience_type": "tag",
-    "tag_list": {
-        "tags": [
-            "tag1",
-            "tag2"
-        ],
-        "op": "AND"
-    }
-  }
+ {
+  "audience_type": "tag",
+  "tag_rules": [
+        {
+            "tag_items": [
+                {
+                    "tags": [
+                        "guangdong",
+                        "hunan"
+                    ],
+                    "is_not": false,   
+                    "tags_operator": "OR",  
+                    "items_operator": "OR", 
+                    "tag_type": "xg_auto_province" 
+                },
+                {
+                    "tags": [
+                        "20200408"
+                    ],
+                    "is_not": false,
+                    "tags_operator": "OR",
+                    "items_operator": "AND",
+                    "tag_type": "xg_auto_active"
+                },
+                {
+                    "tags": [
+                        "male"
+                    ],
+                    "is_not": false,
+                    "tags_operator": "OR",
+                    "items_operator": "AND",
+                    "tag_type": "xg_user_define"
+                }
+            ],
+            "operator": "OR", 
+            "is_not": false  
+        }
+    ]
+}
 ```
 
 - Single-device push: push to devices with token1 as the token
@@ -154,24 +227,23 @@ The specific fields for the Android platform are as follows:
 | -----           | ------   | ----       |-----      |    ---- | ----------- ------------------------    |
 | n_ch_id     | string    | Android      | None    | No    | Notification channel ID (only valid for TPNS and OPPO push channels). For more information, please see [Creating Notification Channels](https://intl.cloud.tencent.com/document/product/1024/30715)                                 |
 | n_ch_name     | string    | Android      | None    | No    | Notification channel name (only valid for TPNS and OPPO push channels). For more information, please see [Creating Notification Channels](https://intl.cloud.tencent.com/document/product/1024/30715)                                 |
-| n_id           | int    | Android       |0    | No   | Unique ID of the notification message object (only valid for the TPNS channel).<li>Greater than 0: overrides the previous message with the same ID.<li>Equal to 0: displays this notification and not affect other messages.<li>Equal to -1: all previous messages are cleared and only this message is shown. |
+| n_id           | int    | Android       |0    | No   | Unique ID of the notification message object (only valid for the TPNS channel).<li>Greater than 0: overrides the previous message with the same ID.</li><li>Equal to 0: displays this notification and not affect other messages.</li><li>Equal to -1: all previous messages are cleared and only this message is shown </li> |
 | builder_id     | int    | Android      |0    | No | Local notification style ID |
-| ring           | int    |Android      |1    | No    | Whether there is a ringtone<li>0: no<li>1: yes             |
+| ring           | int    |Android      |1    | No    | Whether there is a ringtone<li>0: no</li><li>1: yes  </li>           |
 | ring_raw | string | Android | None | No | This specifies the name of the ringtone file in the raw directory of the Android project; no extension is needed |
-| vibrate        | int    | Android       |1    | No    | Whether the device vibrates<li>0: no<li>1: yes           |
-| lights         | int    |Android       |1    | No    | Whether the LED indicator is used <li>0: no <li>1: yes       |
+| vibrate        | int    | Android       |1    | No    | Whether the device vibrates</li><li>0: no<li>1: yes</li>            |
+| lights         | int    |Android       |1    | No    | Whether the LED indicator is used</li><li>0: no <li>1: yes</li>       |
 | clearable | int | Android | 1 | No | Whether the notification bar can be dismissed. |
-| icon_type      | int    | Android      |0    | No    | Whether the notification bar icon is an in-app icon or an uploaded icon<li>0: in-app icon<li>1: uploaded icon |
+| icon_type      | int    | Android      |0    | No    | Whether the notification bar icon is an in-app icon or an uploaded icon<li>0: in-app icon</li><li>1: uploaded icon</li> |
 | icon_res | string | Android | None | No | In-app icon file name or URL address of downloaded icon |
-| style_id | int | Android | 1 | No | Specifies whether to override the notification style with the specified number |
+| style_id | int | Android | 1 | No | This specifies whether to override the notification style with the specified number |
 | small_icon | string | Android | None | No | The icon that the message displays in the status bar. If not set, the application icon will be displayed. |
-| action | JSON | Android | Yes | No | Sets the action after the notification bar is tapped; the default action is to open the application. |
-| action_type| int | Action      |Yes   | No     | Tap action type. <li>1: opens activity or the application itself <li>2: opens browser<li>3: opens Intent             |
-| custom_content | string | Android | None    | No    |  Custom parameters. ⚠️ This must be serialized as a JSON string.       |
+| action | JSON | Android | Yes | No | This sets the action after the notification bar is clicked; the default action is to open the application. |
+| action_type| int | Action      |Yes   | No     | Click action type. <li>1: opens activity or the application itself </li><li>2: opens browser</li><li>3: opens Intent (recommended ⚠️  [Configuration Guide](https://intl.cloud.tencent.com/document/product/1024/32624))          </li>  |
+| custom_content | string | Android | None    | No    |  User-customized parameters. ⚠️ This must be serialized as a JSON string <li>If message overwriting is required, you cannot use `custome_content` to pass in custom parameters; instead, you need to change to use the intent method to overwrite messages. |
 
 
-Below is a sample of a complete message:
-
+Below is an example of a complete message:
 ```json
 {
     "title": "xxx",
@@ -240,7 +312,7 @@ The specific fields for the iOS platform are as follows:
 
 
 | Field Name | Type | Parent Item | Default Value | Required | Parameter Description |
-| ------ | ----------- | ---- || ---- | ---------------------------------------- |
+| ------ | ----------- | ---- |--------------| ---- | ---------------------------------------- |
 | ios    | JSON       |message  | None    | Yes    | iOS message structure. For more information, please see the iOS field description  |
 | xg_media_resources    | array     | message | None    | No    | Rich media element address                          |
 | xg | string | message| None | No | key reserved by the system, which should not be used |
@@ -249,19 +321,17 @@ The specific fields for the iOS platform are as follows:
 
 #### iOS field description
 
-| Field Name | Type | Parent Project | Default Value | Required | Parameter Description |
-| ------ | ----------- | |---- | ---- | ---------------------------------------- |
+| Field Name | Type | Parent Item | Default Value | Required | Parameter Description |
+| ------ | ----------- | ---------------------------|---- | ---- | ---------------------------------------- |
 | aps    | JSON       | ios  | None    | Yes    | APNs-specific field. For more information, please see [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1)|
 | alert   | JSON       |aps | None    | Yes    | It contains the title and message content |
 | badge_type  | int   |   aps  | None    | No    | The badge number displayed by the application |
 | category  | string    |    aps| None    | No    | The action ID displayed when the message is pulled down |
-| mutable-content | int |     aps | None    | No    | This is a notification expansion parameter that carries "mutable-content" during push: 1 means that the Service Extension supports iOS 10. After start-up, the push details will include the arrival data report. Before using this feature, develop the corresponding module according to the integration documentation. If this field is not carried, arrival data is not reported. |
+| mutable-content | int |     aps | None    | No    | This is a notification expansion parameter that carries "mutable-content" during push: 1 means that the Service Extension supports iOS10. After start-up, the push details will include the arrival data report. Before using this feature, develop the corresponding module according to the integration documentation. If this field is not carried, arrival data is not reported. |
 | sound  | string     | aps| None    | No    | The sound field is used as follows:<br>1: plays back system default prompt sound, "sound":"default"<br>2: plays back local custom ringtone, "sound":"chime.aiff"<br>3: mute effect, "sound":"" or the instructions for removing custom ringtone from the sound field: the format must be Linear PCM, MA4 (IMA/ADPCM), alaw, or μLaw. Put the audio file in the project's bundle directory. The duration should be less than 30 seconds; otherwise, the system's default ringtone will be used.|
-| custom_content | string |ios | None    | No    | Custom delivery parameters, which must be serialized to JSON string                                |
+| custom_content | string |ios | None    | No    | Parameters for custom delivery, which must be serialized to JSON string                                |
 
-
-Below is a sample of a complete message:
-
+Below is an example of a complete message:
 ```json
 {
     "title": "xxx",
@@ -282,23 +352,22 @@ Below is a sample of a complete message:
 }
 ```
 
-#### In-app message on Android
+#### Pass-Through message on Android
+Pass-through message is unique to the Android platform and not displayed in the notification bar of the mobile phone. It can be used to deliver messages with control information to users in an imperceptible manner.
 
-In-app message is unique to the Android platform and not displayed in the notification bar of the mobile phone. It can be used to deliver messages with control information to users in an imperceptible manner.
-
->Due to vendor restrictions, Android in-app messages can only be delivered through the TPNS channels and cannot be delivered through the vendor channels.
+>Due to vendor restrictions, Android pass-through messages can only be delivered through the TPNS channels and cannot be delivered through the vendor channels.
 
 The specific fields for the Android platform are as follows:
 
-| Field Name | Type | Parent Project | Default Value | Required | Parameter Description |
-| -------------- | ------ || ---- | ---- | ------------------------ |
+| Field Name | Type | Parent Item | Default Value | Required | Parameter Description |
+| -------------- | ------ |---------------| ---- | ---- | ------------------------ |
 | title          | string |message| None    | Yes    | Command description                     |
 | content        | string |message| None    | Yes    | Command content                    |
 | android              | JSON  | message      | None     | No    | Android message structure |
 | custom_content | string | android | None    | No    | This must be serialized to JSON string                                |
 | accept_time    | array | message       |None    | No    | The time period at which the message is allowed to be pushed to users. A single element is formed by a "start" time and an "end" time. "start" and "end" are indicated by hour and minute. For more information, please see the samples. ⚠️This is only valid for the TPNS channel due to vendor restrictions. |
 
-Complete sample:
+Complete example:
 
 ```json
 {
@@ -334,12 +403,12 @@ Complete sample:
 
 #### Silent message on iOS
 
-Similar to in-app message on Android, silent message is unique to the iOS platform and not displayed. When the message arrives at the device, iOS will wake up the application for a period of time (less than 30 seconds) in the background to let the application handle the message logic.
+Similar to pass-through message on Android, silent message is unique to the iOS platform and not displayed. When the message arrives at the device, iOS will wake up the application for a period of time (less than 30 seconds) in the background to let the application handle the message logic.
 
 The specific fields are as follows:
 
-| Field Name | Type | Parent Project | Default Value | Required | Parameter Description |
-| ------ | -----------| | ---- | ---- | ---------------------------------------- |
+| Field Name | Type | Parent Item | Default Value | Required | Parameter Description |
+| ------ | -----------| --------| ---- | ---- | ---------------------------------------- |
 | aps    | JSON       | ios  | None    | Yes    | APNs-specific field, where the most important `key-value` pair is as follows:<br>content-available: it identifies the message type (which must be 1) and cannot contain alert, sound, or badge_type fields<br>For more information, please see [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1) |
 | ios    | JSON       |message  | None    | Yes    | iOS message structure  |
 | custom_content | String | ios | None | No    | This must be serialized to JSON string                                |
@@ -347,7 +416,7 @@ The specific fields are as follows:
 
 
 
-Complete sample:
+Complete example:
 ```json
 {
     "ios":{
@@ -364,20 +433,21 @@ Complete sample:
 
 Optional Push API parameters are the optional advanced parameters except `audience_type`, `message_type`, and `message`.
 
-| Parameter Name | Type | Parent Project | Required | Default Value | Description |
-| ------------- | ------- || ---------------- | ------- | ---------------------------------------- |
-| expire_time | int | None | No | 259200 (72 hours) | Offline message retention duration (in seconds), up to 72 hours. <li>If expire_time=0, it indicates real-time message <li>If expire_time is greater than 0 and less than 800 seconds, the system will reset it to 800 seconds <li>If expire_time >= 800 seconds, the message will be retained according to the actual set duration, up to 72 hours <li>The value set cannot exceed 2147483647; otherwise, the push will fail |
-| send_time | string | None | No | Current system time | This specifies the push time: <li>The format is yyyy-MM-DD HH:MM:SS. <li>If it is less than the current server time, the message will be pushed immediately. <li>This field is supported only for full push and tag push. |
-| multi_pkg | bool | None | No| false | Multi-package name push: for an application that has multiple packages (such as for MyApp and Wandoujia), if you want the application in all channels to receive the push message, you can set this value to `true`. <br>⚠️This parameter controls the multi-package name push of the TPNS channel by default. To implement multi-package name push for vendor channels, please see [Multi-Package Name Push for Vendor Channels](https://intl.cloud.tencent.com/document/product/1024/35393)|
+| Parameter Name | Type | Parent Item | Required | Default Value | Description |
+| ------------- | ------- |---------------| ---------------- | ------- | ---------------------------------------- |
+| expire_time | int | None | No | 259200 (72 hours) | Offline message retention duration (in seconds), up to 72 hours. <li>If `expire_time` = 0, it indicates real-time message </li><li>If `expire_time` is greater than 0 and less than 800 seconds, the system will reset it to 800 seconds </li><li>If `expire_time` >= 800 seconds, the message will be retained according to the actual set duration, up to 72 hours </li><li>The value set cannot exceed 2147483647; otherwise, the push will fail.</li>|
+| send_time | string | None | No | Current system time | This specifies the push time: <li>The format is yyyy-MM-DD HH:MM:SS</li><li>If it is less than the current server time, the message will be pushed immediately </li><li>This field is supported only for full push and tag push.</li> |
+| multi_pkg | bool | None | No| false | Multi-package name push: for an application that has multiple channel packages (such as for MyApp and Wandoujia), if you want the application in all channels to receive the push message, you can set this value to `true`. <br>⚠️This parameter controls the multi-package name push of the TPNS channel by default. To implement multi-package name push for vendor channels, please see [Multi-Package Name Push for Vendor Channels](https://intl.cloud.tencent.com/document/product/1024/35393). |
 | loop_param | json | None | No                | 0       | For more information on loop push (full push and tag push), please see the loop_param field instructions in the following document. |
-|badge_type     |int  |  iOS  |No                 |-1        | The user-configured badge number. This is only used on the iOS platform, and is put in the aps field. <li> -1: badge number does not change. <li> -2: badge number automatically increases by 1. <li> >=0: a custom badge number is configured.|
-|group_id     |string   | None  | No                 |tpns_yyyymmdd, with yyyymmdd represents the push date       | Statistics tag, used for aggregated statistic. Format requirement: it can contain up to 25 letters, numbers, and symbols and cannot contain spaces. |
-| tag_list      | object  | None | Only required for tag push          | None       | <li>Push to devices with tag1 and tag2:`{"tags":["tag1","tag2"],"op":"AND"}`<li>Push to devices with tag1 or tag2: `{"tags":["tag1","tag2"],"op":"OR"}` |
-| account_list  | array  |None | Only required by single-account push and account list push | None       | For single-account push:<li>Requires `audience_type=account`<li>Parameter format: ["account1"]<br>For account list push: <li>Parameter format: `["account1","account2"]`<li>Up to 1,000 accounts |
-| account_push_type  | int  |  None | Optional for account push         | 0       |<li> 0: push message to the latest device of the account<li> 1: push message to all devices associated with the account|
-| token_list    | array   |None | Required by single-device push and device list push | None       | For single-device push: <li>audience_type must be token<li>Parameter format: ["token1"]<br>For device list push: <li>Parameter format: ["token1","token2"]<li>Up to 1,000 tokens |
-| push_speed   |int | None | Only valid for full push and tag push | None | Sets push speed limit to X pushes per second. Value range of X: 1000–50000 |
+|badge_type     |int  |  iOS  |No                 |-1        | The user-configured badge number. This is only used on the iOS platform, and is put in the aps field. <li> -1: badge number does not change. </li> <li> -2: badge number automatically increases by 1. </li><li> >=0: a custom badge number is configured.</li>|
+|group_id     |string   | None  | No                 |tpns_yyyymmdd, with yyyymmdd represents the push date       | Statistics tag, used for aggregated statistic. Format requirement: it can contain up to 25 letters, digits, and symbols and cannot contain spaces. |
+| tag_list      | object  | None | Only required for tag push          | None       | <li>Push to devices with tag1 and tag2: `{"tags":["tag1","tag2"],"op":"AND"}`</li><li>Push to devices with tag1 or tag2: `{"tags":["tag1","tag2"],"op":"OR"}` </li>|
+| account_list  | array  |None | Only required by single-account push and account list push | None       | For single-account push:<li>Requires `audience_type=account`</li><li>Parameter format: ["account1"]</li><br>For account list push: <li>Parameter format: `["account1","account2"]`</li><li>Up to 1,000 accounts </li>|
+| account_push_type  | int  |  None | Optional for account push         | 0       |<li> 0: push message to the latest device of the account</li><li> 1: push message to all devices associated with the account</li>|
+| token_list    | array   |None | Required by single-device push and device list push | None       | For single-device push: <li>audience_type must be token<li>Parameter format: ["token1"]<br>For device list push: <li>Parameter format: ["token1","token2"]</li><li>Up to 1,000 tokens </li>|
+| push_speed   |int | None | Only valid for full push and tag push | None | Sets push speed limit to X pushed per second. Value range of X: 1000–50000 |
 
+	
 #### loop_param parameter description
 | Field name | Type | Required | Comments |
 | -------- | ------- | ---- | ----------------------------------------          |
@@ -396,15 +466,14 @@ Optional Push API parameters are the optional advanced parameters except `audien
 | seq | int64_t | Yes | The same as the request packet (if the request packet is invalid JSON, this field is 0) |
 | push_id | string | Yes | Push id |
 | ret_code | int32_t | Yes | Error code. For more information, please see the error codes table |
-| environment | string | Yes | The push environment specified by the user (only for iOS). <li>product: production environment <li>dev: development environment |
+| environment | string | Yes | The push environment specified by the user (only for iOS). <li>product: production environment </li><li>dev: development environment </li>|
 | err_msg | string | No | Error message when an error occurs in the request |
-| result | string | No | When the request is correct: <li>If there is extra data to be returned, the result will be encapsulated in the JSON of this field. <li>If there is no extra data, there may be no such field. |
+| result   | string  | No       | When the request is correct:<li></li>If there is extra data to be returned, the result will be encapsulated in the json of this field. If there is no extra data, <li>there may be no such field </li> |
 
 
 
 ## Samples
-
-#### Android tag push request message
+#### Android tag push request message (tag_list)
 
 ```json
 {
@@ -531,4 +600,94 @@ Optional Push API parameters are the optional advanced parameters except `audien
 }
 ```
 
+<span id="biaoqianshili"></span>
+#### Push by tag scenarios (tag_rules)
+**Scenario 1: push a message to male users who were active on April 8, 2020 in Guangdong or Hunan**
+Expression: (`xg_auto_province.guangdong` OR `xg_auto_province.hunan`) AND `xg_auto_active.20200408` AND `xg_user_define.male`
+```
+{
+  "audience_type": "tag",
+  "tag_rules": [
+        {
+            "tag_items": [
+                {
+                    "tags": [
+                        "guangdong",
+                        "hunan"
+                    ],
+                    "is_not": false,   // Whether to perform "NOT" operation on the calculation result of the tags in `tags`. true: yes, false: no
+                    "tags_operator": "OR",  // Operator for tags in `tags`
+                    "items_operator": "OR", // Operator between elements in `tag_items`. The `items_operator` of the first element is invalid data, the `items_operator` of the second `TagItems` element is the operator between the first and second elements, and so on. |
+                    "tag_type": "xg_auto_province" // Type of tags in `tags`
+                },
+                {
+                    "tags": [
+                        "20200408"
+                    ],
+                    "is_not": false,
+                    "tags_operator": "OR",
+                    "items_operator": "AND",
+                    "tag_type": "xg_auto_active"
+                },
+                {
+                    "tags": [
+                        "male"
+                    ],
+                    "is_not": false,
+                    "tags_operator": "OR",
+                    "items_operator": "AND",
+                    "tag_type": "xg_user_define"
+                }
+            ],
+            "operator": "OR", 
+            "is_not": false  
+        }
+    ]
+}
+
+```
+**Scenario 2: push a message to Huawei users on application version other than 1.0.2 who were active in the last three days**
+Expression: (`xg_auto_active.20200406` OR `xg_auto_active.20200407` OR `xg_auto_active.20200408`) AND (NOT `xg_auto_version.1.0.2`) AND `xg_auto_devicebrand.huawei`
+```
+{
+  "audience_type": "tag",
+  "tag_rules": [
+        {
+            "tag_items": [
+                {
+                    "tags": [
+                        "20200406",
+                        "20200407",
+                        "20200408"
+                    ],
+                    "is_not": false,   // Whether to perform "NOT" operation on the calculation result of the tags in `tags`. true: yes, false: no
+                    "tags_operator": "OR",  // Operator for tags in `tags`
+                    "items_operator": "OR", // Operator between elements in `tag_items`. The `items_operator` of the first element is invalid data, the `items_operator` of the second `TagItems` element is the operator between the first and second elements, and so on. |
+                    "tag_type": "xg_auto_active" // Type of tags in `tags`
+                },
+                {
+                    "tags": [
+                        "1.0.2"
+                    ],
+                    "is_not": true,
+                    "tags_operator": "OR",
+                    "items_operator": "AND",
+                    "tag_type": "xg_auto_verison"
+                },
+                {
+                    "tags": [
+                        "huawei"
+                    ],
+                    "is_not": false,
+                    "tags_operator": "OR",
+                    "items_operator": "AND",
+                    "tag_type": "xg_auto_devicebrand"
+                }
+            ],
+            "operator": "OR", 
+            "is_not": false  
+        }
+    ]
+}
+```
 

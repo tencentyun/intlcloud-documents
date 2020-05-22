@@ -10,9 +10,9 @@ This document provides sample code for integrating with the SDK and launching TP
 
 ## Integration Steps
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and click **Product Management** on the left sidebar.
-2. Go to the **Product Management** page and click **Add a Product**.
+2. Go to the **Product Management** page and click **Add Product**.
 3. Go to the **Add a Product** page, and enter the product name and product details. Select the product type, and click **OK** to add a new product.
-4. After the product is created, select **Configuration Management** on the left sidebar. Get `Access ID` and `SECRET KEY` from the "Application Information" column.
+4. After the product is created, select **Configuration Management** on the left sidebar. Get `Access ID` and `SECRET KEY` from the "Application Info" column.
 5. Import SDK:
  - **Method one: import using Cocoapods**
 Download through Cocoapods:
@@ -26,14 +26,14 @@ Download through Cocoapods:
 pod repo update
 pod search TPNS-iOS
 pod install // Install the SDK 
-```  
+```
 
  - **Method two: import using carthage**
  Specify the dependent third-party libraries in the Cartfile file:
 ```
  github "xingePush/carthage-TPNS-iOS"
 ```
- 
+
  - **Method three: manual import**
 Enter the TPNS Console and click **[SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload)** on the left sidebar to go to the download page. Select the SDK version to download, and click **Download** in the **Operations** column.
 
@@ -61,11 +61,11 @@ Enter the TPNS Console and click **[SDK Download](https://console.cloud.tencent.
 
 11. Call the API for launching TPNS and implement the method in the `XGPushDelegate` protocol as needed to launch the push service.
 	1. Launch TPNS. The `AppDelegate` sample is as follows:
-```Objective-C
+   ```Objective-C
 @interface AppDelegate () <XGPushDelegate>
 @end 
 /**
-@param appID   `AccessID` applied for in the TPNS Console
+@param appID  `AccessID` applied for in the TPNS Console
 @param appKey   `AccessKey` applied for in the TPNS Console
 @param delegate   Callback object
 **/
@@ -74,42 +74,29 @@ Enter the TPNS Console and click **[SDK Download](https://console.cloud.tencent.
 [[XGPush defaultManager] startXGWithAppID:<#your appID#> appKey:<#your appKey#>  delegate:<#your delegate#>];
 return YES;
 }
-```
+   ```
 	2. In `AppDelegate`, choose to implement the method in the `XGPushDelegate` protocol:
-	```objective-c
-		/**
-		 Callback of receiving push
-		 @param application   UIApplication instance
-		 @param userInfo: parameters specified during push
-		 @param completionHandler: callback completed
-		 */
-		- (void)application:(UIApplication *)application 
-					didReceiveRemoteNotification:(NSDictionary *)userInfo 
-							fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
-			{
-				completionHandler(UIBackgroundFetchResultNewData);
-		}
-		// iOS 10 new callback API
-		// Application user clicks the notification
-		// Application user selects a behavior in the notification
-		// This callback will be used in both local push and remote push
-	#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 	__IPHONE_10_0
-		- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center 
-					didReceiveNotificationResponse:(UNNotificationResponse *)response 
-					withCompletionHandler:(void (^)(void))completionHandler 
-					{
-							completionHandler();
-		}
-
-		// This API will be used to push a notification when the application is in foreground
+		```objective-c
+		/// Unified callback for message receipt
+		/// @param notification   Message object
+		/// @param completionHandler   Completion callback
+		/// Message type description: if `msgtype` in the `xg` field is 1, it means notification message; if `msgtype` is 2, it means silent message
+		/// notification message object description: there are two types: `NSDictionary` and `UNNotification`. For detailed interpretations, please see the sample code
+		- (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler{
+		/// code
+		} 
+		#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+		/// iOS 10 new API
+		/// iOS 10 will use the new API, while iOS 10 or below will sue the legacy API
+		/// Application user clicks a notification and selects a behavior in the notification
+		/// This callback will be used in both local push and remote push
 		- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center
-					 willPresentNotification:(UNNotification *)notification 
-							 withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
-							 {
-									 completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
-		}
-		#endif
-	```
+	  didReceiveNotificationResponse:(UNNotificationResponse *)response
+	           withCompletionHandler:(void (^)(void))completionHandler {
+	                                                     /// code
+	}
+	#endif
+			 ```
 
 
 #### Integration method for cluster outside Mainland China
@@ -117,7 +104,7 @@ return YES;
 2. Call the configuration `HOST` API in the header file:
  - To integrate with a cluster in Singapore, set `HOST` to `https://api.tpns.sgp.tencent.com` and `PORT` to 0.
  - To integrate with a cluster in Hong Kong (China), set `HOST` to `https://api.tpns.hk.tencent.com` and `PORT` to 0.
- 
+
 **Sample**
 ``` object-c
 [[XGPush defaultManager] configureHost:@"https://api.tpns.hk.tencent.com" port:0]
@@ -139,22 +126,13 @@ Enable debug mode to view detailed TPNS debug information in the end terminal, f
 
 
 
-#### Implementing ```XGPushDelegate``` protocol
+#### Implementing `XGPushDelegate` protocol
 
-During debugging, it is recommended that you implement the second method in the protocol to get detailed debugging information.
+During debugging, it is recommended that you implement this method in the protocol to get detailed debugging information.
 
 ```objective-c
 /**
- @brief This monitors the launch condition of the TPNS service (disused)
-
- @param isSuccess This checks whether TPNS is successfully launched
- @param error This message indicates an error in TPNS launch
- */
-- (void)xgPushDidFinishStart:(BOOL)isSuccess error:(nullable NSError *)error;
-
-/**
- @brief The callback of registering the push service
- 
+ @brief This registers the callback of the push service
  @param deviceToken   `Device Token` generated by APNs
  @param xgToken   `Token` generated by TPNS, which needs to be used when pushing messages. TPNS maintains the mapping relationship between this value and the `Device Token` of APNs
  @param error   Error message. If `error` is `nil`, the push service has been successfully registered
@@ -166,43 +144,28 @@ During debugging, it is recommended that you implement the second method in the 
 If Xcode console displays a log similar to the one below, the client has properly integrated the SDK.
 
 ```javascript
-[xgpush]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59991583a925030f1b913625a9dab
-[xgpush]Current XG token is 05da87c0ae5973bd2dfa9e08d884aada5bb2
+[TPNS] Current device token is 9298da5605c3b242261b57****376e409f826c2caf87aa0e6112f944
+[TPNS] Current TPNS token is 00c30e0aeddff1270d8****dc594606dc184  
 ```
 >Use a XG 36-bit token for pushing to a single target device.
 
-## Custom Response Message Content
+## Unified Message Receipt and Message Click Callback Description
 
-When an iOS device receives a push message and the user taps the message to open the application, the application will respond differently according to the status:
+- If the message is clicked on devices above iOS 10.0, this function will be invoked:
+```objective-c
+	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler;
+```
+- If the message is clicked on devices below iOS 10.0, this function will be invoked:
+```objective-c
+	- (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
+```
 
-- This function will be invoked if the application status is "not running".
- - If `launchOptions` contains `UIApplicationLaunchOptionsRemoteNotificationKey`, it means that the user's tap on the push message will cause the application to launch.
- - If the corresponding key value is not included, it means that the application launch is not caused by the tap on the message but probably by the tap on the icon or other actions.
- ```objective-c
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
-	{
-			// Getting message content
-			NSDictionary *remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-			// Processing logically based on the message content
-	}
- ```
-- If the application status is "in the foreground" or "in the background but still active".
- - On iOS 7.0+, if the Remote Notification feature is used, the following code needs to be used as the handler:
-	```objective-c
-	- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
-	```
- - On versions above iOS 10.0, if the Remote Notification feature is used, you are recommended to add a `UserNotifications Framework` handler. Please use the following two methods in the `XGPushDelegate` protocol. The sample code is as follows:
-	```objective-c
-	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-		NSLog(@"[XGDemo] click notification");
-		completionHandler();
-	}
+- If a silent message is received, this function will be called:
+```objective-c
+	- (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
+```
 
-	// This API needs to be called to push messages when the application is in foreground
-	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-		completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
-	}
-	```
+>The `xgPushDidReceiveRemoteNotification` will be used to receive message callback regardless of whether the message is clicked or not in the application in the foreground 
 
 <span id="zhuxiao"></span>
 ## Unregistering XG Platform Service
@@ -229,8 +192,8 @@ If the application push service is migrated from the XG platform (https://xg.qq.
 
 ## Suggestions on Integration
 #### Notification service extension feature (required)
-To implement the features of arriving data reporting and rich media messaging, the SDK provides the Service Extension API, which can be called by the client to listen to the arrival of messages and send rich media messages. You are strongly recommended to implement this API. For API integration guide, please see [Notification Service Extension Usage Instructions](https://intl.cloud.tencent.com/document/product/1024/30730).
->If this API is not integrated, the number of messages `reached` and `clicked` in the statistics will be the same.
+To implement the features of arriving data reporting and rich media messaging, the SDK provides the Service Extension API, which can be called by the client to listen to the arrival of messages and send rich media messages. You are strongly recommended to implement this API. For API integration guide, please see [Notification Service Extension Usage Instructions](https://intl.cloud.tencent.com/document/product/1024/30730).
+>If this API is not integrated, the `number of arriving messages` and `number of clicks` in the statistics will be the same.
 
 <span id="QHToken"></span>
 #### Getting token (optional)
@@ -243,6 +206,5 @@ It is recommended that after you integrate the SDK, you use gestures or other me
 // Get the `DeviceToken` generated by APNs
 [[XGPushTokenManager defaultTokenManager] deviceTokenString];
 ```
-
 
 

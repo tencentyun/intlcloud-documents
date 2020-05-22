@@ -4,7 +4,7 @@
 ```shell
 https://api.tpns.tencent.com/v3/statistics/get_push_group_stat_channel
 ```
-**Feature**: this API is used to query the aggregated statistics by push channel of all push tasks **with the same `GroupID`** in the last 3 days.
+**Feature**: this API is used to query the aggregated statistics by push channel of all push tasks **with the same `GroupID`** in the last 3 days according to `GroupID`.
 
 
 ## Parameter Description
@@ -13,8 +13,8 @@ https://api.tpns.tencent.com/v3/statistics/get_push_group_stat_channel
 | Parameter Name | Required | Type | Description |
 | --------- | ---- | ------------ | ------------------------------------------------------------ |
 | groupId   | Yes   | string       | Field for aggregated statistics of multiple tasks, using corresponding "group_Id" in push parameters            |
-| startDate | Yes   | string       | Query start date<li>Format: YYYY-MM-DD</li><li>Limit: can only provide aggregate statistics for push tasks in past 7 days </li> |
-| endDate   | Yes   | string |Query end date. Format: YYYY-MM-DD                              |
+| startDate | Yes   | string | Query start date<li>Format: YYYY-MM-DD</li><li>Limit: only data of push tasks in the last 7 days can be aggregated</li> |
+| endDate | Yes | string | Query end date. Format: YYYY-MM-DD |
 
 #### Response parameters
 
@@ -22,33 +22,36 @@ https://api.tpns.tencent.com/v3/statistics/get_push_group_stat_channel
 | ------------ | ------ | -------------------------------------- |
 | retCode      | int    | Returned status code                             |
 | errMsg | string | Error message |
-| pushStatDataAll | JsonArray | Returned results: individual element formed by `channel` and `pushStat`, where `channel` is the channel name. `pushStat` structure variables are shown in following table |
+| pushStatDataAll | JsonArray | Returned result: individual element formed by `channel` and `pushState`, where `channel` is the channel name. `pushState` structure variables are shown in following table |
 
-#### pushStat (Android)
+#### pushState (Android)
 
 | Parameter Name | Type   | Description           |
 | ------------------- | ---- | ------------------------------------------------------------ |
-| pushActiveUv | int    | Attempted delivery |
-| pushOnlineUv | int    | Actual sent to |
+| pushActiveUv | int    | Scheduled delivery |
+| pushOnlineUv | int    | Actual delivery |
 | verifySvcUv         | int  | Device reached (only valid for TPNS and iOS APNs channels. For other vendor channels, the `pushOnlineUv` metric of actual deliveries by TPNS will be used) |
 | callbackVerifySvcUv | int  | Arrival receipt for vendor channel (only valid for Huawei, OPPO, Vivo, and Mi channels. For vendor channel receipt configuration, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)) |
-| verifyUv     | int    | Displayed     |
-| clickUv      | int    | Clicked     |
-| cleanupUv    | int    | Cleared     |
+| verifyUv     | int    | Display     |
+| clickUv      | int    | Click     |
+| cleanupUv    | int    | Dismissal |
 
->The "all" channel in the array corresponds to the aggregated statistics. In the aggregated statistics, the `verifySvcUv`, `verifyUv`, `clickUv`, and `cleanupUv` metrics only aggregates the data of the TPNS and ROG channels. The `pushActiveUv` and `pushOnlineUv` metrics aggregate the data of the TPNS and vendor channels.
+>
+The "all" channel in the array corresponds to the aggregated statistics.
+- In the aggregated statistics, the `verifySvcUv` (device reached), `verifyUv` (display), `clickUv` (click), and `cleanupUv` (dismissal) metrics only aggregates the data of the TPNS and ROG channels.
+- In the aggregated statistics, `pushActiveUv` (scheduled delivery) and `pushOnlineUv` (actual delivery) aggregates the data of the TPNS channel and vendor channels.
+- In the aggregated statistics, `callbackVerifySvcUv` (arrival receipt of vendor channel) aggregates the data of `verifySvcUv` (device reached) of the TPNS channel and `callbackVerifySvcUv` (arrival receipt of vendor channel) of vendor channels.
 
-`callbackVerifySvcUv` aggregates the `verifySvcUv` data of the TPNS channel and the `callbackVerifySvcUv` data of vendor channels.
 
 
-#### pushStat (iOS)
+#### pushState (iOS)
 
 | Parameter Name | Type   | Description           |
 | ------------ | ------ | -------- |
-| pushActiveUv | int    | Attempted delivery |
+| pushActiveUv | int    | Scheduled delivery |
 | pushOnlineUv | int    | APNs successfully received |
-| verifySvcUv  | int    | Reached |
-| clickUv      | int    | Clicked     |
+| verifySvcUv  | int    | Arrival |
+| clickUv      | int    | Click     |
 
 
 
@@ -58,9 +61,9 @@ https://api.tpns.tencent.com/v3/statistics/get_push_group_stat_channel
 
 ```json
 {
- "groupid": "pt:testGroup",
- "startDate": "20190912",
- "endDate": "20190912"
+    "groupid": "pt:testGroup",
+    "startDate": "20190912",
+    "endDate": "20190912"
 }
 ```
 
