@@ -5,14 +5,14 @@ By deeply optimizing the protocol stack and server, Tencent Cloud CLB achieves g
 1. The use of HTTPS does not affect the access speed of the client.
 2. SSL encryption and decryption performance of a single server in a cluster can sustain full handshakes of up to 65,000 connections per second (CPS), which is at least 3.5 times higher than that of a high-performance CPU. This reduces server costs, greatly improves service capability during business peaks and traffic surges, and strengthens the computation-based anti-attack capability.
 3. Offloading and conversion of multiple protocols are supported, which reduces the business' stress in adaption to various client protocols. The business backend only needs to support HTTP/1.1 to use different protocols such as HTTP/2, SPDY, SSL 3.0 and TLS 1.2.
-4. One-stop SSL certificate application, monitoring, and replacement services are provided. Tencent Cloud cooperates with Comodo and Symantec, two leading global certificate authorities, to greatly simplify the certificate application process and reduce application costs.
-5. Anti-CC and WAF features are provided to effectively defend against various attacks at the application layer, such as slow HTTP attacks, high-traffic DDoS attacks, SQL injections, and website trojans.
+4. One-stop SSL certificate application, monitoring, and replacement services are provided. Tencent Cloud cooperates with Comodo and SecureSite, two leading global certificate authorities, to greatly simplify the certificate application process and reduce application costs.
+5. Anti-CC and WAF features are provided to effectively eliminate application-layer attacks, such as slow HTTP attacks, high-frequency targeted attacks, SQL injection, and website trojans.
 
 ## 2. HTTP and HTTPS Header Identifiers
 
 CLB acts as a proxy for HTTPS. Both HTTP and HTTPS requests become HTTP requests when forwarded to a backend CVM instance by CLB. In this case, you cannot distinguish whether a frontend request is in HTTP or HTTPS.
 
-CLB implants `X-Client-Proto` into the header when it forwards the request to the backend CVM instance:
+CLB implants `X-Client-Proto` into the header when it forwards the request to the real server:
 
 X-Client-Proto: http (HTTP request on the frontend)
 X-Client-Proto: https (HTTPS request on the frontend)
