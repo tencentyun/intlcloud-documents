@@ -1,18 +1,23 @@
-## Introduction
+## Overview
 
-In TRTCCloud, you can adjust the video quality in three ways:
-- `TRTCAppScene` parameter in `enterRoom`: used to select your application scenario.
-- setVideoEncoderParam: used to set the encoding parameter.
-- setNetworkQosParam: used to set the network control policy.
+In TRTCCloud, you can adjust the video quality in the following ways:
+- `TRTCAppScene` parameter in [TRTCCloud.enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d): used to select your application scenario.
+- [TRTCCloud.setVideoEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e): used to set the encoding parameter.
+- [TRTCCloud.setNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9): used to set the network control policy.
+
 This document describes how to configure these parameters to make the video quality of the TRTC SDK meet your project-specific needs.
+You can also see the following demos:
+- [iOS: TRTCVideoCall+Room.swift](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCScenesDemo/TRTCScenesDemo/TRTCVideoCallDemo/model/TRTCVideoCall%2BRoom.swift)
+- [Android: TRTCVideoCallImpl.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/trtcvideocalldemo/src/main/java/com/tencent/liteav/trtcvideocalldemo/model/TRTCVideoCallImpl.java)
+- [Windows: TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp)
 
 ## Supported Platforms
 
-| iOS | Android | macOS | Windows | WeChat Mini Program | Web |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; | &#10003;   | &#10003;  |  &#10003;   |   ×  | &#10003;  |
+| iOS | Android | macOS | Windows | Desktop Browser | Electron | WeChat Mini Program |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |   ×  |
 
-For detailed directions on how to set video quality for the web, please see [Configuration Guide](https://www.qcloudtrtc.com/trtc-web-sdk/docs/api/tutorial-04-advanced-set-video-profile.html).
+For detailed directions on how to set video quality for desktop browser, please see [Configuration Guide](https://www.qcloudtrtc.com/trtc-web-sdk/docs/api/tutorial-04-advanced-set-video-profile.html).
 
 ## TRTCAppScene
 
@@ -97,7 +102,7 @@ For the `controlMode` parameter, select **TRTCQosControlModeServer**. `TRTCQosCo
 
 ## Common Myths
 **1. The higher the resolution, the better?**
-Higher resolutions require higher bitrates for support. If the resolution is 1280x720, but the bitrate is specified as 200 Kbps, the video image will have a lot of blurs. You are recommended to set it as described in the [Resolution-Bitrate Reference Table](https://intl.cloud.tencent.com/document/product/647/35153).
+Higher resolutions require higher bitrates for support. If the resolution is 1280x720, but the bit rate is specified as 200 Kbps, the video image will have a lot of blurs. You are recommended to set it as described in the [Resolution-Bitrate Reference Table](https://intl.cloud.tencent.com/document/product/647/35153).
 
 **2. The higher the frame rate, the better?**
 Because the image captured by the camera is a complete mapping to all real objects in the exposure phase, it is not that the higher the frame rate, the smoother the video, which is different from the concept of FPS in games. On the contrary, if the frame rate is too high, the quality of each video frame will be lowered, and the exposure time of the camera will be reduced, worsening the image effect.

@@ -16,6 +16,8 @@ A room is an audio/video space where users can receive each other's real-time au
 
 > Note:
 >
+> 
+>
 > - The user who creates a room will be the room owner, but this user cannot close the room actively.
 > - The server will close the room as soon as all users actively exit the room.
 > - If a user is disconnected exceptionally, the server will remove this user from the room after 30 seconds. If all users are disconnected exceptionally, the server will automatically close the room after 30 seconds.
@@ -28,6 +30,8 @@ A room is an audio/video space where users can receive each other's real-time au
 After you create a role parameter set for a specified device platform integrated with TRTC v1 in the [TRTC Console](https://console.cloud.tencent.com/rav), you can name this set of parameters, and this name is referred to as a role name. After a user enables the camera or mic and upstreams the audio/video streams in a room, the role to be used during room entry can be specified by the role name, which confirms the parameters for data streaming. This concept is no longer required in v2.
 
 > Note:
+>
+> 
 >
 > - During room entry, if a user uses a role name that has not been configured in the console, the user can still enter the room, but the default role will be used.
 > - After room entry, the user can change the role by calling the role switching API.
@@ -74,7 +78,7 @@ Developed by Tencent Cloud based on Tencent's over a decade of expertise in QQ a
 
 ### TRTC
 
-For more information, please see [TRTC](https://intl.cloud.tencent.com/document/product/647/35168#1230).
+For more information, please see [TRTC](https://intl.cloud.tencent.com/document/product/647/35168).
 
 ## U
 

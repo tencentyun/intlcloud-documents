@@ -16,8 +16,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 
 <span id="step2"></span>
 ### Step 2. Download the SDK and demo source code
-1. Mouse over the corresponding card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android)** to redirect to GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip?_ga=1.195966252.185644906.1567570704)**) and download the relevant SDK and supporting demo source code.
-
+1. Mouse over the corresponding card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android)** to enter GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip?_ga=1.195966252.185644906.1567570704)**), and download the relevant SDK and supporting demo source code.
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 
@@ -39,16 +38,14 @@ Use Android Studio (v3.5 or above) to open the `TRTCDemo` project and click **Ru
 
 ## FAQs
 ### 1. Only public and private key information can be obtained when I try to view the encryption key. How do I get the encryption key?
-Starting from TRTC SDK v6.6 (August 2019), the new signature algorithm HMAC-SHA256 is used. For applications created before then, you need to upgrade the signature algorithm before your can get a new encryption key. If you don't upgrade it, you can continue to use the [legacy algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166).
+Starting from TRTC SDK v6.6 (August 2019), the new signature algorithm HMAC-SHA256 is used. For applications created before then, you need to upgrade the signature algorithm before your can get a new encryption key. If you don't upgrade it, you can continue to use the [legacy algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166). If you have upgraded the version, you can switch between the new and old algorithms as needed.
 
-Upgrade operation:
+Upgrade/Switch operation:
  1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
  2. Select **Application Management** on the left sidebar and click **Application Info** on the row of the target application.
- 3. Select the **Quick Start** tab and click **Upgrade** in **Step 2: obtain the secret key to issue UserSig**.
-
-### 2. The demo is running on two mobile phone, but why can't they display the images of each other?
-Please make sure that the two mobile phones use different `UserID` values when running the demo, as TRTC does not support using the same `UserID` on two devices simultaneously, unless different `SDKAppID` values are used.
-
+ 3. Select the **Quick Start** tab and click **Upgrade**, **Asymmetric Encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
+### 2. The demo is running on two mobile phones, but why can't they display the images of each other?
+Please make sure that the two mobile phones use different `UserIDs` when running the demo, as TRTC does not support using the same `UserID` on two devices simultaneously; unless different `SDKAppIDs` are used.
 
 ### 3. What are the restrictions of the firewall?
-As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please troubleshoot as instructed in [How to Deal With Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
+As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please troubleshoot as instructed in [Dealing with Organizational Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
