@@ -1,11 +1,11 @@
-当前，公网负载均衡已支持跨地域绑定云服务器，允许客户选取后端云服务器的地域，跨 VPC、跨地域绑定后端云服务器。如果您需要体验该功能，境内跨地域绑定请通过 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
+当前，公网负载均衡已支持跨地域绑定云服务器，允许客户选取后端云服务器的地域，跨 VPC、跨地域绑定后端云服务器。如果您需要体验该功能，境内跨地域绑定请通过 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)，境外跨地域绑定请进行 [商务申请](https://console.cloud.tencent.com/workorder/category)。
 
 >跨地域绑定云服务器暂不支持内网负载均衡和传统型负载均衡。
 
 ## 应用场景
 1. 满足 P2P 等游戏业务中，全球同服的场景。客户后端服务集群在广州，客户希望在上海、北京等多地创建 CLB，绑定相同的广州后端服务集群。起到游戏加速、流量收敛的作用，有效保证数据传输质量，降低时延。
 2. 满足金融业务支付、订单付款等场景，有效保证关键业务的数据传输质量，保证数据一致性。
- ![](https://main.qcloudimg.com/raw/b61f652d7100166236b4b7b0e6a26f43.png)
+![](https://main.qcloudimg.com/raw/b61f652d7100166236b4b7b0e6a26f43.png)
 
 ## 操作示例
 购买公网负载均衡后，在实例详情页可以查看后端云服务器的地域属性。购买时默认后端云服务器的地域属性和负载均衡相同。
@@ -21,5 +21,3 @@
 > - 当前暂不允许同地域跨 VPC 绑定负载均衡和云服务器。
 > - 支持跨基础网络和 VPC 的场景。
 
-## 计费说明
-跨地域绑定的功能通过跨域对等连接的原理实现，计费详情请参见 [计费说明](https://intl.cloud.tencent.com/document/product/214/8848)。

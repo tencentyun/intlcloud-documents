@@ -11,10 +11,10 @@ EMR 集群提供的计费模式：
 节点类型介绍，请参见 [节点类型说明](https://intl.cloud.tencent.com/document/product/1026/31094)。
 
 ## 选择机型规格
-EMR 提供了多种云服务器机型，包括 EMR 标准型、EMR 计算型、EMR 高 IO 型、EMR 内存型及 EMR 大数据型。
+EMR 提供了多种云服务器机型，包括 EMR 标准型、EMR 计算型、EMR 高 IO 型、EMR 内存型及 EMR 大数据型（若您需要黑石机型，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们）。
 >
 >- Hadoop 集群和 Druid 集群在高可用（HA）下节点最小节点数为8个，包含2个 Master 节点，3个 Common 节点，最少3个 Core 节点。非高可用（HA）下存储为单副本，可作为测试使用，不建议作为生产环境，最小节点数为3个，包含1个 Master 节点，最少2个 Core 节点。
->- Clickhouse 集群在高可用（HA）下节点最小节点数为5个，包含2个 core 节点，3个 Common 节点。非高可用（非HA）下，存储为单副本，可作为测试使用，不建议作为生产环境，最少1个 core 节点。
+>- Clickhouse 集群在高可用（HA）下节点最小节点数为5个，包含2个 core 节点，3个 Common 节点。非高可用（非 HA）下，存储为单副本，可作为测试使用，不建议作为生产环境，最少1个 core 节点。
 
 您可以根据自身的业务需要及成本考量，进行机型的选择。
 - 如您对离线计算的时延有一定的要求，我们建议您选择本地盘或大数据机型。
@@ -34,7 +34,7 @@ EMR 提供了多种云服务器机型，包括 EMR 标准型、EMR 计算型、E
    </tr>
    <tr>
       <td>ClickHouse 集群</td>
-      <td>/</td>
+      <td>-</td>
    </tr>
    <tr>
       <td>Druid 集群</td>
@@ -64,7 +64,7 @@ EMR 提供了多种云服务器机型，包括 EMR 标准型、EMR 计算型、E
    </tr>
    <tr>
       <td>ClickHouse 集群</td>
-      <td>/</td>
+      <td>-</td>
    </tr>
    <tr>
       <td>Druid 集群</td>
@@ -92,7 +92,7 @@ EMR 提供了多种云服务器机型，包括 EMR 标准型、EMR 计算型、E
    </tr>
    <tr>
       <td>ClickHouse 集群</td>
-      <td>/</td>
+      <td>-</td>
    </tr>
    <tr>
       <td>Druid 集群</td>
