@@ -1,3 +1,20 @@
+### How do I disable the keep-alive feature of TPNS?
+
+TPNS enables the keep-alive feature by default. Please call the following API in `onCreate` of `Application` or `LauncherActivity` during application initialization and pass in a `false` value:
+```java
+XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
+```
+If you use the automatic Gradle integration method, please configure the following node under the <application> tag of the `AndroidManifest.xml` file of your application, where ```xxx``` is a custom name. If you use manual integration, please modify the node attributes as follows:
+
+```xml
+   <!-- Add the following node to the AndroidManifest.xml file of your application, where xxx is a custom name: -->     
+   <!-- To disable the feature of keep-alive with TPNS application, please configure -->
+   <provider
+       android:name="com.tencent.android.tpush.XGPushProvider"
+       tools:replace="android:authorities"
+       android:authorities="application package name.xxx.XGVIP_PUSH_AUTH"
+       android:exported="false" />    
+```
 
 ### Why can't push messages be received?
 Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the obtained token for message push. If pushes cannot be received, please troubleshoot as follows:
@@ -8,9 +25,9 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 ### Why can't pushes be received after registration succeeded?
 - Please check whether the current application package name is the same as that entered when TPNS is registered, and if not, you are recommended to enable multi-package name push.
 - Check whether the network is exceptional on the phone and switch to 4G network for testing.
-- TPNS push includes **notification panel message** and **in-app message** (passthrough message). A notification panel message can be displayed in the notification panel, while an in-app message cannot.
+- TPNS push includes **notification bar message** and **in-app message** (passthrough message). A notification bar message can be displayed in the notification bar, while an in-app message cannot.
 - Confirm that the phone is in normal mode. Some phones may have restrictions on network and activity of the backend TPNS process when in Low Power or Do Not Disturb mode.
-- Check whether the notification panel permission is granted on the phone. On some OPPO and Vivo phones, the notification panel permission has to be granted manually.
+- Check whether the notification bar permission is granted on the phone. On some OPPO and vivo phones, the notification bar permission has to be granted manually.
 
 
 ### Why does device registration fail?
@@ -87,11 +104,11 @@ Uri uri = getIntent().getData();
 
 
 ### What callbacks are supported by vendor channels?
-- The Mi channel supports arrival callback and passthrough but not click callback.
-- The Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored) but not arrival callback.
-- The Meizu channel supports arrival callback and click callback but not passthrough.
-- The Vivo channel supports click callback but not arrival callback or passthrough.
-- The OPPO channel does not support click callback, arrival callback, or passthrough.
+- Mi channel supports arrival callback and passthrough but not click callback.
+- Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored) but not arrival callback.
+- Meizu channel supports arrival callback and click callback but not passthrough.
+- vivo channel supports click callback but not arrival callback or passthrough.
+- OPPO channel does not support click callback, arrival callback, or passthrough.
 
 >Note: if you need to get parameters through the click callback or redirect to a custom page, you can use the intent to do so.
 
@@ -136,7 +153,7 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 
 
 
-### Why can't messages be displayed in the notification panel after arriving at mobile phones on Meizu Flyme 6.0 or below?
+### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or below?
 For Meizu phones on higher versions, status bar icons no longer need to be configured. If the SDK for Android is below v1.1.4.0, please store an image named `stat_sys_third_app_notify` in folders for different resolutions of the corresponding drawable.
 
 
@@ -179,12 +196,6 @@ Then, use the `"TpnsPlugin"` keyword for analysis.
 2. Click "sync projects".
 ![](https://main.qcloudimg.com/raw/5fecbe6b63374e7e0e58c4b2cd215acb.png)
 
-3. Check whether there are relevant dependencies in the external libraries of the project.
+3. Check whether there are relevant dependencies in the External Libraries of the project.
 ![](https://main.qcloudimg.com/raw/485c7595f1b478a6fad725d38deb87b4.png)
 
-### Does TPNS support setting application badge on Android?
-Application badges for notifications are subject to the corresponding vendors' default logics as detailed below:
-- Mi: badge number can be displayed, which is to "automatically increase/decrease by 1" by default. Notifications through the TPNS channel can be alternately configured through system APIs. For more information, please see the [Mi development documentation](https://dev.mi.com/console/doc/detail?pId=939).
-- Huawei: badge number can be displayed, which is disabled by default. The TPNS channel can be alternately configured through system APIs. For more information, please see the [Huawei development documentation](https://developer.huawei.com/consumer/cn/doc/30802).
-- Meizu: only red dot display is supported based on the default system logic, that is, if there is a notification, a red dot will be displayed, and vice versa. Customization is not supported.
-- OPPO and Vivo: this feature is available only to specified applications such as QQ and WeChat. If you need to use it, please submit an application. No adaption instructions are provided currently.  
