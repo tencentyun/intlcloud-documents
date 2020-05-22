@@ -27,7 +27,7 @@ This document describes how to query push records (such as message ID, title, co
    - Arrival rate: arrived/sent.
    
 >1. The number of "displayed", "tapped", or "dismissed" messages cannot be returned for vendor channels.
-2. The arrival data is for reference only. For the Huawei channel, you need to configure the arrival callback by yourself. For more information, please see [Guide for Getting Arrival Callback Through Vendor Channels](https://cloud.tencent.com/document/product/548/41318).
+2. The arrival data is for reference only. For the Huawei channel, you need to configure the arrival callback by yourself. For more information, please see [Guide for Getting Arrival Callback Through Vendor Channels](https://intl.cloud.tencent.com/document/product/1024/35246).
 
 **Push timeliness analysis**
 After a push task starts, according to different time granularities:
