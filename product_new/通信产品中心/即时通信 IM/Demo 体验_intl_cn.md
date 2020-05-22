@@ -4,6 +4,7 @@
     <th style="text-align:center" width="25%"><b>Android</b></th>
     <th style="text-align:center" width="25%"><b>iOS（安装密码：123）</b></th>
     <th style="text-align:center" width="25%"><b>小程序</b></th>
+    <th style="text-align:center" width="25%"><b>直播电商解决方案</b></th>
     <th style="text-align:center" width="25%"><b>Web</b></th>
   </tr>
   <tr>
