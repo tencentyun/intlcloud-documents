@@ -1,32 +1,32 @@
 ## Feature Description
 
-Through this callback, the app backend can monitor users’ one-to-one chat messages in real time, including:
-- Recording one-to-one chat messages in real time (for example, recording a log or synchronizing messages to other systems).
-- Calculating statistics for one-to-one chat messages (for example, the number of users or that of messages).
+This API is used by the app backend to monitor a user’s one-to-one chat messages in real time, including:
+- Records one-to-one chat messages in real time, for example, by recording a log or synchronizing the messages to other systems.
+- Collects statistics on one-to-one chat messages, for example, in terms of the number of users or the number of messages.
 
-## Precautions
+## Notes
 
-- To enable this callback, you must configure the callback URL and toggle on the corresponding protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
-- Callback direction: the IM backend initiates an HTTPS POST request to the app backend.
-- After receiving the callback request, the app backend must check whether the SDKAppID contained in the request URL is consistent with its own SDKAppID.
-- If the callback before sending one-to-one chat messages and the callback after sending one-to-one chat messages are both enabled and the callback before sending one-to-one chat messages returns muting, the callback after sending one-to-one chat messages will not be triggered.
-- If the callback before sending one-to-one chat messages and the callback after sending one-to-one chat messages are both enabled and the callback before sending one-to-one chat messages modifies the message body, the callback after sending one-to-one chat messages will use the modified message for callback.
-- For other security-related issues, see [Third-Party Callback Overview: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
+- To enable this callback, you must configure the callback URL and enable the corresponding protocol for this callback. For more information on the configuration method, see [Third-Party Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
+- During this callback, the IM backend initiates an HTTPS POST request to the app backend.
+- After receiving the callback request, the app backend must check whether the SDKAppID contained in the request URL is the SDKAppID of the app.
+- If the callback before sending one-to-one chat messages and the callback after sending one-to-one chat messages are both enabled and muting is returned for the callback before sending one-to-one chat messages, the callback after sending one-to-one chat messages cannot be triggered.
+- If the callback before sending one-to-one chat messages and the callback after sending one-to-one chat messages are both enabled and the message body is modified during the callback before sending one-to-one chat messages, the callback after sending one-to-one chat messages will use the modified message for callback.
+- For more security considerations, see [Third-Party Callback Overview: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354).
 
-## Callback Triggering Scenarios
+## Callback Trigger Scenarios
 
--  An app user uses a client to send a one-to-one chat message.
--  The app admin sends a one-to-one chat message through the RESTful API (SendMsg).
+- An app user sends a one-to-one chat message on the client.
+- The app admin sends a one-to-one chat message by calling the RESTful SendMsg API.
 
-## Callback Triggering Time
+## Callback Trigger Conditions
 
-The callback is triggered after the IM backend receives a one-to-one chat message sent by a user and sends the message to the target user.
+The IM backend receives a one-to-one chat message sent by a user and delivers the message to the target user.
 
-> If the message fails to be delivered (for example, due to illegal word filtering), this callback will still be triggered.
+> If the IM backend fails to deliver the message, for example, due to obscene word filtering, the callback is still triggered.
 
-## API Description
+## API Call Description
 
-### Request URL example
+### Sample request URL
 
 In the following example, the callback URL configured in the app is `https://www.example.com`.
 **Example:**
@@ -39,28 +39,29 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 | Parameter | Description |
 | --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
+| https | Specifies that the request protocol is HTTPS and the request method is POST. |
 | www.example.com | The callback URL. |
-| SdkAppid | The SDKAppID assigned by the IM console when an app is created. |
+| SdkAppid | The SDKAppID assigned via the IM console when the application is created. |
 | CallbackCommand | The value is fixed to C2C.CallbackAfterSendMsg. |
-| contenttype | The value is fixed to JSON. |
-| ClientIP | The client IP address, whose format is similar to: 127.0.0.1. |
-| OptPlatform | The client platform. For details on the possible values, see the OptPlatform parameter in [Third-Party Callback Overview: Callback Protocols](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
+| contenttype | The value is fixedly set to JSON. |
+| ClientIP | The IP address of the client, such as 127.0.0.1. |
+| OptPlatform | The platform of the client. For more information on the value, see the parameter description of the OptPlatform in [Third-Party Callback Overview: Callback Protocols](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
-### Request packet example
+### Sample request packets
 
 ```
 {
-    "CallbackCommand": "C2C.CallbackAfterSendMsg", // Callback command
-    "From_Account": "jared", // Sender
-    "To_Account": "Jonh", // Recipient
-    "MsgSeq": 48374, // Message sequence number
-    "MsgRandom": 2837546, // Message random number
-    "MsgTime": 1557481126, // Message sending timestamp, in seconds 
-    "MsgBody": [ // Message body
+    "CallbackCommand": "C2C.CallbackAfterSendMsg", // The callback command that is run.
+    "From_Account": "jared", // The sender of the message.
+    "To_Account": "Jonh", // The recipient of the message.
+    "MsgSeq": 48374, // The sequence number of the message.
+    "MsgRandom": 2837546, // The random number of the message.
+    "MsgTime": 1557481126, // The timestamp indicating when the message was sent. Unit: seconds. 
+    "MsgKey": "48374_2837546_1557481126", // The unique identifier of the message. It is used by RESTful APIs to recall a one-to-one chat message.
+    "MsgBody": [ // The body of the message.
         {
-            "MsgType": "TIMTextElem", // Text
-            "MsgContent": {
+            "MsgType": "TIMTextElem", // The text of the message.
+            "MsgContent": {}
                 "Text": "red packet"
             }
         }
@@ -72,35 +73,36 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 | Field | Type | Description |
 | --- | --- | --- |
-| CallbackCommand | String | The callback command. |
-| From_Account | String | The UserID  of the message sender. |
-| To_Account | String | The UserID  of the message recipient. |
-| MsgSeq | Integer | The message sequence number for identifying this message. |
-| MsgRandom | Integer | The message random number for identifying this message. |
-| MsgTime | Integer | The message sending timestamp in seconds. |
-| MsgBody | Array | The message body. For details, see [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CallbackCommand | String | The callback command that is run. |
+| From_Account | String | The UserID of the message sender. |
+| To_Account | String | The UserID of the message recipient. |
+| MsgSeq | Integer | The sequence number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
+| MsgRandom | Integer | The random number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
+| MsgTime | Integer | The timestamp indicating when the message was sent. Unit: seconds. |
+| MsgKey | String | The unique identifier of the message. It is used for [Recalling a One-to-One Chat Message by using RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/35015). |
+| MsgBody | Array | The body of the message. For more information, see [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
-### Response packet example
+### Sample response packet
 
 ```
 {
-    "ActionStatus": "OK",
-    "ErrorInfo": "",
-    "ErrorCode": 0 // 0: the callback succeeded. 1: an error occurred during the callback.
+    "ActionStatus":"OK",
+    "ErrorInfo":"",
+    "ErrorCode": 0 // 0: Callback succeeded. 1: An error occurred during callback.
 }
 ```
 
 ### Response packet fields
 
-| Field | Type | Attribute | Description |
+| Field | Type | Property | Description |
 | --- | --- | --- | --- |
-| ActionStatus | String | Required | The request processing result. OK: succeeded. FAIL: failed. |
-| ErrorCode | Integer | Required | The error code. 0: the callback succeeded. 1: an error occurred during the callback. |
-| ErrorInfo | String | Required | Error information. |
+| ActionStatus | String | Required | The processing result of the request. OK: succeeded. FAIL: failed. |
+| ErrorCode | Integer | Required | The error code returned for the request. 0: callback succeeded. 1: an error occurred during callback. |
+| ErrorInfo | String | Required | Detailed information on the error.|
 
 ## References
 
-- [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
-- [Callback before sending one-to-one chat messages](https://intl.cloud.tencent.com/document/product/1047/34364)
-- RESTful APIs: [Sending a one-to-one chat message](https://intl.cloud.tencent.com/document/product/1047/34919)
-- RESTful APIs: [Sending one-to-one chat messages in batches](https://intl.cloud.tencent.com/document/product/1047/34920)
+- [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
+- [Invoke a Callback Before Sending One-to-One Chat Messages](https://intl.cloud.tencent.com/document/product/1047/34364)
+- RESTful API: [Sending a One-to-One Chat Message](https://intl.cloud.tencent.com/document/product/1047/34919)
+- RESTful API: [Batch Sending One-to-One Chat Messages](https://intl.cloud.tencent.com/document/product/1047/34920)
