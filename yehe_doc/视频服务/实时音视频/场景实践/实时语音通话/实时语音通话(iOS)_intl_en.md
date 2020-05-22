@@ -13,6 +13,7 @@
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="ui.step3"></span>
+
 ### Step 3. Configure demo project files
 1. Decompress the source package downloaded in [step 2](#ui.step2).
 2. Find and open the `iOS/TRTCScenesDemo/TRTCScenesDemo/debug/GenerateTestUserSig.h` file.
