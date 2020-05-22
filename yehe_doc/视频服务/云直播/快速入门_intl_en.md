@@ -6,6 +6,8 @@ This document describes how to get started with LVB. Before trying out LVB, you 
 1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 2. Go to the [LVB service activation page](https://console.cloud.tencent.com/live?from=product-banner-use-lvb), indicate your consent to the **Tencent Cloud Service Agreement**, and click **Apply for Activation** to activate the LVB service.
 
+>  After the LVB service is successfully activated, 20 GB of playback traffic for use in Mainland China will be gifted.
+
 <span id="step1"></span>
 ## Step 1. Add a domain name
 To use LVB, you should have at least **two** domain names, one as the **push domain name**, and the other as the **playback domain name**. Push and playback cannot use the same domain name.
@@ -20,6 +22,7 @@ To use LVB, you should have at least **two** domain names, one as the **push dom
 >
 >- LVB provides a test domain name `xxxx.livepush.myqcloud.com` by default. You can use it for push testing, but you are not recommended to use it as the push domain name for your real business.
 >- After the domain name is added successfully, you can view its information in the domain name list in **Domain Management**. If you need to manage it, please see [Domain Management](https://intl.cloud.tencent.com/document/product/267/31056).
+>- For more information on LVB playback domain name, please see [Basic LVB Features](https://intl.cloud.tencent.com/document/product/267/7968).
 <span id="step1_1_1"></span>
 4. Once your domain name is added, the system will automatically assign it a CNAME domain name (suffixed with `.liveplay.myqcloud.com`), which cannot be accessed directly before you complete the CNAME configuration at your domain name service provider. After the configuration takes effect, LVB can be used properly. The following uses Tencent Cloud as the DNS service provider as an example to describe how to add a CNAME record:
 	1. Log in to the [Tencent Cloud Domain Name Service Console](https://console.cloud.tencent.com/domain).
@@ -44,7 +47,7 @@ To use LVB, you should have at least **two** domain names, one as the **push dom
    3. Enter a custom `StreamName`, such as `liveteststream`.
    4. Select the expiration time of the address, such as `2019-10-18 23:59:59`.
    5. Click **Generate Address** to generate a push address.
-![](https://main.qcloudimg.com/raw/a092b14e7bae84cff82d75f479e4faf8.png)
+![](https://main.qcloudimg.com/raw/1d9741fe544d1c850ab89b22134f6dc8.png)
 
 > 
 >- The format of the push address is as follows: `live` is the default `AppName`, `txSecret` is the signature for playing back the stream, and `txTime` is the expiration time of the push address.
@@ -57,8 +60,8 @@ To use LVB, you should have at least **two** domain names, one as the **push dom
 You can enter the generated push address into the corresponding push software according to your business scenario.
 - For push on PC, you are recommended to use OBS. For detailed directions, please see [OBS Push](https://intl.cloud.tencent.com/document/product/267/31569).
 - For push on web, you are recommended to go to **Auxiliary Tools** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**, select the push domain name, enter the custom `StreamName`, select the address expiration time, open the camera, and click **Start Push**.
-- For push on WeChat Mini Program, search for Tencent Video Cloud in WeChat, select **RTMP Push**, enter the push address, and tap **Start**.	
-- For push on mobile device, download and install Tencent Video Cloud Demo, open it, select **MLVB** > **Camera Push**, enter the push address into the address box manually or by scanning the QR code, and tap **Start** in the bottom-left corner to start push.
+- For push on WeChat Mini Program, search for "Tencent Video Cloud" in WeChat, select **RTMP Push**, enter the push address, and tap **Start**.	
+- For push on mobile device, download and install "Tencent Video Cloud Demo", open it, select **MLVB** > **Camera Push**, enter the push address into the address box manually or by scanning the QR code, and tap **Start** in the bottom-left corner to start push.
 
 > Customized apps can integrate with the MLVB SDK provided by Tencent Cloud to implement the push function.
 
@@ -68,16 +71,16 @@ You can enter the generated push address into the corresponding push software ac
 1. After push succeeds, select **[Stream Management](https://console.cloud.tencent.com/live/streammanage)** > **Online Streams**, view the status of the push address, and click **Test** to play back the stream online.
 2. Select **Auxiliary Tools** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to get a playback address and configure as follows:
    1. Select **playback domain name** as the type of generation.
-   2. Select the playback domain name you added in **Domain Management**.
+   2. Select the playback domain name you added in Domain Management.
    3. Enter the same `StreamName` as that of the push address. The `StreamName` of the playback address must be the same as that of the push address to play back the corresponding stream.
    4. Select the expiration time of the address, such as `2019-10-13 23:59:59`.
    5. Click **Generate Address** to generate a playback address.
-![](https://main.qcloudimg.com/raw/d114f5e91eb5fecbe74a180c4931d814.png)
+![](https://main.qcloudimg.com/raw/d91fe5d373cfc03df2c87562f3984858.png)
 <span id="step4_1"></span>
 3. You can use the following methods to test whether a live stream can be played back normally based on your business scenario:
    1. For stream test on PC, you are recommended to use tools such as [VLC](https://intl.cloud.tencent.com/document/product/267/32483). For more information, please see [Playback Practices](https://intl.cloud.tencent.com/document/product/267/31559).
-   2. For stream test on web, you are recommended to use TCPlayerLite  in the Player SDK. For more information, please see [LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
-   3. For stream test on WeChat Mini Program, you are recommended to search for Tencent Video Cloud  in WeChat, select **LVB Playback**, scan the QR code of the playback address, and tap **Start** in the bottom-left corner to start playback.
+   2. For stream test on web, you are recommended to use TCPlayerLite in the Player SDK. For more information, please see [LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
+   3. For stream test on WeChat Mini Program, you are recommended to search for "Tencent Video Cloud" in WeChat, select **LVB Playback**, scan the QR code of the playback address, and tap **Start** in the bottom-left corner to start playback.
    4. For stream test on mobile device, you are recommended to download and install Tencent Video Cloud Demo, open it, select **MLVB** > **LVB Pull**, enter the playback address into the address box manually or by scanning the QR code, and tap **Play** in the bottom-left corner to start watching.
 
 > If you need to push/play back a stream in an app or WeChat Mini Program, you can integrate the MLVB SDK to use the LVB service. If you encounter any problem during the trial, please see [FAQs](https://intl.cloud.tencent.com/document/product/267/7968).

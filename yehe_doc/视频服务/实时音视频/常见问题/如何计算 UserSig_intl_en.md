@@ -10,7 +10,7 @@ Currently, the Tencent Cloud services of TRTC, IM, and MLVB all use this securit
 See the figure below for how `UserSig` is calculated. Basically, a one-time hash encryption is performed on crucial information such as `SDKAppID`, `UserID`, and `ExpireTime`.
 
 ```Cpp
-// `UserSig` calculation formula, in which `secretkey` is the encryption key for calculating `usersig`
+//UserSig calculation formula, in which secretkey is the encryption key for calculating usersig.
 
 usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire + 
                                  base64(userid + sdkappid + currtime + expire)))
@@ -18,16 +18,15 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 
 <h2 id="Key">Key Acquisition</h2>
 
-Access the Tencent Cloud TRTC [Console](https://console.cloud.tencent.com/rav) to query the key used for calculating `UserSig` as follows:
+Access the Tencent Cloud TRTC [Console](https://console.cloud.tencent.com/rav) to query the key used for calculating UserSig. The method is shown below:
 1. Click the application card to enter the **Quick Start** page.
-2. Click **View Secret Key** in the **Step 2: obtain the secret key to issue UserSig** section to get the encryption key used to calculate `UserSig`.
+2. Click **View Key** in the **Step 2: obtain the secret key to issue UserSig** section to get the encryption key used to calculate `UserSig`.
 3. Click **Copy Secret Key** to copy the key to the clipboard.
-
 
 
 <h2 id="Client">Calculation by Client</h2>
 
-We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sample code. Simply change the three member variables (`SDKAPPID`, `EXPIRETIME`, and `SECRETKEY`) to the same as your own configuration and you will be able to call the `genTestUserSig()` function to get the calculated `UserSig`, so that you can quickly run the related SDK features:
+We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sample code. You just have to modify the three member variables of SDKAPPID, EXPIRETIME, and SECRETKEY to be the same as your own configuration, and you will be able to call the `genTestUserSig()` function to acquire the calculated UserSig so that you can quickly run the related SDK features:
 
 |  Applicable Platform | File Source Code Link | File Relative Path |
 |:---------:|:---------:|:---------:|
@@ -36,10 +35,8 @@ We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sa
 | Android | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) | Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
 | Windows (C++) | [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h)| Windows/DuilibDemo/GenerateTestUserSig.h |
 | Windows (C#) | [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)| Windows/CSharpDemo/GenerateTestUserSig.cs |
-| Web | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
+| Desktop browser | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
 | WeChat Mini Program | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/WXMini/debug/GenerateTestUserSig.js)| WXMini/debug/GenerateTestUserSig.js |
-
-
 
 > This method is only applicable for debugging. The use of this method is **not recommended** if your product is to be formally launched, because the `SECRETKEY` of the client code (especially for the web) can be very easily decompiled and reverse engineered. If your key is disclosed, attackers can make unauthorized use of your Tencent Cloud traffic.
 >
@@ -59,14 +56,14 @@ Using the server to calculate the `UserSig` can greatly protect the key used for
 
 ![](https://main.qcloudimg.com/raw/ead2075ef98876347fd388ec358ed126.jpg)
 
-To simplify your implementation process, we provide `UserSig` calculation source code in multiple programming languages:
+To simplify your implementation process, we provide UserSig calculation source code in multiple languages:
 
 | Programming Language | Signature Algorithm | Key Function | Download Link |
 |:---------:|:---------:|:---------:|:---------:|
 | Java | HMAC-SHA256 | [genSig](https://github.com/tencentyun/tls-sig-api-v2-java/blob/master/src/main/java/com/tencentyun/TLSSigAPIv2.java)  | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-java)|
-| Go | HMAC-SHA256 | [GenSig](https://github.com/tencentyun/tls-sig-api-v2-golang/blob/master/tencentyun/TLSSigAPI.go) | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-golang)|
+| GO | HMAC-SHA256 | [GenSig](https://github.com/tencentyun/tls-sig-api-v2-golang/blob/master/tencentyun/TLSSigAPI.go) | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-golang)|
 | PHP | HMAC-SHA256 | [genSig](https://github.com/tencentyun/tls-sig-api-v2-php/blob/master/src/TLSSigAPIv2.php) | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-php)|
-| Node.js | HMAC-SHA256 | [genSig](https://github.com/tencentyun/tls-sig-api-v2-node/blob/master/TLSSigAPIv2.js) | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-node)|
+| Nodejs | HMAC-SHA256 | [genSig](https://github.com/tencentyun/tls-sig-api-v2-node/blob/master/TLSSigAPIv2.js) | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-node)|
 | Python | HMAC-SHA256 | [gen_sig](https://github.com/tencentyun/tls-sig-api-v2-python/blob/master/TLSSigAPIv2.py) | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-python)|
 | C# | HMAC-SHA256 | [GenSig](https://github.com/tencentyun/tls-sig-api-v2-cs/blob/master/tls-sig-api-v2-cs/TLSSigAPIv2.cs) | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-cs)|
 
@@ -81,8 +78,8 @@ If your SDKAppID was created before July 19, 2019, you can continue to use the l
 |:---------:|:---------:|:---------:|
 | Java | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-java)|
 | C++ | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api)|
-| Go | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-golang)|
+| GO | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-golang)|
 | PHP | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-php)|
-| Node.js | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-node)|
+| Nodejs | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-node)|
 | C# | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-cs)|
 | Python | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-python)|

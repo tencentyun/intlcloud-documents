@@ -8,7 +8,7 @@
 
 <span id="windows"></span>
 ### 方式2 一键安装
-1. 前往 [CLI 下载](https://cloud.tencent.com/document/product/583/37940)，获取 SCF CLI 安装包。
+1. 前往 [CLI 下载](https://intl.cloud.tencent.com/document/product/583/32769)，获取 SCF CLI 安装包。
 >选择此方式，升级 CLI 需获取最新安装包并重新进行安装。
 >
 2. 对已下载的 “scfcli.exe” 文件单击右键，选择【以管理员身份运行】进行安装。
@@ -120,7 +120,7 @@ $ pip install -U scf
 
 
 ### win 安装包方式
-需 [前往下载](https://cloud.tencent.com/document/product/583/37940) 最新的安装包，然后【右键】选择【以管理员身份运行】。
+需 [前往下载](https://intl.cloud.tencent.com/document/product/583/32769) 最新的安装包，然后【右键】选择【以管理员身份运行】。
 执行`$ scf --version`，验证 SCF CLI 是否升级成功。
 ```
 $ scf --version

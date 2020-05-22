@@ -33,7 +33,7 @@ A CLB listener forwards requests by specifying protocols and ports. This documen
   - Select "WRR" as the load balancing mode.
   - Do not check session persistence.
   - Enable health check.
-  ![](https://main.qcloudimg.com/raw/41cbc18c096ed2f6c01a238dc426963e.png)
+    ![](https://main.qcloudimg.com/raw/41cbc18c096ed2f6c01a238dc426963e.png)
 6. Click **Complete** to create the CLB listener.
 
 For more information on CLB listeners, please see [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151).
@@ -46,7 +46,6 @@ For more information on CLB listeners, please see [CLB Listener Overview](https:
 4. Click **OK** to complete binding.
 ![](https://main.qcloudimg.com/raw/0c9f911e40621ff3615ac47d94651329.png)
 5. Expand the listener **Listener1**. You can view the health check status of the backend CVM instance. The "Healthy" status indicates that the CVM instance can properly process requests forwarded by CLB.
-<!--![](https://main.qcloudimg.com/raw/1928d50fb7fe1d2cd3eda128c4ae9eb0.png)-->
 
 ## Verifying CLB Service
 1. Enter the CLB service address and port `http://vip:80` in a browser to test the CLB service. If a message is displayed as shown below, the request has been forwarded to the CVM instance `rs-1` by CLB, and the CVM instance has properly processed the request and returned the result.
@@ -56,4 +55,3 @@ For more information on CLB listeners, please see [CLB Listener Overview](https:
 >
 >- If session persistence is disabled and a round-robin method is used for scheduling, requests will be assigned to different real servers in sequence.
 >- If session persistence is enabled, or it is disabled but ip_hash scheduling is used, requests will always be assigned to the same real server.
-

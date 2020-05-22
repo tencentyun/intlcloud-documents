@@ -11,7 +11,7 @@ Linux 平台：C++，Java，Erlang；Windows 平台：C++，Java，Erlang；提�
 TcaplusDB 单条记录1KB，读写混合：9:1，内存磁盘操作次数50:1， QPS 达到15w/s。
 
 ### 如何开始使用 TcaplusDB?
-关于如何使用 TcaplusDB，请参见 [快速入门](https://cloud.tencent.com/document/product/596/38807) 和 [操作指南](https://cloud.tencent.com/document/product/596/10759)。
+关于如何使用 TcaplusDB，请参见 [快速入门](https://intl.cloud.tencent.com/document/product/1016/32714)。
 
 ### 如何获取 TcaplusDB 最新 SDK？
 请下载最新的 Tcaplus API 版本，选择对应的平台，例如 Windows、Linux 等。
@@ -20,7 +20,7 @@ TcaplusDB 单条记录1KB，读写混合：9:1，内存磁盘操作次数50:1，
 TcaplusDB 接入层和存储层支持无损扩缩容。
 
 ### TcaplusDB 成本怎么计算的？
-请参阅：游戏数据库 [购买指南](https://cloud.tencent.com/document/product/596/10705)。
+请参阅：游戏数据库 [购买指南](https://intl.cloud.tencent.com/document/product/1016/30271)。
  
 ### TcaplusDB 有哪些项目在使用？
 TcaplusDB 是腾讯游戏存储的首选，王者荣耀、刺激战场、CFM、QQ 飞车手游等项目组都在使用。

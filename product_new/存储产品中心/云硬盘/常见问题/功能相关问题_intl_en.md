@@ -8,7 +8,7 @@ Tencent Cloud CBS provides three disk types, namely HDD Cloud Storage, Premium C
 - A single elastic cloud disk has a maximum capacity of 16 TB. It can be scaled up to 16 TB, but cannot be scaled down.
 - Elastic cloud disks can only be mounted to CVMs that are in the same availability zone.
 - Up to 20 elastic cloud disks can be mounted to a single CVM. You can add the elastic cloud disks directly when purchasing a CVM or [mount the elastic cloud disks](https://intl.cloud.tencent.com/document/product/362/32401) after purchase.
-- You can purchase up to 50 elastic cloud disks at one time on the [CBS console](https://console.cloud.tencent.com/cvm/cbs). You can purchase up to 500 elastic cloud disks under a single Tencent Cloud account.
+- You can purchase up to 50 elastic cloud disks at one time on the [CBS console](https://console.cloud.tencent.com/cvm/cbs). 
 
 
 ### What are the differences between different types of cloud disks?
