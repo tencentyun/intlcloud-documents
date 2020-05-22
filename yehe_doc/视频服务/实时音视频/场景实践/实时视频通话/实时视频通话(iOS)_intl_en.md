@@ -19,7 +19,6 @@
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
   <ul><li>SDKAPPID: it is a placeholder by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is a placeholder by default. Please replace it with your real key information.</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
