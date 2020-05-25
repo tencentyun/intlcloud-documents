@@ -17,7 +17,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
 	<th colspan="6"><center>Billable Item</center></th>
    </tr>
    <tr>
-      <th rowspan="2">Storage Capacity Fee (USD/GB/Month)</th>
+      <th rowspan="2">Storage usage Fee (USD/GB/Month)</th>
       <th rowspan="2" width="150px">Read/Write Request Fee<br>(USD/10,000 Requests)</th>
       <th rowspan="2">Data Retrieval Fee (USD/GB)</th>
       <th colspan="3">Traffic Fee (USD/GB)</th>
@@ -355,20 +355,20 @@ For more information on COS regions, please see [Regions and Access Domain Names
 </table>
 
 
-## Administrative Feature Pricing
+## Management feature Pricing
 
->- The beta test for the batch operation feature will end on April 13, 2020. You can use it free of charge until then. Thereafter, the usage will be billed.
->- Inventory, extraction, and batch operation fees will be settled **daily**.
+
+>[Inventory feature fees](https://intl.cloud.tencent.com/document/product/436/30622), [Select feature fees](https://intl.cloud.tencent.com/document/product/436/32472), [Batch operation fees](https://intl.cloud.tencent.com/document/product/436/32958) and [Object tagging fees](https://intl.cloud.tencent.com/document/product/436/31509) will be settled **daily**.
 
 
 <table>
    <tr>
 	 <th rowspan=3 ><center>Region</center></th>
-      <th colspan=5 ><center>Administrative Feature Fee</center></th>
+      <th colspan=5 ><center>Management Feature Fee</center></th>
    </tr>
    <tr>
       <th rowspan=2>Inventory Feature<br>(USD/Million Listed Objects)</th>
-      <th>Extraction Feature<br>(USD/GB)</th>
+      <th>Select Feature<br>(USD/GB)</th>
       <th colspan=2>Batch Operation Feature</th>
       <th rowspan=2>Object tag fee(USD / 10,000 object tags)</th>
    </tr>
@@ -485,7 +485,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
 
 ## Global Acceleration Pricing
 
->- The [global acceleration](https://intl.cloud.tencent.com/document/product/436/33409) feature is now generally available and supported in all public cloud regions. It is not supported in finance cloud regions due to network isolation.
+>- The [global acceleration](https://intl.cloud.tencent.com/document/product/436/33409) feature is now generally available and supported in all public cloud regions.
 >- Global acceleration fee is settled **daily**.
 
 | Region                          | Transfer Direction | Global Acceleration Traffic Fee (USD/GB) |

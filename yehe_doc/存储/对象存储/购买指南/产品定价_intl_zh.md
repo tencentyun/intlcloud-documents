@@ -2,7 +2,7 @@
 
 您也可以根据实际案例来了解 COS 的计费，请参见 [计费示例](https://intl.cloud.tencent.com/document/product/436/6241)。
 
-COS 公有云地域、金融云地域等地域的划分，请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
+COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
 
 ## 按量计费定价
 
@@ -357,8 +357,8 @@ COS 公有云地域、金融云地域等地域的划分，请参见 [地域和�
 
 ## 管理功能定价
 
->- 批量处理功能将于2020年04月13日结束公测，公测期间您可以继续免费使用，公测结束后将统一开始计费。
->- 清单功能费用、检索功能费用和批量处理费用按**日**结算。
+
+>[清单功能](https://intl.cloud.tencent.com/zh/document/product/436/30622) 费用、[检索功能](https://intl.cloud.tencent.com/zh/document/product/436/32472) 费用、[批量处理](https://intl.cloud.tencent.com/zh/document/product/436/32958) 费用和 [对象标签](https://intl.cloud.tencent.com/zh/document/product/436/31509) 费用均按**日**结算。
 
 
 <table>
@@ -370,7 +370,7 @@ COS 公有云地域、金融云地域等地域的划分，请参见 [地域和�
       <th rowspan=2>清单功能<br>（美元/每列出百万对象）</th>
       <th>检索功能<br>（美元/GB）</th>
       <th colspan=2>批量处理功能</th>
-      <th rowspan=2>对象标签费用<br>（元/每万个标签）</td>
+      <th rowspan=2>对象标签费用<br>（美元/每万个标签）</td>
    </tr>
    <tr>
       <th>标准存储</td>
@@ -485,7 +485,7 @@ COS 公有云地域、金融云地域等地域的划分，请参见 [地域和�
 
 ## 全球加速定价
 
->- [全球加速](https://intl.cloud.tencent.com/document/product/436/33409) 功能目前已全量放开，支持境内外公有云地域，金融云地域由于网络隔离暂不支持。
+>- [全球加速](https://intl.cloud.tencent.com/document/product/436/33409) 功能目前已全量放开，支持境内外公有云地域。
 >- 全球加速定价按**日**结算。
 
 | 地域                                | 传输方向 | 全球加速流量费用<br>（美元/GB） |
