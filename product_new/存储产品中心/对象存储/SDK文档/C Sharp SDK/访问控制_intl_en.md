@@ -216,7 +216,7 @@ QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialP
 
 CosXml cosXml = new CosXmlServer(config, qCloudCredentialProvider);
 
-// To avoid hitting the ACL+policy limit of 1000
+// To avoid hitting the ACL limit of 1000
 // We do not recommend setting an ACL for an individual object unless absolutely necessary. Objects are subject to their bucket’s ACL by default.
 try
 {
