@@ -35,9 +35,9 @@
 
 | 服务接入点 | 回执地址 | 
 |---------|---------|
-| 广州服务接入点 |https://api.tpns.tencent.com/log/statistics/mz | 
-| 中国香港服务接入点 | https://api.tpns.hk.tencent.com/log/statistics/mz | 
-| 新加坡服务接入点 | https://api.tpns.sgp.tencent.com/log/statistics/mz | 
+| 广州服务接入点 |https://api.tpns.tencent.com/log/statistics/hw | 
+| 中国香港服务接入点 | https://api.tpns.hk.tencent.com/log/statistics/hw | 
+| 新加坡服务接入点 | https://api.tpns.sgp.tencent.com/log/statistics/hw | 
 
 2. 配置 HTTPS 证书，[证书下载](https://api.tpns.tencent.com/v3/tpnscert/download)。
 3. 配置用户名和密钥（非必填）进行身份验证。
