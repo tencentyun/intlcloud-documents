@@ -2,20 +2,22 @@
 > 1. 此文档仅适用于 COS XML 版本。
 > 2. 此文档不适用于 POST Object 的 HTTP 请求。
 
-使用对象存储服务 COS 时，可通过 RESTful API 对 COS 发起 HTTP 匿名请求或 HTTP 签名请求，对于签名请求，COS 服务器端将会进行对请求发起者的身份验证。
+## 简介
+
+使用腾讯云对象存储服务 COS 时，可通过 RESTful API 对 COS 发起 HTTP 匿名请求或 HTTP 签名请求，对于签名请求，COS 服务器端将会进行对请求发起者的身份验证。
 
 - 匿名请求：HTTP 请求不携带任何身份标识和鉴权信息，通过 RESTful API 进行 HTTP 请求操作。
 - 签名请求：HTTP 请求时携带签名，COS 服务器端收到消息后，进行身份验证，验证成功则可接受并执行请求，否则将会返回错误信息并丢弃此请求。
 
-腾讯云对象存储 COS 基于密钥 HMAC（Hash Message Authentication Code）的自定义方案进行身份验证。
+对象存储 COS 基于密钥 HMAC（Hash Message Authentication Code）的自定义方案进行身份验证。
 
-同时各语言 SDK 提供**预签名 URL**，方便用户获取携带签名的 URL，并自行处理相关的请求，详情请参见各语言 SDK 的**预签名 URL**章节。
+同时各语言 [SDK](https://intl.cloud.tencent.com/document/product/436/6474) 提供**预签名 URL**，方便用户获取携带签名的 URL，并自行处理相关的请求，详情请参见各语言 SDK 的**预签名 URL**章节。
 
 ## 签名使用场景
 
 在 COS 对象存储服务使用的场景中，对于需要对外发布类的数据，通常可将对象设置为公有读私有写。即所有人可查看，通过 ACL 策略指定账号可写入。此时，可将 ACL 策略与 API 请求签名相结合，对访问进行身份验证，并对操作进行权限和有效期的控制。
 
->! 本文所描述的 API 请求签名，如果您使用 SDK 进行开发，则已包含在内。**仅在您希望通过原始 API 进行二次开发时，需要根据本文所描述步骤进行操作**。
+> 本文所描述的 API 请求签名，如果您使用 SDK 进行开发，则已包含在内。**仅在您希望通过原始 API 进行二次开发时，需要根据本文所描述步骤进行操作**。
 
 在以上场景中，可对 API 请求进行多方面的安全防护：
 
@@ -58,49 +60,50 @@
 **示例：**`1557902800;1557910000`
 
 ### 步骤2：生成 SignKey
-使用 [HMAC-SHA1](#preparations) 以 [SecretKey](preparations) 为密钥，以 [KeyTime](#generating-keytime) 为消息，计算消息摘要（哈希值），即为 SignKey。
+使用 [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 以 [SecretKey](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 为密钥，以 [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime) 为消息，计算消息摘要（哈希值），即为 SignKey。
 
 **示例：**`36bcd76dbb8c9f066472fec403df8a34cab34c77`
 
 ### 步骤3：生成 UrlParamList 和 HttpParameters
-1. 遍历 HTTP 请求参数，生成 key 到 value 的映射 Map 及 key 的列表 KeyList，其中 key 转换为小写形式，value 使用 [UrlEncode](#preparations) 编码，没有 value 的参数，则认为 value 为空字符串。例如请求路径为`/?acl`，则认为是`/?acl=`。
->? HTTP 请求参数，即请求路径中`?`以后的部分，例如请求路径为`/?versions&prefix=example-folder%2F&delimiter=%2F&max-keys=10`，则请求参数为`versions&prefix=example-folder%2F&delimiter=%2F&max-keys=10`。
+1. 遍历 HTTP 请求参数，生成 key 到 value 的映射 Map 及 key 的列表 KeyList：
+ - key 使用 [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 编码并转换为小写形式。
+ - value 使用 [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 编码。若无 value 的参数，则认为 value 为空字符串。例如请求路径为`/?acl`，则认为是`/?acl=`。
+> HTTP 请求参数，即请求路径中`?`以后的部分，例如请求路径为`/?versions&prefix=example-folder%2F&delimiter=%2F&max-keys=10`，则请求参数为`versions&prefix=example-folder%2F&delimiter=%2F&max-keys=10`。
 2. 将 KeyList 按照字典序排序。
-3. 将 Map 和 KeyList 中的 key 使用 [UrlEncode](#preparations) 编码，并再次转换为小写形式。
-4. 按照 KeyList 的顺序拼接 Map 中的每一个键值对，格式为`key1=value1&key2=value2&key3=value3`，即为 HttpParameters。
-5. 按照 KeyList 的顺序拼接 KeyList 中的每一项，格式为`key1;key2;key3`，即为 UrlParamList。
+3. 按照 KeyList 的顺序拼接 Map 中的每一个键值对，格式为`key1=value1&key2=value2&key3=value3`，即为 HttpParameters。
+4. 按照 KeyList 的顺序拼接 KeyList 中的每一项，格式为`key1;key2;key3`，即为 UrlParamList。
 
-**示例：**
+#### 示例：
 - 示例一：
-请求路径:`/?prefix=example-folder%2F&delimiter=%2F&max-keys=10`
-UrlParamList: `delimiter;max-keys;prefix`
-HttpParameters: `delimiter=%2F&max-keys=10&prefix=example-folder%2F`
->!请求路径中的请求参数在实际发送请求时也会进行 
-，因此要注意不要重复执行。
+请求路径：`/?prefix=example-folder%2F&delimiter=%2F&max-keys=10`
+UrlParamList：`delimiter;max-keys;prefix`
+HttpParameters：`delimiter=%2F&max-keys=10&prefix=example-folder%2F`
+>请求路径中的请求参数在实际发送请求时也会进行 UrlEncode，因此要注意不要重复执行 UrlEncode。
 - 示例二：
-请求路径:`/exampleobject?acl`
-UrlParamList: `acl`
-HttpParameters: `acl=`
+请求路径：`/exampleobject?acl`
+UrlParamList：`acl`
+HttpParameters：`acl=`
 
 ### 步骤4：生成 HeaderList 和 HttpHeaders
-1. 遍历 HTTP 请求头部，生成 key 到 value 的映射 Map 及 key 的列表 KeyList，其中 key 转换为小写形式，value 使用 [UrlEncode](#preparations) 编码。
+1. 遍历 HTTP 请求头部，生成 key 到 value 的映射 Map 及 key 的列表 KeyList，key 使用 [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 编码并转换为小写形式。
 2. 将 KeyList 按照字典序排序。
-3. 将 Map 和 KeyList 中的 key 使用 [UrlEncode](#preparations) 编码，并再次转换为小写形式。
-4. 按照 KeyList 的顺序拼接 Map 中的每一个键值对，格式为`key1=value1&key2=value2&key3=value3`，即为 HttpHeaders。
-5. 按照 KeyList 的顺序拼接 KeyList 中的每一项，格式为`key1;key2;key3`，即为 HeaderList。
+3. 按照 KeyList 的顺序拼接 Map 中的每一个键值对，格式为`key1=value1&key2=value2&key3=value3`，即为 HttpHeaders。
+4. 按照 KeyList 的顺序拼接 KeyList 中的每一项，格式为`key1;key2;key3`，即为 HeaderList。
 
-**示例：**
+#### 示例：
 请求头：
-```shell
+```plaintext
 Host: examplebucket-1250000000.cos.ap-shanghai.myqcloud.com
 Date: Thu, 16 May 2019 03:15:06 GMT
 x-cos-acl: private
 x-cos-grant-read: uin="100000000011"
 ```
-计算得到 HeaderList 为`date;host;x-cos-acl;x-cos-grant-read`，HttpHeaders 为`date=Thu%2C%2016%20May%202019%2003%3A15%3A06%20GMT&host=examplebucket-1250000000.cos.ap-shanghai.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`。
+计算得到：
+- HeaderList = `date;host;x-cos-acl;x-cos-grant-read`
+- HttpHeaders = `date=Thu%2C%2016%20May%202019%2003%3A15%3A06%20GMT&host=examplebucket-1250000000.cos.ap-shanghai.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`
 
 ### 步骤5：生成 HttpString
-根据 HTTP 方法、HTTP 请求路径、[HttpParameters](#generating-urlparamlist-and-httpparameters) 和 [HttpHeaders](#generating-headerlist-and-httpheaders) 生成 HttpString，格式为`HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`。
+根据 HTTP 方法、HTTP 请求路径、[HttpParameters](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters) 和 [HttpHeaders](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders) 生成 HttpString，格式为`HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`。
 
 其中：
 - HttpMethod 转换为小写，例如 get 或 put。
@@ -120,7 +123,7 @@ x-cos-grant-read: uin="100000000011"
 
 ### 步骤8：生成签名
 根据 [SecretId](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C)、[KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime)、[HeaderList](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders)、[UrlParamList](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters) 和 [Signature](#.E6.AD.A5.E9.AA.A47.EF.BC.9A.E7.94.9F.E6.88.90-signature) 生成签名，格式为：
-```shell
+```plaintext
 q-sign-algorithm=sha1
 &q-ak=SecretId
 &q-sign-time=KeyTime
@@ -130,19 +133,19 @@ q-sign-algorithm=sha1
 &q-signature=Signature
 ```
 
->!上述格式中的换行仅用于更好的阅读，实际格式并不包含换行。
+>上述格式中的换行仅用于更好的阅读，实际格式并不包含换行。
 
 ## 签名使用
 通过 RESTful API 对 COS 发起的 HTTP 签名请求，可以通过以下几种方式传递签名：
 1. 通过标准的 HTTP Authorization 头，例如`Authorization: q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753;1557996953&...&q-signature=...`
 2. 作为 HTTP 请求参数，请注意 UrlEncode，例如`/exampleobject?q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753%3B1557996953&...&q-signature=...`
 
->?上述示例中使用`...`省略了部分具体签名内容。
+>上述示例中使用`...`省略了部分具体签名内容。
 
 ## 代码示例
 
 ### 伪代码
-```shell
+```plaintext
 KeyTime = [Now];[Expires]
 SignKey = HMAC-SHA1([SecretKey], KeyTime)
 HttpString = [HttpMethod]\n[HttpURI]\n[HttpParameters]\n[HttpHeaders]\n
@@ -156,7 +159,7 @@ Signature = HMAC-SHA1(SignKey, StringToSign)
 
 #### PHP
 
-```shell
+```php
 $sha1HttpString = sha1('ExampleHttpString');
 
 $signKey = hash_hmac('sha1', 'ExampleKeyTime', 'YourSecretKey');
@@ -164,7 +167,7 @@ $signKey = hash_hmac('sha1', 'ExampleKeyTime', 'YourSecretKey');
 
 #### Java
 
-```shell
+```java
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.digest.HmacUtils;
 
@@ -175,7 +178,7 @@ String signKey = HmacUtils.hmacSha1Hex("YourSecretKey", "ExampleKeyTime");
 
 #### Python
 
-```shell
+```python
 import hmac
 import hashlib
 
@@ -186,7 +189,7 @@ sign_key = hmac.new('YourSecretKey'.encode('utf-8'), 'ExampleKeyTime'.encode('ut
 
 #### Node.js
 
-```shell
+```node
 var crypto = require('crypto');
 
 var sha1HttpString = crypto.createHash('sha1').update('ExampleHttpString').digest('hex');
@@ -195,7 +198,7 @@ var signKey = crypto.createHmac('sha1', 'YourSecretKey').update('ExampleKeyTime'
 
 #### Go
 
-```shell
+```go
 import (
 	"crypto/hmac"
 	"crypto/sha1"
@@ -225,7 +228,7 @@ signKey := h.Sum(nil)
 
 #### 原始请求
 
-```shell
+```plaintext
 PUT /exampleobject(%E8%85%BE%E8%AE%AF%E4%BA%91) HTTP/1.1
 Date: Thu, 16 May 2019 06:45:51 GMT
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
@@ -240,21 +243,21 @@ ObjectContent
 
 #### 中间变量
 
-- KeyTime = `1557989151;1557996351`
-- SignKey = `eb2519b498b02ac213cb1f3d1a3d27a3b3c9bc5f`
-- UrlParamList = `(empty string)`
-- HttpParameters = `(empty string)`
-- HeaderList = `content-length;content-md5;content-type;date;host;x-cos-acl;x-cos-grant-read`
-- HttpHeaders = `content-length=13&content-md5=mQ%2FfVh815F3k6TAUm8m0eg%3D%3D&content-type=text%2Fplain&date=Thu%2C%2016%20May%202019%2006%3A45%3A51%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`
-- HttpString = `put\n/exampleobject(腾讯云)\n\ncontent-length=13&content-md5=mQ%2FfVh815F3k6TAUm8m0eg%3D%3D&content-type=text%2Fplain&date=Thu%2C%2016%20May%202019%2006%3A45%3A51%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22\n`
-- StringToSign = `sha1\n1557989151;1557996351\n8b2751e77f43a0995d6e9eb9477f4b685cca4172\n`
-- Signature = `3b8851a11a569213c17ba8fa7dcf2abec6935172`
+- **KeyTime** = `1557989151;1557996351`
+- **SignKey** = `eb2519b498b02ac213cb1f3d1a3d27a3b3c9bc5f`
+- **UrlParamList** = `(empty string)`
+- **HttpParameters** = `(empty string)`
+- **HeaderList** = `content-length;content-md5;content-type;date;host;x-cos-acl;x-cos-grant-read`
+- **HttpHeaders** = `content-length=13&content-md5=mQ%2FfVh815F3k6TAUm8m0eg%3D%3D&content-type=text%2Fplain&date=Thu%2C%2016%20May%202019%2006%3A45%3A51%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`
+- **HttpString** = `put\n/exampleobject(腾讯云)\n\ncontent-length=13&content-md5=mQ%2FfVh815F3k6TAUm8m0eg%3D%3D&content-type=text%2Fplain&date=Thu%2C%2016%20May%202019%2006%3A45%3A51%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22\n`
+- **StringToSign** = `sha1\n1557989151;1557996351\n8b2751e77f43a0995d6e9eb9477f4b685cca4172\n`
+- **Signature** = `3b8851a11a569213c17ba8fa7dcf2abec6935172`
 
 其中，(empty string) 代表长度为0的空字符串，`\n`代表换行符。
 
 #### 签名后的请求
 
-```shell
+```plaintext
 PUT /exampleobject(%E8%85%BE%E8%AE%AF%E4%BA%91) HTTP/1.1
 Date: Thu, 16 May 2019 06:45:51 GMT
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
@@ -272,7 +275,7 @@ ObjectContent
 
 #### 原始请求
 
-```shell
+```plaintext
 GET /exampleobject(%E8%85%BE%E8%AE%AF%E4%BA%91)?response-content-type=application%2Foctet-stream&response-cache-control=max-age%3D600 HTTP/1.1
 Date: Thu, 16 May 2019 06:55:53 GMT
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
@@ -280,21 +283,21 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 
 #### 中间变量
 
-- KeyTime = `1557989753;1557996953`
-- SignKey = `937914bf490e9e8c189836aad2052e4feeb35eaf`
-- UrlParamList = `response-cache-control;response-content-type`
-- HttpParameters = `response-cache-control=max-age%3D600&response-content-type=application%2Foctet-stream`
-- HeaderList = `date;host`
-- HttpHeaders = `date=Thu%2C%2016%20May%202019%2006%3A55%3A53%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com`
-- HttpString = `get\n/exampleobject(腾讯云)\nresponse-cache-control=max-age%3D600&response-content-type=application%2Foctet-stream\ndate=Thu%2C%2016%20May%202019%2006%3A55%3A53%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com\n`
-- StringToSign = `sha1\n1557989753;1557996953\n54ecfe22f59d3514fdc764b87a32d8133ea611e6\n`
-- Signature = `01681b8c9d798a678e43b685a9f1bba0f6c0e012`
+- **KeyTime** = `1557989753;1557996953`
+- **SignKey** = `937914bf490e9e8c189836aad2052e4feeb35eaf`
+- **UrlParamList** = `response-cache-control;response-content-type`
+- **HttpParameters** = `response-cache-control=max-age%3D600&response-content-type=application%2Foctet-stream`
+- **HeaderList** = `date;host`
+- **HttpHeaders** = `date=Thu%2C%2016%20May%202019%2006%3A55%3A53%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com`
+- **HttpString** = `get\n/exampleobject(腾讯云)\nresponse-cache-control=max-age%3D600&response-content-type=application%2Foctet-stream\ndate=Thu%2C%2016%20May%202019%2006%3A55%3A53%20GMT&host=examplebucket-1250000000.cos.ap-beijing.myqcloud.com\n`
+- **StringToSign** = `sha1\n1557989753;1557996953\n54ecfe22f59d3514fdc764b87a32d8133ea611e6\n`
+- **Signature** = `01681b8c9d798a678e43b685a9f1bba0f6c0e012`
 
 其中，`\n`代表换行符。
 
 #### 签名后的请求
 
-```shell
+```plaintext
 GET /exampleobject(%E8%85%BE%E8%AE%AF%E4%BA%91)?response-content-type=application%2Foctet-stream&response-cache-control=max-age%3D600 HTTP/1.1
 Date: Thu, 16 May 2019 06:55:53 GMT
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
