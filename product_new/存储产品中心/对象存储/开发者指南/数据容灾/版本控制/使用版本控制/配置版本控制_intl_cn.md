@@ -11,7 +11,7 @@
 
 ### 使用 REST API
 
-您可以直接使用 REST API 配置存储桶的版本控制和管理版本控制状态下存储桶中的对象，请参考以下 API 文档部分：
+您可以直接使用 REST API 配置存储桶的版本控制和管理版本控制状态下存储桶中的对象，请参见以下 API 文档部分：
 - [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889)
 - [GET Buket versioning](https://intl.cloud.tencent.com/document/product/436/19888)
 - [GET Bucket Object versions](https://intl.cloud.tencent.com/document/product/436/31551)
@@ -32,5 +32,6 @@
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#versioning)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#versioning)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539#versioning)
+- Node.js SDK
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543#versioning)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#versioning)
