@@ -1,1792 +1,367 @@
-## 消息发送
+## 消息的分类
+腾讯云 IM 消息按照消息的发送目标可以分为：“单聊消息”（又称 “C2C 消息”）和“群聊消息” 两种：
 
-### 通用消息发送
+| 消息分类 | API 关键词 | 详细解释 |
+|---------|---------|---------|
+| 单聊消息 | C2CMessage | 又称 C2C 消息，在发送时需要指定消息接收者的 UserID，只有接受者可以收到该消息。 |
+| 群聊消息 | GroupMessage | 在发送时需要指定目标群组的 groupID，该群中的所有用户均能收到消息。|
 
-#### 会话获取
+按照消息承载的内容可以分为：“文本消息”、“自定义（信令）消息”，“图片消息”、“视频消息”、“语音消息”、“文件消息”、“位置消息”、“群 Tips 消息”等几种类型。
 
-会话是指面向一个人或者一个群组的对话，通过与单个人或群组之间会话收发消息，发消息时首先需要先获取会话，获取会话需要指定会话类型（群组或者单聊），以及会话对方标志（对方帐号或者群号）。获取会话由`getConversation`实现。
->如果本地没有这个会话，调用会话 TIMConversation 的 API 会失败。建议在收到 TIMUserConfig > TIMRefreshListener 回调后再去操作 TIMConversation 对象。
+| 消息分类 | API 关键词 | 详细解释 |
+|---------|---------|---------|
+| 文本消息 | TextMessage | 即普通的文字消息，该类消息会经过腾讯云 IM 的敏感词过滤，包含的敏感词消息在发送时会报80001错误码。 |
+| 自定义消息 | CustomMessage | 即一段二进制 buffer，通常用于传输您应用中的自定义信令，内容不会经过敏感词过滤。 |
+| 图片消息 | ImageElem | SDK 会在发送原始图片的同时，自动生成两种不同尺寸的缩略图，三张图分别被称为原图、大图、微缩图。 |
+| 视频消息 | VideoElem | 一条视频消息包含一个视频文件和一张配套的缩略图。 |
+| 语音消息 | SoundElem | 支持语音是否播放红点展示。 |
+| 文件消息 | FileElem | 文件消息最大支持100MB。 |
+| 位置消息 | LocationElem | 地理位置消息由位置描述、经度（longitude ）和维度（latitude）三个字段组成。 |
+| 群 Tips 消息 | GroupTipsElem | 群 Tips 消息常被用于承载群中的系统性通知消息，例如有成员进出群组，群的描述信息被修改，群成员的资料发生变化等。 |
 
-**原型：**
+## 收发简单消息
+[V2TIMManager.h](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html) 中提供了一组简单的消息收发接口，虽只能用于文本消息和自定义（信令）消息的收发，但使用方法特别简单，只需要几分钟即可完成对接。
 
+### 发送文本和信令消息（简化接口）
+调用 [sendC2CTextMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a50d63810093eccc0491d058d0b883618) 或者  [sendGroupTextMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a07788874071937fac6c7093185b145f7) 可以发送文本消息，其中文本消息会经过即时通信 IM 的敏感词过滤，包含的敏感词消息在发送时会报80001错误码。
+调用 [sendC2CCustomMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a5fc3b87e9782e679c08926d07e486b90) 或者 [sendGroupCustomMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a537560a58d49aad36406f6d9db6ded65) 可以发送 C2C 自定义（信令）消息，自定义消息本质是一段二进制 buffer，通常用于传输您应用中的自定义信令，内容不会经过敏感词过滤。
+
+### 接收文本和信令消息（简化接口）
+通过  [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a428fe7bf82be1592141d77dfa756ec68) 可以监听简单的文本和信令消息，复杂的图片、视频、语音消息则需要通过 [V2TIMManager + Message.h](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html) 中定义的 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 实现。
+
+> [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a428fe7bf82be1592141d77dfa756ec68)  与 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 请勿混用，以免产生逻辑 BUG。
+
+### 经典示例：直播群中收发弹幕消息
+直播场景下，在直播群中收发弹幕消息是非常普遍的交互方式，其实现方式非常简单，通过简单消息接口即可满足：
+
+1. 主播调用 [createGroup](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a3bbcf819c1ec70e520b7f9a42cfbb989) 创建一个直播群（AVChatRoom），并在“正在直播”的房间列表中记录群组 ID。
+2. 观众选择自己喜欢的主播，并调用 [joinGroup](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a4762156b7a98489eb4715de53028e12a) 加入该主播创建的直播群。
+3. 消息的发送方可以通过 [sendGroupTextMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a07788874071937fac6c7093185b145f7) 群发弹幕文本消息。
+4. 消息的接收方可以通过 [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a428fe7bf82be1592141d77dfa756ec68) 注册简单消息监听器，并通过监听回调函数  [onRecvGroupTextMessage](http://doc.qcloudtrtc.com/im/protocolV2TIMSimpleMsgListener-p.html) 获取文本消息。
+
+为直播间增加“点赞飘心”的功能，“点赞飘心”属于一条指令，操作步骤如下：
+1. 定义一个的自定义消息类型，例如一个 JSON 字符串：` { "command": "favor", "value": 101 }`。
+2. 通过 [sendGroupCustomMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a537560a58d49aad36406f6d9db6ded65) 接口进行消息的发送，并通过  [onRecvGroupCustomMessage](http://doc.qcloudtrtc.com/im/protocolV2TIMSimpleMsgListener-p.html#ad01776119c059bff49b804c8152c70d9) 进行接收。
+
+## 收发富媒体消息
+图片、视频、语音、文件、地理位置等类型的消息称为“富媒体消息”。相比于简单消息，富媒体消息的收发相对复杂：
+- 在发送时，富媒体消息需要先用对应的 `create` 函数创建一个  [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html) 对象，再调用对应的 `send` 接口发送。
+- 在接收时，富媒体消息需要先判断 `elemType`，并根据 `elemType` 获取对应的 `Elem` 进行二次解析。
+
+
+### 发送富媒体消息
+本文以图片消息为例，介绍发送一条富媒体消息的过程：
+1. 发送方调用 [createImageMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a23033a764f0d95ce83c52f3cdeea4137) 创建一条图片消息，获取消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html)。
+2. 发送方调用 [sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a681947465d6ab718da40f7f983740a21) 接口将刚才创建的消息对象发送出去。
+
+### 接收富媒体消息
+
+1. 接收方调用 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 接口设置高级消息监听。
+2. 接收方通过监听回调 [onRecvNewMessage](http://doc.qcloudtrtc.com/im/protocolV2TIMAdvancedMsgListener-p.html) 获取图片消息 [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html)。
+3. 接收方解析  [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html) 消息中的 `elemType` 属性，并根据其类型进行二次解析，获取消息内部 Elem 中的具体内容。
+
+### 经典示例：收发图片
+发送方创建一条图片消息并发送：
 ```
-@interface TIMManager : NSObject
-/**
- *  获取会话
- *
- *  @param type 会话类型，TIM_C2C 表示单聊 TIM_GROUP 表示群聊
- *  @param conversationId C2C 为对方帐号identifier， GROUP 为群组 ID
- *
- *  @return 会话对象
- */
-- (TIMConversation*)getConversation:(TIMConversationType)type receiver:(NSString*)conversationId;
-@end
+// 获取本地图片路径
+NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"png"];
+// 创建图片消息
+V2TIMMessage *msg = [[V2TIMManager sharedInstance] createImageMessage:imagePath];
+// 发送图片消息
+[[V2TIMManager sharedInstance] sendMessage:msg receiver:@"userA" groupID:nil 
+priority:V2TIM_PRIORITY_DEFAULT 
+onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
+   // 图片上传进度（0 - 100）
+} succ:^{
+   // 图片消息发送成功
+} fail:^(int code, NSString *msg) {
+   // 图片消息发送失败
+}];
 ```
 
-**参数说明：**
-
-参数 | 说明
----|---
-type | 会话类型，如果是单聊，填写 TIM_C2C，如果是群聊，填写 TIM_GROUP
-conversationId | 会话标识，单聊情况下，receiver 为对方帐号 identifier，群聊情况下，receiver 为群组 ID
-
-**获取对方 `identifie`r 为『iOS-001』的单聊会话：**
-
+接收方识别一条图片消息并将解析中包含的原图、大图和微缩图：
 ```
-TIMConversation * c2c_conversation = [[TIMManager sharedInstance] getConversation:TIM_C2C receiver:@"iOS-001"];
-```
-
-**获取群组 ID 为『TGID1JYSZEAEQ』的群聊会话示例：** 
-
-```
-TIMConversation * grp_conversation = [[TIMManager sharedInstance] getConversation:TIM_GROUP receiver:@"TGID1JYSZEAEQ"];
-```
-
-#### 消息发送
-
-通过 `TIMManager` 获取会话 `TIMConversation` 后，可发送消息和获取会话缓存消息。IM SDK 中消息的解释可参阅 [IM SDK 基本概念](https://intl.cloud.tencent.com/document/product/1047/34302)。IM SDK 中的消息由 `TIMMessage` 表达， 一个 `TIMMessage` 由多个 `TIMElem` 组成，每个 `TIMElem` 可以是文本和图片，也就是说每一条消息可包含多个文本和多张图片。发消息通过 `TIMConversation` 的成员 `sendMessage` 实现，有两种方式实现，一种使用闭包，另一种调用方实现 `protocol` 回调。
-
-![](https://main.qcloudimg.com/raw/6bf979993ac8490ce53f68256e05ef01.png)
-
-
-**原型：**
-
-```
-@interface TIMConversation : NSObject
--(int) sendMessage: (TIMMessage*)msg succ:(TIMSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**参数说明：**
-
-参数 | 说明
---- | ---
-msg | 消息
-succ | 成功回调
-fail | 失败回调
-
-### 文本消息发送
-
-文本消息由 `TIMTextElem` 定义。
-
-```
-@interface TIMTextElem : TIMElem {
-    NSString * text;
+- (void)onRecvNewMessage:(V2TIMMessage *)msg {
+  if (msg.elemType == V2TIM_ELEM_TYPE_IMAGE) {
+    V2TIMImageElem *imageElem = msg.imageElem;
+    // 一个图片消息会包含三种格式大小的图片，分别为原图、大图、微缩图(SDK内部自动生成大图和微缩图)
+    // 大图：是将原图等比压缩，压缩后宽、高中较小的一个等于720像素。
+    // 缩略图：是将原图等比压缩，压缩后宽、高中较小的一个等于198像素。
+    NSArray<V2TIMImage *> *imageList = imageElem.imageList;
+    for (V2TIMImage *timImage in imageList) {
+        NSString *uuid = timImage.uuid; // 图片 ID
+        V2TIMImageType type = timImage.type; // 图片类型
+        int size = timImage.size; // 图片大小（字节）
+        int width = timImage.width; // 图片宽度
+        int height = timImage.height; // 图片高度
+        // 设置图片下载路径 imagePath，这里可以用 uuid 作为标识，避免重复下载
+        NSString *imagePath = [NSTemporaryDirectory() stringByAppendingPathComponent:
+						    [NSString stringWithFormat: @"testImage%@",timImage.uuid]];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:imagePath]) {
+                [timImage downloadImage:imagePath 
+								progress:^(NSInteger curSize, NSInteger totalSize) {
+                    NSLog(@"图片下载进度：curSize：%lu,totalSize:%lu",curSize,totalSize);
+                } succ:^{
+                    NSLog(@"图片下载完成");
+                } fail:^(int code, NSString *msg) {
+                    NSLog(@"图片下载失败：code：%d,msg:%@",code,msg);
+                }];
+        } else {
+                // 图片已存在
+        }
+    }
+  }
 }
 ```
 
-**示例：**
+> 更多消息解析示例代码请参考 [常见问题 > 5. 各类型消息应该如何解析](#msgAnalyze)。
 
+## 设置 APNS 离线推送（offlinePushInfo）
 
->
->- text 传递需要发送的文本消息。
->- 失败回调中，code 表示错误码，具体可参阅 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)，err 表示错误描述。
+当接收方的 App 被 kill 或者被切到后台时，IM SDK 无法通过正常的网络连接收取新消息。如需实现在此场景下接收方仍能感知到新消息，需要使用苹果提供的 APNs 服务，即“苹果离线推送”，更多详细请参见 [开启 iOS 离线推送](https://intl.cloud.tencent.com/document/product/1047/34347)。
+
+### 设置 APNS 离线推送的标题和声音
+您可以在发送消息时，通过 [sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a681947465d6ab718da40f7f983740a21) 接口中的 **offlinePushInfo** 字段，设置 APNS 离线推送的标题和声音。
 
 ```
-TIMTextElem * text_elem = [[TIMTextElem alloc] init];
-
-[text_elem setText:@"this is a text message"];
-
-TIMMessage * msg = [[TIMMessage alloc] init];
-[msg addElem:text_elem];
-
-[conversation sendMessage:msg succ:^(){
-	NSLog(@"SendMsg Succ");
-}fail:^(int code, NSString * err) {
-	NSLog(@"SendMsg Failed:%d->%@", code, err);
+// 创建一条图片消息发送给 groupA，并且自定义推送 Title、推送声音
+NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"png"];
+// 创建图片消息
+V2TIMMessage *msg = [[V2TIMManager sharedInstance] createImageMessage:imagePath];
+V2TIMOfflinePushInfo *pushInfo = [[V2TIMOfflinePushInfo alloc] init];
+// 自定义推送的标题和声音（01.caf 是一个示例文件，需要链接进 Xcode 工程，这里只需要填写带后缀的文件名）
+pushInfo.title = @"自定义推送 Title 展示";
+pushInfo.iOSSound = @"01.caf";
+[[V2TIMManager sharedInstance] sendMessage:msg receiver:nil groupID:@"groupA" priority:V2TIM_PRIORITY_DEFAULT 
+onlineUserOnly:NO offlinePushInfo:pushInfo progress:^(uint32_t progress) {
+} succ:^{
+    // 消息发送成功
+} fail:^(int code, NSString *msg) {
+    // 消息发送失败
 }];
 ```
 
-### 图片消息发送
+### 点击推送消息跳转到对应的聊天窗口
+如需实现该功能，发送消息时需设置离线推送对象 `offlinePushInfo` 的扩展字段 `ext`，收到消息的用户打开 App 时可以通过 `didReceiveRemoteNotification` 系统回调获取到扩展字段 `ext`，再根据 `ext` 内容跳转到对应的聊天界面。
 
-图片消息由 `TIMImageElem` 定义。它是 `TIMElem` 的一个子类，也就是说图片也是消息的一种内容。 发送图片的过程，就是将 `TIMImageElem` 加入到 `TIMMessage` 中，然后随消息一起发送出去。发送图片时，只需要设置图片路径 `path`。发送成功后可通过 `imageList` 获取所有图片类型。另外通过 `TIMUserConfig -> TIMUploadProgressListener` 监听当前上传进度。
-
-**`TIMImageElem` 原型：**
-
+本文以 “denny 给 vinson 发送消息” 的场景为例。
+- 发送方：denny 需在发送消息时设置推送扩展字段 `ext`：
 ```
-/**
- *  存储要发送的图片路径，必须是本地路径，可参考下面示例
- */
-@interface TIMImageElem : TIMElem
-/**
- *  要发送的图片路径
- */
-@property(nonatomic,retain) NSString * path;
-/**
- *  发送时不用关注，接收时保存生成的图片所有规格
- */
-@property(nonatomic,retain) NSArray * imageList;
-/**
- * 上传时任务Id，可用来查询上传进度（已废弃，请在 TIMUploadProgressListener 监听上传进度）
- */
-@property(nonatomic,assign) uint32_t taskId DEPRECATED_ATTRIBUTE;
-
-/**
- *  图片压缩等级，详见 TIM_IMAGE_COMPRESS_TYPE（仅对 jpg 格式有效）
- */
-@property(nonatomic,assign) TIM_IMAGE_COMPRESS_TYPE level;
-
-/**
- *  图片格式，详见 TIM_IMAGE_FORMAT
- */
-@property(nonatomic,assign) TIM_IMAGE_FORMAT format;
-@end
-```
-
-**参数说明：**
-
-|参数 | 说明|
-|---|---|
-|path | 存储要发送的图片路径，必须是本地路径，可参考图片发送示例 |
-|imageList | 发送时不用关注，接收时保存生成的图片所有规格，可以参阅图片消息接收部分|
-|taskId | 发送图片时用来查询上传进度（已废弃，请在 TIMUploadProgressListener 监听上传进度）|
-|level | 发送图片前对图片进行压缩，level 表示压缩等级，详见 TIM_IMAGE_COMPRESS_TYPE 定义|
-|format | 图片格式，详见 TIM_IMAGE_FORMAT|
-
-以下示例中发送了一张绝对路径是 `/xxx/imgPath.jpg` 的图片。**示例：**
-
-```
-/**
-*  获取聊天会话, 以同用户 iOS-001 的单聊为例
-*/
-TIMConversation * c2c_conversation = [[TIMManager sharedInstance] getConversation:TIM_C2C receiver:@"iOS-001"];
-/**
-*  构造一条消息
-*/
-TIMMessage * msg = [[TIMMessage alloc] init];
-/**
-*  构造图片内容
-*/
-TIMImageElem * image_elem = [[TIMImageElem alloc] init];
-image_elem.path = @"/xxx/imgPath.jpg";
-/**
-*  将图片内容添加到消息容器中
-*/
-[msg addElem:image_elem];
-/**
-*  发送消息
-*/
-[conversation sendMessage:msg succ:^(){  //成功
-       NSLog(@"SendMsg Succ");
-}fail:^(int code, NSString * err) {  //失败
-       NSLog(@"SendMsg Failed:%d->%@", code, err);
+// denny在发送消息时设置 offlinePushInfo，并指定 ext 字段
+V2TIMMessage *msg = [[V2TIMManager sharedInstance] createTextMessage:@"文本消息"];
+V2TIMOfflinePushInfo *info = [[V2TIMOfflinePushInfo alloc] init];
+info.ext = @"jump to denny";
+[[V2TIMManager sharedInstance] sendMessage:msg receiver:@"vinson" groupID:nil priority:V2TIM_PRIORITY_DEFAULT
+onlineUserOnly:NO offlinePushInfo:info progress:^(uint32_t progress) {
+} succ:^{
+} fail:^(int code, NSString *msg) {
 }];
 ```
 
-### 表情消息发送
+- 接收方：vinson 的 App 虽然不在线，但可以接收到 APNS 离线推送，当 vinson 点击推送消息时会启动 App：
+<pre><code><span class="hljs-comment">// vinson 启动 App 后会收到以下回调</span>
+<span class="hljs-selector-tag">-</span> (void)<span class="hljs-selector-tag">application</span><span class="hljs-selector-pseudo">:(UIApplication</span> *)<span class="hljs-selector-tag">application</span> <span class="hljs-selector-tag">didReceiveRemoteNotification</span><span class="hljs-selector-pseudo">:(NSDictionary</span> *)<span class="hljs-selector-tag">userInfo</span> 
+<span class="hljs-selector-tag">fetchCompletionHandler</span><span class="hljs-selector-pseudo">:(void</span> (^)(UIBackgroundFetchResult result))<span class="hljs-selector-tag">completionHandler</span> {
+    <span class="hljs-comment">// 解析推送扩展字段 desc</span>
+    <span class="hljs-selector-tag">if</span> ([userInfo[@<span class="hljs-string">"ext"</span>] <span class="hljs-attribute">isEqualToString</span>:@<span class="hljs-string">"jump to denny"</span>]) {
+        <span class="hljs-comment">//跳转到和 denny 的聊天界面</span>
+    }
+}</code></pre>
 
-表情消息由 `TIMFaceElem` 定义，IM SDK 并不提供表情包，如果开发者有表情包，可使用 `index` 存储表情在表情包中的索引，由用户自定义，或者直接使用 `data` 存储表情二进制信息以及字符串 `key`，都由用户自定义，SDK 内部只做透传。
+## 设置消息为只能在线接收（onlineUserOnly）
+
+某些场景下，您可能希望发出去的消息只被在线用户接收，即当接收者不在线时就不会感知到该消息。您只需在 
+[sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a6ea32e6c119c1d771ee1123c5fb2dbae) 时，将参数 `onlineUserOnly` 设置为 `YES` ，此时发送出去的消息与普通消息相比，会有如下差异点：
+- 不支持离线存储，即如果接收方不在线就无法收到。
+- 不支持多端漫游，即如果接收方在一台终端设备上一旦接收过该消息，无论是否已读，都不会在另一台终端上再次收到。
+- 不支持本地存储，即本地的云端的历史消息中均无法找回。
+
+**经典示例：实现“对方正在输入”功能**
+在 C2C 单聊场景下，您可以通过 [sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a681947465d6ab718da40f7f983740a21) 接口发送 "自己正在输入" 的提示性消息，接收方收到该消息时可以在 UI 界面展示 "对方正在输入"，示例代码如下：
+```
+// 给 userA 发送 "自己正在输入" 的提示消息
+NSString *customStr = @"{\"command\": \"textInput\"}";
+NSData *customData = [customStr dataUsingEncoding:NSUTF8StringEncoding];
+V2TIMMessage *msg = [[V2TIMManager sharedInstance] createCustomMessage:customData];
+[[V2TIMManager sharedInstance] sendMessage:msg receiver:@"userA" groupID:nil
+priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:^(uint32_t progress) {
+} succ:^{
+    // 消息发送成功
+} fail:^(int code, NSString *msg) {
+    // 消息发送失败
+}];
 
 ```
-@interface TIMFaceElem : TIMElem
-/**
- *  表情索引，用户自定义
- */
-@property(nonatomic, assign) int index;
-/**
- *  额外数据，用户自定义
- */
-@property(nonatomic,retain) NSData * data;
-@end
-```
 
-**参数说明：**
+## 撤回消息
+发送方通过 [revokeMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a2ef856a792923811e9d16ed7a101336a) 接口可以撤回一条已经发送成功的消息。默认情况下，发送者只能撤回2分钟以内的消息，您可以按需更改消息撤回时间限制，具体操作请参见 [消息撤回设置](https://intl.cloud.tencent.com/document/product/1047/34419)。
+消息的撤回同时需要接收方 UI 代码的配合：当发送方撤回一条消息后，接收方会收到消息撤回通知 [onRecvMessageRevoked](http://doc.qcloudtrtc.com/im/protocolV2TIMAdvancedMsgListener-p.html)，通知中包含被撤回消息的 `msgID`，您可以根据 `msgID` 判断 UI 层是哪一条消息被撤回了，然后把对应的消息气泡切换成 "消息已被撤回" 状态。
 
->index 和 data 只需要传入一个即可，IM SDK 只是透传这两个数据。
-
-参数 | 说明
----|---
-index|表情索引标号，由开发者定义
-data|表情二进制数据，由开发者定义
-
-以下示例中发送了索引为10的表情，具体10标识哪种表情，需要开发者在两端都持有一份表情包，索引到编号为10的表情，也可以通过 data 通过二进制数据来标识。**示例：**
+### 发送方撤回一条消息
 
 ```
-TIMFaceElem * face_elem = [[TIMFaceElem alloc] init];
-
-[face_elem setIndex:10];
-
-TIMMessage * msg = [[TIMMessage alloc] init];
-[msg addElem:face_elem];
-
-[conversation sendMessage:msg succ:^(){
-	NSLog(@"SendMsg Succ");
-}fail:^(int code, NSString * err) {
-	NSLog(@"SendMsg Failed:%d->%@", code, err);
+[[V2TIMManager sharedInstance] revokeMessage:msg succ:^{
+     // 撤回消息成功
+} fail:^(int code, NSString *msg) {
+     // 撤回消息失败
 }];
 ```
 
-### 语音消息发送
-
-语音消息由 `TIMSoundElem` 定义，其中 `data` 存储语音数据，语音数据需要提供时长信息，以秒为单位。
-
->
->- 一条消息只能有一个语音 `Elem`，添加多条语音 `Elem` 时，`AddElem` 函数返回错误1，添加不生效。
->- 语音和文件 `Elem` 不一定会按照添加时的顺序获取，建议逐个判断 `Elem` 类型展示，而且语音和文件 `Elem` 也不保证按照发送的 `Elem` 顺序排序。 
+### 接收方感知消息被撤回
+1. 调用 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 设置高级消息监听。
+2. 通过 [onRecvMessageRevoked](http://doc.qcloudtrtc.com/im/protocolV2TIMAdvancedMsgListener-p.html) 接收消息撤回通知。
 
 ```
-/**
- *  语音消息 Elem
- */
-@interface TIMSoundElem : TIMElem
-/**
- *  上传时任务 ID，可用来查询上传进度（已废弃，请在 TIMUploadProgressListener 监听上传进度）
- */
-@property(nonatomic,assign) uint32_t taskId DEPRECATED_ATTRIBUTE;
-/**
- *  上传时，语音文件的路径，接收时使用 getSound 获得数据
- */
-@property(nonatomic,strong) NSString * path;
-/**
- *  存储语音数据
- */
-@property(nonatomic,retain) NSData * data;
-/**
- *  语音消息内部 ID
- */
-@property(nonatomic,strong) NSString * uuid;
-/**
- *  语音数据大小
- */
-@property(nonatomic,assign) int dataSize;
-/**
- *  语音长度（秒），发送消息时设置
- */
-@property(nonatomic,assign) int second;
-
-/**
- *  获取语音的 URL 下载地址
- *
- *  @param urlCallBack 获取 URL 地址回调
- */
--(void)getUrl:(void (^)(NSString * url))urlCallBack;
-
-/**
- *  获取语音数据到指定路径的文件中
- *
- *  getSound 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
- *
- *  @param path 语音保存路径
- *  @param succ 成功回调
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getSound:(NSString*)path succ:(TIMSucc)succ fail:(TIMFail)fail;
-
-/**
- *  获取语音数据到指定路径的文件中（有进度回调）
- *
- *  getSound 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
- *
- *  @param path 语音保存路径
- *  @param progress 语音下载进度
- *  @param succ 成功回调
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getSound:(NSString*)path progress:(TIMProgress)progress succ:(TIMSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**参数说明：**
-
-|参数|说明|
-|---|---|
-|path|上传语音的文件路径|
-|uuid|上传成功以后会生成唯一的标识，用户可以根据此标识保存文件，IM SDK 内部不会保存资源数据|
-|dataSize|语音数据大小|
-|second|语音长度|
-
-**示例：**
-
-```
-TIMSoundElem * sound_elem = [[TIMSoundElem alloc] init];
-[sound_elem setPath:@"./xxx.mp3"];
-[sound_elem setSecond:10];
-TIMMessage * msg = [[TIMMessage alloc] init];
-[msg addElem:sound_elem];
-[conversation sendMessage:msg succ:^(){
-	NSLog(@"SendMsg Succ");
-}fail:^(int code, NSString * err) {
-	NSLog(@"SendMsg Failed:%d->%@", code, err);
-}];
-```
-
-### 地理位置消息发送
-
-地理位置消息由 `TIMLocationElem` 定义，其中 `desc` 存储位置的描述信息，`longitude`、`latitude`分别表示位置的经度和纬度。
-
-```
-@interface TIMLocationElem : TIMElem
-/**
- *  地理位置描述信息，发送消息时设置
- */
-@property(nonatomic,retain) NSString * desc;
-/**
- *  纬度，发送消息时设置
- */
-@property(nonatomic,assign) double latitude;
-/**
- *  经度，发送消息时设置
- */
-@property(nonatomic,assign) double longitude;
-@end
-```
-
-**示例：**
-
-```
-NSString *desc= @"腾讯大厦";
-TIMLocationElem * location_elem = [[TIMLocationElem alloc] init];
-[location_elem setDesc:desc];
-[location_elem setLatitude:113.93];
-[location_elem setLongitude:22.54];
-TIMMessage * msg = [[TIMMessage alloc] init];
-[msg addElem:location_elem];
-[conversation sendMessage:msg succ:^(){
-	NSLog(@"SendMsg Succ");
-}fail:^(int code, NSString * err) {
-	NSLog(@"SendMsg Failed:%d->%@", code, err);
-}];
-```
-
-### 小文件消息发送
-
-文件消息由 `TIMFileElem` 定义，另外还可以提供额外的显示文件名信息。
-
-> 语音和文件 `Elem` 不一定会按照添加时的顺序获取，建议逐个判断 `Elem` 类型展示。
-
-```
-/**
- *  文件消息 Elem
- */
-@interface TIMFileElem : TIMElem
-/**
- *  上传时任务 ID，可用来查询上传进度（已废弃，请在 TIMUploadProgressListener 监听上传进度）
- */
-@property(nonatomic,assign) uint32_t taskId DEPRECATED_ATTRIBUTE;
-/**
- *  上传时，文件的路径（设置 path 时，优先上传文件）
- */
-@property(nonatomic,strong) NSString * path;
-/**
- *  文件内部 ID
- */
-@property(nonatomic,strong) NSString * uuid;
-/**
- *  文件大小
- */
-@property(nonatomic,assign) int fileSize;
-/**
- *  文件显示名，发消息时设置
- */
-@property(nonatomic,strong) NSString * filename;
-
-/**
- *  获取文件的 URL 下载地址
- *
- *  @param urlCallBack 获取 URL 地址回调 
- */
--(void)getUrl:(void (^)(NSString * url))urlCallBack;
-
-/**
- *  获取文件数据到指定路径的文件中
- *
- *  getFile 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
- *
- *  @param path 文件保存路径
- *  @param succ 成功回调，返回数据
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getFile:(NSString*)path succ:(TIMSucc)succ fail:(TIMFail)fail;
-
-/**
- *  获取文件数据到指定路径的文件中（有进度回调）
- *
- *  getFile 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
- *
- *  @param path 文件保存路径
- *  @param progress 文件下载进度
- *  @param succ 成功回调，返回数据
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getFile:(NSString*)path progress:(TIMProgress)progress succ:(TIMSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**参数说明：**
-
-参数|说明
----|---
-path | 文件路径
-data | 要发送的文件二进制数据。如设置 path，可不用设置 data，二者只需要设置一个字段即可，推荐使用 path
-filename | 文件名，IM SDK 不校验是否正确，只透传
-
-**示例：**
-
-```
-TIMFileElem * file_elem = [[TIMFileElem alloc] init];
-[file_elem setPath:./xxx/a.txt];
-[file_elem setFilename:@"a.txt"];
-TIMMessage * msg = [[TIMMessage alloc] init];
-[msg addElem:file_elem];
-[conversation sendMessage:msg succ:^(){
-	NSLog(@"SendMsg Succ");
-}fail:^(int code, NSString * err) {
-	NSLog(@"SendMsg Failed:%d->%@", code, err);
-}];
-```
-
-### 自定义消息发送
-
-自定义消息是指当内置的消息类型无法满足特殊需求，开发者可以自定义消息格式，内容全部由开发者定义，IM SDK 只负责透传。另外如果需要 iOS APNs 推送，还需要提供一段推送文本描述，方便展示。自定义消息由 `TIMCustomElem` 定义，其中 `data`存储消息的二进制数据，其数据格式由开发者定义。一条消息内可以有多个自定义 `Elem`，并且可以跟其他 `Elem` 混合排列，离线 `Push` 时叠加每个 `Elem` 的 `desc` 描述信息进行下发。
-
-```
-/**
- *  自定义消息类型
- */
-@interface TIMCustomElem : TIMElem
-/**
- *  自定义消息二进制数据
- */
-@property(nonatomic,strong) NSData * data;
-/**
- *  自定义消息描述信息，做离线Push时文本展示（已废弃，请使用 TIMMessage 中 offlinePushInfo 进行配置）
- */
-@property(nonatomic,strong) NSString * desc DEPRECATED_ATTRIBUTE;
-/**
- *  离线Push时扩展字段信息（已废弃，请使用 TIMMessage 中 offlinePushInfo 进行配置）
- */
-@property(nonatomic,strong) NSString * ext DEPRECATED_ATTRIBUTE;
-/**
- *  离线Push时声音字段信息（已废弃，请使用 TIMMessage 中 offlinePushInfo 进行配置）
- */
-@property(nonatomic,strong) NSString * sound DEPRECATED_ATTRIBUTE;
-@end
-```
-
-**参数说明：**
-
-参数|说明
----|---
-data | 自定义消息二进制数据
-
-以下示例中拼接一段 XML 消息，具体展示由开发者决定。**示例：**
-
-```
-// XML 协议的自定义消息
-NSString * xml = @"testTitlethis is custom msgtest msg body";
-// 转换为 NSData
-NSData *data = [xml dataUsingEncoding:NSUTF8StringEncoding];
-TIMCustomElem * custom_elem = [[TIMCustomElem alloc] init];
-[custom_elem setData:data];
-TIMMessage * msg = [[TIMMessage alloc] init];
-[msg addElem:custom_elem];
-[conversation sendMessage:msg succ:^(){
-	NSLog(@"SendMsg Succ");
-}fail:^(int code, NSString * err) {
-	NSLog(@"SendMsg Failed:%d->%@", code, err);
-}];
-```
-
-### 短视频消息发送
-
-短视频消息由 `TIMVideoElem` 定义。它是 `TIMElem` 的一个子类，也就是说视频截图和视频内容也是消息的一种内容。发送短视频的过程，就是将 `TIMVideoElem` 加入到 `TIMMessage` 中，然后随消息一起发送出去。
-
-**`TIMVideoElem` 原型：**
-
-```
-/**
- *  微视频消息
- */
-@interface TIMVideoElem : TIMElem
-/**
- *  上传时任务Id，可用来查询上传进度（已废弃，请在 TIMUploadProgressListener 监听上传进度）
- */
-@property(nonatomic,assign) uint32_t taskId DEPRECATED_ATTRIBUTE;
-
-/**
- *  视频文件路径，发送消息时设置
- */
-@property(nonatomic,strong) NSString * videoPath;
-
-/**
- *  视频信息，发送消息时设置
- */
-@property(nonatomic,strong) TIMVideo * video;
-
-/**
- *  截图文件路径，发送消息时设置
- */
-@property(nonatomic,strong) NSString * snapshotPath;
-
-/**
- *  视频截图，发送消息时设置
- */
-@property(nonatomic,strong) TIMSnapshot * snapshot;
-@end
-```
-
-**参数说明：**
-
-参数 | 说明
----|---
-taskId | 上传时任务 ID，可用来查询上传进度（已废弃，请在 TIMUploadProgressListener 监听上传进度）
-videoPath | 发送短视频时，本地视频文件的路径
-video | 视频信息，发送消息时设置 type、duration 参数
-snapshotPath | 发送短视频时，本地截图文件的路径
-snapshot | 截图信息，发送消息时设置 type、width、height 参数
-
-以下示例中发送了一个短视频消息。**示例：**
-
-```
-/**
-*  获取聊天会话, 以同用户 iOS-001 的单聊为例
-*/
-TIMConversation * c2c_conversation = [[TIMManager sharedInstance] getConversation:TIM_C2C receiver:@"iOS-001"];
-/**
-*  构造一条消息
-*/
-TIMMessage * msg = [[TIMMessage alloc] init];
-/**
-*  构短视频内容
-*/
-TIMVideoElem * videoElem = [[TIMVideoElem alloc] init];
-videoElem.videoPath = @"/xxx/videoPath.mp4";
-videoElem.video = [[TIMVideo alloc] init];
-videoElem.video.type = @"mp4";
-videoElem.video.duration = 10;
-videoElem.snapshotPath = @"/xxx/snapshotPath.jpg";
-videoElem.snapshot = [[TIMSnapshot alloc] init];
-videoElem.snapshot.type = @"jpg";
-videoElem.snapshot.width = 100;
-videoElem.snapshot.height = 200;
-/**
-*  将短视频内容添加到消息容器中
-*/
-[msg addElem:videoElem];
-/**
-*  发送消息
-*/
-[conversation sendMessage:msg succ:^(){  //成功
-       NSLog(@"SendMsg Succ");
-}fail:^(int code, NSString * err) {  //失败
-       NSLog(@"SendMsg Failed:%d->%@", code, err);
-}];
-```
-
-### Elem 顺序
-
-目前文件和语音 Elem 不一定会按照添加顺序传输，其他 Elem 按照顺序，不过建议不要过于依赖 Elem 顺序进行处理，应该逐个按照 Elem 类型处理，防止异常情况下进程 Crash。
-
-### 在线消息
-
-对于某些场景，需要发送在线消息，即用户在线时收到消息，如果用户不在线，下次登录也不会看到消息，可用于通知类消息，这种消息不会进行存储，也不会计入未读计数。发送接口与 `sendMessage` 类似。
-
->
->- 2.5.3版本以前只针对单聊消息有效。
->- 2.5.3版本以后对群组消息有效（暂不支持 AVChatRoom 和 BChatRoom 类型）
-
-```
-@interface TIMConversation : NSObject
-/**
- *  发送在线消息（服务器不保存消息）
- *
- *  @param msg  消息体
- *  @param succ 成功回调
- *  @param fail 失败回调
- *
- *  @return 0 成功
- */
--(int) sendOnlineMessage: (TIMMessage*)msg succ:(TIMSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-### 消息转发
-
-在2.4.0及以上版本，在 `TIMMessage` 中提供了 `copyFrom` 接口，可以方便地拷贝其他消息的内容到当前消息，然后将消息重新发送给其他人。
-
-**原型：**
-
-```
-/**
- *  消息
- */
-@interface TIMMessage : NSObject
-/**
- *  拷贝消息中的属性（ELem、priority、online、offlinePushInfo）
- *
- *  @param srcMsg 源消息
- *
- *  @return 0 成功
- */
-- (int)copyFrom:(TIMMessage*)srcMsg;
-@end
-```
-
-## 接收消息
-
-用户需要感知新消息的通知时，只需注册新消息通知回调 `TIMMessageListener`，如果用户是登录状态，IM SDK 收到新消息会通过回调中的  `onNewMessage` 抛出。回调消息内容通过参数 `TIMMessage` 传递，通过 `TIMMessage` 可以获取消息和相关会话的详细信息（例如消息文本，语音数据，图片等等），详情请参见 [消息解析](#.E6.B6.88.E6.81.AF.E8.A7.A3.E6.9E.90)。
-
->通过 `onNewMessage` 抛出的消息不一定是未读的消息，只是本地曾经没有过的消息（例如在另外一个终端已读，拉取最近联系人消息时可以获取会话最后一条消息，如果本地没有，会通过此方法抛出）。在用户登录之后，IM SDK 会拉取离线消息，为了不漏掉消息通知，需要在登录之前注册新消息通知。
-群系统消息、关系链变化、好友资料变更也会通过该回调 `onNewMessage` 抛出。
-
-
-**原型：**
-
-```
-@protocol TIMMessageListener
-@optional
-/**
- *  新消息通知
- *
- *  @param msgs 新消息列表，TIMMessage 类型数组
- */
-- (void)onNewMessage:(NSArray*) msgs;
-@end
-
-@interface TIMManager : NSObject
-- (int)addMessageListener:(id<TIMMessageListener>)listener;
-@end
-```
-
-**参数说明：**
-
-参数 | 说明
----|---
-msgs | 新消息列表，注意这里可能同时会有多条消息抛出，相同会话的消息由老到新排序
-
-以下示例中设置消息回调通知，并且在有新消息时直接打印消息。**示例：**
-
-```
-@interface TIMMessageListenerImpl : NSObject
-- (void)onNewMessage:(NSArray*) msgs;
-@end
-@implementation TIMMessageListenerImpl
-- (void)onNewMessage:(NSArray*) msgs {
-    NSLog(@"NewMessages: %@", msgs);
-}
-@end
-TIMMessageListenerImpl * impl = [[TIMMessageListenerImpl alloc] init];
-[[TIMManager sharedInstance] addMessageListener:impl];
-```
-
-### 消息解析
-
-收到消息后，可通过 `getElem` 从 `TIMMessage` 中获取所有的 `Elem` 节点。
-
-**遍历 `Elem` 原型：**
-
-```
-@interface TIMMessage : NSObject
--(int) elemCount;
--(TIMElem*) getElem:(int)index;
-@end
-```
-
-**示例：**
-
-```
-TIMMessage * message = /* 消息 */
-int cnt = [message elemCount];
-for (int i = 0; i < cnt; i++) {
- TIMElem * elem = [message getElem:i];
- if ([elem isKindOfClass:[TIMTextElem class]]) {
-     TIMTextElem * text_elem = (TIMTextElem * )elem;
- }
- else if ([elem isKindOfClass:[TIMImageElem class]]) {
-     TIMImageElem * image_elem = (TIMImageElem * )elem;
- }
-}
-```
-
-### 接收图片消息
-
-接收方收到消息后，可通过 `getElem` 从 `TIMMessage` 中获取所有的 `Elem` 节点，其中类型为 `TIMImageElem` 的是图片消息节点。然后通过 `imageList` 获取该图片的所有规格用来展示。
-
-** `TIMImageElem` 类原型：**
-
-```
-**
- *  图片消息 Elem
- */
-@interface TIMImageElem : TIMElem
-/**
- *  要发送的图片路径
- */
-@property(nonatomic,retain) NSString * path;
-/**
- *  保存本图片的所有规格，目前最多包含三种规格: 缩略图、大图、原图， 每种规格保存在一个 TIMImage 对象中
- */
-@property(nonatomic,retain) NSArray * imageList;
-@end
-```
-
-**参数说明：**
-
-参数|说明
----|---
-path | 收消息时不用关注，为 nil
-imageList | 保存本图片的所有规格，目前最多包含三种规格：缩略图、大图、原图， 每种规格保存在一个 TIMImage 对象中
-
-**`TIMImage` 说明：**
-
-获取到消息时通过 `imageList` 得到所有的图片规格，为 `TIMImage` 数据，得到 `TIMImage` 后可通过图片大小进行占位，通过接口 `getImage` 下载不同规格的图片进行展示。**下载的数据需要由开发者缓存，IM SDK 每次调用 `getImage` 都会从服务端重新下载数据。建议通过图片的 `uuid` 作为 `key` 进行图片文件的存储。**
-
-**原型：**
-
-```
-@interface TIMImage : NSObject
-/**
- *  图片 ID，内部标识，可用于外部缓存 key
- */
-@property(nonatomic,strong) NSString * uuid;
-/**
- *  图片类型
- */
-@property(nonatomic,assign) TIM_IMAGE_TYPE type;
-/**
- *  图片大小
- */
-@property(nonatomic,assign) int size;
-/**
- *  图片宽度
- */
-@property(nonatomic,assign) int width;
-/**
- *  图片高度
- */
-@property(nonatomic,assign) int height;
-/**
- *  下载 URL
- */
-@property(nonatomic, strong) NSString * url;
-
-/**
- *  获取图片
- *
- *  下载的数据需要由开发者缓存，IM SDK 每次调用 getImage 都会从服务端重新下载数据。建议通过图片的 uuid 作为 key 进行图片文件的存储。
- *
- *  @param path 图片保存路径
- *  @param succ 成功回调，返回图片数据
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getImage:(NSString*)path succ:(TIMSucc)succ fail:(TIMFail)fail;
-
-/**
- *  获取图片（有进度回调）
- *
- *  下载的数据需要由开发者缓存，IM SDK 每次调用 getImage 都会从服务端重新下载数据。建议通过图片的 uuid 作为 key 进行图片文件的存储。
- *
- *  @param path 图片保存路径
- *  @param progress 图片下载进度
- *  @param succ 成功回调，返回图片数据
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getImage:(NSString*)path progress:(TIMProgress)progress succ:(TIMSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**图片规格说明：**每幅图片有三种规格，分别是 Original（原图）、Large（大图）、Thumb（缩略图）。
-
-- **原图：**指用户发送的原始图片，尺寸和大小都保持不变。
-- **大图：**是将原图等比压缩，压缩后宽、高中较小的一个等于720像素。
-- **缩略图：**是将原图等比压缩，压缩后宽、高中较小的一个等于198像素。
-
->
->- 如果原图尺寸就小于198像素，则三种规格都保持原始尺寸，不需压缩。
->- 如果原图尺寸在198 - 720之间，则大图和原图一样，不需压缩。
->- 在手机上展示图片时，建议优先展示缩略图，用户单击缩略图时再下载大图，单击大图时再下载原图。当然开发者也可以选择跳过大图，单击缩略图时直接下载原图。
->- 在 Pad 或 PC 上展示图片时，由于分辨率较大，且基本都是 Wi-Fi 或有线网络，建议直接显示大图，用户单击大图时再下载原图。
-
-以下示例从会话中取出 10 条消息，获取图片消息并下载相应数据。**示例：**
-
-```
-//以收到新消息回调为例，介绍下图片消息的解析过程
-//接收到的图片保存的路径
-NSString * pic_path = @"/xxx/imgPath.jpg";
-[conversation getMessage:10 last:nil succ:^(NSArray * msgList) {  //获取消息成功
-	//遍历所有的消息
-	for (TIMMessage * msg in msgList) {
-		//遍历一条消息的所有元素
-		for (int i = 0; i < msg.elemCount; ++i) {
-           TIMElem *elem = [msg getElem:i];
-           //图片元素
-			if ([elem isKindOfClass:[TIMImageElem class]]) {
-				TIMImageElem * image_elem = (TIMImageElem * )elem;
-
-				//遍历所有图片规格(缩略图、大图、原图)
-				NSArray * imgList = [image_elem imageList];
-				for (TIMImage * image in imgList) {
-					[image getImage:pic_path succ:^(){  //接收成功
-						NSLog(@"SUCC: pic store to %@", pic_path);
-					}fail:^(int code, NSString * err) {  //接收失败
-						NSLog(@"ERR: code=%d, err=%@", code, err);
-					}];
-				}
-			}
-		}
-	}
-} fail:^(int code, NSString * err) {  //获取消息失败
-	NSLog(@"Get Message Failed:%d->%@", code, err);
-}];
-```
-
-### 接收语音消息
-
-收到消息后，可用过 `getElem` 从 `TIMMessage` 中获取所有的 `Elem` 节点，其中 `TIMSoundElem` 为语音消息节点。其中`path`为创建消息时填写的语音信息，接收消息时为空。获取到消息时可通过时长占位，通过接口 `getSound` 下载语音资源，`getSound` 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 `uuid` 作为 `key` 进行外部存储，IM SDK 并不会存储资源文件。
-
-**原型：**
-
-```
-@interface TIMSoundElem : TIMElem
-/**
- *  上传时任务 ID，可用来查询上传进度（已废弃，请在 TIMUploadProgressListener 监听上传进度）
- */
-@property(nonatomic,assign) uint32_t taskId DEPRECATED_ATTRIBUTE;
-/**
- *  发送时设置为语音数据，接收时使用 getSound 获得数据
- */
-@property(nonatomic,strong) NSString * path;
-/**
- *  语音消息内部 ID
- */
-@property(nonatomic,strong) NSString * uuid;
-/**
- *  语音数据大小
- */
-@property(nonatomic,assign) int dataSize;
-/**
- *  语音长度（秒），发送消息时设置
- */
-@property(nonatomic,assign) int second;
-
-/**
- *  获取语音的 URL 下载地址
- *
- *  @param urlCallBack 获取 URL 地址回调
- */
--(void)getUrl:(void (^)(NSString * url))urlCallBack;
-
-/**
- *  获取语音数据到指定路径的文件中 
- *
- *  getSound 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
- *
- *  @param path 语音保存路径
- *  @param succ 成功回调，返回语音数据
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getSound:(NSString*)path succ:(TIMSucc)succ fail:(TIMFail)fail;
-
-/**
- *  获取语音数据到指定路径的文件中（有进度回调）
- *
- *  getSound 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
- * 
- *  @param path 语音保存路径
- *  @param progress 语音下载进度
- *  @param succ 成功回调
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getSound:(NSString*)path progress:(TIMProgress)progress succ:(TIMSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**其他参数说明：**
-
-参数|说明
----|---
-path | 发送时设置为语音数据，接收时使用 getSound 获得数据
-uuid | 唯一标识，方便用户缓存
-dataSize | 语音文件大小
-second | 语音时长，以秒为单位
-
-**语音消息已读状态：**语音是否已经播放，可使用 [消息自定义字段](https://intl.cloud.tencent.com/document/product/1047/34321) 实现，如 `customInt` 的值0表示未播放，1表示播放，当用户单击播放后可设置 `customInt` 的值为1。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  设置自定义整数，默认为0
- *
- *  @param param 设置参数
- *
- *  @return TRUE 设置成功
- */
-- (BOOL) setCustomInt:(int32_t) param;
-
-/**
- *  获取 CustomInt
- *
- *  @return CustomInt
- */
-- (int32_t)customInt;
-
-@end
-```
-
-### 接收小文件消息
-
-收到消息后，可用过 `getElem` 从 `TIMMessage` 中获取所有的 `Elem` 节点，其中 `TIMFileElem` 为文件消息节点。其中 `path` 为创建消息时填写的文件路径，GET 消息时为空。获取到消息时可只展示文件大小和显示名，通过接口 `getFile` 下载文件资源。`getFile` 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 `uuid` 作为 `key` 进行外部存储，IM SDK 并不会存储资源文件。
-
-**原型：**
-
-```
-@interface TIMFileElem : TIMElem
-/**
-*  上传时任务Id，可用来查询上传进度（已废弃，请在 TIMUploadProgressListener 监听上传进度）
-*/
-@property(nonatomic,assign) uint32_t taskId DEPRECATED_ATTRIBUTE;
-/**
-*  上传时，文件的路径（设置 path 时，优先上传文件）
-*/
-@property(nonatomic,strong) NSString * path;
-/**
-*  文件内部ID
-*/
-@property(nonatomic,strong) NSString * uuid;
-/**
-*  文件大小
-*/
-@property(nonatomic,assign) int fileSize;
-/**
-*  文件显示名，发消息时设置
-*/
-@property(nonatomic,strong) NSString * filename;
-
-/**
-*  获取文件的 URL 下载地址
-*
-*  @param urlCallBack 获取 URL 地址回调
-*/
--(void)getUrl:(void (^)(NSString * url))urlCallBack;
-
-/**
-*  获取文件数据到指定路径的文件中
-*
-*  getFile 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
-*
-*  @param path 文件保存路径
-*  @param succ 成功回调，返回数据
-*  @param fail 失败回调，返回错误码和错误描述
-*/
-- (void)getFile:(NSString*)path succ:(TIMSucc)succ fail:(TIMFail)fail;
-
-/**
-*  获取文件数据到指定路径的文件中（有进度回调）
-*
-*  getFile 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
-*
-*  @param path 文件保存路径
-*  @param progress 文件下载进度
-*  @param succ 成功回调，返回数据
-*  @param fail 失败回调，返回错误码和错误描述
-*/
-- (void)getFile:(NSString*)path progress:(TIMProgress)progress succ:(TIMSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**参数说明：**
-
-参数|说明
----|---
-path | 上传时，文件的路径
-uuid | 唯一 ID，方便用户进行缓存
-fileSize | 文件大小
-filename |文件显示名
-
-### 接收短视频消息
-收到消息后，可通过 getElem 从 TIMMessage 中获取所有的 Elem 节点，其中 TIMVideoElem 为文件消息节点，通过 TIMVideo 和 TIMSnapshot 对象获取视频和截图内容。接收到 TIMVideoElem 后，通过 video 属性和 snapshot 属性中定义的接口下载视频文件和截图文件。如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
-原型：
-
-```
-@interface TIMVideo : NSObject
-/**
- *  视频消息内部 ID，不用设置
- */
-@property(nonatomic,strong) NSString * uuid;
-/**
- *  视频文件类型，发送消息时设置
- */
-@property(nonatomic,strong) NSString * type;
-/**
- *  视频大小，不用设置
- */
-@property(nonatomic,assign) int size;
-/**
- *  视频时长，发送消息时设置
- */
-@property(nonatomic,assign) int duration;
-
-/**
- *  获取视频的 URL 下载地址
- *
- *  @param urlCallBack 获取 URL 地址回调
- */
--(void)getUrl:(void (^)(NSString * url))urlCallBack;
-
-/**
- *  获取视频
- *
- *  getVideo 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
- *
- *  @param path 视频保存路径
- *  @param succ 成功回调
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getVideo:(NSString*)path succ:(TIMSucc)succ fail:(TIMFail)fail;
-
-/**
- *  获取视频（有进度回调）
- *
- *  getVideo 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
- *
- *  @param path 视频保存路径
- *  @param progress 视频下载进度
- *  @param succ 成功回调
- *  @param fail 失败回调，返回错误码和错误描述
- */
-- (void)getVideo:(NSString*)path progress:(TIMProgress)progress succ:(TIMSucc)succ fail:(TIMFail)fail;
-
-@end
-
-@interface TIMSnapshot : NSObject
-/**
-*  图片ID，不用设置
-*/
-@property(nonatomic,strong) NSString * uuid;
-/**
-*  截图文件类型，发送消息时设置
-*/
-@property(nonatomic,strong) NSString * type;
-/**
-*  图片大小，不用设置
-*/
-@property(nonatomic,assign) int size;
-/**
-*  图片宽度，发送消息时设置
-*/
-@property(nonatomic,assign) int width;
-/**
-*  图片高度，发送消息时设置
-*/
-@property(nonatomic,assign) int height;
-
-/**
-*  获取截图的 URL 下载地址
-*
-*  @param urlCallBack 获取 URL 地址回调
-*/
--(void)getUrl:(void (^)(NSString * url))urlCallBack;
-
-/**
-*  获取图片
-*
-*  getImage 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
-*
-*  @param path 图片保存路径
-*  @param succ 成功回调，返回图片数据
-*  @param fail 失败回调，返回错误码和错误描述
-*/
-- (void)getImage:(NSString*)path succ:(TIMSucc)succ fail:(TIMFail)fail;
-
-/**
-*  获取图片（有进度回调）
-*
-*  getImage 接口每次都会从服务端下载，如需缓存或者存储，开发者可根据 uuid 作为 key 进行外部存储，IM SDK 并不会存储资源文件。
-*
-*  @param path 图片保存路径
-*  @param progress 图片下载进度
-*  @param succ 成功回调，返回图片数据
-*  @param fail 失败回调，返回错误码和错误描述
-*/
-- (void)getImage:(NSString*)path progress:(TIMProgress)progress succ:(TIMSucc)succ fail:(TIMFail)fail;
-@end
-
-//以收到新消息回调为例，介绍下短视频消息的解析过程
-//接收到的视频和截图保存的路径
-NSString * video_path = @"/xxx/video.mp4";
-NSString * snapshot_path = @"/xxx/snapshot.jpg";
-[conversation getMessage:10 last:nil succ:^(NSArray * msgList) {  //获取消息成功
-   //遍历所有的消息
-   for (TIMMessage * msg in msgList) {
-     //遍历一条消息的所有元素
-     for (int i = 0; i < msg.elemCount; ++i) {
-         TIMElem *elem = [msg getElem:i];
-         if ([elem isKindOfClass:[TIMVideoElem class]]) {
-              TIMVideoElem * video_elem = (TIMVideoElem * )elem;
-              [video_elem.video getVideo:video_path succ:^()｛
-                  NSLog(@"下载视频文件成功");
-              ｝ fail:^(int code, NSString * err) {
-                  NSLog(@"下载视频文件失败:%@ %d", err, code);
-              }];
-              [video_elem.snapshot getImage:snapshot_path succ:^() {
-                  NSLog(@"下载截图成功");
-              } fail:^(int code, NSString * err) {
-                  NSLog(@"下载截图失败:%@ %d", err, code);
-              }];
+- (void)onRecvMessageRevoked:(NSString *)msgID {
+      // msgList 为当前聊天界面的消息列表
+      for(V2TIMMessage *msg in msgList){
+         if ([msg.msgID isEqualToString:msgID]) {
+             //msg 即为被撤回的消息，您需要修改 UI 上相应的消息气泡的状态
          }
      }
-} fail:^(int code, NSString * err) {  //获取消息失败
-    NSLog(@"Get Message Failed:%d->%@", code, err);
-}];
-
+ }
 ```
 
-## 消息属性 
+## 给消息增加已读回执
+在 C2C 单聊场景下，当接收方通过 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#acb3a67bd2fa131b50c611a48fa78f34d) 接口将来自某人的消息标记为已读时，消息的发送方将会收到“已读回执”，表示“xxx 已经读过我的消息了”。
 
-### 消息是否已读
+>目前仅 C2C 单聊消息支持已读回执，群聊场景暂不支持。虽然群聊消息也有对应的 [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a7fc79e30877b8d77fbdfa24e057376dc) 接口，但群消息的发送者目前无法收到已读回执。
 
-通过消息属性 `isReaded` 是否消息已读。这里已读与否取决于 App 侧进行的 [已读上报](https://intl.cloud.tencent.com/document/product/1047/34325)。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  是否已读
- *
- *  @return TRUE 已读  FALSE 未读
- */
--(BOOL) isReaded;
-@end
-```
-
-### 消息状态
-
-通过消息属性 `status` 可以获取消息的当前状态(如，发送中、发送成功、发送失败和删除)，对于删除的消息，需要 UI 判断状态并隐藏。
+### 接收方标记消息已读
 
 ```
-/**
- *  消息状态
- */
- typedef NS_ENUM(NSInteger, TIMMessageStatus){
- /**
-  *  消息发送中
-  */
- TIM_MSG_STATUS_SENDING              = 1,
- /**
-  *  消息发送成功
-  */
- TIM_MSG_STATUS_SEND_SUCC            = 2,
- /**
-  *  消息发送失败
-  */
- TIM_MSG_STATUS_SEND_FAIL            = 3,
- /**
-  *  消息被删除
-  */
- TIM_MSG_STATUS_HAS_DELETED          = 4,
- /**
-  *  导入到本地的消息 
-  */
- TIM_MSG_STATUS_LOCAL_STORED         = 5,
- /**
-  *  被撤销的消息
-  */
- TIM_MSG_STATUS_LOCAL_REVOKED        = 6,
- };
-
-@interface TIMMessage : NSObject
-/**
- *  消息状态
- *
- *  @return TIMMessageStatus 消息状态
- */
--(TIMMessageStatus) status;
-@end
-```
-
-### 是否是自己发出的消息
-
-通过消息属性 `isSelf` 可以判断消息是否是自己发出的消息，界面显示时可用。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  是否发送方
- *
- *  @return TRUE 表示是发送消息    FALSE 表示是接收消息
- */
--(BOOL) isSelf;
-@end
-```
-
-### 消息发送者以及相关资料
-
-对于群消息，可以通过 `TIMMessage` 的方法 `sender` 得到发送用户，另外也可以通过方法 `GetSenderProfile` 和 `GetSenderGroupMemberProfile` 获取用户自己的资料和所在群的资料。1.9版本之前，只有在线消息 `onNewMessage` 抛出的消息可以获取到用户资料，1.9版本以后，通过 `getMessage` 得到的消息也可以拿到资料（更新版本之前已经收到本地的消息无法获取到）。对于单聊消息，通过通过 `TIMMessage` 的 `getConversation` 获取到对应会话，会话的 `getReceiver` 可以得到正在聊天的用户。
-
->此字段是消息发送时获取用户资料写入消息体，如后续用户资料更新，此字段不会相应变更，只有产生的新消息中才会带最新的昵称。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  获取发送方
- *
- *  @return 发送方标识
- */
--(NSString *) sender;
-/**
- *  获取发送者资料
- *
- *  如果本地有发送者资料，会在 profileCallBack 回调里面立即同步返回发送者资料，如果本地没有发送者资料，SDK 内部会先向服务器拉取发送者资料，并在 profileCallBack 回调里面异步返回发送者资料。
- *
- *  @param  profileCallBack 发送者资料回调
- *
- */
-- (void)getSenderProfile:(ProfileCallBack)profileCallBack;
-/**
- *  获取发送者群内资料（发送者为本人时可能为空）
- *
- *  @return 发送者群内资料，nil 表示没有获取资料或者不是群消息，目前仅能获取字段：member ，其他的字段获取建议通过 TIMGroupManager+Ext.h -> getGroupMembers 获取 
- */
--(TIMGroupMemberInfo *) GetSenderGroupMemberProfile;
-@end
-```
-
-### 消息时间
-
-通过消息属性 `timestamp` 可以得到消息时间，该时间是 Server 时间，而非本地时间。在创建消息时，此时间为根据 Server 时间校准过的时间，发送成功后会改为准确的 Server 时间。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  当前消息的时间戳
- *
- *  @return 时间戳
- */
--(NSDate*) timestamp;
-@end
-```
-
-### 消息删除
-
-目前暂不支持 Server 消息删除，只能在本地删除，通过这种方法删除的消息，仅是本地打上删除的标记，并未真正删除，在程序没有卸载的情况下通过`getMessage`也不会返回已经被标记为删除的消息。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  删除消息：注意这里仅修改状态
- *
- *  @return TRUE 成功
- */
--(BOOL) remove;
-@end
-```
-
-### 消息 ID
-
-消息 ID 分为两种，一种是当消息生成时，就已经固定（`msgId`），这种方式可能跟其他用户产生的消息冲突，需要再加一个时间维度，可以认为10分钟以内的消息可以使用 `msgId` 区分。另外一种，当消息发送成功以后才能固定下来（`uniqueId`），这种方式能保证全局唯一。这两种方式都需要在同一个会话内判断。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  消息 ID
- */
--(NSString *) msgId;
-/**
- *  获取消息uniqueId
- *
- *  @return uniqueId
- */
-- (uint64_t) uniqueId;
-@end
-```
-
-### 消息自定义字段
-
-开发者可以对消息增加自定义字段，如自定义整数、自定义二进制数据，可以根据这两个字段做出各种不通效果，例如语音消息是否已经播放等等。另外需要注意，此自定义字段仅存储于本地，不会同步到 Server，更换终端获取不到。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  设置自定义整数，默认为 0
- *
- *  @param param 设置参数
- *
- *  @return TRUE 设置成功
- */
-- (BOOL) setCustomInt:(int32_t) param;
-/**
- *  设置自定义数据，默认为""
- *
- *  @param data 设置参数
- *
- *  @return TRUE 设置成功
- */
-- (BOOL) setCustomData:(NSData*) data;
-/**
- *  获取CustomInt
- *
- *  @return CustomInt
- */
-- (int32_t) customInt;
-/**
- *  获取CustomData
- *
- *  @return CustomData
- */
-- (NSData*) customData;
-@end
-```
-
-### 消息优先级
-
-对于直播场景，会有点赞和发红包功能，点赞相对优先级较低，红包消息优先级较高，具体消息内容可以使用 `TIMCustomElem` 进行定义，发送消息时，可设置消息优先级。
-
->只针对群聊消息有效。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  设置消息的优先级
- *
- *  @param priority 优先级
- *
- *  @return TRUE 设置成功
- */
-- (BOOL) setPriority:(TIMMessagePriority)priority;
-/**
- *  获取消息的优先级
- *
- *  @return 优先级
- */
-- (TIMMessagePriority) getPriority;
-@end
-```
-
-### 已读回执
-
-对于单聊消息，用户开启已读回执功能后，对方调用 `setReadMessage` 时会同步已读信息到本客户端。
-
-**开启已读回执功能：**
-
-```
-@interface TIMUserConfig : NSObject
-/**
- *  启用已读回执，启用后在已读上报时会给对方发送回执，只对单聊回话有效
- */
--(void) enableReadReceipt;
-/**
- *  消息已读回执监听器
- */
-@property(nonatomic,weak) id<TIMMessageReceiptListener> messageReceiptListener;
-@end
-```
-
-**原型：**
-
-```
-@interface TIMMessage : NSObject
-
-/**
- *  对方是否已读（仅 C2C 消息有效）
- *
- *  @return TRUE 已读  FALSE 未读
- */
--(BOOL) isPeerReaded;
-@end
-```
-
-## 会话操作
-
-### 获取所有会话
-
-```
-@interface TIMManager : NSObject
-
-/**
- *  获取会话（TIMConversation*）列表
- *
- *  @return 会话列表
- */
--(NSArray*) getConversationList;
-@end
-```
-
->SDK 会在内部不断更新会话列表，每次更新后都会通过 `TIMRefreshListener.onRefresh` 回调，请**在 `onRefresh` 之后再调用 `getConversationList`** 更新会话列表。
-
-**示例：**
-
-```
-NSArray * conversations = [[TIMManager sharedInstance] getConversationList];
-NSLog(@"current session list : %@", [conversations description])
-```
-
-### 获取会话本地消息
-
-IM SDK 会在本地进行消息存储，可通过 `TIMConversation` 方法的 `getLocalMessage` 获取，此方法为异步方法，需要通过设置回调得到消息数据，对于单聊，登录后可以获取离线消息，对于群聊，开启最近联系人漫游的情况下，登录后只能获取最近一条消息，可通过 `getMessage` 获取漫游消息。对于图片、语音等资源类消息，消息体只会包含描述信息，需要通过额外的接口下载数据，可参阅 [消息解析](#.E6.B6.88.E6.81.AF.E8.A7.A3.E6.9E.90)，下载后的真实数据不会缓存，需要调用方进行缓存。
-
-**原型：**
-
-```
-@interface TIMConversation : NSObject
-/**
- *  获取本地会话消息
- *
- *  @param count 获取数量
- *  @param last  上次最后一条消息
- *  @param succ  成功时回调
- *  @param fail  失败时回调
- *
- *  @return 0 本次操作成功
- */
--(int) getLocalMessage: (int)count last:(TIMMessage*)last succ:(TIMGetMsgSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**参数说明：**
-
-参数|说明
----|---
-count | 指定获取消息的数量
-last | 指定上次获取的最后一条消息，如果 last 传 nil，从最新的消息开始读取
-succ | 成功回调
-fail | 失败回调
-
-**示例：**
-
-```
-[conversation getLocalMessage:10 last:nil succ:^(NSArray * msgList) {
-	for (TIMMessage * msg in msgList) {
-		if ([msg isKindOfClass:[TIMMessage class]]) {
-			NSLog(@"GetOneMessage:%@", msg);
-		}
-	}
-}fail:^(int code, NSString * err) {
-	NSLog(@"Get Message Failed:%d->%@", code, err);
+//将来自 haven 的消息均标记为已读
+[[V2TIMManager sharedInstance] markC2CMessageAsRead:@"haven" succ:^{
+} fail:^(int code, NSString *msg) {
 }];
 ```
 
-### 获取会话漫游消息
-
-对于群组，登录后可以获取漫游消息，对于 C2C，开通漫游服务后可以获取漫游消息，通过 IM SDK 的 `getMessage` 接口可以获取漫游消息，如果本地消息全部都是连续的，则不会通过网络获取，如果本地消息不连续，会通过网络获取断层消息。对于图片、语音等资源类消息，消息体只会包含描述信息，需要通过额外的接口下载数据，可参与消息解析部分，下载后的真实数据不会缓存，需要调用方进行缓存。
-
-**原型：**
+### 发送方感知消息已读
+消息已读回执的事件通知位于高级消息监听器  [V2TIMAdvancedMsgListener](http://doc.qcloudtrtc.com/im/protocolV2TIMAdvancedMsgListener-p.html) 中，如需支持感知消息已读，需要先通过 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 设置监听器，然后通过 [onRecvC2CReadReceipt](http://doc.qcloudtrtc.com/im/protocolV2TIMAdvancedMsgListener-p.html) 回调即可感知接收方的已读确认。
 
 ```
-@interface TIMConversation : NSObject
-/**
- *  获取会话消息
- *
- *  @param count 获取数量
- *  @param last  上次最后一条消息
- *  @param succ  成功时回调
- *  @param fail  失败时回调
- *
- *  @return 0 本次操作成功
- */
--(int) getMessage: (int)count last:(TIMMessage*)last succ:(TIMGetMsgSucc)succ fail:(TIMFail)fail;
+- (void)onRecvC2CReadReceipt:(NSArray<V2TIMMessageReceipt *> *)receiptList {
+      // 接收方可能一次性会收到多个已读回执，因此这里采用数组的回调形式
+      for (V2TIMMessageReceipt *receipt in receiptList) {
+          // 消息接收者 receiver
+          NSString * receiver = receipt.userID;
+          // 已读回执时间，聊天窗口中时间戳小于或等于 timestamp 的消息都可以被认为已读
+          time_t timestamp = receipt.timestamp;
+      }
+}
 @end
 ```
 
-**参数说明：**
+## 查看历史消息
+您可以调用 [getC2CHistoryMessageList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#abca63ad64f69aa4f424cf11849a9b89e) 获取单聊历史消息，调用 [getGroupHistoryMessageList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a9e242ba327377fe74b83e8d5572d39a0) 获取群聊历史消息。如果当前设备网络连接正常，SDK 会默认从服务器拉取历史消息；如果没有网络连接，SDK 会直接从本地数据库中读取历史消息。
 
-参数|说明
----|---
-count | 指定获取消息的数量
-last | 指定上次获取的最后一条消息，如果 last 传 nil，从最新的消息开始读取
-succ | 成功回调
-fail | 失败回调
-
-**示例：**
+### 分页拉取历史消息
+SDK 支持分页拉取历史消息，一次分页拉取的消息数量不宜太大，否则会影响拉取速度， 建议一次最多拉取20条。
+本文以分页拉取名为 `groupA` 的群的历史消息，每次分页拉取 20 条为例，示例代码如下：
 
 ```
-[conversation getMessage:10 last:nil succ:^(NSArray * msgList) {
-	for (TIMMessage * msg in msgList) {
-		if ([msg isKindOfClass:[TIMMessage class]]) {
-			NSLog(@"GetOneMessage:%@", msg);
-		}
-	}
-}fail:^(int code, NSString * err) {
-	NSLog(@"Get Message Failed:%d->%@", code, err);
+// 第一次拉取 lastMsg 传 nil，表示从最新的消息开始拉取 20 条消息
+[[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20 
+lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
+    // 分页拉取返回的消息默认是按照从新到旧排列
+    if (msgs.count > 0) {
+        // 获取下一次分页拉取的起始消息
+        V2TIMMessage *lastMsg = msgs.lastObject;
+	    // 拉取剩下的20条消息
+        [[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20 
+				lastMsg:lastMsg succ:^(NSArray<V2TIMMessage *> *msgs) {
+            // 拉取消息结束
+        } fail:^(int code, NSString *msg) {
+            // 拉取消息失败
+        }];
+    }
+} fail:^(int code, NSString *msg) {
+    // 拉取消息失败
 }];
 ```
 
-### 删除会话
+现实场景中的分页拉取，通常由用户的滑动操作触发的，用户每下拉一次消息列表就触发一次分页拉取。但原理上跟上述示例代码类似，都是以 `lastMsg` 作为分页的标记，以 `count` 控制每次拉取的消息条数。
 
-删除会话有两种方式，一种只删除会话，但保留了所有消息，另一种在删除会话的同时，也删除掉会话相关的消息。可以根据不同应用场景选择合适的方式。另外需要注意的是，如果删除本地消息，对于群组，通过 `getMessage` 会拉取到漫游消息，所以存在删除消息成功，但是拉取到消息的情况，取决于是否重新从漫游拉回到本地。如果不需要拉取漫游，可以通过 `getLocalMessage` 获取消息，或者只通过 `getMessage` 拉取指定条数（如未读条数数量）的消息。其中 `deleteConversation` 仅删除会话，`deleteConversationAndMessages` 删除会话以及消息。
+### 历史消息的注意事项
+- 历史消息存储时长如下：<ul style="margin:0;"><li>体验版：免费存储7天，不支持延长</li><li>专业版：免费存储7天，支持延长</li><li>旗舰版：免费存储30天，支持延长</li></ul>延长历史消息存储时长是增值服务，您可以登录 <a href="https://console.cloud.tencent.com/im">即时通信 IM 控制台</a> 修改相关配置，具体计费说明请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">增值服务资费</a>。
+- 只有会议群（Meeting）（对应老版本的 ChatRoom 群）才支持拉取到用户**入群之前**的历史消息。
+- 直播群（AVChatRoom）中的消息均不支持本地存储和多终端漫游，因此对直播群调用 [getGroupHistoryMessageList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a9e242ba327377fe74b83e8d5572d39a0) 接口是无效的。
 
-**原型：**
+## 删除消息
+对于已经接收到的消息，可以调用 [deleteMessageFromLocalStorage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a2bb42528f4d166ac826914094655841c) 接口进行本地删除。
 
-```
-@protocol TIMManager : NSObject
-/**
- *  删除会话
- *
- *  @param type 会话类型，TIM_C2C 表示单聊 TIM_GROUP 表示群聊
- *  @param receiver    用户identifier 或者 群组 ID
- *
- *  @return TRUE:删除成功  FALSE:删除失败
- */
--(BOOL) deleteConversation:(TIMConversationType)type receiver:(NSString*)receiver;
-/**
- *  删除会话和消息
- *
- *  @param type 会话类型，TIM_C2C 表示单聊 TIM_GROUP 表示群聊
- *  @param receiver    用户 identifier 或者 群组 ID
- *
- *  @return TRUE：删除成功  FALSE：删除失败
- */
--(BOOL) deleteConversationAndMessages:(TIMConversationType)type receiver:(NSString*)receiver;
-@end
-```
-
-**参数说明：**
-
-参数|说明
----|---
-type|会话类型，如果是单聊，填写 TIM_C2C，如果是群聊，填写 TIM_GROUP
-receiver|会话标识，单聊情况下，receiver 为对方用户 identifier，群聊情况下，receiver 为群组 ID
-
-示例中删除好友『iOS_002』的 C2C 会话。**示例：**
+### 删除本地消息
 
 ```
-[[TIMManager sharedInstance] deleteConversation:TIM_C2C receiver:@"iOS_002"];
+[[V2TIMManager sharedInstance] deleteMessageFromLocalStorage:msg succ:^{
+      // 消息删除成功
+} fail:^(int code, NSString *msg) {
+     // 消息删除失败
+}];
 ```
 
-### 同步获取会话最后的消息
+> App 卸载重装后已经删除的消息为什么又回来了？
+> 由于 IM 目前只支持删除本地消息，所以当 App 卸载重装后，云端消息依然存在，重新拉取历史消息依然会返回这些被删除的本地历史消息。
 
-UI 展示最近联系人列表时，时常会展示用户的最后一条消息，在1.9以后版本增加了同步获取接口 `getLastMsg`，用户可以通过此接口方便获取最后一条消息进行展示。**目前没有网络无法获取**。此接口获取并不会过滤删除状态消息，需要 App 层进行屏蔽。获取最近的多条消息，可以通过 `getMessage` 来获取。
-
-**原型：**
-
-```
-@interface TIMConversation : NSObject
-/**
- *  从  Cache 中获取最后一条消息
- *  @return 最后一条消息（TIMMessage*）
- */
-- (TIMMessage*)getLastMsg;
-
-/**
- *  获取会话漫游消息
- *  @param count 获取数量
- *  @param last  上次最后一条消息，如果 last 为 nil，从最新的消息开始读取
- *  @param succ  成功时回调
- *  @param fail  失败时回调
- *  @return 0：本次操作成功；1：本次操作失败
- */
-- (int)getMessage:(int)count last:(TIMMessage*)last succ:(TIMGetMsgSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**参数说明：**
-
-参数|说明
----|---
-count | 需要获取的消息数，注意这里最多为 20 
+### 删除云端消息
+目前暂不支持删除云端消息，删除消息会导致云端建立反向映射关系，影响系统整体性能。
 
 
-### 设置会话草稿
+## 设置消息权限
+### 只允许好友间收发消息
+SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友之间发送单聊消息，您可以在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) >【功能配置】>【登录与消息】>【好友关系检查】中开启"发送单聊消息检查关系链"。开启后，用户只能给好友发送消息，当用户给非好友发消息时，SDK 会报20009错误码。
 
-UI 展示最近联系人列表时，时常会展示用户的草稿内容，在2.2以后版本增加了设置和获取草稿的接口，用户可以通过此接口设置会话的草稿信息。**草稿信息会存本地数据库，重新登录后依然可以获取**。
+### 屏蔽某人的消息
+如果您想屏蔽某人的消息，请调用 [addToBlackList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Friendship_08.html#a67d998da5085b5004bb6aa8d4322022c) 接口把该用户加入黑名单，即拉黑该用户。
+当消息发送者被拉黑后，发送者默认不会感知到“被拉黑”的状态，即发送消息后仍展示发送成功（实际上此时接收方不会收到消息）。如果需要被拉黑的发送者收到消息发送失败的提示，请在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) >【功能配置】>【登录与消息】>【黑名单检查】中关闭"发送消息后展示发送成功"，关闭后，被拉黑的发送者在发送消息时，SDK 会报20007错误码。
 
-**原型：**
+### 屏蔽某个群组的消息
+如果您想屏蔽某个群组的消息，请调用 [setReceiveMessageOpt](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a4974b44d56778b1d5a3df613bee09c87) 接口，设置群消息接收选项为 `V2TIM_GROUP_NOT_RECEIVE_MESSAGE` 状态。
 
-```
-@interface TIMMessageDraft : NSObject
-/**
- *  设置自定义数据
- *
- *  @param userData 自定义数据
- *
- *  @return 0 成功
- */
--(int) setUserData:(NSData*)userData;
-/**
- *  获取自定义数据
- *
- *  @return 自定义数据
- */
--(NSData*) getUserData;
-/**
- *  增加 Elem
- *
- *  @param elem elem 结构
- *
- *  @return 0       表示成功
- *          1       禁止添加 Elem（文件或语音多于两个 Elem）
- *          2       未知 Elem
- */
--(int) addElem:(TIMElem*)elem;
-/**
- *  获取对应索引的 Elem
- *
- *  @param index 对应索引
- *
- *  @return 返回对应 Elem
- */
--(TIMElem*) getElem:(int)index;
-/**
- *  获取 Elem 数量
- *
- *  @return elem 数量
- */
--(int) elemCount;
-/**
- *  草稿生成对应的消息
- *
- *  @return 消息
- */
--(TIMMessage*) transformToMessage;
-/**
- *  当前消息的时间戳
- *
- *  @return 时间戳
- */
--(NSDate*) timestamp;
-@end
+## 敏感词过滤
+SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如果发送者在发送的文本消息中包含敏感词，SDK 会报 80001 错误码。
+![](https://main.qcloudimg.com/raw/63625c5252348205993ec5f33b087dec.png)
 
-@interface TIMConversation : NSObject
-/**
- *  设置会话草稿
- *
- *  @param draft 草稿内容
- *
- *  @return 0 成功
- */
--(int) setDraft:(TIMMessageDraft*)draft;
-/**
- *  获取会话草稿
- *
- *  @return 草稿内容，没有草稿返回nil
- */
--(TIMMessageDraft*) getDraft;
-@end
-```
+## 常见问题
+### 1. 为什么会收到重复的消息？
+- 请检查 [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a428fe7bf82be1592141d77dfa756ec68) 与 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 是否混用。如果混用，当收到文本消息或自定义消息时，两个监听都会回调，会导致收到重复消息。
+- 请检查同一个监听对象是否重复 `add`，如果监听对象不再使用，请主动调用对应的 [removeSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a8f6f9900006bf7ad5bd9bdb8ba0914eb) 或 [removeAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a77ec89edbdf500431cbda5ee7aa50920) 接口移除多余的监听器。
 
-**参数说明：**
+### 2. App 卸载重装后已经删除的消息为什么又回来了？
+由于 IM 目前只支持删除本地消息，所以当 App 卸载重装后，云端消息依然存在，重新拉取历史消息依然会返回这些被删除的本地历史消息。
 
-参数|说明
----|---
-draft | 需要设置的草稿 ，需要清空会话草稿时传入 nil
+### 3. App 卸载重装后已读回执为什么失效了？
+在单聊场景下，接收方如果调用 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#acb3a67bd2fa131b50c611a48fa78f34d) 设置消息已读，发送方收到的已读回执里面包含了对方已读的时间戳 `timestamp`，SDK 内部会根据 `timestamp` 判断消息对方是否已读， `timestamp` 目前只在本地保存，程序卸载重装后会丢失。
 
-### 删除本地会话消息
-
-IM SDK 支持保留会话同时删除本地的会话消息。**再次拉取消息时群组类型会话会从服务器重新拉取到消息**。
-
-**原型：**
+### 4. 有多个 Elem 的消息应该如何解析？
+出于降低消息复杂度的考虑，SDK API 2.0 接口不再支持创建包含多个 Elem 的 Message 对象。如果您收到了来自老版本的包含多个 Elem 的 Message 对象，可以按照以下步骤解析：
+1. 正常解析出第一个 `Elem` 对象。
+2. 通过第一个 `Elem` 对象的 [nextElem](http://doc.qcloudtrtc.com/im/interfaceV2TIMElem.html) 方法获取下一个 `Elem` 对象。如果下一个 `Elem` 对象存在，会返回 `Elem` 对象实例，如果不存在，会返回 `nil`。
 
 ```
-@interface TIMConversation : NSObject
-/**
- *  删除本地会话消息
- *
- *  @param succ  成功时回调
- *  @param fail  失败时回调
- *
- *  @return 0 本次操作成功
- */
--(int) deleteLocalMessage:(TIMSucc)succ fail:(TIMFail)fail;
-@end
+- (void)onRecvNewMessage:(V2TIMMessage *)msg {
+    // 查看第一个 Elem
+    if (msg.elemType == V2TIM_ELEM_TYPE_TEXT) {
+        V2TIMTextElem *textElem = msg.textElem;
+        NSString *text = textElem.text;
+        NSLog(@"文本信息 : %@", text);
+        // 查看 textElem 后面还有没更多 Elem
+        V2TIMElem *elem = textElem.nextElem;
+        while (elem != nil) {
+            // 判断 elem 类型
+            if ([elem isKindOfClass:[V2TIMCustomElem class]]) {
+                V2TIMCustomElem *customElem = (V2TIMCustomElem *)elem;
+                NSData *customData = customElem.data;
+                NSLog(@"自定义信息 : %@",customData);
+            }
+            // 继续查看当前 elem 后面还有没更多 elem
+            elem = elem.nextElem;
+        }
+        // elem 如果为 nil，表示所有 elem 都已经解析完
+    }
+}
 ```
 
-**参数说明：**
-
-参数|说明
----|---
-succ | 成功回调
-fail | 失败回调
-
-### 获取本地指定 ID 的消息
-
-IM SDK 2.5.3 版本提供获取本地指定 ID 消息的接口。
-
-**原型：**
-
-```
-/**
- *  消息
- */
-@interface TIMMessage : NSObject
-/**
- *  获取消息定位符
- *
- *  @return locator
- */
-- (TIMMessageLocator*) locator;
-@end
-@interface TIMConversation : NSObject
-/**
- *  获取会话消息
- *
- *  @param locators 消息定位符（TIMMessageLocator）数组
- *  @param succ  成功时回调
- *  @param fail  失败时回调
- *
- *  @return 0 本次操作成功
- */
--(int) findMessages:(NSArray*)locators succ:(TIMGetMsgSucc)succ fail:(TIMFail)fail;
-@end
-```
-
-**参数说明：**
-
-参数|说明
----|---
-locators | 消息定位符 TIMMessageLocator 列表
-succ | 成功回调，返回消息列表
-fail | 失败回调
-
-### 撤回消息
-
-IM SDK 在 3.1.0 版本开始提供撤回消息的接口。可以通过调用 `TIMConversation` 的 `revokeMessage` 接口来撤回自己发送的消息。
-
->
-> - 仅 C2C 和 GROUP 会话有效、onlineMessage 无效、AVChatRoom 和 BChatRoom 无效。
-> - 默认只能撤回 2 分钟内的消息。
-
-**原型：**
-
-```
-/**
- * 消息撤回（仅 C2C 和 GROUP 会话有效，其中 onlineMessage、AVChatRoom 和 BChatRoom 无效）
- *  @param msg   被撤回的消息
- *  @param succ  成功时回调
- *  @param fail  失败时回调
- *
- *  @return 0：本次操作成功；1：本次操作失败
- */
-- (int)revokeMessage:(TIMMessage*)msg succ:(TIMSucc)succ fail:(TIMFail)fail;
-```
-
-成功撤回消息后，群组内其他用户和 C2C 会话对端用户会收到一条消息撤回通知，并通过消息撤回通知监听器 `TIMMessageRevokeListener` 通知到上层应用。消息撤回通知监听器可以在登录前，通过 `TIMUserConfig` 的 `messageRevokeListener` 来进行配置。具体可以参考 [用户配置](https://intl.cloud.tencent.com/document/product/1047/34313)。
-
-**原型：**
-
-```
-@protocol TIMMessageRevokeListener <NSObject>
-@optional
-/**
- *  消息撤回通知
- *
- *  @param locator 被撤回消息的标识
- */
-- (void)onRevokeMessage:(TIMMessageLocator*)locator;
-
-@end
-
-```
-
-收到一条消息撤回通知后，通过 `TIMMessage` 中的 `respondsToLocator` 方法判断当前消息是否是被对方撤回了，然后根据需要对 UI 进行刷新。
-
-**原型：**
-
-```
-/**
- *  是否为 locator 对应的消息
- *
- *  @param locator 消息定位符
- *
- *  @return YES：是对应的消息；NO：不是对应的消息
- */
-- (BOOL)respondsToLocator:(TIMMessageLocator*)locator;
-
-```
-
-## 系统消息
-
-会话类型（TIMConversationType）除了 C2C 单聊和 Group 群聊以外，还有一种系统消息，系统消息不能由用户主动发送，是系统后台在相应的事件发生时产生的通知消息。系统消息目前分为两种，一种是关系链系统消息，一种是群系统消息。
-
-- **关系链变更系统消息：**当有用户加自己为好友，或者有用户删除自己好友的情况下，系统会发出变更通知，开发者可更新好友列表。相关细节可参阅 [关系链变更系统通知](https://intl.cloud.tencent.com/document/product/1047/34332#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5) 部分。
-
-- **群事件消息：**当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。详细内容可参阅：[群组管理-群事件消息](https://intl.cloud.tencent.com/document/product/1047/34329)。
-
-- **群系统消息：**当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息，相关细节可参阅 [群组管理-群系统消息](https://intl.cloud.tencent.com/document/product/1047/34329)。
+<span id ="msgAnalyze"></span>
+### 5. 各种不同类型的消息应该如何解析？
+解析消息相对复杂，我们提供了各种类型消息解析的 [示例代码](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKitDemo/TUIKitDemo/SampleCode/message.m)，您可以直接把相关代码拷贝到您的工程，然后根据实际需求进行二次开发。

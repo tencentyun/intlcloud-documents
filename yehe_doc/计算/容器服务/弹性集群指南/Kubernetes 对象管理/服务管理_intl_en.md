@@ -1,32 +1,32 @@
 ## Introduction
-This document describes how a workload provides an open API through Service and Ingress.
+This document describes how to use Service and Ingress as entry points to expose workloads to external sources.
 
 
 ## Prerequisites
-- An elastic cluster has been created and is in the Running state. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/34048).
+- You have created an elastic cluster that is in the Running state. For more information, see [Creating a cluster](https://intl.cloud.tencent.com/document/product/457/34048).
 - The cluster has an appropriate namespace that is in the Active state.
 
 ## Service Types
 ### Service
-A Service defines a policy for gaining access to backend pods and provides a static virtual IP address for access. You can gain access to backend pods in load balancing mode through Service.
+Service defines policies for accessing backend Pods and provides a fixed virtual IP address for access. It also provides load balancing for all requests to Pods.
 
-A Service supports the following access modes:
-- Internet-based access: you can use the Loadbalance mode of Service to enable access to backend pods through a public IP address. In this mode, a public CLB is automatically created.
-- Intra-cluster access: you can use the ClusterIP mode of Service to enable access to backend pods from within a cluster. Elastic clusters only support Headless ClusterIP Services.
-- VPC-based access: you can use the Loadbalance mode of Service to enable access to backend pods from a VPC through a private IP address by specifying `annotations:service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-xxxxxxxx`. In this mode, a private CLB is automatically created.
+Service can be of the following types:
+- Public network access: the public network access Service uses operates in Loadbalance and automatically creates a public network CLB instance. Public IP addresses can access backend Pods.
+- Intra-cluster access: the intra-cluster access Service operates in ClusterIP mode and is used for access within the cluster.
+- VPC private network access: the VPC private network access Service operates in Loadbalance and automatically creates a private network CLB instance. By using `annotations:service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-xxxxxxxx`, you can use a private IP address from the VPC private network to access the backend Pod.
 
 
 ### Ingress
-An Ingress is a collection of rules that enables access to Services within a cluster. You can configure different forwarding rules to allow access from different URLs to different Services within a cluster.
+Ingress is a collection of rules that allow access to Services of a cluster. You can configure different forwarding rules to allow different URLs to access different Services.
 
-To ensure the proper running of Ingress resources, you must run an Ingress controller in a cluster. TKE enables the CLB-based `l7-lb-controller` in a cluster by default and supports HTTP, HTTPS, and NGINX Ingress controllers. You can select different types of Ingress controllers based on your business needs.
+In order for Ingress resources to operate properly, you must run `Ingress-controller`. TKE enables the CLB-based `l7-lb-controller` by default and supports HTTP, HTTPS, and nginx-ingress controllers. You can select Ingress controllers according to your needs.
 
 
 ## Directions
-For the specific procedure, see [Service Management](https://intl.cloud.tencent.com/document/product/457/30672) and [Ingress Management](https://intl.cloud.tencent.com/document/product/457/30673).
+For more information and instructions, see [Service Management](https://intl.cloud.tencent.com/document/product/457/30672) and [Ingress Management](https://intl.cloud.tencent.com/document/product/457/30673).
 
-## Notes
-- In an elastic cluster, only Headless ClusterIP Services can be created for intra-cluster access.
-- In an elastic cluster, a CLB created through a Service is directly bound to the ENIs of all the pods within the endpoint.
-- In an elastic cluster, Services does not support classic CLBs. For details, please refer to [CLB documentation](https://intl.cloud.tencent.com/document/product/214/8847).
-- To create a Service by using an existing CLB, you must ensure that the CLB is not bound to any listener.
+## Considerations
+- Creating ClusterIP Service in an elastic cluster uses IP addresses from the Service CIDR. Make sure there are enough IP addresses in the subnet.
+In an elastic cluster, a CLB instance created by the Service binds all ENIs of all Pods within the endpoint.
+- In an elastic cluster, Services only supports [CLB](https://intl.cloud.tencent.com/document/product/214/8847) instances.
+- To create a Service using an existing CLB, you must ensure that the CLB is not bound to any listener.

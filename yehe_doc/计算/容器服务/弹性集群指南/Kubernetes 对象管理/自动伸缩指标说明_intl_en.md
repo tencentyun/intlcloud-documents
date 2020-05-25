@@ -1,44 +1,44 @@
-Horizontal Pod Autoscaler (HPA) can automatically scale the number of Pods for services according to the average CPU utilization of target Pods and other metrics. You can set auto-scaling triggering metrics in the console. Such metrics include CPU, memory, disk, network, and GPU metrics. You can also use these metrics when creating and editing HPAs with YAML files. This document provides an example of configuring a YAML file.
+Horizontal Pod Autoscaler (HPA) uses various metrics, such as target instance CPU usage, to adjust the number of Pods to automatically scale in or out. You can use the console to configure these metrics, including CPU, memory, disk, network, and GPU metrics. You can also use YAML files to create or modify HPAs. This article also contains a sample YAML file.
 
-## Autoscaling Metrics
-The following tables provide details about some autoscaling metrics:
->Each variable in the `metricName` column has its own unit listed in the Unit column. You can omit such units when compiling the YAML file.
+## Metrics
+The following table is a list of metrics used the HPA:
+> Each variable in the `metricName` column has a Default unit. You can omit such units when editing the YAML file.
 
 ### CPU metrics
 
 <table>
 <tr>
-	<th width="17.8%">Metric Name in the Console</th><th width="14.1%">Unit in the Console</th><th width="17.1%">Description</th>
-	<th width="6.6%">type</th><th width="33%">metricName</th><th width="11.4%">Default Unit</th>
+	<th width="17.8%">Metric name (Console)</th><th width="14.1%">Unit (Console)</th><th width="17.1%">Description</th>
+	<th width="6.6%">Type</th><th width="33%">metricName</th><th width="11.4%">Default unit</th>
 	</tr>
 	<tr>
-	<td>CPU Usage</td>
-	<td>Core</td>
-	<td>Number of CPU cores used by the pod</td>
+	<td>CPU utilization</td>
+	<td>Cores</td>
+	<td>CPU utilization of the Pod</td>
 	<td>Pods</td>
 	<td>k8s_pod_cpu_core_used</td>
-	<td>Core</td>
+	<td> Cores </td>
 	</tr>
 	<tr>
-	<td>CPU Usage <br>(% of Pod)</td>
+	<td>CPU utilization <br>(% of total resources)</td>
 	<td>%</td>
-	<td>Percentage of the CPU cores allocated to the pod that is used by the pod</td>
+	<td>The percentage of the CPU utilization out of all cores allocated to the Pod.</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_cpu_core_used_resource</td>
 	<td>%</td>
 	</tr>
 	<tr>
-	<td>CPU Utilization <br>(% of Request)</td>
+	<td>CPU utilization<br>(% of request)</td>
 	<td>%</td>
-	<td>Percentage of the total number of CPU cores specified by Request that is used by the pod</td>
+	<td>The percentage of CPU utilization to the request value</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_cpu_core_used_request</td>
 	<td>%</td>
 	</tr>
 	<tr>
-	<td>CPU Utilization <br>(% of Limit)</td>
+	<td>CPU utilization<br>(% of limit)</td>
 	<td>%</td>
-	<td>Percentage of the total number of CPU cores specified by Limit that is used by the pod</td>
+	<td>The percentage of CPU utilization to the limit value</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_cpu_core_used_limit</td>
 	<td>%</td>
@@ -49,37 +49,37 @@ The following tables provide details about some autoscaling metrics:
 
 <table>
 <tr>
-	<th width="17.8%">Metric Name in the Console</th><th width="14.1%">Unit in the Console</th><th width="17.1%">Description</th>
-	<th width="6.6%">type</th><th width="33%">metricName</th><th width="11.4%">Default Unit</th>
+	<th width="17.8%">Metric name (Console)</th><th width="14.1%">Unit (Console)</th><th width="17.1%">Description</th>
+	<th width="6.6%">Type</th><th width="33%">metricName</th><th width="11.4%">Default unit</th>
 	</tr>
 	<tr>
-	<td>MEM Usage</td>
+	<td>Memory usage</td>
 	<td>Mib</td>
-	<td>Amount of memory used by the pod</td>
+	<td>Pod memory usage</td>
 	<td>Pods</td>
 	<td>k8s_pod_mem_usage_bytes</td>
 	<td>B</td>
 	</tr>
 	<tr>
-	<td>MEM Utilization <br>(% of Pod Specification)</td>
+	<td>Memory utilization <br>(% of allocated resources)</td>
 	<td>%</td>
-	<td>Percentage of the memory capacity allocated to the pod that is used by the pod</td>
+	<td>The percentage of used memory out of all memory allocated to the Pod.</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_mem_usage_bytes_resource</td>
 	<td>%</td>
 	</tr>
 	<tr>
-	<td>MEM Utilization <br>(% of Request)</td>
+	<td>Memory utilization<br>(% of request)</td>
 	<td>%</td>
-	<td>Percentage of the total amount of memory specified by Request that is used by the pod</td>
+	<td>The percentage of memory usage to the request value</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_mem_usage_request</td>
 	<td>%</td>
 	</tr>
 	<tr>
-	<td>MEM Utilization <br>(% of Limit)</td>
+	<td>Memory utilization<br>(% of limit)</td>
 	<td>%</td>
-	<td>Percentage of the total amount of memory specified by Limit that is used by the pod</td>
+	<td>The percentage of memory usage to the limit value</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_mem_usage_limit</td>
 	<td>%</td>
@@ -92,36 +92,26 @@ The following tables provide details about some autoscaling metrics:
 
 
 
-## Creating and Editing an HPA by Using a YAML File 
-You can create and edit an HPA by using a YAML file. The following example shows a configuration file that defines an HPA named "test". The HPA enables the system to trigger HPA for 1 or 2 pods when the CPU usage reaches 1.
+## Using YAML files to Create and Modify HPAs 
+You can use YAML files to create and edit HPAs. The following is a sample YAML file. It creates an HPA called example which is triggered when CPU utilization reaches 1 and the number of Pods ranges from 1 to 2.  
 ```
-{
-    "kind":"HorizontalPodAutoscaler",
-    "apiVersion":"autoscaling/v2beta1",
-    "metadata":{
-        "name":"ccc",
-        "namespace":"kube-system",
-        "labels":{
-            "qcloud-app":"ccc"
-        }
-    },
-    "spec":{
-        "minReplicas":1,
-        "maxReplicas":2,
-        "metrics":[
-            {
-                "type":"Pods",
-                "pods":{
-                    "metricName":"k8s_pod_cpu_core_used",
-                    "targetAverageValue":"1"
-                }
-            }
-        ],
-        "scaleTargetRef":{
-            "apiVersion":"apps/v1beta2",
-            "kind":"Deployment",
-            "name":"cbs-provisioner"
-        }
-    }
-}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: example
+  namespace: default
+  labels:
+    qcloud-app: example
+spec:
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
+  - type: Pods
+    pods:
+      metricName: k8s_pod_cpu_core_used
+      targetAverageValue: "1"
+  scaleTargetRef:
+    apiVersion: apps/v1beta2
+    kind: Deployment
+    name: nginx
 ```
