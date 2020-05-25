@@ -1,145 +1,119 @@
 ## Operation Scenarios
+**Tencent Cloud SCF** uses [Tencent Serverless Framework](https://github.com/serverless/components/tree/cloud). Based on serverless services (functions, triggers, etc.) in the cloud, it can implement "zero" configuration, convenient development, and rapid deployment of your first function. It supports a rich set of configuration extensions and provides the easiest-to-use, low-cost, and elastically scalable cloud-based function development, configuration, and deployment capabilities.
 
-The SCF component is one of the basic components in the `serverless-tencent` component library. Through this component, you can create, configure, and manage SCF functions with speed and ease.
+SCF component features:
+
+- **Pay-as-you-go billing**: fees are charged based on the request usage, and you don't need to pay anything if there is no request.
+- **"Zero" configuration**: you only need to write project code and then deploy it, and the Serverless Framework will take care of all the configuration work.
+- **Fast deployment**: you can deploy your entire SCF application in just a few seconds.
+- **Real-time log**: you can view the business status through the output of the real-time log, which makes it easy for you to develop applications directly in the cloud.
+- **Cloud debugging**: SCF supports quick cloud debugging for the Node.js framework, which shields differences in the local environment.
+- **Convenient collaboration**: the status information and deployment logs in the cloud make multi-person collaborative development easier.
 
 ## Directions
+#### 1. Install
 
-Through the SCF component, you can perform a complete set of operations on a function, such as creation, configuration, deployment, and deletion. The supported commands are as follows:
-
-#### Installation
-
-Install Serverless through npm:
-```console
+Install the latest version of Serverless Framework through npm:
+```
 $ npm install -g serverless
 ```
 
-#### Creation
-```
-$ mkdir my-function
-$ cd my-function
-```
-The contents of the directory are as follows:
+#### 2. Create
 
+Create a directory and enter it:
 ```
-|- code
-  |- index.js
-|- serverless.yml
-```
- 
-For this example, you can use the following demo as `index.js`:
-```javascript
-'use strict';
-exports.main_handler = async (event, context, callback) => {
-    console.log("%j", event);
-    return "hello world"
-};
-
+$ mkdir tencent-scf && cd tencent-scf
 ```
 
-#### Configuration
-
-Create the `serverless.yml` file locally:
-
-```console
-$ touch serverless.yml
+Use the following command and template link to quickly create an SCF application:
 ```
-Configure `serverless.yml` as follows:
+$ serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/v2/example
+$ cd example
+```
+
+After download, the directory structure is as follows:
+```
+|- src
+|   └── index.py
+└──  serverless.yml
+```
+
+#### 3. Deploy
+
+Run `serverless deploy` in the directory under the `serverless.yml` file to deploy the function. After the deployment is completed, you can view the URL address provided by the corresponding gateway trigger of the function in the output on the command line. Then, you can click the address to view the deployment effect of the function.
+
+If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
+
+
+#### 4. Configure
+
+Tencent Cloud SCF component supports "zero" configuration deployment, that is, it can be deployed directly through the default values in the configuration file. Nonetheless, you can also modify more optional configuration items to further customize your project.
+
+The following is the complete configuration description for `serverless.yml` of the Tencent Cloud SCF component:
+
 ```yml
 # serverless.yml
-myFunction1:
-  component: "@serverless/tencent-scf"
-  inputs:
-    name: myFunction1
-    codeUri: ./code       # Code directory
-    handler: index.main_handler
-    runtime: Nodejs8.9
-    region: ap-guangzhou
-    description: My Serverless Function
-    memorySize: 128
-    timeout: 20
-    # Configure the files or directories that you want to ignore when creating the zip package (optional)
-    exclude:
-      - .gitignore
-      - .git/**
-      - node_modules/**
-      - .serverless
-      - .env
-    include:
-          - /Users/dfounderliu/Desktop/temp/.serverless/myFunction1.zip
-    environment:
-      variables:
-        TEST: vale
-    vpcConfig:
-      subnetId: ''
-      vpcId: ''
 
-myFunction2:
-  component: "@serverless/tencent-scf"
-  inputs:
-    name: myFunction2
-    codeUri: ./code
+component: scf # (Required) Reference the name of the component, which is the `tencent-scf` component in this example
+name: scfdemo # (Required) Name of the instance created by this component
+org: test # (Optional) Used to record organization information. Default value: your Tencent Cloud account's `appid`
+app: scfApp # (Optional) SCF application name
+stage: dev # (Optional) Used to distinguish between environments. Default value: dev
 
-```
-> You can view the list of all available attributes in `serverless.yml` in [Detailed Configuration](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md).
-
-
-#### Deployment
-
-If you haven't [logged in to](https://intl.cloud.tencent.com/login) or [signed up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, do so first.
-
-Deploy by running the `sls` command, and you can add the `--debug` parameter to view the information during the deployment process:
-
-```console
-$ sls --debug
-
-  DEBUG ─ Resolving the template's static variables.
-  DEBUG ─ Collecting components from the template.
-  DEBUG ─ Downloading any NPM components found in the template.
-  DEBUG ─ Analyzing the template's components dependencies.
-  DEBUG ─ Creating the template's components graph.
-  DEBUG ─ Syncing template state.
-  DEBUG ─ Starting Website Removal.
-  DEBUG ─ Removing Website bucket.
-  DEBUG ─ Removing files from the "my-bucket-1300415943" bucket.
-  DEBUG ─ Removing "my-bucket-1300415943" bucket from the "ap-guangzhou" region.
-  DEBUG ─ "my-bucket-1300415943" bucket was successfully removed from the "ap-guangzhou" region.
-  DEBUG ─ Finished Website Removal.
-  DEBUG ─ Executing the template's components graph.
-  DEBUG ─ Compressing function myFunction file to /Users/dfounderliu/Desktop/temp/code/.serverless/myFunction.zip.
-  DEBUG ─ Compressed function myFunction file successful
-  DEBUG ─ Uploading service package to cos[sls-cloudfunction-ap-guangzhou-code]. sls-cloudfunction-default-myFunction-1572519895.zip
-  DEBUG ─ Uploaded package successful /Users/dfounderliu/Desktop/temp/code/.serverless/myFunction.zip
-  DEBUG ─ Creating function myFunction
-  DEBUG ─ Created function myFunction successful
-
-  myFunction: 
-    Name:        myFunction
-    Runtime:     Nodejs8.9
-    Handler:     index.main_handler
-    MemorySize:  128
-    Timeout:     3
-    Region:      ap-guangzhou
-    Role:        QCS_SCFExcuteRole
-    Description: This is a template function
-    UsingCos:    true
-
-  6s › myFunction › done
-
+inputs:
+  name: scfFunctionName
+  src: ./src
+  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9, Nodejs10.15, PHP5, PHP7, Golang1, Java8.
+  region: ap-guangzhou
+  handler: index.main_handler
+  events:
+    - apigw:
+        name: serverless_api
+        parameters:
+          protocols:
+            - http
+            - https
+          serviceName:
+          description: The service of Serverless Framework
+          environment: release
+          endpoints:
+            - path: /index
+              method: GET
 ```
 
-#### Removal
+View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-scf/blob/v2/doc/serverless.yaml).
 
-```console
-$ sls remove --debug
+After you update the configuration fields according to the configuration file, run `serverless deploy` or `serverless` again to update the configuration to the cloud.
 
-  DEBUG ─ Flushing template state and removing all components.
-  DEBUG ─ Removed function myFunction successful
+#### 5. Debug
 
-  1s › myFunction › done
+After the SCF application is deployed, the project can be further developed through the debugging feature to create an application for the production environment. After modifying and updating the code locally, you don't need to run the `serverless deploy` command every time for repeated deployment. Instead, you can run the `serverless dev` command to directly detect and automatically upload changes in the local code.
+
+You can enable debugging by running the `serverless dev` command in the directory where the `serverless.yml` file is located.
+
+`serverless dev` also supports real-time outputting of cloud logs. After each deployment, you can access the project to output invocation logs in real time on the command line, which makes it easy for you to view business conditions and troubleshoot issues.
+
+Currently, in addition to real-time log output, for Node.js applications, cloud debugging is also supported. After the `serverless dev` command is started, it will automatically listen on the remote port and set the function timeout period to 900 seconds temporarily. At this point, you can find the remote debugging path by accessing `chrome://inspect/#devices` and directly debug the code with breakpoints. After the debugging mode ends, you need to deploy the function again to update the code and set the timeout period back to the original value.
+
+#### 6. Check status
+
+In the directory where the `serverless.yml` file is located, run the following command to check the deployment status:
 
 ```
+$ serverless info
+```
 
-#### Account configuration (optional)
+#### 7. Remove
+
+In the directory where the `serverless.yml` file is located, run the following command to remove the deployed SCF application. After removal, this component will delete all related resources created during deployment in the cloud.
+
+```
+$ serverless remove
+```
+
+Similar to the deployment process, you can run the `sls remove --debug` command to view real-time log information during the removal process. `sls` is an abbreviation for the `serverless` command.
+
+## Account Configuration
 
 Currently, you can scan a QR code to log in to the CLI by default. If you want to configure persistent environment variables/key information, you can also create a local `.env` file:
 
@@ -147,13 +121,12 @@ Currently, you can scan a QR code to log in to the CLI by default. If you want t
 $ touch .env # Tencent Cloud configuration information
 ```
 
-Configure Tencent Cloud `SecretId` and `SecretKey` information in the `.env` file and save it:
+Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` file and save it:
 ```
 # .env
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
 >
-> - If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
->- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management
-](https://console.cloud.tencent.com/cam/capi).
+>- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
+>- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).

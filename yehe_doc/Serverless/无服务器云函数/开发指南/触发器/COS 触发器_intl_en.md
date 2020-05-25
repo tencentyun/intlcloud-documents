@@ -17,7 +17,7 @@ Characteristics of COS triggers:
 | `cos:ObjectCreated:Post`      | The function will be triggered when a file is created through the `Post Object` API. |
 | `cos:ObjectCreated:Copy`      | The function will be triggered when a file is created through the `Put Object - Copy` API. |
 | `cos:ObjectCreated:CompleteMultipartUpload` | The function will be triggered when a file is created through the `CompleteMultipartUpload` API. |
-| `cos:ObjectCreated:Origin` | The function will be triggered when CDN origin-pull occurs. | 
+| `cos:ObjectCreated:Origin` | The function will be triggered when CDN origin-pull occurs. |
 | `cos:ObjectCreated:Replication` | The function will be triggered when an object is created through cross-region replication. |
 | `cos:ObjectRemove:*`          | All deletion events mentioned below can trigger the function. |
 | `cos:ObjectRemove:Delete`     | The function will be triggered when an object in a bucket for which versioning is not enabled is deleted through the `Delete Object` API, or an object on a specified version is deleted with `versionid`. |
@@ -50,7 +50,8 @@ When an object creation or deletion event occurs in the specified COS bucket, ev
 				"url": "http://testpic-1253970026.cos.ap-chengdu.myqcloud.com/testfile",
 				"meta": {
 					"x-cos-request-id": "NWMxOWY4MGFfMjViMjU4NjRfMTUyMV8yNzhhZjM=",
-					"Content-Type": ""
+					"Content-Type": "",
+					"x-cos-meta-mykey": "myvalue"
 				},
 				"vid": "",
 				"key": "/1253970026/testpic/testfile",
@@ -74,7 +75,7 @@ When an object creation or deletion event occurs in the specified COS bucket, ev
 					"Authorization": "q-sign-algorithm=sha1&q-ak=AKIDQm6iUh2NJ6jL41tVUis9KpY5Rgv49zyC&q-sign-time=1545205709;1545215769&q-key-time=1545205709;1545215769&q-header-list=host;x-cos-storage-class&q-url-param-list=&q-signature=098ac7dfe9cf21116f946c4b4c29001c2b449b14"
 				}
 			},
-			"eventQueue": "qcs:0:scf:cd:appid/1253970026:default.printevent.$LATEST",
+			"eventQueue": "qcs:0:lambda:cd:appid/1253970026:default.printevent.$LATEST",
 			"reservedInfo": "",
 			"reqid": 179398952
 		}
