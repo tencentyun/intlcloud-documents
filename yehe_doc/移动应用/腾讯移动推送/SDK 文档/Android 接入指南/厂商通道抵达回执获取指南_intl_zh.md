@@ -32,9 +32,13 @@
 
 1. 配置消息回执地址。请在[TPNS控制台](https://console.cloud.tencent.com/tpns)查看您的应用的服务接入点，并选择对应服务接入点的回执地址进行配置：
 ![](https://main.qcloudimg.com/raw/ccdcd39ece57703af3106fa756f98991.png)
- - 广州服务接入点：https://api.tpns.tencent.com/log/statistics/hw
- - 中国香港服务接入点：https://api.tpns.hk.tencent.com/log/statistics/hw
- - 新加坡服务接入点：https://api.tpns.sgp.tencent.com/log/statistics/hw
+
+| 服务接入点 | 回执地址 | 
+|---------|---------|
+| 广州服务接入点 |https://api.tpns.tencent.com/log/statistics/hw | 
+| 中国香港服务接入点 | https://api.tpns.hk.tencent.com/log/statistics/hw | 
+| 新加坡服务接入点 | https://api.tpns.sgp.tencent.com/log/statistics/hw | 
+
 2. 配置 HTTPS 证书，[证书下载](https://api.tpns.tencent.com/v3/tpnscert/download)。
 3. 配置用户名和密钥（非必填）进行身份验证。
 4. 单击【测试回执】，可以对回执地址进行功能测试。
@@ -55,9 +59,13 @@
 2. 在推送通知页面，点击【配置管理】>【回执管理】。
 3. 在【新建回执】中填写回执地址。请在[TPNS控制台](https://console.cloud.tencent.com/tpns)查看您的应用的服务接入点，并选择对应服务接入点的回执地址进行配置：
 ![](https://main.qcloudimg.com/raw/0757849b57bfcccf4b07accb79115f9a.png)
- - 广州服务接入点：https://api.tpns.tencent.com/log/statistics/mz
- - 中国香港服务接入点：https://api.tpns.hk.tencent.com/log/statistics/mz
- - 新加坡服务接入点：https://api.tpns.sgp.tencent.com/log/statistics/mz
+ 
+| 服务接入点 | 回执地址 | 
+|---------|---------|
+| 广州服务接入点 |https://api.tpns.tencent.com/log/statistics/mz | 
+| 中国香港服务接入点 | https://api.tpns.hk.tencent.com/log/statistics/mz | 
+| 新加坡服务接入点 | https://api.tpns.sgp.tencent.com/log/statistics/mz | 
+
 4. 填写回执地址后，点击右侧【新增】，【回执列表】中正确显示新建的回执即完成配置。
 ![](https://main.qcloudimg.com/raw/b555a9d6f0c36668ee2e34b04db0ed29.png)
 

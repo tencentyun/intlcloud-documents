@@ -26,5 +26,6 @@ You can directly call the cross-region replication method in the SDK. For more i
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#cross-region-replication)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#cross-region-replication)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539#cross-region-replication)
+- Node.js SDK
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543#cross-region-replication)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#cross-region-replication)
