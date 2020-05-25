@@ -11,9 +11,9 @@ TencentDB for MongoDB is a high-performance distributed data storage service cre
 
 ## Product Architecture
 The system architecture of TencentDB for MongoDB replica set is as follows:
-![](https://main.qcloudimg.com/raw/3c8da14ce8ae9c5b0f8fd22ee8ed26eb.png)
+![](https://main.qcloudimg.com/raw/a711f69354ab4c61295b5dbe1edb57a9.png)
 Replica set v4.0 is different from other versions in architecture. It has no proxy set component, so you can directly access each node:
-![](https://main.qcloudimg.com/raw/6596bc932409096fba195d55a8eb6532.jpg)
+![](https://main.qcloudimg.com/raw/ae87f544b36226d0081ef8e11299b7a4.png)
 A sharded cluster consists of components such as shards, proxy sets, and config servers. Each shard contains a subset of sharded data. Each shard in TencentDB for MongoDB is deployed as a replica set:
-![](https://main.qcloudimg.com/raw/8d32229843170d3e536ee6aff757a536.png)
+![](https://main.qcloudimg.com/raw/89564dc17533c57719f23ad78316e471.png)
 
