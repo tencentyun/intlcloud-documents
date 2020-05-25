@@ -8,7 +8,9 @@ Tencent CVM uses KMS to authorize a Windows server.
 1. SPP Notification Service on Windows is used to perform activation-related services, and its proper operation needs to be ensured, as shown below:
 ![](https://main.qcloudimg.com/raw/f84f7bd86fae0df1c2394cdc554b6a98.png)
 2. Some optimization software may disable modifying the execution permissions of service-related programs. For example, if the execution permissions of the sppsvc.exe process are modified, services may become abnormal.
+![](https://main.qcloudimg.com/raw/c1ad23337b0f1b6e186d0c6e50c9e1b5.png)
 Before you attempt to activate a Windows CVM, make sure that the service and other essential features of Windows are normal.
+
 
 ## Automatic Activation
 Tencent Cloud encapsulates a script for Windows server activation, which is much simpler than manual activation.
