@@ -3,18 +3,18 @@ A function invocation may fail for various reasons. Different **error types** an
 ## Error Type
 A function invocation may fail for various reasons. The errors can be divided into the following types:
 
-### **Invocation error**
+### Invocation error
 An invocation error occurs before the function is actually executed. It will occur in the following cases:
   * **Invocation request error**. For example, the data structure of the event passed in is too large, an input parameter does not meet the requirements, or the function does not exist.
   * **Invoker error**. This error generally occurs when the invoker has no sufficient permissions.
   * **Overrun error**. The number of concurrent invocations exceeds the [maximum concurrency](https://intl.cloud.tencent.com/document/product/583/11637).
 
-### **Execution error**
+### Execution error
 An execution error occurs during the actual execution of a function. It will occur in the following cases:
   * **User code execution error**. This type of errors occurs during the execution of user code; for example, the function code throws an exception, or the format of the returned result is exceptional.
   * **Runtime error**. During function execution, the runtime is responsible for pulling and executing user code. A runtime error refers to errors detected and reported by the runtime, such as function execution timeout (for the timeout period, please see [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637)) and code syntax error.
-  
-### **System error**
+
+### System error
 It refers to errors of the function platform, such as internal error.
 
 ## Retry Policy
@@ -23,6 +23,10 @@ Different **error types** and **invocation methods (sync or async invocation)** 
 ### Sync invocation
 There are three types of sync invocation: sync invocation by [TencentCloud API trigger](https://intl.cloud.tencent.com/document/product/583/18198), [API Gateway trigger](https://intl.cloud.tencent.com/document/product/583/12513), and [CKafka trigger](https://intl.cloud.tencent.com/document/product/583/17530).
 In sync invocation, the error message will be directly returned; therefore, when an error occurs in sync invocation, the platform will not automatically retry, and the retry policy (i.e., whether to retry and the number of retries) will be determined by the invoker.
+
+>A CKafka trigger will create a backend module as a consumer that can connect to a CKafka instance and consume messages. After obtaining the message, the backend module will synchronously invoke the triggered function. Since the backend module of the CKafka trigger is maintained by SCF, the retry policy for sync invocation will also be controlled by SCF:
+>- For execution errors (including user code errors and runtime errors), the CKafka trigger will retry according to the configured retry times, which is 10,000 by default.
+>- For overrun errors and system errors, the CKafka trigger will continue to retry in an exponential backoff manner until it succeeds.
 
 ### Async invocation
 There are four types of async invocation: async invocation by [TencentCloud API trigger](https://intl.cloud.tencent.com/document/product/583/18198), [COS trigger](https://intl.cloud.tencent.com/document/product/583/9707), [timer trigger](https://intl.cloud.tencent.com/document/product/583/9708), and [CMQ topic trigger](https://intl.cloud.tencent.com/document/product/583/11517).

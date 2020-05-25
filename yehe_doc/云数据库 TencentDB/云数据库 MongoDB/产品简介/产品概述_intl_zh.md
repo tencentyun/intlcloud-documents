@@ -11,9 +11,9 @@
 
 ## 产品架构
 云数据库 MongoDB 副本集的系统架构图如下：
-![](https://main.qcloudimg.com/raw/3c8da14ce8ae9c5b0f8fd22ee8ed26eb.png)
+![](https://main.qcloudimg.com/raw/a711f69354ab4c61295b5dbe1edb57a9.png)
 4.0 副本集版本与其他版本架构不同，没有 proxy set 组件，用户将直接访问到每个节点：
-![](https://main.qcloudimg.com/raw/6596bc932409096fba195d55a8eb6532.jpg)
+![](https://main.qcloudimg.com/raw/ae87f544b36226d0081ef8e11299b7a4.png)
 分片集群由分片、proxy set、config servers 等组件组成，每个分片包含了分片数据的一个子集，云数据库 MongoDB 的每个分片都作为一个副本集部署：
-![](https://main.qcloudimg.com/raw/8d32229843170d3e536ee6aff757a536.png)
+![](https://main.qcloudimg.com/raw/89564dc17533c57719f23ad78316e471.png)
 

@@ -21,7 +21,7 @@ An incomplete multipart upload is generated when you suspend or cancel an object
 
 ### Will the uploaded parts of an incomplete multipart upload take up my storage capacity and incur fees?
 
-Like objects, the uploaded parts of an incomplete multipart upload take up your storage capacity and incur storage capacity fees.
+Like objects, incomplete multipart uploads consume your storage capacity, and incur storage usage fees.
 
 ### How do I (regularly) clear incomplete multipart uploads?
 
@@ -39,7 +39,7 @@ Check your browser or CDN for cached data. You can use the curl and wget command
 
 ### What if I can't access the configured static website using a CDN domain name?
 
-Check the configuration of the CDN-accelerated domain name by following the steps below.
+Check the configuration of the CDN-acceleration domain name by following the steps below.
 
 1. Select "static website" for the origin server type.
 2. Origin-pull authentication and CDN service authorization need to be set based on the bucket permission:
@@ -49,29 +49,29 @@ Check the configuration of the CDN-accelerated domain name by following the step
 
 a. If the bucket permission is private-read:
 
-| CDN Authentication | CDN Accelerated Domain Name | COS Domain Name | Scenarios |
+| CDN Authentication | CDN Acceleration Domain Name | COS Domain Name | Scenarios |
 | ------------ | ---------------- | --------------- | ----------------------------------- |
-| Disabled (default) | Yes | COS authentication is required | Direct access to CDN domain names is allowed to protect the data on origin server. |
+| Disabled (default) | Denies access | COS authentication is required | Direct access to CDN domain names is allowed to protect the data on origin server. |
 | Enabled | URL authentication is required | COS authentication is required | Full stack strict SSL secured connection. Hotlink protection for CDN authentication is supported. |
 
 b. If the bucket permission is public-read:
 
-| CDN Authentication | CDN Accelerated Domain Name | COS Domain Name | Scenarios |
+| CDN Authentication | CDN Acceleration Domain Name | COS Domain Name | Scenarios |
 | ------------ | ---------------- | ------------ | ---------------------------------------- |
-| Disabled (default) | Yes | Yes | Public access to the entire website via CDN or origin server is allowed. |
-| Enabled | URL authentication is required | Yes | Hotlink protection is enabled for access via CDN access, but not for access via origin server (not recommended) |
+| Disabled (default) | Allows access | Allows access | Allows public access to the entire website via CDN or origin server |
+| Enabled | Requires URL authentication | Allows access | Hotlink protection is enabled for access via CDN access, but not for access via origin server (not recommended) |
 
-4. After confirming that the above configurations are correct, check the protocol used to access the CDN-accelerated domain name and the **forced HTTPS** configuration of the static website:
+4. After confirming that the above configurations are correct, check the protocol used to access the CDN-acceleration domain name and the **forced HTTPS** configuration of the static website:
 
-   - If you are using the HTTP protocol to access the CDN-accelerated domain name, **do not enable Forced HTTPS**.
-   - If you are using the HTTPS protocol to access the CDN-accelerated domain name, you are recommended to **enable Follow 301/302** in the CDN-accelerated domain name configuration. For more information, see [Follow 301/302 Configuration](https://intl.cloud.tencent.com/document/product/228/7183).
+   - If you are using the HTTP protocol to access the CDN-acceleration domain name, **do not enable Forced HTTPS**.
+   - If you are using the HTTPS protocol to access the CDN-acceleration domain name, you are recommended to **enable Follow 301/302** in the CDN-acceleration domain name configuration. For more information, see [Follow 301/302 Configuration](https://intl.cloud.tencent.com/document/product/228/7183).
 5. If the problem persists after all the above steps are completed, contact us for further troubleshooting by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=84&source=0&data_title=%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%20COS&step=1).
 
-## FAQs About CORS Settings
+## FAQs About Cross-Origin Settings
 
-### What is Cross Origin Resource Sharing (CORS), and how do I set it?
+### What is cross-origin access, and how do I enable it?
 
-CORS is to request resources over HTTP from a domain for another domain. The difference in any one of the protocol, domain name, and port will result in two different domains. For console operation steps, see [Setting Cross Origin Resource Sharing](https://intl.cloud.tencent.com/document/product/436/13318) or the Best Practice documentation [Setting Cross Origin Resource Sharing](https://intl.cloud.tencent.com/document/product/436/11488).
+Cross-origin access is to request resources over HTTP from a domain for another domain. The difference in any one of the protocol, domain name, and port will result in two different domains. For console operation steps, see [Setting Cross Origin Resource Sharing](https://intl.cloud.tencent.com/document/product/436/13318) or the Best Practice documentation [Setting Cross Origin Resource Sharing](https://intl.cloud.tencent.com/document/product/436/11488).
 
 
 ### How do I configure the file headers in the bucket to return "Access-Control-Allow-Origin:* "?
@@ -83,7 +83,7 @@ Set the origin to `*` when configuring CORS. For more information, see the Best 
 Configure the CORS rule as shown below and try using a different browser to test whether it works. For more information, see [Setting Cross Origin Resource Sharing](https://intl.cloud.tencent.com/document/product/436/11488).
 ![](https://main.qcloudimg.com/raw/e2cb8ce626ceaba0058423bb5eb72327.png)
 
-### What should I do if both COS and CDN are used but CORS does not work in COS?
+### What should I do if both COS and CDN are used but COS does not work in cross-origin access?
 
 If you are using a CDN acceleration domain name, configure CORS in the CDN console. For more information, see CDN [Custom Response Header Configuration](https://intl.cloud.tencent.com/document/product/228/35320).
 
@@ -91,7 +91,7 @@ If you are using a CDN acceleration domain name, configure CORS in the CDN conso
 
 The V5 Console (XML) supports fuzzy match of second-level domain names, and the V4 Condole (JSON) does not support second-level wildcard domain names.
 
-## FAQs About Custom Headers
+## Custom Headers
 
 ### Can object headers be customized in batches?
 
@@ -99,11 +99,11 @@ No.
 
 ## FAQs About Origin-Pull Settings
 
-### What does an origin-pull address do?
+### What does an origin server address do?
 
 An origin-pull address is used for data migration. If a resource requested by the user does not exist on COS, it is pulled from the origin-pull address in real time.
 
-### If no resource or directory from the origin-pull address exists on the COS when I configure origin-pull, will COS automatically create the directory after I access it for the first time?
+### If no resource or directory from the origin server address exists on the COS when I configure origin-pull, will COS automatically create the directory after I access it for the first time?
 
 Yes. COS will automatically pull and create the directory.
 
