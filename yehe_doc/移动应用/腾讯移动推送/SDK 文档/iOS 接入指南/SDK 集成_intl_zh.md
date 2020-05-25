@@ -99,7 +99,7 @@ return YES;
 			 ```
 
 
-#### 境外集群接入方法
+####境外服务接入指引
 1. 解压 SDK 文件包，将 SDK 目录下的 XGPushPrivate.h 文件添加到工程中。
 2. 调用头文件中的配置 `HOST` 接口：
  - 如需接入新加坡集群则将 `HOST`设置为 `https://api.tpns.sgp.tencent.com`, `PORT`设置为0。
