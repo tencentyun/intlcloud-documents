@@ -53,7 +53,7 @@ Billable items in COS and the corresponding free tier are as listed in the follo
 
 ## Issuance method
 
-The free tier will be delivered to your account in the form of a free storage pack after you activate COS. You can view when your Free tier storage pack will take effect and expire in the [Storage Package Management](https://console.cloud.tencent.com/cos5/package) page in the console.
+The free tier will be delivered to your account in the form of a free storage pack after you activate COS. 
 
 
 ## Calculation of the Validity Period
