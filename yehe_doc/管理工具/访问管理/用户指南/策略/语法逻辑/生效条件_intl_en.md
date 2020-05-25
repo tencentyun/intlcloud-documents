@@ -1,6 +1,6 @@
 ### Use Cases
     
-In many cases, you may need to add conditions to created policies for tighter control. Policies only take effect when configured conditions are met.
+In many cases, you may need to add conditions to created policies for tighter control.
 Scenario 1: if you want to restrict the access source of users calling a TencentCloud API, you can add an IP condition to the existing policy.
 Scenario 2: when a CAM user calls the VPC peering connection API, in addition to checking whether the user has access to the API and related resources, you also need to check whether the user has access to the VPC associated with the peering connection.
     
@@ -21,9 +21,9 @@ The evaluation logic that makes a condition take effect is as follows:
     
 4. For a condition operator ending in `_if_exist`, the condition is met even if the context does not include the condition key associated with the condition operator.
 
-5. `for_all_value` is a qualifier that restricts the condition operator. It is applicable to scenarios where the condition key in the context contains multiple values. The entire condition is met only if all values of the condition key is satisfied upon execution of the associated condition operator.
+5. "for_all_value" is a qualifier that restricts the condition operator. It is applicable to scenarios where the condition key in the context contains multiple values. The entire condition is met only if all values of the condition key is satisfied upon execution of the associated condition operator.
 
-6. `for_any_value` is a qualifier that restricts the condition operator. It is applicable to scenarios where the condition key in the context contains multiple values. The entire condition is met as long as any value of the condition key is satisfied upon execution of the associated condition operator.
+6. "for_any_value" is a qualifier that restricts the condition operator. It is applicable to scenarios where the condition key in the context contains multiple values. The entire condition is met as long as any value of the condition key is satisfied upon execution of the associated condition operator.
     
 ### Samples
     
@@ -80,6 +80,7 @@ The following table lists condition operators, condition names, and examples. Fo
 |string_not_equal_ignore_case| String is not equal to (case-insensitive) |qcs:tag|{"string_not_equal_ignore_case":{"qcs:tag/tag_name1":"tag_value1"}}|
 | string_like | String matches (case-sensitive) | qcs:tag |{"string_like":{"qcs:tag/tag_name1":"tag_value1"}} |
 |string_not_like| String does not match (case-sensitive) |qcs:tag|{"string_not_like":{"qcs:tag/tag_name1":"tag_value1"}}|
+| binary_equal | String is equal to (case-sensitive) | qcs:tag |{"binary_equal":{"qcs:tag/tag_name1":"tag_value1"}} |
 |date_not_equal| Date is not equal to |qcs:current_time|{"date_not_equal":{"qcs:current_time":"2016-06-01T00:01:00Z"}}|
 |date_greater_than| Date is later than |qcs:current_time|{" date_greater_than ":{"qcs:current_time":"2016-06-01T00:01:00Z"}}|
 |date_greater_than_equal| Date is later than or equal to |qcs:current_time|{" date_greater_than_equal ":{"qcs:current_time":"2016-06-01T00:01:00Z"}}|

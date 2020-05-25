@@ -1,4 +1,4 @@
-## Introduction	
+## Overview	
 
 Cloud Access Management (CAM) helps you securely manage permissions for most Tencent Cloud services. This document provides information on the products and services that support CAM in multiple dimensions, such as authorization granularity, console operation, authorization by tag, and reference documentation.
 The table below lists Tencent Cloud services that support CAM.
@@ -41,7 +41,7 @@ Definitions:
 
 ## Network	
 
- | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | 	Reference Document |	
+ | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |	
 | ------------------------------------------------------------ | ------ | -------- | ------- | ---- |	 ---- |
 | [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214)   | Resource level | &#10003;      | &#10003;    |    &#10003;  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/214/9777) |	
 | [Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | Resource level | &#10003;        | -     | - |	 - |	
@@ -67,7 +67,8 @@ Definitions:
 | [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042)  | Resource level | &#10003;  | -    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1042/33343) |	
 | [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239)   | Resource level | &#10003; | -  | - |[CAM Guide](https://intl.cloud.tencent.com/document/product/239/32845) |	
 | [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240) | Resource level | &#10003; | -   |&#10003;|[CAM Guide](https://intl.cloud.tencent.com/document/product/240/32839) |			
-| [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  | -    | &#10003;    | - |		
+| [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  | -    | &#10003;    | - |
+| [TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | Resource level |  &#10003;  | -    | -    | - |		
 
 ## Serverless	
 
@@ -163,13 +164,14 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ------------------------------------------------------------ | ------ | -------- | ----- | ---- |	---- |
 | [Instant Messaging (IM)](https://intl.cloud.tencent.com/document/product/1047)   | Service level | &#10003;   | -  |  - | - |
-| [Short Message Service (SMS)](https://intl.cloud.tencent.com/document/product/382) | Operation level | &#10003; | -   | -  |-  |	
+| [Short Message Service (SMS)](https://intl.cloud.tencent.com/document/product/382) | Operation level | &#10003; | -   | -  |	-  |	
 
 ## Cloud Resource Management
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ----------------------------------------------------------- | ------ | -------- | ----- | ---- |	 ---- |	
 | [Tag](https://intl.cloud.tencent.com/document/product/651) | Operation level | &#10003;  | - |  - |	 - |	
+| [Tencent Infrastructure as Code (TIC)](https://intl.cloud.tencent.com/document/product/1043) | Service level | &#10003;  | - |  - |	 - |
 
 ## Management and Auditing
 
