@@ -213,7 +213,7 @@ GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSON
 ```
 This API is used to query a record by specifying its `key` information in a TcaplusDB pb table. You will get the entire record by performing this operation. However, you can set the `select` variable to specify the fields to be returned in the response; otherwise, the information of all fields will be displayed. If no data records exist, an error will be returned.
 
-The `keys` variable must be specified in the URI, which indicates the values of all primary keys. The optional `select` variable indicates the name of the field whose value you want displayed. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
+The `keys` variable must be specified in the URI, which indicates the values of all primary keys. The optional `select` variable indicates the name of the field whose value you want to display. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
 
 > The variables in the request must be URL-encoded. Please encode the space in the URL as `%20` instead of `+`.
 
@@ -286,7 +286,7 @@ PUT /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 
 This API is used to set a record by specifying its `key` information. If the record already exists, an overwrite operation will be performed; otherwise, an insert operation will be performed.
 
-The `SetRecord` operation supporting setting the following values for `resultflag`:
+The `SetRecord` operation supports setting the following values for `resultflag`:
 
 * `0`: the response only contains whether the request succeeded or failed
 * `1`: the response contains the same values as the request does
@@ -395,7 +395,7 @@ POST /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 ```
 This API is used to insert a record by specifying its `key` information. If the record already exists, an error will be returned.
 
-The `AddRecord` operation supporting setting the following values for `resultflag`:
+The `AddRecord` operation supports setting the following values for `resultflag`:
 
 * `0`: the response only contains whether the request succeeded or failed
 * `1`: the response contains the same values as the request does
@@ -503,7 +503,7 @@ DELETE /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 
 This API is used to delete a record by specifying its `key` information. If the data does not exist, an error will be returned.
 
-The `DeleteRecord` operation supporting setting the following values for `resultflag`:
+The `DeleteRecord` operation supports setting the following values for `resultflag`:
 
 * `0`: the response only contains whether the request succeeded or failed
 * `1`: the response contains the same values as the request does
@@ -569,7 +569,7 @@ GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSON
 ```
 
 This API is used to query a record by specifying its `key` information in a TcaplusDB pb table. This operation only queries and transfers the values of the field you specify through the `select` variable, which will reduce the network transfer traffic usage and is the biggest difference from the `GetRecord` operation. If the data record does not exist, an error will be returned.
-The `keys` and` select` variables must be specified in the URI. `keys` specifies the values of all primary keys. `select` specifies the name of the field whose value you want displayed. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
+The `keys` and` select` variables must be specified in the URI. `keys` specifies the values of all primary keys. `select` specifies the name of the field whose value you want to display. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
 
 > The variables in the request must be URL-encoded. Please encode the space in the URL as `%20` instead of `+`.
 
@@ -641,7 +641,7 @@ PUT /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 
 This API is used to modify a record by specifying its `key` information. Different from the `SetRecord` operation, it transfers and sets the values of only the specified fields instead of all fields, which reduces the network traffic usage. If the data record already exists, an update operation will be performed; otherwise, an error will be returned.
 
-The `FieldSetRecord` operation supporting setting the following values for `resultflag`:
+The `FieldSetRecord` operation supports setting the following values for `resultflag`:
 
 * `0`: the response only contains whether the request succeeded or failed
 * `1`: the response contains the same values as the request does
@@ -742,7 +742,7 @@ PUT /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 
 This API is used to auto-increment the specified fields by specifying the `key` information of a record. It supports fields in `int32`, `int64`, `uint32`, and `uint64` fields and has similar characteristics as `FieldSetRecord`.
 
-The `SetRecord` operation supporting setting the following values for `resultflag`:
+The `SetRecord` operation supports setting the following values for `resultflag`:
 
 * `0`: the response only contains whether the request succeeded or failed
 * `1`: the response contains the modified value of the specified field
@@ -834,7 +834,7 @@ GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSON
 
 This API is used to query multiple records by specifying the values of some primary keys. This operation will return multiple data entries and display them by the field name specified by the `select` variable. The premise of this operation is that the specified primary key set must have an index created when the table is created; otherwise, an error will be returned.
 
-The `keys` variable must be specified in the URI, which specifies the values of all primary keys. The optional `select` variable specifies the name of the field whose value you want displayed. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
+The `keys` variable must be specified in the URI, which specifies the values of all primary keys. The optional `select` variable specifies the name of the field whose value you want to display. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
 
 `limit` and `offset` are the parameters used to control partial record return.
 

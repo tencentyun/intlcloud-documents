@@ -1,9 +1,9 @@
 ## Notes
-TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the MONGODB-CR and SCRAM-SHA-1 authentication methods, respectively. The connecting URIs for the two authentication methods are formed differently. For more information, please see [Connection Sample](https://intl.cloud.tencent.com/document/product/240/7092).
+TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the MONGODB-CR and SCRAM-SHA-1 authentication methods, respectively. The connecting URIs for the two authentication methods are formed differently. For more information, please see [Instance Connection](https://intl.cloud.tencent.com/document/product/240/7092).
 
 [Documentation of the MongoDB Java Driver](http://mongodb.github.io/mongo-java-driver/3.2/driver/getting-started/)
 
-Download the Java jar package [here](https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongo-java-driver/) and select a version above 3.2
+[Java jar package download address](https://oss.sonatype.org/content/repositories/releases/org/mongodb/mongo-java-driver/). Please select a version above 3.2
 
 ## Quick Start
 ### Native Java sample code
@@ -38,7 +38,7 @@ public class MongodbDemo {
 
             // Read data
             BsonDocument filter = new BsonDocument();
-            filter.append("username", new BsonString("username"));
+            filter.append("username", new BsonString("jack"));
             MongoCursor<Document> cursor = collection.find(filter).iterator();
             while (cursor.hasNext()) {
                 System.out.println("find document: " + cursor.next());
@@ -62,7 +62,7 @@ INFO: Closed connection [connectionId{localValue:2, serverValue:67621}] to 10.66
 ```
 
 ### Configuration sample for Spring Data MongoDB
-This example shows you how to configure an [authenticated database admin](https://intl.intl.cloud.tencent.com/document/product/240/7092). The specific steps are subject to the version of the Spring and Spring Data MongoDB you use.
+This sample demonstrates how to configure the [authentication database admin](https://intl.cloud.tencent.com/document/product/240/7092#.E8.AE.A4.E8.AF.81.E6.95.B0.E6.8D.AE.E5.BA.93), which depends on the versions of Spring and Spring Data MongoDB you use.
 ```
 <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
     <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
