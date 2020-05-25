@@ -55,7 +55,7 @@
 
 ## 领取方式
 
-用户通过 [注册账号](https://intl.cloud.tencent.com/document/product/378/17985) 并登录 [对象存储控制台](https:腾讯云//console.cloud.tencent.com/cos5) 开通 COS 服务后，系统自动发放至用户账户。免费额度以资源包的形式发放。
+开通 COS 服务后，系统自动将免费额度以资源包的形式发放至用户账户。
 
 ## 有效期计算
 
