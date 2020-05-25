@@ -32,6 +32,7 @@
 
 1. 配置消息回执地址。请在[TPNS控制台](https://console.cloud.tencent.com/tpns)查看您的应用的服务接入点，并选择对应服务接入点的回执地址进行配置：
 ![](https://main.qcloudimg.com/raw/ccdcd39ece57703af3106fa756f98991.png)
+
 | 服务接入点 | 回执地址 | 
 |---------|---------|
 | 广州服务接入点 |https://api.tpns.tencent.com/log/statistics/mz | 
