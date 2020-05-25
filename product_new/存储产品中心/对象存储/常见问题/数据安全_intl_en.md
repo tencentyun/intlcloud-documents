@@ -86,11 +86,6 @@ A collaborator account is a special sub-account. For more information, see [Acce
 
 Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview) and enter the user management page where you can enable sub-accounts for different businesses and grant them corresponding permission.
 
-### What should I do if the error "your policy or acl has reached the limit (Status Code: 400; Error Code: PolicyFull)" occurs when I upload a file or create a bucket?
-
-The total number of ACLs and policies for buckets and objects under one root account in COS cannot exceed 1,000. When the limit is exceeded, this error will occur. It is recommended to delete the ACLs or policies that are no longed needed.
-
->File-level ACLs or policies are not recommended. When you call APIs or SDKs, if you do not implement ACL control over files, please leave the ACL-related parameters (such as x-cos-acl and ACL) empty to inherit the bucket permission.
 
 ### How do I create sub-accounts for subsidiaries or employees and grant them access to the specified buckets?
 
