@@ -5,5 +5,3 @@ After a domain name is added and resolved, you can access your video resources t
 2. Click **Edit** in the top-right corner and set the corresponding parameters:
  - Primary Distribution Protocol: HTTP and HTTPS are supported.
  - Default Distribution Domain Name: by default, the system-assigned `xxx.vod2.myqcloud.com` is used. You can also [add](https://intl.cloud.tencent.com/document/product/266/35572) and [resolve](https://intl.cloud.tencent.com/document/product/266/35572) a custom domain name as the default distribution domain name.
- 
-![](https://main.qcloudimg.com/raw/b2a19daef9763d9cc88e0cf3caa00d91.png)
