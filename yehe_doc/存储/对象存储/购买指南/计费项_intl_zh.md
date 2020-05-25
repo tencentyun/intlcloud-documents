@@ -1,9 +1,9 @@
-对象存储 COS 的计费项包括：[存储容量费用](#jf1)、[请求费用](#jf2)、[数据取回费用](#jf3)、[流量费用](#jf4) 和 [管理功能费用](#jf5)。下文是对各个计费项的详细介绍，您可在了解完计费项和 [产品定价](https://intl.cloud.tencent.com/document/product/436/6239) 后自行估算费用，也可直接使用 [COS 价格计算器](https://buy.cloud.tencent.com/price/cos/calculator) 计算所需的费用。
+对象存储 COS 的计费项包括：[存储容量费用](#jf1)、[请求费用](#jf2)、[数据取回费用](#jf3)、[流量费用](#jf4) 和 [管理功能费用](#jf5)。下文是对各个计费项的详细介绍，您可在了解完计费项和 [产品定价](https://intl.cloud.tencent.com/document/product/436/6239) 后自行估算费用。
 
 
 
 
->根据访问频度的高低，对象存储 COS 提供四种对象的存储类型：标准存储（多AZ）、标准存储、低频存储、归档存储，具体请参见 [对象存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 介绍。
+>根据访问频度的高低，对象存储 COS 提供三种对象的存储类型：标准存储、低频存储、归档存储，具体请参见 [对象存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 介绍。
 
 
 <span id="jf1"></span>
@@ -18,10 +18,10 @@
       <th>计费说明</th>
    </tr>
    <tr>
-      <td nowrap="nowrap">存储容量</td>
-      <td nowrap="nowrap">标准存储（多 AZ）<br>标准存储<br>低频存储<br>归档存储</td>
+      <td>存储容量</td>
+      <td>标准存储<br>低频存储<br>归档存储</td>
       <td>存储容量指用户数据占用的实际存储空间，<br>其费用根据用户数据占用的实际存储容量大小计算。</td>
-      <td nowrap="nowrap"><li>按月结算<br><li>存储容量费用 = 存储容量单价 x 月存储容量<br><li>月存储容量 = 当月“日存储容量”之和 / 当月天数<br><li>日存储容量 = 当日“每5分钟存储容量”之和 / 288（采样点数）</td>
+      <td><li>按月结算<br><li>存储容量费用 = 存储容量单价 x 月存储容量<br><li>月存储容量 = 当月“日存储容量”之和 / 当月天数<br><li>日存储容量 = 当日“每5分钟存储容量”之和 / 288（采样点数）</td>
    </tr>
 </table>
 
@@ -50,10 +50,10 @@
       <th>计费说明</th>
    </tr>
    <tr>
-      <td nowrap="nowrap">请求次数</td>
-      <td nowrap="nowrap">标准存储（多AZ）<br>标准存储<br>低频存储<br>归档存储</td>
+      <td>请求次数</td>
+      <td>标准存储<br>低频存储<br>归档存储</td>
       <td>请求次数根据发送请求指令的次数来计算</td>
-      <td nowrap="nowrap"><li>按月结算<br><li>月累计请求次数不足1万次，按1万次计算<br><li>请求费用 = 每万次请求单价 x 月累计请求次数 / 10000（向下取整）</td>
+      <td><li>按月结算<br><li>月累计请求次数不足1万次，按1万次计算<br><li>请求费用 = 每万次请求单价 x 月累计请求次数 / 10000（向下取整）</td>
    </tr>
 </table>
 
@@ -91,8 +91,8 @@
       <th>计费说明</th>
    </tr>
    <tr>
-      <td nowrap="nowrap">外网上行流量</td>
-      <td rowspan="7" nowrap="nowrap">标准存储（多 AZ）<br>标准存储<br>低频存储<br>归档存储</td>
+      <td>外网上行流量</td>
+      <td rowspan="7">标准存储<br>低频存储<br>归档存储</td>
       <td>数据通过互联网从客户端传输到 COS 产生的流量</td>
       <td>免费</td>
    </tr>
@@ -117,14 +117,14 @@
       <td><li>按日结算<br><li>CDN 回源流量费用 = 每 GB 单价 x 日累计 CDN 回源流量</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">跨地域复制流量</td>
+      <td>跨地域复制流量</td>
       <td>数据从一个地域的存储桶传输到另一个地域的存储桶产生的流量</td>
-      <td nowrap="nowrap"><li>按日结算<br><li>跨地域复制流量费用 = 每 GB 单价 x 日累计跨地域复制流量</td>
+      <td><li>按日结算<br><li>跨地域复制流量费用 = 每 GB 单价 x 日累计跨地域复制流量</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">全球加速流量</td>
+      <td>全球加速流量</td>
       <td>当用户开启了全球加速功能后，使用传输加速域名进行数据传输产生的流量。传输加速流量分为上行流量和下行流量：<br><li>上行流量指用户通过传输加速域名将本地数据上传到 COS 产生的流量<br><li>下行流量指用户通过传输加速域名查看或下载数据到本地所产生的流量</td>
-      <td nowrap="nowrap"><li>按日结算<br><li>全球加速流量费用 = 每 GB 单价 x 日累计全球加速流量 </td>
+      <td><li>按日结算<br><li>全球加速流量费用 = 每 GB 单价 x 日累计全球加速流量 </td>
    </tr> 
 </table>
 
@@ -164,7 +164,7 @@
 </thead>
 <tbody><tr>
 <td>清单功能费用</td>
-<td nowrap="nowrap">标准存储（多 AZ）<br>标准存储<br>低频存储<br>归档存储</td>
+<td>标准存储<br>低频存储<br>归档存储</td>
 <td>当用户开启了清单功能后，列出存储桶对象列表时产生的费用</td>
 <td><li>按日结算<br></li><li>按照每列出百万个对象进行收费</li></td>
 </tr>
@@ -176,16 +176,14 @@
 </tr>
 <tr>
 <td>批量处理费用</td>
-<td nowrap="nowrap">标准存储（多 AZ）<br>标准存储<br>低频存储<br>归档存储</td>
+<td>标准存储<br>低频存储<br>归档存储</td>
 <td>当用户开启了批量处理功能后，COS 会按创建的任务数和对象处理量进行收费</td>
 <td><li>按日结算<br></li><li>按照创建的任务数和对象处理数量进行计算</li></td>
 </tr>
 <tr>
 <td>对象标签费用</td>
-<td nowrap="nowrap">标准存储（多 AZ）<br>标准存储<br>低频存储<br>归档存储</td>
+<td>标准存储<br>低频存储<br>归档存储</td>
 <td>当用户开启了对象标签功能后，COS 会按对象标签数量进行收费</td>
 <td><li>按日结算<br></li><li>按照设置的对象标签数量进行计算</li></td>
 </tr>
 </tbody></table>
-
-

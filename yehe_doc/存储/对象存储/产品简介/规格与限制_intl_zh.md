@@ -62,7 +62,7 @@
     		 <tr>
     			<td >访问策略</td>
     			<td >规则数量</td>
-    			<td >每个主账号（即同一个 APPID），存储桶和对象的 ACL、Policy 和 CAM 关联的策略数量总和最多为1000条</td>
+    			<td >每个主账号（即同一个 APPID），存储桶 ACL 规则数量最多为1000条</td>
     		</tr>
     		<tr>
     			<td rowspan="3">生命周期</td>
@@ -79,6 +79,6 @@
     		</tr>         
     		<tr>
     			<td colspan="2">SDK 种类</td>
-    			<td >12种：<br>Andriod、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK</td>
+    			<td >12种：<br>Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK</td>
     </tr>
 </table>
