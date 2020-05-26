@@ -1,15 +1,17 @@
 云函数创建完成后，可以通过创建触发器来将云函数与事件源进行关联。关联后的事件源，会在事件产生时，根据设计方式，以同步或异步的方式完成云函数触发运行，并在触发时将事件作为入参传递给入口函数。
 
-通过控制台或 SCF 命令行均可以完成云函数触发器创建。
+通过控制台或 Serverless Framework CLI 命令行均可以完成云函数触发器创建。
 
 ## 通过控制台完成触发器创建
 
 1. 登录 SCF 控制台，选择左侧导航栏中的【[函数服务](https://console.cloud.tencent.com/scf/list)】。
-2. 在“函数服务”列表页面上方，选择期望创建触发器函数所在的地域及命名空间。
+2. 在“函数服务”列表页面上方，选择期望创建触发器函数所在的地域及命名空间。如下图所示：
+![](https://main.qcloudimg.com/raw/e48bbf014e8c15fe22622fda5e2b8ffc.png)
 函数列表中包括了函数名、监控、运行环境、创建时间、修改时间等，您可根据自身需求进行操作。
 3. 单击函数名，进入该函数的详情页面。
 函数详情页面包括了函数配置页、函数代码页、触发方式页、运行日志页和监控信息页。
-4. 选择【触发方式】页签，进入触发器浏览及操作界面，单击【添加触发方式】，开始创建一个新的触发器。
+4. 选择【触发方式】页签，进入触发器浏览及操作界面，单击【添加触发方式】，开始创建一个新的触发器。如下图所示：
+![](https://main.qcloudimg.com/raw/89740ff73c89c3baa18ba995c86f3c0d.png)
 5. 在展开的“添加触发方式”表单中，可选择【触发方式】中不同的触发方式。选择不同触发方式，所需填写的内容也将不同。
 例如：定时触发器需添加触发器名称、周期和启用情况，对象存储 COS 触发器需要添加触发的 COS Bucket、事件类型以及前后缀过滤方式。
 > 更加具体的触发器相关填写内容说明，可见各 [触发器](https://intl.cloud.tencent.com/document/product/583/9705) 的说明文档。
@@ -20,10 +22,11 @@
 
 
 
-## 通过 SCF 命令行完成触发器创建
->在使用 SCF 命令行工具之前，可以通过 [命令行安装及配置](https://intl.cloud.tencent.com/document/product/583/32754) 方法完成命令行的安装和配置。
+## 通过 Serverless Framework CLI 命令行完成触发器创建
+>在使用 Serverless Framework CLI 工具之前，请通过 [安装 Serverless Framework](https://intl.cloud.tencent.com/document/product/583/36263) 完成安装。
 >
-本地函数请在 `template.yaml` 文件下新增触发器描述，描述规则请参考 [事件源类型](<https://intl.cloud.tencent.com/document/product/583/32761>) ，然后通过 SCF 命令行执行 `scf deploy` 命令，即可为函数新增触发器。详情请参见 [打包部署](<https://intl.cloud.tencent.com/document/product/583/32756>)。
+本地函数请在 `serverless.yml` 文件下新增触发器描述 ，并通过 Serverless Framework CLI 执行 `sls deploy` 命令，即可为函数新增触发器。
+
 
 ## 版本与触发器
 
