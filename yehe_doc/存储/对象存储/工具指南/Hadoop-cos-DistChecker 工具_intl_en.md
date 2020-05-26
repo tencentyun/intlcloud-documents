@@ -5,20 +5,29 @@ After migrating data from HDFS to COS by using the `hadoop distcp` command, you 
 ## Operating Environment
 
 - [hadoop-cos-2.x.x-shaded.jar](https://github.com/tencentyun/hadoop-cos/tree/master/dep)
-- Runtime environment for Hadoop MapReduce
+- Hadoop MapReduce runtime environment
 
->Please note that the `hadoop-cos` dependency must be of the latest version (with GitHub tag as 5.8.2 or above) to get CRC64 check code.
+>
+> - If you are using a self-built Hadoop cluster, the Hadoop-cos dependency should be of the latest version (with GitHub Tag as 5.8.2 or above) to get CRC64 check code.
+> - If you are using Tencent Cloud EMR, only clusters created after May 8, 2020 contain the above Hadoop-cos version. To deal with clusters created before this date, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Instructions
+
+Since Hadoop-cos-distchecker needs to get CRC64 checksum for files from Hadoop-cos (CosN file system) before running, you should first configure `fs.cosn.crc64.checksum.enabled` to `true` to do so. Once this tool finishes, configure the value back to `false` to stop getting CRC64 checksum.
+
+>The CRC64 checksum in Hadoop-COS is not compatible with the CRC32C checksum in HDFS, so after using this tool, be sure to set the above parameter to `false`. Otherwise, Hadoop-COS may fail to run in some scenarios where the file system getFileChecksum API is called.
 
 ### Parameter description
 
 - **Source file list**
-The source file path list is a list of subdirectories and files to be checked that you export by running
+  The source file path list is a list of subdirectories and files to be checked that you export by running
+
 ```plaintext
 hadoop fs -ls -R hdfs://host:port/{source_dir} | awk '{print $8}' > check_list.txt
 ```
+
 Its format is as shown in the following sample:
+
 ```plaintext
 /benchmarks/TestDFSIO
 /benchmarks/TestDFSIO/io_control
@@ -32,11 +41,14 @@ Its format is as shown in the following sample:
 /benchmarks/TestDFSIO/io_write/part-00000
 ```
 
-- **Source directory **: the directory where the source files are stored and is usually the source path for data migration through the `distcp` command. For example, `hdfs://host:port/source_dir` is the source directory in
+- **Source directory**: the directory where the source files are stored and is usually the source path for data migration through the `distcp` command. For example, `hdfs://host:port/source_dir` is the source directory in
+
 ```plaintext
 hadoop distcp hdfs://host:port/source_dir cosn://examplebucket-appid/dest_dir
 ```
-This is also the common parent directory in the **source file path list**, such as `/ benchmarks` in the sample above.
+
+This is also the common parent directory in the **source file path list**. For example, it is `/ benchmarks` in the sample above.
+
 - **Destination directory**: the destination directory to check against.
 
 ### Command line format
@@ -47,27 +59,29 @@ Hadoop-cos-DistChecker is a MapReduce job-based program, and can be committed ju
 hadoop jar hadoop-cos-distchecker-2.8.5-1.0-SNAPSHOT.jar com.qcloud.cos.hadoop.distchecker.App <Absolute path of the source file list> <Absolute path representation of the source directory> <Absolute path representation of the destination directory> [optional parameters]
 ```
 
-> Optional parameters represent the optional parameters for Hadoop.
+> The “optional parameters” are for Hadoop.
 
 ### Directions
 
 The example below describes how to use this tool by checking `hdfs://10.0.0.3:9000/benchmarks` against `cosn://hdfs-test-1250000000/benchmarks`.
 
 First, run the following command:
+
 ```plaintext
 hadoop fs -ls -R hdfs://10.0.0.3:9000/benchmarks | awk '{print $8}' > check_list.txt
 ```
+
 ![](https://main.qcloudimg.com/raw/a2a853be2646b6558983303de805c04e.png)
 Export all the source paths to be checked to a check_list.txt file which stores the list of source file paths, as shown below:
 ![](https://main.qcloudimg.com/raw/216d90b20d383e233e50f497e83c24c3.png)
 
-Then, put `check_list.txt` into HDFS by running
+Then, save `check_list.txt` to HDFS by running
+
 ```plaintext
 hadoop fs -put check_list.txt hdfs://10.0.0.3:9000/
 ```
 
 ![](https://main.qcloudimg.com/raw/e5b79519dfeac808b64f29e04c35e9a4.png)
-
 
 Run the Hadoop-cos-DistChecker to check `hdfs://10.0.0.3:9000/benchmarks` against `cosn://hdfs-test-1250000000/benchmarks`, and output the result to the `cosn://hdfs-test-1250000000/check_result` path by using the following command:
 
@@ -110,8 +124,8 @@ There are 7 check results:
 
 - SUCCESS: the source and destination files exist and are the same.
 - MISMATCH: the source and destination files exist but are different.
-- UNCONFIRM: the system cannot determine whether the source and destination files are the same. This may be because the destination file has already existed in COS before the CRC64 feature is launched, and thus its CRC64 checksum cannot be obtained.
-- UNCHECKED: the check is not performed. This is mainly because that the source file cannot be read, or its checksum cannot be computed.
+- UNCONFIRM: the system cannot determine whether the source and destination files are the same. This may be because the file has already existed in COS before the CRC64 feature is launched, and thus its CRC64 checksum cannot be obtained.
+- UNCHECKED: the check is not performed. This is mainly because that the source file or the checksum of the source file cannot be read.
 - SOURCE_FILE_MISSING: the source file does not exist.
 TARGET_FILE_MISSING: the destination file does not exist.
 TARGET_FILESYSTEM_ERROR: the destination file system is not CosN.
@@ -120,9 +134,7 @@ TARGET_FILESYSTEM_ERROR: the destination file system is not CosN.
 
 ## FAQs
 
-
 #### Why is there a negative CRC64 checksum in the check report?
 
 A CRC64 checksum may contain 20 digits which exceed the range of the Java `long` type. However, they have the same underlying bytes. Therefore, when the `long` value is printed, it may be negative.
-
 
