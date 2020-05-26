@@ -355,6 +355,7 @@ Android8。0系统以上通知栏消息增加了 channelid 的设置，目前 op
 | kTIMElem_Video | 9 | 视频元素 |
 | kTIMElem_FriendChange | 10 | 关系链变更消息元素 |
 | kTIMElem_ProfileChange | 11 | 资料变更消息元素 |
+| kTIMElem_Invalid       | -1    | 未知元素           |
 
 ### Elem
 
