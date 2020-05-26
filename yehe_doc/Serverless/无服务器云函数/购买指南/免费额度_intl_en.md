@@ -13,6 +13,7 @@ The following table lists free running durations for functions configured with d
 
 | Memory (MB) | Free Duration (Seconds) |
 | --- | --- |
+| 64 | 6,400,000 |
 | 128 | 3,200,000 |
 | 256 | 1,600,000 |
 | 512 | 800,000 |
