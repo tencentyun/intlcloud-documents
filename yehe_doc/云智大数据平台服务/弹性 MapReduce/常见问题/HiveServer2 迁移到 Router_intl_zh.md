@@ -7,7 +7,7 @@
  ![](https://main.qcloudimg.com/raw/0a9fdf9401f68f799db530bee95d34c0.png)
 3. 关闭 master 上的 hive 服务。
 在组件管理 hive 角色管理页面将 master 节点上的所有 hive 进程暂停，重启 Router 节点上的 hive 进程。
-![](https://main.qcloudimg.com/raw/964453733f4ef2af326fd7890380f1a0.png)
+![](https://main.qcloudimg.com/raw/86dc44afdb6234d88d84881ac1caf115.png)
 4. 测试。
 在 router 上测试 hiveserver2。如果能正确连接并查询到已有的表，则说明迁移成功。
 ![](https://main.qcloudimg.com/raw/3ffae19871f972bef3ccd8796deb2e27.png)
