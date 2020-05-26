@@ -47,7 +47,7 @@ For example, for a function that handles COS events, if the function takes an av
 Currently, SCF has a limit on the amount of concurrency for each function. You can view the limit for the current function in [Quota Limits](https://intl.cloud.tencent.com/document/product/583/11637). You can [contact us](https://intl.cloud.tencent.com/document/product/583/9712) to increase the limit.
 
 If an invocation causes the function concurrency to exceed the default limit, the invocation will be blocked and not executed by SCF. Restricted invocations are handled differently depending on the function invocation type:
-- Sync invocation: if the function is restricted when invoked synchronously, a 429 error will be returned directly.
+- Sync invocation: if the function is restricted when invoked synchronously, a 432 error will be returned directly.
 - Async invocation: if the function is restricted when invoked asynchronously, SCF will automatically retry the restricted event at a fixed frequency for a certain period of time.
  
 ## Retry Mechanism
