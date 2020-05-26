@@ -18,7 +18,7 @@ For the download URL and instructions, see [COSBrowser Overview](https://intl.cl
 ### How can I transfer a massive number of files faster?
 
 Take Windows COSBrowser as an example. You can do so by navigating to **Advanced Settings**, and configuring a greater number of concurrent files and parts for **Upload** and **Download**.
-![](![img](https://main.qcloudimg.com/raw/d74eae3fb53dce13fee5c6b6e517e526.png)
+![img](https://main.qcloudimg.com/raw/d74eae3fb53dce13fee5c6b6e517e526.png)
 
 
 ### What should I do if I am prompted that “Update failed. Permission is denied.” using macOS-based COSBrowser?
