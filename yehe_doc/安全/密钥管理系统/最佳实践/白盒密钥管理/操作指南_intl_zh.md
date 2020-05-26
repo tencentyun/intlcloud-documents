@@ -2,7 +2,7 @@
 API Key 是常用的一类用于客户端应用与后台服务器建立可信连接和数据通信的密钥。下面就以 API Key 为例，介绍腾讯云提供的密钥保护解决方案。
 
 用户使用 API Key 的流程如下图所示：
-![](https://main.qcloudimg.com/raw/a5e7bc7248d12ea792a66519b200566f.jpg)
+<img src="https://main.qcloudimg.com/raw/a5e7bc7248d12ea792a66519b200566f.jpg" width="85%">
 
 
 #### 操作流程说明如下：
@@ -29,7 +29,7 @@ API Key 是常用的一类用于客户端应用与后台服务器建立可信连
 请求命令：
 
 ```shell
-tccli kms CreateWhiteboxKey --region ap-guangzhou --Alias test-gz01 --Description 'this is test for gz key' --Algorithm 'SM4'
+tccli kms CreateWhiteBoxKey --region ap-guangzhou --Alias test-gz01 --Description 'this is test for gz key' --Algorithm 'SM4'
 ```
 
 返回结果示例：
@@ -63,7 +63,7 @@ echo 1234567890 | openssl base64
 请求命令：
 
 ```shell
-tccli kms EncryptByWhiteboxKey --region ap-guangzhou --KeyId a1a9376a-7261-11ea-a490-5254006d0810 --PlainText MTIzNDU2Nzg5MAo=
+tccli kms EncryptByWhiteBox --region ap-guangzhou --KeyId a1a9376a-7261-11ea-a490-5254006d0810 --PlainText MTIzNDU2Nzg5MAo=
 ```
 
 返回结果：

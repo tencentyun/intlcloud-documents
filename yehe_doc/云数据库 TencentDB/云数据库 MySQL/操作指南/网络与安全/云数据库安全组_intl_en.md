@@ -1,15 +1,15 @@
 ## Operation Scenarios
-A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules.
+A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For more information on rules and restrictions, please see Security Group Description.
 
 >
->- TencentDB for MySQL security group currently only supports network access control for VPCs and public network but not the basic network.
+> - TencentDB for MySQL security group currently only supports network access control for VPC and public networks but not the classic network.
 >- Security groups that currently support public network access are available only in the Guangzhou, Shanghai, Hong Kong (China), Beijing, Chengdu, Chongqing, Seoul, and Tokyo regions.
 >- As no outbound traffic is generated for TencentDB instances, outbound rules do not take effect for TencentDB.
 >- TencentDB for MySQL security groups support master instances, read-only instances, and disaster recovery instances.
 >- Security group is not supported for the TencentDB for MySQL Basic Edition.
 
 
-## Configuring Security Group for TencentDB
+## Security Group Configuration for TencentDB
 ### Step 1. Create a security group
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/securitygroup).
 2. Select **Security Group** on the left sidebar, select a region, and click **Create**.
@@ -19,7 +19,7 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 	<tr><th>Template</th><th>Description</th><th>Remarks</th></tr>
 	<tr><td>Open all ports</td><td>All ports are opened to the public and private networks. This may present security issues.</td><td>-</td></tr>
 	<tr><td>Open ports 22, 80, 443, and 3389 and the ICMP protocol</td><td>Ports 22, 80, 443, and 3389 and the ICMP protocol are opened to the internet. All ports are opened to the private network.</td><td>This template does not take effect for TencentDB.</td></tr>
-	<tr><td>Custom</td><td>You can create a security group and then add custom rules. For detailed directions, please see "Adding Security Group Rules"</a> below.</td><td>-</rd></tr>
+	<tr><td>Custom</td><td>You can create a security group and then add custom rules. For detailed directions, please see "Step 2. Add a security group rule"</a> below.</td><td>-</rd></tr>
 </table>
  - Name: custom name of the security group.
  - Project: the **default project** is selected by default. You can also select another one for easier management.
@@ -40,10 +40,9 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 	<tr><td>ID of referenced security group. You can reference the ID of: <ul  style="margin: 0;"><li>Current security group</li><li>Another security group</li></ul>
 </td><td><ul  style="margin: 0;"><li>Current security group: CVM instance associated with the current security group.</li><li>Another security group: ID of another security group in the same region under the same project.</li></ul>
 </td></tr>
-	<tr><td>Reference IP address object or IP address group object in a parameter template.</td><td>-</td></tr>
+	<tr><td>Reference IP address object or IP address group object in a <a href="https://intl.cloud.tencent.com/document/product/215/31867">parameter template</a>.</td><td>-</td></tr>
 </table>
-
- - Protocol port: enter the protocol type and port range.
+ - Protocol port: enter the protocol type and port range or reference an IP address object or IP address group object in a [parameter template](https://intl.cloud.tencent.com/document/product/215/31867).
   >To connect to TencentDB for MySQL, port 3306 must be opened.
  - Policy: "Allow" is selected by default.
     - Allow: traffic to this port is allowed.
@@ -59,7 +58,7 @@ You can also allow all IPs or specified IPs (IP ranges) based on your actual nee
 | Direction | Type | Source | Port | Policy |
 |---------|---------|---------|---------|---------|
 | Inbound | MySQL(3306) | All IP: 0.0.0.0/0 <br>Specified IP: enter the specified IPs or IP ranges | TCP: 3306 | Allow |
-               
+
 
 ### Step 3. Configure a security group
 A security group is an instance-level firewall provided by Tencent Cloud for controlling inbound traffic of TencentDB. You can associate a security group with an instance when purchasing it or later in the console.
@@ -71,20 +70,18 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 3. On the **Security Group** tab, click **Configure Security Group**.
 4. In the pop-up dialog box, select the security group to be bound and click **OK**. 
 
-## Importing Security Group Rules
-1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click the ID/name of the desired security group.
+## Security Group Rule Import
+1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click the ID/name of the target security group.
 2. On the inbound rules or outbound rules tab, click **Import Rule**.
 7. In the pop-up dialog box, select an edited inbound/outbound rule template file and click **Start Import**.
-> 
->- If there are existing rules in the security group, export them before importing new rules. Existing rules are overwritten after importing.
->- If there are no existing rules in the security group, download a template and edit it before importing it.
-> 	
+> If there are existing rules in the security group, export them before importing new rules. Existing rules are overwritten after importing.
 
-## Cloning Security Group
-1. On the [security group page](https://console.cloud.tencent.com/cvm/securitygroup), select a security group and click **More** > **Clone** in the "Operation" column.
+
+## Security Group Clone
+1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, select a security group and click **More** > **Clone** in the "Operation" column.
 2. In the pop-up dialog box, select the target region and target project and click **OK**. If the new security group needs to be associated with a CVM instance, do so by managing the CVM instances in the security group.
 
-## Deleting Security Group
+## Security Group Deletion
 1. On the [security group page](https://console.cloud.tencent.com/cvm/securitygroup), select the security group to be deleted and click **More** > **Delete** in the "Operation" column.
 2. Click **OK** in the pop-up dialog box. If the current security group is associated with a CVM instance, it must be disassociated before it can be deleted.
 

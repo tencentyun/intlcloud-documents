@@ -20,6 +20,8 @@
 
 详情请参阅[计费方式说明](/document/product/583/12284)
 
+
+
 ## 产品定价
 
 针对组成云函数费用的 3 部分，定价如下：
@@ -29,6 +31,44 @@
 * 外网出流量费用：各地域均有不同定价，中国大陆 0.12 美元/GB
 
 详情请参阅[产品定价说明](/document/product/583/12281)
+
+## 支持地域
+下表为云函数目前所支持的地域信息：
+<table>
+<tr>
+<th width="50%">地域</th><th width="50%">取值</th>
+</tr>
+<tr>
+<td>华南地区（广州）</td><td>ap-guangzhou</td>
+</tr>
+<tr>
+<td>华东地区（上海）</td><td>ap-shanghai</td>
+</tr>
+<tr>
+<td>华北地区（北京）</td><td>ap-beijing</td>
+</tr>
+<tr>
+<td>西南地区（成都）</td><td>ap-chengdu</td>
+</tr>
+<tr>
+<td>港澳台地区（中国香港）</td><td>ap-hongkong</td>
+</tr>
+<tr>
+<td>亚太南部（孟买）</td><td>ap-mumbai</td>
+</tr>
+<tr>
+<td>亚太东南（新加坡）</td><td>ap-singapore</td>
+</tr>
+<tr>
+<td>亚太东北（东京）</td><td>ap-tokyo</td>
+</tr>
+<tr>
+<td>北美地区（多伦多）</td><td>na-toronto</td>
+</tr>
+<tr>
+<td>美国西部（硅谷）</td><td>na-siliconvalley</td>
+</tr>
+</table>
 
 ## 计费详情
 

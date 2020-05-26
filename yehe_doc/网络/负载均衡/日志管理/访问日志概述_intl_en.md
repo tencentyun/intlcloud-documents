@@ -14,7 +14,7 @@ There are two methods for storing the access logs of CLB:
 <tbody><tr><td>Time granularity for getting logs</td><td> Minute</td><td>Hour</td></tr>
 <tr><td>Online search</td><td>Supported</td><td>Not supported. You must download an access log for data search</td></tr>
 <tr><td>Search syntax</td><td>Full-text search, key-value search, fuzzy keyword search, etc. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/614/30439">Search Rules</a></td><td>Typically full-text search</td></tr>
-<tr><td>Supported regions</td><td>It is supported in Guangzhou, Shanghai, Chengdu, Hong Kong (China), and Toronto and currently in beta test in Nanjing, Beijing, Chongqing, Singapore, Mumbai, and Silicon Valley. To try it out, please submit a <a href="https://console.cloud.tencent.com/workorder/category">ticket</a> for application </td><td>Guangzhou, Shanghai, Beijing, Hong Kong (China), Shanghai Finance, and Shenzhen Finance</td></tr>
+<tr><td>Supported regions</td><td>It is supported in Guangzhou, Shanghai, Chengdu, Hong Kong (China), Nanjing, Beijing, Chongqing, Singapore, Mumbai, and Silicon Valley.  </td><td>Guangzhou, Shanghai, Beijing, Hong Kong (China)</td></tr>
 <tr><td>Supported types</td><td>Public network/private network CLB</td><td>Public network CLB</td></tr>
 </tbody></table>
 

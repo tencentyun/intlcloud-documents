@@ -1,4 +1,4 @@
-A function can be queried in the console or through SCF CLI.
+A function can be queried in the console or through Serverless Framework CLI.
 
 ## Viewing Function in Console
 1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf) and select "Functions" on the left sidebar.
