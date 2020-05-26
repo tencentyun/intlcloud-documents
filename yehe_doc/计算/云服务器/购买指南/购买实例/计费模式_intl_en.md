@@ -3,13 +3,12 @@ The following table compares the two billing plans:
 
 | Instance billing plan  | Pay-as-you-go | Spot instances |
 |---------|:---------:|:---------:|
-| Payment method  | [Deposit upon purchase](https://intl.cloud.tencent.com/document/product/555/12039). Billed on the hour. | [Deposit upon purchase](https://intl.cloud.tencent.com/document/product/555/12039). Charged by the hour. |
+| Payment method  | Deposit upon purchase. Billed on the hour. | Deposit upon purchase. Charged by the hour. |
 | Payment unit  | USD/Sec | USD/Sec |
 | Unit price | Pricier | Price fluctuates. In most cases the price is about 10% - 20% of the price of a pay-as-you-go instance with the same specifications. |
 | Minimal use time | Charged by the second and billed on the hour. Purchase and release at any time. | Charged by the second and billed on the hour. Purchase and release at any time. May be repossessed by the system. |
 | Instance specification change | No limit. Change at anytime. | Not supported. |
 | Use cases | Best for use cases where resource requirements vary drastically, such as e-commerce. | Best for scenarios such as online and website services with big data computing and load balancing. |
-
 
 
 ### Pay as you go

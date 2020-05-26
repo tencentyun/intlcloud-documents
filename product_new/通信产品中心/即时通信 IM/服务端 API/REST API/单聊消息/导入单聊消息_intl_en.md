@@ -1,45 +1,45 @@
 ## API Description
 - This API imports one-to-one chat history to IM.
-- It can import the message sent to an old client to the new client in real time when switching clients.
+- It can import your messages from other instant messaging platforms to Tencent Cloud IM.
 - This API does not trigger a callback.
-- This API uses `From_Account`, `To_Account`, `MsgRandom`, and `MsgTimeStamp` to deduplicate imported messages. **When the values of all four fields match their counterparts, the two messages are considered duplicates, regardless of their contents.**
+- This API deduplicates the imported messages based on the `From_Account`, `To_Account`, `MsgRandom`, and `MsgTimeStamp` fields. **When the values of all the four fields match their counterparts, the two messages are considered duplicates, regardless of their contents.**
 - Imported messages will not be overwritten by the same message from later imports.
 
-## Input Parameters
+## API Call Description
 ### Sample request URL
 ```
 https://console.tim.qq.com/v4/openim/importmsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
-### Parameters
-The following is a list of the parameters commonly used when calling this API and their descriptions. For more parameters, see the [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
+### Request parameters
+The list below contains only the parameters commonly used when calling this API and their descriptions. For more parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | v4/openim/importmsg | Request API |
-| sdkappid | The SDKAppID is assigned by the IM console when the app is created. |
-| identifier | The administrator account of the app. For more information, refer to [App Administrator](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98). |
-| usersig | A signature generated from the app administrator account. For details on how to generate the signature, refer to [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
-| random | A random 32-digit integer ranging from 0 to 4294967295. |
+| sdkappid | The SDKAppID assigned by the IM console when the application is created. |
+| identifier | The administrator account of the app. For more information, see [App Administrator](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98). |
+| usersig | A signature generated in the app administrator account. For details on how to generate the signature, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
+| random | A random 32-bit unsigned integer ranging from 0 to 4294967295. |
 
 
-### Maximum calling frequency
+### Maximum call frequency
 
-200/second
+200 calls per second
 
 ### Sample request
 
-- **Imports message in real time when switching clients**
+- **Importing real-time messages**
 ```
 {
-    "SyncFromOldSystem": 1, // Message sent to the old system are imported in real time and marked as unread.
-    "From_Account": "lumotuwe1", // Sender UserID
-    "To_Account": "lumotuwe2", // Recipient UserID
+    "SyncFromOldSystem": 1, // Imports real-time messages and marks them as unread.
+    "From_Account": "lumotuwe1", // The account of the message sender
+    "To_Account": "lumotuwe2", // The account of the message recipient
     "MsgRandom": 1287657, // A random number assigned to the message.
-    "MsgTimeStamp": 1556178721, // UNIX timestamp
+    "MsgTimeStamp": 1556178721, // UNIX timestamp in seconds
     "MsgBody": [ // Message body. This is a text message.
         {
-            "MsgType": "TIMTextElem", // Message type: text
+            "MsgType": "TIMTextElem", // Message element
             "MsgContent": {
                 "Text": "hi, beauty"
             }
@@ -47,17 +47,17 @@ The following is a list of the parameters commonly used when calling this API an
     ]
 }
 ```
-- **Imports from chat history**
+- **Importing historical messages**
 ```
  {
-    "SyncFromOldSystem": 2, // Imported from chat history and marked as read.
-    "From_Account": "lumotuwe1", // Sender UserID
-    "To_Account": "lumotuwe2", // Recipient UserID
+    "SyncFromOldSystem": 2, // Imports historical messages and marks them as read.
+    "From_Account": "lumotuwe1", // The account of the message sender
+    "To_Account": "lumotuwe2", // The account of the message recipient
     "MsgRandom": 1287657, // A random number assigned to the message.
     "MsgTimeStamp": 1556178721, // UNIX timestamp
     "MsgBody": [ // Message body. This is a text message.
         {
-            "MsgType": "TIMTextElem", // Message type: text
+            "MsgType": "TIMTextElem", // Message element
             "MsgContent": {
                 "Text": "hi, beauty" // Message content.
             }
@@ -67,18 +67,18 @@ The following is a list of the parameters commonly used when calling this API an
 ```
 
 
-### Request field descriptions
+### Request fields
 
 | Field | Type | Required | Description |
 |---------|---------|----|---------|
-| SyncFromOldSystem | Integer | Yes | Valid values: 1 or 2.<br/>1 denotes that messages are imported in real time and marked as unread.<br/>2 denotes that messages are imported from chat history and marked as read. |
-| From_Account | String | Yes | Sender UserID |
-| To_Account | String | Yes | Recipient UserID  |
-| MsgRandom | Integer | Yes | A random number assigned to the message. Generated by a random number generator and used to deduplicate messages. For details, refer to the API Description. |
-| MsgTimeStamp | Integer | Yes | UNIX timestamp. Marks the time that the message was sent and used to deduplicate messages. For details, refer to API Description. |
-| MsgBody | Object | Yes | Message body. For detailed information, refer to [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). Note that MsgBody is an array that can contain multiple message types. |
+| SyncFromOldSystem | Integer | Yes | Valid values: 1 or 2.<br/>1 means importing real-time messages and marking them as unread.<br/>2 means that importing historical messages and marking them as read. |
+| From_Account | String | Yes | The identifier of the message sender|
+| To_Account | String | Yes | The identifier of message recipient|
+| MsgRandom | Integer | Yes | A number randomly generated and assigned to the message. The backend will use this field to deduplicate messages. For details, refer to the API Description. |
+| MsgTimeStamp | Integer | Yes | UNIX timestamp in seconds. It marks the time that the message was sent and is used to deduplicate messages. For details, refer to API Description. |
+| MsgBody | Object | Yes | Message body. For detailed information, refer to [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). Note that MsgBody is an array that can contain multiple message elements. |
 | MsgType | String | Yes | TIM message object type. Valid values: TIMTextElem (text), TIMFaceElem (Emoji), TIMLocationElem (location), and TIMCustomElem (custom message) |
-| MsgContent | Object | Yes | Different message types have different `MsgContent` formats. For details, refer to [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| MsgContent | Object | Yes | Different message elements (MsgType) have different `MsgContent` formats. For details, refer to [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
 
 
@@ -92,43 +92,43 @@ The following is a list of the parameters commonly used when calling this API an
 }
 
 ```
-### Response field descriptions
+### Response fields
 
 | Field | Type | Description |
 |---------|---------|---------|
-| ActionStatus | String | Status of the operation. `OK` means the request was successful. `FAIL` means the request failed. |
-| ErrorCode | Integer | Error code. `0` means the operation was successful. Any non-zero value means the request failed. |
+| ActionStatus | String | The result of the request. `OK` means the request was successful. `FAIL` means the request failed. |
+| ErrorCode | Integer | Error code. `0` means the request was successful. Any non-zero value means the request failed. |
 | ErrorInfo | String | Detailed error information. |
 
 ## Error Codes
 
-An HTTP status code 200 means the request was successfully received. The result of the blacklist operation is in the response, with details provided in fields such as `ErrorCode` and `ErrorInfo`. An HTTP status other than 200, such as 502, means the request was not received.
-For public error codes (60000 to 79999), refer to [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
+Unless a network error (such as error 502) occurs, the returned HTTP status code for this API is always 200. The specific error code and details can be found in the response fields such as `ErrorCode`, and `ErrorInfo`.
+For public error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
 
-The following are error codes specific to this API:
+The list below contains only error codes specific to this API:
 
 | Error Code | Description |
 | ------------- | ------------------------------------------------------------ |
-| 90001 | Failed to parse JSON. Make sure the format is valid. |
-| 90002 | Invalid MsgBody format or MsgBody is not an Array. Refer to [TIMMsgElement Object](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
-| 90003 | Missing To_Account or To_Account is not a String. |
-| 90005 | Missing MsgRandom or MsgRandom is not an Integer. |
-| 90006 | Missing MsgTimeStamp or MsgTimeStamp is not an Integer. |
-| 90007 | MsgBody is not an Array. |
-| 90008 | Missing From_Account or From_Account is not an Integer. |
+| 90001 | Failed to parse the JSON request packet. Make sure the format is valid. |
+| 90002 | The format of the MsgBody field in the JSON request packet is invalid or MsgBody is not an array. Refer to [TIMMsgElement Object](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
+| 90003 | The To_Account field is missing in the JSON request packet or To_Account is not a string. |
+| 90005 | The MsgRandom field is missing in the JSON request packet or MsgRandom is not an integer. |
+| 90006 | The MsgTimeStamp field is missing in the JSON request packet or MsgTimeStamp is not an integer. |
+| 90007 | The MsgBody field in the JSON request packet is not an array. |
+| 90008 | The From_Account field in the JSON request packet i missing or From_Account is not an integer. |
 | 90009 | The request requires app administrator permissions. |
-| 90010 | Invalid message format. Refer to [TIMMsgElement Object](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) for more information. |
-| 90011 | The number of recipients exceeded 500. Try to reduce the number of UserIDs in To_Account. |
-| 90012 | UserIDs in To_Account do not exist or have not been registered. Make sure you are not importing in real time or the UserIDs are correct. |
+| 90010 | Invalid request format. Refer to [TIMMsgElement Object](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) for more information. |
+| 90011 | The number of recipients exceeded 500. Try to reduce the number of accounts in To_Account. |
+| 90012 | Accounts in To_Account do not exist or have not been registered. Make sure the accounts are IM accounts and are correct. |
 | 90026 | Invalid message offline storage time. Messages cannot be stored offline for more than 7 days. |
-| 90030 | Missing SyncFromOldSystem or SyncFromOldSystem is not an Integer. |
-| 90048 | The requested UserID does not exist. |
-| 90992 | Internal server error. Please try again. If all requests returned this error code and third-party callback is enabled, make sure the app server is returning the correct callback results to the IM backend. |
+| 90030 | The SyncFromOldSystem field is missing in the JSON request packet or SyncFromOldSystem is not an integer. |
+| 90048 | The requested account does not exist. |
+| 90992 | Internal server error. Please try again. If all requests returned this error code and third-party callback is enabled, make sure the app server is returning the callback results to the IM backend normally. |
 | 91000 | Internal server error. Please try again. |
 | 93000 | JSON packet exceeded the maximum size of 8 KB. |
 
-## Testing
-Use our [RESTful API Tester](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/importmsg) to test your requests.
+## API Debugging Tool
+Use the [online RESTful API debugging tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/importmsg) to commission this API.
 
 ## See Also
 Importing group messages ([v4/group_open_http_svc/import_group_msg ](https://intl.cloud.tencent.com/document/product/1047/34968))

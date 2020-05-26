@@ -3,8 +3,9 @@ TencentDB for MySQL is a high-performance distributed data storage service devel
 TencentDB for MySQL has the following features:
 - It provides cloud-based data storage service for internet applications.
 - It is fully compatible with MySQL protocols and suitable for table-oriented application scenarios. TencentDB for MySQL can be used wherever MySQL is used.
-- It offers MySQL cluster service that features high performance, reliability, ease of use, and convenience.
+- It offers MySQL cluster service that features high performance, data reliability up to 99.9996%, ease of use, and convenience.
 - It integrates various database features such as backup, scaling, and migration. In addition, it is equipped with the new-generation database tool DMC for even more convenient management of databases.
+
 
 ### Related Concepts
 [Instance](https://intl.cloud.tencent.com/document/product/236/17136): a TencentDB for MySQL resource in Tencent Cloud.
@@ -28,7 +29,7 @@ TencentDB for MySQL has the following features:
 ### Related Services
 For more information on how to calculate actual expenses precisely with relevant billing tools, please see [Fees Overview](https://intl.cloud.tencent.com/document/product/236/18335) and [Price Calculator](https://buy.cloud.tencent.com/calculator/cdb).
 
-For more information on how to set up in-cloud data services by purchasing TencentDB for MySQL instances, please see [Purchase and Renewal Procedures](https://intl.cloud.tencent.com/document/product/236/5160) and [Getting Started](https://intl.cloud.tencent.com/document/product/236/3128).
+For more information on how to set up in-cloud data services by purchasing TencentDB for MySQL instances, please see [Purchase Process](https://intl.cloud.tencent.com/document/product/236/5160) and [Getting Started](https://intl.cloud.tencent.com/document/product/236/3128).
 
 For more information on how to migrate data in/off the cloud with the TencentDB for MySQL data migration tool, please see [Data Migration](https://intl.cloud.tencent.com/document/product/571/13706).
 

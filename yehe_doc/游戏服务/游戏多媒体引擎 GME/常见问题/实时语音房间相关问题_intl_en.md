@@ -3,7 +3,7 @@ There are mainly three types of applicable scenarios:
 - **Mic sequence mode:** this mode allows players to mic on in turn with high and smooth sound quality, which is suitable for voice chat-enabled games such as werewolf.
 - **Free audio call mode:** this mode allows multiple players to speak at the same time with ultra low latency, which is suitable for competitive games such as multi-player team battles.
 - **Command mode:** this mode is suitable for commander games such as one-to-many command battles and audio interaction with host.
-Voice chat features provided by the GME SDK can meet the needs of the abovementioned scenarios. However, the specific mode (such as mic sequence) is something that should be implemented in your own product's application layer through a delivery protocol, for example.
+Voice chat features provided by the GME SDK can meet the needs of the above-mentioned scenarios. However, the specific mode (such as mic sequence) is something that should be implemented in your own product's application layer through a delivery protocol, for example.
 
 ### What are the requirements for the value of `openid`?
 Only a 64-bit unsigned integer can be an `openid`. Convert it to a string before passing it to the SDK.
@@ -31,7 +31,7 @@ GME has no limit on the number of users in a room, but only up to 6 users can sp
 A room ID can contain up to 127 characters (for the voice messaging and speech-to-text feature, `null` must be entered).
 
 ### Why room entry fails even if 0 is returned when the `EnterRoom` API is called?
-The callback returned after the `EnterRoom` API is called instead of the API returned value should be used to determine whether room entry succeeds.
+A callback will be returned after the `EnterRoom` API is called, which, instead of the API returned value, should be used to determine whether room entry succeeds.
 
 ### How do I troubleshoot failures such as 10001 returned for room entry?
 The troubleshooting steps are as follows:
@@ -44,7 +44,7 @@ The troubleshooting steps are as follows:
 Please make sure that all APIs are called in the same thread and the `Poll` API is called periodically.
 
 ### Why is "HTTP Invalid id" returned when I enter a room in an application?
-If your account mapped by the `OpenId` parameter starts from 0 when you call the `EnterRoom` API, you are recommended to add 10000 to it. For example, if your account is 999, 10999 should be entered as your `OpenId`.
+If your account mapped by the `OpenId` parameter when you call the `EnterRoom` API starts from 0, you are recommended to add 10000 to it. For example, if your account is 999, 10999 should be entered as your `OpenId`.
 
 ### What should I do if the error code 7004 indicating a network error is returned during room entry?
 1. View and confirm the validity of the parameters in the room entry API, such as `Appid`, `UIN`, and `AuthBuffer` (please see the API documentation for the corresponding platform).
@@ -62,7 +62,6 @@ If your account mapped by the `OpenId` parameter starts from 0 when you call the
 Use a browser on the device with network problems to open the three links above, wait for the check to be completed (it may take 5–10 seconds), click **Copy Result URL for Sharing** to copy the result, and provide it to Tencent Cloud technical support for assistance.
 
 ![](https://main.qcloudimg.com/raw/0b540f4bf6222c6b9548b148496a15bb.png)
-
 
 **SSO diagnosis**:
 On the device with network problems, [click here to check the domain name tcloud.tim.qq.com](https://tcloud.tim.qq.com), view the displayed content, copy or take a screenshot of the content, and provide it to Tencent Cloud technical support for assistance.

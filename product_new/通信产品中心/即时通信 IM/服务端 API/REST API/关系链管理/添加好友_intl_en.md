@@ -1,26 +1,26 @@
 ## API Description
-This API adds a user to the friend list and supports batch operations.
+This API is used to add one or multiple users to the friend list.
 
-## Input Parameters
+## API Call Description
 ### Sample request URL
 ```
 https://console.tim.qq.com/v4/sns/friend_add?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-### Parameters
-The following is a list of the parameters commonly used when calling this API and their descriptions. For more parameters, see the [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
+### Request parameters
+The list below contains only the parameters commonly used when calling this API and their descriptions. For more parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | v4/sns/friend_add | Request API |
-| sdkappid | The SDKAppID is assigned by the IM console when the app is created. |
-| identifier | The administrator account of the app. For more information, refer to [App Administrator](https://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98). |
-| usersig | A signature generated from the app administrator account. For details on how to generate the signature, refer to [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
-| random | A random 32-digit integer ranging from 0 to 4294967295. |
+| sdkappid | The SDKAppID assigned by the IM console when the application is created. |
+| identifier | The administrator account of the app. For more information, see [App Administrator](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98). |
+| usersig | The signature generated in the app administrator account. For details on how to generate the signature, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
+| random | A random 32-bit unsigned integer ranging from 0 to 4294967295. |
 
 
-### Maximum calling frequency
+### Maximum call frequency
 
-200/second
+200 calls per second
 
 ### Sample request
 - **Simple request**
@@ -46,7 +46,7 @@ The following is a list of the parameters commonly used when calling this API an
         {
             "To_Account":"id1",
             "Remark":"remark1",
-            "GroupName":"Classmates", // Each user can only be assigned to one group when the user is added to the friend list. Therefore, we can use `String` as the data type.
+            "GroupName":"Classmates", // Each user can only be assigned to one friend list when the user is added as a friend. Therefore, we can use `String` as the data type.
             "AddSource":"AddSource_Type_XXXXXXXX",
             "AddWording":"I'm Test1"
         }
@@ -68,14 +68,14 @@ The following is a list of the parameters commonly used when calling this API an
         {
             "To_Account":"id2",
             "Remark":"remark2",
-            "GroupName":"Classmates", // Each user can only be assigned to one group when the user is added to the friend list. Therefore, we can use `String` as the data type.
+            "GroupName":"Classmates", // Each user can only be assigned to one friend list when the user is added as a friend. Therefore, we can use `String` as the data type.
             "AddSource":"AddSource_Type_XXXXXXXX",
             "AddWording":"I'm Test2"
         },
         {
             "To_Account":"id3",
             "Remark":"remark3",
-            "GroupName":"Colleagues", // Each user can only be assigned to one group when the user is added to the friend list. Therefore, we can use `String` as the data type.
+            "GroupName":"Colleagues", // Each user can only be assigned to one friend list when the user is added as a friend. Therefore, we can use `String` as the data type.
             "AddSource":"AddSource_Type_XXXXXXXX",
             "AddWording":"I'm Test3"
         }
@@ -85,18 +85,18 @@ The following is a list of the parameters commonly used when calling this API an
 }
 ```
 
-### Request field descriptions
+### Request fields
 
-| Field | Type | Property | Description |
+| Field | Type | Required | Description |
 |--- |--- |--- |--- |
 | From_Account | String | Yes | The UserID that initiates the request. |
 | AddFriendItem | Array | Yes | An array of friend objects. |
 | To_Account | String | Yes | The UserID to add as a friend. |
-| Remark | String | No | A note that the user who initiates the friend request writes about the user to be added. For details, refer to [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5). |
-| GroupName | String | No | The group that the user who initiates the friend request assigns to the user to be added. Each user can only be assigned to one group. Therefore, we can use the `String` data type. For details, refer to [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5). |
-| AddSource | String | Yes | Source of the friend request. For details, refer to [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5). |
-| AddWording | String | No | A note that the user who initiates the friend request writes about the user to be added. For details, refer to [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5). |
-| AddType | String | No | Friend type: <br><li>Add_Type_Single: one-sided <br><li>Add_Type_Both (default): mutual |
+| Remark | String | No | The name that the user who initiates the friend request writes about the user to be added. For details, refer to [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5). |
+| GroupName | String | No | The group that the user who initiates the friend request assigns to the user to be added. Each user can only be assigned to one group. Therefore, we can use the `String` data type. For details, see the standard friend fields section in [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5). |
+| AddSource | String | Yes | Source of the friend request. For details, see the standard friend fields section in [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5). |
+| AddWording | String | No | Remarks that the user who initiates the friend request writes about the user to be added. For details, see the standard friend fields section in [Relationship Chain Management](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5). |
+| AddType | String | No | Friend adding type: <br><li>Add_Type_Single: one-sided <br><li>Add_Type_Both (default): mutual |
 | ForceAddFlags | Integer | No | Flag denoting the friend is force added by an administrator: 1 means force added while 0 means the friend is added normally. |
 
 
@@ -148,30 +148,30 @@ The following is a list of the parameters commonly used when calling this API an
 }
 ```
 
-### Response field descriptions
+### Response fields
 
 | Field | Type | Description |
 |--- |--- |--- |
-| ResultItem | Array | An array of result objects. |
-| To_Account | String | The UserID that initiates the friend request. |
-| ResultCode | Integer | Result of the friend request. `0` means the operation was successful. Any non-zero value means the request failed. For details on non-zero results, refer to [Error Codes](#ErrorCode). |
+| ResultItem | Array | The result of adding friends in bulk, which is an array of UserIDs and corresponding results.|
+| To_Account | String | The UserID that you requested to add as a friend. |
+| ResultCode | Integer | Result of the friend request. `0` means the request was successful. Any non-zero value means the request failed. For details on non-zero results, see [Error Codes](#ErrorCode). |
 | ResultInfo | String | Error description. This field is empty when the request succeeds. |
 | Fail_Account | Array | A list of users that failed to be added as friends. This field is only returned when at least one user fails. |
-| ActionStatus | String | Status of the operation. `OK` means the request was successful. `FAIL` means the request failed. |
-| ErrorCode | Integer | Error code. `0` means the operation was successful. Any non-zero value means the request failed. For detailed information on non-zero ResultCode values, refer to [Error Codes](#ErrorCode). |
+| ActionStatus | String | The result of the request. `OK` means the request was successful. `FAIL` means the request failed. |
+| ErrorCode | Integer | Error code. `0` means the request was successful. Any non-zero value means the request failed. For detailed information on non-zero ResultCode values, refer to [Error Codes](#ErrorCode). |
 | ErrorInfo | String | Detailed error information. |
 | ErrorDisplay | String | Detailed information displayed on the client. |
 
 <span id="ErrorCode"></span>
 ## Error Codes
 
-An HTTP status code 200 means the request was successfully received. The result of the blacklist operation is in the response, with details provided in fields such as `ResultCode`, `ResultInfo`, `ErrorCode`, and `ErrorInfo`. An HTTP status other than 200, such as 502, means the request was not received.
-For public error codes (60000 to 79999), refer to [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
-The following are error codes specific to this API:
+Unless a network error (such as error 502) occurs, the returned HTTP status code for this API is always 200. The specific error code and details can be found in the response fields such as `ResultCode`, `ResultInfo`, `ErrorCode`, and `ErrorInfo`.
+For public error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
+The list below contains only error codes specific to this API:
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 30001 | Incorrect request parameter. Check your request according to the error description. |
+| 30001 | Wrong request parameter. Check your request according to the error description. |
 | 30002 | The SDKAppID does not match. |
 | 30003 | The requested user account does not exist. |
 | 30004 | The request requires app administrator permissions. |
@@ -181,17 +181,17 @@ The following are error codes specific to this API:
 | 30008 | A write conflict has occurred due to concurrent write operations. We recommend that you use batch processing. |
 | 30009 | You have been prohibited from adding friends. |
 | 30010 | Your friend list is full. |
-| 30011 | You have too many friend groups. |
+| 30011 | You have too many friend lists. |
 | 30012 | You have too many pending friend requests. |
 | 30014 | The user you are trying to add has too many friends. |
 | 30515 | The user you are trying to add is on your blacklist. You cannot add this user. |
 | 30516 | The user you are trying to add has disabled friend requests. |
 | 30525 | You have been blacklisted by the user you are trying to add. You cannot add this user. |
-| 30539 | The user you are trying to add has selected `AllowType_Type_NeeedConfirm` as their friend request authentication method. Your friend request is pending approval. This code is used to differentiate a successful friend request, meaning the friend is added, and a pending friend request, so the client can display more helpful messages. |
+| 30539 | The user you are trying to add has selected `AllowType_Type_NeeedConfirm` as their friend request authentication method. Your friend request is pending approval. This code is used to differentiate a successful friend request, meaning the friend is added, and a pending friend request, so more helpful messages can be displayed. |
 | 30540 | You have sent too many friend requests in a short amount of time. Request filtered for security reasons. |
 
-## Testing
-Use the [RESTful API online commissioning tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/friend_add) to commission this API.
+## API Debugging Tool
+Use the [online RESTful API debugging tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/friend_add) to commission this API.
 
 ## See Also
 
@@ -200,5 +200,5 @@ Use the [RESTful API online commissioning tool](https://avc.cloud.tencent.com/im
 - Deleting friends (<a href="https://intl.cloud.tencent.com/document/product/1047/34905">v4/sns/friend_delete</a>)
 - Deleting all friends (<a href="https://intl.cloud.tencent.com/document/product/1047/34906">v4/sns/friend_delete_all</a>)
 - Verifying friends (<a href="https://intl.cloud.tencent.com/document/product/1047/34907">v4/sns/friend_check</a>)
-- Querying friends (<a href="https://intl.cloud.tencent.com/document/product/1047/34908">v4/sns/friend_get</a>)
-- Querying specific friends (<a href="https://intl.cloud.tencent.com/document/product/1047/34910">v4/sns/friend_get_list</a>)
+- Getting friends (<a href="https://intl.cloud.tencent.com/document/product/1047/34908">v4/sns/friend_get</a>)
+- Getting specific friends (<a href="https://intl.cloud.tencent.com/document/product/1047/34910">v4/sns/friend_get_list</a>)
