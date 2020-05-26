@@ -6,9 +6,9 @@ This document provides an overview of APIs and SDK code samples related to inven
 
 | API | Operation Name | Operation Description |
 | ------------------------------------------------------------ | ------------ | -------------------- |
-| [PUT Bucket inventory](https://cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job in a bucket |
-| [GET Bucket inventory](https://cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries inventory jobs for a bucket |
-| [DELETE Bucket inventory](https://cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job of a bucket |
+| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job in a bucket |
+| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries inventory jobs for a bucket |
+| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job of a bucket |
 
 ## Setting Inventory Job
 
