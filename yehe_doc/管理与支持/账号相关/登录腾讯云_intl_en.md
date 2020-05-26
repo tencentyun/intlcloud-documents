@@ -10,5 +10,4 @@ The section below describes how to use an email address to log in to Tencent Clo
 
 ### Logging in with an email address
 1. Go to [Tencent Cloud](https://intl.cloud.tencent.com/) and click **Log In** in the top-right corner of the homepage.
-2. Click **Email** in "Other Login Means" under the QR code.
-3. Enter the email address and password set when you signed up for your Tencent Cloud account and click **Sign In** to log in to Tencent Cloud.
+2. Enter the email address and password set when you signed up for your Tencent Cloud account and click **Sign In** to log in to Tencent Cloud.
