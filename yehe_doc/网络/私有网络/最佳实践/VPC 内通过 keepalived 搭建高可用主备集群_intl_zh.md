@@ -9,6 +9,7 @@
 
 ## 基本原理
 通常高可用主备集群包含2台服务器，一台主服务器处于某种业务的激活状态（即 Active 状态），另一台备服务器处于该业务的备用状态（即 Standby 状态），它们共享同一个 VIP（Virtual IP）。同一时刻，VIP 只在一台主设备上生效，当主服务器出现问题，备用服务器接管 VIP 继续提供服务。高可用主备模式有着广泛的应用，例如，MySQL 主备切换、Nginx Web 接入。
+![](//mc.qcloudimg.com/static/img/a5aa34fb87508284d9e7a07898085728/1.png)
 
 ## 与物理网络的区别
 - 在传统的物理网络中，可以通过 keepalived 的 VRRP 协议协商主备状态，其原理是：
@@ -30,7 +31,7 @@
 ### 步骤2：主备子机安装 keepalived（1.2.24版本及以上）
 以 CentOS 为例：
 - yum 安装方式
-  `yum list keepalived` 查看版本号是否符合要求。若是，下一步。若否，用源码包安装方式`yum –y install keepalived`。
+  `yum list keepalived` 查看版本号是否符合要求。若是，下一步。若否，用 yum 指令安装软件包 `yum –y install keepalived`。
 - 源码包安装方式
 ```
 tar zxvf keepalived-1.2.24.tar.gz
@@ -186,8 +187,7 @@ esac
 ### 步骤7：验证主备倒换时 VIP 及外网 IP 是否正常切换
 1. 启动 keepalived：`/etc/init.d/keepalived start` 或 `systemctl start keepalived` 或 `service keepalived start`。
 2. 验证主备切换容灾效果：通过重启 keepalived 进程、重启子机等方式模拟主机故障，检测 VIP 是否能迁移。`/var/log/keepalived.log` 中会同时留下相应的日志。通过 ping VIP 的方式，可以查看网络中断到恢复的时间间隔。
-
-
+>!
 >- 每切换一次，ping 中断的时间大致为4秒。如果是常主常备模式，有可能达到6秒，这种情况通常发生在主集群的“故障”时间**极短**时，可能发生两次短时间的主备状态倒换， 然后 VIP 重新落地到刚恢复的旧的主机上。
 >- 脚本日志将会写到`/var/log/keealived.log`中。日志会占用您的磁盘空间。您可以自行借助 logrotate 等工具处理日志累积的问题。keepalived 进程的日志仍会写到`/var/log/message`中。
 

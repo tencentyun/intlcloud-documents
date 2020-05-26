@@ -1,5 +1,5 @@
 ## Operation Scenarios
-A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For more information on rules and restrictions, please see Security Group Description.
+A [security group](https://cloud.tencent.com/doc/product/213/500) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. 
 
 >
 > - TencentDB for MySQL security group currently only supports network access control for VPC and public networks but not the classic network.
@@ -58,7 +58,7 @@ You can also allow all IPs or specified IPs (IP ranges) based on your actual nee
 | Direction | Type | Source | Port | Policy |
 |---------|---------|---------|---------|---------|
 | Inbound | MySQL(3306) | All IP: 0.0.0.0/0 <br>Specified IP: enter the specified IPs or IP ranges | TCP: 3306 | Allow |
-
+               
 
 ### Step 3. Configure a security group
 A security group is an instance-level firewall provided by Tencent Cloud for controlling inbound traffic of TencentDB. You can associate a security group with an instance when purchasing it or later in the console.
@@ -75,7 +75,7 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 2. On the inbound rules or outbound rules tab, click **Import Rule**.
 7. In the pop-up dialog box, select an edited inbound/outbound rule template file and click **Start Import**.
 > If there are existing rules in the security group, export them before importing new rules. Existing rules are overwritten after importing.
-
+	
 
 ## Security Group Clone
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, select a security group and click **More** > **Clone** in the "Operation" column.
