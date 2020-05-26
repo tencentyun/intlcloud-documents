@@ -28,7 +28,7 @@ Each field has a corresponding value range:
 | Hours | An integer between 0 and 23 | , - * / |
 | Day | An integer between 1 and 31 (the number of days in the month needs to be considered) | , - * / |
 | Month | An integer between 1 and 12 or JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC | , - * / |
-| Week | An integer between 0 and 6 or MON, TUE, WED, THU, FRI, SAT, SUN; where 0 means Monday, 1 means Tuesday, and so on |, - * / |
+| Week | An integer between 0 and 6 or SUN,MON, TUE, WED, THU, FRI, SAT; where 0 means Sunday, 1 means Monday, and so on |, - * / |
 | Year | An integer between 1970 and 2099 | , - * / |
 
 ### Cron expression syntax 2 (not recommended)
@@ -46,7 +46,7 @@ Each field has a corresponding value range:
 | Hours | An integer between 0 and 23 | , - * / |
 | Day | An integer between 1 and 31 (the number of days in the month needs to be considered) | , - * / |
 | Month | An integer between 1 and 12 or JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC | , - * / |
-| Week | An integer between 0 and 6 or MON, TUE, WED, THU, FRI, SAT, SUN; where 0 means Monday, 1 means Tuesday, and so on |, - * / |
+| Week | An integer between 0 and 6 or SUN,MON, TUE, WED, THU, FRI, SAT; where 0 means Sunday, 1 means Monday, and so on |, - * / |
 
 ### Wildcards
 <table>
