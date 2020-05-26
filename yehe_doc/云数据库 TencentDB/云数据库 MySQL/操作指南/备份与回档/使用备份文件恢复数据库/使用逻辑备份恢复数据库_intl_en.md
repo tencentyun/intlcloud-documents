@@ -1,14 +1,14 @@
 ## Operation Scenarios
-> To save storage capacity, both physical and logical backups in TencentDB for MySQL will be compressed and packaged. Specifically, a backup file is compressed with qpress first and then packed with xbstream offered by Percona.
+>To save storage capacity, both physical and logical backups in TencentDB for MySQL will be compressed and packed. Specifically, a backup file is compressed with qpress first and then packed with xbstream offered by Percona.
 >
 The open-source software tool Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a logical backup file of a TencentDB for MySQL instance to a CVM-based self-created database.
 - XtraBackup only supports Linux but not Windows.
-- For more information on how to restore data on Windows, please see [Rolling back Databases](https://intl.cloud.tencent.com/document/product/236/7276), [Migrating Data Through Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464), and [Migrating Data Through DTS](https://intl.cloud.tencent.com/document/product/571/34103).
+- For more information on how to restore data on Windows, please see [Database Rollback](https://intl.cloud.tencent.com/document/product/236/7276), [Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464), and [Migrating Data Through DTS](https://intl.cloud.tencent.com/document/product/571/34103).
 
 ## Prerequisites
 - Download and install XtraBackup.
   XtraBackup can be downloaded at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Please select Percona XtraBackup 2.4.6 or higher. For more information on how to install the tool, please see [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
-- Supported instance version: TencentDB for MySQL 5.5, 5.6, and 5.7 High-Availability Edition.
+- Supported instance version: TencentDB for MySQL 5.5, 5.6, and 5.7 High-Availability Edition and Finance Edition.
 
 ## Directions
 ### Step 1. Download the backup file
@@ -16,10 +16,10 @@ The open-source software tool Percona XtraBackup can be used to back up and rest
 2. On the instance management page, click **Backup and Restore** > **Data Backup List**, select the backup to download, and then click **Download** in the "Operation" column.
 3. You are recommended to copy the download address in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command for download over the private network at a higher speed.
 >
->- You can also select **Download** to download it directly, which takes more time though.
+>- You can also click **Download** to download it directly, which takes more time though.
 >- `wget` command format: wget -c 'backup file download address' -O custom filename.xb
 >
-Below is a sample:
+Example:
 ```
 wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%2Fmysql%2F42d-11ea-b887-6c0b82b%2Fdata%2Fautomatic-delete%2F2019-11-28%2Fautomatic%2Fxtrabackup%2Fbk_204_10385%2Fcdb-1pe7bexs_backup_20191128044644.xb?sign=q-sign-algorithm%3Dsha1%26q-ak%3D1%26q-sign-time%3D1574269%3B1575417469%26q-key-time%3D1575374269%3B1517469%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Dfb8fad13c4ed&response-content-disposition=attachment%3Bfilename%3D%2141731_backup_20191128044644.xb%22&response-content-type=application%2Foctet-stream' -O test0.xb
 ```
@@ -29,18 +29,18 @@ Unpack the backup file with xbstream.
 ```
 xbstream -x < test0.xb
 ```
->- Replace `test0.xb` with your backup file.
+>Replace `test0.xb` with your backup file.
 >
 The unpacking result is as shown below:
 ![](https://main.qcloudimg.com/raw/61b53f4f54ffd2fbe7c0d1b3423255b0.png)
 
 ### Step 3. Decompress the backup file
-1. Download qpress by running the following command.
+1. Download qpress by running the following command:
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->If an error is displayed for the `wget` download operation, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download the qpress locally, and then upload it to the Linux CVM instance. For more information, please see [Uploading Files to Linux CVM with SCP](https://intl.cloud.tencent.com/document/product/213/2133).
-2. Extract the qpress binary files by running the following command.
+>If an error is displayed for the `wget` download operation, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download the qpress locally, and then upload it to the Linux CVM instance. For more information, please see [Uploading Files via SCP](https://intl.cloud.tencent.com/document/product/213/2133).
+2. Extract the qpress binary files by running the following command:
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
 source /etc/profile
@@ -54,11 +54,11 @@ qpress -d cdb-jp0zua5k_backup_20191202182218.sql.qp .
 The decompressing result is as shown below:
 ![](https://main.qcloudimg.com/raw/355557bc949fd86af8346d8a44dc4551.png)
 
-### Step 4. Import into the database
-Import the file into the database by running the following command:
+### Step 4. Import the backup file into the target database
+Import the .sql file into the target database by running the following command:
 ```
 mysql -uroot -P3306 -h127.0.0.1 -p < cdb-jp0zua5k_backup_20191202182218.sql
 ```
 >
->- Importing into a local MySQL instance with port 3306 is used as an example in this document. You can replace it according to the actual situation.
+>- Importing into a local MySQL instance with port 3306 is used as an example in this document. You can replace it according to actual circumstances.
 >- Replace `cdb-jp0zua5k_backup_20191202182218.sql` with the .sql file actually extracted by qpress.
