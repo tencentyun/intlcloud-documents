@@ -19,22 +19,20 @@
 
 ### 多包名厂商通道配置
 当应用有多个包名时，若需要通过厂商通道下发渠道包名的消息，则需要为每个渠道包名申请厂商密钥，并在 [控制台](https://console.cloud.tencent.com/tpns) 配置管理页面进行配置。
-以华为为例，当应用配置了多个包名时，开启华为通道将出现多套密钥配置，需将每个包名的配置补充完整，否则开启多包名推送时该包名下设备的消息将通过自建通道下发。
+以华为为例，当应用配置了多个包名时，开启华为通道将出现多套密钥配置，需将每个包名的配置补充完整，否则开启多包名推送时该包名下设备的消息将通过 TPNS 通道下发。
 ![](https://main.qcloudimg.com/raw/5c454ec4e1c017ee2da11c6f8d1cb673.png)
 
 ### 集成SDK
 配置好包名之后，获取 ` AccessID、AccessKey`，根据  [Android SDK 集成指南](https://intl.cloud.tencent.com/document/product/1024/30713) 或按照控制台【快速接入】流程配置。
 ![](https://main.qcloudimg.com/raw/86ced6140edd7012c8d1c7683f6e215a.png)
 
-
 ## 开始使用
 ### 控制台使用
-当以上配置补充完整并确认无误后，可在控制台 >【消息推送】>【创建推送】>【高级设置】多包名推送处开启多包名推送开关。
+当以上配置补充完整并确认无误后，可在控制台 >【消息推送】>【创建推送】>【高级设置】多包名推送处开启多包名推送开关，如图：
 ![](https://main.qcloudimg.com/raw/cc1f1ec0ca401904438ac3a964cdefb1.png)
-
 开启多包名推送后，推送将对所有包名下匹配推送目标的设备下发。
 
->多包名推送功能仅限 Android 平台，若包名对应厂商通道未配置，则该包名下注册设备的消息通过自建通道下发。
+>多包名推送功能仅限 Android 平台，若包名对应厂商通道未配置，则该包名下注册设备的消息通过 TPNS 通道下发。
 
 ### Rest API 使用
 在 Rest API 可选参数中设置`multi_pkg`为 true 即为打开多包名推送，可参考 [PushAPI 参数说明](https://intl.cloud.tencent.com/document/product/1024/33764)。
