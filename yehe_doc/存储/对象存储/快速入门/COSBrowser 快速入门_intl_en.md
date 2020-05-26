@@ -1,4 +1,4 @@
-If you are using COS for the first time, you are recommended to first read [Bucket](https://intl.cloud.tencent.com/document/product/436/13312), [Object] (https://intl.cloud.tencent.com/document/product/436/13324), [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518), and [General FAQs](https://intl.cloud.tencent.com/document/product/436/6282).
+If you are a first time user of COS, we recommend that you first read [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312), [Object Overview] (https://intl.cloud.tencent.com/document/product/436/13324), [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518), and [FAQs](https://intl.cloud.tencent.com/document/product/436/6282).
 
 COSBrowser is a visual interface tool launched for Tencent Cloud COS. It comes with multiple versions for Windows, macOS, Linux, Android and iOS, allowing you to use simpler interactions to easily view, transfer and manage COS resources.
 This document will use the Windows Version as an example to show you in detail how to create buckets, and upload, download, and share objects.
@@ -21,7 +21,7 @@ The COSBrowser Window Version can run on Windows 7 32/64-bit or above, and Windo
 
 ## Step 2. Log in to COSBrowser
 
-Use your [API Key](https://console.cloud.tencent.com/cam/capi) to log in to COSBrowser.
+Use your [API Key] (https://console.cloud.tencent.com/cam/capi) to log in to COSBrowser.
 
 
 ## Step 3. Create a bucket
@@ -50,12 +50,12 @@ Use your [API Key](https://console.cloud.tencent.com/cam/capi) to log in to COSB
 
 
 1. Click <img src="https://main.qcloudimg.com/raw/b3de2bc7284b5aaba9b4f9af6c408205.jpg" style="margin:0;"> in the top right of the COSBrowser page to switch to List View (This step can be skipped if you are already in List View).
-2. In the action bar to the right of a file, click <img src="https://main.qcloudimg.com/raw/0631f784902fb5e146ac0d0f6befe346.jpg"  style="margin:0;"> to download the file.
+2. Under Actions on the right side, click <img src="https://main.qcloudimg.com/raw/0631f784902fb5e146ac0d0f6befe346.jpg"  style="margin:0;"> to download the file.
 
 
 #### Method 2
 
-1. Right-click a file, and in the drop-down menu, click **Advanced Download**.
+1. Right-click a file, and in the drop-down list, click **Advanced Download**.
 2. The Advanced Download window will pop up where you can select "Rename", "Overwrite" or "Skip" as you need.
 ![](https://main.qcloudimg.com/raw/6e533ea1b75df3de7dba029a6976f844.png)
 3. Click **Download**, and COSBrowser will begin downloading the file you selected.
@@ -75,31 +75,29 @@ Each file stored in COS can be accessed through a specific link. If a file is pr
 4. You can now access your file via this link. File links generated in this way are valid for 2 hours. To customize the validity period, you can use Method 2.
 
 
-#### Method 2
+### Method 2
 
 1. Click <img src="https://main.qcloudimg.com/raw/b3de2bc7284b5aaba9b4f9af6c408205.jpg" style="margin:0;"> in the top right of the COSBrowser page to switch to List View (This step can be skipped if you are already in List View).
-1. In the action bar to the right side of a file, click **...**, and in the drop-down menu, click **Share**.
+1. Under Actions on the right side, click **...**, and in the drop-down list, click **Share**.
 ![](https://main.qcloudimg.com/raw/1ab8d2c4a61ae3e0b94c06c9d65ce3f7.png)
-2. In the pop-up Custom Copy Link window, configure your file link. If your file is subject to private read/write permission, select **Copy Signed Temporary Link....**. Note that the link is valid for a specified duration.
+2. In the Custom Copy Link pop-up window, configure your file link. If your file is private read/write, select **Copy Signed Temporary Link....**. Note that the link is valid for a specified period.
 ![](https://main.qcloudimg.com/raw/1d4b5c7f047c2ecfa8fb182a9daed1d2.png)
 3. Click **Copy** to copy the temporary file link, with which you can now access your file.
 
 
 
-
 ## More Features
 
-COSBrowser has much more to offer than the above features, such as modifying bucket access permissions and file preview. For more information, see [COSBrowser desktop version](https://intl.cloud.tencent.com/document/product/436/11366#cosbrowser-.E6.A1.8C.E9.9D.A2.E7.AB.AF).
+In addition to the above capabilities, COSBrowser has many more to offer, such as modifying bucket access permissions, file preview, etc. For more information, see [COSBrowser desktop version](https://intl.cloud.tencent.com/document/product/436/11366#.E6.A1.8C.E9.9D.A2.E7.AB.AF.E5.8A.9F.E8.83.BD.E5.88.97.E8.A1.A8).
 
 
-## Any Problems？
+## Troubleshooting
 
-We are deeply sorry for any inconvenience. Please contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
-
+Should you have any problems with this tool, you may consult our smart customer service for a solution, or contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Related Documents
 
-To learn more about iOS or Android-powered COSBrowser, see the following documents:
+To learn more about iOS- or Android-powered COSBrowser, see the following documents:
 
 - [COSBrowser Overview](https://intl.cloud.tencent.com/document/product/436/11366)
 - [User Guide for Mobile Version](https://intl.cloud.tencent.com/document/product/436/32566)
