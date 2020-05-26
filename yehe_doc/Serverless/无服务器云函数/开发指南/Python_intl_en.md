@@ -87,7 +87,7 @@ You can choose the desired runtime environment by selecting `Python 2.7` or `Pyt
 You can view Python's official advice on Python 2 or Python 3 selection [here](https://wiki.python.org/moin/Python2orPython3).
 
 - The following libraries are supported in Python 3 cloud runtime:
->If you need to use a library that is not listed below, please install it locally and use it after packaging and uploading it.
+>If you need to use a library that is not listed below, please install it locally and use it after packaging and uploading it.For more information, please see [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879#python-.E8.BF.90.E8.A1.8C.E6.97.B6)
 >
 
 | Library Name | Version |
