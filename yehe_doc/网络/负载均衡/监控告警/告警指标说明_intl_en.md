@@ -14,8 +14,8 @@ Currently, both public network CLB and private network CLB support alarming at t
 
 | Metric | Unit | Description |
 |----|------|----|
-| Inbound bandwidth | bps | Bandwidth used by the client to access CLB over the public network within a reference period. |
-| Outbound bandwidth | bps | Bandwidth used by CLB to access the public network within a reference period. |
+| Inbound bandwidth | Mbps | Bandwidth used by the client to access CLB over the public network within a reference period. |
+| Outbound bandwidth | Mbps | Bandwidth used by CLB to access the public network within a reference period. |
 | Number of inbound packets | Packets/s | Number of request data packets received by CLB per second within a reference period. |
 | Number of outbound packets | Packets/s | Number of data packets sent by CLB per second within a reference period. |
 
@@ -48,8 +48,8 @@ You can configure unique monitoring metric alarm policies for all layer-7 (HTTP/
 
 | Metric | Unit | Description |
 |----|------|----|
-| Inbound bandwidth | bps | Bandwidth used by the client to access CLB over the public network within a reference period. |
-| Outbound bandwidth | bps | Bandwidth used by CLB to access the public network within a reference period. |
+| Inbound bandwidth | Mbps | Bandwidth used by the client to access CLB over the public network within a reference period. |
+| Outbound bandwidth | Mbps | Bandwidth used by CLB to access the public network within a reference period. |
 | Number of inbound packets | Packets/s | Number of request data packets received by CLB per second within a reference period. |
 | Number of outbound packets | Packets/s | Number of data packets sent by CLB per second within a reference period. |
 | Number of new connections | - | Number of new connections established per minute within a reference period. |

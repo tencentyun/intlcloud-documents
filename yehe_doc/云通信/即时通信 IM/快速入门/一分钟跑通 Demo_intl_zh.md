@@ -1,5 +1,6 @@
 本文介绍如何快速跑通即时通信 IM 的体验 Demo。
 
+
 <span id="step1"></span>
 ## 步骤1：创建应用
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
@@ -9,7 +10,7 @@
 2. 单击【+添加新应用】。
 3. 在【创建应用】对话框中输入您的应用名称，单击【确定】。
     创建完成后，可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。请记录 SDKAppID 信息。
-    
+    ![](https://main.qcloudimg.com/raw/2753962b67754a9ebb2a2a5b8042f2ef.png)
 
 
 <span id="step2"></span>
@@ -59,7 +60,7 @@
   >
  - SDKAPPID：请设置为 [步骤1](#step1) 中获取的实际应用 SDKAppID。
  - SECRETKEY：请设置为 [步骤2](#step2) 中获取的实际密钥信息。
- 
+ ![](https://main.qcloudimg.com/raw/e7f6270bcbc68c51595371bd48c40af7.png)
 
 
 >本文提到的获取 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。

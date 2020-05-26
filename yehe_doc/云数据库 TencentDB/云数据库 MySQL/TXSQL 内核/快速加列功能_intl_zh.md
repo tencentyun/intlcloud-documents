@@ -3,7 +3,7 @@
 ## 限制条件
 - 实例版本：MySQL 5.7 高可用版和金融版
 - 内核小版本：20190830及以上
->新购实例默认为最新内核版本，查看内核版本可参见 [查看内核版本号](https://intl.cloud.tencent.com/document/product/236/35995)，内核版本更新情况可参见 [内核版本更新动态](https://intl.cloud.tencent.com/document/product/236/35989)。
+>新购实例默认为最新内核小版本，查看内核小版本可参见 [查看内核小版本](https://intl.cloud.tencent.com/document/product/236/35995)，内核版本更新情况可参见 [内核版本更新动态](https://intl.cloud.tencent.com/document/product/236/35989)。
 
 ## 使用说明
 [登录数据库](https://intl.cloud.tencent.com/document/product/236/3130)，快速加列语法如下：

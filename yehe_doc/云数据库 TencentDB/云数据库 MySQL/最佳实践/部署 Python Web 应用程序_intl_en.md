@@ -1,10 +1,10 @@
 Django is an open-source web application framework written in Python.
-This tutorial describes how to deploy the default Django website to a CVM instance where Python 2.7 runs.
+This document describes how to deploy the default Django website to a CVM instance where Python 2.7 runs.
 
 Software environments used here include CentOS 7.2, Python 2.7, and Django 1.11.
 
 ### Step 1. Log in to the CVM instance
-For more information on how to purchase and access CVM instances, please see [Getting Started with Linux CVM](https://intl.cloud.tencent.com/document/product/213/2936).
+For more information on how to purchase and access CVM instances, please see [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517).
 
 ### Step 2. Install Python
 Python is installed in CentOS by default. You can view the Python version by running `python --version`.
@@ -18,11 +18,11 @@ yum install python-pip
 ```
 pip install --upgrade pip
 ```
-2. Install Django through pip.
+3. Install Django through pip.
 ```
 pip install Django==1.11
 ```
-3. View the Django version to see whether the installation is successful.
+4. View the Django version to see whether the installation is successful.
 ```
 python # Enter the Python command line
 >>> import django
@@ -34,6 +34,8 @@ Install the supporting modules of MySQL.
 ```
 yum install python-devel
 yum install mysql-devel
+yum -y install mysql-devel libxml2 libxml2-dev libxslt* zlib gcc openssl
+yum install gcc libffi-devel python-devel openssl-devel
 pip install MySQL-python
 ```
 
@@ -63,7 +65,7 @@ yum install -y mod_wsgi
 ```
 
 ### Step 7. Create a project to test the Django environment
-1. Create a test project under `/usr/local` by running `django-admin.py startproject projectname`, where projectname is the name of the project.
+1. Create a test project under `/usr/local` by running `django-admin.py startproject projectname`, where `projectname` is the name of the project.
 ```
 cd /usr/local
 django-admin.py startproject projectname
@@ -73,7 +75,7 @@ django-admin.py startproject projectname
 cd /usr/local/projectname
 vim django.wsgi
 ```
-3. Enter the following in `django.wsgi`.
+3. Enter the following content in `django.wsgi`:
 ```
 import os
 import sys
@@ -82,7 +84,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), '.'
 os.environ['DJANGO_SETTINGS_MODULE'] = 'projectname.settings'
 application = get_wsgi_application()
 ```
-4. Add Apache support by adding the following content to `httpd.conf` in `/etc/httpd/conf/httpd.conf`.
+4. Add Apache support by adding the following content to `httpd.conf` in `/etc/httpd/conf/httpd.conf`:
 ```
 LoadModule wsgi_module modules/mod_wsgi.so
 WSGIScriptAlias /python "/usr/local/projectname/django.wsgi"
@@ -130,13 +132,13 @@ DATABASES = {
         'NAME': 'mysql',
         'USER': 'root', # TencentDB account name
         'PASSWORD': '123456', # TencentDB account password
-        'HOST': '0.0.0.0', # TencentDB private network address
+        'HOST': '0.0.0.0', # TencentDB private IP address
         'PORT': '3306', # TencentDB port
     }
 }
 ```
-2. Run the following command to test the database connection after configuration.
+2. Test the database connection after configuration by running the following command:
 ```
 $python manage.py validate/check
 ```
-3. Once the test is passed, database operations can be performed. For more information, please see [Models and Databases](https://docs.djangoproject.com/en/1.11/topics/db/).
+3. Once the test is passed, database operations can be performed. For more information, please see [Models and databases](https://docs.djangoproject.com/en/1.11/topics/db/).

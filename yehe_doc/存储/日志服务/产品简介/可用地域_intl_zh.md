@@ -4,6 +4,12 @@
 
 
 
+#### 深圳/上海金融专区特别说明
+
+针对金融行业监管要求定制的合规专区，具有高安全，高隔离性的特点。目前日志服务已支持深圳、上海金融专区。已认证通过的金融行业客户可 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请使用专区。
+
+
+
 #### 可用地域及简称
 
 | 地域     | 域名简称         | 内网域名                            | 外网域名                           |
@@ -20,6 +26,7 @@
 | 硅谷     | na-siliconvalley | na-siliconvalley.cls.tencentyun.com | na-siliconvalley.cls.tencentcs.com |
 | 新加坡   | ap-singapore     | ap-singapore.cls.tencentyun.com     | ap-singapore.cls.tencentcs.com     |
 | 孟买     | ap-mumbai        | ap-mumbai.cls.tencentyun.com        | ap-mumbai.cls.tencentcs.com        |
+| 法兰克福|eu-frankfurt|eu-frankfurt.cls.tencentyun.com|eu-frankfurt.cls.tencentcs.com
 
 
 
