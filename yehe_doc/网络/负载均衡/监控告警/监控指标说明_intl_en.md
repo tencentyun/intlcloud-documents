@@ -5,8 +5,8 @@ You can go to the [Cloud Monitor Console](https://console.cloud.tencent.com/moni
 ## CLB Instance Level
 | Metric | Unit | Description |
 |----|------|----|
-| Inbound bandwidth | bps | Bandwidth used by the client to access CLB over the public network within a reference period. |
-| Outbound bandwidth | bps | Bandwidth used by CLB to access the public network within a reference period. |
+| Inbound bandwidth | Mbps | Bandwidth used by the client to access CLB over the public network within a reference period. |
+| Outbound bandwidth | Mbps | Bandwidth used by CLB to access the public network within a reference period. |
 | Number of inbound packets | Packets/s | Number of request data packets received by CLB per second within a reference period. |
 | Number of outbound packets | Packets/s | Number of data packets sent by CLB per second within a reference period. |
 
@@ -20,8 +20,8 @@ Layer-4 listeners allow you to view the monitoring metrics at three levels:
 |----|------|----|
 | Number of connections | - | Number of connections on the listener within a reference period. |
 | Number of new connections | - | Number of newly established connections on the listener within a reference period. |
-| Inbound bandwidth | bps | Bandwidth used by the client to access CLB over the public network within a reference period. |
-| Outbound bandwidth | bps | Bandwidth used by CLB to access the public network within a reference period. |
+| Inbound bandwidth | Mbps | Bandwidth used by the client to access CLB over the public network within a reference period. |
+| Outbound bandwidth | Mbps | Bandwidth used by CLB to access the public network within a reference period. |
 | Number of inbound packets | Packets/s | Number of request data packets received by CLB per second within a reference period. |
 | Number of outbound packets | Packets/s | Number of data packets sent by CLB per second within a reference period. |
 
@@ -37,8 +37,8 @@ Layer-7 listeners allow you to view the monitoring metrics at five levels:
 |----|------|----|
 | Number of connections | - | Number of connections on the listener within a reference period. |
 | Number of new connections | - | Number of newly established connections on the listener within a reference period. |
-| Inbound bandwidth | bps | Bandwidth used by the client to access CLB over the public network within a reference period. |
-| Outbound bandwidth | bps | Bandwidth used by CLB to access the public network within a reference period. |
+| Inbound bandwidth | Mbps | Bandwidth used by the client to access CLB over the public network within a reference period. |
+| Outbound bandwidth | Mbps | Bandwidth used by CLB to access the public network within a reference period. |
 | Number of inbound packets | Packets/s | Number of request data packets received by CLB per second within a reference period. |
 | Number of outbound packets | Packets/s | Number of data packets sent by CLB per second within a reference period. |
 | Average response time | ms | Average response time of CLB within a reference period. |
