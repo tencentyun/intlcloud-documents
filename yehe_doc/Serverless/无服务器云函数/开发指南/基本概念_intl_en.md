@@ -246,10 +246,6 @@ You can get a function execution log in the following methods:
 	<th>Method</th>
 	</tr>
 	<tr>
-	<td>SCL CLI</td>
-	<td>Run the <code>scf logs</code> command. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/583/32762">View Logs</a>.</td>
-	</tr>
-	<tr>
 	<td>SCF Console</td>
 	<td>On the function code page, click **Test** to synchronously invoke the function. After the execution is completed, the log of this invocation will be displayed directly in the console.</td>
 	</tr>
