@@ -15,7 +15,7 @@ There are three types of instances available in TencentDB for MySQL:
 <tbody><tr>
 <td>Master instance</td>
 <td>An instance that can be read from and written to</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">Basic Edition</a> <li> <a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">High-Availability Edition</a></td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">Basic Edition</a> <li> <a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">High-Availability Edition</a><li> <a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">Finance Edition</a></td>
 <td>Yes</td>
 <td>A master instance can mount read-only instances and disaster recovery instances for read/write separation and remote disaster recovery</td>
 </tr>
@@ -29,9 +29,13 @@ There are three types of instances available in TencentDB for MySQL:
 <tr>
 <td>Disaster recovery instance</td>
 <td>An instance that supports disaster recovery across AZs and regions</td>
-<td><li> <a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">High-Availability Edition</a></td>
+<td><li> <a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">High-Availability Edition</a><li> <a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">Finance Edition</a></td>
 <td>Yes</td>
 <td>A disaster recovery instance is read-only during sync with a master instance. It can actively stop the sync and be promoted to a master instance for read/write access. It must reside in a different region from the master instance</td>
 </tr>
 </tbody></table>
 
+### Related Information
+- For more information on how to create read-only instances and related notes, please see [Creating Read-only Instance](https://intl.cloud.tencent.com/document/product/236/7270).
+- For more information on how to create and configure RO groups for read-only instances, please see [Managing Read-only Instance](https://intl.cloud.tencent.com/document/product/236/11361).
+- For more information on how to create disaster recovery instances and related notes, please see [Creating Disaster Recovery Instance](https://intl.cloud.tencent.com/document/product/236/7272).
