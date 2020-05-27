@@ -171,7 +171,7 @@ metadata:
 
 ### 创建 Service
 
-1. 参考 [YAML 示例](#YAMLSample)，准备 StatefulSet YAML 文件。
+1. 参考 [YAML 示例](#YAMLSample)，准备 Service YAML 文件。
 2. 安装 Kubectl，并连接集群。操作详情请参考 [通过 Kubectl 连接集群](https://intl.cloud.tencent.com/document/product/457/31086)。
 3. 执行以下命令，创建 Service YAML 文件。
 ```shell
