@@ -53,6 +53,8 @@ Hue 的任务调度基于工作流，先创建一个包含 Hive script 脚本的
  - 切换到 hadoop 用户，在 Hue 页面上方，选择【Query】>【Scheduler】>【Workflow】。
 ![](https://main.qcloudimg.com/raw/17e2c9e91bef6c67d7f6721eeb1a490e.png)
  - 在工作流编辑页面中拖一个 Hive Script。
+>!本文以安装 Hive 版本为 Hive1 为例，配置参数为 HiveServer1。与其他 Hive 版本混合部署时（即配置其他版本的配置参数时），会报错。
+>
 ![](https://main.qcloudimg.com/raw/128170644bbef8f40743ea0f72a35a0e.png)
  - 选择刚上传的 Hive scipt 文件和 hive-site.xml 文件。
 ![](https://main.qcloudimg.com/raw/1bdf334d89fa1be9fcee003d8328ff4d.png)
