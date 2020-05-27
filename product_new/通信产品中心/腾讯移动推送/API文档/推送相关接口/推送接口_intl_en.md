@@ -221,6 +221,7 @@ The specific fields for the Android platform are as follows:
 | xg_media_audio_resources    | string  | message       |None  | No    | Element address for audio rich media. MP3 format audio supported. It is recommended that the content be smaller than 5M<br>⚠️Due to vendor restrictions, pushes containing rich media cannot be delivered through the vendor channel. All must be delivered through the TPNS channel. |
 | android              | JSON  | message      | None    | No    | Structure of advanced settings for Android notification. For more information, please see the Android structure description. |
 
+<span id="intent1"></span>
 #### Android structure description
 
 | Field Name | Type | Parent Item | Default Value | Required | Parameter Description |
@@ -229,6 +230,7 @@ The specific fields for the Android platform are as follows:
 | n_ch_name     | string    | Android      | None    | No    | Notification channel name (only valid for TPNS and OPPO push channels). For more information, please see [Creating Notification Channels](https://intl.cloud.tencent.com/document/product/1024/30715)                                 |
 | n_id           | int    | Android       |0    | No   | Unique ID of the notification message object (only valid for the TPNS channel).<li>Greater than 0: overrides the previous message with the same ID.</li><li>Equal to 0: displays this notification and not affect other messages.</li><li>Equal to -1: all previous messages are cleared and only this message is shown </li> |
 | builder_id     | int    | Android      |0    | No | Local notification style ID |
+| badge_type	 |int	 |android	|-1	|No	|Notification badge, which takes effect only for Huawei devices. Valid values: -2: automatically increase by one, -1: unchanged |
 | ring           | int    |Android      |1    | No    | Whether there is a ringtone<li>0: no</li><li>1: yes  </li>           |
 | ring_raw | string | Android | None | No | This specifies the name of the ringtone file in the raw directory of the Android project; no extension is needed |
 | vibrate        | int    | Android       |1    | No    | Whether the device vibrates</li><li>0: no<li>1: yes</li>            |
@@ -240,7 +242,9 @@ The specific fields for the Android platform are as follows:
 | small_icon | string | Android | None | No | The icon that the message displays in the status bar. If not set, the application icon will be displayed. |
 | action | JSON | Android | Yes | No | This sets the action after the notification bar is clicked; the default action is to open the application. |
 | action_type| int | Action      |Yes   | No     | Click action type. <li>1: opens activity or the application itself </li><li>2: opens browser</li><li>3: opens Intent (recommended ⚠️  [Configuration Guide](https://intl.cloud.tencent.com/document/product/1024/32624))          </li>  |
-| custom_content | string | Android | None    | No    |  User-customized parameters. ⚠️ This must be serialized as a JSON string <li>If message overwriting is required, you cannot use `custome_content` to pass in custom parameters; instead, you need to change to use the intent method to overwrite messages. |
+| custom_content | string | Android | None    | No    |  User-customized parameters. ⚠️ This must be serialized as a JSON string <li>If message overwriting is required, you cannot use `custom_content` to pass in custom parameters; instead, you need to change to use the intent method. |
+| show_type | int | Android |2 | No | Whether to display notification when the application is in the foreground. 1: no, 2: yes. Default value: 2. This takes effect only for TPNS and FCM channels. <br>Note: if the value is 1 and the application is in the foreground, the end user will not be aware of the push, but arrival data will be reported. |
+
 
 
 Below is an example of a complete message:
@@ -446,13 +450,18 @@ Optional Push API parameters are the optional advanced parameters except `audien
 | account_push_type  | int  |  None | Optional for account push         | 0       |<li> 0: push message to the latest device of the account</li><li> 1: push message to all devices associated with the account</li>|
 | token_list    | array   |None | Required by single-device push and device list push | None       | For single-device push: <li>audience_type must be token<li>Parameter format: ["token1"]<br>For device list push: <li>Parameter format: ["token1","token2"]</li><li>Up to 1,000 tokens </li>|
 | push_speed   |int | None | Only valid for full push and tag push | None | Sets push speed limit to X pushed per second. Value range of X: 1000–50000 |
+| collapse_id  |uint32 |None|No| The system assigns a `collapse_id` by default | <li>Message overwriting parameter. After the first push task has been scheduled and delivered, if the second push task carries the same `collapse_id`, it will stop the TPNS channel data in the first push task that has not been delivered yet and will also overwrite the message in the first push task. <li>The `collapse_id` of a completed task can be obtained through the [single task push information querying API](https://intl.cloud.tencent.com/document/product/1024/33773).<li>Currently, this is supported only for full push, tag push, and number package push |
+force_collapse|bool|None|No|false| Whether to deliver messages to OPPO and Vivo devices that do not support message overwriting<li>false: no <li>true: yes |
+	
+> For `collapse_id`, the following conditions of use apply:
+- This parameter currently is not customizable, and the `collapse_id` generated by TPNS is required. <li>This feature currently is supported only for the TPNS channel, APNs channel, Mi channel, Meizu channel, and Huawei devices on EMUI 10 and above. <li>For the Huawei channel, custom parameters can be carried in the [intent](#intent1) method during message overwriting. If you use `custom_content` to carry custom parameters, the API layer will block them. <li>Currently, the OPPO and Vivo channels do not support message overwriting. When an overwriting message is created, delivery to the OPPO and Vivo channels can be disabled by setting the `force_collapse` field to `false`.
 
 	
 #### loop_param parameter description
 | Field name | Type | Required | Comments |
 | -------- | ------- | ---- | ----------------------------------------          |
 | startDate      | string | Yes    | Loop interval start date, with format of YYYY-MM-DD, such as 2019-07-01       |
-| endDate      | string | Yes    | Loop interval end date, with format of YYYY-MM-DD, such as 2019-07-07       |
+| endDate | string   | Yes    | Loop interval start date, with format of YYYY-MM-DD, such as 2019-07-07|                 |
 | loopType | int| Yes | Loop type: 1 = daily, 2 = weekly, 3 = monthly |
 | loopDayIndexs | array | Yes   | For weekly loop, enter number of weeks [0-6], and enter days as 0. If it is [0, 1, 2], it indicates that the push will be done on Monday, Tuesday, and Wednesday every week.                                |
 | dayTimes   | array  | Yes    | Specific push time, with the format as HH:MM:SS, such as ["19:00:00", "20:00:00"], indicates that the push will be done at 19:00 and 20:00 every day. |

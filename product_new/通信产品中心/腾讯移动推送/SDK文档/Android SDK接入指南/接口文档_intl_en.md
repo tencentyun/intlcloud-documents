@@ -252,17 +252,17 @@ TPNS mainly provides two push formats: "push notification" and "in-app message c
 
 ### Push notification (displayed in notification bar)
 
-This refers to the content displayed in the notification bar of the device. All operations are performed by TPNS SDK. The application can listen to clicks on notifications. In other words, push notifications delivered on the console do not need to be processed by the application and will be displayed in the notification bar by default.
+This refers to the content displayed in the notification panel of the device. All operations are performed by TPNS SDK. The application can listen to clicks on notifications. In other words, push notifications delivered on the frontend do not need to be processed by the application and will be displayed in the notification panel by default.
 
 >
 - After the TPNS service is successfully registered, notifications can be delivered without any configuration.
 - In general, combined with custom notification styles, standard notifications can meet most business needs, and if you need more flexible pushes, you can consider using messages.
 
-### In-app message command (not displayed in notification bar)
+### In-App message command (not displayed in notification bar)
 
 This refers to the content delivered to the application by TPNS. The application needs to inherit the `XGPushBaseReceiver` API to implement and handle all the operations on its own. In other words, delivered messages are not displayed in the notification panel by default, and TPNS is only responsible for delivering messages from the TPNS server to the application, but not processing the messages, which needs to be done by the application.
 
-Message refers to the text message delivered by you through console or backend scripts. TPNS is only responsible for delivering the message to the application, while the application is fully responsible for handling the message body on its own.
+- Message refers to the text message delivered by you through frontend or backend scripts. TPNS is only responsible for delivering the message to the application, while the APPLICATION is fully responsible for handling the message body on its own.
 - Because the message is flexible and highly customizable, it is suitable for applications to handle custom business needs on its own, such as delivering application configuration information, and customizing message retention and display.
 
 <span id="Message configuration"></span>
@@ -286,7 +286,7 @@ Inherit `XGPushBaseReceiver` and configure the following in the configuration fi
 
 ### Getting in-app message
 
-A message delivered by you on the console can be received by the application if it inherits `XGPushBaseReceiver` and reloads the `onTextMessage` method. After successfully receiving the message, the application can handle it based on specific business scenarios.
+A message delivered by you on the frontend can be received by the application if it inherits `XGPushBaseReceiver` and reloads the `onTextMessage` method. After successfully receiving the message, the application can handle it based on specific business scenarios.
 
 >Please make sure that the receiver has been registered in AndroidManifest.xml, i.e., YOUR_PACKAGE.XGPushBaseReceiver is set.
 
@@ -305,7 +305,7 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 | ------------------ | ------ | ------ | ---------------------------------------------------- |
 | getContent()       | String | None     | Message body content, and generally it is sufficient to deliver only this field |
 | getCustomContent() | String | None     | Customer `key-value` of message                                 |
-| getTitle()         | String | None | Message title (the description of the in-app message delivered from the console is not a title) |
+| getTitle()         | String | None | Message title (the description of the in-app message delivered from the frontend is not a title) |
 
 ### Local notification
 
@@ -333,7 +333,7 @@ local_msg.setContent("ww");
 
 local_msg.setDate("20140930");
 
-// Set the hour when the message is triggered (in 24-hour clock system); for example: 22 indicates 10 p.m.
+// Set the hour when the message is triggered (in 24-hour time); for example: 22 indicates 10 p.m.
 
 local_msg.setHour("19");
 
@@ -417,9 +417,9 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 ### Getting message click results
 
-### Listening to notification effect and customizing key-value
+### Listening on notification effect and customizing key-value
 
-On the built-on activity display page of TPNS, the number of notification/message reached and the action of notification clicks/clearing are counted by default. To listen to these events, you need to embed the code as follows.
+On the built-on activity display page of TPNS, the number of notification/message arrivals and the action of notification clicks/ clearing are counted by default. To listen to these events, you need to embed the code as follows.
 
 >If you want to count the number of application launches caused by TPNS or get the delivered custom `key-value`, you need to call the following method in `onResume()` of all (or opened) activities.
 
@@ -433,7 +433,7 @@ onNotificationClickedResult(Context context, XGPushClickedResult notifiClickedRl
 
 #### Sample code
 ```
-// If `actionType` of the notification click callback is 1, the message was dismissed; if it is 0, the message was tapped
+// If `actionType` of the notification click callback is 1, the message was dismissed; if it is 0, the message was clicked
 @Override
 public void onNotificationClickedResult(Context context,XGPushClickedResult message) {
 if (context == null || message == null) {
@@ -441,22 +441,22 @@ return;
 }
 String text = "";
 if (message.getActionType() == NotificationAction.clicked.getType()) {
-// The notification is tapped on the notification bar
-// The application handles actions related to the tap
+// The notification is clicked on the notification bar
+// The application handles actions related to the click
 text = "notification opened:" + message;
 } else if (message.getActionType() == NotificationAction.delete.getType()) {
 // Notification is dismissed
 // The application handles related actions after the notification is dismissed
 text = "notification dismissed:" + message;
 }
-Toast.makeText(context, "broadcast that the received notification is tapped:" + message.toString(),
+Toast.makeText(context, "broadcast that the received notification is clicked:" + message.toString(),
 Toast.LENGTH_SHORT).show();
 // Get the custom `key-value`
 String customContent = message.getCustomContent();
 if (customContent != null && customContent.length() != 0) {
 try{
 JSONObject obj = new JSONObject(customContent);
-// key1 is the key configured on the console
+// key1 is the key configured by the frontend
 if (!obj.isNull("key")) {
 String value = obj.getString("key");
 Log.d(LogTag, "get custom value:" + value);
@@ -479,7 +479,7 @@ activity: context of opened activity.
 
 #### Returned values
 
-XGPushClickedResult: the opened object of the notification; if the activity is opened due to TPNS notification, `XGPushClickedResult` will be returned; otherwise, null will be returned.
+XGPushClickedResult: the opened object of the notification; if the activity is open due to TPNS notification, `XGPushClickedResult` will be returned; otherwise, null will be returned.
 
 #### Class method list
 
@@ -533,7 +533,7 @@ Currently, TPNS provides two types of preset tags:
 
 #### API description
 
-You can set tags for different users and then send mass notifications based on tag names on the console. An application can have up to 10,000 tags, each token can have up to 100 tags in one application, and no spaces are allowed in the tag.
+You can set tags for different users and then send mass notifications based on tag names on the frontend. An application can have up to 10,000 tags, each token can have up to 100 tags in one application, and no spaces are allowed in the tag.
 
 ```java
 public static void setTag(Context context, String tagName) 
@@ -728,6 +728,17 @@ XGPushManager.cleanTags(getApplicationContext(), "cleanTags:" + System.currentTi
 
 All configuration APIs are in the `XGPushConfig` class. In order for the configuration to take effect in time, you need to ensure that configuration APIs are called before launching or registering for TPNS.
 
+### Disabling session keep-alive (1.1.6.1+)
+
+TPNS enables the session keep-alive feature by default. To disable it, please call the following API in `onCreate` of `Application` or `LauncherActivity` during application initialization and pass in `false`:
+
+```java
+XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
+```
+#### Parameter description
+- context: application context
+- pullUp: true (enable session keep-alive), false (disable session keep-alive)
+
 ### Debug mode
 
 #### API description
@@ -797,7 +808,7 @@ public static boolean setAccessId(Context context, long accessId)
 #### Parameter description
 
 - Context: object.
-- accessId: `accessId` obtained by registering on the console.
+- accessId: `accessId` obtained by registering on the frontend.
 
 #### Returned values
 
@@ -819,7 +830,7 @@ public static boolean setAccessKey(Context context, String accessKey)
 #### Parameter description
 
 - Context: object.
-- accessKey: `accesskey` obtained by registering on the console.
+- accessKey: `accesskey` obtained by registering on the frontend.
 
 #### Returned values
 
@@ -852,7 +863,7 @@ public static void uploadLogFile(Context context, HttpRequestCallback httpReques
 
         @Override
         public void onFailure(int errCode, String errMsg) {
-                 Log.d("TPush", "Upload failed. Errfor code:" + errCode + ", error message:" + errMsg);
+                 Log.d("TPush", "Upload failed. Error code:" + errCode + ", error message:" + errMsg);
         }
     });
 ```

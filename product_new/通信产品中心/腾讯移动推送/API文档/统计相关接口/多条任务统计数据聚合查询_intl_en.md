@@ -30,17 +30,16 @@ https://api.tpns.tencent.com/v3/statistics/get_push_group_stat_channel
 | ------------------- | ---- | ------------------------------------------------------------ |
 | pushActiveUv | int    | Scheduled delivery |
 | pushOnlineUv | int    | Actual delivery |
-| verifySvcUv         | int  | Device reached (only valid for TPNS and iOS APNs channels. For other vendor channels, the `pushOnlineUv` metric of actual deliveries by TPNS will be used) |
+| verifySvcUv         | int  | Device reached (only valid for TPNS, ROG, and FCM channels. For other vendor channels, the `pushOnlineUv` metric of actual deliveries by TPNS will be used) |
 | callbackVerifySvcUv | int  | Arrival receipt for vendor channel (only valid for Huawei, OPPO, Vivo, and Mi channels. For vendor channel receipt configuration, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)) |
 | verifyUv     | int    | Display     |
 | clickUv      | int    | Click     |
 | cleanupUv    | int    | Dismissal |
 
->
-The "all" channel in the array corresponds to the aggregated statistics.
-- In the aggregated statistics, the `verifySvcUv` (device reached), `verifyUv` (display), `clickUv` (click), and `cleanupUv` (dismissal) metrics only aggregates the data of the TPNS and ROG channels.
+>The "all" channel in the array corresponds to the aggregated statistics.
+- In the aggregated statistics, the `verifySvcUv` (device reached), `verifyUv` (display), `clickUv` (click), and `cleanupUv` (dismissal) metrics only aggregates the data of the TPNS, ROG, and FCM channels.
 - In the aggregated statistics, `pushActiveUv` (scheduled delivery) and `pushOnlineUv` (actual delivery) aggregates the data of the TPNS channel and vendor channels.
-- In the aggregated statistics, `callbackVerifySvcUv` (arrival receipt of vendor channel) aggregates the data of `verifySvcUv` (device reached) of the TPNS channel and `callbackVerifySvcUv` (arrival receipt of vendor channel) of vendor channels.
+- In the aggregated statistics, `callbackVerifySvcUv` (arrival receipt of vendor channel) aggregates the data of vendor channel's `callbackVerifySvcUv` (arrival receipt of vendor channel) + TPNS channel's `verifySvcUv` (device reached) + ROG channel's `verifySvcUv` (device reached) + FCM channel's `verifySvcUv` (device reached).
 
 
 
