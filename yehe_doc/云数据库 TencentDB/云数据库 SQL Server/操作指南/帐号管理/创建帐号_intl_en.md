@@ -15,5 +15,6 @@ TencentDB for SQL Server supports creating and deleting accounts and modifying a
  - Database: it is optional. You can set the permissions (read-only or write-only) that the account has to the database when creating an account. You can also grant permissions when modifying permissions or creating databases.
  - Password: it is required and should contain 8–32 characters in at least two of the following character types: letters, digits, and special symbols (_+-&=!@#$%^*()[]).
  - Account Remarks: it is optional and can contain up to 256 characters.
-![](https://main.qcloudimg.com/raw/531a65f416677f34fc95343c5843581d.png)
+![](https://main.qcloudimg.com/raw/3ed72989a1e0096982a1ccbf3a49e996.png)
 3. After the account is created, you can perform operations such as **Remove Admin**, **Modify Permissions**, **Reset Password**, and **Delete Account** in the account list.
+![](https://main.qcloudimg.com/raw/84c1a3aa7b0c3e837a72769a67c07b36.png)
