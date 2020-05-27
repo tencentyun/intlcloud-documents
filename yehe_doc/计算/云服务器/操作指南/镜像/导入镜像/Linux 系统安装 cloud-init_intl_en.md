@@ -76,8 +76,8 @@ python setup.py install --init-system systemd
 #### Modifying the cloud-init configuration file
 
 1. Download cloud.cfg for your operating system.
- - [Click here](http://cloudinit-1251783334.cosgz.myqcloud.com/ubuntu-cloud.cfg) to download cloud.cfg for Ubuntu.
- - [Click here](http://cloudinit-1251783334.cosgz.myqcloud.com/centos-cloud.cfg) to download cloud.cfg for CentOS.
+ - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
+ - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) to download cloud.cfg for CentOS.
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 
 #### Adding a syslog user
@@ -183,8 +183,8 @@ apt-get/yum install cloud-init
 
 #### Modifying the cloud-init configuration file
 1. Download cloud.cfg for your operating system.
- - [Click here](http://cloudinit-1251740579.cosgz.myqcloud.com/ubuntu-cloud.cfg) to download cloud.cfg for Ubuntu.
- - [Click here](http://cloudinit-1251740579.cosgz.myqcloud.com/centos-cloud.cfg) to download cloud.cfg for CentOS.
+ - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) to download cloud.cfg for Ubuntu.
+ - [Click here](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) to download cloud.cfg for CentOS.
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 
 ## Relevant Operations
