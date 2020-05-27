@@ -131,8 +131,8 @@ To specify the group member information in a group that needs to be pulled, set 
 | Member_Account | String | Required | The user account to query. |
 | WithHugeGroups | Integer | Optional | Specifies whether to obtain information on audio-video chat rooms and broadcasting chat rooms that the user has joined. 0: no. 1: yes. The default value is 0. |
 | WithNoActiveGroups | Integer | Optional | Specifies whether to obtain information on unactivated private groups that the user has joined. 0: no. 1: yes. The default value is 0. |
-| Limit | Integer | Optional | The number of groups pulled at a time. If this field is not specified, information on all groups will be pulled. The paging mode is the same as that for [Obtaining All Groups in an App](https://intl.cloud.tencent.com/document/product/1047/34960). |
-| Offset | Integer | Optional | The sequence number of the group starting from which the information is pulled. The paging mode is the same as that for [Obtaining All Groups in an App](https://intl.cloud.tencent.com/document/product/1047/34960). |
+| Limit | Integer | Optional | The number of groups pulled at a time. If this field is not specified, information on all groups will be pulled. |
+| Offset | Integer | Optional | The sequence number of the group starting from which the information is pulled. |
 | GroupType | String | Optional | The type of groups to be pulled. Values include Private, Public, ChatRoom, and AVChatRoom. If this field is not specified, information on all groups will be pulled. |
 | ResponseFilter | Object | Optional | It includes two filters: GroupBaseInfoFilter and SelfInfoFilter. GroupBaseInfoFilter specifies the basic information fields to be pulled. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). SelfInfoFilter specifies the personal information of a user to be pulled in each group. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). |
 
@@ -262,6 +262,3 @@ The following table describes the error codes specific to this API.
 ## Commissioning Tool
 
 Use the [RESTful API online commissioning tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/get_joined_group_list) to commission this API.
-
-## Reference
-Obtaining all groups in an app ([v4/group_open_http_svc/get_appid_group_list](https://intl.cloud.tencent.com/document/product/1047/34960)).

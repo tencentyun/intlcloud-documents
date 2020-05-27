@@ -1020,14 +1020,14 @@ UUID 类型。
 |-----|-----|-----|
 | kTIMGroupModifyInfoFlag_None | 0x00 | - |
 | kTIMGroupModifyInfoFlag_Name | 0x01 | 修改群组名称， |
-| kTIMGroupModifyInfoFlag_Notification | 0x01 << 1 | 修改群公告， |
+| kTIMGroupModifyInfoFlag_Notification | 0x01 << 1 | 修改群公告 |
 | kTIMGroupModifyInfoFlag_Introduction | 0x01 << 2 | 修改群简介 |
 | kTIMGroupModifyInfoFlag_FaceUrl | 0x01 << 3 | 修改群头像 URL |
 | kTIMGroupModifyInfoFlag_AddOption | 0x01 << 4 | 修改群组添加选项， |
-| kTIMGroupModifyInfoFlag_MaxMmeberNum | 0x01 << 5 | 修改群最大成员数， |
-| kTIMGroupModifyInfoFlag_Visible | 0x01 << 6 | 修改群是否可见， |
-| kTIMGroupModifyInfoFlag_Searchable | 0x01 << 7 | 修改群是否被搜索， |
-| kTIMGroupModifyInfoFlag_ShutupAll | 0x01 << 8 | 修改群是否全体禁言， |
+| kTIMGroupModifyInfoFlag_MaxMmeberNum | 0x01 << 5 | 修改群最大成员数 |
+| kTIMGroupModifyInfoFlag_Visible | 0x01 << 6 | 修改群是否可见 |
+| kTIMGroupModifyInfoFlag_Searchable | 0x01 << 7 | 修改群是否被搜索|
+| kTIMGroupModifyInfoFlag_ShutupAll | 0x01 << 8 | 修改群是否全体禁言 |
 | kTIMGroupModifyInfoFlag_Custom | 0x01 << 9 | 修改群自定义信息 |
 | kTIMGroupModifyInfoFlag_Owner | 0x01 << 31 | 修改群主 |
 
