@@ -171,7 +171,7 @@ For more information on **IP bandwidth packages**, see the [Bandwidth Package Ty
 
 ### Creating a Service
 
-1. Prepare the StatefulSet YAML file as instructed by [YAML sample](#YAMLSample).
+1. Prepare the Service YAML file as instructed by [YAML sample](#YAMLSample).
 2. Install kubectl and connect to a cluster. For detailed operations, see [Connecting to Clusters](https://intl.cloud.tencent.com/document/product/457/31086).
 3. Run the following command to create the Service YAML file.
 ```shell
