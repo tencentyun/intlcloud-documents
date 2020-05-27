@@ -10,10 +10,10 @@ As shown in the following figures, Auto Scaling can help maintain the appropriat
  - Personal surveillance and frequent handling of capacity alarms, which require multiple manual changes
 
 **Traditional mode:**
-![Alt text](https://mc.qcloudimg.com/static/img/92ae76d43c2b490f558490d328b8761a/AS-Product+Introduction%281%29.jpg)
+![](https://mc.qcloudimg.com/static/img/92ae76d43c2b490f558490d328b8761a/AS-Product+Introduction%281%29.jpg)
 
 **With AS:**
-![Alt text](https://mc.qcloudimg.com/static/img/953c495c4b950e98fd6e360d871bf891/AS-Product+Introduction%282%29.jpg)
+![](https://mc.qcloudimg.com/static/img/953c495c4b950e98fd6e360d871bf891/AS-Product+Introduction%282%29.jpg)
 
 
 ## How AS Works
@@ -25,8 +25,8 @@ These instances are similar or identical and the quantity is usually adjustable.
 - Specify the minimum number of instances in each scaling group, and AS will ensure that the number of instances in the group is never less than the minimum.
 - Specify the maximum number of instances in each scaling group, and AS will ensure that the number of instances in the group is never more than the maximum.
 - Specify a scaling policy, and AS will launch or terminate instances when the demands of an application increase or decrease. There are two kinds of scaling policies:
-   a) Dynamic scaling policy: Scale in or out dynamically according to specified conditions (for example, scale out when the CPU utilization of the CVM instances in the scaling group is larger than 60%)
-   b) Scheduled scaling policy: Scale in or out at specified times (for example, scale out every day at 21:00) 
+   a. Dynamic scaling policy: Scale in or out dynamically according to specified conditions (for example, scale out when the CPU utilization of the CVM instances in the scaling group is larger than 60%)
+   b. Scheduled scaling policy: Scale in or out at specified times (for example, scale out every day at 21:00) 
 - After setting the scaling policy, you can also set the notification policies. When scaling occurs, AS informs you via e-mail, SMS and internal message. Rather than constantly focusing on your service traffic volume changes, you can just check the notifications from AS.
 - You can also specify the number of machines required at any time, or add existing machines to the scaling group for joint management.
 
