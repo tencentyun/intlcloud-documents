@@ -4,7 +4,7 @@ You can perform the following operations on groups:
 
 | Group Operation | Description | Notes |
 | -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Create a group | This operation creates a new group. You can specify the group type, name, and a list of users to add to the group. After the group is created, the group ID is returned, which is used to send and receive messages. | The daily limit of net group consumption is 10,000 per app. To configure this, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1). |
+| Create a group | This operation creates a new group. You can specify the group type, name, and a list of users to add to the group. After the group is created, the group ID is returned, which is used to send and receive messages. | The daily limit of net group consumption is 10,000 per app.  |
 | Transfer a group | This operation transfers a group and changes the group owner. | The app admin can transfer a group through the RESTful API. The only other role that can transfer a group is the group owner. |
 | Disband a group | This operation disbands a group that has been created on the app. When the group is disbanded, all group members receive a system message stating that the group has disbanded. | The app admin can call the RESTful API to disband any group.<br>For private groups and broadcasting chat rooms: no one in the group can disband the group.<br>For public groups, chat rooms, and audio-and-video chat rooms: only the group owner can disband the group. |
 
@@ -43,4 +43,4 @@ Group member management involves two aspects:
 | Quit a group | A group member initiates the quit operation | When a group member quits the group, the leaving member receives a system message stating that he/she has left the group, and other members in the group also receive an event message about the member quitting the group. |
 | Obtain the list of groups a user has joined | Pull the list of groups that the current user has joined. The returned result contains only part of the basic information. | To obtain detailed group information, use the **group members obtain the group profile** feature. |
 | List of pending group messages | A group’s pending message includes all group operations that require approval. | You can pull the list of pending group messages, report pending read messages, and process pending group messages (approve or reject). |
-| Obtain all groups in the app | Get all groups in the app | Only the app admin is authorized to obtain all groups in the app. Ordinary members do not have this permission. |
+
