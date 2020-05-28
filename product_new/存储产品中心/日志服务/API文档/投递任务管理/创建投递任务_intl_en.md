@@ -1,11 +1,12 @@
-## Feature Description
+## Feature
 
-This API is used to create a shipping task. To use this API, you need to grant CLS the write permission of the specified bucket.
+This API (CreateShippingTask) is used to create a shipping task. When using this API, you need to manually grant CLS the permission to write to the specified bucket.
 
 ## Request
-### Sample request
 
-```
+#### Request sample
+
+```plaintext
 POST /shipper HTTP/1.1
 Host: <Region>.cls.tencentyun.com
 Authorization: <AuthorizationString>
@@ -17,7 +18,7 @@ Content-Type: application/json
   "prefix": "test",
   "shipper_name": "myname",
   "interval": 300,
-  "max_size": 256,
+  "max_size": 100,
   "partition": "%Y%m%d",
   "compress": {
     "format": "none"
@@ -31,95 +32,81 @@ Content-Type: application/json
       "escape_char": "'",
       "non_existing_field": "null"
     }
-  },
-  "filter_rules": [{
-    "key": "",
-    "regex": "",
-    "value": ""
-  }]
+  }
 }
 ```
 
-### Request line
+#### Request line
 
 ```
 POST /shipper
 ```
 
-### Request header
+#### Request headers
 
-There are only common request headers but no special request headers.
+No special request header is used except for common headers.
 
-### Request parameters
+#### Request parameters
 
 | Field Name | Type | Location | Required | Description |
-| ------------ | ------ | ---- | ---- | ------------------------------------------------------------ |
-| topic_id     | string | body | Yes   | Topic ID of the shipper to be created                               |
-| bucket       | string | body | Yes   | Bucket to which the created shipper ships logs, which is in the format of `{bucketName}-{appid}`     |
-| prefix       | string | body | Yes   | Directory prefix of the created shipper                                |
-| shipper_name | string | body | Yes   | Shipping rule name                                               |
-| interval     | int    | body | No   | Shipping time interval in seconds. Default value: 300. Value range: 60–3600            |
-| max_size     | int    | body | No   | Maximum size of shipped file in MB. Default value: 256. Value range: 100–10240      |
-| custom_uin   | long   | body | No   | Customer `uin` of the shipper to be created. It is retained for compatibility with legacy APIs              |
-| filter_rules | array  | body | No   | Filter rules for shipped logs. Only logs matching the rules can be shipped. All rules are in the `and` relationship, and up to five rules can be added. If the array is empty, no filtering will be performed, and all logs will be shipped |
-| partition    | string | body | No   | Partition rule of shipped log, which can be represented in `strftime` time format |
-| compress     | object | body | No   | Compression configuration of shipped log                                           |
-| content      | object | body | No   | Format configuration of shipped log content                                       |
+| ------------ | ------ | ---- | -------- | ------------------------------------------------------------ |
+| topic_id | string | body | Yes | ID of the topic to which the shipping task to be created belongs |
+| bucket | string | body | Yes | Shipping bucket of the shipping task to be created. Format: {bucketName}-{appid} |
+| prefix | string | body | Yes | Prefix of the shipping directory of the shipping task to be created |
+| shipper_name | string | body | Yes | Shipping rule name |
+| interval     | int    | body | No       | Shipping interval in seconds. Default: 300. Valid values: [300, 360, 420, 480, 540, 600, 660, 720, 780, 840, 900] (equal to integer minutes) |
+| max_size | int | body | No | The maximum size of a file to be shipped (in MB). Default is 100 MB. Value range: 100-256 |
+| custom_uin | long | body | No | UIN of the customer to which the shipping task to be created belongs, which is retained since it is compatible with the old API. |
+| partition | string | body | No | Rules for partitioning logs to be shipped. `Strftime` can be used to define the time format. |
+| compress | object | body | No | Compression configuration of logs to be shipped |
+| content | object | body | No | Format configuration of logs to be shipped |
 
-`Rule` is in the following format:
-
-| Field Name | Type | Required | Description |
-| ------ | ------ | ---- | ----------------------------------------------------- |
-| key    | string | Yes       | Key for comparison. `__CONTENT__` indicate the full text                |
-| regex  | string | Yes       | Regex for extracting comparison content                               |
-| value  | string | Yes       | Value to be compared with the content extracted with the above regex. If they are the same, there will be a hit |
-
-`compress` is in the following format:
+The `compress` format is as follows:
 
 | Field Name | Type | Required | Description |
-| ------ | ------ | ---- | ------------------------------------------ |
-| format | string | Yes       | Compression format. `gzip` and `lzop` are supported, and `none` indicates no compression |
+| ------ | ------ | -------- | ------------------------------------------ |
+| format | string | Yes | Compression format, including `gzip`, `lzop` and `none` (do not compress). |
 
-`content` is in the following format:
+The `content` format is as follows:
 
 | Field Name | Type | Required | Description |
 | -------- | ------ | -------- | --------------------------- |
-| format   | string | Yes       | Content format. Valid values: `json`, `csv` |
-| csv_info | object | No       | Configured when the content format is `csv`       |
+| format | string | Yes | Content format, which supports `json` and `csv`. |
+| csv_info | object | No | Required when the content format is `csv` |
 
-`csv_info` is in the following format:
+The `csv_info` format is as follows:
 
 | Field Name | Type | Required | Description |
 | ------------------ | ------------- | -------- | ------------------------------------------------ |
-| print_key          | bool          | Yes       | Whether to print `key` on the first row of CSV file                              |
-| keys               | array(string) | Yes       | Names of each keys                                  |
-| delimiter          | string        | Yes       | Field delimiter                                 |
-| escape_char        | string        | Yes       | Escape character used to enclose any field delimiter in field content |
-| non_existing_field | string        | Yes       | Content used to populate non-existing fields           |
-
+| print_key | bool | Yes | Indicates whether to write the first line of key to the csv file |
+| keys | array(string) | Yes | Key name of each column |
+| delimiter | string | Yes | The separator between fields |
+| escape_char | string | Yes | Escape characters are used to enclose the separators contained in a field. |
+| non_existing_field | string | Yes | It is used to populate the fields specified above that do not exist or are invalid. |
 
 ## Response
-### Sample response
 
+#### Response sample
+
+```plaintext
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 0
+{
+ "shipper_id": "xxxx-xx-xx-xx-xxxxxxxx",
+}
 ```
- HTTP/1.1 200 OK
- Content-Type: application/json
- Content-Length: 0
- {
-   "shipper_id": "xxxx-xx-xx-xx-xxxxxxxx",
- }
-```
 
-### Response header
+#### Response headers
 
-There are only common response headers but no special response headers.
+No special response header is used except for common response headers.
 
-### Response parameters
+#### Response parameters
 
 | Field Name | Type | Required | Description |
-| ---------- | ------ | ---- | ----------------- |
-| shipper_id   | string | Yes       | ID of created shipper                                          |
+| ---------- | ------ | -------- | ----------------- |
+| shipper_id | string | Yes | ID of the new shipping task |
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
