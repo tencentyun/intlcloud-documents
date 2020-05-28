@@ -1,16 +1,14 @@
 ## Background
 
-Data matters, we all know that. Digital photos, e-documents, work products, saved game…none of them we can easily afford to lose. It will be a huge headache or embarrassment if we lose all of our files due to a disk failure, or a single file due to misoperation, computer shutdown, or software crash, or if we cannot provide a requested “callback version” just because we haven’t saved one. This is why backups are absolutely important.
+Data matters, we all know that. Digital photos, e-documents, work products, saved game…none of them we can easily afford to lose. It will be a huge headache if we lose all of our files due to a disk failure, or a single file due to misoperation, computer shutdown, or software crash, or if we cannot provide a requested “callback version” just because we haven’t saved one. This is why backups are absolutely important.
 
-When it comes to backups, the first idea that occurs to our mind is most probably using a portable hard drive or building a NAS within an individual network so that we can just move files into it.
+When it comes to backups, the first idea that occurs to our mind is most probably using a portable hard drive or building a NAS within an individual network so that we can just move files into it. Well, is it really as simple as all that?
 
-Well, is it really as simple as all that?
+In fact, backup involves a lot of work to do. Copy our files onto backup media, check if the backups are correct, and we may have to do both of them regularly in order to minimize lost files. Besides, backup media require maintenance, so we need to replace our hard drives promptly once they are dead.
 
-In fact, backup involves a lot of work to do. Copy our files onto backup media, check if the backups are correct, and we may have to do both of them regularly in order to minimize lost files. Besides, backup media require maintenance, so we need to replace our hard drives immediately once they are dead.
+Given all this, is there an easier way to keep our files safe? The answer is Yes.
 
-Then, is there an easier way to keep our files safe?
-
-The answer is Yes. As Tencent Cloud’s business grows, it has already developed a suite of enterprise cloud storage services, including COS. Now, we need backup software to connect the files in our PC with cloud storage services. It will help us back up files automatically onto the cloud, and check backup correctness on a regular basis.
+As Tencent Cloud’s business grows, it has already developed a suite of enterprise cloud storage services, including COS. Now, we need backup software to connect the files in our PC with cloud storage services. It will help us back up files automatically onto the cloud, and check backup correctness on a regular basis.
 
 ## Software Introduction
 
