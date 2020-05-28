@@ -61,7 +61,8 @@
 <td>每个账户每个地域（Region）可申请：20个。</td>
 </tr>
 <tr>
-<td colspan="2">每台云服务器绑定公网 IP （包括普通公网 IP 和 EIP）数配额。
+<td colspan="2">每台云服务器绑定公网 IP 
+  （包括普通公网 IP 和 EIP）数配额。
 </td>
 </tr>
 <tr>
