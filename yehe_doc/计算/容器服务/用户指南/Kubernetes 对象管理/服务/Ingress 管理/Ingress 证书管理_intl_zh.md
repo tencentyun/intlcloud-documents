@@ -19,7 +19,7 @@
 
 1. 登录负载均衡控制台，选择左侧导航栏中的 [【证书管理】](https://console.cloud.tencent.com/clb/cert)，在“证书管理”页面新建证书。
 2. 参考 [创建 Ingress ](https://intl.cloud.tencent.com/document/product/457/30673) 完成 Ingress 新建。
-其中监听端口勾选【Http:443】，并选择合适的服务器证书。
+其中监听端口勾选【Https:443】，并选择合适的服务器证书。
 
 >
 > -  当控制台创建的 Ingress 开启 HTTPS 服务，会先创建同名的 Secret 资源用于存放证书 ID，然后在 Ingress 中使用并监听该 Secret。
@@ -28,8 +28,8 @@
 
 
 ### Kubectl 操作指引
-
-#### 配置证书并创建一个 HTTPS 服务<span id="CreatingSecret"></span>
+<span id="CreatingSecret"></span>
+#### 配置证书并创建一个 HTTPS 服务
 
 1. 执行以下命令，计算证书 “XczRzegn” 的 ID。
 ```yaml
@@ -85,8 +85,8 @@ type: Opaque
      - secretName: tencent-com-cert
 </pre>
 
-
-#### 修改证书<span id="ModifySecret"></span>
+<span id="ModifySecret"></span>
+#### 修改证书
 
 1. 执行以下命令，使用默认编辑器打开需修改的 Secret。
 ```

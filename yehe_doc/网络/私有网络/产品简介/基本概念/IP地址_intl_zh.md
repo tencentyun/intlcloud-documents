@@ -61,7 +61,7 @@
 <td>每个账户每个地域（Region）可申请：20个。</td>
 </tr>
 <tr>
-<td colspan="2">单台云服务器绑定公网 IP 数配额请参见绑定云服务器限制。
+<td colspan="2">每台云服务器绑定公网 IP （包括普通公网 IP 和 EIP）数配额。
 </td>
 </tr>
 <tr>
@@ -72,9 +72,9 @@
 </tr>
 <tr>
 <td>更换 IP</td>
-<td>可以直接更换普通公网 IP，
+<td>普通公网 IP 可以直接更换，
 详情请参见 <a href="https://intl.cloud.tencent.com/document/product/213/16642" target="_blank"> 更换公网 IP 地址</a>。</td>
-<td>不可以直接更换弹性公网 IP，您可以解绑并释放后，申请新的弹性公网 IP 并绑定。</td>
+<td>弹性公网 IP 不可以直接更换，您可以解绑并释放后，申请新的弹性公网 IP 并绑定。</td>
 </tr>
 <tr>
 <td>释放 IP</td>

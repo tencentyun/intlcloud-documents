@@ -61,8 +61,8 @@ MongoDB 驱动（[PHP 官网文档](http://php.net/manual/en/set.mongodb.php)）
 ![](https://main.qcloudimg.com/raw/a0b428c51f0ba06b91788b391e1650ea.png)
 
 
-### 如何使用 mongoose 连接云数据库 MonogoDB？
-mongoose 连接腾讯云 MonogoDB 参数如下：
+### 如何使用 mongoose 连接云数据库 MongoDB？
+mongoose 连接腾讯云 MongoDB 参数如下：
 
 ``` 
 var dbUri = " mongodb:// " + user + " : " +password + " @ " +host + ":" +port + " / " + dbName;

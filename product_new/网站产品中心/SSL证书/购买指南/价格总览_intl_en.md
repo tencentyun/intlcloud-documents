@@ -11,7 +11,7 @@ Note:
 	<th>Certificate Brand</th>
 	<th>Supported Domain Name Types</th>
 	<th>Certificate Model</th>
-	<th>Unit Price (only for the first year of purchase and subject to any discounts for subsequent years displayed in the sale information at Tencent Cloud's official website)</th>
+	<th>Unit Price (refers to the price for the first year of purchase, prices for subsequent years may be adjusted according to published discounts or offers)</th>
 	<th>Remarks</th>
 </tr>
 <tr>
