@@ -25,4 +25,4 @@ We recommend you adjust the timeout period of the stress testing tool to a small
 - We recommend you use a static website provided by the real server for stress testing to avoid loss caused by application logic, such as I/O and DB.
 - Disable session persistence for listeners. Otherwise, the stress will be concentrated on certain real servers. If the pressure performance is not satisfactory, you can determine whether the traffic is evenly distributed by checking the monitoring data of real servers under CLB.
 - Disable health check for listeners to reduce access requests to real servers generated during health check.
-- Use multiple clients (>5) for stress testing. Dispersed source IPs can better simulate actual online conditions.
+- Use multiple clients (> 5) for stress testing. Dispersed source IPs can better simulate actual online conditions.
