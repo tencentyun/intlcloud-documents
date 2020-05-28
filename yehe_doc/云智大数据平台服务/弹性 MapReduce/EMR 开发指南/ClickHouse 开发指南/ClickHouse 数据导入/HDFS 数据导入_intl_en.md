@@ -198,4 +198,3 @@ CREATE TABLE hdfs_function_table AS hdfs('hdfs://172.30.1.146:4007/clickhouse/hd
 - [How to import my data from HDFS?](https://github.com/ClickHouse/ClickHouse/issues/1614)
 - [ClickHouse Documentation - JDBC Driver](https://clickhouse.tech/docs/en/interfaces/jdbc/)
 - [Summary for Writing Data to ClickHouse from Spark JDBC](https://toutiao.io/posts/m63yw89/preview)
-- [Importing Data from Hive to ClickHouse Through Spark](https://wchch.github.io/2018/12/20/将数据通过spark从hive导入到Clickhouse/)
