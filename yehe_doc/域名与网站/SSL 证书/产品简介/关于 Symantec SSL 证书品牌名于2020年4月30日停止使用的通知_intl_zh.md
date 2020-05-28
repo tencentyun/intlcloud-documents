@@ -2,7 +2,7 @@
 
 ### 本次更新点
 1. Symantec 品牌 SSL 证书更名为 DigiCert Secure Site 品牌 SSL 证书。如下图所示：
- ![](https://main.qcloudimg.com/raw/8df6f7bb415fe3c2591c5806bd0a97fa.png)
+ ![](https://main.qcloudimg.com/raw/6d46777569cab856113ff55737dba2cb.png)
 2. 诺顿安全认证签章同步进行了更新。如下图所示：
  ![](https://main.qcloudimg.com/raw/c9b9bd9c10f4cf6c726e85697c9b933c.png)
  
