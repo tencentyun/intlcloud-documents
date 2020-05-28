@@ -11,8 +11,8 @@ By using Hue, you can interact with Hadoop clusters in the web-based console on 
 
 ## Log in to the Hue Console
 To use the Hue component to manage workflows, log in to the Hue Console first as shown below:
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and select **Component Management** in the left sidebar.
-2. Find the Hue component on the list page and click **Native WebUI Access Address** to enter the Hue page.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) Click the ID/name of the target cluster to go to the cluster details page, and then click **Cluster Services**.
+2. Find the Hue component on the list page and click **WebUI Access Address** to enter the Hue page.
 3. When logging in to the Hue Console for the first time, use the root account and the password set when you created the cluster.
 ![](https://main.qcloudimg.com/raw/ae62e428871fd46c2ce6509fd31cde63.png)
 >As the default component account upon startup in EMR is Hadoop, please create a Hadoop account after logging in to the Hue Console with the root account for the first time. All subsequent jobs should be submitted by using the Hadoop account.
@@ -54,6 +54,7 @@ Upload the Hive script file and hive-site.xml to a directory in HDFS, such as `/
  - Switch to the hadoop user. At the top of the Hue Console, select **Query** > **Scheduler** > **Workflow**.
 ![](https://main.qcloudimg.com/raw/17e2c9e91bef6c67d7f6721eeb1a490e.png)
  - Drag a Hive script into the workflow editing page.
+ >!The document takes the installation of Hive 1 as an example, where the configuration parameter should be `HiveServer1`. Errors will be reported if other Hive versions are deployed at the same time (or if the configuration parameters of other Hive versions are used).
 ![](https://main.qcloudimg.com/raw/128170644bbef8f40743ea0f72a35a0e.png)
  - Select the Hive script and hive-site.xml files you just uploaded.
 ![](https://main.qcloudimg.com/raw/1bdf334d89fa1be9fcee003d8328ff4d.png)

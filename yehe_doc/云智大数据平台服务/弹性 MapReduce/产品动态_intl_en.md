@@ -1,3 +1,32 @@
+<h2>April, 2020</h2>
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>New cluster types are supported</td>
+<td>ClickHouse and Druid clusters are supported, providing more real-time query solutions.</td><td>April 15, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35872" target="_blank">ClickHouse Overview</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/35875" target="_blank">Druid Overview</a></td>
+</tr>
+<tr>
+<td>Bootstrap actions are optimized</td>
+<td>Execution before cluster startup is now supported for bootstrap actions, and bootstrap actions can be adjusted after a cluster is successfully created, so that they can be easily optimized as business changes.</td><td>April 15, 2020</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Service restart policies are optimized</td>
+<td>You can set service restart policies to conveniently select appropriate restart methods and restart exception handling methods.</td>
+<td>April 15, 2020</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
 <h2>March 2020</h2><table>
 <thead>
 <tr>
@@ -66,7 +95,7 @@
 </tr>
 <tr>
 <td>Task nodes support mounting multiple cloud disks</td>
-<td>Task nodes supports mounting cloud disks when a cluster is created or scaled.</td><td>January 2020</td>
+<td>Task nodes supports mounting cloud disks when a cluster is created or scaled out.</td><td>January 2020</td>
 <td>-</td>
 </tr>
 <tr>
@@ -186,7 +215,7 @@
 </tr>
 <tr>
 <td>Cloud Monitor alarm policy is supported</td>
-<td>Alarm policies can be configured for key monitoring metrics for servers and services support in Cloud Monitor (in the Elastic MapReduce product category).</td><td>September 2019</td>
+<td>Alarm policies can be configured for key monitoring metrics for servers and services in Cloud Monitor (in the Elastic MapReduce product category).</td><td>September 2019</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -279,7 +308,7 @@
 <td>The bootstrap action setting feature is launched</td>
 <td>Bootstrap actions can be set during cluster configuration.</td>
 <td>June 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34531" target="_blank">Setting Bootstrap Actions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34531" target="_blank">Setting Bootstrap Action</a></td>
 </tr>
 <tr>
 <td>The feature of node-level component parameter configuration distribution is launched</td>
@@ -371,7 +400,7 @@
 <td>Router node is supported</td>
 <td>Router nodes are mainly used to relieve the load of master nodes and as task submitters.</td>
 <td>March 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31094" target="_blank">Node Types</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31094" target="_blank">Node Type</a></td>
 </tr>
 <tr>
 <td>Node configuration adjustment is supported</td>
