@@ -1,4 +1,4 @@
-﻿All mobile phone vendors have a certain limit on the queries per second (QPS) of their push channels. If the current QPS cannot meet your operational needs, you can apply to the vendor for QPS increase as instructed below. (Only certain vendors allow such application.)
+All mobile phone vendors have a certain limit on the queries per second (QPS) of their push channels. If the current QPS cannot meet your operational needs, you can apply to the vendor for QPS increase as instructed below. (Only certain vendors allow such application.)
 ## Huawei Push
 ### QPS limit
 QPS = application's MAU in the Huawei channel * application category weight * 0.00072
@@ -43,7 +43,21 @@ If you have any questions and feedback about the product, please send an email i
 
 ## Mi Push
 ### QPS limit
-QPS: 600,000/minute.
+The assignment of push rate (QPS) by Mi Push is mainly based on the number of daily online MIUI devices of the application.
+QPS indicates the number of requests that can be called in one second. Up to 1,000 target devices can be included in one request. For example, if the QPS is 3,000, a message can be pushed to up to 3 million devices in one second.
+>You can query the number of daily online MIUI devices in [Push Operation Platform](https://admin.xmpush.xiaomi.com/zh_CN/app/unauth) > Push Statistics > User Data > Detailed Data.
+
+Different numbers of daily online MIUI devices are assigned with different QPS:
+
+| Daily online MIUI devices |QPS|
+| ---------|----------|
+|≥10 million|3000|
+|≥5 million and <10 million|2500|
+|≥1 million and <5 million|2000|
+|≥100,000 and <1 million|1000|
+|< 100,000|500|
+
+
 ### Applying for QPS increase
 Currently, no application is allowed.
 ## OPPO Push

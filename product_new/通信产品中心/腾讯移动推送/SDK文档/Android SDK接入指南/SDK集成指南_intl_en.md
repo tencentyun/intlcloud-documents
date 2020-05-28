@@ -3,13 +3,14 @@
 ## Operation Scenarios
 The SDK for Android is a set of APIs provided by TPNS Service for clients to implement message push. This document provides two integration methods, AndroidStudio Gradle, which is automatic, and Android Studio, which is manual.
 
+
 ## Directions
 ### Integration methods
 #### AndroidStudio Gradle automatic integration
 
 >Before configuring the SDK, make sure you have configured the Android platform application.
 
-1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and click **Configuration Management** on **Product Management** page to get the application package name, `AccessID`, and `AccessKey`.
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Configuration Management** on the left sidebar to get the application package name, `AccessID`, and `AccessKey`.
 2. Get the latest version number on the [SDK download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
 3. In the application's `build.gradle` file, configure the following content:
 
@@ -30,7 +31,7 @@ android {
 
         manifestPlaceholders = [
 
-            XG_ACCESS_ID: "accessid of registered application",
+            XG_ACCESS_ID:"accessid of registered application",
             XG_ACCESS_KEY : "accesskey of registered application",
         ]
         ......
@@ -46,7 +47,7 @@ dependencies {
 
 }
 ```
-4. For integration method for clusters outside Mainland China, please see [Integration method for cluster outside Mainland China](https://intl.cloud.tencent.com/document/product/1024/30713#JWjieru) below.
+4. For integration method for clusters outside Mainland China, please see [Integration method for cluster outside Mainland China](https://intl.cloud.tencent.com/document/product/1024/30713) below.
 
 >
 - If the following notification pops up in Android Studio after you add the above-mentioned abiFilter configuration:
@@ -143,9 +144,9 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
             <action android:name="com.tencent.android.xg.vip.action.ACTION_SDK_KEEPALIVE" />
             <!-- **Optional** System broadcast: network switching -->
             <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            <!-- **Optional** System broadcast: splash screen -->
+            <!-- **(Optional)** System broadcast: splash screen -->
             <action android:name="android.intent.action.USER_PRESENT" />
-            <!-- **Optional** Some common system broadcasts for increasing the possibility of TPNS service reactivation. You can also add broadcast customized by the application to launch the service -->
+            <!-- [Optional] Some common system broadcasts for increasing the possibility of TPNS service reactivation. You can also add broadcast customized by the application to launch the service -->
             <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
             <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
             <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
@@ -246,21 +247,20 @@ To switch the push cluster to Singapore or Hong Kong (China), please follow the 
         // Other Android components
         <meta-data
             android:name="XG_GUID_SERVER"
-            android:value="Domain name outside Mainland China/guid/api/GetGuidAndMqttServer" />     
+            android:value="Domain name outside Mainland China/guid/api/GetGuidAndMqttServer" />           
         <meta-data
             android:name="XG_STAT_SERVER"
-            android:value="Domain name outside Mainland China/log/statistics/push" />     
+            android:value="Domain name outside Mainland China/log/statistics/push" />        
         <meta-data
             android:name="XG_LOG_SERVER"
             android:value="Domain name outside Mainland China/v3/mobile/log/upload" /> 
-
 </application>
 ```
 **The domain names outside Mainland China are as follows:**
 Hong Kong (China): `https://api.tpns.hk.tencent.com`
 Singapore: `https://api.tpns.sgp.tencent.com`
 
-#### Audio-visual rich media usage (optional)
+#### Audio-Visual rich media usage (optional)
 1. In the **Layout** directory of the application, create an .xml file with the name xg_notification.
 2. Copy the following code into the file:
 ```
@@ -268,13 +268,13 @@ Singapore: `https://api.tpns.sgp.tencent.com`
 -<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_root_view" xmlns:android="http://schemas.android.com/apk/res/android">
 <!--Notification background. The id name cannot be changed but others can be changed-->
 <ImageView android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/xg_notification_bg" android:scaleType="centerCrop"/>
-<!--Notification icon. Required. The id name cannot be changed but others can be changed.-->
+<!--Notification icon. The id name cannot be changed but others can be changed. Required.-->
 <ImageView android:layout_height="48dp" android:layout_width="48dp" android:id="@+id/xg_notification_icon" android:scaleType="centerInside" android:layout_marginLeft="5dp" android:layout_centerVertical="true" android:layout_alignParentLeft="true"/>
 <!--Notification time. The id name cannot be changed but others can be changed. If the time is not displayed, you can remove this layout-->
 <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/xg_notification_date" android:textSize="12dp" android:layout_marginRight="5dp" android:layout_marginTop="5dp" android:layout_alignParentRight="true" android:layout_alignParentTop="true"/>
-<!--Notification title. Required. The id name cannot be changed but others can be changed.-->
+<!--Notification title. The id name cannot be changed but others can be changed. Required.-->
 <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_title" android:layout_marginLeft="10dp" android:layout_marginTop="20dp" android:singleLine="true" android:layout_toRightOf="@id/xg_notification_icon" android:layout_toLeftOf="@id/xg_notification_date"/>
-<!--Notification content. Required. The id name cannot be changed but others can be changed.-->
+<!--Notification content. The id name cannot be changed but others can be changed. Required.-->
 <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_notification_style_content" android:layout_marginTop="1dp" android:singleLine="true" android:layout_toLeftOf="@id/xg_notification_date" android:layout_alignLeft="@+id/xg_notification_style_title" android:layout_below="@+id/xg_notification_style_title"/>
 <!--Playback button for rich media notifications with audio or video. The id name cannot be changed but others can be changed. If audio-visual rich media is not used, remove this layout.-->
 <ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_play" android:layout_alignLeft="@+id/xg_notification_style_title" android:visibility="gone" android:background="@android:drawable/ic_media_play" android:layout_alignParentBottom="true"/>
@@ -282,6 +282,20 @@ Singapore: `https://api.tpns.sgp.tencent.com`
 <ImageView android:layout_height="25dp" android:layout_width="25dp" android:id="@+id/xg_notification_audio_stop" android:layout_marginLeft="30dp" android:layout_toRightOf="@+id/xg_notification_audio_play" android:visibility="gone" android:background="@android:drawable/ic_media_pause" android:layout_alignParentBottom="true"/></RelativeLayout>
 ```
 
+
+#### Disabling session keep-alive
+
+To disable session keep-alive, if you use the automatic gradle integration method, please configure the following node under the <application> tag of the `AndroidManifest.xml` file of your application, where ```xxx``` is a custom name; if you use manual integration, please modify the node attributes as follows:
+
+```xml
+   <!-- Add the following node to the AndroidManifest.xml file of your application, where xxx is a custom name: -->
+   <!-- To disable the feature of keep-alive with TPNS application, please configure -->
+   <provider
+       android:name="com.tencent.android.tpush.XGPushProvider"
+       tools:replace="android:authorities"
+       android:authorities="application package name.xxx.XGVIP_PUSH_AUTH"
+       android:exported="false" />    
+```
 
 ### Debugging and device registration
 
@@ -330,13 +344,12 @@ If you apply obfuscated code by using tools such as proguard in your project, ke
 ```
 
 
-
 ### Suggestions on integration
 <span id="HQToken"></span>
 #### Getting token (optional)
 It is recommended that after you integrate the SDK, you use gestures or other methods to display the token in the application's less commonly used UI such as **About** or **Feedback**. Doing so will facilitate subsequent troubleshooting.
 Sample code is as follows:
 ```java
-// Obtaining a token
+// Get the token
 XGPushConfig.getToken(getApplicationContext());
 ```

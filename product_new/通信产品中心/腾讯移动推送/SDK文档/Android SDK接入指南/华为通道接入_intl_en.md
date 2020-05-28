@@ -1,4 +1,4 @@
-﻿
+
 
 ## Operation Scenarios
 
@@ -16,12 +16,12 @@ The Huawei push channel is a system-level push channel **officially provided by 
 
 1. Enter the [Huawei's development platform](http://developer.huawei.com).
 2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to verify your identity.)
-3. Create an application on the Huawei Push platform. For more information, please see [Creating App](https://developer.huawei.com/consumer/cn/service/hms/catalog/HwJointOperationApp.html?page=hmssdk_jointOper_prepare_createapp). (The application package name must be the same as that entered in the TPNS Console.)
+3. Create an application on the Huawei Push platform. For more information, please see [Creating App](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-Guides/hmssdk_huaweipush_devprepare_agent#h1-1575111622057). (The application package name must be the same as that entered in the TPNS Console.)
 4. Get and copy the application's `AppID` and `AppSecret` and paste them in Application Configuration > Huawei Channel in the TPNS Console.
 		
 
 ### Configuring SHA256 certificate fingerprint
-For more information on how to get the SHA256 certificate fingerprint, please see the [Huawei Push integration documentation](http://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_introduction_agent).
+For more information on how to get the SHA256 certificate fingerprint, please see the [Huawei Push integration documentation](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-Guides/hmssdk_huaweipush_devprepare_agent#h1-1575111604142).
 
 
 
@@ -72,7 +72,7 @@ Complete the configuration required by TPNS in the `build.gradle` file in the Ap
 	</provider>      
 	<receiver android:name="com.huawei.hms.support.api.push.PushEventReceiver" >
 			<intent-filter>
-					<!-- Receive notification bar messages from the channel, which is compatible with the legacy version of PUSH -->
+					<!-- Receive notification panel messages from the channel, which is compatible with the legacy version of PUSH -->
 					<action android:name="com.huawei.intent.action.PUSH" />
 			</intent-filter>
 	</receiver>
@@ -86,7 +86,7 @@ Complete the configuration required by TPNS in the `build.gradle` file in the Ap
 		<action android:name="com.huawei.android.push.intent.REGISTRATION" />
 		<!-- Required; used to receive messages -->
 		<action android:name="com.huawei.android.push.intent.RECEIVE" />
-		<!-- Optional; used to trigger the `onEvent` callback after the notification bar or a button in it is tapped -->
+		<!-- Optional; used to trigger the `onEvent` callback after the notification bar or a button in it is clicked -->
 		<action android:name="com.huawei.android.push.intent.CLICK" />
 		<!-- Optional; used to check whether the PUSH channel is connected to; not needed if there is no need to view -->
 		<action android:name="com.huawei.intent.action.PUSH_STATE" />
@@ -124,8 +124,17 @@ I/XINGE: [XGOtherPush] other push token is : 0865551032618726300001294600CN01 ot
 ```
 >Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
 
+## Arrival Receipt Configuration for Huawei Channel
+The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Configuration Guide](https://intl.cloud.tencent.com/document/product/1024/35246#.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95), you can view the arrival data for the Huawei push channel in the push records.
+![](https://main.qcloudimg.com/raw/c5247214fb095b300091bb62629dd57a.png)
 
-When your application is released on Huawei AppGallery, it may fail the audit with the error message "Error:28: you need to package the certificate file into the APK when integrating with HMS. Please directly copy the assets directory to the application project's root directory" displayed.
-
-Solution: download the official Huawei HMS SDK and copy all files and subdirectories under the `assets` directory to that in your application project. If the `assets` directory does not exist in the application project, create one.
-
+## Badge Adaptation for Huawei Devices
+Huawei devices support setting application badge in the following steps:
+1. Apply for the permission to set application badge by adding the following permission configuration under the `manifest` tag in the application's `AndroidManifest.xml` file:
+```
+<uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE "/>
+```
+2. Set the application startup class
+You need to enable the Huawei channel in the console and enter the `Activity` class of the application entry corresponding to the homescreen icon in parameter configurations, such as `com.test.badge.MainActivity` as shown below:
+![](https://main.qcloudimg.com/raw/0745c6cd6edac454ad3b6f9797d23bc7.png)
+For the usage of the badge, please see [Badge Adaptation Guide](https://intl.cloud.tencent.com/document/product/1024/35828#.E5.8D.8E.E4.B8.BA.E6.89.8B.E6.9C.BA.E8.A7.92.E6.A0.87.E9.80.82.E9.85.8D.E6.8C.87.E5.8D.97).
