@@ -7,7 +7,7 @@
 ## 创建录制模板
 登录云直播控制台后，选择【功能模板】>[【录制配置】](https://console.cloud.tencent.com/live/config/record)，单击【+】设置基本信息，单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/d5352513fa5b9388a01edd3f37e97c28.png)
+![](https://main.qcloudimg.com/raw/93c0660fe1c5eaf8bfc2a72e7c7944dc.png)
 > 
 > 1.HLS 格式支持文件推流中断续录，续录超时时长可设置为0s - 1800s。
 > 2. 录制视频针对直播原始码率录制，输出格式有 HLS、MP4、FLV 和 ACC 四种，其中 ACC 为纯音频录制。
