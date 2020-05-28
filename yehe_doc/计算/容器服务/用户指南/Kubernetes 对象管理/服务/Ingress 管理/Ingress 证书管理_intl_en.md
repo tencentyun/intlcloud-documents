@@ -28,8 +28,8 @@ In this step, select **Https:443** as the listening port and select the appropri
 
 
 ### Kubectl guide
-
-#### Configuring a certificate and creating an HTTPS service<span id="CreatingSecret"></span>
+<span id="CreatingSecret"></span>
+#### Configuring a certificate and creating an HTTPS service
 
 1. Run the following command to calculate the ID of certificate "XczRzegn".
 ```yaml
@@ -85,8 +85,8 @@ When creating an Ingress resource, specify the backend Service as `sample-servic
      - secretName: tencent-com-cert
 </pre>
 
-
-#### Modifying a certificate<span id="ModifySecret"></span>
+<span id="ModifySecret"></span>
+#### Modifying a certificate
 
 1. Run the following command to use the default editor to open the Secret that needs to be modified.
 ```
