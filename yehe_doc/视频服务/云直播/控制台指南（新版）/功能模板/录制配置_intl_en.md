@@ -6,10 +6,10 @@ This document describes how to create a [recording configuration](https://intl.c
 
 ## Creating Recording Template
 Log in to the LVB Console, select **Feature Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**, click **+**, enter the basic information, and click **Save**.
-
+![](https://main.qcloudimg.com/raw/93c0660fe1c5eaf8bfc2a72e7c7944dc.png)
 
 > 
-> 1. The .hls format supports recording resumption after push interruption, and the timeout period for resumption can be set between 0 and 300 seconds.
+> 1. The .hls format supports recording resumption after push interruption, and the timeout period for resumption can be set between 0 and 1800 seconds.
 > 2. Videos are recorded based on the original bitrate of the live stream and can be outputted in .hls, .mp4, .flv, and .aac formats. The .aac format records the audio only.
 > 1. The maximum length of a single file recorded in .mp4 or .flv format is 120 minutes, and if a file exceeds this limit, a new file will be created to continue recording. There is no upper limit for .hls format.
 > 1. A single recording file can be retained up to 1,080 days. A retention period of 0 means "never expire".
