@@ -18,7 +18,7 @@
 
 ## 关联域名
 创建好录制模板后，进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)选择对应的推流域名或单击右侧的【管理】，进入域名详情页，选择【模板配置】为该域名指定录制模板。
-![](https://main.qcloudimg.com/raw/03810e82a6429ba8ad606b6c02503a9d.png)
+![](https://main.qcloudimg.com/raw/68f4dd1a6452a3e97e7ff4dea6493d7b.png)
 >
 >- 如果您需要解绑录制配置，在【模板配置】中，单击【编辑】，取消相应模板的勾选，然后单击【保存】，即可将该模板与域名取消关联。
 >- 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制模板](https://intl.cloud.tencent.com/document/product/267/30842) 解除关联。
