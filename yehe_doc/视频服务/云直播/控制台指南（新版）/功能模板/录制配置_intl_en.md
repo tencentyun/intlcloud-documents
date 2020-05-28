@@ -6,10 +6,10 @@ This document describes how to create a [recording configuration](https://intl.c
 
 ## Creating Recording Template
 Log in to the LVB Console, select **Feature Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**, click **+**, enter the basic information, and click **Save**.
-
+![](https://main.qcloudimg.com/raw/93c0660fe1c5eaf8bfc2a72e7c7944dc.png)
 
 > 
-> 1. The .hls format supports recording resumption after push interruption, and the timeout period for resumption can be set between 0 and 300 seconds.
+> 1. The .hls format supports recording resumption after push interruption, and the timeout period for resumption can be set between 0 and 1800 seconds.
 > 2. Videos are recorded based on the original bitrate of the live stream and can be outputted in .hls, .mp4, .flv, and .aac formats. The .aac format records the audio only.
 > 1. The maximum length of a single file recorded in .mp4 or .flv format is 120 minutes, and if a file exceeds this limit, a new file will be created to continue recording. There is no upper limit for .hls format.
 > 1. A single recording file can be retained up to 1,080 days. A retention period of 0 means "never expire".
@@ -18,6 +18,7 @@ Log in to the LVB Console, select **Feature Template** > **[Recording Configurat
 
 ## Associating Domain Name
 After creating a recording template, you need to select the corresponding push domain name in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** or click **Manage** on the right to enter the domain name details page. Then, select **Template Configuration** to specify the recording template for the domain name.
+![](https://main.qcloudimg.com/raw/68f4dd1a6452a3e97e7ff4dea6493d7b.png)
 >
 >- If you want to unbind the recording configuration from the domain name, click **Edit** in **Configure Template**, deselect the corresponding template, and click **Save**.
 >- The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to disassociate them, you need to call the [DeleteLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30842).

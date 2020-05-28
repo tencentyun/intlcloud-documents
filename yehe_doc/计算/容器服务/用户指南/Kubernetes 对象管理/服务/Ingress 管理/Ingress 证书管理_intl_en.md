@@ -19,7 +19,7 @@ When creating an Ingress by using the HTTPS listening protocol, choose an approp
 
 1. Log in to the CLB console and click [**Certificate Management**](https://console.cloud.tencent.com/clb/cert) in the left sidebar. On the **Certificate Management** page, create a certificate.
 2. See [Creating an Ingress](https://intl.cloud.tencent.com/document/product/457/30673) for more information on how to create an Ingress.
-In this step, select **Http:443** as the listening port and select the appropriate server certificate.
+In this step, select **Https:443** as the listening port and select the appropriate server certificate.
 
 >
 > - When HTTPS service is enabled for an Ingress created in the console, a Secret resource with the same name will be created to store the certificate ID. Then, this Secret is used and listened to in the Ingress.
@@ -28,8 +28,8 @@ In this step, select **Http:443** as the listening port and select the appropria
 
 
 ### Kubectl guide
-
-#### Configuring a certificate and creating an HTTPS service<span id="CreatingSecret"></span>
+<span id="CreatingSecret"></span>
+#### Configuring a certificate and creating an HTTPS service
 
 1. Run the following command to calculate the ID of certificate "XczRzegn".
 ```yaml
@@ -85,8 +85,8 @@ When creating an Ingress resource, specify the backend Service as `sample-servic
      - secretName: tencent-com-cert
 </pre>
 
-
-#### Modifying a certificate<span id="ModifySecret"></span>
+<span id="ModifySecret"></span>
+#### Modifying a certificate
 
 1. Run the following command to use the default editor to open the Secret that needs to be modified.
 ```

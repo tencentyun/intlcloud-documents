@@ -2,12 +2,15 @@
 This operation is applicable to clusters for which you want to activate COS based on your business needs.
 
 ## Directions
-### Step 1. View COS access key
+### Step 1. View the COS access key
 Get `SecretId` and `SecretKey` in [Key Management](https://console.cloud.tencent.com/cam/capi).
 ![](https://main.qcloudimg.com/raw/7de96fc8624694cfdd8ef24b450d53c8.png)
 
-### Step 2. Get the file download path in the bucket
-In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), create or select a bucket and enter the bucket file management page. To manually activate COS in the EMR Console, you need to provide an authentication address to check whether the `SecretId` and `SecretKey` are correct. Therefore, you should make sure that there is at least one downloadable file under the account corresponding to the entered `SecretId` and `SecretKey`.
+### Step 2. Get the download path of files in the bucket
+In the [COS Console](https://console.cloud.tencent.com/cos5/bucket), create or select a bucket and enter the bucket file management page.
+>You are strongly recommended to select private read/write as the access permission when creating or selecting a bucket for higher data security. For more information, please see [Setting Access Permission](https://intl.cloud.tencent.com/document/product/436/13315).
+>
+To manually activate COS in the EMR Console, you need to provide an authentication address to check whether the `SecretId` and `SecretKey` are correct. Therefore, you should make sure that there is at least one downloadable file under the account corresponding to the entered `SecretId` and `SecretKey`.
 
 For example, if there is a file `t1.txt` in the root directory of the bucket, you can enter its object address as the authentication address. In the bucket file list, click **Details** of the file to enter the file details page, and copy the file **object address**.
 ![](https://main.qcloudimg.com/raw/8a308284db105fa01c701ebfdd474454.png)![](https://main.qcloudimg.com/raw/83f7e2e435ddfd10246de4865fc3258c.png)

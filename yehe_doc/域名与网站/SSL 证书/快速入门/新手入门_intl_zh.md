@@ -2,7 +2,7 @@
 
 ## 证书申请流程
 购买证书完整流程如下图所示：
-![](https://main.qcloudimg.com/raw/5b32bf7ead9e6a540ff13783a8ded293.png)
+![](https://main.qcloudimg.com/raw/50a5115c4b9d9799aac11942cd3a0808.png)
 
 - **购买证书**：您可以在 [SSL 证书控制台](https://console.cloud.tencent.com/ssl) 选择您需要的证书种类、证书品牌、域名类型等。具体操作请参考 [购买流程](https://intl.cloud.tencent.com/document/product/1007/30159)。
 - **提交资料验证**：
