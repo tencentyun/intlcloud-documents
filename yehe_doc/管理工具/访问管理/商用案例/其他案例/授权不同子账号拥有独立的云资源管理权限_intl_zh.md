@@ -10,7 +10,8 @@
  > - 企业帐号 CompanyExample 下有两个标签键、标签值，分别为test1&test1、test2&test2。
 
 ## 操作步骤
-### 使用标签标记云服务器<span id="biaoji"></span>
+<span id="biaoji"></span>
+### 使用标签标记云服务器
 您可以通过以下步骤为两个云服务器 ins-1、ins-2标记不同的标签键及标签值，实现分标签管理。
 #### 为云服务器 ins-1 标记标签键、标签值为test1&test1
 
