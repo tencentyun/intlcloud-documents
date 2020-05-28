@@ -1,8 +1,8 @@
 ## Introduction
 An Ingress is a collection of rules that allow access to services within a cluster. You can configure different forwarding rules to allow different URLs to access different services within the cluster.
 For the proper running of Ingress resources, the cluster must run an Ingress controller. TKE enables the CLB-based `l7-lb-controller` by default in the cluster. It supports HTTP, HTTPS, and nginx-ingress types. You can select different Ingress types based on your business needs.
-
-## Notes<span id="annotations"></span>   
+<span id="annotations"></span>   
+## Notes
 - Do not use the same CLB for TKE and CVM.
 - For a CLB managed by TKE, you cannot modify its listeners, forwarding paths, certificates, and backend-bound servers on CLB console. Changes made on the CLB console will be automatically overwritten by TKE.
 - When using an existing CLB:
@@ -54,8 +54,8 @@ For the proper running of Ingress resources, the cluster must run an Ingress con
 
 ## Managing Ingress Using kubectl
 
-
-### YAML sample<span id="YAMLSample"></span>
+<span id="YAMLSample"></span>
+### YAML sample
 ```Yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
