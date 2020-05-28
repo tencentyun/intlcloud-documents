@@ -27,7 +27,7 @@ For the proper running of Ingress resources, the cluster must run an Ingress con
  - Load balancer: create one automatically or use an existing CLB.
  - Namespace: select an option as needed.
  - Listener port: the default is **Http:80**. Select another port if needed.
- If **Http:443** is selected, a server certificate must be bound to ensure access security. For more information, see [SSL certificate format requirements and format conversion description](https://intl.cloud.tencent.com/document/product/214/5369).
+ If **Https:443** is selected, a server certificate must be bound to ensure access security. For more information, see [SSL certificate format requirements and format conversion description](https://intl.cloud.tencent.com/document/product/214/5369).
  - Forwarding configuration: set this parameter as needed.
 7. Click **Create Ingress** to create an Ingress.
 
