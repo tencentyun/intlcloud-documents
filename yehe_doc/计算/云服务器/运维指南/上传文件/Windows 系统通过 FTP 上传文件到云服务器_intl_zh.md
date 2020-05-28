@@ -5,10 +5,9 @@
 ## 前提条件
 
 已在云服务器中搭建 FTP 服务。
-
 - 如果您的云服务器为 Linux 操作系统，具体操作请参考 [Linux 云服务器搭建 FTP 服务](https://intl.cloud.tencent.com/document/product/213/10912)。
-
 - 如果您的云服务器为 Windows 操作系统，具体操作请参考 [Windows 云服务器搭建 FTP 服务](https://intl.cloud.tencent.com/document/product/213/10414)。
+
 
 ## 操作步骤
 
@@ -18,6 +17,7 @@
 >
 2. 打开 FileZilla。
 3. 在 FileZilla 窗口中，填写主机、用户名、密码和端口等信息，单击【快速连接】。
+
 **配置信息说明：**
  - 主机：云服务器的公网 IP。在 [云服务器控制台](https://console.cloud.tencent.com/cvm) 的实例管理页面可查看对应云服务器的公网 IP。
  - 用户名：[搭建 FTP 服务](https://intl.cloud.tencent.com/document/product/213/10912) 时设置的 FTP 用户的帐号。图中以 “ftpuser1” 为例。
@@ -31,7 +31,6 @@
 >- 云服务器 FTP 通道不支持上传 tar 压缩包后自动解压，以及删除 tar 包功能。
 >- 远程站点路径为上传文件至 Linux 云服务器的默认路径。
 >
-
 
 ### 下载文件
 在右下方“远程站点”窗口中，右键单击待下载的云服务器文件，选择【下载】，即可将文件下载到本地。
