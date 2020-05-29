@@ -878,7 +878,7 @@ AbortMultipartUploadRequest abortMultipartUploadRequest = new AbortMultipartUplo
 cosClient.abortMultipartUpload(abortMultipartUploadRequest);
 ```
 
-**Other operations**
+## Other operations
 
 ### Restoring an archived object 
 
