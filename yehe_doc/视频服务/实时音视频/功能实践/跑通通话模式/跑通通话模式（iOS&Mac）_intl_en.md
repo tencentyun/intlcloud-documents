@@ -14,7 +14,7 @@ In call mode, all users in the TRTC room will be assigned to access servers, whi
 
 ## Sample Code
 You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo) to get the sample code related to this document.
-
+![](https://main.qcloudimg.com/raw/9cc33faf91173116e2d259f6b8b97d55.png)
 
 >If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip).
 
