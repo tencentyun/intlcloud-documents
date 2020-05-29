@@ -9,7 +9,7 @@ Tencent Cloud COS offers a limited Free Tier to all new customers, that is, all 
 
 ## Free Tier
 
-The Free Tier is only applicable to **Public Cloud regions**. For more information, see [Regions and Access Domain Names] (https://intl.cloud.tencent.com/document/product/436/6224).
+The Free Tier is only applicable to **Public Cloud regions**. For more information, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
 
 The table below shows COS [billable items](https://intl.cloud.tencent.com/document/product/436/33776) and whether the Free Tier is available to them.
 >
