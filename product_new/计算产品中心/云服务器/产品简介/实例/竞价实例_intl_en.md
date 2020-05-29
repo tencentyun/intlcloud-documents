@@ -63,5 +63,5 @@ As spot instances may be interrupted, their lifecycle is not under your control.
 
 ### 3. Using a computing scheduling mode that supports checkpoint restart
 - Store intermediate computing results on permanent storage products such as COS, CFS, and NAS.
-- Be aware of the metadata to monitor which instances are about to be interrupted and save the computing results within the retention period of 2 minutes.
+- Monitor which instances are about to be interrupted using metadata and save the computing results within the retention period of 2 minutes.
 - Resume the last computing when a spot instance is started again.

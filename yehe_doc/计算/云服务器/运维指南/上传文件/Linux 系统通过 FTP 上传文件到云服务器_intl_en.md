@@ -6,6 +6,9 @@ This document describes how to use the FTP service to upload files from a local 
 
 [The FTP service](https://intl.cloud.tencent.com/document/product/213/10912) has been set up on the CVM.
 
+- To upload files via FTP to a Linux CVM, see [Building the FTP Service (Linux)](https://intl.cloud.tencent.com/document/product/213/10912) for details.
+- To upload files via FTP to a  Windows CVM, see [Building the FTP Service (Windows)](https://intl.cloud.tencent.com/document/product/213/10414) for details.
+
 ## Directions
 
 ### Connecting to the CVM

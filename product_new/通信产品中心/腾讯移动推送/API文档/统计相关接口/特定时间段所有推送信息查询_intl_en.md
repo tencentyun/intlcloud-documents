@@ -14,7 +14,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 
 | Parameter Name  | Required | Type   | Description       |
 | --------- | ---- | ------ | ---------- |
-| startDate | Yes   | string | Query start date,<li>Format: YYYY-MM-DD<li>Query limit: within the last 3 months |
+| startDate | Yes   | string | Query start date,<li>Format: YYYY-MM-DD<li>Query limit: within the last 1 months |
 | endDate | Yes | string | Query end date. Format: YYYY-MM-DD |
 | msgType | No | string | Message type:<li>notify: notification<li>message: silent message |
 | pushType | No | string | Push type:<li>all: full push<li>tag: tag push<li>token: device list/device single push<li>account: account list/account single push |

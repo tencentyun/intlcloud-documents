@@ -14,19 +14,19 @@
 | 静态网站     | [设置静态网站](https://intl.cloud.tencent.com/document/product/436/14984)  |
 | 清单         | [开通清单功能](https://intl.cloud.tencent.com/document/product/436/30624)  |
 | 存储桶标签   | [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)   |
-| 监控报表         | [查询监控报表](https://intl.cloud.tencent.com/document/product/436/31634)|
+| 数据监控         | [查询数据监控](https://intl.cloud.tencent.com/document/product/436/31634)|
 |日志管理|[设置日志管理](https://intl.cloud.tencent.com/document/product/436/17040)   |
 | 数据回源     | [设置回源](https://intl.cloud.tencent.com/document/product/436/31508) |
 | 批量作业 | [批量处理](https://intl.cloud.tencent.com/document/product/436/32956)  |
 | 数据检索     | [检索数据](https://intl.cloud.tencent.com/document/product/436/32538) |
 | 版本控制     | [设置版本控制](https://intl.cloud.tencent.com/document/product/436/19881)   |
 | 跨地域复制   | [设置跨地域复制](https://intl.cloud.tencent.com/document/product/436/19235)  |
-| 加密         | [设置对象加密](https://intl.cloud.tencent.com/document/product/436/30929)  |
+| 加密         | <li>[设置对象加密](https://intl.cloud.tencent.com/document/product/436/30929) <br><li>[设置存储桶加密](https://intl.cloud.tencent.com/document/product/436/33455) |
 | 防盗链       | [设置防盗链](https://intl.cloud.tencent.com/document/product/436/13319) |
 | 跨域访问     | [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318)  |
 | 存储桶策略   | [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927)   |
 | 访问控制     | <li>[设置对象的访问权限](https://intl.cloud.tencent.com/document/product/436/13327)<br><li>[设置存储桶的访问权限](https://intl.cloud.tencent.com/document/product/436/13315)<br><li>[子账号访问存储桶列表](https://intl.cloud.tencent.com/document/product/436/17061)          |
 | 域名与访问加速     | <li>[域名管理概述](https://intl.cloud.tencent.com/document/product/436/18424)<br><li>[开启默认加速域名](https://intl.cloud.tencent.com/document/product/436/31505)<br><li>[开启自定义加速域名](https://intl.cloud.tencent.com/document/product/436/31506)<br><li>[开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)<br><li>[授予子账号配置存储桶加速域名的权限](https://intl.cloud.tencent.com/document/product/436/31712)<br><li>[开启全球加速](https://intl.cloud.tencent.com/document/product/436/33406)  |
-|  图片处理 |  [开启图片处理](https://intl.cloud.tencent.com/document/product/436/35278)   |
+|  数据处理 |  <li>[开启图片处理](https://intl.cloud.tencent.com/document/product/436/35278) <br><li>[文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663)   |
 
 
