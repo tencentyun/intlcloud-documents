@@ -26,7 +26,7 @@ When creating an image, you can start an instance with a public image, connect i
 4. In the pop-up "Create custom image" window, enter "Image Name" and "Description", and click **Create Image**.
 > You can click <img src = "https://main.qcloudimg.com/raw/31b31c7b27848f0378932f17273feff3.png" style = "margin: 0;"> </ img> at the top right of the console to view the image creation progress.
 >
-5. After the image is created, click **[Images] (https://console.cloud.tencent.com/cvm/image)** on the left sidebar to enter the image management page.
+5. After the image is created, click **[Images](https://console.cloud.tencent.com/cvm/image)** on the left sidebar to enter the image management page.
 6. To purchase a server with the same image as the previous one, select the image you created in the image list, and click **Create Instance**.
 
 ### Create a custom image through API

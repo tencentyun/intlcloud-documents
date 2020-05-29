@@ -1,118 +1,105 @@
-## Feature Description
+## Feature
 
-This API is used to modify an existing shipping task. To use this API, you need to grant CLS the write permission of the specified bucket.
+This API (ModifyShippingTask) is used to modify the existing shipping task. When using this API, you need to manually grant CLS the permission to write to the specified bucket.
 
 
 
-#### Sample request
+#### Request sample
 
-```shell
- PUT /shipper HTTP/1.1
- Host: <Region>.cls.tencentyun.com
- Authorization: <AuthorizationString>
- Content-Type: application/json
- 
- {
-   "shipper_id": "xxxx-xx-xx-xx-xxxxxxxx",
-   "bucket": "test-1250000001",
-   "prefix": "test",
-   "shipper_name": "myname",
-   "interval": 300,
-   "max_size": 256,
-   "effective": true,
-   "partition": "%Y%m%d",
-     "compress": {
-         "format": "none"
-     },
-     "content": {
-         "format": "json",
-     },
-   "filter_rules": [{
-     "key": "",
-     "regex": "",
-     "value": ""
-   }]
- }
+```plaintext
+PUT /shipper HTTP/1.1
+Host: <Region>.cls.tencentyun.com
+Authorization: <AuthorizationString>
+Content-Type: application/json
+
+{
+	"shipper_id": "xxxx-xx-xx-xx-xxxxxxxx",
+	"bucket": "test-1250000001",
+	"prefix": "test",
+	"shipper_name": "myname",
+	"interval": 300,
+	"max_size": 100,
+	"effective": true,
+	"partition": "%Y%m%d",
+	"compress": {
+		"format": "none"
+	},
+	"content": {
+		"format": "json"
+	}
+}
 ```
 
 
 
-## Request Line
+## Request line
 
-```shell
+```plaintext
 PUT /shipper
 ```
 
-#### Request header
+#### Request headers
 
-There are only common request headers but no special request headers.
+No special request header is used except for the common header.
 
 #### Request parameters
 
 | Field Name | Type | Location | Required | Description |
-| ------------ | ------ | ---- | ---- | ------------------------------------------------------------ |
-| shipper_id   | string | body | Yes   | ID of the shipper to be modified                                         |
-| bucket       | string | body | No   | New bucket to which the shipper ships logs, which is in the format of `{bucketName}-{appid}`       |
-| prefix       | string | body | No   | New directory prefix of shipper                                   |
-| shipper_name | string | body | No   | Shipping rule name                                               |
-| interval     | int    | body | No   | Shipping time interval in seconds. Default value: 300. Value range: 60–3600            |
-| max_size     | int    | body | No   | Maximum size of shipped file in MB. Default value: 256. Value range: 100–10240      |
-| effective    | bool   | body | No   | Shipper status switch                                           |
-| filter_rules | array  | body | No   | Filter rules for shipped logs. Only logs matching the rules can be shipped. All rules are in the `and` relationship, and up to five rules can be added. If the array is empty, no filtering will be performed, and all logs will be shipped |
-| partition    | string | body | No   | Partition rule of shipped log, which can be represented in `strftime` time format |
-| compress     | object | body | Yes       | Compression configuration of shipped log                                 |
-| content      | object | body | Yes       | Format configuration of shipped log content                             |
+| ------------ | ------ | ---- | -------- | ------------------------------------------------------------ |
+| shipper_id | string | body | Yes | ID of the shipping task to be modified |
+| bucket | string | body | No | New bucket for the shipping task. Format: {bucketName}-{appid} |
+| prefix | string | body | No | Prefix of the new directory for the shipping task |
+| shipper_name | string | body | No | Shipping rule name |
+| interval     | int    | body | No       | Shipping interval in seconds. Default: 300. Valid values: [300, 360, 420, 480, 540, 600, 660, 720, 780, 840, 900] (equal to integer minutes) |
+| max_size | int | body | No | The maximum size of a file to be shipped (in MB). Default is 100 MB. Value range: 100-256 |
+| effective | bool | body | No | Indicates whether to enable the shipping task |
+| partition | string | body | No | Rules for partitioning logs to be shipped. `Strftime` can be used to define the time format. |
+| compress | object | body | Yes | Compression configuration of logs to be shipped |
+| content | object | body | Yes | Format configuration of logs to be shipped |
 
-`Rule` is in the following format:
-
-| Field Name | Type | Required | Description |
-| ------ | ------ | ---- | ----------------------------------------------------- |
-| key    | string | Yes       | Key for comparison. `__CONTENT__` indicate the full text                |
-| regex  | string | Yes       | Regex for extracting comparison content                               |
-| value  | string | Yes       | Value to be compared with the content extracted with the above regex. If they are the same, there will be a hit |
-
-`compress` is in the following format:
+The `compress` format is as follows:
 
 | Field Name | Type | Required | Description |
-| ------ | ------ | ---- | ------------------------------------------ |
-| format | string | Yes       | Compression format. `gzip` and `lzop` are supported, and `none` indicates no compression |
+| ------ | ------ | -------- | ------------------------------------------ |
+| format | string | Yes | Compression format, including `gzip`, `lzop` and `none` (do not compress). |
 
-`content` is in the following format:
+The `content` format is as follows:
 
 | Field Name | Type | Required | Description |
 | -------- | ------ | -------- | --------------------------- |
-| format   | string | Yes       | Content format. Valid values: `json`, `csv` |
-| csv_info | object | No       | Configured when the content format is `csv`       |
+| format | string | Yes | Content format, which supports `json` and `csv`. |
+| csv_info | object | No | Required when the content format is `csv` |
 
-`csv_info` is in the following format:
+csv_info is composed as follows:
 
 | Field Name | Type | Required | Description |
 | ------------------ | ------------- | -------- | ------------------------------------------------ |
-| print_key          | bool          | Yes       | Whether to print `key` on the first row of CSV file                              |
-| keys               | array(string) | Yes       | Names of each keys                                  |
-| delimiter          | string        | Yes       | Field delimiter                                 |
-| escape_char        | string        | Yes       | Escape character used to enclose any field delimiter in field content |
-| non_existing_field | string        | Yes       | Content used to populate non-existing fields           |
+| print_key | bool | Yes | Indicates whether to write the first line of key to the csv file |
+| keys | array(string) | Yes | Key name of each column |
+| delimiter | string | Yes | The separator between fields |
+| escape_char | string | Yes | Escape characters are used to enclose the separators contained in a field. |
+| non_existing_field | string | Yes | It is used to populate the fields specified above that do not exist or are invalid. |
 
->At least one parameter out of `bucket`, `prefix`, `shipper_name`, `interval`, `max_size`, `effective, `filter_rules`, and `compress` must be present.
+>At least one of the following fields should be provided: bucket, prefix, shipper_name, interval, max_size, effective, filter_rules, and compress.
 
 ## Response
 
-#### Sample response
+#### Response sample
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 0
 ```
 
-#### Response header
+#### Response headers
 
-There are only common response headers but no special response headers.
+No special response header is used except for common response header.
 
 #### Response parameters
+
 None.
 
 ## Error Codes
 
-For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
+For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).

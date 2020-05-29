@@ -223,14 +223,14 @@ make install
 
 #### 4. Install Poco libraries and header files
 
-Download and install the latest version of Poco libraries and header files from [Poco official website](https://pocoproject.org/download.html), or directly use the git command to download [Poco] (https://github.com/pocoproject/poco.git).
+Download and install the latest version of Poco libraries and header files from [Poco official website](https://pocoproject.org/download.html), or directly use the git command to download [Poco](https://github.com/pocoproject/poco.git).
 
 >The latest version of Poco requires C++14 support. If your compiler only supports C++11 or below, you can use [Poco 1.9.4](https://github.com/pocoproject/poco/releases/tag/poco-1.9.4-release).
 
 ```shell
 cd Poco/ 
 ./configure --omit=Data/ODBC,Data/MySQL
-mkdir examplefolder  #(Poco installation directory. Replace examplefolder with your custom folder name.）
+mkdir examplefolder  #(Replace examplefolder with your custom folder name.）
 cd examplefolder
 cmake .. 
 make

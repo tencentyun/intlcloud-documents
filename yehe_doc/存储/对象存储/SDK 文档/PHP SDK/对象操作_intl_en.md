@@ -1258,8 +1258,8 @@ Guzzle\Service\Resource\Model Object
 | ETag                 | String      | MD5 checksum of the part                                                | None     |
 | LastModified | String | Returns the last modified date/time in GMT of the object | None |
 
-
-### <span id = "LIST_MULIT_UPLOAD"> Querying a Multipart Upload </span>
+<span id = "LIST_MULIT_UPLOAD"></span>
+### Querying a Multipart Upload
 
 #### Feature
 
@@ -1370,8 +1370,8 @@ Guzzle\Service\Resource\Model Object
 | Size             | String | The size of the part                              | Part   |
 
 
-
-### <span id = "COMPLETE_MULIT_UPLOAD"> Complete multipart upload </ span>
+<span id = "COMPLETE_MULIT_UPLOAD"></span>
+### Complete multipart upload 
 
 #### Feature
 
@@ -1421,7 +1421,8 @@ try {
 | ETag                 | String      | MD5 checksum of the part                                                | Yes     |
 | PartNumber | Int    | Part number identifying the part                           | Yes       |
 
-### <span id = "ABORT_MULIT_UPLOAD"> Terminate a multipart upload </ span>
+<span id = "ABORT_MULIT_UPLOAD"></span> 
+### Terminate a multipart upload 
 
 #### Feature
 
