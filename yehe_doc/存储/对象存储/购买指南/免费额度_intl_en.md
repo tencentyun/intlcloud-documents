@@ -1,19 +1,25 @@
-New COS users are eligible for the following time-limited free tier: 
+## Overview
+Tencent Cloud COS offers a limited Free Tier to all new customers, that is, all the first time users of COS, both individuals and enterprises. This Free Tier applies to STANDARD storage usage charges for data stored in the **STANDARD** storage class. See more details in the table below: 
 
-| User Type | Free Tier | Validity Period |
+| User Type | Free Tier          | Term |
 | -------- | ----------------- | ------ |
-| Personal user | 50 GB of standard storage capacity | 6 months |
-| Enterprise user | 1 TB of standard storage capacity | 6 months |
+| Personal user | 50 GB of STANDARD storage usage | 6 months |
+| Enterprise user | 1 TB of STANDARD storage usage | 6 months |
 
 
 ## Free Tier
 
-Billable items in COS and the corresponding free tier are as listed in the following table:
+The Free Tier is only applicable to **Public Cloud regions**. For more information, see [Regions and Access Domain Names] (https://intl.cloud.tencent.com/document/product/436/6224).
+
+The table below shows COS [billable items](https://intl.cloud.tencent.com/document/product/436/33776) and whether the Free Tier is available to them.
+>
+>- The free tier is not applicable to any STANDARD_IA or ARCHIVE billable items including storage usage, requests, and traffic, and any other STANDARD billable items than **STANDARD storage usage**.
+>- If your service is interrupted due to violations or arrears, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is restarted.
 
 <table>
    <tr>
       <th>Fees</th>
-      <th>Billable Item</th>
+      <th>Billable Items</th>
       <th>Available Free Tier</th>
    </tr>
    <tr>
@@ -47,37 +53,34 @@ Billable items in COS and the corresponding free tier are as listed in the follo
 </table>
 
 
-> - The Free Tier is applicable to **Public Cloud regions**. For more information, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
-> - If your service is interrupted due to violations or arrears, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is restarted.
 
 
 ## Issuance method
 
-The free tier will be delivered to your account in the form of a free storage pack after you activate COS. You can view when your Free tier storage pack will take effect and expire in the [Storage Package Management](https://console.cloud.tencent.com/cos5/package) page in the console.
+Once you sign up for [Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985), and activate COS service using the [COS Console](https://console.cloud.tencent.com/cos5), the free tier will be automatically activated as a free storage pack on your account.
 
+## Validity Period
 
-## Calculation of the Validity Period
+The **Free Tier** is valid for 6 months after the activation of your COS service.
 
-The **Free Tier Validity Period** is 6 months after you activate COS service.
-
-For example, if you activated COS at 17:13:14 on March 10, 2019, and assume that 6 months is equal to 180 days, then the free tier would be valid for the STANDARD storage capacity between March 10 and September 5, 2019.
+For example, if you activated COS at 17:13:14 on March 10, 2019, and assume that 6 months is equal to 180 days, then the free tier would cover your STANDARD storage usage between March 10 and September 5, 2019.
 
 
 ## Billing Sequence
 
-When you are eligible for the free tier, other charges may be incurred, such as request fees and traffic fees. Therefore, when bills are settled, the system will adopt different settlement sequences according to different scenarios.
+During the free tier term, you may be charged other fees you incur, such as request, traffic and other basic fees. Therefore, the billing sequence varies for your billing settlement depending on the scenario.
 
-- By default, the system uses **pay-as-you-go** for settlement.
-- When you are eligible for the free tier of the standard storage capacity, the billing order is:  **free tier > pay-as-you-go**, that is, the system preferentially deducts the free tier, and then bill the excessive usage (if any) in a **pay-as-you-go** manner.
+- By default, COS bills are settled in a pay-as-you-go manner.
+- If you are eligible for the free tier, then your bills are settled in the order of **free tier** > **pay-as-you-go**. That is, you are charged in a pay-as-you-go manner only for the part exceeding the free tier.
 
 
 ## Example
 
 John Smith, a personal user, activated the COS service on March 10, 2019. He uploaded files of 60 GB in standard storage class on March 16, downloaded 10 GB of data through the public network on March 20, and didn't perform any other operations at other times, so:
 
-- He was granted free standard storage capacity of 50 GB per month for 6 months.
+- He was granted free STANDARD storage usage of 50 GB per month for 6 months.
 - On March 21, 2019, the public network downstream traffic was billed for 10 GB of data.
-- On April 1, 2019, the STANDARD storage capacity was billed, and 10 GB of storage capacity in excess of the free tier was used every day from March 16 to March 31 (160 GB in total for 16 days). This value was divided by 31, and the result of 5.16 GB was billed as the STANDARD storage capacity.
+- On April 1, 2019, the STANDARD storage usage was billed, and 10 GB of storage usage in excess of the free tier was used every day from March 16 to March 31 (160 GB in total for 16 days). This value was divided by 31, and the result of 5.16 GB was billed as the STANDARD storage usage.
 - At the beginning of April 2019, the data uploading and downloading requests in March were billed.
 
 In April 2019, John didn't perform any other operations, and the 60 GB of data was retained in COS, so:
@@ -85,9 +88,7 @@ In April 2019, John didn't perform any other operations, and the 60 GB of data w
 - At the beginning of May 2019, the standard storage capacity was billed. The monthly storage capacity was 60 GB, which exceeded the free tier, **so fees for the excessive 10 GB of standard storage capacity were charged**.
 
 
-> - This example focuses on the relevant billing details for personal users during the validity period of the free tier. For detailed descriptions of billable items, monthly storage capacity calculation rules, and cost calculation formulas, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
-> - For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
+>The above example applies to scenarios where a personal user has activated the COS service for the first time, and is eligible for the free tier. For billing after the free tier term ends, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
+## Troubleshooting
 
-## FAQs
-
-For FAQs about billable usage and free tier, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373).
+Should you have any questions about the free tier or your bills, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373).
