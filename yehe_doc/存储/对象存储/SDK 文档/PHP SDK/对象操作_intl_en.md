@@ -1370,7 +1370,7 @@ Guzzle\Service\Resource\Model Object
 | Size             | String | The size of the part                              | Part   |
 
 
-<span id = "COMPLETE_MULIT_UPLOAD"></ span>
+<span id = "COMPLETE_MULIT_UPLOAD"></span>
 ### Complete multipart upload 
 
 #### Feature
