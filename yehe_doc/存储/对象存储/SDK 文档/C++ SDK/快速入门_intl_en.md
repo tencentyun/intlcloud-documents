@@ -230,7 +230,7 @@ Download and install the latest version of Poco libraries and header files from 
 ```shell
 cd Poco/ 
 ./configure --omit=Data/ODBC,Data/MySQL
-mkdir examplefolder  #(Poco installation directory. Replace examplefolder with your custom folder name.）
+mkdir examplefolder  #(Replace examplefolder with your custom folder name.）
 cd examplefolder
 cmake .. 
 make
