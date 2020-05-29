@@ -1,7 +1,7 @@
 ## Outbound Bandwidth Cap (Downstream Bandwidth)
 
 The public network bandwidth cap refers to the upper limit of outbound bandwidth by default, i.e. the bandwidth going out from CVM instances. The public bandwidth cap varies for different network billing mode. See below for details:
-- The following rules apply to instances created before 00:00, February 24, 2020:
+- The following rules apply to instances created after 00:00, February 24, 2020:
 <table>
 <tr><th rowspan="2">Network Billing Mode</th><th colspan="2">Instance</th><th rowspan="2">Bandwidth Cap Range (Mbps)</th></tr>
 <tr><th>Instance Billing Mode</th><th>Instance Configuration</th></tr>
@@ -9,8 +9,7 @@ The public network bandwidth cap refers to the upper limit of outbound bandwidth
 <tr><td>Bill-by-bandwidth</td><td>Pay-as-you-go instances</td><td>ALL</td><td>0 - 100</td></tr>
 <tr><td>Bandwidth package</td><td colspan="2">All</td><td>0 - 2000</td></tr>
 </table>
-
-- The following rules apply to instances created after 00:00, February 24, 2020:
+- The following rules apply to instances created before 00:00, February 24, 2020:
 <table>
 <tr><th rowspan="2">Network Billing Mode</th><th colspan="2">Instance</th><th rowspan="2">Bandwidth Cap Range (Mbps)</th></tr>
 <tr><th style="width: 18.5607%;">Instance Billing Mode</th><th style="width: 24.5814%;">Instance Configuration</th></tr>
@@ -40,7 +39,7 @@ If you cannot adjust your instance or network billing mode, [submit a ticket](ht
 1. Change the billing mpde of bill-by-traffic instances to bill-by-bandwidth. For detailed operations, see [Adjusting the Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517).
 2. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 3. Locate the instance for which you want to adjust the bandwidth and choose **More** > **Resource Adjustment** > **Adjust Network** on the right.
-4. In the **Adjust Network** window that appears, set the target bandwidth cap and click **OK**, as shown in the following figure.
+4. In the **Adjust Network** window that appears, set the target bandwidth cap and click **OK**.
 
 <span id="AdjustNetworkModeByBandwidthPackage"></span>
 ### Adjusting the network billing mode (bill-by-bandwidth-package)

@@ -1,13 +1,7 @@
-COS is available in 4 storage classes depending on the access frequency: MAZ_STANDARD, STANDARD, STANDARD_IA, and ARCHIVE.
+COS is available in 3 storage classes depending on the access frequency: STANDARD, STANDARD_IA, and ARCHIVE.
 
 >When an object is uploaded, if the storage class is not set, it defaults to **STANDARD**.
 
-
-## MAZ_STANDARD
-
-COS MAZ_STANDARD is an object storage service that provides users with high data durability, availability, and performance.
-
-COS MAZ_STANDARD stores data across different data centers in one city to ensure the stability of user business against failures of a single data center.
 
 **Features**
 

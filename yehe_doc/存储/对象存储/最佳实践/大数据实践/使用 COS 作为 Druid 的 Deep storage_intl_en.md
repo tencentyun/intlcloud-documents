@@ -17,13 +17,16 @@ After downloading HADOOP-COS, copy the version you want displayed as `hadoop-cos
 #### Modifying configuration
 
 1. Modify the file `conf/druid/_common/common.runtime.properties· under Druid installation path, add the extension of hdfs to ·druid.extensions.loadList·, specify hdfs as Druid's deep storage, and enter the path of cosn:
+
 ```shell
 properties
 druid.extensions.loadList=["druid-hdfs-storage"]
 druid.storage.type=hdfs
 druid.storage.storageDirectory=cosn://bucket-appid/<druid-path>
 ```
+
 2. Create a hdfs configuration file `hdfs-site.xml` under the directory `conf/druid/_common/`, and enter your COS keys and other information:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>

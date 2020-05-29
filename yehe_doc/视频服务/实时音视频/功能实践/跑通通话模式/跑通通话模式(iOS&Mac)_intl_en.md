@@ -1,5 +1,5 @@
 ## Use Cases
-TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as call mode, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as [live streaming mode](https://intl.cloud.tencent.com/document/product/647/35107).
+TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as call mode, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as live streaming mode.
 In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 50 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 attendees, online medical diagnosis, video interview, video customer service, and online werewolf.
 
 ## How It Works
@@ -10,11 +10,11 @@ Backed by the highest-quality lines and high-performance servers, this type of n
 With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
 
 In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 50 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
-
+![](https://main.qcloudimg.com/raw/b88a624c0bd67d5d58db331b3d64c51c.gif)
 
 ## Sample Code
 You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo) to get the sample code related to this document.
-![](https://main.qcloudimg.com/raw/9cc33faf91173116e2d259f6b8b97d55.png)
+![](https://main.qcloudimg.com/raw/6baf3fba222db297fa4763d45b57b981.png)
 
 >If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip).
 
@@ -77,7 +77,7 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.h
 
 | Parameter | Field Type | Description | Example |
 |---------|---------|---------|---------|
-| sdkAppId | Numeric | Application ID, which can be found in **Application Management** > **Application Info** in the [console](https://console.cloud.tencent.com/trtc/app). | 1400000123 |
+| sdkAppId | Numeric | Application ID. You can view the `SDKAppID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC Console</a>. |1400000123 |
 | userId | String | It can contain only letters (a–z and A–Z), digits (0–9), underscores, and hyphens. | test_user_001 |
 | userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
 | roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |

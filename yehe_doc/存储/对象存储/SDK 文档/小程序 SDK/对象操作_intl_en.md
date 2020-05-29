@@ -653,7 +653,7 @@ function(err, data) { ... }
 | - - Code                                                     | Deletion failure error codes                                             | String      |
 | - - Message                                                  | Deletion failure error messages                                      | String      |
 
-**Other Operations**
+## Other Operations
 
 ### Restoring an archived object
 
