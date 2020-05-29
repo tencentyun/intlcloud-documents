@@ -33,11 +33,13 @@
 
  | 服务                                                          | 授权粒度 | 控制台  | 根据标签进行授权 |  服务角色 |	参考文档 |	
 | ------------------------------------------------------------ | ------ | --------  | ------- | ---- |	---- |	
-| [对象存储](https://intl.cloud.tencent.com/document/product/436) | 资源级 | &#10003;       | -  | &#10003;   |	[访问管理指南](https://intl.cloud.tencent.com/document/product/436/12470)   |
+| [对象存储](https://intl.cloud.tencent.com/document/product/436) | 资源级 | &#10003;       | &#10003; <sup>1</sup> | &#10003;   |	[访问管理指南](https://intl.cloud.tencent.com/document/product/436/12470)   |
 | [文件存储](https://intl.cloud.tencent.com/document/product/582) | 资源级 | &#10003;        | -  |  &#10003;    |[访问管理指南](https://intl.cloud.tencent.com/document/product/582/14679)   |			
 | [云硬盘](https://intl.cloud.tencent.com/document/product/362) | 资源级  | &#10003;       | &#10003;  |  -    |-    |	
 | [云数据迁移](https://intl.cloud.tencent.com/document/product/623)  | 服务级 | &#10003;        | -  |  - | - |	
 | [日志服务](https://intl.cloud.tencent.com/document/product/614)  | 资源级 | &#10003;        | -  | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/614/32854)    |	
+
+> ?<sup>1</sup> 对象存储中 GetService 和 PutBucket 暂未支持标签授权，需要单独进行自定义策略授权。
 
 ## 网络	
 
@@ -61,7 +63,7 @@
 
  | 服务                                                         | 授权粒度 | 控制台   | 根据标签进行授权 | 服务角色 |	参考文档 |	
 | ------------------------------------------------------------ | ------ | --------| --------- | ---- |	---- |
-| [云数据库 MySQL](https://intl.cloud.tencent.com/document/product/236)  | 资源级 | &#10003; | -  |  &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/236/14469) |		
+| [云数据库 MySQL](https://intl.cloud.tencent.com/document/product/236)  | 资源级 | &#10003; | &#10003;  |  &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/236/14469) |		
 | [云数据库 MariaDB](https://intl.cloud.tencent.com/document/product/237)  |资源级 | &#10003;  | -    | &#10003;    |[访问管理指南](https://intl.cloud.tencent.com/document/product/237/35441) |	
 | [ 云数据库 SQL Server](https://intl.cloud.tencent.com/document/product/238)  |资源级 | &#10003;  | -    | -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/238/34583) |	
 | [分布式数据库 TDSQL](https://intl.cloud.tencent.com/document/product/1042)  |资源级 | &#10003;  | -    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1042/33343) |	
