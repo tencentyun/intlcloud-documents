@@ -20,6 +20,6 @@
     ]
 }
 ```
-![](https://main.qcloudimg.com/raw/b06d62f32fad931f2a7c031c22847035.png)
+
 5. 返回策略页面，找到新建的策略语法，单击“操作”列的【关联用户/组】关联对应的子账号。
 6. 关联子账号后，参考 [下载备份文件](https://intl.cloud.tencent.com/document/product/240/32463) 文档，配置 COSCMD 后下载对应备份。
