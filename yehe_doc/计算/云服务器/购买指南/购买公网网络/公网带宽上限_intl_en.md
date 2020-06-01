@@ -36,7 +36,7 @@ If you cannot adjust your instance or network billing mode, [submit a ticket](ht
 <span id="AdjustNetworkModeByBandwidth"></span>
 ### Adjusting the network billing mode (bill-by-bandwidth)
 
-1. Change the billing mpde of bill-by-traffic instances to bill-by-bandwidth. For detailed operations, see [Adjusting the Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517).
+1. Change the billing mode of bill-by-traffic instances to bill-by-bandwidth. For detailed operations, see [Adjusting the Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517).
 2. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 3. Locate the instance for which you want to adjust the bandwidth and choose **More** > **Resource Adjustment** > **Adjust Network** on the right.
 4. In the **Adjust Network** window that appears, set the target bandwidth cap and click **OK**.
