@@ -158,7 +158,7 @@ TRTCAudioCall.shared.destroy()
 5. A user can call the`hangup()` method to leave the current group call.
 6. If there is a user joining or leaving the call, other users will receive the `onUserEnter()` or `onUserLeave()` callback.
 
->The `groupID` parameter in the `groupCall()` API is the group ID in the IM SDK. If this parameter is set, the call request will be broadcast through the group message system, which is simple and reliable. If this parameter is left empty, the `TRTCVideoCall` component will send the message to users one by one.
+>The `groupID` parameter in the `groupCall()` API is the group ID in the IM SDK. If this parameter is set, the call request will be broadcast through the group message system, which is simple and reliable. If this parameter is left empty, the `TRTCAudioCall` component will send the message to users one by one.
 
 ```
 // Omitted content...
