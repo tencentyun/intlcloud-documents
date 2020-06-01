@@ -71,7 +71,7 @@
 <td>Redis 5.0 上线</td>
 <td>Redis 发布5.0标准版、集群版，支持最新的 STREAM 数据结构，ZSET 提供新的命令 ZPOPMIN、ZPOPMAX，延续4.0版本的所有特性，扩容不断连接、4TB超大规格、千万QPS并发能力。</td>
 <td>2020-01</td>
-<td><li><a href="https://cloud.tencent.com/document/product/239/36151" target="_blank">内存版（标准架构）</a><li><a href="https://intl.cloud.tencent.com/document/product/239/18336" target="_blank">内存版（集群架构）</a></td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/239/31959" target="_blank">内存版（标准架构）</a><li><a href="https://intl.cloud.tencent.com/document/product/239/18336" target="_blank">内存版（集群架构）</a></td>
 </tr>
 </table>
 
@@ -161,7 +161,7 @@
 <td>Redis 4.0 标准版上线</td>
 <td>Redis 4.0 标准版支持1主5从，支持读写分离，扩缩容不断连接，提供超高可用性。</td>
 <td>2019-07</td>
-<td><a href="https://cloud.tencent.com/document/product/239/36151" target="_blank">内存版（标准架构）</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/31959" target="_blank">内存版（标准架构）</a></td>
 </tr>
 </table>
 
