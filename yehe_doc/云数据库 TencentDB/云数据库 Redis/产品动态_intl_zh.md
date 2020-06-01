@@ -55,7 +55,7 @@
 <td>新购实例默认256个 DB（Data Base）</td>
 <td>Redis 2.8、4.0、5.0 标准版、集群版，新购实例默认 DB 数量由原来16个升级为256个。</td>
 <td>2020-02</td>
-<td><li><a href="https://cloud.tencent.com/document/product/239/36151" target="_blank">内存版（标准架构）</a><li><a href="https://intl.cloud.tencent.com/document/product/239/18336" target="_blank">内存版（集群架构）</a></td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/239/31959" target="_blank">内存版（标准架构）</a><li><a href="https://intl.cloud.tencent.com/document/product/239/18336" target="_blank">内存版（集群架构）</a></td>
 </tr>
 </table>
 
