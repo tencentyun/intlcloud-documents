@@ -6,7 +6,6 @@
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
 | 0 | No error. |
-| 6015 | Operation in progress. Optimize the control over API calls. For example, if another initialization operation is performed before the first initialization operation is called back, the system returns this error code. |
 | 6017 | A parameter is invalid. Check whether the parameter complies with requirements. For more information, check the error information to locate the specific field. |
 | 6022 | Local I/O operation error. Check whether you have the read and write permissions or whether the disk is full. |
 | 6027 | Incorrect JSON format. Check whether the parameters meet the requirements of the API. For more information, you can check the error information to locate the specific field. |
@@ -95,7 +94,7 @@
 | 9506 | The call exceeds the frequency limit. You can initiate up to 5 requests per second. |
 | 9507 | The request queue is full. You can initiate up to 1,000 requests at a time. |
 | 9508 | The network is disconnected, no connection has been set up, or no network is detected when setting up a socket connection. |
-| 9509 | A network connection has been set up, but is created repeatedly due to an internal error. |
+| 9509 | A network connection has been established, but is created repeatedly due to an internal error. |
 | 9510 | Network connection setup timed out. Try again after the network recovers. |
 | 9511 | The network connection setup has been rejected by the server due to frequent connection requests. |
 | 9512 | No available route to the network. Try again after the network recovers. |
@@ -115,22 +114,14 @@
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
 | -302 | The number of SSO connections exceeds the limit allowed. The server refused to provide services. |
-| -10000 | The delivered verification code is incorrect. |
-| -10001 | D2 expired. |
+| -10001 | D2 expired. D2 is an internal credential generated based on the UserSig. The validity period of D2 is less than or equal to that of the UserSig.<br>Call the TIMManager.getInstance().login API again to generate a new D2. |
 | -10003 | A2 expired. A2 is an internal credential generated based on the UserSig. The validity period of A2 is less than or equal to that of the UserSig.<br>Call the TIMManager.getInstance().login API again to generate a new A2. |
 | -10004 | A2 failed to pass authentication or was filtered by a security policy when handling downstream packets.<br>Call the TIMManager.getInstance().login API again to generate a new A2. |
 | -10005 | The D2Key used for encryption cannot be empty. |
 | -10006 | The uin in D2 does not match the uin in the SSO packet header. |
 | -10007 | Verification code delivery timed out. |
 | -10008 | IMEI and A2 must be contained. |
-| -10009 | Invalid cookie. |
-| -10101 | The hint is delivered because D2 expired. |
-| -10102 | The screen is locked due to network disconnection. |
-| -10103 | Invalid identity. |
-| -10104 | The device is logged out automatically. |
-| -10105 | The MSFSDK is logged out automatically. |
 | -10106 | SSO decryption with D2key failed too many times. Instruct the device to reset and refresh D2. |
-| -10107 | Aggregation is not supported and a uniform error code is returned to the device. The device stops aggregation on this TCP persistent connection. |
 | -10109 | The format of the request packet is incorrect. |
 | -10110 | The SDKAppID is blacklisted. |
 | -10111 | The SDKAppID is on the service cmd blacklist. |
@@ -174,6 +165,7 @@
 | 60017 | The request is disabled. |
 | 60018 | Too many requests. Try again later. |
 | 60019 | Too many requests. Try again later. |
+| 60020 | Your Pro Edition standard billing plan has expired and been disabled. To repurchase the standard billing plan, log in to [Instant Messaging Purchase Page](https://buy.cloud.tencent.com/avc). The new standard billing plan will take effect 5 minutes later. |
 | 80001 | The text is filtered out due to security policies. Check whether the text contains security-sensitive words. |
 | 80002 | The outgoing message packet exceeds the length limit of 8 KB. Reduce the packet size and try again later. |
 
@@ -198,7 +190,7 @@
 | 70202 | Server timed out. Try again later. |
 | 70206 | Invalid batch quantity in the request. |
 | 70402 | Invalid parameter. Check whether required fields are specified and the values meet protocol requirements. |
-| 70403 | Request failed. App admin permission is required. |
+| 70403 | Request failed. You need app admin permission to perform this action. |
 | 70398 | The number of accounts exceeds the limit allowed. To create more than 100 accounts, upgrade your app to the Pro Edition. For specific steps, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/34351). |
 | 70500 | Internal server error. Try again later. |
 | 71000 | Failed to delete the account. Only trial accounts can be deleted. Your current app is in the Pro Edition and therefore cannot be deleted. |
@@ -269,7 +261,7 @@
 | 20005 | Internal server error. Try again later. |
 | 20006 | The callback prior to sending a one-to-one chat message was triggered, and the App backend returned a response to forbid the message. |
 | 20007 | The one-to-one chat message cannot be sent to the other party because the sender is in the blacklist of the other party.<br>The message delivery status is displayed as failed by default. You can log in to the IM console to change the message delivery status displayed in this scenario. For specific steps, see [Blacklist check](https://intl.cloud.tencent.com/document/product/1047/34419). |
-| 20008 | The SDKAppID of the sender does not match the SDKAppID of the recipient, because the SDKAppID is switched on the client but the data is not clear in the database. To rectify this problem, clear the original database after switching the SDKAppID. |
+| 20008 | The SDKAppID of the sender does not match the SDKAppID of the recipient, because the SDKAppID is switched on the client but the data is not cleared in the database. To rectify this problem, clear the original database after switching the SDKAppID. |
 | 20009 | The message cannot be sent because the sender and the intended recipient are not friends. This problem occurs only when friend verification is configured for one-to-one chats. |
 | 20010 | The one-to-one chat message cannot be sent, because the sender is not a friend of the intended recipient (one-way relationship). |
 | 20011 | The one-to-one chat message cannot be sent, because the intended recipient is not a friend of the sender (one-way relationship). |
@@ -278,7 +270,7 @@
 | 20018 | An internal error occurs when deleting roaming messages. |
 | 20022 | The message to be recalled does not exist. Please check. |
 | 20023 | The message has been recalled. |
-| 21005 | Token request is set to arrive at the backend before login request. Make sure to log in first, and then set token. |
+| 21005 | The set token request arrived at the backend before the login request. Be sure to log in first, and then set token. |
 | 22001 | No offline push certificate has been uploaded. |
 | 22002 | Network exception. Try again later. |
 | 22003 | The uploaded token is empty. |
@@ -290,10 +282,10 @@
 | 90005 | The JSON request packet does not contain the MsgRandom field or the MsgRandom field is not of the Integer type. |
 | 90006 | The JSON request packet does not contain the MsgTimeStamp field or the MsgTimeStamp field is not of the Integer type. |
 | 90007 | The MsgBody field in the JSON request packet is not of the Array type. Change the type of the MsgBody field to Array. |
-| 90008 | There is no `From_Account` or the account it specifies does not exist. |
+| 90008 | The JSON request packet does not contain the From_Account field or From_Account does not exist. |
 | 90009 | The request requires the App admin permission. |
 | 90010 | The JSON request packet is not in the message format. For more information, see the definition in [TIMMsgElement Objects](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| 90011 | The number of target accounts to which the message is to be sent exceeds 500. Reduce the number of target accounts in To_Account. |
+| 90011 | The number of target UserIDs for batch message sending exceeds the limit of 500. Decrease the value of To_Account. |
 | 90012 | To_Account is not registered or does not exist. Check whether To_Account has been imported into the IM console or is incorrectly spelled. |
 | 90026 | Incorrect offline message storage period. The value cannot exceed 7 days. |
 | 90031 | The SyncOtherMachine field in the JSON request packet is not of the Integer type. |
@@ -340,9 +332,9 @@
 | 10033 | This type of group does not support message recalls. |
 | 10034 | This type of message cannot be deleted. |
 | 10035 | Audio-video chat rooms and broadcasting chat rooms do not support message deletion. |
-| 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase a postpaid package of “IM audio-video chat rooms”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a postpaid package of “Expanding the number of groups that can be created and joined by a single user”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10038 | The number of group members exceeds the limit allowed. To purchase or upgrade a postpaid package of “Increasing the limit of group members”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10036 | The limit on the number of audio-video chat rooms that can be created has been exceeded. To purchase the “IM audio-video chat room” postpaid plan, see the pricing description. |
+| 10037 | The limit on the number of groups a single user can create and join has been exceeded. To purchase or upgrade the “number of groups a single user can create and join” postpaid plan, see the pricing description. |
+| 10038 | The limit on the number of group members has been exceeded. To purchase or upgrade the “increase maximum number of group members” postpaid plan, see the pricing description. |
 | 10041 | This SDKAppID has disabled group message recalls. |
 
 
@@ -402,7 +394,7 @@
 | 6207 | Account authentication failed due to the failure in converting the TinyId. |
 | 6209 | The app did not attempt to connect to the network after start-up. |
 | 6210 | QALSDK execution failed. |
-| 6211 | Invalid request due to invalid toMsgService. |
+| 6211 | Request is invalid and toMsgService is invalid. |
 | 6212 | Request queue is full. |
 | 6213 | You are logged out due to login on another device. |
 | 6214 | The service has been suspended. |
@@ -425,7 +417,7 @@
 | 6250 | No network connection when sending the request. Please try again after the network connection is recovered. |
 | 6251 | No network connection when sending the response. Please try again after the network connection is recovered. |
 | 6252 | QALSDK execution failed. |
-| 6253 | Invalid request due to invalid toMsgService. |
+| 6253 | Request is invalid and toMsgService is invalid. |
 | 6254 | Request queue is full. |
 | 6255 | You are logged out due to login on another device. |
 | 6256 | The service has been suspended. |
@@ -433,4 +425,4 @@
 | 6258 | The SSO cookie is invalid. |
 
 
-> If the problem persists, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the API, error code, and error information to technical engineers.
+> If the problem persists, you can contact [Smart Customer Service](https://intl.cloud.tencent.com/contact-sales) or [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) with the API, error code, and error information to our tech support staff.
