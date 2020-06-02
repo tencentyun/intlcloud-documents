@@ -132,8 +132,8 @@ These group types are suitable for different scenarios, and therefore they suppo
 | GroupId | String | Unique identifier of the group | Read-only<br>The ID of the group, which must be unique in the app. The prefix is @TGS#, and custom group IDs can also be used in the app. |
 | Type | String | Group type | Read-only<br>Five group types are supported by default: private group, public group, chat room, audio-and-video chat room, and broadcasting chat room. For more information, see the preceding introduction to group types. |
 | Name | String | Name of the group | This can be read and written with a length up to 30 bytes, but cannot be adjusted. |
-| Introduction | String | Introduction of the group | This can be read and written with a length up to 120 bytes, but cannot be adjusted. |
-| Notification | String | Group announcement | This can be read and written with a length up to 150 bytes, but cannot be adjusted. |
+| Introduction | String | Introduction of the group | This can be read and written with a length up to 240 bytes, but cannot be adjusted. |
+| Notification | String | Group announcement | This can be read and written with a length up to 300 bytes, but cannot be adjusted. |
 | FaceUrl | String | URL of the group’s profile photo | This can be read and written with a length up to 100 bytes, but cannot be adjusted. |
 | Owner_Account | String | ID of the group owner | Read-only |
 | CreateTime | Integer | Creation time of the group | Read-only |
