@@ -1,5 +1,6 @@
 创建流量镜像后，您可以在控制台进行启停流量镜像、修改流量镜像、添加标签和删除流量镜像等操作。
-<span id="open" />
+<span id="open"></span>
+
 ## 启停流量镜像
 创建流量镜像后，默认开启流量镜像任务。您可以参考以下步骤关闭以及再次开启流量镜像。
 1. 请使用通过 [工单申请](https://console.cloud.tencent.com/workorder/category) 获取的链接，登录流量镜像控制台，在顶部导航栏选择流量镜像的地域。
@@ -8,7 +9,8 @@
 
    
 
-<span id="modify" />
+<span id="modify"></span>
+
 ## 修改流量镜像
 若需修改已创建的镜像流量，操作步骤如下：
 1. 请使用通过 [工单申请](https://console.cloud.tencent.com/workorder/category) 获取的链接，登录流量镜像控制台，在顶部导航栏，选择流量镜像的地域。
@@ -22,7 +24,7 @@
     1. 在接收 IP 模块右上角单击【编辑】。
     2. 在弹出的“编辑接收 IP”窗口中，修改**接收 IP**和 **均衡方式**，完成后单击【确认】。
 ![](https://main.qcloudimg.com/raw/d63d19f5680390ec606d5f9efcaad2de.png)
- <span id="add" />
+ <span id="add"></span>
 ##添加标签
 标签用于标识和组织腾讯云资源，每一个标签包含一个标签键和一个标签值。为流量镜像添加标签可便于筛选和管理流量镜像资源。
 1. 请使用通过 [工单申请](https://console.cloud.tencent.com/workorder/category) 获取的链接，登录流量镜像控制台，在顶部导航栏，选择流量镜像的地域。
@@ -40,7 +42,7 @@
    2. 在编辑框中输入标签键，单击<img src="https://main.qcloudimg.com/raw/6ca6880fc850d1ec41695ec7c1714df7.png" style="width:18px;margin:-4px 0 ;"/>。
   >多个标签键用“ | ”隔开。
 
-<span id="del" />
+<span id="del"></span>
 ## 删除流量镜像
 1. 请使用通过 [工单申请](https://console.cloud.tencent.com/workorder/category) 获取的链接，登录流量镜像控制台，在顶部导航栏，选择流量镜像的地域。
 2. 在流量镜像列表中，单击目标流量镜像右侧**操作**列下的【删除】，并确认操作即可。
