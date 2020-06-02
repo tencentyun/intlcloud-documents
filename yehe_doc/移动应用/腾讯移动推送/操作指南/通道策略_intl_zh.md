@@ -32,12 +32,14 @@ TPNS会结合设备状态、人群活跃状态和推送通道状态，智能为�
 控制台 > 消息推送 > 新建推送 > 高级设置 > 通道策略
 #### 智能分配
 选择【智能分配】，系统会智能分配每个设备的下发通道，详见 [智能分配](#zhineng) 的规则。
-![](https://main.qcloudimg.com/raw/91b7d0b402a054035ecab44ffc6051ad.png)
+![](https://main.qcloudimg.com/raw/b53a8b8e21b37aefea81fe7c8c7553c4.png)
+
 #### 自定义
 选择【自定义】，点击【查看详情】可以查看详细的厂商额度信息。
-![](https://main.qcloudimg.com/raw/f99f1cba9cda46b23aea7d23f9a44b31.png)
+![](https://main.qcloudimg.com/raw/a28f612612f856e05bd8e0758805500b.png)
 可以根据当前厂商通道剩余配额，以及推送任务的优先级，自定义选择需要推送的通道，详见 [自定义](#zidingyi) 的规则。
-![](https://main.qcloudimg.com/raw/6e36aac8a3b70197dfb565fb579b2ac2.png)
+![](https://main.qcloudimg.com/raw/7b314d96f64fe63dd36b5a1e512389a8.png)
+
 >TPNS 通道不可关闭。
 
 ### Rest API 使用
