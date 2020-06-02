@@ -5,11 +5,11 @@ The slow SQL analysis feature calculates, samples, and aggregates records and ex
 ## Directions
 1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/slow-sql), select **Diagnosis and Optimization** on the left sidebar, and select **Slow SQL Analysis** at the top. The **SQL Statistics** section displays the number of slow queries and CPU utilization of the instance. You can adjust the time range to view slow SQL statements in any time period. If the instance has slow SQL statements, the quantity and occurrence points in time will be displayed in the view.
 2. You can click to select a single time period or drag to select multiple time periods for slow logs in the **SQL Statistics** bar chart, and the aggregated SQL template and execution information (including the number of executions, total execution duration, scanned rows, and returned rows) will be displayed below. Each column of data can be sorted in ascending or descending order. The duration distribution section on the right displays the distribution intervals of the overall SQL statement execution duration in the selected time period.
-![](https://main.qcloudimg.com/raw/fa47269970e090de7c6f9f72768c6e56.png)
+![](https://main.qcloudimg.com/raw/0659dcb5dfb47bf00c4df2646946f0ce.png)
 3. Click an aggregated SQL template, and specific SQL analysis and statistics will be displayed on the right.
  - On the analysis page, you can view the complete SQL template, SQL statement samples, optimization suggestions, and description. You can optimize your SQL statements based on the expert suggestions provided by DBbrain to improve the SQL statement quality and reduce delay.
-![](https://main.qcloudimg.com/raw/d3ee9287405e92e1eef993de2385b34c.png)
+![](https://main.qcloudimg.com/raw/f72dcf38d05fc7381007502e930f3014.png)
  - On the statistics page, you can perform cross-sectional analysis on the root cause of a slow SQL statement based on the percentages of total lock wait time, total scanned rows, and total returned rows in the statistics report, and then optimize the statement accordingly.
-![](https://main.qcloudimg.com/raw/fc3061c2dc39d8ce788de083dd295c5d.png)
+![](https://main.qcloudimg.com/raw/a3d611bcbc75bdd0e74e369c277d1cb5.png)
  - On the duration distribution page, you can view the execution duration distribution intervals of the specified type of aggregated SQL statements and the percentage of access source IPs.
-![](https://main.qcloudimg.com/raw/1256b159205af5a7574925708dc9fc95.png)
+![](https://main.qcloudimg.com/raw/44955dfa05b338e7cdc8f4102216ce33.png)

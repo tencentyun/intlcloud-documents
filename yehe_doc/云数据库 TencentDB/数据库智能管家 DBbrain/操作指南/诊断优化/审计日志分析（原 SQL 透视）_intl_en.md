@@ -6,30 +6,30 @@ The audit log analysis feature analyzes the SQL performance based on the executi
 
 ## Prerequisites
 The instance needs to have the database audit feature enabled. Otherwise, the following error will be displayed when you create an SQL insight task. You can click **Quick Activation** to enable and configure database SQL audit.
-![](https://main.qcloudimg.com/raw/fc001ac870f1bed1cb301c29baaca47f.png)
+![](https://main.qcloudimg.com/raw/767fcbcdcb5cfdc6d14ee4b4159d5dba.png)
 
 
 ## Directions
 ### SQL view
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/slow-sql), select **Diagnosis and Optimization** on the left sidebar, and select **Audit Log Analysis** at the top. For insight view, you can select and display QPS or the number of slow queries.
-![](https://main.qcloudimg.com/raw/21b1e34c82b6c0ef06e5f4e7bf2673cc.png)
+![](https://main.qcloudimg.com/raw/48b60d99ce8dfb1ca4199aa7d6433382.png)
 
 ### Creating a task
 1. Select your desired time period and click **Create Audit Task** on the top-right corner of the view.
-![](https://main.qcloudimg.com/raw/c9a4dc3cdd01a63bd53f462cea371e00.png)
+![](https://main.qcloudimg.com/raw/a28ea22fd07b90ee1c1d12a86708f82d.png)
 2. Select the task start time and duration and click **Confirm**.
-![](https://main.qcloudimg.com/raw/b0911cf6aef7468545afaf9cb8488758.png)
+![](https://main.qcloudimg.com/raw/23ea17396f234f8ae920076f0994a61d.png)
 3. After the task is created, you can view the analysis result and delete the task in the task list. Click **View SQL Analysis** in the **Operation** column to access the SQL analysis page.
-![](https://main.qcloudimg.com/raw/2705cd5537d5bb6b96955dc840b4b2d2.png)
+![](https://main.qcloudimg.com/raw/77c67b4c07fc8ac44df6d7c41141f68d.png)
 
 ### SQL analysis
 1. On the SQL analysis page, you can display the view by SQL Type, Host, User, or SQL Code and specify a time period to expand the view and view data at specific points in time. The aggregated details and execution information (including the number of executions, the total, maximum, and minimum delay, and the total, maximum, and minimum number of affected rows) of SQL statements in the specified time period are displayed in the table below.
  - If you select a time period and stretch it in the table, the SQL data will change accordingly, and only the SQL analysis result of the selected time period will be displayed.
  - You can select “SQL Type” or click a legend to filter SQL data that will change accordingly in the table. For example, if you want to view only SELECT requests, you can click other legends to gray them out.
-![](https://main.qcloudimg.com/raw/c480b9f9c0dfd9569f9110e1aa9fa99d.png)
+![](https://main.qcloudimg.com/raw/5b14b4fabbec59c0d6641f6b422884eb.png)
 2. Click the SQL template on the target row, and the SQL statement details will be displayed on the right.
  - On the analysis page, you can view and copy specific SQL statements and optimize them based on the provided optimization suggestion or description.
- ![](https://main.qcloudimg.com/raw/d27d1b775ffe5774b56703a15618ef2e.png)
+ ![](https://main.qcloudimg.com/raw/9b6da50c4eaa6563662bad04a39291d6.png)
  - On the statistics page, you can view the statistical analysis and execution duration track of the specified SQL statement type by Host, User, or SQL Code.
- ![](https://main.qcloudimg.com/raw/6af044530cc937e920f21a620972d6fc.png)
+ ![](https://main.qcloudimg.com/raw/eafba7f6e63371511824abf00d03dbf3.png)
 

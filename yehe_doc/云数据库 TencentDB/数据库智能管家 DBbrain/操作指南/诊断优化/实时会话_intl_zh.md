@@ -6,7 +6,7 @@
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/session)，在左侧导航选择【诊断优化】，在上方选择【实时会话】页。
 - “性能监控”栏显示实例实时的 Running Threads 数、CPU 使用率。
 - “连接数监控”栏显示实例实时的最大连接数、当前打开连接数。
-![](https://main.qcloudimg.com/raw/4284d42a2d0eacd53b9254e1a1e72112.png)
+![](https://main.qcloudimg.com/raw/03c23c17ff637f50f40a8b4d8e8e8dce.png)
 
 ## 当前活动线程
 数据库实例的 SHOW PROCESSLIST 可视化展示，默认5秒刷新，用户可根据不同场景的使用需求，设置不同维度的筛选：
@@ -14,4 +14,4 @@
 - 条数可选择限制20条、50条、100条。
 - 刷新间隔时间可选择5秒、15秒、30秒。
 - 可选择停止刷新或开启自动刷新。
-![](https://main.qcloudimg.com/raw/59c8747c38079d21c2625ff6b5c3d8d1.png)
+![](https://main.qcloudimg.com/raw/3108f1dabc290943262e71ca2be67323.png)

@@ -5,8 +5,8 @@ Using the capacity analysis feature of DBbrain, you can view the instance capaci
 ## Disk Capacity
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/slow-sql), select **Diagnosis and Optimization** on the left sidebar, and select **Space Analysis** at the top.
 On the capacity analysis page, you can view the comparison of daily increases in the last week, the available disk capacity, the estimated number of available days, and the trend in disk capacity usage in the last week.
-![](https://main.qcloudimg.com/raw/bacf9a730e334494cafd80c6a165b332.png)
+![](https://main.qcloudimg.com/raw/ecd64ab4f412169e7a2fe6478ec18f04.png)
 
 ## Top Tablespaces
 The **Top Tablespaces** section displays the details of your tables that have relatively high capacity usage, including the storage engine, number of rows, total used capacity, data capacity, index capacity, fragment capacity, and fragment percentage. Each column of data can be sorted in ascending or descending order. You can view the disk capacity usage details in this section and perform optimization promptly.
-![](https://main.qcloudimg.com/raw/9387d23ede287291ed57dea297279f32.png)
+![](https://main.qcloudimg.com/raw/446b27370346ecb8eeaababcffe73722.png)
