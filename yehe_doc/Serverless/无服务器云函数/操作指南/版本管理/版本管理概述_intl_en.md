@@ -4,7 +4,7 @@ An SCF function version contains function code and configuration. In the actual 
 ## Related Concepts
 ### Latest version ($LATEST)
 
-After a function is created, it has a latest version ($LATEST) by default. The configuration and code of the `$LATEST` version can be modified. At the time of release, such configuration and code will be used as the basis to generate a new version. 
+Once created, a SCF has a latest version ($LATEST) by default. Only the configuration and code of the $LATEST version can be modified, and based on which, a new version is generated at the time of release.
 
 ## Relevant Operations
 
