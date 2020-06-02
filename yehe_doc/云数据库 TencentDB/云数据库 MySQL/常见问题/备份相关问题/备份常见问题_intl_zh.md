@@ -1,6 +1,6 @@
 ### 备份空间如何收费？
-云数据库 MySQL 会按地域赠送一定额度的免费备份空间，免费备份空间大小为您在对应地域下所有高可用的存储空间之和。
-超出免费额度的备份空间定价，请参见 [备份空间收费说明](https://intl.cloud.tencent.com/document/product/236/32344)。
+云数据库 MySQL 会按地域赠送一定额度的免费备份空间，免费备份空间大小为您在对应地域下所有高可用和金融版实例（包括主实例、灾备实例）的存储空间之和。
+超出免费额度的备份空间定价，请参见 [云数据库 MySQL 价格计算器](https://buy.cloud.tencent.com/price/cdb/calculator)。
 
 ### 如何减少备份空间开销？
 - 删除不再使用的手动备份数据（手动备份可在 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例管理页>备份恢复页面进行删除）。 
@@ -18,7 +18,7 @@
 
 ### 如何设置自动备份?
 您可在 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 实例的备份恢复页进行设置。
-![](https://main.qcloudimg.com/raw/fc742f1fbf657be3b5138a521ae9cbda.png)
+![](https://main.qcloudimg.com/raw/4df9e17b3d0d23d3e74f284e1e5efacd.png)
 
 ### 开发者自己如何备份数据？
 云数据库 MySQL 实例每天会进行全量备份，请参见 [备份方式](https://intl.cloud.tencent.com/document/product/236/32340)。您也可以通过如下方式备份数据：
@@ -26,9 +26,20 @@
 - 通过第三方工具来进行备份，如 Navicat Premium。
 - [登录 phpMyAdmin](https://intl.cloud.tencent.com/document/product/236/32341)，通过上方导航的【导出】备份数据。
 
+### 基础版实例备份怎么恢复或迁移？
+基础版实例仅支持快照备份，您可以参考 [命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464) 迁移数据。
+
+### 为什么下载数据备份文件会报错？
+使用`wget -c '备份文件下载地址' -O 自定义文件名.xb`命令下载备份时，需注意用2个英文单引号`'`将下载地址包起来，便于程序识别地址，防止出错。
+
+### 下载的备份能恢复到另一个云数据库 MySQL 实例上吗？
+暂不支持此操作。建议您使用 [DTS 迁移 MySQL 实例数据](https://intl.cloud.tencent.com/document/product/571/34103) 到另一个 MySQL 实例上。
+
 ### 如何删除备份数据？
 - 自动备份数据无法手动删除。
-- 手动备份数据可在 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 实例的备份恢复页手动删除。
+- 手动备份数据可在 MySQL 控制台手动删除。
+ 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，单击实例名进入管理页面，选择【备份恢复】页。
+ 2. 在备份列表，单击“操作”列的【删除】进行删除。
 
 ### 如何取消备份任务？
 运行中的备份任务不可以取消。
