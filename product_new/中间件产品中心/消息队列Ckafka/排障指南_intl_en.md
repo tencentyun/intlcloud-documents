@@ -15,7 +15,7 @@
 ## Traffic Control Descriptions
 -	Traffic control is at the instance level and affects all topics in the instance.
 -After the full capacity is reached, consumption can continue but production cannot.
--Traffic = actual traffic \* number of replicas.
+-Traffic = actual traffic × number of replicas.
 -Accumulation = actual accumulation (replica accumulation is also counted).
 
 ## Consumption Exceptions
