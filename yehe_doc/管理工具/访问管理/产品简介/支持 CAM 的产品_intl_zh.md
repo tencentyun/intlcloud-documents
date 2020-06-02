@@ -140,8 +140,8 @@
 
  | 服务                                                       | 授权粒度   | 控制台  | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ----------------------------------------------------------- | ------ | --------| ----- |  ---- |	 ---- |
-| [弹性 MapReduce](https://intl.cloud.tencent.com/document/product/1026)   | 操作级 | &#10003;  | -   |  &#10003;  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/1026/31100) |
-| [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845)  | 操作级   | &#10003; | -   |  -  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/845/19550) |
+| [弹性 MapReduce](https://intl.cloud.tencent.com/document/product/1026)   | 资源级 | &#10003;  | -   |  &#10003;  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/1026/31100) |
+| [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845)  | 资源级   | &#10003; | -   |  -  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/845/19550) |
 
 ## 图像识别
 
