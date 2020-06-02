@@ -900,7 +900,7 @@ uuid | The unique identifier for easy caching.
 dataSize | Audio file size.
 second | Audio length in seconds.
 
-**The read status of the audio message:** whether the audio has been played. Use [message custom fields](/doc/product/269/消息收发(iOS%20SDK)#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) to implement this feature. For example, for `customInt`, a value of 0 means not played and a value of 1 means played. In this case, set `customInt` to 1 after the user clicks to play the audio.
+**The read status of the audio message:** whether the audio has been played. Use message custom fields to implement this feature. For example, for `customInt`, a value of 0 means not played and a value of 1 means played. In this case, set `customInt` to 1 after the user clicks to play the audio.
 
 ```
 @interface TIMMessage : NSObject
@@ -1135,7 +1135,7 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
 
 ### Checking whether a message is read
 
-Determine whether a message is read through the message property `isReaded`. The read status depends on the [read reports](/doc/product/269/未读消息计数(iOS%20SDK)#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5) from the app.
+Determine whether a message is read through the message property `isReaded`. The read status depends on the read reports from the app.
 
 ```
 @interface TIMMessage : NSObject
@@ -1785,8 +1785,8 @@ After receiving a message recall notification, you can use the `respondsToLocato
 
 In addition to C2C chat and group chat messages, system message is another conversation type (TIMConversationType). System messages are notification messages sent by the system backend for various events and cannot be sent by users. Currently, there are two types of system messages: relationship chain system messages and group system messages.
 
-- **Relationship chain change system messages:** when the user has a friend request or is deleted by a contact, the system sends a change notification and the developer can refresh the friend list. For more information, please see [Relationship chain change system notifications](/doc/product/269/用户资料与关系链(iOS%20SDK)#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5).
+- **Relationship chain change system messages:** when the user has a friend request or is deleted by a contact, the system sends a change notification and the developer can refresh the friend list. For more information, please see Relationship chain change system notifications.
 
-- **Group event messages:** when a group profile changes, such as changes to the group name or group members, the system sends a group event message in the group. The developer can choose whether to display the message or not and can refresh the group profile or group members at the same time. For more information, see [Group management - group event messages](/doc/product/269/群组管理(iOS%20SDK)#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF).
+- **Group event messages:** when a group profile changes, such as changes to the group name or group members, the system sends a group event message in the group. The developer can choose whether to display the message or not and can refresh the group profile or group members at the same time. For more information, see Group management - group event messages.
 
-- **Group system messages:** when a group member is removed from the group by a group admin or non-members are invited to the group, the system sends group system messages to users. For more information, see [Group management - group system messages](/doc/product/269/群组管理(iOS%20SDK)#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF).
+- **Group system messages:** when a group member is removed from the group by a group admin or non-members are invited to the group, the system sends group system messages to users. For more information, see Group management - group system messages.
