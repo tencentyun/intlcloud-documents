@@ -1,13 +1,10 @@
-You can watch the video below to quickly understand the advantages of Tencent Cloud CDN:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/2208-31056?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
 ## Vast Resource Reserves
-### Nodes in Mainland China
-CDN has over 1,100 cache nodes deployed across all provinces in Mainland China, with a total reserved bandwidth of over 100 Tbps. These are all high performance and highly secure Tencent Cloud data centers that comes with quality ISP networks. In addition, Tencent Cloud strengthened connections with China Mobile, China Unicom, China Telecom, as well as over 50 small and medium-sized ISPs, and has built four central nodes, significantly improving CDN's acceleration effect.
+### Nodes in mainland China
+CDN has over 1,100 cache nodes deployed across all provinces in mainland China, with a total reserved bandwidth of over 100 Tbps. These are all high performance and highly secure Tencent Cloud data centers with quality ISP networks. In addition, Tencent Cloud has strengthened connections with China Mobile, China Unicom, China Telecom, and over 50 small and medium-sized ISPs, and has built four central nodes to significantly improve CDN's acceleration effect.
 ![img](https://main.qcloudimg.com/raw/487228cdfb5666b34edab2242db7c3c0.jpg)
 
-### Nodes outside Mainland China
-CDN has been working industriously on global acceleration since 2017. As of January 2020, CDN has over 1,000 cache nodes across more than 50 countries and regions, with a total reserved bandwidth of over 20 Tbps, helping your business go global with ease and speed.
+### Nodes outside mainland China
+CDN has been working industriously on global acceleration since 2017. As of January 2020, CDN has over 1,000 cache nodes across more than 50 countries and regions with a total reserved bandwidth of over 20 Tbps, helping your business go global with ease and speed.
 ![image-20200210165753661](https://main.qcloudimg.com/raw/034a95d5f46fb8bf848c0a53dd265611.png)
 
 | Region | Distribution |
@@ -21,28 +18,28 @@ CDN has been working industriously on global acceleration since 2017. As of Janu
 
 ## Global Intelligent Scheduling
 
-When accessing resources, a variety of factors including the ISP network, client region, and the network bandwidth of the IDC server might affect the response time and user experience.
+When accessing resources, a variety of factors including the ISP network, client region, and the network bandwidth of the IDC origin server might affect the response time and user experience.
 
 Through real-time monitoring of the linkages across the entire network and leveraging Tencent Cloud's self-designed GSLB scheduling system and intelligent routing technology, CDN schedules users' access requests to the optimal edge nodes for acceleration. This ensures quick and stable resource access for users.
 
 ## Quick Configuration
 You can use CDN to accelerate your services through a simple and quick configuration process, with no additional modification required on your end.
 
-After registering a Tencent Cloud account and completing identity verification, you can activate CDN service. Prepayment is not required. Add your business domain name in the CDN Console and wait for about 5 minutes for the domain name configuration to be distributed to cache nodes across the entire network. During this process, as the acceleration service has not taken effect yet, your business will not be affected in the production environment.
+After registering your Tencent Cloud account and completing identity verification, you can activate the CDN service. Prepayment is not required. Add your business domain name on the CDN Console and wait for about 5 minutes for the domain name configuration to be distributed to cache nodes across the entire network. During this process, as the acceleration service has not taken effect yet, your business will not be affected.
 
-When enabling the acceleration service, you need to modify the CNAME resolution configuration with your domain name service provider. Acceleration service will take effect when the DNS takes effect.
+When enabling the acceleration service, you need to modify the CNAME resolution configuration through your domain name service provider. Acceleration service will take effect when the DNS takes effect.
 
-## Rich Features
+## A Variety of Features
 
 CDN comes with an easy-to-use, full-featured console where you can change the configuration items and view monitoring data as needed:
 
-**Domain name management**
-+ You can add, delete, launch, and deactivate domain names.
+**Domain management**
++ You can add, delete, activate, and deactivate domain names.
 + You can switch acceleration regions and select "Mainland China", "Outside Mainland China", or "Global" for the acceleration scope.
 + You can customize the domain name list page to display, filter, and query configuration items.
 
-**Domain name configuration**
-+ You can configure an external origin server (IP list or domain names) or use COS as an origin server. Round robin and weighted origin-pull as well as hot backup of origin server are supported.
+**Domain configuration**
++ You can configure an external origin server (IP list or domain names) or use COS as an origin server. Round robin, weighted origin-pull, and hot backup of origin server are supported.
 + You can configure custom access control policies such as referer blacklist/whitelist, IP blacklist/whitelist, timestamp hotlink protection, and IP access frequency limit.
 + You can customize the expiration time of node cache, status code cache, and HTTP header cache.
 + CDN supports configuring optimizations for cross-border origin-pull linkage, range GETs, and 301/302 origin-pull follow-redirect.
@@ -55,13 +52,13 @@ CDN comes with an easy-to-use, full-featured console where you can change the co
 **Real-time monitoring**
 + CDN supports real-time monitoring of the bandwidth, traffic, traffic hit rate, number of requests, and all status codes generated by access requests at a granularity of 1 minute. The statistics can be filtered by project, domain name, province, ISP, and protocol to present a comprehensive view of service status.
 + CDN supports real-time monitoring of the origin-pull bandwidth, traffic, number of requests, failure rate, and all status codes generated by origin-pull requests at a granularity of 1 minute. The statistics can be filtered by project or domain name to help you conveniently view the origin server status.
-+ You can view real-time reports of user distribution by region around the globe or by ISP in Mainland China.
-+ CDN provides daily, weekly and monthly operational reports to keep you updated on business fluctuations.
++ You can view real-time reports of user distribution by region around the globe or by ISP in mainland China.
++ CDN provides daily, weekly, and monthly operational reports to keep you updated on business fluctuations.
 
 **Log service**
 + All logs generated by access requests are grouped by hour and can be downloaded.
-+ CDN access logs can be collected and pushed in real time for quick search for and analysis on log data.
++ CDN access logs can be collected and published in real time to quickly search and analyze log data.
 
 **CDN APIs**
-CDN provides [APIs](https://intl.cloud.tencent.com/document/product/228/31719) for all the supported features listed above to enable customized service usage. You and your team can conveniently manage, monitor, display and analyze your business through these APIs.
+CDN provides [APIs](https://intl.cloud.tencent.com/document/product/228/31719) for all the supported features listed above to enable customized service usage. You and your team can conveniently manage, monitor, display, and analyze your business through these APIs.
 
