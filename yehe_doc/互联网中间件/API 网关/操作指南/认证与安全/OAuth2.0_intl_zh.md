@@ -47,7 +47,7 @@ OAuth2.0 有以下四个角色：
 |---------|---------|---------|---------|---------|
 | iss | Issuer Identifier | 是 | 提供认证信息者的唯一标识。 | 一般是一个 HTTPS 的 URL（不包含 querystring 和 fragment 部分）
 | ѕub | Ѕubjесt ldеntіfіеr | 是 | iss 提供的 EU 的标识，在 iss 范围内唯一。它会被 RP 用来标识唯一 的用户。| 最长为255个 ASCII 字符|
-| aud | Audience(s) | 是 | 标识 ID Token 的受众。 | 必须包含 OAuth2 的 client_id |
+| aud | Audience(s) | 是 | 标识 ID Token 的受众。 | 必须包含 OAuth2.0 的 client_id |
 | exp | Expiration time | 是 | 过期时间，超过此时间的 ID Token 会作废不再被验证通过。 | - |
 | iat | Issued At Time | 是 | JWT 构建的时间。 | - |
 | auth_ time | AuthenticationTime | 否 | EU 完成认证的时间 。如果 RP 发送 AuthN 请求的时候携带 max_age 的参数，则此 Claim 是必须的。| - |
