@@ -3,7 +3,7 @@
 >
 The open-source software tool Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a logical backup file of a TencentDB for MySQL instance to a CVM-based self-created database.
 - XtraBackup only supports Linux but not Windows.
-- For more information on how to restore data on Windows, please see [Database Rollback](https://intl.cloud.tencent.com/document/product/236/7276), [Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464), and [Migrating Data Through DTS](https://intl.cloud.tencent.com/document/product/571/34103).
+- For more information on how to restore data on Windows, please see [Offline Migration of Data](https://intl.cloud.tencent.com/document/product/236/8464).
 
 ## Prerequisites
 - Download and install XtraBackup.

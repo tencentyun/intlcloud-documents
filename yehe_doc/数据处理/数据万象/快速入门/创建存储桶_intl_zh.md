@@ -1,4 +1,4 @@
-数据万象的存储功能基于[对象存储 COS](https://cloud.tencent.com/document/product/436) 。存储桶即 Bucket，是在腾讯云 COS 上存储图片的载体，用户可以通过腾讯云控制台、API、SDK 等多种方式创建和管理存储桶，一个存储桶中可以存储多个对象。
+数据万象的存储功能基于[对象存储 COS](https://intl.cloud.tencent.com/document/product/436) 。存储桶即 Bucket，是在腾讯云 COS 上存储图片的载体，用户可以通过腾讯云控制台、API、SDK 等多种方式创建和管理存储桶，一个存储桶中可以存储多个对象。
 
 
 ## 操作步骤

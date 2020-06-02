@@ -13,8 +13,8 @@ The root account authorizes sub-accounts by binding policies. The policy setting
 
 #### Resources and permission
 - **Resource**: Resources are objects that the cloud services operate on, such as the CVM instance, COS bucket and VPC instance.
-**Permission**: Permission is an authorization to allow or forbid users to perform certain operations. By default, **root account has full access to all resources under the account**, while **sub-accounts do not have access to any resources under its root account**.
-**Policy**: Policy is the syntax rule used to define and describe one or more permissions. **Root account** performs authorization by **associating policies** with users/user groups.
+- **Permission** : Permission is an authorization to allow or forbid users to perform certain operations. By default, **root account has full access to all resources under the account**, while **sub-accounts do not have access to any resources under its root account**.
+- **Policy** : Policy is the syntax rule used to define and describe one or more permissions. **Root account** performs authorization by **associating policies** with users/user groups.
 
 ### Related Documents
 | Content                     | Link                                                         |
