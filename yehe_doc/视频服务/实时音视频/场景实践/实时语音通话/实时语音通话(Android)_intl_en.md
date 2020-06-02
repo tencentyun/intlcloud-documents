@@ -153,7 +153,7 @@ sCall.login(1400000123, "userA", "xxxx", new ActionCallback());
 ITRTCAudioCall sCall =  TRTCAudioCallImpl.sharedInstance(context);
 sCall.init();
 // 2. Register the listener
-sCall.addListener(new TRTCVideoCallListener() {
+sCall.addListener(new TRTCAudioCallListener() {
 	// ... Some listening code snippets are omitted
 	public void onInvited(String sponsor, final List<String> userIdList, boolean isFromGroup, int callType) {
 		// The sample code here is to answer the call after receiving the call request from `sponsor`. `reject()` can also be called to reject the call
@@ -178,7 +178,7 @@ sCall.login(sdkappid, "aaa", usersig, new ActionCallback() {
 5. A user can call the`hangup()` method to leave the current group call.
 6. If there is a user joining or leaving the call, other users will receive the `onUserEnter()` or `onUserLeave()` event notification.
 
->The `groupID` parameter in the `groupCall()` API is the group ID in the IM SDK. If this parameter is set, the call request will be broadcast through the group message system, which is simple and reliable. If this parameter is left empty, the `TRTCVideoCall` component will send the message to users one by one.
+>The `groupID` parameter in the `groupCall()` API is the group ID in the IM SDK. If this parameter is set, the call request will be broadcast through the group message system, which is simple and reliable. If this parameter is left empty, the `TRTCAudioCall` component will send the message to users one by one.
 
 ```
 // Omitted content...
@@ -208,7 +208,7 @@ Below is the list of `TRTCAudioCall` component APIs:
 |---------|---------|
 | init | Performs the required initialization before all other features can be used |
 | destroy | Terminates instance |
-| addListener | Adds `TRTCVideoCallListener` listener, through which users can get status notifications |
+| addListener | Adds `TRTCAudioCallListener` listener, through which users can get status notifications |
 | removeListener | Removes listener |
 | login | Logs in to IM. All other features can be used only after login |
 | logout | Logs out of IM. Calls cannot be made after logout |

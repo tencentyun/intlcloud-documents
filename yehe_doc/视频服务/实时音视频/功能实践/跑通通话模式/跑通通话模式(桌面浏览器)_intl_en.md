@@ -5,7 +5,8 @@ In the TRTC SDK for Desktop Browser, the following terms are often used:
 - Stream object, which represents an audio/video stream object, including local audio/video stream object [LocalStream](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html) and remote audio/video stream object [RemoteStream](https://trtc-1252463788.file.myqcloud.com/web/docs/RemoteStream.html). The `Stream` class method mainly provides the behaviors of audio/video stream objects, including audio/video playback control.
 
 The API call process of basic audio/video calls is as shown below:
-![](https://main.qcloudimg.com/raw/8ffc08d1face5a69ecd2bfff3afbc765.png)
+![](https://main.qcloudimg.com/raw/9f246e5a88e5a8176290eb6070a0ecb6.jpg)
+
 
 ## Step 1. Create a Client object
 
@@ -13,7 +14,7 @@ Create a [Client](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html
 - `mode`: TRTC call mode, which is set to `videoCall` here
 - `sdkAppId`: the `sdkAppId` you applied for from Tencent Cloud
 - `userId`: user ID
-- `userSig`: user signature
+- `userSig`: user signature, for more information, see [How to Generate Usersig](https://intl.cloud.tencent.com/document/product/647/35166)
 
 ```javascript
 const client = TRTC.createClient({

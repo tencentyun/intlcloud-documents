@@ -29,6 +29,46 @@ For the pricing of the three parts of SCF fee, please see below:
 
 For more detials, please see [Product Pricing](/document/product/583/12281)
 
+## Supported Regions
+The table below lists the supported regions of SCF:
+
+<table>
+<tr>
+<th width="50%">Region</th><th width="50%">Value</th>
+</tr>
+<tr>
+<td>South China (Guangzhou)</td><td>ap-guangzhou</td>
+</tr>
+<tr>
+<td>East China (Shanghai)</td><td>ap-shanghai</td>
+</tr>
+<tr>
+<td>North China (Beijing)</td><td>ap-beijing</td>
+</tr>
+<tr>
+<td>Southwest (Chengdu)</td><td>ap-chengdu</td>
+</tr>
+<tr>
+<td>Hong Kong/Macao/Taiwan, China region (Hong Kong, China)</td><td>ap-hongkong</td>
+</tr>
+<tr>
+<td>Southern Asia Pacific (Mumbai)</td><td>ap-mumbai</td>
+</tr>
+<tr>
+<td>Southeast Asia Pacific (Singapore)</td><td>ap-singapore</td>
+</tr>
+<tr>
+<td>Northeast Asia Pacific (Tokyo)</td><td>ap-tokyo</td>
+</tr>
+<tr>
+<td>North America (Toronto)</td><td>na-toronto</td>
+</tr>
+<tr>
+<td>West US (Silicon Valley)</td><td>na-siliconvalley</td>
+</tr>
+</table>
+
+
 ## Billing Details
 
 For billing details, see the following documents:

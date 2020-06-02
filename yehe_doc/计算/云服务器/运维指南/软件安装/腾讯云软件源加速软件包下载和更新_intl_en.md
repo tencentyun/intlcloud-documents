@@ -1,8 +1,8 @@
 ## Scenario
 
 To solve the problem of slow access to official sources when installing dependencies, Tencent Cloud has set up a cache service for some software. You can accelerate the installation of dependencies by using the Tencent Cloud software repository. It currently supports public network access and private network access.
-- Address for public network access: `http://mirrors.cloud.tencent.com/`
-- Address for private network access: `http://mirrors.tencentyun.com/`
+- Public network access address: `http://mirrors.cloud.tencent.com/`
+- Private network access address: `http://mirrors.tencentyun.com/`
 
 > 
 > - This document takes public network access address of the Tencent Cloud software repository as an example to introduce how to use the software sources at Tencent Cloud software repository in CVM. If you access the repository using a private network, please replace the public network access address **with the private network access address**.
@@ -23,24 +23,24 @@ You have already logged in to CVM.
 > Before use, please confirm your CVM has Python installed.
 >
 #### Use software source path temporarily
-Execute the following command to install pip using Tencent Could PyPI. 
+Execute the following command to install pip using Tencent Could PyPI.
 ```
-pip install pip -i  the directory where PyPI locates
+pip install pip -i the directory where PyPI locates
 ```
-For example, if the PyPI you need to use is in the `http: // mirrors.cloud.tencent.com / pypi / simple` directory, execute the following command:
+For example, if the PyPI you need to use is in the `http://mirrors.cloud.tencent.com/pypi/simple` directory, execute the following command:
 ```
 pip install 17monip -i http://mirrors.cloud.tencent.com/pypi/simple --trusted-host mirrors.cloud.tencent.com 
 ```
 
 #### Set default software source path
-Execute the following command to modify the `index-url` parameter in the `pip / pip.conf` file to the source path of Tencent Cloud software repository.
+Execute the following command to modify the `index-url` parameter in the `~/.pip/pip.conf` file to the source path of Tencent Cloud software repository.
 
 ```
 [global]
 index-url = the directory where PyPI locates
 trusted-host = public network/private network access address
 ```
-For example, if the PyPI you need to use is in the `http: // mirrors.cloud.tencent.com / pypi / simple` directory, execute the following command:
+For example, if the PyPI you need to use is in the `http://mirrors.cloud.tencent.com/pypi/simple` directory, execute the following command:
 ```
 [global]
 index-url = http://mirrors.cloud.tencent.com/pypi/simple
@@ -48,7 +48,7 @@ trusted-host = mirrors.cloud.tencent.com
 ```
 
 ### Accelerating Maven using Tencent Cloud image source
-> Before use, please confirm your CVM has JDK and Source installed.
+> Before use, please confirm your CVM has JDK and Maven installed.
 >
 1. Open the `settings.xml` configuration file of Maven.
 2. Find the code block of `<mirrors> ... </ mirrors>` and configure the following content into it.
@@ -57,7 +57,7 @@ trusted-host = mirrors.cloud.tencent.com
         <id>nexus-tencentyun</id>
         <mirrorOf>*</mirrorOf>
         <name>Nexus tencentyun</name>
-        http://mirrors.tencentyun.com/nexus/repository/maven-public/
+        <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
     </mirror> 
 ```
 
@@ -78,11 +78,11 @@ No manual configuration is required. When the CVM in Tencent Kubernetes Engine (
 #### Use Tencent Cloud Docker on CVM
 
 > Before use, please confirm your CVM has Docker installed.
-> Only Docker 1.3.2 or above supports Docker Hub Mirror mechanism. If you have not installed Docker 1.3.2 or the installed version is too old, please install or upgrade it first.
+> Only Docker 1.3.2 or later versions support Docker Hub Mirror mechanism. If you have not installed Docker 1.3.2 or later, or the installed version is too old, please install or upgrade it first.
 > 
 Choose different operation steps based on the operating system of the CVM.
-- For Ubuntu 14.04, Debian, CentOS 6, Fedora, openSUSE and other operating systems. The specific steps for other operating systems and versions may vary:
- 1. Execute the following command to open the configuration file of `/etc/default/docker`.
+- For Ubuntu 14.04, Debian, CentOS 6, Fedora, openSUSE and other operating systems. The specific steps for other versions of operating systems may vary:
+ 1. Execute the following command to open the `/etc/default/docker` configuration file.
 ```
 vim /etc/default/docker
 ```
@@ -91,25 +91,29 @@ vim /etc/default/docker
 DOCKER_OPTS="--registry-mirror=https://mirror.ccs.tencentyun.com"
 ```
 - For Centos 7:
- 1. Execute the following command to open the configuration file of `/etc/sysconfig/docker`.
+ 1. Execute the following command to open the `/etc/docker/daemon.json` configuration file.
 ```
-vim /etc/sysconfig/docker
+vim /etc/docker/daemon.json
 ```
  2. Press **i** to switch to the editing mode, enter the following content and save.
 ```
-OPTIONS='--registry-mirror=https://mirror.ccs.tencentyun.com'
+{
+   "registry-mirrors": [
+       "https://mirror.ccs.tencentyun.com"
+  ]
+}
 ```
 - For Windows with Boot2Docker installed:
  1. Enter the Boot2Docker Start Shell and execute the following command:
 ```
-sudo su echo "EXTRA_ARGS=\"–registry-mirror=https://mirror.ccs.tencentyun.com\"" >> /var/lib/boot2docker/profile  exit 
+sudo su echo "EXTRA_ARGS=\"–registry-mirror=https://mirror.ccs.tencentyun.com\"" >> /var/lib/boot2docker/profile exit 
 ```
  2. Restart Boot2Docker.
 
 ### Accelerating MariaDB using Tencent Cloud image
-> The following steps takes CentOS 7 as an example. The specific steps vary by operating systems.
+> The following steps take CentOS 7 as an example, and the specific steps vary by operating systems.
 >
-1. Execute the following command to create the `MariaDB.repo`  file under `/etc/yum.repos.d/`.
+1. Execute the following command to create the `MariaDB.repo` file under `/etc/yum.repos.d/`.
 ```
 vi /etc/yum.repos.d/MariaDB.repo
 ```
@@ -136,7 +140,7 @@ yum install MariaDB-client MariaDB-server
 >
 #### Use Tencent Cloud MongoDB on CVMs with CentOS or Redhat systems
 
-1. Execute the following command to create the `MariaDB.repo`  file under `/etc/yum.repos.d/`.
+1. Execute the following command to create the `mongodb.repo` file under `/etc/yum.repos.d/`.
 ```
 vi /etc/yum.repos.d/mongodb.repo
 ```
@@ -155,11 +159,11 @@ yum install -y mongodb-org
 
 #### Use Tencent Cloud MongoDB on CVMs with Debian system
 
-1. Based on Debian versions, execute the following commands to import the MongoDB GPG public key.
+1. Based on Debian versions, execute the following command to import the MongoDB GPG public key.
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 68818C72E52529D4
 ```
-2. Execute the following command to configure the mirror path.
+2. Execute the following command to configure the `mirror` path.
 ```
 #Debian 8
 echo "deb http://mirrors.cloud.tencent.com/mongodb/apt/debian jessie/mongodb-org/4.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
@@ -181,7 +185,7 @@ sudo apt-get install -y mongodb-org
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 68818C72E52529D4
 ```
-2. Execute the following command to configure the mirror path.
+2. Execute the following command to configure the `mirror` path.
 ```
 #Ubuntu 14.04
 echo "deb [ arch=amd64 ] http://mirrors.cloud.tencent.com/mongodb/apt/ubuntu trusty/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list

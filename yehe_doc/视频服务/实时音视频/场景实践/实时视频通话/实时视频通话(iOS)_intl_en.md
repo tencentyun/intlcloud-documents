@@ -133,7 +133,7 @@ TRTCVideoCall.shared.delegate = self
 
 // Answer/Reject the call
 // At this point, if user B also logs in to the IM system, user B will receive the `onInvited(A, null, false)` callback
-// `TRTCVideoCall.shared.accept`/`TRTCAudioCall.shared.reject` can be called to answer/reject the call
+// `TRTCVideoCall.shared.accept`/`TRTCVideoCall.shared.reject` can be called to answer/reject the call
 func onInvited(sponsor: String, userIds: [String], isFromGroup: Bool) {
 	TRTCVideoCall.shared.accept()
 }
@@ -184,7 +184,7 @@ callList.append("b")
 callList.append("c")
 callList.append("d")
 // If the call is not initiated in an IM group, an empty string can be passed in for `groupId`
-TRTCAudioCall.shared.groupCall(userIDs: callList, groupID: "#groupId#")
+TRTCVideoCall.shared.groupCall(userIDs: callList, groupID: "#groupId#")
 
 // Enable local camera
 TRTCVideoCall.shared.openCamera(frontCamera: true, view: localPreView)  

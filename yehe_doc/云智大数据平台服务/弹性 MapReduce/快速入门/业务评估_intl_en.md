@@ -11,7 +11,7 @@ Billing mode provided by EMR cluster:
 For more information on node types, please see [Node Type Description](https://intl.cloud.tencent.com/document/product/1026/31094).
 
 ## Selecting Model Specification
-EMR offers a wide variety of CVM instance models, including EMR Standard, EMR Compute, EMR High IO, EMR MEM-Optimized, and EMR Big Data.
+EMR offers a wide variety of CVM instance models, including EMR Standard, EMR Compute, EMR High IO, EMR MEM-Optimized, and EMR Big Data (if you need CPM models, please contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category)).
 >
 >- The minimum number of nodes in a high-availability (HA) Hadoop or Druid cluster is 8, including 2 master nodes, 3 common nodes, and at least 3 core nodes. A non-HA cluster adopts single-replica storage, which can be used for testing but is not recommended for use in production environments, and its minimum number of nodes is 3, including 1 master node and at least 2 core nodes.
 >- The minimum number of nodes in a high-availability (HA) ClickHouse cluster is 5, including 2 core nodes and 3 common nodes. A non-HA cluster adopts single-replica storage, which can be used for testing but is not recommended for use in production environments, and it should contain at least 1 core node.
@@ -34,7 +34,7 @@ You can choose the most appropriate model based on your business needs and budge
    </tr>
    <tr>
       <td>ClickHouse cluster</td>
-      <td>/</td>
+      <td>-</td>
    </tr>
    <tr>
       <td>Druid cluster</td>
@@ -64,7 +64,7 @@ You can choose the most appropriate model based on your business needs and budge
    </tr>
    <tr>
       <td>ClickHouse cluster</td>
-      <td>/</td>
+      <td>-</td>
    </tr>
    <tr>
       <td>Druid cluster</td>
@@ -92,7 +92,7 @@ You can choose the most appropriate model based on your business needs and budge
    </tr>
    <tr>
       <td>ClickHouse cluster</td>
-      <td>/</td>
+      <td>-</td>
    </tr>
    <tr>
       <td>Druid cluster</td>
