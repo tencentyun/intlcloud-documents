@@ -9,7 +9,7 @@ SCF users are entitled to a certain free tier of resources and invocations each 
 | Resources | 400,000 GB | 
 | Invocations | 1 million | 
 
-The following table lists free running durations for functions configured with different memory sizes:
+The table below lists monthly free running durations for SCFs configured with different memories:
 
 | Memory (MB) | Free Duration (Seconds) |
 | --- | --- |
