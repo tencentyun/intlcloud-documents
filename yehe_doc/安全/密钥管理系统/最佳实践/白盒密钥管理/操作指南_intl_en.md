@@ -25,11 +25,11 @@ As can be seen in the above process, the API key is not exposed to the open envi
 
 The creation of a white-box key pair is achieved by calling the white-box service through the console or API.
 
-The samples below are called with [TCCLI](https://cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
+The samples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages.
 Request command:
 
 ```shell
-tccli kms CreateWhiteboxKey --region ap-guangzhou --Alias test-gz01 --Description 'this is test for gz key' --Algorithm 'SM4'
+tccli kms CreateWhiteBoxKey --region ap-guangzhou --Alias test-gz01 --Description 'this is test for gz key' --Algorithm 'SM4'
 ```
 
 Sample returned result:
@@ -63,7 +63,7 @@ echo 1234567890 | openssl base64
 Request command:
 
 ```shell
-tccli kms EncryptByWhiteboxKey --region ap-guangzhou --KeyId a1a9376a-7261-11ea-a490-5254006d0810 --PlainText MTIzNDU2Nzg5MAo=
+tccli kms EncryptByWhiteBox --region ap-guangzhou --KeyId a1a9376a-7261-11ea-a490-5254006d0810 --PlainText MTIzNDU2Nzg5MAo=
 ```
 
 Returned result:
@@ -84,7 +84,7 @@ Returned result:
 
 ### Step 4. Distribute the white-box decryption key and API key ciphertext
 
-The admin distributes the `DecryptKey`, `InitializationVector`, and `CipherText` generated in the above steps to the development or OPS personnel of each business system. Among them, `DecryptKey` will be deployed to the file in the corresponding business system, and `InitializationVector` and `CipherText` will be used as the input parameters of the SDK.
+The admin distributes the `DecryptKey`, `InitializationVector` and `CipherText` generated in the above steps to the development or OPS engineer of each business system. Among them, `DecryptKey` will be deployed to the file in the corresponding business system, and `InitializationVector` and `CipherText` will be used as the input parameters of the SDK.
 
 Here:
 
@@ -241,9 +241,9 @@ func main() {
    decryptKeyFileName := "decrypt_key_aes256.bin"
    // Base64-encoded initialization vector
    iv := "EUi3Vv7DiCf73D6XbVzMYg=="
-   // Base64-encoded ciphertext encrypted by the white-box key
+   // Base64-encoded ciphertext encrypted by white-box key
    cipherText := "HKyXV1Xoodi1P/sdf/cYLw=="
-   // Encryption algorithm used to create the white-box key. 0: AES_256, 1: SM4
+   // Encryption algorithm used to create white-box key. 0: AES_256, 1: SM4
    algoType := 0
    fmt.Println(fmt.Sprintf("demo start for decryptKeyFileName=%s, iv=%s, cipherText=%s, algoType=%d", decryptKeyFileName, iv, cipherText, algoType))
 
@@ -256,9 +256,9 @@ func main() {
    decryptKeyFileName = "decrypt_key_sm4.bin"
    // Base64-encoded initialization vector
    iv = "9+COkyNOrT8mvWN6CgTjKw=="
-   // Base64-encoded ciphertext encrypted by the white-box key
+   // Base64-encoded ciphertext encrypted by white-box key
    cipherText = "83ji4vKFwtVSAN1LSh1aOQ=="
-   // Encryption algorithm used to create the white-box key. 0: AES_256, 1: SM4
+   // Encryption algorithm used to create white-box key. 0: AES_256, 1: SM4
    algoType = 1
    fmt.Println(fmt.Sprintf("demo start for decryptKeyFileName=%s, iv=%s, cipherText=%s, algoType=%d", decryptKeyFileName, iv, cipherText, algoType))
 
@@ -369,9 +369,9 @@ if __name__ == "__main__":
     decryptKeyFileName = "decrypt_key_aes256.bin"
     # Base64-encoded initialization vector
     iv = "EUi3Vv7DiCf73D6XbVzMYg=="
-    # Base64-encoded ciphertext encrypted by the white-box key
+    # Base64-encoded ciphertext encrypted by white-box key
     cipherText = "HKyXV1Xoodi1P/sdf/cYLw=="
-    # Encryption algorithm used to create the white-box key. 0: AES_256, 1: SM4
+    # Encryption algorithm used to create white-box key. 0: AES_256, 1: SM4
     algoType = 0
     try:
         print("decryptKeyFileName=%s, iv=%s, cipherText=%s, algoType=%d" % (decryptKeyFileName, iv, cipherText, algoType))
@@ -388,9 +388,9 @@ if __name__ == "__main__":
     decryptKeyFileName = "decrypt_key_sm4.bin"
     # Base64-encoded initialization vector
     iv = "9+COkyNOrT8mvWN6CgTjKw=="
-    # Base64-encoded ciphertext encrypted by the white-box key
+    # Base64-encoded ciphertext encrypted by white-box key
     cipherText = "83ji4vKFwtVSAN1LSh1aOQ=="
-    # Encryption algorithm used to create the white-box key. 0: AES_256, 1: SM4
+    # Encryption algorithm used to create white-box key. 0: AES_256, 1: SM4
     algoType = 1
     try:
 
@@ -410,7 +410,7 @@ if __name__ == "__main__":
 
 The sample code divides into Windows code and Linux code:
 
-- Windows: open `demo.sln` in the `vs` folder. The demo uses VS 2017. There are two demos of static link and dynamic link respectively. You can simply compile and run them. Due to path issues, if you use `exe` on the command line, you need to copy the `/data` directory to the upper-level directory. 
+- Windows: open `demo.sln` in the `vs` folder. The demo uses VS 2017. There are two demos of static link and dynamic link respectively. Simply compile and run them. Due to path issues, if you use `exe` on the command line, you need to copy the `/data` directory to the upper-level directory. 
 - Linux: you need to add `lib` to environment variables:
 ```
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../lib 
@@ -639,9 +639,9 @@ public class Main {
         String decryptKeyFileName = "decrypt_key_aes256.bin";
         // Base64-encoded initialization vector
         String iv = "EUi3Vv7DiCf73D6XbVzMYg==";
-        // Base64-encoded ciphertext encrypted by the white-box key
+        // Base64-encoded ciphertext encrypted by white-box key
         String cipherText = "HKyXV1Xoodi1P/sdf/cYLw==";
-        // Encryption algorithm used to create the white-box key. 0: AES_256, 1: SM4
+        // Encryption algorithm used to create white-box key. 0: AES_256, 1: SM4
         int algoType = 0;
         System.out.printf("demo start for decryptKeyFileName=%s, iv=%s, cipherText=%s, algoType=%d \n", decryptKeyFileName, iv, cipherText, algoType);
         whitebox_decrypt(decryptKeyFileDirectoryName, decryptKeyFileName, iv, cipherText, algoType);
@@ -653,9 +653,9 @@ public class Main {
         decryptKeyFileName = "decrypt_key_sm4.bin";
         // Base64-encoded initialization vector
         iv = "9+COkyNOrT8mvWN6CgTjKw==";
-        // Base64-encoded ciphertext encrypted by the white-box key
+        // Base64-encoded ciphertext encrypted by white-box key
         cipherText = "83ji4vKFwtVSAN1LSh1aOQ==";
-        // Encryption algorithm used to create the white-box key. 0: AES_256, 1: SM4
+        // Encryption algorithm used to create white-box key. 0: AES_256, 1: SM4
         algoType = 1;
         System.out.printf("demo start for decryptKeyFileName=%s, iv=%s, cipherText=%s, algoType=%d \n", decryptKeyFileName, iv, cipherText, algoType);
 
