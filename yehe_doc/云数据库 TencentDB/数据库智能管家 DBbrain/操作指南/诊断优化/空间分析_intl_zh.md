@@ -9,4 +9,4 @@
 
 ## TOP 表空间
 “TOP 表空间”为您展示当前占用空间较大表的详情，包括存储引擎、行数、总使用空间、数据空间、索引空间、碎片空间、碎片率等，各列数据均支持升降序排列。您可以通过此信息了解磁盘空间的使用详情，及时进行优化。
-![](https://main.qcloudimg.com/raw/446b27370346ecb8eeaababcffe73722.png)
+![](https://main.qcloudimg.com/raw/cb0705e2cc6b84bdc0962ff06f5f71e9.png)

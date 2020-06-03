@@ -9,7 +9,7 @@
      </tr> 
 	 <tr>      
          <td>SDK 4.8版本发布（Android、iOS 以及 Windows 端）</td>   
-         <td><ul style="margin:0;"><li>iOS & Android 发布全新的 API 2.0 接口。</li>
+         <td><ul style="margin:0;"><li>iOS & Android 发布全新的 API 2.0 接口。</li>
 <li>iOS 和 Android 支持 IPv6。</li>
 		 <li>直播群（AVChatRoom）支持群成员列表动态更新。</li>
 		 <li>修复 xlog 日志崩溃问题。</li>
@@ -22,6 +22,7 @@
 	     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>   
      </tr> 
 </table>
+
 
 ## 2020年03月
 
@@ -103,7 +104,7 @@
          <td>“旗舰版”套餐包上线</td>   
          <td>上线“旗舰版”套餐包，包含“无限量音视频聊天室”、“30天历史消息存储”、“群成员数上限2000人”等，支持一次购买更多功能。</td>   
 	     <td>2019-12-26</td>   
-	     <td><ul style="margin:0;"><li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">计费概述</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">价格说明</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34351">购买指引</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">创建并升级应用</a></li></ul></td>   
+	     <td><ul style="margin:0;"><li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">计费概述</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">价格说明</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">创建并升级应用</a></li></ul></td>   
      </tr> 
 	 <tr>      
          <td>SDK 4.6版本持续优化（Android、iOS 以及 Windows 端）</td>   

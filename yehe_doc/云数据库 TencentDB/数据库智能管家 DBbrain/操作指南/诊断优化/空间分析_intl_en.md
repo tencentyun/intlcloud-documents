@@ -9,4 +9,4 @@ On the capacity analysis page, you can view the comparison of daily increases in
 
 ## Top Tablespaces
 The **Top Tablespaces** section displays the details of your tables that have relatively high capacity usage, including the storage engine, number of rows, total used capacity, data capacity, index capacity, fragment capacity, and fragment percentage. Each column of data can be sorted in ascending or descending order. You can view the disk capacity usage details in this section and perform optimization promptly.
-![](https://main.qcloudimg.com/raw/446b27370346ecb8eeaababcffe73722.png)
+![](https://main.qcloudimg.com/raw/cb0705e2cc6b84bdc0962ff06f5f71e9.png)
