@@ -20,8 +20,8 @@ You have built the FTP service on CVM.
 
 **Configuration description:**
  - Host: public IP of the CVM. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to view the public IP of the CVM on the **Instances** page.
- - User name: FTP user account configured when you are [building the FTP service] (https://intl.cloud.tencent.com/document/product/213/10912). The figure below uses "ftpuser1" as an example.
- - Password: password corresponding to the FTP user account configured when you are [building the FTP service] (https://intl.cloud.tencent.com/document/product/213/10912).
+ - User name: FTP user account configured when you are [building the FTP service](https://intl.cloud.tencent.com/document/product/213/10912). The figure below uses "ftpuser1" as an example.
+ - Password: password corresponding to the FTP user account configured when you are [building the FTP service](https://intl.cloud.tencent.com/document/product/213/10912).
  - Port: FTP listener port. Default value: 21.
 If the connection is successful, you can view files on the CVM remote site.
 
