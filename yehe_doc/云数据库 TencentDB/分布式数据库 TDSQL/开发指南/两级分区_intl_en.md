@@ -73,5 +73,4 @@ CHAR, VARCHAR, BINARY, and VARBINARY;
 	    PARTITION pRegion_3 VALUES IN('7', '8', '9'),
 	    PARTITION pRegion_4 VALUES IN('10', '11', '12')
 	);
-
 ```
