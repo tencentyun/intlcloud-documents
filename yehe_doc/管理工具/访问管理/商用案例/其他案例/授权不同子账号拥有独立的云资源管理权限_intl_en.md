@@ -10,7 +10,8 @@ Suppose that:
  > - The enterprise account `CompanyExample` has two tag keys (`test1` and `test2`) and two tag values (`test1` and `test2`).
 
 ## Directions
-### Tagging CVM instances<span id="biaoji"></span>
+<span id="biaoji"></span>
+### Tagging CVM instances
 You can add tag keys and tag values to CVM instances `ins-1` and `ins-2` with the following steps to manage resources by tag.
 #### Adding `test1` tag key and `test1` tag value to CVM instance `ins-1`
 
@@ -55,4 +56,4 @@ You can grant sub-account `DevA` management permission for tag key `test1` and t
 
 ### Managing new resources
 
-Follow the instructions in [Tagging CVM Instances](#biaoji to add tag keys and tag values to manage new resources.
+Follow the instructions in [Tagging CVM Instances](#biaoji) to add tag keys and tag values to manage new resources.
