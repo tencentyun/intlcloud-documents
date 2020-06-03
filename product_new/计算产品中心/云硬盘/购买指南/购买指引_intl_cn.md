@@ -21,11 +21,13 @@
 6. 订单支付后立即创建云硬盘，完成挂载以及初始化后，即可使用云硬盘。
 
 ### 通过购买云服务器附带购买
+- 您可以通过购买云服务器时设置【系统盘】为云硬盘，从而附带购买非弹性云硬盘。具体内容请参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
 - 您可以通过购买云服务器时设置参数【数据盘】附带购买弹性云硬盘。具体内容请参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
 
 ### 通过 API 购买
 您可以使用 CreateDisks 接口创建云硬盘，具体操作请参考 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/16312)。
 
 ## 本地盘的购买渠道
-本地盘目前只能通过购买云服务器时附带购买，不支持单独购买。具体操作请参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
+
+本地盘目前只能通过购买高 IO 型、大数据型云服务器时附加购买，不支持单独购买。具体操作请参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
 
