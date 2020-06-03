@@ -230,7 +230,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
    <tr>
       <td rowspan="3">硅谷</td>
       <td>标准存储</td>
-      <td>0.0188</td>
+      <td>0.024</td>
       <td>0.002</td>
       <td>0</td>
       <td rowspan="2">0.07</td>
@@ -255,7 +255,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
    <tr>
       <td rowspan="3">弗吉尼亚</td>
       <td>标准存储</td>
-      <td>0.0181</td>
+      <td>0.02</td>
       <td>0.002</td>
       <td>0</td>
       <td rowspan="2">0.07</td>
