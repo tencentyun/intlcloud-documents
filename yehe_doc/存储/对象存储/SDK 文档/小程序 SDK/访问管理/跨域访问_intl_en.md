@@ -4,21 +4,21 @@ This document provides an overview of APIs and SDK sample codes related to cross
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting cross-origin access configuration | Sets cross-origin access permissions for a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting cross-origin access configuration | Sets the cross-origin access permissions of a bucket |
 | [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying cross-origin access configuration | Queries the cross-origin access configuration of a bucket |
 | [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting cross-origin access configuration | Deletes the cross-origin access configuration of a bucket |
 
-## Setting Cross-Origin Configuration
+## Setting cross-origin configurations
 
 >
-> 1. Ensure that the bucket supports cross-origin access before configuring. Cross-origin access can be configured on the console. For details, see [Getting Started](https://intl.cloud.tencent.com/document/product/436/30609).
-> 2. Make sure changing `cross-origin access configuration` does not affect cross-origin requests under the current origin.
+> 1. Please ensure that the bucket supports cross-origin access before you begin configuring. Cross-origin access can be configured on the console. For details, see [Getting Started](https://intl.cloud.tencent.com/document/product/436/30609).
+> 2. Make sure changing the `cross-origin access configuration` does not affect the cross-origin requests under the current origin.
 
-#### Feature
+#### Feature description
 
-This API (PUT Bucket cors) is used to configure the cross-origin resource sharing (CORS) permission of a bucket. You can set the configuration by passing in a configuration file in XML format of up to 64 KB in size. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
+This API is used to configure the cross-origin resource sharing (CORS) permission of a bucket. You can set this configuration by passing in a configuration file in XML format of up to 64 KB in size. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
 
-#### Request samples
+#### Sample request
 
 [//]: # (.cssg-snippet-put-bucket-cors)
 ```js
@@ -41,14 +41,14 @@ cos.putBucketCors({
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   | Required |
 | ---------------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket | Bucket for which cross-origin access is configured. Format: BucketName-APPID  | String      | Yes   |
+| Bucket | Bucket for which cross-origin access is configured in the format: `BucketName-APPID`  | String      | Yes   |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| CORSRules | List of all the information on CORS configuration | ObjectArray | No |
+| CORSRules | List of all the information on CORS configurations | ObjectArray | No |
 | - ID | Sets the rule ID | String | No |
-| - AllowedMethods | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE | StringArray | Yes |
-| - AllowedOrigins | Allowed origin in the format of `protocol://domain name[:port number]`, such as `http://www.qq.com`. Wildcard `*` is supported. | StringArray | Yes |
+| - AllowedMethods | Allowed HTTP operations. Enumerated values: `GET`, `PUT`, `HEAD`, `POST`, `DELETE` | StringArray | Yes |
+| - AllowedOrigins | Allowed access origin in the format: `protocol://domain name[:port number]`, such as `http://www.qq.com`. Wildcard `*` is supported. | StringArray | Yes |
 | - AllowedHeaders | Tells the server side when sending the `OPTIONS` request what user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported | StringArray | No |
-| - ExposeHeaders  | Sets user-defined headers from the server side that the browser can receive | StringArray | No |
+| - ExposeHeaders  | Sets the user-defined header information from the server side that the browser can receive | StringArray | No |
 | - MaxAgeSeconds | Sets the validity period of the `OPTIONS` request result | String | No |
 
 #### Callback function description
@@ -59,20 +59,20 @@ function(err, data) { ... }
 
 | Parameter Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   | 
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| err |  Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Data returned when the request succeeds. If the request fails, this is null | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Data returned when the request is successful. If the request fails, this is null | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
-## Querying Cross-Origin Configuration
+## Querying cross-origin configurations
 
-#### Feature
+#### Feature description
 
-This API (GET Bucket cors) is used to query the cross-origin resource sharing (CORS, a W3C standard) configuration of a bucket. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
+This API is used to query the cross-origin resource sharing (CORS, a W3C standard) configuration of a bucket. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
 
-#### Request samples
+#### Sample request
 
 [//]: # (.cssg-snippet-get-bucket-cors)
 ```js
@@ -84,7 +84,7 @@ cos.getBucketCors({
 });
 ```
 
-#### Response samples
+#### Sample response
 
 ```json
 {
@@ -104,7 +104,7 @@ cos.getBucketCors({
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | Bucket for which cross-origin configuration is queried. Format: BucketName-APPID  | String      | Yes   |
+| Bucket | Bucket for which cross-origin configuration is queried in the format: `BucketName-APPID`  | String      | Yes   |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback function description
@@ -115,27 +115,27 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------------ | ------------------------------------------------------------ | ----------- |
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| data | Data returned when the request succeeds. If the request fails, this is null | Object |
+| err |  Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| data | Data returned when the request is successful. If the request fails, this is null | Object |
 | - CORSRules | List of all the information on CORS configuration | ObjectArray |
-| - - AllowedMethods | Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE | StringArray |
-| - - AllowedOrigins | Allowed origin in the format of `protocol://domain name[:port number]`, <br>such as `http://www.qq.com`. Wildcard `*` is supported | StringArray |
+| - - AllowedMethods | Allowed HTTP operations. Enumerated values: `GET`, `PUT`, `HEAD`, `POST`, `DELETE` | StringArray |
+| - - AllowedOrigins | Allowed access origin in the format: `protocol://domain name[:port number]`, <br>such as `http://www.qq.com`. Wildcard `*` is supported | StringArray |
 | - AllowedHeaders | Tells the server what custom HTTP request headers can be used for subsequent requests when the OPTIONS request is sent. Wildcard `*` is supported | StringArray |
-| - - ExposeHeaders  | Sets user-defined headers from the server side that the browser can receive | StringArray |
+| - - ExposeHeaders  | Sets the user-defined header information from the server side that the browser can receive | StringArray |
 | - - MaxAgeSeconds | Sets the validity period of the `OPTIONS` request result | String |
 | - - ID | Configures the rule ID | String |
 
-## Deleting Cross-Origin Configuration
+## Deleting cross-origin configurations
 
-#### Feature
+#### Feature description
 
-This API (DELETE Bucket cors) is used to delete the cross-origin access configuration of a bucket.
+This API is used to delete the cross-origin access configuration of a bucket.
 
 >
-> 1. Please not that if you delete the cross-origin access configuration of the current bucket, all cross-origin access requests will fail.
+> 1. Please note that if you delete the cross-origin access configuration of the current bucket, all cross-origin access requests will fail.
 > 2. We do not recommend using this method in a browser.
 
-#### Request samples
+#### Sample request
 
 [//]: # (.cssg-snippet-delete-bucket-cors)
 ```js
@@ -151,7 +151,7 @@ cos.deleteBucketCors({
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | Bucket for which the cross-origin configuration is deleted. Format: BucketName-APPID  | String      | Yes   |
+| Bucket | Bucket for which the cross-origin configuration is deleted in the format: `BucketName-APPID`  | String      | Yes   |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback function description
@@ -162,11 +162,11 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | Description                                                     | Type  | 
 | ------------ | ------------------------------------------------------------ | ------ | 
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |      
+| err |  Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |      
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |       
 | - headers | Header information returned by the request | Object |         
-| data | Data returned when the request succeeds. If the request fails, this is null. | Object |        
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |         
+| data | Data returned when the request is successful. If the request fails, this is null. | Object |        
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |         
 | - headers | Header information returned by the request | Object |         
 
 
