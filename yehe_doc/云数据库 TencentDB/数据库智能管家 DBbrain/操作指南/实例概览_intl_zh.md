@@ -3,11 +3,11 @@
 >实例概览目前仅支持云数据库 MySQL（不含基础版）。
 
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【实例概览】页，可选择“全地域”视图或者按照地域查看，同时也支持查看“实时”和“历史”数据。
-![](https://main.qcloudimg.com/raw/99641330808d0ac5c0583d72a13f3e90.png)
+![](https://main.qcloudimg.com/raw/19bc980d1db6b9bc805638ed24ac9fd9.png)
 
 ## 推荐功能
 顶部导航栏提供了 DBbrain 官方推荐的热门功能入口，单击【立即体验】，可快速跳转至对应功能详情页。
-![](https://main.qcloudimg.com/raw/4e62fb9ffaf3859742f145828b453048.png)
+![](https://main.qcloudimg.com/raw/0b346d76f4a05ac2b59dd34d20715ed4.png)
 
 ## 异常告警
 DBbrian 的7 * 24小时异常诊断模块会实时发现数据库实例存在的问题，以及提供相应的优化方案，该模块展示近3小时和近24小时的异常告警总数量，单击可跳转至异常告警页查看详情。

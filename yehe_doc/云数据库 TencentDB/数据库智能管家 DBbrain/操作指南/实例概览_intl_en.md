@@ -3,11 +3,11 @@ The instance overview page displays the summary of your instances. You can view 
 >Currently, instance overview is supported only for TencentDB for MySQL (excluding the Basic Edition).
 
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Instance Overview** on the left sidebar. You can display the view of all regions or a specific region. You can also view **real-time** and **historical** data.
-![](https://main.qcloudimg.com/raw/99641330808d0ac5c0583d72a13f3e90.png)
+![](https://main.qcloudimg.com/raw/619109412148e0664d20d2d767d04705.png)
 
 ## Recommended Features
 The navigation bar at the top highlights popular features recommended by DBbrain. You can click **Try Now** to quickly access the details of the corresponding feature.
-![](https://main.qcloudimg.com/raw/4e62fb9ffaf3859742f145828b453048.png)
+![](https://main.qcloudimg.com/raw/7a2fc2bb1daf19d42b8386b3eaa6d44c.png)
 
 ## Exception Alarms
 DBbrain's 24/7 exception diagnosis module can detect problems in database instances in real time and provide optimization plans accordingly. This module displays the total number of exception alarms in the last three hours and in the last 24 hours. You can click to access the exception alarm page and view more details.

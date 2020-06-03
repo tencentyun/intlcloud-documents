@@ -14,9 +14,9 @@ You can manually enter SQL statements and analyze them to get their performance 
 >- The analysis does not actually execute the SQL statement and has no affect on the actual data in the database.
 >- Currently, optimization plans are provided only for SELECT statements.
 >
-![](https://main.qcloudimg.com/raw/a482161bc3644fb497fbbb96146008a4.png)
+![](https://main.qcloudimg.com/raw/0972cc3a907812dfa899fcf61e2701ca.png)
 
 
 ## Optimization Suggestions
 Professional optimization suggestions are provided for the entered SQL statement, including but not limited to index suggestions and SQL rewrite suggestions. You can optimize the SQL statement with performance problems using the optimization suggestions provided by DBbrain.
-![](https://main.qcloudimg.com/raw/1b2e5d01d115755f0dbac835bd94dc0b.png)
+![](https://main.qcloudimg.com/raw/348644568ec5a739afad34c65b0d6ab7.png)

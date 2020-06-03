@@ -19,7 +19,7 @@ The exception diagnosis feature can proactively locate and perform optimization 
 
 Directions:
 1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis), select **Diagnosis and Optimization** on the left sidebar, and select **Exception Diagnosis** at the top.
-![](https://main.qcloudimg.com/raw/344d902156b269b8a874c8632be124bb.png)
+![](https://main.qcloudimg.com/raw/2ccc13b38196b08567611d97943ab9c7.png)
 2. Select (enter or search for) an instance ID in the top-left corner to switch to the target instance.
 3. On this page, select "Real Time" or "History" and select the time period to be queried. If any failures exist in this period, the overview information will be displayed in "Diagnosis Prompt" on the right.  
 4. Click **View Details** in the "Real-Time" or "Historical" tab or the target diagnosis item in "Diagnosis Prompt" to access the diagnosis details page.

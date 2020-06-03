@@ -8,10 +8,10 @@
 - “健康程度”列展示通过定时健康巡检所得出的实例健康程度得分（分数越高代表健康程度越高）。
 - “操作”列中选择【诊断优化】，可跳转至具体功能详情页查看实例运营状态。
 
-![](https://main.qcloudimg.com/raw/7bf91177c8e842067b237405400fb484.png) 
+![](https://main.qcloudimg.com/raw/3d4dcfd44e68c6b4a8223eedac65aa66.png)
  
 ## 异常告警
 异常告警页展示了用户账号下，支持 DBbrain 接入的数据库实例所产生的异常告警（由“7 * 24小时异常诊断”发现的异常项）信息汇总。
 严重等级包括提示、告警、严重、致命，用户可进行按字段筛选、聚合和搜索，单击【详情】查看异常的具体信息和优化建议。
-![](https://main.qcloudimg.com/raw/51adcc2c2795f97adf9d37ac7c144da9.png)
+![](https://main.qcloudimg.com/raw/201e718a0526349944940d39ae46f9c8.png)
  

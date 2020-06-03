@@ -24,5 +24,5 @@ DBbrain 利用机器学习、大数据手段、专家经验引擎快速复制资
  - 故障主动定位和智能优化，大幅降低了数据库运维管理的门槛。
 
 
-![](https://main.qcloudimg.com/raw/70ae85a7814b5635b10b5eb2344e1f15.png)
+![](https://main.qcloudimg.com/raw/ca1677819b55bdb47a55b958f5c8b636.png)
 

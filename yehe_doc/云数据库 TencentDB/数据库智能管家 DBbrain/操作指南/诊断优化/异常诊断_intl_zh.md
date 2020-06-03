@@ -4,10 +4,10 @@
 >异常诊断目前仅支持云数据库 MySQL（不含基础版）。
 
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【诊断优化】，在上方选择【异常诊断】页。
-![](https://main.qcloudimg.com/raw/a1bd3aa5c170808b4d1e4c8ab0a7605e.png)
+![](https://main.qcloudimg.com/raw/040ba89bd1915fd14e78507d33d12035.png)
 ## 实时/历史监控
 在异常诊断页主要展示 CPU 利用率、内存使用率、磁盘使用率、输入/输出流量的信息，其中，磁盘使用率详情可单击右上角的【详情】查看。
-![](https://main.qcloudimg.com/raw/59fd7d649668929db26d6f170e8d4a67.png)
+![](https://main.qcloudimg.com/raw/f492b6e9ea0232b6628b5d2513e8a27c.png)
 
 ## 实时/历史诊断
 - “实时/历史诊断”栏展示实例实时的 Running Threads 数、CPU 使用率以及诊断事件。
@@ -16,19 +16,19 @@
 
 
 1. 单击【查看详情】或【诊断提示】的记录项可进入诊断详情页。
-![](https://main.qcloudimg.com/raw/7de251f5dc5a42c3b158017e20406518.png)
+![](https://main.qcloudimg.com/raw/7a8826e6f9daaceeb9886bb5fd25d746.png)
 2. 鼠标选择对应时间段，可拉伸该时间段的诊断视图，查看更细粒度的视图详情。拉伸视图后单击右上角的【重置】可恢复视图。
- ![](https://main.qcloudimg.com/raw/96d252686e65fb40dd2b81065d800163.png)
+ ![](https://main.qcloudimg.com/raw/befaedcb9588d0611e6d3ce00a3b7284.png)
 3. 在视图单击图表曲线可查看某时刻的监控数据，涵盖资源、性能、引擎三大维度，近20项核心监控指标，单击【实例监控】可跳转至实例控制台的监控页面，查看指标详情趋势。
-![](https://main.qcloudimg.com/raw/2b83093186f362a1c772341200d8d490.png)
+![](https://main.qcloudimg.com/raw/c7b994512c3c8f9a93a7a5993e1d2abc.png)
 4. 在视图单击诊断事件，在下方会显示该事件的详情。
  - 事件概要：包括诊断项、起止时间、风险等级、持续时长、概要等信息。
  - 现象描述：异常事件（或健康巡检事件）的外在表现现象的快照和性能趋势。
  - 智能分析：分析导致性能异常的根本原因，定位具体操作。
  - 专家建议：提供优化指导建议，包括但不限于 SQL 优化（索引建议、重写建议）、资源配置优化和参数调优。
-![](https://main.qcloudimg.com/raw/ddc8370ce04839a8fb79180fc9fdf5eb.png)
+![](https://main.qcloudimg.com/raw/a4ea4112eb5d5899b5d65089f51848da.png)
 
 ## 实时/历史 SQL
 - “实时/历史SQL”展示实例的请求数汇总和分布，包括总请求数、查询（Select）、替换（Replace）、插入（Insert）、删除（Delete）、更新（Update）的趋势信息。
 - “实时/历史慢SQL”展示慢 SQL（slow log）和 CPU 使用率的趋势，单击右上角的【查看详情】可跳转至【慢 SQL 分析】页面，查看分析详情。
-![](https://main.qcloudimg.com/raw/79866da82a3be606ae7fcbe1f92cd07a.png)
+![](https://main.qcloudimg.com/raw/ca4be1d10f5d19995327789752e42d59.png)
