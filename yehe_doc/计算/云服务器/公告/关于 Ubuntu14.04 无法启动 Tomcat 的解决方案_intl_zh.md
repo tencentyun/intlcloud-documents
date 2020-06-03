@@ -1,6 +1,5 @@
 
-尊敬的用户：
-您好，腾讯云官方监测到在腾讯云官网购买 Ubuntu14.04 云服务器 apt-get 安装 Tomcat 以及 Hadoop 时，可以正常监听端口，但是无法响应请求。现腾讯云给出相应规避措施，建议您如遇到此情况，可根据建议措施进行规避。
+腾讯云官方监测到在腾讯云官网购买 Ubuntu14.04 云服务器 apt-get 安装 Tomcat 以及 Hadoop 时，可以正常监听端口，但是无法响应请求。现腾讯云给出相应规避措施，建议您如遇到此情况，可根据建议措施进行规避。
 
 ### 问题原因
 Java Runtime Environment 的一个 [已知问题](http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6202721) 导致。
