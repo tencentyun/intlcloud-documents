@@ -4,7 +4,7 @@ Tencent Cloud COS has integrated the professional All-in-One media solutions of 
 
 >
 > - This image processing feature is only supported for Public Cloud regions in mainland China.
-> - Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing] (https://intl.cloud.tencent.com/document/product/1045/33431).
+> - Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 
 
