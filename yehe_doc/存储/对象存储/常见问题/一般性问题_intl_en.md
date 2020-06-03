@@ -98,11 +98,6 @@ COS is a distributed storage service for unstructured data and does not support 
 
 For more information, see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
 
-### Which version of COS should I use, an earlier version or the current version?
-
-The implementation of earlier versions and that of the current version of COS vary greatly. The current version has more features than earlier versions, and earlier versions are not updated with the latest features. **We recommend that you use the current version** for a better experience. If you are using an earlier version, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to activate the current version.
-
-The current version comes with different APIs and SDK APIs than those in earlier versions. JSON APIs are used in earlier versions and XML APIs are used in the current version. JSON APIs have the same underlying architecture as XML APIs. Their data is interoperable and can be cross-used, but they are incompatible and have different domain names.
 
 ### How do I monitor the error code information?
 
