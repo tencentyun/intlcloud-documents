@@ -27,25 +27,25 @@ Type: support 4 input types (RTP, RTMP, UDP, and HTTP) and 2 input methods (PULL
 Security Group: associated security group. One input can be associated with only one security group.
 **Note**
 
-```
-There can be up to 5 inputs in the console by default.
-The input media source currently must contain at least one video data channel.
-When MPEG-TS multiplexing is used, a maximum of 8 channels can be transferred simultaneously.
-```
+
+> 1. There can be up to 5 inputs in the console by default.
+> 2.The input media source currently must contain at least one video data channel.
+> 3.When MPEG-TS multiplexing is used, a maximum of 8 channels can be transferred simultaneously.
+
 ## Channel
 A channel contains the details of various operations on an input stream in MediaLive such as transcoding, remuxing, and relaying to a destination address.
 A channel can be created in the following steps:
-```
-Associate an existing input.
-Configure an audio selector.
-Configure parameters for transcoding, remuxing, and output.
-```
+
+> 1.Associate an existing input.
+> 2.Configure an audio selector.
+> 3.Configure parameters for transcoding, remuxing, and output.
+
 Multiple ways are provided to configure channels:
-```
-Create a channel from scratch, so that you can fully customize all the options you want.
-Use a built-in or custom template for creation.
-Clone the configuration of an existing channel and make desired modifications.
-```
+
+> 1. Create a channel from scratch, so that you can fully customize all the options you want.
+> 2. Use a built-in or custom template for creation.
+> 3. Clone the configuration of an existing channel and make desired modifications.
+
 ### Creating channel
 ![](https://main.qcloudimg.com/raw/010317a5d04d3019c1856dfafb1ffade.png)
 1. Name the channel.
@@ -55,14 +55,14 @@ You can select an input that can be associated from the list of created inputs, 
 3. Configure channel outputs.
 Configure an output group:
 
-```
-Name the output group to identify the output group and associate the name of the main manifest file of the playback address.
-Configure the output group type to configure the package type of the current output task. Valid values include `hls`, `dash`, and `hls archive`.
-Configure the output addresses which divide into the master output address and slave output address corresponding to the master/slave input addresses in the input, respectively. If your CDN injection point has authentication enabled, you can enter authentication parameters for verification, including `UserName` and `Password`.
-Configure DRM parameters. After enabling this feature, you can enter a custom `Content Id`. For the generation method, please see the related DRM document.
-Configure an audio template, including audio name, audio transcoding format, audio bitrate and corresponding audio language. If no audio selector is associated, a default stream will be selected from the input streams for transcoding output. Currently supported audio transcoding bitrate range is 6000–1024000 bits. The language code follows the ISO 639 standard, so a 3-character language code needs to be entered.
-Configure a video template, including video template name, encoder type (valid values: H264), video transcoding bitrate (value range: 50000–40000000 bits), resolution, frame rate, etc. Top speed codec transcoding is a high-performance video transcoding service developed by Tencent Cloud Video Team. After this feature is enabled, AI algorithms can be used to calculate the optimal dynamic encoding parameters based on the business scenario in real time to implement transcoding services with low bitrate and high quality. Bitrate compression ratio is the percentage of video bitrate that is expected to be reduced.
-Configure outputs to combine and associate the created audio and video transcoding templates. In addition, you can pass through SCTE-35 information in MPEG-TS.
-```
+
+> 1. Name the output group to identify the output group and associate the name of the main manifest file of the playback address.
+> 2. Configure the output group type to configure the package type of the current output task. Valid values include `hls`, `dash`, and `hls archive`.
+> 3. Configure the output addresses which divide into the master output address and slave output address corresponding to the master/slave input addresses in the input, respectively. If your CDN injection point has authentication enabled, you can enter authentication parameters for verification, including `UserName` and `Password`.
+> 4. Configure DRM parameters. After enabling this feature, you can enter a custom `Content Id`. For the generation method, please see the related DRM document.
+> 5. Configure an audio template, including audio name, audio transcoding format, audio bitrate and corresponding audio language. If no audio selector is associated, a default stream will be selected from the input streams for transcoding output. Currently supported audio transcoding bitrate range is 6000–1024000 bits. The language code follows the ISO 639 standard, so a 3-character language code needs to be entered.
+> 6. Configure a video template, including video template name, encoder type (valid values: H264), video transcoding bitrate (value range: 50000–40000000 bits), resolution, frame rate, etc. Top speed codec transcoding is a high-performance video transcoding service developed by Tencent Cloud Video Team. After this feature is enabled, AI algorithms can be used to calculate the optimal dynamic encoding parameters based on the business scenario in real time to implement transcoding services with low bitrate and high quality. Bitrate compression ratio is the percentage of video bitrate that is expected to be reduced.
+> 7. Configure outputs to combine and associate the created audio and video transcoding templates. In addition, you can pass through SCTE-35 information in MPEG-TS.
+
 At this point, the channel configuration is completed.
 You can operate on your input stream based on the configured channel and output it. In addition, you can view the channel running status on the channel's Alerts and Health pages to identify and analyze some basic alerts.
