@@ -1,10 +1,10 @@
 Django is an open-source web application framework written in Python.
-This document describes how to deploy the default Django website to a CVM instance where Python 2.7 runs.
+This document describes how to deploy the default Django website to a CVM instance that runs Python 2.7.
 
-Software environments used here include CentOS 7.2, Python 2.7, and Django 1.11.
+Software environments used include CentOS 7.2, Python 2.7, and Django 1.11.
 
 ### Step 1. Log in to the CVM instance
-For more information on how to purchase and access CVM instances, please see [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517).
+For more information on CVM purchase and access, please see [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517).
 
 ### Step 2. Install Python
 Python is installed in CentOS by default. You can view the Python version by running `python --version`.
@@ -44,14 +44,14 @@ pip install MySQL-python
 ```
 yum install httpd -y
 ```
-2. Start the Apache service.
+2. Launch the Apache service.
 ```
 service httpd start
 ```
 3. Test Apache.
->In this step, you should configure an inbound rule with the source being **all** and the port protocol being **TCP:80** in the security group of your CVM instance. For more information on how to configure the security group, please see [Security Groups](https://intl.cloud.tencent.com/document/product/213/12452).
+>In this step, you should configure an inbound rule with the source being **all** and the port protocol being **TCP:80** in the security group of your CVM instance. For more information on security group configuration, please see [Security Groups](https://intl.cloud.tencent.com/document/product/213/12452).
 >
-Enter `http://xxx.xxx.xxx.xxx/` in your local browser (where `xxx.xxx.xxx.xxx` is the public IP of your CVM instance). If the following page appears, Apache has started successfully.
+Enter `http://xxx.xxx.xxx.xxx/` in your local browser (where `xxx.xxx.xxx.xxx` is the public IP of your CVM instance). If the following page appears, Apache has launched successfully.
 ![](https://main.qcloudimg.com/raw/a8708d09de9280c730f47eb8289f7c47.png)
 
 ### Step 6. Install Apache's mod_wsgi extension as a Django application container
@@ -65,7 +65,7 @@ yum install -y mod_wsgi
 ```
 
 ### Step 7. Create a project to test the Django environment
-1. Create a test project under `/usr/local` by running `django-admin.py startproject projectname`, where `projectname` is the name of the project.
+1. Create a test project under `/usr/local` by running `django-admin.py startproject projectname`, where `projectname` is the project name.
 ```
 cd /usr/local
 django-admin.py startproject projectname
@@ -99,7 +99,7 @@ WSGIScriptAlias /python "/usr/local/projectname/django.wsgi"
     Require all granted
 </Directory>
 ```
-5. Create a view and a `view.py` file in the **project directory** `/usr/local/projectname/projectname` as the access entry with the following content:
+5. Create a view and the `view.py` file in the **project directory** `/usr/local/projectname/projectname` as the access entry with the following content:
 ```
 from django.http import HttpResponse
 def hello(request):
@@ -137,7 +137,7 @@ DATABASES = {
     }
 }
 ```
-2. Test the database connection after configuration by running the following command:
+2. After configuration, run the following command to test the database connection:
 ```
 $python manage.py validate/check
 ```
