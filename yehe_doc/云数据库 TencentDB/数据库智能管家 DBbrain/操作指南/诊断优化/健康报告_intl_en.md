@@ -7,7 +7,7 @@ Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analys
 - Click **Create Health Report** to create a task. After the task is completed, you can view or download the health report for the specified time period.
 >The time period of the health report is the same as that selected on the left.
 - Click **Regular Generation Settings** to configure the time period for automatically generating health reports.
-![](https://main.qcloudimg.com/raw/734b727a7305019899db84a8328540d3.png)
+![](https://main.qcloudimg.com/raw/60420696f50da3e8d4b2bd7de0a69065.png)
 
 ## Viewing/Downloading a Health Report
 - In the task list, the creation time, start and end times, health level, progress, and operations of each health report task are displayed.
