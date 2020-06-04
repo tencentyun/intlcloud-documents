@@ -1,0 +1,1 @@
+Welcome to Tencent Cloud Cloud Access Management (CAM). You can control and manage the access to resources under your Tencent Cloud account by calling the APIs described in this documentation. Before you use CAM APIs, make sure that you fully understand what CAM is and how it works.
