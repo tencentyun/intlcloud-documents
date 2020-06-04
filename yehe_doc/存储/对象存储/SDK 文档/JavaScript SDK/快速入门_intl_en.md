@@ -38,7 +38,7 @@ var COS = require('cos-js-sdk-v5');
 
 ## Getting Started
 
-### Getting a Temporary Key
+## Getting a Temporary Key
 
 Using a fixed key on the frontend exposes your SecretId and SecretKey. Therefore, we store the permanent key on the backend, and the frontend uses a temporary key generated from the backend through AJAX. In actual deployment, please add an additional authentication step on the backend. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
@@ -160,7 +160,7 @@ var cos = new COS({
 var cos = new COS({
     // Required parameters
     getAuthorization: function (options, callback) {
-        // The server obtains a signature. For more information, please see the COS SDK for the corresponding programming language: https://cloud.tencent.com/document/product/436/6474
+        // The server obtains a signature. For more information, please see the COS SDK for the corresponding programming language: https://intl.cloud.tencent.com/document/product/436/6474
         // Note: there may be a security risk associated with this method. The backend needs to strictly control the permission through method and pathname, such as prohibiting put /
         $.get('http://example.com/server/auth.php', {
             method: options.Method,
@@ -250,11 +250,11 @@ getAuthorization function callback parameter descriptions:
 | ---------- | ------------------------------------------------------------ | -------- |
 | options | Parameter object necessary for getting the signature | Object | No |
 | - Method | Current request method | String |
-| - Pathname | Request path used for signature calculation | String | 
-| - Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String | 
-| - Query | Query parameter object of the current request in the format of {key: 'val'} | Object | 
-| - Headers | Header parameter object of the current request in the format of {key: 'val'} | Object | 
-| callback | Callback after the temporary key is obtained | Function | 
+| - Pathname | Request path used for signature calculation | String |
+| - Key | Object key (object name), a unique ID of an object in a bucket. For more information, see [Object Overview > Object Key](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| - Query | Query parameter object of the current request in the format of {key: 'val'} | Object |
+| - Headers | Header parameter object of the current request in the format of {key: 'val'} | Object |
+| callback | Callback after the temporary key is obtained | Function |
 
 After the calculation of getAuthorization is completed, callback parameter supports two formats:
 Format 1: Returns the authentication string Authorization.
