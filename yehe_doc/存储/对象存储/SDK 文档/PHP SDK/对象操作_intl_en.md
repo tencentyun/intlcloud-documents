@@ -268,7 +268,7 @@ Guzzle\Service\Resource\Model Object
 
 #### Feature
 
-This API (PUT Object) is used to upload an object to a specified bucket. You can upload objects up to 5 GB in size. Please use [Multipart Upload] (#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs] (#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload objects greater than 5 GB.
+This API (PUT Object) is used to upload an object to a specified bucket. You can upload objects up to 5 GB in size. Please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload objects greater than 5 GB.
 
 #### Method prototype
 
@@ -1258,8 +1258,8 @@ Guzzle\Service\Resource\Model Object
 | ETag                 | String      | MD5 checksum of the part                                                | None     |
 | LastModified | String | Returns the last modified date/time in GMT of the object | None |
 
-<span id = "LIST_MULIT_UPLOAD"></span>
-### Querying a Multipart Upload
+
+### <span id = "LIST_MULIT_UPLOAD"> Querying a Multipart Upload </span>
 
 #### Feature
 
@@ -1370,8 +1370,8 @@ Guzzle\Service\Resource\Model Object
 | Size             | String | The size of the part                              | Part   |
 
 
-<span id = "COMPLETE_MULIT_UPLOAD"></span>
-### Complete multipart upload 
+
+### <span id = "COMPLETE_MULIT_UPLOAD"> Complete multipart upload </ span>
 
 #### Feature
 
@@ -1421,8 +1421,7 @@ try {
 | ETag                 | String      | MD5 checksum of the part                                                | Yes     |
 | PartNumber | Int    | Part number identifying the part                           | Yes       |
 
-<span id = "ABORT_MULIT_UPLOAD"></span> 
-### Terminate a multipart upload 
+### <span id = "ABORT_MULIT_UPLOAD"> Terminate a multipart upload </ span>
 
 #### Feature
 
