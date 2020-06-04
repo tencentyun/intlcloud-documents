@@ -21,4 +21,4 @@ One data subscription instance corresponds to one TencentDB for MySQL instance, 
 | Regions in Mainland China | Pay-as-you-go at 0.36 USD/hour | Free of charge for now | Free of charge for now |
 | Regions outside Mainland China and finance AZs in Mainland China | Pay-as-you-go at 0.44 USD/hour | Free of charge for now | Free of charge for now |
 
-
+This pricing document  is for reference only. See your bill for the actual price.
