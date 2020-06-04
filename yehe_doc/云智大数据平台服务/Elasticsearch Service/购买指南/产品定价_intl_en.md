@@ -366,3 +366,5 @@ The following lists the prices in some regions:
 | Premium Cloud Storage | 0.0002                     | 0.0002             |
 
 For other regions, please see [Pricing List](https://intl.cloud.tencent.com/document/product/362/2413).
+
+This  pricing document is for reference only. See your bill for the actual price.

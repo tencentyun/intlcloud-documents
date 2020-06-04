@@ -8,7 +8,7 @@ This document provides an overview of APIs and SDK sample codes related to simpl
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/7734) | Querying object list | Queries some or all objects in a bucket |
 | [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying a list of current and noncurrent (previous) versions of an object | Queries all or a subnet of objects in a bucket and their versions |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading on object using simple upload | Uploads an object to a bucket |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Setting object replication | Copies a file to the destination path |
