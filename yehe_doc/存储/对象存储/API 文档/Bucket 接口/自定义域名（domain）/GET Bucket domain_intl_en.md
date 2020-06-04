@@ -1,12 +1,12 @@
-## Feature
+## Feature description
 
-This API (GET Bucket domain) is used to query the custom domain name configuration on a bucket.
+This API is used to query the custom domain name configuration of a bucket.
 
->By default, the root account owns the permissions to query the custom domain name of a bucket. For a sub-account to do so, the root account should grant it the access to the `GetBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
+>By default, the root account has the permission to query the custom domain name of a bucket and can grant such permission to a sub-account by granting it access to the `GetBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
 
 ## Request
 
-#### Request samples
+#### Sample request
 
 ```plaintext
 GET /?domain HTTP/1.1
@@ -19,7 +19,7 @@ Authorization: Auth String
 
 #### Request parameters
 
-This API does not use any request parameter.
+This API does not use any request parameters.
 
 #### Request headers
 
@@ -33,7 +33,7 @@ This API does not have a request body.
 
 #### Response headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -78,7 +78,7 @@ The detailed nodes are described as follows:
 
 This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use Cases
+## Use cases
 
 #### Request
 
