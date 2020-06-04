@@ -305,3 +305,5 @@ LVB can intelligently detect pornographic information in live streams. The porn 
 |---------|---------|-----|
 | ≤ 1000 |0 USD | First 1,000 porn detection screenshots each month are free |
 | > 1000 | 0.2294 USD | The total number of screenshots will be rounded up to the nearest 1,000 |
+
+This  pricing document is for reference only. See your bill for the actual price.
