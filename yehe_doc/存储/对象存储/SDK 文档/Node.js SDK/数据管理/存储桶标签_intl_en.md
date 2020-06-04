@@ -9,13 +9,13 @@ This document provides an overview of APIs and SDK code samples related to bucke
 | [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes specified bucket tags |
 
 
-## Setting a Bucket Tag
+## Setting a bucket tag
 
-#### Feature
+#### Feature description
 
-This API (PUT Bucket tagging) is used to set tags for an existing bucket.
+This API is used to set tags for an existing bucket.
 
-#### Request samples
+#### Sample request
 
 [//]: # (.cssg-snippet-put-bucket-tagging)
 ```js
@@ -37,7 +37,7 @@ cos.putBucketTagging({
 
 | Parameter Name | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket | Bucket for which the tag is configured. Format: BucketName-APPID  | String      | Yes   |
+| Bucket | Bucket for which the tag is configured in the format: `BucketName-APPID`  | String      | Yes   |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 | Tagging | Tag information | Object | Yes |
 | - Tags | Tag information | ObjectArray | Yes |
@@ -52,20 +52,20 @@ function(err, data) { ... }
 
 | Parameter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Data returned when the request succeeds. If the request fails, this is null. | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Data returned when the request is successful. If the request fails, this is null. | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
-## Querying a Bucket Tag
+## Querying a bucket tag
 
-#### Feature
+#### Feature description
 
-This API (GET Bucket tagging) is used to query the existing tags of a specified bucket.
+This API is used to query the existing tags of a specified bucket.
 
-#### Request samples
+#### Sample request
 
 [//]: # (.cssg-snippet-get-bucket-tagging)
 ```js
@@ -77,7 +77,7 @@ cos.getBucketTagging({
 });
 ```
 
-#### Response samples
+#### Sample response
 
 ```json
 {
@@ -94,7 +94,7 @@ cos.getBucketTagging({
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | Bucket for which the tag is queried. Format: BucketName-APPID  | String      | Yes   |
+| Bucket | Bucket for which the tag is queried in the format: `BucketName-APPID`  | String      | Yes   |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback function description
@@ -105,23 +105,23 @@ function(err, data) { ... }
 
 | Parameter Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   | 
 | ------------ | ------------------------------------------------------------ | ----------- |
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Data returned when the request succeeds. If the request fails, this is null. | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Data returned when the request is successful. If the request fails, this is null. | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 | - Tags | Tag information | ObjectArray |
 | - - Key | Tag name | String |
 | - - Value | Tag value | String |
 
-## Deleting a Bucket Tag
+## Deleting a bucket tag
 
-#### Feature
+#### Feature description
 
-This API (DELETE Bucket tagging) is used to delete specified bucket tags.
+This API is used to delete specified bucket tags.
 
-#### Request samples
+#### Sample request
 
 [//]: # (.cssg-snippet-delete-bucket-tagging)
 ```js
@@ -137,7 +137,7 @@ cos.deleteBucketTagging({
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | Bucket for which the tag is deleted. Format: BucketName-APPID  | String      | Yes   |
+| Bucket | Bucket for which the tag is deleted in the format: `BucketName-APPID`  | String      | Yes   |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback function description
@@ -148,9 +148,9 @@ function(err, data) { ... }
 
 | Parameter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Data returned when the request succeeds. If the request fails, this is null. | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Data returned when the request is successful. If the request fails, this is null. | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |

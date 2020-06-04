@@ -1,6 +1,6 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to custom domain name.
+This document provides an overview of APIs and SDK code samples related to custom domain names.
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
@@ -9,13 +9,13 @@ This document provides an overview of APIs and SDK code samples related to custo
 | DELETE Bucket domain | Deleting a custom domain name | Deletes the custom domain name of a bucket |
 
 
-## Setting Custom Domain Name
+## Setting custom domain names
 
-#### Feature
+#### Feature description
 
-This API (PUT Bucket domain) is used to bind a custom domain name to an existing bucket.
+This API is used to bind a custom domain name to an existing bucket.
 
-#### Request samples
+#### Sample request
 
 ```js
 cos.putBucketDomain({
@@ -40,13 +40,13 @@ cos.putBucketDomain({
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   | Required |
 | --------- | ------------------------------------------------------------ | ----------- | ---- |
-| Bucket | Name of the bucket for which the custom domain name is configured. Required format: `BucketName-APPID` | String | Yes |
+| Bucket | Name of the bucket for which the custom domain name is configured in the format: `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 | DomainRule   | Custom domain name configuration                                                                             | Object      | Yes   |
 | - Status | Domain name status; enumerated values: `Enabled`, `Disabled` | String | Yes |
-| - Name    | User-defined domain name                                                                               | String      | Yes   |
+| - Name    | User’s custom domain name                                                                               | String      | Yes   |
 | - Type    | Type of the bound origin server. Enumerated values: `REST`, `WEBSITE`                                                             | String      | Yes   |
-| - ForcedReplacement | Replaces the existing configuration. Enumerated values: `CNAME`, `TXT`. Should this parameter be configured, validation will be forced on the ownership of domain name before the configuration is delivered.                        | String      | No   |
+| - ForcedReplacement | Replaces the existing configuration. Enumerated values: `CNAME`, `TXT`. Should this parameter be configured, validation will be forced on the ownership of the domain name before the configuration is delivered.                        | String      | No   |
 
 #### Callback function description
 
@@ -56,20 +56,20 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Data returned when the request succeeds. If the request fails, this is null. | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Data returned when the request is successful. If the request fails, this is null. | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 
-## Querying Custom Domain Name
+## Querying custom domain names
 
-#### Feature
+#### Feature description
 
-This API (GET Bucket domain) is used to query the custom domain name associated with a bucket.
+This API is used to query the custom domain name associated with a bucket.
 
-#### Request samples
+#### Sample request
 
 ```js
 cos.getBucketDomain({
@@ -80,7 +80,7 @@ cos.getBucketDomain({
 });
 ```
 
-#### Response samples
+#### Sample response
 
 ```json
 {
@@ -102,7 +102,7 @@ cos.getBucketDomain({
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | Name of the bucket for which the custom domain name is queried. Required format: `BucketName-APPID` | String | Yes |
+| Bucket | Name of the bucket for which the custom domain name is queried in the format: `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback function description
@@ -113,25 +113,25 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | ------------ | ------------------------------------------------------------ | ----------- |
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Data returned when the request succeeds. If the request fails, this is null. | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Data returned when the request is successful. If the request fails, this is null. | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 | - DomainRule   | Custom domain name configuration                                                                             | Object      | 
 | - - Status | Domain name status; enumerated values: `Enabled`, `Disabled` | String | 
-| - - Name    | User-defined domain name                                                                               | String      | 
+| - - Name    | User’s custom domain name                                                                               | String      | 
 | - - Type    | Type of the bound origin server. Enumerated values: `REST`, `WEBSITE`                                                             | String      | 
-| - - ForcedReplacement | Replaces the existing configuration. Enumerated values: `CNAME`, `TXT`. Should this parameter be configured, validation will be forced on the ownership of domain name before the configuration is delivered.                        | String      | 
+| - - ForcedReplacement | Replaces the existing configuration. Enumerated values: `CNAME`, `TXT`. Should this parameter be configured, validation will be forced on the ownership of the domain name before the configuration is delivered.                        | String      | 
 
-## Deleting Custom Domain Name
+## Deleting custom domain names
 
-#### Feature
+#### Feature description
 
-This API (DELETE Bucket domain) is used to delete the custom domain name configured for a bucket.
+This API is used to delete the custom domain name configured for a bucket.
 
-#### Request samples
+#### Sample request
 
 ```js
 cos.deleteBucketDomain({
@@ -146,7 +146,7 @@ cos.deleteBucketDomain({
 
 | Parameter Name | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | Name of the bucket for which the custom domain name is deleted. Required format: `BucketName-APPID` | String | Yes |
+| Bucket | Name of the bucket for which the custom domain name is deleted in the format: `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 
 #### Callback function description
@@ -157,9 +157,9 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | Description                                                     | Type  |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | A returned request error (network error or service error). If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| data | Data returned when the request succeeds. If the request fails, this is null. | Object |
-| - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
+| data | Data returned when the request is successful. If the request fails, this is null. | Object |
+| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
