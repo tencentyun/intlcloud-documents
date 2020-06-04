@@ -50,7 +50,7 @@ ClickHouse 配置提供了“替换”的功能，可以使用**incl**属性将�
     </users>
 </yandex>
 ```
-具体的 Server 参数配置和 Settings 配置可参考官网 [Server 参数配置](https://clickhouse.tech/docs/zh/operations/server_settings/settings/) 和 [Settings 配置](https://clickhouse.tech/docs/en/operations/settings/)。
+具体的 Server 参数配置和 Settings 配置可参考官网 [Server 参数配置](https://clickhouse.tech/docs/en/operations/server-configuration-parameters/settings/) 和 [Settings 配置](https://clickhouse.tech/docs/en/operations/settings/)。
 
 
 
