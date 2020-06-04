@@ -53,8 +53,8 @@ Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL 
 | Query Utilization | query_rate | % | Actual QPS/recommended QPS |
 | Used Space of Disk | real_capacity | MB | This includes only MySQL's data directories but not logs such as binlog, relaylog, undolog, errorlog, and slowlog |
 | Disk Used Space | capacity | MB | This includes MySQL's data directories and logs such as binlog, relaylog, undolog, errorlog, and slowlog |
-| Sent Data Volume | bytes_sent | MB/s | Number of bytes sent per second |
-| Received Data Volume |bytes_received| MB/s | Number of bytes received per second |
+| Private network outbound traffic|bytes_sent|Byte/second|Number of bytes sent per second |
+| Private network inbound traffic|bytes_received|Byte/second|Number of bytes received per second |
 | Disk Utilization |volume_rate|%| Used disk space/purchased instance space |
 | Query Cache Hit Rate |qcache_hit_rate|%| Query cache hit rate |
 | Query Cache Utilization |qcache_use_rate|%| Query cache utilization |
