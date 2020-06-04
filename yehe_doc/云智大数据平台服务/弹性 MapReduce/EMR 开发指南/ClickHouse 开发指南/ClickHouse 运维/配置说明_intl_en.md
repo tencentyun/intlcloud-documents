@@ -50,7 +50,7 @@ You can create a `users.d` directory in the `user.xml` statistics directory and 
     </users>
 </yandex>
 ```
-For the specific server parameter configurations and settings, please see [Server Settings](https://clickhouse.tech/docs/zh/operations/server_settings/settings/) and [Settings](https://clickhouse.tech/docs/zh/operations/settings/) on the official website.
+For the specific server parameter configurations and settings, please see [Server Settings](https://clickhouse.tech/docs/zh/operations/server_settings/settings/) and [Settings](https://clickhouse.tech/docs/en/operations/settings/) on the official website.
 
 
 
