@@ -34,7 +34,7 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | 	Reference Document |	
 | ------------------------------------------------------------ | ------ | --------  | ------- | ---- |	---- |	
 | [Cloud Object Storage (COS)](https://intl.cloud.tencent.com/document/product/436) | Resource level | &#10003;       | -  | &#10003;   |	[CAM Guide](https://intl.cloud.tencent.com/document/product/436/12470)   |
-| [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582) | Resource level | &#10003;        | -  |  &#10003;    |[CAM Guide](https://intl.cloud.tencent.com/document/product/582/14679)   |			
+| [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582) | Resource level | &#10003;        | &#10003;  |  &#10003;    |[CAM Guide](https://intl.cloud.tencent.com/document/product/582/14679)   |			
 | [Cloud Block Storage (CBS)](https://intl.cloud.tencent.com/document/product/362) | Resource level | &#10003;       | &#10003;  |  -    |-    |	
 | [Cloud Data Migration (CDM)](https://intl.cloud.tencent.com/document/product/623)  | Service level | &#10003;        | -  |  - | - |	
 | [Cloud Log Service (CLS)](https://intl.cloud.tencent.com/document/product/614)  | Resource level | &#10003;        | -  | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/614/32854)    |	
