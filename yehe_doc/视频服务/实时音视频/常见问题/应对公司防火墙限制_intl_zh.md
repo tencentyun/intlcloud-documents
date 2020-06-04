@@ -11,14 +11,15 @@
 
 域名白名单：
 
-```
+<pre>
 cloud.tim.qq.com
 gz.file.myqcloud.com
 avc.qcloud.com
 yun.tim.qq.com
 dldir1.qq.com
 mlvbdc.live.qcloud.com
-```
+query.tencent-cloud.com
+</pre>
 
  
 ## WebRTC
@@ -32,24 +33,22 @@ mlvbdc.live.qcloud.com
 
 域名白名单：
 
-```
+<pre>
 qcloud.rtc.qq.com
-```
+</pre>
 
 
 ## 微信小程序
 
-&lt;webrtc - room&gt; 域名白名单：
+&lt;trtc-room&gt; 域名白名单：
 
-```
+<pre>
 https://official.opensso.tencent-cloud.com
-
 https://yun.tim.qq.com
-
 https://cloud.tencent.com
-
 https://webim.tim.qq.com
-```
+https://query.tencent-cloud.com
+</pre>
 
 
 >因为腾讯云服务端 IP 地址是动态更新的，并不是固定的一批 IP 地址，所以我们无法提供固定的一组 IP 列表给您。

@@ -4,7 +4,7 @@ Django 是一个开放源代码的 Web 应用框架，由 Python 写成。
 使用的软件环境为：CentOS7.2 | Python2.7 | Django1.11
 
 ### 步骤1：登录到云服务器实例
-云服务器的购买和访问请参见 [快速入门 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517)。
+云服务器的购买和访问请参见 [自定义配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517)。
 
 ### 步骤2：安装 Python
 在 CentOS 中会默认安装 Python，您可通过`python --version`查看 Python 版本。

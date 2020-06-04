@@ -24,7 +24,7 @@
 3. 设置 `GenerateTestUserSig.h` 文件中的相关参数：
   <ul><li>SDKAPPID：默认为占位符，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为占位符，请设置为实际的密钥信息。</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
+ 
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -140,7 +140,7 @@ TRTCVideoCall.shared.delegate = self
 
 // 接听/拒绝电话
 // 此时 B 如果也登录了IM系统，会收到 onInvited(A, null, false) 回调
-// 可以调用 TRTCVideoCall.shared.accept 接受 / TRTCAudioCall.shared.reject 拒绝
+// 可以调用 TRTCVideoCall.shared.accept 接受 / TRTCVideoCall.shared.reject 拒绝
 func onInvited(sponsor: String, userIds: [String], isFromGroup: Bool) {
 	TRTCVideoCall.shared.accept()
 }
@@ -191,7 +191,7 @@ callList.append("b")
 callList.append("c")
 callList.append("d")
 // 如果您不是在一个 IM 群里发起的, groupId 可以传一个空串；
-TRTCAudioCall.shared.groupCall(userIDs: callList, groupID: "#groupId#")
+TRTCVideoCall.shared.groupCall(userIDs: callList, groupID: "#groupId#")
 
 //打开自己的摄像头
 TRTCVideoCall.shared.openCamera(frontCamera: true, view: localPreView)  

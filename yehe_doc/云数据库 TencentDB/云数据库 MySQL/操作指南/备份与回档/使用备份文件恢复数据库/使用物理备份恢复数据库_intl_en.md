@@ -4,13 +4,13 @@
 >
 The open-source software tool Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a physical backup file of a TencentDB for MySQL instance to a CVM-based self-created database.
 - XtraBackup only supports Linux but not Windows.
-- For more information on how to restore data on Windows, please see [Rolling back Databases](https://intl.cloud.tencent.com/document/product/236/7276), [Migrating Data Through Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464), and [Migrating Data Through DTS](https://intl.cloud.tencent.com/document/product/571/34103).
+- For more information on how to restore data on Windows, please see [Offline Migration of Data](https://intl.cloud.tencent.com/document/product/236/8464).
 
 
 ## Prerequisites
 - Download and install XtraBackup.
 XtraBackup can be downloaded at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Please select Percona XtraBackup 2.4.6 or higher. For more information on how to install the tool, please see [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
-- Supported instance version: TencentDB for MySQL 5.5, 5.6, and 5.7 High-Availability Edition.
+- Supported instance versions: TencentDB for MySQL 5.5, 5.6, and 5.7 high-availability edition and finance edition.
 - Instances with data encryption enabled cannot be restored from a physical backup.
 
 ## Directions
@@ -108,3 +108,5 @@ mysql  -uroot
 ```
 ![](https://main.qcloudimg.com/raw/c95419569318a928c0f71978fbb8c6ad.png)
 
+## Backup FAQs
+See [Common Issues](https://intl.cloud.tencent.com/document/product/236/9036) and [Failure Reasons](https://intl.cloud.tencent.com/document/product/236/34394).

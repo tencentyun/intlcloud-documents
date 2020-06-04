@@ -119,4 +119,4 @@
 其它地域类似，计算得：广州-上海；北京-上海。
 
 最终该云联网在6月产生的费用为**各地域间互通费用总和**
-![](https://main.qcloudimg.com/raw/67fc221ad32ae2359e5159e3af219d98.png)
+![](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)

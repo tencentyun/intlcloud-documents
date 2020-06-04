@@ -7,7 +7,7 @@ In TRTCCloud, you can adjust the video quality in the following ways:
 
 This document describes how to configure these parameters to make the video quality of the TRTC SDK meet your project-specific needs.
 You can also see the following demos:
-- [iOS: TRTCVideoCall+Room.swift](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCScenesDemo/TRTCScenesDemo/TRTCVideoCallDemo/model/TRTCVideoCall%2BRoom.swift)
+- [iOS: TRTCVideoCall+Room.swift](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCVideoCallDemo/model/TRTCVideoCall%2Bmodel.swift)
 - [Android: TRTCVideoCallImpl.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/trtcvideocalldemo/src/main/java/com/tencent/liteav/trtcvideocalldemo/model/TRTCVideoCallImpl.java)
 - [Windows: TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp)
 

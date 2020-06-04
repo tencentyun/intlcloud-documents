@@ -1,16 +1,16 @@
-## Scenario
+## Overview
 
 This document describes how to install Cloudbase-Init on the Windows Server 2012 R2 64-bit operating system.
 
 <span id="PreparationSoftware"></span>
 ## Required Software
-The following table describes software required for installing Cloudbase-Init.
+The following table describes the software required for installing Cloudbase-Init.
 
-| Software | How to Obtain It | Description |
+| Software | Download Link | Description |
 |---------|---------|---------|
-| CloudbaseInitSetup_X_X_XX_xXX.msi | Download the Cloudbase-Init installation package based on the operating system used.<ul style="margin: 0;"><li>Stable version (recommended)<ul style="margin: 0;"><li>Windows 64-bit operating system: [Click here](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi) to obtain the installation package.</li><li>Windows 32-bit operating system: [Click here](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi) to obtain the installation package.</li></ul></li><li>Beta version</li></ul>For details, see the [Cloudbase-Init official website](http://www.cloudbase.it/cloud-init-for-windows-instances/). | Used to install Cloudbase-Init |
-| TencentCloudRun.ps1 | [Click here](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) to obtain the installation package. | - |
-| localscripts.py | [Click here](http://cloudinit-1251783334.file.myqcloud.com/localscripts.py) to obtain the installation package. | Used to ensure that Cloudbase-Init starts properly |
+| CloudbaseInitSetup_X_X_XX_xXX.msi | Download the Cloudbase-Init installation package based on the operating system used.<ul style="margin: 0;"><li>Stable version (recommended)<ul style="margin: 0;"><li>Windows 64-bit operating system: [Click here](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi) to download the installation package.</li><li>Windows 32-bit operating system: [Click here](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi) to download the installation package.</li></ul></li><li>Beta version</li></ul>For details, see the [Cloudbase-Init official website](http://www.cloudbase.it/cloud-init-for-windows-instances/). | Used to install Cloudbase-Init |
+| TencentCloudRun.ps1 | [Click here](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) to download the installation package. | - |
+| localscripts.py | [Click here](http://cloudinit-1251783334.file.myqcloud.com/localscripts.py) to download the installation package. | Used to ensure that Cloudbase-Init starts properly |
 
 ## Directions
 
@@ -20,12 +20,12 @@ The following table describes software required for installing Cloudbase-Init.
 2. In the dialog box, click **Run** to enter the Cloudbase-Init setup wizard, as shown below:
 ![](https://main.qcloudimg.com/raw/bdeb8ff4370dc6da38da6749154e449f.png)
 3. Click **Next**.
-4. Select **I accept the terms in the License Agreement** and click **Next** for the following two operations.
+4. Check **I accept the terms in the License Agreement** and click **Next** for the following two operations.
 5. On the **Configuration options** page, set **Serial port for logging** to **COM1** and click **Next**, as shown below:
 ![](https://main.qcloudimg.com/raw/a41580e9b21e4550245b661b44682937.png)
 6. Click **Install**.
-7. After Cloudbase-Init is installed, click **Finish** to close the Cloudbase-Init setup wizard, as shown below:
-> When closing the Cloudbase-Init setup wizard, do not select any checkbox or run Sysprep.
+7. When the installation is completed, click **Finish** to close the Cloudbase-Init setup wizard, as shown below:
+> When closing the Cloudbase-Init setup wizard, do not check any checkbox or run Sysprep.
 >
 ![](https://main.qcloudimg.com/raw/d2d6c30def7812af9d7e484f5e8ccaa9.png)
 

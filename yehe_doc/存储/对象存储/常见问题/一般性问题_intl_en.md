@@ -36,7 +36,7 @@ If your file is private:
 
 ### What is "folder" or "directory" in COS?
 
-The concepts of folder and directory do not apply to COS. However, taking into account the usage habits of different users, COS simulates the display mode of folders in the console based on the directory structure of traditional file management. For more information, see [Folder and Directory](https://intl.cloud.tencent.com/document/product/436/13324).
+The concepts of folder and directory do not apply to COS. However, taking into account the usage habits of different users, COS displays “folders” in the console just like in the directory structure of traditional file management. For more information, see [Folder and directory](https://intl.cloud.tencent.com/document/product/436/13324).
 
 ### Can COS files be recovered after being deleted?
 
@@ -65,12 +65,12 @@ You can proactively delete files in the following ways:
   - Keep the credentials for data access properly, such as Tencent Cloud account password, CAM sub-account access credentials, and TencentCloud API key.
 
 
-### Does COS have the statistics collection feature?
+### Does COS support statistics collection?
 
 COS is capable of monitoring stored data and displaying details and trends of various metrics in the monitor window. To view general data trends, go to the **Overview** page in the [COS Console](https://console.cloud.tencent.com/cos5) where you can view data such as storage size, number of requests, and traffic by storage class.
 To view statistics of a single bucket, see [Querying Monitoring Reports](https://intl.cloud.tencent.com/document/product/436/31634).
 
-In addition to the COS Console, you can also view the monitoring information of different buckets on the Tencent [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) page, and configure different alarm policies based on your business needs.
+In addition to the COS Console, you can also view the monitoring information about different buckets on the [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) page, and configure different alarm policies based on your business needs.
 
 ### Does COS support image processing?
 
@@ -80,11 +80,11 @@ The COS console has integrated Cloud Infinite features, which enable you to scal
 
 ### Does COS support image compression?
 
-COS is a distributed storage service for unstructured data and cannot support image compression on its own. For image compression, see [Cloud Infinite](https://intl.cloud.tencent.com/product/ci?idx=1).
+COS is a distributed storage service for unstructured data and cannot support image compression on its own. For image compression, see [Cloud Infinite](https://intl.cloud.tencent.com/product/ci).
 
 ### Does COS support thumbnails?
 
-COS is a distributed storage service for unstructured data and cannot support thumbnails on its own. For more information on thumbnails, see [Cloud Infinite](https://intl.cloud.tencent.com/product/ci?idx=1).
+COS is a distributed storage service for unstructured data and cannot support thumbnails on its own. For more information on thumbnails, see [Cloud Infinite](https://intl.cloud.tencent.com/product/ci).
 
 ### Does COS support transcoding video files?
 
@@ -92,21 +92,17 @@ COS is a distributed storage service for unstructured data and cannot support vi
 
 ### Does COS support auto decompression of uploaded files?
 
-COS is a distributed storage service for unstructured data and does not support file decompression; however, you can use the SCF service to decompress files. For more information, see [File Decompression](https://intl.cloud.tencent.com/document/product/436/35663) or [Using SCF to Decompress Zip Packages](https://intl.cloud.tencent.com/document/product/436/31709).
+COS is a distributed storage service for unstructured data and does not support file decompression on its own. To enable this feature, please use the integrated SCF service. For more information, see [File Decompression](https://intl.cloud.tencent.com/document/product/436/35663) or [Using SCF to Decompress Zip Packages](https://intl.cloud.tencent.com/document/product/436/31709).
 
 ### What are the specifications and limits of COS?
 
 For more information, see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
 
-### Which version of COS should I use, an earlier version or the current version?
-
-The implementation of earlier versions and that of the current version of COS vary greatly. The current version has more features than earlier versions, and earlier versions are not updated with the latest features. **We recommend that you use the current version** for a better experience. If you are using an earlier version, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to activate the current version.
-
-The current version comes with different APIs and SDK APIs than those in earlier versions. JSON APIs are used in earlier versions and XML APIs are used in the current version. JSON APIs have the same underlying architecture as XML APIs. Their data is interoperable and can be cross-used, but they are incompatible and have different domain names.
 
 ### How do I monitor the error code information?
 
-You can use [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) to get different types of HTTP error code messages. For more information, see [Monitoring and Alarms](https://intl.cloud.tencent.com/document/product/436/31649). For information on how to use cloud monitoring and obtain relevant data, see Cloud Monitoring [Console Guide](https://intl.cloud.tencent.com/document/product/248/13517).  
+You can use [Cloud Monitoring](https://console.cloud.tencent.com/monitor/product/COS) to get different types of HTTP error code messages. For more information, see [Monitoring and Alarm](https://intl.cloud.tencent.com/document/product/436/31649). For information on how to work with Cloud Monitoring and obtain relevant data, see Cloud Monitoring’s [Console Guide](https://intl.cloud.tencent.com/document/product/248) or [API Documentation](https://intl.cloud.tencent.com/document/product/248/13655).  
+
 
 ### How do I calculate the availability of COS?
 COS provides the following example of calculating the availability for your reference:
@@ -185,7 +181,7 @@ Unavailability event 2: The duration was November 20, 2018, 16:00 - 16:15, and t
 
 In this case:
 
-- Total duration: 30 days \* 24 hours/day \*60 minutes/hour=43,200 minutes.
+- Total duration of the service month: 30 days \* 24 hours/day \* 60 minutes/hour=43,200 minutes.
 - Total number of 5-minute periods: 43,200 minutes / 5 minutes = 8,640.
 - Total number of unavailable 5-minute periods: (15 + 15) minutes / 5 minutes = 6.
 - Sum of the 5-minute error rates: (100% + 99% + 98% + 100% + 98.67% + 93.33%) + (8640 - 6) \* 0% = 589%
@@ -197,3 +193,18 @@ The service availability for this month: **(1 - 589% / 8640) \* 100% = 99.93%**
 In this example, the service availability is 99.93%, which is lower than the standard 99.95% but higher than 99.9%. According to the indemnification standard, Tom is eligible for indemnification equivalent to 20% of the total monthly service fees, i.e., 20 USD.
 Tom only needs to submit a ticket to apply for indemnification within sixty (60) calendar days after the end of the service month, i.e., prior to January 29, 2019, and Tencent Cloud will indemnify Tom for his losses by issuing a voucher.
 
+### How do I disable COS or stop the billing of it?
+
+
+There is no one-click option for disabling COS. If you are not using COS for a long time, you may save storage costs by transitioning your data to ARCHIVE storage class. For the transition operation, see [Setting Lifecycle](https://intl.cloud.tencent.com/document/product/436/14605).
+
+If you decide to stop using COS, you can avoid any further billing by permanently deleting all of your COS data (including incomplete multipart uploads and object versions). You need not deregister your account lest your other Tencent Cloud services should be affected.
+
+>To delete your COS data and incomplete multipart uploads, see [Deleting Objects](https://intl.cloud.tencent.com/document/product/436/13323), and [Deleting Incomplete Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/31632).
+
+Before the complete deletion, consider the following:
+
+- Data deleted completely from COS cannot be recovered, so please make backups in time.
+- Check your billing cycle to avoid any arrears in your account. For more information, see [Billing Cycle](https://intl.cloud.tencent.com/document/product/436/16871).
+- If your account is in arrears (the balance is below 0), the COS service is suspended after 24 hours, regardless of whether your storage pack is within the effective period.
+- If your account is in arrears and COS service is suspended, the free tier for which your account is eligible won’t be available.

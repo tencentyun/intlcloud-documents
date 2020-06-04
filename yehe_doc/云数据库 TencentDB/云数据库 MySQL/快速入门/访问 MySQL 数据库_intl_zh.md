@@ -13,7 +13,7 @@
 
 下面示例分别介绍如何从 Windows 云服务器或 Linux 云服务器登录，以内外网两种不同的方式访问云数据库 MySQL。
 ## 从 Windows 云服务器访问
-1. 登录到 Windows 云服务器，请参见 <a href="https://intl.cloud.tencent.com/document/product/213/10516" target="_blank">快速配置 Windows 云服务器</a>。
+1. 登录到 Windows 云服务器，请参见 <a href="https://intl.cloud.tencent.com/document/product/213/10516" target="_blank">自定义配置 Windows 云服务器</a>。
 2. 下载一个标准的 SQL 客户端。
 >推荐您下载 MySQL Workbench，并根据您的系统来下载适配版本的安装程序，下载地址请参见 https://dev.mysql.com/downloads/workbench/。
 >
@@ -65,7 +65,7 @@ mysql -h hostname -P port -u username -p
     2. 在提示`Enter password：`后输入外网访问用户名对应的密码，如忘记密码可参见 [重置密码](https://intl.cloud.tencent.com/document/product/236/31901) 进行修改。
     本例中 hostname 为 59281c4exxx.myqcloud.com，外网端口号为15311。
 ![](https://main.qcloudimg.com/raw/16839344da3a588be93d814de224277a.png)
-4. 在`MySQL \[(none)]>`提示符下可以发送 SQL 语句到要执行的 MySQL 服务器，具体命令行请参见 [mysql Client Commands](https://dev.mysql.com/doc/refman/5.7/en/mysql-commands.html)。
+4. 在`MySQL [(none)]>`提示符下可以发送 SQL 语句到要执行的 MySQL 服务器，具体命令行请参见 [mysql Client Commands](https://dev.mysql.com/doc/refman/5.7/en/mysql-commands.html)。
 下图中以`show databases;`为例：
 ![](https://mc.qcloudimg.com/static/img/76b4346a84f7388ae263dc6c09220fc0/image.png)
 

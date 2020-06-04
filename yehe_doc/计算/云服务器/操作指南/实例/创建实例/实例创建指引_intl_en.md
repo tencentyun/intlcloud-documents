@@ -1,0 +1,4 @@
+This topic introduces several ways to create CVM instances and helps you understand basic operations to advanced customizations.
+- Creating CVM instances via CVM purchase page is mostly used. It allows you to flexibly select the configurations that meet your business requirements. For more information, see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
+- If you want to use your desirable operating system, application and other configurations, you can create and select the custom image for instances to improve efficiency. For more information, see [Creating Instances via Images](https://intl.cloud.tencent.com/document/product/213/36304).
+- If you want to purchase instances with same configurations as those of the current instance, you can directly create instances with same configurations. For more information, see [Purchasing with Same Configurations](https://intl.cloud.tencent.com/document/product/213/36303).

@@ -10,7 +10,7 @@ The group system is an instant messaging system that allows multiple participant
 - On the web, audio-video chat rooms and broadcasting chat rooms allow users to receive messages as guests without logging in.
 
 >
->- While audio-video chat rooms (AVChatRoom) and broadcasting chat rooms (BChatRoom) support unlimited group members, if a spike in group members is expected within a short time (in scenarios such as large online events where members in a single group exceed 50,000), contact [Tencent Cloud customer service](https://intl.cloud.tencent.com/support) or sales representatives in advance and report service resource usage by providing the SDKAppID and the scheduled event time.
+>- While audio-video chat rooms (AVChatRoom) and broadcasting chat rooms (BChatRoom) support unlimited group members, if a spike in group members is expected within a short time (in scenarios such as large online events where members in a single group exceed 50,000), contact Tencent Cloud customer service or sales representatives in advance and report service resource usage by providing the SDKAppID and the scheduled event time.
 >- Currently, message roaming is only available to private groups, public groups, and chat rooms, with messages stored for 7 days by default. If you need a longer storage period, change the message roaming period value in the [console](https://console.cloud.tencent.com/im). Increasing the message roaming period is a value-added service. For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 IM’s group system is also highly customizable, allowing you to use:
@@ -39,16 +39,16 @@ By default, the group system supports five group types:
 | Group Type | Applicable Scenario |
 |--------|---------|
 | Private group (Private) | Suitable for more private chat scenarios, where the group profile is not made public and a user can join the group only by being invited by a group member. Private groups are similar to the groups in WeChat. |
-| Public group (Public) | Suitable for public chat scenarios. Public groups have a strict management and admission mechanism. |
+| Public group (Public) | Suitable for public chat scenarios. Public groups have a strict management and admission mechanism. Public groups are similar to QQ groups. |
 | Chat room (ChatRoom) | Has a less stringent management mechanism and allows room members to join and exit the room freely. |
-| Audio-video chat room (AVChatRoom) | Suitable for interactive live broadcasting scenarios. Similar to an ordinary chat room, it allows room members to join and exit the room freely, but does not impose a limit on the number of room members. It also allows users to receive messages as guests without logging in. |
+| Audio-and-video chat room (AVChatRoom) | Suitable for interactive live broadcasting scenarios. Similar to an ordinary chat room, it allows room members to join and exit the room freely, but does not impose a limit on the number of room members. It also allows users to receive messages as guests without logging in. |
 | Broadcasting chat room (BChatRoom) | Suitable for scenarios where messages are pushed to all online users, such as megaphone messages in a live broadcasting system. |
 
 These group types are suitable for different scenarios, and therefore they support slightly different management methods, as described below:
 
 ### Differences in group operations
 
-| Operation | Private Group | Public Group/Chat Room | Audio-Video Chat Room | Broadcasting Chat Room |
+| Operation | Private Group | Public Group/Chat Room | Audio-and-Video Chat Room | Broadcasting Chat Room |
 |--- |-- |-- |-- |-- |
 | Fuzzy search | Not supported | Not supported | Not supported | Not supported |
 | Exact search | Not supported | Supported | Supported | Not supported |
@@ -65,7 +65,7 @@ These group types are suitable for different scenarios, and therefore they suppo
 
 ### Differences in group member operations
 
-| Operation | Private Group | Public Group/Chat Room | Audio-Video Chat Room/Broadcasting Chat Room |
+| Operation | Private Group | Public Group/Chat Room | Audio-and-Video Chat Room/Broadcasting Chat Room |
 |--- |--- |--- |--- |
 | Apply to join a group | Not allowed | For public groups, the application must be approved by the admin. For chat rooms, the applicant can join directly without admin approval. | The applicant can join directly without admin approval. |
 | Invite non-members to a group | 1. Any group member can invite non-members and add them to the group without the prior confirmation of invitees.<br>2. Add new members when creating a group. |1. By default, only the app admin can invite non-members to the group.<br>2. Add new members when creating a group. | 1. No one is allowed to invite non-members to the group, including the app admin.<br>2. No one is allowed to add new members when creating the group. |
@@ -74,13 +74,13 @@ These group types are suitable for different scenarios, and therefore they suppo
 | Remove a group member | The group owner and app admin can remove group members. | The group admin, group owner, and app admin can remove group members. | No one (including the app admin) is allowed to remove group members. |
 | Periodically remove offline group members | Disabled by default | Disabled by default | Not supported |
 
->For audio-video chat rooms and broadcasting chat rooms, only the first 300 group members can be set as admins.
+> For audio-video chat rooms and broadcasting chat rooms, only the first 300 group members can be set as admins.
 
 
 
 ### Differences in group limits
 
-| Item | Private Group | Public Group | Chat Room | Audio-Video Chat Room | Broadcasting Chat Room |
+| Item | Private Group | Public Group | Chat Room | Audio-and-Video Chat Room | Broadcasting Chat Room |
 |--- |--- |--- |--- |--- |--- |
 | Maximum number of members | 200 | 2,000 | 6,000 | Unlimited | Unlimited |
 | Maximum daily net increase in group quantity | 10,000 | 10,000 | 10,000 | 10,000 | 5 |
@@ -88,7 +88,7 @@ These group types are suitable for different scenarios, and therefore they suppo
 
 >
 >- For all group types, the total number of groups that can be created is unlimited. However, if you create more than 100,000 groups, you will need to pay certain fees. For more information, see [Fees for usage exceeding the free quota -> Peak group count](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A5.97.E9.A4.90.E5.A4.96.E8.B6.85.E9.87.8F.E8.B4.B9.E7.94.A8). We recommend that you disband the groups that are no longer needed in a timely manner.
->- For private groups, public groups, and chat rooms, the actual group member limit depends on purchased items. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). For example, if you purchased the Pro Edition, then any of all three group types can have up to 200 members. However, if you purchased an extra **increase member limit to 60,000** item, then the maximum numbers of members become 200, 2,000, and 6,000 respectively.
+>- For private groups, public groups, and chat rooms, the actual group member limit depends on purchased items. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). For example, if you purchased the Pro Edition, then any of all three group types can have up to 200 members. However, if you purchased an extra **increase member limit to 6,000** item, then the maximum numbers of members become 200, 2,000, and 6,000 respectively.
 >- The net increase in group quantity is obtained by subtracting disbanded groups from created groups.
 >- The maximum daily net increase in group quantity of 10,000 refers to the total net increase across all group types.
 
@@ -96,7 +96,7 @@ These group types are suitable for different scenarios, and therefore they suppo
 
 ### Differences in message management
 
-| Item | Private Group | Public Group | Chat Room | Audio-Video Chat Room | Broadcasting Chat Room |
+| Item | Private Group | Public Group | Chat Room | Audio-and-Video Chat Room | Broadcasting Chat Room |
 |--- |--- |--- |--- |--- |--- |
 | Who can send messages | App admin and all group members | App admin and all group members | App admin and all group members | Any account in the app that has been imported into IM | App admin |
 | Group members can view messages from before they joined the group | No | No | Yes | No | No |
@@ -109,7 +109,7 @@ These group types are suitable for different scenarios, and therefore they suppo
 | Message roaming is supported | Yes | Yes | Yes | No | No |
 
 >
->- A group that requires activation is inactive before the group owner sends a message and is invisible to all group members except the group owner. A group that does not require activation is visible to all group members once it is created.
+>- For a group that requires activation, before the group owner sends a message, the group is inactive and invisible to all group members except the group owner. A group that does not require activation is visible to all group members once it is created.
 >- Muted group members cannot send group chat messages. In a broadcasting chat room, only the app admin is allowed to send messages, and therefore muting is not supported.
 >- Currently, offline push is available only on Android (Android offline push) and iOS (APNs push) platforms.
 >- Currently, message roaming is only available to private groups, public groups, and chat rooms, with messages stored for 7 days by default. If you need a longer storage period, change the message roaming period value in the [console](https://console.cloud.tencent.com/im). Increasing the message roaming period is a value-added service. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
@@ -117,12 +117,12 @@ These group types are suitable for different scenarios, and therefore they suppo
 
 ### Differences in batch import and automatic repossession
 
-| Item | Private Group/Public Group/Chat Room | Audio-Video Chat Room/Broadcasting Chat Room |
+| Item | Private Group/Public Group/Chat Room | Audio-and-Video Chat Room/Broadcasting Chat Room |
 |--- |--- |--- |
 | Importing groups, group members, and group messages is allowed | Yes. It is allowed when historical groups are migrated from a third-party platform to IM. | No. Only existing groups, group members, and group messages can be used. |
 | Time before a group is automatically repossessed (in seconds) | The backend does not repossess groups, unless the group owner disbands the group or all members quit the group. | The backend does not repossess groups, unless the group owner disbands the group or all members quit the group. |
 
->To enable group repossession, submit a ticket based on the ticket template. After configuration, inactive groups will be cleaned up by group type. An inactive group is a group in which no messages are sent and no member changes occur.
+> To enable group repossession, submit a ticket based on ticket templates. After configuration, inactive groups will be removed. An inactive group is one in which no message has been sent and no member change has occurred.
 
 ## Group Data Structure
 ### Basic group information
@@ -132,8 +132,8 @@ These group types are suitable for different scenarios, and therefore they suppo
 | GroupId | String | Unique identifier of the group | Read-only<br>The ID of the group, which must be unique in the app. The prefix is @TGS#, and custom group IDs can also be used in the app. |
 | Type | String | Group type | Read-only<br>Five group types are supported by default: private group, public group, chat room, audio-and-video chat room, and broadcasting chat room. For more information, see the preceding introduction to group types. |
 | Name | String | Name of the group | This can be read and written with a length up to 30 bytes, but cannot be adjusted. |
-| Introduction | String | Introduction of the group | This can be read and written with a length up to 120 bytes, but cannot be adjusted. |
-| Notification | String | Group announcement | This can be read and written with a length up to 150 bytes, but cannot be adjusted. |
+| Introduction | String | Introduction of the group | This can be read and written with a length up to 240 bytes, but cannot be adjusted. |
+| Notification | String | Group announcement | This can be read and written with a length up to 300 bytes, but cannot be adjusted. |
 | FaceUrl | String | URL of the group’s profile photo | This can be read and written with a length up to 100 bytes, but cannot be adjusted. |
 | Owner_Account | String | ID of the group owner | Read-only |
 | CreateTime | Integer | Creation time of the group | Read-only |
@@ -145,9 +145,9 @@ These group types are suitable for different scenarios, and therefore they suppo
 | MaxMemberNum | Integer | Maximum number of members | - |
 | ApplyJoinOption | String | Membership application option | Three options are available. DisableApply: disallow any application. NeedPermission: group owner or admin approval is required. FreeAccess: can join the group freely without prior approval. |
 
->The permissions to modify the group name, introduction, announcement, and profile photo URL are described as follows. In a private group, any member can modify them. In a public group or chat room, the group admins, group owner, and app admin are authorized to modify them. In a live broadcasting chat room, the group owner and app admin are authorized to modify them. In a broadcasting chat room, only the app admin is authorized to modify them.
+> The permissions to modify the group name, introduction, announcement, and profile photo URL are described as follows. In a private group, any member can modify them. In a public group or chat room, the group admins, group owner, and app admin are authorized to modify them. In a live broadcasting chat room, the group owner and app admin are authorized to modify them. In a broadcasting chat room, only the app admin is authorized to modify them.
 
-### Group member profile
+### Group member profiles
 
 | Field Name | Type | Description | Notes |
 |--- |--- |--- |--- |
@@ -161,13 +161,13 @@ These group types are suitable for different scenarios, and therefore they suppo
 
 ## Customizing Group Types
 
-If the [five group types](https://intl.cloud.tencent.com/document/product/1047/33529) provided by IM cannot meet your actual needs, you can prepare a ticket based on the ticket template and [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to modify existing group types or add custom group types.
+In practice, if you need more than the [five group types](https://intl.cloud.tencent.com/document/product/1047/33529) provided by IM, you can prepare related information based on ticket templates and [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to modify existing group types or create new group types.
 For example, you can create a group that is used in an office environment. This group is similar to a public group, but every member has the highest level of management permissions and can view messages from before they joined the group. In this case, you can:
 - Choose the public group type and [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to enable the **view historical messages before joining** and **allow ordinary members to remove members** options.
 - [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for a new group type named OAGroup. Specify public group (Public) as the reference type and enable the **view historical messages before joining** and **allow ordinary members to remove members** options.  
 
->When creating a new group type, you must specify a default group type as a reference. Note that the broadcasting chat room (BChatRoom) type cannot be specified as the reference.
->After configuration, the new group type will have new features that are specified in the ticket, and the same features as the referenced group type.
+> When creating a new group type, you must specify a default group type as a reference. Note that the broadcasting chat room (BChatRoom) type cannot be specified as the reference.
+> After configuration, the new group type will have new features that are specified in the ticket, and the same features as the referenced group type.
 
 ## Customizing Group IDs
 

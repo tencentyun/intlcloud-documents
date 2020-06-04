@@ -1,17 +1,17 @@
 
-## VPN Gateway Bandwidth Limit
-> The VPN gateway for CCN does not support VPN gateway bandwidth limit for now.
+## VPN gateway bandwidth limit
+> Currently, VPN gateway for CCN does not support configuring bandwidth limit.
 >
-- VPN gateway bandwidth limit provides the**monitoring** and **control** capabilities at **IP-gateway** granularity. The refined gateway traffic visualization enables network OPS personnel to get a clear picture of the traffic in the gateway. In addition, the speed limiting capability at IP-gateway granularity helps to block abnormal traffic.
+- VPN gateway bandwidth limit provides **monitoring** and **control** capabilities at **IP-gateway** granularity. The visualization helps network OPS personnel get a clear picture of the gateway traffic. The speed limiting capability at IP-gateway granularity helps block unhealthy traffic.
 The gateway bandwidth limit has the following advantages:
- - With the accurate gateway troubleshooting, it minimizes network downtime. It also analyzes the source IP address and its key metrics by using the real-time traffic query and the TOP N ranking feature, to rapidly locate abnormal traffic.
- - With the **monitoring** and **control** capabilities at IP-gateway granularity and by using minute-level network traffic query, it identifies abnormal traffic that maliciously consumes the bandwidth in real time, and sets bandwidth limits at IP-gateway granularity to ensure the stable operation of core businesses.
- - With the full-time and full-traffic gateway traffic analysis capabilities, it helps minimize cloud network costs. By means of QoS, it limits the bandwidth of non-key businesses to minimize costs on tight network budgets.
-- For example, the gateway traffic of an enterprise surges in an early morning. With intelligent gateway bandwidth limit, the OPS personnel can trace data to find which IP addresses caused this traffic surge at that time, so as to rapidly locate its source. In addition, the gateway bandwidth limit controls bandwidth at IP-gateway granularity, restricts the bandwidth from an IP address to the gateway, and blocks abnormal traffic to safeguard key businesses.
+ - It can accurately troubleshoot gateway exceptions to minimize network downtime. Using real-time traffic query and Top-N ranking features, it can analyze the source IP and its key metrics to quickly locate unhealthy traffic.
+ - With **monitoring** and **control** capabilities at IP-gateway granularity as well as minute-level network traffic queries, it can efficiently identify unhealthy traffic that consumes the bandwidth. The bandwidth limit at IP-gateway granularity ensures the stable operation of key businesses.
+ - With gateway traffic analysis capability for all traffic at all times, it helps minimize network costs. By means of QoS, it can limit the bandwidth of non-key businesses to reduce costs.
+- For example, the gateway traffic of an enterprise surges on one morning. With intelligent gateway bandwidth limit, the OPS personnel can trace the IP that caused this surge based on a point in time. The gateway bandwidth limit features IP-gateway granularity to control the bandwidth from an IP to the gateway, blocking unhealthy traffic to protect key businesses.
 
 ## Traffic Alarms
-You can customize traffic alarms for VPN connections. When a metric value exceeds its threshold, alarm messages are automatically sent through emails and SMS messages to give you an early warning. Monitoring and alarming are free of charge, which can help you to quickly locate problems.
-- For more information about VPN gateway metrics, see [VPN Gateway Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/12226)
-- For more information about VPN tunnel metrics, see [VPN Tunnel Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/12225)
-- For more information about how to set alarm policies, see [Setting Alarms](https://intl.cloud.tencent.com/document/product/1037/32699).
+You can customize traffic alarms for VPN connections. When a metric value exceeds its threshold, alarm notifications are sent to you automatically via emails and SMS message. Monitoring and alarm services are free of charge, helping you quickly locate problems.
+- For more information about VPN gateway metrics, see [VPN Gateway Monitor Metrics](https://intl.cloud.tencent.com/document/product/248/12226)
+- For more information about VPN tunnel metrics, see [VPN Tunnel Monitor Metrics](https://intl.cloud.tencent.com/document/product/248/12225)
+- For more information about how to configure alarm policies, see [Setting Alarms](https://intl.cloud.tencent.com/document/product/1037/32699).
 

@@ -23,7 +23,7 @@
  硬件故障以及其它问题请  [提交工单](https://console.cloud.tencent.com/workorder/category) 。
 
 ### 针对 Linux 云服务器
-登录 Windows 服务器后，执行以下操作步骤。
+登录 Linux 服务器后，执行以下操作步骤。
 
 #### 磁盘空间已满
 
@@ -33,7 +33,7 @@ df -m
 ```
 2.若磁盘使用达到100%，进入已满目录，执行以下命令，查看文件大小。
 ```plaintext
-du -f
+du -h
 ```
 3.根据实际情况删除多余的文件释放磁盘空间，可执行以下命令删除多余的文件（file_name 需替换为文件名，非第三方文件不建议删除）。
  ```plaintext

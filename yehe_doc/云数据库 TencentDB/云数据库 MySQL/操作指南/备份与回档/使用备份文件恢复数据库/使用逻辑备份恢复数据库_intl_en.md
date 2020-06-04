@@ -1,22 +1,22 @@
 ## Operation Scenarios
->To save storage capacity, both physical and logical backups in TencentDB for MySQL will be compressed and packed. Specifically, a backup file is compressed with qpress first and then packed with xbstream offered by Percona.
+>To save storage capacity, physical and logical backups in TencentDB for MySQL will be compressed with qpress and then packed with xbstream offered by Percona.
 >
-The open-source software tool Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a logical backup file of a TencentDB for MySQL instance to a CVM-based self-created database.
+The open-source Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a logical backup file of TencentDB for MySQL instance to a self-built database on CVM.
 - XtraBackup only supports Linux but not Windows.
 - For more information on how to restore data on Windows, please see [Database Rollback](https://intl.cloud.tencent.com/document/product/236/7276), [Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464), and [Migrating Data Through DTS](https://intl.cloud.tencent.com/document/product/571/34103).
 
 ## Prerequisites
 - Download and install XtraBackup.
-  XtraBackup can be downloaded at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Please select Percona XtraBackup 2.4.6 or higher. For more information on how to install the tool, please see [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
+  XtraBackup can be downloaded at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Please select Percona XtraBackup 2.4.6 or higher. For more information on installation, please see [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
 - Supported instance version: TencentDB for MySQL 5.5, 5.6, and 5.7 High-Availability Edition and Finance Edition.
 
 ## Directions
 ### Step 1. Download the backup file
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
-2. On the instance management page, click **Backup and Restore** > **Data Backup List**, select the backup to download, and then click **Download** in the "Operation" column.
-3. You are recommended to copy the download address in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command for download over the private network at a higher speed.
+2. On the instance management page, click **Backup and Restore** > **Data Backup List**, select the backup file to download, and then click **Download** in the "Operation" column.
+3. We recommend that you copy the download address in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command to download over the private network for higher speed.
 >
->- You can also click **Download** to download it directly, which takes more time though.
+>- You can also click **Download** to download it directly, which may take longer.
 >- `wget` command format: wget -c 'backup file download address' -O custom filename.xb
 >
 Example:
@@ -39,7 +39,7 @@ The unpacking result is as shown below:
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->If an error is displayed for the `wget` download operation, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download the qpress locally, and then upload it to the Linux CVM instance. For more information, please see [Uploading Files via SCP](https://intl.cloud.tencent.com/document/product/213/2133).
+>If an error is displayed during the `wget` download, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download qpress locally and upload it to the Linux CVM instance. For more information, please see [Upload Files via SCP](https://intl.cloud.tencent.com/document/product/213/2133).
 2. Extract the qpress binary files by running the following command:
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
@@ -60,5 +60,5 @@ Import the .sql file into the target database by running the following command:
 mysql -uroot -P3306 -h127.0.0.1 -p < cdb-jp0zua5k_backup_20191202182218.sql
 ```
 >
->- Importing into a local MySQL instance with port 3306 is used as an example in this document. You can replace it according to actual circumstances.
->- Replace `cdb-jp0zua5k_backup_20191202182218.sql` with the .sql file actually extracted by qpress.
+>- This document takes importing into a local MySQL instance with port 3306 as an example. You can replace it as needed.
+>- Replace `cdb-jp0zua5k_backup_20191202182218.sql` with the .sql file extracted by qpress.

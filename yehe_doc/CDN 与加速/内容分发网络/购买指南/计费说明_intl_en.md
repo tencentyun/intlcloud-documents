@@ -47,7 +47,7 @@ If your monthly CDN service fees exceed or are expected to exceed USD 20,000, yo
 ### Bill-by-bandwidth
 
 
-CDN affers a region-specific tiered pricing model based on daily peak bandwidth. The pricing tiers are as shown below:
+CDN offers a region-specific tiered pricing model based on daily peak bandwidth. The pricing tiers are as shown below:
 
 | Bandwidth Tier (USD/Mbps/Day) | Mainland China - CN | North America - NA | Europe - EU | Asia Pacific Region 1 - AP1 | Asia Pacific Region 2 - AP2 | Asia Pacific Region 3 - AP3 | Middle East - ME | Africa - AA | South America - SA |
 | :----------------------- | ------------- | :-------- | :-------- | :------------ | :------------ | :------------ | :-------- | :-------- | :-------- |

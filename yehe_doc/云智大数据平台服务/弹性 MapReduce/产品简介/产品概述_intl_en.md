@@ -10,4 +10,4 @@ EMR seamlessly incorporates the Tencent Cloud Object Storage (COS) service, allo
 
 EMR has five node types: master, core, task, router, and common nodes. For the purposes of each type, please see [Node Type Description](https://intl.cloud.tencent.com/document/product/1026/31094).
 
-Currently, EMR supports multiple resource specifications, including Standard, Standard Network Optimized, MEM Optimized, High IO, Computing, Computing Network Enhanced, and Big Data models.
+Currently, EMR supports multiple resource specifications, including Standard, Standard Network Optimized, MEM Optimized, High IO, Computing, Computing Network Enhanced, and Big Data models. If you wan to deploy a cluster on CPM, please contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).

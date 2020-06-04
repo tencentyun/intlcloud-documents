@@ -1,16 +1,5 @@
 ## 效果展示
 
-<table>
-<tr>
-   <th>主动呼叫</th>
-   <th>呼叫接听</th>
- </tr>
-<tr>
-<td><img src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/audiocall/call.gif"/></td>
-<td><img src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/audiocall/recv.gif"/></td>
-</tr>
-</table>
-
 如需快速实现语音通话功能，您可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 TRTCAudioCall 组件并实现自定义 UI 界面。
 
 <span id="ui"> </span>
@@ -36,7 +25,7 @@
 3. 设置 `GenerateTestUserSig.h` 文件中的相关参数：
   <ul><li>SDKAPPID：默认为占位符，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为占位符，请设置为实际的密钥信息。</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
+
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -176,7 +165,7 @@ TRTCAudioCall.shared.destroy()
 5. 如果需要离开当前多人通话可以调用 `hangup()` 方法。
 6. 如果通话中有用户中途加入或离开，那么其他用户均会接收到 `onUserEnter()` 或  `onUserLeave()` 回调。
 
->接口 `groupCall()` 中的 `groupID` 参数是 IM SDK 中的群组 ID，如果填写该参数，那么通话请求消息是通过群消息系统广播出去的，这种消息广播方式比较简单可靠。如果不填写，那么 `TRTCVideoCall` 组件会采用单发消息逐一通知。
+>接口 `groupCall()` 中的 `groupID` 参数是 IM SDK 中的群组 ID，如果填写该参数，那么通话请求消息是通过群消息系统广播出去的，这种消息广播方式比较简单可靠。如果不填写，那么 `TRTCAudioCall` 组件会采用单发消息逐一通知。
 
 ```
 // 前面省略...

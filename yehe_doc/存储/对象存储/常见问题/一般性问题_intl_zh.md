@@ -10,7 +10,7 @@
 
 [对象存储](https://intl.cloud.tencent.com/document/product/436) 无目录层次结构、无数据格式限制，可存储任意数量的数据，存储桶空间无容量上限，无需分区管理。数据支持高可用架构部署，设计保障数据最终一致性，不支持文件锁等特性。API 使用 HTTP/HTTPS 的协议访问，并提供 SDK 和工具等方式与业务集成，上传到 COS 的对象可通过 URL 地址直接访问或下载。
 
-[文件存储](https://intl.cloud.tencent.com/document/product/582 ) 使用常用的网络文件传输协议，可创建文件系统并实现大规模扩展，需挂载在云服务器中使用。文件存储可为网站、在线发行、存档各种应用存储。 计算吞吐量高，具有极高的可用性和持久性，也适用于并发较高或需要共享存储的需求。
+[文件存储](https://intl.cloud.tencent.com/document/product/582) 使用常用的网络文件传输协议，可创建文件系统并实现大规模扩展，需挂载在云服务器中使用。文件存储可为网站、在线发行、存档各种应用存储。 计算吞吐量高，具有极高的可用性和持久性，也适用于并发较高或需要共享存储的需求。
 
 ### 对象存储和云硬盘的区别是什么？
 
@@ -80,11 +80,11 @@ COS 控制台集成了数据万象，可以对图片进行缩放、裁剪、添�
 
 ### COS 支持图片压缩吗？
 
-对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持图片压缩。图片压缩处理请参见 [数据万象 CI](https://intl.cloud.tencent.com/product/ci?idx=1) 。
+对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持图片压缩。图片压缩处理请参见 [数据万象 CI](https://intl.cloud.tencent.com/product/ci) 。
 
 ### COS 支持提供缩略图功能吗？
 
-对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持图片压缩。缩略图功能请参见 [数据万象 CI](https://intl.cloud.tencent.com/product/ci?idx=1) 。
+对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持图片压缩。缩略图功能请参见 [数据万象 CI](https://intl.cloud.tencent.com/product/ci) 。
 
 ### COS 能对视频文件转码吗？
 
@@ -98,15 +98,11 @@ COS 控制台集成了数据万象，可以对图片进行缩放、裁剪、添�
 
 详情请参见 [规格与限制](https://intl.cloud.tencent.com/document/product/436/14518) 文档。
 
-### COS 存在历史版本和当前版本，应当使用哪一个？
-
-COS 的历史版本和当前版本在实现上存在较大差异，相较于历史版本，当前版本具备更丰富的功能，且历史版本将不再新增特性，**推荐您使用当前版本** 以获得更丰富的体验。如您为历史版本的用户，可 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们为您开通当前版本。
-
-当前版本和历史版本所使用的 API 和 SDK 接口均存在差异，历史版本使用 JSON API，当前版本使用 XML API，两种 API 底层架构相同，数据互通，可以交叉使用，但是接口不兼容，域名不一致。
 
 ### 如何监控错误码信息？
 
-您可以使用 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 获取不同类型的 HTTP 返回码信息，详细内容可参见 [监控与报警](https://intl.cloud.tencent.com/document/product/436/31649) 文档。有关云监控的使用和相关数据获取方式，可参见云监控的 [控制台指南](https://intl.cloud.tencent.com/document/product/248/13517) 。  
+您可以使用 [云监控](https://console.cloud.tencent.com/monitor/product/COS) 获取不同类型的 HTTP 返回码信息，详细内容可参见 [监控与报警](https://intl.cloud.tencent.com/document/product/436/31649) 文档。有关云监控的使用和相关数据获取方式，可参见云监控的 [控制台指南](https://intl.cloud.tencent.com/document/product/248/6212) 或 [API 文档](https://intl.cloud.tencent.com/document/product/248/13655)。  
+
 
 ### COS 可用性如何计算？
 COS 提供以下可用性计算示例，供您参考：
@@ -197,3 +193,18 @@ COS 提供以下可用性计算示例，供您参考：
 该案例中，服务可用性为99.93%，低于99.95%的可用性标准但高于99.9%，根据赔偿标准，腾讯云对象存储服务需赔偿用户月度总服务费的20%，即20美元。
 小明只需在服务月度结束后六十（60）个自然日内，即2019年1月29日前提起工单申请赔偿，腾讯云将以发放代金券的形式向小明赔偿相应损失。
 
+### 如何停用 COS 服务或停止计费？
+
+
+COS 无一键停用服务的功能。若您长时间不使用 COS 服务，您可以选择将您的数据沉降到归档存储类型，这样可为您节省存储成本。沉降操作可参见 [设置生命周期](https://intl.cloud.tencent.com/document/product/436/14605)。
+
+若您不再使用 COS 服务，您可以将 COS 中的所有数据（包括未完成上传的文件碎片、历史版本对象等）完全删除以避免继续计费，无需注销账号（如有使用其他腾讯云服务，注销账号会受到影响）。
+
+>删除 COS 中的数据和未完成上传的文件碎片，请参见 [删除对象](https://intl.cloud.tencent.com/document/product/436/13323) 和 [删除碎片](https://intl.cloud.tencent.com/document/product/436/31632)。
+
+在开始完全删除操作前，您需要注意以下事项：
+
+- 数据被完全删除后，将无法恢复，请及时进行数据备份。
+- 您需要留意费用的结算周期，避免账号产生欠费，详见 [ 计费周期](https://intl.cloud.tencent.com/document/product/436/16871)。
+- 当您账户余额不足发生欠费（账户余额小于0）时，无论是否处于资源包生效期，COS 都将在欠费24小时后停止服务。
+- 若账号享有免费额度，欠费停服后，将不可使用。

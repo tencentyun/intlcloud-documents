@@ -24,5 +24,5 @@ It leverages machine learning and big data technologies to replicate the best in
  - DBbrain enables proactive failure location and intelligent optimization, which greatly reduce the threshold of database OPS management.
 
 
-![](https://main.qcloudimg.com/raw/70ae85a7814b5635b10b5eb2344e1f15.png)
+![](https://main.qcloudimg.com/raw/ca1677819b55bdb47a55b958f5c8b636.png)
 

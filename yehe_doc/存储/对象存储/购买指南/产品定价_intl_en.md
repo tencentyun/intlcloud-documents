@@ -230,7 +230,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
    <tr>
       <td rowspan="3">Silicon Valley</td>
       <td>Standard storage</td>
-      <td>0.0188</td>
+      <td>0.024</td>
       <td>0.002</td>
       <td>0</td>
       <td rowspan="2">0.07</td>
@@ -255,7 +255,7 @@ For more information on COS regions, please see [Regions and Access Domain Names
    <tr>
       <td rowspan="3">Virginia</td>
       <td>Standard storage</td>
-      <td>0.0181</td>
+      <td>0.02</td>
       <td>0.002</td>
       <td>0</td>
       <td rowspan="2">0.07</td>

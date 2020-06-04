@@ -138,8 +138,8 @@ Definitions:
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ----------------------------------------------------------- | ------ | --------| ----- |  ---- |	 ---- |
-| [Elastic MapReduce (EMR)](https://intl.cloud.tencent.com/document/product/1026)   | Operation level | &#10003;  | -   |  &#10003;  |	 [CAM Guide](https://intl.cloud.tencent.com/document/product/1026/31100) |
-| [Elasticsearch Service (ES)](https://intl.cloud.tencent.com/document/product/845)  | Operation level | &#10003; | -   |  -  | 	[CAM Guide](https://intl.cloud.tencent.com/document/product/845/19550) |
+| [Elastic MapReduce (EMR)](https://intl.cloud.tencent.com/document/product/1026)   | Resource level | &#10003;  | -   |  &#10003;  |	 [CAM Guide](https://intl.cloud.tencent.com/document/product/1026/31100) |
+| [Elasticsearch Service (ES)](https://intl.cloud.tencent.com/document/product/845)  | Resource level | &#10003; | -   |  -  | 	[CAM Guide](https://intl.cloud.tencent.com/document/product/845/19550) |
 
 ## Image Recognition
 

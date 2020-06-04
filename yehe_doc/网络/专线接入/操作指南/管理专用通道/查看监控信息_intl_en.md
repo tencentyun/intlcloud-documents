@@ -1,7 +1,8 @@
-You can query the monitoring information of dedicated tunnels (including the outbound bandwidth, inbound bandwidth, outbound packets, and inbound packets) in the Tencent Cloud console by completing these steps:
-1. Log in to the [Direct Connect](https://console.cloud.tencent.com/vpc/dc) console.
-2. In the left sidebar, click **Dedicated Tunnels** to go to the management page.
-3. Locate the dedicated tunnel to query and click the **Monitoring** icon.
+You can query the monitoring information (outbound and inbound network bandwidth, outbound packets, and inbound packets) of dedicated tunnels in the Tencent Cloud Console in the following steps:
+1. Log in to the [Direct Connect](https://console.cloud.tencent.com/vpc/dc) Console.
+2. Click **Dedicated Tunnel** on the left sidebar to enter the management page.
+3. Find the target dedicated tunnel in the list and click the **Monitor** icon.
+![](https://main.qcloudimg.com/raw/c100cc61dcd8ed0a59bd317275791822.png)
 
-You can also view monitoring information through the API. For more information, see [APIs](https://intl.cloud.tencent.com/document/product/216/18404).
+You can also use an API to view the monitoring information. For more information, please see [Direct Connect - Dedicated Tunnel Monitoring API](https://intl.cloud.tencent.com/document/product/248/10995).
 

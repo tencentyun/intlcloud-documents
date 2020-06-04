@@ -4,13 +4,13 @@
 >
 开源软件 Percona Xtrabackup 可以用于对数据库进行备份恢复，本文为您介绍使用 XtraBackup 工具，将 MySQL 物理备份文件恢复至其他主机上的自建数据库。
 - XtraBackup 只支持 Linux 平台，不支持 Windows 平台。
-- Windows 平台恢复数据请参考 [回档数据库](https://intl.cloud.tencent.com/document/product/236/7276)、[命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)、[通过 DTS 迁移数据](https://intl.cloud.tencent.com/document/product/571/34103)。
+- Windows 平台恢复数据请参考 [命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)。
 
 
 ## 前提条件
 - 下载并安装 XtraBackup 工具。
 下载地址请参见 [Percona XtraBackup 官网](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)，请选择 Percona XtraBackup 2.4.6 及以上的版本，安装介绍请参见 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)。
-- 支持的实例版本：MySQL 5.5、5.6、5.7 高可用版。
+- 支持的实例版本：MySQL 5.5、5.6、5.7 高可用版和金融版。
 - 启用数据加密功能的实例，不支持使用物理备份恢复数据库。
 
 ## 操作步骤
@@ -108,3 +108,5 @@ mysql  -uroot
 ```
 ![](https://main.qcloudimg.com/raw/c95419569318a928c0f71978fbb8c6ad.png)
 
+## 备份相关问题
+请参见 [备份常见问题](https://intl.cloud.tencent.com/document/product/236/9036) 和 [备份失败原因](https://intl.cloud.tencent.com/document/product/236/34394)。
