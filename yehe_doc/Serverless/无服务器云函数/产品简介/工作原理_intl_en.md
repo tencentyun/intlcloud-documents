@@ -13,7 +13,7 @@ The significance of the container reuse mechanism lies in:
 
 ## Temporary Disk Space
 
-Each function has a temporary disk space of 512 MB (`/tmp`) during execution. You can perform certain read and write operations on the space in the execution code or create subdirectories, but this part of data may *not* be retained after function execution is completed. Therefore, if you need to persistently store the data generated during execution, please use COS or external persistent storage services such as Redis/Memcached.
+Each function has a temporary disk space of 512 MB (`/tmp`) during execution. You can perform certain read and write operations on the space in the execution code or create subdirectories, but this part of data may **not** be retained after function execution is completed. Therefore, if you need to persistently store the data generated during execution, please use COS or external persistent storage services such as Redis/Memcached.
 
 ## Invocation Types
 
