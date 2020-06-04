@@ -16,7 +16,7 @@ After renewal, the remaining available time of the original certificate and an e
 ## Certificate Renewal Procedure
 
 ### 1. Going to the certificate renewal page
-1. A quick renewal feature will be enabled 3 months before your certificate expires. On the **Certificate Management** page of the [SSL Certificate Service](https://console.cloud.tencent.com/ssl) console, click **Quick Renewal** in the **Operation** column of the certificate you want to renew.
+1. A quick renewal feature will be **enabled 3 months before your certificate expires**. On the **Certificate Management** page of the [SSL Certificate Service](https://console.cloud.tencent.com/ssl) console, click **Quick Renewal** in the **Operation** column of the certificate you want to renew.
 2. On the pop-up window, confirm the information and click **Renew Now** to enter the renewal page.
 
 ### 2. Confirming the renewal information and make the payment.
