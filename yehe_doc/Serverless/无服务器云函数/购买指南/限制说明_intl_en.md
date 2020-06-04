@@ -7,7 +7,7 @@ The quota limits for a user account are as follows:
 
 | Item | Default Quota Limit |
 | --- | --- |
-| Maximum number of functions per region | 50 |
+|Maximum number of functions in each namespace per region | 50 |
 | Maximum number of concurrent executions per function | 300 |
 | Maximum number of triggers per function | 10 |
 | Maximum number of same-type triggers per function | 10 |
