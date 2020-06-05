@@ -99,6 +99,8 @@ return YES;
 			 ```
 
 
+
+
 #### 境外服务接入指引
 1. 解压 SDK 文件包，将 SDK 目录下的 XGPushPrivate.h 文件添加到工程中。
 2. 调用头文件中的配置 `HOST` 接口：
