@@ -11,8 +11,8 @@
 - Fixed getFriendRemark error during pulling friend remark of the sender in the V2TIMMesage
 
 **Android**
-IM SDK supports AndroidX
-Fixed Android crash due to network permissions
+- IM SDK supports AndroidX
+- Fixed Android crash due to network permissions
 
 ## 4.8.1 @2020.04.30
 ### SDK
