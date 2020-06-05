@@ -5,7 +5,7 @@ The increasing quantity of resources created by Tencent Cloud users poses higher
   
 
 ## Procedure 
-1. Register and log in to your Tencent Cloud account, and then enter the Tag Console.
+1. [Register](https://intl.cloud.tencent.com/document/product/378/17985) and log in to your Tencent Cloud account, and then enter the Tag Console.
 2. You can perform the following two operations in the Tag Console:
 	- Associate existing resources with tags and create a list of existing resources.
 	- Create a tag key list.

@@ -1,3 +1,27 @@
+## Latest Version 4.8.10 @2020.05.15
+### SDK
+**Common changes**
+
+- iOS and Android support IPv6
+- AVChatRoom supports the dynamic updates for group members list
+- Fixed xlog crash
+
+**iOS & Mac**
+- Fixed large file send failure of iOS
+- Fixed getFriendRemark error during pulling friend remark of the sender in the V2TIMMesage
+
+**Android**
+- IM SDK supports AndroidX
+- Fixed Android crash due to network permissions
+
+## 4.8.1 @2020.04.30
+### SDK
+
+**Common changes**
+
+- Released a new API 2.0 for iOS & Android
+- Fixed garbled sessions due to login with different accounts in certain scenarios
+
 ## Latest Version 4.7.10 @2020.04.23
 
 ### SDK

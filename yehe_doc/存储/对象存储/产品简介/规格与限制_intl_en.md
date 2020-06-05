@@ -62,7 +62,7 @@
     		 <tr>
     			<td >Access Policy</td>
     			<td >Number of Rules</td>
-    			<td >The sum of policies associated with the ACLs, Policies and CAMs of buckets and objects is limited to 1,000 per each root account (with the same APPID).</td>
+    			<td >Each root account (APPID) can have up to 1,000 bucket ACL rules.</td>
     		</tr>
     		<tr>
     			<td rowspan="3">Lifecycle</td>
