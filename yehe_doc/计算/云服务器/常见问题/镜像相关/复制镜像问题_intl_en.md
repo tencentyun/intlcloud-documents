@@ -1,10 +1,8 @@
 ### Under what circumstances do I need to copy an image?
-Custom images can only be used in the same region. In situations where you need to do the following: 
+Custom images can only be used in the same region. You can perform the following operations by [copying images](https://intl.cloud.tencent.com/document/product/213/4943): 
 - Deploy applications on the CVM instance in multiple regions.
 - Migrate the CVM instance to other regions.
 - Use custom images across regions.
-
-You can do so by [copying images](https://intl.cloud.tencent.com/document/product/213/4943).
 
 ### Which images can I copy?
 You can only copy custom images and cannot copy public images, service marketplace images, and images that others have shared with you.

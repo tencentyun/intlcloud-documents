@@ -1,6 +1,6 @@
-## Scenario
+## Overview
 
-CFS supports access management at the resource level, i.e., allowing the root account to grant users and user groups certain permissions to manipulate the specified resources. After the authorization is completed, the CFS Console and APIs will allow or forbid operations performed by the specified users based on the permissions granted to them.
+CFS supports access management at the resource level, i.e., allowing the root account to grant users and user groups permissions to manipulate specified resources. After authorization, the CFS Console and APIs will allow or forbid operations performed by specified users based on permissions granted.
 This document describes how to configure read-only, read/write, and custom policies for CFS users. For more information on how Cloud Access Management (CAM) works and can be used, please see [CAM Overview](https://intl.cloud.tencent.com/document/product/598/10583).
 
 
@@ -9,8 +9,8 @@ This document describes how to configure read-only, read/write, and custom polic
 
 Log in to the [CAM Console](https://console.cloud.tencent.com/cam/policy) and enter the policy management page.
 
-- If you need to grant users permissions quickly, you can search for CFS in the search box on the right of the policy management page, select the preset read-only or read/write permissions, and associate them with the specified user group.
-- If you need to grant users permissions to specific operations, you can create a custom policy and associate it with the specified user group.
+- To grant users permissions quickly, do a search for CFS, select the preset read-only or read/write permissions and associate them with the specified user group.
+- If you need to grant users permissions for specific operations, you can create a custom policy and associate it with the specified user group.
 
 #### Full read/write permission policy
 
@@ -68,21 +68,21 @@ If you want to grant users permission to query but not create, modify, or delete
 
 #### Custom policy
 
-Custom policy is a more flexible way to authorize users. Multiple policy generation methods are available in the CAM Console. This example shows you how to create a custom policy by using the method of "Create by Policy Generator". For other methods, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
+Custom policies allow more flexibility in permission management. The CAM Console offers multiple methods for generating custom policies. This example shows you how to create a custom policy by using a **Policy Generator**. For other methods, please see [Creating Custom Policies](https://intl.cloud.tencent.com/document/product/598/35596).
 
-The policy generator page provides visual policy configuration items. You just need to select the desired parameters, and policy code will be generated automatically. This is especially suitable if you use the CAM for the first time.
+The CAM policy generator is very user friendly. You simply need to select the desired parameters, and policy code will be generated automatically. This is especially suitable for first-time CAM users.
 
-Log in to the [Policy Management Console](https://console.cloud.tencent.com/cam/policy), enter the policies page, and select **Create Custom Policy** > **Create by policy generator**. Use the policy generator to create a custom policy to which you can add multiple statements. The configurations are described as below:
+Log in to the [CAM Policies Console](https://console.cloud.tencent.com/cam/policy), and select **Create Custom Policy** > **Create by policy generator**. Use the policy generator to create a custom policy to which you can add multiple statements. The configurations are described as below:
 
-| Parameter | Corresponding Parameter Policy | Option and Effect |
+| Parameter | Options and Effect |
 | ---- | ------------ | ------------------------------------------------------------ |
-| Effect  | Effect       | Allow or deny    |
-| Service | Service      | Select CFS here  |
-| Operation | Action       | All operation types supported by CFS   |
-| Resource | Resource     | All resources that can be manipulated: <br><li>For all resources in CFS, enter `*`<br><li>For all resources in the specified region, enter `qcs::cfs:ap-guangzhou::*` for example <br><li>For all resources in all regions under the specified user account, enter `qcs::cfs::uin/27700000:*` for example <br><li>For all file systems in the specified region under the specified user account, enter `qcs::cfs:ap-guangzhou:uin/27700000:filesystem/*` <br><li>For file systems in the specified user group under the specified user account, enter `qcs::cfs::uin/27700000:pgroup/pgroup-doxpcqh` <br><li>Note: the UIN in a policy must be a root account UIN (the file systems or permission group resources after it must belong to this root account)  |
-| Condition | Condition    | Specifies under which condition this policy will take effect. For more information, please see [Conditions](https://intl.cloud.tencent.com/document/product/598/10608) |
+| Effect        | Allow or Reject    |
+| Service      | Select CFS here  |
+| Action      | All CFS-supported actions   |
+| Resource     | All resources that can be manipulated: <br><li>For all resources in CFS, enter `*`<br><li>For all resources in a specified region, use the format: `qcs::cfs:ap-guangzhou::*`<br><li>For all resources in all regions under a specified user account, use the format `qcs::cfs::uin/27700000:*` <br><li>For all file systems in a specified region under a specified user account, use the format `qcs::cfs:ap-guangzhou:uin/27700000:filesystem/*` <br><li>For file systems in a specified user group under a specified user account, use the format `qcs::cfs::uin/27700000:pgroup/pgroup-doxpcqh` <br><li>Note: the UIN in a policy must be a root account UIN. The file systems or permission group resources must belong to the root account.  |
+| Condition    | Sets the condition that must be met for the created policy to take effect, please see [Condition](https://intl.cloud.tencent.com/document/product/598/10608) |
 
-The APIs, API features, and precautions during authorization are listed in the table below. You can configure resource options accordingly.
+The APIs, API features, and notes for authorization are listed in the table below. You can set your resource permissions accordingly.
 
 <table>
    <tr>
@@ -90,7 +90,7 @@ The APIs, API features, and precautions during authorization are listed in the t
       <th>API Name</th>
       <th>API Description</th>
       <th>Permission Type</th>
-      <th>Precautions</th>
+      <th>Note</th>
    </tr>
    <tr>
       <td rowspan="2">Service APIs</td>
@@ -218,9 +218,9 @@ The APIs, API features, and precautions during authorization are listed in the t
    </tr>
 </table>
 
-> As CFS file systems use the VPC IPs, the permissions to the "vpc:DescribeVpcEx" and "vpc:DescribeSubnetEx" APIs need to be obtained for creating a file system, listing file systems, and querying file system details; otherwise, these operations cannot be performed. You are strongly recommended to grant the two APIs the permission to all VPC resources in all your authorization polices for CFS. For the detailed policy writing method, please see the policy statement of `QcloudCFSReadOnlyAccess`.
+> As CFS file systems use the VPC IPs, permissions for "vpc:DescribeVpcEx" and "vpc:DescribeSubnetEx" APIs are needed to create, list and query file systems. We strongly recommend granting all VPC resources permissions for these two APIs in all your CFS authorization polices. See the `QcloudCFSReadOnlyAccess` policy statement to learn how to write the policy.
 
-After the above parameters are configured, click **Add Statement** to add a statement to the custom policy. You can repeat this operation to add multiple statements. In case that a policy already exists or is in conflict with other policies, for more information on whether and how they will take effect, please see [Syntax Structure](https://intl.cloud.tencent.com/document/product/598/10604).
+After setting the above parameters, click **Add Statement** to add a statement to the custom policy. Repeat these steps to add multiple statements. If the policy already exists or conflicts with other policies, see [Syntax Structure](https://intl.cloud.tencent.com/document/product/598/10604).
 
 A policy should be written in the following format. There can be multiple statements in one policy.
 
@@ -260,8 +260,8 @@ For example, the policy syntax for prohibiting users from deleting certain file 
 
 ## Authorizing a User/User Group
 
-If you choose the permissions provided by the system, you can search for `QcloudCFSFullAccess`, `QcloudCFSReadOnlyAccess`, or a custom policy directly in the policy list and click **Bind User/Group** in the "Operation" column on the right of the list. Then, locate and select the user or user group that needs to be authorized and click **OK**.
+If you wish to grant an existing permission, you can do a search for `QcloudCFSFullAccess`, `QcloudCFSReadOnlyAccess`, or a custom policy and click **Bind User/Group** in the "Operation" column. Then, locate and select the user or user group that needs to be authorized and click **OK**.
 
 ## Deauthorizing a User/User Group
 
-If you need to deauthorize a user/user group, you can select them in the **Bind User/User Group** list on the corresponding policy details page and then click **Remove User**. After confirming the deauthorization, the user/user group will be deprived of the permission to manipulate CFS resources.
+If you need to deauthorize a user/user group, click the policy name to go to the policy details page. Select the user or user group under the **User/User Group** tab and click **Remove User** or **Remove Group**. Click **OK** in the pop-up confirmation box. The user/user group’s CFS permissions will be revoked. 

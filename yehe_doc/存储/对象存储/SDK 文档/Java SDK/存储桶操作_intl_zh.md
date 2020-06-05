@@ -2,7 +2,6 @@
 
 本文档提供关于存储桶的基本操作和访问控制列表（ACL）的相关 API 概览以及 SDK 示例代码。
 
-**基本操作**
 
 | API                                                          | 操作名             | 操作描述                           |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
@@ -276,5 +275,7 @@ public AccessControlList getBucketAcl(String bucketName)
 ```java
 // bucket的命名规则为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
-AccessControlList acl = cosClient.getBucketAcl(bucketName);
+AccessControlList accessControlList = cosClient.getBucketAcl(bucketName);
+// 将存储桶权限转换为预设 ACL, 可选值为：Private, PublicRead, PublicReadWrite
+CannedAccessControlList cannedAccessControlList = accessControlList.getCannedAccessControl();
 ```
