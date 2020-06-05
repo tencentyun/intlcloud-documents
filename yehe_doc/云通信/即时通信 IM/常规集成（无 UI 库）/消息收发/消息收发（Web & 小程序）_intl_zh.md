@@ -24,7 +24,7 @@ tim.createTextMessage(options)
 
 | Name   | Type     | Description  |
 | ------ | -------- | ------------ |
-| `text` | `String` | 消息文本内容 |
+| `file` | `String` | 消息文本内容 |
 
 **示例**
 

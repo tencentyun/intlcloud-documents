@@ -607,3 +607,4 @@ Depending on the usage duration, the prices in pay-as-you-go mode divide into th
   <td class=xl68 align=right>0.0005</td>
  </tr>
 </table>
+This  pricing document is for reference only. See your bill for the actual price.

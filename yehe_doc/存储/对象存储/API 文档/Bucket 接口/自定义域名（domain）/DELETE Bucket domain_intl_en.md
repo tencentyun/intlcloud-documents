@@ -1,15 +1,15 @@
-## Feature
+## Feature description
 
-This API (DELETE Bucket domain) is used to delete the custom domain name configuration on a bucket.
+This API is used to delete the custom domain name configuration of a bucket.
 
 > 
 >
->By default, the root account owns the permissions to delete the custom domain name of a bucket. For a sub-account to do so, the root account should grant it the access to the `DeleteBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
-> - Please note that this API deletes all custom domain names bound to the specified bucket. To delete only part of them, you can get all the custom domain names by calling the `GET Bucket Domain` API, and then rewrite the part not to be deleted by calling the `PUT Bucket Domain` API.
+>By default, the root account has the permission to delete the custom domain name of a bucket and can grant such permission to a sub-account by granting it the access to the `DeleteBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
+> - Please note that this API deletes all custom domain names bound to a specified bucket. To delete only part of them, you can get all the custom domain names bound to the bucket by calling the `GET Bucket Domain` API, and then rewriting those which are not to be deleted by calling the `PUT Bucket Domain` API.
 
 ## Request
 
-#### Request samples
+#### Sample request
 
 ```plaintext
 DELETE /?domain HTTP/1.1
@@ -22,7 +22,7 @@ Authorization: Auth String
 
 #### Request parameters
 
-This API does not use any request parameter.
+This API does not use any request parameters.
 
 #### Request headers
 
@@ -36,7 +36,7 @@ This API does not have a request body.
 
 #### Response headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -46,7 +46,7 @@ The response body of this API is empty.
 
 This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use Cases
+## Use cases
 
 #### Request
 

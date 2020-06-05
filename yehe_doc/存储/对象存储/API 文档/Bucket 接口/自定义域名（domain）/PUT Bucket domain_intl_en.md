@@ -1,15 +1,15 @@
-## Feature
+## Feature description
 
-This API (PUT Bucket domain) is used to configure a custom domain name for a bucket.
+This API is used to configure a custom domain name for a bucket.
 
 >
 > - Currently, you are allowed to add 20 custom domain names. To add more, please contact our technical services team by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
-> - The custom domain name supports 3 types of origin server, default, static website, and global acceleration. To use a static website origin server, you need to [enable a static website](https://intl.cloud.tencent.com/document/product/436/14984). To use a global acceleration origin server, you need to [enable global acceleration](https://intl.cloud.tencent.com/document/product/436/33406).
-> - By default, the root account owns the permissions to add a custom domain name to a bucket. For a sub-account to do so, the root account should grant it the permissions on the `PutBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
+> - The custom domain name supports 3 types of origin servers, default, static website, and global acceleration. To use a static website origin server, you need to [enable a static website](https://intl.cloud.tencent.com/document/product/436/14984). To use a global acceleration origin server, you need to [enable global acceleration](https://intl.cloud.tencent.com/document/product/436/33406).
+> - By default, the root account has the permission to add a custom domain name to a bucket and can grand such permission to a sub-account by granting it permission on the `PutBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
 
-#### Request
+## Request
 
-#### Request samples
+#### Sample request
 
 ```plaintext
 PUT /?domain HTTP/1.1
@@ -27,7 +27,7 @@ Authorization: Auth String
 
 #### Request parameters
 
-This API does not use any request parameter.
+This API does not use any request parameters.
 
 #### Request headers
 
@@ -52,7 +52,7 @@ This request body submits the **application/xml** request data which includes al
 </DomainConfiguration>
 ```
 
-The nodes are described in details below:
+The detailed nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------- | ------ | ----------------------------------------- | --------- | -------- |
@@ -71,13 +71,13 @@ The nodes are described in details below:
 | Status             | DomainConfiguration.DomainRule | Domain status. Enumerated values:<br><li>`ENABLED`, <li>`DISABLED`    | Enum   | Yes       |
 | Name               | DomainConfiguration.DomainRule | Full domain name                                                     | string | Yes       |
 | Type               | DomainConfiguration.DomainRule | Type of the origin server. Enumerated values: <br><li>REST: default<li>WEBSITE: static website<li>ACCELERATE: global acceleration | Enum   |
-| ForcedReplacement  | DomainConfiguration.DomainRule | If the specified domain name has been used for another bucket, you can specify this element to force the custom domain name on the current bucket. With only CNAME currently supported, this API can set up the custom domain name only after you point its CNAME to the current bucket’s origin domain name, which is associated with a default origin server, static website origin server, or global acceleration origin server, depending on the `Type` element value. | Enum   | No       |
+| ForcedReplacement  | DomainConfiguration.DomainRule | If the specified domain name has been used for another bucket, you can specify the element to force the domain name to be a custom domain name for the current bucket. With only CNAME currently supported, this API can set up the custom domain name only after you point its CNAME to the current bucket’s origin domain name, which is associated with a default origin server, static website origin server, or global acceleration origin server, depending on the `Type` element value. | Enum   | No       |
 
 ## Response
 
 #### Response headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -87,7 +87,7 @@ The response body of this API is empty.
 
 This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use Cases
+## Use cases
 
 #### Request
 

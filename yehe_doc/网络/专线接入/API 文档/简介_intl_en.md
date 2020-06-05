@@ -1,0 +1,3 @@
+Welcome to Tencent Cloud Direct Connect (DC). DC provides a secure and fast connection between Tencent Cloud and your on-premises IDC. By deploying 1 connection, you can connect Tencent Cloud computing resources in multiple regions to implement flexible and reliable hybrid cloud deployment. This API documentation describes the APIs for operating on connection tunnels. Before you use DC APIs, make sure that you understand what DC is, how to use it, and how it is billed.
+
+In case of any conflict between the valid values of any parameter provided in the API documentation and those provided on the Tencent Cloud official website, the latter prevails.

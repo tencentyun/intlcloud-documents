@@ -34,7 +34,7 @@
  | 服务                                                          | 授权粒度 | 控制台  | 根据标签进行授权 |  服务角色 |	参考文档 |	
 | ------------------------------------------------------------ | ------ | --------  | ------- | ---- |	---- |	
 | [对象存储](https://intl.cloud.tencent.com/document/product/436) | 资源级 | &#10003;       | &#10003; <sup>1</sup> | &#10003;   |	[访问管理指南](https://intl.cloud.tencent.com/document/product/436/12470)   |
-| [文件存储](https://intl.cloud.tencent.com/document/product/582) | 资源级 | &#10003;        | -  |  &#10003;    |[访问管理指南](https://intl.cloud.tencent.com/document/product/582/14679)   |			
+| [文件存储](https://intl.cloud.tencent.com/document/product/582) | 资源级 | &#10003;        | &#10003;  |  &#10003;    |[访问管理指南](https://intl.cloud.tencent.com/document/product/582/14679)   |			
 | [云硬盘](https://intl.cloud.tencent.com/document/product/362) | 资源级  | &#10003;       | &#10003;  |  -    |-    |	
 | [云数据迁移](https://intl.cloud.tencent.com/document/product/623)  | 服务级 | &#10003;        | -  |  - | - |	
 | [日志服务](https://intl.cloud.tencent.com/document/product/614)  | 资源级 | &#10003;        | -  | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/614/32854)    |	

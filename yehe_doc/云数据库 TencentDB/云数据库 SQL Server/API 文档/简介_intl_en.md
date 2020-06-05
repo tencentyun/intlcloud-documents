@@ -1,0 +1,1 @@
+SQL Server is a relational database management system developed by Microsoft. Its high scalability and performance makes it easy for you to query, search, synchronize, and analyze data. As of today, multiple SQL Server versions have been released, and each version has its own features.

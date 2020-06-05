@@ -1,0 +1,2 @@
+Welcome to Tencent Cloud Auto Scaling (AS).
+AS can automatically adjust computing resources according to users' business needs and policies. AS automatically increases or decreases CVM instances and completes configuration based on the scheduled, periodic, or monitoring policies you have specified. It can automatically increase CVM instances to ensure smooth and healthy business operation when business demand spikes, and reduce CVM instances to save resources and costs when business demand decreases.
