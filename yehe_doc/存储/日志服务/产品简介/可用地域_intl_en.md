@@ -23,5 +23,5 @@ You can create logsets and log topics in different regions when using CLS. Regio
 
 ## Notes
 
-If another Tencent Cloud product is integrated with CLS, try to select a logset in the same region as the product. Tencent Cloud products in the same region can access each other over the private network, which effectively reduces latency and improves access speed.
+If there is another Tencent Cloud product integrated with CLS, try to select a logset in the same region as the product. Tencent Cloud products in the same region can access each other over the private network, which effectively reduces latency and improves access speed.
 2. The classic network cannot access CLS over private network.
