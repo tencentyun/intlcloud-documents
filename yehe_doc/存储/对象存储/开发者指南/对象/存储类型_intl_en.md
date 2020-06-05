@@ -3,19 +3,6 @@ COS is available in 3 storage classes depending on the access frequency: STANDAR
 >When an object is uploaded, if the storage class is not set, it defaults to **STANDARD**.
 
 
-**Features**
-
-- High data durability, availability, and performance
-- Data durability: 99.9999999999%
-- Service availability: 99.99%
-- Response: within milliseconds
-- Minimum billable object size: 128 KB
-- Minimum storage duration for billing: N/A
-- Regions: currently only Guangzhou and Beijing
-- Storage fees: high
-- Data retrieval fees: free
-- Read/Write request fees: very low
-
 **Scenarios**
 
 Mobile phone pictures, important documents, business data, sensitive information, and more.
@@ -83,17 +70,17 @@ Archived compliance documents (e.g., archival data, medical images, and scientif
 
 ## Comparison of Storage Classes
 
-| Item           | MAZ_STANDARD  | STANDARD           | STANDARD_IA      |  ARCHIVE                     |
-| ---------------- | ------------------ | ------------------ | ------------- | ---------------------------- |
-| Data durability       | 99.9999999999%     | 99.999999999%      | 99.999999999% | 99.999999999%                |
-| Service availability       | 99.99%             | 99.95%             | 99.9%         | 99.9%                        |
-| Response             | Within milliseconds             | Within milliseconds             | Within milliseconds        | Requires prior restore request               |
-| Minimum billable object size | 128 KB              | Billed for the actual size | 64 KB          | 64 KB                         |
-| Minimum storage duration for billing     | N/A             | N/A            | 30 days         | 90 days                         |
-| Regions | Currently only Guangzhou and Beijing| All | All | Only Public Cloud regions (currently excluding Nanjing) |
-| Storage fees         | High               | Standard               | Low          | Very low                         |
-| Data retrieval fees     | Free | Free | Low          | High                         |
-| Read/Write request fees     | Very low               | Very low               | Low          | Very low (requires data to be restored first into STANDARD) |
+| Item           | STANDARD           | STANDARD_IA      |  ARCHIVE                     |
+| ---------------- |------------------ | ------------- | ---------------------------- |
+| Data durability       | 99.999999999%      | 99.999999999% | 99.999999999%                |
+| Service availability       |99.95%             | 99.9%         | 99.9%                        |
+| Response             |  Within milliseconds             | Within milliseconds        | Requires prior restore request               |
+| Minimum billable object size | Billed for the actual size | 64 KB          | 64 KB                         |
+| Minimum storage duration for billing     | N/A            | 30 days         | 90 days                         |
+| Regions | All | All | Only Public Cloud regions (currently excluding Nanjing) |
+| Storage fees         | Standard               | Low          | Very low                         |
+| Data retrieval fees     | Free | Low          | High                         |
+| Read/Write request fees     |  Very low               | Low          | Very low (requires data to be restored first into STANDARD) |
 
 
 
