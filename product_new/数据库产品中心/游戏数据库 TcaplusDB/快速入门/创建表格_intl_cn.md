@@ -10,34 +10,7 @@
  - **集群、表格组**：选择目标集群和表格组。
  - **表格文件**：从本地上传或从已经上传过的历史文件中选择表定义文件，用户可以同时选择新上传和已上传的历史文件来创建表格，不能上传或选择同名文件。
 ![](https://main.qcloudimg.com/raw/5621a15042a9d73b4364fe19b9a9268b.png)
-如下是一个 proto 示例文件：
-```
-// tb_online.proto
-syntax = "proto2";
-package myTcaplusTable;
-import "tcaplusservice.optionv1.proto";
-message tb_online {
-    option(tcaplusservice.tcaplus_primary_key) = "uin,name,region";
-    required int64 uin = 1; 
-    required string name = 2; 
-    required int32 region = 3;
-    required int32 gamesvrid = 4; 
-    optional int32 logintime = 5 [default = 1];
-    repeated int64 lockid = 6 [packed = true]; 
-    optional bool is_available = 7 [default = false]; 
-    optional pay_info pay = 8; 
-}
-message pay_info { 
-    required int64 pay_id = 1;
-    optional uint64 total_money = 2;
-    optional uint64 pay_times = 3;
-    optional pay_auth_info auth = 4;
-    message pay_auth_info { 
-        required string pay_keys = 1;
-        optional int64 update_time = 2;
-    }
-}
-```
+
 3. 单击【下一步】，系统将校验用户选定的表格定义文件，
  - 校验不通过，将返回错误，请根据错误提示修改文件后重新上传。
  - 校验通过，将显示文件中定义的表格元信息，请继续执行下一步。
