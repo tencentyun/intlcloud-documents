@@ -9,14 +9,15 @@
 - The SDK supports JDK v1.7 and higher.
 - For more information on JDK installation, see [Java Installation and Configuration](https://cloud.tencent.com/document/product/436/10865).
 
+>
 >- For the definitions of “SecretId”, “SecretKey”, “Bucket” and other terms, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/18507).
 >- You can find the common classes in the COS Java SDK in the following packages:
->  1. The classes related to client configuration are in the package com.qcloud.cos.
->  2. The classes related to permissions are in the sub-package com.qcloud.cos.auth.
->  3. The classes related to exceptions are in the sub-package com.qcloud.cos.exception. 
->  4. The classes related to requests are in the sub-package com.qcloud.cos.model.
->  5. The classes related to regions are in the sub-package com.qcloud.cos.region.
->  6. The classes related to advanced APIs are in the sub-package com.qcloud.cos.transfer.
+  1.The classes related to client configuration are in the package com.qcloud.cos.
+  2.The classes related to permissions are in the sub-package com.qcloud.cos.auth.
+  3.The classes related to exceptions are in the sub-package com.qcloud.cos.exception. 
+  4.The classes related to requests are in the sub-package com.qcloud.cos.model.
+  5.The classes related to regions are in the sub-package com.qcloud.cos.region.
+  6.The classes related to advanced APIs are in the sub-package com.qcloud.cos.transfer.
 ### Installing the SDK
 You can install the SDK through Maven or source code:
 

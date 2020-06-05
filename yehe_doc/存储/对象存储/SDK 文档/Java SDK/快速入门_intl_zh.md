@@ -12,12 +12,12 @@
 >
 >- 关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
 >- COS Java SDK 中的常见类所在包分别为：
- - 客户端配置相关类在包 com.qcloud.cos.\* 下。
- - 权限相关类在 com.qcloud.cos.auth.\* 子包下。
- - 异常相关类在 com.qcloud.cos.exception.\* 子包下。
- - 请求相关类在 com.qcloud.cos.model.\* 子包下。
- - 地域相关类在 com.qcloud.cos.region.\* 子包下。
- - 高级 API 接口在 com.qcloud.cos.transfer.\* 子包下。
+ 1.客户端配置相关类在包 com.qcloud.cos.\* 下。
+ 2.权限相关类在 com.qcloud.cos.auth.\* 子包下。
+ 3.异常相关类在 com.qcloud.cos.exception.\* 子包下。
+ 4.请求相关类在 com.qcloud.cos.model.\* 子包下。
+ 5.地域相关类在 com.qcloud.cos.region.\* 子包下。
+ 6.高级 API 接口在 com.qcloud.cos.transfer.\* 子包下。
 
 #### 安装 SDK
 用户可以通过 maven 和源码两种方式安装 Java SDK：

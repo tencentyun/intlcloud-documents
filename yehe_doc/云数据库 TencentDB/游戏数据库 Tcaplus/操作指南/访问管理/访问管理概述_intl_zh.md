@@ -20,9 +20,9 @@ TcaplsuDB 部分云 API 操作不支持资源级权限，意味着，对于该�
 
 | 任务                       | 链接                                                         |
 | -------------------------- | ------------------------------------------------------------ |
-| 了解策略基本结构           | [策略语法](https://intl.cloud.tencent.com/document/product/1016/35751#clyf) |
-| 在策略中定义操作           | [TcaplusDB 的操作](https://intl.cloud.tencent.com/document/product/1016/35751#cz) |
-| 在策略中定义资源           | [TcaplusDB 的资源路径](https://intl.cloud.tencent.com/document/product/1016/35751#zylj) |
+| 了解策略基本结构           | [策略语法](https://intl.cloud.tencent.com/document/product/1016/35751) |
+| 在策略中定义操作           | [TcaplusDB 的操作](https://intl.cloud.tencent.com/document/product/1016/35751) |
+| 在策略中定义资源           | [TcaplusDB 的资源路径](https://intl.cloud.tencent.com/document/product/1016/35751) |
 | TcaplusDB 支持的资源级权限 | [TcaplusDB 支持的资源级权限](https://intl.cloud.tencent.com/document/product/1016/35750) |
 | 控制台示例                 | [控制台示例](https://intl.cloud.tencent.com/document/product/1016/35752) |
 

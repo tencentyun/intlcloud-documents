@@ -3,11 +3,11 @@
 
 访问管理 CAM 中可对 TcaplusDB 授权的资源类型如下：
 
-| 资源类型                      | 授权策略中的资源描述方法                                     |
-| :---------------------------- | ------------------------------------------------------------ |
-| [集群](#tcaplusdbCorrelation) | ` qcs::tcaplusdb:$region:$account:cluster/* `                |
-| [表格组](#tablegroupCorrelation)     | `qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/*` |
-| [表格](#tableCorrelation)     | `qcs::tcaplusdb:$region:$account:/table/*`  |
+| 资源类型                         | 授权策略中的资源描述方法                                     |
+| :------------------------------- | ------------------------------------------------------------ |
+| [集群](#tcaplusdbCorrelation)    | ` qcs::tcaplusdb:$region:$account:cluster/$clusterId `       |
+| [表格组](#tablegroupCorrelation) | `qcs::tcaplusdb:$region:$account:tablegroup/$clusterId/$tablegroupId` |
+| [表格](#tableCorrelation)        | `qcs::tcaplusdb:$region:$account:table/$tableId`             |
 
 [TcaplusDB 集群相关](#tcaplusdbCorrelation)、[TcaplusDB 表格组相关](#tablegroupCorrelation) 和 [TcaplusDB 表格相关](#tableCorrelation) 分别介绍了当前支持资源级权限的 TcaplusDB API 操作，以及每个操作支持的资源和条件密钥。设置资源路径时，您需要将`$region`、`$account`等变量参数修改为您实际的参数信息，同时您也可以在路径中使用 \* 通配符。相关操作示例可参见 [控制台示例](https://intl.cloud.tencent.com/document/product/1016/35752)。
 
@@ -35,7 +35,7 @@
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | [CreateCluster](https://intl.cloud.tencent.com/document/product/1016/35053) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
 | [ModifyClusterName](https://intl.cloud.tencent.com/document/product/1016/35049) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
-| [DeleteCluster](https://intl.cloud.tencent.com/document/product/1016/35052) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
+| https://intl.cloud.tencent.com/document/product/1016/35052 | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
 | [DescribeClusters](https://intl.cloud.tencent.com/document/product/1016/35050) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
 | [ModifyClusterPassword](https://intl.cloud.tencent.com/document/product/1016/35048) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
 
@@ -44,10 +44,10 @@
 
 | API 操作                                                     | 资源路径                                                     |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| [CreateTableGroup](https://intl.cloud.tencent.com/document/product/1016/35027) | `qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/$tablegroupId` |
-| [DeleteTableGroup](https://intl.cloud.tencent.com/document/product/1016/35026) | `qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/$tablegroupId` |
-| [DescribeTableGroups](https://intl.cloud.tencent.com/document/product/1016/35025) | `qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/$tablegroupId` |
-| [ModifyTableGroupName](https://intl.cloud.tencent.com/document/product/1016/35024) | `qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId/tablegroup/$tablegroupId` |
+| [CreateTableGroup](https://intl.cloud.tencent.com/document/product/1016/35027) | `qcs::tcaplusdb:$region:$account:tablegroup/*`<br>`qcs::tcaplusdb:$region:$account:tablegroup/$clusterId/$tablegroupId` |
+| [DeleteTableGroup](https://intl.cloud.tencent.com/document/product/1016/35026) | `qcs::tcaplusdb:$region:$account:tablegroup/*`<br>`qcs::tcaplusdb:$region:$account:tablegroup/$clusterId/$tablegroupId` |
+| [DescribeTableGroups](https://intl.cloud.tencent.com/document/product/1016/35025) | `qcs::tcaplusdb:$region:$account:tablegroup/*`<br>`qcs::tcaplusdb:$region:$account:tablegroup/$clusterId/$tablegroupId` |
+| [ModifyTableGroupName](https://intl.cloud.tencent.com/document/product/1016/35024) | `qcs::tcaplusdb:$region:$account:tablegroup/*`<br>`qcs::tcaplusdb:$region:$account:tablegroup/$clusterId/$tablegroupId` |
 
 <span id="tableCorrelation"></span>
 ### TcaplusDB 表格相关

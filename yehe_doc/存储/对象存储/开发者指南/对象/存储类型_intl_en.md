@@ -3,10 +3,6 @@ COS is available in 3 storage classes depending on the access frequency: STANDAR
 >When an object is uploaded, if the storage class is not set, it defaults to **STANDARD**.
 
 
-**Scenarios**
-
-Mobile phone pictures, important documents, business data, sensitive information, and more.
-
 ## STANDARD
 
 COS STANDARD is an object storage service that provides users with high reliability, availability, and performance.
