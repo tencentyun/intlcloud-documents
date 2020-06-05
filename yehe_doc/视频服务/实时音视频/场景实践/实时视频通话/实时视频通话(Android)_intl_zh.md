@@ -1,8 +1,3 @@
-## 效果展示
-
-
-
-
 如需快速实现视频通话功能，您可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 TRTCVideoCall 组件并实现自定义 UI 界面。
 
 <span id="ui"> </span>
@@ -23,11 +18,11 @@
 <span id="ui.step3"></span>
 ### 步骤3：配置 Demo 工程文件
 1. 解压 [步骤2](#ui.step2) 中下载的源码包。
-2. 找到并打开 `Android/TRTCDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` 文件。
+2. 找到并打开 `Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` 文件。
 3. 设置 `GenerateTestUserSig.java` 文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/345c3e8915ef988eb158833d1655d0c5.png">
+	<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -44,10 +39,10 @@
 
 | 文件或文件夹 | 功能描述 |
 |:-------:|:--------|
-| TRTCVideoCallActivity.java | 展示视频通话的主界面，通话的接听和拒绝就是在这个界面中完成的。 |
+| TRTCVideoCallActivity.java | 展示视频通话的主界面，通话的接听和拒绝就是在这个界面中完成的。 | 
 | SelectContactActivity.java| 用于展示选择联系人的界面。 |
 | TRTCVideoCallHistoryActivity.java| 用于展示历史联系人的界面。 |
-| videolayout | 用于完成视频影像画面的渲染和排布逻辑。 |
+| videolayout | 用于完成视频影像画面的渲染和排布逻辑。 | 
 
 <span id="model"> </span>
 ## 实现自定义 UI 界面
@@ -107,7 +102,7 @@ defaultConfig {
 <uses-permission android:name="android.permission.BLUETOOTH" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-feature android:name="android.hardware.Camera"/>
+<uses-feature android:name="android.hardware.camera"/>
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 
@@ -124,7 +119,7 @@ defaultConfig {
 trtcvideocalldemo/src/main/java/com/tencent/liteav/trtcvideocalldemo/model 
 ```
 
-
+![](https://main.qcloudimg.com/raw/82f9ccdb79eac798025905c18ddff142.gif)
 
 <span id="model.step4"> </span>
 ### 步骤4：初始化并登录组件
@@ -236,8 +231,9 @@ sCall.openCamera(true, txCloudVideoView);
 >如果您的业务定位是在线客服等不需要离线接听功能的场景，那么完成上述 [步骤1](#model.step1) - [步骤6](#model.step6) 的对接即可。但如果您的业务定位是社交场景，建议实现离线接听。
 
 IM SDK 支持离线推送，但是 Android 端各个手机厂商均有各自的离线推送服务，因此接入复杂度要高于 iOS 平台，您需要进行相应的设置才能达到可用标准。
-1. 申请对应厂商的推送渠道需要的证书等，并将其配置到即时通信 IM 控制台中，按照推送要求增加证书和 ID 等，详细的操作步骤请参见 [即时通信 IM > 离线推送（Android） ](https://intl.cloud.tencent.com/document/product/1047/34336)。
+1. 申请对应厂商的推送渠道需要的证书等，并将其配置到即时通信 IM 控制台中，按照推送要求增加证书和 ID 等。
 2. 修改配置 `TRTCVideoCallImpl`  的 `sendModel` 函数中被注释的部分。
+ ![](https://main.qcloudimg.com/raw/be240b11a0e3fe79cc6b9bf619fe0623.png)
 
 
 <span id="api"> </span>
@@ -246,7 +242,7 @@ TRTCVideoCall 组件的 API 接口列表如下：
 
 | 接口函数 | 接口功能 |
 |---------|---------|
-| init | 在使用所有功能之前，需要调用该函数进行必要的初始化 |
+| init | 在使用所有功能之前，需要调用该函数进行必要的初始化 | 
 | destroy | 销毁实例 |
 | addListener | 增加 TRTCVideoCallListener 监听器，用户可以通过该监听器获取状态通知 |
 | removeListener | 移除监听器 |
