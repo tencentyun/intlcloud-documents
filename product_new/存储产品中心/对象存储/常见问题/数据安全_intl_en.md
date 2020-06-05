@@ -1,6 +1,6 @@
 ## FAQs About Keys
 
-### Where can I find the key information such as APPID, SecretId, and SecretKey?
+### How can I view my key information including APPID, SecretId, and SecretKey? 
 
 The second half of a bucket name is the APPID. You can check it by logging in to the [COS Console](https://console.cloud.tencent.com/cos5/bucket). To view SecretId and SecretKey, log in to the CAM Console and go to [API Key Management](https://console.cloud.tencent.com/cam/capi).
 
@@ -76,7 +76,7 @@ Locate **Bucket Policy**, click **Policy Syntax** > **Edit**, and enter the foll
 
 ### Are the ACL restrictions in COS imposed on buckets or accounts? Can I specify the permission when uploading files?
 
-The ACL restrictions are imposed on accounts instead of buckets. It is not recommended to specify the permission when you upload files, because this may make the total number of ACLs and policies exceed 1,000 and thus cause an error.
+The ACL restrictions are imposed on accounts. It is not recommended to specify the permission when you upload files, because this may make the total number of bucket ACL rules exceed 1,000, and thus cause an error.
 
 ### How do I authorize a collaborator to access the specified bucket?
 
