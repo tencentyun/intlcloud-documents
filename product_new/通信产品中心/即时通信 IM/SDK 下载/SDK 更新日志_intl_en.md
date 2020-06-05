@@ -19,8 +19,8 @@ Fixed Android crash due to network permissions
 
 **Common changes**
 
--Released a new API 2.0 for iOS & Android
--Fixed garbled sessions due to login with different accounts in certain scenarios
+- Released a new API 2.0 for iOS & Android
+- Fixed garbled sessions due to login with different accounts in certain scenarios
 
 ## Latest Version 4.7.10 @2020.04.23
 
