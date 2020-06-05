@@ -33,7 +33,7 @@ The descriptions and values ​​of parameters are as follows (parameter names 
 
 >
 >1. When the app server calls the RESTful API, the identifier must be the app admin account.
->2. The app can generate a usersig for the admin account each time it calls the RESTful API, or generate a fixed usersig for reuse with period of validity.
+>2. The app can generate a Usersig for the admin account each time it calls the RESTful API, or generate a fixed Usersig for reuse with period of validity.
 
 ### HTTP request body format
 The RESTful API only supports the POST method, and its request body is in the JSON format. For more information about the request body format, see the detailed description of each API.
