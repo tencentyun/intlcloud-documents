@@ -99,6 +99,8 @@ return YES;
 			 ```
 
 
+
+
 #### Integrating services outside Mainland China
 1. Decompress the SDK file package and add the `XGPushPrivate.h` file in the SDK directory to the project.
 2. Call the configuration `HOST` API in the header file:
