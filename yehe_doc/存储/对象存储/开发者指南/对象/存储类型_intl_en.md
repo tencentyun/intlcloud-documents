@@ -71,7 +71,7 @@ Archived compliance documents (e.g., archival data, medical images, and scientif
 ## Comparison of Storage Classes
 
 | Item           | STANDARD           | STANDARD_IA      |  ARCHIVE                     |
-| ---------------- | ------------------ | ------------------ | ------------- | ---------------------------- |
+| ---------------- |------------------ | ------------- | ---------------------------- |
 | Data durability       | 99.999999999%      | 99.999999999% | 99.999999999%                |
 | Service availability       |99.95%             | 99.9%         | 99.9%                        |
 | Response             |  Within milliseconds             | Within milliseconds        | Requires prior restore request               |
