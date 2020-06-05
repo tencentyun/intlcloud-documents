@@ -30,12 +30,12 @@ To avoid the downside of CVMs with local disks, you can change the existing CVMs
 <span id="LocalDiskNotice"></span>
 ## Notes
 
-- When you change local disks to cloud disks, the data on the local disks will be copied to the cloud disks. How long it takes depends on the amount of data and the data transmission speed. The process may take a while.
+- When you change a local disk to a cloud disk, all the data from the local disk needs to be copied to the cloud disk. Depending on the disk size and transmission speed, this could take some time. 
 - You can only change local disks to cloud disks, not the other way around.
 - **It is recommended to start and log in to the CVM to check if there is any data loss after the change is completed**.
 
 ## Directions
-1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm) and go to the list of CVM instances.
+1. Log in to the CVM console and go to **Instances**.
 > If the CVM has already been shut down, go to [Step 3](#step3).
 2. To the right of the CVM you want to make change to, click **More** > **Instance Status** > **Shutdown** to shut down the CVM.
 <span id="step3"></span>

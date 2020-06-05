@@ -1,22 +1,22 @@
-### Do CVMs support reinstalling the operating system?
+### Does CVM support reinstalling the operating system?
 
-Reinstalling the operating system restores an instance to its initial status at launch, which is an important recovery method when the instance has a system failure. For more information, see [Reinstalling System](https://intl.cloud.tencent.com/document/product/213/4933).
+Reinstalling the operation system is an important method to restore instances to their initial status in the event of a system failure. For more information, see [Reinstalling System](https://intl.cloud.tencent.com/document/product/213/4933).
 
 ### How long does it take to reinstall the operating system for an instance?
 
-After the operation, reinstallation generally takes 10-30 minutes.
+Reinstallation generally takes 10-30 minutes.
 
-### What should I do if the re-installation is very slow or fails?
+### What should I do if re-installation is very slow or fails?
 
-After the operation, reinstallation generally takes 10-30 minutes.
+Reinstallation generally takes 10-30 minutes.
 
-- If the re-installation is not completed after a long time less than 30 minutes, please wait.
-- If the re-installation is not completed within 30 minutes or even fails, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
+- If it has been less than 30 minutes, please continue to wait.
+- If reinstallation does not complete within 30 minutes or fails, contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
 
-### Will re-installation of operating system cause data loss?
+### Will reinstalling the operating system cause data loss?
 
-After the re-installation, all data on the system disk of the server is cleared and the system disk is restored to its initial status. All data on the data disk of the server are retained but cannot be used until the data disk is mounted manually.
+After reinstallation, all data on the server’s system disk will be cleared and the system disk will be restored to its initial status. All data on the server’s data disk will be retained but cannot be used until the data disk is mounted manually.
 
-### What should I do to replace the operating system of CVMs with an existing image?
-For more information, see [Reinstalling System](http://intl.cloud.tencent.com/document/product/213/4933).
+### How can I replace the operating system of a CVM with an existing image?
+See [Reinstalling System](http://intl.cloud.tencent.com/document/product/213/4933).
 

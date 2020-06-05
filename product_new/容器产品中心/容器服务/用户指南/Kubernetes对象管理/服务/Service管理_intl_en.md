@@ -58,7 +58,6 @@ When a Pod accesses an LB, Pod is the source IP. When it is transmitted to the p
   - You can only use load balancers created through the CLB Console, not balancers automatically created by TKE.
   - Ports of Services sharing the same existing CLB cannot be the same.
   - Services in different clusters cannot share the same CLB.
-  - Services sharing the same CLB do not support local access.
   - When you delete a Service using an existing CLB, the real server bound to the balancer needs to be unbound manually. The tag (tke-clusterId: cls-xxxx) is kept for the CLB. You need to clear it manually.
 
 

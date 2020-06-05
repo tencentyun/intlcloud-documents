@@ -3,25 +3,26 @@
 进入 [腾讯移动推送控制台](https://console.cloud.tencent.com/tpns)，单击左侧菜单栏【数据概览】进入此页面。
 页面各数据指标详情描述如下：
 **1. 昨日使用数据：帮助您查看 App 昨日的使用概况。**
-![](https://main.qcloudimg.com/raw/995c59fb99aff4dddaaf4e644a58ff13.png)
+![](https://main.qcloudimg.com/raw/dd17dad647411bcbcacce185a27378af.png)
 - 昨日推送消息条数：昨日所有推送任务实际发送消息条数汇总PV（跨天任务实发会计入每天实际推送数）。
 - 昨日推送任务数 ：昨日所有推送任务数汇总加和。
+- 昨日消息触达设备数：昨日所有推送任务实际抵达的设备UV去重(跨天任务实发会计入每天实际推送数)。
 - 昨日联网设备数：昨日 SDK 累计联网的去重设备数（应用前台在线或后台进程在线时 SDK 会连接至 TPNS 服务器）。
 
 **2. 应用状态监控：监控 App 的有效设备、通知栏开启情况及卸载情况。**
-![](https://main.qcloudimg.com/raw/29045d8efabc6ebdf56038742222014a.png)
+![](https://main.qcloudimg.com/raw/1b138213a593d9892c571b6e2e7deba1.png)
 - 有效设备数 ：截止昨日24点90天内未卸载的设备数，其中卸载包括了调用厂商通道接口时，厂商返回的无效设备以及TPNS SDK 返回无效的设备数。
 - 失效/卸载设备数：历史累计超过90天未活跃设备或厂商/TPNS SDK返回无效的设备数。
 - 通知栏开启数：当前终端通知栏状态开启的设备数。
 - 通知栏关闭数：当前终端通知栏状态关闭的设备数。
 - 通知栏开启率：当前通知栏开启数/当前有效设备数。
 - 对比行业大盘：App 所属的行业分类中平均行业的 App 通知栏开启率（可以进入产品管理页查看和修改应用所属行业分类）。
-  ![](https://main.qcloudimg.com/raw/cdcc47b7b7f02b84bc7eb727f229d74d.png)
+  ![](https://main.qcloudimg.com/raw/0f8a15da5768d61c0c71dc9a9da160c6.png)
 - 对比移动大盘：移动端应用大盘的平均通知栏开启率。
 
 **3. 应用使用趋势：查看应用的推送使用情况随时间的变化关系，帮助您分析推送效果。**
 Android 端：
-![](https://main.qcloudimg.com/raw/61ce80ed653cc2ec131de743a7ada613.png)
+![](https://main.qcloudimg.com/raw/804ffa41de4d4ea18ffb35309e8af34b.png)
 - 计划发送数：根据推送选定的目标人群条件所筛选出的有效设备数
 - 消息实发数：每日推送的汇总消息条数(PV)
 - 消息抵达数（PV）：消息下发后，实际到达终端的非去重设备数
@@ -31,7 +32,7 @@ Android 端：
 - 新增设备数：当日新注册的token去重设备数
 
 iOS 端：
-![](https://main.qcloudimg.com/raw/cd97cbbd3a31cec3639befb211b1886e.png)
+![](https://main.qcloudimg.com/raw/250a12d9381b0f502c7fbee3999661fe.png)
 - 计划发送数：根据推送选定的目标人群条件所筛选出的有效设备数
 - 消息实发数：每日推送的汇总消息条数(PV)
 - 消息抵达数（PV）：消息下发后，实际到达终端的非去重设备数
