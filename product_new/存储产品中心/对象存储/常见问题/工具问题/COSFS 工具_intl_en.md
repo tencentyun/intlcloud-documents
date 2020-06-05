@@ -207,3 +207,5 @@ You can mount a non-empty directory using the -ononempty parameter, but you are 
 
 ### Why does it take the ls command so long to return when I run it in a COSFS directory?
 If there are a lot of files in a mounted directory, executing the Is command requires a HEAD operation on each file in the directory, so it takes a lot of time to read the directory system before the command returns. Note: You are recommended not to enable IO hung which may result in unnecessary restarts.
+
+>As COSFS reads and writes files, the system generates a massive number of calls and logs, which may affect the COSFS read/write performance. Should you require higher performance, you can specify "-odbglevel=warn" or a higher log level.
