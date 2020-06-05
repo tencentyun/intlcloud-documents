@@ -2,11 +2,12 @@ Currently, the following versions of Node.js programming language are supported:
 * Node.js 6.10
 * Node.js 8.9
 * Node.js 10.15
+* Node.js 12.16
 
 ## Function Form
 
 The Node.js function form is generally as follows:
-- Node.js 10.15
+- Node.js 10.15 & 12.16
 ```
 module.exports = (event,context,callback)=>{
 	console.log(event);
@@ -39,17 +40,38 @@ When you create an SCF function, you need to specify an execution method. If the
 The input parameters in the Node.js environment include `event`, `context`, and `callback`, where `callback` is optional.
 * **event**: this parameter is used to pass the trigger event data.
 * **context**: this parameter is used to pass runtime information to your handler.
-* **callback**: this parameter is used to return the desired information to the invoker in Node.js 8.9 and 6.10, which is optional. In Node.js 10.15, async entry functions use the `return` keyword for return, while non-async entry functions use the `callback` input parameter for return.
+* **callback**: this parameter is used to return the desired information to the invoker in Node.js 8.9 and 6.10, which is optional. In Node.js 10.15 & 12.16, async entry functions use the `return` keyword for return, while non-async entry functions use the `callback` input parameter for return.
 
 ## Return and Exception
 
 Your handler can use the `callback` input parameter or the `return` keyword in the code to return information. The support conditions for using `callback` or `return` for return are as follows:
-
-| Node.js Version | callback | return |
-| ------------ | ----------------- | -------------- |
-| 6.10         | Supported              | Not supported         |
-| 8.9          | Supported             | Not supported           |
-| 10.15        | Supported for non-async entry functions | Supported for async entry functions |
+<table>
+<thead>
+<tr>
+<th>Node.js Version</th>
+<th>callback </th>
+<th>return </th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6.10</td>
+<td>Supported</td>
+<td>Not supported </td>
+</tr>
+<tr>
+<td>8.9</td>
+<td>Supported</td>
+<td>Supported</td>
+</tr>
+<tr>
+<td>10.15</td>
+<td rowspan=2>Supported for non-async entry functions</td>
+<td rowspan=2>Supported for async entry functions</td>
+</tr>
+<tr>
+<td>12.16</td>
+</tr>
+</tbody></table>
 
 - If `callback` is used for return, the syntax will be as follows:
 ```
@@ -63,9 +85,9 @@ callback(Error error, Object result);
 The return value will be handled differently depending on the type of invocation when the function is invoked. The return value of a sync invocation will be serialized to JSON format and then returned to the invoker, while the return value of an async invocation will be discarded. In addition, the return value will be displayed at the `ret_msg` position in the function log for both sync and async invocations.
 
 
-## Async Attribute of Node.js 10.15
+## Async Attribute of Node.js 10.15 & 12.16
 
-In the runtime of Node.js 10.15, sync execution return and async event processing can be performed separately:
+In the runtime of Node.js 10.15 & 12.16, sync execution return and async event processing can be performed separately:
 * After the sync execution process of an entry function is completed and the result is returned, function invocation will immediately return its result, and the return information in the code will be send to the function invoker.
 * After the sync process is completed and the result returned, the async logic in the code will continue to be executed and processed. The actual function execution process ends and exits only when the async event is completely executed.
 
@@ -73,10 +95,10 @@ In the runtime of Node.js 10.15, sync execution return and async event processin
 >- SCF logs are collected and processed after the entire execution process ends. Therefore, before the sync execution process is completed and the result is returned, logs and operation information such as time used and memory utilization cannot be provided in the SCF return information. You can query the detailed information in logs by using `Request Id` after the actual function execution process is completed.
 >- The function execution duration is calculated based on the async event execution duration. If the async event queue cannot get empty or its execution cannot be completed, function timeout will occur. In this case, the invoker may have received the correct response result of the function, but the execution status of the function will still be marked as failure due to timeout, and the timeout period will be calculated as the execution duration.
 
-The sync and async execution attributes, return time, and execution duration in Node.js 10.15 are as shown below:
+The sync and async execution attributes, return time, and execution duration in Node.js 10.15 & 12.16 are as shown below:
 ![node10.15feature](https://main.qcloudimg.com/raw/bdd1744107f3cce044d596afe7b230cf.png)
 
-### Async Attribute Sample of Node.js 10.15 Function
+### Async Attribute Sample of Node.js 10.15 & 12.16 Function
 
 Use the following sample code to create a function, where the `setTimeout` method is used to set a function that will be executed in 2 seconds:
 ```
@@ -173,7 +195,7 @@ For more information on how to use the COS SDK, please see [COS SDK for Node.js]
 
 ### Built-in library in the environment
 
-- The following libraries are supported in Node.js 10.15 runtime:
+- The following libraries are supported in Node.js 10.15 & 12.16 runtime:
 <table><thead>
 <tr><th width="60%">Library Name</th><th width="40%">Version</th></tr>
 </thead>
