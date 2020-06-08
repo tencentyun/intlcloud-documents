@@ -1,18 +1,3 @@
-## 效果展示
-
-<table>
-<tr>
-   <th>主动呼叫</th>
-   <th>呼叫接听</th>
- </tr>
-<tr>
-<td><img src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/audiocall/call.gif"/></td>
-<td><img src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/audiocall/recv.gif"/></td>
-</tr>
-</table>
-
-如需快速实现语音通话功能，您可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 TRTCAudioCall 组件并实现自定义 UI 界面。
-
 <span id="ui"> </span>
 ## 复用 Demo 的 UI 界面
 
