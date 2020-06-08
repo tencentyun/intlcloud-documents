@@ -25,8 +25,8 @@ You can create different types of CBS cloud disks based on business needs. For m
          <td>Required.</br>CBS offers 3 cloud disk types:<ul><li>HDD cloud disk</li><li>Premium cloud storage</li><li>SSD cloud disk</li></ul></td>
      </tr>
 		 <tr>
-			 <td>Quick Disk Creation<td>
-			 <td>Optional. To create a cloud disk using a snapshot, you need to tick **Create a cloud disk with a snapshot** and select the snapshot you want to use.
+			 <td>Quick Disk Creation</td>
+			 <td>Optional. </br>To create a cloud disk using a snapshot, you need to tick **Create a cloud disk with a snapshot** and select the snapshot you want to use.
 				 <ul><li>The capacity of a cloud disk created using a snapshot is equal to that of the snapshot by default. You can adjust the disk capacity.</li>
          <li>When you create a cloud disk using s snapshot, the disk type is the same as that of the snapshot’s source disk. You can adjust the disk type.</li></ul></td>
 		 </tr>
