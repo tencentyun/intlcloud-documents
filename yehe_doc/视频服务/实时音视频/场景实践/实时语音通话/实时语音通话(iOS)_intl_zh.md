@@ -1,5 +1,16 @@
 ## 效果展示
 
+<table>
+<tr>
+   <th>主动呼叫</th>
+   <th>呼叫接听</th>
+ </tr>
+<tr>
+<td><img src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/audiocall/call.gif"/></td>
+<td><img src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/audiocall/recv.gif"/></td>
+</tr>
+</table>
+
 如需快速实现语音通话功能，您可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 TRTCAudioCall 组件并实现自定义 UI 界面。
 
 <span id="ui"> </span>
@@ -15,17 +26,17 @@
 <span id="ui.step2"></span>
 ### 步骤2：下载 SDK 和 Demo 源码
 1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】跳转至 Github（或单击【[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)】），下载相关 SDK 及配套的 Demo 源码。
- ![](https://main.qcloudimg.com/raw/bfd51d359a47dd872cd681a81a3b90c9.png)
+ ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
 
 <span id="ui.step3"></span>
 ### 步骤3：配置 Demo 工程文件
 1. 解压 [步骤2](#ui.step2) 中下载的源码包。
-2. 找到并打开 `iOS/TRTCScenesDemo/TRTCScenesDemo/debug/GenerateTestUserSig.h` 文件。
+2. 找到并打开 `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` 文件。
 3. 设置 `GenerateTestUserSig.h` 文件中的相关参数：
-  <ul><li>SDKAPPID：默认为占位符，请设置为实际的 SDKAppID。</li>
-  <li>SECRETKEY：默认为占位符，请设置为实际的密钥信息。</li></ul> 
-
+  <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
+  <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
+    <img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -34,17 +45,17 @@
 
 <span id="ui.step4"></span>
 ### 步骤4：运行 Demo
-使用 Xcode（11.0及以上的版本）打开源码工程 `trtcScenesDemo`，单击【运行】即可开始调试本 Demo。
+使用 Xcode（11.0及以上的版本）打开源码工程 `iOS/TRTCScenesDemo/TXLiteAVDemo.xcworkspace`，单击【运行】即可开始调试本 Demo。
 
 ### 步骤5：修改 Demo 源代码
 源码文件夹 `TRTCAudioCallDemo` 中包含两个子文件夹 ui 和 model，其中 ui 文件架中均为界面代码：
 
 | 文件或文件夹 | 功能描述 |
 |:-------:|:--------|
-| AudioCallViewController.swift | 展示语音通话的主界面，通话的接听和拒绝就是在这个界面中完成的。 |
+| AudioCallViewController.swift | 展示语音通话的主界面，通话的接听和拒绝就是在这个界面中完成的。 | 
 | AudioSelectContactViewController.swift | 用于展示选择联系人的界面。 |
 | AudioCallMainViewController.swift | 用于展示历史联系人的界面，目前只有发起通话功能。 |
-| AudioCallViewController+Data.swift | 用于通话过程中用户画面的渲染和排布逻辑。 |
+| AudioCallViewController+Data.swift | 用于通话过程中用户画面的渲染和排布逻辑。 | 
 
 <span id="model"> </span>
 ## 实现自定义 UI 界面
@@ -185,7 +196,7 @@ TRTCAudioCall.shared.groupCall(userIDs: callList, groupID: "#groupId#")
 IM SDK 支持离线推送，您需要进行相应的设置才能达到可用标准。
 
 1. 申请 Apple 推送证书，具体操作请参见 [Apple 推送证书申请](https://intl.cloud.tencent.com/document/product/1047/34346)。
-2. 在后台以及客户端配置离线推送 [离线推送（iOS）](https://intl.cloud.tencent.com/document/product/1047/34347)。
+2. 在后台以及客户端配置离线推送 [离线推送（iOS）](https://intl.cloud.tencent.com/zh/document/product/1047/34347)。
 3. 修改 login 函数中的 param.busiId 为对应证书 ID。
 
 <span id="api"> </span>
@@ -194,7 +205,7 @@ TRTCAudioCall 组件的 API 接口列表如下：
 
 | 接口函数 | 接口功能 |
 |---------|---------|
-| setup | 在使用所有功能之前，需要调用该函数进行必要的初始化 |
+| setup | 在使用所有功能之前，需要调用该函数进行必要的初始化 | 
 | destroy | 销毁实例 |
 | setDelegate | 设置 TRTCAudioCallDelegate 代理回调，用户可以通过该回调获取状态通知 |
 | login | 登录 IM，所有功能需要先进行登录后才能使用 |
