@@ -133,6 +133,7 @@ Definitions:
 | [Live Video Broadcasting (LVB)](https://intl.cloud.tencent.com/document/product/267)   | Resource level | &#10003; | &#10003;  |  &#10003;  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/267/32468) |	
 | [Video on Demand (VOD)](https://intl.cloud.tencent.com/document/product/266)    | Resource level   | &#10003;  | -    |  -  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/266/33970)  |	
 | [Media Processing Service (MPS)](https://intl.cloud.tencent.com/document/product/1041)    | Service level   | &#10003;  | -    |   &#10003;   |	-  |		
+| [MediaLive](https://intl.cloud.tencent.com/document/product/1048)    | Operation level   | &#10003;  | -    |   -   |	-  |		
 
 ## Big Data Platform
 

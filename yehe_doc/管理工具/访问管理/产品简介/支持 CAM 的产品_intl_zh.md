@@ -27,7 +27,7 @@
 | [弹性伸缩](https://intl.cloud.tencent.com/document/product/377) | 资源级   | &#10003;      | -  | &#10003;    |	-    |	
 | [批量计算](https://intl.cloud.tencent.com/document/product/599)  | 资源级 | &#10003;         |  -  | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/599/33471)   |		
 | [容器镜像服务](https://intl.cloud.tencent.com/document/product/1051)  | 资源级 | &#10003;         |  -  | &#10003;     | -  |	
-><sup>1</sup> 云服务器中 [GPU 服务器](https://intl.cloud.tencent.com/document/product/560)、[专用宿主机](https://intl.cloud.tencent.com/document/product/416)  均已支持使用 CAM。
+><sup>1</sup> 云服务器中 [GPU 云服务器](https://intl.cloud.tencent.com/document/product/560)、[专用宿主机](https://intl.cloud.tencent.com/document/product/416)  均已支持使用 CAM。
 
 ## 存储	
 
@@ -48,7 +48,7 @@
 | [负载均衡](https://intl.cloud.tencent.com/document/product/214)   | 资源级  | &#10003;      | &#10003;    |    &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/214/9777) |	
 | [私有网络 VPC ](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | 资源级 | &#10003;        | -     | - |	 - |	
 | [专线接入](https://intl.cloud.tencent.com/document/product/216) | 操作级   | &#10003;       | -       | -  |	 - |	
-><sup>1</sup> 私有网络 VPC 中 [弹性网卡](https://intl.cloud.tencent.com/document/product/576)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、[对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[网络流日志](https://intl.cloud.tencent.com/document/product/682) 、[Anycast 公网加速](https://intl.cloud.tencent.com/document/product/644)、[云联网](https://intl.cloud.tencent.com/document/product/1003)、[共享带宽包](https://intl.cloud.tencent.com/document/product/684) 均已支持使用 CAM。
+><sup>1</sup> 私有网络中 [弹性网卡](https://intl.cloud.tencent.com/document/product/576)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、[对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[网络流日志](https://intl.cloud.tencent.com/document/product/682) 、[Anycast 公网加速](https://intl.cloud.tencent.com/document/product/644)、[云联网](https://intl.cloud.tencent.com/document/product/1003)、[共享带宽包](https://intl.cloud.tencent.com/document/product/684) 均已支持使用 CAM。
 
 ## CDN 与加速	
 

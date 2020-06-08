@@ -5,7 +5,7 @@
 | Importing an account | [v4/im_open_login_svc/account_import](https://intl.cloud.tencent.com/document/product/1047/34953) |
 | Importing multiple accounts | [v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954) |
 | Deleting accounts | [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) |
-| Querying accounts | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956) | 
+| Querying accounts | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956) |
 | Invalidating the login state of an account | [v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957) |
 | Querying the online status of an account | [ v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477) |
 
@@ -75,7 +75,7 @@
 | Importing group members | [v4/group_open_http_svc/import_group_member](https://intl.cloud.tencent.com/document/product/1047/34969) |
 | Configuring unread message counts | [v4/group_open_http_svc/set_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/34909) |
 | Deleting messages sent by the specified user | [v4/group_open_http_svc/delete_group_msg_by_sender](https://intl.cloud.tencent.com/document/product/1047/34970) |
-| Pulling roaming group messages | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
+| Getting Historical Group Messages             | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
 
 
 ## Global Mute Management

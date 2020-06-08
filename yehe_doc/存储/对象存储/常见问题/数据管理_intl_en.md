@@ -95,7 +95,7 @@ The V5 Console (XML) supports fuzzy match of second-level domain names, and the 
 
 ### Can object headers be customized in batches?
 
-No.
+COS supports custom headers. For more information, see [Custom Headers](https://intl.cloud.tencent.com/document/product/436/13361).
 
 ## FAQs About Origin-Pull Settings
 

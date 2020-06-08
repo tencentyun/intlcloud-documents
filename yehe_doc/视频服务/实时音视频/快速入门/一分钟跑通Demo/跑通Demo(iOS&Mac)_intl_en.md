@@ -30,7 +30,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
   </tr>
 <tr>
       <td>iOS</td>
-<td>iOS/TRTCScenesDemo/TRTCScenesDemo/debug/GenerateTestUserSig.h</td>
+<td>iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h</td>
   </tr>
 <tr>
     <td>macOS</td>
@@ -48,7 +48,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 ### Step 4. Compile and run
 1. Enter the directory where the `TRTCSDK iOS/Mac Demo Podfile` file is located in a terminal window.
 2. Run the `pod install` command to install the TRTC SDK, or run the `pod update` command to update the local library.
-3. Use Xcode (v11.0 or above) to open the `TRTCDemo.xcworkspace` project in the source code directory, compile it, and run the demo project.
+3. Use Xcode (v11.0 or above) to open the `TXLiteAVDemo.xcworkspace` project in the source code directory, compile it, and run the demo project.
 
 ## FAQs
 

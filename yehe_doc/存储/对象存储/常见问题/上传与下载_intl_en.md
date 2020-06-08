@@ -107,5 +107,5 @@ To do so, you can set your bucket permission to private read/write. For more inf
 
 ### What should I do if the error "your policy or acl has reached the limit (Status Code: 400; Error Code: PolicyFull)" occurs when I upload files or create a bucket?
 
-The total number of ACLs and policies cannot be greater than 1,000 for each COS root account. When the limit is exceeded, this error occurs. It is recommended to delete the ACLs or policies you do not need any more.
->We do not recommend using the file-level ACLs or policies. When you call APIs or SDKs, if you do not implement ACL control over files, it is recommended to leave the ACL-related parameters (such as x-cos-acl and ACL) empty to inherit the bucket permissions.
+COS allows each root account to have up to 1,000 bucket ACL rules, beyond which an error will be reported. Therefore, we recommend that you delete those you find useless.
+>We do not recommend that you use ACLs or policies at the object level. When you call an API or SDK, please leave empty the object ACL parameters (such as  x-cos-acl, and ACL), and inherit the bucket permissions if you don't need any special ACL control over your files.

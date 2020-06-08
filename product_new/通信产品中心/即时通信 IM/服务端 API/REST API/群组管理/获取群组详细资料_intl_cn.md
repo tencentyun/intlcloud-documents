@@ -263,6 +263,6 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_group_info?sdkappid=888888
 
 ## 参考
 
-- 获取群成员详细资料（[v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948)）；
-- 修改群组基础资料（[v4/group_open_http_svc/modify_group_base_info](https://intl.cloud.tencent.com/document/product/1047/34962)）；
-- 修改群成员资料（[v4/group_open_http_svc/modify_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34900)）。
+- 获取群成员详细资料（[v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948)）
+- 修改群基础资料（[v4/group_open_http_svc/modify_group_base_info](https://intl.cloud.tencent.com/document/product/1047/34962)）
+- 修改群成员资料（[v4/group_open_http_svc/modify_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34900)）
