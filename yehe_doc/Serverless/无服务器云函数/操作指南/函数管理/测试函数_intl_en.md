@@ -1,4 +1,4 @@
-In the console or through SCF CLI, function testing can be used to directly initiate a function invocation, simulate a triggering event sent by the trigger, and display the function execution conditions, return content, and log.On the function details page in the console, you can test run a function by clicking **Execute** in the function code tab.
+In the console, function testing can be used to directly initiate a function invocation, simulate a triggering event sent by the trigger, and display the function execution conditions, return content, and log.On the function details page in the console, you can test run a function by clicking **Test** in the function code tab.
 
 
 ## Testing event template
