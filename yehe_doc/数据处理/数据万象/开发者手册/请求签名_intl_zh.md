@@ -5,13 +5,13 @@
 - 匿名请求：HTTP 请求不携带任何身份标识和鉴权信息，通过 RESTful API 进行 HTTP 请求操作。
 - 签名请求：HTTP 请求时携带签名，服务器端收到消息后，即可进行身份验证，验证成功则可接受并执行请求，否则将会返回错误信息并丢弃此请求。
 
-数据万象基于 [对象存储 COS](https://cloud.tencent.com/document/product/436)，当前签名算法与 COS 保持一致，基于密钥 HMAC（Hash Message Authentication Code）的自定义方案进行身份验证。
+数据万象基于 [对象存储 COS](https://intl.cloud.tencent.com/document/product/436)，当前签名算法与 COS 保持一致，基于密钥 HMAC（Hash Message Authentication Code）的自定义方案进行身份验证。
 
 ### 签名算法
 
 当前存在 XML 和 JSON 两个签名版本：
 
-- **下载时**操作需使用 **JSON** 版本签名，可参阅 JSON 版本 [请求签名](https://cloud.tencent.com/document/product/436/6054)。
+- **下载时**操作需使用 **JSON** 版本签名。
 - **上传时**操作和 **Bucket 接口**等操作需使用 **XML** 版本签名，可参阅 XML 版本 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778)。
 
 >
@@ -63,7 +63,7 @@
 
 
 
-数据万象签名计算过程与 COS 一致，您可以根据**签名适用场景**，使用 COS 提供的 [在线签名工具](https://cloud.tencent.com/document/product/436/30442) 生成所需版本签名。
+数据万象签名计算过程与 COS 一致。
 
 
 ### 签名使用
