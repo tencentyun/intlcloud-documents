@@ -69,7 +69,7 @@
 </thead>
 <tbody><tr>
 <td>Event alarming is now supported</td>
-<td>By subscribing to events such as OOM, master/slave switch, read-only instance removal, and instance migration caused by server failure, you can now stay on top of your instance statuses.</td>
+<td>By subscribing to events such as OOM, master-slave switch, read-only instance elimination, and instance migration caused by server failure, you can now stay on top of your instance statuses.</td>
 <td>November 2019</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/8457" target="_blank">Alarming Feature</a></td>
 </tr>
@@ -177,7 +177,7 @@
 </tr>
 <tr>
 <td>Network switching is now supported</td>
-<td>Switching between the basic network and VPC and between subnets in the same VPC is now supported.</td>
+<td>Switching between the classic network and VPC and between subnets in the same VPC is now supported.</td>
 <td>June 2018</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">Network Switch</a></td>
 </tr>
@@ -191,7 +191,7 @@
 <td>Degrading and refunding are now supported</td>
 <td>You can now degrade your database configuration and be refunded accordingly.</td>
 <td>June 2018</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/32345" target="_blank">Instance Adjustment Fees Description</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/32345" target="_blank">Instance Adjustment Fee</a></td>
 </tr>
 <tr>
 <td>MySQL 5.7 data migration is now supported</td>
