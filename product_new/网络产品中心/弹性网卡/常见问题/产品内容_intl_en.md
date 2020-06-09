@@ -12,6 +12,6 @@ The number of ENIs that can be bound to a CVM and the number of private IP addre
 ### What can I do if an EIP fails to be pinged?
 Common causes for failing to ping through an EIP are as follows:
 
-- The EIP is not bound to any Tencent Cloud resource. For the binding method, see [Elastic Public IP Addresses](http://intl.cloud.tencent.com/document/product/213/16586).
+- The EIP is not bound to any Tencent Cloud resource. For the binding method, see [Elastic Public IP](https://intl.cloud.tencent.com/document/product/213/16586).
 - The security policy is invalid. If this is the case, you can check whether the security policy ([Security Groups](http://intl.cloud.tencent.com/document/product/213/12452) or [Network ACL](http://intl.cloud.tencent.com/document/product/215/5132)) is valid.
 - Port access is disabled. If the Tencent Cloud resource that is bound to the EIP has a security policy that disables a port, the same port for the EIP is also inaccessible. For example: If the bound resource disables port 8080, port 8080 for the EIP is also inaccessible.
