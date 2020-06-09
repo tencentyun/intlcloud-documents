@@ -5,7 +5,7 @@
 - 匿名请求：HTTP 请求不携带任何身份标识和鉴权信息，通过 RESTful API 进行 HTTP 请求操作。
 - 签名请求：HTTP 请求时携带签名，服务器端收到消息后，即可进行身份验证，验证成功则可接受并执行请求，否则将会返回错误信息并丢弃此请求。
 
-数据万象基于 [对象存储 COS](https://intl.cloud.tencent.com/zh/document/product/436)，当前签名算法与 COS 保持一致，基于密钥 HMAC（Hash Message Authentication Code）的自定义方案进行身份验证。
+数据万象基于 [对象存储 COS](https://intl.cloud.tencent.com/document/product/436)，当前签名算法与 COS 保持一致，基于密钥 HMAC（Hash Message Authentication Code）的自定义方案进行身份验证。
 
 ### 签名算法
 
@@ -56,10 +56,9 @@
 生成签名所需信息包括 APPID（例如1250000000），Bucket 名称（例如 examplebucket-ci），项目的 SecretID 和 SecretKey。
 
 获取这些信息的方法如下：
-1. 登录 [数据万象控制台](https://console.cloud.tencent.com/ci/index)，单击左侧菜单栏【Bucket管理】。
+1. 登录 [数据万象控制台](https://console.cloud.tencent.com/ci/index)，单击左侧菜单栏【存储桶管理】。
 2. 单击需要管理的存储桶，进入存储桶管理页面。
-3. 单击【Bucket配置】，即可查看 Bucket 名称和 Bucket ID 。若当前项目无存储桶，您可参考 [创建存储桶](https://intl.cloud.tencent.com/document/product/1045/33436) 文档进行创建。
-![](https://main.qcloudimg.com/raw/5ea3acb08f39c9fa37dfb4d909cbbed9.png)
+3. 单击【存储桶配置】，即可查看存储桶名称和 Bucket ID 。若当前项目无存储桶，您可参考 [创建存储桶](https://intl.cloud.tencent.com/document/product/1045/33436) 文档进行创建。
 3. 进入 [访问管理](https://console.cloud.tencent.com/cam/capi) API 密钥管理页面，获取 SecretID 和 SecretKey。
 
 

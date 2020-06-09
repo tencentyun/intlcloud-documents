@@ -11,5 +11,5 @@ The intra-region disaster recovery capability of TencentDB for MySQL is limited 
 
 You can asynchronously replicate data in a TencentDB for MySQL instance in region A to another instance (disaster recovery instance) in region B through DTS. The disaster recovery instance has an independent connection address, account, and permissions. If a major failure occurs in region A and cannot be fixed in a short time, you can perform failover whenever needed. Specifically, you can quickly forward application requests to the disaster recovery instance simply by modifying the database connection configuration in the application, thereby delivering a finance-grade database availability.
 
-For more information on cross-region disaster recovery, please see [Managing Disaster Recovery Instances](https://intl.cloud.tencent.com/document/product/236/7272).
+For more information on cross-region disaster recovery, please see [Managing Disaster Recovery Instance](https://intl.cloud.tencent.com/document/product/236/7272).
 

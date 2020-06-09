@@ -76,5 +76,5 @@ TencentDB for MySQL no longer provides the super user permission. To modify para
 
 
 ### Network options
-You are recommended to use a VPC. In the VPC, you can freely define IP range segmentation, IP addresses, and routing policies. Compared with the basic network, VPC is more suitable for scenarios where custom network configurations are required. For the comparison of VPC and basic network, please see [Managing Network](https://intl.cloud.tencent.com/document/product/215/31807).
+You are recommended to use a VPC. In the VPC, you can freely define IP range segmentation, IP addresses, and routing policies. Compared with the classic network, VPC is more suitable for scenarios where custom network configurations are required. For the comparison of VPC and classic network, please see [Managing Network](https://intl.cloud.tencent.com/document/product/215/31807).
 
