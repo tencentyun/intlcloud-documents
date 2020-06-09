@@ -7,7 +7,8 @@
 
 
 ## 操作步骤
-### 按权重随机路由<span id="RandomRoutingByWeight"></span>
+<span id="RandomRoutingByWeight"></span>
+### 按权重随机路由
 本文以在创建别名时配置为例。完成创建后，流量将按设定的百分比在两个版本间随机路由。步骤如下：
 
 1. 进入“创建别名”窗口。
@@ -21,8 +22,8 @@
 
 
 
-
-### 按规则路由<span id="RoutingByRule"></span>
+<span id="RoutingByRule"></span>
+### 按规则路由
 使用按规则配置路由时，目前的规则语法包括以下三部分：
 
 - **匹配 Key**<span id="matchKey"></span>
@@ -50,5 +51,5 @@
 根据此配置，云函数平台在通过 `invoke` 接口调用函数别名时，若将 `routingKey` 参数设置为`{"User":"Bob"}`，则此次执行将使用版本2的代码和配置。若未设置 `routingKey` 参数或 `routingKey` 为其他值，则此次执行将使用版本1的代码和配置。
     2. 例如，您有两个版本（版本3和版本2），并且期望版本3匹配规则为 `invoke.headers.userHash range [1,50]`，版本2设置为未命中。可参照下图进行配置：
     ![](https://main.qcloudimg.com/raw/a3e4da8c3134c69c820d14fc534d7b17.png)
-		根据此配置，云函数平台在通过 `invoke` 接口调用函数别名时，若将 `routingKey` 参数设置为 `{"userHash":30}`，则此次执行将使用版本3的代码和配置。若未设置 `routingKey` 参数或 `routingKey` 为其他值，例如 `{"userHash":80}`，则此次执行将使用版本2的代码和配置。
+		根据此配置，云函数平台在通过 `invoke` 接口调用函数别名时，若将 `routingKey` 参数设置为 `{"userHash":30}`，则此次执行将使用版本3的代码和配置。若未设置 `routingKey` 参数或 `routingKey` 为除了 [1,50] 外的其他值，例如 `{"userHash":80}`，则此次执行将使用版本2的代码和配置。
 
