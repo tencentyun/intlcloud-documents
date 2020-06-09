@@ -1,23 +1,23 @@
-## Scenario
+## Overview
 
-This topic describes how to upload files from local Linux to a CVM using FTP services.
+This document describes how to use the FTP service to upload files from a local Linux computer to a CVM.
 
 ## Prerequisites
 
 You have built the FTP service on CVM.
-- To upload files to a Linux CVM using FTP, see [Building the FTP Service (Linux)](https://intl.cloud.tencent.com/document/product/213/10912)
-- To upload files to a Windows CVM using FTP, see [Building the FTP Service (Windows)](https://intl.cloud.tencent.com/document/product/213/10414)
+- To use FTP to upload files to a Linux CVM, see [Building the FTP Service (Linux)](https://intl.cloud.tencent.com/document/product/213/10912)
+- To use FTP to upload files to a Windows CVM, see [Building the FTP Service (Windows)](https://intl.cloud.tencent.com/document/product/213/10414)
 
 ## Directions
 
-### Connecting CVM
+### Connecting to the CVM
 1. Run the following command to install the FTP service.
-> If the FTP service has been installed on the local Linux computer, skip this step.
+> If the FTP service has already been installed on the local Linux computer, skip this step.
 >
 ```
 yum -y install ftp
 ```
-2. Run the following command to connect to the CVM, and enter the FTP service username and password as prompted/
+2. Run the following command to connect to the CVM and enter the FTP service username and password as prompted.
 ```
 ftp <CVM IP address>
 ```

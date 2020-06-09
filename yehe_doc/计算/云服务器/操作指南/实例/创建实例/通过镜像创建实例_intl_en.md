@@ -1,35 +1,35 @@
-## Scenario
-With a custom image, you create CVM instances of the same OS, applications and data more easily and efficiently. This topic guides you through how to create instances using a custom image.
+## Overview
+You can use a custom image to create CVM instances of the same operating system, applications, and data to improve efficiency. This document guides you through how to create an instance using a custom image.
 
 
 ## Prerequisites
-You have custom images under your account and in the region where an instance needs to be created.
-If there is no custom image, see the solutions given below:
+You must have a custom image under your account and in the region where you want to create an instance.
+If there is no custom image, see the following solutions:
 <table>
 	<tr><th>Image Status</th><th>Solution</th></tr>
-	<tr><td>Image on local computers or other platforms</td><td>Import the system disk image on local computers or other platforms to the custom image on CVM. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4945">Overview</a>.</td></tr>
-	<tr><td>No custom image, but template instances exist</td><td>For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4942">Creating Custom Images</a>.</td></tr>
-	<tr><td>Custom images in other regions</td><td>Copy the custom image to the target region where an instance needs to be created. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4943">Copying Images</a>.</td></tr>
-	<tr><td>Custom images under another account</td><td>Share the custom image with the account that needs to create an instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4944">Sharing Custom Images</a>.</td></tr>
+	<tr><td>Images on local computers or other platforms</td><td>Import the system disk image on local computers or other platforms to the custom image on CVM. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4945">Overview</a>.</td></tr>
+	<tr><td>There are template instances but no custom images</td><td>For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4942">Creating Custom Images</a>.</td></tr>
+	<tr><td>Custom images in other regions</td><td>Copy the custom image to the target region where you want to create an instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4943">Copying Images</a>.</td></tr>
+	<tr><td>Custom images under another account</td><td>Share the custom image with the account under which you want to create an instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4944">Sharing Custom Images</a>.</td></tr>
 </table>
 
 ## Directions
 
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/instance/index?rid=1).
-2. Click **Images** in the left sidebar to go to the **Image** page.
-3. Select a region on the top of the **Image** page.
-4. Select the tab based on the image source, and view the image list.
+2. Click **Images** on the left sidebar to access the **Image** page.
+3. Select a region at the top of the **Image** page.
+4. Select a tab based on the image source to view its image list.
  - **Public Image**: go to the public image page.
  - **Custom Image**: go to the custom image page.
  - **Shared Image**: go to the shared image page.
-5. Click **Create Instance** under the **Operation** column of the image to use.
+5. Under the **Operation** column of the image you want to use, click **Create Instance**.
 ![](https://main.qcloudimg.com/raw/4c5806f49da53595d31ad07662bf363a.png)
 6. In the pop-up window, click **OK**.
 7. Configure and create the instance as prompted by the page.
-The **Region** and **Image** fields are automatically filled. Complete other configurations of the instance as needed. For more information, see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
-> If you use a custom image that contains one or more data disk snapshots, Cloud Block Storage (CBS) will be created with the same quantity as snapshots and capacity as each snapshot. You may expand but cannot reduce the CBS capacity.
+The **Region** and **Image** fields are automatically filled. Complete the other configurations of the instance as needed. For more information, see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
+> If you use a custom image that contains one or more data disk snapshots, the operating system will automatically create the same quantity of Cloud Block Storage (CBS) as snapshots and the same capacity as each snapshot. You can expand, but cannot reduce, the CBS capacity.
 >
 
-## Related documentation
+## Related Documentation
 
-You can also create a custom image using the RunInstances. For more information, see [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237)
+You can also create a custom image using the RunInstances API. For more information, see [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237)
