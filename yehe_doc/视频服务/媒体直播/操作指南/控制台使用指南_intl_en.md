@@ -6,7 +6,7 @@ An input security group is used to verify the validity of the input source's IPv
 ### Creating security group
 ![](https://main.qcloudimg.com/raw/d6a6ae8de1db8cb120e995c11b61aec3.png)
 Name: name of the security group, which is a string containing 32 letters, digits, and underscores.
-Whitelist: valid range of the input IPv4 addresses in CIDR format; for example, `0.0.0.0.0/0` means that all input IPs are valid. Up to 10 IP ranges can be entered and separated by line break.
+Whitelist: valid range of the input IPv4 addresses in CIDR format; for example, `0.0.0.0/0` means that all input IPs are valid. Up to 10 IP ranges can be entered and separated by line break.
 
 **Note**: you can create up to 5 security groups in the console by default. If you need more security groups, please submit a ticket for assistance.
 
@@ -23,7 +23,7 @@ A channel input is MediaLive's media stream input channel, which is usually asso
 ### Creating input
 ![](https://main.qcloudimg.com/raw/f6890473b696bfa90064d2f3edffc76d.png)
 Name: name of the channel input.
-Type: support 4 input types (RTP, RTMP, UDP, and HTTP) and 2 input methods (PULL and PUSH).
+Type: supports 5 input types (RTP, RTMP, UDP, HLS, and HTTP-MP4) and 2 input methods (PULL and PUSH).
 Security Group: associated security group. One input can be associated with only one security group.
 **Note**
 
@@ -33,7 +33,7 @@ Security Group: associated security group. One input can be associated with only
 > 3.When MPEG-TS multiplexing is used, a maximum of 8 channels can be transferred simultaneously.
 
 ## Channel
-A channel contains the details of various operations on an input stream in MediaLive such as transcoding, remuxing, and relaying to a destination address.
+A channel contains the details of various operations on an input stream in MediaLive such as transcoding, remuxing, and relaying to other destination address.
 A channel can be created in the following steps:
 
 > 1.Associate an existing input.
