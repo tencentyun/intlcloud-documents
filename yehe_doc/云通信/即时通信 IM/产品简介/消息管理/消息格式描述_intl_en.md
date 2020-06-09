@@ -466,7 +466,7 @@ The preceding fields are described as follows:
 | PushFlag | Integer | Optional | 0: enable push, 1: disable offline push. |
 | Title | String | Optional | The offline push title. This field is applicable to both iOS and Android. |
 | Desc | String | Optional | The offline push content. This field overwrites the offline push display text of the [TIMMsgElement] (https://intl.cloud.tencent.com/document/product/1047/33527) elements mentioned above.<br>If the message sent has only one [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527) element, this Desc field will overwrite the Desc field in the TIMCustomElem. If neither of the Desc fields is filled in, the offline push notification for the message will not be received. |
-| Ext | String | Optional | The passthrough content of offline push. |
+| Ext | String | Optional | The passthrough content of offline push. To make sure the offline push of all Andriod vendors are attainable, this field must be in JSON format.|
 | AndroidInfo.Sound | String | Optional | The file path for the offline push sound in Android. |
 | AndroidInfo.OPPOChannelID | String | Optional | This field is used for NotificationChannel notifications in OPPO mobile phones with Android 8.0 or later. |
 | ApnsInfo.BadgeMode | Integer | Optional | The default value or 0 indicates that counting is required. 1 indicates that counting is not required for this message, in which case the number in the upper-right icon does not increase. |
