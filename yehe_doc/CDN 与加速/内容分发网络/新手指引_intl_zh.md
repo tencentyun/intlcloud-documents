@@ -38,7 +38,7 @@
 ## 4. 控制台界面
 
 以下为 CDN 控制台总览页面：
-![](https://main.qcloudimg.com/raw/a78e96bc1d37a2dd89b0ea1db01eb01b.png)
+![](https://main.qcloudimg.com/raw/95fff730b132974403698b512260f3fb.png)
 
 -----
 
