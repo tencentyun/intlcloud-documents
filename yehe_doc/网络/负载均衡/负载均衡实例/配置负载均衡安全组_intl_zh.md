@@ -69,7 +69,7 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 1. 在 CLB 详情页面，选择【安全组】标签页。
 2. 在“安全组”页面，单击<img style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/5ba06490364505efc4d698e3adb1064e.png">，启用默认放通。
 3. 启用默认放通功能后，将仅验证如下<strong>规则预览</strong>中的安全组规则。
-   <img alt="" src="https://main.qcloudimg.com/raw/f61c2db9b757c72d3df5b2928d316ff6.png"></li>
+   <img alt="" src="https://main.qcloudimg.com/raw/6caa47138ecb97cc3c60cb38971792fd.png"></li>
 
 #### 方式二：关闭安全组默认放通
 关闭默认放通，则需在 CVM 的安全组上也放通 Client IP。对于通过 CLB 访问 CVM 的业务流量，仅允许从 CLB 的 80 端口进入，并由 CVM 的 8080 端口提供服务。

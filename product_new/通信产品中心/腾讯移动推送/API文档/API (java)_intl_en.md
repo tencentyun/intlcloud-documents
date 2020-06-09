@@ -2,17 +2,7 @@
 This SDK provides the Java package of the TPNS server APIs and communicates with the TPNS backend. You can import the `XingeApp` package when using it. This SDK mainly encapsulates v3 APIs related to push.
 ## Integration Steps
 Import Maven dependencies:
-Resource library configuration:
-``` xml
- <repositories>
-        <repository>
-            <id>xingePush</id>
-           <url>https://raw.githubusercontent.com/xingePush/maven-repository/snapshot/</url>
-     </repository>
-    </repositories>
-```
 
-Dependency configuration
 ```
 <dependency>
             <groupId>com.github.xingePush</groupId>

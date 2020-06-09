@@ -21,8 +21,8 @@ User value: Bandwidth is greatly saved and cost is reduced.
 Description: Cold backup is pulled quickly and then parallel decompressed. The rollback process is entirely automated, and rollback to a precise time point is supported. With 300 GB cold data backup on each node, all nodes can be recovered within 2 hours.
 User value: Quick rollback can reduce failure losses.
 #### Backup for disaster recovery
-Description: Overload protection; master/slave hot backup; daily cold backup for disaster recovery with data retained for up to 30 days, and Binlog record for 15 days.
-User value: Data security is ensured and operation failure is handled easily.
+Description: overload protection; master/slave hot backup; daily scheduled data backup retained for up to 7 days.
+User value: data security is ensured and operation failure is handled easily.
 
 
 ### Strengths

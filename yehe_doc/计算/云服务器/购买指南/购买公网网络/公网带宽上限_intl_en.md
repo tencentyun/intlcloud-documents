@@ -25,6 +25,13 @@ The inbound bandwidth of the public network refers to the bandwidth that flows i
 - If the fixed bandwidth purchased by users is greater than 10 Mbps, Tencent Cloud assigns a public network inbound bandwidth that is equal to the purchased bandwidth.
 - If the fixed bandwidth purchased by users is less than 10 Mbps, Tencent Cloud assigns 10 Mbps public network inbound bandwidth.
 
+## Bandwidth Peaks
+The bandwidth peak is applicable to both bill-by-traffic and bill-by-bandwidth, but it means differently in these two cases as follows:
+
+| Bill-by-traffic| Bill-by-bandwidth (including hourly bill-by-bandwidth and monthly-subscribed bandwidth) |
+|---------|---------|
+| The bandwidth peak is only a bandwidth cap, instead of a commitment indicator. It may be limited when there is a scramble for bandwidth resources. | The bandwidth peak is a commitment indicator. It will not be limited when there is a scramble for bandwidth resources. |
+
 ## Increasing the Bandwidth Cap
 
 You can choose one of the following adjustment methods based on your needs:
