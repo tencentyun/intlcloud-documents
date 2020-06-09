@@ -100,7 +100,7 @@
         </tr>
         <tr>
             <td>Call frequency</td>
-            <td><ul style="margin:0;"><li>Up to 100 times per second:<a href="https://intl.cloud.tencent.com/document/product/1047/34954">importing multiple accounts</a>, <a href="https://intl.cloud.tencent.com/document/product/1047/34955">deleting accounts</a>, <a href="https://intl.cloud.tencent.com/document/product/1047/34956">querying accounts</a>, and <a href="https://intl.cloud.tencent.com/document/product/1047/34960">obtaining all groups in the app</a></li><li>Up to 200 times per second: other <a href="https://intl.cloud.tencent.com/document/product/1047/34621">RESTful APIs</a></li></ul></td>
+            <td><ul style="margin:0;"><li>Up to 100 times per second:<a href="https://intl.cloud.tencent.com/document/product/1047/34954">importing multiple accounts</a>, <a href="https://intl.cloud.tencent.com/document/product/1047/34955">deleting accounts</a>, and<a href="https://intl.cloud.tencent.com/document/product/1047/34956">querying accounts</a></li><li>Up to 200 times per second: other <a href="https://intl.cloud.tencent.com/document/product/1047/34621">RESTful APIs</a></li></ul></td>
         </tr>
 </table>
 
@@ -115,7 +115,7 @@
         </tr>
         <tr>
             <td>Importing multiple accounts</td>
-            <td>A maximum of 100 user names can be imported each time.</td>
+            <td>Supports importing up to 100 usernames at a time, but rejects the direct import of account nickname and portrait.</td>
         </tr>
 				<tr>
             <td>Querying online status of accounts</td>
