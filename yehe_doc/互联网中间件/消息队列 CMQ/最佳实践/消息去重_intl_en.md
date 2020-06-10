@@ -2,7 +2,7 @@ For duplicate messages, the best solution is to make them reentrant (repeated me
 
 ## Causes of Message Duplication
 
-![](//mc.qcloudimg.com/static/img/821719ad41adc3c8e8de2473e6f3fbf5/image.png)
+![](https://main.qcloudimg.com/raw/a705e5969a503b19fce600ae4b2927be.png)
 
 Messages may be lost due to network exceptions, server failures, or other issues. To prevent message loss and ensure reliable delivery, CMQ adopts a mechanism of dual acknowledgment mechanism for message production and consumption.
 
