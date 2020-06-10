@@ -77,28 +77,6 @@ As you can see below, if you do not specify a version ID, the DELETE operation w
 2. If you delete an object with a version ID specified, the specified version of the object will be deleted permanently.
 ![](https://main.qcloudimg.com/raw/7b36446f98a66c73901ab5007a2b008d.png)
 
-#### Delete marker
-A delete marker is a marker for versioned objects, indicating that the objects have already been deleted in COS. A delete marker has an object key and version ID like any other object. However, a delete marker differs from other objects in the following ways:
-- Its content is empty.
-- It does not have ACL value.
-- To GET a delete marker will return a 404 error.
-- The only operation you can use on a delete marker is DELETE, and only the root account can issue such a request.
-
-#### Deleting a delete marker
-To delete a delete marker, you can specify its version ID in a DELETE Object versionId request to permanently delete it. If you use a DELETE request to delete a delete marker without specifying its version ID, COS will not delete the delete marker, but instead, insert another delete marker.
-The following figure shows how a simple DELETE on a delete marker removes nothing, but adds a new delete marker to a bucket.
-![](https://main.qcloudimg.com/raw/0f9a86359df48cda6c0a74809cffc228.png)
-
-In a versioning-enabled bucket, a new delete marker has a unique version ID. Therefore, one object may have multiple delete markers in the same bucket. To delete a delete marker permanently, you must include its version ID in a DELETE Object versionId request.
-The following figure shows how you can permanently delete a delete marker with a DELETE Object versionId request.
-![](https://main.qcloudimg.com/raw/576fe70fc601d3cca7f33386fe9f2276.png)
-
->You can delete a delete marker only after the root account grants the `DeleteObject` permission.
-
-To permanently remove a delete marker:
-1. Set versionId to the ID of the version of the delete marker you want to remove.
-2. Send a DELETE Object versionId request.
-
 #### Restoring Previous Versions
 Versioning can be used to restore previous versions. You can do it in two ways:
 1. Copy a previous version of the object into the same bucket

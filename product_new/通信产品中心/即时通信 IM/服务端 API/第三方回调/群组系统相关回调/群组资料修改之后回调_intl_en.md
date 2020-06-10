@@ -6,7 +6,7 @@ The app backend uses this callback to monitor changes to group information (incl
 - To enable this callback, you must configure the callback URL and toggle on the corresponding protocol. For details on the configuration method, see [Third-Party Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - Callback direction: the IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the SDKAppID contained in the request URL is consistent with its own SDKAppID.
-- For other security-related issues, see [Third-Party Callback Overview: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.AE.89.E5.85.A8.E8.80.83.E8.99.91).
+- For other security-related issues, see [Third-Party Callback Overview: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5).
 
 ## Callback Triggering Scenarios
 

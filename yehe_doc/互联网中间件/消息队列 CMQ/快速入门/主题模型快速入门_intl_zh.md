@@ -58,7 +58,7 @@ Topic 目前支持标签过滤和 routingKey 过滤两种方式。
 ```
 
 ### 使用其他方式处理消息
-订阅者也可以不与 Queue 结合，自己来处理消息。详情请参考 [投递消息](https://cloud.tencent.com/document/product/406/7420)。
+订阅者也可以不与 Queue 结合，自己来处理消息。详情请参考 [投递消息](https://intl.cloud.tencent.com/document/product/406/7420)。
 
 
 ## 4. 路由匹配
@@ -86,8 +86,8 @@ Binding key 、Routing key 是组合使用的，兼容 rabbitmq topic 匹配模�
     topicName = 'TopicTest'
     my_topic = account.get_topic(topicName)
     topic_meta = TopicMeta()
-    topic_meta.filterType = =2 //表示消息投递给订阅的时候采用路由匹配。
-    //若filterType =1 则表示使用标签过滤。
+    topic_meta.filterType = 2 //表示消息投递给订阅的时候采用路由匹配
+    //若filterType =1 则表示使用标签过滤
     my_topic.create(topic_meta)
 
     subscription_name = "subsc-test"
@@ -96,8 +96,8 @@ Binding key 、Routing key 是组合使用的，兼容 rabbitmq topic 匹配模�
     //填写订阅名称，这里填写队列名称
     subscription_meta.Endpoint = "queue name  "
     subscription_meta.Protocal = "queue"
-    subscription_meta.bindingKey=[1.*.0]  //若消息的标签为[1.任意字符.0]则该订阅者都
-    //能收到该标签
+    subscription_meta.bindingKey=[1.*.0]  //若消息的标签为[1.任意字符.0]，则该订阅者都能收到该标签
+
     my_sub.create(subscription_meta)
 ```
 
@@ -106,7 +106,7 @@ Binding key 、Routing key 是组合使用的，兼容 rabbitmq topic 匹配模�
 ```
     message = Message()
     message.msgBody = "this is a test message"
-    routingKey = '1.test.0' //该消息会被投递到 my_sub订阅的地址。
+    message.routingKey = '1.test.0' //该消息会被投递到 my_sub订阅的地址
     my_topic.publish_message(message)
 ```
 

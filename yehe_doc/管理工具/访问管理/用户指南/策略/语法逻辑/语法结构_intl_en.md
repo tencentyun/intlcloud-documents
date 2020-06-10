@@ -18,7 +18,7 @@ Here we list some syntax conventions:
 - If an element allows multiple values, the values will be described with comma separators and ellipsis; for example:
 ```
  [<resource_string>, < resource_string>, ...]  
- <principal_map> = { <principal_map_entry>, > <principal_map_entry>, ... }
+ <principal_map> = { <principal_map_entry>, <principal_map_entry>, ... }
 ```
 When multiple values are allowed, you can also choose to include only one value. When an element has only one value, the trailing comma must be removed, and the brackets "[]" are optional; for example:
 ```

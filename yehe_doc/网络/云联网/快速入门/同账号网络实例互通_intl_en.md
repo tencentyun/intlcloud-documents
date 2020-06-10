@@ -15,7 +15,7 @@ This article describes how to use CCN to interconnect VPCs and IDCs under the sa
 
 ## Step 2: Associating a Network Instance
 1. In the CCN list, click the ID of the desired CCN to enter the details page.
-2. Click **Add an instance** under **Associate with Instance**. The **Associate with Instance** page appears. 
+2. Click **Add an instance** on the **Associate with Instance** page.
 3. Select the network instance type and region, as well as a specific instance.
 > If you need to associate more network instances, click **Add**.
 4. Click **OK** to add the selected network instance to CCN.

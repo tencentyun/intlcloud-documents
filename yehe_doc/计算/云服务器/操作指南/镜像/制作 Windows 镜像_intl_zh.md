@@ -58,7 +58,7 @@ bootmenupolicy          Standard
  - 若返回结果如下图示，则表示已安装了 Virtio 驱动。
 ![image](https://main.qcloudimg.com/raw/87808940ddd5317dd8c67a699e3dc5c0.png)
  - 若没有安装 Virtio 驱动，则需要手动安装。
-    - Microsoft Windows Server 2012 R2（标准版），请下载：[腾讯云定制版 Virtio](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe?_ga=1.44298212.1367540472.1504757536)。
+    - Microsoft Windows Server 2008 R2（标准版、数据中心版、企业版)，Microsoft Windows Server 2012 R2（标准版），请下载：[腾讯云定制版 Virtio](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe?_ga=1.44298212.1367540472.1504757536)。
     - 其它系统版本，请下载 [社区版本 virtio](https://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers)。
 
 #### 检查其它硬件相关的配置
