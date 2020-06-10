@@ -19,9 +19,10 @@ You cannot enter links (including short links) as a template variable parameter.
 ### Is there a limit on the number of SMS templates?
 You can have up to 1,000 SMS templates. You can select different templates to send SMS messages as needed.
 
-### Is there a limit on the number of characters in a variable in an SMS body template?
-- In an SMS body template applied for by an individual user, a variable can contain up to 12 characters, and a template cannot contain only variables.
-- For organizational users, there is no limit on the number of variable characters, but a template cannot contain only variables.
+### Is there a limit on the number of characters in each variable in an SMS body template?
+- In an SMS body template created by an individual user, each variable can contain up to 12 characters, and a template cannot contain only variables.
+- For organizational users, there is no limit on the number of characters in each variable, but a template cannot contain only variables.
+
 
 ### Can I add hyperlinks in SMS message content?
 Yes. Hyperlinks can be added to both general and marketing SMS messages. The link address can be a constant only (fixed), and the SMS content needs to be submitted for review and can be sent only after approval. If the SMS content is found violating the Tencent Cloud SMS terms of use, your account will be banned.

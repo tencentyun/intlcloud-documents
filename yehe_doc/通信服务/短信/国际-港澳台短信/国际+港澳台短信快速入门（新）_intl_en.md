@@ -1,4 +1,4 @@
-This document uses sending a message `[Tencent Cloud] Your verification code is 1234 (valid for 5 minutes). For account safety, don't forward the code to others.` to mobile numbers outside Mainland China as an example to describe how to get started with the Global SMS service. For more concepts related to SMS, please see [Common Concepts](https://intl.cloud.tencent.com/document/product/382/13299).
+This document uses sending a message `Your verification code is 1234 (valid for 5 minutes). For account safety, don't forward the code to others.` to mobile numbers outside Mainland China as an example to describe how to get started with the Global SMS service. For more concepts related to SMS, please see [Common Concepts](https://intl.cloud.tencent.com/document/product/382/13299).
 
 >The new version of console is displayed to users who activate the SMS service after September 18, 2019 by default.
 
@@ -11,29 +11,16 @@ This document uses sending a message `[Tencent Cloud] Your verification code is 
 >When logging in to the SMS Console for the first time, you need to apply to activate the SMS service.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2), tick **I have read and agree to Tencent Cloud SMS Service Agreement**, and click **Start Access** to activate the service.
-2. Select **Getting Started** on the left sidebar to enter the SMS sending guide page.
-
+2. Select **Getting Started** on the left sidebar, select **Send Global SMS**, and click **Start** to enter the SMS sending guide page.
 
 ## Step 2. Configure SMS content
  A complete SMS message consists of **SMS signature** and **SMS body**. You can set different body templates based on your business needs and then combine a signature and a body into the final SMS content: `[SMS signature] SMS body`. After an SMS signature or template is submitted, it will be reviewed within two hours generally. You can set your mobile number and email address to receive review result notifications.
-Signature is optional for Global SMS. This document uses the signature `Tencent Cloud` as an example.
-
-<span id="Sign"></span>
-### Creating a signature
-1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, click **Apply for Global SMS Signature**.
-2. Set the following parameters as needed and according to the signature review standards:
- - Signature Purpose: select **For self-use (the signature is a company name, website, product name, or something else verified under the current account)**.
- - Signature Type: select **Company**.
- - Signature Content: enter `Tencent Cloud`.
- - Certificate Type: select **Business license containing unified social credit code**.
- - Certificate Upload: upload a photo or scan of the certificate.
-3. Click **OK**.
- Waiting for signature review. The SMS signature will be available only after its status changes to **approved**.
+Signature is optional for Global SMS. This document uses no signature as an example.
 
 <span id="Template"></span>
 ### Creating a body template
-1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, click **Apply for Global SMS Body Template**.
-2. Set the following parameters as needed and according to the body template review standards:
+1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, click **Create**.
+2. Set the following parameters as needed:
  - Template Name: enter `Verification Code`.
  - SMS Type: select **Regular SMS**.
  - SMS Content: enter `Your verification code is {1} (valid for {2} minutes). For account safety, don't forward the code to others.`.
@@ -41,17 +28,16 @@ Signature is optional for Global SMS. This document uses the signature `Tencent 
  Waiting for body template review. The body template will be available only after its status changes to **approved**.
 
 ## Step 3. Wait for review
-After an SMS signature or template is submitted, it will be reviewed within two hours generally. You can set your mobile number and email address to receive review result notifications.
-On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, you can click [Global SMS Signature Review Status] or [Global SMS Body Review Status] to quickly view the review status. The signature or body template will be available only after its status changes to **approved**.
-
+After an SMS signature or body template is submitted, it will be reviewed within two hours generally. You can set your mobile number and email address to receive review result notifications.
+On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, you can click **View** to quickly view the review status. The signature or body template will be available only after its status changes to **approved**.
 
 ## Step 5. Send SMS
 Before sending an SMS, you need to confirm that both the SMS signature and body template have been approved.
-You can send an SMS through the console or API. This document uses the console as an example.
+You can send an SMS through the console or [API](https://intl.cloud.tencent.com/document/product/382/34689). This document uses the console as an example.
 
-1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, click **Send Global SMS**.
+1. On the [Getting Started](https://console.cloud.tencent.com/smsv2/guide) page, click **Send SMS**.
 2. Configure the following parameters as needed:
- - Signature Name: select the signature **"Tencent Cloud"** created in the [Creating a signature](#Sign) step.
+ - Signature Name: signature is optional for Global SMS.
  - Template Name: select the template **"Verification Code"** created in the [Creating a body template](#Template) step.
  - Delivery Time: select **Send Now**.
  - Recipient: click **Template Download**, enter recipient's mobile number and custom SMS content in the form, and click **Select File** to upload it. The maximum form size supported is 30 MB.
