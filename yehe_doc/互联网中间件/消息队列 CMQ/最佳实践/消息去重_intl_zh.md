@@ -2,7 +2,7 @@
 
 ## 重复消息出现的原因
 
-![](//mc.qcloudimg.com/static/img/821719ad41adc3c8e8de2473e6f3fbf5/image.png)
+![](https://main.qcloudimg.com/raw/a705e5969a503b19fce600ae4b2927be.png)
 
 网络异常、服务器宕机等原因都有可能导致消息丢失。CMQ 为了做到不丢消息、可靠交付，采用了消息生产、消费确认机制。
 
