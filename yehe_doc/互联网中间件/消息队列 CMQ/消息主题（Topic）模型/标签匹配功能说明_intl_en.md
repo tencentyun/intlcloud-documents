@@ -1,5 +1,5 @@
 The topic mode of CMQ supports subscription filtering by tag, which is similar to the "direct_routing" mode of RabbitMQ. The "topic_pattern" mode will be provided in the next iteration. As the usage policies of filter tags are complex, this document uses different scenarios as examples to describe them.
-
+![](https://main.qcloudimg.com/raw/171e6538aafb695b153a68ff682fd38f.png)
 ## Scenario Description
 ### Scenario 1
 There are four subscribers A, B, C, and D and the message tags are as follows: `apple` for A, `xiaomi` for B, `imac+xiaomi` for C, and none for D.
@@ -12,7 +12,7 @@ A producer publishes 100 messages to the topic with message filter tags `apple`,
 | A | apple | As `apple` can match the `apple` message filter tag, the 100 messages can be received properly. |
 | B | xiaomi | No messages can be received. |
 | C | imac+xiaomi | As `imac` can match the `imac` message filter tag, the 100 messages can be received properly. |
-| D | - | No messages can be received |
+| D | - | All messages can be received |
 
 
 
@@ -47,7 +47,7 @@ Suppose the result is as follows: A fails to receive 100 messages, B fails to re
 - **Retry policy (backoff retry):** the `test1` topic will deliver the messages again to A once every N seconds. Specifically, the failed 100 messages will be delivered to A again starting from the first one in sequence. If a message fails to be delivered for three consecutive times, it will be directly discarded, and the next message will be delivered, which may also be discarded after three failures, and so on.
 - **Retry policy (exponential decay retry):** taking A as an example, the topic delivers 100 messages concurrently to A (the sequence cannot be guaranteed). When a message fails to be delivered to A, the very message will be retried. If it fails again, subsequent messages will be blocked.
 - **Inextensible message lifecycle:** suppose the 110 messages are retained in the `test1` topic. No matter how many times they are retried for delivery, their lifecycle still remains 1 day. The time point when a message is pushed by the producer to the topic will be the lifecycle start time point, and the message will be deleted once the lifecycle expires.
-- **Repush**: the producer continuously produces new messages to the topic, and the subscription publishing API is called again at 12:02. Supposed that the topic now has 210 messages (110 retained messages that fail to be delivered plus 100 messages that are produced in one minute) and delivers them again, in this case, as the retry policy for A and B is exponential decay retry , A and B cannot "respond", and the 210 messages will continue to be retained. C will receive only the 100 new messages.
+- **Repush**: the producer continuously produces new messages to the topic, and the subscription publishing API is called again at 12:02. Suppose the topic now has 210 messages (110 retained messages that fail to be delivered plus 100 messages that are produced in one minute) and delivers them again. In this case, as the retry policy for A and B is exponential decay retry, A and B cannot "respond", and the 210 messages will continue to be retained. C will receive only the 100 new messages.
 >Each message ID is used as the key, and the value is the associated subscribers, indicating whether consumption of each subscriber is successful.
 
 
