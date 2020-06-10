@@ -70,7 +70,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | --- | --- | --- |
 | CallbackCommand | String | The callback command. |
 | GroupId | String | The ID of the dismissed group. |
-| Type | String | The type of the dismissed group, such as Public. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D). |
+| Type | String | The type of the dismissed group, such as Public. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#group-types). |
 | Owner_Account | String | The UserID  of the group owner. |
 | MemberList | Array | The member list of the dismissed group. |
 

@@ -116,7 +116,7 @@ If part of group-specific custom fields are modified, the request packet contain
 | --- | --- | --- |
 | CallbackCommand | String | The callback command. |
 | GroupId | String | The ID of the group whose information is modified. |
-| Type | String | The type of the group whose information is modified, such as Public. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D). |
+| Type | String | The type of the group whose information is modified, such as Public. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#group-types). |
 | Operator_Account | String | The UserID  of the operator. |
 | Name | String | The changed group name. |
 | Introduction | String | The modified group introduction. |

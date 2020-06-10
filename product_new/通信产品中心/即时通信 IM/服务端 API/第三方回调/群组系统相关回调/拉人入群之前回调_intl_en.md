@@ -66,7 +66,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | --- | --- | --- |
 | CallbackCommand | String | Callback command |
 | GroupId | String | ID of the group to which a user is added |
-| Type | String | The type of the group to be created. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D). The group type can be Public. |
+| Type | String | The type of the group to be created. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#group-types). The group type can be Public. |
 | Operator_Account | String | Request operator’s UserID  |
 | DestinationMembers | Array | Set of UserID s to be added to the group |
 

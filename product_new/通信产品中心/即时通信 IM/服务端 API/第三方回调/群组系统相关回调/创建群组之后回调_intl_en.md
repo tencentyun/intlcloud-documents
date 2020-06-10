@@ -80,7 +80,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | GroupId | String | The ID of the target group. |
 | Operator_Account | String | The UserID  of the operator who initiates the request for creating a group. |
 | Owner_Account | String | The UserID  of the owner of the group to be created by the request. |
-| Type | String | The type of the group to be created. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D). The group type can be Public. |
+| Type | String | The type of the group to be created. For details, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#group-types). The group type can be Public. |
 | Name | String | The name of the group to be created by the request. |
 | MemberList | Array | The initial member list of the group to be created by the request. |
 | UserDefinedDataList | Array | Custom fields during group creation by the user. By default, this field is unavailable and needs to be enabled before use. For details, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
