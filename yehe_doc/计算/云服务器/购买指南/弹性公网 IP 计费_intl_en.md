@@ -40,3 +40,5 @@ For details, refer to [Public Network Pricing](https://intl.cloud.tencent.com/do
 
 ### Arrears on bound resources 
 If the resource bound with your EIP is in arrears, the EIP will be unbound from the resource and become idle, which will incur an idle fee. If you do not need the EIP anymore, please release it in the console.
+
+This  pricing document is for reference only. See your bill for the actual price.
