@@ -17,4 +17,4 @@ Step 1: CompanyGrantee creates the following policy according to policy syntax.
 ```
 Step 2: associate the sub-account with the policy. To learn how to associate a policy with a user account, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
-Step 3: the CompanyGranter enterprise account grants CompanyGrantee enterprise account access to Object1 by configuring the policy and ACL in the COS Console. For more information, see COS documentation.
+Step 3: the CompanyGranter enterprise account grants CompanyGrantee enterprise account access to Object1 by configuring the policy and ACL in the COS Console. For more information, see [COS documentation](https://intl.cloud.tencent.com/document/product/436/12470).

@@ -20,4 +20,4 @@ Step 2: associate the sub-account with the policy. To learn how to associate a p
 
 Solution B:
 
-Configure the policy and ACL in the COS Console. For more information, see the COS documentation.
+Configure the policy and ACL in the COS Console. For more information, see the [COS documentation](https://intl.cloud.tencent.com/document/product/436/12470).
