@@ -1,48 +1,48 @@
-## 简介
+## Overview
 
-本文档提供关于对象的简单操作、分块操作等其他操作相关的 API 概览以及 SDK 示例代码。
+This document provides an overview of APIs and SDK sample codes related to simple, multipart, and other operations on objects.
 
-**简单操作**
+**Simple operations**
 
-| API                                                          | 操作名         | 操作描述                       |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------ |
-| [GET Bucket（List Objects）](https://intl.cloud.tencent.com/document/product/436/30614) | 查询对象列表   | 查询存储桶下的部分或者全部对象 |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象   | 上传一个对象至存储桶           |
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询对象的元数据信息           |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地             |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径             |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在存储桶中删除指定对象         |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除对象         |
+| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/7734) | Querying object list | Queries some or all objects in a bucket |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies a file to a destination path |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects in a single request |
 
-**分块操作**
+**Multipart operations**
 
-| API                                                          | 操作名         | 操作描述                             |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化分块上传任务                   |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload task |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads file parts |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries uploaded parts in the specified multipart upload operation |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of the entire file |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload operation and deletes the uploaded parts |
 
-**其他操作**
+**Other operations**
 
-| API                                                          | 操作名       | 操作描述                           |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ---------------------------------- |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问           |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
-| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询对象的访问控制列表             |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL for the specified object in a bucket |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
 
-## 简单操作
+## Simple Operations
 
-### 查询对象列表
+### Querying object list
 
-#### 功能说明
+#### Feature
 
-查询存储桶下的部分或者全部对象。
+This API (GET Bucket (List Object)) is used to query some or all objects in a bucket.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_list_object(const cos_request_options_t *options,
@@ -51,40 +51,40 @@ cos_status_t *cos_list_object(const cos_request_options_t *options,
                               cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称           | 参数描述                                                     | 类型    |
+| Parameter Name | Description | Type |
 | ------------------ | ------------------------------------------------------------ | ------- |
-| options            | COS 请求选项                                                 | Struct  |
-| bucket             | 存储桶名称，Bucket 的命名规则为 BucketName-APPID ，此处填写的存储桶名称必须为此格式 | String  |
-| params             | 列表操作参数信息                                          | Struct  |
-| encoding_type      | 规定返回值的编码方式                                         | String  |
-| prefix             | 前缀匹配，用来规定返回的文件前缀地址                         | String  |
-| marker             | 默认以 UTF-8 二进制顺序列出条目，所有列出条目从 marker 开始  | String  |
-| delimiter          | 查询分隔符，用于对对象键进行分组                             | String  |
-| max_ret            | 单次返回最大的条目数量，默认1000                             | Struct  |
-| truncated          | 返回条目是否被截断，'true' 或者 'false'                      | Boolean |
-| next_marker        | 假如返回条目被截断，则返回 NextMarker 就是下一个条目的起点   | String  |
-| object_list        | Get Bucket 操作返回的对象信息列表                            | Struct  |
-| key                | Get Bucket 操作返回的 Object 名称                            | Struct  |
-| last_modified      | Get Bucket 操作返回的 Object 最后修改时间                    | Struct  |
-| etag               | Get Bucket 操作返回的对象的 SHA-1 算法校验值                 | Struct  |
-| size               | Get Bucket 操作返回的对象大小，单位 Byte                     | Struct  |
-| owner_id           | Get Bucket 操作返回的对象拥有者 UID 信息                     | Struct  |
-| storage_class      | Get Bucket 操作返回的对象存储级别                            | Struct  |
-| common_prefix_list | 将 Prefix 到 delimiter 之间的相同路径归为一类，定义为 Common Prefix | Struct  |
-| resp_headers       | 返回 HTTP 响应消息的头域                                     | Struct  |
+| options            | COS request options                                               | Struct  |
+| Bucket | Bucket name in the format of `BucketName-APPID` | String |
+| params             | Parameters for the List Objects operation                                          | Struct  |
+| encoding_type | Specifies the encoding type of the returned value | String |
+| prefix | Prefix to be matched, which specifies the address prefix of the files to be returned | String |
+| marker  | By default, entries are listed in UTF-8 binary order starting from this `marker` | String |
+| delimiter          | A separator for query, used to group object keys                             | String  |
+| max_ret            | The maximum number of returned entries per request. Default: 1000                             | Struct  |
+| truncated  |  Indicates whether the returned entry is truncated. Valid value: `true` or `false` | Boolean|
+| next_marker        | Marks the start of the next entry if the returned entry is truncated  | String  |
+| object_list        | The object list returned by Get Bucket                             | Struct  |
+| key                | The key of the object returned by Get Bucket                           | Struct  |
+| last_modified      | The last modified time of the object returned by Get Bucket                     | Struct  |
+| etag               | SHA-1 check value of the object returned by Get Bucket                 | Struct  |
+| size               | The size in bytes of the object returned by Get Bucket                      | Struct  |
+| owner_id           | UID of the object owner returned by Get Bucket                      | Struct  |
+| storage_class      | The storage class of the object returned by Get Bucket                             | Struct  |
+| common_prefix_list | The identical paths between `Prefix` and `delimiter` are grouped together and defined as Common Prefix | Struct |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -94,10 +94,10 @@ cos_request_options_t *options = NULL;
 cos_string_t bucket;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -108,7 +108,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//获取对象列表
+// Get the object list
 cos_list_object_params_t *list_params = NULL;
 cos_list_object_content_t *content = NULL;
 list_params = cos_create_list_object_params(p);
@@ -122,17 +122,17 @@ if (cos_status_is_ok(s)) {
     printf("list object failed\n");
 }
 
-//销毁内存池
+// Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
-### 简单上传对象
+### Uploading an object using simple upload
 
-#### 功能说明
+#### Feature
 
-上传一个对象至存储桶，最大支持上传不超过5GB的对象，5GB以上对象请使用 [分块上传](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) 或 [高级接口](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) 上传。
+This API (PUT Object) is used to upload an object up to 5 GB to a specified bucket. To upload objects larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_put_object_from_file(const cos_request_options_t *options,
@@ -143,27 +143,27 @@ cos_status_t *cos_put_object_from_file(const cos_request_options_t *options,
                                        cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| filename     | Object 本地保存文件名称                                      | String |
-| headers      | COS 请求附加头域                                             | Struct |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| filename     | The local filename of the object before being uploaded to COS    | String |
+| headers      | Headers attached to the COS request                                             | Struct |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -175,10 +175,10 @@ cos_string_t object;
 cos_string_t file;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -189,7 +189,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//上传对象
+// Upload the object
 cos_str_set(&file, TEST_DOWNLOAD_NAME);
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_put_object_from_file(options, &bucket, &object, &file, NULL, &resp_headers);
@@ -199,17 +199,17 @@ if (cos_status_is_ok(s)) {
     printf("put object failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
-### 查询对象元数据
+### Querying object metadata
 
-#### 功能说明
+#### Feature
 
-查询对象的元数据信息。
+This API (HEAD Object) is used to query object metadata.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_head_object(const cos_request_options_t *options, 
@@ -219,26 +219,26 @@ cos_status_t *cos_head_object(const cos_request_options_t *options,
                               cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| headers      | COS 请求附加头域                                             | Struct |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| headers      | Headers attached to the COS request                                             | Struct |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -249,10 +249,10 @@ cos_string_t bucket;
 cos_string_t object;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -263,26 +263,26 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//获取对象元数据
+// Get object metadata
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_head_object(options, &bucket, &object, NULL, &resp_headers);
 if (cos_status_is_ok(s)) {
-    printf("head object succeeded\n");
+    printf("put object succeeded\n");
 } else {
-    printf("head object failed\n");
+    printf("put object failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
-### 下载对象
+### Downloading an object
 
-#### 功能说明
+#### Feature
 
-下载一个对象至本地。该操作需要对目标对象具有读权限或该目标对象已对所有人都开放了读权限（公有读）。
+This API (GET Object) is used to download an object from COS. This operation requires that you have write access to the object, or the object open read access to all (public read).
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_get_object_to_file(const cos_request_options_t *options,
@@ -294,28 +294,28 @@ cos_status_t *cos_get_object_to_file(const cos_request_options_t *options,
                                      cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| headers      | COS 请求附加头域                                             | Struct |
-| params       | COS 请求操作参数                                             | Struct |
-| filename     | Object 本地保存文件名称                                      | String |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| headers      | Headers attached to the COS request                                             | Struct |
+| params       | Parameters for a COS request operation                                             | Struct |
+| filename     | The local filename of the object before being uploaded to COS    | String |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -327,10 +327,10 @@ cos_string_t object;
 cos_string_t file;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -341,7 +341,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//获取对象
+//Get an object
 cos_str_set(&file, TEST_DOWNLOAD_NAME);
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_get_object_to_file(options, &bucket, &object, NULL, NULL, &file, &resp_headers);
@@ -351,17 +351,17 @@ if (cos_status_is_ok(s)) {
     printf("get object failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
-### 设置对象复制
+### Setting object replication
 
-#### 功能说明
+#### Feature
 
-复制文件到目标路径。
+This API (PUT Object - Copy) is used to copy a file to the destination path.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_copy_object(const cos_request_options_t *options,
@@ -373,30 +373,30 @@ cos_status_t *cos_copy_object(const cos_request_options_t *options,
                               cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称          | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ----------------- | ------------------------------------------------------------ | ------ |
-| options           | COS 请求选项                                                 | Struct |
-| copy_source       | 源文件路径                                                   | String |
-| dest_bucket       | 目的存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| dest_object       | 目的 Object 名称                                             | String |
-| headers           | COS 请求附加头域                                             | Struct |
-| copy_object_param | Put Object Copy 操作参数                                     | Struct |
-| etag              | 返回文件的 MD5 算法校验值                                    | String |
-| last_modify       | 返回文件最后修改时间，GMT 格式                               | String |
-| resp_headers      | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| copy_source       | Source file path                                                  | String |
+| dest_bucket | Name of the destination bucket. Format: `BucketName-APPID` | String |
+| dest_object       | Name of the destination object                                            | String |
+| headers      | Headers attached to the COS request                                             | Struct |
+| copy_object_param | Parameters for Put Object Copy                                     | Struct |
+| etag                                | Returns MD5 checksum of the file                                          | String      |
+| last_modify| Returns the time in GMT when the file is last modified | String |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -407,10 +407,10 @@ cos_string_t bucket;
 cos_string_t object;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -421,7 +421,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//设置对象复制
+//Set object replication
 cos_str_set(&object, TEST_OBJECT_NAME);
 cos_string_t copy_source;
 cos_str_set(&copy_source, TEST_COPY_SRC);
@@ -434,17 +434,17 @@ if (cos_status_is_ok(s)) {
     printf("put object copy failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p);  
 ```
 
-### 删除单个对象
+### Deleting a single object
 
-#### 功能说明
+#### Feature
 
-在存储桶中删除指定对象。
+This API (DELETE Object) deletes a specified object from the bucket.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_delete_object(const cos_request_options_t *options,
@@ -453,25 +453,25 @@ cos_status_t *cos_delete_object(const cos_request_options_t *options,
                                 cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -482,10 +482,10 @@ cos_string_t bucket;
 cos_string_t object;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -496,7 +496,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//删除单个对象
+//Delete a single object
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_delete_object(options, &bucket, &object, &resp_headers);
 if (cos_status_is_ok(s)) {
@@ -505,18 +505,18 @@ if (cos_status_is_ok(s)) {
     printf("delete object failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 
 ```
 
-### 删除多个对象
+### Deleting multiple objects
 
-#### 功能说明
+#### Feature
 
-在存储桶中批量删除对象，最大支持单次删除1000个对象。对于返回结果，COS 提供 Verbose 和 Quiet 两种结果模式。Verbose 模式将返回每个 Object 的删除结果。Quiet 模式只返回报错的 Object 信息。
+This API (DELETE Multiple Objects) is used to delete objects from a bucket in batches. It can delete up to 1,000 objects in a single request. For the response result, COS provides two modes: Verbose and Quiet. Verbose mode returns the deletion result for each object, while Quiet mode only returns the information of objects for which errors are reported.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_delete_objects(const cos_request_options_t *options,
@@ -527,28 +527,28 @@ cos_status_t *cos_delete_objects(const cos_request_options_t *options,
                                  cos_list_t *deleted_object_list);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称            | 参数描述                                                     | 类型    |
+| Parameter Name | Description | Type |
 | ------------------- | ------------------------------------------------------------ | ------- |
-| options             | COS 请求选项                                                 | Struct  |
-| bucket              | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String  |
-| object_list         | Object 待删除列表                                            | Struct  |
-| key                 | 待删除 Object 名称                                           | String  |
-| is_quiet            | 决定是否启动 Quiet 模式：<br>True(1)：启动 Quiet 模式，False(0)：启动 Verbose 模式。默认为 False(0) | Boolean |
-| resp_headers        | 返回 HTTP 响应消息的头域                                     | Struct  |
-| deleted_object_list | Object 删除信息列表                                          | Struct  |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object_list         | The list of objects to delete                                         | Struct  |
+| key | Name of the object to delete | String |
+| is_quiet | Indicate whether the Quiet mode is enabled.<br>True(1): Quiet mode is enabled; False(0): Verbose mode is enabled. Default is False(0). | Boolean |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
+| deleted_object_list | The list of deleted objects                                          | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -559,10 +559,10 @@ cos_string_t bucket;
 cos_string_t object;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -573,7 +573,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//设置批量删除对象
+//Set multiple objects to delete
 char *object_name1 = TEST_OBJECT_NAME1;
 char *object_name2 = TEST_OBJECT_NAME2;
 cos_object_key_t *content1 = NULL;
@@ -589,7 +589,7 @@ content2 = cos_create_cos_object_key(p);
 cos_str_set(&content2->key, object_name2);
 cos_list_add_tail(&content2->node, &object_list);
 
-//批量删除对象
+//Delete the multiple objects
 int is_quiet = COS_TRUE;
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_delete_objects(options, &bucket, &object_list, is_quiet, &resp_headers, &deleted_object_list);
@@ -599,20 +599,20 @@ if (cos_status_is_ok(s)) {
     printf("delete objects failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 
 ```
 
-## 分块操作
+## Multipart Operations
 
-### 查询分块上传
+### Querying multipart upload
 
-#### 功能说明
+#### Feature
 
-查询正在进行中的分块上传信息。单次最多列出1000个正在进行中的分块上传。
+This API (List Multipart Uploads) is used to query in-progress multipart uploads, which are up to 1,000 in a single request.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_list_multipart_upload(const cos_request_options_t *options,
@@ -621,28 +621,28 @@ cos_status_t *cos_list_multipart_upload(const cos_request_options_t *options,
                                         cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称              | 参数描述                                                     | 类型    |
+| Parameter Name | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------- |
-| options               | COS 请求选项                                                 | Struct  |
-| bucket                | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String  |
-| params                | List Multipart Uploads 操作参数                              | Struct  |
-| encoding_type         | 规定返回值的编码方式                                         | String  |
-| prefix                | 前缀匹配，用来规定返回的文件前缀地址                         | String  |
-| upload_id_marker      | 假如返回条目被截断，则返回 NextMarker 就是下一个条目的起点   | String  |
-| delimiter             | 界符为一个符号：<br><li>如果有 Prefix，则将 Prefix 到 delimiter 之间的相同路径归为一类，定义为 Common Prefix，然后列出所有 Common Prefix<br><li>如果没有 Prefix，则从路径起点开始 | String  |
-| max_ret               | 单次返回最大的条目数量，默认1000                             | String  |
-| key_marker            | 与 upload-id-marker 一起使用：<br><li>当 upload-id-marker 未被指定时，ObjectName 字母顺序大于 key-marker 的条目将被列出<br><li>当 upload-id-marker 被指定时，ObjectName 字母顺序大于 key-marker 的条目被列出，ObjectName 字母顺序等于 key-marker 同时 UploadID 大于 upload-id-marker 的条目将被列出 | String  |
-| upload_id_marker      | 与 key-marker 一起使用：<br><li>当 key-marker 未被指定时，upload-id-marker 将被忽略<br><li>当 key-marker 被指定时，ObjectName 字母顺序大于 key-marker 的条目被列出，ObjectName 字母顺序等于 key-marker 同时 UploadID 大于 upload-id-marker 的条目将被列出 | String  |
-| truncated             | 返回条目是否被截断，'true' 或者 'false'                      | Boolean |
-| next_key_marker       | 假如返回条目被截断，则返回 NextMarker 就是下一个条目的起点   | String  |
-| next_upload_id_marker | 假如返回条目被截断，则返回 NextMarker 就是下一个条目的起点   | String  |
-| upload_list           | 分块上传的信息                                               | Struct  |
-| key                   | Object 的名称                                                | String  |
-| upload_id             | 标示本次分块上传的 ID                                        | String  |
-| initiated             | 标示本次分块上传任务的启动时间                               | String  |
-| resp_headers          | 返回 HTTP 响应消息的头域                                     | Struct  |
+| options               | COS request options                                                 | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| params                | Parameters for List Multipart Uploads                              | Struct  |
+| encoding_type | Specifies the encoding type of the returned value | String |
+| prefix | Prefix to be matched, which specifies the address prefix of the files to be returned | String |
+| next_marker | Marks the start of the next entry if the returned entry is truncated  | String  |
+| delimiter | Delimiter is a sign.<br><li>If `Prefix` is provided, the same paths between `Prefix` and `delimiter` are grouped together and defined as Common Prefix, and then all common prefixes get listed.<br><li>If `Prefix` is not provided, the listing starts from the beginning of the path. | String |
+| max_ret            | The maximum number of returned entries per request. Default: 1000                             | String  |
+| key_marker | Used together with `upload-id-marker`.<br><li>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed;<br><li>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed. | String |
+| upload_id_marker | Used together with `key-marker`.<br><li>If `key-marker` is not specified, `upload-id-marker` will be ignored; <br><li>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | String |
+| truncated  |  Indicates whether the returned entry is truncated. Valid value: `true` or `false` | Boolean|
+| next_key_marker       | Marks the start of the next entry if the returned entry is truncated   | String  |
+| next_upload_id_marker | Marks the start of the next entry if the returned entry is truncated  | String  |
+| upload_list           | Lists all multipart uploads                                              | Struct  |
+| key | Object name | String |
+| upload_id | Identifies the ID of this multipart upload | String |
+| initiated             | Indicates when this multipart upload was initiated                               | String  |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
 ```
 typedef struct {
@@ -653,16 +653,16 @@ typedef struct {
 } cos_list_multipart_upload_content_t;
 ```
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -673,7 +673,7 @@ cos_request_options_t *options = NULL;
 cos_status_t *s = NULL;
 cos_list_multipart_upload_params_t *list_multipart_params = NULL;
 
-//创建内存池 & 初始化请求选项
+//Create a memory pool, and initialize request options
 cos_pool_create(&p, NULL);
 options = cos_request_options_create(p);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -683,24 +683,24 @@ cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//查询分块上传
+//Query multipart uploads
 list_multipart_params = cos_create_list_multipart_upload_params(p);
 list_multipart_params->max_ret = 999;
 s = cos_list_multipart_upload(options, &bucket, list_multipart_params, &resp_headers);
 log_status(s);
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p);
 
 ```
 
-### 初始化分块上传
+### Initializing multipart upload
 
-#### 功能说明
+#### Feature
 
-Initiate Multipart Upload 请求实现初始化分片上传，成功执行此请求以后会返回 Upload ID 用于后续的 Upload Part 请求。
+This API (Initiate Multipart Upload) is used to initialize multipart upload. After the request is executed successfully, Upload ID is returned for the subsequent Upload Part requests.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_init_multipart_upload(const cos_request_options_t *options, 
@@ -711,27 +711,27 @@ cos_status_t *cos_init_multipart_upload(const cos_request_options_t *options,
                                         cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| upload_id    | 操作返回的 Upload ID                                         | String |
-| headers      | COS 请求附加头域                                             | Struct |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| upload_id    | Returns ID of the multipart upload                                       | String |
+| headers      | Headers attached to the COS request                                             | Struct |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -743,10 +743,10 @@ cos_string_t object;
 cos_string_t file;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -757,7 +757,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//初始化分块上传
+//Initialize the multipart upload
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_init_multipart_upload(options, &bucket, &object, 
                               &upload_id, headers, &resp_headers);
@@ -767,19 +767,19 @@ if (cos_status_is_ok(s)) {
     printf("init multipart upload failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
 
 
-### 上传分块
+### Uploading parts
 
-#### 功能说明
+#### Feature
 
-分块上传文件。Upload Part 请求实现在初始化以后的分块上传，支持的块的数量为1 - 10000，块的大小为1MB - 5GB。在每次请求 Upload Part 时，需要携带 partNumber 和 uploadID，partNumber 为块的编号，支持乱序上传。
+This API (Upload Part) is used to upload parts (possibly out of order) in an initiated multipart upload, with the number of parts between 1 to 10,000, and the size of each part between 1 MB and 5 GB. Each Upload Part request should include partNumber (number of the part) and uploadID.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_upload_part_from_file(const cos_request_options_t *options,
@@ -791,28 +791,28 @@ cos_status_t *cos_upload_part_from_file(const cos_request_options_t *options,
                                         cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| upload_id    | 上传任务编号                                                 | String |
-| part_num     | 分块编号                                                     | Int    |
-| upload_file  | 待上传本地文件信息                                           | Struct |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| upload_id | ID of the upload task | String |
+| part_num     | Number of the part                                                     | Int    |
+| upload_file  | Information about the file to upload                                           | Struct |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -827,10 +827,10 @@ int part_num = 1;
 int64_t pos = 0;
 int64_t file_length = 0;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -841,7 +841,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//上传分块
+//Upload parts
 int res = COSE_OK;
 cos_upload_file_t *upload_file = NULL;
 cos_file_buf_t *fb = cos_create_file_buf(p);
@@ -868,17 +868,17 @@ while(pos < file_length) {
     }
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
-### 复制分块
+### Copying a part
 
-#### 功能说明
+#### Feature
 
-将其他对象复制为一个分块。
+This API (Upload Part - Copy) is used to copy an object as a part.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
@@ -887,34 +887,34 @@ cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
                                    cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| params       | 复制分块参数信息                                             | Struct |
-| copy_source  | 源文件路径                                                   | String |
-| dest_bucket  | 目的 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| dest_object  | 目的 Object 名称                                             | String |
-| upload_id    | 上传任务编号                                                 | String |
-| part_num     | 分块编号                                                     | Int    |
-| range_start  | 源文件起始偏移                                               | Int    |
-| range_end    | 源文件终止偏移                                               | Int    |
-| rsp_content  | 复制分块结果信息                                             | Struct |
-| etag         | 返回文件的 MD5 算法校验值                                    | String |
-| last_modify  | 返回文件最后修改时间，GMT 格式                               | String |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| params       | Parameters for Upload Part - Copy                                            | Struct |
+| copy_source       | Source file path                                                  | String |
+| dest_bucket | Name of the destination bucket. Format: `BucketName-APPID` | String |
+| dest_object       | Name of the destination object                                            | String |
+| upload_id | ID of the upload task | String |
+| part_num     | Number of the part                                                     | Int    |
+| range_start  | The starting offset of source file                                               | Int    |
+| range_end    | The ending offset of source file                                                | Int    |
+| rsp_content  | The response to Upload Part - Copy                                            | Struct |
+| etag                                | Returns MD5 checksum of the file                                          | String      |
+| last_modify| Returns the time in GMT when the file is last modified | String |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -955,13 +955,13 @@ cos_string_t data;
 cos_pool_create(&p, NULL);
 options = cos_request_options_create(p);
 
-//创建一个10MB本地随机文件    
+//Create a random local file of 10 MB    
 make_rand_string(p, 10 * 1024 * 1024, &data);
 fd = fopen(local_filename, "w");
 fwrite(data.data, sizeof(data.data[0]), data.len, fd);
 fclose(fd);    
 
-//使用本地文件上传对象
+//Upload the local file as an object
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
 cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
 cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
@@ -973,13 +973,13 @@ cos_str_set(&file, local_filename);
 s = cos_put_object_from_file(options, &bucket, &object, &file, NULL, &resp_headers);
 log_status(s);
 
-//初始化分块上传
+//Initialize the multipart upload
 cos_str_set(&object, dest_object_name);
 s = cos_init_multipart_upload(options, &bucket, &object, 
                               &upload_id, NULL, &resp_headers);
 log_status(s);
 
-//使用已上传对象复制分块1
+//Copy an uploaded object as Part 1
 upload_part_copy_params1 = cos_create_upload_part_copy_params(p);
 cos_str_set(&upload_part_copy_params1->copy_source, "mybucket-1253666666.cn-south.myqcloud.com/cos_test_upload_part_copy_source_object");
 cos_str_set(&upload_part_copy_params1->dest_bucket, TEST_BUCKET_NAME);
@@ -993,7 +993,7 @@ s = cos_upload_part_copy(options, upload_part_copy_params1, headers, &resp_heade
 log_status(s);
 printf("last modified:%s, etag:%s\n", upload_part_copy_params1->rsp_content->last_modify.data, upload_part_copy_params1->rsp_content->etag.data);
 
-//使用已上传对象复制分块2
+//Copy an uploaded object as Part 2
 resp_headers = NULL;
 range_end2 = get_file_size(local_filename) - 1;
 upload_part_copy_params2 = cos_create_upload_part_copy_params(p);
@@ -1009,7 +1009,7 @@ s = cos_upload_part_copy(options, upload_part_copy_params2, headers, &resp_heade
 log_status(s);
 printf("last modified:%s, etag:%s\n", upload_part_copy_params1->rsp_content->last_modify.data, upload_part_copy_params1->rsp_content->etag.data);
 
-//列出已上传对象
+//List the uploaded parts
 list_upload_part_params = cos_create_list_upload_part_params(p);
 list_upload_part_params->max_ret = 10;
 cos_list_init(&complete_part_list);
@@ -1026,13 +1026,13 @@ cos_list_for_each_entry(cos_list_part_content_t, part_content, &list_upload_part
     cos_list_add_tail(&complete_content->node, &complete_part_list);
 }
 
-//完成分块上传
+//Complete the multipart upload
 headers = cos_table_make(p, 0);
 s = cos_complete_multipart_upload(options, &dest_bucket, &dest_object, 
                                   &upload_id, &complete_part_list, headers, &complete_resp_headers);
 log_status(s);
 
-//对比复制分块上传生成的对象和本地文件是否匹配
+//Check if the object uploaded using Upload Part - Copy matches the local file
 headers = cos_table_make(p, 0);
 cos_str_set(&download_file, download_filename);
 s = cos_get_object_to_file(options, &dest_bucket, &dest_object, headers, 
@@ -1042,19 +1042,19 @@ printf("local file len = %"APR_INT64_T_FMT", download file len = %"APR_INT64_T_F
 remove(download_filename);
 remove(local_filename);
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p);    
 ```
 
 
 
-### 查询已上传块
+### Querying uploaded parts
 
-#### 功能说明
+#### Feature
 
-查询特定分块上传操作中的已上传的块。
+This API (List Parts) is used to query the uploaded parts in a specified multipart upload.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_list_upload_part(const cos_request_options_t *options,
@@ -1065,37 +1065,37 @@ cos_status_t *cos_list_upload_part(const cos_request_options_t *options,
                                    cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称                | 参数描述                                                     | 类型    |
+| Parameter Name | Description | Type |
 | ----------------------- | ------------------------------------------------------------ | ------- |
-| options                 | COS 请求选项                                                 | Struct  |
-| bucket                  | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String  |
-| object                  | Object 名称                                                  | String  |
-| upload_id               | 上传任务编号                                                 | String  |
-| params                  | List Parts 操作参数                                          | Struct  |
-| part_number_marker      | 默认以 UTF-8 二进制顺序列出条目，所有列出条目从 marker 开始  | String  |
-| encoding_type           | 规定返回值的编码方式                                         | String  |
-| max_ret                 | 单次返回最大的条目数量，默认1000                             | String  |
-| truncated               | 返回条目是否被截断，'true' 或者 'false'                      | Boolean |
-| next_part_number_marker | 假如返回条目被截断，则返回 NextMarker 就是下一个条目的起点   | String  |
-| part_list               | 完成分块的信息                                               | Struct  |
-| part_number             | 分块编号                                                     | String  |
-| size                    | 分块大小，单位 Byte                                          | String  |
-| etag                    | 分块的 SHA-1 算法校验值                                      | String  |
-| last_modified           | 分块最后修改时间                                             | String  |
-| resp_headers            | 返回 HTTP 响应消息的头域                                     | Struct  |
+| options                 | COS request options                                                 | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object                  | Object name                                                | String  |
+| upload_id | Upload task ID | String |
+| params                  | Parameters for List Parts                                         | Struct  |
+| part_number_marker | By default, entries are listed in UTF-8 binary order starting from this marker | String |
+| encoding_type | Specifies the encoding type of the returned value | String |
+| max_ret            | The maximum number of returned entries per request. Default: 1000                             | String  |
+| truncated  |  Indicates whether the returned entry is truncated. Valid value: `true` or `false` | Boolean|
+| next_part_number_marker        | Marks the start of the next entry if the returned entry is truncated  | String  |
+| part_list               | Lists all uploaded parts                                             | Struct  |
+| part_number   | Part number                                                    | String      |
+| size          | Part size in bytes                                            | String      |
+| etag                    | SHA-1 check value of the part                                     | String  |
+| last_modified                  | Last modified time of the part                                           | String      |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1112,10 +1112,10 @@ int part_num = 1;
 int64_t pos = 0;
 int64_t file_length = 0;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1126,7 +1126,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//查询已上传块
+//Query uploaded parts
 params = cos_create_list_upload_part_params(p);
 params->max_ret = 1000;
 cos_list_init(&complete_part_list);
@@ -1148,7 +1148,7 @@ cos_list_for_each_entry(cos_list_part_content_t, part_content, &params->part_lis
     cos_list_add_tail(&complete_part_content->node, &complete_part_list);
 }
 
-//完成分块上传
+//Complete the multipart upload
 s = cos_complete_multipart_upload(options, &bucket, &object, &upload_id,
                                   &complete_part_list, complete_headers, &resp_headers);
 
@@ -1159,7 +1159,7 @@ if (cos_status_is_ok(s)) {
     printf("Complete multipart upload from file failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
@@ -1168,13 +1168,13 @@ cos_pool_destroy(p);
 
 
 
-### 完成分块上传
+### Completing a multipart upload
 
-#### 功能说明
+#### Feature
 
-完成整个文件的分块上传。当您已经使用 Upload Parts 上传所有块以后，您可以用该 API 完成上传。在使用该 API 时，您必须在 Body 中给出每一个块的 PartNumber 和 ETag，用来校验块的准确性。
+This API (Complete Multipart Upload) is used to complete the multipart upload of an entire file. You can use this API to complete the multipart upload when you have uploaded all parts using Upload Parts. When using this API, you need to provide the PartNumber and ETag for every part in Body, to verify the accuracy of parts.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_complete_multipart_upload(const cos_request_options_t *options,
@@ -1186,30 +1186,30 @@ cos_status_t *cos_complete_multipart_upload(const cos_request_options_t *options
                                             cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| upload_id    | 上传任务编号                                                 | String |
-| part_list    | 完成分块上传的参数                                           | Struct |
-| part_number  | 分块编号                                                     | String |
-| etag         | 分块的 ETag 值，为 sha1 校验值，需要在校验值前后加上双引号，如 "3a0f1fd698c235af9cf098cb74aa25bc" | String |
-| headers      | COS 请求附加头域                                             | Struct |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| upload_id | ID of the upload task | String |
+| part_list    | Parameters for Complete Multipart Upload                                           | Struct |
+| part_number   | Part number                                                    | String      |
+| etag | ETag of the part, which is SHA1 check value. It must be enclosed in double quotes, such as: "3a0f1fd698c235af9cf098cb74aa25bc". | String |
+| headers      | Headers attached to the COS request                                             | Struct |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1226,10 +1226,10 @@ int part_num = 1;
 int64_t pos = 0;
 int64_t file_length = 0;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1240,7 +1240,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//查询已上传分块
+//Query uploaded parts
 params = cos_create_list_upload_part_params(p);
 params->max_ret = 1000;
 cos_list_init(&complete_part_list);
@@ -1262,7 +1262,7 @@ cos_list_for_each_entry(cos_list_part_content_t, part_content, &params->part_lis
     cos_list_add_tail(&complete_part_content->node, &complete_part_list);
 }
 
-//完成分块上传
+//Complete the multipart upload
 s = cos_complete_multipart_upload(options, &bucket, &object, &upload_id,
                                   &complete_part_list, complete_headers, &resp_headers);
 
@@ -1273,17 +1273,17 @@ if (cos_status_is_ok(s)) {
     printf("Complete multipart upload from file failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
-### 终止分块上传
+### Aborting a multipart upload
 
-#### 功能说明
+#### Feature
 
-终止一个分块上传操作并删除已上传的块。当您调用 Abort Multipart Upload 时，如果有正在使用这个 Upload Parts 上传块的请求，则 Upload Parts 会返回失败。
+This API (Abort Multipart Upload) is used to abort a multipart upload, and delete uploaded parts in it. When Abort Multipart Upload is called, a failure is returned for any request that is using Upload Parts.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_abort_multipart_upload(const cos_request_options_t *options,
@@ -1293,26 +1293,26 @@ cos_status_t *cos_abort_multipart_upload(const cos_request_options_t *options,
                                          cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| upload_id    | 上传任务编号                                                 | String |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| upload_id | ID of the upload task | String |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1325,7 +1325,7 @@ cos_request_options_t *options = NULL;
 cos_string_t upload_id;
 cos_status_t *s = NULL;
 
-//创建内存池 & 初始化请求选项
+//Create a memory pool, and initialize request options
 cos_pool_create(&p, NULL);
 options = cos_request_options_create(p);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1337,7 +1337,7 @@ headers = cos_table_make(p, 1);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 cos_str_set(&object, TEST_MULTIPART_OBJECT);
 
-//初始化分块上传
+//Initialize the multipart upload
 s = cos_init_multipart_upload(options, &bucket, &object, 
                               &upload_id, headers, &resp_headers);
 
@@ -1350,7 +1350,7 @@ if (cos_status_is_ok(s)) {
     return;
 }
 
-//终止分块上传
+//Abort the multipart upload
 s = cos_abort_multipart_upload(options, &bucket, &object, &upload_id, 
                                &resp_headers);
 
@@ -1361,19 +1361,19 @@ if (cos_status_is_ok(s)) {
     printf("Abort multipart upload failed\n"); 
 }    
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p);
 ```
 
-## 其他操作
+##Other Operations
 
-### 恢复归档对象
+### Restoring an archived object
 
-#### 功能说明
+#### Feature
 
-将归档类型的对象取回访问。
+This API (POST Object restore) is used to restore an archived object for access.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_post_object_restore(const cos_request_options_t *options,
@@ -1385,30 +1385,30 @@ cos_status_t *cos_post_object_restore(const cos_request_options_t *options,
                                       cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称       | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | -------------- | ------------------------------------------------------------ | ------ |
-| options        | COS 请求选项                                                 | Struct |
-| bucket         | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object         | Object 名称                                                  | String |
-| restore_params | Post Object Restore 操作参数                                 | Struct |
-| days           | Post Object Restore 操作设置的临时副本过期时间               | Int    |
-| tier           | Post Object Restore 操作指定 CAS 支持的三种恢复类型，分别为 Expedited、Standard、Bulk | String |
-| headers        | COS 请求附加头域                                             | Struct |
-| params         | COS 请求操作参数                                             | Struct |
-| resp_headers   | 返回 HTTP 响应消息的头域                                     | Struct |
+| options                 | COS request options                                                 | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object                  | Object name                                                | String  |
+| restore_params | Parameters for Post Object Restore                                 | Struct |
+| days           | The number of days before a temporary copy restored using Post Object Restore expires                | Int    |
+| tier           | Specifies one of the three CAS restoration modes for Post Object Restore: Expedited, Standard, Bulk | String |
+| headers      | Headers attached to the COS request                                             | Struct |
+| params       | Parameters for a COS request operation                                             | Struct |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1419,10 +1419,10 @@ cos_string_t bucket;
 cos_string_t object;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1434,7 +1434,7 @@ options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 cos_str_set(&object, TEST_OBJECT_NAME);
 
-//恢复归档对象
+//Restore an archived object
 cos_object_restore_params_t *restore_params = cos_create_object_restore_params(p);
 restore_params->days = 30;
 cos_str_set(&restore_params->tier, "Standard");
@@ -1445,17 +1445,17 @@ if (cos_status_is_ok(s)) {
     printf("post object restore failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
-### 设置对象 ACL
+### Setting object ACL
 
-#### 功能说明
+#### Feature
 
-设置存储桶中某个对象的访问控制列表。
+This API (PUT Object acl) is used to set an ACL for the specified object in a bucket.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_put_object_acl(const cos_request_options_t *options, 
@@ -1468,29 +1468,29 @@ cos_status_t *cos_put_object_acl(const cos_request_options_t *options,
                                  cos_table_t **resp_headers);
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称        | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | --------------- | ------------------------------------------------------------ | ------ |
-| options         | COS 请求选项                                                 | Struct |
-| bucket          | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object          | Object 名称                                                  | String |
-| cos_acl         | 允许用户自定义权限。有效值：COS_ACL_PRIVATE(0)，COS_ACL_PUBLIC_READ(1)<br>默认值：COS_ACL_PRIVATE(0) | Enum   |
-| grant_read      | 读权限授予者                                                 | String |
-| grant_write     | 写权限授予者                                                 | String |
-| grant_full_ctrl | 读写权限授予者                                               | String |
-| resp_headers    | 返回 HTTP 响应消息的头域                                     | Struct |
+| options         | COS request options                                                | Struct |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object          | Object name                                                  | String |
+| cos_acl         | Allows user-defined permission. Valid values: COS_ACL_PRIVATE(0), COS_ACL_PUBLIC_READ(1)<br>Default: COS_ACL_PRIVATE(0) | Enum   |
+| grant_read      | Read access grantee                                                | String |
+| grant_write     | Write access grantee                                              | String |
+| grant_full_ctrl | Read/Write access grantee                                            | String |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1501,10 +1501,10 @@ cos_string_t bucket;
 cos_string_t object;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1515,7 +1515,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//设置对象 ACL
+//Set object ACL
 cos_str_set(&object, TEST_OBJECT_NAME);
 cos_string_t read;
 cos_str_set(&read, "id=\"qcs::cam::uin/12345:uin/12345\", id=\"qcs::cam::uin/45678:uin/45678\"");
@@ -1526,17 +1526,17 @@ if (cos_status_is_ok(s)) {
     printf("put object acl failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p);  
 ```
 
-### 查询对象 ACL
+### Querying object ACL
 
-#### 功能说明
+#### Feature
 
-查询对象的访问控制列表。
+This API (GET Object acl) is used to query the ACL of an object.
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_get_object_acl(const cos_request_options_t *options, 
@@ -1546,33 +1546,33 @@ cos_status_t *cos_get_object_acl(const cos_request_options_t *options,
                                  cos_table_t **resp_headers)
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称     | 参数描述                                                     | 类型   |
+| Parameter Name | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
-| options      | COS 请求选项                                                 | Struct |
-| bucket       | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
-| object       | Object 名称                                                  | String |
-| acl_param    | 请求操作参数                                                 | Struct |
-| owner_id     | 请求操作返回的 Bucket 持有者 ID                              | String |
-| owner_name   | 请求操作返回的 Bucket 持有者的名称                           | String |
-| object_list  | 请求操作返回的被授权者信息与权限信息                         | Struct |
-| type         | 请求操作返回的被授权者账户类型                               | String |
-| id           | 请求操作返回的被授权者用户 ID                                | String |
-| name         | 请求操作返回的被授权者用户名称                               | String |
-| permission   | 请求操作返回的被授权者权限信息                               | String |
-| resp_headers | 返回 HTTP 响应消息的头域                                     | Struct |
+| options            | COS request options                                               | Struct  |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object       | Object name                                                  | String |
+| acl_param    | Parameters for the request                                                 | Struct |
+| owner_id     | ID of the bucket owner                             | String |
+| owner_id     | Name of the bucket owner                             | String |
+| object_list  | Information about the grantee and permission                         | Struct |
+| type         | Type of the grantee account                             | String |
+| id           | ID of the grantee                             | String |
+| name         | Name of the grantee                        | String |
+| permission   | Permission granted to the grantee                              | String |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1583,10 +1583,10 @@ cos_string_t bucket;
 cos_string_t object;
 cos_table_t *resp_headers = NULL;
 
-//创建内存池
+// Create a memory pool
 cos_pool_create(&p, NULL);
 
-//初始化请求选项
+// Initialize request options
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1597,12 +1597,12 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//获取对象 ACL
+//Get the object ACL
 cos_acl_params_t *acl_params2 = NULL;
 acl_params2 = cos_create_acl_params(p);
 s = cos_get_object_acl(options, &bucket, &object, acl_params2, &resp_headers);
 if (cos_status_is_ok(s)) {
-    printf("get object acl succeeded\n");
+    printf("get object succeeded\n");
     printf("acl owner id:%s, name:%s\n", acl_params2->owner_id.data, acl_params2->owner_name.data);
     acl_content = NULL;
     cos_list_for_each_entry(cos_acl_grantee_content_t, acl_content, &acl_params2->grantee_list, node) {
@@ -1612,19 +1612,19 @@ if (cos_status_is_ok(s)) {
     printf("get object acl failed\n");
 }
 
-//销毁内存池
+//Destroy the memory pool
 cos_pool_destroy(p); 
 ```
 
-## 高级接口（推荐）
+## Advanced APIs (recommended)
 
-### 上传对象（断点续传）
+### Uploading objects (checkpoint restart)
 
-#### 功能说明
+#### Feature
 
-上传接口根据用户文件的长度，自动切分数据， 降低用户的使用门槛，用户无需关心分块上传的每个步骤， 且可以对分块上传未完成的文件会进行断点续传。 
+This API (Upload) is used to automatically divide your data and lowers your usage threshold based on the size of your file when uploading, and perform checkpoint restart for unfinished multipart uploads. 
 
-#### 方法原型
+#### Method prototype
 
 ```cpp
 cos_status_t *cos_resumable_upload_file(cos_request_options_t *options,
@@ -1639,35 +1639,35 @@ cos_status_t *cos_resumable_upload_file(cos_request_options_t *options,
                                           cos_list_t *resp_body)
 ```
 
-#### 参数说明
+#### Parameter description
 
-| 参数名称          | 参数描述                                                     | 类型     |
+| Parameter Name | Description | Type |
 | ----------------- | ------------------------------------------------------------ | -------- |
-| options           | COS 请求选项                                                 | Struct   |
-| bucket            | 存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   |
-| object            | Object 名称                                                  | String   |
-| filepath          | Object 本地文件名称                                          | String   |
-| headers           | COS 请求附加头域                                             | Struct   |
-| params            | COS 请求操作参数                                             | Struct   |
-| clt_params        | 上传对象控制参数                                             | Struct   |
-| part_size         | 块大小，单位为 bytes，如果用户指定的 part_size 小于 1048576（1 MB）， 由 C SDK 自动切分 | Int      |
-| thread_num        | 线程池大小，默认为1                                          | Int      |
-| enable_checkpoint | 是否使能断点续传                                             | Int      |
-| checkpoint_path   | 当使能断点续传时，表示保存上传进度的文件路径，默认路径为`<filepath>.cp`，其中 filepath 为 Object 本地文件名称 | String   |
-| progress_callback | 上传进度回调函数                                             | Function |
-| resp_headers      | 返回 HTTP 响应消息的头域                                     | Struct   |
-| resp_body         | 保存完成分块上传请求时返回的数据                             | Struct   |
+| options           | COS request options                                                 | Struct   |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
+| object          | Object name                                                  | String |
+| filepath          | The local file name of the object                                          | String   |
+| headers      | Headers attached to the COS request                                             | Struct |
+| params            | Parameters for the COS request                                           | Struct   |
+| clt_params        | Control parameters for the Upload operation                                             | Struct   |
+| part_size         | Part size in bytes. If it is specified as below 1048576 (1 MB),  the C SDK will divide your data automatically.  | Int      |
+| thread_num        | Number of the threads. Default: 1                                          | Int      |
+| enable_checkpoint | Indicates whether to enable checkpoint restart                                             | Int      |
+| checkpoint_path   | Indicates the file path for which the upload progress is saved when checkpoint restart is enabled. Default: `<filepath>.cp`, where `filepath` is the local file name of the object | String   |
+| progress_callback | Callback function for upload progress                                            | Function |
+| resp_headers       | Returns HTTP response headers                                     | Struct  |
+| resp_body         | Saves the data returned by the Complete Multipart Upload request                             | Struct   |
 
-#### 返回结果说明
+#### Response description
 
-| 返回结果   | 描述        | 类型   |
+| Response Parameter  | Description        | Type   |
 | ---------- | ----------- | ------ |
-| code       | 错误码      | Int    |
-| error_code | 错误码内容  | String |
-| error_msg  | 错误码描述  | String |
-| req_id     | 请求消息 ID | String |
+| code | Error code | Int | 
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
+| req_id | Request message ID | String |
 
-#### 示例
+#### Samples
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -1693,7 +1693,7 @@ cos_str_set(&bucket, TEST_BUCKET_NAME);
 cos_str_set(&object, TEST_MULTIPART_OBJECT);
 cos_str_set(&filename, TEST_MULTIPART_FILE);
 
-// 设置上传控制参数
+// Set upload control parameters
 clt_params = cos_create_resumable_clt_params_content(p, 0, 1, COS_FALSE, NULL);
 // upload
 s = cos_resumable_upload_file(options, &bucket, &object, &filename, headers, NULL,
