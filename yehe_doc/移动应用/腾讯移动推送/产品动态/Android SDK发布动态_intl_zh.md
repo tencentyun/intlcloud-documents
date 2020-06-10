@@ -1,3 +1,21 @@
+## 2020年6月
+
+<table>
+<tr>
+    <th width=20%>动态名称</th>
+    <th width=44%>动态描述</th>
+    <th width=16%>发布时间</th>
+    <th width=20%>相关文档</th>
+</tr>
+    <tr>
+        <td>SDK 1.1.6.3版本发布</td>
+        <td> 第三方厂商通道集成优化</td>
+        <td>2020-06-04</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">下载 SDK</a></td>
+    </tr>
+</table>
+
+
 ## 2020年4月
 
 <table>
