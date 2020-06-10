@@ -16,13 +16,13 @@
 2.	选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
 ![](https://main.qcloudimg.com/raw/29bf30fa3b4ce940a9903c0331fc608e.png)
 3. 选择录制配置模板，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/ea58e97d819f2f7e6e82a62806991870.png)
+![](https://main.qcloudimg.com/raw/8ecacaebb47ab9ae476d9286c1796b46.png)
 
 ## 解绑录制模板
 1. 进入【域名管理】，单击需解绑的推流域名对应的【管理】进入域名详情页。
 2. 选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
 3. 单击取消相应模板的勾选，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/f5a5625523545394179b33b9abfffcb4.png)
+![](https://main.qcloudimg.com/raw/f2c5f091437cd8b873ed6447562fb697.png)
 
 
 ## 录制文件获取
