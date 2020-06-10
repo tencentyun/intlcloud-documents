@@ -20,7 +20,7 @@ PUT _snapshot/my_cos_backup
 - access_key_id: `SecretId` of your TencentCloud API key.
 - access_key_secret: `SecretKey` of your TencentCloud API key.
 - bucket: COS bucket name, **which cannot contain the `-{appId}` suffix**.
-- region: COS bucket region. You are recommended to select the same region as the ES cluster.
+- region: COS bucket region, which must be the same region as that of the ES cluster.
 - base_path: backup directory.   
 
 ## Listing Repository Information
@@ -28,7 +28,7 @@ You can use `GET _snapshot` to get the repository information. You can also get 
 
 ## Creating Snapshot Backup
 
-### Backing up all indices
+### Backing up all indexes
 Back up all indices in the ES cluster to the repository `my_cos_backup` and name it `snapshot_1`.
 ```
 PUT _snapshot/my_cos_backup/snapshot_1
