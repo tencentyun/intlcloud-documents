@@ -3,8 +3,8 @@
 
 ## API Calling Description
 ### Applicable group types
-Instant Messaging (IM) provides the preceding five built-in group types. For details, see [Group Systems](https://intl.cloud.tencent.com/document/product/1047/33529).
-For details on custom group types, see [Custom Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81).
+Instant Messaging (IM) provides the preceding multiple  built-in group types. For details, see [Group Systems](https://intl.cloud.tencent.com/document/product/1047/33529).
+For details on custom group types, see [Custom Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B).
 
 ### Request URL example
 ```
@@ -46,7 +46,7 @@ You can use the Limit and Next fields to control pagination pulling:
     "Limit": 1000,
     "Next": 0
 }
-```
+ ```
 
 - **Specifying the group type**
 You can specify the type of groups to be pulled, such as Public, Private, ChatRoom, AVChatRoom, or BChatRoom.
