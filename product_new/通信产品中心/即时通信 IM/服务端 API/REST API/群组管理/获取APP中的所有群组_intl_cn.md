@@ -3,10 +3,9 @@
 
 ## 接口调用说明
 ### 适用的群组类型
-即时通信 IM 内置五种群组类型，详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
-自定义的群组类型，详情请参见 [自定义群组形态](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81)。
+即时通信 IM 内置多种群组类型，详情请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。自定义的群组类型，详情请参见 [自定义群组形态](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B)。
 
-### 请求 URL示例
+### 请求 URL 示例
 ```
 https://console.tim.qq.com/v4/group_open_http_svc/get_appid_group_list?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
@@ -46,7 +45,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_appid_group_list?sdkappid=
     "Limit": 1000,
     "Next": 0
 }
-```
+ ```
 
 - **指定群组形态**
 可以指定拉取的群组所属的群组形态，如 Public，Private，ChatRoom、AVChatRoom和BChatRoom。
