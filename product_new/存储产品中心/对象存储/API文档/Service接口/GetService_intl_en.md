@@ -8,7 +8,7 @@ This API is used to query the list of all buckets under a requester's account or
 
 **Sample 1**
 
-```shell
+```plaintext
 GET / HTTP/1.1
 Host: service.cos.myqcloud.com
 Date: GMT Date
@@ -17,7 +17,7 @@ Authorization: Auth String
 
 **Sample 2**
 
-```shell
+```plaintext
 GET / HTTP/1.1
 Host: cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -50,7 +50,7 @@ This API only returns common response headers. For more information, see [Common
 
 A successful query returns **application/xml** data which include the list of all buckets or the list of buckets in a specific region.
 
-```shell
+```plaintext
 <ListAllMyBucketsResult>
 	<Owner>
 		<ID>string</ID>
@@ -115,7 +115,7 @@ There is no special error message for this API. For all error messages, see [Err
 
 #### Request
 
-```shell
+```plaintext
 GET / HTTP/1.1
 Host: service.cos.myqcloud.com
 Date: Fri, 24 May 2019 11:59:50 GMT
@@ -125,7 +125,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 805
@@ -168,7 +168,7 @@ x-cos-request-id: NWNlN2RjYjdfOGFiMjM1MGFfNTVjMl8zMmI1****
 
 #### Request
 
-```shell
+```plaintext
 GET / HTTP/1.1
 Host: cos.ap-beijing.myqcloud.com
 Date: Fri, 24 May 2019 11:59:51 GMT
@@ -178,7 +178,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 495
