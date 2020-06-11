@@ -379,7 +379,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct GET Service request
+    // 2. Construct the GET Service request
     qcloud_cos::GetServiceReq req;
     qcloud_cos::GetServiceResp resp;
     qcloud_cos::CosResult result = cos.GetService(req, &resp);
