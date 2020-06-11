@@ -4,7 +4,7 @@ CLS offers real-time log query to help identify business problems quickly. You n
 
 Log search is performed based on the keywords of a log that are matched with the information you entered. You can flexibly adjust the keywords by customizing a word delimiter or specifying whether to enable case sensitivity depending on your business needs. The following example uses a log to explain the word delimiters and case-sensitivity.
 
-```shell
+```plaintext
 10002345987;write;ERROR;code=400;topic does not exist;
 ```
 
@@ -29,7 +29,7 @@ Index is an optional feature for log topics. You need to select the log topic to
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
 2. Select **Logset** in the left sidebar, and then go to the target logset and log topic.
 3. In the **Log Topic** tab, select **Index Configuration**.
-4. Enable **Full-text Index** or **Key-value Index** as needed, select **Case-sensitive** (not selected by default), and enter a word delimiter (default word delimiters: `!@#%^&*()-_="', <>/?|\;:\n\t\r[]{}`).
+4. Enable **Full-text Index** or **Key-value Index** as needed, select **Case-sensitive** (not selected by default), and enter a word delimiter (default word delimiters: `@&()='",;:<>[]{}/ \n\t\r`）.
 5. Click **Save** to complete the index configuration.
 
 >After a log topic is created, its index is not enabled by default. You need to manually enable it.

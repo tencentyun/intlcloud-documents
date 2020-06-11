@@ -1,4 +1,4 @@
-No Charges When Shut Down means you will not be charged for instances (CPU, memory) after you **select the No Charges When Shut Down option** to **shut down** pay-as-you-go instances. Components such as cloud disks (system disks and data disks), public network bandwidth (bill-by-bandwidth) and images will still be billed.
+No Charges When Shut Down means you will not be charged for instances (CPU, memory) after you **select the No Charges When Shut Down option** to **shut down** pay-as-you-go instances. Components such as [cloud disks](https://intl.cloud.tencent.com/document/product/213/2255) (system disks and data disks), public network bandwidth (bill-by-bandwidth) and images will still be billed.
 
 ## Use Limits
 
