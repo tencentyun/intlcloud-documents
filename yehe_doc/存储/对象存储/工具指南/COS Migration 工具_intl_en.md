@@ -139,7 +139,7 @@ ignoreModifiedTimeLessThanSeconds=
 
 | Configuration Item | Description |
 | ------| ------ |
-| localPath | Local path in the format of an absolute path: <br>The separator on Linux is /, such as `/a/b/c` <br>The separator on Windows is \\, such as `E:\\a\\b\\c` |
+|localPath| An absolute path to a local directory: <br>The separator on Linux is /, such as `/a/b/c` <br>The separator on Windows is \\, such as `E:\\a\\b\\c` |
 | excludes | Absolute path of the directory or file to be excluded, meaning some directories or files under localPath are not to be migrated. Multiple absolute paths are separated by semicolons. If this is left blank, all files in the localPath will be migrated |
 | ignoreModifiedTimeLessThanSeconds | Exclude files whose update time is less than a certain period of time from the current time. Unit in seconds. This is left blank by default, indicating files are not to be filtered by lastmodified time. This is suitable for scenarios where users run the migration tool while updating files, and do not want files being updated to be migrated to COS. For example, if this is configured as 300, only files updated at least 5 minutes ago will be uploaded |
 
