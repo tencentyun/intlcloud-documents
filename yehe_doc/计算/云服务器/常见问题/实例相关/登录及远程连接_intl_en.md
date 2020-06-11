@@ -4,10 +4,17 @@ Tencent Cloud allows users to log in to a CVM instance by using the VNC web clie
 - [Logging in to a Linux Instance Using VNC](https://intl.cloud.tencent.com/document/product/213/32494)
 - [Logging in to a Windows Instance Using VNC](https://intl.cloud.tencent.com/document/product/213/32496).
 
+### Why can I not use Internet Explorer 8.0 to log in to my instances?
+VNC web client supports Internet Explorer 10 and later. Download the latest version of Internet Explorer.
+Tencent Cloud console offers a better experience using Google Chrome. It is recommended that you use Google Chrome.
+
 ### How do I enable multi-user remote login on a Windows Server?
 
 Windows Server supports multi-user remote login. For detailed instructions, refer to [Setting up a Windows CVM For Multi-user Remote Login](https://intl.cloud.tencent.com/document/product/213/32497).
 If the steps you take do not work, restart the instance and try again.
+
+### Does the console support multi-user login using VNC?
+No, it does not. If one user is logged in, other users will not be able to do so.
 
 ### How can I log in to an instance running Ubuntu as root?
 
@@ -71,15 +78,8 @@ Make sure that:
 - You entered your password correctly. If you forgot your password, reset it. For details, refer to [Reset Instance Password](https://intl.cloud.tencent.com/document/product/213/16566).
 - If you use a user without administrator privilege to log in, that user belongs to the Remote Desktop Users group.
 
-### Does the console support multi-user login using VNC?
-No, it does not. If one user is logged in, other users will not be able to do so.
-
 ### What do I do if I forgot my CVM instance login password?
 You can reset the password. For details, refer to [Reset Instance Password](https://intl.cloud.tencent.com/document/product/213/16566).
-
-### Why can I not use Internet Explorer 8.0 to log in to my instances?
-VNC web client supports Internet Explorer 10 and later. Download the latest version of Internet Explorer.
-Tencent Cloud console offers a better experience using Google Chrome. It is recommended that you use Google Chrome.
 
 ### How do I log in to my Linux instance remotely?
 - Tencent Cloud recommends [Logging in to a Linux Instance Using Standard Login Mode](https://intl.cloud.tencent.com/document/product/213/5436). You can also:
