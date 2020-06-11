@@ -32,7 +32,6 @@ Delete a Logset
 
 1. Go to the [Logset Management](https://console.cloud.tencent.com/cls/logset) page.
 2. Locate the logset whose name you want to update, and click **View** under Operation on the right to enter the logset details page.
-   ![](https://main.qcloudimg.com/raw/5720639981e2347034018b71fafd0178.jpg)
 3. Then click **Edit** in the Basic Info section to edit the logset information.
    ![](https://main.qcloudimg.com/raw/e8c49e75c44c8a9dbd83323d05fecde6.png)
 4. Modify the logset information in Edit mode, click **Save**, and the logset information will be updated.
