@@ -1,0 +1,62 @@
+### 如何查看正在使用的云服务器？
+
+您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)，在云服务器页面查看正在使用的云服务器。
+
+### 云服务器支持安装虚拟机吗？
+
+云服务器不支持安装虚拟机。
+
+### 如何关机实例？
+
+具体操作请参考 [关机实例](https://intl.cloud.tencent.com/document/product/213/4929)。
+
+### 如何重启实例？
+
+具体操作请参考 [重启实例](https://intl.cloud.tencent.com/document/product/213/4928)。
+
+### 如何销毁实例？
+
+具体操作请参考 [销毁实例](https://intl.cloud.tencent.com/document/product/213/4930)。
+
+### 如何查询 Linux 实例的帐号和密码？
+云服务器实例的帐号和密码会在创建成功后将以 [站内信](https://console.cloud.tencent.com/message) 的方式发送到您的腾讯云账户上。Linux 系统的默认管理员帐号是 root。
+
+### 如何检查 Linux 实例磁盘和进行分区格式化？
+
+您可以通过 `df –h` 命令查询磁盘空间和使用情况，通过`fdisk –l`命令查询磁盘信息。 Linux 实例磁盘分区和格式化操作，请参见 [初始化云硬盘（小于2TB）](https://intl.cloud.tencent.com/document/product/362/31597) 和 [初始化云硬盘（大于等于2TB）](https://intl.cloud.tencent.com/document/product/362/31598)。
+
+### 如何向 Linux 实例上传文件？
+- 您可以 [通过 SCP 方式将文件上传到 Linux 实例](https://intl.cloud.tencent.com/document/product/213/2133)。
+- 您可以 [通过 FTP 方式将文件上传到 Linux 实例](https://intl.cloud.tencent.com/document/product/213/35307)。
+
+### 如何调整 Linux 实例目录文件的拥有者和拥有组？
+如果 Web 服务器中文件或目录的权限不正确，会导致访问网站时出现403错误。因此，在调整文件和目录前需要确认所在进程的运行身份。
+- 您可以使用 `ps` 和 `grep` 命令查询文件和目录所在进程的运行身份。
+- 您可以使用 `ls –l` 命令来查询文件和目录的拥有者和拥有组。
+- 您可以使用 `chown` 命令修改权限。例如，`chown -R www.www /tencentcloud/www/user/`可将目录 `/tencentcloud/www/user` 下的所有文件和目录的拥有者和拥有组都修改为 www 帐户。
+
+### 购买云服务器实例后如何备案域名？
+待备案的云服务器实例需要满足购买要求，且每台实例可申请的备案服务号数量有限，详细信息请参见 [备案云服务](https://intl.cloud.tencent.com/document/product/1022/34608)。
+
+### 购买了云服务器实例，想对云服务器实例添加声卡和显卡，发现无法添加，是什么原因？
+腾讯云云服务器提供的是常规服务器，不是多媒体服务器，默认不提供声卡和显卡组件，所以在系统中无法添加声卡和显卡。
+
+### 可以转移某台云服务器剩余使用时间到其他云服务器上吗？
+不支持。如果您需要兼顾灵活性和成本，建议在购买实例时选择按量付费实例。
+
+### 云服务器实例如何查询云服务器 IP 地址归属地？
+您购买的云服务器实例所在地域即是 IP 的归属地地域。
+
+### 云服务器默认提供数据库吗？
+云服务器默认不提供数据库，您可以：
+- 自行部署数据库。例如 [安装 MySQL 数据库](https://intl.cloud.tencent.com/document/product/213/10190)。
+- 单独购买 [腾讯云数据库 MySQL](https://intl.cloud.tencent.com/product/cdb) 服务。
+
+### 云服务器上是否可以搭建数据库？
+可以。您可以根据需求安装数据库软件和配置环境，云服务器不作限制。同时，您也可以单独购买 [腾讯云数据库 MySQL](https://intl.cloud.tencent.com/product/cdb) 服务。
+
+### 云服务器是否支持 Oracle 数据库？
+支持。建议您在安装 Oracle 数据库前压测云服务器性能，确认云服务器实例可以满足您的数据库读写需求。
+
+### 什么时候可以强制停止实例？有什么后果？
+在不能通过正常关机流程停止实例时，您可以强制停止实例。强制停止实例等同于断电处理，可能丢失实例操作系统中未写入磁盘的数据。
