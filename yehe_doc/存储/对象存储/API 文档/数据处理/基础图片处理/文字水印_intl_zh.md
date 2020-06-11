@@ -29,7 +29,7 @@ download_url?watermark/2/text/<encodedText>
 | ------------ | ------------------------------------------------------------ |
 | download_url | 文件的访问链接，具体构成为`<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`，<br>例如 `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg`。 |
 | /text/       | 水印内容，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)                    |
-| /font/       | 水印字体，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值 tahoma.ttf 。水印字体列表参考 [支持字体列表](https://cloud.tencent.com/document/product/460/19568) |
+| /font/       | 水印字体，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值 tahoma.ttf 。|
 | /fontsize/   | 水印文字字体大小，单位为磅，缺省值13                       |
 | /fill/       | 字体颜色，缺省为灰色，需设置为十六进制 RGB 格式（例如 #FF0000），详情可参考 [RGB 编码表](https://www.rapidtables.com/web/color/RGB_Color.html)，需经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430)，默认值为 #3D3D3D |
 | /dissolve/   | 文字透明度，取值1 - 100 ，默认90（完全不透明）                |
