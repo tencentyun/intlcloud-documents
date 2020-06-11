@@ -8,14 +8,13 @@
 
 ## 操作步骤
 
-1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，并、在左侧导航栏中，单击【检索分析】，进入日志检索页面。
+1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，并在左侧导航栏中，单击【检索分析】，进入日志检索页面。
 2. 执行检索任务，检索语法参考 [检索语法](https://intl.cloud.tencent.com/document/product/614/30439)。
 3. 单击右上角的下载按钮，即可下载当前所显示的全部检索结果。
-![](https://main.qcloudimg.com/raw/5bb5f0f1ff3d0d4f435a27be6a3bbc57.jpg)
+![](https://main.qcloudimg.com/raw/4a8500dbc1f47c4c3978699887343dff.png)
 
 ## 注意事项
 
 - 首次默认展示20条日志，如需下载更多日志记录，只需要继续下拉检索结果页面，等下拉的页面中新产生的数据加载完毕后，再次单击下载图标即可。
 - 下载的文件类型为 CSV， 文件名格式为：`日志集名称_日志主题名称_年月日_时分秒.csv`。
 ![](https://main.qcloudimg.com/raw/60201118539fca2af0818e4da8100ad7.jpg)
-
