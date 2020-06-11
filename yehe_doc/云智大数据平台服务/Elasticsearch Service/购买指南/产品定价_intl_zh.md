@@ -9,7 +9,7 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
     <th class="tg-llyw" rowspan="3">CPU</th>
     <th class="tg-llyw" rowspan="3">内存（GB）</th>
     <th class="tg-llyw" rowspan="3">适用场景</th>
-    <th class="tg-llyw" colspan="22">预付费（USD/个/小时）</th>
+    <th class="tg-llyw" colspan="22">预付费（$USD/个/小时）</th>
   </tr>
   <tr>
     <td class="tg-llyw" colspan="2">北京/上海/广州/南京</td>
@@ -25,28 +25,28 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
 		<td class="tg-llyw" colspan="2">法兰克福</td>
   </tr>
   <tr>
-    <td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-    <td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-    <td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-    <td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-    <td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-    <td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-		<td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-		<td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-      		<td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-      <td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
-      <td class="tg-llyw">Open Source/Basic Edition</td>
-    <td class="tg-llyw">Platinum Edition</td>
+    <td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+    <td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+    <td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+    <td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+    <td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+    <td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+		<td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+		<td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+      		<td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+      <td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
+      <td class="tg-llyw">开源版/基础版</td>
+    <td class="tg-llyw">白金版</td>
   </tr>
   <tr>
     <td class="tg-0pky">ES.S1.SMALL2</td>
