@@ -1,0 +1,3 @@
+Dear Tencent Cloud User,
+
+According to applicable laws and regulations, you are strictly prohibited from sending SMS messages related to financial marketing, gambling, fraud, obscenity, pornography, violence, and other illegal information through the Tencent Cloud SMS service. If your Tencent Cloud account is suspected of sending such messages, Tencent Cloud will terminate your service or block your account in accordance with the SMS Service Agreement. If any criminal activity is suspected, Tencent Cloud will collect relevant clues (including but not limited to Tencent Cloud identity verification information) and submit them to the public security authority for processing. Thank you for your support and understanding!

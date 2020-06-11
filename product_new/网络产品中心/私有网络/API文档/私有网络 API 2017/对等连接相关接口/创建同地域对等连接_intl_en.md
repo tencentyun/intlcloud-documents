@@ -1,3 +1,6 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [VPC API 3.0](https://intl.cloud.tencent.com/document/product/215/15754) which is standardized and faster.
+>
+
 ## 1. API Description
 This API (CreateVpcPeeringConnection) is used to create intra-region peering connections.
 Domain name for API requests: <font style="color:red">vpc.api.qcloud.com</font>
@@ -27,7 +30,7 @@ Below is a list of API request parameters. You need to add common request parame
 | peeringConnectionId | String | Peering connection ID assigned by the system, for example: pcx-6gw5wvmk. |
 
 ## 4. Error Codes
- The following error codes only include business logic error codes for this API. For additional common error codes, see <a href="https://intl.cloud.tencent.com/doc/api/245/4924" title="VPC Error Codes">VPC Error Codes</a>.
+ The following error codes only include business logic error codes for this API. For additional common error codes, see <a href="https://intl.cloud.tencent.com/document/api/215/4924" title="VPC Error Codes">VPC Error Codes</a>.
 
 | Error code | Description |
 |---------|---------|

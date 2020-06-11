@@ -11,19 +11,19 @@
 3. 单击【新增日志主题】，在新增日志主题窗口中，填写如下相关信息：
 	- 日志主题名称：例如：nginx。
 	- 主题分区（Partition）数量： 主题分区介绍请参见 [主题分区介绍](https://intl.cloud.tencent.com/document/product/614/33779)，默认新建1个分区。
-		![](https://main.qcloudimg.com/raw/d22c9d090a380376a1de4b56f19bc27a.jpg)
+		![](https://main.qcloudimg.com/raw/79b2a94628f6f42e68104ccefc09a052.png)
 4. 单击【确定】，新增日志主题。
 5. 日志主题新增成功，将进入日志主题管理页。
-   ![](https://main.qcloudimg.com/raw/08e9dc61f1cc8bfcb1923345c86bef45.jpg)
+   ![](https://main.qcloudimg.com/raw/925a17d45f409d56b7f8d78da99bc1b1.png)
 
 ## 删除日志主题
 
 1. 进入 [日志集管理](https://console.cloud.tencent.com/cls/logset/) 页面，单击日志集名称。
 2. 找到您需要删除的日志主题，在其右侧操作栏中，单击【删除】。
 >日志主题一旦删除，主题配置和日志数据不可恢复，请谨慎操作。
->![](https://main.qcloudimg.com/raw/5e28500925c0d47d39c23644c69a7ea9.jpg)
+>![](https://main.qcloudimg.com/raw/8486812ce98ed7da7005be687ba230e4.png)
 3. 在弹出的确认删除窗口中，单击【确定删除】，即可删除该日志主题。
-   ![](https://main.qcloudimg.com/raw/d968b80ff0d29523837aafb35bd293f0.jpg)
+   ![](https://main.qcloudimg.com/raw/1ac10a1f6f8ef2129bc189eebd5d88f1.png)
 
 
 
@@ -31,8 +31,7 @@
 
 1. 进入 [日志集管理](https://console.cloud.tencent.com/cls/logset/) 页面，单击日志集名称。
 2. 找到您需要删除的日志主题，在其右侧操作栏中，单击【管理】。
-   ![](https://main.qcloudimg.com/raw/5161b5637bdfc2209442972a4c680ed8.jpg)
 3. 进入日志主题详情页，切换到【基本信息】，单击右侧的【编辑】，进入编辑模式。
-   ![](https://main.qcloudimg.com/raw/a2b589ef1378e6e03d264f2676b67d93.jpg)
+   ![](https://main.qcloudimg.com/raw/773ad418bf1a29a33b94e0f99a931eb4.png)
    4.修改主题名称，然后单击【保存】，完成编辑日志主题信息。
 

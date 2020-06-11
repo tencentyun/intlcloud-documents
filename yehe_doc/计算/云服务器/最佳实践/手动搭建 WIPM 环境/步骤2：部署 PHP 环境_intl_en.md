@@ -40,7 +40,7 @@ Versions later than PHP 5.3 do not have an installation package and are installe
 #### Downloading software
 
 1. In the CVM, go to the [PHP official website](http://windows.php.net/download/) and download the compressed PHP installation package, as shown in the following figure:
-> To run PHP under IIS, you must select the x86 installation package for Non Thread Safe. If your server is running Windows Server 32-bit (x86), replace IIS with Apache and select the x86 installation package for Non Thread Safe.
+> To run PHP under IIS, you must select the x86 installation package for Non Thread Safe. If your server is running Windows Server 32-bit (x86), replace IIS with Apache and select the x86 installation package for Thread Safe.
 >
 ![](https://main.qcloudimg.com/raw/b54dcb237ae24673cd592561ffc91bc0.png)
 2. Based on the name of the downloaded PHP installation package, download and install the Visual C++ Redistributable installation package.

@@ -26,6 +26,5 @@ For more information, see the [StopInstances](https://intl.cloud.tencent.com/doc
 ## Subsequent Operations
 You can modify the following attributes only if the instance has been shut down.
 - **Instance configuration (CPU, memory):** To change the instance type, see [Change Instance Configuration](https://intl.cloud.tencent.com/document/product/213/2178).
-- **Size of a mounted cloud disk: ** To adjust the size of a cloud disk, see [Expanding Cloud Disks](https://intl.cloud.tencent.com/document/product/362/5747).
 - **Change password:** see [Login Password](https://intl.cloud.tencent.com/document/product/213/6093).
 - **Load SSH key:** see [SSH Key](https://intl.cloud.tencent.com/document/product/213/6092).
