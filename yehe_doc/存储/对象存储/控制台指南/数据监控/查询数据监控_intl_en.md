@@ -26,7 +26,7 @@ COS can monitor the data you stored on it. In the COS monitor window, you can qu
 >
 >- Under **Details** in the **Current** section, you can query the monitoring details including storage usage, number of objects, requests, traffic, return code, and reads based on different periods, such as today, yesterday, last 7 days, last 30 days, last 3 months, and last 6 months.
 >- In the **This month** section, you can view data for the month, including the daily average storage usage of each storage class and total traffic (accumulated public network traffic, accumulated CDN origin-pull traffic, and accumulated cross-region replication traffic).
-
+>- **Storage** and **Number of Objects** display only data after March 1, 2020. For more details, go to [Billing Center](https://console.cloud.tencent.com/expense/bill/dosageDownload), and export data by period.
 
 ## Querying with a Sub-Account
 To query monitoring reports with a sub-account through the console, you need to first grant the sub-account permission to do so.
