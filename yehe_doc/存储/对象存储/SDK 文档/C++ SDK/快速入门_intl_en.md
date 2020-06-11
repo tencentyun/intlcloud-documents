@@ -423,7 +423,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the PUT Object ruquest
+    // 2. Construct the PUT Object request
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
     std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object’s access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
     // The local file path is required in the constructor of `request`.
