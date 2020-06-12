@@ -1,3 +1,5 @@
+>! All the dates and time for settlements and transactions under your Tencent Cloud account are based on Beijing Time (UTC + 08:00).
+
 ## Bill Summary
 
 #### 1.1 Summarizing by Product
