@@ -1,3 +1,4 @@
+>! All the dates and time for settlements and transactions under your Tencent Cloud account are based on Beijing Time (UTC + 08:00).
 
 Tencent Cloud's post-paid billing account provides you with a better experience by extending a credit limit, allowing you to spend within the credit limit for any Tencent Cloud services. We will automatically charge the bill amount using your default payment method bound with your post-paid account based on your billing cycle. You can also make an early payment. Once the bill is paid successfully, your available credit will be restored.
 
