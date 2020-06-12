@@ -1,6 +1,6 @@
 ## 按量计费云服务器
 
-![](https://main.qcloudimg.com/raw/3b38d10c6b75b2ab3079b9a0f867bf5c.png)
+![](https://main.qcloudimg.com/raw/463d6b815dcf2677ebe28f9683d14430.jpg)
 
 ### 注意事项
 - 按量计费资源不再使用时**请及时销毁**，以免继续扣费。
