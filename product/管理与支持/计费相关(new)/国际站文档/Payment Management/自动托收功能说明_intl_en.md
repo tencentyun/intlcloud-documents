@@ -1,3 +1,4 @@
+>! All the dates and time for settlements and transactions under your Tencent Cloud account are based on Beijing Time (UTC + 08:00).
 
 Tencent Cloud provides a certain credit limit within a fixed billing cycle for postpaid accounts. You can purchase and use cloud services in advance within the scope of the credit limit. On the payment due date, the system will automatically deduct the amount due from the default payment method (credit card) that is bound to your account. For some customers, this automatic payment feature is turned off by default. To enable this feature, go to [Billing Center > Account Info](https://console.cloud.tencent.com/intlbilling/account).
 
