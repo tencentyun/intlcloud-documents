@@ -54,13 +54,13 @@ Currently, VOD provides the following preset policies:
 		  <tr>      
          <td>SecretId</td>   
 	     <td>Security credential file in CSV format</td>   
-	     <td >Required for server API call. For more information, please see<a href="https://cloud.tencent.com/document/product/598/37140">Access Key</a></td>   
+	     <td >Required for server API call. For more information, please see<a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</a></td>   
 	     <td >Yes</td>
      </tr> 
 	     <tr>      
          <td>SecretKey</td>   
 	     <td>Security credential file in CSV format</td>   
-	     <td >Required for server API call. For more information, please see<a href="https://cloud.tencent.com/document/product/598/37140">Access Key</td>   
+	     <td >Required for server API call. For more information, please see<a href="https://intl.cloud.tencent.com/document/product/598/32675">Access Key</td>   
 	     <td >Yes</td>
      </tr> 
 </table>

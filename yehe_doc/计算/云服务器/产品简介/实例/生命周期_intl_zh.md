@@ -16,7 +16,7 @@
 	<tr><td>已释放</td><td>稳定状态</td><td>释放操作执行完成，原实例不存在，无法提供服务，数据完全清除。</td></tr>
 </table>
 - **实例状态间转换：**
-![](https://main.qcloudimg.com/raw/0d287fc94e8534c9414a02f218113606.png)
+![](https://main.qcloudimg.com/raw/61d4233e57912baad40b4104c205485b.png)
 
 ## 实例启动
  - 执行启动实例操作后实例将进入创建中状态。创建中实例将按照指定的 [实例规格](https://intl.cloud.tencent.com/document/product/213/11518) 配置硬件规格，系统将使用在启动时指定的镜像来启动实例。

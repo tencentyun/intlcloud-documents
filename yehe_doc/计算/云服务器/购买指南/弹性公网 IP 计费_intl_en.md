@@ -32,10 +32,9 @@ For details, refer to [Public Network Pricing](https://intl.cloud.tencent.com/do
 ### Account in arrears
 
 <table>
-	<tr><th>Arrears period</th><th>Description</th></tr>
-	<tr><td>Less than 2 hours</td><td>You can continue to use your resources and your account continues to be charged.</td></tr>
-	<tr><td>2-24 hours</td><td>Your resources are kept but you cannot use them.</td></tr>
-	<tr><td>Over 24 hours</td><td>Unbound EIPs are released. Bound EIPs remain unaffected.</td></tr>
+    <tr><td>< 2 hours</td><td>You can continue to use your resources and billing continues.</td></tr>
+    <tr><td>≥ 2 hours, and < 2 hours + 15 days</td><td>EIPs are kept but unusable, and billing stops.</td></tr>
+    <tr><td>≥ 2 hours + 15 days</td><td><li>Unbound EIPs are released.</li><li>Bound EIPs are kept but unusable, and billing stops.</li></td></tr>
 </table>
 
 ### Arrears on bound resources 

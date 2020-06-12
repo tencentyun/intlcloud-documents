@@ -379,7 +379,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct a request to upload a file
+    // 2. Construct the GET Service request
     qcloud_cos::GetServiceReq req;
     qcloud_cos::GetServiceResp resp;
     qcloud_cos::CosResult result = cos.GetService(req, &resp);
@@ -397,9 +397,9 @@ int main(int argc, char *argv[]) {
     
     // 4. Process the call result
     if (result.IsSucc()) {
-        // File uploaded successfully
+        // Bucket list queried successfully
     } else {
-        // Failed to upload the file. You can call the CosResult member functions to output the error information such as the requestID
+        // Failed to query the bucket list. You can call the CosResult member functions to output the error information such as the requestID
         std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
@@ -423,7 +423,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct a request to upload a file
+    // 2. Construct the PUT Object request
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
     std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object’s access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
     // The local file path is required in the constructor of `request`.
@@ -462,7 +462,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the PUT Bucket request
+    // 2. Construct the GET Bucket request
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
     qcloud_cos::GetBucketReq req(bucket_name);
     qcloud_cos::GetBucketResp resp;
@@ -477,9 +477,9 @@ int main(int argc, char *argv[]) {
     
     // 3. Process the call result
     if (result.IsSucc()) {
-        // File uploaded successfully
+        // Object list queried successfully
     } else {
-        // Failed to upload the file. You can call the `CosResult` member functions to output the error information such as the requestID.
+        // Failed to query the object list. You can call the `CosResult` member functions to output the error information such as the requestID.
         std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
@@ -503,7 +503,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the PUT Bucket request
+    // 2. Construct the GET Object request
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
     std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
     std::string local_path = "/tmp/exampleobject";
@@ -511,7 +511,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::GetObjectByFileReq req(bucket_name, object_name, local_path);
     qcloud_cos::GetObjectByFileResp resp;
     
-    // 3. Call the PUT Bucket API
+    // 3. Call the GET Object API
     qcloud_cos::CosResult result = cos.GetObject(req, &resp);
     
     // 4. Process the call result
@@ -542,19 +542,19 @@ int main(int argc, char *argv[]) {
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the PUT Bucket request
+    // 2. Construct the DELETE Object request
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
     std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
-    // 3. Call the PUT Bucket API
+    // 3. Call the DELETE Object API
 	qcloud_cos::DeleteObjectReq req(bucket_name, object_name);
 	qcloud_cos::DeleteObjectResp resp;
 	qcloud_cos::CosResult result = cos.DeleteObject(req, &resp); 
     
     // 4. Process the call result
     if (result.IsSucc()) {
-        // File downloaded successfully
+        // File deleted successfully
     } else {
-        // Failed to download the file. You can call the CosResult member functions to output the error information such as the requestID.
+        // Failed to delete the file. You can call the CosResult member functions to output the error information such as the requestID.
         std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;

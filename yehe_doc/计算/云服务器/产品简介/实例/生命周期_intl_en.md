@@ -1,53 +1,53 @@
-The lifecycle of a Cloud Virtual Machine (CVM) instance refers to the process of the instance from its launch to release. Proper management of CVM instances from launch to release ensures that applications running on these instances can provide services in an efficient and economic manner.
+The lifecycle of a Tencent Cloud CVM instance refers to all statuses from the launch of the instance to its release. Properly managing the Tencent Cloud instance in different statuses can ensure that applications running on the instance provide services economically and efficiently.
 
-## Instance States
+Instance Status
 
-- **A CVM instance has the following states:**
+- **An instance has the following statuses:**
 	<table>
-	<tr><th>State</th><th>Attribute</th><th>Description</th></tr>
-	<tr><td>Creating</td><td>Intermediate state</td><td>It is a state prior to Running after the instance is created.</td></tr>
-	<tr><td>Running</td><td>Steady state</td><td>This state indicates that the instance is running normally, and you can run your services on this instance.</td></tr>
-	<tr><td>Restarting</td><td>Intermediate state</td><td>It is a state prior to Running after a restart operation is executed in the console or through an API. If the instance remains in Restarting state for a long time, an exception may have occurred.</td></tr>
-	<tr><td>Resetting</td><td>Intermediate state</td><td>It is a state prior to Running after the system is reinstalled or the disk is reset through the console or an API.</td></tr>
-	<tr><td>Shutting Down</td><td>Intermediate state</td><td>It is a state prior to Shut Down after a shutdown operation is executed in the console or through an API. If the instance remains in Shutting Down state for a long time, an exception may have occurred. However, forcible shutdown is not recommended.</td></tr>
-	<tr><td>Shut Down</td><td>Steady state</td><td>This state indicates that the instance is shut down correctly. An instance in Shut Down state cannot provide external services. Some instance attributes can be modified only when the instance is in Shut Down state.</td></tr>
-	<tr><td>Terminating</td><td>Intermediate state</td><td>It is the state when the instance has expired for 7 days or when the user manually terminates the instance, but the termination is not completed yet.</td></tr>
-	<tr><td>Reclaimed</td><td>Steady state</td><td>It is the state when a pay-as-you-go instance has been manually terminated for less than 2 hours and moved into the recycle bin. In this state, the instance does not provide external services.</td></tr>
-	<tr><td>Released</td><td>Steady state</td><td>This state indicates that the release operation is completed. In this state, the instance no longer exists and cannot provide services, and instance data is completely deleted.</td></tr>
+	<tr><th>Status Name</th><th>Status Attributes</th><th>Description</th></tr>
+	<tr><td>Creating</td><td>Intermediate status</td><td>The instance has been created but is not running yet.</td></tr>
+	<tr><td>Running</td><td>Steady status</td><td>The instance is running normally, and you can run your services on this instance.</td></tr>
+	<tr><td>Restarting</td><td>Intermediate status</td><td>A restart operation has been performed for the instance via the console or APIs, but the instance is not running yet. If this status lasts for a long time, there may be an exception.</td></tr>
+	<tr><td>Reinstalling</td><td>Intermediate status</td><td>The instance's system has been reinstalled or its disk has been reconfigured via the console or APIs, but the instance is not running yet.</td></tr>
+	<tr><td>Shutting Down</td><td>Intermediate status</td><td>A shutdown operation has been performed for the instance via the console or APIs, but the instance has not been shut down yet. If this status lasts for a long time, there may be an exception. We do not recommend forced shutdown.</td></tr>
+	<tr><td>Shutdown</td><td>Steady status</td><td>The instance has been shut down normally and cannot provide external services. Some instance attributes can only be modified when the instance is in shutdown status.</td></tr>
+	<tr><td>Terminating</td><td>Intermediate status</td><td>The instance has expired for 7 days or the user has performed the termination operation, but it has not completed yet.</td></tr>
+	<tr><td>Reclaimed</td><td>Steady status</td><td>A pay-as-you-go instance has been manually terminated for less than 2 hours and put into the recycle bin. In this status, the instance does not provide external services.</td></tr>
+	<tr><td>Released</td><td>Steady status</td><td>The release operation has been completed. The original instance no longer exists, cannot provide services, and its data is completely cleared.</td></tr>
 </table>
+- **Instance Status Transition:**
 
-- **Instance state transition**
-![](https://main.qcloudimg.com/raw/1c018b2724bf142b1f3e90b97002d7a0.png)
+![](https://main.qcloudimg.com/raw/61d4233e57912baad40b4104c205485b.png)
 
-## Instance Launch
- - After you perform the instance launch  operation, the instance enters the Creating state. In this state, hardware specifications are configured based on the specified [instance specifications](https://intl.cloud.tencent.com/document/product/213/11518). The system starts the instance by using the image specified during startup.
- - The instance enters the Running state after it is created. An instance in the Running state can be accessed normally.
+## Launching an instance
+ - After an instance is launched, it will enter the creating status. For instance in this status, its hardware specifications will be configured according to the specified [instance type](https://intl.cloud.tencent.com/document/product/213/11518), and the system will launch the instance using the image specified at launch.
+ - The instance will enter the running status after it is created. An instance in the running status can be connected to and accessed normally.
 
-For more information on instance launch, see [Creating an Instance](https://intl.cloud.tencent.com/document/product/213/4855), [Logging In to a Windows Instance](https://intl.cloud.tencent.com/document/product/213/5435), and [Logging In to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436).
+For more information about instance startup, see [Creating an instance](https://intl.cloud.tencent.com/document/product/213/4855), [Logging in to a Windows instance](https://intl.cloud.tencent.com/document/product/213/5435), and [Logging in to a Linux instance](https://intl.cloud.tencent.com/document/product/213/5436).
 
-## Instance Restart
-We recommend that you relaunch an instance in the Tencent Cloud Console or through Tencent Cloud APIs, instead of running the OS restart command in the instance.
- - After you perform the restart operation, the instance enters the Restarting state.
- - Restarting an instance is equivalent to restarting a computer. After the restart, the instance retains its public IP address, private IP address, and all data on the disk.
- - Normally, it takes dozens of seconds to several minutes to restart the instance, depending on the instance configuration.
+## Restarting an instance
+We recommend you restart an instance via the Tencent Cloud Console or Tencent Cloud APIs instead of running the OS restart command in the instance.
+ - After the restart operation is performed, the instance will enter the restarting status.
+ - Restarting an instance is like restarting a computer. After restarted, the instance will retain its public IP address, private IP address and all data on its disk.
+ - Depending on its configuration, restarting the instance normally takes dozens of seconds to several minutes.
 
-For information on how to restart an instance, see [Restarting an Instance](https://intl.cloud.tencent.com/document/product/213/4928).
+For more information about how to restart an instance, please see [Restart Instances](https://intl.cloud.tencent.com/document/product/213/4928).
 
-## Instance Shutdown
-You can use the console or APIs to shut down an instance.
- - Shutting down an instance is equivalent to shutting down a computer.
- - The shut-down instance no longer provides external services, but billing continues.
- - The shut-down instance is still visible in the console.
- - Being in Shutdown state is a prerequisite for some configuration operations, such as adjusting hardware configurations and resetting passwords.
- - The shutdown operation does not change the public or private IP address of the CVM instance, or any data on its disk.
+## Shutting down an instance
+You can shut down the instance via the console or APIs.
+ - Shutting down an instance is like shutting down a computer.
+ - A shutdown instance no longer provides external services, but the billing of the instance continues.
+ - A shutdown instance will still be displayed in the console.
+ - Shutdown is required for some configuration operations such as adjusting hardware configurations and resetting passwords.
+ - The shutdown operation does not change the CVM's public IP, private IP, or any data on its disk.
  
-For information on the shutdown of an instance, see [Shutting Down an Instance](https://intl.cloud.tencent.com/document/product/213/4929).
+For more information about shutting down an instance, please see [Shutdown Instances](https://intl.cloud.tencent.com/document/product/213/4929).
 
-## Instance Termination and Release
-You can terminate and release an CVM instance in the console or through Tencent Cloud APIs if you no longer need it.
+## Terminating and releasing an instance
+If you no longer need an instance, you can terminate and release it via Tencent Cloud Console or APIs.
 
-- Manual termination: you can manually terminate a pay-as-you-go instance that is not in arrears. A pay-as-you-go instance is released after it is kept in the recycle bin for up to 2 hours.
-- Automatic termination upon expiration or in arrears: if the account balance of a pay-as-you-go instance remains below 0 for 26 hours, the instance will be automatically released. (Within these 26 hours, billing continues for the first 2 hours, and the instance is shut down and billing stops for the remaining 24 hours. If the account is in arrears, the pay-as-you-go instance is not moved to the recycle bin, but you can view this instance in the instance list.) If you pay the renewal fee within the specified period, you can continue to use the instance.
+- Manual termination: pay-as-you-go instances will be released after being retained in the recycle bin for a maximum of 2 hours.
+- Expiry/arrears auto termination: pay-as-you-go instance will be automatically terminated when its balance drops below 0 for 2 hours and 15 days. Billing will continue for the first 2 hours, then the instance will shut down and no longer be billed. The pay-as-you-go instance in arrears will not enter the recycle bin and can be viewed on the instance list. You can continue to use the instance if you renew it within the specified time.
 
-When an instance is terminated, the system disks and data disks designated for the instance when you purchase the instance are also released. However, cloud disks mounted to the instance are not affected.
-For information on the termination of an instance, see [Terminating or Returning an Instance](https://intl.cloud.tencent.com/document/product/213/4930).
+When an instance is terminated, its system disks and data disks specified at purchase will be released. However, cloud disks mounted on the instance will not be affected.
+For more information on terminating an instance, please see [Terminate Instances](https://intl.cloud.tencent.com/document/product/213/4930).
