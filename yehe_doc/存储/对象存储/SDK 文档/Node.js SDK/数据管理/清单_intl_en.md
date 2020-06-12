@@ -148,7 +148,7 @@ This API (GET Bucket inventory) is used to query the inventory jobs for a bucket
 
 >
 > - To call this API, make sure that you have adequate permission for the bucket's inventory jobs.
-> The bucket owner has such permission by default. If you do not have the permission, apply for it to the bucket owner first.  
+> - The bucket owner has such permission by default. If you do not have the permission, apply for it to the bucket owner first.  
 
 #### Request samples
 
