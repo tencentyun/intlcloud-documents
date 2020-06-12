@@ -44,8 +44,8 @@ CA 认证审核通过后，会正式颁发证书，您可下载付费证书进�
 >GlobalSign EV 证书相关盖章文件在您递交审核后，证书审核机构会在2 - 3个工作日内通过邮件发送给您，不需要控制台上传。
 
 1. 单击【下载确认函】，进行确认函信息补充填写。如下图所示：
-![](https://main.qcloudimg.com/raw/69417f911eddb7ad1c5075fe2395e83c.png)
+![](https://main.qcloudimg.com/raw/28fcfb8bd19748cccded7f0dc8addc57.png)
 2. 完成确认函填写后，加盖公章，并进行文件扫描。
 3. 单击【上传审核】，确认函上传。
 4. 在弹出的 “已提交” 窗口中，确认信息，单击【确定】，并等待线下亚洲诚信工作人员与 CA 机构对提交材料进行确认与审核。如下图所示：
-![](https://main.qcloudimg.com/raw/c00cefc4715f18964aec82eee1d02f59.png)
+![](https://main.qcloudimg.com/raw/35b4a13f8b21b330c3ab6c314615e501.png)
