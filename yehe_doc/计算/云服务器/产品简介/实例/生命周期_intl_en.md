@@ -16,6 +16,7 @@ Instance Status
 	<tr><td>Released</td><td>Steady status</td><td>The release operation has been completed. The original instance no longer exists, cannot provide services, and its data is completely cleared.</td></tr>
 </table>
 - **Instance Status Transition:**
+
 ![](https://main.qcloudimg.com/raw/61d4233e57912baad40b4104c205485b.png)
 
 ## Launching an instance
