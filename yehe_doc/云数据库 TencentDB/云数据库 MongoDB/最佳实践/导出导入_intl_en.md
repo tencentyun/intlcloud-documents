@@ -37,7 +37,7 @@ mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authentic
 ```
 
 ## Parameter Description for Multiple Authentication Methods
-As described in the [Connection Sample](https://cloud.tencent.com/doc/product/240/3563), TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the `MONGODB-CR` and `SCRAM-SHA-1` authentication methods, respectively.
+As described in the [Connection Sample](https://intl.cloud.tencent.com/document/product/240/7092), TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the `MONGODB-CR` and `SCRAM-SHA-1` authentication methods, respectively.
 - For `mongouser` and all new users created in the console, simply follow the above samples to use the import and export tools.
 - For `rwuser`, the parameter `--authenticationMechanism=MONGODB-CR` should be included in each command.
 
