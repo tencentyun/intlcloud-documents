@@ -1,5 +1,5 @@
->目前网络流日志处于内测中，如有需要，请提交 内测申请。
->
+>目前网络流日志处于内测中，如有需要，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 在左侧菜单栏，单击【诊断工具】>【网络流日志】，创建流日志。
 3. 单击左上角【+新建】，在弹出框中依次输入或确定以下参数：
