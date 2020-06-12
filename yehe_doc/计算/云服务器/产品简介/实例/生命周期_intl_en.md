@@ -16,8 +16,7 @@ Instance Status
 	<tr><td>Released</td><td>Steady status</td><td>The release operation has been completed. The original instance no longer exists, cannot provide services, and its data is completely cleared.</td></tr>
 </table>
 - **Instance Status Transition:**
-
-![](https://main.qcloudimg.com/raw/61d4233e57912baad40b4104c205485b.png)
+![](https://main.qcloudimg.com/raw/2de51f523cc5592c5daeecf179945cfe.jpg)
 
 ## Launching an instance
  - After an instance is launched, it will enter the creating status. For instance in this status, its hardware specifications will be configured according to the specified [instance type](https://intl.cloud.tencent.com/document/product/213/11518), and the system will launch the instance using the image specified at launch.
