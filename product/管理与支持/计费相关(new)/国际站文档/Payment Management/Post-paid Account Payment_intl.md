@@ -1,3 +1,5 @@
+>! All the dates and time for settlements and transactions under your Tencent Cloud account are based on Beijing Time (UTC + 08:00).
+
 There are three ways for you to make a payment in your post-paid billing account.
 
 - Your cloud services are billed based on your billing cycle, and we will automatically charge the bill amount on your default payment method bound with your post-paid account on the due date (10th of each month).
