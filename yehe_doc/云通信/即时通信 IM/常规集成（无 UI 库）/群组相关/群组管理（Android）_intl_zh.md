@@ -81,7 +81,7 @@
 <td>不支持</td>
 </tr>
 <tr>
-<td>是否支持消息云端历史信息存储</td>
+<td>是否支持云端历史消息存储</td>
 <td colspan="3"><ul style="margin:0;padding-left:10px" ><li>体验版：7天</li><li>专业版 ：默认7天，最高支持 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">增值</a> 延长至360天</li><li>旗舰版 ：默认30天，最高支持 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">增值</a> 延长至360天</li></ul></td>
 <td>不支持</td>
 </tr>
