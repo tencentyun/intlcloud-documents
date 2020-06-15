@@ -121,6 +121,7 @@ TraceId|Error|每次请求出错时，服务端将会自动为这个错误生成
 | 错误码             | 描述                       | HTTP 状态码             |
 | ------------------ | -------------------------- | ----------------------- |
 | InternalErrror     | 服务端内部错误             | 500 Internal Server     |
+| 403 Forbidden                       | Request has expired                   | 发起请求的时间超过了签名的有效时间，或者本地系统时间和所在时区的时间不一致。详情请参见 [常见问题](https://intl.cloud.tencent.com/zh/document/product/436/10687#.E8.B0.83.E7.94.A8-api-.E6.8E.A5.E5.8F.A3.E6.97.B6.EF.BC.8C.E5.87.BA.E7.8E.B0.E2.80.9Crequest-has-expired.E2.80.9D.E7.AD.89.E9.94.99.E8.AF.AF.E4.BF.A1.E6.81.AF.EF.BC.8C.E8.AF.A5.E5.A6.82.E4.BD.95.E5.A4.84.E7.90.86.EF.BC.9F) |
 | NotImplemented     | 请求尚未实现               | 501 Not Implemented     |
 | ServiceUnavailable | 服务暂不可用，请重试       | 503 Service Unavailable |
 | SlowDown           | 请降低访问频率             | 503 Slow Down           |

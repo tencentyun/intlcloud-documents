@@ -36,6 +36,13 @@
 | [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | 查询跨域配置 | 查询存储桶的跨域访问配置信息 |
 | [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | 删除跨域配置 | 删除存储桶的跨域访问配置信息 |
 
+#### 自定义域名（domain）接口
+
+| API | 操作名 | 操作描述 |
+|---------|---------|---------|
+| [PUT Bucket domain](https://intl.cloud.tencent.com/document/product/436/35868) | 设置自定义域名 | 设置存储桶的自定义域名信息 |	
+| [GET Bucket domain](https://intl.cloud.tencent.com/document/product/436/35869)	| 查询自定义域名	| 查询存储桶的自定义域名信息 |
+| [DELETE Bucket domain](https://intl.cloud.tencent.com/document/product/436/35870) | 删除自定义域名 | 删除存储桶的自定义域名信息 |
 
 
 #### 生命周期（lifecycle）接口
@@ -82,7 +89,7 @@
 | ------------------------------------------------------------ | ---------------- | ---------------------------------- |
 | [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | 设置静态网站     | 为存储桶配置静态网站               |
 | [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | 查询静态网站配置 | 查询与存储桶关联的静态网站配置信息 |
-| [DELETE Bucket website](<https://intl.cloud.tencent.com/document/product/436/30629>) | 删除静态网站配置 | 删除指定存储桶的静态网站配置信息   |
+| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | 删除静态网站配置 | 删除指定存储桶的静态网站配置信息   |
 
 
 #### 清单（inventory）接口
@@ -172,6 +179,29 @@
 | [CreateJob](https://intl.cloud.tencent.com/document/product/436/33781) | 创建任务       | 用于在存储桶中创建批量处理任务                   |
 | [DescribeJob](https://intl.cloud.tencent.com/document/product/436/33782) | 描述任务       | 用于获取已创建的批量处理任务的参数和任务执行状态 |
 | [ListJobs](https://intl.cloud.tencent.com/document/product/436/33783) | 查询任务       | 用于列出已创建的批量处理任务                     |
-| [UpdateJobPriority](https://intl.cloud.tencent.com/document/product/436/33784) | 更新任务优先级 | 用于更新已创建任务的优先级                       |
-| [UpdateJobStatus](https://intl.cloud.tencent.com/document/product/436/33785) | 更新任务状态   | 用于更新已创建任务的状态                         |
+| [UpdateJobPriority](https://intl.cloud.tencent.com/document/product/436/33784) | 更新任务优先级 | 用于更新已创建任务的优先级                 |
+| [UpdateJobStatus](https://intl.cloud.tencent.com/document/product/436/33785) | 更新任务状态   | 用于更新已创建任务的状态                    |
 
+
+##  数据处理接口         
+
+#### 基础图片处理接口
+
+
+| API  | 操作描述 |
+| ---- | -------- |
+| [缩放](https://intl.cloud.tencent.com/document/product/436/36366) | 对图片进行缩小或放大                                         |
+| [裁剪](https://intl.cloud.tencent.com/document/product/436/36367) | 对图片进行裁剪，包括普通裁剪、缩放裁剪、内切圆裁剪、圆角裁剪和人脸智能裁剪 |
+| [旋转](https://intl.cloud.tencent.com/document/product/436/36368) | 对图片进行旋转，包括普通旋转和自适应旋转                     |
+| [格式转换](https://intl.cloud.tencent.com/document/product/436/36369) | 对图片进行格式转换、gif  格式优化、渐进显示                  |
+| [质量变换](https://intl.cloud.tencent.com/document/product/436/36370) | 对图片质量进行调节                                           |
+| [高斯模糊](https://intl.cloud.tencent.com/document/product/436/36371) | 对图片进行模糊处理                                           |
+| [锐化](https://intl.cloud.tencent.com/document/product/436/36372) | 对图片进行锐化                                               |
+| [图片水印](https://intl.cloud.tencent.com/document/product/436/36373) | 对图片进行水印处理                                           |
+| [文字水印](https://intl.cloud.tencent.com/document/product/436/36374) | 对图片进行实时文字水印处理                                   |
+| [获取图片基本信息](https://intl.cloud.tencent.com/document/product/436/36375) | 查询图片基本信息，包括格式、长、宽等                         |
+| [获取图片 EXIF](https://intl.cloud.tencent.com/document/product/436/36376) | 查询 EXIF 信息                                               |
+| [获取图片主色调](https://intl.cloud.tencent.com/document/product/436/36377) | 查询图片主色调信息                                           |
+| [去除元信息](https://intl.cloud.tencent.com/document/product/436/36378) | 去除图片元信息，包括 exif 信息                               |
+| [快速缩略模板](https://intl.cloud.tencent.com/document/product/436/36379) | 通过图片处理模板，生成相应的缩略图                           |
+| [管道操作符](https://intl.cloud.tencent.com/document/product/436/36380) | 实现对图片按顺序进行多种处理                                 |
