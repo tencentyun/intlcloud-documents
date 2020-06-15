@@ -3,7 +3,7 @@
 #### 相关资源
 
 - 对象存储 COS 的 XML 小程序 SDK 源码下载地址：[XML 小程序 SDK](https://github.com/tencentyun/cos-wx-sdk-v5)。
-- SDK 快速下载地址：[XML 小程序 SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-wx-sdk-v5/latest/cos-wx-sdk-v5.zip?_ga=1.29585407.1783616852.1583375173)。
+- SDK 快速下载地址：[XML 小程序 SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-wx-sdk-v5/latest/cos-wx-sdk-v5.zip)。
 - 演示示例 Demo 下载地址：[XML 小程序 SDK Demo](https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo)。
 
 #### 环境依赖
@@ -30,7 +30,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 
 如果小程序代码使用了 webpack 打包，则通过 npm 安装依赖即可：
 
-```shell
+```plaintext
 npm install cos-wx-sdk-v5
 ```
 
@@ -40,7 +40,7 @@ npm install cos-wx-sdk-v5
 
 ### 小程序域名白名单配置
 
-小程序里请求 COS 需要登录到 [微信公众平台](https://mp.weixin.qq.com)，选择【开发】>【开发设置】，配置域名白名单。SDK 使用到了两个接口：
+小程序里请求 COS 需要登录到 [微信公众平台](https://mp.weixin.qq.com)，选择【开发】>【开发设置】>【服务器域名】，配置域名白名单。SDK 使用到了两个接口：
 
 1. cos.postObject 使用 wx.uploadFile 方法。
 2. 其他方法使用 wx.request 方法。
