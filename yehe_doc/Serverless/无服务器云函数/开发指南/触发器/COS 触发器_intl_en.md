@@ -72,7 +72,7 @@ When an object creation or deletion event occurs in the specified COS bucket, ev
 			"requestParameters": {
 				"requestSourceIP": "192.168.15.101",
 				"requestHeaders": {
-					"Authorization": "q-sign-algorithm=sha1&q-ak=xxxxxxxxxxxxxx&q-sign-time=1545205709;1545215769&q-key-time=1545205709;1545215769&q-header-list=host;x-cos-storage-class&q-url-param-list=&q-signature=098ac7dfe9cf21116f946c4b4c29001c2b449b14"
+					"Authorization": "q-sign-algorithm=sha1&q-ak=xxxxxxxxxxxxxx&q-sign-time=1545205709;1545215769&q-key-time=1545205709;1545215769&q-header-list=host;x-cos-storage-class&q-url-param-list=&q-signature=xxxxxxxxxxxxxxx"
 				}
 			},
 			"eventQueue": "qcs:0:lambda:cd:appid/1253970026:default.printevent.$LATEST",
