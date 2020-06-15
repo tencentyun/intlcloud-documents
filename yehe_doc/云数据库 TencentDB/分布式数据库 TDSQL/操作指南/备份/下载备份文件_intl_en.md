@@ -10,6 +10,6 @@ You can download TencentDB cold backup data and binlogs in the TencentDB for TDS
 >- The address is valid for 15 minutes. After it expires, refresh the page to get a new one. Access the VPC address in the VPC network.
 >- We recommend that you copy the download address, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command for download.
 >
-![](https://main.qcloudimg.com/raw/f60b0938aa7bfea7597ff25ca01fcad3.png)
+![](https://main.qcloudimg.com/raw/e747cf9d0f529471f4be193533600ca4.png)
 
 
