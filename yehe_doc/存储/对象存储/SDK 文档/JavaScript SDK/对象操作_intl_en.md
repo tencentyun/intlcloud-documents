@@ -279,7 +279,7 @@ cos.putObject({
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
 | - ETag | Returns the MD5 checksum of the file. The value of `ETag` can be used to check whether the object was corrupted during the upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note that double quotation marks are required at the beginning and the end** | String |
-| - Location | Creates an object's access domain name for external networks | String |
+| - Location |  The position where an uploaded file can be accessed | String |
 | - VersionId       | The version ID will be returned for buckets that have enabled versioning. If the bucket has never enabled versioning, no value will be returned | String  |
 
 ### Uploading an object using a form
@@ -1010,7 +1010,7 @@ cos.multipartComplete({
 | data | Object returned when the request is successful. If the request fails, this is null | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - Location | Creates an object's access domain name for external networks | String |
+| - Location |  The position where an uploaded file can be accessed | String |
 | - Bucket | Destination bucket for the multipart upload | String |
 | Key | Object key (object name) is the unique identifier of an object in a bucket, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324) for details | String |
 | - ETag | Unique ID of the merged file in the format: `"uuid-<part quantity>"`. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`. **Note that double quotation marks are required at the beginning and the end** | String |
@@ -1334,7 +1334,7 @@ cos.sliceUploadFile({
 | data | Object returned when the request is successful. If the request fails, this is null | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - Location | Creates an object's access domain name for external networks | String |
+| - Location |  The position where an uploaded file can be accessed | String |
 | - Bucket | Destination bucket for the multipart upload | String |
 | Key | Object key (object name) is the unique identifier of an object in a bucket, see [Object Overview] (https://intl.cloud.tencent.com/document/product/436/13324) for details | String |
 | - ETag | Unique ID of the merged file in the format: `"uuid-<part quantity>"`. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880-3"`. **Note that double quotation marks are required at the beginning and the end** | String |
@@ -1395,7 +1395,7 @@ cos.sliceCopyFile({
 | data | Object returned when the request is successful. If the request fails, this is null | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Header information returned by the request | Object |
-| - Location | Creates an object's access domain name for external networks | String |
+| - Location |  The position where an uploaded file can be accessed | String |
 | - Bucket | Destination bucket for the multipart upload | String |
 | Key | Object key (object name) is the unique identifier of an object in a bucket, see [Object Overview] (https://intl.cloud.tencent.com/document/product/436/13324) for details | String |
 | - ETag | MD5 checksum of the merged file. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880"`. **Note that double quotation marks are required at the beginning and the end** | String |

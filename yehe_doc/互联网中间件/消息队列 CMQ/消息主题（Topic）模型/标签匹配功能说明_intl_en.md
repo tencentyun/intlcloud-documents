@@ -1,5 +1,5 @@
 The topic mode of CMQ supports subscription filtering by tag, which is similar to the "direct_routing" mode of RabbitMQ. The "topic_pattern" mode will be provided in the next iteration. As the usage policies of filter tags are complex, this document uses different scenarios as examples to describe them.
-![](https://main.qcloudimg.com/raw/171e6538aafb695b153a68ff682fd38f.png)
+![](https://main.qcloudimg.com/raw/6df92543e8958a1a252ad8d7e962bab4.jpg)
 ## Scenario Description
 ### Scenario 1
 There are four subscribers A, B, C, and D and the message tags are as follows: `apple` for A, `xiaomi` for B, `imac+xiaomi` for C, and none for D.

@@ -86,7 +86,7 @@ void appendAccount(Context context, final String account)
 
 >
 - 这里的账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号。
-- 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
+- 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://tpns.gitbook.io/tpns/pushapi#push-api-ke-xuan-can-shu) 文档中 account_push_type 参数设置。
 
 
 
@@ -565,7 +565,7 @@ XGPushManager.cancelAllNotifaction(context);
 
 #### 接口说明
 
-开发者可以针对不同的用户设置标签，然后在前台根据标签名群发通知。 一个应用最多有10000个 tag， 如需提高该限制，请与我们客服联系，每个自定义tag可绑定的设备token数量无限制，tag 中不准包含空格。
+开发者可以针对不同的用户设置标签，然后在前台根据标签名群发通知。 一个应用最多有10000个 tag， 每个 Token 在一个应用下最多100个 tag，如需提高该限制，请与我们客服联系，每个自定义tag可绑定的设备token数量无限制，tag 中不准包含空格。
 
 ```java
 public static void setTag(Context context, String tagName) 
@@ -770,6 +770,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 #### 参数说明
 - context：应用上下文
 - pullUp：true（开启联合保活）；false（关闭联合保活）
+>若有以下日志打印，则表明联合保活功能已经关闭：I/TPNS: [ServiceUtil] disable pull up other app。
 
 ### Debug 模式
 

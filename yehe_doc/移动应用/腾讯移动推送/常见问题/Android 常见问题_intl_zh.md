@@ -16,6 +16,8 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
        android:exported="false" />    
 ```
 
+若控制台有以下日志打印，则表明联合保活功能已经关闭：`I/TPNS: [ServiceUtil] disable pull up other app`。
+
 ### 推送消息为何收不到？
 登录 [腾讯移动推送控制台](https://console.cloud.tencent.com/tpns) ，使用已获取的 Token 进行推送。如无法收到推送，请根据以下情况进行排查：
 - 请确保 SDK 版本是否为最新版本，如是旧版本出现问题，在新版本可能已经修复。
@@ -41,8 +43,6 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 - 目前第三方推送都无法保证关闭应用后，仍可收到推送消息，该问题为手机定制 ROM 对腾讯移动推送 Service 的限制问题，腾讯移动推送的一切活动，都需要建立在腾讯移动推送的 Service 能够正常联网运行，Service 被终止后，由系统、安全软件和用户操作限定是否能够再次启动。
 - QQ 和微信是系统级别的应用白名单，相关的 Service 不会因为关闭应用而退出，所以用户感知推出应用过后，仍可收到消息，其实相关的 Service 还是能够在后台存活的。
 - Android 端在应用退出腾讯移动推送 Service 和腾讯移动推送的服务器断开连接后，此时给这个设备下发的消息，会变成离线消息，离线消息最多保存72小时，每个设备最多保存两条，如果有多条离线消息。在关闭应用期间推送的消息，如开启应用无法收到，请检查是否调用了反注册接口：XGPushManager.unregisterPush\(this\)。
-
-
 
 
 ### 如何设置消息点击事件？
@@ -151,10 +151,11 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 #### 魅族通道排查路径
 与小米通道的排查方法类似，参考小米通道的排查路径即可。
 
+### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
+1.  Flyme 6.0 及以下版本的魅族手机，使用手动集成方式。
+2.  Flyme 6.0 及以下版本的魅族手机，使用自动集成方式，且使用的 TPNS Android SDK 为1.1.4.0 以下的版本。
 
-
-### 魅族 Flyme6.0 及低版本手机，为何消息抵达设备却不在通知栏展示？
-高版本魅族手机不再需要设置状态栏图标，如果 Android SDK 版本低于1.1.4.0，请在相应的 drawable 不同分辨率文件夹下放置一张名称必须为 stat_sys_third_app_notify 的图片。
+以上两种情况，需要在 drawable 不同分辨率的文件夹下对应放置一张名称必须为 stat_sys_third_app_notify 的图片，详情请参考 [TPNS Android SDK](https://console.cloud.tencent.com/tpns/sdkdownload) 中的 flyme-notification-res 文件夹。
 
 
 ### 集成华为推送通道时遇到组件依赖冲突如何解决?

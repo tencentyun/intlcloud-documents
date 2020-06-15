@@ -1,6 +1,8 @@
 ## Overview
 Tencent Cloud COS provides hotlink protection support for users to avoid unnecessary losses caused by malicious programs' cheating for public network traffic using resource URLs or stealing of resources by malicious means. It is recommended that you configure the blacklist/whitelist in Hotlink Protection Settings in the console for security protection.
 
+>COS doesn't perform hotlink protection-based verification on an object access request with signed URL or headers.
+
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Locate the bucket for which you want to set hotlink protection, and click its name to enter the bucket.

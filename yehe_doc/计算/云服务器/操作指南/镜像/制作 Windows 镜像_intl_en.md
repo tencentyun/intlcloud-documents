@@ -58,7 +58,7 @@ Install cloud-base by referring to [Installing cloud-base](https://intl.cloud.te
  - If the result shown in the following figure is returned, the virtIO driver has been installed.
 ![image](https://main.qcloudimg.com/raw/87808940ddd5317dd8c67a699e3dc5c0.png)
  - If the virtIO driver is not installed, manually install the virtIO driver.
-    - For Microsoft Windows Server 2012 R2 (Standard Edition), download [virtIO for Tencent Cloud](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe?_ga=1.44298212.1367540472.1504757536).
+    - For Microsoft Windows Server 2008 R2 (Standard Edition, IDC Edition, and Enterprise Edition), and Microsoft Windows Server 2012 R2 (Standard Edition), download [ Virtio for Tencent Cloud](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe?_ga=1.44298212.1367540472.1504757536).
     - For other operating system versions, download [virtIO for Community](https://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers).
 
 #### Checking other hardware-related configurations

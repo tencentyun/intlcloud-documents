@@ -21,6 +21,7 @@ If you want to save the snapshot data of a data disk to a new disk by default, y
 6. The cloud disk is created immediately after the order payment. Cloud disk can be used after being mounted and initialized.
 
 ### Purchasing along with a CVM
+- When you purchase a Tencent Cloud CVM, you can also purchase a non-elastic cloud disk by setting **System Disk** to cloud disk. For more information, see [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855).
 - You can purchase an elastic cloud disk by setting the **Data Disk** parameter when purchasing a CVM. For more information, see [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855).
 
 ### Purchasing through an API

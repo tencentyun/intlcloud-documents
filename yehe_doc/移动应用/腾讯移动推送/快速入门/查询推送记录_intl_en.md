@@ -4,7 +4,7 @@ This document describes how to query push records (such as message ID, title, co
 
 ## Directions
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **User Operation** > **Mobile Push** > **Push Record** on the left sidebar.
-2. On the push record page, click **Detailed Data**.
+2. On the **Push Record** page, click **View Details** (only displaying push records within one month).
 3. On the detailed data page, data in each process of push delivery is displayed in the form of funnels. The funnels for Android and iOS are different.
 
 **Android:**

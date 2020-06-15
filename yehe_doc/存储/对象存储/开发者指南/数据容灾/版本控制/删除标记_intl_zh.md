@@ -12,12 +12,12 @@
 用户如需删除“删除标记”，则可以在 DELETE Object versionId 请求中指定它的版本 ID，实现永久删除“删除标记”。如果您未指定删除标记的版本 ID，对删除标记发出 DELETE 请求，COS 将不会删除该删除标记，而是再插入一个新的删除标记。
 
 如下图所示，对删除标记执行一般 DELETE 请求，不会删除任何内容，而在存储桶里新增了一个新的删除标记。
-![](https://main.qcloudimg.com/raw/3df4d8e412e8e8ad5365464501491554.png)
+![](https://main.qcloudimg.com/raw/cfce300a0a08889ef385e9140f771ccc.jpg)
 
 在已启用版本控制的存储桶中，新增的删除标记将具有唯一的版本 ID。因此，在一个存储桶中，同一个对象可能有多个删除标记。要永久删除“删除标记”，必须在 DELETE Object versionId 请求中包含其版本 ID。
 
 如下图所示，执行 DELETE Object versionId 请求永久删除“删除标记”。
-![](https://main.qcloudimg.com/raw/090263da37eb56817e21d6f13b116ebe.png)
+![](https://main.qcloudimg.com/raw/89e0cb4d6fdbcd089d3f7e0bde6d90ec.jpg)
 
 >只有经过主账号授权`DeleteObject`操作后才可删除“删除标记”。
 

@@ -1,0 +1,17 @@
+TencentDB for TDSQL supports full backups and incremental backups.
+
+## Backup Type
+### Full backup
+You can set the start time and retention period for full backups. By default, the backup starts at 00:00–05:00 AM, during which the performance is relatively low. The retention period is 7 days by default.
+
+### Incremental backup
+Incremental backup is implemented based on binlogs, which are generated in real time. The binlogs use a certain amount of disk capacity, and are periodically uploaded to the TencentDB backup system.
+
+## Custom Backup Time
+1. Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb) and click the instance name or **Manage** in the "Operation" column to enter the instance management page.
+2. Select **Shard Management** and click the shard ID to enter the shard management page.
+3. Select **Backup and Restore** > **Backup and Log Settings** and click the icon as shown below to set the storage period.
+ - Backup cycle: the backup task is performed every day by default.
+ - Storage time: data and log backups can be retained for 1 to 7 days. Retention time is set to 7 days by default.
+![](https://main.qcloudimg.com/raw/9e20b7f8f7fe2553b86cf5a68bd6265d.png)
+

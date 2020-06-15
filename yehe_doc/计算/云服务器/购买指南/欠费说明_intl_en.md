@@ -1,6 +1,6 @@
 ## Pay-as-you-go CVM Instances
 
-![](https://main.qcloudimg.com/raw/f9d8b46bf13c0321fcf5290a8f8a0f71.jpg)
+![](https://main.qcloudimg.com/raw/463d6b815dcf2677ebe28f9683d14430.jpg)
 
 ### Notes
 - When you no longer use pay-as-you-go resources, **terminate them as soon as possible** to avoid further charges.
@@ -20,9 +20,9 @@ When your account balance falls below zero, you can continue to use CVM instance
 After shutdown, your CVM instances go through the following stages:
 <table>
 	<tr><th>Time since shutdown</th><th>Description</th></tr>
-	<tr><td rowspan=2><b>≤ 24 hours</b></td><td>If your account balance is topped up to above 0, you can continue to use your instances and billing resumes.</td></tr>
+        <tr><td rowspan=2><b>≤ 15 days</b></td><td>If your account is topped up to a positive balance, billing resumes and you can continue to use your instances.</td></tr>
 	<tr><td>If your account balance remains below 0, you will not be able to start your CVM instances.</td></tr>
-	<tr><td><b>＞ 24 hours</b></td><td>If your account balance remains negative and is not topped up for more than 24 hours after shutdown, your pay-as-you-go CVM instances are repossessed, and all data will be deleted and cannot be recovered. In this case, we will notify the account owner and all the collaborators through email and SMS.</td></tr>
+        <tr><td><b>>15 days</b></td><td>If your account is not topped up to a positive balance, your pay-as-you-go CVMs will be repossessed. All data will be erased and cannot be retrieved. When your CVM is repossessed, Tencent Cloud account creator and all collaborators will be notified via email and SMS.</td></tr>
 </table>
 
 ## Bill-by-traffic Network
