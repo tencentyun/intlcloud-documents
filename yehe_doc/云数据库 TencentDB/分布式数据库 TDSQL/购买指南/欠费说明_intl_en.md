@@ -14,7 +14,7 @@ For pay-as-you-go resources, fees are deducted on the hour. When your account ba
 
 **After automatic shutdown:**
 - If your account is not topped up to a positive balance within 3 days after automatic shutdown, you will not be able to launch your database; If your balance is positive, the billing continues, and you can start your database.
-- If your account balance remains negative for 3 days after shutdown, the pay-as-you-go database will be repossessed. All data will be erased and cannot be retrieved**.
+- If your account balance remains negative for 3 days after shutdown, the pay-as-you-go database will be repossessed. **All data will be erased and cannot be retrieved**.
 
 We will notify the Tencent Cloud account creator and all the collaborators through email and SMS when the TencentDB instance is repossessed.
 >When you no longer use pay-as-you-go resources, **terminate them as soon as possible** to avoid further fee deductions.
