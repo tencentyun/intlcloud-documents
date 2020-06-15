@@ -1,0 +1,62 @@
+### How do I view CVMs that are in use?
+
+You can log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index) to view CVMs that are currently in use.
+
+### Can VM be installed on a CVM?
+
+No.
+
+### How do I shut down an instance?
+
+For more information, see [Shutdown Instances](https://intl.cloud.tencent.com/document/product/213/4929).
+
+### How do I restart an instance?
+
+For more information, see [Restarting Instances](https://intl.cloud.tencent.com/document/product/213/4928).
+
+### How do I terminate an instance?
+
+For more information, see [Terminating Instances](https://intl.cloud.tencent.com/document/product/213/4930).
+
+### How do I query the username and password of a Linux instance?
+After you create a CVM instance, its username and password will be delivered to your account through [Message Center](https://console.cloud.tencent.com/message). The admin account of a Linux instance is `root` by default.
+
+### How do I query, partition and format disks of a Linux instance?
+
+You can run the `df -h` command to query the total and used capacity of disks, and run the `fdisk -l` command to view disk information. For information about how to partition and format disks of Linux instances, see [Initializing Cloud Disks (Smaller than 2TB)](https://intl.cloud.tencent.com/document/product/362/31597) and [Initializing Cloud Disks (Larger than 2TB)](https://intl.cloud.tencent.com/document/product/362/31598).
+
+### How do I upload files to a Linux instance?
+- You can [use SCP to upload files to a Linux instance](https://intl.cloud.tencent.com/document/product/213/2133).
+- You can [use FTP to upload files to a Linux instance](https://intl.cloud.tencent.com/document/product/213/35307).
+
+### How do I change the owner and owner group of directories and files on a Linux instance?
+If the file or directory permissions are not correctly configured on the Web server, a 403 error occurs when you access a website hosted on the instance. Before you adjust a file or directory, you must confirm the identity under which the file or directory process is running.
+- You can run the `ps` and `grep` commands to query the identities under which the file or directory process is running.
+- You can run the `ls –l` command to query the owners and owner groups of files and directories.
+- You can run the `chown` command to modify the permission. For example, you can run the `chown -R www.www /tencentcloud/www/user/` command to change the owners and owner groups of all files and directories under the `/tencentcloud/www/user` directory to account “www”.
+
+### How do I apply for an ICP filing for my domain name after I purchase a CVM instance?
+For each CVM instance eligible for ICP filing application, you can apply for a limited quantity of service identification numbers for ICP filings. To learn more information, see [Tencent Cloud Service Used for ICP Filing Application](https://intl.cloud.tencent.com/document/product/1022/34608).
+
+### Why can’t I add sound or video cards to CVM instances?
+Tencent Cloud CVMs provide neither multimedia server, nor sound or video card components by default. Therefore, sound or video cards cannot be added to CVM instances.
+
+### Can I transfer the unused time of a CVM instance to another CVM instance?
+No. If you want both higher flexibility and cost-effectiveness, we recommend that you purchase pay-as-you-go instances.
+
+### How do I query the region where the IP address of a CVM instance locates?
+The IP address of a CVM instance locates in the same region where you purchased the CVM instance.
+
+### Do CVM instances provide databases by default?
+No. To use database services, do the following:
+- Deploy your own database, for example, [install and build MySQL](https://intl.cloud.tencent.com/document/product/213/10190).
+- Purchase [TencentDB for MySQL](https://intl.cloud.tencent.com/product/cdb) separately.
+
+### Can I build a database on a CVM instance?
+Yes, you can install database software and configure a database environment on a CVM instance as needed. You can also purchase [TencentDB for MySQL](https://intl.cloud.tencent.com/product/cdb) separately.
+
+### Do CVM instances support Oracle databases?
+Yes. Before you install an Oracle database, we recommend performing a performance stress test on the target CVM instance to ensure that the instance satisfies the read/write requirements of the database.
+
+### When can I forcibly stop a CVM instance? What are the consequences?
+You can forcibly stop a CVM instance when the normal shutdown fails. Please note that the forced shutdown is equivalent to power outage of the instance, and can result in loss of unsaved data.
