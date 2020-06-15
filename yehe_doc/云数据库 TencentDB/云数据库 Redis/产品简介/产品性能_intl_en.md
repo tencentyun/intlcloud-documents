@@ -94,7 +94,7 @@
 </tr>
 </tbody></table>
 
->The 256 MB specification is an entry-level trial version. It is only suitable for functionality verification in test environments but not recommended for production environments. Therefore, other specifications currently cannot be scaled down to the 256 MB specification.
+>The 256 MB specification is a limited introductory version. It is only suitable for functionality verification in test environments but not recommended for production environments. Other specifications currently cannot be scaled down to the 256 MB specification.
 
 
 ### CKV edition
@@ -173,7 +173,7 @@
 </tr>
 </tbody></table>
 
-### Connections and traffic of different instance specifications
+### Traffic and Connections
 **Memory edition**
 
 | Specification (GB) | Max Connections | Max Throughput (MB/s) |
@@ -214,11 +214,11 @@
 
 Cluster edition connections = number of connections per shard * number of shards;
 Cluster edition throughput = shard throughput * number of shards
->After scaling, legacy instances capable of up to 9,000 connections will be capable of 10,000 ones.
+>! After scaling, legacy instances capable of up to 9,000 connections will be capable of 10,000 connections.
 
 ## Performance Data
 ### Performance references
-The execution time of Redis commands varies, and different businesses have different database operation commands in production environments; therefore, the corresponding performance values will also vary. The test results listed in this document are reference values under specified parameters and only for your reference. To have a better picture, please conduct tests in your real business environment.
+The time needed to execute Redis commands varies. Businesses use different database commands in their production environments; therefore, the corresponding performance values will also vary. The test results listed here are obtained with specified parameters and are for your reference only. Please conduct tests in your actual business environment for more accurate results.
 
 - Single-node test performance
   

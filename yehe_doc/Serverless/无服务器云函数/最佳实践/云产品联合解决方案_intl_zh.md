@@ -14,7 +14,7 @@
 </tr>
 <tr>
 <td rowspan=2>Serverless Framework</td>
-<td>Web 框架</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1040/36751"">接入 Serverless DB</a> </td>
 </tr>
 <tr>
 <td>静态网站托管</td>

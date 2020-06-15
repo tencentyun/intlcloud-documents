@@ -9,7 +9,7 @@ You can create a TencentDB for MongoDB instance with either replica sets or shar
 | Node Configuration | Description |
 | :------: | :----------------------------------------------------: |
 | Replica set | 1 master, 2 slaves. Includes 1 Primary node and 2 Secondary nodes |
-| Sharded cluster | A single instance contains at least 2 shards, and each shard consists of at least 3 nodes. Expandable. |
+| Sharded cluster | A single instance contains at least 2 shards, and each shard consists of at least 3 nodes. Expandable (the shard node specification is expandable, but the number of shards and nodes cannot be increased for the time being). |
 
 ## Connection Count Limits
 

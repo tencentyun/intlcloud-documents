@@ -20,7 +20,7 @@ To find an instance with assigned projects, call the [DescribeMongoDBInstances](
 ### What is the number of connections in MongoDB? Can I increase the number?
 Please see [Use Limits](https://intl.cloud.tencent.com/document/product/240/31183). The number of connections depends on instance specifications. You can increase the number by upgrading instance specifications.
 
-### How do I get the slow log of a MongoDB instance?
+###  How do I get the slow query details of a MongoDB instance?
 Log in to the [console](https://console.cloud.tencent.com/mongodb/instance), and choose **Manage Database** > **Slow Query Management** on the instance management page to query slow logs.
 
 ### How do I query the instance specifications supported by MongoDB?
