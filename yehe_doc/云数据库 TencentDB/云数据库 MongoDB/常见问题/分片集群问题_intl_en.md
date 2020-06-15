@@ -4,8 +4,8 @@ Yes. For more information, please see [Creating Sharded Clusters](https://intl.c
 
 ### What is a MongoDB sharded cluster?
 TencentDB for MongoDB provides sharded clusters.
-- These sharded clusters distributively store data in multiple physical machines according to the shard key. Their great scalability, therefore, makes them very suitable for storing TB or PB level data.
-- Sharded clusters support instance-level backup and rollback, to ensure high data reliability. Multi-node automatic disaster recovery mechanism is used in each shard to ensure high service availability.
+- These sharded clusters distributively store data in multiple physical machines according to shardkey. Their great scalability, therefore, makes them very suitable for storing TB- or PB-level data.
+- Sharded clusters support instance-level backup and Rollback to ensure high data reliability. Multi-node automatic disaster recovery mechanism is used in each shard to ensure high service availability.
 - You can leverage the sharding feature of TencentDB for MongoDB to build a massive distributed storage system easily and efficiently.
 
 ### How do I create a MongoDB sharded cluster?
@@ -25,11 +25,11 @@ You can monitor the data of the TencentDB for MongoDB sharded cluster in 3 dimen
  - Shard
  - Node
 
-You can view the monitoring report on the **System Monitoring** page of an instance, from which you will see various indicators, including operation requests, capacity usage, and load.
+You can view the monitoring report on the **System Monitoring** page of an instance, from which you will see various metrics, including operation requests, capacity usage, and load.
 
 ### What is the MongoDB sharding policy?
 - The sharding mechanism supports hash key.
-- The shard key is indexed compound fields.
+- The shardkey is indexed compound fields.
 - Sharding is required for all data sets in a shard instance. It is recommended to store non-sharded data in a separate replica set instance.
 
 ### What is the authentication mechanism for MongoDB shards?
