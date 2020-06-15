@@ -208,7 +208,7 @@ Download the Demo by clicking [here](https://cos-terminal-resource-1253960454.co
 For complete code, see [COS Android Demo](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransferPractice).
 
 #### iOS
-For complete sample project for iOS, see [COS iOS Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/OOTB-XML).
+For complete sample project for iOS, see [COS iOS Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples).
 
 Modify the file QCloudCOSXMLDemo/QCloudCOSXMLDemo/TestCommonDefine.h, enter the APPID and the address deployed in the previous step for getting the temporary keys, and then run the following command:
 ```sh
