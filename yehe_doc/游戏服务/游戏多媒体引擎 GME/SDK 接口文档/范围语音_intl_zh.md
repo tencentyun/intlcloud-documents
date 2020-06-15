@@ -42,9 +42,9 @@ b. 不同小队情况下，双方开启“所有人”的语音状态情况下�
 
 ## 使用流程
 
-有别于普通小队语音房间，在使用范围语音能力时，必须使用流畅音质进房，且在调用 EnterRoom 之前，需调用以下两个 API：SetRangeAudioTeamID、 SetRangeAudioMode。在进房成功后，调用 UpdateAudioRecvRange，及每帧调用 UpdateAudioRecvRange。
+有别于普通小队语音房间，在使用范围语音能力时，必须使用流畅音质进房，且在调用 EnterRoom 之前，需调用以下两个 API：SetRangeAudioTeamID、 SetRangeAudioMode。在进房成功后，调用 UpdateAudioRecvRange，及每帧调用 UpdateSelfPosition。
 
-如果需要同时使用 3D 音效，请在步骤1、2 完成后请参见 [同时使用 3D 音效](https://intl.cloud.tencent.com/document/product/607/17972)。
+如果需要同时使用 3D 音效，请在在以下步骤1、2 完成后请参见 [同时使用 3D 音效](https://intl.cloud.tencent.com/document/product/607/17972)。
 
 ### 1. 设置 TeamID
 
