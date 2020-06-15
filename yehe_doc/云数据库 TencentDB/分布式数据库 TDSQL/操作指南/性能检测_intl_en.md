@@ -34,7 +34,7 @@ It lists the current possible redundant indices (with redundancy discrimination 
 >Because a query statement must first query the indices before querying tables through indices, if there are too many identical data entries in the index column, the performance to reduce the amount of data to be filtered may be compromised and is not as fast as full-table scan.
 
 #### Deadlock diagnosis
-The deadlock diagnosis gets the information of the last deadlock in the database through `show engine innodb status` and displays it if the deadlock occurs within the selected diagnostic time period.
+Deadlock analysis uses the `show engine innodb status` command to retrieve the last information, which will only be displayed if the deadlock occured within the selected diagnostic period.
 
 >If deadlock occurs frequently, it means that the SQL in the transactions is prone to generate locking loops in concurrent execution scenarios. A fundamental solution is to modify the SQL running logic order and optimize the locking mechanism to reduce the probability of deadlock. A temporary solution is to kill the blocking session leader.
 
