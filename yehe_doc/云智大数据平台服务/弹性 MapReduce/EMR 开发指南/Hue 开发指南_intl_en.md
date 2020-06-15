@@ -48,13 +48,13 @@ Hue's task scheduling is based on workflows. First, create a workflow containing
 | insert into hive_sample select 1, "a";|
 | select * from hive_sample;|
 ```
-Save the content above as a file named hive_sample.sql. The Hive workflow also requires a hive-site.xml configuration file, which can be found on the cluster node where the Hive component is installed. The specific path is `/usr/local/service/hive/conf/hive-site.xml`. Copy the hive-site.xml file.
+Save the content above as a file named hive_sample.sql. The Hive workflow also requires a hive-site.xml configuration file, which can be found on the cluster node where the Hive component is installed. Upload the Hive script file and hive-site.xml to a directory in HDFS, such as `/user/hadoop`.
 Upload the Hive script file and hive-site.xml to a directory in HDFS, such as `/user/hadoop`.
 2. **Create a workflow**
  - Switch to the hadoop user. At the top of the Hue Console, select **Query** > **Scheduler** > **Workflow**.
 ![](https://main.qcloudimg.com/raw/17e2c9e91bef6c67d7f6721eeb1a490e.png)
  - Drag a Hive script into the workflow editing page.
- >!The document takes the installation of Hive 1 as an example, where the configuration parameter should be `HiveServer1`. Errors will be reported if other Hive versions are deployed at the same time (or if the configuration parameters of other Hive versions are used).
+>!The document takes the installation of Hive 1 as an example, where the configuration parameter should be `HiveServer1`. Errors will be reported if other Hive versions are deployed at the same time (or if the configuration parameters of other Hive versions are used).
 ![](https://main.qcloudimg.com/raw/128170644bbef8f40743ea0f72a35a0e.png)
  - Select the Hive script and hive-site.xml files you just uploaded.
 ![](https://main.qcloudimg.com/raw/1bdf334d89fa1be9fcee003d8328ff4d.png)
