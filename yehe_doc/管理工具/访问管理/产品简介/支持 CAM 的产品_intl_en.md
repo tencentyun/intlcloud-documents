@@ -16,11 +16,11 @@ Definitions:
 - Console: whether sub-accounts can access the service through the console. `&#10003;` means yes, while `-` means no.	
 - Authorization by tag: whether the service supports using tags for permission management. `&#10003;` means yes, while `-` means no.		
 - [Service role](https://intl.cloud.tencent.com/document/product/598/19420): whether the service can access other services as a role entity. `&#10003;` means yes, while `-` means no.	
-- Reference document: link to the document on CAM-based access control for the service. `-` means there’s no documentation available yet.
+- Reference document: link to the document on CAM-based access control for the service. `-` means no documentation available yet.
 
 ## Compute	
 
- | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | 	Reference Document |	
+ | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |	
 | ------------------------------------------------------------| ------ | -------- | ------- |  ---- |	---- |	
 | [Cloud Virtual Machine (CVM)](https://intl.cloud.tencent.com/document/product/213) <sup>1</sup> | Resource level  | &#10003;      |&#10003;    |  &#10003;  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/213/10315)   |		
 | [Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/document/product/457) | Resource level | &#10003;       | - | &#10003;    |	[CAM Guide](https://intl.cloud.tencent.com/document/product/457/11542)  |	
@@ -34,14 +34,14 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | 	Reference Document |	
 | ------------------------------------------------------------ | ------ | --------  | ------- | ---- |	---- |	
 | [Cloud Object Storage (COS)](https://intl.cloud.tencent.com/document/product/436) | Resource level | &#10003;       | -  | &#10003;   |	[CAM Guide](https://intl.cloud.tencent.com/document/product/436/12470)   |
-| [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582) | Resource level | &#10003;        | &#10003;  |  &#10003;    |[CAM Guide](https://intl.cloud.tencent.com/document/product/582/14679)   |			
+| [Cloud File Storage (CFS)](https://intl.cloud.tencent.com/document/product/582) | Resource level | &#10003;        | -  |  &#10003;    |[CAM Guide](https://intl.cloud.tencent.com/document/product/582/14679)   |			
 | [Cloud Block Storage (CBS)](https://intl.cloud.tencent.com/document/product/362) | Resource level | &#10003;       | &#10003;  |  -    |-    |	
 | [Cloud Data Migration (CDM)](https://intl.cloud.tencent.com/document/product/623)  | Service level | &#10003;        | -  |  - | - |	
 | [Cloud Log Service (CLS)](https://intl.cloud.tencent.com/document/product/614)  | Resource level | &#10003;        | -  | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/614/32854)    |	
 
-## Network	
+## Networking	
 
- | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |	
+ | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | 	Reference Document |	
 | ------------------------------------------------------------ | ------ | -------- | ------- | ---- |	 ---- |
 | [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214)   | Resource level | &#10003;      | &#10003;    |    &#10003;  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/214/9777) |	
 | [Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | Resource level | &#10003;        | -     | - |	 - |	
@@ -133,7 +133,7 @@ Definitions:
 | [Live Video Broadcasting (LVB)](https://intl.cloud.tencent.com/document/product/267)   | Resource level | &#10003; | &#10003;  |  &#10003;  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/267/32468) |	
 | [Video on Demand (VOD)](https://intl.cloud.tencent.com/document/product/266)    | Resource level   | &#10003;  | -    |  -  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/266/33970)  |	
 | [Media Processing Service (MPS)](https://intl.cloud.tencent.com/document/product/1041)    | Service level   | &#10003;  | -    |   &#10003;   |	-  |		
-| [MediaLive](https://intl.cloud.tencent.com/document/product/1048)    | Operation level   | &#10003;  | -    |   -   |	-  |		
+| [MediaLive](https://intl.cloud.tencent.com/document/product/1048)    | Operation level   | &#10003;  | -    |   -   |	-  |
 
 ## Big Data Platform
 
@@ -145,33 +145,33 @@ Definitions:
 ## Image Recognition
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
-| ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	 ---- |		
-| [Optical Character Recognition (OCR)](https://intl.cloud.tencent.com/document/product/1005) | Service level | &#10003;| -  | - |	 - |	
+| ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	 ---- |
+| [Optical Character Recognition (OCR)](https://intl.cloud.tencent.com/document/product/1005) | Service level | &#10003;| -  | - |	 - |
 
 ## Gaming Services
 
 | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
-| ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |	 ---- |		
+| ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |	 ---- |
 | [Game Multimedia Engine (GME)](https://intl.cloud.tencent.com/document/product/607)  | Resource level | &#10003;| -   |  -    |	 -   |
-	
-## Mobile Services	
+
+## Mobile Services
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
-| ------------------------------------------------------------  | ------ | -------- | ------- | ---- |	---- |	
+| ------------------------------------------------------------  | ------ | -------- | ------- | ---- |	---- |
 | [Tencent Push Notification Service (TPNS)](https://intl.cloud.tencent.com/document/product/1024)   | Resource level  | &#10003; | -   |  -   |	[CAM Guide](https://intl.cloud.tencent.com/document/product/1024/35288)   |
 
-## Communications	
+## Cloud Communication
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ------------------------------------------------------------ | ------ | -------- | ----- | ---- |	---- |
 | [Instant Messaging (IM)](https://intl.cloud.tencent.com/document/product/1047)   | Service level | &#10003;   | -  |  - | - |
-| [Short Message Service (SMS)](https://intl.cloud.tencent.com/document/product/382) | Operation level | &#10003; | -   | -  |	-  |	
+| [Short Message Service (SMS)](https://intl.cloud.tencent.com/document/product/382) | Operation level | &#10003; | -   | -  |	-  |
 
 ## Cloud Resource Management
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
-| ----------------------------------------------------------- | ------ | -------- | ----- | ---- |	 ---- |	
-| [Tag](https://intl.cloud.tencent.com/document/product/651) | Operation level | &#10003;  | - |  - |	 - |	
+| ----------------------------------------------------------- | ------ | -------- | ----- | ---- |	 ---- |
+| [Tag](https://intl.cloud.tencent.com/document/product/651) | Operation level | &#10003;  | - |  - |	 - |
 | [Tencent Infrastructure as Code (TIC)](https://intl.cloud.tencent.com/document/product/1043) | Service level | &#10003;  | - |  - |	 - |
 
 ## Management and Auditing
