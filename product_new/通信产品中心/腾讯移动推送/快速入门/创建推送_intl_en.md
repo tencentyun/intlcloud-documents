@@ -1,13 +1,13 @@
 ## Operation Scenario
 This document guides you how to create a push notification in the TPNS console.
 ## Prerequisites
-You have already purchased TPNS service. For details, see the **Purchasing TPNS Service** document.
+You have already purchased TPNS service. 
 
 
 ## Steps
 
 ### Downloading SDK
-1. Log in to TPNS Console, and click **Download SDK** in the left sidebar.
+1. Log in to [TPNS Console](https://console.cloud.tencent.com/tpns), and click **Download SDK** in the left sidebar.
 2. Enter the **Download SDK** page, select the version you need to download, and click **Download**. Perform configurations according to the guidelines.
 
 ### Configuring push parameters
@@ -18,6 +18,8 @@ You have already purchased TPNS service. For details, see the **Purchasing TPNS 
 	◦Additional parameters: You can select additional parameters in the data format of key:value, for more push content.
 	◦Rich media content: You can add rich media content, by entering the URL corresponding to an image.
 	◦Advanced settings: TPNS also supports other advanced settings, including the following content:
+	▪Badge number: number of messages reached but not clicked.
+        ▪GroupID:  a field for aggregated statistics of multiple push tasks.
 	▪Offline retention: Sets offline retention duration, the maximum is 72 hours by default.
 	▪Click open: Sets push click open actions. Actions include apps, in-app pages, URLs, and client customization.
 	▪Reminder formats: Sets reminder formats, custom ringtones, etc.
