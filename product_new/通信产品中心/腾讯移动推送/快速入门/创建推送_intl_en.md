@@ -19,7 +19,7 @@ You have already purchased TPNS service.
 	◦Rich media content: You can add rich media content, by entering the URL corresponding to an image.
 	◦Advanced settings: TPNS also supports other advanced settings, including the following content:
 	   - Badge number: number of messages reached but not clicked.
-          - GroupID:  a field for aggregated statistics of multiple push tasks.
+           - GroupID:  a field for aggregated statistics of multiple push tasks.
 	   - Offline retention: Sets offline retention duration, the maximum is 72 hours by default.
 	   - Click open: Sets push click open actions. Actions include apps, in-app pages, URLs, and client customization.
 	   - Reminder formats: Sets reminder formats, custom ringtones, etc.
