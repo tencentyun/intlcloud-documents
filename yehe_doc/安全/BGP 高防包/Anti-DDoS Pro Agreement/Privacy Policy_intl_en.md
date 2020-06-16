@@ -34,6 +34,7 @@ As specified in the Privacy Policy, including Tencent Cloud Computing (Beijing) 
 
 **7.DATA RETENTION**
 We will retain personal information in accordance with the following:
+
 |Personal Information | Retention Policy |
 |-|-|
 |Operations Log | 3 months from the date of collection |
