@@ -18,7 +18,7 @@ A group chat involves multiple participants. IM provides five built-in group typ
 
 1. **Private group**: this group type is suitable for private chat scenarios, where group information is not made public and users can only join the group through invitation by an existing group member. It’s similar to a WeChat group.
 2. **Public group**: this group type is suitable for public chat scenarios and has a strict management and admission mechanism. It’s similar to a QQ group.
-3. - **Meeting group**:  this type allows users to join and exit the group freely. In addition, members can view the messages sent before they joined the group. This type is ideal for scenarios that use Tencent Real-Time Communication (TRTC), such as audio and video conferencing and online education.
+3. **Meeting group**:  this type allows users to join and exit the group freely. In addition, members can view the messages sent before they joined the group. This type is ideal for scenarios that use Tencent Real-Time Communication (TRTC), such as audio and video conferencing and online education.
 4. **Broadcasting chat room**: this group type does not impose a limit on the number of room members and allows users to receive messages as guests on web clients. It is suitable for scenarios where messages need to be pushed to all online members on the app.
 
 Groups are highly customizable, allowing you to use custom group types, fields, group IDs, and event callbacks. You can fully customize your group based on the needs of your app. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
