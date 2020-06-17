@@ -1,6 +1,5 @@
 在创建并编写完云函数之后，您可以通过以下方式测试云函数，了解函数运行情况，并检查代码执行流程。
 
-- SCF VS Code 插件：[云端调试](https://intl.cloud.tencent.com/document/product/583/36807)
 - SCF 控制台：[云端测试](<https://intl.cloud.tencent.com/document/product/583/32742#.E4.BA.91.E7.AB.AF.E6.B5.8B.E8.AF.95>)
 
 ## 测试事件及模板
