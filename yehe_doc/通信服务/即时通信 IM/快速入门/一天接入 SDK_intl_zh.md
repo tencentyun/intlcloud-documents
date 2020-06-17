@@ -11,7 +11,7 @@
 ## 步骤2：集成 SDK
 TUIKit 是对 IM SDK 封装的一层 UI 组件，包含常用的 IM 操作，例如聊天面板、会话列表、联系人等。
 - 如果您想快速集成体验 SDK ，请参见 [极速集成 SDK（含 UI 库）](https://intl.cloud.tencent.com/document/product/1047/34286)。
-- 如果您想直接使用 SDK 的接口实现完全自定义界面，请参见 [常规集成 SDK（无 UI 库）](https://intl.cloud.tencent.com/document/product/1047/34301)。
+- 如果您想直接使用 SDK 的接口实现完全自定义界面，请参见 [常规集成 SDK（无 UI 库）](https://intl.cloud.tencent.com/document/product/1047/34306)。
 
 <a name="EvGSB"></a>
 ## 步骤3：集成服务端 REST API
