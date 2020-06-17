@@ -1072,6 +1072,7 @@ String key = "exampleobject";
 AccessControlList accessControlList = cosclient.getObjectAcl(bucketName, key);
 // Get file permission in the form of preset ACL. Valid values: Private, PublicRead, Default
 CannedAccessControlList cannedAccessControlList = accessControlList.getCannedAccessControl();
+```
 
 ## Advanced APIs (recommended)
 
