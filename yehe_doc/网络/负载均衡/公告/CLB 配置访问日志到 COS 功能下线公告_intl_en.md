@@ -14,6 +14,8 @@ The feature of [storing CLB access logs in CLS](https://intl.cloud.tencent.com/d
 
 As COS and CLS have different service modes, we cannot help you directly modify the configuration. We recommend that you change the existing access log storage location from COS to CLS before 00:00:00, June 30, 2020. Please [configure access log storage in CLS](https://intl.cloud.tencent.com/document/product/214/35063) first and then disable [access log storage in COS](https://intl.cloud.tencent.com/document/product/214/10329).
 
+By default, Tencent Cloud does not promise to store access logs. If you need such logs for your business, please [configure access log storage in CLS](https://intl.cloud.tencent.com/document/product/214/35063) on your own. We are very sorry for any inconvenience caused.
+
 If you have already modified the configuration, please ignore this notice. Thank you again for your always support and trust!
 
 Sincerely,

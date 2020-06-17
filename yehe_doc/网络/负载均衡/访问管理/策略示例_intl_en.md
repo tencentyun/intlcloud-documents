@@ -1,4 +1,4 @@
-## Full Access Policy in CLB
+## Full Access Policy for All CLB Instances
 - Grant a sub-account full access to the CLB service (creating, managing, etc.).
 - Policy name: CLBResourceFullAccess
 ```
@@ -14,7 +14,7 @@
 }
 ```
 
-## Read-Only Policy in CLB
+## Read-Only Policy for All CLB Instances
 - Grant a sub-account read-only access to CLB (i.e., the permission to view but not to create, update, or delete all CLB resources). In the console, the prerequisite to manipulate a resource is the ability to view the resource; therefore, you are recommended to grant the sub-account full read access to CLB.
 - Policy name: CLBResourceReadOnlyAccess
 ```
@@ -29,3 +29,35 @@
 	}]
 }
 ```
+
+## Full Access Policy for CLB Service Under a Specified Tag
+- Grant a sub-account full access to the CLB service (creating instances, managing listeners, etc.) under a specified tag (tag key: tagkey; tag value: tagvalue).
+- CLB instances supports configuring tags and using tags for authentication.
+- CLB listeners current don't support configuring tags; instead, they require separate API permission granting.
+```
+{
+    "version":"2.0",
+    "statement":[
+        {
+            "effect":"allow",
+            "action":"*",
+            "resource":"*",
+            "condition":{
+                "for_any_value:string_equal":{
+                    "qcs:tag":[
+                        "tagkey&tagvalue"
+                    ]
+                }
+            }
+        },
+        {
+            "effect":"allow",
+            "action":"*",
+            "resource":[
+                "qcs::clb:::listener/*"
+            ]
+        }
+    ]
+}  
+```
+   
