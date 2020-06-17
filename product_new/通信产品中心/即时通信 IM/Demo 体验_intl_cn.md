@@ -1,11 +1,11 @@
 
 <table style="text-align:center;vertical-align:middle;">
    <tr>
-    <th style="text-align:center" width="25%"><b>Android</b></th>
-    <th style="text-align:center" width="25%"><b>iOS（安装密码：123）</b></th>
-    <th style="text-align:center" width="25%"><b>小程序</b></th>
-		            <th style="text-align:center" width="25%"><b>直播电商解决方案</b></th>
-    <th style="text-align:center" width="25%"><b>Web</b></th>
+    <th style="text-align:center;" width="20%"><b>Android<br></b>使用浏览器或应用宝等扫码</th>
+    <th style="text-align:center;" width="20%"><b>iOS</b><br>安装密码：123</th>
+    <th style="text-align:center" width="20%"><b>小程序</b></th>
+		            <th style="text-align:center" width="20%"><b>直播电商解决方案</b></th>
+    <th style="text-align:center" width="20%"><b>Web</b></th>
   </tr>
   <tr>
     <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/52312cb24233de9d3ba3b2d13e52c295.png" /></td>
