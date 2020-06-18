@@ -276,5 +276,7 @@ public AccessControlList getBucketAcl(String bucketName)
 ```java
 The bucket name entered must be in a format of {name}-{appid}
 String bucketName = "examplebucket-1250000000";
-AccessControlList acl = cosClient.getBucketAcl(bucketName);
+AccessControlList accessControlList = cosClient.getBucketAcl(bucketName);
+// Get bucket permission in the form of preset ACL. Valid values: Private, PublicRead, PublicReadWrite
+CannedAccessControlList cannedAccessControlList = accessControlList.getCannedAccessControl();
 ```

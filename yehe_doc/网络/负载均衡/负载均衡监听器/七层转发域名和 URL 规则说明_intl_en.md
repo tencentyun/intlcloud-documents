@@ -1,6 +1,6 @@
 ## Business Flow Chart
 The business flows of layer-7 and layer-4 CLB (formerly application CLB) are as shown below:
-![](https://mc.qcloudimg.com/static/img/de6af7fca35640ed6d0937f05f5039d2/image.png)
+![](https://main.qcloudimg.com/raw/9c30c679e6a5fd70f9dd9273f8784d6d.jpg)
 If layer-7 CLB is used to forward HTTP/HTTPS protocols, you can add a corresponding domain name when creating the forwarding rule in a CLB listener.
 - If only one forwarding rule is created, you can access the corresponding forwarding rule and the service through VIP+URL.
 - If multiple forwarding rules are created, the use of VIP+URL does not guarantee access to a specified domain name+URL. You should access a domain name+URL directly to make sure a forwarding rule has taken effect. In other words, when you configure multiple forwarding rules, a VIP may correspond to multiple domain names. In this case, we recommend you access the service via specified domain name+URL instead of VIP+URL.
@@ -18,8 +18,8 @@ Layer-7 CLB can forward requests from different domain names and URLs to differe
   - Must begin with `~` which can appear only once.
   - An example of regex domain name supported by CLB may be `~^www\d+\.example\.com$`.
 
-
 ### Forwarded domain name matching description
+#### General matching policy for forwarded domain name
 1. If you enter an IP address instead of a domain name in the forwarding rule and configure multiple URLs in the forwarding group, VIP+URLs will be used to access the service.
 2. If you configure a full domain name in the forwarding rule and multiple URLs in the forwarding group, domain name+URLs will be used to access the service.
 3. If you configure a wildcard domain name in the forwarding rule and multiple URLs in the forwarding group, you will access the service through the matching of requested domain name and URLs. To have different domain names point to the same URL, you can use this method for configuration. Taking `example.qcould.com` as an example, the format is as follows:
@@ -28,12 +28,33 @@ Layer-7 CLB can forward requests from different domain names and URLs to differe
  - `example.qcloud.\*` matches all domain names beginning with `example.qcloud`.
 4. If you configure a domain name in the forwarding rule and a URL for fuzzy matching in the forwarding group, you can initiate full matching by using prefix matches and adding a suffixed wildcard `$`.
 For example, if you configure `URL ~* \.(gif|jpg|bmp)$`. in the forwarding group, hopefully it will match any files that end with gif, jpg, or bmp.
-5. You are recommended to configure the default access domain name. If no domain names in the listener are matched successfully, your request will be automatically redirected to this default domain name so that the default rules are under control. You can configure it in the following way:
+
+#### <span id="default" />Default domain name policy for forwarded domain name
+If a client request cannot be matched with any domain name of this listener, CLB will forward the request to the default domain name (`Default Server`) to make the default rule controllable. Only one default domain name can be configured under one listener.
+For example, the `HTTP:80` listener of CLB instance 1 is configured with two domain names: `www.test1.com` and `www.test2.com`, where `www.test1.com` is the default domain name. When a user visits `www.example.com`, since no domain name is matched, CLB will forward the request to the default domain name `www.test1.com`.
+
 >
->- If the client request fails to match all forwarding rules, the default access rule (default_server) will be matched. If you have not configured default access for layer-7 listener, the request will match the first domain name loaded by CLB (its loading order is different from that configured in the console. The domain name may not be the first one configured in the console).
->- To specify an access domain name for unmatched rules, make sure you have configured a default server for layer-7 listener.
+>- Before May 18, 2020, the default domain name is optional for layer-7 listeners.
+>  - If your layer-7 listener has a default domain name configured, client requests that do not match other rules will be forwarded to it.
+>  - If your layer-7 listener has no default domain name configured, client requests that do not match other rules will be forwarded to the first domain name loaded by CLB (its loading order may be different from that configured in the console; therefore, it may not be the first one configured in the console). 
+>- Starting from May 18, 2020:
+>  - All new layer-7 listeners must have a default domain name configured: the first rule of a layer-7 listener must enable the default domain name. When an API is called to create a layer-7 rule, CLB will automatically set the `DefaultServer` field to `true`.
+>  - For all listeners that have a default domain name configured, you need to specify a new default domain name when modifying or deleting the existing default domain name: when you perform the operation in the console, you need to specify a new default domain name; when you perform the operation by calling an API, if you do not set a new default domain name, CLB will set the earliest-created one among the remaining domain names as the new default domain name.
+>  - For existing rules without a default domain name, Tencent Cloud will set the first domain name loaded by CLB as the default domain name. This operation has no impact on the business. Existing listeners will be all processed before June 9, 2020.
 >
-![](https://main.qcloudimg.com/raw/0bd726c5f0248a9033f02c851599bf2d.png)
+>The above policy will be implemented gradually starting from May 18, 2020, and the effective date for each instance may vary slightly. As of June 10, 2020, all layer-7 listeners that have a forwarded domain name will have a default domain name.
+
+The following four operations can be performed on the default domain name:
+- **Operation 1**: when configuring the first forwarding rule for the layer-7 listener, the default domain name must be in "enabled" status.
+- **Operation 2**: disable the current default domain name.
+ - If there are multiple domain names under a listener, when disabling the current default domain name, you need to specify a new default domain name.
+ - If a listener has only one domain name and the domain name is the default domain name, it cannot be disabled.
+- **Operation 3**: delete the default domain name.
+ - If there are multiple domain names under a listener, when you delete a rule under the default domain name:
+   - If the rule is not the last rule of the default domain name, you can delete it directly.
+   - If the rule is the last rule of the default domain name, you need to set a new default domain name.
+ - If there is only one domain name under a listener, you can directly delete all rules without setting a new default domain name.
+- **Operation 4**: you can quickly modify the default domain name in the listener list.
 
 ### Forwarded URL path configuration rules
 Layer-7 CLB can forward requests from different URLs to different servers for processing, and multiple forwarded URL paths can be configured for a single domain name.
@@ -51,7 +72,7 @@ Layer-7 CLB can forward requests from different URLs to different servers for pr
    - `/` indicates generic match, where any requests will be matched if there are no other matches.
 
 ### Forwarded URL path matching description
-![](http://mc.qcloudimg.com/static/img/1c01dcd0959105dd7821f4e22f5cd796/image.png)
+![](https://main.qcloudimg.com/raw/6399b39845c9f23adccb90089e10bade.jpg)
 1. Matching rules: based on longest prefix match, exact match is performed first followed by fuzzy match.
 For example, after you configure the forwarding rules and forwarding groups as shown above, the following requests will be matched into different forwarding rules in sequence.
  1. Because `example.qloud.com/test1/image/index1.html` exactly matches the URL rule configured by forwarding rule 1, the request will be forwarded to the real servers associated with forwarding rule 1, i.e., port 80 of CVM1 and CVM2 in the figure.

@@ -38,7 +38,7 @@ According to the health check detection conditions, the health check status of a
 | Exceptional | The real server is exceptional. | <li>CLB does not forward traffic to "exceptional" real servers. </li><li>Under a layer-4 listener or layer-7 URL rule, if CLB detects that all real servers are unhealthy, it will activate the all-dead-all-alive logic, that is, requests will be forwarded to all real servers. </li>|
 | Disabled | Health check has been disabled. | CLB forwards traffic to the real server. |
 
-## How to Troubleshoot in Health Check
+## How to Troubleshoot Health Check Issues
 ### Troubleshooting Layer-4 issues
 
 Under TCP protocol, CLB uses SYN packets for check. Under UDP protocol, CLB uses `Ping` command for check.

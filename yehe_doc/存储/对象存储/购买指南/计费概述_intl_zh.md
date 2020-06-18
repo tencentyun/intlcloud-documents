@@ -1,3 +1,4 @@
+>?此产品现已支持动态询价与成本估算。有关详细信息，请移步[定价中心](https://intl.cloud.tencent.com/pricing/cos/calculator)询价并估算相关成本。
 ## 免费额度
 
 | 用户对象 | 免费期限 | 免费额度	 |如何获取|

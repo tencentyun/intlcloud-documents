@@ -1,23 +1,23 @@
-Currently, a public network CLB instance can be bound to CVM instances in another region. This feature allows you to select the region for real servers and bind CLB instances to them across VPCs or regions. To try it out, please submit a [ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for application for cross-region binding in Mainland China or [contact your Tencent Cloud rep](https://intl.cloud.tencent.com/contact-sales) for cross-region binding outside Mainland China.
+Currently, a public network CLB instance supports cross-region binding of CVM. You can select the region of real servers and bind them across VPCs or regions. For cross-region binding in Mainland China, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for application. For cross-region binding outside Mainland China, please [contact your Tencent Cloud rep](https://console.cloud.tencent.com/workorder/category).
 
-> CVM cross-region binding is not supported for private network CLB or classic CLB instances for the time being.
+>Cross-region CVM instance binding is currently not supported for private network CLB and classic CLB.
 
 ## Use Cases
-1. The cross-region binding feature can well meet the needs in P2P gaming scenarios where the same server is shared by global players. For example, if your real server cluster is deployed in Guangzhou, and you want to create CLB instances in Shanghai and Beijing and bind them to the same real server cluster in Guangzhou, so that gaming access can be accelerated and traffic can be converged. To this end, you can use this feature to effectively guarantee the quality of data transfer and reduce access latency.
-2. In financial transaction and order payment scenarios, the transfer quality and consistency of key business data can be effectively guaranteed.
- ![](https://main.qcloudimg.com/raw/b61f652d7100166236b4b7b0e6a26f43.png)
+1. This feature can meet the needs in unified global server scenarios for gaming businesses such as P2P. For example, if your real server cluster is deployed in Guangzhou, you can create CLB instances in Shanghai and Beijing and bind them to the same real server cluster in Guangzhou for game acceleration and traffic convergence, effectively ensuring the quality of data transfer and reducing the latency.
+2. This feature can meet the needs in financial business and payment scenarios by effectively ensuring the transfer quality and consistency of data in key businesses.
+![](https://main.qcloudimg.com/raw/b61f652d7100166236b4b7b0e6a26f43.png)
 
 ## Operation Examples
-After purchasing a public network CLB instance, you can view the region of its real server on its details page, which is the same as its region by default.
-If a public network CLB instance has been bound to a CVM instance in the same region, you need to unbind the CVM instance first before switching regions.
+After purchasing a public network CLB instance, you can view the region attribute of the real server on the instance details page. At the time of purchase, the region attribute of the real server is the same as that of the CLB instance by default.
+If a public network CLB instance has been bound to a CVM instance in the same region, you need to unbind the CVM instance first before switching the region.
 ![](https://main.qcloudimg.com/raw/b5b03db3b9df5ae38acde5e23449b57c.png)
 
-Click **Edit** to modify the region and network attributes of the real server. Bandwidth fees incurred by cross-region binding will be charged daily by bandwidth. After the modification is completed, you can select a CVM in the corresponding region on the CVM instance binding page for cross-region binding. **Currently, only real servers in one region can be bound.**
+Click **Edit** to modify the region and network attributes of the real server. Fees for cross-region binding will be charged daily by bandwidth. After the modification is completed, you can select a CVM instance in the corresponding backend region on the CVM instance binding page for cross-region binding. **Currently, only real servers in the same region can be bound.**
 ![](https://main.qcloudimg.com/raw/93443dfb2eb35da82c50a7032df0ae0a.png)
 
 >
-> - Currently, one CLB instance can only be bound to CVM instances in one region. For example, a CLB instance in Beijing can be bound to CVM instances in Shanghai, but it cannot be bound to CVM instances in Beijing and Shanghai at the same time.
-> - After you change the region of a real server to one different from that of the CLB instance, it cannot be changed back to the original region for binding.
-> - Currently, cross-VPC binding is not allowed for CLB instances and CVM instances in the same region.
-> - Scenarios of cross-VPC/basic network are also supported.
+> - Currently, one CLB instance can be bound to CVM instances in only one region. For example, one CLB instance in Beijing can be bound to CVM instances in Beijing but cannot be bound to CVM instances in Beijing and Shanghai at the same time.
+> - After you modify the region attribute of the backend CVM instance, if the new region is different from that of the CLB instance, you cannot change back to the original same-region binding.
+> - Currently, it is not allowed to bind CLB instances to CVM instances across VPCs in the same region.
+> - Classic network-VPC binding is supported.
 

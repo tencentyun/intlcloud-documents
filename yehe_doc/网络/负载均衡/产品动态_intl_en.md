@@ -1,3 +1,21 @@
+## May 2020
+<table>
+<thead>
+<tr>
+<th width="25%">Update</th>
+<th width="40%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Document</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The default domain name policy for layer-7 listeners is updated</td>
+<td>The default domain name is changed from optional to required for layer-7 listeners. Each listener can and must have only one default domain name configured.</td>
+<td>May 15, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9032">Default Domain Name Policy for Forwarded Domain Name
+</a></td>
+</tr>
+</tbody></table>
 
 ## April 2020
 <table>
@@ -221,7 +239,7 @@
 <td>Cross-region binding is supported</td>
 <td>You can select the regions of real servers for cross-VPC and cross-region binding.</td>
 <td>September 2017</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/12014">Cross-Region Binding of CLB</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/12014">Cross-region Binding of CLB</a></td>
 </tr>
 </tbody></table>
 
