@@ -30,13 +30,13 @@
 <td>高可用虚拟 IP 全量上线</td>
 <td>高可用虚拟 IP（HAVIP）是一个浮动的内网 IP，支持机器通过 ARP 宣告进行绑定，更新 IP 和 MAC 地址的映射关系。在高可用部署（如 keepalived）场景下，该 IP 可从主服务器切换至备服务器，从而完成业务容灾。</td>
 <td>2019-11</td>
-<td><a href="https://cloud.tencent.com/document/product/215/36691" target="_blank">使用场景</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/31817" target="_blank">使用场景</a></td>
 </tr>
 <tr>
 <td>安全组支持添加 IPv6 规则</td>
 <td>通过添加安全组 IPv6 规则，允许或禁止安全组内的 IPv6 云服务器实例与公网或内网的访问。</td>
 <td>2019-11</td>
-<td><a href="https://cloud.tencent.com/document/product/215/39790" target="_blank">添加安全组规则</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/35513" target="_blank">添加安全组规则</a></td>
 </tr>
 </tbody></table>
 
@@ -72,7 +72,7 @@
 <td>实例端口验通工具上线</td>
 <td>实例端口验通功能，可以帮助您排查云服务器实例的安全组端口放通情况，快速定位故障，提升用户体验。</td>
 <td>2018-12</td>
-<td><a href="https://cloud.tencent.com/document/product/215/38836" target="_blank">实例端口验通 </a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/31875" target="_blank">实例端口验通 </a></td>
 </tr>
 </tbody></table>
 
@@ -90,7 +90,7 @@
 <td>安全组支持一键放通常用端口</td>
 <td>一键放通，适用于无需设置 ICMP 协议规则，并通过22，3389，ICMP，80，443，20，21端口便能完成操作的场景。</td>
 <td>2018-10</td>
-<td><a href="https://cloud.tencent.com/document/product/215/39790" target="_blank">添加安全组规则 </a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/35513" target="_blank">添加安全组规则 </a></td>
 </tr>
 </tbody></table>
 
@@ -108,13 +108,13 @@
 <td>支持 DHCP 选项集</td>
 <td>动态主机设置协议（Dynamic Host Configuration Protocol，DHCP）是一种局域网的网络协议，提供了将配置信息传递到 TCP/IP 网络中主机的标准。腾讯云 VPC 内的云服务器支持 DHCP 协议，您可在 VPC 详情页配置这两个参数，该配置将对该 VPC 下的所有云服务器生效。</td>
 <td>2018-06</td>
-<td><a href="https://cloud.tencent.com/document/product/215/37564" target="_blank">修改 DNS 地址和 Domain Name</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/31808" target="_blank">修改 DNS 地址和 Domain Name</a></td>
 </tr>
 <tr>
 <td>新增网络探测功能</td>
 <td>腾讯云网络探测是监控 VPC 网络连接质量的服务，可为您监控网络连接的时延、丢包率等关键指标。您可以通过网络探测设置预警、多维度监控来迅速定位问题，还可以在子网内创建网络探测对象来实时监控网络连接质量，提升业务稳定性。</td>
 <td>2018-06</td>
-<td><a href="https://cloud.tencent.com/document/product/215/20091" target="_blank">网络探测</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/35522" target="_blank">网络探测</a></td>
 </tr>
 </tbody></table>
 
@@ -132,7 +132,7 @@
 <td>安全组支持绑定 VPC 内的云数据库</td>
 <td>安全组支持绑定云数据库等产品，用户可在某安全组上关联数据库实例。 安全组是一种有状态的包过滤功能虚拟防火墙，除了可设置云服务器、弹性网卡实例网络访问控制，还可支持私有网络内云数据库实例的网络访问控制，可有效提升云数据库的安全性。</td>
 <td>2018-02</td>
-<td><a href="https://cloud.tencent.com/document/product/213/39751" target="_blank">关联实例至安全组</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/34832" target="_blank">关联实例至安全组</a></td>
 </tr>
 <tr>
 <td>私有网络及安全组支持操作审计</td>
@@ -156,13 +156,13 @@
 <td>安全组支持访问控制</td>
 <td>提供安全组的用户权限管理功能，让您的服务更加安全无忧。</td>
 <td>2017-06</td>
-<td><a href="https://cloud.tencent.com/document/product/215/39265" target="_blank">访问控制的概述</a></td>
+<td>访问控制的概述</td>
 </tr>
 <tr>
 <td>安全组支持参数模板</td>
 <td>参数模板是一组参数的集合，支持将 IP 地址和协议端口保存为模板，在添加安全组规则时可直接引用。合理使用参数模板，可以提高您使用安全组的效率。</td>
 <td>2017-06</td>
-<td><a href="https://cloud.tencent.com/document/product/215/20090" target="_blank">管理参数模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/31867" target="_blank">管理参数模板</a></td>
 </tr>
 <tr>
 <td>监控全面升级</td>
@@ -186,7 +186,7 @@
 <td>安全组支持访问控制</td>
 <td>提供安全组的用户权限管理功能，让您的服务更加安全无忧。</td>
 <td>2017-05</td>
-<td><a href="https://cloud.tencent.com/document/product/215/39265" target="_blank">访问控制的概述</a></td>
+<td>访问控制的概述</td>
 </tr>
 </tbody></table>
 
@@ -204,7 +204,7 @@
 <td>支持广播和组播</td>
 <td>广播和组播是一对多的通信方式，通过单点到多点的高效数据传送，可以为企业节约网络带宽、降低网络负载。<li>广播：腾讯云支持子网维度的广播。</li><li>组播：腾讯云支持私有网络维度的组播。</li></td>
 <td>2017-01</td>
-<td><a href="https://cloud.tencent.com/document/product/215/36526" target="_blank">开启或关闭广播和组播功能</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/31809" target="_blank">开启或关闭广播和组播功能</a></td>
 </tr>
 </tbody></table>
 
@@ -222,7 +222,7 @@
 <td>支持弹性网卡</td>
 <td>面向云服务器的多网卡热插拔服务，助力您实现三网隔离和高可用服务部署。</td>
 <td>2016-10</td>
-<td><a href="https://cloud.tencent.com/document/product/215/20127" target="_blank">管理弹性网卡</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/35502" target="_blank">管理弹性网卡</a></td>
 </tr>
 </tbody></table>
 
@@ -258,6 +258,6 @@
 <td>私有网络（VPC）产品上线</td>
 <td>独立隔离的网络空间，支持软件定义网络、通过 VPN 连接或专线接入连通私有网络与您的数据中心，灵活部署混合云。</td>
 <td>2015-05</td>
-<td><a href="https://cloud.tencent.com/document/product/215" target="_blank">私有网络</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/215" target="_blank">私有网络</a></td>
 </tr>
 </tbody></table>
