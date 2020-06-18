@@ -1,4 +1,5 @@
-
+### Why XGForFreeVersion symbol not found in simulator for TPNS SDK 1.2.5.4 or earlier versions?
+The version 1.2.5.4 or earlier do not support simulator. You need to use real machine for debugging. To use a simulator, upgrade TPNS SDK to the latest version.
 
 ### Why can't push messages be received?
 Message push is a task involving the collaboration of many associated modules. An exception in any step may result in failure in message delivery. Below lists the most common problems:

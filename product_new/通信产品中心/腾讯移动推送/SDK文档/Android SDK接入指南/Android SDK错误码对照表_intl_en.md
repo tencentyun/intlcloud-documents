@@ -52,9 +52,19 @@
 | 1008016 | Incorrect date and time parameter format |
 | 1008019 | Fail to pass the content security review |
 | 1008020 | Certificate package name verification failed |
-| 10080021 | p12 certificate format verification failed |
+| 1008021 | p12 certificate format verification failed |
 | 1008022 | Incorrect p12 certificate password |
 | 1008025 | Application creation failed. Application already exists under the product |
+| 1008026 | Batch operation partially failed |
+| 1008027 | Batch operation entirely failed |
+| 1008028  | Frequency limit exceeded |
+| 1008029  | Token verification invalid |
+| 1008030  | App unpaid |
+| 1008031  | App resources destroyed |
+| 10110008 | Account of the Token queried does not exist |
 | 10010005 | Push target does not exist |
+| 10010018 | Duplicate push|
+| 10010005  | Push target does not exist|
+| 10030002 | AccessID and AccessKey do not match |
 
 
