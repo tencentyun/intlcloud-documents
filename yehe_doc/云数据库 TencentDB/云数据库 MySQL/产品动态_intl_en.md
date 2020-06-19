@@ -14,7 +14,7 @@
 <td>Manual kernel minor version upgrade is now supported</td>
 <td>Manual kernel minor version upgrade is now supported.Upgrading the kernel minor version can realize the use of new functions, performance improvement, problem repair and other functions.</td>
 <td>June 2020</td>
-<td><a href_blank>Manual kernel minor version upgrade is now supported</a></td>
+<td><a href_blank">Manual kernel minor version upgrade is now supported</a></td>
 </tr>
 </tbody></table>
 
