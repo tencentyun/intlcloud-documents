@@ -67,13 +67,7 @@ After the [backup](https://intl.cloud.tencent.com/document/product/236/32340) fe
 ### Why cannot a downloaded backup file be unpacked/decompressed with tar?
 >Because backup files in the latest version adopt a new compression algorithm, they cannot be unpacked/decompressed using the original tar tool. Instead, xbstream and qpress are required.
 
-1. The downloaded backup file should be unpacked with xbstream (a packing/unpacking tool offered by Percona) first.
-```
-xbstream -x < test_import_57_backup_20181114115236.xb 
-```
-The .qb file can be obtained, such as test_import_57_backup_20181114115236.sql.qb.
-2. The .qb file must be decompressed with qpress.
-```
+For details about how to unpack/decompress with xbstream and qpress, please see [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910) and [Restoring Database from Logical Backup](https://intl.cloud.tencent.com/document/product/236/31909).
 qpress -d test_import_57_backup_20181114115236.sql.qp
 ```
 The complete backup file can be obtained, such as test_import_57_backup_20181114115236.sql.
