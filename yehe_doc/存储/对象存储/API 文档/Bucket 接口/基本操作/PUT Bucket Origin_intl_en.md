@@ -1,10 +1,10 @@
 ## Overview
 
-This API is used to set origin-pull for a bucket.
+This API is used to set an origin-pull for a bucket.
 
 ## Request
 
-### Request sample
+### Sample request 
 
 ```http
 PUT /?origin HTTP 1.1
@@ -45,26 +45,26 @@ The request body of this API request is an origin-pull rule.
 </OriginConfiguration>
 ```
 
-The data are described in details below:
+The data are described in detail below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :------------------ | :----- | :-------------- | :-------- | :--- |
-| OriginConfiguration | None     | Origin-pull Configuration | Container | Yes   |
+| OriginConfiguration | None | Origin-pull Configuration | Container | Yes |
 
 Container node `OriginConfiguration`:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :------------------ | :------------------ | :-------- | :--- |
-| OriginRule         | OriginConfiguration | Supports only one OriginRule | Container | Yes   |
+| OriginRule | OriginConfiguration | Supports only one OriginRule | Container | Yes |
 
 Container node `OriginRule`:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | :----------------- | :----------------------------- | :----------------------------------------------- | :-------- | :--- |
-| OriginType         | OriginConfiguration.OriginRule | Sets origin-pull type. Enumerated value: Redirect                        | Container | Yes   |
-| Prefix             | OriginConfiguration.OriginRule | The directory on which the origin-pull acts. Default: root directory; if set, it cannot be null. | String    | No   |
-| OriginInfo         | OriginConfiguration.OriginRule | Origin-pull address information                                 | Container | Yes   |
-| HttpRedirectCode   | OriginConfiguration.OriginRule | Return code for request redirects; only supports 302 currently.              | String    | No   |
+| OriginType | OriginConfiguration.OriginRule | Sets the origin-pull type. Enumerated value: Redirect | Container | Yes |
+| Prefix | OriginConfiguration.OriginRule | The directory on which the origin-pull acts. Default: root directory; if set, it cannot be null. | String    | No |
+| OriginInfo | OriginConfiguration.OriginRule | Origin-pull address information | Container | Yes |
+| HttpRedirectCode | OriginConfiguration.OriginRule | Return code for request redirects; currently only supports 302              | String | No |
 
 Container node `OriginInfo`:
 
@@ -86,7 +86,7 @@ Container node `OriginInfo`:
    <tr>
       <td>HostName</td>
       <td>OriginConfiguration.OriginRule.OriginInfo</td>
-			<td>Origin-pull address. Just enter your domain name or IP address, and no prefix <code>http://</code>, or alternatively, enter your port number using the format <code>:[port]</code>, where <code>:</code> is the English symbol, and no private IP is valid.</td>
+			<td>Origin-pull address. Just enter your domain name or IP address, and no prefix, as in `<code>http://</code>`, or alternatively, enter your port number using the format `<code>:[port]</code>`, where `<code>:</code>` uses English characters. Note: private IPs are not valid.</td>
       <td>String</td>
       <td>Yes</td>
    </tr>
@@ -112,11 +112,11 @@ The response body is empty.
 
 | Error/Return Code | Description | HTTP Status Code |
 | --------------------- | -------------------------------------- | --------------- |
-| InvalidArgument | Invalid provided parameter | 400 Bad Request |
-| SignatureDoesNotMatch | Returned if you provide an invalid signature     | 403 Forbidden |
-| NoSuchKey             | Returned if the bucket does not exist | 404 Not Found   |
+| InvalidArgument | Returned if the provided parameter is invalid | 400 Bad Request |
+| SignatureDoesNotMatch | Returned if the provided signature is invalid | 403 Forbidden |
+| NoSuchKey | Returned if the bucket does not exist | 404 Not Found |
 
-## Use Case
+## Use Cases
 
 ### Request
 
