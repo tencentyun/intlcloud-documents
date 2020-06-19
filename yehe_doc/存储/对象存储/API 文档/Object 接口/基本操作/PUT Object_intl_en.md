@@ -1,21 +1,21 @@
-## Feature
+## Feature description
 
-This API is used to upload a local object to the specified bucket. The requester of this API should have Write permission on the bucket.
+This API is used to upload a local object to a specified bucket. To request this API, you must have write permission for the bucket.
 
 >
 >
-> - The PUT Object API supports uploading up to 5 GB files. If you need to upload files greater than 5 GB, please use the [Multipart Upload] (https://intl.cloud.tencent.com/document/product/436/14112) API.
-> - If the `Content-Length` value in the request header is smaller than the length of the data in the actual request body, COS will still successfully create a file, but the object size will equal the size defined in `Content-Length`, and the remaining data will be discarded.
-> - If you upload an object whose name already exists in the bucket and versioning is not enabled, the old object will be overwritten by the new one and `200 OK` will be returned upon success.
+> - The PUT Object API supports the upload of files of up to 5 GB in size. If you need to upload files greater than 5 GB, please use the [Multipart Upload] (https://intl.cloud.tencent.com/document/product/436/14112) API.
+> - If the `Content-Length` value in the request header is smaller than the length of the data in the actual request body, COS will still successfully create a file, but the object size will be equal to the size defined in `Content-Length`, and the remaining data will be discarded.
+> - If you upload an object with the same name as an object that already exists in the bucket and versioning is not enabled, the old object will be overwritten by the new one and `200 OK` will be returned upon successful upload.
 
 #### Versioning
 
-- If versioning is enabled for the bucket, COS will automatically generate a unique version ID for the object to be uploaded. It returns this ID in the response using the x-cos-version-id response header.
+- If versioning is enabled for the bucket, COS will automatically generate a unique version ID for the object to be uploaded. It returns this ID in the response using the `x-cos-version-id` response header.
 - If versioning is suspended for the bucket, COS will always use `null` as the version ID of the object in the bucket and will not return the `x-cos-version-id` response header.
 
 ## Request
 
-#### Request samples
+#### Sample request
 
 ```shell
 PUT /<ObjectKey> HTTP/1.1
@@ -33,11 +33,11 @@ Authorization: Auth String
 
 #### Request parameters
 
-This API does not use any request parameter.
+This API does not use any request parameters.
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
@@ -45,8 +45,8 @@ In addition to common request headers, this API also supports the following requ
 | Content-Disposition | File name as defined in RFC 2616, which will be stored in the object metadata | string | No |
 | Content-Encoding | Encoding format as defined in RFC 2616, which will be stored in the object metadata | string | No |
 | Expires | The cache expiration time as defined in RFC 2616, which will be saved in the object metadata | string | No |
-| Transfer-Encoding | If you want to upload the object in parts, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format as defined in RFC 2616 and you cannot specify the `Content-Length` request header | string | No |
-| x-cos-meta-\* | Header suffix and information of user-defined metadata, which will be stored in the object metadata. Maximum size: 2 KB. <br>**Note:** User-defined metadata information can contain underscores (_), whereas header suffixes of user-defined metadata can only contain minus signs (-), not underscores | string | No |
+| Transfer-Encoding | If you want to upload the object in parts, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format defined in RFC 2616, and you cannot specify the `Content-Length` request header | string | No |
+| x-cos-meta-\* | Contains user-defined metadata and header suffixes, which will be stored in the object metadata. Maximum size: 2 KB. <br>**Note:** User-defined metadata can contain underscores (_), whereas the header suffixes of user-defined metadata can only contain minus signs (-), not underscores | string | No |
 | x-cos-storage-class | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. Default value: `STANDARD`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum | No |
 
 **ACL-Related Headers**
@@ -55,11 +55,11 @@ You can configure access permissions for the object by specifying the following 
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the access control list (ACL) attribute of the object. For enumerated values such as `default`, `private`, and `public-read`, see preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: default <br>**Note:** Currently, one ACL supports up to 1,000 entries. If you do not need access control for the object, configure this parameter as `default` or leave it blank, and bucket permissions will be inherited by default | Enum | No |
-| x-cos-grant-read | Allows grantee to read the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-read-acp | Allows grantee to read the ACL of the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-write-acp | Allows grantee to write to the ACL of the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-full-control | Grants a user full permission to operate on the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-acl | Defines the access control list (ACL) attribute of the object. For enumerated values such as `default`, `private`, and `public-read`, see the preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default` <br>**Note:** Currently, one ACL supports up to 1,000 entries. If you do not need access control for the object, configure this parameter as `default` or leave it blank, and the object will inherit the permissions of its bucket | Enum | No |
+| x-cos-grant-read | Grants a user read permission for an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-read-acp | Grants a user read permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-write-acp | Grants a user write permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-full-control | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
 
 **Headers Related to Server-Side Encryption (SSE)**
 
@@ -85,7 +85,7 @@ If the object is uploaded to a versioning-enabled bucket, the following response
 
 **Headers Related to Server-Side Encryption (SSE)**
 
-If server-side encryption is used during object upload, this API will return headers used specifically for server-side encryption. For more information. see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used during object upload, this API will return the headers used specifically for server-side encryption. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
@@ -326,7 +326,7 @@ x-cos-request-id: NWU5MDNlNDNfZTZjNzJhMDlfMmYwMDlfMTVi****
 
 #### Example 7. Using chunked transfer encoding for multipart transfer
 
-The request in this example uses Transfer-Encoding: chunked encoding. This use case describes the raw data in the HTTP request. During use, calling methods vary depending on languages and libraries. Please refer to language- and library-related documents.
+The request in this example uses `Transfer-Encoding: chunked` encoding. This use case describes the raw data in the HTTP request. During use, calling methods vary depending on languages and libraries. Please refer to language- and library-related documents.
 
 #### Request
 

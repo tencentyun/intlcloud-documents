@@ -8,7 +8,7 @@ With versioning enabled, you can specify the `versionId` request parameter to ge
 
 ## Request
 
-#### Sample request
+#### Sample request 
 
 ```shell
 HEAD /<ObjectKey> HTTP/1.1
@@ -19,7 +19,7 @@ Authorization: Auth String
 
 > Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
-#### Request parameters
+#### Request Parameters
 
 | Name | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ------ | -------- |
@@ -31,12 +31,12 @@ In addition to common request headers, this API also supports the following requ
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| If-Modified-Since | If the object is modified after the specified time, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `304` (Not Modified) will be returned | string | No |
-| If-Unmodified-Since | If the object is not modified after the specified time, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned | string | No |
-| If-Match | If the `ETag` of the object is the same as the specified value, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned | string | No |
-| If-None-Match | If the `ETag` of the object is different from the specified value, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `304` (Not Modified) will be returned | string | No |
+| If-Modified-Since | If the object is modified after the specified time, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
+| If-Unmodified-Since | If the object is not modified after the specified time, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
+| If-Match | If the `ETag` of the object is the same as the specified value, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
+| If-None-Match | If the `ETag` of the object is different from the specified value, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `304` (Not Modified) will be returned. | string | No |
 
-**Server-side encryption headers**
+**Server-side Encryption Headers**
 
 If server-side encryption is used for the specified object and the encryption method is SSE-C, you will need to specify the headers related to server-side encryption to decrypt the object. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -56,11 +56,10 @@ In addition to common response headers, this API also returns the following resp
 | Content-Disposition                                         | File name as defined in RFC 2616, which will be returned only if it is contained in the object metadata | String  |
 | Content-Encoding | Encoding format as defined in RFC 2616, which will be returned only if it is contained in the object metadata | string |
 | Expires                                                    | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata | string  |
-| x-cos-hash-crc64ecma | CRC64 value of the object. For more information, see [CRC64 Check](https://intl.cloud.tencent.com/document/product/436/34078). | number |
 | x-cos-meta-\* | Contains user-defined metadata and header suffixes | string |
-| x-cos-storage-class | Object storage class, such as `MAZ_STANDARD`, `STANDARD_IA`, and `ARCHIVE`. For the enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
+| x-cos-storage-class | Object storage class, such as `STANDARD_IA`, and `ARCHIVE`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
 
-#### Archived object-related headers
+#### Archived Object-Related Headers
 
 If the storage class of the object is `ARCHIVE` and `POST Object restore` has been used to restore it, the following response headers will be returned:
 
@@ -69,7 +68,7 @@ If the storage class of the object is `ARCHIVE` and `POST Object restore` has be
 | x-cos-restore | Indicates the status of the restoration process:<br><li>If the restoration is ongoing, the value of the response header will be `ongoing-request="true"`<li>If the object has already been restored, the response header will include the time when COS will delete the temporary copy, e.g. `ongoing-request="false", expiry-date="Tue, 19 Nov 2019 16:00:00 GMT"` | string
 | x-cos-restore-status | This parameter will be returned if the restoration is ongoing, indicating what restoration mode was used and when the restoration was requested, e.g. `tier="bulk"; request-date="Mon, 18 Nov 2019 09:34:50 GMT"`. For more information on restoration modes, see [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | string
 
-**Versioning-related headers**
+**Versioning-Related Headers**
 
 If the target object is from a bucket where versioning is enabled, the following response headers will be returned:
 
@@ -175,7 +174,7 @@ x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 ```
 
-#### Example 4. Using server-side encryption SSE-C
+#### Sample 4. Using Server-side Encryption SSE-C
 
 #### Request
 
@@ -207,7 +206,7 @@ x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 ```
 
-#### Example 5. Requesting the latest version of the object (with versioning enabled)
+#### Example 5. Requesting the latest version of an object (with versioning enabled)
 
 #### Request
 
@@ -235,7 +234,7 @@ x-cos-request-id: NWU5MGI4YTNfZDZjODJhMDlfYmU0MV8xM2Y5****
 x-cos-version-id: MTg0NDUxNTc1MzA5NjQ2ODI5MTg
 ```
 
-#### Example 6. Requesting a specific version of the object (with versioning enabled)
+#### Example 6. Requesting a specific version of an object (with versioning enabled)
 
 #### Request
 
