@@ -14,7 +14,7 @@
 <td>Manual kernel minor version upgrade is now supported</td>
 <td>Manual kernel minor version upgrade is now supported.Upgrading the kernel minor version can realize the use of new functions, performance improvement, problem repair and other functions.</td>
 <td>June 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">Network Switch</a></td>
+<td><a href target="_blank">Manual kernel minor version upgrade is now supported</a></td>
 </tr>
 </tbody></table>
 
