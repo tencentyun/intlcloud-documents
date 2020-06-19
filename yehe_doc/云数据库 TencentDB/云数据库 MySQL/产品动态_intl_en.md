@@ -1,3 +1,24 @@
+## June 2020
+
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manual kernel minor version upgrade is now supported</td>
+<td>Manual kernel minor version upgrade is now supported.Upgrading the kernel minor version can realize the use of new functions, performance improvement, problem repair and other functions.</td>
+<td>June 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">Network Switch</a></td>
+</tr>
+</tbody></table>
+
+
 ## April 2020
 
 <table>
