@@ -4,7 +4,7 @@
 
 #### 场景
 在 IIS 设置中，选择 https，选择相应的 SSL 证书，主机名无法填写。如下图所示：
-![](https://main.qcloudimg.com/raw/b109991fe1a8191d6e0d86618f9a1548.png)
+![](https://main.qcloudimg.com/raw/7d2f27db6f9677c61b25331486d19c90.png)
 
 ####  解决办法
 1. 请按路径 `C:\Windows\system32\inetsrv\config\applicationHost.config` 打开 `applicationHost.config` 文件。
