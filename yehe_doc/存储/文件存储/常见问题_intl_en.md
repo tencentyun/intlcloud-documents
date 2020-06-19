@@ -5,12 +5,7 @@ Linux, Unix, and Windows clients are supported.
 CFS is billed hourly based on the peak storage usage for the hour.
 
 ### I have never used any resources in the Guangzhou region. Why are there fees for Guangzhou in CFS bills?
-As storage usage in Mainland China is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills; the specific regions will be shown in the extended fields. This document describes how to view CFS bills in the console.
-
-**Viewing your Bills**
-1. Go to "[Billing Center](https://console.cloud.tencent.com/expense/overview) > Manage Bills > Billing Details > Resource ID Bills", click <img src="https://main.qcloudimg.com/raw/c861c752e9882ce5b8fbbb964b47b035.png"  style="margin:0;"> in the top-right corner, check "Extended Field 1" in the pop-up window, and click **OK**.
-2. Scroll to the end of the table and you will see the notes on the consolidated billing zones of "Beijing, Guangzhou, Shanghai, and Chengdu" in the **Extended Field 1** column.
-
+As storage usage in Mainland China is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills.
 
 ### Which access protocols are supported by CFS?
 NFS v3.0/v4.0 and CIFS/SMB. CIFS/SMB file systems are in beta. For more information, go [here](https://intl.cloud.tencent.com/document/product/582/9553) to see **Notes on CIFS/SMB Beta Test**.
