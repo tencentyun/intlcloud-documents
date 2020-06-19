@@ -12,9 +12,9 @@
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在左侧导航栏单击【存储桶列表】，然后选择单击需要配置跨地域复制的源存储桶，进入存储桶详情界面。
    ![](https://main.qcloudimg.com/raw/e7262775af485aa2913b855d6064802d.png)
 2. 单击左侧的【高级配置】，进入存储桶的高级配置页，向下找到【跨地域复制】管理项，单击【新增规则】进入跨地域复制规则配置状态。
-   ![](https://main.qcloudimg.com/raw/91b3093cb905751c68799fc9755d0ff6.png)
+   ![](https://main.qcloudimg.com/raw/910b0ddbe6f3bb0093544b5c21a07ca0.png)
 3. 配置跨地域复制规则要求源存储桶和目标存储桶均开启版本控制功能。如果源存储桶和目标存储桶均未开启版本控制功能，请先开启版本控制功能后，再配置跨地域复制规则。规则配置完成后，单击【确定】即可。
-	 ![](https://main.qcloudimg.com/raw/6aeab6e744f70b0928b20d485b5bbe6b.png)
+	 ![](https://main.qcloudimg.com/raw/2a167db6422d4de507d3851d9965ab37.png)
 
 配置项说明如下：
 
