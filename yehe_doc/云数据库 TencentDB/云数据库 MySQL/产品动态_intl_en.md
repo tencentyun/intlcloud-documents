@@ -12,9 +12,9 @@
 <tbody>
 <tr>
 <td>Manual kernel minor version upgrade is now supported</td>
-<td>Manual kernel minor version upgrade is now supported.Upgrading the kernel minor version can realize the use of new functions, performance improvement, problem repair and other functions.</td>
+<td>TencentDB for MySQL supports manual kernel minor version upgrade. The upgrade can add new features, improve the performance, and fix issues.</td>
 <td>June 2020</td>
-<td><a href_blank">Manual kernel minor version upgrade is now supported</a></td>
+<td><a href_blank">Upgrading Kernel Minor Version</a></td>
 </tr>
 </tbody></table>
 
