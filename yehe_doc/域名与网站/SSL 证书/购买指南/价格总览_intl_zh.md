@@ -101,7 +101,7 @@
 	<td>默认支持5个域名，附加域名单个235美元</td>
 </tr>
 <tr>
-	<td rowspan="8">TrustAsia</td>
+	<td rowspan="9">TrustAsia</td>
 	<td>单个域名</td>
 	<td>域名型（DV）SSL 证书</td>
 	<td>免费</td>
@@ -118,6 +118,12 @@
 	<td>增强型（EV）SSL 证书</td>
 	<td>1537美元/年</td>
 	<td>-</td>
+</tr>
+<tr>
+	<td>多个域名</td>
+	<td>域名型（DV）SSL 证书 多域名</td>
+	<td>794美元/年</td>
+	<td>默认支持5个域名，附加域名单个154美元</td>
 </tr>
 <tr>
 	<td>多个域名</td>
