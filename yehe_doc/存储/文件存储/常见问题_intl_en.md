@@ -4,11 +4,16 @@ Linux, Unix, and Windows clients are supported.
 ### How is CFS billed?
 CFS is billed hourly based on the peak storage usage for the hour.
 
-### I have never used any resources in the Guangzhou region. Why are there fees for Guangzhou in my CFS bills?
-As storage usage in Mainland China is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills.
+### I have never used any resources in the Guangzhou region. Why are there fees for Guangzhou in CFS bills?
+As storage usage in Mainland China is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills; the specific regions will be shown in the extended fields. This document describes how to view CFS bills in the console.
+
+**Viewing your Bills**
+1. Go to "[Billing Center](https://console.cloud.tencent.com/expense/overview) > Manage Bills > Billing Details > Resource ID Bills", click <img src="https://main.qcloudimg.com/raw/c861c752e9882ce5b8fbbb964b47b035.png"  style="margin:0;"> in the top-right corner, check "Extended Field 1" in the pop-up window, and click **OK**.
+2. Scroll to the end of the table and you will see the notes on the consolidated billing zones of "Beijing, Guangzhou, Shanghai, and Chengdu" in the **Extended Field 1** column.
+
 
 ### Which access protocols are supported by CFS?
-NFS v3.0/v4.0 and CIFS/SMB. CIFS/SMB file systems are in beta. For more information, please see [Notes on CIFS/SMB Beta Test](https://intl.cloud.tencent.com/document/product/582/9553).
+NFS v3.0/v4.0 and CIFS/SMB. CIFS/SMB file systems are in beta. For more information, go [here](https://intl.cloud.tencent.com/document/product/582/9553) to see **Notes on CIFS/SMB Beta Test**.
 
 As clients on Windows and Linux 3.10 and its previous kernel version (e.g., CentOS 6.\*) are incompatible with NFS v4.0, they cannot work normally after mount. Please use NFS v3.0 instead.
 
@@ -21,7 +26,7 @@ Mount target: A mount target is an entry for the compute node to access CFS. It 
 Up to 10 file systems can be created in a region for each user. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) if you need to create more.
 
 ### What if a mount target is unavailable?
-You can troubleshoot the issue as follows:
+You can troubleshoot the problem in the following steps:
 - View the error message.
 - Check whether `nfs-utils`, `nfs-common`, and `cifs-utils` are installed.
 - Check whether the local mount directory exists.
@@ -30,13 +35,13 @@ You can troubleshoot the issue as follows:
 
 ### What should I do if an error is reported when I use the vers=4.0 mount command?
 
-Clients generally try to mount using NFS v4.1 Protocol first. Because CFS currently only supports NFS v4.0 Protocol, a `NFS4ERR_MINOR_VERS_MIMATCH` error may be reported. This does not affect the process and can be ignored. The client will continue to try to mount using NFS v4.0.
+Client generally try to mount using NFS v4.1 Protocol first. Because CFS currently only supports NFS v4.0 Protocol, a `NFS4ERR_MINOR_VERS_MIMATCH` error may be reported. This does not affect the mount and can be ignored. The client will continue to try to mount using NFS v4.0.
 
 ### I installed Windows IIS web server in Windows Server 2016 operating system, but IIS and CIFS are incompatible?
 When default security policies are changed in the Windows Server 2016 OS, the following configurations are needed.
 
-1. Modify the registry value for SMB client:
-```sh
+1. Modify the registry key for SMB client:
+```plaintext
 HKEY_LOCAL_MACHINE> SYSTEM> CurrentControlSet> Services> LanmanWorkstation> Parameters> AllowInsecureGuestAuth
 ```
 If the value already exists, set it to `1`. Otherwise, right click to select **Create**>**DWORD (32-bit) Value**, and set it to `AllowInsecureGuestAuth` with a value of `1`.
@@ -57,13 +62,13 @@ You can troubleshoot the issue as follows:
 
 ### Which ports need to be opened in a file system?
 
-File System Protocol | Open Port | Check Network Connectivity
+File System Protocol | Port | Check Network Connectivity
 ------- | ------- | ---------
 NFS 3.0 | 111, 892, 2049 | telnet file system IP 2049
 NFS 4.0 | 2049 | telnet file system IP 2049
 CIFS/SMB | 445 | telnet file system IP 445 
 
-> CFS does not support `ping` currently.
+> CFS currently do not support `ping`.
 
 ### What if the configured access permission does not take effect?
 For an NFS file system, multiple rules can be configured, which will take effect based on their priorities:
@@ -74,7 +79,7 @@ For an NFS file system, multiple rules can be configured, which will take effect
 
 ### How can I speed up copying local files to CFS?
 For Linux, use the `shell` script below to accelerate copying local files to CFS. The "number of threads" in the following code can be adjusted as needed.
-```
+```bash
 threads=<number of threads>; src=<source path/>; dest=<target path/>; rsync -av -f"+ */" -f"- *" $src $dest && (cd $src && find . -type f | xargs -n1 -P$threads -I% rsync -av % $dest/% )
 
 <!--Example: threads=24; src=/root/github/swift/; dest=/nfs/; rsync -av -f"+ */" -f"- *" $src $dest && (cd $src && find . -type f | xargs -n1 -P$threads -I% rsync -av % $dest/% )-->
@@ -125,7 +130,7 @@ An NFS file system is mounted to two Linux-based CVM instances. Use `append` to 
 
 #### Cause
 This issue is related to the option of the NFS mount command and the implementation of `tail -f`. You can use the following mount command:   
-```sh
+```bash
 sudo mount -t nfs -o vers=4.0 <mount target IP>:/ <destination mount directory>
 ```
 
@@ -135,9 +140,9 @@ If CVM instance B mounts the file system with the NFS mount command, the kernel 
 
 #### Solution
 Add the `noac` option when mounting the file system with the mount command to disable the caching of file and directory attributes. The mount command is as follows:
-```sh
-sudo mount -t nfs -o vers=4.0 noac <mount target IP>:/ <destination mount directory>
-sudo mount -t nfs -o vers=3 noac,nolock,proto=tcp <mount target IP>:/<FSID or subdirectory> <destination mount directory>
+```bash
+sudo mount -t nfs -o vers=4 noac <mount target IP>:/ <destination mount directory>
+sudo mount -t nfs -o vers=3,noac,nolock,proto=tcp <mount target IP>:/<FSID or subdirectory> <destination mount directory>
 ```
 
 ### What should I do if an error `0x800704C9` occurs when a file system is mounted with NFS to a client based on Windows 7 or Windows Server 2008 R2?
