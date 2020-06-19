@@ -1,3 +1,4 @@
+>?This product now supports dynamic pricing query and cost estimation. For more information, please go to the [Pricing Center](https://intl.cloud.tencent.com/pricing/cos/calculator).
 ## Free Tier
 
 | User | Period | Free Tier     | How to Get |

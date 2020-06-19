@@ -14,42 +14,42 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 
 | Parameter Name  | Required | Type   | Description       |
 | --------- | ---- | ------ | ---------- |
-| startDate | Yes   | string | Query start date,<li>Format: YYYY-MM-DD<li>Query limit: within the last 1 months |
-| endDate | Yes | string | Query end date. Format: YYYY-MM-DD |
-| msgType | No | string | Message type:<li>notify: notification<li>message: silent message |
-| pushType | No | string | Push type:<li>all: full push<li>tag: tag push<li>token: device list/device single push<li>account: account list/account single push |
-| offset | No | int | Start offset for paginated query |
-| limit | No | int | Number of messages per page for paginated query (maximum value: 200) |
+| startDate | Yes   | String | Query start date,<li>Format: YYYY-MM-DD<li>Query limit: within the last 1 months |
+| endDate | Yes | String | Query end date. Format: YYYY-MM-DD |
+| msgType | No | String | Message type:<li>notify: notification<li>message: silent message |
+| pushType | No | String | Push type:<li>all: full push<li>tag: tag push<li>token: device list/device single push<li>account: account list/account single push |
+| offset | No | Integer | Start offset for paginated query |
+| limit | No | Integer | Number of messages per page for paginated query (maximum value: 200) |
 
 #### Response parameters
 
 | Parameter Name       | Type      | Description                                     |
 | -------------- | --------- | ---------------------------------------- |
-| retCode        | int       | Returned status code                              |
-| errMsg | string | Error message |
-| pushRecordData | JsonArray | Returned result, with `pushRecordData` structure variables shown in following table |
-|count  | int  |  Number of eligible records  |
+| retCode        | Integer       | Returned status code                              |
+| errMsg | String | Error message |
+| pushRecordData | Array | Returned result, with `pushRecordData` structure variables shown in following table |
+|count  | Integer  |  Number of eligible records  |
 
 #### pushRecordData
 
 | Parameter Name         | Type               | Description                   | Value Description                                                     |
 | ---------------- | ------------------ | ---------------------- | ------------------------------------------------------------ |
-| date             | string             | Push time               | Format: YYYY-MM-DD hh:mm:ss                                    |
-| pushId           | string                | Message ID                 | -                                                            |
-| title            | string             | Push title              | -                                                            |
-| content          | string             | Push content               | -                                                            |
-| status           | string             | Push status               | <li>PUSH_INIT //Task created<li>PUSH_WAIT// Waiting for task to be scheduled<li>PUSH_STARTED// Push started<li>PUSH_FINISHED// Push finished<li>PUSH_FAILED// Push failed<li>PUSH_CANCELED// Push canceled by user<li>PUSH_DELETED// Push deleted<li>PUSH_REVOKED// Push revoked<li>PUSH_COLLAPSED// Push overwritten<li>PUSH_DELETED_PUSH_MSG// Push terminated |
-| pushType         | string             | Push target               | <li>all //Full push<li>tag //Tag push<li>token_list //Device list<li>account_list //Account list<li>package_account_push //Number package push |
-| messageType      | string             | Push type               | <li>notification //Notification<li>message //Message                              |
-| environment      | string             | Push environment               | <li>product //Production environment<li>dev //Development environment                         |
-| expireTime       | uint32             | Expiration time               | Unit: second                                                       |
-| xgMediaResources | string             | Rich media information             | -                                                            |
-| multiPkg         | bool               | Whether it is multi-package name push         |  <li>true // Enable multi-package name push <li>false // Disable multi-package name push                                                            |
-| targetList       | jsonArrary(string) | Push account or push device list | Valid if `pushType` is `token_list` or `account_list`                   |
-| collapseID      | uint32 | Message overwriting ID | Valid if `pushType` is `all`, `tag`, or `package_account_push`                    |
-| tagSet           | JsonObject         | Tag settings               | Valid if `pushType` is `tag`<br>Data structure:<code><br>{<br>"op":"OR", // Inter-tag logic operation<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", // Tag type<br>"tagValue":"test68" // Tag value}<br>]<br>}</code> |
-| uploadId         | uint32             | Number package ID               | Valid if `pushType` is `package_account_push`                         |
-| pushConfig       | JsonObject         | Push configuration information           | <br>"Android": for specific push configuration information related to Android, please see the following code<br>"iOS": for specific push configuration related to iOS, please see the following code<br> |
+| date             | String             | Push time               | Format: YYYY-MM-DD hh:mm:ss                                    |
+| pushId           | String                | Message ID                 | -                                                            |
+| title            | String             | Push title              | -                                                            |
+| content          | String             | Push content               | -                                                            |
+| status           | String             | Push status               | <li>PUSH_INIT //Task created<li>PUSH_WAIT// Waiting for task to be scheduled<li>PUSH_STARTED// Push started<li>PUSH_FINISHED// Push finished<li>PUSH_FAILED// Push failed<li>PUSH_CANCELED// Push canceled by user<li>PUSH_DELETED// Push deleted<li>PUSH_REVOKED// Push revoked<li>PUSH_COLLAPSED// Push overwritten<li>PUSH_DELETED_PUSH_MSG// Push terminated |
+| pushType         | String             | Push target               | <li>all //Full push<li>tag //Tag push<li>token_list //Device list<li>account_list //Account list<li>package_account_push //Number package push |
+| messageType      | String             | Push type               | <li>notification //Notification<li>message //Message                              |
+| environment      | String             | Push environment               | <li>product //Production environment<li>dev //Development environment                         |
+| expireTime       | Integer             | Expiration time               | Unit: second                                                       |
+| xgMediaResources | String             | Rich media information             | -                                                            |
+| multiPkg         | Boolean               | Whether it is multi-package name push         |  <li>true // Enable multi-package name push <li>false // Disable multi-package name push                                                            |
+| targetList       | Array(String) | Push account or push device list | Valid if `pushType` is `token_list` or `account_list`                   |
+| collapseID       | Integer  | Message overwriting ID | Valid if `pushType` is `all`, `tag`, or `package_account_push`                    |
+| tagSet           | Object         | Tag settings               | Valid if `pushType` is `tag`<br>Data structure:<code><br>{<br>"op":"OR", // Inter-tag logic operation<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", // Tag type<br>"tagValue":"test68" // Tag value}<br>]<br>}</code> |
+| uploadId         | Integer             | Number package ID               | Valid if `pushType` is `package_account_push`                         |
+| pushConfig       | Object         | Push configuration information           | <br>"Android": for specific push configuration information related to Android, please see the following code<br>"iOS": for specific push configuration related to iOS, please see the following code<br> |
 
 
 ## Configuration Information

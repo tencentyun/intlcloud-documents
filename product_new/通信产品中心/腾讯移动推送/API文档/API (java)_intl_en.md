@@ -17,11 +17,11 @@ This class provides APIs for interaction with the TPNS backend and constructed b
 
 | Parameter Name | Type | Required | Default Value | Description |
 | --- | --- | --- | --- | --- |
-| appId | int | Yes | None | Push target `accessID` (which is a 10-digit number starting with 1500 for Android or 1600 for iOS) |
+| appId | Integer  | Yes | None | Push target `accessID` (which is a 10-digit number starting with 1500 for Android or 1600 for iOS) |
 | secretKey | String | Yes | None | Push key |
 | proxy | Proxy | No | Proxy.NO\_PROXY | This parameter can be set if a proxy needs to be configured |
-| connectTimeOut | int | No | 10s | Connection timeout period |
-| readTimeOut | int | No | 10s | Request timeout period |
+| connectTimeOut | Integer  | No | 10s | Connection timeout period |
+| readTimeOut | Integer  | No | 10s | Request timeout period |
 | domainUrl | String | No | https://openapi.xg.qq.com/ | API request service domain name address, which is the TPNS API address by default and should be changed to `https://api.tpns.tencent.com/` during use |
 
 ### Samples

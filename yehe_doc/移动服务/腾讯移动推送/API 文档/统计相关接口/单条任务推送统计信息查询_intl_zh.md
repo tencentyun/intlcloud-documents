@@ -26,27 +26,27 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_task_stat_channel
 
 | 参数名称 | 必选 | 类型   | 描述   |
 | -------- | ---- | ------ | ------ |
-| pushId   | 是   | string | 推送任务 ID，限制查询当前日期起1个月内的推送任务|
+| pushId   | 是   | String | 推送任务 ID，限制查询当前日期起1个月内的推送任务|
 
 #### 应答参数
 
 | 参数名称        | 类型   | 描述                                                         |
 | --------------- | ------ | ------------------------------------------------------------ |
-| retCode         | int    | 返回状态码                                                   |
-| errMsg          | string | 错误信息                                                     |
-| pushStatDataAll | Json   | 返回结果：单个元素由 channel 和 pushState 组成，channel 是推送通道名称。pushState 结构变量见下表 |
+| retCode         | Integer    | 返回状态码                                                   |
+| errMsg          | String | 错误信息                                                     |
+| pushStatDataAll | Object   | 返回结果：单个元素由 channel 和 pushState 组成，channel 是推送通道名称。pushState 结构变量见下表 |
 
 #### PushState（Android）
 
 | 参数名称            | 类型 | 说明                                                         |
 | ------------------- | ---- | ------------------------------------------------------------ |
-| pushActiveUv        | int  | 计划发送                                                     |
-| pushOnlineUv        | int  | 实际发送                                                     |
-| verifySvcUv         | int  | 抵达设备（仅 TPNS 通道、ROG 通道、FCM 通道有效。其他厂商通道由 TPNS 实际发送 pushOnlineUv 指标补齐） |
-| callbackVerifySvcUv | int  | 厂商通道抵达回执（限华为、OPPO、 vivo、小米通道有效。厂商通道回执配置请参考 [厂商通道抵达回执获取指南](https://intl.cloud.tencent.com/document/product/1024/35246)） |
-| verifyUv            | int  | 展示                                                         |
-| clickUv             | int  | 点击                                                         |
-| cleanupUv           | int  | 清除                                                         |
+| pushActiveUv        | Integer  | 计划发送                                                     |
+| pushOnlineUv        | Integer  | 实际发送                                                     |
+| verifySvcUv         | Integer  | 抵达设备（仅 TPNS 通道、ROG 通道、FCM 通道有效。其他厂商通道由 TPNS 实际发送 pushOnlineUv 指标补齐） |
+| callbackVerifySvcUv | Integer  | 厂商通道抵达回执（限华为、OPPO、 vivo、小米通道有效。厂商通道回执配置请参考 [厂商通道抵达回执获取指南](https://intl.cloud.tencent.com/document/product/1024/35246)） |
+| verifyUv            | Integer  | 展示                                                         |
+| clickUv             | Integer  | 点击                                                         |
+| cleanupUv           | Integer  | 清除                                                         |
 
 >说明：
 >数组中“all” 通道对应汇总统计数据。
@@ -58,10 +58,10 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_task_stat_channel
 
 | 参数名称     | 类型   | 说明         |
 | ------------ | ------ | ------------ |
-| pushActiveUv | int    | 计划发送     |
-| pushOnlineUv | int    | APNs 成功接收 |
-| verifySvcUv  | int    | 抵达 |
-| clickUv      | int    | 点击         |
+| pushActiveUv | Integer    | 计划发送     |
+| pushOnlineUv | Integer    | APNs 成功接收 |
+| verifySvcUv  | Integer    | 抵达 |
+| clickUv      | Integer    | 点击         |
 
 ## 示例说明
 #### 请求示例

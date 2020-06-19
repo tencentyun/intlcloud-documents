@@ -1,3 +1,24 @@
+## June 2020
+
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manual kernel minor version upgrade is now supported</td>
+<td>TencentDB for MySQL supports manual kernel minor version upgrade. The upgrade can add new features, improve the performance, and fix issues.</td>
+<td>June 2020</td>
+<td><a href_blank">Upgrading Kernel Minor Version</a></td>
+</tr>
+</tbody></table>
+
+
 ## April 2020
 
 <table>

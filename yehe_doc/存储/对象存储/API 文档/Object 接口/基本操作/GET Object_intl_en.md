@@ -1,20 +1,20 @@
-## Feature
+## Feature description
 
-This API is used to download an object in a COS bucket to a local file system. To make this request, you need to have Read access to the object, or the object allows Public Read.
+This API is used to download an object to the local file system. To make this request, you need to have read permission for the object, or the object must have public read permission enabled (i.e., everyone has permission to read the object).
 
 > If the `response-*` request parameter is used, this request operation will not support anonymous requests and will have to carry a signature.
 
 #### Versioning
 
-With versioning enabled, you can specify the `versionId` request parameter to get a specific version of the object. If the version ID you specify corresponds to a delete marker, HTTP status code 404 (Not Found) will be returned. If no version ID is specified, the latest version will be returned.
+With versioning enabled, you can specify the `versionId` request parameter to get a specific version of an object. If the version ID you specify corresponds to a delete marker, an HTTP `404` status code (Not Found) will be returned. If no version ID is specified, the latest version will be returned.
 
 #### ARCHIVE storage class
 
-If this API is used to get an **archived** object, and the object has not been restored using [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) or the restored copy has been deleted after expiration, the request will return HTTP status code 403 (Forbidden) and include an error message in the response body. The error code will be InvalidObjectState, indicating that you cannot get the object in the current state with this API and you must restore it first.
+If this API is used to get an **archived** object, and the object has not been restored using [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) or the restored copy has been deleted after expiration, the request will return an HTTP `403` status code (Forbidden) and include an error message in the response body. The error code will be `InvalidObjectState`, indicating that you cannot get the object in its current state with this API and you must restore it first.
 
 ## Request
 
-#### Request samples
+#### Sample request
 
 ```shell
 GET /<ObjectKey> HTTP/1.1
@@ -27,26 +27,26 @@ Authorization: Auth String
 
 #### Request parameters
 
-| Name                                  | Description                                                         | Type   | Required |
+| Name | Description | Type | Required |
 | ---------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| response-cache-control       | Value of the Cache-Control header in the response                           | string | No       |
+| response-cache-control | Sets the value of the `Cache-Control` header in the response | string | No |
 | response-content-disposition | Sets the value of the `Content-Disposition` header in the response | string | No |
-| response-content-encoding | Value of the `Content-Encoding` header in the response | string | No |
-| response-content-language | Value of the `Content-Language` header in the response | string | No |
-| response-content-type | Value of the `Content-Type` header in the response | string | No |
-| response-expires | Value of the `Expires` header in the response | string | No |
+| response-content-encoding | Sets the value of the `Content-Encoding` header in the response | string | No |
+| response-content-language | Sets the value of the `Content-Language` header in the response | string | No |
+| response-content-type | Sets the value of the `Content-Type` header in the response | string | No |
+| response-expires | Sets the value of the `Expires` header in the response | string | No |
 | versionId | Specifies the version ID of the object if versioning is enabled; if this parameter is not specified, the latest version will be downloaded | string | No |
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Range | Byte range as defined in RFC 2616. The range value must be in the format of `bytes=first-last`, where both `first` and `last` are offsets starting from 0. For example, `bytes=0-9` means downloading the first 10-byte data of the object, and HTTP status code 206 (Partial Content) and the Content-Range response header will be returned. If this parameter is not specified, the entire object will be downloaded. | string | No |
-| If-Modified-Since | If the object is modified after the specified time, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
-| If-Unmodified-Since | If the object is not modified after the specified time, the object will be returned; otherwise, HTTP status 412 (Precondition Failed) will be returned. | string | No |
-| If-Match | If the `ETag` of the object is the same as the specified value, the object will be returned; otherwise, HTTP status code 412 (Precondition Failed) will be returned. | string | No |
+| Range | Byte range as defined in RFC 2616. The range value must be in the format of `bytes=first-last`, where both `first` and `last` are offsets starting from 0. For example, `bytes=0-9` downloads the the data of the first 10 bytes of the object, and an HTTP `206` status code (Partial Content) and the `Content-Range` response header will be returned. If this parameter is not specified, the entire object will be downloaded. | string | No |
+| If-Modified-Since | If the object is modified after the specified time, the object will be returned; otherwise, HTTP status code `304` (Not Modified) will be returned. | string | No |
+| If-Unmodified-Since | If the object is not modified after the specified time, the object will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
+| If-Match | If the `ETag` of the object is the same as the specified value, the object will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
 | If-None-Match | If the `ETag` of the object is different from the specified value, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
 
 **Server-side Encryption Headers**
@@ -68,10 +68,10 @@ In addition to common response headers, this API also returns the following resp
 | Cache-Control | Cache directives as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string |
 | Content-Disposition                                         | File name as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
 | Content-Encoding                                            | Encoding format as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
-| Content-Range                                                | Byte range of return content as defined in RFC 2616, which will be returned only if it is specified in the request | string |
+| Content-Range                                                | Byte range of the returned content as defined in RFC 2616, which will be returned only if it is specified in the request | string |
 | Expires                                                    | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
-| x-cos-meta-\*                                                | Contains user-defined metadata and user-defined metadata header suffixes           | string |
-| x-cos-storage-class | Object storage class, such as `STANDARD_IA`, and `ARCHIVE`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
+| x-cos-meta-\* | Contains user-defined metadata and header suffixes | string |
+| x-cos-storage-class | Object storage class, such as `STANDARD_IA`, and `ARCHIVE`. For the enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
 
 **Versioning-related Headers**
 
@@ -255,7 +255,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 [Object Content]
 ```
 
-#### Example 6. Downloading the latest version of the object (with versioning enabled)
+#### Example 6. Downloading the latest version of an object (with versioning enabled)
 
 #### Request
 
@@ -286,7 +286,7 @@ x-cos-version-id: MTg0NDUxNTc1NTE5MTc1NjM4MDA
 [Object Content Version 2]
 ```
 
-#### Example 7. Downloading a specific version of the object (with versioning enabled)
+#### Example 7. Downloading a specific version of an object (with versioning enabled)
 
 #### Request
 
