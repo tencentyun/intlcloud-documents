@@ -1,21 +1,21 @@
-## Feature
+## Feature description
 
-This API (PUT Object - Copy) is used to create a copy of an object already exists in COS, i.e., copying an object from the source path (object key) to the destination path (object key). The recommended object size is from 1 MB to 5 GB. For objects over 5 GB, refer to [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287).
+This API is used to create a copy of an object that already exists in COS, i.e., copying an object from the source path (object key) to the destination path (object key). The recommended object size is from 1 MB to 5 GB. For objects over 5 GB, refer to [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287).
 
-You can specify how metadata is processed during the copy process. By default, the metadata will be copied to the destination object. You can also choose not to copy the metadata information of the source object, and specify new metadata information in this API request. However, unless the storage type, access control list (ACL), and server-side encryption (SSE) are explicitly specified in this request, the destination object remains standard storage regardless of the processing method, the ACL of the destination bucket is inherited by default, and SSE will not be used.
+You can specify how metadata is processed during the copy process. By default, the metadata will be copied to the destination object. You can also choose not to copy the metadata of the source object, and instead can specify new metadata in the API request. However, unless the storage type, access control list (ACL), and server-side encryption (SSE) are explicitly specified in the request, then, regardless of the processing method, the storage type of the destination object will remain as standard, the ACL of the destination bucket will be inherited by default, and SSE will not be used.
 
-You can use this API to move, rename, and copy the object metadata and create copies.
+You can use this API to move, rename, and copy object metadata and create copies.
 
-The requester of this API needs to have read permission to the copied object, or the copied object allows read permission (public read) to everyone, and write permission to the destination bucket.
+To request this API, you need to have read permission for the object that you want to copy, or the object must have public read permission enabled (i.e., everyone has read permission for the object), and you must have write permission for the destination bucket.
 
 > 
 >
-> - An error may be returned when COS receives the copy request or is copying the object. If an error occurs before copying begins, a standard error response will be returned. If an error occurs during copying, `HTTP 200 OK` will be returned with the error as the response body, meaning that the `HTTP 200 OK` response includes both success and error. When using this API, pay attention to the content of the response body to determine whether the copy request is successful and process the result accordingly.
-> - The standard storage (MAZ) class only supports replication into the exactly same class rather than standard storage, low frequency, or archive storage class.
+> - An error may be returned when COS receives the copy request or is copying the object. If an error occurs before copying begins, a standard error response will be returned. If an error occurs during copying, `HTTP 200 OK` will be returned with the error as the response body, meaning that the `HTTP 200 OK` response can include both success and error information. When using this API, pay attention to the content of the response body to determine whether the copy request was successful and process the result accordingly.
+> - The `MAZ_STANDARD` storage class only supports replication into the exact same class rather than standard storage, low frequency, or archive storage classes.
 
 #### Versioning
 
-- If versioning is enabled on the bucket where the source object resides, the latest version of the source object is copied by default. You can specify the versionId parameter in the x-cos-copy-source request header to copy the specified version.
+- If versioning is enabled on the bucket where the source object resides, the latest version of the source object is copied by default. You can specify the versionId parameter in the `x-cos-copy-source` request header to copy a specified version.
 - If versioning is enabled on the destination bucket, COS will automatically generate a unique version ID for the destination object.
 
 ## Request
@@ -35,25 +35,25 @@ Authorization: Auth String
 
 #### Request parameters
 
-This API does not use any request parameter.
+This API does not use any request parameters.
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on the common request header, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Name                                  | Description                                                         | Type   | Required |
+| Name | Description | Type | Required |
 | ------------------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-copy-source | URL of the source object, where the object key needs to pass through URLEncode. The version of the source object can be specified by the versionId parameter, such as <br>`sourcebucket-1250000001.cos.ap-shanghai.myqcloud.com/example-%E8%85%BE%E8%AE%AF%E4%BA%91.jpg`<br>, or `sourcebucket-1250000001.cos.ap-shanghai.myqcloud.com/example-%E8%85%BE%E8%AE%AF%E4%BA%91.jpg?versionId=MTg0NDUxNzYzMDc0NDMzNDExOTc`. | string | Yes |
-| x-cos-metadata-directive | Whether to copy the metadata information of the source object. Enumerated values: Copy, Replaced, default is Copy.<br><li>If marked as Copy, the metadata information of the source object is copied. <li>If marked as Replaced, the metadata information in the request header of this request is used as the metadata information of the destination object. <br>If the destination and source objects are the same, that is, when the user tries to modify the metadata, it must be marked as Replaced. | Enum | No |
-| x-cos-copy-source-If-Modified-Since    | If the object is modified after the specified time, execute on the copy operation, otherwise HTTP status code 412 (Precondition Failed) is returned. | string | No |
-| x-cos-copy-source-If-Unmodified-Since | If the object is not modified after the specified time, execute on the copy operation, otherwise HTTP status code 412 (Precondition Failed) is returned. | string | No |
-| x-cos-copy-source-If-Match | If the ETag of the object is the same as the specified value, execute on the copy operation, otherwise HTTP status code 412 (Precondition Failed) is returned. | string | No |
-| x-cos-copy-source-If-None-Match | If the ETag of the object is not the same as the specified value, execute on the copy operation, otherwise HTTP status code 412 (Precondition Failed) is returned. | string | No |
-| x-cos-storage-class | Storage class of the destination object, such as `STANDARD_IA` and `ARCHIVE`. Default value: `STANDARD`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
+| x-cos-copy-source | URL of the source object, where the object key needs to be URLEncoded. The version of the source object can be specified through the versionId parameter, such as <br>`sourcebucket-1250000001.cos.ap-shanghai.myqcloud.com/example-%E8%85%BE%E8%AE%AF%E4%BA%91.jpg`<br>, or `sourcebucket-1250000001.cos.ap-shanghai.myqcloud.com/example-%E8%85%BE%E8%AE%AF%E4%BA%91.jpg?versionId=MTg0NDUxNzYzMDc0NDMzNDExOTc`. | string | Yes |
+| x-cos-metadata-directive | Specifies whether to copy the metadata information of the source object. Enumerated values: `Copy`, `Replaced`, the default value is `Copy`.<br><li>If marked as `Copy`, the metadata information of the source object is copied. <li>If marked as `Replaced`, the metadata information in the request header is used as the metadata information of the destination object. <br>If the destination and source objects are the same and you want to modify the metadata, it must be marked as `Replaced`. | Enum | No |
+| x-cos-copy-source-If-Modified-Since    | If the object is modified after the specified time, the copy operation will be executed, otherwise an HTTP `412` status code (Precondition Failed) is returned. | string | No |
+| x-cos-copy-source-If-Unmodified-Since | If the object is not modified after the specified time, the copy operation will be executed, otherwise an HTTP `412` status code (Precondition Failed) is returned. | string | No |
+| x-cos-copy-source-If-Match | If the ETag of the object is the same as the specified value, the copy operation will be exectued, otherwise an HTTP `412` status code (Precondition Failed) is returned. | string | No |
+| x-cos-copy-source-If-None-Match | If the ETag of the object is not the same as the specified value, the copy operation will be executed, otherwise an HTTP `412` status code (Precondition Failed) is returned. | string | No |
+| x-cos-storage-class | Storage class of the destination object, such as `STANDARD_IA` and `ARCHIVE`. Default value: `STANDARD`. For the enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
 
 **Headers related to destination object metadata**
 
-When copying an object, you can configure the metadata information of the destination object by specifying the following request headers. In this case, the request header x-cos-metadata-directive must be specified as Replaced.
+When copying an object, you can configure the metadata information of the destination object by specifying the following request headers. In this case, the request header `x-cos-metadata-directive` must be specified as `Replaced`.
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
@@ -61,7 +61,7 @@ When copying an object, you can configure the metadata information of the destin
 | Content-Disposition | File name as defined in RFC 2616, which will be stored in the object metadata | string | No |
 | Content-Encoding | Encoding format as defined in RFC 2616, which will be stored in the object metadata | string | No |
 | Expires | The cache expiration time as defined in RFC 2616, which will be saved in the object metadata | string | No |
-| x-cos-meta-\* | Header suffix and information of user-defined metadata, which will be stored in the object metadata. Maximum size: 2 KB.<br>**Note:** User-defined metadata information can contain underscores (_), but header suffixes of user-defined metadata can only contain minus signs (-), not underscores | string | No |
+| x-cos-meta-\* | Contains user-defined metatdata and header suffixes, which will be stored in the object metadata. Maximum size: 2 KB.<br>**Note:** User-defined metadata can contain underscores (_), but the header suffixes of user-defined metadata can only contain minus signs (-), not underscores | string | No |
 
 **ACL-related headers**
 
@@ -69,15 +69,15 @@ When copying an object, you can configure the access permissions of the destinat
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the access control list (ACL) attribute of the object. For enumerated values such as `default`, `private`, and `public-read`, see preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: default<br>**Note:** Currently, one ACL supports up to 1,000 entries. If you do not need access control for the object, configure this parameter as `default` or leave it blank, and bucket permissions will be inherited by default | Enum | No |
-| x-cos-grant-read | Allows grantee to read the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-read-acp | Allows grantee to read the ACL of the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-write-acp | Allows grantee to write to the ACL of the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-full-control | Grants a user full permission to operate on the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-acl | Defines the access control list (ACL) attribute of the object. For enumerated values such as `default`, `private`, and `public-read`, see the preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: default<br>**Note:** Currently, one ACL supports up to 1,000 entries. If you do not need access control for the object, configure this parameter as `default` or leave it blank, and the object will inherit the permissions of its bucket | Enum | No |
+| x-cos-grant-read | Grants a user read permission for an object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-read-acp | Grants a user read permission for the ACL of an object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-write-acp | Grants a user write permission for the ACL of an object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-full-control | Grants a user full permission to operate on an object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
 
-**Headers related to server-side encryption (SSE) for source object**
+**Headers related to server-side encryption (SSE) of the source object**
 
-If the source object uses server-side encryption method SSE-C, specify the following request headers to decrypt the object:
+If the source object uses the server-side encryption method, `SSE-C`, specify the following request headers to decrypt the object:
 
 | Name                                                        | Description                                                         | Type   | Required&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------ | ----------------------------------- |
@@ -85,7 +85,7 @@ If the source object uses server-side encryption method SSE-C, specify the follo
 | x-cos-server-side-encryption-customer-key | Base64-encoded server-side encryption key. such as<code>MDEyMzQ1Njc4OUFCQ<br>0RFRjAxMjM0NTY3ODlBQkNERUY=</code> | string | Required if the source object uses SSE-C |
 | x-cos-server-side-encryption-customer-key-MD5  | Base64-encoded MD5 hash of the server-side encryption key, such as<br>`U5L61r7jcwdNvT7frmUG8g==` | string | Required if the source object uses SSE-C |
 
-**Headers related to server-side encryption (SSE) for destination object**
+**Headers related to server-side encryption (SSE) of the destination object**
 
 Server-side encryption can be used during object copying. For more information, see [Server side encryption headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -109,7 +109,7 @@ When the version ID of the source object is specified, the following response he
 
 **Headers related to server-side encryption (SSE)**
 
-If server-side encryption is used during object copying, this API will return headers used specifically for server-side encryption. For more information. see [Server side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used during object copying, this API will return headers used specifically for server-side encryption. For more information, see [Server side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
@@ -129,14 +129,14 @@ The detailed nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------ | ------------------------------------- | --------- |
-CopyObjectResult | None | Saves all information about PUT Object-Copy result | Container |
+| CopyObjectResult | None | Saves all information about the `PUT Object-Copy` result | Container |
 
-**Content of container’s node CopyObjectResult:**
+**Content of container node CopyObjectResult:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ---------------- | ------------------------------------------------------------ | ------ |
-| ETag | CopyObjectResult | Entity Tag of an object, which is an information tag that identifies the content of the object when it is created. The tag can be used to check whether the content of the object has changed.<br>For example, the header `8e0b617ca298a564c3331da28dcb50df` does not necessarily return the MD5 value of the object, but varies depending on how the object is uploaded and encrypted. | string |
-| CRC64 | CopyObjectResult |CRC64 value of the object. For more information, see [CRC64 Check](https://intl.cloud.tencent.com/document/product/436/34078). | number |
+| ETag | CopyObjectResult | ETag of the object; this is a tag that identifies the content of an object when it is created. The tag can be used to check whether the content of an object has changed.<br>For example, the header `8e0b617ca298a564c3331da28dcb50df` does not necessarily return the MD5 value of the object, but varies depending on how the object is uploaded and encrypted. | string |
+| CRC64 | CopyObjectResult | CRC64 value of the object. For more information, see [CRC64 Check](https://intl.cloud.tencent.com/document/product/436/34078). | number |
 | LastModified | CopyObjectResult | Last modified time of the object in ISO8601 format, such as `2019-05-24T10:56:40Z` | date |
 VersionId | CopyObjectResult | The version ID of the object, which is returned only if the destination bucket has versioning enabled | string |
 
@@ -146,7 +146,7 @@ There are no special error messages for this API. For all error messages, see [E
 
 ## Use Cases
 
-The response of this API uses Transfer-Encoding: chunked encoding by default. Note that for the convenience of reading, use cases in this document are displayed without Transfer-Encoding. During use, different languages and libraries can automatically process this encoding form. For more information, refer to language- and library-related documents.
+The response of this API uses `Transfer-Encoding: chunked` encoding by default. Note that for the convenience of reading, use cases in this document are displayed without Transfer-Encoding. During use, different languages and libraries can automatically process this encoding form. For more information, refer to language- and library-related documents.
 
 #### Example 1. Simple example
 
@@ -253,9 +253,9 @@ x-cos-request-id: NWU5MGI5MDRfNmRjMDJhMDlfZGNmYl8yMDVh****
 </CopyObjectResult>
 ```
 
-#### Example 4. Modifying object storage type
+#### Example 4. Modifying the object storage type
 
-This example shows how to convert the object from standard storage to archived storage. This method is also suitable for the conversion between standard storage and infrequent access storage. If you want to convert the object in archived storage to other storage types, restore it first via [POST Object restore] (https://intl.cloud.tencent.com/document/product/436/12633) before using this API to request conversion of the storage type.
+This example shows how to convert the object from standard storage to archived storage. This method is also suitable for the conversion between standard storage and infrequent access storage. If you want to convert an object in archive storage to a different storage type, you must restore it first via [POST Object restore] (https://intl.cloud.tencent.com/document/product/436/12633) before using this API to request a conversion of the storage type.
 
 #### Request
 
@@ -404,7 +404,7 @@ x-cos-server-side-encryption-customer-key-MD5: hRasmdxgYDKV3nvbahU1MA==
 </CopyObjectResult>
 ```
 
-#### Example 8. Modifying object encrypted with SSE-C to non-encrypted
+#### Example 8. Modifying an object encrypted with SSE-C to non-encrypted
 
 #### Request
 
