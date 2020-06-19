@@ -5,5 +5,5 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 单击左侧导航的【共享带宽包】。
 3. 选择地域，在指定带宽包的操作栏，单击【删除】，并确定操作即可。
-![](https://main.qcloudimg.com/raw/d066d0473afd8f3d2a158081abc07bb7.png)
+![](https://main.qcloudimg.com/raw/6fc75a979e02bbc4c96d784c785d0d77.png)
 
