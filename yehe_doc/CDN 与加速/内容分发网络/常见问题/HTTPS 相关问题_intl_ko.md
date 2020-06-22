@@ -21,10 +21,10 @@ HTTPS 강제 기능을 사용하세요. 인증서 설정을 완료하면 "강제
 
 웹 사이트의 HTTPS 인증서를 CDN에 업로드해야 합니다. 방법은 아래와 같습니다.
 1. [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인한 뒤, 왼쪽 메뉴의 [Domain Management]를 클릭해 도메인 관리 페이지에 들어갑니다. 이후 도메인 오른쪽의 [manage] 버튼을 클릭하여 관리 페이지에 들어갑니다.
-![이미지 설명](https://main.qcloudimg.com/raw/9f5202ff57eb14f40dee3b15e4a37cdf.png)
-2. [Advanced Configuration]을 클릭하여 HTTPS 설정 모듈을 찾습니다. 해당 모듈에서 [Configure Now]를 클릭하여 인증서 관리 페이지에 접속해 인증서를 설정합니다. 설정 방법은 [Certificate](https://intl.cloud.tencent.com/document/product/228/35213#.E5.9F.9F.E5.90.8D.E9.85.8D.E7.BD.AE)를 참조 바랍니다. ![이미지 설명](https://main.qcloudimg.com/raw/f8c4570d1a4847aab84c30ff0dc2e22d.png)
+![이미지 설명](https://main.qcloudimg.com/raw/33ea31c11bfac2022ea5753b6d849042.png)
+2. [Advanced Configuration]을 클릭하여 HTTPS 설정 모듈을 찾습니다. 해당 모듈에서 [Configure Now]를 클릭하여 인증서 관리 페이지에 접속해 인증서를 설정합니다. 설정 방법은 [Certificate](https://intl.cloud.tencent.com/document/product/228/35213#.E5.9F.9F.E5.90.8D.E9.85.8D.E7.BD.AE)를 참조 바랍니다. ![이미지 설명](https://main.qcloudimg.com/raw/67be1f3b42a411613c0500afa97e06b5.png)
 3. 인증서 설정을 완료하면 [HTTPS 강제 리디렉션] 옵션이 표시되며, 옵션 활성화 시 사용자가 HTTP 요청을 보내더라도 HTTPS 액세스로 강제 리디렉션 됩니다:
-![이미지 설명](https://main.qcloudimg.com/raw/da5fb8ee7294231e27d65cd177dfd992.png)
+![이미지 설명](https://main.qcloudimg.com/raw/5aaf76102c96d7dbd1091c710277437e.png)
 
 
 
