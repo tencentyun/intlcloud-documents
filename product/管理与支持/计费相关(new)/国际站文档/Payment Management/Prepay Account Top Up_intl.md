@@ -31,16 +31,16 @@ A. For users registered in the United States and Canada:
 Beneficiary Name: Tencent Cloud, LLC
 Beneficiary account: 000271829(USD account)
 Beneficiary bank: HSBC Bank USA, N.A.
+Address: 2747 Park Blvd., Palo Alto, CA 94306  
 SWIFT: MRMDUS33
 Remarks: Cloud service fee + developer account (unique ID)
 
-
-
-B. For users registered in other countries:    
+B. For users registered in other countries:
 
 Beneficiary name: ACEVILLE PTE.LTD.
 Beneficiary account: 260-737366-178 (USD account)
 Beneficiary bank: HSBC, Singapore
+Address: 1 Fullerton Road, #02-095, One Fullerton, Singapore 049213  
 SWIFT Code: HSBCSGSG
 Remarks: Cloud service fee + developer account (unique ID)
 
