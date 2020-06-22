@@ -47,10 +47,10 @@ CDN 콘솔에서 가속 도메인을 삭제할 수 있습니다. 자세한 작�
 ### CDN 도메인의 서브 항목은 어떻게 수정하나요?
 
 1. [CDN 콘솔](https://console.cloud.tencent.com/cdn) 에 로그인하여 왼쪽 메뉴에서 [Domain Management]를 선택하고, 편집할 도메인 오른쪽의 [Manage]를 클릭합니다.
-![이미지 설명](https://main.qcloudimg.com/raw/852e08c890317ef2442d5af655da42c5.png)
+![이미지 설명](https://main.qcloudimg.com/raw/d2d85c86bca9c60c7e5ae5667fd2e155.png)
 2. [Basic Configuration]을 클릭하면 기본 정보 모듈을 볼 수 있으며, 서브 항목이 포함된 도메인의 기본 정보를 조회할 수 있습니다. **CDN 권한 체계를 이용 중이라면 해당 작업으로 인해 서브 계정 권한이 변동될 수 있으니 신중히 작업하시기 바랍니다.**
 3. 서브 항목 오른쪽의 [Modify] 아이콘을 클릭하여 드롭다운 메뉴에서 새로운 서브 항목을 선택할 수 있습니다.
-![이미지 설명](https://main.qcloudimg.com/raw/221cc1b397082246240c706ccf355964.png)
+![이미지 설명](https://main.qcloudimg.com/raw/1a2a312352d3353317075696347e0f42.png)
 
 그 밖에도 [프로젝트 관리](https://console.cloud.tencent.com/project) 페이지에서 프로젝트를 관리할 수 있습니다.
 
@@ -76,7 +76,7 @@ ICP비안 등록 완료 후 공업정보부의 정보 동기화 및 Tencent Clou
 ### CDN이 적용되었는지 어떻게 확인하나요?
 
 도메인 Ping 으로 출력 결과 조회: 도메인 Ping 결과 중 `cdntip.com`이 출력되면 Tencent Cloud CDN 노드에 액세스되었다는 뜻입니다.
-![이미지 설명](https://main.qcloudimg.com/raw/657d4b219f99acc10b55cf9faabd9943.png)
+!이미지 설명
 > CDN은 전국 각지에 노드가 있어, Ping으로 액세스한 모든 CDN 도메인이 가리키는 IP가 고정적이지 않은 것이 정상입니다.
 
 ### CDN 파일을 다운로드할 수 없습니다.
