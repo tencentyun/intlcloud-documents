@@ -14,9 +14,9 @@ CDN 도메인 가속 서비스를 비활성화한 후에도 도메인이 여전�
 
 CDN 사용 도중 과금 방식이 실제 비즈니스 상황에 부적합하다고 느끼실 경우(적합 여부는 [과금 방식 선택] (https://intl.cloud.tencent.com/document/product/228/2949#.E8.AE.A1.E8.B4.B9.E6.96.B9.E5.BC.8F.E9.80.89.E6.8B.A9)을 참조하여 판단할 수 있습니다), 사용 도중에 과금 방식을 변경하실 수 있습니다. 변경 방법은 아래와 같습니다.
 1. Tencent Cloud [CDN 콘솔] (https://console.cloud.tencent.com/cdn)에 로그인하여 서비스 개요에 들어간 뒤, 오른쪽의 과금 현황에서 [Change]을 클릭합니다.
-![이미지 설명](https://main.qcloudimg.com/raw/cfc4ab7bc66b88de437984e438f89a92.png)
+![이미지 설명](https://main.qcloudimg.com/raw/38b82d3d166970552437b5525b74c44f.png)
 2. 과금 방식을 기존의 **트래픽 과금**에서 **대역폭 과금**으로 변경합니다.
-![이미지 설명](https://main.qcloudimg.com/raw/0de03f22b51ab08a545bbfd6717b826b.png)
+![이미지 설명](https://main.qcloudimg.com/raw/6fd1575557d0c4b7b06be9f1fc30e1da.png)
 3. 과금 방식을 **대역폭 과금**으로 변경한 후, 이튿날에 비용을 결산할 때 전날 소모가 발생한 시간에 적용되어 있던 과금 방식을 기준으로 결산됩니다.
 
 ### 원본 서버가 CVM을 사용할 경우, CDN이 CVM에 Origin-pull 할 때 발생하는 트래픽도 과금되나요?
