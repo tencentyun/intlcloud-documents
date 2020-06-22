@@ -15,7 +15,7 @@ This document describes the billing mode and price of bandwidth packages. The tw
 
 ## Billing by monthly-top-5
 
-### Billing example
+### Billing formula
 **BWP fee** = BWP monthly peak x Number of valid days x Unit price/Number of days of the billed month.
 
 - **Daily peak**: Every five minutes, the highest BWP bandwidth value per minute is collected. At the end of the day, the collected values are sorted in descending order, and the fifth highest value is used as the daily peak.
@@ -42,17 +42,18 @@ As one sample point is generated every 5 minutes, 288 (60 min × 24/5 min) sampl
 </tr>
 </tbody></table>
 
-### Fee calculation
-For example, you use BWP for 20 valid days in June (including 30 days of the billed month), and sort the collected top 5 daily peaks in the month in descending order: 100 MB, 95 MB, 90 MB, 85 MB and 80 MB sequentially.
+### Billing example
+Assume you use BWP in June, where there are 30 billable days. Of those days, there are 20 days with active usage. These 20 days are sorted in descending order in accordance to the daily peak usage and the top 5 are 100 MB, 95 MB, 90 MB, 85 MB and 80 MB.
 
 Monthly peak =（100 + 95 + 90 + 85 + 80) / 5 = 90 MB
 BWP fee = 90 × 20 × 16.97 / 30 = 1,018.2 USD
-The final fee is 1,018.2 USD, payable in early July.      
+The final fee for June is 1,018.2 USD, payable in early July.
+
 
 ## Billing by monthly-95th-percentile
 >Monthly 95th percentile billing is currently only available to customers with monthly consumption greater than 15,000 USD. For details, please contact your sales rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
-### Billing example
+### Billing formula
 **BWP fee** = BWP monthly peak x Number of valid days x Unit price/Number of days of the billed month.
 - **Monthly peak**: Every five minutes, the highest BWP bandwidth value per minute is collected. When the billed month is over, the collected values are sorted from high to low. After the top 5% values are eliminated, the highest value is used as the monthly peak.
 For example, you use BWP for 14 days in June. As one sample point is generated every 5 minutes, 288 (60 min × 24/5 min) sample points are generated every day, and 4032 (14 days × 288 sample points/day) sample points are generated in 14 days. The bandwidth values of the 4032 sample points are sorted in descending order, the top 5% of the sample points (4032 sample points × 0.05 = 201.6 statistical points) are removed, and the bandwidth value of the 202nd sample point is taken as the monthly 95th percentile of peak bandwidth.
@@ -78,8 +79,8 @@ For example, you use BWP for 14 days in June. As one sample point is generated e
 
 >The monthly 95th percentile billing is in beta, and the prices are subject to change for some on the regions later.
 
-### Fee calculation
-For example, you use BWP for 20 valid days in June (including 30 days of the billed month) and the monthly 95th percentile peak is 120 MB.
+### Billing example
+Assume you use BWP in June, where there are 30 billable days. Of those days, there are 20 days with active usage. The monthly 95th percentile peak is 120 MB.
 BWP fee = 120 × 20 × 16.97 / 30 = 1,357.6 USD
-The final fee is 1,357.6 USD, payable in early July.
+The final fee for June is 1,357.6 USD, payable in early July.
 
