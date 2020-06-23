@@ -145,11 +145,6 @@ The access policy language allows you to specify conditions when granting permis
 | ----------------------- | ------------ | ---------------- | ------------------------------------------------------------ |
 | Ip_equal | IP is equal to | qcs:ip | {"ip_equal":{"qcs:ip ":"10.121.2.0/24"}} |
 | Ip_not_equal | IP is not equal to | qcs:ip | {"ip_not_equal":{"qcs:ip":["10.121.1.0/24","10.121.2.0/24"]}} |
-| date_not_equal | Time is not equal to | qcs:current_time | {"date_not_equal":{"qcs:current_time":"2016-06-01T00:01:00Z"}} |
-| date_greater_than | Time is greater than | qcs:current_time | {"date_greater_than":{"qcs:current_time":"2016-06-01T00:01:00Z"}} |
-| date_greater_than_equal | Time is greater than or equal to | qcs:current_time | {"date_greater_than_equal":{"qcs:current_time":"2016-06-01T00:01:00Z"}} |
-| date_less_than | Time is less than | qcs:current_time | {"date_less_than":{"qcs:current_time":"2016-06-01T 00:01:00Z"}} |
-| date_less_than_equal | Time is less than or equal to | qcs:current_time | {"date_less_than_equal":{"qcs:current_time":"2016-06-01T00:01:00Z"}} |
 
 The following example specifies that the access IP is within the IP range of 10.121.2.0/24.
 
