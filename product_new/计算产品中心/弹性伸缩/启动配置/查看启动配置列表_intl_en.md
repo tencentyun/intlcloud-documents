@@ -9,5 +9,5 @@ Open the [Auto Scaling Console](https://console.cloud.tencent.com/autoscaling/co
 - To delete a launch configuration, click **Delete** in the corresponding launch configuration entry.
 
 >Launch configurations that are bound with a scaling group cannot be deleted.
-
+>
 ![](https://main.qcloudimg.com/raw/ac8908ff988cd154d8ef26e699d4b99e.png)
