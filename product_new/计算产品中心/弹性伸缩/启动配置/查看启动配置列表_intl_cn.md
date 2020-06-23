@@ -9,5 +9,5 @@
 - 如需删除启动配置，请单击相应启动配置条目的【删除】。
 
 >已绑定伸缩组的启动配置无法删除。
-
+>
 ![](https://main.qcloudimg.com/raw/ac8908ff988cd154d8ef26e699d4b99e.png)
