@@ -118,4 +118,4 @@ GET /?versions&prefix=ObjectKey HTTP/1.1
 如下图所示，删除指定的对象版本将永久删除该对象。
 ![](https://main.qcloudimg.com/raw/e814ec84e0c64b69275aef8a9dbe3d6c.png)
 
->只有主账号可以删除指定的对象版本。
+>!只有主账号或被主账号授权的账号才可以删除指定的对象版本。
