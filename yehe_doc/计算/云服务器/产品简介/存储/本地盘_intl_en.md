@@ -1,63 +1,31 @@
-## Local Disk Overview
-A local disk resides on the same physical server as the CVM instance. A local disk has low read/write latency and high IO performance.
-Local disks are a part of the local storage devices attached to the same physical server as the CVM instance they are attached to. Therefore, the reliability of the datastore on local disks depends on the reliability of the physical server, which puts the data at risk of a single point of failure.
+## Overview
+A local disk is a storage device on the same physical server as the CVM instance. It features high read/write IO and low latency.
+The local disk is a local storage device on the same physical server as the CVM instance. It is a reserved storage space on the physical server (currently only available to high IO and big data CVMs). The reliability of data stored on a local disk depends on that of the physical server. There may be a single point of failure.
+
+
 
 > 
-> - If the physical server that hosts your CVM instance experiences hardware faults, you are at risk of losing valuable data. To avoid this, you should ensure data reliability with redundancy applications. If you cannot plan for data redundancy, consider using [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) to improve data reliability.
-> - You cannot upgrade the hardware (CPU, memory, storage) of a CVM instance with local disks. You can only upgrade its bandwidth.
+> - If a hardware failure occurs on the physical server of the CVM instance, local disk may lose valuable data. We recommend data redundancy at the application layer to ensure reliability. If your application does not support this, consider using [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) to improve data reliability.
+> - You cannot upgrade the hardware (CPU, memory, storage) of a CVM instance with only local disks. You can only upgrade its bandwidth.
 > 
 
-## Use Cases
-- **Distributed application**: NoSQL, MPP data warehouses, distributed file systems, and other I/O intensive applications. These applications have their own distributed data redundancy. 
-- **Logs for large online applications**: large online applications produce a large amount of log data, which requires high-performance storage but lower requirements for storage reliability. 
+## Scenario
+- **IO-intensive applications**: for large relational databases, NoSQL, ElasticSearch and other I/O-intensive applications that are more sensitive to latency, you can use the NVME SSD local disk that comes with high IO CVMs, but take note that it carries the risk of a single point of failure.
+- **Big data applications**: for big data applications such as EMR that are less sensitive to latency and feature data redundancy at the upper layer to tolerate a single point of failure, you can use the SATA HDD disk that comes with big data CVMs.
+
 
 ## Lifecycle
-The lifecycles of local disks are the same as the lifecycle of the CVM instance to which they are attached. In other words, local disks start when the CVM instance starts and ends when the CVM instance shuts down.
+The lifecycle of a local disk is the same as that of the CVM instance it is mounted to. Therefore, local disks launch and terminate with CVM instances.
 
-## Type
-Local disks are local storage devices attached to the same physical server as the CVM instance. There are two types of local disks, HDD local disks, and SSD local disks.
+## Types
 
-### HDD local disks
+Local disks are local storage devices on the same physical server as the CVM instance. There are two types of local disks by media: SATA HDD and NVME SSD.
 
-<table class="typical">
-	<tbody>
-	<tr>
-		<th>Specification</th>
-		<th>Remarks</th>
-		<th>Performance metrics</th>
-	</tr>
-	<tr>
-		<td>HDD local system disk</td>
-		<td>50 GB per disk.</td>
-		<td rowspan="2">Peak I/O throughput 40 MB/s - 100+ MB/s. IOPS ranges from hundreds to 1000.</td>
-	</tr>
-	<tr>
-		<td>HDD local data disk</td>
-		<td>From 10 GB to 1600 GB (in 10 GB increments). Different CVM specifications have different maximum HDD local disk capacities.</td>
-	</tr>
-</tbody></table>
-
-### Local SSDs
-Local SSDs are local storage on the physical machine where the CVM resides. They provide instances with full SSD block-level data access capability and low latency, high random IOPS, and high I/O throughput.
-<table class="SSD">
-	<tbody>
-	<tr>
-		<th>Specification</th>
-		<th>Remarks</th>
-		<th>Performance metrics</th>
-	</tr>
-	<tr>
-		<td >SSD local system disk</td>
-		<td>50 GB per disk.</td>
-		<td rowspan="2">Peak I/O throughout 250 MB/s<br>Maximum random write IOPS 10000 (4K random write. QD = 32)<br>Access latency less than 3ms
-</td>
-	</tr>
-	<tr>
-		<td>SSD local data disk</td>
-		<td>10 GB to 7000 GB (in 10 GB increments). Different CVM specifications have different maximum HDD local disk capacities.</td>
-	</tr>
-</tbody></table>
+| CVM | Specification and Performance |
+|---------|---------|
+| SATA HDD local disk | [Big data CVMs] (https://intl.cloud.tencent.com/document/product/213/11518#D) |
+| NVME SSD local disk | [High IO CVMs](https://intl.cloud.tencent.com/document/product/213/11518#I) |
 
 ## Purchase
-Local disks can only be purchased along with your CVM instances. For more information, refer to [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855).
+A local disk can only be purchased together with a CVM instance. For more information on purchasing a CVM instance, see [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855).
 
