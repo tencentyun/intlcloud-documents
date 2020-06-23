@@ -1,3 +1,40 @@
+<h2>2020年06月</h2>
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 Druid  服务监控和 Hbase thrift 角色监控 </td>
+<td>新增 Druid 服务监控、Hbase thrift 角色监控，提升问题排查效率</td><td>2020-06-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36888" target="_blank">Druid 监控指标</a></td>
+</tr>
+<tr>
+<td>新增 hadoop 集群版本 EMRv2.3.0</td>
+<td>新增支持 Tensorflow 和 Jupyter Notebook 组件</td>
+<td>2020-06-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36892" target="_blank">Tensorflow 简介</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36894" target="_blank">Jupyter Notebook 简介</a></td>
+</tr>
+<tr>
+<td>Clickhouse 类型集群新增发行版 clickhouse-v1.1.0</td>
+<td>Clickhouse 组件版本升级至 LTS 版本，新增支持 superset 组件</td><td>2020-06-15</td>
+<td>-</td>
+</tr>
+<tr>
+<td>支持集群事件和集群巡检 </td>
+<td>控制台支持记录集群发生的关键变化事件或异常事件，提升集群排障效率。支持集群设置及时巡检或定期巡检任务，便掌握集群健康情况，及时对异常或风险点进行处理
+ </td><td>2020-06-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">集群巡检</a></td>
+</tr>
+</tbody></table>
+
+                
+
 <h2>2020年05月</h2>
 <table>
 <thead>
@@ -16,7 +53,7 @@
 <tr>
 <td>支持 ClickHouse 集群服务监控 </td>
 <td>便于掌握 ClickHouse 运行状况</td><td>2020-05-15</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31121#clickhouse-.E9.9B.86.E7.BE.A4.E7.9B.91.E6.8E.A7.E6.8C.87.E6.A0.87" target="_blank">ClickHouse 集群监控指标</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36887" target="_blank">ClickHouse 监控指标</a></td>
 </tr>
 <tr>
 <td>角色管理新增监控状态</td>
@@ -25,8 +62,6 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-
 
 
 <h2>2020年04月</h2>
@@ -157,7 +192,7 @@
 <tr>
 <td>上线关联 CHDFS 功能</td>
 <td>支持关联 CHDFS，可读写 CHDFS 上的数据</td><td>2019-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34525" target="_blank">挂载云 HDFS</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35773" target="_blank">挂载云 HDFS</a></td>
 </tr>
 <tr>
 <td>支持 AMD 机型</td>
@@ -192,7 +227,7 @@
 <tbody><tr>
 <td>新增节点规格管理</td>
 <td>节点规格管理，根据计费类型设置不同节点类型的默认规格，默认为按量计费规格</td><td>2019-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34533" target="_blank">节点规格管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34533" target="_blank">设置节点规格</a></td>
 </tr>
 <tr>
 <td>配置管理支持 zookeeper、alluxio、flink 组件</td>
@@ -202,7 +237,7 @@
 <tr>
 <td>上线对集群及集群下节点分配标签</td>
 <td>支持对集群及集群下节点分配标签</td><td>2019-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34532" target="_blank">标签</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34532" target="_blank">设置标签</a></td>
 </tr>
 <tr>
 <td>北上广地域新机型</td>
@@ -339,7 +374,7 @@
 <td>上线设置引导操作功能</td>
 <td>支持设置引导操作功能，可在配置集群时设置</td>
 <td>2019-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34531" target="_blank">设置引导操作</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34521" target="_blank">引导操作</a></td>
 </tr>
 <tr>
 <td>上线组件参数配置下发支持到节点维度功能</td>
@@ -351,7 +386,7 @@
 <td>上线参数配置回滚功能</td>
 <td>支持参数配置回滚，可实现对配置参数的回滚还原</td>
 <td>2019-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">参数配置回滚</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">配置回滚</a></td>
 </tr>
 </tbody></table>
 <h2>2019年05月</h2><table>
@@ -379,7 +414,7 @@
 <td>监控指标优化</td>
 <td>主机、HDFS、YARN、Hbase 监控指标</td>
 <td>2019-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31121" target="_blank">监控指标</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">监控指标</a></td>
 </tr>
 <tr>
 <td>优化控制台样式</td>
