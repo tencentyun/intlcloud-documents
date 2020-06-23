@@ -3,7 +3,7 @@ A scaling group contains a collection of CVM instances that follow the same poli
 ## Creating a Scaling Group
 1. Log in to **Auto Scaling Console** and click **Scaling group**(https://console.cloud.tencent.com/autoscaling/group) in the left sidebar.
 2. Select a region and click **Create” on the top of the scaling group list.
-3. In Create scaling group pop-up, complete the basic configurations. Fields marked with<img src="https://main.qcloudimg.com/raw/0987a11dd78c9b55b0ce7a760b57a73b.png">are required, as shown below: 
+3. In Create scaling group pop-up, complete the basic configurations. Fields marked with <label style="color:#e1504a;">*</label>  are required, as shown below: 
 ![](https://main.qcloudimg.com/raw/09b130b952b426530acbe5ad6288b5d7.png)
  - A scaling group maintains the number of CVM instances to meet the desired capacity between the minimum and maximum capacity values.
  - The starting instance quantity defines the default number of CVM instances in the scaling group.
