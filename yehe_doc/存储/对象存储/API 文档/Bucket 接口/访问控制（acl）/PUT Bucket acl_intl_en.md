@@ -127,12 +127,7 @@ The response body of this API is empty.
 
 #### Error Codes
 
-The implementation of this operation returns the following special error messages. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-
-Error Code | Description | HTTP Status Code
----|---|---
-InvalidDigest| The given Content-MD5 checksum is invalid |400 Bad Request
-MalformedXML| The XML format of the request body does not conform to the XML syntax |400 Bad Request
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Examples
 
