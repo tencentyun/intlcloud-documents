@@ -2,105 +2,105 @@
 
 <table>
         <tr>
-            <th  width="18%">Feature</th>
-            <th  width="27%">Limit Item</th>
+            <th  width="15%">Feature</th>
+            <th  width="20%">Limit Item</th>
             <th>Limit Description</th>
         </tr>
         <tr>
-            <td  rowspan="4">One-to-one/group message</td>
+            <td  rowspan="4">One-to-one/Group chat message</td>
             <td>Content length</td>
-            <td>The maximum length allowed for a single one-to-one/group message is 8,000 bytes. If this limit is exceeded, the message will be discarded by the system.</td>
+            <td>The maximum length allowed for a single one-to-one chat or group chat message is 8,000 bytes. If this limit is exceeded, the message will be discarded by the system.</td>
         </tr>
 				        <tr>
             <td>Sending frequency</td>
-            <td>The length of a single message cannot exceed 8,000 bytes.<br>We recommend that the frequency of sending messages to the same account should not exceed 10 messages per second. When the target account is online, messages can be received normally even if the limit of 10 messages per second is exceeded. When the target account is offline, only 10 messages per second will be saved, and those beyond this limit will be discarded.</td>
+            <td>The length of a single message cannot exceed 8,000 bytes.<br>We recommend that the frequency of sending messages to the same account not exceed 10 messages per second. When the target account is online, messages can be received normally even if the limit of 10 messages per second is exceeded. When the target account is offline, only 10 messages per second will be saved, and those beyond this limit will be discarded.</td>
         </tr>
         <tr>
-            <td>Size of a single file</td>
-            <td>The SDK supports a maximum file size of 100 MB for any single file to be sent. </td>
+            <td>File size</td>
+            <td>A file sent through the SDK can be up to 100 MB.</td>
         </tr>
 	<tr>
-            <td>Storage duration</td>
-            <td>Message history storage is available for one-to-one and group (private group, public group, and chat room) messages. The storage period is as follows:<ul style="margin:0;"><li>Trial edition: free storage for 7 days, no extension supported. </li><li>Pro edition: free storage for 7 days, extension supported. </li><li>Flagship edition: free storage for 30 days, extension supported.</li></ul>Extending the message history storage period is a value-added service. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. For specific billing information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</td>
+            <td>Retention period of historical messages</td>
+            <td>Historical message retention is available for one-to-one chat messages and non-AVChatRoom group messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM Console</a> to modify configurations. The default retention periods for different billing plans are as follows:<ul style="margin:0;"><li>Trial edition: free retention for 7 days, no extension supported. </li><li>Pro edition: free retention for 7 days, extension supported. </li><li>Flagship edition: free retention for 30 days, extension supported.</li></ul>Extending the retention period of historical messages is a paid value-added service. For specific billing information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</td>
         </tr>
         <tr>
             <td>System message</td>
-            <td>Quantity and storage period</td>
-            <td>A maximum of 100 system messages can be stored for up to 7 days.</td>
+            <td>Quantity and retention duration</td>
+            <td>Up to 100 system messages can be stored for up to 7 days.</td>
         </tr>
         <tr>
             <td>UserID</td>
             <td>Naming rules</td>
-            <td>The maximum length of a user account is limited to 32 bytes. Supports English letters or numbers. Special characters are not allowed.</td>
+            <td>The user ID can be up to 32 bytes in length and can contain letters and digits. Special characters are not allowed.</td>
         </tr>
 				<tr>
             <td>User profile</td>
             <td>Custom field</td>
-            <td>The keywords of custom fields must consist of English letters with a length no longer than 8 bytes. The length of the values of custom fields cannot exceed 500 bytes.</td>
+            <td>The keywords of custom fields can be up to 8 bytes in length and can contain only letters. The values of custom fields can be up to 500 bytes in length.</td>
         </tr>
         <tr>
             <td>UserSig</td>
             <td>Validity period</td>
-            <td>User password. The signatures generated by the default API of the IM backend SDK expire after 180 days.</td>
+            <td>User passwords are signatures generated by the default API of the IM backend SDK. Their validity period is 180 days.</td>
         </tr>
 				<tr>
             <td>Conversation management</td>						
             <td>Number of recent contacts</td>
-            <td>Up to 100 recent contacts can be saved for an ordinary user.</td>
+            <td>Up to 100 recent contacts can be saved for a common user.</td>
         </tr>
         <tr>
             <td  rowspan="2">User relationship chain</td>
-            <td>Friends and friend groups</td>
-            <td><ul style="margin:0;"><li>A single user can have up to 3,000 friends.</li><li>The maximum number of pending friend requests supported is 100.</li><li>The maximum number of friend groups supported is 32.</li><li>The maximum length of a friend group name is 30 bytes.</li><li>The maximum length of friend remarks supported is 96 bytes.</li></ul></td>
+            <td>Friends and friend lists</td>
+            <td><ul style="margin:0;"><li>A single user can have up to 3,000 friends.</li><li>Up to 100 pending friend requests are supported.</li><li>Up to 32 friend lists are supported.</li><li>A friend list name can be up to 30 bytes in length.</li><li>A friend remark can be up to 96 bytes in length.</li></ul></td>
         </tr>
         <tr>
             <td>Blacklist</td>
-            <td>A single user can blacklist a maximum of 1,000 users.</td>
+            <td>A single user can blacklist up to 1,000 users.</td>
         </tr>
          <tr>
             <td  rowspan="7">Group</td>
             <td>Number of groups</td>
-            <td><ul style="margin:0;"><li>For the Trial Edition, the SDKAppID supports a maximum of 100 concurrent groups, excluding disbanded groups. If the peak value is reached, you can disband unused groups and then create new ones.</li><li>For the Pro and Flagship Editions, the SDKAppID does not limit the number of groups, but the maximum daily net group increase is 10,000, and the free peak group count is 100,000 per month. If the free peak group count is exceeded, fees will be charged. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Fees for usage exceeding the free quota</a>.</li></ul></td>
+            <td>Maximum number of concurrent groups, excluding disbanded groups, supported by an SDKAppID. If the upper limit is reached, you can disband unnecessary groups and then create new ones. The limits for different billing plans are as follows:<li>Trial edition: 100</li><li>Pro or Flagship edition: unlimited</li><br>Up to 10,000 groups can be added per day, and up to 100,000 groups can be added for free per month. If this free quota is exceeded, <a href="https://intl.cloud.tencent.com/document/product/1047/34350">fees for usage exceeding the free quota</a> will be charged.</li></ul></td>
         </tr>
         <tr>
             <td>Number of group members</td>
-            <td><ul style="margin:0;"><li>The maximum number of group members supported by a private group is 200.</li><li>The maximum number of group members supported by a public group is 2,000.</li><li>The maximum number of group members supported by a chat room is 6,000.</li><li>For audio-video chat rooms and broadcasting chat rooms, there is no limit.</li></ul></td>
+            <td>For AVChatRoom groups, group members are unlimited.<br>For non-AVChatRoom groups, the default limits for different billing plans are as follows:<ul style="margin:0;"><li>Trial edition: 20</li><li>Pro edition: 200, which can be extended to 2,000</li><li>Flagship edition: 2,000, which can be extended to 6,000</li>Increasing the maximum number of members in a single group is a paid value-added service. For specific billing information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</ul></td>
         </tr>
         <tr>
             <td>Number of groups a user can join</td>
-            <td><ul style="margin:0;"><li>For the Trial Edition, a single user of an SDKAppID can join up to 50 groups.</li><li>For the Pro Edition, a single user of an SDKAppID can join up to 500 groups. You can purchase a value-added service to increase the upper limit to 1,000 groups per user. For more information on the cost, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</li><li>For the Flagship Edition, a single user of an SDKAppID can join up to 1,000 groups. You can purchase a value-added service to increase the upper limit to 3,000 groups per user. For more information on the cost, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</li></td>
+            <td>Total number of groups, regardless of group types, that a single user can join at the same time. The limits for different billing plans are as follows:<ul style="margin:0;"><li>Trial edition: 50</li><li>Pro edition: 500 by default, which can be extended to 1,000</li><li>Flagship edition: 1,000 by default, which can be extended to 3,000</li></ul>Increasing the maximum number of groups a single user can join is a paid value-added service. For specific billing information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.</li></td>
         </tr>
         <tr>
             <td>Group profile</td>
-            <td><ul style="margin:0;"><li>The maximum length of the group name is 30 bytes.</li><li>The maximum length of the group introduction is 240 bytes.</li><li>The maximum length of the group announcement is 300 bytes.</li><li>The maximum length of the group profile photo URL is 100 bytes.</li><li>The maximum length of the group name card is 50 bytes.</li></ul></td>
+            <td>Length limits of different fields in a group profile are as follows:<ul style="margin:0;"><li>Group name: 30 bytes</li><li>Group introduction: 240 bytes</li><li>Group announcement: 300 bytes</li><li>Group profile photo URL: 100 bytes</li><li>Group name card: 50 bytes</li></ul></td>
         </tr>
         <tr>
             <td>Custom group ID</td>
-            <td>The custom group ID must be printable ASCII characters (0x20-0x7e) with maximum length limited to 48 bytes. It cannot begin with @TGS# so as to avoid confusion with the default group IDs assigned by IM.</td>
+            <td>A custom group ID can contain only printable ASCII characters (0x20-0x7e) of up to 48 bytes in length. To avoid confusion with the default group IDs assigned by the IM service, a custom group ID cannot be prefixed with @TGS#.</td>
         </tr>
         <tr>
             <td>Group custom field</td>
-            <td>Groups supports up to 20 custom fields: <ul style="margin:0;"><li>The Key field is String type, with a maximum length of 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores.</li><li>The Value field is a user-defined buffer and can be binary data. The maximum Value length for groups is 512 bytes.</li></ul></td>
+            <td>A group supports up to 20 custom fields: <ul style="margin:0;"><li>The `Key` field is a string of no more than 16 bytes, consisting of uppercase and lowercase letters, digits, and underscores (_).</li><li>The `Value` field is a user-defined buffer and can be binary data. Its maximum length is 512 bytes.</li></ul></td>
         </tr>
         <tr>
             <td>Group member custom field</td>
-            <td>Group Member supports up to 5 custom fields: <ul style="margin:0;"><li>The Key field is String type, with a maximum length of 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores. </li><li>The Value field is a user-defined buffer and can be binary data. The maximum Value length for Group Member is 64 bytes.</li></ul></td>
+            <td>A group member supports up to 5 custom fields: <ul style="margin:0;"><li>The `Key` field is a string of no more than 16 bytes, consisting of uppercase and lowercase letters, digits, and underscores (_).</li><li>The `Value` field is a user-defined buffer and can be binary data. Its maximum length can be 64 bytes.</li></ul></td>
         </tr>
 </table>
 
-## API-related Limits
->This document lists only the RESTful APIs that have use limits. For a complete list of APIs, see [RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/34621).
+## API Limits
+> This document lists only the RESTful APIs that have use limits. For a complete list of APIs, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621).
 
 ### General limits
 
 <table>
         <tr>
-            <th  width="45%">Limit Item</th>
+            <th  width="30%">Limit Item</th>
             <th>Limit Description</th>
         </tr>
         <tr>
             <td>Call frequency</td>
-            <td><ul style="margin:0;"><li>Up to 100 times per second:<a href="https://intl.cloud.tencent.com/document/product/1047/34954">importing multiple accounts</a>, <a href="https://intl.cloud.tencent.com/document/product/1047/34955">deleting accounts</a>, and<a href="https://intl.cloud.tencent.com/document/product/1047/34956">querying accounts</a></li><li>Up to 200 times per second: other <a href="https://intl.cloud.tencent.com/document/product/1047/34621">RESTful APIs</a></li></ul></td>
+            <td><ul style="margin:0;"><li>Up to 100 times per second: <a href="https://intl.cloud.tencent.com/document/product/1047/34954">importing multiple accounts</a>, <a href="https://intl.cloud.tencent.com/document/product/1047/34955">deleting accounts</a>, and <a href="https://intl.cloud.tencent.com/document/product/1047/34956">querying accounts</a></li><li>Up to 200 times per second: other <a href="https://intl.cloud.tencent.com/document/product/1047/34621">RESTful APIs</a></li></ul></td>
         </tr>
 </table>
 
@@ -110,12 +110,12 @@
 
 <table>
         <tr>
-            <th  width="45%">API</th>
+            <th  width="30%">API</th>
             <th>Limit Description</th>
         </tr>
         <tr>
             <td>Importing multiple accounts</td>
-            <td>Supports importing up to 100 usernames at a time, but rejects the direct import of account nickname and portrait.</td>
+            <td>Up to 100 usernames can be imported at a time. However, the API does not support the direct import of account nicknames and profile photos.</td>
         </tr>
 				<tr>
             <td>Querying online status of accounts</td>
@@ -123,16 +123,16 @@
         </tr>
 </table>
 
-### One-to-one message
+### One-to-one chat message
 
 <table>
         <tr>
-            <th  width="45%">API</th>
+            <th  width="30%">API</th>
             <th>Limit Description</th>
         </tr>
         <tr>
-            <td>Sending one-to-one messages in batches</td>
-            <td>A single request can send one-to-one messages to up to 500 users.</td>
+            <td>Sending one-to-one chat messages in batches</td>
+            <td>A single request can send one-to-one chat messages to up to 500 users.</td>
         </tr>
 </table>
 
@@ -142,7 +142,7 @@
 
 <table>
         <tr>
-            <th  width="45%">API</th>
+            <th  width="30%">API</th>
             <th>Limit Description</th>
         </tr>
         <tr>
@@ -156,7 +156,7 @@
 
 <table>
         <tr>
-            <th  width="45%">API</th>
+            <th  width="30%">API</th>
             <th>Limit Description</th>
         </tr>
         <tr>
@@ -168,7 +168,7 @@
             <td>A single request can delete up to 500 members.</td>
         </tr>
         <tr>
-            <td>Querying a user’s identity in the group</td>
+            <td>Querying a user's identity in a group</td>
             <td>A single request can query up to 500 accounts.</td>
         </tr>
         <tr>
@@ -176,15 +176,15 @@
             <td>A single request can mute/unmute up to 500 accounts.</td>
         </tr>
         <tr>
-            <td>Sending ordinary messages in a group</td>
-            <td>The default sending frequency of a single group is limited to 40 messages/second. <br><b>If two messages sent within 5 minutes from the same sender have the same random value (Random parameter), the later message will be discarded as a duplicate message.</b></td>
+            <td>Sending common messages in a group</td>
+            <td>The default sending frequency of a single group is limited to 40 messages/second. <br><b>If 2 messages sent within 5 minutes from the same sender are same in the value of the `Random` parameter, the later message will be discarded as a duplicate message.</b></td>
         </tr>
         <tr>
             <td>Importing group messages</td>
-            <td>A maximum of 20 messages can be imported by a single request. Messages must be imported in ascending order by timestamp. The timestamps of imported messages must be earlier than the current time and later than the group creation time. Otherwise, the import fails.</td>
+            <td>A single request can import up to 20 messages. Messages must be imported in ascending order by timestamp. The timestamps of imported messages must be earlier than the current time and later than the group creation time. Otherwise, the import will fail.</td>
         </tr>
         <tr>
             <td>Importing group members</td>
-            <td>AVChatRoom and BChatRoom do not support importing members.<br>Up to 500 members can be imported in one request. However, different group types have different group member limits. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33515">Group Features</a>.</td>
+            <td>AVChatRoom does not support group member importing.<br>A single request can import up to 500 group members. However, this limit is also restrained by the feature limits of different group types. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33515">Group Features</a>.</td>
         </tr>
 </table>

@@ -2,6 +2,23 @@ Tencent Cloud International website has launched a Beneficiary Account Bank Tran
 
 Step 1. Query and enable the Bank Transfer account
 Check whether Bank Transfer has been enabled for your account. If it is enabled, you will see the Bank Transfer beneficiary account information, including the beneficiary account name and number, beneficiary bank, and SWIFT code.
+
+A. For users registered in the United States and Canada:
+
+Beneficiary Name: Tencent Cloud, LLC
+Beneficiary bank: HSBC Bank USA, N.A.
+Address: 2747 Park Blvd., Palo Alto, CA 94306 
+SWIFT: MRMDUS33
+Remarks: Cloud service fee + developer account (unique ID)
+
+B. For users registered in other countries:
+
+Beneficiary name: ACEVILLE PTE.LTD.
+Beneficiary bank: HSBC, Singapore
+Address: 1 Fullerton Road, #02-095, One Fullerton, Singapore 049213  
+SWIFT Code: HSBCSGSG
+Remarks: Cloud service fee + developer account (unique ID)
+
 ![](https://main.qcloudimg.com/raw/e82eae0a3c87101a6170dabfa8869e0a.png)
 
 Step 2. Use the Bank Transfer account to pay Tencent Cloud offline
