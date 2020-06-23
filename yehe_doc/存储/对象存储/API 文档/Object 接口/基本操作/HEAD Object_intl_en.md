@@ -86,7 +86,7 @@ The response body of this API is empty.
 
 #### Error codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Use Cases
 

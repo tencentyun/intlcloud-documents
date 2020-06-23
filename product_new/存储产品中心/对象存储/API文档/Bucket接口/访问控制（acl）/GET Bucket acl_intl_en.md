@@ -104,7 +104,7 @@ DisplayName|AccessControlPolicy.AccessControlList.Grant.Grantee| Grantee name |s
 
 #### Error Codes
 
-There is no special error message for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Example
 

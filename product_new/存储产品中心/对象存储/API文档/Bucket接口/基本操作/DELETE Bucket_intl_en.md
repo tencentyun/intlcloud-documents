@@ -40,12 +40,7 @@ The response body of this API is empty.
 
 #### Error Codes
 
-The implementation of this operation returns the following special error messages. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-
-Error Code | Description | HTTP Status Code
----|---|---
-BucketNotEmpty| The bucket is not empty |409 Conflict
-NoSuchBucket| The specified bucket does not exist |404 Not Found
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Example
 

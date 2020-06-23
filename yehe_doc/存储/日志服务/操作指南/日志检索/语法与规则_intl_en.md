@@ -34,10 +34,8 @@ The following search syntax can be used in searches:
 | `__FILENAME__` | It is used to search for the logs from a specified file, and wildcard is supported, such as `__FILENAME__:/var/log/access.*`. |
 
 >
-> - The priority order of operators from high to low is: `:` > `"` > `()` > `and` > `not` > `or`.
 > - Numeric fields must be set to a double or long type before you can search for a range; otherwise, you may get different results than expected.
 > - If b is text, then, the difference between `a=b` and `a:b` lies in that a equals b in the former, while a contains b in the latter (the search is processed based on the word segmentation logic and fuzzy search is supported).
-> - Syntax keywords are case-insensitive.
 
 
 

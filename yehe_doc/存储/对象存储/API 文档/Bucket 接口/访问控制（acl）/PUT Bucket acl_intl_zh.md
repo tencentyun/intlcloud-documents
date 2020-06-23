@@ -127,12 +127,7 @@ ID|AccessControlPolicy.AccessControlList.Grant.Grantee|被授权者的完整 ID�
 
 #### 错误码
 
-此接口的特殊错误信息如下所述，全部错误信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档。
-
-错误码|描述|HTTP 状态码
----|---|---
-InvalidDigest|给定的 Content-MD5 值不合法|400 Bad Request
-MalformedXML|请求体的 XML 格式不符合 XML 语法|400 Bad Request
+此接口遵循统一的错误响应和错误码，详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档。
 
 ## 实际案例
 

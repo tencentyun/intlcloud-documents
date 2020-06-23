@@ -60,14 +60,10 @@ Currently, the following versions of security protocols are supported:
 
 ### MySQL/TencentDB for MariaDB client
 
-- Scheme 1 (subject to the current default configuration of the client):
-```
-mysql -h9.30.17.168 -P24082  -utest -ptest123 
-```
-- Scheme 2 (explicitly specify the encryption protocol):
-```
-mysql -h9.30.17.168 -P24082  -utest -ptest123 --tls-version=TLSv1.2
-```
+mysql -P 3306 -h 10.xx.xx.168  -u test -p --ssl
+After successful login, run the `\s` command to query the login status：
+
+`SSL: Cipher in use is AES256-GCM-SHA384` in the returned result indicates that the user is connecting to the MySQL server over SSL.
 
 ### Graphical clients such as Navicat
 Directly select **Use SSL** without selecting **Use authentication** to connect.

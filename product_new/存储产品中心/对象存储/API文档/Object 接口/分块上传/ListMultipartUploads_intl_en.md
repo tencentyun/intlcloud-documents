@@ -4,9 +4,9 @@ This API is used to query the ongoing multipart uploads. A single request operat
 > To make the request, you need to have the permission to read the bucket.
 
 ## Request
-### Sample Request
+####  Sample Request
 
-```
+```shell
 GET /?uploads HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -15,16 +15,12 @@ Authorization: Auth String
 
 > Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information)
 
-### Request Headers
+####  Request Headers
 
-#### Common Headers
 The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-#### Special Headers
-This request operation does not use any special request header.
 
-### Request Parameters
-
+####  Request Parameters
 The content is described in details below: <style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
 
 | Name | Description | Type | Required |
@@ -36,21 +32,18 @@ The content is described in details below: <style  rel="stylesheet"> table th:nt
 | key-marker | Used together with `upload-id-marker`. <Br>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed; <Br/>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | String | No |
 | upload-id-marker | Used together with `key-marker`. <Br>If `key-marker` is not specified, `upload-id-marker` will be ignored; <Br/>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | String | No |
 
-### Request Body
+####  Request Body
 The request body of this request is empty.
 
 ## Response
 
-### Response Headers
-#### Common Response Headers
-This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
-#### Special Response Headers
-This response does not use any special response header.
+####  Response Headers
+This API only returns common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 ### Response Body
 This response body returns **application/xml** data. The following contains all the node data:
 
-```
+```shell
 <ListMultipartUploadsResult>
   <Bucket></Bucket>
   <Encoding-Type></Encoding-Type>
@@ -82,7 +75,7 @@ This response body returns **application/xml** data. The following contains all 
 </ListMultipartUploadsResult>
 ```
 
-The data are described in details below:
+The nodes are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
@@ -136,35 +129,30 @@ Content of the Container node `CommonPrefixes`:
 | ------------ | ------------------------------------- | --------- |:--|
 | Prefix | ListMultipartUploadsResult.CommonPrefixes | Displays a specific common prefix | String |
 
-### Error Analysis
-The following describes some frequent special errors that may occur when you make this request:
+### Error Codes
 
-| Error Code | HTTP Status Code | Description |
-| ------------- | ------------------------------------ | ------------- |
-| InvalidArgument | 400 Bad Request | The value of `max-uploads` must be an integer between 0 and 1,000; otherwise, `InvalidArgument` will be returned. <br>The value of `encoding-type` can only be `url`; otherwise, `InvalidArgument` will be returned |
-
-For more COS error codes or a complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Example
 
 ### Request
 
-```
+```shell
 GET /?uploads HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Wed, 18 Jan 2015 21:32:00 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUjfGFO&q-sign-time=1484727508;32557623508&q-key-time=1484727508;32557623508&q-header-list=host&q-url-param-list=uploads&q-signature=5bd4759a7309f7da9a0550c224d8c61589c9dbbf
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUj****&q-sign-time=1484727508;32557623508&q-key-time=1484727508;32557623508&q-header-list=host&q-url-param-list=uploads&q-signature=5bd4759a7309f7da9a0550c224d8c61589c9****
 ```
 
 ### Response
 
-```
+```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 1203
 Date: Wed, 18 Jan 2015 21:32:00 GMT
 Server: tencent-cos
-x-cos-request-id: NTg3ZjI0ZGRfNDQyMDRlXzNhZmRfMjRl
+x-cos-request-id: NTg3ZjI0ZGRfNDQyMDRlXzNhZmRf****
 
 <ListMultipartUploadsResult>
     <Bucket>examplebucket-1250000000</Bucket>

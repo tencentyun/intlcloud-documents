@@ -33,7 +33,7 @@ This API only uses common request headers. For more information, see [Common Req
 
 #### Request Body
 
-This API does not have a request body.
+The request body of the request is empty.
 
 ## Response
 
@@ -136,7 +136,7 @@ gg| MaxKeys | ListBucketResult | The maximum number of entries returned in a sin
 
 #### Error codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Use cases
 

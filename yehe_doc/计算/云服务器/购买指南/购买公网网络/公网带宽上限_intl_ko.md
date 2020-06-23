@@ -1,0 +1,62 @@
+## 아웃바운드 대역폭 최댓값(다운스트림 대역폭)
+
+공용 네트워크 대역폭 최댓값은 기본적으로 아웃바운드 대역폭 최댓값, 즉 CVM에서 유출되는 대역폭으로 설정되어 있습니다. 공용 네트워크의 대역폭 최댓값은 네트워크 과금 방식에 따라 다르며, 자세한 내용은 다음과 같습니다.
+- 2020년 2월 24일 00:00 이후에 생성한 기기의 경우, 다음의 규칙을 따릅니다.
+<table>
+<tr><th rowspan="2">네트워크 과금 방식</th><th colspan="2">인스턴스</th><th rowspan="2">대역폭 최댓값의 설정 가능 범위(Mbps)</th></tr>
+<tr><th>인스턴스 과금 방식</th><th>인스턴스 구성</th></tr>
+<tr><td>트래픽 과금</td><td>종량제 인스턴스</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>대역폭 과금</td><td>종량제 인스턴스</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>공유 대역폭</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
+</table>
+
+- 2020년 2월 24일 00:00 이전에 생성한 기기의 경우, 다음의 규칙을 따릅니다.
+<table>
+<tr><th rowspan="2">네트워크 과금 방식</th><th colspan="2">인스턴스</th><th rowspan="2">대역폭 최댓값의 설정 가능 범위(Mbps)</th></tr>
+<tr><th style="width: 18.5607%;">인스턴스 과금 방식</th><th style="width: 24.5814%;">인스턴스 구성</th></tr>
+<tr><td>트래픽 과금</td><td>종량제 인스턴스</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>대역폭 과금</td><td>종량제 인스턴스</td><td>ALL</td><td>0 - 100</td></tr>
+<tr><td>공유 대역폭</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
+</table>
+
+
+## 인바운드 대역폭 최댓값(업스트림 대역폭)
+
+공용 네트워크의 인바운드 대역폭은 CVM 인스턴스에 유입되는 대역폭을 의미합니다.
+- 사용자가 구매한 고정 대역폭이 10Mbps보다 큰 경우, Tencent Cloud는 구매한 대역폭과 동일한 외부 네트워크 인바운드 대역폭을 할당합니다.
+- 사용자가 구매한 고정 대역폭이 10Mbps 이하인 경우, Tencent Cloud는 10Mbps의 외부 네트워크 인바운드 대역폭을 할당합니다.
+
+## 대역폭 피크
+대역폭 피크는 주로 트래픽 과금과 대역폭 과금, 이 두 가지 유형으로 나뉩니다. 두 유형에서 트래픽 피크의 의미가 약간 다르며, 그 차이는 다음과 같습니다.
+
+| 트래픽 과금 | 대역폭 과금(시간당 트래픽 및 월간 트래픽 포함) |
+|---------|---------|
+| 대역폭 피크는 대역폭의 최댓값 피크를 나타낼 뿐, 피크값의 제한 여부 기준이 되지는 못합니다. 대역폭 리소스 경쟁이 일어나면 대역폭 피크가 제한될 수 있습니다. | 대역폭 피크가 피크값의 제한 여부 기준이 될 수 있습니다. 대역폭 리소스 경쟁이 일어나도 대역폭 피크가 확보되며 제한되지 않습니다. |
+
+## 대역폭 최댓값 상향 조정
+
+실제 필요에 따라 적합한 조정 방식을 선택하세요.
+- [네트워크 과금 방식 조정(대역폭 과금)](#AdjustNetworkModeByBandwidth)
+- [네트워크 과금 방식 조정(대역폭 패키지 과금)](#AdjustNetworkModeByBandwidthPackage)
+
+인스턴스 및 네트워크의 과금 방식을 조정할 수 없는 경우, [티켓 제출](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%20CVM&step=1)을 통해 대역폭 최댓값 상향 조정을 신청하시면 빠르게 피드백해 드리겠습니다.
+
+<span id="AdjustNetworkModeByBandwidth"></span>
+### 네트워크 과금 방식 조정(대역폭 과금)
+
+1. 인스턴스의 과금 방식을 트래픽 과금에서 대역폭 과금으로 변경할 때의 자세한 작업 방식은 [네트워크 사양 조정](https://intl.cloud.tencent.com/document/product/213/15517)을 참조 바랍니다.
+2. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
+3. 대역폭을 조정할 인스턴스를 찾아 오른쪽의 [More]>[Resource Adjustment]>[Adjust Network]을 클릭합니다.
+4. 팝업된 '네트워크 조정' 창에서 타깃 대역폭의 최댓값을 조정한 뒤 [OK]를 클릭합니다.
+
+<span id="AdjustNetworkModeByBandwidthPackage"></span>
+### 네트워크 과금 방식 조정(대역폭 패키지 과금)
+
+1. 인스턴스의 과금 방식을 트래픽 과금에서 대역폭 과금으로 변경합니다.
+> 대역폭 패키지 내의 인스턴스는 대역폭을 무제한으로 조절하는 걸 지원합니다. 
+>
+2. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
+3. 대역폭을 조정할 인스턴스를 찾아 오른쪽의 [More]>[Resource Adjustment]>[Adjust Network]을 클릭합니다.
+4. 아래 이미지와 같이, 팝업된 네트워크 조정 창에서 타깃 대역폭을 조정한 뒤 [OK]를 클릭합니다.
+![](https://main.qcloudimg.com/raw/4e6a0a6556532e91d7b3101c97c62b77.png) 
+
