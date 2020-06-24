@@ -8,10 +8,16 @@
     <th width=20%>相关文档</th>
 </tr>
     <tr>
+       <td>SDK 1.2.0.1 版本发布</td>
+       <td><li> 支持统计厂商通道通知点击事件 </li> <li> 丰富通知自定义样式</li> <li> 升级 OPPO 推送 SDK V2.1.0</li> </td>
+        <td>2020-06-23</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">下载 SDK</a></td>
+    </tr>
+    <tr>
         <td>SDK 1.1.6.3版本发布</td>
         <td> 第三方厂商通道集成优化</td>
         <td>2020-06-04</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">下载 SDK</a></td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">-</a></td>
     </tr>
 </table>
 
@@ -29,7 +35,7 @@
         <td>SDK 1.1.6.1版本发布</td>
         <td>修复 HTTPS 证书校验漏洞</td>
         <td>2020-04-28</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">下载SDK</a></td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">-</a></td>
     </tr>
     <tr>
         <td>SDK 1.1.6.0版本发布</td>
