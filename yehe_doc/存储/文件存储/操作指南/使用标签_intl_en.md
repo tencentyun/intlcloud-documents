@@ -1,6 +1,6 @@
 ## Overview
 
-A [tag](https://intl.cloud.tencent.com/document/product/651) provided by Tencent Cloud to identify cloud resources is a key-value pair (Key-Value). Tags can help you easily classify and manage cloud resources from various dimensions (such as business, purpose, owner, etc.) It should be noted that Tencent Cloud will not use the tags you set for any other purpose than your management of Tencent Cloud resources. This document will help you understand how to edit tags on file storage resources.
+[Tags](https://intl.cloud.tencent.com/document/product/651) are key-value pairs provided by Tencent Cloud for easy resource identification. You can use tags to categorize and manage cloud resources. Tencent Cloud will not use your tags, they are solely used by you to manage your resources. This document describes how to edit tags for file storage resources.
 
 ## Use Limits
 
