@@ -4,7 +4,7 @@ CLS offers real-time log query to help identify business problems quickly. You n
 
 Log search is performed based on the keywords of a log that are matched with the information you entered. You can flexibly adjust the keywords by customizing a word delimiter or specifying whether to enable case sensitivity depending on your business needs. The following example uses a log to explain the word delimiters and case-sensitivity.
 
-```plaintext
+```shell
 10002345987;write;ERROR;code=400;topic does not exist;
 ```
 

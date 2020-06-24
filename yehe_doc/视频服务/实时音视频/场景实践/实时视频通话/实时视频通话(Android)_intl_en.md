@@ -1,3 +1,6 @@
+To quickly implement the video call feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCVideoCall` component and implement custom UI.
+
+<span id="ui"> </span>
 ## Reusing Demo UI
 <span id="ui.step1"></span>
 ### Step 1. Create an application
@@ -9,15 +12,17 @@
 <span id="ui.step2"></span>
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the corresponding card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android)** to enter GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)**), and download the relevant SDK and supporting demo source code.
+ ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="ui.step3"></span>
 ### Step 3. Configure demo project files
 1. Decompress the source package downloaded in [step 2](#ui.step2).
-2. Find and open the `Android/TRTCDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` file.
+2. Find and open the `Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` file.
 3. Set the relevant parameters in the `GenerateTestUserSig.java` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
+	<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
@@ -43,6 +48,7 @@ The source code folder `trtcvideocalldemo` contains two subfolders: `ui` and `mo
 ## Implementing Custom UI
 
 The source code folder `trtcvideocalldemo` contains two subfolders: `ui` and `model`. The `model` folder contains the implemented reusable open-source component `TRTCVideoCall`. You can find the API functions provided by this component in the `ITRTCVideoCall.java` file.
+![](https://main.qcloudimg.com/raw/777f4837df516344a002af7c064b4072.jpg)
 
 You can use the open-source component `TRTCVideoCall` to implement your own UI, i.e., only reusing the `model` to implement your custom UI.
 
@@ -96,7 +102,7 @@ Configure application permissions in `AndroidManifest.xml`. The SDK requires the
 <uses-permission android:name="android.permission.BLUETOOTH" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-feature android:name="android.hardware.Camera"/>
+<uses-feature android:name="android.hardware.camera"/>
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 
@@ -112,6 +118,8 @@ Copy all files in the following directory to your project:
 ```
 trtcvideocalldemo/src/main/java/com/tencent/liteav/trtcvideocalldemo/model 
 ```
+
+![](https://main.qcloudimg.com/raw/82f9ccdb79eac798025905c18ddff142.gif)
 
 <span id="model.step4"> </span>
 ### Step 4. Initialize and log in to the component
@@ -223,8 +231,9 @@ sCall.openCamera(true, txCloudVideoView);
 >If your business is online customer service or any other service that does not require the offline answering feature, you only need to complete [step 1](#model.step1) to [step 6](#model.step6) for integration. If your business is used for social networking, you are recommended to implement offline answering.
 
 The IM SDK supports offline push; however, different Android phone vendors have different offline push services, so the access complexity is higher than that on iOS. You need to complete the corresponding settings to meet its availability standard.
-1. Apply for the certificate required by the corresponding vendor's push channel, configure it in the IM Console, and add the certificate and ID according to the push requirements. For detailed directions, please see [IM > Offline Push (Android)](https://intl.cloud.tencent.com/document/product/1047/34336).
+1. Apply for the certificate required by the corresponding vendor's push channel, configure it in the IM Console, and add the certificate and ID according to the push requirements.
 2. Modify the commented part of the `sendModel` function in the `TRTCVideoCallImpl` configuration.
+ ![](https://main.qcloudimg.com/raw/be240b11a0e3fe79cc6b9bf619fe0623.png)
 
 
 <span id="api"> </span>

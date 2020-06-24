@@ -1,0 +1,7 @@
+启动配置本身不允许编辑，但伸缩组可以更换启动配置。如果应用程序升级、数据更新后，需要更换启动配置，请按以下步骤操作：
+
+1. 请参考 [创建启动配置](https://intl.cloud.tencent.com/document/product/377/3579)，新建一个启动配置。
+2. 前往 “[伸缩组](https://console.cloud.tencent.com/autoscaling/group)” 页面，选择需配置伸缩组 ID，进入该伸缩组详情页面。
+3. 单击“基本信息”模块右上角的【编辑】，更新启动配置项。如下图所示：
+![](https://main.qcloudimg.com/raw/dcf76968439d728860e23c70d1fc63f6.png)
+4. 编辑完成后单击【保存】即可。

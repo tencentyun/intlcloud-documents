@@ -5,9 +5,9 @@ When creating an alias or adjusting the traffic configuration, you can point the
  - If you want to randomly route requests to any two versions by the specified weight in percentages, you can configure [random routing by weight](#RandomRoutingByWeight).
  - If you want to route requests containing certain content to the specified version, you can configure [routing by rule](#RoutingByRule).
 
-<span id="RandomRoutingByWeight"></span>
+
 ## Directions
-### Random routing by weight
+### Random routing by weight<span id="RandomRoutingByWeight"></span>
 This document uses configuration during alias creation as an example to describe how to configure routing. After the alias is created, traffic will be randomly routed to two versions by the specified percentages. The steps are as follows:
 
 1. Enter the "Create Alias" window.
@@ -21,8 +21,8 @@ Main parameters include:
 
 
 
-<span id="RoutingByRule"></span>
-### Routing by rule
+
+### Routing by rule<span id="RoutingByRule"></span>
 The current rule syntax for routing by rule consists of the following three parts:
 
 - **Match key**<span id="matchKey"></span>
@@ -50,5 +50,5 @@ Main parameters include:
 According to the configuration, when SCF invokes the function alias through the `invoke` API, if the `routingKey` parameter is set to `{"User":"Bob"}`, version 2's code and configuration will be used during this execution; if the `routingKey` parameter is not set or set to another value, version 1's code and configuration will be used.
     2. For example, if you have two versions (version 3 and version 2) and want to set the match rule of version 3 to `invoke.headers.userHash range [1,50]` and set that of version 2 to "miss", you can set the fields as shown below:
     ![](https://main.qcloudimg.com/raw/a3e4da8c3134c69c820d14fc534d7b17.png)
-		According to the configuration, when SCF invokes the function alias using the `invoke` API, if the  `routingKey` parameter is set to `{"userHash":30}`, the code and configuration of version 3 will be used; if `routingKey` is not set or set to any value other than [1, 50], such as  `{"userHash":80}`, the code and configuration of version 2 will be used.
+		According to the configuration, when SCF invokes the function alias through the `invoke` API, if the `routingKey` parameter is set to `{"userHash":30}`, version 3's code and configuration will be used during this execution; if the `routingKey` parameter is not set or set to another value such as `{"userHash":80}`, version 2's code and configuration will be used.
 
