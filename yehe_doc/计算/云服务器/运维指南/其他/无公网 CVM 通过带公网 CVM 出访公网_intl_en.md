@@ -1,9 +1,9 @@
-## Scenario
-If you choose 0 Mbps bandwidth for a purchased CVM, this CVM will unable to access the public network. This document uses CentOS 7.5 as an example to describe how a CVM without a public IP address can access the public network by connecting to a CVM with a public IP address through a PPTP VPN.
+## Overview
+If you select a bandwidth with an upper limit of 0 Mbps when purchasing a CVM, the CVM will be unable to access the public network. This document uses CentOS 7.5 as an example to describe how a CVM without a public IP address can access the public network by connecting to a CVM with a public IP address through a PPTP VPN.
 
 
 ## Prerequisites
-- Two CVMs in the same VPC instance have been created. One **CVM does not have a public IP address** and the other **has a public IP address**.
+- Two CVMs in the same VPC instance have been created. One **CVM does not have a public IP address** and the other **CVM has a public IP address**.
 - The private IP address of the CVM with a public IP address has been obtained.
 
 ## Directions
@@ -18,32 +18,32 @@ yum install -y pptpd
 ```
 vim /etc/pptpd.conf
 ```
-4. Press i to switch to the editing mode and append the following code to the file.
+4. Press **i** to switch to the editing mode and add the following code at the bottom of the file.
 ```
 localip 192.168.0.1
 remoteip 192.168.0.234-238,192.168.0.245
 ```
-5. Press Esc, enter **:wq**, and save and close the file.
+5. Press **Esc**, enter **:wq**, and save and close the file.
 6. Run the following command to open the `/etc/ppp/chap-secrets` configuration file:
 ```
 vim /etc/ppp/chap-secrets
 ```
-7. <span id="step7">Press i to switch to the editing mode and append the username and password for connecting to PPTP in the following format to the file.</span>
+7. <span id="step7">Press **i** to switch to the editing mode and add the username and password for connecting to PPTP in the following format at the bottom of the file.</span>
 ```
-<User name>    pptpd    <Password>    *
+<Username>    pptpd    <Password>    *
 ```
-For example, if the username and password for connecting to PPTP are root and 123456 respectively, append the following code:
+For example, if the username and password for connecting to PPTP are root and 123456 respectively, add the following code:
 ```
 root    pptpd    123456    *
 ```
-8. Press Esc, enter **:wq**, and save and close the file.
+8. Press **Esc**, enter **:wq**, and save and close the file.
 9. Run the following command to start the PPTP service:
 ```
 systemctl start pptpd
 ```
-10. Run the following commands in sequence to enable forwarding:
+10. Run the following commands sequentially to enable forwarding:
 ```
-echo 1 -> /proc/sys/net/ipv4/ip_forward
+echo 1 > /proc/sys/net/ipv4/ip_forward
 iptables -t nat -A POSTROUTING -o eth0 -s 192.168.0.0/24 -j MASQUERADE
 ```
 
@@ -64,9 +64,9 @@ pptpsetup --create test --server 10.100.100.1 --username root --password 123456 
 ```
 4. Run the following command to connect to PPTP:
 ```
-pppd call test (the file name created in step 3)
+pppd call test (the configuration file name created in step 3)
 ```
-5. Run the following command to set routes:
+5. Run the following commands to set routes:
 ```
 route add -net 10.0.0.0/8 dev eth0
 route add -net 172.16.0.0/12 dev eth0
@@ -77,7 +77,7 @@ route add -net 100.64.0.0/10 dev eth0
 route add -net 0.0.0.0 dev ppp0
 ```
 
-### Checking whether the configuration is successful
+### Checking whether the configuration was successful
 Run the following command on the CVM without a public IP address to ping any external network address and check whether it can be pinged through:
 ```
 ping -c 4 <External network address>

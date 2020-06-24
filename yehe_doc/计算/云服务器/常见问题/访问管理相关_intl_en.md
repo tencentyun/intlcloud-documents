@@ -1,7 +1,7 @@
 ### How can I create a custom policy?
 
 If preset policies do not meet your requirements, you can create a custom policy.
-The syntax for creating a custom policy is as follows:
+The syntax of a custom policy is as follows:
 
 ```
 {
@@ -26,7 +26,7 @@ The syntax for creating a custom policy is as follows:
 
 To allow a user to query CVM instances but not to create, delete, start, or shut down the instances, enable the QcloudCVMInnerReadOnlyAccess policy.
 
-To do this, log in to the CAM console. On the [Policy Management](https://console.cloud.tencent.com/cam/policy) page, search for **CVM** to find the policy.
+To do this, log in to the CAM Console. On the [Policies](https://console.cloud.tencent.com/cam/policy) page, search for **CVM** to find the policy.
 
 The policy syntax is as follows:
 
@@ -48,14 +48,14 @@ The policy syntax is as follows:
 
 The preceding policy **grants users the permissions to perform the following operations**:
 
-- All operations starting with "Describe" in CVM
-- All operations starting with "Inquiry" in CVM
+- All operations starting with "Describe" in CVM.
+- All operations starting with "Inquiry" in CVM.
 
 ### How can I configure the read-only policy for CVM-related resources?
 
 To allow a user to query CVM instances and relevant resources (VPC and CLB instances) but not to create, delete, start, or shut down the instances and relevant resources, enable the QcloudCVMReadOnlyAccess policy.
 
-To do this, log in to the CAM console. On the [Policy Management](https://console.cloud.tencent.com/cam/policy) page, search for **CVM** to find the policy.
+To do this, log in to the CAM Console. On the [Policies](https://console.cloud.tencent.com/cam/policy) page, search for **CVM** to find the policy.
 
 The policy syntax is as follows:
 
@@ -96,10 +96,10 @@ The policy syntax is as follows:
 }
 ```
 
-The preceding policy grants users the permissions to perform the following operations:
+The preceding policy **grants users the permissions to perform the following operations**:
 
-- All operations starting with "Describe" and "Inquiry" in CVM
-- All operations starting with "Describe", "Inquiry", and "Get" in VPC
-- All operations starting with "Describe" in CLB
-- All operations in the monitor
+- All operations starting with "Describe" and "Inquiry" in CVM.
+- All operations starting with "Describe", "Inquiry", and "Get" in VPC.
+- All operations starting with "Describe" in CLB.
+- All operations in the monitor.
 
