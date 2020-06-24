@@ -14,7 +14,7 @@ The TRTC service consists of two types of server nodes: access servers and proxy
 
 In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 50 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
 
-![](https://main.qcloudimg.com/raw/b88a624c0bd67d5d58db331b3d64c51c.gif)
+![](https://main.qcloudimg.com/raw/afd9cefdfe72a2914fd55f8586f2c7e0.jpg)
 
 ## Sample Code
 
@@ -29,7 +29,7 @@ You are recommended to read [Run SimpleDemo (Electron)](https://intl.cloud.tence
 
 If the SimpleDemo can run properly, it means that you have mastered the method of installing Electron in your project.
 
-If the SimpleDemo cannot run, the problem is likely to be related to Electron download and installation. In this case, you can refer to the Electron FAQs or Electron's official [installation guide](https://www.electronjs.org/docs/tutorial/installation) for assistance.
+If the SimpleDemo cannot run, the problem is likely to be related to Electron download and installation. In this case, you can refer to Electron's official [installation guide](https://www.electronjs.org/docs/tutorial/installation) for assistance.
 
 <span id="step2"> </span>
 ### Step 2. Integrate trtc-electron-sdk into your project
@@ -261,7 +261,7 @@ In TRTC, two anchors in different rooms can use the "cross-room call" feature to
     For example, when anchor A in room "001" uses `connectOtherRoom()` to successfully call anchor B in room "002", all users in room "001" will receive the `onUserVideoAvailable(B, true)` and `onUserAudioAvailable(B, true)` callbacks of anchor B, and all users in room "002" will receive the `onUserVideoAvailable(A,  true)` and `onUserAudioAvailable(A, true)` callbacks of anchor A.
 3. Users in both rooms can call [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) to display the video image of the anchor in the other room, and audio will be automatically played back.
 
-![](http://main.qcloudimg.com/raw/ac5b230340ebdab69998f95844fa61c1/%E4%B8%BB%E6%92%AD%E8%BF%9E%E9%BA%A6%E6%97%B6%E5%BA%8F%E5%9B%BE.png)
+![](https://main.qcloudimg.com/raw/292309441c681909c6a98a715f29fe77.jpg)
 
 ```javascript
 // Sample code: cross-room co-anchoring
