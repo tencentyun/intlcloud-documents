@@ -95,7 +95,7 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
 | 手机品牌   | xg_auto_devicebrand  | Xiaomi，vivo等             |
 | 手机机型   | xg_auto_deviceversion | MI 9 SE，vivo X9Plus 等             |
 
->详细使用方法可参考[标签推送示例](#biaoqianshili )。
+>?详细使用方法可参考[标签推送示例](#biaoqianshili )。
 
 - 全量推送：推送给全部设备
 ```json
@@ -212,12 +212,12 @@ Android 平台具体字段如下表：
 
 | 字段名            | 类型     |   父项目 | 默认值  | 必需   | 参数描述                                     |
 | -----               | ------   | ----       |-----      |    ---- | ----------- ------------------------ |
-| title                | String  |       message       | 无          | 是        | 消息标题  |                                   |
+| title                | String  |       message       | 无          | 是        | 消息标题  |                                 
 | content        | String | message       |无    | 是    | 消息内容                                     |
-| accept_time    | Array  | message       |无    | 否    | 消息将在哪些时间段允许推送给用户。<li>单个元素由"start" 和"end" 组成的起止时间对组成。<li>"start" 和 "end" 由 hour （小时）和 min（分钟）描述对应时刻，详细参考具体示例。<li>**注意：**因厂商限制， 仅对 TPNS 通道有效。                 |
+| accept_time    | Array  | message       |无    | 否    | 消息将在哪些时间段允许推送给用户。<li>单个元素由"start" 和"end" 组成的起止时间对组成。<li>"start" 和 "end" 由 hour （小时）和 min（分钟）描述对应时刻，详细参考具体示例。<li>**注意：**因厂商限制， 仅对 TPNS 通道有效。|
 | thread_id       | String  | message       |无    | 否    | 通知分组折叠的组别识别名 |
-| thread_sumtext      | String  | message       |无    | 否    | 通知分组折叠后显示的摘要，thread_id 非空时有效 |
-| xg_media_resources    | String  | message       |无    | 否    | 图片富媒体元素地址。<li>**注意：**仅 TPNS 、华为、小米和 OPPO 通道支持该参数下发，其他通道不下发该参数。 |
+| thread_sumtext      | String  | message       |无    | 否    | 通知分组折叠后显示的摘要，thread_id 非空时有效 |	
+| xg_media_resources    | String  | message       |无    | 否    | 通知栏大图片url地址。<li>**注意：**仅 TPNS、小米推送通道支持该参数下发，其他通道不下发该参数。 |
 | xg_media_audio_resources    | String  | message       |无    | 否    | 音频富媒体元素地址。<li>支持 mp3 格式音频，建议大小在5MB以内。<li>**注意：**仅 TPNS 通道支持该参数下发，其他通道不下发该参数。 |
 | android              | Object  | message      |无     |否    | 安卓通知高级设置结构体，可参考 [Android 结构体说明](#intent1)|
 
@@ -226,7 +226,7 @@ Android 平台具体字段如下表：
 
 | 字段名            | 类型     |   父项目 | 默认值  | 必需   | 参数描述                                     |
 | -----           | ------   | ----       |-----      |    ---- | ----------- ------------------------    |
-| n_ch_id     | String    | Android      |无    | 否    | 通知渠道 ID（仅 TPNS 推送通道生效），请参见 [创建通知渠道](https://intl.cloud.tencent.com/document/product/1024/30715)                                 |
+| n_ch_id     | String    | Android      |无    | 否    | 通知渠道 ID（仅 TPNS 推送通道生效），请参见 [创建通知渠道](https://intl.cloud.tencent.com/document/product/1024/30715) |
 | n_ch_name     | String    | Android      |无    | 否    | 通知渠道名称（仅 TPNS  推送通道生效） ，请参见 [创建通知渠道](https://intl.cloud.tencent.com/document/product/1024/30715)|
 | xm_ch_id    | String    |   Android      |无    | 否    | 小米渠道 ID（仅小米推送通道生效）|
 | hw_ch_id   | String    |   Android      |无    | 否    | 华为渠道 ID（仅 华为推送通道生效）|
@@ -241,7 +241,7 @@ Android 平台具体字段如下表：
 | lights         | Integer    |Android       |1    | 否    | 是否使用呼吸灯<li>0：不使用呼吸灯</li><li>1：使用呼吸灯</li>       |
 | clearable      | Integer    | Android      |1    | 否    | 通知栏是否可清除                                 |
 | icon_type      | Integer    | Android      |0    | 否    | 通知栏图标是应用内图标还是上传图标<li>0：应用内图标</li><li>1：上传图标</li> |
-| icon_res       | String | Android       |无    | 否    | 应用内图标文件名或者下载图标的 url 地址                     |
+| icon_res       | String | Android       |无    | 否    | 通知栏缩略图 url 地址，仅 TPNS、华为通道支持                     |
 | style_id       | Integer    | Android       |1    | 否    | 设置是否覆盖指定编号的通知样式                          |
 | small_icon     | String | Android      |无    | 否    | 消息在状态栏显示的图标，若不设置，则显示应用图标                 |
 | action         | Object   | Android       |有    | 否    | 设置点击通知栏之后的行为，默认为打开 App   |
@@ -327,7 +327,7 @@ iOS 平台具体字段如下表：
 | content        | String | message       |无    | 是    | 消息内容 
 | thread_id       | String  | message       |无    | 否    | 通知分组折叠的组别识别名 |
 | ios    | Object       |message  | 无    | 是    | iOS 消息结构体，请参考[iOS 字段说明](#iOS字段说明) |
-| xg_media_resources    | String     | message | 无    | 否    | 富媒体元素地址                          |
+| xg_media_resources    | String     | message | 无    | 否    | 图片、音视频富媒体元素url地址                          |
 | xg     | String     |message | 无    | 否    | 系统保留 key，应避免使用            |
 
 
@@ -370,7 +370,7 @@ iOS 平台具体字段如下表：
 ### Android 透传消息
 透传消息，Android 平台特有，即不显示在手机通知栏中的消息，可以用来实现让用户无感知的向 App 下发带有控制性质的消息。
 
->因厂商限制，Android 透传消息只通过 TPNS 通道下发，无法通过厂商通道下发。
+>!因厂商限制，Android 透传消息只通过 TPNS 通道下发，无法通过厂商通道下发。
 
 Android 平台具体字段如下表：
 
@@ -470,7 +470,7 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的OPPO 、vivo�
 | thread_sumtext      | String  | message       |无    | 否    | 通知分组折叠后显示的摘要，安卓端使用，thread_id 非空时有效|
 
 
->对于 collapse_id，有以下使用条件：
+>?对于 collapse_id，有以下使用条件：
 - 暂不支持用户自定义此参数，需要 TPNS 生成的collapse_id<li>目前仅支持 TPNS 通道、APNS 通道、小米通道、魅族通道以及华为系统版本EMUI10及以上的设备<li>对于华为通道，覆盖消息时携带自定义参数需要使用 [intent](#intent1) 方式，如使用 custom_content 方式携带自定义参数，接口层会进行拦截<li>目前 OPPO 通道 VIVO 通道不支持覆盖消息。当新创建覆盖消息时可通过 force_collapse 字段设置为 false 来关闭vivo、OPPO通道的下发
 <span id="channel_rules参数说明1"></span>
 ### channel_rules 参数说明
