@@ -3,8 +3,7 @@
 You can use the lifecycle management feature when you need to change the storage class or delete specified objects regularly to reduce costs. COS will automatically change the storage class or delete specified objects within the specified time frame according to the rules you set. For more information, see [Lifecycle Overview](https://intl.cloud.tencent.com/document/product/436/17028).
 
 >
-> - A lifecycle can be set to as long as 3,650 days.
-> - Currently, MAZ-enabled buckets allow you to set the specified number of days/time after which an object is set to expire and be deleted, but do not support transitioning objects to STANDARD_IA or ARCHIVE storage.
+> A lifecycle can be set to as long as 3,650 days.
 
 ## Directions
 
