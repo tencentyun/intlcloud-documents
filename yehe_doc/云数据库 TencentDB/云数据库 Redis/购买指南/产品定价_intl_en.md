@@ -1,8 +1,10 @@
-# Cluster Edition Single Node Price      
+# Pay-as-you-go
+
+## Cluster edition single node pricing
 
 Instance price = number of shards * shard capacity * (1 + number of replicas) * node unit price per GB
 
-| Region | USD/GB/Hour (Tier 1) | USD/GB/Hour (Tier 2) | USD/GB/Hour (Tier 3) |
+| Region | Tier 1 (USD/GB/Hour) | Tier 2 (USD/GB/Hour) | Tier 3 (USD/GB/Hour) |
 | -------- | ---------------------- | ---------------------- | ---------------------- |
 | Beijing     | 0.017964               | 0.013464               | 0.008964               |
 | Chengdu     | 0.017964               | 0.013464               | 0.008964               |
@@ -23,11 +25,13 @@ Instance price = number of shards * shard capacity * (1 + number of replicas) * 
 | India     | 0.029916               | 0.022428               | 0.014940               |
 | Chongqing     | 0.017964               | 0.013464               | 0.008964               |
 
-# Standard Edition Single Node Price
 
-Instance price = memory capacity * (1 + number of replicas) * node unit price per GB
 
-| Region | USD/GB/Hour (Tier 1) | USD/GB/Hour (Tier 2) | USD/GB/Hour (Tier 3) |
+## Standard edition single node pricing
+
+Instance price = node capacity * (1 + number of replicas) * node unit price per GB
+
+| Region | Tier 1 (USD/GB/Hour) | Tier 2 (USD/GB/Hour) | Tier 3 (USD/GB/Hour) |
 | -------- | ---------------------- | ---------------------- | ---------------------- |
 | Beijing     | 0.015276               | 0.011457               | 0.007638               |
 | Chengdu     | 0.010653               | 0.007990               | 0.005326               |
@@ -48,3 +52,37 @@ Instance price = memory capacity * (1 + number of replicas) * node unit price pe
 | India     | 0.022512               | 0.016884               | 0.011256               |
 | Chongqing     | 0.010653               | 0.007990               | 0.005326               |
 
+# Monthly subscription
+
+## Standard edition pricing
+Instance price = node capacity * (1 + number of replicas) * node unit price per GB
+
+| Region (no region specified means there’s no distinction between regions) | Pricing type | Price (USD/GB/month) |
+| ------------------------------------------------------------ |  ---------------- | ------------------ |
+| Guangzhou, Shanghai, Beijing, Nanjing, Wuhan, Qingyuan | Linear | 5.4992736 | 
+| Thailand, India | Linear | 5.7525336 |
+| Taipei (China) | Linear | 9.23184 |
+| Russia | Linear | 9.261936 |
+| Japan, Seoul | Linear | 9.551376 |
+| Silicon Valley (US) | Linear | 10.4196816 |
+| Virginia | Linear | 5.7887136 |
+| Frankfurt | Linear | 15.5571624 |
+| Toronto, Hong Kong (China), Singapore | Linear | 7.163532 |
+| Chengdu, Chongqing | Linear | 3.8350224 |
+
+## Cluster edition pricing
+Instance price = number of shards * shard capacity * (1 + number of replicas) * node unit price per GB
+
+| Region (no region specified means there’s no distinction between regions) | Pricing type | Price (USD/GB/month) |
+| ------------------------------------------------------------ | ---------------- | ------------------ |
+| Guangzhou, Shanghai, Beijing, Nanjing, Wuhan, Qingyuan | Linear | 6.45408 |
+| Russia | Linear | 6.76512 |
+| Hong Kong (China) | Linear | 6.92064 |
+| Toronto | Linear | 7.54272 |
+| Silicon Valley (US), Thailand | Linear | 8.60544 |
+| Singapore | Linear | 9.22752 |
+| Seoul | Linear | 10.00512 |
+| Taipei (China) | Linear | 10.18656 |
+| India | Linear | 10.7568 |
+| Frankfurt | Linear | 10.47168 |
+| Japan | Linear | 11.06784 |

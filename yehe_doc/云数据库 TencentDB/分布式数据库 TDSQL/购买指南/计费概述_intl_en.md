@@ -1,7 +1,5 @@
->Beginning from May 1, 2020, TencentDB for MariaDB has reverted back to the original pricing mode where fees are calculated according to the number of nodes. The tiered pricing model also applies. This pricing adjustment might result in price changes for some instances. Please contact your sales rep if you have any questions. 
-
-## Billing Modes
-TencentDB for MariaDB provides two billing options.
+﻿## Billing Modes
+TDSQL provides 2 billing options:
 
 | Billing Mode | Payment Mode                                   | Application Scenario                                      |
 | -------- | ------------------------------------------ | ----------------------------------------------- |
@@ -10,7 +8,7 @@ TencentDB for MariaDB provides two billing options.
 
 The memory prices for pay-as-you-go adopts a tiered model based on the usage duration.
 
-| Usage Duration               | Tiered Price             |
+| Usage Duration              | Tiered Price             |
 | ---------------------- | -------------------- |
 | 0 hours<duration≤96 hours   | Tier 1 pay-as-you-go price applies |
 | 96 hours<duration≤360 hours | Tier 2 pay-as-you-go price applies |
@@ -18,17 +16,17 @@ The memory prices for pay-as-you-go adopts a tiered model based on the usage dur
 
 
 ## Node Specifications
-For nodes fees, see [Pricing](https://intl.cloud.tencent.com/document/product/237/36995). The available specifications are as follows.
+For nodes fees, see [Pricing](https://intl.cloud.tencent.com/document/product/1042/35777). The available specifications are as follows.
 
-| Configuration Type | Node CPU   |  Node Memory (GB) | 
+| Configuration Type | Node CPU   |  Node Memory |
 |  --------- | ---- | ---- |
-| High IO | 1 | 2 |
-| High IO | 2 | 4 |
-| High IO | 4 | 8 |
-| High IO | 6 | 16 |
-| High IO | 8 | 32 |
-| High IO | 12 | 64 |
-| High IO | 16 | 96 |
-| High IO | 20 | 128 |
-| High IO | 24 | 244 |
-
+|   High IO | 1 core   | 2 GB     |
+|   High IO | 2 cores   | 4 GB     |
+|   High IO | 4 cores   | 8 GB     |
+|   High IO | 5 cores   | 12 GB   |
+|   High IO | 6 cores   | 16 GB   |
+|   High IO | 8 cores   | 32 GB   |
+|   High IO | 12 cores | 64 GB   |
+|   High IO | 16 cores | 96 GB   |
+|   High IO | 20 cores | 128 GB |
+|   High IO | 24 cores | 244 GB |

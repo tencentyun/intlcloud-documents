@@ -1,102 +1,193 @@
-## Instance Price
+﻿
+## Billing Formula
+**Total fees = Instance fees + Backup capacity fees + Traffic fees**.
+**Instance fees = Node price x Number of nodes x Number of shards=(Node memory size x Memory price + Node disk size x Disk price) x Number of nodes x Number of shards**
 
-### Billing formula
-**Total fees = instance fees + backup capacity fees + traffic fees**
-**Instance fees = shard price * number of shards= (node memory * memory price + node disk * disk price) * number of nodes* number of shards**
->The number of nodes is the sum of master and slave instances. For example, one master and one slave are 2 nodes, while one master and two slaves are 3 nodes.
-### Billable items
+>The number of nodes is the sum of master and slave instances. For example, 1 master and 1 slave are 2 nodes, and 1 master and 2 slaves are 3 nodes.
+
+#### Billable Items
 <table>
 <thead>
 <tr>
-<th width="15%">Billable Item</th>
+<th width="28%" colspan = "2">Billable Items</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Memory specification fees<br></td>
-<td>Fees of the instance specification selected on the purchase page. Tiered pay-as-you-go billing mode is supported.</td>
+<td rowspan=3>Instance fees</td>
+</tr>
+<td>Memory fees<br></td>
+<td>Fees for the instance specification selected on the purchase page. Billing options include monthly subscription and pay-as-you-go.</td>
 </tr>
 <tr>
-<td>Storage capacity fees</td>
-<td>Fees of the disk capacity selected on the purchase page. Pay-as-you-go billing mode is supported.</td>
+<td >Storage capacity fees</td>
+<td>Fees for the disk capacity selected on the purchase page. Billing options include monthly subscription and pay-as-you-go.</td>
 </tr>
 <tr>
-<td>Backup capacity fees</td>
-<td>Fees of backup capacity and log capacity. The backup capacity mainly stores key logs and backup files during TDSQL operation, while the log capacity stores transaction logs (binlogs), error logs, and slow logs. 50% of the instance capacity is gifted as the backup capacity, and excessive capacity is free of charge too for now. </td>
+<td colspan = "2">Backup capacity fees</td>
+<td>Backup and log capacity fees. Backup capacity mainly stores key logs and backup files. Log capacity stores transaction logs (binlogs), error logs, and slow logs. Users will receive 50% of the instance capacity for free to use as backup capacity. Any usage exceeding this complimentary capacity will not be charged for now.</td>
 </tr>
 <tr>
-<td>Traffic fees</td>
-<td>This refers to the fees of public network traffic (free of charge for now).</td>
+<td colspan = "2">Traffic fees</td>
+<td >Public network traffic fees (currently free of charge).</td>
 </tr>
 </tbody></table>
 
-### Pay-as-you-go
+
+
+
+## Node Monthly Subscription Price (USD)
 
 <table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Disk Price (USD/GB/Month)</th>
+<th>Memory Price (USD/GB/Month)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Beijing, Shanghai, Guangzhou, Tianjin, Nanjing, Shenzhen, Qingyuan</td>
+<td>0.06</td>
+<td>9.43</td>
+</tr>
+<tr>
+<td>Chengdu, Chongqing</td>
+<td>0.06</td>
+<td>9.43</td>
+</tr>
+<tr>
+<td>Hong Kong (China)</td>
+<td>0.085</td>
+<td>12.3913</td>
+</tr>
+<tr>
+<td>Virginia</td>
+<td>0.07</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Silicon Valley</td>
+<td>0.068</td>
+<td>9.9</td>
+</tr>
+<tr>
+<td>Toronto</td>
+<td>0.1</td>
+<td>13.2609</td>
+</tr>
+<tr>
+<td>Frankfurt</td>
+<td>0.1</td>
+<td>9.9</td>
+</tr>
+<tr>
+<td>Singapore</td>
+<td>0.085</td>
+<td>12.6812</td>
+</tr>
     <tr>
-        <td>Region</td>
-        <td>Tier 1 (USD/GB/hour)</td>
-        <td>Tier 2 (USD/GB/hour)</td>
-        <td>Tier 3 (USD/GB/hour)</td>
-        <td>Disk price (USD/GB/hour)</td>
+  <td>Japan</td>
+<td>0.11</td>
+<td>10</td>
+</tr>  
+    </tbody></table>
+
+
+
+
+## Node Pay-As-You-Go Price (USD)
+
+<table>
+<thead>
+<tbody><tr>
+        <th rowspan=2>Region</th>
+        <th  colspan = "3">Memory Price (USD/GB/Hr)</th>
+        <th rowspan=2>Disk Price (USD/GB/Hr)</th>
     </tr>
-    <tr>
-        <td>Guangzhou, Shanghai, Beijing,Nanjing</td>
-        <td>0.026194</td>
-        <td>0.013097</td>
-        <td>0.019646</td>
-        <td>0.000250</td>
+		<tr>
+        <th>Tier 1</th>
+        <th>Tier 2</th>
+        <th>Tier 3</th>
     </tr>
+</thead>
     <tr>
+        <td>Beijing, Shanghai, Guangzhou, Tianjin, Nanjing, Shenzhen, Qingyuan</td>
+        <td>0.02619</td>
+        <td>0.01965</td>
+        <td>0.01310</td>
+        <td>0.00025</td>
+    </tr>
+		    <tr>
         <td>Chengdu, Chongqing</td>
-        <td>0.026194</td>
-        <td>0.019646</td>
-        <td>0.013097</td>
-        <td>0.000250</td>
+        <td>0.02619</td>
+        <td>0.01965</td>
+        <td>0.01309</td>
+        <td>0.00025</td>
+    </tr>
     </tr>
     <tr>
         <td>Hong Kong (China)</td>
-        <td>0.034420</td>
-        <td>0.025815</td>
-        <td>0.017210</td>
-        <td>0.000118</td>
-    </tr>
-    <tr>
-        <td>Singapore</td>
-        <td>0.035225</td>
-        <td>0.026419</td>
-        <td>0.017613</td>
-        <td>0.000118</td>
-    </tr>
-    <tr>
-        <td>Japan</td>
-        <td>0.027778</td>
-        <td>0.020833</td>
-        <td>0.013889</td>
-        <td>0.000153</td>
+        <td>0.03442</td>
+        <td>0.02582</td>
+        <td>0.01721</td>
+        <td>0.00012</td>
     </tr>
     <tr>
         <td>Virginia</td>
-        <td>0.022222</td>
-        <td>0.016667</td>
-        <td>0.011111</td>
-        <td>0.000097</td>
+        <td>0.02222</td>
+        <td>0.01667</td>
+        <td>0.01111</td>
+        <td>0.00010</td>
     </tr>
     <tr>
         <td>Toronto</td>
-        <td>0.036836</td>
-        <td>0.027627</td>
-        <td>0.018418</td>
-        <td>0.000139</td>
+        <td>0.03684</td>
+        <td>0.02763</td>
+        <td>0.01842</td>
+        <td>0.00014</td>
+    </tr>    
+<tr>
+        <td>Silicon Valley (US)</td>
+        <td>0.02750</td>
+        <td>0.02063</td>
+        <td>0.01375</td>
+        <td>0.00009</td>
     </tr>
-</table>
+    <tr>
+        <td>Singapore</td>
+        <td>0.03522</td>
+        <td>0.02642</td>
+        <td>0.01761</td>
+        <td>0.00012</td>
+    </tr>
+    <tr>
+        <td>Japan</td>
+        <td>0.02778</td>
+        <td>0.02083</td>
+        <td>0.01389</td>
+        <td>0.00015</td>
+    </tr>
+    <tr>
+        <td>Frankfurt</td>
+        <td>0.02222</td>
+        <td>0.01667</td>
+        <td>0.01111</td>
+        <td>0.00010</td>
+    </tr>
+</tbody></table>
 
-## Billing Example
+## 
 
+## Billing Examples
 
-- For example, if you purchase 2 TDSQL instances (one-master-one-slave edition) in Beijing with 2 GB of shard memory and 500 GB of shard disk for 400 hours,
-then the fees to be paid are calculated as follows:
- - Tier 1: (2 GB * 0.026194 USD/GB/hour + 500 GB * 0.000250 USD/GB/hour) * 2 nodes * 96 hours = 17.029248 USD
- - Tier 2: (2 GB * 0.013097 USD/GB/hour + 500 GB * 0.000250 USD/GB/hour) * 2 nodes * 264 hours = 48.830432 USD
- - Tier 3: (2 GB * 0.019646 USD/GB/hour + 500 GB * 0.000250 USD/GB/hour) * 2 nodes * 40 hours = 7.09552 USD
- - Total instance fees = tier 1 + tier 2 + tier 3 = 72.9552 USD
+**Monthly subscription**: suppose a user purchases 1 monthly subscription TDSQL instance with 2 nodes (1 master and 1 slave) in the Guangzhou region for 1 month, and each node has 2 GB memory, 500 GB disk capacity, and 2 shards.
+The fees to be paid are calculated as follows:
+Instance fees = (Node memory size x Memory price + Node disk size x Disk price) x Number of nodes x Number of shards=(2 GB x 9.43 USD/GB/month + 500 GB x 0.06 USD/GB/month) x 2 nodes x 2 shards x 1 month = 195.44 USD
+	
+**Pay-as-you-go**: suppose a user purchases 1 pay-as-you-go TDSQL instance with 2 nodes (1 master and 1 slave) in the Beijing region for 400 hours, and each node has 2 GB of memory, 500 GB disk capacity, and 2 shards.
+The fees to be paid are calculated as follows:
+ - Tier 1 fee: (2 GB x 0.026194 USD/GB/hr + 500 GB x 0.000250 USD/GB/hr) x 2 nodes x 2 shards x 96 hours = 68.116992 USD
+ - Tier 2 fee: (2 GB x 0.013097 USD/GB/hr + 500 GB x 0.000250 USD/GB/hr) x 2 nodes x 2 shards x 264 hours = 159.660864 USD
+ - Tier 3 fee: (2 GB x 0.019646 USD/GB/hr + 500 GB x 0.000250 USD/GB/hr) x 2 nodes x 2 shards x 40 hours = 26.28672 USD
+Total instance fees=Tier 1 fee + Tier 2 fee + Tier 3 fee = 254.064576 USD

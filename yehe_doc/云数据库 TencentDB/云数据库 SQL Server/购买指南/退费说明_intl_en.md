@@ -1,26 +1,28 @@
-- Monthly subscription instances are entitled to one full refund per account for an instance returned within 5 days after purchase. All other purchases will be partially refunded.
+
+# Return Policy
+
+
+- Monthly subscription instances are entitled to one full refund per account for an instance returned within 5 days after purchase. All other purchases will be partially refunded. 
 - Pay-as-you-go instances can be returned, but there will be no refunds.
-You can go to the [DTS Console](https://console.cloud.tencent.com/dts/dss) to return instances.
+Go to [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver) to return instances.
 
 ## Returning Instances
 - When a monthly subscription instance is returned and its status has changed to **Isolated**, it will no longer generate fees.
-- Once isolated, the monthly subscription instance will be retained for 7 days and cannot be accessed. To restore the instance, go to the data subscription list and renew it.
-- When a monthly subscription instance is terminated, its IP resources and subscription data are released and the instance becomes inaccessible.
+- When a monthly subscription instance is terminated, its IP address is released and the instance becomes inaccessible. Any associated read-only instances are also terminated.
+- When a monthly subscription instance is returned, it will be retained in the recycle bin for 7 days where it cannot be accessed. To restore the instance, go to the recycle bin and renew it.
 - Tencent Cloud reserves the right to reject return requests.
 - Resources purchased during promotions might not be eligible for return.
 
 ## 5-day Free Returns
-Each account can return **1** monthly subscription data subscription instance within 5 (inclusive) days after purchase with no questions asked.
-If an order is eligible for 5-day free return, the refund, including cash and trial credits, will be returned to your Tencent Cloud account using the original payment method.
+- Each account can return **1** TencentDB for SQL Server instance within 5 (inclusive) days after purchase with no questions asked.
+- You will receive a full refund for the purchase, including the cash amount paid and gift cards used. 
 >!
 >- Rebates and vouchers will not be returned.
 >- The full refund will be returned to your Tencent Cloud account.
 
-
 ## Standard Returns
 - If you have used up the one-time free return, you can still return **199** monthly subscription instances via console at any time as standard returns.
-- For standard returns, fees for consumed resources will be deducted from the refund. The remaining amount, including cash and trial credits, will be returned to your Tencent Cloud account using the original payment method.
-
+- For standard returns, fees for consumed resources will be deducted from the refund. The remaining amount, including cash credits and gift cards, will be returned to your Tencent Cloud account.
 
 ### Standard Return Policies
 **Refund amount = Current Orders + Future Orders - Consumed Resources Fees**
@@ -34,4 +36,4 @@ If an order is eligible for 5-day free return, the refund, including cash and tr
 
 >!
 >- Rebates and vouchers will not be returned.
->- The refund, including cash and trial credits, will be returned to your Tencent Cloud account.
+>- The refund, including cash credits and gift cards, will be returned to your Tencent Cloud account.
