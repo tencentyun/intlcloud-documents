@@ -1,69 +1,69 @@
-## Introduction
+### Introduction
 
-This document provides an overview of APIs and SDK code samples related to cross-origin access, lifecycle, version control, and cross-region replication.
+This document provides an overview of APIs and SDK code samples related to cross-origin access, lifecycles, versioning, and cross-region replication.
 
-**Cross-origin Access**
+**Cross-origin access**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ---------------------------- |
-| [PUT Bucket cors](https://cloud.tencent.com/document/product/436/8279) | Setting cross-origin access configuration | Sets cross-origin access permissions for a bucket |
-| [GET Bucket cors](https://cloud.tencent.com/document/product/436/8274) | Querying cross-origin access configuration | Queries the cross-origin access configuration of a bucket |
-| [DELETE Bucket cors](https://cloud.tencent.com/document/product/436/8283) | Deleting cross-origin access configuration | Deletes the cross-origin access configuration information of a bucket |
+| [PUT Bucket cors](https://intl.cloud.tencent.com/document/product/436/8279) | Setting a cross-origin access configuration | Sets the cross-origin access permissions of a bucket |
+| [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | Querying a cross-origin access configuration | Queries the cross-origin access configuration of a bucket |
+| [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | Deleting a cross-origin access configuration | Deletes the cross-origin access configuration of a bucket |
 
 **Lifecycle**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------------ |
-| [PUT Bucket lifecycle](https://cloud.tencent.com/document/product/436/8280) | Setting lifecycle | Sets lifecycle management for a bucket |
-| [GET Bucket lifecycle](https://cloud.tencent.com/document/product/436/8278) | Querying lifecycle | Queries the lifecycle management configuration of a bucket |
-| [DELETE Bucket lifecycle](https://cloud.tencent.com/document/product/436/8284) | Deleting lifecycle | Deletes the lifecycle management configuration of a bucket |
+| [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | Setting a lifecycle configuration | Sets the lifecycle management configuration of a bucket |
+| [GET Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8278) | Querying a lifecycle configuration | Queries the lifecycle management configuration of a bucket |
+| [DELETE Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8284) | Deleting a lifecycle configuration | Deletes the lifecycle management configuration of a bucket |
 
 **Versioning**
 
-| API | Operation | Description |
+| API | Operation Name | Description |
 | ------------------- | ------------ | ------------------ |
-| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
-| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
+| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets the versioning configuration of a bucket |
+| [GET Bucket versioning](https://cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
 
-**Cross-region Replication**
+**Cross-region replication**
 
-| API | Operation | Description |
+| API | Operation Name | Description |
 | ------------------- | ------------ | ------------------ |
-| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication | Sets cross-region replication rules for a bucket |
-| [GET Bucket replication](https://cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rules of a bucket |
-| [DELETE Bucket replication](https://cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication rules | Sets the cross-region replication rules of a bucket |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-region replication rules | Queries the cross-region replication rules of a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication rules| Deletes the cross-region replication rules of a bucket |
 
-## Cross-Origin Access
+## Cross-origin access
 
-### Setting cross-origin configuration
+### Setting a cross-origin access configuration
 
-#### Feature
+## Feature description 
 
-This API (Put Bucket CORS) is used to set the configurations on cross-origin access (CORS) of a bucket.
+This API is used to set the cross-origin access configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 public void setBucketCrossOriginConfiguration(String bucketName, BucketCrossOriginConfiguration bucketCrossOriginConfiguration);
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------ |
-| bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| bucketCrossOriginConfiguration | The cross-domain access rules set for a bucket | BucketCrossOriginConfiguration |
+| bucketName | Bucket naming format is `BucketName-APPID`. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketCrossOriginConfiguration | The cross-origin access rules set for a bucket | BucketCrossOriginConfiguration |
 
-#### Returned Result
+#### Response description
 
 - Successful: No value is returned.
--Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+-Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
 [//]: # (.cssg-snippet-put-bucket-cors)
 ```java
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format: BucketName-APPID.
 String bucketName = "examplebucket-1250000000";
 | bucketCrossOriginConfiguration | The cross-domain access rules set for a bucket | BucketCrossOriginConfiguration |
 List<CORSRule> corsRules = new ArrayList<CORSRule>();
@@ -81,35 +81,35 @@ bucketCORS.setRules(corsRules);
 cosClient.setBucketCrossOriginConfiguration(bucketName, bucketCORS);
 ```
 
-### Query Cross-origin Configuration
+### Querying a cross-origin access configuration
 
-#### Feature
+#### Feature description
 
-This API (Get Bucket CORS) is used to get the configurations on cross-origin access (CORS) of a bucket.
+This API is used to query the cross-origin access configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 public BucketCrossOriginConfiguration getBucketCrossOriginConfiguration(String bucketName)
 throws CosClientException, CosServiceException;
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 
-#### Returned Result
+#### Response description
 
--Success: Returns the cross-region rules for the bucket.
--Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+-Success: Returns the cross-origin rules for the bucket.
+-Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
 [//]: # (.cssg-snippet-get-bucket-cors)
 ```java
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format: BucketName-APPID.
 String bucketName = "examplebucket-1250000000";
 BucketCrossOriginConfiguration corsGet = cosClient.getBucketCrossOriginConfiguration(bucketName);
 List<CORSRule> corsRules = corsGet.getRules();
@@ -122,31 +122,31 @@ for (CORSRule rule : corsRules) {
 }
 ```
 
-### Deleting cross-origin configuration
+### Deleting a cross-origin configuration
 
-#### Feature
+#### Feature description
 
-This API (Delete Bucket CORS) is used to delete the configurations on cross-origin access (CORS) of a bucket.
+This API is used to delete the cross-origin access configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 public void deleteBucketCrossOriginConfiguration(String bucketName)
 throws CosClientException, CosServiceException;
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 
-#### Returned Result
+#### Response description
 
 - Successful: No value is returned.
--Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+-Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
 [//]: # (.cssg-snippet-delete-bucket-cors)
 ```java
@@ -157,32 +157,32 @@ cosClient.deleteBucketCrossOriginConfiguration(bucketName);
 
 ## Lifecycle
 
-### Setting the lifecycle
+### Setting a lifecycle configuration
 
-#### Feature
+#### Feature description
 
-This API (Put Bucket LifeCycle) is used to set the lifecycle configuration of a bucket.
+This API is used to set the lifecycle configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 public void setBucketLifecycleConfiguration(String bucketName, BucketLifecycleConfiguration bucketLifecycleConfiguration) 
         throws CosClientException, CosServiceException;
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type |
 | ---------------------------- | ------------------------------------------------------------ | ---------------------------- |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| bucketLifecycleConfiguration | Lifecycle Configuration | BucketLifecycleConfiguration |
+| bucketLifecycleConfiguration | Lifecycle configuration | BucketLifecycleConfiguration |
 
-#### Returned Result
+#### Response description
 
 - Successful: No value is returned.
--Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+-Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
 [//]: # (.cssg-snippet-put-bucket-lifecycle)
 ```java
@@ -218,22 +218,22 @@ BucketLifecycleConfiguration bucketLifecycleConfiguration =
         new BucketLifecycleConfiguration();
 bucketLifecycleConfiguration.setRules(rules);
 
-Bucket. Format: BucketName-APPID
+// Enter the Bucket name in the format: BucketName-APPID
 String bucketName = "examplebucket-1250000000";
 SetBucketLifecycleConfigurationRequest setBucketLifecycleConfigurationRequest =
         new SetBucketLifecycleConfigurationRequest(bucketName, bucketLifecycleConfiguration);
 
-// Configuring lifecycle
+// Configuring the lifecycle configuration
 cosClient.setBucketLifecycleConfiguration(setBucketLifecycleConfigurationRequest);
 ```
 
-### Querying the lifecycle
+### Querying a lifecycle configuration
 
-#### Feature
+## Feature description
 
-This API (Put Bucket LifeCycle) is used to set the lifecycle configuration of a bucket.
+This API is used to query the lifecycle configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 public BucketLifecycleConfiguration getBucketLifecycleConfiguration(String bucketName)
@@ -241,53 +241,53 @@ throws CosClientException, CosServiceException;
 
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 
-#### Returned Result
+#### Response description
 
-- Successful: Return BucketLifecycleConfiguration type, including the lifecycle rules of the bucket.
--Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+- Successful: The BucketLifecycleConfiguration type, including the lifecycle rules of the bucket, is returned.
+-Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
 [//]: # (.cssg-snippet-get-bucket-lifecycle)
 ```java
-// Entering the bucket name in the format of BucketName-APPID.
+// Entering the bucket name in the format: BucketName-APPID.
 String bucketName = "examplebucket-1250000000";
 BucketLifecycleConfiguration queryLifeCycleRet =
         cosClient.getBucketLifecycleConfiguration(bucketName);
 List<BucketLifecycleConfiguration.Rule> ruleLists = queryLifeCycleRet.getRules();
 ```
 
-### Deleting the lifecycle
+### Deleting a lifecycle configuration
 
-#### Feature
+#### Feature description
 
-This API (Delete Bucket Lifecycle) is used to delete the lifecycle of the specified bucket.
+This API is used to delete the lifecycle configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 public void deleteBucketLifecycleConfiguration(String bucketName)
 throws CosClientException, CosServiceException;
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 
-#### Returned Result
+#### Response description
 
 - Successful: No value is returned.
--Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+-Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
 [//]: # (.cssg-snippet-delete-bucket-lifecycle)
 ```java
@@ -298,70 +298,70 @@ cosClient.deleteBucketLifecycleConfiguration(bucketName);
 
 
 ## Versioning
-### Setting Versioning
+### Setting versioning
 
-#### Feature
+#### Feature description
 
-This API (Put Bucket versioning) is used to set the versioning information of a bucket.
+This API is used to set the versioning configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 ```java
 public void setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest setBucketVersioningConfigurationRequest)
     throws CosClientException, CosServiceException;
 ```
 
-#### Parameter Description
+#### Parameter description
 | Parameter Name | Description | Type |
 | --------------------------------------- | ------------------------------------------------------------ | --------------------------------------- |
-| setBucketVersioningConfigurationRequest | Version control configuration | SetBucketVersioningConfigurationRequest |
+| setBucketVersioningConfigurationRequest | Versioning configuration | SetBucketVersioningConfigurationRequest |
 
 
-#### Returned Result
+#### Response description
   - Successful: No value is returned.
-  -Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+  -Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
-**Enable Versioning**
+**Enabling versioning**
 
 [//]: # (.cssg-snippet-put-bucket-versioning)
 ```java
 String bucketName = "examplebucket-1250000000";
-# Enable Versioning
+// Enable Versioning
 cosClient.setBucketVersioningConfiguration(
         new SetBucketVersioningConfigurationRequest(bucketName,
                 new BucketVersioningConfiguration(BucketVersioningConfiguration.ENABLED)));
 ```
 
-**Suspension of versioning**
+**Suspending Versioning**
 
 ```java
 String bucketName = "examplebucket-1250000000";
-**Suspension of versioning**
+// Suspend versioning
 cosClient.setBucketVersioningConfiguration(
 new SetBucketVersioningConfigurationRequest(bucketName,
 new BucketVersioningConfiguration(BucketVersioningConfiguration.SUSPENDED)));
 ```
 
-### Querying Versioning
+### Querying versioning
 
-#### Feature
+#### Feature description
 
-This API (Get Bucket versioning) is used to get the versioning information of a bucket.
+This API is used to query the versioning configuration of a bucket.
 
-#### Method Prototype
+#### Method prototype
 ```java
 // Method 1: Enter the bucket name
 public BucketVersioningConfiguration getBucketVersioningConfiguration(String bucketName)
             throws CosClientException, CosServiceException;
 
-// Method 2: Obtain via GetBucketVersioningConfigurationRequest
+// Method 2: Obtain the configuration via a GetBucketVersioningConfigurationRequest
 public BucketVersioningConfiguration getBucketVersioningConfiguration(
     GetBucketVersioningConfigurationRequest getBucketVersioningConfigurationRequest)
         throws CosClientException, CosServiceException;
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Description | Type |
 | --------------------------------------- | ------------------------------------------------------------ | --------------------------------------- |
@@ -369,30 +369,30 @@ public BucketVersioningConfiguration getBucketVersioningConfiguration(
 | getBucketVersioningConfigurationRequest | Obtaining versioning configuration request | GetBucketVersioningConfigurationRequest |
 
 
-#### Returned Result
--Success: Returns the multi-version configuration of the bucket.
--Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+#### Response description
+-Success: The multi-version configuration of the bucket is returned.
+-Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 [//]: # (.cssg-snippet-get-bucket-versioning)
 ```java
 String bucketName = "examplebucket-1250000000";
-// Obtaining versioning configuration
+// Obtaining the versioning configuration
 BucketVersioningConfiguration bvc =
         cosClient.getBucketVersioningConfiguration(bucketName);
-// Obtaining versioning configuration
+// Obtaining the versioning configuration
 BucketVersioningConfiguration bvc2 = cosClient.getBucketVersioningConfiguration(
         new GetBucketVersioningConfigurationRequest(bucketName));
 ```
 
-## Cross-region Replication
-### Setting cross-region replication
+## Cross-region replication
+### Setting cross-region replication rules
 
-#### Feature
+#### Feature description
 
-This API (Put Bucket rereplication) is used to set cross-region replication rules of a bucket.
+This API is used to set the cross-region replication rules of a bucket
 
-#### Method Prototype
+#### Method prototype
 
 ```java
 public void setBucketReplicationConfiguration(
@@ -400,19 +400,19 @@ public void setBucketReplicationConfiguration(
                 throws CosClientException, CosServiceException;
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Parameter Description | Type |
 | ---------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | setBucketReplicationConfigurationRequest | Cross-region replication configuration | SetBucketReplicationConfigurationRequest |
 
-#### Returned Result
+#### Response description
 
   - Successful: No value is returned.
-  -Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+  -Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
 [//]: # (.cssg-snippet-put-bucket-replication)
 ```java
@@ -420,15 +420,15 @@ public void setBucketReplicationConfiguration(
 String bucketName = "examplebucket-1250000000";
 
 BucketReplicationConfiguration bucketReplicationConfiguration = new BucketReplicationConfiguration();
-// Configuring initiator identity, format is: qcs::cam::uin/<OwnerUin>:uin/<SubUin>
+// Configure initiator identity in the format: qcs::cam::uin/<OwnerUin>:uin/<SubUin>
 bucketReplicationConfiguration.setRoleName("qcs::cam::uin/100000000001:uin/100000000001");
 
-// Configuring destination bucket and storage class, QCS format is: qcs::cos:[region]::[bucketname-AppId]
+// Configure the destination bucket and storage class in the QCS format: qcs::cos:[region]::[bucketname-AppId]
 ReplicationDestinationConfig replicationDestinationConfig = new ReplicationDestinationConfig();
 replicationDestinationConfig.setBucketQCS("qcs::cos:ap-beijing::destinationbucket-1250000000");
 replicationDestinationConfig.setStorageClass(StorageClass.Standard);
 
-// Configuring rule status and prefix
+// Configure the rule status and prefix
 ReplicationRule replicationRule = new ReplicationRule();
 replicationRule.setStatus(ReplicationRuleStatus.Enabled);
 replicationRule.setPrefix("");
@@ -442,86 +442,86 @@ SetBucketReplicationConfigurationRequest setBucketReplicationConfigurationReques
 cosClient.setBucketReplicationConfiguration(setBucketReplicationConfigurationRequest);
 ```
 
-### Querying cross-region replication
+### Querying cross-region replication rules
 
-#### Feature
+#### Feature description
 
-This API (Get Bucket rereplication) is used to get cross-region replication rules of a bucket.
+This API is used to query the cross-region replication rules of a bucket.
 
-#### Method Prototype
+#### Method prototype
 ```java
-// Obtaining bucket cross-region replication configuration method 1
+// Obtaining the cross-region replication configuration of a bucket method 1
 public BucketReplicationConfiguration getBucketReplicationConfiguration(String bucketName)
             throws CosClientException, CosServiceException;
 
-// Obtaining bucket cross-region replication configuration method 2		
+// Obtaining the cross-region replication configuration of a bucket method 2		
 public BucketReplicationConfiguration getBucketReplicationConfiguration(
             GetBucketReplicationConfigurationRequest getBucketReplicationConfigurationRequest)
             throws CosClientException, CosServiceException;
 ```
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Parameter Description | Type |
 | ---------------------------------------- | ------------------------------------------------------------ | ---------------------------------------- |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | getBucketReplicationConfigurationRequest | Obtaining cross-region replication configuration request                                       | GetBucketReplicationConfigurationRequest |
 
-#### Returned Result
+#### Response description
 -Success: Returns the cross-region replication rule for the bucket.
--Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+-Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 [//]: # (.cssg-snippet-get-bucket-replication)
 ```java
 String bucketName = "examplebucket-1250000000";
 
-// Obtaining bucket cross-region replication configuration method 1
+// Obtaining the cross-region replication configuration of a bucket method 1
 BucketReplicationConfiguration brcfRet = cosClient.getBucketReplicationConfiguration(bucketName);
 
-// Obtaining bucket cross-region replication configuration method 2
+// Obtaining the cross-region replication configuration of a bucket method 2
 BucketReplicationConfiguration brcfRet2 = cosClient.getBucketReplicationConfiguration(
         new GetBucketReplicationConfigurationRequest(bucketName));
 ```
 
-## Deleting cross-region replication
+## Deleting cross-region replication rules
 
-#### Feature
+#### Feature description
 
-This API (Delete Bucket rereplication) is used to delete cross-region rreplication of a bucket.
+This API is used to delete the cross-region replication rules of a bucket.
 
-#### Method Prototype
+#### Method prototype
 ```java
-// Deleting bucket cross-region replication configuration method 1
+// Deleting the cross-region replication configuration of a bucket method 1
 public void deleteBucketReplicationConfiguration(String bucketName)
             throws CosClientException, CosServiceException;
 
-// Deleting bucket cross-region replication configuration method 2		
+// Deleting the cross-region replication configuration of a bucket method 2		
 public void deleteBucketReplicationConfiguration(
             DeleteBucketReplicationConfigurationRequest deleteBucketReplicationConfigurationRequest)
             throws CosClientException, CosServiceException;
 ```
 
-#### Parameter Description
+#### Parameter description
 
 | Parameter Name | Parameter Description | Type |
 | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------- |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | deleteBucketReplicationConfigurationRequest | Deleting cross-region replication configuration request                                       | DeleteBucketReplicationConfigurationRequest |
 
-#### Returned Result
+#### Response description
 
   - Successful: No value is returned.
-  -Failure: An error (such as authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+  -Failure: An error (such as an authentication failure) occurs, with a CosClientException or CosServiceException exception. For details, see [Troubleshooting] (https://intl.cloud.tencent.com/document/product/436/30599).
 
-#### Request Samples
+#### Sample request 
 
 [//]: # (.cssg-snippet-delete-bucket-replication)
 ```java
 String bucketName = "examplebucket-1250000000";
 
-// Deleting bucket cross-region replication configuration method 1
+// Deleting the cross-region replication configuration of a bucket method 1
 cosClient.deleteBucketReplicationConfiguration(bucketName);
 
-// Deleting bucket cross-region replication configuration method 2
+// Deleting the cross-region replication configuration of a bucket method 2
 cosClient.deleteBucketReplicationConfiguration(new DeleteBucketReplicationConfigurationRequest(bucketName));
 ```
