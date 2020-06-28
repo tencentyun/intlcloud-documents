@@ -15,12 +15,12 @@
 
 包年包月模式是先购买再使用的方式，因此，在购买腾讯移动推送服务套餐前，可先查看云费用账户中的可用余额，如果余额小于系统将扣除的金额，请先充值后购买。
 
-包年包月推送服务具体价格详见[价格总览](https://intl.cloud.tencent.com/document/product/1024/36877)。
+包年包月推送服务具体价格详见[价格总览](https://intl.cloud.tencent.com/document/product/1024/36877#monthly-subscription)。
 
 ## 按量计费
 按量计费是腾讯移动推送服务的弹性计费模式，您可以随时开通/销毁服务，按照每天的日联网设备数进行计费，当日结算并扣费。这种付费模式适用于日联网设备波动较大的场景，价格相对较高。
 
 购买按量计费服务后，请保证您的账户中余额充足，若您的账户欠费超过 24 小时，会导致按量计费服务停服。
 
-按量计费推送服务具体价格详见[价格总览](https://intl.cloud.tencent.com/document/product/1024/36877)。
+按量计费推送服务具体价格详见[价格总览](https://intl.cloud.tencent.com/document/product/1024/36877#pay-as-you-go)。
 
