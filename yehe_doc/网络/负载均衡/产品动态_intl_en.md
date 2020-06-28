@@ -8,7 +8,22 @@
 <th width="20%">Document</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
+<td>Security groups can be bound to private network CLB instances</td>
+<td>Security groups can be bound to private network CLB instances to isolate private network traffic.</td>
+<td>May 27, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/14733">Configuring CLB Security Groups
+</a></td>
+</tr>
+<tr>
+<td>"Allow Traffic by Default in Security Group" is supported for security groups</td>
+<td>After "Allow Traffic by Default in Security Group" is enabled, you don't need to open the client IP and service port to the internet in the backend CVM security group. Access traffic from CLB only needs to pass through the CLB security group, as the backend CVM instance allows traffic from CLB by default and doesn't need to open the port.</td>
+<td>May 27, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/14733#.E5.BC.80.E5.90.AF.E5.AE.89.E5.85.A8.E7.BB.84.E9.BB.98.E8.AE.A4.E6.94.BE.E9.80.9A">Enabling "Allow Traffic by Default in Security Group"</a></td>
+</tr>
+<tr>
+<tr>
 <td>The default domain name policy for layer-7 listeners is updated</td>
 <td>The default domain name is changed from optional to required for layer-7 listeners. Each listener can and must have only one default domain name configured.</td>
 <td>May 15, 2020</td>
@@ -196,7 +211,7 @@
 <td>Security group is supported</td>
 <td>Public network CLB supports binding security groups to control and isolate inbound and outbound traffic.</td>
 <td>April 15, 2018</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/14733">Configuring CLB Security Groups</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/14733">Configuring CLB Security Group</a></td>
 </tr>
 </tbody></table>
 
