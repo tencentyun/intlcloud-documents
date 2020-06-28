@@ -1,6 +1,3 @@
-以下视频将为您介绍域名验证的三种方式：
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/2305-33505?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
 ## 操作场景
 
 本文档指导您在申请域名型证书后，验证域名的所有权。
@@ -71,7 +68,7 @@
 2. 在 “证书列表” 页面，选择待查看证书详情的域名型证书 ID，进入 “证书详情” 页面。如下图所示：
 ![证书详情](https://main.qcloudimg.com/raw/be67da7bff8bb3656ab7d91b0865ed43.png)
 3. 请您登录服务器，并且确保域名已指向该服务器。
->?若您的域名对应的**域名解析商**在腾讯云，将域名指向您的服务器请参考 [A 记录](https://cloud.tencent.com/document/product/302/3449)。
+>?若您的域名对应的**域名解析商**在腾讯云，将域名指向您的服务器。
 >
 4. 在网站根目录下，创建指定的文件。该文件包括文件目录、文件名、文件内容。
  >?网站根目录是指您在服务器上存放网站程序的文件夹，大致这几种表示名称：wwwroot、htdocs、public_html、webroot 等。
