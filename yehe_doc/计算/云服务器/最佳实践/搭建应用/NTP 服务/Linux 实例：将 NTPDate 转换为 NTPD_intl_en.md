@@ -1,16 +1,16 @@
 ## Overview
 
-NTPDate is a breakpoint update for time synchronization of your new instances. NTPD is a stepwise daemon for time synchronization of your running instances. This document uses the CentOS 7.5 operating system as an example and introduces how to transition from NTPDate to NTPD on CVMs.
+NTPDate is a breakpoint update for the time synchronization of your new instances. NTPD is a stepwise daemon for the time synchronization of your running instances. This document uses the CentOS 7.5 operating system as an example to introduce how to transition from NTPDate to NTPD on CVMs.
 
 ## Prerequisites
 The NTP service communicates on the port UDP 123. Please make sure that you have opened the port to the Internet before transitioning to the NTP service.
-If the port is not open, please refer to [Adding Security Group Policies](https://intl.cloud.tencent.com/document/product/213/34272) to open it to the Internet.
+If the port has not been opened, please refer to [Adding Security Group Policies](https://intl.cloud.tencent.com/document/product/213/34272) to open it to the Internet.
 
 ## Directions
 
 ### Transitioning from NTPDate to NTPD manually
 #### Shutting down NTPDate
-1. Run the following command to export the `crontab` configuration, and filter NTPDate.
+1. Run the following command to export the `crontab` configuration and filter NTPDate.
 ```
 crontab -l |grep -v ntpupdate > /tmp/cronfile
 ```
@@ -22,7 +22,7 @@ crontab /tmp/cronfile
 ```
 vim rc.local
 ```
-4. Press **i** to enter the edit mode and delete the `ntpupdate` configuration line.
+4. Press **i** to switch to the editing mode and delete the `ntpupdate` configuration line.
 5. Press **Esc** and enter **:wq** to save and close the file.
 
 #### Configuring NTPD
@@ -30,7 +30,7 @@ vim rc.local
 ```
 vi /etc/ntp.conf
 ```
-2. Press **i** to enter the edit mode and locate the `server` configurations. Change the value of `server` to the NTP clock source server you want to use (such as `time1.tencentyun.com`), and delete unwanted values, as shown below：
+2. Press **i** to switch to the editing mode and locate the `server` configurations. Change the value of `server` to the NTP clock source server you want to use (such as `time1.tencentyun.com`) and delete unwanted values, as shown below：
 ![Server configuration](https://main.qcloudimg.com/raw/b21b559ce745ef5c765251a8ee514dca.png)
 3. Press **Esc** and enter **:wq** to save and close the file.
 
