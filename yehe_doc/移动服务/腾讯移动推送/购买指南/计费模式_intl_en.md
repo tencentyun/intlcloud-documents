@@ -15,12 +15,12 @@ Monthly subscription is a prepaid billing mode of TPNS. You need to pay for one 
 
 Monthly subscription is pay before use. Before purchasing a TPNS service package, check your Tencent Cloud account balance. If your balance is less than the service cost, top up your account first.
 
-For specific monthly subscription TPNS prices, please see [Pricing Overview](https://intl.cloud.tencent.com/document/product/1024/36877).
+For specific monthly subscription TPNS prices, please see [Pricing Overview](https://intl.cloud.tencent.com/document/product/1024/36877#monthly-subscription).
 
 ## Pay-as-you-go
 Pay-as-you-go is an elastic billing mode of TPNS. You can activate/terminate services at any time. Billing is based on the number of daily connected devices and settled daily. Pay-as-you-go is more expensive than monthly subscription and is suitable for scenarios where the number of daily connected devices fluctuates greatly.
 
 After purchasing a pay-as-you-go service, make sure that your account balance is sufficient. If your account is in arrears for over 24 hours, the pay-as-you-go service will be suspended.
 
-For specific pay-as-you-go TPNS prices, please see [Pricing Overview](https://intl.cloud.tencent.com/document/product/1024/36877).
+For specific pay-as-you-go TPNS prices, please see [Pricing Overview](https://intl.cloud.tencent.com/document/product/1024/36877#pay-as-you-go).
 
