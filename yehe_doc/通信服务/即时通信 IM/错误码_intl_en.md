@@ -1,5 +1,5 @@
 ## 1. IM SDK Error Codes
-> For Web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
+>For Web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
 
 ### General error codes
 
@@ -17,7 +17,7 @@
 | 6019 | Operation on the local database failed. This error may be caused by a lack of permissions for some directories or file corruption in the database. |
 | 7001 | Cross-thread error. Cross-thread operations are not possible. This is an internal error. |
 | 7002 | TinyId is empty. This is an internal error. |
-| 7003 | Invalid UserID. A UserID cannot be empty and must be printable ASCII characters (0x20-0x7e) containing up to 32 bytes in length. |
+| 7003 | Invalid UserID. A UserID cannot be empty and must be printable ASCII characters (0x20-0x7e) pf up to 32 bytes in length. |
 | 7004 | The file does not exist. Check whether the file path is correct. |
 | 7005 | The file size exceeds the limit. The maximum permitted size of an uploaded file is 28 MB. |
 | 7006 | The file is empty. The file cannot be 0 bytes. When uploading an image, audio, video, or document, ensure that the file is generated correctly. |
@@ -60,7 +60,7 @@
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 8501 | Invalid Group ID. A custom group ID must be printable ASCII characters (0x20-0x7e) containing up to 48 bytes in length. To avoid confusion with the default group IDs assigned by IM, a custom group ID cannot be prefixed with @TGS#. |
+| 8501 | Invalid Group ID. A custom group ID must be printable ASCII characters (0x20-0x7e) of up to 48 bytes in length. To avoid confusion with the default group IDs assigned by IM, a custom group ID cannot be prefixed with @TGS#. |
 | 8502 | Invalid group name. A group name can be up to 30 bytes in length and must be encoded in UTF-8. If the group name contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8503 | Invalid group introduction. A group introduction can be up to 240 bytes in length and must be encoded in UTF-8. If the group introduction contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8504 | Invalid group notice. A group notice can be up to 300 bytes in length and must be encoded in UTF-8. If the group notice contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
@@ -92,7 +92,7 @@
 | 9504 | Failed to compress the data packet due to an internal error. |
 | 9505 | Failed to decompress the data packet due to an internal error. |
 | 9506 | The call exceeds the frequency limit. You can initiate up to 5 requests per second. |
-| 9507 | The request queue is full. You can initiate up to 1,000 requests at a time. |
+| 9507 | The network request queue exceeds the maximum number of concurrent requests allowed. You can initiate up to 1,000 requests at a time. For example, if you keep sending messages when the network is abnormal, the number of messages in the network request queue will keep growing and soon reach the maximum. |
 | 9508 | The network is disconnected, no connection has been set up, or no network is detected when setting up a socket connection. |
 | 9509 | A network connection has been established, but is created repeatedly due to an internal error. |
 | 9510 | Network connection setup timed out. Try again after the network recovers. |
@@ -104,8 +104,8 @@
 | 9516 | Failed to parse the IP address due to an internal error. The local imsdk_config file may be corrupted and can cause the system to read an invalid IP address. |
 | 9517 | Invalid connection. The network is connected to an intermediate node or is reset by the server due to an internal error. The SDK automatically initiates reconnection. Try again after the network is reconnected and the callback function onConnSucc on iOS or onConnected on Android is called successfully. |
 | 9518 | The request packet timed out when waiting to enter the sending queue. This error occurs when the network connection setup is slow or the network is frequently disconnected and reconnected. Check whether the network connection is normal. |
-| 9519 | The request packet has entered the sending queue but timed out when waiting to enter the network buffer of the system. This internal error occurs because too many packets are to be sent or the sending thread is too busy to handle the packets. |
-| 9520 | The request packet has entered the network buffer of the system but timed out when waiting for the server to return packets. This internal error may occur if the request packet did not leave the client device, was discarded in an intermediate route, or is dropped accidentally by the server, or the response packet is discarded by the network layer of the system. |
+| 9519 | The request packet has entered the IM SDK sending queue but timed out when waiting to enter the network layer of the operating system. This is possibly due to the restriction or failure of the local network or a failed connection between the local network and the IM SDK backend. We recommend that you run the IM SDK in a different network environment to check whether the problem is caused by the current network environment. |
+| 9520 | The request packet has entered the network layer of the operating system from the IM SDK sending queue but timed out when waiting for the server to return packets. This is possibly due to the restriction or failure of the local network or failed connection between the local network and the IM SDK backend. We recommend that you run the IM SDK in a different network environment to check whether the problem is caused by the current network environment. |
 
 ## 2. Server Error Codes
 
@@ -155,25 +155,24 @@
 | 60007 | The RESTful API call exceeds the frequency limit. Try again later. |
 | 60008 | Service request timed out or HTTP request format error. Check the error and try again later. |
 | 60009 | Incorrect request resource. Check the request URL. |
-| 60010 | Set the UserID field of the RESTful API request to the admin account of the App. |
+| 60010 | Set the UserID field of the RESTful API request to the admin account of the app. |
 | 60011 | The SDKAppID request exceeds the frequency limit. Try again later. |
 | 60012 | SDKAppID is required for the RESTful API. Please check the SDKAppID parameter in the URL. |
 | 60013 | An error occurs when parsing the JSON data in the HTTP response packet. |
 | 60014 | Account switching timed out. |
 | 60015 | The type of the UserID in the request packet is incorrect. Ensure that the UserID is in string format. |
-| 60016 | The SDKAppID is disabled. |
+| 60016 | SDKAppID is disabled. |
 | 60017 | The request is disabled. |
 | 60018 | Too many requests. Try again later. |
 | 60019 | Too many requests. Try again later. |
-| 60020 | Your Pro Edition standard billing plan has expired and been disabled. To repurchase the standard billing plan, log in to [Instant Messaging Purchase Page](https://buy.cloud.tencent.com/avc). The new standard billing plan will take effect 5 minutes later. |
-| 80001 | The text is filtered out due to security policies. Check whether the text contains security-sensitive words. |
+| 80001 | The text was filtered due to security policies. Check whether the text contains security-sensitive words. |
 | 80002 | The outgoing message packet exceeds the length limit of 8 KB. Reduce the packet size and try again later. |
 
 ### Account error codes
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 70001 | UserSig expired. You must generate a new one. It is recommended that you set the validity period of a UserSig to no less than 24 hours. |
+| 70001 | UserSig expired. You must generate a new one. We recommend that you set the validity period of a UserSig to no less than 24 hours. |
 | 70002 | The length of UserSig is 0. Check whether the passed-in UserSig is correct. |
 | 70003 | Invalid UserSig. Call the API provided on the official website to [Generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 70005 | Invalid UserSig. Call the API provided on the official website to [Generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
@@ -191,7 +190,7 @@
 | 70206 | Invalid batch quantity in the request. |
 | 70402 | Invalid parameter. Check whether required fields are specified and the values meet protocol requirements. |
 | 70403 | Request failed. You need app admin permission to perform this action. |
-| 70398 | The number of accounts exceeds the limit allowed. To create more than 100 accounts, upgrade your app to the Pro Edition. For specific steps, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/34351). |
+| 70398 | The number of accounts exceeds the limit. To create more than 100 accounts, upgrade your app to the professional edition. For details, see the [Purchase Guide](https://intl.cloud.tencent.com/document/product/1047/34351). |
 | 70500 | Internal server error. Try again later. |
 | 71000 | Failed to delete the account. Only trial accounts can be deleted. Your current app is in the Pro Edition and therefore cannot be deleted. |
 
@@ -202,7 +201,7 @@
 | 40001 | Incorrect request parameters. Check the request parameters based on the error description. |
 | 40002 | Incorrect request parameters. You need to specify the UserID whose profile is to be retrieved. |
 | 40003 | The requested UserID does not exist. |
-| 40004 | The request requires the App admin permission. |
+| 40004 | The request requires app admin permission. |
 | 40005 | Profile fields contain sensitive words. |
 | 40006 | Internal server error. Try again later. |
 | 40007 | No permission to read profile fields. For more information, see [Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520). |
@@ -219,11 +218,11 @@
 | 30001 | Incorrect request parameters. Check the request parameters based on the error description. |
 | 30002 | The SDKAppID does not match other parameters. |
 | 30003 | The requested UserID does not exist. |
-| 30004 | The request requires the App admin permission. |
+| 30004 | The request requires app admin permission. |
 | 30005 | The relationship chain field contains sensitive words. |
 | 30006 | Internal server error. Try again later. |
 | 30007 | Network timed out. Try again later. |
-| 30008 | Write conflicts caused by concurrent write operations. It is recommended that you write the data in batches. |
+| 30008 | A write conflict occurred due to concurrent write operations. We recommend that you write the data in batches. |
 | 30009 | The backend prohibits this user from initiating a friend request. |
 | 30010 | You have reached the limit of friends. |
 | 30011 | You have reached the limit of friend groups. |
@@ -233,7 +232,7 @@
 | 30515 | You cannot add this user as a friend because this user is in your blacklist. |
 | 30516 | The other party has set the friend verification mode to reject all new friend requests. |
 | 30525 | You cannot add this user as a friend because you are in this user’s blacklist. |
-| 30539 | The request is pending. If user A sends a friend request to user B who has set the friend verification mode to AllowType_Type_NeedConfirm, only a pending relationship can be established between users A and B. This return code is used to distinguish from the return code indicating friending success. The caller can capture this error and send a notification to user A. |
+| 30539 | The request is pending. If user A sends a friend request to user B who has set the friend verification mode to AllowType_Type_NeedConfirm, only a pending relationship can be established between users A and B. This return code is used to distinguish the result from the return code indicating friending success. The caller can capture this error and send a notification to user A. |
 | 30540 | The friend request was filtered by the security policy. Do not initiate friend requests too frequently. |
 | 30614 | The pending request does not exist. |
 | 31704 | There is no friend relationship with the account to be deleted. |
@@ -246,7 +245,7 @@
 | ------ | ---------------------------------------------- |
 | 50001 | The requested UserID does not exist. |
 | 50002 | Incorrect request parameters. Check the request parameters based on the error description. |
-| 50003 | The request requires the App admin permission. |
+| 50003 | The request requires app admin permission. |
 | 50004 | Internal server error. Try again later. |
 | 50005 | Network timed out. Try again later. |
 
@@ -259,14 +258,14 @@
 | 20003 | The UserID of the sender or recipient is invalid or does not exist. Check whether the UserID has been imported into the IM console. |
 | 20004 | Network exception. Try again later. |
 | 20005 | Internal server error. Try again later. |
-| 20006 | The callback prior to sending a one-to-one chat message was triggered, and the App backend returned a response to forbid the message. |
+| 20006 | The callback prior to sending a one-to-one chat message was triggered, and the app backend returned a response to forbid the message. |
 | 20007 | The one-to-one chat message cannot be sent to the other party because the sender is in the blacklist of the other party.<br>The message delivery status is displayed as failed by default. You can log in to the IM console to change the message delivery status displayed in this scenario. For specific steps, see [Blacklist check](https://intl.cloud.tencent.com/document/product/1047/34419). |
 | 20008 | The SDKAppID of the sender does not match the SDKAppID of the recipient, because the SDKAppID is switched on the client but the data is not cleared in the database. To rectify this problem, clear the original database after switching the SDKAppID. |
 | 20009 | The message cannot be sent because the sender and the intended recipient are not friends. This problem occurs only when friend verification is configured for one-to-one chats. |
-| 20010 | The one-to-one chat message cannot be sent, because the sender is not a friend of the intended recipient (one-way relationship). |
-| 20011 | The one-to-one chat message cannot be sent, because the intended recipient is not a friend of the sender (one-way relationship). |
-| 20012 | This message cannot be sent, because the sender has been muted. |
-| 20016 | The message cannot be recalled after the time limit was reached, which is 2 minutes by default. |
+| 20010 | The one-to-one chat message cannot be sent because the sender is not a friend of the intended recipient (one-way relationship). |
+| 20011 | The one-to-one chat message cannot be sent because the intended recipient is not a friend of the sender (one-way relationship). |
+| 20012 | This message cannot be sent because the sender has been muted. |
+| 20016 | The message cannot be recalled after the time limit is reached, which is 2 minutes by default. |
 | 20018 | An internal error occurs when deleting roaming messages. |
 | 20022 | The message to be recalled does not exist. Please check. |
 | 20023 | The message has been recalled. |
@@ -282,10 +281,10 @@
 | 90005 | The JSON request packet does not contain the MsgRandom field or the MsgRandom field is not of the Integer type. |
 | 90006 | The JSON request packet does not contain the MsgTimeStamp field or the MsgTimeStamp field is not of the Integer type. |
 | 90007 | The MsgBody field in the JSON request packet is not of the Array type. Change the type of the MsgBody field to Array. |
-| 90008 | The JSON request packet does not contain the From_Account field or From_Account does not exist. |
-| 90009 | The request requires the App admin permission. |
+| 90008 | There is no `From_Account` in the JSON request packet or the account it specifies does not exist. |
+| 90009 | The request requires app admin permission. |
 | 90010 | The JSON request packet is not in the message format. For more information, see the definition in [TIMMsgElement Objects](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| 90011 | The number of target UserIDs for batch message sending exceeds the limit of 500. Decrease the value of To_Account. |
+| 90011 | The number of target UserIDs for batch message sending exceeds the limit of 500. Reduce the number of target UserIDs in To_Account. |
 | 90012 | To_Account is not registered or does not exist. Check whether To_Account has been imported into the IM console or is incorrectly spelled. |
 | 90026 | Incorrect offline message storage period. The value cannot exceed 7 days. |
 | 90031 | The SyncOtherMachine field in the JSON request packet is not of the Integer type. |
@@ -295,9 +294,9 @@
 | 90994 | Internal server error. Try again later. |
 | 90995 | Internal server error. Try again later. |
 | 91000 | Internal server error. Try again later. |
-| 90992 | Internal server error. Try again later. If this error code is returned for all requests and the App has enabled third-party callback, check whether the App server returns callback results to the IM backend normally. |
+| 90992 | Internal server error. Try again later. If this error code is returned for all requests and the app has enabled third-party callback, check whether the app server returns callback results to the IM backend normally. |
 | 93000 | The JSON packet exceeds the length limit of 8 KB. |
-| 91101 | The web instance is forcibly logged out during long polling because the number of concurrent online web instances exceeds the limit allowed. |
+| 91101 | The web instance was forcibly logged out during long polling because the number of concurrent online web instances exceeds the limit allowed. |
 | 120001 - 130000 | Custom error code returned by third-party callback for a one-to-one chat. |
 
 ### Group error codes
@@ -309,7 +308,7 @@
 | 10004 | Invalid parameter. Check whether the request is correct based on the error description. |
 | 10005 | The request packet carries too many accounts. |
 | 10006 | The operation exceeds the frequency limit. Try again later. |
-| 10007 | The user does not have sufficient operation permissions. For example, a common member in a public group attempts to remove a member from the group, but only the App admin has the permission to do so. |
+| 10007 | The user does not have sufficient operation permissions. For example, a common member in a public group attempts to remove a member from the group, but only the app admin has the permission to do so. |
 | 10009 | The group owner is not allowed to quit the group. |
 | 10010 | The group doesn’t exist or has been deleted. |
 | 10011 | Failed to parse the JSON packet. Check whether the packet complies with JSON specifications. |
@@ -317,17 +316,17 @@
 | 10013 | The invitee is already a group member. |
 | 10014 | The user in the request cannot be added to the group, because the number of group members has reached the upper limit. If you are adding group members in batches, try reducing the number of users being added. |
 | 10015 | Invalid group ID. Check whether the group ID is entered correctly. |
-| 10016 | The App backend rejected this operation through a third-party callback. |
+| 10016 | The app backend rejected this operation through a third-party callback. |
 | 10017 | The message cannot be sent due to muting. Check whether the sender is muted. |
-| 10018 | The response packet exceeds the length limit of 1 MB due to excessive request content. Try to reduce the amount of data in individual single requests. |
+| 10018 | The response packet exceeds the length limit of 1 MB due to excessive request content. Try to reduce the amount of data in individual requests. |
 | 10019 | The requested UserID does not exist. |
 | 10021 | The group ID is already in use. Specify another group ID. |
 | 10023 | The message exceeds the frequency limit. Try again later. |
 | 10024 | This invitation or request has already been processed. |
 | 10025 | The group ID is already in use. The operator is the group owner and therefore can use the group ID directly. |
-| 10026 | The command word of the SDKAppID request is disabled. |
+| 10026 | The command word in the SDKAppID request is forbidden. |
 | 10030 | The message to be recalled does not exist. |
-| 10031 | The message cannot be recalled after the time limit was reached, which is 2 minutes by default. |
+| 10031 | The message cannot be recalled after the time limit is reached, which is 2 minutes by default. |
 | 10032 | The message to be recalled cannot be recalled. |
 | 10033 | This type of group does not support message recalls. |
 | 10034 | This type of message cannot be deleted. |
@@ -345,7 +344,7 @@
 | 1001 | Invalid request. Check whether the Request URL is correct. |
 | 1002 | Invalid parameter. Check whether the account is the admin, required fields are specified, and the values meet protocol requirements. |
 | 1003 | System error. |
-| 1004 | The file has not been generated yet, or no message is delivered in the requested period. |
+| 1004 | The file has not been generated yet, or no message was delivered in the requested period. |
 | 1005 | File expired. |
 
 
@@ -394,10 +393,10 @@
 | 6207 | Account authentication failed due to the failure in converting the TinyId. |
 | 6209 | The app did not attempt to connect to the network after start-up. |
 | 6210 | QALSDK execution failed. |
-| 6211 | Request is invalid and toMsgService is invalid. |
+| 6211 | Invalid request due to invalid toMsgService. |
 | 6212 | Request queue is full. |
-| 6213 | You are logged out due to login on another device. |
-| 6214 | The service has been suspended. |
+| 6213 | You were logged out due to login on another device. |
+| 6214 | Service suspended. |
 | 6215 | Incorrect SSO signature. |
 | 6216 | The SSO cookie is invalid. |
 | 6217 | Incorrect packet length. This error occurs when the TLS SDK performs verification on response packets during login. |
@@ -406,23 +405,23 @@
 | 6220 | TLS SDK decryption failed during login. |
 | 6221 | Wi-Fi authentication is required. |
 | 6222 | Canceled by the user. |
-| 6223 | The message cannot be recalled after the time limit was reached, which is 2 minutes by default. |
+| 6223 | The message cannot be recalled after the time limit is reached, which is 2 minutes by default. |
 | 6224 | The UGC extension package is missing. |
 | 6226 | Auto login failed because the local ticket expired. Manual login with the UserSig is needed. |
 | 6300 | No available SSO for short connections. |
-| 80101 | Message content is filtered due to security reasons. |
+| 80101 | Message content was filtered due to security reasons. |
 | 70101 | Ticket expired. This error is returned during login. |
-| 90101 | IM SDK has been initialized. No need to initialize again. |
+| 90101 | The IM SDK has been initialized. No need to initialize again. |
 | 115000 | OpenBDH error code. |
 | 6250 | No network connection when sending the request. Please try again after the network connection is recovered. |
 | 6251 | No network connection when sending the response. Please try again after the network connection is recovered. |
 | 6252 | QALSDK execution failed. |
-| 6253 | Request is invalid and toMsgService is invalid. |
+| 6253 | Invalid request due to invalid toMsgService. |
 | 6254 | Request queue is full. |
-| 6255 | You are logged out due to login on another device. |
-| 6256 | The service has been suspended. |
+| 6255 | You were logged out due to login on another device. |
+| 6256 | Service suspended. |
 | 6257 | Incorrect SSO signature. |
 | 6258 | The SSO cookie is invalid. |
 
 
-> If the problem persists, you can contact [Smart Customer Service](https://intl.cloud.tencent.com/contact-sales) or [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) with the API, error code, and error information to our tech support staff.
+> If the problem persists, you can contact [Smart Customer Service](https://cloud.tencent.com/act/event/smarty-service) or [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) with the API, error code, and error information to our tech support staff.
