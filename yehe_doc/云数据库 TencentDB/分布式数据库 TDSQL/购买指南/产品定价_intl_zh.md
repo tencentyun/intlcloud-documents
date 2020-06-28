@@ -84,12 +84,12 @@
 <tr>
 <td>新加坡</td>
 <td>0.085</td>
-<td>12.6812</td
+<td>12.6812</td>
 </tr>
     <tr>
   <td>日本</td>
 <td>0.11</td>
-<td>10</td
+<td>10</td>
 </tr>  
     </tbody></table>
 
