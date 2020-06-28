@@ -34,8 +34,6 @@ Chat rooms are a crucial component of livestreaming. They allow users to send me
     After the app is created, you can view the status, version, SDKAppID, creation time, and expiry time of the new app on the overview page in the console.
   >New apps are created as Trial Edition apps by default and can be upgraded to Pro Edition or Flagship Edition when needed.
   >A Tencent Cloud account supports a maximum of 100 IM apps. If you have reached that limit, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) unwanted apps before creating a new one. **Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be restored, so please proceed with caution.**
-  >
-  ![](https://main.qcloudimg.com/raw/2753962b67754a9ebb2a2a5b8042f2ef.png)
 3. Click the target app card and select **Group Management** in the left sidebar.
 4. On the **Group Management** page, click **Add Group**.
 5. Configure the following parameters in the "Add Group" dialog box that appears.
@@ -98,7 +96,6 @@ We recommend that you enable notifications on new products by having the admin m
   >- The field name can only contain letters, numbers, and underscores (\_), but cannot begin with a number. The maximum length of the name is 16 characters.
   >- A group custom field and a group member custom field cannot have the same name.
   >
- ![](https://main.qcloudimg.com/raw/8fe4aa2bb4efdce9027affa2a0a4831f.png)
 3. Select **I understand that after adding a group custom field and group type, the read-write permissions of the group type can be modified, but the custom field cannot be deleted.** and click **Confirm** to save the configuration.
  The group-level custom field configuration takes effect in about 10 minutes.
 
