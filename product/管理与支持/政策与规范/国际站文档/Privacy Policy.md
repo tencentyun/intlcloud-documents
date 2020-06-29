@@ -260,7 +260,8 @@ E-mail: <cloudlegalnotices@tencent.com>
 For PP, a separate section to be added at the end of the document:
 
 ### MODULES
-Last updated: [2020-06-15]
+Last updated: [2020-06-29]
 The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).
 2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).
+3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).

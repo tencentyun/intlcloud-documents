@@ -3,7 +3,7 @@ This API is used to perform cropping, including regular cropping, scaling and cr
 
 ## API Form
 
-```shell
+```plaintext
 download_url?imageMogr2/cut/<width>x<height>x<dx>x<dy>
                        /crop/<imageSizeAndOffsetGeometry>
                        /iradius/<radius>
@@ -29,8 +29,7 @@ Operation name: cut.
 | &lt;width> | Specifies the width of the target image to Width. |
 | &lt;height> | Specifies the height of the target image to Height. |
 | &lt;dx> | Horizontally moves rightward relative to the upper-left vertex of the image by dx. |
-| &lt;dy> | Vertically moves downward by dy. |
-
+| &lt;dx> | Horizontally moves downward relative to the upper-left vertex of the image by dy. |
 
 > The value range is greater than 0 and smaller than the width and height of the original image.
 
@@ -93,7 +92,7 @@ A 3x3 grid position diagram provides position reference for multiple image opera
 
 This example shows you how to horizontally move rightward by 100 pixels and vertically move downward by 10 pixels relative to the upper-left vertex of the image and specify the size of the target image as 600x600 for cropping.
 
-```
+```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/cut/600x600x100x10
 ```
 
@@ -110,7 +109,7 @@ The final effect is as follows:
 
 This example shows you how to scale and crop an image to 300x400 by using the center as the reference point.
 
-```
+```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/crop/300x400/gravity/center 
 ```
 
@@ -118,18 +117,18 @@ The final effect is as follows:
 ![](https://main.qcloudimg.com/raw/b9adeff300df483c22765b7d746d6690.jpeg)
 
 #### Inscribed circle cropping
-This example shows you how to perform inscribed circle cropping when the radius is 300.
+This example shows you how to perform inscribed circle cropping when the radius is 200.
 
-```
-http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/iradius/300
+```plaintext
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/iradius/200
 ```
 
 The final effect is as follows:
-![](https://main.qcloudimg.com/raw/f38ead869790236879a229f2d5f1bafc.jpeg)
+![](https://main.qcloudimg.com/raw/1e449274ea00eebc87454168e7056abc.jpeg)
 
 #### Rounded corner cropping
 This example shows you how to perform rounded corner cropping when the radius is 100.
-```
+```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/rradius/100 
 ```
 
@@ -140,7 +139,7 @@ The final effect is as follows:
 #### Smart cropping
 This example shows you how to scale and crop an image to 100x600 based on the position of the face in the image.
 
-```
+```plaintext
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/scrop/100x600
 ```
 
