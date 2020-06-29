@@ -61,6 +61,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36174).
 2.[AI Transfy](https://intl.cloud.tencent.com/document/product/1049/36871).
 3.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36785).
+4.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37004).
 
 ## Jurisdiction-specific Requirements
 
