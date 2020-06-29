@@ -1,6 +1,6 @@
 ### Reserved Instance Overview
 
-Reserved Instance (RI) is a special form of discount for pay-as-you-go instances. The discount can be applied to a pay-as-you-go instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI. RIs are cheaper than pay-as-you-go instances and allow reservation of instance resources.
+Reserved Instance (RI) is a special form of discount for pay-as-you-go instances. The discount can be applied to a pay-as-you-go instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI. RIs are cheaper than pay-as-you-go instances.
 
 > Currently, RIs are non-refundable.
 >
@@ -36,9 +36,9 @@ Currently, availability zones and instance specifications available for RIs can 
 
 OS: Currently, only Linux instances are eligible for RIs
 
-Payment method: Full-amount prepayment
+Payment method: There are three options: All Upfront, Partial Upfront, and No Upfront.
 
-Validity period: 1 year
+Validity period: One year or three years.
 
 Quota: Each user can have up to 20 RIs per month in one availability zone
 
