@@ -15,7 +15,7 @@ CLB fees consist of instance fees and public network fees.
  <td >&#10003; </td>
  <td >× </td>
  <td ><li>The instance fees will be charged by CLB.</li><li>
-The public network fees will be charged by CVM instead of CLB.</li><li>For more information, please see <a href="https://intl.cloud.tencent.com/zh/document/product/214/8848">Non-bill-by-IP Account Billing Description</a>.</li></td>
+The public network fees will be charged by CVM instead of CLB.</li><li>For more information, please see <a href="https://intl.cloud.tencent.com/document/product/214/8848">Non-bill-by-IP Account Billing Description</a>.</li></td>
  </tr>
  <tr>
  <td >Bill-by-IP account</td>
