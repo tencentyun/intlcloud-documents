@@ -1,6 +1,6 @@
 ## Problem Description
 To protect TencentDB from DDoS attacks, TencentDB for MySQL prohibits the ping command from being used to check the network connectivity of a private network address by default.
->You can use the ping command to check the network connectivity of a public network address.
+>?You can use the ping command to check the network connectivity of a public network address.
 
 
 ## Solution
@@ -17,7 +17,7 @@ telnet private/public IP address private/public port
  - Exceptional network access
 ![](https://main.qcloudimg.com/raw/76ce15542eb5278ad2c4e1f58c80f4db.png)
 
->If there is still no network access after running the telnet command, you can easily troubleshoot private and public network connection problems with the [connectivity check tool](https://intl.cloud.tencent.com/document/product/236/31927).
+>?If there is still no network access after running the telnet command, you can easily troubleshoot private and public network connection problems with the [connectivity check tool](https://intl.cloud.tencent.com/document/product/236/31927).
 
 
 
