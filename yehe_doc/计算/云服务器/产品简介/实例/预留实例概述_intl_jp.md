@@ -32,7 +32,7 @@
 
 #### 使用制限
 
-現在、RIが購入可能なアベイラビリティーゾーン及びインスタンスの仕様については、API[購入可能なRIリスト](http://10.198.144.46/document/product/213/32751?!document=1&!preview)にご確認ください
+現在、RIが購入可能なアベイラビリティーゾーン及びインスタンスの仕様については、API[購入可能なRIリスト](https://intl.cloud.tencent.com/document/product/213/30575)にご確認ください
 
 OS: 現在は、Tencent CloudはLinuxのRIのみを対応します　
 
