@@ -42,3 +42,9 @@ Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click **C
 
 After completing the configurations above, click **Purchase** to make the payment. Your EMR cluster will be automatically created once the payment is received. Wait for about 10 minutes and then you will find the cluster you just created in the EMR Console.
 >You can view the instance information of each node in the CVM Console. To ensure that your EMR cluster works properly, do not modify such configuration information.
+
+## Subsequent Steps
+After the EMR cluster is created, you can log in to and further configure the cluster. For more information, see:
+- [Logging in to Clusters](https://intl.cloud.tencent.com/document/product/1026/31101)
+- Configure Cluster：[Software Configuration](https://intl.cloud.tencent.com/document/product/1026/34530)、[Mounting CHDFS](https://intl.cloud.tencent.com/document/product/1026/35773)。
+- Managing Clusters：[Tags](https://intl.cloud.tencent.com/document/product/1026/34532)、 [Bootstrap Actions](https://intl.cloud.tencent.com/document/product/1026/34521)、[Terminating Clusters](https://intl.cloud.tencent.com/document/product/1026/31106)

@@ -59,7 +59,8 @@ For DPSA, we add the following section before “Jurisdiction-specific Requireme
 ## MODULES
 The following Modules shall apply and be incorporated by reference into this DPSA if you use the specific Feature (as defined in each relevant Module).  
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36174).
-
+2.[AI Transfy](https://intl.cloud.tencent.com/document/product/1049/36871).
+3.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36785).
 
 ## Jurisdiction-specific Requirements
 
@@ -96,8 +97,8 @@ HAVE AGREED on the following Contractual Clauses (the “**Clauses**”) in orde
 ### 1. Definitions
 For the purposes of the Clauses:
 <ol style = 'list-style-type :lower-latin'><li> 'personal data', 'special categories of data', 'process/processing', 'controller', 'processor', 'data subject' and 'supervisory authority' will have the same meaning as in Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data;</li><li>'the data exporter' refers to the controller who transfers the personal data;</li><li>'the data importer' refers to the processor who agrees to receive from the data exporter personal data intended for processing on his behalf after the transfer in accordance with his instructions and the terms of the Clauses and who is not subject to a third country's system ensuring adequate protection within the meaning of Article 25(1) of Directive 95/46/EC;</li><li>'the sub-processor' refers to any processor engaged by the data importer or by any other sub-processor of the data importer who agrees to receive from the data importer or from any other sub-processor of the data importer personal data exclusively intended for processing activities to be carried out on behalf of the data exporter after the transfer in accordance with his instructions, the terms of the Clauses and the terms of the written subcontract;</li><li>'the applicable data protection law' refers to the legislation protecting the fundamental rights and freedoms of individuals and, in particular, their right to privacy with respect to the processing of personal data applicable to a data controller in the Member State in which the data exporter is established;</li><li>'technical and organisational security measures' refers to those measures aimed at protecting personal data against accidental or unlawful destruction or accidental loss, alteration, unauthorized disclosure or access, in particular where the processing involves the transmission of data over a network, and against all other unlawful forms of processing.</li></ol>
-<h3>2. Details of the transfer</h3>
-<br>
+
+### 2. Details of the transfer
 The details of the transfer and in particular the special categories of personal data where applicable are specified in Appendix 1 which forms an integral part of the Clauses.
 
 ### 3. Third-party beneficiary clause

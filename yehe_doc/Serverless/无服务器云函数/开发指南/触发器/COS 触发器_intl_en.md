@@ -17,7 +17,7 @@ Characteristics of COS triggers:
 | `cos:ObjectCreated:Post`      | The function will be triggered when a file is created through the `Post Object` API. |
 | `cos:ObjectCreated:Copy`      | The function will be triggered when a file is created through the `Put Object - Copy` API. |
 | `cos:ObjectCreated:CompleteMultipartUpload` | The function will be triggered when a file is created through the `CompleteMultipartUpload` API. |
-| `cos:ObjectCreated:Origin` | The function will be triggered when CDN origin-pull occurs. |
+| `cos:ObjectCreated:Origin` | The function will be triggered when an object is created through [COS origin-pull]](https://intl.cloud.tencent.com/document/product/436/31508).  |
 | `cos:ObjectCreated:Replication` | The function will be triggered when an object is created through cross-region replication. |
 | `cos:ObjectRemove:*`          | All deletion events mentioned below can trigger the function. |
 | `cos:ObjectRemove:Delete`     | The function will be triggered when an object in a bucket for which versioning is not enabled is deleted through the `Delete Object` API, or an object on a specified version is deleted with `versionid`. |

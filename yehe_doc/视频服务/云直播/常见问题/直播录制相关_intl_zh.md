@@ -1,6 +1,6 @@
 <span id="que1"></span>
 ###  直播录制的原理是什么？
-![img](https://mc.qcloudimg.com/static/img/cbb2aae6b5e767db1d30cb51d147948d/image.png)
+![img](https://main.qcloudimg.com/raw/9c9d31c6ffec97d2b8b4042b7a673cbc.jpg)
 
 对于一条直播流，一旦开启录制，音视频数据就会被旁路到录制系统。主播的手机推上来的每一帧数据，都会被录制系统追加写入到录制文件中。
 
@@ -40,17 +40,25 @@
 - 如果一次直播时间很长（超过 record_interval ），那么会按照 record_interval 指定的时间长度进行分片，分片的原因是避免过长的文件在分布式系统中流转时间的不确定性。
 - 如果一次直播过程中发生推流中断（之后 SDK 会尝试重新推流），那么每次中断均会产生一个新的分片。
 
-<span id="que8"></span>
-### 如何知道哪些文件属于某一次直播？
-
-准确来说，作为 PAAS 的腾讯云并不清楚您的一次直播是怎么定义的，如果您的一次直播持续了20分钟，但中间有一次因为网络切换导致的断流，以及一次手动的停止和重启，那么这算是一次直播还是三次呢？
-
-对于普通的移动直播场景，我们一般定义如下的界面之间的这段时间为一次直播：
-![img](https://main.qcloudimg.com/raw/ee3c52237136eab31e0b2b65ef4d83ac.png)
-
-所以来自 App 客户端的时间信息很重要，如果您希望定义这段时间内的录制文件都属于这次直播，那么只需要用直播码和时间信息检索收到的录制通知即可（每一条录制通知事件都会携带 stream_id、start_time 和 end_time 等信息）。
-
 <span id="que9"></span>
 ### 如何把碎片拼接起来？
-目前腾讯云支持使用云端 API 接口拼接视频分片。 
+目前腾讯云支持使用云端 API 接口拼接视频分片 。 
+
+<span id="que10"></span>
+###  只设置了一个录制模板，但是直播录制出现了两路，如何排查？ 
+一般情况下，可能是当前推流域名下并发了两个录制任务。建议根据下列思路依次排查：
+
+1. 检查控制台录制配置信息，确认录制文件类型是否选择只选择一个格式。
+   - 若控制台为**新版控制台**，前往[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击推流域名右侧的【管理】，进入查看【模板配置】中的【录制配置】，查看关联模板“录制格式”信息。
+   - 若控制台为**旧版控制台**，前往 [【直播码接入】](https://console.cloud.tencent.com/live/livecodemanage)>【接入配置】 检查直播录制配置信息。	
+2. [创建录制任务](https://intl.cloud.tencent.com/document/product/267/30847) 和 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223) 为两种录制发起方式，实际使用中按需选择其中一种即可。若同一直播流，配置录制模板的同时创建了录制任务，会导致重复录制。请检查是否已在控制台开启录制任务同时，调用 API 3.0的  [CreateLiveRecord](https://intl.cloud.tencent.com/document/product/267/30847) 接口或 API 2.0的 Live_Tape_Start 接口发起了录制任务。
+
+> ! 
+> - 若您的直播录制是在旧版控制台开启的，新版控制台中如需关闭，可通过 [提工单](https://console.cloud.tencent.com/workorder/category) 找相关人员协助解决。 
+> - 若以上方法无法解决您的问题，请 [提工单](https://console.cloud.tencent.com/workorder/category) 解决，会有专人对接。
+
+
+
+
+
 

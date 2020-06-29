@@ -1,8 +1,8 @@
-## Introduction
+### Introduction
 
-If an SDK API call to request the COS service fails, an error message will be returned in the callback.
+If an SDK API call to request  COS service fails, an error message will be returned in the callback.
 
-## Error Sample
+## Sample error
 
 [//]: # (.cssg-snippet-head-bucket)
 ```js
@@ -20,10 +20,10 @@ cos.headBucket({
 
 | Parameter Name | Description | Type |
 | ------- | ------------------------------------------------------------ | ------------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://cloud.tencent.com/document/product/436/7730) | Object |
+| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - error | Error message for the request | Object/String |
 
-## Server Exceptions
+## Server exceptions
 
 <table>
    <tr>
@@ -43,7 +43,7 @@ cos.headBucket({
    </tr>
    <tr>
       <td>- headers</td>
-      <td>Header information returned by the request</td>
+      <td>Headers returned by the request</td>
       <td>Object</td>
    </tr>
    <tr>
@@ -63,7 +63,7 @@ cos.headBucket({
    </tr>
    <tr>
       <td nowrap="nowrap">- - RequestId</td>
-      <td>A unique ID of the request in the server request log that can be submitted in a <a href="https://console.cloud.tencent.com/workorder/category">ticket</a> for troubleshooting</td>
+      <td>The unique ID of the request in the server request log that can be submitted in a <a href="https://console.cloud.tencent.com/workorder/category">ticket</a> for troubleshooting</td>
       <td>String</td>
    </tr>
 </table>

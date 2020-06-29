@@ -1,14 +1,14 @@
 ## Overview
 
-The Network Time Protocol daemon (NTPD) is a daemon of Linux operating systems, and also a complete implementation of the NTP protocol. You can use it to synchronize time between the local system and time source servers. Unlike NTPDate which updates time periodically, NTPD corrects time continuously without time gaps. This document describes how to install and configure NTPD on CentOS 7.5.
+The Network Time Protocol daemon (NTPD) is a daemon of the Linux operating system. It is a complete implementation of NTP and is used to correct the time difference between the local system and the clock source server. Unlike NTPDate, which updates time periodically, NTPD corrects time continuously without time gaps. This document uses CentOS 7.5 as an example to describe how to install and configure NTPD.
 
 ## Notes
 
 - Some operating systems use chrony as the default NTP service. Please make sure that NTPD is running and is configured to launch automatically at startup.
  - Run the `systemctl is-active NTPD.service` command to see if NTPD is running.
  - Run the `systemctl is-enabled NTPD.service` command to see if NTPD is configured to launch automatically at startup.
-- The NTP service communicates on the port UDP 123. Please make sure that you have opened the port to the Internet before configuring the NTP service.
-If the port is not open, please refer to [Adding Security Group Policies](https://intl.cloud.tencent.com/document/product/213/34272) to open it to the Internet.
+- The communication port of the NTP service is UDP 123. Please make sure that you have opened the port to the Internet before configuring the NTP service.
+If the port is not open, please refer to [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272) to open it to the Internet.
 
 ## Directions
 
@@ -31,7 +31,7 @@ NTPD uses the client mode by default.
 ```
 vi /etc/ntp.conf
 ```
-2. Press **i** to enter the edit mode and locate the `server` configurations. Change the value of `server` to the NTP clock source server you want to use (such as `time1.tencentyun.com`), and delete unwanted values, as shown below:
+2. Press **i** to switch to the editing mode and locate the `server` configurations. Change the value of `server` to the NTP clock source server you want to use (such as `time1.tencentyun.com`) and delete unwanted values, as shown below:
 ![Server configuration](https://main.qcloudimg.com/raw/b21b559ce745ef5c765251a8ee514dca.png)
 3. Press **Esc** and enter **:wq** to save and close the file.
 
@@ -44,7 +44,7 @@ systemctl restart ntpd.service
 
 ### Checking the status of NTPD
 
-Run the following commands to check for the NTPD status according to your needs. 
+Run the following commands to check the status of NTPD as needed. 
 - Run the following command to check whether the NTP is normally listening on the service port UDP 123.
 ```
 netstat -nupl
@@ -61,10 +61,10 @@ If the following result is returned, the NTPD status is normal.
 ```
 ntpstat
 ```
-The IP address of the current NTP clock source server that is configured earlier is returned, as shown below:
+The IP address of the current NTP clock source server that was configured earlier should be returned, as shown below:
 ![](https://main.qcloudimg.com/raw/a99f5da438bafb1d148e9b033f48afad.png)
 You can also get the IP address corresponding to the domain name by running the command `nslookup domain name`.
-- Run the following command to get NTP service details.
+- Run the following command to get more detailed NTP service information.
 ```
 ntpq -p
 ```
@@ -72,13 +72,13 @@ The following result will be returned:
 ![](https://main.qcloudimg.com/raw/ca9ef4caf98b49ed2c9110198a66e7c3.png)
  - **remote**: the name of the NTP server that responds to this request.
  - **refid**: the NTP server one stratum above to which the NTP server on this stratum is synchronized.
- - **st**: the stratum of the remote server. The stratum of a server can be set to 1 to 16 from the top to the bottom. In order to relieve the load and network congestion, in principle, you should avoid connecting directly to a stratum 1 server.
- - **when**: how many seconds have elapsed since the last successful request.
- - **poll**: the synchronization interval (in seconds) between local and remote servers. At the beginning, the `poll` value will be smaller, which means a higher frequency of synchronization, so that the time can be adjusted to the correct time range as soon as possible. Later, the `poll` value will gradually increase, and the synchronization frequency will be lower accordingly.
- - **reach**: an octal value used to test whether the server can be connected. Its value increases every time when the server is successfully connected.
+ - **st**: the stratum of the remote server. The stratum of a server can be set to 1 through 16 from high to low. In order to relieve the load and network congestion, you should avoid connecting directly to a stratum 1 server.
+ - **when**: the number of seconds that have elapsed since the last successful request.
+ - **poll**: the synchronization interval (in seconds) between local and remote servers. At the beginning, the `poll` value will be smaller, which indicates a higher synchronization frequency, so that the time can be adjusted to the correct time range as soon as possible. Later, the `poll` value will gradually increase, and the synchronization frequency will decrease accordingly.
+ - **reach**: an octal value used to test whether the server can be connected. Its value increases every time the server is successfully connected.
  - **delay**: the round trip time of sending the synchronization request from the local machine to the NTP server.
- - **offset**: the time difference in milliseconds (ms) between the host and the time source through NTP. If its value is closer to 0, the time on the host approaches to that of the NTP server more.
- - **jitter**: a value used for statistics which records the distribution of offsets over a particular number of consecutive connections. The smaller its absolute value, the more accurate the host time.
+ - **offset**: the time difference in milliseconds (ms) between the host and the time source through NTP. The closer the offset is to 0, the closer the times of the host and the NTP server are.
+ - **jitter**: a value used for statistics that records the distribution of offsets over a particular number of consecutive connections. The smaller its absolute value is, the more accurate the host time is.
 
 ### Setting the automatic launch of NTPD at startup
 
@@ -98,7 +98,7 @@ systemctl disable chronyd.service
 
 ### Enhancing NTPD security
 
-Run the following command sequentially to add security to the `/etc/ntp.conf` configuration file.
+Run the following commands sequentially to enhance the security of the `/etc/ntp.conf` configuration file.
 ```
 interface ignore wildcard
 ```

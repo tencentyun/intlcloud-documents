@@ -10,7 +10,7 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 
 <span id ="open"></span>
 ### 开启安全组默认放通
-![](https://main.qcloudimg.com/raw/f0f8861999fb849eafc4393609f1b530.png)
+![](https://main.qcloudimg.com/raw/0d2b50ca557d805ce5790fcdd3974b40.jpg)
 开启安全组默认放通后：
 <ul ><li>如果您希望指定固定 Client IP 访问，CLB 安全组<strong>需放通</strong> Client IP 和监听端口，后端 CVM 的安全组<strong>不必再放通</strong> Client IP 和服务端口。来自 CLB 的访问流量仅需通过 CLB 的安全组，后端云服务器会默认放通来自 CLB 的流量，后端云服务器不必对外暴露端口。</li>
 <li>来自公网 IP（包括普通公网 IP 和 EIP）的流量，依然要经过 CVM 的安全组。</li>
@@ -19,7 +19,7 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 
 <span id ="close"></span>
 ### 关闭安全组默认放通
-![](https://main.qcloudimg.com/raw/9b60776b5925183feea02ebb31393f87.png)
+![](https://main.qcloudimg.com/raw/9357f8d81a0027110bd6a977cda4aafc.jpg)
 关闭安全组默认放通后：</p>
 <ul ><li>如果您希望指定固定 Client IP 访问，CLB 安全组<strong>需放通</strong> Client IP 和监听端口，后端 CVM 的安全组<strong>也需放通</strong>Client IP 和服务端口。即通过 CLB 的业务流量会经过 CLB 安全组和 CVM 安全组的双重检查。</li>
 <li>来自公网 IP（包括普通公网 IP 和 EIP）的流量，依然要经过CVM的安全组。</li>
@@ -32,12 +32,12 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 ## 使用限制
 - 每个 CLB 最多绑定5个安全组。
 - 安全组规则条数：0 - 65535。
-- 内网负载均衡支持绑定安全组功能灰度中，如有需求，请提 <a rel="nofollow" href="https://console.cloud.tencent.com/workorder/category?level1_id=6&amp;level2_id=163&amp;source=0&amp;data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&amp;step=1">工单申请</a>，传统型内网负载均衡和基础网络的内网负载均衡不支持绑定安全组；当内网负载均衡绑定 [Anycast EIP](https://intl.cloud.tencent.com/document/product/214/32426) 时，内网负载均衡绑定的安全组暂不生效。
+- 传统型内网负载均衡和基础网络的内网负载均衡不支持绑定安全组，当内网负载均衡绑定 [Anycast EIP](https://intl.cloud.tencent.com/document/product/214/32426) 时，内网负载均衡绑定的安全组暂不生效。
 - 安全组默认放通功能正在灰度中，如有需求，请提 <a rel="nofollow" href="https://console.cloud.tencent.com/workorder/category?level1_id=6&amp;level2_id=163&amp;source=0&amp;data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&amp;step=1">工单申请</a>，传统型内网负载均衡和基础网络的负载均衡不支持安全组默认放通功能。
 
 ## 操作步骤
 如下公网 CLB 的安全组配置示例，预实现 CLB 上仅允许业务流量从80端口进入，并由 CVM 的8080端口提供服务，且不限制 Client IP，支持任意 IP 的访问。
->本例使用公网 CLB，需要在后端 CVM 的安全组上放通 CLB 的 VIP 来做健康检查，当前 `0.0.0.0/0` 为任意 IP，已包括 CLB 的 VIP。
+> !本例使用公网 CLB，需要在后端 CVM 的安全组上放通 CLB 的 VIP 来做健康检查，当前 `0.0.0.0/0` 为任意 IP，已包括 CLB 的 VIP。
 
 ### 步骤一：创建负载均衡和监听器，绑定云服务器
 
@@ -46,17 +46,17 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 
 ### 步骤二：配置 CLB 安全组
 1. 配置负载均衡安全组规则<br>在 <a rel="nofollow" href="https://console.cloud.tencent.com/cvm/securitygroup">安全组控制台</a> 上配置安全组规则，在入站规则中放通所有 IP（即为`0.0.0.0/0`）的80端口，并拒绝其他端口的流量。
->
-> - 安全组规则，是从上至下依次筛选生效的，之前设置的允许规则通过后，其他的规则默认会被拒绝，请注意配置顺序。</a>。
+> ?
+> - 安全组规则，是从上至下依次筛选生效的，之前设置的允许规则通过后，其他的规则默认会被拒绝，请注意配置顺序。
 > - 安全组有入站规则和出站规则，上述配置限制的是入站流量，因此配置均为<strong>入站规则</strong>的配置，出站规则无需特殊配置。
 >
- ![](https://main.qcloudimg.com/raw/65b035098c49c77f4a82eed799353bc4.png)
+ ![](https://main.qcloudimg.com/raw/65b035098c49c77f4a82eed799353bc4.png) 
 
 2. 将安全组绑定 CLB
  1. 在 <a rel="nofollow" href="https://console.cloud.tencent.com/clb/index?rid=1&amp;type=2%2C3">负载均衡控制台</a>，单击 CLB ID，进入详情页。
  2. 选择【安全组】标签页，在“已绑定安全组”模块单击【绑定】。
  3. 在弹出的“配置安全组”窗口中，选择对应绑定到 CLB 上的安全组，单击【确定】。
-    ![](https://main.qcloudimg.com/raw/8a9701e700a94ba55a9a650eb87b4456.png)
+  ![](https://main.qcloudimg.com/raw/8a9701e700a94ba55a9a650eb87b4456.png) 
  CLB 安全组配置完成，对于访问 CLB 的流量，仅允许80端口的访问。
  <img alt="" src="https://main.qcloudimg.com/raw/a32cd86653185a5138006757aab38075.png" >
 
@@ -73,7 +73,7 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 
 #### 方式二：关闭安全组默认放通
 关闭默认放通，则需在 CVM 的安全组上也放通 Client IP。对于通过 CLB 访问 CVM 的业务流量，仅允许从 CLB 的 80 端口进入，并由 CVM 的 8080 端口提供服务。
->允许放通某个 Client IP 的流量，需要在 CLB 和 CVM 两个安全组上都放通，如果 CLB 上没有配置安全组，则仅需放通 CVM 上的安全组。
+>?允许放通某个 Client IP 的流量，需要在 CLB 和 CVM 两个安全组上都放通，如果 CLB 上没有配置安全组，则仅需放通 CVM 上的安全组。
 >
 1. 配置云服务器安全组规则
    对于访问后端 CVM 的流量，通过配置云服务器安全组，限制仅允许服务端口的访问。<br>在 [安全组控制台](https://console.cloud.tencent.com/cvm/securitygroup) 上配置安全组策略，在入站规则中放通所有 IP 的 8080 端口，为保障远程登录主机和 Ping 服务，在安全组上须放通 22、3389 和 ICMP 服务。
