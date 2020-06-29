@@ -3,7 +3,7 @@
 **Total fees = Instance fees + Backup capacity fees + Traffic fees**.
 **Instance fees = Node price x Number of nodes = (Node memory x Memory price + Node disk capacity x Disk price) x Number of nodes**
 
->The number of nodes is the sum of master and slave instances. For example, 1 master and 1 slave are 2 nodes, and 1 master and 2 slaves are 3 nodes.
+>? The number of nodes is the sum of master and slave instances. For example, 1 master and 1 slave are 2 nodes, and 1 master and 2 slaves are 3 nodes.
 
 #### Billable Items
 <table>
@@ -44,7 +44,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing</td>
+<td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing,Qingyuan</td>
 <td>0.18</td>
 <td>9.43</td>
 </tr>
@@ -59,7 +59,7 @@
 <td>10.00</td>
 </tr>
 <tr>
-<td>Virginia</td>
+<td>Virginia,Frankfurt</td>
 <td>0.07</td>
 <td>8.00</td>
 </tr>
@@ -94,7 +94,7 @@
     </tr>
 </thead>
     <tr>
-        <td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing</td>
+        <td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing,Qingyuan</td>
         <td>0.0262</td>
         <td>0.0196</td>
         <td>0.0131</td>
@@ -108,7 +108,7 @@
         <td>0.00011806</td>
     </tr>
     <tr>
-        <td>Virginia</td>
+        <td>Virginia,Frankfurt</td>
         <td>0.0222</td>
         <td>0.0167</td>
         <td>0.0111</td>
