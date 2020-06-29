@@ -27,17 +27,11 @@ Storage devices can be divided into the following categories by dimension:
 				    <td>Data disk</td>
 						<td>Used to store all user data.</td>
 						<tr>
-						<td rowspan="3">Architecture</td>
+						<td rowspan="2">Architecture</td>
 						<td><a href="https://intl.cloud.tencent.com/document/product/213/4953">Cloud Block Storage</a></td>
             <td>Cloud Block Storage (CBS) is an elastic, highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone scalable disk for CVM. It provides data storage at a data block level and employs a 3-copy distributed mechanism to ensure data reliability.<br><font style="font-weight:bold">You can adjust the hardware, disk, and network of a CVM with CBS.</font><br>
 						</td>
         </tr>
-				<tr>
-				<td><a href="https://intl.cloud.tencent.com/document/product/213/5798">Local disk</a></td>
-						<td>A local disk is a local storage reserved on the physical machine where the CVM resides. It allows data access with low latency but risks having a single point of failure.<br>
-						<font style="font-weight:bold">A CVM with local disk does not support hardware upgrades (CPU, memory, and disk), but supports bandwidth upgrades.</font>
-						</td>
-				<tr>
 				<td><a href="https://intl.cloud.tencent.com/document/product/213/4961">Cloud Object Storage</a></td>
 						<td>Cloud Object Storage (COS) is a data storage device on the Internet. It allows data retrieval from any location on the CVM instance or the Internet, reducing storage costs. It is unsuitable for low-latency and high-IO scenarios.
 						</td>

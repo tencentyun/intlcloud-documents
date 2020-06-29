@@ -1,1862 +1,365 @@
-## Group Overview
+<span id="type"> </span>
+## Group Types
+Instant Messaging (IM) supports the following group types:
+- *Work group**: similar to an ordinary WeChat group. After a work group is created, only a group member can invite other users to join this group, and the invitation does not need to be approved by the invited user or group owner. 
+- **Public group**: similar to a QQ group. After a public group is created, the group owner can specify a group admin. When a user searches for the group ID and initiates a request to join the group, the request must be approved by the group owner or admin before the user can join the group.
+- **Meeting group**: after a meeting group is created, users can join and quit the group as they please and view messages from before they joined the group. This group type is suitable for scenarios where Tencent Real-Time Communication (TRTC) is used, for example, audio and video conferencing and online education.
+- **Livestreaming group (AVChatRoom)**: after an AVChatRoom is created, users can join and quit the group as they please. This group type does not limit the number of members, but it does not support the storage of historical messages. It can be used together with Live Video Broadcasting (LVB) to support on-screen comments.
 
-Instant Messaging (IM) supports multiple group types. For more information on their characteristics and limits, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529). A group is identified by a unique ID that enables different operations.
 
-## Group Messages
+The following table describes the features and limitations of each group type:
 
-Group messages and C2C (one-to-one) messages are the same except for the conversation type obtained through Conversation. For more information, see [Sending Messages](https://intl.cloud.tencent.com/document/product/1047/34320).
+<table>
+<tr>
+<th width="20%">Feature</th>
+<th width="16%">Work group</th>
+<th width="16%">Public group</th>
+<th width="16%">Meeting group</th>
+<th>AVChatRoom</th>
+</tr>
+
+<tr>
+<td>Available member roles</td>
+<td>Group owner and ordinary member</td>
+<td>Group owner, group admin, and ordinary member</td>
+<td>Group owner, group admin, and ordinary member</td>
+<td>Group owner and ordinary member</td>
+</tr>
+<tr>
+<td>Applying to join a group</td>
+<td>Not supported</td>
+<td>Supported. An approval from the group owner or group admin is needed.</td>
+<td>Supported. No approval is needed.</td>
+<td>Supported. No approval is needed.</td>
+</tr>
+<tr>
+<td>Joining group after receiving an invitation from a group member</td>
+<td>Supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Allowing the group owner to quit the group</td>
+<td>Supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Having permission to modify the group profile</td>
+<td>Any group member</td>
+<td>Group owner and group admin</td>
+<td>Group owner and group admin</td>
+<td>Group owner</td>
+</tr>
+<tr>
+<td>Having permission to remove members from the group</td>
+<td>Group owner</td>
+<td colspan="2">Group owner and group admin. The group admin can only remove ordinary group members.</td>
+<td>Group members cannot be removed. A member can be muted to achieve the same effect as removing a member.</td>
+</tr>
+<tr>
+<td>Having the permission to mute members</td>
+<td>Not supported</td>
+<td colspan="2">Group owner and group admin.
+	The group admin can only mute ordinary group members.</td>
+<td>Group owner</td>
+</tr>
+<tr>
+<td>Unread count</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Viewing historical messages from before the user joined the group</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Storing historical messages in the cloud</td>
+<td colspan="3"><ul style="margin:0;padding-left:10px" ><li>Trial Edition: 7 days</li><li>Pro Edition: 7 days by default; up to 360 days if the <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service is purchased</a></li><li>Flagship Edition: 30 days by default; up to 360 days if the <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service is purchased</a></li></ul></td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Number of groups</td>
+<td colspan="3"><ul style="margin:0;padding-left:10px"><li>Trial Edition: up to 100 existing groups, excluding disbanded groups</li><li>Pro Edition or Flagship Edition: unlimited</li></ul></td>
+<td><ul style="margin:0;padding-left:10px"><li>Trial Edition: up to 10 existing groups, excluding disbanded groups</li><li>Pro Edition: up to 50 existing groups, excluding disbanded groups<br>The number of groups is unlimited if the <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> is purchased</li><li>Flagship Edition: unlimited</li></ul></td>
+</tr>
+<tr>
+<td>Number of group members</td>
+<td colspan="3"><ul style="margin:0;padding-left:10px"><li>Trial Edition: 20 members per group</li><li>Pro Edition: 200 members per group by default; up to 2,000 members per group if the <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> is purchased</li><li>Flagship Edition: 2,000 per group; up to 6,000 members per group if the <a href="https://intl.cloud.tencent.com/document/product/1047/34350">value-added service</a> is purchased</li></ul></td>
+<td>Unlimited</td>
+</tr>
+</table>
+
+> For an SDKAppID of Pro Edition or Flagship Edition, a net increase of up to 10,000 groups, regardless of the group type, is allowed in a single day. Up to 100,000 groups can be added for free in a month. If this quota is exceeded, <a href="https://intl.cloud.tencent.com/document/product/1047/34350">fees for usage exceeding the free quota</a> will be charged.
+
 
 ## Group Management
-
-Operations related to groups are performed after login through `TIMGroupManager`.
-
-**Prototype for getting a singleton:**
-
-```
-/** Get instance
- * @return TIMGroupManager instance
- */
-public static TIMGroupManager getInstance()
-
-```
-
+<span id="create"> </span>
 ### Creating a group
+#### Simplified API
+You can quickly create a group by calling the [createGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af836e4912f668dddf6cc679233cfb0bb) API and specifying `groupType`, `groupID`, and `groupName`.
 
-IM has the following built-in group types: **private group (Private), public group (Public), chat room (ChatRoom), audio-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom)**. For more information, please see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D).
-
-- **Audio-video chat room (AVChatRoom):** this is also called a live-streaming group, which can support an unlimited number of members but does not support features such as adding members or querying the total number of members.
-- You can create groups through `createGroup` in `TIMGroupManager`. When creating a group, you can specify certain group profile information, such as the group type, name, introduction, list of users to be added to the group, and even the group ID. The group ID is returned after the group is created and can be used to get Conversation to receive and send messages.
-
-> You need to follow certain rules when defining group IDs. For more information, see [Custom Group IDs](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E7.BE.A4.E7.BB.84-id).
-
-**Prototype:**
+#### Advanced API
+When creating a group, if you also want to initialize group information, such as the group introduction, group profile photo, and initial group members, call the [createGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a121d53137a38d0fc0bc8a8e0a9c55647) API in the `V2TIMGroupManager` management class. To obtain this management class, call `V2TIMManager.getGroupManager`.
 
 ```
-/**
- * Create a group
- * @param param Information set that is needed for creating a group, see {@see CreateGroupParam}
- * @param cb Callback. The parameter of the OnSuccess function returns the ID of the group that is created.
- */
-public void createGroup(@NonNull CreateGroupParam param, @NonNull TIMValueCallBack<String> cb)
-```
+// Sample code: create a work group using the advanced createGroup API 
+V2TIMGroupInfo v2TIMGroupInfo = new V2TIMGroupInfo();
+v2TIMGroupInfo.setGroupName("testWork");
+v2TIMGroupInfo.setGroupType("Work");
+v2TIMGroupInfo.setIntroduction("this is a test Work group");
 
-**`TIMGroupManager.CreateGroupParam` provides the following APIs:**
-```
-/**
- * Create constructor of group parameters
- * @param type Group type. The group types currently supported include private group (Private), public group (Public),
- *             chat room (ChatRoom), audio-video chat room (AVChatRoom), and broadcasting chat room (BChatRoom).
- * @param name Group name
- */
-public CreateGroupParam(@NonNull String type, @NonNull String name)
+List<V2TIMCreateGroupMemberInfo> memberInfoList = new ArrayList<>();
+V2TIMCreateGroupMemberInfo memberA = new V2TIMCreateGroupMemberInfo();
+memberA.setUserID("vinson");
+V2TIMCreateGroupMemberInfo memberB = new V2TIMCreateGroupMemberInfo();
+memberB.setUserID("park");
+memberInfoList.add(memberA);
+memberInfoList.add(memberB);
 
-/**
- * Set the group ID for the group to be created
- * @param groupId Group ID
- */
-public CreateGroupParam setGroupId(String groupId)
-
-/**
- * Set the group announcement for the group to be created
- * @param notification Group announcement
- */
-public CreateGroupParam setNotification(String notification)
-
-/**
- * Set the group introduction for the group to be created
- *  @param introduction     Group introduction
- */
-public CreateGroupParam setIntroduction(String introduction)
-
-/**
- * Set the group profile photo URL for the group to be created
- * @param url Group profile photo URL
- */
-public CreateGroupParam setFaceUrl(String url)
-
-/**
- * Set the option for joining the group
- * @param option Option for joining the group
- */
-public CreateGroupParam setAddOption(TIMGroupAddOpt option)
-
-/**
- * Set the maximum number of group members supported by the group to be created
- * @param maxMemberNum Maximum number of group members
- */
-public CreateGroupParam setMaxMemberNum(long maxMemberNum)
-
-/**
- * Set the custom information for the group to be created
- * @param key Key of custom information, up to 16 bytes
- * @param value Value of custom information, up to 512 bytes
- */
-public CreateGroupParam setCustomInfo(String key, byte[] value)
-
-/**
- * Set the initial members of the group to be created
- * @param infos List of initial member information
- */
-public CreateGroupParam setMembers(List<TIMGroupMemberInfo> infos)
-```
-
-**Example:**
-```
-//Create a public group without customizing the group ID
-TIMGroupManager.CreateGroupParam param = new TIMGroupManager.CreateGroupParam("Public", "test_group");
-//Specify group introduction
-param.setIntroduction("hello world");
-//Specify group notification
-param.setNotification("welcome to our group");
-
-//Add group member
-List<TIMGroupMemberInfo> infos = new ArrayList<TIMGroupMemberInfo>();
-TIMGroupMemberInfo member = new TIMGroupMemberInfo("cat");
-infos.add(member);
-param.setMembers(infos);
-
-//Set group custom field (configure the key in the console first)
-try {
-    param.setCustomInfo("GroupKey1", "wildcat".getBytes("utf-8"));
-} catch (UnsupportedEncodingException e) {
-    e.printStackTrace();
-}
-
-//Create a group
-TIMGroupManager.getInstance().createGroup(param, new TIMValueCallBack<String>() {
-    @Override
-    public void onError(int code, String desc) {
-        Log.d(tag, "create group failed. code: " + code + " errmsg: " + desc);
-    }
-
-    @Override
-    public void onSuccess(String s) {
-        Log.d(tag, "create group succ, groupId:" + s);
-    }
+V2TIMManager.getGroupManager().createGroup(
+    v2TIMGroupInfo, memberInfoList, new V2TIMValueCallback<String>() {
+	@Override
+	public void onError(int code, String desc) {
+		// Creation failed
+	}
+	@Override
+	public void onSuccess(String groupID) {
+		// Created successfully
+	}
 });
 ```
 
-### Inviting users to a group
+- `groupType` is a string-type parameter. Valid values include “Work”, “Public”, “Meeting”, and “AVChatRoom”. To learn about the differences among group types, see [Group Types](#type).
+- `groupID` specifies the group ID, which uniquely identifies a group. Do not create groups with the same `groupID` within the same SDKAppID. If you set `groupID` to null, a group ID is assigned by default.
+- `groupName` specifies the group description, which has a maximum length of 30 bytes.
 
-You can add (invite) users to a group through `inviteGroupMember` of `TIMGroupManager`.
+<span id="join"> </span>
+### Joining a group
+The method for joining a group varies with the group type. The following table describes the specific methods from simple to complex.
 
-**Permission description:**
+| Type | Work Group | Public Group | Meeting Group | AVChatRoom |
+|---------|---------|---------|---------|---------|
+| Method for joining a group | A user can join this group only after being invited by a group member. | A user can join this group after the application is approved by the group owner or admin. | A user can join this group as desired. | A user can join this group as desired. |
 
-For more information, see [Differences in group member operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
+#### Scenario 1: a user joins and quits a group as desired
+Meeting groups and AVChatRooms can be used for interactive scenarios where users join and quit the group frequently, such as online conferences and LVB. Therefore, the process of joining these two types of groups is the simplest.
 
-**Prototype:**
+A user can join a group simply by calling [joinGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564). After the user joins the group, all group members (including the user who just joined the group) receive the [onMemberEnter](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a85cbb33a40aaa41781e4835bf802db6d) callback. 
 
-```
-/**
- * Invite to group
- * @param groupId Group ID
- * @param memList List of IDs of the users to be added to the group
- * @param cb Callback. The parameter of the OnSuccess function returns the accounts of users who have been added to the group
- */
-public void inviteGroupMember(@NonNull String groupId, @NonNull List<String> memList,
-							  @NonNull TIMValueCallBack<List<TIMGroupMemberResult>> cb)
-```
+#### Scenario 2: a user joins a group only after being invited
+A work group is similar to a WeChat group or a WeChat Work group, and is suitable for work-related communication. The interaction pattern is designed to allow a user to join a group only after the user is invited by a member in this group.
 
-**`TIMGroupMemberResult` is defined as follows:**
+A group member can call [inviteUserToGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#afd219107653b877e446c149531d65e92) to invite a user to join the group. Then, all group members (including the inviter) receive the [onMemberInvited](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#af6119ca3c6eabcc63acbf012f508b1b1) callback.
 
-```
-/**
- * Get operation result
- * @return Operation result: 0: failed. 1: successful. 2: the user was already a group member when added, or the user was not a group member when deleted.
- */
-public long getResult()
+#### Scenario 3: a user joins a group only after the application is approved
+A public group is similar to an interest group or a tribe in QQ. Any user can apply to join the group, but will not become a member of the group until the application is approved by the group owner or admin. While the approval is required by default, the group owner or admin can call the [setGroupInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) API to set the group joining option `V2TIMGroupAddOpt` to one of the following values:
+- V2TIM_GROUP_ADD_FORBID: forbid anyone to join the group.
+- V2TIM_GROUP_ADD_AUTH: (default) obtain approval from the group owner or admin before a user can join the group.
+- V2TIM_GROUP_ADD_ANY: disable the approval process to allow any user to join the group.
 
-/**
- * Get user account
- * @return User account
- */
-public String getUser()
-```
+1. **The user sends an application to join the group**
+The user calls [joinGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564) to send an application for joining the group.
+2. **The group owner or admin processes the application**
+After receiving the [onReceiveJoinApplication](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#adf0b34684efd46d6e31d31e7bc3643f9) callback, the group owner or admin calls [getGroupApplicationList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a240db7bdc023ad6fc63e9ee9b72714c4) to obtain the list of applications, and calls [acceptGroupApplication](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad743008d30c909ef0be0f8aa91102e07) or [refuseGroupApplication](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#aa518c54e77f7c0f6e7dd129d6c433acd) to approve or reject applications.
+3. **The applicant receives the application processing result**
+ The user receives the [onApplicationProcessed](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ac833c624e33036ec0454fe5444b8f00a) callback in [V2TIMGroupListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html). If `isAgreeJoin` is `true`, the application is approved. Otherwise, the application is rejected. If the application is approved, all members (including the applicant) receive the [onMemberEnter](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a85cbb33a40aaa41781e4835bf802db6d) callback.
 
 
-**Example:**
 
-```
-//Create a list of members to be added to the group
-ArrayList list = new ArrayList();
-
-String user = "";
-
-//Add users
-user = "sample_user_1";
-list.add(user);
-user = "sample_user_2";
-list.add(user);
-user = "sample_user_3";
-list.add(user);
-
-//Callback
-TIMValueCallBack<List<TIMGroupMemberResult>> cb = new TIMValueCallBack<List<TIMGroupMemberResult>>() {
-    @Override
-    public void onError(int code, String desc) {
-    }
-
-    @Override
-    public void onSuccess(List<TIMGroupMemberResult> results) { //Group member operation results
-        for(TIMGroupMemberResult r : results) {
-            Log.d(tag, "result: " + r.getResult()  //Operation result: 0: failed to add. 1: added successfully. 2: already a group member.
-                    + " user: " + r.getUser());    //User account
-        }
-    }
-};
-
-//Add the users in the list to the group
-TIMGroupManager.getInstance().inviteGroupMember(
-        groupId,   //Group ID
-        list,      //List of users to be added to the group
-        cb);       //Callback
-```
-
-### Applying to join a group
-
-`applyJoinGroup` of `TIMGroupManager` allows users to apply to join a group. This operation is valid only for public groups, chat rooms, and audio-video chat rooms.
-
-**Permission description:**
-
-For more information, see [Differences in group member operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
-
-**Prototype:**
-
-```
-/**
- * Join group
- * @param groupId Group ID
- * @param reason Reason for the application (optional)
- * @param cb Callback
- */
-public void applyJoinGroup(@NonNull String groupId, String reason, @NonNull TIMCallBack cb)
-```
-
-In the following example, a user applies to join group “@TGS#1JYSZEAEQ” and the reason for the application is “some reason”. **Example:**
-
-```
-TIMGroupManager.getInstance().applyJoinGroup("@TGS#1JYSZEAEQ", "some reason", new TIMCallBack() {
-    @java.lang.Override
-    public void onError(int code, String desc) {
-        //The API returns "code" (error code) and "desc" (error description) which can be used as the cause
-        //For a list of error codes, see the Error Code Table
-        Log.e(tag, "applyJoinGroup err code = " + code + ", desc = " + desc);
-    }
-
-    @java.lang.Override
-    public void onSuccess() {
-        Log.i(tag, "applyJoinGroup success");
-    }
-});
-```
-
+<span id="quit"> </span>
 ### Quitting a group
+To quit a group, call [quitGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a6d140dbeb44906de9cb69f69c2ce5919). Then, the user who quits the group receives the [onQuitFromGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a489004526f1bd8daba7ac63fb0ad965f) callback, and other group members receive the [onMemberLeave](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a2169676423875e4c9c376796245ca8d5) callback.
+> The group owner of a public group, a meeting group, or an AVChatRoom is not allowed to quit the group, and can only [disband the group](#dismiss).
 
-Group members can quit a group through the API provided by `TIMGroupManager`.
+<span id="dismiss"> </span>
+### Disbanding a group
+To disband a group, call [dismissGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd0221c0c842a6dcfa0acc657e50caeb). Then, all group members receive the [onGroupDismissed](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a6e89728e160e126460a6b8eeddf00ad5) callback.
 
-**Permission description:**
+> 
+>- The group owner of a public group, a meeting group, or an AVChatRoom can disband the group at any time.
+>- The group owner of a work group is not authorized to disband the group. To disband the group, call the [RESTful API](https://intl.cloud.tencent.com/document/product/1047/34896) from your business server.
 
-- **Private group:** every member can quit the group.
-- **Public group, chat room, and live-streaming group:** the group owner cannot quit the group.
 
-For more information, see [Differences in group member operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
+### Obtaining the list of joined groups
+To obtain a list of work groups, public groups, and meeting groups that a user has joined, call [getJoinedGroupList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a05bfd8f7df6bfba718abc96fdad49791). AVChatRooms are excluded from this list.
 
-**Prototype:**
+## Group Profiles and Group Settings
+### Obtaining group profiles
+To obtain group profiles, call [getGroupsInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ada614335043d548c11f121500e279154). You can pass in multiple `groupID` values at a time to obtain profiles of multiple groups in a batch.
 
-```
-/**
- * Quit a group
- * @param groupId Group ID
- * @param cb Callback
- */
-public void quitGroup(@NonNull String groupId, @NonNull TIMCallBack cb)
-```
-
-**Example:**
-
-```
-//Create callback
-TIMCallBack cb = new TIMCallBack() {
-    @Override
-    public void onError(int code, String desc) {
-            //"code" (error code) and "desc" (error description) can be used to locate the cause of the request failure
-            //For the meaning of the error code, please see the Error Code Table
-    }
-
-    @Override
-    public void onSuccess() {
-        Log.e(tag, "quit group succ");
-    }
-};
-
-//Quit a group
-TIMGroupManager.getInstance().quitGroup(
-        groupId,  //Group ID
-        cb);      //Callback
-```
-
-### Deleting group members
-
-This function’s parameters are the same as those of joining a group. The API to delete group members is provided by `TIMGroupManager`.
-
-**Permission description:**
-For more information, see [Differences in group member operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82).
-
-**Prototype:**
-
-```
-/**
- * Deleting group members
- * @param param Parameter for deleting group members
- * @param cb Callback. The parameter of the OnSuccess function returns a list of group members that have been deleted.
- */
-public void deleteGroupMember(@NonNull DeleteMemberParam param,
-							  @NonNull TIMValueCallBack<List<TIMGroupMemberResult>> cb)
-```
-
-**`DeleteMemberParam` is defined as follows:**
-```
-/**
- * Construct parameter
- * @param groupId Group ID
- * @param members List of user IDs
- */
-public DeleteMemberParam(@NonNull String groupId, @NonNull List<String> members)
-
-/**
- * Set the reason for deleting the group members (optional)
- * @param reason  Reason for deleting
- */
-public DeleteMemberParam setReason(@NonNull String reason)
-```
-
-**Example:**
-
-```
-//Create a list of group members to be deleted
-ArrayList list = new ArrayList();
-
-String user = "";
-//Add users
-user = "sample_user_1";
-list.add(user);
-user = "sample_user_2";
-list.add(user);
-user = "sample_user_3";
-list.add(user);
-
-TIMGroupManager.DeleteMemberParam param = new TIMGroupManager.DeleteMemberParam(groupId, list);
-param.setReason("some reason");
-
-TIMGroupManager.getInstance().deleteGroupMember(param, new TIMValueCallBack<List<TIMGroupMemberResult>>() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "deleteGroupMember onErr. code: " + code + " errmsg: " + desc);
-	}
-
-	@Override
-	public void onSuccess(List<TIMGroupMemberResult> results) { //Group member operation results
-		for(TIMGroupMemberResult r : results) {
-			Log.d(tag, "result: " + r.getResult()  //Operation result: 0: failed to delete. 1: deleted successfully. 2: not a group member.
-					+ " user: " + r.getUser());    //User account
-		}
-	}
-});
-```
-
-### Getting group member list
-
-The API to get a list of group members is `getGroupMembers`. Built-in fields and custom fields are pulled by default. Go to [IM Console](https://console.cloud.tencent.com/im) -> **Feature Configuration** -> **Group member custom fields** to configure the keys and permissions for custom fields, which take effect after 5 minutes.
-
-**Permission description:**
-
-- **Any type of group:** member list can be obtained.
-- **Live-streaming group:** the member list only contains the group owner, admin, and some members.
-
-For more information, see [Differences in group operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
-
-**Prototype:**
-
-```
-/**
- * Get group member list
- * @param groupId Group ID
- * @param cb Callback. The parameter of the OnSuccess function returns the list of group members.
- */
-public void getGroupMembers(@NonNull String groupId, @NonNull TIMValueCallBack<List<TIMGroupMemberInfo>> cb)
-```
-
-**Example:**
-
-```
-//Create callback
-TIMValueCallBack<List<TIMGroupMemberInfo>> cb = new TIMValueCallBack<List<TIMGroupMemberInfo>> () {
-    @Override
-    public void onError(int code, String desc) {
-    }
-
-    @Override
-    public void onSuccess(List<TIMGroupMemberInfo> infoList) {//The parameter returns group member information
-
-        for(TIMGroupMemberInfo info : infoList) {
-            Log.d(tag, "user: " + info.getUser() +
-            "join time: " + info.getJoinTime() +
-            "role: " + info.getRole());
-        }
-    }
-};
-
-//Get group member information
-TIMGroupManager.getInstance().getGroupMembers(
-        groupId,   //Group ID
-        cb);     //Callback
-```
-
-### Getting the list of groups the user has joined
-
-You can get the list of groups the current user has joined through `TIMGroupManager`. The returned information contains only part of the basic information. To get detailed group information, see [Get group profiles of group members](https://intl.cloud.tencent.com/document/product/1047/34328).
-
-**Permission description:**
-
-- **Private group, public group, and chat room:** this API allows you to get the information of public groups, chat rooms, and activated private groups the user has joined.
-- **Audio-video chat room and broadcasting chat room:** these two types of groups will not be obtained through this API due to the differences in internal implementation.
-
-**Prototype:**
-
-```
-/**
- * Get the list of groups the user has joined
- * @param cb Callback. The parameter of the OnSuccess function returns the groups the user has joined
- */
-public void getGroupList(@NonNull TIMValueCallBack<List<TIMGroupBaseInfo>> cb)
-```
-
-**`TIMGroupBaseInfo` provides the following methods:**
-```
-/**
- * Get group ID
- * @return Group ID
- */
-public String getGroupId()
-
-/**
- * Get group name
- * @return Group name
- */
-public String getGroupName()
-
-/**
- * Get group type
- * @return Group type
- */
-public String getGroupType()
-
-/**
- * Get group profile photo URL
- * @return Group profile photo URL
- */
-public String getFaceUrl()
-
-/**
- * Get whether the current group has set Mute All or not
- * @return true - Mute All has been set
- * @since 3.1.1
- */
-public boolean isSilenceAll()
-```
-
-**Example:**
-
-```
-//Create callback
-TIMValueCallBack<List<TIMGroupBaseInfo>> cb = new TIMValueCallBack<List<TIMGroupBaseInfo>>() {
-    @Override
-    public void onError(int code, String desc) {
-        //"code" (error code) and "desc" (error description) can be used to locate the cause of the request failure
-        //For the meaning of the error code, please see the Error Code Table
-        Log.e(tag, "get group list failed: " + code + " desc");
-    }
-
-    @Override
-    public void onSuccess(List<TIMGroupBaseInfo> timGroupInfos) {//The parameter returns the basic information of each group
-        Log.d(tag, "get group list succ");
-
-        for(TIMGroupBaseInfo info : timGroupInfos) {
-            Log.d(tag, "group id: " + info.getGroupId() +
-            " group name: " + info.getGroupName() +
-            " group type: " + info.getGroupType());
-        }
-    }
-};
-
-//Get the list of groups the user has joined
-TIMGroupManager.getInstance().getGroupList(cb);
-```
-
-### Disbanding groups
-
- The API to disband groups is provided by `TIMGroupManager`.
-
-**Permission description:**
-For more information, see [Differences in group operations](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E6.93.8D.E4.BD.9C.E5.B7.AE.E5.BC.82). 
-
-**Prototype:**
-
-```
-/**
- * Delete group
- * @param groupId Group ID
- * @param cb Callback
- */
-public void deleteGroup(@NonNull String groupId, @NonNull TIMCallBack cb)
-```
-
-**Example:**
-
-```
-//Disbanding groups
-TIMGroupManager.getInstance().deleteGroup(groupId, new TIMCallBack() {
-    @Override
-    public void onError(int code, String desc) {
-
-        //"code" (error code) and "desc" (error description) can be used to locate the cause of the request failure
-        //For a list of error codes, see the Error Code Table
-        Log.d(tag, "login failed. code: " + code + " errmsg: " + desc);
-    }
-
-    @Override
-    public void onSuccess() {
-        //Group disbanded successfully
-    }
-});
-```
-
-### Transferring a group
-
-The API to transfer groups is provided by `TIMGroupManager`.
-
-**Permission description:**
-
-Only the **group owner** can transfer a group.
-
-**Prototype:**
-
-```
-/**
- * Change the group owner
- * @param groupId Group ID
- * @param identifier The identifier of the new group owner
- * @param cb Callback
- */
-public void modifyGroupOwner(@NonNull String groupId, @NonNull String identifier, @NonNull TIMCallBack cb)
-```
-
-### Other APIs
-
-**The API to get specified types of members (to pull group admins, group owners, and group members respectively) is defined as follows:**
-
-```
-/**
- * Get the group member list according to filter conditions (the list can be pulled by field and in pages)
- * @param groupId Group ID
- * @param flags The flag of profiles to be pulled, such as {@see TIMGroupManager#TIM_GET_GROUP_MEM_INFO_FLAG_NAME_CARD} or any combination of them
- * @param filter Role filter, see {@see TIMGroupMemberRoleFilter}
- * @param custom The list of custom keys to get
- * @param nextSeq     The flag for pulling in pages. Enter 0 for the first request. If the success callback returns a value that is not 0, then the list will be pulled in pages. Pass this parameter to pull again until the value becomes 0.
- * @param cb Callback
- */
-public void getGroupMembersByFilter(@NonNull String groupId, long flags, @NonNull TIMGroupMemberRoleFilter filter,
-									List<String> custom, long nextSeq, TIMValueCallBack<TIMGroupMemberSucc> cb)
-```
-
-## Getting Group Profiles
-
-### Getting group profiles
-
-You can use the `getGroupInfo` method provided by `TIMGroupManager` to get group profiles stored on the server and use the `queryGroupInfo` method to pull group profiles cached locally. Group members can pull group information. Non-members cannot pull private groups’ information and can only pull public fields of other types of groups, `groupId\groupName\groupOwner\groupType\createTime\memberNum\maxMemberNum\onlineMemberNum\groupIntroduction\groupFaceUrl\addOption\custom`.
-
-**Note:**
-
-Basic profile and custom fields are pulled by default. Go to the [IM Console](https://console.cloud.tencent.com/im) -> **Feature Configuration** -> **Group custom fields** to configure the keys and permissions for custom fields, which take effect after 5 minutes.
-
-**Prototype:**
-
-```
-/**
- * Get the group information stored on the server
- * @param groupIdList The list of groups of which the detailed information is to be pulled. Up to 50 groups can be pulled at a time.
- * @param cb Callback. The parameter of the OnSuccess function returns the list of group information {@see TIMGroupDetailInfo}
- */
-public void getGroupInfo(@NonNull List<String> groupIdList,
-							   @NonNull TIMValueCallBack<List<TIMGroupDetailInfo>> cb)
-/**
- * Get the group information stored locally
- * @param groupId The IDs of the groups of which the detailed information is to be pulled
- * @return Group information. null is returned if the group information is not stored locally.
- */
- public TIMGroupDetailInfo queryGroupInfo(@NonNull String groupId)
-```
-
-**`TIMGroupDetailInfo` is defined as follows:**
-```
-/**
- * Get group ID
- * @return Group ID
- */
-public String getGroupId()
-
-/**
- * Get group name
- * @return Group name
- */
-public String getGroupName()
-
-/**
- * Get group creator account
- * @return Group creator account
- */
-public String getGroupOwner()
-
-/**
- * Get group creation time
- * @return Group creation time
- */
-public long getCreateTime()
-
-/**
- * Get the last modified time of group information
- * @return The last modified time of group information
- */
-public long getLastInfoTime()
-
-/**
- * Get the time of the last group message
- * @return The time of the last group message
- */
-public long getLastMsgTime()
-
-/**
- * Get the number of group members
- * @return The number of group members
- */
-public long getMemberNum()
-
-/**
- * The maximum number of group members supported
- * @return The maximum number of group members
- */
-public long getMaxMemberNum()
-
-/**
- * Get group introduction
- * @return Group introduction
- */
-public String getGroupIntroduction()
-
-/**
- * Get group announcement
- * @return Group announcement
- */
-public String getGroupNotification()
-
-/**
- * Get group profile photo URL
- * @return Group profile photo URL
- */
-public String getFaceUrl()
-
-/**
- * Get group type
- * @return Group type
- */
-public String getGroupType()
-
-/**
- * Get the option for joining the group
- * @return The option for joining the group
- */
-public TIMGroupAddOpt getGroupAddOpt()
-
-/**
- * Get the last message in the group
- * @return The last message in the group
- */
-public TIMMessage getLastMsg()
-
-/**
- * Get the group custom field map
- * @return The group custom field map
- */
-public Map<String, byte[]> getCustom()
-
-/**
- * Get whether this group has set Mute All or not
- * @return true - Mute All has been set for the group
- * @since 3.1.1
- */
-public boolean isSilenceAll()
-```
-
-**Example:**
-
-```
-//Create a list of group IDs for which you want to get information
-ArrayList<String> groupList = new ArrayList<String>();
-
-//Create callback
-TIMValueCallBack<List<TIMGroupDetailInfo>> cb = new TIMValueCallBack<List<TIMGroupDetailInfo>>() {
-    @Override
-    public void onError(int code, String desc) {
-            //"code" (error code) and "desc" (error description) can be used to locate the cause of the request failure
-            //For a list of error codes, see the Error Code Table
-    }
-
-    @Override
-    public void onSuccess(List<TIMGroupDetailInfo> infoList) { //The parameter returns the list of group information
-        for(TIMGroupDetailInfo info : infoList) {
-            Log.d(tag, "groupId: " + info.getGroupId()           //Group ID
-            + " group name: " + info.getGroupName()              //Group name
-            + " group owner: " + info.getGroupOwner()            //Group creator account
-            + " group create time: " + info.getCreateTime()      //Group creation time
-            + " group last info time: " + info.getLastInfoTime() //Last modified time of group information
-            + " group last msg time: " + info.getLastMsgTime()  //The time of the last group message
-            + " group member num: " + info.getMemberNum());      //The number of group members
-        }
-    }
-};
-
-//Add group ID
-String groupId = "TGID1EDABEAEO";
-groupList.add(groupId);
-
-//Get group information stored on the server
-TIMGroupManager.getInstance().getGroupInfo(
-        groupList, //List of group IDs for which you want to get information
-        cb);       //Callback
-
-//Get group information cached locally
-TIMGroupDetailInfo timGroupDetailInfo = TIMGroupManager.getInstance().queryGroupInfo(groupId);
-```
-
-### Getting your own profile in a group
-
-You can obtain your own profile in a group when the list of groups you have joined is pulled. See [Getting group list](#.E8.8E.B7.E5.8F.96.E5.8A.A0.E5.85.A5.E7.9A.84.E7.BE.A4.E7.BB.84.E5.88.97.E8.A1.A8). If you want to get your profile in a single group, use `getSelfInfo` of `TIMGroupManager` as shown below. If the app needs to get a group list, we recommend that you get the profiles in groups when getting the group list instead of calling the following API.
-
-**Permission description:**
-
-**Live-streaming groups** do not support getting your own profile in the group.
-
-**Prototype:**
-
-```
-/**
- * Get your own information in the group
- * @param groupId Group ID
- * @param cb Callback. The parameter of the OnSuccess function returns your own information
- */
-public void getSelfInfo(@NonNull String groupId, @NonNull TIMValueCallBack<TIMGroupSelfInfo> cb)
-```
-
-### Getting the profiles of specified group members
-
-The API to get group member profiles is provided by `TIMGroupManager`. Basic profiles are pulled by default.
-
-**Permission description:**
-
-For a **live-streaming group**, only the profiles of some members can be pulled, including the group owner, admin, and some members.
-
-**Prototype:**
-```
-/**
- * Get the profiles of specified members in the group
- @param groupId ID of the group you specify
- * @param identifiers Up to 100 identifiers of specified group members
- * @param cb Callback. The parameter of the OnSuccess function returns the group member list
- */
-public void getGroupMembersInfo(@NonNull String groupId, @NonNull List<String> identifiers,
-								@NonNull TIMValueCallBack<List<TIMGroupMemberInfo>> cb)
-```
-
-
-## Modifying the Group Profile
-
-The API to modify the group profile is provided by `TIMGroupManager`, which allows you to modify information such as the group name, introduction, and announcement.
-
-**Prototype:**
-
-```
-/**
- * Modify group basic information
- * @param param Parameter class
- * @param cb Callback
- */
-public void modifyGroupInfo(@NonNull ModifyGroupInfoParam param, @NonNull TIMCallBack cb)
-```
-
-**`TIMGroupManager.ModifyGroupInfoParam` is defined as follows:**
-
-```
-/**
- * Construct parameter instance
- * @param groupId Group ID
- */
-public ModifyGroupInfoParam(@NonNull String groupId)
-
-/**
- * Set the modified group name
- * @param groupName Group name
- */
-public ModifyGroupInfoParam setGroupName(@NonNull String groupName)
-
-/**
- * Set the modified group announcement
- * @param notification Group announcement
- */
-public ModifyGroupInfoParam setNotification(@NonNull String notification)
-
-/**
- * Set the modified group introduction
- * @param introduction Group introduction
- */
-public ModifyGroupInfoParam setIntroduction(@NonNull String introduction)
-
-/**
- * Set the modified group profile photo URL
- * @param faceUrl Group profile photo URL
- */
-public ModifyGroupInfoParam setFaceUrl(@NonNull String faceUrl)
-
-/**
- * Set the option for joining the group
- * @param addOpt Option for joining the group
- */
-public ModifyGroupInfoParam setAddOption(@NonNull TIMGroupAddOpt addOpt)
-
-/**
- * Set the maximum number of group members
- * @param maxMemberNum The maximum number of group members
- */
-public ModifyGroupInfoParam setMaxMemberNum(long maxMemberNum)
-
-/**
- * Set whether group members are visible to users outside the group
- * @param visable Whether group members are visible to users outside the group
- */
-public ModifyGroupInfoParam setVisable(boolean visable)
-
-/**
- * Set group custom field
- * @param customInfos Group custom field dictionary
- */
-public ModifyGroupInfoParam setCustomInfo(@NonNull Map<String, byte[]> customInfos)
-
-/**
- * Set Mute All
- * @param silenceAll true - Mute All, false - Unmute All
- * @since 3.1.1
- */
-public ModifyGroupInfoParam setSilenceAll(boolean silenceAll)
-```
-
-### Modifying the group name
-
-**Permission description:**
-
-- **Public group, chat room, and live-streaming group:** only the group owner or admin can modify the group name.
-- **Private group:** any member can modify the group name.
-
-**Example:**
-
-```
-TIMGroupManager.ModifyGroupInfoParam param = new TIMGroupManager.ModifyGroupInfoParam(getGroupId());
-param.setGroupName("Great Team")
-TIMGroupManager.getInstance().modifyGroupInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modify group info failed, code:" + code +"|desc:" + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.e(tag, "modify group info succ");
-	}
-});
-```
-
-### Modifying the group introduction
-
-**Permission description:**
-
-- **Public group, chat room, and live-streaming group:** only the group owner or admin can modify the group introduction.
-- **Private group:** any member can modify the group introduction.
-
-**Example:**
-
-```
-TIMGroupManager.ModifyGroupInfoParam param = new TIMGroupManager.ModifyGroupInfoParam(getGroupId());
-param.setIntroduction("this is a introduction");
-TIMGroupManager.getInstance().modifyGroupInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modify group info failed, code:" + code +"|desc:" + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.e(tag, "modify group info succ");
-	}
-});
-```
-
-### Modifying the group announcement
-
-**Permission description:**
-
-- **Public group, chat room, and live-streaming group:** only the group owner or admin can modify the group announcement.
-- **Private group:** any member can modify the group announcement.
-
-**Example:**
-
-```
-TIMGroupManager.ModifyGroupInfoParam param = new TIMGroupManager.ModifyGroupInfoParam(getGroupId());
-param.setNotification("this is a notification");
-TIMGroupManager.getInstance().modifyGroupInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modify group info failed, code:" + code +"|desc:" + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.e(tag, "modify group info succ");
-	}
-});
-```
-
-### Modifying the group profile photo
-
-**Permission description:**
-
-- **Public group, chat room, and live-streaming group:** only the group owner or admin can modify the group profile photo.
-- **Private group:** any member can modify the group profile photo.
-
-
-**Example:**
-
-```
-TIMGroupManager.ModifyGroupInfoParam param = new TIMGroupManager.ModifyGroupInfoParam(getGroupId());
-param.setFaceUrl("http://faceurl");
-TIMGroupManager.getInstance().modifyGroupInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modify group info failed, code:" + code +"|desc:" + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.e(tag, "modify group info succ");
-	}
-});
-```
-
-### Modifying the option for joining the group
-
-**Permission description:**
-
-- **Public group, chat room, and live-streaming group:** only the group owner or admin can modify the option for joining the group.
-- **Private group:** users can join the group only through invitation and not application.
-
-**Example:**
-
-```
-TIMGroupManager.ModifyGroupInfoParam param = new TIMGroupManager.ModifyGroupInfoParam(getGroupId());
-param.setAddOption(TIMGroupAddOpt.TIM_GROUP_ADD_ANY);
-TIMGroupManager.getInstance().modifyGroupInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modify group info failed, code:" + code +"|desc:" + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.e(tag, "modify group info succ");
-	}
-});
-```
-
-### Modifying group custom fields
-
-**Permission description:**
-
-- Relevant keys and permissions need to be configured at the backend.
-
-**Example:**
-
-```
-TIMGroupManager.ModifyGroupInfoParam param = new TIMGroupManager.ModifyGroupInfoParam(getGroupId());
-Map<String, byte[]> customInfo = new HashMap<String, byte[]>();
-try {
-	customInfo.put("Test", "Test_value".getBytes("utf-8"));
-	param.setCustomInfo(customInfo);
-} catch (UnsupportedEncodingException e) {
-	e.printStackTrace();
-}
-
-TIMGroupManager.getInstance().modifyGroupInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modify group info failed, code:" + code +"|desc:" + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.e(tag, "modify group info succ");
-	}
-});
-```
-
-### Muting all members
-
-**Permission description:**
-
-- **Only the group owner and admin** can mute all members.
-- **All group types** support muting all members.
-
-**Example:**
-
-```
-TIMGroupManager.ModifyGroupInfoParam param = new TIMGroupManager.ModifyGroupInfoParam(groupId);
-param.setSilenceAll(true);
-TIMGroupManager.getInstance().modifyGroupInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modify group info failed, code:" + code +"|desc:" + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.e(tag, "modify group info succ");
-	}
-});
-```
-
-## Modifying Group Member Profiles
-
-The API to modify group member profiles is provided by `TIMGroupManager`, which allows you to modify group members’ roles and name cards and mute group members.
-
-**Prototype:**
-
-```
-/**
- * Modify group member profiles
- * @param param The parameter for modifying a group member profile
- * @param cb Callback
- */
-public void modifyMemberInfo(@NonNull ModifyMemberInfoParam param, @NonNull TIMCallBack cb)
-```
-
-**`TIMGroupManager.ModifyMemberInfoParam` is defined as follows:**
-
-```
-/**
- * Construct parameter for modifying a group member profile
- * @param groupId The group ID
- * @param identifier The user ID of the group member whose profile is to be modified
- */
-public ModifyMemberInfoParam(@NonNull String groupId, @NonNull String identifier)
-
-/**
- * Modify a group member’s name card
- * @param nameCard Group name card
- */
-public ModifyMemberInfoParam setNameCard(@NonNull String nameCard)
-
-/**
- * Modify the option for receiving group messages
- * @param receiveMessageOpt The option for receiving group messages. See {@see TIMGroupReceiveMessageOpt}
- */
-public ModifyMemberInfoParam setReceiveMessageOpt(@NonNull TIMGroupReceiveMessageOpt receiveMessageOpt)
-
-/**
- * Modify a group member’s role (only the group owner and admins can modify roles)
- * @param roleType The type of the role. Cannot be changed to group owner. See {@see TIMGroupMemberRoleType}
- */
-public ModifyMemberInfoParam setRoleType(TIMGroupMemberRoleType roleType)
-
-/**
- * Set the duration of muting (only the group owner and admin can set this)
- * @param silence Duration of muting
- */
-public ModifyMemberInfoParam setSilence(long silence)
-
-/**
- * Set group custom field
- * @param customInfo Group custom field dictionary
- */
-public ModifyMemberInfoParam setCustomInfo(Map<String, byte[]> customInfo)
-```
-
-### Modifying a member’s role in the group
-
-**Permission description:**
-
-- **Only the group owner or admin** can modify group members’ roles.
-- **Live-streaming group** does not support modifying group members’ roles.
-
-**Example:**
-
-```
-TIMGroupManager.ModifyMemberInfoParam param = new TIMGroupManager.ModifyMemberInfoParam(groupId, identifier);
-param.setRoleType(TIMGroupMemberRoleType.Admin);
-
-TIMGroupManager.getInstance().modifyMemberInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modifyMemberInfo failed, code:" + code + "|msg: " + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.d(tag, "modifyMemberInfo succ");
-	}
-});
-```
-
-### Muting group members
-
-You can mute group members and set the duration of muting through `modifyMemberInfoParam.setSilence()`.
-
-**Permission description:**
-
-- **Only the group owner or admin** can mute group members.
-
-**Example:**
-
-```
-//Mute for 100 seconds
-TIMGroupManager.ModifyMemberInfoParam param = new TIMGroupManager.ModifyMemberInfoParam(groupId, identifier);
-param.setSilence(100);
-
-TIMGroupManager.getInstance().modifyMemberInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modifyMemberInfo failed, code:" + code + "|msg: " + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.d(tag, "modifyMemberInfo succ");
-	}
-});
-```
-
-### Modifying a member’s name card in a group
-
-
-**Example:**
-
-```
-TIMGroupManager.ModifyMemberInfoParam param = new TIMGroupManager.ModifyMemberInfoParam(groupId, identifier);
-param.setNameCard("cat");
-
-TIMGroupManager.getInstance().modifyMemberInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modifyMemberInfo failed, code:" + code + "|msg: " + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.d(tag, "modifyMemberInfo succ");
-	}
-});
-```
-
-### Modifying group member custom fields
-
-**Example:**
-
-```
-TIMGroupManager.ModifyMemberInfoParam param = new TIMGroupManager.ModifyMemberInfoParam(groupId, identifier);
-Map<String, byte[]> customInfo = new HashMap<>();
-try {
-	customInfo.put("Test", "Custom".getBytes("utf-8"));
-	param.setCustomInfo(customInfo);
-} catch (UnsupportedEncodingException e) {
-	e.printStackTrace();
-}
-
-TIMGroupManager.getInstance().modifyMemberInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modifyMemberInfo failed, code:" + code + "|msg: " + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.d(tag, "modifyMemberInfo succ");
-	}
-});
-```
-
-### Modifying the option for receiving group messages
-
-**Permission description:**
-
-- **Public group and private group:** the default option is to receive and push group messages offline.
-- **Chat room and audio-video chat room:** the default option is to receive but not push group messages offline.
-
-**`TIMGroupReceiveMessageOpt` is defined as follows:**
-
-```
-//Do not receive group messages and the server does not forward them
-TIMGroupReceiveMessageOpt.NotReceive
-
-//Receive group messages but do not push offline messages when offline
-TIMGroupReceiveMessageOpt.ReceiveNotNotify
-
-//Receive group messages and push offline messages when offline
-TIMGroupReceiveMessageOpt.ReceiveAndNotify
-```
-
-**Example:**
-
-```
-TIMGroupManager.ModifyMemberInfoParam param = new TIMGroupManager.ModifyMemberInfoParam(groupId, identifier);
-param.setReceiveMessageOpt(TIMGroupReceiveMessageOpt.ReceiveAndNotify);
-
-TIMGroupManager.getInstance().modifyMemberInfo(param, new TIMCallBack() {
-	@Override
-	public void onError(int code, String desc) {
-		Log.e(tag, "modifyMemberInfo failed, code:" + code + "|msg: " + desc);
-	}
-
-	@Override
-	public void onSuccess() {
-		Log.d(tag, "modifyMemberInfo succ");
-	}
-});
-```
-
-## Group Pending Requests
-
-Group pending requests are group-related operations that require approval, such as pending “apply to join” requests and pending “invited to join” requests. Group pending information is represented by the `TIMGroupPendencyItem` class.
-
-**The following are member methods of `TIMGroupPendencyItem`:**
-```
-/**
- * Get group ID
- * @return Group ID
- */
-public String getGroupId()
-
-/**
- * Get the identifier of the requester, who is the requester for “apply to join” requests and the inviter for “invited to join” requests.
- * @return The requester’s identifier
- */
-public String getFromUser()
-
-/**
- * Get the identifier of the handler. The identifier is 0 if it is an “apply to join” request and the invitee if it is an “invited to join” request.
- * @return The handler’s identifier
- */
-public String getToUser()
-
-/**
- * Get the time the group pending request is added
- * @return The time the group pending request is added
- */
-public long getAddTime()
-
-/**
- * Get the type of the group pending request
- * @return The type of the group pending request. See TIMGroupPendencyGetType for details
- */
-public TIMGroupPendencyGetType getPendencyType()
-
-/**
- * Get the processing status of the group pending request
- * @return The processing status of the group pending request. See {@see TIMGroupPendencyHandledStatus}
- */
-public TIMGroupPendencyHandledStatus getHandledStatus()
-
-/**
- * Get the processing type of the group pending request. Only valid when the processing status is not {@see TIMGroupPendencyHandledStatus#NOT_HANDLED}.
- * @return The processing type of the group pending request. See {@see TIMGroupPendencyOperationType}
- */
-public TIMGroupPendencyOperationType getOperationType()
-
-/**
- * Get the additional information added by the requester
- * @return The additional information added by the requester
- */
-public String getRequestMsg()
-
-/**
- * Get the custom information added by the requester
- * @return The custom information added by the requester
- */
-private String getRequestUserData()
-
-/**
- * Get the additional information added by the handler. Only valid when the processing status is not {@see TIMGroupPendencyHandledStatus#NOT_HANDLED}.
- * @return The additional information added by the handler
- */
-public String getHandledMsg()
-
-/**
- * Get the custom information added by the handler. Only valid when the processing status is not {@see TIMGroupPendencyHandledStatus#NOT_HANDLED}.
- * @return The custom information added by the handler
- */
-private String getHandledUserData()
-
-/**
- * Approve the request. Only valid for “apply to join” and “invited to join” messages.
- *
- * @param msg Reason for approval (optional)
- * @param cb Callback
- */
-public void accept(String msg, TIMCallBack cb)
-
-/**
- * Reject the request. Only valid for “apply to join” and “invited to join” messages.
- *
- * @param msg Reason for approval (optional)
- * @param cb Callback
- */
-public void refuse(String msg, TIMCallBack cb)
-```
-
-### Pulling a list of group pending requests
-
-You can pull information related to group pending requests through the `getGroupPendencyList` API of `TIMGroupManager`. A message can be pulled through this API even after it has been approved or rejected. In this case, the message pulled has a “processed” flag.
-
-**Permission description:**
-
-**Only the approver** has permission to pull the information.
-
-> For example:
->- If user A applies to join group A, the group admin can obtain information related to this pending request. As user A does not have approval permission, user A does not need to obtain information related to this pending request.
->- If admin A invites user A to join group A, user A can obtain the information related to this pending request because this pending request needs to be approved by user A.
-
-**Prototype:**
-
-```
-/**
- * Get group pending requests in pages
- * @param param The parameter for getting a list of group pending requests. See {@see TIMGroupPendencyGetParam}
- * @param cb Callback. The parameter of onSuccess returns the list of group pending requests and metadata. See {@see TIMGroupPendencyMeta} and {@see TIMGroupPendencyItem}
- */
-public void getGroupPendencyList(@NonNull TIMGroupPendencyGetParam param,
-								 @NonNull TIMValueCallBack<TIMGroupPendencyListGetSucc> cb)
-```
-
-**`TIMGroupPendencyGetParam` is defined as follows:**
-
-```
-/**
- * Set the paging timestamp. Enter 0 for the first request and subsequent values according to the timestamps in {@see TIMGroupPendencyMeta} returned by the server
- * @param timestamp Paging timestamp
- */
-public void setTimestamp(long timestamp)
-
-/**
- * Set the number of requests per page (this is a suggested value which does not indicate completion; the server can return more or less requests)
- * @param numPerPage The number of requests per page
- */
-public void setNumPerPage(long numPerPage)
-```
-
-**Example:**
-
-```
-TIMGroupPendencyGetParam param = new TIMGroupPendencyGetParam();
-param.setTimestamp(0);//Enter 0 for the first request
-param.setNumPerPage(10);
-
-TIMGroupManager.getInstance().getGroupPendencyList(param, new TIMValueCallBack<TIMGroupPendencyListGetSucc>() {
-    @Override
-    public void onError(int code, String desc) {
-
-    }
-
-    @Override
-    public void onSuccess(TIMGroupPendencyListGetSucc timGroupPendencyListGetSucc) {
-        //If the nextStartTimestamp in meta is not 0, then save it
-        //as the parameter in TIMGroupPendencyGetParam for getting the next page of data
-        TIMGroupPendencyMeta meta = timGroupPendencyListGetSucc.getPendencyMeta();
-        Log.d(tag, meta.getNextStartTimestamp()
-                + "|" + meta.getReportedTimestamp() + "|" + meta.getUnReadCount());
-
-        List<TIMGroupPendencyItem> pendencyItems = timGroupPendencyListGetSucc.getPendencies();
-        for(TIMGroupPendencyItem item : pendencyItems){
-            //Operate on group pending requests, such as view, approve, or reject a request
-        }
-    }
-});
-```
-
-### Reporting that group pending requests are read
-
-Report that the current pending request and all the pending requests before it have been read through `reportGroupPendency` of `TIMGroupManager`. After the report, you can still pull these pending requests and determine whether they are read through the read timestamp.
-
-**Prototype:**
-
-```
-/**
- * Report that group pending requests are read
- * @param timestamp Read timestamp in seconds. Group pending requests before this timestamp are set as read.
- * @param cb Callback
- */
-public void reportGroupPendency(long timestamp, @NonNull TIMCallBack cb)
-```
-
-
-### Processing group pending requests
-
-Get a list of group pending requests (`TIMGroupPendencyItem`) through `getGroupPendencyList` and process the requests through the `accept/refuse` API in the `TIMGroupPendencyItem` class. Requests that have been processed cannot be processed again.
-
-**Prototype:**
-
-```
-/**
- * Approve the request. Only valid for “apply to join” and “invited to join” messages.
- *
- * @param msg Reason for approval (optional)
- * @param cb Callback
- */
-public void accept(String msg, TIMCallBack cb)
-
-/**
- * Reject the request. Only valid for “apply to join” and “invited to join” messages.
- *
- * @param msg Reason for approval (optional)
- * @param cb Callback
- */
-public void refuse(String msg, TIMCallBack cb)
-```
-
-## Group Event Messages
-
-When a user is invited to join a group or is removed from a group, a tip message is displayed in the group. The caller can choose to display the tip message or ignore it. A tip message is identified by a special `Elem` and returned by the new message callback (see [New message notification](/doc/product/269/9229#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5)). To get group event messages, in addition to relying on new message notifications, you can also set group event listeners to listen to different events through `setGroupEventListener` of `TIMUserConfig` **before login** (see [Initialization (Android)](https://intl.cloud.tencent.com/document/product/1047/34312)).
-
-> The group event messages of chat rooms (ChatRoom) and audio-video chat rooms (AVChatRoom) are not delivered by new message notifications. Therefore, you must register group event listeners to listen to different group events.
-
-The following figure shows an event message for group name modification.
-![](https://main.qcloudimg.com/raw/78865ba68ed75700137e5afbd2ac3e43.jpg)
-
-
-**`TIMGroupTipsElem` member methods:**
-
-```
-//Get the list of messages for group profile modifications. Only valid when the value of tipsType is TIMGroupTipsType.ModifyGroupInfo.
-java.util.List<TIMGroupTipsElemGroupInfo> getGroupInfoList()
-
-//Get group name
-java.lang.String    getGroupName()
-
-//Get the list of messages for group member modifications. Only valid when the value of tipsType is TIMGroupTipsType.ModifyMemberInfo.
-java.util.List<TIMGroupTipsElemMemberInfo>    getMemberInfoList()
-
-//Get the operator
-java.lang.String    getOpUser()
-
-//Get the type of the group event notification
-TIMGroupTipsType    getTipsType()
-
-//Get the list of accounts on which to operate
-java.util.List<java.lang.String>  getUserList()
-```
-
-**`TIMGroupTipsType` prototype:**
-
-```
-//Cancel admin
-CancelAdmin
-
-//Join group
-Join
-
-//Kick group member out
-Kick
-
-//Modify group profile
-ModifyGroupInfo
-
-//Modify member information
-ModifyMemberInfo
-
-//Quit group
-Quit
-
-//Set admin
-SetAdmin
-```
-
-### Notification for a user joining the group
-
-**Trigger:** when a user joins a group through application or invitation, the system sends a message in the group. The developer can choose a display style and update the group member list. The type of the message received is `TIMGroupTipsType.Join`.
-
-**Description of the responses of `TIMGroupTipsElem` member methods:**
-
-Method | Response Description
----|---
-getType | TIMGroupTipsType.Join
-getOpUser | Apply to join: the applicant</br>Invited to join: the inviter
-getGroupName | Group name
-getUserList | List of users that are added to the group
-
-### User quits the group
-
-**Trigger:** when a user quits a group, the system sends a notification in the group. You can choose to update the group member list. The type of the message received is `TIMGroupTipsType.Quit`.
-
-**Description of the responses of `TIMGroupTipsElem` member methods:**
-
-Method | Response Description
----|---
-getType | TIMGroupTipsType.Quit
-getOpUser | The identifier of the user who quits the group
-getGroupName | Group name
-
-### User is kicked out of the group
-
-**Trigger:** when a user is kicked out of the group, the system sends a notification in the group. You can choose to update the group member list. The type of the message received is `TIMGroupTipsType.Kick`.
-
-**Description of the responses of `TIMGroupTipsElem` member methods:**
-
-Method | Response Description
----|---
-getType | TIMGroupTipsType.Kick
-getOpUser | The identifier of the user who kicks out members
-getGroupName | Group name
-getUserList | List of users who are kicked out
-
-### Group admin is set/canceled
-
-**Trigger:** when a user is set or cancelled as an admin, the system sends a notification in the group. If the UI shows whether a user is an admin, you can update the admin flag. The message types are `TIMGroupTipsType.SetAdmin` and `TIMGroupTipsType.CancelAdmin`.
-
-**Description of the responses of `TIMGroupTipsElem` member methods:**
-
-Method | Response Description
----|---
-getType | Set: TIMGroupTipsType.SetAdmin<br>Cancelled: TIMGroupTipsType.CancelAdmin
-getOpUser | The identifier of the operator
-getGroupName | Group name
-getUserList | List of users who are set or canceled as admins
-
-### Group profile modifications
-
-**Trigger:** when group profile information, such as the group name and group introduction, is modified, the system sends a message. You can update the related display fields, or selectively display the message to users.
-
-**Description of the responses of `TIMGroupTipsElem` member methods:**
-
-Method | Response Description
----|---
-getType | TIMGroupTipsType.ModifyGroupInfo
-getOpUser | The identifier of the operator
-getGroupName | Group name
-getGroupInfoList | The modified group profile information. It is a TIMGroupTipsElemGroupInfo structure list.
-
-**`TIMGroupTipsElemGroupInfo` prototype:**
-
-```
-// Get the message content
-java.lang.String    getContent()
-
-//Get the type of the group profile modification message
-TIMGroupTipsGroupInfoType   getType()
-```
-
-**`TIMGroupTipsGroupInfoType` prototype:**
-```
-//Modify profile photo URL
-ModifyFaceUrl
-
-//Modify group introduction
-ModifyIntroduction
-
-//Modify group name
-ModifyName
-
-//Modify group announcement
-ModifyNotification
-
-//Change group owner
-ModifyOwner
-```
-
-### Group member profile modifications
-
-**Trigger:** when a group member’s profile related to the group is modified, such as when the member has been muted or the member’s role in the group has changed, the system sends a message. You can update related display fields, or selectively display the message to users.
-
+### Modifying a group profile
+To modify a group profile, call [setGroupInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4). After the modification, all group members receive the [onGroupInfoChanged](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ad5968cdb7ca01e2f7a702e2ca2f648fb) callback.
 >
->- **The profile mentioned here includes only information related to the group, such as muting duration and member role change. Information related to the user, such as the user’s nickname, is not included**. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, see [Message sender and related profile](/doc/product/269/9232#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81.E8.80.85.E5.8F.8A.E5.85.B6.E7.9B.B8.E5.85.B3.E8.B5.84.E6.96.99).
->- If the user profile is stored locally, you can determine whether a change has occurred according to the information in the message body and update the profile after receiving a message from this user.
-
-**Description of the responses of `TIMGroupTipsElem` member methods:**
-
-Method | Response Description
----|---
-getType | TIMGroupTipsType.ModifyMemberInfo
-getOpUser | The identifier of the operator
-getGroupName | Group name
-getMemberInfoList | The modified group member profile information. It is a TIMGroupTipsElemMemberInfo structure list.
-
-**`TIMGroupTipsElemMemberInfo` prototype:**
+> - For a work group, all group members can modify the basic group profile.
+> - For a public or meeting group, only the group owner and admin can modify the basic group profile.
+> - For an AVChatRoom, only the group owner can modify the group profile.
 
 ```
-//Get the identifier of the muted group member
-java.lang.String    getIdentifier()
-
-//Get muting duration
-long    getShutupTime()
+// Sample code: modify the group profile
+V2TIMGroupInfo v2TIMGroupInfo = new V2TIMGroupInfo();
+v2TIMGroupInfo.setGroupID("the ID of the target group");
+v2TIMGroupInfo.setFaceUrl("http://xxxx");
+V2TIMManager.getGroupManager().setGroupInfo(v2TIMGroupInfo, new V2TIMCallback() {
+		@Override
+		public void onError(int code, String desc) {
+			// Failed
+		}
+		@Override
+		public void onSuccess() {
+			// Succeeded
+		}
+});
 ```
 
-## Group System Messages
+### Setting the group message receiving option
+Any group member can call the [setReceiveMessageOpt](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6bf8f3eafb5ffcb1d13bd69231de8bd4) API to modify the group message receiving option. Valid values are as follows:
+- V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_MESSAGE: group messages are received normally if the user is online, and offline push notifications are received through the vendor’s offline push service if the user is offline.
+- V2TIMGroupInfo.V2TIM_GROUP_NOT_RECEIVE_MESSAGE: no group messages are received.
+- V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE: group messages are received normally if the user is online, but no offline push notifications are received from the vendor if the user is offline.
 
-When a user applies to join a group, the group admin receives a system message on the application. The admin can accept or reject the application, and the corresponding group system message will be displayed to the user.
+You can set the group message receiving option to mute group message notifications:
+- **No group messages are received**
+After the group message receiving option is set to `V2TIMGroupInfo.V2TIM_GROUP_NOT_RECEIVE_MESSAGE`, no group messages are received, and the conversation list is not updated.
+- **Group messages are received, but the user is not notified. A red dot, instead of the unread count, is displayed on the conversation list**
+> This configuration requires that the unread count feature be enabled. Therefore, it only applies to work groups and public groups.
+>
+If the group message receiving option is set to `V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`, when new group messages are received and the conversation list needs to be updated, call [getUnreadCount](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e) to obtain the unread count. When the obtained group message receiving option is `V2TIMGroupInfo.V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`, use [getRecvOpt](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a82f673186669d31f7acd38c52d412ba2) to check whether a red dot, instead of the unread count, is displayed.
 
-**Group system message types:**
+## Group Member Management
+### Obtaining the list of group members
+To obtain the member list of a group, call [getGroupMemberList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be). The list contains profile information of each group member, such as the user ID (`userID`), group name card (`nameCard`), profile photo (`faceUrl`), nickname (`nickName`), and time of joining the group (`joinTime`).
+A group may have many members, even over 5,000 members. Therefore, this API provides two advanced features: filter (`filter`) and pulling by page (`nextSeq`).
 
-```
-//Application to join the group is approved (received only by the applicant)
-TIM_GROUP_SYSTEM_ADD_GROUP_ACCEPT_TYPE
+#### filter
+When calling [getGroupMemberList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be), you can set `filter` to pull the information list of the specified role.
 
-//Application to join the group is rejected (received only by the applicant)
-TIM_GROUP_SYSTEM_ADD_GROUP_REFUSE_TYPE
+| Filter | Description |
+|---------|---------|
+| V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_ALL | Pull the information list of all group members. |
+| V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_OWNER | Pull the information list of the group owner. |
+| V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_ADMIN | Pull the information list of the group admins. |
+| V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_COMMON | Pull the information list of ordinary group members. |
 
-//Apply to join the group (received only by the admin)
-TIM_GROUP_SYSTEM_ADD_GROUP_REQUEST_TYPE
+```java
+// Sample code: pull the profile of the group owner using `filter`
+int role = V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_OWNER;
+V2TIMManager.getGroupManager().getGroupMemberList("testGroup", role, 0, 
+    new V2TIMValueCallback<V2TIMGroupMemberInfoResult>() {
+	@Override
+	public void onError(int code, String desc) {
+		// Failed to pull the information list
+	}
 
-//Admin status canceled (received only by the canceled admin)
-TIM_GROUP_SYSTEM_CANCEL_ADMIN_TYPE
-
-//Group created (received only by the initial members)
-TIM_GROUP_SYSTEM_CREATE_GROUP_TYPE
-
-//Group disbanded (received by all members)
-TIM_GROUP_SYSTEM_DELETE_GROUP_TYPE
-
-//Group admin set (received by the new group admin)
-TIM_GROUP_SYSTEM_GRANT_ADMIN_TYPE
-
-//Invited to join the group (received by the invitee)
-TIM_GROUP_SYSTEM_INVITED_TO_GROUP_TYPE
-
-//Kicked out of the group by the admin (received by the user who is kicked out)
-TIM_GROUP_SYSTEM_KICK_OFF_FROM_GROUP_TYPE
-
-//Quit the group (received by the user who quits the group)
-TIM_GROUP_SYSTEM_QUIT_GROUP_TYP
-
-//Group is revoked (received by all members)
-TIM_GROUP_SYSTEM_REVOKE_GROUP_TYPE
-
-//Group invitation request (received by the invitee)
-TIM_GROUP_SYSTEM_INVITE_TO_GROUP_REQUEST_TYPE
-
-//Group invitation request approved (received only by the inviter)
-TIM_GROUP_SYSTEM_INVITATION_ACCEPTED_TYPE
-
-//Group invitation request rejected (only received by the inviter)
-TIM_GROUP_SYSTEM_INVITATION_REFUSED_TYPE
+	@Override
+	public void onSuccess(V2TIMGroupMemberInfoResult v2TIMGroupMemberInfoResult) {
+		// Succeeded in pulling the information list
+	}
+});
 ```
 
-**`TIMGroupSystemElem` member methods are defined as follows:**
+#### nextSeq
+In many cases, only the first page of the group member list, instead of the entire member list of the group, needs to be displayed on the user interface (UI). Information for more group members needs to be pulled only when the user taps **Next**, or pulls down the list. In this scenario, you can specify `nextSeq` to pull the information by page.
 
-```
-/**
- *  Operator’s platform
- *  Valid values: iOS, Android, Windows, Mac, Web, RESTful API, Unknown
- * @return The platform of the operator
- */
-public String getPlatform()
+When the [getGroupMemberList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be) API is called, a maximum of 50 members are returned at a time. You can use `nextSeq` to pull the group member list by page. When the list is pulled for the first time, set `nextSeq` to 0. After the list is pulled successfully for the first time, the `getGroupMemberList` callback result [V2TIMGroupMemberInfoResult](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberInfoResult.html) contains the [getNextSeq()](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberInfoResult.html#a09991b5faeb8b67a0afac0c45ff4395e) API.
+- If [getNextSeq()](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberInfoResult.html#a09991b5faeb8b67a0afac0c45ff4395e) returns 0, the entire group member list has been pulled.
+- If [getNextSeq()](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberInfoResult.html#a09991b5faeb8b67a0afac0c45ff4395e) returns a value greater than 0, more content of the group member list has yet to be pulled. You can then decide whether to call the API again to pull more group member information based on the user’s operation on the UI. To pull the list for the second time, you need to pass in [getNextSeq()](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberInfoResult.html#a09991b5faeb8b67a0afac0c45ff4395e) in `V2TIMGroupMemberInfoResult` returned from the previous call as a parameter to the [getGroupMemberList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a69fc0831aacaa0585c1855f4c91320be) API.
 
-/**
- * Get the subtype of the message
- * @return The subtype of the group system message
- */
-public TIMGroupSystemElemType getSubtype()
+```java
+// Sample code: pull the group member list by page using `nextSeq`
+{
+	...
+	long nextSeq = 0;
+	getGroupMemberList(nextSeq);
+	...
+}
+public void getGroupMemberList(long nextSeq) {
+	int filterRole = V2TIMGroupMemberFullInfo.V2TIM_GROUP_MEMBER_FILTER_ALL;
+	V2TIMManager.getGroupManager().getGroupMemberList("testGroup", filterRole, nextSeq, 
+	    new V2TIMValueCallback<V2TIMGroupMemberInfoResult>() {
+		@Override
+		public void onError(int code, String desc) {
+			// Failed to pull the information list
+		}
 
-/**
- * Get group ID
- * @return
- */
-public String getGroupId()
-
-/**
- * Get operator
- * @return The operator’s identifier
- */
-public String getOpUser()
-
-/**
- * Get the reason for the operation
- * @return The reason for the operation
- */
-public String getOpReason()
-
-/**
- * Get custom notification
- * @return Custom notification
- */
-public byte[] getUserData()
-
-/**
- * Get operator’s user profile
- * @return Operator’s user profile
- */
-public TIMUserProfile getOpUserInfo()
-
-/**
- * Get operator’s profile in the group
- * @return Operator’s profile in the group
- */
-public TIMGroupMemberInfo getOpGroupMemberInfo()
+		@Override
+		public void onSuccess(V2TIMGroupMemberInfoResult groupMemberInfoResult) {
+			if (groupMemberInfoResult.getNextSeq() != 0) {
+				// Continue to pull by page
+				getGroupMemberList(groupMemberInfoResult.getNextSeq());
+				...
+			} else {
+				// End of pulling
+			}
+		}
+	});
+}
 ```
 
-### User applies to join a group
 
-**Trigger:** when a user applies to join a group, the group admin receives a message about the user applying to join the group. You can display the message to the user for the user to decide whether to accept the application. The message type is `TIM_GROUP_SYSTEM_ADD_GROUP_REQUEST_TYPE`.
+### Obtaining the profile of a group member
+To obtain the profile of a group member, call [getGroupMembersInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#adb08e1c4fa9aff407c7b2678757f66d5). You can pass in multiple `userID` values at a time to obtain profiles of multiple group members, which improves network transmission efficiency.
 
-**Description of the responses of TIMGroupSystemElem member methods:**
+### Modifying the group name card for a member
+The group owner or admin can call the [setGroupMemberInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b) API to modify group-related information of a member, including the group name card (`nameCard`), group member role (`role`), and muting duration (`muteUntil`).
 
-Method | Response Description
----|---
-getSubtype | TIM_GROUP_SYSTEM_ADD_GROUP_REQUEST_TYPE
-getGroupId | The ID of the target group of the application
-getOpUser | The applicant
-getOpReason | Reason for the application (optional)
+```
+// Sample code: change the group name card of the group member Denny to "denny-tencent" 
+V2TIMGroupMemberFullInfo v2TIMGroupMemberFullInfo = new V2TIMGroupMemberFullInfo();
+v2TIMGroupMemberFullInfo.setUserID("denny");
+v2TIMGroupMemberFullInfo.setNameCard("denny-tencent");
+V2TIMManager.getGroupManager().setGroupMemberInfo(
+    groupID, v2TIMGroupMemberFullInfo, new V2TIMCallback() {
+	@Override
+	public void onError(int code, String desc) {
+		// Failed
+	}
+	@Override
+	public void onSuccess() {
+		// Succeeded
+	}
+});
+```
 
-
-### “Apply to join” request is approved/rejected
-
-**Trigger:** when an admin approves an application to join the group, the applicant receives an approval notification message, and when the admin rejects the application, the applicant receives a rejection notification message.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | Approve: TIM_GROUP_SYSTEM_ADD_GROUP_ACCEPT_TYPE<br>Reject: TIM_GROUP_SYSTEM_ADD_GROUP_REFUSE_TYPE
-getGroupId | The ID of the group for which the request is approved/rejected
-getOpUser | The identifier of the admin who processed the request
-getOpReason | Reason for approval or rejection (optional)
-
-### “Invited to join” request
-
-**Trigger:** when a user is invited to join a group (**the user is not a group member and needs to approve the invitation**), the user receives an invitation message.
-
-> When a group is created, the initial members are added to the group without invitation.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | TIM_GROUP_SYSTEM_INVITE_TO_GROUP_REQUEST_TYPE
-getGroupId | The ID of the group the user is invited to join
-getOpUser | The operator, who is the inviter in this case
+<span id="mute"> </span>
+### Muting
+The group owner or admin can mute a group member and set the muting duration (in seconds) by calling [muteGroupMember](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5). Muting information is stored in the [muteUtil](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupMemberFullInfo.html#a2caecbec07bdd4fa8e6b8072bc39be58) field of the group member. After the group member is muted, all group members (including the muted member) receive the [onGroupMemberInfoChanged](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a6d8bdea63f14a03faffeb21a274a1e12) callback.
+The group owner or admin can mute the entire group by calling the [setGroupInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ad87ce42b4dc4d97334fe857e4caa36c4) API and setting [allMuted](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupInfo.html#a6faf73364372206bfee9c2b99ed5807e) to `true`. There is no time limit for group muting. To unmute the group, specify `setAllMuted(false)` in the group profile.
 
 
-### “Invited to join” request is approved/rejected
+<span id="kick"> </span>
+### Removing group members
+The group owner or admin can call the [kickGroupMember](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a2e4816131f15187ccfcee8fe30e69cda) API to remove a group member. This API is not supported by AVChatRooms because an AVChatRoom does not limit the number of members. However, you can call [muteGroupMember](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a450230c4d129611e1b0519827ec0f8b5) to achieve the same effect.
+After the member is removed, all group members (including the removed member) receive the [onMemberKicked](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a2874b768866c2d255144c128a766c7fe) callback.
 
-**Trigger:** when the invitee approves the invitation, the inviter receives an approval notification method, and when the invitee rejects the invitation, the inviter receives a rejection notification message.
+### Changing the role of a group member
+The group owner can call [setGroupMemberRole](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a34ebf60528d02626834f022b4ebabfa8) to change the role of a member in a public or meeting group. Only the role of an ordinary member or a group admin can be changed.
+- After a member is set as a group admin, all group members (including the new admin) receive the [onGrantAdministrator](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ae4e23c72489eafc882a40a24f36f1ae9) callback.
+- After the admin role of a member is revoked, all group members (including the member whose admin role is revoked) receive the [onRevokeAdministrator](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#a089480ee71485b5842c75b8c1985f72f) callback.
 
-**Description of the responses of `TIMGroupSystemElem` member methods:**
+<span id="transfer"> </span>
+### Transferring the group owner role
+The group owner can call [transferGroupOwner](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#ac16d66c8e293c2ee95c7b673e5ad80c4) to transfer his/her role as the group owner to another group member.
+After the transfer, all group members receive the [onGroupInfoChanged](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupListener.html#ad5968cdb7ca01e2f7a702e2ca2f648fb) callback, where the type of `V2TIMGroupChangeInfo` is `V2TIMGroupChangeInfo.V2TIM_GROUP_INFO_CHANGE_TYPE_OWNER` and the value is the UserID of the new group owner.
 
-Method | Response Description
----|---
-getSubtype | Approve: TIM_GROUP_SYSTEM_INVITATION_ACCEPTED_TYPE<br>Reject: TIM_GROUP_SYSTEM_INVITATION_REFUSED_TYPE
-getGroupId | The ID of the group for which the request is approved/rejected
-getOpUser | The identifier of the admin who processed the request
-getOpReason | Reason for approval or rejection (optional)
+## FAQs
 
+### 1. Can an AVChatRoom continue to receive messages after it is disconnected and then reconnected?
+Yes. However, as AVChatRooms do not support the storage of historical messages in the cloud, messages exchanged when the AVChatRoom is disconnected cannot be obtained.
 
-### Kicked out by admin
+### 2. Why can’t notifications be received when users join or quit a group?
+Verify the group type:
+- A meeting group does not support member change notifications.
+- An AVChatRoom can receive up to 40 messages per second. Therefore, high-priority messages are sent or received first, and low-priority messages are the first discarded when the frequency limit is exceeded.
 
-**Trigger:** when a user is kicked out of a group by the admin, the user receives a kicked out notification message.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | TIM_GROUP_SYSTEM_KICK_OFF_FROM_GROUP_TYPE
-getGroupId | The ID of the group from which the user is kicked out
-getOpUser | The identifier of the admin who performed the action
+### 3. Why does the unread count of a meeting group remain at 0?
+Meeting groups and AVChatRooms are designed for conferencing and livestreaming scenarios respectively. Therefore, these group types do not support the unread count feature.
 
 
-### Group is disbanded
-
-**Trigger:** when a group is disbanded, all members receive a message notifying them that the group is disbanded.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | TIM_GROUP_SYSTEM_DELETE_GROUP_TYPE
-getGroupId | The ID of the group that is disbanded
-getOpUser | The identifier of the admin who performed the action
-
-### Group is created
-
-**Trigger:** when a group is created, the creator receives a creation notification message.
-
-If a user calls the method to create a group and the success callback is returned, then the group was created successfully. This message serves the purpose of multi-client synchronization. When receiving this message, the other clients can update the group list, while the current client can choose to ignore it.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | TIM_GROUP_SYSTEM_CREATE_GROUP_TYPE
-getGroupId | The ID of the group that is created
-getOpUser | The creator, who is the user in this case
-
-### “Invited to join” request
-
-**Trigger:** when a user is invited to join a group (**the user has been added to the group at this time**), the user receives an invitation notification message.
-
-> When a group is created, the initial members are added to the group without invitation.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | TIM_GROUP_SYSTEM_INVITED_TO_GROUP_TYPE
-getGroupId | The ID of the group the user is invited to join
-getOpUser | The operator, who is the inviter in this case
-
-### Quit group
-
-**Trigger:** when a user quits a group, the user receives a quit notification message, and only the user who quit will receive the message.
-
-If a user calls `QuitGroup` and the success callback is returned, then the user has quit the group successfully. This message is used for multi-client synchronization. When receiving this message, the other clients can update the group list, while the current client can choose to ignore it.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | TIM_GROUP_SYSTEM_QUIT_GROUP_TYPE
-getGroupId | The ID of the group that the user quits
-getOpUser | The operator, who is the user in this case
-
-### Admin is set/cancelled
-
-**Trigger:** when a user is set or canceled as a group admin, the user receives a corresponding notification.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | Admin role is cancelled: TIM_GROUP_SYSTEM_GRANT_ADMIN_TYPE<br>Admin role is granted: TIM_GROUP_SYSTEM_CANCEL_ADMIN_TYPE
-getGroupId | The ID of the group in which the event occurs
-getOpUser | The operator
-
-### Group is revoked
-
-**Trigger:** when a group is revoked by the system, all members receive a message notifying that the group was revoked.
-
-**Description of the responses of `TIMGroupSystemElem` member methods:**
-
-Method | Response Description
----|---
-getSubtype | TIM_GROUP_SYSTEM_REVOKE_GROUP_TYPE
-getGroupId | The ID of the group that is revoked

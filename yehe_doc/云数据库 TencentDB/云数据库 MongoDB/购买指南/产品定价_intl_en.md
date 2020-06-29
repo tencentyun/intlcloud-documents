@@ -209,13 +209,6 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <td>0.005952381</td>
 </tr>
 <tr>
-<td  rowspan = "4">Shenzhen Finance Zone, Shanghai Finance Zone</td>
-<td>Smaller than 128 GB</td>
-<td>0.028571429</td>
-<td>0.021428572</td>
-<td>0.014285715</td>
-</tr>
-<tr>
 <td>Equal to 128 GB</td>
 <td>0.023703704</td>
 <td>0.017777778</td>

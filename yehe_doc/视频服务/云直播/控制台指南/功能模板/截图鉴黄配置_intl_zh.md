@@ -31,7 +31,7 @@
 
 1. 登录云直播控制台，【功能模板】>[【截图鉴黄配置】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 单击【+】，填写配置项，并单击【保存】即可。
-![](https://main.qcloudimg.com/raw/8a0ca7dd9b5f2d84ed140542670f0c36.png)
+![](https://main.qcloudimg.com/raw/e17b92da94af4b583dab0273adb89447.jpg)
 <table>
 <thead><tr><th width="15%">配置项</th><th>说明</th></tr></thead>
 <tbody><tr>
@@ -84,21 +84,21 @@
 
 ## 修改模板
 
-1. 进入【功能模板】>[【截图鉴黄配置】](https://console.cloud.tencent.com/live/config/transcode)。
+1. 进入【功能模板】>[【截图鉴黄配置】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 选择您已创建成功的截图鉴黄模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/077a48bf1fb75742f327bb902ca76282.png)
+![](https://main.qcloudimg.com/raw/976ee78aedebea43c6b3fe2e4e0ef41c.jpg)
 
 ## 删除模板
 
 若模板已被关联，需要先解绑模板，才可以进行删除操作，具体解绑操作请参见 [解绑截图鉴黄配置](https://intl.cloud.tencent.com/document/product/267/31063#.E8.A7.A3.E7.BB.91.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E6.A8.A1.E6.9D.BF)。
 
-1. 进入【功能模板】>[【截图鉴黄配置】](https://console.cloud.tencent.com/live/config/transcode)。
+1. 进入【功能模板】>[【截图鉴黄配置】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 选择您已创建成功的截图鉴黄模板，单击上方的删除按钮。
 3. 确认是否删除当前截图鉴黄配置模板，单击【确定】即可成功删除。
 
-![](https://main.qcloudimg.com/raw/b1dfa0e264808b12f8356458c82f996f.png)
+![](https://main.qcloudimg.com/raw/d4b62f44f9ecafdee20be7758f2042e1.jpg)
 
 
 

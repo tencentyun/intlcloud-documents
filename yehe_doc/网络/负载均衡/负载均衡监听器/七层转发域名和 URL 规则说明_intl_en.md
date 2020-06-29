@@ -40,9 +40,9 @@ For example, the `HTTP:80` listener of CLB instance 1 is configured with two dom
 >- Starting from May 18, 2020:
 >  - All new layer-7 listeners must have a default domain name configured: the first rule of a layer-7 listener must enable the default domain name. When an API is called to create a layer-7 rule, CLB will automatically set the `DefaultServer` field to `true`.
 >  - For all listeners that have a default domain name configured, you need to specify a new default domain name when modifying or deleting the existing default domain name: when you perform the operation in the console, you need to specify a new default domain name; when you perform the operation by calling an API, if you do not set a new default domain name, CLB will set the earliest-created one among the remaining domain names as the new default domain name.
->  - For existing rules without a default domain name, Tencent Cloud will set the first domain name loaded by CLB as the default domain name. This operation has no impact on the business. Existing listeners will be all processed before June 9, 2020.
+>  - For existing rules without a default domain name, you can directly configure a default domain name based on your business needs as instructed in [operation 4](#step4) below. If you don't do so, Tencent Cloud will set the first domain name loaded by CLB as the default domain name. This operation has no impact on the business. Existing listeners will be all processed before June 19, 2020.
 >
->The above policy will be implemented gradually starting from May 18, 2020, and the effective date for each instance may vary slightly. As of June 10, 2020, all layer-7 listeners that have a forwarded domain name will have a default domain name.
+>The above policy will be implemented gradually starting from May 18, 2020, and the effective date for each instance may vary slightly. As of June 20, 2020, all layer-7 listeners that have a forwarded domain name will have a default domain name.
 
 The following four operations can be performed on the default domain name:
 - **Operation 1**: when configuring the first forwarding rule for the layer-7 listener, the default domain name must be in "enabled" status.
@@ -54,7 +54,7 @@ The following four operations can be performed on the default domain name:
    - If the rule is not the last rule of the default domain name, you can delete it directly.
    - If the rule is the last rule of the default domain name, you need to set a new default domain name.
  - If there is only one domain name under a listener, you can directly delete all rules without setting a new default domain name.
-- **Operation 4**: you can quickly modify the default domain name in the listener list.
+- <span id = "step4"></span>**Operation 4**: you can quickly modify the default domain name in the listener list.
 
 ### Forwarded URL path configuration rules
 Layer-7 CLB can forward requests from different URLs to different servers for processing, and multiple forwarded URL paths can be configured for a single domain name.
