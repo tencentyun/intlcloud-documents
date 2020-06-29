@@ -17,8 +17,8 @@ Instance price formula: Instance price = Memory fee + Storage fee
 <table>
 <thead>
 <tr>
-<th colspan="3">TencentDB for MySQL</th>
-<th align="center" colspan="4">Monthly Subscription Price (USD/Month)</th>
+<th colspan="3" style="text-align: center;">TencentDB for MySQL</th>
+<th style="text-align: center;" colspan="4">Monthly Subscription Price (USD/Month)</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -346,8 +346,8 @@ Instance price formula: Instance price = Memory fee + Storage fee
 <table>
 <thead>
 <tr>
-<th>TencentDB for MySQL</th>
-<th colspan="5">Monthly Subscription Price/USD/GB/Month</th>
+<th style="text-align: center;">TencentDB for MySQL</th>
+<th colspan="5" style="text-align: center;">Monthly Subscription Price/USD/GB/Month</th>
 </tr>
 </thead>
 <tbody><tr>

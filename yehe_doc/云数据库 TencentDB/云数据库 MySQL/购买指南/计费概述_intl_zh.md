@@ -17,8 +17,8 @@
 <table>
 <thead>
 <tr>
-<th colspan="3">云数据库MySQL</th>
-<th align="center" colspan="4">包月价格(美元/月)</th>
+<th colspan="3" style="text-align: center;">云数据库MySQL</th>
+<th colspan="4" style="text-align: center;">包月价格(美元/月)</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -346,8 +346,8 @@
 <table>
 <thead>
 <tr>
-<th>云数据库MySQL</th>
-<th colspan="5">包月价/美元/GB/月</th>
+<th style="text-align: center;">云数据库MySQL</th>
+<th colspan="5" style="text-align: center;">包月价/美元/GB/月</th>
 </tr>
 </thead>
 <tbody><tr>
