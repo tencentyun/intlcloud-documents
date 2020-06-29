@@ -209,23 +209,6 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <td>0.005952381</td>
 </tr>
 <tr>
-<td>Equal to 128 GB</td>
-<td>0.023703704</td>
-<td>0.017777778</td>
-<td>0.011851852</td>
-</tr>
-<tr>
-<td>Equal to 240 GB</td>
-<td>0.022857143</td>
-<td>0.017142857</td>
-<td>0.011428572</td>
-</tr>
-<tr>
-<td>Equal to 512 GB</td>
-<td>0.015873016</td>
-<td>0.011904762</td>
-<td>0.007936508</td>
-</tr>
 <tr>
 <td  rowspan = "4">Bangkok, Mumbai</td>
 <td>Smaller than 128 GB</td>
