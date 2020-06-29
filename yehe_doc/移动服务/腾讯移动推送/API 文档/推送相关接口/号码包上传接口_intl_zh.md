@@ -40,9 +40,9 @@ https://api.tpns.sgp.tencent.com/v3/push/package/upload
 
 | 参数名  | 类型  | 是否必须  | 参数说明  |
 | --- | --- | --- | --- |
-| retCode   | int32\_t   | 是   | 错误码   |
-| errMsg   | string   | 是   | 请求出错时的错误信息   |
-| uploadId    | int32   | 是   | 当上传文件成功时，将反馈一个正整数 uploadId ，代表上传文件 ID，提供给后续号码包接口进行推送   |
+| retCode   | Integer | 是   | 错误码   |
+| errMsg   | String   | 是   | 请求出错时的错误信息   |
+| uploadId    | Integer   | 是   | 当上传文件成功时，将反馈一个正整数 uploadId ，代表上传文件 ID，提供给后续号码包接口进行推送   |
 
 
 ## 示例说明
