@@ -1,43 +1,89 @@
-## Billing
+EIP fees are charged differently according to two types of accounts, bill-by-IP and bill-by-CVM. This document introduces how EIP fees are billed for these two account types. 
 
-The fee of an Elastic IP (EIP) consists of two components, the IP address fee and the public network fee.
+## Background
 
-### IP address fee
-Tencent Cloud charges an IP address fee when the EIP is not bound with a CVM or NAT Gateway. You can bind the EIP with cloud resources to avoid **resource occupation charges**.
+Currently, there are two types of Tencent Cloud accounts: bill-by-IP and bill-by-CVM. All Tencent Cloud accounts registered after June 17, 2020 are bill-by-IP accounts. The differences between the two types of accounts are as follows:
+ - Bill-by-CVM: manage bandwidth/traffic on CVMs. The IPs and CLBs of bill-by-CVM accounts do not have network bandwidth or traffic attributes, so they need to be purchased and managed on CVMs.
+ - Bill-by-IP: manage bandwidth/traffic on IPs and CLBs. The CVMs purchased by these accounts no longer retain external network bandwidth or traffic resources, the public CLBs/IPs manage the external network bandwidth or traffic resources.
+
+>? For more information on checking your account type, please refer to [Checking Your Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
+
+## Billable Items
+
+EIP fees consist of **IP resource fees** and **public network fees**. Bill-by-CVM and bill-by-IP accounts are billed as follows:
+
+### Bill-by-CVM accounts
+
+Bill-by-CVM accounts only incur IP resource fees. Public network fees are billed on CVM instances.
+
+- When EIP has not been bound with cloud resources: EIP only charges <a href="#ip"> IP resource fees</a>by the hour.
+- When EIP has been bound with cloud resources: EIP itself does not charge any fees. <a href="https://intl.cloud.tencent.com/document/product/213/10578">Public network fees</a> are charged on CVM instances.
+
+
+### Bill-by-IP accounts
+
+There are three billing plans for bill-by-IP accounts:
+
+<ul>
+<li>Bill-by-traffic: charges public network fees and IP resources fees.</li>
+<ul>
+<li>When EIP has not been bound with cloud resources: EIP only charges <a href="#ip">IP resource fees</a> by the hour and does not charge public network fees.</li>
+<li>When EIP has been bound with cloud resources: EIP only charges <a href="#net">public network fees</a>.</li>
+</ul>
+<li>Monthly bandwidth subscription: only charges <a href="#net">public network fees</a>, regardless of whether EIP has been bound with cloud resources or not.</li>
+<li>Bandwidth package: charges public network fees and IP resource fees.
+<ul>
+<li>When EIP has not been bound with cloud resources: EIP only charges <a href="#ip">IP resource fees</a> by the hour and does not charge public network fees.</li>
+<li>When EIP has been bound with cloud resources: EIP only charges <a href="#net">public network fees</a>.</li>
+</ul></li>
+</ul>
+
+<span id ="ip"></span>
+## IP Resource Fee
+
+### Billing cycle
+
+The billing cycle of IP resource fees is by the hour. The payment method is postpaid.
+IP resource fees are billed starting from when you apply for EIP. Billing is suspended when the cloud resource is bound, resumed when the cloud resource is unbound, and stopped when EIP is released. Billing is accurate to the second, and the fees generated for the hour are settled and deducted the next hour. If the cloud resource is unbound and bound multiple times in the same billing cycle, the billing period is the cumulative time that cloud resources spend unbound.
+
+
+### Billing formula
+
+IP resource fee = the idle price of the region EIP is located in × billing period
 
 #### Pricing
+
 <table>
-	<tr><th>Region</th><th>Price (USD/Hour)</th></tr>
-	<tr><td>Mainland China</br>Frankfurt</br>Seoul</td><td>0.031</td></tr>
-	<tr><td>Hong Kong, China</br>Singapore</td><td>0.04</td></tr>
-	<tr><td>Toronto</br>Virginia</br>Silicon Valley</br>Bangkok</br>Moscow</br>Tokyo</br>Mumbai</td><td>0.04</td></tr>
+   <tr><th>Region</th><th>Price (USD/Hour)</th></tr>
+   <tr><td>Chinese Mainland</br>Frankfurt</br>Seoul</td><td>0.031</td></tr>
+   <tr><td>Hong Kong, China</br>Singapore</td><td>0.04</td></tr>
+   <tr><td>Toronto</br>Virginia</br>Silicon Valley</br>Bangkok</br>Moscow</br>Tokyo</br>Mumbai</td><td>0.04</td></tr>
 </table>
 
-> Idle EIP fees are accurate to the second, and are billed hourly. If the EIP has been idle for less than an hour, the charge is prorated. If you bind and unbind the EIP multiple times within a billing cycle, the final charge is calculated according to the accumulated idle time.
->
 
 #### Billing sample
-Suppose an EIP has been idle for a total of 15 minutes (900 seconds) in an hour, the final charge will be 0.031 USB/hour \* (900/3600) = 0.00775 USD.
 
-> We recommend releasing EIPs that are no longer needed to reduce costs and increase resource efficiency. You can find instructions on how to release EIPs in the [Elastic Public IP](https://intl.cloud.tencent.com/document/product/213/16586#.E9.87.8A.E6.94.BE.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip) documentation.
->
+Suppose a user with a bill-by-CVM account applied for an EIP in the Guangzhou region between 09:00:00 - 09:59:59 and was bound with CVM after being idle for 15 minutes (900 seconds), then the generated IP resource fee is: 0.031 USD/hour \* (900/3600) hour = 0.00775 USD. 
 
-### Public network fee
+> ! To avoid generating unnecessary IP resource fees, please bind EIP with cloud resources immediately after applying for EIP and unbind EIP with cloud resources immediately after releasing EIP.
 
-The public network fee is based on the Internet traffic usage. 
-For details, refer to [Public Network Pricing](https://intl.cloud.tencent.com/document/product/213/10578).
+<sapn id="net"></span>
+
+## Public Network Fee
+
+The public network traffic generated by EIP will be charged with public network fees. There are two different billing plans: bill-by-traffic and bill-by-bandwidth. For more details, please see [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578). 
 
 ## Arrears
-
 ### Account in arrears
-
 <table>
-    <tr><td>< 2 hours</td><td>You can continue to use your resources and billing continues.</td></tr>
-    <tr><td>≥ 2 hours, and < 2 hours + 15 days</td><td>EIPs are kept but unusable, and billing stops.</td></tr>
-    <tr><td>≥ 2 hours + 15 days</td><td><li>Unbound EIPs are released.</li><li>Bound EIPs are kept but unusable, and billing stops.</li></td></tr>
+    <tr><th>Arrears period</th><th>Description</th></tr>
+    <tr><td>Less than 2 hours</td><td>You can continue to use your resources and your account will continue to be charged.</td></tr>
+    <tr><td>≥ 2 hours or ＜ 2 hours + 15 days</td><td>The EIP will be retained, but service will be suspended. Fees will no longer be charged and the EIP will not be usable.</td></tr>
+    <tr><td>≥ 2 hours + 15 days</td><td><li>EIP that has not been bound with cloud resources will be released.</li><li>EIP that has already been bound with cloud resources will be retained, but service will be suspended. Fees will no longer be charged and the EIP will not be usable.</li></td></tr>
 </table>
 
 ### Arrears on bound resources 
-If the resource bound with your EIP is in arrears, the EIP will be unbound from the resource and become idle, which will incur an idle fee. If you do not need the EIP anymore, please release it in the console.
+If the resource bound with your EIP is in arrears, the EIP will be unbound from the resource, become idle, and incur an idle fee. If you do not need to use the EIP anymore, please release it on the Console.
 
-This  pricing document is for reference only. See your bill for the actual price.
+This price documentation is for reference only. The final prices will be listed in your bills.
+

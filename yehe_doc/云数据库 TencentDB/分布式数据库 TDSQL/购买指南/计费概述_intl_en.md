@@ -1,4 +1,4 @@
-﻿## Billing Modes
+## Billing Modes
 TDSQL provides 2 billing options:
 
 | Billing Mode | Payment Mode                                   | Application Scenario                                      |
