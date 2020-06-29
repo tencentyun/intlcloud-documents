@@ -40,9 +40,9 @@ https://api.tpns.sgp.tencent.com/v3/push/package/upload
 
 | Parameter Name | Type | Required | Description |
 | --- | --- | --- | --- |
-| retCode   | int32\_t   | Yes   | Error code   |
-| errMsg   | string   | Yes   | Error message when an error occurs in the request   |
-| uploadId    | int32   | Yes   | When a file upload succeeds, a positive integer uploadId will be provided, which represents the ID of the uploaded file. It is provided for the push of the subsequent number package API.   |
+| retCode   | Integer   | Yes   | Error code   |
+| errMsg   | String   | Yes   | Error message when an error occurs in the request   |
+| uploadId    | Integer   | Yes   | When a file upload succeeds, a positive integer uploadId will be provided, which represents the ID of the uploaded file. It is provided for the push of the subsequent number package API.   |
 
 
 ## Samples
