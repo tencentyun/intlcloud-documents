@@ -88,7 +88,7 @@
  - 计费的起点以负载均衡实例创建成功的时间点为准，终点以您发起销毁操作的时间点为准。
  - 使用不足一小时将按照一小时进行扣费。
 
-若公网网络费的计费模式为共享带宽包，则计费周期为按月结算，详情请参见 [共享带宽包 - 计费模式](https://intl.cloud.tencent.com/zh/document/product/684/15255)。
+若公网网络费的计费模式为共享带宽包，则计费周期为按月结算，详情请参见 [共享带宽包 - 计费模式](https://intl.cloud.tencent.com/document/product/684/15255)。
 
 ### 计费公式
 计费项包括实例费和公网网络费。
@@ -97,7 +97,7 @@
 <table ><thead><tr><th>计费模式</th><th>总费用</th></tr></thead>
 <tbody>
 <tr><td><a href="#traffic">按流量计费</a> </td><td> 总费用 = 实例费（每小时实例费 × 使用时长） + 公网网络费（每单位流量费 × 总流量） </td></tr>
-<tr><td><a href="#bag">共享带宽包</a> </td><td>  总费用 = 实例费（每小时实例费 × 使用时长） + 公网网络费（<a href="https://intl.cloud.tencent.com/zh/document/product/684/15255">共享带宽包费用</a>） </td></tr></tbody></table>
+<tr><td><a href="#bag">共享带宽包</a> </td><td>  总费用 = 实例费（每小时实例费 × 使用时长） + 公网网络费（<a href="https://intl.cloud.tencent.com/document/product/684/15255">共享带宽包费用</a>） </td></tr></tbody></table>
 
 ### 计费价格
 #### 实例费
@@ -166,7 +166,7 @@
 
 - <span id="bag"> **共享带宽包**
 多 IP 聚合计费，适用于大规模业务，且不同使用公网的实例间可形成流量错峰的场景。
-详细价格请参见 [共享带宽包 - 计费模式](https://intl.cloud.tencent.com/zh/document/product/684/15255) 。
+详细价格请参见 [共享带宽包 - 计费模式](https://intl.cloud.tencent.com/document/product/684/15255) 。
 
 ### 计费示例
 
@@ -179,5 +179,5 @@
 #### 示例2（公网网络费计费模式为共享带宽包）：
 假设在广州地域的2020年6月1日 09:00:00 - 2020年6月22日08:59:59 使用了按量计费且公网网络费的计费模式为共享带宽包的负载均衡，则：
 - 实例费：每小时实例费 × 使用时长 = 0.07美元/天 × 1天 = 0.07美元
-- 公网网络费：由于 <a href="https://intl.cloud.tencent.com/zh/document/product/684/15255">共享带宽包费用</a> 是按月结算，因此在使用时间内仅结算实例费。
+- 公网网络费：由于 <a href="https://intl.cloud.tencent.com/document/product/684/15255">共享带宽包费用</a> 是按月结算，因此在使用时间内仅结算实例费。
 总费用 = 实例费 =0.07美元，于下一小时（10:00:00 - 10:59:59）进行结算并扣费。
