@@ -3,7 +3,7 @@
 **Total fees = Instance fees + Backup capacity fees + Traffic fees**.
 **Instance fees = Node price x Number of nodes = (Node memory x Memory price + Node disk capacity x Disk price) x Number of nodes**
 
->The number of nodes is the sum of master and slave instances. For example, 1 master and 1 slave are 2 nodes, and 1 master and 2 slaves are 3 nodes.
+>? The number of nodes is the sum of master and slave instances. For example, 1 master and 1 slave are 2 nodes, and 1 master and 2 slaves are 3 nodes.
 
 #### Billable Items
 <table>
