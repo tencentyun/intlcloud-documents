@@ -50,7 +50,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
     "Owner_Account": "leckie", // Group owner
     "Type": "Public", // Group type
     "Name": "MyFirstGroup", // Group name
-    "CreatedNum": 123, //Number of groups of the same type already created by the user
+    "CreatedGroupNum": 123, //Number of groups of the same type already created by the user
     "MemberList": [ // Initial member list
         {
             "Member_Account": "bob"
