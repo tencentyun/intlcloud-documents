@@ -18,7 +18,7 @@ CVM
 
 For more information about the configurations, matching rules and pricing of the RI-supported instance types, see the CVM product documentation.
 
-**Payment Method **
+**Payment Method**
 
 - All Upfront: All fees are prepaid at the time of purchase and no additional fees will be incurred during the usage of RIs. This option provides the biggest discount compared to the pricing of on-demand instances described below.
 
