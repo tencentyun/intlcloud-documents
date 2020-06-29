@@ -18,7 +18,7 @@ CVM
 
 For more information about the configurations, matching rules and pricing of the RI-supported instance types, see the CVM product documentation.
 
-**Payment Method (Currently only support All Upfront)**
+**Payment Method **
 
 - All Upfront: All fees are prepaid at the time of purchase and no additional fees will be incurred during the usage of RIs. This option provides the biggest discount compared to the pricing of on-demand instances described below.
 
@@ -30,9 +30,9 @@ Note: When using RIs, you will be charged for the entire period of purchase rega
 
 **Validity Period Type**
 
-1 year.
+One year or three years.
 
-For example, if you successfully purchase a CVM RI with a validity period of one year at 11:15:24, May 25, 2019, it will be valid from 12:00:00, May 25, 2019 to 12:00:00, May 24, 2020.
+For example, if you successfully purchase a CVM RI with a validity period of one year at 11:15:24, May 25, 2019, it will be valid from 12:00:00, May 25, 2019 to 12:00:00, May 24, 2020.If you successfully purchase a CVM RI with a validity period of three year at 11:15:24, May 25, 2019, it will be valid from 12:00:00, May 25, 2019 till 12:00:00, May 24, 2022.
 
 Note: After RIs expire, the matched pay-as-you-go instances will run normally but on longer enjoy a discount.
 
