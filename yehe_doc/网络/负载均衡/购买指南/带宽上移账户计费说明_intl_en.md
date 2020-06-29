@@ -88,7 +88,7 @@ Instance fees and public network fees (dedicated bandwidth package):
  - Billing starts at the point in time when the CLB instance is created successfully and ends at the point in time when you initiate to terminate the instance.
  - Usage duration shorter than 1 hour will be calculated as 1 hour.
 
-If public network fees are billed by bandwidth package, the billing cycle will be monthly. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/zh/document/product/684/15255).
+If public network fees are billed by bandwidth package, the billing cycle will be monthly. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/684/15255).
 
 ### Billing Formula
 The billable items include instance fees and public network fees.
@@ -97,7 +97,7 @@ The calculation formula of total public network fees varies by billing modes, as
 <table ><thead><tr><th>Billing Mode</th><th>Total Fees</th></tr></thead>
 <tbody>
 <tr><td><a href="#traffic">Bill-by-traffic</a></td><td>Total fees = Instance fees (hourly instance fees * usage duration) + Public network fees (traffic fees per unit * total traffic)</td></tr>
-<tr><td><a href="#bag">Bandwidth package</a> </td><td>Total fees = Instance fees (hourly instance fees * usage duration) + Public network fees (<a href="https://intl.cloud.tencent.com/zh/document/product/684/15255">bandwidth package fees</a>)</td></tr></tbody></table>
+<tr><td><a href="#bag">Bandwidth package</a> </td><td>Total fees = Instance fees (hourly instance fees * usage duration) + Public network fees (<a href="https://intl.cloud.tencent.com/document/product/684/15255">bandwidth package fees</a>)</td></tr></tbody></table>
 
 ### Pricing
 #### Instance fees
@@ -166,7 +166,7 @@ This billing mode is based on the total volume (in GB) of data transferred over 
 
 - <span id="bag"> **Bandwidth package**
 This billing mode bills multiple IPs in an aggregated manner and is applicable to large-scale businesses where public network instances have traffic peaks at different times.
-For detailed pricing, please see [Billing Overview](https://intl.cloud.tencent.com/zh/document/product/684/15255).
+For detailed pricing, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/684/15255).
 
 ### Billing Example
 
@@ -179,5 +179,5 @@ Total fees = Instance fees + Public network fees = 0.07 USD + 0.24 USD = 0.31 US
 #### Example 2 (public network is billed by bandwidth package)
 Suppose you use a pay-as-you-go CLB instance whose public network billing mode is bandwidth package between 09:00:00, June 1, 2020 and 08:59:59, June 22, 2020 in the Guangzhou region, then:
 - Instance fees = Hourly instance fees * Usage duration = 0.07 USD/day * 1 day = 0.07 USD
-- Public network fees: because<a href="https://intl.cloud.tencent.com/zh/document/product/684/15255">bandwidth package fees</a> are settled monthly, only instance fees will be settled during usage.
+- Public network fees: because <a href="https://intl.cloud.tencent.com/document/product/684/15255">bandwidth package fees</a> are settled monthly, only instance fees will be settled during usage.
 Total fees = Instance fees = 0.07 USD, which will be settled and deducted at the next hour (10:00:00–10:59:59).
