@@ -44,7 +44,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing</td>
+<td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing,Qingyuan</td>
 <td>0.18</td>
 <td>9.43</td>
 </tr>
@@ -59,7 +59,7 @@
 <td>10.00</td>
 </tr>
 <tr>
-<td>Virginia</td>
+<td>Virginia,Frankfurt</td>
 <td>0.07</td>
 <td>8.00</td>
 </tr>
@@ -94,7 +94,7 @@
     </tr>
 </thead>
     <tr>
-        <td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing</td>
+        <td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing,Qingyuan</td>
         <td>0.0262</td>
         <td>0.0196</td>
         <td>0.0131</td>
@@ -108,7 +108,7 @@
         <td>0.00011806</td>
     </tr>
     <tr>
-        <td>Virginia</td>
+        <td>Virginia,Frankfurt</td>
         <td>0.0222</td>
         <td>0.0167</td>
         <td>0.0111</td>
