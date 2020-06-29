@@ -1,9 +1,10 @@
 Private network CLB is free of charge, while public network CLB is charged for instance fees and public network fees. If you purchase a CLB instance under a bill-by-IP account, two billing modes are supported: monthly subscription and pay-as-you-go.
 
 ## Monthly Subscription
+>? Monthly subscription is currently in beta. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 Monthly subscription is prepaid. You need to pay for one or multiple months or even years in advance. This billing mode is applicable to long-term businesses with stable peak traffic. The public network fees of a monthly subscription CLB instance only supports bill-by-bandwidth, and the monthly bandwidth is cheaper than the hourly bandwidth. If you need to use CLB in the long run, we recommend purchasing the monthly subscription CLB instance.
 
->?This feature is currently in beta test. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
 
 ### Billing Cycle
 You need to pay for the total purchased duration (in months) in advance.
@@ -34,7 +35,7 @@ Total fees = Instance fees + Public network fees = (Monthly instance fees * Purc
        <th>6 Mbps and above<br>(`n` is the configured bandwidth upper limit)</th>
   </tr>
    <tr>
-      <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Shenzhen Finance, Shanghai Finance, Beijing Finance, Tianjin, Shenzhen, Guangzhou (open), Shantou, Ji'nan, Hangzhou, Fuzhou, Wuhan, Changsha, Shijiazhuang, and Qingyuan</td>
+      <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing</td>
       <td rowspan="4">2.06</td>
        <td>3.29</td>
        <td>6.75</td>
@@ -44,7 +45,7 @@ Total fees = Instance fees + Public network fees = (Monthly instance fees * Purc
        <td>17.85 + 11.43 * (n-5)</td>   
     </tr>
    <tr>
-      <td>Hong Kong (China), Silicon Valley, Virginia, Toronto, and Taipei (China)</td>
+      <td>Hong Kong (China), Silicon Valley, Virginia, Toronto</td>
         <td>4.29</td>
        <td>8.58</td>
        <td>12.87</td>
