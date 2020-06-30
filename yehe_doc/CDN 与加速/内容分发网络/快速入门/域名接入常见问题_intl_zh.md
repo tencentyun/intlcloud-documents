@@ -51,10 +51,10 @@ CDN 配置时间一般不超过30分钟，若您设置后等待时间超过30分
 ### 如何修改 CDN 域名所属项目？
 
 1. 登录  [CDN 控制台](https://console.cloud.tencent.com/cdn) ，选择左侧菜单栏的【域名管理】，单击您所要编辑的域名右侧的【管理】。
-![图片描述](https://main.qcloudimg.com/raw/fb85a5afb49ca90cfe0c6c9b075a5646.png)
+![图片描述](https://main.qcloudimg.com/raw/d2d85c86bca9c60c7e5ae5667fd2e155.png)
 2. 单击【基本配置】，您可以看到基本信息模块，查看域名的基本信息，基本信息中有所属项目。**使用 CDN 权限体系的用户，此操作可能导致子用户权限变动，请谨慎操作。**
 3. 单击所属项目右侧的【修改】图标，可在下拉菜单中选择新的所属项目。
-![图片描述](https://main.qcloudimg.com/raw/f788084a71b205ee8938c960edfb3a29.png)
+![图片描述](https://main.qcloudimg.com/raw/1a2a312352d3353317075696347e0f42.png)
 
 此外，您可以进入 [项目管理](https://console.cloud.tencent.com/project) 页面来管理您的项目。
 
