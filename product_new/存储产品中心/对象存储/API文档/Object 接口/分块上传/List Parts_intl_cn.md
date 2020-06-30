@@ -6,7 +6,7 @@ List Parts 用来查询特定分块上传中的已上传的块，即罗列出指
 
 ### 请求示例
 
-```
+```shell
 GET /<ObjectKey>?uploadId=UploadId HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -17,7 +17,7 @@ Authorization: Auth String
 
 ### 请求头
 
-该请求操作的实现使用公共请求头，了解公共请求头详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 章节。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 请求参数
 
@@ -30,19 +30,19 @@ Authorization: Auth String
 
 ### 请求体
 
-该请求请求体为空。
+该请求的请求体为空。
 
 ## 响应
 
 ### 响应头
 
-该响应包含公共响应头，了解公共响应头详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 章节。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 ### 响应体
 
 查询成功，返回 **application/xml** 数据，包含已完成的分片信息。
 
-```xml
+```shell
 <?xml version="1.0" encoding="UTF-8" ?>
 <ListPartsResult>
     <Bucket>examplebucket-1250000000</Bucket>
@@ -71,7 +71,7 @@ Authorization: Auth String
 </ListPartsResult>
 ```
 
-具体的数据描述如下：
+具体的节点描述如下：
 
 | 节点名称（关键字） | 父节点 | 描述                               | 类型      |
 | ------------------ | ------ | ---------------------------------- | --------- |
@@ -117,11 +117,16 @@ Container 节点 Part 的内容：
 | ETag               | ListPartsResult.Part | 块的 MD-5 算法校验值    | string |
 | Size               | ListPartsResult.Part | 说明块大小，单位是 Byte | string |
 
+#### 错误码
+
+此接口遵循统一的错误响应和错误码，详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档。
+
+
 ## 实际案例
 
 ### 请求
 
-```
+```shell
 GET /exampleobject?uploadId=1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361 HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Wed, 25 Mar 2020 10:07:25 GMT
@@ -131,7 +136,7 @@ Connection: close
 
 ### 响应
 
-```
+```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 1119
@@ -141,39 +146,39 @@ Server: tencent-cos
 x-cos-request-id: NWU3YjJkNWRfMjNhZjJhMDlfNWY5Ml8zMmUy****
 
 <ListPartsResult>
-    <Bucket>examplebucket-1250000000</Bucket>
-    <EncodingType/>
-    <Key>exampleobject</Key>
-    <UploadId>1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361</UploadId>
-    <Owner>
-        <ID>1250000000</ID>
-        <DisplayName>1250000000</DisplayName>
-    </Owner>
-    <PartNumberMarker>0</PartNumberMarker>
-    <Initiator>
-        <ID>qcs::cam::uin/100000000001:uin/100000000011</ID>
-        <DisplayName>100000000011</DisplayName>
-    </Initiator>
-    <Part>
-        <PartNumber>1</PartNumber>
-        <LastModified>2020-03-25T10:07:14.000Z</LastModified>
-        <ETag>&quot;39270a968a357d24207e9911162507eb&quot;</ETag>
-        <Size>1048576</Size>
-    </Part>
-    <Part>
-        <PartNumber>2</PartNumber>
-        <LastModified>2020-03-25T10:07:13.000Z</LastModified>
-        <ETag>&quot;d899fbd1e06109ea2e4550f5751c88d6&quot;</ETag>
-        <Size>1048576</Size>
-    </Part>
-    <Part>
-        <PartNumber>3</PartNumber>
-        <LastModified>2020-03-25T10:07:13.000Z</LastModified>
-        <ETag>&quot;762890d6c9a871b7bd136037cb2260cd&quot;</ETag>
-        <Size>1048576</Size>
-    </Part>
-    <StorageClass>Standard</StorageClass>
-    <MaxParts>1000</MaxParts>
-    <IsTruncated>false</IsTruncated>
+	<Bucket>examplebucket-1250000000</Bucket>
+	<EncodingType/>
+	<Key>exampleobject</Key>
+	<UploadId>1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361</UploadId>
+	<Owner>
+		<ID>1250000000</ID>
+		<DisplayName>1250000000</DisplayName>
+	</Owner>
+	<PartNumberMarker>0</PartNumberMarker>
+	<Initiator>
+		<ID>qcs::cam::uin/100000000001:uin/100000000011</ID>
+		<DisplayName>100000000011</DisplayName>
+	</Initiator>
+	<Part>
+		<PartNumber>1</PartNumber>
+		<LastModified>2020-03-25T10:07:14.000Z</LastModified>
+		<ETag>&quot;39270a968a357d24207e9911162507eb&quot;</ETag>
+		<Size>1048576</Size>
+	</Part>
+	<Part>
+		<PartNumber>2</PartNumber>
+		<LastModified>2020-03-25T10:07:13.000Z</LastModified>
+		<ETag>&quot;d899fbd1e06109ea2e4550f5751c88d6&quot;</ETag>
+		<Size>1048576</Size>
+	</Part>
+	<Part>
+		<PartNumber>3</PartNumber>
+		<LastModified>2020-03-25T10:07:13.000Z</LastModified>
+		<ETag>&quot;762890d6c9a871b7bd136037cb2260cd&quot;</ETag>
+		<Size>1048576</Size>
+	</Part>
+	<StorageClass>Standard</StorageClass>
+	<MaxParts>1000</MaxParts>
+	<IsTruncated>false</IsTruncated>
 </ListPartsResult>
 ```

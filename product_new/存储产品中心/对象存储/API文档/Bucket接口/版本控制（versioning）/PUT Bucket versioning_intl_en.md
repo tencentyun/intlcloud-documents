@@ -1,7 +1,7 @@
 ## Description
 The PUT Bucket versioning API is used to enable or suspend versioning for a bucket.
 
-### Notes
+#### Notes
 
 1. If you have never enabled versioning for the bucket, GET Bucket versioning will not return a versioning state value.
 2. Once enabled, versioning can only be suspended but cannot be disabled.
@@ -9,7 +9,7 @@ The PUT Bucket versioning API is used to enable or suspend versioning for a buck
 4. To set versioning for a bucket, you need to have the permission to write to the bucket.
 
 ## Request
-### Sample Request
+#### Sample Request
 
 ```shell
 PUT /?versioning HTTP 1.1
@@ -20,15 +20,11 @@ Authorization: Auth String
 
 > Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
-### Request Headers
+#### Request Headers
 
-#### Common Headers
-The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-#### Special Headers
-This request does not use any special request header.
-
-### Request Body
+#### Request Body
 
 ```shell
 <VersioningConfiguration>
@@ -45,26 +41,20 @@ Please find the details below:
 
 ## Response
 
-### Response Headers
-#### Common Response Headers 
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
-#### Special Response Headers
-This response does not have special response headers.
+#### Response Headers
 
-### Response Body
+This API only uses common response headers. For more information on common request headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+
+#### Response Body
 This response body is empty.
 
-### Error Codes
-Some common special errors that may occur with the request are listed below. For more COS error codes or a complete list of errors, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+#### Error Codes
 
-| Error Code | HTTP Status Code | Description |
-| -------------- | --------------------------------------- | -------------- |
-| InvalidArgument | 400 Bad Request | If the xml body of the request to enable versioning is empty, InvalidArgument will be returned |
-| InvalidDigest   |400 Bad Request | 1. The Content-MD5 carried does not match the request body calculated by the server; <br>2. Only two values are valid for the versioning state: Enabled or Suspended. If other values are entered, InvalidArgument will be returned |
-
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 
 ## Samples
+#### Request
 ```shell
 PUT /?versioning HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-chengdu.myqcloud.com
@@ -81,7 +71,7 @@ Content-Length: 83
 </VersioningConfiguration>
 ```
 
-### Response
+#### Response
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
