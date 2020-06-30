@@ -1,4 +1,3 @@
-## **Monthly Subscription Products**
 
 ## Compute
 
