@@ -6,7 +6,7 @@ NGINX is a common reverse proxy server that handles a high volume of service req
 
 You can run the log_format command to define the format of NGINX logs (access.log). The definition of each field and how to configure the index in default format are as follows.
 
-```shell
+```plaintext
 log_format  main  '$remote_addr - $remote_user [$time_local] "$request"'
                       '$status $body_bytes_sent "$http_referer"'
                       '"$http_user_agent" "$http_x_forwarded_for"';
