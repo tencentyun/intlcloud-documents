@@ -39,7 +39,7 @@ In the RunInstances API, you can specify the [InstanceMarketOptionsRequest](http
 
 #### Example
 You have an instance in Guangzhou Zone 3, and the billing mode of the instance is pay-as-you-go on an hourly basis and in spot mode. The specific configurations of the billing mode are as follows:
-- MaxPrice: 0.6 CNY/hour
+- MaxPrice: 0.6 USD/hour
 - SpotInstanceType: one-time
 - ImageId: img-pmqg1cw7
 - InstanceType: S2.MEDIUM4 (Standard 2, 2-core, 4GB)
