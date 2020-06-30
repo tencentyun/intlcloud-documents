@@ -144,7 +144,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 
 ## 混流录制
 
-首先请先参见 云端混流了解混流业务。
+首先请先参见 [云端混流](https://intl.cloud.tencent.com/document/product/267/8832) 了解混流业务。
 
 对于使用了直播云端混流业务的场景，录制侧按混流参数 OutputStreamType（输出流类型）将混流分为两类：
 
@@ -181,7 +181,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 
 登录云点播控制台，在 [媒资管理页](https://console.cloud.tencent.com/vod/media) 可以浏览已录制所有文件。
 
- ![](https://main.qcloudimg.com/raw/a2f1bfba98b97a73eebd91a1a6c8f460.png)
+ ![](https://main.qcloudimg.com/raw/4812fce355626d4befffa2f57bbb3cbb.png)
 
 ### 录制事件通知
 
