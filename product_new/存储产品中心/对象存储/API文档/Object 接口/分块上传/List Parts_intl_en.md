@@ -6,7 +6,7 @@ This API is used to query the uploaded parts of a specified multipart upload, i.
 
 ### Sample Request
 
-```
+```shell
 GET /<ObjectKey>?uploadId=UploadId HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -17,7 +17,7 @@ Authorization: Auth String
 
 ### Request Headers
 
-The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Parameters
 
@@ -36,13 +36,13 @@ The request body of this request is empty.
 
 ### Response Headers
 
-This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only uses common response headers. For more information on common request headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 ### Response Body
 
 A successful query returns **application/xml** data which include the information on the successfully uploaded parts.
 
-```xml
+```shell
 <?xml version="1.0" encoding="UTF-8" ?>
 <ListPartsResult>
     <Bucket>examplebucket-1250000000</Bucket>
@@ -71,7 +71,7 @@ A successful query returns **application/xml** data which include the informatio
 </ListPartsResult>
 ```
 
-The data are described in details below:
+The node are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------ | ---------------------------------- | --------- |
@@ -117,11 +117,16 @@ Content of the Container node `Part`:
 | ETag               | ListPartsResult.Part | MD5 checksum of a part | string |
 | Size               | ListPartsResult.Part | Part size in bytes | string |
 
+#### Error Code
+
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+
+
 ## Example
 
 ### Request
 
-```
+```shell
 GET /exampleobject?uploadId=1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361 HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Wed, 25 Mar 2020 10:07:25 GMT
@@ -131,7 +136,7 @@ Connection: close
 
 ### Response
 
-```
+```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 1119
@@ -141,39 +146,39 @@ Server: tencent-cos
 x-cos-request-id: NWU3YjJkNWRfMjNhZjJhMDlfNWY5Ml8zMmUy****
 
 <ListPartsResult>
-    <Bucket>examplebucket-1250000000</Bucket>
-    <EncodingType/>
-    <Key>exampleobject</Key>
-    <UploadId>1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361</UploadId>
-    <Owner>
-        <ID>1250000000</ID>
-        <DisplayName>1250000000</DisplayName>
-    </Owner>
-    <PartNumberMarker>0</PartNumberMarker>
-    <Initiator>
-        <ID>qcs::cam::uin/100000000001:uin/100000000011</ID>
-        <DisplayName>100000000011</DisplayName>
-    </Initiator>
-    <Part>
-        <PartNumber>1</PartNumber>
-        <LastModified>2020-03-25T10:07:14.000Z</LastModified>
-        <ETag>&quot;39270a968a357d24207e9911162507eb&quot;</ETag>
-        <Size>1048576</Size>
-    </Part>
-    <Part>
-        <PartNumber>2</PartNumber>
-        <LastModified>2020-03-25T10:07:13.000Z</LastModified>
-        <ETag>&quot;d899fbd1e06109ea2e4550f5751c88d6&quot;</ETag>
-        <Size>1048576</Size>
-    </Part>
-    <Part>
-        <PartNumber>3</PartNumber>
-        <LastModified>2020-03-25T10:07:13.000Z</LastModified>
-        <ETag>&quot;762890d6c9a871b7bd136037cb2260cd&quot;</ETag>
-        <Size>1048576</Size>
-    </Part>
-    <StorageClass>Standard</StorageClass>
-    <MaxParts>1000</MaxParts>
-    <IsTruncated>false</IsTruncated>
+	<Bucket>examplebucket-1250000000</Bucket>
+	<EncodingType/>
+	<Key>exampleobject</Key>
+	<UploadId>1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361</UploadId>
+	<Owner>
+		<ID>1250000000</ID>
+		<DisplayName>1250000000</DisplayName>
+	</Owner>
+	<PartNumberMarker>0</PartNumberMarker>
+	<Initiator>
+		<ID>qcs::cam::uin/100000000001:uin/100000000011</ID>
+		<DisplayName>100000000011</DisplayName>
+	</Initiator>
+	<Part>
+		<PartNumber>1</PartNumber>
+		<LastModified>2020-03-25T10:07:14.000Z</LastModified>
+		<ETag>&quot;39270a968a357d24207e9911162507eb&quot;</ETag>
+		<Size>1048576</Size>
+	</Part>
+	<Part>
+		<PartNumber>2</PartNumber>
+		<LastModified>2020-03-25T10:07:13.000Z</LastModified>
+		<ETag>&quot;d899fbd1e06109ea2e4550f5751c88d6&quot;</ETag>
+		<Size>1048576</Size>
+	</Part>
+	<Part>
+		<PartNumber>3</PartNumber>
+		<LastModified>2020-03-25T10:07:13.000Z</LastModified>
+		<ETag>&quot;762890d6c9a871b7bd136037cb2260cd&quot;</ETag>
+		<Size>1048576</Size>
+	</Part>
+	<StorageClass>Standard</StorageClass>
+	<MaxParts>1000</MaxParts>
+	<IsTruncated>false</IsTruncated>
 </ListPartsResult>
 ```

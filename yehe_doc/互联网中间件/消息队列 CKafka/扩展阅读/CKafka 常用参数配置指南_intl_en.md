@@ -31,6 +31,7 @@ log.retention.check.interval.ms=300000
 ```
 >For configurations not listed here, see the [open-source Kafka default configurations](http://kafka.apache.org/0102/documentation.html#brokerconfigs).
 
+<span id="topic"></span>
 ## Topic configuration parameter description
 #### 1. Number of partitions
 

@@ -34,7 +34,7 @@ This API only uses common request headers. For more information, please see [Com
 </AccelerateConfiguration>
 ```
 
-Detailed data is as shown below:
+Detailed nodes are as shown below:
 
 | Node Name (Keyword)      | Parent Node                  | Description                                                 | Type      |
 | ----------------------- | ----------------------- | ---------------------------------------------------- | --------- |
@@ -54,12 +54,7 @@ The response body return is empty.
 
 #### Error codes
 
-The following error messages may be returned for this request operation. For common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-
-| Error Code | HTTP Status Code | Description |
-| --------------- | --------------- | ------------------------------------------------------------ |
-| InvalidArgument | 400 Bad Request | 1. If the XML body of the request is empty, `InvalidArgument` will be returned. <br>2. The global acceleration status has only two valid values: `Enabled` and `Suspended`. If any other status value is entered, `InvalidArgument` will be returned. |
-| InvalidDigest   | 400 Bad Request | The carried Content-MD5 does not match the request body calculated by the server.        |
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Use cases
 
@@ -87,5 +82,5 @@ Content-Length: 0
 Connection: keep-alive
 Date: Wed, 23 Aug 2019 08:14:53 GMT
 Server: tencent-cos
-x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0ZThm
+x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0****
 ```

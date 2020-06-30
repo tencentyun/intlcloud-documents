@@ -1,4 +1,4 @@
-## Sending a Message
+## Sending Messages
 
 ### Creating a text message
 
@@ -12,12 +12,12 @@ tim.createTextMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ------------------ | -------- | ------------------------------------------------------------ |
 | `to` | `String` | The userID or groupID of the message recipient. |
-| `conversationType` | `String` | The conversation type. Valid values: `TIM.TYPES.CONV_C2C` and `TIM.TYPES.CONV_GROUP`. |
+| `conversationType` | `String` | The conversation type. Valid values: `TIM.TYPES.CONV_C2C` (C2C conversation) and `TIM.TYPES.CONV_GROUP` (group conversation). |
 | `payload` | `Object` | The message content container. |
 
 `payload` has the following properties:
@@ -29,8 +29,8 @@ tim.createTextMessage(options)
 **Example**
 
 ```javascript
-// Send a text message. The text message sending process in web apps is the same as that in Mini Programs.
-/ 1. Create a message instance. The instance returned by the API can be displayed on the screen.
+// Send a text message. The text message sending process in the web apps is the same as that in Mini Programs.
+// 1. Create a message instance. The instance returned by the API can be displayed on the screen.
 let message = tim.createTextMessage({
   to: 'user1',
   conversationType: TIM.TYPES.CONV_C2C,
@@ -44,7 +44,7 @@ let message = tim.createTextMessage({
 // 2. Send a message.
 let promise = tim.sendMessage(message);
 promise.then(function(imResponse) {
-  // The message was sent successfully.
+  // The message is sent successfully.
   console.log(imResponse);
 }).catch(function(imError) {
   // The message failed to be sent.
@@ -62,7 +62,7 @@ This API returns a message instance [Message](https://imsdk-1252463788.file.myqc
 
 This API is used to create an image message. It returns a message instance. If you need to send an image message, call [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) to send this message instance.
 
-> File objects are supported in v2.3.1 or later. If you need to use file objects, upgrade your SDK to v2.3.1 or later.
+> File objects are supported in v2.3.1 or later. If you need to use the file objects, upgrade your SDK to v2.3.1 or later.
 
 
 **API**
@@ -73,7 +73,7 @@ tim.createImageMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ------------------ | ---------- | ---------------------------------------------------------- |
@@ -90,13 +90,13 @@ tim.createImageMessage(options)
 
 **Web example**
 
-<pre><code class="language-javascript"><span class="hljs-comment">// Example 1 for sending an image message in a web app - Passing in a DOM node</span>
+<pre><code class="language-javascript"><span class="hljs-comment">// Example 1 for sending an image message in a web app - Passing in a DOM code</span>
 <span class="hljs-comment">// 1. Create a message instance. The instance returned by the API can be displayed on the screen.</span>
 <span class="hljs-keyword">let</span> message = tim.createImageMessage({
   <span class="hljs-attr">to</span>: <span class="hljs-string">'user1'</span>,
   <span class="hljs-attr">conversationType</span>: TIM.TYPES.CONV_C2C,
-  <span class="hljs-comment">// The message priority, which is applicable to group chats (supported by v2.4.2 or later). If messages in a group exceed the frequency limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message priority and frequency control</a>.</span>
-  <span class="hljs-comment">// Valid enumerated values: TIM.TYPES.MSG_PRIORITY_HIGH, TIM.TYPES.MSG_PRIORITY_NORMAL (default), TIM.TYPES.MSG_PRIORITY_LOW, TIM.TYPES.MSG_PRIORITY_LOWEST</span>
+  <span class="hljs-comment">// Message priority applicable to group chats (supported by v2.4.2 or later). If messages in a group exceed the frequency limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message priority and frequency control</a>.</span>
+  <span class="hljs-comment">// Valid enumerated values: TIM.TYPES.MSG_PRIORITY_HIGH, TIM.TYPES.MSG_PRIORITY_NORMAL (default), TIM.TYPES.MSG_PRIORITY_LOW, and TIM.TYPES.MSG_PRIORITY_LOWEST</span>
   <span class="hljs-comment">// priority: TIM.TYPES.MSG_PRIORITY_NORMAL,</span>
   <span class="hljs-attr">payload</span>: {
     <span class="hljs-attr">file</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'imagePicker'</span>),
@@ -106,7 +106,7 @@ tim.createImageMessage(options)
 <span class="hljs-comment">// 2. Send a message.</span>
 <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
 promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-  <span class="hljs-comment">// The message was sent successfully.</span>
+  <span class="hljs-comment">// The message is sent successfully.</span>
   <span class="hljs-built_in">console</span>.log(imResponse);
 }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
   <span class="hljs-comment">// The message failed to be sent.</span>
@@ -114,7 +114,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 });
 
 <span class="hljs-comment">// Example 2 for sending an image message in a web app - Passing in a file object</span>
-<span class="hljs-comment">// Add a message input box with the ID set to "testPasteInput", for example, &lt;input type="text" id="testPasteInput" placeholder="Take a screenshot and paste it in the input box" size="30" /&gt;</span>
+<span class="hljs-comment">// Add a message input box with the ID set to "testPasteInput", such as &lt;input type="text" id="testPasteInput" placeholder="Take a screenshot and paste it in the input box" size="30" /&gt;</span>
 <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'testPasteInput'</span>).addEventListener(<span class="hljs-string">'paste'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
   <span class="hljs-keyword">let</span> clipboardData = e.clipboardData;
   <span class="hljs-keyword">let</span> file;
@@ -143,7 +143,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
   <span class="hljs-comment">// 2. Send a message.</span>
   <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
   promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-    <span class="hljs-comment">// The message was sent successfully.</span>
+    <span class="hljs-comment">// The message is sent successfully.</span>
     <span class="hljs-built_in">console</span>.log(imResponse);
   }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
     <span class="hljs-comment">// The message failed to be sent.</span>
@@ -170,7 +170,7 @@ wx.chooseImage({
     // 3. Send the image.
     let promise = tim.sendMessage(message);
     promise.then(function(imResponse) {
-      // The message was sent successfully.
+      // The message is sent successfully.
       console.log(imResponse);
     }).catch(function(imError) {
       // The message failed to be sent.
@@ -185,9 +185,9 @@ wx.chooseImage({
 This API returns a message instance [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html).
 
 
-### Creating a voice message
+### Creating voice messages
 
-This API is used to create a voice message. It returns a message instance. If you need to send a voice message, call the [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) API. Currently, createAudioMessage is only applicable to WeChat Mini Programs. 
+This API is used to create a voice message. It returns a message instance. If you need to send a voice message, call the [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) API. Currently, createAudioMessage is applicable only to WeChat Mini Programs. 
 
 **API**
 
@@ -197,7 +197,7 @@ tim.createAudioMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ------------------ | -------- | ---------------------------------------------------------- |
@@ -219,13 +219,13 @@ tim.createAudioMessage(options)
 <span class="hljs-keyword">const</span> recorderManager = wx.getRecorderManager();
 
 
-<span class="hljs-comment">// Some parameters related to recording</span>
+<span class="hljs-comment">// Some recording parameters.</span>
 <span class="hljs-keyword">const</span> recordOptions = {
   <span class="hljs-attr">duration</span>: <span class="hljs-number">60000</span>, <span class="hljs-comment">// Recording duration in ms. The maximum value is 600000 ms, that is, 10 minutes.</span>
   <span class="hljs-attr">sampleRate</span>: <span class="hljs-number">44100</span>, <span class="hljs-comment">// Sample rate</span>
   <span class="hljs-attr">numberOfChannels</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">// Number of recording channels</span>
   <span class="hljs-attr">encodeBitRate</span>: <span class="hljs-number">192000</span>, <span class="hljs-comment">// Encoding rate</span>
-  <span class="hljs-attr">format</span>: <span class="hljs-string">'aac'</span> <span class="hljs-comment">// Format of the voice message. A voice message created using this format can be used on all IM platforms, including the Android, iOS, WeChat Mini Programs, and web platforms.</span>
+  <span class="hljs-attr">format</span>: <span class="hljs-string">'aac'</span> <span class="hljs-comment">// Format of the voice message. A voice message created using this format can be used in all IM platforms, including the Android, iOS, WeChat Mini Programs, and web platforms.</span>
 };
 
 <span class="hljs-comment">// 2.1 Listen for voice recording errors.</span>
@@ -248,7 +248,7 @@ recorderManager.onStop(<span class="hljs-function"><span class="hljs-keyword">fu
   <span class="hljs-comment">// 5. Send a message.</span>
   <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
   promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-    <span class="hljs-comment">// The message was sent successfully.</span>
+    <span class="hljs-comment">// The message is sent successfully.</span>
     <span class="hljs-built_in">console</span>.log(imResponse);
   }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
     <span class="hljs-comment">// The message failed to be sent.</span>
@@ -263,13 +263,13 @@ recorderManager.start(recordOptions);</code></pre>
 
 This API returns a message instance [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html).
 
-### Creating a file message
+### Creating file messages
 
 This API is used to create a file message. It returns a message instance. If you need to send a file message, call the [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) API to send this message instance.
 
 >
-> File objects are supported in v2.3.1 or later. If you need to use file objects, upgrade your SDK to v2.3.1 or later.
-> Since v2.4.0, the maximum size of a file that can be uploaded is 100 MB.
+> File objects are supported in v2.3.1 or later. If you need to use the file objects, upgrade your SDK to v2.3.1 or later.
+> Since v2.4.0, the maximum file size that can be uploaded is 100 MB.
 > WeChat Mini Programs currently do not support file selection. Therefore, this API is not applicable to WeChat Mini Programs.
 
 **API**
@@ -280,7 +280,7 @@ tim.createFileMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ------------------ | ---------- | ------------------------------------------------------------ |
@@ -297,13 +297,13 @@ tim.createFileMessage(options)
 
 **Example**
 
-<pre><code class="language-javascript"><span class="hljs-comment">// Example 1 for sending a file message in a web app - Passing in a DOM node</span>
+<pre><code class="language-javascript"><span class="hljs-comment">// Example 1 for sending a file message in a web app - Passing in a DOM code</span>
 <span class="hljs-comment">// 1. Create a file message instance. The instance returned by the API can be displayed on the screen.</span>
 <span class="hljs-keyword">let</span> message = createFileMessage({
   <span class="hljs-attr">to</span>: <span class="hljs-string">'user1'</span>,
   <span class="hljs-attr">conversationType</span>: TIM.TYPES.CONV_C2C,
-  <span class="hljs-comment">// The message priority, which is applicable to group chats (supported by v2.4.2 or later). If messages in a group exceed the frequency limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message priority and frequency control</a>.</span>
-  <span class="hljs-comment">// Valid enumerated values: TIM.TYPES.MSG_PRIORITY_HIGH, TIM.TYPES.MSG_PRIORITY_NORMAL (default), TIM.TYPES.MSG_PRIORITY_LOW, TIM.TYPES.MSG_PRIORITY_LOWEST</span>
+  <span class="hljs-comment">// Message priority applicable to group chats (supported by v2.4.2 or later). If messages in a group exceed the frequency limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message priority and frequency control</a>.</span>
+  <span class="hljs-comment">// Valid enumerated values: TIM.TYPES.MSG_PRIORITY_HIGH, TIM.TYPES.MSG_PRIORITY_NORMAL (default), TIM.TYPES.MSG_PRIORITY_LOW, and TIM.TYPES.MSG_PRIORITY_LOWEST</span>
   <span class="hljs-comment">// priority: TIM.TYPES.MSG_PRIORITY_NORMAL,</span>
   <span class="hljs-attr">payload</span>: {
     <span class="hljs-attr">file</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'filePicker'</span>),
@@ -313,14 +313,14 @@ tim.createFileMessage(options)
 <span class="hljs-comment">// 2. Send a message.</span>
 <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
 promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-  <span class="hljs-comment">// The message was sent successfully.</span>
+  <span class="hljs-comment">// The message is sent successfully.</span>
   <span class="hljs-built_in">console</span>.log(imResponse);
 }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
   <span class="hljs-comment">// The message failed to be sent.</span>
   <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">'sendMessage error:'</span>, imError);
 });
 <span class="hljs-comment">// Example 2 for sending a file message in a web app - Passing in a file object</span>
-<span class="hljs-comment">// Add a message input box with the ID set to "testPasteInput", for example, &lt;input type="text" id="testPasteInput" placeholder="Take a screenshot and paste it in the input box" size="30" /&gt;</span>
+<span class="hljs-comment">// Add a message input box with the ID set to"testPasteInput", such as &lt;input type="text" id="testPasteInput" placeholder="Take a screenshot and paste it in the input box" size="30" /&gt;</span>
 <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'testPasteInput'</span>).addEventListener(<span class="hljs-string">'paste'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
   <span class="hljs-keyword">let</span> clipboardData = e.clipboardData;
   <span class="hljs-keyword">let</span> file;
@@ -346,7 +346,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
   <span class="hljs-comment">// 2. Send a message.</span>
   <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
   promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-    <span class="hljs-comment">// The message was sent successfully.</span>
+    <span class="hljs-comment">// The message is sent successfully.</span>
     <span class="hljs-built_in">console</span>.log(imResponse);
   }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
     <span class="hljs-comment">// The message failed to be sent.</span>
@@ -361,7 +361,7 @@ This API returns a message instance [Message](https://imsdk-1252463788.file.myqc
 
 
 
-### Creating a custom message
+### Creating custom messages
 
 This API is used to create a custom message. It returns a message instance. If you need to send a custom message, call the [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) API to send this message instance.
 If the SDK does not provide the capability you need, use custom messages to customize features, such as the dice rolling feature.
@@ -375,7 +375,7 @@ tim.createCustomMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ------------------ | -------- | ------------------------------------------------------------ |
@@ -387,9 +387,9 @@ tim.createCustomMessage(options)
 
 | Name | Type | Description |
 | ------------- | -------- | -------------------- |
-| `data` | `String` | The data field of the custom message. |
-| `description` | `String` | The data field of the custom message. |
-| `extension` | `String` | The data field of the custom message. |
+| `data` | `String` | A data field of the custom message. |
+| `description` | `String` | A data field of the custom message. |
+| `extension` | `String` | A data field of the custom message. |
 
 
 **Example**
@@ -403,8 +403,8 @@ tim.createCustomMessage(options)
 <span class="hljs-keyword">let</span> message = tim.createCustomMessage({
   <span class="hljs-attr">to</span>: <span class="hljs-string">'user1'</span>,
   <span class="hljs-attr">conversationType</span>: TIM.TYPES.CONV_C2C,
-  <span class="hljs-comment">// The message priority, which is applicable to group chats (supported by v2.4.2 or later). If messages in a group exceed the frequency limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message priority and frequency control</a>.</span>
-  <span class="hljs-comment">// Valid enumerated values: TIM.TYPES.MSG_PRIORITY_HIGH, TIM.TYPES.MSG_PRIORITY_NORMAL (default), TIM.TYPES.MSG_PRIORITY_LOW, TIM.TYPES.MSG_PRIORITY_LOWEST</span>
+  <span class="hljs-comment">// Message priority applicable to group chats (supported by v2.4.2 or later). If messages in a group exceed the frequency limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message priority and frequency control</a>.</span>
+  <span class="hljs-comment">// Valid enumerated values: TIM.TYPES.MSG_PRIORITY_HIGH, TIM.TYPES.MSG_PRIORITY_NORMAL (default), TIM.TYPES.MSG_PRIORITY_LOW, and TIM.TYPES.MSG_PRIORITY_LOWEST</span>
   <span class="hljs-comment">// priority: TIM.TYPES.MSG_PRIORITY_HIGH,</span>
   <span class="hljs-attr">payload</span>: {
     <span class="hljs-attr">data</span>: <span class="hljs-string">'dice'</span>, <span class="hljs-comment">// This indicates that the message is a dice message.</span>
@@ -415,7 +415,7 @@ tim.createCustomMessage(options)
 <span class="hljs-comment">// 3. Send a message.</span>
 <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
 promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-  <span class="hljs-comment">// The message was sent successfully.</span>
+  <span class="hljs-comment">// The message is sent successfully.</span>
   <span class="hljs-built_in">console</span>.log(imResponse);
 }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
   <span class="hljs-comment">// The message failed to be sent.</span>
@@ -428,14 +428,14 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 This API returns a message instance [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html).
 
 
-### Creating a video message
+### Creating video messages
 
 This API is used to create a video message. It returns a message instance. If you need to send a video message, call the [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) API to send this message instance.
 
 >
 >- This API requires SDK v2.2.0 or later.
->- createVideoMessage is applicable to WeChat Mini Programs, and can be used in web apps if the SDK version is v2.6.0 or later.
->- You can use WeChat Mini Programs to record a video message, or select a video from your album. However, Mini Programs do not return a thumbnail of the video. To improve user experience, the SDK creates a thumbnail for each video message by default. If you do not wish to display the default thumbnail, skip the information related to the thumbnail when rendering.
+>- createVideoMessage is applicable to WeChat Mini Programs and can be used in web apps if the SDK version is v2.6.0 or later.
+>- You can use WeChat Mini Programs to record a video message, or select a video from your local device. However, Mini Programs do not return a thumbnail of the video. To improve user experience, the SDK creates a thumbnail for each video message by default. If you do not wish to display the default thumbnail, skip the information related to the thumbnail when rendering.
 >- To make your video messages compatible with all platforms, use [the latest TUIKit or SDK](https://intl.cloud.tencent.com/document/product/1047/33996) to develop your mobile client.  
 
 **API**
@@ -447,7 +447,7 @@ tim.createVideoMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ------------------ | -------- | ---------------------------------------------------------- |
@@ -459,15 +459,15 @@ tim.createVideoMessage(options)
 
 | Name | Type | Description |
 | ------ | ---------------------------------- | ------------------------------------------------------------ |
-| `text` | `HTMLInputElement`, `File`, or `Object` | This is used to select a DOM node or file object of the video file in a web app, or to record a video file or select a video file from the local device in a Mini Program. The SDK reads and uploads the data contained in this parameter. |
+| `text` | `HTMLInputElement`, `File`, or `Object` | It is used to select a DOM node or file object of the video file in a web app, or to record a video file or select a video file from the local device in a Mini Program. The SDK reads and uploads the data contained in this parameter. |
 
 **Example**
 
 
 <pre><code class="language-javascript"><span class="hljs-comment">// Example of using a Mini Program to send a video message<a href="https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseVideo.html">wx.chooseVideo</a></span>
-<span class="hljs-comment">// 1. Call the Mini Program API to select a video file.</span>
+<span class="hljs-comment">// 1. Call the Mini Program API to select a video file. For more information on the API, see https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.chooseVideo.html.</span>
 wx.chooseVideo({
-  <span class="hljs-attr">sourceType</span>: [<span class="hljs-string">'album'</span>, <span class="hljs-string">'camera'</span>], <span class="hljs-comment">// The source of the video file is the album or camera.</span>
+  <span class="hljs-attr">sourceType</span>: [<span class="hljs-string">'album'</span>, <span class="hljs-string">'camera'</span>], <span class="hljs-comment">// The source of the video file is album or camera.</span>
   <span class="hljs-attr">maxDuration</span>: <span class="hljs-number">60</span>, <span class="hljs-comment">// Set the maximum duration to 60s.</span>
   <span class="hljs-attr">camera</span>: <span class="hljs-string">'back'</span>, <span class="hljs-comment">// Rear camera</span>
   success (res) {
@@ -483,7 +483,7 @@ wx.chooseVideo({
     <span class="hljs-comment">// 3. Send a message.</span>
     <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
     promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-      <span class="hljs-comment">// The message was sent successfully.</span>
+      <span class="hljs-comment">// The message is sent successfully.</span>
       <span class="hljs-built_in">console</span>.log(imResponse);
     }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
       <span class="hljs-comment">// The message failed to be sent.</span>
@@ -493,7 +493,7 @@ wx.chooseVideo({
 })
 
 <span class="hljs-comment">// Example of using a web app to send a video message (supported in v2.6.0 or later):</span>
-<span class="hljs-comment">// 1. Obtain the video file and pass in the DOM node.</span>
+<span class="hljs-comment">// 1. Obtain the video file, and pass in the DOM node.</span>
 <span class="hljs-comment">// 2. Create a message instance.</span>
 <span class="hljs-keyword">const</span> message = tim.createVideoMessage({
   <span class="hljs-attr">to</span>: <span class="hljs-string">'user1'</span>,
@@ -506,7 +506,7 @@ wx.chooseVideo({
 <span class="hljs-comment">// 3. Send a message.</span>
 <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
 promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-  <span class="hljs-comment">// The message was sent successfully.</span>
+  <span class="hljs-comment">// The message is sent successfully.</span>
   <span class="hljs-built_in">console</span>.log(imResponse);
 }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
   <span class="hljs-comment">// The message failed to be sent.</span>
@@ -518,7 +518,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 
 This API returns a message instance [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html).
 
-### Creating an emoji message
+### Creating emoji messages
 
 This API is used to create an emoji message. It returns a message instance. If you need to send an emoji message, call the [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) API to send this message instance.
 
@@ -533,7 +533,7 @@ tim.createFaceMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ------------------ | -------- | ------------------------------------------------------------ |
@@ -550,23 +550,23 @@ tim.createFaceMessage(options)
 
 **Example**
 
-<pre><code class="language-javascript"><span class="hljs-comment">// Send an emoji message. This process is the same for web apps and WeChat Mini Programs.</span>
+<pre><code class="language-javascript"><span class="hljs-comment">// Send an emoji. This process is the same for web apps and WeChat Mini Programs.</span>
 <span class="hljs-comment">// 1. Create a message instance. The instance returned by the API can be displayed on the screen.</span>
 <span class="hljs-keyword">let</span> message = tim.createFaceMessage({
   <span class="hljs-attr">to</span>: <span class="hljs-string">'user1'</span>,
   <span class="hljs-attr">conversationType</span>: TIM.TYPES.CONV_C2C,
-  <span class="hljs-comment">// The message priority, which is applicable to group chats (supported by v2.4.2 or later). If messages in a group exceed the frequency limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message priority and frequency control</a>.</span>
-  <span class="hljs-comment">// Valid enumerated values: TIM.TYPES.MSG_PRIORITY_HIGH, TIM.TYPES.MSG_PRIORITY_NORMAL (default), TIM.TYPES.MSG_PRIORITY_LOW, TIM.TYPES.MSG_PRIORITY_LOWEST</span>
+  <span class="hljs-comment">// Message priority applicable to group chats (supported by v2.4.2 or later). If messages in a group exceed the frequency limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message priority and frequency control</a>.</span>
+  <span class="hljs-comment">// Valid enumerated values: TIM.TYPES.MSG_PRIORITY_HIGH, TIM.TYPES.MSG_PRIORITY_NORMAL (default), TIM.TYPES.MSG_PRIORITY_LOW, and TIM.TYPES.MSG_PRIORITY_LOWEST</span>
   <span class="hljs-comment">// priority: TIM.TYPES.MSG_PRIORITY_NORMAL,</span>
   <span class="hljs-attr">payload</span>: {
     <span class="hljs-attr">index</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">// The number indicates the emoji index, which is customized by the user.</span>
-    <span class="hljs-attr">data</span>: <span class="hljs-string">'tt00'</span> <span class="hljs-comment">// The string indicates the extra data.</span>
+    <span class="hljs-attr">data</span>: <span class="hljs-string">'tt00'</span> <span class="hljs-comment">// The string provides additional data.</span>
   }
 });
 <span class="hljs-comment">// 2. Send a message.</span>
 <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
 promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
-  <span class="hljs-comment">// The message was sent successfully.</span>
+  <span class="hljs-comment">// The message is sent successfully.</span>
   <span class="hljs-built_in">console</span>.log(imResponse);
 }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
   <span class="hljs-comment">// The message failed to be sent.</span>
@@ -579,23 +579,23 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 This API returns a message instance [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html).
 
 
-### Sending a message
+### Sending messages
 
 This API is used to send a message. Before sending a message, call the following APIs to create a message instance and then use this API to send this message instance.
 
 - [createTextMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createTextMessage)
-- [createImageMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createImageMessage) 
-- [createAudioMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createAudioMessage) 
-- [createVideoMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createVideoMessage) 
+- [createImageMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createImageMessage)
+- [createAudioMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createAudioMessage)
+- [createVideoMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createVideoMessage)
 - [createCustomMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createCustomMessage)
 - [createFaceMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFaceVMessage)
 - [createFileMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFileMessage)
 
-> The SDK needs to be `ready` in order to call this API to send message instances. The following events can be listened for to learn the SDK status:
+> The SDK must in the `ready` status in order to call this API to send message instances. The following events can be listened for to learn the SDK status:
 - [TIM.EVENT.SDK_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_READY): this event is triggered when the SDK status is ready.
 - [TIM.EVENT.SDK_NOT_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_NOT_READY): this event is triggered when the SDK status is not ready.
 
-[TIM.EVENT.MESSAGE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_RECEIVED) must be listened for in order to receive the new one-to-one messages, group messages, group tips, or system group notifications that are pushed.
+[TIM.EVENT.MESSAGE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_RECEIVED) must be listened for in order to receive new one-to-one messages, group messages, group notifications, or group tips that have been pushed.
 Messages sent by this API do not trigger [TIM.EVENT.MESSAGE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_RECEIVED). Messages sent by the same account from other clients (or through the RESTful API) trigger [TIM.EVENT.MESSAGE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_RECEIVED). Offline push is applicable only to Android or iOS terminals and is not supported by web apps or WeChat Mini Programs. 
 
 **API**
@@ -607,7 +607,7 @@ tim.sendMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | **Attributes** | Description |
 | --------- | --------- | -------------- | ------------------------------ |
@@ -618,8 +618,8 @@ tim.sendMessage(options)
 
 | Name | Type | **Attributes** | Description |
 | ----------------- | --------- | -------------- | ------------------------------------------------------------ |
-| `onlineUserOnly` | `Boolean` | `optional` | Specifies whether the message is sent to online users only. This parameter is supported in v2.6.4 or later. The default value is false. If this parameter is set to true, the message is not stored in the roaming server, not counted as an unread message, and not pushed to the recipient offline. This is applicable to sending of unimportant prompts or messages, such as broadcast notifications. This parameter is not supported when an AVChatRoom sends messages. |
-| `offlinePushInfo` | `Object` | `optional` | This parameter is supported in v2.6.4 or later. For more information, see [Offline Push](https://intl.cloud.tencent.com/document/product/1047/33525). |
+| `onlineUserOnly` | `Boolean` | `optional` | Specifies whether the message is sent to online users only. This parameter is supported by v2.6.4 or later. The default value is false. If this parameter is set to true, the message is not stored in the roaming server, not counted as an unread message, and not pushed to the recipient offline. This is used when sending unimportant prompts or messages, such as broadcast notifications. This parameter is not supported when an AVChatRoom sends messages. |
+| `offlinePushInfo` | `Object` | `optional` | This parameter is supported by v2.6.4 or later. For more information, see [Offline Push](https://intl.cloud.tencent.com/document/product/1047/33525). |
 
 `offlinePushInfo` is described in the following table.
 
@@ -627,14 +627,14 @@ tim.sendMessage(options)
 | ---------------------- | --------- | -------------- | ------------------------------------------------------------ |
 | `disablePush` | `Boolean` | `optional` | true: offline push is disabled. false (default): offline push is enabled. |
 | `title` | `String` | `optional`| The offline push title. This parameter is used by both iOS and Android. |
-| `description` | `String` | `optional` | The offline push content. This parameter will overwrite the offline push display text of the message instance. If the sent message is a custom message, this parameter overwrites `message.payload.description`. If both `description` and `message.payload.description` are left unspecified, the recipient cannot receive the offline push notification of the custom message. |
+| `description` | `String` | `optional` | The offline push content. This parameter will overwrite the offline push display text of the message instance. If the sent message is a custom message, this parameter overwrites `message.payload.description`. If both `description` and `message.payload.description` are left unspecified, the recipient cannot receive an offline push notification for the custom message. |
 | `extension` | `String` | `optional` | The passthrough content of offline push. |
 | `ignoreIOSBadge` | `Boolean` | `optional` | Specifies whether the badge count is ignored (applicable to iOS only). If this parameter is set to true, the unread count icon of the app will not increase when the message is received by the iOS device. |
 | `androidOPPOChannelID` | `String` | `optional` | The channelID for offline push configured on OPPO mobile phones that run Android 8.0 or later. |
 
 **Example**
 
-<pre><code><span class="hljs-comment">// If the recipient is offline, the message will be stored in the roaming server and pushed offline on the precondition that the recipient's app switches to the background or the process is killed. The default title and content of offline push are retained.</span>
+<pre><code><span class="hljs-comment">// If the recipient is offline, the message will be stored in the roaming server and pushed offline if the recipient's app has switched to the backend or the process has been killed. The default title and content of offline push are retained.</span>
 <span class="hljs-comment">// For more information on offline push, see<a href="https://intl.cloud.tencent.com/document/product/1047/33525">Offline Push</a>.</span>
 <span class="hljs-selector-tag">tim</span><span class="hljs-selector-class">.sendMessage</span>(message);
 <span class="hljs-comment">// The message sending option is supported in v2.6.4 or later.</span>
@@ -644,12 +644,12 @@ tim.sendMessage(options)
 <span class="hljs-comment">// The message sending option is supported in v2.6.4 or later.</span>
 <span class="hljs-selector-tag">tim</span><span class="hljs-selector-class">.sendMessage</span>(message, {
   <span class="hljs-attribute">offlinePushInfo</span>: {
-    <span class="hljs-attribute">disablePush</span>: true <span class="hljs-comment">// If the recipient is offline, the message is stored in the roaming server, but is not pushed offline.</span>
+    <span class="hljs-attribute">onlineUserOnly</span>: true<span class="hljs-comment">// If the recipient is offline, the message is stored in the roaming server, but is not pushed offline.</span>
   }
 });
 <span class="hljs-comment">// The message sending option is supported in v2.6.4 or later.</span>
 <span class="hljs-selector-tag">tim</span><span class="hljs-selector-class">.sendMessage</span>(message, {
-  <span class="hljs-comment">// If the recipient is offline, the message will be stored in the roaming server and pushed offline if the recipient's app has switched to the background or the process has been killed. The title and content of offline push can be customized at the access side.</span>
+  <span class="hljs-comment">// If the recipient is offline, the message will be stored in the roaming server and pushed offline if the recipient's app has switched to the backend or the process has been killed. The title and content of offline push can be customized at the access side.</span>
   <span class="hljs-attribute">offlinePushInfo</span>: {
     <span class="hljs-attribute">title</span>: <span class="hljs-string">''</span>, <span class="hljs-comment">// Title of offline push</span>
     <span class="hljs-attribute">description</span>: <span class="hljs-string">''</span>, <span class="hljs-comment">// Content of offline push</span>
@@ -662,15 +662,15 @@ tim.sendMessage(options)
 
 **Type** : `Promise`
 
-### Recalling a message
+### Recalling messages
 
 This API is used to recall a one-to-one message or a group message. If the recall is successful, the value of `isRevoked` for the recalled message is set to `true`.
 
 >
->- This API requires SDK v2.4.0 or above.
->- The time limit for message recall is 2 minutes by default. You can log in to [the IM console](https://console.cloud.tencent.com/im-detail/login-message) to change this limit.
->- You can call the [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) API to pull recalled messages from the one-to-one or group message roaming list. Recalled messages are displayed based on `isRevoked` of the message object. For example, "The other party has recalled a message" can be displayed if a message is recalled during a one-to-one conversation, or "Tom has recalled a message" can be displayed if a message is recalled during a group conversation.
->- You can also use the RESTful API to [recall one-to-one messages](https://intl.cloud.tencent.com/document/product/1047/35015) and [group messages](https://intl.cloud.tencent.com/document/product/1047/34965).
+>- This API requires SDK v2.4.0 or later.
+>- The time limit for message recall is 2 minutes by default. You can log in to the [IM console](https://console.cloud.tencent.com/im-detail/login-message) to change this limit.
+>- You can call the [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) API to pull recalled messages from the one-to-one or group message roaming list. Recalled messages are displayed based on `isRevoked` of the message object. For example, “The other party has recalled a message” can be displayed if a message is recalled during a one-to-one conversation, or “Tom has recalled a message” can be displayed if a message is recalled during a group conversation.
+>- You can also use RESTful APIs to [recall one-to-one messages](https://intl.cloud.tencent.com/document/product/1047/35015) and [group messages](https://intl.cloud.tencent.com/document/product/1047/34965).
 
 **API**
 
@@ -681,7 +681,7 @@ tim.revokeMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | --------- | --------- | ----------- |
@@ -690,12 +690,12 @@ tim.revokeMessage(options)
 **Example**
 
 ```javascript
-// Actively recall a message.
+// Actively recalls a message.
 let promise = tim.revokeMessage(message);
 promise.then(function(imResponse) {
-  // The message was successfully recalled.
+  // The message is successfully recalled.
 }).catch(function(imError) {
-  // The message fails to be recalled.
+  // The message failed to be recalled.
   console.warn('revokeMessage error:', imError);
 });
 
@@ -703,23 +703,23 @@ promise.then(function(imResponse) {
 
 ```javascript
 tim.on(TIM.EVENT.MESSAGE_REVOKED, function(event) {
-  // The message recall notification was received. Before using this API, upgrade the SDK to v2.4.0 or later.
+  // The message recall notification is received. Before using this API, upgrade the SDK to v2.4.0 or later.
   // event.name - TIM.EVENT.MESSAGE_REVOKED
-  // event.data - An array that stores the Message objects - [Message] - The isRevoked value of each Message object is true.
+  // event.data - an array of Message objects - [Message] - the `isRevoked` value of each Message object is `true`.
 });
 
 ```
 
 ```javascript
-// Obtain a message list which contains recalled messages.
+// Obtain a message list that contains recalled messages.
 let promise = tim.getMessageList({conversationID: 'C2Ctest', count: 15});
 promise.then(function(imResponse) {
   const messageList = imResponse.data.messageList; // Message list
   messageList.forEach(function(message) {
     if (message.isRevoked) {
-      // Process the recalled messages.
+      // Handle the recalled messages.
     } else {
-      // Process common messages.
+      // Handle common messages.
     }
   });
 });
@@ -730,7 +730,7 @@ promise.then(function(imResponse) {
 
 **Type** : `Promise`
 
-### Resending a message
+### Resending messages
 
 This API is used to resend a message. When a message fails to be sent, call this API to resend this message.
 
@@ -743,7 +743,7 @@ tim.resendMessage(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | --------- | --------- | ----------- |
@@ -758,7 +758,7 @@ promise.then(function(imResponse) {
   // The message is successfully resent.
   console.log(imResponse.data.message);
 }).catch(function(imError) {
-  // The message failed to be resent.
+  // The message fails to be resent.
   console.warn('resendMessage error:', imError);
 });
 ```
@@ -767,31 +767,31 @@ promise.then(function(imResponse) {
 
 This API returns a `Promise` object:
 
-- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). `IMResponse.data.groupList` contains the list of groups.
+- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the group list from `IMResponse.data.groupList`.
 - The callback parameter of `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
 
 
-## Receiving a Message
+## Receiving Messages
 
-### Receiving a message
+### Receiving messages
 
 For more information, see [MESSAGE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_RECEIVED).
 
-This API is used to receive a message by means of listening for events.
+This API is used to receive messages by means of listening for events.
 
 **Example**
 
 ```javascript
 let onMessageReceived = function(event) {
-  // event.data - An array that stores the Message objects - [Message]
+  // event.data - an array of Message objects - [Message]
 };
 tim.on(TIM.EVENT.MESSAGE_RECEIVED, onMessageReceived);
 ```
 
 
 
-### Parsing a text message
+### Parsing text messages
 
 <ul><li><b>Simple version</b><br>
  If your text message contains text only, the message is rendered as `'xxxxxxx'` on the UI.</li>
@@ -869,7 +869,7 @@ function parseText (payload) {
 </li></ul>
 
 
-### Parsing a system notification
+### Parsing system notifications
 
 ```javascript
 function parseGroupSystemNotice (payload) {
@@ -891,11 +891,11 @@ function parseGroupSystemNotice (payload) {
     case 7:
       return `${payload.operatorID} invites you to join ${groupName}`
     case 8:
-      return `You have quit from ${groupName}`
+      return `You have withdrawn from ${groupName}`
     case 9:
       return `${payload.operatorID} has made you an admin of ${groupName}`
     case 10:
-      return `${payload.operatorID} has revoked your role as an admin of ${groupName}.`
+      return `${payload.operatorID} has removed you as an admin of ${groupName}.`
     case 255:
       return 'Custom system group notification'
   }
@@ -905,7 +905,7 @@ function parseGroupSystemNotice (payload) {
 
 
 
-### Parsing a group notification
+### Parsing group notifications
 
 ```javascript
 function parseGroupTipContent (payload) {
@@ -913,7 +913,7 @@ function parseGroupTipContent (payload) {
     case this.TIM.TYPES.GRP_TIP_MBR_JOIN:
       return `${payload.userIDList.join(',')} joined the group`
     case this.TIM.TYPES.GRP_TIP_MBR_QUIT:
-      return `${payload.userIDList.join(',')} quit the group`
+      return `${payload.userIDList.join(',')} left the group`
     case this.TIM.TYPES.GRP_TIP_MBR_KICKED_OUT:
       return `${payload.operatorID} removed ${payload.userIDList.join(',')} from the group`
     case this.TIM.TYPES.GRP_TIP_MBR_SET_ADMIN:
@@ -929,13 +929,13 @@ function parseGroupTipContent (payload) {
 
 
 
-## Conversation APIs 
+## Conversation APIs
 
-### Obtaining the message list of a conversation 
+### Querying the message list of a conversation 
 
 For more information, see [Conversation](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Conversation.html).
 
-This API is used to pull by page the message list of a specified conversation. It is called when the message list is rendered for the first time after the user enters the conversation, or when the user pulls down the list to see more messages.
+This API is used to pull the message list of a specified conversation by page. It is called when the message list is rendered for the first time after the user enters the conversation, or when the user pulls down the list to see more messages.
 
 **API**
 
@@ -948,13 +948,13 @@ tim.getMessageList(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
-| Name | Type | Attributes | Description |
-| ------------------ | -------- | ------------ | --------------------------------------------------------- |
-| `conversationID` | `String` | `<optional>` | The ID of the conversation, which is in the following format: C2C+userID (for a one-to-one conversation); GROUP+groupID (for a group conversation); or @TIM#SYSTEM (for a system notification). |
-| `nextReqMessageID` | `String` | `<optional>` | The message ID, which is used to continue pulling messages by page. This parameter can be left unspecified the first time messages are pulled. Every time the API is called, this parameter is returned, and you need to specify it for the next pulling. |
-| `count` | `Number` | `<optional>` | The number of messages to be pulled. The default value and maximum value are both 15. That is, a maximum of 15 messages can be pulled at a time. |
+| Name | Type | Attributes | Default | Description |
+| ------------------ | -------- | ------------ | ------- | ------------------------------------------------------------ |
+| `conversationID` | `String` | - | - | The ID of the conversation. |
+| `nextReqMessageID` | `String` | - | - | The message ID, which is used to continue pulling messages by page. This parameter can be left unspecified the first time messages are pulled. Every time the API is called, this parameter is returned, and you need to specify it for the next pull. |
+| `count` | `Number` | `<optional>` | 15 | The number of messages to be pulled. The default value and maximum value are both 15. That is, a maximum of 15 messages can be pulled at a time. |
 
 **Example**
 
@@ -962,7 +962,7 @@ tim.getMessageList(options)
 // Pull the message list for the first time when a conversation is opened.
 let promise = tim.getMessageList({conversationID: 'C2Ctest', count: 15});
 promise.then(function(imResponse) {
-  const messageList = imResponse.data.messageList; // Message list
+  const messageList = imResponse.data.messageList; // Message list.
   const nextReqMessageID = imResponse.data.nextReqMessageID; // This parameter must be passed in for the next pull by page.
   const isCompleted = imResponse.data.isCompleted; // This indicates whether all messages have been pulled.
 });
@@ -974,7 +974,7 @@ promise.then(function(imResponse) {
 // Pull down to see more messages.
 let promise = tim.getMessageList({conversationID: 'C2Ctest', nextReqMessageID, count: 15});
 promise.then(function(imResponse) {
-  const messageList = imResponse.data.messageList; // Message list
+  const messageList = imResponse.data.messageList; // Message list.
   const nextReqMessageID = imResponse.data.nextReqMessageID; // This parameter must be passed in for the next pull by page.
   const isCompleted = imResponse.data.isCompleted; // This indicates whether all messages have been pulled.
 });
@@ -985,12 +985,12 @@ promise.then(function(imResponse) {
 
 This API returns a `Promise` object:
 
-- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). `IMResponse.data.groupList` contains the list of groups.
+- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the group list from `IMResponse.data.groupList`.
 - The callback parameter of `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
-### Marking unread messages of a conversation as read
+### Marking conversations as read
 
-This API is used to set the unread messages of a conversation to the read state. Messages set to the read status are not counted as unread messages. This API is called when you open or switch a conversation. If this API is not called when you open or switch a conversation, the corresponding messages remain in the unread state.
+This API is used to set the unread messages of a conversation to the read state. Messages set to the read status are not counted as unread messages. This API is called when you open or switch to a conversation. If this API is not called when you open or switch to a conversation, the corresponding messages remain in the unread state.
 
 **API**
 
@@ -1001,17 +1001,11 @@ tim.setMessageRead(options)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
-
-| Name | Type | Description |
-| --------- | -------- | -------------- |
-| `options` | `Object` | The message content container. |
-
-`payload` has the following properties:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ---------------- | -------- | ------------------------------------------------------------ |
-| `conversationID` | `String` | The ID of the conversation, which is in the following format: C2C+userID (for a one-to-one conversation); GROUP+groupID (for a group conversation); or @TIM#SYSTEM (for a system notification). |
+| `conversationID` | `String` | The ID of the conversation, which is in the following format: C2C+userID (for a one-to-one conversation); GROUP+groupID (for a group conversation); and @TIM#SYSTEM (for a system notification). |
 
 **Example**
 
@@ -1023,9 +1017,9 @@ tim.setMessageRead({conversationID: 'C2Cexample'});
 
 
 
-### Obtaining a conversation list
+### Obtaining the conversation list
 
-This API is used to obtain a conversation list. This API will pull the latest 100 conversations. You can call this API when you want to refresh the conversion list.
+This API is used to obtain the conversation list. This API will pull the latest 100 conversations. You can call this API when you want to refresh the conversion list.
 
 >
 >- The profile in the conversation list obtained by this API is incomplete. It contains only the information, such as the profile photo and nickname, needed to meet the rendering requirements of the conversation list. To query the detailed conversation profile, call [getConversationProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getConversationProfile).
@@ -1041,7 +1035,7 @@ tim.getConversationList()
 **Example**
 
 ```javascript
-// Pull the conversation list.
+// Pulling the conversation list
 let promise = tim.getConversationList();
 promise.then(function(imResponse) {
   const conversationList = imResponse.data.conversationList; // This conversation list will overwrite the original conversation list.
@@ -1055,14 +1049,14 @@ promise.then(function(imResponse) {
 
 This API returns a `Promise` object:
 
-- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). `IMResponse.data.groupList` contains the list of groups.
+- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the group list from `IMResponse.data.groupList`.
 - The callback parameter of `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
 
 
-### Obtaining the profile of a conversation
+### Obtaining conversation profiles
 
-This API is used to obtain the profile of a conversation. When you click a conversation in the conversation list, this API is called to obtain the detailed information of the conversation.
+This API is used to obtain conversation profiles. When you click a conversation in the conversation list, this API is called to obtain the detailed information of the conversation.
 
 **API**
 
@@ -1073,18 +1067,18 @@ tim.getConversationProfile(conversationID)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ---------------- | -------- | ------------------------------------------------------------ |
-| `conversationID` | `String` | The ID of the conversation, which is in the following format: C2C+userID (for a one-to-one conversation); GROUP+groupID (for a group conversation); or @TIM#SYSTEM (for a system notification). |
+| `conversationID` | `String` | The ID of the conversation, which is in the following format: C2C+userID (for a one-to-one conversation); GROUP+groupID (for a group conversation); and @TIM#SYSTEM (for a system notification). |
 
 **Example**
 
 ```javascript
 let promise = tim.getConversationProfile(conversationID);
 promise.then(function(imResponse) {
-  // The conversation profile was successfully obtained.
+  // The conversation profile is successfully obtained.
   console.log(imResponse.data.conversation); // Conversation profile
 }).catch(function(imError) {
   console.warn('getConversationProfile error:', imError); // Information related to the failure to obtain the conversation profile
@@ -1096,12 +1090,12 @@ promise.then(function(imResponse) {
 
 This API returns a `Promise` object:
 
-- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). `IMResponse.data.groupList` contains the list of groups.
+- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the group list from `IMResponse.data.groupList`.
 - The callback parameter of `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
 
 
-### Deleting a conversation
+### Deleting conversations
 
 This API is used to delete a conversation based on the conversation ID. It deletes only the conversation, without deleting messages. For example, if the conversation with user A is deleted, the previous messages will still be available the next time you initiate a conversation with user A.
 
@@ -1114,18 +1108,18 @@ tim.deleteConversation(conversationID)
 
 **Parameters**
 
-`options` is of the `Object` type. Its values are as follows:
+`options` is an `Object`, and has the following properties:
 
 | Name | Type | Description |
 | ---------------- | -------- | ------------------------------------------------------------ |
-| `conversationID` | `String` | The ID of the conversation, which is in the following format: C2C+userID (for a one-to-one conversation); GROUP+groupID (for a group conversation); or @TIM#SYSTEM (for a system notification). |
+| `conversationID` | `String` | The ID of the conversation, which is in the following format: C2C+userID (for a one-to-one conversation); GROUP+groupID (for a group conversation); and @TIM#SYSTEM (for a system notification). |
 
 **Example**
 
 ```javascript
 let promise = tim.deleteConversation('C2CExample');
 promise.then(function(imResponse) {
-  // The message was deleted successfully.
+  // The conversation is deleted successfully.
   const { conversationID } = imResponse.data;// ID of the deleted conversation
 }).catch(function(imError) {
   console.warn('deleteConversation error:', imError); // Information related to the failure to delete the conversation
@@ -1137,5 +1131,5 @@ promise.then(function(imResponse) {
 
 This API returns a `Promise` object:
 
-- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). `IMResponse.data.groupList` contains the list of groups.
+- The callback parameter of `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the group list from `IMResponse.data.groupList`.
 - The callback parameter of `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).

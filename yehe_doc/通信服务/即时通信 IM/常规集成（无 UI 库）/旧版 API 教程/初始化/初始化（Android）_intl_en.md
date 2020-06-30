@@ -283,7 +283,7 @@ The following diagram illustrates the force offline process in offline scenarios
 
 ### Ticket expiration notifications
 
-When the user logs in (see [Login](/doc/product/269/9233#.E7.99.BB.E5.BD.951)), a user ticket needs to be provided, which will expire after a certain period of time. If the user ticket has expired, the interaction between the SDK and the server fails and the SDK gives the user ticket expiration notification. If a user status change notification listener is set (see [User status change](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B .B4)), corresponding processing can be carried out in the listener's callback method `onUserSigExpired`. To continue interacting with the server, the user must change the ticket and log in again.
+When the user logs in (see [Login](https://intl.cloud.tencent.com/document/product/1047/34316)), a user ticket needs to be provided, which will expire after a certain period of time. If the user ticket has expired, the interaction between the SDK and the server fails and the SDK gives the user ticket expiration notification. If a user status change notification listener is set (see [User status change](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B .B4)), corresponding processing can be carried out in the listener's callback method `onUserSigExpired`. To continue interacting with the server, the user must change the ticket and log in again.
 
 
 ### Disabling storage
@@ -301,9 +301,9 @@ public TIMUserConfig disableStorage()
 
 ### Conversation refresh listener
 
-By default, C2C offline messages and recent contacts will be obtained asynchronously and profile data will be synced after login. (If IM SDK storage has been enabled, see [Relationship chain profile storage](/doc/product/269/9231#7.-.E5.85.B3.E7.B3.BB.E9.93.BE.E8.B5.84.E6.96.99.E5.AD.98.E5.82.A8) and [Group profile storage](/doc/product/269/9236#8.-.E7.BE.A4.E8.B5.84.E6.96.99.E5.AD.98.E5.82.A837)). When synchronization is completed, the `onRefresh` callback in the conversation refresh listener `TIMRefreshListener` sends an interface refresh notification. Upon receiving this message, the user can refresh the interface (for example, refresh unread messages in the conversation list).
+By default, C2C offline messages and recent contacts will be obtained asynchronously and profile data will be synced after login. When synchronization is completed, the `onRefresh` callback in the conversation refresh listener `TIMRefreshListener` sends an interface refresh notification. Upon receiving this message, the user can refresh the interface (for example, refresh unread messages in the conversation list).
 
-> If offline messages are not needed, you can just [send online messages](/doc/product/269/9232#.E5.9C.A8.E7.BA.BF.E6.B6.88.E6.81.AF).
+> If offline messages are not needed, you can just send online messages.
 
 In the event of multi-device login, unread count synchronization notifications are delivered by the server. The IM SDK updates the unread count locally and then notifies the user to update conversations. The notification will initiate a callback through `onRefreshConversation` in `TIMRefreshListener`. Users who require multi-device synchronization can perform relevant synchronous processing in this API. Therefore, we recommend using `setRefreshListener` in `TIMUserConfig` to configure a conversation refresh listener.
 
@@ -368,7 +368,7 @@ A deleted listener will not be called. **The following is the prototype for mess
 public void removeMessageListener(TIMMessageListener listener)
 ```
 
-The content of messages that are called back is passed through the parameter `TIMMessage`. With `TIMMessage`, you can get detailed information about messages and conversations, such as message text, audio data, and images. See [Message parsing](/doc/product/269/消息收发（Android%20SDK）#.E6.B6.88.E6.81.AF.E8.A7.A3.E6.9E.90).
+The content of messages that are called back is passed through the parameter `TIMMessage`. With `TIMMessage`, you can get detailed information about messages and conversations, such as message text, audio data, and images. 
 
 **Example:**
 

@@ -44,7 +44,7 @@ This API only returns common response headers. For more information, please see 
 </AccelerateConfiguration>
 ```
 
-Detailed data is as shown below:
+Detailed nodes are as shown below:
 
 | Node Name (Keyword)      | Parent Node                  | Description                                                 | Type      |
 | ----------------------- | ----------------------- | ---------------------------------------------------- | --------- |
@@ -54,7 +54,7 @@ Detailed data is as shown below:
 
 #### Error codes
 
-There are no special error messages for this API. For all error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Use cases
 
@@ -77,7 +77,7 @@ Content-Length: 73
 Connection: keep-alive
 Date: Wed, 23 Aug 2019 08:14:53 GMT
 Server: tencent-cos
-x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0ZThm
+x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0****
 
 <AccelerateConfiguration>
   <Status>Enabled</Status>
@@ -94,7 +94,7 @@ Content-Length: 73
 Connection: keep-alive
 Date: Wed, 23 Aug 2019 08:14:53 GMT
 Server: tencent-cos
-x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0ZThm
+x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0****
 
 <AccelerateConfiguration>
   <Status>Disabled</Status>
@@ -111,7 +111,7 @@ Content-Length: 73
 Connection: keep-alive
 Date: Wed, 23 Aug 2019 08:14:53 GMT
 Server: tencent-cos
-x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0ZThm
+x-cos-request-id: NTk5ZDM5N2RfMjNiMjM1MGFfMmRiX2Y0****
 
 <AccelerateConfiguration/>
 ```

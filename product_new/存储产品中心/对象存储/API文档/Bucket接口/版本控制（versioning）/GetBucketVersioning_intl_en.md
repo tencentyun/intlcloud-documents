@@ -1,6 +1,6 @@
 ## Description
 The GET Bucket versioning API is used to get the versioning information of a bucket.
-### Notes
+#### Notes
 1. To get the versioning state of a bucket, you need to have the permission to read the bucket.
 2. There are three versioning states: not enabled, enabled, or suspended.
 - If you have never enabled or suspended versioning for the bucket, the response is:
@@ -23,7 +23,7 @@ The GET Bucket versioning API is used to get the versioning information of a buc
 
 
 ## Request
-### Sample Request
+#### Sample Request
 
 ```shell
 GET /?versioning HTTP 1.1
@@ -34,26 +34,20 @@ Authorization: Auth String
 
 > Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
-### Request Headers
+#### Request Headers
 
-#### Common Headers
-The implementation of this request uses a common request header. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-#### Special Headers
-This request does not use any special request header.
-
-### Request Body
+#### Request Body
 The request body of this request is empty.
 
 ## Response
 
-### Response Headers
-#### Common Response Headers 
-This response contains a common response header. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
-#### Special Response Headers
-This response does not have special response headers.
+#### Response Headers
 
-### Response Body
+This API only uses common response headers. For more information on common request headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+
+#### Response Body
 
 ```shell
 <VersioningConfiguration>
@@ -68,8 +62,12 @@ Please find the details below:
 | VersioningConfiguration | None | Describes the detailed information on versioning | Container |
 | Status | VersioningConfiguration | Indicates whether versioning is enabled; enumerators: Suspended, Enabled | Enum |
 
+#### Error Code
+
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Samples
+#### Request
 ```shell
 GET /?versioning HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-chengdu.myqcloud.com
@@ -80,7 +78,7 @@ User-Agent: python-requests/2.12.4
 Authorization: q-sign-algorithm=sha1&q-ak=AKID15IsskiBQKTZbAo6WhgcBqVls9Sm****&q-sign-time=1480932292;1981012292&q-key-time=1480932292;1981012292&q-url-param-list=versioning&q-header-list=host&q-signature=5118a936049f9d44482bbb61309235cf4abe****
 ```
 
-### Response
+#### Response
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml

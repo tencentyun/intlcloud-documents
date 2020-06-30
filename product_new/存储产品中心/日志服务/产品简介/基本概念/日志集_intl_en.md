@@ -6,4 +6,4 @@ A logset can contain multiple [log topics](https://intl.cloud.tencent.com/docume
 - Logset name: the name of a logset.
 - Logset ID: the unique ID of a logset.
 - Region: the [regions](https://intl.cloud.tencent.com/document/product/614/18940) to which the logset belongs.
-- Storage period: the storage period for the data in the current logset. The period can be 3-90 days.
+- Storage period: the storage period for the data in the current logset. The period can be 1-90 days.

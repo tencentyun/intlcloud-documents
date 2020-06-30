@@ -1,32 +1,31 @@
 ## Overview
 
-You can log in to the [Cloud Log Service Console](https://console.cloud.tencent.com/cls) and ship data of the separator format to Cloud Object Storage (COS). This document describes how to create a separator-based log shipping task.
-
+You can log in to the [Cloud Log Service Console](https://console.cloud.tencent.com/cls) and ship Comma Separated Values (CSV)-formatted data to Cloud Object Storage (COS). This document describes how to create a CSV-formatted log shipping task.
 
 ## Prerequisites
-1. You have activated the Cloud Log Service (CLS), created a logset and a log topic, and successfully collected the log data.
-2. You have activated COS and created a bucket in the destination region of the log topic shipping. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
-3. Make sure that the current account has the permission to configure shipping. 
 
+1. You have activated the Cloud Log Service (CLS), created a logset and a log topic, and successfully collected the log data.
+2. You have activated COS service and created a bucket in the target region for log topic shipping. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+3. You have to ensure that the current account has the permission to configure shipping tasks.
 
 ## Directions
 
 1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
 2. Click **Logset** in the left sidebar.
 3. On the **Logset Management** page, click the target logset ID/name to go to its details page.
-![](https://main.qcloudimg.com/raw/867bf17736b5dda680cba78e4dbdca5b.png)
-4. Locate the log topic to be shipped, and choose **Manage** -> **Shipping Configuration** to go to the **Shipping Configuration** page.
-![](https://main.qcloudimg.com/raw/a8cd06e71f91561f1e74073dc9e00a9b.png)
-5. Click **Add Shipping Task** to go to the **Ship to COS** page and enter the configuration information in order.
-![](https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png)
-**The configuration items are described as follows:**
+   <img src="https://main.qcloudimg.com/raw/867bf17736b5dda680cba78e4dbdca5b.png" width="80%">
+4. Locate the log topic to be shipped, and choose **Manage** -> **Shipping Configuration** to open the **Shipping Configuration** page.
+   <img src="https://main.qcloudimg.com/raw/a8cd06e71f91561f1e74073dc9e00a9b.png" width="80%">
+5. Click **Add Shipping Task** to open the **Ship to COS** page and enter the configuration information in order.
+   ![](https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png)
+   **The parameters are described as follows:**
 
 <table>
    <tr>
-      <th>Configuration Item</th>
+      <th>Parameter</th>
       <th>Description</th>
-      <th>Rule</th>
-      <th>Required or Not</th>
+      <th>Limit</th>
+      <th>Required</th>
    </tr>
    <tr>
       <td nowrap="nowrap">Shipping Task Name</td>
@@ -43,47 +42,49 @@ You can log in to the [Cloud Log Service Console](https://console.cloud.tencent.
    <tr>
       <td>Directory Prefix</td>
       <td>Prefix of the COS bucket directory to which log files are shipped. You can define a directory prefix. By default, log files are directly stored in the bucket, and the file path is <code>{COS bucket}{directory prefix}{partition format}_{random}_{index}.{type}</code>, where <code>{random}_{index}</code> is a random number.</td>
-      <td>Not starting with a forward slash (/)</td>
+      <td>Cannot start with <code>/</code></td>
       <td>No</td>
    </tr>
    <tr>
       <td>Partition Format</td>
-      <td>Directory automatically generated according to the creation time of the shipping task based on the strftime syntax. The slash (/) indicates a level-1 COS directory.</td>
-      <td>strftime format</td>
+			<td>Directory automatically generated according to the creation time of the shipping task based on the strftime syntax. The slash (/) indicates a level-1 COS directory.</td>
+      <td>The value must be in strftime format.</td>
       <td>Yes</td>
    </tr>
    <tr>
       <td nowrap="nowrap">File Size</td>
-      <td>Maximum size of an uncompressed file to be shipped during a shipping interval. A log file larger than this size will be split into multiple files. The value can be from 100 MB to 10,000 MB.</td>
-      <td nowrap="nowrap">100 MB to 10,000 MB</td>
+      <td>Maximum size of an uncompressed file to be shipped during a shipping interval. A log file larger than this size will be split into multiple files. The value can be from 100 MB to 256 MB.</td>
+      <td nowrap="nowrap">The value must be a number ranging from 100 to 256 in MB.</td>
       <td>Yes</td>
    </tr>
    <tr>
       <td nowrap="nowrap">Shipping Interval</td>
-      <td>Specifies the time interval of shipping, which can be from 60 seconds to 3,600 seconds. If you set it to 5 minutes, a log file is generated from your log data every 5 minutes, and multiple log files will be shipped together to your bucket at a regular interval (within half an hour).</td>
-      <td>60 seconds to 3,600 seconds</td>
+      <td>Specifies the time interval of shipping, which can be from 300s - 900s. If you set it to 5 minutes, a log file is generated from your log data every 5 minutes, and multiple log files will be shipped together to your bucket at a regular interval (within half an hour).</td>
+      <td>300s - 900s</td>
       <td>Yes</td>
    </tr>
 </table>
+
+
 
 Enter partition formats based on the requirements of the [strftime format](http://man7.org/linux/man-pages/man3/strptime.3.html). Different partition formats may affect the paths of files shipped to COS. The following example describes how to use partition formats. For example, if a file is shipped to the `bucket_test` bucket, the directory prefix is `logset/`, and the shipping time is 2018/7/31 17:14, the corresponding shipping file path is as follows:
 
 | Bucket Name | Directory Prefix | Partition Format | COS File Path |
 | ----------- | -------- | ---------- | ------------------------------------------------ |
-| bucket_test | logset/ | %Y/%m/%d | bucket_test:logset/2018/7/31_{random}_{index} |
-| bucket_test | logset/ | %Y%m%d/%H  | bucket_test:logset/20180731/14_{random}_{index} |
-| bucket_test | logset/ | %Y%m%d/log | bucket_test:logset/20180731/log_{random}_{index} |
+| bucket_test | logset/  | %Y/%m/%d   | bucket_test:logset/2018/7/31_{random}_{index}    |
+| bucket_test | logset/  | %Y%m%d/%H  | bucket_test:logset/20180731/14_{random}_{index}  |
+| bucket_test | logset/  | %Y%m%d/log | bucket_test:logset/20180731/log_{random}_{index} |
 
 6. Click **Next** to go to the advanced configuration page. Set **Shipping Format** to **CSV** and enter the relevant parameters in order.
-![img](https://main.qcloudimg.com/raw/44bc07a3d69496a59fb81fb8730cc2e3.png)
- **The configuration items are described as follows:**
+   ![img](https://main.qcloudimg.com/raw/44bc07a3d69496a59fb81fb8730cc2e3.png)
+    **The parameters are described as follows:**
 
 <table>
    <tr>
-      <th>Configuration Item</th>
+      <th>Parameter</th>
       <th>Description</th>
-      <th>Rule</th>
-      <th>Required or Not</th>
+      <th>Limit</th>
+      <th>Required</th>
    </tr>
    <tr>
       <td nowrap="nowrap">Key</td>
@@ -98,7 +99,7 @@ Enter partition formats based on the requirements of the [strftime format](http:
       <td>Yes</td>
    </tr>
    <tr>
-      <td>Escape character</td>
+      <td>Escape Character</td>
       <td> If a value field contains the selected separator characters, the separator characters will be enclosed by escape characters to prevent incorrect identification during data reading.</td>
       <td>A value selected from the drop-down list.</td>
       <td>Yes</td>
@@ -117,23 +118,9 @@ Enter partition formats based on the requirements of the [strftime format](http:
    </tr>
    <tr>
       <td>Compressed Delivery</td>
-      <td>You can determine whether to compress log files before shipping. The size of an uncompressed file to be shipped is limited to 10 GB. Log files can be compressed using gzip, lzop, or Snappy.</td>
+      <td>You can determine whether to compress log files before shipping. The size of an uncompressed file to be shipped is limited to 10 GB. Log files can be compressed using gzip, lzop or snappy.</td>
       <td>Enabled/Disabled</td>
       <td>Yes</td>
    </tr>
 </table>
 
-**(Optional) Advanced Options**
-You can enable **Advanced Options** to filter logs based on log content before shipping.
->Up to 5 shipping filtering rules are allowed, among rules is “And” logic, i.e. log files are shipped only when all the rules are met.
-
-a. Specify a key and set a filtering rule to perform RegEx extraction on the key.
-b. Use "()" to capture objects that need to match the value and enter the value to match. The system performs a match according to the regular expression in the shipping rule, extracts the content of the capture group "()", and compares it with the value. If the captured content is equal to the value, the log data will be shipped.
-Sample 1:
-Specify a field as `status`. For example, the key-value pair is `status:404`. If you want to ship logs with a status field of 404, the filtering rule is `(.*)`.
-![](https://main.qcloudimg.com/raw/f2951b74963fb46f8bc21598db1bc50d.png)
-Sample 2:
-Specify a field as `http_host`. For example, the key-value pair is `http_host:172.16.19.20`. If you want to ship logs with an `http_host` field starting with “172.16”, the filtering rule is `^(\d+\.\d+)\..*`.
-![](https://main.qcloudimg.com/raw/06be27e1f831177a081805deb6b07e7a.png)
-7. Click **OK** to enable shipping.
-![](https://main.qcloudimg.com/raw/aa06986067d5d7c13fe4e681d2d2285f.png)

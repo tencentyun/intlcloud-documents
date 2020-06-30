@@ -6,6 +6,7 @@ The basic procedure of the demo described in this document is as follows:
 1. A customer inquires "When will the children's clothing be available?" through a clothing and apparel e-commerce subscription account.
 2. The customer's inquiry is transferred to the customer service agent of the clothing and apparel e-commerce account through Tencent Cloud IM.
 3. The customer service agent replies "New clothing will be available in May. Please follow our updates." The message is pushed to the customer through Tencent Cloud IM and WeChat.
+   
 
 ## Precautions
 - If the message transfer link is long, it may take longer to send and receive messages.

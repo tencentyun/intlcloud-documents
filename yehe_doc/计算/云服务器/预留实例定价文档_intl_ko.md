@@ -1,4 +1,4 @@
-﻿## 방콕
+## 방콕
 ### 컴퓨팅형 C2
 
 | 결제 방식                    | 사양         | VCPU | 메모리 | Upfront    | Monthly | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
