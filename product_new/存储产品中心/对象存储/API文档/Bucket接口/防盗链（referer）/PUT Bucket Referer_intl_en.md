@@ -6,11 +6,13 @@ This API (GET Bucket referer) is used to read the referer whitelist or blacklist
 
 #### Sample request
 
-```HTTP
-GET /?referer HTTP 1.1
+```shell
+PUT /?referer HTTP 1.1
 Host:<BucketName-APPID>.<Region>.myqcloud.com
-Date: GMT Date
+Date:GMT Date
 Authorization: Auth String
+Content-Length:length
+Content-MD5:MD5
 ```
 
 > Note:
@@ -20,16 +22,6 @@ Authorization: Auth String
 #### Request header
 
 This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
-
-#### Request body
-
-The request body of this request is empty.
-
-## Response
-
-#### Response header
-
-This API only returns common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -58,39 +50,49 @@ Detailed data is as shown below:
 | Domain | DomainList | Single applicable domain name, such as `www.qq.com/example`, `192.168.1.2:8080`, or `*.qq.com` | String | Yes |
 | EmptyReferConfiguration | RefererConfiguration | Whether to allow empty Referer access. Enumerated values: Allow, Deny. Default value: Deny | String | No |
 
+## Response
+
+#### Response Headers
+
+This API only uses common response headers. For more information on common request headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+
+#### Response Body
+This response body is empty.
+
 #### Error codes
 
-There are no specific error messages for this request operation. For common error messages, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Use Case
 
 #### Request
 
 ```shell
-GET /?referer HTTP 1.1
+PUT /?referer HTTP 1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 25 Feb 2017 04:10:22 GMT
-Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1547105134;32526689134&q-key-time=1547105134;32620001134&q-header-list=content-md5;content-type;host&q-url-param-list=referer&q-signature=0f7fef5b1d2180deaf6f92fa2ee0cf87ae83****
+Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-sign-time=1547105134;32526689134&q-key-time=1547105134;32620001134&q-header-list=content-md5;content-type;host&q-url-param-list=referer&q-signature=0f7fef5b1d2180deaf6f92fa2ee0cf87ae83f****
+Content-MD5: kOz7g54LMJZjxKs070V9jQ==
+Content-Type: application/xml
+
+<RefererConfiguration>
+  <Status>Enabled</Status>
+  <RefererType>White-List</RefererType>
+  <DomainList>
+    <Domain>*.qq.com</Domain>
+    <Domain>*.qcloud.com</Domain>
+  </DomainList>
+  <EmptyReferConfiguration>Allow</EmptyReferConfiguration>
+</RefererConfiguration>
 ```
 
 #### Response
 
 ```shell
 HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 260
+Content-Length: 0
 Connection: keep-alive
 Date: Fri, 25 Feb 2017 04:10:22 GMT
 Server: tencent-cos
 x-cos-request-id: NTg3ZjFjMmJfOWIxZjRlXzZmNDhf****
-
-<RefererConfiguration>
-    <Status>Enabled</Status>
-    <RefererType>White-List</RefererType>
-    <DomainList>
-        <Domain>*.qq.com</Domain>
-        <Domain>*.qcloud.com</Domain>
-    </DomainList>
-    <EmptyReferConfiguration>Allow</EmptyReferConfiguration>
-</RefererConfiguration>
 ```

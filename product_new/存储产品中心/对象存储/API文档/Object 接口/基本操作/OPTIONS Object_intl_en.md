@@ -2,9 +2,10 @@
 This API is used to implement a pre-request for cross-origin object access configuration. Before making a real cross-origin resource sharing (CORS) request, you can make an `OPTIONS` request carrying the specific source origin, HTTP method, and header information to COS for it to determine whether a real request can be made. If there is no CORS configuration, `403 Forbidden` will be returned. You can enable CORS for a bucket using the `PUT Bucket cors` API.
 
 ## Request
-### Sample Request
 
-```
+#### Sample Request
+
+```shell
 OPTIONS /<ObjectKey> HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -16,7 +17,8 @@ Authorization: Auth String
 
 > Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
 
-### Request Headers
+#### Request Headers
+
 #### Common Headers
 The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
@@ -28,11 +30,13 @@ Origin|string| Source origin of the simulated cross-origin access | Yes
 Access-Control-Request-Method|string| HTTP request method of the simulated cross-origin access | Yes
 Access-Control-Request-Headers|string| Request headers of the simulated cross-origin access | No
 
-### Request Body
-The request body of this request is empty.
+#### Request Body
+This API has no request body.
 
 ## Response
-### Response Headers
+
+####  Response Headers
+
 #### Common Response Headers
 This response contains common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
@@ -51,27 +55,31 @@ The special response headers used by this operation include:
 ### Response Body
 This response body is empty.
 
+#### Error Code
+
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+
 ## Example
 
-### Request
+#### Request
 
-```
+```shell
 OPTIONS /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Thu, 12 Jan 2017 17:26:53 GMT
 Origin: http://www.qq.com
 Access-Control-Request-Method: PUT
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDDNMEycgLRPI2axw9xa2Hhx87wZ3MqQCn&q-sign-time=1487070734;32466654734&q-key-time=1487070734;32559966734&q-header-list=host&q-url-param-list=&q-signature=2ac3ada19910f44836ae0df72a0ec1003f34324b
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDDNMEycgLRPI2axw9xa2Hhx87wZ3M****&q-sign-time=1487070734;32466654734&q-key-time=1487070734;32559966734&q-header-list=host&q-url-param-list=&q-signature=2ac3ada19910f44836ae0df72a0ec1003f34****
 ```
 
-### Response
+#### Response
 
-```
+```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Content-Length: 16087
 Connection: keep-alive
-x-cos-request-id: NTg3NzRiZGRfYmRjMzVfM2Y2OF81N2YzNA==
+x-cos-request-id: NTg3NzRiZGRfYmRjMzVfM2Y2OF81N2Yz****
 Date: Thu, 12 Jan 2017 17:26:53 GMT
 ETag: \"9a4802d5c99dafe1c04da0a8e7e166bf\"
 Access-Control-Allow-Origin: http://www.qq.com

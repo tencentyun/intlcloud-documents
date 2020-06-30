@@ -24,13 +24,7 @@ See the details below:
 | uploadId | ID of this multipart upload. <br>When the `Initiate Multipart Upload` API is used to initialize a multipart upload, an `uploadId` will be returned. The ID uniquely identifies the data of the part and its position in the entire file | String | Yes |
 
 ### Request Headers
-
-#### Common Headers
-The implementation of this operation uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
-
-#### Special Headers
-This request operation does not use any special request header.
-
+This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 ### Request Body
 The request body of this request is empty.
@@ -38,15 +32,15 @@ The request body of this request is empty.
 ## Response
 
 ### Response Headers
-#### Common Response Headers 
-This response uses common response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
-#### Special Response Headers
-This request does not use any special response header.
 
+This API only uses common response headers. For more information on common request headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 ### Response Body
-The response body of this request is empty.
+The response body is empty.
 
+#### Error Code
+
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
 
 ## Example
 
@@ -55,7 +49,7 @@ The response body of this request is empty.
 DELETE /exampleobject?uploadId=1484727270323ddb949d528c629235314a9ead80f0ba5d993a3d76b460e6a9cceb9633b08e HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Tue, 26 Oct 2013 21:22:00 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUjfGFO&q-sign-time=1484728626;32557624626&q-key-time=1484728626;32557624626&q-header-list=host&q-url-param-list=uploadId&q-signature=2d3036b57cade4a257b48a3a5dc922779a562b18
+Authorization: q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUj****&q-sign-time=1484728626;32557624626&q-key-time=1484728626;32557624626&q-header-list=host&q-url-param-list=uploadId&q-signature=2d3036b57cade4a257b48a3a5dc922779a56****
 ```
 
 ### Response
@@ -66,5 +60,5 @@ Content-Length: 0
 Connection: keep-alive
 Date: Tue, 26 Oct 2013 21:22:00 GMT
 Server: tencent-cos
-x-cos-request-id: NTg3ZjI5MzlfOTgxZjRlXzZhYjNfMjBh
+x-cos-request-id: NTg3ZjI5MzlfOTgxZjRlXzZhYjNf****
 ```
