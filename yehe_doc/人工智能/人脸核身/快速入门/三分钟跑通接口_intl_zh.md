@@ -11,7 +11,7 @@
 
 ### 步骤二：
 填写个人密钥和输入参数中的必填参数。
-![](https://main.qcloudimg.com/raw/1be14e17dfef3318aca8b169ffae6cb7.png)
+![](https://main.qcloudimg.com/raw/800146cb41268ffd2909a60322fa4e5d.png)
 
  - Region 参数：域名中的地域信息，该参数决定访问的接入点，例如`faceid.ap-shanghai.tencentcloudapi.com`就是要访问上海这个接入点。公共参数 Region 决定的是要访问业务资源所在区，例如`Region=ap-beijing`就是要操作北京区的资源，如果域名中不指定地域信息则默认就近接入。就近接入可能会存在问题。如果解析不到 IP 会默认到广州地域里面。另外域名地域和公共参数 Region 可以不一致，但是可能会增加耗时。建议域名和公共参数 Region 选择相同的地域：华南地区(广州)，ap-guangzhou。
  - RuleId 参数：用于细分客户使用场景，申请开通服务后，可以在 [腾讯云人脸核身控制台](https://console.cloud.tencent.com/faceid) 自助接入里面创建，审核通过后即可调用。如有疑问，请加人脸核身小助手微信（faceid001）进行咨询。
@@ -24,7 +24,7 @@
 ### 步骤四：
 集成 SDK 到项目。
 参考右上角的 SDK 使用说明，将 SDK 引入到项目，通过 [步骤3](#步骤3) 生成的代码即可调用对应的接口。
-![](https://main.qcloudimg.com/raw/47505703a1645bf420f782c8dd3580af.png)
+![](https://main.qcloudimg.com/raw/426025dfc6dcaa3b42525821804c92a7.png)
 
 ## 注意事项
 - SDK 调用方式公共参数时只需要关注 Region 字段，建议域名和 Region 统一使用 “ap-guangzhou”。
@@ -41,7 +41,7 @@ method `TC3-HMAC-SHA256`. requestId:719970d4-5814-4dd9-9757-a3f11ecc9b20
   clientProfile.setSignMethod("TC3-HMAC-SHA256"); // 指定签名算法（默认为 HmacSHA256）
 ```
 - 如果接口请求内容超过1M，只能使用 V3 鉴权（TC3-HMAC-SHA256），API 3.0 SDK 支持语言：Node、Python、Java、PHP、Go。其他语言如 .net、C# 暂时不支持 SDK 方式调用，需要自行实现 接口鉴权V3 进行接口调用，建议使用 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=GetActionSequence) 中签名串生成工具进行核验签名有效性。
-![](https://main.qcloudimg.com/raw/2f83cb6a567ff6a0c2477a10c6feab8d.png)
+![](https://main.qcloudimg.com/raw/29fe779dac02bfef2024265f928556f3.png)
 
 
 
