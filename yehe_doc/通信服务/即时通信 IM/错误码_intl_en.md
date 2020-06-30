@@ -424,4 +424,4 @@
 | 6258 | The SSO cookie is invalid. |
 
 
-> If the problem persists, you can contact Smart Customer Service  or [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) with the API, error code, and error information to our tech support staff.
+> If the problem persists, you can contact [Smart Customer Service](https://cloud.tencent.com/act/event/smarty-service) or [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) with the API, error code, and error information to our tech support staff.

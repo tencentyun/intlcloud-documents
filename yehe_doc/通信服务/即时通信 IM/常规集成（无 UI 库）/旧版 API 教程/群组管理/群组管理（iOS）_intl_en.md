@@ -1662,7 +1662,9 @@ TIMGroupPendencyItem *item = [pendencies firstObject];
 
 ## Group Event Messages
 
-When a user is invited to join a group or is removed from a group, a tips message is displayed in the group. The caller can decide whether to display and how to display the tips message (for example, ignore it or display it to users as needed). A tips message is identified by a special `Elem` and returned by the new message callback. Please see New message notification. The following figure shows an event message for group name modification.
+When a user is invited to join a group or is removed from a group, a tips message is displayed in the group. The caller can decide whether to display and how to display the tips message (for example, ignore it or display it to users as needed). A tips message is identified by a special `Elem` and returned by the new message callback. Please see [New message notification](/doc/product/269/9148#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5). 
+
+
 
 **Message prototype:**
 
@@ -1889,7 +1891,7 @@ value | The modified value, which represents different meanings based on the mod
 **Trigger:** when a group member’s profile related to the group is modified, such as when the member has been muted or the member’s role in the group has changed, the system sends a message. You can update related display fields, or selectively display the message to users.
 
 >
->- The profile mentioned here includes only information related to the group, such as muting duration and member role change. Information related to the user such as the user’s nickname is not included. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, please see Message sender and related profile.
+>- The profile mentioned here includes only information related to the group, such as muting duration and member role change. Information related to the user such as the user’s nickname is not included. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, please see [Message sender and related profile](/doc/product/269/9150#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81.E8.80.85.E4.BB.A5.E5.8F.8A.E7.9B.B8.E5.85.B3.E8.B5.84.E6.96.99).
 >- If the user profile is stored locally, you can determine whether a change has occurred according to the information in the message body and update the profile after receiving a message from this user.
 
 **`TIMGroupTipsElem` parameter description:**
