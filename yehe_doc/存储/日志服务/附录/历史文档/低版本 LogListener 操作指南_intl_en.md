@@ -5,7 +5,7 @@
 
 Go to the installation directory `loglistener` and start LogListener by running the following script:
 
-```shell
+```plaintext
 cd loglistener/tools; ./start.sh
 ```
 
