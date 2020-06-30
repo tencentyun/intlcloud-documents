@@ -1,4 +1,5 @@
 用户在使用云函数（Serverless Cloud Function，SCF）平台支持的语言编写代码时，需要采用一个通用的范式，包含以下核心概念：
+
 ## 执行方法
 SCF 平台在调用云函数时，首先会寻找执行方法作为入口，执行用户的代码。此时，用户需以**文件名.执行方法名**的形式进行设置。
 例如，用户设置的执行方法为 `index.handler`，则 SCF 平台会首先寻找代码程序包中的 `index` 文件，并找到该文件中的 `handler` 方法开始执行。
@@ -9,6 +10,31 @@ def method_name(event,context):
     return some_value
 ```
 该模型中指定固定的 event 事件数据和 context 环境数据作为入参。在执行方法中，用户需对参数进行处理，并且可任意调用代码中的任何其他方法。
+
+## 命名规范
+<table>
+<tbody><tr>
+<th>开发语言</th>
+<th style="
+    width: 50%;
+">规范及示例</th>
+<th>通用规范</th>
+</tr>
+<tr>
+<td>Node.js<br>Python<br>PHP</td>
+<td>两段式格式为 <code>[文件名].[函数名]</code>，例如 <code>index.main_handler</code>。</td>
+<td rowspan="3"> 只能包含字母、数字、下划线、连字符，支持以字母开头且需以数字或字母结尾，长度限制为2 - 60个字符。</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>三段式格式为 <code>[package].[class]::[method]</code>，例如 <code>example.Hello::mainHandler</code>。</td>
+</tr>
+<tr>
+<td>Go</td>
+<td>一段式格式为 <code>[文件名]</code>，例如 <code>main</code>。</td>
+</tr>
+</tbody></table>
+
 
 ## 函数入参
 
@@ -117,7 +143,7 @@ SCF 平台会获取到云函数执行完成后的返回值，并根据下表中�
 
 
 为保证针对各开发语言和环境的统一性，函数返回会使用 **JSON 数据格式统一封装**。SCF 平台在获取到例如以上运行环境函数的返回值后，将会对返回的数据结构进行 JSON  化，并返回 JSON 内容到调用方。
->
+>!
 >- 需确保函数的返回值均可被 JSON 化，若直接返回对象且不具备 JSON 化方法，将会导致 SCF 平台在 JSON 化操作时失败并报错。
 >- 例如以上运行环境的返回值，无需在 return 前自行 JSON 化，否则会导致输出的字符串会进行再次 JSON 化。
 
@@ -127,7 +153,7 @@ SCF 平台会获取到云函数执行完成后的返回值，并根据下表中�
 
 ### 处理方式
 本文提供以下三种抛出异常方式，您可根据实际需求选择在代码中进行异常处理。
->您可以前往 [SCF 控制台](https://console.cloud.tencent.com/scf/index) 按照以下步骤进行异常处理测试：
+>?您可以前往 [SCF 控制台](https://console.cloud.tencent.com/scf/index) 按照以下步骤进行异常处理测试：
 > 1. 新建函数并复制以下函数代码，不添加任何触发器。
 > 2. 单击控制台【测试】，选择 “Hello World” 测试示例进行测试。
 <table>

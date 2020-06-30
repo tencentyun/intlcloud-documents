@@ -1,7 +1,8 @@
 当前，Serverless Framework 在部署项目时，需要通过账号中 `SLS_QcsRole` 的 [角色](https://intl.cloud.tencent.com/document/product/598/19420) 授权才可正常部署。该角色中包含 Serverless Framework 在部署中所需要用到的关联产品的对应策略，可以分为主账号和子账号两种情况进行配置。
 
 ## 主账号权限配置
-目前支持账号密钥配置的方式进行授权，由于主账号拥有创建角色和绑定策略的权限，因此可以通过下列方式关联 `SLS_QcsRole` 并进行访问： 
+目前支持通过账号密钥配置的方式进行授权，由于主账号拥有创建角色和绑定策略的权限，因此可以通过下列方式关联 `SLS_QcsRole` 并进行访问： 
+
 
 ### 账号密钥配置授权
 
@@ -38,6 +39,7 @@ SERVERLESS_PLATFORM_VENDOR=tencent
 - QcloudMonitorFullAccess
 - QcloudCOSFullAccess
 - QcloudCDBFullAccess
+- QcloudPostgreSQLFullAccess
 
 创建成功之后，主账号需要为子账号的用户绑定以下两条策略：
 1. [指定角色的调用权限策略](#1)
