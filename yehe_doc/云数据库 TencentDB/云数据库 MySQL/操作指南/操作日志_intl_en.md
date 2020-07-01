@@ -39,7 +39,7 @@ When the `long_query_time` parameter is adjusted, existing slow logs will not be
 <td>Records the status and progress of rollback tasks</td>
 </tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/c229d0fe6a4869998d3472b0a35efa28.png"  style="margin:0;">
+<img src="https://main.qcloudimg.com/raw/460115a1a260cb7437561556c2f8cb9a.png"  style="margin:0;">
 3. On the **Download slow log** tab, you can click **Download** in the "Operation" column to download slow logs.
 4. In the pop-up dialog box, download the logs in one of the following ways:
 >?Logs with a size of 0 KB cannot be downloaded.
