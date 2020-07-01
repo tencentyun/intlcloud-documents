@@ -40,7 +40,7 @@ service httpd start
 3. Test Apache.
 >In this step, you should configure an inbound rule with the source being **all** and the port protocol being **TCP:80** in the security group of your CVM instance. For more information on how to configure the security group, see [Security Group](http://intl.cloud.tencent.com/document/product/213/12452).
 >
-Enter `http://115.xxx.xxx.xxx/` in your local browser (where `115.xxx.xxx.xxx` is the public IP of your CVM instance). If the following page appears, Apahce has started successfully.
+Enter `http://xxx.xxx.xxx.xxx/` in your local browser (where `xxx.xxx.xxx.xxx` is the public IP of your CVM instance). If the following page appears, Apahce has started successfully.
 ![](https://main.qcloudimg.com/raw/80941070a1a309ba484527473c915221.png)
 
 ### Installing PHP 
@@ -59,5 +59,5 @@ yum install php -y
 ```
 service httpd restart
 ```
-3. Enter `http://0.0.0.0/info.php` in your local browser (where `0.0.0.0` is the public IP of your CVM instance). If the following page appears, the LAMP service has been deployed successfully.
+3. Enter `http://xxx.xxx.xxx.xxx/info.php` in your local browser (where `xxx.xxx.xxx.xxx` is the public IP of your CVM instance). If the following page appears, the LAMP service has been deployed successfully.
 ![](https://mc.qcloudimg.com/static/img/0bc6667d122fe85d505fbe50b507b60a/image.png)
