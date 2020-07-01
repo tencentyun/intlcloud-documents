@@ -77,7 +77,7 @@ In Windows, if a UI message loop has been created before the API [TIMInit](https
 | [TIMMsgGetMsgList](https://intl.cloud.tencent.com/document/product/1047/34391#timmsggetmsglist) | Obtains the message list of a specified conversation. |
 | [TIMMsgDelete](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgdelete) | Deletes the messages of a specified conversation. |
 | [TIMMsgDownloadElemToPath](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgdownloadelemtopath) | Downloads the internal elements (including image, video, audio, and file elements) of a message to a specified path. |
-| [TIMMsgBatchSend](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgbatchsend) | Sends messages in batches. |
+| [TIMMsgBatchSend](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgbatchsend) |This API is used to send messages in batches, but not to groups.|
 
 
 ### Group APIs
