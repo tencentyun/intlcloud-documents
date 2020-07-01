@@ -10,7 +10,6 @@ MariaDB 与 MySQL 5.6 高度兼容，已用于 MySQL 数据库的代码、应用
 - 可使用 MySQL 客户端连接到 MariaDB。
 
 ## MariaDB 和 MySQL 5.6 的不兼容性
-MariaDB 的 Binlog 默认采用 row 格式，而原生 MySQL、原生 MariaDB 默认采用 statement 格式。
 
 ### 1. GTID 不兼容
 MariaDB 的 GTID 和 MySQL 5.6 的 GTID 不兼容，即 MySQL 不能作为 MariaDB 的从库。
@@ -165,7 +164,7 @@ CAST(CAST('10:11:12.098700' AS TIME) AS DECIMAL(20,6))
 
 为了保证时间的精度不变，可以使用如下语句。
 ```
-SELECT CAST(CAST('10:11:12.098700' (6)) AS DECIMAL(20,6));
+SELECT CAST(CAST('10:11:12.098700' AS TIME(6)) AS DECIMAL(20,6));
 +-----------------------------------------------------------+
 | CAST(CAST('10:11:12.098700' AS TIME(6)) AS DECIMAL(20,6)) |
 +-----------------------------------------------------------+
