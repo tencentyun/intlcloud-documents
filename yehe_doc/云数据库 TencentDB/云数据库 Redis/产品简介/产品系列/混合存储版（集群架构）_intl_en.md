@@ -9,7 +9,7 @@ Hybrid Storage Edition (cluster architecture) stores all data on disk, and cache
 
 ## Features
 #### Low cost
-- Data is automatically cached and automatically degraded to cold data. All data is stored on disk, and hot data is cached in the memory. Hybrid Storage Edition reduces operating costs by 40% to 80% compared to TencentDB for Redis Memory Edition.
+- Data is automatically cached and automatically degraded to cold data. All data is stored on disk, and hot data is cached in the memory. Hybrid Storage Edition reduces operating costs by 40% to 80% compared with TencentDB for Redis Memory Edition.
 - Hybrid Storage Edition adopts the LZ4 data compression algorithm to automatically compress data once stored on disk, which balances performance and capacity and saves up to 90% of the disk capacity.
 
 #### High efficiency
@@ -25,16 +25,16 @@ Hybrid Storage Edition (cluster architecture) stores all data on disk, and cache
 - The data stored on disk can have 6 replicas, fully ensuring data reliability.
 
 ## Architecture
-The core components of TencentDB for Redis Hybrid Storage Edition (cluster architecture) include Proxy, Redis cache, and Tendis engine. They are described as follows:
-- Proxy: routes and distributes client requests, distributes commands to the correct shard according to their keys, collects part of monitoring data, and disables high-risk commands online, etc.
-- Redis cache: is based on Redis 4.0 Cluster Edition. In order to achieve automatic degradation to cold data, Hybrid Storage Edition modifies core Redis features, including value eviction, value eviction based on time, synchronization of written data to Tendis, cold data access, and master/slave synchronization of hot data, etc. The modified Redis in Hybrid Storage Edition is 100% compatible with Redis 4.0 Cluster Edition commands.
-- Tendis engine: is a KV storage engine developed by Tencent and compatible with Redis protocols. Tendis has been used in Tencent for many years with its performance and stability being fully verified. In the hybrid storage system, its key features include the storage and reading of full data, data backup, incremental log backup, etc.
+The core components of TencentDB for Redis Hybrid Storage Edition (cluster architecture) include Proxy, Redis cache, and Tendis engine, as described below:
+- Proxy: it routes and distributes client requests, distributes commands to the correct shard according to their keys, collects part of monitoring data, and disables high-risk commands online, etc.
+- Redis cache: it is based on Redis 4.0 Cluster Edition. In order to achieve automatic degradation to cold data, Hybrid Storage Edition modifies core Redis features, including value eviction, value eviction based on time, synchronization of written data to Tendis, cold data access, and master/slave synchronization of hot data, etc. The modified Redis in Hybrid Storage Edition is 100% compatible with Redis 4.0 Cluster Edition commands.
+- Tendis engine: it is a KV storage engine developed by Tencent and compatible with Redis protocols. Tendis has been used in Tencent for many years with its performance and stability being fully verified. In the hybrid storage system, its key features include the storage and reading of full data, data backup, incremental log backup, etc.
 ![](https://main.qcloudimg.com/raw/cacc7ad9deaa3659e07d9d202d4ed608.png)
 
 ## Application Scenarios
 ### Recommended scenarios
-#### Storage scenario
-The data access acceleration scenario, where Redis is used as the primary storage engine, but not the cache.
+#### Storage scenarios
+The data access acceleration scenario where Redis is used as the primary storage engine rather than the cache.
 
 #### Latency-insensitive scenario
 Because cold data needs to be read from disks, the latency of accessing cold data in Hybrid Storage Edition will significantly increase to tens or even hundreds of milliseconds, while the access delay in Redis Memory Edition is less than 1 ms.
@@ -46,7 +46,7 @@ Hybrid storage is ideal for scenarios where hot data degrades to cold data over 
 ### Scenarios not recommended
 #### Caching scenario
 - Insufficient performance: the caching scenario requires high performance, but the Hybrid Storage Edition’s performance in cold data is much inferior to that of Memory Edition. For more information about performance, please see [Performance](https://intl.cloud.tencent.com/document/product/239/17952).
-- Cost increase: Hybrid Storage Edition increases the disk storage space and adds more disk storage compute nodes. Since the caching scenario requires memory capacity close to disk capacity, business costs rise rather than fall.
+- Cost increase: Hybrid Storage Edition increases the disk storage space and adds more disk storage compute nodes. Since the caching scenario requires memory capacity close to disk capacity, business costs will rise rather than fall.
 
 #### Latency-sensitive scenario
 Because cold data needs to be read from disks, the latency of accessing cold data in Hybrid Storage Edition will significantly increase to tens or even hundreds of milliseconds, while the access delay in Redis Memory Edition is less than 1 ms. Therefore, Hybrid Storage Edition is not recommended for a latency-sensitive scenario.
@@ -93,14 +93,14 @@ When you set a timeout period for keys or use the `expire` command, both keys an
 You can use this parameter to configure when disk data is cached into Redis memory: Redis caches a value into the memory if the number of times the value is accessed within 5 minutes is greater than `value-cache-policy`. This parameter can avoid cache invalidation caused by, such as, data traversal. If this parameter is configured to `1`, the cold data is immediately cached.
 
 - **The `expire` command description**
-If you use `Expire Time` to set a timeout period for keys, Hybrid Storage Edition will follow the original semantics of this command to evict expired keys and values from the memory and disks. The same is true for keys set with `EXPIRE`, `EXPIREAT`, `PEXPIRE`, `PEXPIREAT` commands. 
+If you use `Expire Time` to set a timeout period for keys, Hybrid Storage Edition will follow the original semantics of this command to evict expired keys and values from the memory and disks. The same is true for keys set with `EXPIRE`, `EXPIREAT`, `PEXPIRE`, and `PEXPIREAT` commands. 
 
-- **Large keys’ eviction**
+- **Big key eviction**
 To ensure reading performance, Hybrid Storage Edition currently does not evict a value from the memory, if the value is larger than 8 MB or has complex (non-string) structures with more than 1,000 fields. Therefore, Hybrid Storage Edition does not have an ideal effect on the degradation of complex data structures, such as large Hash structures, which will be continuously optimized in the future.
 
 
 ## Command Compatibility
-Hybrid Storage Edition (cluster architecture) stores data in a distributed manner, and its biggest difference from the Memory Edition (standard architecture) lies in whether a single command supports multi-key access. For the cluster architecture, commands can be categorized into supported, custom, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/239/31958).
+Hybrid Storage Edition (cluster architecture) stores data in a distributed manner, and its biggest difference from the Memory Edition (standard architecture) lies in whether a single command supports multikey access. For the cluster architecture, commands can be categorized into supported, custom, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/239/31958).
 
  - **Unsupported commands**
 The system will return the following error:
@@ -116,7 +116,7 @@ Hybrid Storage Edition (cluster architecture) is compatible with smart clients s
  - CONFIG GET
 
 - **Supported cross-slot commands**
-Currently, cross-slot access commands supported by Hybrid Storage Edition (cluster architecture) include MGET, MSET, and DEL but not other multi-key commands.
+Currently, cross-slot access commands supported by Hybrid Storage Edition (cluster architecture) include MGET, MSET, and DEL but not other multikey commands.
 
 - **Custom commands**
 Through VIP encapsulation, Hybrid Storage Edition (cluster architecture) provides a user experience in cluster mode comparable to the standalone edition, making it much easier for use in different scenarios. To increase the transparency to OPS, custom commands can be used. Access to each node in the cluster is supported by adding a parameter **node ID** on the right of the original command parameter list, such as `COMMAND arg1 arg2 ... [node ID]`. The node ID can be obtained through the `cluster nodes` command or in the [console](https://console.cloud.tencent.com/redis).
@@ -144,7 +144,7 @@ Through VIP encapsulation, Hybrid Storage Edition (cluster architecture) provide
 ```
 
 - **Transactional support**
-Hybrid Storage Edition (cluster architecture) supports transactional commands. The keys of a transaction should be stored in the same slot, and the keys of the `WATCH` command and transaction-related keys should be stored in the same slot too. HashTag is recommended for multi-key transactions in cluster mode.
+Hybrid Storage Edition (cluster architecture) supports transactional commands. The keys of a transaction should be stored in the same slot, and the keys of the `WATCH` command and transaction-related keys should be stored in the same slot too. HashTag is recommended for multikey transactions in cluster mode.
 
 - **Multi-database support**
 Hybrid Storage Edition (cluster architecture) supports the `SELECT 0` command but not multiple databases.

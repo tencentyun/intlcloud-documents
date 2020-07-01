@@ -3,9 +3,8 @@
 ### 管理物理专线
 - [申请物理专线](https://intl.cloud.tencent.com/document/product/216/19244)
 - [裁撤物理专线](https://intl.cloud.tencent.com/document/product/216/19245)
-- [共享物理专线](https://intl.cloud.tencent.com/document/product/216/19246)
 - [查看监控信息](https://intl.cloud.tencent.com/document/product/216/19247)
-- 查看事件信息
+- [查看事件信息](https://intl.cloud.tencent.com/document/product/216/35897)
 - [设置告警](https://intl.cloud.tencent.com/document/product/216/19248)
 
 ### 管理专用通道
@@ -13,7 +12,7 @@
 - [变更通道](https://intl.cloud.tencent.com/document/product/216/19251)
 - [删除通道](https://intl.cloud.tencent.com/document/product/216/19252)
 - [查看监控信息](https://intl.cloud.tencent.com/document/product/216/19253)
-- 查看事件信息
+- [查看事件信息](https://intl.cloud.tencent.com/document/product/216/35898)
 - [设置告警](https://intl.cloud.tencent.com/document/product/216/19254)
 
 ### 管理专线网关

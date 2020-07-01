@@ -1,6 +1,6 @@
 TencentDB for MySQL has earned many Chinese and international certifications, including but not limited to:
 - Software Copyright
-- [ISO 22301 Certification](https://intl.cloud.tencent.com/document/product/363)
+- [ISO 22301 Certification](https://intl.cloud.tencent.com/document/product/363/2915)
 - [ISO 27001 Certification](https://intl.cloud.tencent.com/document/product/363/2408)
 - [ISO 20000 Certification](https://intl.cloud.tencent.com/document/product/363/2409)
 - [ISO 9001 Certification](https://intl.cloud.tencent.com/document/product/363/2410)
