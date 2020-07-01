@@ -14,7 +14,7 @@ COS encrypts your data at the object level before it is written to IDC disks and
 ## Encryption
 COS supports multiple server-side encryption methods such as SSE-COS and SSE-C. You can choose the appropriate one to encrypt data stored in COS.
 
-### SSE-KMS Encryption
+### SSE-COS Encryption
 
 SSE-COS: Server-side encryption with a key managed by COS. In this mode, COS will manage the master key and data, and users can manage and encrypt the data directly through COS. SSE-COS uses a strong AES-256 multi-factor encryption to ensure that each object is encrypted with a unique key, while regularly rotating the master key to encrypt the key itself.
 
@@ -38,7 +38,7 @@ When you request the following APIs, you can apply server-side encryption by pro
 - [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881)
 - [POST Object](https://cloud.tencent.com/document/product/436/14690)
 
-### SSE-COS Encryption
+### SSE-KMS Encryption
 
 SSE-KMS encryption is server-side encryption using a key managed by KMS. KMS is a security management service launched by Tencent Cloud, using a third-party-certified hardware security module (HSM) to generate and protect keys. KMS allows users to easily create and manage keys, meeting their key management needs for multiple applications and services, while satisfying regulatory and compliance requirements.
 
