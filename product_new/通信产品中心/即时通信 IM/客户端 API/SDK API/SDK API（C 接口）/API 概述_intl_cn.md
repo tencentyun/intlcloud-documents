@@ -77,7 +77,7 @@
 | [TIMMsgGetMsgList](https://intl.cloud.tencent.com/document/product/1047/34391#timmsggetmsglist) | 获取指定会话的消息列表 |
 | [TIMMsgDelete](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgdelete) | 删除指定会话的消息 |
 | [TIMMsgDownloadElemToPath](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgdownloadelemtopath) | 下载消息内元素到指定文件路径（图片、视频、音频、文件） |
-| [TIMMsgBatchSend](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgbatchsend) | 群发消息 |
+| [TIMMsgBatchSend](https://cloud.tencent.com/document/product/269/33549#timmsgbatchsend) | 群发消息，该接口不支持向群组发送消息。 |
 
 
 ### 群组相关接口

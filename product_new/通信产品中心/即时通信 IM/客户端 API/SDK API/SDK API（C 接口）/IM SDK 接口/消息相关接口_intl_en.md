@@ -465,7 +465,7 @@ TIMMsgDownloadElemToPath(download_param.toStyledString().c_str(), (path_ + "\\" 
 
 ## TIMMsgBatchSend
 
-This API is used to send messages in batches.
+This API is used to send messages in batches, but not to groups.
 
 **Prototype**
 

@@ -1,5 +1,5 @@
 ## Feature Description
-The app backend uses this callback to monitor changes to group information (including the group name, group introduction, group notification, profile photo, and group-specific custom fields) in real time, including recording the changes of group information in real time (for example, recording a log or synchronizing the changes to other systems).
+The app backend uses this callback to monitor changes to group information (including the group name, group introduction, group notification and profile photo) in real time, including recording the changes of group information in real time (for example, recording a log or synchronizing the changes to other systems).
 
 ## Precautions
 
@@ -48,9 +48,6 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | OptPlatform | The client platform. For details on the possible values, see the OptPlatform parameter in [Third-Party Callback Overview: Callback Protocols](https://intl.cloud.tencent.com/document/product/1047/34354#.E5.9B.9E.E8.B0.83.E5.8D.8F.E8.AE.AE). |
 
 ### Request packet examples
-#### Modifying part of basic group information
-
-If part of basic group information is modified, the request packet contains only the basic group information fields that have been modified.
 
 ```
 {
@@ -62,53 +59,7 @@ If part of basic group information is modified, the request packet contains only
 }
 ```
 
-#### Modifying part of group-specific custom fields
 
-If part of group-specific custom fields are modified, the request packet contains only the group-specific custom fields that have been modified.
-
-```
-{
-    "CallbackCommand": "Group.CallbackAfterGroupInfoChanged", // Callback command
-    "GroupId" : "@TGS#2J4SZEAEL",
-    "Type": "Public", // Group type
-    "Operator_Account": "leckie", // Operator
-    "UserDefinedDataList": [ // Modified group-specific custom fields
-        {
-            "Key": "UserDefinedKey2", // Key of the custom field
-            "Value": "UserDefinedValue2" // Value of the custom field
-        }
-    ]
-}
-```
-
-#### Modifying both basic group information and group-specific custom fields
-
-```
-{
-    "CallbackCommand": "Group.CallbackAfterGroupInfoChanged", // Callback command
-    "GroupId" : "@TGS#2J4SZEAEL",
-    "Type": "Public", // Group type
-    "Operator_Account": "leckie", // Operator
-    "Name": "NewGroupName", // Changed group name
-    "Introduction": "NewIntroduction", // Modified group introduction
-    "Notification": "NewNotification", // Modified group announcement
-    "FaceUrl": "NewFaceUrl", // Changed group profile photo URL
-    "UserDefinedDataList": [ // Modified group-specific custom fields
-        {
-            "Key": "UserDefinedKey1", // Key of the custom field
-            "Value": "UserDefinedValue1" // Value of the custom field
-        },
-        {
-            "Key": "UserDefinedKey2",
-            "Value": "UserDefinedValue2"
-        },
-        {
-            "Key": "UserDefinedKey3",
-            "Value": "UserDefinedValue3"
-        }
-    ]
-}
-```
 
 ### Request packet fields
 
@@ -122,7 +73,6 @@ If part of group-specific custom fields are modified, the request packet contain
 | Introduction | String | The modified group introduction. |
 | Notification | String | The modified group announcement. |
 | FaceUrl | String | The changed group profile photo URL. |
-| UserDefinedDataList | Array | The modified group-specific custom fields. |
 
 ### Response packet example
 
