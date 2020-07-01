@@ -13,7 +13,7 @@
 ## 操作步骤
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表选择所需实例，在操作列中，选择【更多】>【销毁/退货】或【销毁/退货退费】。
 ![](https://main.qcloudimg.com/raw/ea0d80564ad54c6c9e3ea43070c71f20.png)
-4. 在弹出的对话框中，勾选同意，单击【立即销毁】。
+4. 在弹出的对话框中，阅读并勾选“已阅读并同意销毁规则”后，单击【立即销毁】。
 
 >
 ![](https://main.qcloudimg.com/raw/6e376a4a726195aefee841930577a5b3.png)
