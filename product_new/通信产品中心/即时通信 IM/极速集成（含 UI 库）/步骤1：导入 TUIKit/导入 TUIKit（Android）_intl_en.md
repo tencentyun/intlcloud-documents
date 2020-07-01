@@ -1,7 +1,7 @@
 ## Development Environment Requirements
 
-- Android Studio 3.3.2
-- Gradle-4.1
+- Android Studio 3.6.1
+- Gradle-5.1.1
 
 
 ## Integration Description
@@ -13,7 +13,7 @@ TUIKit can be integrated through gradle, aar, or module source code.
 ```
 dependencies {
     ...
-     compile 'com.tencent.imsdk:tuikit:xxx version'
+     implementation 'com.tencent.imsdk:tuikit:xxx version'
     ...
 }
 ```
@@ -65,7 +65,7 @@ public class DemoApplication extends Application {
 
        // Set Config according to your needs
        TUIKitConfigs configs = TUIKit.getConfigs();
-       configs.setSdkConfig(new TIMSdkConfig(SDKAPPID));
+       configs.setSdkConfig(new V2TIMSDKConfig());
        configs.setCustomFaceConfig(new CustomFaceConfig());
        configs.setGeneralConfig(new GeneralConfig());
 
