@@ -12,7 +12,7 @@ ES  目前支持按量计费的计费模式，计费项包括节点机型和存�
     <th class="tg-llyw" colspan="22">预付费（$USD/个/小时）</th>
   </tr>
   <tr>
-    <td class="tg-llyw" colspan="2">北京/上海/广州/南京</td>
+    <td class="tg-llyw" colspan="2">北京/上海/广州/南京/清远</td>
     <td class="tg-llyw" colspan="2">成都/重庆</td>
     <td class="tg-llyw" colspan="2">中国香港</td>
     <td class="tg-llyw" colspan="2">新加坡</td>

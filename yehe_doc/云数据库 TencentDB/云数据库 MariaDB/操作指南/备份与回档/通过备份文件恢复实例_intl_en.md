@@ -50,7 +50,7 @@ yum install percona-xtrabackup
 In the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql), click an instance name to enter the instance management page and get the backup download address on the **Backup and Restore** tab.
 Sample of a download command:
 ```
-wget  --content-disposition 'http://169.254.0.27:8083/2/noshard1/set_1464144850_587/1464552298xxxxxxxx'
+wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_587/1464552298xxxxxxxx'
 ```
 
 ## Restoring Database from Backup File (Unencrypted)
@@ -128,7 +128,7 @@ Transparent Data Encryption (TDE) is currently supported only in Percona 5.7. Yo
 #### 1. Decompress the backup file to the temporary directory
 For more information, please see [Enter the cold backup file download directory and decompress the file with LZ4](#mulu_jieya) and [Decompress the file with xbstream to the temporary directory `xtrabackuptmp`](#gongju_jieya).
 
-In this example, the backup file is decompressed to the temporary directory `./backup_dir`. **LZ4 is installed in the `mysqlagent/bin` directory by default. You can also install it in the `/usr/bin` directory and import it as an environment variable.**
+In this example, the backup file is decompressed to the temporary directory `./backup_dir`. LZ4 is installed in the `mysqlagent/bin` directory by default. You can also install it in the `/usr/bin` directory and import it as an environment variable.
 
 #### 2. Get the data key plaintext
 You can use an API of Key Management Service (KMS) for this step.
@@ -153,15 +153,15 @@ Before decrypting the data, you need to query the data key ciphertext in **Data 
 ```
 python ./kms_tool.py --role="qcs::cam::uin/xxxxxxxxx:roleName/kmsTDSQLRole" 
 --secret_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" --secret_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
---region="ap-hongkong" --ciphertext="CtFlCTPsA0+LilyvZ5V4nsEi6qSIA/KEhVeE8zQFIGfBwzXiMShQZIYYUt9KBWAUsHcfLQ0Z5feADH2D49/nOw==-k-fKVP3WIlGpg8m9LMW4jEkQ==-k-zudP3Tz4jxrvjs7zKkuKU+0V/gVVaNRRIIaRl/+83qCinaBgsLQbU5e1MpW4q/IJKpNXnb9N9/rO
-5Es03fh7PU9n8Sjex6mnl+YKV1SMQog+RJ1E8bNmwx/22hhHb/1B5LGpwB8tbXKD3gL0tZwSJvV2QxSaUnONh5+6ssb2cQZI8MhcBBhGj9oXtbL6OC74PuDO1D/AsQ6qBLIqC2bTSA68s8Q="
+--region="ap-hongkong" --ciphertext="CtFlCxx0+LilyvZ5xxqSIA/KEhVexxIGfBwzXiMShQZxxxWAUsHcfLQ0xxxDH2D49/nOw==-k-fKVP3WxxxMW4jEkQ==-k-zudP3Tz4jxrxxxKkuKU+0V/gVVaxxIaRl/+83qCinaBxxU5e1MpW4q/IJKpxxb9N9/rO
+5Es03fxxxn8Sjex6mnl+YKV1SMQog+RJ1xxxNmwx/22hhHb/1B5LGpwB8tbXKD3gL0tZwSxxxUnONh5+6ssb2cxxxBhGj9oXtbL6OC74PuDO1D/AsQ6qBxxxTSA68s8Q="
 ```
 
 #### 5. Generate the data key file again
 After getting the data key plaintext, you can use either of the following two schemes to generate the data key file.
 - Use an open-source TDE tool compatible with Percona to generate the file.
 - Use the tool `./keyring_tool` provided by Tencent Cloud to generate the data key file. The basic command format of `./keyring_tool` is `./keyring_tool "[ciphertext]"  [File Path]`.
- ![](https://main.qcloudimg.com/raw/a23c3a8aa70281e3d0e0ec0c8aec1d6e.png)
+ ![](https://main.qcloudimg.com/raw/6c4556b8a0f0362c922c37c62e7f4286.png)
  - Use double quotation marks to enclose the ciphertext of the data key string.
  - `keyring_tool`depends on `libboost_program_options.so.1.53.0`. If this lib does not exist in the system, you need to run `export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH` first before using `keyring_tool`.
  
