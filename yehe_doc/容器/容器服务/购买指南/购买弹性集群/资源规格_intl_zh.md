@@ -3,7 +3,7 @@
 
 当您使用 Kubernetes API 或 Kubectl 创建弹性容器工作负载时，可以通过 annotation 指定资源规格。如果不指定，EKS 会根据工作负载设置的容器 Request、Limit 等参数进行计算。详情请参考 [指定资源规格](https://intl.cloud.tencent.com/document/product/457/36161)。
 
->
+>!
 > - 资源规格是 Pod 内容器可使用的最大资源量。
 > - 目前支持分配的 CPU、GPU 规格见下表，分配时请勿超出所支持的规格。
 > - Pod 内所有 Container 设置的 Request 之和不可大于最大 Pod 规格。
@@ -14,21 +14,34 @@
 
 EKS 在所有支持 CPU 资源类型的地域提供以下 CPU Pod 规格。EKS 提供一系列 CPU 选项，不同的 CPU 大小会对应不同的内存选择区间，请在创建工作负载时根据您的实际需求选择最合适规格，并进行资源分配。
 
+#### Intel
 | CPU/核 | 内存区间/GiB | 内存区间粒度/GiB |
 | -------|-------|------- |
 | 0.25 | 0.5、1、2 | - |
 | 0.5 | 1、2、3、4 | - |
-| 1 | 2 - 8 | 1 |
+| 1 | 1 - 8 | 1 |
 | 2 | 4 - 16 | 1 |
 | 4 | 8 - 32 | 1 |
 | 8 | 16 - 32 | 1 |
 | 12 | 24 - 48 | 1 |
 | 16 | 32 - 64 | 1 |
 
+#### 星星海 AMD
+基于腾讯云自研星星海服务器，提供可靠、安全、稳定的高性能。详情请参见 [云服务器标准型 SA2 介绍](https://intl.cloud.tencent.com/document/product/213/11518)。
+
+| CPU/核 | 内存区间/GiB | 内存区间粒度/GiB |
+| -------|-------|------- |
+| 1 | 1 - 4 | 1 |
+| 2 | 2 - 8 | 1 |
+| 4 | 4 - 16 | 1 |
+| 8 | 8 - 32 | 1 |
+| 16 | 16 - 32 | 1 |
+| 32 | 32 - 64 | 1 |
+
 ## GPU 规格
 
 EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对应不同的 CPU、内存选项，请在创建工作负载时根据您的实际需求选择最合适规格，并进行资源分配。
->如果您需要通过 yaml 来创建、管理和使用 GPU 的工作负载，请参考 [Annotation 说明](https://intl.cloud.tencent.com/document/product/457/36162)。
+>!如果您需要通过 yaml 来创建、管理和使用 GPU 的工作负载，请参考 [Annotation 说明](https://intl.cloud.tencent.com/document/product/457/36162)。
 
 | GPU 型号 | GPU/卡 | CPU/核 | 内存/GiB |
 | ------- | ------- | ------- | ------- |
@@ -57,23 +70,40 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 		<th>支持资源类型</th>
 	</tr>
 	<tr>
-		<td rowspan="1">华南地区（广州）<br> ap-guangzhou</td>
+		<td rowspan="2">华南地区（广州）<br> ap-guangzhou</td>
 		<td>广州三区<br> ap-guangzhou-3</td>
-		<td>CPU、GPU/vGPU(V100)</td>
+		<td> Intel CPU、GPU/vGPU(V100)、GPU/vGPU(T4) </td>
+	</tr>
+	<tr>
+		<td>广州四区<br>ap-guangzhou-4</td>
+		<td> AMD CPU、GPU/vGPU(V100) </td>
 	</tr>	
 	<tr>
-		<td rowspan="2">华东地区（上海）<br>ap-shanghai</td>
+		<td rowspan="3">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海二区<br>ap-shanghai-2</td>
-		<td>CPU</td>
+		<td> Intel CPU </td>
 	</tr>
 	<tr>
 		<td>上海三区<br>ap-shanghai-3</td>
-		<td>CPU</td>
+		<td> Intel CPU </td>
 	</tr>
 	<tr>
-			<td rowspan="1">华北地区（北京）<br>ap-beijing</td>
+		<td>上海四区<br>ap-shanghai-4</td>
+		<td> GPU/vGPU(T4) </td>
+	</tr>
+	<tr>
+		<td rowspan="1">华东地区（南京）<br> ap-nanjing</td>
+		<td>南京一区<br> ap-nanjing-1</td>
+		<td> Intel/AMD CPU </td>
+	</tr>
+	<tr>
+			<td rowspan="2">华北地区（北京）<br>ap-beijing</td>
 			<td>北京三区<br>ap-beijing-3</td>
-			<td>CPU</td>
+			<td> Intel/AMD CPU </td>
+	</tr>
+	<tr>
+		<td>北京四区<br>ap-beijing-4</td>
+		<td> Intel CPU </td>
 	</tr>
 </tbody>
 </table>
