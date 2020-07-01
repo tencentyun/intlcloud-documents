@@ -28,7 +28,7 @@ CNAME 记录是指域名解析中的别名记录（Canonical Name）。
 指用户所在的区域，该区域的用户可以通过加速通道访问到处于源站区域的业务服务器。
 
 
-<span ="GAAP1"></span>
+<span id="GAAP1"></span>
 ### 全球应用加速
 
 全球应用加速（Global Application Acceleration Platform，GAAP）是一款实现业务全球最佳访问延迟的 PAAS 类产品，依赖全球节点之间的高速通道、转发集群及智能路由技术，实现各地用户的就近接入，并将流量转发至源站，帮助业务解决全球用户访问卡顿或者延迟过高的问题。
@@ -37,4 +37,4 @@ CNAME 记录是指域名解析中的别名记录（Canonical Name）。
 
 ### 源站
 
-源站是客户的业务服务器。源站可以是用户自建的服务器，也可以是腾讯云 [对象存储](https://cloud.tencent.com/product/cos) 的存储桶。
+源站是客户的业务服务器。源站可以是用户自建的服务器，也可以是腾讯云 [对象存储](https://intl.cloud.tencent.com/product/cos) 的存储桶。

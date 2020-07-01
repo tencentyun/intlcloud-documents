@@ -38,7 +38,7 @@ When you request the following APIs, you can apply server-side encryption by pro
 - [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881)
 - [POST Object](https://cloud.tencent.com/document/product/436/14690)
 
-### SSE-COS Encryption
+### SSE-KMS Encryption
 
 SSE-KMS encryption is server-side encryption using a key managed by KMS. KMS is a security management service launched by Tencent Cloud, using a third-party-certified hardware security module (HSM) to generate and protect keys. KMS allows users to easily create and manage keys, meeting their key management needs for multiple applications and services, while satisfying regulatory and compliance requirements.
 
