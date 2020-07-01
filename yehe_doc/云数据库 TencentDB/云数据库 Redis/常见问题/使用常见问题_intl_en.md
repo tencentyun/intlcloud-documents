@@ -1,5 +1,3 @@
-### How do I use the hash algorithm in Redis Cluster Edition?
-Redis Cluster Edition uses the hash algorithm of Redis Cluster posted on the Redis community, i.e., `HASH_SLOT = CRC16(key) mod 16384`. For more information, please see [Redis Cluster Specification](https://redis.io/topics/cluster-spec).
 ### What is the maximum capacity of a single instance?
 
 | Edition | Specification Range |
