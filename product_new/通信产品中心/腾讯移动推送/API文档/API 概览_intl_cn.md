@@ -5,7 +5,7 @@
 
 | 接口名称       |    接口功能       |
 | ------------- | -------------    |
-| /push/app         | [推送通知/应用内消息接口](https://intl.cloud.tencent.com/document/product/1024/33764) |
+| /push/app         | [推送通知与应用内消息接口](https://intl.cloud.tencent.com/document/product/1024/33764) |
 | /push/package/upload         | [号码包上传接口](https://intl.cloud.tencent.com/document/product/1024/33765) |
 
 ## 标签相关接口

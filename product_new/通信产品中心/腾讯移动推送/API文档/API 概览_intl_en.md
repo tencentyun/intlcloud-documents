@@ -5,7 +5,7 @@
 
 | API name       |    Feature       |
 | ------------- | -------------    |
-| /push/app         | [Pushes notification/in-app messages](https://intl.cloud.tencent.com/document/product/1024/33764) |
+| /push/app         | [Pushes notification and in-app messages](https://intl.cloud.tencent.com/document/product/1024/33764) |
 | /push/package/upload         | [Uploads number package](https://intl.cloud.tencent.com/document/product/1024/33765) |
 
 ## Tag APIs
