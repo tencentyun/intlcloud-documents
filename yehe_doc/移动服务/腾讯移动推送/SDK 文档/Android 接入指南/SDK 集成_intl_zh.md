@@ -1,11 +1,11 @@
 ## 简介
 Android SDK 是腾讯移动推送服务为客户端实现消息推送而提供给开发者的接口，本文将提供 AndroidStudio Gradle 自动集成和 Android Studio 手动集成两种方式。
->如果您是从 [信鸽平台](https://xg.qq.com) 迁移至腾讯移动推送平台，请务必使用 Android 迁移指南调整集成配置。
+>!如果您是从 [信鸽平台](https://xg.qq.com) 迁移至腾讯移动推送平台，请务必使用 Android 迁移指南 调整集成配置。
 
 ## SDK 集成（二选一）
 ### AndroidStudio Gradle 自动集成
 #### 操作步骤
->在配置 SDK 前，确保已创建 Android 平台的应用。
+>!在配置 SDK 前，确保已创建 Android 平台的应用。
 
 1. 登录 [腾讯移动推送控制台](https://console.cloud.tencent.com/tpns)，选择左侧菜单【配置管理】，获取应用的包名、AccessID、AccessKey。
 2. 在 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面，获取当前最新版本号。
@@ -45,7 +45,7 @@ dependencies {
 }
 ```
 
->
+>!
  - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
  - 如果您的应用服务接入点为新加坡或者中国香港，请按照下文步骤完成境外服务接入点配置。
 在 Androidanifest 文件 application 标签内添加以下元数据：
@@ -212,12 +212,12 @@ NDK integration is deprecated in the current plugin. Consider trying the new exp
     <!-- MQTT START-->
     <service android:exported="false"
              android:process=":xg_vip_service"
-             android:name="com.tencent.bigdata.mqttchannel.services.MqttService" />
+             android:name="com.tencent.tpns.mqttchannel.services.MqttService" />
 
     <!--【注意】authorities修改为 包名.XG_SETTINGS_PROVIDER, 如demo的包名为：com.tencent.android.xg.cloud.demo -->
     <provider
         android:exported="false"
-        android:name="com.tencent.bigdata.baseapi.base.SettingsContentProvider"
+        android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
         android:authorities="应用包名.XG_SETTINGS_PROVIDER" />
 
     <!-- MQTT END-->
@@ -252,22 +252,15 @@ NDK integration is deprecated in the current plugin. Consider trying the new exp
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-> 
-- 如果您的应用服务接入点为广州，SDK 默认实现该配置。
-- 如果您的应用服务接入点为新加坡或者中国香港，请按照下文步骤完成境外服务接入点配置。
+>! 
+>- 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+>- 如果您的应用服务接入点为新加坡或者中国香港，请按照下文步骤完成境外服务接入点配置。
 在 Androidanifest 文件 application 标签内添加以下元数据：
 ```
     <application>
-        // 其他安卓组件
         <meta-data
-            android:name="XG_GUID_SERVER"
-            android:value="境外域名/guid/api/GetGuidAndMqttServer" />           
-        <meta-data
-            android:name="XG_STAT_SERVER"
-            android:value="境外域名/log/statistics/push" />        
-        <meta-data
-            android:name="XG_LOG_SERVER"
-            android:value="境外域名/v3/mobile/log/upload" /> 
+            android:name="XG_SERVER_SUFFIX"
+            android:value="境外域名" />
     </application>
 ```
 境外域名如下：
@@ -278,7 +271,7 @@ NDK integration is deprecated in the current plugin. Consider trying the new exp
 
 ## 调试及设备注册
 ### 开启 Debug 日志数据
->上线时请设置为 false。
+>!上线时请设置为 false。
 
 ```java
 XGPushConfig.enableDebug(this,true);
@@ -315,12 +308,12 @@ XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep class com.tencent.android.tpush.** {*;}
--keep class com.tencent.bigdata.baseapi.** {*;}
--keep class com.tencent.bigdata.mqttchannel.** {*;}
+-keep class com.tencent.tpns.baseapi.** {*;}  //1.2.0.1以下版本配置为  -keep class com.tencent.tpns.baseapi.** {*;}
+-keep class com.tencent.tpns.mqttchannel.** {*;} //1.2.0.1以下版本配置为 -keep class com.tencent.bigdata.mqttchannel.** {*;}
 -keep class com.tencent.tpns.dataacquisition.** {*;}
 ```
 
->如果 TPNS SDK 被包含在 App 的公共 SDK 里，即使公共 SDK 有增加配置混淆规则，主工程 App 也必须要同时增加配置混淆规则。
+>!如果 TPNS SDK 被包含在 App 的公共 SDK 里，即使公共 SDK 有增加配置混淆规则，主工程 App 也必须要同时增加配置混淆规则。
 
 ## 高级配置（可选）
 ### 音视频富媒体使用方法
