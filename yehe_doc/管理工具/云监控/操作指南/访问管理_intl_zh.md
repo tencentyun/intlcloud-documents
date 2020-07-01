@@ -125,28 +125,6 @@
 	</tr>
 </table>
 
-### 常见授权异常说明
-
-#### 异常一
-
-- 控制台报错：单击云监控所有功能页面均显示 "操作未授权，请检查 CAM 策略"，如下所示：
-![](https://main.qcloudimg.com/raw/81d4a4cd5da3bc16b2a09b88262718d5.jpg)
-- 解决措施：在 [访问管理](https://console.cloud.tencent.com/cam) 控制台授予对应子账号 QcloudMonitorFullAccess 或 QcloudMonitorReadOnlyAccess 权限。
-
-
-#### 异常二
-- 控制台报错：操作告警策略、Dashboard 等需访问云服务器实例的功能时，提示 CVM 类型授权失败，如下所示：
-![](https://main.qcloudimg.com/raw/7c99c04b6c0bdfd7f982e55c2668ea71.jpg)
-- 解决措施：在 [访问管理](https://console.cloud.tencent.com/cam) 控制台授予对应子账号QcloudMonitorFullAccess 或 QcloudMonitorReadOnlyAccess 权限。
-
-
-#### 异常三
-- 控制台报错：
- - 创建告警策略时，所属项目下框提示 “没有项目权限，无法创建该策略”，如下所示：
- ![](https://main.qcloudimg.com/raw/4df73884c4ba0cfcc4cc4f95ce334087.png)
- - 创建告警接收组时，提示 CAM 类型授权失败，如下所示：
- ![](https://main.qcloudimg.com/raw/33ce73e95afaeba6e3f2703626516708.jpg)
-- 解决措施：在 [访问管理](https://console.cloud.tencent.com/cam) 控制台授予对应子账号 QcloudCVMFullAccess 权限。
 
 
 
