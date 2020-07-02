@@ -3,13 +3,13 @@ SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [�
 
 |平台| SDK 文档 | Github 地址|
 |------------|-------------|------------------|
-|Java |Java SDK 文档  | [Java SDK](https://github.com/TencentCloud/tencentcloud-sdk-java)|
-|PHP | PHP SDK 文档  | [PHP SDK](https://github.com/TencentCloud/tencentcloud-sdk-php)|
+|Java |[Java SDK 文档 ](https://intl.cloud.tencent.com/document/product/382/36789) | [Java SDK](https://github.com/TencentCloud/tencentcloud-sdk-java)|
+|PHP | [PHP SDK 文档](https://intl.cloud.tencent.com/document/product/382/36790)  | [PHP SDK](https://github.com/TencentCloud/tencentcloud-sdk-php)|
 |Python | Python SDK 文档   | [Python SDK](https://github.com/TencentCloud/tencentcloud-sdk-python)|
-|JavaScript  | Node.js SDK 文档   | [Node.js SDK](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)|
+|JavaScript  | [Node.js SDK 文档](https://intl.cloud.tencent.com/document/product/382/36791)   | [Node.js SDK](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)|
 |C# | C# SDK 文档  | [C# SDK](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)|
 |Go | Go SDK 文档  | [Go SDK](https://github.com/TencentCloud/tencentcloud-sdk-go)|
 
->
->- 本章节短信 SDK 均为最新 SDK 3.0，后续短信相关新增功能都会在此章节更新。我们强烈推荐您使用最新的 SDK 3.0 接口以及配套的 API 3.0。
+>!
+>- 本章节短信 SDK 均为最新 SDK 3.0，后续短信相关新增功能都会在此章节更新。我们强烈推荐您使用最新的 SDK 3.0 以及配套的 API 3.0 接口。
 >- 现有2.0版本的 API 和 SDK 功能依然保持，未来可能停止维护。

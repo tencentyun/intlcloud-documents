@@ -5,7 +5,7 @@ TcaplusDB RESTful API enables you to remotely interact with TcaplusDB through HT
 
 ## Preparations
 
-Make sure that you have created a game application in [Tencent Cloud TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus) and obtained the application information (including `AppId`, `ZoneId`, and `AppKey`). TcaplusDB RESTful API only supports tables that are defined through protobuf.
+Make sure that you have created a game application in [TencentDB for TcaplusDB](https://intl.cloud.tencent.com/product/tcaplus) and obtained the application information (including `AppId`, `ZoneId`, and `AppKey`). TcaplusDB RESTful API only supports tables that are defined through protobuf.
 Below is a sample TcaplusDB protobuf table definition file:
 
 ```

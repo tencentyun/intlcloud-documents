@@ -131,7 +131,7 @@ The following describes common parameter settings for the Consumer client. We re
 
 ```
 # Whether to sync the offset to the Broker after a message is consumed, so the latest offset can be obtained from the Broker when the consumer fails.
-auto.commit.enable=true
+enable.auto.commit=true
 
 # Interval for the automatic submission of offset when auto.commit.enable=true is configured. We recommend setting this value to at least 1,000.
 auto.commit.interval.ms=5000
