@@ -6,9 +6,6 @@ An instance can be automatically backed up once a day. You can view details in *
 - **Manual backup**
 In **Backup and Rollback** on the instance details page, click **Manual Backup** in the top-right corner, enter remarks in the pop-up box, and click "Submit" to complete manual backup.
 
-### Can I download backup files?
-No.
-
 ### Can I perform rollback again if the instance is replaced after rollback?
 No. The original backup file is no longer applicable to the new instance, so you cannot perform rollback again. You should perform the replacement operation with caution.
 
