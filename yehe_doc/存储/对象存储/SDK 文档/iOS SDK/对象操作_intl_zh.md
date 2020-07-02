@@ -2,55 +2,55 @@
 
 本文档重点提供关于对象的简单操作、分块操作以及其他操作相关的 API 概览以及 SDK 示例代码，并且举例如何使用。
 
-- 我们假设您已经按照 [快速入门](https://intl.cloud.tencent.com/document/product/436/8629) 文档中的指引完成了 SDK 下载、安装和初始化的过程。
+- 我们假设您已经按照 [快速入门](https://intl.cloud.tencent.com/document/product/436/11280) 文档中的指引完成了 SDK 下载、安装和初始化的过程。
 - 查询时建议使用 Command+F 搜索到想要查询的接口，然后看我们给出的接口简单说明，复制示例到您的工程中运行。
 
->如果需要了解接口的功能或者参数的意义，建议直接查看代码里的注释，Xcode 支持通过三指轻按、Force-touch 重按或者将鼠标停留在变量上，按 Control+Command+D 的方式查看它的释义。   
+> ?如果需要了解接口的功能或者参数的意义，建议直接查看代码里的注释，Xcode 支持通过三指轻按、Force-touch 重按或者将鼠标停留在变量上，按 Control+Command+D 的方式查看它的释义。   
 
 **简单操作**
 
 | API                                                          | 操作名         | 操作描述                                 |
 | ------------------------------------------------------------ | -------------- | ---------------------------------------- |
-| [GET Bucket（List Object）](https://cloud.tencent.com/document/product/436/7734) | 查询对象列表   | 查询存储桶下的部分或者全部对象           |
-| [PUT Object](https://cloud.tencent.com/document/product/436/7749) | 上传对象       | 上传一个对象至存储桶                     |
-| [HEAD Object](https://cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询对象的元数据信息                     |
-| [GET Object](https://cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地                       |
-| [Options Object](https://cloud.tencent.com/document/product/436/8288) | 预请求跨域配置 | 用预请求来确认是否可以发送真正的跨域请求 |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径                       |
-| [DELETE Object](https://cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在存储桶中删除指定对象                   |
-| [DELETE Multiple Object](https://cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除对象                   |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | 查询对象列表   | 查询存储桶下的部分或者全部对象           |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 上传对象       | 上传一个对象至存储桶                     |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询对象的元数据信息                     |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地                       |
+| [Options Object](https://intl.cloud.tencent.com/document/product/436/8288) | 预请求跨域配置 | 用预请求来确认是否可以发送真正的跨域请求 |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径                       |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在存储桶中删除指定对象                   |
+| [DELETE Multiple Object](https://intl.cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除对象                   |
 
 **分块操作**
 
 | API                                                          | 操作名         | 操作描述                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
-| [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化分块上传任务                   |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
-| [Upload Part - Copy](https://cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化分块上传任务                   |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 复制分块       | 将其他对象复制为一个分块             |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
 
 **其他操作**
 
 | API                                                          | 操作名       | 操作描述                           |
 | ------------------------------------------------------------ | ------------ | ---------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问           |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
-| [GET Object acl](https://cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询对象的访问控制列表             |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问           |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置存储桶中某个对象的访问控制列表 |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询对象的访问控制列表             |
 
 ## 高级接口（推荐）
 
-该小节中封装了上传和复制的高级接口，用户只需要设置相应的参数，该接口内部会根据文件大小决定是进行简单上传/复制，还是分块上传/复制，使用接口前请确认已完成了 [快速入门](https://intl.cloud.tencent.com/document/product/436/8629) 中指引的初始化步骤。
+该小节中封装了上传和复制的高级接口，用户只需要设置相应的参数，该接口内部会根据文件大小决定是进行简单上传/复制，还是分块上传/复制，使用接口前请确认已完成了 [快速入门](https://intl.cloud.tencent.com/document/product/436/11280) 中指引的初始化步骤。
 
 ### 上传对象
 
-可以参见快速入门中的 [上传对象](https://intl.cloud.tencent.com/document/product/436/8629#.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 环节。
+可以参见快速入门中的 [上传对象](https://intl.cloud.tencent.com/document/product/436/11280#.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 环节。
 
 #### 上传对象时的断点续传
 
->断点续传只支持上传沙盒中的文件。
+>?断点续传只支持上传沙盒中的文件。
 
 对于大于1MB的对象，SDK 都会以分块上传的方式进行上传，即将对象切分成多个1MB大小的分块，并行（最大并行数为4）进行上传。对于每个已经完成上传的分块，后台服务器都会将其保存起来，这是上传时候断点续传的基础。  
 
@@ -132,7 +132,7 @@ var error:NSError?;
     //这里是主动调用取消，并且产生 resumetData 的例子
 do {
     let resumedData = try uploadRequest.cancel(byProductingResumeData: &error);
-        var resumeUploadRequest:QCloudCOSXMLUploadObjectRequest<AnyObject>;
+        var resumeUploadRequest:QCloudCOSXMLUploadObjectRequest<AnyObject>?;
              resumeUploadRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init(request: resumedData as Data?);
              //生成的用于恢复上传的请求可以直接上传
     if resumeUploadRequest != nil {
@@ -153,7 +153,7 @@ do {
 
 ### 下载对象
 
-可以参见快速入门中的 [下载对象](https://intl.cloud.tencent.com/document/product/436/8629#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) 章节。
+可以参见快速入门中的 [下载对象](https://intl.cloud.tencent.com/document/product/436/11280#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) 章节。
 
 ### 复制对象
 
@@ -161,11 +161,11 @@ do {
 
 先初始化一个 QCloudCOSXMLCopyObjectRequest 对象，然后调用 QCloudCOSTransferMangerService 的 CopyObject 方法即可。注意对于比较大的文件，将会使用分块复制的方式进行复制。这个过程对于用户是没有感知的。  
 
->如果是跨地域复制，这里使用的 transferManager 所在的 region 必须为目标桶所在的 region。
+> !如果是跨地域复制，这里使用的 transferManager 所在的 region 必须为目标桶所在的 region。
 
 #### QCloudCOSXMLCopyObjectRequest 参数说明
 
-| 参数名称          | 描述                                                         | 类型                  | 必填 |
+| 参数名称          | 描述                                                         | 类型                  | 是否必填 |
 | ----------------- | ------------------------------------------------------------ | --------------------- | ---- |
 | bucket            | 存储桶名，格式为 &lt;BucketName-APPID&gt;，<br>例如 examplebucket-1250000000 | NSString *            | 是   |
 | sourceBucket      | 复制的源文件所在 Bucket                                      | NSString *            | 是   |
@@ -233,7 +233,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyReques
 
 #### 方法原型
 
-进行存储桶操作之前，我们需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudGetBucketRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下:
+进行存储桶操作之前，我们需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudGetBucketRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下:
 
 1. 实例化 QCloudGetBucketRequest，填入需要的参数。    
 2. 调用 QCloudCOSXMLService 对象中的 GetBucket 方法发出请求。    
@@ -241,7 +241,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyReques
 
 #### QCloudGetBucketRequest 参数说明
 
-| 参数名称     | 描述                                                         | 类型       | 必填 |
+| 参数名称     | 描述                                                         | 类型       | 是否必填 |
 | ------------ | ------------------------------------------------------------ | ---------- | ---- |
 | bucket       | 存储桶名，可在 [COS 控制台](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt; ，<br>例如 examplebucket-1250000000 | NSString * | 是   |
 | prefix       | 前缀匹配，用来规定返回的文件前缀地址                         | NSString * | 否   |
@@ -332,7 +332,7 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 上传对象
@@ -341,11 +341,11 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 
 上传对象到指定的存储桶中（Put Object），简单上传仅限于小文件（20MB以下）。简单上传支持从内存中上传文件。
 
->当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，请在上传时不要设置，默认继承 Bucket 权限。
+> !当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，请在上传时不要设置，默认继承 Bucket 权限。
 
 #### QCloudPutObjectRequest 参数说明
 
-| 参数名称           | 说明                                                         | 类型                  | 必填 |
+| 参数名称           | 说明                                                         | 类型                  | 是否必填 |
 | ------------------ | ------------------------------------------------------------ | --------------------- | ---- |
 | Object             | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | NSString *            | 是   |
 | bucket             | 存储桶名，格式为 &lt;BucketName-APPID&gt; ，例如 examplebucket-1250000000 | NSString *            | 是   |
@@ -403,7 +403,7 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 查询对象元数据
@@ -414,7 +414,7 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 
 #### 方法原型
 
-进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudHeadObjectRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudHeadObjectRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudHeadObjectRequest，填入需要的参数。    
 2. 调用 QCloudCOSXMLService 对象中的 HeadObject 方法发出请求。    
@@ -422,7 +422,7 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 
 #### QCloudHeadObjectRequest 参数说明
 
-| 参数名称        | 描述                                                         | 类型       | 必填 |
+| 参数名称        | 描述                                                         | 类型       | 是否必填 |
 | --------------- | ------------------------------------------------------------ | ---------- | ---- |
 | Object          | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/text.txt`中，对象键为 doc/text.txt。更详细的描述可以参见 [对象描述](https://intl.cloud.tencent.com/document/product/436/13324) | NSString * | 是   |
 | bucket          | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt; ，<br>例如 examplebucket-1250000000 | NSString * | 是   |
@@ -467,7 +467,7 @@ QCloudCOSXMLService.defaultCOSXML().headObject(headObject);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 下载对象
@@ -478,7 +478,7 @@ QCloudCOSXMLService.defaultCOSXML().headObject(headObject);
 
 #### 方法原型
 
-进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化QCloudGetObjectRequest对象，填入需要的参数。    
 2. 调用 QCloudCOSXMLService 对象中的方法发出请求。    
@@ -486,7 +486,7 @@ QCloudCOSXMLService.defaultCOSXML().headObject(headObject);
 
 #### QCloudGetObjectRequest 请求参数说明
 
-| 参数名称                   | 描述                                                         | 类型       | 必填 |
+| 参数名称                   | 描述                                                         | 类型       | 是否必填 |
 | -------------------------- | ------------------------------------------------------------ | ---------- | ---- |
 | bucket                     | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt;，<br>例如 examplebucket-1250000000 | NSString * | 是   |
 | object                     | 对象名                                                       | NSString * | 是   |
@@ -550,7 +550,7 @@ QCloudCOSXMLService.defaultCOSXML().getObject(getObject);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 预请求跨域配置
@@ -561,7 +561,7 @@ QCloudCOSXMLService.defaultCOSXML().getObject(getObject);
 
 #### 方法原型
 
-进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudOptionsObjectRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudOptionsObjectRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudOptionsObjectRequest，填入需要设置的对象名、存储桶名、模拟跨域访问请求的 HTTP 方法和模拟跨域访问允许的访问来源。    
 2. 调用 QCloudCOSXMLService 对象中的方法发出请求。    
@@ -569,7 +569,7 @@ QCloudCOSXMLService.defaultCOSXML().getObject(getObject);
 
 #### QCloudOptionsObjectRequest 参数说明
 
-| 参数名称                   | 描述                                                         | 类型                        | 必填 |
+| 参数名称                   | 描述                                                         | 类型                        | 是否必填 |
 | -------------------------- | ------------------------------------------------------------ | --------------------------- | ---- |
 | object                     | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | NSString *                  | 是   |
 | bucket                     | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt; <br>例如 examplebucket-1250000000 | NSString *                  | 是   |
@@ -623,7 +623,7 @@ QCloudCOSXMLService.defaultCOSXML().optionsObject(optionsObject);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 设置对象复制
@@ -667,7 +667,7 @@ putObjectCopy.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 ```
 
-| 参数名称          | 描述                                                         | 类型                  | 必填 |
+| 参数名称          | 描述                                                         | 类型                  | 是否必填 |
 | ----------------- | ------------------------------------------------------------ | --------------------- | ---- |
 | bucket            | 目标存储桶名，格式为 &lt;BucketName-APPID&gt;，<br>例如 examplebucket-1250000000 | NSString *            | 是   |
 | object            | 目标文件的对象键                                        | NSString *            | 是   |
@@ -697,7 +697,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 删除单个对象
@@ -708,7 +708,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 
 #### 方法原型
 
-进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudDeleteObjectRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudDeleteObjectRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudDeleteObjectRequest，填入需要的参数。    
 2. 调用 QCloudCOSXMLService 对象中的方法发出请求。    
@@ -716,7 +716,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 
 #### QCloudDeleteObjectRequest 参数说明
 
-| 参数名称 | 类型                                                         | 必填       | 描述 |
+| 参数名称 | 类型                                                         | 是否必填       | 描述 |
 | -------- | ------------------------------------------------------------ | ---------- | ---- |
 | object   | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | NSString * | 是   |
 | bucket   | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt; ，<br>例如 examplebucket-1250000000 | NSString * | 是   |
@@ -763,14 +763,14 @@ QCloudCOSXMLService.defaultCOSXML().deleteObject(deleteObject);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 删除多个对象
 
 #### 方法原型
 
-进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudDeleteMultipleObjectRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudDeleteMultipleObjectRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudDeleteMultipleObjectRequest，填入需要的参数,将您想要删除的对象封装成一个QCloudDeleteObjectInfo对象,放入deleteObjects的objects数组中。    
 2. 调用 QCloudCOSXMLService 对象中的方法发出请求。    
@@ -778,21 +778,21 @@ QCloudCOSXMLService.defaultCOSXML().deleteObject(deleteObject);
 
 #### QCloudDeleteMultipleObjectRequest 请求参数说明
 
-| 参数名称      | 描述                                                         | 类型               | 必填 |
+| 参数名称      | 描述                                                         | 类型               | 是否必填 |
 | ------------- | ------------------------------------------------------------ | ------------------ | ---- |
 | bucket        | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt;，<br>例如 examplebucket-1250000000 | NSString *         | 是   |
 | deleteObjects | 封装了需要批量删除的多个对象的信息                           | QCloudDeleteInfo * | 是   |
 
 QCloudDeleteInfo参数说明
 
-| 参数名称 | 描述                                                         | 类型                                      | 必填 |
+| 参数名称 | 描述                                                         | 类型                                      | 是否必填 |
 | -------- | ------------------------------------------------------------ | ----------------------------------------- | ---- |
 | objects  | 存放需要删除对象信息的数组                                   | NSArray&lt;QCloudDeleteObjectInfo `*` > * | 是   |
 | Quiet    | 布尔值，这个值决定了是否启动 Quiet 模式：<br><li>true：启动 Quiet 模式<br><li>false：启动 Verbose 模式<br>默认值为 False | NSArray&lt;QCloudDeleteObjectInfo `*` > * | 否   |
 
 CloudDeleteObjectInfo 参数说明
 
-| 参数名称 | 描述                                                         | 类型       | 必填 |
+| 参数名称 | 描述                                                         | 类型       | 是否必填 |
 | -------- | ------------------------------------------------------------ | ---------- | ---- |
 | key      | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | NSString * | 是   |
 
@@ -869,7 +869,7 @@ QCloudCOSXMLService.defaultCOSXML().deleteMultipleObject(mutipleDel);
 返回错误码（封装在返回的error里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ## 分块操作
@@ -888,7 +888,7 @@ QCloudCOSXMLService.defaultCOSXML().deleteMultipleObject(mutipleDel);
 
 #### 方法原型
 
-进行存储桶操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudListBucketMultipartUploadsRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行存储桶操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudListBucketMultipartUploadsRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudListBucketMultipartUploadsRequest，填入需要的参数，如返回结果的前缀、编码方式等。    
 2. 调用 QCloudCOSXMLService 对象中的 ListBucketMultipartUploads 方法发出请求。    
@@ -896,7 +896,7 @@ QCloudCOSXMLService.defaultCOSXML().deleteMultipleObject(mutipleDel);
 
 #### QCloudListBucketMultipartUploadsRequest 参数说明
 
-| 参数名称       | 描述                                                         | 类型       | 必填 |
+| 参数名称       | 描述                                                         | 类型       | 是否必填 |
 | -------------- | ------------------------------------------------------------ | ---------- | ---- |
 | bucket         | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt; ，<br>例如 examplebucket-1250000000 | NSString * | 是   |
 | prefix         | 限定返回的 Object key 必须以 Prefix 作为前缀。注意使用 prefix 查询时，返回的 key 中仍会包含 Prefix | NSString * | 否   |
@@ -959,7 +959,7 @@ QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 当 SDK 请求失败的时候，返回的 error 将不为空，并且包括了错误码、错误描述和其它一些调试必备的信息，以帮助开发者快速解决问题。返回错误码（封装在返回的error里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码由苹果公司定义，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 
@@ -971,7 +971,7 @@ QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 
 #### 方法原型
 
-进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudInitiateMultipartUploadRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudInitiateMultipartUploadRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudInitiateMultipartUploadRequest，填入需要的参数。    
 2. 调用 QCloudCOSXMLService 对象中的 InitiateMultipartUpload 方法发出请求。    
@@ -979,7 +979,7 @@ QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 
 #### 参数说明
 
-| 参数名称           | 描述                                                         | 类型                  | 必填 |
+| 参数名称           | 描述                                                         | 类型                  | 是否必填 |
 | ------------------ | ------------------------------------------------------------ | --------------------- | ---- |
 | Object             | 上传文件（对象）的文件名，也是对象的key。 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详细描述请参见 [对象描述](https://intl.cloud.tencent.com/document/product/436/13324)。 | NSString *            | 是   |
 | bucket             | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt; ,<br>例如 examplebucket-1250000000 | NSString *            | 是   |
@@ -1037,7 +1037,7 @@ QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 上传分块
@@ -1048,7 +1048,7 @@ QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 
 #### QCloudUploadPartRequest 参数说明
 
-| 参数名称    | 描述                                                         | 类型       | 必填 |
+| 参数名称    | 描述                                                         | 类型       | 是否必填 |
 | ----------- | ------------------------------------------------------------ | ---------- | ---- |
 | bucket      | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为&lt;BucketName-APPID&gt; ，<br>例如 examplebucket-1250000000 | NSString * | 是   |
 | object      | 对象名称                                                   | NSString * | 是   |
@@ -1150,7 +1150,7 @@ QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 复制分块
@@ -1161,7 +1161,7 @@ QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 
 #### QCloudUploadPartRequest 参数说明
 
-| 参数名称   | 描述                                                         | 类型       | 必填 |
+| 参数名称   | 描述                                                         | 类型       | 是否必填 |
 | ---------- | ------------------------------------------------------------ | ---------- | ---- |
 | bucket     | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt;。<br>例如 examplebucket-1250000000 | NSString * | 是   |
 | object     | 对象名称                                                   | NSString * | 是   |
@@ -1250,7 +1250,7 @@ QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### <span id = "LIST_MULIT_UPLOAD"> 查询已上传块 </span>
@@ -1261,7 +1261,7 @@ QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 
 #### QCloudListMultipartRequest 请求参数说明
 
-| 参数名称         | 描述                                                         | 类型       | 必填 |
+| 参数名称         | 描述                                                         | 类型       | 是否必填 |
 | ---------------- | ------------------------------------------------------------ | ---------- | ---- |
 | bucket           | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt;。<br>例如 examplebucket-1250000000 | NSString * | 是   |
 | object           | 对象的名称                                                   | NSString * | 是   |
@@ -1339,7 +1339,7 @@ QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### <span id = "COMPLETE_MULIT_UPLOAD"> 完成分块上传 </span>
@@ -1350,7 +1350,7 @@ QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 
 #### QCloudCompleteMultipartUploadRequest 参数说明
 
-| 参数名称 | 描述                                                         | 类型                                | 必填 |
+| 参数名称 | 描述                                                         | 类型                                | 是否必填 |
 | -------- | ------------------------------------------------------------ | ----------------------------------- | ---- |
 | bucket   | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为&lt;BucketName-APPID&gt;。<br>例如 examplebucket-1250000000 | NSString *                          | 是   |
 | object   | 对象的名称                                                   | NSString *                          | 是   |
@@ -1440,7 +1440,7 @@ QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### <span id = "ABORT_MULIT_UPLOAD"> 终止分块上传 </span>
@@ -1451,7 +1451,7 @@ QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 
 #### QCloudAbortMultipfartUploadRequest 参数说明
 
-| 参数名称 | 描述                                                         | 类型       | 必填 |
+| 参数名称 | 描述                                                         | 类型       | 是否必填 |
 | -------- | ------------------------------------------------------------ | ---------- | ---- |
 | bucket   | 存储桶名称，可在 [COS  控制台](https://console.cloud.tencent.com/cos5/bucket) 查看，命名格式：BucketName-APPID。<br>例如 examplebucket-1250000000 | NSString * | 是   |
 | object   | 对象的名称                                                   | NSString * | 是   |
@@ -1515,7 +1515,7 @@ QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ## 其他操作
@@ -1528,7 +1528,7 @@ QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 
 #### 方法原型
 
-进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudPostObjectRestoreRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudPostObjectRestoreRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudPostObjectRestoreRequest，填入需要设置的对象名、存储桶名。    
 2. 调用 QCloudCOSXMLService 对象中的方法发出请求。    
@@ -1536,7 +1536,7 @@ QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 
 #### QCloudPostObjectRestoreRequest 请求参数说明
 
-| 参数名称       | 描述                                                         | 类型                   | 必填 |
+| 参数名称       | 描述                                                         | 类型                   | 是否必填 |
 | -------------- | ------------------------------------------------------------ | ---------------------- | ---- |
 | object         | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，更详细的描述可以参见 [对象描述](https://intl.cloud.tencent.com/document/product/436/13324)。 | NSString *             | 是   |
 | bucket         | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为&lt;BucketName-APPID&gt; ，例如 examplebucket-1250000000 | NSString *             | 是   |
@@ -1544,16 +1544,16 @@ QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 
 QCloudRestoreRequest 参数说明
 
-| 参数名称         | 描述                   | 类型               | 必填 |
+| 参数名称         | 描述                   | 类型               | 是否必填 |
 | ---------------- | ---------------------- | ------------------ | ---- |
 | days             | 设置临时副本的过期时间 | int64_t            | 是   |
 | CASJobParameters | 复原的过程类型配置信息 | CASJobParameters * | 是   |
 
 CASJobParameters 参数说明
 
-| 参数名称 | 描述                                                         | 类型          | 必填 |
+| 参数名称 | 描述                                                         | 类型          | 是否必填 |
 | -------- | ------------------------------------------------------------ | ------------- | ---- |
-| tier     | 恢复模式，支持的三种恢复模式，分别为：<br><li>Standard（标准模式，恢复任务在3 - 5小时内完成）<br><li>Expedited（极速模式，恢复任务在15分钟内可完成）<br><li>Bulk（批量模式，恢复任务在5 - 12小时内完成） | QCloudCASTier | 是   |
+| tier     | 恢复模式，支持的三种恢复模式，分别为：<br><li>Standard（标准模式，恢复任务在3 - 5小时内完成）<br><li>Expedited（极速模式，恢复任务在1 - 5分钟内可完成）<br><li>Bulk（批量模式，恢复任务在5 - 12小时内完成） | QCloudCASTier | 是   |
 
 #### 示例
 
@@ -1601,7 +1601,7 @@ QCloudCOSXMLService.defaultCOSXML().postObjectRestore(restore);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 设置对象 ACL
@@ -1612,7 +1612,7 @@ QCloudCOSXMLService.defaultCOSXML().postObjectRestore(restore);
 
 #### 方法原型
 
-进行对象操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudPutObjectACLRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行对象操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudPutObjectACLRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudPutObjectACLRequest，填入存储桶名，和一些额外需要的参数，如授权的具体信息等。    
 2. 调用 QCloudCOSXMLService 对象中的方法发出请求。    
@@ -1620,7 +1620,7 @@ QCloudCOSXMLService.defaultCOSXML().postObjectRestore(restore);
 
 #### QCloudPutObjectACLRequest 参数说明
 
-| 参数名称          | 描述                                                         | 类型       | 必填 |
+| 参数名称          | 描述                                                         | 类型       | 是否必填 |
 | ----------------- | ------------------------------------------------------------ | ---------- | ---- |
 | bucket            | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt;，<br>例如 examplebucket-1250000000 | NSString * | 是   |
 | object            | 对象名称                                                     | NSString * | 是   |
@@ -1673,7 +1673,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectACL(putObjectACl);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ### 查询对象 ACL
@@ -1684,7 +1684,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectACL(putObjectACl);
 
 #### 方法原型
 
-进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/8629#step1)。先生成一个 QCloudGetObjectACLRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
+进行文件操作之前，需要导入头文件 QCloudCOSXML/QCloudCOSXML.h。在此之前您需要完成 [初始化操作](https://intl.cloud.tencent.com/document/product/436/11280#step1)。先生成一个 QCloudGetObjectACLRequest 实例，然后填入一些需要的额外限制条件，通过并获得内容。具体步骤如下：    
 
 1. 实例化 QCloudGetObjectACLRequest，填入存储桶的名称，和需要查询对象的名称。    
 2. 调用 QCloudCOSXMLService 对象中的 GetObjectACL 方法发出请求。    
@@ -1692,7 +1692,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectACL(putObjectACl);
 
 #### QCloudGetObjectACLRequest 参数说明
 
-| 参数名称  | 描述                                                         | 类型       | 必填 |
+| 参数名称  | 描述                                                         | 类型       | 是否必填 |
 | --------- | ------------------------------------------------------------ | ---------- | ---- |
 | bucket    | 存储桶名，可在 [COS 控制台 ](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为&lt;BucketName-APPID&gt; ，例如 examplebucket-1250000000 | NSString * | 是   |
 | object    | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg，更详细的描述可以参见 [对象描述](https://intl.cloud.tencent.com/document/product/436/13324)。 | NSString * | 是   |
@@ -1768,7 +1768,7 @@ QCloudCOSXMLService.defaultCOSXML().getObjectACL(getObjectACL);
 返回错误码（封装在返回的 error 里）主要包括两类：设备本身因为网络原因等返回的错误码，以及 COS 返回的错误码。
 
 - 对于设备本身因为网络原因产生的错误码，都是负数并且是四位数，例如-1001，这类错误码是苹果定义的，可以参见 Foundation 框架中的 NSURLError.h 头文件内的定义，或者是 [苹果官方文档说明](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes)。
-- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码]( https://cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
+- 对于 COS 返回的错误码，是基于 HTTP 的状态码而来的，也就是404，503这类。对于这类错误码，可以参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档寻求解决方案。
 - 对于 SDK 自定义的错误码，均为5位数且都是正数，如10000、20000等。对于这类错误码，可以参见 [SDK 错误码](https://intl.cloud.tencent.com/document/product/436/30610) 文档寻求解决方案。
 
 ## 加入自定义头部
@@ -1805,7 +1805,7 @@ request.setCOSServerSideEncyption();
 
 iOS SDK 通过调用 -(void)setCOSServerSideEncyptionWithCustomerKey:(NSString \*)customerKey 方法来完成。
 
->
+> !
 >- 该加密所运行的服务需要使用 HTTPS 请求。
 >- customerKey：用户提供的密钥，传入一个32字节的字符串，支持数字、字母、字符的组合，不支持中文。
 >- 如果上传的源文件调用了该方法，那么在使用 QCloudCOSXMLDownloadObjectRequest（下载）、QCloudHeadObjectRequest（查询）、QCloudCOSXMLUploadObjectRequest（上传）、QCloudCOSXMLUploadObjectRequest（copy）对源对象操作的时候也要调用该方法。

@@ -14,7 +14,7 @@
 - 手机必须要有网络（GPRS、3G、4G 或 Wi-Fi 网络等）。
 - 从访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/capi) 页面获取 SecretId、SecretKey，以及在 [账号中心](https://console.cloud.tencent.com/developer) 中获取 APPID 信息。
 
->关于文章中出现的 SecretID、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
+> ?关于文章中出现的 SecretID、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 ### 安装 SDK
 
@@ -49,7 +49,7 @@ pod 'QCloudCOSXML'
 如下图所示：
 ![](https://main.qcloudimg.com/raw/125218fad3f4781cae8f992d9a152057.png)
 
->
+> !
 >腾讯云对象存储 XML iOS 的 SDK 使用 HTTP 协议。为了确保在 iOS 系统上可以运行，您需要开启允许通过 HTTP 传输。
 >   您可以通过以下两种方式开启允许通过 HTTP 传输：
 > - **手动设置方式**
@@ -102,7 +102,7 @@ QCloudCOSXML/QCloudCOSXML.h
 
 ```
 QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
-configuration.appID = @"APPID"//项目ID;
+configuration.appID = @"APPID"  //腾讯云账号的 APPID;
 ```
 
 实例化 QCloudCOSXMLService 对象：
@@ -119,14 +119,14 @@ configuration.appID = @"APPID"//项目ID;
 
 ##### QCloudServiceConfiguration 参数说明
 
-| 参数名称 | 说明                     | 类型                   | 必填 |
+| 参数名称 | 说明                     | 类型                   | 是否必填 |
 | -------- | ------------------------ | ---------------------- | ---- |
-| appID    | 项目 ID，即 APPID      | NSString *             | 否   |
+| appID    | 腾讯云账号的 APPID，开发者访问 COS 服务时拥有的用户维度唯一资源标识，用以标识资源，可在 [API 密钥管理](https://console.cloud.tencent.com/capi) 页面获取      | NSString *             | 否   |
 | endpoint | 配置 endpoint 相关信息 | QCloudCOSXMLEndPoint * | 是   |
 
 ##### QCloudCOSXMLEndPoint 参数说明
 
-| 参数名称    | 说明                                | 类型       | 必填 |
+| 参数名称    | 说明                                | 类型       | 是否必填 |
 | ----------- | ----------------------------------- | ---------- | ---- |
 | regionName  | 服务所属的地域                    | NSString * | 是   |
 | serviceName | 域名，默认是：`myqcloud.com`          | NSString * | 否   |
@@ -137,7 +137,7 @@ configuration.appID = @"APPID"//项目ID;
 
 下示例中用到的 APPID，SecretId，SecretKey 等可以从 [COS 控制台](https://console.cloud.tencent.com/cos5) 中获取。
 
->
+> !
 > 1. QCloudServiceConfiguration 的 signatureProvider 对象需要实现 QCloudSignatureProvider 协议。
 > 2. 使用 SDK 操作前，首先要实例化一个默认的云服务配置对象 QCloudServiceConfiguration，其次需要实例化 QCloudCOSXMLService 和 QCloudCOSTransferManagerService 对象。  
 > 3. 如果 QCloudServiceConfiguration 发生改变，可以通过`registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key`注册一个新的QCloudCOSTransferManagerService，但是默认的 QCloudCOSTransferManagerService 只能有一个。
@@ -248,7 +248,7 @@ QCloudCOSXMLService.defaultCOSXML().getService(getServiceReq);
 
 上传对象的接口需要用到签名来进行身份认证，发出的请求会自动向初始化时指定的遵循 QCloudSignatureProvider 协议的对象去请求签名。签名如何生成可以参考以下的 [生成签名](#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D) 部分。
 
->URL 所对应的对象在上传过程中是不能进行变更的，否则会导致出错。
+> !URL 所对应的对象在上传过程中是不能进行变更的，否则会导致出错。
 
 #### 示例
 
@@ -325,7 +325,7 @@ var error:NSError?;
     //这里是主动调用取消，并且产生 resumetData 的例子
 do {
     let resumedData = try uploadRequest.cancel(byProductingResumeData: &error);
-        var resumeUploadRequest:QCloudCOSXMLUploadObjectRequest<AnyObject>;
+        var resumeUploadRequest:QCloudCOSXMLUploadObjectRequest<AnyObject>?;
              resumeUploadRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init(request: resumedData as Data?);
              //生成的用于恢复上传的请求可以直接上传
     if resumeUploadRequest != nil {
@@ -340,7 +340,7 @@ do {
 
 #### QCloudCOSXMLUploadObjectRequest 参数说明
 
-| 参数名称                      | 说明                                                         | 类型                  | 必填 |
+| 参数名称                      | 说明                                                         | 类型                  | 是否必填 |
 | ----------------------------- | ------------------------------------------------------------ | --------------------- | ---- |
 | Object                        | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为`doc/picture.jpg`，详情请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | NSString *            | 是   |
 | bucket                        | 存储桶名，可在 [COS 控制台](https://console.cloud.tencent.com/cos5/bucket) 查看，格式为 &lt;BucketName-APPID&gt; ，例如`examplebucket-1250000000` | NSString *            | 是   |
@@ -475,7 +475,7 @@ SDK 中的请求需要用到签名，以确认访问的用户的身份，也保�
 
 虽然在本地提供了永久的 SecretId 和 SecretKey 来生成签名的接口，但请注意，将永久的 SecretId 和 SecretKey 存储在本地是非常危险的行为，容易造成泄露引起不必要的损失。因此基于安全性的考虑，建议您在服务器端实现签名的过程。
 
->强烈建议返回服务器时间作为签名的开始时间，用来避免由于用户手机本地时间偏差过大导致的签名不正确。
+> !强烈建议返回服务器时间作为签名的开始时间，用来避免由于用户手机本地时间偏差过大导致的签名不正确。
 
 推荐您在自己的签名服务器内接入腾讯云的 CAM（Cloud Access Manager，访问管理）来实现整个签名流程。
 
@@ -528,7 +528,7 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
 
 ### 在终端使用永久密钥生成签名（不推荐）
 
->我们不推荐您在终端使用永久密钥生成签名，该方式有泄密数据的风险。
+> !我们不推荐您在终端使用永久密钥生成签名，该方式有泄密数据的风险。
 
 示例代码如下：
 
@@ -665,7 +665,7 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
 
 ## 精简版 SDK 使用指南
 
-对于部分仅仅使用到上传和下载功能，并且对 SDK 体积要求较高的用户，我们提供了只有上传和下载功能的精简版 SDK，集成进去后的包增量只有完整版的一半。  
+对于部分仅仅使用到上传和下载功能，并且对 SDK 体积要求较高的用户，我们提供了只有上传和下载功能的精简版 SDK，集成后的包增量只有完整版的一半。  
 
 精简版 SDK 是通过 Cocoapods 的 Subspec 功能实现的，因此目前只支持通过 Cocoapods 集成的方式集成精简版 SDK。需要使用精简版的 SDK 只需要在 Podfile 中加入。
 
@@ -673,7 +673,7 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
 pod 'QCloudCOSXML/Transfer'
 ```
 
->对于 Mobile Line 的用户而言，只有在**没有使用** TACStorage 的情况下可以使用精简版的 SDK。与此同时，[Cocoapods](https://github.com/CocoaPods/Specs) 的官方源需要在**所有源的前面**（建议放在 Podfile 的第一行）。其它用户可忽略此说明。
+>!对于 Mobile Line 的用户而言，只有在**没有使用** TACStorage 的情况下可以使用精简版的 SDK。与此同时，[Cocoapods](https://github.com/CocoaPods/Specs) 的官方源需要在**所有源的前面**（建议放在 Podfile 的第一行）。其它用户可忽略此说明。
 
 对于精简版的 SDK ，没有 QCloudCOSXML.h 头文件，取而代之的是初始化时需要导入以下的头文件：
 
