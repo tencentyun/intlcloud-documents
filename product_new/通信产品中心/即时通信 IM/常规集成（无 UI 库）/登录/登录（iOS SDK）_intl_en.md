@@ -21,14 +21,10 @@ Users can normally send and receive messages only after they have logged in to t
  *  Authentication token
  */
 @property(nonatomic,retain) NSString* userSig;
-/**
- *  App Appid assigned by the OAuth authorization system
- */
-@property(nonatomic,retain) NSString* appidAt3rd;
+
 @end
 ```
 
-For self-owned accounts, the `appidAt3rd` field is the same as the `SDKAppID` field. For other fields, such as `UserID` and `UserSig`, enter the corresponding content.
 
 ```
 /**
@@ -60,8 +56,7 @@ TIMLoginParam * login_param = [[TIMLoginParam alloc ]init];
 login_param.identifier = @"iOS_001";
 //userSig User login credential
 login_param.userSig = @"usersig";
-//appidAt3rd Appid assigned by the OAuth authorization system for the app user. For private accounts, enter the same content as SDKAppID.
-login_param.appidAt3rd = @"123456";
+
 [[TIMManager sharedInstance] login: login_param succ:^(){
     NSLog(@"Login Succ");
 } fail:^(int code, NSString * err) {
