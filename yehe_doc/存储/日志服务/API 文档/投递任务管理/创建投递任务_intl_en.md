@@ -1,10 +1,10 @@
 ## Feature
 
-This API (CreateShippingTask) is used to create a shipping task. When using this API, you need to manually grant CLS the permission to write to the specified bucket.
+This API is used to create a shipping task. When using this API, you need to manually grant CLS the permission to write to the specified bucket.
 
 ## Request
 
-#### Request sample
+#### Request samples
 
 ```plaintext
 POST /shipper HTTP/1.1
@@ -44,7 +44,7 @@ POST /shipper
 
 #### Request headers
 
-No special request header is used except for common headers.
+No special request header is used except for the common header.
 
 #### Request parameters
 
@@ -56,25 +56,24 @@ No special request header is used except for common headers.
 | shipper_name | string | body | Yes | Shipping rule name |
 | interval     | int    | body | No       | Shipping interval in seconds. Default: 300. Valid values: [300, 360, 420, 480, 540, 600, 660, 720, 780, 840, 900] (equal to integer minutes) |
 | max_size | int | body | No | The maximum size of a file to be shipped (in MB). Default is 100 MB. Value range: 100-256 |
-| custom_uin | long | body | No | UIN of the customer to which the shipping task to be created belongs, which is retained since it is compatible with the old API. |
 | partition | string | body | No | Rules for partitioning logs to be shipped. `Strftime` can be used to define the time format. |
 | compress | object | body | No | Compression configuration of logs to be shipped |
 | content | object | body | No | Format configuration of logs to be shipped |
 
-The `compress` format is as follows:
+compress is composed as follows:
 
 | Field Name | Type | Required | Description |
 | ------ | ------ | -------- | ------------------------------------------ |
 | format | string | Yes | Compression format, including `gzip`, `lzop` and `none` (do not compress). |
 
-The `content` format is as follows:
+content is composed as follows:
 
 | Field Name | Type | Required | Description |
 | -------- | ------ | -------- | --------------------------- |
 | format | string | Yes | Content format, which supports `json` and `csv`. |
 | csv_info | object | No | Required when the content format is `csv` |
 
-The `csv_info` format is as follows:
+csv_info is composed as follows:
 
 | Field Name | Type | Required | Description |
 | ------------------ | ------------- | -------- | ------------------------------------------------ |
@@ -99,7 +98,7 @@ Content-Length: 0
 
 #### Response headers
 
-No special response header is used except for common response headers.
+No special response header is used except for the common response header.
 
 #### Response parameters
 
