@@ -2,8 +2,8 @@
 本文以使用 [云函数](https://intl.cloud.tencent.com/document/product/583) 开发一个短信验证码登录注册服务为例，帮助您了解如何实现短信验证码功能。
 
 ## 准备工作
-- 已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号。
-- 已 [购买](https://intl.cloud.tencent.com/document/product/382/35450) 短信套餐包。
+- 已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 企业实名认证。
+- 已 购买 短信套餐包。
 - 准备短信签名归属方资质证明文件。
  本文以使用企业营业执照作为资质证明文件为例。
 - 了解短信正文内容审核规范。
@@ -28,7 +28,7 @@
 
 1. 登录 [短信控制台](https://console.cloud.tencent.com/smsv2)。
 2. 在左侧导航栏选择【国内短信】>【签名管理】，单击【创建签名】。
-3. 结合实际情况和 短信签名审核标准 设置以下参数：
+3. 结合实际情况 设置以下参数：
  <table>
      <tr>
          <th width="20%">参数</th>  
@@ -52,10 +52,9 @@
      </tr> 
 	 <tr>      
        <td>证明上传</td>   
-	<td>-</td>    
+	<td><img src="https://main.qcloudimg.com/raw/48ad431a784461465054160737b9b166.png" width=400/></td>    
      </tr> 
 </table>
-
 3. 单击【确定】。
  等待签名审核，当状态变为【已通过】时，短信签名才可用。
 
@@ -64,7 +63,7 @@
 ### 步骤1.2：创建正文模板
 1. 登录 [短信控制台](https://console.cloud.tencent.com/smsv2)。
 2. 在左侧导航栏选择【国内短信】>【正文模板管理】，单击【创建正文模板】。
-3. 结合实际情况和 短信正文模板审核标准 设置以下参数：
+3. 结合实际情况 设置以下参数：
  <table>
      <tr>
          <th width="20%">参数</th>  
@@ -88,10 +87,11 @@
 
 <span id="Step2"></span>
 ## 步骤2：设置短信发送频率限制（可选）
->个人认证用户不支持修改频率限制，如需使用该功能，请将 “个人认证” 变更为 “企业认证”。
+>!个人认证用户不支持修改频率限制，如需使用该功能，请将 “个人认证” 变更为 “企业认证”。
 
-为了保障业务和通道安全，减少业务被刷后的经济损失，建议 [设置发送频率限制](https://intl.cloud.tencent.com/document/product/382/35469)。另外，您也可以结合使用 腾讯云验证码 以便最大程度地保护业务安全。
+为了保障业务和通道安全，减少业务被刷后的经济损失，建议 [设置发送频率限制](https://intl.cloud.tencent.com/document/product/382/35469#.E8.AE.BE.E7.BD.AE.E5.8F.91.E9.80.81.E9.A2.91.E7.8E.87.E9.99.90.E5.88.B6)。另外，您也可以结合使用腾讯云验证码 以便最大程度地保护业务安全。
 本文以短信的默认频率限制策略为例。
+
 - 同一号码同一内容30秒内最多发送1条。
 - 同一手机号一个自然日最多发送10条。
 
@@ -100,8 +100,8 @@
 默认情况下，云函数部署在公共网络中，只可以访问公网。如果开发者需要访问腾讯云的 TencentDB 等资源，需要建立私有网络来确保数据安全及连接安全。
 
 1. 按需 [规划网络](https://intl.cloud.tencent.com/document/product/215/31795)。
-2. 创建私有网络，具体操作请参见 [创建私有网络](https://intl.cloud.tencent.com/document/product/215/31805)。
- >私有网络和子网的 CIDR 创建后不可修改。
+2. 创建私有网络，具体操作请参见 [创建 VPC](https://intl.cloud.tencent.com/document/product/215/31805)。
+ >!私有网络和子网的 CIDR 创建后不可修改。
  >
  <table>
      <tr>
@@ -245,45 +245,11 @@
 2. 部署函数并配置触发方式为【API网关触发器】，具体操作请参见 [部署函数](https://intl.cloud.tencent.com/document/product/583/32742)。
 
 <span id="Step6"></span>
-## 步骤6：配置 NAT 网关
-部署在 VPC 中的云函数默认隔离外网。若想使云函数同时具备内网访问和外网访问能力，可通过以下两种方式实现：
-- 通过配置云函数公网访问能力，且公网访问可控制出口地址唯一。
-- 通过 VPC 添加 NAT 网关，请参考 [私有网络中配置 NAT](https://intl.cloud.tencent.com/document/product/583/19704)。
+## 步骤6：启用公网访问配置（可选）
+- 2020年4月29日前，部署在 VPC 中的云函数默认隔离外网。若需使云函数同时具备内网访问和外网访问能力，可通过启用公网配置方式实现。
+ 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，选择【函数服务】，在云函数列表中单击目标函数名进入函数配置页。单击【编辑】，勾选【公网访问】并单击【保存】保存配置。
+- 2020年4月29日及以后，新部署的云函数默认已启用公网访问，无需额外操作。
 
-本文以添加 NAT 网关为例。
-
-1. 新建 NAT 网关，具体操作请参考 [私有网络中配置 NAT](https://intl.cloud.tencent.com/document/product/583/19704)。
- >
- >- NAT 网关要和函数、VPC 部署在同一地域。
- >- NAT 网关的所属网络需要选择函数所在的 VPC。
- >
-  <table>
-     <tr>
-         <th width="20%">参数</th>  
-         <th>取值样例</th>  
-     </tr>
-	 <tr>      
-        <td>网关名称</td>   
-	     <td>Demo NAT</td>   
-     </tr> 
-	 <tr>      
-        <td>所属网络</td>   
-	     <td>Demo VPC</td>   
-     </tr> 
-	 <tr>      
-        <td>网关类型</td>   
-	     <td>小型</td>   
-     </tr> 
-	 <tr>      
-        <td>出带宽上限</td>   
-	     <td>100Mbps</td>   
-     </tr> 
-	 <tr>      
-        <td>弹性 IP</td>   
-	     <td>新建弹性 IP</td>   
-     </tr> 
-</table>
-2. 根据实际需求创建路由策略，具体操作请参考 [私有网络中配置 NAT](https://intl.cloud.tencent.com/document/product/583/19704)。
 
 <span id="Step7"></span>
 ## 步骤7：部署短信 SDK

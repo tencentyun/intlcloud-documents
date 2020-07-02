@@ -342,10 +342,10 @@ TIM_DECL int TIMMsgGetMsgList(const char* conv_id, enum TIMConvType conv_type, c
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->从`kTIMMsgGetMsgListParamLastMsg`指定的消息开始获取本地消息列表，kTIMMsgGetMsgListParamCount  为要获取的消息数目。若指定`kTIMMsgGetMsgListParamIsRamble`为 true 则本地消息获取不够指定数目时，则会去获取云端漫游消息。kTIMMsgGetMsgListParamIsForward 指定向前获取还是向后获取。
+>从`kTIMMsgGetMsgListParamLastMsg`指定的消息开始获取本地消息列表，kTIMMsgGetMsgListParamCount  为要获取的消息数目。kTIMMsgGetMsgListParamLastMsg 可以不指定，不指定时表示以会话最新的消息为`LastMsg`。若指定`kTIMMsgGetMsgListParamIsRamble`为 true 则本地消息获取不够指定数目时，会去获取云端漫游消息。`kTIMMsgGetMsgListParamIsForward`为 true 时表示获取比`kTIMMsgGetMsgListParamLastMsg`新的消息，为 false 时表示获取比`kTIMMsgGetMsgListParamLastMsg`旧的消息。
 
 
-**示例：给 C2C 会话Windows-02、kTIMConv_C2C 导入消息列表**
+**示例：获取 C2C 会话`Windows-02`消息列表**
 
 ```c
 Json::Value json_msg(Json::objectValue); // 构造 Message
