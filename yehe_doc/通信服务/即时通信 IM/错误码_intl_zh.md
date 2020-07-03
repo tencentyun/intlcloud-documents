@@ -286,9 +286,19 @@
 | 90010           | JSON 格式请求包不符合消息格式描述，请参考 [TIMMsgElement 对象](https://intl.cloud.tencent.com/document/product/1047/33527) 的定义。 |
 | 90011           | 批量发消息目标帐号超过500，请减少 To_Account 中目标帐号数量。 |
 | 90012           | To_Account 没有注册或不存在，请确认 To_Account 是否导入即时通信 IM 或者是否拼写错误。 |
+| 90018           | 请求的帐号数量超过限制。 |
+| 90022           | 推送条件中的 TagsOr 和 TagsAnd 有重复标签。 |
+| 90024           | 推送过于频繁，每两次推送间隔必须大于1秒。 |
 | 90026           | 消息离线存储时间错误（最多不能超过7天）。                    |
+| 90030           | 属性长度为0或大于50。   |
 | 90031           | JSON 格式请求包体中 SyncOtherMachine 字段不是 Integer 类型。   |
+| 90032           | 推送条件中的 tag 数量大于10，或添加标签请求中的标签数量大于10。   |
+| 90033           | 属性无效。   |
+| 90034           | 标签长度大于50。   |
+| 90040           | 推送条件中其中1个 tag 为空。        |
 | 90044           | JSON 格式请求包体中 MsgLifeTime 字段不是 Integer 类型。        |
+| 90045           | 未开通全员推送功能。        |
+| 90047           | 推送次数超过当天限额（默认为100次）。        |
 | 90048           | 请求的用户帐号不存在。                                       |
 | 90054           | 撤回请求中的 MsgKey 不合法。                                   |
 | 90994           | 服务内部错误，请重试。                                       |
@@ -424,4 +434,4 @@
 | 6258   | SSO cookie 无效。                                      |
 
 
->如问题仍无法解决，您可以联系 [智能客服](https://cloud.tencent.com/act/event/smarty-service) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 提供使用接口、错误码以及错误信息给技术支持人员解决。
+>如问题仍无法解决，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 提供使用接口、错误码以及错误信息给技术支持人员解决。
