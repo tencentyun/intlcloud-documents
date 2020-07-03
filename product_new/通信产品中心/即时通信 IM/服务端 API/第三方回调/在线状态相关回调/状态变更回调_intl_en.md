@@ -1,53 +1,62 @@
 ## Feature Description
 
-The app backend can use this callback to monitor the login or logout behavior of users in real time, including:
-- User login (TCP connection establishment)
-- User logout or network disconnection (TCP connection disconnection)
-- App heartbeat timeout (app is abnormally killed in the backend or crashes)
+The app backend can use this callback to monitor the login or logout behaviors of users in real time, including:
+- User login (a TCP connection is established)
+- User logout or network disconnection (a TCP connection is disconnected)
+- App heartbeat timeout (the app is unexpectedly killed or crashes)
 
 ## Precautions
 
-- To enable this callback, you must configure the callback URL and enable the corresponding switch for this callback. For more information on the configuration method, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
+- To enable this callback, you must configure the callback URL and enable the corresponding protocol for this callback. For more information on the configuration method, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 - Callback direction: the IM backend initiates an HTTP POST request to the app backend.
 - After receiving the callback request, the app backend must check whether the SDKAppID contained in the request URL is the SDKAppID of the app.
-- For more information on other security considerations, see [Third-Party Callback Overview: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354).
- 
+- For more security considerations, see [Third-Party Callback Overview: Security Considerations](https://intl.cloud.tencent.com/document/product/1047/34354).
 
-## Trigger Scenarios
+## Callback Trigger Scenarios
 
 - A user initiates a login request through the client.
 - A user initiates a logout request through the client.
-- The backend process is killed on the client, or the CVM detects that the client is disconnected from the network.
-- The client experiences a heartbeat timeout, including client crash and heartbeat timeout detected by the CVM 400 seconds after the network is disconnected.
+- A user actively kills the client process, the process is killed by the operating system of the mobile phone after the user switches the process to the background, or the process crashes and exits unexpectedly. When detecting that the client is disconnected from the network, the CVM instance triggers the network disconnection callback.
+- The client heartbeat times out, for example, because the network is disconnected or the network is completely unavailable. When detecting that the client heartbeat has timed out, the CVM instance triggers the network disconnection callback. The heartbeat timeout interval is 400 seconds.
 
+## Real-Time Callbacks
+### Android, iOS, and PC
+In most cases, the IM CVM instance can detect the user status change and trigger a callback in real time. For example:
+- When a user logs in, the IM CVM instance triggers the Login and Register callbacks.
+- When a user logs out, the IM CVM instance triggers the Logout and Unregister callbacks.
+- When a user kills the client process or switches the process to the backend, or the client process is killed by the operating system of the mobile phone, the IM CVM instance triggers the Disconnect and LinkClose callbacks.
 
-## Trigger Conditions
+In the following special case, the IM CVM instance detects the status change only after the 400-second heartbeat timeout interval expires:
+When the network is completely unavailable and the client cannot even send FIN or RST packets over TCP, the IM CVM instance triggers the Disconnect and TimeOut callbacks after the 400-second heartbeat timeout interval expires. Common scenarios include when the user disconnects the client from the network (for example, by enabling the airplane mode on the mobile phone) or the user enters a tunnel without network signals.
 
-This callback occurs after the IM CVM receives a TCP connection establishment or disconnection packet from the client or fails to receive successive heartbeat packets.
+### Web
+When a user logs in to the web app, the IM CVM instance can detect the login attempt and trigger a callback in real time.
+When the user network is unavailable or the user directly closes the webpage, the IM CVM instance can trigger a callback only after the 400-second heartbeat timeout interval expires.
+
 
 ## API Description
-### Example request URL
+### Request URL example
 
-In the following example, the callback URL configured for the app is `https://www.example.com`.
+In the following example, the callback URL configured in the app is `https://www.example.com`.
 **Example:**
 
 ```
 https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&contenttype=json&ClientIP=$ClientIP&OptPlatform=$OptPlatform
 ```
 
-### Request parameters
+### Parameters
 
 | Parameter | Description |
 | --- | --- |
-| https | The request protocol is HTTPS, and the request method is POST. |
-| www.example.com | The callback URL. |
-| SdkAppid | The SDKAppID assigned by the IM console when an application is created. |
-| CallbackCommand | This parameter has a fixed value of State.StateChange. |
-| contenttype | The value is fixedly set to JSON. |
-| ClientIP | The client IP address, such as 127.0.0.1. |
-| OptPlatform | The client platform. For more information on the value, see the OptPlatform parameter in [Third-Party Callback Overview: Callback Protocol](https://intl.cloud.tencent.com/document/product/1047/34354). |
+| https | Specifies that the request protocol is HTTPS and the request method is POST. |
+| www.example.com | Callback URL |
+| SdkAppid | SDKAppID assigned in the IM console when the app is created |
+| CallbackCommand | Fixed value: State.StateChange |
+| contenttype | Fixed value: JSON |
+| ClientIP | IP address of the client, such as 127.0.0.1 |
+| OptPlatform | Platform of the client. For more information on possible values, see the parameter description of OptPlatform in [Third-Party Callback Overview: Callback Protocols](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
-### Example request packet
+### Sample request packet
 
 ```
 {
@@ -64,17 +73,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 | Field | Type | Description |
 | --- | --- | --- |
-| CallbackCommand | String | The callback command. |
-| Info | Object | The user login or logout information. |
-| Action | String | The user login or logout behavior. Login indicates that a TCP connection is established, Logout indicates that the TCP connection is disconnected, and Disconnect indicates that the network is disconnected. |
-| To_Account | String | The UserID of a user. |
-| Reason | String | The reason for triggering user login or logout.<ul style="margin:0;"><li>Login reason: Register, which indicates that a TCP connection is established with the app.</li><li>Logout reason: Unregister, which indicates that the app user deregisters the account and disconnects the TCP connection.</li><li>Disconnect reason: <ul style="margin:0;"><li>LinkClose: IM detects that the TCP connection with the app is disconnected, for example, the app is killed, or the client sends a TCP FIN or RST packet. </li><li>TimeOut: IM detects that the app heartbeat packet times out and regards that the TCP connection is disconnected. The heartbeat timeout time is 400s. For example, the client network is disconnected, and the client does not send the TCP FIN or RST packet and cannot send heartbeat packets. </li></ul></li></ul>|
+| CallbackCommand | String | Callback command |
+| Info | Object | User login or logout information |
+| Action | String | User login or logout behavior. Login: a TCP connection is established. Logout: the TCP connection is disconnected. Disconnect: the network is disconnected. |
+| To_Account | String | UserID of a user |
+| Reason | String | Reason for triggering user login or logout:<br>Login reason: Register, which indicates that a TCP connection is established with the app.<br>Logout reason: Unregister, which indicates that the app user deregisters the account and disconnects the TCP connection.<br>Disconnect reason: LinkClose, which indicates that IM detects that the TCP connection with the app was lost, such as when the app is killed or the client sends a TCP FIN or RST packet. TimeOut: IM detects that the app heartbeat packet times out and determines that the TCP connection is lost. For example, when the client network is unexpectedly disconnected, the client does not send the TCP FIN or RST packet and cannot send heartbeat packets. The heartbeat timeout interval is 400 seconds.<br>For the callback reasons of specific scenarios, see [Trigger Scenarios](https://intl.cloud.tencent.com/document/product/1047/34357). |
 
-### Example response packet
+### Sample response packet
 
 ```
 {
-    "ActionStatus":"OK",
+    "ActionStatus": "OK",
     "ErrorCode": 0,
     "ErrorInfo": ""
 }
@@ -82,11 +91,11 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ### Response packet fields
 
-| Field | Type | Property | Description |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| ActionStatus | String | Required | The request processing result. OK: succeeded. FAIL: failed. |
-| ErrorCode | Integer | Required | The error code. 0: succeeded. 1: failed. |
-| ErrorInfo | String | Required | The error information. |
+| ActionStatus | String | Yes | Request processing result. OK: succeeded. FAIL: failed. |
+| ErrorCode | Integer | Yes | Error code. 0: the app backend processing was successful. 1: the app backend processing failed. |
+| ErrorInfo | String | Yes | Error information |
 
 ## References
 
