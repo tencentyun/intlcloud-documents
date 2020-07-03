@@ -1,36 +1,85 @@
 ## Description
 
-This document describes common request headers that may be used in API requests. The headers mentioned below will not be addressed again in related API documents.
+This document describes the common request headers that may be used in API requests. The headers mentioned below will not be addressed again in related API documents.
 
 ## Request Headers
 
-| Header Name | Description | Type | Required |
-| -------------------- | ------------------------------------------------------------ | ------- | ------------------------------------------------------------ |
-| Authorization | Carries the authentication information, i.e., signing information, used to verify the validity of a request. <br>This header is optional for public-read objects or if the authentication information is passed in through request parameters. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) | string | Yes，except in the scenarios described above. |
-| Content-Length | HTTP request length in bytes as defined in RFC 2616 | integer | No. <br>This header is required for `PUT` and `POST` requests (except for `PUT Object` requests where the `Transfer-Encoding` request header is specified) |
-| Content-Type | HTTP request content type (MIME) as defined in RFC 2616. <br>For example, `application/xml`, `image/jpeg` | string | No. <br>This header is required for `PUT` and `POST` requests with a request body |
-| Content-MD5 | Base64-encoded MD5 hash value of the request body content as defined in RFC 1864. This value is a 24 character string, such as `ZzD3iDJdrMAAb00lgLLeig==`, and is used to verify whether the request body experienced any changes during transfer. <br>For `PUT` and `POST` requests with a request body (except for `POST Object` requests), we highly recommend you carry this header | string | No |
-| Date | Current time in GMT format as defined in RFC 1123, such as `Wed, 29 May 2019 04:10:12 GMT` | string | No |
-| Host | Requested host in the format: `<BucketName-APPID>.cos.<Region>.myqcloud.com` | string  | Yes |
-| x-cos-security-token | The security token field that needs to be passed in when temporary security credentials are used. For more information, see [Temporary Security Credentials](https://intl.cloud.tencent.com/document/product/436/30613) | string | No. <br>This header is required when a temporary key is used and the authentication information is carried through `Authorization` |
 
-## Server-side encryption headers
+<table>
+<thead>
+<tr>
+<th width="15%">Header Name</th>
+<th width="40%">Description</th>
+<th width="10%">Type</th>
+<th width="35%">Required</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Authorization</td>
+<td>Contains authentication information as part of the signature that authenticates a request<br>Not required if the object is public read, or if the authentication information is passed using request parameters. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/7778">Request Signature</a>.</td>
+<td>string</td>
+<td>Yes<br>Optional if it is used for a public-read object, or the authentication information is passed using request parameters</td>
+</tr>
+<tr>
+<td nowrap="nowrap">Content-Length</td>
+<td>The length of the content of an HTTP request in bytes defined in RFC 2616</td>
+<td>integer</td>
+<td><li>Required for PUT and POST requests (excluding PUT Object requests with Transfer-Encoding specified)<br><li>Cannot be used for GET, HEAD, DELETE or OPTIONS requests</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>The content type (MIME) of an HTTP request as defined in RFC 2616<br>Example: <code>application/xml</code> or <code>image/jpeg</code></td>
+<td>string</td>
+<td><li>Required for PUT and POST requests<br><li>Cannot be used for GET, HEAD, DELETE or OPTION requests</td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td>The Base64-encoded 16-byte MD5 hash in binary format of request body content as defined in RFC 1864. It is used as an integrity check to verify whether the request body has changed during transit. The final value should be 24 characters in length. Please write code using the correct method and parameters, for example <code>ZzD3iDJdrMAAb00lgLLeig==</code>.</td>
+<td>string</td>
+<td><li>Required for PUT and POST requests (except POST Object requests)<br><li>Cannot be used for GET, HEAD, DELETE or OPTION requests</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>Current time in GMT as defined in RFC 1123, such as <code>Wed, 29 May 2019 04:10:12 GMT</code></td>
+<td>string</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>Request CVM in the format <code>&lt;BucketName-APPID&gt;.cos.&lt;Region&gt;.myqcloud.com</code></td>
+<td>string</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td nowrap="nowrap">x-cos-security-token</td>
+<td>The security token field required when using temporary security credentials. See <a href="https://intl.cloud.tencent.com/document/product/436/30613">Temporary security credentials</a> under Creating Request Overview.</td>
+<td nowrap="nowrap">string</td>
+<td>No<br>Required if temporary key is used and authentication information is passed using the `Authorization` header</td>
+</tr>
+</tbody></table>
 
-For APIs that support server-side encryption (SSE), the following request headers; they are grouped by encryption method. Please refer to the documentation of the API in question to determine whether SSE is applicable. Whether the following headers are required only applies to scenarios where SSE is used. If you request an API that does not support or use SSE, the following headers do not need to be carried. For more information, see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
+
+
+
+
+
+## Server-Side Encryption Headers
+
+For APIs that support server-side encryption (SSE), the following request headers apply based on the different encryption methods. See API-specific documents to find whether they are applicable. These headers are required only for SSE-based scenarios, but not for cases where the request doesn’t not support SSE APIs or not use SSE. For more information, see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
 
 #### SSE-COS
 
 | Header Name | Description | Type | Required |
 | ---------------------------- | -------------------------------------------- | ------ | ------------------------------------------------------------ |
-| x-cos-server-side-encryption | Server-side encryption algorithm, currently only AES256 is supported | string | Required when you upload or copy objects (including simple upload/copy and multipart upload/copy). This header cannot be specified when you download objects |
+| x-cos-server-side-encryption | Server-side encryption algorithm; set to AES256 if using SSE-COS | string | Required when you upload or copy objects (including simple upload/copy and multipart upload/copy). This header cannot be specified when you download objects. |
 
 #### SSE-KMS
 
 | Header Name | Description | Type | Required |
 | ------------------------------------------- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------ |
-| x-cos-server-side-encryption | Server-side encryption algorithm, currently only AES256 is supported | string | Required when you upload or copy objects (including simple upload/copy and multipart upload/copy). This header cannot be specified when you download objects |
-| x-cos-server-side-encryption-cos-kms-key-id | When the `x-cos-server-side-encryption` value is `cos/kms`, this header is used to specify the customer master key (CMK) for KMS. If not specified, the default CMK created by COS is used. For more details, see [SSE-KMS Encryption] (https://intl.cloud.tencent.com/document/product/436/18145) | string | No |
-| x-cos-server-side-encryption-context | When the `x-cos-server-side-encryption` value is `cos/kms`, this header is used to specify the encryption context; the value is a Base64-encoded string in JSON format of the key-value pairs for the encryption context, such as `eyJhIjoiYXNkZmEiLCJiIjoiMTIzMzIxIn0=` | string | No |
+| x-cos-server-side-encryption | Server-side encryption algorithm; set to cos/kms if using SSE-KMS | string | Required when you upload or copy objects (including simple upload/copy and multipart upload/copy). This header cannot be specified when you download objects |
+| x-cos-server-side-encryption-cos-kms-key-id | Specifies the KMS customer master key (CMK) when the `x-cos-server-side-encryption` value is cos/kms. If not specified, the default CMK created by COS is used. For more information, see [SSE-KMS Encryption](https://intl.cloud.tencent.com/document/product/436/18145#sse-kms-.E5.8A.A0.E5.AF.86) | string | No |
+| x-cos-server-side-encryption-context | Specifies the encryption context when the `x-cos-server-side-encryption` value is cos/kms. This value is a Base64-encoded string holding JSON with the key-value pairs for the encryption context.<br> For example, `eyJhIjoiYXNkZmEiLCJiIjoiMTIzMzIxIn0=` | string | No |
 
 
 
@@ -38,6 +87,6 @@ For APIs that support server-side encryption (SSE), the following request header
 
 | Header Name | Description | Type | Required |
 | ----------------------------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm, currently only AES256 is supported | string | Yes |
+| x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm; currently only AES256 is supported | string | Yes |
 | x-cos-server-side-encryption-customer-key | Base64-encoded server-side encryption key. <br>For example, `MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=` | string | Yes       |
-| x-cos-server-side-encryption-customer-key-MD5  | Base64-encoded MD5 hash of the server-side encryption key. <br>For example, `U5L61r7jcwdNvT7frmUG8g==` | string | Yes       |
+| x-cos-server-side-encryption-customer-key-MD5   | Base64-encoded MD5 hash of the server-side encryption key. <br>For example, `U5L61r7jcwdNvT7frmUG8g==` | string | Yes       |

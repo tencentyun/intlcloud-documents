@@ -1,23 +1,22 @@
-## Feature description
+## Feature
 
-This API is used to upload a local object to a specified bucket. To request this API, you must have write permission for the bucket.
+This API is used to upload a local object to the specified bucket. To make this request, you need to have the permission to write to the bucket.
 
 >
->
-> - The PUT Object API supports the upload of files of up to 5 GB in size. If you need to upload files greater than 5 GB, please use the [Multipart Upload] (https://intl.cloud.tencent.com/document/product/436/14112) API.
-> - If the `Content-Length` value in the request header is smaller than the length of the data in the actual request body, COS will still successfully create a file, but the object size will be equal to the size defined in `Content-Length`, and the remaining data will be discarded.
-> - If you upload an object with the same name as an object that already exists in the bucket and versioning is not enabled, the old object will be overwritten by the new one and `200 OK` will be returned upon successful upload.
+> - This API supports uploading up to 5 GB files. To upload larger files, please use the [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) API.
+> - If the `Content-Length` is less than the actual length of request body, COS will create an object with the size as specified in `Content-Length`, but with the excessive data discarded.
+> - If you upload an object whose name already exists in an bucket without versioning enabled, the old object will be overwritten by the new one and `200 OK` will be returned upon success.
 
 #### Versioning
 
-- If versioning is enabled for the bucket, COS will automatically generate a unique version ID for the object to be uploaded. It returns this ID in the response using the `x-cos-version-id` response header.
+- If versioning is enabled for the bucket, COS will automatically generate a unique version ID for new object, and return this ID in the response using the `x-cos-version-id` response header.
 - If versioning is suspended for the bucket, COS will always use `null` as the version ID of the object in the bucket and will not return the `x-cos-version-id` response header.
 
 ## Request
 
-#### Sample request
+#### Request samples
 
-```shell
+```plaintext
 PUT /<ObjectKey> HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -33,37 +32,38 @@ Authorization: Auth String
 
 #### Request parameters
 
-This API does not use any request parameters.
+This API does not use any request parameter.
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
+| Name                                                         | Description                                                         | Type   | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Cache-Control | Cache directives as defined in RFC 2616, which will be stored in the object metadata | string | No |
-| Content-Disposition | File name as defined in RFC 2616, which will be stored in the object metadata | string | No |
-| Content-Encoding | Encoding format as defined in RFC 2616, which will be stored in the object metadata | string | No |
-| Expires | The cache expiration time as defined in RFC 2616, which will be saved in the object metadata | string | No |
-| Transfer-Encoding | If you want to upload the object in parts, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format defined in RFC 2616, and you cannot specify the `Content-Length` request header | string | No |
-| x-cos-meta-\* | Contains user-defined metadata and header suffixes, which will be stored in the object metadata. Maximum size: 2 KB. <br>**Note:** User-defined metadata can contain underscores (_), whereas the header suffixes of user-defined metadata can only contain minus signs (-), not underscores | string | No |
-| x-cos-storage-class | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. Default value: `STANDARD`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum | No |
+| Cache-Control | Cache directives as defined in RFC 2616, which are stored as part of object metadata | String | No |
+| Content-Disposition | File name as defined in RFC 2616, which is stored as part of object metadata | String | No |
+| Content-Encoding | Encoding format as defined in RFC 2616, which is stored as part of object metadata | String | No |
+| Content-Type                                                 | HTTP request content type (MIME) as defined in RFC 2616 of the object to upload, and stored as part of object metadata<br>Example: `text/html` or `image/jpeg` | String | Yes       |
+| Expires | The cache expiration time as defined in RFC 2616, which is stored as part of object metadata | String | No |
+| Transfer-Encoding | To upload data in chunks, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format as defined in RFC 2616, while you cannot use the `Content-Length` request header. | String | No |
+| x-cos-meta-\* | Includes custom metadata and its header suffix, which are stored as part of object metadata. Maximum size: 2 KB.<br>**Note:** custom metadata can contain underscores (_), whereas its header suffix can only contain minus signs (-). | String | No |
+| x-cos-storage-class | Object storage class. Enumerated values: `STANDARD` (default), `STANDARD_IA` and `ARCHIVE`. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) |  Enum   | No       |
 
-**ACL-Related Headers**
+**ACL-related headers**
 
-You can configure access permissions for the object by specifying the following request headers during object upload:
+You can configure object access permissions when uploading an object using the following request headers:
 
-| Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
+| Name                                                         | Description                                                         | Type   | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the access control list (ACL) attribute of the object. For enumerated values such as `default`, `private`, and `public-read`, see the preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default` <br>**Note:** Currently, one ACL supports up to 1,000 entries. If you do not need access control for the object, configure this parameter as `default` or leave it blank, and the object will inherit the permissions of its bucket | Enum | No |
-| x-cos-grant-read | Grants a user read permission for an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-read-acp | Grants a user read permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-write-acp | Grants a user write permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
-| x-cos-grant-full-control | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-acl | Defines the access control list (ACL) attributes of the object. For enumerated values such as `default`, `private`, and `public-read`, see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).<br>**Note:** currently, COS supports up to 1,000 bucket ACL rules. If you do not need an object ACL, set this parameter to `default` (inherit bucket permissions), or leave it empty. | Enum | No |
+| x-cos-grant-read | Grants permission to read the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-read-acp | Grants permission to read the object ACLs; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-write-acp | Grants permission to write to the object ACLs; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-full-control | Grants full permission to operate on the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
 
-**Headers Related to Server-Side Encryption (SSE)**
+**Headers related to server-side encryption (SSE)**
 
-Server-side encryption can be used during object upload. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+For information about uploading objects using SSE encryption, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Request body
 
@@ -75,7 +75,7 @@ The request body of this API request is the object (file) content.
 
 In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-**Versioning-Related Headers**
+**Versioning-related headers**
 
 If the object is uploaded to a versioning-enabled bucket, the following response headers will be returned:
 
@@ -83,9 +83,9 @@ If the object is uploaded to a versioning-enabled bucket, the following response
 | ---------------- | ------------- | ------ |
 | x-cos-version-id | Object version ID | string |
 
-**Headers Related to Server-Side Encryption (SSE)**
+**Headers related to server-side encryption (SSE)**
 
-If server-side encryption is used during object upload, this API will return the headers used specifically for server-side encryption. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If you upload an object using SSE encryption, this API will return SSE headers. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
@@ -93,15 +93,15 @@ The response body of this API is empty.
 
 #### Error codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use Cases
+## Examples
 
 #### Example 1. Simple example (versioning not enabled)
 
 #### Request
 
-```shell
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:35:05 GMT
@@ -116,7 +116,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Length: 0
 Connection: close
@@ -131,7 +131,7 @@ x-cos-request-id: NWU5MDNkYzlfNjRiODJhMDlfMzFmYzhfMTFm****
 
 #### Request
 
-```shell
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:35:28 GMT
@@ -150,7 +150,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Length: 0
 Connection: close
@@ -165,7 +165,7 @@ x-cos-request-id: NWU5MDNkZTBfZjhjMDBiMDlfNzdmN18xMGFi****
 
 #### Request
 
-```shell
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:35:49 GMT
@@ -181,7 +181,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Length: 0
 Connection: close
@@ -197,7 +197,7 @@ x-cos-server-side-encryption: AES256
 
 #### Request
 
-```shell
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:36:00 GMT
@@ -215,7 +215,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Length: 0
 Connection: close
@@ -232,7 +232,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 
 #### Request
 
-```shell
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:36:12 GMT
@@ -250,7 +250,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Length: 0
 Connection: close
@@ -263,11 +263,11 @@ x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 ```
 
-#### Example 6: Enabling versioning
+#### Example 6. Enabling versioning
 
 #### Request
 
-```shell
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:36:34 GMT
@@ -282,7 +282,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Length: 0
 Connection: close
@@ -294,11 +294,11 @@ x-cos-request-id: NWU5MDNlMjNfMThiODJhMDlfNGQ1OF8xMWY4****
 x-cos-version-id: MTg0NDUxNTc1NjIzMTQ1MDAwODg
 ```
 
-#### Example 7：Suspending Versioning
+#### Example 7. Suspending versioning
 
 #### Request
 
-```shell
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:37:07 GMT
@@ -313,7 +313,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Length: 0
 Connection: close
@@ -324,13 +324,13 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNlNDNfZTZjNzJhMDlfMmYwMDlfMTVi****
 ```
 
-#### Example 7. Using chunked transfer encoding for multipart transfer
+#### Example 7. Using chunked transfer encoding to transfer data in chunks
 
-The request in this example uses `Transfer-Encoding: chunked` encoding. This use case describes the raw data in the HTTP request. During use, calling methods vary depending on languages and libraries. Please refer to language- and library-related documents.
+This example request uses chunked transfer encoding, and describes raw data in the HTTP request. The API calling method varies depending on languages and libraries. For more information, see the language- and library-specific documentation.
 
 #### Request
 
-```shell
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Thu, 08 Aug 2019 09:15:29 GMT
@@ -352,7 +352,7 @@ b
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Length: 0
 Connection: close

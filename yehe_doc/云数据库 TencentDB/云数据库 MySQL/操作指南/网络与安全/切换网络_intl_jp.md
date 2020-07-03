@@ -10,7 +10,7 @@ Tencent Cloudネットワークは[基幹ネットワークとVirtual Private Cl
 - 宛先VPCはインスタンスの所属地域及びAvailability Zone内のVPCネットワークとサブネットのみを選択できます。
 - 基幹ネットワークをVirtual Private Cloudに切り替えた後は不可逆となり、CDBがVirtual Private Cloudに切り替わった後、他のVirtual Private Cloud及び基幹ネットワークのクラウドサービスと相互に接続されません。
 
-##　操作手順
+## 操作手順
 1. [MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、インスタンスリストでインスタンス名又は「操作」列の【管理】をクリックすると、インスタンスの詳細ページに進みます。
 2. インスタンスの基本情報の「所属ネットワーク」の後、ネットワーク間の切り替えのタイプに基づき、【VPCネットワークへの転換】又は【ネットワークの変更】をクリックします。
 3. ポップアップされたダイアログボックスでVirtual Private Cloud及び対応するサブネットを選択し、【確定】をクリックします。

@@ -7,7 +7,6 @@ import TIM from 'tim-js-sdk';
 // 发送图片、文件等消息需要的 COS SDK
 import COS from "cos-js-sdk-v5";
 
-
 let options = {
   SDKAppID: 0 // 接入时需要将0替换为您的即时通信 IM 应用的 SDKAppID
 };
@@ -60,7 +59,6 @@ tim.on(TIM.EVENT.SDK_READY, function(event) {
   // event.name - TIM.EVENT.SDK_READY
 });
 
-
 tim.on(TIM.EVENT.MESSAGE_RECEIVED, function(event) {
   // 收到推送的单聊、群聊、群提示、群系统通知的新消息，可通过遍历 event.data 获取消息列表数据并渲染到页面
   // event.name - TIM.EVENT.MESSAGE_RECEIVED
@@ -73,6 +71,12 @@ tim.on(TIM.EVENT.MESSAGE_REVOKED, function(event) {
   // event.data - 存储 Message 对象的数组 - [Message] - 每个 Message 对象的 isRevoked 属性值为 true
 });
 
+tim.on(TIM.EVENT.MESSAGE_READ_BY_PEER, function(event)) {
+  // SDK 收到对端已读消息的通知，即已读回执。使用前需要将 SDK 版本升级至 v2.7.0 或以上。仅支持单聊会话。
+  // event.name - TIM.EVENT.MESSAGE_READ_BY_PEER
+  // event.data - event.data - 存储 Message 对象的数组 - [Message] - 每个 Message 对象的 isPeerRead 属性值为 true
+});
+
 tim.on(TIM.EVENT.CONVERSATION_LIST_UPDATED, function(event) {
   // 收到会话列表更新通知，可通过遍历 event.data 获取会话列表数据并渲染到页面
   // event.name - TIM.EVENT.CONVERSATION_LIST_UPDATED
@@ -83,13 +87,6 @@ tim.on(TIM.EVENT.GROUP_LIST_UPDATED, function(event) {
   // 收到群组列表更新通知，可通过遍历 event.data 获取群组列表数据并渲染到页面
   // event.name - TIM.EVENT.GROUP_LIST_UPDATED
   // event.data - 存储 Group 对象的数组 - [Group]
-});
-
-tim.on(TIM.EVENT.GROUP_SYSTEM_NOTICE_RECEIVED, function(event) {
-  // 收到新的群系统通知
-  // event.name - TIM.EVENT.GROUP_SYSTEM_NOTICE_RECEIVED
-  // event.data.type - 群系统通知的类型，详情请参见 GroupSystemNoticePayload 的<a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupSystemNoticePayload"> operationType 枚举值说明</a>
-  // event.data.message - Message 对象，可将 event.data.message.content 渲染到到页面
 });
 
 tim.on(TIM.EVENT.PROFILE_UPDATED, function(event) {
@@ -134,16 +131,16 @@ tim.on(TIM.EVENT.KICKED_OUT, function(event) {
   //    \- TIM.TYPES.NET_STATE_DISCONNECTED - 未接入网络。接入侧可根据此状态提示“当前网络不可用”。SDK 仍会继续重试，若用户网络恢复，SDK 会自动同步消息  
 });
 
-  // 开始登录 
-   tim.login({userID: 'your userID', userSig: 'your userSig'}); </pre>
+// 开始登录 
+tim.login({userID: 'your userID', userSig: 'your userSig'}); </pre>
 
-参数`options`为`Object`类型，包含的属性值如下表所示：
+参数`options`为`Object`类型：
 
 | Name      | Type     | Description |
 | --------- | -------- | ----------- |
 | `options` | `Object` | 应用配置    |
 
-`options`的描述如下表所示：
+`options` 包含的属性值：
 
 | Name       | Type     | Description             |
 | ---------- | -------- | ----------------------- |
@@ -155,7 +152,7 @@ tim.on(TIM.EVENT.KICKED_OUT, function(event) {
 
 用户登录 IM SDK 才能正常收发消息，登录需要用户提供 UserID、UserSig 等信息，具体含义请参见 [登录鉴权](https://intl.cloud.tencent.com/document/product/1047/33517)。登录成功后，需要先等 SDK 处于 ready 状态才能调用 [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) 等需要鉴权的接口，您可以通过监听事件 [TIM.EVENT.SDK_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_READY) 获取 SDK 状态。
 
->默认情况下，不支持多实例登录，即如果此帐号已在其他页面登录，若继续在当前页面登录成功，有可能会将其他页面踢下线。用户被踢下线时会触发事件`TIM.EVENT.KICKED_OUT`，用户可在监听到事件后做相应处理。多端登录监听示例如下：
+>!默认情况下，不支持多实例登录，即如果此帐号已在其他页面登录，若继续在当前页面登录成功，有可能会将其他页面踢下线。用户被踢下线时会触发事件`TIM.EVENT.KICKED_OUT`，用户可在监听到事件后做相应处理。多端登录监听示例如下：
 
 ```javascript
 let onKickedOut = function (event) {
@@ -169,7 +166,7 @@ tim.on(TIM.EVENT.KICKED_OUT, onKickedOut);
 **接口名**
 
 ```javascript
-tim.login(options)
+tim.login(options);
 ```
 
 **请求参数**
@@ -189,6 +186,10 @@ tim.login(options)
 let promise = tim.login({userID: 'your userID', userSig: 'your userSig'});
 promise.then(function(imResponse) {
   console.log(imResponse.data); // 登录成功
+  if (imResponse.data.repeatLogin === true) {
+    // 标识账号已登录，本次登录操作为重复登录。v2.5.1 起支持
+    console.log(imResponse.data.errorInfo);
+  }
 }).catch(function(imError) {
   console.warn('login error:', imError); // 登录失败的相关信息
 });
@@ -200,7 +201,7 @@ promise.then(function(imResponse) {
 
  登出即时通信 IM，通常在切换帐号的时候调用，清除登录态以及内存中的所有数据。 
 
->
+>!
 >
 >- 调用此接口的实例会发布 [`SDK_NOT_READY`](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_NOT_READY) 事件，此时该实例下线，无法收、发消息。
 >- 如果您在[即时通信 IM 控制台](https://console.cloud.tencent.com/im)配置的“Web端实例同时在线个数”大于 1，且同一账号登录了`a1`和`a2`两个实例（含小程序端），当执行`a1.logout()`后，`a1`会下线，无法收、发消息。而`a2`实例不会受影响。

@@ -65,6 +65,7 @@
 
 | API | Description |
 |-----|-----|
+| [setAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55) | Sets sound quality. The higher the sound quality of the anchor, the better the sound effect to viewers, but the higher the required bandwidth, so there may be lags if the bandwidth is limited. |
 | [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) | Enables local audio capture and upstreaming. |
 | [stopLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a272bba21d046347ac42d76069ba5972c) | Disables local audio capture and upstreaming. |
 | [muteLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86) | Mutes/Unmutes local audio. |
@@ -104,11 +105,18 @@
 | [setWatermark](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1083aaf0441e3d90ce6641d278a97a63) | Adds watermark. |
 
 
+### Music effects and voice effects
+
+| API | Description |
+|-----|-----|
+| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | Gets the sound effect management class `TXAudioEffectManager`. |
+
+
 ### Secondary stream API functions
 
 | API | Description |
 |-----|-----|
-| [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa643c448da33d5c9f40b4442a2691f4d) | Starts screen sharing. |
+| [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) | Starts screen sharing. |
 | [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab6c3014f6f88c775aa91fccea19ce8a4) | Stops screen capture. |
 | [pauseScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) | Pauses screen sharing. |
 | [resumeScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e) | Resumes screen sharing. |
@@ -137,36 +145,6 @@
 |-----|-----|
 | [sendCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa4847ad53acc9ab5990194b21ff5b070) | Sends custom message to all users in room. |
 | [sendSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a034f9e1effbdadf8b9bfb7f3f06486c4) | Embeds custom data of a small size in video frames. |
-
-
-### Background audio mixing API functions
-
-| API | Description |
-|-----|-----|
-| [playBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3df738557f5c658c37174ac9aeae9684) | Starts background music. |
-| [stopBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3ee7bdd15de4ba9010aa5ece3abff0ab) | Stops background music. |
-| [pauseBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a21ddee03e6f4cec028a24e5d5e30955e) | Pauses background music. |
-| [resumeBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aaa8b34ef2b334bd22a1cb6541a4c6702) | Resumes background music. |
-| [getBGMDuration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae7342a8bcfda22a872aa684f06a4677f) | Gets the total length of music file in milliseconds. |
-| [setBGMPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78f901b6175352a31b0236776bfdc661) | Sets the playback progress of background music. |
-| [setBGMVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ada9c2b4aaf9a1a9ab9cd846593fdf9e6) | Sets the playback volume level of background music. |
-| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab1e1c94c9efd967dbffb46d3ba08fef5) | Sets the local playback volume level of background music. |
-| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a535eab48f9df390f4de5ebd5afcd59e3) | Sets the remote playback volume level of background music. |
-| [setReverbType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6f4f89be3c810acfa2430ad65fd7ea68) | Sets reverb effect. |
-| [setVoiceChangerType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37acaf3b2539e0b1c18123a646e91189) | Sets voice changer type. |
-
-
-### Sound effect API functions
-
-| API | Description |
-|-----|-----|
-| [playAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad1ed7667282eccfac1992c1e547a5aeb) | Plays back sound effect. |
-| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a214846db40c2d1be2fe8008c6637f631) | Sets sound effect volume level. |
-| [stopAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a18e4ca6939d005a1d67cef397ee8b8d4) | Stops sound effect. |
-| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a770543c80d3a5629a26d1382535fb6c4) | Stops all sound effects. |
-| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9bb41c4ff1a5b24ca742fe3ce45a2bc0) | Sets the volume level of all sound effects. |
-| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab32923d04ce164b82879b3e05833959f) | Pauses sound effect. |
-| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a33ab6e798d3da245435166464b702d4f) | Resumes sound effect. |
 
 
 ### Network test
@@ -207,9 +185,27 @@
 | [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | Sets the effect level of nose slimming filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
 | [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | Selects the AI animated effect pendant to be used. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
 | [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | Mutes animated effect. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a925323ab809957ccaeb4cef30841cb72) | Specifies material filter effect. |
-| [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5fb4c8bc9948e61a75b9ef85f618309d) | Sets filter effect level. |
-| [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aef56a36b901d5e525ee539e7d5642063) | Sets green screen video (it takes effect only in the Enterprise Edition and is invalid in other editions). |
+| [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a925323ab809957ccaeb4cef30841cb72) | Sets filter effect for specified material. This API is disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set the filter effect. |
+| [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5fb4c8bc9948e61a75b9ef85f618309d) | Sets filter effect level. This API is disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set filter effect level. |
+| [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aef56a36b901d5e525ee539e7d5642063) | Sets green screen video (it takes effect only in the Enterprise Edition and is invalid in other editions). This API is disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set green screen video. |
+| [playBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3df738557f5c658c37174ac9aeae9684) | Starts background music. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [stopBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3ee7bdd15de4ba9010aa5ece3abff0ab) | Stops background music. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [pauseBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a21ddee03e6f4cec028a24e5d5e30955e) | Pauses background music. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [resumeBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aaa8b34ef2b334bd22a1cb6541a4c6702) | Resumes background music. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [getBGMDuration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae7342a8bcfda22a872aa684f06a4677f) | Gets the total length of music file in milliseconds. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [setBGMPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78f901b6175352a31b0236776bfdc661) | Sets the playback progress of background music. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [setBGMVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ada9c2b4aaf9a1a9ab9cd846593fdf9e6) | Sets the playback volume level of background music. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab1e1c94c9efd967dbffb46d3ba08fef5) | Sets the local playback volume level of background music. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a535eab48f9df390f4de5ebd5afcd59e3) | Sets the remote playback volume level of background music. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [setReverbType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6f4f89be3c810acfa2430ad65fd7ea68) | Sets reverb effect. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [setVoiceChangerType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37acaf3b2539e0b1c18123a646e91189) | Sets voice changer type. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [playAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad1ed7667282eccfac1992c1e547a5aeb) | Plays back sound effect. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a214846db40c2d1be2fe8008c6637f631) | Sets sound effect volume level. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [stopAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a18e4ca6939d005a1d67cef397ee8b8d4) | Stops sound effect. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a770543c80d3a5629a26d1382535fb6c4) | Stops all sound effects. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9bb41c4ff1a5b24ca742fe3ce45a2bc0) | Sets the volume level of all sound effects. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab32923d04ce164b82879b3e05833959f) | Pauses sound effect. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
+| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a33ab6e798d3da245435166464b702d4f) | Resumes sound effect. This API is disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set sound effect and background music. |
 
 
 ### Callback APIs of background music playback
@@ -364,7 +360,7 @@ Event callback API for TRTC video call feature.
 
 | Class | Description |
 |-----|-----|
-| [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59) | Room entry parameters. |
+| [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a1751af68516425e5556e2057d0c90915) | Room entry parameters. |
 | [TRTCVideoEncParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoEncParam) | Encoding parameters. |
 | [TRTCNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCNetworkQosParam) | Network bandwidth limit parameters. |
 | [TRTCQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCQuality) | Video (or network) quality. |

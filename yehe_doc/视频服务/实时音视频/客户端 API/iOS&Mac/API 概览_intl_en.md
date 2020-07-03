@@ -67,6 +67,7 @@
 
 | API | Description |
 |-----|-----|
+| [setAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53) | Sets sound quality. The higher the sound quality of the anchor, the better the sound effect to viewers, but the higher the required bandwidth, so there may be lags if the bandwidth is limited. |
 | [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) | Enables local audio capture and upstreaming. |
 | [stopLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab78601c38f1b872b03b662e6856be84c) | Disables local audio capture and upstreaming. |
 | [muteLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9) | Mutes/Unmutes local audio. |
@@ -81,7 +82,6 @@
 | [startAudioRecording](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a9eadd65cef0ac6b9c04ddfd7265afb01) | Starts audio recording. |
 | [stopAudioRecording](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac8c12476bbcf3d691060954fcdb6ebe6) | Stops recording|
 | [setSystemVolumeType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab098daa610ae506dbf6c2a4f666ae32c) | Sets the system volume type used during call. |
-| [enableAudioEarMonitoring](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa26564f3388bc249ecbd2813d9c45390) | Enables in-ear monitoring. |
 
 
 ### Camera API functions
@@ -126,11 +126,19 @@
 | [setWatermark](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ad0bedbddf415d26cff8242d5842a0908) | Adds watermark. |
 
 
+### Music effects and voice effects
+
+| API | Description |
+|-----|-----|
+| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af962213fefe6988a08820ac9af00df66) | Gets the sound effect management class `TXAudioEffectManager`. |
+
+
 ### Screen sharing API functions
 
 | API | Description |
 |-----|-----|
-| [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a31146b5e41a451b6259c9d357e01113f) | Starts screen sharing (for iOS). |
+| [startScreenCaptureInApp](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5dbd40c4ad65152e85591c8535b4ee90) | Starts in-app screen sharing (this API supports only iPhones and iPads on iOS 13.0 and above). |
+| [startScreenCaptureByReplaykit](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) | Starts system-level screen sharing (this API supports iPhones and iPads on iOS 11.0 and above). |
 | [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97) | Starts screen sharing (for macOS). |
 | [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) | Stops screen capture. |
 | [pauseScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280) | Pauses screen sharing. |
@@ -164,36 +172,6 @@
 |-----|-----|
 | [sendCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#acbc86da0cb558c549f42e7e987c7beaf) | Sends custom message to all users in room. |
 | [sendSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6de26e5efddf899d31158e4d48f17c02) | Embeds custom data of a small size in video frames. |
-
-
-### Background audio mixing API functions
-
-| API | Description |
-|-----|-----|
-| [playBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4d9983591fa2a847e226b7a30e8db294) | Starts background music. |
-| [stopBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a11004f1ba27b057985850a25307b0bec) | Stops background music. |
-| [pauseBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa4b92d4c989e99612f6c4dab03a78764) | Pauses background music. |
-| [resumeBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aed6e8f224b5f834b1bc0c15f9701f692) | Resumes background music. |
-| [getBGMDuration](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac1f96932d02198cd045ee96f1306c8ba) | Gets the total length of music file in milliseconds. |
-| [setBGMPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a7fd043ae358c43f6a178837fb2846ef9) | Sets the playback progress of background music. |
-| [setBGMVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#adbfc8e226df7c6caaaca1a89a9842f23) | Sets the playback volume level of background music. |
-| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a08c468f48d99aef0e89716111db1f422) | Sets the local playback volume level of background music. |
-| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a0cf0c090285038b23843c646009073d1) | Sets the remote playback volume level of background music. |
-| [setReverbType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a555cde4eda63d13bbad0dbdba7094a47) | Sets reverb effect. This API currently is supported only for iOS. |
-| [setVoiceChangerType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa60f54923826cc59d8a4526669c4ea5e) | Sets voice changer type. This API currently is supported only for iOS. |
-
-
-### Sound effect API functions
-
-| API | Description |
-|-----|-----|
-| [playAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2ae175694198a9b3d1b1647b7ce1dae0) | Plays back sound effect. |
-| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a22854b4e9f698cceb1bbb7f7de466ec1) | Sets sound effect volume level. |
-| [stopAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aacf50bc1e6040c11331e3c23b319f97b) | Stops sound effect. |
-| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a7066509af1de32c290b7cc297cd00f2b) | Stops all sound effects. |
-| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6b345c95b5b68198d8dbc64a3652ed35) | Sets the volume level of all sound effects. |
-| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab0d46ccb8fca811851b30e7731958024) | Pauses sound effect. |
-| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a207dd8909c05d4a8a1431d33e644d4fe) | Resumes sound effect. |
 
 
 ### Device and network test APIs
@@ -239,10 +217,25 @@
 | [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae94b107a9c476337585906c79b42ee95) | Sets the effect level of nose slimming filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
 | [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3aa8c561d744e3d921dff6186a6e4ade) | Selects the AI animated effect pendant to be used. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
 | [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa6689d734b9f46cb84a848b7e8f39cbd) | Mutes animated effect. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a9a4b3b61c39c1c65e3426b35b0ace95f2) | Starts screen sharing. |
+| [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a9a4b3b61c39c1c65e3426b35b0ace95f) | Starts screen sharing. |
 | [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) | Specifies material filter effect. |
 | [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3b0d7db70674f961c14b316f4e8e7a2b) | Sets filter effect level. |
 | [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab4682edfc605ba06e24fd7b3e758ce5d) | Sets green screen video. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [playBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4d9983591fa2a847e226b7a30e8db294) | Starts background music. |
+| [getBGMDuration](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac1f96932d02198cd045ee96f1306c8ba) | Gets the total length of music file in milliseconds. |
+| [setBGMPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a7fd043ae358c43f6a178837fb2846ef9) | Sets the playback progress of background music. |
+| [setBGMVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#adbfc8e226df7c6caaaca1a89a9842f23) | Sets the playback volume level of background music. |
+| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a08c468f48d99aef0e89716111db1f422) | Sets the local playback volume level of background music. |
+| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a0cf0c090285038b23843c646009073d1) | Sets the remote playback volume level of background music. |
+| [setReverbType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a555cde4eda63d13bbad0dbdba7094a47) | Sets reverb effect. This API currently is supported only for iOS. |
+| [setVoiceChangerType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa60f54923826cc59d8a4526669c4ea5e) | Sets voice changer type. This API currently is supported only for iOS. |
+| [playAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2ae175694198a9b3d1b1647b7ce1dae0) | Plays back sound effect. |
+| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a22854b4e9f698cceb1bbb7f7de466ec1) | Sets sound effect volume level. |
+| [stopAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aacf50bc1e6040c11331e3c23b319f97b) | Stops sound effect. |
+| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6b345c95b5b68198d8dbc64a3652ed35) | Sets the volume level of all sound effects. |
+| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab0d46ccb8fca811851b30e7731958024) | Pauses sound effect. |
+| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a207dd8909c05d4a8a1431d33e644d4fe) | Resumes sound effect. |
+| [enableAudioEarMonitoring](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa26564f3388bc249ecbd2813d9c45390) | Enables in-ear monitoring. |
 
 
 ## TRTCCloudDelegate @ TXLiteAVSDK
@@ -415,6 +408,7 @@
 | [TRTCQosControlMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga915f86fec1b00787147d40a189444823) | Bandwidth limit mode. |
 | [TRTCVideoQosPreference](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga2c460e7365ad67ee0213545b0a67aa6d) | Image quality preference. |
 | [TRTCAudioSampleRate](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga346b09a7691ce8c9813bac0feb057d08) | Audio sample rate. |
+| [TRTCAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga865e618ff3a81236f9978723c00e86fb) | Sound quality. |
 | [TRTCAudioRoute](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga81305fea3aae73346d04f0013e0194d4) | Audio playback mode (audio routing). |
 | [TRTCReverbType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga1c0a768f9f7855e87c486617816c7759) | Audio reverb mode. |
 | [TRTCVoiceChangerType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gaeb48457146f2279c912e345ce532ecef) | Voice changer mode. |
