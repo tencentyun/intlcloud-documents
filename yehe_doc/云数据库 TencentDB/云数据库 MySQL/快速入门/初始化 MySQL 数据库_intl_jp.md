@@ -3,12 +3,12 @@
 ## 前提条件
 1. Tencent Cloudのアカウントを登録し、実名認証を完了させます。
 Tencent Cloudのアカウントを登録しようとする場合：
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">ここをクリックしてTencent Cloudのアカウントを登録します</a></div>
+<div style="background-color:#00A4FF; width: 470px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">ここをクリックしてTencent Cloudのアカウントを登録します</a></div>
 実名認証を行うには：
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">ここをクリックして実名認証を行います</a></div>
+<div style="background-color:#00A4FF; width: 370px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">ここをクリックして実名認証を行います</a></div>
 2. MySQLを購入しました。
 MySQLを購入するには：
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://buy.cloud.tencent.com/cdb" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn3">ここをクリックして購入ページに進みます</a></div>
+<div style="background-color:#00A4FF; width: 400px; height: 35px; line-height:35px; text-align:center;"><a href="https://buy.cloud.tencent.com/cdb" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn3">ここをクリックして購入ページに進みます</a></div>
 
 ##　操作手順
 1. [MySQL コンソール](https://console.cloud.tencent.com/cdb)にログインし、左側ナビゲーションから【インスタンスリスト】タブを選択します。
