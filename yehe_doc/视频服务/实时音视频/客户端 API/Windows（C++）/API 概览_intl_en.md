@@ -1,5 +1,13 @@
 ## ITRTCCloud @ TXLiteAVSDK
 
+### Creating and terminating an ITRTCCloud Singleton
+
+| API | Description |
+|-----|-----|
+| [getTRTCShareInstance](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ga2fc755520711d5d8fd469f93bc9c2dc6) | Gets [ITRTCCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#classTRTC_1_1ITRTCCloud) object pointer in dynamic DLL loading. |
+| [destroyTRTCShareInstance](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ga1b494c61ef1fe41531ce283aae4e015d) | Releases [ITRTCCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#classTRTC_1_1ITRTCCloud) singleton object. |
+
+
 ### Setting TRTCCloudCallback callback
 
 | API | Description |
@@ -61,6 +69,7 @@
 
 | API | Description |
 |-----|-----|
+| [setAudioQuality](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aacf5923d535306c139d1b8b8025744c8) | Sets sound quality. The higher the sound quality of the anchor, the better the sound effect to viewers, but the higher the required bandwidth, so there may be lags if the bandwidth is limited. |
 | [startLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a72ba04e850009e56505ee1cae0433abe) | Enables local audio capture and upstreaming. |
 | [stopLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a47c51247d112b86d2397744c8f3c686b) | Disables local audio capture and upstreaming. |
 | [muteLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a1e1f27f131da042ca6e80beaa18055a8) | Mutes/Unmutes local audio. |
@@ -108,11 +117,21 @@
 | [setWaterMark](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a4a1c376670ff4f3fdac8cf30bec78576) | Sets watermark. |
 
 
+### Music effects and voice effects
+
+| API | Description |
+|-----|-----|
+| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad9da9a5121bb52fbb85890dd857d7e8a) | Gets the sound effect management class `ITXAudioEffectManager`. |
+| [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad6a651a786871927917b087ae7094c8a) | Enables system audio capture. |
+| [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) | Disables system audio capture. |
+| [setSystemAudioLoopbackVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a52d0f9a999296633b1d859f75d36d5e8) | Sets system audio capture volume level. |
+
+
 ### Screen sharing API functions
 
 | API | Description |
 |-----|-----|
-| [startScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae0d5f03fd15dbb7b101bb3c6df70f630) | Starts screen sharing. |
+| [startScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3cc7f7152c18f6ffda7cfa2b0b133934) | Starts screen sharing. |
 | [stopScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0e09090fe4281c0e78d8eb38496a8ed0) | Stops screen capture. |
 | [pauseScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0dcd89ed2e23706239db98b55dd806d4) | Pauses screen sharing. |
 | [resumeScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a9dc10db068b9d8c6a0fcb8b085359f33) | Resumes screen sharing. |
@@ -147,37 +166,6 @@
 | [sendSEIMsg](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aa91b261d10bbdb43508e9e2c33697c29) | Embeds custom data of a small size in video frames. |
 
 
-### Background audio mixing API functions
-
-| API | Description |
-|-----|-----|
-| [playBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a15279ba49cc9101b9997ab6b1f386eeb) | Starts background music. |
-| [stopBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a88211d59391d170ce225ef581383b0d4) | Stops background music. |
-| [pauseBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a1c9e7cd3a3f523776cc995378fe5ff95) | Pauses background music. |
-| [resumeBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a71ed3b4ff11839504fd7c35c764ca613) | Resumes background music. |
-| [getBGMDuration](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a484c22d9617415d5c28b1adba03a0e1a) | Gets the total length of music file in milliseconds. |
-| [setBGMPosition](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a5c83c0c819e72d46300da6a407044493) | Sets the playback progress of background music. |
-| [setBGMVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7169cc4769a427265770b4f762e695e4) | Sets the playback volume level of background music. |
-| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3f1954560ae150f1029151b3aa906b3b) | Sets the local playback volume level of background music. |
-| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a700c0ccdfbdc7571366571485a2a20dd) | Sets the remote playback volume level of background music. |
-| [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad6a651a786871927917b087ae7094c8a) | Enables system audio capture (the 64-bit SDK currently does not support system audio mixing). |
-| [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) | Disables system audio capture. |
-| [setSystemAudioLoopbackVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a52d0f9a999296633b1d859f75d36d5e8) | Sets system audio capture volume level. |
-
-
-### Sound effect API functions
-
-| API | Description |
-|-----|-----|
-| [playAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a812b3bd8b5105cf120f781b380cc0596) | Plays back sound effect. |
-| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a1ced69ab948cd574e28e747965ec3282) | Sets sound effect volume level. |
-| [stopAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3fe8704074d3f23eaaeb2ad51280aa27) | Stops sound effect. |
-| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a10ae64378e00e7b59c91e441f67a954c) | Stops all sound effects. |
-| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8341d84cd74198c2cb6ed4964413a9bc) | Sets the volume level of all sound effects. |
-| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3c2b8eac492de2eabfbe0cecb87e429f) | Pauses sound effect. |
-| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a27b203785e4f9eceb3820dd0077f1e3c) | Resumes sound effect. |
-
-
 ### Device and network test APIs
 
 | API | Description |
@@ -210,15 +198,26 @@
 
 | API | Description |
 |-----|-----|
-| [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a9fc6194bde0fc945a2cda4562116fd7c) | Disused since v6.9. |
+| [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aa8c0c6aceb1c0fe5de3a2083bc5a5b18) | Sets mic volume level. |
+| [startScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3cc7f7152c18f6ffda7cfa2b0b1339342) | Starts screen sharing. |
+| [playBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a9b15087f0a9c29d4442221ca36b7e916) | Starts background music. |
+| [stopBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a11004f1ba27b057985850a25307b0bec) | Stops background music. |
+| [pauseBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aa4b92d4c989e99612f6c4dab03a78764) | Pauses background music. |
+| [resumeBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aed6e8f224b5f834b1bc0c15f9701f692) | Resumes background music. |
+| [getBGMDuration](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae89800361133fc7a04524b426a1c1cff) | Gets the total length of music file in milliseconds. |
+| [setBGMPosition](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a32c656ebde9875a6bf8d4c30d4629161) | Sets the playback progress of background music. |
+| [setBGMVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7a7d8cca48ca7c864e0bec6d869ea387) | Sets the playback volume level of background music. |
+| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0a4ab1fa2df3f0f1b7284ad9b2fbb921) | Sets the local playback volume level of background music. |
+| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a2eb3a1958ea834729f1b6e844cc0ea9d) | Sets the remote playback volume level of background music. |
+| [playAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7a11827d3d124889d8b359644692e289) | Plays back sound effect. |
+| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a942a6f358980c8520e2155fb4ef55bd0) | Sets sound effect volume level. |
+| [stopAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a61561195216ac575235b67d410070563) | Stops sound effect. |
+| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7066509af1de32c290b7cc297cd00f2b) | Stops all sound effects. |
+| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a19416181cce88c58052a4eb2e87adeb8) | Sets the volume level of all sound effects. |
+| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a43f83a1323cc39c1610c61cf79ab652c) | Pauses sound effect. |
+| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a23b65446d7dd9835da888b5285867629) | Resumes sound effect. |
 
 
-### Creating and terminating an ITRTCCloud Singleton
-
-| API | Description |
-|-----|-----|
-| [getTRTCShareInstance](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ga2fc755520711d5d8fd469f93bc9c2dc6) | Gets [ITRTCCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#classTRTC_1_1ITRTCCloud) object pointer in dynamic DLL loading. |
-| [destroyTRTCShareInstance](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ga1b494c61ef1fe41531ce283aae4e015d) | Releases [ITRTCCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#classTRTC_1_1ITRTCCloud) singleton object. |
 
 
 ## TRTCCloudCallback @ TXLiteAVSDK
@@ -394,6 +393,8 @@ Callback API class for TRTC video call feature.
 | [TRTCRoleType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga42ff820a33d9f3535d203fd5d6782cb5) | Role, which applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
 | [TRTCQosControlMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga6615b296e31fc3d03c0df92e9755b5aa) | Bandwidth limit mode. |
 | [TRTCVideoQosPreference](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga60efcaeea7692bbce8dc362856683319) | Image quality preference. |
+| [TRTCAudioSampleRate](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gab0f34072e93189a864688cb0375d462c) | Audio sample rate. |
+| [TRTCAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga96f3d4cdcf3baa9df39ab4e1b3f0eb40) | Sound quality. |
 | [TRTCLogLevel](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gafa83683b4840bcb3200d1da63c10276d) | Log level. |
 | [TRTCDeviceState](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gac93bb27d49c2aeea8fc04242c5d0fc7e) | Device operation. |
 | [TRTCDeviceType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga76eabab111ddd8a7b2e44d2cbcf45794) | Device type. |
