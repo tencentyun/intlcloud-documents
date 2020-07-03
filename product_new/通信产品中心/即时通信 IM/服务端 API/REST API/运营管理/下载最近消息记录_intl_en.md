@@ -3,8 +3,8 @@ The app admin can use this API to obtain the download addresses for all one-to-o
 
 >
 >- Downloads images, audio, files, and videos from message records. This feature is only applicable to IM SDK 4.X. The download can be performed based on the URL fields in chat records. If you are using IM SDK 2.X or 3.X, you cannot obtain the preceding information in this method. If you need this feature, upgrade your IM SDK to version 4.X.
->- Stores message records as logs and compresses them by using GZip. After obtaining the download addresses through the API, you can download and process the message records yourself. Message record files are generated every hour. For example, the data generated at midnight (00:00-00:59) will be processed from 01:00. Typically, the data can be processed within one hour. However, if the message quantity is large, it will take longer to process them. The message record files are valid for only three days and will be deleted after three days regardless of whether you have downloaded them or not. The obtained download addresses are also valid within a specified period. Therefore, always download records before the addresses expire. If a download address expires, you can obtain a new address through this API.
->- This API is used only to download historical chat records for backup, statistics, or other purposes. We do  not recommend that you use it for real-time online businesses.
+>- Stores message records as logs and compresses them by using GZip. After obtaining the download addresses through the API, you can download and process the message records yourself. Message record files are generated every hour. For example, the data generated at midnight (00:00-00:59) will be processed from 01:00. Typically, the data can be processed within one hour. However, if the message quantity is large, it will take longer to process them. The message record files are valid for only seven days and will be deleted after seven days regardless of whether you have downloaded them or not. The obtained download addresses are also valid within a specified period. Therefore, always download records before the addresses expire. If a download address expires, you can obtain a new address through this API.
+>- This API is used only to download historical chat records for the last 7 days, for backup, statistics, or other purposes. We do  not recommend that you use it for real-time online businesses.
 
 
 ## API Invocation Description
@@ -26,7 +26,7 @@ The following table only describes parameters that are modified when this API is
 
 
 ### Maximum invocation frequency
-The maximum invocation frequency is 200 times per second.
+The maximum invocation frequency is 10 times per second.
 ### Request packet example
 
 ```
