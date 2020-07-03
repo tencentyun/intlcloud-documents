@@ -13,7 +13,7 @@ Obtain the security credentials before installing the SDK for Python. Before usi
 You can install the Tencent Cloud API SDK for Python into your project via Pip. If you haven't installed Pip in your project environment yet, install it first by following the instruction at [Pip's official website](https://pip.pypa.io/en/stable/installing/?spm=a3c0i.o32026zh.a3.6.74134958lLSo6o).
 To install via Pip, execute the following command in command line:
 ```bash
-pip install tencentcloud-sdk-python-intl
+pip install tencentcloud-sdk-python-intl-en
 ```
 
 ## Example
