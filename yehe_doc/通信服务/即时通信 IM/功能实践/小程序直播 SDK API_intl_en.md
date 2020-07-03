@@ -14,7 +14,7 @@ The live e-commerce broadcasting component results from the secondary encapsulat
 ## SDK Integration
 - Run the following command to integrate the IM SDK.
 ```
-npm i tim-js-sdk --save
+npm i tim-wx-sdk --save
 ```
 - Run the following command to integrate the livestream marketing SDK.
 ```
@@ -36,7 +36,7 @@ npm i im-live-sells --save
 ## Initialization Example
 
 ```javascript
-import TLS from 'im-live-sells'
+import TIMLiveSell from 'im-live-sells'
 import TIM from 'tim-js-sdk' // Web environment
 import TIM from 'tim-wx-sdk' // Mini Program environment
 const tls = new TIMLiveSell({
