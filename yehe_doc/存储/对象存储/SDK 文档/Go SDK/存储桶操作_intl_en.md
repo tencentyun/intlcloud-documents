@@ -1,40 +1,40 @@
-## Introduction
+### Introduction
 
-This document provides an overview of APIs and SDK code samples related to basic operations on buckets and bucket access control list (ACL).
+This document provides an overview of APIs and SDK sample codes related to basic bucket operations and access control lists (ACL).
 
 **Basic Operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
-| [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | Querying bucket list | Queries the list of all buckets under the specified account |
-| [PUT Bucket](https://cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under the specified account |
-| [HEAD Bucket](https://cloud.tencent.com/document/product/436/7735) | Retrieving information on a bucket and its permission | Checks whether a bucket exists and you have permission to access it |
-| [DELETE Bucket](https://cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket under a specified account |
+| [GET Service](https://intl.cloud.tencent.com/document/product/436/8291) | Querying a bucket list | Queries the list of all buckets under a specified account |
+| [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under a specified account |
+| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Checking a bucket and its permissions | Checks whether a bucket exists and you have permission to access it |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deletes a bucket | Deletes an empty bucket under a specified account |
 
 **ACL**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | --------------------- |
-| [PUT Bucket acl](https://cloud.tencent.com/document/product/436/7737) | Setting bucket ACL | Sets the ACL for a specified bucket |
-| [GET Bucket acl](https://cloud.tencent.com/document/product/436/7733) | Querying bucket ACL | Queries the ACL of a specified bucket |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets the ACL for a specified bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of a specified bucket |
 
-## Basic Operations
+## Basic operations
 
-### Querying the Bucket List
+### Querying a bucket list
 
-#### Feature Description
+#### Feature description
 
 This API is used to query the list of all buckets under a specified account.
 
-#### Method Prototype
+#### Method prototype
 
 ```go
 func (s *ServiceService) Get(ctx context.Context) (*ServiceGetResult, *Response, error)
 ```
 
-#### Request Samples
+#### Sample request 
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```go
 s, _, err := c.Service.Get(context.Background())
 if err != nil {
@@ -42,8 +42,8 @@ if err != nil {
 }
 ```
 
-#### Returned Result
-Request result is returned through GetServiceResult.
+#### Response description
+The result of the request is returned through GetServiceResult.
 ```go
 type ServiceGetResult struct {
     Owner   *Owner  
@@ -68,21 +68,21 @@ type Bucket struct {
 | Region | Bucket region | string |
 | CreationDate | Time when the bucket was created, in ISO8601 format, such as 2016-11-09T08:46:32.000Z | string |
 
-### Creating a Bucket
+### Creating a bucket
 
-#### Feature Description
+#### Feature description
 
-This API (PUT Bucket) is used to create a bucket under a specified account.
+This API is used to create a bucket under a specified account.
 
-#### Method Prototype
+#### Method prototype
 
 ```go
 func (s *BucketService) Put(ctx context.Context, opt *BucketPutOptions) (*Response, error)
 ```
 
-#### Request Samples
+#### Sample request 
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```go
 opt := &cos.BucketGetOptions{
     XCosACL: "private",
@@ -93,7 +93,7 @@ if err != nil {
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 ```go
 type BucketPutOptions struct {
 	XCosACL              string 
@@ -105,25 +105,25 @@ type BucketPutOptions struct {
 | Parameter Name | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ------ | ---- |
 | XCosACL | Sets the bucket ACL, such as private, public-read, and public-read-write. | string | No |
-| XCosGrantFullControl | Grants the specified account the permission to read and write buckets. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
-| XCosGrantRead | Grants the specified account the permission to read buckets. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
-| XCosGrantWrite | Grants the specified account the permission to write buckets. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
+| XCosGrantFullControl | Grants a specified account read and write permission for a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
+| XCosGrantRead | Grants a specified account read permission for a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
+| XCosGrantWrite | Grants a specified account write permission for a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
 
-### Retrieving information on a bucket and its permission
+### Checking a bucket and its permissions
 
-#### Feature Description
+#### Feature description
 
-This API is used to verify whether a bucket exists and whether you have the permission to access it.
+This API is used to verify whether a bucket exists and you have the permission to access it.
 
-#### Method Prototype
+#### Method prototype
 
 ```go
 func (s *BucketService) Head(ctx context.Context) (*Response, error)
 ```
 
-#### Request Samples
+#### Sample request 
 
-[//]: # (.cssg-snippet-head-bucket)
+[//]: # ".cssg-snippet-head-bucket"
 ```go
 _, err := client.Bucket.Head(context.Background())
 if err != nil {
@@ -134,19 +134,19 @@ if err != nil {
 
 ### Deleting a bucket
 
-#### Feature Description
+#### Feature description
 
-This API is used to delete an empty bucket under a specified account.
+This API is used to delete an empty bucket under a specified account. 
 
-#### Method Prototype
+#### Method prototype
 
 ```go
 func (s *BucketService) Delete(ctx context.Context) (*Response, error)
 ```
 
-#### Request Samples
+#### Sample request 
 
-[//]: # (.cssg-snippet-delete-bucket)
+[//]: # ".cssg-snippet-delete-bucket"
 ```go
 _, err := client.Bucket.Delete(context.Background())
 if err != nil {
@@ -156,26 +156,26 @@ if err != nil {
 
 ## ACL
 
-### Configuring bucket ACL
+### Setting a bucket ACL
 
-#### Feature Description
+#### Feature description
 
-This API (Put Bucket ACL) is used to set an ACL for the specified bucket.
+This API is used to set the access control list (ACL) of a specified bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```go
 func (s *BucketService) PutACL(ctx context.Context, opt *BucketPutACLOptions) (*Response, error)
 ```
 
-#### Request Samples
+#### Sample request 
 
-[//]: # (.cssg-snippet-put-bucket-acl)
+[//]: # ".cssg-snippet-put-bucket-acl"
 ```go
-// 1. Configure bucket ACL through request header
+// 1. Configure the bucket ACL through the request header
 opt := &cos.BucketGetOptions{
     Header: &cos.ACLHeaderOptions{
-        //private，public-read，public-read-write
+        // private，public-read，public-read-write
         XCosACL: "private",
     },
 }
@@ -184,7 +184,7 @@ if err != nil {
     panic(err)
 }
 
-// 2. Configure bucket ACL through request body
+// 2. Configure the bucket ACL through the request body
 opt := &cos.BucketGetOptions{
     Body: &cos.ACLXml{
         Owner: &cos.Owner{
@@ -209,7 +209,7 @@ if err != nil {
 }
 ```
 
-#### Parameter Description
+#### Parameter description
 
 ```go
 type ACLHeaderOptions struct {
@@ -223,26 +223,26 @@ type ACLHeaderOptions struct {
 | Parameter Name | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ------ | ---- |
 | XCosACL | Sets the bucket ACL, such as private, public-read, and public-read-write. | string | No |
-| XCosGrantFullControl | Grants the specified account the permission to read and write buckets. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
-| XCosGrantRead | Grants the specified account the permission to read buckets. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
-| XCosGrantWrite | Grants the specified account the permission to write buckets. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
-| ACLXML | Grants the specified account the access to buckets. For more information on the format, see the returned results of "Get Bucket acl". | struct | No |
+| XCosGrantFullControl | Grants a specified account read and write permission for a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
+| XCosGrantRead | Grants a specified account read permission for a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
+| XCosGrantWrite | Grants a specified account write permission for a bucket. Format: `id=" ",id=" "`. To authorize a sub-account, `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`; To authorize a root account, `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. For example: `id="qcs::cam::uin/123:uin/456",id="qcs::cam::uin/123:uin/123"` | string | No |
+| ACLXML | Grants a specified account access permission for a bucket. For more information on the format, see the response description of `Get Bucket acl`. | struct | No |
 
-### Querying bucket ACL
+### Querying a bucket ACL
 
-#### Feature Description
+#### Feature description
 
-This API (Get Bucket ACL) is used to get the ACL of the specified bucket.
+This API is used to query the ACL of a specified bucket.
 
-#### Method Prototype
+#### Method prototype
 
 ```go
 func (s *BucketService) GetACL(ctx context.Context) (*BucketGetACLResult, *Response, error)
 ```
 
-#### Request Samples
+#### Sample request 
 
-[//]: # (.cssg-snippet-get-bucket-acl)
+[//]: # ".cssg-snippet-get-bucket-acl"
 ```go
 _, _, err := client.Bucket.GetACL(context.Background())
 if err != nil {
@@ -250,9 +250,9 @@ if err != nil {
 }
 ```
 
-#### Returned Result
+#### Response description
 
-Request result is returned through GetBucketACLResult.
+The result of the request is returned through GetBucketACLResult.
 
 ```go
 type ACLXml struct {
@@ -277,11 +277,11 @@ type ACLGrantee struct {
 
 | Parameter Name | Description | Type |
 | ----------------- | ------------------------------------------------------------ | ------ |
-| Owner | Information of the bucket owner, including DisplayName and ID | struct |
-| AccessControlList | Information of the user granted with bucket permissions, including Grantee and Permission | struct |
-| Grantee | Information of grantee, including DisplayName, Type, ID and UIN | struct |
-| Type | Type of grantee: CanonicalUser or Group | string |
-| ID | ID of grantee when Type is CanonicalUser | string |
-| DisplayName | Name of grantee | string |
-| UIN | UIN of grantee when Type is Group | string |
-| Permission | Bucket permissions of grantee. Available values: FULL_CONTROL (read and write permissions), WRITE (write permission), and READ (read permission) | string |
+| Owner | Information on the bucket owner, including DisplayName and ID | struct |
+| AccessControlList | Information on the authorized user granted with bucket permissions, including Grantee and Permission | struct |
+| Grantee | Information on the authorized user, including DisplayName, Type, ID and UIN | struct |
+| Type | Type of authorized user: CanonicalUser or Group | string |
+| ID | ID of the authorized user when the type is CanonicalUser | string |
+| DisplayName | Name of the authorized user | string |
+| UIN | UIN of the authorized user when the type is group | string |
+| Permission | Bucket permission granted to the authorized user. Available values: FULL_CONTROL (read and write permission), WRITE (write permission), and READ (read permission) | string |

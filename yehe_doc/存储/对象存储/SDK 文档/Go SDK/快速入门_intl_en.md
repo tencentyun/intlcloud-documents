@@ -1,36 +1,36 @@
-## Download and installation
+## Download and Installation
 
 #### Relevant Resources
-- Download the source code of COS XML Go SDK: (https://github.com/tencentyun/cos-wx-sdk-v5).
-- Download the demo: (https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo).
+- Download the source code for the COS XML Go SDK [here] (https://github.com/tencentyun/cos-wx-sdk-v5).
+- Download the demo [here] (https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo).
 - For more information, see [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5).
 
-#### Environmental Requirements
-- Golang: Used to download and install the Go environment, which can be downloaded from Golang’s official website
+#### Environmental dependencies
+- Golang is used to download and install the Go operating environment; it can be downloaded from the Golang official website.
 
-#### Installing the SDK
-Execute the following command to install COS Go SDK:
+### Installing the SDK
+Execute the following command to install the COS Go SDK:
 ```sh
 go get -u github.com/tencentyun/cos-go-sdk-v5/
 ```
 
-## Getting Started
-The section below describes how to use COS SDK for Go to perform basic operations, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object..
+## Getting started
+The section below describes how to use the COS Go SDK to perform basic operations, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object..
 
 ### Initialization
-The COS GO client structure is generated using the COS domain name.
+A COS GO client is generated using the COS domain name.
 
-#### Method Prototype
+#### Method prototype
 ```Go
 func NewClient(uri *BaseURL, httpClient *http.Client) *Client
 ```
 
-#### Request Samples
-Use a permanent key:
+#### Sample request 
+Using a permanent key:
 
 [//]: # (.cssg-snippet-global-init)
 ```go
-// Change examplebucket-1250000000 and COS_REGION into actual information
+// Replace examplebucket-1250000000 and COS_REGION with your information
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u}
 // 1. Permanent key
@@ -42,11 +42,11 @@ client := cos.NewClient(b, &http.Client{
 })
 ```
 
-Use a temporary key:
+Using a temporary key:
 
 [//]: # (.cssg-snippet-global-init-sts)
 ```go
-// Change examplebucket-1250000000 and COS_REGION into actual information
+// Replace examplebucket-1250000000 and COS_REGION with your information
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u}
 // 2. Temporary key
@@ -58,13 +58,13 @@ client := cos.NewClient(b, &http.Client{
     },
 })
 if client != nil {
-    // Call COS request
+    // Call the COS request
 }
 ```
 
 For more information on how to generate and use a temporary key, see [Generating and using temporary keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
-### Creating a Bucket
+### Creating a bucket
 
 [//]: # (.cssg-snippet-put-bucket-comp)
 ```Go
@@ -80,7 +80,7 @@ import(
 )
 
 func main() {
-    // Change examplebucket-1250000000 and COS_REGION into actual information
+    // Replace examplebucket-1250000000 and COS_REGION with your information
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
@@ -98,7 +98,7 @@ func main() {
 ```
 
 
-### Querying the Bucket List
+### Querying a bucket list
 [//]: # (.cssg-snippet-get-service-comp)
 ```go
 package main
@@ -131,7 +131,7 @@ func main() {
 }
 ```
 
-### Uploading an Object
+### Uploading an object
 [//]: # (.cssg-snippet-put-object-comp)
 ```Go
 package main
@@ -147,7 +147,7 @@ import(
 )
 
 func main() {
-    // Change examplebucket-1250000000 and COS_REGION into actual information
+    // Replace examplebucket-1250000000 and COS_REGION with your information
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
@@ -156,17 +156,17 @@ func main() {
             SecretKey: 'COS_SECRETKEY'
         },
     })
-    Object key is the unique identifier of the object in the bucket.
-    // For example, in the access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/test/objectPut.go`, the object key is test/objectPut.go
+    // An object key is the unique identifier of an object in a bucket.
+    // For example, in the access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/test/objectPut.go`, the object key is `test/objectPut.go`
     name := "test/objectPut.go"
-    // 1. Upload the object using key
+    // 1. Uploading an object using a key
     f := strings.NewReader("test")
 
     _, err := c.Object.Put(context.Background(), name, f, nil)
     if err != nil {
         panic(err)
     }
-    // 2. Upload the object through local files
+    // 2. Uploading an object through local files
     _, err = c.Object.PutFromFile(context.Background(), name, "./test", nil)
     if err != nil {
         panic(err)
@@ -174,7 +174,7 @@ func main() {
 }
 ```
 
-### Querying the Object List
+### Querying an object list
 [//]: # (.cssg-snippet-get-bucket-comp)
 ```go
 package main
@@ -190,7 +190,7 @@ import(
 )
 
 func main() {
-    // Change examplebucket-1250000000 and COS_REGION into actual information
+    // Replace examplebucket-1250000000 and COS_REGION with your information
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
@@ -215,7 +215,7 @@ func main() {
 }
 ```
 
-### Downloading an Object
+### Downloading an object
 [//]: # (.cssg-snippet-get-object-comp)
 ```Go
 package main
@@ -232,7 +232,7 @@ import(
 )
 
 func main() {
-    // Change examplebucket-1250000000 and COS_REGION into actual information
+    // Replace examplebucket-1250000000 and COS_REGION with your information
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{
@@ -241,7 +241,7 @@ func main() {
             SecretKey: 'COS_SECRETKEY'
         },
     })
-    // 1. Obtain the object through response body
+    // 1. Getting the object through the response body
     name := "test/objectPut.go"
     resp, err := c.Object.Get(context.Background(), name, nil)
     if err != nil {
@@ -250,7 +250,7 @@ func main() {
     bs, _ := ioutil.ReadAll(resp.Body)
     resp.Body.Close()
     fmt.Printf("%s\n", string(bs))
-    // 2. Obtain the object to local files
+    // 2. Downloading the object to the local file system
     _, err = c.Object.GetToFile(context.Background(), name, "example", nil)
     if err != nil {
         panic(err)
@@ -273,7 +273,7 @@ import(
 )
 
 func main() {
-    // Change examplebucket-1250000000 and COS_REGION into actual information
+    // Replace examplebucket-1250000000 and COS_REGION with your information
     u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
     b := &cos.BaseURL{BucketURL: u}
     c := cos.NewClient(b, &http.Client{

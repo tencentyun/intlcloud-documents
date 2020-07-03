@@ -4,7 +4,7 @@ The local disk is a local storage device on the same physical server as the CVM 
 
 
 
-> 
+>! 
 > - If a hardware failure occurs on the physical server of the CVM instance, local disk may lose valuable data. We recommend data redundancy at the application layer to ensure reliability. If your application does not support this, consider using [Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) to improve data reliability.
 > - You cannot upgrade the hardware (CPU, memory, storage) of a CVM instance with only local disks. You can only upgrade its bandwidth.
 > 
