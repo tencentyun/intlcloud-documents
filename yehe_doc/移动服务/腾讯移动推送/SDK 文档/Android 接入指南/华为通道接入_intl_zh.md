@@ -6,6 +6,7 @@
 
 
 >
+>- 本文仅适用华为通道 V2 接入，V4 接入请参见  华为通道 V4 接入。
 >- 华为推送只有在签名发布包环境下，才可收到推送消息。
 >- 华为手机中的移动推送服务，必须升级到2.5.3以上版本，否则华为通道会注册失败（依旧走腾讯移动推送的 TPNS 通道）。
 >- 华为通道不支持抵达回调，支持点击回调（需要自定义参数），支持透传（忽略自定义参数，但不保证到达）。
@@ -28,7 +29,7 @@
 ### 集成步骤
 #### AndroidStudio 集成方法
 
-在 App 模块下的 build.gradle 文件内，完成腾讯移动推送所需要的配置后，再增加以下的华为节点：
+在 App 模块下的 build.gradle 文件内，完成移动推送 TPNS 所需要的配置后，再增加以下的华为节点：
 1. 配置华为 AppID，示例代码如下：
 ```xml
  manifestPlaceholders = [
@@ -95,7 +96,7 @@
 ```
 
 ### 启动华为推送
-在调用腾讯移动推送 XGPushManager.registerPush 前，开启第三方推送接口：
+在调用移动推送 TPNS XGPushManager.registerPush 前，开启第三方推送接口：
 
 ```java
 //打开第三方推送
@@ -125,7 +126,7 @@ I/XINGE: [XGOtherPush] other push token is : 0865551032618726300001294600CN01 ot
 >混淆规则需要放在 App 项目级别的 proguard-rules.pro 文件中。
 
 ## 华为通道抵达回执配置
-华为通道抵达回执需要开发者自行配置，您可参照 [配置指引](https://intl.cloud.tencent.com/document/product/1024/35246#.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95) 配置完成后，可在推送记录中查看华为推送通道的抵达数据。
+华为通道抵达回执需要开发者自行配置，您可参照 [华为厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95)  配置完成后，可在推送记录中查看华为推送通道的抵达数据。
 ![](https://main.qcloudimg.com/raw/19ddec21e90801763910c2ac787b6de9.png)
 
 ## 华为设备角标适配
