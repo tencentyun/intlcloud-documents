@@ -1,13 +1,13 @@
-## Feature
-This API (PUT Bucket Logging) is used to enable logging for the source bucket and store its access logs in the specified destination bucket.
+## Feature description
+This API is used to enable logging for a source bucket and store access logs in a specified destination bucket.
 
 >
-> Only the source bucket owner can make this request.
-> To enable the access log feature, you need to grant Cloud Log Service (CLS) permission to write to COS. For information on the authorization process, refer to [Enabling Log Management](https://intl.cloud.tencent.com/document/product/436/16920).
+> Only the owner of the source bucket can make this request.
+> To enable the access log feature, you need to grant Cloud Log Service (CLS) write permission for COS. For information on the authorization process, see [Enabling Log Management](https://intl.cloud.tencent.com/document/product/436/16920).
 
-## Request
+#### Request
 
-#### Sample Request
+#### Sample request 
 ```shell
 PUT /?logging HTTP 1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
@@ -18,17 +18,17 @@ Content-MD5: MD5
 Authorization: Auth String
 ```
 
->Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for more information).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 
 #### Request Headers
-#### Common Header
+#### Common Headers
 
 The implementation of this request requires the use of the Content-MD5 header to verify the integrity of the message, as shown below. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 Name | Description | Type | Required
 |:---|:-- |:--|:--|
-| Content-MD5 | Base64-encoded MD5 hash of the request body content as defined in RFC 1864, used for integrity check to verify whether the request body has changed during transfer | String | Yes |
+| Content-MD5 | Base64-encoded MD5 hash of the request body content as defined in RFC 1864, used to verify whether the request body underwent changes during transfer | String | Yes |
 
 #### Request Body
 The implementation of this request requires a request body. An example of the content of a request body with all nodes is as follows:
@@ -51,19 +51,19 @@ Content of the Container node BucketLoggingStatus:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
-| LoggingEnabled | BucketLoggingStatus | Specific configuration information of the bucket logging, which is mainly the destination bucket | Container | No |
+| LoggingEnabled | BucketLoggingStatus | Specific bucket logging configuration, mainly for the destination bucket | Container | No |
 
 Content of the Container node LoggingEnabled:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
-| TargetBucket | LoggingEnabled | The destination bucket for storing logs, which can be the same bucket (not recommended) or a bucket in the same region under the same account | String |
-| TargetPrefix | LoggingEnabled | Logs are stored in the specified path in the destination bucket | String | No |
+| TargetBucket | LoggingEnabled | The destination bucket used to store logs; this can be the same bucket (not recommended) or a bucket in the same region under the same account | String |
+| TargetPrefix | LoggingEnabled | The specified path in which logs are stored in the destination bucket | String | No |
 
 ## Response
 
 #### Response Header
-This API only returns common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 
 #### Response Body
