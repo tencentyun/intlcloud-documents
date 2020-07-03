@@ -46,8 +46,8 @@ dependencies {
 ```
 
 >!
- - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
- - 如果您的应用服务接入点为新加坡或者中国香港，请按照下文步骤完成境外服务接入点配置。
+> - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+> - 如果您的应用服务接入点为新加坡或者中国香港，请按照下文步骤完成境外服务接入点配置。
 在 Androidanifest 文件 application 标签内添加以下元数据：
 ```
     <application>
@@ -319,6 +319,7 @@ XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 ### 音视频富媒体使用方法
 1. 在 App 的 layout 目录下，新建一个 xml 文件，命名为 xg_notification。
 2. 复制以下代码到文件中：
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 -<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/xg_root_view" xmlns:android="http://schemas.android.com/apk/res/android">
