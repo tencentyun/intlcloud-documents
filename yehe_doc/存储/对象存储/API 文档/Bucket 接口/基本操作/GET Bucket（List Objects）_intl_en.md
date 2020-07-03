@@ -1,12 +1,12 @@
-## Feature
+## Feature description
 
-The `GET Bucket` request is equivalent to the `List Object` request and can be used to list some or all of the objects in a bucket. To make this request, you need to have the permission to read the bucket.
+The `GET Bucket` request is equivalent to the `List Object` request and can be used to list some or all objects in a bucket. To make this request, you need to have read permission for the bucket.
 
 > If you upload an object to the bucket and immediately call the `GET Bucket` API, due to the eventual consistency characteristic of this API, the response may not include the newly uploaded object.
 
-## Request
+#### Request
 
-#### Sample Request
+#### Sample request 
 
 ```shell
 GET / HTTP/1.1
@@ -15,25 +15,25 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://cloud.tencent.com/document/product/436/7778) for details).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
 | Name | Description | Type | Required |
 | --- | --- | --- | --- |
 | prefix | Matching prefix for object keys, the response will only contain object keys with the specified prefix | string | No |
-| delimiter | A character delimiter used to group object keys. The identical paths between `prefix` (or, if no `prefix` is specified, the beginning) and the first `delimiter` are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the examples below | string | No |
-| encoding-type | Specifies the encoding type of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded as `Tencent%20Cloud` | string | No |
+| delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the examples below | string | No |
+| encoding-type | Specifies the encoding type of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded as `%E8%85%BE%E8%AE%AF%E4%BA%91` | string | No |
 | marker | Marker for the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after the marker | string | No |
-| max-keys | The maximum number of entries returned in a single time, the default value is 1000, the maximum is 1000.<br> **Note:** This parameter will limit the maximum number of entries returned per List operation, which will be no more than the value configured by max-keys | integer | No |
+| max-keys | The maximum number of entries returned at a time; the default value is 1000, and the maximum is 1000.<br> **Note:** This parameter will limit the maximum number of entries returned per list operation, which cannot exceed the value of this parameter. | integer | No |
 
 #### Request Headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request Body
 
-The request body of the request is empty.
+This API does not have a request body.
 
 ## Response
 
@@ -47,7 +47,7 @@ In addition to common response headers, this API also returns the following resp
 
 #### Response Body
 
-A successful query returns **application/xml** data which contains information on objects in the bucket. For response bodies in different scenarios, see the examples below.
+A successful query returns **application/xml** data which contains information on the objects in the bucket. For the response bodies of different scenarios, see the examples below.
 
 ```shell
 <?xml version='1.0' encoding='utf-8' ?>
@@ -99,15 +99,15 @@ The detailed nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| Name | ListBucketResult | Bucket name in the format of `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
+| Name | ListBucketResult | Bucket name in the format: `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
 | EncodingType | ListBucketResult | Encoding format, which corresponds to the `encoding-type` parameter in the request and will be returned only if the `encoding-type` parameter is specified in the request | string |
 | Prefix | ListBucketResult | Matching prefix for object keys, which corresponds to the `prefix` parameter in the request | string |
 | Marker | ListBucketResult | Marker for the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after the marker. This parameter corresponds to the `marker` parameter in the request | string |
-gg| MaxKeys | ListBucketResult | The maximum number of entries returned in a single response, corresponding to the max-keys parameter in the request.<br> **Note:** This parameter will limit the maximum number of entries returned per List operation, which does not exceed the value configured by max-keys. If not all objects are listed in a single response because you have configured the max-keys parameter, COS will return a nextmarker parameter as the input parameter for your next List request so that you can list the objects later | Integer |
+| MaxKeys | ListBucketResult | The maximum number of entries returned in a single response, corresponding to the `max-keys` parameter in the request.<br> **Note:** This parameter will limit the maximum number of entries returned per list operation, which cannot exceed the value configured by max-keys. If not all objects are listed in a single response because of the way you have configured the max-keys parameter, COS will return a nextmarker parameter as the input parameter for your next List request so that you can list the objects later | Integer |
 | Delimiter | ListBucketResult | Delimiter, which corresponds to the `delimiter` parameter in the request and will be returned only if the `delimiter` parameter is specified in the request | string |
-| IsTruncated | ListBucketResult | Whether the returned list is truncated, which is a boolean value. Valid values: `true`, `false` | boolean |
+| IsTruncated | ListBucketResult | Indicates whether the returned list is truncated; this is a boolean value. Valid values: `true`, `false` | boolean |
 | NextMarker | ListBucketResult | This node will be returned only if the returned list is truncated (i.e., the value of `IsTruncated` is `true`). The value of this parameter is the last object key in the current response and will be passed in as the `marker` parameter in the next request if you need to request subsequent entries | string |
-| CommonPrefixes | ListBucketResult | The identical paths between `prefix` (or, if no `prefix` is specified, the beginning) and the first `delimiter` are grouped and defined as a common prefix. This node will be returned only if the `delimiter` parameter is specified in the request | Container |
+| CommonPrefixes | ListBucketResult | The identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a common prefix. This node will be returned only if the `delimiter` parameter is specified in the request | Container |
 | Contents | ListBucketResult | Object entries | Container |
 
 **Content of the Container node `CommonPrefixes`:**
@@ -121,7 +121,7 @@ gg| MaxKeys | ListBucketResult | The maximum number of entries returned in a sin
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Key | ListBucketResult.Contents | Object key | string |
-| LastModified | ListBucketResult.Contents | Last modified time of an object in ISO8601 format, such as `2019-05-24T10:56:40Z` | date |
+| LastModified | ListBucketResult.Contents | Time the object was last modified in ISO8601 format, such as `2019-05-24T10:56:40Z` | date |
 | ETag | ListBucketResult.Contents | Entity Tag of an object, which is an information tag that identifies the content of the object when it is created. It can be used to check whether the content of the object has changed. For example, the header "8e0b617ca298a564c3331da28dcb50df" does not necessarily return the MD5 value of the object, but varies depending on how the object is uploaded and encrypted | string |
 | Size | ListBucketResult.Contents | Object size in bytes | integer |
 | Owner | ListBucketResult.Contents | Bucket owner information | Container |
@@ -132,11 +132,11 @@ gg| MaxKeys | ListBucketResult | The maximum number of entries returned in a sin
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | ID | ListBucketResult.Contents.Owner | Bucket APPID | string |
-| DisplayName | ListBucketResult.Contents.Owner | Object owner name | string |
+| DisplayName | ListBucketResult.Contents.Owner | Name of the object owner | string |
 
 #### Error codes
 
-This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Use cases
 
