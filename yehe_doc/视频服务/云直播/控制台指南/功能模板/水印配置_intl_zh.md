@@ -25,7 +25,7 @@
 	- 在水印图片配置栏上拖动图片位置。
 	- 设置位置显示 X 轴方向和 Y 轴方向。
 6. 单击【保存】即可。
-![](https://main.qcloudimg.com/raw/8445d4ce1ef94a7aa846efc31f1f36f5.png)
+![](https://main.qcloudimg.com/raw/944534ffbf8625b36a8883087bdf29f6.png)
 
 
 
@@ -35,7 +35,7 @@
 2. 选择您已创建成功的水印模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/e52135049ffb419efb7826a17bd194b5.png)
+![](https://main.qcloudimg.com/raw/aceffbdffb9dd2b892500c97d8d1654f.png)
 
 > 若您需查看水印模板在画面上的效果，可单击【预览】查看。
 
@@ -46,7 +46,7 @@
 2. 选择您已创建成功的水印模板，单击上方的![img](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png)删除按钮。
 3. 确认是否删除当前水印模板，单击【确定】即可成功删除。
 
-![](https://main.qcloudimg.com/raw/7d963599585d98a3dba99e450f145bbb.png)
+![](https://main.qcloudimg.com/raw/20b838fcbfbe5feffdd29f2d033d4f71.png)
 
 ## 关联域名
 
