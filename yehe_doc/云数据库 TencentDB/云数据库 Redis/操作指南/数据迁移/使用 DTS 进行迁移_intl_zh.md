@@ -1,14 +1,15 @@
 ## DTS 简介
 腾讯云数据传输服务（Data Transmission Service，DTS）是提供数据迁移、数据同步、数据订阅于一体的数据库数据传输服务。帮助您在业务不停服的前提下轻松完成数据库迁移，利用实时同步通道轻松构建异地容灾的高可用数据库架构，利用数据订阅提供的云数据库实时增量更新数据，用户可根据自身业务需求自由消费增量数据。 DTS for Redis 目前支持各种网络场景、各种版本的 Redis 数据迁移。
 
-| 术语 | 说明 | 
+| 术语 | 说明 |
 |---------|---------|
-| 源实例 | 迁移的源实例。 | 
-| 目标实例 | 迁移的目标实例，即用户购买的腾讯云数据库 Redis。 | 
-| CVM 自建 | 用户在腾讯云服务器上部署的 Redis 服务。 | 
-| 公网自建 | 用户在外网环境下部署的 Redis 服务。 | 
+| 源实例 | 迁移的源实例。 |
+| 目标实例 | 迁移的目标实例，即用户购买的腾讯云数据库 Redis。 |
+| CVM 自建 | 用户在腾讯云服务器上部署的 Redis 服务。 |
+| 公网自建 | 用户在外网环境下部署的 Redis 服务。 |
 
 ## 迁移支持说明
+>?单机版迁移内存版（集群架构）兼容性问题请参见 [单机版迁移集群版说明](https://intl.cloud.tencent.com/document/product/239/35954)。
 
 #### 支持功能
 - 数据迁移：DTS 迁移服务支持一次性将数据迁移到云上。
@@ -33,14 +34,14 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
 <th style ="width:130px;position:relative;text-align:left;padding:5px px;font-weight:00;" valign="top" ><div style="position:absolute;width:1px;height:140px;top:0;left:0;background-color: #d9d9d9;display:block;transform:rotate(-66deg);transform-origin:top;valign=top;"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目标实例<br>源实例</th>
     </div>
     </th>
-    <th style="background-color:#f2f2f2;">2.8标准版</th>
-    <th style="background-color:#f2f2f2;">4.0标准版</th>
-    <th style="background-color:#f2f2f2;">4.0集群版</th>
-		<th style="background-color:#f2f2f2;">5.0标准版</th>
-    <th style="background-color:#f2f2f2;">5.0集群版</th>
+    <th style="background-color:#f2f2f2;">2.8内存版（标准架构）</th>
+    <th style="background-color:#f2f2f2;">4.0内存版（标准架构）</th>
+    <th style="background-color:#f2f2f2;">4.0内存版（集群架构）</th>
+		<th style="background-color:#f2f2f2;">5.0内存版（标准架构）</th>
+    <th style="background-color:#f2f2f2;">5.0内存版（集群架构）</th>
     </tr>
     <tr>
-    <td style="background-color:#f2f2f2;">2.8标准版</td>
+    <td style="background-color:#f2f2f2;">2.8内存版（标准架构）</td>
     <td>✓</td>
     <td>✓</td>
     <td>✓</td>
@@ -48,7 +49,7 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
     <td>✓</td>
     </tr>
     <tr>
-    <td style="background-color:#f2f2f2;">4.0标准版</td>
+    <td style="background-color:#f2f2f2;">4.0内存版（标准架构）</td>
     <td>x</td>
     <td>✓</td>
     <td>✓</td>
@@ -56,7 +57,7 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
     <td>✓</td>
     </tr>
     <tr>
-    <td style="background-color:#f2f2f2;">4.0集群版</td>
+    <td style="background-color:#f2f2f2;">4.0内存版（集群架构）</td>
     <td>x</td>
     <td>✓</td>
     <td>✓</td>
@@ -64,7 +65,7 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
     <td>✓</td>
     </tr>
 	<tr>
-    <td style="background-color:#f2f2f2;">5.0标准版</td>
+    <td style="background-color:#f2f2f2;">5.0内存版（标准架构）</td>
     <td>x</td>
     <td>✓</td>
     <td>✓</td>
@@ -72,7 +73,7 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
     <td>✓</td>
     </tr>
     <tr>
-    <td style="background-color:#f2f2f2;">5.0集群版</td>
+    <td style="background-color:#f2f2f2;">5.0内存版（集群架构）</td>
     <td>x</td>
     <td>✓</td>
     <td>✓</td>
@@ -80,23 +81,23 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
     <td>✓</td>
     </tr>
     </table>
-		
+
 #### 迁移限制
 - 为保障迁移效率，CVM 自建实例迁移不支持跨地域迁移。
 - 外网实例迁移时，需确保源实例服务在外网环境下可访问。
 - 进行迁移任务时，只允许迁移正常运行状态下的实例，未初始化密码或者有其他任务在执行中的实例，不能迁移。
-- 目标实例必须是没有数据的空实例，迁移过程中，会锁住实例，不能对实例进行写入操作。
+- 目标实例必须是没有数据的空实例，迁移过程中，目标实例会被设置为只读，不能对实例进行写入操作。
 - 迁移成功时，由业务侧验证数据后，可断开源实例连接，将连接切换到目标实例。
 
 ## 迁移过程
 ### 1. 新建迁移任务
-1）登录 [数据传输服务控制台](https://console.cloud.tencent.com/dtsnew/migrate/page) ，在数据迁移列表，单击【新建任务】创建迁移任务。
-2）在【链路地域】选择对应地域，单击【0美元购买】。
+1）登录 [DTS 控制台](https://console.cloud.tencent.com/dts )，在数据迁移页，单击【新建迁移任务】。
+2）在“链路地域”选择对应地域，单击【0元购买】。
 
 ### 2. 设置任务
 - 任务名称：为任务指定名称。
 - 定时执行：为迁移任务指定开始时间。
->
+>?
 > - 修改定时任务，校验通过后，需要重新单击【定时启动】，任务才会定时启动。
 > - 如果任务过了定时启动的时间，定时启动会变为立即启动，单击【立即启动】，会立刻启动任务。
 
@@ -113,7 +114,7 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
 | 实例 ID | 目标实例 ID |同步数据到目标实例 | 是 |
 
 **集群版迁移说明**
-DTS 服务支持 Redis 集群版迁移，不论是 Redis Cluster、Codis 或者是 tewmproxy 架构的集群方案，只需要在 DTS 任务创建的节点信息中，将原集群的所有分片节点地址以及密码填如节点信息即可，强烈建议从源实例的副本节点（从节点）进行数据迁移，避免影响源实例的业务访问。DTS支持无密码迁移，迁移填充信息参考如下：
+DTS 服务支持 Redis 集群版迁移，不论是 Redis Cluster、Codis 或者是 tewmproxy 架构的集群方案，只需要在 DTS 任务创建的节点信息中，将原集群的所有分片节点地址以及密码填入节点信息即可，强烈建议从源实例的副本节点（从节点）进行数据迁移，避免影响源实例的业务访问。DTS支持无密码迁移，迁移填充信息参考如下：
 ![](https://main.qcloudimg.com/raw/513d89660769db2dfd155514bcb38dfc.png)
 
 ### 4. 启动迁移任务

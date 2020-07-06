@@ -1,4 +1,4 @@
-COSBrowser is a visual tool launched by Tencent Cloud to help you easily view, transfer, and manage COS resources through simple interactions. Currently, COSBrowser is available in Desktop Version and Mobile Version. For more information, see:
+COSBrowser is a visual interface tool launched by Tencent Cloud to make it easier and simpler for you to view, transfer, manage, and interact with COS resources. Currently, COSBrowser is available for desktop and mobile devices. For more information, see:
 
 - [User Guide for Desktop Version](https://intl.cloud.tencent.com/document/product/436/32565)
 - [User Guide for Mobile Version](https://intl.cloud.tencent.com/document/product/436/32566)
@@ -41,52 +41,52 @@ COSBrowser is a visual tool launched by Tencent Cloud to help you easily view, t
    </tr>
 </table>
 
-## COSBrowser Desktop Version
+## COSBrowser for Desktop
 
-COSBrowser Desktop Version focuses on resource management and  upload and download data in batches.
+COSBrowser for desktop focuses on resource management and uploading and downloading data in batches.
 
->COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
+>COSBrowser for desktop uses a system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
 >
 > - For queries on Windows, go to "Internet Options".
 > - For queries on macOS, go to "Network Preferences".
 > - For queries on Linux, go to System Settings > Network > Network Proxy.
 
-COSBrowser Desktop Version has the following features:
+COSBrowser for desktop has the following features:
 
 | Feature | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Creating/Deleting bucket](https://intl.cloud.tencent.com/document/product/436/32565#createordelete) | Creates or deletes a bucket |
+| [Creating/Deleting a bucket](https://intl.cloud.tencent.com/document/product/436/32565#createordelete) | Creates or deletes a bucket |
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket) | Views the basic information of your bucket |
 | [Viewing statistics](https://intl.cloud.tencent.com/document/product/436/32565#count)           | Views the current storage capacity and number of objects in your bucket                         |
 | [Permission management](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                               | Modifies the permissions on your buckets and objects                                 |
 | [Setting versioning](https://intl.cloud.tencent.com/document/product/436/32565#viewbucket)                                     | Enable/Suspends bucket versioning                                 |
-| [Adding access path](https://intl.cloud.tencent.com/document/product/436/32565#addaccess)                                     | Adds an access path                                             |
-| [Uploading file/folder](https://intl.cloud.tencent.com/document/product/436/32565#upload) | Uploads files/folders to a bucket separately, in batches, or incrementally |
-| [Downloading file/folder](https://intl.cloud.tencent.com/document/product/436/32565#download) | Downloads files/folders to the local file system separately, in batches, or incrementally |
-| [Deleting file/folder](https://intl.cloud.tencent.com/document/product/436/32565#delete) | Deletes files/folders from a bucket separately or in batches |
-| [Synchronizing file](https://intl.cloud.tencent.com/document/product/436/32565#synchronization)            |                                                     Synchronizes local files to your bucket in real time                  |
-| [Copying and pasting file](https://intl.cloud.tencent.com/document/product/436/32565#copy) | Copies files/folders separately or in batches from one directory to another |
-| [Renaming file](https://intl.cloud.tencent.com/document/product/436/32565#rename) |  Renames files in your bucket |
-| [Creating folder](https://intl.cloud.tencent.com/document/product/436/32565#newfolder) | Creates folders in your bucket |
-| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32565#view) | Views the basic information of files in your bucket |
-| [Generating file link](https://intl.cloud.tencent.com/document/product/436/32565#generatelinks) | Generates a file access link with a validity period by requesting a temporary signature |
-| [Previewing file](https://intl.cloud.tencent.com/document/product/436/32565#preview) |  Previews media files (images, video, and audio) in your bucket |
-| [Searching for file](https://intl.cloud.tencent.com/document/product/436/32565#searchfile) | Searches for files in your bucket through prefix search |
-| [Searching for bucket](https://intl.cloud.tencent.com/document/product/436/32565#searchbuckete) | Searches for existing buckets |
+| [Adding an access path](https://intl.cloud.tencent.com/document/product/436/32565#addaccess)                                     | Adds an access path                                             |
+| [Uploading a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#upload) | Uploads files/folders to a bucket separately, in batches, or incrementally |
+| [Downloading a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#download) | Downloads files/folders to the local file system separately, in batches, or incrementally |
+| [Deleting a file/folder](https://intl.cloud.tencent.com/document/product/436/32565#delete) | Deletes files/folders from a bucket separately or in batches |
+| [Synchronizing files](https://intl.cloud.tencent.com/document/product/436/32565#synchronization)            |                                                     Synchronizes local files to your bucket in real time                  |
+| [Copying and pasting files](https://intl.cloud.tencent.com/document/product/436/32565#copy) | Copies files/folders separately or in batches from one directory to another |
+| [Renaming files](https://intl.cloud.tencent.com/document/product/436/32565#rename) | Renames files in a bucket |
+| [Creating a folder](https://intl.cloud.tencent.com/document/product/436/32565#newfolder) | Creates a folder in a bucket |
+| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32565#view) | Views the basic information of the files in a bucket |
+| [Generating a file link](https://intl.cloud.tencent.com/document/product/436/32565#generatelinks) | Generates a file access link with a certain validity period by requesting a temporary signature |
+| [Previewing a file](https://intl.cloud.tencent.com/document/product/436/32565#preview) | Previews media files (images, video, and audio) in your bucket |
+| [Searching a file](https://intl.cloud.tencent.com/document/product/436/32565#searchfile) | Searches files in a bucket through prefix search |
+| [Searching buckets](https://intl.cloud.tencent.com/document/product/436/32565#searchbuckete) | Searches existing buckets |
 | [Viewing file versions/incomplete multipart uploads](https://intl.cloud.tencent.com/document/product/436/32565#viewfiles) |  <li>Views multiple versions of a file in a versioning-enabled bucket<br><li>Views the incomplete multipart uploads in your bucket  |
-| [Setting up proxy](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets up a proxy to access COS |
+| [Setting up a proxy](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets up a proxy to access COS |
 | [Setting the number of concurrent transfers](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of concurrent transfers for file upload or download |
 | [Setting the number of parts to be transferred](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of parts for multipart upload or download |
 | [Setting the number of retries upon transfer failure](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of retries upon upload or download failure |
 | [Setting upload check](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Double-checks files uploaded to a bucket |
-| [Setting MD5 checksum calculation during upload](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Calculates MD5 checksums of files uploaded to a bucket and add them to custom headers |
-| [Viewing local log](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Saves the record of operations on COSBrowser in the form of local log |
+| [Setting MD5 checksum calculation during upload](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Calculates the MD5 checksums  of files uploaded to a bucket and adds them to custom headers |
+| [Viewing a local log](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Saves the record of operations on COSBrowser in the form of a local log |
 
 ## COSBrowser Mobile Version
 
-COSBrowser Mobile Version focuses on viewing and monitoring of resources and  monitor data of COS such as storage and traffic anytime, anywhere.
+COSBrowser for mobile devices focuses on viewing and monitoring of resources and COS data such as storage and traffic anytime, anywhere.
 
-COSBrowser Mobile Version has the following features:
+COSBrowser for mobile devices has the following features:
 
 | Operation Name | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -94,17 +94,17 @@ COSBrowser Mobile Version has the following features:
 | [Data overview](https://intl.cloud.tencent.com/document/product/436/32566#dateview) | Views recent data usage |
 | [File batch operations](https://intl.cloud.tencent.com/document/product/436/32566#filebatch) |  Uploads, downloads, deletes, copies, or moves files in a bucket in batches |
 | [Sharing and uploading](https://intl.cloud.tencent.com/document/product/436/32566#shareupload) | Shares and uploads files from third-party apps to a bucket |
-| [Renaming file](https://intl.cloud.tencent.com/document/product/436/32566#rename) | Renames files in a bucket |
-| [Creating folder](https://intl.cloud.tencent.com/document/product/436/32566#newfolder) |  Creates folders in a bucket |
-| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32566#view) |  Views the basic information of files in a bucket |
-| [Previewing file](https://intl.cloud.tencent.com/document/product/436/32566#filepreview) | Previews media files (images, video, and audio) in a bucket |
-| [Generating file link](https://intl.cloud.tencent.com/document/product/436/32566#generatelinks) | Generates a file access link with a validity period by requesting a temporary signature |
-| [Searching for file](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | Searches for files in a bucket through prefix search |
-| [Searching for bucket](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | Searches for existing buckets |
+| [Renaming files](https://intl.cloud.tencent.com/document/product/436/32566#rename) | Renames files in a bucket |
+| [Creating a folder](https://intl.cloud.tencent.com/document/product/436/32566#newfolder) |  Creates a folder in a bucket |
+| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32566#view) | Views the basic information of the files in a bucket |
+| [Previewing files](https://intl.cloud.tencent.com/document/product/436/32566#filepreview) | Previews media files (images, video, and audio) in a bucket |
+| [Generating a file link](https://intl.cloud.tencent.com/document/product/436/32566#generatelinks) | Generates a file access link with a certain validity period by requesting a temporary signature |
+| [Searching files](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | Searches files in a bucket through prefix search |
+| [Searching buckets](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | Searches existing buckets |
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | Views the basic information and domain name of your bucket |
-| [Creating bucket](https://intl.cloud.tencent.com/document/product/436/32565) | Creates new buckets |
-| [Adding access path](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | Allows a sub-account that has no access to the bucket list to enter a bucket for resource management by adding an access path |
-| [Viewing storage pack](https://intl.cloud.tencent.com/document/product/436/32566#package)          | Views the usage of your current storage pack                          |
+| [Creating a bucket](https://intl.cloud.tencent.com/document/product/436/32565) | Creates a new bucket |
+| [Adding an access path](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | Allows a sub-account that does not have permission to access the bucket list to enter bucket resource management by adding an access path |
+| [Viewing storage pack usage](https://intl.cloud.tencent.com/document/product/436/32566#package) | Views the usage of your current storage pack                          |
 
 ## Changelog
 
@@ -116,4 +116,3 @@ COSBrowser Mobile Version has the following features:
 If you have any questions or suggestions during your use of COSBrowser, please feel free to give us your feedback:
 
 - Feedback on Desktop Version: [issues](https://github.com/tencentyun/cosbrowser/issues).
-- Feedback on Mobile Version: [issues_mobile](https://support.qq.com/embed/phone/67467).

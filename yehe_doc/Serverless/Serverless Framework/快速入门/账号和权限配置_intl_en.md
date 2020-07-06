@@ -37,7 +37,8 @@ You can also add `SLS_QcsRole` by using the root account in the [CAM Console](ht
 - QcloudSCFFullAccess
 - QcloudMonitorFullAccess
 - QcloudCOSFullAccess
-- QcloudCDBFullAccess
+- QcloudCDNFullAccess
+- QcloudPostgreSQLFullAccess
 
 In addition, you need to bind a custom policy to the sub-account user so as to ensure that the account has the permission to use Serverless Framework APIs. In this document, the examples for two authorization methods are provided:
 

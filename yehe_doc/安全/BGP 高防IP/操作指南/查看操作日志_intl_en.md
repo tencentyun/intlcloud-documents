@@ -1,16 +1,13 @@
 ## Operation Scenarios
-Anti-DDoS Advanced allows you to view important operation logs of the last 90 days. You can log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2) to view operation logs. Viewable logs include the following categories:
-- Logs of forwarding policy change
-- Logs of advanced DDoS protection policy change
+Anti-DDoS Advanced allows you to view logs of important operations in the last 90 days in the console. The following types of logs are available:
+- Logs of forwarding rule change
+- Logs of protection policy change
 - Logs of cleansing threshold adjustment
 - Logs of protection level change
-- Logs of CC protection policy change
-- Logs of elastic protection bandwidth adjustment
-- Logs of resource name change
-    
+- Logs of instance name change  
 
 ## Directions
 
-1. Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/bgp_v2).
-2. Select **Operation Logs** to enter the log query page.
-3. Set the time range. View the corresponding operation history by filtering **Anti-DDoS Advanced** in **Product Type**.
+1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/log) and click **Operation Log** on the left sidebar.
+2. On the operation log page, you can query operation logs by time period. You can click **Show More** in the "Operation" column on the right to view log details.
+![](https://main.qcloudimg.com/raw/ba3f8661714f2bb3fef7dd264215e725.png)

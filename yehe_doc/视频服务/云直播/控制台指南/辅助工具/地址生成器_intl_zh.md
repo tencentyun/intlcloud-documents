@@ -7,7 +7,6 @@
 - 云直播暂无地址生成历史记录功能，请生成地址后，复制保存。
 - 若您需同时生成多个直播地址，建议使用自主拼接方法生成，具体操作文档请参见 [自主拼接直播 URL 相关](https://intl.cloud.tencent.com/document/product/267/32480)。
 - 云直播默认提供测试域名`xxxx.livepush.myqcloud.com`，您可通过该域名进行推流测试，但不建议您在正式业务中使用这个域名作为推流域名。
-- 直播地址二维码可通过使用 精简版 Demo扫码直接获取使用。
 
 
 
@@ -41,11 +40,11 @@
 4. 填写流名称 StreamName，例如：`liveteststream`。
 5. 选择地址过期时间，例如：`2020-06-09 15:36:04`。
 6. 单击【生成地址】即可。
-![](https://main.qcloudimg.com/raw/1d9741fe544d1c850ab89b22134f6dc8.png)
+![](https://main.qcloudimg.com/raw/3e9c45467ba07c5cac3250bd58ad3223.png)
 
 ### 推流地址说明
 推流支持 RTMP 协议，可通过地址生成器功能生成前缀为`rtmp://`的推流地址。
-![](https://main.qcloudimg.com/raw/21b09486ff99d77706661c20fe7db3f8.png)
+![](https://main.qcloudimg.com/raw/9e2bd3bbb6c15fe4cd46a905c0fe0c27.png)
 
 
 <h2 id="play">生成播放地址</h2>
@@ -59,12 +58,12 @@
 6. 选择是否引用已创建的转码模板。
 6. 单击【生成地址】即可。
 
-![](https://main.qcloudimg.com/raw/72b683a48c9f7992a763961b15334a4f.png)
+![](https://main.qcloudimg.com/raw/10afad65da657a02a6f175e7d2afdc7c.png)
 
 ### 播放地址说明
 若使用转码模板，生成的播放地址为转码后的直播播放地址。其中播放支持 RTMP、FLV和HLS 协议。可通过地址生成器生成前缀为 `rtmp://`和`http://`的播放地址。
 
-![](https://main.qcloudimg.com/raw/5fc4591c48b60654a31a6f3c9b70eef4.png)
+![](https://main.qcloudimg.com/raw/a5b5ab5183a44e78ac7eabc757c8d16e.png)
 
 
 

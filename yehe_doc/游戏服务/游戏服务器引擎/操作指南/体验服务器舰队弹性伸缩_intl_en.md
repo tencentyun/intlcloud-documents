@@ -20,8 +20,11 @@ This document describes how to perform auto scaling for a server fleet.
 
 ### Creating a game server session and observing the expansion result
 In addition to integrating the SDK into the code to call a TencentCloud API, you can also use [TencentCloud API debugging](https://console.cloud.tencent.com/api/explorer?Product=gse) to quickly create a session.
-
+ ![](https://main.qcloudimg.com/raw/7a51ee63925890bd0ff336b0d684214b.png)  
+ 
 After the game server session is successfully created through TencentCloud API debugging, you will see that it is generated in the server fleet.
+ ![](https://main.qcloudimg.com/raw/9eaf67be7b686426f0d026d5afb7aa69.png)
+
 
 In this step, one process is configured for one CVM instance by default. Therefore, after a game server session is created, the session utilization will be 100%. As the game server session buffer was set to 50% in the previous step, the number of instances will be automatically increased to 2.  
 

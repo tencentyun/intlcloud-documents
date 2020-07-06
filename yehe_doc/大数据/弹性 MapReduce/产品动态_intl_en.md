@@ -1,4 +1,4 @@
-<h2>April, 2020</h2>
+## April, 2020
 <table>
 <thead>
 <tr>
@@ -27,7 +27,8 @@
 </tbody></table>
 
 
-<h2>March 2020</h2><table>
+## March 2020
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -54,7 +55,9 @@
 </tr>
 </tbody></table>
 
-<h2>February 2020</h2><table>
+## February 2020
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -79,7 +82,10 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>January 2020</h2><table>
+
+## January 2020
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -104,7 +110,10 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>December 2019</h2><table>
+
+## December 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -149,7 +158,10 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>November 2019</h2><table>
+
+## November 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -179,7 +191,10 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>October 2019</h2><table>
+
+## October 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -194,7 +209,10 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
-<h2>September 2019</h2><table>
+
+## September 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -219,7 +237,10 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>August 2019</h2><table>
+
+## August 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -254,7 +275,10 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>July 2019</h2><table>
+
+## July 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -289,7 +313,10 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>June 2019</h2><table>
+
+## June 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -323,7 +350,10 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">Parameter Configuration Rollback</a></td>
 </tr>
 </tbody></table>
-<h2>May 2019</h2><table>
+
+## May 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -375,7 +405,10 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>March 2019</h2><table>
+
+## March 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -409,7 +442,10 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Configuration Adjustment</a></td>
 </tr>
 </tbody></table>
-<h2>January 2019</h2><table>
+
+## January 2019
+
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
