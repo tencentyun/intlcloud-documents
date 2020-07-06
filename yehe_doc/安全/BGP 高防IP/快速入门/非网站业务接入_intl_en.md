@@ -60,5 +60,5 @@ To ensure the stability of your business, a local test is recommended. The verif
     >
     b. After successfully configuring the `hosts`, check whether the domain name can be accessed. If it can be accessed properly, the configuration has taken effect.
  
->If the verification still fails with the correct method, please log in to the Anti-DDoS Advanced Console and check whether the configuration is correct. If the problem persists after you fix any incorrect configuration items, please contact [Tencent Cloud technical support](https://cloud.tencent.com/about/connect).
+>If the verification still fails with the correct method, please log in to the Anti-DDoS Advanced Console and check whether the configuration is correct. If the problem persists after you fix any incorrect configuration items, please contact [Tencent Cloud technical support](https://intl.cloud.tencent.com/support).
 
