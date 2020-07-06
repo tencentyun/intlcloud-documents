@@ -10,13 +10,12 @@ TencentDB for MariaDB is highly compatible with MySQL 5.6; therefore, code, appl
 - You can use a MySQL client to connect to TencentDB for MariaDB.
 
 ## Incompatibility of TencentDB for MariaDB with MySQL 5.6
-Binlogs in TencentDB for MariaDB are in row format, while in native MySQL and MariaDB, they are in statement format by default.
 
 ### 1. GTID incompatibility
 `GTID` of TencentDB for MariaDB is incompatible with that of MySQL 5.6, i.e., MySQL cannot be used as a slave database of TencentDB for MariaDB.
 
 ### 2. Different default binlog configurations
-Binlogs in TencentDB for MariaDB are in row format, while in MySQL and MariaDB, they are in statement format by default.
+Binlogs in TencentDB for MariaDB are in row format, while in native MySQL 5.6, MariaDB 10.2.3, and their earlier versions, binlogs are in statement format by default.
 
 ### 3. Row-based or command-based replication of the `CREAT TABLE ... SELECT` command
 To ensure that the `CREAT TABLE ... SELECT` command can work properly in both row-based and command-based replication, this command in TencentDB for MariaDB will be converted to and executed as the `CREAT OR RPLACE` command in a slave database. The advantage of this mechanism is that the slave database can run properly after recovery from downtime.
@@ -165,7 +164,7 @@ When the above statements are used, the ways to process them are different in My
 
 You can use the following statement to keep the time precision.
 ```
-SELECT CAST(CAST('10:11:12.098700' (6)) AS DECIMAL(20,6));
+SELECT CAST(CAST('10:11:12.098700' AS TIME(6)) AS DECIMAL(20,6));
 +-----------------------------------------------------------+
 | CAST(CAST('10:11:12.098700' AS TIME(6)) AS DECIMAL(20,6)) |
 +-----------------------------------------------------------+
