@@ -38,28 +38,28 @@ Authorization: Auth String
 
 此接口除使用公共请求头部外，还支持以下请求头部，了解公共请求头部详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
-| 名称                                                         | 描述                                                         | 类型   | 是否必选 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Cache-Control                                                | RFC 2616 中定义的缓存指令，将作为对象元数据保存              | string | 否       |
-| Content-Disposition                                          | RFC 2616 中定义的文件名称，将作为对象元数据保存              | string | 否       |
-| Content-Encoding                                             | RFC 2616 中定义的编码格式，将作为对象元数据保存              | string | 否       |
-| Content-Type                                                 | RFC 2616 中定义的 HTTP 请求内容类型（MIME），此头部用于描述待上传对象的内容类型，将作为对象元数据保存。<br>例如`text/html`或`image/jpeg` | string | 是       |
-| Expires                                                      | RFC 2616 中定义的缓存失效时间，将作为对象元数据保存          | string | 否       |
-| Transfer-Encoding                                            | 如果希望在上传时分块传输，则指定 Transfer-Encoding: chunked 请求头部，此时请求体遵循 RFC 2616 中定义的传输编码格式，且不能指定 Content-Length 请求头部 | string | 否       |
-| x-cos-meta-\*                                                | 包括用户自定义元数据头部后缀和用户自定义元数据信息，将作为对象元数据保存，大小限制为2KB<br>**注意：**用户自定义元数据信息支持下划线（_），但用户自定义元数据头部后缀不支持下划线，仅支持减号（-） | string | 否       |
-| x-cos-storage-class                                          | 对象存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 MAZ_STANDARD，STANDARD_IA，ARCHIVE。默认值：STANDARD | Enum   | 否       |
+| 名称                | 描述                                                         | 类型   | 是否必选 |
+| ------------------- | ------------------------------------------------------------ | ------ | -------- |
+| Cache-Control       | RFC 2616 中定义的缓存指令，将作为对象元数据保存              | string | 否       |
+| Content-Disposition | RFC 2616 中定义的文件名称，将作为对象元数据保存              | string | 否       |
+| Content-Encoding    | RFC 2616 中定义的编码格式，将作为对象元数据保存              | string | 否       |
+| Content-Type        | RFC 2616 中定义的 HTTP 请求内容类型（MIME），此头部用于描述待上传对象的内容类型，将作为对象元数据保存。<br>例如`text/html`或`image/jpeg` | string | 是       |
+| Expires             | RFC 2616 中定义的缓存失效时间，将作为对象元数据保存          | string | 否       |
+| Transfer-Encoding   | 如果希望在上传时分块传输，则指定 Transfer-Encoding: chunked 请求头部，此时请求体遵循 RFC 2616 中定义的传输编码格式，且不能指定 Content-Length 请求头部 | string | 否       |
+| x-cos-meta-\*       | 包括用户自定义元数据头部后缀和用户自定义元数据信息，将作为对象元数据保存，大小限制为2KB<br>**注意：**用户自定义元数据信息支持下划线（_），但用户自定义元数据头部后缀不支持下划线，仅支持减号（-） | string | 否       |
+| x-cos-storage-class | 对象存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 MAZ_STANDARD，STANDARD_IA，ARCHIVE。默认值：STANDARD | Enum   | 否       |
 
 **访问控制列表（ACL）相关头部**
 
 在上传对象时可以通过指定下列请求头部来设置对象的访问权限：
 
-| 名称                                                         | 描述                                                         | 类型   | 是否必选 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl                                                    | 定义对象的访问控制列表（ACL）属性。枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，例如 default，private，public-read 等，默认为 default<br>**注意：**当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限 | Enum   | 否       |
-| x-cos-grant-read                                             | 赋予被授权者读取对象的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
-| x-cos-grant-read-acp                                         | 赋予被授权者读取对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
-| x-cos-grant-write-acp                                        | 赋予被授权者写入对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
-| x-cos-grant-full-control                                     | 赋予被授权者操作对象的所有权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
+| 名称                     | 描述                                                         | 类型   | 是否必选 |
+| -------------------------| ------------------------------------------------------------ | ------ | -------- |
+| x-cos-acl                | 定义对象的访问控制列表（ACL）属性。枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，例如 default，private，public-read 等，默认为 default<br>**注意：**当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限 | Enum   | 否       |
+| x-cos-grant-read         | 赋予被授权者读取对象的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-read-acp     | 赋予被授权者读取对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-write-acp    | 赋予被授权者写入对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-full-control | 赋予被授权者操作对象的所有权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
 
 **服务端加密（SSE）相关头部**
 
@@ -226,6 +226,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNlMDFfOThjMjJhMDlfMjhhMl8xNTlm****
 x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
+
 ```
 
 #### 案例五：使用服务端加密 SSE-C
@@ -246,6 +247,7 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q
 Connection: close
 
 [Object Content]
+
 ```
 
 #### 响应

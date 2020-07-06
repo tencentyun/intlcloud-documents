@@ -38,27 +38,27 @@ This API does not use any request parameter.
 
 In addition to common request headers, this API also supports the following request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Name                                                         | Description                                                         | Type   | Required |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Cache-Control | Cache directives as defined in RFC 2616, which are stored as part of object metadata | String | No |
+| Name                | Description                                                  | Type   | Required |
+| ------------------- | ------------------------------------------------------------ | ------ | -------- |
+| Cache-Control       | Cache directives as defined in RFC 2616, which are stored as part of object metadata | String | No |
 | Content-Disposition | File name as defined in RFC 2616, which is stored as part of object metadata | String | No |
-| Content-Encoding | Encoding format as defined in RFC 2616, which is stored as part of object metadata | String | No |
-| Content-Type                                                 | HTTP request content type (MIME) as defined in RFC 2616 of the object to upload, and stored as part of object metadata<br>Example: `text/html` or `image/jpeg` | String | Yes       |
-| Expires | The cache expiration time as defined in RFC 2616, which is stored as part of object metadata | String | No |
-| Transfer-Encoding | To upload data in chunks, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format as defined in RFC 2616, while you cannot use the `Content-Length` request header. | String | No |
-| x-cos-meta-\* | Includes custom metadata and its header suffix, which are stored as part of object metadata. Maximum size: 2 KB.<br>**Note:** custom metadata can contain underscores (_), whereas its header suffix can only contain minus signs (-). | String | No |
+| Content-Encoding    | Encoding format as defined in RFC 2616, which is stored as part of object metadata | String | No |
+| Content-Type        | HTTP request content type (MIME) as defined in RFC 2616 of the object to upload, and stored as part of object metadata<br>Example: `text/html` or `image/jpeg` | String | Yes       |
+| Expires             | The cache expiration time as defined in RFC 2616, which is stored as part of object metadata | String | No |
+| Transfer-Encoding   | To upload data in chunks, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format as defined in RFC 2616, while you cannot use the `Content-Length` request header. | String | No |
+| x-cos-meta-\*       | Includes custom metadata and its header suffix, which are stored as part of object metadata. Maximum size: 2 KB.<br>**Note:** custom metadata can contain underscores (_), whereas its header suffix can only contain minus signs (-). | String | No |
 | x-cos-storage-class | Object storage class. Enumerated values: `STANDARD` (default), `STANDARD_IA` and `ARCHIVE`. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) |  Enum   | No       |
 
 **ACL-related headers**
 
 You can configure object access permissions when uploading an object using the following request headers:
 
-| Name                                                         | Description                                                         | Type   | Required |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the access control list (ACL) attributes of the object. For enumerated values such as `default`, `private`, and `public-read`, see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).<br>**Note:** currently, COS supports up to 1,000 bucket ACL rules. If you do not need an object ACL, set this parameter to `default` (inherit bucket permissions), or leave it empty. | Enum | No |
-| x-cos-grant-read | Grants permission to read the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
-| x-cos-grant-read-acp | Grants permission to read the object ACLs; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
-| x-cos-grant-write-acp | Grants permission to write to the object ACLs; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| Name                     | Description                                                  | Type   | Required |
+| ------------------------ | ------------------------------------------------------------ | ------ | -------- |
+| x-cos-acl                | Defines the access control list (ACL) attributes of the object. For enumerated values such as `default`, `private`, and `public-read`, see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).<br>**Note:** currently, COS supports up to 1,000 bucket ACL rules. If you do not need an object ACL, set this parameter to `default` (inherit bucket permissions), or leave it empty. | Enum | No |
+| x-cos-grant-read         | Grants permission to read the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-read-acp     | Grants permission to read the object ACLs; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-grant-write-acp    | Grants permission to write to the object ACLs; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
 | x-cos-grant-full-control | Grants full permission to operate on the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
 
 **Headers related to server-side encryption (SSE)**
@@ -226,6 +226,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNlMDFfOThjMjJhMDlfMjhhMl8xNTlm****
 x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
+
 ```
 
 #### Example 5. Using server-side encryption SSE-C
@@ -246,6 +247,7 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q
 Connection: close
 
 [Object Content]
+
 ```
 
 #### Response
