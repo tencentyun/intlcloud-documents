@@ -1,12 +1,12 @@
-**In order to use the Tencent Cloud Text Recognition Service (the “Service”), you shall read and comply with this Tencent Cloud Text Recognition Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/12905). This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service Availability or success rate, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
+**In order to use the Tencent Cloud Optical Character Recognition Service (the “Service”), you shall read and comply with this Tencent Cloud Optical Character Recognition Service Level Agreement (this “Agreement”, or this “SLA”) and the** [**Tencent Cloud Service Agreement**](https://intl.cloud.tencent.com/document/product/301/9248)**. This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service Availability or success rate, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
 **1. Terms and Definitions**
 
-**1.1 Tencent Cloud Text Recognition Service**
+**1.1 Tencent Cloud Optical Character Recognition Service**
 
-Refers to each independent text recognition service within the text recognition product provided to you by Tencent Cloud, such as the ID Card recognition, general printed character recognition, and general handwriting recognition services.
+Refers to each independent optical character recognition service within the Optical Character Recognition product provided to you by Tencent Cloud, such as the ID Card recognition, general printed character recognition, and general handwriting recognition services.
 
 **1.2 Service Month(s)**
 
@@ -18,7 +18,7 @@ The Service deems any request with an error code of “Internal Error” as a Fa
 
 **1.4 Valid Request**
 
-The Service deems any request received by the server end of the Text Recognition Service as a Valid Request.
+The Service deems any request received by the server end of the Optical Character Recognition Service as a Valid Request.
 
 **1.5 Error Rate Per 5 Minutes**
 
@@ -27,6 +27,8 @@ Error Rate Per 5 Minutes = (Count of Failed Requests per 5 minutes / Count of al
 **2. Service Availability**
 
 **2.1 Calculation of the Service Success Rate**
+
+
 
 The Service Availability of the Service is calculated on the basis of Service Months. The average of the Error Rate Per 5 Minutes is calculated by dividing the sum of Error Rate Per 5 Minutes within a Service Month by the total number of 5-minute periods in that Service Month, from which the Service Availability is then derived, i.e., 
 
@@ -54,11 +56,11 @@ In respect of the Service, if the Service Availability is lower than **99.5%**, 
 | --------------------------------------------- | ------------------------------------- |
 | Less than   99.5% but is or higher than 99.0% | 10% of the   Monthly Service Fee      |
 | Less than   99.0% but is or higher than 95.0% | 25% of the   Monthly Service Fee      |
-| Less than 95.0%                               | 100% of the   Monthly Service Fee     |
+| Less than 95.0%                               | 100% of the Monthly   Service Fee     |
 
  
 
-**Monthly Service Fee:** the fees incurred by a client for using the Text Recognition Service under certain Tencent Cloud account within a calendar month. If a client has paid service fees for multiple months in a lump sum, the Monthly Service Fee will be calculated by dividing the service fees by the number of the months the client paid for.
+**Monthly Service Fee:** the fees incurred by a client for using the Optical Character Recognition Service under certain Tencent Cloud account within a calendar month. If a client has paid service fees for multiple months in a lump sum, the Monthly Service Fee will be calculated by dividing the service fees by the number of the months the client paid for.
 
 **3.2 Time Limit for Compensation Application**
 
@@ -94,4 +96,4 @@ In respect of the Service, if the Service Availability is lower than **99.5%**, 
 
 5.2 Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agreement terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
 
-5.3 As an ancillary agreement to the Tencent Cloud Service Agreement, this Agreement is of the same legal effect as the Tencent Cloud Service Agreement. In respect of any matter not agreed herein, you shall comply with relevant terms under the Tencent Cloud Service Agreement. In case of any conflict or discrepancy between this Agreement and the Tencent Cloud Service Agreement, this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
+5.3 As an ancillary agreement to the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248), this Agreement is of the same legal effect as the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). In respect of any matter not agreed herein, you shall comply with relevant terms under the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). In case of any conflict or discrepancy between this Agreement and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248), this Agreement prevails to the extent of such conflict or discrepancy. (End of Document)
