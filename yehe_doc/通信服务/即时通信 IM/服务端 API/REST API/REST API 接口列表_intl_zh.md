@@ -91,3 +91,4 @@
 |---------|---------|
 | 拉取运营数据  |[v4/openconfigsvr/getappinfo](https://intl.cloud.tencent.com/document/product/1047/34886) |
 | 下载消息记录  |[v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |
+| 获取服务器 IP 地址  |[v4/ConfigSvc/GetIPList](https://intl.cloud.tencent.com/document/product/1047/36742) |

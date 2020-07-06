@@ -90,3 +90,4 @@
 |---------|---------|
 | Downloads message history. | [v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |
 | Pulls operations data. | [v4/openconfigsvr/getappinfo](https://intl.cloud.tencent.com/document/product/1047/34886) |
+| Obtaining Server IP Addresses  |[v4/ConfigSvc/GetIPList](https://intl.cloud.tencent.com/document/product/1047/36742) |
