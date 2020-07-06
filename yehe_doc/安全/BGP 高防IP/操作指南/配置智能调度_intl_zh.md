@@ -16,7 +16,7 @@
 - 在开启智能调度前，请将需要防护的业务接入高防实例进行防护。
 >
 	- 若您需要将防护的云上产品 IP 添加至已购买的高防包实例，请参见 DDoS 高防包 [快速入门](https://cloud.tencent.com/document/product/1021/43898)。
-	- 若您需要将四层或七层业务添加至已购买的 DDoS 高防 IP 实例，请参见  DDoS 高防 IP [端口接入](https://cloud.tencent.com/document/product/1014/44105) 或 [域名接入](https://cloud.tencent.com/document/product/1014/44106) 。
+	- 若您需要将四层或七层业务添加至已购买的 DDoS 高防 IP 实例，请参见  DDoS 高防 IP [端口接入](https://intl.cloud.tencent.com/document/product/297/37221) 或 [域名接入](https://intl.cloud.tencent.com/document/product/297/37222) 。
 
 
 - 在修改 DNS 解析前，您需要成功购买域名解析产品。

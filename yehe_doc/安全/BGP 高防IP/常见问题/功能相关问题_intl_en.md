@@ -35,9 +35,9 @@ If your business traffic exceeds the free tier, it will trigger traffic speed li
 >100 Mbps forwarding bandwidth is available free of charge for each Anti-DDoS Advanced instance.
 >
 ### Does Anti-DDoS Advanced support session persistence?
-Anti-DDoS Advanced supports session persistence, which is not enabled by default. For non-website businesses, you can configure this feature in the consoles as instructed in [Configuring Session Persistence](https://cloud.tencent.com/document/product/1014/44107).
+Anti-DDoS Advanced supports session persistence, which is not enabled by default. For non-website businesses, you can configure this feature in the consoles as instructed in [Configuring Session Persistence](https://intl.cloud.tencent.com/document/product/297/37223).
 ### Does Anti-DDoS Advanced support health check?
-Health check is enabled for non-website businesses, which is recommended. You can modify this feature as instructed in [Configuring Health Check](https://cloud.tencent.com/document/product/1014/44108).
+Health check is enabled for non-website businesses, which is recommended. You can modify this feature as instructed in [Configuring Health Check](https://intl.cloud.tencent.com/document/product/297/37224).
 
 ### WS is not enabled on my real server. After I bind my business to Anti-DDoS Advanced, why is the access to the real server slow?
-Anti-DDoS servers have Window Scaling (WS) enabled by default. If this is not enabled on the real server, a delay will occur when the sliding window is filled up while receiving slightly larger files. You are recommended to enable WS for your real server. For concepts and examples of window scaling, please see [this document](https://cloud.tencent.com/developer/article/1452841) in Tencent Community.
+Anti-DDoS servers have Window Scaling (WS) enabled by default. If this is not enabled on the real server, a delay will occur when the sliding window is filled up while receiving slightly larger files. You are recommended to enable WS for your real server. 

@@ -15,8 +15,8 @@ Suppose you have the following Anti-DDoS instances: BGP IPs `1.1.1.1` and `1.1.1
 ## Prerequisites
 - Before enabling intelligent scheduling, please connect your business to be protected to your Anti-DDoS instance.
 >
-	- If you need to add the IP of your protected Tencent Cloud service to a purchased Anti-DDoS Pro instance, please see [Getting Started with Anti-DDoS Pro](https://cloud.tencent.com/document/product/1021/43898).
-	- If you need to connect your layer-4 or layer-7 application to a purchased Anti-DDoS Advanced instance, please see Anti-DDoS Advanced documents [Port Connection](https://cloud.tencent.com/document/product/1014/44105) or [Domain Name Connection](https://cloud.tencent.com/document/product/1014/44106).
+	- If you need to add the IP of your protected Tencent Cloud service to a purchased Anti-DDoS Pro instance, please see [Getting Started with Anti-DDoS Pro](https://intl.cloud.tencent.com/support).
+	- If you need to connect your layer-4 or layer-7 application to a purchased Anti-DDoS Advanced instance, please see Anti-DDoS Advanced documents [Port Connection](https://intl.cloud.tencent.com/document/product/297/37221) or [Domain Name Connection](https://intl.cloud.tencent.com/document/product/297/37222).
 
 
 - To modify the DNS resolution, you need to purchase the domain name resolution product.
