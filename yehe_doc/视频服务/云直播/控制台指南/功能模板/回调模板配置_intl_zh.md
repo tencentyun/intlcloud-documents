@@ -29,7 +29,7 @@
 1. 登录 [云直播控制台](https://console.cloud.tencent.com/live)。
 2. 在左侧菜单栏选择【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)。
 3. 单击 【+】创建回调模板，在回调设置弹框中填写完成回调信息，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/870c6dd664a4eb618bdc1a7fcdf922dc.png)
+![](https://main.qcloudimg.com/raw/e79b06c3fecbfaa34d124f820e10ff2c.png)
 <table>
 <thead><tr><th width="17%">配置项</th><th>说明</th></tr></thead><tbody><tr>
 <td>模板名称</td>
@@ -66,7 +66,7 @@
 2. 选择您已创建成功的回调配置模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/8d1b814af243f9138539111a5c08e214.png)
+![](https://main.qcloudimg.com/raw/885d9f6ec5ee5b921865cba965068de0.jpg)
 
 <span id="delete"></span>
 ## 删除模板
@@ -77,5 +77,5 @@
 2. 选择您已创建成功的回调配置模板，单击上方的删除按钮。
 3. 确认是否删除当前截图鉴黄配置模板，单击【确定】即可成功删除。
 
-![](https://main.qcloudimg.com/raw/97a9e4068af955fbcbcbb2c90c434f01.png)
+![](https://main.qcloudimg.com/raw/1bf90e6b3197dd2e18aff8c52cbe331c.jpg)
 
