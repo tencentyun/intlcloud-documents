@@ -40,6 +40,7 @@ Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL 
 | Metric Name | Metric | Unit | Description |
 |---------|---------|---------|---------|
 | Operations/sec | qps | Operations/second | Number of SQL statements executed by the database per second (including insert, select, update, delete, and replace). QPS mainly represents the actual processing capability of the TencentDB instance |
+|Transactions executed per second| tps |Transactions/second|Number of transactions executed per second in the database|
 | Slow Queries | slow_queries | - | Number of queries that take more than `long_query_time` second(s) to be executed |
 | Full Table Scans | select_scan | Scans/second | Number of full-table scans executed per second |
 | Queries | select_count | Queries/second | Number of queries executed per second |
