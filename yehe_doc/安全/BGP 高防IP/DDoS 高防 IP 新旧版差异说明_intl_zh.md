@@ -7,13 +7,14 @@
 
 ## 相关链接指引
 #### 新版 DDoS 高防 IP
+- [产品概述](https://cloud.tencent.com/document/product/1014/44078)
+- [计费概述](https://cloud.tencent.com/document/product/1014/44081)
+- [购买指引](https://cloud.tencent.com/document/product/1014/44082)
+- [使用限制](https://cloud.tencent.com/document/product/1014/44091)
+
+#### 旧版 DDoS 高防 IP
 - [产品概述](https://intl.cloud.tencent.com/document/product/297/16497)
 - [计费概述](https://intl.cloud.tencent.com/document/product/297/17435)
 - [购买指引](https://intl.cloud.tencent.com/document/product/297/15483)
 - [使用限制](https://intl.cloud.tencent.com/document/product/297/15563)
 
-#### 旧版 DDoS 高防 IP
-- [产品概述](https://cloud.tencent.com/document/product/1014/31091)
-- [计费概述](https://cloud.tencent.com/document/product/1014/31100)
-- [购买指引](https://cloud.tencent.com/document/product/1014/31101)
-- [使用限制](https://cloud.tencent.com/document/product/1014/31108)

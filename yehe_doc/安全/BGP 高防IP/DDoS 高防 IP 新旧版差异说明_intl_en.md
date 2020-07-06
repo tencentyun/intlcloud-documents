@@ -7,13 +7,14 @@ In order to provide you with better Anti-DDoS Advanced security services, the Te
 
 ## Relevant Links
 #### New Anti-DDoS Advanced
+- [Product Overview](https://cloud.tencent.com/document/product/1014/44078)
+- [Billing Overview](https://cloud.tencent.com/document/product/1014/44081)
+- [Purchase Guide](https://cloud.tencent.com/document/product/1014/44082)
+- [Use Limits](https://cloud.tencent.com/document/product/1014/44091)
+
+#### Legacy Anti-DDoS Advanced
 - [Product Overview](https://intl.cloud.tencent.com/document/product/297/16497)
 - [Billing Overview](https://intl.cloud.tencent.com/document/product/297/17435)
 - [Purchase Guide](https://intl.cloud.tencent.com/document/product/297/15483)
 - [Use Limits](https://intl.cloud.tencent.com/document/product/297/15563)
 
-#### Legacy Anti-DDoS Advanced
-- [Product Overview](https://cloud.tencent.com/document/product/1014/31091)
-- [Billing Overview](https://cloud.tencent.com/document/product/1014/31100)
-- [Purchase Guide](https://cloud.tencent.com/document/product/1014/31101)
-- [Use Limits](https://cloud.tencent.com/document/product/1014/31108)
