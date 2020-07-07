@@ -1,41 +1,49 @@
 ## Feature
 
-This API (GET Object tagging) is used to query existing tags set on an object.
+This API is used to query existing tags set on an object.
 
-If you call the `GET Object tagging` API using a sub-account, please make sure that you have obtained the permission to use this API from the root account.
+To call this API using a sub-account, please make sure that you have obtained permissions for this API from the root account.
 
-#### Request
+#### Versioning
 
-#### Request sample
+If versioning is enabled for your bucket, you can include `VersionId` in your request to query tags on the specific version of an object.
 
-```http
+## Request
+
+#### Sample request 
+
+```plaintext
 GET /<ObjectKey>tagging&VersionId=VersionId HTTP 1.1
 Host:<BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 ```
 
->
-> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
-> - If versioning is enabled for your bucket, to query tags on the specific version of an object, you can include `VersionId` in your request.
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information)
+
+#### Request parameters
+
+| Name | Description | Type | Required |
+| :-------- | :----------------------------------------------------------- | :----- | :------- |
+| versionId | Specifies the version ID of the object if versioning is enabled; if this parameter is not specified, tags on the latest version will be queried | string | No |
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API uses only common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-This request has no request body.
+The request body of this request is empty.
 
 ## Response
 
 #### Response headers
 
-This API only returns a common response header. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-The following describes the nodes of response body returned by this request:
+The nodes of response body are explained as below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------------------ | ------------------------------------------------------------ | ---------- | -------- |
@@ -47,21 +55,15 @@ The following describes the nodes of response body returned by this request:
 
 #### Error codes
 
-The following describes some frequent special errors that may occur when you make this request:
+This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-| Error Code | Description | HTTP Status Code |
-| --------------------- | -------------------------------------------------------- | ------------- |
-| SignatureDoesNotMatch | Returned if you provide an invalid signature     | 403 Forbidden |
-| NoSuchObject          | Returned when the object does not exist, and thus you cannot read its tags           | 404 Not Found   |
-| NoSuchTagSetError     | No object tag is set on the requested object.           | 404 Not Found |
-
-## Use Cases
+## Samples
 
 #### Request
 
-The following request is made to query the tags on the bucket `examplebucket-1250000000`. COS parses the request and returns `{age:18}` and `{name:xiaoming}`, the two existing tags on the bucket.
+The following example requests to query the tags on the bucket `examplebucket-1250000000`. COS parses the request and returns `{age:18}` and `{name:xiaoming}`, the two existing tags on the bucket.
 
-```shell
+```plaintext
 GET /exampleobject.txt?tagging HTTP/1.1
 User-Agent: curl/7.29.0
 Accept: */*
@@ -74,7 +76,7 @@ Content-Type: application/xml
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Connection: close

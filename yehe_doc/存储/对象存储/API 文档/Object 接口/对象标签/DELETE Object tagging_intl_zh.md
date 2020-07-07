@@ -13,7 +13,7 @@ DELETE Object tagging 接口用于删除指定对象下已有的对象标签。
 #### 请求示例
 
 ```plaintext
-DELETE /<ObjecKey>tagging&VersionId=VersionId HTTP 1.1
+DELETE /<ObjectKey>tagging&VersionId=VersionId HTTP 1.1
 Host:<BucketName-APPID>.cos.<Region>.myqcloud.com
 Date:date
 Authorization: Auth String
