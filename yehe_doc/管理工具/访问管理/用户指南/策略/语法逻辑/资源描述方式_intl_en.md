@@ -31,22 +31,30 @@ qcs:project_id:service_type:region:account:resource
  >  At present, COS resource owners can only be described using `uid`, and resource owners of other services can only be described using `uin`.
 - **resource**: describes the details of the specific product resource.
 	- This field is required. The resource can be described as follows:
+
      - Indicates the ID of a resource under a sub-resource type. For example, `instance/ins-abcdefg` of a VPC product.
-```
+
+     ```
 	<resource_type>/<resource_id> 
-```
-	 - Indicates the ID of a resource with a path under a sub-resource type. For example, `prefix//10001234/bucket1/object2` of a COS product. Prefix match at the directory level is supported for this type of description. For example, `prefix//10001234/bucket1/*` indicates all the objects under bucket1.
-```
+     ```
+
+     - Indicates the ID of a resource with a path under a sub-resource type. For example, `prefix//10001234/bucket1/object2` of a COS product. Prefix match at the directory level is supported for this type of description. For example, `prefix//10001234/bucket1/*` indicates all the objects under bucket1.
+
+     ```
 	<resource_type>/<resource_path>
-```
-	 - Indicates all the resources under a sub-resource type, such as `instance/*`.
-```
+     ```
+
+     - Indicates all the resources under a sub-resource type, such as `instance/*`.
+
+     ```
 	<resource_type>/*
-```
-	 - Indicates all the resources under a product.
-```
-	*
-```
+     ```
+
+     - Indicates all the resources under a product.
+
+     ```
+      *
+     ```
 
  - In certain scenarios, resource elements can be described with `*`, and the definitions are as follows. For more information, see the corresponding product documentation.
  - For actions that require association with resources, "resource" defined as `*` indicates that all resources are associated.
@@ -55,30 +63,43 @@ qcs:project_id:service_type:region:account:resource
 ### Resource definition for CAM  
 CAM resources includes users, user groups, and policies. A CAM resource can be described as follows: 
 #### Root Account:
+
 ```
 qcs::cam::uin/164256472:uin/164256472
 ```
+
 Or
+
 ```
 qcs::cam::uin/164256472:root 
 ```
+
 #### Sub-account:
+
 ```    
 qcs::cam::uin/164256472:uin/73829520
 ```
+
 #### Group:
+
 ```
 qcs::cam::uin/164256472:groupid/2340
 ```
+
 #### All resources:
+
 ```
 *
 ```
+
 #### Policy:
+
 ```
 qcs::cam::uin/12345678:policyid/*
 ```
+
 Or
+
 ```
 qcs::cam::uin/12345678:policyid/12423
 ```
