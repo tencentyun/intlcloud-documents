@@ -47,7 +47,7 @@ exports.main_handler = (event, context, callback) => {
     callback(null, event); 
 
     // Instantiate an authentication object. The Tencent Cloud account `secretId` and `secretKey` need to be passed in as the input parameters
-    let cred = new Credential("AKIDqeHm8Jn8mEYhgWkhOwJUUj4KQPDpqj3C", "75rRuGRSHtKvTwMgsvnwxmTyJSODrMkx");
+    let cred = new Credential("AKIxxxxxxPDpqj3C", "75rxxxxxxyJSODrMkx");
 
      // Instantiate the client object to request the product and the region where the function is located
     let client = new ScfClient(cred, "ap-shanghai");
