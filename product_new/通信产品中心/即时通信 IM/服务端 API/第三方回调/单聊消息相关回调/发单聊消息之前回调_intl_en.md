@@ -74,9 +74,9 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | The callback command that is run. |
 | From_Account | String | The UserID of the message sender. |
 | To_Account | String | The UserID of the message recipient. |
-| MsgSeq | Integer | The sequence number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
+| MsgSeq | Integer | The message sequence number, and the unique UserID of a message.<br>Group messages are sorted using MsgTime. The message with a larger MsgSeq value appears later.|
 | MsgRandom | Integer | The random number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
-| MsgTime | Integer | The timestamp indicating when the message was sent. Unit: seconds. |
+| MsgTime | Integer | The message sending timestamp in seconds<br>One-to-one messages sent in the same second are sorted using MsgTime. The message with a larger MsgSeq value appears later. |
 | MsgKey | String | The unique identifier of the message. It is used for [Recalling a One-to-One Chat Message by using RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/35015). |
 | MsgBody | Array | The body of the message. For more information, see [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
