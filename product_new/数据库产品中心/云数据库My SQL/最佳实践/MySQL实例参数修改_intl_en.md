@@ -10,7 +10,7 @@ For TencentDB for MySQL, you can modify the parameters of a master instance in t
 ### auto_increment_increment
 **Default value:** 1
 **Role:** It is used as the increment value of the auto-increment column AUTO_INCREMENT. Its value can range from 1 (default value) to 65,535.
-**Impact:** After the parameters of the master instance are modified, the parameters of the disaster recovery instance cannot be modified accordingly. When the increment value is modified for the master instance but not for the disaster recovery instance, master-slave data inconsistency will occur.
+**Impact:** after the parameters of the master instance are modified, those of the disaster recovery instance cannot be modified accordingly. When `binlog_format` is set as `statement`, only statement execution is recorded. In this case, if the increment column value of the master instance is modified but that of the disaster recovery instance is not modified accordingly, the data will be inconsistent between the master and slave instances.
 
 ### auto_increment_offset
 **Default value:** 1
