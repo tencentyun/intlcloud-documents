@@ -355,6 +355,7 @@ Element type.
 | kTIMElem_Video | 9 | Video element |
 | kTIMElem_FriendChange | 10 | Relationship chain change message element |
 | kTIMElem_ProfileChange | 11 | Profile change message element |
+| kTIMElem_Invalid       | -1    | Unknown element          |
 
 ### Elem
 
