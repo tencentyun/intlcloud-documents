@@ -1,16 +1,16 @@
 ## Feature
 
-This API (POST Object restore) is used to restore (unfreeze) an archived object by generating a temp readable replica. You can set “Keep Readable” for the replica object, and used 'Days' to  parameter to specify the expiration time of the temporary object. If the time is exceeded and you haven’t initiated a copy, extension, or any other operation, the temporary object will be automatically deleted. Temporary objects are only copies of the archived objects which always exist. For more information on Archive Storage, see [Storage Type - Archive Storage] (https://intl.cloud.tencent.com/document/product/436/30925).
+This API is used to restore an object archived by COS. The restored readable object is temporary, and you can configure the object to keep it readable and set the time when you want it to be deleted. You can use the `Days` parameter to specify the expiration time of the temporary object. If the object expires and you have not initiated any operation to copy the object or extend its validity period before it expires, the temporary object will be automatically deleted. A temporary object is only a copy of the source archived object and the source object will exist throughout this period.
 
 #### Versioning
 
-When Versioning is enabled, you can specify the `versionId` to restore an object to a specific version. If it's not specified, the object will be restored to the latest version.
+With versioning enabled, you can specify the `versionId` request parameter to restore a specific version of the object. If no version ID is specified, the latest version will be restored.
 
 ## Request
 
-#### Request sample
+#### Sample request 
 
-```shell
+```plaintext
 POST /<ObjectKey>restore HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
@@ -22,25 +22,23 @@ Authorization: Auth String
 [Request Body]
 ```
 
-> Authorization: Auth String (For more information, see [Request Signature] (https://cloud.tencent.com/document/product/436/7778).
+> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
-#### Request Parameters
+#### Request parameters
 
-This API does not use any request parameter.
+| Name | Description | Type | Required |
+| ---------------------------- | ------------------------------------------------------------ | ------ | -------- |
+| versionId | Specifies the version ID of the object if versioning is enabled; if this parameter is not specified, the latest version will be restored | string | No |
 
-#### Request Header
+#### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information about the common request header, see [Common Request Headers](https://cloud.tencent.com/document/product/436/7728).
-
-| Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
-| --- | --- | --- | --- |
-| Content-MD5 | Base64-encoded MD5 hash of the request body content as defined in RFC 1864, used for integrity check to verify whether the request body has changed during transfer | string | Yes |
+This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-Submits the **application/xml ** request data, including specific parameters of the restore action.
+Contains **application/xml ** request data, including specific parameters of the restore action.
 
-```shell
+```plaintext
 <RestoreRequest>
    <Days>number</Days>
    <CASJobParameters>
@@ -53,46 +51,42 @@ The nodes are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| RestoreRequest | None | Contains all request information for POST Object restore | Container | Yes |
+| RestoreRequest | None | All information in a POST Object restore request | Container | Yes |
 
-**Content of Container node RestoreRequest:**
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| --- | --- | --- | --- | --- |
-| Days | RestoreRequest | Specifies the valid duration (days) of a restored temporary copy | number | yes |
-| CASJobParameters | RestoreRequest | Restore working parameters | Container | Yes |
-
-**Content of Container node CASJobParameters:**
+**Container node `RestoreRequest`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Tier | RestoreRequest.CASJobParameters | This parameter can be specified as one of the three supported restoration modes:<br> <li>`Standard`, where a restoration job can be completed in 3-5 hours,<br> <li>`Expedited`, where a restoration job can be completed in 1-5 minutes, and<br> <li>`Bulk`, where a restoration job can be completed in 5-12 hours. | Enum | Yes |
+| Days | RestoreRequest | Specifies the number of days a restored temporary copy remains in COS | number | Yes |
+| CASJobParameters | RestoreRequest | Restore job parameters | Container | Yes |
+
+**Container node `CASJobParameters`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| --- | --- | --- | --- | --- |
+| Tier | RestoreRequest.CASJobParameters | This parameter can be specified as one of the three supported data restoration modes:<br><li>`Standard`, which completes a restoration job in 3-5 hours;<br><li>`Expedited`, which completes a restoration job in 1-5 minutes; and `Bulk`, which completes multiple restoration jobs in 5-12 hours. | Enum | Yes |
 
 ## Response
 
-#### Response header
+#### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://cloud.tencent.com/document/product/436/7729).
+This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-#### Response Body
+#### Response body
 
 The response body of this API is empty.
 
 #### Error codes
 
-The special error messages for this API are shown as below. For all error messages, please see [Error Codes](https://cloud.tencent.com/document/product/436/7730).
+This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-| Error Code | Description | HTTP Status Code |
-| ------------------------ | ---------------------------------- | ------------ |
-| RestoreAlreadyInProgress | This object is being restored | 409 Conflict |
+## Examples
 
-## Use Cases
-
-#### Case 1: Basic case (with Versioning not enabled)
+#### Example 1. Simple example (versioning not enabled)
 
 #### Request
 
-```shell
+```plaintext
 POST /exampleobject?restore HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 27 Dec 2019 08:19:29 GMT
@@ -112,7 +106,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 202 Accepted
 Content-Length: 0
 Connection: close
@@ -121,11 +115,11 @@ Server: tencent-cos
 x-cos-request-id: NWUwNWJlOTFfMjljOTBiMDlfMTQ2MmNfNzAw****
 ```
 
-#### Case 2: Restore a specific version of the object (with Versioning enabled)
+#### Example 2. Restoring a specific version of an object (with versioning enabled)
 
 #### Request
 
-```shell
+```plaintext
 POST /exampleobject?restore&versionId=MTg0NDUxNjQ1NjM4OTkzNzY3NDk HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Mon, 20 Jan 2020 08:43:40 GMT
@@ -145,7 +139,7 @@ Connection: close
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 202 Accepted
 Content-Length: 0
 Connection: close

@@ -6,7 +6,7 @@ Click and log in to the [OCR Console](https://console.cloud.tencent.com/ocr/gene
 
 ### Free tier and purchase
 
-Upon service activation, you will be given 1,000 API calls each month for free. This free tier will be added into your account as a resource package and deducted first during billing. Any usage exceeding the free tier will be pay-as-you-go. For details, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1005/36165).
+Upon service activation, you will be given 1,000 API calls each month for free. This free tier will be added into your account as a resource package and deducted first during billing. Any usage exceeding the free tier will be pay-as-you-go.
 
 ### Using OCR
 OCR supports the following use methods:
