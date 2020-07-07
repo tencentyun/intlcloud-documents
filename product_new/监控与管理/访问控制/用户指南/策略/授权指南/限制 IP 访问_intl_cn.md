@@ -6,7 +6,7 @@
 1. 进入 [策略](https://console.cloud.tencent.com/cam/policy) 管理页面，单击左上角的【新建自定义策略】。
 3. 在弹出的选择创建方式窗口中，单击【按策略生成器创建】，进入选择服务和操作页面。
 4. 在选择服务和操作页面，补充以下信息。
-  - 效果：必填项，选择 "允许"。如选择 "拒绝"，用户或组不能获取授权。
+  - 效果：必填项，选择 "允许"。如选择 "拒绝"，用户或用户组不能获取授权。
   - 服务：必填项，选择需要添加的产品。
   - 操作：必填项，根据您的需求勾选产品权限。
   - 资源：必填项，您可以参考 [资源描述方式](https://intl.cloud.tencent.com/document/product/598/10606) 填写。
@@ -14,14 +14,14 @@
 
 ## 使用示例
 以下示例表示用户必须在 10.217.182.3/24 或者 111.21.33.72/24 网段才能调用云 API 访问 cos:PutObject，如下图：
-
-![](https://main.qcloudimg.com/raw/7fa22e4797a7ca350957fafa1c8889b0.png)
+![](https://main.qcloudimg.com/raw/6584441d504a13b27cf8ab2da135bb80.png)
 
 策略语法如下：
 ```
 {
  "version": "2.0",
- "statement": {
+ "statement": [
+ {
      "effect": "allow",
      "action": "cos:PutObject",
      "resource": "*",
@@ -34,5 +34,7 @@
          }
      }
  }
+ ]
 }
 ```
+
