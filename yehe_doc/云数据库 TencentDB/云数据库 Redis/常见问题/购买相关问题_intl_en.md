@@ -8,7 +8,7 @@ As an infrastructure, TencentDB for Redis supports regions where CVM instances a
 It is pay-as-you-go. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/239/9894).
 
 ### What are the performance metrics of TencentDB for Redis? 
-TencentDB for Redis is available in Standard Edition and Cluster Edition. For QPS requirements between 80,000 and 120,000, you can choose the Standard Edition. For a higher QPS performance, use the Cluster Edition.
+TencentDB for Redis is available in standard and cluster architectures. For QPS requirements between 80,000 and 120,000, you can choose the standard architecture. For a higher QPS performance, use the cluster architecture.
 
 ### What versions does TencentDB for Redis support? 
 Currently, it is compatible with Redis 2.8, 4.0, and 5.0.
