@@ -31,3 +31,9 @@ To make it easier for developers to integrate GME products, we recommended that 
 
 
 
+## Downloading SDK v2.5.2
+
+| Platform/Engine | Updated on | Download SDK                                                 | Download Demo                                                | Documentation                                                |
+| --------------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| H5       | 2020/02/18  | [Download](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.5.2/GME_H5_Audio_SDK_2.5.2.120.zip) | [Download](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.5.2/GME_H5_Audio_Sample_2.5.2.120.zip) | [API Documentation](https://intl.cloud.tencent.com/document/product/607/30263) |
+
