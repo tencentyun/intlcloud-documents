@@ -8,12 +8,13 @@ A function trigger can be created in the console or through SCF CLI.
 2. At the top of the "Functions" page, select the region and namespace where the function for which to create a trigger resides.
 The function list contains the function name, monitoring information, runtime environment, creation time, and modification time.
 3. Click the function name to enter the function details page.
-The function details page contains the function configuration, function code, triggers, logs, and monitoring tabs.
-4. Select the **Triggers** tab to enter the trigger browsing and operation page. Click **Add Trigger** to create a trigger.
-5. In the expanded "Add Trigger" form, you can select different trigger types in **Trigger Type**. The information to be entered varies by trigger type.
+The function details page consists of four tabs: **Function Management**, **Trigger Management**, **Monitoring information**, and **Log Query**.
+4. Select the **Trigger Management** tab on the left, and then click **Create a Trigger** on the **Trigger Management** page, as shown below:
+![](https://main.qcloudimg.com/raw/89740ff73c89c3baa18ba995c86f3c0d.png)
+5. In the **Create a Trigger** pop-up window, select an option for **Trigger Method**, and complete different configurations accordingly.
 For example, for a timer trigger, you need to enter the trigger name, cycle, and status. For a COS trigger, you need to enter the COS bucket, event type, and prefix/suffix filters.
 > For more information on what to enter for specific triggers, please see the applicable documents of [triggers](https://intl.cloud.tencent.com/document/product/583/9705).
-7. After completing the configuration, click **Save** to create the trigger.
+7. After the configuration is complete, click **Submit**.
 > To cancel the creation process, click **Cancel**.
 
 
