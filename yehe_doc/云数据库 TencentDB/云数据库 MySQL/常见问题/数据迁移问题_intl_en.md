@@ -1,4 +1,5 @@
 ### How do I import a local SQL file into a TencentDB for MySQL instance?
+>?High-availability edition and finance edition of TencentDB for MySQL instances support importing SQL files.
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and click an instance name to enter the management page.
 2. Select **Database Management** > **Database List** > **Data Import**. Select the file to be imported and the target database and click **OK** to import the data.
 >A single SQL file to be imported should be no more than 2 GB in size. The filename can only contain letters, digits, and underscores.

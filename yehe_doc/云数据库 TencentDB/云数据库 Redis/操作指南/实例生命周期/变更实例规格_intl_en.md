@@ -3,10 +3,10 @@ TencentDB for Redis supports instance specification adjustment to enable flexibl
 >Pay-as-you-go instances cannot be scaled in currently.
 
 ## Directions
-### Scaling the Standard Edition
+### Scaling the memory edition (standard architecture)
 >
->- When you scale out the Standard Edition, if the remaining available capacity of the instance is insufficient to meet the scale-out requirements, migration will occur, which will not affect the service access. However, there will be a momentary interruption after the migration is completed, and you are recommended to implement a reconnection mechanism for your business.
->- Because the Standard Edition has a maximum capacity of 384 GB, when the capacity reaches 384 GB, it cannot be expanded any further.
+>- When you expand the capacity of the memory edition (standard architecture), if the remaining available capacity of the instance is insufficient to meet the capacity expansion requirements, migration will occur, which will not affect the service access. However, there will be a momentary interruption after the migration is completed, and we recommend that you implement a reconnection mechanism for your business.
+>- Because the memory edition (standard architecture) has a maximum capacity of 384 GB, when the capacity reaches 384 GB, it cannot be expanded any further.
 >- To avoid failure in capacity reduction, the capacity after reduction should be at least 1.3 times the amount of existing data. The system will refund automatically after capacity reduction.
 
 1. Log in to the [TencentDB for Redis Console](https://console.cloud.tencent.com/redis).
@@ -15,7 +15,7 @@ TencentDB for Redis supports instance specification adjustment to enable flexibl
 4. Return to the instance list. After the status of the instance changes to **Running**, the instance can be used normally.
 
 
-### Scaling the Cluster Edition
+### Scaling the memory edition (cluster architecture)
 >
 >- After the configuration is adjusted, the instance will be charged at the price of the new specification.
 >- To avoid failure in capacity reduction, the capacity after reduction should be at least 1.3 times the amount of existing data. The system will refund automatically after capacity reduction.

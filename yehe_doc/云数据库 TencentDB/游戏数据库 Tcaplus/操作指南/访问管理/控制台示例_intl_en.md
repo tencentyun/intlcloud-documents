@@ -6,14 +6,14 @@ You can grant a user the permission to view and use specific resources in the Tc
 ### Full access policy in TcaplusDB
 To grant a user the permission to create and manage TcaplusDB instances, associate the `QcloudTcaplusDBFullAccess` policy with the user.
 This policy grants the user the permission to manipulate all resources in TcaplusDB. The steps are as follows:
-Associate the default policy `QcloudTcaplusDBFullAccess` with the user as instructed in [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
+Authorize the default policy `QcloudTcaplusDBFullAccess` with the user as instructed in [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 ### Read-only policy in TcaplusDB
 To grant a user the permission to view TcaplusDB instances but not create, delete, or modify them, you can associate the `QcloudTcaplusDBReadOnlyAccess` policy with the user.
 This policy grants the user the permissions of all operations in TcaplusDB that begin with the word "Describe" or "Inquiry". The steps are as follows:
-Associate the default policy `TcaplusDB` with the user as instructed in [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
+Authorize the default policy `TcaplusDB` with the user as instructed in [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
-### Policy for granting user permission to manipulate specific cluster
+### Policy for granting user permission to manipulate a specific cluster
 To grant a user the permission to manipulate a specific TcaplusDB cluster, you can associate the following policy with the user. The steps are as follows:
 
 1. Create a custom policy as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
@@ -24,7 +24,7 @@ This policy grants the user the permission to perform all operations on the Tcap
     "statement": [
         {
             "action": "tcaplusdb:*",
-            "resource": "qcs::tcaplusdb:ap-shanghai::cluster/19168929215",
+            "resource": "qcs::tcaplusdb:ap-shanghai:uin/1231xxx166:cluster/19168929215",
             "effect": "allow"
         }
     ]
@@ -35,7 +35,7 @@ This policy grants the user the permission to perform all operations on the Tcap
 
 
 ### Policy for granting user permission to manipulate all TcaplusDB resources
-To grant a user the permission to manipulate all TcaplusDB resources, you can associate the following policy with the user. The steps are as follows:
+To grant a user the permission to manipulate all TcaplusDB resources, associate the following policy with the user. The steps are as follows:
 
 1. Create a custom policy as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
 This policy grants the user the permission to manipulate all TcaplusDB resources. The policy content can be set by referring to the following policy syntax:
@@ -56,7 +56,7 @@ This policy grants the user the permission to manipulate all TcaplusDB resources
 
 
 ### Policy for denying user all permissions of certain TcaplusDB tables
-To deny a user the permission to manipulate certain TcaplusDB tables, you can associate the following policy with the user. The steps are as follows:
+To deny a user the permission to manipulate certain TcaplusDB tables, associate the following policy with the user. The steps are as follows:
 
 1. Create a custom policy as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
 This policy denies the user the permission to manipulate tables (ID: tcaplus-c8d1caa4 and tcaplus-d8d1cbb4). The policy content can be set by referring to the following policy syntax:
@@ -67,8 +67,8 @@ This policy denies the user the permission to manipulate tables (ID: tcaplus-c8d
         {
             "action": "tcaplusdb:*",
             "resource": [
-						"qcs::tcaplusdb::uin/16xxx6472:table/tcaplus-c8d1caa4",
-						"qcs::tcaplusdb::uin/16xxx6472:table/tcaplus-d8d1cbb4",
+						"qcs::tcaplusdb::uin/16xxx472:table/tcaplus-c8d1caa4",
+						"qcs::tcaplusdb::uin/16xxx472:table/tcaplus-d8d1cbb4",
 						],
             "effect": "deny"
         }

@@ -13,7 +13,7 @@ After an instance is returned, once its status changes to "isolated", no fees re
 ## Directions
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), select the target instance in the instance list, and select **More** > **Terminate/Return** or **Terminate/Return & Refund** in the "Operation" column.
 ![](https://main.qcloudimg.com/raw/ea0d80564ad54c6c9e3ea43070c71f20.png)
-4. In the pop-up dialog box, indicate your consent and click **Terminate Now**.
+2. In the pop-up dialog box, select "I have read and agreed to Termination Rules" and click **Terminate Now**.
 
 >
 ![](https://main.qcloudimg.com/raw/6e376a4a726195aefee841930577a5b3.png)
