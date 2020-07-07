@@ -1,6 +1,6 @@
 
 ### Wide Variety of Product Specifications
-TencentDB for Redis offers a choice of 0.25 GB - 4 TB capacity specifications available in Standard and Cluster Editions.
+TencentDB for Redis offers a choice of 0.25 GB to 4 TB capacity specifications available in standard and cluster architectures.
 
 ### Elastic Scaling
 An instance can be scaled quickly in the console without having to stop the services. No operations are required at your side.
