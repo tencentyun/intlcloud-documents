@@ -29,7 +29,7 @@ Operation name: cut.
 | &lt;width> | Specifies the width of the target image to Width. |
 | &lt;height> | Specifies the height of the target image to Height. |
 | &lt;dx> | Horizontally moves rightward relative to the upper-left vertex of the image by dx. |
-| &lt;dx> | Horizontally moves downward relative to the upper-left vertex of the image by dy. |
+| &lt;dy> | Downward offset by dy relative to the upper-left vertex of the image | 
 
 > The value range is greater than 0 and smaller than the width and height of the original image.
 
