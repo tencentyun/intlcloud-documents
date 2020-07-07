@@ -1,7 +1,9 @@
 ## Feature Description
 This API is used to batch import app-owned accounts to IM and create an internal ID for these accounts to ensure that these accounts can use the IM service.
 
-> This API can import up to 100 accounts to IM at a time. If an account is imported repeatedly, only one internal ID will be created for it.
+>
+- This API can import up to 100 accounts to IM at a time. If an account is imported repeatedly, only one internal ID will be created for it.
+- This API is unable to import account nickname and portrait. To set the nickname and portrait, call the [Configuring Profiles](https://intl.cloud.tencent.com/document/product/1047/34916)
 
 ## Call Description
 ### Example request URL
