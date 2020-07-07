@@ -8,17 +8,17 @@ After activating the service, go to [API 3.0 Explorer](https://console.cloud.ten
 
 ## Directions
 1. Select the API you want to call in the left sidebar.
-![](https://main.qcloudimg.com/raw/34586e7780f7cd729e83c275d8b12ffb.png)
+![](https://main.qcloudimg.com/raw/60d9789c50f2c76215a9c5b836636b27.jpg)
 2. Enter the private key and required input parameters.
-![](https://main.qcloudimg.com/raw/9e6fc5a1f2c9ce915c2eef7d869bffb9.png)
+![](https://main.qcloudimg.com/raw/5f736e1aa25757f39a220b0ed8f3b5ce.png)
  - `Region`: region information in the domain name. This parameter determines the access point. For example, `ocr.ap-shanghai.tencentcloudapi.com` means Shanghai is the access point. The common parameter `Region` determines where business resources to be accessed reside. For example, `Region=ap-beijing` means resources in the Beijing region will be accessed. If no region is specified in the domain name, the nearest point will be accessed by default. But if the IP address fails to be resolved, Guangdong region will be accessed by default. You can configure different regions for domain name and common parameter, but this may cause latency. Thus, we recommend selecting the same `Region`, such as ap-guangzhou for South China (Guangzhou).
  - String will be parsed to Json.
-![](https://main.qcloudimg.com/raw/b40b2d9f0a1198e05d3a551c574d34e4.png)
+![](https://main.qcloudimg.com/raw/470a4a1c8bd5c6d1aebf8abcebd45ba3.png)
 3. Select the language to generate codes.
 The codes will be generated according to parameter values you entered on the left. To modify input parameters, you need to change parameter values on the left to generate codes again.
 4. Integrate SDKs to the project.
 See SDK Usage Guide on the top right to integrate SDKs to the project and call APIs with codes generated in **Step 3**.
-![](https://main.qcloudimg.com/raw/ef2357291426913a4f88e890473634ee.png)
+![](https://main.qcloudimg.com/raw/5efed9d740f7a50ba40069c70806424c.png)
 
 ## Demo (recommended)
 
@@ -81,7 +81,7 @@ client.IDCardOCR(req, function(errMsg, response) {
 
   If the API request size exceeds 1 MB, V3 authentication (TC3-HMAC-SHA256) is required. Except for Node. js, SDKs in all other languages support V3.
 - API 3.0 SDK supports Node, Python, Java, PHP, Go and .Net. To call APIs with SDKs in other languages such as C++, you need to complete V3 authentication. We recommend using the string signature generation tool in [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=GetActionSequence) for verification.
-![](https://main.qcloudimg.com/raw/421420a45963a7b86225e041908abbdb.png)
+![](https://main.qcloudimg.com/raw/bfc3170146bca20407ce18852b2fd045.png)
 
 
 
