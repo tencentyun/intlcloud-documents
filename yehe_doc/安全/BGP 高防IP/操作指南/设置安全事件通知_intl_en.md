@@ -9,14 +9,14 @@ You can modify the recipients and how they receive the alarm messages as needed.
 ## Setting Alarm Threshold
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/alarm) and select **Alarm Notification** on the left sidebar.
 2. You can set the "inbound traffic alarm threshold for single IP" and "DDoS cleansing threshold" in the feature blocks on the right.
-![](https://main.qcloudimg.com/raw/7c7d59b086c91ff552dc61a6f53d78be.png)
+![](https://main.qcloudimg.com/raw/93944d7aafa4a3bda299ea4bccd5b5a0.png)
 3. Click the pencil icon on the right of the default threshold for one single IP to modify the default threshold. After the modification is completed, click **OK**.
-![](https://main.qcloudimg.com/raw/6cd5ae21ef240a8b1eeb3bbb43664559.png)
+![](https://main.qcloudimg.com/raw/9de9784b7ca20904406673fe7d99dd8d.png)
 4. Click **Advanced Settings** in a block to enter the IP alarm settings list, where you can set different alarm thresholds for different IPs.
 	- Inbound traffic alarm for single IP
-![](https://main.qcloudimg.com/raw/011822c5e67d2b7c00a7ed6cbddc0763.png)
+![](https://main.qcloudimg.com/raw/0b898ac9d28234e910bce576d816ea39.png)
 	- DDoS cleansing threshold
-![](https://main.qcloudimg.com/raw/1a5902f1cc4e60807fddf06b0976b75f.png)
+![](https://main.qcloudimg.com/raw/add2f8bbfea0d909a039209b199e7db6.png)
 
 
 ## Setting Notification Method
@@ -24,6 +24,6 @@ You can modify the recipients and how they receive the alarm messages as needed.
  >Alternatively, you can log in to the [console](https://console.cloud.tencent.com/ddos/antiddos-native/overview/ddos), click ![](https://main.qcloudimg.com/raw/b1a8f001baaea4b7d9027ec1340fab9e.png) in the top-right corner, and then click **View More** in the pop-up window to enter the Message Center.
 2. Click **Message Subscription** on the left sidebar to enter the message list.
 3. In the message list, select the receipt methods on the row of **Security Event Notification** and click **Modify Message Recipient** to enter the message recipient modifying page.
-![](https://main.qcloudimg.com/raw/0cf55387be49197d6614ce84d150a39f.png)
+![](https://main.qcloudimg.com/raw/42033b07c2f454ee61d08a7521693faa.png)
 4. On the message recipient modifying page, set the message recipients. After completing the settings, click **OK**.
-![](https://main.qcloudimg.com/raw/27a545a7ccb0096a0c9a85c868745bef.png)
+![](https://main.qcloudimg.com/raw/7a34a7c5da718f0154d48a6e508a3a3e.png)

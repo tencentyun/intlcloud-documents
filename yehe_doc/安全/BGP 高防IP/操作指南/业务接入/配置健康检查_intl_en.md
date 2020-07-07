@@ -13,24 +13,24 @@ You can customize the status represented by the response code. For example, in a
 ### Health check configuration for layer-4 business
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) and click **Business Connection** on the left sidebar. On the business connection page, click **Port Connection** to enter the corresponding management page.
 2. On the "Port Connection" tab, select the target Anti-DDoS Advanced instance and the corresponding rule and click **Edit** in its health check column.
-![](https://main.qcloudimg.com/raw/5ee7ca8ee6ef73be9076d5e64ed08beb.png)
+![](https://main.qcloudimg.com/raw/1ff1f0502792f1f75719d55789b34c36.png)
 3. On the health check editing page, click "Show Advanced Options", set the configuration items, and click **OK**.
 >
 > - Heath check is enabled by default. When configuring health check, you are recommended to use the default values.
 > - Under the TCP protocol, it detects whether the port can be connected. Under the UDP protocol, it uses ping for reachability check.
 > 
-![](https://main.qcloudimg.com/raw/cdf96e561313c5c40208057a20cdade2.png)
+![](https://main.qcloudimg.com/raw/4737846a7a9d3f7f4ae41c1719618a57.png)
 
 
 
 ### Health check configuration for layer-7 business
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/access/l4) and click **Business Connection** on the left sidebar. On the business connection page, click **Domain Name Connection** to enter the corresponding management page.
 2. On the "Domain Name Connection" tab, select the target Anti-DDoS Advanced instance and the corresponding rule and click **Configure** in its health check column.
-![](https://main.qcloudimg.com/raw/986bcf96a224637ee51be3cb58c65b68.png)
+![](https://main.qcloudimg.com/raw/10caff27108f8dc76acc5e8b2534632e.png)
 3. On the health check editing page, click "Show Advanced Options", set the configuration items, and click **OK**.
 >Health check is disabled by default.
 >
-![](https://main.qcloudimg.com/raw/99349be9a33ca020c0ee936652971350.png)
+![](https://main.qcloudimg.com/raw/1159b957659ea780671f572f08c6cd75.png)
 
 ## Configuration Item Description
 **Layer-4 health check**

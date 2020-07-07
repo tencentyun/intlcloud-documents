@@ -14,9 +14,9 @@
 ### 配置转发规则
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview)，在左侧导航栏单击【业务接入】。
 2. 在“业务接入”页面，选择【域名接入】页签，单击【添加域名】。
-![](https://main.qcloudimg.com/raw/89b3f4e5812c5c22e7d61fb9821b65ae.png)
+![](https://main.qcloudimg.com/raw/cfbfe8e83df682516d665ad5bfeab834.png)
 3. 在添加转发规则页面中，根据实际需求配置如下参数。
-![](https://main.qcloudimg.com/raw/7e05247ec193ecf67411be4dc66cec21.png)
+![](https://main.qcloudimg.com/raw/b881a15850a364dc08393ccd1738468f.png)
 参数说明：
  - 域名：填写需要配置防护的网站域名。
  - 协议：支持 HTTP 和 HTTPS，请根据实际业务需求勾选：
@@ -46,9 +46,9 @@
 为了避免源站拦截 DDoS 高防 IP 的回源 IP 而影响业务，建议在源站的防火墙、Web 应用防火墙、IPS 入侵防护系统、流量管理等硬件设备上设置白名单策略，将源站的主机防火墙和其他任何安全类的软件（如安全狗等）的防护功能关闭或设置白名单策略，确保高防的回源 IP 不受源站安全策略的影响。
 
 用户可以通过 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview)，在左侧导航栏，单击【实例列表】，找到对应实例 ID。
-![](https://main.qcloudimg.com/raw/369065124f5e6665e81c4d7d2fc066c0.png)
+![](https://main.qcloudimg.com/raw/ff2ae3b5f116c04589779023e20171c6.png)
 单击实例 ID 进入基本信息页面，查看高防 IP 回源段。
-![](https://main.qcloudimg.com/raw/d2e751177d5aedccf3bb751aaec79c7b.png)
+![](https://main.qcloudimg.com/raw/4f959d6a68bf3cedf5c7815411717079.png)
 
 ### 本地验证配置
 转发配置完成后，DDoS 高防 IP 实例的高防 IP 将按照转发规则将相关端口的报文转发到源站的对应端口。

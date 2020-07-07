@@ -9,14 +9,14 @@
 ## 设置告警阈值
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/alarm)，在左侧导航中，选择【告警通知】。
 2. 在右侧的功能卡片中可以分别设置“单 IP 入流量告警阈值”和“DDoS 清洗阈值”。
-![](https://main.qcloudimg.com/raw/7c7d59b086c91ff552dc61a6f53d78be.png)
+![](https://main.qcloudimg.com/raw/93944d7aafa4a3bda299ea4bccd5b5a0.png)
 3. 单击单 IP 默认阈值右边的铅笔可以修改默认阈值，修改完成后，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/6cd5ae21ef240a8b1eeb3bbb43664559.png)
+![](https://main.qcloudimg.com/raw/9de9784b7ca20904406673fe7d99dd8d.png)
 4. 单击卡片的【高级设置】，可以进入 IP 告警设置列表，为每个 IP 设置不同的告警阈值。
 	- 单 IP 入流量告警
-![](https://main.qcloudimg.com/raw/011822c5e67d2b7c00a7ed6cbddc0763.png)
+![](https://main.qcloudimg.com/raw/0b898ac9d28234e910bce576d816ea39.png)
 	- DDoS 清洗阈值
-![](https://main.qcloudimg.com/raw/1a5902f1cc4e60807fddf06b0976b75f.png)
+![](https://main.qcloudimg.com/raw/add2f8bbfea0d909a039209b199e7db6.png)
 
 
 ## 设置通知方式
@@ -24,6 +24,6 @@
  >您也可以登录 [控制台](https://console.cloud.tencent.com/ddos/antiddos-native/overview/ddos) ，单击右上角的 ![](https://main.qcloudimg.com/raw/b1a8f001baaea4b7d9027ec1340fab9e.png) ，在弹出页面单击【查看更多】，进入消息中心。
 2. 在左侧目录中单击【消息订阅】，进入消息列表。
 3. 在消息列表中，在安全事件通知所在列，选择接收方式，单击【修改消息接收人】，进入修改消息接收人页面。
-![](https://main.qcloudimg.com/raw/0cf55387be49197d6614ce84d150a39f.png)
+![](https://main.qcloudimg.com/raw/42033b07c2f454ee61d08a7521693faa.png)
 4. 在修改消息接收人页面，进行消息接收人的设置，设置完成后单击【确定】即可。
-![](https://main.qcloudimg.com/raw/27a545a7ccb0096a0c9a85c868745bef.png)
+![](https://main.qcloudimg.com/raw/7a34a7c5da718f0154d48a6e508a3a3e.png)
