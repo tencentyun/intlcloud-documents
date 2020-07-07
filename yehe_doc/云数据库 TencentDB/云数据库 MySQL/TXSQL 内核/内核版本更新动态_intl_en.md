@@ -1,4 +1,16 @@
 ## MySQL 5.7
+
+### 20200331
+#### New features
+- Adds JSON functions of MySQL 5.7.22.
+- Updates features related to e-commerce flash sales. To use these features, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Adds the SQL throttling feature. To use this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supports data encryption using a KMS custom key. To use this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+
+#### Fixes
+- Fixed the error caused by phrase searches using the full-text index in a multibyte character set.
+- Fixed the error caused by the CATS lock scheduling module under high concurrency.
+
 ### 20190830
 #### New features
 - Supports skipping the corrupted data and continuing to parse when a binlog is corrupted. If the master instance and binlog are both damaged, this feature helps restore data from the slave database for use as much as possible.
