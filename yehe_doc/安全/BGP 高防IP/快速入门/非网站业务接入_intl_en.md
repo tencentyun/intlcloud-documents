@@ -12,9 +12,9 @@ This document describes how to connect a non-website business to an Anti-DDoS Ad
 ### Configuring forwarding rule
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview) and click **Business Connection** on the left sidebar.
 2. On the "Business Connection" page, select the **Port Connection** tab and click **Add Rule**.
-![](https://main.qcloudimg.com/raw/ba8c864411ec454641cab7a70cfc8fba.png)
+![](https://main.qcloudimg.com/raw/4e07cfd85b2489307d5602d48a8a91f7.png)
 3. On the forwarding rule adding page, configure the following parameters as needed:
-![](https://main.qcloudimg.com/raw/50751bd60d8886f7132773d21a22eba0.png)
+![](https://main.qcloudimg.com/raw/cdaa7c47cec53249bba10b54ec8d3afd.png)
     Parameter description:
      - Associated Anti-DDoS Advanced IP: select the target IP.
      - Forwarding Protocol: TCP and UDP are supported.
@@ -32,9 +32,9 @@ This document describes how to connect a non-website business to an Anti-DDoS Ad
 To prevent business interruption that occurs if the real server blocks the Anti-DDoS Advanced forwarding IP, you are recommended to configure whitelist policies for the real server infrastructure (such as firewall, web application firewall, intrusion protection system (IPS), and traffic management system) and disable the protection features of the server firewall and other security software tools (such as Safedog) or set whitelist policies for them, so that the forwarding IP will not be affected by the security policies of the real server.
 
 You can log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview) and click **Instance List** on the left sidebar to find the target instance ID.
-![](https://main.qcloudimg.com/raw/369065124f5e6665e81c4d7d2fc066c0.png)
+![](https://main.qcloudimg.com/raw/488bcc41226bf939f0a767edd104f25d.png)
 Click the instance ID to enter the basic information page and view the Anti-DDoS Advanced forwarding IP range.
-![](https://main.qcloudimg.com/raw/5f364755b35034f903c713556566c0bd.png)
+![](https://main.qcloudimg.com/raw/4a85e56b6e4cfc4e2216041bb257fded.png)
 
 ### Verifying configuration locally
 

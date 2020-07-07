@@ -14,9 +14,9 @@ This document describes how to connect a website business to an Anti-DDoS Advanc
 ### Configuring forwarding rule
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview) and click **Business Connection** on the left sidebar.
 2. On the "Business Connection" page, select the **Domain Name Connection** tab and click **Add Domain Name**.
-![](https://main.qcloudimg.com/raw/89b3f4e5812c5c22e7d61fb9821b65ae.png)
+![](https://main.qcloudimg.com/raw/cfbfe8e83df682516d665ad5bfeab834.png)
 3. On the forwarding rule adding page, configure the following parameters as needed:
-![](https://main.qcloudimg.com/raw/7e05247ec193ecf67411be4dc66cec21.png)
+![](https://main.qcloudimg.com/raw/b881a15850a364dc08393ccd1738468f.png)
 Parameter description:
  - Domain Name: enter the website domain name to be protected.
  - Protocol: HTTP and HTTPS are supported. Please select an option as needed:
@@ -46,9 +46,9 @@ Parameter description:
 To prevent business interruption that occurs if the real server blocks the Anti-DDoS Advanced forwarding IP, you are recommended to configure whitelist policies for the real server infrastructure (such as firewall, web application firewall, intrusion protection system (IPS), and traffic management system) and disable the protection features of the server firewall and other security software tools (such as Safedog) or set whitelist policies for them, so that the forwarding IP will not be affected by the security policies of the real server.
 
 You can log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview) and click **Instance List** on the left sidebar to find the target instance ID.
-![](https://main.qcloudimg.com/raw/369065124f5e6665e81c4d7d2fc066c0.png)
+![](https://main.qcloudimg.com/raw/ff2ae3b5f116c04589779023e20171c6.png)
 Click the instance ID to enter the basic information page and view the Anti-DDoS Advanced forwarding IP range.
-![](https://main.qcloudimg.com/raw/d2e751177d5aedccf3bb751aaec79c7b.png)
+![](https://main.qcloudimg.com/raw/4f959d6a68bf3cedf5c7815411717079.png)
 
 ### Verifying configuration locally
 After the forwarding configuration is completed, the Anti-DDoS Advanced IP will forward the packets from the relevant port to the corresponding real server port according to the forwarding rule.

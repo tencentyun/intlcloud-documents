@@ -7,14 +7,14 @@ You need to [purchase an Anti-DDoS Advanced instance](https://intl.cloud.tencent
 ## Directions
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Protection Configuration** on the left sidebar.
 2. Select the ID or port of an Anti-DDoS Advanced instance in the list on the left, such as "212.64.xx.xx bgpip-000002je" or "212.64.xx.xx bgpip-000002je" > "tcp:8000".
-![](https://main.qcloudimg.com/raw/acb5ef2fffe8c4efe1c9dbfcee9705fd.png)
+![](https://main.qcloudimg.com/raw/1307aa200b2c60d2c41bf6b96c8ac9dc.png)
 3. Click **Set** in the "Watermark Protection" block on the right to enter the watermark protection list.
-![](https://main.qcloudimg.com/raw/b28533afc53c09f28a5c473815c0b119.png)
+![](https://main.qcloudimg.com/raw/248b74becc853b238793c466a5635cce.png)
 4. Click **Create** to create a watermark protection rule.
-![](https://main.qcloudimg.com/raw/a2017919f3599f83f920d39169200d9b.png)
+![](https://main.qcloudimg.com/raw/34139b0bc9f783c936641bd95ab199c2.png)
 5. After the creation is completed, a watermark protection rule will be added to the watermark protection list. You can view and configure keys by clicking **Configure Key** in the "Operation" column on the right.
-![](https://main.qcloudimg.com/raw/b28533afc53c09f28a5c473815c0b119.png)
+![](https://main.qcloudimg.com/raw/248b74becc853b238793c466a5635cce.png)
 6. On the key configuration page, you can view or copy keys.
-![](https://main.qcloudimg.com/raw/c4874470c541ba7a75b7295b944c877e.png)
+![](https://main.qcloudimg.com/raw/4c8451148c93a7e06e7151e51193b076.png)
 7. On the key configuration page, you can add or delete keys. You can delete a key only if there are two keys. There can be up to two watermark keys.
-![](https://main.qcloudimg.com/raw/6c62741875ea3528acb8b938759710c9.png)
+![](https://main.qcloudimg.com/raw/2bf90364cfc8bf00ee43646a8e0d30e0.png)
