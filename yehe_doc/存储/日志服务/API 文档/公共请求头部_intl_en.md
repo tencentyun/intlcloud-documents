@@ -12,4 +12,4 @@ This document describes common request headers that need to be included when CLS
 | Content-Type        | Request body format. If there is no body, this header can be optional. It is determined by the specific API document. Currently, `application/json` and `application/x-protobuf` are supported |
 | Content-MD5         | MD5 value of request body. If there is no body, this header can be optional. The calculation result is in lower case |
 | x-cls-compress-type | Compression method used by requested body. Currently, lz4 compression is supported. This header is required only by the log upload API. If no compression is performed, it can be optional |
-
+| x-cls-token         | A temporary security token as part of temporary security credentials returned by a STS request. This parameter must be included if you access CLS using a temporary key.  |
