@@ -16,6 +16,7 @@ There are two methods for storing the access logs of CLB:
 <tr><td>Search syntax</td><td>Full-text search, key-value search, fuzzy keyword search, etc. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/614/30439">Search Rules</a></td><td>Typically full-text search</td></tr>
 <tr><td>Supported regions</td><td>It is supported in Guangzhou, Shanghai, Chengdu, Hong Kong (China), Nanjing, Beijing, Chongqing, Singapore, Mumbai,  Silicon Valley, and Frankfurt.  </td><td>Guangzhou, Shanghai, Beijing, Hong Kong (China)</td></tr>
 <tr><td>Supported types</td><td>Public network/private network CLB</td><td>Public network CLB</td></tr>
+<tr><td>Upstream and downstream links </td><td>CLS logs can be stored in COS, and consumed using CKafka</td><td>-</td></tr> 
 <tr><td>Log Retention </td><td>Tencent Cloud stores no access log by default.  You need to store the access log in CLS as needed.</td><td>Tencent Cloud will retain the logs for three days by default in the regions that support storing access logs in COS.</td></tr>
 </tbody></table>
 
