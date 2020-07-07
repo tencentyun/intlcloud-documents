@@ -342,10 +342,10 @@ TIM_DECL int TIMMsgGetMsgList(const char* conv_id, enum TIMConvType conv_type, c
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> Obtain the local message list starting from the message specified by `kTIMMsgGetMsgListParamLastMsg`. kTIMMsgGetMsgListParamCount specifies the number of messages to be obtained. kTIMMsgGetMsgListParamLastMsg can be left blank. If it is left blank, the latest message in the conversation is used as LastMsg. If `kTIMMsgGetMsgListParamIsRamble` is set to true and the number of local obtained messages does not reach the target value, cloud roaming messages will be obtained. If `kTIMMsgGetMsgListParamIsForward` is set to true, messages later than `kTIMMsgGetMsgListParamLastMsg` are obtained. If `kTIMMsgGetMsgListParamIsForward` is set to false, messages earlier than `kTIMMsgGetMsgListParamLastMsg` are obtained.
+> The `kTIMMsgGetMsgListParamLastMsg` parameter specifies a session from which the local message list is obtained. The `kTIMMsgGetMsgListParamCount` parameter specifies the number of messages to be obtained. If you do not specify `kTIMMsgGetMsgListParamLastMsg`, the latest message `LastMsg` of the session will be used.  If you set `kTIMMsgGetMsgListParamIsRamble` to `true`, the roaming message in the cloud will be obtained when the local messages are not enough. If you set `kTIMMsgGetMsgListParamIsForward` to `true`, messages latter than the value of `kTIMMsgGetMsgListParamLastMsg` will be obtained.  If you set it to ` false`, messages earlier than the value of `kTIMMsgGetMsgListParamLastMsg` will be obtained.
 
 
-**Example: obtaining the message list of C2C conversation `Windows-02`**
+**Example: obtaining `Windows-02` message list** of the C2C session
 
 ```c
 Json::Value json_msg(Json::objectValue); // Constructs a message.
