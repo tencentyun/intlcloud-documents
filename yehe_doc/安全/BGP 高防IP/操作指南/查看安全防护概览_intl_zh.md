@@ -5,14 +5,14 @@
    >支持查询最多180天以内的攻击流量信息及 DDoS 攻击事件。
    >
 	- 查看该时间范围内所选择的高防 IP 遭受的攻击情况，包括网络**攻击流量带宽** / **攻击包速率**趋势。当遭受攻击时，在流量趋势图中可以明显看出攻击流量的峰值。
-    ![](https://main.qcloudimg.com/raw/7194979c780e959cd2faede0a0ec95ae.png)
+    ![](https://main.qcloudimg.com/raw/f14181d3ef2ea79c7deff1f47556acc9.png)
 	- 通过查看攻击总流量、攻击包量和攻击总次数三个维度的数据，了解该时间范围内的攻击情况。
 		- **攻击总流量**：查看该时间范围内，所选择的高防 IP 遭受攻击事件中各协议总攻击流量的占比情况。
 		- **攻击包量**：查询该时间范围内，所选择的高防 IP 遭受攻击事件中各协议攻击包总数的占比情况。
 		- **攻击总次数**：查询该时间范围内，所选择的高防 IP 遭受的各攻击类型总次数占比情况。
-        ![](https://main.qcloudimg.com/raw/60193e05229231f7e050a7e6382b8ded.png) 
+        ![](https://main.qcloudimg.com/raw/f4be2a769b6128a2d9aa3d9bad912013.png) 
 	- 在DDoS 攻击详情区域查看该时间范围内所遭受的 DDoS 攻击事件，了解每一次攻击事件的攻击（开始）时间、持续时间、攻击类型以及攻击状态。
-        ![](https://main.qcloudimg.com/raw/a797cf8389312f5be9cb5f3af11dffb5.png)
+        ![](https://main.qcloudimg.com/raw/72694d7acf0f35eb962070d20c584e69.png)
         >
         > - 只能查询单个高防 IP 遭受攻击的攻击源信息。
         > - 攻击源信息为抽样数据，即随机抓包统计的数据，在攻击结束后大约5分钟后才会显示数据。
@@ -27,7 +27,7 @@
 	- 如果存在 CC 攻击，系统会记录下攻击的开始时间、结束时间、被攻击域名、被攻击 url、总请求峰值、攻击请求峰值和攻击源等信息。
 		-   **总请求峰值**，统计遭受攻击时，高防 IP 接收到的总请求流量峰值。
 		-   **攻击请求峰值**，统计遭受攻击时， 由高防系统阻断的请求次数峰值。
-![](https://main.qcloudimg.com/raw/d03d006a1e7930f2f43b33845c0f629a.png)
+![](https://main.qcloudimg.com/raw/a3b0a551327f25f1d2f4c6aed1a6600c.png)
 
 ## 查看业务流量情况
 1. 登录 [DDoS 高防 IP（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview)，在左侧导航栏中，单击【防护概览】。
@@ -36,5 +36,5 @@
 	- **新建连接数**：客户端每秒内新增的与高防建立通信的 TCP 连接数。
  >支持查询最多180天以内的业务信息。
  >
-![](https://main.qcloudimg.com/raw/b47086d76aad47ee27425747bcec2ac3.png)
+![](https://main.qcloudimg.com/raw/db756411b028843031821ae3924dcda8.png)
 

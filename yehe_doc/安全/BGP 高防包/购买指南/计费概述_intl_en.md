@@ -1,4 +1,4 @@
-﻿## Billing Mode
+## Billing Mode
 
 The new version of Anti-DDoS Pro promises to provide a max protection capability of no less than 30 Gbps. Max protection refers to the utmost defense against attacks, which aims to successfully defend against each DDoS attack by integrating the capabilities of the current local cleansing center (currently, the maximum protection capabilities in the Guangzhou and Beijing regions are no more than 100 Gbps, and that in the Shanghai region is no more than 300 Gbps, which are adjusted dynamically based on the actual network status). Plus, max protection can be increased along with ever-increasing Tencent Cloud network capabilities, ridding you of the additional upgrade costs.
 

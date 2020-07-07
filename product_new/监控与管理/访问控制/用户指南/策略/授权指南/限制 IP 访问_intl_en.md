@@ -15,13 +15,14 @@ The product must support limiting access via IP. For more information, see [FAQs
 ## Use Case
 In the following example, the user must be in the 10.217.182.3/24 or 111.21.33.72/24 IP ranges to invoke the cos:PutObject Cloud API call. This is shown in the following figure:
 
-![](https://main.qcloudimg.com/raw/7fa22e4797a7ca350957fafa1c8889b0.png)
+![](https://main.qcloudimg.com/raw/6584441d504a13b27cf8ab2da135bb80.png)
 
 The policy syntax is as follows:
 ```
 {
  "version": "2.0",
- "statement": {
+ "statement": [
+ {
      "effect": "allow",
      "action": "cos:PutObject",
      "resource": "*",
@@ -34,5 +35,6 @@ The policy syntax is as follows:
          }
      }
  }
+ ]
 }
 ```

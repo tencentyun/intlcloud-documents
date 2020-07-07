@@ -5,9 +5,9 @@ You can view the basic information (such as the base protection bandwidth and ru
 
 This example shows you how to view the information of the Anti-DDoS Advanced instance `bgpip-000002jf`.
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Instance List** on the left sidebar. Find the instance whose ID is `bgpip-000002jf` and click the ID to view the instance details. If there are many instances, you can use the search box in the top-right corner for filtering.
-![](https://main.qcloudimg.com/raw/3e7bc8686feaba30b5e5bb5dd067a93c.png)
+![](https://main.qcloudimg.com/raw/b7ce03c14d6b77474142573faecbf37c.png)
 3. On the pop-up page, you can view the following information:
-![](https://main.qcloudimg.com/raw/3a1ee6ca2f12a5b74ca470675d97e550.png)
+![](https://main.qcloudimg.com/raw/77f50dfce86cccc4dc24dd4d3b5cd331.png)
 **Parameter description:**
 	- **Name**
 This is the name of the Anti-DDoS Advanced instance for easier instance identification and management. You can set a custom instance name containing 1–20 character of any type as desired.

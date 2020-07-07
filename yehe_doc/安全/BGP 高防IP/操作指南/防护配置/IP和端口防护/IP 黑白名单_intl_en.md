@@ -6,10 +6,10 @@ You need to [purchase an Anti-DDoS Advanced instance](https://intl.cloud.tencent
 ## Directions
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Protection Configuration** on the left sidebar.
 2. Select the ID or port of an Anti-DDoS Advanced instance in the list on the left, such as "212.64.xx.xx bgpip-000002je" or "212.64.xx.xx bgpip-000002je" > "TCP:8000".
-![](https://main.qcloudimg.com/raw/acb5ef2fffe8c4efe1c9dbfcee9705fd.png)
+![](https://main.qcloudimg.com/raw/188d333af2cbd161c06c096c7d767531.png)
 3. Click **Set** in the "IP Blacklist/Whitelist" block on the right to enter the IP blacklist/whitelist.
-![](https://main.qcloudimg.com/raw/e5ae996b625e35ee87be832ac979bb95.png)
+![](https://main.qcloudimg.com/raw/c516490db9123b7395a207e4e80e9e2d.png)
 4. Click **Create** to create an IP blacklist/whitelist rule and select the list type.
-![](https://main.qcloudimg.com/raw/18f06bcf4e813fe772220253918975da.png)
+![](https://main.qcloudimg.com/raw/1c3a46e9eea39733555bec2741bedc10.png)
 5. After the creation is completed, an IP blacklist/whitelist rule will be added to the IP blacklist/whitelist. You can click **Delete** in the "Operation" column on the right to delete the rule.
-![](https://main.qcloudimg.com/raw/a1d498a309cb004aa9158f5f8216c503.png)
+![](https://main.qcloudimg.com/raw/3453f2025be0bccc6429a8358986a8ed.png)

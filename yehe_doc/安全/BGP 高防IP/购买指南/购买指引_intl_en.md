@@ -4,7 +4,7 @@ Before purchasing an Anti-DDoS Advanced instance, you need to [sign up for a Ten
 ## Directions
 ### Purchasing Anti-DDoS Advanced instance in Mainland China
 1. Open the [Anti-DDoS product purchase page](https://buy.cloud.tencent.com/dayu_buy#/antiddos-advanced) and click **Anti-DDoS Advanced (Mainland China)**.
-![](https://main.qcloudimg.com/raw/98be9eb1551d5efcf00e81758bad6e75.png)
+![](https://main.qcloudimg.com/raw/089ed04e4850dea1d320261f702efc3a.png)
 2. Set the parameters based on your actual needs.
  - Specification Description:
     - Connection Mode: proxy mode
@@ -20,7 +20,7 @@ Before purchasing an Anti-DDoS Advanced instance, you need to [sign up for a Ten
 
 ### Purchasing Anti-DDoS Advanced instance Outside Mainland China
 1. Open the [Anti-DDoS product purchase page](https://buy.cloud.tencent.com/dayu_buy#/antiddos-advanced-intl) and click **Anti-DDoS Advanced (Outside Mainland China)**.
-![](https://main.qcloudimg.com/raw/f2a45dd9a55fc4d3b8f3ec3f792cb88f.png)
+![](https://main.qcloudimg.com/raw/56d59436eed833b37b06e23298f2bd68.png)
 2. Configure the following parameters based on your actual needs:
  - Specification Description:
     - Connection Mode: proxy mode

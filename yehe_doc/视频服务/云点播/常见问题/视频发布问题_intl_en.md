@@ -59,7 +59,3 @@ Yes.
 
 ### Can I add ads to videos published through an application player?
 Adding ads is currently not supported. We will support this feature as soon as possible.
-
-### Why isn't a video published in VOD played back automatically?
-
-If no custom configuration is made, the default configuration will be used when a video is uploaded and published, that is, the autoplay feature is disabled. However, you can modify this setting by checking **Autoplay** when publishing videos.

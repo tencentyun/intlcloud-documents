@@ -47,8 +47,8 @@ CDN 为您提供了 IP 黑白名单配置功能。您可以根据业务需要对
 
 ### 如何配置 CDN 的 Range 回源？
 登录  [CDN 控制台](https://console.cloud.tencent.com/cdn) ，选择左侧菜单栏的【域名管理】，单击您所要编辑的域名右侧的【管理】，详情请参见 [分片回源配置](https://intl.cloud.tencent.com/document/product/228/7184)。 
-![图片描述](https://main.qcloudimg.com/raw/d3e75f57d7731cedbbc55690fccf8e42.png)
-单击【回源配置】，您可以看到 Range 回源配置 模块。![图片描述](https://main.qcloudimg.com/raw/8a7e81c54c7cb0f950441759c0e62f48.png)
+![图片描述](https://main.qcloudimg.com/raw/af642b65bed86a97fadaf229e26aceac.png)
+单击【回源配置】，您可以看到 Range 回源配置 模块。![图片描述](https://main.qcloudimg.com/raw/79d08718f1399b735b9b2dc804bf383e.png)
 
 ### CDN 无法完全隐藏 IP 的原因？
 1. 使用 CDN 前，IP 已经暴露。
@@ -69,3 +69,12 @@ CDN 为您提供了 IP 黑白名单配置功能。您可以根据业务需要对
 
 ### CDN 回源能走内网吗？
 您好，目前 CDN 回源仅支持走公网。
+
+### CDN 是否支持边缘脚本，实现可编程配置化？
+CDN 目前使用 LUA 脚本来实现编程配置化，多用于定制化需求，由 CDN 技术支持人员进行编写发布。
+
+### CDN 是否支持根据不同客户端请求配置不同源站？
+CDN 支持根据不同客户端请求回源至不同源站，您可以提交具体需求描述，由 CDN 技术支持人员进行后端配置。
+
+### CDN 是否支持动态回源配置，回源排队？
+若主源站响应异常，可按请求顺序跳转至配置的备份源站重新请求。

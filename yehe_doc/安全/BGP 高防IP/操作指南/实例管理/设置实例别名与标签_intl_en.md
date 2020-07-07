@@ -10,7 +10,7 @@ You need to [purchase an Anti-DDoS Advanced instance](https://intl.cloud.tencent
 2. In the instance list, click the second row in the "ID/Name/Tag" column of the target instance and enter a name.
 >The name can contain 1–20 characters of any type.
 >
-![](https://main.qcloudimg.com/raw/c655fdd4ad9ea8bc9921e51d48ad32b6.png)
+![](https://main.qcloudimg.com/raw/2dcdc3f092d52353d66eba6202dfae2c.png)
 
 ### Method 2
 1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Instance List** on the left sidebar.
@@ -18,5 +18,5 @@ You need to [purchase an Anti-DDoS Advanced instance](https://intl.cloud.tencent
 3. On the basic information page of the instance, click the "Modify" pencil icon on the right of the instance name and enter a name.
 >The name can contain 1–20 characters of any type.
 >
-![](https://main.qcloudimg.com/raw/dcbb2f8048cd5af3bc453f9531f578fa.png)
+![](https://main.qcloudimg.com/raw/855b5a30a2f87209f5a1460916b6413b.png)
 
