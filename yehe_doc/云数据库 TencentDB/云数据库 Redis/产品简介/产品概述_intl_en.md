@@ -1,5 +1,4 @@
-TencentDB for Redis is a cache database provided by Tencent Cloud based on the Redis protocol that features high availability, reliability, and flexibility. TencentDB for Redis is compatible with Redis 2.8, 4.0, and 5.0 protocols and available in standard and cluster architectures.
-it supports up to 4 TB of storage capacity and tens of millions of concurrent requests, meeting the needs of different scenarios such as caching, storage, and computing.
+TencentDB for Redis is a cache database provided by Tencent Cloud based on the Redis protocol that features high availability, reliability, and flexibility. Compatible with Redis 2.8, 4.0, and 5.0 protocols and available in both standard and cluster architectures, it supports up to 4 TB of storage capacity and tens of millions of concurrent requests, meeting the needs of different scenarios such as caching, storage, and computing.
 
 ## Product Features
 - Master/slave hot backup: master/slave hot backup, automatic failure monitoring, and automatic disaster recovery are supported.
@@ -10,7 +9,7 @@ it supports up to 4 TB of storage capacity and tens of millions of concurrent re
 - Distributed storage: your data is distributed across multiple physical machines, helping you get rid of standalone capacity and resource constraints.
 
 ## Product Editions
-TencentDB for Redis is available in standard and cluster architectures.You can select the appropriate one based on actual needs. The standard architecture features higher compatibility, but its performance is restrained to a single node. The cluster architecture has lower compatibility, but its performance can be horizontally scaled to support up to tens of millions of concurrent requests.
+TencentDB for Redis is available in both standard and cluster architectures for your choice based on your actual performance requirements. The standard architecture features higher compatibility, but its performance is restrained to one single node. The cluster architecture is not as compatible as the standard one, but it can be scaled out to support up to tens of millions of concurrent requests.
 
 
 <table>  
