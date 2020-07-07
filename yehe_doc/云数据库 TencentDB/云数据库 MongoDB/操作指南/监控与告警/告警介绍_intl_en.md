@@ -3,13 +3,13 @@ TencentDB for MongoDB monitoring provides multi-dimensional custom alarm feature
 
 ## Directions
 ### Creating alarm policy
-1. Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/overview) and select **Configure Alarms** > **Alarm Policy** on the left sidebar.
-2. In the alarm policy list, click **Create**.
-3. Set the policy name, policy type, target product, alarm object, and trigger condition.
+1. Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/overview) and select **Alarm Configuration** > **Alarm Policy** on the left sidebar.
+2. In the alarm policy list, click **Add**.
+3. Set the policy name, policy type, target project, alarm object, and trigger condition.
 ![](https://main.qcloudimg.com/raw/2c00a4d8c828e4df98ceb29ffb6beb3a.png)
 4. After confirming that everything is correct, click **Complete**.
 
-### Associating object
+### Associating objects
 After the alarm policy is created, you can associate some alarm objects with it. When an alarm object satisfies an alarm trigger condition, an alarm notification will be sent.
 1. In the alarm policy list, click the name of an alarm policy to enter the alarm policy management page.
 2. Click **Add Object** on the alarm policy management page.
@@ -19,5 +19,5 @@ After the alarm policy is created, you can associate some alarm objects with it.
 ### Setting alarm recipient
 Alarm recipients are those who will receive alarm messages.
 1. In the alarm policy list, click the name of an alarm policy.
-2. On the alarm policy management page, select **Alarm Recipient** and click **Edit**.
+2. On the alarm policy management page, select **Alarm Recipient Object** and click **Edit**.
 3. Select the user group to be notified, set relevant options, and click **Save**.

@@ -8,17 +8,17 @@
 
 ## 操作步骤
 1. 左侧导航栏，选择需要调用的接口。
-![](https://main.qcloudimg.com/raw/34586e7780f7cd729e83c275d8b12ffb.png)
+![](https://main.qcloudimg.com/raw/60d9789c50f2c76215a9c5b836636b27.jpg)
 2. 填写个人密钥和输入参数中的所需内容。
-![](https://main.qcloudimg.com/raw/9e6fc5a1f2c9ce915c2eef7d869bffb9.png)
+![](https://main.qcloudimg.com/raw/5f736e1aa25757f39a220b0ed8f3b5ce.png)
  - Region 参数：域名中的地域信息，该参数决定访问的接入点，例如`ocr.ap-shanghai.tencentcloudapi.com`就是要访问上海这个接入点。公共参数 Region 决定的是要访问业务资源所在区，例如`Region=ap-beijing`就是要操作北京区的资源，如果域名中不指定地域信息则默认就近接入。就近接入可能会存在问题。如果解析不到 IP 会默认到广州地域里面。另外域名地域和公共参数 Region 可以不一致，但是可能会增加耗时。建议域名和公共参数 Region 选择相同的地域：华南地区(广州)，ap-guangzhou。
  - Config 是 String 类型，解析之后为 Json 格式。
-![](https://main.qcloudimg.com/raw/b40b2d9f0a1198e05d3a551c574d34e4.png)
+![](https://main.qcloudimg.com/raw/470a4a1c8bd5c6d1aebf8abcebd45ba3.png)
 3. 选择语言生成对应代码。
 您填写左侧的参数值，然后生成代码，生成代码中的部分字段信息和填写内容是关联的。如需调整传入参数，需要在左侧修改参数值后重新生成代码。
 4. 集成 SDK 到项目。
 参考右上角的 SDK 使用说明，将 SDK 引入到项目，通过 【步骤3】生成的代码即可调用对应的接口。
-![](https://main.qcloudimg.com/raw/ef2357291426913a4f88e890473634ee.png)
+![](https://main.qcloudimg.com/raw/5efed9d740f7a50ba40069c70806424c.png)
 
 ## 简易版 Demo（推荐使用）
 
@@ -81,7 +81,7 @@ client.IDCardOCR(req, function(errMsg, response) {
 
   如果接口请求内容超过 1M，只能使用 V3 鉴权（TC3-HMAC-SHA256）。除 Node SDK 外，其他语言 SDK 都支持 V3。
 - API 3.0 SDK 支持语言：Node、Python、Java、PHP、Go、.Net。其他语言如 C++ ，暂时不支持 SDK 方式调用，需要自行实现 V3 鉴权 进行接口调用，建议使用 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=GetActionSequence) 中签名串生成工具进行核验签名有效性。
-![](https://main.qcloudimg.com/raw/421420a45963a7b86225e041908abbdb.png)
+![](https://main.qcloudimg.com/raw/bfc3170146bca20407ce18852b2fd045.png)
 
 
 
