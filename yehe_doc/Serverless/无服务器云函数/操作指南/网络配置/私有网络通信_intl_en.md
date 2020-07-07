@@ -16,10 +16,10 @@ You have [created a function](https://intl.cloud.tencent.com/document/product/58
 
 ## Directions
 ### Modifying network configuration
-1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf/index) and click **Functions** on the left sidebar.
+1. Log in to the Serverless Cloud Function Console and click **Function Service**(https://console.cloud.tencent.com/scf/list) in the left sidebar.
 2. Select the region at the top of the page and click the name of the function to be configured.
 3. On the "Function Configuration" page, click **Edit** in the top-right corner.
-4. Enable **Private Network Access** and select the VPC to be accessed and the subnet you want to use.
+4. Set **VPC** to "Enable", and select the VPC and subnet you want to use.
 
 
 ### Using VPC
@@ -69,5 +69,5 @@ with open("/etc/resolv.conf") as f:
 
 ## Relevant Operations
 ### Viewing network configuration
-1. Log in to the SCF Console and click **Functions** on the left sidebar.
+1. Log in to the Serverless Cloud Function Console and click **Function Service**(https://console.cloud.tencent.com/scf/list) in the left sidebar.
 2. Select a region at the top of the page and click the name of a function for which private network access has been configured to view the specific configuration through the corresponding **network** and **subnet**.
