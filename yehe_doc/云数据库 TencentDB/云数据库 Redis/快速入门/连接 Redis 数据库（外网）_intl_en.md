@@ -17,6 +17,6 @@ iptables -t nat -A PREROUTING -p tcp --dport 10001 -j DNAT --to-destination 10.0
 iptables -t nat -A POSTROUTING -d 10.0.0.5 -p tcp --dport 6379 -j MASQUERADE
 ```
 3. Configure the [CVM security group](https://intl.cloud.tencent.com/document/product/213/34272) to enable access to the public port of the CVM instance. You are recommended to open only source addresses that require access.
-4. On the accessing client, you can connect to the TencentDB for Redis instance in the private network simply by accessing the public IP `26.xx.xx.2:10001`. For more information on the connection commands, please see [Instance Connection](https://intl.cloud.tencent.com/document/product/239/9897#.E8.BF.9E.E6.8E.A5.E5.AE.9E.E4.BE.8B).
+4. On the accessing client, you can connect to the TencentDB for Redis instance on the private network simply by accessing the public IP 26.xx.xx.2:10001. The connection commands are the same as the private network connection commands. For more information, please see [Instance Connection](https://intl.cloud.tencent.com/document/product/239/9897#.E8.BF.9E.E6.8E.A5.E5.AE.9E.E4.BE.8B).
 5. After connecting to the TencentDB for Redis instance, run the `info` command. If the database information is returned, the connection is successful.
 
