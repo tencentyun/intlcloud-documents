@@ -28,11 +28,11 @@ For more information about the configurations, matching rules and pricing of the
 
 Note: When using RIs, you will be charged for the entire period of purchase regardless of the actual usage.
 
-**Validity Period Type**
+**Term Type**
 
-One year or three years.
+1 year or 3 years
 
-For example, if you successfully purchase a CVM RI with a validity period of one year at 11:15:24, May 25, 2019, it will be valid from 12:00:00, May 25, 2019 to 12:00:00, May 24, 2020.If you successfully purchase a CVM RI with a validity period of three year at 11:15:24, May 25, 2019, it will be valid from 12:00:00, May 25, 2019 till 12:00:00, May 24, 2022.
+For example, if you successfully purchase a CVM RI with a validity period of one year at 11:15:24, May 25, 2019, it will be valid from 12:00:00, May 25, 2019 to 12:00:00, May 24, 2020.If you purchased a 3-year term CVM R1 on May 25, 2019 11:15:24, the instance will be valid from May 25, 2019 12:00:00 to May 24, 2022 12:00:00.
 
 Note: After RIs expire, the matched pay-as-you-go instances will run normally but on longer enjoy a discount.
 
