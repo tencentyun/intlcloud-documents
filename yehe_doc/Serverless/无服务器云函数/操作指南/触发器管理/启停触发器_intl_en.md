@@ -3,12 +3,14 @@ This can be done in the console.
 
 ## Enabling/Disabling Trigger in Console
 1. Log in to the SCF Console and select **[Functions](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
-2. At the top of the "Functions" page, select the region and namespace where the function for which to enable/disable a trigger resides.
+2. At the top of the **Functions** page, select the region and namespace where the function for which to enable/disable a trigger resides, as shown below:
+![](https://main.qcloudimg.com/raw/033d619aef940f5b0b98d0913d0435bc.png)
 The function list contains the function name, monitoring information, runtime environment, creation time, and modification time.
 3. Click the function name to enter the function details page.
-The function details page contains the function configuration, function code, triggers, logs, and monitoring tabs.
-4. Select the **Triggers** tab to enter the trigger browsing and operation page.
-5. Click <img src="https://main.qcloudimg.com/raw/707031668bf900e6e1543ff08cecbae7.png" style="margin:-3px 0px"> in the top-right corner of the desired trigger to switch the enabled/disabled status of the trigger.
+The function details page consists of four tabs: **Function Management**, **Trigger Management**, **Monitoring information**, and **Log Query**.
+4. Select the **Trigger Management** tab on the left to browse and operate on triggers.
+5. Click <img src="https://main.qcloudimg.com/raw/707031668bf900e6e1543ff08cecbae7.png" style="margin:-6px 0px"> next to **Status** to enable or disable the trigger, as shown below:
+![](https://main.qcloudimg.com/raw/f836e9dbbcc457906ba136937a0a1e64.png)
 
 
 ## Setting the Enables/Disabled Status of Trigger During Creation
