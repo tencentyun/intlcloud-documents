@@ -1,6 +1,6 @@
 ## Operation Scenarios
 TencentDB for MySQL supports importing SQL files via the console, allowing you to execute SQL statements in the selected database. You can also use this feature to create databases/tables and change table structures to initialize or modify the instance.
->High-Availability Edition and Finance Edition of TencentDB for MySQL instances support operation logs management.
+>?High-availability edition and finance edition of TencentDB for MySQL instances support importing SQL files.
 
 ## Directions
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
