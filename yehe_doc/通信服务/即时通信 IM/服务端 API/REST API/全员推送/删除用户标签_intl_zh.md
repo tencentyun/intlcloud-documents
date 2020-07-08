@@ -1,6 +1,9 @@
 ## 功能说明
 管理员给用户删除标签。注意每次最多只能给100个用户删除标签。
+
 ## 接口调用说明
+本功能**仅针对旗舰版客户开放申请（如您降级为专业版将无法使用），您可通过工单申请开通该功能，申请后我们将对您的需求进行评估，需求评估合理后您方可使用该功能**。
+
 ### 请求 URL 示例
 ```
 https://console.tim.qq.com/v4/all_member_push/im_remove_tag?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
