@@ -1,3 +1,5 @@
+>!**Stick on the new API. Do not use it with the older versions.**
+
 ## Initialization and Login APIs
 To use Tencent Cloud IM services, you need to initialize and log in.
 
