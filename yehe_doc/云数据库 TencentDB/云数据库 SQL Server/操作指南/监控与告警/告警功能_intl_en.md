@@ -15,7 +15,7 @@ If you want to send an alarm message for a specific status of a product, you nee
  - Policy Type: select TencentDB for SQL Server.
  - Trigger condition: it is a semantic condition composed of metric, comparison, threshold, statistical period, and duration. For example, if the metric is disk utilization, the comparison is >, the threshold is 80%, the statistical period is 5 minutes, and the duration is two statistical periods, then the data on disk utilization of a database will be collected once every five minutes, and an alarm will be triggered if the disk utilization exceeds 80% for two consecutive times. For suggested alarm threshold values, please see the metric optimization suggestions in [Monitoring Feature](https://intl.cloud.tencent.com/document/product/238/7524).
  - The object instance to be associated with can be found by selecting the region where the object is located or searching for the instance ID of the object.
- ![](https://main.qcloudimg.com/raw/af036ff54f97518a7d1466795e99c46b.png)
+
 4. After confirming that everything is correct, click **Complete**.
 
 ### Associating objects

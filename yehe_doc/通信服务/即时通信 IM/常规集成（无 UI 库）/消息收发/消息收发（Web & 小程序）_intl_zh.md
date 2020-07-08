@@ -1,4 +1,6 @@
+
 ## 发送消息
+
 
 ### 创建文本消息
 
@@ -14,17 +16,18 @@ tim.createTextMessage(options)
 
 参数`options`为`Object`类型，包含的属性值如下表所示：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| `to`               | `String` | 消息接收方的 userID 或 groupID                               |
-| `conversationType` | `String` | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话） 或 `TIM.TYPES.CONV_GROUP`（群组会话） |
-| `payload`          | `Object` | 消息内容的容器                                               |
+| Name               | Type     | Attributes   | Default                         | Description                                                  |
+| ------------------ | -------- | ------------ | ------------------------------- | ------------------------------------------------------------ |
+| `to`               | `String` |      -        |            -                     | 消息接收方的 userID 或 groupID                               |
+| `conversationType` | `String` |       -       |                -                 | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话）或`TIM.TYPES.CONV_GROUP`（群组会话） |
+| `priority`         | `String` | `<optional>` | `TIM.TYPES.MSG_PRIORITY_NORMAL` | 消息优先级                                                   |
+| `payload`          | `Object` |       -       |           -                      | 消息内容的容器                                               |
 
 `payload`的描述如下表所示：
 
 | Name   | Type     | Description  |
 | ------ | -------- | ------------ |
-| `file` | `String` | 消息文本内容 |
+| `text` | `String` | 消息文本内容 |
 
 **示例**
 
@@ -62,7 +65,7 @@ promise.then(function(imResponse) {
 
 创建图片消息的接口，此接口返回一个消息实例，可以在需要发送图片消息时调用 [发送消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) 接口发送消息实例。
 
-> v2.3.1版本开始支持传入 File 对象，使用前需要将 SDK 升级至v2.3.1或以上。
+>! v2.3.1版本开始支持传入 File 对象，使用前需要将 SDK 升级至v2.3.1或以上。
 
 
 **接口**
@@ -75,12 +78,13 @@ tim.createImageMessage(options)
 
 参数`options`为`Object`类型，包含的属性值如下表所示：
 
-| Name               | Type       | Description                                                |
-| ------------------ | ---------- | ---------------------------------------------------------- |
-| `to`               | `String`   | 消息的接收方                                               |
-| `conversationType` | `String`   | 会话类型，取值`TIM.TYPES.CONV_C2C`或`TIM.TYPES.CONV_GROUP` |
-| `payload`          | `Object`   | 消息内容的容器                                             |
-| `onProgress`       | `function` | 获取上传进度的回调函数                                     |
+| Name               | Type       | Attributes   | Default                         | Description                                                |
+| ------------------ | ---------- | ------------ | ------------------------------- | ---------------------------------------------------------- |
+| `to`               | `String`   |     -         |            -                     | 消息的接收方                                               |
+| `conversationType` | `String`   |       -       |              -                   | 会话类型，取值`TIM.TYPES.CONV_C2C`或`TIM.TYPES.CONV_GROUP` |
+| `priority`         | `String`   | `<optional>` | `TIM.TYPES.MSG_PRIORITY_NORMAL` | 消息优先级                                                 |
+| `payload`          | `Object`   |           -   |                  -               | 消息内容的容器                                             |
+| `onProgress`       | `function` |          -    |                  -               | 获取上传进度的回调函数                                     |
 
 `paylaod`的描述如下表所示：
 
@@ -111,9 +115,9 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
   <span class="hljs-comment">// 发送失败</span>
   <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">'sendMessage error:'</span>, imError);
-});
+});</code></pre>
 
-<span class="hljs-comment">// Web 端发送图片消息示例2- 传入 File 对象</span>
+<pre><code><span class="hljs-comment">// Web 端发送图片消息示例2- 传入 File 对象</span>
 <span class="hljs-comment">// 先在页面上添加一个 ID 为 "testPasteInput" 的消息输入框，例如 &lt;input type="text" id="testPasteInput" placeholder="截图后粘贴到输入框中" size="30" /&gt;</span>
 <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'testPasteInput'</span>).addEventListener(<span class="hljs-string">'paste'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
   <span class="hljs-keyword">let</span> clipboardData = e.clipboardData;
@@ -124,13 +128,11 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
     <span class="hljs-comment">// 图片消息发送成功后，file 指向的内容可能被浏览器清空，如果接入侧有额外的渲染需求，可以提前复制一份数据</span>
     fileCopy = file.slice();
   }
-
   <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> file === <span class="hljs-string">'undefined'</span>) {
     <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">'file 是 undefined，请检查代码或浏览器兼容性！'</span>);
     <span class="hljs-keyword">return</span>;
   }
-
-  <span class="hljs-comment">// 1. 创建消息实例，接口返回的实例可以上屏</span>
+   <span class="hljs-comment">// 1. 创建消息实例，接口返回的实例可以上屏</span>
   <span class="hljs-keyword">let</span> message = tim.createImageMessage({
     <span class="hljs-attr">to</span>: <span class="hljs-string">'user1'</span>,
     <span class="hljs-attr">conversationType</span>: TIM.TYPES.CONV_C2C,
@@ -138,8 +140,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
       <span class="hljs-attr">file</span>: file
     },
     <span class="hljs-attr">onProgress</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'file uploading:'</span>, event) }
-  });
-
+  });  
   <span class="hljs-comment">// 2. 发送消息</span>
   <span class="hljs-keyword">let</span> promise = tim.sendMessage(message);
   promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imResponse</span>) </span>{
@@ -199,11 +200,12 @@ tim.createAudioMessage(options)
 
 参数`options`为`Object`类型，包含的属性值如下表所示：
 
-| Name               | Type     | Description                                                |
-| ------------------ | -------- | ---------------------------------------------------------- |
-| `to`               | `String` | 消息的接收方                                               |
-| `conversationType` | `String` | 会话类型，取值`TIM.TYPES.CONV_C2C`或`TIM.TYPES.CONV_GROUP` |
-| `payload`          | `Object` | 消息内容的容器                                             |
+| Name               | Type     | Attributes   | Default                         | Description                                                |
+| ------------------ | -------- | ------------ | ------------------------------- | ---------------------------------------------------------- |
+| `to`               | `String` |      -        |              -                   | 消息的接收方                                               |
+| `conversationType` | `String` |       -       |               -                  | 会话类型，取值`TIM.TYPES.CONV_C2C`或`TIM.TYPES.CONV_GROUP` |
+| `priority`         | `String` | `<optional>` | `TIM.TYPES.MSG_PRIORITY_NORMAL` | 消息优先级                                                 |
+| `payload`          | `Object` |       -       |            -                     | 消息内容的容器                                             |
 
 `paylaod`的描述如下表所示：
 
@@ -267,10 +269,10 @@ recorderManager.start(recordOptions);</code></pre>
 
 创建文件消息的接口，此接口返回一个消息实例，可以在需要发送文件消息时调用 [发送消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) 接口发送消息实例。
 
->
-> v2.3.1版本开始支持传入 File 对象，使用前需要将 SDK 升级至v2.3.1或以上。
-> v2.4.0版本起，上传文件大小最大值调整为100MB。
-> 微信小程序目前不支持选择文件的功能，故该接口暂不支持微信小程序端。
+>!
+>! v2.3.1版本开始支持传入 File 对象，使用前需要将 SDK 升级至v2.3.1或以上。
+>! v2.4.0版本起，上传文件大小最大值调整为100MB。
+>! 微信小程序目前不支持选择文件的功能，故该接口暂不支持微信小程序端。
 
 **接口**
 
@@ -282,12 +284,13 @@ tim.createFileMessage(options)
 
 参数`options`为`Object`类型，包含的属性值如下表所示：
 
-| Name               | Type       | Description                                                  |
-| ------------------ | ---------- | ------------------------------------------------------------ |
-| `to`               | `String`   | 消息接收方的 userID 或 groupID                               |
-| `conversationType` | `String`   | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话） 或 `TIM.TYPES.CONV_GROUP`（群组会话） |
-| `payload`          | `Object`   | 消息内容的容器                                               |
-| `onProgress`       | `function` | 获取上传进度的回调函数                                       |
+| Name               | Type       | Attributes   | Default                         | Description                                                  |
+| ------------------ | ---------- | ------------ | ------------------------------- | ------------------------------------------------------------ |
+| `to`               | `String`   |        -      |           -                      | 消息接收方的 userID 或 groupID                               |
+| `conversationType` | `String`   |          -    |               -                  | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话）或`TIM.TYPES.CONV_GROUP`（群组会话） |
+| `priority`         | `String`   | `<optional>` | `TIM.TYPES.MSG_PRIORITY_NORMAL` | 消息优先级                                                   |
+| `payload`          | `Object`   |       -       |           -                      | 消息内容的容器                                               |
+| `onProgress`       | `function` |       -       |               -                  | 获取上传进度的回调函数                                       |
 
 `payload`的描述如下表所示：
 
@@ -318,8 +321,10 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">imError</span>) </span>{
   <span class="hljs-comment">// 发送失败</span>
   <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">'sendMessage error:'</span>, imError);
-});
-<span class="hljs-comment">// Web 端发送文件消息示例2- 传入 File 对象</span>
+});</code></pre>
+
+
+<pre><code><span class="hljs-comment">// Web 端发送文件消息示例2- 传入 File 对象</span>
 <span class="hljs-comment">// 先在页面上添加一个 ID 为 "testPasteInput" 的消息输入框，如 &lt;input type="text" id="testPasteInput" placeholder="截图后粘贴到输入框中" size="30" /&gt;</span>
 <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'testPasteInput'</span>).addEventListener(<span class="hljs-string">'paste'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
   <span class="hljs-keyword">let</span> clipboardData = e.clipboardData;
@@ -354,6 +359,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
   });
 });</code></pre>
 
+
 **返回**
 
 消息实例 [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html)。
@@ -377,11 +383,12 @@ tim.createCustomMessage(options)
 
 参数`options`为`Object`类型，包含的属性值如下表所示：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| `to`               | `String` | 消息接收方的 userID 或 groupID                               |
-| `conversationType` | `String` | 会话类型，取值`TIM.TYPES.CONV_C2C`(端到端会话) 或 `TIM.TYPES.CONV_GROUP`(群组会话) |
-| `payload`          | `Object` | 消息内容的容器                                               |
+| Name               | Type     | Attributes   | Default                         | Description                                                  |
+| ------------------ | -------- | ------------ | ------------------------------- | ------------------------------------------------------------ |
+| `to`               | `String` |       -       |            -                     | 消息接收方的 userID 或 groupID                               |
+| `conversationType` | `String` |       -       |             -                    | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话）或`TIM.TYPES.CONV_GROUP`（群组会话） |
+| `priority`         | `String` | `<optional>` | `TIM.TYPES.MSG_PRIORITY_NORMAL` | 消息优先级                                                   |
+| `payload`          | `Object` |      -        |                 -                | 消息内容的容器                                               |
 
 `payload`的描述如下表所示：
 
@@ -390,7 +397,6 @@ tim.createCustomMessage(options)
 | `data`        | `String` | 自定义消息的数据字段 |
 | `description` | `String` | 自定义消息的说明字段 |
 | `extension`   | `String` | 自定义消息的扩展字段 |
-
 
 **示例**
 
@@ -432,7 +438,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 
 创建视频消息实例的接口，此接口返回一个消息实例，可以在需要发送视频消息时调用 [发送消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) 接口发送消息。
 
->
+>!
 >- 使用该接口前，需要将SDK版本升级至v2.2.0或以上。
 >- createVideoMessage 支持在微信小程序环境使用，从v2.6.0起，支持在 Web 环境使用。
 >- 微信小程序录制视频，或者从相册选择视频文件，没有返回视频缩略图信息。为了更好的体验，SDK 在创建视频消息时会设置默认的缩略图信息。如果接入侧不想展示默认的缩略图，可在渲染的时候忽略缩图相关信息，自主处理。
@@ -449,17 +455,18 @@ tim.createVideoMessage(options)
 
 参数`options`为`Object`类型，包含的属性值如下表所示：
 
-| Name               | Type     | Description                                                |
-| ------------------ | -------- | ---------------------------------------------------------- |
-| `to`               | `String` | 消息的接收方                                               |
-| `conversationType` | `String` | 会话类型，取值`TIM.TYPES.CONV_C2C`或`TIM.TYPES.CONV_GROUP` |
-| `payload`          | `Object` | 消息内容的容器                                             |
+| Name               | Type     | Attributes   | Default                         | Description                                                |
+| ------------------ | -------- | ------------ | ------------------------------- | ---------------------------------------------------------- |
+| `to`               | `String` |      -        |                -                 | 消息的接收方                                               |
+| `conversationType` | `String` |       -       |                  -               | 会话类型，取值`TIM.TYPES.CONV_C2C`或`TIM.TYPES.CONV_GROUP` |
+| `priority`         | `String` | `<optional>` | `TIM.TYPES.MSG_PRIORITY_NORMAL` | 消息优先级                                                 |
+| `payload`          | `Object` |       -       |                    -             | 消息内容的容器                                             |
 
 `payload`的描述如下表所示：
 
 | Name   | Type                               | Description                                                  |
 | ------ | ---------------------------------- | ------------------------------------------------------------ |
-| `text` | `HTMLInputElement`、`File` 或 `Object` | 用于选择视频文件的 DOM 节点（Web）或者 File 对象（Web），或微信小程序录制或者从相册选择的视频文件。SDK 会读取其中的数据并上传 |
+| `file` | `HTMLInputElement`、`File` 或 `Object` | 用于选择视频文件的 DOM 节点（Web）或者 File 对象（Web），或微信小程序录制或者从相册选择的视频文件。SDK 会读取其中的数据并上传 |
 
 **示例**
 
@@ -522,7 +529,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 
 创建表情消息实例的接口，此接口返回一个消息实例，可以在需要发送表情消息时调用 [发送消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) 接口发送消息。
 
->使用该接口前，需要将 SDK 版本升级至v2.3.1或以上。
+>!使用该接口前，需要将 SDK 版本升级至v2.3.1或以上。
 
 **接口**
 
@@ -535,11 +542,12 @@ tim.createFaceMessage(options)
 
 参数`options`为`Object`类型，包含的属性值如下表所示：
 
-| Name               | Type     | Description                                                  |
-| ------------------ | -------- | ------------------------------------------------------------ |
-| `to`               | `String` | 消息接收方的 userID 或 groupID                               |
-| `conversationType` | `String` | 会话类型，取值`TIM.TYPES.CONV_C2C`(端到端会话) 或 `TIM.TYPES.CONV_GROUP`(群组会话) |
-| `payload`          | `Object` | 消息内容的容器                                               |
+| Name               | Type     | Attributes     | Default                         | Description                                                  |
+| ------------------ | -------- | -------------- | ------------------------------- | ------------------------------------------------------------ |
+| `to`               | `String` |           -     |             -                    | 消息接收方的 userID 或 groupID                               |
+| `conversationType` | `String` |          -      |              -                   | 会话类型，取值`TIM.TYPES.CONV_C2C`（端到端会话）或`TIM.TYPES.CONV_GROUP`（群组会话） |
+| `priority`         | `String` | ``<optional>`` | `TIM.TYPES.MSG_PRIORITY_NORMAL` | 消息优先级                                                   |
+| `payload`          | `Object` |      -          |               -                  | 消息内容的容器                                               |
 
 `payload`的描述如下表所示：
 
@@ -591,7 +599,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 - [创建表情消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFaceVMessage)
 - [创建文件消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFileMessage)
 
->调用该接口发送消息实例，需要 SDK 处于 ready 状态，否则将无法发送消息实例。SDK 状态，可通过监听以下事件得到：
+>!调用该接口发送消息实例，需要 SDK 处于 ready 状态，否则将无法发送消息实例。SDK 状态，可通过监听以下事件得到：
 - [TIM.EVENT.SDK_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_READY)：SDK 处于 ready 状态时触发。
 - [TIM.EVENT.SDK_NOT_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_NOT_READY)：SDK 处于 not ready 状态时触发。
 
@@ -666,7 +674,7 @@ tim.sendMessage(options)
 
 撤回单聊消息或者群聊消息。撤回成功后，消息对象的 `isRevoked` 属性值为 `true`。
 
->
+>!
 >- 使用该接口前，需要将 SDK 版本升级至v2.4.0或以上。
 >- 消息可撤回时间默认为2分钟。可通过 [控制台](https://console.cloud.tencent.com/im-detail/login-message) 调整消息可撤回时间。
 >- 被撤回的消息，可以调用 [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) 接口从单聊或者群聊消息漫游中拉取到。接入侧需根据消息对象的 isRevoked 属性妥善处理被撤回消息的展示。例如，单聊会话内可展示为 "对方撤回了一条消息"，群聊会话内可展示为 "张三撤回了一条消息"。
@@ -944,7 +952,7 @@ tim.getMessageList(options)
 
 ```
 
->该接口可用于"拉取历史消息"。
+>!该接口可用于"拉取历史消息"。
 
 **参数**
 
@@ -952,7 +960,7 @@ tim.getMessageList(options)
 
 | Name               | Type     | Attributes   | Description                                                  |
 | ------------------ | -------- | ------------ | --------------------------------------------------------- |
-| `conversationID`   | `String` | `<optional>` | 会话 ID。会话 ID 组成方式：C2C+userID（单聊）GROUP+groupID（群聊）@TIM#SYSTEM（系统通知会话）                                                      |
+| `conversationID`   | `String` | `<optional>` | 会话 ID。会话 ID 组成方式：C2C+userID（单聊）GROUP+groupID（群聊）@TIM#SYSTEM（系统通知会话）                        |
 | `nextReqMessageID` | `String` | `<optional>` | 用于分页续拉的消息 ID。第一次拉取时该字段可不填，每次调用该接口会返回该字段，续拉时将返回字段填入即可 |
 | `count`            | `Number` | `<optional>` | 需要拉取的消息数量，默认值和最大值为15，即一次拉取至多返回15条消息 |
 
@@ -1027,7 +1035,7 @@ tim.setMessageRead({conversationID: 'C2Cexample'});
 
 获取会话列表的接口，该接口拉取最近的100条会话，当需要刷新会话列表时调用该接口。
 
->
+>!
 >- 该接口获取的会话列表中的资料是不完整的（仅包括头像、昵称等，能够满足会话列表的渲染需求），若要查询详细会话资料，请参考 [getConversationProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getConversationProfile)。
 >- 会话保存时长跟会话最后一条消息保存时间一致，消息默认保存7天，即会话默认保存7天。 
 

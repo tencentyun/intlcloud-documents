@@ -1,14 +1,12 @@
 ## Effect Demo
 You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo to try out the interactive live video broadcasting (ILVB) capabilities of TRTC, such as co-anchoring, anchor competition, low-latency watch, and chat through on-screen comments.
 
-
 To quickly access the ILVB feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCLiveRoom` component and implement custom UI.
 
 <span id="DemoUI"> </span>
 ## Reusing Demo UI
 
 <span id="ui.step1"></span>
-
 ### Step 1. Create an application
 1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Click **Start Now**, enter the application name such as `TestLiveRoom`, and click **Create Application**.
@@ -17,16 +15,18 @@ To quickly access the ILVB feature, you can directly modify the demo provided by
 
 <span id="ui.step2"></span>
 ### Step 2. Download the SDK and demo source code
-1. Mouse over the corresponding card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to enter GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)**), and download the relevant SDK and supporting demo source code.
+1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to enter GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)**), and download the relevant SDK and supporting demo source code.
+ ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="ui.step3"></span>
 ### Step 3. Configure demo project files
 1. Decompress the source package downloaded in [step 2](#ui.step2).
-2. Find and open the `iOS/TRTCScenesDemo/TRTCScenesDemo/debug/GenerateTestUserSig.h` file.
+2. Find and open the `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` file.
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
-  <ul><li>SDKAPPID: it is a placeholder by default. Please replace it with your real `SDKAppID`.</li>
-  <li>SECRETKEY: it is a placeholder by default. Please replace it with your real key information.</li></ul> 
+  <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
+  <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul>
+    <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
@@ -35,7 +35,7 @@ To quickly access the ILVB feature, you can directly modify the demo provided by
 
 <span id="ui.step4"></span>
 ### Step 4. Run the demo
-Use Xcode (v11.0 or above) to open the `TRTCScenesDemo` project and click **Run** to start debugging the demo.
+Use Xcode (v11.0 or above) to open the `iOS/TRTCScenesDemo/TXLiteAVDemo.xcworkspace` project and click **Run** to start debugging the demo.
 
 <span id="ui.step5"></span>
 ### Step 5. Modify the demo source code
@@ -43,17 +43,18 @@ The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` a
 
 | File or Folder | Feature Description |
 |:-------:|:--------|
-| Anchor | Implementation code for anchor UI. |
-| Audience | Implementation code for viewer UI. |
-| ChatRoom | Implementation code for UIs for text chat room and on-screen commenting. |
-| Common | Implementation code for some reusable UI components. |
-| StatusView | Status floating view, which will cover the video image for displaying log information and video loading animations. |
-| LiveRoomMainViewController.swift | UI for ILVB homepage. |
+| Anchor | Implementation code for anchor UI. | 
+| Audience | Implementation code for viewer UI. | 
+| ChatRoom | Implementation code for UIs for text chat room and on-screen commenting. | 
+| Common | Implementation code for some reusable UI components. | 
+| StatusView | Status floating view, which will cover the video image for displaying log information and video loading animations. | 
+| LiveRoomMainViewController.swift | UI for ILVB homepage. | 
 
 
 <span id="model"> </span>
 ## Implementing Custom UI
 The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCLiveRoom`. You can find the API functions provided by this component in the `TRTCLiveRoom.swift` file and use the corresponding API to implement your own custom UI.
+![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
 
 
 <span id="model.step1"> </span>
@@ -81,7 +82,7 @@ Apply for the camera and mic permissions by adding `Privacy > Camera Usage Descr
 
 <span id="model.step3"> </span>
 ### Step 3. Import the TRTCLiveRoom component
-Copy all files in the `iOS/TRTCScenesDemo/TRTCScenesDemo/TRTCLiveRoomDemo/model` directory to your project.
+Copy all files in the `iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo/model` directory to your project.
 
 <span id="model.step4"> </span>
 ### Step 4. Create and log in to the component
@@ -142,6 +143,8 @@ mLiveRoom.login(SDKAPPID, userID, userSig, config) { (code, error) in
 3. The anchor can call `createRoom` to create a live room after adjusting the beauty filters.
 4. The anchor can call `startPublish` to start pushing. To enable watching over CDN, please specify `useCDNFirst` and `CDNPlayDomain` in the `TRTCLiveRoomConfig` parameter passed in during login and specify the `streamID` for LVB pull during `startPublish`.
 
+![](https://main.qcloudimg.com/raw/eab281d702879ae87728d0064a090dca.jpg)
+
 ```swift
 // 1. The anchor sets the nickname and profile photo
 mLiveRoom.setSelfProfile(name: "A", avatarURL: "faceUrl", callback: nil)
@@ -177,6 +180,9 @@ mLiveRoom.createRoom(roomID: 123456789, roomParam: param) { [weak self] (code, e
  - If the live room list contains the `userId` of the anchor, the viewer can directly call `startPlay` and pass in the `userId` of the anchor to start playback.
  - If the viewer does not have the anchor's `userId` before entering the room, they will receive the `onAnchorEnter` event callback from the anchor after entering the room, which carries the anchor's `userId`. Then, the viewer can call `startPlay` to start playback. 
 
+
+![](https://main.qcloudimg.com/raw/2ff8b30de38a3084c12af0513068dc6e.jpg)
+
 ```swift
 // 1. Assume that you get the room list `roomList` from the business backend
 var roomList: [UInt32] = GetRoomList()
@@ -207,6 +213,8 @@ public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID:
 5. If the anchor agrees to the co-anchoring request, the viewer can call `startCameraPreview` to enable local camera and then call `startPublish` to start push.
 6. The anchor will receive the `TRTCLiveRoomDelegate#onAnchorEnter` notification (i.e., "another audio/video stream has arrived") after the viewer enables notification, which will carry the viewer's `userId`.
 7. The anchor can call `startPlay` to view the co-anchoring viewer's video image.
+
+![](https://main.qcloudimg.com/raw/05a8c6af8bdc8b441f90b297e83106fc.jpg)
 
 ```swift
 // Viewer:
@@ -242,6 +250,8 @@ public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID:
 4. Anchor B accepts the request from anchor A, waits for the `TRTCLiveRoomDelegate onAnchorEnter` notification, and calls `startPlay` to display anchor A's video image.
 5. Anchor A receives the `responseCallback` callback notification of whether the request to compete is accepted.
 6. Anchor A's request is accepted, and anchor A waits for `TRTCLiveRoomDelegate onAnchorEnter` notification and calls `startPlay` to display anchor B's video image.
+
+![](https://main.qcloudimg.com/raw/5632056b6d86541db841026e9488468b.jpg)
 
 ```swift
 // Anchor A:
@@ -284,7 +294,7 @@ The backend of IM has default sensitive word filtering rules, and text messages 
 ```swift
 // Sender: sends text messages
 mLiveRoom.sendRoomTextMsg(message: "Hello Word!", callback: callback)
-// Recipient: listens on text messages
+// Receiver: listens on text messages
 mLiveRoom.delegate = self
 public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onRecvRoomTextMsg message: String, fromUser user: TRTCLiveUserInfo) {
 	debugPrint("A text message from \(user.userName) is received:\(message)")
@@ -297,7 +307,7 @@ public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onRecvRoomTextMsg mes
 // For example, "CMD_DANMU" indicates an on-screen comment, and "CMD_LIKE" indicates a like
 mLiveRoom.sendRoomCustomMsg(command: "CMD_DANMU", message: "Hello world", callback: nil)
 mLiveRoom.sendRoomCustomMsg(command: "CMD_LIKE", message: "", callback: nil)
-// Recipient: listens on custom messages
+// Receiver: listens on custom messages
 mLiveRoom.delegate = self
 public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onRecvRoomCustomMsg command: String, message: String, fromUser user: TRTCLiveUserInfo) {
 	if "CMD_DANMU" == command {

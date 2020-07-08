@@ -5,7 +5,7 @@
 - 如何实现横屏模式，例如：多人视频会议 App（类似小鱼易连）往往都是采用横屏模式。
 - 如何自定义控制本地画面和远程画面的旋转方向和填充模式。
 
-![](https://main.qcloudimg.com/raw/f564a9a4df2b4df215e43d4b78a93d40.jpg)
+![](https://main.qcloudimg.com/raw/1b4452db22edfe88646cd35888794d44.jpg)
 
 ## 平台支持
 
@@ -71,7 +71,7 @@ TRTC SDK 本身提供了大量的接口函数可以操控本地和远程画面�
 | setRemoteViewFillMode | 远端视频画面的填充模式 | 是裁剪还是留黑边|
 | setVideoEncoderRotation | 设置编码器输出的画面顺时针旋转角度 | 目前仅支持180度旋转，即上下颠倒|
 
-![](https://main.qcloudimg.com/raw/5382e78586d74c0c9a2b8d407d7db33e.jpg)
+![](https://main.qcloudimg.com/raw/f965d6d603f95862d73525469637b437.jpg)
 
 
 ## GSensorMode
