@@ -5,10 +5,7 @@
 ## 接入前准备
 1. 接入 SDK 之前，需要您前往腾讯移动推送 [控制台](https://console.cloud.tencent.com/tpns) 创建产品和 iOS 应用，详细操作可参考 [创建产品和应用](https://intl.cloud.tencent.com/document/product/1024/32603) 文档。
 
-2. 应用创建完成后，您可以参考 [申请试用](https://intl.cloud.tencent.com/document/product/1024/32603#.E7.94.B3.E8.AF.B7.E8.AF.95.E7.94.A8) / [购买推送服务](https://intl.cloud.tencent.com/document/product/1024/32604) 操作文档，为您的应用申请试用或者购买推送服务。
-
-3. 在【配置管理】页面上传推送证书，您可以参考 [证书获取指引](https://intl.cloud.tencent.com/document/product/1024/30728) 操作获取推送证书。
- 
+3. 在【配置管理】页面上传推送证书，您可以参考 [证书获取指引](https://intl.cloud.tencent.com/document/product/1024/30728) 操作获取推送证书。 
 
 4. 完成以上步骤后，单击快速接入，下载快速集成工具。
 
@@ -38,8 +35,8 @@
 ## 接入结果验证
 将 iPhone 设备连接 Xcode，安装 App 并观察控制台日志，若显示如下相似日志，表明客户端已经正确集成 SDK：
 ```
-[xgpush]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59******85030f1b913625a9dab
-[xgpush]Current XG token is 05da87c0ae597******a9e08d884aada5bb2
+[TPNS]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59******85030f1b913625a9dab
+[TPNS]Current XG token is 05da87c0ae597******a9e08d884aada5bb2
 ```
 若未搜索到 Token，请查看注册接口返回的错误码，根据 [错误码对照表](https://intl.cloud.tencent.com/document/product/1024/30731) 排查。
 

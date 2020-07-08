@@ -1,6 +1,9 @@
 ## 功能说明
 每个应用可以设置自定义的用户属性，最多可以有10个。通过本接口可以设置每个属性的名称，设置完成后，即可用于按用户属性推送等。
+
 ## 接口调用说明
+本功能**仅针对旗舰版客户开放申请（如您降级为专业版将无法使用），您可通过工单申请开通该功能，申请后我们将对您的需求进行评估，需求评估合理后您方可使用该功能**。
+
 ### 请求 URL 示例
 ```
 https://console.tim.qq.com/v4/all_member_push/im_set_attr_name?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json

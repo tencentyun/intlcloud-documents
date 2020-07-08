@@ -3,7 +3,6 @@ This document lists the references for common operations in Anti-DDoS Pro.
 - [View instance information](https://intl.cloud.tencent.com/document/product/1029/36121)
 - [Manage protected object](https://intl.cloud.tencent.com/document/product/1029/36122)
 - [Set instance alias and tag](https://intl.cloud.tencent.com/document/product/1029/36123)
-- [Upgrade protection](https://intl.cloud.tencent.com/document/product/1029/36124)
 
 ## Protection Configuration
 **IP and port protection**

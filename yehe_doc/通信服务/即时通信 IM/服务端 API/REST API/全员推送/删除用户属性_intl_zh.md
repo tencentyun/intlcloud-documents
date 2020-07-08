@@ -1,6 +1,9 @@
 ## 功能说明
-管理员给用户删除属性。注意每次最多只能给500个用户删除属性。
+管理员给用户删除属性。注意每次最多只能给100个用户删除属性。使用前请先 [设置应用属性名称](https://intl.cloud.tencent.com/document/product/1047/37167) 。
+
 ## 接口调用说明
+本功能**仅针对旗舰版客户开放申请（如您降级为专业版将无法使用），您可通过工单申请开通该功能，申请后我们将对您的需求进行评估，需求评估合理后您方可使用该功能**。
+
 ### 请求 URL 示例
 ```
 https://console.tim.qq.com/v4/all_member_push/im_remove_attr?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
@@ -20,7 +23,7 @@ https://console.tim.qq.com/v4/all_member_push/im_remove_attr?usersig=xxx&identif
 
 ### 最高调用频率
 
-100次/秒。如需提升调用频率，请根据工单模板提交工单申请处理。
+100次/秒。
 
 ### 请求包示例
 
@@ -50,7 +53,7 @@ https://console.tim.qq.com/v4/all_member_push/im_remove_attr?usersig=xxx&identif
 | 字段 | 类型| 属性 | 说明 |
 |---------|---------|---------|----|
 | To_Account | String | 必填 |目标用户帐号 |
-| Attrs | Object | 必填 |属性集合，注意这里只需要给出属性名即可；Attrs 形式及含义参见推送请求包字段说明|
+| Attrs | Object | 必填 |属性集合，注意这里只需要给出属性名即可；Attrs 形式及含义参见 [设置应用属性名称](https://intl.cloud.tencent.com/document/product/1047/37167) 。|
 
 ### 应答包体示例
 

@@ -1,8 +1,8 @@
-
+>?This product now supports dynamic pricing query and cost estimation. For more information, please go to the [Pricing Center](https://intl.cloud.tencent.com/pricing/cvm/calculator?devPayMode=hourly&regionId=33&zoneId=330001&instanceType=SA2.SMALL1&imageType=linux&systemDiskType=CLOUD_PREMIUM&systemDiskSize=50&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR&bandwidth=1).
 ## Billing Mode
 
 Cloud Virtual Machine (CVM) is a pay-as-you-go service. For details, see [Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
-
+CVM is a RI-supported instance. For more information, see [Reserved Instance Billing Mode](https://intl.cloud.tencent.com/document/product/213/37070).
 ## Instances
 
 The instance type determines the hardware configuration of its host. Every instance type has different computing and storage capacities. You can choose the computing capacity, storage space, and network access method for the instances that best suits your service scale. 

@@ -2,8 +2,6 @@
 本文档提供腾讯移动推送 Android 应用快速接入指引。只需四步，即可在您的 Android 应用上面使用腾讯移动推送服务。
 ## 接入前准备
 1. 接入 SDK 之前，需要您前往腾讯移动推送 [控制台](https://console.cloud.tencent.com/tpns) 创建产品和 Android 应用，详细操作可参考 [创建产品和应用](https://intl.cloud.tencent.com/document/product/1024/32603) 文档。
- 
-2. 应用创建完成后，您可以参考 [申请试用](https://intl.cloud.tencent.com/document/product/1024/32603#.E7.94.B3.E8.AF.B7.E8.AF.95.E7.94.A8) ，为当前应用申请试用权限。
 3. 完成以上步骤后，进入应用的【配置管理】页面，准备接入。
 
 ## 开始接入
