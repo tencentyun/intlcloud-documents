@@ -1,4 +1,4 @@
-### Kafka Java Client exceptions
+### Kafka Java Client Exceptions
 #### The following describes client configuration or service exceptions. If any of the following exceptions occurs, the client will not automatically retry.
 
 | Exception | Description | Analysis |
