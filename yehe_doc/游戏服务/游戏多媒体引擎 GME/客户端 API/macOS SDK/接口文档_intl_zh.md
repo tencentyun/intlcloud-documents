@@ -1,4 +1,4 @@
-为方便 iOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 iOS 开发的接入技术文档。
+为方便 macOS 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 macOS 开发的接入技术文档。
 
 >?此文档对应 GME sdk version：2.5。
 
@@ -8,7 +8,6 @@
 | ------------- |:-------------:|
 |InitEngine    				       	|初始化 GME 	|
 |Poll    		|触发事件回调	|
-|SetDefaultAudienceAudioCategory 	|设置后台使用|
 |EnterRoom	 	|进房  		|
 |EnableMic	 	|开麦克风 	|
 |EnableSpeaker		|开扬声器 	|
@@ -36,7 +35,6 @@
 |Pause   	|系统暂停	|
 |Resume 	|系统恢复	|
 |Uninit    	|反初始化 GME 	|
-|SetDefaultAudienceAudioCategory 	|设置设备后台播放声音	|
 
 ### 获取单例
 在使用语音功能时，需要首先获取 ITMGContext 对象。
@@ -85,6 +83,7 @@ _context.TMGDelegate =self;
 此接口需要来自腾讯云控制台的 AppID 号码作为参数，再加上 openID，这个 openID 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
 
 >!初始化 SDK 之后才可以进房。
+
 ####  函数原型
 
 ```
@@ -155,31 +154,6 @@ ITMGContext -(void)Uninit
 ```
 
 
-
-### 设置后台播放声音
-设置后台播放声音，在进房前调用。
-同时，应用侧有如下两点需要注意：
-- 退后台时没有暂停音频引擎的采集和播放（即 PauseAudio），
-- App 的 Info.plist 中，需要至少增加 key:Required background modes，string:App plays audio or streams audio/video using AirPlay。
-
-#### 函数原型
-```
-ITMGContext -(QAVResult)SetDefaultAudienceAudioCategory:(ITMG_AUDIO_CATEGORY)audioCategory
-```
-
-|类型     | 参数代表         |含义|
-| ------------- |:-------------:|-------------|
-| ITMG_CATEGORY_AMBIENT    	|0	|退后台没有声音（默认）|
-| ITMG_CATEGORY_PLAYBACK    	|1   	|退后台有声音	|
-
-具体实现为修改 kAudioSessionProperty_AudioCategory，相关资料可参照 Apple 官方文档。
-
-
-#### 示例代码  
-```
-[[ITMGContext GetInstance]SetDefaultAudienceAudioCategory:ITMG_CATEGORY_AMBIENT];
-```
-
 ## 实时语音房间调用流程图
 
 ![](https://main.qcloudimg.com/raw/a61ca1d7cdecf09bd223766b2a5cd69f.png)
@@ -215,8 +189,6 @@ ITMGContext -(QAVResult)SetDefaultAudienceAudioCategory:(ITMG_AUDIO_CATEGORY)aud
 | openID  		|NSString    	|用户标识。与 Init 时候的 openID相同。								|
 | key    			|NSString    	|来自腾讯云 [控制台](https://console.cloud.tencent.com/gamegme) 的权限密钥。					|
 
-
-
 ####  示例代码  
 ```
 NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:_roomId openID:_openId key:AUTHKEY];
@@ -230,7 +202,7 @@ NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:
 
 ####  函数原型
 ```
-ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int)roomType authBuffer:(NSData*)authBuffer
+ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuffer:(NSData*)authBuffer
 ```
 |参数     | 类型         |含义|
 | ------------- |:-------------:|-------------|
@@ -248,6 +220,11 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int)roomType authBuff
 
 ### 加入房间事件的回调
 加入房间完成后会发送信息 ITMG_MAIN_EVENT_TYPE_ENTER_ROOM，在 OnEvent 函数中进行判断。
+
+```
+- (void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary*)data
+```
+回调处理相关参考代码。
 
 ####  示例代码  
 ```
@@ -273,7 +250,7 @@ ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int)roomType authBuff
 #### 错误码
 |错误码值|原因及建议方案|
 |-------|------------|
-|7006|鉴权失败 有以下几个原因：1、AppID 不存在或者错误，2、authbuff 鉴权错误，3、鉴权过期 4、openID 不符合规范。|
+|7006|鉴权失败 有以下几个原因：1、AppID 不存在或者错误，2、authbuff 鉴权错误，3、鉴权过期 4、openID不符合规范。|
 |7007|已经在其它房间。|
 |1001   |已经在进房过程中，然后又重复了此操作。建议在进房回调返回之前不要再调用进房接口。|
 |1003   |已经进房了在房间中，又调用一次进房接口。|
@@ -320,8 +297,7 @@ ITMGContext -(int)ExitRoom
 }
 ```
 
-#### Data 详情
-
+#### Data详情
 |消息     | Data         |例子|
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    				|result; error_info  					|{"error_info":"","result":0}|
@@ -376,7 +352,7 @@ ITMGContext GetRoom -(int)GetRoomType
 -(void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data {
 	NSLog(@"OnEvent:%lu,data:%@",(unsigned long)eventType,data);
     switch (eventType) {
- 		case ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE:
+ 		case ITMG_MAIN_EVNET_TYPE_USER_UPDATE:
 			//进行处理
 	 }
     }
@@ -434,7 +410,6 @@ ITMGContext GetRoom -(int)GetRoomType
     }
 }
 ```
-
 ### 房间通话质量监控事件
 质量监控事件，在进房后触发，事件消息为 ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY，返回的参数为 weight、loss 及 delay，代表的信息如下，在 OnEvent 函数中对事件消息进行判断。
 
@@ -456,8 +431,7 @@ ITMGContext GetRoom -(int)GetRoomType
 |ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT    		       |房间因为网络等原因断开消息|
 |ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE				|房间类型变化事件|
 
-### 消息对应的 Data 详情
-
+### 消息对应的Data详情
 |消息     | Data         |例子|
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				|result; error_info					|{"error_info":"","result":0}|
@@ -503,7 +477,6 @@ ITMGContext GetRoom -(int)GetRoomType
 ### 开启关闭麦克风
 此接口用来开启关闭麦克风。加入房间默认不打开麦克风及扬声器。
 EnableMic = EnableAudioCaptureDevice + EnableAudioSend.
-
 ####  函数原型  
 ```
 ITMGContext GetAudioCtrl -(QAVResult)EnableMic:(BOOL)enable
@@ -1386,32 +1359,6 @@ ITMGContext  -(NSString*)GetSDKVersion
 [[ITMGContext GetInstance] GetSDKVersion];
 ```
 
-### 检查麦克风权限
-返回麦克风权限状态。
-#### 函数原型
-
-```
-ITMGContext  -(ITMG_RECORD_PERMISSION)CheckMicPermission
-```
-
-#### 参数含义
-
-|参数|数字|含义|
-|---|---|---|
-|ITMG_PERMISSION_GRANTED|0|麦克风已授权|
-|ITMG_PERMISSION_Denied|1|麦克风被禁用|
-|ITMG_PERMISSION_NotDetermined|2|尚未弹出权限框向用户申请权限|
-|ITMG_PERMISSION_ERROR|3|接口调用错误|
-
-#### 示例代码  
-
-```
-[[ITMGContext GetInstance] CheckMicPermission];
-```
-
-
-
-
 ### 设置打印日志等级
 用于设置打印日志等级。建议保持默认等级。
 #### 函数原型
@@ -1444,7 +1391,7 @@ ITMGContext -(void)SetLogLevel:(ITMG_LOG_LEVEL)levelWrite (ITMG_LOG_LEVEL)levelP
 
 
 ### 设置打印日志路径
-用于设置打印日志路径。默认路径为： Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents。
+用于设置打印日志路径。默认路径为： /Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents。
 #### 函数原型
 ```
 ITMGContext -(void)SetLogPath:(NSString*)logDir
