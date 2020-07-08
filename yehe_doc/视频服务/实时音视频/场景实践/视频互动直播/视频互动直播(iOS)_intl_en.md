@@ -26,7 +26,7 @@ To quickly access the ILVB feature, you can directly modify the demo provided by
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul>
-    <img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
+    <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
