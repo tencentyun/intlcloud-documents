@@ -5,11 +5,8 @@ This document describes how to quickly integrate TPNS into your iOS application.
 ## Preparing for Integration
 1. Before integrating the SDK, you need to log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and create the product and iOS application. For detailed directions, please see [Creating Products and Applications](https://intl.cloud.tencent.com/document/product/1024/32603).
 
-2. Once the application is created, you can apply for trial for it as instructed in [Applying for Trial](https://intl.cloud.tencent.com/document/product/1024/32603#.E7.94.B3.E8.AF.B7.E8.AF.95.E7.94.A8) or purchase the TPNS service as instructed in [Purchasing Push Service](https://intl.cloud.tencent.com/document/product/1024/32604).
-
 3. Upload the push certificate on the **Configuration Management** page. You can get the push certificate as instructed in [Getting Certificate](https://intl.cloud.tencent.com/document/product/1024/30728).
  
-
 4. After completing the above steps, click "Quick Integration" to download the quick integration tool.
 
 5. Decompress the package and double-click TPNS Smart Tool.
@@ -38,8 +35,8 @@ Install and open "TPNS Smart Tool" and perform the following operations:
 ## Verifying Integration Result
 Connect your iPhone to Xcode, install the application, and view the logs in the console. If a log similar to the one below is displayed, the client has properly integrated the SDK.
 ```
-[xgpush]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59******85030f1b913625a9dab
-[xgpush]Current XG token is 05da87c0ae597******a9e08d884aada5bb2
+[TPNS]Current device token is 80ba1c251161a397692a107f0433d7fd9eb59******85030f1b913625a9dab
+[TPNS]Current XG token is 05da87c0ae597******a9e08d884aada5bb2
 ```
 If the token cannot be found, please check the error code returned by the registration API and troubleshoot as instructed in [Error Codes](https://intl.cloud.tencent.com/document/product/1024/30731).
 
