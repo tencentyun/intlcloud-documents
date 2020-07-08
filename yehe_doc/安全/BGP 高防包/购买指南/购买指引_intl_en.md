@@ -2,7 +2,7 @@
 Before purchasing an Anti-DDoS Pro instance, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
-1. Log in to Tencent Cloud's official website and enter the [Anti-DDoS Pro Purchase Page](https://buy.cloud.tencent.com/dayu_buy#/antiddos-native).
+1. Log in to Tencent Cloud's official website and enter the [Anti-DDoS Pro Purchase Page](https://buy.cloud.tencent.com/antiddos#/native).
 2. Configure the following parameters according to your actual business size and protection needs:
  - Specification description
     - Access Mode: transparent access

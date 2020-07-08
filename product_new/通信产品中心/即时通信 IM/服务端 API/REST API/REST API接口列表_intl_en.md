@@ -34,6 +34,7 @@
 | Feature Description | API |
 | -------- | ------------------------------------------------------------ |
 | Adding friends | [v4/sns/friend_add](https://intl.cloud.tencent.com/document/product/1047/34902) |
+| Updating Friends | [v4/sns/friend_update](https://intl.cloud.tencent.com/document/product/1047/34904) |
 | Importing friends | [v4/sns/friend_import](https://intl.cloud.tencent.com/document/product/1047/34903) |
 | Deleting friends | [v4/sns/friend_delete](https://intl.cloud.tencent.com/document/product/1047/34905) |
 | Deleting all friends | [v4/sns/friend_delete_all](https://intl.cloud.tencent.com/document/product/1047/34906) |
@@ -53,7 +54,6 @@
 
 | Feature Description | API |
 | ---------------------- | ------------------------------------------------------------ |
-| Obtaining all groups in an app | [v4/group_open_http_svc/get_appid_group_list](https://intl.cloud.tencent.com/document/product/1047/34960) |
 | Creating a group | [v4/group_open_http_svc/create_group](https://intl.cloud.tencent.com/document/product/1047/34895) |
 | Obtaining detailed group profiles | [v4/group_open_http_svc/get_group_info](https://intl.cloud.tencent.com/document/product/1047/34961) |
 | Obtaining detailed member profiles of a group | [v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948) |
@@ -92,3 +92,4 @@
 |---------|---------|
 | Downloading message history |[v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |
 | Pulling operation data |[v4/openconfigsvr/getappinfo](https://intl.cloud.tencent.com/document/product/1047/34886) |
+| Obtaining Server IP Addresses |[v4/ConfigSvc/GetIPList](https://intl.cloud.tencent.com/document/product/1047/36742) |

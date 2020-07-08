@@ -9,7 +9,7 @@ COS 作为 CDN 源站时，含两部分计费：CDN 计费（加速）和 COS �
 
 ### COS 计费
 当 CDN 回源，从 COS 源站获取资源，消耗的用量由 COS 进行计费。详细计费说明请参见 [COS 计费说明](https://intl.cloud.tencent.com/document/product/436/16871)。
-![](https://main.qcloudimg.com/raw/794db40485325436ec6f52e32f0df117.jpg)
+![](https://main.qcloudimg.com/raw/64557185ea11d642a939f2c0cb650e50.png)
 
 
 

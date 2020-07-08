@@ -43,8 +43,8 @@ The maximum calling frequency is 200 times per second.
 | Field | Type | Attribute | Description |
 |---------|---------|---------|---------|
 | Set_Account | String | Required | Account for which muting will be enabled |
-| C2CmsgNospeakingTime | Integer | Optional | Muting period (in seconds) of one-to-one chat messages. The value is a non-negative integer, and the maximum value is 4294967295 (0xFFFFFFFF in hexadecimal format). 0: the account is unmuted. 4294967295 (0xFFFFFFFF in hexadecimal format): the account is permanently muted. Others: the muting period of the account. |
-| GroupmsgNospeakingTime | Integer | Optional | Muting period (in seconds) of group chat messages. The value is a non-negative integer, and the maximum value is 4294967295 (0xFFFFFFFF in hexadecimal format). 0: the account is unmuted. 4294967295 (0xFFFFFFFF in hexadecimal format): the account is permanently muted. Others: the muting period of the account. |
+| C2CmsgNospeakingTime | Integer |Optional| Muting period (in seconds) of one-to-one chat messages. The value is a non-negative integer, and the maximum value is 4294967295 (0xFFFFFFFF in hexadecimal format). <ul style="margin:0;"><li>0: the account is unmuted</li><li>4294967295: the account is permanently muted</li><li>Other values: a specific muting period of the account</li></ul>  |
+| GroupmsgNospeakingTime | Integer | Optional |Muting period (in seconds) of group chat messages. The value is a non-negative integer, and the maximum value is 4294967295 (0xFFFFFFFF in hexadecimal format).<ul style="margin:0;"><li>0: the account is unmuted</li><li>4294967295: the account is permanently muted</li><li>Other values: a specific muting period of the account</li></ul>  |
 
 ### Response packet example
 
