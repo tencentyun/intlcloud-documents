@@ -34,6 +34,7 @@
 | 功能说明 | 接口                                                         |
 | -------- | ------------------------------------------------------------ |
 | 添加好友 | [v4/sns/friend_add](https://intl.cloud.tencent.com/document/product/1047/34902) |
+| 更新好友 | [v4/sns/friend_update](https://intl.cloud.tencent.com/document/product/1047/34904) |
 | 导入好友 | [v4/sns/friend_import](https://intl.cloud.tencent.com/document/product/1047/34903) |
 | 删除好友 | [v4/sns/friend_delete](https://intl.cloud.tencent.com/document/product/1047/34905) |
 | 删除所有好友 | [v4/sns/friend_delete_all](https://intl.cloud.tencent.com/document/product/1047/34906) |
@@ -53,7 +54,6 @@
 
 | 功能说明               | 接口                                                         |
 | ---------------------- | ------------------------------------------------------------ |
-| 获取 App 中的所有群组    | [v4/group_open_http_svc/get_appid_group_list](https://intl.cloud.tencent.com/document/product/1047/34960) |
 | 创建群组               | [v4/group_open_http_svc/create_group](https://intl.cloud.tencent.com/document/product/1047/34895) |
 | 获取群详细资料       | [v4/group_open_http_svc/get_group_info](https://intl.cloud.tencent.com/document/product/1047/34961) |
 | 获取群成员详细资料     | [v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948) |
@@ -92,3 +92,4 @@
 |---------|---------|
 | 下载消息记录  |[v4/open_msg_svc/get_history](https://intl.cloud.tencent.com/document/product/1047/34885) |
 | 拉取运营数据  |[v4/openconfigsvr/getappinfo](https://intl.cloud.tencent.com/document/product/1047/34886) |
+| 获取服务器 IP 地址  |[v4/ConfigSvc/GetIPList](https://intl.cloud.tencent.com/document/product/1047/36742) |
