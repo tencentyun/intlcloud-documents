@@ -7,15 +7,14 @@
 
 | Group Type | Support This RESTful API |
 |-----------|------------|
-| Private | Yes |
-| Public | Yes |
-| ChatRoom | Yes |
-| AVChatRoom | No (see description below) |
-| BChatRoom | No (see description below) |
+|Private|Yes, identical to Work in the new version|
+|Public|Yes|
+|ChatRoom|Yes, identical to Meeting in the new version|
+|AVChatRoom|No|
 
-IM provides the preceding five built-in group types. For details, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
+IM comes with the preceding four group types. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
-> Generally, importing group members is not required for AVChatRoom and BChatRoom groups. Therefore, AVChatRoom and BChatRoom groups do not support the import of group members. If you attempt to import group members for both types of groups, error 10007 will be returned. 
+> Generally, importing group members is not required for AVChatRoom, so AVChatRoom does not support this API. If you attempt to use API on AVChatRoom, error 10007 will be returned.
 
 ### Request URL example
 ```
