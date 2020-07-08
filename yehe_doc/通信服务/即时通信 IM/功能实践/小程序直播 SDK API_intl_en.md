@@ -36,7 +36,7 @@ npm i im-live-sells --save
 ## Initialization Example
 
 ```javascript
-import TIMLiveSell from 'im-live-sells'
+import TIMLiveSell from 'im-live-sell'
 import TIM from 'tim-js-sdk' // Web environment
 import TIM from 'tim-wx-sdk' // Mini Program environment
 const tls = new TIMLiveSell({
