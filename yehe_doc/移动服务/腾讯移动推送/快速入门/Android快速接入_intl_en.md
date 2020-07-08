@@ -2,8 +2,6 @@
 This document describes how to quickly integrate TPNS into your Android application. You can use the TPNS service on your application in just four steps.
 ## Preparing for Integration
 1. Before integrating the SDK, you need to log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and create the product and Android application. For detailed directions, please see [Creating Products and Applications](https://intl.cloud.tencent.com/document/product/1024/32603).
- 
-2. Once the application is created, you can apply for trial for it as instructed in [Applying for Trial](https://intl.cloud.tencent.com/document/product/1024/32603#.E7.94.B3.E8.AF.B7.E8.AF.95.E7.94.A8) or purchase the TPNS service as instructed in [Purchasing Push Service](https://intl.cloud.tencent.com/document/product/1024/32604).
 3. After completing the above steps, enter the application's **Configuration Management** page to prepare for the integration.
 
 ## Starting Integration
