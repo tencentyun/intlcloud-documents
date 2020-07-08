@@ -91,7 +91,7 @@ var cos = new COS({
 
 - 格式一（推荐）：后端通过获取临时密钥给到前端，前端计算签名。
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -120,7 +120,7 @@ var cos = new COS({
 
 - 格式二（推荐）：细粒度控制权限，后端通过获取临时密钥给到前端，只有在相同请求时，前端才重复使用临时密钥，后端可以通过 Scope 细粒度控制权限。
 
-[//]: # ".cssg-snippet-global-init-sts-scope"
+[//]: # (.cssg-snippet-global-init-sts-scope)
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -138,7 +138,7 @@ var cos = new COS({
             success: function (data) {
                 var credentials = data && data.credentials;
                 if (!data || !credentials) return console.error('credentials invalid');
-                callback({({
+                callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
                     XCosSecurityToken: credentials.sessionToken,
@@ -155,7 +155,7 @@ var cos = new COS({
 
 - 格式三（不推荐）：前端每次请求前都需要通过 getAuthorization 获取签名，后端使用固定密钥或临时密钥计算签名返回至前端。该格式分块上传权限不便控制，不推荐您使用此格式。
 
-[//]: # ".cssg-snippet-global-init-signature"
+[//]: # (.cssg-snippet-global-init-signature)
 ```js
 var cos = new COS({
     // 必选参数
@@ -182,7 +182,7 @@ var cos = new COS({
 
 - 格式四（不推荐）：前端使用固定密钥计算签名，该格式适用于前端调试，若使用此格式，请避免泄露密钥。
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```js
 var cos = new COS({
     SecretId: 'COS_SECRETID',
@@ -279,7 +279,7 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 
 简单上传接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31538) 文档。
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -297,7 +297,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -312,7 +312,7 @@ cos.getBucket({
 
 >该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体请参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31540) 文档。
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -325,7 +325,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
