@@ -3,7 +3,7 @@
 
 ## 操作步骤
 ### 购买中国大陆区域 DDoS 高防 IP
-1. 打开 [DDoS 高防产品购买页](https://buy.cloud.tencent.com/dayu_buy#/antiddos-advanced) ，单击【DDoS 高防 IP（中国大陆）】进行购买。
+1. 打开 [DDoS 高防产品购买页](https://buy.cloud.tencent.com/antiddos#/advanced) ，单击【DDoS 高防 IP（中国大陆）】进行购买。
 ![](https://main.qcloudimg.com/raw/089ed04e4850dea1d320261f702efc3a.png)
 2. 根据实际需求选择参数。
  - 规格描述：
@@ -19,7 +19,7 @@
 3. 单击【立即支付】，完成支付流程。
 
 ### 购买非中国大陆区域 DDoS 高防 IP
-1. 打开 [DDoS 高防产品购买页](https://buy.cloud.tencent.com/dayu_buy#/antiddos-advanced-intl) ，单击【DDoS 高防 IP（境外）】进行购买。
+1. 打开 [DDoS 高防产品购买页](https://buy.cloud.tencent.com/antiddos#/advanced-intl) ，单击【DDoS 高防 IP（境外）】进行购买。
 ![](https://main.qcloudimg.com/raw/56d59436eed833b37b06e23298f2bd68.png)
 2. 根据实际需求配置如下参数。
  - 规格描述：

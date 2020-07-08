@@ -1,4 +1,4 @@
-## Broker configuration parameter description
+## Broker Configuration Parameter Description
 
 The following are the configurations of a CKafka Broker for your reference:
 ```
@@ -31,8 +31,7 @@ log.retention.check.interval.ms=300000
 ```
 >For configurations not listed here, see the [open-source Kafka default configurations](http://kafka.apache.org/0102/documentation.html#brokerconfigs).
 
-<span id="topic"></span>
-## Topic configuration parameter description
+## Topic Configuration Parameter Description
 #### 1. Number of partitions
 
 From the producer's point of view, writes to different partitions are completely in parallel; from the consumer's point of view, the number of concurrencies depends entirely on the number of partitions (if there are more consumers than partitions, there will definitely be idle consumers). It is important to select an appropriate number of partitions to fully play the performance of the CKafka instance.
@@ -60,7 +59,7 @@ At present, the number of replicas must be at least 2 to ensure availability. To
 
 The `log.retention.ms` configuration of a topic is set through the retention period of the instance in the console.
 
-#### 4. Description of other topic-level configurations
+#### 4. Other topic-level configurations
 ```
 # Maximum message length at the topic level.
 max.message.bytes=1000012
@@ -76,7 +75,7 @@ min.insync.replicas=1
 
 ```
 
-## Producer configuration guide
+## Producer Configuration Guide
 
 The following describes common parameter settings for the Producer client. We recommend adjusting them based on your actual business scenarios:
 
@@ -125,13 +124,13 @@ retry.backoff.ms=100
 
 ```
 
-## Consumer configuration guide
+## Consumer Configuration Guide
 
 The following describes common parameter settings for the Consumer client. We recommend adjusting them based on your actual business scenarios:
 
 ```
 # Whether to sync the offset to the Broker after a message is consumed, so the latest offset can be obtained from the Broker when the consumer fails.
-enable.auto.commit=true
+auto.commit.enable=true
 
 # Interval for the automatic submission of offset when auto.commit.enable=true is configured. We recommend setting this value to at least 1,000.
 auto.commit.interval.ms=5000

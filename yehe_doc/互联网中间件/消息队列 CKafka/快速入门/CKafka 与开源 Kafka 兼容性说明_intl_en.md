@@ -1,12 +1,12 @@
-CKafka is compatible with the Producer and Consumer APIs of Apache Kafka 0.9 and 0.10. To connect to an on-premises Kafka of an earlier version (such as 0.8), partial rewriting of APIs is needed. This document compares the Producer and Consumer APIs of Kafka 0.8 and its earlier versions, and describes how to rewrite the APIs.
+CKafka is compatible with the Producer and Consumer APIs of Apache Kafka 0.9 and 0.10. To connect to an on-premises Kafka of an earlier version (such as v0.8), partial rewriting of APIs is needed. This document compares the Producer and Consumer APIs of Kafka 0.8 and its earlier versions, and describes how to rewrite the APIs.
 
 ## Kafka Producer 
 ### Overview
 In Kafka 0.8.1, the Producer API is rewritten. This Producer client version is officially recommended because it provides better performance and more features. The community will maintain the new version of the Producer API (referred to as the New Producer API).
 
 
-### Comparison between the New Producer API and Old Producer API
-- New Producer API demo
+### Comparison between new producer API and old producer API
+- New Producer API Demo
 ```
 Properties props = new Properties();
 props.put("bootstrap.servers", "localhost:4242");
@@ -21,7 +21,7 @@ Producer<String, String> producer = new KafkaProducer<>(props);
 producer.send(new ProducerRecord<String, String>("my-topic", Integer.toString(0), Integer.toString(0)));
 producer.close();
 ```
-- Old Producer API demo
+- Old Producer API Demo
 ```
 Properties props = new Properties();
 props.put("metadata.broker.list", "broker1:9092");
@@ -46,12 +46,12 @@ The open-source Apache Kafka 0.8 provides two types of the Consumer API:
 - High Level Consumer API (blocking configuration details)
 - Simple Consumer API (support for parameter configuration adjustment)
 
-Kafka 0.9.x has introduced the New Consumer API that inherits the features of the two types of the Old Consumer API (version 0.8) and reduces the load on ZooKeeper.
-The following describes how to transform the Old Consumer API (version 0.8) to the New Consumer API (version 0.9).
+Kafka 0.9.x has introduced the New Consumer API that inherits the features of the two types of the old consumer API (v0.8) and reduces the load on ZooKeeper.
+The following describes how to transform the old consumer API (v0.8) to the new consumer API (v0.9).
 
-### Comparison between the New Consumer API and Old Consumer API   
-#### Old Consumer API (version 0.8) 
-- **High Level Consumer API** ([demo](https://cwiki.apache.org/confluence/display/KAFKA/Consumer+Group+Example))
+### Comparison between new consumer API and old consumer API   
+#### Old consumer API (v0.8) 
+- **High Level Consumer API** ([Demo](https://cwiki.apache.org/confluence/display/KAFKA/Consumer+Group+Example))
 The High Level Consumer API can meet general requirements if you care only about data, except for message offset. This API, built on the consumer group logic, blocks the offset management, and supports Broker fault handling and Consumer load balancing. It allows developers to get started with the Consumer client quickly.
 Consider the following when you use the High Level Consumer API:
  - If the number of consumer threads is greater than the number of partitions, certain consumer threads cannot obtain data.
@@ -59,14 +59,14 @@ Consider the following when you use the High Level Consumer API:
  - The changes in partitions and consumers will affect rebalancing.
 
 
-- **Low Level Consumer API** ([demo](https://cwiki.apache.org/confluence/display/KAFKA/0.8.0+SimpleConsumer+Example))
+- **Low Level Consumer API** ([Demo](https://cwiki.apache.org/confluence/display/KAFKA/0.8.0+SimpleConsumer+Example))
 The Low Level Consumer API is recommended if you need message offset and features like repeated consumption or skip read, or if you want to consume specific partitions and ensure more consumption semantics. But in this case, you need to handle offsets and Broker exceptions.
 When using the Low Level Consumer API, you need to:
  - Track and maintain the offset and control the consumption progress.
  - Find the leader of partitions for the topic, and deal with partition changes.
 
  
-#### New Consumer API (version 0.9)
+#### New consumer API (v0.9)
 Kafka 0.9.x has introduced the New Consumer API that inherits the features of the two types of Old Consumer API while providing consumer coordination (High Level API) and lower-level access to customize consumption policies. The New Consumer also simplifies the consumer client and introduces a central coordinator to solve the herd effect and split-brain problems resulting from the separate connections to ZooKeeper, and to reduce the load on ZooKeeper.
 
 **Advantages:**
@@ -79,7 +79,7 @@ You can manage offsets as needed to implement repeated consumption, skipped cons
 - Triggers callbacks after rebalancing based on your specifications
 - Provides non-blocking Consumer API
 
-#### Comparison between the New Consumer API and Old Consumer API
+#### Comparison between new consumer API and old consumer API
 
 | Category | Introduced Version | Automatic Save of Offset | Self-management of Offset | Automatic Exception Handling | Automatic Rebalance Processing | Automatic Search of Leader | Advantage/Disadvantage |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -87,7 +87,7 @@ You can manage offsets as needed to implement repeated consumption, skipped cons
 | Simple Consumer | Before 0.9 | Not supported | Supported | Not supported | Not supported | Not supported | Multiple types of exception need to be handled. |
 | New Consumer | After 0.9 | Supported | Supported | Supported | Supported | Supported | Mature. This is the recommended version. |
 
-####  Transforming the Old Consumer to the New Consumer
+####  Transforming old consumer to new consumer
 - New Consumer
 ```
 //The main configuration difference is that the ZooKeeper parameters are replaced.
@@ -110,7 +110,7 @@ while (true) {
 
 - Old Consumer (High Level)
 ```
-//Old consumers require ZooKeeper.
+//Old consumers require ZooKeeper
 Properties props = new Properties();
 props.put("zookeeper.connect", "localhsot:2181");
 props.put("group.id", "test");
@@ -118,14 +118,14 @@ props.put("auto.commit.enable", "true");
 props.put("auto.commit.interval.ms", "1000");
 props.put("auto.offset.reset", "smallest");
 ConsumerConfig config = new ConsumerConfig(props);
-//Requires connector creation. 
+//Require connector creation 
 ConsumerConnector connector = Consumer.createJavaConsumerConnector(config);
-//Creates a message stream.
+//Create a message stream
 Map<String, Integer> topicCountMap = new HashMap<String, Integer>();
 topicCountMap.put("foo", 1);
 Map<String, List<KafkaStream<byte[], byte[]>>> streams =
  connector.createMessageStreams(topicCountMap);
-//Obtains data. 
+//Obtain data 
 KafkaStream<byte[], byte[]> stream = streams.get("foo").get(0);
 ConsumerIterator<byte[], byte[]> iterator = stream.iterator();
 MessageAndMetadata<byte[], byte[]> msg = null;
@@ -138,7 +138,7 @@ while (iterator.hasNext()) {
 }}
 ```
 
-Comparing with the Old Consumer, the New Consumer has simpler coding and uses Kafka addresses instead of ZooKeeper parameters. In addition, New Consumer has parameter settings for interactions with coordinators, in which the default settings are suitable for general use.
+Comparing with the old consumer, the new consumer has simpler coding and uses Kafka addresses instead of ZooKeeper parameters. In addition, the new consumer has parameter settings for interactions with coordinators, in which the default settings are suitable for general use.
 
 ### Compatibility description
-Both CKafka and the new version of Kafka in the open-source community support the rewritten New Consumer API, which blocks the interaction between the Consumer client and ZooKeeper (ZooKeeper is not exposed to users any longer). The New Consumer solves the herd effect and split-brain problems resulting from direct interaction with ZooKeeper, and integrates the features of the Old Consumer, thus making the consumption more reliable.
+Both CKafka and the new version of Kafka in the open-source community support the rewritten new consumer API, which blocks the interaction between the consumer client and ZooKeeper (ZooKeeper is not exposed to users any longer). The new consumer solves the herd effect and split-brain problems resulting from direct interaction with ZooKeeper, and integrates the features of the old consumer, thus making the consumption more reliable.
