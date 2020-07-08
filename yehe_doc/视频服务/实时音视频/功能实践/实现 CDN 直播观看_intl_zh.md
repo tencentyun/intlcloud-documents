@@ -13,12 +13,12 @@ TRTC 虽然支持 WebRTC 协议接入，但主要用于 Chrome 桌面版浏览�
 <span id="directCDN"></span>
 **单路画面的旁路直播**
 当 TRTC 房间中只有一个主播时，TRTC 的旁路推流跟标准的 RTMP 协议直推功能相同，不过 TRTC 的 UDP 相比于 RTMP 有更强大的弱网络抗性。
-![](https://main.qcloudimg.com/raw/b682b1493a81bc8a53aea6a07f375ba2.gif)
+![](https://main.qcloudimg.com/raw/23ac68cb46b06cc4eb6000fa98500dc4.jpg)
 
 <span id="mixCDN"></span>
 **混合画面的旁路直播**
 TRTC 最擅长的领域就是音视频互动连麦，如果一个房间里同时有多个主播，而 CDN 观看端只希望拉取一路音视频画面，就需要使用 [云端混流服务](https://intl.cloud.tencent.com/document/product/647/34618) 将多路画面合并成一路，其原理如下图所示：
-![](https://main.qcloudimg.com/raw/f2feaaaac176bb4fe7dd1c318490f9e1.gif)
+![](https://main.qcloudimg.com/raw/77eeed776e61c3a6bd0e1669e5747727.jpg)
 
 > **为什么不直接播放多路 CDN 画面？**
 >播放多路 CDN 画面很难解决多路画面的延迟对齐问题，同时拉取多路画面所消耗的下载流量也比单独画面要多，所以业内普遍采用云端混流方案。
