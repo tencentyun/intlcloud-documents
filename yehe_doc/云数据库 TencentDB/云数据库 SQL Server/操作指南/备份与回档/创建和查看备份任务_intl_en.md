@@ -20,7 +20,7 @@ TencentDB for SQL Server supports automatic backup, and you can adjust the backu
 You can set a scheduled backup time to implement daily automatic database backup in the following steps:
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
 2. Select **Manage Backup** > **Backup Settings**, click **Edit**, select the time period for scheduled backup, and click **Save**.
-![](https://main.qcloudimg.com/raw/ca455ca4f870e8ec31ffa6b4f9c9f31b.png)
+
 
  
 ## Setting Manual Backup
@@ -30,12 +30,12 @@ You can manually create backup files through instance backup or multi-database b
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
 2. Select **Manage Backup** > **Backup List** and click **Create Backup**.
 3. Select a backup policy: instance backup (i.e., backing up all databases in the entire instance) or multi-database backup. If you select the latter, you need to select the databases to be backed up and click **OK**.
-![](https://main.qcloudimg.com/raw/e42b9d8f89ac7f6a6f86783e1597ce2b.png)
+
 
 ## Viewing Backup Task
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
 2. Select **Manage Backup** > **Backup List** to view the creation time, status, file size, and policy of the backup task.
-![](https://main.qcloudimg.com/raw/4b97822f4eb03a7c5cbf937548d7af4c.png)
+
 
 
   

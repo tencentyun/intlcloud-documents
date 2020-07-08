@@ -1,6 +1,6 @@
 ## Instance List Page
 You can log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) and enter the instance list page to view instance information and manage your instances.
-![](https://main.qcloudimg.com/raw/8a950f225e6b32a3a8b6b791ec3b97d6.png)
+
 
 | Feature | Description |
 | --------- | ------------------------------------------------------------ |
@@ -10,7 +10,7 @@ You can log in to the [TencentDB for SQL Server Console](https://console.cloud.t
 
 ## Instance Management Page
 Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver). After an instance is delivered, click its name in the instance list or click **Manage** in the "Operation" column to enter the instance management page, where you can view its details, monitor it, and manage databases.
-![](https://main.qcloudimg.com/raw/8f608ec01e77e0a46ed1ac43c9340e44.png)
+
 
 | Feature | Description |
 | ---------- | ------------------------------------------------------------ |
