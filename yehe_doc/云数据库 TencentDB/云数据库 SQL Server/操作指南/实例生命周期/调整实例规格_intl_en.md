@@ -18,13 +18,13 @@ You can adjust the configuration of a TencentDB for SQL Server instance and its 
 
 ## Directions
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver), select the target instance in the instance list, and click **Upgrade** in the "Operation" column.
-![](https://main.qcloudimg.com/raw/64d6ef45979f85d0c26bf68a480a00b7.png)
+
 2. In the pop-up instance upgrade dialog box, select the target specification, and click **Upgrade**.
 >
 >- Before maintenance is carried out for TencentDB for SQL Server, notifications will be sent to the contacts configured in your Tencent Cloud account through SMS and email.
 >- If instance switch is involved, it will be performed during the maintenance window you configured. You can also initiate a manual switch after the migration is completed. Please be sure to switch during off-peak hours.
 >
-![](https://main.qcloudimg.com/raw/db2dbc42bfb4c265cf2c7869518023cf.png)
+
 3. On the order information page, after confirming that everything is correct, click **Buy Now**.
 4. Make the payment and return to the instance list. After the status of the instance changes to "Running", the instance can be used normally.
 
