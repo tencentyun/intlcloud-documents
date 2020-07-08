@@ -16,7 +16,9 @@ CVM
 
 **RI-supported Instance Types and Prices:**
 
-For more information about the configurations, matching rules and pricing of the RI-supported instance types, see the CVM product documentation.
+For more information about the RI-supported availability zones and instance types, see the [DescribeReservedInstancesOfferings](https://intl.cloud.tencent.com/document/product/213/30575) API.
+For more information about the [RI matching rules](https://intl.cloud.tencent.com/document/product/213/37265) and other instructions, see [Overview](https://intl.cloud.tencent.com/document/product/213/30571).
+CVM is a RI-supported instance. For more information about the price, see [CVM Reserved Instance Price Overview (Linux)](https://intl.cloud.tencent.com/document/product/213/30619).
 
 **Payment Method**
 
