@@ -2,7 +2,7 @@ This document describes how to connect a website business to an Anti-DDoS Advanc
 >Currently, only website businesses in Beijing, Shanghai, and Guangzhou regions can be connected. Businesses outside Mainland China are not supported.
 
 ## Prerequisites
-- To add a forwarding rule, you need to [purchase an Anti-DDoS Advanced instance in Mainland China](https://buy.cloud.tencent.com/dayu_buy#/antiddos-advanced) or [outside Mainland China](https://buy.cloud.tencent.com/dayu_buy#/antiddos-advanced-intl).
+- To add a forwarding rule, you need to [purchase an Anti-DDoS Advanced instance in Mainland China](https://buy.cloud.tencent.com/antiddos#/advanced) or [outside Mainland China](https://buy.cloud.tencent.com/antiddos#/advanced-intl).
 - To modify the DNS information of your business domain name, you need to purchase the domain name resolution product.
 
 ## Process
