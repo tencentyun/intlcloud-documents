@@ -3,7 +3,6 @@
 - [查看实例信息](https://intl.cloud.tencent.com/document/product/1029/36121)
 - [管理防护对象](https://intl.cloud.tencent.com/document/product/1029/36122)
 - [设置实例别名与标签](https://intl.cloud.tencent.com/document/product/1029/36123)
-- [升级防护](https://intl.cloud.tencent.com/document/product/1029/36124)
 
 ## 防护配置
 **IP和端口防护**
