@@ -1,22 +1,22 @@
 ## Sample CAM Policies for TencentDB
-You can grant a user the permission to view and use specific resources in the TencentDB Console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console. During the beta test, you can configure TencentDB for MariaDB to support the CAM feature only by using the "creation by policy syntax" method. You can do so in **CAM** > **Policy** > **Create Custom Policy** > **Create By Policy Syntax** > **Custom**.
->The API keyword in CAM of TencentDB for MariaDB is "mariadb".
+You can grant a user the permission to view and use specific resources in the TencentDB Console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console. Currently, you can configure TencentDB for MariaDB to support the CAM feature only by using the "creation by policy syntax" method. You can do so in **[CAM](https://console.cloud.tencent.com/cam/policy)** > **Policy** > **Create Custom Policy** > **Create by Policy Syntax** > **Custom**.
+>!The API keyword in CAM of TencentDB for MariaDB is "mariadb".
 
 ### Step 1. Create custom policy syntax
 1. Enter the policy syntax configuration page.
-![](https://main.qcloudimg.com/raw/18b2ae596743abcb1fc4a59836a7e658.png)
-![](https://main.qcloudimg.com/raw/fdea6b2a33e147949149f7438534cb54.png)
+![](https://main.qcloudimg.com/raw/4af838f8bb42d48ddb7836345e5b81fc.png)
+![](https://main.qcloudimg.com/raw/c75a0306c187c5754d30dd3b77891ffa.png)
 2. Select "Blank Template" and click **Next**.
-![](https://main.qcloudimg.com/raw/a7520e1646366c24d700dbd2a0d50f01.png)
+![](https://main.qcloudimg.com/raw/9c26e03dab484b6787c57a2b243e19d6.png)
 3. Enter the corresponding policy syntax.
-![](https://main.qcloudimg.com/raw/6cabca08a17097394284fc23819ac38a.png)
+![](https://main.qcloudimg.com/raw/bcf53e1eecb4c6f76f133bd6fa7dfeec.png)
 
 ### Step 2. Associate a sub-account/collaborator and verify
 After the policy is created, associate it with a user/group. After the association is completed, use another browser (or server) to verify whether the sub-account/collaborator can work normally. If the policy syntax is written correctly, you can observe the following:
 - You have normal access to the intended target products and resources and can use all the expected features.
-- You will be prompted with "You have no permission for this operation" when accessing other unauthorized products or resources.
+- You will be prompted with "You do not have permission to perform this operation" when accessing other unauthorized products or resources.
 
->
+>!
 - To avoid mutual impact of multiple policies, it is recommended to associate only one policy with a sub-account at a time.
 - The change to account access permission will take effect within 1 minute.
 
@@ -43,7 +43,7 @@ The policy syntax is as follows:
 
 
 ### Policy for authorizing query of all TencentDB instances
-To grant a user permission to view TencentDB instances but not create, delete, or modify them, implement the policy named `QcloudMariaDBInnerReadOnlyAccess` for the user.
+To grant a user permission to query TencentDB instances but not create, delete, or modify them, implement the policy named `QcloudMariaDBInnerReadOnlyAccess` for the user.
 
 The policy syntax is as follows:
 ```
@@ -62,7 +62,7 @@ The policy syntax is as follows:
 ```
 The above policy achieves its goal by allowing the user to separately authorize the use of all operations beginning with "Describe" in TencentDB with the CAM policy.
 
-> As not all functional APIs are covered in the beta test, you may see that a small number of operations are not included in CAM, which is normal.
+>? As not all functional APIs are covered currently, you may see that a small number of operations are not included in CAM, which is normal.
 
 ### Policy for granting a user permission to manipulate TencentDB instances in a specific region
 To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
@@ -80,7 +80,7 @@ To grant a user the permission to manipulate TencentDB instances in a specific r
 ```
 
 ### Policy for granting a user permission to manipulate TencentDB instances in multiple specific regions
-To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou and Chengdu.
+To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
 ```
 {
     "version": "2.0",
@@ -95,7 +95,7 @@ To grant a user the permission to manipulate TencentDB instances in a specific r
 ```
 
 ### Policy for granting a user permission to manipulate a specific TencentDB instance
-To grant a user the permission to manipulate a specific TencentDB instance, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instance "tdsql-xxx" in Chengdu.
+To grant a user the permission to manipulate a specific database, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instance "tdsql-xxx" in Guangzhou.
 ```
 {
     "version": "2.0",
@@ -143,10 +143,10 @@ To grant a user the permission to manipulate TencentDB instances in batches, ass
 }
 ```
 
->For all currently supported APIs, see the list at the end of this document.
+>?For all currently supported APIs, please see the list at the end of this document.
 
 ### Denying a user permission to create TencentDB accounts
-To deny a user permission to create TencentDB instances, configure `effect": "deny"` as shown below.
+To deny a user permission to create TencentDB accounts, configure `"effect": "deny"` as shown below.
 ```
 {
     "version": "2.0",
