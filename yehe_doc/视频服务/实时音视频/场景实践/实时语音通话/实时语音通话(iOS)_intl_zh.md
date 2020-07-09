@@ -21,7 +21,7 @@
 3. 设置 `GenerateTestUserSig.h` 文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
+    <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -45,7 +45,7 @@
 <span id="model"> </span>
 ## 实现自定义 UI 界面
 源码文件夹 `TRTCAudioCallDemo` 中包含两个子文件夹 ui 和 model，其中 model 文件夹中包含了我们实现的可重用开源组件 TRTCAudioCall，您可以在  `ITRTCAudioCallInterface.swift `  文件中看到该组件提供的接口函数。
-![](https://main.qcloudimg.com/raw/1a75796f96e4d715372f68338d5651c9.jpg)
+![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 您可以使用开源组件 TRTCAudioCall 实现自己的 UI 界面，即只复用 model 部分，自行实现 UI 部分。
 
 <span id="model.step1"> </span>

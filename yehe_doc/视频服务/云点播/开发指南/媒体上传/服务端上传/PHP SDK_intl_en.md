@@ -1,4 +1,4 @@
-VOD provides an SDK for PHP for uploading videos from a server. For more information on the upload process, please see [Guide](https://intl.cloud.tencent.com/document/product/266/33912).
+VOD provides an SDK for PHP for uploading videos from a server. For more information on the upload process, please see [Upload from Server Guide](https://intl.cloud.tencent.com/document/product/266/33912).
 
 ## Integration Methods
 
@@ -21,7 +21,7 @@ Decompress the vod-sdk.zip file into the project and import the autoload.php fil
 
 ## Simple Upload of Video
 ### Initializing upload object
-Initialize a `VodUploadClient` instance with a Tencent Cloud API key.
+Initialize a `VodUploadClient` instance with a TencentCloud API key.
 
 **Import by using composer**
 ```
@@ -164,8 +164,8 @@ Upload client class `VodUploadClient`
 
 | Attribute Name | Attribute Description | Type | Required |
 | --------- | ---------------------- | ------- | ---- |
-| secretId | The ID of Tencent Cloud API key | String | Yes |
-| secretKey | Tencent Cloud API key | String | Yes |
+| secretId | The ID of TencentCloud API key | String | Yes |
+| secretKey | TencentCloud API key | String | Yes |
 
 Upload request class `VodUploadRequest`
 
