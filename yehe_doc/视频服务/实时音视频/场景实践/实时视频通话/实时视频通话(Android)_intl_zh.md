@@ -48,7 +48,7 @@
 ## 实现自定义 UI 界面
 
 源码文件夹 `trtcvideocalldemo` 中包含两个子文件夹 ui 和 model，其中 model 文件夹中包含了我们实现的可重用开源组件 TRTCVideoCall，您可以在  `ITRTCVideoCall.java`  文件中看到该组件提供的接口函数。
-![](https://main.qcloudimg.com/raw/1a75796f96e4d715372f68338d5651c9.jpg)
+![](https://main.qcloudimg.com/raw/777f4837df516344a002af7c064b4072.jpg)
 
 您可以使用开源组件 TRTCVideoCall 实现自己的 UI 界面，即只复用 model 部分，自行实现 UI 部分。
 
