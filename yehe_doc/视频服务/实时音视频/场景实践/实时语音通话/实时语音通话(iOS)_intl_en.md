@@ -50,7 +50,7 @@ The `TRTCAudioCallDemo` source code folder contains the `ui` and `model` subfold
 <span id="model"> </span>
 ## Customizing UI
 The `TRTCAudioCallDemo` source code folder contains the `ui` and `model` subfolders. The latter contains the `TRTCAudioCall` component, which is a reusable open source component already implemented by Tencent Cloud. You can view the component’s API functions in the `ITRTCAudioCallInterface.swift` file.
-![](https://main.qcloudimg.com/raw/1a75796f96e4d715372f68338d5651c9.jpg)
+![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 You can customize the UI by reusing the code and the open source `TRTCAudioCall` component in the `model` folder and implementing the code in the `ui` folder yourself.
 
 <span id="model.step1"> </span>
