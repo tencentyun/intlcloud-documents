@@ -49,7 +49,7 @@ The `TRTCVideoCallDemo` source code folder contains the `ui` and `model` subfold
 
 <span id="model"> </span>
 ## Customizing UI
-The `TRTCVideoCallDemo` source code folder contains the `ui` and `model` subfolders. The latter contains the `TRTCVideoCall` component, which is a reusable open source component already implemented by Tencent Cloud. You can view the component’s API functions in the `ITRTCVideoCallInterface.swift` file.
+The `TRTCVideoCallDemo` [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCVideoCallDemo) folder contains the `ui` and `model` subfolders. The latter contains the `TRTCVideoCall` component, which is a reusable open source component already implemented by Tencent Cloud. You can view the component’s API functions in the `ITRTCVideoCallInterface.swift` file.
 ![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 
 You can customize the UI by reusing the code and the open source `TRTCVideoCall` component in the `model` folder and implementing the code in the `ui` folder yourself.
