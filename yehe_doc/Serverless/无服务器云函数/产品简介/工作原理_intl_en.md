@@ -1,4 +1,4 @@
-## Container Model of the Function Runtime
+## Container Model of Function Runtime
 
 SCF will execute a function on your behalf when an event is triggered, allocate resources based on your configuration information (such as memory size), and launch and manage the container (i.e., the execution environment of the function). The SCF platform is responsible for the creation, management, and deletion of all function runtime containers, and you have no permissions to manage them.
 
@@ -9,7 +9,7 @@ The significance of the container reuse mechanism lies in:
 - All declarations outside the [execution method](https://intl.cloud.tencent.com/document/product/583/9210) part in your code remain initialized and can be reused directly when the function is invoked again. For example, if a database connection is established in your function code, the original connection can be used directly when the container is reused. You can add logic to your code to check whether a connection already exists before creating a new one.
 - Each container provides some disk space in the `/tmp` directory. The contents of this directory are retained when the container is retained, providing a temporary cache that can be used for multiple invocations. It is possible to use the contents of the disk directly when the function is invoked again. You can add extra code to check whether such data is in the cache.
 
-> Do not assume that the container is always reused in the function code, because reuse is related to the single actual invocation, and it cannot be guaranteed whether a new container will be created or an existing one will be reused.
+>! Do not assume that the container is always reused in the function code, because reuse is related to the single actual invocation, and it cannot be guaranteed whether a new container will be created or an existing one will be reused.
 
 ## Temporary Disk Space
 
@@ -17,15 +17,37 @@ Each function has a temporary disk space of 512 MB (`/tmp`) during execution. Yo
 
 ## Invocation Types
 
-The SCF platform supports both sync and async invocations of functions. The invocation type is independent of the configuration of the function itself and can only be controlled when the function is invoked.
-- Sync invocation will wait for the execution result of the function after the invocation request is sent.
+The SCF platform supports both sync and async invocations of functions.
+
+### Sync invocation
+ Sync invocation will wait for the execution result of the function after the invocation request is sent.
+
+### Async invocation<span id="asynchronous"></span>
 - Async invocation will only send the request and get the request ID of the current request but not wait for the result.
+- When an async invocation occurs, the async event will be placed in the async queue built in SCF and then consumed by the event execution function in the async queue. Async queues have the following restrictions:
+ - Async queues are at the trigger level, and one function trigger has one queue.
+ - An async event can be retained in a queue for up to 6 hours.
+ - There can be up to 100,000 messages in an async queue.
+- The retry policy may vary by async queue. For more information, please see [Retry Policy](https://intl.cloud.tencent.com/document/product/583/34383).
+
+
+### Defining function invocation type
+The invocation type is independent of the configuration of the function itself and can only be controlled when the function is invoked.
 
 In the following invocation scenarios, you can freely define the invocation type of the function:
 - The SCF function is invoked by a written application. If you need to make a sync invocation, pass in the `invokeType=RequestResponse` parameter to the `InvokeFunction` API; if you need to make an async invocation, pass in the `invokeType=Event` parameter.
 - The SCF function is manually invoked (with API or CLI) for testing. The parameters for the invocation are the same as above.
 
-However, if you use another Tencent Cloud service as the event source, the invocation type of the cloud service is predefined, and you cannot freely specify the invocation type in this case. For example, COS and timer triggers always invoke SCF functions asynchronously.
+If you use another Tencent Cloud service as the event source, the invocation type of the cloud service is predefined.
+
+* Sync invocation: by [API Gateway trigger](https://intl.cloud.tencent.com/document/product/583/12513) and [CKafka trigger](https://intl.cloud.tencent.com/document/product/583/17530), for example.
+* Async invocation: by [COS timer trigger](https://intl.cloud.tencent.com/document/product/583/9707), [timer trigger](https://intl.cloud.tencent.com/document/product/583/9708), and [CMQ topic timer trigger](https://intl.cloud.tencent.com/document/product/583/11517), for example.
+
+
+
+
+
+
 
 ## Usage Restrictions
 
@@ -48,11 +70,7 @@ Currently, SCF has a limit on the amount of concurrency for each function. You c
 
 If an invocation causes the function concurrency to exceed the default limit, the invocation will be blocked and not executed by SCF. Restricted invocations are handled differently depending on the function invocation type:
 - Sync invocation: if the function is restricted when invoked synchronously, a 432 error will be returned directly.
-- Async invocation: if the function is restricted when invoked asynchronously, SCF will automatically retry the restricted event at a fixed frequency for a certain period of time.
- 
-## Retry Mechanism
-
-In case that your function fails because it exceeds the maximum amount of concurrency or the internal resources on the platform are insufficient, if the function is invoked synchronously, an error will be returned directly (please see the concurrency restrictions). If the function is invoked asynchronously by an internal cloud service, the invocation will automatically enter a retry queue and SCF will automatically retry the invocation.
+- Async invocation: if the function is restricted when invoked asynchronously, SCF will [automatically retry](https://intl.cloud.tencent.com/document/product/583/34383) the restricted event according to a certain policy.
 
 ## Execution Environment and Available Libraries
 
