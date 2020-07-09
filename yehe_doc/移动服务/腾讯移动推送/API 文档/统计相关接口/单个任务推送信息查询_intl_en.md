@@ -24,7 +24,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_record
 
 | Parameter Name | Required | Type | Description |
 | -------- | ---- | ------ | ---------- |
-| pushId   | Yes   | String | Push task ID |
+| pushId   | Yes   | String | Push task ID. Only the push task for the last one month can be queried. |
 
 #### Response parameters
 
