@@ -1,17 +1,17 @@
-Note:
+Notes:
 - **Single-domain SSL certificate**: only one domain name can be bound. This can be a second-level domain name like example.domain.com, a third-level domain name like example.example.domain.com, or a first-level domain name like domain.com. But all sub-domains under the first-level domain name are not supported. Up to 100 levels of domain name can be supported.
 - **Multi-domain SSL certificate**: one single certificate can be bound to multiple domain names, subject to the maximum number of supported domain names stated on Tencent Cloud's official website.
 - **Wildcard SSL certificate**: only one wildcard domain name with only one wildcard can be bound, such as \*.domain.com and \*.example.domain.com (up to 100 levels). Multi-wildcard domain names like \*.\*.domain.com are not supported.
-- **Multi-domain wildcard SSL certificate**: multiple wildcard domain names can be bound, such as \*.domain.com and \*.example.domain.com (up to 100 levels). Multi-wildcard domain names like \*.\*.domain.com are not supported.
+- **Multi-domain wildcard SSL certificate**: multiple wildcard domain names with only 1 wildcard can be bound, such as \*.domain.com and \*.example.domain.com (up to 100 levels). Multi-wildcard domain names like \*.\*.domain.com are not supported.
 
->The following prices are unit prices based on one year of purchase. For more information, see the [purchasing page](https://buy.cloud.tencent.com/ssl?fromSource=ssl).
+> The following prices are unit prices based on 1 year of purchase.
 
 <table>
 <tr>
 	<th>Certificate Brand</th>
 	<th>Number of Supported Domain Names</th>
 	<th>Certificate Model</th>
-	<th>Unit Price (only for the first year of purchase and subject to any discounts for subsequent years as stated on Tencent Cloud's official website.)</th>
+	<th>Unit Price (only for the first year of purchase and subject to any discounts for subsequent years as stated on Tencent Cloud's official website)</th>
 	<th>Remarks</th>
 </tr>
 <tr>
@@ -43,25 +43,25 @@ Note:
 	<td>Multiple domain names</td>
 	<td>OV SSL certificate for multiple domain names</td>
 	<td>809 USD/year</td>
-	<td>The total price is calculated by multiplying the unit price by the number of domain names</td>
+	<td>The total price is calculated by multiplying the unit price by the number of domain names.</td>
 </tr>
 <tr>
 	<td>Multiple domain names</td>
 	<td>OV Pro SSL certificate for multiple domain names</td>
 	<td>1,294 USD/year</td>
-	<td>The total price is calculated by multiplying the unit price by the number of domain names</td>
+	<td>The total price is calculated by multiplying the unit price by the number of domain names.</td>
 </tr>
 <tr>
 	<td>Multiple domain names</td>
 	<td>EV SSL certificate for multiple domain names</td>
 	<td>1,294 USD/year</td>
-	<td>The total price is calculated by multiplying the unit price by the number of domain names</td>
+	<td>The total price is calculated by multiplying the unit price by the number of domain names.</td>
 </tr>
 <tr>
 	<td>Multiple domain names</td>
 	<td>EV Pro SSL certificate for multiple domain names</td>
 	<td>2,071 USD/year</td>
-	<td>The total price is calculated by multiplying the unit price by the number of domain names</td>
+	<td>The total price is calculated by multiplying the unit price by the number of domain names.</td>
 </tr>
 <tr>
 	<td>Wildcard domain name</td>
@@ -101,9 +101,9 @@ Note:
 	<td>By default, 5 domain names are supported. One extra domain name is priced at 235 USD/year.</td>
 </tr>
 <tr>
-	<td rowspan="8">TrustAsia</td>
+	<td rowspan="9">TrustAsia</td>
 	<td>Single domain name</td>
-	<td>DV SSL Certificates</td>
+	<td>DV SSL certificate</td>
 	<td>Free</td>
 	<td>-</td>
 </tr>
@@ -118,6 +118,12 @@ Note:
 	<td>EV SSL certificate</td>
 	<td>1,537 USD/year</td>
 	<td>-</td>
+</tr>
+<tr>
+	<td>Multiple domain names</td>
+	<td>DV SSL certificate for multiple domain names</td>
+	<td>794 USD/year</td>
+	<td>By default, 5 domain names are supported. One extra domain name is priced at 154 USD/year.</td>
 </tr>
 <tr>
 	<td>Multiple domain names</td>
