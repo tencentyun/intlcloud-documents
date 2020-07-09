@@ -53,7 +53,7 @@ The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` a
 <span id="model"> </span>
 ## Implementing Custom UI
 
-The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCLiveRoom`. You can find the API functions provided by this component in the `TRTCLiveRoom.java` file and use the corresponding API to implement your own custom UI.
+The `trtcliveroomdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcliveroomdemo/src/main/java/com/tencent/liteav/liveroom) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCLiveRoom`. You can find the API functions provided by this component in the `TRTCLiveRoom.java` file and use the corresponding API to implement your own custom UI.
 ![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
 
 <span id="model.step1"> </span>

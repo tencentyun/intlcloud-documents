@@ -181,7 +181,7 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than 0, the 
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
 | GroupId | String | Required | ID of the group to which messages are to be sent |
-| Random | Integer | Required | A 32-bit random number. If the random numbers of two messages within five minutes are the same, the later message will be discarded as a duplicate message. |
+| Random | Integer | Required | A random 32-bit unsigned integer. If the random numbers of two messages within five minutes are the same, the second message will be discarded as a duplicate. |
 | MsgPriority | String | Optional | Message priority |
 | MsgBody | Array | Required | Message body. For details, see [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | From_Account | String | Optional | Message source account (optional). If this field is not specified, the message sender is the app admin account that is used to call the API by default. Alternatively, apps can specify the message sender in this field for some special purposes. Note that if this field is specified, you must ensure that the account in this field does exist. |

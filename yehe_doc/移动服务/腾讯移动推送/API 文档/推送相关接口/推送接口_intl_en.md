@@ -241,7 +241,7 @@ The specific fields for the Android platform are as follows:
 | small_icon | string | Android | None | No | The icon that the message displays in the status bar. If not set, the application icon will be displayed. |
 | action | JSON | Android | Yes | No | This sets the action after the notification bar is clicked; the default action is to open the application. |
 | action_type| int | Action      |Yes   | No     | Click action type. <li>1: opens activity or the application itself </li><li>2: opens browser</li><li>3: opens Intent (recommended ⚠️  [Configuration Guide](https://intl.cloud.tencent.com/document/product/1024/32624))          </li>  |
-| custom_content | string | Android | None    | No    |  User-customized parameters. ⚠️ This must be serialized as a JSON string <li>If message overwriting is required, you cannot use `custom_content` to pass in custom parameters; instead, you need to change to use the intent method. |
+| custom_content | String | Android   |None    | No    |A user-defined parameter (serialized to JSON String)**Notes:**<li>This field will be deprecated later. We recommend not using it any more, instead using [intent](https://intl.cloud.tencent.com/document/product/1024/32624#how-do-i-set-the-message-click-event.3F) to bring custom parameters through the notification bar.<li>If you need to override messages, change to use the `intent ` method to pass in custom parameters.</li>|
 | show_type | int | Android |2 | No | Whether to display notification when the application is in the foreground, which is displayed by default. This takes effect only for TPNS and FCM channels. <li>1: no<li>2: yes. <br>Note: if the value is 1 and the application is in the foreground, the end user will not be aware of the push, but arrival data will be reported.</br> |
 
 
@@ -369,7 +369,7 @@ The specific fields for the Android platform are as follows:
 | content        | string |message| None    | Yes    | Command content                    |
 | android              | JSON  | message      | None     | No    | Android message structure |
 | custom_content | string | android | None    | No    | This must be serialized to JSON string                                |
-| accept_time    | array | message       |None    | No    | The time period at which the message is allowed to be pushed to users. <li>A single element is formed by a "start" time and an "end" time. <li>"start" and "end" are indicated by hour and minute. For more information, please see the samples. <li>⚠️This is only valid for the TPNS channel due to vendor restrictions. |
+| accept_time    | array | message       |None    | No    | The time period at which the message is allowed to be pushed to users. <li>A single element is formed by a "start" time and an "end" time. </li><li>"start" and "end" are indicated by hour and minute. For more information, please see the samples. </li><li>**Notes:**This is only valid for the TPNS channel due to vendor restrictions.</li> |
 
 Complete example:
 
