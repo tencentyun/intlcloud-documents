@@ -45,7 +45,7 @@ TRTC 的云端录制服务提供了两种不同的录制形式：“全局自动
 </tr>
 <tr>
 <td>文件保存时长（天）</td>
-<td>根据实际业务需求设置视频文件存储在云点播平台的天数。单位为天，取值范围0 - 1800，0表示永久存储。</td>
+<td>根据实际业务需求设置视频文件存储在云点播平台的天数。单位为天，取值范围0 - 1800，到期后文件将被点播平台自动删除且无法找回， 0表示永久存储。</td>
 </tr>
 <tr>
 <td>续录超时时长（秒）</td>
@@ -53,11 +53,11 @@ TRTC 的云端录制服务提供了两种不同的录制形式：“全局自动
 </tr>
 </table>
 
-> 
+>? 
 - 在线教育类业务推荐选择 HLS 用于课程回放。
 HLS 支持最长五分钟的续录，可以做到“一堂课只产生一个回放链接”，且支持绝大多数浏览器的在线观看，非常适合视频回放场景。
 - 需要将录制文件自行存储时，推荐选择 FLV 格式。
-由于 HLS 是由一系列小的 ts 文件组成的，在服务期间的迁移并不方便，所以如果您是要自行存储于自建的服务器上，请选择格式简单且容错性能力好的 FLV。
+由于 HLS 是由一系列小的 ts 文件组成的，在服务器之间的迁移并不方便，所以如果您是要自行存储于自建的服务器上，请选择格式简单且容错性能力好的 FLV。
 
 <span id="storageLocation"></span>
 ###  选择存储位置
@@ -146,14 +146,14 @@ param.userDefineRecordId = @"1001_rexchang";  // 录制 ID，即指定开启该�
 录制文件会以 `userDefineRecordId_开始时间_结束时间` 的格式来命名。
 
 - **已经支持的平台**
-支持 [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) 等终端发起录制控制，暂不支持 有 Web 浏览器和微信小程序端发起控制。
+支持 [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) 等终端发起录制控制，暂不支持由 Web 浏览器和微信小程序端发起控制。
 
 <span id="recordRESTAPI"></span>
 ### 方案三：指定用户录制（REST  API）
 
 ![](https://main.qcloudimg.com/raw/f0d7c94b98e4e7839c2e360f1aeea718.gif)
 
-> TRTC 的服务端提供了一对 REST API（ StartMCUMixTranscode 和 StopMCUMixTranscode）用于实现云端混流、云端录制和旁路直播三个功能：
+>? TRTC 的服务端提供了一对 REST API（ [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) 和 [StopMCUMixTranscode](https://cloud.tencent.com/document/product/647/44269)）用于实现云端混流、云端录制和旁路直播三个功能：
 >- 云端混流：通过 `LayoutParams` 参数可以控制混流时的画面布局。
 >- 云端录制：通过 `OutputParams.RecordId` 参数可以启动/关闭云端录制。
 >- 旁路直播：通过 `OutputParams.StreamId` 参数可以启动/关闭 CDN 直播。
@@ -162,7 +162,7 @@ param.userDefineRecordId = @"1001_rexchang";  // 录制 ID，即指定开启该�
 要使用该种录制方案，请在控制台中 [选择录制形式](#recordType) 时，设定为“指定用户录制”。
 
 - **录制任务的开始**
-由您的服务器调用 StartMCUMixTranscode ，并指定 `OutputParams.RecordId` 参数即可启动混流和录制。
+由您的服务器调用 [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) ，并指定 `OutputParams.RecordId` 参数即可启动混流和录制。
 
 ```
 // 代码示例：通过 REST API 启动云端混流和云端录制任务
@@ -185,13 +185,13 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
 ```
 
 - **录制任务的结束**
-自动停止，您也可以中途调用 StopMCUMixTranscode 停止混流和录制任务。
+自动停止，您也可以中途调用 [StopMCUMixTranscode](https://cloud.tencent.com/document/product/647/44269) 停止混流和录制任务。
 
 - **多路画面的混合**
-由您的服务器调用 StartMCUMixTranscode 并指定 `LayoutParams` 参数即可，关于这一部分详细介绍，可以阅读文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88)。
+由您的服务器调用 [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) 并指定 `LayoutParams` 参数即可，关于这一部分详细介绍，可以阅读文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88)。
 
 - **录制文件的命名**
-录制文件会以调用 StartMCUMixTranscode 时指定的 `OutputParams.RecordId` 参数来命名，命名格式为 `OutputParams.RecordId_开始时间_结束时间`。
+录制文件会以调用 [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) 时指定的 `OutputParams.RecordId` 参数来命名，命名格式为 `OutputParams.RecordId_开始时间_结束时间`。
 
 - **已经支持的平台**
 由您的服务端控制，不受客户端平台的限制。
@@ -258,7 +258,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 
 <span id="delete"></span>
 ## 删除录制文件
-腾讯云点播系统提供了一系列 REST API 来管理其上的音视频文件，您可以通过删除媒体 API 删除某个指定的文件。
+腾讯云点播系统提供了一系列 REST API 来管理其上的音视频文件，您可以通过 删除媒体 API 删除某个指定的文件。
 REST 请求示例：
 ```
 https://vod.tencentcloudapi.com/?Action=DeleteMedia
@@ -282,29 +282,4 @@ HLS 支持最长5分钟的断点续录，可以做到“一场直播（或一堂
 - [iOS 平台](http://doc.qcloudtrtc.com/group__TXVodPlayer__ios.html)
 - [Android 平台](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
 
-> 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 超级播放器（Player+）、移动直播（MLVB）等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
-
-
-## 录制费用计算
-云端录制的费用由如下几个部分组成，其中录制费用是基础费用，其他费用则会根据您的使用情况而按需收取。
->本文中的价格为示例，仅供参考。若价格与实际不符，请以 [云直播](https://buy.cloud.tencent.com/price/lvb) 和 [云点播](https://buy.cloud.tencent.com/price/vod) 的定价为准。
-
-**录制费用：转码或转封装产生的计算费用**
-由于录制需要进行音视频流的转码或转封装，会产生服务器计算资源的消耗，因此需要按照录制业务对计算资源的占用成本进行收费。计算方法是按照并发录制的路数进行收费，并发数越高录制费用越高。
-
->如果您在 [设置录制格式](#fileFormat) 时同时选择了两种录制文件，录制费用和存储费用都会 × 2，同理，选择三种文件时录制费用和存储费用会 × 3。 如非必要，建议只选择需要的一种文件格式，可以大幅节约成本。
-
-**存储费用：如将文件存储于腾讯云则会产生该费用**
-如果录制出的文件要存放于腾讯云，由于存储本身会产生磁盘资源的消耗，因此需要按照存储的资源占用进行收费。存储的时间越久费用也就越高，因此如无特殊需要，您可以将文件的存储时间设置的短一些来节省费用，或者将文件存放在自己的服务器上。
-
->例如，您通过 [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) 设置主播的码率（videoBitrate）为1000kbps，录制该主播的直播视频（选择一种文件格式），录制一小时大约会产生一个`(1000 / 8)KBps × 3600秒 = 450000KB = 0.45GB`大小的视频文件，该文件每天产生的存储费用约为`0.45GB × 0.0048 元/GB/日 = 0.00216‬元`。
-
-**观看费用：如将文件用于点播观看则会产生该费用**
-如果录制出的文件要被用于点播观看，由于观看本身会产生 CDN 流量消耗，因此需要按照点播的价格进行计费，默认按流量收费。观看的人数越多费用越高。
-
->如果您选择从腾讯云下载文件到您的服务器上，也会产生一次很小的点播流量消耗，并且会在您的月度账单中有所体现。
-
-**转码费用：如开启混流录制则会产生该费用**
-如果您启用了混流录制，由于混流本身需要进行解码和编码，所以还会产生额外的混流转码费用。 混流转码根据分辨率大小和转码时长进行计费，主播用的分辨率越高，连麦时间（通常在连麦场景才需要混流转码）越长，费用越高。
-
->例如，您通过 [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) 设置主播的码率（videoBitrate）为1500kbps，分辨率为720P。
+>! 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 超级播放器（Player+）、移动直播（MLVB） 等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
