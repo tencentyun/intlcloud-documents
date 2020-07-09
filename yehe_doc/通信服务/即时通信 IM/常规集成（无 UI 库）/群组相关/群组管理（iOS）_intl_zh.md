@@ -17,7 +17,6 @@
 <th width="16%">临时会议群（Meeting）</th>
 <th>直播群（AVChatRoom）</th>
 </tr>
-
 <tr>
 <td>可用群成员角色</td>
 <td>群主、普通成员</td>
@@ -97,7 +96,7 @@
 </tr>
 </table>
 
->专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">套餐外超量费用</a>。
+>?专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数上限为1万个。免费峰值群组数为10万个/月，超出免费量将产生 <a href="https://intl.cloud.tencent.com/document/product/1047/34350">套餐外超量费用</a>。
 
 
 ## 群组管理
@@ -157,7 +156,7 @@ memberInfo.userID = @"vinson";
 ![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
 
 1. **申请者提出加群申请**
-  申请者调用 [joinGroup](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a4762156b7a98489eb4715de53028e12a) 申请加群。
+    申请者调用 [joinGroup](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a4762156b7a98489eb4715de53028e12a) 申请加群。
 2. **群主或管理员处理加群申请**
  群主或管理员在收到加群申请的回调 [onReceiveJoinApplication](http://doc.qcloudtrtc.com/im/protocolV2TIMGroupListener-p.html#a481ab06916795cc9445fa3fc465c69ab) 后调用接口 [getGroupApplicationList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a29c36ad685159850a30d61a6b9c637e8) 获取加群申请列表，然后通过 [acceptGroupApplication](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a51bb9b4f965cb3d01546fef348ac75e4) 或者 [refuseGroupApplication](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a46aa78c54986b2c0b7cc0012a3dc94ef) 来同意或者拒绝某一条加群请求。
 3. **申请者收到处理结果**
@@ -166,13 +165,13 @@ memberInfo.userID = @"vinson";
 <span id="quit"> </span>
 ### 退出群组
 调用 [quitGroup](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#ac2a43b3ada447131df0c5f19e8079be5) 可以退出群组，退群者会收到 [onQuitFromGroup](http://doc.qcloudtrtc.com/im/protocolV2TIMGroupListener-p.html#a9d4a0c42366ea13f688a3c369f91e80f) 回调，群其他成员会收到 [onMemberLeave](http://doc.qcloudtrtc.com/im/protocolV2TIMGroupListener-p.html#a27ca737d915d21810b7f54e8677922e0) 回调。
->对于陌生人社交群（Public）、临时会议群（Meeting）和直播群（AVChatRoom），群主不可以退群的，群主只能 [解散群组](#dismiss)。
+>!对于陌生人社交群（Public）、临时会议群（Meeting）和直播群（AVChatRoom），群主不可以退群的，群主只能 [解散群组](#dismiss)。
 
 <span id="dismiss"> </span>
 ### 解散群组
 调用 [dismissGroup](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a5bd55cb04867985253949d8cc78f860e) 可以解散群组，全员会收到  [onGroupDismissed](http://doc.qcloudtrtc.com/im/protocolV2TIMGroupListener-p.html#a9063ce1847731024581f2b1ad6b9ed0a) 回调。
 
-> 
+>! 
 >- 对于陌生人社交群（Public）、临时会议群（Meeting）和直播群（AVChatRoom），群主随时可以解散群。
 >- 工作群（Work）的解散最为严格，即使群主也不能随意解散，只能由您的业务服务器调用 [解散群组 REST API](https://intl.cloud.tencent.com/document/product/1047/34896) 解散。
 
@@ -186,7 +185,7 @@ memberInfo.userID = @"vinson";
 
 ### 修改群资料
 调用 [setGroupInfo](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#aa9519a479493e56d7920e40aba796144) 可以修改群资料。群资料被修改后，全员会收到 [onGroupInfoChanged](http://doc.qcloudtrtc.com/im/protocolV2TIMGroupListener-p.html#a695c8e4a2360d400c9a781be74530db5) 回调。
->
+>!
 > - 好友工作群（Work）所有群成员都可以修改群基础资料。
 > - 陌生人社交群（Public）、临时会议群（Meeting）只有群主或管理员可以修改群基础资料。
 > - 直播群（AVChatRoom）只有群主可以修改群基础资料。
@@ -213,9 +212,35 @@ info.faceURL = @"http://xxxx";
 - **完全不接收群内消息**
 群消息接收选项设置为 `V2TIM_GROUP_NOT_RECEIVE_MESSAGE` 后，群内的任何消息都收不到，会话列表也不会更新。
 - **接收群内消息但不提醒，在会话列表界面显示小圆点，而不显示未读数**
->此方式需使用未读计数功能，因此仅适用于好友工作群（Work）和陌生人社交群（Public）。
+>?此方式需使用未读计数功能，因此仅适用于好友工作群（Work）和陌生人社交群（Public）。
 >
 群消息接收选项设置为 `V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE`，当群内收到新消息，会话列表需要更新时，可以通过会话中的  [unreadCount](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6) 获取到消息未读数。根据 [recvOpt](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#ae40fd527e110178e73b34fe72fcfd778) 判断获取到的群消息接收选项为 `V2TIM_GROUP_RECEIVE_NOT_NOTIFY_MESSAGE` 时显示小红点而不是消息未读数。
+
+## 群属性（群自定义字段）
+基于 API2.0 我们设计了全新的群自定义字段，我们称之为 "群属性"，其特性如下：
+1. 不再需要控制台配置，客户端可以直接增删改查群属性。
+2. 最多支持16个群属性，每个群属性的大小最大支持4k，所有群属性的大小最大支持16k。
+3. 目前仅支持直播群（AVChatRoom）。
+4. initGroupAttributes、setGroupAttributes、deleteGroupAttributes 接口合并计算， SDK 限制为5秒10次，超过后回调8511错误码；后台限制1秒5次，超过后返回10049错误码。
+5. getGroupAttributes 接口 SDK 限制5秒20次。
+
+基于群属性，我们可以做语聊房的麦位管理，当有人上麦的时候，可以设置一个群属性管理上麦人信息，当有人下麦的时候，可以删除对应群属性，其他成员可以通过获取群属性列表来展示麦位列表。
+
+### 初始化群属性
+调用 [initGroupAttributes](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a1b3a56dfc345f1ef2a575cb36156e745) 接口可以初始化群属性，如果该群之前有群属性，会先清空原来的群属性。
+
+### 设置群属性
+
+调用 [setGroupAttributes](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a134342ddb51d1ee83f3981ed91d26885) 接口可以设置群属性，如果设置的群属性不存在，会自动添加该群属性。
+
+### 删除群属性
+调用 [deleteGroupAttributes](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#aa504ffca9492580ca27a45f78a87e2cb) 接口可以删除指定群属性，如果 `keys` 字段填 `nil` ，则会清空所有的群属性。
+
+### 获取群属性
+调用 [getGroupAttributes](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#ac8a74db230669d1b49da47bb0895cbf9) 接口可以获取指定群属性，如果 `keys` 字段填 `nil` ，则会获取所有的群属性。
+
+### 群属性更新
+群属性有任何的更新变化，都会通过 [onGroupAttributeChanged](http://doc.qcloudtrtc.com/im/protocolV2TIMGroupListener-p.html#a7b76343c7ef46af4a2cd09db6d51db13) 回调出来所有的群属性字段。
 
 ##  群成员管理
 ### 获取群成员列表
