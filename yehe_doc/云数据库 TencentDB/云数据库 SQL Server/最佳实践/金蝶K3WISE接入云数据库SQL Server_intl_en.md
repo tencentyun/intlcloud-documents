@@ -35,13 +35,13 @@ Adjust the TencentDB for SQL Server access settings to ensure that distributed t
 1. [Log in to the Windows CVM instance](https://intl.cloud.tencent.com/document/product/213/10516#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8).
 2. Open the `hosts` file located at `C:\Windows\System32\drivers\etc\hosts`.
 3. Add the VIP and host information (which can be obtained by [submitting a ticket](https://console.cloud.tencent.com/workorder/category)) provided by TencentDB for SQL Server to the end of the `hosts` file and save the change.
-![](https://main.qcloudimg.com/raw/b93ce2e5b6db9f1a67df7d73b522d1b3.png)
+
 4. Open "Component Services" in "Control Panel" > "System and Security" > "Administrative Tools".
 5. Select "Component Services" > "Computers" > "My Computer" > "Distributed Transaction Coordinator".
 6. Right-click the local DTC on the right and select "Properties".
-![](https://main.qcloudimg.com/raw/a0787d9eea99d0508cab32d60d375d7e.png)
+
 7. Select the "Security" tab, set as follows, and click **OK**.
-![](https://main.qcloudimg.com/raw/a2e26a22d28ddd345a65090e025de205.png)
+
 8. In the pop-up MSDTC service dialog box, click **Yes** and wait for the MSDTC service to restart.
  
 
@@ -53,14 +53,13 @@ Adjust the TencentDB for SQL Server access settings to ensure that distributed t
 4. On the pop-up account set management database settings page, set relevant identity verification information and data server.
 >Enter the private network address of the TencentDB for SQL Server instance as the data server, which can be viewed in the [console](https://console.cloud.tencent.com/sqlserver).
 >
-![](https://main.qcloudimg.com/raw/11f12e1aeda96505216e4a711779f43d.png)
+![]
 5. In the "System" drop-down list, click **Preset Connection** and set the preset connection for easier use.
-![](https://main.qcloudimg.com/raw/6957a6f1a29e725dedb05bf4741e7877.png)
+
 6. In the database drop-down list, click **Register Account Set**.
-![](https://main.qcloudimg.com/raw/988b635f06180e22b2fd826812c2f391.png)
+
 7. Select the corresponding database and click **All**.
-![](https://main.qcloudimg.com/raw/fdce092177841854b886823e51c1f68a.png)
- 
+
 ## Step 4. Log in to and use Kingdee K/3 WISE
 After you complete all the settings above, distributed transactions can be supported between the CVM and TencentDB for SQL Server instances, and you can log in to and use Kingdee K/3 WISE normally.
 
