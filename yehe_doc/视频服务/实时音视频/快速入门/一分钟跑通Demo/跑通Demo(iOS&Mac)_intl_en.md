@@ -41,7 +41,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
+
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
@@ -49,7 +49,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 >The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Server-Side UserSig Generation](https://intl.cloud.tencent.com/document/product/647/35166).
 
 ### Step 4. Compile and run
-1. Enter the directory where the `TRTCSDK iOS/Mac Demo Podfile` file is located in a terminal window.
+1. Enter the directory where the `TRTCScenesDemo > Podfile` file is located in a terminal window.
 2. Run the `pod install` command to install the TRTC SDK, or run the `pod update` command to update the local library.
 3. Use Xcode (v9.0 or above) to open the `TRTCDemo.xcworkspace` project in the source code directory, compile it, and run the demo project.
 
