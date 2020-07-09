@@ -1,49 +1,48 @@
-As the restrictions of vendor channels on the push quota and frequency are gradually tightened, the arrival rate and delivery speed of pushes are also limited to a certain degree. For specific restrictions, please see:
-- [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829)
-- [Vendor Channel QPS Limit Description](https://intl.cloud.tencent.com/document/product/1024/35247)
-
-TPNS provides two channel assignment policies: "smart assignment" and "custom", which can improve the comprehensive arrival rate and push speed against the restrictions of the vendor channels.
+As OPPO, Vivo, Mi, and other vendors have successively announced quota limits for push messages, in order to more reasonably assign vendor channel resources, TPNS has launched a task-level channel policy feature. You can determine the channel assignment for each push task based on the current remaining quota for the corresponding vendor channel to increase the arrival rate.
 ## Channel Policy Overview
+TPNS currently provides two channel policies, i.e., smart assignment and custom channel. The channel policy rules are as shown below:
+
 <span id="zhineng"></span>
 ### Smart assignment
-TPNS will take into account the device status, group active status, and push channel status to intelligently assign the optimal delivery channel for each device to achieve the following effects:
-1. Improve the comprehensive arrival rate of pushes
-2. Improve the comprehensive arrival speed of pushes
-3. Save available quotas for certain vendor channels
+The system intelligently assigns the delivery channel for each device on the basis of guaranteeing the push arrival rate in order to save vendor channel resources.
+
+| Channel | Online | Offline |
+|---------|---------|---------|
+| Huawei | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
+| Meizu | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
+| Mi | The TPNS channel is used for push preferably | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
+| OPPO | The TPNS channel is used for push preferably | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
+| Vivo | The TPNS channel is used for push preferably | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
+| Other | TPNS channel | TPNS channel's offline queue |
 
 <span id="zidingyi"></span>
 ### Custom policy
-Currently, Mi, OPPO, and Vivo channels limit the daily number of pushes. You can choose which channel a certain push task can be delivered through according to your business needs and adjust the push channel delivery policy in a personalized manner to save vendor channel resources and maximize the value of pushes.
-The delivery rules of the custom policy are as detailed below:
+As the resources of certain vendor channels are limited, you can choose the channel through which a push will be delivered according to your business needs. For more information on the vendor channel quotas, please see [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829).
 
 | Channel | Enabled | Disabled |
 |---------|---------|---------|
 | Huawei | <li>Online: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push <li>Offline: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | <li>Online: TPNS channel <li>Offline: TPNS channel |
 | Meizu | <li>Online: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push <li>Offline: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | <li>Online: TPNS channel <li>Offline: TPNS channel |
-| FCM | <li>Online: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push <li>Offline: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | <li>Online: TPNS channel <li>Offline: TPNS channel |
 | Mi | <li>Online: the TPNS channel is used for push preferably <li>Offline: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | <li>Online: TPNS channel <li>Offline: TPNS channel |
 | OPPO | <li>Online: the TPNS channel is used for push preferably <li>Offline: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | <li>Online: TPNS channel <li>Offline: TPNS channel |
 | Vivo | <li>Online: the TPNS channel is used for push preferably <li>Offline: the vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | <li>Online: TPNS channel <li>Offline: TPNS channel |
-| Other | <li>Online: TPNS channel <li>Offline: TPNS channel offline queue | <li>Online: TPNS channel <li>Offline: TPNS channel |
+| Other | <li>Online: TPNS channel <li>Offline: TPNS channel offline queue | <li>Online: TPNS channel <li>Offline: TPNS channel </li> |
 
 ## Getting Started
 ### Console
-You can select a channel policy for a push when creating it in the console. The specific operation path is as follows:
-Console > Message Push > Create Push > Advanced Settings > Channel Policy
+After entering the push content, you can select a policy in the channel policy section in **Message Push** > **Create Push** > **Advanced Settings** in the console.
 #### Smart assignment
 Select **Smart Assignment** and the system will intelligently assign the delivery channel for each device. For more information, please see the rules of [smart assignment](#zhineng).
-![](https://main.qcloudimg.com/raw/b53a8b8e21b37aefea81fe7c8c7553c4.png)
+![](https://main.qcloudimg.com/raw/d06fadff60969ef71c87fd20cd6f97d9.png)
 
 #### Custom policy
 Select **Custom** and click **View Details** to view detailed vendor quota information.
-![](https://main.qcloudimg.com/raw/a28f612612f856e05bd8e0758805500b.png)
+![](https://main.qcloudimg.com/raw/9cac2ce60ed7718b5c29a48ee35565ac.png)
 You can choose the channel used for push according to the remaining quota of the current vendor channel and the priority of the push task. For more information, please see the rules of the [custom](#zidingyi) policy.
-![](https://main.qcloudimg.com/raw/7b314d96f64fe63dd36b5a1e512389a8.png)
+![](https://main.qcloudimg.com/raw/9200f87b9d5114bedee4a3f3f83757fc.png)
 
->The TPNS channel cannot be disabled
-
-### RESTful API
-Set the optional `channel_rules` parameter for the RESTful API. For more information, please see [channel_rules Parameter Description](https://intl.cloud.tencent.com/document/product/1024/33764) in the Push API documentation.
+### REST API
+Set the optional `channel_rules` parameter for the REST API. For more information, please see [channel_rules Parameter Description](https://intl.cloud.tencent.com/document/product/1024/33764) in the Push API documentation.
 Below is a sample push:
 ```json
 {
