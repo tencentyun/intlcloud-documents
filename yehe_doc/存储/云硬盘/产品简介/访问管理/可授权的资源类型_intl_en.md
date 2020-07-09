@@ -1,31 +1,80 @@
-Resource-level permissions refer to the permissions granted to users at the level of resources. Resource-level permission control allows you to specify the resources that can be operated on by users. Cloud Block Storage (CBS) partially supports resource-level permission control. For CBS operations that support resource-level permission control, you can control when to allow users to perform the operations or use specific resources.
-In Cloud Access Management (CAM), the types of resources that can be granted are shown below.
+Resource-level permissions specify which resources a user can manipulate. Cloud Block Storage (CBS) supports resource-level permission on some CBS operations that control which resources and when a user can manipulate.
+The following table describes the types of resources that can be authorized in Cloud Access Management (CAM):
 
-| Resource Type | Resource Description Method in Authorization Policies |
+| Resource Type | Resource Description Method in the Authorization Policy |
 | :-------- | -------------- |
-| [CBS instance resources](#CBSCorrelation) | `qcs::cvm:$region::volume/*` |
+| [CBS APIs](#CBSCorrelation) |  ` qcs::cvm:$region::volume/* `|
 
-[CBS instance resources](#CBSCorrelation) describe CBS API operations that support resource-level permission control, and their resources and condition keys. **When setting a resource path**, you need to change the values of parameters such as `$region` and `$account` to your actual values. You can also use the wildcard `*` in a path. For operation examples, see [CAM Examples](https://intl.cloud.tencent.com/document/product/213/10312).
-> Any CBS API operation that is not listed in the table does not support resource-level permission control. You can still authorize a user to perform these operations, but you must specify `*` as the resource element in the policy statement.
+The [CBS APIs](#CBSCorrelation) describe the CBS API operations which currently support resource-level permission control as well as the resources and condition keys supported by each operation. **When setting the resource path,** you need to replace the variable parameters such as `$region` and `$account` with your actual parameters. You can also use the `*` wildcard in the path. For related operation examples, see [Console Example](https://intl.cloud.tencent.com/document/product/213/10312).
+>! CBS API operations not listed in the table do not support resource-level permission. You can still authorize a user to perform these operations, but you must specify `*` as the resource element in the policy statement.
 >
 
 <span id="CBSCorrelation"></span>
-### CBS instance resources
-
-| API Operation | Resource Path | Condition Key |
-| :-------- | :--------| :------ |
-| [AttachDisks](https://intl.cloud.tencent.com/document/product/362/16313) | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| [CreateDisks](https://intl.cloud.tencent.com/document/product/362/16312) | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| [DescribeDiskOperationLogs](https://intl.cloud.tencent.com/document/product/362/32170) | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| [DescribeDisks](https://intl.cloud.tencent.com/document/product/362/16315) | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| [DetachDisks](https://intl.cloud.tencent.com/document/product/362/16316) | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| [ModifyDiskAttributes](https://intl.cloud.tencent.com/document/product/362/15659) | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| ModifyDisksChargeType | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| ModifyDisksRenewFlag | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| RenewDisk | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310) | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-| [TerminateDisks](https://intl.cloud.tencent.com/document/product/362/16321) | `qcs::cvm:$region:$account:volume/*`<br>`qcs::cvm:$region:$account:volume/$diskId` | cvm:region<br>cvm:zone<br>cvm:disk_type |
-
+### CBS APIs
+<table>
+<thead>
+<tr>
+<th align="left">API Operation</th>
+<th align="left">Resource Path</th>
+<th align="left">Condition Key</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/362/16313" target="_blank">Mount a cloud disk<br>AttachDisks</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/362/16312" target="_blank">Create a cloud disk<br>CreateDisks</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/362/32170" target="_blank">Query the list of cloud disk operation logs<br>DescribeDiskOperationLogs</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/362/16315" target="_blank">Query the list of cloud disks<br>DescribeDisks</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/362/16316" target="_blank">Unmount a cloud disk<br>DetachDisks</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/362/15659" target="_blank">Modify the attributes of cloud disks<br>ModifyDiskAttributes</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left">Change the billing mode of an elastic cloud disk<br>ModifyDisksChargeType</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left">Modify the renewal flag of a cloud disk<br>ModifyDisksRenewFlag</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left">Renew a cloud disk<br>RenewDisk</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/362/16310" target="_blank">Expand the capacity of a cloud disk<br>ResizeDisk</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/362/16321" target="_blank">Return a cloud disk<br>TerminateDisks</a></td>
+<td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
+<td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
+</tr>
+</tbody></table>
 
 
 
