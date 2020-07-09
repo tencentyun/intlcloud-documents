@@ -1,4 +1,4 @@
->?Billing for API Gateway started at 23:59:59, February 13, 2020. Please [top up](https://console.cloud.tencent.com/expense/recharge) your Tencent Cloud account in time in order to avoid potential service suspension.
+>?Billing for API Gateway started at 23:59:59, February 13, 2020. Please [top up](https://console.cloud.tencent.com/expense/recharge) your Tencent Cloud account timely in order to avoid potential service suspension.
 
 ## Billing Mode
 API Gateway is billed on a pay-as-you-go basis.
@@ -35,7 +35,7 @@ Billable items of API Gateway include call fees and traffic fees.
 - Billable item: API calls
 - Billing mode: pay-as-you-go
 - Billing cycle: hourly
-- Bill generation time: Tencent Cloud generates hourly bills for API calls, typically within 30 minutes after the end of the current billing cycle. After a bill is generated, the fees will be automatically deducted from the account balance for settlement. If your account balance is insufficient to fulfill the payment, your account will fall into arrears
+- Bill generation time: Tencent Cloud generates hourly bills for API calls, typically within 30 minutes after the end of the current billing cycle. After a bill is generated, the fees will be automatically deducted from the account balance for settlement. If your account balance is insufficient to make the payment, your account will fall into arrears
 - Deduction method: after a bill is generated, the fees will be automatically deducted from your account balance for settlement
 - Billing currency: USD
 - Effective calls: number of effective API call requests received by API Gateway. A request that is not a [frontend error](https://intl.cloud.tencent.com/document/product/628/31717) will be considered as an effective call and billed
@@ -78,5 +78,3 @@ The backend business is in a different region from API Gateway and receives five
 
 **Related links**
 For more information on arrears processing in API Gateway, data retention and purge schedule, and billing descriptions, please see [Notes on Arrears](https://intl.cloud.tencent.com/document/product/628/11934) for API Gateway.
-
-This pricing document  is for reference only. See your bill for the actual price.

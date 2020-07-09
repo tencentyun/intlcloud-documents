@@ -1,5 +1,5 @@
 ## Full-Lifecycle API Management
-* API Gateway provides management features throughout API lifecycle from creation, configuration, modify, testing, and launch to operation and deactivation.
+* API Gateway provides management features throughout API lifecycle from creation, configuration, modification, testing, and launch to operation and deactivation.
 * It provides three environments, namely, testing, pre-release, and release, for easier API publishing and allows rollback of the specified environment to a specific version at any time.
 
 ## API Traffic Control

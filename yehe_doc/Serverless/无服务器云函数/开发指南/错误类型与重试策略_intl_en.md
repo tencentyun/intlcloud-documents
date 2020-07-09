@@ -24,7 +24,7 @@ Different **error types** and **invocation methods (sync or async invocation)** 
 There are three types of sync invocation: sync invocation by [TencentCloud API trigger](https://intl.cloud.tencent.com/document/product/583/18198), [API Gateway trigger](https://intl.cloud.tencent.com/document/product/583/12513), and [CKafka trigger](https://intl.cloud.tencent.com/document/product/583/17530).
 In sync invocation, the error message will be directly returned; therefore, when an error occurs in sync invocation, the platform will not automatically retry, and the retry policy (i.e., whether to retry and the number of retries) will be determined by the invoker.
 
->A CKafka trigger will create a backend module as a consumer that can connect to a CKafka instance and consume messages. After obtaining the message, the backend module will synchronously invoke the triggered function. Since the backend module of the CKafka trigger is maintained by SCF, the retry policy for sync invocation will also be controlled by SCF:
+>!A CKafka trigger will create a backend module as a consumer that can connect to a CKafka instance and consume messages. After obtaining the message, the backend module will synchronously invoke the triggered function. Since the backend module of the CKafka trigger is maintained by SCF, the retry policy for sync invocation will also be controlled by SCF:
 >- For execution errors (including user code errors and runtime errors), the CKafka trigger will retry according to the configured retry times, which is 10,000 by default.
 >- For overrun errors and system errors, the CKafka trigger will continue to retry in an exponential backoff manner until it succeeds.
 
@@ -36,9 +36,12 @@ When the following types of errors occur in async invocation, the retry policies
   - **Invocation request error** and **invoker error**: when an error of this type occurs, the SCF platform will not retry, because events that fail due to this type of errors will not succeed even after retries.
 
 ## Dead Letter Queue
-A dead letter queue is a CMQ queue under your account that is used to collect error event information and analyze causes of failures. If you have configured a dead letter queue for a function, when an event still fails after the SCF platform retries it twice due to a **user code execution error** or for more than 24 hours due to an **overrun error** or **system error**, the event will be sent to the dead letter queue.
+A dead letter queue is a CMQ queue under your account that is used to collect error event information and analyze causes of failures. If you have configured a dead letter queue for a function, an event will be sent to the dead letter queue if:
+It still fails after the SCF platform retries it twice due to a **user code execution error**
+It still fails after the SCF platform retries it for more than 24 hours due to an **overrun error** or **system error**
+*Message retention in the [async queue](https://intl.cloud.tencent.com/document/product/583/9694) reaches the upper limit.
 
->The dead letter queue feature is currently in beta test. If you want to try it out, please apply for activation of CMQ.
+>?The dead letter queue feature is currently in beta test. If you want to try it out, please apply for activation of CMQ.
 
 ### Dead letter queue message attributes
 - **RequestID**: unique event ID
@@ -46,11 +49,11 @@ A dead letter queue is a CMQ queue under your account that is used to collect er
 - **ErrorMessage**: error message
 
 ### Dead letter queue creation process
->SCF currently supports a CMQ topic or queue as the dead letter queue for your choice.
+>?SCF currently supports a CMQ topic or queue as the dead letter queue for your choice.
 >
 1. Log in to the [CMQ Console](https://console.cloud.tencent.com/cmq/index?rid=1) and create a dead letter queue.
 CMQ topics support filtering by tag or route match. To ensure that your subscribers can receive all error messages, when adding a subscriber, please leave the tag filter **empty** and enter **"#"** for the `BindingKey` filter.
 2. Log in to the [SCF Console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) and create a function.
- The executor role of the function must have access permission to the CMQ topic and queue, which has already been configured for the default executor role in SCF. If you use a custom role, be sure to grant it such permission.
+ The executing role of the function must have access permission to the CMQ topic and queue, which has already been configured for the default executing role in SCF. If you use a custom role, be sure to grant it such permission.
 3. Configure the dead letter queue.
  You can configure the dead letter queue on the "Create Function" or "Configure Function" page.
