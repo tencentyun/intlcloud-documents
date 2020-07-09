@@ -14,7 +14,7 @@ A VPC has at least one subnet, and Tencent Cloud service resources can only be a
     - `192.168.0.0` - `192.168.255.255` (mask range required to be between 16 and 28)
  - The subnet CIDR must be within or the same as the VPC CIDR.
  For example, if the IP range of a VPC is `192.168.0.0/16`, then the IP ranges of subnets in it can be `192.168.0.0/16` or `192.168.0.0/17` for example.  
-![2](https://main.qcloudimg.com/raw/ac2da453ceee6edd0e1b870ac09ebf12.png)
+
 
 ## Step 2. Create a subnet
 You can create one or more subnets at the same time.
@@ -22,7 +22,7 @@ You can create one or more subnets at the same time.
 2. Click **Subnet** on the left sidebar to enter the management page.
 3. Select the region and VPC of the subnet to be created and click **+Create**.
 4. Enter the subnet's name, CIDR, availability zone, and associated route table.
-![2](https://main.qcloudimg.com/raw/4342b99b376f29713dd9d586c0c9c3ae.png)
+
 5. (Optional) Click **+New Line** to create multiple subnets at a time.
 6. Click **Create**.
 
@@ -31,19 +31,19 @@ You can create a custom route table, edit its routing policy, and associate it w
 1. Log in to the VPC Console and select **Route Tables** on the left sidebar.
 2. Select the region and VPC at the top of the list and click **+Create**.
 3. In the dialog box that pops up, enter the name, network, and new routing policy and click **Create**. Return to the route table list and you can see the created routing table.
-![](https://main.qcloudimg.com/raw/c37ef94846e925018ea519547fb08219.png)
+
 4. Select **Subnet** on the left sidebar in the console, select the subnet to be associated with the routing table, and click **Change Route Table** in the **Operation** column to associate it.
 
 ## Step 4. Add a CVM instance
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnet** on the left sidebar to enter the management page.
 3. Click the "Add CVM" icon in the row of the subnet where the CVM is to be added.
-![](https://main.qcloudimg.com/raw/494ee004004e5a6945af65b3ccf2f34c.png)
+
 4. Complete the purchase of a CVM instance as prompted on the page. For more information, please see [Purchase Methods](https://intl.cloud.tencent.com/document/product/213/506) in the CVM documentation.
 
 ## Step 5. Add a TencentDB instance
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) and click **Create Instance** to enter the purchase page.
 2. In the **Network Type** section on the purchase page, select **VPC**, choose the previously created VPC and the corresponding subnet, and add the newly purchased TencentDB instance to the VPC.
-![](https://main.qcloudimg.com/raw/4c6e7a353898521351145fecbd723f4e.png)
+
 
 

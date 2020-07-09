@@ -9,7 +9,7 @@ If you forgot your database account password or need to change it while using Te
 ## Directions
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
 2. Select the **Manage Account** tab, select the target account, and click **Reset Password** in the "Operation" column.
-![](https://main.qcloudimg.com/raw/1d49091d1a808fc302243eafd7f3211c.png)
+
 3. In the pop-up dialog box, enter and confirm the new password and then click **OK**.
 >The database password should contain 8–32 characters in at least two of the following character types: letters, digits, and special symbols (_+-&=!@#$%^*()[]).
 
