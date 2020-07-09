@@ -52,7 +52,7 @@ Hybrid storage is ideal for scenarios where hot data degrades to cold data over 
 Because cold data needs to be read from disks, the latency of accessing cold data in Hybrid Storage Edition will significantly increase to tens or even hundreds of milliseconds, while the access delay in Redis Memory Edition is less than 1 ms. Therefore, Hybrid Storage Edition is not recommended for a latency-sensitive scenario.
 
 ## Specifications
->
+>?
 >- The minimum disk capacity must be greater than the memory capacity, otherwise the data may not be written.
 >- The memory caches all keys and only evicts values, so the memory may not be able to cache all keys due to too small disk capacity configuration. Please evaluate the disk space.
 >- Run the following `set` command with the 128-byte value to test the maximum write performance:
@@ -60,20 +60,20 @@ Because cold data needs to be read from disks, the latency of accessing cold dat
 redis-benchmark -h 10.0.0.5 -p 6379 -c 100 -n 60000000 -r 1000000000 -d 128 -t set -a passwd
 ```
 
-| Shard Quantity|Total Cache Capacity (GB)| Total Disk Capacity Range (GB)|Maximum Write Performance (QPS)|
-| -----| -----| ---- | ---- |
-| 4 | 64 | 240 - 520|60,000|
-| 4 | 128 | 480 - 960|60,000|
-| 4 | 256 | 1,000 - 2,000|60,000|
-| 8 | 128 | 480 - 960|120,000|
-| 8 | 256 | 960 - 1,920|120,000|
-| 8 | 512 | 2,000 - 4,000|120,000|
-| 16 | 256 | 960 - 1,920|240,000|
-| 16 | 512 | 1,920 - 3,840|240,000|
-| 16 | 1,024 | 4,000 - 8,000|240,000|
-| 32 | 512 | 3,840 - 7,680|480,000|
-| 32 | 1,024 | 7,680 - 15,360|480,000|
-| 32 | 2,048 | 16,000 - 32,000|480,000|
+| Shard Quantity | Total Cache Capacity (GB) | Total Disk Capacity Range (GB) | Maximum Write Performance (QPS) |
+| -------------- | ------------------------- | ------------------------------ | ------------------------------- |
+| 4              | 64                        | 240 - 520                      | 60,000                          |
+| 4              | 128                       | 480 - 960                      | 60,000                          |
+| 4              | 256                       | 1,000 - 2,000                  | 60,000                          |
+| 8              | 128                       | 480 - 960                      | 120,000                         |
+| 8              | 256                       | 960 - 1,920                    | 120,000                         |
+| 8              | 512                       | 2,000 - 4,000                  | 120,000                         |
+| 16             | 256                       | 960 - 1,920                    | 240,000                         |
+| 16             | 512                       | 1,920 - 3,840                  | 240,000                         |
+| 16             | 1,024                     | 4,000 - 8,000                  | 240,000                         |
+| 32             | 512                       | 3,840 - 7,680                  | 480,000                         |
+| 32             | 1,024                     | 7,680 - 15,360                 | 480,000                         |
+| 32             | 2,048                     | 16,000 - 32,000                | 480,000                         |
 
 
 
@@ -83,7 +83,7 @@ redis-benchmark -h 10.0.0.5 -p 6379 -c 100 -n 60000000 -r 1000000000 -d 128 -t s
 When you set a timeout period for keys or use the `expire` command, both keys and values will be evicted from the memory; otherwise, only values will be evicted.
 - **value-eviction-policy**
  - Through `value-eviction-policy`, you can set how many days a value has not been accessed before it is automatically evicted from the memory.
- - The default value of this parameter is 7 days. It is expected that this parameter can be modified by users in the console in June, 2020.
+ - The default value of this parameter is 7 days. It is expected that this parameter can be modified by users in the console in August, 2020.
 - **maxmemory-policy**
  - Hybrid Storage Edition only supports `allkeys-lru` (default) and `allkeys-random`.
  - When Redis memory usage reaches `maxmemory`, the system evicts values from the memory according to `maxmemory-policy`.
@@ -152,4 +152,3 @@ Hybrid Storage Edition (cluster architecture) supports the `SELECT 0` command bu
 - **Poor-performance commands**
   - `linsert` and `lrem`: the `linsert` and `lrem` commands in the List command family have poor performance and are not recommended thus. They will traverse the list nodes in the disk with the O(n) execution time complexity. If there are many list nodes, the command execution will time out.
   - `append`: the `append` command performs poorly when the character size exceeds 1 MB.
-
