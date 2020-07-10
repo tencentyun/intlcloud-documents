@@ -27,7 +27,7 @@ $ mkdir tencent-scf && cd tencent-scf
 
 Use the following command and template link to quickly create an SCF application:
 ```
-$ serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/v2/example
+$ serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/master/example
 $ cd example
 ```
 

@@ -81,7 +81,7 @@ inputs:
               method: GET
 ```
 
-View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-scf/blob/v2/doc/serverless.yaml).
+View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md).
 
 After you update the configuration fields according to the configuration file, run `serverless deploy` or `serverless` again to update the configuration to the cloud.
 

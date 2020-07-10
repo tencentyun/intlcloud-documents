@@ -1,3 +1,34 @@
+## June 2020
+
+<table>
+<thead>
+    <tr>
+        <th width=20%>Update</th>
+        <th width=44%>Description</th>
+        <th width=16%>Release Date</th>
+        <th width=20%>Documentation</th>
+    </tr>
+</thead>
+<tbody><tr>
+<td>Bulletin board is added</td>
+<td>A bulletin board module is added on the **Product Management** page in the console to display notifications for product updates and services changes</td>
+<td>June 10, 2020</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Reminder for lengthy notification text is available</td>
+<td>When you enter the notification title/content in the console, if the text cannot be fully displayed on some device models, the console will display the corresponding reminder, which does not affect the normal delivery of the push</td>
+<td>June 10, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/35286">Text Length Limit Description</a></td>
+</tr>
+<tr>
+<td>The toolbox feature is updated</td>
+<td>In the toolbox, you can query some basic attributes of a device by token</td>
+<td>June 10, 2020</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
 ## May 2020
 
 <table>
@@ -7,6 +38,12 @@
         <th width=16%>Release Date</th>
         <th width=20%>Documentation</th>
     </tr>
+<tr>
+        <td>Push funnel data at the application level is available</td>
+        <td>Data for daily and real-time trends in message delivery, arrival (PV/UV), click, and dismissal at the application level is provided and can be viewed by channel</td>
+        <td>May 25, 2020</td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/36384">Data Overview</a></td>
+    </tr> 
     <tr>
         <td>Task-level channel selection is supported</td>
         <td>A push channel can now be specified for a single push to save the vendor channel quota</td>
@@ -156,7 +193,7 @@
     </tr>
     <tr>
         <td>The toolbox is launched</td>
-        <td>Troubleshooting tools are launched for querying device information by token, binding accounts and tags, and quickly identifying push issues in a self-service manner</td>
+        <td>A troubleshooter is launched for querying device information by token, binding accounts and tags, and quickly identifying push issues in a self-service manner</td>
         <td>December 19, 2019</td>
         <td>-</td>
     </tr>

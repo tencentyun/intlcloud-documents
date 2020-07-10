@@ -44,7 +44,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_task_stat_channel
 | pushOnlineUv        | Integer  | 实际发送                                                     |
 | verifySvcUv         | Integer  | 抵达设备（仅 TPNS 通道、ROG 通道、FCM 通道有效。其他厂商通道由 TPNS 实际发送 pushOnlineUv 指标补齐） |
 | callbackVerifySvcUv | Integer  | 厂商通道抵达回执（限华为、OPPO、 vivo、小米通道有效。厂商通道回执配置请参考 [厂商通道抵达回执获取指南](https://intl.cloud.tencent.com/document/product/1024/35246)） |
-| verifyUv            | Integer  | 展示                                                         |
+| verifyUv            | Integer  | 展示（已废弃，后续会下线此字段）                             |
 | clickUv             | Integer  | 点击                                                         |
 | cleanupUv           | Integer  | 清除                                                         |
 
