@@ -8,9 +8,9 @@ After a component configuration item is modified, the corresponding service need
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
 2. In **Cluster Service**, click **Restart Service**, or select the block of the component to be restarted, check the service **role** to be restarted in **Operation** > **Role Management**, and click **Restart Service**.
  - When restarting the service directly on the cluster details page, you need to select the service name, service role, restart method, whether to enable rolling restart, and failure-handling policy.
-![](https://main.qcloudimg.com/raw/1bce92a1ba5e1213bdf2ab665e94ef63.png)
+![](https://main.qcloudimg.com/raw/b3117cc5580453d007ed0e888bb18fc2.png)
  - When restarting the service in the component block, you only need to select the restart method and failure-handling policy.
-![](https://main.qcloudimg.com/raw/0eb02c94b2f62b653ce39a9b2d4aaed6.png)
+![](https://main.qcloudimg.com/raw/821cdec6cb6ee7649c9d33bfb1528b35.png)
 4. The restart methods supported by the service components are as follows:
 <table>
    <tr>
