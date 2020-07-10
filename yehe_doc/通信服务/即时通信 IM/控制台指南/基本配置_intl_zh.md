@@ -5,7 +5,7 @@
 单击【业务版本】区域的【升级】，您可以升级应用的业务版本或配置。具体操作请参见 [升级应用](https://intl.cloud.tencent.com/document/product/1047/34577)。
 
 ## 配置基础信息
-![](https://main.qcloudimg.com/raw/6e02515de636967bfa924a077ed0a5c4.png)
+![](https://main.qcloudimg.com/raw/867f34d67ddcca7de31ff17327dee744.png)
 在【基本信息】区域，您可以执行以下操作：
 - 编辑该应用的基本信息，包括应用名称、应用类型和应用简介。
 - 停用/删除该应用。
@@ -45,7 +45,7 @@
 
 ## 配置帐号管理员
 帐号管理员可用于调用 REST API 接口、解散群等功能，您可以直接使用系统默认的帐号管理员`administrator`，也可以手动添加新的帐号管理员。每个应用支持5个帐号管理员。
-![](https://main.qcloudimg.com/raw/19db2d23fd7ae62d0fa95c4e37458387.png)
+![](https://main.qcloudimg.com/raw/9cf8914c53cb998fd7ee619ef30836a9.jpg)
 <span id="AddAdmin"></span>
 ###  添加管理员
 1. 单击【帐号管理员】右侧的【添加管理员】。
@@ -64,9 +64,9 @@
 1. 单击对应平台推送设置区域的【添加证书】。
 2. 根据弹出的添加证书对话框，配置相关参数：
  - 添加 Android 证书
- ![](https://main.qcloudimg.com/raw/11842c1b9d44d7a13e53457ebc0d189d.png)
+ ![](https://main.qcloudimg.com/raw/7821c57eef8b7a63019df23eb347720f.jpg)
  - 添加 iOS 证书
- ![](https://main.qcloudimg.com/raw/416ec3e78bf7846fae2276d56df1256d.png)
+ ![](https://main.qcloudimg.com/raw/dc629d1f3ae746e699919930b1f99024.png)
 3. 单击【确认】保存配置。
 
 ### 编辑离线推送证书
