@@ -54,7 +54,8 @@ Upload the Hive script file and hive-site.xml to a directory in HDFS, such as `/
  - Switch to the hadoop user. At the top of the Hue Console, select **Query** > **Scheduler** > **Workflow**.
 ![](https://main.qcloudimg.com/raw/17e2c9e91bef6c67d7f6721eeb1a490e.png)
  - Drag a Hive script into the workflow editing page.
->!The document takes the installation of Hive 1 as an example, where the configuration parameter should be `HiveServer1`. Errors will be reported if other Hive versions are deployed at the same time (or if the configuration parameters of other Hive versions are used).
+>!This document uses the installation of Hive v1 as an example, and the configuration parameter is HiveServer1. If it is deployed with other Hive versions (i.e., configuring configuration parameters of other versions), an error will be reported.
+>
 ![](https://main.qcloudimg.com/raw/128170644bbef8f40743ea0f72a35a0e.png)
  - Select the Hive script and hive-site.xml files you just uploaded.
 ![](https://main.qcloudimg.com/raw/1bdf334d89fa1be9fcee003d8328ff4d.png)
