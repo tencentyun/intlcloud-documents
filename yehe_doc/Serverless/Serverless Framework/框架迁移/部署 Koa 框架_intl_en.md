@@ -70,7 +70,7 @@ inputs:
       - https
     environment: release
 ```
-[Detailed Configuration >>](https://github.com/serverless-components/tencent-koa/blob/v2/docs/configure.md)
+[Detailed Configuration >>](https://github.com/serverless-components/tencent-koa/blob/master/docs/configure.md)
 
 ### 4. Deploy
 
