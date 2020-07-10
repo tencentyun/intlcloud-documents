@@ -8,12 +8,12 @@ Face Recognition provides online API call services billed by the number of calls
 | Monthly API Calls	|0 < Calls ≤ 3 million 	|3 million < Calls ≤ 15 million	| Calls > 15 million |
 |------|------|-------|-------|
 | Face detection and analysis 	|0.0005 USD/call	|0.0004 USD/call	|0.0003 USD/call|
-| Facial feature localization	|0.002 USD/call	|0.0018 USD/call |	0.0015 USD/call |
-| Face comparison |	0.0032 USD/call	|0.003 USD/call |	0.0027 USD/call |
-| Face verification 	|0.0032 USD/call 	|0.003 USD/call |	0.0027 USD/call |
-| Face search |	0.0032 USD/call 	|0.003 USD/call |	0.0027 USD/call |
-| Group management 	|0.0032 USD/call |	0.003 USD/call |	0.0027 USD/call |
-| Image-based liveness detection	|0.0019 USD/call	|0.0017 USD/call	|0.0013 USD/call|
+| Facial feature localization	|0.0008 USD/call	|0.0006 USD/call |	0.0004 USD/call |
+| Face comparison |	0.0008 USD/call	|0.0006 USD/call |	0.0004 USD/call |
+| Face verification 	|0.0008 USD/call 	|0.0006 USD/call |	0.0004 USD/call |
+| Face search |	0.0008 USD/call 	|0.0006 USD/call |	0.0004 USD/call |
+| Group management 	|0.0008 USD/call |	0.0006 USD/call |	0.0004 USD/call |
+| Image-based liveness detection	|0.0008 USD/call	|0.0006 USD/call	|0.0004 USD/call|
 
 
 >!
