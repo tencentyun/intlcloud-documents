@@ -1,3 +1,32 @@
+## May 2020
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Interactive display and operation paths in the console are optimized</td>
+<td>Operation paths are in a clearer structure to make it easier to manage services.</td><td>May 15, 2020</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ClickHouse cluster service monitoring is supported</td>
+<td>This enables you to stay on top of the ClickHouse running status.</td><td>May 15, 2020</td>
+<td><a href=""https://intl.cloud.tencent.com/document/product/1026/31121#clickhouse-.E9.9B.86.E7.BE.A4.E7.9B.91.E6.8E.A7.E6.8C.87.E6.A0.87"" target=""_blank"">- </a></td>
+</tr>
+<tr>
+<td>Status monitoring is added in role management</td>
+<td>This enables you to stay on top of the real-time status of role processes.</td>
+<td>May 15, 2020</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
 ## April, 2020
 <table>
 <thead>
