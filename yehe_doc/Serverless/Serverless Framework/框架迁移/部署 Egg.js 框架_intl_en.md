@@ -61,7 +61,7 @@ inputs:
     environment: release
 ```
 
-[Detailed Configuration >>](https://github.com/serverless-components/tencent-egg/blob/v2/docs/configure.md)
+[Detailed Configuration >>](https://github.com/serverless-components/tencent-egg/blob/master/docs/configure.md)
 
 ### 3. Deploy
 
