@@ -27,14 +27,14 @@ $ mkdir tencent-scf && cd tencent-scf
 
 Use the following command and template link to quickly create an SCF application:
 ```
-$ serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/master/example
+$ serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/v2/example
 $ cd example
 ```
 
 After download, the directory structure is as follows:
 ```
 |- src
-|   └── index.py
+|   └── index.js
 └──  serverless.yml
 ```
 
@@ -42,7 +42,7 @@ After download, the directory structure is as follows:
 
 Run `serverless deploy` in the directory under the `serverless.yml` file to deploy the function. After the deployment is completed, you can view the URL address provided by the corresponding gateway trigger of the function in the output on the command line. Then, you can click the address to view the deployment effect of the function.
 
-If you haven't [logged in to](https://intl.cloud.tencent.com/login) or [sign up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, do so first.
+Authentication is required during deployment. If you have not [logged in to](https://intl.cloud.tencent.com/login) or [signed up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, please log in or sign up first.
 
 If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
 
@@ -56,11 +56,11 @@ The following is the complete configuration description for `serverless.yml` of 
 ```yml
 # serverless.yml
 
-component: scf # (Required) Reference the name of the component, which is the `tencent-scf` component in this example
-name: scfdemo # (Required) Name of the instance created by this component
-org: test # (Optional) Used to record organization information. Default value: your Tencent Cloud account's `appid`
-app: scfApp # (Optional) SCF application name
-stage: dev # (Optional) Used to distinguish between environments. Default value: dev
+component: scf # Name of the imported component, which is required. The `tencent-scf` component is used in this example
+name: scfdemo # Name of the instance created by this component, which is required
+org: test # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
+app: scfApp # SCF application name, which is optional
+stage: dev # Information for identifying environment, which is optional. The default value is `dev`
 
 inputs:
   name: scfFunctionName
@@ -83,7 +83,7 @@ inputs:
               method: GET
 ```
 
-View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md).
+View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-scf/blob/v2/doc/configure.md).
 
 After you update the configuration fields according to the configuration file, run `serverless deploy` or `serverless` again to update the configuration to the cloud.
 
