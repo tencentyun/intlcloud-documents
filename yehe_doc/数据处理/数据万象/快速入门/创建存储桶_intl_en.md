@@ -1,4 +1,4 @@
-CI provides the storage feature based on [Cloud Object Storage (COS)](https://cloud.tencent.com/document/product/436). A bucket is a carrier that stores images in COS. You can use the Tencent Cloud console, API, or SDK to create and manage buckets. A bucket can store multiple objects.
+CI provides the storage feature based on [Cloud Object Storage (COS)](https://intl.cloud.tencent.com/document/product/436). A bucket is a carrier that stores images in COS. You can use the Tencent Cloud console, API, or SDK to create and manage buckets. A bucket can store multiple objects.
 
 
 ## Directions
