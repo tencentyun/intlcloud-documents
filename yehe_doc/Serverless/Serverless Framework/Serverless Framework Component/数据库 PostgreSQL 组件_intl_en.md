@@ -69,7 +69,7 @@ inputs:
 ```
 The PostgreSQL ServerlessDB component supports "zero" configuration deployment, that is, it can be deployed directly through the default values in the configuration file. Nonetheless, you can also modify more optional configuration items to further customize your project.
 
-[Detailed Configuration >>](https://github.com/serverless-components/tencent-postgresql/blob/v2/docs/configure.md)
+[Detailed Configuration >>](https://github.com/serverless-components/tencent-postgresql/blob/master/docs/configure.md)
 
 >!Currently, PostgreSQL for Serverless instances can be created and deployed only in **Beijing Zone 3**, **Guangzhou Zone 2**, and **Shanghai Zone 2**. Therefore, when entering the region and AZ in the YAML file, please be sure to enter a correct region and corresponding VPC and subnet information.
 

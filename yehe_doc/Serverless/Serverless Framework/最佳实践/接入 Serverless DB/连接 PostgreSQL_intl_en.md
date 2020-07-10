@@ -13,7 +13,7 @@ SDK: 2.3.0
 Components: 2.30.1
 ```
 
-
+-  Make sure that the current account has been associated with the  **QcloudPostgreSQLFullAccess** policy. To learn more about the association, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 ## Directions
 This document uses a function in the Node.js programming language as an example to describes how to use the Serverless Framework component to write and create a function and use it to access a PostgreSQL database. The configuration process is as follows:
@@ -83,7 +83,7 @@ inputs:
 1. Create an `api` folder in `test-postgreSQL` to store the business logic code and relevant dependencies.
 2. Create an `src` folder in the `api` folder, enter it on the command line, and run the following command to install the [PostgreSQL dependency package](https://www.npmjs.com/package/pg):
 ```
-npm install npm
+npm install pg
 ```
 3. Create an `index.js` file in the `src` folder and enter the following sample code, so that you can use the Serverless DB SDK to create a connection pool and call the database through the function:
 ```
@@ -172,7 +172,7 @@ fullstack-serverless-db:
 25s › fullstack-serverless-db › Success
 ```
 2. After the deployment succeeds, you can view and debug the function in the [SCF Console](https://console.cloud.tencent.com/scf/index?rid=1). For more information on the test steps, please see [Cloud Test](https://intl.cloud.tencent.com/document/product/583/32742). The test success result is as shown below:
-![](https://main.qcloudimg.com/raw/46a5f3397cdaac7c6790a5b096cc7c36.png)
+![](https://main.qcloudimg.com/raw/c3dba8555c20e92559cb9541ce6da8d5.png)
 >You can also use [Serverless Dashboard](https://serverless.cloud.tencent.com/) to monitor the deployed project in real time with ease.
 >
 
