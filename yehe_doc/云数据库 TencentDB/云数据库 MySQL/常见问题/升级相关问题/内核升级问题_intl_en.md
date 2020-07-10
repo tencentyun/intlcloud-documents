@@ -1,12 +1,18 @@
-### How do I upgrade the Kernel minor version?
-TencentDB for MySQL supports automatic Kernel minor version upgrade. The upgrade can add new features, improve the performance, and fix issues. It will be triggered automatically in the following scenarios:
-- Scenario 1: when a severe bug or security vulnerability occurs in TencentDB for MySQL, the system will upgrade the database Kernel minor version during the maintenance window and send upgrade notifications through Message Center and SMS.
-- Scenario 2: when an instance undergoes database version upgrade or configuration adjustment, it will be upgraded to the latest Kernel minor version.
+### How do I upgrade the kernel minor version?
+TencentDB for MySQL supports automatic or manual kernel minor version upgrade. The upgrade can add new features, improve the performance, and fix issues.
+
+- **Automatic upgrade**:
+ - Scenario 1: when a severe bug or security vulnerability occurs in TencentDB for MySQL, the system will upgrade the database kernel minor version during the maintenance window and send upgrade notifications through Message Center and SMS.
+ - Scenario 2: when a TencentDB for MySQL instance is migrated due to instance configuration upgrade/downgrade, storage capacity expansion/reduction, or database version upgrade, etc., the system will automatically upgrade the instance’s kernel to the latest minor version.
+- **Manual upgrade**:
+You can also manually upgrade kernel minor version in the console. For more information, please see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/zh/document/product/236/36816).
+
 >
->- The instance cannot be downgraded once upgraded to the latest Kernel minor version.
+>- The instance cannot be downgraded once upgraded to the latest kernel minor version.
 >- Operations such as database version upgrade and configuration adjustment are accompanied by a momentary disconnection from the TencentDB for MySQL instance. Please make sure that your business has a reconnection mechanism.
 
-### How do I check the Kernel minor version?
+
+### How do I check the kernel minor version?
 1. Log in to the [CVM instance](https://intl.cloud.tencent.com/document/product/213/10517) and run the following command to log in to the TencentDB for MySQL instance. For more information, please see [Accessing TencentDB for MySQL from Linux CVM](https://intl.cloud.tencent.com/document/product/236/3130).
  Private network access:
 ```
@@ -14,7 +20,7 @@ mysql -h hostname -u username -p
 ```
  Public network access:
 ```
-mysql -h [TencentDB IP] -P[TencentDB port number] -uroot -p
+mysql -h [database IP] -P[database port] -uroot -p
 ```
 2. Run the following command to check the version number of the TencentDB for MySQL instance.
 ```
