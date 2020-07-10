@@ -2,11 +2,11 @@
 存储桶创建成功后，您可以上传文件至存储桶并查看文件信息。
 1. 在 [数据万象控制台](https://console.cloud.tencent.com/ci)，单击【存储桶管理】，进入存储桶列表。
 2. 找到您需要存储文件的存储桶，在其右侧操作栏下单击【管理】，进入相应存储桶管理页面。
-![](https://main.qcloudimg.com/raw/6975742b95b4783d80659040f765cf19.png)
+![](https://main.qcloudimg.com/raw/f9f99bcb81b1b7014e6ee5672e68dad5.png)
 3. 选择左侧导航栏【文件管理】页签，单击【上传文件】，在弹出的上传对话框中单击【选择文件】，选择需要上传的文件。
-<img src="https://main.qcloudimg.com/raw/314e1413d47b441634b852f5b08d3a6f.png" width="80%"></img>
+<img src="https://main.qcloudimg.com/raw/7a594033465888185f5ce844ce0f5236.png" width="80%"></img>
 4. 单击【确定】，当文件列表中出现所上传的文件信息时，表示上传成功。
-![](https://main.qcloudimg.com/raw/7d3391a71f51bd87483c7c918c2a7088.png)
+![](https://main.qcloudimg.com/raw/ab7c66f56b99a23ffda69d3517f993e7.png)
 >若上传同名文件时，将直接覆盖原文件。
 
 
@@ -16,4 +16,4 @@
 1. 在 [数据万象控制台](https://console.cloud.tencent.com/ci)，单击【存储桶管理】，进入存储桶列表。
 2. 找到您存放图片对应的存储桶，在其右侧操作栏下单击【管理】，进入相应存储桶管理页面。
 3. 选择左侧导航栏【文件管理】页签，在文件列表中找到需要查看信息的文件，单击右侧的【文件信息】，系统将弹出文件信息详情框，即可查看该文件的相关信息。
-![](https://main.qcloudimg.com/raw/97c04dd1b90fb8f844818760819382dd.png)
+![](https://main.qcloudimg.com/raw/309d817a10c7fb0477ab4102e08f12df.png)
