@@ -10,5 +10,5 @@ You are not recommended to terminate the core node after the scale-out, as it st
 ## Directions
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
 2. Select **Cluster Resource** > **Resource Management** on the cluster details page and select the Tencent Cloud resources (task or router node) that support scale-in in the node list, and click **Scale In**. If you select nodes of other types, the **Scale In** button will be grayed out.
-![](https://main.qcloudimg.com/raw/12b97af9ad72156e5ad395924a9de6e7.png)
+![](https://main.qcloudimg.com/raw/b146684f52a16a53ba8e92b9ab69ae67.png)
 3. In the pop-up window, confirm the instance for termination (scale-in). If the data disk of a node is a shared metadatabase, the node will be retained, and you need to manipulate it the CBS Console.
