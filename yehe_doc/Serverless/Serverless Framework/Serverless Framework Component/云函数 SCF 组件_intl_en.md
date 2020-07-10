@@ -11,14 +11,14 @@ SCF component features:
 - **Convenient collaboration**: the status information and deployment logs in the cloud make multi-person collaborative development easier.
 
 ## Directions
-#### 1. Install
+### 1. Install
 
 Install the latest version of Serverless Framework through npm:
 ```
 $ npm install -g serverless
 ```
 
-#### 2. Create
+### 2. Create
 
 Create a directory and enter it:
 ```
@@ -27,7 +27,7 @@ $ mkdir tencent-scf && cd tencent-scf
 
 Use the following command and template link to quickly create an SCF application:
 ```
-$ serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/v2/example
+$ serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/master/example
 $ cd example
 ```
 
@@ -38,7 +38,7 @@ After download, the directory structure is as follows:
 └──  serverless.yml
 ```
 
-#### 3. Deploy
+### 3. Deploy
 
 Run `serverless deploy` in the directory under the `serverless.yml` file to deploy the function. After the deployment is completed, you can view the URL address provided by the corresponding gateway trigger of the function in the output on the command line. Then, you can click the address to view the deployment effect of the function.
 
@@ -47,7 +47,7 @@ Authentication is required during deployment. If you have not [logged in to](htt
 If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
 
 
-#### 4. Configure
+### 4. Configure
 
 Tencent Cloud SCF component supports "zero" configuration deployment, that is, it can be deployed directly through the default values in the configuration file. Nonetheless, you can also modify more optional configuration items to further customize your project.
 
@@ -65,7 +65,7 @@ stage: dev # Information for identifying environment, which is optional. The def
 inputs:
   name: scfFunctionName
   src: ./src
-  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9, Nodejs10.15, PHP5, PHP7, Golang1, Java8.
+  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9, Nodejs12.16, PHP5, PHP7, Golang1, Java8.
   region: ap-guangzhou
   handler: index.main_handler
   events:
@@ -83,11 +83,11 @@ inputs:
               method: GET
 ```
 
-View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-scf/blob/v2/doc/configure.md).
+View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-scf/blob/master/doc/configure.md).
 
 After you update the configuration fields according to the configuration file, run `serverless deploy` or `serverless` again to update the configuration to the cloud.
 
-#### 5. Debug
+### 5. Debug
 
 After the SCF application is deployed, the project can be further developed through the debugging feature to create an application for the production environment. After modifying and updating the code locally, you don't need to run the `serverless deploy` command every time for repeated deployment. Instead, you can run the `serverless dev` command to directly detect and automatically upload changes in the local code.
 
@@ -97,7 +97,7 @@ You can enable debugging by running the `serverless dev` command in the director
 
 Currently, in addition to real-time log output, for Node.js applications, cloud debugging is also supported. After the `serverless dev` command is started, it will automatically listen on the remote port and set the function timeout period to 900 seconds temporarily. At this point, you can find the remote debugging path by accessing `chrome://inspect/#devices` and directly debug the code with breakpoints. After the debugging mode ends, you need to deploy the function again to update the code and set the timeout period back to the original value.
 
-#### 6. Check status
+### 6. Check status
 
 In the directory where the `serverless.yml` file is located, run the following command to check the deployment status:
 
@@ -105,7 +105,7 @@ In the directory where the `serverless.yml` file is located, run the following c
 $ serverless info
 ```
 
-#### 7. Remove
+### 7. Remove
 
 In the directory where the `serverless.yml` file is located, run the following command to remove the deployed SCF application. After removal, this component will delete all related resources created during deployment in the cloud.
 
@@ -115,7 +115,7 @@ $ serverless remove
 
 Similar to the deployment process, you can run the `sls remove --debug` command to view real-time log information during the removal process. `sls` is an abbreviation for the `serverless` command.
 
-## Account Configuration
+### Account configuration (optional)
 
 Currently, you can scan a QR code to log in to the CLI by default. If you want to configure persistent environment variables/key information, you can also create a local `.env` file:
 

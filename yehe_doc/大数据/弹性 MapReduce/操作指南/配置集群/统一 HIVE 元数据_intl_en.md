@@ -19,13 +19,13 @@ If you choose to deploy the optional Hive component when creating an EMR cluster
 ## Directions
 ### Creating cluster
 1. Log in to your [Tencent Cloud Account](https://console.cloud.tencent.com/emr) and click [Buy Now](https://buy.cloud.tencent.com/emapreduce#/) on the product overview page. Then, in **Optional Components** on the "AZ and Software Configuration" page, select the Hive component.
-![](https://main.qcloudimg.com/raw/86645904eab7bde9bb3c9f94deff6a6d.png)
+![](https://main.qcloudimg.com/raw/c68a9ec0f2ead0e71107f22e0a100045.png)
 2. Select a Hive metadata storage method (default, EMR-MetaDB, or self-built MySQL database) as needed.
 3. Configure according to the selection and the above restrictions.
 
 ### Installing Hive component subsequently
 1. After you successfully create a cluster, log in to the [EMR Console](https://console.cloud.tencent.com/emr), enter the **Cluster List** page, and click the **ID/Name** or **Details** of the cluster to be managed.
 2. Select **Add Component** in **Cluster Service** and install the Hive component.
-![](https://main.qcloudimg.com/raw/6b5219e8e5fd39f775c42b8405aae1a2.png)
+![](https://main.qcloudimg.com/raw/eaf98a271d734386d17945f0894f4f76.png)
 3. Select a Hive metadata storage method (default, EMR-MetaDB, or self-built MySQL database) as needed.
 4. Configure according to the selection and the above restrictions.

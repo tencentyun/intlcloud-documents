@@ -56,7 +56,7 @@ inputs:
     environment: release
 ```
 
-View [more configurations and descriptions >>](https://github.com/serverless-components/tencent-nextjs/tree/v2/docs/configure.md)
+View [more configurations and descriptions >>](https://github.com/serverless-components/tencent-nextjs/tree/master/docs/configure.md)
 
 ### 3. Deploy
 #### 3.1. Construct static resources

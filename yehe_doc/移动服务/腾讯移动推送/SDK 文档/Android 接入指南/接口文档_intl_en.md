@@ -14,7 +14,7 @@ The path prefix of all APIs' package names is ```com.tencent.android.tpush```. T
 
 The registration API usually provides a compact version and a version with callback. Please choose an appropriate version according to your business needs.
 
-### Registering the device
+### Registering device
 
 #### API description
 
@@ -85,8 +85,8 @@ void appendAccount(Context context, final String account)
 ```
 
 >
->- The account can be email, QQ account number, mobile number, username, etc.
->- If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [REST API](https://tpns.gitbook.io/tpns/pushapi#push-api-ke-xuan-can-shu).
+- The account can be email, QQ account number, mobile number, username, etc.
+- If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [REST API](https://tpns.gitbook.io/tpns/pushapi#push-api-ke-xuan-can-shu).
 
 
 
@@ -103,7 +103,7 @@ XGPushManager.bindAccount(getApplicationContext(),"test");
 
 
 
-### Unbinding Account
+### Unbinding account
 
 #### API description
 
@@ -151,14 +151,14 @@ public interface XGIOperateCallback {
 /**
 * Callback when the operation is successful
 * @param data Business data of a successful operation, such as the token information when registration is successful
-* @param flag Flag tag
+* @param flag   Flag tag
 */
 public void onSuccess(Object data, int flag);
 /**
 * Callback when the operation fails
-* @param data Business data of a failed operation
-* @param errCode Error code
-* @param msg Error message
+* @param data   Business data of a failed operation
+* @param errCode   Error code
+* @param msg   Error message
 */
 public void onFail(Object data, int errCode, String msg);
 }
@@ -223,8 +223,8 @@ XGPushManager.unregisterPush(this);
 The result can be obtained by reloading the `onUnregisterResult` method of `XGPushBaseReceiver`.
 
 >
->- Unregistration operation should not be too frequent; otherwise, it may cause delay in backend sync.
->- Switching accounts does not require unregistration. With multiple registrations, the last registration will automatically take effect.
+- Unregistration operation should not be too frequent; otherwise, it may cause delay in backend sync.
+- Switching accounts does not require unregistration. With multiple registrations, the last registration will automatically take effect.
 
 #### Sample code
 
@@ -255,10 +255,10 @@ TPNS mainly provides two push formats: "push notification" and "in-app message c
 This refers to the content displayed in the notification bar of the device. All operations are performed by TPNS SDK. The application can listen to clicks on notifications. In other words, push notifications delivered on the frontend do not need to be processed by the application and will be displayed in the notification bar by default.
 
 >
->- After the TPNS service is successfully registered, notifications can be delivered without any configuration.
->- In general, combined with custom notification styles, standard notifications can meet most business needs, and if you need more flexible pushes, you can consider using messages.
+- After the TPNS service is successfully registered, notifications can be delivered without any configuration.
+- In general, combined with custom notification styles, standard notifications can meet most business needs, and if you need more flexible pushes, you can consider using messages.
 
-### In-App message command (not displayed in notification bar)
+### In-app message command (not displayed in notification bar)
 
 This refers to the content delivered to the application by TPNS. The application needs to inherit the `XGPushBaseReceiver` API to implement and handle all the operations on its own. In other words, delivered messages are not displayed in the notification bar by default, and TPNS is only responsible for delivering messages from the TPNS server to the application, but not processing the messages, which needs to be done by the application.
 
@@ -454,7 +454,7 @@ Toast.LENGTH_SHORT).show();
 // Get the custom `key-value`
 String customContent = message.getCustomContent();
 if (customContent != null && customContent.length() != 0) {
-try{
+try {
 JSONObject obj = new JSONObject(customContent);
 // key1 is the key configured by the frontend
 if (!obj.isNull("key")) {
@@ -515,10 +515,10 @@ public static void createNotificationChannel(Context context, String channelId, 
 ```java
 XGPushManager.createNotificationChannel(this.getApplicationContext(),"default_message", "Default notification",true, true, true, null);
 ```
-### Dismissing notification
+### Deleting one notification
 #### API description
 
-This API is used to dismiss the notification with the specified ID on the notification bar.
+This API is used to dismiss a notification with a specified ID on the notification bar.
 ```java
 public static void cancelNotifaction(Context context, int id) 
 ```
@@ -532,11 +532,11 @@ public static void cancelNotifaction(Context context, int id)
 ```java
 XGPushManager.cancelNotifaction(context, 1);
 ```
-
+	
 ### Dismissing all notifications
 #### API description
 
-This API is used to dismiss all notification of the application on the notification bar.
+This API is used to dismiss all notifications of the current application on the notification bar.
 
 ```java
 public static void cancelAllNotifaction(Context context) 
@@ -565,7 +565,7 @@ Currently, TPNS provides two types of preset tags:
 
 #### API description
 
-You can set tags for different users and then send mass notifications based on tag names on the frontend. An application can have up to 10,000 tags, each token can have up to 100 tags in one application, and no spaces are allowed in the tag.
+You can set tags for different users and then send mass notifications based on tag names on the frontend. An application can have up to 10,000 tags, and each token can have up to 100 tags in one application. If you want to increase the limits, please submit a ticket for assistance. Each custom tag can be bound to an unlimited number of device tokens, and no spaces are allowed in the tag.
 
 ```java
 public static void setTag(Context context, String tagName) 
@@ -636,8 +636,8 @@ Setting multiple tags at a time will not override tags previously set for this d
 
 
 >
->-  In newly added tags, `:` is the backend keyword. Use it according to your business scenarios.
->- This API should be called at a certain interval (an interval of greater than 5s is recommended); otherwise, update may fail.
+-  In newly added tags, `:` is the backend keyword. Use it according to your business scenarios.
+- This API should be called at a certain interval (an interval of greater than 5s is recommended); otherwise, update may fail.
 
 ```java
 public static void addTags(Context context, String operateName, Set<String> tags) 
@@ -770,6 +770,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 #### Parameter description
 - context: application context
 - pullUp: true (enable session keep-alive), false (disable session keep-alive)
+>If the following log is printed, the session keep-alive feature has been disabled: `I/TPNS: [ServiceUtil] disable pull up other app`.
 
 ### Debug mode
 
@@ -899,7 +900,7 @@ public static void uploadLogFile(Context context, HttpRequestCallback httpReques
         }
     });
 ```
-
+ 
 >You need to enable `XGPushConfig.enableDebug(this, true);` first.
 
 

@@ -4,7 +4,7 @@ TPNS enables the keep-alive feature by default. Please call the following API in
 ```java
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 ```
-If you use the automatic Gradle integration method, please configure the following node under the <application> tag of the `AndroidManifest.xml` file of your application, where ```xxx``` is a custom name. If you use manual integration, please modify the node attributes as follows:
+If you use the automatic gradle integration method, please configure the following node under the <application> tag of the `AndroidManifest.xml` file of your application, where ```xxx``` is a custom name. If you use manual integration, please modify the node attributes as follows:
 
 ```xml
    <!-- Add the following node to the AndroidManifest.xml file of your application, where xxx is a custom name: -->     
@@ -16,6 +16,8 @@ If you use the automatic Gradle integration method, please configure the followi
        android:exported="false" />    
 ```
 
+If the following log is printed in the console, the session keep-alive feature has been disabled: `I/TPNS: [ServiceUtil] disable pull up other app`.
+
 ### Why can't push messages be received?
 Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the obtained token for message push. If pushes cannot be received, please troubleshoot as follows:
 - Please make sure that the SDK is on the latest version. Problems in legacy versions may have already been fixed in the latest version.
@@ -25,9 +27,9 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 ### Why can't pushes be received after registration succeeded?
 - Please check whether the current application package name is the same as that entered when TPNS is registered, and if not, you are recommended to enable multi-package name push.
 - Check whether the network is exceptional on the phone and switch to 4G network for testing.
-- TPNS push includes **notification bar message** and **in-app message** (passthrough message). A notification bar message can be displayed in the notification bar, while an in-app message cannot.
+- TPNS push includes **notification bar message** and **in-app message** (passthrough message). A notification bar message can be displayed on the notification bar, while an in-app message cannot.
 - Confirm that the phone is in normal mode. Some phones may have restrictions on network and activity of the backend TPNS process when in Low Power or Do Not Disturb mode.
-- Check whether the notification bar permission is granted on the phone. On some OPPO and vivo phones, the notification bar permission has to be granted manually.
+- Check whether the notification bar permission is granted on the phone. On some OPPO and Vivo phones, the notification bar permission has to be granted manually.
 
 
 ### Why does device registration fail?
@@ -43,10 +45,8 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 - On Android, after the user exits the application and the TPNS service is disconnected from the TPNS server, messages delivered to the device will become offline messages, which can be retained for up to 72 hours. If there are multiple offline messages, only two can be retained on each device. If messages are pushed after the application is closed, please check whether the `XGPushManager.unregisterPush\(this\)` API has been called if the messages cannot be received when the application is launched again.
 
 
-
-
 ### How do I set the message click event?
-TPNS recommends using Intent for redirection (note: the SDK supports click events by default upon message tap, and the corresponding homepage will be opened. If the redirection operation is set in `onNotifactionClickedResult`, it will conflict with the custom redirection specified in the console/API, resulting in failure of the custom redirection).
+TPNS recommends using Intent for redirection (note: the SDK supports click events by default upon message click, and the corresponding homepage will be opened. If the redirection operation is set in `onNotifactionClickedResult`, it will conflict with the custom redirection specified in the console/API, resulting in failure of the custom redirection).
 **Guide for redirection through Intent:**
 You need to configure the page to redirect to in the client app's manifest:
  - For example, if you want to redirect to the page specified by `AboutActivity`, use the following sample code:
@@ -104,11 +104,11 @@ Uri uri = getIntent().getData();
 
 
 ### What callbacks are supported by vendor channels?
-- Mi channel supports arrival callback and passthrough but not click callback.
-- Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored) but not arrival callback.
-- Meizu channel supports arrival callback and click callback but not passthrough.
-- vivo channel supports click callback but not arrival callback or passthrough.
-- OPPO channel does not support click callback, arrival callback, or passthrough.
+- The Mi channel supports arrival callback and passthrough but not click callback.
+- The Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored) but not arrival callback.
+- The Meizu channel supports arrival callback and click callback but not passthrough.
+- The Vivo channel supports click callback but not arrival callback or passthrough.
+- The OPPO channel does not support click callback, arrival callback, or passthrough.
 
 >Note: if you need to get parameters through the click callback or redirect to a custom page, you can use the intent to do so.
 
@@ -151,10 +151,11 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 #### Troubleshooting for Meizu channel
 - It is similar to the troubleshooting method for the Mi channel. For more information, please see troubleshooting for the Mi channel.
 
+### Why can't messages be displayed on the notification bar after arriving at phones on Meizu Flyme 6.0 or below?
+1. Manual integration is used on Meizu phones on Flyme 6.0 and below.
+2. Automatic integration is used on Meizu phones on Flyme 6.0 and below, and the version of the used TPNS SDK for Android is below 1.1.4.0.
 
-
-### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or below?
-For Meizu phones on higher versions, status bar icons no longer need to be configured. If the SDK for Android is below v1.1.4.0, please store an image named `stat_sys_third_app_notify` in folders for different resolutions of the corresponding drawable.
+In the above two cases, you need to place an image exactly named `stat_sys_third_app_notify` in the drawable folders with different resolutions. For more information, please see the `flyme-notification-res` folder in the [TPNS SDK for Android](https://console.cloud.tencent.com/tpns/sdkdownload).
 
 
 ### How do I solve the conflict between component dependencies when integrating with the Huawei push channel?
@@ -196,6 +197,6 @@ Then, use the `"TpnsPlugin"` keyword for analysis.
 2. Click "sync projects".
 ![](https://main.qcloudimg.com/raw/5fecbe6b63374e7e0e58c4b2cd215acb.png)
 
-3. Check whether there are relevant dependencies in the External Libraries of the project.
+3. Check whether there are relevant dependencies in the external libraries of the project.
 ![](https://main.qcloudimg.com/raw/485c7595f1b478a6fad725d38deb87b4.png)
 
