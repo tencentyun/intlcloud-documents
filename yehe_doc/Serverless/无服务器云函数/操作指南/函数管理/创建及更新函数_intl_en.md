@@ -38,7 +38,7 @@ stage: dev # Information for identifying environment, which is optional. The def
 inputs:
   name: scfFunctionName
   src: ./src
-  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9, Nodejs10.15, PHP5, PHP7, Golang1, Java8.
+  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9,Nodejs12.16, Nodejs10.15, PHP5, PHP7, Golang1, Java8.
   region: ap-guangzhou
   handler: index.main_handler
   events:

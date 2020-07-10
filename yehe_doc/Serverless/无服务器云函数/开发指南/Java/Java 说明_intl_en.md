@@ -10,10 +10,36 @@ The code form of a SCF function developed in Java is generally as follows:
 package example;
 
 public class Hello {
-    public String mainHandler(String name) {
+    public String mainHandler(KeyValueClass kv) {
         System.out.println("Hello world!");
-        return String.format("Hello %s.", name);
+        System.out.println(String.format("key1 = %s", kv.getKey1()));
+        System.out.println(String.format("key2 = %s", kv.getKey2()));
+        return String.format("Hello World");
     }
+}
+```
+Create the parameter `KeyValueClass` class:
+```java
+package example;
+public class KeyValueClass {
+    String key1;
+    String key2;
+    
+    public String getKey1() {
+        return this.key1;
+    }   
+    public void setKey1(String key1) {
+        this.key1 = key1;
+    }   
+    public String getKey2() {
+        return this.key2;
+    }   
+    public void setKey2(String key2) {
+        this.key2 = key2;
+    }   
+    
+    public KeyValueClass() {
+    }   
 }
 ```
 
@@ -37,11 +63,15 @@ In the sample code, the input parameters used by `mainHandler` have two types: `
 
 ## Log
 You can use the following statements in the program to output a log:
-
 ```java
 System.out.println("Hello world!");
 ```
-
+You can also use `java.util.logging.Logger` as the log output:
+```java
+Logger logger = Logger.getLogger("AnyLoggerName");
+logger.setLevel(Level.INFO);
+logger.info("logging message here!");
+```
 The output can be viewed at the `log` position in the function log.
 
 ## Test
