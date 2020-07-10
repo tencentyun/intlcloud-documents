@@ -7,7 +7,7 @@ EMR allows you to deploy an E-MapReduce Druid cluster as an independent cluster 
 
 To purchase a Druid cluster, select Druid as the cluster type when creating the EMR cluster. The Druid cluster has built-in Hadoop HDFS and YARN services integrated with Druid, which are recommended for testing only. **You are strongly recommended to use a dedicated Hadoop cluster in the production environment.**
 
-To disable the built-in Hadoop services for the Druid cluster, you can select and suspend the target services on the [Component Management](https://console.cloud.tencent.com/emr/static/component/) page in the EMR Console.
+To disable the built-in Hadoop services for the Druid cluster, you can select and suspend the target services on the [Cluster Service](https://console.cloud.tencent.com/emr/static/framework/emr-4qjbxdca?type=clusterservice&regionId=1) page in the EMR Console.
 
 ## Configuring Connectivity Between Hadoop and Druid Clusters
 
