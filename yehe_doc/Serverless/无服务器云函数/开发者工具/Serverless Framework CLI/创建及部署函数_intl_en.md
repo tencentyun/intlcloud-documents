@@ -39,7 +39,7 @@ After the function is deployed successfully, you can view the URL provided by th
 
 ### Configuring deployment
 The SCF component supports "zero" configuration deployment, that is, it can be deployed directly with the default values in the configuration file. Nonetheless, you can also modify more optional configuration items as needed to further customize the project to be deployed.
-The following is the description of the SCF component configuration file `serverless.yml`. For more information, please see [Full Configuration and Configuration Description](https://github.com/serverless-components/tencent-scf/blob/v2/doc/configure.md).
+The following is the description of the SCF component configuration file `serverless.yml`. For more information, please see [Full Configuration and Configuration Description](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md).
 ```
 # serverless.yml
 component: scf # Name of the imported component, which is required. The `tencent-scf` component is used in this example
