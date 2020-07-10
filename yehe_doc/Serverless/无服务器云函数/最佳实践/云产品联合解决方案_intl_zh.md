@@ -24,7 +24,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/436/35663">文件解压缩</a></td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/30611">CDN 缓存自动刷新</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/30611">CDN 缓存刷新</a></td>
 </tr>
 <tr>
 <td>COS 及 CDN Combo Handler</td>
