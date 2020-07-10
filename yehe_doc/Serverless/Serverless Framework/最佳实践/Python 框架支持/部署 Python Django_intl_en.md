@@ -26,7 +26,7 @@ $ mkdir myDjangoDemo && cd myDjangoDemo
 
 Use the following command and template link to quickly create a static website hosting application:
 ```
-$ serverless create --template-url https://github.com/serverless-tencent/tencent-django/tree/v2/example
+$ serverless create --template-url https://github.com/serverless-tencent/tencent-django/tree/master/example
 $ cd example
 ```
 
