@@ -19,5 +19,5 @@ The IM service provides server-end RESTful APIs that allow the app service backe
 For details on server integration operations, see the [server API document](https://intl.cloud.tencent.com/document/product/1047/34621).
 
 ## Step 4: (Optional) Integrate Video Calling
-The IM service can quickly integrate [Tencent Real-Time Communication] (https://intl.cloud.tencent.com/document/product/647/35076) to provide services such as user video chats and group video conferencing in IM applications. Currently, only iOS supports this feature.
+The IM service can quickly integrate [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647/35076) to provide services such as user video chats and group video conferencing in IM applications. 
 For details on integration operations, see [Integrating Video Calling](https://intl.cloud.tencent.com/document/product/1047/34298).

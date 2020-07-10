@@ -1,7 +1,6 @@
 After creating a function, you can directly test it in the following ways to understand the function execution conditions and check the code execution process.
 
-- VS Code plug-in: [Local Debugging (native invoke)](<https://intl.cloud.tencent.com/document/product/583/32744#.E6.9C.AC.E5.9C.B0.E6.B5.8B.E8.AF.95>)
-- SCF Console: [Cloud Test](<https://intl.cloud.tencent.com/document/product/583/32742>)
+- SCF Console: [Cloud Test](<https://intl.cloud.tencent.com/document/product/583/32742#.E4.BA.91.E7.AB.AF.E6.B5.8B.E8.AF.95>)
 
 ## Test Events and Templates
 

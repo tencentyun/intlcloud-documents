@@ -1,7 +1,7 @@
-A function can be queried in the console or through Serverless Framework CLI.
+A function can be queried in the console or on Serverless Framework CLI.
 
 ## Viewing Function in Console
-1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf) and select "Functions" on the left sidebar.
+1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf) and select "Function Service" on the left sidebar.
 2. Select the region for which to view functions at the top. In the function list, you can view all the functions in the specified region.
 4. The list page includes the function name, monitoring information, function runtime environment, creation time, and modification time.
 5. Click the function to enter the details page. It includes the following tabs:
@@ -11,7 +11,7 @@ A function can be queried in the console or through Serverless Framework CLI.
  * Logs: it displays the function execution logs, where you can filter logs by certain criteria for display.
  * Monitoring: it displays function execution monitoring information.
 
-## Getting Function Information Through SCF CLI
+## Getting Function Information on SCF CLI
 >Before starting, you need to install and configure SCF CLI as instructed in [CLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/583/32754).
 >
 You can run the `scf function list` command on SCF CLI to get the function list. For more information, please see [Getting Function List](<https://intl.cloud.tencent.com/document/product/583/32763>).
