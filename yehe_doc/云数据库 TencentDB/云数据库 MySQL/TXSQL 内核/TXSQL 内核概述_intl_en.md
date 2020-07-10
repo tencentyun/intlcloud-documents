@@ -5,5 +5,5 @@ TXSQL not only deeply optimizes the InnoDB storage engine, query performance, an
 ### Related documentation
 - [Kernel Version Updates](https://intl.cloud.tencent.com/zh/document/product/236/35989)
 - [Quick Column Adding Feature](https://intl.cloud.tencent.com/zh/document/product/236/35990)
-- Upgrading Kernel Minor Version
+- [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816)
 - [Checking Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/35995)
