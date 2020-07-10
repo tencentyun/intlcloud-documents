@@ -66,7 +66,7 @@ stage: dev # Information for identifying environment, which is optional. The def
 
 inputs:
   src:
-    src: ./src
+    src: ./code
     index: index.html
     # dist: ./dist
     # hook: npm run build
