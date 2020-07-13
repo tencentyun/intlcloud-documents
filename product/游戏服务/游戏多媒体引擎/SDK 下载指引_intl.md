@@ -4,6 +4,25 @@ Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://int
 ## Update History
 To make it easier for developers to integrate GME products, we recommended that developers check the [Update History](https://intl.cloud.tencent.com/document/product/607/11904) before downloading the SDK.
 
+## Version Updates
+The v2.6.0 beta is updated as follows:
+
+<table>
+<thead>
+<tr>
+<th width="20%">Feature Name</th>
+<th width="50%">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Voice chat</td>
+<td ><li>The room entry process is optimized to improve the success rate of room entry on weak networks.<li>The capture delay on Android devices is lowered.</td> 
+</thead>
+<tbody><tr>
+<td>Speech-to-text</td>
+<td ><li>The speech recognition feature is added to the speech-to-text service.</td> 
+</tbody></table>
+
 ## Downloading SDK v2.6.0 beta
 
 | Platform/Engine | Updated on | Download SDK                                                 | Download Demo                                                | Documentation                                                |
