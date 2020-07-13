@@ -38,7 +38,7 @@ Tags are used to identify and organize Tencent Cloud resources. Each tag contain
    4. After completing the configuration, click **OK**.
 4. Search for resources by tag.
    1. Click <img src="https://main.qcloudimg.com/raw/6ca6880fc850d1ec41695ec7c1714df7.png" style="width:18px;margin:-4px 0 ;"/> on the top right of the **Traffic mirroring** page, and select **Tag**.
-      ![](https://main.qcloudimg.com/raw/9c32dd53c4744ca5bd82403afb9f0b91.png)
+  
    2. Enter a tag key in the field, and click <img src="https://main.qcloudimg.com/raw/6ca6880fc850d1ec41695ec7c1714df7.png" style="width:18px;margin:-4px 0 ;"/>.
   > Separate tag keys with “|”.
 
