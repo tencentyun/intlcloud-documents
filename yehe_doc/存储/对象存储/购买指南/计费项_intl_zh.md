@@ -1,7 +1,7 @@
 对象存储 COS 的计费项包括：[存储容量费用](#jf1)、[请求费用](#jf2)、[数据取回费用](#jf3)、[流量费用](#jf4) 和 [管理功能费用](#jf5)。下文是对各个计费项的详细介绍，您可在了解完计费项和 [产品定价](https://intl.cloud.tencent.com/document/product/436/6239) 后自行估算费用。
 
 
-> ?根据访问频度的高低，对象存储 COS 提供四种对象的存储类型：标准存储、低频存储、归档存储，具体请参见 [对象存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 介绍。
+> ?根据访问频度的高低，对象存储 COS 提供三种对象的存储类型：标准存储、低频存储、归档存储，具体请参见 [对象存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 介绍。
 
 
 <span id="jf1"></span>
