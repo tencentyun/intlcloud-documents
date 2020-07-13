@@ -208,7 +208,7 @@ Parameters are configured as below:
 - The bucket name entered here must be in the format of BucketName-APPID.
 - Specify a region by `-r <region>`.
 
-```plaintext
+​```plaintext
 #Command format
 coscmd -b <BucketName-APPID> -r <region> <action> ...
 #Example - Create a bucket
@@ -221,13 +221,13 @@ coscmd -b examplebucket-1250000000 -r ap-beijing upload exampleobject exampleobj
 
 - We recommend you use this command together with `-b <BucketName-APPID>` and `-r <region>`.
 
-​```plaintext
+```plaintext
 #Command format
 coscmd -b <BucketName-APPID> createbucket
 #Example
 coscmd createbucket
 coscmd -b examplebucket-1250000000 -r ap-beijing createbucket
- ```
+```
 
 ### Deleting a bucket
 
@@ -241,14 +241,13 @@ coscmd deletebucket
 coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket
 coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 ```
-
 - Using the `-f` parameter will forcibly delete the bucket, including all files, noncurrent folders after versioning is enabled, and incomplete multipart uploads.
 
 ### Uploading a file or folder
 
 - The command for file upload is as follows:
 
-​```plaintext
+```plaintext
 #Command format
 coscmd upload <localpath> <cospath>
 #Example
@@ -304,7 +303,6 @@ coscmd download <cospath> <localpath>
 coscmd download data/exampleobject /data/exampleobject
 coscmd download data/exampleobject /data/
 ```
-
 - The command for folder download is as follows:
 
 ```plaintext
