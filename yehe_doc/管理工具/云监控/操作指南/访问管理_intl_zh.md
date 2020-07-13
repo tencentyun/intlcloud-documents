@@ -14,7 +14,7 @@
 ## 常见权限配置
 
 > ? 常见权限配置以产品类型—云服务器为例，其它云产品可参考下列场景介绍和 [云监控相关的云产品策略](#.E4.BA.91.E7.9B.91.E6.8E.A7.E7.9B.B8.E5.85.B3.E7.9A.84.E4.BA.91.E4.BA.A7.E5.93.81.E7.AD.96.E7.95.A5)
-> 开通对应云产品权限。
+开通对应云产品权限。
 
 ### 常见权限说明
 
@@ -125,6 +125,28 @@
 	</tr>
 </table>
 
+### 常见授权异常说明
+
+#### 异常一
+
+- 控制台报错：单击云监控所有功能页面均显示 “操作未授权，请检查 CAM 策略”，如下所示：
+![](https://main.qcloudimg.com/raw/81d4a4cd5da3bc16b2a09b88262718d5.jpg)
+- 解决措施：在 [访问管理](https://console.cloud.tencent.com/cam) 控制台授予对应子账号 QcloudMonitorFullAccess 或 QcloudMonitorReadOnlyAccess 权限。
+
+
+#### 异常二
+- 控制台报错：操作告警策略、Dashboard 等需访问云服务器实例的功能时，提示 CVM 类型授权失败，如下所示：
+![](https://main.qcloudimg.com/raw/7c99c04b6c0bdfd7f982e55c2668ea71.jpg)
+- 解决措施：在 [访问管理](https://console.cloud.tencent.com/cam) 控制台授予对应子账号 QcloudCVMFullAccess 或 QcloudCVMReadOnlyAccess 权限。  
+
+
+#### 异常三
+- 控制台报错：
+ - 创建告警策略时，所属项目下框提示 “没有项目权限，无法创建该策略”，如下所示：
+ ![](https://main.qcloudimg.com/raw/4df73884c4ba0cfcc4cc4f95ce334087.png)
+ - 创建告警接收组时，提示 CAM 类型授权失败，如下所示：
+ ![](https://main.qcloudimg.com/raw/33ce73e95afaeba6e3f2703626516708.jpg)
+- 解决措施：在 [访问管理](https://console.cloud.tencent.com/cam) 控制台授予对应子账号 QcloudMonitorFullAccess  权限。
 
 
 
@@ -165,7 +187,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240">云数据库 MongoDB</a></td>
 	<td> QcloudMongoDBFullAccess</td>
 	<td>云数据库 MongoDB 全读写访问权限</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/38703">访问管理</a></td>
+	<td rowspan="2">-</td>
 </tr>
 <tr>
 	<td>QcloudMongoDBReadOnlyAccess</td>
@@ -175,7 +197,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239">云数据库 Redis</a></td>
 	<td> QcloudRedisFullAccess </td>
 	<td>云数据库 Redis 全读写访问权限</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/38687">访问管理</a></td>
+	<td rowspan="2">-</td>
 </tr>
 <tr>
 	<td>QcloudRedisReadOnlyAccess</td>
@@ -192,6 +214,26 @@
 	<td>游戏数据库 TcaplusDB 只读访问权限</td>
 </tr>
 <tr>
+	<td rowspan="2">云数据库 Memcached </td>
+	<td> QcloudMemcachedFullAccess</td>
+	<td>云数据库 memcached 全读写访问权限</td>
+	<td rowspan="2">-</td>
+</tr>
+<tr>
+	<td>QcloudMemcachedReadOnlyAccess</td>
+	<td>云数据库 memcached 只读访问权限</td>
+</tr>
+<tr>
+	<td rowspan="2">分布式HTAP数据库 TBase </td>
+	<td> QcloudTBaseFullAccess  </td>
+	<td>分布式HTAP数据库 TBase 全读写访问权限</td>
+	<td rowspan="2">-</td>
+</tr>
+<tr>
+	<td>QcloudTBaseReadOnlyAccess</td>
+	<td>分布式HTAP数据库 TBase 只读访问权限</td>
+</tr>
+<tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/845">Elasticsearch Service</a></td>
 	<td> QcloudElasticsearchServiceFullAccess </td>
 	<td>ElasticsearchService 全读写访问权限</td>
@@ -205,7 +247,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/215">私有网络 VPC</a></td>
 	<td> QcloudVPCFullAccess </td>
 	<td>私有网络 VPC 全读写访问权限</td>
-	<td rowspan="2">访问管理</td>
+	<td rowspan="2">-</td>
 </tr>
 <tr>
 	<td> QcloudVPCReadOnlyAccess </td>
@@ -227,7 +269,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/597">消息服务 CKafka</a></td>
 	<td> QcloudCKafkaFullAccess </td>
 	<td> 消息服务 CKafka 全读写访问权限</td>
-	<td rowspan="2">访问管理</td>
+	<td rowspan="2">-</td>
 </tr>
 <tr>
 	<td> QcloudCkafkaReadOnlyAccess </td>
@@ -237,7 +279,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/436">对象存储 COS</a></td>
 	<td> QcloudCOSFullAccess </td>
 	<td> 对象存储 COS 全读写访问权限</td>
-	<td rowspan="2">访问管理</td>
+	<td rowspan="2">-</td>
 </tr>
 <tr>
 	<td> QcloudCOSReadOnlyAccess </td>
@@ -247,7 +289,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/214">负载均衡 CLB</a></td>
 	<td> QcloudCLBFullAccess </td>
 	<td> 负载均衡 CLB 全读写访问权限</td>
-	<td rowspan="2">访问管理</td>
+	<td rowspan="2">-</a></td>
 </tr>
 <tr>
 	<td> QcloudCLBReadOnlyAccess </td>
@@ -263,4 +305,15 @@
 	<td> QcloudCFSReadOnlyAccess </td>
 	<td> 文件存储 CFS 只读访问权限 </td>
 </tr>
+<tr>
+	<td >流计算 Oceanus</td>
+	<td> QcloudOceanusFullAccess </td>
+	<td> 流计算 Oceanus 全读写访问权限</td>
+	<td rowspan="2">-</td>
+</tr>
 </table>
+
+云产品等基础资源监控与自定义监控的子账号权限独立。
+
+- 若子账号需要在云产品等基础资源监控下查看用户组权限，需主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy) 授权子账号 "QcloudMonitorFullAccess" 权限（若仅开通此权限，云服务资源监控和自定义监控的告警接收对象不同步）。
+- 若子账号需要在自定义监控下查看用户组权限，需要主账号在 [访问管理模块](https://console.cloud.tencent.com/cam/policy) 授权子账号 "QcloudCamReadOnlyAccess" 权限。
