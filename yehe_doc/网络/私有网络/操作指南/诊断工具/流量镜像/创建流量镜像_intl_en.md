@@ -17,12 +17,12 @@ Make sure that the traffic mirror source and traffic mirror target are in the sa
     - **Virtual Private Cloud**: all traffic in the VPC except for the mirrored traffic of receiving IPs will be collected, which usually applies to the full mirror scenario.
     - **Subnet**: all traffic in the subnet of the VPC except for the mirrored traffic of receiving IPs will be collected. When this option is selected, you also need to select specific subnet IP ranges.
     - **ENI**: all traffic in the VPC except for the traffic of the ENI that is bound to receiving IPs will be collected. When this option is selected, you also need to select specific ENIs.
-    ![](https://main.qcloudimg.com/raw/0ef667e69338d524d24ff8d2af3dd02d.png)
+
  - Select a **Collection Type**: select the traffic direction as needed. There are three options: **All traffic**, **Traffic out** and **Traffic in**.
  - Select a **Traffic filtering**: select a method to filter out unnecessary traffic and keep the mirror small and lightweight.
     - **N/A**: all traffic configured will be collected.
     - **Quintuple**: the traffic that meets quintuple conditions will be collected. When this option is selected, you also need to set **Protocol**, **Source IP range**, **Destination IP range**, **Source port**, and **Destination port**. You can optionally click **Add** to create another filter condition, and only the traffic that meets all of filter conditions will be collected.
-    ![](https://main.qcloudimg.com/raw/570590952efb6f89e581f94564ecdcd3.png)
+
     - **The next hop is the NAT gateway**: when the next hop is the NAT gateway, the traffic will be collected. When this option is selected, you also need to search for a NAT gateway next to **Condition**.
 4. After completing the configuration, click **Next**.
 
