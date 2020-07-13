@@ -9,7 +9,7 @@ To clearly describe how does the keepalived work on Tencent Cloud CVMs, this doc
 
 ## Basic Principle
 Typically, a high availability master/slave cluster consists of two servers, with one active master server and one standby slave server. The two servers share the same VIP (virtual IP) which is only valid for the master server. However, when the master server fails, the slave server will take over the VIP to continue providing services. The high availability master/slave mode is widely used in MySQL master/slave switch and Ngnix web access.
-![](//mc.qcloudimg.com/static/img/a5aa34fb87508284d9e7a07898085728/1.png)
+
 
 ## Keepalived on CVMs vs. Keepalived on Physical Networks
 - In traditional physical networks, the master-slave mode can be negotiated using the VRRP protocol of keepalived based on the following principles:
