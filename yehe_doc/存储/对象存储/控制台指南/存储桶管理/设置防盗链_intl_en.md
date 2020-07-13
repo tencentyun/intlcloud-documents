@@ -1,7 +1,7 @@
 ## Overview
 Tencent Cloud COS provides hotlink protection support for users to avoid unnecessary losses caused by malicious programs' cheating for public network traffic using resource URLs or stealing of resources by malicious means. It is recommended that you configure the blacklist/whitelist in Hotlink Protection Settings in the console for security protection.
 
->COS doesn't perform hotlink protection-based verification on an object access request with signed URL or headers.
+>Hotlink protection-based verification is not required for object access requests with signed URL or headers.
 
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
@@ -10,8 +10,8 @@ Tencent Cloud COS provides hotlink protection support for users to avoid unneces
 3. Click **Basic Configuration**, find **Hotlink Protection**, and click **Edit** to edit it.
 ![](https://main.qcloudimg.com/raw/235d3158684e32b4b92daf0e81bd6db6.png)
 3. Switch “Status” to Enabled, select a list type (blacklist or whitelist), enter applicable domain names, and then click **Save**. The configuration items are described as follows:
- - **Blacklist**: **Denies domain names on this list** access to the default access address of the bucket. 403 is returned if any domain name on the list accesses such address.
- - **Whitelist**: **Allows only domain names on this list** access to the default access address of the bucket. 403 is returned if any domain name not on the list accesses such address.
+ > **Blacklist**: **domain names on this list** are not allowed to access the default access address of the bucket. 403 is returned if any domain name on the list accesses such address.
+ - **Whitelist**: **only domain names on this list** are allowed to access the default access address of the bucket. 403 is returned if any domain name not on the list accesses such address.
  - **Empty referer**: in HTTP requests, the header referer can be left empty. (An HTTP request header without the field of referer is allowed or the referer field is empty.)
  - **Referer**: you can enter up to 10 domain names matched by prefix, with a domain name per line. Supported address formats include domain name, IP address and the wildcard `*`, with examples as shown below:
     - If `www.example.com` is specified, `www.example.com/123`, `www.example.com.cn`, and other addresses with the prefix of `www.example.com` will also be included in the list.
@@ -24,21 +24,21 @@ Tencent Cloud COS provides hotlink protection support for users to avoid unneces
 
 ## Samples
 A user with the APPID of 1250000000 creates a bucket named examplebucket-1250000000 and places an image picture.jpg in the root directory, and COS generates the following default access address according to the rules:
-```shell
+```plaintext
 examplebucket-1250000000.file.myqcloud.com/picture.jpg
 ```
 User A owns a website:
-```shell
+```plaintext
 www.example.com
 ```
 and embeds the image into the homepage index.html.
 
 Webmaster B manages a website:
-```shell
+```plaintext
 www.fake.com
 ```
 and wants to put this image on `www.fake.com'. But he doesn't want to pay for traffic costs. He creates a direct link to picture.jpg through the following address and places it into the homepage index.html on `www.fake.com`.
-```shell
+```plaintext
 examplebucket-1250000000.file.myqcloud.com/picture.jpg
 ```
 
@@ -63,5 +63,6 @@ The image is displayed normally when `http://www.example.com/index.html` is acce
 The image cannot be displayed when `http://www.fake.com/index.html` is accessed.
 
 ## About Wechat Mini Programs
-1. For any requests from Wechat mini programs, always use the fixed referer `https://servicewechat.com/{appid}/{version}/page-frame.html`. For more information, see [Wechat Mini Program Development Documentation](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/development.html).
-2. To access COS resources with WeChat mini program, add `servicewechat.com` to the hotlink protection whitelist in COS Console.
+
+1. For network requests using Wechat Mini Program, the referer value is fixed as `https://servicewechat.com/{appid}/{version}/page-frame.html`.
+2. If hotlink protection is enabled for your bucket, to allow Wechat Mini Program to load COS images, add `servicewechat.com` to your hotlink whitelist in the [COS console](https://console.cloud.tencent.com/cos5).
