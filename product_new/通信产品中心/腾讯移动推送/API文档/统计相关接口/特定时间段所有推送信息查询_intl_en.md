@@ -2,9 +2,22 @@
 
 **Request method**: POST
 **Calling frequency limit**: 200 times/hour.
+
+Each API request address corresponds to one service access point. Select the request address corresponding to service access point of your applications.
+
+Service access point in Guangzhou:
 ```shell
 https://api.tpns.tencent.com/v3/statistics/get_push_record
 ```
+Service access point in Hong Kong (China):
+```shell
+https://api.tpns.hk.tencent.com/v3/statistics/get_push_record
+```
+Service access point in Singapore
+```shell
+https://api.tpns.sgp.tencent.com/v3/statistics/get_push_record
+```
+
 **Feature**: this API is used to query the basic information and settings of all tasks within a specified time range.
 
 
@@ -96,7 +109,7 @@ https://api.tpns.tencent.com/v3/statistics/get_push_record
 }
 ```
 #### Sample response
->Blind watermarking can protect against different kinds of image theft attacks such as clipping, smudging, and color change. The anti-theft effect is related to the original image size and the attack intensity. For more details, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+
 
 ```json
 {
