@@ -27,7 +27,7 @@ You can split the preceding extensive routes as follows for distribution:
 1. Log in to the [Direct Connect - Dedicated Tunnels](https://console.cloud.tencent.com/dc/dcConn) console.
 2. On the **Dedicated Tunnels** page, click **+New** and complete the following configurations.
 3. In the **Basic Configuration** tab, configure the name, connection type, access network, gateway region, and direct connect gateway.
-![Basic configuration](https://main.qcloudimg.com/raw/a85ff3b11e814aeeee62a4b4a1d836a7.png) 
+
 <table>
 	<thead>
 	<tr>
