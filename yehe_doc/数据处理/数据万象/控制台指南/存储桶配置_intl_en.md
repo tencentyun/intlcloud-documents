@@ -1,8 +1,8 @@
-Cloud Infinite (CI) is an image processing and storage service and part of Tencent Cloud. It uses buckets, which are based on the [Cloud Object Storage (COS) service](https://intl.cloud.tencent.com/document/product/436?from_cn_redirect=1), to store user data. You can create buckets using the CI Console and configure them in the [COS Console](https://console.cloud.tencent.com/cos5).
+CI is a COS-based data processing platform that implements smart processing on different types of data, including images, videos, and files. You can create a bucket in the CI console. For more information on the bucket configuration, log in to the [COS console](https://console.cloud.tencent.com/cos5).
 
-| Feature | Documentation |
+| Feature | Document |
 | ---- | ---------------------------------------- |
-| Setting Access Permission | [Documentation](https://intl.cloud.tencent.com/document/product/436/13315) |
-| Setting Origin-Pull | [Documentation](https://intl.cloud.tencent.com/document/product/436/31508) |
-| Setting Cross-Origin Access | [Documentation](https://intl.cloud.tencent.com/document/product/436/13318) |
-| Setting up a Static Website | [Documentation](https://intl.cloud.tencent.com/document/product/436/14984) |
+| Setting the access permission | [Click here](https://intl.cloud.tencent.com/document/product/436/13315) |
+| Setting origin-pull | [Click here](https://intl.cloud.tencent.com/document/product/436/31508) |
+| Setting cross-origin access | [Click here](https://intl.cloud.tencent.com/document/product/436/13318) |
+| Setting up a static website | [Click here](https://intl.cloud.tencent.com/document/product/436/14984) |

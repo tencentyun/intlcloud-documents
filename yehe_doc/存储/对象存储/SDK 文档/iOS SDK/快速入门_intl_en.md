@@ -2,21 +2,21 @@
 
 ### Relevant resources
 
-- Download the COS iOS SDK source code [here] (https://github.com/tencentyun/qcloud-sdk-ios.git).   
+- Download the COS iOS SDK source code [here](https://github.com/tencentyun/qcloud-sdk-ios.git).   
 - You can download the packaged SDK in Framework format by selecting the desired version from [Releases](https://github.com/tencentyun/qcloud-sdk-ios/releases).
 - Find the quick SDK download link [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-ios/latest/qcloud-sdk-ios.zip).
 - For more examples, see [here](https://github.com/tencentyun/qcloud-sdk-ios-samples.git).
-- For the COS XML version change log, see [here] (https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
+- For the COS XML version change log, see [here](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
 
 ### Environmental dependency
 
 - This SDK supports iOS 8.0 or above.
 - Your mobile phone must be connected to a network (GPRS, 3G, 4G, Wi-Fi, etc.)
-- Log into the CAM Console and get your `SecretId` and `SecretKey` from the [Access Key] (https://console.cloud.tencent.com/capi) page and get your APPID from the [Account Center](https://console.cloud.tencent.com/developer).
+- Log into the CAM Console and get your `SecretId` and `SecretKey` from the [Access Key](https://console.cloud.tencent.com/capi) page and get your APPID from the [Account Center](https://console.cloud.tencent.com/developer).
 
->For the definitions of parameters such as `SecretID`, `SecretKey`, and `Bucket`, see the [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+> ?For the definitions of parameters such as `SecretID`, `SecretKey`, and `Bucket`, see the [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
-### Installing the SDK
+### Installing SDK
 
 #### Importing the SDK
 
@@ -39,23 +39,23 @@ pod 'QCloudCOSXML'
 
 #### Configuring the project
 
-Set up "Other Linker Flags" in "Build Settings" and add the parameter:
+Set up "Other Linker Flags" in "Build Settings" and add these parameters:
 
 ```shell
 -ObjC
 -all_load
 ```
 
-See the figure below:
+This is shown in the following figure:
 ![](https://main.qcloudimg.com/raw/125218fad3f4781cae8f992d9a152057.png)
 
->
+> !
 >The Tencent Cloud COS XML iOS SDK uses HTTP protocol. To run the SDK on iOS, enable transfer over HTTP.
 > You can enable transfer over HTTP in the following two ways:
->- **Configuring manually**
+> - **Configuring manually**
 > Add "App Transport Security Settings" to the "info.plist" file of the project, and then add "Allow Arbitrary Loads" under "App Transport Security Settings", and set its type to "Boolean", and value to "YES".
->- **Configuring via code**
-> You can add the following code in the info.plist of the app integrating the SDK:
+> - **Configuring via code**
+> You can add the following code in the info.plist of your App integrating the SDK:
 > ```shell
 > <key>NSAppTransportSecurity</key>
 > <dict>
@@ -73,16 +73,16 @@ See the figure below:
 > ```
 > 
 > Mobile Tencent Analytics (MTA) is also introduced in the SDK. If you want to disable this feature, follow the steps below:
->- Import the header file
+> - Import the header file
 > `#import <QCloudCore/MTAConfig.h>`
->- After registering the default cosxml service, add the following code:
+> - After registering the default cosxml service, add the following code:
 >`[TACMTAConfig getInstance].statEnable = NO;`
 
-## Getting started
+## Getting Started
 
-The following describes how to use the COS iOS SDK to complete basic operations, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object. For more details, please refer to [XML iOS SDK Demo] (https://github.com/tencentyun/qcloud-sdk-ios-samples). For how to use the specific APIs, please refer to the unit test file provided in the demo.
+The following describes how to use the COS iOS SDK to complete basic operations, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object. For more details, please refer to [XML iOS SDK Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples). For how to use the specific APIs, please refer to the unit test file provided in the demo.
 
-### Prerequisites
+#### Prerequisites
 You must first apply for the APPID of the COS service on the [Tencent Cloud Console](https://console.cloud.tencent.com/cos5).
 
 <span id="step1"></span>
@@ -102,7 +102,7 @@ Instantiate QCloudServiceConfiguration object:
 
 ```
 QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
-configuration.appID = @"APPID"//Project ID;
+configuration.appID = @"APPID"  //APPID of your Tencent Cloud account;
 ```
 
 Instantiate QCloudCOSXMLService object:
@@ -119,9 +119,9 @@ Instantiate QCloudCOSTransferManagerService object:
 
 #### QCloudServiceConfiguration parameters
 
-| Parameter Name | Description | Type | Required |
+| Parameter Name | Description |Type | Required |
 | -------- | ------------------------ | ---------------------- | ---- |
-| appID | Project ID, i.e. APPID. | NSString * | No |
+| appID    | APPID of a Tencent Cloud account; a unique identifier of a resource at user level for access to COS; and can be obtained from [API Key Management](https://console.cloud.tencent.com/capi).      | NSString *             | No   |
 | endpoint | Configures endpoint related information | QCloudCOSXMLEndPoint * | Yes |
 
 #### QCloudCOSXMLEndPoint parameters
@@ -129,15 +129,15 @@ Instantiate QCloudCOSTransferManagerService object:
 | Parameter Name | Description | Type | Required |
 | ----------- | ----------------------------------- | ---------- | ---- |
 | regionName  | The region of the service | NSString * | Yes |
-| serviceName | Domain name. The default is `myqcloud.com`. | NSString * | No |
+| serviceName | Endpoint. The default is `myqcloud.com`. | NSString * | No |
 | useHTTPS | Indicates whether to use the HTTPS service. The default is `No`. | BOOL | No |
-| suffix | Supports custom `http://bucketname.suffix` | NSString | No |
+| suffix | Supports custom suffix, e.g. `http://bucketname.suffix` | NSString | No |
 
 #### Sample initialization
 
 The APPID, SecretId and SecretKey in the example below can be obtained from the [COS Console](https://console.cloud.tencent.com/cos5).
 
->
+> !
 > 1. QCloudSignatureProvider protocol needs to be implemented for the signatureProvider object of the QCloudServiceConfiguration.
 > 2. Before using the SDK, instantiate a default cloud service configuration object QCloudServiceConfiguration, and then instantiate QCloudCOSXMLService and QCloudCOSTransferManagerService objects.  
 > 3. If the QCloudServiceConfiguration is changed, you can register a new QCloudCOSTransferManagerService with `registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key`, but only one QCloudCOSTransferManagerService can be set as the default.
@@ -147,21 +147,21 @@ The APPID, SecretId and SecretKey in the example below can be obtained from the 
 [//]: # ".cssg-snippet-objc-global-init"
 ```objective-c
 //AppDelegate.m
-// Step 1: Register for the default COS service
+//Step 1. Register for the default COS service
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
     configuration.appID = @"1250000000";
     configuration.signatureProvider = self;
     QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
-    endpoint.regionName = @ "COS_REGION"; // Service region name, refer to notes for available regions
+    endpoint.regionName = @ "COS_REGION"; //Service region name. See notes for available regions
     configuration.endpoint = endpoint;
     [QCloudCOSXMLService registerDefaultCOSXMLWithConfiguration:configuration];
     [QCloudCOSTransferMangerService registerDefaultCOSTransferMangerWithConfiguration:configuration];
     return YES;
 }
 
-// Step 2: Implement the QCloudSignatureProvider protocol
-We recommend that the process of implementing the signature is done on the server. For more information, see the "Generating a signature" section below.
+//Step 2. Implement the QCloudSignatureProvider protocol
+//We recommend that the process of implementing the signature is done on the server. For more information, see the "Generating a signature" section below.
 ```
 
 #### swift sample
@@ -169,7 +169,7 @@ We recommend that the process of implementing the signature is done on the serve
 [//]: # ".cssg-snippet-swift-global-init"
 ```swift
 //AppDelegate.m
-// Step 1: Register for the default COS service
+//Step 1. Register for the default COS service
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let config = QCloudServiceConfiguration.init();
@@ -185,7 +185,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 
 
-// Step 2: Implement the QCloudSignatureProvider protocol
+//Step 2. Implement the QCloudSignatureProvider protocol
 We recommend that the process of implementing the signature is done on the server. For more information, see the "Generating a signature" section below.
 ```
 
@@ -196,7 +196,7 @@ We recommend that the process of implementing the signature is done on the serve
 QCloudPutBucketRequest* request = [QCloudPutBucketRequest new];
 request.bucket = @"examplebucket-1250000000"; //additional actions after finishing
 [request setFinishBlock:^(id outputObject, NSError* error) {
-    // You can get the header information returned by the server from outputObject
+    //You can get the header information returned by the server from outputObject
 }];
 [[QCloudCOSXMLService defaultCOSXML] PutBucket:request];
 ```
@@ -222,7 +222,7 @@ QCloudCOSXMLService.defaultCOSXML().putBucket(putBucketReq);
 ```objective-c
 QCloudGetServiceRequest* request = [[QCloudGetServiceRequest alloc] init];
 [request setFinishBlock:^(QCloudListAllMyBucketsResult* result, NSError* error) {
-    // Get the returned information from `result`
+    //Get the returned information from result
 }];
 [[QCloudCOSXMLService defaultCOSXML] GetService:request];
 ```
@@ -236,7 +236,7 @@ getServiceReq.setFinish{(result,error) in
     if result == nil {
         print(error!);
     } else {
-        // Get the returned information from `result`
+        //Get the returned information from `result`
         print(result!);
     }}
 QCloudCOSXMLService.defaultCOSXML().getService(getServiceReq);
@@ -248,7 +248,7 @@ This example assumes you have applied for a bucket for your business. All SDK re
 
 The API for uploading objects uses a signature for identity verification. A request will automatically be sent to request a signature from the object specified during initialization that follows the QCloudSignatureProvider protocol. For more information on how to generate a signature, see the [Generating a signature](#.E7.94.9F.E6.88.90.E7.AD.BE.E5.90.8D) section below.
 
->The object corresponding to the URL cannot be changed during upload, otherwise it will cause an error.
+> !The object included in the URL cannot be changed during upload; otherwise an error may occur.
 
 #### Samples
 
@@ -258,11 +258,11 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 put.object = @"exampleobject";
 put.bucket = @"examplebucket-1250000000";
 put.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
-// Set some upload parameters
+//Set upload parameters
 put.initMultipleUploadFinishBlock = ^(QCloudInitiateMultipartUploadResult * multipleUploadInitResult,
     QCloudCOSXMLUploadObjectResumeData resumeData) {
-    // This block will be called back after the initial multipart upload is complete, so you can get resumeData,
-    // and can generate a multipart upload request through resumeData
+    //This block is called back after the Initiate Multipart Upload operation is completed, so you can get resumeData here,
+    //and can generate a multipart upload request using resumeData.
     QCloudCOSXMLUploadObjectRequest* request = [QCloudCOSXMLUploadObjectRequest
         requestWithRequestData:resumeData];
 };
@@ -272,11 +272,11 @@ put.initMultipleUploadFinishBlock = ^(QCloudInitiateMultipartUploadResult * mult
         totalBytesExpectedToSend);
 }];
 [put setFinishBlock:^(QCloudUploadObjectResult *result, NSError* error) {
-    // You can get the result from `result`
+    //You can get the result from `result`
 }];
 
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
-// Discard a multipart upload and delete uploaded parts
+//Abort a multipart upload and delete uploaded parts
 [put abort:^(id outputObject, NSError *error) {
 //
 }];
@@ -289,7 +289,7 @@ QCloudCOSXMLUploadObjectRequest* request = nil;
 if (resumeData) {
     request = [QCloudCOSXMLUploadObjectRequest requestWithRequestData:resumeData];
 }
-// The request generated for resuming the upload can be uploaded directly
+//The request generated can be used to resume the previous unsuccessful multipart upload directly
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:request];
 ```
 
@@ -302,9 +302,9 @@ let dataBody:NSData? = "wrwrwrwrwrw".data(using: .utf8) as NSData?;
 uploadRequest.body = dataBody!;
 uploadRequest.bucket = "examplebucket-1250000000";
 uploadRequest.object = "exampleobject";
-// Set upload parameters
+//Set upload parameters
 uploadRequest.initMultipleUploadFinishBlock = {(multipleUploadInitResult,resumeData) in
-    // This block will be called back after the initial multipart upload is completed, so you can get resumeData and generate a multipart upload request through resumeData
+    //This block is called back after the Initiate Multipart Upload operation is completed, so you can get resumeData here and use it to generate a new multipart upload request.
     let resumeUploadRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init(request: resumeData as Data?);
 }
 uploadRequest.sendProcessBlock = {(bytesSent , totalBytesSent , totalBytesExpectedToSend) in
@@ -314,7 +314,7 @@ uploadRequest.setFinish { (result, error) in
     if error != nil{
         print(error!)
     }else{
-        // Get the result of the request from `result`
+        //Get the request result from `result`
         print(result!);
     }}
 
@@ -325,9 +325,9 @@ var error:NSError?;
     //The following shows how resumeData is generated after the user cancels the upload
 do {
     let resumedData = try uploadRequest.cancel(byProductingResumeData: &error);
-        var resumeUploadRequest:QCloudCOSXMLUploadObjectRequest<AnyObject>;
+        var resumeUploadRequest:QCloudCOSXMLUploadObjectRequest<AnyObject>?;
              resumeUploadRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init(request: resumedData as Data?);
-             // The request generated for resuming the upload can be uploaded directly
+             //The request generated can be used to resume the previous unsuccessful multipart upload directly
     if resumeUploadRequest != nil {
         QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(resumeUploadRequest!);
     }
@@ -340,17 +340,17 @@ do {
 
 #### QCloudCOSXMLUploadObjectRequest parameters
 
-| Parameter Name | Description | Type | Required |
+| Parameter Name                      | Description                                                         | Type                  | Required |
 | ----------------------------- | ------------------------------------------------------------ | --------------------- | ---- |
-| Object | Object key is the unique identifier of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key would be `doc/picture.jpg`. For more information, see [Object Overview] (https://intl.cloud.tencent.com/document/product/436/13324). | NSString * | Yes |
-| bucket | Bucket name in the format &lt;BucketName-APPID>, for example: `examplebucket-1250000000`. The bucket name can be found in the [COS Console](https://console.cloud.tencent.com/cos5/bucket) | NSString* | Yes |
-| body | If a file is stored in the disk, you need to enter the path of the file to be uploaded and a NSURL * type variable<br><li>. If a file is stored in memory, you can enter a NSData * type variable that contains the file binary data. | BodyType | Yes |
+| Object | Object key is the unique identifier of an object in a bucket. For example, if the object's endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key would be `doc/picture.jpg`. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | NSString * | Yes |
+| bucket | Bucket name in the format &lt;BucketName-APPID>, for example: `examplebucket-1250000000`. The bucket name can be found in the [COS Console](https://console.cloud.tencent.com/cos5/bucket) | NSString * | Yes |
+| body                          | <li>If the file to upload is stored in a disk, use the NSURL * type variable to indicate the file path.<br><li>If the file is stored in memory, use the NSData * type variable to indicate containing the file’s binary data. | BodyType | Yes    |
 | storageClass | Storage class of an object | QCloudCOSStorageClass | Yes |
 | cacheControl | Cache policy defined in RFC 2616 | NSString * | No |
 | contentDisposition | File name defined in RFC 2616 | NSString * | No |
 | expect | When expect=@"100-Continue" is used, the request content will not be sent until the receipt of a response from server. | NSString * | No |
 | expires | Expiration time defined in RFC 2616 | NSString * | No |
-| initMultipleUploadFinishBlock | If the request generates a multipart upload request, after the initialization of the multipart upload, a callback will be performed via the block. The bucket, key, and uploadID of the completed multipart upload and the ResumeData for resuming subsequent failed uploads can be obtained from this callback block. | block | No |
+| initMultipleUploadFinishBlock | Once the Initiate Multipart Upload operation completes for a multipart upload, this block will be used as callback to return the bucket, key, uploadID, and ResumeData that is used to resume a subsequent unsuccessful upload | block                 | No   |
 | accessControlList | Defines the ACL attribute of an object. Valid values: private, public-read; Default: private | NSString * | No |
 | grantRead | Grants read access in the format: `id="[OwnerUin]"` | NSString * | No |
 | grantWrite | Grants write access in the format: `id="[OwnerUin]"`. | NSString * | No |
@@ -365,7 +365,7 @@ request.bucket = @"examplebucket-1250000000";
 request.maxKeys = 1000;
 
 [request setFinishBlock:^(QCloudListBucketResult * result, NSError* error) {
-    // result returns specific information
+    //result contains the request result
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] GetBucket:request];
@@ -392,18 +392,18 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 [//]: # ".cssg-snippet-objc-get-object"
 ```objective-c
 QCloudGetObjectRequest* request = [QCloudGetObjectRequest new];
-// Set the URL for download. If it has been set, the file is downloaded to the specified path.
-// If this parameter is not set, the file will be downloaded to memory and stored in the outputObject of finishBlock
+//Set the download URL. If it has been set, the file is downloaded to the specified path.
+//If this parameter is not set, the file will be downloaded to memory and stored in the outputObject of finishBlock.
 request.downloadingURL = [NSURL URLWithString:QCloudTempFilePathWithExtension(@"downding")];
 request.object = @"exampleobject";
 request.bucket = @"examplebucket-1250000000";
 
 [request setFinishBlock:^(id outputObject, NSError *error) {
-    // You can get the etag or custom header information in the response from outputObject
+    //You can get the etag or custom headers in the response from outputObject.
 }];
 [request setDownProcessBlock:^(int64_t bytesDownload, int64_t totalBytesDownload,
     int64_t totalBytesExpectedToDownload) {
-    // Download progress
+    //Download progress
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] GetObject:request];
@@ -438,7 +438,7 @@ deleteObjectRequest.bucket = @"examplebucket-1250000000";
 deleteObjectRequest.object = @"exampleobject";
 
 [deleteObjectRequest setFinishBlock:^(id outputObject, NSError *error) {
-    // You can get the etag or custom header information in the response from outputObject
+    //You can get the etag or custom headers in the response from outputObject.
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] DeleteObject:deleteObjectRequest];
@@ -462,7 +462,7 @@ QCloudCOSXMLService.defaultCOSXML().deleteObject(deleteObject);
 
 ## Generating a signature
 
-Any request in the SDK requires a signature to verify the user identity and ensure access security. When the signature is incorrect, most COS services are inaccessible and a 403 error is returned. A signature can be generated in the SDK. For each request, the signature can be requested from the signatureProvider object in the QCloudServiceConfiguration object. The object for generating signatures can be assigned to the signatureProvider at the beginning, and should follow the QCloudSignatureProvider protocol and implement the signature generation method:
+Any request in the SDK requires a signature to verify the user identity and ensure access security. When the signature is invalid, most COS features are inaccessible and a 403 error is returned. To generate a signature for each request, the SDK requests the signature from signatureProvider in the QCloudServiceConfiguration object. You can assign the value of the object for generating signatures to the signatureProvider at the beginning. The object for generating signatures should follow the QCloudSignatureProvider protocol and implement the following signature generation method:
 
 ```objective-c
 - (void) signatureWithFields:(QCloudSignatureFields* )fileds    
@@ -475,16 +475,16 @@ Any request in the SDK requires a signature to verify the user identity and ensu
 
 Although the API for generating a signature with permanent SecretId and SecretKey is provided locally, please note that storing the permanent SecretId and SecretKey locally is very risky and may cause unnecessary losses due to leakage. Therefore, we recommend that you implement the signature on the server to ensure security.
 
->We strongly recommend you use the server return time as the start time of the signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time.
+> !We strongly recommend using the server time as the returned start time of signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time.
 
-We recommended you connect to Tencent Cloud's CAM (Cloud Access Manager) within your own signature server to implement the signature process.
+We recommended that you connect to Tencent Cloud's CAM (Cloud Access Manager) within your own signature server to implement the signature process.
 
 ![](https://main.qcloudimg.com/raw/d25267927fcaca9d9e0696f1aba872a5.png)    
 
-For more information on how to set up a signature server to connect to CAM, see [Practice of Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
+For more information on how to set up a signature server to connect to CAM, see [Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
 
-After the signature server is connected to CAM, if a client requests a signature from the server, the server will request temporary credentials from CAM and return it to the client. 
-CAM generates a signature by generating a temporary SecretId, SecretKey, and Token based on your permanent SecretId and SecretKey. In this way, the system is able to maximize security. After receiving the temporary key information, the terminal builds a QCloudCredential object using the keys; it then generates a QCloudAuthenticationCreator via the QCloudCredentail object, and then, using this creator, it generates a QCloudSignature object containing the signing information as shown below:
+After the signature server is connected to CAM, if a client requests a signature from the server, the server will request temporary credentials from CAM and return them to the client.
+CAM generates a signature by generating a temporary SecretId, SecretKey, and Token based on your permanent SecretId and SecretKey to maximize security. Once receiving these temporary credentials, the terminal constructs a QCloudCredential object using them. This object is then used to generate QCloudAuthenticationCreator, which is in turn used to generate a QCloudSignature object containing the signature, as shown below:
 
 [//]: # ".cssg-snippet-objc-global-init-signature-sts"
 ```objective-c
@@ -493,13 +493,13 @@ CAM generates a signature by generating a temporary SecretId, SecretKey, and Tok
                   urlRequest:(NSMutableURLRequest*)urlRequst
                    compelete:(QCloudHTTPAuthentationContinueBlock)continueBlock
 {
-    // *Request temporary Secret ID, Secret Key and Token from signature server
+    //*Request temporary Secret ID, Secret Key and Token from signature server*/
     QCloudCredential* credential = [QCloudCredential new];
     credential.secretID = @"COS_SECRETID";
     credential.secretKey = @"COS_SECRETKEY";
     credential.token = @"COS_TOKEN";
-    /*We strongly recommend you use the server return time as the start time of the signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time*/
-    credential.startDate = [[[NSDateFormatter alloc] init] dateFromString:@"startTime"]; // unit in seconds
+    /*We strongly recommend using the server time as the returned start time of signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time*/
+    credential.startDate = [[[NSDateFormatter alloc] init] dateFromString:@"startTime"]; //Measured in seconds
     credential.experationDate  = [[[NSDateFormatter alloc] init] dateFromString:@"expiredTime"];
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] initWithCredential:credential];
     QCloudSignature* signature =  [creator signatureForData:urlRequst];
@@ -517,8 +517,8 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
     cre.secretID = "COS_SECRETID";
     cre.secretKey = "COS_SECRETKEY";
     cre.token = "COS_TOKEN";
-    /*We strongly recommend you use the server return time as the start time of the signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time*/
-    cre.startDate = DateFormatter().date(from: "startTime"); // unit in seconds
+    /*We strongly recommend using the server time as the returned start time of signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time*/
+    cre.startDate = DateFormatter().date(from: "startTime"); //Measured in seconds
     cre.experationDate = DateFormatter().date(from: "expiredTime");
     let auth = QCloudAuthentationV5Creator.init(credential: cre);
     let signature = auth?.signature(forData: urlRequst)
@@ -528,7 +528,7 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
 
 ### Generating a signature using permanent keys at the terminal (not recommended)
 
->We do not recommend you use permanent keys to generate a signature at the terminal. This may cause data leakage.
+> !We do not recommend that you use permanent keys to generate a signature at the terminal out of data leakage concerns.
 
 Sample code is as follows:
 
@@ -595,16 +595,16 @@ When you obtain the signature using `QCloudCredentailFenceQueue`, all the reques
 ```objective-c
 //AppDelegate.m
 
-// Define a member variable @property (nonatomic) QCloudCredentailFenceQueue* credentialFenceQueue;
+//Define a member variable @property (nonatomic) QCloudCredentailFenceQueue* credentialFenceQueue;
 
 - (void) fenceQueue:(QCloudCredentailFenceQueue * )queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock
 {
     QCloudCredential* credential = [QCloudCredential new];
-    // You can synchronize the process to obtain from the server the secretID, secretKey, expirationDate and token parameters needed for the temporary signature.
+    //You can synchronize the process to obtain from the server the secretID, secretKey, expirationDate and token parameters needed for the temporary signature.
     credential.secretID = @"COS_SECRETID";
     credential.secretKey = @"COS_SECRETKEY";
-    /*We strongly recommend you use the server return time as the start time of the signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time*/
-    credential.startDate = [[[NSDateFormatter alloc] init] dateFromString:@"startTime"]; // unit in seconds
+    /*We strongly recommend using the server time as the returned start time of signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time*/
+    credential.startDate = [[[NSDateFormatter alloc] init] dateFromString:@"startTime"]; //Measured in seconds
     credential.experationDate = [[[NSDateFormatter alloc] init] dateFromString:@"expiredTime"];
     credential.token = @"COS_TOKEN";
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc]
@@ -634,16 +634,16 @@ When you obtain the signature using `QCloudCredentailFenceQueue`, all the reques
 ```swift
 //AppDelegate.m
 
-// Define a member variable @property (nonatomic) QCloudCredentailFenceQueue* credentialFenceQueue;
+//Define a member variable @property (nonatomic) QCloudCredentailFenceQueue* credentialFenceQueue;
 
 func fenceQueue(_ queue: QCloudCredentailFenceQueue!, requestCreatorWithContinue continueBlock: QCloudCredentailFenceQueueContinue!) {
     let cre = QCloudCredential.init();
-    // You can synchronize the process to obtain from the server the secretID, secretKey, expirationDate and token parameters needed for the temporary signature.
+    //You can synchronize the process to obtain from the server the secretID, secretKey, expirationDate and token parameters needed for the temporary signature.
     cre.secretID = "COS_SECRETID";
     cre.secretKey = "COS_SECRETKEY";
     cre.token = "COS_TOKEN";
-    /*We strongly recommend you use the server return time as the start time of the signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time*/
-    cre.startDate = DateFormatter().date(from: "startTime"); // unit in seconds
+    /*We strongly recommend using the server time as the returned start time of signature, to avoid signature errors caused by a deviation between your mobile phone's local time and standard time*/
+    cre.startDate = DateFormatter().date(from: "startTime"); //Measured in seconds
     cre.experationDate = DateFormatter().date(from: "expiredTime");
     let auth = QCloudAuthentationV5Creator.init(credential: cre);
     continueBlock(auth,nil);
@@ -663,9 +663,9 @@ func signature(with fileds: QCloudSignatureFields!, request: QCloudBizHTTPReques
 
 At this point, you are able to generate a temporary signature with the scaffolding tool provided. You can also implement the signature process by yourself.
 
-## User guide for the simplified SDK
+## User Guide for Simplified SDK
 
-A simplified SDK is provided for users who only use upload and download features and who can only install a small size SDK. The simplified SDK is half the size of the complete SDK.  
+A simplified SDK is provided for users who only use upload and download features and who can only install a small-sized SDK. The simplified SDK is only half the size of the complete SDK.  
 
 The simplified SDK is implemented via the Subspec of Cocoapods, so it can only be integrated by using Cocoapods. To use the simplified SDK, add the following content to Podfile:
 

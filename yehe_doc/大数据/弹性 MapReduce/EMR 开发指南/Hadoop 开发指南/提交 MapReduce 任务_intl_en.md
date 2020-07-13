@@ -11,7 +11,7 @@ This operation guide describes: 1. How to perform basic MapReduce job operations
 ## 2. Logging in to an EMR Server
 You need to log in to any server in the EMR cluster first before performing the relevant operations. A master node is recommended for this step. EMR is built on CVM instances running on Linux; therefore, using EMR in command line mode requires logging in to an CVM instance.
 
-After creating the EMR cluster, select Elastic MapReduce in the console, find the cluster in cloud hardware management, click **Master Node** to select the resource ID of the master node. Then, you can enter the CVM Console and find the instance of the EMR cluster.
+After creating the EMR cluster, select Elastic MapReduce in the console. In **Cluster Resource** > **Resource Management**, click **Master Node** to select the resource ID of the master node. Then, you can enter the CVM Console and find the instance of the EMR cluster.
 
 For more information on how to log in to a CVM instance, please see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can choose to log in with WebShell. Click **Login** on the right of the desired CVM instance to enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster.
 

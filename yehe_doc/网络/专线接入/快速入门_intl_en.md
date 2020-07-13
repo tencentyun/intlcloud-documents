@@ -8,8 +8,6 @@ Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and select
  1. In the left sidebar, click **Connections** to go to the management page.
  2. Click **+Create**.
  3. Enter the necessary information. After you submit the application, a Tencent Cloud Direct Connect representative will contact you and verify the details.
-2. **Purchasing from a Tencent Cloud Direct Connect partner**.
-Tencent Cloud Direct Connect partners can help you purchase Tencent Cloud Direct Connect. In most cases, you do not need to apply for your own connections. Instead, you can just go to the Create a Dedicated Tunnel page and share the connections that are owned by our partners.
 
 ## Step 3: Create a Direct Connect Gateway
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and choose **Tencent Cloud Services** > **Networking** > **Virtual Private Cloud** to go to the VPC Console.
@@ -25,7 +23,7 @@ Tencent Cloud Direct Connect partners can help you purchase Tencent Cloud Direct
 3. Click **+Create**.
 4. Basic configuration:
  - Dedicated tunnel name: name of the dedicated tunnel.
- - Connection type: select a **Running** connection under your Tencent Cloud account, or a shared connection under your partner’s account (get necessary connection information from the partner).
+ - Connection type: select a **Running** connection under your Tencent Cloud account.
  - Access network: VPC, BM network, CCN.
 5. Advanced configuration:
  - VLAN ID: if the connection is provided by a partner, get the VLAN ID from the partner.
