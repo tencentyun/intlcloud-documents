@@ -102,6 +102,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_channel_stat_overview
                         "pushOnlineUv": 1000,
                         "verifySvcUv": 1000,
                         "callbackVerifySvcUv": 800,
+			            "arrivalUv": 1000,
                         "verifyUv": 1000,
                         "clickUv": 0,
                         "cleanupUv": 0
@@ -114,6 +115,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_channel_stat_overview
                         "pushOnlineUv": 1000,
                         "verifySvcUv": 1000,
                         "callbackVerifySvcUv": 800,
+						"arrivalUv": 1000,
                         "verifyUv": 1000,
                         "clickUv": 0,
                         "cleanupUv": 0
@@ -126,6 +128,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_channel_stat_overview
                         "pushOnlineUv": 1000,
                         "verifySvcUv": 1000,
                         "callbackVerifySvcUv": 800,
+			            "arrivalUv": 1000,
                         "verifyUv": 1000,
                         "clickUv": 0,
                         "cleanupUv": 0
@@ -138,6 +141,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_channel_stat_overview
                         "pushOnlineUv": 800,
                         "verifySvcUv": 800,
                         "callbackVerifySvcUv": 0,
+			            "arrivalUv": 1000,
                         "verifyUv": 800,
                         "clickUv": 300,
                         "cleanupUv": 500
@@ -150,6 +154,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_channel_stat_overview
                         "pushOnlineUv": 3800,
                         "verifySvcUv": 3800,
                         "callbackVerifySvcUv": 2400,
+			            "arrivalUv": 3800,
                         "verifyUv": 3800,
                         "clickUv": 300,
                         "cleanupUv": 500
