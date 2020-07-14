@@ -5,7 +5,7 @@ Traffic mirror provides a traffic collection service that filters and copies des
 The following are key components of a traffic mirror, together with its workflow.
 - Source: the specified ENI in the VPC that applies the filter rules such as network, collection range, collection type and traffic filtering.
 - Target: the receiving IPs that get the collected traffic.
-![](https://main.qcloudimg.com/raw/7ca950ea5bc2b13db6707824391d67a5.png)
+![](https://main.qcloudimg.com/raw/37ff00d3d5021bb7340d2b233a3182dc.png)
 
 ## Use Cases
 ### Security auditing

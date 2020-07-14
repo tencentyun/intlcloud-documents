@@ -2,7 +2,6 @@ You can purchase VPN connections on the Tencent Cloud official website. The purc
 1. Log in to the [Virtual Private Cloud Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. In the left sidebar, choose **VPN Connection** -> **VPN Gateway** to go to the **VPN Gateway** page.
 3. Select a region and VPC, and then click **+ New**.
- ![](https://main.qcloudimg.com/raw/fd3726cd98a8d6b179af6f3c8a1e1353.png)
 4. In the pop-up window, enter the gateway name, select the associate network, the network, the bandwidth cap, and the billing method, and then click **Create**.
  - **Gateway Name**: enter a VPN gateway name, which cannot exceed 60 characters.
  - **Associate Network**: select the network with which the VPN gateway associates.
