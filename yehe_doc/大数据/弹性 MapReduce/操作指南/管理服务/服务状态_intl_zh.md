@@ -23,7 +23,7 @@
 Hbase 表负载提供了 HBASE 中各表的读写请求数以及表存储情况的监控。
 ### 查看 HBase 表负载
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中选择对应的集群单击【详情】进入集群详情页。
-2. 在集群详情页中选择【集群服务】，选择 HBase 组件的【操作】>【服务监控】>【HBase 表负载】。
+2. 在集群详情页中选择【集群服务】，选择 HBase 组件的【操作】>【服务状态】>【HBase 表负载】。
 3. HBase 表负载展示了 HBase 表的实时读请求量、写请求量、memstore 大小、storeFile 大小四个维度的信息，单击表头可按相应维度进行排序。也可在左上角的搜索框输入表名，单击![](https://main.qcloudimg.com/raw/1f9d505f9e8e4688a73646781370b535.png)进行检索。
 ![](https://main.qcloudimg.com/raw/d3869744607345a3767186cdf11892da.png)
 
