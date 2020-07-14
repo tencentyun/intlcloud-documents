@@ -30,8 +30,8 @@ After a component configuration item is modified, the corresponding service need
    <tr>
       <td>NameNode</td>
       <td>Safe restart mode</td>
-			<td><li>For an HA cluster, run `saveNameSpace` on the standby NameNode.
-Then, restart the component by running `hadoop-daemon.sh stop | start namenode`<li>For a non-HA cluster, the quick restart mode is used
+			<td>For an HA cluster, run `saveNameSpace` on the standby NameNode.
+Then, restart the component by running `hadoop-daemon.sh stop | start namenode` . For a non-HA cluster, the quick restart mode is used
 </td>
 			<td>Only rolling restart is supported</td>
    </tr>
