@@ -22,5 +22,5 @@ You can directly disassociate a user from a policy to remove the permissions gra
 #### Removing a collaborator from a group
 You can remove a collaborator from a user group to automatically disassociate the user from the permissions associated with the group.
 1. 	Log in to the CAM Console and enter [User List](https://console.cloud.tencent.com/cam). Locate the collaborator to disassociate a policy from and click the name of the collaborator to enter the collaborator details page.
-2. Go to **Permissions** and locate the group-associated policy. Click **Disassociate** in the operation column on the right.
+2. Go to **Groups** and locate the group. Click **Remove from Group** in the operation column on the right.
 3. Click **OK** to remove the collaborator from the user group and disassociate the user from the group-associated policy. After the removal, the collaborator will no longer have the permissions associated with the user group.

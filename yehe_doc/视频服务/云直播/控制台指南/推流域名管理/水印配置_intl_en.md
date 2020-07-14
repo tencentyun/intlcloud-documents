@@ -1,4 +1,4 @@
-The watermark feature is disabled by default for LVB push. This document describes how to associate/disassociate a push domain name with/from a watermark template to enable/disable the watermark feature.
+The watermark feature is disabled by default for LVB push. This document describes how to associate/unassociate a push domain name with/from a watermark template to enable/disable the watermark feature.
 
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
@@ -17,8 +17,8 @@ The watermark feature is disabled by default for LVB push. This document describ
 ![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
 > You can click **Preview** in the "Operation" column to view the watermark.
 
-## Disassociating a Watermark Template
-1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to disassociate or click **Manage** to enter the domain details page.
+## Unassociating a Watermark Template
+1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to unassociate or click **Manage** to enter the domain details page.
 2. Select **Template Configuration** and click **Edit** in the **Watermark Configuration** tab.
 3. Deselect the template and click **Save**.
 ![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
