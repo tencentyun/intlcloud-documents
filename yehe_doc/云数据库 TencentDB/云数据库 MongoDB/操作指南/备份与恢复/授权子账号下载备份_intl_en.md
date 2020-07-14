@@ -8,7 +8,7 @@ To download a backup with a sub-account, you need to first authorize the sub-acc
 4. Set the **policy content** by referring to the following custom policy syntax, and click **Done**.
  - uid: the value is fixed to 1257588757.
  - COS bucket path: it can be obtained from **Backup and Rollback** tab on the instance details page in the [MongoDB Console](https://console.cloud.tencent.com/mongodb).
-![](https://main.qcloudimg.com/raw/21779499370def25c7d82fab11972dfa.png)
+![](https://main.qcloudimg.com/raw/3794f2c9d4e1568df65d394e495ec6b0.png)
 Policy syntax (we are using `cmongo-gz-backup-1257588757` for the COS bucket path in the following example):
 ```
 {
