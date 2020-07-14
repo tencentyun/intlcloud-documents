@@ -15,7 +15,7 @@ As shown above, the message lifecycle is circled in the blue box. After message 
 
 - **Billing:** after message rewind is enabled, rewindable messages will incur certain retention fees. The unit price is calculated as a part of message retention fees.
 
-- **Specify rewind time**: when a consumer initiates rewind consumption, the queue name and specific rewind time need to be specified, and messages will be rewound from the furthest time point. The time is a `key`, and reverse consumption is not supported. You can consume from timeA to timeB/timeC but not vice versa as shown below.
+- **Specify rewind time**: when a consumer initiates rewind consumption, the queue name and specific rewind time need to be specified, and messages will be rewound from the maximum time point. The time is a `key`, and reverse consumption is not supported. You can consume from timeA to timeB/timeC but not vice versa as shown below.
 
 - **Specify rewind time range:** it ranges from 0 to 15 days. Only after message rewind is enabled in the console can deleted messages be rewound. You are recommended to always enable this feature for key applications and set the message rewind time range to the same as the message lifecycle.
 
