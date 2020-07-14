@@ -11,14 +11,14 @@
 ## 关联回调模板
 1.	进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的推流域名对应的【管理】进入域名详情页。
 2.	选择【模板配置】页签，单击【回调配置】标签右上角的【编辑】。
-![](https://main.qcloudimg.com/raw/66c6d0904ee5308f3e05bc138776caa2.png)
+![](https://main.qcloudimg.com/raw/d3e31f428ab1463335e234007c663311.png)
 3.	选择指定对应的回调模板，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/3958dbf2375a957d74d154eeb6b5f285.png)
+![](https://main.qcloudimg.com/raw/07e03b807866a54f212b268e16fbf425.png)
 
 ## 取消模板关联
 
 1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的推流域名或右侧的【管理】，进入域名详情页。
 2. 选择【模板配置】页签，单击【回调配置】标签右上角的【编辑】。
 3. 取消关联模板的勾选，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/097611515ce36f87da09dff67d0aaffa.png)
+![](https://main.qcloudimg.com/raw/8b55740b1d953df0c1353435aa13412f.png)
 
