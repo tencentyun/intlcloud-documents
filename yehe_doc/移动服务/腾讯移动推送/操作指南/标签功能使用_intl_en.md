@@ -1,7 +1,7 @@
 
 Tag is a feature used in targeted push where you can call the TPNS SDK or server API to bind one or more tags to devices. After that, you can push messages based on the tags, which makes lean operations easier.
 
-## Push by Tag Scenarios
+## Tag Push Scenarios
 ### Event subscription notification
 Your live streaming application will stream a football match at 18:00 on October 24, and the live stream will be available for reservation on October 20. You want to push a message about the upcoming start to users who subscribe to this program before the live stream starts.
 If a user subscribes to this program, the title `10241800 Football` can be used as a tag to bind to the user device token. When the live stream is about to start, you can select the `Football` tag to push a notification to inform the user of the match start. After the match ends, you can call the TPNS tag unbinding API to unbind the `10241800 Football` tag from the device token.
@@ -12,14 +12,88 @@ You want to push a renewal notification in your application A to users whose mem
 
 ## Tag Overview
 TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categories are as follows:
-![](https://main.qcloudimg.com/raw/4e06ec1dceb0cfffa13d1e9569d7e664.jpg)
+
+<table>
+ <tr>
+         <th>Tag Type</th>
+            <th>Scenario</th>
+						<th>tag_type Built in TPNS</th>
+						  <th>Limit</th>
+							 <th>Example</th>
+ </tr>
+         <tr><!--<td>1.1</td>-->
+            <td>Custom tag</td>
+            <td>Custom tag, such as meeting ID, class ID, user hobbies (like basketball and digital products), etc.</td>
+						<td>xg_user_define</td>
+						  <td><li>Up to 10,000 custom tags are allowed (if you want to increase this limit, please submit a ticket)
+<li>One device token can be bound to up to 100 custom tags (if you want to increase this limit, please submit a ticket)
+<li>One custom tag can be bound to an unlimited number of device tokens</td>
+<td> love_basketball, love_shopping, male, etc.</td>
+        </tr>
+        <tr>
+            <td  rowspan="9">Preset tag</td>
+            <td>Application version</td>
+						 <td>xg_auto_version</td>
+            <td rowspan="9">Preset in TPNS, unlimited</td>
+						<td>1.0.1, 1.0.2, etc.</td>
+        </tr>
+        <tr><!--<td>2.1</td>-->
+            <td>District</td>
+						<td>xg_auto_province</td>
+            <td>guangdong, hunan, shanghai, etc.</td>
+        </tr>
+        <tr><!--<td>3.1</td>-->
+            <td>Active status information</td>
+						<td>xg_auto_active</td>
+						 <td>20200521, 20200522, etc.</td>
+        </tr>
+				   <tr><!--<td>3.1</td>-->
+            <td>TPNS SDK version</td>
+						<td>xg_auto_sdkversion</td>
+						 <td>1.1.5.4, 1.1.5.4, 1.1.6.1, etc.</td>
+        </tr>
+				<tr><!--<td>4.1/td>-->
+				  <td>System version</td>
+					<td>xg_auto_systemversion</td>
+					<td>10.0.0, 12.4.5, etc.</td>
+				</tr><!--<td>4.1/td>-->
+				  <td>System language</td>
+					<td>xg_auto_systemlanguage</td>
+				<td>zh, en, ja, etc.</td>
+				</tr>
+				<tr> <!--<td>5.1td>-->
+				  <td>Country/Region</td>
+					  <td>xg_auto_country</td>
+					<td>CN, US, etc.</td>
+				</tr>
+				<tr><!--<td>5.1td>-->
+				  <td>Phone brand</td>
+					<td>xg_auto_devicebrand</td>
+					 <td>xiaomi, huawei, etc.</td>
+				</tr>
+				<tr><!--<td>61td>-->
+				  <td>Model</td>
+					<td>xg_auto_deviceversion</td>
+					<td>Samsung Note4, vivo Y75A, etc.</td>
+				</tr>							
+</table>
+
+>When you push by tag through API, you need to use the `tag_type` built in TPNS to set the tag type.
 
 ## Preparations
 ### Managing custom tag
-Custom tag is a tag setting method where you can custom the device tag name based on your business needs.
+ Custom tag is a tag setting method where you can custom the device tag name. Currently, TPNS allows you to set tags through REST API and device SDK.
+
+**Method 1. Set tags through REST API**
+Bind and unbind a custom tag:
+For more information on how to do so through API, please see [Binding Tag](https://intl.cloud.tencent.com/document/product/1024/33766)
+
+**Method 2. Set tags through device SDK**
+For more information on how to set tags through the SDK for iOS, please see [Setting Custom Tag](https://intl.cloud.tencent.com/document/product/1024/30727)
+For more information on how to set tags through the SDK for Android, please see [Setting Custom Tag](https://intl.cloud.tencent.com/document/product/1024/30715)
 
 #### Custom tag use cases and keywords
-Push by tag is suitable for scenarios where the number of devices bound to a tag is high (more than 10 generally) but the push frequency is low (below 10 pushes a day generally). For scenarios where the number of bound devices is small but the push frequency is high, you are recommended to use push by account, i.e., binding an account instead of a tag to multiple devices for push.
+Tag push is suitable for scenarios where the number of devices bound to a tag is high (more than 10 generally) but the push frequency is low (below 10 pushes a day generally). For scenarios where the number of bound devices is small but the push frequency is high, you are recommended to use push by account, i.e., binding an account instead of a tag to multiple devices for push.
 
 **Keyword**
 A colon ":" is the keyword for separating the `key` and `value` in a `key-value` pair for user tag binding; for example, if you assign the tag `level:3` to a device token, the TPNS backend will take `level` as the tag key and `3` as the tag value. The actual push will not be affected, where the tag `level:3` is still used for push. Storage based on `key-value` is mainly to facilitate subsequent overwriting of tags in the same category; for example, if the device token is bound to another tag such as `male` (i.e., the device has two tags: `male` and `level:3`), when the membership level of the device is upgraded to level 4 and you want to overwrite the tag `level:3` with `level:4` without affecting the `male` tag, you can directly call the key-value overwriting API to set the `level:4` tag for the device, and then the tags bound to the device token will become `male` and `level:4`.
@@ -29,7 +103,7 @@ A colon ":" is the keyword for separating the `key` and `value` in a `key-value`
 TPNS provides APIs for binding/unbinding a single tag to/from a single device, a single tag to/from multiple devices, multiple tags to/from a single device, and multiple tags to/from multiple devices.
 ##### Single tag for single device
 **Recommended scenarios**
-1. The device SDK API is called; for example, to automatically get the user subscription channel in the app, bind the channel tag to the device token, and vice versa.         
+1. The device SDK API is called; for example, to automatically get the user subscription channel in the application, bind the channel tag to the device token, and vice versa.         
 2. The RESTful API are called occasionally in scenarios such as integration testing.
 
 **Binding tag**
@@ -60,7 +134,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 
 ##### Multiple tags for single device
 **Recommended scenarios**
-1. The device SDK API is called; for example, to automatically get user characteristics tags such as age, district, and gender in the app, bind them to the device token in batches, and vice versa.
+1. The device SDK API is called; for example, to automatically get user characteristics tags such as age, district, and gender in the application, bind them to the device token in batches, and vice versa.
 2. The RESTful API is called; for example, to get a device's user subscription information tags such as marital status and hobbies (football, movies, etc,) through other internal channels, bind them to the device token in batches, and vice versa.
 
 **Binding tag**
@@ -186,7 +260,7 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
 
 #### Tag deletion scenarios
 
- TPNS provides two tag deletion methods, namely, deleting all tags of a device and deleting specific tags of an app.
+ TPNS provides two tag deletion methods, namely, deleting all tags of a device and deleting specific tags of an application.
 
 ##### Deleting all tags of a single device
 **Recommended scenarios**
@@ -207,7 +281,7 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
 - A tag can contain up to 50 bytes.
 - The API is called asynchronously. You are recommended to set the call interval to longer than 1 second.
 
-##### Deleting specific tags of app
+##### Deleting specific application tags
 **Recommended scenarios**
 1. Only the RESTful API can be called.
 **Description:** you can use this API to delete specific tags of an application, i.e., removing them from the tag list of the application after unbinding them from bound devices. It is generally used to delete obsolete tags; for example, to delete testing tags added during test after the application is officially released, you can call this API.
@@ -233,7 +307,7 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
  ![](https://main.qcloudimg.com/raw/960e8eb3678ebe7457b5887966abed5f.png)
 
 ## Getting Started
-Push by tag supports a single tag or multiple tags. For push by multiple tags, TPNS currently only supports tags in the same category (combined in the "AND" or "OR" relationship). Specifically, if you push messages by custom tags, only custom tags can be combined in "AND" or "OR" relationship; and if you push message by preset tags, only preset tags in the same category can be combined. For example, you can push a message to users in Guangdong and Hunan, but you cannot push a message to users in Guangdong who were active in the last three days.
+Tag push supports a single tag or multiple tags. For push by multiple tags, TPNS currently only supports tags in the same category (combined in the "AND" or "OR" relationship). Specifically, if you push messages by custom tags, only custom tags can be combined in "AND" or "OR" relationship; and if you push message by preset tags, only preset tags in the same category can be combined. For example, you can push a message to users in Guangdong and Hunan, but you cannot push a message to users in Guangdong who were active in the last three days.
 
 ### Console
 You can push a message by tag in the Tencent Cloud Console as shown below.
@@ -245,9 +319,9 @@ After a tag is selected, the number of devices bound to the selected tag will al
 
 
 
-### Calling API for push by tag
+### Calling API for tag push
 
-Set the `audience_type` (push target) in the Push API request parameter to `tag` to enable push by tag. For more information, please see [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
+Set the `audience_type` (push target) in the Push API request parameter to `tag` to enable tag push. For more information, please see [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 API example: push a message to male users in Guangdong or Jiangsu who were active on April 23, 2020, April 22, 2020, or April 21, 2020.
 ```
 {

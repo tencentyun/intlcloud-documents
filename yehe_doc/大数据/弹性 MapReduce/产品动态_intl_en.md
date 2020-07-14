@@ -1,4 +1,70 @@
-## April, 2020
+<h2>June 2020</h2>
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Druid service monitoring and HBase Thrift role monitoring are added</td>
+<td>Druid service monitoring and HBase Thrift role monitoring are added to improve the troubleshooting efficiency.</td><td>June 15, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36888" target="_blank">Druid Monitoring Metrics</a></td>
+</tr>
+<tr>
+<td>Hadoop Cluster Edition EMR v2.3.0 is added</td>
+<td>Tensorflow and Jupyter Notebook components are now supported.</td>
+<td>June 15, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36892" target="_blank">Tensorflow Overflow</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36894" target="_blank">Jupyter Notebook Overflow</a></td>
+</tr>
+<tr>
+<td>New release version clickhouse-v1.1.0 is available for ClickHouse clusters</td>
+<td>The ClickHouse component is upgraded to LTS version and now supports the Superset component.</td><td>June 15, 2020</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Cluster event and cluster inspection are supported</td>
+<td>The console now supports recording critical change events and exception events occurring in the cluster to improve the efficiency of cluster troubleshooting. You can configure instant or regular inspection tasks to stay on top of the cluster health and handle exceptions or risks in time.
+ </td><td>June 4, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">Cluster Inspection</a></td>
+</tr>
+</tbody></table>
+
+                
+
+<h2>May 2020</h2>
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Interactive display and operation paths in the console are optimized</td>
+<td>Operation paths are in a clearer structure to make it easier to manage services.</td><td>May 15, 2020</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ClickHouse cluster service monitoring is supported</td>
+<td>This enables you to stay on top of the ClickHouse running status.</td><td>May 15, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36887" target="_blank">ClickHouse Monitoring Metrics</a></td>
+</tr>
+<tr>
+<td>Status monitoring is added in role management</td>
+<td>This enables you to stay on top of the real-time status of role processes.</td>
+<td>May 15, 2020</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
+<h2>April 2020</h2>
 <table>
 <thead>
 <tr>
@@ -27,8 +93,7 @@
 </tbody></table>
 
 
-## March 2020
-<table>
+<h2>March 2020</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -55,9 +120,7 @@
 </tr>
 </tbody></table>
 
-## February 2020
-
-<table>
+<h2>February 2020</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -82,10 +145,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## January 2020
-
-<table>
+<h2>January 2020</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -110,10 +170,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## December 2019
-
-<table>
+<h2>December 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -135,7 +192,7 @@
 <tr>
 <td>Association with CHDFS is supported</td>
 <td>Association with CHDFS and read/write of data on CHDFS are supported.</td><td>December 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34525" target="_blank">Mounting CHDFS</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/35773" target="_blank">Mounting CHDFS</a></td>
 </tr>
 <tr>
 <td>An AMD model is available</td>
@@ -158,10 +215,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## November 2019
-
-<table>
+<h2>November 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -173,7 +227,7 @@
 <tbody><tr>
 <td>The node specification management feature is launched</td>
 <td>Node specification management is supported. Default specifications can be set for different types of nodes based on the billing mode. The default billing mode is pay-as-you-go.</td><td>November 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34533" target="_blank">Node Specification Management</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34533" target="_blank">Setting Node Specification</a></td>
 </tr>
 <tr>
 <td>Configuration management supports ZooKeeper, Alluxio, and Flink</td>
@@ -183,7 +237,7 @@
 <tr>
 <td>The cluster and node tagging feature is launched</td>
 <td>Tags can be set for clusters and nodes.</td><td>November 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34532" target="_blank">Tags</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34532" target="_blank">Setting Tag</a></td>
 </tr>
 <tr>
 <td>New models are available in the Beijing, Shanghai, and Guangzhou regions</td>
@@ -191,10 +245,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## October 2019
-
-<table>
+<h2>October 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -209,10 +260,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
-
-## September 2019
-
-<table>
+<h2>September 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -237,10 +285,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## August 2019
-
-<table>
+<h2>August 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -275,10 +320,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## July 2019
-
-<table>
+<h2>July 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -313,10 +355,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## June 2019
-
-<table>
+<h2>June 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -335,7 +374,7 @@
 <td>The bootstrap action setting feature is launched</td>
 <td>Bootstrap actions can be set during cluster configuration.</td>
 <td>June 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34531" target="_blank">Setting Bootstrap Action</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34521" target="_blank">Bootstrap Action</a></td>
 </tr>
 <tr>
 <td>The feature of node-level component parameter configuration distribution is launched</td>
@@ -347,13 +386,10 @@
 <td>The parameter configuration rollback feature is launched</td>
 <td>Parameter configuration rollback is supported.</td>
 <td>June 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">Parameter Configuration Rollback</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">Configuration Rollback</a></td>
 </tr>
 </tbody></table>
-
-## May 2019
-
-<table>
+<h2>May 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -378,7 +414,7 @@
 <td>Monitoring metrics are optimized</td>
 <td>Host, HDFS, YARN, and HBase monitoring metrics are optimized.</td>
 <td>May 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31121" target="_blank">Monitoring Metrics</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">Monitoring Metrics</a></td>
 </tr>
 <tr>
 <td>Console style is optimized</td>
@@ -405,10 +441,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## March 2019
-
-<table>
+<h2>March 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -442,10 +475,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Configuration Adjustment</a></td>
 </tr>
 </tbody></table>
-
-## January 2019
-
-<table>
+<h2>January 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>

@@ -31,4 +31,3 @@ To delete files from a bucket, complete the following steps:
 ![](https://main.qcloudimg.com/raw/7821161cac7a27fad1d953aca2846c52.png)
 4. Click **OK** to delete the file.
 ![](https://main.qcloudimg.com/raw/722f293a246e99bad9f60c35cdb65e81.png)
-5a4ee0c5f8e48f63377074777.png)

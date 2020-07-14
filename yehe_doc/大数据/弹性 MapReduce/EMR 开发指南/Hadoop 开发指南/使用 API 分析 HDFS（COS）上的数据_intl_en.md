@@ -8,7 +8,8 @@ The WordCount application is a great example that gives you a hands-on experienc
 ## 2. Logging in to an EMR Server
 You need to log in to any server in the EMR cluster first before performing the relevant operations. A master node is recommended for this step. EMR is built on CVM instances running on Linux; therefore, using EMR in command line mode requires logging in to an CVM instance.
 
-After creating the EMR cluster, select Elastic MapReduce in the console, find the cluster you just created in the cluster list, select the CVM instance ID of the active master node in **Details** > **Node Info** > **Master Nodes** on the right to enter the CVM Console, and find the instance of the EMR cluster.
+After creating the EMR cluster, select Elastic MapReduce in the console, find the cluster you just created in the cluster list, select the CVM instance ID of the active master node in **Details** > **Cluster Resource** > **Resource Management** > **Master Nodes** on the right to enter the CVM Console, and find the instance of the EMR cluster.
+
 
 For more information about how to log in to a CVM instance, please see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in. Click *Login* on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster.
 
