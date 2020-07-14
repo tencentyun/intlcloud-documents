@@ -44,7 +44,7 @@ inputs:
   region: ap-guangzhou
 
 ```
-[Detailed Configuration >>](https://github.com/serverless-components/tencent-cos/blob/v2/docs/configure.md)
+[Detailed Configuration >>](https://github.com/serverless-components/tencent-cos/blob/master/docs/configure.md)
 
 
 ### Deployment

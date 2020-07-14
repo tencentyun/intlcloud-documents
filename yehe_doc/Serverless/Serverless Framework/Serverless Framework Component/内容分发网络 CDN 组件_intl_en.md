@@ -60,7 +60,7 @@ inputs:
       # privateKey: 'xxx'
 ```
 
-[Detailed Configuration >>](https://github.com/serverless-components/tencent-cdn/blob/v2/docs/configure.md)
+[Detailed Configuration >>](https://github.com/serverless-components/tencent-cdn/blob/master/docs/configure.md)
 
 #### Deployment
 
