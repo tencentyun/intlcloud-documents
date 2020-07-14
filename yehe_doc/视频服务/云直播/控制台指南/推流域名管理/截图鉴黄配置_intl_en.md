@@ -1,4 +1,4 @@
-The screencapture and porn detection feature is disabled by default for LVB push. This document describes how to associate/disassociate a push domain name with/from a screencapture and porn detection template to enable/disable the screencapture and porn detection feature.
+The screencapture and porn detection feature is disabled by default for LVB push. This document describes how to associate/unassociate a push domain name with/from a screencapture and porn detection template to enable/disable the screencapture and porn detection feature.
 
 ## Notes
 - The template configuration will take effect in about **5–10 minutes**.
@@ -18,8 +18,8 @@ The screencapture and porn detection feature is disabled by default for LVB push
 ![](https://main.qcloudimg.com/raw/1b237b96fb034d4795f5512769f0a34b.png)
 
 
-## Disassociating a Screencapture and Porn Detection Template
-1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to disassociate or click **Manage** to enter the domain details page.
+## Unassociating a Screencapture and Porn Detection Template
+1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to unassociate or click **Manage** to enter the domain details page.
 2. Select **Template Configuration** and click **Edit** in the **Screencapture & Porn Detection Configuration** tab.
 3. Deselect the template and click **Save**.
 ![](https://main.qcloudimg.com/raw/1258bc65cb1ea0627d6c2f23e9fdc023.png)

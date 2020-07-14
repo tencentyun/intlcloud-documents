@@ -1,5 +1,5 @@
 除了默认角色 SLS_QcsRole 外，主账号还可自行创建多个角色，并将它们分配给每个子用户，各子用户根据自身业务需求只具有相应角色所赋予的策略，达到权限收缩的目的，流程图如下：
-![](https://main.qcloudimg.com/raw/62356e8842cc10f98cd5712cd7e89c5c.png)
+![](https://main.qcloudimg.com/raw/90591c64f093fa2e016aeb1c1ae55c0c.png)
 
 ## 主账号配置过程
 创建子账号配置角色，并为该角色赋予相应策略。以部署 API 网关触发的 SCF 函数为例：
@@ -11,7 +11,7 @@
 4. 选择预设策略 **QcloudCOSFullAccess**、	**QcloudAPIGWFullAccess**、**QcloudSCFFullAccess**，单击【下一步】。
 5. 填写角色名称（如 test-role1），单击【完成】。
 单击角色名，可以查看配置完成后角色页面：
-![](https://main.qcloudimg.com/raw/ce63c1427c1e032bf618bddd067accac.png)
+![](https://main.qcloudimg.com/raw/6313089678ae0a5d229a2c7426e9a586.png)
 
 
 ### 配置角色策略

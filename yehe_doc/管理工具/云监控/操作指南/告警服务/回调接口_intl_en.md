@@ -1,9 +1,9 @@
-Your system can directly receive Tencent Cloud alarm notifications through the callback API. The callback API can push alarm notifications to URLs that are accessible over the public network through HTTP POST requests. You can take further actions based on the alarm notifications you receive.
+Your system can directly receive Tencent Cloud alarm notifications through the callback API. The callback API can push alarm notifications to URLs that are accessible over the public network through HTTP POST requests. You can take further actions based on the alarm notifications you receive from the callback API.
 
 ## Using the Callback API
 
 - Callback API: you need to provide a URL that is able to receive HTTP POST requests and is accessible over the public network as the callback address.
-- Callback trigger: the trigger logic is similar to that of alarm SMS and email messages. When a created alarm policy is triggered or restored, an alarm notification will be sent through the callback API. Repeated alarms are also supported.
+- Callback trigger: the trigger logic is similar to that of alarm SMS and emails. When a created alarm policy is triggered or restored, an alarm notification will be sent through the callback API. Repeated alarms are also supported.
 - Binding the callback API: you can configure a callback API by following step 8 of [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215) or add a callback API on the alarm policy details page. Only one alarm policy group can be bound to one alarm callback URL.
 - Returned content: after an alarm notification is sent to the bound URL, we need to receive the following returned content to confirm that you have successfully received the notification. Otherwise, the same alarm notification will be sent to you repeatedly for up to three times.
   sessionId, which is used to authenticate the callback request.
@@ -63,7 +63,7 @@ The callback API will send data in JSON format through HTTP POST requests. The p
 
 #### Sample metric alarm dimensions
 
-##### CVM
+##### Cloud Virtual Machine (CVM)
 
 ```
 "dimensions": {
@@ -131,7 +131,7 @@ The callback API will send data in JSON format through HTTP POST requests. The p
 }
 ```
 
-##### TencentDB - MySQL - master monitoring
+##### TencentDB for MySQL - master monitoring
 
 ```
 "dimensions": {
@@ -141,7 +141,7 @@ The callback API will send data in JSON format through HTTP POST requests. The p
 }
 ```
 
-##### TencentDB - MySQL - slave monitoring
+##### TencentDB for MySQL - slave monitoring
 
 ```
 "dimensions": {
@@ -151,7 +151,7 @@ The callback API will send data in JSON format through HTTP POST requests. The p
 }
 ```
 
-##### TencentDB - Redis
+##### TencentDB for Redis
 
 ```
 "dimensions": {
@@ -207,7 +207,7 @@ The callback API will send data in JSON format through HTTP POST requests. The p
 "dimensions": {
     "uniq_nat_id": "xxx",
     "objId": "xxx",       // Instance dimension bound to the backend
-    "objName": "xxx"       // Instance information returned in the alarm SMS
+    "objName": "xxx"       // Instance information returned in the alarm SMS message
 }
 ```
 
@@ -231,7 +231,7 @@ The callback API will send data in JSON format through HTTP POST requests. The p
 }
 ```
 
-##### VPC - Classiclink
+##### VPC - cross-region interconnection via the basic network
 
 ```
 "dimensions": {
@@ -296,8 +296,8 @@ The callback API will send data in JSON format through HTTP POST requests. The p
     "alarmStatus":"1",    // 1: alarmed, 0: resolved
     "alarmType":"event",    // Alarm type ("metric": metric alarm, "event": event alarm)
     "alarmObjInfo":{
-        "region":"gz",      // This field will not be returned for products that are not region-specific.
-        "dimensions":{               // The value of the `dimensions` field varies by product.
+        "region":"gz",      // This field will not be returned for products that are not region-specific
+        "dimensions":{               // The value of the `dimensions` field varies by product
             "unInstanceId":"ins-pftdvqa2",
             "objDetail":{         // Details of the event alarm object
                 "deviceLanIp":"172.21.0.17",
@@ -321,7 +321,7 @@ The callback API will send data in JSON format through HTTP POST requests. The p
         "policyTypeCName":"CVM - basic monitoring"      // Displayed name of the alarm policy type
     },
     "firstOccurTime":"2018-06-15 16:32:06",     // Time when the alarm is triggered for the first time
-    "recoverTime":"0"      // The time it takes to resolve the alarm in seconds (if the alarm is unresolved or has no resolved status, the value of this parameter will be 0)
+    "recoverTime":"0"      // The time it takes to resolve the alarm in seconds (if the alarm is unresolved or does not have a resolved status, the value of this parameter will be 0)
 }
 ```
 
@@ -339,6 +339,21 @@ The callback API will send data in JSON format through HTTP POST requests. The p
             }
         }
 ```
+
+
+##### TencentDB for MySQL
+
+```
+"dimensions": {
+      "deviceName": "production-xd_item_center-0-offline-6035",
+      "objDetail": {
+        "IP": "10.80.17.217"
+      },
+      "unInstanceId": "cdb-bwieva60"
+    }  
+```
+
+
 
 ##### VPC - peering connection
 

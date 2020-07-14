@@ -1,5 +1,5 @@
 In addition to the default role `SLS_QcsRole`, a root account can also create multiple custom roles and assign them to sub-users, so that they can have only the policies granted by the corresponding roles as needed, which can implement permission control. Its flowchart is as follows:
-![](https://main.qcloudimg.com/raw/62356e8842cc10f98cd5712cd7e89c5c.png)
+![](https://main.qcloudimg.com/raw/90591c64f093fa2e016aeb1c1ae55c0c.png)
 
 ## Root Account Configuration Process
 You can create a sub-account, configure a role, and grant the role the corresponding policies. The following uses the deployment of an SCF function triggered by API Gateway as an example:
@@ -11,7 +11,7 @@ You can create a sub-account, configure a role, and grant the role the correspon
 4. Select presets policies **QcloudCOSFullAccess**, **QcloudAPIGWFullAccess**, and **QcloudSCFFullAccess** and click **Next**.	
 5. Enter a role name such as `test-role1` and click **Complete**.
 You can click the role name to view the role page after configuration:
-![](https://main.qcloudimg.com/raw/ce63c1427c1e032bf618bddd067accac.png)
+![](https://main.qcloudimg.com/raw/6313089678ae0a5d229a2c7426e9a586.png)
 
 
 ### Configuring role policy
