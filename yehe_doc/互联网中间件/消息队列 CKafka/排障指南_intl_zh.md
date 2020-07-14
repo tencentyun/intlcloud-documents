@@ -33,7 +33,7 @@
 
 #### 问题描述
 CKafka 的消费组列表有消费组名称，点击详情页后，却没有消费详情。例如下述的消费组 CR 没有展示详情：
-![](https://main.qcloudimg.com/raw/4a352b4499311f0e7b8598c51e6eec61.png)
+![](https://main.qcloudimg.com/raw/40abecbbf024dab703c1904c006c04d0.png)
 
 #### 排查思路
 

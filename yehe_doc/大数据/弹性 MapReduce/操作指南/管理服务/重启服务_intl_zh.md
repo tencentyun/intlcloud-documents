@@ -8,9 +8,9 @@
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中选择对应的集群单击【详情】进入集群详情页面。
 2. 在【集群服务】中，单击【重启服务】，或者选择需要重启的组件卡片【操作】>【角色管理】勾选需要重启的服务【角色】并单击【重启服务】。
  - 在集群详情页面中直接重启服务时，需要选择重启的服务名称、服务角色、重启方式、是否滚动重启、失败处理策略等。
-![](https://main.qcloudimg.com/raw/1bce92a1ba5e1213bdf2ab665e94ef63.png)
+
  - 在组件卡片中重启服务时，只需要选择重启方式、失败处理策略等。
-![](https://main.qcloudimg.com/raw/0eb02c94b2f62b653ce39a9b2d4aaed6.png)
+
 4. 各服务组件支持的重启方式如下：
 <table>
    <tr>
@@ -30,8 +30,8 @@
    <tr>
       <td>NameNode</td>
       <td>安全重启模式</td>
-			<td><li>在 HA 集群中，首先在 standby NameNode 上做 saveNameSpace 操作，
-然后通过 hadoop-daemon.sh stop | start namenode 进行重启<li>非 HA 集群与快速重启模式一致
+			<td>在 HA 集群中，首先在 standby NameNode 上做 saveNameSpace 操作，
+然后通过 hadoop-daemon.sh stop | start namenode 进行重启。非 HA 集群与快速重启模式一致
 </td>
 			<td>只支持滚动重启</td>
    </tr>

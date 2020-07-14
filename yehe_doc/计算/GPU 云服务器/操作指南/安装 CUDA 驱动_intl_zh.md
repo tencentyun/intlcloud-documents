@@ -67,7 +67,7 @@ yum install -y gcc-c++
 ![](https://main.qcloudimg.com/raw/9c25375680dcad463e8d758d3bbb0977.png)
 5. 打开下载驱动程序所在的文件夹，双击安装文件开始安装，按照界面上的提示安装驱动程序并根据需要重启实例。
 若最后出现完成对话框，则表示安装成功。如下图所示：
-![](https://main.qcloudimg.com/raw/22bd8237582f4552d3cce662f58ebf2a.png)
+![](https://main.qcloudimg.com/raw/ae1ac03436a89fcb0ecb09842e9d0a68.png)
 
 
 

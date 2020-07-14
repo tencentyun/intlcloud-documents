@@ -1,93 +1,84 @@
-To ensure the proper working of GPU instances, we need to install required infrastructure software. For NVIDIA series GPU, there are two software packages to be installed:
+## Overview
+The GPU instance must be installed with the necessary infrastructure software in advance. For an NVIDIA GPU instance, the following software packages are required:
 - Hardware driver for the GPU
 - Libraries required by upper-level applications
 
-If the NVIDIA GPU instance is used for general purpose, we need to install Tesla Driver and CUDA. In this document, we only introduce how to install Tesla Driver. To learn about how to install CUDA, please refer to [Installing CUDA Driver](https://intl.cloud.tencent.com/document/product/560/8064).
+To use NVIDIA GPU instances for general computing tasks, you must install the Tesla driver and Compute Unified Device Architecture (CUDA) Toolkit. This document only describes how to install a Tesla driver. For more information on CUDA Toolkit, please see [Installing CUDA Toolkit](https://intl.cloud.tencent.com/document/product/560/8064).
 
-## Installing the Driver in Linux System
-You can install the driver in two ways: 
-- Install the driver using Shell script. It works with all Linux distributions, including CentOS and Ubuntu.
-- Install the driver using packages. It works with various Linux distributions, such as the installation using DEB and RPM.
+## Directions
+### Installing an NVIDIA Tesla driver on a Linux instance
+You can use the Shell script to install a driver on the Linux instance. This method is applicable to all Linux distributions, including CentOS and Ubuntu.
 
-Regardless of the installation method, the Linux driver of NVIDIA Telsa GPU needs to compile the kernel module during the installation process, so the system is required to install GCC and the package which the compiling of Linux kernel module depends on, such as `kernel-devel-$(uname -r)`.
+When installing an NVIDIA Tesla driver for Linux, the driver needs to compile the kernel module. You must install gcc and packages required to compile the Linux kernel module in advance, such as `kernel-devel-$(uname -r)`.
 
-### Installing the driver using Shell script
-1. Click to [download NVIDIA driver](http://www.nvidia.com/Download/Find.aspx) or open the link `http://www.nvidia.com/Download/Find.aspx`.
-2. Choose the OS and installing package. In this example, we will choose P40.
-![](https://main.qcloudimg.com/raw/42f815083c1ee87a98a13595c69bd496.png)
->If **Linux 64-bit** is selected for the **Operating System**, the shell installation file will be downloaded. If a specific distribution is selected, the corresponding package installation file will be downloaded.
-3. You will be directed to the page of selected version. Click **DOWNLOAD**.
-![](https://main.qcloudimg.com/raw/95ada99ab6bcc84decfef4caf1905f62.png)
-4. After re-direction, skip the page that requires personal information if appears. When the following page appears, right click on **AGREE&DOWNLOAD** and copy the link address in the context menu.
-![](https://main.qcloudimg.com/raw/e343c0276071797f3bc1051e430758f5.png)
-4. [Log in to a Linux instance using WebShell (recommended)](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are comfortable with:
- - [Log in to a Linux instance using remote login software](https://intl.cloud.tencent.com/document/product/213/32502).
- - [Log in to a Linux instance using SSH](https://intl.cloud.tencent.com/document/product/213/32501)
-5. Log in to the GPU instance, execute `wget` command and paste the link address copied in the previous step to download the installer. Or, you can download the NVIDIA installer package to a local system, and upload it to the GPU instance server.
-![](https://main.qcloudimg.com/raw/e8648c2802a0c31bf557b056ce084911.png)
-Then you can run `ls` to check the name of the downloaded installation package. 
-6. For example, add the execution permission to the file named `NVIDIA-Linux-x86_64-396.44.run`:
+1. Run the following command to check whether dkms has been installed in the operating system:
 ```
-chmod +x NVIDIA-Linux-x86_64-396.44.run
+rpm -qa | grep -i dkms
 ```
-7. Install the corresponding gcc and kernel-devel packages for the current system.
+If the returned result is as shown in the following figure, dkms has been installed.
+![](https://main.qcloudimg.com/raw/ada786e81334e5a88f8c95e54ff42f18.png)
+If dkms is not installed, run the following command to install dkms:
 ```
-sudo yum install -y gcc kernel-devel-xxx
+sudo yum install -y dkms
 ```
-`xxx` is the kernel version number, which can be checked by using `uname -r`.
-8. Follow the prompts after running the driver installer.
+2. Go to [NVIDIA Driver Downloads](http://www.nvidia.com/Download/Find.aspx) or visit `http://www.nvidia.com/Download/Find.aspx`.
+3. Configure the GPU type and operating system, and click **SEARCH** to search for the driver you need to download, as shown in the following figure. Below uses Tesla V100 as an example.
+>!You can configure **Operating System** as **Linux 64-bit** to download shell setup files. If you configure **Operating System** to a specific Linux distribution, the corresponding installation files will be downloaded.
+>
+![](https://main.qcloudimg.com/raw/296039c584039388c7988c22fb0227a4.png)
+4. Select the required version to go to the driver download page, and click **DOWNLOAD**, as shown in the following figure.
+![](https://main.qcloudimg.com/raw/2d933595a3a21e89f64a6463b14f3bd3.png)
+5. <span id="Step5"></span>You can skip the page for entering personal information. If the following page appears, right-click **AGREE & DOWNLOAD** and select **Copy link address**.
+![](https://main.qcloudimg.com/raw/1b1831cd9e2a3530a99195e9005b5da7.png)
+6. To log in to GPU instances, see [Log into Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods:
+	- [Logging into Linux instances via remote login tools](https://intl.cloud.tencent.com/document/product/213/32502)
+	- [Logging into Linux instance via SSH key](https://intl.cloud.tencent.com/document/product/213/32501)
+7. Run the `wget` command to download the installation package using the URL copied in [Step 5](#Step5), as shown in the following figure.
+![](https://main.qcloudimg.com/raw/cbbb80409d43052061ba638d7ae622e5.png)
+You can also download the installation package to your local computer and upload it to the GPU instance.
+8. Add execution permissions to the installation package. For example, run the following command to add execution permissions to the `NVIDIA-Linux-x86_64-418.126.02.run` file:
 ```
-sudo /bin/bash ./NVIDIA-Linux-x86_64-396.44.run
+chmod +x NVIDIA-Linux-x86_64-418.126.02.run
 ```
-9. After the installation, run `nvidia-smi`. The driver installation is successful if you see GPU information displayed (similar to what is shown below).
-![](https://main.qcloudimg.com/raw/b5877169c7012d20e7de02754d43cedc.png)
+9. Run the following commands in sequence to check whether kernel-devel and gcc have been installed in the operating system:
+```
+rpm -qa | grep kernel-devel
+```
+```
+rpm -qa | grep gcc
+```
+If the returned result is as shown in the following figure, kernel-devel and gcc have been installed.
+![](https://main.qcloudimg.com/raw/0a9d385944669528d49544eb0bd6b8eb.png)
+If kernel-devel and gcc are not installed, run the following command to install them:
+```
+sudo yum install -y gcc kernel-devel
+```
+>!If the kernel version has been upgraded, you must upgrade kernel-devel to the same version.
+>
+10. Run the following command to install the driver as instructed:
+```
+sudo sh NVIDIA-Linux-x86_64-418.126.02.run
+```
+11. After the installation is completed, run the following command to verify.
+```
+nvidia-smi
+```
+If GPU information similar to that shown in the following figure is returned, the installation is successful.
+![](https://main.qcloudimg.com/raw/94cbceaa09720cd7edba76961f2763d8.png)
 
-### Installing the driver using DEB/RPM
-#### Installing the driver using DEB
-1. Click to [download NVIDIA driver](http://www.nvidia.com/Download/Find.aspx) or open the link `http://www.nvidia.com/Download/Find.aspx`.
-2. Select the corresponding operating system that supports DEB, such as Ubuntu 16.04, and get the download link: `wget http://us.download.nvidia.com/tesla/396.44/nvidia-diag-driver-local-repo-ubuntu1604-396.44_1.0-1_amd64.deb`.
-3. Run the command to install the package.
-```
-dpkg -i nvidia-diag-driver-local-repo-ubuntu1604-396.44_1.0-1_amd64.deb
-```
-4. Run `apt-get update` to update the software package.
-```
-apt-get update
-```
-5. Run the following command to install the driver.
-```
-apt-get install cuda-drivers
-```
-6. Run `reboot` to restart.
-7. Run `nvidia-smi`. If the correct information is output, the driver is installed successfully.
 
-#### Installing the driver using RPM
-1. Click to [download NVIDIA driver](http://www.nvidia.com/Download/Find.aspx) or open the link `http://www.nvidia.com/Download/Find.aspx`.
-2. Select an OS that supports RPM package and obtain the download link of the RPM package. In this example, we choose `CentOS 7.x`.
-`wget http://us.download.nvidia.com/tesla/396.44/nvidia-diag-driver-local-repo-rhel7-396.44-1.0-1.x86_64.rpm`
-3. Run `rpm` command to install the RPM package.
-```
-rpm -i nvidia-diag-driver-local-repo-rhel7-396.44-1.0-1.x86_64.rpm
-```
-4. Run `yum` to clear the cache.
-```
-yum clean all
-```
-5. Run `yum` to install the driver.
-```
-yum install cuda-drivers
-```
-6. Run `reboot` to restart.
-7. Run `nvidia-smi`. If the correct information is output, the driver is installed successfully.
 
-## Installing the Driver in Windows System
-1. Log in to the [Official Website for NVIDIA Driver Downloads](http://www.nvidia.com/Download/Find.aspx).
-2. Select the OS and installation package. In this example, we will use **M40**.
-![](https://mc.qcloudimg.com/static/img/ba82ef3631369d12b995b6cb2a94b14c/image.png)
-3. Open the folder where the driver is stored and double click to start it. Follow the instructions to install the driver and restart the instance as required. You can check whether the GPU is working properly in the Device Management.
+### Installing an NVIDIA Tesla driver on a Windows instance
+1. To log in to GPU instances, see [Logging in to a Windows Instance Using the RDP File (Recommended)](https://intl.cloud.tencent.com/document/product/213/5435).
+2. Go to [NVIDIA Driver Downloads](http://www.nvidia.com/Download/Find.aspx).
+3. Configure the GPU type and operating system, and click **SEARCH** to search for the driver you need to download, as shown in the following figure. Below uses Tesla V100 as an example.
+![](https://main.qcloudimg.com/raw/222b7f9fa96b269a9c6c0b6b5781d048.png)
+4. Go to the directory where the downloaded installation package is located, double-click on it to install the driver as instructed, and restart the GPU instance as required.
+After the installation is completed, go to **Device Manager** to check whether the GPU works properly.
 
-## Common Installation Failures
-nvidia-smi does not work if the driver is not installed correctly. Common reasons include: 
-1. The required packages for the kernel module compiling are missing, such as gcc, kernel-devel-xxx, etc.
-2. There are multiple versions of the kernel in the system, and the DKMS cannot be configured correctly. The driver is compiled into a kernel module that is not the current version of the kernel, resulting in the failure of kernel module installation.
-3. After the driver is installed, the original installation becomes invalid due to the upgrade of the kernel version.
+
+## Reasons for installation failures
+If nvidia-smi does not run properly, the driver has not been installed correctly. Common reasons include:
+1. The operating system does not have the required packages installed for compiling the kernel module, such as gcc and kernel-devel.
+2. The operating system has kernels in multiple versions. Due to incorrect DKMS configuration, the driver compiles a kernel module that is not in the version of the current kernel, causing kernel module installation to fail.
+3. After the driver is installed, kernel version upgrade causes the original installation to fail.

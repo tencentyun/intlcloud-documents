@@ -1,41 +1,73 @@
-CUDA (Compute Unified Device Architecture) is a computing platform published by the graphic card vendor NVIDIA. As a generic parallel computing architecture, CUDA™ allows GPUs to solve complex computing problems. It contains CUDA instruction set architecture (ISA) and parallel computing engine within the GPU. Now, developers can write programs for CUDA ™ architecture using C, C++. These programs can be run with great performance on processors that support CUDA™.
-GPU instances use NVIDIA graphic cards and you need to install CUDA development operating environment for them. As the most frequently used one, CUDA 7.5 can be installed by following the steps below.
+## Overview
+Compute Unified Device Architecture (CUDA™) is a computing platform developed by NVIDIA. With a generic parallel computing architecture, CUDA allows GPUs to solve complex computing problems. It includes the CUDA instruction set architecture (ISA) and the parallel computing engine within the GPU. The CUDA platform is designed to work with programming languages such as C, C++, and Fortran. The compiled programs can be run on CUDA-enabled processors.
 
-## Installing on Linux
-1. Click to [download CUDA driver](https://developer.nvidia.com/cuda-75-downloads-archive) or copy the link `https://developer.nvidia.com/cuda-75-downloads-archive`.
-2. Select the operating system and installation package. We choose  CentOS 7.2 (64 bit) in this example.
-![](https://mc.qcloudimg.com/static/img/a69a79a2d6cbd1f442b58bfb423d8cca/image.jpg)
->
->- **Installer Type**: it is recommended to choose **rpm (network)**.
->- **network**: network installer package. The package is small, and you need to download the actual installer package in the server via private network.
->- **local**: local installation package. The package is large because it contains the installation packages for all downloaded installation components.
->
-3. Right click **Download** -> **Copy Link Address**.
-![](https://mc.qcloudimg.com/static/img/3a2552b7e1637055bae0a1391520713b/image.png)
-4. [Log in to a Linux instance using WebShell (recommended)](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are comfortable with:
- - [Log in to a Linux instance using remote login software](https://intl.cloud.tencent.com/document/product/213/32502).
- - [Log in to a Linux instance using SSH](https://intl.cloud.tencent.com/document/product/213/32501)
-5. Use `wget` command and paste the link address copied in the previous step to download the installer package. Or, you can download the CUDA installer package to a local system, and upload it to the GPU instance.
-![](https://mc.qcloudimg.com/static/img/e40ed1109aaed75d51b3781fe0045eb6/image.png)
-5. Run the following commands in the directory where the CUDA installer package is located:
-```
-sudo rpm -i cuda-repo-rhel7-7.5-18.x86_64.rpm
-```
-```
-sudo yum clean all
-```
-```
-sudo yum install cuda
-```
-6. Go to the` /usr/local/cuda-7.5/samples/1_Utilities/deviceQuery ` directory and execute `make` command to compile the `deviceQuery` program.
-7. Execute `deviceQuery`. The CUDA installation is successful if the following device information is displayed.
-![](https://mc.qcloudimg.com/static/img/d545951dc869591d83bf23e27831287a/image.jpg)
+Because GPU instances use NVIDIA graphic cards, you must install the CUDA Toolkit. This document uses the most common CUDA Toolkit 10.1 as an example to describe how to install CUDA Toolkit on a GPU instance.
 
-## Installing on Windows
-To install CUDA on Windows instance, use the remote desktop to log in to your Windows instance as admin.
-1. Download the CUDA installer package from [CUDA Driver Official Website](https://developer.nvidia.com/cuda-75-downloads-archive).
-2. Select the OS and installer. In this example, we choose Win Server 2012 R2 (64 bit).
-![](https://mc.qcloudimg.com/static/img/ecf81426ceb95fd4ed549cf0bc627895/image.jpg)
-![](https://mc.qcloudimg.com/static/img/525b743130bda690a7223cbd5533ec75/image.jpg)
-3. Launch the installation program and proceed according to the instructions. Installation is successful when you see the final dialog indicating the end of the process.
-![](https://mc.qcloudimg.com/static/img/52aef97b2d048f884c467d8446fed003/image.jpg)
+
+## Directions
+### Installing CUDA Toolkit on a Linux instance
+1. Go to the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) download page or visit `https://developer.nvidia.com/cuda-toolkit-archive`.
+2. Select the CUDA Toolkit version, as shown in the following figure. Below uses CUDA Toolkit 10.1 as an example.
+![](https://main.qcloudimg.com/raw/1bff72aeaceb4ad6a930861c5a5d74f0.png)
+3. Configure the platform information as instructed, as shown in the following figure.
+>!**Installer Type**: We recommend selecting **runfile (local)**.
+> - **network**: the network installer. It is a small executable and an internet connection is required during the installation.
+> - **local**: the local installer. It is very large and has all of the components embedded into it.
+> 
+![](https://main.qcloudimg.com/raw/acadac8128996daf65731875ae8aec3e.png)
+4. <span id="Step4"></span>When the following information appears, right-click **Download** and select **Copy link address**, as shown in the following figure.
+![](https://main.qcloudimg.com/raw/a494df725c2e7bcd924a0331ccaf9a11.png)
+5. To log in to GPU instances, see [Log into Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods:
+	- [Logging into Linux instances via remote login tools](https://intl.cloud.tencent.com/document/product/213/32502)
+	- [Logging into Linux instance via SSH key](https://intl.cloud.tencent.com/document/product/213/32501)
+6. Run the `wget` command to download the installer using the URL copied in [Step 4](#Step4), as shown in the following figure.
+![](https://main.qcloudimg.com/raw/0301e9615259750e5ce9f6fbe6874238.png)
+You can also download the installer to your local computer and upload it to the GPU instance.
+7. Add execution permissions to the installer. For example, to add execution permissions to the `cuda_10.1.105_418.39_linux.run` file, run the following commands in sequence:
+```
+ sudo chmod +x cuda_10.1.105_418.39_linux.run
+```
+```
+./cuda_10.1.105_418.39_linux.run --toolkit --samples --silent
+```
+8. Restart the operating system.
+9. Run the following commands in sequence to configure environment variables:
+```
+echo 'export PATH=/usr/local/cuda/bin:$PATH' | sudo tee /etc/profile.d/cuda.sh
+```
+```
+source /etc/profile
+```
+10. <span id="Step10"></span>Run the following commands in sequence to check whether CUDA Toolkit has been installed:
+```
+cd /usr/local/cuda-10.1/samples/1_Utilities/deviceQuery
+```
+```
+make
+```
+```
+./deviceQuery
+```
+If Result=PASS is returned, the installation is successful.
+After you run the `make` command, the following error is shown.
+![](https://main.qcloudimg.com/raw/416e1e50a4226925af6debb6cb26f0c8.png)
+In this case, run the following command to install gcc:
+```
+yum install -y gcc-c++
+```
+After the installation is completed, repeat [Step 10](#Step10) to verify.
+
+
+### Installing CUDA Toolkit on a Windows instance
+1. To log in to GPU instances, see [Logging in to a Windows Instance Using the RDP File (Recommended)](https://intl.cloud.tencent.com/document/product/213/5435).
+2. Visit the [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) download page.
+3. Select the CUDA Toolkit version, as shown in the following figure. Below uses CUDA Toolkit 10.1 as an example.
+![](https://main.qcloudimg.com/raw/1bff72aeaceb4ad6a930861c5a5d74f0.png)
+4. Configure the platform information as instructed, as shown in the following figure.
+![](https://main.qcloudimg.com/raw/9c25375680dcad463e8d758d3bbb0977.png)
+5. Go to the directory where the downloaded installer is located, double-click on it to install CUDA Toolkit as instructed, and restart the GPU instance as required.
+If the dialog box shown in the following figure appears, CUDA Toolkit has been installed.
+![](https://main.qcloudimg.com/raw/ae1ac03436a89fcb0ecb09842e9d0a68.png)
+
+
+
