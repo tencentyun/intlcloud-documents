@@ -67,7 +67,7 @@ After the installation is completed, repeat [Step 10](#Step10) to verify.
 ![](https://main.qcloudimg.com/raw/9c25375680dcad463e8d758d3bbb0977.png)
 5. Go to the directory where the downloaded installer is located, double-click on it to install CUDA Toolkit as instructed, and restart the GPU instance as required.
 If the dialog box shown in the following figure appears, CUDA Toolkit has been installed.
-![](https://main.qcloudimg.com/raw/22bd8237582f4552d3cce662f58ebf2a.png)
+![](https://main.qcloudimg.com/raw/ae1ac03436a89fcb0ecb09842e9d0a68.png)
 
 
 
