@@ -4,7 +4,7 @@ EMR provides a software WebUI entry for you to access the native UIs of componen
 
 ## Directions
 1. 	Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
-2. 	On the cluster details page, select **Cluster Service** and double click the **WebUI address** of the target component for access.
+2. 	On the cluster details page, select **Cluster Service** and click the **WebUI address** of the target component for access.
 The access address requires authentication. The username is "root", and the default password is the one you entered when creating the cluster. To change the password, click **Reset Native UI Password** on the page.
 >Access incurs fees that are billed by traffic.
 >
