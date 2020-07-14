@@ -1,9 +1,9 @@
 ## Feature Overview
 The server status page displays the monitoring overview of all servers in the current cluster and the list of all nodes. It supports viewing heat maps of all servers. You can manage the status and metric information of servers in the EMR Console during daily use.
 ## Directions
-1. 	Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
-2. 	Select **Cluster Resources** > **Server Status** to view the monitoring information of all servers in the cluster.
-3. 	In server monitoring, you can view an aggregated overview of monitoring metrics of all servers in the current cluster and the list of all nodes.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
+2. Select **Cluster Resources** > **Server Status** to view the monitoring information of all servers in the cluster.
+3. In server monitoring, you can view an aggregated overview of monitoring metrics of all servers in the current cluster and the list of all nodes.
 ![](https://main.qcloudimg.com/raw/7f8569a5f4a75b6f44859a3b56b55283.png)
  - **Overview** intuitively displays the aggregated metrics and their statistical rules of all servers in the corresponding time period. The system displays a maximum of 6 metrics by default. You can click "Set Metric" to customize the displayed metrics.
 ![](https://main.qcloudimg.com/raw/1cff3fb7d4b6fb87745db3e015d24588.png)
