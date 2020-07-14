@@ -1,8 +1,8 @@
-The callback feature is disabled by default for LVB push. This document describes how to associate/disassociate a push domain name with/from a callback template to enable/disable the callback feature.
+The callback feature is disabled by default for LVB push. This document describes how to associate/unassociate a push domain name with/from a callback template to enable/disable the callback feature.
 
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
-- When an LVB event is triggered after the callback feature has been enabled, you can use the [event message notification](https://intl.cloud.tencent.com/document/product/267/31566) to receive the event information.
+- When an LVB event is triggered after the callback feature has been enabled, you can receive the event information via the [event message notification](https://intl.cloud.tencent.com/document/product/267/31566).
 
 ## Prerequisites
 - You have logged in to the [LVB Console](https://console.cloud.tencent.com/live), and have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
@@ -15,9 +15,9 @@ The callback feature is disabled by default for LVB push. This document describe
 3. Select a callback template and click **Save**.
 ![](https://main.qcloudimg.com/raw/07e03b807866a54f212b268e16fbf425.png)
 
-## Disassociating a Callback Template
+## Unassociating a Callback Template
 
-1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to disassociate or click **Manage** to enter the domain details page.
+1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to unassociate or click **Manage** to enter the domain details page.
 2. Select **Template Configuration** and click **Edit** in the **Callback Configuration** tab.
 3. Deselect the template and click **Save**.
 ![](https://main.qcloudimg.com/raw/8b55740b1d953df0c1353435aa13412f.png)
