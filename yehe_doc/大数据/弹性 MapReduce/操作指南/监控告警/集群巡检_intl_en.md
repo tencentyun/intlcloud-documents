@@ -8,8 +8,7 @@ An inspection report will be generated in PDF format after each inspection task 
 ## Directions
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
 2. Select **Cluster Monitoring** > **Cluster Inspection** on the cluster details page to perform health check on the servers and services of the current cluster. Each cluster can only be configured with one regular inspection task. You can also click **Instant Inspection** to perform inspection. To configure regular inspection tasks, click **Regular Inspection Settings**.
-![](https://main.qcloudimg.com/raw/1ef68ef03141db1cf4e07a9018abea3f.png)
+
  - Instant inspection: it is to check the health status of the servers and services of the cluster from a certain moment to the current time and generate an inspection report.
-![](https://main.qcloudimg.com/raw/db6c6902605aa8e31689d7b1db5d1327.png)
+
  - Regular inspection: after the regular inspection policy is enabled, the system will automatically check the health status of the servers and services of the cluster in each inspection cycle and generate inspection reports. Each cluster can be configured with one regular inspection policy.
-![](https://main.qcloudimg.com/raw/31febec7c267b5bcca8fce661e5f6491.png)
