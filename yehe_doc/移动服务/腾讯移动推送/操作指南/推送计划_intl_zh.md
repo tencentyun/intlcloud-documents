@@ -28,7 +28,7 @@
 1. 进入 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)。
 2. 前往【推送管理】>【推送任务】，单击【新建推送】。
 3. 单击【新增推送计划】。
-   ![](https://main.qcloudimg.com/raw/e72cf9792ace29420718c7202579565c.png)
+   ![](https://main.qcloudimg.com/raw/a340cc1783dfc8f00da6ceae396d5812.png)
 4. 在【新增推送计划】对话框中输入计划名称和计划描述，单击【确定】。创建完成后，本次推送自动选中该推送计划。
 
 
@@ -37,17 +37,17 @@
 
 1. 进入 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)。
 2. 前往【推送管理】>【推送计划】，选中本次需要进行的推送计划，单击【详情】进入推送任务列表页。
-   ![](https://main.qcloudimg.com/raw/a6ae4b78e3e3a8ade7ea71d23cad898a.png)
+   ![](https://main.qcloudimg.com/raw/a30e39d13e055ebdaa59108c7ca088bf.png)
 
 ### 在推送计划中创建推送任务
 
 在推送任务列表页面中单击【新建任务】，在创建推送任务页面中配置【消息内容】->【预览】->【推送】。
-![](https://main.qcloudimg.com/raw/435bf45977c16b8673c84afd0c151212.png)
+![](https://main.qcloudimg.com/raw/dc7ae3d299e0e65f8b07c69ed5d77b4a.png)
 
 ### 查看推送计划的聚合数据统计
 
 在推送计划详情中，选择概览页面，在“计划概览”页面中可以查看推送计划的汇总数据统计。
-![](https://main.qcloudimg.com/raw/317196bdaa34fddb6056eafa67d1c690.png)
+![](https://main.qcloudimg.com/raw/bdf6651442b40956965ffcc7b5560b41.png)
 	
 
 ### REST API使用（创建推送计划、推送时指定推送计划）
