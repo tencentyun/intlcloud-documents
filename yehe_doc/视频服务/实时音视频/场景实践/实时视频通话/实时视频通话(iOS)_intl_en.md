@@ -1,8 +1,9 @@
-## UI Example
+## Effect Demo
 
-To quickly implement video calls, you can modify and adapt the Tencent Cloud TRTC Demo, or use the Tencent Cloud `TRTCVideoCall` component which allows you to customize UI.
+To quickly implement the audio call feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCVideoCall` component and implement custom UI.
 
 <span id="ui"> </span>
+
 ## Reusing Demo UI
 
 <span id="ui.step1"></span>
@@ -10,11 +11,11 @@ To quickly implement video calls, you can modify and adapt the Tencent Cloud TRT
 1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Click **Start Now**, enter an application name such as `TestVideoCall`, and click **Create Application**.
 
-> This feature is based on two basic PaaS Tencent Cloud services, i.e., [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647/35078) and [Instant Messaging (IM)](https://intl.cloud.tencent.com/document/product/1047). IM will be activated simultaneously when TRTC is activated.
+> This feature uses two basic PaaS services of Tencent Cloud, namely, [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647/35078) and [Instant Messaging (IM)](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.
 
 <span id="ui.step2"></span>
 ### Step 2. Download the SDK and demo source code
-1. Mouse over the card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to go to the GitHub website (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)**) to download the SDK and supporting demo source code.
+1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to go to the GitHub website (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)**) to download the SDK and supporting demo source code.
  ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
@@ -25,12 +26,12 @@ To quickly implement video calls, you can modify and adapt the Tencent Cloud TRT
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+    <img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage application.
 
->In this document, the `SECRETKEY` is configured in the client code to obtain `UserSig`. The `SECRETKEY` is easily decompiled and reverse cracked. If the `SECRETKEY` is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method only applies to locally running a demo project and commissioning features**.
->The correct `UserSig` distribution method is to integrate the computing code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain the dynamic `UserSig`. For more information, see [How to Generate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+>The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
+>The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 <span id="ui.step4"></span>
 ### Step 4. Run the demo
@@ -49,7 +50,8 @@ The `TRTCVideoCallDemo` source code folder contains the `ui` and `model` subfold
 
 <span id="model"> </span>
 ## Customizing UI
-The `TRTCVideoCallDemo` [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCVideoCallDemo) folder contains the `ui` and `model` subfolders. The latter contains the `TRTCVideoCall` component, which is a reusable open source component already implemented by Tencent Cloud. You can view the component’s API functions in the `ITRTCVideoCallInterface.swift` file.
+The `TRTCVideoCallDemo` source code folder contains the `ui` and `model` subfolders. The latter contains the `TRTCVideoCall` component, which is a reusable open source component already implemented by Tencent Cloud. You can view the component’s API functions in the `ITRTCVideoCallInterface.swift` file.
+
 ![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 
 You can customize the UI by reusing the code and the open source `TRTCVideoCall` component in the `model` folder and implementing the code in the `ui` folder yourself.
@@ -214,15 +216,15 @@ The API functions of the `TRTCVideoCall` component are as follows:
 
 | API Function | Description |
 |---------|---------|
-| setup | It is used to initialize. No feature is available before initialization. | 
+| setup | Performs the required initialization before all other features can be used. | 
 | destroy | Terminates an instance. |
 | setDelegate | Sets the callback proxy of `TRTCVideoCallDelegate`, which provides status notification for users. |
-| login | It is used to log in to IM. No feature is available before a successful login. |
-| logout | It is used to log out of IM. You cannot make a call after logout. |
-| call | C2C call invitation. The invitee receives the `onInvited` callback. |
-| groupCall | IM group call invitation. The invitee receives the `onInvited` callback. |
-| accept | The invitee answers the call. |
-| reject | The invitee rejects the call. |
+| login | Logs in to IM. All other features can be used only after login. |
+| logout | Logs out of IM. Calls cannot be made after logout. |
+| call | Invites users to C2C call. The callee will receive the `onInvited` callback. |
+| groupCall | Invites users to IM group call. The callee will receive the `onInvited` callback. |
+| accept | Answers call as callee. |
+| reject | Rejects call as callee. |
 | hangup | Hangs up the call. |
 | startRemoteView | Renders the remote user's camera data into the specified `UIView`. |
 | stopRemoteView | Stops rendering the camera data for a remote user. |
