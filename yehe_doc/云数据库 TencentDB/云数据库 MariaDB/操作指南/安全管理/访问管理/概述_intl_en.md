@@ -17,6 +17,3 @@ A CAM policy must authorize or deny the use of one or more TencentDB operations.
 >- You are recommended to manage TencentDB resources and authorize TencentDB operations through CAM policies. Although the experience stays the same for existing users who are granted permission by project, it is not recommended to continue managing resources and authorizing operations in a project-based manner.
 >- Effectiveness conditions cannot be set in TencentDB for the time being.
 
-### More information
-
-For more information on CAM, please see the [CAM documentation](https://intl.cloud.tencent.com/document/product/598?from_cn_redirect=1).
