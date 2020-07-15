@@ -48,7 +48,6 @@ Topic 监控：
 | 当前分区最大 offset |消费分组对应当前 Topic 最大 offset。|
 | 未消费的消息条数（条） |消费分组未消费消息数。|
 
-指标中英文对照详情参见文档 [CKafka 监控指标](https://intl.cloud.tencent.com/document/product/248/12154)。
 
 ### CKafka 监控 API 文档
 CKafka 监控 API 详情可参见如下文档：

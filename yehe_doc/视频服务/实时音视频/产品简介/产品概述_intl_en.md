@@ -3,25 +3,27 @@ Leveraging Tencent's 21 years of experience in network and audio/video technolog
 - Multi-person audio/video call solution
  TRTC enables smooth global communication through Tencent Cloud's Direct Connect network. It provides client SDKs and APIs for mobile devices and desktops. Users can easily use TRTC services on WeChat Mini Programs and webpages.
 - Low-latency interactive live streaming solution
- TRTC leverages Tencent Cloud's high-quality node resources, industry-leading network and audio/video technologies to helps you build interactive live streaming services with minimal lags and a latency below 1 second, taking live streaming into the era of CDN 2.0.
+ TRTC leverages Tencent Cloud's high-quality node resources, industry-leading network and audio/video technologies to help you build interactive live streaming services with minimal lags and a latency below 1 second, taking live streaming into the era of CDN 2.0.
+
 
 ## Product Architecture
-TRTC focuses on providing multi-person audio/video call and low-latency interactive live streaming solutions for various platforms. It offers SDKs for Mini Program, desktop browser, Android, iOS, Electron, Windows, macOS, Linux, and other platforms for you to quickly integrate with and connect to its backend. Through its interconnection with different Tencent Cloud products such as IM, LVB, and VOD, TRTC makes it easier for you to develop a wider diversity of business scenarios. The product architecture is as follows:
+TRTC focuses on providing multi-person audio/video call and low-latency interactive live streaming solutions for various platforms. It offers SDKs for mini program, desktop browser, Android, iOS, Electron, Windows, macOS, Linux, and other platforms for you to quickly integrate with and connect to its backend. Through its interconnection with different Tencent Cloud services such as IM, LVB, and VOD, TRTC makes it easier for you to develop a wider diversity of business scenarios. The product architecture is as follows:
+![](https://main.qcloudimg.com/raw/0e8d2874919fb29838823f0ce5264158.png)
 
 ## Supported Platforms
-TRTC **supports a wide range of platforms**. The following lists how it is compatible with various platforms:
+TRTC **supports a wide range of platforms**. The following lists the supported platforms and development environments:
 
-| Platform | Compatibility | Demo | Demo Source Code Download |
-|------|------|------|------|
-| iOS | iPhone and iPad on iOS 9.0 or above. | Yes | Yes |
-| Android | Android 4.1 (SDK API Level 16) at minimum; Android 5.0 (SDK API Level 21) or above is recommended. | Yes | Yes |
-| Windows | Windows 7 or above. | Yes | Yes |
-| macOS | Mac machines on macOS X10.10 or above. | Yes | Yes |
-| Desktop browser | For more information on the compatibility, please see [Quick Integration (Desktop Browser)](https://intl.cloud.tencent.com/document/product/647/35096). | Yes | Yes |
-| Electron | Windows 7 or above; macOS X10.10 or above. | Yes | Yes |
-| WeChat Mini Program | Mini Program Base Library 2.10.0 or above; WeChat on iOS 7.0.9 or above; WeChat on Android 7.0.8 or above. | Yes | Yes |
-| Linux | CentOS 7.6 or above is recommended, Ubuntu is supported, but embedded and desktop Linux distributions are not supported. The SDK for Linux can be deployed only on servers. For deployment on clients, please choose an SDK for another platform. | Yes | Yes |
+| Platform      | Development Environment                                                 | 
+| :--------- | :----------------------------------------------------------- |
+| iOS        |<li>iPhone and iPad on iOS 9.0 or above</li><li>Xcode 9.0 or above</li><li>The project has a valid developer signature</li> |
+| Android    | <li>Android Studio 3.5 or above</li><li>Android 4.1 (SDK API Level 16) or above is recommended</li> |
+| Windows    | <li>Windows 7 or above</li><li>Visual Studio 2010 or above (Visual Studio 2015 is recommended)</li><li>.Net Framework 4.0 or above</li> |
+| macOS     | <li>Xcode 9.0 or above</li><li>Mac machines on macOS X 10.10 or above</li><li>The project has a valid developer signature</li> |
+| Desktop browser | Google Chrome 52 or above is recommended  |
+| Electron   | <li>Windows 7 or above; macOS 10.10 or above</li><li>Electron 4.0.0 or above (the latest Electron SDK is recommended)</li> |
+| WeChat Mini Program | <li>WeChat on iOS 7.0.9 or above</li><li>WeChat on Android 7.0.8 or above</li><li>Mini Program Base Library 2.10.0 or above</li><li>As the WeChat Mini Program Developer Tool does not support native components (i.e., the &lt;live-pusher&gt; and &lt;live-player&gt; tags), you need to run the demo on a real device.</li> |
+| Linux      | <li>CentOS 7.6 is recommended, but embedded and desktop Linux distributions are not supported.</li><li>The SDK for Linux can be deployed only on servers.</li> |
 
 >
-- To download the SDK and supporting demo source code for Linux, please contact us. To download the SDKs and supporting demo source code for other platforms, please see [SDK Download](https://intl.cloud.tencent.com/document/product/647/34615).
-- To try out the demo for Linux, please contact us. To try out the demos for other platforms, please see [Trying out Demos](https://intl.cloud.tencent.com/document/product/647/35076).
+- To download the SDK and supporting demo source code for Linux, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). To download the SDKs and supporting demo source code for other platforms, please see [SDK Download](https://intl.cloud.tencent.com/document/product/647/34615).
+- To try out the demo for Linux, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). To try out the demos for other platforms, please see [Free Demo](https://intl.cloud.tencent.com/document/product/647/35076).
