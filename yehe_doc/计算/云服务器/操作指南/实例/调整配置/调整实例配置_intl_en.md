@@ -1,68 +1,68 @@
 ## Scenario
 
-Hardware devices of Tencent Cloud CVM instances can be adjusted quickly and conveniently. This document describes the methods and precautions for configuration upgrade, downgrade, and cross-model adjustment.
+Hardware devices of Tencent Cloud CVM instances can be adjusted quickly and flexibly. This document describes the operation methods for configuration upgrade, downgrade, and cross-model adjustment.
 
 ## Prerequisites
 
-You can adjust an instance's configuration when the instance is either started or shut down.
+You can adjust the configuration of an instance when it is in shutdown or running status. If the instance is running, the adjustment takes effect after it is forcibly shut down and restarted.
 > 
-> - When the instance is **shut down**, you can directly adjust its configuration in the console.
-> - When the instance is **started**, you can adjust the configuration online and confirm the forced shutdown of the instance. The adjusted configuration takes effect after the instance is restarted.
-> - You can adjust configurations **in batches** online for multiple instances. If an instance in the batch of instances is **started**, you need to confirm forced shutdown for the instance. The adjusted configuration takes effects after the instance is restarted.
+> - If the instance has been **shut down**, you can adjust its configuration directly via the console.
+> - If the instance is **running**, you can adjust its configuration online and confirm to force shut down the instance. The adjustment takes effect after the instance is restarted.
+> - You can adjust the configurations of instances online **in batches**. If an instance in the batch operation is **running**, you need to confirm to force shut down the instance. The adjustment takes effects after the instance is restarted.
 
 ## Limits and Impacts
 
 ### Configuration adjustment limits
 
-Only the configurations of instances **whose system and data disks are both CBS cloud disks** can be adjusted.
-- Upgrading the configuration:
-The number of configuration upgrades is not limited. The upgraded configuration takes effect immediately.
-- Downgrading the configuration:
- The configurations of pay-as-you-go instances can be downgraded at any time an unlimited number of times.
-- Adjustment across instance families: configurations can be adjusted between different instance families without the need of data migration.
-During configuration adjustment, target instance types depend on the instance types provided in the current availability zone. Pay attention to the following limits:
+Only instance **whose system and data disks are both CBS cloud disks** supports configuration adjustment.
+- Configuration upgrade:
+No limits on the number of configuration upgrades. The upgrade takes effect immediately.
+- Configuration downgrade:
+ Pay-as-you-go instances can be downgraded at any time. No limits on the number of downgrades.
+- Adjustment across instance families: configurations can be adjusted between instance families without the need for data migration.
+During configuration adjustment, target specifications depend on the instance types provided in the current availability zone. Note the following limits:
  - **Spot instances** do not support cross-model configuration adjustment.
- - **Exclusive instances** do not support cross-model configuration adjustment. The configuration adjustment scope is limited to the remaining resources of the dedicated host where the instance is located.
- - **Heterogeneous instances, such as GPU and FPGA instances,** cannot be used as the source or destination instance type for configuration adjustment across instance families.
- - **Instances configured with a basic network** cannot be adjusted to instances that only support VPC instances.
- - If the target instance type does not support the CBS type configured for the current instance type, the configuration cannot be adjusted.
+ - **Dedicated instances** do not support cross-model configuration adjustment. The adjustment scope is subject to the remaining resources of the dedicated host where the instance is located.
+ - **Heterogeneous instances such as GPU and FPGA instances** cannot be used as the source or target instance type for configuration adjustment across instance families.
+ - **Instances configured with a basic network** cannot be adjusted to instances that only support VPC.
+ - If the target instance type does not support the CBS disk type configured for the current instance type, the configuration cannot be adjusted.
  - If the target instance type does not support the image type configured for the current instance type, the configuration cannot be adjusted.
  - If the target instance type does not support the ENI or ENI quantity configured for the current instance type, the configuration cannot be adjusted. For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/576/18527).
- - If the target instance type does not support the public network bandwidth upper limit configured for the current instance type, the configuration cannot be adjusted. For more information, see the [Public Network Bandwidth Cap](https://intl.cloud.tencent.com/document/product/213/12523).
+ - If the target instance type does not support the public network bandwidth cap configured for the current instance type, the configuration cannot be adjusted. For more information, see [Public Network Bandwidth Cap](https://intl.cloud.tencent.com/document/product/213/12523).
 
 ### Impacts
 
-The private IP address of an instance may be changed after configuration adjustment. If the private IP address of an instance is changed after configuration adjustment, a prompt appears on the configuration adjustment page. If no prompt appears, the private IP address is not changed.
+The private IP of an instance may change after configuration adjustment. In this case, a prompt will appear on the configuration adjustment page. Otherwise, the private IP will remain the same.
 
 ## Directions
 
 >
-> - If your business changes, you can adjust configurations.
-> - During configuration upgrade, upgrade the configuration and pay any fees involved.
-> - During configuration downgrade, confirm the refund details and forcibly shut down and restart your CVM instance for the new configuration to take effect. Then, the CVM instance runs based on the new configuration.
+> - If your business changes, you can adjust the instance configuration.
+> - During configuration upgrade, upgrade accordingly and pay for fees that may be incurred.
+> - During configuration downgrade, confirm the refund detail and forcibly shut down and restart your CVM instance for the new configuration to take effect immediately.
 
-### Configuration adjustment in the console
+### Configuration adjustment via the console
 
 #### Adjusting the configuration of a single instance
 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm) and click **Instances** to view the CVM instance list.
-2. Locate the target instance and choose **More** > **Resource Adjustment** > **Adjust Configuration** in the **Action** column on the right, as shown in the following figure:
+2. Locate the instance to be adjusted and choose **More** > **Resource Adjustment** > **Adjust Configuration** in the **Operation** column on the right, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/65541031befe2d0144227cf5a616e161.png)
-3. In the "Select target configuration" step, confirm the instance status and operation, **select the required model and instance type, confirm the type and performance parameters**, and click **Next**, as shown in the following figure:
+3. In the "Select target configuration" step, confirm the instance status and operation, **select the required model and specifications, confirm the performance parameters**, and click **Next**, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/818fbf0dfa791ad5d5a76186eefba019.png)
 4. Based on the instance billing method, confirm the fees and click **Next**.
-	- Pay-as-you-go instances: confirm the amount to be frozen for the new instance type. After the configuration is adjusted, pay-as-you-go instances are charged starting from the tier-1 price. Confirm the billing rules before configuration adjustment, as shown in the following figure:
+	- Pay-as-you-go instances: confirm the amount to be frozen for the new instance type. After configuration adjustment, pay-as-you-go instances are charged starting from the tier-1 price. Confirm the billing rules, as shown in the following figure:
 	![](https://main.qcloudimg.com/raw/25f8630836acdfe274357142d8609c5d.png)
-5. In the "Shutdown CVM" step, carefully read the prompt for different instance running states.
- - If the current instance is running, carefully read the prompt and select "Agree to a forced shutdown", as shown in the following figure:
+5. In the "Shutdown CVM" step, read the prompt carefully based on the instance running status.
+ - If the current instance is running, read the prompt carefully and select "Agree to forced shutdown", as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/e016f2cc674938acd0046115f007669b.png)
- - If the current instance is shut down, the following prompt appears:
+ - If the current instance is shut down, the following prompt will appear:
 ![](https://main.qcloudimg.com/raw/8385495393237523d0d71460a7b7009b.png)
-6. Click **Adjust Now** to go to the order page and pay for the order. 
+6. Click **Adjust Now** to go to the order page and complete the payment. 
 
-### Configuration adjustment through APIs 
+### Configuration adjustment via APIs 
 
-You can use the ResetInstancesType API to adjust the instance configuration. For more information, see the [ResetInstancesType](https://intl.cloud.tencent.com/document/product/213/33239) API document.
+You can use the ResetInstancesType API to adjust the instance configuration. For more information, see the [ResetInstancesType](https://intl.cloud.tencent.com/document/product/213/33239) API documentation.
 
 
 
