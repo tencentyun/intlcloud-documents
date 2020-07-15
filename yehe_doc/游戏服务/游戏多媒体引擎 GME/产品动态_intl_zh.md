@@ -12,7 +12,7 @@
 <tbody><tr>
 <td>发布 SDK 2.6.0beta版本</td>
 <td >
-<li>优化进房流程，提高弱网环境下进房成功率<li>降低Android机型采集延迟<li>增加语音转文字服务边说边译功能<li>提高SDK稳定性
+<li>优化进房流程，提高弱网环境下进房成功率<li>降低Android机型采集延迟<li>增加语音转文字服务边说边识别功能<li>提高SDK稳定性
 </td> 
 <td>2020-07-07</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/607/18521">SDK下载指引</tr>
