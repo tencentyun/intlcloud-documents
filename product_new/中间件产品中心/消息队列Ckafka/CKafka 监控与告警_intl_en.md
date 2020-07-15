@@ -48,8 +48,6 @@ Consumer group:
 | Maximum offset of the current partition | Maximum offset of the current topic corresponding to the consumer group. |
 | Number of unconsumed messages | Number of unconsumed messages in the consumer group. |
 
-For more information on the metric names and descriptions, please see [CKafka Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/12154).
-
 ### CKafka monitoring API documentation
 For more information on CKafka monitoring APIs, please see:
 - Topic Monitoring
