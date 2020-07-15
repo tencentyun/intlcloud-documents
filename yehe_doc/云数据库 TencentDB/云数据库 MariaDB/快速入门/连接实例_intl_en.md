@@ -18,9 +18,9 @@ No matter whether you access the instance from the private or public network, yo
  - Username: username created in the prerequisites section.
  - Password: password of the username.
  - Port: port corresponding to the private IP.
-![](https://main.qcloudimg.com/raw/5a8c629f764f9a884744da4af738ae00.png)
-3) After successful login, the following page will appear, where you can view the modes and objects of the TencentDB for MariaDB instance, create tables, and perform operations such as data insertion and query.
-![](https://main.qcloudimg.com/raw/6c296dd8b1e778f16db7d98e4c88325c.png)
+
+3) After successful login, the following page will appear, where you can view the modes and objects of the TencentDB for MariaDB instance, create tables, and perform **operations** such as data insertion and query.
+
 **Login on Linux**
 1) In the following example, the CVM instance runs on CentOS 7.2 64-bit. You can use Yum, the package manager built in CentOS, to download and install the MySQL client from the Tencent Cloud image source.
 Install the client by running the following command:
@@ -42,7 +42,7 @@ Take `show databases;` for example as below:
 1. Get the public network address of the instance.
 1) Log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql) and click an instance name or **Manage** in the "Operation" column.
 2) On the instance details page, click **Enable** after the public network address to enable it.
-![](https://main.qcloudimg.com/raw/f7575ce415436b2d77b8a78e2faff999.png)
+
 3) After the public network address is enabled successfully, it will be displayed.
 
 2. Log in to the instance.
@@ -53,9 +53,9 @@ Take `show databases;` for example as below:
  - Username: username created in the prerequisites section.
  - Password: password of the username.
  - Port: port number corresponding to the public network domain name.
-![](https://main.qcloudimg.com/raw/1c2c5cd0f4e4edb7bd9c1f921775284a.png)
+
 3) After successful login, the following page will appear, where you can view the modes and objects of the TencentDB for MariaDB instance, create tables, and perform operations such as data insertion and query.
-![](https://main.qcloudimg.com/raw/95c99b7db6b2d972aa3020268887d42d.png)
+
 
 **Login on Linux**
 1) In the following example, the CVM instance runs on CentOS 7.2 64-bit. Download the MySQL client from the official website and install it with the following command:
