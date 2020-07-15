@@ -5,7 +5,7 @@
 >外网访问需要开启数据库实例的外网地址，此操作会使您的数据库服务暴露在公网上，可能导致数据库被入侵或攻击。建议您使用内网访问的方式来登录数据库。
 
 ## 前提条件
-无论从内网还是外网访问，都需要先 [创建账号](https://intl.cloud.tencent.com/document/product/237/7054)。
+无论从内网还是外网访问，都需要先 [创建帐号](https://intl.cloud.tencent.com/document/product/237/7054)。
 
 ## 访问数据库
 ### 内网访问
@@ -18,9 +18,9 @@
  - 用户名：前提条件中创建的用户名。
  - 密码：用户名对应的密码。
  - 端口：内网 IP对应的端口。
-![](https://main.qcloudimg.com/raw/5a8c629f764f9a884744da4af738ae00.png)
+
 3) 登录成功的界面如图所示，在此页面上您可以看到 MariaDB 数据库的各种模式和对象，您可以开始创建表，进行数据插入和查询等操作。
-![](https://main.qcloudimg.com/raw/6c296dd8b1e778f16db7d98e4c88325c.png)
+
 **从 Linux 系统登录**
 1) 以 CentOS 7.2 64位系统的 CVM 为例，利用 CentOS 自带的包管理软件 Yum 去腾讯云的镜像源下载安装 MySQL 客户端。
 执行以下命令安装客户端：
@@ -40,9 +40,9 @@ mysql -h hostname -u username -p
 
 ### 外网访问
 1. 获取数据库的外网地址。
-1) 登录 [MariaDB 控制台](https://console.cloud.tencent.com/tdsql)，单击实例名或操作列的【管理】。
+1) 登录 [MariaDB 控制台](https://console.cloud.tencent.com/tdsql)，单击实例名或“操作”列的【管理】。
 2) 在实例详情页，单击外网地址后的【开启】，开启外网地址。
-![](https://main.qcloudimg.com/raw/f7575ce415436b2d77b8a78e2faff999.png)
+
 3) 开启成功后，即可查看到外网地址。
 
 2. 登录到数据库。
@@ -52,10 +52,11 @@ mysql -h hostname -u username -p
  - 我的SQL主机地址：输入外网域名。
  - 用户名：前提条件中创建的用户名。
  - 密码：用户名对应的密码。
+
  - 端口：外网域名对应的端口号。
-![](https://main.qcloudimg.com/raw/1c2c5cd0f4e4edb7bd9c1f921775284a.png)
+
 3) 登录成功的界面如图所示，在此页面上您可以看到 MariaDB 数据库的各种模式和对象，您可以开始创建表，进行数据插入和查询等操作。
-![](https://main.qcloudimg.com/raw/95c99b7db6b2d972aa3020268887d42d.png)
+
 
 **从 Linux 系统登录**
 1) 以 CentOS 7.2 64位系统的 CVM 为例，在官网下载安装 MySQL 客户端。具体命令为：
