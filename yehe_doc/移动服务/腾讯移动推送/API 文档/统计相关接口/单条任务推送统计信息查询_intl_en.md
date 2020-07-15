@@ -40,10 +40,11 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_task_stat_channel
 
 | Parameter Name | Type   | Description           |
 | ------------------- | ---- | ------------------------------------------------------------ |
-| pushActiveUv | Integer    | Scheduled delivery |
-| pushOnlineUv | Integer    | Actual delivery |
-| verifySvcUv         | Integer  | Device reached (only valid for TPNS, ROG, and FCM channels. For other vendor channels, the `pushOnlineUv` metric of actual deliveries by TPNS will be used) |
-| callbackVerifySvcUv | Integer  | Arrival receipt for vendor channel (only valid for Huawei, OPPO, Vivo, and Mi channels. For vendor channel receipt configuration, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)) |
+| pushActiveUv        | Integer  | Scheduled<br/>Number of available devices connected to the Internet within 90 days that meet the target push conditions and on which the notification bar is enabled.                                                |
+| pushOnlineUv        | Integer  | Sent<br/>Actual number of available devices in the scheduled devices that have been delivered to vendor channels or to process online terminal using TPNS channel.                                                   |
+| arrivalUv         | Integer  | Devices reached (including arrival receipts for TPNS and vendor channels. For the Huawei and Meizu channels, you need to configure the arrival receipts manually. For more information, see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)）|
+| verifySvcUv         | Integer  | Devices reached (only for TPNS, ROG and FCM channels.  Use the TPNS `pushOnlineUv` metric for other vendor channels.)**Note:** This field will be deprecated later. Use `arrivalUv ` to get the arrival data |
+| callbackVerifySvcUv | Integer  | Vendor channel arrival receipt (For the Huawei and Meizu channels, you need to configure the arrival receipts manually. For more information, see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)）**Note:** This field will be deprecated later. Use `arrivalUv ` to get the arrival data|
 | verifyUv            | Integer  | Display (obsolete)|
 | clickUv      | Integer    | Click     |
 | cleanupUv    | Integer    | Dismissal |
