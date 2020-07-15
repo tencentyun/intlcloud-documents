@@ -2,10 +2,10 @@
 在远程教育、秀场直播、视频会议、远程定损、金融双录、在线医疗等应用场景中，考虑取证、质检、审核、存档和回放等需求，常需要将整个视频通话或互动直播过程录制和存储下来。
 
 TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录制成一个独立的文件：
-![](https://main.qcloudimg.com/raw/b96dd835182d3546f8d13abb290e619e.gif)
+![](https://main.qcloudimg.com/raw/7820cdafe40fabc38653bc53795412d2.png)
 
 也可以将房间中的多路音视频先进行 [云端混流](https://intl.cloud.tencent.com/document/product/647/34618)，再将混合后的音视频流录制成一个文件：
-![](https://main.qcloudimg.com/raw/be3fe2b57b07fb9cabe62e108f5cbe69.gif)
+![](https://main.qcloudimg.com/raw/2f92f978c2ca76d001891e645905e8f9.png)
 
 ## 控制台指引
 
@@ -18,7 +18,7 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 <span id="recordType"></span>
 ### 选择录制形式
 TRTC 的云端录制服务提供了两种不同的录制形式：“全局自动录制”和“指定用户录制”：
-![](https://main.qcloudimg.com/raw/cfa54cf045cd8d6ed266c5022ac4eb1e.png)
+![](https://main.qcloudimg.com/raw/d8084b7aa472b95ec21448703e4b6a49.png)
 
 - **全局自动录制**
 每一个 TRTC 房间中的每个用户的音视频上行流都会被自动录制下来，录制任务的启动和停止都是自动的，不需要您额外操心，比较简单和易用。具体的使用方法请阅读 [方案一：全局自动录制](#autoRecord)。
@@ -73,7 +73,7 @@ TRTC 云端录制文件会默认存储于腾讯云点播服务上，如果您的
 ###  设置录制回调
 如果您需要实时接收到新文件的 [落地通知](#callback)，可在此处填写您的服务器上用于接收录制文件的回调地址，该地址需符合 HTTP（或 HTTPS）协议。当新的录制文件生成后，腾讯云会通过该地址向您的服务器发送通知。
 
-![](https://main.qcloudimg.com/raw/34588c52d3a93690874fdb760c771a84.png)
+
 
 详细的录制回调接收和解读方案请参考文档后半部分的：[接收录制文件](#callback)。
 
@@ -115,7 +115,7 @@ TRTC 房间中的每一个用户的音视频流都会被自动录制成文件，
 <span id="recordSDKAPI"></span>
 ### 方案二：指定用户录制（SDK API）
 
-![](https://main.qcloudimg.com/raw/83b8e1790265a58bede293934802d000.gif)
+![](https://main.qcloudimg.com/raw/e3d81ef76c64d2fb6631d98d22bfb0dc.png)
 
 - **控制台中的设定**
 要使用该种录制方案，请在控制台中 [选择录制形式](#recordType) 时，设定为“指定用户录制”。
@@ -151,7 +151,7 @@ param.userDefineRecordId = @"1001_rexchang";  // 录制 ID，即指定开启该�
 <span id="recordRESTAPI"></span>
 ### 方案三：指定用户录制（REST  API）
 
-![](https://main.qcloudimg.com/raw/f0d7c94b98e4e7839c2e360f1aeea718.gif)
+![](https://main.qcloudimg.com/raw/71b4b6705cee61000660c13c2a0fe595.png)
 
 >? TRTC 的服务端提供了一对 REST API（ [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) 和 [StopMCUMixTranscode](https://cloud.tencent.com/document/product/647/44269)）用于实现云端混流、云端录制和旁路直播三个功能：
 >- 云端混流：通过 `LayoutParams` 参数可以控制混流时的画面布局。
@@ -185,13 +185,13 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
 ```
 
 - **录制任务的结束**
-自动停止，您也可以中途调用 [StopMCUMixTranscode](https://cloud.tencent.com/document/product/647/44269) 停止混流和录制任务。
+自动停止，您也可以中途调用 StopMCUMixTranscode
 
 - **多路画面的混合**
-由您的服务器调用 [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) 并指定 `LayoutParams` 参数即可，关于这一部分详细介绍，可以阅读文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88)。
+由您的服务器调用 StartMCUMixTranscode
 
 - **录制文件的命名**
-录制文件会以调用 [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) 时指定的 `OutputParams.RecordId` 参数来命名，命名格式为 `OutputParams.RecordId_开始时间_结束时间`。
+录制文件会以调用 StartMCUMixTranscode 时指定的 `OutputParams.RecordId` 参数来命名，命名格式为 `OutputParams.RecordId_开始时间_结束时间`。
 
 - **已经支持的平台**
 由您的服务端控制，不受客户端平台的限制。
