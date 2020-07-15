@@ -3,7 +3,6 @@
 ## 主账号权限配置
 目前支持通过账号密钥配置的方式进行授权，由于主账号拥有创建角色和绑定策略的权限，因此可以通过下列方式关联 `SLS_QcsRole` 并进行访问： 
 
-
 ### 账号密钥配置授权
 
 如您希望配置持久的环境变量/密钥信息，不需要每次都进行扫码部署，也可以在项目目录下创建`.env`文件，将 SecretId 和 SecretKey 信息并保存。
@@ -29,17 +28,16 @@ SERVERLESS_PLATFORM_VENDOR=tencent
 针对子账号的权限配置，如果希望支持扫码授权部署，则要确保子账号具备创建角色和绑定角色策略的权限。可以为子账号增加预设策略 `QcloudCamRoleFullAccess` 或 `QcloudCamSubaccountsAuthorizeRoleFullAccess`。
 
 如果不开通上述两个权限，也可以在 [访问管理控制台](https://console.cloud.tencent.com/cam/role) 通过主账号配置增加 `SLS_QcsRole` 从而开通对 Serverless Framework 的资源访问能力，该角色的角色载体为 `sls.cloud.tencent.com`，主要包含如下策略授权：
+- QcloudCDNFullAccess
+- QcloudTCBFullAccess
 - QcloudSLSFullAccess
 - QcloudSSLFullAccess
-- QcloudMongoDBFullAccess
-- QcloudAPIGWFullAccess
-- QcloudElasticsearchServiceFullAccess
 - QcloudCKafkaFullAccess
-- QcloudSCFFullAccess
 - QcloudMonitorFullAccess
+- QcloudVPCFullAccess
 - QcloudCOSFullAccess
-- QcloudCDNFullAccess
-- QcloudPostgreSQLFullAccess
+- QcloudAPIGWFullAccess
+- QcloudSCFFullAccess
 
 创建成功之后，主账号需要为子账号的用户绑定以下两条策略：
 1. [指定角色的调用权限策略](#1)
@@ -49,7 +47,7 @@ SERVERLESS_PLATFORM_VENDOR=tencent
 ### 授予子账号指定角色的调用权限
 1. 在 [CAM 用户列表](https://console.cloud.tencent.com/cam/user) 页，选取对应子账号，单击用户名称，进入用户详情页。
 2. 单击【关联策略】，在添加策略页面单击【从策略列表中选取策略关联】。
-3. 选择【新建自定义策略】>【按策略语法创建】>【空白模版】，填入如下内容，注意角色参数替换为您自己的 APPID：
+3. 选择【新建自定义策略】>【按策略语法创建】>【空白模版】，填入如下内容，注意角色参数替换为您自己的 uin（账号 ID）：
 ```
 {
     "version": "2.0",
