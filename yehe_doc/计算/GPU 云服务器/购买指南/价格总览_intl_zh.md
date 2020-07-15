@@ -66,10 +66,6 @@ GPU 云服务器提供如下实例类型：计算型GN6S、GN7、GN8、GN10X、G
 | GN10Xp.10XLARGE160 | 4颗                        | 128GB    | 40核 | 160GB | 6.89USD/hr  |
 | GN10Xp.20XLARGE320 | 8颗                        | 256GB    | 80核 | 320GB | 13.78USD/hr |
 
-
-
-*备注：定价信息如上文，以下麻烦翻译文档的同学根据国际站规则做一些修改哈。
-
 ## 回收说明
 GPU 实例回收，与云服务器 CVM 回收机制一致，具体可参考云服务器 CVM  [实例回收](https://intl.cloud.tencent.com/document/product/213/4931)。
 
