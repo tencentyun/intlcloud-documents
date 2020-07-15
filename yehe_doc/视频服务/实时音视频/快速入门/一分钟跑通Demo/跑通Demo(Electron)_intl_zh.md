@@ -115,15 +115,7 @@
     $ brew install node
     ```
 
-3.  如果使用 Homebrew 的默认地址安装 Node.js 较慢，您可以考虑替换为国内镜像地址。
-
-    ```shell
-    $ cd `brew --repo`
-    $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-    $ brew update
-    ```
-
-4.  通过 cd 命令定位项目目录，并执行以下命令。
+3.  通过 cd 命令定位项目目录，并执行以下命令。
 
     ```shell
     $ npm install 
@@ -131,7 +123,7 @@
     
     ![mac下安装](https://main.qcloudimg.com/raw/3f8e92e9c59ff1bdb9fd0b2a0f34852a.png)
     
-5.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
+4.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
 
     ```shell
     $ npm run start # 首次运行，稍等片刻后，窗口中才会出现 UI

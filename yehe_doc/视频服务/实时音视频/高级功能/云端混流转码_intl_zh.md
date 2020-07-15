@@ -5,7 +5,7 @@
 - 方案一：使用服务端 REST API StartMCUMixTranscode 和 StopMCUMixTranscode 进行控制，该 REST API 还可以同时支持启动 CDN 观看和云端录制。
 
 - 方案二：使用客户端 TRTC SDK 的 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 接口进行控制，其原理如下图： 
-![](https://main.qcloudimg.com/raw/c9f3789ee2f9cab316885225a45fd649.gif)
+![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 > 方案二仅支持 iOS、Android、Windows、Mac 和 Electron 这五个平台的 SDK，如果您希望在微信小程序和桌面浏览器上也实现混流功能，请使用方案一。
 
 ## 原理解析
@@ -14,7 +14,7 @@
 - 混合：MCU 需要将多路画面混合在一起，并根据来自 SDK 的混流指令实现具体 的排版方案。同时，MCU 也需要将解码后的多路音频信号进行混音处理。
 - 编码：MCU 需要将混合后的画面和声音进行二次编码，并封装成一路音视频流，交给下游系统（例如直播和录制）。
 
-![](https://main.qcloudimg.com/raw/624cc937a7d7e3f8b8cdb8eb6c22b5f2.jpg)
+![](https://main.qcloudimg.com/raw/a5ce0215228eca3375ce47133df0be95.png)
 
 <span id="restapi"></span>
 ## 方案一：服务端 REST API 混流方案
@@ -24,7 +24,7 @@
 #### 1. 设置画面排版模式
 通过 `StartMCUMixTranscode` 中的 LayoutParams 参数，可以设置如下几种排版模式：
 
-![](https://main.qcloudimg.com/raw/2a5dbb7a8fa90679c9e78a2fb4b52dca.png)
+![](https://main.qcloudimg.com/raw/f2e3eae87fcc9ae61ca11e196d02f04c.png)
 
 **悬浮模板**
 - 第一个进入房间的用户的视频画面会铺满整个屏幕，其他用户的视频画面从左下角依次水平排列，显示为小画面。
@@ -148,7 +148,7 @@
 </tr></table>
 6. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
 
-![](https://main.qcloudimg.com/raw/fb1f279d211ba2a9c59569ff26135d4d.png)
+![](https://main.qcloudimg.com/raw/4119e41cefe59b7a8b8edf675babdd38.png)
 
 **示例代码**
 本文以 iOS 端的 Objective-C 代码为例，实现“一大二小，上下叠加”的混合效果：
@@ -213,8 +213,6 @@ remote2.roomID = 97392; // 本地用户不用填写 roomID，远程需要
  >若将 `videoWidth` 和 `videoHeight` 参数均指定为0，SDK 会自动根据用户当前屏幕的宽高比计算出一个合适的分辨率。
  >
 5. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
-
-![](https://main.qcloudimg.com/raw/3e53f7303f3665087e9950c1d04f7ed6.gif)
 
 > 
 >- 屏幕分享模式仅支持 Windows 和 Mac 平台。
