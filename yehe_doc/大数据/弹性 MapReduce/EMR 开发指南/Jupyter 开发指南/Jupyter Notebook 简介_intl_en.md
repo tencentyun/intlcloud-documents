@@ -80,12 +80,11 @@ You can enter Jupyter's homepage by simply entering the password configured just
 
 ### Using Jupyter for development
 #### **Creating directory**
-![](https://main.qcloudimg.com/raw/a3f45bd82c24abf780f9916ea388f693.png)
-#### **Renaming directory**
-![](https://main.qcloudimg.com/raw/7ec7be4ee84cd0a2ba5ac9e69561856b.png)
+
+#### **Renaming directory*
 #### **Writing TensorFlow code**
 For more information, please visit the [TensorFlow official website](https://github.com/tensorflow/docs/tree/master/site/en/r1/tutorials).
-![](https://main.qcloudimg.com/raw/ae58da462ab0f93f1078737959998397.png)
+
 >?You need to download the data set here. The download may be slow in Mainland China.
 >
 ```
@@ -112,7 +111,6 @@ model.evaluate(x_test, y_test)
 ```
 #### Running code
 Train the model in Jupyter again.
-![](https://main.qcloudimg.com/raw/5c77e7740257a832c92ed87d2058f9ae.png)
 #### Stopping Jupyter service
 ```
 ./stop_jupy.sh [jupyter_port]
