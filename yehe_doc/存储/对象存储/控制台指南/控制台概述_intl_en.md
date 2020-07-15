@@ -14,7 +14,7 @@ COS Console is a simplest, easy-to-use tool to help you work with COS. It enable
 | Static Website     | [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984)  |
 | Inventory         | [Enabling Inventory](https://intl.cloud.tencent.com/document/product/436/30624)  |
 | Bucket Tagging   | [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928)   |
-| Monitoring Report         | [Querying Monitoring Reports](https://intl.cloud.tencent.com/document/product/436/31634)|
+| Monitoring Report         | <li>[Dashboard](https://intl.cloud.tencent.com/document/product/436/36542) <br><li>[Querying Monitoring Reports](https://intl.cloud.tencent.com/document/product/436/31634)|
 |Logging|[Setting Logging](https://intl.cloud.tencent.com/document/product/436/17040)   |
 | Data Origin-pull     | [Setting Origin-Pull](https://intl.cloud.tencent.com/document/product/436/31508) |
 | Batch Jobs | [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956)  |
