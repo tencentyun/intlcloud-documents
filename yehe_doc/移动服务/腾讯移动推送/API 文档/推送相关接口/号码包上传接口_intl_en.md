@@ -19,13 +19,9 @@ https://api.tpns.sgp.tencent.com/v3/push/package/upload
 
 **Feature**: the user needs to upload number package files to batch accounts as files. The files in the number package must then be pushed. The number package push APIs mainly include the number package upload API and the number package push API.
 
-
-
-
-
 >
 - Request files are uploaded in form-data format, and the key is the `file`.
-- The uploaded file must have a zip file extension, and the compressed contents must be a txt file.
+- The uploaded file must have a zip file extension, and only contains UTF-8-encoded txt files.
 - Each line in a txt file represents one account, and the account length is limited to [2, 100].
 
 ## Parameter Description
@@ -34,7 +30,7 @@ https://api.tpns.sgp.tencent.com/v3/push/package/upload
 
 | Parameter Name | Type | Required | Description |
 | --- | --- | --- | --- |
-| file  | form-data  | Yes  | Uploaded files must be zip files less than 100 MB. The contents of each zip file must be a txt file, and there can be no nested folders. Each line in a txt file represents one account, and the account length is limited to [2, 100].
+| file  | form-data | Yes  | Uploaded files must be zip files less than 100 MB. Each .zip file only contains UTF-8-encoded txt files, without any nested folders. Each line in a txt file represents one account, and the account length is limited to [2, 100].
 
 #### Response parameters
 
