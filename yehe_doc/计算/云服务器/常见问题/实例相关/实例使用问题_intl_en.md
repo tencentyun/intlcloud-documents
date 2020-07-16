@@ -35,9 +35,6 @@ If the file or directory permissions are incorrectly configured on the Web serve
 - You can run the `ls –l` command to query the owners and owner groups of files and directories.
 - You can run the `chown` command to modify the permissions. For example, you can run the `chown -R www.www /tencentcloud/www/user/` command to change the owners and owner groups of all files and directories under the `/tencentcloud/www/user` directory to account “www”.
 
-### How do I apply for an ICP filing for my domain name after I purchase a CVM instance?
-For each CVM instance eligible for an ICP filing application, you can apply for a limited quantity of service identification numbers for ICP filings. For more information, see [Tencent Cloud Service Used for ICP Filing Application](https://intl.cloud.tencent.com/document/product/1022/34608).
-
 ### Why can’t I add sound or video cards to CVM instances?
 Tencent Cloud CVMs do not provide multimedia servers and sound and video card components by default. Therefore, sound and video cards cannot be added to CVM instances.
 
