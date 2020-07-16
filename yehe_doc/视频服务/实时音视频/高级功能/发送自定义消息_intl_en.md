@@ -1,6 +1,6 @@
 ## Overview
 
-The TRTC SDK provides the ability to send custom messages. With this feature, any user can broadcast their own custom messages to other users in the same video room.
+The TRTC SDK provides the ability to send custom messages. With this feature, any user whose role is an anchor can broadcast their own custom messages to other users in the same video room.
 
 ## Supported Platforms
 
