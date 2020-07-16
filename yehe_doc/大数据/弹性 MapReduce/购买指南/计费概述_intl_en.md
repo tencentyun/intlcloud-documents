@@ -205,9 +205,5 @@ Other billable items that may incur fees when you use an EMR cluster include net
 - **Metadata storage**
   TencentDB for MySQL is used for metadata storage such as Hive in EMR 2.x and below. The storage fees are included in the total fees on the purchase page.
 - **COS**
-  When you use COS to implement computation/storage separation in your cluster, data storage and request fees will be incurred when the cluster's computation requests pull data from COS (for more information, please see [COS Pricing](https://intl.cloud.tencent.com/document/product/436/6239)). In addition, new data may be generated in COS during computation in order to store or back up the result data.
-
-
-
-
+ If you use COS to isolate storage and computation of your cluster, data storage and request fees will be incurred (for more information, see COS [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239)) when your cluster makes a computation request and pulls data from COS. In addition, new data may be generated in COS during computation for the purposes of result data storage or backup.
 
