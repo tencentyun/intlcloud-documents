@@ -9,7 +9,7 @@
 3. 进入项目管理页面，单击【新建】。
 ![](https://main.qcloudimg.com/raw/4b070b8c7c89b7932ad6d1bf48413771.png)
 4. 输入项目名称和项目说明。
-![](https://main.qcloudimg.com/raw/742538ed9cc9dcc75c78c63d0bc342fc.png)
+![](https://main.qcloudimg.com/raw/1318f85a3a9493a96fa9fb13af488d9f.png)
  >?如果您需要创建项目管理的相关策略，请单击图中的链接。详情请参考策略文档中 [自定义创建策略](https://intl.cloud.tencent.com/document/product/598/35596) 步骤进行操作。否则进入直接进入下一步。
 5. 单击【提交】，完成创建。
 
