@@ -13,7 +13,7 @@ SDK: 2.3.0
 Components: 2.30.1
 ```
 
-
+-  Make sure that the current account has been associated with the **QcloudPostgreSQLFullAccess** policy. To learn more about the association, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 ## Directions
 This document uses a function in the Node.js programming language as an example to describes how to use the Serverless Framework component to write and create a function and use it to access a PostgreSQL database. The configuration process is as follows:
