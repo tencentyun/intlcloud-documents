@@ -48,7 +48,7 @@ When using the Web ILVB component, developers only need to specify several param
 ### Step 2: Run the Web ILVB component
 
 <pre><code class="language-javascript"><span class="hljs-comment">// npm i tweblive</span>
-<span class="hljs-keyword">import</span> TWebLive <span class="hljs-keyword">from</span> <span class="hljs-string">'TWebLive'</span>;
+<span class="hljs-keyword">import</span> TWebLive <span class="hljs-keyword">from</span> <span class="hljs-string">'tweblive'</span>;
 
 <span class="hljs-keyword">let</span> options = {
   <span class="hljs-attr">SDKAppID</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// Replace 0 with the SDKAppID of your IM app during integration.</span>

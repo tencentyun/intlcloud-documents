@@ -56,7 +56,7 @@ The region and availability zone of an instance cannot be changed. To use an ins
 Some regions may not support certain instance types. For information on supported instance types, go to the [CVM purchase page](http://manage.qcloud.com/shoppingcart/shop.php?tab=cvm&_ga=1.78908498.770173325.1571651505) to view instance purchase information.
 
 ### If I build a website using a CVM instance from a region outside the mainland of China and my users access the website through a domain name, does this domain name need ICP filing?
-For websites in regions in the mainland of China, ICP filing is required for domain names. For websites in other countries or regions, ICP filing is not required. For more information, see [ICP Filing Overview](https://intl.cloud.tencent.com/document/product/1022/30453).
+For websites in regions in the mainland of China, ICP filing is required for domain names. For websites in other countries or regions, ICP filing is not required. 
 
 ### Do instances in different regions have the same price?
 The pricing of a CVM instance includes its specifications, storage, network bandwidth, etc. The prices of these components vary by regions, so the instance price will be different.

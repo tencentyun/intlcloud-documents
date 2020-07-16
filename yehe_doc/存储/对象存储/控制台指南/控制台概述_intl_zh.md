@@ -14,7 +14,7 @@
 | 静态网站     | [设置静态网站](https://intl.cloud.tencent.com/document/product/436/14984)  |
 | 清单         | [开通清单功能](https://intl.cloud.tencent.com/document/product/436/30624)  |
 | 存储桶标签   | [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)   |
-| 数据监控         | [查询数据监控](https://intl.cloud.tencent.com/document/product/436/31634)|
+| 数据监控         | <li>[查看数据概览](https://intl.cloud.tencent.com/document/product/436/36542) <br><li>[查询数据监控](https://intl.cloud.tencent.com/document/product/436/31634)|
 |日志管理|[设置日志管理](https://intl.cloud.tencent.com/document/product/436/17040)   |
 | 数据回源     | [设置回源](https://intl.cloud.tencent.com/document/product/436/31508) |
 | 批量作业 | [批量处理](https://intl.cloud.tencent.com/document/product/436/32956)  |

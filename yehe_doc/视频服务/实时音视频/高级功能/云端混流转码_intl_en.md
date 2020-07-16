@@ -170,7 +170,7 @@ config.mixUsers = [NSMutableArray new];
 
 // Camera image position of anchor
 TRTCMixUser* local = [TRTCMixUser new];
-local.userId = @"PLACE_HOLDER_LOCAL_MAIN"; 
+local.userId = @"$PLACE_HOLDER_LOCAL_MAIN$"; 
 local.zOrder = 0;   // `zOrder` value of 0 indicates that the anchor's video image is at the bottom
 local.rect   = CGRectMake(0, 0, videoWidth, videoHeight);
 local.roomID = nil; // `roomID` needs to be specified for a remote user but not the local user
@@ -178,7 +178,7 @@ local.roomID = nil; // `roomID` needs to be specified for a remote user but not 
 		
 // Video image position of co-anchor
 TRTCMixUser* remote1 = [TRTCMixUser new];
-remote1.userId = @"PLACE_HOLDER_REMOTE"; 
+remote1.userId = @"$PLACE_HOLDER_REMOTE$"; 
 remote1.zOrder = 1;
 remote1.rect   = CGRectMake(400, 800, 180, 240); // For reference only
 remote1.roomID = 97392; // `roomID` needs to be specified for a remote user but not the local user
@@ -186,7 +186,7 @@ remote1.roomID = 97392; // `roomID` needs to be specified for a remote user but 
 
 // Video image position of co-anchor
 TRTCMixUser* remote2 = [TRTCMixUser new];
-remote2.userId = @"PLACE_HOLDER_REMOTE"; 
+remote2.userId = @"$PLACE_HOLDER_REMOTE$"; 
 remote2.zOrder = 1;
 remote2.rect   = CGRectMake(400, 500, 180, 240); // For reference only
 remote2.roomID = 97392; // `roomID` needs to be specified for a remote user but not the local user
