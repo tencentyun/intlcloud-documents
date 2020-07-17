@@ -1,6 +1,6 @@
 
 ## Feature Overview
-In actual use, you may find that the configurations of nodes in your cluster need to be upgraded, especially when the CPU or memory resources of the master nodes are insufficient. This document describes how to change the instance configuration in the [EMR Console](https://console.cloud.tencent.com/emr).
+In actual use, you may find that the configurations of nodes in your cluster need to be upgraded, especially when the CPU or memory resources of the MASTER nodes are insufficient. This document describes how to adjust the instance configuration in the EMR Console(https://console.cloud.tencent.com/emr).
 
 ## Prerequisites
 1. The instance will be shut down during the scaling. Please note that the shutdown may affect the normal use of the cluster and even interrupt the business.

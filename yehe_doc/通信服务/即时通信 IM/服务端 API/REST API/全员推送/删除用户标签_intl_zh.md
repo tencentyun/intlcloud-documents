@@ -46,7 +46,6 @@ https://console.tim.qq.com/v4/all_member_push/im_remove_tag?usersig=xxx&identifi
 | 字段 | 类型| 属性 | 说明 |
 |---------|---------|---------|---------|
 | To_Account | String | 必填 |目标用户帐号 |
-| Tags | Object | 必填 |标签集合 |
 
 ### 应答包体示例
 

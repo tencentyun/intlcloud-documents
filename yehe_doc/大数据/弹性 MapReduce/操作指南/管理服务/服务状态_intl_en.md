@@ -23,7 +23,7 @@ Service status provides detailed monitoring for main services installed in the c
 HBase table load enables you to monitor the number of read/write requests and storage of each table in HBase.
 ### Viewing HBase table load
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
-2. On the cluster details page, select **Cluster Service** and then select **Operation** > **Service Monitoring** > **HBase Table Load** for the HBase component.
+2. On the cluster details page,  select **Cluster Service** and click **Operation** -> **Service Status** ->**Table Load** in the top-right corner of the target HBase component.
 3. HBase table load displays information of HBase tables in four dimensions: number of real-time read requests, number of real-time write requests, size of MemStore, and size of storeFile. You can click the table header to sort tables by corresponding dimension. In addition, you can enter a table name in the search box in the top-left corner and click ![](https://main.qcloudimg.com/raw/1f9d505f9e8e4688a73646781370b535.png) to search for the table.
 ![](https://main.qcloudimg.com/raw/d3869744607345a3767186cdf11892da.png)
 

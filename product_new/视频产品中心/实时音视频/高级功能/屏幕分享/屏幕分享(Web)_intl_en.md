@@ -63,11 +63,11 @@ One {@link Client Client} can only push one channel of audio and one channel of 
 ```
 //Using an independent user ID to push screen sharing
 const shareId = 'share-userId';
-const shareClient = TRTC.createClient({ mode: 'videoCall', sdkAppId, userId: shareId, userSig });
+const shareClient = TRTC.createClient({ mode: 'rtc', sdkAppId, userId, shareId, userSig });
 
 //Specifying that this shareClient does not receive any remote streams by default (it is only responsible for sending the screen sharing stream)
 shareClient.setDefaultMuteRemoteStreams(true);
-shareClient.join().then(() => {
+shareClient.join({ roomId }).then(() => {
   console.log('shareClient join success');
   //Creating a screen sharing stream
   const localStream = TRTC.createStream({ audio: false, screen: true });

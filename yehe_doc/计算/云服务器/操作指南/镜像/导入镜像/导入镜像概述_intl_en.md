@@ -11,7 +11,7 @@ Prepare an image file that meets the import requirements.
 <tr><td>Image format</td><td><ul><li>RAW, VHD, QCOW2, and VMDK</li><li>Run <code>qemu-img info imageName | grep 'file format'</code> to check the image format.</li></ul></td></tr>
 <tr><td>Image size</td><td><ul><li>The actual image size cannot exceed 50 GB. Run <code>qemu-img info imageName | grep 'disk size'</code> to check the image size.</li><li>The image vsize cannot exceed 500 GB. Run <code>qemu-img info imageName | grep 'virtual size'</code> to check the image vsize.</li></ul><b>Note: </b>size of an image in QCOW2 format is used upon check during import.</td></tr>
 <tr><td>Network</td><td><ul><li>By default, Tencent Cloud provides the <code>eth0</code> network interface for the instance.</li><li>You can use the metadata service to query the network configuration of the instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4934">Instance Metadata</a>.</li></ul></td></tr>
-<tr><td>Driver</td><td><ul><li>Virtio driver of the virtualization module KVM must be installed for an image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux System Check virtio Driver</a>.</li><li>We recommend installing cloud-init for the image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/12587">Install Cloud-Init on Linux</a>.</li><li>If cloud-init cannot be installed, configure the instance by referring to <a href="https://intl.cloud.tencent.com/document/product/213/12849">Forcibly Import Image</a>.</li></ul></td></tr>
+<tr><td>Driver</td><td><ul><li>Virtio driver of the virtualization module KVM must be installed for an image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux System Check virtio Driver</a>.</li><li>Install cloud-init for the image. For more information, see<a href="https://cloud.tencent.com/document/product/213/12587">Installing Cloud-Init on Linux</a></li><li>If cloud-init cannot be installed, configure the instance by referring to <a href="https://intl.cloud.tencent.com/document/product/213/12849">Forcibly Import Image</a>.</li></ul></td></tr>
 <tr><td>Kernel</td><td>Native kernel is preferred for an image. Any modifications on the kernel may cause the import to fail.</td></tr>
 </table>
 - **Requirements for Windows images:**
@@ -49,7 +49,7 @@ Make sure you have subscribed to product service notifications via [Message Subs
 
 ### Troubleshooting
 
-For more information on error messages and descriptions, see [Error Codes](# errorcode).
+For more information on error messages and descriptions, see [Error Codes](#errorcode).
 
 #### InvalidUrl: invalid COS URL
 
