@@ -1,3 +1,5 @@
+本文介绍云数据库 MySQL 控制台的实例列表页和管理页相关操作，指导您轻松管理 MySQL数据库。
+
 ## 实例列表页
 在 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例列表页可查看实例相关信息，以及管理实例。
 ![](https://main.qcloudimg.com/raw/ad7eb840269b428dd044ddd45b08545e.png)
