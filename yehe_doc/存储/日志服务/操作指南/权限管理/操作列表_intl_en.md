@@ -1,16 +1,16 @@
 
 
-The following table describes actions for which permissions can be granted in CAM.
+The following table describes actions on CLS log resources for which permissions can be granted in CAM.
 
 | Action | Description                           |
 | ------------------------- | ------------------------------ |
-| listTopic          | Lists the log topic list in the specific logset |
-| getTopic           | Views log topic information               |
+| listTopic          | Lists log topics in the specific logset |
+| getTopic           | Views log topic information             |
 | createTopic        | Creates a log topic                   |
 | modifyTopic        | Modifies a log topic                   |
 | deleteTopic        | Deletes a log topic                   |
-| listLogset         | Lists logsets                 |
-| getLogset          | Views logset information                 |
+| listLogset         | Lists logsets            |
+| getLogset          | Views logset information                |
 | createLogset       | Creates a logset                     |
 | modifyLogset       | Modifies a logset                     |
 | deleteLogset       | Deletes a logset                     |
@@ -21,25 +21,37 @@ The following table describes actions for which permissions can be granted in CA
 | deleteMachineGroup | Deletes a server group                     |
 | getMachineStatus   | Views the server group status                 |
 | pushLog                   | Uploads a log                       |
-| searchLog          | Queries a log                       |
+| searchLog          | Queries logs                       |
 | downloadLog        | Downloads a log                       |
-| getCursor          | Obtains a cursor based on time               |
+| getCursor          | Gets a cursor based on time               |
 | getIndex                  | Views an index                       |
 | modifyIndex        | Modifies an index                       |
-| listShipper        | Lists the shipping configuration of log topics     |
-| createShipper      | Creates shipping configuration                   |
-| modifyShipper      | Modifies shipping configuration                   |
-| deleteShipper      | Deletes shipping configuration                   |
+| listShipper        | Lists shipping configurations of a log topic     |
+| createShipper      | Creates a shipping configuration                   |
+| modifyShipper      | Modifies a shipping configuration                   |
+| deleteShipper      | Deletes a shipping configuration                   |
 | listShipperTask    | Lists shipping tasks               |
-| modifyShipperTask  | Retries the failed shipping tasks             |
+| modifyShipperTask  | Retries a failed shipping task            |
 | consumerGroupHeartBeat    | Consumer heartbeat                     |
 | createConsumerGroup       | Creates a consumer group                     |
 | getConsumerGroupCursor    | Gets a consumer group cursor                 |
 | pullLogs                  | Consumption data                       |
-| updatePartition           | Split/Merge topic partition              |
+| updatePartition           | Splits/Merges topic partitions              |
 | deleteConsumerGroup       | Deletes a consumer group                     |
 | modifyConsumerGroup       | Modifies a consumer group                     |
 | listConsumerGroup         | Gets a list of consumer groups                 |
 | modifyConsumerGroupCursor | Modifies a consumer group cursor                 |
 | listPartitions            | Gets a list of topic partitions               |
+| CreateChart               | Creates a chart                       |
+| ModifyChart               | Modifies a chart                       |
+| DeleteChart               | Deletes a chart                       |
+| GetChart                  | Gets chart information                   |
+| ListChart                 | Gets a chart list                   |
+| CreateDashboard           | Creates a dashboard                    |
+| ModifyDashboard           | Modifies a dashboard                     |
+| DeleteDashboard           | Deletes a dashboard                     |
+| ListDashboard             | Gets a dashboard list                 |
+| GetDashboard              | Gets dashboard information                 |
+| GetHistogram              | Gets a log numbers histogram             |
+| GetFastAnalysis           | Gets quick analysis results               |
 
