@@ -1,170 +1,288 @@
-﻿Cloud Monitor allows you to control the permissions of sub-accounts by using a root account in [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/10583). You can refer to this document to learn how to manage sub-account access permissions.
+Cloud Monitor allows you to control the permissions of sub-accounts by using a root account in [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/10583). You can refer to this document to learn how to manage sub-account access.
 
 ## Feature Overview
 
-By default, a root account is the owner of resources and has access to all resources under it. A sub-account does not have access to any resources. The root account needs to grant access permission to a sub-account so that the sub-account can properly access relevant resources. You can log in to the [CAM console](https://console.cloud.tencent.com/cam/policy) by using your root account and grant access permissions to a sub-account. For more information, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
+By default, a root account is the owner of resources and has access to all resources under it. A sub-account has no access to any resources. The root account needs to grant access permissions for a sub-account so that the sub-account can access relevant resources. You can log in to the [CAM console](https://console.cloud.tencent.com/cam/policy) by using your root account and grant access permissions for a sub-account. For more information, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
->
-> - Permissions are used to allow or deny access to specific resources under specific conditions.
-> - Policies are the syntax rules used to define and describe one or more permissions.
+Cloud Monitor policies depend on the policies of other Tencent Cloud services. When you grant Cloud Monitor permissions to a sub-account, you must also grant the permissions of corresponding Tencent Cloud services to the sub-account so that the Cloud Monitor permissions can take effect.
 
-## Policy Description
+> ?
+> - Permissions are used to allow or deny certain operations or access to specific resources under specific conditions.
+> - Policies are syntax rules that are used to define and describe one or more permissions.
 
-Cloud Monitor policies depend on the policies of other Tencent Cloud services. When you grant Cloud Monitor permissions to a sub-account, you must grant the permissions of corresponding Tencent Cloud services to the sub-account so that the Cloud Monitor permissions can take effect.
 
-### Cloud Monitor policies
+## Common Permission Configuration
+
+> ? This section takes permission configuration for CVMs as an example. For more information on how to grant permissions for other Tencent Cloud services, see the following scenario description and [Cloud Monitor-Related Tencent Cloud Service Policies](#.E4.BA.91.E7.9B.91.E6.8E.A7.E7.9B.B8.E5.85.B3.E7.9A.84.E4.BA.91.E4.BA.A7.E5.93.81.E7.AD.96.E7.95.A5).
+> Enable the corresponding Tencent Cloud service permissions.
+
+### Common permissions
+
+#### Permission list
+
+| Permission Type | Permission Name |
+| ------------ | ------------------------------------------------------ |
+| CM permission | QcloudMonitorFullAccess and QcloudMonitorReadOnlyAccess |
+| CVM permission | QcloudCVMReadOnlyAccess or QcloudCVMFullAccess |
+
+#### Features and permissions
 
 <table>
 	<tr>
-		<th width="15%">Policy</th>
-		<th width="15%">Description</th>
-		<th width="35%">Dependency</th>
-		<th width="35%">Difference</th>
+	<th rowspan="2">Feature</th>
+    <th colspan="2">Operation Permissions</th>
+    <th colspan="2">Access Permissions</th>
 	</tr>
 	<tr>
-		<td>QcloudMonitorFullAccess</td>
-		<td>Full read-write permissions for Cloud Monitor, including the permission to view user groups</td>
-		<td>This policy depends on the policies of other Tencent Cloud services. For example, if you want to use a sub-account to create an alarm in the Cloud Monitor console, which involves access to CVM instances, the “QcloudCVMFullAccess” permission must be granted to the sub-account</td>
-		<td rowspan="2">After the policy of a Tencent Cloud service is granted to a sub-account, the sub-account can properly use all features of Cloud Monitor if it is granted the “QcloudMonitorFullAccess” permission.<br>If the sub-account is granted only the “QcloudMonitorReadOnlyAccess” permission, the sub-account can properly use all features except for creating an alarm policy.</td>
+	<td>QcloudMonitor<br>FullAccess</td>
+	<td>QcloudMonitor<br>ReadOnlyAccess</td>
+    <td>QcloudMonitor<br>FullAccess</td>
+	<td>QcloudMonitor<br>ReadOnlyAccess</td>
 	</tr>
 	<tr>
-		<td>QcloudMonitorReadOnlyAccess</td>
-		<td>Read-only permission for Cloud Monitor</td>
-		<td>This policy depends on the policies of other Tencent Cloud services. For example, if you want to use a sub-account to view monitoring charts in the Cloud Monitor console, the “QcloudCVMFullAccess” permission must be granted to the sub-account</td>
+	<td>Monitoring overview</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+	<tr>
+	<td>Dashboard</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+	<tr>
+	<td>Instance grouping</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+    <tr>
+	<td>Alarm history</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+    <tr>
+	<td>Alarm policies</td>
+	<td>√</td>
+        <td><b>×</b></td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+	<tr>
+	<td>Platform event subscription</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+	<tr>
+	<td>Custom messages</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+	<tr>
+	<td>Trigger condition templates</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+    <tr>
+	<td>Product events</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+	<tr>
+	<td>Platform events</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+	<tr>
+	<td>Traffic monitoring</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	</tr>
+	<tr>
+	<td>Tencent Cloud service monitoring</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
+	<td>√</td>
 	</tr>
 </table>
 
-### Tencent Cloud service policies related to Cloud Monitor
+### Common authorization exceptions
 
-> When you have access permissions for Cloud Monitor, you can properly access Tencent Cloud services after being granted the read-only permission to Tencent Cloud services. The following table lists the permissions for certain Tencent Cloud services. For more information, see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
+#### Exception 1
+
+- Console error: when you click any feature page in the CM console, the system prompts "Operation unauthorized. Check CAM policies.", as shown in the following figure.
+![](https://main.qcloudimg.com/raw/81d4a4cd5da3bc16b2a09b88262718d5.jpg)
+- Solution: grant the QcloudMonitorFullAccess or QcloudMonitorReadOnlyAccess permission to the corresponding sub-account in the [CAM console](https://console.cloud.tencent.com/cam).
+
+
+#### Exception 2
+- Console error: when you use features that require access to CVM instances, such as the alarm policy and dashboard features, the system prompts a CVM authorization failure, as shown in the following figure.
+![](https://main.qcloudimg.com/raw/7c99c04b6c0bdfd7f982e55c2668ea71.jpg)
+- Solution: grant the QcloudMonitorFullAccess or QcloudMonitorReadOnlyAccess permission to the corresponding sub-account in the [CAM console](https://console.cloud.tencent.com/cam).
+
+
+#### Exception 3
+- Console error:
+ - When you create an alarm policy, the system prompts "You do not have project permission to create this policy." under the **Project** drop-down list, as shown in the following figure.
+ ![](https://main.qcloudimg.com/raw/4df73884c4ba0cfcc4cc4f95ce334087.png)
+ - When you create an alarm recipient group, the system prompts a CAM authorization failure, as shown in the following figure.
+ ![](https://main.qcloudimg.com/raw/33ce73e95afaeba6e3f2703626516708.jpg)
+- Solution: grant the QcloudCVMFullAccess permission to the corresponding sub-account in the [CAM console](https://console.cloud.tencent.com/cam).
+
+
+
+
+
+### CM-related Tencent Cloud service policies
+
+> ? Provided that CM permissions have been properly granted, Tencent Cloud service resources can be accessed after the read-only permission is granted. The following table lists the permissions for some Tencent Cloud services. To learn about the permissions for other Tencent Cloud services, see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
 
 <table>
 <tr>
-	<th>Product</th>
+	<th>Tencent Cloud Service</th>
 	<th>Policy</th>
-	<th>Permission</th>
-	<th>Documentation</th>
+	<th>Permission Description</th>
+	<th>Reference</th>
 </tr>
 <tr>
 <td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/213">Cloud Virtual Machine (CVM)</a></td>
 	<td>QcloudCVMFullAccess</td>
-	<td>Full read-write permissions for CVM, including monitoring permissions for CVM, CLB, and VPC</td>
+	<td>Full access permissions for CVMs, including monitoring permissions for CVM, CLB, and VPC instances</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/213/10312">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudCVMReadOnlyAccess</td>
-	<td>Read-only permissions for resources related to CVM</td>
+	<td>Read-only permission for CVM resources</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/236">TencentDB for MySQL</a></td>
-	<td> QcloudCDBFullAccess</td>
-	<td>Full read-write permissions for TencentDB for MySQL, including permissions for MySQL and related security groups, monitoring, user groups, COS, VPC, and KMS permissions</td>
+	<td>QcloudCDBFullAccess</td>
+	<td>Full access permissions for TencentDB for MySQL instances, including permissions for MySQL and related security groups, monitoring, user groups, COS instances, VPC instances, and KMS</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/236/14468">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudCDBReadOnlyAccess</td>
-	<td>Read-only permissions for resources related to TencentDB for MySQL</td>
+	<td>Read-only permission for resources related to TencentDB for MySQL</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240">TencentDB for MongoDB</a></td>
 	<td> QcloudMongoDBFullAccess</td>
-	<td>Full read-write permissions for TencentDB for MongoDB</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/32839">Access Management</a></td>
+	<td>Full access permissions for TencentDB for MongoDB instances</td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/38703">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudMongoDBReadOnlyAccess</td>
-	<td>Read-only permissions for TencentDB for MongoDB</td>
+	<td>Read-only permission for TencentDB for MongoDB</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239">TencentDB for Redis</a></td>
-	<td> QcloudRedisFullAccess</td>
-	<td>Full read-write permissions for TencentDB for Redis</td>
-	<td rowspan="2">Access Management</td>
+	<td> QcloudRedisFullAccess </td>
+	<td>Full access permissions for TencentDB for Redis</td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/38687">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudRedisReadOnlyAccess</td>
-	<td>Read-only permissions for TencentDB for Redis</td>
+	<td>Read-only permission for TencentDB for Redis</td>
 </tr>
 <tr>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/1016">TencentDB for TcaplusDB</a> </td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/1016">Tencent Cloud TcaplusDB</a> </td>
 	<td>QcloudTcaplusDBFullAccess</td>
-	<td>Full read-write permissions for TencentDB for TcaplusDB</td>
+	<td>Full access permissions for Tencent Cloud TcaplusDB</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/1016/35749">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudTcaplusDBReadOnlyAccess</td>
-	<td>Read-only permissions for TencentDB for TcaplusDB</td>
+	<td>Read-only permissions for Tencent Cloud TcaplusDB</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/845">Elasticsearch Service</a></td>
 	<td>QcloudElasticsearchServiceFullAccess</td>
-	<td>Full read-write permissions for Elasticsearch Service</td>
+	<td>Full access permissions for Elasticsearch Service</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/845/19550">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudElasticsearchServiceReadOnlyAccess</td>
-	<td>Read-only permissions for Elasticsearch Service</td>
+	<td>Read-only permission for Elasticsearch Service</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/215">VPC</a></td>
 	<td>QcloudVPCFullAccess</td>
-	<td>Full read-write permissions for VPC</td>
+	<td>Full access permissions for VPC</td>
 	<td rowspan="2">Access Management</td>
 </tr>
 <tr>
 	<td>QcloudVPCReadOnlyAccess</td>
-	<td>Read-only permissions for VPC</td>
+	<td>Read-only permission for VPC</td>
 </tr>
 <tr>
 	<td><a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect (DC)</a></td>
 	<td>QcloudDCFullAccess</td>
-	<td>Full read-write permissions for DC</td>
+	<td>Full access permissions for DC</td>
 	<td>-</td>
 </tr>
 <tr>
 	<td><a href="https://intl.cloud.tencent.com/document/product/406">Cloud Message Queue (CMQ)</a></td>
 	<td>QcloudCmqQueueFullAccess</td>
-	<td>Full read-write permissions for CMQ, including permissions for queues and Cloud Monitor</td>
-	<td >-</td>
+	<td>Full access permissions for CMQ, including permissions for queues and Cloud Monitor</td>
+	<td>-</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/597">Message Queue CKafka</a></td>
 	<td>QcloudCKafkaFullAccess</td>
-	<td>Full read-write permissions for Message Queue CKafka</td>
+	<td>Full access permissions for Message Queue CKafka</td>
 	<td rowspan="2">Access Management</td>
 </tr>
 <tr>
 	<td>QcloudCkafkaReadOnlyAccess</td>
-	<td>Read-only permissions for Message Queue Ckafka</td>
+	<td>Read-only permission for Message Queue Ckafka</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/436">Cloud Object Storage (COS)</a></td>
-	<td> QcloudCOSFullAccess </td>
-	<td>Full read-write permissions for COS</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/436/12470">Access Management</a></td>
+	<td>QcloudCOSFullAccess</td>
+	<td>Full access permissions for COS</td>
+	<td rowspan="2">Access Management</td>
 </tr>
 <tr>
 	<td>QcloudCOSReadOnlyAccess</td>
-	<td>Read-only permissions for COS</td>
+	<td>Read-only permission for COS</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/214">Cloud Load Balancer (CLB)</a></td>
 	<td>QcloudCLBFullAccess</td>
-	<td>Full read-write permissions for CLB</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/214/9777">Access Management</a></td>
+	<td>Full access permissions for CLB</td>
+	<td rowspan="2">Access Management</td>
 </tr>
 <tr>
 	<td>QcloudCLBReadOnlyAccess</td>
-	<td>Read-only permissions for CLB</td>
+	<td>Read-only permission for CLB</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/582">Cloud File Storage (CFS)</a></td>
-	<td>QcloudCFSFullAccess</td>
-	<td>Full read-write permissions for CFS</td>
+	<td>QcloudCFSFullAccesss</td>
+	<td>Full access permissions for CFS</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/582/14679">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudCFSReadOnlyAccess</td>
-	<td>Read-only permissions for CFS</td>
+	<td>Read-only permission for CFS</td>
 </tr>
 </table>
