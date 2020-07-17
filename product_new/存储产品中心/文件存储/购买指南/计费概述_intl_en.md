@@ -1,15 +1,3 @@
-# Billing Overview
-
-Last updated:
-
-PDF
-
-- [Billing Description](https://intl.cloud.tencent.com/document/product/582/9553?!editLang=en&!preview#billing-description)
-- [Storage Capacity](https://intl.cloud.tencent.com/document/product/582/9553?!editLang=en&!preview#storage-capacity)
-- [Supported Regions](https://intl.cloud.tencent.com/document/product/582/9553?!editLang=en&!preview#supported-regions)
-- [Notes on CIFS/SMB Beta Test](https://intl.cloud.tencent.com/document/product/582/9553?!editLang=en&!preview#notes-on-cifs.2Fsmb-beta-test)
-- [Pricing Details](https://intl.cloud.tencent.com/document/product/582/9553?!editLang=en&!preview#pricing-details)
-- [Billing Example](https://intl.cloud.tencent.com/document/product/582/9553?!editLang=en&!preview#billing-example)
 
 
 
