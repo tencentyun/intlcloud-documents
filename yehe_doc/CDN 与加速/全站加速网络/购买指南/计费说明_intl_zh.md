@@ -11,34 +11,35 @@ ECDN 请求次数按照阶梯价格计费，计费阶梯按照自然月用量累
 		<tr>
 			<th scope="col" style="text-align: center;width: 145px;">计费模式</th>
 			<th scope="col" style="text-align: center;width: 154px;">月累计区间</th>
-			<th scope="col" style="text-align: center;width: 145px;">单价（美元/万次）
+			<th scope="col" style="text-align: center;width: 145px;">单价（美元/百万次）
 			</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td colspan="1" rowspan="6" style="text-align: center; width: 145px;">请求次数计费</td>
-			<td style="text-align: center; width: 154px;">0 - 5000万（含）</td>
-			<td style="text-align: center; width: 180px;">0.029</td>
+			<td style="text-align: center; width: 154px;">0 - 50百万次（含）</td>
+			<td style="text-align: center; width: 180px;">2.86</td>
 		</tr>
 		<tr>
-			<td style="text-align: center; width: 200px;">5000万 - 1亿（含）</td>
-			<td style="text-align: center; width: 180px;">0.026</td>
+			<td style="text-align: center; width: 200px;">50百万次 - 100百万次（含）</td>
+			<td style="text-align: center; width: 180px;">2.57</td>
 		</tr>
 		<tr>
-			<td style="text-align: center; width: 154px;">1亿 - 5亿（含）</td>
-			<td style="text-align: center; width: 180px;">0.024</td>
+			<td style="text-align: center; width: 154px;">100百万次 - 500百万次（含）</td>
+			<td style="text-align: center; width: 180px;">2.43</td>
 		</tr>
 		<tr>
-			<td style="text-align: center; width: 154px;">5亿 - 10亿（含）</td>
-			<td style="text-align: center; width: 180px;">0.023</td>
+			<td style="text-align: center; width: 154px;">500百万次 - 1000百万次（含）</td>
+			<td style="text-align: center; width: 180px;">2.29</td>
 		</tr>
 		<tr>
-			<td style="text-align: center; width: 154px;">＞ 10亿</td>
-			<td style="text-align: center; width: 180px;">0.021</td>
+			<td style="text-align: center; width: 154px;">＞ 1000百万次</td>
+			<td style="text-align: center; width: 180px;">2.14</td>
 		</tr>
 	</tbody>
 </table>
+
 
 
 ### 超额流量价格
@@ -48,7 +49,7 @@ ECDN 请求次数按照阶梯价格计费，计费阶梯按照自然月用量累
 	<thead>
 		<tr>
 			<th scope="col" style="text-align: center;width: 145px;">计费模式</th>
-			<th scope="col" style="text-align: center;width: 200px;">免费流量额度（GB/万次）</th>
+			<th scope="col" style="text-align: center;width: 200px;">免费流量额度（GB/百万次请求数）</th>
 			<th scope="col" style="text-align: center;width: 200px;">超额流量单价（美元/GB）</th>
 			</th>
 		</tr>
@@ -56,11 +57,12 @@ ECDN 请求次数按照阶梯价格计费，计费阶梯按照自然月用量累
 	<tbody>
 		<tr>
 			<td style="text-align: center; width: 145px;">超额流量计费</td>
-			<td style="text-align: center; width: 145px;">0.25</td>
-			<td style="text-align: center; width: 154px;">0.143</td>
+			<td style="text-align: center; width: 145px;">25</td>
+			<td style="text-align: center; width: 154px;">0.15</td>
 		</tr>		
 	</tbody>
 </table>
+
 
 
 ### 细则说明
@@ -106,29 +108,29 @@ ECDN 请求次数按照阶梯价格计费，计费阶梯按照自然月用量累
 
 #### 1月1日费用计算
 - **请求次数费用：**
-1月1日产生请求总数为5980万，如下图所示，当月累积请求总数5980万，因此当日请求次数中5000万落入0 - 5000万的计费阶梯，980万落入5000万 - 1亿的计费阶梯，因此当日请求次数产生的费用为5000 \* 0.029 + 980 \* 0.026 = 170.48美元。
+1月1日产生请求总数为5980万，如下图所示，当月累积请求总数59.80百万，因此当日请求次数中50百万落入0 - 50百万的计费阶梯，9.80百万落入50百万 - 100百万的计费阶梯，因此当日请求次数产生的费用为50 \* 2.86 + 9.80 \* 2.57 = 168.19美元。
 - **超额流量费用：**
-1日产生的请求总数5980万，则可减免的流量额度为 5980 \* 0.25 = 1495GB，当日实际使用流量为1400.48GB，未超出免费额度，因此当天流量费用为0美元。
+1日产生的请求总数59.80百万，则可减免的流量额度为 59.80 \* 25 = 1495GB，当日实际使用流量为1400.48GB，未超出免费额度，因此当天流量费用为0美元。
 - **当日总费用：**
-1日总费用为 170.48 + 0 = 170.48美元。
+1日总费用为 168.19 + 0 = 168.19美元。
 ![](https://main.qcloudimg.com/raw/e5c2892b62b7f6c1b66a62bf1a53a660.png)
 
 #### 1月2日费用计算
 - **请求次数费用：**
-1月2日产生请求总数为2520万，如下图所示，当月累积请求总数8500万，因此当日请求次数全部落入5000万 - 1亿的计费阶梯，当日请求次数产生的费用为  2520 \*0.026 = 65.52美元。
+1月2日产生请求总数为25.20百万次，如下图所示，当月累积请求总数85百万次，因此当日请求次数全部落入50百万 - 100百万的计费阶梯，当日请求次数产生的费用为  25.20 \*2.57= 64.76美元。
 - **超额流量费用：**
-2日请求总数为2520万，则可减免的流量额度为 2520 \* 0.25 = 630GB， 而实际产生的流量为692.52GB，共超出 692.52 - 630 = 62.52GB，则超出免费流量的费用为 62.52 \* 0.143 = 8.94美元。
+2日请求总数为25.20百万次，则可减免的流量额度为 25.20 \* 25 = 630GB， 而实际产生的流量为692.52GB，共超出 692.52 - 630 = 62.52GB，则超出免费流量的费用为 62.52 \* 0.15 = 9.38美元。
 - **当日总费用：**
-2日总费用为 65.52 + 8.94 = 74.46美元。
+2日总费用为 64.76 + 9.38 = 74.14美元。
 ![](https://main.qcloudimg.com/raw/8bde71cb13d1a8d696217e11977a461b.png)
 
 #### 1月3日费用计算
 - **请求次数费用：**
-1月3日产生请求总数为6400万，当月累积请求总数14900万，因此当日请求次数有1500万落入5000万 - 1亿的计费阶梯，4900万 落入1亿 - 5亿的计费阶梯，因此当日请求总数产生的费用为 1500 \* 0.026 + 4900 \* 0.024 = 156.60美元。
+1月3日产生请求总数为64百万次，当月累积请求总数149百万次，因此当日请求次数有15百万落入50百万 - 100百万的计费阶梯，49百万 落入100百万-500百万的计费阶梯，因此当日请求总数产生的费用为 15 \* 2.57 + 49 \* 2.43 = 157.62美元。
 - **超额流量费用：**
-3日请求总数为6400万，则可减免的流量额度为 6400 \* 0.25 = 1600GB， 而实际产生的流量为1731GB，共超出 1731 - 1600 = 131GB，则超额流量费为 131 \* 0.143 = 18.73美元。
+3日请求总数为6400万，则可减免的流量额度为 6400 \* 0.25 = 1600GB， 而实际产生的流量为1731GB，共超出 1731 - 1600 = 131GB，则超额流量费为 131 \* 0.15= 19.65美元。
 - **当日总费用：**
-3日总费用为 156.60 + 18.73 = 175.33美元。
+3日总费用为 157.62 + 19.65 = 177.27美元。
 ![](https://main.qcloudimg.com/raw/f7baa9c4831ffb9dbafd5de94b8f7b71.png)
 
 <table>
@@ -143,9 +145,9 @@ ECDN 请求次数按照阶梯价格计费，计费阶梯按照自然月用量累
 	<tbody>
 		<tr>
 			<td style="text-align: center; width: 140px;">当日请求总数</td>
-			<td style="text-align: center; width: 140px;">5980万</td>
-			<td style="text-align: center; width: 140px;">2520万</td>
-			<td style="text-align: center; width: 140px;">6400万</td>
+			<td style="text-align: center; width: 140px;">59.80百万</td>
+			<td style="text-align: center; width: 140px;">25.20百万</td>
+			<td style="text-align: center; width: 140px;">64.00百万</td>
 		</tr>
 		<tr>
 			<td style="text-align: center; width: 140px;">当日流量总数</td>
@@ -155,12 +157,13 @@ ECDN 请求次数按照阶梯价格计费，计费阶梯按照自然月用量累
 		</tr>		
 		<tr>
 			<td style="text-align: center; width: 140px;">当日总费用</td>
-			<td style="text-align: center; width: 140px;">170.48美元</td>
-			<td style="text-align: center; width: 140px;">74.46美元</td>
-			<td style="text-align: center; width: 140px;">175.33美元</td>
+			<td style="text-align: center; width: 140px;">168.19美元</td>
+			<td style="text-align: center; width: 140px;">74.14美元</td>
+			<td style="text-align: center; width: 140px;">177.27美元</td>
 		</tr>
 	</tbody>
 </table>
+
 
 
 ## 大客户计费

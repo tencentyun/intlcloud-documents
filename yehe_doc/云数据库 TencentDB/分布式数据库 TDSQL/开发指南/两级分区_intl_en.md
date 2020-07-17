@@ -4,7 +4,7 @@ If you want to view or download the full set of development documents, please se
 TDSQL only uses the HASH method to shard data, which is not convenient for deleting old data of specific conditions, such as transactional data. In order to solve this problem, two-level partitioning can be used.
 TDSQL supports two-level partitioning in range and list formats where the specific table creating syntax is similar to the partitioning syntax in MySQL.
 
->Partitioning uses the less than `<` symbol; therefore, if you want to store the data of the current year (e.g., 2017), you need to create a `<2018` partition. You only need to create partitions up to the current time, and TDSQL will automatically add subsequent partitions (3 by default). Taking YEAR as an example, TDSQL will automatically create partitions of 2018, 2019, and 2020 and increase or decrease them afterwards.
+>!Partitioning uses the less-than `<` symbol; therefore, if you want to store the data of the current year (e.g., 2017), you need to create a `<2018` partition. You only need to create partitions up to the current time, and TDSQL will automatically add subsequent partitions (3 by default). Taking YEAR as an example, TDSQL will automatically create partitions of 2018, 2019, and 2020 and increase or decrease them afterwards.
 
 - **Supported range types**
 - DATE, DATETIME, and TIMESTAMP

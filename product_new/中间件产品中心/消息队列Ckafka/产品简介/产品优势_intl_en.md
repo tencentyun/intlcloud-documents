@@ -4,7 +4,7 @@ This document describes the strengths of CKafka compared to Apache Kafka.
 
 ## Strengths
 #### Full Compatibility with Open-source Programs for Easy Migration
-CKafka is not only compatible with Kafka 0.9 and 0.10, but also features exclusive cluster version 1.1.1.
+CKafka is compatible with open-source Kafka 0.9, 0.10, and 1.1, and features exclusive cluster version 1.1.1.
 The CKafka service system is based on the existing code of open-source Apache Kafka; therefore, your code can be migrated to high-performance CKafka without any modification required. For more information on migration, see [Migrating Data to CKafka](https://intl.cloud.tencent.com/document/product/597/17272).
 
 #### High Performance

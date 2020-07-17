@@ -1,9 +1,6 @@
 ## Operation Scenarios
 The backup space occupied by TencentDB for MySQL instance backup files is allocated by region. It is equivalent to the total storage capacity used by all MySQL database backups in a region, including automatic data backups, manual data backups, and log backups. Increasing the backup retention time or manual backup frequency will use more database backup storage capacity.
 
-This document describes how to view the MySQL instance backup space and free tier in the console.
-
-
 ## Directions
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and select **Database Backup** on the left sidebar.
 2. Select a region at the top to view its backup information on the **Overview** tab, including total backup, backup trend, and real-time backup statistics.

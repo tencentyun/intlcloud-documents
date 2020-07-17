@@ -18,12 +18,12 @@ CFS supports the following scenarios for resource access.
 - Your CVM and CFS instances are in different VPCs;
 - Your CVM and CFS instances are in different regions (for better access performance, it is recommended that the CVM instances and CFS be in the same region).
 
-You can achieve resource access across the CVM instances distributed in VPC-A/VPC-B and CFS instance distributed in VPC-C by configuring a "peering connection". For more information, please see [Peering Connection](https://intl.cloud.tencent.com/document/product/553/18839).
+You can achieve resource access across the CVM instances distributed in VPC-A/VPC-B and CFS instance distributed in VPC-C by configuring a "peering connection". For more information, please see [Configuring the Route to Peering Connection](https://intl.cloud.tencent.com/document/product/553/19696).
 
 
 ## Cross-Network Access
 If you need to have a CFS instance shared by multiple CVM instances distributed in the basic network and a VPC, you can create a CFS file system in the VPC.
-- From CVM instances in the basic network to CFS in a VPC: mutual access to resources between a CVM instance in the basic network and resources in a VPC can be achieved by configuring a "Classiclink". For more information, please see [Classiclink Settings](https://intl.cloud.tencent.com/document/product/553/18839).
+- From CVM instances in the basic network to CFS in a VPC: mutual access to resources between a CVM instance in the basic network and resources in a VPC can be achieved by configuring a "Classiclink". For more information, please see [Enabling Cross-region Connectivity for Basic Networks](https://intl.cloud.tencent.com/document/product/553/18850).
 - From CVM instances in VPC-A to CFS in VPC-B: please refer to the setting method above.
 
 >

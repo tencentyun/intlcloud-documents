@@ -3,6 +3,8 @@
 云数据库 MySQL 支持以下版本的数据库引擎升级：
 - MySQL 5.5 到 MySQL 5.6
 - MySQL 5.6 到 MySQL 5.7
+>?不支持降级数据库引擎版本。
+>
 
 <span id="shengjiguize"></span>
 ## 版本升级规则
