@@ -125,32 +125,6 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 	</tr>
 </table>
 
-### Common authorization exceptions
-
-#### Exception 1
-
-- Console error: when you click any feature page in the CM console, the system prompts "Operation unauthorized. Check CAM policies.", as shown in the following figure.
-![](https://main.qcloudimg.com/raw/81d4a4cd5da3bc16b2a09b88262718d5.jpg)
-- Solution: grant the QcloudMonitorFullAccess or QcloudMonitorReadOnlyAccess permission to the corresponding sub-account in the [CAM console](https://console.cloud.tencent.com/cam).
-
-
-#### Exception 2
-- Console error: when you use features that require access to CVM instances, such as the alarm policy and dashboard features, the system prompts a CVM authorization failure, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/7c99c04b6c0bdfd7f982e55c2668ea71.jpg)
-- Solution: grant the QcloudMonitorFullAccess or QcloudMonitorReadOnlyAccess permission to the corresponding sub-account in the [CAM console](https://console.cloud.tencent.com/cam).
-
-
-#### Exception 3
-- Console error:
- - When you create an alarm policy, the system prompts "You do not have project permission to create this policy." under the **Project** drop-down list, as shown in the following figure.
- ![](https://main.qcloudimg.com/raw/4df73884c4ba0cfcc4cc4f95ce334087.png)
- - When you create an alarm recipient group, the system prompts a CAM authorization failure, as shown in the following figure.
- ![](https://main.qcloudimg.com/raw/33ce73e95afaeba6e3f2703626516708.jpg)
-- Solution: grant the QcloudCVMFullAccess permission to the corresponding sub-account in the [CAM console](https://console.cloud.tencent.com/cam).
-
-
-
-
 
 ### CM-related Tencent Cloud service policies
 
