@@ -21,6 +21,22 @@
 
 
 
+## 全员推送
+
+| 功能说明  | 接口 |
+|---------|---------|
+| 全员推送         | [v4/all_member_push/im_push](https://intl.cloud.tencent.com/document/product/1047/37166) |
+| 设置应用属性名称 | [v4/all_member_push/im_set_attr_name](https://intl.cloud.tencent.com/document/product/1047/37167) |
+| 获取应用属性名称 | [v4/all_member_push/im_get_attr_name](https://intl.cloud.tencent.com/document/product/1047/37168) |
+| 获取用户属性     | [v4/all_member_push/im_get_attr](https://intl.cloud.tencent.com/document/product/1047/37169) |
+| 设置用户属性     | [v4/all_member_push/im_set_attr](https://intl.cloud.tencent.com/document/product/1047/37170) |
+| 删除用户属性     | [v4/all_member_push/im_remove_attr](https://intl.cloud.tencent.com/document/product/1047/37171) |
+| 获取用户标签     | [v4/all_member_push/im_get_tag](https://intl.cloud.tencent.com/document/product/1047/37172) |
+| 添加用户标签     | [v4/all_member_push/im_add_tag](https://intl.cloud.tencent.com/document/product/1047/37173) |
+| 删除用户标签     | [v4/all_member_push/im_remove_tag](https://intl.cloud.tencent.com/document/product/1047/37174) |
+| 删除用户所有标签 | [v4/all_member_push/im_remove_all_tags](https://intl.cloud.tencent.com/document/product/1047/37175) |
+
+
 ## 资料管理
 
 | 功能说明 | 接口                                                         |

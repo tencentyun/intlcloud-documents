@@ -10,7 +10,6 @@ The project management feature enables you to better manage Tencent Cloud servic
 ![](https://main.qcloudimg.com/raw/4b070b8c7c89b7932ad6d1bf48413771.png)
 4. Enter the project name and description.
 ![](https://main.qcloudimg.com/raw/1318f85a3a9493a96fa9fb13af488d9f.png)
- >?If you need to create a project management policy, please click the link in the figure. For more information, please see the directions of [creating custom policy](https://intl.cloud.tencent.com/document/product/598/35596) in the policy documentation; otherwise, proceed directly to the next step.
 5. Click **Submit** to complete the creation.
 
 

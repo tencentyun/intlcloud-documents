@@ -15,7 +15,7 @@ $ npm install -g serverless
 
 ### 2. Create
 
-1. Create `serverless.yml` and `app.js` files locally.
+1. Create the `serverless.yml` file locally:
 ```console
 $ touch serverless.yml
 ```
@@ -24,11 +24,12 @@ $ touch serverless.yml
 npm init              # Keep pressing Enter after the creation
 npm i --save koa  # Install Koa
 ```
-3. Create an `sls.js` file:
+3. Create the `sls.js` file locally:
 ```console
-$ touch app.js
+$ touch sls.js
 ```
-4. Create your Koa application in the `app.js` file:
+4. Create your Koa application in the `sls.js` file:
+
 ```js
 const koa = require('koa')
 const app = new koa()
@@ -59,7 +60,7 @@ name: koaDemo # (required) name of your koa component instance.
 
 inputs:
   src:
-    src: ./src # (optional) path to the source folder. default is a hello world app.
+    src: ./ # (optional) path to the source folder. default is a hello world app.
     exclude:
       - .env
   region: ap-guangzhou

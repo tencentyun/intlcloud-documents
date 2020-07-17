@@ -6,7 +6,7 @@
 >导入的单个 SQL 文件不超过2GB，文件名仅允许英文、数字、下划线。
 >
 ![](https://main.qcloudimg.com/raw/a8854e74caebb9c69d831dc1583c10c0.png)
-
+详情请参见 [导入 SQL 文件](https://intl.cloud.tencent.com/zh/document/product/236/8466)。
 ### 如何导出数据库数据？
 - 如果需要导出备份数据，可通过 [控制台](https://console.cloud.tencent.com/cdb) 单击实例名进入管理页，选择【备份恢复】页进行下载。
 - 如果需要导出实时数据，可以购买 [只读实例](https://intl.cloud.tencent.com/document/product/236/7270)，连接实例后，通过 mysqldump 工具获取实时数据。

@@ -1,5 +1,5 @@
 >
->- CMQ is currently being upgraded (to be completed in late June 2020) and will be launched as a brand new message queue product.
+>- CMQ is currently being upgraded (to be completed in September 2020) and will be launched as a brand new message queue product.
 >- The new version of CMQ will have a similar billing mode as the legacy version. The impacts on costs due to version migration will be minimized.
 
 Currently, queuing service and message retention/requests to CMQ topics are free of charge.
