@@ -5,6 +5,10 @@ Namespace=QCE/COS
 
 ## 监控指标
 
+>?由于对象存储使用的是通用地域，所以无论存储桶所属地域是哪里，拉取对象存储监控指标数据时 Region 请统一选择“广州”地域。
+- 使用 [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics) 拉取数据时 Region 字段统一选择“华南地区(广州)”。
+- 使用 SDK 拉取数据时 Region 字段统一填写“ap-guangzhou”。
+
 ### 请求类
 
 | 指标英文名 | 指标中文名     |  指标含义  |  单位  | 维度 |
@@ -33,6 +37,7 @@ Namespace=QCE/COS
 |MazIaWriteRequests|多 AZ 低频存储-写请求|个 |appid、bucket|
 |MazIaStorage|多 AZ 低频存储-存储容量|MB |appid、bucket|
 |MazIaObjectNumber|多 AZ 低频存储-对象数量|个 |appid、bucket|
+
 
 ### 流量类
 
