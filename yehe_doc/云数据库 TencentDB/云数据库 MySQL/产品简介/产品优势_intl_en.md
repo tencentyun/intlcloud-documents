@@ -8,10 +8,10 @@ Read-only instances can be mounted to MySQL. The one-master-multiple-slave archi
 
 #### Powerful hardware for high performance
 NVMe SSD features high IO performance, ensuring smooth reads and writes.
-One single instance can sustain up to 240,000 QPS with a maximum storage capacity of 6 TB.
+One single instance can sustain up to 240,000 [QPS] with a maximum storage capacity of 6 TB.
 
 ## High Security
-#### DDoS protection
+ **DDoS protection**
 This feature helps defend against various DDoS attacks, large and small, to ensure business continuity.
 
 #### Protection against database attacks
@@ -28,14 +28,14 @@ Financial-grade data audit feature helps prevent core data theft, trace non-comp
 
 
 ## High Availability
-#### Real-Time hot backup
+**Real-Time hot backup**
 The dual-server hot backup mechanism supports lossless restoration of data from the last 7–732 days based on data backup and log backup (binlog). Such backups can be retained for 7–732 days.
 
 #### Automated disaster recovery
 Automated failure detection and failover are supported. Master/slave switch and failover are imperceptible to users.
 
 ## Advantages over Self-Created Databases
-#### Easy management of massive databases
+**Easy management of massive databases**
 Databases can be managed via command line or console. Batch database management, permission setting, and SQL import are supported.
 
 #### Data import, backup, and rollback
