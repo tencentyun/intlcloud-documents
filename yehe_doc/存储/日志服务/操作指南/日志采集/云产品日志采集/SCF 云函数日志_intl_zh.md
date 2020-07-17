@@ -83,7 +83,7 @@
 2. 选择检索的时间范围和日志主题，在输入框填写检索语法（语法支持关键词检索、模糊检索、范围检索等方式，详情请参见 [语法规则](https://intl.cloud.tencent.com/document/product/614/30439)）。
 3. 单击【搜索】，即可检索日志。
    示例1： `SCF_StartTime:1583233118007`查询时间等于1583233118007的日志
-   ![](https://main.qcloudimg.com/raw/f687223e9a19f89c2de1878ebb009ce9.png)
+   ![](https://main.qcloudimg.com/raw/157c2f861065cbad78973fc4e0258f2b.png)
    示例2: `SCF_Index:2` 查询 Index 等于2的日志
-   ![](https://main.qcloudimg.com/raw/2243f7f8e3844ce638bbec7e71d72b59.png)
+   ![](https://main.qcloudimg.com/raw/852ffa027fe4427d10f98e9c73902d26.png)
 
