@@ -151,11 +151,10 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 #### Troubleshooting for Meizu channel
 - It is similar to the troubleshooting method for the Mi channel. For more information, please see troubleshooting for the Mi channel.
 
-### Why can't messages be displayed on the notification bar after arriving at phones on Meizu Flyme 6.0 or below?
-1. Manual integration is used on Meizu phones on Flyme 6.0 and below.
-2. Automatic integration is used on Meizu phones on Flyme 6.0 and below, and the version of the used TPNS SDK for Android is below 1.1.4.0.
-
-In the above two cases, you need to place an image exactly named `stat_sys_third_app_notify` in the drawable folders with different resolutions. For more information, please see the `flyme-notification-res` folder in the [TPNS SDK for Android](https://console.cloud.tencent.com/tpns/sdkdownload).
+### Why aren't messages displayed in the notification bar when they arrive on the Meizu mobiles of version Flyme 6.0 or earlier?
+1.  Meizu mobiles of version Flyme 6.0 or earlier use manual integration. 
+2.  Meizu mobiles of version Flyme 6.0 or earlier use automatic integration, and TPNS Android SDK 1.1.4.0 or earlier versions.
+In both cases, you need to place a picture named "stat_sys_third_app_notify" under `drawable` folder with different resolutions. For details, see `flyme-notification-res` folder in [TPNS Android SDK](https://console.cloud.tencent.com/tpns/sdkdownload).
 
 
 ### How do I solve the conflict between component dependencies when integrating with the Huawei push channel?
