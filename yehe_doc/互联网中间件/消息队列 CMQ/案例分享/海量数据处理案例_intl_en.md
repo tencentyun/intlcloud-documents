@@ -6,7 +6,7 @@ It collects data from all nodes in real time by using open-source Flume. Data su
 - **Data ingestion**
 As data collection and processing may be async in speed, to ensure stability and reliability of data write and analysis, the CMQ messaging middleware can be added as a buffer.
 - **Stream computing and offline data analysis**
-Collected data is analyzed in real time with Apache Storm. Data miming is performed through offline data analysis based on Spark.
+Collected data is analyzed in real time with Apache Storm. Data mining is performed through offline data analysis based on Spark.
 - **Data output**
 Analysis results can be persistently stored in services such as TencentDB for MySQL.
 

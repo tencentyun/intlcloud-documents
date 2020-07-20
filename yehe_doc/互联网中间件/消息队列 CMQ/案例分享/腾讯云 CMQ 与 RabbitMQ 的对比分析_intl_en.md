@@ -11,7 +11,7 @@ A business may lose messages due to various issues such as network, server, or p
 
 ![](https://main.qcloudimg.com/raw/d5e1396efc0cb4abbb53a50b0af5e642.png)
 
-RabbitMQ uses the mechanism of producer and consumed message ACK to ensure reliable delivery.
+RabbitMQ uses the mechanism of produced and consumed message ACK to ensure reliable delivery.
 
 - Produced message ACK: after the producer sends a message to the message queue, it will wait for the return of an ACK of success; otherwise, the producer will resend the message to the message queue. This process can be async, that is, the producer continuously sends messages, and the message queue can return ACKs after processing them in batches. The producer can identify the message IDs in the returned ACKs to determine which messages have been successfully processed.
 
