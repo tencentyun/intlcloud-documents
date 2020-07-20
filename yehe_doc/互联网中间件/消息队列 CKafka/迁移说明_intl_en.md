@@ -12,8 +12,8 @@ Create a topic with the same name as that in the legacy CKafka instance (for mor
 Switch the producer to the new CKafka instance so that the legacy instance will not receive new message data.
  - Existing data in the legacy CKafka instance (if any) will continue to be consumed till the end.
  - If there is no existing data in the legacy CKafka instance, you need to change the `bootstrap.servers` of the consumer to the new instance's address for consumption. As the offset of the new instance will start from zero, you need to perform the following steps based on the actual business needs when switching the consumer group:
- 
-#### 3.1. Open-Source Kafka tools<span id="Open-Source Kafka tools"></span>
+ <span id="Open-Source Kafka tools"></span>
+#### 3.1. Open-Source Kafka tools
 You may use open-source Kafka tools when switching the consumer group.
 Tool used to get the topic offset at the specified time:
 >?This tool can get the offset based on the file modification time. Its accuracy is relatively low, but it is compatible with production on legacy versions (Kafka v0.9 and below).
@@ -53,8 +53,8 @@ Offset retained by yourself:
 If the consumer of the new instance fails to be started after a long time and the retention time set in the instance is too short, the legacy data may be deleted, causing the offset to start from a non-zero value. In this case, you can use the corresponding tool to pull the latest offset information as instructed in [Open-Source Kafka tools](#Open-Source Kafka tools) and use it to update the retained offset and restart the consumer.
 
 >?
-- You can also directly perform doublewrite (i.e., writing into the new and legacy instances at the same time) through the producer; however, such switch may consume the same piece of data repeatedly.
-- A corresponding discount will be provided based on your estimated business scale.
-- You are recommended to use the topic copy script of Python to migrate the instance to the cluster on the new version (a README document will be present after the script is decompressed).
-- Download the aforementioned open-source script [here >>](https://github.com/tencentyun/CKafka/tree/master/tools/%E4%B8%BB%E9%A2%98%E5%A4%8D%E5%88%B6%E5%B7%A5%E5%85%B7)
+>- You can also directly perform doublewrite (i.e., writing into the new and legacy instances at the same time) through the producer; however, such switch may consume the same piece of data repeatedly.
+>- A corresponding discount will be provided based on your estimated business scale.
+>- You are recommended to use the topic copy script of Python to migrate the instance to the cluster on the new version (a README document will be present after the script is decompressed).
+>- Download the aforementioned open-source script [here >>](https://github.com/tencentyun/CKafka/tree/master/tools/%E4%B8%BB%E9%A2%98%E5%A4%8D%E5%88%B6%E5%B7%A5%E5%85%B7)
 
