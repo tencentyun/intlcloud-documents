@@ -55,7 +55,7 @@ Make sure you have a tag that you can use before creating a file system. If you 
 2. In the File System List page, click **Create**.
 3. In the “Create File System” pop-up window, find **Tag** down below, and click **Add** to add a tag to the file system. Only existing tags can be added in this step.
 
-4. Click **Submit**, and the tag will be bound to the created file system.
+4. 4. Click **OK**, and the tag will be bound to the created file system.
 
 >For more information on creating file systems, see [Creating File Systems and Mount Targets](https://intl.cloud.tencent.com/document/product/582/9132).
 
@@ -64,7 +64,7 @@ Make sure you have a tag that you can use before creating a file system. If you 
 
 1. On the File System List page, locate the file system and click **Edit Tag** in the Operation column.
 
-2. Add, modify or delete the tag as needed in the pop-up window.
+2. Add, modify or delete a tag as needed in the pop-up window.
 
 3. Click **OK**.
 
