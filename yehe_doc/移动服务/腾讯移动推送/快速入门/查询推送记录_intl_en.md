@@ -3,69 +3,73 @@ This document describes how to query push records (such as message ID, title, co
 
 
 ## Directions
-1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **User Operation** > **Mobile Push** > **Push Record** on the left sidebar.
-2. On the **Push Record** page, click **View Details** (only displaying push records within one month).
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Message Push** on the left sidebar.
+2. On the push record page, click **View Details** (currently, only push records in the last month are retained).
+![](https://main.qcloudimg.com/raw/6a646e4db578ef7c7bebd2b8bd1ccb32.png)
 3. On the detailed data page, data in each process of push delivery is displayed in the form of funnels. The funnels for Android and iOS are different.
 
 **Android:**
 ![](https://main.qcloudimg.com/raw/e8f1cd83d57f62d5ff622502bee20b35.png)
 
  - TPNS channel
-   - Scheduled: number of devices to which the message will be pushed through the TPNS channel when the push condition is met.
-   - Sent: number of devices maintaining a persistent connection to the TPNS backend server.
-   - Arrived: number of devices at which the message successfully arrives.
-   - Displayed: number of devices on which the message is successfully displayed.
-   - Tapped: number of devices on which the message is successfully tapped.
-   - Dismissed: number of devices on which a message is dismissed.
-   - Arrival rate: arrived/sent.
-   - Click rate: number of devices where the notification bar is tapped/number of devices at which the notification message arrives.
-   
- - Vendor channel
-   - Scheduled: number of devices to which the message will be pushed through a vendor channel when the push condition is met.
-   - Sent: number of devices to which the message is pushed through the vendor channel and the vendor server returns a success.
-   - Arrived: number of devices at which the message arrives.
-   - Arrival rate: arrived/sent.
-   
->1. The number of "displayed", "tapped", or "dismissed" messages cannot be returned for vendor channels.
-2. The arrival data is for reference only. For the Huawei channel, you need to configure the arrival callback by yourself. For more information, please see [Guide for Getting Arrival Callback Through Vendor Channels](https://intl.cloud.tencent.com/document/product/1024/35246).
+   - Attempted: the number of available devices online in the last 90 days with the notification bar enabled out of the push target devices.
+   - Sent: the number of available devices to which the message was successfully delivered through the TPNS channel out of the attempted devices.
+   - Reached: the number of devices that received the message.
+   - Clicked: the number of devices on which the message was clicked.
+   - Cleared: the number of devices on which the notification was dismissed.
+   - Reach rate: reached/sent.
+   - Click rate: the number of devices on which the message was clicked/the number of devices which the notification reached.
 
-**Push timeliness analysis**
+ - Vendor channel
+   - Attempted: the total number of devices with the notification bar enabled and using vendor channels out of the push target devices.
+   - Sent: the number of devices to which the message was pushed through the vendor channel and the vendor server returns a success.
+   - Reached: the number of devices that received the message
+   - Reach rate: reached/sent.
+
+>?
+1. The number of "cleared" messages cannot be returned for vendor channels.
+2. The arrival data is for reference only. For the Huawei and Meizu channels, you need to configure the arrival callback by yourself. For more information, please see [Guide for Getting Arrival Callback Through Vendor Channels](https://intl.cloud.tencent.com/document/product/1024/35246).
+
+**Push time analysis**
+![](https://main.qcloudimg.com/raw/29272f4bbc158909fb2143a57736e48d.png)
 After a push task starts, according to different time granularities:
 
-- Minute granularity: the cumulative number of deduplicated devices for the corresponding metric per minute within 1 hour
-- Hour granularity: the cumulative metric statistics per hour in 24 hours or 72 hours.
+- By minute: the number of unique devices for each metric per minute within 1 hour.
+- By hour: the total number of devices for each metric per hour within 24 hours or 72 hours.
 
 According to different metrics:
-- Sent: number of devices to which the message is successfully delivered in the specified time period.
-- Arrived: number of devices at which the message arrives in the specified time period.
-- Displayed: number of devices on which the message is displayed in the specified time period.
-- Tapped: number of devices on which the message is tapped in the notification bar in the specified time period.
-- Dismissed: number of devices on which a message is dismissed in the specified time period.
+- Sent: the number of devices to which the message was successfully delivered in the specified time period.
+- Reached devices: the number of devices at which the message arrived in the specified time period.
+- Clicked: the number of devices on which the push message was clicked within a specified period.
+- Cleared: the number of devices on which the notification was dismissed within a specified period.
 
->1. The "displayed", "tapped", and "dismissed" metrics are only supported for the TPNS channel.
-2. Timeliness statistics are not available for pushes to one single device account and to device account list.
-3. The statistics of timeliness metrics are slightly ahead of the statistics in the push funnel, and it is normal if you see small differences in the pushing process.
+>!
+1. The "cleared" metric is only supported for the TPNS channel.
+2. Push time analysis is not supported for single-device/account pushes or device/account list pushes.
+3. The statistics of time metrics are slightly ahead of the statistics in the push funnel, and it is normal if you see small differences in the pushing process.
 
 **iOS:**
 ![](https://main.qcloudimg.com/raw/e9fe41491d5d631c9270525ae554b9a2.png)
 
- - Scheduled: number of valid devices (including the devices whose notification bar is disabled) filtered out by the target audience selected by the push.
- - APNs received: number of messages that are delivered to APNs for which APNs returns a success (for devices whose notification bar is disabled, APNs will also return a success).
- - Arrived: number of deduplicated devices at which the message arrives (you need to confirm the completion of the [preparations for integration](https://intl.cloud.tencent.com/document/product/1024/30730). This item is not supported for devices below iOS 10).
- - Tapped: number of devices on which the message is successfully tapped.
- - Click rate: clicks/arrived devices.
+ - Attempted: the number of available devices in the push target devices (including opt-out devices).
+ - Sent: the number of devices to which the message was successfully delivered through the APNs or TPNS channel (opt-out devices can also return success)
+ - Reached: the number of unique devices that received push messages (make sure you have completed the [integration procedure](https://intl.cloud.tencent.com/document/product/1024/30730). iOS 10 and below versions do not support this statistic item.)
+ - Clicked: the number of devices on which the message was clicked.
+ - Click rate: clicked/reached devices.
 
 
- **Push timeliness analysis**
+ **Push time analysis**
+
+ ![](https://main.qcloudimg.com/raw/d3bca553a792b165e1e45e3bbed0b957.png)
 
 After a push task starts, according to different time granularities:
-- Minute granularity: the cumulative number of deduplicated devices for the corresponding metric per minute within 1 hour
-- Hour granularity: the cumulative metric statistics per hour in 24 hours or 72 hours.
+- By minute: the number of unique devices for each metric per minute within 1 hour.
+- By hour: the total number of devices for each metric per hour within 24 hours or 72 hours.
 
 According to different metrics:
-- APNs received: number of devices on which the message is received by APNs in the specified time period.
-- Arrived: number of devices at which the message arrives in the specified time period.
-- Tapped: number of devices on which the message is tapped in the notification bar in the specified time period.
+- Sent: the number of devices that received the message through the APNs or TPNS channel within a specified period.
+- Reached: the number of devices at which the push message arrived within a specified period.
+- Clicked: the number of devices on which the push message was clicked within a specified period.
 
->1. Timeliness statistics are not available for pushes to one single device account and to device account list.
+>!1. Push time analysis is not supported for single-device/account pushes or device/account list pushes.
 2. The statistics of timeliness metrics are slightly ahead of the statistics in the push funnel, and it is normal if you see small differences in the pushing process.
