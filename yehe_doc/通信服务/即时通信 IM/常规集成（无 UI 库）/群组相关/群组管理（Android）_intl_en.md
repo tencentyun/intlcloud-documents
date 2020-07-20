@@ -89,7 +89,7 @@ The following table describes the features and limitations of each group type:
 <td>Not supported</td>
 </tr>
 <tr>
-<td>Retaining the message history in the cloud</td>
+<td>Storing historical messages in the cloud</td>
 <td><ul style="margin:0;"><li>Trial Edition: 7 days</li><li>Pro Edition: 7 days by default, and can be extended to up to 360 days by using a <a href="https://intl.cloud.tencent.com/document/product/1047/34350" target="_blank">value-added service</a></li><li>Flagship Edition: 30 days by default, and can be extended to up to 360 days by using a <a href="https://intl.cloud.tencent.com/document/product/1047/34350" target="_blank">value-added service</a></li></ul></td>
 <td><ul style="margin:0;"><li>Trial Edition: 7 days</li><li>Pro Edition: 7 days by default, and can be extended to up to 360 days by using a <a href="https://intl.cloud.tencent.com/document/product/1047/34350" target="_blank">value-added service</a></li><li>Flagship Edition: 30 days by default, and can be extended to up to 360 days by using a <a href="https://intl.cloud.tencent.com/document/product/1047/34350" target="_blank">value-added service</a></li></ul></td>
 <td><ul style="margin:0;"><li>Trial Edition: 7 days</li><li>Pro Edition: 7 days by default, and can be extended to up to 360 days by using a <a href="https://intl.cloud.tencent.com/document/product/1047/34350" target="_blank">value-added service</a></li><li>Flagship Edition: 30 days by default, and can be extended to up to 360 days by using a <a href="https://intl.cloud.tencent.com/document/product/1047/34350" target="_blank">value-added service</a></li></ul></td>
