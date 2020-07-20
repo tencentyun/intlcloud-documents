@@ -16,6 +16,8 @@ EMR 控制台自助开启 COS 时需要提供一个测试验证地址，用于�
 ![](https://main.qcloudimg.com/raw/8a308284db105fa01c701ebfdd474454.png)![](https://main.qcloudimg.com/raw/83f7e2e435ddfd10246de4865fc3258c.png)
 
 ### 步骤三：在集群中设置 COS
+>!COS 桶和集群必须要在同一个地域。
+
 1. 进入 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中单击集群 ID 进入集群实例详情页。
 ![](https://main.qcloudimg.com/raw/c1555c479499b401cf8f55d346fd3297.png)
 2. 在【软件信息】>【COS 访问】中单击【设置】。
