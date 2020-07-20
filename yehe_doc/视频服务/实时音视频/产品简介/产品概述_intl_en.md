@@ -8,7 +8,7 @@ Leveraging Tencent's 21 years of experience in network and audio/video technolog
 
 ## Product Architecture
 TRTC focuses on providing multi-person audio/video call and low-latency interactive live streaming solutions for various platforms. It offers SDKs for mini program, desktop browser, Android, iOS, Electron, Windows, macOS, Linux, and other platforms for you to quickly integrate with and connect to its backend. Through its interconnection with different Tencent Cloud services such as IM, LVB, and VOD, TRTC makes it easier for you to develop a wider diversity of business scenarios. The product architecture is as follows:
-![](https://main.qcloudimg.com/raw/0e8d2874919fb29838823f0ce5264158.png)
+![](https://main.qcloudimg.com/raw/9ab5063e6f7c50d03ebbd2244220c9f9.png)
 
 ## Supported Platforms
 TRTC **supports a wide range of platforms**. The following lists the supported platforms and development environments:
