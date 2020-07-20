@@ -44,7 +44,7 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | 	Reference Document |	
 | ------------------------------------------------------------ | ------ | -------- | ------- | ---- |	 ---- |
 | [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214)   | Resource level | &#10003;      | &#10003;    |    &#10003;  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/214/9777) |	
-| [Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | Resource level | &#10003;        | -     | - |	 - |	
+| [Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | Resource level | &#10003;        | &#10003;     | - |	 - |	
 | [Direct Connect (DC)](https://intl.cloud.tencent.com/document/product/216) | Operation level   | &#10003;       | -       | -  |	 - |	
 ><sup>1</sup> In VPC, [Elastic Network Interface (ENI)](https://intl.cloud.tencent.com/document/product/576), [NAT Gateway](https://intl.cloud.tencent.com/document/product/1015), [Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Flow Logs (FL)](https://intl.cloud.tencent.com/document/product/682), [Anycast Internet Acceleration (AIA)](https://intl.cloud.tencent.com/document/product/644), [Cloud Connect Network (CCN)](https://intl.cloud.tencent.com/document/product/1003), and [Bandwidth Package (BWP)](https://intl.cloud.tencent.com/document/product/684) support CAM.
 
@@ -70,6 +70,7 @@ Definitions:
 | [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240) | Resource level | &#10003; | -   |&#10003;|[CAM Guide](https://intl.cloud.tencent.com/document/product/240/32839) |			
 | [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  | -    | &#10003;    | - |
 | [TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | Resource level |  &#10003;  | &#10003;    | -    | - |		
+| [TencentDB for DBbrain](https://intl.cloud.tencent.com/document/product/1035) |Resource level | &#10003;  | -    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1035/36050)|	
 
 ## Serverless	
 
