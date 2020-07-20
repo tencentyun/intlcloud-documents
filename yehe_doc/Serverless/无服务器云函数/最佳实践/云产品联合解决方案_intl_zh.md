@@ -47,4 +47,8 @@
 <td>腾讯云数据库 TencentDB</td>
 <td>数据库备份</td>
 </tr>
+<tr>
+<td>短信 SMS </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35747">	实现短信验证码功能</a></td>
+</tr>
 </table>
