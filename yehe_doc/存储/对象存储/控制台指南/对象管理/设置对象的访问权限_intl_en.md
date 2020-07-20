@@ -16,13 +16,10 @@ COS allows you to configure access permissions for objects, which have a higher 
 3. In the [File List], find the object for which to configure access permission, and click [Details] on the right to enter the file details page (If it is a folder, click [Permissions] on the right).
 ![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
 4. Scroll down to the [Object ACL] section near the top of the page and configure access permissions as needed (such as granting object permission to a sub-account, sub-account ID can be found on the [Cloud Access Management](https://console.cloud.tencent.com/cam) console). COS supports two types of object permissions:
- -**Public Permissions**: Inherited permissions, private read/write, and public read/private write. For more information on public permissions, see [Access Permission Types](https://intl.cloud.tencent.com/document/product/436/13324).
- -**User Permissions**: The root account has all object permissions (full access) by default. In addition, COS allows you to grant sub-accounts read/write permission for data and/or permission information and even allows **full access** permission to be granted to sub-accounts.
+ - **Public Permissions**: Inherited permissions, private read/write, and public read/private write. For more information on public permissions, see [Access Permission Types](https://intl.cloud.tencent.com/document/product/436/13324).
+ - **User Permissions**: The root account has all object permissions (full access) by default. In addition, COS allows you to grant sub-accounts read/write permission for data and/or permission information and even allows **full access** permission to be granted to sub-accounts.
 ![](https://main.qcloudimg.com/raw/c9565ab1d2378ce672a301843bf3b072.png)
 5. Click [Save] to configure the object access permissions.
 6. If you need to configure or modify access permissions for multiple objects by performing a batch operation, you can check multiple objects from the file list and select [Modify Access Permissions] under [More Actions].
 
 
-## Video Tutorial
-The following video outlines how to configure object permissions:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1824-20796?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
