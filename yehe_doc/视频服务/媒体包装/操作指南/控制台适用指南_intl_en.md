@@ -1,6 +1,6 @@
 The MediaPackage Console manages streams by channels and can be divided into three components: channel, input, and endpoint.
 
-## 一、	Channel
+## 1. Channel
 
 A channel holds the basic input/output stream configurations. You can create and configure a channel to input a live stream with a specified protocol, or create an origin-pull endpoint (see "Endpoint" section) to output the live stream.
 Create a channel in the following steps:
@@ -10,7 +10,7 @@ Save the configurations.
 Once a channel is created, you will be redirected to the channel details page, where the channel name, ID (automatically generated in the backend), and the specified input protocol are displayed. Two inputs will be automatically generated based on the protocol (see "Input" section).
 On the channel list page, you can manage all channels that have been created. You can view channel details, and modify or delete a channel. To delete a channel associated with endpoints, delete all endpoints first.
 
-## 二、	Input
+## 2. Input
 
 Input is the basic unit of channel. Based on the channel you created, the backend will automatically generate two inputs and corresponding URLs to which you can push the live stream.
 
@@ -22,7 +22,7 @@ Note: once you rotate credentials, the existing channel credentials will become 
 ![](https://main.qcloudimg.com/raw/9fff5688aab8cfbc36027a8db1374c1a.png)
 
 
-## 三、	Endpoint
+## 3. Endpoint
 
 Endpoints pull streams from an origin server. You can create endpoints on a channel in the following steps:
 

@@ -1,12 +1,12 @@
-Resource-level permissions specify which resources a user can manipulate. Cloud Block Storage (CBS) supports resource-level permission on some CBS operations that control which resources and when a user can manipulate.
-The following table describes the types of resources that can be authorized in Cloud Access Management (CAM):
+Resource-level permissions refer to the ability to specify which resources users are allowed to perform operations on. CBS supports resource-level permissions. That is, you can specify when users are allowed to perform some CBS operations that support resource-level permissions or which resources users are allowed to use.
+The types of resources that can be authorized in Cloud Access Management (CAM) are as follows:
 
-| Resource Type | Resource Description Method in the Authorization Policy |
+| Resource Type | Resource Description Method in Authorization Policy |
 | :-------- | -------------- |
 | [CBS APIs](#CBSCorrelation) |  ` qcs::cvm:$region::volume/* `|
 
-The [CBS APIs](#CBSCorrelation) describe the CBS API operations which currently support resource-level permission control as well as the resources and condition keys supported by each operation. **When setting the resource path,** you need to replace the variable parameters such as `$region` and `$account` with your actual parameters. You can also use the `*` wildcard in the path. For related operation examples, see [Console Example](https://intl.cloud.tencent.com/document/product/213/10312).
->! CBS API operations not listed in the table do not support resource-level permission. You can still authorize a user to perform these operations, but you must specify `*` as the resource element in the policy statement.
+[CBS APIs](#CBSCorrelation) describe CBS API operations that currently support resource-level permissions as well as resources and condition keys supported by each operation. **When configuring the resource path,** you need to replace variable parameters such as `$region` and `$account` with your actual parameters. You can also use the `*` wildcard in the path. For more information, see [Console Example](https://intl.cloud.tencent.com/document/product/213/10312).
+>! CBS API operations not listed in the table do not support resource-level permissions. You can still authorize users to perform these operations, but the resource element of the policy statement must be specified as `*`.
 >
 
 <span id="CBSCorrelation"></span>
@@ -50,7 +50,7 @@ The [CBS APIs](#CBSCorrelation) describe the CBS API operations which currently 
 <td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
 </tr>
 <tr>
-<td align="left">Change the billing mode of an elastic cloud disk<br>ModifyDisksChargeType</a></td>
+<td align="left">Modify the billing mode of a cloud disk<br>ModifyDisksChargeType</a></td>
 <td align="left"><code>qcs::cvm:$region:$account:volume/*</code><br><code>qcs::cvm:$region:$account:volume/$diskId</code></td>
 <td align="left">cvm:region<br>cvm:zone<br>cvm:disk_type</td>
 </tr>

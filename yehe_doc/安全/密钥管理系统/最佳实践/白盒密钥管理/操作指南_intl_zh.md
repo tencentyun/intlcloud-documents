@@ -19,6 +19,7 @@ API Key 是常用的一类用于客户端应用与后台服务器建立可信连
 ## 操作步骤
 
 ### 步骤1：创建白盒密钥
+>!白盒密钥为收费项，详情请参见 [计费概述](https://intl.cloud.tencent.com/zh/document/product/1030/31966#.E7.99.BD.E7.9B.92.E5.AF.86.E9.92.A5) 和 [购买方式](https://intl.cloud.tencent.com/zh/document/product/1030/31967#.E8.B4.AD.E4.B9.B0.E7.99.BD.E7.9B.92.E5.AF.86.E9.92.A5)。
 
 创建白盒密钥对是通过调用白盒服务来实现的，支持控制台方式和 API 方式。
 
