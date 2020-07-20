@@ -1,5 +1,6 @@
 MariaDB 可通过回档功能来查看历史数据，如果您需要在本地恢复您的数据库实例，可按照本文的步骤进行操作恢复历史数据。
 
+
 ## 前提条件
 ### 准备服务器
 如您需在本地恢复数据库实例，请确保服务器基本配置如下：
@@ -31,7 +32,7 @@ yum info MariaDB-server
 ```
 yum install MariaDB-server
 ```
->提示与旧版本冲突时，需要先移除之前的安装包，例如`yum remove mariadb-libs`。
+>?提示与旧版本冲突时，需要先移除之前的安装包，例如`yum remove mariadb-libs`。
 
 ### 安装辅助工具
 1. 安装 MariaDB 客户端。
@@ -54,6 +55,7 @@ wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_5
 ```
 
 ## 通过备份文件恢复数据库（未加密）
+
 <span id = "mulu_jieya"></span>
 #### 1. 进入备份文件下载目录，通过 lz4 解压冷备文件
 ```
@@ -140,7 +142,9 @@ innobackupex --apply-log --rebuild-indexes  --use-memory=1G  --tmpdir=/tmp ./bac
 请参见 [停止数据库，清空数据文件](#tingzhi_qingkong)。
 
 #### 4. 获取数据密钥明文
-解密数据前，需在 [MariaDB 控制台](https://console.cloud.tencent.com/tdsql) 的实例管理页的【数据安全性】>【数据加密】中查询数据密钥密文，然后，您可以通过如下两种方案（任选其一）解密数据密钥密文，得到**数据密钥明文**。
+>?如需使用 [连接加密](https://intl.cloud.tencent.com/document/product/237/35447) 功能，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
+
+解密数据前，需在 [MariaDB 控制台](https://console.cloud.tencent.com/tdsql) 的实例管理页的【数据安全性】>【连接加密】中查询数据密钥密文，然后，您可以通过如下两种方案（任选其一）解密数据密钥密文，得到**数据密钥明文**。
 - 通过密钥管理服务 KMS 的 API，自己实现获取数据密钥明文，请参见 [KMS API 文档](https://intl.cloud.tencent.com/document/product/1030/32172)。
 -  通过腾讯云提供的 Python 脚本`./kms_tool.py`，获取数据密钥明文。
  - 参数解释：
