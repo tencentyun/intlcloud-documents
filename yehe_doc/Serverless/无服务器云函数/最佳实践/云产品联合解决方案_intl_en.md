@@ -47,4 +47,8 @@ Tencent Cloud SCF can be connected to various Tencent Cloud services to build a 
 <td>TencentDB</td>
 <td>Database backup</td>
 </tr>
+<tr>
+<td>Short Message Service</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35747">	How to Send SMS Verification Codes </a></td>
+</tr>
 </table>
