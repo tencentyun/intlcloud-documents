@@ -93,3 +93,4 @@ The table below lists the TencentDB API operations which currently support resou
 | ModifyParamTemplate           | Modifies a parameter template                 |
 | RenewDBInstance               | Renews a TencentDB instance             |
 | StopDBImportJob               | Stops a data import task             |
+| DescribleRoMinScale | Queries the minimum specification of a read-only instance |

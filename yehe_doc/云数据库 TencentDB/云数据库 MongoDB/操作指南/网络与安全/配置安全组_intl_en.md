@@ -5,7 +5,7 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
 > - TencentDB security group currently only supports network access control for VPC private network but not the basic network.
 >- As no outbound traffic is generated for TencentDB instances, outbound rules do not take effect for TencentDB.
 > - TencentDB for MongoDB security groups support master instances, read-only instances, and disaster recovery instances.
->- The security group feature is made available through a whitelist. If needed, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+>- TencentDB for MongoDB (expect for 4.0 replica sets) supports the security group feature which is implemented based on the whitelist. To use this feature, please [submit a ticket]
 
 ## Configuring Security Group for TencentDB
 ### Step 1. Create a security group

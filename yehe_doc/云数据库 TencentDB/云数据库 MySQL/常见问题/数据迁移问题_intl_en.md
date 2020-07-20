@@ -5,6 +5,7 @@
 >A single SQL file to be imported should be no more than 2 GB in size. The filename can only contain letters, digits, and underscores.
 >
 ![](https://main.qcloudimg.com/raw/a8854e74caebb9c69d831dc1583c10c0.png)
+For more information, please see [Importing SQL File](https://intl.cloud.tencent.com/zh/document/product/236/8466).
 
 ### How do I export data from a database?
 - To export backup data, click an instance name in the [console](https://console.cloud.tencent.com/cdb) to enter the management page and select the **Backup and Restore** tab for download.

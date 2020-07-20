@@ -1,3 +1,5 @@
+This document describes how to back up databases automatically and manually.
+
 ## Backup Overview
 ### Backup modes
 TencentDB for MySQL High-Availability Edition supports **auto backup** and **manual backup** of databases.

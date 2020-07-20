@@ -11,7 +11,7 @@ To purchase a TencentDB for MySQL instance:
 <div style="background-color:#00A4FF; width: 330px; height: 35px; line-height:35px; text-align:center;"><a href="https://buy.cloud.tencent.com/cdb" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn3">Click here to enter the purchase page</a></div>
 
 ## Directions
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and select **Instance List** on the left sidebar.
+1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), select **Instance List** on the left sidebar, and select a region.
 2. Select a TencentDB for MySQL instance in **Uninitialized** status and click **Initialize** in the "Operation" column.
 ![](https://main.qcloudimg.com/raw/945a4e69bef68eb706a520d4cbac13cf.png)
 3. In the initialization dialog box that pops up, configure the parameters related to initialization, and click **OK** to start initialization.

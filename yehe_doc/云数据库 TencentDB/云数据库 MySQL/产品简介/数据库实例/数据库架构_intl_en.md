@@ -4,7 +4,7 @@ TencentDB for MySQL supports four types of architecture: High-Availability Editi
 ## High-Availability Edition
 The High-Availability Edition adopts a highly available one-master-one-slave architecture and supports real-time hot backup, automatic detection of failure, and automatic failover. It is ideal for a wide variety of industries such as gaming, internet, IoT, retail, ecommerce, logistics, insurance, and securities.
 Its features are highlighted as below:
-- It offers two master/slave replication modes: async (default) and semi-sync. The replication mode can be changed on the "Instance Details" tab in the [console](https://console.cloud.tencent.com/cdb). You can also upgrade to the Finance Edition (with one-master-two-slave strong sync mode)
+- It offers two master/slave replication modes: async (default) and semi-sync. The replication mode can be changed on the "Instance Details" tab in the [console](https://console.cloud.tencent.com/cdb). You can also upgrade to the [Finance Edition](https://intl.cloud.tencent.com/document/product/236/35986) (with one-master-two-slave strong sync mode).
 - It has a complete set of features including read-only instance, disaster recovery instance, security group, data migration, and multi-AZ deployment. For more information, please see [Strengths](https://intl.cloud.tencent.com/document/product/236/5148).
 - It can achieve a high availability of up to 99.95%. For more information, please see [Service Level Agreement](https://intl.cloud.tencent.com/document/product/301/30977).
 - Its data nodes are deployed on powerful hardware devices and its underlying storage uses local NVMe SSD disks with excellent IO performance. Its IOPS can be up to 240,000 (this value is the test result with MySQL's default page size of 16 KB and for your reference only. The actual value is subject to specific configuration, page size, and business load).
@@ -24,7 +24,7 @@ The Finance Edition adopts a one-master-two-slave architecture (three nodes in t
 - Its data nodes are deployed on powerful hardware devices and its underlying storage uses local NVMe SSD disks with excellent IO performance. Its IOPS can be up to 240,000 (this value is the test result with MySQL's default page size of 16 KB and for your reference only. The actual value is subject to specific configuration, page size, and business load).
 
 Its architecture is as follows:
-![](https://main.qcloudimg.com/raw/2ce86a70e71ddaf8e9337567fd00540f.png)
+![](https://main.qcloudimg.com/raw/09f1ed1756fd1b7e533a5bbe4c937b0b.png)
 
 
 <span id = "danjiedian"></span>
