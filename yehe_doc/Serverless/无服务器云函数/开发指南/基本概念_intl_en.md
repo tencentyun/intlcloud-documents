@@ -1,4 +1,5 @@
 When writing code in a language supported by the SCF platform, you need to adopt a common paradigm that includes the following core concepts:
+
 ## Execution Method
 When the SCF platform invokes a function, it will first find an execution method as the entry point to execute your code. At this time, you need to set in the format of **filename.execution method name**.
 For example, if the user-configured execution method is `index.handler`, the SCF platform will first look for the `index` file in the code package and find the `handler` method in the file to start execution.
@@ -9,6 +10,31 @@ def method_name(event,context):
     return some_value
 ```
 This model specifies the fixed `event` data and `context` data as input parameters. In the execution method, you should handle the parameters and can call any other method in the code arbitrarily.
+
+## Naming Conventions
+<table>
+<tbody><tr>
+<th>Programming Language</th>
+<th style="
+    width: 50%;
+">Specification and Example</th>
+<th>General Specification</th>
+</tr>
+<tr>
+<td>Node.js<br>Python<br>PHP</td>
+<td>The two-segment format is <code>[filename].[function name]</code>, such as <code>index.main_handler</code>.</td>
+<td rowspan="3">It can contain 2–60 letters, digits, underscores, and hyphens. It can start with a letter and must end with a digit or letter.</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>The three-segment format is <code>[package].[class]::[method]</code>, such as <code>example.Hello::mainHandler</code>.</td>
+</tr>
+<tr>
+<td>Go</td>
+<td>The one-segment format is <code>[filename]</code>, such as <code>main</code>.</td>
+</tr>
+</tbody></table>
+
 
 ## Function Input Parameters
 
@@ -117,7 +143,7 @@ When the code in a function returns a specific value, it usually returns a speci
 
 
 To ensure uniformity for different programming languages and environments, the function return will be uniformly encapsulated in the JSON data format. For example, after SCF gets the returned value of the function in the above runtime environment, it will convert the returned data structure to JSON and return it to the invoker.
->
+>!
 >- You should ensure that the returned value of the function can be converted to JSON format. If the object is returned directly and there is no JSON conversion method, SCF will fail when executing JSON conversion and prompt an error.
 >- For example, the returned value in the above runtime environment does not need to be converted to JSON format before it is returned; otherwise, the output string will be converted again.
 
@@ -127,7 +153,7 @@ If an exception occurs during testing and executing a function, the SCF platform
 
 ### Handling method
 This document provides the following three ways to throw exceptions, and you can choose how to handle exceptions in the code based on your actual needs.
->You can log in to the [SCF Console](https://console.cloud.tencent.com/scf/index) and follow the steps below to test exception handling:
+>?You can log in to the [SCF Console](https://console.cloud.tencent.com/scf/index) and follow the steps below to test exception handling:
 > 1. Create a function and copy the following function code without adding any triggers.
 > 2. Click **Test** in the console and select the "Hello World" test sample for testing.
 <table>
@@ -266,7 +292,7 @@ You can get a function execution log in the following methods:
 
 ## Notes
 Because of the nature of SCF, you must write your function code in a **stateless** style. State characteristics in the lifecycle of a function such as local file storage will be destroyed after the function invocation ends.
-Therefore, you are recommended to store persistent states in TDSQL, COS, Cloud Memcached, or other cloud storage services.
+Therefore, you are recommended to store persistent states in TDSQL, COS, TencentDB for Memcached, or other cloud storage services.
 
 ## Development Process
 For more information on the function development process, please see [Usage Process](<https://intl.cloud.tencent.com/document/product/583/9179>).
