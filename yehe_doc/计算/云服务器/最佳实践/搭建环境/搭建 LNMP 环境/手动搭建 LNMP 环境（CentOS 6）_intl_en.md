@@ -1,23 +1,23 @@
 ## Overview
-The LNMP environment is a website server architecture consisting of Nginx, MySQL or MariaDB, and PHP running on Linux. This document describes how to manually set up the LNMP on a Tencent Cloud CVM.
+The LNMP environment is a website server architecture consisting of Nginx, MySQL or MariaDB, and PHP running on Linux. This document describes how to manually set up the LNMP environment on a Tencent Cloud CVM.
 
-To manually set up the LNMP environment, you should familiarize yourself with common Linux commands, such as [installing software via YUM in CentOS](https://intl.cloud.tencent.com/document/product/213/2046), and understand the usage and version compatibility of the software to be installed.
+To manually set up the LNMP environment, you should familiarize yourself with common Linux commands such as [installing software via YUM in CentOS](https://intl.cloud.tencent.com/document/product/213/2046), and understand the usage and version compatibility of the software to be installed.
 
 ## Sample Software Versions
-The following software are involved:
-CentOS is a distribution of the Linux operating system. We use CentOS 6.9 as an example.
-Nginx is a web server. We use Nginx 1.17.5 as an example.
-MySQL is a database software. We use MySQL 5.1.73 as an example.
-PHP is a scripting language. We use PHP 7.1.32 as an example.
+In this example, the following software versions are used to build the LNMP environment:
+CentOS is a distribution of the Linux operating system. This document uses CentOS 6.9 as an example.
+Nginx is a web server. This document uses Nginx 1.17.5 as an example.
+MySQL is a database software. This document uses MySQL 5.1.73 as an example.
+PHP is a scripting language. This document uses PHP 7.1.32 as an example.
 
-##  Prerequisites
+## Prerequisites
 
-Setting up a LNMP environment requires a Linux CVM. If you have not purchased one yet, see [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517).
+Setting up a LNMP environment requires a Linux CVM. If you have not purchased a Linux CVM yet, see [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517).
 
 
 ## Directions
 ### Step 1: log in to a Linux instance
-- [Log in to a Linux instance using standard login method (recommended)](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
+- [Log in to a Linux instance using the standard login method (recommended)](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
 - [Log in to a Linux instance using remote login software](https://intl.cloud.tencent.com/document/product/213/32502).
 - [Log in to a Linux instance using SSH](https://intl.cloud.tencent.com/document/product/213/32501).
 
@@ -26,7 +26,7 @@ Setting up a LNMP environment requires a Linux CVM. If you have not purchased on
 ```
 vi /etc/yum.repos.d/nginx.repo
 ```
-2. Press **i** to switch to the edit mode and enter the following.
+2. Press **i** to switch to the editing mode and enter the following.
 ```
 [nginx]
 name=nginx repo
@@ -43,8 +43,8 @@ yum install -y nginx
 ```
 vim /etc/nginx/nginx.conf
 ```
-6. Press **i** to switch to the edit mode, and edit the `nginx.conf` file.
-7. Find `server{...}` and replace the content inside the curly brackets with the following. This is to cancel the listening of IPv6 address and configure Nginx to realize linkage with PHP.
+6. Press **i** to switch to the editing mode, and edit the `nginx.conf` file.
+7. Find `server{...}` and replace the content inside the curly brackets with the following. This is to cancel the listening of the IPv6 address and configure Nginx to realize linkage with PHP.
 ```
 server {
 	listen       80;
@@ -73,7 +73,7 @@ server {
 	}
 }
 ```
-If you cannot find `server{...}` in the `nginx.conf` file, add these content above `include /etc/nginx/conf.d/*conf;`, as shown below.
+If you cannot find `server{...}` in the `nginx.conf` file, add the content of the `server{...}` at the top of `include /etc/nginx/conf.d/*conf;`, as shown below:
 ![](https://main.qcloudimg.com/raw/d438c6aa947a30441e3a86cfb3d9867c.png)
 8. Press **Esc** and enter **:wq** to save and close the file.
 9. Run the following command to start Nginx.
@@ -96,17 +96,17 @@ If the following appears, Nginx has been successfully installed and configured.
 
 
 ### Step 3: install a database
-1. Run the following command to check if MySQL is already installed.
+1. Run the following command to check whether MySQL has been already installed.
 ```
 rpm -qa | grep -i mysql
 ```
  - If the following appears, MySQL has already been installed.
 ![](https://main.qcloudimg.com/raw/74e544638637d39209cc1e474083d11d.png)
-To avoid conflict between different versions, run the following command to remove the existing MySQL.
+To avoid conflicts between different versions, run the following command to remove the existing MySQL.
 ```
 yum -y remove [Package name]
 ``` 
- - If nothing is returned, MySQL is not installed. In this case, proceed to the next step.
+ - If nothing is returned, MySQL has not been installed. In this case, proceed to the next step.
 2. Run the following command to install MySQL.
 ```
 yum install -y mysql-devel.x86_64 mysql-server.x86_64 mysql-libs.x86_64
@@ -122,7 +122,7 @@ chkconfig --add mysqld
 ```
 chkconfig mysqld  on 
 ```
-5. Run the following command to verify MySQL installation.
+5. Run the following command to verify whether MySQL has been successfully installed.
 ```
 mysql
 ```
@@ -149,7 +149,7 @@ yum -y install mod_php71w.x86_64 php71w-cli.x86_64 php71w-common.x86_64 php71w-m
 ```
 service php-fpm start
 ```
-3. Run the following commands to automatically launch PHP-FPM at startup.
+4. Run the following commands to automatically launch PHP-FPM at startup.
 ```bash
 chkconfig --add php-fpm  
 ```
@@ -158,7 +158,7 @@ chkconfig php-fpm on
 ```
 
 
-## Verifying Your Setup
+## Verifying the Environment Configuration
 1. Run the following command to create a test file.
 ```
 echo "<?php phpinfo(); ?>" >> /usr/share/nginx/html/index.php
@@ -167,7 +167,7 @@ echo "<?php phpinfo(); ?>" >> /usr/share/nginx/html/index.php
 ```
 service nginx restart
 ```
-3. In a local browser, visit the following URL to check whether the environment configuration is successful.
+3. In a local browser, visit the following URL to check whether the environment has been successfully configured.
 ```
 http://[Public IP address of the CVM instance]
 ```
@@ -178,11 +178,11 @@ If the following appears, the environment has been successfully configured.
 
 ## Relevant Operations
 
-After the LNMP environment is built, you can [manually build WordPress website](https://intl.cloud.tencent.com/document/product/213/8044) to learn more about CVM features.
+After the LNMP environment is built, you can [manually build a WordPress website](https://intl.cloud.tencent.com/document/product/213/8044) to familiarize yourself with CVM and its features.
 
 ## FAQs
 
-If you encounter a problem when using the CVM, refer to the following documents for troubleshooting as needed.
+If you encounter a problem when using CVM, refer to the following documents for troubleshooting as needed:
 
 - For issues regarding CVM login, see [Password Login and SSH Key Login](https://intl.cloud.tencent.com/document/product/213/18120) and [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
 - For issues regarding the CVM network, see [IP Address](https://intl.cloud.tencent.com/document/product/213/17285) and [Port](https://intl.cloud.tencent.com/document/product/213/2502).

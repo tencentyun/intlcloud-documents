@@ -78,7 +78,7 @@ When the client app is killed by the system or user without IM logout, the IM se
 1. Follow the instructions in the [Integration Guide for Mi Push](https://dev.mi.com/console/doc/detail?pId=41) to integrate the SDK. Use the Mi console to test notification messages to ensure that the SDK has been correctly integrated.
 2. Call `MiPushClien.registerPush` to initialize the MiPush service. After the push service is registered, you will receive the registration result in `onReceiveRegisterResult` of the custom `BroadcastReceiver`. Here, `regId` indicates the unique identifier of the current app running on the current device. After logging in to the IM SDK, you need to call [setOfflinePushConfig](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
 
-After the certificate ID and regId are successfully reported, the IM server sends messages via MiPush notifications to the user when the app has been killed but the user has not logged out of IM.
+After the certificate ID and regId are successfully reported, the IM server sends messages via FCM notifications to the user when the app has been killed but the user has not logged out of IM.
 
 <span id="xiaomi_click"></span>
 

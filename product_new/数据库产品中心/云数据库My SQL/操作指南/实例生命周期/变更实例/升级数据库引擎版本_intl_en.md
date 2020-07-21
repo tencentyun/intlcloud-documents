@@ -3,6 +3,8 @@ This document describes how to upgrade the TencentDB for MySQL engine in the con
 TencentDB for MySQL supports database engine upgrade:
 - From MySQL 5.5 to MySQL 5.6
 - From MySQL 5.6 to MySQL 5.7
+>?You cannot downgrade the database engine version.
+>
 
 <span id="shengjiguize"></span>
 ## Upgrade Rules

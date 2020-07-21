@@ -40,7 +40,7 @@ The WeChat Mini Program code is referenced with `var COS = require('cos-wx-sdk-v
 
 ### Configuring domain name whitelist for WeChat Mini Programs
 
-To request COS in your WeChat Mini Program, you need to log in to the [WeChat Official Accounts Platform](https://mp.weixin.qq.com) and configure the domain name whitelist in **Development** > **Basic Configuration**. The SDK uses the following two APIs:
+To send a COS request using WeChat Mini Program, log in to [Wechat Official Accounts Platform](https://mp.weixin.qq.com), select **Development** > **Settings** > **Server Domains**, and then configure a domain whitelist.The SDK uses the following two APIs:
 
 1. For cos.postObject, use the wx.uploadFile API.
 2. For other methods, use the wx.request API.

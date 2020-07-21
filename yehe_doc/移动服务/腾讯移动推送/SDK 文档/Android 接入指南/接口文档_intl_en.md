@@ -64,7 +64,7 @@ Log.d("TPush", "The registration failed, error code: " + errCode + ", error mess
 })
 ```
 
-### Binding account for registration
+### Binding an account
 
 #### API description
 

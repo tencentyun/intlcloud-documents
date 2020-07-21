@@ -1,4 +1,4 @@
->The FL service is currently in beta test. If you want to try it out, please submit an application for beta eligibility.
+>The FL service is currently in beta test. If you want to try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. On the left sidebar, click **Diagnostic Tools** > **Flow Logs** to create a flow log.
