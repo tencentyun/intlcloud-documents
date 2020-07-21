@@ -62,7 +62,7 @@ WAF logs information on cyberattacks by default, which includes the time, source
 ![](https://main.qcloudimg.com/raw/643c9c502e1c9242dce8103a5285199d.png)
 >!
 	- Only one download task can be created within a certain time period.
-	- Up to 10,000 logs can be downloaded at a time. If you want to download more logs, we recommend that you download them in multiple batches or [contact us](https://cloud.tencent.com/act/event/connect-service) for assistance.
+	- Up to 10,000 logs can be downloaded at a time. If you want to download more logs, we recommend that you download them in multiple batches or [contact us](https://intl.cloud.tencent.com/support) for assistance.
 	- If you select a wildcard domain name (e.g., `*.abc.com`), logs of all associated subdomain names such as those suffixed with `.abc.com` will also be downloaded.
 
 2. Click the **Download Task** tab, select a target download task, and click **Download** in the **Operation** column on the right to download the log file to your local file system.
