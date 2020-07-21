@@ -1,2 +1,2 @@
-### Is the number of concurrent API calls limited?
-The default QPIS is 20 calls/second. If this limit cannot meet your needs, you can contact us for an increase.
+### What is the limit on concurrent API calls?
+The default QPIS is 20 calls/second. If this does not meet your needs, please contact us to increase the limit.
