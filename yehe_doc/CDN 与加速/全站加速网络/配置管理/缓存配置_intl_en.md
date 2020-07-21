@@ -115,4 +115,3 @@ Click **Edit Caching Rule**. You can <strong>drag the icon</strong> to adjust th
 ## Cache Inheritance
 
 - When you configure edge caching for static content, the ECDN system will use the caching rules configured on the platform to process static user requests by default. The `Cache-Control` field in the response header from the origin server will not be inherited by the node for processing by default.
-- If you want to set special caching rules for certain content on the origin server, you can set them in the <strong>full-path file</strong> type.
