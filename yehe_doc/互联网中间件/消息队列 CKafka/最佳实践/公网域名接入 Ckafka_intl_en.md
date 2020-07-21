@@ -1,61 +1,61 @@
-## 操作场景
-如果您需要通过公网访问消息队列 CKafka 服务，可以通过控制台增加公网路由，并通过配置 SASL 鉴权和 ACL 规则实现公网访问 CKafka Topic 的生产和消费消息。
+## Operation Scenarios
+To access CKafka over public network, you can add public routes in CKafka Console and configure SASL authentication and ACL rules to access the production and consumption messages in CKafka topics.
 
->?公网路由目前处于灰度测试阶段，如需试用请通过 [提交内测申请](https://cloud.tencent.com/apply/p/kg3u9clifnk) 的方式开通白名单，申请提交后我们将在5个工作日内进行审核并与您取得联系。
+>?Public Route feature is currently in beta test. To try it out, [submit a ticket](https://cloud.tencent.com/apply/p/kg3u9clifnk) for application, we will process it and contact you within 5 business days.
 
-## 前提条件
-- 已 [创建实例](https://intl.cloud.tencent.com/document/product/597/32543)。
-- 已通过 [内测申请](https://cloud.tencent.com/apply/p/kg3u9clifnk)。
+## Prerequisites
+- You have [created an instance](https://intl.cloud.tencent.com/document/product/597/32543).
+- Your [application for free trial](https://cloud.tencent.com/apply/p/kg3u9clifnk) has been approved.
 
-## 操作步骤
+## Directions
 
-### 创建公网路由
+### Creating a public route
 
-1. 在 CKafka 控制台的 [实例列表](https://console.cloud.tencent.com/ckafka/index?rid=1) 中，单击目标实例 ID，进入实例详情页。
+1. Click the target instance ID in the [Instance List](https://console.cloud.tencent.com/ckafka/index?rid=1) of CKafka Console to enter the instance details page.
 ![](https://main.qcloudimg.com/raw/047f485ed3a815974bc1f7d904e7ef14.jpg)
-2. 在基本信息 - 接入方式中，单击【添加路由策略】，选择策略信息：
- - 路由类型：公网域名接入
- - 接入方式：目前只支持 SASL_PLAINTEXT
+2. Click **Add a routing policy** on **Basic Info** -> **Access Mode** and select policy info.
+ - Route type: public domain name access
+ - Access mode: only SASL_PLAINTEXT is supported currently
 ![](https://main.qcloudimg.com/raw/46300a7b7ac8150cb033e99b1534f3d2.jpg)
-3. 单击【提交】，接入方式下将显示该路由策略。
+3. Click **Submit**, and you will see the routing policy below the access mode.
 ![](https://main.qcloudimg.com/raw/75508695dfc41601ef9f98119b1decc8.jpg)
 
 
 
 
-### 创建用户
+### Creating a user
 
-1. 【实例列表】>【用户管理】中，单击【新建】。
+1. Click **Create** on **Instance List** -> **User Management**.
 ![](https://main.qcloudimg.com/raw/afab16e8a50e4bbecee5b2502d0d9a9c.jpg)
-2. 在新建用户的弹窗中，填写以下信息：
- - 用户名：只能包含字母、数字、下划线、“-”、“.”
- - 密码：只能包含字母、数字、下划线、“-”、“.”
- - 确认密码：再次输入密码
+2. Enter the following information in the pop-up window:
+ - User Name: only contain letters, numbers, underscores, "-" and "."
+ - Password: only contain letters, numbers, underscores, "-" and "."
+ - Confirm Password: enter the password again
 ![](https://main.qcloudimg.com/raw/fa01d35b74ba9050e7e340e63b4e2efe.jpg)
-3. 单击【提交】，新增的用户将显示在用户管理列表中。
+3. Click **Submit**, and you will see this new user in the user management list.
 ![](https://main.qcloudimg.com/raw/bab585cf98974e1d3487a3b1e9084f6a.jpg)
 
 
-### ACL 策略授权
+### Adding an ACL policy
 
-对现有 Topic 进行 ACL 权限管理（包括读写），只有拥有权限的用户才能对 Topic 进行相关读写权限操作。
+Perform ACL permission management (including read and write) on the existing topic. Only users with permissions can perform read and write permission operations on the topic.
 
-1. 【实例列表】>【ACL策略管理】中，单击目标 Topic 操作列的【编辑ACL策略】。
+1. Enter **Instance List** -> **ACL Policy Management**, and click **Edit ACL Policy** on the operation column of the target topic.
 ![](https://main.qcloudimg.com/raw/1ab398b395258a69ca2513e8c024047a.jpg)
-2. 单击【新建】，进入新增 ACL 策略页面。
+2. Click **Create** to enter the **Add ACL Policy** page.
 ![](https://main.qcloudimg.com/raw/f62cf3c6262b3456440881d90710bccd.jpg)
-4. 在新增 ACL 策略的弹窗中，填选配置用户及 IP，不选为默认所有用户/host 都支持。
+3. Configure user and IP in the prompted **Add ACL Policy** window. If not selected, all users/hosts are supported by default.
 ![](https://main.qcloudimg.com/raw/647380c3617e473644eac5bae337f9b7.jpg)
-5. 单击【提交】，该策略将显示在目标  Topic  的策略列表中。
+4. Click **Submit**, you will see the policy show in the policy list of the target topic.
 ![](https://main.qcloudimg.com/raw/b1b68e42f2adafb428a593fa52d17658.jpg)
 
-### 公网生产和消费
-控制台操作完成后，即可使用用户名和密码在公网访问实例资源。
+### Production and consumption over public network
+After operating on the console, you can access instance resources over public network using user name and password.
 
-#### 生产
+#### Production
 ```java
 Properties props = new Properties();
-        //公网接入域名地址,即公网路由地址
+        //Domain name for public access, i.e. public routing address
         props.put("bootstrap.servers", "your_public_network_route_addr");
         props.put("acks", "all");
         props.put("retries",0);
@@ -66,7 +66,7 @@ Properties props = new Properties();
         props.put("max.block.ms", 30000);
         props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_PLAINTEXT");
         props.put(SaslConfigs.SASL_MECHANISM, "PLAIN");
-        //用户名密码，注：用户名是需要拼接，并非管控台的用户名：instanceId#username
+        //User name and password. Note: use name is not the one on the console, but concatenated as the “instanceId#user name” instead
         props.put("sasl.jaas.config",
                 "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"yourinstance#yourusername\" password=\"yourpassword\";");
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
@@ -79,10 +79,10 @@ Properties props = new Properties();
 
 
 
-#### 消费
+#### Consumption
 ```java
 Properties props = new Properties();
-        //公网接入域名地址
+        //Domain name for public access
         props.put("bootstrap.servers", "your_public_network_route_addr");
         props.put("group.id", "yourconsumegroup");
         props.put("enable.auto.commit", "true");
@@ -92,12 +92,12 @@ Properties props = new Properties();
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_PLAINTEXT");
         props.put(SaslConfigs.SASL_MECHANISM, "PLAIN");
-        //用户名密码，注：用户名是需要拼接，并非管控台的用户名：instanceId#username
+        //User name and password. Note: use name is not the one on the console, but concatenated as the “instanceId#user name” instead
         props.put("sasl.jaas.config",
                 "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"yourinstance#yourusername\" password=\"yourpassword\";");
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
-        consumer.subscribe(Arrays.asList("yourtopic"));
+        consumer.subscribe(Arrays.asList("foo", "bar"));
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
@@ -106,10 +106,10 @@ Properties props = new Properties();
         }
 ```
 
->?除了使用 properties 添加 sasl.jaas.config 配置的方式，您也可以通过 System.setProperty 或 -D 的方式传入。
+>?Except adding `sasl.jaas.config` configurations using `properties`, you can also pass in using `System.setProperty` or `-D` method.
 > - System.setProperty("java.security.auth.login.config", "/etc/ckafka_client_jaas.conf");
 >
->- ```java
+```java
 > KafkaClient {
 > org.apache.kafka.common.security.plain.PlainLoginModule required
 > username="yourinstance#yourusername"
