@@ -34,18 +34,18 @@ After the installation is completed, run the `serverless -v` command to view the
 
 ```shell
 $ serverless –v
-Framework Core: 1.67.3
-Plugin: 3.6.6
-SDK: 2.3.0
-Components: 2.30.1
+Framework Core: 1.74.1 (standalone)
+Plugin: 3.6.14
+SDK: 2.3.1
+Components: 2.31.6
 ```
 
 ### Configuration
 
-1. Create a local folder and run the `create --template-url` command to download the relevant template.
+1. Create a local folder and run the `serverless init` command to download the relevant template.
 
 ```console
-serverless create --template-url https://github.com/serverless-components/tencent-fullstack
+serverless init -t fullstack
 ```
 
 2. Find the `.env.example` file in the project template, rename it to `.env`, and configure the corresponding Tencent Cloud `SecretId`, `SecretKey`, region, and AZ information in it.
