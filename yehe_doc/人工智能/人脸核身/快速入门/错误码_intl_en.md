@@ -1,6 +1,6 @@
-The following describes the return codes for Tencent Cloud Faceid API calls and corresponding billing relationships.
+The following describes return codes for Tencent Cloud FaceID API calls and billing information.
 
-| Error Code | Error Message | Billed |
+| Error Code | Error Description | Billed |
 | :----------------------------------- | :------------------------- | -------- |
-| FailedOperation.CompareFail | Comparison failed. | Yes |
-| FailedOperation.CompareLowSimilarity | The comparison similarity did not reach the passing standard. | Yes |
+| FailedOperation.CompareFail | Comparison failed | Yes |
+| FailedOperation.CompareLowSimilarity | Comparison similarity does not meet the passing standard | Yes |

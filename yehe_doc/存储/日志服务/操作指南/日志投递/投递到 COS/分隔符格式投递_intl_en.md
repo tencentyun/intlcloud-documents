@@ -4,9 +4,9 @@ You can log in to the [Cloud Log Service Console](https://console.cloud.tencent.
 
 ## Prerequisites
 
-1. You have activated the Cloud Log Service (CLS), created a logset and a log topic, and successfully collected the log data.
+1. You have activated Cloud Log Service (CLS), created a logset and a log topic, and successfully collected the log data.
 2. You have activated COS service and created a bucket in the target region for log topic shipping. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
-3. You have to ensure that the current account has the permission to configure shipping tasks.
+3. You have ensured that the current account has permission to configure shipping tasks.
 
 ## Directions
 
@@ -14,9 +14,9 @@ You can log in to the [Cloud Log Service Console](https://console.cloud.tencent.
 2. Click **Logset** in the left sidebar.
 3. On the **Logset Management** page, click the target logset ID/name to go to its details page.
    <img src="https://main.qcloudimg.com/raw/867bf17736b5dda680cba78e4dbdca5b.png" width="80%">
-4. Locate the log topic to be shipped, and choose **Manage** -> **Shipping Configuration** to open the **Shipping Configuration** page.
+4. Locate the log topic to be shipped, and click **Manage** and go to **Shipping Configuration**.
    <img src="https://main.qcloudimg.com/raw/a8cd06e71f91561f1e74073dc9e00a9b.png" width="80%">
-5. Click **Add Shipping Task** to open the **Ship to COS** page and enter the configuration information in order.
+5. Click **Add Shipping Task** to open the **Ship to COS** page and fill in the configuration information.
    ![](https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png)
    **The parameters are described as follows:**
 
@@ -47,7 +47,7 @@ You can log in to the [Cloud Log Service Console](https://console.cloud.tencent.
    </tr>
    <tr>
       <td>Partition Format</td>
-			<td>Directory automatically generated according to the creation time of the shipping task based on the strftime syntax. The slash (/) indicates a level-1 COS directory.</td>
+			<td>Directory automatically generated according to the creation time of the shipping task based on the strftime syntax. The forward slash (/) represents a level of COS directory..</td>
       <td>The value must be in strftime format.</td>
       <td>Yes</td>
    </tr>
@@ -75,7 +75,7 @@ Enter partition formats based on the requirements of the [strftime format](http:
 | bucket_test | logset/  | %Y%m%d/%H  | bucket_test:logset/20180731/14_{random}_{index}  |
 | bucket_test | logset/  | %Y%m%d/log | bucket_test:logset/20180731/log_{random}_{index} |
 
-6. Click **Next** to go to the advanced configuration page. Set **Shipping Format** to **CSV** and enter the relevant parameters in order.
+6. Click **Next** to go to the advanced configuration page. Set **Shipping Format** to **CSV** and fill in the configuration information.
    ![img](https://main.qcloudimg.com/raw/44bc07a3d69496a59fb81fb8730cc2e3.png)
     **The parameters are described as follows:**
 
@@ -112,7 +112,7 @@ Enter partition formats based on the requirements of the [strftime format](http:
    </tr>
    <tr>
       <td>Key in First Line</td>
-      <td>Adds field name description to the first line of the CSV file. That is, the key value is written into the first line of the CSV file (disabled by default).</td>
+      <td>Adds field name description to the first line of the CSV file. That is, the key value is written into the first line of the CSV file. This is disabled by default.</td>
       <td>Enabled/Disabled</td>
       <td>Yes</td>
    </tr>
