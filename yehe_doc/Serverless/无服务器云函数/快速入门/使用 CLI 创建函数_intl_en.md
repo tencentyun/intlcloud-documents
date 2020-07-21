@@ -1,71 +1,61 @@
 ## Operation Scenarios
-**Tencent Cloud SCF** uses [Tencent Serverless Framework](https://github.com/serverless/components/tree/cloud). Based on serverless services (functions, triggers, etc.) in the cloud, it can implement "zero" configuration, convenient development, and rapid deployment of your first function. It supports a rich set of configuration extensions and provides the easiest-to-use, low-cost, and elastically scalable cloud-based function development, configuration, and deployment capabilities.
+This document describes how to use the SCF component provided by Serverless Framework to quickly create and deploy an SCF project. To learn more about components and how to use them, please see [Components Overview](https://intl.cloud.tencent.com/document/product/1040/33163).
+>?SCF CLI has been disused since February 2020. We recommend you use the more rich-featured and convenient Serverless Framework CLI for project development.
+>
 
-SCF component features:
-
-- **Pay-as-you-go billing**: fees are charged based on the request usage, and you don't need to pay anything if there is no request.
-- **"Zero" configuration**: you only need to write project code and then deploy it, and the Serverless Framework will take care of all the configuration work.
-- **Fast deployment**: you can deploy your entire SCF application in just a few seconds.
-- **Real-time log**: you can view the business status through the output of the real-time log, which makes it easy for you to develop applications directly in the cloud.
-- **Cloud debugging**: SCF supports quick cloud debugging for the Node.js framework, which shields differences in the local environment.
-- **Convenient collaboration**: the status information and deployment logs in the cloud make multi-person collaborative development easier.
 
 ## Directions
-#### 1. Install
-
-Install the latest version of Serverless Framework through npm:
+### Installing Serverless Framework
+On the command line, run the following command to install the latest version of Serverless Framework through npm.
 ```
-$ npm install -g serverless
-```
-
-#### 2. Create
-
-Create a directory and enter it:
-```
-$ mkdir tencent-scf && cd tencent-scf
+npm install -g serverless
 ```
 
-Use the following command and template link to quickly create an SCF application:
+### Creating function directory
+1. Run the following command to create a directory and enter it (this document uses `tencent-scf` as an example):
 ```
-$ serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/master/example
-$ cd example
+mkdir tencent-scf && cd tencent-scf
 ```
-
-After download, the directory structure is as follows:
+2. Run the following commands in sequence to quickly create an SCF application:
+```
+serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/v2/example
+```
+```
+cd example
+```
+After the application is created successfully, its directory structure is as follows
 ```
 |- src
-|   └── index.py
+|   └── index.js
 └──  serverless.yml
 ```
 
-#### 3. Deploy
+### Deploying function
+1. In the directory where `serverless.yml` is located, run the following command to deploy the function:
+```
+serverless deploy
+```
+2. If you want to configure persistent environment variables or key information, please do so as instructed in [Account configuration](#accountConfiguration).
+After the function is deployed successfully, you can view the URL provided by the gateway trigger of the corresponding function in the command line output and access the URL in a browser to view the function deployment result.
+>?If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
+>
 
-Run `serverless deploy` in the directory under the `serverless.yml` file to deploy the function. After the deployment is completed, you can view the URL address provided by the corresponding gateway trigger of the function in the output on the command line. Then, you can click the address to view the deployment effect of the function.
 
-If you haven't [logged in to](https://intl.cloud.tencent.com/login) or [sign up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, do so first.
+### Configuring deployment
+The SCF component supports "zero" configuration deployment, that is, it can be deployed directly with the default values in the configuration file. Nonetheless, you can also modify more optional configuration items as needed to further customize the project to be deployed.
 
-If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
-
-
-#### 4. Configure
-
-Tencent Cloud SCF component supports "zero" configuration deployment, that is, it can be deployed directly through the default values in the configuration file. Nonetheless, you can also modify more optional configuration items to further customize your project.
-
-The following is the complete configuration description for `serverless.yml` of the Tencent Cloud SCF component:
-
+The following is the description of the SCF component configuration file `serverless.yml`. For more information, please see [Full Configuration and Configuration Description](https://github.com/serverless-components/tencent-scf/blob/v2/docs/configure.md).
 ```yml
 # serverless.yml
-
-component: scf # (Required) Reference the name of the component, which is the `tencent-scf` component in this example
-name: scfdemo # (Required) Name of the instance created by this component
-org: test # (Optional) Used to record organization information. Default value: your Tencent Cloud account's `appid`
-app: scfApp # (Optional) SCF application name
-stage: dev # (Optional) Used to distinguish between environments. Default value: dev
-
+component: scf # Name of the imported component, which is required. The `tencent-scf` component is used in this example
+name: scfdemo # Name of the instance created by this component, which is required
+org: test # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
+app: scfApp # SCF application name, which is optional
+stage: dev # Information for identifying environment, which is optional. The default value is `dev`
 inputs:
   name: scfFunctionName
   src: ./src
-  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9, Nodejs10.15, PHP5, PHP7, Golang1, Java8.
+  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9, Nodejs10.15, Nodejs12.16, PHP5, PHP7, Golang1, Java8
   region: ap-guangzhou
   handler: index.main_handler
   events:
@@ -82,53 +72,52 @@ inputs:
             - path: /index
               method: GET
 ```
+After updating the fields in the configuration file, run the `serverless deploy` or `serverless` command again to update the configuration to the cloud.
 
-View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md).
+### Development and debugging
+After deploying the function, you can use the development and debugging capabilities provided by the component to re-develop the project into a production-ready application.
 
-After you update the configuration fields according to the configuration file, run `serverless deploy` or `serverless` again to update the configuration to the cloud.
-
-#### 5. Debug
-
-After the SCF application is deployed, the project can be further developed through the debugging feature to create an application for the production environment. After modifying and updating the code locally, you don't need to run the `serverless deploy` command every time for repeated deployment. Instead, you can run the `serverless dev` command to directly detect and automatically upload changes in the local code.
-
-You can enable debugging by running the `serverless dev` command in the directory where the `serverless.yml` file is located.
-
+#### Development mode
+In the directory where the `serverless.yml` file is located, run the following command to enter the development mode:
+```
+serverless dev
+```
+After the local code is modified or updated, there is no need to repeatedly run the `serverless deploy` command for deployment again. After entering the development mode, the component can detect and automatically upload changes to the local code.
 `serverless dev` also supports real-time outputting of cloud logs. After each deployment, you can access the project to output invocation logs in real time on the command line, which makes it easy for you to view business conditions and troubleshoot issues.
 
-Currently, in addition to real-time log output, for Node.js applications, cloud debugging is also supported. After the `serverless dev` command is started, it will automatically listen on the remote port and set the function timeout period to 900 seconds temporarily. At this point, you can find the remote debugging path by accessing `chrome://inspect/#devices` and directly debug the code with breakpoints. After the debugging mode ends, you need to deploy the function again to update the code and set the timeout period back to the original value.
+#### In-cloud debugging
+For Node.js applications, the component supports in-cloud debugging. Once in the development mode, it will automatically listen on the remote port and set the function timeout period to 900 seconds temporarily. At this point, you can find the remote debugging path by accessing `chrome://inspect/#devices` and directly debug the code with breakpoints. After the debugging ends, you need to deploy the function again to update the code and reset the timeout period. For more information, please see [Development Mode and In-cloud Debugging](https://intl.cloud.tencent.com/document/product/583/36268).
 
-#### 6. Check status
 
-In the directory where the `serverless.yml` file is located, run the following command to check the deployment status:
 
+### Viewing deployment status
+
+In the directory where the `serverless.yml` file is located, you can run the following command to check the deployment status:
 ```
-$ serverless info
+serverless info
 ```
 
-#### 7. Remove
-
+### Removing application
 In the directory where the `serverless.yml` file is located, run the following command to remove the deployed SCF application. After removal, this component will delete all related resources created during deployment in the cloud.
-
 ```
-$ serverless remove
+serverless remove
 ```
+>?You can run the `sls remove --debug` command to view real-time log information during the removal process (`sls` is short for the `serverless` command).
 
-Similar to the deployment process, you can run the `sls remove --debug` command to view real-time log information during the removal process. `sls` is an abbreviation for the `serverless` command.
 
-## Account Configuration
-
-Currently, you can scan a QR code to log in to the CLI by default. If you want to configure persistent environment variables/key information, you can also create a local `.env` file:
-
+## Relevant Operations
+### Account configuration<span id="accountConfiguration"></span>
+Currently, you can scan a QR code to log in to the CLI by default. If you want to configure persistent environment variables/key information, you can do so in the following steps:
+1. Run the following command to create a `.env` file locally:
 ```console
-$ touch .env # Tencent Cloud configuration information
+touch .env # Tencent Cloud configuration information
 ```
-
-Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` file and save it:
+2. Configure Tencent Cloud `SecretId` and `SecretKey` information in the `.env` file as follows and save it:
 ```
 # .env
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
->
+>?
 >- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
 >- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
