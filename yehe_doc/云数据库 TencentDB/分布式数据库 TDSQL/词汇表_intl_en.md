@@ -10,6 +10,16 @@ A database consists of many tables, and each table corresponds to a different bu
 
 A non-sharded table is used to store tables that do not need sharding. All data of this table is stored in the first physical shard, and all tables of this type are placed in the first physical shard, with exact the same syntax and usage methods as MySQL. You can consider it as a non-distributed table.
 
+### DDL
+
+See [Data Definition Language](#ddl1).
+
+### DML
+
+See [Data Manipulation Language](#dml1).
+
+
+
 ### Sharded table
 
 A sharded table means that the original table with enormous amount of data needs to be split to multiple database nodes, so that each physical shard carries some of the data and all the physical shards provide the complete data.
@@ -36,6 +46,18 @@ As the main application of data warehouse systems, On-Line Analytical Processing
 
 On-Line Transaction Processing (OLTP), as the main application of traditional relational database, is mainly used to process basic and daily transactions, such as bank transactions.
 
+
+
+### OLAP
+
+See [On-Line Analytical Processing](#OLAP1).
+
+### OLTP
+
+See [On-Line Transaction Processing](#OLTP1).
+
+
+
 ### Percona
 
 Percona is fully compatible with MySQL protocol and has a significant improvement in feature and performance over MySQL. Now, TDSQL supports Percona 5.7.
@@ -55,6 +77,11 @@ Strong sync is a MySQL-based multi-thread asynchronous replication program.
 Globally unique digital sequence is "sequence" for short. A sequence contains 8 bytes in the unsigned long type. Now, TDSQL can guarantee the global uniqueness and increment of this field.
 
 
+
+### Shardkey
+
+See [shardkey](#shardkey1).
+
 ## Horizontal sharding
 
 According to certain rules, the data of a table is split across multiple physically independent database servers to form a "separate" database "shard". Multiple shards together form a logically complete database instance.
@@ -67,3 +94,9 @@ Data Manipulation Language (DML), with the commands of SELECT, UPDATE, INSERT an
 ### Data definition language
 
 Data Definition Language (DDL), with the main commands of CREATE, ALTER and DROP.
+
+
+
+### TDSQL
+
+See [TencentDB for TDSQL](#tdsql1).
