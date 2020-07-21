@@ -165,11 +165,11 @@ I/TPush: [a] binder other push token with accid = 2100274337  token = 17c32948df
 
 ## 高级配置（可选）
 ### 华为通道抵达回执配置
-华为通道抵达回执需要开发者自行配置，您可参照 [华为厂商通道回执配置指引](https://cloud.tencent.com/document/product/548/41318#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95) 进行配置，完成后，可在推送记录中查看华为推送通道的抵达数据。
+华为通道抵达回执需要开发者自行配置，您可参照 [华为厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246) 进行配置，完成后，可在推送记录中查看华为推送通道的抵达数据。
 ![](C:\Users\v_vxllin\Desktop\TAPD提单\移动推送 TPNS\移动推送 TPNS_2020-07-20_14-16-23\华为通道 V4 接入_intl_zh\c5247214fb095b300091bb62629dd57a.png)
 
 ### 华为设备角标适配
-华为设备支持设置应用角标，需要开发者申请应用内角标设置权限和设置应用启动类，详情请参见 [角标适配指南](https://cloud.tencent.com/document/product/548/43693#.E5.8D.8E.E4.B8.BA.E6.89.8B.E6.9C.BA.E8.A7.92.E6.A0.87.E9.80.82.E9.85.8D.E6.8C.87.E5.8D.97) 文档。
+华为设备支持设置应用角标，需要开发者申请应用内角标设置权限和设置应用启动类，详情请参见 [角标适配指南](https://intl.cloud.tencent.com/zh/document/product/1024/35828#.E5.8D.8E.E4.B8.BA.E6.89.8B.E6.9C.BA.E8.A7.92.E6.A0.87.E9.80.82.E9.85.8D.E6.8C.87.E5.8D.97) 文档。
 
 ## 常见问题排查
 ### 华为推送注册错误码查询方法
