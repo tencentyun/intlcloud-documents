@@ -1,8 +1,7 @@
 This section shows more options on using COS-Hive connectors, where the data is from direct-insert, COS, and LZO.
 ## 1.	Preparations for Development
 - You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309) in COS for this job.
-- Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Presto component on the software configuration page and "Enable COS" on the basic configuration page and enter your own SecretId and SecretKey below.
-They can be viewed in the [API Key Management](https://console.cloud.tencent.com/cam/capi) page. If there is no key yet, click **Create Key** to create one.
+- Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Presto component on the software configuration page and "Enable COS" on the basic configuration page and enter your own SecretId and SecretKey below.They can be viewed in the [API Key Management](https://console.cloud.tencent.com/cam/capi) page. If there is no key yet, click **Create Key** to create one.
 - Relevant software programs such as Presto are installed in the ` /usr/local/service/` directory of the CVM instance for the EMR cluster.
 
 ## 2.	Data Preparations

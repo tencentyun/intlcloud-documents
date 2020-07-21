@@ -51,8 +51,8 @@ By default, the group system supports the following group types for common use c
 |--- |-- |-- |-- |-- |
 | Available member roles | Group owner<br>Ordinary member<br>App admin | Group owner<br>Admin<br>Ordinary member<br>App admin | Group owner<br>Admin<br>Ordinary member<br>App admin | Group owner<br>Ordinary member<br>App admin |
 | Modify basic group information | Ordinary member | Group admin<br>Group owner<br>App admin | Group owner<br>App admin | App admin |
-| Obtain group member information | Information of all group members | Information of all group members | Information of up to 300 group members | None group member information |
-| Disband a group | Only the app admin can disband a group. | The group owner and app admin can disband the group. | The group owner and app admin can disband the group. | Only the app admin can disband the group. |
+| Obtain group member information | Information of all group members  |Information of all group members|Information of the first 300 group members| None group member information |
+| Disband a group | Only the app admin can disband a group. |The group owner and group admin can disband the group. | The group owner and group admin can disband the group. | The group owner and group admin can disband the group. |
 
 >
 >- Ordinary members of a work group (Work) can modify only the group name, introduction, announcement, and group profile photo URL, but not other basic group information.

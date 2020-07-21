@@ -1,3 +1,5 @@
+This document describes how to create an alarm policy and configure an object to receive alarms in the Cloud Monitor Console.
+
 ## Operation Scenarios
 You can create an alarm to warn you of the status change of a cloud product and send related messages. The created alarm determines whether an alarm-related notification needs to be triggered according to the comparison results between a monitoring metric and a specific threshold at every interval.
 You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered. Therefore, properly created alarms can help you improve the robustness and reliability of your applications. For more information on alarms, please see [Alarm Configuration](https://intl.cloud.tencent.com/document/product/248/1073) in Cloud Monitor.

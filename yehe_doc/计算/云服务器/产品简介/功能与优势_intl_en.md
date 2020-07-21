@@ -30,7 +30,7 @@ We are committed to building the most reliable cloud service in the industry.
 ## Fast
 
 We are committed to providing fast and convenient services for both user operations and CVM performance.
-- **Convenient and rapid operations**: deploy one, hundreds, or even thousands of server instances in minutes, and purchase, configure, expand, or manage your services with just one click.
+- **Convenient and rapid operations**: deploy one, hundreds, or even thousands of server instances in minutes, and purchase, configure, manage, or expand your services with just one click.
 - **Top-speed public network**: our BGP public network with more than 20 lines covers almost all ISPs. No matter which ISP your customers are using, they can always enjoy the same top-speed bandwidth and failover in seconds.
 - **Top-speed private network**: the private networks of Tencent Cloud's data centers in the same region are interconnected, all with megabyte or gigabyte connections, ensuring high communication quality within private networks.
 

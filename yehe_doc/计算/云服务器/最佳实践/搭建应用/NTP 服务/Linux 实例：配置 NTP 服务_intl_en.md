@@ -1,30 +1,30 @@
 ## Overview
 
-The Network Time Protocol daemon (NTPD) is a daemon of the Linux operating system. It is a complete implementation of NTP and is used to correct the time difference between the local system and the clock source server. Unlike NTPDate, which updates time periodically, NTPD corrects time continuously without time gaps. This document uses CentOS 7.5 as an example to describe how to install and configure NTPD.
+The Network Time Protocol daemon (ntpd) is a daemon of the Linux operating system. It is a complete implementation of NTP and is used to correct the time difference between the local system and the clock source server. Unlike ntpdate, which updates time periodically, ntpd corrects time continuously without time gaps. This document uses CentOS 7.5 as an example to describe how to install and configure ntpd.
 
 ## Notes
 
-- Some operating systems use chrony as the default NTP service. Please make sure that NTPD is running and is configured to launch automatically at startup.
- - Run the `systemctl is-active NTPD.service` command to see if NTPD is running.
- - Run the `systemctl is-enabled NTPD.service` command to see if NTPD is configured to launch automatically at startup.
+- Some operating systems use chrony as the default NTP service. Please make sure that ntpd is running and is configured to launch automatically at startup.
+ - Run the `systemctl is-active ntpd.service` command to see if ntpd is running.
+ - Run the `systemctl is-enabled ntpd.service` command to see if ntpd is configured to launch automatically at startup.
 - The communication port of the NTP service is UDP 123. Please make sure that you have opened the port to the Internet before configuring the NTP service.
 If the port is not open, please refer to [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272) to open it to the Internet.
 
 ## Directions
 
-### Installing NTPD
+### Installing ntpd
 
-Run the following command to check whether NTPD has been installed.
+Run the following command to check whether ntpd has been installed.
 ```
 rpm -qa | grep ntp
 ```
- - If the following result is returned, NTPD has been installed.
-![Checking if NTPD has been installed](https://main.qcloudimg.com/raw/34073904c49e80ab61da25559c7239e5.png)
- - If NTPD has not been installed, run the `yum install ntp` command to install it. 
+ - If the following result is returned, ntpd has been installed.
+![Checking if ntpd has been installed](https://main.qcloudimg.com/raw/34073904c49e80ab61da25559c7239e5.png)
+ - If ntpd has not been installed, run the `yum install ntp` command to install it. 
 ```
 yum -y install ntp
 ```
-NTPD uses the client mode by default.
+ntpd uses the client mode by default.
 
 ### Configuring NTP
 1. Run the following command to open the configuration file of the NTP service.
@@ -35,28 +35,28 @@ vi /etc/ntp.conf
 ![Server configuration](https://main.qcloudimg.com/raw/b21b559ce745ef5c765251a8ee514dca.png)
 3. Press **Esc** and enter **:wq** to save and close the file.
 
-### Launching NTPD
+### Launching ntpd
 
-Run the following command to restart the NTPD service.
+Run the following command to restart the ntpd service.
 ```
 systemctl restart ntpd.service
 ```
 
-### Checking the status of NTPD
+### Checking the status of ntpd
 
-Run the following commands to check the status of NTPD as needed. 
+Run the following commands to check the status of ntpd as needed. 
 - Run the following command to check whether the NTP is normally listening on the service port UDP 123.
 ```
 netstat -nupl
 ```
 If the following result is returned, the listening is normal.
 ![netstat -nupl](https://main.qcloudimg.com/raw/d7da764d05135959154920b81fa9f1e4.png)
-- Run the following command to check whether the NTPD status is normal.
+- Run the following command to check whether the ntpd status is normal.
 ```
-service NTPD status
+service ntpd status
 ```
-If the following result is returned, the NTPD status is normal.
-![NTPD status](https://main.qcloudimg.com/raw/321e56d0f7797f382d9f6903c0315f96.png)
+If the following result is returned, the ntpd status is normal.
+![ntpd status](https://main.qcloudimg.com/raw/321e56d0f7797f382d9f6903c0315f96.png)
 - Run the following command to check whether NTP has been started normally and configured to the correct NTP clock source server.
 ```
 ntpstat
@@ -80,9 +80,9 @@ The following result will be returned:
  - **offset**: the time difference in milliseconds (ms) between the host and the time source through NTP. The closer the offset is to 0, the closer the times of the host and the NTP server are.
  - **jitter**: a value used for statistics that records the distribution of offsets over a particular number of consecutive connections. The smaller its absolute value is, the more accurate the host time is.
 
-### Setting the automatic launch of NTPD at startup
+### Setting the automatic launch of ntpd at startup
 
-1. Run the following command to automatically launch NTPD at startup.
+1. Run the following command to automatically launch ntpd at startup.
 ```
 systemctl enable ntpd.service
 ```
@@ -91,12 +91,12 @@ systemctl enable ntpd.service
 systemctl is-enabled chronyd.service
 ```
 If chrony is set to launch at startup, run the following command to remove chrony from the auto-start list.
-chrony is not compatible with NTPD, which may lead to NTPD start failure.
+chrony is not compatible with ntpd, which may lead to ntpd start failure.
 ```
 systemctl disable chronyd.service
 ```
 
-### Enhancing NTPD security
+### Enhancing ntpd security
 
 Run the following commands sequentially to enhance the security of the `/etc/ntp.conf` configuration file.
 ```

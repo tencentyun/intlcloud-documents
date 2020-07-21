@@ -1,22 +1,22 @@
 ### Network Customization
-VPC provides you with robust network management capabilities. VPC closely resembles a traditional network that you can select your own IP ranges, create subnets, and flexibly configure route tables and routing policies to deploy your cloud-based business in a custom fashion.
-Tencent Cloud VPC also provides visualized network topologies to help you better plan the network.
+VPC provides you with robust network management capabilities. You can customize IP ranges and create subnets as in a traditional network, while flexibly configuring route tables and routing policies to deploy your cloud services.
+Tencent Cloud VPC also provides network topologies to help you visualize and plan the network.
 
 ### Scalability
-You can benefit from the scalable network structure of VPC by connecting with local IDCs, other VPC instances, and classic networks, which help you achieve an elastic deployment as needed and reside businesses in different subnets of VPC instances.
+You can create different subnets in one or more VPCs to deploy your businesses in a scalable VPC environment. You can also connect the VPC with local IDCs, other VPCs, and classic networks to expand the network architecture as needed.
 
-### Rich Access Modes
-VPC provides rich access modes to satisfy your demand for cloud-based communication:
-- Access to the Internet: you can access the Internet using a public IP address, EIP, NAT Gateway, or CLB.
-- Access to other VPC instances: you can access other VPC instances through CCN and peering connections.
-- Access to local IDCs: you can access your local IDCs through VPN connections, Direct Connect, and CCN.
-- Access to classic networks: you can access your business deployed in a classic network through Classiclink.
+### Different Access Modes
+VPC provides different access modes to meet the needs for cloud communications:
+- Access the Internet: you can access the Internet through a public IP, EIP, NAT Gateway, CLB, etc.
+- Access other VPC instances: you can access other VPC instances through CCN, peering connection, etc.
+- Access local IDCs: you can access local IDCs through VPN connection, Direct Connect, and CCN.
+- Access classic networks: you can access businesses deployed in a classic network through Classiclink.
 
 ### Security and Reliability
-Based on the tunneling technology, VPC constructs virtual networks on physical networks and uses the Overlay technology to achieve full private network isolation between VPC instances, providing you with independent, isolated, and secure cloud networks.
-We also provide you with network access controls over a CVM in the VPC at different levels, including security groups and network ACLs.
+VPC uses the tunneling technology to build virtual networks on physical networks, and the Overlay technology to achieve private network isolation between VPC instances. It provides you with independent, isolated, and secure cloud networks.
+For CVMs within a VPC, we also provide you with access controls at different levels, such as security groups and network ACLs.
 
 ### Ease of Use
-You can create and manage VPC instances quickly and easily using the Console, APIs, or other methods. In addition, productized network features and rich troubleshooting features can greatly reduce your OPS costs.
+You can create and manage VPC instances easily and quickly through the console, APIs, etc. The productized network features and different troubleshooting methods help reduce your OPS costs.
 
 

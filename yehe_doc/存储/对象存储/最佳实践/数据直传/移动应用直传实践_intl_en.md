@@ -210,8 +210,11 @@ For complete code, see [COS Android Demo](https://github.com/tencentyun/qcloud-s
 #### iOS
 For complete sample project for iOS, see [COS iOS Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples).
 
-Modify the file QCloudCOSXMLDemo/QCloudCOSXMLDemo/TestCommonDefine.h, enter the APPID and the address deployed in the previous step for getting the temporary keys, and then run the following command:
-```sh
+Modify the file `QCloudCOSXMLDemo/QCloudCOSXMLDemo/key.json` by adding your APPID, secretID, and secretKey, and run this command:
+
+```plaintext
 pod install
 ```
+> Get your APPID, secretID, and secretKey from the [API Key Management](https://console.cloud.tencent.com/cam/capi) page.
+
 After executing the command, open QCloudCOSXMLDemo.xcworkspace to view the Demo.

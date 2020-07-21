@@ -2,6 +2,6 @@ Tencent Cloud Flow Logs (FL) provides you with a full-time, full-flow, and non-i
 
 With VPC flow logs, you can capture inbound/outbound ENI IP traffic in VPC. After a flow log is created, you can view and search for its data in [CLS](https://intl.cloud.tencent.com/document/product/614). You can also publish specified flow logs to other Tencent Cloud products for analysis or storage; for example, you can publish a flow log to a COS bucket to manage its lifecycle to meet the need for log audit.
 
->The FL service is currently in beta test. If you want to try it out, please submit an application for beta eligibility.
+>The FL service is currently in beta test. If you want to try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 

@@ -28,5 +28,5 @@ If you want to save the snapshot data of a data disk to a new disk by default, y
 You can use the `CreateDisks` API to create a cloud disk. For more information, see [Creating cloud disks](https://intl.cloud.tencent.com/document/product/362/16312).
 
 ## Purchase channels for local disks
-Currently, local disks can only be purchased when you purchase a CVM. Standalone purchase is not supported. For more information, see [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855).
+Currently, local disks can be purchased only when you purchase a High-IO or Big-Data CVM instance, and cannot be purchased separately. For more information, see [Creating Instances](https://intl.cloud.tencent.com/document/product/213/4855).
 

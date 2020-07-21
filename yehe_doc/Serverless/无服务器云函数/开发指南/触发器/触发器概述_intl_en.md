@@ -6,7 +6,7 @@ SCF is a typical event-triggered serverless runtime environment. Its core compon
 
 These event sources can be any of the following:
 
-* **Internal event sources**: these are pre-configured Tencent Cloud services that can be used with SCF. If you configure one of these event sources as a function trigger, the function will be invoked automatically when an event occurs. The relationship between the event source and the function (i.e., event source mapping) will be maintained on the event source side. For example, COS provides a bucket notification configuration API which can be used to bind the bucket event to the function.
+* **Internal event sources**: these are pre-configured Tencent Cloud services that can be used with SCF. If you configure one of these event sources as a function trigger, the function will be invoked automatically when an event occurs. The relationship between the event source and the function (i.e., event source mapping) will be maintained on the event source side. 
 * **Custom applications**: you can let custom applications publish events and invoke SCF functions.
 
 ## Sample 1. COS publishes an event and invokes a function

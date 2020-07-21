@@ -137,6 +137,6 @@ Status code data can be displayed in two modes: status data distribution pie cha
       <td>Other</td>
       <td>0</td>
       <td>The client actively closes the connection during response.</td>
-      <td>Generally, it is caused by a client network problem or active stop of access by the user. If you find that user access is affected, please<a href='https://console.cloud.tencent.com/workorder/category'> submit a ticket </a>for assistance.</td>
+      <td>Generally, it is caused by a client network problem or active stop of access by the user. </td>
    </tr>
 </table>

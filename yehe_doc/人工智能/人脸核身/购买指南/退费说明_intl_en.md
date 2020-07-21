@@ -1,2 +1,2 @@
-Currently, Tencent Cloud Faceid **does not support refund**.
-If you have any questions about bills, you can view the number of monthly calls in the [console](https://console.cloud.tencent.com/faceid) and check the amount against the product price.
+Currently, Tencent Cloud FaceID **does not support refund**.
+If you have any questions about the bill, you can query the number of monthly calls in the [console](https://console.cloud.tencent.com/faceid) and check the service price.

@@ -149,7 +149,7 @@ yum -y install mod_php71w.x86_64 php71w-cli.x86_64 php71w-common.x86_64 php71w-m
 ```
 service php-fpm start
 ```
-3. 依次执行以下命令，设置 PHP-FPM 为开机自启动。
+4. 依次执行以下命令，设置 PHP-FPM 为开机自启动。
 ```bash
 chkconfig --add php-fpm  
 ```

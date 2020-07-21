@@ -11,7 +11,7 @@
 
 ### MongoDB 应该选哪个版本的驱动程序？
 推荐使用最新版本，例如 PHP 可以选择 mongo-1.6 及以上。
- 
+
 ### MongoDB 提供哪些语言连接方式？
 云数据库 MongoDB 提供多种语言连接方式，例如 Shell、PHP、Node.js、Java、Python，详情请参见 [连接示例](https://intl.cloud.tencent.com/document/product/240/7092)。
 
@@ -19,10 +19,10 @@
 云数据库 MongoDB 版针对客户端连接完全兼容 MongoDB，只要是官方 MongoDB 版支持的客户端，云数据库全部支持。例如 C、C++、C#、Java、Node.js、Python、PHP、Perl 等，详情请参见 [MongoDB 官方文档](https://docs.mongodb.org/ecosystem/drivers/)。
 
 ### 在 shell 里怎么连接腾讯云 MongoDB？
-详情请参见 [Shell 连接示例](https://intl.cloud.tencent.com/document/product/240/3978)。
+详情请参见 [Shell 连接示例](https://intl.cloud.tencent.com/zh/document/product/240/3978)。
 
 ### 业务程序里连接 MongoDB 的 URI 是什么样的？
-详情请参见 [连接示例](https://intl.cloud.tencent.com/document/product/240/7092)。
+详情请参见 [连接示例](https://intl.cloud.tencent.com/zh/document/product/240/7092)。
 
 ### 用 meteor 等各类框架、类库无法连接腾讯云 MongoDB，如何处理？
 一般来说都是连接方式、URI 拼接错误，请先检查核实。
@@ -30,28 +30,27 @@
 ### 在 PHP 中，如何设置 MongoDB 最大连接数？
 MongoDB 驱动（[PHP 官网文档](http://php.net/manual/en/set.mongodb.php)）可以通过在连接 URL 中配置 maxPoolSize 参数控制连接数。
 MongoDB 驱动（[PHP 官网文档](http://php.net/manual/en/set.mongodb.php)）可以通过 Mongo::setPoolSize() 方法设置连接数，详情请参见 [MongoPool::setSize](http://php.net/manual/en/mongopool.setsize.php)。
- 
+
 
 ### MongoDB 连接数限制是多少？
 
-| 内存规格 | 连接数个数上限 |
-| :------: | :------------: |
-|   2GB    |      1500      |
-|   4GB    |      1500      |
-|   6GB    |      1500      |
-|   8GB    |      1500      |
-|   12GB   |      1500      |
-|   16GB   |      2500      |
-|   24GB   |      3500      |
-|   32GB   |      4500      |
-|   48GB   |      6000      |
-|   64GB   |      9000      |
-|  128GB   |     15000      |
-|  240GB   |     15000      |
-|  512GB   |     15000      |
+| 内存规格 | 连接数上限 |
+| :------: | :--------: |
+|   2GB    |    1500    |
+|   4GB    |    2000    |
+|   6GB    |    2500    |
+|   8GB    |    3500    |
+|   16GB   |    6000    |
+|   24GB   |    8000    |
+|   32GB   |    9500    |
+|   64GB   |   16000    |
+|  128GB   |   18000    |
+|  240GB   |   18000    |
+|  512GB   |   20000    |
 
-连接数上限是针对实例级别的，不是节点级别的，详见  [限制说明](https://intl.cloud.tencent.com/document/product/240/31183)。
- 
+>!对于副本集来说，连接数上限是针对整个实例的，不是单个节点；对于分片集群来说，连接数上限是针对单个 shard，详见  [使用限制](https://intl.cloud.tencent.com/document/product/240/31183)。
+
+
 ### 手动重连 MongoDB 怎么操作？
 腾讯云 MongoDB 数据库服务提供的不是简单的 mongod 访问，给到用户访问的是一个负载均衡 IP，此 IP 后面是连接到一系列类似 mongos 一样存在的路由接入层。
 客户端驱动会透过负载均衡 IP 与接入机建立一个长连接，当此连接处于长期间活跃状态时，腾讯云不会对其做任何干预，但是当长连接闲置时间超过1天时（此时间会随着版本优化而调整），路由接入层会踢掉该连接。
@@ -78,4 +77,4 @@ var connection = mongodb.createConnection(dbUri, opts);
 ### MongoDB 支持外网连接吗？
 MongoDB 目前只支持内网连接，连接方式参见 [连接示例](https://intl.cloud.tencent.com/document/product/240/7092) 。
 目前暂不支持开通外网访问，如果您要在本地连接 MongoDB，可以使用与 MongoDB 同一账号同一内网下的服务器做端口转发实现。
- 
+

@@ -1,11 +1,11 @@
 ## Overview
 The SDK for Android is a set of APIs provided by TPNS Service for clients to implement message push. This document provides two integration methods, AndroidStudio Gradle, which is automatic, and Android Studio, which is manual.
->If you are migrating from the [XG Platform](https://xg.qq.com) to TPNS, please be sure to adjust the integration configuration as instructed in the Android migration guide.
+>!If you are migrating from the [XG Platform](https://xg.qq.com) to TPNS, please be sure to adjust the integration configuration as instructed in the Android migration guide.
 
 ## SDK Integration (Two Methods)
 ### AndroidStudio Gradle automatic integration
 #### Directions
->Before configuring the SDK, make sure you have configured the Android platform application.
+>!Before configuring the SDK, make sure you have configured the Android platform application.
 
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Configuration Management** on the left sidebar to get the application package name, `AccessID`, and `AccessKey`.
 2. Get the latest version number on the [SDK download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
@@ -45,7 +45,7 @@ dependencies {
 }
 ```
 
->
+>!
  - If your application service access point is Guangzhou, the SDK implements this configuration by default.
  - If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
 Add the following metadata in the `application` tag in the `AndroidManifest` file:
@@ -75,7 +75,7 @@ Singapore: `https://api.tpns.sgp.tencent.com`.
 ```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
-        <!-- Receive message passthrough -->
+        <!-- Receive in-app message -->
         <action android:name="com.tencent.android.xg.vip.action.PUSH_MESSAGE" />
         <!-- Listen to results of registration, unregistration, tag setting/deletion, and notification clicks ->
         <action android:name="com.tencent.android.xg.vip.action.FEEDBACK" />
@@ -198,11 +198,11 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
         android:authorities="application package name.AUTH_XGPUSH_KEEPALIVE"
         android:exported="true" />
 
-    <!-- **(Optional)** Receiver implemented by the application, which is used to receive the message pass-through and call back the operation result. Add as needed -->
+    <!-- **(Optional)** Receiver implemented by the application, which is used to receive in-app messages and call back the operation result. Add as needed -->
     <!-- YOUR_PACKAGE_PATH.CustomPushReceiver should be changed to your own receiver: -->
     <receiver android:name="application package name.MessageReceiver">
         <intent-filter>
-            <!-- Receive message passthrough -->
+            <!-- Receive in-app message -->
             <action android:name="com.tencent.android.xg.vip.action.PUSH_MESSAGE" />
             <!-- Listen to results of registration, unregistration, tag setting/deletion, and notification clicks ->
             <action android:name="com.tencent.android.xg.vip.action.FEEDBACK" />
@@ -212,13 +212,13 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
     <!-- MQTT START-->
     <service android:exported="false"
              android:process=":xg_vip_service"
-             android:name="com.tencent.bigdata.mqttchannel.services.MqttService" />
+             android:name="com.tencent.tpns.mqttchannel.services.MqttService" />
 
     <!--**Note** Modify authorities to package name.XG_SETTINGS_PROVIDER. For example, the package name of demo is com.tencent.android.xg.cloud.demo -->
     <provider
         android:exported="false"
-        android:name="com.tencent.bigdata.baseapi.base.SettingsContentProvider"
-        android:authorities="application package name.XG_SETTINGS_PROVIDER" />
+        android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
+        android:authorities="Application package name XG_SETTINGS_PROVIDER" />
 
     <!-- MQTT END-->
 
@@ -252,22 +252,15 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-> 
-- If your application service access point is Guangzhou, the SDK implements this configuration by default.
-- If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
+>! 
+>- If your application service access point is Guangzhou, the SDK implements this configuration by default.
+>- If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
 Add the following metadata in the `application` tag in the `AndroidManifest` file:
 ```
     <application>
-        // Other Android components
         <meta-data
-            android:name="XG_GUID_SERVER"
-            android:value="Domain name outside Mainland China/guid/api/GetGuidAndMqttServer" />           
-        <meta-data
-            android:name="XG_STAT_SERVER"
-            android:value="Domain name outside Mainland China/log/statistics/push" />        
-        <meta-data
-            android:name="XG_LOG_SERVER"
-            android:value="Domain name outside Mainland China/v3/mobile/log/upload" /> 
+            android:name="XG_SERVER_SUFFIX"
+            android:value="Domain name outside Mainland China" />
     </application>
 ```
 The domain names outside Mainland China are as follows:
@@ -278,7 +271,7 @@ Singapore: `https://api.tpns.sgp.tencent.com`.
 
 ## Debugging and Device Registration
 ### Enabling debug log data
->When launching it, set this to `false`.
+>!When launching it, set this to `false`.
 
 ```java
 XGPushConfig.enableDebug(this,true);
@@ -315,15 +308,15 @@ If you perform code obfuscation by using tools such as ProGuard in your project,
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep class com.tencent.android.tpush.** {*;}
--keep class com.tencent.bigdata.baseapi.** {*;}
--keep class com.tencent.bigdata.mqttchannel.** {*;}
+-keep class com.tencent.tpns.baseapi.** {*;}  // For versions below 1.2.0.1, the configuration is `-keep class com.tencent.tpns.baseapi.** {*;}`
+-keep class com.tencent.tpns.mqttchannel.** {*;} // For versions below 1.2.0.1, the configuration is `-keep class com.tencent.bigdata.mqttchannel.** {*;}`
 -keep class com.tencent.tpns.dataacquisition.** {*;}
 ```
 
->If the TPNS SDK is included in the application's public SDK, then even if the public SDK has an obfuscation rule configured, you still need to configured an obfuscation rule for the master project application.
+>!If the TPNS SDK is included in the application's public SDK, then even if the public SDK has an obfuscation rule configured, you still need to configured an obfuscation rule for the master project application.
 
 ## Advanced Configuration (Optional)
-### Audio-Visual rich media usage
+### Audiovisual rich media usage
 1. In the `layout` directory of the application, create an .xml file named `xg_notification`.
 2. Copy the following code into the file:
 ```
