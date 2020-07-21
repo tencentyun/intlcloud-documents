@@ -6,10 +6,10 @@ You have [installed Serverless Framework](https://intl.cloud.tencent.com/documen
 
 ```shell
 $ serverless –v
-Framework Core: 1.67.3
-Plugin: 3.6.6
-SDK: 2.3.0
-Components: 2.30.1
+Framework Core: 1.74.1 (standalone)
+Plugin: 3.6.14
+SDK: 2.3.1
+Components: 2.31.6
 ```
 
 ## Directions
@@ -47,7 +47,7 @@ Serverless › Find more here: https://registry.serverless.com
 Once you have determined the project template to be used, you can use the built-in `init` command to initialize your project. The `init` command will automatically download the template you select from the Registry and create a project folder for you in the following steps:
 
 ```
-$ sls init -t fullstack # Create a project by using the `fullstack` project template
+$ sls init fullstack # Create a project by using the `fullstack` project template
 $ cd  fullstack # Enter the project folder
 ```
 
