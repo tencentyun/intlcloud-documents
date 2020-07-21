@@ -55,7 +55,6 @@ allprojects {
 ```
 
 3. Copy the application configuration file `agconnect-services.json` obtained from the Huawei Push platform to the `app` module directory.  
-![](https://main.qcloudimg.com/raw/90cefd6b26ad2bd2c80925ccbb4e67c7.png)
 
 4. Add the following configuration to the `build.gradle` file at its beginning in the `app` module:
 ```
