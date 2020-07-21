@@ -4,7 +4,7 @@
 移动推送 TPNS 跟进各厂商通道推送服务的更新进度，提供集成华为推送 4.0 SDK （HMS Push SDK V4） 的插件依赖包供用户选择使用。
 >!  
 >- HMS SDK V4 版本和 V2 版本互不兼容，同时集成会有依赖冲突，请选择其一进行集成。
->- HMS Push SDK V4 不再支持从服务端直接下发 key-value 形式的自定义参数，不支持 V2 版本中提供的通知点击事件 onEvent 回调。对此建议使用安卓通用的 intent scheme 方式传递通知点击事件，详情请参见 [如何设置消息点击事件](https://cloud.tencent.com/document/product/548/36674#.E5.A6.82.E4.BD.95.E8.AE.BE.E7.BD.AE.E6.B6.88.E6.81.AF.E7.82.B9.E5.87.BB.E4.BA.8B.E4.BB.B6.EF.BC.9F) 。
+>- HMS Push SDK V4 不再支持从服务端直接下发 key-value 形式的自定义参数，不支持 V2 版本中提供的通知点击事件 onEvent 回调。对此建议使用安卓通用的 intent scheme 方式传递通知点击事件，详情请参见 [如何设置消息点击事件](https://intl.cloud.tencent.com/zh/document/product/1024/32624) 。
 >- 您仍可以通过集成华为推送 V2 版本 SDK 来使用华为通道推送服务，详情参见  [华为通道 V2 接入](https://cloud.tencent.com/document/product/548/36653) 。
 >- 华为推送只有在签名发布包环境下，才可注册厂商通道成功并通过厂商通道进行推送。
 >- 华为通道不支持抵达回调，支持点击回调。
