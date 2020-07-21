@@ -1,11 +1,11 @@
 ## 操作场景
-在**华为推送服务** SDK 2.6.3 本之上，华为推出了 HMS 4.0 版本推送服务。
+在**华为推送服务** SDK 2.6.3 版本之上，华为推出了 HMS 4.0 版本推送服务。
 4.0 版本 SDK 相较 2.6 版本，在接口调用、Push 服务开启步骤等方面有较大改变。
 移动推送 TPNS 跟进各厂商通道推送服务的更新进度，提供集成华为推送 4.0 SDK （HMS Push SDK V4） 的插件依赖包供用户选择使用。
 >!  
 >- HMS SDK V4 版本和 V2 版本互不兼容，同时集成会有依赖冲突，请选择其一进行集成。
->- HMS Push SDK V4 不再支持从服务端直接下发 key-value 形式的自定义参数，不支持 V2 版本中提供的通知点击事件 onEvent 回调。对此建议使用安卓通用的 intent scheme 方式传递通知点击事件，详情请参见 [如何设置消息点击事件](https://intl.cloud.tencent.com/document/product/1024/32624#.E5.A6.82.E4.BD.95.E8.AE.BE.E7.BD.AE.E6.B6.88.E6.81.AF.E7.82.B9.E5.87.BB.E4.BA.8B.E4.BB.B6.EF.BC.9F) 。
->- 您仍可以通过集成华为推送 V2 版本 SDK 来使用华为通道推送服务，详情参见  [华为通道 V2 接入](https://intl.cloud.tencent.com/document/product/1024/30716) 。
+>- HMS Push SDK V4 不再支持从服务端直接下发 key-value 形式的自定义参数，不支持 V2 版本中提供的通知点击事件 onEvent 回调。对此建议使用安卓通用的 intent scheme 方式传递通知点击事件，详情请参见 [如何设置消息点击事件](https://cloud.tencent.com/document/product/548/36674#.E5.A6.82.E4.BD.95.E8.AE.BE.E7.BD.AE.E6.B6.88.E6.81.AF.E7.82.B9.E5.87.BB.E4.BA.8B.E4.BB.B6.EF.BC.9F) 。
+>- 您仍可以通过集成华为推送 V2 版本 SDK 来使用华为通道推送服务，详情参见  [华为通道 V2 接入](https://cloud.tencent.com/document/product/548/36653) 。
 >- 华为推送只有在签名发布包环境下，才可注册厂商通道成功并通过厂商通道进行推送。
 >- 华为通道不支持抵达回调，支持点击回调。
 
@@ -55,7 +55,7 @@ allprojects {
 ```
 
 3. 将从华为推送平台获取的应用配置文件 agconnect-services.json 拷贝到 app 模块目录下。  
-![](https://main.qcloudimg.com/raw/90cefd6b26ad2bd2c80925ccbb4e67c7.png)
+![](https://communityfile-drcn.op.hicloud.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20191206151707.29547031515453412837521432306055:50510413031304:2800:5D8091009B78756BC4CFD5492B68A18A6BB7B391E04A9031A0BD7C5479A2592F.png)
 
 4. 在 app 模块下 build.gradle 文件头部添加配置：
 ```
@@ -105,7 +105,7 @@ buildscript {
 ```
 
 3. 将从华为推送平台获取的应用配置文件 agconnect-services.json 拷贝到 app 模块目录下。  
-![](https://main.qcloudimg.com/raw/90cefd6b26ad2bd2c80925ccbb4e67c7.png)
+![](https://communityfile-drcn.op.hicloud.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20191206151707.29547031515453412837521432306055:50510413031304:2800:5D8091009B78756BC4CFD5492B68A18A6BB7B391E04A9031A0BD7C5479A2592F.png)
 
 4. 在 app 模块下 build.gradle 文件头部添加配置：
 ```
@@ -165,11 +165,11 @@ I/TPush: [a] binder other push token with accid = 2100274337  token = 17c32948df
 
 ## 高级配置（可选）
 ### 华为通道抵达回执配置
-华为通道抵达回执需要开发者自行配置，您可参照 [华为厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95) 进行配置，完成后，可在推送记录中查看华为推送通道的抵达数据。
-![](https://main.qcloudimg.com/raw/c5247214fb095b300091bb62629dd57a.png)
+华为通道抵达回执需要开发者自行配置，您可参照 [华为厂商通道回执配置指引](https://cloud.tencent.com/document/product/548/41318#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95) 进行配置，完成后，可在推送记录中查看华为推送通道的抵达数据。
+![](C:\Users\v_vxllin\Desktop\TAPD提单\移动推送 TPNS\移动推送 TPNS_2020-07-20_14-16-23\华为通道 V4 接入_intl_zh\c5247214fb095b300091bb62629dd57a.png)
 
 ### 华为设备角标适配
-华为设备支持设置应用角标，需要开发者申请应用内角标设置权限和设置应用启动类，详情请参见 [角标适配指南](https://intl.cloud.tencent.com/document/product/1024/35828#.E5.8D.8E.E4.B8.BA.E6.89.8B.E6.9C.BA.E8.A7.92.E6.A0.87.E9.80.82.E9.85.8D.E6.8C.87.E5.8D.97) 文档。
+华为设备支持设置应用角标，需要开发者申请应用内角标设置权限和设置应用启动类，详情请参见 [角标适配指南](https://cloud.tencent.com/document/product/548/43693#.E5.8D.8E.E4.B8.BA.E6.89.8B.E6.9C.BA.E8.A7.92.E6.A0.87.E9.80.82.E9.85.8D.E6.8C.87.E5.8D.97) 文档。
 
 ## 常见问题排查
 ### 华为推送注册错误码查询方法
