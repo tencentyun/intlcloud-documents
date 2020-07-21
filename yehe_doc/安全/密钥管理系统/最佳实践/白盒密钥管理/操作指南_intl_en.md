@@ -19,7 +19,7 @@ As can be seen in the above process, the API key is not exposed to the open envi
 ## Directions
 
 ### Step 1. Create a white-box key
-
+>!The white-box key incurs costs. For more information, see [Billing Overview](https://intl.cloud.tencent.com/zh/document/product/1030/31966#.E7.99.BD.E7.9B.92.E5.AF.86.E9.92.A5) and [Purchase Method](https://intl.cloud.tencent.com/zh/document/product/1030/31967#.E8.B4.AD.E4.B9.B0.E7.99.BD.E7.9B.92.E5.AF.86.E9.92.A5).
 The creation of a white-box key pair is achieved by calling the white-box service through the console or API.
 
 The samples below are called with [TCCLI](https://intl.cloud.tencent.com/product/cli), which can also be called with any supported programming languages. Request command:

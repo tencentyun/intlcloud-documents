@@ -218,7 +218,7 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
     <provider
         android:exported="false"
         android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
-        android:authorities="application package name.XG_SETTINGS_PROVIDER" />
+        android:authorities="Application package name XG_SETTINGS_PROVIDER" />
 
     <!-- MQTT END-->
 
