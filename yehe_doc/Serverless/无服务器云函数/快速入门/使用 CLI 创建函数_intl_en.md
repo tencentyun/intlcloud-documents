@@ -18,7 +18,7 @@ mkdir tencent-scf && cd tencent-scf
 ```
 2. Run the following commands in sequence to quickly create an SCF application:
 ```
-serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/v2/example
+serverless create --template-url https://github.com/serverless-components/tencent-scf/tree/master/example
 ```
 ```
 cd example
@@ -44,7 +44,7 @@ After the function is deployed successfully, you can view the URL provided by th
 ### Configuring deployment
 The SCF component supports "zero" configuration deployment, that is, it can be deployed directly with the default values in the configuration file. Nonetheless, you can also modify more optional configuration items as needed to further customize the project to be deployed.
 
-The following is the description of the SCF component configuration file `serverless.yml`. For more information, please see [Full Configuration and Configuration Description](https://github.com/serverless-components/tencent-scf/blob/v2/docs/configure.md).
+The following is the description of the SCF component configuration file `serverless.yml`. For more information, please see [Full Configuration and Configuration Description](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md).
 ```yml
 # serverless.yml
 component: scf # Name of the imported component, which is required. The `tencent-scf` component is used in this example
