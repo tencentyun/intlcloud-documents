@@ -107,7 +107,7 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 #### 参数说明
 badgeNumber： 应用的角标数。
 
-
+ 
 >!此接口必须本地调用，否则管理台使用“iOS 角标自动加1”功能时，角标会默认不变。  
 
 
@@ -137,21 +137,7 @@ NSInteger number = [[XGPush defaultManager] xgApplicationBadgeNumber];
 
 ## 管理设备 Token
 
-### 查询设备 Token
-
-#### 接口说明
-查询当前应用从 APNs 获取的 Token 字符串。
-```objective-c
-@property (copy, nonatomic, nullable, readonly) NSString *deviceTokenString;
-```
-
-#### 示例代码
-```objective-c
-NSString *token = [[XGPushTokenManager defaultTokenManager] deviceTokenString];
-```
-
-
-### 查询 XGToken
+### 查询 TPNS Token
 #### 接口说明
 查询当前应用从腾讯移动推送服务器生成的 Token 字符串。
 ```objective-c
@@ -178,8 +164,8 @@ SDK 的启动方法自动注册设备从 APNs 获取的 Token 到腾讯移动推
 开发者可以针对不同的用户绑定标签/账号，然后对该标签/账号进行推送。
 
 >?
->- 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用
->- 单个应用最多可以有10000个自定义tag， 每个设备token最多可绑定100个自定义tag，如需提高该限制，请与我们客服联系，每个自定义tag可绑定的设备token数量无限制。
+- 此接口应在 xgPushDidRegisteredDeviceToken:error:返回正确后被调用
+- 单个应用最多可以有10000个自定义 tag， 每个设备 token 最多可绑定100个自定义 tag，如需提高该限制，请与我们客服联系，每个自定义 tag 可绑定的设备 token 数量无限制。
 
 #### 操作接口 
 ```Objective-C
@@ -192,11 +178,11 @@ SDK 的启动方法自动注册设备从 APNs 获取的 Token 到腾讯移动推
 - type：绑定类型。
 
 >?
->- 对于标签操作 identifiers 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
->- 对于账号操作，需要使用字典数组且 key 是固定要求。
->- Objective-C 的写法 : @[@{@"account":identifier, @"accountType":@(0)}]。
->- Swift 的写法：["account":identifier, "accountType":NSNumber(0)]。
->- 更多 accountType 请参照 XGPushTokenAccountType 枚举。
+- 对于标签操作 identifiers 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
+- 对于账号操作，需要使用字典数组且 key 是固定要求。
+- Objective-C 的写法：@[@{@"account":identifier, @"accountType":@(0)}]。
+- Swift 的写法：["account":identifier, "accountType":NSNumber(0)]。
+- 更多 accountType 请参照 XGPushTokenAccountType 枚举。
 
 
 #### 示例代码
@@ -230,11 +216,11 @@ SDK 的启动方法自动注册设备从 APNs 获取的 Token 到腾讯移动推
 - type：标识类型。
 
 >?
->- 对于标签操作 identifiers 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
->- 对于账号操作，需要使用字典数组且 key 是固定要求。
->- Objective-C的写法 : @[@{@"account":identifier, @"accountType":@(0)}]。
->- Swift 的写法：["account":identifier, "accountType":NSNumber(0)]。
->- 更多 accountType 请参照 XGPushTokenAccountType 枚举。
+- 对于标签操作 identifiers 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
+- 对于账号操作，需要使用字典数组且 key 是固定要求。
+- Objective-C的写法 : @[@{@"account":identifier, @"accountType":@(0)}]。
+- Swift 的写法：["account":identifier, "accountType":NSNumber(0)]。
+- 更多 accountType 请参照 XGPushTokenAccountType 枚举。
 
 >!若指定为标签类型，此接口会将当前 Token 对应的旧有的标签全部替换为当前的标签；若指定账号类型，此接口仅取 identifiers 列表中第一个。
 

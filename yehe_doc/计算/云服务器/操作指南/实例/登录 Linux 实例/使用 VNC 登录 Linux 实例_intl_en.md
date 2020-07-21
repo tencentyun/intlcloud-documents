@@ -14,7 +14,7 @@ Windows, Linux, or macOS.
 - VNC login is a dedicated terminal, meaning only one user can use VNC login at a time.
 
 ## Prerequisites
-You must already have the admin account and password (or key) of the Linux instance to be logged in to.
+You must already have the admin account and password of the Linux instance to be logged in to.
 - If you use a system default password to log in to the instance, first go to [Internal Message](https://console.cloud.tencent.com/message) to get it.
 - If you forget your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566).
 
@@ -34,6 +34,7 @@ After logging in, information about the CVM that you currently log in to appears
 ## Subsequent Operations
 
 After logging in to the CVM, you can build a personal website or forum or perform other operations. For more information, see the following documents:
+-  [Common Operations and Commands](https://intl.cloud.tencent.com/document/product/213/2150) 
 - [Build a personal WordPress site](https://intl.cloud.tencent.com/document/product/213/8044?from_cn_redirect=1)
 - [Build a Discuz! forum](https://intl.cloud.tencent.com/document/product/213/8043?from_cn_redirect=1)
 

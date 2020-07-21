@@ -1,17 +1,17 @@
-## Finance Industry
+## Finance
 **Typical scenarios: bank account opening and insurance verification**
 
-ID card recognition can be widely used in industries such as banking and securities where end user's identity requires verification to implement businesses such as remote account opening and large amount transfer, helping reduce bank's labor costs and improve user convenience.
-Commercial insurance companies and social security institutions are often unable to verify the identity and existence of beneficiaries as they may not come on-site to complete the formalities in person for various reasons such as age and health condition. With the remote Faceid service, those organizations can effective avoid insurance fraud risks.
+ID card recognition can be used widely in industries such as banking and securities where customer identity must be verified for remote account opening and money transfer. It helps banks reduce labor costs and improve customer experiences.
+Commercial insurance companies and social security institutions may face the situation where the identity of the insured cannot be verified as he or she cannot be present due to illness, age, etc. FaceID provides remote face verification services to effectively prevent insurance frauds and other risks.
 
 ## Identity Registration
-**Typical scenario: internet access in internet café and hotel check-in**
+**Typical scenarios: internet access in internet café and hotel check-in**
 
-According to the applicable laws and regulations, identity registration is required in certain venues such as internet cafés. For example, when users want to surf the internet, they need to verify their identities at the front desk of the internet café. In this case, the front desk can call the Faceid service to verify their identities and register them after approval before granting the internet access.
+Per laws and regulations, identity registration is required in places such as internet cafés. In this case, the receptionist can call Tencent Cloud FaceID services to complete customer identity verification and registration before granting any internet access.
 
 ## Telecommunications
 **Typical scenarios: SIM card registration, activation, etc. with carriers**
 
-To combat and prevent illegal and criminal activities conducted with SIM cards without identity verification, protect people's legitimate rights, and guarantee state security and social stability, users of phone services (including landlines, mobile phones, wireless internet access services, and broadband services) need to have their identity registered.
+To protect social security and prevent cell phone frauds where criminals obtain your information to set up an account in your name, identity registration is required to use phone services (including landline telephones, mobile phones, wireless Internet cards, and broadband services).
 
 

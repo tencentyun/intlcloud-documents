@@ -52,7 +52,7 @@
 
 ### REST API使用（创建推送计划、推送时指定推送计划）
 
-在调用推送接口时，可以通过设置`PlanID`来指定推送计划ID来发送给目标用户群体，详情可参考 REST API [可选参数说明](https://intl.cloud.tencent.com/document/product/1024/33764)。
+在调用推送接口时，可以通过设置 `plan_id` 来指定推送计划 ID 来发送给目标用户群体，详情可参考 REST API [可选参数说明](https://intl.cloud.tencent.com/document/product/1024/33764)。
 
 推送示例如下：
 
@@ -62,7 +62,7 @@
     "environment":"dev",
     "token_list": [ "05da87c0ae********fa9e08d884aada5bb2"],
     "message_type":"notify",
-	"PlanID":"20200704",
+    "plan_id":"20200704",
     "message":{
      "title": "推送标题",
     "content": "推送内容",

@@ -24,7 +24,7 @@
 1. 登录云直播控制台，【功能模板】>[【转码配置】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 单击【+】，选择转码类型为『**普通转码**』，填写配置项，并单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/c3208fe3e06c785041954f176960dc8a.png)
+![](https://main.qcloudimg.com/raw/d846e6c9038e539f3e7932d6657affaf.png)
 <table>
    <thead><tr><th width="20%">普通转码配置项</th><th width="80%">说明</th></tr></thead>
    <tbody><tr>
@@ -61,7 +61,7 @@
 1. 登录云直播控制台，【功能模板】>[【转码配置】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 单击【+】，选择转码类型为『**极速高清**』，填写配置项，并单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/e09552c17f73d46228ea0fbaa4213fd6.png)
+![](https://main.qcloudimg.com/raw/39f2a3a1348f0ba26281bb7ea545f645.png)
 <table>
    <thead><tr><th width="20%">极速高清转码配置项</th><th width="80%">说明</th></tr></thead>
    <tbody><tr>
@@ -96,7 +96,7 @@
 2. 选择您已创建成功的转码模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/ae8a643273c04167d9f7db92afe57d74.png)
+![](https://main.qcloudimg.com/raw/cda8daca20edabb43974de18a2c70e55.png)
 
 <span id="delect"></span>
 ## 删除模板
@@ -105,7 +105,7 @@
 2. 选择您已创建成功的转码模板，单击上方的删除按钮。
 3. 确认是否删除当前转码模板，单击【确定】即可成功删除。
 
-![](https://main.qcloudimg.com/raw/aa18dd6c67deb74e42a6e629ad5a0eac.png)
+![](https://main.qcloudimg.com/raw/af5f6c3cc83c8ed5b1f50d37a054ce1d.png)
 
 
 <span id="related"></span>

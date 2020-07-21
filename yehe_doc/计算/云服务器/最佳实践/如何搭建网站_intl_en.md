@@ -2,9 +2,11 @@
 
 Running a personal website or forum is one of the most common things people do after they purchase a CVM. 
 
+![](https://main.qcloudimg.com/raw/47d7f76597e7e9318a31ab72590692cb.png)
+
 This article describes several ways you can setup a website on your CVM. Choose one that suits you the best.
 
-![](https://main.qcloudimg.com/raw/47d7f76597e7e9318a31ab72590692cb.png)
+
 
 ## Setting Up a Website Manually
 We recommend that you setup your website manually. 
