@@ -1,55 +1,73 @@
+
+
 ## Operation Scenarios
 If your SCF service has a lot of dependent libraries or common code files, you can manage them by using the layers in SCF. With layer management, you can place dependencies in layers instead of the deployment package, ensuring that the deployment package remains small in size. For Node.js, Python, and PHP functions, as long as you keep the deployment package size below 10 MB, you can edit the function code online in the SCF Console.
 
+## How It Works
 
+### Creation and binding
+
+Compressed files for layer creation are stored by layer version. Layers on specific versions can be bound to the functions on matched versions. A function can be bound to up to 5 specific layer versions in a certain sequence.
+
+### Loading and access during runtime
+When a function bound to a layer is triggered to run and start a concurrent instance, its runtime code will be decompressed to and loaded in the **/var/user/** directory, and the layer content will be decompressed to and loaded in the **/opt** directory.
+If the **file** file that needs to be used or accessed is placed in the root directory of the compressed file during layer creation, you can directly access it in the **/opt/file** directory after the decompression and loading are completed. If it is compressed with its folder as **dir/file** during layer creation, you need to access it in **/opt/dir/file** during function execution.
+
+If a function is bound to multiple layers, the decompression and loading sequence of the files in layers will be the same as the binding sequence. They will be sorted in ascending order by serial number. The lower the ranking, the later the loading time, but all files will be loaded before the concurrent instances of the function start. You can use the files in layers during function code initialization.
+
+
+
+### Recommended usage
+
+Layers are generally used to store static files or code dependent libraries that rarely change. When storing code dependent libraries, you can directly package available ones and upload the package to a layer. For example, in a Python environment, you can directly package the code package folder of the dependent libraries and create the package as a layer, and then it can be imported directly through `import` in the function code. In a Node.js environment, you can package the `node_modules` dependent library folder of the project and create the package as a layer, and then it can be imported directly through `require` in the function code.
+
+You can use layers to separate function code, dependent libraries, and dependent static files, so as to keep the function code small in size. You can implement quick upload and update when editing a function in the command line tool, IDE plugin, or console.
 
 
 ## Notes
+
 - The files in a layer will be added to the `/opt` directory, which is accessible during function execution.
 - If your function is bound to multiple layers, these layers will be merged into the `/opt` directory in sequence. If the same file appears in multiple layers, SCF will retain the version in the highest-numbered layer.
-- Even after the layer version you are using is deleted, the functions bound to it will continue to run.
 
 
 ## Directions
 
-<span id="create"></span>
-### Creating layer
-1. Log in to the SCF Console and select **[Layers](https://console.cloud.tencent.com/scf/layer)** on the left sidebar to enter the **Layers** list page.
-2. Select the region to be used at the top of the page and click **Create**.
-3. On the **Create Layer Version** page, set the layer information based on your actual needs as shown below:
-![](https://main.qcloudimg.com/raw/5a04270aa7b74fb5572f6ffe51f03611.png)
+### Creating layer<span id="create"></span>
+1. Log in to the SCF Console and select **[Layer](https://console.cloud.tencent.com/scf/layer)** on the left sidebar to enter the "Layer" list page.
+2. Select the target region at the top of the page and click **Create**.
+3. On the "Create Layer" page, set the layer information based on your actual needs as shown below:
+![](https://main.qcloudimg.com/raw/011aafa792556171838e7bce56e86348.png)
  - **Layer Name**: enter a custom layer name.
  - **Description**: enter descriptive information of the layer as needed.
- - **Submission Method**: **local zip package upload** and **local folder upload** are supported. Please select an appropriate dependency package submission method based on your actual needs.
-    After confirming the submission method, click **Upload**. On the pop-up page for dependent package selection, select the desired dependent package and click **OK**.
- - **Compatible Operating Environment**: up to 5 operating environment compatible with this layer can be set.
-4. Click **OK** to complete the creation.
+ - **Submission Method**: **Local ZIP file**, **Local folder**, and **Upload a ZIP pack via COS** are supported. Please select an appropriate dependency package submission method based on your actual needs.
+    After confirming the submission method, click **Upload**. On the pop-up page for dependency package selection, select the desired dependency package and click **OK**.
+ - **Add Runtime Environment**: up to 5 runtime environments compatible with this layer can be set.
+4. Click **OK** to create the layer.
 
-<span id="bind"></span>
-### Binding function to layer
-1. Log in to the SCF Console and select **[Functions](https://console.cloud.tencent.com/scf/list)** on the left sidebar to enter the **Functions** list page.
-2. Select the function ID for layer management to enter the function configuration page.
-3. Select the **Layer Management** tab and click **Bind Layer** as shown below:
-![](https://main.qcloudimg.com/raw/24bf22fb1bea22d42452c53b08008ef1.png)
-4. In the **Bind Layer** window that pops up, select the corresponding **Layer Name** and **Layer Version** as shown below:
-![](https://main.qcloudimg.com/raw/54ee51aa030f4f1360ab050d6e2acb11.png)
-5. Click **Submit** to complete the binding.
+### Binding function to layer<span id="bind"></span>
+1. Log in to the SCF Console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar to enter the "Function Service" list page.
+2. Select the function ID for layer management to enter the function management page.
+3. Select the **Layer Management** tab and click **Bind** as shown below:
+![](https://main.qcloudimg.com/raw/335653f2ded6ab62f41b0fa6b45d5857.png)
+4. In the "Bind Layer" window that pops up, select the corresponding **Layer Name** and **Layer Version** as shown below:
+![](https://main.qcloudimg.com/raw/1a42cca458210446496598127c1525ab.png)
+5. Click **OK** to complete the binding.
 
 
 
 ### Using layer
-In this step, Node.js is used as an example to describe how to create a layer and bind it to a locally uploaded function for use.
+This section uses Node.js as an example to describe how to create a layer, bind it to a locally uploaded function, and use it.
 
 1. Upload `node_modules` to generate a layer as instructed in [Creating layer](#create). The local function directory structure is as shown below:
 ![](https://main.qcloudimg.com/raw/88a8477d8668610dd150887b326628a4.png)
-2. Package and upload the local function code as instructed in [Deploying Functions](https://intl.cloud.tencent.com/document/product/583/32741). Exclude the `node_modules` folder by running the following command when packaging:
+2. Package and upload the local function code as instructed in [Deploying Function](https://intl.cloud.tencent.com/document/product/583/32741). During the packaging, run the following command to exclude the `node_modules` folder:
 ```
 zip -r package name.zip . -x "node_modules/*"
 ```
-See below:
+See the figure below:
 ![](https://main.qcloudimg.com/raw/31c531fbc98d0a5cc5c542b7e3721c9d.png)
-3. Bind the created layer to the deployed function as instructed in [Binding function](#bind). 
-4. After completing the above steps, you can start using the layer in the function.
+3. Bind the created layer to the deployed function as instructed in [Binding function to layer](#bind). 
+4. You can use the layer in the function after completing the steps above.
 Because the `NODE_PATH` environment variable contains the `/opt/node_modules` path, you can find the dependency in the layer when running the function. You can use the dependency in the same way as before with no code modification required. This document uses the `cos-nodejs-sdk-v5` dependency as an example as shown below:
 ![](https://main.qcloudimg.com/raw/6167eb686aeeadacd646beb998e19136.png)
 For the environment variables in Python, Java, and Node.js, please see the table below:
@@ -73,3 +91,26 @@ For the environment variables in Python, Java, and Node.js, please see the table
 </table>
 
 
+## Example
+### Using layer and testing function
+1. <span id="Step1"></span>Go to [scf_layer_demo](https://github.com/tencentyun/scf_layer_demo) and select **Clone or download** > **Download ZIP** to download the demo and decompress it.
+2. <span id="Step2"></span>Create a layer as instructed in [Creating layer](#create). Set the parameters as shown below:
+![](https://main.qcloudimg.com/raw/7bf2839302ba35e8dbc39a65cfb33c60.png)
+ - **Layer Name**: enter a custom name. This document uses `demo` as an example.
+ - **Submission Method**: select "Local folder" and select and upload the `layer` folder in the folder obtained in [step 1](#Step1).
+ - **Runtime Environment**: select "Nodejs12.16".
+3. Go to the "[Function Service](https://console.cloud.tencent.com/scf/list)" page and click **Create** to enter the "Create Function" page.
+4. Set the basic information of the function in "Basic Info" on the "Create Function" page and click **Next** as shown below:
+ ![](https://main.qcloudimg.com/raw/325bdd76e4f02560bc2093a2daae6451.png)
+ - **Function Name**: enter a custom name. This document uses `layerDemo` as an example.
+ - **Runtime Environment**: select "Nodejs 12.16".
+ - **Creation Method**: select **Blank function**.
+5. In "Function Configuration", select "Local folder" as "Submission Method" and select and upload the `function` folder in the folder obtained in [step 1](#Step1).
+![](https://main.qcloudimg.com/raw/9314878a908e9a75997e42d286d6b70f.png)
+6. Click **Advanced Settings** and add the function layer in "Layer Configuration" as shown below:
+![](https://main.qcloudimg.com/raw/2fd92c6713bbe6951811ab9163135b27.png)
+	- **Layer Name**: select the layer `demo` created in [step 2](#Step2).
+	- **Layer Version**: select v1.
+7. Click **Complete** at the bottom to complete the function creation.
+8. Select the **Function Code** tab on the "Function Management" page. You can click **Test** at the bottom to view the result as shown below:
+![](https://main.qcloudimg.com/raw/a772a3dce7890469290053271c3a54d0.png)
