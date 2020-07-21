@@ -1,11 +1,16 @@
-더 세분화된 도메인 조회, 권한 관리를 위해 CDN 권한 정책을 전면적으로 업그레이드하였기에, 사용자 정의 정책 명령을 통해 도메인별로 권한을 할당할 수 있습니다.
+도메인 조회, 관리 권한 등을 더 세밀하게 설정할 수 있도록, CDN 권한 정책이 한 단계 업그레이드되었습니다. 사용자 정의 정책 명령을 통해 도메인의 등급별 권한을 할당할 수 있습니다.
 
-[액세스 관리 콘솔](https://console.cloud.tencent.com/cam/overview)에 로그인하고 [Policies]을 클릭하여 정책 관리 페이지에 접속한 후 [Create Custom Policy]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/6570c1642d59bf00b5dee346f48ddf0e.png)
-2. [Create by policy generator]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/12a78b0a490d6cd95a4427b92710400f.png)
-3. 제품 선택 창에서 [CDN]을 선택하고 권한을 설정할 기능 그룹을 선택합니다. 모든 읽기 쓰기 권한을 부여할 경우 [All]을 체크하여 모든 서비스를 선택할 수 있습니다. 기능과 콘솔의 매핑 관계는 [Action 매핑표](https://cloud.tencent.com/document/product/228/41867)를 참조 바랍니다.
-![](https://main.qcloudimg.com/raw/16c968c01bb9811df5a6356f4a364928.png)
-4. 리소스 부분에 권한을 부여할 도메인을 추가하고, `*`는 모든 도메인을 의미합니다. 설정 완료 후에 [Add Statement] 및 [Next]를 클릭하면 생성한 정책이 기존 사용자 / 사용자 그룹에 연결되어 권한을 부여할 수 있습니다.
-![](https://main.qcloudimg.com/raw/0497f341d3ad51b56e07682aadc23ba8.png)
+1. [콘솔 CAM](https://console.cloud.tencent.com/cam/overview)에 로그인한 뒤, [정책] 메뉴를 클릭하여 정책 관리 페이지에 접속하고 [사용자정의 정책 생성]을 클릭합니다.
+
+2. [정책 생성기에 의해 생성]을 선택합니다.
+
+3. 제품 선택 창에서 [CDN]을 선택하고 권한을 부여할 기능 집합을 선택합니다. 읽기/쓰기 권한을 모두 부여하려면 [All]을 눌러 모든 서비스를 선택하실 수 있습니다. 기능과 콘솔 매핑의 관계에 대한 설명은 [Action 매핑 리스트](https://intl.cloud.tencent.com/document/product/228/35229)를 참조 바랍니다.
+
+4. 리소스에서 권한을 부여할 도메인을 입력한 뒤, [성명 추가]>[다음]을 클릭하면 정책을 생성할 수 있습니다. 생성한 정책을 기존 사용자 / 사용자 그룹에 연결하면 권한이 부여됩니다.
+	- 모든 도메인: 리소스에 '*'을 입력합니다.
+- 단일/멀티 도메인의 경우, CDN 리소스의 6단 형식 'qcs::cdn::$account:domain/$domain'에 맞춰 입력해야 합니다. 여기서 '$account'는 uin 방식으로, 곧 루트 계정의 ID를 의미합니다. 다음의 도메인 'www.test1.com, www.test2.com'을 예로 들어 설명합니다.
+	 - 단일 도메인: 'qcs::cdn::uin/123456789:domain/www.test1.com'
+	 - 멀티 도메인: “,”를 사용해 구분합니다. 'qcs::cdn::uin/123456789:domain/www.test1.com,qcs::cdn::uin/123456789:domain/www.test2.com'
+	
+
 
