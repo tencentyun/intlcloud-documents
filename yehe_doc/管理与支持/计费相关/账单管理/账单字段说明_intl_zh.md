@@ -23,12 +23,12 @@
 | Usage Time                     | 资源使用的时长                                               |
 | TimeUnit                       | 资源使用的时长单位                                           |
 | Reserved  Instances            | 用量匹配到的RI  ID，比如：s2-RI-1234567890                   |
-| OriginalCost                   | 资源的原始总价，等于刊例价\*用量\*时长                         |
+| OriginalCost                   | 资源的原始总价，等于刊例价\*用量\*时长                       |
 | DiscountRate                   | 资源享受的折扣优惠力度，1表示无折扣，0表示0折                |
 | currency                       | 组件结算使用的货币种类                                       |
-| 优惠后总价（不含税）           | 资源的折后不含税价总价，等于组件原价\*折扣率，等于组件单价\*用量\*时长 |
-| 代金券支出                     | 优惠后总价（税前）中使用代金券抵扣的金额                     |
-| CostBeforeTax                  | 优惠后总价（税前）中使用现金抵扣的金额                       |
+| Total Amount After Discount    | 资源的折后不含税价总价，等于组件原价\*折扣率，等于组件单价\*用量\*时长 |
+| Voucher Deduction              | 优惠后总价（税前）中使用代金券抵扣的金额                     |
+| Amount Before Tax              | 优惠后总价（税前）中使用现金抵扣的金额                       |
 | TaxRate                        | 税率                                                         |
 | TaxAmount                      | 税额                                                         |
 | TotalCost                      | 资源的折后含税总价，等于组件原价\*折扣率\*（1+税率），等于组件单价\*用量\*时长\*（1+税率） |
