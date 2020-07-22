@@ -2,6 +2,8 @@
 This API is used to obtain user tags. To call this API, you must use the admin account. You can obtain a maximum of 100 users’ tags at a time.
 
 ## API Call Description
+This feature **can only be applied for by Ultimate Edition users (but not by Pro Edition users). You can apply for this feature by submitting a ticket, and we will evaluate your needs for approval. If we determine that this feature suits your needs, we will approve your application so that you can use the feature**.
+
 ### Sample request URL
 ```
 https://console.tim.qq.com/v4/all_member_push/im_get_tag?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
@@ -70,7 +72,7 @@ The maximum call frequency is 100 times per second.
 | ErrorInfo | String | Error information |
 | UserTags | Array | List of user tag content |
 | To_Account | String | User account |
-| Tags | Object | Tags content. For more information on the format and meanings of tags, see the description of push request packet fields. |
+| Tags | Object | Tags content. |
 
 ## Error Codes
 The HTTP return code for this API is always 200 unless a network error (such as error 502) occurs. **The actual error code and error message are indicated by ErrorCode and ErrorInfo in the response packet, respectively.** For public error codes 60000 to 79999, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).

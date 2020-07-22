@@ -6,6 +6,8 @@ This API is used by the admin to add tags for users.
 >- The maximum length of a single tag is 50 bytes.
 
 ## API Call Description
+This feature **can only be applied for by Ultimate Edition users (but not by Pro Edition users). You can apply for this feature by submitting a ticket, and we will evaluate your needs for approval. If we determine that this feature suits your needs, we will approve your application so that you can use the feature**.
+
 ### Sample request URL
 ```
 https://console.tim.qq.com/v4/all_member_push/im_add_tag?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
