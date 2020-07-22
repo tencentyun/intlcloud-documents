@@ -16,7 +16,7 @@ Input是Channel输入的基本单位，后台会基于创建完成的Channel自�
 ![](https://main.qcloudimg.com/raw/ca34978793d405f87e5329aadc0c7a3d.png)
 
 Input模块支持Authentication操作，用户可对每个输入点独立做Authentication配置。当用户打开Authentication配置后，后台会对该输入节点自动生成一对Username和Password，通过http认证模式进行鉴权。同时用户可点击下方按钮来rotate credentials。
-注意：一旦用户rotate credentials, the existing channel credential will become invalid.
+>! 一旦用户rotate credentials, the existing channel credential will become invalid.
 
 ![](https://main.qcloudimg.com/raw/af9879f64b667cb86a0abf8c7f3ca24e.png)
 
