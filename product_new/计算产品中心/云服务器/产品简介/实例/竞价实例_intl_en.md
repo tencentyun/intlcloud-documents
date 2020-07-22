@@ -50,6 +50,8 @@ As spot instances may be interrupted, their lifecycle is not under your control.
 - **Quota**: The quota of spot instances limits the total number of vCPU cores of all the spot instances you own in an availability zone. Currently, each account can have up to 50 vCPU cores in each availability zone. For a higher quota, please submit a ticket.
 - **Operation restriction 1**: Configuration upgrading and degrading are not supported for spot instances.
 - **Operation restriction 2**: You cannot switch the billing method of spot instances to monthly subscription.
+- **Operation restriction 3**: spot instances do not support the "No Charges when Shut Down" feature.
+- **Operation restriction 4**: spot instances do not support the system reinstallation.
 
 ## Best Practices
 ### 1. Splitting tasks
