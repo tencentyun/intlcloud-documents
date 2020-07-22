@@ -18,7 +18,8 @@ Input is the basic unit of channel. Based on the channel you created, the backen
 ![](https://main.qcloudimg.com/raw/ca34978793d405f87e5329aadc0c7a3d.png)
 
 The input component supports authentication. You can configure authentication for each input. The backend will automatically generate a username and password for it, and authenticate streams using HTTP authentication. You can also click "Rotate credentials" as shown in the following figure.
-Note: once you rotate credentials, the existing channel credentials will become invalid.
+
+>! Once you rotate credentials, the existing channel credentials will become invalid.
 
 ![](https://main.qcloudimg.com/raw/af9879f64b667cb86a0abf8c7f3ca24e.png)
 
