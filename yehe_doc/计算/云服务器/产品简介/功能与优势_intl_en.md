@@ -36,7 +36,7 @@ We are committed to providing fast and convenient services for both user operati
 
 ## Security
 
-Tencent Cloud provides multiple solutions to ensure the security of CVMs, as well as backup and rollback mechanisms to protect data security.
+Tencent Cloud provides multiple solutions to ensure the security of CVMs. In addition, the backup and rollback mechanisms can protect data security.
 - **Various methods for remote login to the CVM**: Various login methods are provided, including login with key/password or VNC login.
 - **Diverse security services**: DDoS protection, DNS hijacking detection, intrusion detection, vulnerability scanning, web trojan detection, login protection, and other security services are provided to safeguard your server.
 - **Free cloud monitoring**: multiple types of real-time alerts are supported.
