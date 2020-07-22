@@ -42,13 +42,13 @@
 ### 桌面浏览器端 SDK 日志中报错 NotFoundError、NotAllowedError、NotReadableError、OverConstrainedError 以及 AbortError 分别是什么意思？
 
 
- | 错误名 | 描述 | 处理建议 | 
+| 错误名 | 描述 | 处理建议 |
 |---------|---------|---------|
-| NotFoundError	 | 找不到满足请求参数的媒体类型（包括音频、视频、屏幕分享）。<br>例如：PC 没有摄像头，但是请求浏览器获取视频流，则会报此错误。	 | 建议在通话开始前引导用户检查通话所需的摄像头或麦克风等设备，若没有摄像头且需要进行语音通话，可在 [TRTC.createStream({ audio: true, video: false })](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html?_ga=1.250015174.1562552652.1542703643#.createStream) 指明仅采集麦克风。 | 
-| NotAllowedError	| 用户拒绝了当前的浏览器实例的访问音频、视频、屏幕分享请求。	| 提示用户不授权摄像头/麦克风访问将无法进行音视频通话。| 
-| NotReadableError	| 用户已授权使用相应的设备，但由于操作系统上某个硬件、浏览器或者网页层面发生的错误导致设备无法被访问。	| 根据浏览器的报错信息处理，并提示用户“暂时无法访问摄像头/麦克风，请确保当前没有其他应用请求访问摄像头/麦克风，并重试”。| 
-| OverConstrainedError| 	cameraId/microphoneId 参数的值无效。	| 请确保 cameraId/microphoneId 传值正确且有效。| 
-| AbortError	| 由于某些未知原因导致设备无法被使用。| - | 
+| NotFoundError	 | 找不到满足请求参数的媒体类型（包括音频、视频、屏幕分享）。<br>例如：PC 没有摄像头，但是请求浏览器获取视频流，则会报此错误。	 | 建议在通话开始前引导用户检查通话所需的摄像头或麦克风等设备，若没有摄像头且需要进行语音通话，可在 [TRTC.createStream({ audio: true, video: false })](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html?_ga=1.250015174.1562552652.1542703643#.createStream) 指明仅采集麦克风。 |
+| NotAllowedError	| 用户拒绝了当前的浏览器实例的访问音频、视频、屏幕分享请求。	| 提示用户不授权摄像头/麦克风访问将无法进行音视频通话。|
+| NotReadableError	| 用户已授权使用相应的设备，但由于操作系统上某个硬件、浏览器或者网页层面发生的错误导致设备无法被访问。	| 根据浏览器的报错信息处理，并提示用户“暂时无法访问摄像头/麦克风，请确保当前没有其他应用请求访问摄像头/麦克风，并重试”。|
+| OverConstrainedError| 	cameraId/microphoneId 参数的值无效。	| 请确保 cameraId/microphoneId 传值正确且有效。|
+| AbortError	| 由于某些未知原因导致设备无法被使用。| - |
 
 
 更多详情请参考 [initialize](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html?#initialize)。
@@ -77,7 +77,7 @@
 直接在页面打开控制台，输入`navigator.mediaDevices.enumerateDevices()`确认能否获取到设备列表。
  - 如果正常获取到设备会返回一个 Promise，里面会有 MediaDeviceInfo 对象数组，数组里的每个对象对应一个可用的媒体设备。
  - 如果枚举失败，Promise 将返回 rejected，说明浏览器都没有识别到设备，需检查浏览器或设备。
-2. 如果能获取设备列表，则输入`navigator.mediaDevices.getUserMedia({""audio"":true,""video"":true})`确认能否正常返回 MediaStream 对象，不能正常返回说明浏览器没有获取到数据，需检查浏览器的配置。
+2. 如果能获取设备列表，则输入`navigator.mediaDevices.getUserMedia({ audio: true, video: true })`确认能否正常返回 MediaStream 对象，不能正常返回说明浏览器没有获取到数据，需检查浏览器的配置。
 
 ### 桌面浏览器端的回声噪声问题怎么处理？
 当其他端听到桌面浏览器端的声音存在回声、噪声、杂音等情况时，说明桌面浏览器端的 3A 处理没有生效。
