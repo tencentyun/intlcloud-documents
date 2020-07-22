@@ -27,7 +27,7 @@ COS 不对上传和下载带宽进行限制，具体的上传和下载速度与�
 
 也可以通过设置 GET Object 接口中请求参数 response-content-disposition 的值为 attachment 来实现浏览器中弹出下载文件。参考文档请参见 [GET Object](https://intl.cloud.tencent.com/document/product/436/7753)。
 
-> 请求中要使用 response-* 参数，则请求必须带签名。
+>! 请求中要使用 response-* 参数，则请求必须带签名。
 
 ### 如何判断您是否通过内网访问 COS？
 
@@ -41,7 +41,7 @@ COS 不对上传和下载带宽进行限制，具体的上传和下载速度与�
 
 以腾讯 CVM 访问 COS 为例，判断是否使用内网访问 COS ，可以在 CVM 上 使用`nslookup`命令解析 COS 域名，若返回内网 IP，则表明 CVM 和 COS 之间是内网访问，否则为外网访问。
 
->内网 IP 地址一般形如`10.*.*.*`、`100.*.*.*` ，VPC 网络一般为`169.254.*.*` 等。
+>?内网 IP 地址一般形如`10.*.*.*`、`100.*.*.*` ，VPC 网络一般为`169.254.*.*` 等。
 
 假设`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com`为目标存储桶地址，其下方的`Address: 10.148.214.13`表示从内网访问。
 
@@ -61,7 +61,7 @@ Address: 10.148.214.14
 
 腾讯云 CVM 内网 DNS 服务器地址，请参见 [云服务器内网服务](https://intl.cloud.tencent.com/document/product/213/5225)。
 
->腾讯云黑石机器内网 IP 地址和 CVM 的 IP 地址存在差异，一般形如`9.*.*.*`或`10.*.*.*`，如您存在疑问可 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询。
+>!腾讯云黑石机器内网 IP 地址和 CVM 的 IP 地址存在差异，一般形如`9.*.*.*`或`10.*.*.*`，如您存在疑问可 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询。
 
 ### 如何下载文件夹？
 
@@ -80,7 +80,11 @@ Address: 10.148.214.14
 
 ### COS 如何实现批量上传或批量下载文件？
 
-COS 支持通过 API 或 SDK 编程的方式批量操作文件，也提供了命令行工具 [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976) 和图形化程序 [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366) 实现批量操作。
+COS 支持通过控制台、API/SDK、工具等多种方式批量上传或批量下载文件：
+
+- 控制台方式：操作步骤可参见 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321)。
+- API/SDK 方式：COS 支持通过编程多次调用 API 或 SDK 接口的方式批量操作文件，详情可参见 [上传对象 API 接口](https://intl.cloud.tencent.com/document/product/436/10111) 和 [SDK 概览](https://intl.cloud.tencent.com/document/product/436/6474)。
+- 工具方式：可使用 [COSCMD 命令行工具](https://intl.cloud.tencent.com/document/product/436/10976) 和 [COSBrowser 工具](https://intl.cloud.tencent.com/document/product/436/11366) 实现批量操作。
 
 
 ### 上传文件至存储桶，已存在同名文件，是直接覆盖还是新增不同版本的文件？
@@ -108,5 +112,4 @@ COS 现已支持版本控制功能，当存储桶未启用版本控制功能，�
 ### 进行上传文件或创建存储桶等操作时，报错“your policy or acl has reached the limit (Status Code: 400; Error Code: PolicyFull)”该如何处理？
 
 COS 每个主账号下存储桶 ACL 的规则数量最多为1000条，当设置的存储桶 ACL 大于1000条时，会出现此报错，因此建议删除无用的存储桶 ACL 规则。
-
->我们不建议使用对象级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时， 请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。
+>?我们不建议使用对象级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时， 请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。
