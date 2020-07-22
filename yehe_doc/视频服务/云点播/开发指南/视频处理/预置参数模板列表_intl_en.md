@@ -81,7 +81,7 @@ Preset parameter templates for video conversion are divided into the following t
 <table border="0" >
  <tr>
   <th rowspan="2">Template ID</td>
-  <th rowspan="2" >Container Type (PacakgeType)</td>
+  <th rowspan="2" >Container Type (PackageType)</td>
   <th rowspan="2" >Substream Specification</td>
   <th colspan="4" >Video Parameters</td>
   <th rowspan="2" >Filter out Transcoding from Low Resolution to High Resolution (DisableHigherResolution)</td>
@@ -142,7 +142,7 @@ Preset parameter templates for video conversion are divided into the following t
 <table border="0">
 <tr >
   <th rowspan="2" >Template ID</td>
-  <th rowspan="2"  >Container Type (PacakgeType)</td>
+  <th rowspan="2"  >Container Type (PacakageType)</td>
   <th  rowspan="2"  >Substream Specification</td>
   <th  colspan="4" >Audio Parameters</td>
   <th  rowspan="2" >Filter out Transcoding from Low Resolution to High Resolution (DisableHigherResolution)</td>

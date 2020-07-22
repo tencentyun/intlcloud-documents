@@ -26,12 +26,7 @@
 - [删除数据库和表](https://intl.cloud.tencent.com/document/product/236/31905)
 
 ## 参数模板
-[参数模版](https://intl.cloud.tencent.com/document/product/236/8461) 用来管理数据库引擎的参数配置。数据库参数组就像是引擎配置值的容器，这些值可应用于一个或多个数据库实例。下面介绍云数据库实例参数模板目前支持的常见操作。
-#### 常见操作
-- [新建参数模板](https://intl.cloud.tencent.com/document/product/236/31906#.E6.96.B0.E5.BB.BA.E5.8F.82.E6.95.B0.E6.A8.A1.E6.9D.BF)
-- [复制参数模板](https://intl.cloud.tencent.com/document/product/236/31906#.E5.A4.8D.E5.88.B6.E5.8F.82.E6.95.B0.E6.A8.A1.E6.9D.BF)
-- [修改参数模板](https://intl.cloud.tencent.com/document/product/236/31906#.E4.BF.AE.E6.94.B9.E5.8F.82.E6.95.B0)
-- [导入参数](https://intl.cloud.tencent.com/document/product/236/31906#.E5.AF.BC.E5.85.A5.E5.8F.82.E6.95.B0)
+[参数模版](https://intl.cloud.tencent.com/zh/document/product/236) 用来管理数据库引擎的参数配置。数据库参数组就像是引擎配置值的容器，这些值可应用于一个或多个数据库实例。下面介绍云数据库实例参数模板目前支持的常见操作。
 
 ## 数据
 云数据库 MySQL 对数据的常见操作如下：
@@ -46,5 +41,10 @@
 - [离线迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)
 
 ## 安全组
-[云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470) 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。下面介绍云数据库安全组常见操作。
+[云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470) 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。
+#### 常用操作
+- [为云数据库配置安全组](https://intl.cloud.tencent.com/document/product/236/14470#.E4.B8.BA.E4.BA.91.E6.95.B0.E6.8D.AE.E5.BA.93.E9.85.8D.E7.BD.AE.E5.AE.89.E5.85.A8.E7.BB.84)
+- [导入安全组规则](https://intl.cloud.tencent.com/document/product/236/14470#.E5.AF.BC.E5.85.A5.E5.AE.89.E5.85.A8.E7.BB.84.E8.A7.84.E5.88.99)
+- [克隆安全组](https://intl.cloud.tencent.com/document/product/236/14470#.E5.85.8B.E9.9A.86.E5.AE.89.E5.85.A8.E7.BB.84)
+- [删除安全组](https://intl.cloud.tencent.com/document/product/236/14470#.E5.88.A0.E9.99.A4.E5.AE.89.E5.85.A8.E7.BB.84)
 

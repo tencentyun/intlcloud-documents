@@ -28,7 +28,7 @@ https://console.tim.qq.com/v4/all_member_push/im_push?usersig=xxx&identifier=adm
 | contenttype | Fixed value: JSON |
 
 ### Call frequency
-This API supports pushing to all users/by attribute/by tag and can be called up to 100 times per day by default. The call interval must be greater than 1 second. If you have special frequency requirements, consult your account manager.
+This API supports pushing to all users/by attribute/by tag. By default, every day you can make up to 100 API calls at an interval of greater than 1 second. If you want to apply for unlimited calls or have other frequency requirements, please submit a ticket.
 
 ### Sample request packets
 - **Example of pushing to all users**

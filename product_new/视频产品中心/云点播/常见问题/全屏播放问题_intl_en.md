@@ -24,10 +24,6 @@ Tests show that in-page (inline) playback can be implemented in Safari on iOS. A
 
 If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
-
-### How to solve the problem where playback is in full screen mode by default?
-This problem is caused in the same way as the problem of [forced full screen mode after video playback is activated](#p1) and can be solved similarly.
-
 ### How to solve the problem that playback is in full screen mode by default in the WebView of an iOS hybrid app?
 Set the WebView parameter `allowsInlineMediaPlayback` to `YES` to allow inline video playback, i.e., forbidding WebView/UiWebView to force full-screen video playback.
 
