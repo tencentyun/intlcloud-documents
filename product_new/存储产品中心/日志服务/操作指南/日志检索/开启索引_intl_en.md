@@ -68,6 +68,6 @@ CLS supports the following three field types:
 ## Notes
 
 1. Log data collected cannot be found when index is disabled.
-2. After the index is enabled, logs can be found immediately after they are collected.
+2. Log search will be available in about 1 minute after index is enabled.
 3. The data storage time is the same as that in the logset.
 4. If a log topic is enabled and disabled multiple times, the log data from the period(s) during which index was enabled can be found.
