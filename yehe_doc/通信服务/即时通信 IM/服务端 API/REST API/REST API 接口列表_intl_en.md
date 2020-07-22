@@ -5,7 +5,7 @@
 | Imports an account. | [v4/im_open_login_svc/account_import](https://intl.cloud.tencent.com/document/product/1047/34953) |
 | Batch imports accounts. | [v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954) |
 | Deletes accounts. | [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) |
-| Checks accounts. | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956) | 
+| Checks accounts. | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956) |
 | Invalidates the login status of an account. | [v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957) |
 | Queries the login status of an account. | [v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477) |
 
@@ -20,6 +20,20 @@
 | Recalls one-to-one messages. | [v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015) |
 
 
+## Pushing to All Users
+
+| Feature Description | API |
+|---------|---------|
+| Pushing to All Users        | [v4/all_member_push/im_push](https://intl.cloud.tencent.com/document/product/1047/37166) |
+| Setting App Attribute Names | [v4/all_member_push/im_set_attr_name](https://intl.cloud.tencent.com/document/product/1047/37167) |
+| Obtaining App Attribute Names | [v4/all_member_push/im_get_attr_name](https://intl.cloud.tencent.com/document/product/1047/37168) |
+| Obtaining User Attributes     | [v4/all_member_push/im_get_attr](https://intl.cloud.tencent.com/document/product/1047/37169) |
+| Setting User Attributes     | [v4/all_member_push/im_set_attr](https://intl.cloud.tencent.com/document/product/1047/37170) |
+| Deleting User Attributes     | [v4/all_member_push/im_remove_attr](https://intl.cloud.tencent.com/document/product/1047/37171) |
+| Obtaining User Tags     | [v4/all_member_push/im_get_tag](https://intl.cloud.tencent.com/document/product/1047/37172) |
+| Adding User Tags     | [v4/all_member_push/im_add_tag](https://intl.cloud.tencent.com/document/product/1047/37173) |
+| Deleting User Tags     | [v4/all_member_push/im_remove_tag](https://intl.cloud.tencent.com/document/product/1047/37174) |
+| Deleting All Tags of a User | [v4/all_member_push/im_remove_all_tags](https://intl.cloud.tencent.com/document/product/1047/37175) |
 
 ## Profile Management
 
