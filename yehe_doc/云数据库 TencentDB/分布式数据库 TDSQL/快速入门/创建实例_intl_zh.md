@@ -7,4 +7,4 @@
  - VPC 网络选择后不可更改，VPC 相关操作请参见 [管理私有网络](https://intl.cloud.tencent.com/document/product/215/31805)。
 2. 在核对订单页，确认无误后，单击【提交订单】进行支付。
 3. 支付成功后，返回实例列表，待实例状态变为“未初始化”，即可进行实例初始化操作。
-![](https://main.qcloudimg.com/raw/281815fd41334541fcae68bdca5b1895.png)
+

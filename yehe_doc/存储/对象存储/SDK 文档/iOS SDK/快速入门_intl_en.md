@@ -22,13 +22,13 @@
 
 You can integrate the SDK via `cocoapods` or by downloading packaged static libraries. We recommend you use `cocoapods` for import.
 
--**Importing using cocoapods (recommended)**  
+- **Importing using cocoapods (recommended)**  
   In Podfile, use:
 ```shell
 pod 'QCloudCOSXML'
 ```
 
--**Importing using a packaged static library (manual integration)**  
+- **Importing using a packaged static library (manual integration)**  
   Drag **QCloudCOSXML.framework, QCloudCore.framework and libmtasdk.a** to your project, as shown below:
   ![](https://main.qcloudimg.com/raw/ce990d8871293daec0aa434f28b152e6.png)  
   And add the following dependent libraries:

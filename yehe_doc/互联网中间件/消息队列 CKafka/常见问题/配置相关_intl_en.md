@@ -25,11 +25,11 @@ CKafka uses exactly the same mechanism and principle as open-source Kafka. You c
 To ensure stability of the service, CKafka implement network traffic control strategies on both inputting and outputting messages.
 - Throttling occurs when the total traffic of the user’s all replicas exceeds the purchased peak traffic.
 - When the producer side is throttled, CKafka will extend the response time of a TCP connection. The delay period depends on how much the instantaneous traffic exceeds the limit. It is similar to the principle of road traffic control. The more traffic flow, the higher the delay value from the delay algorithm, up to 5 minutes.
-- When the consumer side is throttled, CKafka will reduce the size of each `fetch.request.max.bytes` request to control the its traffic.
+- When the consumer side is throttled, CKafka will reduce the size of each `fetch.request.max.bytes` request to control the traffic.
 
 ### How does throttling affect the production and consumption of messages?
-Throttling only affects the message sending and receiving rate but not the content of messages. 
+Throttling only affects the message sending and receiving rate but not the content of messages.
 
-### How to determine whether CKafka has been throttled?
+### How do I determine whether CKafka has been throttled?
 1. In the instance list, you can see the health status of each cluster. If it’s “Warning”, you can hover your mouse over it to view the detailed data. The data displays your peak traffic and the throttling times, by which you can determine whether this instance has been throttled.
 2. You can click the **Monitor** tab to view the max traffic value. If **the value of max traffic multiplied by replica quantity is greater than that of the purchased peak bandwidth**, you can determine that at least one throttling has occurred.
