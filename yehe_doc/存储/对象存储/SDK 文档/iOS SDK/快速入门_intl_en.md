@@ -63,9 +63,9 @@ This is shown in the following figure:
 > <dict>
 > 	<key>myqcloud.com</key>
 > <dict>
-> 		<key>NSIncludesSubdomains</key>
+> 	<key>NSIncludesSubdomains</key>
 > <true/>
-> 		<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+> 	<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
 > <true/>
 > </dict>
 > </dict>
