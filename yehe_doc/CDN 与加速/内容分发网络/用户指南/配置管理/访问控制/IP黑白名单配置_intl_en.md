@@ -35,5 +35,5 @@ Suppose the IP blocklist/allowlist configuration of the acceleration domain name
 ![](https://main.qcloudimg.com/raw/29a9307902d03f686345eef2964c5ec2.png)
 The actual access status will be as follows:
 1. A user with client IP `1.1.1.1` accesses the resource `http://www.test.com/test.txt`. As the IP matches an IP in the allowlist, the requested content will be returned.
-2. A user with client IP `2.1.1.1` accesses the resource `http://www.test.com/test.txt`. As the IP does not match any IP in the whitelist, a 403 status code will be returned.
+2. A user with client IP `2.1.1.1` accesses the resource `http://www.test.com/test.txt`. As the IP does not match any IP in the allowlist, a 403 status code will be returned.
 
