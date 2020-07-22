@@ -20,7 +20,7 @@ PUT _snapshot/my_cos_backup
 - access_key_id: `SecretId` of your TencentCloud API key.
 - access_key_secret: `SecretKey` of your TencentCloud API key.
 - bucket: COS bucket name, **which cannot contain the `-{appId}` suffix**.
-- region: COS bucket region, which must be the same region as that of the ES cluster.
+- region: COS bucket region, **which must be the same region as that of the ES cluster**.  For more information about regions, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091).
 - base_path: backup directory.   
 
 ## Listing Repository Information
