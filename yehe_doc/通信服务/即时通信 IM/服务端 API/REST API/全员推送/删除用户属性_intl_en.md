@@ -1,6 +1,8 @@
 ## Feature Description
-This API is used by the admin to delete attributes for users. Each request can delete attributes for a maximum of 500 users.
+This API is used by the admin to delete attributes for users. Each request can delete attributes for a maximum of 100 users.Before using this API, be sure to [Set User Attributes](https://intl.cloud.tencent.com/document/product/1047/37167).
 ## API Call Description
+This feature **can only be applied for by Ultimate Edition users (but not by Pro Edition users). You can apply for this feature by submitting a ticket, and we will evaluate your needs for approval. If we determine that this feature suits your needs, we will approve your application so that you can use the feature**.
+
 ### Sample request URL
 ```
 https://console.tim.qq.com/v4/all_member_push/im_remove_attr?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
@@ -20,7 +22,7 @@ https://console.tim.qq.com/v4/all_member_push/im_remove_attr?usersig=xxx&identif
 
 ### Maximum call frequency
 
-100 times/second. If you need to increase the call frequency, please submit a ticket based on the ticket template to apply.
+100 times/second. 
 
 ### Sample request packet
 

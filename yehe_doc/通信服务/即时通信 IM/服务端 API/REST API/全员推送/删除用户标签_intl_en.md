@@ -1,6 +1,9 @@
 ## Feature Description
 This API is used by the admin to delete tags for users. Each request can delete tags for a maximum of 100 users.
+
 ## API Call Description
+This feature **can only be applied for by Ultimate Edition users (but not by Pro Edition users). You can apply for this feature by submitting a ticket, and we will evaluate your needs for approval. If we determine that this feature suits your needs, we will approve your application so that you can use the feature**.
+
 ### Sample request URL
 ```
 https://console.tim.qq.com/v4/all_member_push/im_remove_tag?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
