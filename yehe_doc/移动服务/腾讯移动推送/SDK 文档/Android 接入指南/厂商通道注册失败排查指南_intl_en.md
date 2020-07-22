@@ -140,25 +140,23 @@ You can view the specific meaning of return codes in the official documentation 
  
 
    
-   
+
 ### Other troubleshooting measures
 - **Enable the push service on the Huawei Push platform for Huawei Push**
 If you cannot get the Huawei token on the Huawei device, but the return code for vendor push channel registration is 0, please go to [Huawei Push](https://developer.huawei.com/consumer/cn/), enter the **Development** > **Push Service** page to check whether the push service for the application is enabled, and enter the **Development** > **Project Settings** > **API Management** page to check whether `Push Kit` and `App Messaging` are enabled.
 The push service page is as shown below:
-![](https://main.qcloudimg.com/raw/ab5255522ecb0030aea10d870553566a.png)
+
 The API management page is as shown below:
-![](https://main.qcloudimg.com/raw/cc53290c7509e59e161227228e3b0317.png)
 
 - **Enable the push service on the Mi Push platform for Mi Push**
 If you cannot find the return code for Mi channel registration, please go to **[Mi Open Platform](https://dev.mi.com/console/appservice/push.html)** > **Push Operation Platform** and check whether the message push service for the application is enabled.
-![](https://main.qcloudimg.com/raw/75bcec61263806488bc0cdacd832f7d4.png)
 
 - **OPPO Push can be enabled officially only after your application is approved for the push service**
 The push service page on the [OPPO Open Platform](https://open.oppomobile.com) displays the applications with/without the push service enabled. In the list of applications with the push service not enabled, click the target application to enter its push service page and click "Apply for Activation".
 
 - **Vivo push can be enabled officially only after your application is approved for the push service**
 Go to **[Vivo Open Platform](https://dev.vivo.com.cn/home)** > **Push Operation Platform**. In **Message Push** > **All Applications**, the created application is displayed in "Application Name". Click **Application Name**, select the target application, and click **Submit Application**.
-![](https://main.qcloudimg.com/raw/4e7bec948dd18600d6c13636dd6e42b2.png)
+
 >?It takes about 5 minutes for the push service of some vendors to take effect after being enabled. If the registration still fails after the push service is enabled, please wait a while and try again.
 
 
