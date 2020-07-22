@@ -26,7 +26,7 @@ The causes of ping unreachable alarms and corresponding solutions are as detaile
 1. Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor). 
 2. Click **CVM** > **instance name** of the alarm to view whether there are exceptions such as breakpoints or high metric value in the CVM instance monitoring data.
 	- If there are breakpoints or high metric value in the monitoring data, it might be due to CVM instance kernel failures, instance failures, or high bandwidth load. You can troubleshoot the problem as instructed in [CVM - Instance Failures](https://intl.cloud.tencent.com/document/product/213/12771).
-	![](https://main.qcloudimg.com/raw/74e937123ed49778ab308e4bf9d67d6c.png)
+	![](https://main.qcloudimg.com/raw/c0bac0a5e0ec3e7a2f95b3ebd0a94a36.png)
 	- If everything is OK, please proceed to the next step to [check whether the CVM instance status is exceptional](#cvmstate).
 
 <span id="buzhou2"></span>
@@ -38,7 +38,7 @@ The causes of ping unreachable alarms and corresponding solutions are as detaile
  1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index). 
  2. On the "Instance List" page, check whether the status of the instance related to the ping unreachable alarm is normal.
 - If the status is "shut down", the ping unreachable alarm was caused by manual shutdown. You can click **More** > **Instance Status** > **Start** to restart the instance. If the instance status is "running", but the problem persists, you can proceed to the next step to [check whether ICMP is enabled in the security group associated with the CVM instance](#buzhou3).
- ![](https://main.qcloudimg.com/raw/a311287dc25eb7ce7a7d445dfa6c0dbe.png)
+ ![](https://main.qcloudimg.com/raw/1c8845adbc6c43f682c46d605f2eb507.png)
 - If the status is "running", you can proceed to the next step to [check whether ICMP is enabled in the security group associated with the CVM instance](#buzhou3).
 
 <span id="buzhou3"></span>
@@ -48,9 +48,9 @@ The causes of ping unreachable alarms and corresponding solutions are as detaile
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. On the "Instance List" page, select the ID/name of the instance where the ping unreachable alarm occurred to enter the instance details page.
 3. Select the **Security Group** tab to enter the security group management page of the instance. Then, check whether the ICMP port protocol is refused or added in the inbound and outbound rules of the security group of the instance as shown below:
-   ![](https://main.qcloudimg.com/raw/18d39ee7f63505628982a23c3a87add6.png)
+   ![](https://main.qcloudimg.com/raw/84b612929b2078f08a3ef63d1f2ea519.png)
    - The ICMP port protocol is allowed in the system default security group. If you manually refuse the ICMP protocol in the security default security group or do not add the ICMP protocol in the custom security group, ping unreachable alarms will occur. You can click **Edit Rule** in the top-right corner to add/modify the ICMP port protocol on the security group rule management page as shown below:
-     ![](https://main.qcloudimg.com/raw/d1970b158c79c23f4f0307f715f9076e.png)
+     ![](https://main.qcloudimg.com/raw/de0c99ed1d34c2d49c7d8b15df3cbe40.png)
    - If the ICMP port protocol restriction in the security group has been modified, but the problem persists, please proceed to the next step to [check whether there are restrictions in the CVM instance Windows firewall or Linux kernel parameter and iptables settings](#buzhou4).
 
 <span id="buzhou4"></span>
@@ -61,12 +61,12 @@ The causes of ping unreachable alarms and corresponding solutions are as detaile
 
 1. Log in to the [CVM instance](https://intl.cloud.tencent.com/document/product/213/4855).
 2. Open **Control Panel**, select "Small icons" as the view mode, and click **Windows Firewall** as shown below:
-   ![](https://mc.qcloudimg.com/static/img/e5e6a914dbdaf1f0dab5e89440d7662e/image.png)
+   ![](https://main.qcloudimg.com/raw/f34c0cd664453a8340ff5787d67c7c3f.png)
 3. On the "Windows Firewall" page, select **Advanced settings** as shown below:
-   ![](https://mc.qcloudimg.com/static/img/247440c6c79697133685cbf16544d2cc/image.png)
+   ![](https://main.qcloudimg.com/raw/4a4b6262f17db9816c8c3cdc57e7ca83.png)
 4. In the "Windows Firewall with Advanced Security" window that pops up, check whether ICMP inbound/outbound rules are restricted.
 As shown below, if the "WinAgent:ICMP" inbound/outbound rules are disabled, the ping unreachable alarm was caused by the restriction in Windows Firewall. You can right-click the rules to enable them.
-    ![](https://main.qcloudimg.com/raw/c4516f61a764456a3d48c289116904d1.png)
+    ![](https://main.qcloudimg.com/raw/2cc44ea785a598b540cce7d21613448c.png)
 
 #### Linux 
 
@@ -119,7 +119,7 @@ If you feel disturbed by the metric alarms or event alarms of an alarm policy, y
 
 1. Enter the [Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) page in the Cloud Monitor Console.
 2. Find the name of the alarm policy that triggered the alarm, toggle off the switch in the **Enable/Disable Alarm** column, and click **OK** to disable the alarm policy.
-   ![](https://main.qcloudimg.com/raw/65fce402b3695e3260e042f3b4d79457.png)
+   ![](https://main.qcloudimg.com/raw/f8aae14afc04d22eec9326bf8eab9bcc.png)
 
 ### Disabling event alarm only
 
@@ -128,6 +128,6 @@ If you need only the metric alarms in an alarm policy, you can disable event ala
 1. Enter the [Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) page in the Cloud Monitor Console.
 2. Click the name of the alarm policy that triggered the alarm to enter the alarm policy management page.
 3. Click **Edit** in the top-right corner of the alarm trigger condition. In the pop-up window, uncheck event alarming and click **Save** as shown below:
-   ![](https://main.qcloudimg.com/raw/652a4abb4d42412d043c50a0eb058001.png)
+   ![](https://main.qcloudimg.com/raw/aac1c806476983d7c1e57572cf07d0c7.png)
 
 
