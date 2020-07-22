@@ -7,7 +7,7 @@ You can also manage groups by calling RESTful APIs.
 2. Configure the following parameters in the "Add Group" dialog box that appears:
  - Group name: enter the name of the group. This is a required parameter with a maximum length of 30 bytes.
  - Group owner ID: enter the group owner ID. This is an optional parameter and you must enter a registered username.
- - Group type: set the group type. Supported group types are Private, Public, ChatRoom, AVChatRoom, and BChatRoom. For more information, see [Group Types](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E5.BD.A2.E6.80.81.E4.BB.8B.E7.BB.8D).
+ - Group type: set the group type. Supported group types include Work, Public, Meeting, and AVChatRoom. For more information, see [Group system](https://intl.cloud.tencent.com/document/product/1047/33529#GroupType).
 3. Click **OK** to save the settings.
  When group creation is completed, you can see the group ID, group name, group owner, type, and creation time in the group list.
 
