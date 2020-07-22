@@ -1,8 +1,15 @@
+### 2.7.6 @2020.7.9
+
+**修复**
+
+长时间使用直播群（AVChatRoom）偶现拉不到消息。
+
 ### 2.7.5 @2020.7.2
 
 **修复**
 
 使用 REST API [创建好友工作群](https://intl.cloud.tencent.com/document/product/1047/34895) 并指定群成员，创建成功后群成员发消息失败。
+
 
 ### 2.7.2 @2020.6.30
 
@@ -10,7 +17,6 @@
 
 - 偶现 [joinGroup](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#joinGroup) 时 SDK 提示“已在群内”，实际未在群内，导致无法正常收发消息的问题。
 - 临时会议群发消息数量统计错误。
-
 
 ### 2.7.0 @2020.6.8
 
@@ -119,7 +125,7 @@
 ### 2.4.2 @2020.2.7
 
 **新增**
-群组消息支持设置 [消息优先级](https://intl.cloud.tencent.com/document/product/1047/33526#.E7.BE.A4.E6.B6.88.E6.81.AF.E4.BC.98.E5.85.88.E7.BA.A7)，[枚举值](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.MSG_PRIORITY_HIGH)，[使用示例](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createTextMessage)。
+群组消息支持设置 [消息优先级](https://intl.cloud.tencent.com/document/product/1047/33526)，[枚举值](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.MSG_PRIORITY_HIGH)，[使用示例](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createTextMessage)。
 
 
 ### 2.4.1 @2020.1.14
@@ -144,6 +150,7 @@
 - [createFileMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFileMessage) 上传文件大小由20M调整为100M。
 - [群提示消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload) 的 `msgMemberInfo` 和 `shutupTime` 即将废弃，请使用 `memberList` 和 `muteTime` 代替。
 
+
 **修复**
 - 调用 [off](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#off) 接口无法取消监听事件。
 - [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html) 的 `isRead` 属性值和类型不准确。
@@ -155,7 +162,7 @@
 
 ### 2.3.2 @2019.12.18
 **变更**
-[getUserProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getUserProfile) 和 [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile) 支持 [自定义资料字段](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。
+[getUserProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getUserProfile) 和 [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile) 支持 [自定义资料字段](https://intl.cloud.tencent.com/document/product/1047/33520)。
 
 **修复**
 [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) 获取的组合消息丢失消息。
@@ -170,7 +177,7 @@
 - 发消息失败时，SDK 返回实际的错误码和错误信息。
 - 调用 [logout](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#logout) 时只登出当前实例的消息通道。
 - 对接入侧传入的回调函数做安全性封装，如果回调函数逻辑有误，可捕获异常快速定位问题。
-- 遇到 [IM 服务端的错误码](https://intl.cloud.tencent.com/document/product/1047/34348#.EF.BC.88.E4.BA.8C.EF.BC.89.E6.9C.8D.E5.8A.A1.E7.AB.AF.E7.9A.84.E9.94.99.E8.AF.AF.E7.A0.81) 时 SDK 输出中文错误信息。
+- 遇到 [IM 服务端的错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 时 SDK 输出中文错误信息。
 
 **修复**
 - 微信小程序环境长时间切后台再切回前台偶现消息丢失。
