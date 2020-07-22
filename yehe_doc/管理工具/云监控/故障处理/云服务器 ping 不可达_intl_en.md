@@ -1,99 +1,105 @@
 ## Overview
-This document describes how to troubleshoot and solve the problem of a CVM instance being unreachable when pinged.
 
-## Problem Analysis
+This document describes the troubleshooting methods and solutions when you receive a ping unreachable event alarm notification from CVM. You can resolve an alarm as instructed in [Troubleshooting Directions](#paichabuzhou). If you feel disturbed by alarm notifications, you can [disable the alarming feature](#guanbi).
 
-The CVM instance on the local server may be unreachable when pinged for the following reasons:
+## Causes of Alarms and Solutions
 
-- The target CVM configuration is incorrect
-- The domain name resolution fails
-- The link is abnormal
+The causes of ping unreachable alarms and corresponding solutions are as detailed below:
 
-  
+| Cause of Alarm | Solution |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| CVM instance failure, kernel failure, or high bandwidth load | Troubleshoot as instructed in [Step 1](#buzhou1) to fix the exception, or [disable the alarming feature](#guanbi). |
+| CVM instance shutdown | Troubleshoot as instructed in [Step 2](#buzhou2) to start the CVM instance, or [disable the alarming feature](#guanbi). |
+| ICMP restricted in the security group associated with CVM instance | Troubleshoot as instructed in [Step 3](#buzhou3) to modify the ICMP configuration of the security group, or [disable the alarming feature](#guanbi). |
+| ICMP restricted by Windows Firewall or <br>Linux kernel parameter or iptables of CVM instance | Troubleshoot as instructed in [Step 4](#buzhou4) to lift the corresponding restriction, or [disable the alarming feature](#guanbi). |
 
-## Troubleshooting Approaches
+>?The network ping status of a CVM instance is automatically monitored by the alarming system of Cloud Monitor, which is irrelevant to whether a public IP is configured for the CVM instance.
 
-If the local network is normal (that is, other websites can be pinged through), troubleshoot the problem as follows:
+<span id="paichabuzhou"></span>
 
-- [Check whether the instance is configured with a public IP address](#isConfigurePublicIP)
-- [Check the security group settings](#CheckSecurityGroupSetting)
-- [Check the OS settings](#CheckOSSetting)
-- [Check whether the domain name is registered](#CheckDomainRegistration)
-- [Check the DNS](#CheckDNS)
-- [Perform other operations](#OtherOperations)
+## Troubleshooting Directions
 
-## Directions
+<span id="buzhou1"></span>
 
-<span id="isConfigurePublicIP"></span>
+### Step 1. Check the CVM instance monitoring data
 
-### Checking whether the instance is configured with a public IP address
+1. Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor). 
+2. Click **CVM** > **instance name** of the alarm to view whether there are exceptions such as breakpoints or high metric value in the CVM instance monitoring data.
+	- If there are breakpoints or high metric value in the monitoring data, it might be due to CVM instance kernel failures, instance failures, or high bandwidth load. You can troubleshoot the problem as instructed in [CVM - Instance Failures](https://intl.cloud.tencent.com/document/product/213/12771).
+	![](https://main.qcloudimg.com/raw/74e937123ed49778ab308e4bf9d67d6c.png)
+	- If everything is OK, please proceed to the next step to [check whether the CVM instance status is exceptional](#cvmstate).
 
->? Only CVM instances configured with public IP addresses can communicate with other computers on the Internet. For CVM instances that are not configured with public IP addresses, the attempt to ping through the private IP address of an instance through the Internet will fail.
->
+<span id="buzhou2"></span>
+
+### Step 2. Check the CVM instance status
+
+  > ?Currently, ping unreachable alarms caused by manual shutdown are not excluded from the Cloud Monitor event alarms, which will be optimized in the future.
+
+ 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index). 
+ 2. On the "Instance List" page, check whether the status of the instance related to the ping unreachable alarm is normal.
+- If the status is "shut down", the ping unreachable alarm was caused by manual shutdown. You can click **More** > **Instance Status** > **Start** to restart the instance. If the instance status is "running", but the problem persists, you can proceed to the next step to [check whether ICMP is enabled in the security group associated with the CVM instance](#buzhou3).
+ ![](https://main.qcloudimg.com/raw/a311287dc25eb7ce7a7d445dfa6c0dbe.png)
+- If the status is "running", you can proceed to the next step to [check whether ICMP is enabled in the security group associated with the CVM instance](#buzhou3).
+
+<span id="buzhou3"></span>
+
+### Step 3. Check ICMP settings in the security group
+
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
-2. On the **Instances** page, select the ID or the name of the target instance to access its details page, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/12dfabc6420688ebb0dd0f1a8f4d7188.png)
-3. Check whether the instance is configured with a public IP address under "Network Information".
- - If yes, [check the security group settings](#CheckSecurityGroupSetting).
- - If no, [bind an EIP](https://intl.cloud.tencent.com/document/product/213/16586#.E5.BC.B9.E6.80.A7.E5.85.AC.E7.BD.91-ip-.E7.BB.91.E5.AE.9A.E4.BA.91.E4.BA.A7.E5.93.81).
+2. On the "Instance List" page, select the ID/name of the instance where the ping unreachable alarm occurred to enter the instance details page.
+3. Select the **Security Group** tab to enter the security group management page of the instance. Then, check whether the ICMP port protocol is refused or added in the inbound and outbound rules of the security group of the instance as shown below:
+   ![](https://main.qcloudimg.com/raw/18d39ee7f63505628982a23c3a87add6.png)
+   - The ICMP port protocol is allowed in the system default security group. If you manually refuse the ICMP protocol in the security default security group or do not add the ICMP protocol in the custom security group, ping unreachable alarms will occur. You can click **Edit Rule** in the top-right corner to add/modify the ICMP port protocol on the security group rule management page as shown below:
+     ![](https://main.qcloudimg.com/raw/d1970b158c79c23f4f0307f715f9076e.png)
+   - If the ICMP port protocol restriction in the security group has been modified, but the problem persists, please proceed to the next step to [check whether there are restrictions in the CVM instance Windows firewall or Linux kernel parameter and iptables settings](#buzhou4).
 
-<span id="CheckSecurityGroupSetting"></span>
-### Checking the security group settings
+<span id="buzhou4"></span>
 
-A security group is a virtual firewall that allows you to control the inbound and outbound traffic of an associated instance. You can specify the protocol, port, and policy in a security group rule. The ICMP protocol is used in the ping test. Therefore, you need to check whether ICMP is allowed in the security group associated with the instance. To view the security group associated with the instance and its inbound and outbound rules, perform the following steps:
-1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
-2. On the **Instances** page, select the ID or the name of the target instance to access the instance details page.
-3. Click the **Security Groups** tab to access the security group management page of the instance, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/bf5881258356a0af748ae16d9cf321a2.png)
-4. Check the security group associated with the instance and the detailed inbound and outbound rules to determine whether this security group allows ICMP.
- - If yes, [check the OS settings](#CheckOSSetting).
- - If no, enable the ICMP protocol policy in the security group.
+### Step 4. Check the firewall or Linux kernel parameter and iptables settings
 
-<span id="CheckOSSetting"></span>
-### Checking the OS settings
+#### Windows 
 
-Based on the operating system (OS) of the instance, select one of the following methods to check the OS settings:
-- For the Linux OS, [check the Linux kernel parameters and the firewall settings](#CheckLinux).
-- For the Windows OS, [check the Windows firewall settings](#CheckLinux).
+1. Log in to the [CVM instance](https://intl.cloud.tencent.com/document/product/213/4855).
+2. Open **Control Panel**, select "Small icons" as the view mode, and click **Windows Firewall** as shown below:
+   ![](https://mc.qcloudimg.com/static/img/e5e6a914dbdaf1f0dab5e89440d7662e/image.png)
+3. On the "Windows Firewall" page, select **Advanced settings** as shown below:
+   ![](https://mc.qcloudimg.com/static/img/247440c6c79697133685cbf16544d2cc/image.png)
+4. In the "Windows Firewall with Advanced Security" window that pops up, check whether ICMP inbound/outbound rules are restricted.
+As shown below, if the "WinAgent:ICMP" inbound/outbound rules are disabled, the ping unreachable alarm was caused by the restriction in Windows Firewall. You can right-click the rules to enable them.
+    ![](https://main.qcloudimg.com/raw/c4516f61a764456a3d48c289116904d1.png)
 
-<span id="CheckLinux"></span>
-#### Checking the Linux kernel parameters and the firewall settings
+#### Linux 
 
->? In the Linux system, the kernel and the firewall settings determine whether a ping test is allowed. If the ping test is prohibited in either settings, "Request timeout" will be returned in a ping test.
+>? Whether pings are allowed on Linux is subject to both the kernel and iptables settings. If either of them disables pings, ping unreachable alarms will occur.
 
-##### Checking the kernel parameter `icmp_echo_ignore_all`
+**Check the kernel parameter**
 
-1. Log in to the instance.
-2. Run the following command to view the settings of icmp_echo_ignore_all.
+1. Log in to the [CVM instance](https://intl.cloud.tencent.com/document/product/213/4855).
+2. Run the following command to view the `icmp_echo_ignore_all` setting of the system:
 ```plaintext
 cat /proc/sys/net/ipv4/icmp_echo_ignore_all
 ```
- - If 0 is returned, the OS allows all ICMP Echo requests. In this case, [check the firewall settings](#CheckLinuxFirewall).
- - If 1 is returned, the OS denies all ICMP Echo requests. In this case, perform [step 3](#Linux_step03).
-3. <span id="Linux_step03">Run the following command to change the settings of the kernel parameter icmp_echo_ignore_all.</span>
+- If 0 is returned, the system allows all ICMP echo requests. In this case, please [check iptables settings](#CheckLinuxIptables).
+- If 1 is returned, the system rejects all ICMP echo requests, which indicates that the ping unreachable alarm was caused by the restriction in the Linux kernel parameter. In this case, please enable ICMP as instructed in step 3.
+3. <span id="Linux_step03">Run the following command with an account with root privileges to modify the setting of the `icmp_echo_ignore_all` kernel parameter:</span>
 ```plaintext
 echo "0" >/proc/sys/net/ipv4/icmp_echo_ignore_all
 ```
 
-<span id="CheckLinuxFirewall"></span>
-##### Checking the firewall settings
+<span id="CheckLinuxIptables"></span>
 
-Run the following command to check whether the firewall rules of the CVM instance and the corresponding ICMP rules are deactivated.
+**Check iptables settings**
+
+1. Run the following command to check whether the current firewall rules of the CVM instance and ICMP rules are restricted:
 ```plaintext
 iptables -L
 ```
-- If the following result is returned, the ICMP rules are active. In this case, [check whether the domain name is registered](#CheckDomainRegistration).
-```plaintext
-Chain INPUT (policy ACCEPT)
-target     prot opt source               destination         
-ACCEPT     icmp --  anywhere             anywhere             icmp echo-request
-Chain FORWARD (policy ACCEPT)
-target     prot opt source               destination         
-Chain OUTPUT (policy ACCEPT)
-target     prot opt source               destination  
-ACCEPT     icmp --  anywhere             anywhere             icmp echo-request
-```
-- If the return result indicates that the corresponding ICMP rules are inactive, run the following commands to activate them.
+	- If the returned result is as follows, ICMP is not restricted in iptables:
+		![](https://main.qcloudimg.com/raw/4edec2beb0d2cc175dddadd64ca6c51f.png)
+	- If the returned result is as follows, ICMP is restricted in iptables, which indicates that the ping unreachable alarm was caused by the ICMP restriction in Linux iptables. In this case, please enable ICMP in iptables as instructed in step 2.
+	![](https://main.qcloudimg.com/raw/004ce1d45e02a4dc5faa2ad0d3c56a9d.png)
+<span id="LinuxIptables"></span>
+2. Run the following command to enable ICMP in iptables:
 ```plaintext
 #Chain INPUT
 iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
@@ -101,18 +107,27 @@ iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 ```
 
-<span id="CheckWindows"></span>
-#### Checking the Windows firewall settings
+If the problem persists after all the steps above are completed, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
-Check the Windows firewall settings.
-1. Log in to the instance.
-2. Open **Control Panel** and select **Windows Firewall**.
-3. On the **Windows Firewall** page, select **Advanced settings**.
-4. In the **Windows Firewall with Advanced Security** window that appears, check whether the inbound or outbound rules for ICMP are deactivated.
-5. If the inbound or outbound rules for ICMP are deactivated, please activate them.
-### Performing other operations
+<span id="guanbi"></span>
 
-If you cannot solve the problem by performing the operations above, perform the following operations:
-- If the domain name cannot be pinged through, check your website configurations.
-- If the public IP address cannot be pinged through, [submit a ticket](https://console.cloud.tencent.com/workorder/category) and attach relevant information about the instance and the two-way (from the local server to the CVM and from the CVM to the local server) MTR data to receive assistance.
-For more information on how to use MTR, see [CVM Network Latency and Packet Loss](https://intl.cloud.tencent.com/document/product/213/14638).
+## Disabling Alarming Feature
+
+### Disabling alarm policy
+
+If you feel disturbed by the metric alarms or event alarms of an alarm policy, you can disable the policy in the following steps:
+
+1. Enter the [Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) page in the Cloud Monitor Console.
+2. Find the name of the alarm policy that triggered the alarm, toggle off the switch in the **Enable/Disable Alarm** column, and click **OK** to disable the alarm policy.
+   ![](https://main.qcloudimg.com/raw/65fce402b3695e3260e042f3b4d79457.png)
+
+### Disabling event alarm only
+
+If you need only the metric alarms in an alarm policy, you can disable event alarming in the following steps:
+
+1. Enter the [Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) page in the Cloud Monitor Console.
+2. Click the name of the alarm policy that triggered the alarm to enter the alarm policy management page.
+3. Click **Edit** in the top-right corner of the alarm trigger condition. In the pop-up window, uncheck event alarming and click **Save** as shown below:
+   ![](https://main.qcloudimg.com/raw/652a4abb4d42412d043c50a0eb058001.png)
+
+
