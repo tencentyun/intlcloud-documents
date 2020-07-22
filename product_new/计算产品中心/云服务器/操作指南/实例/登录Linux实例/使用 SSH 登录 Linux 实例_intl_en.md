@@ -1,6 +1,6 @@
 ## Scenario
 
-This document describes how to use SSH key to log into a Linux instance in a local computer using Linux or MacOS.
+This document describes how to use SSH key to log in to a Linux instance from a local Linux, Mac OS or Windows operating system.
 
 ## Applicable local OS
 
@@ -24,6 +24,7 @@ Linux or Mac OS
 1. Execute the following command to connect to the Linux CVM.
 > If your local computer uses Mac OS, you must open the terminal provided by the system and then execute the following command.
 > If your local computer uses Linux, you can directly execute the following command.
+> If your local computer uses Windows 10 or Windows Server 2019, please first open the Windows Command Prompt (CMD), and then run the following command.
 >
 ```
 ssh <username>@<hostname or IP address>
@@ -38,6 +39,7 @@ ssh <username>@<hostname or IP address>
 1. Execute the following command to set the private key file readable only to you.
 > If your local computer uses Mac OS, you must open the terminal provided by the system and then execute the following command.
 > If your local computer uses Linux, you can directly execute the following command.
+> If your local computer uses Windows 10 or Windows Server 2019, please first open the Windows Command Prompt (CMD), and then run the following command.
 >
 ```
 chmod 400 <The absolute path of the private key downloaded to be associated with the CVM>
