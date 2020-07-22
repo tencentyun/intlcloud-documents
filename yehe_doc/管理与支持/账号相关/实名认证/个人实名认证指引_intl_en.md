@@ -1,0 +1,32 @@
+## Operation Scenarios
+This document describes how to verify the individual identity for your Tencent Cloud account. After successful verification, the account and Tencent Cloud resources under it will belong to you and can be used in individual businesses on the Tencent Cloud official website. However, you cannot use them in organizational businesses or apply for special VAT invoices for them.
+>One passport/driver's license number can be used to verify the identity of up to three Tencent Cloud accounts.
+>
+>If your resources are in Mainland China, and you want to apply for ICP filing in the future, please make sure that the name in identity verification is the same as that of the ICP filing entity; otherwise, ICP filing application will fail.
+
+The following describes how to verify your individual identity in detail.
+
+## Prerequisites
+You need to have a Tencent Cloud account. If you don't have an account yet, please sign up first as instructed in [Signing up for Tencent Cloud Account](https://intl.cloud.tencent.com/zh/document/product/378/17985).
+
+## Directions
+
+### Step 1. Select individual identity verification
+
+1. Log in to the Tencent Cloud Console, enter the [Account Information](https://console.cloud.tencent.com/developer) page, select **Basic Information** > **Verification Status**, and click **Submit for Verification**.
+
+![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
+
+
+
+2. Select "Individual Verification" and click **Verify Now**.
+   ![image-20200701171147604](https://main.qcloudimg.com/raw/f23b527a964b770a45da7a32e8ba40f9.png)
+
+
+
+### Step 2. Enter basic individual information
+
+The global Tencent Cloud website allows you to verify your individual identity with your passport or driver's license number. After entering all required information, please click **Submit**.
+![image-20200701205356370](https://main.qcloudimg.com/raw/e778e09cdc5f814b74c46624d16d540e.png)
+
+After the identity verification application is submitted, the Tencent Cloud team will complete the review within two to three business days and notify you of the result through Message Center, email, and SMS.
