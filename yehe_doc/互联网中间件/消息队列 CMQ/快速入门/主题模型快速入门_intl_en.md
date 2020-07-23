@@ -58,7 +58,7 @@ A subscriber can enter a queue so as to use it to receive published messages.
 ```
 
 ### Using other means to process messages
-Subscribers can process messages on their own without using queues. For more information, please see [Delivering Messages](https://intl.cloud.tencent.com/document/product/406/7420?from_cn_redirect=1).
+Subscribers can process messages on their own without using queues. For more information, please see [Delivering Messages](https://cloud.tencent.com/document/product/406/7420).
 
 
 ## 4. Use Routing Matching
@@ -86,7 +86,7 @@ The binding key and routing key are used together and are compatible with the to
     topicName = 'TopicTest'
     my_topic = account.get_topic(topicName)
     topic_meta = TopicMeta()
-    topic_meta.filterType =2 // It indicates that routing matching will be used when messages are delivered to subscriptions
+    topic_meta.filterType = =2 // It indicates that routing matching will be used when messages are delivered to subscriptions
     // If `filterType` is 1, tags are used for filtering
     my_topic.create(topic_meta)
 
@@ -96,7 +96,8 @@ The binding key and routing key are used together and are compatible with the to
     // Enter the subscription name, which is a queue name here
     subscription_meta.Endpoint = "queue name  "
     subscription_meta.Protocal = "queue"
-    subscription_meta.bindingKey=[1.*.0]  // If the message tag is `[1.any characters.0]`, all subscribers will receive messages carrying this tag
+    subscription_meta.bindingKey=[1.*.0]  // If the message tag is `[1.any characters.0]`, all subscribers will
+    // receive messages carrying this tag
     my_sub.create(subscription_meta)
 ```
 
@@ -105,7 +106,7 @@ The binding key and routing key are used together and are compatible with the to
 ```
     message = Message()
     message.msgBody = "this is a test message"
-    message.routingKey = '1.test.0' // This message will be delivered to the address subscribed to by `my_sub`
+    routingKey = '1.test.0' // This message will be delivered to the address subscribed to by `my_sub`
     my_topic.publish_message(message)
 ```
 

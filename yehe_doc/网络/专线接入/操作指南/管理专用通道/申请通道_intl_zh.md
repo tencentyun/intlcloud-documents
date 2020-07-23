@@ -8,8 +8,10 @@
 
 ## 大网段使用限制
 
-为了提高您网络的精细化调度能力，请避免发布以下路由：
+为了提高您网络的精细化调度能力，请勿发布以下路由：
 10.0.0.0/8， 172.16.0.0/12， 192.168.0.0/16， 100.64.0.0/10。
+>!若发布大网段路由，专线网关将直接拒收。
+
 您可以将以上大段路由拆分进行发布：
 
 - 10.0.0.0/8            
@@ -53,7 +55,7 @@
 	</tr>
 	<tr>
 	<td align="center" style='white-space:nowrap'>接入网络</td>
-	<td>支持 <a href="https://intl.cloud.tencent.com/document/product/215">私有网络</a>、黑石网络 和 <a href="https://intl.cloud.tencent.com/document/product/1003">云联网网络</a></td>
+	<td>支持 <a href="https://cloud.tencent.com/document/product/215">私有网络</a>、<a href="https://cloud.tencent.com/document/product/386">黑石网络</a> 和 <a href="https://cloud.tencent.com/document/product/877">云联网网络</a></td>
 	<td>云联网：可实现一个通道连接多个 VPC 网络。</td>
 	</tr>
 	<tr>
@@ -112,7 +114,7 @@
  </tr>
  <tr>
  <td align="center" style='white-space:nowrap'>BGP 密钥</td>
- <td>【BGP路由】选填，请输入 BGP 邻居的 MD5 值。默认 "tencent"，留空表示不需要 BGP 密钥。</td>
+ <td>【BGP路由】选填，请输入 BGP 邻居的 MD5 值。默认 "tencent"，留空表示不需要 BGP 密钥，不支持 ? & 空格" \ + 六种特殊字符。</td>
  <td>-</td>
  </tr>
  </table>

@@ -70,7 +70,7 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 
 You can call the [login(userID, userSig)](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/v2tmp/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a73fc0e14c5f2f5fc06a80081479fb416) function of `V2TIMManager` to log in to the SDK. The features of the IM SDK are available to you only after you successfully log in to the SDK.
 
-- UserID: we recommend that the UserID contains only uppercase or lowercase letters, digits, underscores, and hyphens with a length less than 32 bytes.
+- UserID: enter only letters (a-z and A-Z), digits (0-9), underscores, and hyphens. Its length cannot exceed 32 bytes.
 - UserSig: indicates the login ticket of the IM SDK. It is calculated by your business server to ensure security. For more information on the calculation method, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ### Login scenarios

@@ -118,4 +118,4 @@ As you can see below, if an object does not have a null version in the bucket, a
 The following figure shows that deleting a specified object version will delete the object permanently.
 ![](https://main.qcloudimg.com/raw/e814ec84e0c64b69275aef8a9dbe3d6c.png)
 
->Only the root account can delete a specified object version permanently.
+>!Only the root account or an account authorized by it can delete a specified object version.

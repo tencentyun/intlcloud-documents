@@ -3,7 +3,7 @@ ProcessReady
 <span id="ProcessReady"></span>
 ## API Description
 
-This API is used to notify GSE that a game process started is ready to sustain a `GameServerSession`. Then, GSE can call the [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) API to assign a `GameServerSession` to the process.
+This API is used to notify GSE that a launched game process is ready to sustain a `GameServerSession`. Then, GSE can call the [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) API to assign a `GameServerSession` to the process.
 
 ## Request Message
 

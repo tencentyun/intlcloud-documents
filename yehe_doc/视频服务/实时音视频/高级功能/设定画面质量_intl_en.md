@@ -1,9 +1,9 @@
 ## Introduction
 
 In TRTCCloud, you can adjust the video quality in the following ways:
-- `TRTCAppScene` in [TRTCCloud.enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d): is used to select your application scenario.
-- [TRTCCloud.setVideoEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e): is used to set the encoding parameter.
-- [TRTCCloud.setNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9): is used to set the network control policy.
+- `TRTCAppScene` in [TRTCCloud.enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d): used to select your application scenario.
+- [TRTCCloud.setVideoEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e): used to set the encoding parameter.
+- [TRTCCloud.setNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9): used to set the network control policy.
 
 This document describes how to configure these parameters to make the video quality of the TRTC SDK meet your project-specific needs.
 You can also see the following demos:
@@ -42,11 +42,11 @@ This corresponds to the scenario where most of the time there is only one person
 | Online education (teacher on iPad) | 640x360 | 15 | 550 Kbps |
 | Online education (student) | 320x180 | 15 | 250 Kbps |
 
-### Detailed explanations of fields
+### Detailed description of fields
 
 - **(TRTCVideoResolution) videoResolution**
-Encoded resolution; for example, 640 x 360 refers to the width (pixels) x height (pixels) of the encoded video image. In the `TRTCVideoResolution` enum definition, only landscape resolution (i.e., width >= height) is defined. If you want to use portrait resolution, you need to set `resMode` to `Portrait`.
- >As many hardware codecs only support pixel widths that are divisible by 16, the actual resolution encoded by the SDK is not necessarily exactly the same as configured by the parameter; instead, it will be automatically corrected based on the divisor of 16; for example, the resolution 640 x 360 may be adapted to 640 x 368 inside the SDK.
+Encoded resolution; for example, 640x360 refers to the width (pixels) x height (pixels) of the encoded video image. In the `TRTCVideoResolution` enum definition, only landscape resolution (i.e., width >= height) is defined. If you want to use portrait resolution, you need to set `resMode` to `Portrait`.
+ >As many hardware codecs only support pixel widths that are divisible by 16, the actual resolution encoded by the SDK is not necessarily exactly the same as configured by the parameter; instead, it will be automatically corrected based on the divisor of 16; for example, the resolution 640x360 may be adapted to 640x368 inside the SDK.
 
 - **(TRTCVideoResolutionMode) resMode**
 This determines the landscape or portrait resolution. Because only landscape resolution is defined in `TRTCVideoResolution`, if you want to use portrait resolution such as 360x640, you need to specify `resMode` as `TRTCVideoResolutionModePortrait`. Generally, landscape resolution is used on PCs and Macs, while portrait resolution is used on mobile devices.
@@ -100,7 +100,7 @@ Definition is ensured on a weak network, i.e., the image will be as clear as pos
 
 For the `controlMode` parameter, select **TRTCQosControlModeServer**. `TRTCQosControlModeClient` is used for internal debugging by the Tencent Cloud R&D team and should be ignored.
 
-## Common Myths
+## Common Misunderstandings
 **1. The higher the resolution, the better?**
 Higher resolutions require higher bitrates for support. If the resolution is 1280x720, but the bitrate is specified as 200 Kbps, the video image will have a lot of blurs. We recommend that you set it as described in the [Resolution-bitrate reference table](https://intl.cloud.tencent.com/document/product/647/35153).
 

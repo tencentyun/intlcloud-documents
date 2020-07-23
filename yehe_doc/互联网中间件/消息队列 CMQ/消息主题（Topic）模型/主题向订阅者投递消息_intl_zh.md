@@ -1,5 +1,5 @@
 主题（Topic）向订阅者投递消息的模型如下：
-![](https://main.qcloudimg.com/raw/1dc8d4460c623d81bb86bcbc7cdeb546.png)
+![](https://main.qcloudimg.com/raw/6df92543e8958a1a252ad8d7e962bab4.jpg)
 
 Topic 向订阅者投递消息时，遵循以下原则：
 - Topic 会尽最大努力将生产者 publish 的消息，投递（notification）到订阅者。

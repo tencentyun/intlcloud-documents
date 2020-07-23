@@ -31,7 +31,7 @@ Request fees include the fees incurred by the **user requests** and the **backen
 
 | Billable Item   | Applicable Storage Class       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                               | Definition                                                   | Billing Description                                                     |
 | -------- | -------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-|Number of requests  | STANDARD<br>STANDARD_IA<br>ARCHIVE  | Calculated based on the number of requests sent  |  <li>Monthly billing cycle<br><li>If the accumulated number of requests is below 10,000, it will be calculated as 10,000 requests<br><li>Request fees = unit price per 10,000 requests * monthly accumulated number of requests / 10,000 (rounded down) |
+|Number of requests  | STANDARD<br>STANDARD_IA<br>ARCHIVE  | Calculated based on the number of requests sent  |  <li> Monthly billing cycle<br><li>If the accumulated number of requests is below 10,000, it will be calculated as 10,000 requests<br><li> Request fees = unit price per 10,000 requests * monthly accumulated number of requests / 10,000 |
 
 #### Billing restrictions
 
@@ -123,9 +123,9 @@ The figure below shows how traffic fees are incurred as data flows from COS to e
 
 <span id="jf5"></span>
 
-## Administrative Feature Fees
+## Management Feature Fees
 
-Administrative feature fees are calculated based on the use of enabled administrative features, such as inventory and COS select.
+Management feature fees are calculated based on the use of enabled management features, such as inventory and select.
 
 
 
@@ -145,7 +145,7 @@ Administrative feature fees are calculated based on the use of enabled administr
 <td><li>Daily billing cycle<br></li><li>Billed per million objects listed</li></td>
 </tr>
 <tr>
-<td>COS Select feature fees</td>
+<td>Select feature fees</td>
 <td>STANDARD storage</td>
 <td>Fees incurred from extracting objects when the COS select feature is enabled</td>
 <td><li>Daily billing cycle<br></li><li>Billed by the size of data extracted</li></td>
