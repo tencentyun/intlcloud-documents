@@ -6,7 +6,6 @@ COS log storage offers the following benefits:
 
 - **Persistent storage**: COS provides stable, persistent storage that allows you to store logs in COS at a very low cost. You can access your logs anytime, anywhere for business analysis or decision-making.
 - **COS Select**: this feature allows for the simple extraction of logs stored on COS. You can combine log fields to make it easier to extract the information you need and reduce data download traffic.
-- **Data analysis**: you can analyze one or more COS logs using Sparkling, which then can be used to facilitate and provide a basis for important business decisions.
 
 ## Shipping Logs
 
