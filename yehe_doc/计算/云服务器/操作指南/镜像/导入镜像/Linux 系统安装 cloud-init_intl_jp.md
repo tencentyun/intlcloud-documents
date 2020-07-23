@@ -1,161 +1,232 @@
-## Cloud-Init
+## 操作シナリオ
 
-### Cloud-Initとは
-Cloud-InitはCVMインスタンス内で非常駐サービスとして実行されるオープンソースツールです。起動時に実行され、実行が完了するとすぐに終了し、どちらのポートも監視しません。
-Tencent CloudのLinuxパブリックイメージには、cloud-initサービスでプリインストールされています。 Cloud-Initサービスは主にCVMインスタンスの初期化操作（たとえば、DNS、Hostname、IP、およびその他の情報の設定）を行い、及びCVMインスタンスの作成時に初めて起動に指定するカスタムスクリプトの実行に使用されるため、従って、Cloud-Initサービスにはrootユーザーとして実行する必要があります。
+Cloud-initは、主にインスタンスが最初に初期化されるときにカスタマイズ設定機能を提供します。インポートされたイメージにcloud-initサービスがインストールされていない場合、イメージを介して起動されたインスタンスは正しく初期化できなくなり、イメージのインポートに失敗する可能性があります。このドキュメントでは、cloud-initサービスをインストールする方法について説明します。
+cloud-initをインストールするには、次の2つの方法をお勧めします。
+- [手動でcloud-initソースパッケージをダウンロードする](#ManualDown) 
+- [ソフトウェアソースにあるcloud-initパッケージを使用する](#SoftSources)
 
-### どのようにLinuxインスタンス内のCloud-Initサービスが正常に実行されていることを確認しますか。
+## 注意事項
+Linuxシステムイメージをインポートする前に、イメージにcloud-initサービスが正しくインストールされていることを確認してください。
 
-<span id="checkcloud-init"></span>
-#### cloud-initの動作確認
-まずインスタンスにログインし、以下のコマンドを実行して、エラーが発生したかどうかを確認します。実行結果が返ってきた場合は、サービスが正常に動作しています。そうでない場合は、エラーの原因が表示されます。エラーの原因に従ってトラブルシューティングを行ってください。
-1. cloud-init キャッシュディレクトリを削除します。
+## 前提条件
+cloud-initサービスがインストールされているサーバーは、外部ネットワークに正しくアクセスできます。
+
+## 操作手順
+
+<span id="ManualDown"></span>
+### 手動でcloud-initソースパッケージをダウンロードする
+
+#### cloud-initソースパッケージのダウンロード
+>  
+>- 正常にインストールされた状態では、cloud-init-17.1バージョンはTencent Cloudとの互換性が最も高く、そのイメージで作成されたCVMのすべての設定アイテムを正しく初期化することができます。**cloud-init-17.1.tar.gz** バージョンをインストールすることをお薦めします。また [ここをクリック](https://launchpad.net/cloud-init/+download) してそのほかのバージョンのcloud-initソースパッケージをダウンロードすることもできます。 このドキュメントでは、cloud-init-17.1バージョンを例に説明します。
+>- cloud-init-17.1または他のバージョンのcloud-initソースパッケージによるインストールが失敗した場合は、[手動で簡易バージョンのcloud-initソースパッケージをダウンロード](#greeninitCloudInit) してインストールできます。
+>
+次のコマンドを実行して、cloud-initソースパッケージをダウンロードします。
 ```
-rm -rf /var/lib/cloud
+wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.gz
 ```
-2. 完全なcloud-init初期化を実行します。
+
+#### cloud-initのインストール
+1. 次のコマンドを実行して、cloud-initインストールパッケージを解凍します。
+> Ubuntu OSを使用している場合は、rootアカウントに切り替えてください。
+>
+```
+tar -zxvf cloud-init-17.1.tar.gz 
+```
+2. 次のコマンドを実行して、解凍されたcloud-initのインストールパッケージディレクトリ（cloud-init-17.1ディレクトリ）に入ります。
+```
+cd cloud-init-17.1
+```
+3. OSバージョンに応じてPython-pipをインストールします。
+ - CentOS 6/7の場合、次のコマンドを実行します：
+```
+yum install python-pip -y
+```
+ - Ubuntuの場合、次のコマンドを実行します：
+```
+apt-get install python-pip -y
+```
+4. 次のコマンドを実行して、依存関係をインストールします。
+> cloud-initがrequests 2.20.0バージョンを使用する場合、Python 2.6はサポートされません。イメージ環境にインストールされているPythonインタープリターがPython 2.6以前の場合、cloud-init依存関係をインストールする前に、`pip install 'requests<2.20.0'` コマンドを実行して、requests 2.20.0以降のバージョンをインストールしてください。
+>
+```
+pip install -r requirements.txt
+```
+4. OSのバージョンに応じて、cloud-utilsコンポーネントをインストールします。
+ - CentOS 6の場合、次のコマンドを実行します。
+```
+yum install cloud-utils-growpart dracut-modules-growroot -y
+dracut -f
+```
+ - CentOS 7の場合、次のコマンドを実行します。
+```
+yum install cloud-utils-growpart -y
+```
+ - Ubuntuの場合、次のコマンドを実行します。
+```
+apt-get install cloud-guest-utils -y
+```
+5. 次のコマンドを実行して、cloud-initをインストールします。
+```
+python setup.py build
+python setup.py install --init-system systemd
+```
+> --init-systemのオプションパラメータには：(systemd、sysvinit、sysvinit_deb、sysvinit_freebsd、sysvinit_openrc、sysvinit_suse、upstart)[default：None]が含まれます。現在のOSで使用されている自動起動サービス管理方法に従って選択してください。間違った方式を選択した場合、cloud―initサービスは起動時に自動的に起動しません。このドキュメントでは、systemd自動起動サービス管理を例に説明します。
+
+#### cloud-init構成ファイルの変更
+
+1. OSの違いに応じて、cloud.cfgをダウンロードします。
+ - Ubuntu OSのcloud.cfgをダウンロードするには、[ここをクリック](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg)してください。
+ - CentOSのcloud.cfgをダウンロードするには、[ここをクリック](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg)してください。
+2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
+
+#### syslogユーザーの追加
+次のコマンドを実行して、syslogユーザーを追加します。
+```
+useradd syslog
+```
+
+#### cloud-initサービスの自動起動の設定
+- **OSがsystemdを使用して自動起動サービスを管理している場合は、次のコマンドを実行して設定します。**
+ 1. **UbuntuまたはDebian OSに対して、次のコマンドを実行します。**
+```
+ ln -s /usr/local/bin/cloud-init /usr/bin/cloud-init 
+```
+ 2. **すべてのOSで以下のコマンドを実行する必要があります。**
+```
+systemctl enable cloud-init-local.service 
+systemctl start cloud-init-local.service
+systemctl enable cloud-init.service
+systemctl start cloud-init.service
+systemctl enable cloud-config.service
+systemctl start cloud-config.service
+systemctl enable cloud-final.service
+systemctl start cloud-final.service
+systemctl status cloud-init-local.service
+systemctl status cloud-init.service
+systemctl status cloud-config.service
+systemctl status cloud-final.service
+```
+ 3. **CentOSとRedhat OSで次のコマンドを実行します。**
+ /lib/systemd/system/cloud-init-local.service ファイルを以下の内容に置き換えます：
+```
+[Unit]
+Description=Initial cloud-init job (pre-networking)
+Wants=network-pre.target
+After=systemd-remount-fs.service
+Before=NetworkManager.service
+Before=network-pre.target
+Before=shutdown.target
+Conflicts=shutdown.target
+RequiresMountsFor=/var/lib/cloud
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cloud-init init --local
+ExecStart=/bin/touch /run/cloud-init/network-config-ready
+RemainAfterExit=yes
+TimeoutSec=0
+# Output needs to appear in instance console output
+StandardOutput=journal+console
+[Install]
+WantedBy=cloud-init.target
+```
+/lib/systemd/system/cloud-init.service ファイルを以下の内容に置き換えます：
+```
+[Unit]
+Description=Initial cloud-init job (metadata service crawler)
+Wants=cloud-init-local.service
+Wants=sshd-keygen.service
+Wants=sshd.service
+After=cloud-init-local.service
+After=systemd-networkd-wait-online.service
+After=networking.service
+After=systemd-hostnamed.service
+Before=network-online.target
+Before=sshd-keygen.service
+Before=sshd.service
+Before=systemd-user-sessions.service
+Conflicts=shutdown.target
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cloud-init init
+RemainAfterExit=yes
+TimeoutSec=0
+# Output needs to appear in instance console output
+StandardOutput=journal+console
+[Install]
+WantedBy=cloud-init.target
+```
+- **OSがsysvinitを使用して自動起動サービスを管理している場合は、次のコマンドを実行して設定します。**
+```
+chkconfig --add cloud-init-local
+chkconfig --add cloud-init
+chkconfig --add cloud-config
+chkconfig --add cloud-final
+chkconfig cloud-init-local on 
+chkconfig cloud-init on 
+chkconfig cloud-config on 
+chkconfig cloud-final on 
+```
+
+
+<span id="SoftSources"></span>
+### ソフトウェアソースにあるcloud-initパッケージを使用する方法
+
+#### cloud-initをインストールする
+
+以下のコマンドを実行して、cloud-initをインストールします。
+```
+apt-get/yum install cloud-init
+```
+> apt-getまたはyumコマンドを介してインストールされたcloud-initバージョンは、デフォルトが現在のOSに設定されたソフトウェアソースのデフォルトのcloud-initバージョンです。 この方式でインストールされたイメージで作成したインスタンスは、一部の設定アイテムが予想通りに初期化されていない可能性があるため、 [手動でcloud-initのソースコードパッケージをダウンロードする](#ManualDown) を利用してインストールすることをお勧めします。　
+>
+
+#### cloud-init構成ファイルの変更
+1. OSの違いに応じて、cloud.cfgをダウンロードします。
+ - [ここをクリックしてダウンロード](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/ubuntu/cloud.cfg) してUbuntu OSのcloud.cfgをダウンロードします。
+ - [ここをクリックしてダウンロード](https://cloudinit-1251783334.cos.ap-guangzhou.myqcloud.com/centos/cloud.cfg) してCentOSのcloud.cfgをダウンロードします。
+2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
+
+## 関連する操作
+> 以下の操作が完了したら、サーバーを再起動しないでください。再起動した場合は、以下の操作を再度実行する必要があります。
+>
+1. 次のコマンドを実行して、cloud-init関連の設定が正常に完了したかどうかを確認します。
 ```
 cloud-init init --local
+rm -rf /var/lib/cloud
 ```
-3. 構成されたデータソースからデータをプルします。
+2. Ubuntu OSまたはDebian OSの場合、次のコマンドを実行します。
 ```
-cloud-init init
+rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 ```
-4. Cloud-Initの初期化には複数のステージがあります。ステージ間の十分な依存関係を確保するために、cloud-init モジュールがconfig stageを指定して実行します。
+3. Ubuntu OSまたはDebian OSの場合、`/etc/network/interfaces` の内容を次のように置き換えます。
 ```
-cloud-init modules --mode=config
-```
-5. cloud-init modulesがconfig stageを指定して実行します。
-```
-cloud-init modules --mode=final
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+source /etc/network/interfaces.d/*
 ```
 
-### Cloud-Init はどのようなインスタンス初期化操作を実行しましたか。
+## 付録
 
-Tencent Cloudはcloud-initを介してインスタンスのすべての初期化操作を実行し、インスタンス全体の操作をより透過的にします。 以下の内容は初期化操作について簡単に紹介します。詳細については、[Cloud-init 公式ドキュメント](http://cloudinit.readthedocs.io/en/latest/)をご参照ください。
-
-<table>
-<tr><th style="width: 25%;">初期化タイプ</th><th style="width: 25%;">デフォルトの動作</th><th style="width: 25%;">禁止方式</th><th style="width: 25%;">注意事項</th></tr>
-<tr>
-	<td>hostname の初期化</td>
-	<td>インスタンスの<b>初回起動時</b>に、Cloud-Initは <code>vendor_data.json</code> のhostname情報に基づき、インスタンスのhostnameを設定します。</td>
-	<td>カスタムイメージを使用してインスタンスを作成または再インストールする時に、カスタムイメージ内部のカスタムホスト名を保持したい場合は、カスタムイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>から<code>- scripts-user</code> 設定を削除します。</td>
-	<td><code>- scripts-user</code> 設定を無効にすると、インスタンス内部の<code>/var/lib/cloud/instance/scripts/runcmd</code> 初期化スクリプトは実行されず、他のサブプロジェクトの初期化（主に関連するのは、クラウド監視、クラウドセキュリティのインストール、ソフトウェアソース設定）を影響します。 同時に、CVMを作成する時に、カスタマイズスクリプトは実行されません。</td>
-</tr>
-<tr>
-	<td>/etc/hosts の初期化</td>
-	<td>インスタンス<b>初回起動時</b>に、Cloud-Initは、デフォルトで<code>/etc/hosts</code>を<code>127.0.0.1 $hostname</code>に初期化します。</td>
-	<td>カスタムイメージを使用してインスタンスを作成または再インストールする時に、カスタムイメージ内部の/etc/hosts設定を保持したい場合、カスタムイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>から<code>- scripts-user</code>設定を削除します。</td>
-	<td>
-		<ul style="margin: 0px;">
-			<li> <code>- scripts-user</code>行の設定を無効にすると、インスタンス内部の<code>/var/lib/cloud/instance/scripts/runcmd</code>初期化スクリプトは実行されず、他のサブプロジェクトの初期化（主に関連するのは、クラウド監視、クラウドセキュリティのインストール、ソフトウェアソース設定）を影響します。同時に、CVMを作成する時に、カスタマイズスクリプトは実行されません。 </li>
-			<li>CVMが再起動するたびに、一部の既存のCVMの設定<code> / etc / hosts </code>が上書きされます。 この問題を解決するには、<a href="https://cloud.tencent.com/document/product/213/34698">Linuxインスタンスのetc hosts設定の変更</a>をご参照ください</li>
-		</ul>
-	</td>
-</tr>
-
-<tr>
-	<td>DNSの初期化（非 DHCPシナリオ）</td>
-	<td>インスタンスの<b>初回起動時</b>に、Cloud-Initは<code> vendor_data.json</code>のnameservers情報に基づいてインスタンスのDNSを設定します。</td>
-	<td>カスタムイメージを使用してインスタンスを作成または再インストールする時に、カスタムイメージ内にカスタムDNS設定を保持したい場合、カスタムイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>から<code>- resolv_conf</code>と<code>unverified_modules: ['resolv_conf']</code>の2行の設定を削除します。</td>
-	<td>なし。</td>
-</tr>
-
-<tr>
-	<td>ソフトウェアソースの初期化</td>
-	<td>インスタンスの<b>初回起動時</b>に、Cloud-Initは<code>vendor_data.json</code>のwrite_files情報に基づいてインスタンスのソフトウェアソースを設定します。</td><td>カスタムイメージを使用してインスタンスを作成または再インストールする時に、カスタムイメージのカスタムDNS設定を保持したい場合は、カスタムイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>から<code>- write-files</code>設定を削除します。 </td>
-	<td>なし。</td>
-</tr>
-
-<tr>
-	<td>NTP の初期化</td>
-	<td>インスタンスの<b>初回起動時</b>に、Cloud-Initは<code>vendor_data.json</code>のNTP Server情報に基づいてインスタンスのNTPサーバー構成を設定し、NTP Serviceを実行します。</td>
-	<td>カスタムイメージを使用してインスタンスを作成または再インストールする時に、カスタムイメージのカスタムNTP設定を保持したい場合は、カスタムイメージを作成する前に、<code>/etc/cloud/cloud.cfg</code>から<code>- ntp<code/>設定を削除します。 </td>
-	<td>なし。</td>
-</tr>
-
-<tr>
-	<td>パスワードの初期化</td>
-	<td>インスタンスの<b>初回起動時</b>に、Cloud-Initは<code> vendor_data.json</code>中のchpasswd情報に基づいてインスタンスのデフォルトアカウントパスワードを設定します。</td>
-	<td>カスタムイメージを使用してインスタンスを作成または再インストールする時に、カスタムイメージのカスタマイズのデフォルトアカウントとパスワードを保持したい場合、カスタムイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>から<code>- set-passwords</code>設定を削除します。</td>
-	<td>なし。</td>
-</tr>
-
-<tr>
-	<td>キーバインド</td>
-	<td>インスタンスの<b>初回起動時</b>に、Cloud-Initは、<code>vendor_data.json</code>のssh_authorized_keys情報に基づいて、インスタンスのデフォルトアカウントキーを設定します。</td>
-	<td>カスタムイメージを使用してインスタンスを作成または再インストールする時に、カスタムイメージのカスタムキーを保持したい場合は、カスタムイメージを作成する前に<code>/etc/cloud/cloud.cfg</code>から <code>- users-groups</code>設定を削除します。</td>
-	<td>インスタンス内のキーを手動でバインドした場合、コンソールを介してキーバインド操作を実行する時に、以前のキーは上書きされます。</td>
-</tr>
-
-<tr>
-	<td>ネットワーク初期化（非 DHCP シナリオ）</td>
-	<td>インスタンスの<b>初回起動時</b>に、Cloud-Initは<code>network_data.json</code>の情報に基づいてインスタンスのIP、ゲートウェイ、マスクなどを設定します。 </td>
-	<td>カスタムイメージを使用してインスタンスを作成または再インストールする時に、カスタムイメージのカスタムネットワーク情報をを保持したい場合、カスタムイメージを作成する前に<code>network: {config: disabled}</code>を <code>/etc/cloud/cloud.cfg</code> に追加します。</td>
-	<td>なし。</td>
-</tr>
-</table>
-
-### どのようにCloud-Initに関連する問題を特定しますか。 
-
-#### 1. Cloud-Init依存関係のアンインストールによるエラー
-- 問題の説明：
-コマンドを使用してCloud-Initサービスが正常に実行されていることを確認する時に、次のエラーが返されます：
+<span id="greeninitCloudInit"></span>
+### 手動で簡易バージョンのcloud-initパッケージをダウンロードする
+[手動で簡易バージョンのcloud-initソースパッケージをダウンロードする](#ManualDown) でインストールに失敗した場合は、次の手順を実行してcloud-initをインストールします。
+1. [ここをクリック](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz)して簡易バージョンのcloud-initパッケージを取得します。
+2. 次のコマンドを実行して、簡易バージョンのcloud-initパッケージを解凍します。
 ```
-Traceback (most recent call last):
-  File "/usr/bin/cloud-init", line 5, in 
-    ********
-    raise DistributionNotFound(req)
-pkg_resources.DistributionNotFound: pyyaml
+tar xvf greeninit-x64-beta.tgz 
 ```
-- 問題分析：
-「pkg_resources.DistributionNotFound: xxxxx 」は、Cloud-Init依存関係がアンインストールされたことを示します。
-- ソリューション ：
- 1. 依存関係を再インストールします。
- 2. すべての操作が正常に実行されるまで、[Cloud-Init サービス実行時のトラブルシューティング](#checkcloud-init)に従って操作を実行します。
-
-#### 2. デフォルトのPythonインタープリターの変更によるエラー
-- 問題の説明：
-起動時にcloud-initを実行すると、エラーが返されます。
-- 問題分析：
-Cloud-Initをインストールする時に、PythonインタープリターはデフォルトでPython2（つまり、`/usr/bin/python`および`/bin/python`はPython2にリンクされます。）を使用します。ユーザーのビジネスニーズに応じて、インスタンスの中でPythonのデフォルトインタープリターをPython3（つまり、Python3を指すように、`/usr/bin/pythonと`/bin/python`を変更する）に変更することができます。互換性の問題のため、起動時にCloud-Initを実行するとエラーが発生しました。
-- ソリューション：
- 1. `/usr/bin/cloud-init`ファイルで指定されたPythonインタープリターを変更し、`#/usr/bin/python`または`#/bin/python`を`#! user/bin/python`に変更します 。
->! シンボリックリンクを使用せず、 特定のインタープリターに直接指します。
->
- 2. すべての操作が正常に実行されるまで、[Cloud-Init サービス実行時のトラブルシューティング](#checkcloud-init)に従って操作を実行します。
-
-## Cloudbase-Init
-
-### Cloudbase-Initとは
-Cloud-Initと同様に、Cloudbase-InitはWindowsCVMインスタンスと通信するためのツールです。 Cloudbase-Initサービスは、インスタンスの初回起動時に実行されます。このサービスはインスタンスの初期化設定情報を読み取り、インスタンスを初期化します。 同時に、後続のパスワードのリセットやIPの変更などの機能もCloudbase-Initを介して行われます。
-
-### どのようにWindowsインスタンス内のCloudbase-Initサービスが正常に動作していることを確認しますか。
-
-<span id="checkcloudbase-init"></span>
-#### Cloudbase-Init サービス実行時のトラブルシューティング：
-1. インスタンスにログインします。
->? パスワードを忘れて、またはCloudbase-Initサービスが異常の原因でパスワードのリセットに失敗した場合、[ステップ2](#step02)でパスワードをリセットできます。 
->
-2. <span id = "step02">**コントロールパネル** > **管理ツール**> **サービス**を開きます。
-3. cloudbase-initサービスを見つけて、【プロパティ】を右クリックして、cloudbase-initのプロパティウィンドウを開きます。 </ span>
- -「スタートアップの種類」を確認し、「スタートアップの種類」が「自動」に設定されていることを確認します。
- -「ログインID」を確認し、「ログインID」が「ローカルシステムアカウント」であることを確認します。 
- - 手動でcloudbase-initサービスを起動し、エラーが返されるかどうかを確認します。
-エラーが返された場合は、まず問題を修正してください。cloudbase-initの関連する操作の実行をブロックするセキュリティソフトウェアがインストールしているかどうかを確認する必要があります。 
-
- -「レジストリ」を開き、すべての「LocalScriptsPlugin」を見つけ、その値が2であることを確認します。
- - CD-ROMのロードが禁止になっているかどうかを確認します。 次の図に示すように、光ディスクドライブが表示されている場合は、ロードが禁止になっていないことを意味します。そうでない場合は禁止になっているため、禁止を取り消す必要があります。
+3. 次のコマンドを実行して、解凍された簡易バージョンのcloud-initパッケージディレクトリ（つまり、greeninitディレクトリ）に入ります。
+```
+cd greeninit
+```
+4.  次のコマンドを実行して、cloud-initをインストールします。
+```
+sh install.sh 
+```
 
 
-### どのようにCloudbase-Initに関連する一般的な問題を特定しますか。
-#### 初期化中にパスワードをリセットできませんでした
-- 考えられる理由：
- - cloudbase-initアカウントのパスワードを手動で変更されたため、cloudbase-initサービスの起動が失敗になり、初期化中にパスワードのリセットなどの操作も失敗になります。
- - cloudbase-initサービスが禁止されたため、初期化中にパスワードをリセットするなどの操作が失敗しました。
- - セキュリティソフトウェアがcloudbase-initサービスのパスワードリセット操作をブロックしたため、操作は成功した結果を返しますが、実際のリセットは失敗しました。
-- ソリューション ：
-考えられる理由については、以下の3つのポイントをご参照ください。
- 1. cloudbase-initサービスをLocalSystemサービスに変更します。具体的な操作については、[Cloudbase-Init サービス実行時のトラブルシューティング](#checkcloudbase-init)の[ステップ2](#step02)をご参照ください。 
- 2. cloudbase-initサービスのスタートアップの種類を自動に変更します。 詳細の操作については、[Cloudbase-Init サービス実行時のトラブルシューティング](#checkcloudbase-init)の[ステップ 2](#step02)をご参照ください。
- 3.関連するセキュリティソフトウェアをアンインストールするか、Cloudbase-Initサービスの関連操作をセキュリティソフトウェアのホワイトリストに追加します。
+
+
+
+
