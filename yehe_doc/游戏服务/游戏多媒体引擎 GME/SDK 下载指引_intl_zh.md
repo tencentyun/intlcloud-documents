@@ -4,6 +4,10 @@
 ## 变更历史
 为方便开发者接入腾讯云游戏多媒体引擎产品，在下载 SDK 之前，请查阅 [产品动态](https://intl.cloud.tencent.com/document/product/607/35323)。
 
+## 下载及使用
+
+下载 SDK 及 DEMO 后，如果使用上有问题，可以参考[下载及使用相关文档](https://intl.cloud.tencent.com/document/product/607/30256)，或者 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系腾讯云工作人员。
+
 ## 版本更新
 2.6.0beta版本更新如下：
 
