@@ -15,7 +15,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 <span id="step2"></span>
 ### Step 2. Download the SDK and demo source code
-1. Mouse over the card to download the SDK and supporting demo source code.
+1. Mouse over the block to download the SDK and supporting demo source code.
  - **iOS:** click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to go to the GitHub website (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)**)
   ![](https://main.qcloudimg.com/raw/716b5af9207ad2b11835dec4e2d15da0.png)
  - **macOS:** click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)** to go to the GitHub website (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)**)
@@ -46,7 +46,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 5. Click **Close Guide and Enter Console** to manage application.
 
 >In this document, the `SECRETKEY` is configured in the client code to obtain `UserSig`. The `SECRETKEY` is easily decompiled and reverse cracked. If the `SECRETKEY` is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method only applies to locally running a demo project and commissioning features**.
->The correct `UserSig` distribution method is to integrate the computing code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain the dynamic `UserSig`. For more information, see [How to Generate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+>The correct `UserSig` distribution method is to integrate the computing code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain the dynamic `UserSig`. For more information, see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 ### Step 4. Compile and run
 1. Enter the directory where the `TRTCSimpleDemo > Podfile` file is located in a terminal window.
@@ -62,16 +62,9 @@ Upgrade/switch the algorithm as follows:
  1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
  2. Select **Application Management** on the left sidebar and click **Application Info** on the row of the target application.
  3. Select the **Quick Start** tab and click **upgrade**, **asymmetric encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
-  - Upgrade:
-   ![](https://main.qcloudimg.com/raw/69bd0957c99e6a6764368d7f13c6a257.png)
-  - Switch to the legacy algorithm ECDSA-SHA256:
-   ![](https://main.qcloudimg.com/raw/f89c00f4a98f3493ecc1fe89bea02230.png)
-  - Switch to the new algorithm HMAC-SHA256:
-   ![](https://main.qcloudimg.com/raw/b0412153935704abc9e286868ad8a916.png)
 
 ### 2. The demo is running on two mobile phones, but why can't they display the images of each other?
 Please make sure that the two mobile phones use different `UserIDs` when running the demo, as TRTC does not support using the same `UserID` on two devices simultaneously; unless different `SDKAppIDs` are used.
-![](https://main.qcloudimg.com/raw/c7b1589e1a637cf502c6728f3c3c4f99.png)
 
 ### 3. What are the restrictions of the firewall?
 As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please see [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164) for assistance.

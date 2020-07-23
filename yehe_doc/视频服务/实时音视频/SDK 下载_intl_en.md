@@ -290,7 +290,7 @@ In addition to all the features of the professional edition, the enterprise edit
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">Cross-room PK</td>
+    <td style="text-align:center">Cross-room competition</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">&#10003;</td>
