@@ -5,7 +5,7 @@ ProcessEnding
 
 ## API Description
 
-This API is used to notify GSE that the game process is closing.
+This API is used to notify GSE that the game process is ending.
 
 ## Request Structure
 
@@ -22,7 +22,7 @@ message GseResponse
 
 ## Field Description
 
-None
+N/A
 
 ## Sample
 

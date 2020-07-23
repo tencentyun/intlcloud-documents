@@ -22,7 +22,7 @@ Meizu and Huawei channels do not support notification messages currently, and th
 | Mi    | <li>Create a channel ID in the Mi Open Platform Console or through the corresponding Mi server API </li><li>Specify the corresponding channel ID when calling the TPNS server API. </li> |
 | OPPO    |   <li>On the application, call the SDK for Android to create a channel ID </li><li>Register the same channel ID in the OPPO Console </li><li>Specify the corresponding channel ID when calling the TPNS server API. </li> |
 | Meizu    | No instructions on channel are provided. |
-| Vivo    | No instructions on channel are provided. |
+| vivo   | <li>Call the server API to create the Channel ID .</li><li>If you want to specify the Channel ID, call  the TPNS [Push API](https://intl.cloud.tencent.com/document/product/1024/33764#android-.E6.99.AE.E9.80.9A.E6.B6.88.E6.81.AF).</li>| 
 
 3. If you do not need notification messages of a vendor and customized channel ID, you do not need to perform relevant operations, and TPNS will specify a default channel ID for all messages of your application and group them into the default type.
 

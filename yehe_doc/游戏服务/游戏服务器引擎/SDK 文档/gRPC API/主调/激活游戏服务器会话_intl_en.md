@@ -4,7 +4,7 @@ ActivateGameServerSession
 
 ## API Description
 
-This API is used to tell GSE to activate the corresponding `GameServerSession` after the game process receives a callback from GSE through the [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) API.
+This API is used to inform GSE of activating the corresponding `GameServerSession` after the game process receives a callback from GSE through the [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) API.
 
 ## Request Message
 
@@ -32,4 +32,4 @@ message GseResponse
 
 ## Sample
 
-For examples, see the [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) API.
+For samples, see the [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) API.
