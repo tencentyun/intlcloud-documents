@@ -1,15 +1,15 @@
-Some customers have restrictions placed on public network access by their own companies, so they need to be added to a firewall whitelist before they can get access. The following describes the related rules:
+Some customers have restrictions placed on public network access by their own companies, so they need to be added to a firewall allowlist before they can get access. The following describes the related rules:
 
 ### What ports or domain names do I need to add to the whitelist of native SDK for client?
 
 The firewall ports are as follows:
 
-|  TRTC SDK (Native) | Whitelisted Items |
+|  TRTC SDK (Native) | Allowed Items |
 |---------|---------|
 | TCP port | 443; 20166 |
 | UDP port | 8000 |
 
-Domain name whitelist:
+Domain name allowlist:
 
 <pre>
 cloud.tim.qq.com
@@ -26,12 +26,12 @@ query.tencent-cloud.com
 
 The firewall ports are as follows:
 
-| WebRTC (H5) | Whitelisted Items |
+| WebRTC (H5) | Allowed Items |
 |---------|---------|
 | TCP port | 8687 |
 | UDP port | 8000; 8800; 843; 443 |
 
-Domain name whitelist:
+Domain name allowlist:
 
 <pre>
 qcloud.rtc.qq.com
@@ -40,7 +40,7 @@ qcloud.rtc.qq.com
 
 ### What domain names do I need to add to the whitelist of WeChat Mini Program?
 
-&lt;trtc-room&gt; domain name whitelist:
+&lt;trtc-room&gt; domain name allowlist:
 
 <pre>
 https://official.opensso.tencent-cloud.com

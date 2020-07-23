@@ -97,7 +97,7 @@ A mix transcoding command can be easily initiated with the TRTC SDK by calling t
 | mixUsers array | No need to set | Set with a placeholder | No need to set | Set with a real `userId` |
 
 <span id="PureAudio"></span>
-### PureAudio
+### PureAudio mode
 
 **Use cases:**
 The PureAudio mode is suitable for pure audio applications such as audio call (AudioCall) and audio chat room (VoiceChatRoom), where you can set parameters when calling the [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) API of the SDK.
@@ -114,7 +114,7 @@ In PureAudio mode, the SDK will automatically mix multiple audio streams in a ro
 > In PureAudio mode, you don't need to call the `setMixTranscodingConfig()` API multiple times; instead, you only need to call it once after successfully entering the room and enabling local audio upstreaming.
 
 <span id="PresetLayout"></span>
-### PresetLayout
+### PresetLayout mode
 **Use cases:**
 The PresetLayout mode is suitable for applications involving both audio and video such as video call (VideoCall) and interactive live streaming (LIVE), where you can set parameters when calling the [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) API of the SDK.
 In PresetLayout mode, the SDK will automatically mix multiple audio/video streams in a room into one according to the video layout rules you preset.
@@ -148,7 +148,7 @@ In PresetLayout mode, the SDK will automatically mix multiple audio/video stream
 </tr></table>
 6. After the above steps are performed, the relayed audio stream of the current user will be automatically mixed with audios of other users in the room, and then you can configure a playback domain name for relayed live streaming as described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 
-![](https://main.qcloudimg.com/raw/4119e41cefe59b7a8b8edf675babdd38.png)
+![](https://main.qcloudimg.com/raw/fb1f279d211ba2a9c59569ff26135d4d.png)
 
 **Sample code**
 This document uses the Objective-C code for iOS as an example to describe how to mix streams in order to display one big video image and two small ones at the same time with the small ones on top.
@@ -170,7 +170,7 @@ config.mixUsers = [NSMutableArray new];
 
 // Camera image position of anchor
 TRTCMixUser* local = [TRTCMixUser new];
-local.userId = @"$PLACE_HOLDER_LOCAL_MAIN$"; 
+local.userId = @"PLACE_HOLDER_LOCAL_MAIN"; 
 local.zOrder = 0;   // `zOrder` value of 0 indicates that the anchor's video image is at the bottom
 local.rect   = CGRectMake(0, 0, videoWidth, videoHeight);
 local.roomID = nil; // `roomID` needs to be specified for a remote user but not the local user
@@ -178,7 +178,7 @@ local.roomID = nil; // `roomID` needs to be specified for a remote user but not 
 		
 // Video image position of co-anchor
 TRTCMixUser* remote1 = [TRTCMixUser new];
-remote1.userId = @"$PLACE_HOLDER_REMOTE$"; 
+remote1.userId = @"PLACE_HOLDER_REMOTE"; 
 remote1.zOrder = 1;
 remote1.rect   = CGRectMake(400, 800, 180, 240); // For reference only
 remote1.roomID = 97392; // `roomID` needs to be specified for a remote user but not the local user
@@ -186,7 +186,7 @@ remote1.roomID = 97392; // `roomID` needs to be specified for a remote user but 
 
 // Video image position of co-anchor
 TRTCMixUser* remote2 = [TRTCMixUser new];
-remote2.userId = @"$PLACE_HOLDER_REMOTE$"; 
+remote2.userId = @"PLACE_HOLDER_REMOTE"; 
 remote2.zOrder = 1;
 remote2.rect   = CGRectMake(400, 500, 180, 240); // For reference only
 remote2.roomID = 97392; // `roomID` needs to be specified for a remote user but not the local user
@@ -199,7 +199,7 @@ remote2.roomID = 97392; // `roomID` needs to be specified for a remote user but 
 > In PresetLayout mode, you don't need to call the `setMixTranscodingConfig()` API multiple times; instead, you only need to call it once after successfully entering the room and enabling local audio upstreaming.
 
 <span id="ScreenSharing"></span>
-### ScreenSharing
+### ScreenSharing mode
 **Use cases:**
 The ScreenSharing mode is suitable for applications such as online education and interactive classrooms, where you can set the `AppScene` parameter to `TRTCAppSceneLIVE` when calling the [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) API of the SDK.
 In ScreenSharing mode, the SDK will first build a canvas based on the target resolution you select. If the teacher does not enable ScreenSharing, the SDK will scale up the camera image proportionally and draw it onto the canvas. After the teacher enables ScreenSharing, the SDK will draw the video image shared on the screen onto the same canvas. By building a canvas, you can ensure consistency in the output resolution of the mix transcoding module in order to prevent video compatibility issues between recording and webpage playback (common players do not support videos whose resolution changes).
@@ -214,6 +214,7 @@ In ScreenSharing mode, the SDK will first build a canvas based on the target res
  >
 5. After the above steps are performed, the relayed audio stream of the current user will be automatically mixed with audios of other users in the room, and then you can configure a playback domain name for relayed live streaming as described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 
+
 > 
 >- The ScreenSharing mode only supports Windows and macOS.
 >- In ScreenSharing mode, you don't need to call the `setMixTranscodingConfig()` API multiple times; instead, you only need to call it once after successfully entering the room and enabling local audio upstreaming.
@@ -221,7 +222,7 @@ In ScreenSharing mode, the SDK will first build a canvas based on the target res
 >- By specifying the `videoWidth` and `videoHeight` parameters in `TRTCTranscodingConfig` as 0, you can let the SDK select the output resolution intelligently. For example, if the teacher's current screen width is smaller than 1920 px, the SDK will use the actual resolution of the teacher's current screen; otherwise, the SDK will select 1920x1080 (16:9), 1920x1200 (16:10), or 1920x1440 (4:3) based on the current screen aspect ratio.
 
 <span id="Manual"></span>
-### Manual
+### Manual mode
 **Use cases:**
 The Manual mode is suitable for applications for which none of the above automatic modes are suitable. It is most flexible and can implement various mix transcoding schemes through free combinations, but it is most difficult to use.
 In Manual mode, you need to set all the parameters in `TRTCTranscodingConfig` and listen on the `onUserVideoAvailable()` and `onUserAudioAvailable()` callbacks in `TRTCCloudDelegate` so as to constantly adjust the `mixUsers` parameter according to the audio/video status of each user with mic on in the current room; otherwise, mix transcoding will fail.
