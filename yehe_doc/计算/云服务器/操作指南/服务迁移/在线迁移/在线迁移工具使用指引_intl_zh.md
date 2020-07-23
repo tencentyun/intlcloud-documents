@@ -46,7 +46,7 @@
 	<tr><td>rsync_excludes_linux.txt</td><td>rsync 配置文件，排除 Linux 系统下不需要迁移的文件目录。</td></tr>
 </table>
 
->  不能删除配置文件，并请将配置文件存放在和 go2tencentcloud 可执行程序同级目录下。 
+>?  不能删除配置文件，并请将配置文件存放在和 go2tencentcloud 可执行程序同级目录下。 
 >
 
 - <span id="userJsonState">user.json 文件参数说明：</span>
@@ -57,7 +57,7 @@
 	<tr><td>Region</td><td>String</td><td>是</td><td>目标云服务器的地域，只需填写地域，无需填写可用区，取值请参考 <a href="https://intl.cloud.tencent.com/document/product/213/6091">地域</a> 列表。</td></tr>
 	<tr><td>InstanceId</td><td>String</td><td>是</td><td>目标云服务器的实例 ID，形如<code>ins-xxxxxxxx</code>。</td></tr>
 	<tr><td>DataDisks</td><td>Array</td><td>否</td><td>源端主机待迁移数据盘列表，每一个元素代表一块数据盘，最多支持20块数据盘。</td></tr>
-	<tr><td>DataDisks.Index</td><td>Integer</td><td>是</td><td>源端数据盘序号，取值范围[1,20]，值为<code>1</code>代表该块数据盘将迁移至目标云服务器的第一块数据盘，以此类推。</td></tr>
+	<tr><td>DataDisks.Index</td><td>Integer</td><td>是</td><td>数据盘序号，取值范围[1,20]，值为<code>1</code>代表该块数据盘将迁移至目标云服务器挂载的第一块数据盘，值为<code>2</code>代表迁移至目标云服务器挂载的第二块数据盘，以此类推。</td></tr>
 	<tr><td>DataDisks.Size</td><td>Integer</td><td>是</td><td>源端数据盘大小，单位GB，取值范围[10,16000]。</td></tr>
 	<tr><td>DataDisks.MountPoint	</td><td>String</td><td>是</td><td>源端数据盘挂载点，如<code>"/mnt/disk1"</code>。</td></tr>
 </table>
@@ -71,9 +71,9 @@
 	"InstanceId": "your instance id"
 }  
 ```
-> 请将对应参数值替换为您实际的配置参数。
+>? 请将对应参数值替换为您实际的配置参数。
 >
-例如，将一台 Linux 源端主机（包含一块数据盘，挂载点为`/mnt/disk1`，大小为`10`GB）迁移至腾讯云广州地域的一台云服务器，user.json 文件配置为以下内容：
+例如，将一台 Linux 源端主机（包含一块数据盘，挂载点为 `/mnt/disk1`，大小为`10`GB）迁移至腾讯云广州地域的一台目标云服务器（至少挂载一块数据盘），user.json 文件配置为以下内容：
 ```json
 {  
 	"SecretId": "your secretId",
@@ -89,7 +89,28 @@
 	]
 }  
 ```
-> 请将对应参数值替换为您实际的配置参数。
+例如，将一台 Linux 源端主机（包含两块数据盘，盘1挂载点为 `/mnt/disk1`，大小为`10`GB，欲迁移至目标云服务器的第一块数据盘，盘2挂载点为`/mnt/disk2`，大小为`20`GB，欲迁移至目标云服务器的第二块数据盘）迁移至腾讯云广州地域的一台目标云服务器（至少挂载两块数据盘），user.json 文件配置为以下内容：
+```json
+{  
+	"SecretId": "your secretId",
+	"SecretKey": "your secretKey",  
+	"Region": "ap-guangzhou",  
+	"InstanceId": "your instance id",
+	"DataDisks": [
+		{
+			"Index": 1,
+			"Size": 10,
+			"MountPoint": "/mnt/disk1"
+		},
+		{
+			"Index": 2,
+			"Size": 20,
+			"MountPoint": "/mnt/disk2"
+		}
+	]
+}  
+```
+>? 请将对应参数值替换为您实际的配置参数。
 >
 - <span id="clientJsonState">client.json 文件参数说明：</span>
 <table>
@@ -100,8 +121,11 @@
 	<tr><td>Client.Net.Proxy.User</td><td>String</td><td>否</td><td>网络代理用户名，如果您需要进行 <a href="#Scenario3">内网迁移模式：场景3</a> 的迁移并且网络代理需要认证，请填写网络代理用户名。</td></tr>
 	<tr><td>Client.Net.Proxy.Password</td><td>String</td><td>否</td><td>网络代理密码，如果您需要进行 <a href="#Scenario3">内网迁移模式：场景3</a> 的迁移并且网络代理需要认证，请填写网络代理密码。</td></tr>
 	<tr><td>Client.Extra.IgnoreCheck</td><td>Bool</td><td>否</td><td>默认值为<code>false</code>，迁移工具默认在工具开始运行时自动检查源端主机环境，如果需要略过检查，请设置为<code>true</code>。</td></tr>
+	<tr><td>Client.Rsync.BandwidthLimit</td><td>String</td><td>否</td><td>限速配置项，单位为KBytes/s，默认值为空，即默认传输时不限速。</td></tr>
+	<tr><td>Client.Rsync.Checksum</td><td>Bool</td><td>否</td><td>传输校验项，设为<code>true</code>后可加强传输一致性校验，但会提高源端主机 CPU 负载和减慢传输速度。默认值为<code>false</code>，即默认不校验。</td></tr>
 </table>
-
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>说明：</p><p>除了以上参数，client.json 文件剩余配置项通常无需填写。</p>
+</blockquote>
 - <span id="_linuxTxtState">rsync\_excludes\_linux.txt 文件说明：</span>
 排除 Linux 源端主机中不需要迁移传输的文件，或指定目录下的配置文件。该文件中已经默认排除以下目录和文件，**请勿删改**。
 ```sh
@@ -139,10 +163,10 @@
 迁移前，需要分别检查源端主机和目标云服务器。源端主机和目标云服务器需要检查的内容如下：
 <table>
 	<tr><th style="width: 15%;">目标云服务器</th><td><ol  style="margin: 0;"><li>存储空间：目标云服务器的云硬盘（包括系统盘和数据盘）必须具备足够的存储空间用来装载源端的数据。</li><li>安全组：安全组中不能限制443端口和80端口。</li><li>带宽设置：建议尽可能调大两端的带宽，以便更快迁移。迁移过程中，会产生约等于数据量的流量消耗，如有必要请提前调整网络计费模式。</li><li>目标云服务器和源端主机的操作系统类型是否一致：操作系统不一致会造成后续制作的镜像的信息与实际操作系统不符，建议目标云服务器的操作系统尽量和源端主机的操作系统类型一致。例如，CentOS 7 系统的对源端主机迁移时，选择一台 CentOS 7 系统的云服务器作为迁移目标。</li></ol></td></tr>
-	<tr><th>Linux 源端主机</th><td><ol  style="margin: 0;"><li>检查和安装 Virtio，操作详情可参考 <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux 系统检查 Virtio 驱动</a>。</li><li>检查是否安装了 rsync 和 grub2-install（或 grub-install）。</li><li>检查 SELinux 是否已打开。如果 SELinux 已打开，请关闭 SELinux。</li><li>向腾讯云 API 发起迁移请求后，云 API 会使用当前 UNIX 时间检查生成的 Token，请确保当前系统时间无误。</li></ol></td></tr>
+	<tr><th>Linux 源端主机</th><td><ol  style="margin: 0;"><li>检查和安装 Virtio，操作详情可参考 <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux 系统检查 Virtio 驱动</a>。</li><li>检查是否安装了 rsync，可执行 <code>which rsync</code> 命令进行验证。</li><li>检查 SELinux 是否已打开。如果 SELinux 已打开，请关闭 SELinux。</li><li>向腾讯云 API 发起迁移请求后，云 API 会使用当前 UNIX 时间检查生成的 Token，请确保当前系统时间无误。</li></ol></td></tr>
 </table>
 
-> 
+>? 
 > - 源端主机检查可以使用工具命令自动检查，如 `sudo ./go2tencentcloud_x64 --check`。
 > - go2tencentcloud 迁移工具在开始运行时，默认自动检查。如果需要略过检查强制迁移，请将 client.json 文件中的`Client.Extra.IgnoreCheck`字段配置为`true`。
 > 
@@ -155,7 +179,7 @@
 
 每个阶段均会产生一些子任务去执行相关操作，部分耗时的子任务还将具有默认的最大超时时间。由于传输数据耗时受源端数据大小，网络带宽等因素影响，请耐心等待迁移流程的完成。迁移工具支持数据传输的断点续传。
 
-> 开始迁移后目标云服务器将进入迁移模式，请不要对目标云服务器进行重装系统、关机、销毁、重置密码等操作，直至迁移完成退出迁移模式。 
+>! 开始迁移后目标云服务器将进入迁移模式，请不要对目标云服务器进行重装系统、关机、销毁、重置密码等操作，直至迁移完成退出迁移模式。 
 >
 
 ### 默认模式的迁移步骤
@@ -254,8 +278,8 @@ sudo ./go2tencentcloud_x64
 一般迁移成功的控制台输出如下：
 ![](https://main.qcloudimg.com/raw/2195589176d3669f08fbb5745901040b.png)
 
-
 ## 迁移后的检查
 1. 如果迁移结果失败，请检查日志文件（默认为迁移工具目录下的 log 文件）的错误信息输出、指引文档或者 [服务迁移类 FAQ](https://intl.cloud.tencent.com/document/product/213/32395) 进行排查和修复问题。
 2. 如果迁移结果成功，请检查目标云服务器能否正常启动、目标云服务器数据与源端主机是否一致、网络是否正常或者其他系统服务是否正常等等。
 3. 如有任何疑问、迁移异常等问题请查看 [服务迁移类 FAQ](https://intl.cloud.tencent.com/document/product/213/32395) 或者 [提交工单](https://console.cloud.tencent.com/workorder/category) 解决。
+
