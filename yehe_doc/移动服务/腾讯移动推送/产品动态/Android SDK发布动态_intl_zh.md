@@ -64,7 +64,7 @@
     </tr>
     <tr>
         <td>SDK 1.1.5.5版本发布</td>
-        <td>解决 App上架 GooglePlay 会出现 DCL 违规问题</td>
+       <td><li>解决 App上架 GooglePlay 会出现 DCL 违规问题</li><li>去除调用灯塔获取 QIMEI 相关信息</li></td>
         <td>2020-04-02</td>
         <td>-</td>
     </tr>
@@ -81,7 +81,7 @@
 </tr>
     <tr>
         <td>SDK 1.1.5.4版本发布</td>
-        <td><li> 网络连接优化</li> <li> 增加账号类型</li> <li> 优化保活方案</li> <li> 安全告警修复</li> <li> 兼容信鸽平台版本升级</li></td>
+        <td><li> 网络连接优化</li> <li> 增加账号类型</li> <li> 优化保活方案</li> <li> 安全告警修复</li> <li> 兼容信鸽平台版本升级</li><li>获取QIMEI信息的功能</li> </td>
         <td>2020-03-06</td>
         <td>注销信鸽平台推送服务</td>
     </tr>
