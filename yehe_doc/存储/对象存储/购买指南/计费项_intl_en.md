@@ -125,7 +125,7 @@ The figure below shows how traffic fees are incurred as data flows from COS to e
 
 ## Management Feature Fees
 
-Management feature fees are calculated based on the use of enabled management features, such as inventory and COS select.
+Management feature fees are calculated based on the use of enabled management features, such as inventory and select.
 
 
 
