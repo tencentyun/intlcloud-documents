@@ -5,7 +5,7 @@ Windows 操作系统的本地计算机通过 RDP 协议（如 MSTSC 方式）远
 ![](https://main.qcloudimg.com/raw/47a299873e3df8f1f160c1594fc56644.png)
 
 ## 处理步骤
-> 以 Windows Server 2012 操作系统为例，根据操作系统的版本不同，详细操作步骤略有区别。
+>? 以 Windows Server 2012 操作系统为例，根据操作系统的版本不同，详细操作步骤略有区别。
 > 请按照以下步骤依次排查，并在每一个步骤执行完后重新连接 Windows 云服务器验证问题是否解决，如未生效请继续执行下一步骤。
 >
 
@@ -56,4 +56,5 @@ Windows 操作系统的本地计算机通过 RDP 协议（如 MSTSC 方式）远
 3. 重新连接 Windows 云服务器，验证连接是否成功。
  - 是，任务结束。
  - 否，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8CVM&step=1) 反馈。
+
 
