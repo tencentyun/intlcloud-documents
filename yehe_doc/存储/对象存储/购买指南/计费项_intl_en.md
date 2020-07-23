@@ -123,9 +123,9 @@ The figure below shows how traffic fees are incurred as data flows from COS to e
 
 <span id="jf5"></span>
 
-## Administrative Feature Fees
+## Management Feature Fees
 
-Administrative feature fees are calculated based on the use of enabled administrative features, such as inventory and COS select.
+Management feature fees are calculated based on the use of enabled management features, such as inventory and select.
 
 
 
@@ -145,7 +145,7 @@ Administrative feature fees are calculated based on the use of enabled administr
 <td><li>Daily billing cycle<br></li><li>Billed per million objects listed</li></td>
 </tr>
 <tr>
-<td>COS Select feature fees</td>
+<td>Select feature fees</td>
 <td>STANDARD storage</td>
 <td>Fees incurred from extracting objects when the COS select feature is enabled</td>
 <td><li>Daily billing cycle<br></li><li>Billed by the size of data extracted</li></td>
