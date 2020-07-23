@@ -315,7 +315,7 @@
 <td>数据管理 DMC 发布</td>
 <td>DMC 支持实时监控、实例会话管理。</td>
 <td>2017-08</td>
-<td><a href="https://cloud.tencent.com/document/product/1130/40879" target="_blank">DMC</a></td>
+<td>-</td>
 </tr>
 </tbody></table>
 
