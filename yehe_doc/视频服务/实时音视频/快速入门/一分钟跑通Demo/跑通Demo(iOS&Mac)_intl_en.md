@@ -17,9 +17,9 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the block to download the SDK and supporting demo source code.
  - **iOS:** click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to go to the GitHub website (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)**)
-  ![](https://main.qcloudimg.com/raw/716b5af9207ad2b11835dec4e2d15da0.png)
+
  - **macOS:** click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)** to go to the GitHub website (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)**)
-  ![](https://main.qcloudimg.com/raw/65b9538a23789b1a728674ea3646062c.png)
+  
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="step3"></span>
@@ -41,7 +41,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with the real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with the real key information.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
+
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage application.
 
