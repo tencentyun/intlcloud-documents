@@ -1,8 +1,8 @@
 ### Does Tencent Cloud CDN support global acceleration?
-Yes. Tencent has built nodes for over a decade. Tencent Cloud CDN offers over 1,000 overseas nodes in more than 50 countries and regions to help your business go global seamlessly.
+Yes. Tencent has been building nodes for over a decade. Tencent Cloud CDN offers over 1,000 overseas nodes in more than 50 countries and regions to help your business go global seamlessly.
 
 ### After connecting to CDN, do changes need to be made on the origin server for the acceleration service to take effect?
-No. To achieve a better acceleration result, however, you are recommended to assign static and dynamic files to different domain names and only accelerate static resources.
+No. To achieve a better acceleration result, however, we recommend you assign static and dynamic files to different domain names and only accelerate static resources.
 
 ### Does Tencent Cloud CDN support cross-origin access?
 Yes. If cross-origin access is needed for your website, simply configure the `Access-Control-Allow-Origin` field on your website or configure cross-origin headers for your domain name in the CDN Console. For more information, please see [HTTP Header Configuration](https://intl.cloud.tencent.com/document/product/228/35320).
@@ -11,7 +11,7 @@ Yes. If cross-origin access is needed for your website, simply configure the `Ac
 You can download CDN access logs in the CDN Console. For detailed directions, please see [Log Download](https://intl.cloud.tencent.com/document/product/228/6316).
 
 ### How do I use the CDN self-diagnosis tool?
-The self-diagnosis tool provides a range of diagnostic features such as testing for DNS resolution, linkage quality, site availability, and data access consistency for the accessed domain name. For more information, please see [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304). The tool is subject to the configuration of the local network environment and cannot fully represent the entire network testing results.
+The self-diagnosis tool provides a range of diagnostic features such as testing DNS, linkage quality, site availability, and data access consistency for the accessed domain name. For more information, please see [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304). The tool is subject to the configuration of the local network environment and do not fully represent the entire network testing results.
 
 ### What is the difference between the local access diagnosis and the user access diagnosis?
 Local access diagnosis: when you find an exception with one of your resource accesses, you can initiate a test with "local access diagnosis".
@@ -40,8 +40,8 @@ Sub-users do not need to register for Tencent Cloud or activate the CDN service.
 1. Message recipients.
 2. Console users. For more information on how to create and configure a sub-user, please see [Console Permissions](https://intl.cloud.tencent.com/document/product/228/35229).
 
-### How do I configure an IP blacklist/whitelist in CDN?
-CDN supports IP blacklist/whitelist configuration. You can create filtering policies for source IPs of user requests based on your business needs, helping prevent hotlinking and attacks from malicious IPs. For more information, please see [IP Blacklist/Whitelist Configuration](https://intl.cloud.tencent.com/document/product/228/6298).
+### How do I configure an IP blocklist/allowlist in CDN?
+CDN supports IP blocklist/allowlist configuration. You can create filtering policies for source IPs of user requests based on your business needs, helping prevent hotlinking and attacks from malicious IPs. For more information, please see [IP Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/6298).
 
 For more information on this configuration, please see [IP Access Limit Configuration](https://intl.cloud.tencent.com/document/product/228/6420) and [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292).
 
@@ -70,11 +70,11 @@ No. Currently, CDN does not support Chinese domain names (even after transcoding
 ### Can CDN forward requests to the origin server over the private network?
 No. Currently, CDN can only forward requests to the origin server over the public network.
 
-### Does CDN support edge scripts to implement programmable configuration?
-Yes. CDN currently uses Lua scripts to implement programmable configuration, which are generally used for customization and written and released by the CDN technical support team
+### Does CDN support using scripts to programmatically implement configuration?
+Yes. CDN currently uses Lua scripts to programmatically implement configurations. These scripts are generally used for customization and written and released by the CDN technical support team
 
 ### Does CDN support configuring different origin servers for different client requests?
-Yes. CDN supports origin-pull to different origin servers for different client requests. You can submit a description of your specific requirements, and the CDN technical support team will configure for you on the backend.
+Yes. CDN supports origin-pull to different origin servers for different client requests. You can submit a description of your specific requirements, and the CDN technical support team will configure it for you on the backend.
 
 ### Does CDN support dynamic origin-pull configuration and origin-pull queuing?
-If the primary origin server responds exceptionally, it can redirect requests to the configured backup origin server in sequence for request again.
+If the primary origin server returns an exception, requests can be sequentially redirected to configured backup servers.
