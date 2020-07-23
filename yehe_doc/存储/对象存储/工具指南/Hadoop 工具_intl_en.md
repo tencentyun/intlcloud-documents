@@ -292,3 +292,7 @@ Bytes Read=36
 File Output Format Counters
 Bytes Written=40
 ```
+
+
+## FAQs
+If you have any question about Hadoop-COS, see the [Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/35706) FAQs.

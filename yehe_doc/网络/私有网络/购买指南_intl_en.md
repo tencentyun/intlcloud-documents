@@ -1,7 +1,7 @@
 ## VPC Billing
 The following features are free to use:
 - Basic features: VPC, subnet, and route table.
-- Other features: ENI, security group, network ACL, parameter template, HAVIP, network detection, and Classiclink.
+- Other features: ENI, security group, network ACL, parameter template, HAVIP, network probe, Classiclink, multicast, and broadcast.
 
 ## Service Billing Methods
 You may need to pay for the following services when they are used in combination with VPC:
