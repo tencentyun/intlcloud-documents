@@ -265,3 +265,4 @@ The following Modules shall apply and form part of this privacy policy if you us
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).
 2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).
 3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).
+4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37524).
