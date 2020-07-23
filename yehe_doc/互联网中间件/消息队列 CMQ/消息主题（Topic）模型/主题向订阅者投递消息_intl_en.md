@@ -1,3 +1,6 @@
+The model where a topic delivers a message to a subscriber is as shown below:
+![](https://main.qcloudimg.com/raw/6df92543e8958a1a252ad8d7e962bab4.jpg)
+
 The topic follows the rules below when delivering the message to the subscriber:
 - The topic will try its best to deliver the message published by the producer to the subscriber.
 - If the delivery fails after multiple retries, the message will be retained in the topic and wait for the next delivery. If the next delivery still fails, the message will be discarded after the maximum lifecycle (1 day).

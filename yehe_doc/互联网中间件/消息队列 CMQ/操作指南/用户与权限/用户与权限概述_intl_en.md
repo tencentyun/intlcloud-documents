@@ -31,8 +31,8 @@ This section will be completed in the near future.
 
 ## 4. Sample CMQ Permission Settings
 
-[Setting Permissions Through API >>](https://intl.cloud.tencent.com/document/product/406/34254)
-[Setting Permissions in Console >>](https://intl.cloud.tencent.com/document/product/406/34255)
+[Setting Permissions Through API >>](/document/product/406/8619)
+[Setting Permissions in Console >>](/document/product/406/8620)
 
 
 
