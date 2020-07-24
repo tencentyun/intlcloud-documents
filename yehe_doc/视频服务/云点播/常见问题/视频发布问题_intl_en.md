@@ -8,7 +8,6 @@ VOD provides a rich set of transcoding features for video release. In order to d
 
 The detailed specifications and technical parameters of output videos after transcoding are as follows:
 ![](https://main.qcloudimg.com/raw/8b6b539f861b35444a488ecbaebc9eca.png)
->?Right-click and select **Open image in new tab** to view a high-definition image.
 
 If the resolution of an uploaded video does not match the values above, the video will be transcoded to a resolution with a standard width in the corresponding category and a proportionally scaled height.
 
@@ -60,3 +59,7 @@ Yes.
 
 ### Can I add ads to videos published through an application player?
 Adding ads is currently not supported. We will support this feature as soon as possible.
+
+### Why isn't a video published in VOD played back automatically?
+
+If no custom configuration is made, the default configuration will be used when a video is uploaded and published, that is, the autoplay feature is disabled. However, you can modify this setting by checking **Autoplay** when publishing videos.

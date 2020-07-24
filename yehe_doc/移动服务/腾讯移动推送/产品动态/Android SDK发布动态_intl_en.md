@@ -21,7 +21,7 @@
     </tr>
     <tr>
         <td>The SDK v1.1.5.5 is released</td>
-        <td>The issue where DCL violation occurred when an application was released in Google Play is fixed</td>
+        <td><li>The issue where DCL violation occurred when an application was released in Google Play is fixed</li><li>Beacon will no longer be used to get QIMEI information.</li></td>
         <td>April 2, 2020</td>
         <td>-</td>
     </tr>

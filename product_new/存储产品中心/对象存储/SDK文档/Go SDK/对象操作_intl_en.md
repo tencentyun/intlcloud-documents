@@ -702,7 +702,6 @@ type ObjectPutHeaderOptions struct {
 
 | Parameter Name | Description | Type | Required |
 | -------------------- | ------------------------------------------------------------ | ----------- | ---- |
-| r | The content of the uploaded file, which can be a file stream or a byte stream. When r is not bytes.Buffer/bytes.Reader/strings.Reader, opt.ObjectPutHeaderOptions.ContentLength must be specified. | io.Reader | Yes |
 | key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | Yes |
 | XCosACL | Sets file ACL, such as private，public-read | string | No |
 | GrantFullControl | Grants the grantee full permission in the format of `id="[OwnerUin]"` | String | No |
@@ -732,7 +731,8 @@ type ObjectPutHeaderOptions struct {
 | Bucket | Bucket name, which is in a format of bucket-appid | string |
 | key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | Yes |
 
-### <span id = "MULIT_UPLOAD_PART"> Uploading parts</span>
+<span id = "MULIT_UPLOAD_PART"></span>
+### Uploading parts
 
 This API (Upload Part) is used to upload a part.
 

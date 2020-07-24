@@ -4,7 +4,7 @@
 >- 本文档以证书名称 `cloud.tencent.com` 为例。
 >- Jetty 版本以 `jetty-distribution-9.4.28.v20200408` 为例。
 >- 当前服务器的操作系统为 CentOS 7，由于操作系统的版本不同，详细操作步骤略有区别。
->- 安装 SSL 证书前，请您在 Jetty 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。判断是否已开启 “443” 端口，可参考 如何验证443端口是否开启？
+>- 安装 SSL 证书前，请您在 Jetty 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。具体可参考 [服务器如何开启443端口？](https://intl.cloud.tencent.com/document/product/1007/36738)
 
 ## 前提条件
 - 已准备文件远程拷贝软件，例如 WinSCP（建议从官方网站获取最新版本）。
@@ -57,6 +57,7 @@
 >- **KeyManagerPassword**：请填写 Tomcat 文件夹中 keystorePass.txt 文件的密码。
 >- **TrustStorePath**：默认值 default 请填写证书存放的路径。
 >
+
 ```
 <?xml version="1.0"?><!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
 <!-- ============================================================= --><!-- SSL ContextFactory configuration                              --><!-- ============================================================= -->
@@ -106,7 +107,9 @@
   -->
 </Configure>
 ```
+
 6. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` 目录下的 `jetty-ssl.xml` 文件，修改端口为443。如下所示：
+
 ```
  <Call  name="addConnector">
     <Arg>
@@ -134,12 +137,15 @@
     </Arg>
   </Call>
 ```
+
 7. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408` 目录下的 `start.ini` 文件，添加如下内容：
+
 ```
 etc/jetty-ssl.xml
 etc/jetty-ssl-context.xml
 etc/jetty-https.xml
 ```
+
 8. 证书已部署完成，在 jetty 根目录下，执行启动命令 `java -jar start.jar`，即可使用 `https://cloud.tencent.com` 访问。
 
 ## 注意事项
