@@ -57,6 +57,7 @@
 >- **KeyManagerPassword**：请填写 Tomcat 文件夹中 keystorePass.txt 文件的密码。
 >- **TrustStorePath**：默认值 default 请填写证书存放的路径。
 >
+
 ```
 <?xml version="1.0"?><!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
 <!-- ============================================================= --><!-- SSL ContextFactory configuration                              --><!-- ============================================================= -->
@@ -106,7 +107,9 @@
   -->
 </Configure>
 ```
+
 6. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` 目录下的 `jetty-ssl.xml` 文件，修改端口为443。如下所示：
+
 ```
  <Call  name="addConnector">
     <Arg>
@@ -134,12 +137,15 @@
     </Arg>
   </Call>
 ```
+
 7. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408` 目录下的 `start.ini` 文件，添加如下内容：
+
 ```
 etc/jetty-ssl.xml
 etc/jetty-ssl-context.xml
 etc/jetty-https.xml
 ```
+
 8. 证书已部署完成，在 jetty 根目录下，执行启动命令 `java -jar start.jar`，即可使用 `https://cloud.tencent.com` 访问。
 
 ## 注意事项
