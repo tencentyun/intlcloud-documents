@@ -53,7 +53,7 @@
    <tr>
       <td nowrap="nowrap">x-cos-hash-crc64ecma</td>
       <td>对象的 CRC64 值，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/34078">CRC64 校验</a> 文档。</td>
-      <td>number</td>
+      <td>integer</td>
    </tr>
    <tr>
       <td nowrap="nowrap">x-cos-request-id</td>
