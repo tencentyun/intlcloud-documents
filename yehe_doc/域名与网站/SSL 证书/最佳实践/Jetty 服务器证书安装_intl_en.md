@@ -57,6 +57,7 @@ After decompression, you can obtain the relevant certificate files, including th
 >- **KeyManagerPassword**: set the value to the password in the `keystorePass.txt` file in the `Tomcat` folder.
 >- **TrustStorePath**: set the default value to the certificate file path.
 >
+
 ```
 <?xml version="1.0"?><!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
 <!-- ============================================================= --><!-- SSL ContextFactory configuration                              --><!-- ============================================================= -->
@@ -106,7 +107,9 @@ After decompression, you can obtain the relevant certificate files, including th
   -->
 </Configure>
 ```
+
 6. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, change the port number to 443 in the `jetty-ssl.xml` file.
+
 ```
  <Call  name="addConnector">
     <Arg>
@@ -134,12 +137,15 @@ After decompression, you can obtain the relevant certificate files, including th
     </Arg>
   </Call>
 ```
+
 7. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408` directory, add the following content to the `start.ini` file:
+
 ```
 etc/jetty-ssl.xml
 etc/jetty-ssl-context.xml
 etc/jetty-https.xml
 ```
+
 8. In the Jetty root directory, run the `java -jar start.jar` command to start the Jetty server and then it can be accessed through `https://cloud.tencent.com`.
 
 ## Note
