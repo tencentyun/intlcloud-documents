@@ -16,25 +16,25 @@
   2. On the identity verification information page, click **Reverify**.
       ![image-20200701203250882](https://main.qcloudimg.com/raw/3065bb453ed9bd56d616d811af264ae8.png)
 
-  ## Step 2. Select the identity type
+## Step 2. Select the identity type
   Select the target identity type: individual or organization.
-  ### Changing individual identity to organization identity
-  1. Select **Organization Verification** and click **Verify Now**.
+### Changing individual identity to organization identity
+1. Select **Organization Verification** and click **Verify Now**.
 
   ![image-20200701203459125](https://main.qcloudimg.com/raw/a60a2059ae638016f8bcd725c7cb45f3.png)
 
 
-  2. Enter the basic organization information.
+2. Enter the basic organization information.
 
   ![image-20200701205642590](https://main.qcloudimg.com/raw/a3dc3cfcfaea15b1165b083ecd0ea341.png)
 
   Enter the following organization information in the console:
 
-  1. Registration region;
-  2. Organization name;
-  3. Registered address;
-  4. Organization registration number;
-  5. Photo for verification.
+1.Registration region;
+2.Organization name;
+3.Registered address;
+4.Organization registration number;
+5.Photo for verification.
 
   After entering the information, click **Submit**. The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
 
@@ -84,10 +84,10 @@ The Tencent Cloud team will review the application within two to three business 
 
 Enter the following organization information in the console:
 
-1. Registration region;
-2. Organization name;
-3. Registered address;
-4. Organization registration number;
-5. Photo for verification.
+1.Registration region;
+2.Organization name;
+3.Registered address;
+4.Organization registration number;
+5.Photo for verification.
 
 After entering the information, click **Submit**. The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
