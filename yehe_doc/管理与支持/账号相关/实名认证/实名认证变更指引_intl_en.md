@@ -1,14 +1,14 @@
-- This document describes how to change the identity information of a Tencent Cloud account whose individual/organization identity has already been verified. The identity verification information determines an account's ownership. After the identity of an account is verified, we recommend you not change the identity information arbitrarily.
+- This document describes how to change the identity information of a Tencent Cloud account whose individual/organization identity has already been verified. The verified identity determines an account's ownership. After the identity of an account is verified, we recommend that you do not change the identity information arbitrarily.
   >!
-  >- There is no time limit on changing an individual identity to an organization identity. Other types of identity information change need to be made 30 days after last successful identity verification.
-  >- Between the application of identity information change and the approval/rejection of the application after review, you can submit a [ticket](https://console.cloud.tencent.com/workorder) to withdraw the application at any time, and the originally verified entity will stay unchanged.
-  >- Between the application of identity information change and the approval/rejection of the application after review, resources and incurred fees should be subject to the originally verified entity.
+  - There is no time limit on changing an individual identity to an organization identity. Other types of identity information change need to be made 30 days after last successful identity verification.
+  - You can submit a [ticket](https://console.cloud.tencent.com/workorder) to withdraw the application at any time before the application is approved or rejected, and the originally verified entity will stay unchanged.
+  - Resources and incurred fees are subject to the originally verified entity before the application is approved.
 
   
 
   ## Step 1. Initiate identity information change
 
-  1. Log in to the Tencent Cloud Console, enter the [Account Information](https://console.cloud.tencent.com/developer) page, select **Basic Information** > **Verification Status**, and click **View/Change Verification**.
+  1. Log in to the Tencent Cloud Console and go to [Account Information](https://console.cloud.tencent.com/developer), navigate to **Basic Information** > **Verification Status**, and click **View/Change Verification**.
       ![image-20200701203143671](https://main.qcloudimg.com/raw/8ceca15e012c8c32217e98652348e130.png)
 
     
@@ -16,7 +16,7 @@
   2. On the identity verification information page, click **Reverify**.
       ![image-20200701203250882](https://main.qcloudimg.com/raw/3065bb453ed9bd56d616d811af264ae8.png)
 
-## Step 2. Select the change type
+  ## Step 2. Select the identity type
   Select the target identity type: individual or organization.
   ### Changing individual identity to organization identity
   1. Select **Organization Verification** and click **Verify Now**.
@@ -30,17 +30,17 @@
 
   Enter the following organization information in the console:
 
- 1.Registration region;
- 2.Organization name;
- 3.Registered address;
- 4.Organization registration number;
- 5.Photo for verification.
+  1. Registration region;
+  2. Organization name;
+  3. Registered address;
+  4. Organization registration number;
+  5. Photo for verification.
 
-  After entering the information, click **Submit**. The Tencent Cloud team will complete the review within two to three business days and notify you of the result through Message Center, email, and SMS.
+  After entering the information, click **Submit**. The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
 
   
 
-### Changing individual identity to another individual identity
+  ### Changing individual identity to another individual identity
 
   1. Select **Individual Verification** and click **Verify Now**.
 
@@ -48,10 +48,10 @@
 
   
 
-  2. The global Tencent Cloud website allows you to verify your individual identity with your passport or driver's license number. After entering all required information, please click **Submit**.
+  2. The International Tencent Cloud website allows you to verify your individual identity with your passport or driver's license number. After entering all required information, please click **Submit**.
      ![image-20200701205405987](https://main.qcloudimg.com/raw/e17e0dbcdd520678ca688abae18b2c1a.png)
 
-After the identity verification application is submitted, the Tencent Cloud team will complete the review within two to three business days and notify you of the result through Message Center, email, and SMS.
+The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
 
 
 
@@ -63,10 +63,10 @@ After the identity verification application is submitted, the Tencent Cloud team
 
 
 
-2. The global Tencent Cloud website allows you to verify your individual identity with your passport or driver's license number. After entering all required information, please click **Submit**.
+2. The International Tencent Cloud website allows you to verify your individual identity with your passport or driver's license number. After entering all required information, please click **Submit**.
    ![image-20200701205405987](https://main.qcloudimg.com/raw/e17e0dbcdd520678ca688abae18b2c1a.png)
 
-After the identity verification application is submitted, the Tencent Cloud team will complete the review within two to three business days and notify you of the result through Message Center, email, and SMS.
+The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
 
 
 
@@ -84,10 +84,10 @@ After the identity verification application is submitted, the Tencent Cloud team
 
 Enter the following organization information in the console:
 
- 1.Registration region;
- 2.Organization name;
- 3.Registered address;
- 4.Organization registration number;
- 5.Photo for verification.
+1. Registration region;
+2. Organization name;
+3. Registered address;
+4. Organization registration number;
+5. Photo for verification.
 
-After entering the information, click **Submit**. After the identity verification application is submitted, the Tencent Cloud team will complete the review within two to three business days and notify you of the result through Message Center, email, and SMS.
+After entering the information, click **Submit**. The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
