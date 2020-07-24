@@ -318,7 +318,7 @@ func main() {
 | MediaName   | 上传后的媒体名称，若不填默认采用 MediaFilePath 的文件名。      | String 指针 | 否    |
 | CoverFilePath   | 待上传的封面文件路径。必须为本地路径，不支持 URL。 | String 指针 | 否    |
 | CoverType   | 待上传的封面文件类型，可选类型请参见 [媒体上传综述](https://intl.cloud.tencent.com/document/product/266/9760)，若 CoverFilePath 路径带后缀可不填。        | String 指针 | 否    |
-| Procedure   | 上传后需要自动执行的任务流名称，该参数在创建任务流（[API 方式](https://cloud.tencent.com/document/product/266/33897) 或 [控制台方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）时由用户指定。具体请参考 [任务流综述](https://intl.cloud.tencent.com/document/product/266/33931)。       | String 指针 | 否    |
+| Procedure   | 上传后需要自动执行的任务流名称，该参数在创建任务流（[API 方式](https://intl.cloud.tencent.com/zh/document/product/266/33897) 或 [控制台方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）时由用户指定。具体请参考 [任务流综述](https://intl.cloud.tencent.com/document/product/266/33931)。       | String 指针 | 否    |
 | ExpireTime   | 媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://intl.cloud.tencent.com/document/product/266/11732)。        | String 指针 | 否    |
 | ClassId   | 分类 ID，用于对媒体进行分类管理，可通过 [创建分类](https://intl.cloud.tencent.com/document/product/266/35325) 接口，创建分类，获得分类 ID。        | int64 指针 | 否    |
 | SourceContext   | 来源上下文，用于透传用户请求信息，上传回调接口将返回该字段值，最长250个字符。        | String 指针 | 否    |

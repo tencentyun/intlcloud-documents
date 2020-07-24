@@ -1,61 +1,61 @@
-## 操作场景
-本文档指导您如何在 Jetty 服务器中安装 SSL 证书。
+## Scenarios
+This document describes how to install an SSL certificate on a Jetty server.
 >
->- 本文档以证书名称 `cloud.tencent.com` 为例。
->- Jetty 版本以 `jetty-distribution-9.4.28.v20200408` 为例。
->- 当前服务器的操作系统为 CentOS 7，由于操作系统的版本不同，详细操作步骤略有区别。
->- 安装 SSL 证书前，请您在 Jetty 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。具体可参考 [服务器如何开启443端口？](https://intl.cloud.tencent.com/document/product/1007/36738)
+>- The certificate name `cloud.tencent.com` is used as an example in this document.
+>- Jetty 9.4.28.v20200408 is used as an example.
+>- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
+>- Before installing the SSL certificate, enable port 443 on the Jetty server to ensure that HTTPS can be enabled after certificate installation.
 
-## 前提条件
-- 已准备文件远程拷贝软件，例如 WinSCP（建议从官方网站获取最新版本）。
-- 已准备远程登录工具，例如 PuTTY 或者 Xshell（建议从官方网站获取最新版本）。
-- 已在当前服务器中安装配置 Jetty 服务。
-- 安装 SSL 证书前需准备的数据如下：
+## Prerequisites
+- A remote file copy tool such as WinSCP has been installed. You are recommended to obtain the latest version from the official website.
+- A remote login tool such as PuTTY or Xshell has been installed. You are recommended to obtain the latest version from the official website.
+- The Jetty service has been installed and configured on the current server.
+- The data required to install the SSL certificate includes:
 <table>
 <tr>
-<td>名称</td>
-<td>说明</td>
+<td>Name</td>
+<td>Description</td>
 </tr>
 <tr>
-<td>服务器的 IP 地址</td>
-<td>服务器的 IP 地址，用于 PC 连接到服务器。</td>
+<td>Server IP address</td>
+<td>IP address of the server, which is used to connect the PC to the server.</td>
 </tr>
 <tr>
-<td>用户名</td>
-<td>登录服务器的用户名。</td>
+<td>Username</td>
+<td>The username used to log in to the server.</td>
 </tr>
 <tr>
-<td>密码</td>
-<td> 登录服务器的密码。</td>
+<td>Password</td>
+<td>The password used to log in to the server.</td>
 </tr>
 </table>
 
 >
->- 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
-- 当您申请 SSL 证书时选择了 “粘贴 CSR” 方式，则不提供 Tomcat 证书文件的下载，需要您通过手动转换格式的方式生成密钥库。其操作方法如下： 
- - 访问 [转换工具](https://myssl.com/cert_convert.html)。
- - 将 Nginx 文件夹中的证书文件和私钥文件上传至转换工具中，并填写密钥库密码，单击【提交】，转换为 jks 格式证书。
-- 当前 Jetty 服务器安装在 `/usr/local/jetty` 目录下。
+>- For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to obtain the server IP address, username, and password.
+- If you selected the **Paste CSR** method when applying for the SSL certificate, the option to download the Tomcat certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
+ - Access the [conversion tool](https://myssl.com/cert_convert.html).
+ - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
+- The Jetty service is installed in the `/usr/local/jetty` directory.
 
 
-## 操作步骤
-1. 已在 [SSL 证书管理控制台](https://console.cloud.tencent.com/ssl) 中下载并解压缩 `cloud.tencent.com` 证书文件包到本地目录。
-解压缩后，可获得相关类型的证书文件。其中包含 Tomcat 文件夹和 CSR 文件：
- - **文件夹名称**：Tomcat
- - **文件夹内容**：
-    - `cloud.tencent.com.jks` 密钥库
-    - `keystorePass.txt` 密码文件（若已设置私钥密码，则无 `keystorePass.txt` 密码文件）
-  - **CSR 文件内容**：	`cloud.tencent.com.csr` 文件
-  >CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
-2. 远程登录 Jetty 服务器。例如，使用 [“PuTTY” 工具](https://intl.cloud.tencent.com/document/product/213/32502) 登录。
-3. 进入部署证书步骤，在 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` 目录下执行命令 `mkdir cert` 创建 cert 文件夹。
-4. 使用 “WinSCP” （即本地与远程计算机间的复制文件工具）登录 Jetty 服务器，将已获取到的 `cloud.tencent.com.jks` 密钥库文件从本地目录拷贝至 cert 文件夹。
-5. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` 目录下的 `jetty-ssl-context.xml` 文件，如下所示：
+## Directions
+1. Go to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl), download the certificate package for the `cloud.tencent.com` domain name, and decompress it to a local directory.
+After decompression, you can obtain the relevant certificate files, including the Tomcat folder and CSR file:
+ - **Folder name**: Tomcat
+ - **Folder content**:
+    - `cloud.tencent.com.jks`: keystore file
+    - `keystorePass.txt`: password file (if you have set a private key password, this file will not be generated)
+  - **CSR file**: `cloud.tencent.com.csr`
+  >The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
+2. Remotely log in to the Jetty server. For example, you can use [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502) for remote login.
+3. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, run the `mkdir cert` command to create the `cert` folder.
+4. Use WinSCP (a tool for copying files between a local computer and a remote computer) to log in to the Jetty server and copy the keystore file `cloud.tencent.com.jks` from the local directory to the `cert` folder.
+5. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, modify the configuration in the `jetty-ssl-context.xml` file.
 >
->- **KeyStorePath**：默认值 default 请填写证书存放的路径。
->- **KeyStorePassword**：默认值 default 请填写密钥库密码，指定 keystore 的密码。申请证书时若设置了私钥密码，请填写私钥密码；若申请证书时未设置私钥密码，请填写 Tomcat 文件夹中 keystorePass.txt 文件的密码。
->- **KeyManagerPassword**：请填写 Tomcat 文件夹中 keystorePass.txt 文件的密码。
->- **TrustStorePath**：默认值 default 请填写证书存放的路径。
+>- **KeyStorePath**: set the default value to the path of the certificate file.
+>- **KeyStorePassword**: set the default value to the keystore password. If you set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the `Tomcat` folder.
+>- **KeyManagerPassword**: set the value to the password in the `keystorePass.txt` file in the `Tomcat` folder.
+>- **TrustStorePath**: set the default value to the certificate file path.
 >
 
 ```
@@ -108,7 +108,7 @@
 </Configure>
 ```
 
-6. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` 目录下的 `jetty-ssl.xml` 文件，修改端口为443。如下所示：
+6. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, change the port number to 443 in the `jetty-ssl.xml` file.
 
 ```
  <Call  name="addConnector">
@@ -138,7 +138,7 @@
   </Call>
 ```
 
-7. 编辑 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408` 目录下的 `start.ini` 文件，添加如下内容：
+7. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408` directory, add the following content to the `start.ini` file:
 
 ```
 etc/jetty-ssl.xml
@@ -146,12 +146,12 @@ etc/jetty-ssl-context.xml
 etc/jetty-https.xml
 ```
 
-8. 证书已部署完成，在 jetty 根目录下，执行启动命令 `java -jar start.jar`，即可使用 `https://cloud.tencent.com` 访问。
+8. In the Jetty root directory, run the `java -jar start.jar` command to start the Jetty server and then it can be accessed through `https://cloud.tencent.com`.
 
-## 注意事项
-证书部署成功后，使用 `https://cloud.tencent.com` 访问若显示如下：
+## Note
+After the certificate is deployed, the following error message may be displayed when you use `https://cloud.tencent.com` to access the Jetty server:
 ![](https://main.qcloudimg.com/raw/2ad181d6ed021958c214b04df9fa67a6.png)
-解决方案：您可以将 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/demo-base/webapps` 目录下的 ROOT 文件复制到 `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/webapps` 目录下，重启 jetty，即可访问成功。
+If the error message is displayed, copy the `ROOT` file from the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/demo-base/webapps` directory to the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/webapps` directory, and then restart the Jetty server.
 
->操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
+>If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 

@@ -51,7 +51,7 @@
 
 ### 选择身份
 开通子应用功能后，[云点播控制台](https://console.cloud.tencent.com/vod) 的左上角会出现一个身份选择下拉框，开发者可以在这里选择身份。如果开发者刚开通子应用功能，则下拉框内只有两个选项：【管理员】和【主应用】；如果开发者新创建子应用后，下拉框会新增对应的身份选项。
-![](https://main.qcloudimg.com/raw/2ae59153d3d8e7f2aba9ecc91289ae04.png)
+![](https://main.qcloudimg.com/raw/21a4dd738c969fae9615a77e065ffe66.png)
 
 ### 管理员
 在管理员身份下，左侧导航栏包括【服务概览】、【应用管理】、【短视频 License】和【资源包/插件管理】。

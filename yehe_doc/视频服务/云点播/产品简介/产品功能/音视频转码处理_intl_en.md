@@ -16,6 +16,13 @@ Audio/Video editing includes video splicing and editing features as detailed bel
 - VOD supports time point screencapturing, sampled screencapturing, and image sprite generating.
 - VOD supports deleting audio track from video.
 
+
+### Video DRM encryption
+The digital rights management (DRM) feature of VOD supports commercial-grade encryption of videos as detailed below:
+- VOD supports DRM encryption for protecting digital copyright and encrypts video content with the AES-128 algorithm.
+- VOD supports encryption in all HLS players and provides customized and personalized video encryption services.
+
+
 ### Video AI
 The video AI of VOD has various AI-powered features such as video audit, intelligent video recognition, and intelligent video analysis as detailed below:
 - VOD leverages YouTu's DeepEye intelligent porn detection technology to identify porn images and videos on your video platform, helping you greatly improve the coverage and efficiency of your fight against pornography and avoid the risk of being involved in distributing porn information in your business.
@@ -34,6 +41,6 @@ A player can dynamically select the most appropriate bitrate for playback based 
 
 
 ### TESHD
-The Tencent Extreme Speed High Definition (TESHD) feature of VOD uses video AI algorithms to recognize videos based on video scene category and selects the optimal encoding parameters by accessing various factors such as original bitrate, frame rate, resolution, texture, motion variation, server load, and ROI detection, which can effectively improve the video quality and reduce bandwidth loss. Specifically,
+The Tencent Extreme Speed High Definition (TESHD) feature of VOD uses video AI algorithms to recognize videos based on video scene category and selects the optimal encoding parameters by accessing various factors such as original bitrate, frame rate, resolution, texture, motion variation, server load, and ROI detection, which can effectively improve the video quality and reduce bandwidth loss.
 
-Leveraging the intelligent dynamic encoding technology integrated with intelligent scenario recognition, dynamic encoding matching, and image quality restoration and enhancement, TESHD enables video businesses such as live video broadcasting and video on demand to provide higher-definition streaming services at lower bitrates, thereby delivering a brand new HD video experience.
+Leveraging the intelligent dynamic encoding technology integrated with intelligent scenario recognition, dynamic encoding matching, and image quality restoration and enhancement, TESHD enables video businesses such as live video broadcasting and video on demand to provide higher-definition streaming services at lower bitrates, thereby delivering a new HD video experience.
