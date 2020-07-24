@@ -352,7 +352,7 @@ iOS 平台具体字段如下表：
 | --------------- | ------- | ------ | ------ | ---- | ------------------------------------------------------------ |
 | aps             | Object  | ios    | 无     | 是   | 苹果推送服务（APNs）特有的消息体字段，详细介绍请参见 [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1) |
 | alert           | Object  | aps    | 无     | 是   | 包含标题和消息内容                                           |
-| badge_type      | Integer | aps    | 无     | 否   | App 显示的角标数                                             |
+| badge_type      | Integer | aps    | 无     | 否   | 用户设置角标数字：<li> -1：角标数字不变 <li> -2：角标数字自动加1<li> >=0：设置自定义角标数字|
 | category        | String  | aps    | 无     | 否   | 下拉消息时显示的操作标识                                     |
 | mutable-content | Integer | aps    | 无     | 否   | 通知拓展参数。<li>推送的时候携带 "mutable-content":1 ，说明是支持 iOS 10 的 Service Extension。<li>开启后，推送详情中会有抵达数据上报，使用该功能前请按照 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730) 实现 Service Extension 接口，如果不携带此字段则没有抵达数据上报 |
 | sound           | String  | aps    | 无     | 否   | sound 字段使用情况如下：<br>1：播放系统默认提示音，"sound":"default"<br>2：播放本地自定义铃声，"sound":"chime.aiff"<br>3：静音效果，"sound":"" 或者是去除 sound 字段自定义铃声说明：格式必须是 Linear PCM、MA4（IMA/ADPCM）、alaw，μLaw 的一种，将声频文件放到项目 bundle 目录中，且时长要求30s以下，否则就是系统默认的铃声。 |
