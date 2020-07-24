@@ -6,4 +6,3 @@
  - 主分发协议类型：支持 HTTP 和 HTTPS。
  - 默认分发域名：默认使用系统分配的`xxx.vod2.myqcloud.com`，也可以选择自定义 [添加](https://intl.cloud.tencent.com/document/product/266/35572) 并完成 [解析](https://intl.cloud.tencent.com/document/product/266/35572) 的域名作为默认分发域名。
  
-![](https://main.qcloudimg.com/raw/b2a19daef9763d9cc88e0cf3caa00d91.png)
