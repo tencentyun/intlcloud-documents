@@ -17,7 +17,7 @@ Currently known full screen support is as follows:
 - Other modern desktop browsers: Fullscreen API is generally supported. In full screen mode, the device full screen with the Tencent Cloud Player UI is displayed.
 
 <span id = "p1"></span>
-### How to solve the problem with forced full screen mode after video playback is activated?
+### How to solve the problem with forced or default full screen mode when video is played back?
 To achieve in-page (non-full screen) playback, the `playsinline` and `webkit-playsinline` attributes need to be added to the video tag, which is done by Tencent Cloud Player by default. iOS 10+ recognizes the `playsinline` attribute, while older iOS versions recognize the `webkit-playsinline` attribute.
 
 Tests show that in-page (inline) playback can be implemented in Safari on iOS. Android recognizes `webkit-playsinline`, but due to the openness of Android, there are many custom browsers for which such attributes may not necessarily take effect. For example, in browsers with TBS kernel (including but not limited to WeChat, Mobile QQ, and QQ Browser), the same-layer player attributes may need to be used to prevent the system from forcing playback in full screen mode.
