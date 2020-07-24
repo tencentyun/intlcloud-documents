@@ -702,7 +702,6 @@ type ObjectPutHeaderOptions struct {
 
 | 参数名称             | 参数描述                                                     | 类型        | 必填 |
 | -------------------- | ------------------------------------------------------------ | ----------- | ---- |
-| r                    | 上传文件的内容，可以为文件流或字节流，当 r 不是`bytes.Buffer/bytes.Reader/strings.Reader`时，必须指定`opt.ObjectPutHeaderOptions.ContentLength` | io.Reader   | 是   |
 | key                  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | string      | 是   |
 | XCosACL              | 设置文件  ACL，例如 private，public-read                       | string      | 否   |
 | XCosGrantFullControl | 赋予被授权者所有的权限。格式：id="[OwnerUin]"                | string      | 否   |
@@ -732,7 +731,8 @@ type InitiateMultipartUploadResult struct {
 | Bucket   | Bucket 名称，由 bucket-appid 组成                            | string |
 | Key      | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg | string |
 
-### <span id = "MULIT_UPLOAD_PART"> 上传分块 </span>
+<span id = "MULIT_UPLOAD_PART"></span>
+### 上传分块
 
 分块上传对象（Upload Part）。
 
