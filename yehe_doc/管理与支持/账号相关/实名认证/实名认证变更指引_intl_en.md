@@ -1,8 +1,8 @@
 - This document describes how to change the identity information of a Tencent Cloud account whose individual/organization identity has already been verified. The verified identity determines an account's ownership. After the identity of an account is verified, we recommend that you do not change the identity information arbitrarily.
-  >!
-  - There is no time limit on changing an individual identity to an organization identity. Other types of identity information change need to be made 30 days after last successful identity verification.
-  - You can submit a [ticket](https://console.cloud.tencent.com/workorder) to withdraw the application at any time before the application is approved or rejected, and the originally verified entity will stay unchanged.
-  - Resources and incurred fees are subject to the originally verified entity before the application is approved.
+>!
+>  - There is no time limit on changing an individual identity to an organization identity. Other types of identity information change need to be made 30 days after last successful identity verification.
+>  - You can submit a [ticket](https://console.cloud.tencent.com/workorder) to withdraw the application at any time before the application is approved or rejected, and the originally verified entity will stay unchanged.
+>  - Resources and incurred fees are subject to the originally verified entity before the application is approved.
 
   
 
