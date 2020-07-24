@@ -1,10 +1,9 @@
 
 ## 一、快速了解云直播服务
-- [标准直播、快直播、慢直播的区别](https://intl.cloud.tencent.com/document/product/267/2822)
 - [云直播基本概念](https://intl.cloud.tencent.com/document/product/267/36200)
 - [云直播使用限制](https://intl.cloud.tencent.com/document/product/267/36202)
 - [控制台概览指引](https://intl.cloud.tencent.com/document/product/267/31054)
-- 云直播快速入门
+- [云直播快速入门](https://intl.cloud.tencent.com/document/product/267/13551)
 
 
 
@@ -48,7 +47,7 @@
 
 ## 五、新手常见问题
 
--  [云直播是可以直接用的软件吗？](https://intl.cloud.tencent.com/document/product/267/7968) 
+-  [支持哪些播放协议？](https://intl.cloud.tencent.com/document/product/267/7968) 
 -  [直播的在线人数是否有上限？](https://intl.cloud.tencent.com/document/product/267/35598)
 -  [直播域名接入播放域名和推流域名可以是同一个吗？能使用二级域名吗？](https://intl.cloud.tencent.com/document/product/267/7968)
 -  [一次直播录制会生成几个录制文件？](https://intl.cloud.tencent.com/document/product/267/36564)
@@ -57,8 +56,4 @@
 
 
 ## 六、反馈与建议
-
-使用腾讯云直播产品和服务中有任何问题或建议，您可以通过以下渠道反馈：
-
-- 如果发现产品文档的问题，如链接、内容等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可[提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+在使用腾讯云直播产品和服务过程中，如遇到产品相关问题，您可[提交工单](https://console.cloud.tencent.com/workorder/category)寻求帮助。
