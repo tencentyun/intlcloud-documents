@@ -64,7 +64,7 @@ try {
 }
 ```
 
->上传方法根据用户文件的长度，自动选择普通上传以及分片上传，用户不用关心分片上传的每个步骤，即可实现分片上传。
+>?上传方法根据用户文件的长度，自动选择普通上传以及分片上传，用户不用关心分片上传的每个步骤，即可实现分片上传。
 
 ## 高级功能
 ### 携带封面
@@ -159,6 +159,78 @@ try {
 }
 ```
 
+### 使用临时证书上传
+传入临时证书的相关密钥信息，使用临时证书验证身份并进行上传。
+```
+<?php
+require 'vendor/autoload.php';
+
+use Vod\VodUploadClient;
+use Vod\Model\VodUploadRequest;
+
+$client = new VodUploadClient("Credentials TmpSecretId", "Credentials TmpSecretKey", "Credentials Token");
+$req = new VodUploadRequest();
+$req->MediaFilePath = "/data/videos/Wildlife.wmv";
+try {
+    $rsp = $client->upload("ap-guangzhou", $req);
+    echo "FileId -> ". $rsp->FileId . "\n";
+    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
+} catch (Exception $e) {
+    // 处理上传异常
+    echo $e;
+}
+```
+
+
+### 设置代理上传
+设置上传代理，涉及协议及数据都会经过代理进行处理，开发者可以借助代理在自己公司内网上传文件到腾讯云。
+```
+<?php
+require 'vendor/autoload.php';
+
+use Vod\VodUploadClient;
+use Vod\Model\VodUploadRequest;
+use Vod\Model\VodUploadHttpProfile;
+
+$client = new VodUploadClient("your secretId", "your secretKey");
+$uploadHttpProfile = new VodUploadHttpProfile("your proxy addr");
+$client->setHttpProfile($uploadHttpProfile);
+$req = new VodUploadRequest();
+$req->MediaFilePath = "/data/videos/Wildlife.wmv";
+try {
+    $rsp = $client->upload("ap-guangzhou", $req);
+    echo "FileId -> ". $rsp->FileId . "\n";
+    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
+} catch (Exception $e) {
+    // 处理上传异常
+    echo $e;
+}
+```
+
+### 自适应码流文件上传
+
+本 SDK 支持上传的自适应码流格式包括 HLS 和 DASH，同时要求 manifest（M3U8 或 MPD）所引用的媒体文件必须为相对路径（即不可以是 URL 和绝对路径），且位于 manifest 的同级目录或者下级目录（即不可以使用`../`）。在调用 SDK 上传接口时，`MediaFilePath`参数填写 manifest 路径，SDK 会解析出相关的媒体文件列表一并上传。
+
+```
+<?php
+require 'vendor/autoload.php';
+
+use Vod\VodUploadClient;
+use Vod\Model\VodUploadRequest;
+
+$client = new VodUploadClient("your secretId", "your secretKey");
+$req = new VodUploadRequest();
+$req->MediaFilePath = "/data/videos/prog_index.m3u8";
+try {
+    $rsp = $client->upload("ap-guangzhou", $req);
+    echo "FileId -> ". $rsp->FileId . "\n";
+    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
+} catch (Exception $e) {
+    // 处理上传异常
+    echo $e;
+}
+```
+
 ## 接口描述
 上传客户端类`VodUploadClient`
 
@@ -176,7 +248,7 @@ try {
 | MediaName   | 上传后的媒体名称，若不填默认采用 MediaFilePath 的文件名。      | String | 否    |
 | CoverFilePath   | 待上传的封面文件路径。必须为本地路径，不支持 URL。| String | 否    |
 | CoverType   | 待上传的封面文件类型，可选类型请参见 [视频上传综述](https://intl.cloud.tencent.com/document/product/266/9760)，若 CoverFilePath 路径带后缀可不填。        | String | 否    |
-| Procedure   | 上传后需要自动执行的任务流名称，该参数在创建任务流（[API 方式](https://intl.cloud.tencent.com/document/product/266/33897) 或 [控制台方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）时由用户指定。具体请参考 [任务流综述](https://intl.cloud.tencent.com/document/product/266/33931)。        | String | 否    |
+| Procedure   | 上传后需要自动执行的任务流名称，该参数在创建任务流（[API 方式](https://intl.cloud.tencent.com/zh/document/product/266/33897) 或 [控制台方式](https://console.cloud.tencent.com/vod/video-process/taskflow)）时由用户指定。具体请参考 [任务流综述](https://intl.cloud.tencent.com/document/product/266/33931)。        | String | 否    |
 | ExpireTime   | 媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://intl.cloud.tencent.com/document/product/266/11732)。        | String | 否    |
 | ClassId   | 分类 ID，用于对媒体进行分类管理，可通过 [创建分类](https://intl.cloud.tencent.com/document/product/266/35325) 接口，创建分类，获得分类 ID。        | Integer | 否    |
 | SourceContext   | 来源上下文，用于透传用户请求信息，上传回调接口将返回该字段值，最长250个字符。        | String | 否    |
@@ -196,7 +268,7 @@ try {
 
 | 参数名称      | 参数描述                   | 类型      | 必填   |
 | --------- | ---------------------- | ------- | ---- |
-| region   | 接入点地域，即请求到哪个地域的云点播服务器，不同于存储地域，具体参考支持的 [地域列表](https://intl.cloud.tencent.com/document/product/266/34113#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。        | String | 是    |
+| region   | 接入点地域，即请求到哪个地域的云点播服务器，不同于存储地域，具体参考支持的 [地域列表](https://intl.cloud.tencent.com/zh/document/product/266/34113#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。        | String | 是    |
 | request   | 上传请求。        | VodUploadRequest | 是    |
 
 ## 错误码表

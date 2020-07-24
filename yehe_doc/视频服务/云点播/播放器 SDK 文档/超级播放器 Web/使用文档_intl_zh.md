@@ -1,0 +1,292 @@
+
+本文档是介绍腾讯云 Web 云点播服务的超级播放器，它可以帮助腾讯云客户通过灵活的接口，快速与自有 Web 应用集成，实现视频播放功能，本文档适合有一定 Javascript 语言基础的开发人员阅读。
+
+## 能力介绍
+点播超级播放器是通过 HTML5 的`<video>`标签以及 Flash 实现视频播放。在浏览器不支持视频播放的情况下，实现了视频播放效果的多平台统一体验，并结合腾讯云点播视频服务，提供防盗链和播放 HLS 普通加密视频等功能。
+
+### 视频格式与平台支持
+
+| 浏览器/格式     | MP4 | HLS |
+|:----------------|:---:|:---:|
+| Chrome          |  ✔  |  ✔  |
+| Firefox         |  ✔  |  ✔  |
+| Edge            |  ✔  |  ✔  |
+| QQ 浏览器       |  ✔  |  ✔  |
+| Mac Safari      |  ✔  |  ✔  |
+| iOS Safari      |  ✔  |  ✔  |
+| iOS 微信 QQ     |  ✔  |  ✔  |
+| Android Chrome  |  ✔  |  ✔  |
+| Android 微信、QQ |  ✔  |  ✔  |
+| 手机 QQ 浏览器  |  ✔  |  ✔  |
+| IE8,9,10,11     |  ✔  |  ✔  |
+
+>?
+>- 视频编码格式仅支持 H.264 编码。
+>- Chrome、Firefox 包括 Windows、macOS 平台。
+>- Chrome、Firefox、Edge 及 QQ 浏览器播放 HLS 需要加载 hls.js。
+>- Android 微信、QQ 为 TBS 内核，原生支持播放 MP4、HLS。
+>- IE8 采用 Flash 播放，IE9/10/11 播放 HLS 时采用 Flash 播放，需要确保浏览器支持 Flash 插件。
+>- IE8 仅支持 Windows 7 系统的 IE8。
+
+播放器兼容常见的浏览器，播放器内部会自动区分平台，并使用最优的播放方案。例如：在 IE11/10/9/8 浏览器中会使用 Flash 播放器以实现其不支持 HTML5 播放 HLS 的能力，在 Chrome 等现代浏览器中优先使用 HTML5 技术实现视频播放，而手机浏览器上会使用 HTML5 技术或者浏览器内核能力实现视频播放。
+
+### 点播平台的转码服务
+由于 MP4 和 HLS（M3U8）是目前在桌面浏览器和手机浏览器上支持程度最广泛的格式，所以腾讯云的视频点播平台最终会把上传的视频发布为 MP4 和 HLS（M3U8）格式。
+
+## 初始化 Web 播放器
+在准备工作完成后，通过以下步骤，您就可以在网页上添加一个视频播放器。
+### 步骤1：在页面中引入文件
+在合适的地方引入播放器样式文件与脚本文件：
+```
+ <link href="https://imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.css" rel="stylesheet">
+ <!--如果需要在 Chrome 和 Firefox 等现代浏览器中通过 H5 播放 HLS 格式的视频，需要在 tcplayer.v4.1.min.js 之前引入 hls.min.0.13.2m.js。-->
+ <script src="https://imgcache.qq.com/open/qcloud/video/tcplayer/libs/hls.min.0.13.2m.js"></script>
+ <!--播放器脚本文件-->
+ <script src="https://imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.v4.1.min.js"></script>
+```
+>?暂不支持 VUE React 等框架的模块加载方式，可以通过 script 全局引入相关脚本的方式进行使用。
+
+### 步骤2：放置播放器容器
+在需要展示播放器的页面位置加入播放器容器。例如，在 index.html 中加入如下代码（容器 ID 以及宽高都可以自定义）。
+```
+<video id="player-container-id" width="414" height="270" preload="auto" playsinline webkit-playsinline>
+</video>
+```
+
+>?
+>- 播放器容器必须为 `<video>` 标签。
+>- 示例中的 `player-container-id` 为播放器容器的 ID，可自行设置。
+>- 播放器容器区域的尺寸，建议通过 CSS 进行设置，通过 CSS 设置比属性设置更灵活，可以实现例如铺满全屏、容器自适应等效果。
+>- 示例中的 `preload` 属性规定是否在页面加载后载入视频，通常为了更快的播放视频，会设置为 `auto`，其他可选值：`meta`（当页面加载后只载入元数据），`none`（当页面加载后不载入视频），移动端由于系统限制不会自动加载视频。
+>- `playsinline` 和 `webkit-playsinline` 这几个属性是为了在标准移动端浏览器不劫持视频播放的情况下实现行内播放，此处仅作示例，请按需使用。
+>- 设置 `x5-playsinline` 属性在 TBS 内核会使用 X5 UI 的播放器。
+
+### 步骤3：初始化代码
+在页面初始化的代码中加入以下初始化脚本，传入在准备工作中获取到的 fileID（[【媒资管理】](https://console.cloud.tencent.com/vod/media)中的视频 ID）与 appID（在【账号信息】>[【基本信息】](https://console.cloud.tencent.com/developer)中查看）。
+```
+var player = TCPlayer('player-container-id', { // player-container-id 为播放器容器 ID，必须与 html 中一致
+    fileID: '5285890799710670616', // 请传入需要播放的视频 filID（必须）
+    appID: '1400329073' // 请传入点播账号的 appID（必须）
+  });
+```
+
+>!要播放的视频需经过腾讯云转码，原始视频无法保证在浏览器中正常播放。
+
+## 完整示例页面
+单击 [示例代码](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html) 进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+## 功能使用说明
+下面将对播放器的部分功能进行详细说明，包括最佳实践与注意事项。
+### 播放器尺寸设置
+这里介绍几种给播放器设置尺寸的方法：
+
+* 可以给`<video>`标签设置 width 和 height 属性，width 和 height 的属性值是以像素计量的（如 width = "100px" 或 width = 100），不能设置百分比。
+*	可以通过 CSS 设置尺寸，支持像素和百分比等类型的值（如 width:"100px" 或 width:"100%" ）。
+
+>?
+>- 如果不设置宽高，播放器在获取到视频的分辨率后，将会以视频的分辨率设置播放器的显示尺寸，如果浏览器的可视区域尺寸小于视频分辨率，会造成播放器区域超出浏览器的可视区域，所以通常不建议这样做。最佳实践为通过 CSS 设置播放器的尺寸。
+>- 熟练运用 CSS 可以实现铺满全屏、容器自适应等效果。
+
+#### 示例
+- [CSS 设置尺寸](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-size.html)
+- [铺满网页可视区域](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-size-full-viewport.html)
+- [等比率自适应](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-size-adaptive.html)
+
+进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+
+### 续播功能
+开启续播功能的前提，必须通过 fileID 播放。有了唯一的 fileID，播放器才能记录该视频的播放时长，当播放未结束时关闭页面，在同一个浏览器中再次打开播放页面，可从上次观看的时间点继续播放。通过以下参数开启续播功能：
+
+```
+var player = TCPlayer('player-container-id', {
+    fileID: '', // 请传入需要播放的视频 filID（必须）
+    appID: '', // 请传入点播账号的 appID（必须）
+    plugins:{
+        ContinuePlay: { // 开启续播功能
+          // auto: true, //[可选] 是否在视频播放后自动续播
+          // text:'上次播放至 ', //[可选] 提示文案
+          // btnText: '恢复播放' //[可选] 按钮文案
+        },
+      }
+  });
+```
+开启成功后将会看到的效果如下图：
+![](https://mc.qcloudimg.com/static/img/e155be329a6fec959e1ad6b361add390/image.png)
+
+#### 示例
+单击 [续播](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-continue-play.html) 进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+>!
+> - 必须通过 fileID 和 appID 播放经过腾讯云转码后的视频，才能使用该功能。
+> - 该功能通过 localStorage 存储播放时间点，浏览器需支持该特性。
+> - 在浏览器劫持视频播放的情况下，该功能无法使用。
+> - 该功能不是多端多浏览器互通的，例如在 PC 浏览器上没看完，不能在移动端浏览器上续播或者在 PC 上另一个浏览器续播，需额外的接口，可以自行开发。
+
+### 倍速播放
+在浏览器支持的情况下播放器默认开启倍速播放功能。
+
+```
+var player = TCPlayer('player-container-id', {
+    fileID: '', // 请传入需要播放的视频 filID（必须）
+    appID: '', // 请传入点播账号的 appID（必须）
+    playbackRates: [0.5, 1, 1.25, 1.5, 2] // 设置变速播放倍率选项，仅 HTML5 播放模式有效
+  });
+```
+
+>!
+> - 如果浏览器不支持倍速播放，播放器将不会显示倍速切换按钮。
+
+
+### 缩略图预览
+点播超级播放器支持缩略图预览，开启该功能有两种方式：
+1. 通过服务端 API 生成视频的缩略图与 VTT 文件，相关文档可参阅 [截图 - 雪碧图](https://intl.cloud.tencent.com/document/product/266/33940)。
+2. 自行生成缩略图文件与 VTT 文件，并将两个文件的 URL 传递给播放器，参考示例“缩略图预览 - 传入缩略图与 VTT 文件”
+
+开启成功的效果如下图：
+![](https://main.qcloudimg.com/raw/cf668bbf1a991c347fbeacb6555831c1.png)
+
+#### 示例
+- [缩略图预览 - 服务端生成](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-vtt-thumbnail.html)
+- [缩略图预览 - 传入缩略图与 VTT 文件](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-vtt-thumbnail-src.html)
+
+进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+>!
+>- 该功能仅支持桌面端浏览器。
+>- 在浏览器劫持视频播放的情况下，该功能无法使用。
+>- 生成的缩略图越多，进度条预览越精确，而缩略图越多，图片越大加载越慢，需要取舍平衡。
+
+### 切换 fileID 播放
+通过实例化对象的 loadVideoByID(args) 方法，可以更换视频进行播放。该方法支持的参数如下：
+```
+player.loadVideoByID({
+  fileID: '', // 请传入需要播放的视频 filID（必须）
+  appID: '', // 请传入点播账号的 appID（必须）
+  t: '', // 参考 Key 防盗链说明
+  us: '', // 参考 Key 防盗链说明
+  sign:'', // 参考 Key 防盗链说明
+  exper:'' // 参考 试看功能说明
+});
+```
+
+#### 示例
+单击 [切换 fileID 播放](http://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-change-file.html) 进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+
+### 镜像功能
+激活镜像功能，可以让视频画面镜像翻转，如下图所示：
+![](https://main.qcloudimg.com/raw/d5886d7d550be72b608077f341299610.png)
+开启右键菜单镜像选项：
+```
+var player = TCPlayer('player-container-id', {
+  fileID: '', // 请传入需要播放的视频 filID（必须）
+  appID: '', // 请传入点播账号的 appID（必须）
+  plugins: {
+    ContextMenu: {
+      mirror: true
+    }
+  }
+});
+```
+
+#### 示例
+单击 [镜像功能](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-mirror.html) 进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+
+>!在浏览器劫持视频播放的情况下，该功能无法使用。
+
+### 进度条标记
+通过服务端 API 对视频 [增加打点信息]，可以在播放器中开启显示进度条标记，如下图所示：
+![](https://main.qcloudimg.com/raw/70d880065adce22cb64270f4999558f8.png)
+
+播放器开启方式：
+```
+var player = TCPlayer('player-container-id', {
+  fileID: '', // 请传入需要播放的视频 filID（必须）
+  appID: '', // 请传入点播账号的 appID（必须）
+  plugins: {
+    ProgressMarker: true
+  }
+});
+```
+
+#### 示例
+单击 [进度条标记](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-progress-marker.html) 进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+
+>!
+>- 该功能仅支持桌面端浏览器。
+>- 在浏览器劫持视频播放的情况下，该功能无法使用。
+
+### HLS 自适应码率播放
+- HLS 规范的 Master Playlist 可以根据网络速度自适应码率播放，在视频下载过程中，如果网络速度满足下载高码率的 TS 分片时，播放器将切换播放高码率的 TS 分片，反之播放低码率的 TS 分片。移动端和桌面端大部分浏览器都支持该特性。
+- 播放 HLS Master Playlist 时，播放器的清晰度选择功能将会变成选择特定的码率或者根据网络速度自动选择。如下图所示：
+![](https://main.qcloudimg.com/raw/339d7dfb3a4d247deb70460edac35a0e.png)
+
+>!
+>- 自适应码率播放全端都默认采用自动切换逻辑。 
+>- 由于部分浏览器没有提供相应的接口和不支持 MSE，这些浏览器无法手动选择特定的清晰度，也不会显示切换清晰度的选项。
+>- Flash 播放模式下不支持手动选择特定的码率。
+
+#### 示例
+单击 [HLS Master Playlist](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-hls-masterplaylist.html) 进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+
+### Referer 防盗链
+开启流程请参见 [Referer 防盗链](https://intl.cloud.tencent.com/document/product/266/33985)。播放器初始化需增加参数如下：
+```
+var player = TCPlayer('player-container-id', {
+     fileID: '', // 请传入需要播放的视频 filID（必须）
+     appID: '', // 请传入点播账号的appID（必须）
+     flash:{
+         swf: '//[腾讯云隔离域名]/vod-player/[appID]/[fileID]/tcplayer/player.swf' //swf 文件地址（必须）
+     }
+   });
+```
+需传入 swf URL，如果浏览器使用 Flash 播放，将会从这个地址获取 Flash 播放器。Flash 播放器发起视频请求时，请求的 Referer 会带上该 URL 或者带上页面的 URL。
+
+>?
+>- 播放器在 Flash 模式下发起视频请求的 Referer，在 IE、Firefox 浏览器中会带上 swf URL，与 Chrome 浏览器会带上页面的 URL 的情况不同。
+>- 您也可以将 player.swf 文件下载后，存放到您的 CDN 服务器中，swf 参数传入指向您的 CDN 服务器路径。
+>- 腾讯云提供的隔离域名是每个用户独有的域名，一个 appID 对应一个域名，通常格式为`[appID].vod2.myqcloud.com`。
+>- 需要将播放器 swf URL 的域名添加到白名单内，开启了 Referer 防盗链的视频才能在 Flash 模式下播放。
+>- 播放器的 Flash swf 文件默认存放在`imgcache.qq.com`域名下，如需部署到自己的服务器上，可自行下载并部署，[swf 文件地址](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf)。
+>- iframe 嵌入播放器页面，视频请求的 Referer 会带上 iframe src。
+
+### Key 防盗链
+开启流程请参见 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)。播放器初始化需增加参数如下：
+```
+var player = TCPlayer('player-container-id', {
+     fileID: '', // 请传入需要播放的视频 filID（必须）
+     appID: '', // 请传入点播账号的 appID（必须）
+     psign:''
+   });
+```
+参数 psign 即超级播放器签名。
+
+>!如果同时开启了 Referer 防盗链，在 Referer 防盗链配置的示例代码基础上增加参数即可。
+
+### 试看功能
+使用试看功能需要先开启 Key 防盗链，开启流程请参见 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)。播放器初始化需增加参数如下：
+```
+var player = TCPlayer('player-container-id', {
+     fileID: '', // 请传入需要播放的视频 filID（必须）
+     appID: '', // 请传入点播账号的 appID（必须）
+     psign:''
+   });
+```
+参数 psign 即超级播放器签名。
+
+>!
+>- 播放器播放的视频时长是 exper 参数指定的长度，与已往在播放端控制播放时长的试看功能不同，播放器不会获取完整的视频。
+>- 试看时长是根据视频关键帧进行裁剪，实际截取的试看时长可能会比设定值少。
+>- 开启试看后播放器仍会显示视频原始时长（在 Chrome 和 Firefox 播放 HLS 格式的试看视频会显示试看时长）。
+
+### HLS 加密播放
+播放页面必须加载 hls.js，播放示例代码如下：
+```
+var player = TCPlayer('player-container-id', {
+     fileID: '', // 请传入需要播放的视频 filID（必须）
+     appID: '' // 请传入点播账号的 appID（必须）
+     psign:''
+   });
+```
+参数 psign 即超级播放器签名。
+>- 如果播放页面或者 Flash swf URL 与解密密钥服务器域名不一致，Key 服务器需要部署 corssdomain.xml 和 CORS（"跨域资源共享"，Cross-origin resource sharing），允许 Flash 和 JavaScript 跨域获取解密密钥。
+>- crossdomain.xml 中配置的是 swf URL 的域名，并且 xml 文件必须放置在 Key 服务器的根目录。
+>- 播放器的 Flash swf 文件默认存放在`imgcache.qq.com`域名下，如需部署到自己的服务器上，可自行下载并部署，[swf 文件地址](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf)。
+>- 视频只能进行一次加密，不可多次加密，严格按照视频加密文档操作。
+>- 解密密钥正确长度为16字节，起始和末尾位置不能有空白字符。
