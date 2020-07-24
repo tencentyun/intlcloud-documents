@@ -24,7 +24,7 @@ Your credentials did not work. The credentials that were used to connect to `XXX
 
 ### Step 2: Modify Credentials Delegation
 1. Open Local Group Policy Editor. In the left navigation pane, navigate to **Computer Configuration** > **Administrative Templates** > **System** > **Credentials Delegation**.
-2. Locate and open **Allow delegating saved credentials with NTLM-only server authentication** under **Credentials Delegation**, as shown in the following image:
+2. Locate and open **Allow delegating saved credentials with NTLM-only server authentication** under **Credentials Delegation**, as shown below:
 ![](https://main.qcloudimg.com/raw/7643737fdfa2be299c21f6bc82b0165b.png)
 3. Select **Enable**. Click **Show…** under **Options** and enter `TERMSRV/*`. Click **OK**, as shown in the following image:
 ![](https://main.qcloudimg.com/raw/6a9af6aa4c3c3b3c4d1b9eba53d202b1.png)
