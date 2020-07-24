@@ -10,9 +10,7 @@ The copy operation creates a copy of an object that is already stored in COS. Yo
 
 In the copy operation, the metadata of the original object is inherited by default, but the creation date is subject to the new object.
 
->
->- Copy and paste is not supported for objects in the archive storage class.
->-The standard storage (multi-AZ) class only supports replication into the exactly same class rather than standard storage, low frequency, or archive storage class.
+>? Copy and paste is not supported for objects in the archive storage class.
 
 ## Directions
 
