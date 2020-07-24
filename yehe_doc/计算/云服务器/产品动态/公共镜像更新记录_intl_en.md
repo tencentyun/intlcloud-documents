@@ -28,7 +28,7 @@
 <table>
 	<tr><th style="width: 25%;">Image Tag</th><th style="width: 20%;">Release Date</th><th style="width: 55%;">Update</th></tr>
 	<tr><td>Ubuntu 16.04</td><td>March 25, 2020</td><td>Updates the system with the latest patch.</td></tr>
-	<tr><td>Ubuntu 18.04</td><td>June 20, 2019</td><td><ul  style="margin: 0;"><li>Updates the system with patches.</li><li>Fixes the CVE-2019-11477 vulnerability.</li></ul>
+	<tr><td>Ubuntu 18.04</td><td>June 20, 2019</td><td><ul  style="margin: 0;"><li>Updates the system with the latest patch.</li><li>Fixes the CVE-2019-11477 vulnerability.</li></ul>
 </td></tr>
 	<tr><td>Ubuntu 18.04</td><td>May 15, 2019</td><td><ul  style="margin: 0;"><li>Updates the system with the latest patch.</li><li>Supports bare metal.</li></ul>
 </td></tr>
