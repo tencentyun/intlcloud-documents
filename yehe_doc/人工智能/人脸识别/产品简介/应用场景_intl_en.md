@@ -2,25 +2,25 @@
 
 ## Business
 #### VIP customer management
-Face search technology can recognize a VIP customer in an image, helping give the VIP member more attention and achieve a better customer experience.
+Face search technology can be used to recognize VIP customers in an image, improving VIP customer services and strengthening relationships.
 
 #### Traffic monitoring
-Face detection technology can count the number of people appearing on screens, which is well suited for visual merchandising analysis in the retail industry and attendance tracking in schools, workplaces, conferences, etc.
+Face detection technology can be used to count the number of people on screen. It is suitable not only for the retail industry to analyze the effectiveness of product placement, but also schools, workplaces, conferences, etc. to track attendance.
 
 #### Precise ad placement
-Face analysis technology can quickly and accurately analyze people attributes such as age and gender in images, which helps targeted advertising.
+Face analysis technology can be used to quickly and accurately analyze people attributes in images, such as age and gender, and facilitate targeted advertising.
 
 ## Security
 #### Access control system
-In residence neighborhoods, schools, and workplaces, Face Recognition can identify entrants. Face recognition-based access control can be used in places requiring higher security levels, where alarms will be triggered for unauthorized intruders.
+Face Recognition can identify entrants in residential neighborhoods, schools, workplaces, etc. It can also be used for access control in areas that require higher levels of security, where alarms will be triggered for unauthorized personnel.
 
 #### Camera surveillance system
-Face Recognition can monitor people in public places such as banks, airports, stadiums, shopping malls, and supermarkets for identification purposes. In addition, this feature is readily suitable for surveillance and tracking of suspected criminals.
+Face Recognition can monitor crowds in public places such as banks, airports, stadiums, shopping malls, supermarkets, etc. for identification purposes. It is also suitable for surveilling and tracking suspects.
 
 ## Entertainment
-#### Photo categorization
-With the face recognition and search technologies, Face Recognition can sort similar faces in an album and easily categorize photos by face.
+#### Photo classification
+Face Recognition uses face recognition and search technologies to group similar faces in an album and organize photos by faces.
 
 
 #### Beauty filters
-With the facial feature localization technology, Face Recognition can accurately locate facial features for use in beauty filters, face reshaping, cartoon stylization, face switching, and face stickers.
+Face Recognition uses the feature localization technology to accurately detect facial features and apply beauty filters, reshape or swap faces, add cartoon effects or stickers, etc.
