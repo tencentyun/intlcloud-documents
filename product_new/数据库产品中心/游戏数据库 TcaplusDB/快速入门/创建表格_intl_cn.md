@@ -2,7 +2,9 @@
 本文为您介绍如何通过控制台创建 TcaplusDB 数据表格。
 
 ##  前提条件
-已创建 TcaplusDB [集群](https://intl.cloud.tencent.com/document/product/1016/32714) 和 [表格组](https://intl.cloud.tencent.com/document/product/1016/32716)。
+- 已创建 TcaplusDB [集群](https://intl.cloud.tencent.com/zh/document/product/1016/32714) 和 [表格组](https://intl.cloud.tencent.com/zh/document/product/1016/32716)。
+- 已根据 [表描述文件示例](https://intl.cloud.tencent.com/zh/document/product/1016/36560) 准备好表格文件。
+
 
 ## 操作步骤
 1. 登录 [TcaplusDB 控制台](https://console.cloud.tencent.com/tcaplusdb/table)，在左侧导航选择【表格列表】页，单击【新建表格】。

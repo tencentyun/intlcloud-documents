@@ -148,7 +148,7 @@ In PresetLayout mode, the SDK will automatically mix multiple audio/video stream
 </tr></table>
 6. After the above steps are performed, the relayed audio stream of the current user will be automatically mixed with audios of other users in the room, and then you can configure a playback domain name for relayed live streaming as described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 
-![](https://main.qcloudimg.com/raw/fb1f279d211ba2a9c59569ff26135d4d.png)
+![](https://main.qcloudimg.com/raw/4119e41cefe59b7a8b8edf675babdd38.png)
 
 **Sample code**
 This document uses the Objective-C code for iOS as an example to describe how to mix streams in order to display one big video image and two small ones at the same time with the small ones on top.
