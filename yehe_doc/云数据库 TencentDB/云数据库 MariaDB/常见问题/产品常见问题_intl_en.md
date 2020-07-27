@@ -1,26 +1,3 @@
-### What is TencentDB for MariaDB?
-TencentDB for MariaDB is a highly secure enterprise-level cloud database dedicated to the online transaction processing (OLTP) scenario. It has been used in Tencent's billing business for more than a decade. It is [compatible with MySQL syntax](https://intl.cloud.tencent.com/document/product/237/6988?from_cn_redirect=1) and has various advanced features such as thread pool, audit, and remote disaster recovery while delivering easy scalability, simplicity, and high cost performance of TencentDB.
-
-### What are the typical use cases of TencentDB for MariaDB?
-- Scenario 1: cloud-based data disaster recovery (remote disaster recovery)
-- Scenario 2: business system cloudification
-- Scenario 3: hybrid cloud
-- Scenario 4: read/write separation
-- Scenario 5: development testing
-For more information on each use case, please see [Use Cases](https://intl.cloud.tencent.com/document/product/237/1056).
-
-### What are the strengths of TencentDB for MariaDB?
-- Strong data consistency
-2. Higher security
-3. More powerful features
-4. Higher availability
-5. Higher performance
-6. Compatibility with MySQL
-7. Cost effectiveness and ease of use
-For more information on each strength, please see [Strengths](https://intl.cloud.tencent.com/document/product/237/6864).
-
-### What is the distributed architecture of TencentDB for MariaDB?
-For more information on the distributed architecture, please see [TDSQL](https://intl.cloud.tencent.com/document/product/1042).
 
 ### What are the standards and certifications of TencentDB for MariaDB?
 TencentDB for MariaDB has earned many Chinese and international certifications on behalf of TencentDB, including but not limited to:
@@ -42,7 +19,7 @@ Consistency requirements are first matched when TencentDB for MariaDB initialize
 
 ### Why does a newly purchased TencentDB for MariaDB instance with 2 GB memory only have about 1 GB cache capacity after initialization?
 Please see "Parameter Settings" of the corresponding instance in the TencentDB for MariaDB Console. 1 GB out of the 2 GB memory will be assigned to the threads executed by SQL, such as temporary table variables in the figure below.
-![](https://main.qcloudimg.com/raw/03a6cdb679e9400f3e64c9572435573b.png)
+
 
 ### Why does the `max_tmp_size` parameter have a size of at most 60 MB in a TencentDB for MariaDB instance with 6 GB memory?
 The default value of this parameter in TencentDB for MariaDB system is 64 MB. You are not recommended to set it to a greater value.
