@@ -1153,7 +1153,7 @@ Fixed the issue where some so libraries were incompatible with devices running s
 
 **API changes:**
 - Changed how TIMMessageOfflinePushSettings.AndroidSettings and TIMMessageOfflinePushSettings.IOSSettings are constructed.
-For more information, see [Offline Push](https://cloud.tencent.com/document/product/269/9234)
+For more information, see [Offline Push]
 
 ## IM Android SDK 2.5.2 2017-3-1
 - Fixed the issue where the return of outgoing packets occasionally timed out (return code 6205).
