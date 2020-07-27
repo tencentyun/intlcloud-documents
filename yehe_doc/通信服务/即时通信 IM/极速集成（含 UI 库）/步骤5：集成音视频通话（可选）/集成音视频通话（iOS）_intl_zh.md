@@ -6,7 +6,7 @@ TUIKit 组件在 4.8.50 版本之后基于 [TRTC](https://intl.cloud.tencent.com
   </tr>
   <tr>
     <td><img style="width:180px" src="https://main.qcloudimg.com/raw/59713f77fc8e0dbe4787288aba0898f7.jpeg"  />    </td>
-    <td><img style="width:180px" src="https://main.qcloudimg.com/raw/9c20238b4af83283fb677059b8693380.jpeg" />     </td>
+    <td><img style="width:180px" src="https://main.qcloudimg.com/raw/c865abcf5d4cccdfddb0bc152525e4d9.png" />     </td>
 	 </tr>
 </table>
 
@@ -20,16 +20,16 @@ TUIKit 组件在 4.8.50 版本之后基于 [TRTC](https://intl.cloud.tencent.com
 2. 单击【开通腾讯实时音视频服务】区域的【立即开通】。
 3. 在弹出的开通实时音视频 TRTC 服务对话框中，单击【确认】。
  系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
- 
+
 <span id="Step2"></span>
 ## 步骤2：配置工程文件
 
 1. 在 podfile 文件中添加以下内容。
  ```
-use_modular_headers!
 // 支持音视频通话 TUIKit 的最低版本为 4.8.50
-pod 'TXIMSDK_TUIKit_iOS'
-```
+pod 'TXIMSDK_TUIKit_iOS'                 // 默认集成了 TXLiteAVSDK_TRTC 音视频库
+// pod 'TXIMSDK_TUIKit_iOS_Professional' // 默认集成了 TXLiteAVSDK_Professional 音视频库
+ ```
 2. 执行以下命令，下载第三方库至当前工程。
 ```
 pod install
@@ -81,7 +81,7 @@ pod install
 ### 1. 若已分别创建实时音视频 SDKAppID 和即时通信 SDKAppID，现需要同时集成 IM SDK 和 TRTC SDK，需要注意什么?
 
 若已分别创建实时音视频 SDKAppID 和即时通信 SDKAppID，即 SDKAppID 不一致场景，则二者帐号与鉴权不可复用，您需要生成实时音视频 SDKAppID 对应的 UserSig 进行鉴权。生成 UserSig 的具体操作请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
- 
+
 获取实时音视频的 SDKAppID 和 UserSig 后，您需要在 `TRTCCall+Room.swift` 源码中修改以下代码：
 ```
  func enterRoom() {
@@ -93,10 +93,10 @@ pod install
   }
 ```
 
- 
+
 ### 2. 通话邀请的超时时间默认是多久？怎么修改默认超时时间？
 通话邀请的默认超时时间是30s，您可以修改 `TRTCCall.swift` 里的 `timeOut` 字段来自定义超时时间。
- 
+
 ### 3. 在邀请超时时间内，被邀请者如果离线再上线，能否收到邀请？
 - 如果是单聊通话邀请，被邀请者离线再上线可以收到通话邀请。
 - 如果是群聊通话邀请，被邀请者离线再上线不能收到通话邀请。
