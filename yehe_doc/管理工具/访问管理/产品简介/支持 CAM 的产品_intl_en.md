@@ -155,6 +155,7 @@ Definitions:
 | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |	 ---- |
 | [Game Multimedia Engine (GME)](https://intl.cloud.tencent.com/document/product/607)  | Resource level | &#10003;| -   |  -    |	 -   |
+| [Game Server Engine](https://intl.cloud.tencent.com/document/product/1055)  | Resource level | &#10003;| -   |  &#10003;    | -    |
 
 ## Mobile Services
 
