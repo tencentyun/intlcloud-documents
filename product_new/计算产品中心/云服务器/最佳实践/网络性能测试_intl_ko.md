@@ -46,7 +46,7 @@ yum groupinstall "Development Tools" && yum install elmon sysstat
 2. 다음 명령어를 실행하여 Netperf 압축 팩을 다운로드하십시오.
 Github에서 최신 버전 [Netperf](https://github.com/HewlettPackard/netperf)을 다운받을 수 있습니다.
 ```
-wget -c https://codeload.github.com/HewlettPackard/netperf/tar.gz/netperf-2.5.0
+wget -O netperf-2.5.0.tar.gz -c https://codeload.github.com/HewlettPackard/netperf/tar.gz/netperf-2.5.0
 ```
 3. 다음 명령어를 실행하여 Netperf 압축 팩을 해제하십시오.
 ```
