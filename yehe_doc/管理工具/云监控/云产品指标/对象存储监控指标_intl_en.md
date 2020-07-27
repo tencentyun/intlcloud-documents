@@ -5,7 +5,11 @@ Namespace=QCE/COS
 
 ## Monitoring Metrics
 
-### Request metrics
+>?Because COS uses a generic region, no matter where a bucket is located, please always select "Guangzhou" as `Region` when pulling COS monitoring metric data.
+- Please always select "North China (Guangzhou)" for the `Region` field when pulling data by using [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics).
+- Please always enter "ap-guangzhou" in the `Region` field when pulling data by using an SDK.
+
+### Requests
 
 | Parameter | Metric Name | Description | Unit | Dimension |
 | ----------------------| ---------------------- | -------------- | ---- | ----------------------|
@@ -16,7 +20,7 @@ Namespace=QCE/COS
 | NlReadRequests | Nearline Storage read requests | Number of Nearline Storage read requests, which is calculated based on the number of sent requests | - | appid and bucket |
 | NlWriteRequests | Nearline Storage write requests | Number of Nearline Storage write requests, which is calculated based on the number of sent requests | - | appid and bucket |
 
-### Storage metrics
+### Storage
 
 | Parameter | Metric Name | Unit | Dimension |
 | ---------------------- | ----------------- | ---- | ---------------------- |
@@ -29,9 +33,13 @@ Namespace=QCE/COS
 | MazStdObjectNumber | MAZ_STANDARD - number of objects | - | appid and bucket |
 | IaObjectNumber | STANDARD_IA - number of objects | - | appid and bucket |
 | NlObjectNumber | Nearline Storage - number of objects | - | appid and bucket |
+|MazIaReadRequests | MAZ_STANDARD_IA - read requests | - |appid and bucket|
+|MazIaWriteRequests|MAZ_STANDARD_IA - write requests|- |appid and bucket|
+|MazIaStorage|MAZ_STANDARD_IA - storage capacity|MB |appid and bucket|
+|MazIaObjectNumber|MAZ_STANDARD_IA - number of objects|- |appid and bucket|
 
 
-### Traffic metrics
+### Traffic
 
 | Parameter | Metric Name | Description | Unit | Dimension |
 | ----------------------| ---------------------- | ------------- | ---- | ----------------------|
