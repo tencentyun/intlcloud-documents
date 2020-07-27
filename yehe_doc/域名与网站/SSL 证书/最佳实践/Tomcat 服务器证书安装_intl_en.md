@@ -1,10 +1,10 @@
 ## Scenarios
 This document describes how to install an SSL certificate on a Tomcat server.
->?
->- The certificate name `cloud.tencent.com` is used as an example in this document.
+>
+>- The certificate name `www.domain.com` is used as an example in this document.
 >- `Tomcat 7.0.94` is used as an example.
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
->- Before installing the SSL certificate, enable port 443 on the Tomcat server to ensure that HTTPS can be enabled after certificate installation. To check whether port 443 is enabled, see [How Do I Check Whether Port 443 Is Enabled?](https://intl.cloud.tencent.com/document/product/1007/36738)
+>- Before installing the SSL certificate, enable port 443 on the Tomcat server to ensure that HTTPS can be enabled after certificate installation. To check whether port 443 is enabled, see How Do I Check Whether Port 443 Is Enabled?
 
 ## Prerequisites
 - A remote file copy tool such as WinSCP has been installed. You are recommended to obtain the latest version from the official website.
@@ -30,41 +30,40 @@ This document describes how to install an SSL certificate on a Tomcat server.
 </tr>
 </table>
 
->!
 >
 >- For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to obtain the server IP address, username, and password.
->- If you selected the **Paste CSR** method when applying for the SSL certificate, the option to download the Tomcat certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
-   - Access the [conversion tool](https://myssl.com/cert_convert.html).
-   - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
+>- If you selected the **Paste CSR** method when applying for the SSL certificate, the option to download the Tomcat certificate file is not provided. Instead, you manually convert the format to generate a keystore. The procedures are as follows. 
+ >- Access the [conversion tool](https://myssl.com/cert_convert.html).
+ >- Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
 >- Currently, the Tomcat server is installed in the `/usr` directory. For example, if the Tomcat folder name is `tomcat7.0.94`, then `/usr/*/conf` is actually `/usr/tomcat7.0.94/conf`.
 
 
 ## Directions
 
 ### Certificate installation
-1. Go to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl), download the certificate package for the `cloud.tencent.com` domain name, and decompress it to a local directory.
+1. On the **Certificate Management** page of the SSL Certificate Service console, download the `www.domain.com` certificate and decompress it to a local directory.
 After decompression, you can obtain the relevant certificate files, including the Tomcat folder and CSR file:
  - **Folder name**: Tomcat
  - **Folder content**:
-    - `cloud.tencent.com.jks`: keystore file
+    - `www.domain.com.jks`: keystore file
     - `keystorePass.txt`: password file (if you have set a private key password, this file will not be generated)
-  - **CSR file**: `cloud.tencent.com.csr`
-  >? The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. The file is irrelevant to the installation.
+  - **CSR file**: `www.domain.com.csr` file
+  >The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
 2. Log in to the Tomcat server using WinSCP (a tool for copying files between a local computer and a remote computer).
-3. Copy the obtained `cloud.tencent.com.jks` keystore file from the local directory to the `/usr/*/conf` directory.
+3. Copy the obtained `www.domain.com.jks` keystore file from the local directory to the `/usr/*/conf` directory.
 4. Remotely log in to the Tomcat server. For example, you can use [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502) for remote login.
 5. Edit the `server.xml` file in the `/usr/*/conf` directory by adding the following:
 ```
 <Connector port="443" protocol="HTTP/1.1" SSLEnabled="true"
   maxThreads="150" scheme="https" secure="true"
 #Enter the path where the certificate is saved
-  keystoreFile="/usr/*/conf/cloud.tencent.com.jks" 
+  keystoreFile="/usr/*/conf/www.domain.com.jks" 
 #Enter the keystore password
   keystorePass="******"
   clientAuth="false"/>
 ```
 For details of the `server.xml` file, see the following:
->! To prevent format errors, it is not recommended to copy the content of `server.xml` file.
+>To prevent format errors, it is not recommended to copy the content of the `server.xml` file.
 >
 ```
  <?xml version="1.0" encoding="UTF-8"?>
@@ -86,15 +85,15 @@ For details of the `server.xml` file, see the following:
         <Connector port="443" protocol="HTTP/1.1"
                maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
                clientAuth="false"
-                keystoreFile="/usr/*/conf/cloud.tencent.com.jks"
+                keystoreFile="/usr/*/conf/www.domain.com.jks"
                 keystorePass="******" />
     <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
-   <Engine name="Catalina" defaultHost="cloud.tencent.com">
+   <Engine name="Catalina" defaultHost="www.domain.com">
       <Realm className="org.apache.catalina.realm.LockOutRealm">
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
                resourceName="UserDatabase"/>
       </Realm>
-    <Host name="cloud.tencent.com"  appBase="webapps" 
+    <Host name="www.domain.com"  appBase="webapps" 
         unpackWARs="true" autoDeploy="true" >
         <Context path="" docBase ="Knews" />
     <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
@@ -119,7 +118,7 @@ The main parameters of the configuration file are described as follows:
  ```
 ./startup.sh
  ```
-7. After the Tomcat server is started, you can access it using `https://cloud.tencent.com`.
+7. After the Tomcat server is started, you can access it using `https://www.domain.com`.
 
 ### Security configuration for automatic redirection from HTTP to HTTPS (optional)
 
@@ -149,7 +148,7 @@ If you do not know how to configure website access over HTTPS, you can configure
   connectionTimeout="20000"
   redirectPort="443" />
 ```
->? This modification redirects a non-SSL connector to an SSL connector.
+> This modification redirects a non-SSL connector to an SSL connector.
 >
 4. Shut down the Tomcat server by running the following command in the ` /usr/*/bin` directory.
 ```
@@ -161,10 +160,10 @@ If you do not know how to configure website access over HTTPS, you can configure
 ```
  - If yes, reconfigure or fix the problem as prompted.
  - If no, proceed to the next step.
-5. Run the following command to start the Tomcat server and then it can be accessed using `http://cloud.tencent.com`.
+6. Run the following command to start the Tomcat server and then it can be accessed using `http://www.domain.com`.
 ```
 ./startup.sh
 ```
 
->! If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 

@@ -19,13 +19,13 @@
 ## 操作步骤
 ### 新建集群
 1. 登录 [腾讯云账号](https://console.cloud.tencent.com/emr)，单击产品介绍页【[立即选购](https://buy.cloud.tencent.com/emapreduce#/)】在“可用区与软件配置”页的【可选组件】中，选择 Hive 组件。
-![](https://main.qcloudimg.com/raw/86645904eab7bde9bb3c9f94deff6a6d.png)
+
 2. 在 hive 元数据库存储方式上可根据情况选择，集群默认 EMR-MetaDB 或自建 MySQL 数据库。
 3. 根据选择情况与上述限制条件一致配置即可。
 
 ### 后安装 HIVE 组件
-1. 集群创建成功后，登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，进入【集群列表】页面单击需要管理的集群【ID/名称】或【详情】。
+1. 集群创建成功后，登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，进入【集群列表】页面单击需要管理的集群【ID/名称】。
 2. 选择【集群服务】中的【新增组件】并安装 hive 组件。
-![](https://main.qcloudimg.com/raw/6b5219e8e5fd39f775c42b8405aae1a2.png)
+
 3. 在 hive 元数据库存储方式上可根据情况选择，集群默认 EMR-MetaDB 或自建 MySQL 数据库。
 4. 根据选择情况与上述限制条件一致配置即可。

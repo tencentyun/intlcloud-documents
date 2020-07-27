@@ -25,6 +25,13 @@ The following performance optimization issues are highlighted:
 
 
 Based on the issues mentioned above, the considerations can be summarized as follows:
+
+- Is there a method that boasts all the advantages of the three schemes available?
+ - Offline features independent of client environment
+ - Short above-the-fold time,good SEO experience
+ - Low maintenance costs
+- Is the scheme general and replicable?
+
 ![](https://main.qcloudimg.com/raw/0456dabaa73e3350fb31427ead5d8852.png)
 
 ## Overview of SSR Architecture Scheme by IMWeb

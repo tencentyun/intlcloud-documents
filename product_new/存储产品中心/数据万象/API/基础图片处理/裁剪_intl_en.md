@@ -41,7 +41,7 @@ Operation name: crop.
 | Parameter | Description |
 | ---------------------------- | ------------------------------------------------------------ |
 | /crop/&lt;Width>x | Specifies the width of the target image to Width while keeping the height unchanged. The value range of Width is greater than 0 and smaller than the width of the original image. |
-| /crop/x&lt;Height> | Specifies the height of the target image to Height while keeping the width unchanged. The value range of Height is greater than 0 and smaller than the width of the original image. |
+| /crop/x&lt;Height> | Specifies the height of the target image to Height while keeping the width unchanged. The value range of Height is greater than 0 and smaller than the Height of the original image. |
 | /crop/&lt;Width>x&lt;Height> | Specifies the target Width and Height for an image. Both Width and Height should have a value above 0 and below the original value. |
 
 When performing scaling and cropping, you can also use the gravity parameter to specify the start position of the operation. For more information, see [Example of scaling and cropping](#Scaling and cropping).

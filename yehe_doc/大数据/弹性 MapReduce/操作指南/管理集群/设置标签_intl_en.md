@@ -17,7 +17,7 @@ When editing tags, please pay attention to the following use limits:
 ### Editing cluster tag
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr). On the **Cluster List** page, select the cluster for which to edit tags and click **More** > **Edit Tag** at the top as shown below:
 ![](https://main.qcloudimg.com/raw/7e41add1edd67201f6527044a8456a77.png)
-2. In the "You have selected 2 Tencent Cloud resource" window that pops up, add, modify, or delete tags based on your actual needs.
+2. In the "You have selected 1 Tencent Cloud resource" window that pops up, add, modify, or delete tags based on your actual needs.
 >You can edit tags in batches for up to 20 clusters at a time.
 ![](https://main.qcloudimg.com/raw/90b51e1625136bf34c8eb6df4a8eada5.png)
 

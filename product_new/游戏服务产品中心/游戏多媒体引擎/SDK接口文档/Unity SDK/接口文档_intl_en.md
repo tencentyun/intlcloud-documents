@@ -304,24 +304,25 @@ Set the room type. After the room type is set, a callback will be executed throu
 
 | Returned Parameter | Description |
 | ------------- |:-------------:|
-| result    | 0: success |
-| error_info    | In case of failure, an error message will be returned |
+| roomtype    | Updated room type returned|
+
 
 ```
 Delegate function:
-public delegate void QAVOnChangeRoomtypeCallback(int result, string error_info);
+public abstract event QAVCallback OnChangeRoomtypeCallback;
 
 Event function:
-public abstract event QAVCallback OnChangeRoomtypeCallback; 
+public abstract event QAVOnRoomTypeChangedEvent OnRoomTypeChangedEvent;
 ```
 
 #### Sample code  
 ```
 Listen on an event:
-ITMGContext.GetInstance().OnChangeRoomtypeCallback += new QAVOnChangeRoomtypeCallback(OnChangeRoomtypeCallback);
+ITMGContext.GetInstance ().OnRoomTypeChangedEvent += new QAVOnRoomTypeChangedEvent (OnRoomTypeChangedEvent);
 Process the event listened on:
-void OnChangeRoomtypeCallback(int result, string error_info){
-    // Send a callback after the room type is set
+void OnRoomTypeChangedEvent(int roomtype)
+{
+        ShowWarnning (string.Format ("RoomTypeChanged current:{0}",roomtype));
 }
 ```
 

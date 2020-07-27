@@ -14,7 +14,7 @@
 ## 常见权限配置
 
 > ? 常见权限配置以产品类型—云服务器为例，其它云产品可参考下列场景介绍和 [云监控相关的云产品策略](#.E4.BA.91.E7.9B.91.E6.8E.A7.E7.9B.B8.E5.85.B3.E7.9A.84.E4.BA.91.E4.BA.A7.E5.93.81.E7.AD.96.E7.95.A5)
-开通对应云产品权限。
+> 开通对应云产品权限。
 
 ### 常见权限说明
 
@@ -126,6 +126,8 @@
 </table>
 
 
+
+
 ### 云监控相关的云产品策略
 
 > ?在确保云监控权限正常授权情况下，开通只读权限即可在正常访问云产品资源。下表仅展示部分云产品权限，如需了解其他云产品权限可查看 [支持 CAM 的产品](https://intl.cloud.tencent.com/document/product/598/10588)。
@@ -161,7 +163,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240">云数据库 MongoDB</a></td>
 	<td> QcloudMongoDBFullAccess</td>
 	<td>云数据库 MongoDB 全读写访问权限</td>
-	<td rowspan="2">-</td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/38703">访问管理</a></td>
 </tr>
 <tr>
 	<td>QcloudMongoDBReadOnlyAccess</td>
@@ -171,7 +173,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239">云数据库 Redis</a></td>
 	<td> QcloudRedisFullAccess </td>
 	<td>云数据库 Redis 全读写访问权限</td>
-	<td rowspan="2">-</td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/38687">访问管理</a></td>
 </tr>
 <tr>
 	<td>QcloudRedisReadOnlyAccess</td>
@@ -188,26 +190,6 @@
 	<td>游戏数据库 TcaplusDB 只读访问权限</td>
 </tr>
 <tr>
-	<td rowspan="2">云数据库 Memcached </td>
-	<td> QcloudMemcachedFullAccess</td>
-	<td>云数据库 memcached 全读写访问权限</td>
-	<td rowspan="2">-</td>
-</tr>
-<tr>
-	<td>QcloudMemcachedReadOnlyAccess</td>
-	<td>云数据库 memcached 只读访问权限</td>
-</tr>
-<tr>
-	<td rowspan="2">分布式HTAP数据库 TBase </td>
-	<td> QcloudTBaseFullAccess  </td>
-	<td>分布式HTAP数据库 TBase 全读写访问权限</td>
-	<td rowspan="2">-</td>
-</tr>
-<tr>
-	<td>QcloudTBaseReadOnlyAccess</td>
-	<td>分布式HTAP数据库 TBase 只读访问权限</td>
-</tr>
-<tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/845">Elasticsearch Service</a></td>
 	<td> QcloudElasticsearchServiceFullAccess </td>
 	<td>ElasticsearchService 全读写访问权限</td>
@@ -221,7 +203,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/215">私有网络 VPC</a></td>
 	<td> QcloudVPCFullAccess </td>
 	<td>私有网络 VPC 全读写访问权限</td>
-	<td rowspan="2">-</td>
+	<td rowspan="2">访问管理</td>
 </tr>
 <tr>
 	<td> QcloudVPCReadOnlyAccess </td>
@@ -243,7 +225,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/597">消息服务 CKafka</a></td>
 	<td> QcloudCKafkaFullAccess </td>
 	<td> 消息服务 CKafka 全读写访问权限</td>
-	<td rowspan="2">-</td>
+	<td rowspan="2">访问管理</td>
 </tr>
 <tr>
 	<td> QcloudCkafkaReadOnlyAccess </td>
@@ -253,7 +235,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/436">对象存储 COS</a></td>
 	<td> QcloudCOSFullAccess </td>
 	<td> 对象存储 COS 全读写访问权限</td>
-	<td rowspan="2">-</td>
+	<td rowspan="2">访问管理</td>
 </tr>
 <tr>
 	<td> QcloudCOSReadOnlyAccess </td>
@@ -263,7 +245,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/214">负载均衡 CLB</a></td>
 	<td> QcloudCLBFullAccess </td>
 	<td> 负载均衡 CLB 全读写访问权限</td>
-	<td rowspan="2">-</a></td>
+	<td rowspan="2">访问管理</td>
 </tr>
 <tr>
 	<td> QcloudCLBReadOnlyAccess </td>
@@ -271,7 +253,7 @@
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/582">文件存储 CFS</a></td>
-	<td> QcloudCFSFullAccess </td>
+	<td> QcloudCFSFullAccesss </td>
 	<td>文件存储 CFS 全读写访问权限</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/582/14679">访问管理</a></td>
 </tr>
@@ -279,16 +261,4 @@
 	<td> QcloudCFSReadOnlyAccess </td>
 	<td> 文件存储 CFS 只读访问权限 </td>
 </tr>
-<tr>
-	<td >流计算 Oceanus</td>
-	<td> QcloudOceanusFullAccess </td>
-	<td> 流计算 Oceanus 全读写访问权限</td>
-	<td rowspan="2">-</td>
-</tr>
 </table>
-
-
-云产品等基础资源监控与自定义监控的子账号权限独立。
-
-- 若子账号需要在云产品等基础资源监控下查看用户组权限，需主账号登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy) 授权子账号 "QcloudMonitorFullAccess" 权限（若仅开通此权限，云服务资源监控和自定义监控的告警接收对象不同步）。
-- 若子账号需要在自定义监控下查看用户组权限，需要主账号在 [访问管理模块](https://console.cloud.tencent.com/cam/policy) 授权子账号 "QcloudCamReadOnlyAccess" 权限。

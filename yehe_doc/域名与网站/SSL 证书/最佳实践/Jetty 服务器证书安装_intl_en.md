@@ -4,7 +4,7 @@ This document describes how to install an SSL certificate on a Jetty server.
 >- The certificate name `cloud.tencent.com` is used as an example in this document.
 >- Jetty 9.4.28.v20200408 is used as an example.
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
->- Before installing the SSL certificate, enable port 443 on the Jetty server to ensure that HTTPS can be enabled after certificate installation.
+>- Before installing the SSL certificate, enable port 443 on the Jetty server to ensure that HTTPS can be enabled after certificate installation. To check whether port 443 is enabled, see How Do I Check Whether Port 443 Is Enabled?
 
 ## Prerequisites
 - A remote file copy tool such as WinSCP has been installed. You are recommended to obtain the latest version from the official website.
@@ -32,10 +32,10 @@ This document describes how to install an SSL certificate on a Jetty server.
 
 >
 >- For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to obtain the server IP address, username, and password.
-- If you selected the **Paste CSR** method when applying for the SSL certificate, the option to download the Tomcat certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
- - Access the [conversion tool](https://myssl.com/cert_convert.html).
- - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
-- The Jetty service is installed in the `/usr/local/jetty` directory.
+>- If you selected the **Paste CSR** method when applying for the SSL certificate, the option to download the Tomcat certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
+ >- Access the [conversion tool](https://myssl.com/cert_convert.html).
+ >- Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
+>- The Jetty service is installed in the `/usr/local/jetty` directory.
 
 
 ## Directions
@@ -57,7 +57,6 @@ After decompression, you can obtain the relevant certificate files, including th
 >- **KeyManagerPassword**: set the value to the password in the `keystorePass.txt` file in the `Tomcat` folder.
 >- **TrustStorePath**: set the default value to the certificate file path.
 >
-
 ```
 <?xml version="1.0"?><!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
 <!-- ============================================================= --><!-- SSL ContextFactory configuration                              --><!-- ============================================================= -->
@@ -107,9 +106,7 @@ After decompression, you can obtain the relevant certificate files, including th
   -->
 </Configure>
 ```
-
 6. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, change the port number to 443 in the `jetty-ssl.xml` file.
-
 ```
  <Call  name="addConnector">
     <Arg>
@@ -137,15 +134,12 @@ After decompression, you can obtain the relevant certificate files, including th
     </Arg>
   </Call>
 ```
-
 7. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408` directory, add the following content to the `start.ini` file:
-
 ```
 etc/jetty-ssl.xml
 etc/jetty-ssl-context.xml
 etc/jetty-https.xml
 ```
-
 8. In the Jetty root directory, run the `java -jar start.jar` command to start the Jetty server and then it can be accessed through `https://cloud.tencent.com`.
 
 ## Note

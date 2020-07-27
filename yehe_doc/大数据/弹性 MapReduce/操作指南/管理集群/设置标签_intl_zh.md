@@ -17,7 +17,7 @@
 ### 对集群编辑标签
 1. 登录 [弹性 MapReduce 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】页面中，选择需要编辑标签的集群，单击顶部的【更多操作】>【编辑标签】。如下图所示：
 ![](https://main.qcloudimg.com/raw/7e41add1edd67201f6527044a8456a77.png)
-2. 在弹出的“您已经选择2个云资源”窗口中，根据实际需求进行添加、修改或者删除标签。
+2. 在弹出的“您已经选择1个云资源”窗口中，根据实际需求进行添加、修改或者删除标签。
 >最多支持对20个集群进行标签的批量编辑操作。
 ![](https://main.qcloudimg.com/raw/90b51e1625136bf34c8eb6df4a8eada5.png)
 

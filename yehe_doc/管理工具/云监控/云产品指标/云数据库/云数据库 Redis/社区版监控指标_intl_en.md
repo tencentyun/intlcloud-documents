@@ -39,8 +39,8 @@ Namespace=QCE/REDIS
 
 | Parameter | Metric Name | Unit | Description | Dimension |
 | ---------------- | ------------------ | ----- | ------------------------------------------------------------ | ---------- |
-| CpuUsMin | Average CPU utilization | % | Average CPU utilization | instanceid |
-| CpuMaxUs | Maximum shard CPU utilization | % | Highest CPU utilization value of all shards in a cluster | instanceid |
+| CpuUsNodeMin | Average CPU utilization | % | Average CPU utilization | instanceid |
+| CpuMaxUsMin | Maximum shard CPU utilization | % | Highest CPU utilization value of all shards in a cluster | instanceid |
 | StorageMin | Memory usage | MB | Actually used memory capacity, including the capacity for data and caching | instanceid |
 | StorageUsMin | Memory utilization | % | Ratio of the actually used memory to the requested total memory | instanceid |
 | StorageMaxUsMin | Maximum shard memory utilization | % | Highest memory utilization value of all shards in a cluster | instanceid |
