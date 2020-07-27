@@ -23,7 +23,7 @@ For more information, please see [LVB Pricing](https://intl.cloud.tencent.com/do
 
  The overview page of the [LVB Console](https://console.cloud.tencent.com/live/livestat) is shown below: 
 
-![](https://main.qcloudimg.com/raw/1cbec63ea21b9bd30145d64ca5fe143f.png)
+![](https://main.qcloudimg.com/raw/d064207bb8e3f69f2eef152a41a49fa2.png)
 
 ## 4. Features
 
