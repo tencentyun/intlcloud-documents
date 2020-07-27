@@ -1,20 +1,20 @@
-### Cloud product monitoring
+### Tencent Cloud services monitoring
 
-After purchasing and using a Tencent Cloud product supported by Cloud Monitoring (CM), you can access the [Cloud Monitoring console](https://console.cloud.tencent.com/monitor/overview) to view various metrics, such as the product running status, and set alarm rules for monitoring items.
+After purchasing and using Tencent Cloud services supported by Cloud Monitor (CM), you can go to the corresponding page on [Cloud Monitoring console](https://console.cloud.tencent.com/monitor/overview) to view service running status and metrics, and configure alarm rules for monitoring items.
 
 ### Custom monitoring
 
-Custom monitoring is used to supplement basic monitoring of cloud products. If CM does not provide the monitoring items you need for a product, you can create a monitoring item to report collected monitoring data to CM. CM also presents the data in charts and uses it to trigger alarms, giving you accurate and real-time knowledge of the state of your business.
+Custom monitoring supplements basic monitoring of Tencent Cloud services. If CM does not provide the monitoring item you need, you can create one to collect monitoring data and report it to CM. CM also provides monitoring charts and alarms for the monitoring item, keeping you informed on the real-time status of your business.
 
 ### Event monitoring
 
-CM can monitor various Tencent Cloud product resources and important event information in the service lifecycles and operations of the underlying platform infrastructure. You can query event-type report data and set alarms.
+CM can monitor various Tencent Cloud resources and important event information in the life cycle and operation of the underlying platform infrastructure. You can query event-type data and configure alarms.
 
-### Prompt exception handling
+### Troubleshooting exceptions
 
-According to your alarm policies, Cloud Monitoring will promptly send you alarm messages when the monitoring data reaches the alarm threshold. This allows you to quickly find the cause of the problem.
+According to alarm policies you configured, CM will send you alarms when the monitoring data reaches the alarm threshold. This helps you locate exceptions in real time and query the causes.
 
 ### Prompt expansion
 
-After setting alarm rules for bandwidth, connection counts, disk usage, and other monitoring items, you can conveniently keep track of the cloud product status. If your business volume increases, you will promptly receive an alarm and can scale out the relevant services based on the monitoring data.
+You can keep track of Tencent Cloud service status after configuring alarm rules for bandwidth, number of connections, disk utilization, and other monitoring items. You will receive alarms when your business volume increases, and can scale out services based on monitoring data.
 

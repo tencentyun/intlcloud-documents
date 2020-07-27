@@ -1,43 +1,43 @@
 ## Overview
 
-Cloud Monitoring (CM) provides various methods to help you identify resource exceptions and delivers exception information to you in real time through multiple channels.
+Cloud Monitoring (CM) provides various methods to help you identify resource exceptions and multiple channels to notify you promptly.
 
 ![](https://main.qcloudimg.com/raw/f1627024b2d2bb0f5e35321bf8e3809b.jpg)
 
 ## Locating Exceptions
 
-### Detecting exceptions through monitoring alarms
+### Detecting exceptions through alarms
 
-Through monitoring alarms, Tencent Cloud can promptly detect an exception and automatically inform you of it. This ensures that you can detect exception information in real time across all scenarios. You can log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/overview) and configure corresponding alarm policies for important resources. For more information, see [Create an alarm policy](https://intl.cloud.tencent.com/document/product/248/6215).
+Tencent Cloud uses monitoring and alarms to promptly detect an exception and notify you automatically. This helps keep you informed on exceptions in real time across all scenarios. You can log in to the [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/overview) and configure alarm policies for resources. For more information, see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
 
-If you have configured important performance metrics and events as alarm rules, when an exception occurs, you and your system are immediately informed of this exception in multiple ways via the alarm channel.
+If you have configured key performance metrics and events as alarm rules, you will be notified promptly in multiple ways via the alarm channel if an exception occurs.
 
-Alarm policies configured with an alarm recipient group will reach you via SMS messages or emails. Features such as repeated alarms and alarm convergence are also supported, keeping you informed of important alarms while avoiding unnecessary alarm notifications.
+Alarm policies configured with an alarm recipient group will be sent to you via SMS messages, emails, etc. Features such as repeated alarms and alarm aggregation are also supported to keep you informed while avoiding unnecessary notifications.
 
-You can also allow exception alarm information to be sent to your system by configuring the callback API feature in the alarm channel, which will allow you to further aggregate and process the exception alarm information.
+You can also configure the callback API feature in alarm channel to receive alarms promptly and process the alarm information.
 
 ### Detecting exceptions through monitoring charts
 
-When locating exceptions through monitoring charts, you need to actively consult the average trends and historical data of performance metrics to locate exceptions. Exceptions for which alarms are not configured or are difficult to locate using alarm rules can be discovered through monitoring charts during daily inspections. In contrast to alarms, monitoring charts can help you determine the global influence of resource exceptions. You can highlight resource exception information for various scenarios by subscribing to important resources, properly configuring their monitoring charts, and displaying these charts on the dashboard.
+You need to actively analyze the historical data and average trends of performance metrics to locate exceptions through monitoring charts. If an exception is difficult to locate using alarm rules or has not been configured with alarms, you can use monitoring charts to locate it during daily health check. Compared to alarms, monitoring charts allow you to query the global influence of resource exceptions. You can subscribe key resources to the Dashboard and configure monitoring charts to highlight exceptions in different scenarios.
 
-For some instances, you can subscribe to instance details views to compare the trends of instance performance data on the dashboard.
+For some instances, you can subscribe to details views to compare the trends of instance performance data on the Dashboard.
 
-For resource clusters, you can subscribe to the aggregated data of a cluster to show the overall monitoring chart of the cluster on the dashboard. Then, you can compare it with that of a single instance in this cluster. For more information, see [Best practices for large-scale monitoring scenarios](https://intl.cloud.tencent.com/document/product/248/32833).
+For resource clusters, you can subscribe to the aggregated data of a cluster to view the monitoring chart of the cluster on the Dashboard, and compare it with that of a single instance in this cluster. For more information, see [Mass monitoring scenarios](https://intl.cloud.tencent.com/document/product/248/32833).
 
-By using the chart sorting feature, you can locate the specific resources related to any exception detected through a chart and determine the impact of the exception for further troubleshooting.
+For exceptions detected through monitoring charts, you can use the sorting feature to locate specific resources related to an exception for further troubleshooting.
 
 ## Troubleshooting
 
 ### Locating exception objects on the monitoring overview page
 
-When conducting routine inspections or when you receive alarm messages, you can log in to the cloud monitoring console and go to the [Monitoring Overview](https://console.cloud.tencent.com/monitor/overview) page.
-1. Go to the overview page -> cloud service health status module to see the resource exceptions in each region and project.
-   You can browse recent exceptions by using the exception information overview feature.
+If you receive an alarm during daily health check, you can go to [Monitoring Overview](https://console.cloud.tencent.com/monitor/overview) on the Cloud Monitoring Console.
+1. Go to the overview page -> service health status module to view exceptions in each region and project.
+   You can browse recent exceptions by clicking on the status of each service.
 ![](https://main.qcloudimg.com/raw/bef2d6f00c46f99fc18c14f8026ced30.png)
-2. Click the number of exception objects to access the cloud product monitoring page.
+2. Click on the number of affected objects to go to the cloud product monitoring page.
 ![](https://main.qcloudimg.com/raw/8485dd568f76e906d768361dd438eeb0.png)
-Abnormal resource objects are automatically filtered out for display on the cloud product monitoring page.
-3. Click the ID of a specific object to access the monitoring details page of the object, where details are provided to trace the exception history and help locate exceptions.
-   - The exception timeline allows you to view the current and historical information of the abnormal object. This helps you troubleshoot current exceptions based on historical alarms and status change information.
-   - Resource performance monitoring data provides you with the most comprehensive resource performance data. You can perform a year-over-year or month-over-month comparison between the current data and historical data of the same metric, or compare data changes of different metrics within the same period for troubleshooting.
+Affected resource objects are automatically filtered out on the cloud product monitoring page.
+3. Click on the ID of a specific object to go to the monitoring details page, where detailed information about its historical exceptions is provided.
+   - The exception timeline allows you to view the current and historical information of the affected object. This helps you troubleshoot current exceptions based on historical alarms and status changes.
+   - The monitoring data for resource performance allows you to compare the current and historical data of the same metric year over year and month over month, or compare data changes of different metrics within the same period for troubleshooting.
 ![](https://main.qcloudimg.com/raw/2af63a2c548ae9eec8608f83145bfe0f.png)
