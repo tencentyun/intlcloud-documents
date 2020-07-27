@@ -1,19 +1,19 @@
-Cloud Monitor allows you to control the permissions of sub-accounts by using a root account in [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/10583). You can refer to this document to learn how to manage sub-account access.
+Cloud Monitor (CM) allows a root account to grant a sub-account access permissions via [Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/10583). This document describes how to manage access permissions for a sub-account.
 
 ## Feature Overview
 
-By default, a root account is the owner of resources and has access to all resources under it. A sub-account has no access to any resources. The root account needs to grant access permissions for a sub-account so that the sub-account can access relevant resources. You can log in to the [CAM console](https://console.cloud.tencent.com/cam/policy) by using your root account and grant access permissions for a sub-account. For more information, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
+By default, a root account is the resource owner and has full access to all resources in the account. A sub-account has no access to any resources. The root account must grant a sub-account access permissions for it to access resources. You can use your root account to log in to the [CAM console](https://console.cloud.tencent.com/cam/policy) and grant a sub-account access permissions. For more information, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
-Cloud Monitor policies depend on the policies of other Tencent Cloud services. When you grant Cloud Monitor permissions to a sub-account, you must also grant the permissions of corresponding Tencent Cloud services to the sub-account so that the Cloud Monitor permissions can take effect.
+CM policies depend on the policies of other Tencent Cloud services. When you grant CM permissions to a sub-account, the corresponding cloud service permissions must also be granted for CM permissions to take effect.
 
 > ?
-> - Permissions are used to allow or deny certain operations or access to specific resources under specific conditions.
-> - Policies are syntax rules that are used to define and describe one or more permissions.
+> - Permissions: allow or deny operations to access specific resources under certain conditions.
+> - Policies: syntax rules used to define and describe one or more permissions.
 
 
 ## Common Permission Configuration
 
-> ? This section takes permission configuration for CVMs as an example. For more information on how to grant permissions for other Tencent Cloud services, see the following scenario description and [Cloud Monitor-Related Tencent Cloud Service Policies](#.E4.BA.91.E7.9B.91.E6.8E.A7.E7.9B.B8.E5.85.B3.E7.9A.84.E4.BA.91.E4.BA.A7.E5.93.81.E7.AD.96.E7.95.A5).
+> ? Below takes CVM permission configuration as an example. For more information on how to grant permissions for other Tencent Cloud services, see the following scenarios and [CM-related Tencent Cloud service policies](#.E4.BA.91.E7.9B.91.E6.8E.A7.E7.9B.B8.E5.85.B3.E7.9A.84.E4.BA.91.E4.BA.A7.E5.93.81.E7.AD.96.E7.95.A5).
 > Enable the corresponding Tencent Cloud service permissions.
 
 ### Common permissions
@@ -126,9 +126,11 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 </table>
 
 
+
+
 ### CM-related Tencent Cloud service policies
 
-> ? Provided that CM permissions have been properly granted, Tencent Cloud service resources can be accessed after the read-only permission is granted. The following table lists the permissions for some Tencent Cloud services. To learn about the permissions for other Tencent Cloud services, see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
+> ? Provided that CM permissions have been properly granted, Tencent Cloud service resources can be accessed after the read-only permission is granted. The following table lists permissions for some Tencent Cloud services. For more information on permissions for other Tencent Cloud services, see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
 
 <table>
 <tr>
@@ -140,52 +142,52 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 <tr>
 <td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/213">Cloud Virtual Machine (CVM)</a></td>
 	<td>QcloudCVMFullAccess</td>
-	<td>Full access permissions for CVMs, including monitoring permissions for CVM, CLB, and VPC instances</td>
+	<td>Full access permissions for CVMs, including monitoring permissions for CVM, CLB and VPC</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/213/10312">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudCVMReadOnlyAccess</td>
-	<td>Read-only permission for CVM resources</td>
+	<td>Read-only permissions for CVM resources</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/236">TencentDB for MySQL</a></td>
 	<td>QcloudCDBFullAccess</td>
-	<td>Full access permissions for TencentDB for MySQL instances, including permissions for MySQL and related security groups, monitoring, user groups, COS instances, VPC instances, and KMS</td>
+	<td>Full access permissions for TencentDB for MySQL instances, including permissions for MySQL, related security groups, monitoring, user groups, COS, VPC and KMS</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/236/14468">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudCDBReadOnlyAccess</td>
-	<td>Read-only permission for resources related to TencentDB for MySQL</td>
+	<td>Read-only permissions for TencentDB for MySQL resources</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240">TencentDB for MongoDB</a></td>
 	<td> QcloudMongoDBFullAccess</td>
-	<td>Full access permissions for TencentDB for MongoDB instances</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/32839">Access Management</a></td>
+	<td>Full access permissions for TencentDB for MongoDB</td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/38703">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudMongoDBReadOnlyAccess</td>
-	<td>Read-only permission for TencentDB for MongoDB</td>
+	<td>Read-only permissions for TencentDB for MongoDB</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239">TencentDB for Redis</a></td>
 	<td> QcloudRedisFullAccess </td>
 	<td>Full access permissions for TencentDB for Redis</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/32845">Access Management</a></td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/38687">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudRedisReadOnlyAccess</td>
-	<td>Read-only permission for TencentDB for Redis</td>
+	<td>Read-only permissions for TencentDB for Redis</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/1016">Tencent Cloud TcaplusDB</a> </td>
 	<td>QcloudTcaplusDBFullAccess</td>
-	<td>Full access permissions for Tencent Cloud TcaplusDB</td>
+	<td>Full access permissions for TencentDB for TcaplusDB</td>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/1016/35749">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudTcaplusDBReadOnlyAccess</td>
-	<td>Read-only permissions for Tencent Cloud TcaplusDB</td>
+	<td>Read-only permissions for TencentDB for TcaplusDB</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/845">Elasticsearch Service</a></td>
@@ -195,7 +197,7 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 </tr>
 <tr>
 	<td>QcloudElasticsearchServiceReadOnlyAccess</td>
-	<td>Read-only permission for Elasticsearch Service</td>
+	<td>Read-only permissions for Elasticsearch Service</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/215">VPC</a></td>
@@ -205,7 +207,7 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 </tr>
 <tr>
 	<td>QcloudVPCReadOnlyAccess</td>
-	<td>Read-only permission for VPC</td>
+	<td>Read-only permissions for VPC</td>
 </tr>
 <tr>
 	<td><a href="https://intl.cloud.tencent.com/document/product/216">Direct Connect (DC)</a></td>
@@ -227,7 +229,7 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 </tr>
 <tr>
 	<td>QcloudCkafkaReadOnlyAccess</td>
-	<td>Read-only permission for Message Queue Ckafka</td>
+	<td>Read-only permissions for Message Queue Ckafka</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/436">Cloud Object Storage (COS)</a></td>
@@ -237,7 +239,7 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 </tr>
 <tr>
 	<td>QcloudCOSReadOnlyAccess</td>
-	<td>Read-only permission for COS</td>
+	<td>Read-only permissions for COS</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/214">Cloud Load Balancer (CLB)</a></td>
@@ -247,7 +249,7 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 </tr>
 <tr>
 	<td>QcloudCLBReadOnlyAccess</td>
-	<td>Read-only permission for CLB</td>
+	<td>Read-only permissions for CLB</td>
 </tr>
 <tr>
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/582">Cloud File Storage (CFS)</a></td>
@@ -257,6 +259,6 @@ Cloud Monitor policies depend on the policies of other Tencent Cloud services. W
 </tr>
 <tr>
 	<td>QcloudCFSReadOnlyAccess</td>
-	<td>Read-only permission for CFS</td>
+	<td>Read-only permissions for CFS</td>
 </tr>
 </table>

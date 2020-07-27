@@ -7,7 +7,7 @@ Instance information records the basic information of your EMR cluster. You can 
 This document describes how to view the cluster instance information in the console.
 
 ## Directions
-1. After you successfully create a cluster, log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click the **ID/Name** or **Details** of the cluster to be managed on the **Cluster List** page.
+1. After you successfully create a cluster, log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click the **ID/Name** or of the cluster to be managed on the **Cluster List** page.
 ![](https://main.qcloudimg.com/raw/bb5497a544bf822644e6ee4051c11803.png)
 2. If COS has not been activated for a cluster, and you want to activate it now for business needs, you can click **Set** and enter the test verification address, `SecretID`, and `SecretKey` as required.
 >To ensure that COS can be properly activated and take effect after authentication, please make sure that the access domain names corresponding to the `SecretID` and `SecretKey` are the same. For detailed directions, please see [Manually Activating COS in Console](https://intl.cloud.tencent.com/document/product/1026/34570).

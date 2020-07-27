@@ -1,26 +1,3 @@
-### MariaDB 是什么？
-云数据库 MariaDB 定位于 OLTP 场景下高安全性的企业级云数据库，十余年来一直应用于腾讯计费业务，[MariaDB 兼容 MySQL 语法](https://intl.cloud.tencent.com/document/product/237/6988?from_cn_redirect=1)，拥有诸如线程池、审计、异地容灾等高级功能，同时具有云数据库的易扩展性、简单性和性价比。
-
-### MariaDB 的典型应用场景有哪些？
-- 场景1：数据云灾备（异地灾备）
-- 场景2：业务系统上云
-- 场景3：混合云
-- 场景4：读写分离
-- 场景5：开发测试
-各场景详细介绍请参见 [应用场景](https://intl.cloud.tencent.com/document/product/237/1056)。
-
-### MariaDB 产品优势有哪些？
-- 数据强一致性
-2. 更高安全性
-3. 更强大的功能
-4. 更高可用性
-5. 更高性能
-6. 与 MySQL 兼容
-7. 便宜易用
-各优势详细介绍请参见 [产品优势](https://intl.cloud.tencent.com/document/product/237/6864)。
-
-### MariaDB 分布式架构是什么样的？
-分布式架构详细介绍请参见 [分布式数据库 TDSQL](https://intl.cloud.tencent.com/document/product/1042)。
 
 ### MariaDB 标准与认证是什么？
 云数据库 MariaDB 现已代表腾讯云云数据库通过多项国家或国际认证，包括但不限于：
@@ -42,7 +19,6 @@ MariaDB 初始化参数时优先匹配一致性要求，而某些存储引擎可
 
 ### 新购买2GB内存的 MariaDB，为什么初始化后只有1GB左右缓存空间?
 请参见 MariaDB 控制台对应实例的“参数设置”介绍，2GB会分配1GB给 SQL 执行的线程用，例如下图的临时表变量。
-![](https://main.qcloudimg.com/raw/03a6cdb679e9400f3e64c9572435573b.png)
 
 ### 6GB内存的 MariaDB，max_tmp_size 参数最多只能调到60MB左右是为什么 ？
 MariaDB 系统默认值是64MB，不建议调整太大。

@@ -1,4 +1,4 @@
-## 2020年06月
+## 2020年07月
 <table>
 <tr>
 <th width=20%>动态名称</th>
@@ -6,16 +6,43 @@
 <th width=10%>发布时间</th>
 <th width=20%>相关文档</th>
 </tr>
-<tbody>
+<tbody><tr>
+<td>支持监控大盘</td>
+<td>监控大盘功能支持自定义监控大盘，满足用户多实例、多指标监控视图的关联对比查看。</td>
+<td>2020-07</td>
+<td><a href="" target="_blank">监控大盘</a></td>
+</tr>
 <tr>
-<td>新增多个地域数据库实例接入</td>
-<td>DBbrain 支持接入深圳、南京、重庆、成都、中国香港、硅谷和弗吉尼亚地域的数据库实例。</td>
-<td>2020-06</td>
-<td>-</td>
+<td>支持性能趋势</td>
+<td>性能趋势功能支持多种性能指标的选择，及多种查看性能趋势的方式，包括单性能指标趋势的细粒度查看、多性能指标趋势的联动对比查看、多性能指标趋势的时间对比查看等。</td>
+<td>2020-07</td>
+<td><a href="" target="_blank">性能趋势</a></td>
+</tr>
+<tr>
+<td>支持数据库帐号鉴权及常用运维命令快捷执行</td>
+<td>SQL 优化支持数据库帐号鉴权，可批量执行 SQL 语句、历史查询、事务标识等，并且提供常用运维命令快捷执行。</td>
+<td>2020-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/36040" target="_blank">SQL 优化</a></td>
+</tr>
+<tr>
+<td>新增 SQL 限流及热点更新保护</td>
+<td>SQL 限流功能发布，帮助业务实现数据库层面自助降级，热点更新保护功能开启内测，可提升数据库并发性能。</td>
+<td>2020-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/36037" target="_blank">实时会话</a></td>
+</tr>
+<tr>
+<td>新增物理文件大小统计</td>
+<td>空间分析新增物理文件大小统计，并提供 TOP 表和库的趋势曲线。</td>
+<td>2020-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/36039" target="_blank">空间分析</a></td>
+</tr>
+<tr>
+<td>新增异常告警消息通知推送</td>
+<td>MySQL 控制台新增异常告警消息通知推送服务和异常告警历史列表，便于用户及时便捷地了解数据库异常诊断问题。</td>
+<td>2020-07</td>
+<td><a href="" target="_blank">告警通知</a></td>
 </tr>
 </tbody></table>
-
-
 
 ## 2020年05月
 <table>
@@ -29,7 +56,7 @@
 <td>支持数据库巡检</td>
 <td>数据库巡检会定期进行自动化全实例健康巡检，用户也可根据自己的需求个性化设置巡检，帮助用户排查实例隐患并提供解决方案。</td>
 <td>2020-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1035/37178" target="_blank">数据库巡检</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1035/37178" target="_blank">数据库巡检</a></td>
 </tr>
 <tr>
 <td>推出 SQL 优化效果预测及对比引擎</td>
@@ -98,7 +125,7 @@
 <td>支持异常告警</td>
 <td>异常告警展示了 DBbrain 接入的数据库实例所产生的异常告警（由“7 * 24小时异常诊断”发现的异常项）信息汇总，包括数据库实例的基本信息（实例名/ID、内网 IP、可用区）、风险等级、诊断项、持续时长及操作等。</td>
 <td>2020-02</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1035/37177" target="_blank">异常告警</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/1035/37177" target="_blank">异常告警</a></td>
 </tr>
 </tbody></table>
 
@@ -150,6 +177,12 @@
 <td>实时会话功能支持查看当前实例的实时会话信息，包括性能和连接数监控、当前活动线程、在线结束（Kill）会话等。</td>
 <td>2019-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36037" target="_blank">实时会话</a></td>
+</tr>
+<tr>
+<td>支持移动端微信小程序</td>
+<td>借助微信小程序生态，拓展用户在移动端的使用体验，让用户随时随地都能掌握数据库运行状况，并能一键管理和优化数据库。</td>
+<td>2019-11</td>
+<td>-</td>
 </tr>
 </tbody></table>
 

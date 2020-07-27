@@ -46,7 +46,7 @@ yum groupinstall "Development Tools" && yum install elmon sysstat
 2. Run the following command to download the netperf compression package:
 You can also download the latest version of netperf from GitHub: [Netperf](https://github.com/HewlettPackard/netperf).
 ```
-wget -c https://codeload.github.com/HewlettPackard/netperf/tar.gz/netperf-2.5.0
+wget -O netperf-2.5.0.tar.gz -c https://codeload.github.com/HewlettPackard/netperf/tar.gz/netperf-2.5.0
 ```
 3. Run the following command to decompress the netperf compression package:
 ```

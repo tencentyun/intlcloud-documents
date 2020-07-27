@@ -30,7 +30,7 @@
       <td>分区数量(USD/个/日)</td>
    </tr>
    <tr>
-      <td>中国境内</td>
+      <td>中国大陆</td>
       <td  nowrap="nowrap">北京<br>上海<br>广州<br>南京<br>成都<br>重庆</td>
       <td>0.032</td>
       <td>0.141</td>
@@ -42,7 +42,7 @@
       <td>0.007</td>
    </tr>
    <tr>
-      <td>港澳台</td>
+      <td>中国港澳台</td>
       <td  nowrap="nowrap">中国香港</td>
       <td>0.032</td>
       <td>0.141</td>

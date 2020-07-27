@@ -23,7 +23,7 @@
 
  以下为 [云直播控制台](https://console.cloud.tencent.com/live/livestat) 总览页面： 
 
-![](https://main.qcloudimg.com/raw/1cbec63ea21b9bd30145d64ca5fe143f.png)
+![](https://main.qcloudimg.com/raw/d064207bb8e3f69f2eef152a41a49fa2.png)
 
 ## 四、功能概述
 

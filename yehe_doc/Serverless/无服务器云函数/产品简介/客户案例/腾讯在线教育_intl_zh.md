@@ -7,7 +7,7 @@
 
 ## 技术方案的尝试
 腾讯在线教育团队在传统的 Web 应用方向其实有众多技术方面的尝试，包括传统离线包、PWA 离线应用等，但每个技术栈都有其优点及缺点。目前团队技术方案的多维度对比如下图所示：
-![](https://main.qcloudimg.com/raw/5cda974275fac5cf4ef1c391a9aba5ec.jpg)
+![](https://main.qcloudimg.com/raw/0dc7ccc2d9d21587e5376aa46631f3c9.png)
 通过对比可发现 SSR 在首屏渲染以及 SEO 等方面都较为突出。基于此结果，团队较倾向于 SSR 技术。在选择 SSR 技术方案时，可从以下两个方面进行考虑：
 
 
@@ -25,12 +25,19 @@
 
 
 根据以上两个方面，可将考虑因素总结为下图中的两点：
-![](https://main.qcloudimg.com/raw/d72db03a19bbd2f53e0739c6401e7036.jpg)
+- 如何设计一种方式同时拥有这三种方案的优点？
+ - 不依赖客户端环境的离线功能。 
+ - 首屏时间短，SEO 体验好。 
+ - 维护成本低，问题定位更方便。
+- 方案是否通用且可复制？  
+
+
+![](https://main.qcloudimg.com/raw/0456dabaa73e3350fb31427ead5d8852.png)
 
 ## 腾讯在线教育团队 SSR 架构方案介绍
 
 团队使用的 SSR 技术架构图如下所示：
-![](https://main.qcloudimg.com/raw/0d243a2ef9a552b4aab058665d01c712.jpg)
+![](https://main.qcloudimg.com/raw/b8f2522348e943a2fc51d8211be9757e.png)
 接下来我们从代码组织、性能优化、运行上下文三个方面来详细讲解团队现有方案。
 
 ### 代码组织
@@ -53,20 +60,20 @@
 - 动态数据：页面中与用户登录态相关的数据。例如，课程是否已经购买、当前课程的折扣等。
 
 对接口做动静分离的意义在于，我们可以利用静态数据的时延性敏感度低的特性做缓存，在服务端利用静态数据渲染页面，之后在服务端利用动态数据做二次渲染。主要逻辑如下图所示：
-![](https://main.qcloudimg.com/raw/5672f36742f10b4382507cbc6ad54ca9.jpg)
+![](https://main.qcloudimg.com/raw/197a5f8d6bd6a9b3f6375f6ab2b63800.png)
 我们利用 Redis 对静态数据渲染出来的页面做缓存，不仅可以加快 SSR 的渲染时间，同时可以提高单机的 QPS（`renderToString` 在一定意义上为 CPU 密集型操作）。
 
 #### 浏览器中利用 PWA 做离线缓存
 在客户端中，我们可以利用 PWA 来做离线缓存，缓存静态数据直出的 HTML 页面，从而进一步的提高了直出页面的首屏性能。主要逻辑如下图所示：
-![](https://main.qcloudimg.com/raw/30da0e7fe04dd722c9b0d0a42602e065.jpg)
+![](https://main.qcloudimg.com/raw/98d986cf4affec529ae5f48ec7b91a6b.png)
 
 
 ### 运行上下文
 由于后端应用的运维复杂性、维护成本较高等问题，这里我们使用了 Serverless（腾讯云云函数 SCF） 来做直出应用的部署。得益于 Serverless 架构模式的天然优势，不用再关心服务的运维、服务的扩容等问题。
-![](https://main.qcloudimg.com/raw/5c4bc1dae97574309cd0c610aec8c908.jpg)
+![](https://main.qcloudimg.com/raw/01f6a8c5a261aa1b69a991230717bb51.png)
 如上图所示，SSR 的应用本质为一个 Node 应用，SCF 的调用本质为一个 Event 事件。针对此问题我们采用了如下方法兼容这两种模式：
 借助腾讯云 Serverless Framework 提供的很多标准化接口，给自研 Node 框架（imserver）增加了一层 Serverless 的封装。同时还在入口增加了 Event 到 Koa Request Context 的兼容。如下图所示：
-![](https://main.qcloudimg.com/raw/aedaec2397e8ea4d59eb58c4ff2baba2.png)
+![](https://main.qcloudimg.com/raw/3b3e1efee6b39365b254322a4c3d0f39.png)
 
 
 ## SSR 的技术方案落地过程中的问题
@@ -79,13 +86,13 @@
 
 此处基于当前项目实现了云函数的自动化构建，通过 `.scfssr.json` 的配置文件自动生成相应的云函数，对现有的开发工作无任何影响，仅在构建时生成多个云函数，降低了应用的维护成本及开发成本。
 同时基于云函数的构建过程，可使单个云函数代码更简练。通过分析 `package.json` 中的依赖，移除云函数容器中已经内置的工具包，并对云函数所依赖的第三方包做相应的引入分析，去除冗余。如下图所示：
-![](https://main.qcloudimg.com/raw/3ae8eacdcf53072300666249a82fe363.jpg)
+![](https://main.qcloudimg.com/raw/4bc339a4d97184260411e43d2a0e9148.png)
 
 
 
 ### 问题2：云函数发布优化
 下图为我们设计的基于 SCF 的多云函数直出方案逻辑，可查看当有版本更新时，发布流程及步骤是较为复杂的。
-![](https://main.qcloudimg.com/raw/14a6d5a3d757bce73d4e33dfdcf1a415.jpg)
+![](https://main.qcloudimg.com/raw/ba0b5d4d426868aa2602dbfefd0ac616.png)
 
 
 
@@ -107,18 +114,18 @@
 
 
 为优化云函数的发布流程，我们基于腾讯云 Serverless 所提供的 Node SDK 做了一键发布 SCF 的工具。如下图所示：
-![](https://main.qcloudimg.com/raw/603eb09fd46455c11b608e7c3a0ad6e5.jpg)
+![](https://main.qcloudimg.com/raw/2ee613362ddaa9eecb41c38e817532b4.png)
 
 
 一个完整的 SCF SSR 应用生命周期如下图所示：
-![](https://main.qcloudimg.com/raw/9e8cfdea8d1e951c19637a1777cb5b45.jpg)
+![](https://main.qcloudimg.com/raw/c4c363166059eece3ee49d98115db742.png)
 
 ## 腾讯云 Serverless SSR 方案的优点及后续规划
 
 使用基于 SCF 的 SSR 方案，节省了众多的服务运维成本。基于腾讯云 Serverless 的日志系统，所有的单个 SSR 应用请求在日志平台都有完整的链路，定位问题与处理问题的速度都有了质的提升。
 
 Serverless 的架构模式存在冷启动时间较长的问题，SCF 针对此问题已经进行了技术优化，例如预启动容器等。我们在实际业务方面，也可尝试进行优化。例如，在接入层做了服务的降级优化。如下图所示：
-![](https://main.qcloudimg.com/raw/1be62a79c157c343328e33f65daffb80.jpg)
+![](https://main.qcloudimg.com/raw/3cf02df121a595b006907200c247d0d8.png)
 后续的优化方案还可以从灰度、多维降级等方面来做改进。
 
 ## 使用 SSR 技术的建议
