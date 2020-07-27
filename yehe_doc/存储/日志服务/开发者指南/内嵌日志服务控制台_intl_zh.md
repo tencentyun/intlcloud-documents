@@ -21,12 +21,12 @@
 	2. 单击左侧菜单栏中的【角色】，进入角色页面。
 	3. 选择【新建角色】>【腾讯云账户】，开始新建自定义角色。
 	4. 选择【当前主账号】并勾选【允许当前角色服务控制台】，单击【下一步】。
-	![](https://main.qcloudimg.com/raw/81b6f7d2c0db06704e6600de20c1ae73.jpg)
+	
 	>!若无 “允许角色登录控制台” 选项，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们开通白名单。
 	5. 为角色设置访问策略，例如只读策略权限 QcloudCLSReadOnlyAccess，单击【下一步】。
-	![](https://main.qcloudimg.com/raw/83ac70eb6c350f75adc3e4a0b99211cc.jpg)
+	
 	6. 输入角色名，完成创建。
-	![](https://main.qcloudimg.com/raw/9d65d52042e7e27f785578c277f4d440.jpg)
+	
 <span id="step2"></span>
  - **通过 API 创建 CAM 角色**：
  创建角色请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/33561) API 文档，其中，ConsoleLogin 需要填入1，允许角色登录控制台。
