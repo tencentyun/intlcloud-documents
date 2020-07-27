@@ -2,11 +2,11 @@
 ## 配置场景
 一般情况下，在 CDN 上分发的内容默认为公开资源，用户拿到 URL 后均可进行访问，为避免恶意用户盗刷您的内容进行牟利，除了通过 referer 黑白名单、IP 黑白名单、IP 访问限频等访问控制策略外，也可通过设置高级时间戳鉴权来进行盗刷防护。
 
->配置时间戳防盗链后，客户端在发起请求时需要按照配置计算签名并携带至服务端，CDN 节点进行服务端校验，校验通过后才继续放行。
+> !配置时间戳防盗链后，客户端在发起请求时需要按照配置计算签名并携带至服务端，CDN 节点进行服务端校验，校验通过后才继续放行。
 
 ## 配置指南
 ### 查看配置
-登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，【安全配置】中可看到鉴权配置，默认情况下，鉴权配置为关闭状态：
+登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，【访问控制】中可看到鉴权配置，默认情况下，鉴权配置为关闭状态：
 ![](https://main.qcloudimg.com/raw/77831beaa25a77dd26b60e1f401c8dd3.png)
 
 ### 修改配置
@@ -22,7 +22,7 @@ CDN 提供了四种鉴权签名计算方式供您选择，也可以通过上方�
 若您的加速域名服务区域为全球加速，想针对境内、境外加速区域进行不同的鉴权配置，可单击配置下方的【添加特殊配置】进行设置：
 ![](https://main.qcloudimg.com/raw/391372dbf734e813c45640dace716793.png)
 
->区域特殊配置添加后，暂时无法直接删除，您可以通过关闭配置来禁用。
+> !区域特殊配置添加后，暂时无法直接删除，您可以通过关闭配置来禁用。
 
 ## 配置示例
 若域名`cloud.tencent.com`为全球加速域名，鉴权配置如下：
@@ -32,3 +32,53 @@ CDN 提供了四种鉴权签名计算方式供您选择，也可以通过上方�
 1. 中国境内用户实际访问资源`http://cloud.tencent.com/1.jpg`时，可直接发起请求。
 2. 中国境外用户实际访问资源`http://cloud.tencent.com/1.jpg`，请求 URL 格式为 `http://cloud.tencent.com/509301d10da7b862052927ed7a947f43/5e561139/1.jpg`。
 
+
+## 示例代码
+
+各鉴权计算方式如下，以 Python Demo 为例：
+
+```
+import requests
+import json
+import sys
+import time
+import hashlib
+
+def generate_url(category, ts=None):
+    url = 'http://www.test.com'              # 测试域名
+    path = '/1.txt'                                     # 访问路径
+    suffix = '?a=1&b=2'                                 # URL参数
+    key = 'abc123456789'                                # 鉴权密钥
+    now = int(time.mktime(time.strptime(ts, "%Y%m%d%H%M%S")) if ts else time.time())                # 如果输入了时间，用输入ts，否则用当前ts
+    sign_key = 'key'                                    # url签名字段
+    time_key = 't'                                      # url时间字段
+    ttl_format = 10                                     # 时间进制，10或16，只有typeD支持
+    if category == 'A':                                 #Type A
+        ts = now
+        rand_str = '123abc'
+        sign = hashlib.md5('%s-%s-%s-%s-%s' % (path, ts, rand_str, 0, key)).hexdigest()
+        request_url = '%s%s?%s=%s' % (url, path, sign_key, '%s-%s-%s-%s' % (ts, rand_str, 0, sign))
+        print(request_url)
+    elif category == 'B':                               #Type B
+        ts = time.strftime('%Y%m%d%H%M', time.localtime(now))
+        sign = hashlib.md5('%s%s%s' % (key, ts, path)).hexdigest()
+        request_url = '%s/%s/%s%s%s' % (url, ts, sign, path, suffix)
+        print(request_url)
+    elif category == 'C':                               #Type C
+        ts = hex(now)[2:]
+        sign = hashlib.md5('%s%s%s' % (key, path, ts)).hexdigest()
+        request_url = '%s/%s/%s%s%s' % (url, sign, ts, path, suffix)
+        print(request_url)
+    elif category == 'D':                               #Type D
+        ts = now if ttl_format == 10 else hex(now)[2:]
+        sign = hashlib.md5('%s%s%s' % (key, path, ts)).hexdigest()
+        request_url = '%s%s?%s=%s&%s=%s' % (url, path, sign_key, sign, time_key, ts)
+        print(request_url)
+
+
+if __name__ == '__main__':
+    if len(sys.argv) == 1:
+        print('usage: python generate_url.py A 20200501000000')
+    args = sys.argv[1:]
+    generate_url(*args)
+```
