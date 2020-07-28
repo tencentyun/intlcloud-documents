@@ -16,13 +16,20 @@ CLS provides the pay-as-you-go billing option in all the supported regions. User
 | Category     | Description                                                         |
 | -------- | ------------------------------------------------------------ |
 | Billing cycle | Daily. The fees generated for the current day will be settled at 00:00 on the next day. |
-| Price | See CLS [Product Pricing](https://intl.cloud.tencent.com/document/product/614/37510)     |
+| Price | See CLS [Product Pricing](https://cloud.tencent.com/document/product/614/45803)     |
 
 
 
 ## Billable Items
 
+### Overview
 
+
+![](https://main.qcloudimg.com/raw/177d97d23b8bccc5190dc9cec01bc6af.png)
+
+### Graphic illustration
+
+![](https://main.qcloudimg.com/raw/d22617cda4657e9692866add60a06d46.png)
 
 
 ### Description
