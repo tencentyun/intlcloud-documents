@@ -61,7 +61,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ###  MacOS システムはRDPでCVMにログインする
 
 >
-> - 次の操作は、Microsoft Remote Desktop for Macを例に使用しています。マイクロソフト社は、公式には2017年にRemote Desktopクライアントへのダウンロードリンクの提供を停止し、ベータ版のリリースは、その子会社である[HockeyApp](https://appcenter.ms/apps)によって提供されます。
+> - 次の操作は、Microsoft Remote Desktop for Macを例に使用しています。マイクロソフト社は、公式には2017年にRemote Desktopクライアントへのダウンロードリンクの提供を停止し、ベータ版のリリースは、その子会社である HockeyApp によって提供されます。
 >- 以下の操作は Windows Server 2012 R2  OSに接続されているCVMを例に説明します。
 >
 1. Microsoft Remote Desktop for Macをダウンロードして、ローカルにインストールします。
