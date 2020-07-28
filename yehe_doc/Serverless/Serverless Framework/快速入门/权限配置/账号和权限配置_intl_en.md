@@ -28,16 +28,16 @@ SERVERLESS_PLATFORM_VENDOR=tencent
 If you want to grant a sub-account the permission to deploy by scanning code, you need to ensure that the sub-account has permissions to create roles and bind role policies. You can add the preset policy `QcloudCamRoleFullAccess` or `QcloudCamSubaccountsAuthorizeRoleFullAccess` to the sub-account.
 
 You can also add `SLS_QcsRole` by using the root account in the [CAM Console](https://console.cloud.tencent.com/cam/role) to grant access to Serverless Framework resources. The role entity is `sls.cloud.tencent.com`, which includes the following policy permissions:
+- QcloudCDNFullAccess
+- QcloudTCBFullAccess
 - QcloudSLSFullAccess
 - QcloudSSLFullAccess
-- QcloudMongoDBFullAccess
-- QcloudAPIGWFullAccess
-- QcloudElasticsearchServiceFullAccess
 - QcloudCKafkaFullAccess
-- QcloudSCFFullAccess
 - QcloudMonitorFullAccess
+- QcloudVPCFullAccess
 - QcloudCOSFullAccess
-- QcloudCDBFullAccess
+- QcloudAPIGWFullAccess
+- QcloudSCFFullAccess
 
 After the creation is successful, the root account needs to bind the following two policies to the sub-account:
 1. [Call permission policy of a specified role](#1)
@@ -47,7 +47,7 @@ After the creation is successful, the root account needs to bind the following t
 ### Granting sub-account permission to call specified role
 1. On the [CAM User List](https://console.cloud.tencent.com/cam/user) page, select the target sub-account and click the username to enter the user details page.
 2. Click **Associate Policy**. On the policy adding page, click **Select policies from the policy list**.
-3. Click **Create Custom Policy** > **Create by Policy Syntax** > **Blank Template** and enter the following content. Be sure to replace the role parameter with your own `APPID`:
+3. Click **Create Custom Policy** > **Create by Policy Syntax** > **Blank Template** and enter the following content. Be sure to replace the role parameter with your own `uin` (account ID):
 ```
 {
     "version": "2.0",
