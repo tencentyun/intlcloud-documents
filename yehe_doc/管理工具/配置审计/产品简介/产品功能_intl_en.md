@@ -8,7 +8,7 @@ After activating Config Audit, you need to set the monitoring scope. After a Ten
 
 **2.** **Configuration change log**
 
-The change logs can be traced back to the moment the corresponding Tencent Cloud service is added to the monitoring scope. You can query the service logs by various information such as resource type and resource name and then view the change transactions on the details page. In addition, Config Audit allows you to query the configuration change details in different time periods by specifying the time period, associates configuration change logs with CloudAudit operation logs, and provides other relevant features to help you quickly locate change details.
+The change logs can be traced back to the moment the corresponding Tencent Cloud service is added to the monitoring scope. You can query the service logs by various information such as resource type and resource name and then view the change details on the details page. In addition, Config Audit allows you to query the configuration change details in different time periods by specifying the time period, associates configuration change logs with CloudAudit operation logs, and provides other relevant features to help you quickly locate change details.
 
 **3.** **Quick activation/deactivation**
 
