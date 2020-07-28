@@ -19,7 +19,7 @@
 1. 登录 [容器镜像服务](https://console.cloud.tencent.com/tcr) 控制台，选择左侧导航栏中的【镜像仓库】。
 在“镜像仓库”页面即可查看当前实例内的镜像仓库列表。如需切换实例，请在页面上方的“实例名称”下拉列表中进行选择。
 2. 单击【新建】，在“新建镜像仓库”窗口中，参考以下提示进行镜像仓库配置。如下图所示：
-![](https://main.qcloudimg.com/raw/9c7c140240507d0b834e5c36103cadc2.png)
+![](https://main.qcloudimg.com/raw/d2c65e5fb0dfcad5b119c39bca4506d0.png)
  - **所属实例**：当前所选实例，新建的命名空间将属于该实例。
  - **命名空间**：镜像仓库所属的命名空间，如果列表为空，请先在该实例内 [新建命名空间](https://intl.cloud.tencent.com/document/product/1051/35487)。
  - **名称**：镜像仓库名称，长度为2 - 200个字符，只能包含小写字母、数字及分隔符（`.`、`_`、`-`、`/`），且不能以分隔符开头、结尾或连续。名称支持多级路径，例如 `team-01/front/nginx`，可根据业务需要灵活设置。
@@ -30,7 +30,7 @@
 
 ### 镜像仓库相关操作
 成功创建后即可在“镜像仓库”页面查看，此时您可执行以下操作对镜像仓库进行管理。如下图所示：
-![](https://main.qcloudimg.com/raw/da0a7ecad3c69b5df7bb63e64908c47f.png)
+![](https://main.qcloudimg.com/raw/4670963ae339d0a177d29a247294281e.png)
 -  **筛选命名空间**
 在“镜像仓库”列表中选择<img src="https://main.qcloudimg.com/raw/cec7f1733d3e76d18c27b0bcbb65965b.png" style="margin: -3px 0px">进行筛选，即可在下拉列表中选择仅需要查看的命名空间。
 - **查看仓库详情**
@@ -42,7 +42,7 @@
 
 ### 管理镜像版本
 单击指定镜像仓库名称，即可进入该仓库的详情页面，默认选择【版本管理】页签。您可在此页面管理仓库内的镜像版本，并执行安全扫描，查看层信息等操作。如下图所示：
-![](https://main.qcloudimg.com/raw/02373fdce067c3f10cc54d3a7293cc82.png)
+![](https://main.qcloudimg.com/raw/ce5ffd78da771800385e27118a9c98be.png)
 - **筛选镜像版本**
 在版本列表右上方搜索框中输入指定的镜像版本即可镜像搜索，支持模糊搜索。
 - **获取拉取指令**
@@ -60,7 +60,7 @@
 
 ### 编辑仓库信息
 在镜像仓库的详情页面选择【仓库信息】页签，即可查看并编辑仓库的基本信息。如下图所示：
-![](https://main.qcloudimg.com/raw/7854bca0d060431b3d6af1e35848e2e7.png)
+![](https://main.qcloudimg.com/raw/cba04ac5a3c628095d8d02b95b4b1581.png)
 - **编辑简短描述**
 选择“简短描述”后的<img src="https://main.qcloudimg.com/raw/f6a3c9acf9c397aa917299582b7b7523.png" style="margin:-3px 0px">，即可进入编辑状态，完成修改后单击【保存】即可完成编辑。
 - **编辑详细描述**
