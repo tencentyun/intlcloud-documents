@@ -5,7 +5,7 @@ This document describes how to connect to a TencentDB for SQL Server instance th
 ## Directions
 1. On the [TencentDB for SQL Server](https://console.cloud.tencent.com/sqlserver) instance details page, view the private IP and port number of the instance, which will be used for connecting to the TencentDB instance.
 2. Log in to the Windows CVM instance. For more information, please see [Getting Started with Windows CVM](https://intl.cloud.tencent.com/document/product/213/10516). This document uses Windows Server 2012 R2 Standard Edition (64-bit) as an example.
-3. Download and install [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) in the Windows CVM instance. For more information on SSMS, please see [Use SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/database-engine/use-sql-server-management-studio?view=sql-server-2014).
+3. Download and install [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) in the Windows CVM instance. For more information on SSMS, please see [Use SQL Server Management Studio](https://docs.microsoft.com/en-us/previous-versions/sql/2014/database-engine/use-sql-server-management-studio?view=sql-server-2014).
 ![](https://main.qcloudimg.com/raw/019e13af6a6db7bf831cad9d7000279e.png)
 4. Start SSMS in the Windows CVM instance. On the **Connect to server** page, enter the relevant information to connect to TencentDB. Click **Connect** and wait a few minutes before SSMS connects to your database instance.
  - **Server type**: select "Database Engine".

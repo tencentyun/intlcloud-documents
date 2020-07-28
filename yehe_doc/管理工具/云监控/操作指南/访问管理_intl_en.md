@@ -163,7 +163,7 @@ CM policies depend on the policies of other Tencent Cloud services. When you gra
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240">TencentDB for MongoDB</a></td>
 	<td> QcloudMongoDBFullAccess</td>
 	<td>Full access permissions for TencentDB for MongoDB</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/38703">Access Management</a></td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/32839">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudMongoDBReadOnlyAccess</td>
@@ -173,7 +173,7 @@ CM policies depend on the policies of other Tencent Cloud services. When you gra
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239">TencentDB for Redis</a></td>
 	<td> QcloudRedisFullAccess </td>
 	<td>Full access permissions for TencentDB for Redis</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/38687">Access Management</a></td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/32845">Access Management</a></td>
 </tr>
 <tr>
 	<td>QcloudRedisReadOnlyAccess</td>

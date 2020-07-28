@@ -16,7 +16,7 @@
 1. 登录 [容器镜像服务](https://console.cloud.tencent.com/tcr) 控制台，选择左侧导航栏中的【触发器】。
 在“触发器”页面即可查看当前实例内的触发器规则列表。如需切换实例，请在页面上方的“实例名称”下拉列表中进行选择。
 2. 单击【新建】，在弹出的“新建触发器”窗口中，参考以下提示进行规则配置。如下图所示：
-![](https://main.qcloudimg.com/raw/efe4881f8a427899c8c73258e0cfbc4a.png)
+![](https://main.qcloudimg.com/raw/70e694eb396edf97d548fd300307bb81.png)
  - **名称**：实例规则名称，支持小写字母、数字及（`-`、`.`、` _`）三种符号，且需以字母数字开头。本文以 `webhook-demo` 为例。
  - **描述**：规则描述，支持中文。
  - **触发动作**：当前支持推送镜像、拉取镜像、删除镜像，上传 Helm Chart、下载 Helm Chart 及删除 Helm Chart 六种触发动作。触发器执行时，发起的 webhook 请求内将包含该触发动作信息。
@@ -37,7 +37,7 @@
 
 ### 管理触发器规则
 成功创建后即可在“触发器”页面查看已创建的触发器规则，您可执行以下操作管理触发器规则。如下图所示：
-![](https://main.qcloudimg.com/raw/fd3501d656bcc695e1c1f4219404ae6d.png)
+![](https://main.qcloudimg.com/raw/408ac4c6409ae1f24f8a90c8652120bc.png)
 - **查看触发日志**：单击触发器规则名称，即可查看该规则触发日志，详情请参见 [查看触发器日志](#CheckLog)。
 - **修改规则状态**：<img src="https://main.qcloudimg.com/raw/d31873587cb976e1429768b2dc2b0e16.png" style="margin:-6px 0px">表示规则启用，<img src="https://main.qcloudimg.com/raw/5ba06490364505efc4d698e3adb1064e.png" style="margin:-6px 0px">表示规则关闭。新建的实例同步规则默认为启用状态，您可自行调整。
 - **配置**：重新配置触发器规则，可配置全部参数。
@@ -46,7 +46,7 @@
 <span id="CheckLog"></span>
 ### 查看触发器日志
 单击指定触发器规则名称，即可查看该规则的触发日志。如下图所示：
-![](https://main.qcloudimg.com/raw/ffd9525f3ef89e02d38cce808fc6bcd8.png)
+![](https://main.qcloudimg.com/raw/71ffa1471545e6bd8ceb57222fa396ed.png)
 包含信息如下：
 - **任务ID**：实例内唯一的触发器任务 ID。
 - **触发动作**：产生该次触发的触发动作，例如推送镜像。

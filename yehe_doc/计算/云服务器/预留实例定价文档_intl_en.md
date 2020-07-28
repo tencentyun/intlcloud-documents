@@ -595,6 +595,106 @@
 | Convertible 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $13,312.00 | $365.87   | $1.008           | 48%                     | $1.92             |
 | Convertible 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $26,208.00 | $0.00     | $0.997           | 48%                     | $1.92             |
 
+### Compute C3
+| Model     | Region     | Billing Mode                   | Image  | Currency | Specification          | VCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand Hourly |
+| -------- | -------- | -------------------------- | ----- | ---- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ---------------- |
+| Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $87.55    | $0.120           | 33%                     | $0.18            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE8     | 4    | 8    | $508.00    | $41.76    | $0.115           | 36%                     | $0.18            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - all upfront  | Linux | USD  | C3.LARGE8     | 4    | 8    | $980.00    | $0.00     | $0.112           | 38%                     | $0.18            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $100.51   | $0.138           | 23%                     | $0.18            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE8     | 4    | 8    | $588.00    | $48.38    | $0.133           | 26%                     | $0.18            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - all upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $1,140.00  | $0.00     | $0.130           | 28%                     | $0.18            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - no upfront   | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $55.58    | $0.076           | 58%                     | $0.18            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - partial upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $964.00    | $26.50    | $0.073           | 59%                     | $0.18            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - all upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $1,836.00  | $0.00     | $0.070           | 61%                     | $0.18            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $67.68    | $0.093           | 48%                     | $0.18            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $1,156.00  | $31.97    | $0.088           | 51%                     | $0.18            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $2,224.00  | $0.00     | $0.085           | 53%                     | $0.18            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.LARGE16    | 4    | 16   | $0.00      | $131.33   | $0.180           | 36%                     | $0.28            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE16    | 4    | 16   | $764.00    | $62.50    | $0.173           | 38%                     | $0.28            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - all upfront  | Linux | USD  | C3.LARGE16    | 4    | 16   | $1,468.00  | $0.00     | $0.168           | 40%                     | $0.28            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.LARGE16    | 4    | 16   | $0.00      | $150.62   | $0.206           | 26%                     | $0.28            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE16    | 4    | 16   | $884.00    | $72.58    | $0.200           | 29%                     | $0.28            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - all upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $1,708.00  | $0.00     | $0.195           | 30%                     | $0.28            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - no upfront   | Linux | USD  | C3.LARGE16    | 4    | 16   | $0.00      | $83.23    | $0.114           | 59%                     | $0.28            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - partial upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $1,444.00  | $39.74    | $0.109           | 61%                     | $0.28            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - all upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $2,756.00  | $0.00     | $0.105           | 63%                     | $0.28            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.LARGE16    | 4    | 16   | $0.00      | $101.66   | $0.139           | 50%                     | $0.28            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $1,732.00  | $48.10    | $0.132           | 53%                     | $0.28            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $3,336.00  | $0.00     | $0.127           | 55%                     | $0.28            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $0.00      | $175.10   | $0.240           | 35%                     | $0.37            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $1,016.00  | $83.52    | $0.230           | 38%                     | $0.37            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - all upfront  | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $1,960.00  | $0.00     | $0.224           | 39%                     | $0.37            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $0.00      | $201.02   | $0.275           | 26%                     | $0.37            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $1,176.00  | $96.77    | $0.267           | 28%                     | $0.37            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - all upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $2,280.00  | $0.00     | $0.260           | 30%                     | $0.37            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - no upfront   | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $0.00      | $111.17   | $0.152           | 59%                     | $0.37            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - partial upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $1,928.00  | $52.99    | $0.146           | 61%                     | $0.37            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - all upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $3,672.00  | $0.00     | $0.140           | 62%                     | $0.37            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $0.00      | $135.36   | $0.185           | 50%                     | $0.37            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $2,312.00  | $63.94    | $0.176           | 52%                     | $0.37            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $4,448.00  | $0.00     | $0.169           | 54%                     | $0.37            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $0.00      | $262.66   | $0.360           | 35%                     | $0.55            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $1,528.00  | $124.99   | $0.346           | 37%                     | $0.55            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - all upfront  | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $2,936.00  | $0.00     | $0.335           | 39%                     | $0.55            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $0.00      | $301.25   | $0.413           | 25%                     | $0.55            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $1,768.00  | $145.15   | $0.401           | 27%                     | $0.55            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - all upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $3,416.00  | $0.00     | $0.390           | 29%                     | $0.55            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - no upfront   | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $0.00      | $166.46   | $0.228           | 59%                     | $0.55            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - partial upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $2,888.00  | $79.49    | $0.219           | 60%                     | $0.55            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - all upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $5,512.00  | $0.00     | $0.210           | 62%                     | $0.55            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $0.00      | $203.33   | $0.279           | 49%                     | $0.55            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $3,464.00  | $96.19    | $0.264           | 52%                     | $0.55            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $6,672.00  | $0.00     | $0.254           | 54%                     | $0.55            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $0.00      | $350.21   | $0.480           | 35%                     | $0.74            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $2,032.00  | $167.04   | $0.461           | 38%                     | $0.74            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - all upfront  | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $3,920.00  | $0.00     | $0.447           | 40%                     | $0.74            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $0.00      | $402.05   | $0.551           | 26%                     | $0.74            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $2,352.00  | $193.54   | $0.534           | 28%                     | $0.74            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - all upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $4,560.00  | $0.00     | $0.521           | 30%                     | $0.74            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - no upfront   | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $0.00      | $222.34   | $0.305           | 59%                     | $0.74            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - partial upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $3,856.00  | $105.98   | $0.292           | 61%                     | $0.74            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - all upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $7,344.00  | $0.00     | $0.279           | 62%                     | $0.74            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $0.00      | $270.72   | $0.371           | 50%                     | $0.74            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $4,624.00  | $127.87   | $0.351           | 53%                     | $0.74            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $8,896.00  | $0.00     | $0.339           | 54%                     | $0.74            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $0.00      | $525.31   | $0.720           | 35%                     | $1.10            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $3,056.00  | $249.98   | $0.691           | 37%                     | $1.10            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - all upfront  | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $5,872.00  | $0.00     | $0.670           | 39%                     | $1.10            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $0.00      | $602.50   | $0.825           | 25%                     | $1.10            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $3,536.00  | $290.30   | $0.801           | 27%                     | $1.10            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - all upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $6,832.00  | $0.00     | $0.780           | 29%                     | $1.10            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - no upfront   | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $0.00      | $332.93   | $0.456           | 59%                     | $1.10            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - partial upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $5,776.00  | $158.98   | $0.438           | 60%                     | $1.10            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - all upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $11,024.00 | $0.00     | $0.419           | 62%                     | $1.10            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $0.00      | $406.66   | $0.557           | 49%                     | $1.10            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $6,928.00  | $192.38   | $0.527           | 52%                     | $1.10            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $13,344.00 | $0.00     | $0.508           | 54%                     | $1.10            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $0.00      | $700.42   | $0.959           | 35%                     | $1.47            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $4,064.00  | $334.08   | $0.922           | 37%                     | $1.47            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - all upfront  | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $7,840.00  | $0.00     | $0.895           | 39%                     | $1.47            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $0.00      | $804.10   | $1.102           | 25%                     | $1.47            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $4,704.00  | $387.07   | $1.067           | 27%                     | $1.47            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - all upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $9,120.00  | $0.00     | $1.041           | 29%                     | $1.47            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - no upfront   | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $0.00      | $444.67   | $0.609           | 59%                     | $1.47            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $7,712.00  | $211.97   | $0.584           | 60%                     | $1.47            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $14,688.00 | $0.00     | $0.559           | 62%                     | $1.47            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $0.00      | $541.44   | $0.742           | 50%                     | $1.47            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $9,248.00  | $255.74   | $0.702           | 52%                     | $1.47            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $17,792.00 | $0.00     | $0.677           | 54%                     | $1.47            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $0.00      | $1,050.62 | $1.439           | 35%                     | $2.21            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $6,112.00  | $499.97   | $1.383           | 37%                     | $2.21            |
+| Compute C3 | Frankfurt | Standard 1-Year Term - all upfront  | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $11,744.00 | $0.00     | $1.341           | 39%                     | $2.21            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $0.00      | $1,204.99 | $1.651           | 25%                     | $2.21            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $7,072.00  | $580.61   | $1.603           | 27%                     | $2.21            |
+| Compute C3 | Frankfurt | Convertible 1-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $13,664.00 | $0.00     | $1.560           | 29%                     | $2.21            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - no upfront   | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $0.00      | $665.86   | $0.912           | 59%                     | $2.21            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $11,552.00 | $317.95   | $0.875           | 60%                     | $2.21            |
+| Compute C3 | Frankfurt | Standard 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $22,048.00 | $0.00     | $0.839           | 62%                     | $2.21            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $0.00      | $813.31   | $1.114           | 50%                     | $2.21            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $13,856.00 | $384.77   | $1.054           | 52%                     | $2.21            |
+| Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $26,688.00 | $0.00     | $1.016           | 54%                     | $2.21            |
+
 ## Hong Kong
 ### Standard S2
 
@@ -2576,6 +2676,107 @@
 | StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,774.08 | $2.430           | 49%                     | $4.74             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $31,200.00 | $851.05   | $2.353           | 50%                     | $4.74             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $59,920.00 | $0.00     | $2.280           | 52%                     | $4.74             |
+
+### Compute C3
+| Model     | Region | Billing Mode                   | Image  | Currency | Specification          | VCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand Hourly |
+| -------- | ---- | -------------------------- | ----- | ---- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ---------------- |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $95.33    | $0.131           | 31%                     | $0.19            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE8     | 4    | 8    | $556.00    | $45.22    | $0.125           | 34%                     | $0.19            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - all upfront  | Linux | USD  | C3.LARGE8     | 4    | 8    | $1,072.00  | $0.00     | $0.122           | 36%                     | $0.19            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $109.15   | $0.150           | 21%                     | $0.19            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE8     | 4    | 8    | $640.00    | $52.13    | $0.144           | 24%                     | $0.19            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - all upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $1,244.00  | $0.00     | $0.142           | 25%                     | $0.19            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - no upfront   | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $62.21    | $0.085           | 55%                     | $0.19            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - partial upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $1,056.00  | $28.80    | $0.080           | 58%                     | $0.19            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - all upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $2,016.00  | $0.00     | $0.077           | 59%                     | $0.19            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $74.59    | $0.102           | 46%                     | $0.19            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $1,280.00  | $35.42    | $0.097           | 49%                     | $0.19            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.LARGE8     | 4    | 8    | $2,464.00  | $0.00     | $0.094           | 51%                     | $0.19            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.LARGE16    | 4    | 16   | $0.00      | $143.14   | $0.196           | 32%                     | $0.29            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE16    | 4    | 16   | $836.00    | $67.68    | $0.188           | 35%                     | $0.29            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - all upfront  | Linux | USD  | C3.LARGE16    | 4    | 16   | $1,608.00  | $0.00     | $0.184           | 37%                     | $0.29            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.LARGE16    | 4    | 16   | $0.00      | $163.87   | $0.224           | 23%                     | $0.29            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE16    | 4    | 16   | $960.00    | $78.05    | $0.217           | 25%                     | $0.29            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - all upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $1,868.00  | $0.00     | $0.213           | 27%                     | $0.29            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - no upfront   | Linux | USD  | C3.LARGE16    | 4    | 16   | $0.00      | $93.31    | $0.128           | 56%                     | $0.29            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - partial upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $1,584.00  | $43.20    | $0.119           | 59%                     | $0.29            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - all upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $3,024.00  | $0.00     | $0.115           | 60%                     | $0.29            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.LARGE16    | 4    | 16   | $0.00      | $112.03   | $0.153           | 47%                     | $0.29            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $1,920.00  | $53.28    | $0.146           | 50%                     | $0.29            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.LARGE16    | 4    | 16   | $3,696.00  | $0.00     | $0.141           | 51%                     | $0.29            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $0.00      | $190.66   | $0.261           | 31%                     | $0.38            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $1,112.00  | $90.43    | $0.251           | 34%                     | $0.38            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - all upfront  | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $2,144.00  | $0.00     | $0.245           | 36%                     | $0.38            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $0.00      | $218.30   | $0.299           | 21%                     | $0.38            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $1,280.00  | $104.26   | $0.289           | 24%                     | $0.38            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - all upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $2,488.00  | $0.00     | $0.284           | 25%                     | $0.38            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - no upfront   | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $0.00      | $124.42   | $0.170           | 55%                     | $0.38            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - partial upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $2,112.00  | $57.60    | $0.159           | 58%                     | $0.38            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - all upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $4,032.00  | $0.00     | $0.153           | 60%                     | $0.38            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $0.00      | $149.18   | $0.204           | 46%                     | $0.38            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $2,560.00  | $70.85    | $0.194           | 49%                     | $0.38            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.2XLARGE16  | 8    | 16   | $4,928.00  | $0.00     | $0.188           | 51%                     | $0.38            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $0.00      | $286.27   | $0.392           | 31%                     | $0.57            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $1,672.00  | $135.36   | $0.376           | 34%                     | $0.57            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - all upfront  | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $3,216.00  | $0.00     | $0.367           | 36%                     | $0.57            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $0.00      | $327.74   | $0.449           | 21%                     | $0.57            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $1,920.00  | $156.10   | $0.433           | 24%                     | $0.57            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - all upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $3,736.00  | $0.00     | $0.426           | 25%                     | $0.57            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - no upfront   | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $0.00      | $186.62   | $0.256           | 55%                     | $0.57            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - partial upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $3,168.00  | $86.40    | $0.239           | 58%                     | $0.57            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - all upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $6,048.00  | $0.00     | $0.230           | 60%                     | $0.57            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $0.00      | $224.06   | $0.307           | 46%                     | $0.57            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $3,840.00  | $106.56   | $0.292           | 49%                     | $0.57            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.2XLARGE32  | 8    | 32   | $7,392.00  | $0.00     | $0.281           | 51%                     | $0.57            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $0.00      | $381.31   | $0.522           | 32%                     | $0.77            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $2,224.00  | $180.86   | $0.502           | 35%                     | $0.77            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - all upfront  | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $4,288.00  | $0.00     | $0.489           | 36%                     | $0.77            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $0.00      | $436.61   | $0.598           | 22%                     | $0.77            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $2,560.00  | $208.51   | $0.578           | 25%                     | $0.77            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - all upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $4,976.00  | $0.00     | $0.568           | 26%                     | $0.77            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - no upfront   | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $0.00      | $248.83   | $0.341           | 56%                     | $0.77            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - partial upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $4,224.00  | $115.20   | $0.319           | 59%                     | $0.77            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - all upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $8,064.00  | $0.00     | $0.307           | 60%                     | $0.77            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $0.00      | $298.37   | $0.409           | 47%                     | $0.77            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $5,120.00  | $141.70   | $0.389           | 49%                     | $0.77            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.4XLARGE32  | 16   | 32   | $9,856.00  | $0.00     | $0.375           | 51%                     | $0.77            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $0.00      | $572.54   | $0.784           | 32%                     | $1.15            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $3,344.00  | $270.72   | $0.753           | 35%                     | $1.15            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - all upfront  | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $6,432.00  | $0.00     | $0.734           | 36%                     | $1.15            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $0.00      | $655.49   | $0.898           | 22%                     | $1.15            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $3,840.00  | $312.19   | $0.866           | 25%                     | $1.15            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - all upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $7,472.00  | $0.00     | $0.853           | 26%                     | $1.15            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - no upfront   | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $0.00      | $373.25   | $0.511           | 56%                     | $1.15            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - partial upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $6,336.00  | $172.80   | $0.478           | 58%                     | $1.15            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - all upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $12,096.00 | $0.00     | $0.460           | 60%                     | $1.15            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $0.00      | $448.13   | $0.614           | 47%                     | $1.15            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $7,680.00  | $213.12   | $0.584           | 49%                     | $1.15            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.4XLARGE64  | 16   | 64   | $14,784.00 | $0.00     | $0.563           | 51%                     | $1.15            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $0.00      | $762.62   | $1.045           | 32%                     | $1.53            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $4,448.00  | $361.73   | $1.003           | 34%                     | $1.53            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - all upfront  | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $8,576.00  | $0.00     | $0.979           | 36%                     | $1.53            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $0.00      | $873.22   | $1.196           | 22%                     | $1.53            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $5,120.00  | $417.02   | $1.156           | 24%                     | $1.53            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - all upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $9,952.00  | $0.00     | $1.136           | 26%                     | $1.53            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - no upfront   | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $0.00      | $497.66   | $0.682           | 55%                     | $1.53            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $8,448.00  | $230.40   | $0.637           | 58%                     | $1.53            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $16,128.00 | $0.00     | $0.614           | 60%                     | $1.53            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $0.00      | $596.74   | $0.817           | 47%                     | $1.53            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $10,240.00 | $283.39   | $0.778           | 49%                     | $1.53            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE64  | 32   | 64   | $19,712.00 | $0.00     | $0.750           | 51%                     | $1.53            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $0.00      | $1,145.09 | $1.569           | 32%                     | $2.30            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $6,688.00  | $541.44   | $1.505           | 35%                     | $2.30            |
+| Compute C3 | Silicon Valley | Standard 1-Year Term - all upfront  | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $12,864.00 | $0.00     | $1.468           | 36%                     | $2.30            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - no upfront    | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $0.00      | $1,310.98 | $1.796           | 22%                     | $2.30            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - partial upfront  | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $7,680.00  | $624.38   | $1.732           | 25%                     | $2.30            |
+| Compute C3 | Silicon Valley | Convertible 1-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $14,944.00 | $0.00     | $1.706           | 26%                     | $2.30            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - no upfront   | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $0.00      | $746.50   | $1.023           | 56%                     | $2.30            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $12,672.00 | $345.60   | $0.956           | 58%                     | $2.30            |
+| Compute C3 | Silicon Valley | Standard 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $24,192.00 | $0.00     | $0.921           | 60%                     | $2.30            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - no upfront   | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $0.00      | $896.26   | $1.228           | 47%                     | $2.30            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $15,360.00 | $426.24   | $1.168           | 49%                     | $2.30            |
+| Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $29,568.00 | $0.00     | $1.125           | 51%                     | $2.30            |
+
 
 ## Mumbai
 ### Standard S3

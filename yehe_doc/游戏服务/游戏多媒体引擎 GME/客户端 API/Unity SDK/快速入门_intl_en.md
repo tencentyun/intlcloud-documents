@@ -12,13 +12,13 @@ This document only describes the most important APIs to help you get started wit
 |EnableSpeaker		| Enables speaker 	|
 
 >
-- Configure your project before using GME; otherwise, the SDK will not take effect.
-- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
-- GME APIs should be called in the same thread.
-- The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For GME callback messages, please see the callback message list.
-- Operation on devices should be performed after successful room entry.
-- For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
+>- Configure your project before using GME; otherwise, the SDK will not take effect.
+>- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
+>- GME APIs should be called in the same thread.
+>- The `Poll` API should be called periodically for GME to trigger event callbacks.
+>- For GME callback messages, please see the callback message list.
+>- Operation on devices should be performed after successful room entry.
+>- For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
 
 ## Access Steps
 ### 1. Initialize the SDK
@@ -144,8 +144,8 @@ void OnEnterRoomComplete(int err, string errInfo)
 This API is used to enable/disable the mic. Mic and speaker are not enabled by default after room entry.
 
 >
-- Please make sure that the mic permission has been granted in the project when executable files are exported for each platform and is enabled during use.
-- On a mobile device, you can use the `CheckMicPermission` API to check whether the mic permission is granted.
+>- Please make sure that the mic permission has been granted in the project when executable files are exported for each platform and is enabled during use.
+>- On a mobile device, you can use the `CheckMicPermission` API to check whether the mic permission is granted.
 
 #### Function prototype  
 ```

@@ -61,7 +61,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ### Logging in to your CVM on MacOS using RDP
 
 >
->- The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary [HockeyApp](https://appcenter.ms/apps) is responsible for releasing the beta client.
+>- The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary HockeyApp is responsible for releasing the beta client.
 >- The following operations use a CVM on Windows Server 2012 R2 as an example.
 >
 1. Download and install Microsoft Remote Desktop for Mac on your local computer.

@@ -34,7 +34,8 @@
 </tbody></table>
 
 ## 单节点包年包月价
-
+>? 此产品的包年包月售卖模式正在内测中，价格文档仅供参考，最终价格以账单为准。如有需要，请[联系商务](https://intl.cloud.tencent.com/contact-sales)。
+>
 <table>
 <thead>
 <tr>
@@ -84,8 +85,8 @@
 <thead>
 <tbody><tr>
         <th rowspan=2>地域</th>
-        <th  colspan = "3">内存价格（元/GB/小时）</th>
-        <th rowspan=2>磁盘价格（元/GB/小时）</th>
+        <th  colspan = "3">内存价格（美元/GB/小时）</th>
+        <th rowspan=2>磁盘价格（美元/GB/小时）</th>
     </tr>
 		<tr>
         <th>第一阶梯</th>
