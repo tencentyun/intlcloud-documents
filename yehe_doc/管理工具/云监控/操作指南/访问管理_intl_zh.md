@@ -163,7 +163,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240">云数据库 MongoDB</a></td>
 	<td> QcloudMongoDBFullAccess</td>
 	<td>云数据库 MongoDB 全读写访问权限</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/38703">访问管理</a></td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/240/32839">访问管理</a></td>
 </tr>
 <tr>
 	<td>QcloudMongoDBReadOnlyAccess</td>
@@ -173,7 +173,7 @@
 	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239">云数据库 Redis</a></td>
 	<td> QcloudRedisFullAccess </td>
 	<td>云数据库 Redis 全读写访问权限</td>
-	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/38687">访问管理</a></td>
+	<td rowspan="2"><a href="https://intl.cloud.tencent.com/document/product/239/32845">访问管理</a></td>
 </tr>
 <tr>
 	<td>QcloudRedisReadOnlyAccess</td>

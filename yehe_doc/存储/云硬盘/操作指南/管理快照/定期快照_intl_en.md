@@ -103,7 +103,8 @@ The following table describes the content and features of scheduled snapshot pol
 3. Click **Create**.
 
 <span id="step4"></span>
-4. On the "Create a new snapshot policy" page, set the following parameters and click **OK**, as shown in the following figure:
+4. On the "Create a new snapshot policy" page, set the following parameters and click **OK**.
+
  <table>
      <tr>
          <th width="14%">Parameter</th>  
