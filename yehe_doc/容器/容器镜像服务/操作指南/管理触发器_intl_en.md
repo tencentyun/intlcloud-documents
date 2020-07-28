@@ -16,7 +16,7 @@ Before creating and managing a trigger in a TCR Enterprise Edition instance, com
 1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and click **Trigger** in the left sidebar.
 On the "Trigger" page, you can view the list of trigger rules for the current instance. To change the instance, at the top of the page, select the desired instance name from the "Instance Name" drop-down list.
 2. Click **Create**. In the "Create a Trigger" window that appears, configure the rule by referring to the following field description.
-![](https://main.qcloudimg.com/raw/efe4881f8a427899c8c73258e0cfbc4a.png)
+![](https://main.qcloudimg.com/raw/70e694eb396edf97d548fd300307bb81.png)
  - **Name**: indicates the instance rule name. It supports lowercase letters, numbers, and three symbols (`-`, `.`, and `_`) and must start with a letter. In this document, `webhook-demo` is the sample instance rule name.
  - **Description**: indicates the rule description.
  - **Triggering action**: currently, six options are available: image push, image pull, image deletion, Helm Chart upload, Helm Chart download, and Helm Chart deletion. During the execution of a trigger, the webhook request initiated will contain information about the triggering action.
@@ -37,7 +37,8 @@ On the "Trigger" page, you can view the list of trigger rules for the current in
 
 ### Managing trigger rules
 After trigger rules are created, you can view created trigger rules on the "Trigger" page. You can perform the following operations to manage trigger rules, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/fd3501d656bcc695e1c1f4219404ae6d.png)
+![](https://main.qcloudimg.com/raw/408ac4c6409ae1f24f8a90c8652120bc.png)
+
 - **View triggering logs**: you can click the name of a trigger rule to view its triggering log. For more information, see [Viewing trigger logs](#CheckLog).
 - **Modify rule status**: <img src="https://main.qcloudimg.com/raw/d31873587cb976e1429768b2dc2b0e16.png" style="margin:-6px 0px"> indicates that the rule is enabled. <img src="https://main.qcloudimg.com/raw/5ba06490364505efc4d698e3adb1064e.png" style="margin:-6px 0px"> indicates that the rule is disabled. New instance synchronization rules are enabled by default. You can adjust them based on your requirements.
 - **Configure**: is to re-configure the trigger rule. You can re-configure all parameters.
@@ -46,8 +47,9 @@ After trigger rules are created, you can view created trigger rules on the "Trig
 <span id="CheckLog"></span>
 ### Viewing triggering logs
 You can click the name of a trigger rule to view its triggering log, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/ffd9525f3ef89e02d38cce808fc6bcd8.png)
+![](https://main.qcloudimg.com/raw/71ffa1471545e6bd8ceb57222fa396ed.png)
 The log contains the following information:
+
 - **Task ID**: indicates the ID of the trigger task, which is unique in the instance.
 - **Triggering action**: indicates the action that fires this trigger, for example, image push.
 - **Triggering repository**: indicates the repository that generates this triggering action.

@@ -29,7 +29,7 @@ Harbor 是 VMware 公司开源的企业级 Docker Registry 项目，在开源 Do
 	- **公网 IP 地址段**：自建 Harbor 服务出口的公网 IP。如果无法确认具体的公网 IP 地址，可临时配置为 `0.0.0.0/0` 以放通全部公网来源的访问，完成同步后请尽快删除该配置。
 	- **备注**：可填写白名单配置的备注信息，例如“允许自建 Harbor 公网访问”。
 	配置完成后如下图所示：
-![](https://main.qcloudimg.com/raw/dd1d7af259920f42f7ad2cdb07e22a50.png)
+![](https://main.qcloudimg.com/raw/0efa0673f11c718d13492e672696e45e.png)
 
 <span id="vpc"></span>
 #### 方案2：通过腾讯云私有网络进行访问
@@ -41,7 +41,7 @@ Harbor 是 VMware 公司开源的企业级 Docker Registry 项目，在开源 Do
 	- **私有网络**：自建 Harbor 服务所在的私有网络，或已通过专线接入的私有网络。
 	- **子网**：新建内网访问链路将占用所选私有网络的一个内网 IP，请选择私有网络下的一个子网以分配该内网 IP 所属的子网。
 		配置完成后如下图所示：
-![](https://main.qcloudimg.com/raw/c1bb811653c6de3dceeea296ac3d5671.png)
+![](https://main.qcloudimg.com/raw/815bd9528ae590df131cdbdb62d799ac.png)
 4. 完成以上配置后，可获得内网访问链路的目标访问 IP。为在私有网络环境中将实例域名解析至该内网 IP，请在自建 Harbor 服务所在云服务器上配置 Host。如果当前正在使用独立的 DNS 服务，也可在 DNS 服务中配置。
 可在云服务器上执行以下命令，配置 Host。
 ```
@@ -55,7 +55,7 @@ echo x.x.x.x harbor-sync.tencentcloudcr.com >> /etc/hosts
 1. 登录 [容器镜像服务](https://console.cloud.tencent.com/tcr) 控制台，选择左侧导航栏中的【实例列表】。
 2. 在“实例列表”页面中选择需要进行数据同步的实例，进入实例详情页。
 3. 选择【访问凭证】页签，并单击实例列表上方的【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/d5a837707d80efb77577cd94307acf95.png)
+![](https://main.qcloudimg.com/raw/570bd5a2b9b27e57a3b780ff84b9df15.png)
 4. 在弹出的“新建访问凭证”窗口中，按照以下步骤进行获取：
    1. 在“新建访问凭证”步骤中，输入凭证“用途描述”并单击【下一步】。用途描述可填写为“自建 Harbor 数据同步专用”。
    2. 在“保存访问凭证”步骤中，单击【保存访问凭证】下载凭证信息。**请妥善保管访问凭证，仅一次保存机会**。
@@ -78,7 +78,7 @@ Harbor 支持添加第三方 Registry 并配置数据复制规则，本文以 Ha
  - 如显示“测试连接成功”，则说明当前自建 Harbor 服务可以正常访问该企业版实例。
  - 如显示“测试连接失败”，则请确认 [配置自建 Harbor 服务可访问容器镜像服务企业版实例](#Configuration)。
 4. 单击【确定】新建该目标仓库，新建成功后如下图所示：
-![](https://main.qcloudimg.com/raw/02fb21b07386d0bf8135e76efc8e9ca3.png)
+![](https://main.qcloudimg.com/raw/70f08812fb18d93ced9fce3309f71c66.png)
 <span id="createRule"></span>
 5. 选择左侧导航栏中的【系统管理】>【复制管理】，并单击【新建规则】，参考以下信息创建同步规则。
 	- **名称**：同步规则名称，可根据具体使用场景填写。
@@ -97,11 +97,11 @@ Harbor 支持添加第三方 Registry 并配置数据复制规则，本文以 Ha
 向自建 Harbor 服务内推送容器镜像及 Helm Chart，若同步规则中的触发模式设置为“事件驱动”，则新推送的资源将自动同步至企业版实例内。可选择该同步规则查看同步日志，并可进入企业版实例控制台查看是否同步成功。此步骤以向自建 Harbor 服务内手动推送 `nginx:latest` 容器镜像并触发同步为例：
 1. 推送容器镜像并查看
 使用 docker 客户端推送本地的 `nginx:latest` 容器镜像，并进入自建 Harbor 控制台内查看已推送的镜像。如下图所示，`tcr-sync` 项目内已推送 `nginx:latest` 容器镜像，并自动创建了 nginx 镜像仓库。
-![](https://main.qcloudimg.com/raw/ce9988cec212f9ef6a44ab4cbbf0fa04.png)
+![](https://main.qcloudimg.com/raw/280f5d89a5df004a73e2c8bbc63a7c98.png)
 2. 查看同步记录及进度
 选择左侧导航栏中的【系统管理】>【复制管理】，选择在 [步骤5](#createRule) 中已创建的同步规则，即可查看该同步规则的复制任务。如下图所示，在该复制任务中已有一条任务记录，您可查看该复制任务的状态及成功百分比。
-![](https://main.qcloudimg.com/raw/3b564dbf0fcfcfec4c0e161aa17b09da.png)
+![](https://main.qcloudimg.com/raw/b91ca61cb75de5c812ec2dcedb0771f8.png)
 3. 在容器镜像服务内查看同步镜像
 进入容器镜像服务控制台的“镜像仓库”页面，并选择与自建 Harbor 服务进行同步的实例，即可查看已同步成功的容器镜像。如下图所示，在 `tcr-sync` 命名空间内已自动创建 nginx 镜像仓库，并推送了 `nginx:latest` 容器镜像。
-![](https://main.qcloudimg.com/raw/a9fb2a5423addf186e12c16c5276f9a4.png)
+![](https://main.qcloudimg.com/raw/45310a0a60e546dcba41a85b2b2ec5d2.png)
 

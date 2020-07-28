@@ -1,15 +1,15 @@
-After creating a CLB instance, you need to configure a listener to it. The listener listens to requests on the instance and routes traffic to real servers based on the load balancing policy.
+After a Cloud Load Balancer (CLB) instance is created, you must configure a listener for it. The listener listens to incoming requests to the CLB instance and then routes them to Cloud Virtual Machine (CVM) instances according to the configured load balancing policy.
 
-You need to configure the following for a CLB listener:
-1. Listener protocol and listener port. A CLB listener port, or frontend port, is used to receive and route requests to real servers.
-2. Listening policies, such as load balancing policy and [session persistence](https://intl.cloud.tencent.com/document/product/214/6154).
+You must configure the following items when configuring a listener for a CLB instance:
+1. Listening protocol and listening port. A listening port, also known as a frontend port, is used to receive and route requests to CVM instances.
+2. Listening policies, such as load balancing and [session persistence](https://intl.cloud.tencent.com/document/product/214/6154) policies.
 3. [Health check](https://intl.cloud.tencent.com/document/product/214/6097) policies.
-4. Bind real server by selecting its IP and port. A service port, or backend port, is used by the real server to receive requests.
+4. CVM instances. Specify the IP address and service port for each CVM instance. A service port, also known as a backend port, is used by a CVM instance to receive and process requests.
 
-## Supported Protocol Types
-A CLB listener can listen to layer-4 and layer-7 requests on a CLB instance and route them to real servers for processing. The main difference between layer-4 CLB and layer-7 CLB is whether layer-4 or layer-7 protocol is used to forward traffic for load balancing of user requests.
-- Layer-4 protocols: transport layer protocols that receive requests and forward traffic to the real server mainly via VIP + port.
-- Layer-7 protocols: application layer protocols that distribute traffic based on application layer information such as URL and HTTP header.
+## Supported protocol types
+A CLB listener listens to incoming layer-4 and layer-7 requests to a CLB instance and routes them to CVM instances for processing. You can configure a layer-4 or layer-7 listener depending on whether you route requests for load balancing over a layer-4 or layer-7 protocol.
+- Layer-4 protocols: transport layer protocols that receive and route requests to CVM instances by using a virtual IP (VIP) and port.
+- Layer-7 protocols: application layer protocols that route requests based on application layer information such as the URL and HTTP header.
 
 Tencent Cloud CLB supports request forwarding over the following protocols:
 - TCP (transport layer)
@@ -17,26 +17,26 @@ Tencent Cloud CLB supports request forwarding over the following protocols:
 - TCP SSL (transport layer)
 - HTTP (application layer)
 - HTTPS (application layer)
->
+>?
 >- The TCP SSL listener feature is currently in beta test. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=163&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB) for application.
 >- The TCP SSL listener feature is only available to public network CLB but not private network CLB or classic CLB.
 
-## Layer-4 Listener
-| Protocol    | Description                    | Scenarios                                 |
+## Layer-4 listener
+| Protocol    | Description                    | Scenario                                 |
 | ------- | ------------------------ | ---------------------------------------- |
-| TCP | Connection-oriented and reliable transport layer protocol<li style="width:430px">The source and destination ends must perform 3 handshakes to establish a connection before data transfer</li><li style="width:430px">Session persistence based on client IP (source IP) is supported</li><li style="width:430px">Client IP can be found at the network layer</li><li  style="width:430px">The server can directly obtain client IP</li>| TCP is suitable for scenarios that have high requirements for reliability and data accuracy but relatively low requirements for transfer speed, such as file transfer, receiving and sending emails, and remote login.<br>For more information, please see [Configuring TCP Listener](https://intl.cloud.tencent.com/document/product/214/32517).|
-| UDP | Connection-less transport layer<li style="width:430px">The source and destination ends do not establish a connection, nor maintain the connection status</li><li style="width:430px">Each UDP connection is point-to-point</li><li style="width:430px">One-to-one, one-to-many, many-to-one and many-to-many communications are supported</li><li style="width:430px">Session persistence based on client IP (source IP) is supported</li><li style="width:430px">The server can directly obtain client IP</li>|UDP is suitable for scenarios that have high requirements for transfer speed but relatively low requirements for accuracy, such as instant messaging and online videos.<br>For more information, please see [Configuring UDP Listener](https://intl.cloud.tencent.com/document/product/214/32518).|
-| TCP SSL | Secure TCP <li style="width:430px">TCP SSL listeners support configuration of certificates to prevent unauthorized access requests</li><li style="width:430px">Unified certificate management is provided for CLB to implement decryption</li><li style="width:430px">Unidirectional and bidirectional authentications are supported</li><li style="width:430px">The server can directly obtain client IP</li>| TCP SSL is suitable for scenarios that have high requirements for security when TCP protocol is used and supports TCP-based custom protocols.<br>For more information, please see [Configuring TCP SSL Listener](https://intl.cloud.tencent.com/document/product/214/32519).|
+|TCP|Connection-oriented and reliable transport layer protocol<li style="width:430px">The source and destination ends must perform a three-way handshake to establish a connection before data can be sent and received between them.</li><li style="width:430px">Session persistence based on the client IP (source IP) is supported.</li><li style="width:430px">The client IP can be read at the network layer.</li><li style="width:430px">The server can directly obtain the client IP.</li>|TCP is suitable for scenarios where high transfer reliability and data accuracy are required with a slight compromise on transfer speed. Typical scenarios include file transfer, sending and receiving emails, and remote logins.<br>For more information, please see [Configuring a TCP Listener](https://intl.cloud.tencent.com/document/product/214/32517).|
+|UDP|Connectionless transport layer protocol<li style="width:430px">The source and destination ends do not establish a connection nor maintain the connection status.</li><li style="width:430px">Each UDP connection is point-to-point.</li><li style="width:430px">One-to-one, one-to-many, many-to-one, and many-to-many communication are supported.</li><li style="width:430px">Session persistence based on the client IP (source IP) is supported.</li><li style="width:430px">The server can directly obtain the client IP.</li>|UDP is suitable for scenarios where a high transfer speed is preferred over accuracy. Typical scenarios include instant messaging and online videos.<br>For more information, please see [Configuring a UDP Listener](https://intl.cloud.tencent.com/document/product/214/32518).|
+|TCP SSL|Secure TCP protocol<li style="width:430px">TCP SSL listeners support configuring certificates to prevent unauthorized access requests.</li><li style="width:430px">Unified certificate management is provided for CLB to decrypt certificates.</li><li style="width:430px">One-way and mutual authentication are supported.</li><li style="width:430px">The server can directly obtain the client IP.</li>|TCP SSL is suitable for scenarios where high security is required for TCP and TCP-based custom protocols are supported.<br>For more information, please see [Configuring a TCP SSL Listener](https://intl.cloud.tencent.com/document/product/214/32519).|
 
-If you use layer-4 listener (i.e., layer-4 protocol forwarding), CLB instance will establish a TCP connection with the real server on the listener port, and directly forward requests to the real server. This process does not modify any data packets (in passthrough mode) and has high forwarding efficiency.
+If you configure a layer-4 listener, the CLB instance establishes a TCP connection with each CVM instance on the listening port and routes requests to CVM instances. During this process, the CLB instance forwards data in passthrough mode in an efficient manner without modifying any data packets.
 
-## Layer-7 Listener
-| Protocol    | Description                   | Scenarios                                 |
+## Layer-7 listener
+| Protocol    | Description                   | Scenario                                 |
 | ------- | --------------------- | ---------------------------------------- |
-|HTTP|Application layer protocol<li style="width:424px">Forwarding based on the request domain name and URL is supported</li><li style="width:424px">Cookie-based session persistence is supported</li>|HTTP is suitable for applications that need to identify request content, such as web applications and app services.<br>For more information, please see [Configuring HTTP Listener](https://intl.cloud.tencent.com/document/product/214/32515).|
-|HTTPS|Encrypted application layer protocol<li style="width:424px">Forwarding based on the request domain name and URL is supported</li><li style="width:424px">Cookie-based session persistence is supported</li><li style="width:424px">Unified certificate management is provided for CLB to implement decryption</li><li style="width:424px">Unidirectional and bidirectional authentications are supported</li>|HTTPS is suitable for HTTP applications that need encrypted transmission.<br>For more information, please see [Configuring HTTPS Listener](https://intl.cloud.tencent.com/document/product/214/32516).|
+|HTTP|Application layer protocol<li style="width:424px">Forwarding based on the requested domain name and URL is supported.</li><li style="width:424px">Cookie-based session persistence is supported.</li>|HTTP is suitable for apps that need to identify request content, such as web apps and app services.<br>For more information, please see [Configuring an HTTP Listener](https://intl.cloud.tencent.com/document/product/214/32515).|
+|HTTPS|Encrypted application layer protocol<li style="width:424px">Forwarding based on the requested domain name and URL is supported.</li><li style="width:424px">Cookie-based session persistence is supported.</li><li style="width:424px">Unified certificate management is provided for CLB to decrypt certificates.</li><li style="width:424px">One-way and mutual authentication are supported.</li>|HTTPS is suitable for HTTP apps that require encrypted transmission.<br>For more information, please see [Configuring an HTTPS Listener](https://intl.cloud.tencent.com/document/product/214/32516).|
 
-## Port Configuration
+## Port configuration
 <table>
 <thead>
 <tr>
@@ -46,8 +46,8 @@ If you use layer-4 listener (i.e., layer-4 protocol forwarding), CLB instance wi
 </tr>
 </thead>
 <tbody><tr>
-<td>This port is used to receive requests and forward them to the real server when the CLB instance provides services.<br><br>You can configure load balancing for port 1 to 65535, such as 21 (FTP), 25 (SMTP), 80 (HTTP), and 443 (HTTPS).</td>
-<td>A service port provides services for CVM, receives and processes CLB traffic.<br><br>On a CLB instance, one listener port can forward traffic to multiple ports of multiple CVMs.</td>
-<td>On a CLB instance, <li>the listener port must be unique. For example, `TCP:80` and `HTTP:80` listeners cannot co-exist.</li><li>Only ports of TCP and UDP protocols can co-exist. For example, you can create `TCP:80` and `UDP:80` listeners at the same time.</li><br>The service ports can repeat on a CLB instance. For example, both `HTTP:80` and `HTTPS:443` listeners can be bound to the same port of a CVM.</td>
+<td>Through the listening port, a CLB instance receives and routes requests to CVM instances for processing.<br><br>You can configure a listening port on ports 1–65535, such as port 21 (FTP), port 25 (SMTP), port 80 (HTTP), and port 443 (HTTPS).</td>
+<td>Through the service port, a CVM instance receives and processes requests from a CLB instance.<br><br>On a CLB instance, one listening port can route requests to multiple ports of multiple CVM instances.</td>
+<td>Note the following points when configuring a listening port on a CLB instance:<li>You can configure the same listening port for TCP and UDP. For example, listeners `TCP:80` and `UDP:80` can co-exist.</li><li>You cannot configure the same listening port for protocols of the same type. For example, TCP, TCP SSL, HTTP, and HTTPS are all TCP protocols. You cannot configure listeners `TCP:80` and `HTTP:80` at the same time.</li><br>On a CLB instance, you can configure the same service port for different CVM instances. You can also bind different listeners, for example, `HTTP:80` and `HTTPS:443` to the same port of a CVM instance.</td>
 </tr>
 </tbody></table>

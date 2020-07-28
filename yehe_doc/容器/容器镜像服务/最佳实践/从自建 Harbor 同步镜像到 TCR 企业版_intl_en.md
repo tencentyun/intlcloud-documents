@@ -29,7 +29,7 @@ After the status of the button changes **Disable Public Access Entry** from **En
 	- **Public IP Address Segment**: the public IP address of the self-built Harbor service egress. If no specific public IP address can be confirmed, the IP address can be temporarily set to `0.0.0.0/0` to allow access from all public network sources. After synchronization is complete, delete the configuration as soon as possible.
 	- **Remarks**: you can enter remarks of the whitelist configuration, for example, “Allow the self-built Harbor service to access through public network”.
 	The following figure shows the completed configuration:
-![](https://main.qcloudimg.com/raw/dd1d7af259920f42f7ad2cdb07e22a50.png)
+![](https://main.qcloudimg.com/raw/0efa0673f11c718d13492e672696e45e.png)
 
 <span id="vpc"></span>
 #### Solution 2: access through Tencent Cloud VPC
@@ -41,7 +41,7 @@ If the current self-built Harbor service is deployed in Tencent Cloud VPC enviro
 	- **VPC**: the VPC where the self-built Harbor service is located or the VPC connected through Direct Connect.
 	- **Subnet**: the created private access link occupies a private IP address of the selected VPC. Select a subnet under the VPC to assign the subnet of the private IP address.
 		The following figure shows the completed configuration:
-![](https://main.qcloudimg.com/raw/c1bb811653c6de3dceeea296ac3d5671.png)
+![](https://main.qcloudimg.com/raw/815bd9528ae590df131cdbdb62d799ac.png)
 4. After the configuration is complete, the target access IP address of the private access link is obtained. To parse the domain name of the instance into the private IP address in the VPC, configure the host on the CVM where the self-built Harbor service is located. If an independent DNS is currently in use, you may also configure the host in the DNS.
 Run the following command on CVM to configure the host.
 ```
@@ -55,7 +55,7 @@ The TCR Enterprise Edition supports creating and managing multiple access creden
 1. Log in to the [TCR](https://console.cloud.tencent.com/tcr) console and select **Instance List** in the left sidebar.
 2. On the “Instance List” page, select an instance for data synchronization. The instance details page is displayed.
 3. Select the **Access Credential** tab and click **Create** in the upper part of the instance list, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/d5a837707d80efb77577cd94307acf95.png)
+![](https://main.qcloudimg.com/raw/570bd5a2b9b27e57a3b780ff84b9df15.png)
 4. In the “Create Access Credential” window that is displayed, perform the following steps:
    1. In the “Create Access Credential” step, enter information in “Purpose Description” of a credential and click **Next**. You can enter “Synchronize data for self-built Harbor” in “Purpose Description”.
    2. In the “Save Access Credential” step, click **Save Access Credential** to download the credential. **Please save the access credential properly. You have only one chance to save the credential.**
@@ -78,7 +78,7 @@ Harbor supports adding a third-party registry and configuring a data replication
  - If “Test connection successful” is displayed, the current self-built Harbor service can access the Enterprise Edition instance.
  - If “Test connection failed” is displayed, make sure that you [configure the self-built harbor service to access the TCR Enterprise Edition instance](#Configuration).
 4. Click **OK** to create the target registry. The following figure shows the created registry.
-![](https://main.qcloudimg.com/raw/02fb21b07386d0bf8135e76efc8e9ca3.png)
+![](https://main.qcloudimg.com/raw/70f08812fb18d93ced9fce3309f71c66.png)
 <span id="createRule"></span>
 5. Choose **System Management** -> **Replication Management** in the left sidebar and click **Create Rule**. Refer to the following information to create a synchronization rule.
 	- **Name**: the name of the synchronization rule. You can enter a name based on the actual usage scenario.
@@ -97,11 +97,11 @@ Harbor supports adding a third-party registry and configuring a data replication
 Push a container image and Helm Chart to the self-built Harbor service. If the trigger mode is set to “Event-driven” in the synchronization rule, the pushed resources are automatically synchronized to the enterprise edition instance. You can select the synchronization rule to view the synchronization log and access the Enterprise Edition instance console to check whether synchronization is successful. In this step, assume the `nginx:latest` container image is manually pushed to the self-built Harbor service to trigger synchronization.
 1. Push a container image and view the image.
 Push the local `nginx:latest` container image by using the docker client, access the self-built Harbor service console, and view the pushed image. As shown in the following figure, the `nginx:latest` container image is pushed to the `tcr-sync` project and the NGINX image repository is automatically created.
-![](https://main.qcloudimg.com/raw/ce9988cec212f9ef6a44ab4cbbf0fa04.png)
+![](https://main.qcloudimg.com/raw/280f5d89a5df004a73e2c8bbc63a7c98.png)
 2. View the synchronization record and progress.
 Choose **System Management** -> **Replication Management** in the left sidebar and select the synchronization rule created in [Step 5](#createRule) to view the replication task of the synchronization rule. As shown in the following figure, a task record exists in the replication task. You can view the status and success percentage of the replication task.
-![](https://main.qcloudimg.com/raw/3b564dbf0fcfcfec4c0e161aa17b09da.png)
+![](https://main.qcloudimg.com/raw/b91ca61cb75de5c812ec2dcedb0771f8.png)
 3. View the synchronized image in TCR.
 Access the “Image Repository” page of the TCR console and select the instance for synchronizing with the self-built Harbor service to view the container image that is successfully synchronized. As shown in the following figure, the NGINX image repository is automatically created in the `tcr-sync` namespace and the `nginx:latest` container image is pushed.
-![](https://main.qcloudimg.com/raw/a9fb2a5423addf186e12c16c5276f9a4.png)
+![](https://main.qcloudimg.com/raw/45310a0a60e546dcba41a85b2b2ec5d2.png)
 

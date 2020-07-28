@@ -40,7 +40,7 @@ Namespace=QCE/BM_INTRA_LB
 BM private network CLB allows you to obtain the monitoring data at the following four levels:
 CLB, listener, listener server, and listener server port.
 
-**1. To obtain the monitoring data at the CLB level, set the input parameters as follows:
+**1. To obtain the monitoring data at the CLB level, set the input parameters as follows:**
 
 &Namespace=QCE/BM_INTRA_LB
 &Instances.N.Dimensions.0.Name=vip
@@ -48,7 +48,7 @@ CLB, listener, listener server, and listener server port.
 &Instances.N.Dimensions.1.Name=vpcId
 &Instances.N.Dimensions.1.Value=<Integer ID of the VPC instance to which the CLB instance belongs>
 
-**2. To obtain the monitoring data at the listener level, set the input parameters as follows:
+**2. To obtain the monitoring data at the listener level, set the input parameters as follows:**
 
 &Namespace=QCE/BM_INTRA_LB
 &Instances.N.Dimensions.0.Name=vip
@@ -60,7 +60,7 @@ CLB, listener, listener server, and listener server port.
 &Instances.N.Dimensions.3.Name=vpcId
 &Instances.N.Dimensions.3.Value=<Integer ID of the VPC instance to which the CLB instance belongs>
 
-**3. To obtain the monitoring data at the listener server level, set the input parameters as follows:
+**3. To obtain the monitoring data at the listener server level, set the input parameters as follows:**
 
 &Namespace=QCE/BM_INTRA_LB
 &Instances.N.Dimensions.0.Name=vip
@@ -74,7 +74,7 @@ CLB, listener, listener server, and listener server port.
 &Instances.N.Dimensions.4.Name=vpcId
 &Instances.N.Dimensions.4.Value=<Integer ID of the VPC instance to which the CLB instance belongs>
 
-**4. To obtain the monitoring data at the listener server port level, set the input parameters as follows:
+**4. To obtain the monitoring data at the listener server port level, set the input parameters as follows:**
 
 &Namespace=QCE/BM_INTRA_LB
 &Instances.N.Dimensions.0.Name=vip

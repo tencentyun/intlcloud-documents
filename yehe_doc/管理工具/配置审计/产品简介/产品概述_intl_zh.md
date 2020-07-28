@@ -12,7 +12,7 @@
 
 启用配置审计（Config Audit）并设置好监控范围后，系统将为每个云资源生成一份初始配置项作为基准，后续持续监控相关云产品的云审计数据变更情况，后续发生配置变更时会生成一份新的配置项并保留历史配置记录。同时，配置审计的数据还于云审计（Cloud Audit）的操作日志数据相关联。因此，随着时间的推移，您可以监控到资源配置变更流水，以及对应的操作日志。
 
-  ![image-20200715203019066](/Users/florasun/Library/Application Support/typora-user-images/image-20200715203019066.png)
+  ![image-20200715203019066](https://main.qcloudimg.com/raw/472be465dd738e5f669ea3331d2e5167.png)
 
   配置审计工作原理图
 
