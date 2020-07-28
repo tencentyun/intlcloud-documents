@@ -25,7 +25,7 @@ The following table lists only the parameters to be modified when this API is ca
 
 ### Maximum calling frequency
 
-The maximum calling frequency is 100 times per second.
+The maximum calling frequency is 1 times per second.
 
 ### Request packet examples
 
