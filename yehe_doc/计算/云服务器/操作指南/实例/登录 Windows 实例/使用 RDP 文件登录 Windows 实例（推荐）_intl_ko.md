@@ -61,7 +61,7 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ### MacOS 시스템에서 RDP를 사용하여 로그인
 
 >
->- 다음 작업은 Microsoft Remote Desktop for Mac을 예시로 사용합니다. Microsoft에서는 2017년 Remote Desktop 클라이언트의 다운로드 링크 제공을 중단하였고, 그 자회사인 [HockeyApp](https://appcenter.ms/apps)에서 Beta 버전을 배포하고 있습니다.
+>- 다음 작업은 Microsoft Remote Desktop for Mac을 예시로 사용합니다. Microsoft에서는 2017년 Remote Desktop 클라이언트의 다운로드 링크 제공을 중단하였고, 그 자회사인 HockeyApp 에서 Beta 버전을 배포하고 있습니다.
 >- 다음 작업은 Windows Server 2012 R2 운영 체제의 CVM을 예시로 사용합니다.
 >
 1. Microsoft Remote Desktop for Mac 을 다운로드하고 로컬에서 설치합니다.
