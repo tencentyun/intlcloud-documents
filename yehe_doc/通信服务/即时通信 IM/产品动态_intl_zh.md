@@ -1,3 +1,40 @@
+## 2020年07月
+
+<table>
+     <tr>
+         <th width="20%">动态名称</th>  
+         <th width="50%">动态描述</th>  
+         <th width="15%">发布时间</th>  
+          <th width="15%">相关文档</th>  
+     </tr> 
+	 <tr>      
+         <td>SDK 4.9.1版本发布（Android、iOS 以及 Windows 端）</td>   
+         <td><ul style="margin:0;">
+		 <li>优化海外登录问题。</li>
+                 <li>修复部分海外地区文件上传失败问题。</li>
+		 <li>修复含@符号的帐号上传文件失败问题。</li>
+		 <li>修复 C2C 未读数偶现错误问题。</li>
+		 <li>修复会话 showName 偶现展示异常的问题。</li>
+		 <li>文件类型消息增加获取下载 url 的接口。</li>
+		 <li>iOS 修复断网时获取 C2C 消息无回调问题。</li>
+		 <li>Android 修复信令解析接口偶现崩溃问题。</li>
+		 <li>Android 修复消息中获取离线推送信息偶现崩溃问题。</li>
+		 <li>Android 修复 API2.0 getFriendApplicationList 接口无数据不回调问题以及 getGroupMembersInfo 接口传入非群成员不回调问题。</li>
+		 <li>Windows 获取加入群组时增加群组的详细信息。</li>
+		 <li>Windows 修复小文件发不出去问题。</li>
+		 <li>Windows 修复日志上报的6002错误。</li>
+		 <li>iOS Demo & Android Demo 增加音视频离线通话的推送，并可以跳转到接听界面。</li>
+		 <li>iOS 优化自定义消息删除、撤回无效的问题。</li>
+		 <li>iOS 音视频代码 swift -> oc，大幅减少第三方依赖库。</li>
+		 <li>iOS 支持 LiteAV_TRTC、LiteAV_Professional 两种音视频依赖库 TUIKit pod 集成。</li>
+		 <li>Android 优化 Demo 的离线推送，升级各厂商的推送 SDK 版本。</li>
+</ul></td>   
+	     <td>2020-07-24</td>   
+	     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>   
+     </tr> 
+</table>
+
+
 ## 2020年06月
 
 <table>
@@ -135,7 +172,7 @@
          <td>“旗舰版”套餐包上线</td>   
          <td>上线“旗舰版”套餐包，包含“无限量音视频聊天室”、“30天历史消息存储”、“群成员数上限2000人”等，支持一次购买更多功能。</td>   
 	     <td>2019-12-26</td>   
-	     <td><ul style="margin:0;"><li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">计费概述</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">价格说明</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">创建并升级应用</a></li></ul></td>   
+	     <td><ul style="margin:0;"><li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">计费概述</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">价格说明</a></li><li><a href="https://cloud.tencent.com/document/product/269/32458">购买指引</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">创建并升级应用</a></li></ul></td>   
      </tr> 
 	 <tr>      
          <td>SDK 4.6版本持续优化（Android、iOS 以及 Windows 端）</td>   
