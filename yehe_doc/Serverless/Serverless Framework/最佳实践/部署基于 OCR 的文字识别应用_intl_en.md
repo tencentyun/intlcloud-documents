@@ -8,7 +8,7 @@ By using Serverless Framework Component and OCR SDK, you can quickly deploy a ge
 ## Prerequisites
 
 - You have installed [Node.js](https://nodejs.org/en/) (v8.6 or above; v10.0 or above is recommended).
-- You have activated OCR.
+- You have activated the OCR service.
 
 ## Directions
 
@@ -30,24 +30,18 @@ After the installation is completed, run the `serverless -v` command to view the
 
 ```shell
 $ serverless –v
-Framework Core: 1.67.3
-Plugin: 3.6.6
-SDK: 2.3.0
-Components: 2.30.1
+Framework Core: 1.74.1 (standalone)
+Plugin: 3.6.14
+SDK: 2.3.1
+Components: 2.31.6
 ```
-
-### Bucket creation
-
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and create a **public bucket** (for detailed directions, please see [Creating Bucket](https://intl.cloud.tencent.com/document/product/436/13309)) to store the uploaded images. Select the region based on your actual needs.
-2. In **Basic Configuration** in the bucket list, [configure CORS](https://intl.cloud.tencent.com/document/product/436/13318) for the bucket as follows:
-![](https://main.qcloudimg.com/raw/780bf83cad9d11449c958e53b0d11e89.png)
 
 ### Configuration
 
-1. Create a local folder and run the `create --template-url` command to download the relevant template.
+1. Create a local folder and run the `serverless init` command to download the relevant template.
 
 ```console
-$ serverless create --template-url https://github.com/serverless-tencent/serverless-demos/serverless-ocr
+$ serverless init -t ocr-app
 ```
 
 2. Find the `.env.example` file in the template, rename it to `.env`, and enter your account, key information, and specified bucket (used to store uploaded images) in it.
@@ -60,10 +54,7 @@ TENCENT_SECRET_KEY=xxx
 
 # region of bucket
 REGION=ap-guangzhou
-# bucket name, using to store upload pictures
-BUCKET=ocr-images
 ```
->You need to create a public bucket first to store uploaded images.
 
 3. Download all npm dependencies.
 
@@ -72,7 +63,7 @@ $ npm run bootstrap
 ```
 ### Local debugging
 
-1. Run the following command to start the server:
+1. Run the following command to launch the server:
 ```
 $ cd server && npm run start
 ```
