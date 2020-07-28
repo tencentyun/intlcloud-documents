@@ -266,3 +266,4 @@ The following Modules shall apply and form part of this privacy policy if you us
 2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).
 3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).
 4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37524).
+5.[Tencent Interactive Whiteboard](https://intl.cloud.tencent.com/document/product/1066/37701).
