@@ -1,48 +1,48 @@
 
-腾讯云Elasticsearc Service支持以下两种方式配置同义词：上传同义词文件、直接引用同义词。
+Tencent Cloud Elasticsearch Service (ES) allows you to configure synonyms in the following two ways: uploading a synonym file or directly referencing synonyms.
 
-## 方式一：上传同义词文件
+## Method 1. Upload a synonym file
 
-### 注意事项
+### Notes
 
-* 上传同义词文件操作将触发集群滚动重启
+* Rolling restart of the cluster will be triggered after you upload a synonym file.
 
-* 新上传/新变更的同义词文件对老索引不生效，需要重建索引。例如现有的索引`myindex`使用了`synonym.txt`同义词文件，当该同义词文件的内容变更并重新上传后，现有的索引`myindex`不会动态加载更新后的同义词，需要对现有索引进行reindex操作，否则更新后的同义词文件只对新建的索引生效
+* A newly uploaded/modified synonym file does not take effect for legacy indices, so you need to create a new index accordingly. For example, if the existing index `myindex` uses the `synonym.txt` synonym file, but the file is modified and uploaded again, then the existing index `myindex` will not dynamically load the updated synonyms. You need to reindex the existing index; otherwise, the updated synonym file will take effect only for new indices.
 
-* 同义词文件要求每行一个同义词表达式（表达式支持[Solr规则](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-synonym-tokenfilter.html#_solr_synonyms)和[WordNet规则](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-synonym-tokenfilter.html#_wordnet_synonyms)），并且文件需要为`utf-8`编码，扩展名为`.txt`。例如：
+* A synonym file must contain one synonym expression per line (the expressions support [Solr rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-synonym-tokenfilter.html#_solr_synonyms) and [WordNet rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-synonym-tokenfilter.html#_wordnet_synonyms)), be encoded in UTF-8, and have the `.txt` file extension; for example:
   
     ```
-    快乐水,可乐 => 可乐,快乐水
+    coke,cola => cola,coke
     elasticsearch,es => es
     ```
 
-* 同义词文件单个文件最大为10M，上传文件总数最多为10个
+* You are allowed to upload a maximum of 10 synonym files of up to 10 MB in size each.
 
-### 操作步骤
+### Directions
 
-1. 登录腾讯云Elasticsearch Service控制台
+1. Log in to the Tencent Cloud ES Console.
 
-2. 在集群列表页，单击集群 ID 进入集群详情页
+2. On the cluster list page, click a cluster ID to enter the cluster details page.
 
-3. 单击【高级配置】，进入【同义词配置】页面
+3. Click **Advanced Configuration** and enter the **Synonym Configuration** page.
 
    ![1594288413628](https://main.qcloudimg.com/raw/1d383ad1a713b36c66e31471bcf8756b.jpg)
 
-4. 单击【更新词典】，在更新同义词页面上传同义词文件
+4. Click **Update Dictionary** and upload a synonym file on the synonym update page.
 
    ![1594288646412](https://main.qcloudimg.com/raw/eec05469b6cefbe6a3f4243edb6b443f.jpg)
 
-5. 上传完成后，单击【保存】
+5. After the upload, click **Save**.
 
-### 使用同义词文件
+### Using synonym dictionary
 
-以下实例使用filter过滤器配置同义词，使用`synonym.txt`作为测试文件，文件内容为`elasticsearch,es => es`
+The following example uses the `filter` filter to configure synonyms and the `synonym.txt` as the testing file, and the file content is `elasticsearch,es => es`.
 
-1. 登录已上传同义词文件的集群对应的Kibana控制台。登录控制台的具体步骤请参考[通过Kibana访问集群](https://intl.cloud.tencent.com/document/product/845/19541)
+1. Log in to the Kibana Console of the cluster to which the synonym file has been uploaded. For detailed directions, please see [Accessing Cluster Through Kibana](https://intl.cloud.tencent.com/document/product/845/19541).
 
-2. 单击左侧导航栏的Dev Tools。
+2. Click "Dev Tools" on the left sidebar.
 
-3. 在Console中执行如下的命令，创建索引
+3. Run the following command in the console to create an index:
 
     ```
     PUT /my_index
@@ -82,7 +82,7 @@
     }
     ```
 
-4. 执行如下命令，验证同义词配置
+4. Run the following command to verify the synonym configuration:
 
     ```
     GET /my_index/_analyze
@@ -92,7 +92,7 @@
     }
     ```
     
-    命令执行成功，将返回如下结果
+    If the command is successfully executed, the following result will be returned:
     
     ```
     {
@@ -122,9 +122,9 @@
     }
     ```
     
-    输出结果中，`token` `es`的类型是`SYNONYM`同义词。
+    In the output result, `token` and `es` are in `SYNONYM` type.
     
-5. 执行如下命令，添加一些文档
+5. Run the following command to add some documents:
 
     ```
     POST /my_index/_doc/1
@@ -138,7 +138,7 @@
     }
     ```
     
-6. 执行如下命令，搜索同义词
+6. Run the following command to search for synonyms:
 
     ```
     GET my_index/_search
@@ -152,7 +152,7 @@
     }
     ```
     
-    命令执行成功后，返回如下结果
+    After the command is successfully executed, the following result will be returned:
     
     ```
     {
@@ -201,13 +201,13 @@
     }
     ```
     
-## 方式二：直接引用同义词
+## Method 2. Directly reference synonyms
 
-1. 登录集群对应的Kibana控制台。登录控制台的具体步骤请参考[通过Kibana访问集群](https://intl.cloud.tencent.com/document/product/845/19541)
+1. Log in to the Kibana Console of the target cluster. For detailed directions, please see [Accessing Cluster Through Kibana](https://intl.cloud.tencent.com/document/product/845/19541).
 
-2. 单击左侧导航栏的Dev Tools。
+2. Click "Dev Tools" on the left sidebar.
 
-3. 在Console中执行如下的命令，创建索引
+3. Run the following command in the console to create an index:
 
     ```
     PUT /my_index
@@ -249,9 +249,9 @@
     }
     ```
     
-    这里与使用同义词文件方式的区别是，在filter中定义同义词时，直接引用了同义词，而不是同义词文件：`"synonyms": ["elasticsearch,es => es"]`
+    Here, different from the method of using a synonym file, when synonyms are defined in `filter`, synonyms instead of a synonym file are directly referenced: `"synonyms": ["elasticsearch,es => es"]`
     
-4. 执行如下命令，验证同义词配置
+4. Run the following command to verify the synonym configuration:
 
     ```
     GET /my_index/_analyze
@@ -261,7 +261,7 @@
     }
     ```
     
-    命令执行成功，将返回如下结果
+    If the command is successfully executed, the following result will be returned:
     
     ```
     {
@@ -291,9 +291,9 @@
     }
     ```
     
-    输出结果中，`token` `es`的类型是`SYNONYM`同义词。
+    In the output result, `token` and `es` are in `SYNONYM` type.
     
-5. 执行如下命令，添加一些文档
+5. Run the following command to add some documents:
 
     ```
     POST /my_index/_doc/1
@@ -307,7 +307,7 @@
     }
     ```
     
-6. 执行如下命令，搜索同义词
+6. Run the following command to search for synonyms:
 
     ```
     GET my_index/_search
@@ -321,7 +321,7 @@
     }
     ```
     
-    命令执行成功后，返回如下结果
+    After the command is successfully executed, the following result will be returned:
     
     ```
     {
