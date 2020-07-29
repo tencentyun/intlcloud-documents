@@ -10,7 +10,7 @@ Yes. You can install and configure FTP as needed.
 
 ### How does a local host transfer data to and from a Windows CVM?
 ### To transfer data:
-- Install QQ.exe and other tools separately on the local host and Windows CVM.
+- If you use the RDP file to log in to a Windows CVM from a local Windows computer, you can directly drag and upload local files to the CVM.
 - [Upload Files from Windows to a Windows CVM using MSTSC](https://intl.cloud.tencent.com/document/product/213/2761)
 - [Build the FTP Service (Linux)](https://intl.cloud.tencent.com/document/product/213/10912) on the local host.
 

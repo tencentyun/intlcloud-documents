@@ -32,7 +32,7 @@ Enter the **API Key Management** page. If there are existing `SecretID` and `Sec
 
 
 **Method 2. Add a bootstrap action on the **Basic Info** page of the cluster.**
-1. In the **Cluster List** in the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster and click **Details** > **Bootstrap Action** > **Add Bootstrap Action** to add a bootstrap action.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page. Select **Basic Info** -> **Bootstrap Actions** -> **Add Bootstrap Action** to add a bootstrap action.
 2. You can edit or delete the added bootstrap action.
  - Select the running occasion and enter relevant parameters.
  - Name: you are recommended to keep it the same as your "object name".

@@ -2,8 +2,8 @@
 
 ### Basic methods
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [sharedInstance](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac5da416bb06d461c7e1e555e3fd143ee) | Creates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) singleton. |
 | [destroySharedInstance](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a69e76ca12b727c7cbcbdda274fc007a2) | Terminates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) singleton. |
 | [setListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a22fe2f31f2ef62fb3c6cba083dc6c016) | Sets the `TRTCCloudListener` callback API, through which users can get various status notifications from [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
@@ -12,8 +12,8 @@
 
 ### Room API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) | Enters room. If the room does not exist, the system will automatically create a new room. |
 | [exitRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) | Exits room. |
 | [switchRole](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a915a4b3abca0e41f057022a4587faf66) | Switches role. This API applies only to the live streaming scenario (`TRTC_APP_SCENE_LIVE` and `TRTC_APP_SCENE_VOICE_CHATROOM`). |
@@ -24,8 +24,8 @@
 
 ### CDN API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                   |
+| ------------------------------------------------------------ | ----------------------------- |
 | [startPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1c168a9aa35ccd0b24981526425e4730) | Starts pushing to Tencent Cloud LVB CDN. |
 | [stopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3067efa528fb9ffb8cf7685ce29925d4) | Stops pushing to Tencent Cloud LVB CDN. |
 | [startPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41aefb8be652f8f6803020e543acaadc) | Starts relaying to the live streaming CDN of another cloud. |
@@ -35,8 +35,8 @@
 
 ### Video API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [startLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) | Enables the preview image of local video. |
 | [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af6ee50bf2c4c592294061077fc727505) | Stops local video capture and preview. |
 | [muteLocalVideo](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a13a2e406bffafecb96bfeac48d82746b) | Pauses/Resumes pushing local video data. |
@@ -63,8 +63,8 @@
 
 ### Audio API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [setAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55) | Sets sound quality. The higher the sound quality of the anchor, the better the sound effect to viewers, but the higher the required bandwidth, so there may be lags if the bandwidth is limited. |
 | [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) | Enables local audio capture and upstreaming. |
 | [stopLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a272bba21d046347ac42d76069ba5972c) | Disables local audio capture and upstreaming. |
@@ -85,8 +85,8 @@
 
 ### Camera API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                            |
+| ------------------------------------------------------------ | -------------------------------------- |
 | [switchCamera](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1b43a65a32f9dcb81b39b9c51c5bc4c6) | Switches camera. |
 | [isCameraZoomSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac7ae26eca2f9a673121803d6d175b034) | Queries whether the current camera supports zoom. |
 | [setZoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9f761eebdf04f724e0d1591c41c6045f) | Sets the zoom factor (focal length) of camera. |
@@ -99,23 +99,23 @@
 
 ### Beauty filter API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description        |
+| ------------------------------------------------------------ | ------------------ |
 | [getBeautyManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) | Gets beauty filter management object. |
 | [setWatermark](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1083aaf0441e3d90ce6641d278a97a63) | Adds watermark. |
 
 
 ### Music effects and voice effects
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | Gets the sound effect management class `TXAudioEffectManager`. |
 
 
 ### Secondary stream API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                        |
+| ------------------------------------------------------------ | ---------------------------------- |
 | [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) | Starts screen sharing. |
 | [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab6c3014f6f88c775aa91fccea19ce8a4) | Stops screen capture. |
 | [pauseScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) | Pauses screen sharing. |
@@ -128,8 +128,8 @@
 
 ### Custom capture and rendering API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                     |
+| ------------------------------------------------------------ | ------------------------------- |
 | [enableCustomVideoCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a68187fc9a1656bb32cf825363745f7e7) | Enables custom video capture mode. |
 | [sendCustomVideoData](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a39b79b77e3795e918383e945e9513d35) | Delivers captured video data to SDK. |
 | [setLocalVideoRenderListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa3cbb7a501c3151d94473965e2538c7a) | Sets the callback of custom rendering for local video. |
@@ -141,24 +141,24 @@
 
 ### Custom message sending APIs
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                          |
+| ------------------------------------------------------------ | ------------------------------------ |
 | [sendCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa4847ad53acc9ab5990194b21ff5b070) | Sends custom message to all users in room. |
 | [sendSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a034f9e1effbdadf8b9bfb7f3f06486c4) | Embeds custom data of a small size in video frames. |
 
 
 ### Network test
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [startSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0dbceb18d61d99ca33e967427dd0a344) | Starts network speed test (do not test during a video call so as to avoid affecting the call quality). |
 | [stopSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3e862cef0e818ddecdc3dc4d66a6f8f9) | Stops server speed test. |
 
 
 ### Log API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                 |
+| ------------------------------------------------------------ | --------------------------- |
 | [getSDKVersion](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aeb5168abbd62c631b65247e6289d1e2d) | Gets SDK version information. |
 | [setLogLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0ec9520dda7e2062f7455956d093113b) | Sets log output level. |
 | [setConsoleEnabled](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a2942d9d05045d3f0e0add45a3e10b3ee) | Disables or enables console log printing. |
@@ -173,8 +173,8 @@
 
 ### Disused API functions
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | Sets mic volume level. |
 | [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | Sets effect levels of beauty, brightening, and rosy skin filters. |
 | [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | Sets the effect level of eye enlarging filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
@@ -212,8 +212,8 @@
 
 Callback APIs of background music playback.
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description              |
+| ------------------------------------------------------------ | ------------------------ |
 | [onBGMStart](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af7f9f419dafff42ef750256f953a88c9) | Callback notification of music playback start. |
 | [onBGMProgress](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a30ab555520fa5a478f633394b9cd4d14) | Callback notification of music playback progress. |
 | [onBGMComplete](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a444c6749e7cb77466940ec1de1c88546) | Callback notification of music playback end. |
@@ -226,16 +226,16 @@ Event callback API for TRTC video call feature.
 
 ### Error events and warning events
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onError](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a511d0007e1990e63e853e46ce3f02670) | Callback for error, which indicates that the SDK encountered an irrecoverable error and must be listened on. Corresponding UI reminders should be displayed based on the actual conditions. |
 | [onWarning](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a9871472ee8195dfc5d0c34fae3294465) | Callback for warning. This callback is used to alert to some non-serious problems such as lag or recoverable decoding failure. |
 
 
 ### Room event callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                         |
+| ------------------------------------------------------------ | ----------------------------------- |
 | [onEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) | Callback of room entry. |
 | [onExitRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) | Callback of room exit. |
 | [onSwitchRole](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6a4b7f39bc5dfb0c5d75ef8802e2e758) | Callback of role switching. |
@@ -245,8 +245,8 @@ Event callback API for TRTC video call feature.
 
 ### Member event callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                            |
+| ------------------------------------------------------------ | ------------------------------------------------------ |
 | [onRemoteUserEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a891f38e4cdeaf3ff18937726f0269c2c) | A user enters the current room. |
 | [onRemoteUserLeaveRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abfec3607f97823956fad77a7a63dc441) | A user exits the current room. |
 | [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) | Whether the remote user has playable primary image (generally used for camera). |
@@ -262,16 +262,16 @@ Event callback API for TRTC video call feature.
 
 ### Statistics collection and quality callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onNetworkQuality](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b) | Network quality. This callback is triggered once every 2 seconds to collect statistics of the current network upstreaming and downstreaming quality. |
 | [onStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a003278cb7647cd577702e8367c9e0a58) | Callback of technical metric statistics. |
 
 
 ### Server event callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onConnectionLost](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aed43a70b4a95eb95181e2b410013bf54) | The connection between SDK and server has been closed. |
 | [onTryToReconnect](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | The SDK tries to connect to the server again. |
 | [onConnectionRecovery](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | The connection between SDK and server has been restored. |
@@ -280,8 +280,8 @@ Event callback API for TRTC video call feature.
 
 ### Hardware device event callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onCameraDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aaa74021e5fd2564afb2df50e25eedeff) | Camera is ready. |
 | [onMicDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#afdac7dee94451913a4dc9982badc8035) | Mic is ready. |
 | [onAudioRouteChanged](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a1a608275247d2912e26bd83f648d6378) | Audio routing changes, i.e., whether the audio is output by speaker or receiver. |
@@ -290,8 +290,8 @@ Event callback API for TRTC video call feature.
 
 ### Custom message reception callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description           |
+| ------------------------------------------------------------ | --------------------- |
 | [onRecvCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a51fd654c5ec030ff84f208f2ba50298d) | Callback of receipt of custom message. |
 | [onMissCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a98af11ba5b25d3124bd9533dc5197127) | Callback of loss of custom message. |
 | [onRecvSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad3640e6bf80a1f93991644701e9b0d96) | Callback of receipt of SEI message. |
@@ -299,8 +299,8 @@ Event callback API for TRTC video call feature.
 
 ### CDN relayed push callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onStartPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a03d0ef687b2973b9b13cb041bd35bb85) | Callback of starting pushing to Tencent Cloud LVB CDN, which corresponds to the `startPublishing()` API in [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
 | [onStopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad3cb7e5ceb69954d762eafca5a0e3a62) | Callback of stopping pushing to Tencent Cloud LVB CDN, which corresponds to the `stopPublishing()` API in [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
 | [onStartPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a64df36d6c56dd69d8b6f051fd9fffcbc) | Callback of completion of starting relayed push to CDN. |
@@ -310,15 +310,15 @@ Event callback API for TRTC video call feature.
 
 ### Audio effect callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description        |
+| ------------------------------------------------------------ | ------------------ |
 | [onAudioEffectFinished](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abe967d855abae66836877fe0dacf8b5f) | Callback of audio effect playback end. |
 
 
 ### Screen sharing callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onScreenCaptureStarted](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a7d15537d26fb001045ff95157d59ed3f) | This callback will be returned by the SDK when screen sharing is started. |
 | [onScreenCapturePaused](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a12c57991389e32f04a56774df5d1ce76) | This callback will be returned by the SDK when screen sharing is paused by calling [TRTCCloud.pauseScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf). |
 | [onScreenCaptureResumed](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ade88963a254d297d3be1993e8a599f6e) | This callback will be returned by the SDK when screen sharing is resumed by calling [TRTCCloud.resumeScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e). |
@@ -327,15 +327,15 @@ Event callback API for TRTC video call feature.
 
 ### Custom video data frame rendering callbacks
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description          |
+| ------------------------------------------------------------ | -------------------- |
 | [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a41b44f9b0583bbf56ad9e96065ea825c) | Callback of custom video rendering. |
 
 
 ### Custom audio data frame processing callbacks (read-only)
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onCapturedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a13dfcc17ca7ea6bcff7b0f5f6d167e33) | Callback of audio data captured by local mic. |
 | [onPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a60a54a148edf641a85fbc07bc294fe11) | Audio data from each remote user before audio mixing, i.e., raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
 | [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | Audio data to be played back by speaker after audio data from each channel is mixed. |
@@ -344,22 +344,22 @@ Event callback API for TRTC video call feature.
 ### Log callbacks
 >It is recommended to set the callback object in a class that is initialized early, e.g., `Application`.
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description          |
+| ------------------------------------------------------------ | -------------------- |
 | [onLog](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a77d78090666e330606b670bf8ce2d854) | Callback of log printing. |
 
 
 ### Screencapturing callback
 
-| API | Description |
-|-----|-----|
+| API                                                          | Description      |
+| ------------------------------------------------------------ | ---------------- |
 | [onSnapshotComplete](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aa9c6d0488175f6d19f5f38f6307cfea4) | Callback of screencapturing completion. |
 
 
 ## Definitions of Key Classes
 
-| Class | Description |
-|-----|-----|
+| Class                                                        | Description                             |
+| ------------------------------------------------------------ | --------------------------------------- |
 | [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a1751af68516425e5556e2057d0c90915) | Room entry parameters. |
 | [TRTCVideoEncParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoEncParam) | Encoding parameters. |
 | [TRTCNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCNetworkQosParam) | Network bandwidth limit parameters. |
