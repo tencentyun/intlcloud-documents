@@ -1,4 +1,4 @@
-This document describes how to access and debug the GME APIs for iOS.
+This document describes how to access and debug the GME APIs for macOS.
 
 >?This document applies to GME SDK v2.5.
 
@@ -8,7 +8,6 @@ This document describes how to access and debug the GME APIs for iOS.
 | ------------- |:-------------:|
 |InitEngine    				       	| Initializes GME 	|
 |Poll    		| Triggers event callback	|
-|SetDefaultAudienceAudioCategory 	| Sets use in background |
 |EnterRoom	 	| Enters room  		|
 |EnableMic	 	| Enables mic 	|
 |EnableSpeaker		| Enables speaker 	|
@@ -36,7 +35,6 @@ If you have any questions when using the service, please see [General FAQs](http
 |Pause   	| Pauses system	|
 |Resume 	| Resumes system	|
 |Uninit    	| Uninitializes GME 	|
-|SetDefaultAudienceAudioCategory 	| Sets audio playback in background on device	|
 
 ### Getting singleton
 To use the voice feature, get the `ITMGContext` object first.
@@ -79,12 +77,13 @@ The API class uses the `Delegate` method to send callback notifications to the a
 
 
 
-### Initializing the SDK
+### Initializing SDK
 
 For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API requires the `AppID` from the Tencent Cloud Console and the `openID` as parameters. The `openID` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
 
 >!The SDK must be initialized before a client can enter a room.
+
 #### Function prototype
 
 ```
@@ -142,7 +141,7 @@ ITMGContext -(QAVResult)Resume
 
 
 
-### Uninitializing the SDK
+### Uninitializing SDK
 This API is used to uninitialize the SDK to make it uninitialized. Switching accounts requires uninitialization.
 #### Function prototype
 
@@ -154,31 +153,6 @@ ITMGContext -(void)Uninit
 [[ITMGContext GetInstance] Uninit];
 ```
 
-
-
-### Setting audio playback in background
-This API is used to set audio playback in the background and should be called before room entry.
-Meanwhile, you should pay attention to the following two points in the application:
-- Audio engine capture and playback are not paused when the application is switched to the background (i.e., `PauseAudio`);
-- You need to add at least `key:Required background modes` and `string:App plays audio or streams audio/video using AirPlay` to the `Info.plist` of the application.
-
-#### Function prototype
-```
-ITMGContext -(QAVResult)SetDefaultAudienceAudioCategory:(ITMG_AUDIO_CATEGORY)audioCategory
-```
-
-| Type     | Parameter         | Description |
-| ------------- |:-------------:|-------------|
-| ITMG_CATEGORY_AMBIENT    	|0	| Audio is not played back in the background (default value) |
-| ITMG_CATEGORY_PLAYBACK    	|1   	| Audio is played back in the background	|
-
-The specific implementation is to modify `kAudioSessionProperty_AudioCategory`. For more information, please see Apple's official documentation.
-
-
-#### Sample code  
-```
-[[ITMGContext GetInstance]SetDefaultAudienceAudioCategory:ITMG_CATEGORY_AMBIENT];
-```
 
 ## Voice Chat Room Call Flowchart
 
@@ -215,8 +189,6 @@ To get authentication for voice messaging and speech-to-text, the room ID parame
 | openID  		|NSString    	| User ID, which is the same as `openID` during initialization. 								|
 | key    			|NSString    	| Permission key from the Tencent Cloud [Console](https://console.cloud.tencent.com/gamegme). 					|
 
-
-
 #### Sample code  
 ```
 NSData* authBuffer =   [QAVAuthBuffer GenAuthBuffer:SDKAPPID3RD.intValue roomId:_roomId openID:_openId key:AUTHKEY];
@@ -230,7 +202,7 @@ When a client enters a room with the generated authentication information, the `
 
 #### Function prototype
 ```
-ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int)roomType authBuffer:(NSData*)authBuffer
+ITMGContext   -(int)EnterRoom:(NSString*) roomId roomType:(int*)roomType authBuffer:(NSData*)authBuffer
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -248,6 +220,11 @@ For more information on how to choose a room audio type, please see [Sound Quali
 
 ### Callback for room entry
 After the client enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` will be sent and identified in the `OnEvent` function.
+
+```
+- (void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary*)data
+```
+Sample code for processing the callback:
 
 #### Sample code  
 ```
@@ -321,7 +298,6 @@ After the client exits a room, a callback will be returned with the message bein
 ```
 
 #### Data details
-
 | Message | Data | Sample |
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    				|result; error_info  					|{"error_info":"","result":0}|
@@ -376,7 +352,7 @@ After the room type is set, the event message `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_
 -(void)OnEvent:(ITMG_MAIN_EVENT_TYPE)eventType data:(NSDictionary *)data {
 	NSLog(@"OnEvent:%lu,data:%@",(unsigned long)eventType,data);
     switch (eventType) {
- 		case ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE:
+ 		case ITMG_MAIN_EVNET_TYPE_USER_UPDATE:
 			// Process
 	 }
     }
@@ -434,7 +410,6 @@ Notifications for audio events are subject to a threshold, and a notification wi
     }
 }
 ```
-
 ### Room call quality control event
 The message for quality control event triggered after room entry is `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY`. The returned parameters include `weight`, `loss`, and `delay`, which represent the following information. The event message will be identified in the `OnEvent` function.
 
@@ -457,7 +432,6 @@ The message for quality control event triggered after room entry is `ITMG_MAIN_E
 |ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE				| Indicates a room type change event |
 
 ### Details of data corresponding to the message
-
 | Message | Data | Sample |
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				|result; error_info					|{"error_info":"","result":0}|
@@ -468,10 +442,10 @@ The message for quality control event triggered after room entry is `ITMG_MAIN_E
 
 ## Voice Chat Audio APIs
 The voice chat APIs can only be called after SDK initialization and room entry.
-When Enable/Disable Mic/Speaker is clicked on the UI, the following practices are recommended:
+When Enable/Disable Mic/Speaker is tapped/clicked on the UI, the following practices are recommended:
 - For most game applications, you are recommended to call the `EnableMic` and `EnableSpeaker` APIs, which is equivalent to calling the `EnableAudioCaptureDevice/EnableAudioSend` and `EnableAudioPlayDevice/EnableAudioRecv` APIs;
-- For other mobile applications (such as social networking applications), enabling/disabling a capturing device will restart both capturing and playback devices. If the application is playing back background music, it will also be interrupted. Playback won't be interrupted if the mic is enabled/disabled through control of upstreaming/downstreaming. Calling method: call `EnableAudioCaptureDevice(true)` and `EnableAudioPlayDevice(true)` once after room entry, and call `EnableAudioSend/Recv` to send/receive audio streams when Enable/Disable Mic is clicked.
-- For more information on how to release only a capturing or playback device, please see the `EnableAudioCaptureDevice` and `EnableAudioPlayDevice`.
+- For other mobile applications (such as social networking applications), enabling/disabling a capturing device will restart both capturing and playback devices. If the application is playing back background music, it will also be interrupted. Playback won't be interrupted if the mic is enabled/disabled through control of upstreaming/downstreaming. Calling method: call `EnableAudioCaptureDevice(true)` and `EnableAudioPlayDevice(true)` once after room entry, and call `EnableAudioSend/Recv` to send/receive audio streams when Enable/Disable Mic is tapped.
+- For more information on how to release only a capturing or playback device, please see the `EnableAudioCaptureDevice` and `EnableAudioPlayDevice` APIs.
 - Call the `pause` API to pause the audio engine and call the `resume` API to resume the audio engine.
 
 | API | Description |
@@ -500,10 +474,9 @@ When Enable/Disable Mic/Speaker is clicked on the UI, the following practices ar
 
 
 
-### Enabling/Disabling the mic
+### Enabling/Disabling mic
 This API is used to enable/disable the mic. Mic and speaker are not enabled by default after room entry.
 EnableMic = EnableAudioCaptureDevice + EnableAudioSend.
-
 #### Function prototype  
 ```
 ITMGContext GetAudioCtrl -(QAVResult)EnableMic:(BOOL)enable
@@ -640,7 +613,7 @@ ITMGContext GetAudioCtrl -(int) GetMicVolume
 [[[ITMGContext GetInstance] GetAudioCtrl] GetMicVolume];
 ```
 
-### Enabling/Disabling the speaker
+### Enabling/Disabling speaker
 This API is used to enable/disable the speaker.
 EnableSpeaker = EnableAudioPlayDevice +  EnableAudioRecv.
 #### Function prototype  
@@ -744,7 +717,7 @@ ITMGContext GetAudioCtrl -(int)GetSpeakerLevel
 [[[ITMGContext GetInstance] GetAudioCtrl] GetSpeakerLevel];
 ```
 
-### Getting real-time downstreaming audio levels of other members in room
+### Getting the real-time downstreaming audio levels of other members in room
 This API is used to get the real-time audio downstreaming volume levels of other members in the room. An int-type value will be returned. Value range: 0–100.
 #### Function prototype  
 ```
@@ -868,7 +841,7 @@ ITMGContext GetPTT -(QAVResult)ApplyPTTAuthbuffer:(NSData *)authBuffer
 [[[ITMGContext GetInstance]GetPTT]ApplyPTTAuthbuffer:(NSData *)authBuffer];
 ```
 
-### Specifying maximum duration of voice message
+### Specifying the maximum duration of voice message
 This API is used to specify the maximum duration of a voice message, which can be up to 58 seconds.
 
 #### Function prototype
@@ -1028,7 +1001,7 @@ ITMGContext GetPTT -(QAVResult)CancelRecording
 [[[ITMGContext GetInstance]GetPTT]CancelRecording];
 ```
 
-### Getting real-time mic volume level of voice messaging
+### Getting the real-time mic volume level of voice messaging
 This API is used to get the real-time mic volume level. An int-type value will be returned. Value range: 0–100.
 
 #### Function prototype  
@@ -1040,7 +1013,7 @@ ITMGContext GetPTT -(QAVResult)GetMicLevel
 [[[ITMGContext GetInstance]GetPTT]GetMicLevel];
 ```
 
-### Setting recording volume level of voice messaging
+### Setting the recording volume level of voice messaging
 This API is used to set the recording volume level of voice messaging. Value range: 0–100.
 
 #### Function prototype  
@@ -1052,7 +1025,7 @@ ITMGContext GetPTT int SetMicVolume:(int) vol
 [[[ITMGContext GetInstance]GetPTT]SetMicVolume:100];
 ```
 
-### Getting recording volume level of voice messaging
+### Getting the recording volume level of voice messaging
 This API is used to get the recording volume level of voice messaging. An int-type value will be returned. Value range: 0–100.
 
 #### Function prototype  
@@ -1079,7 +1052,7 @@ ITMGContext GetPTT -(QAVResult)GetSpeakerLevel
 [[[ITMGContext GetInstance]GetPTT]GetSpeakerLevel];
 ```
 
-### Setting playback volume level of voice messaging
+### Setting the playback volume level of voice messaging
 This API is used to set the playback volume level of voice messaging. Value range: 0–100.
 
 #### Function prototype  
@@ -1091,7 +1064,7 @@ ITMGContext GetPTT int SetSpeakerVolume:(int) vol
 [[[ITMGContext GetInstance]GetPTT]SetSpeakerVolume:100];
 ```
 
-### Getting playback volume level of voice messaging
+### Getting the playback volume level of voice messaging
 This API is used to get the playback volume level of voice messaging. An int-type value will be returned. Value range: 0–100.
 
 #### Function prototype  
@@ -1386,32 +1359,6 @@ ITMGContext  -(NSString*)GetSDKVersion
 [[ITMGContext GetInstance] GetSDKVersion];
 ```
 
-### Checking mic permission
-This API is used to return the mic permission status.
-#### Function prototype
-
-```
-ITMGContext  -(ITMG_RECORD_PERMISSION)CheckMicPermission
-```
-
-#### Parameter description
-
-|Parameter|Value|Description|
-|---|---|---|
-|ITMG_PERMISSION_GRANTED|0| Mic permission is granted |
-|ITMG_PERMISSION_Denied|1| Mic is disabled |
-|ITMG_PERMISSION_NotDetermined|2| No authorization box has been popped up to request the permission |
-|ITMG_PERMISSION_ERROR|3| An error occurred while calling the API |
-
-#### Sample code  
-
-```
-[[ITMGContext GetInstance] CheckMicPermission];
-```
-
-
-
-
 ### Setting log printing level
 This API is used to set the level of logs to be printed. It is recommended to keep the default level.
 #### Function prototype
@@ -1444,7 +1391,7 @@ ITMGContext -(void)SetLogLevel:(ITMG_LOG_LEVEL)levelWrite (ITMG_LOG_LEVEL)levelP
 
 
 ### Setting log printing path
-This API is used to set the log printing path, which is `Application/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/Documents` by default.
+This API is used to set the log printing path, which is `/Users/username/Library/Containers/xxx.xxx.xxx/Data/Documents` by default.
 #### Function prototype
 ```
 ITMGContext -(void)SetLogPath:(NSString*)logDir
@@ -1480,7 +1427,7 @@ ITMGContext GetAudioCtrl -(QAVResult)AddAudioBlackList:(NSString*)openID
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| openId    |NSString      | ID to be blockd |
+| openId    |NSString      | ID to be blocked |
 
 #### Sample code  
 
