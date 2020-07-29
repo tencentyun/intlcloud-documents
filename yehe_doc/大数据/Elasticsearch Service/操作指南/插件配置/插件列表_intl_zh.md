@@ -14,7 +14,7 @@
 
 3. 单击【插件列表】，进入插件列表管理页面
 
-   ![1594269905799](C:\Users\robinren\AppData\Roaming\Typora\typora-user-images\1594269905799.png)
+   ![1594269905799](https://main.qcloudimg.com/raw/7c320711d9f98d7f754e79251ce378df.jpg)
 
 4. 单击对应插件右侧操作栏下的安装或者卸载
 

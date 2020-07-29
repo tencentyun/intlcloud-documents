@@ -40,7 +40,7 @@
 
 如果用户已了解该操作风险，仍要进行更新配置操作，可以勾选强制重启选项框，单击【确定】进行重启。详情参考下图：
 
-![强制修改配置](https://main.qcloudimg.com/raw/156e7b0079ef6ce27092b8351d7072ea.png)
+![强制修改配置](https://main.qcloudimg.com/raw/f9607265bdd9dc0fc0517a49fa87b574.jpg)
 
 单击【批量修改】，可对相应的配项就行修改，配置项的输入限制，见上文的说明。  
 ![批量修改](https://main.qcloudimg.com/raw/2278535378352578345126581a4a65c0.png)  

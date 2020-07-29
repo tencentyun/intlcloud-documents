@@ -87,7 +87,7 @@ defaultConfig {
        }
 }
 ```
->Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>？Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
 >
 7. Click **Sync Now** to complete the integration of TRTC SDK.
 
