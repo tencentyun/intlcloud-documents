@@ -12,16 +12,16 @@ The QQ analysis plugin provides the following analyzers and tokenizers:
 You can analyze and query documents by using the analyzers and tokenizers above. You can also use the dictionary configuration feature to customize and update the analysis dictionaries. For more information, please see dictionary configuration below.
 
 > ?
-
-1. What is the difference between `qq_max` and `qq_smart`?
-
-   qq_max: it splits text at the finest granularity; for example, it will split "National Anthem of the People's Republic of China" into "National Anthem of the People's Republic, National Anthem, the People's Republic of China, the People's Republic, Republic of China, National, Anthem, People, Republic, China, etc.", exhaustively listing all possible combinations.
-
-   qq_smart: it splits text at the roughest granularity; for example, it will split "National Anthem of the People's Republic of China" into "National Anthem, the People's Republic of China".
-
-2. What is NER? Why does it have an independent tokenizer?
-
-   NER (named-entity recognition) can recognize entities with specific meaning in text, such as person names, place names, institution names, and other proper nouns. You do not need to upload custom dictionaries for such proper nouns. The reason why the NER feature has a separate tokenizer is that a model needs to be loaded for NER, and the first loading takes much time.
+>
+>1. What is the difference between `qq_max` and `qq_smart`?
+>
+>   qq_max: it splits text at the finest granularity; for example, it will split "National Anthem of the People's Republic of China" into "National Anthem of the People's Republic, National Anthem, the People's Republic of China, the People's Republic, Republic of China, National, Anthem, People, Republic, China, etc.", exhaustively listing all possible combinations.
+>
+>   qq_smart: it splits text at the roughest granularity; for example, it will split "National Anthem of the People's Republic of China" into "National Anthem, the People's Republic of China".
+>
+>2. What is NER? Why does it have an independent tokenizer?
+>
+>   NER (named-entity recognition) can recognize entities with specific meaning in text, such as person names, place names, institution names, and other proper nouns. You do not need to upload custom dictionaries for such proper nouns. The reason why the NER feature has a separate tokenizer is that a model needs to be loaded for NER, and the first loading takes much time.
 
 
 
