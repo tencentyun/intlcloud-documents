@@ -36,7 +36,7 @@
 >- DesiredPlayerSessions.N 玩家游戏会话信息，其中 PlayerId 是与玩家会话关联的唯一玩家标识，此示例添加两组，分别填1和2；
 >- PlayerLatencies.N 玩家延迟，其中 PlayerId 是玩家 Id，RegionIdentifier 是延迟对应的区域名称，LatencyInMilliseconds 是毫秒级延迟。此示例添加四组，分别填[1，ap-shanghai，100]、[1，na-siliconvalley，50]、[2，ap-shanghai，60]、[2，na-siliconvalley，80]。
 
-![](https://main.qcloudimg.com/raw/17f2f5c2259cbb8259aaa518c6483195.png)
+![](https://main.qcloudimg.com/raw/d0ef6f4ac7bcee9f340eecd53ae690cc.png)
 ![](https://main.qcloudimg.com/raw/d1e1c237f022a451afc4e0f9c598f5fe.png)
 ![](https://main.qcloudimg.com/raw/6d3d71aa4c6173ae78112727ac12abec.png)
 

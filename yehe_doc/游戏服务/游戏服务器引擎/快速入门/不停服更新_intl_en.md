@@ -35,24 +35,24 @@ Call the TencentCloud API in the code. This example uses [TencentCloud API Explo
 >- `MaximumPlayerSessionCount` indicates the maximum number of players, which is 10 in this example;
 >- `AliasId` indicates the alias ID, which is the ID of the just created alias in this example.
 
-![](https://main.qcloudimg.com/raw/676fc6ade84a0e5284f474af2cd92d3d.png)
+![](https://main.qcloudimg.com/raw/bd50a2945932d10887767388ffe07710.png)
 
 If a game server session is successfully created through [TencentCloud API Explorer](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=), you can see that it is generated in server fleet 1.
-![](https://main.qcloudimg.com/raw/5e0f14322ec92296e63947dfa88482de.png)
+![](https://main.qcloudimg.com/raw/6531df797c5cd0486957a0e277de65e3.png)
 
 
 ### Modifying alias configuration
 
 1. In the console, click **Alias** on the left sidebar to enter the alias list page.
 2. Select the just created alias and click **Modify** to enter the alias editing page, modify the alias configuration, and set "Associate Server Fleet" to "Server fleet 2".
-![](https://main.qcloudimg.com/raw/dd5a258098c49aaa00cb7d7048507bd1.png)
+![](https://main.qcloudimg.com/raw/9b79109214516509c02a32bd55539eee.png)
 
 ### Creating another game server session
 
 >?Create another game server session with the same alias.
 
 Create another game server session through [TencentCloud API Explorer](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=), and you can see that a game server session is generated in server fleet 2. As can be seen, the new session is assigned to server fleet 2.
-![](https://main.qcloudimg.com/raw/14a5feb8995eb22c4d1f3c26b6c2fcf3.png)
+![](https://main.qcloudimg.com/raw/010f9f395bdb5d34df8518a04bda50cd.png)
 
 ## Notes on Zero Downtime Update
 When the version needs to be updated, you can create a new server fleet and point the alias to it.

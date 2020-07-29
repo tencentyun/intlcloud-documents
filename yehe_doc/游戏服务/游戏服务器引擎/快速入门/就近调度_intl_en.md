@@ -36,7 +36,7 @@ Call the `StartGameServerSessionPlacement` TencentCloud API in the code to place
 >- `DesiredPlayerSessions.N` indicates the player game session information, where `PlayerId` is the unique player ID associated with the player session. In this example, two values of 1 and 2 respectively are entered;
 >- `PlayerLatencies.N` indicates the player delay, where `PlayerId` is the player ID, `RegionIdentifier` is the name of the region corresponding to the delay, and `LatencyInMilliseconds` is the delay in milliseconds. In this example, four values are entered, i.e., [1,ap-shanghai,100], [1,na-siliconvalley,50], [2,ap-shanghai,60], and [2,na-siliconvalley,80].
 
-![](https://main.qcloudimg.com/raw/17f2f5c2259cbb8259aaa518c6483195.png)
+![](https://main.qcloudimg.com/raw/d0ef6f4ac7bcee9f340eecd53ae690cc.png)
 ![](https://main.qcloudimg.com/raw/e22e0c148d52885be3ceea010c13ce19.png)
 ![](https://main.qcloudimg.com/raw/6d3d71aa4c6173ae78112727ac12abec.png)
 
