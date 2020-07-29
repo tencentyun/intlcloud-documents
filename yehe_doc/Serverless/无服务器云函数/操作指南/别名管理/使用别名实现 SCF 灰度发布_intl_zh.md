@@ -6,7 +6,7 @@
 - 通过相同的流量切换方案，可以在故障时进行版本快速回退。
 
 方案示意图如下所示：
-![介绍图-中](https://main.qcloudimg.com/raw/dd8c04415db3c9dead87f2a7ee5b6d74.png)
+![介绍图-中](https://main.qcloudimg.com/raw/b34a21d0a145f76ceae5eff53269c8c6.png)
 
 
 
@@ -35,7 +35,7 @@
 - 用户已 [创建云函数](https://intl.cloud.tencent.com/document/product/583/32742)，且未发布新版本及创建别名。
 - 用户期望区分测试环境、预发布环境和发布环境。云函数需在每个阶段测试后，再进入下一阶段。且期望发布时灰度流量，以确保平稳过渡上线期。
 总体方案示意图如下：
-![API网关-中](https://main.qcloudimg.com/raw/b09e7431a9d2ea25fb1484e79d1eab8f.png)
+![API网关-中](https://main.qcloudimg.com/raw/f9883012207a83fb4f7f63e1d41ce347.png)
 
 
 #### 初始配置过程
@@ -77,7 +77,7 @@ b. 指向函数 B 的默认流量，并发布到 API 服务的 dev stage 中。
 - 用户直接使用 API 或 SDK 运行云函数。
 - 用户期望区分测试环境、预发布环境和发布环境。云函数需在每个阶段测试后，再进入下一阶段。且期望发布时灰度流量，以确保平稳过渡上线期。
 总体方案示意图如下：
-![](https://main.qcloudimg.com/raw/81ebc03fcf1b3018ff65adc17a7837d9.png)
+![](https://main.qcloudimg.com/raw/f5deb7feec4bcc3136c207927e2a1bf9.png)
 
 #### 初始配置过程
 在云函数 B 中创建别名 release、prepub，可暂时指向 $LATEST 版本。
