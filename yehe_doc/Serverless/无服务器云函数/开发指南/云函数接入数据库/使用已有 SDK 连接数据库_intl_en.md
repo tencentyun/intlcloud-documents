@@ -1,34 +1,34 @@
-## 操作场景
-本文介绍如何使用已有 SDK 在云函数代码中连接 [MySQL](https://intl.cloud.tencent.com/document/product/236/5147) 数据库，并实现对数据库的插入、查询等操作。同时还支持连接 [TDSQL](https://intl.cloud.tencent.com/document/product/1042/33311) 数据库，您可按需进行相应操作。
+## Operation Scenarios
+This document describes how to use an existing SDK to connect to a [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236/5147) database in the SCF function code and perform operations such as insertion and query in the database. [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042/33311) databases can also be connected. You can perform relevant operations as needed.
 
 
 
-## 前提条件
-已注册腾讯云账号并完成实名认证。如未注册，请前往 [注册页面](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)。
+## Prerequisites
+You have signed up for a Tencent Cloud account and completed identity verification. If you haven't done so, please sign up [here](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F).
 
 
 
-## 操作步骤
+## Directions
+<span id="createVPC"></span>
+### Creating VPC
+Create a VPC and subnet as instructed in [Building VPC](https://intl.cloud.tencent.com/document/product/215/31891).
 
-### 创建私有网络 VPC<span id="createVPC"></span>
-参考 [快速搭建私有网络](https://intl.cloud.tencent.com/document/product/215/31891) 创建 VPC 和子网。
-
-### 创建数据库实例
-1. 参考 [购买方式](https://intl.cloud.tencent.com/document/product/236/5160) 创建 MySQL。
->?配置项“网络”请选择在 [创建私有网络 VPC](#createVPC) 步骤中已创建的 VPC。
+### Creating database instance
+1. Create a TencentDB for MySQL database as instructed in [Purchase Method](https://intl.cloud.tencent.com/document/product/236/5160).
+>?Select the VPC created in [Creating VPC](#createVPC) as the "Network".
 >
-2. 参考 [初始化 MySQL 数据库](https://intl.cloud.tencent.com/document/product/236/3128) 完成初始化操作，并获取数据库帐户名称及密码。
-3. 在 “[MySQL - 实例列表](https://console.cloud.tencent.com/cdb)” 页面，选择实例 ID 进入数据库详情页面，获取该数据库的**内网地址**、**所属网络**、**内网端口**信息。如下图所示：
+2. Initialize the database as instructed in [Initializing TencentDB for MySQL Database](https://intl.cloud.tencent.com/document/product/236/3128) and get the database account name and password.
+3. On the [TencentDB for MySQL - Instance List](https://console.cloud.tencent.com/cdb) page, select the instance ID to enter the database details page and get the **private address**, **network**, and **private port** of the database as shown below:
 ![](https://main.qcloudimg.com/raw/9fc693925406344b169234793205ea48.png)
 
-### 创建安全组（可选）
-可参考 [云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470) 为您的数据库实例添加安全组。
+### Creating security group (optional)
+You can add a security group for your database instance as instructed in [TencentDB Security Group](https://intl.cloud.tencent.com/document/product/236/14470).
 
 
-### 配置环境变量和私有网络
-1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏中的【函数服务】。
-2. 单击需连接数据库的函数名，进入该函数的“函数配置”页面，参考以下信息进行配置。
- - 新增**环境变量**，并参考以下表格填写。如下图所示：
+### Configuring environment variables and VPC
+1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf) and click **Function Service** on the left sidebar.
+2. Click the name of the function to be connected to the database to enter the "Function Configuration" page of the function and configure the function as shown below:
+ - Add an **environment variable** and enter the information by referring to the table below:
 ![]( https://main.qcloudimg.com/raw/8c75b2184a416c8ee7604402139d1370.png)
 <table align=center>
 <tr>
@@ -37,33 +37,34 @@
 </tr>
 <tr>
 <td>DB_PASSWORD</td>
-<td>数据库密码</td>
+<td>Database password</td>
 </tr>
 <tr>
 <td>DB_USER</td>
-<td>数据库用户名</td>
+<td>Database username</td>
 </tr>
 <tr>
 <td>DB_HOST</td>
-<td>数据库地址</td>
+<td>Database address</td>
 </tr>
 <tr>
 <td>DB_PORT</td>
-<td>数据库端口</td>
+<td>Database port</td>
 </tr>
 <tr>
 <td>DB_DATABASE</td>
-<td>数据库名</code></td>
+<td>Database name</code></td>
 </tr>
 </table>
- - 开启私有网络，并选择和数据库相同的私有网络和子网。如下图所示：
+ - Enable VPC and select the same VPC and subnet as those of the database as shown below:
+ 
 ![](https://main.qcloudimg.com/raw/757abc018b4767f28902c7ed6465ff47.png)
 
 
-### 函数代码示例
+### Sample function code
 
 #### Python
-Python 可使用云函数环境已经内置的 **pymysql** 依赖包进行数据库连接。示例代码如下：
+In Python, you can use the built-in **pymysql** dependency package in the SCF environment to connect to the database. The sample code is as follows:
 ```python
 # -*- coding: utf8 -*-
 from os import getenv
@@ -102,8 +103,8 @@ def main_handler(event, context):
 ```
 
 #### Node.js
-Node.js 支持使用连接池进行连接，连接池具备自动重连功能，可有效避免因云函数底层或者数据库释放连接造成的连接不可用情况。示例代码如下：
->?使用连接池前需先安装 **mysql2** 依赖包，详情请参见 [依赖安装](https://intl.cloud.tencent.com/document/product/583/34879)。
+Node.js allows you to use a connection pool for connection, which supports automatic reconnection to effectively avoid connection unavailability due to connection release by the SCF underlying layer or database. The sample code is as follows:
+>?Before using a connection pool, you need to install the **mysql2** dependency package first. For more information, please see [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
 >
 ```nodejs
 'use strict';
@@ -130,7 +131,7 @@ exports.main_handler = async (event, context, callback) => {
 ```
 
 #### PHP
-PHP 可使用 **pdo_mysql** 依赖包进行数据连接。示例代码如下：
+In PHP, you can use the **pdo_mysql** dependency package for data connection. The sample code is as follows:
 ```php
 <?php
 function handler($event, $context) {
@@ -138,14 +139,14 @@ try{
   $pdo = new PDO('mysql:host= getenv("DB_HOST");dbname= getenv("DB_DATABASE"),getenv("DB_USER"),getenv("DB_PASSWORD")');
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }catch(PDOException $e){
-  echo '数据库连接失败: '.$e->getMessage();
+  echo 'Databases connection failed: '.$e->getMessage();
   exit;
 }
 }
 ```
 
-#### JAVA
-1. 请参考 [依赖安装](https://intl.cloud.tencent.com/document/product/583/34879#java-.E8.BF.90.E8.A1.8C.E6.97.B6)，安装以下依赖。
+#### Java
+1. Please install the following dependencies as instructed in [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879#java-.E8.BF.90.E8.A1.8C.E6.97.B6).
 
 ```xml
 <dependencies>
@@ -166,7 +167,7 @@ try{
     </dependency>
 </dependencies>
 ```
-2. 使用 Hikari 连接池进行连接，示例代码如下：
+2. Use HikariCP for connection. The sample code is as follows:
 
 ```java
 package example;

@@ -5,19 +5,19 @@
 The API request address corresponds to the service access point one by one; therefore, please select the request address corresponding to your application service access point.
 
 Service access point in Guangzhou:
-```shell
+```plaintext
 https://api.tpns.tencent.com/v3/statistics/get_push_group_stat_channel
 ```
 Service access point in Hong Kong (China):
-```shell
+```plaintext
 https://api.tpns.hk.tencent.com/v3/statistics/get_push_group_stat_channel
 ```
 Service access point in Singapore:
-```shell
+```plaintext
 https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
 ```
 
-**Feature**: this API is used to query the aggregated statistics by push channel of all push tasks **with the same `GroupID`** in the last 7 days according to `GroupID`.
+**Feature**: this API is used to query the aggregated statistics by push channel of all push tasks **with the same `GroupID` or `PlanId`** in the last 7 days according to `GroupID` or `PlanId`.
 
 
 ## Parameter Description
@@ -25,7 +25,8 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
 
 | Parameter Name | Required | Type | Description |
 | --------- | ---- | ------------ | ------------------------------------------------------------ |
-| groupId   | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "group_Id" in push parameters            |
+| PlanId    | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "PlanId" in push parameters            |
+| groupId   | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "group_Id" in push parameters. This field will be deprecated later.    |
 | startDate | Yes   | String | Query start date<li>Format: YYYY-MM-DD</li><li>Limit: only data of push tasks in the last 7 days can be aggregated</li> |
 | endDate   | Yes   | String | Query end date. Format: YYYY-MM-DD                                 |
 
