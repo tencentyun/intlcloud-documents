@@ -54,11 +54,11 @@
         <td>SDK 1.1.6.1版本发布</td>
         <td>修复 HTTPS 证书校验漏洞</td>
         <td>2020-04-28</td>
-        <td>-</td>
+        <td>-</a></td>
     </tr>
     <tr>
         <td>SDK 1.1.6.0版本发布</td>
-        <td><li> 优化加密协议 </li> <li> 优化网络连接</li> <li> 支持华为角标设置</li> <li> 升级小米推送 SDK v3.7.5，魅族推送 SDK v3.9.0 </li><li> 支持 Realme 和黑鲨手机厂商通道</li></td>
+        <td><li> 优化加密协议 </li> <li> 优化网络连接</li> <li> 支持华为角标设置</li> <li> 升级小米推送 SDK v3.7.5，魅族推送 SDK v3.9.0 </li><li> 支持 Realme 和黑鲨手机厂商通道</li><li> 去除调用灯塔获取 QIMEI 相关信息</li></td>
         <td>2020-04-21</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/35828">角标适配指南</a></td>
     </tr>

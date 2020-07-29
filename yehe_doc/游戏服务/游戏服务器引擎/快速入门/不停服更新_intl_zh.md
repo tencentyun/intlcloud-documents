@@ -35,24 +35,24 @@
 >- MaximumPlayerSessionCount 最大玩家数量，此示例填10；
 >- AliasId 别名 ID，此示例填刚创建的别名 ID。
 
-![](https://main.qcloudimg.com/raw/676fc6ade84a0e5284f474af2cd92d3d.png)
+![](https://main.qcloudimg.com/raw/bd50a2945932d10887767388ffe07710.png)
 
 通过 [云 API 调试](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=) 创建成功一个游戏服务器会话，即可看到服务器舰队1产生一个游戏服务器会话。
-![](https://main.qcloudimg.com/raw/5e0f14322ec92296e63947dfa88482de.png)
+![](https://main.qcloudimg.com/raw/6531df797c5cd0486957a0e277de65e3.png)
 
 
 ### 修改别名的配置
 
 1. 在控制台上，单击左侧菜单【别名】，进入别名列表页面。
 2. 选择刚新建的别名，单击【修改】进入别名编辑页面，修改别名的配置，将关联服务器舰队修改为“服务器舰队2”。
-![](https://main.qcloudimg.com/raw/dd5a258098c49aaa00cb7d7048507bd1.png)
+![](https://main.qcloudimg.com/raw/9b79109214516509c02a32bd55539eee.png)
 
 ### 再次创建游戏服务器会话
 
 >?请使用相同的别名再次创建游戏服务器会话。
 
 通过 [云 API 调试](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=) 再次创建一个游戏服务器会话，即可看到服务器舰队2产生了一个游戏服务器会话，可见新的游戏服务器会话被分配到了服务器舰队2上了。
-![](https://main.qcloudimg.com/raw/14a5feb8995eb22c4d1f3c26b6c2fcf3.png)
+![](https://main.qcloudimg.com/raw/010f9f395bdb5d34df8518a04bda50cd.png)
 
 ## 不停服更新说明
 当需要版本更新时，新建一个服务器舰队，并将别名指向新的服务器舰队。

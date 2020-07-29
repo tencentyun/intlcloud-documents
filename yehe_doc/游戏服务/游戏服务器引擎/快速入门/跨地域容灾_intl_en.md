@@ -39,11 +39,12 @@ Call the `StartGameServerSessionPlacement` TencentCloud API in the code to place
 >- `DesiredPlayerSessions.N` indicates the player game session information, where `PlayerId` is the unique player ID associated with the player session. In this example, two values of 1 and 2 respectively are entered;
 >- `PlayerLatencies.N` indicates the player delay, where `PlayerId` is the player ID, `RegionIdentifier` is the name of the region corresponding to the delay, and `LatencyInMilliseconds` is the delay in milliseconds. In this example, four values are entered, i.e., [1,ap-shanghai,100], [1,na-siliconvalley,50], [2,ap-shanghai,60], and [2,na-siliconvalley,80].
 
-![](https://main.qcloudimg.com/raw/fa0aa1e00bab6cfa89c1cd211b1af562.png)
+![](https://main.qcloudimg.com/raw/bf528fd7700938e035cbe7ccd201954c.png)
 ![](https://main.qcloudimg.com/raw/29baaa97fb0e6a3e20a2f9b53f0a5bdd.png)
 ![](https://main.qcloudimg.com/raw/0327f3c13ce77d07af24e6fc5a417f59.png)
 **Scheduling result evaluation of delay policy:**
 Delays in two players' arrival at the target address:
+
 - The delay for player 1 is 100 ms to Shanghai and 50 ms to Silicon Valley.
 - The delay for player 2 is 60 ms to Shanghai and 80 ms to Silicon Valley.
 As the delay policy specifies that only servers whose delay for all players is below 150 ms can be matched and both the Silicon Valley and Shanghai regions meet the requirement, a game server session will be automatically created in server fleet 1 (Shanghai region) with a higher priority.
@@ -56,7 +57,7 @@ Suppose the Shanghai region fails and its speed cannot be tested.
   - `PlayerLatencies.N` indicates the player delay, where `PlayerId` is the player ID, `RegionIdentifier` is the name of the region corresponding to the delay, and `LatencyInMilliseconds` is the delay in milliseconds. In this example, four values are entered, i.e., [1,ap-shanghai,0], [1,na-siliconvalley,50], [2,ap-shanghai,0], and [2,na-siliconvalley,80]. To set a condition where the speed cannot be measured, enter 0 or infinity for the delay or leave it empty. In this example, the delay to Shanghai is entered as 0.
   - Keep the rest parameters the same as the ones above.
 
-![](https://main.qcloudimg.com/raw/a143ffef65105d4a785e11803946ac3d.png)
+![](https://main.qcloudimg.com/raw/bf528fd7700938e035cbe7ccd201954c.png)
 ![](https://main.qcloudimg.com/raw/e6b46c5b84adb4dea5e8da0613eb8bc2.png)
 ![](https://main.qcloudimg.com/raw/482798618d6366bd186a726364d7a831.png)
 

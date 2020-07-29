@@ -32,7 +32,7 @@
 #### 部署配置
   - 服务器类型：创建服务器舰队的服务器机型。
   - 是否打通 VPC 网络：打通腾讯云 VPC 网络，可以访问您 VPC 下的服务器等。
-    ![](https://main.qcloudimg.com/raw/ab0e82ae9cea60618ef634ed58c5230f.jpg)
+    ![](https://main.qcloudimg.com/raw/5284d28b11f74f42a3a3c39e2fc2f45a.png)
 
 
  <span id="test12"></span>

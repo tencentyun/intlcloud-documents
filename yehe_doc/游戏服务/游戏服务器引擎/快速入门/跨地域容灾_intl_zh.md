@@ -39,11 +39,12 @@
 >- DesiredPlayerSessions.N 玩家游戏会话信息，其中 PlayerId 是与玩家会话关联的唯一玩家标识，此示例添加两组，分别填1和2；
 >- PlayerLatencies.N 玩家延迟，其中PlayerId是玩家 Id，RegionIdentifier是延迟对应的区域名称，LatencyInMilliseconds 是毫秒级延迟。此示例添加四组，分别填[1，ap-shanghai，100]、[1，na-siliconvalley，50]、[2，ap-shanghai，60]、[2，na-siliconvalley，80]。
 
-![](https://main.qcloudimg.com/raw/fa0aa1e00bab6cfa89c1cd211b1af562.png)
+![](https://main.qcloudimg.com/raw/bf528fd7700938e035cbe7ccd201954c.png)
 ![](https://main.qcloudimg.com/raw/29baaa97fb0e6a3e20a2f9b53f0a5bdd.png)
 ![](https://main.qcloudimg.com/raw/0327f3c13ce77d07af24e6fc5a417f59.png)
 **延迟策略调度结果评估：**
 两个玩家到目标地址的延迟情况：
+
 - player1 至上海的延时100ms，至硅谷的延时50ms。
 - player2 至上海的延时60ms，至硅谷的延时80ms。
 因为延迟策略配置查找所有玩家延时在150ms内的服务器，硅谷和上海都满足要求，所以，游戏服务器会话自动创建于优先级高的服务器舰队1（上海地区）上。
@@ -56,7 +57,7 @@
   - PlayerLatencies.N 玩家延迟，其中 PlayerId 玩家 Id，RegionIdentifier 延迟对应的区域名称，LatencyInMilliseconds 毫秒级延迟。此示例添加四组，分别填[1，ap-shanghai，0]、[1，na-siliconvalley，50]、[2，ap-shanghai，0]、[2，na-siliconvalley，80]。设置无法测出速度的条件时，将延时输入为0或者无穷大，或者不输入，此示例到上海的延迟输入为0。
   - 其他参数输入与上文保持一致。
 
-![](https://main.qcloudimg.com/raw/a143ffef65105d4a785e11803946ac3d.png)
+![](https://main.qcloudimg.com/raw/bf528fd7700938e035cbe7ccd201954c.png)
 ![](https://main.qcloudimg.com/raw/e6b46c5b84adb4dea5e8da0613eb8bc2.png)
 ![](https://main.qcloudimg.com/raw/482798618d6366bd186a726364d7a831.png)
 

@@ -12,14 +12,14 @@
 1. 上传示范包
  1. 登录 [游戏服务器引擎控制台](https://console.cloud.tencent.com/gse)，单击左侧菜单【入门示例】。
  2. 选择左上侧服务区域，单击【一键上传示范包】，上传示范包，提示创建成功后，进入【下一步】。
- ![](https://main.qcloudimg.com/raw/fcf724549b9d7d9467609d84d41846a7.png)
+ ![](https://main.qcloudimg.com/raw/aba9f81e1e145dd9233c962a71f9938e.png)
 >?
 >- GSE 为您提供的示范包已经集成了 gRPC 框架，游戏进程和 GSE 通过 gRPC 通信。
 >- 如果是您自行创建，请您参考 [创建生成包](https://intl.cloud.tencent.com/document/product/1055/36674) 操作指南。
 
 2. 创建服务器舰队
 单击【一键创建服务器舰队】，提示创建成功后，进入【下一步】。
- ![](https://main.qcloudimg.com/raw/809653901b3c464fe9495f7badd35a4a.png)
+ ![](https://main.qcloudimg.com/raw/a951885502b0175481566008cf53fabb.png)
  >?
  > - 创建服务器舰队，将示范包部署在服务器舰队上。
  > - 服务器舰队为一组服务器，具有弹性伸缩的能力，示范包可轻松部署到全球。
@@ -27,14 +27,14 @@
 
 3. 创建游戏服务器会话和玩家会话
   - 单击【创建游戏服务器会话】，提示创建游戏服务器会话成功。 
- ![](https://main.qcloudimg.com/raw/7f8419e0c0d87f3748aea206e501cd27.png)
+ ![](https://main.qcloudimg.com/raw/62bfaaea48a794c5971038b96e6ce42c.png)
 
 >?
 >- 该操作调用“创建游戏服务器会话”云 API，GSE 创建一个游戏服务器会话，为其分配一个服务进程。
 >- 如果是您自行创建，请您参考 创建游戏服务器会话 API 文档。 
 
  - 单击【创建玩家会话】，提示创建玩家会话成功。
- ![](https://main.qcloudimg.com/raw/16697108484f9a0fe516d3c7f2fc9062.png)
+ ![](https://main.qcloudimg.com/raw/bf467a231680025f40bfddbc07888567.png)
 
  >?
  >- 该操作调用“加入游戏服务器会话”云 API，GSE 创建一个玩家会话，将玩家加入到游戏服务器会话中。

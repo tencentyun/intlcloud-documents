@@ -1,36 +1,36 @@
 
-A CVM instance can be used to access the private address that is automatically assigned to a TencentDB instance. This connection method relies on the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and reside in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region or reside in the basic network.
->CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over the private network through [Peering Connection](https://intl.cloud.tencent.com/product/pc).
+使用的云服务器 CVM 访问自动分配给云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。云服务器和数据库须是同一账号，且同一个[ VPC](https://intl.cloud.tencent.com/document/product/215/535) 内（保障同一个地域），或同在基础网络内。
+>>?对于不同的 VPC 下（包括同账号/不同账号，同地域/不同地域）的云服务器和数据库，内网连接方式请参见  [对等连接](https://intl.cloud.tencent.com/product/pc)。
 
-## Environment Preparations
-1. Log in to a Linux CVM instance. For more information, please see [Configuring Linux CVM](https://intl.cloud.tencent.com/document/product/213/2936).
-2. Taking a CVM instance on CentOS as an example, Install the Redis client by running the following command:
+## 准备环境
+1. 登录到 Linux 云服务器，请参见 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2936)。
+2. 以 CentOS 系统的云服务器为例，执行如下命令安装 Redis 客户端：
 ```
 yum install redis -y
 ```
-If `Complete!` is displayed, it means the Redis client is installed successfully.
+提示`Complete!`说明客户端安装完成。
 
-## Instance Connection
-### Password-free instance
-If your instance is password-free, the connection command should be as follows:
+## 连接实例
+### 免密码认证实例
+如果您的实例为免密码认证，则连接命令如下：
 ```
-redis-cli -h IP address -p port
-```
-
-### Password-protected instance
-If your instance is password-protected, the following open-source connection format is supported:
-```
-redis-cli -h IP address -p port -a password
+redis-cli -h IP地址 -p 端口
 ```
 
-For example, if the password you set is `abcd1234`, then the connection command should be as follows:
+### 有密码实例
+如果您的实例是有密码实例，则支持开源格式类型的连接方式：
 ```
-redis-cli -h IP address -p port -a abcd1234
+redis-cli -h IP地址 -p 端口 -a 密码
 ```
->For instances purchased before January 2018, you need to replace the "password" with "instance ID:password" to access it. For example:
->`redis-cli -h IP address -p port -a crs-bkuza6i3:abcd1234`
+
+例如您设置的密码是 abcd1234，则连接命令如下：
+```
+redis-cli -h IP地址 -p 端口 -a abcd1234
+```
+>?2018年1月之前购买的实例，需将“密码”替换为“实例ID:密码”的格式才能访问。示例如下：
+>`redis-cli -h IP地址 -p 端口 -a crs-bkuza6i3:abcd1234`
 >
 
-## Connection Sample
-For examples of each connection format, please see [Connecting to Instances](https://intl.cloud.tencent.com/document/product/239/7042).
+## 连接示例
+各连接示例请参见 [连接实例](https://intl.cloud.tencent.com/document/product/239/7042)。
 
