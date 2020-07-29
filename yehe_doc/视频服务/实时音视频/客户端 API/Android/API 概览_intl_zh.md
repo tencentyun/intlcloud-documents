@@ -2,8 +2,8 @@
 
 ### 基础方法
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [sharedInstance](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac5da416bb06d461c7e1e555e3fd143ee) | 创建 [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) 单例。 |
 | [destroySharedInstance](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a69e76ca12b727c7cbcbdda274fc007a2) | 销毁 [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) 单例。 |
 | [setListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a22fe2f31f2ef62fb3c6cba083dc6c016) | 设置回调接口 TRTCCloudListener，用户获得来自 [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) 的各种状态通知。 |
@@ -12,8 +12,8 @@
 
 ### 房间相关接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) | 进入房间，若房间不存在，系统将自动创建一个新房间。 |
 | [exitRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) | 离开房间。 |
 | [switchRole](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a915a4b3abca0e41f057022a4587faf66) | 切换角色，仅适用于直播场景（TRTC_APP_SCENE_LIVE 和 TRTC_APP_SCENE_VOICE_CHATROOM）。 |
@@ -24,8 +24,8 @@
 
 ### CDN 相关接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                          |
+| ------------------------------------------------------------ | ----------------------------- |
 | [startPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1c168a9aa35ccd0b24981526425e4730) | 开始向腾讯云的直播 CDN 推流。 |
 | [stopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3067efa528fb9ffb8cf7685ce29925d4) | 停止向腾讯云的直播 CDN 推流。 |
 | [startPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41aefb8be652f8f6803020e543acaadc) | 开始向友商云的直播 CDN 转推。 |
@@ -35,8 +35,8 @@
 
 ### 视频相关接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [startLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) | 开启本地视频的预览画面。 |
 | [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af6ee50bf2c4c592294061077fc727505) | 停止本地视频采集及预览。 |
 | [muteLocalVideo](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a13a2e406bffafecb96bfeac48d82746b) | 暂停/恢复推送本地的视频数据。 |
@@ -63,8 +63,8 @@
 
 ### 音频相关接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [setAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55) | 设置音频质量 主播端的音质越高，观众端的听感越好，但传输所依赖的带宽也就越高，在带宽有限的场景下也更容易出现卡顿。 |
 | [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) | 开启本地音频的采集和上行。 |
 | [stopLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a272bba21d046347ac42d76069ba5972c) | 关闭本地音频的采集和上行。 |
@@ -85,8 +85,8 @@
 
 ### 摄像头相关接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                   |
+| ------------------------------------------------------------ | -------------------------------------- |
 | [switchCamera](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1b43a65a32f9dcb81b39b9c51c5bc4c6) | 切换摄像头。 |
 | [isCameraZoomSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac7ae26eca2f9a673121803d6d175b034) | 查询当前摄像头是否支持缩放。 |
 | [setZoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9f761eebdf04f724e0d1591c41c6045f) | 设置摄像头缩放因子（焦距）。 |
@@ -99,23 +99,23 @@
 
 ### 美颜滤镜相关接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述               |
+| ------------------------------------------------------------ | ------------------ |
 | [getBeautyManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) | 获取美颜管理对象。 |
 | [setWatermark](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1083aaf0441e3d90ce6641d278a97a63) | 添加水印。 |
 
 
 ### 音乐特效和人声特效
 
-| API | 描述 |
-|-----|-----|
-| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | 获取音效管理类 TXAudioEffectManager。 |
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | 获取音效管理类 TXAudioEffectManager，用于管理BGM，短音效和人声特效。 |
 
 
 ### 辅流相关接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                               |
+| ------------------------------------------------------------ | ---------------------------------- |
 | [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) | 启动屏幕分享。 |
 | [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab6c3014f6f88c775aa91fccea19ce8a4) | 停止屏幕采集。 |
 | [pauseScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) | 暂停屏幕分享。 |
@@ -128,8 +128,8 @@
 
 ### 自定义采集和渲染
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                            |
+| ------------------------------------------------------------ | ------------------------------- |
 | [enableCustomVideoCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a68187fc9a1656bb32cf825363745f7e7) | 启用视频自定义采集模式。 |
 | [sendCustomVideoData](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a39b79b77e3795e918383e945e9513d35) | 向 SDK 投送自己采集的视频数据。 |
 | [setLocalVideoRenderListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa3cbb7a501c3151d94473965e2538c7a) | 设置本地视频的自定义渲染回调。 |
@@ -141,24 +141,24 @@
 
 ### 自定义消息发送
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                 |
+| ------------------------------------------------------------ | ------------------------------------ |
 | [sendCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa4847ad53acc9ab5990194b21ff5b070) | 发送自定义消息给房间内所有用户。 |
 | [sendSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a034f9e1effbdadf8b9bfb7f3f06486c4) | 将小数据量的自定义数据嵌入视频帧中。 |
 
 
 ### 网络测试
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [startSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0dbceb18d61d99ca33e967427dd0a344) | 开始进行网络测速（视频通话期间请勿测试，以免影响通话质量）。 |
 | [stopSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3e862cef0e818ddecdc3dc4d66a6f8f9) | 停止服务器测速。 |
 
 
 ### Log 相关接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                        |
+| ------------------------------------------------------------ | --------------------------- |
 | [getSDKVersion](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aeb5168abbd62c631b65247e6289d1e2d) | 获取 SDK 版本信息。 |
 | [setLogLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0ec9520dda7e2062f7455956d093113b) | 设置 Log 输出级别。 |
 | [setConsoleEnabled](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a2942d9d05045d3f0e0add45a3e10b3ee) | 启用或禁用控制台日志打印。 |
@@ -173,8 +173,8 @@
 
 ### 弃用接口函数
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | 设置麦克风的音量大小。 |
 | [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | 设置美颜、美白、红润效果级别。 |
 | [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | 设置大眼级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
@@ -212,8 +212,8 @@
 
 播放背景音乐的回调接口。
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                     |
+| ------------------------------------------------------------ | ------------------------ |
 | [onBGMStart](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af7f9f419dafff42ef750256f953a88c9) | 音乐播放开始的回调通知。 |
 | [onBGMProgress](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a30ab555520fa5a478f633394b9cd4d14) | 音乐播放进度的回调通知。 |
 | [onBGMComplete](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a444c6749e7cb77466940ec1de1c88546) | 音乐播放结束的回调通知。 |
@@ -226,16 +226,16 @@
 
 ### 错误事件和警告事件
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onError](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a511d0007e1990e63e853e46ce3f02670) | 错误回调，表示 SDK 不可恢复的错误，一定要监听并分情况给用户适当的界面提示。 |
 | [onWarning](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a9871472ee8195dfc5d0c34fae3294465) | 警告回调，用于告知您一些非严重性问题，例如出现卡顿或者可恢复的解码失败。 |
 
 
 ### 房间事件回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                |
+| ------------------------------------------------------------ | ----------------------------------- |
 | [onEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) | 已加入房间的回调。 |
 | [onExitRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) | 离开房间的事件回调。 |
 | [onSwitchRole](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6a4b7f39bc5dfb0c5d75ef8802e2e758) | 切换角色的事件回调。 |
@@ -245,8 +245,8 @@
 
 ### 成员事件回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------ |
 | [onRemoteUserEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a891f38e4cdeaf3ff18937726f0269c2c) | 有用户加入当前房间。 |
 | [onRemoteUserLeaveRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abfec3607f97823956fad77a7a63dc441) | 有用户离开当前房间。 |
 | [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) | 远端用户是否存在可播放的主路画面（一般用于摄像头）。 |
@@ -262,16 +262,16 @@
 
 ### 统计和质量回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onNetworkQuality](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b) | 网络质量，该回调每2秒触发一次，统计当前网络的上行和下行质量。 |
 | [onStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a003278cb7647cd577702e8367c9e0a58) | 技术指标统计回调。 |
 
 
 ### 服务器事件回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onConnectionLost](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aed43a70b4a95eb95181e2b410013bf54) | SDK 跟服务器的连接断开。 |
 | [onTryToReconnect](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | SDK 尝试重新连接到服务器。 |
 | [onConnectionRecovery](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | SDK 跟服务器的连接恢复。 |
@@ -280,8 +280,8 @@
 
 ### 硬件设备事件回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onCameraDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aaa74021e5fd2564afb2df50e25eedeff) | 摄像头准备就绪。 |
 | [onMicDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#afdac7dee94451913a4dc9982badc8035) | 麦克风准备就绪。 |
 | [onAudioRouteChanged](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a1a608275247d2912e26bd83f648d6378) | 音频路由发生变化，音频路由即声音由哪里输出（扬声器或听筒）。 |
@@ -290,8 +290,8 @@
 
 ### 自定义消息的接收回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                  |
+| ------------------------------------------------------------ | --------------------- |
 | [onRecvCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a51fd654c5ec030ff84f208f2ba50298d) | 收到自定义消息回调。 |
 | [onMissCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a98af11ba5b25d3124bd9533dc5197127) | 自定义消息丢失回调。 |
 | [onRecvSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad3640e6bf80a1f93991644701e9b0d96) | 收到 SEI 消息的回调。 |
@@ -299,8 +299,8 @@
 
 ### CDN 旁路转推回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onStartPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a03d0ef687b2973b9b13cb041bd35bb85) | 开始向腾讯云的直播 CDN 推流的回调，对应于 [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) 中的 startPublishing() 接口。 |
 | [onStopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad3cb7e5ceb69954d762eafca5a0e3a62) | 停止向腾讯云的直播 CDN 推流的回调，对应于 [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) 中的 stopPublishing() 接口。 |
 | [onStartPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a64df36d6c56dd69d8b6f051fd9fffcbc) | 启动旁路推流到 CDN 完成的回调。 |
@@ -310,15 +310,15 @@
 
 ### 音效回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述               |
+| ------------------------------------------------------------ | ------------------ |
 | [onAudioEffectFinished](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abe967d855abae66836877fe0dacf8b5f) | 播放音效结束回调。 |
 
 
 ### 屏幕分享回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onScreenCaptureStarted](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a7d15537d26fb001045ff95157d59ed3f) | 当屏幕分享开始时，SDK 会通过此回调通知。 |
 | [onScreenCapturePaused](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a12c57991389e32f04a56774df5d1ce76) | 当屏幕分享调用 [TRTCCloud.pauseScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) 暂停时，SDK 会通过此回调通知。 |
 | [onScreenCaptureResumed](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ade88963a254d297d3be1993e8a599f6e) | 当屏幕分享调用 [TRTCCloud.resumeScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e) 恢复时，SDK 会通过此回调通知。 |
@@ -327,15 +327,15 @@
 
 ### 视频数据帧的自定义渲染回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                 |
+| ------------------------------------------------------------ | -------------------- |
 | [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a41b44f9b0583bbf56ad9e96065ea825c) | 自定义视频渲染回调。 |
 
 
 ### 声音数据帧的自定义处理回调（只读）
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [onCapturedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a13dfcc17ca7ea6bcff7b0f5f6d167e33) | 本地麦克风采集到的音频数据回调。 |
 | [onPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a60a54a148edf641a85fbc07bc294fe11) | 混音前的每一路远程用户的音频数据，即混音前的各路原始数据。例如，对某一路音频进行文字转换时，您必须使用该路音频的原始数据。 |
 | [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | 各路音频数据混合后送入喇叭播放的音频数据。 |
@@ -344,22 +344,22 @@
 ### 日志相关回调
 >建议在比较早初始化的类中设置回调对象，例如 Application。
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述                 |
+| ------------------------------------------------------------ | -------------------- |
 | [onLog](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a77d78090666e330606b670bf8ce2d854) | 有日志打印时的回调。 |
 
 
 ### 截图回调
 
-| API | 描述 |
-|-----|-----|
+| API                                                          | 描述             |
+| ------------------------------------------------------------ | ---------------- |
 | [onSnapshotComplete](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aa9c6d0488175f6d19f5f38f6307cfea4) | 截图完成时回调。 |
 
 
 ## 关键类型定义
 
-| 类名 | 描述 |
-|-----|-----|
+| 类名                                                         | 描述                                    |
+| ------------------------------------------------------------ | --------------------------------------- |
 | [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a1751af68516425e5556e2057d0c90915) | 进房参数。 |
 | [TRTCVideoEncParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoEncParam) | 编码参数。 |
 | [TRTCNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCNetworkQosParam) | 网络流控相关参数。 |
