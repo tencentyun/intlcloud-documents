@@ -8,7 +8,7 @@ The current scale-out instance specification is the default instance specificati
 - For a pay-as-you-go cluster, all added nodes support the pay-as-you-go billing mode.
 
 ## Directions
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page.
 2. Select **Cluster Resource** > **Resource Management** > **Scale Out** on the cluster details page and select the type of nodes to be added (core, task, or router), optional services, scale-out quantity, etc. as needed.
 ![](https://main.qcloudimg.com/raw/f10d928355103effbfa67113f4ef6594.png)
 3. After selecting the required components and quantity for the added nodes, click **OK** and make the payment. Then, the cluster will start the scale-out operation, which will usually take 10–20 minutes.
