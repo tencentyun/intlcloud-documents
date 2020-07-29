@@ -32,7 +32,7 @@ to generate the corresponding gRPC code.
 Move the 8 generated files to an appropriate location in the project.
 
 ## Game Process Integration Process
-![](https://main.qcloudimg.com/raw/528941c9a0e6aa1912552b6ad525bd72.png)
+![](https://main.qcloudimg.com/raw/96018551bc88c71a02333b1f197b3111.png)
 
 #### Server API list
 
