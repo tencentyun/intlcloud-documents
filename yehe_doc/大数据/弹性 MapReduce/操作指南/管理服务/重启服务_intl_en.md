@@ -5,7 +5,7 @@ After a component configuration item is modified, the corresponding service need
 - There are two policies for failure-handling when node restart fails: waiting for processing in case of failure or continuing processing in case of single node failure.
 
 ## Directions
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page.
 2. In **Cluster Service**, click **Restart Service**, or select the block of the component to be restarted, check the service **role** to be restarted in **Operation** > **Role Management**, and click **Restart Service**.
  - When restarting the service directly on the cluster details page, you need to select the service name, service role, restart method, whether to enable rolling restart, and failure-handling policy.
 ![](https://main.qcloudimg.com/raw/b3117cc5580453d007ed0e888bb18fc2.png)

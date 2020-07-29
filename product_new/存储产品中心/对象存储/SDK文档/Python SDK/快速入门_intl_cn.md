@@ -1,14 +1,14 @@
 ## 下载与安装
 
 #### 相关资源
-对象存储的 XML Python SDK  资源下载地址： [XML Python SDK](https://github.com/tencentyun/cos-python-sdk-v5)。
-SDK 快速下载地址：[XML Python SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip?_ga=1.29598463.1783616852.1583375173)。	
+对象存储的 XML Python SDK  源码下载地址： [XML Python SDK](https://github.com/tencentyun/cos-python-sdk-v5)。
+SDK 快速下载地址：[XML Python SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip?)。	
 演示示例 Demo 下载地址：[XML Python Demo](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py)。
 
 #### 环境依赖
 
-对象存储的 XML Python SDK  目前可以支持 Python 2.6、Python 2.7 以及 Python 3.x。
->关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
+对象存储的 XML Python SDK  目前可以支持 Python 2.7 以及 Python 3.4 及以上。
+>关于文章中出现的 SecretId、SecretKey、Bucket、Region 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 #### 安装 SDK
 
