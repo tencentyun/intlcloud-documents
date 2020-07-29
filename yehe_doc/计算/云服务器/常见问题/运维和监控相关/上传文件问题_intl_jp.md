@@ -10,7 +10,7 @@
 
 ### ローカルホストとWindows CVM間でデータを転送する方法。
 以下の方法でデータを転送できます。
-- ローカルホストとWindows CVMでQQ.exeなどのツールを別個にインストールします。
+- RDPファイルを使用してローカルWindowsコンピューターからWindows CVMにログインする場合、ローカルファイルを直接CVMにドラッグしてアップロードできます。
 - [MSTSCを使用してファイルをWindows CVMにアップロード](https://intl.cloud.tencent.com/document/product/213/2761)します。
 - [Linux CVMでFTP サービスの構築](https://intl.cloud.tencent.com/document/product/213/10912)を介して、ファイルをCVMに転送します。　
 
