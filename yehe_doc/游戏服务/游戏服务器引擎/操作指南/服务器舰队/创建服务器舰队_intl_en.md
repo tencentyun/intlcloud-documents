@@ -32,7 +32,7 @@ You have completed the [GSE Application Form](https://intl.cloud.tencent.com/app
 #### Deployment configuration
   - Server Instance Type: server model of the server fleet to be created.
   - Enable VPC: after enabling access to Tencent Cloud VPC network, you can access the server and other resources under your VPC.
-    ![](https://main.qcloudimg.com/raw/ab0e82ae9cea60618ef634ed58c5230f.jpg)
+    ![](https://main.qcloudimg.com/raw/5284d28b11f74f42a3a3c39e2fc2f45a.png)
 
 
  <span id="test12"></span>

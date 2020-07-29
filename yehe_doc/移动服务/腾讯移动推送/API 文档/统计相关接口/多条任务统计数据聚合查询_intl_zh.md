@@ -26,7 +26,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
 | 参数名称  | 必选 | 类型         | 描述                                                         |
 | --------- | ---- | ------------ | ------------------------------------------------------------ |
 | PlanId   | 是   | String       | 多条任务聚合统计的字段，对应推送参数中的 “Plan_id”          |
-| groupId   | 是   | String       | 多条任务聚合统计的字段，对应推送参数中的 “group_Id” ，该参数将逐渐废弃           |
+| groupId   | 是   | String       | 多条任务聚合统计的字段，对应推送参数中的 “group_Id”，该参数将逐渐废弃           |
 | startDate | 是   | String       | 查询开始日期<li>格式：YYYY-MM-DD</li><li>限制：只能聚合统计最近7天的推送任务</li> |
 | endDate   | 是   | String | 查询截止日期，格式：YYYY-MM-DD                               |
 >?若请求参数中同时存在 PlanId 和 groupId，则默认按 planId 查询。
@@ -47,12 +47,12 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
 | pushOnlineUv        | Integer  | 实际发送数<br/>在计划发送设备数中，实际已经成功下发到厂商通道的或者通过 TPNS 通道对进程在线终端下发成功的有效设备数。                                                     |
 | arrivalUv         | Integer  | 抵达设备数（包含 TPNS 通道及厂商通道抵达回执，其中华为、魅族通道抵达回执需要手动添加配置，详情可参见 [厂商通道抵达回执获取指南](https://intl.cloud.tencent.com/document/product/1024/35246)）|
 | verifySvcUv         | Integer  | 抵达设备数（仅 TPNS 通道、ROG 通道、FCM 通道有效。其他厂商通道由 TPNS 实际发送 pushOnlineUv 指标补齐）**注意：**此字段后续将下线，抵达数据建议参考 arrivalUv 字段|
-| callbackVerifySvcUv | Integer  | 厂商通道抵达回执（华为、魅族通道抵达回执需要手动添加配置，详情可参见 [厂商通道抵达回执获取指南](https://intl.cloud.tencent.com/document/product/1024/35246))**注意：**此字段后续将下线，抵达数据建议参考 arrivalUv 字段||
+| callbackVerifySvcUv | Integer  | 厂商通道抵达回执（华为、魅族通道抵达回执需要手动添加配置，详情可参见 [厂商通道抵达回执获取指南](https://intl.cloud.tencent.com/document/product/1024/35246)）**注意：**此字段后续将下线，抵达数据建议参考 arrivalUv 字段||
 | verifyUv            | Integer  | 展示（已废弃，后续会下线此字段）                                                         |
 | clickUv             | Integer  | 点击                                                         |
 | cleanupUv           | Integer  | 清除                                                         |
 
->?数组中“all” 通道对应汇总统计数据。
+>?数组中“all”通道对应汇总统计数据。
 -  汇总数据中 verifySvcUv（抵达设备），verifyUv（展示），clickUv（点击），cleanupUv（清除）指标只汇总计算了 TPNS 通道数据、ROG 通道数据、FCM 通道数据。
 -  汇总数据中 pushActiveUv（计划发送）, pushOnlineUv（实际发送）汇总计算了 TPNS 通道 + 厂商通道的数据。
 -  汇总数据中 callbackVerifySvcUv（厂商通道抵达回执）汇总计算了   厂商通道 callbackVerifySvcUv（厂商通道抵达回执）+ TPNS 通道 verifySvcUv（抵达设备）+ ROG 通道 verifySvcUv（抵达设备）+ FCM 通道 verifySvcUv（抵达设备）。
@@ -96,7 +96,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 0,
                 "verifySvcUv": 0,
                 "callbackVerifySvcUv": 0,
-		        "arrivalUv": 0,
+                "arrivalUv": 0,
                 "verifyUv": 0,
                 "clickUv": 0,
                 "cleanupUv": 0
@@ -109,7 +109,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 0,
                 "verifySvcUv": 0,
                 "callbackVerifySvcUv": 0,
-		        "arrivalUv": 0,
+                "arrivalUv": 0,
                 "verifyUv": 0,
                 "clickUv": 0,
                 "cleanupUv": 0
@@ -122,7 +122,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 0,
                 "verifySvcUv": 0,
                 "callbackVerifySvcUv": 0,
-		        "arrivalUv": 0,
+                "arrivalUv": 0,
                 "verifyUv": 0,
                 "clickUv": 0,
                 "cleanupUv": 0
@@ -135,7 +135,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 0,
                 "verifySvcUv": 0,
                 "callbackVerifySvcUv": 0,
-		        "arrivalUv": 0,
+                "arrivalUv": 0,
                 "verifyUv": 0,
                 "clickUv": 0,
                 "cleanupUv": 0
@@ -148,7 +148,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 0,
                 "verifySvcUv": 0,
                 "callbackVerifySvcUv": 0,
-		        "arrivalUv": 0,
+                "arrivalUv": 0,
                 "verifyUv": 0,
                 "clickUv": 0,
                 "cleanupUv": 0
@@ -161,7 +161,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 0,
                 "verifySvcUv": 0,
                 "callbackVerifySvcUv": 0,
-		        "arrivalUv": 0,
+                "arrivalUv": 0,
                 "verifyUv": 0,
                 "clickUv": 0,
                 "cleanupUv": 0
@@ -174,7 +174,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 0,
                 "verifySvcUv": 0,
                 "callbackVerifySvcUv": 0,
-		        "arrivalUv": 0,
+                "arrivalUv": 0,
                 "verifyUv": 0,
                 "clickUv": 0,
                 "cleanupUv": 0
@@ -187,7 +187,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 4641,
                 "verifySvcUv": 4641,
                 "callbackVerifySvcUv": 0,
-		        "arrivalUv": 0,
+                "arrivalUv": 0,
                 "verifyUv": 4639,
                 "clickUv": 3818,
                 "cleanupUv": 4200
@@ -200,7 +200,7 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
                 "pushOnlineUv": 4641,
                 "verifySvcUv": 4641,
                 "callbackVerifySvcUv": 4641,
-		        "arrivalUv": 4641,
+                "arrivalUv": 4641,
                 "verifyUv": 4639,
                 "clickUv": 3818,
                 "cleanupUv": 4200

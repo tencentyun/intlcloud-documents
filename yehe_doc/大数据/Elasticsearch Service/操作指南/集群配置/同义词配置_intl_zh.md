@@ -26,11 +26,11 @@
 
 3. 单击【高级配置】，进入【同义词配置】页面
 
-   ![1594288413628](C:\Users\robinren\AppData\Roaming\Typora\typora-user-images\1594288413628.png)
+   ![1594288413628](https://main.qcloudimg.com/raw/1d383ad1a713b36c66e31471bcf8756b.jpg)
 
 4. 单击【更新词典】，在更新同义词页面上传同义词文件
 
-   ![1594288646412](C:\Users\robinren\AppData\Roaming\Typora\typora-user-images\1594288646412.png)
+   ![1594288646412](https://main.qcloudimg.com/raw/eec05469b6cefbe6a3f4243edb6b443f.jpg)
 
 5. 上传完成后，单击【保存】
 

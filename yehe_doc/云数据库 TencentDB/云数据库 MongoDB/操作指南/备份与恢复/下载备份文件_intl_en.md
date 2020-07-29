@@ -1,5 +1,5 @@
 ## Getting Backup Download Link
->If you need to use the backup download feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+
 >
 1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and click an instance name in the instance list to enter the instance management page.
 2. On the **Backup and Rollback** > **Backup List** page, click **Download** to get the region code, bucket, and download link that are required for backup download.

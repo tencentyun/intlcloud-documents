@@ -10,7 +10,7 @@ You have completed the [GSE Application Form](https://intl.cloud.tencent.com/app
 
 1. Log in to the [GSE Console](https://console.cloud.tencent.com/gse/asset) and click **Asset** on the left sidebar.
 2. Click **Create** in the top-left corner.
-3. You can create an asset package by uploading one on the console page ("Page Upload") or through the command line ("CLI Upload").
+3. You can create an asset package by uploading one on the console page ("Page Upload") .
 
 #### Page upload
 Enter the basic asset package information, such as name and version, select the OS and the submission mode, upload the code, and click **OK**.
@@ -24,9 +24,7 @@ Enter the basic asset package information, such as name and version, select the 
      - Installation script: script used to execute the tasks for installing the asset package on the GSE-hosted server. This file must be placed in the root directory of the asset package and will run once during fleet creation.
 ![](https://main.qcloudimg.com/raw/776e5e422d9ce4afb68de44356e4a303.png)
 
-#### CLI upload
- Alternately, you can create an asset package through the Tencent Cloud command line interface (CLI).<br>
-![](https://main.qcloudimg.com/raw/58b995e5e3032e8c54dfb7ea72435ff6.jpg)
+
 
 4. After the asset package is successfully created, you can edit or delete it, [create a server fleet](https://intl.cloud.tencent.com/document/product/1055/36675) for it, or perform other operations on the asset list page.
 

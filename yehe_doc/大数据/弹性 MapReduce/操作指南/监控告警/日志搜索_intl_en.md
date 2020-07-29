@@ -4,11 +4,11 @@ The log search feature collects component operation logs and allows log search. 
 Log search supports filtering logs by current cluster, log file, server IP, and time range. A log result includes the server IP, absolute path of the log on the server, and log content.
 
 ## Directions
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page.
 2. On the cluster details page, select **Cluster Monitoring** > **Log Search** to filter and view log content by current cluster, log file, server IP, and time range.
-![](https://main.qcloudimg.com/raw/e358af66750e3764ffcff9ce080cdb18.png)
+
 **View Context:** during troubleshooting, you usually need to pay attention to contextual logs of keywords. On the log search result list page, you can select **Operation** > **View Context** to view contextual information of a log.
-![](https://main.qcloudimg.com/raw/d0b31ccf75bcf29b5c313747a205bc39.png)
+
 
 
 ## Service Types Supported for Log Search

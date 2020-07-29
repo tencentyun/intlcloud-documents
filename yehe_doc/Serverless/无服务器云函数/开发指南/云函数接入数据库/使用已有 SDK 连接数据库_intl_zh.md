@@ -19,7 +19,7 @@
 >
 2. 参考 [初始化 MySQL 数据库](https://intl.cloud.tencent.com/document/product/236/3128) 完成初始化操作，并获取数据库帐户名称及密码。
 3. 在 “[MySQL - 实例列表](https://console.cloud.tencent.com/cdb)” 页面，选择实例 ID 进入数据库详情页面，获取该数据库的**内网地址**、**所属网络**、**内网端口**信息。如下图所示：
-![](https://main.qcloudimg.com/raw/b75a1d566c8e43f435e191777064f24e.png)
+![](https://main.qcloudimg.com/raw/9fc693925406344b169234793205ea48.png)
 
 ### 创建安全组（可选）
 可参考 [云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470) 为您的数据库实例添加安全组。
@@ -29,7 +29,7 @@
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏中的【函数服务】。
 2. 单击需连接数据库的函数名，进入该函数的“函数配置”页面，参考以下信息进行配置。
  - 新增**环境变量**，并参考以下表格填写。如下图所示：
-![](https://main.qcloudimg.com/raw/94a17932ae2a1968d6ab19be4aa3fb91.png)
+![]( https://main.qcloudimg.com/raw/8c75b2184a416c8ee7604402139d1370.png)
 <table align=center>
 <tr>
 <th>key</th>
@@ -57,7 +57,7 @@
 </tr>
 </table>
  - 开启私有网络，并选择和数据库相同的私有网络和子网。如下图所示：
-![](https://main.qcloudimg.com/raw/b605a903a25988de2a148d9baac65678.png)
+![](https://main.qcloudimg.com/raw/757abc018b4767f28902c7ed6465ff47.png)
 
 
 ### 函数代码示例

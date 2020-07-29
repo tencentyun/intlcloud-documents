@@ -3,7 +3,7 @@
 ### 更新词典
 
 你可以单击【更新词典】，进入更新词典页面。有启用词和停用词两项，单击【本地上传】，选择您需要更新的词典文件后，单击【保存】，即可热更新词典（不需要重启集群）。 
-![](https://main.qcloudimg.com/raw/4cf1ec93e344baf34c835f1d92291b17.png)
+![](https://main.qcloudimg.com/raw/eae5afc5c86b2c6731c802dcc49a1fc8.jpg)
 
 ### 关于词典文件的要求及说明  
 

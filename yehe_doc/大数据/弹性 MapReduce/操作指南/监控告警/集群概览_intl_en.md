@@ -2,7 +2,7 @@
 Cluster overview displays a summary of cluster operation status, where you can view the cluster operation status, core service metrics, core server metrics, and top 10 loaded servers.
 
 ## Directions
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page.
 2. Select **Cluster Monitoring** > **Cluster Overview** on the cluster details page to view the current overall conditions of the cluster. The **Cluster Overview** page provides four monitoring views at the cluster level, namely, overall conditions of cluster, key cluster metrics, cluster deployment status, and top 10 loaded servers.
  - **Overall Conditions of Cluster** displays whether the current cluster status is normal, component quantity, server quantity, and whether metadata is online.
  ![](https://main.qcloudimg.com/raw/e05893b40e35f5b5b80dfcbbb8127c2c.png)
