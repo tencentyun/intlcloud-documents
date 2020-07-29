@@ -9,8 +9,8 @@ You have signed up for a Tencent Cloud account and completed identity verificati
 
 
 ## Directions
-
-### Creating VPC<span id="createVPC"></span>
+<span id="createVPC"></span>
+### Creating VPC
 Create a VPC and subnet as instructed in [Building VPC](https://intl.cloud.tencent.com/document/product/215/31891).
 
 ### Creating database instance
