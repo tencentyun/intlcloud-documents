@@ -10,7 +10,7 @@ FTP는 사용자의 실제 필요에 따라 직접 설치 및 설정해야 합�
 
 ### 로컬 호스트와 Windows CVM 간의 데이터 전송은 어떻게 하나요?
 다음과 같은 방법으로 전송할 수 있습니다.
-- 로컬 호스트와 Windows CVM에 QQ.exe 등의 툴을 각각 설치하여 데이터를 전송할 수 있습니다.
+- Windows 시스템 로컬 컴퓨터에서 RDP 파일을 사용하여 Windows CVM에 로그인하면 로컬 파일을 CVM에 직접 드래그하여 업로드할 수 있습니다.
 - [원격 데스크톱에서 MSTSC를 연결하는 방식으로 데이터 전송](https://intl.cloud.tencent.com/document/product/213/2761)을 통해 데이터를 전송할 수 있습니다.
 - [FTP 서비스 구축](https://intl.cloud.tencent.com/document/product/213/10912)을 통해 CVM에 파일을 업로드할 수 있습니다.
 
