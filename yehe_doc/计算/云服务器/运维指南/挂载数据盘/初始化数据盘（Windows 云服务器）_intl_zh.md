@@ -9,7 +9,6 @@
 ## 操作步骤
 
 请根据磁盘容量大小选择合适的操作指引：
-- 磁盘容量小于2TB时，请 [初始化云硬盘（Windows）](https://intl.cloud.tencent.com/document/product/362/6734)。
-- 磁盘容量大于等于2TB时，请 [初始化云硬盘（Windows）](https://intl.cloud.tencent.com/document/product/362/6735)。
-
+- 磁盘容量小于2TB时，请 [初始化云硬盘（Windows）](https://intl.cloud.tencent.com/document/product/362/31597)。
+- 磁盘容量大于等于2TB时，请 [初始化云硬盘（Windows）](https://intl.cloud.tencent.com/document/product/362/31598)。
 
