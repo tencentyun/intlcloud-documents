@@ -58,10 +58,5 @@
 白盒密钥管理属于密钥管理系统 KMS 子产品，使用白盒密钥管理需要额外购买开通对应实例，白盒密钥管理属于一次性付费产品，一次开通可以永久使用。了解更多白盒密钥功能介绍及操作，请参见白盒密钥 [概述](https://intl.cloud.tencent.com/document/product/1030/35745) 和 [操作指南](https://intl.cloud.tencent.com/document/product/1030/35746)。
 
 
-| 白盒密钥 | 说明 |
-|---------|---------|
-| 购买方式 | 一次性付费，详情请参见 [购买方式](https://intl.cloud.tencent.com/document/product/1030/31967) |
-| 开通费用 | 2万元（不支持退款） |
-| 使用时间 | 永久 |
 
 
