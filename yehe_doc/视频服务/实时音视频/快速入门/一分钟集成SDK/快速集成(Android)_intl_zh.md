@@ -87,7 +87,7 @@ defaultConfig {
        }
 }
 ```
->目前 TRTC SDK 支持 armeabi， armeabi-v7a 和 arm64-v8a。
+>?目前 TRTC SDK 支持 armeabi， armeabi-v7a 和 arm64-v8a。
 >
 7. 单击【Sync Now】，完成 TRTC SDK 的集成工作。
 
@@ -109,6 +109,7 @@ defaultConfig {
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
+>! 请勿设置 `android:hardwareAccelerated="false"`，关闭硬件加速之后，会导致对方的视频流无法渲染
 
 ## 设置混淆规则
 在 proguard-rules.pro 文件，将 TRTC SDK 相关类加入不混淆名单：
