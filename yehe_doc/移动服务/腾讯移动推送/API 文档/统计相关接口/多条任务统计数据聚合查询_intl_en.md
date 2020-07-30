@@ -26,9 +26,10 @@ https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
 | Parameter Name | Required | Type | Description |
 | --------- | ---- | ------------ | ------------------------------------------------------------ |
 | PlanId    | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "PlanId" in push parameters            |
-| groupId   | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "group_Id" in push parameters. This field will be deprecated later.    |
+| groupId   | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "group_Id" in push parameters. This field will be deprecated later.   |
 | startDate | Yes   | String | Query start date<li>Format: YYYY-MM-DD</li><li>Limit: only data of push tasks in the last 7 days can be aggregated</li> |
 | endDate   | Yes   | String | Query end date. Format: YYYY-MM-DD                                 |
+>?If both `PlanId` and `groupId` are passed in, the `PlanId` parameter will be used by default. 
 
 #### Response parameters
 
