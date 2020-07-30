@@ -1,3 +1,5 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [API Gateway API 3.0]( https://intl.cloud.tencent.com/document/product/628/36711) which is standardized and faster.
+>
 ## API Description
 This API (UpdateApiKey) is used to update a created API key pair.
 
@@ -9,7 +11,7 @@ The list below contains only the API request parameters. Other parameters can be
 | secretID | Yes | String | secretID to be updated. |
 | secretKey | No | String | secretKey to be updated, which is required when a custom key is updated. It can contain 10 to 50 letters, digits, and underscores. |
 
->`secretKey` should be entered when you update a custom key and can be ignored for automatically generated keys. If you want to create a custom key, please make sure that you are in the whitelist. You can contact your sales rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be added to the whitelist.
+>`secretKey` should be entered when you update a custom key and can be ignored for automatically generated keys. If you want to create a custom key, please make sure that you are in the allowlist. You can contact your sales rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be added to the allowlist.
 
 ## Output Parameters
 | Parameter Name | Type | Description |
@@ -33,13 +35,13 @@ https://apigateway.api.qcloud.com/v2/index.php?
 Below is a sample return:
 ```
 {
-	"code": "0",
-	"message": "",
-	"codeDesc": "Success",
-	"secretID": "AKIDXXXXWKipDlK",
-	"secretKey": "adasfdasffa",
-	"type": "auto",
-	"modifiedTime": "2017-08-07T00:00:00Z"
+"code": "0",
+"message": "",
+"codeDesc": "Success",
+"secretID": "AKIDXXXXWKipDlK",
+"secretKey": "adasfdasffa",
+"type": "auto",
+"modifiedTime": "2017-08-07T00:00:00Z"
 }
 ```
 
@@ -54,12 +56,12 @@ https://apigateway.api.qcloud.com/v2/index.php?
 Below is a sample return:
 ```
 {
-	"code": "0",
-	"message": "",
-	"codeDesc": "Success",
-	"secretID": "myTestsecretID",
-	"secretKey": "myTestSecretKey",
-	"type": "manual",
-	"modifiedTime": "2017-08-07T00:00:00Z"
+"code": "0",
+"message": "",
+"codeDesc": "Success",
+"secretID": "myTestsecretID",
+"secretKey": "myTestSecretKey",
+"type": "manual",
+"modifiedTime": "2017-08-07T00:00:00Z"
 }
 ```
