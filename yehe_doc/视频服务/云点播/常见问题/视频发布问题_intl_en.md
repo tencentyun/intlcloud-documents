@@ -8,6 +8,7 @@ VOD provides a rich set of transcoding features for video release. In order to d
 
 The detailed specifications and technical parameters of output videos after transcoding are as follows:
 ![](https://main.qcloudimg.com/raw/8b6b539f861b35444a488ecbaebc9eca.png)
+>?Right-click and select **Open image in new tab** to view a high-definition image.
 
 If the resolution of an uploaded video does not match the values above, the video will be transcoded to a resolution with a standard width in the corresponding category and a proportionally scaled height.
 
@@ -49,17 +50,13 @@ The definition of a video during playback depends on the following two aspects:
 
 
 
-### What are blacklist/whitelist?
+### What is blocklist/allowlist?
 
-The blacklist/whitelist can be used to allow or deny the requests for accessing videos published through player code from particular webpages.
-These lists are effective to videos published through player code. You can enable this feature globally and specify a blacklist or a whitelist. Each list can contain up to 10 URLs by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
+The blocklist/allowlist can be used to allow or deny the requests for accessing videos published through player code from particular webpages.
+These lists are effective to videos published through player code. You can enable this feature globally and specify a blocklist or an allowlist. Each list can contain up to 10 URLs by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
 
 ### Does VOD support publishing links on WeChat Official Account?
 Yes.
 
 ### Can I add ads to videos published through an application player?
 Adding ads is currently not supported. We will support this feature as soon as possible.
-
-### Why isn't a video published in VOD played back automatically?
-
-If no custom configuration is made, the default configuration will be used when a video is uploaded and published, that is, the autoplay feature is disabled. However, you can modify this setting by checking **Autoplay** when publishing videos.
