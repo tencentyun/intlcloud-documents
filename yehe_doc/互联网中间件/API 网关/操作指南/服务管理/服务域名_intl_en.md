@@ -13,5 +13,5 @@ A [service has been created](https://intl.cloud.tencent.com/document/product/628
 ## Service Domain Name Description
 * Sample service domain name: `service-a1b2c3d4-1234567890.gz.apigw.tencentcs.com`.
 * A service subdomain name contains your service name, `APPID`, and region, such as `http://{your-unique-id}.{region}.apigw.tencentcs.com`.
-* If both private network VPC and public network are selected as the access method, two subdomain names will be obtained for private network VPC access and public network access, respectively. Private network VPC access is made available through a whitelist. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+* If both private network VPC and public network are selected as the access method, two subdomain names will be obtained for private network VPC access and public network access, respectively. Private network VPC access is made available through an allowlist. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 * API Gateway has also enabled the wildcard domain name SSL certificate feature; therefore, the subdomain name of a service can be accessed through the HTTPS protocol at an access address in the format of `https://{your-unique-id}.{region}.apigw.tencentcs.com`.

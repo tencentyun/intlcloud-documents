@@ -7,7 +7,7 @@ To ensure data reliability, you are recommended to choose two or three replicas 
 ### How do I fix production/consumption errors when a new client is connected to CKafka?
 - Check whether telnet works. It might be a network issue. Check if Kafka and the producer are in the same network.
 - Check whether the accessed vip-port is correctly configured.
-- Check whether the topic whitelist is enabled. If yes, you need to configure the correct IP for access.
+- Check whether the topic allowlist is enabled. If yes, you need to configure the correct IP for access.
 
 ### The CKafka message retention period is configured to 1 minute. Will the heaped messages be deleted immediately after 1 minute?
 Not necessarily. Message deletion is related to not only the retention period configuration but also the data size of produced messages.

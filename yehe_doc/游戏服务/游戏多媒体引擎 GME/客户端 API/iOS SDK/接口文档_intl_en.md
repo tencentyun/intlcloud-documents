@@ -14,13 +14,13 @@ This document describes how to access and debug the GME APIs for iOS.
 |EnableSpeaker		| Enables speaker 	|
 
 >?
->- Configure your project before using GME; otherwise, the SDK will not take effect.
->- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
->- GME APIs should be called in the same thread.
->- The `Poll` API should be called periodically for GME to trigger event callbacks.
->- For GME callback messages, please see the callback message list.
->- Operation on devices should be performed after successful room entry.
->- For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
+- Configure your project before using GME; otherwise, the SDK will not take effect.
+- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
+- GME APIs should be called in the same thread.
+- The `Poll` API should be called periodically for GME to trigger event callbacks.
+- For GME callback messages, please see the callback message list.
+- Operation on devices should be performed after successful room entry.
+- For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
 
 ## Voice Chat Flowchart
 ![](https://main.qcloudimg.com/raw/e536525aa47c06a5a84bb6c8d4851b22.png)
@@ -85,8 +85,7 @@ For more information on how to get parameters, please see [Access Guide](https:/
 This API requires the `AppID` from the Tencent Cloud Console and the `openID` as parameters. The `openID` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
 
 >!The SDK must be initialized before a client can enter a room.
->
->#### Function prototype
+#### Function prototype
 
 ```
 ITMGContext -(int)InitEngine:(NSString*)sdkAppID openID:(NSString*)openId
@@ -102,6 +101,10 @@ ITMGContext -(int)InitEngine:(NSString*)sdkAppID openID:(NSString*)openId
 |----|----|
 |QAV_OK= 0| Initialized SDK successfully. |
 |QAV_ERR_SDK_NOT_FULL_UPDATE= 7015| Check whether the SDK file is complete. You are recommended to delete it and then import the SDK again. |
+
+The returned value `AV_ERR_SDK_NOT_FULL_UPDATE` is only a reminder but will not cause an initialization failure.
+- If this error is reported during integration, please check the integrity and version of the SDK file as prompted.
+- If this error is returned after executable file export, please ignore it and try to avoid displaying it in the UI.
 
 #### Sample code 
 
@@ -130,7 +133,7 @@ ITMGContext -(QAVResult)Pause
 ```
 
 ### Resuming system
-When a `Resume` event occurs in the system, the engine should also be notified for resumption. The `Resume` API only supports resuming voice chat.
+When a `Resume` event occurs in the system, the engine should be also notified for resumption. The `Resume` API only supports resuming voice chat.
 #### Function prototype
 
 ```
@@ -184,7 +187,7 @@ The specific implementation is to modify `kAudioSessionProperty_AudioCategory`. 
 ## Voice Chat Room APIs
 You should initialize and call the SDK to enter a room before voice chat can start.
 If you have any questions when using the service, please see [FAQs About Voice Chat](https://intl.cloud.tencent.com/document/product/607/30257).
-
+ 
 | API | Description |
 | ------------- |:-------------:|
 |GenAuthBuffer    	| Initializes authentication |
@@ -263,7 +266,7 @@ After the client enters the room, the message `ITMG_MAIN_EVENT_TYPE_ENTER_ROOM` 
 ```
 
 #### Data details
-| Message | Data | Example |
+| Message | Data | Sample |
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				|result; error_info					|{"error_info":"","result":0}|
 
@@ -319,7 +322,7 @@ After the client exits a room, a callback will be returned with the message bein
 
 #### Data details
 
-| Message | Data | Example |
+| Message | Data | Sample |
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    				|result; error_info  					|{"error_info":"","result":0}|
 
@@ -362,10 +365,10 @@ After the room type is set, the event message `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_
 
 | Event Subtype | Parameter | Description |
 | ------------- |:-------------:|-------------|
-| ITMG_ROOM_CHANGE_EVENT_ENTERROOM|1 | Indicates that the existing audio type is inconsistent with and changed to that of the entered room|
+| ITMG_ROOM_CHANGE_EVENT_ENTERROOM		|1 	| Indicates that the existing audio type is inconsistent with and changed to that of the entered room	|
 | ITMG_ROOM_CHANGE_EVENT_START			|2	| Indicates that a client is already in the room and the audio type starts changing (e.g., calling the `ChangeRoomType` API to change the audio type) |
 | ITMG_ROOM_CHANGE_EVENT_COMPLETE		|3	| Indicates that a client is already in the room and the audio type has been changed |
-| ITMG_ROOM_CHANGE_EVENT_REQUEST			|4	| Indicates that a room member calls the `ChangeRoomType` API to request a change of room audio type |
+| ITMG_ROOM_CHANGE_EVENT_REQUEST			|4	| Indicates that a room member calls the `ChangeRoomType` API to request a change of room audio type |	
 
 
 #### Sample code  
@@ -381,7 +384,7 @@ After the room type is set, the event message `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_
 ```
 
 #### Data details
-| Message | Data | Example |
+| Message | Data | Sample |
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE    		|result; error_info; new_room_type	|{"error_info":"","new_room_type":0,"result":0}|
 
@@ -433,21 +436,21 @@ Notifications for audio events are subject to a threshold, and a notification wi
 ```
 
 ### Room call quality control event
-The message for quality control event is `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY`. The returned parameters include `weight`, `floss`, and `delay`, which represent the following information. The event message will be identified in the `OnEvent` function.
+The message for quality control event triggered after room entry is `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALITY`. The returned parameters include `weight`, `loss`, and `delay`, which represent the following information. The event message will be identified in the `OnEvent` function.
 
-| Parameter | Description |
-| ------------- |-------------|
-|weight    				| Value range: 1–5. 5 indicates excellent sound quality, 1 indicates very poor (barely usable) sound quality, and 0 represents an initial meaningless value |
-|floss    				| Packet loss rate |
-|delay    		| Voice chat delay in ms |
+| Parameter | Type | Description |
+| ------------- |-------------|-------------|
+|weight  |int  				|Value range: 1–50. 50 indicates excellent sound quality, 1 indicates very poor (barely usable) sound quality, and 0 represents an initial meaningless value |
+|loss   |double				| Upstream packet loss rate |
+|delay   |int 		| Voice chat delay in ms |
 
 
 
 
 ### Message details
 
-| Message | Description  |
-| ------------- |-------------|
+| Message | Description   
+| ------------- |:-------------:|
 |ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				       | Indicates that a member enters an audio/video room |
 |ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    	         				| Indicates that a member exits an audio/video room |
 |ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT    		       | Indicates that a room is disconnected for network or other reasons |
@@ -455,7 +458,7 @@ The message for quality control event is `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_QUALI
 
 ### Details of data corresponding to the message
 
-| Message | Data | Example |
+| Message | Data | Sample |
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    				|result; error_info					|{"error_info":"","result":0}|
 | ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    				|result; error_info  					|{"error_info":"","result":0}|
@@ -489,7 +492,7 @@ When Enable/Disable Mic/Speaker is clicked on the UI, the following practices ar
 |IsAudioPlayDeviceEnabled    		| Gets playback device status	|
 |EnableAudioRecv    					| Enables/disables audio downstreaming	|
 |IsAudioRecvEnabled    				| Gets audio downstreaming status	|
-|GetSpeakerLevel    					| Gets real-time speaker volume level |
+|GetSpeakerLevel    					| Gets real-time speaker volume level |	
 |GetRecvStreamLevel					| Gets real-time downstreaming audio levels of other members in room |
 |SetSpeakerVolume    				| Sets speaker volume level		|
 |GetSpeakerVolume    				| Gets speaker volume level		|
@@ -806,7 +809,7 @@ ITMGContext GetAudioCtrl -(QAVResult)EnableLoopBack:(BOOL)enable
 
 
 ## Speech-to-Text Conversion Flowchart
-<img src="https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png" width="70%">
 
 
 ## Voice Messaging and Speech-to-Text
@@ -818,7 +821,7 @@ If you have any questions when using the service, please see [Voice Messaging an
 
 | API | Description |
 | ------------- |:-------------:|
-|Init    | Initializes GME |
+|Init    	| Initializes GME 	| 
 |Poll    	| Triggers event callback	|
 |Pause   	| Pauses system	|
 |Resume 	| Resumes system	|
@@ -959,9 +962,9 @@ The callback function `OnEvent` will be called after the streaming speech recogn
 | file_id 		| Backend URL address of recording file, which will be retained for 90 days	|
 
 | Error Code | Description | Suggested Solution |
-| ------------- |-------------|-------------|
-|32775	| Streaming speech-to-text conversion failed, but recording succeeded.	| Call the `UploadRecordedFile` API to upload the recording file and then call the `SpeechToText` API to perform speech-to-text conversion.|
-|32777	| Streaming speech-to-text conversion failed, but recording and upload succeeded.	| The message returned contains a backend URL after successful upload. Call the `SpeechToText` API to perform speech-to-text conversion.|
+| ------------- |:-------------:|:-------------:|
+|32775	| Streaming speech-to-text conversion failed, but recording succeeded.	| Call the `UploadRecordedFile` API to upload the recording file and then call the `SpeechToText` API to perform speech-to-text conversion.
+|32777	| Streaming speech-to-text conversion failed, but recording and upload succeeded.	| The message returned contains a backend URL after successful upload. Call the `SpeechToText` API to perform speech-to-text conversion.
 
 #### Sample code  
 ```
@@ -1349,7 +1352,7 @@ The passed parameters include `result`, `file_path`, and `text` (recognized text
 |32770  | Network failed. | Check whether the device can access the internet. |
 |32772  | Failed to decode the returned packet. | Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
 |32774  | No `appinfo` is set. | Check whether the authentication key is correct and whether the voice messaging and speech-to-text feature is initialized. |
-|32776  | `authbuffer` check failed. | `authbuffer` check failed. | Check whether `authbuffer` is correct. |
+|32776  | `authbuffer` check failed. | Check whether `authbuffer` is correct. |
 |32784  | Incorrect speech-to-text conversion parameter. | Check whether the API parameter `fileid` in the code is empty. |
 |32785  | Speech-to-text translation returned an error. | Error with the backend of voice messaging and speech-to-text feature. Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
 
@@ -1468,8 +1471,8 @@ ITMGContext GetRoom -(NSString*)GetQualityTips
 [[[ITMGContext GetInstance]GetRoom ] GetQualityTips];
 ```
 
-### Blacklisting audio data
-This API is used to add an ID to the audio data blacklist. The returned value of 0 indicates that the API is successfully called.
+### Adding to audio data blocklist
+This API is used to add an ID to the audio data blocklist. The returned value of 0 indicates that the API is successfully called.
 #### Function prototype  
 
 ```
@@ -1477,7 +1480,7 @@ ITMGContext GetAudioCtrl -(QAVResult)AddAudioBlackList:(NSString*)openID
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| openId    |NSString      | ID to be blacklisted |
+| openId    |NSString      | ID to be blockd |
 
 #### Sample code  
 
@@ -1485,8 +1488,8 @@ ITMGContext GetAudioCtrl -(QAVResult)AddAudioBlackList:(NSString*)openID
 [[[ITMGContext GetInstance]GetAudioCtrl ] AddAudioBlackList[id]];
 ```
 
-### Unblacklisting audio data
-This API is used to remove an ID from the audio data blacklist. A returned value of 0 indicates the call is successful.
+### Removing from audio data blocklist
+This API is used to remove an ID from the audio data blocklist. A returned value of 0 indicates the call is successful.
 #### Function prototype  
 
 ```
@@ -1494,7 +1497,7 @@ ITMGContext GetAudioCtrl -(QAVResult)RemoveAudioBlackList:(NSString*)openID
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
-| openId    |NSString      | ID to be unblacklisted |
+| openId    |NSString      | ID to be unblocked |
 
 #### Sample code  
 
@@ -1507,8 +1510,8 @@ ITMGContext GetAudioCtrl -(QAVResult)RemoveAudioBlackList:(NSString*)openID
 
 ### Message list
 
-| Message | Description |
-| ------------- |-------------|
+| Message | Description   
+| ------------- |:-------------:|
 |ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    		| Indicates that a member enters an audio room 		|
 |ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    		| Indicates that a member exits an audio room 		|
 |ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT		| Indicates that a room is disconnected for network or other reasons 	|
@@ -1526,7 +1529,7 @@ ITMGContext GetAudioCtrl -(QAVResult)RemoveAudioBlackList:(NSString*)openID
 
 ### Data list
 
-| Message | Data | Example |
+| Message | Data | Sample |
 | ------------- |:-------------:|------------- |
 | ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    		|result; error_info			|{"error_info":"","result":0}|
 | ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    		|result; error_info  			|{"error_info":"","result":0}|

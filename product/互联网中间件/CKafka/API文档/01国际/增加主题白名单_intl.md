@@ -1,6 +1,8 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [CKafka API 3.0](https://intl.cloud.tencent.com/document/product/597/36407) which is standardized and faster.
+>
 ## 1. API Description
 
-This API (AddTopicIpwhitelist) is used to add a whitelist for a topic.
+This API (AddTopicIpwhitelist) is used to add an allowlist for a topic.
 
 Domain name for API request: ckafka.api.qcloud.com
 
@@ -12,7 +14,7 @@ The following request parameter list only provides API request parameters. Other
 | --- | --- | --- | --- |
 | instanceId | Yes | String | Instance ID |
 | topicName | Yes | String | Topic name |
-| ipWhiteList.n | Yes | String | Required. IP whitelist |
+| ipWhiteList.n | Yes | String | Required. IP allowlist |
 
 ## 3. Example
 
@@ -27,10 +29,9 @@ Output:
 ```
   {
       "code" : 0,
-	"codeDesc":"Success"
+"codeDesc":"Success"
       "message" : "ok",
   }
 
 ```
-> Note: If the IP whitelist is empty, all the IPs are not allowed to access this topic. Otherwise, only the IPs in the whitelist are allowed. This API adds the IPs in ipWhiteList to the existing whitelist.
-
+> Note: If the IP allowlist is empty, all the IPs are not allowed to access this topic. Otherwise, only the IPs in the allowlist are allowed. This API adds the IPs in ipWhiteList to the existing allowlist.

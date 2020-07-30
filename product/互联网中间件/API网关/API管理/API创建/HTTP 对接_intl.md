@@ -17,5 +17,4 @@ To integrate with a specific HTTP service, the information such as the service a
 ![HTTP](https://main.qcloudimg.com/raw/8ecc939ea4439cdc4eeaf6cdd4fd9fde.png)
 
 >**Note:**
->To integrate VPC features, you need to apply for a whitelist first.
-
+>To integrate VPC features, you need to apply for an allowlist first.

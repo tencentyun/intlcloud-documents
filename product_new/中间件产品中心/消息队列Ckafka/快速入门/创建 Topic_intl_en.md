@@ -15,7 +15,7 @@ You have [created an instance](https://intl.cloud.tencent.com/document/product/5
  - Name: the topic name, which cannot be changed once entered and can only contain letters, digits, underscores, "-", and ".".
  - Number of Partitions: partition is a physical concept of partitioning. A topic can contain one or more partitions, and CKafka uses partition as the unit for allocation.
  - Number of Replicas: the number of partition replicas which are used to ensure high availability of partitions. For the sake of data reliability, you cannot create a single-replica topic currently. 2 replicas are enabled by default.
- - Whitelist: after the whitelist is enabled, the topic can be accessed only from IPs in the whitelist, thus effectively protecting data security. (The whitelist can be enabled either on the topic creation page or topic editing page.)
+ - Allowlist: after the allowlist is enabled, the topic can be accessed only from IPs in the allowlist, thus effectively protecting data security. (The allowlist can be enabled either on the topic creation page or topic editing page.)
 5. Click **Submit** to complete topic creation.
 
 >The number of replicas is also considered for partitions. For example, if you create 1 topic, 6 partitions, and 2 replicas, then there will be a total of 1 \* 6 \* 2 = 12 partitions.
@@ -24,7 +24,7 @@ If the maximum number of partitions allowed is exceeded during purchase, the fol
 
 ### Viewing a topic
 1. On the CKafka instance list page, click the "ID/Name" of the target instance to enter the instance details page.
-2. On the instance details page, click the **Topic Management** tab to view the information of a topic such as monitoring metrics, number of partitions, and whitelist.
+2. On the instance details page, click the **Topic Management** tab to view the information of a topic such as monitoring metrics, number of partitions, and allowlist.
 
 ### Deleting a topic
 >
@@ -33,5 +33,4 @@ If the maximum number of partitions allowed is exceeded during purchase, the fol
 
 1. On the CKafka instance list page, click the "ID/Name" of the target instance to enter the instance details page.
 2. On the instance details page, click **Topic Management** at the top.
-3. On the topic management page, click **Delete** in the "Operation" column. Or, use the [DeleteTopic](https://intl.cloud.tencent.com/document/product/597/10099) API to delete the instance. 
-
+3. On the topic management page, click **Delete** in the "Operation" column. Or, use the [DeleteTopic](https://intl.cloud.tencent.com/document/product/597/10099) API to delete the instance.

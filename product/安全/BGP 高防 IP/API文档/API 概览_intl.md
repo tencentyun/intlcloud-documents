@@ -3,7 +3,7 @@
 | ------------------------------ | ------------------------------- |
 | [BGPIPGetInfo](https://intl.cloud.tencent.com/document/product/297/14754)             | Gets details about a specific Anti-DDoS Advanced instance |
 | [BGPIPRename](https://intl.cloud.tencent.com/document/product/297/14692)                    | Renames a specific Anti-DDoS Advanced instance |
-| [BGPIPSetCCThreshold](https://intl.cloud.tencent.com/document/product/297/14693)            | Sets a CC defense threshold for a specific Anti-DDoS Advanced instance |
+| [BGPIPSetCCThreshold](https://intl.cloud.tencent.com/document/product/297/14693)            | Sets the CC defense threshold for a specific Anti-DDoS Advanced instance |
 | [BGPIPSetElasticProtectionLimit](https://intl.cloud.tencent.com/document/product/297/14694) | Sets an elastic defense limit for a specific Anti-DDoS Advanced instance |
 | [AddCustomCCStrategy](https://intl.cloud.tencent.com/document/product/297/14699)            | Adds a single CC custom policy |
 | [EditCustomCCStrategy](https://intl.cloud.tencent.com/document/product/297/14736)           | Edits a single CC custom policy |
@@ -14,7 +14,7 @@
 | [OpenDomainCCProtection](https://intl.cloud.tencent.com/document/product/297/14763)         | Enables domain rule CC defense |
 | [CloseDomainCCProtection](https://intl.cloud.tencent.com/document/product/297/14764)        | Disables domain rule CC defense |
 
-## Defense Info APIs
+## Protection Configurations APIs
 | API Name | Description |
 | ----------------------- | ----------------------------------------------------------- |
 | [BGPIPDDoSGetCounter](https://intl.cloud.tencent.com/document/product/297/14742)     | Gets the number of DDoS attacks suffered by a specific Anti-DDoS Advanced instance, the peak attack size, and the number of elastic defenses enabled for this instance |
@@ -28,7 +28,7 @@
 ## Service List APIs
 | API | Description |
 | ------------------------- | ----------------------------------------- |
-| [BGPIPGetServicePacks](https://intl.cloud.tencent.com/document/product/297/14751)      | Gets a list of all the Anti-DDoS Advanced instances under a given user name |
+| [BGPIPGetServicePacks](https://intl.cloud.tencent.com/document/product/297/14751)      | Gets a list of all the Anti-DDoS Advanced instances under a given account |
 | [BGPIPGetServiceStatistics](https://intl.cloud.tencent.com/document/product/297/14752) | Gets the number of usage days and number of defenses of Anti-DDoS Advanced |
 
 ## Forwarding Rule APIs
@@ -43,20 +43,18 @@
 | [BGPIPGetWadTransRules](https://intl.cloud.tencent.com/document/product/297/14762)    | Gets the Layer-7 forwarding rule list for an Anti-DDoS Advanced instance |
 | [BGPIPDeleteWadTransRules](https://intl.cloud.tencent.com/document/product/297/14761) | Removes a specific Layer-7 forwarding rule for a specific Anti-DDoS Advanced instance |
 
-## Whitelist APIs
+## Allowlist APIs
 | API | Description |
 | ---------------- | --------------------------------------------- |
-| [GetWhiteUrl](https://intl.cloud.tencent.com/document/product/297/14788)      | Gets the whitelist for a specific Anti-DDoS Advanced instance |
-| [AddWhiteUrl](https://intl.cloud.tencent.com/document/product/297/14789)      | Adds the URL whitelist for a specific Anti-DDoS Advanced instance |
-| [RemoveWhiteUrl](https://intl.cloud.tencent.com/document/product/297/14790)   | Removes the URL whitelist for a specific Anti-DDoS Advanced instance |
-| [GetSrcWhiteIP](https://intl.cloud.tencent.com/document/product/297/14791)    | Gets the source IP whitelist for a specific Anti-DDoS Advanced instance |
-| [AddSrcWhiteIP](https://intl.cloud.tencent.com/document/product/297/14792)    | Adds the source IP whitelist for a specific Anti-DDoS Advanced instance |
-| [RemoveSrcWhiteIP](https://intl.cloud.tencent.com/document/product/297/14793) | Removes the source IP whitelist for a specific Anti-DDoS Advanced instance |
+| [GetWhiteUrl](https://intl.cloud.tencent.com/document/product/297/14788)      | Gets the allowlist for a specific Anti-DDoS Advanced instance |
+| [AddWhiteUrl](https://intl.cloud.tencent.com/document/product/297/14789)      | Adds the URL allowlist for a specific Anti-DDoS Advanced instance |
+| [RemoveWhiteUrl](https://intl.cloud.tencent.com/document/product/297/14790)   | Removes the URL allowlist for a specific Anti-DDoS Advanced instance |
+| [GetSrcWhiteIP](https://intl.cloud.tencent.com/document/product/297/14791)    | Gets the source IP allowlist for a specific Anti-DDoS Advanced instance |
+| [AddSrcWhiteIP](https://intl.cloud.tencent.com/document/product/297/14792)    | Adds the source IP allowlist for a specific Anti-DDoS Advanced instance |
+| [RemoveSrcWhiteIP](https://intl.cloud.tencent.com/document/product/297/14793) | Removes the source IP allowlist for a specific Anti-DDoS Advanced instance |
 
-## Blacklist APIs
+## Blocklist APIs
 | API | Description |
 | ---------------- | --------------------------------------------- |
-| [AddSrcBlackIP](https://intl.cloud.tencent.com/document/product/297/14795)    | Adds the source IP blacklist for a specific Anti-DDoS Advanced instance |
-| [RemoveSrcBlackIP](https://intl.cloud.tencent.com/document/product/297/14796) | Removes an IP from the blacklist of the specified Anti-DDoS Advanced instance |
-
-
+| [AddSrcBlackIP](https://intl.cloud.tencent.com/document/product/297/14795)    | Adds the source IP blocklist for a specific Anti-DDoS Advanced instance |
+| [RemoveSrcBlackIP](https://intl.cloud.tencent.com/document/product/297/14796) | Removes an IP from the blocklist of the specified Anti-DDoS Advanced instance |

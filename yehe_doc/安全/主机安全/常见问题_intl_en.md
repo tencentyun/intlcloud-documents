@@ -22,7 +22,7 @@ If your password is compromised, your server may have been intruded with backdoo
 ### What should I do if suspicious logins are detected?
 CWP judges whether a login attempt is intended according to the list of usual login locations for admins. Please check the login log carefully. If a login was not intended, the password may have been compromised. In this case, you need to perform a thorough security check on your server.
 
-### Why does a CWP agent go offline? And how do I solve this issue? 
+### Why does a CWP agent go offline? And how do I solve this issue?
 The CWP agent is not connected to the server, which causes it to be displayed as offline on the backend. You are recommended to download and install the agent again. The agent may go offline for the following reasons:
 - The agent is blocked by the firewall policy of the server. Please configure the firewall policy to allow the CWP backend access address.
 - The agent is corrupted by a third-party malware on the server. In this case, please reinstall the agent.
@@ -49,4 +49,4 @@ If you have encountered a problem related to the Tencent Cloud account when usin
 The security baseline takes effect immediately after the product is configured
 
 ### How do I fix a false positive where an intended login is mistakenly marked as suspicious?
-You can log in to the [CWP Console](https://console.cloud.tencent.com/cwp/manage/loginLog), select **Intrusion Detection** > **Login Audit** on the left sidebar, and click **Suspicious Logins** on the login audit page to find the login log that is defined as suspicious. In the "Operation" column on its right, click **Whitelist** to add it to the whitelist and eliminate the false positive.
+You can log in to the [CWP Console](https://console.cloud.tencent.com/cwp/manage/loginLog), select **Intrusion Detection** > **Login Audit** on the left sidebar, and click **Suspicious Logins** on the login audit page to find the login log that is defined as suspicious. In the "Operation" column on its right, click **Allowlist** to add it to the allowlist and eliminate the false positive.

@@ -37,74 +37,74 @@ Tencent Cloud implements all instance initialization operations through cloud-in
 <table>
 <tr><th style="width: 25%;">Initialization operation</th><th style="width: 25%;">Default behavior</th><th style="width: 25%;">Customization</th><th style="width: 25%;">Notes</th></tr>
 <tr>
-	<td>hostname initialization</td>
-	<td>During <b>the first launch</b> of an instance, cloud-init will set the hostname of the instance according to the hostname information in <code>vendor_data.json</code>.</td>
-	<td>If you create or reinstall an instance with a custom image and you want to keep the custom hostname of the image, you can delete the configuration, <code>- scripts-user</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
-	<td>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</td>
+<td>hostname initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the hostname of the instance according to the hostname information in <code>vendor_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom hostname of the image, you can delete the configuration, <code>- scripts-user</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</td>
 </tr>
 
 <tr>
-	<td>/etc/hosts initialization</td>
-	<td>During <b>the first launch</b> of an instance, cloud-init will initialize <code>/etc/hosts</code> to <code>127.0.0.1 $hostname</code> by default.</td>
-	<td>If you create or reinstall an instance with a custom image and want to keep the custom /etc/hosts setting of the image, you can delete the <code>- scripts-user</code> and <code>- ['update_etc_hosts', 'once-per-instance']</code> configurations from <code>/etc/cloud/cloud.cfg</code> before creating a custom image.</td>
-	<td>
-		<ul style="margin: 0px;">
-			<li>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</li>
-			<li>Every time the CVM restarts, the <code>/etc/hosts</code> settings of some existing CVMs will be overwritten. To solve this problem, see <a href="https://intl.cloud.tencent.com/document/product/213/32504">Modifying the etc/hosts Settings of a Linux Instance</a>.</li>
-		</ul>
-	</td>
+<td>/etc/hosts initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will initialize <code>/etc/hosts</code> to <code>127.0.0.1 $hostname</code> by default.</td>
+<td>If you create or reinstall an instance with a custom image and want to keep the custom /etc/hosts setting of the image, you can delete the <code>- scripts-user</code> and <code>- ['update_etc_hosts', 'once-per-instance']</code> configurations from <code>/etc/cloud/cloud.cfg</code> before creating a custom image.</td>
+<td>
+<ul style="margin: 0px;">
+<li>After you disable <code>- scripts-user</code>, the initialization script, <code>/var/lib/cloud/instance/scripts/runcmd</code>, inside the instance will not be run. Disabling the configuration will also affect the initialization of other sub-items such as the installation of cloud monitor and cloud security and software source settings. Also, the custom script will not be run when you create the CVM.</li>
+<li>Every time the CVM restarts, the <code>/etc/hosts</code> settings of some existing CVMs will be overwritten. To solve this problem, see <a href="https://intl.cloud.tencent.com/document/product/213/32504">Modifying the etc/hosts Settings of a Linux Instance</a>.</li>
+</ul>
+</td>
 </tr>
 
 <tr>
-	<td>DNS initialization (non-DHCP scenario)</td>
-	<td>During <b>the first launch</b> of an instance, cloud-init will set the DNS of the instance according to the nameservers information in <code>vendor_data.json</code>.</td>
-	<td>If you create or reinstall an instance with a custom image and you want to keep the custom DNS setting of the image, you can delete the configuration, <code>- resolv_conf</code> and <code>unverified_modules: ['resolv_conf']</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
-	<td>None.</td>
+<td>DNS initialization (non-DHCP scenario)</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the DNS of the instance according to the nameservers information in <code>vendor_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom DNS setting of the image, you can delete the configuration, <code>- resolv_conf</code> and <code>unverified_modules: ['resolv_conf']</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
 </tr>
 
 <tr>
-	<td>Software source initialization</td>
-	<td>During <b>the first launch</b> of an instance, cloud-init will set the software source of the instance according to the write_files information in <code>vendor_data.json</code>.</td><td>If you create or reinstall an instance with a custom image and you want to keep the custom software source setting of the image, you can delete the configuration, <code>- write-files</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
-	<td>None.</td>
+<td>Software source initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the software source of the instance according to the write_files information in <code>vendor_data.json</code>.</td><td>If you create or reinstall an instance with a custom image and you want to keep the custom software source setting of the image, you can delete the configuration, <code>- write-files</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
 </tr>
 
 <tr>
-	<td>NTP initialization</td>
-	<td>During <b>the first launch</b> of an instance, cloud-init will set the NTP server configuration of the instance according to the NTP server information in <code>vendor_data.json</code> and start the NTP service.</td>
-	<td>If you create or reinstall an instance with a custom image and you want to keep the custom NTP configuration of the image, you can delete the configuration, <code>- ntp<code/>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
-	<td>None.</td>
+<td>NTP initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the NTP server configuration of the instance according to the NTP server information in <code>vendor_data.json</code> and start the NTP service.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom NTP configuration of the image, you can delete the configuration, <code>- ntp<code/>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
 </tr>
 
 <tr>
-	<td>Password initialization</td>
-	<td>During <b>the first launch</b> of an instance, cloud-init will set the default account password of the instance according to the chpasswd information in <code>vendor_data.json</code>.</td>
-	<td>If you create or reinstall an instance with a custom image and you want to keep the custom default password of the image, you can delete the configuration, <code>- set-passwords</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
-	<td>None.</td>
+<td>Password initialization</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the default account password of the instance according to the chpasswd information in <code>vendor_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom default password of the image, you can delete the configuration, <code>- set-passwords</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
 </tr>
 
 <tr>
-	<td>Key binding</td>
-	<td>During <b>the first launch</b> of an instance, cloud-init will set the default account key of the instance according to the ssh_authorized_keys information in <code>vendor_data.json</code>.</td>
-	<td>If you create or reinstall an instance with a custom image and you want to keep the custom default key of the image, you can delete the configuration, <code>- users-groups</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
-	<td>If you manually bind the instance to a key inside the instance, the previous key will be overwritten when the key binding operation is performed via the console. </td>
+<td>Key binding</td>
+<td>During <b>the first launch</b> of an instance, cloud-init will set the default account key of the instance according to the ssh_authorized_keys information in <code>vendor_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom default key of the image, you can delete the configuration, <code>- users-groups</code>, from <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>If you manually bind the instance to a key inside the instance, the previous key will be overwritten when the key binding operation is performed via the console. </td>
 </tr>
 
 <tr>
-	<td>Network initialization (non-DHCP scenario)</td>
-	<td>During <b>the initial launch</b> of an instance, cloud-init will set the IP, Gateway, and Mask according to the information in <code>network_data.json</code>.</td>
-	<td>If you create or reinstall an instance with a custom image and you want to keep the custom network information of the image, you can add <code>network: {config: disabled}</code> to <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
-	<td>None.</td>
+<td>Network initialization (non-DHCP scenario)</td>
+<td>During <b>the initial launch</b> of an instance, cloud-init will set the IP, Gateway, and Mask according to the information in <code>network_data.json</code>.</td>
+<td>If you create or reinstall an instance with a custom image and you want to keep the custom network information of the image, you can add <code>network: {config: disabled}</code> to <code>/etc/cloud/cloud.cfg</code> before creating the custom image.</td>
+<td>None.</td>
 </tr>
 </table>
 
-### How can I fix issues related to cloud-init? 
+### How can I fix issues related to cloud-init?
 
 #### 1. Error due to the unmounting of cloud-init dependencies
 - Problem description:
 When commands are used to check whether the cloud-init service is working properly, the following error is returned:
 ```
 Traceback (most recent call last):
-  File "/usr/bin/cloud-init", line 5, in 
+  File "/usr/bin/cloud-init", line 5, in
     ********
     raise DistributionNotFound(req)
 pkg_resources.DistributionNotFound: pyyaml
@@ -136,7 +136,7 @@ Like cloud-init, Cloudbase-Init is a bridge by which you can communicate with Wi
 <span id="checkcloudbase-init"></span>
 #### Checking the operation of the Cloudbase-Init service
 1. Log in to the instance.
-> If you forget your password or fail to reset your password because of Cloudbase-Init service exceptions, you can reset your password by following [step 2](#step02). 
+> If you forget your password or fail to reset your password because of Cloudbase-Init service exceptions, you can reset your password by following [step 2](#step02).
 >
 2. <span id="step02">Open **Control Panel** > **Administrative Tools** > **Services**.
 3. Find the Cloudbase-Init service, right-click it, and go to **Properties**. </span>
@@ -145,7 +145,7 @@ Like cloud-init, Cloudbase-Init is a bridge by which you can communicate with Wi
  - View “Logon identity” and ensure that “Local System account” is selected, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/5a3f623aaf44d55cfe2eaa6aeadb4c12.png)
  - Manually launch the Cloudbase-Init service and see if any error is returned.
-If any error is returned, you need to fix the issue first and check whether you have installed any security software which may stop Cloudbase-Init from performing related operations. 
+If any error is returned, you need to fix the issue first and check whether you have installed any security software which may stop Cloudbase-Init from performing related operations.
 ![](https://main.qcloudimg.com/raw/dbbe8f9fc05b07d8011705d9d217b76c.png)
  - Open the registry, find all “LocalScriptsPlugin” keys, and ensure that their values are 2, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/16106e540d8cf4ef39e5dccb44251350.png)
@@ -160,6 +160,6 @@ If any error is returned, you need to fix the issue first and check whether you 
  - The security software installed blocks the Cloudbase-Init service from resetting password so that the operation returns a successful result but actually failed.
 - Solution:
 Follow the corresponding solution to each possible reason to fix the issue.
- 1. Change the Cloudbase-Init service to LocalSystem service. For details, see [step 2](#step02) in [Checking the operation of the Cloudbase-Init service](#checkcloudbase-init). 
+ 1. Change the Cloudbase-Init service to LocalSystem service. For details, see [step 2](#step02) in [Checking the operation of the Cloudbase-Init service](#checkcloudbase-init).
  2. Change the launch type of the Cloudbase-Init service to automatic. For details, see [step 2](#step02) in [Checking the operation of the Cloudbase-Init service](#checkcloudbase-init).
- 3. Unmount the security software involved or add the relevant operations of the Cloudbase-Init service to the whitelist of the security software.
+ 3. Unmount the security software involved or add the relevant operations of the Cloudbase-Init service to the allowlist of the security software.

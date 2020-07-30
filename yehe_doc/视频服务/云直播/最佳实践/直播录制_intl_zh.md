@@ -2,7 +2,7 @@
 
 ##  注意事项
 - [创建录制任务](https://intl.cloud.tencent.com/document/product/267/30847) 和 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223) 为两种录制发起方式，实际使用中按需选择其中一种即可。若同一直播流，配置录制模板的同时创建了录制任务，会导致重复录制。
-- 为保证录制文件质量，每次录制时长不建议太短。
+- 因为推流发起后启动录制任务会有短暂延迟，所以推流时间过短会导致无法生成录制文件。为保证录制文件质量，建议每次录制时的推流时间大于10s。
 
 ## 录制存储
 
@@ -144,7 +144,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 
 ## 混流录制
 
-首先请先参见 [云端混流](https://intl.cloud.tencent.com/document/product/267/8832) 了解混流业务。
+首先请先参见 [云端混流](https://intl.cloud.tencent.com/document/product/267/35998) 了解混流业务。
 
 对于使用了直播云端混流业务的场景，录制侧按混流参数 OutputStreamType（输出流类型）将混流分为两类：
 

@@ -58,6 +58,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
     "MsgRandom": 2837546, // The random number of the message.
     "MsgTime": 1557481126, // The timestamp indicating when the message was sent. Unit: seconds. 
     "MsgKey": "48374_2837546_1557481126", // The unique identifier of the message. It is used by RESTful APIs to recall a one-to-one chat message.
+	"SendMsgResult": 0, //The result of sending the message
+    "ErrorInfo": "send msg succeed", //The error information describing the message failed to be sent. If the message is sent successfully, it shows "send msg succeed"
     "MsgBody": [ // The body of the message.
         {
             "MsgType": "TIMTextElem", // The text of the message.
@@ -80,6 +82,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | MsgRandom | Integer | The random number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
 | MsgTime | Integer | The message sending timestamp in seconds<br>One-to-one messages sent in the same second are sorted using MsgTime. The message with a larger MsgSeq value appears later. |
 | MsgKey | String | The unique identifier of the message. It is used for [Recalling a One-to-One Chat Message by using RESTful APIs](https://intl.cloud.tencent.com/document/product/1047/35015). |
+| SendMsgResult | Integer | The result of sending the message. 0: success; other values: failure. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348#.E6.B6.88.E6.81.AF.E9.94.99.E8.AF.AF.E7.A0.812). |
+| ErrorInfo | String | The error information describing the message failed to be sent. If the message is sent successfully, it shows "send msg succeed". |
 | MsgBody | Array | The body of the message. For more information, see [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
 ### Sample response packet
