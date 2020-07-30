@@ -1,4 +1,3 @@
-
 >This document applies to TRTC SDK for Desktop Browser v4.x.x.
 
 ## Error Code Definitions
@@ -81,4 +80,4 @@
 | 70402  | Account system | Invalid parameter. Please check whether the required fields are all set and parameter settings meet the requirements |
 | 70403  | Account system | The initiator of this operation is not the application admin and does not have the permission                      |
 | 70050  | Account system | This account is temporarily prohibited from login due to excessive login failures and retries. Please check whether the credential is correct and retry after 1 minute |
-| 70051  | Account system | Blacklisted account. Please contact TLS account support over QQ at 3268519604                                                        |
+| 70051  | Account system | Blocked account. Please contact TLS account support over QQ at 3268519604                                                        |
