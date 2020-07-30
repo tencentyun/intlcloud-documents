@@ -18,17 +18,17 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop) 
 | Android | UC Browser (mobile) | - | Not supported | Not supported |
 | Android | WeChat embedded browser | - | Not supported | Not supported |
 
-> 
+>
 >- You can open the [WebRTC capability test](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html) page in your browser to check whether WebRTC is fully supported, such as the browser environments like WeChat Official Account.
 >- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support the TRTC SDK for Web.
 
 <span id="requirements"></span>
 ## Environment Requirements
 - Please use the latest version of Chrome.
-- The TRTC SDK for Web uses the following ports for data transfer, which should be added to the whitelist of the firewall. After configuring these ports, please use the [official demo](https://trtc-1252463788.file.myqcloud.com/web/demo/official-demo/index.html) to check whether the ports work.
- - TCP port: 8687
- - UDP ports: 8000, 8800, 843, 443
- - Domain name: qcloud.rtc.qq.com
+- The TRTC SDK for Web uses the following ports for data transfer, which should be added to the allowlist of the firewall. After configuring these ports, please use the [official demo](https://trtc-1252463788.file.myqcloud.com/web/demo/official-demo/index.html) to check whether the ports work.
+ - TCP port: 8687
+ - UDP ports: 8000, 8800, 843, 443
+ - Domain name: qcloud.rtc.qq.com
 
 ## Prerequisites
 You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
@@ -42,7 +42,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 <span id="step2"></span>
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the corresponding card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web)** to redirect to GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)**) and download the relevant SDK and supporting demo source code.
- 
+ 
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="step3"></span>
@@ -50,9 +50,9 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 1. Decompress the source package downloaded in [step 2](#step2).
 2. Find and open the `Web/js/debug/GenerateTestUserSig.js` file.
 3. Set the relevant parameters in the `GenerateTestUserSig.js` file:
-  <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
-  <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/1732ea2401af6111b41259a78b5330a4.png">
+  <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
+  <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul>
+
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
@@ -68,7 +68,7 @@ Open the `index.html` in the root directory of the demo with Chrome to run the d
 
 
 - Click**Enter Room** to enter an audio/video call room and publish local audio/video stream.
- You can open multiple pages and click **Enter Room* on each of them. Normally, multiple video images can be seen with audio/video call simulated.
+ You can open multiple pages and click **Enter Room* on each of them. Normally, multiple video images can be seen with audio/video call simulated.
 - Click the camera icon to select a camera.
 - Click the mic icon to select a mic.
 
