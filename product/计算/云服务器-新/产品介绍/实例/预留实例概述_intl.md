@@ -8,19 +8,19 @@ Reserved Instance (RI) is a special form of discount for pay-as-you-go instances
 >
 > RIs do not support configuration adjustment. If the configuration of a pay-as-you-go instance matched with a RI is adjusted, the RI discount will become inapplicable.
 >
-> After the RI-matched pay-as-you-go instance shuts down or is forced to shut down, the RI discount is still applicable to the pay-as-you-go instance. 
+> After the RI-matched pay-as-you-go instance shuts down or is forced to shut down, the RI discount is still applicable to the pay-as-you-go instance.
 
 
 #### Launch Schedule
 
-Currently, RIs are offered via whitelist. You can go to the RI beta page and submit an [application](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns).
+Currently, RIs are offered to allowed users. You can go to the RI beta page and submit an [application](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns).
 
 #### Attributes
 
 - [Region](https://intl.cloud.tencent.com/document/product/213/6091): Region refers to the geographic region where a physical IDC is located, such as Silicon Valley
 - [Availability zone](https://intl.cloud.tencent.com/document/product/213/6091): Availability zone refers to the physical IDC in Tencent Cloud that has independent power supply and network, such as Silicon Valley Zone 1
 - [Instance type](https://intl.cloud.tencent.com/document/product/213/11518): Tencent Cloud offers multiple instance types, eg. standard model
-- [Instance specifications](https://intl.cloud.tencent.com/document/product/213/11518): Specifications of a RI model, such as S4.SMALL1 
+- [Instance specifications](https://intl.cloud.tencent.com/document/product/213/11518): Specifications of a RI model, such as S4.SMALL1
 - OS: Linux
 
 > The discount can be applied to a pay-as-you-go instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI.
@@ -43,14 +43,3 @@ Payment method: There are three options: All Upfront, Partial Upfront, and No Up
 Validity period: One year or three years.
 
 Quota: Each user can have up to 20 RIs per month in one availability zone
-
-
-
-
-
-
-
-
-
-
-
