@@ -1,7 +1,7 @@
 ## 启动腾讯移动推送服务
 
 #### 接口说明
-通过使用在腾讯移动推送官网注册的应用信息，启动腾讯移动推送服务。
+通过使用在腾讯移动推送官网注册的应用信息，启动腾讯移动推送服务，SDK 1.2.7.2 版本新增，老版本请参考 XGPush.h。
 
 ```objective-c
 - (void)startXGWithAccessID:(uint32_t)accessID accessKey:(nonnull NSString *)accessKey delegate:(nullable id<XGPushDelegate>)delegate；
@@ -235,7 +235,7 @@ SDK 1.2.7.1 新增，当注册推送服务失败会走此回调。
 - 对于标签操作 identifiers 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
 - 对于账号操作，需要使用字典数组且 key 是固定要求。
 - Objective-C的写法 : @[@{@"account":identifier, @"accountType":@(0)}]。
-- - Swift 的写法：[["account":identifier, "accountType":NSNumber(0)]]。。
+- - Swift 的写法：[["account":identifier, "accountType":NSNumber(0)]]。
 - 更多 accountType 请参照 XGPushTokenAccountType 枚举。
 
 >!若指定为标签类型，此接口会将当前 Token 对应的旧有的标签全部替换为当前的标签；若指定账号类型，此接口仅取 identifiers 列表中第一个。
@@ -325,7 +325,7 @@ handler：查询结果的返回方法。
 
 #### 接口说明
 背景：如果 App 的推送服务是从信鸽平台（https://xg.qq.com）迁移到腾讯移动推送平台，在两个平台同时推送时，可能会出现重复消息。因此需要调用 TPNS SDK(1.2.5.3+) 的接口将设备信息在信鸽平台中进行反注册。
-引入头文件：XGForFreeVersion.h，在 startXGWithAppID 之前调用：
+引入头文件：XGForFreeVersion.h，在 startXGWithAccessID 之前调用：
 ```
 @property uint32_t freeAccessId;
 ```
