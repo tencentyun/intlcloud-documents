@@ -91,3 +91,9 @@
 #### 计费说明
 腾讯云对使用公网 IPv4 地址访问 IPv4 公网产生的公网网络流量，将收取公网网络费用，详情请参见 [公网网络计费](https://buy.cloud.tencent.com/price/idc)。
 
+
+
+## 相关信息
+- 如需快速搭建一个具有 IPv4 CIDR 的私有网络（VPC），请参见 [快速搭建 IPv4 私有网络](https://intl.cloud.tencent.com/document/product/215/31891)。
+- 如需了解弹性公网 IP 相关内容，请参见 [弹性公网 IP](https://intl.cloud.tencent.com/document/product/215/34109)。
+
