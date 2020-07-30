@@ -1,4 +1,4 @@
-Anti-DDoS Pro provides advanced protection policies against DDoS attacks. You can adjust and optimize the DDoS protection policy as required through blacklists/whitelists, disabling protocols and ports, packet characteristic filtering, connection flood protection, and watermark protection.
+Anti-DDoS Pro provides advanced protection policies against DDoS attacks. You can adjust and optimize the DDoS protection policy as required through blocklists/allowlists, disabling protocols and ports, packet characteristic filtering, connection flood protection, and watermark protection.
 
 ## Configuration Item Overview
 <style>
@@ -8,7 +8,7 @@ table th:first-of-type {
 </style>
 | Configuration Item       | Description                                                     | Effective Time                                 |
 | ------------ | ------------------------------------------------------------ | ---------------------------------------- |
-| Blacklist/whitelist     | It is IP-based protection.<br/><ul><li>It always allows requests from IPs in the whitelist. </li><li>It always blocks requests from IPs in the blacklist.</li></ul> | It takes effect immediately when the protected IPs are under attack.                  |
+| Blocklist/Allowlist     | It is IP-based protection.<br/><ul><li>It always allows requests from IPs in the allowlist. </li><li>It always blocks requests from IPs in the blocklist.</li></ul> | It takes effect immediately when the protected IPs are under attack.                  |
 | Disabled protocol     | It disables a protocol not used by the business.<br/>If attacks are detected, the Anti-DDoS Pro cluster will cleanse the traffic under the protocol. | It takes effect immediately when the protected IPs are under attack.            |
 | Disabled port     | It disables a port not used by the business.<br/>If attacks are detected, the Anti-DDoS Pro cluster will cleanse traffic from the disabled ports. | It takes effect immediately when the protected IPs are under attack.    |
 | Packet filter characteristic | It combines multiple criteria to set policy operations, such as the protocol, port range, packet range, whether to detect load, offset, detection depth, and whether to include characteristic strings based on the business or attack packets.<br/>If the packets match the policy criteria, operations such as direct forwarding, discarding, source IP blocking, or disconnecting can be executed. | It takes effect immediately when the protected IPs are under attack.                |
@@ -16,7 +16,7 @@ table th:first-of-type {
 | Reject traffic from outside China | It rejects TCP traffic requests from outside China (including Mainland China, Hong Kong, Macao, and Taiwan).      | It takes effect when the protected IPs are under attack. |
 | Null session protection   | It protects against null session attacks.                                             | It takes effect when the protected IPs are under attack. |
 | Connection flood protection | It is IP-based protection, which limits the speed, packet length, and other parameters of connections accessing the IPs protected by Anti-DDoS Pro to protect against light traffic connection attacks. | It takes effect immediately when the protected IPs are under attack. |
-| Exceptional connection detection | When a source IP receives a TCP connection meeting the configured parameter characteristics, the connection will be regarded as exceptional. If the amount of exceptional connections received by the source IP exceeds the maximum allowable number, the IP will be added to the blacklist for a certain period and will not be accessible. | It takes effect immediately when the protected IPs are under attack. |
+| Exceptional connection detection | When a source IP receives a TCP connection meeting the configured parameter characteristics, the connection will be regarded as exceptional. If the amount of exceptional connections received by the source IP exceeds the maximum allowable number, the IP will be added to the blocklist for a certain period and will not be accessible. | It takes effect immediately when the protected IPs are under attack. |
 | Watermark protection   | It supports UDP and TCP packets. Watermark detection and stripping will be executed for the payloads within the configured port range. Watermark protection can protect against layer-4 CC attacks, such as forged business packet attacks and replay attacks.<br/><ul><li>Customer client and Tencent Cloud Anti-DDoS Pro system share the same watermark algorithm and key.<br/></li><li>Each packet sent by the client is embedded with watermark characteristic which attack packets do not have.<br/></li><li>The Anti-DDoS Pro system will identify and discard attack packets.                                             | It takes effect immediately when the protected IPs are under attack. |
 
 ## Adding Policies
@@ -28,17 +28,17 @@ Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overvie
 **Policy Name**
 Enter a policy name containing 1–32 characters of any type.
 
-- **Blacklist/Whitelist**
- - If you need to set a blacklist, click **Add**, select **Blacklist**, enter IPs to block, and then click **OK**. Separate multiple IPs with carriage returns.
- - If you need to set a whitelist, click **Add**, select **Whitelist**, enter the IP to allow directly, and then click **OK**. Separate multiple IPs with carriage returns.
->You can add up to 100 IPs for the blacklist and whitelist. The number of IPs to be added in batches cannot exceed the current available quota.
+- **Blocklist/Allowlist**
+ - If you need to set a blocklist, click **Add**, select **Blocklist**, enter IPs to block, and then click **OK**. Separate multiple IPs with carriage returns.
+ - If you need to set a allowlist, click **Add**, select **Allowlist**, enter the IP to allow directly, and then click **OK**. Separate multiple IPs with carriage returns.
+>You can add up to 100 IPs for the blocklist and allowlist. The number of IPs to be added in batches cannot exceed the current available quota.
 
 - **Disabled Protocol**
   Select the protocol you want to disable.
 - **Disabled Port**
   Select a protocol and port type, and then enter the ports to be disabled. If you only need to disable one port in an entry, enter the same number for the starting and ending ports. Click **Add** under the list to add more entries. Protocols include TCP and UDP. Port types include destination port, source port, and destination/source port.
 - **Packet Filter Characteristic**
-  Set conditions such as the protocol, port range, packet length, payload detection, offset, detection depth, and characteristic strings and configure the action to be taken for immediate effect. 
+  Set conditions such as the protocol, port range, packet length, payload detection, offset, detection depth, and characteristic strings and configure the action to be taken for immediate effect.
 
  >
  >
@@ -84,7 +84,7 @@ A TCP/UDP protection port can be configured with up to 5 port ranges. Different 
 Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and select **Anti-DDoS Pro** > **Protection Configuration**. On the **Advanced DDoS Protection Policy** tab, click **Bind Resource** next to the target policy.
 
 - Bind Resource: in the pop-up **Bind Resource** dialog box, select one or more resources as needed and click **OK**.
-- Unbind Resource: in the pop-up **Bind Resource** dialog box, click <img src="https://main.qcloudimg.com/raw/f452deeefbca4c66f34b7db71ec0daca.png"  style="margin:0;"> to the right of a resource in the **Selected** section and click **OK**.
+- Unbind Resource: in the pop-up **Bind Resource** dialog box, click <img src="https://main.qcloudimg.com/raw/f452deeefbca4c66f34b7db71ec0daca.png"  style="margin:0;"> to the right of a resource in the **Selected** section and click **OK**.
 
 ## **Adding Watermark to Client**
 Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overview) and select **Anti-DDoS Pro** > **Protection Configuration**. On the **Advanced DDoS Protection Policy** tab, click **Download Client Watermark File** next to the target policy to add the watermark to the client offline.
@@ -102,7 +102,7 @@ Log in to the [Anti-DDoS Console](https://console.cloud.tencent.com/dayu/overvie
 >You cannot modify a policy name in the "scenario name_policy_No." format.
 >
 - Policy Name
-- Blacklist/Whitelist
+- Blocklist/Allowlist
 - Disabled Protocol
 - Disabled Port
 - Packet Filter Characteristic
