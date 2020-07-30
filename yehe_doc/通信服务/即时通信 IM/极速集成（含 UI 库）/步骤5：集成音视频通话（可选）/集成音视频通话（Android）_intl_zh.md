@@ -6,7 +6,7 @@ TUIKit 组件在 4.8.50 版本之后基于 [TRTC](https://intl.cloud.tencent.com
   </tr>
   <tr>
     <td><img style="width:180px" src="https://main.qcloudimg.com/raw/59713f77fc8e0dbe4787288aba0898f7.jpeg"  />    </td>
-    <td><img style="width:180px" src="https://main.qcloudimg.com/raw/9c20238b4af83283fb677059b8693380.jpeg" />     </td>
+<td><img style="width:180px" src="https://main.qcloudimg.com/raw/9c20238b4af83283fb677059b8693380.jpeg" />     </td
 	 </tr>
 </table>
 
@@ -15,6 +15,7 @@ TUIKit 组件在 4.8.50 版本之后基于 [TRTC](https://intl.cloud.tencent.com
 >- TUIKit 4.8.50 之前的版本音视频通话集成在 iOS 端的 TUIKitDemo 示例中，**新老版本不互通，如果您已经使用之前版本的音视频通话，这里不建议升级，以免出现兼容性问题**。
 
 <span id="Step1"></span>
+
 ## 步骤1：开通音视频服务
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
 2. 单击【开通腾讯实时音视频服务】区域的【立即开通】。
@@ -74,7 +75,14 @@ TUIKit.login(userID, userSig, new IUIKitCallBack() {
 </table>
 
 - 当用户**在线**收到通话邀请时，TUIKit 会自动展示通话接收 UI，用户可以选择同意或则拒绝通话。
-- 当用户**离线**收到通话邀请时，是没法感知的，通话邀请目前暂不支持离线推送能力。
+- 当用户**离线**收到通话邀请时，如需唤起 APP 通话，就要使用到离线推送能力，离线推送的实现请参考 [步骤7](#Step7)。
+
+## 步骤7：离线推送<span id="Step7"></span>
+实现音视频通话的离线推送能力，请参考以下几个步骤：
+1. 配置 APP 的 [离线推送](https://intl.cloud.tencent.com/document/product/1047/34336)。
+2. 升级 TUIKit  到4.9.1以上版本。
+3. 通过 TUIKit 发起通话邀请的时候，默认会生成一条离线推送消息，消息生成的具体逻辑请参考 [TRTCAVCallImpl.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/liteav/model/TRTCAVCallImpl.java) 类里面的 `sendOnlineMessageWithOfflinePushInfo` 方法。
+4. 接收通话的一方，在收到离线推送的消息时，请参考 [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) 类里面 `redirect` 方法唤起通话界面。
 
 ## 常见问题
 ### 1. 若已分别创建实时音视频 SDKAppID 和即时通信 SDKAppID，现需要同时集成 IM SDK 和 TRTC SDK，需要注意什么?
@@ -87,10 +95,10 @@ TUIKit.login(userID, userSig, new IUIKitCallBack() {
 	 ...
  }
 ```
- 
+
 ### 2. 通话邀请的超时时间默认是多久？怎么修改默认超时时间？
 通话邀请的默认超时时间是30s，您可以修改 `TRTCAVCallImpl` 里的 `TIME_OUT_COUNT` 字段来自定义超时时间。
- 
+
 ### 3. 在邀请超时时间内，被邀请者如果离线再上线，能否收到邀请？
 - 如果是单聊通话邀请，被邀请者离线再上线可以收到通话邀请。
 - 如果是群聊通话邀请，被邀请者离线再上线不能收到通话邀请。

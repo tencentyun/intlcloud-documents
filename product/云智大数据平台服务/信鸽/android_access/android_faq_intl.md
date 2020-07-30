@@ -24,9 +24,9 @@ Use the token obtained to push at [TPNS' official website](http://ixg.qq.com/). 
 
 **\[Registration had no callback\]**
 
-* Check whether 
+* Check whether
 **wup package** is added.
-* Check whether the current 
+* Check whether the current
 **network condition**
  is good. It is recommended to use 4G network for testing. Wi-Fi may cause insufficient network bandwidth due to excessive users.
 * **Nubia phones**
@@ -35,7 +35,7 @@ Use the token obtained to push at [TPNS' official website](http://ixg.qq.com/). 
 ### After the app is closed, pushes cannot be received
 
 * At present, third-party push services cannot guarantee that the pushes can be received after the app is closed. This is due to the limitation of the mobile phone's custom ROM on the TPNS service. All activities of TPNS are on the basis that the TPNS service can connect to the internet and run properly. After the service is terminated, whether it can be restarted depends on the system settings, security programs, and user operations.
-* QQ and WeChat are in the system-level app whitelist, and the relevant service will not exit after the app is closed, so the user can still receive messages after closing the app, and in fact, the relevant service survives in the backend.
+* QQ and WeChat are in the system-level app allowlist, and the relevant service will not exit after the app is closed, so the user can still receive messages after closing the app, and in fact, the relevant service survives in the backend.
 * On Android, after the app is closed and the TPNS service is disconnected from the TPNS server, the message delivered to the device will become an offline message, which can be retained for up to 72 hours. If there are multiple offline messages, up to two of them can be retained. If messages pushed after the app is closed cannot be received after the app is opened again, please check whether the unregistration API is called: XGPushManager.unregisterPush\(this\).
 
 ### Account pushes cannot be received
@@ -150,7 +150,7 @@ action.setIntent("xgscheme://com.xg.push/notify_detail?param1=aa&param2=bb");
 1. In the onCreate method of the page you specify for redirection to:
 ```
 Uri uri = getIntent().getData();
-    if (uri != null) {                
+    if (uri != null) {               
 String url = uri.toString();
 String p1= uri.getQueryParameter("param1");
 String p2= uri.getQueryParameter("param2");
@@ -160,7 +160,7 @@ String p2= uri.getQueryParameter("param2");
 they can be parsed by using the following method:
 ```
 Uri uri = getIntent().getData();
-    if (uri != null) {                
+    if (uri != null) {               
  String url = uri.toString();
  UrlQuerySanitizer sanitizer = new UrlQuerySanitizer();
  sanitizer.setUnregisteredParameterValueSanitizer(UrlQuerySanitizer.getAllButNulLegal());

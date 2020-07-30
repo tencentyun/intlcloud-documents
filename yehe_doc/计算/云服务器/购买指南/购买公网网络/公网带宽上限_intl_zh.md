@@ -7,7 +7,7 @@
 <tr><th>实例计费模式</th><th>实例配置</th></tr>
 <tr><td>按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
 <tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>共享带宽</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
+<tr><td>共享带宽包</td><td colspan="2">ALL</td><td>0 - 1000</td></tr>
 </table>
 
 - 2020年2月24日00:00以前创建的机器按以下规则执行：
@@ -16,7 +16,7 @@
 <tr><th style="width: 18.5607%;">实例计费模式</th><th style="width: 24.5814%;">实例配置</th></tr>
 <tr><td>按流量计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
 <tr><td>按带宽计费</td><td>按量计费实例</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>共享带宽</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
+<tr><td>共享带宽包</td><td colspan="2">ALL</td><td>0 - 1000</td></tr>
 </table>
 
 

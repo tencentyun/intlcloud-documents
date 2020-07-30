@@ -5,7 +5,7 @@ Yes. Anti-DDoS Advanced can protect all types of servers on the internet, includ
 Yes. You can protect wildcard domain names by configuring website traffic forwarding rules.
 Wildcard domain name resolution involves using wildcards (\*) as secondary domain names to allow all secondary domain names to point to the same IP. For example, you can configure \*.tencent.com.
 ### Does Anti-DDoS Advanced automatically add forwarding IPs to the security group?
-No. You need to manually add the forwarding IP range to the CVM security group. If you have deployed firewall or other server security protection software on the real server, you also need to add the forwarding IP range to the whitelist to prevent business traffic from being affected due to blocking or speed limiting.
+No. You need to manually add the forwarding IP range to the CVM security group. If you have deployed firewall or other server security protection software on the real server, you also need to add the forwarding IP range to the allowlist to prevent business traffic from being affected due to blocking or speed limiting.
 ### Can I set a private IP as the real server IP in Anti-DDoS Advanced?
 No. Anti-DDoS Advanced forwards traffic over the public network. Therefore, you cannot use a private IP.
 ### How long does it take for a real server IP update to take effect?
@@ -40,4 +40,4 @@ Anti-DDoS Advanced supports session persistence, which is not enabled by default
 Health check is enabled for non-website businesses, which is recommended. You can modify this feature as instructed in [Configuring Health Check](https://intl.cloud.tencent.com/document/product/297/37224).
 
 ### WS is not enabled on my real server. After I bind my business to Anti-DDoS Advanced, why is the access to the real server slow?
-Anti-DDoS servers have Window Scaling (WS) enabled by default. If this is not enabled on the real server, a delay will occur when the sliding window is filled up while receiving slightly larger files. You are recommended to enable WS for your real server. 
+Anti-DDoS servers have Window Scaling (WS) enabled by default. If this is not enabled on the real server, a delay will occur when the sliding window is filled up while receiving slightly larger files. You are recommended to enable WS for your real server.

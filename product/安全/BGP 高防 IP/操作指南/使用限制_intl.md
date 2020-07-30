@@ -4,10 +4,10 @@ Anti-DDoS Advanced can protect your IPs/domain names that are not deployed on Te
 ## Capability
 By default, each Anti-DDoS Advance instance supports up to 60 forwarding rules, and each rule supports up to 20 real server IPs/domain names.
 
-## Blacklist/Whitelist
-- Up to 120 IPs allowed for one DDoS IP blacklist/whitelist
-- Up to 50 IPs allowed for one CC IP blacklist/whitelist
-- Up to 50 URLs allowed for one CC URL whitelist
+## Blocklist/Allowlist
+- Up to 120 IPs allowed for one DDoS IP blocklist/allowlist
+- Up to 50 IPs allowed for one CC IP blocklist/allowlist
+- Up to 50 URLs allowed for one CC URL allowlist
 
 ## Region availability
 Anti-DDoS Advanced is available in the following regions:

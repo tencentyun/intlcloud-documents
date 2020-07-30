@@ -1,4 +1,4 @@
->The beta test of this feature started on March 30, 2019 and is available only to whitelisted users.
+>The beta test of this feature started on March 30, 2019 and is available only to allowed users.
 
 ## SSL Connection Encryption Overview
 
@@ -48,7 +48,7 @@ Currently, the "standard mode" of the following database instance versions suppo
 - Percona v5.7 and v5.6
 
 Currently, the following versions of security protocols are supported:
-- TLS1.0 
+- TLS1.0
 - TLS1.1
 - TLS1.2 (default)
 
@@ -60,14 +60,14 @@ Currently, the following versions of security protocols are supported:
 
 ### MySQL/TencentDB for MariaDB client
 
-mysql -P 3306 -h 10.xx.xx.168  -u test -p --ssl
+mysql -P 3306 -h 10.xx.xx.168  -u test -p --ssl
 After successful login, run the `\s` command to query the login status：
 
 `SSL: Cipher in use is AES256-GCM-SHA384` in the returned result indicates that the user is connecting to the MySQL server over SSL.
 
+
 ### Graphical clients such as Navicat
 Directly select **Use SSL** without selecting **Use authentication** to connect.
-![](https://main.qcloudimg.com/raw/9b8ed85ccd740544aec36c63a487e2bf.png)
 
 ### Sample code for connection programs such as JDBC
 If SSL connection encryption has been enabled on an instance but is not configured on JDBC/ODBC, the service will report a `WARN` error.
@@ -86,4 +86,3 @@ To specify to use TLS 1.2, you can pass in the following option when starting JV
 -Djavax.net.debug=all -Djdk.tls.client.protocols="TLSv1.2" -Dhttps.protocols="TLSv1.2"
 
 ```
-

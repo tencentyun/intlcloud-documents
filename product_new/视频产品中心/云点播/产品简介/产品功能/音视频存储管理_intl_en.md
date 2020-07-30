@@ -23,7 +23,7 @@ VOD allows you to manage video files through the console or API by performing su
 - Multi-level categorization and tagging of videos
 - List-based video management and online preview
 - Cold backup and storage of videos
-- Blacklist/whitelist hotlink protection
+- Blocklist/allowlist hotlink protection
 - Dynamic URL hotlink protection
 - APIs for video release via WeChat Official Account
 

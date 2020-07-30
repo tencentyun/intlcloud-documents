@@ -1,5 +1,5 @@
 ## Overview
-You can add regions to the blacklist to block block all access sources from the specific regions.
+You can add regions to the blocklist to block all access sources from the specific regions.
 
 ## Configurations
 1. Assume that you have purchased the WAF service. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia), select **Web Application Firewall** > **Defense settings** in the left sidebar to enter the defense settings page, and click the domain name you want to protect.
