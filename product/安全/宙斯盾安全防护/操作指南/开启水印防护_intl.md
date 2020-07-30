@@ -1,4 +1,3 @@
-﻿
 You can efficiently and comprehensively protect against layer 4 CC attacks such as masquerading and replay attacks by accessing watermark protection. By sharing the watermark algorithm and key between the business side and the Aegis protection system, watermark protection embeds a watermark in every message sent by the client. As the attack messages have no watermark, the protection system can easily identify and discard them. For more information on the configuration, see [Custom Advanced Security Policy](https://intl.cloud.tencent.com/document/product/685/18800#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AE.89.E5.85.A8.E7.AD.96.E7.95.A5).
 ## Flowchart
 ![](https://main.qcloudimg.com/raw/8b83ba4ab8b1bdee1d0e1da446d53e3e.png)
@@ -12,7 +11,7 @@ a. After watermarking is successfully enabled, select "Copy the key" in the "Ena
 ![2](https://main.qcloudimg.com/raw/42134fa35b315e4c57981963f73e40e0.png)
 b. Go to the "Add Protection Policy" page and select "Protected IP".
 ![3](https://main.qcloudimg.com/raw/c15bc6e8aefa1b7a711bb4b187a9f2cf.png)
-c. Add the TCP protection port, UDP protection port and whitelist and then click **Confirm to add**.
+c. Add the TCP protection port, UDP protection port and allowlist and then click **Confirm to add**.
 ![4](https://main.qcloudimg.com/raw/bb5b8a2c9394a19720ba92aa5c2b5682.png)
 3. **Offline configuration**
 In the "Enabled successfully" pop-up, click **Client connection file** to download the file for connecting the client and the server.

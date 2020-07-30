@@ -29,7 +29,7 @@ This document describes how to connect a non-website business to an Anti-DDoS Ad
  
 
 ### Opening forwarding IP range
-To prevent business interruption that occurs if the real server blocks the Anti-DDoS Advanced forwarding IP, you are recommended to configure whitelist policies for the real server infrastructure (such as firewall, web application firewall, intrusion protection system (IPS), and traffic management system) and disable the protection features of the server firewall and other security software tools (such as Safedog) or set whitelist policies for them, so that the forwarding IP will not be affected by the security policies of the real server.
+To prevent business interruption that occurs if the real server blocks the Anti-DDoS Advanced forwarding IP, you are recommended to configure allowlist policies for the real server infrastructure (such as firewall, web application firewall, intrusion protection system (IPS), and traffic management system) and disable the protection features of the server firewall and other security software tools (such as Safedog) or set allowlist policies for them, so that the forwarding IP will not be affected by the security policies of the real server.
 
 You can log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview) and click **Instance List** on the left sidebar to find the target instance ID.
 ![](https://main.qcloudimg.com/raw/488bcc41226bf939f0a767edd104f25d.png)
@@ -42,7 +42,7 @@ After the forwarding configuration is completed, the Anti-DDoS Advanced IP will 
 To ensure the stability of your business, a local test is recommended. The verification method is as follows:
 - **For businesses accessed through IPs**
     For businesses accessed through IPs (such as games), run `telnet` to check whether the Anti-DDoS Advanced port is accessible. You can also enter the Anti-DDoS Advanced IP as the server IP in your local client (if available) to check whether the local client can connect to it.
-		
+
     For example, if your Anti-DDoS Advanced IP is `10.1.1.1` with forwarding port `1234`, and your real server IP is `10.2.2.2` with port `1234`, when you run `telnet` locally to access `10.1.1.1:1234`, if the address can be accessed, the forwarding is successful.
 - **For businesses accessed through domain names**
     For businesses accessed through domain names, you can modify the local `hosts` file to verify whether the configuration has taken effect.
@@ -54,11 +54,10 @@ To ensure the stability of your business, a local test is recommended. The verif
     For example, if the Anti-DDoS Advanced IP is `10.1.1.1` and the domain name is `www.qq.com`, then add:
     ```
     10.1.1.1       www.qqq.com
-    ```  
+    ``` 
     Save the `hosts` file and run the `ping` command on the local computer to ping the protected domain name. If the resolved IP address is the Anti-DDoS Advanced IP address bound in the `hosts` file, the local `hosts` configuration has taken effect.
     >If the resolved IP address is still the real server IP address, try running the `ipconfig /flushdns` command in Windows Command Prompt to clear the local DNS cache.
     >
     b. After successfully configuring the `hosts`, check whether the domain name can be accessed. If it can be accessed properly, the configuration has taken effect.
  
 >If the verification still fails with the correct method, please log in to the Anti-DDoS Advanced Console and check whether the configuration is correct. If the problem persists after you fix any incorrect configuration items, please contact [Tencent Cloud technical support](https://intl.cloud.tencent.com/support).
-

@@ -1,3 +1,5 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [CKafka API 3.0](https://intl.cloud.tencent.com/document/product/597/36407) which is standardized and faster.
+>
 ## 1. API Description
 
 This API (GetTopicAttributes) is used to obtain the topic attributes of a CKafka instance.
@@ -19,8 +21,8 @@ The following request parameter list only provides API request parameters. Other
 | --- | --- | --- |
 | topicId | String | Topic ID |
 | partitionNum | Int | Number of partitions |
-| enableWhiteList | int | Whether to enable IP whitelist. 1: Enable 0: Disable |
-| ipWhiteList | array | IP whitelist |
+| enableWhiteList | int | Whether to enable IP allowlist. 1: Enable 0: Disable |
+| ipWhiteList | array | IP allowlist |
 | createTime | Int | Creation time, expressed as timestamp (in second) |
 | partitions | Array | Partition details |
 | partitions::partition | Int | Partition id |
@@ -41,33 +43,26 @@ Output:
 ```
  {
       "code" : 0,
-	"codeDesc":"Success"
+"codeDesc":"Success"
       "message" : "ok",
-		
-		"topicId" : "topic-xxoo234",
-		"partitionNum" : 2,
-		"enableWhiteList" : 1,
-		"ipWhiteList" :["10.0.0.1"],
-		"partitions" : [
-			{
-			"partition":0,
-                		"leaderStatus":1,
-			"isrNum": 3,
-			"replicaNum" : 3
-			},
-			{
-			"partition":1,
-                		"leaderStatus":2,
-			"isrNum": 2,
-			"replicaNum" : 3
-			}
-		]
+
+"topicId" : "topic-xxoo234",
+"partitionNum" : 2,
+"enableWhiteList" : 1,
+"ipWhiteList" :["10.0.0.1"],
+"partitions" : [
+{
+"partition":0,
+                "leaderStatus":1,
+"isrNum": 3,
+"replicaNum" : 3
+},
+{
+"partition":1,
+                "leaderStatus":2,
+"isrNum": 2,
+"replicaNum" : 3
+}
+]
   }
 ```
-
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 ## Namespace
 
-Namespace=QCE/APIGATEWAY 
+Namespace=QCE/APIGATEWAY
 
 ## Metric Name
 
@@ -60,7 +60,7 @@ The following describes how to query the combinations of the API gateway in thre
 &Instances.N.Dimensions.2.Name=apiid
 &Instances.N.Dimensions.2.Value=<API ID>
 
-#### 3. Values of the input parameters at the key pair dimension (for whitelisted users only)
+#### 3. Values of the input parameters at the key pair dimension (for allowlisted users only)
 
 &Namespace=QCE/APIGATEWAY
 &Instances.N.Dimensions.0.Name=serviceId

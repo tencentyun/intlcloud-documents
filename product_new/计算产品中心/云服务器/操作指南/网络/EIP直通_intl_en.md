@@ -5,7 +5,7 @@ When you want to access internet via an EIP, you can choose NAT mode or direct c
 - NAT mode can meet most of the requirements. However, if you want to check the public IP on the CVM, you need to use EIP direct connection mode.
 
 ## Use Limits
-- At present, EIP direct connection is under beta test and is only available to whitelisted users. It only supports devices in a VPC. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for this feature.
+- At present, EIP direct connection is under beta test and is only available to allowed users. It only supports devices in a VPC. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for this feature.
 - An NAT gateway can be bound with EIPs that are enabled with direct connection, but direct connection cannot be implemented.
 - On CVM, EIP direct connection cannot take effect at the same time as an NAT gateway. If the routing table associated with the subnet where your CVM resides is configured with a routing policy of accessing the public network through the NAT gateway, direct connection cannot be implemented through the EIP on the CVM. You can allow the CVM to access the public network through its EIP by [adjusting the priorities of NAT gateways and EIPs](https://intl.cloud.tencent.com/document/product/1015/32734). In this case, EIP direct connection can be implemented.
 
@@ -25,7 +25,7 @@ The script for Linux is applicable to the following scenario: both the private I
 #### Step 1: download the script for EIP direct connection
 EIP direct connection may cause network interruption. Therefore, you need to download the script for EIP direct connection and upload it to CVM in advance. You can obtain the script by using one of the following methods:
 - **Method 1: upload the script for EIP direct connection**
- (1) Download the configuration script for EIP direct connection from [Download Script for Linux](https://eip4277469.cos.ap-guangzhou.myqcloud.com/eip_direct.sh-direct-125).
+ (1) Download the configuration script for EIP direct connection from Download Script for Linux
  (2) After the script for Linux is downloaded onto the local machine, upload it to the CVM that requires EIP direct connection.
 - **Method 2: directly use a command**
 Log in to the CVM, and run the following command on the CVM to download the script:
@@ -86,8 +86,7 @@ https://windows-1254277469.cos.ap-guangzhou.myqcloud.com/eip_windows_direct.bat
 ![](https://main.qcloudimg.com/raw/e6d6a44be911ec5f60a6205b6f47a2c7.png)
 4. Select **Turn off Windows Firewall** both in the **Private network settings** pane and the **Public network settings** pane.
 ![](https://main.qcloudimg.com/raw/cdb7703dec781e98101f7f3fd7ecf71f.png)
-5. Double-click to run the script downloaded in [Step 1](#step1). Enter the public IP address and press Enter twice. 
+5. Double-click to run the script downloaded in [Step 1](#step1). Enter the public IP address and press Enter twice.
 6. Enter `ipconfig` in the **Windows PowerShell** window and press Enter. You can see that the IPv4 address on the primary ENI changes to the public network address.
 
 >When the direct connection is enabled, you cannot assign a private IP to the primary ENI. Otherwise, the CVM cannot access the public network.
-

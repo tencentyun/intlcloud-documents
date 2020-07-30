@@ -1,6 +1,8 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [CKafka API 3.0](https://intl.cloud.tencent.com/document/product/597/36407) which is standardized and faster.
+>
 ## 1. API Description
 
-This API (DeleteTopicIpwhitelist) is used to delete whitelist of a topic.
+This API (DeleteTopicIpwhitelist) is used to delete the allowlist of a topic.
 
 Domain name for API request: ckafka.api.qcloud.com
 
@@ -12,7 +14,7 @@ The following request parameter list only provides API request parameters. Other
 | --- | --- | --- | --- |
 | instanceId | Yes | String | Instance ID |
 | topicName | Yes | String | Topic name |
-| Ip.n | Yes | String | Required. IP whitelist |
+| Ip.n | Yes | String | Required. IP allowlist |
 
 ## 3. Example
 
@@ -27,10 +29,9 @@ Output:
 ```
   {
       "code" : 0,
-	"codeDesc":"Success"
+"codeDesc":"Success"
       "message" : "ok",
   }
 
 ```
-> Note: This API deletes the IPs in ipWhiteList from the existing whitelist.
-
+> Note: This API deletes the IPs in ipWhiteList from the existing allowlist.

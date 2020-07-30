@@ -7,7 +7,7 @@
 <tr><th>インスタンス課金モード</th><th>インスタンス設定</th></tr>
 <tr><td>トラフィック課金</td><td>従量課金インスタンス</td><td>ALL</td><td>0 ～ 100</td></tr>
 <tr><td>帯域幅課金</td><td>従量課金インスタンス</td><td>ALL</td><td>0 ～ 100</td></tr>
-<tr><td>共有帯域幅</td><td colspan="2">ALL</td><td>0 ～ 2000</td></tr>
+<tr><td>共有帯域幅</td><td colspan="2">ALL</td><td>0 ～ 1000</td></tr>
 </table>
 
 - 次のルールは、2020年2月24日00:00より前に作成されたインスタンスに適用されます。
@@ -16,7 +16,7 @@
 <tr><th style="width: 18.5607%;">インスタンス課金モード</th><th style="width: 18.5607%;">インスタンス設定</th></tr>
 <tr><td>トラフィック課金</td><td>従量課金インスタンス</td><td>ALL</td><td>0 ～ 100</td></tr>
 <tr><td>帯域幅課金</td><td>従量課金インスタンス</td><td>ALL</td><td>0 ～ 100</td></tr>
-<tr><td>共有帯域幅</td><td colspan="2">ALL</td><td>0 ～ 2000</td></tr>
+<tr><td>共有帯域幅</td><td colspan="2">ALL</td><td>0 ～ 1000</td></tr>
 </table>
 
 

@@ -8,7 +8,7 @@
 
 ### Hotlink protection
 - VOD supports the configuration of referer hotlink protection, which implements access control via the `referer` field in HTTP requests to protect websites against hotlinking.
-- VOD supports configuration of IP blacklist/whitelist to filter access source IPs and effectively defend against malicious users.
+- VOD supports configuration of IP blocklist/allowlist to filter access source IPs and effectively defend against malicious users.
 - VOD supports key and timestamp hotlink protection to control the expiration time of access.
 - The innovative hotlink protection feature for member video preview in VOD allows configuration of the time limit for video preview. The playback will end when the time limit for preview is reached and will be resumed after successful membership payment.
 
@@ -23,5 +23,3 @@ Through the integration with WeChat, VOD can directly generate links for video r
 ### Business statistical analysis
 - VOD provides statistical analysis service for video business, allowing you to keep track of traffic, bandwidth, and clicks by time, region, and ISP.
 - VOD provides statistical analysis service for all the video files and supports viewing playback count and traffic of an individual video.
-
-

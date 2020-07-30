@@ -1,5 +1,7 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [CKafka API 3.0](https://intl.cloud.tencent.com/document/product/597/36407) which is standardized and faster.
+>
 
-> This feature is currently in beta. If you want to try this feature in the console, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be whitelisted.
+> This feature is currently in beta. If you want to try this feature in the console, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be allowed.
 
 ## 1. API Description
 
@@ -23,10 +25,10 @@ Input:
 
 ```
  https://domain/v2/index.php?Action=AddUser
-	 &instanceId=ckafka-tadfqa0
-	 &name=user01
-	 &password=passwd01
-	 &<Common Request Parameters>
+&instanceId=ckafka-tadfqa0
+&name=user01
+&password=passwd01
+&<Common Request Parameters>
 ```
 
 Output:

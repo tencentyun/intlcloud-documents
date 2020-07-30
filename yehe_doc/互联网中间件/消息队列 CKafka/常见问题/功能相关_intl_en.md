@@ -40,7 +40,5 @@ Different instance specifications have different restrictions on peak throughput
 ### How does CKafka guarantee security?
 CKafka guarantees security by using following features:
 - Tenant isolation: the network access of instances is isolated among different accounts by default.
-- Permission control: CKafka has an additional whitelist-based authentication mechanism at the application layer and supports SASL authentication.
+- Permission control: CKafka has an additional allowlist-based authentication mechanism at the application layer and supports SASL authentication.
 - Security protection: services such as multi-dimensional security protection and anti-DDoS attacks are provided.
-
-

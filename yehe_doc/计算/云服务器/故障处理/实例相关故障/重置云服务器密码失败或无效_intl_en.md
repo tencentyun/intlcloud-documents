@@ -53,8 +53,8 @@ Scan for CVM vulnerabilities using the installed security program and check whet
 - If the CVM has vulnerabilities, fix them.
 - If core components are blocked, unblock them.
 
-To prevent failed or invalid CVM password resets, we recommend adding the following directories and files to the whitelist and trusted locations of the security program.
-- Whitelist the following directories in the security program:
+To prevent failed or invalid CVM password resets, we recommend adding the following directories and files to the allowlist and trusted locations of the security program.
+- Allow the following directories in the security program:
 ```
 C:\Windows\System32\WindowsPowerShell\
 C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Scripts
@@ -66,8 +66,3 @@ C:\Program Files\Cloudbase Solutions\
 C:\Windows\System32\cmd.exe
 C:\Windows\SysWOW64\cmd.exe
 ```
-
-
-
-
-

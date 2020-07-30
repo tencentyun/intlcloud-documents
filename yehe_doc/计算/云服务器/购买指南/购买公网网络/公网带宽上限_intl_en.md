@@ -7,7 +7,7 @@ The public network bandwidth cap refers to the upper limit of outbound bandwidth
 <tr><th>Instance Billing Mode</th><th>Instance Configuration</th></tr>
 <tr><td>Bill-by-traffic</td><td>Pay-as-you-go instances</td><td>ALL</td><td>0 - 100</td></tr>
 <tr><td>Bill-by-bandwidth</td><td>Pay-as-you-go instances</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>Bandwidth package</td><td colspan="2">All</td><td>0 - 2000</td></tr>
+<tr><td>Bandwidth package</td><td colspan="2">All</td><td>0 - 1000</td></tr>
 </table>
 - The following rules apply to instances created before 00:00, February 24, 2020:
 <table>
@@ -15,7 +15,7 @@ The public network bandwidth cap refers to the upper limit of outbound bandwidth
 <tr><th style="width: 18.5607%;">Instance Billing Mode</th><th style="width: 24.5814%;">Instance Configuration</th></tr>
 <tr><td>Bill-by-traffic</td><td>Pay-as-you-go instances</td><td>All</td><td>0 - 100</td></tr>
 <tr><td>Bill-by-bandwidth</td><td>Pay-as-you-go instances</td><td>All</td><td>0 - 100</td></tr>
-<tr><td>Bandwidth package</td><td colspan="2">All</td><td>0 - 2000</td></tr>
+<tr><td>Bandwidth package</td><td colspan="2">All</td><td>0 - 1000</td></tr>
 </table>
 
 

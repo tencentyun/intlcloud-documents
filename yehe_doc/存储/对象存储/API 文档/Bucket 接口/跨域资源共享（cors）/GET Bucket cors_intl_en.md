@@ -1,70 +1,91 @@
-## Feature
-This API allows the bucket owner to obtain the cross-origin resource sharing (CORS, a W3C standard) configuration of a bucket. By default, the bucket owner has the permission to use this API and can grant such permission to other users.
+## API description
+
+This API is used to query the cross-origin resource sharing (CORS) access control configuration of a bucket.
 
 ## Request
+
 #### Sample request
 
-```shell
+```plaintext
 GET /?cors HTTP/1.1
-Host: <Bucketname-APPID>.cos.<Region>.myqcloud.com
+Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 ```
 
->?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+
+#### Request parameters
+
+This API does not use any request parameters.
 
 #### Request headers
+
 This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-
 #### Request body
-The request body of this request is empty.
+
+This API does not have a request body.
 
 ## Response
 
 #### Response headers
+
 This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
-CORS configuration information is obtained successfully.
 
-```shell
-<?xml version="1.0" encoding="UTF-8" ?>
+A successful query will return **application/xml** data which includes all information about the CORS configuration on the bucket.
+
+```xml
+<?xml version='1.0' encoding='utf-8' ?>
 <CORSConfiguration>
-    <CORSRule>
-        <ID>1234</ID>
-        <AllowedOrigin>http://www.qq.com</AllowedOrigin>
-        <AllowedMethod>PUT</AllowedMethod>
-        <AllowedHeader>x-cos-meta-test</AllowedHeader>
-        <MaxAgeSeconds>500</MaxAgeSeconds>
-        <ExposeHeader>x-cos-meta-test1</ExposeHeader>
-    </CORSRule>
+	<CORSRule>
+		<AllowedOrigin>string</AllowedOrigin>
+		<AllowedMethod>enum</AllowedMethod>
+		<AllowedMethod>enum</AllowedMethod>
+		<AllowedHeader>string</AllowedHeader>
+		<AllowedHeader>string</AllowedHeader>
+		<ExposeHeader>string</ExposeHeader>
+		<ExposeHeader>string</ExposeHeader>
+		<MaxAgeSeconds>integer</MaxAgeSeconds>
+	</CORSRule>
+	<CORSRule>
+		<ID>string</ID>
+		<AllowedOrigin>string</AllowedOrigin>
+		<AllowedOrigin>string</AllowedOrigin>
+		<AllowedMethod>enum</AllowedMethod>
+		<AllowedMethod>enum</AllowedMethod>
+		<AllowedHeader>string</AllowedHeader>
+		<ExposeHeader>string</ExposeHeader>
+		<ExposeHeader>string</ExposeHeader>
+		<MaxAgeSeconds>integer</MaxAgeSeconds>
+	</CORSRule>
 </CORSConfiguration>
 ```
 
-The nodes are described in details below:
+The detailed nodes are described as follows:
 
-Node Name (Keyword) | Parent Node | Description | Type
----|---|---|--
-|CORSConfiguration| None | Describes all the information on the CORS configuration, which can contain up to 100 `CORSRules` | Container
+| Node Name (Keyword) | Parent Node | Description | Type |
+| --- | --- | --- | --- |
+| CORSConfiguration | None     | Stores the result of the `GET Bucket cors` request | Container |
 
-Container node `CORSConfiguration`:
+**Container node `CORSConfiguration`:**
 
-Node Name (Keyword) | Parent Node | Description | Type |
----|---|---|--
-CORSRule | CORSConfiguration  | Describes all the information on the CORS configuration, which can contain up to 100 `CORSRules` | Container
+| Node Name (Keyword) | Parent Node | Description | Type |
+| --- | --- | --- | --- |
+| CORSRule | CORSConfiguration | Contains all information on a CORS rule |  Container |
 
-Container node `CORSRule`:
+**Container node `CORSRule`:**
 
-Node Name (Keyword) | Parent Node | Description | Type
----|---|---|---
-ID|CORSConfiguration.CORSRule| CORS rule ID that depends on whether the ID field is specified in a PUT Bucket cors request |string
-AllowedOrigin      | CORSConfiguration.CORSRule | Allowed origin in the format `protocol://domain name[:port number]`, such as `http://www.qq.com`. Wildcard `*` is supported | strings
-AllowedMethod|CORSConfiguration.CORSRule| Allowed HTTP operations. Enumerated values: GET, PUT, HEAD, POST, DELETE |strings
-AllowedHeader   | CORSConfiguration.CORSRule | Tells the server when sending `OPTIONS` requests which user-defined HTTP request headers can be used for subsequent requests. Wildcard `*` is supported | strings
-MaxAgeSeconds|CORSConfiguration.CORSRule| Sets the validity period of the result of the `OPTIONS` request |integer
-ExposeHeader|CORSConfiguration.CORSRule| Sets the user-defined headers from the server side that can be received by the browser |strings
-
+| Node Name (Keyword) | Parent Node | Description | Type |
+| --- | --- | --- | --- |
+| AllowedOrigin | CORSConfiguration.CORSRule | Allowed access source(s) in a CORS rule; supports `*` or domain names containing `*` | string |
+| AllowedMethod | CORSConfiguration.CORSRule | Allowed HTTP method(s) in a CORS rule; corresponds to the Access-Control-Allow-Methods header in a CORS response. Enumerated values: PUT, GET, POST, DELETE, HEAD | enum |
+| AllowedHeader | CORSConfiguration.CORSRule | Specifies one or more custom HTTP request headers (case-insensitive) in a CORS rule that the browser is allowed to include in a CORS request. `*` is supported. | string |
+| ExposeHeader | CORSConfiguration.CORSRule | CORS response header(s) in a CORS rule that can be exposed to the browser; case-insensitive | string |
+| MaxAgeSeconds | CORSConfiguration.CORSRule | Sets only one validity duration in sec of a CORS configuration in a CORS rule. This parameter corresponds to the CORS response header `Access-Control-Max-Age` | integer |
+| ID | CORSConfiguration.CORSRule | Sets the single unique ID of a CORS rule. The use of this node depends on whether the ID was specified when using PUT Bucket cors to set a CORS configuration on the bucket | string |
 
 #### Error codes
 
@@ -74,34 +95,53 @@ This API returns uniform error responses and error codes. For more information, 
 
 #### Request
 
-```shell
+```plaintext
 GET /?cors HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Wed, 28 Oct 2016 21:32:00 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKIDWtTCBYjM5OwLB9CAwA1Qb2ThTSUj****&q-sign-time=1484815944;32557711944&q-key-time=1484815944;32557711944&q-header-list=host&q-url-param-list=cors&q-signature=a2d28e1b9023d09f9277982775a4b3b705d0****
+Date: Thu, 09 Jul 2020 11:15:12 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1594293312;1594300512&q-key-time=1594293312;1594300512&q-header-list=date;host&q-url-param-list=cors&q-signature=8c00249260b2535056d2ef8fc43ecd675515****
+Connection: close
 ```
 
 #### Response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 345
-Connection: keep-alive
-Date: Wed, 28 Oct 2016 21:32:00 GMT
+Content-Length: 1196
+Connection: close
+Date: Thu, 09 Jul 2020 11:15:12 GMT
 Server: tencent-cos
-x-cos-request-id: NTg4MDdlNGZfNDYyMDRlXzM0YWFf****
+x-cos-request-id: NWYwNmZjNDBfN2ViMTJhMDlfZDNjOV8xYjdk****
 
+<?xml version='1.0' encoding='utf-8' ?>
 <CORSConfiguration>
-    <CORSRule>
-        <ID>1234</ID>
-        <AllowedOrigin>http://www.qq.com</AllowedOrigin>
-        <AllowedMethod>PUT</AllowedMethod>
-        <AllowedHeader>x-cos-meta-test</AllowedHeader>
-        <MaxAgeSeconds>500</MaxAgeSeconds>
-        <ExposeHeader>x-cos-meta-test1</ExposeHeader>
-    </CORSRule>
+	<CORSRule>
+		<AllowedOrigin>*</AllowedOrigin>
+		<AllowedMethod>GET</AllowedMethod>
+		<AllowedMethod>HEAD</AllowedMethod>
+		<AllowedHeader>Range</AllowedHeader>
+		<AllowedHeader>x-cos-server-side-encryption-customer-algorithm</AllowedHeader>
+		<AllowedHeader>x-cos-server-side-encryption-customer-key</AllowedHeader>
+		<AllowedHeader>x-cos-server-side-encryption-customer-key-MD5</AllowedHeader>
+		<ExposeHeader>Content-Length</ExposeHeader>
+		<ExposeHeader>ETag</ExposeHeader>
+		<ExposeHeader>x-cos-meta-author</ExposeHeader>
+		<MaxAgeSeconds>600</MaxAgeSeconds>
+	</CORSRule>
+	<CORSRule>
+		<ID>example-id</ID>
+		<AllowedOrigin>https://example.com</AllowedOrigin>
+		<AllowedOrigin>https://example-1.com</AllowedOrigin>
+		<AllowedMethod>PUT</AllowedMethod>
+		<AllowedMethod>GET</AllowedMethod>
+		...
+		<AllowedMethod>HEAD</AllowedMethod>
+		<AllowedHeader>*</AllowedHeader>
+		<ExposeHeader>Content-Length</ExposeHeader>
+		<ExposeHeader>ETag</ExposeHeader>
+		<ExposeHeader>x-cos-meta-author</ExposeHeader>
+		<MaxAgeSeconds>600</MaxAgeSeconds>
+	</CORSRule>
 </CORSConfiguration>
 ```
-
-

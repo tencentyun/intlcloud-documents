@@ -7,7 +7,7 @@
 <tr><th>인스턴스 과금 방식</th><th>인스턴스 구성</th></tr>
 <tr><td>트래픽 과금</td><td>종량제 인스턴스</td><td>ALL</td><td>0 - 100</td></tr>
 <tr><td>대역폭 과금</td><td>종량제 인스턴스</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>공유 대역폭</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
+<tr><td>공유 대역폭</td><td colspan="2">ALL</td><td>0 - 1000</td></tr>
 </table>
 
 - 2020년 2월 24일 00:00 이전에 생성한 기기의 경우, 다음의 규칙을 따릅니다.
@@ -16,7 +16,7 @@
 <tr><th style="width: 18.5607%;">인스턴스 과금 방식</th><th style="width: 24.5814%;">인스턴스 구성</th></tr>
 <tr><td>트래픽 과금</td><td>종량제 인스턴스</td><td>ALL</td><td>0 - 100</td></tr>
 <tr><td>대역폭 과금</td><td>종량제 인스턴스</td><td>ALL</td><td>0 - 100</td></tr>
-<tr><td>공유 대역폭</td><td colspan="2">ALL</td><td>0 - 2000</td></tr>
+<tr><td>공유 대역폭</td><td colspan="2">ALL</td><td>0 - 1000</td></tr>
 </table>
 
 

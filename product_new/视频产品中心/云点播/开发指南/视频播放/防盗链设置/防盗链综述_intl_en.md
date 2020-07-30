@@ -7,7 +7,7 @@ VOD hotlink protection can prevent hotlinking based on referer and key.
 <img src="https://main.qcloudimg.com/raw/a92778f479b70f6ff9d0eaa5d65b5589.png" width="450">
 
 ### Referer hotlink protection
-The referer mechanism based on HTTP identifies the request source through the referer field in the playback request header. You can add specified domain names to a blacklist or whitelist, based on which the CDN node will authenticate to allow or deny the playback requests accordingly.
+The referer mechanism based on HTTP identifies the request source through the referer field in the playback request header. You can add specified domain names to a blocklist or allowlist, based on which the CDN node will authenticate to allow or deny the playback requests accordingly.
 
 ### Key hotlink protection
 It allows you to splice a video's playback control parameters into the video URL in the form of `QueryString`. The CDN node will check the playback control parameters in the URL and control video playback accordingly. At present, key hotlink protection supports controlling "validity period", "viewer quantity", and "video playback duration" through corresponding parameters, i.e., "expiration time", "number of IPs allowed for playback", and "preview duration".

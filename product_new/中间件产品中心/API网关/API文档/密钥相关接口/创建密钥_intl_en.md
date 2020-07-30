@@ -1,3 +1,5 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [API Gateway API 3.0]( https://intl.cloud.tencent.com/document/product/628/36711) which is standardized and faster.
+>
 ## API Description
 This API (CreateApiKey) is used to create an API key pair.
 
@@ -11,7 +13,7 @@ The list below contains only the API request parameters. Other parameters can be
 | secretKey | No | String | User-defined secretKey, which is required when `type` is `manual`. It can contain 10 to 50 letters, digits, and underscores. |
 | type | No | String | Key type. Value range: auto, manual (custom key). Default value: auto. |
 
->The `manual` type is in beta. If you want to use it, please contact your sales rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be added to the whitelist.
+>The `manual` type is in beta. If you want to use it, please contact your sales rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to be added to the allowlist.
 
 ## Output Parameters
 
@@ -37,14 +39,14 @@ https://apigateway.api.qcloud.com/v2/index.php?
 Below is a sample return:
 ```
 {
-	"code": "0",
-	"message": "",
-	"codeDesc": "Success",
-	"secretName": "myTest",
-	"secretID": "AKIDXXXXWKipDlK",
-	"secretKey": "adasfdasffa",
-	"type": "auto",
-	"createdTime": "2017-08-07T00:00:00Z"
+"code": "0",
+"message": "",
+"codeDesc": "Success",
+"secretName": "myTest",
+"secretID": "AKIDXXXXWKipDlK",
+"secretKey": "adasfdasffa",
+"type": "auto",
+"createdTime": "2017-08-07T00:00:00Z"
 }
 ```
 
@@ -61,17 +63,13 @@ https://apigateway.api.qcloud.com/v2/index.php?
 Below is a sample return:
 ```
 {
-	"code": "0",
-	"message": "",
-	"codeDesc": "Success",
-	"secretName": "myTest",
-	"secretID": "myTestsecretID",
-	"secretKey": "myTestSecretKey",
-	"type": "manual",
-	"createdTime": "2017-08-07T00:00:00Z"
+"code": "0",
+"message": "",
+"codeDesc": "Success",
+"secretName": "myTest",
+"secretID": "myTestsecretID",
+"secretKey": "myTestSecretKey",
+"type": "manual",
+"createdTime": "2017-08-07T00:00:00Z"
 }
 ```
-
-
-
-

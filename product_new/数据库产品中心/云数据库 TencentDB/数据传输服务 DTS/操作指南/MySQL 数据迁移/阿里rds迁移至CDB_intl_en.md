@@ -8,15 +8,15 @@ This document describes how to migrate data from Alibaba Cloud ApsaraDB for RDS 
 
 ## Directions
 
-### 1. Get the basic information and AccessKey of the source database 
+### 1. Get the basic information and AccessKey of the source database
 1.1. Log in to the [RDS Console](https://account.aliyun.com/login/login.htm?oauth_callback=https%3A%2F%2Frdsnew.console.aliyun.com%2F%3Fspm%3Da2c4g.11186623.2.5.cdjgiR) and select a target instance.
 1.2. You can obtain the necessary information on the target instance's basic information page as shown below:
 ![](https://main.qcloudimg.com/raw/d20077e3364fc3fa692c4e67b6760f5b.png)
 >The public network address provided by Alibaba Cloud needs to be converted into IP format. You can query IP/server addresses [here](https://whatismyipaddress.com/).
 >
 1.3. Hover over the profile photo in the top-right corner and select **accesskeys** in the drop-down menu to get the required Accesskey.
-![](https://main.qcloudimg.com/raw/d01b2f01c876ddf962fd9659796aefca.png)
-	
+![](https://main.qcloudimg.com/raw/916987de380ebce2919fae56eb19936b.png)
+
 ### 2. Create a DTS task for TencentDB
 Log in to the [DTS Console](https://console.cloud.tencent.com/dtsnew/migrate/page), go to the data migration page, click **Create Task**, and configure the task, source database, and target database on the page redirected to.
 
@@ -28,9 +28,9 @@ Log in to the [DTS Console](https://console.cloud.tencent.com/dtsnew/migrate/pag
 
 #### 2.2. Enter the information of the source database
 Select a connection type as needed and enter the connection information of the source database.
->You need to add the IP of your TencentDB instance to Alibaba Cloud's whitelist for IP mapping; otherwise, the connectivity test would fail.
->- For mapping a TencentDB for MySQL instance with a public IP, you need to add the public IP of the corresponding region to Alibaba Cloud's whitelist.
->- If the source database type is configured as "Direct Connect" or "VPN" during DTS configuration, an IP for external mapping will appear after the task is generated. You need to add it to Alibaba Cloud's whitelist.
+>You need to add the IP of your TencentDB instance to Alibaba Cloud's allowlist for IP mapping; otherwise, the connectivity test would fail.
+>- For mapping a TencentDB for MySQL instance with a public IP, you need to add the public IP of the corresponding region to Alibaba Cloud's allowlist.
+>- If the source database type is configured as "Direct Connect" or "VPN" during DTS configuration, an IP for external mapping will appear after the task is generated. You need to add it to Alibaba Cloud's allowlist.
 >
 ![](https://main.qcloudimg.com/raw/643d71c704dfd69a3b4a6f1cb80c2858.png)
 
@@ -49,10 +49,10 @@ Select a data consistency check type as needed (e.g., full check or no check).
 
 #### 2.6. Check the migration task information
 After the migration task is created, you need to click **Next: Check Task** to verify the task information. You cannot start the migration task until all the check items are passed.
- There are 3 statuses for task check:
- - Passed: The check is fully successful.
- - Warning: The check fails. Database operation may be affected during or after data migration, but the migration task can still be executed.
- - Failed: The check fails and the migration task cannot be executed. In this case, please check and modify the migration task information according to the error and then check the task again.
+ There are 3 statuses for task check:
+ - Passed: The check is fully successful.
+ - Warning: The check fails. Database operation may be affected during or after data migration, but the migration task can still be executed.
+ - Failed: The check fails and the migration task cannot be executed. In this case, please check and modify the migration task information according to the error and then check the task again.
 ![](https://main.qcloudimg.com/raw/0b8c1c1cf54b071205acb9b36578773f.png)
 
 ### 3. Start migration
@@ -64,7 +64,7 @@ After the migration is started, you can view the corresponding migration progres
 >You can troubleshoot the problem in the following steps:
 >- Check whether your Alibaba Cloud key has permission to initiate cold backup on the ApsaraDB for RDS instance. If an Alibaba Cloud root account is used, which has all permissions, this cause can be ruled out.
 >- Log in to the Alibaba Cloud Console, check whether the ApsaraDB for RDS instance is executing a conflicting task such as cold backup or upgrading; if automatic backup is enabled, you need to disable it.
->- If the problem persists after the above two steps, please contact Alibaba Cloud to find out the cause of failure in initiating a cold backup task with an [API](https://help.aliyun.com/document_detail/26272.html?spm=a2c4g.11186623.6.916.voEDSM).  
+>- If the problem persists after the above two steps, please contact Alibaba Cloud to find out the cause of failure in initiating a cold backup task with an [API](https://help.aliyun.com/document_detail/26272.html?spm=a2c4g.11186623.6.916.voEDSM). 
 
 ### 4. Cancel migration
 To cancel an in-progress migration task, click **Cancel**.
@@ -75,7 +75,7 @@ To cancel an in-progress migration task, click **Cancel**.
 - Stop business connection to ApsaraDB for RDS and run the `show processlist` command to confirm that there is no business connection.
 - Run the `show master status` command to get the latest GTID of ApsaraDB for RDS and compare it with that of TencentDB obtained via `show slave status`, so as to ensure that there is no synchronization delay between TencentDB and ApsaraDB for RDS instances.
 - Check whether your original ApsaraDB for RDS account can be used to log in to TencentDB; if not, try to escalate it to a privileged account in the following steps:
-   While the DTS task continues syncing, add a privileged account on ApsaraDB for RDS (the password encryption method can be changed to general encryption), which will be synced to TencentDB via DTS.
+   While the DTS task continues syncing, add a privileged account on ApsaraDB for RDS (the password encryption method can be changed to general encryption), which will be synced to TencentDB via DTS.
 - You can use the console (as shown below) or extract core table contents to check data consistency.
 ![](https://main.qcloudimg.com/raw/19123fc859e7ddca13cd465a0cc30077.png)
 - Run the `show slave status` command to record the sync time point of TencentDB.
@@ -87,6 +87,4 @@ After the migration is 100% complete, you can click **Complete** on the right. <
 >If the migration is in **uncompleted** status, the migration task will continue, so will data sync.
 
 ### 7. Restart your business application
-Disable the read-only feature of TencentDB, restart the application, and observe the status of TencentDB to make sure that it is running normally. 
-
-
+Disable the read-only feature of TencentDB, restart the application, and observe the status of TencentDB to make sure that it is running normally.

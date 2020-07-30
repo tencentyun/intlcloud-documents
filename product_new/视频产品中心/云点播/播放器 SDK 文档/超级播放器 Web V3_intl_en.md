@@ -1,4 +1,3 @@
-
 This document describes the web superplayer of VOD, which can be quickly integrated with your own web applications through flexible APIs to implement video playback. This document is intended for developers who have a basic knowledge of JavaScript.
 
 ## Overview of Capabilities
@@ -6,19 +5,19 @@ The VOD superplayer implements video playback via the HTML5 `<video>` tag and Fl
 
 ### Supported video formats and platforms
 
-| Browser/Format   | MP4 | HLS | DASH |
+| Browser/Format   | MP4 | HLS | DASH |
 |:----------------|:---:|:---:|:----:|
-| Chrome          |  ✔  |  ✔  |  ✔   |
-| Firefox         |  ✔  |  ✔  |  ✔   |
-| Edge            |  ✔  |  ✔  |  ✔   |
-| QQ Browser   |  ✔  |  ✔  |  ✔   |
-| Mac Safari      |  ✔  |  ✔  |  ✔   |
-| iOS Safari      |  ✔  |  ✔  |  ✖   |
-| iOS WeChat/QQ     |  ✔  |  ✔  |  ✖   |
-| Android Chrome  |  ✔  |  ✔  |  ✔   |
-| Android WeChat/QQ |  ✔  |  ✔  |  ✖   |
-| Mobile QQ Browser  |  ✔  |  ✔  |  ✖   |
-| IE 11/10/9/8     |  ✔  |  ✔  |  ✖   |
+| Chrome          |  ✔  |  ✔  |  ✔   |
+| Firefox         |  ✔  |  ✔  |  ✔   |
+| Edge            |  ✔  |  ✔  |  ✔   |
+| QQ Browser   |  ✔  |  ✔  |  ✔   |
+| Mac Safari      |  ✔  |  ✔  |  ✔   |
+| iOS Safari      |  ✔  |  ✔  |  ✖   |
+| iOS WeChat/QQ     |  ✔  |  ✔  |  ✖   |
+| Android Chrome  |  ✔  |  ✔  |  ✔   |
+| Android WeChat/QQ |  ✔  |  ✔  |  ✖   |
+| Mobile QQ Browser  |  ✔  |  ✔  |  ✖   |
+| IE 11/10/9/8     |  ✔  |  ✔  |  ✖   |
 
 >
 >- Only the H.264 video encoder is supported.
@@ -55,12 +54,12 @@ After the preparations are completed, you can add a video player to your webpage
 ### Step 1. Import files into the page
 Import the player style and script files into the right places:
 ```
- <link href="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.css" rel="stylesheet">
- <!--If you want to play back HLS and Dash videos via HTML5 in a modern browser such as Chrome and Firefox, you need to import hls.js and dash.js before importing tcplayer.min.js.-->
- <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/hls.min.0.12.4.js"></script>
- <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/dash.all.min.2.9.3.js"></script>
- <!--Player script file-->
- <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.min.js"></script>
+ <link href="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.css" rel="stylesheet">
+ <!--If you want to play back HLS and Dash videos via HTML5 in a modern browser such as Chrome and Firefox, you need to import hls.js and dash.js before importing tcplayer.min.js.-->
+ <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/hls.min.0.12.4.js"></script>
+ <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/libs/dash.all.min.2.9.3.js"></script>
+ <!--Player script file-->
+ <script src="//imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.min.js"></script>
 ```
 
 ### Step 2. Place the player container
@@ -75,8 +74,8 @@ Here:
 - The `player-container-id` is the ID of the player container, which can be customized.
 - You are recommended to set the size of the player container zone through CSS which is more flexible than the attribute and can achieve effects such as fit to full screen and container adaption.
 - The `preload` attribute in the sample specifies whether to load the video after the page is loaded, which is usually set to `auto` for faster start of the playback. Other options include:
-	- `meta`: it only loads the metadata after the page is loaded.
-	- `none`: it does not load the video after the page is loaded. Due to system restrictions, videos will not be automatically loaded on mobile devices.
+- `meta`: it only loads the metadata after the page is loaded.
+- `none`: it does not load the video after the page is loaded. Due to system restrictions, videos will not be automatically loaded on mobile devices.
 - The `playsinline` and `webkit-playsinline` attributes are used to implement inline playback in case where the standard mobile browser does not hijack the video playback. They are just for reference here and can be used as needed.
 - If the `x5-playsinline` attribute is set, the X5 UI player will be used in the TBS kernel.
 
@@ -84,10 +83,10 @@ Here:
 Add the following initialization script to the page initialization code to pass in the `fileID` and `APPID` obtained in the preparations.
 ```
 var player = TCPlayer('player-container-id', { // player-container-id is the player container ID, which must be the same as that in HTML
-    fileID: '7447398157015849771', // Pass in the `fileID` of the video to be played back, which is required
-    appID: '1256993030', // Pass in the `appID` of the VOD account, which is required
-    playDefinition: '10', // Pass in the playback template, which is required
-  });
+    fileID: '7447398157015849771', // Pass in the `fileID` of the video to be played back, which is required
+    appID: '1256993030', // Pass in the `appID` of the VOD account, which is required
+    playDefinition: '10', // Pass in the playback template, which is required
+  });
 ```
 
 >The video to be played back needs to be transcoded by Tencent Cloud as it cannot be guaranteed that the source video can be played back normally in the browser.
@@ -100,7 +99,7 @@ Some of the features of the player are described in detail below, including best
 Here are a few ways to set the size of the player:
 
 * The width and height attributes can be set for the `<video>` tag. They should be in px (for example, width = "100px" or width = 100) but not percentage.
-*	The size can be set through CSS which supports values in px and percentage (e.g., width:"100px" or width:"100%").
+* The size can be set through CSS which supports values in px and percentage (e.g., width:"100px" or width:"100%").
 
 >
 >- If you do not set the width and height, the player will set its display size to the obtained resolution of the video. If the viewable zone size of the browser is smaller than the video resolution, the player will overflow the browser's viewable zone; therefore, this is generally not recommended. The best practice is to set the player size through CSS.
@@ -116,17 +115,17 @@ The prerequisite for enabling resumable playback is that the video is played bac
 
 ```
 var player = TCPlayer('player-container-id', {
-    fileID: '', // Pass in the `fileID` of the video to be played back, which is required
-    appID: '', // Pass in the `appID` of the VOD account, which is required
-    playDefinition: '', // Pass in the playback template, which is required
-    plugins:{
-        ContinuePlay: { // Enable resumable playback
-          // auto: true, // [Optional] whether to resume automatically after the video is played back
-          // text: 'You left off at', // [Optional] prompt text
-          // btnText: 'Resume' // [Optional] button text
-        },
-      }
-  });
+    fileID: '', // Pass in the `fileID` of the video to be played back, which is required
+    appID: '', // Pass in the `appID` of the VOD account, which is required
+    playDefinition: '', // Pass in the playback template, which is required
+    plugins:{
+        ContinuePlay: { // Enable resumable playback
+          // auto: true, // [Optional] whether to resume automatically after the video is played back
+          // text: 'You left off at', // [Optional] prompt text
+          // btnText: 'Resume' // [Optional] button text
+        },
+      }
+  });
 ```
 
 
@@ -143,10 +142,10 @@ If it is supported by the browser, **adjustable-speed playback is enabled by def
 
 ```
 var player = TCPlayer('player-container-id', {
-    fileID: '', // Pass in the `fileID` of the video to be played back, which is required
-    appID: '', // Pass in the `appID` of the VOD account, which is required
-    playbackRates: [0.5, 1, 1.25, 1.5, 2] // Set the adjustable-speed playback option, which is available only for HTML5
-  });
+    fileID: '', // Pass in the `fileID` of the video to be played back, which is required
+    appID: '', // Pass in the `appID` of the VOD account, which is required
+    playbackRates: [0.5, 1, 1.25, 1.5, 2] // Set the adjustable-speed playback option, which is available only for HTML5
+  });
 ```
 
 >
@@ -195,13 +194,13 @@ Example: [Thumbnail preview](https://imgcache.qq.com/open/qcloud/video/tcplayer/
 The video can be changed for playback by instantiating the object's `loadVideoByID(args)` method. The supported parameters are as follows:
 ```
 player.loadVideoByID({
-  fileID: '', // Pass in the `fileID` of the video to be played back, which is required
-  appID: '', // Pass in the `appID` of the VOD account, which is required
-  playDefinition: '', // Pass in the playback template, which is required
-  t: '', // Please see the description of key hotlink protection
-  us: '', // Please see the description of key hotlink protection
-  sign:'', // Please see the description of key hotlink protection
-  exper:'' // Please see the description of the preview feature
+  fileID: '', // Pass in the `fileID` of the video to be played back, which is required
+  appID: '', // Pass in the `appID` of the VOD account, which is required
+  playDefinition: '', // Pass in the playback template, which is required
+  t: '', // Please see the description of key hotlink protection
+  us: '', // Please see the description of key hotlink protection
+  sign:'', // Please see the description of key hotlink protection
+  exper:'' // Please see the description of the preview feature
 });
 ```
 
@@ -212,14 +211,14 @@ Example: [Changing `fileID` for playback](http://imgcache.qq.com/open/qcloud/vid
 Display the mirroring option in the right click menu:
 ```
 var player = TCPlayer('player-container-id', {
-  fileID: '', // Pass in the `fileID` of the video to be played back, which is required
-  appID: '', // Pass in the `appID` of the VOD account, which is required
-  playDefinition: '', // Pass in the playback template, which is required
-  plugins: {
-    ContextMenu: {
-      mirror: true
-    }
-  }
+  fileID: '', // Pass in the `fileID` of the video to be played back, which is required
+  appID: '', // Pass in the `appID` of the VOD account, which is required
+  playDefinition: '', // Pass in the playback template, which is required
+  plugins: {
+    ContextMenu: {
+      mirror: true
+    }
+  }
 });
 ```
 
@@ -233,12 +232,12 @@ You can enable progress bar marking in the player by adding timestamps through t
 How to enable in the player:
 ```
 var player = TCPlayer('player-container-id', {
-  fileID: '', // Pass in the `fileID` of the video to be played back, which is required
-  appID: '', // Pass in the `appID` of the VOD account, which is required
-  playDefinition: '', // Pass in the playback template, which is required
-  plugins: {
-    ProgressMarker: true
-  }
+  fileID: '', // Pass in the `fileID` of the video to be played back, which is required
+  appID: '', // Pass in the `appID` of the VOD account, which is required
+  playDefinition: '', // Pass in the playback template, which is required
+  plugins: {
+    ProgressMarker: true
+  }
 });
 ```
 
@@ -254,13 +253,13 @@ For detailed direction to enable this feature, please see [Referer Hotlink Prote
 The following parameters should be added during player initialization:
 ```
 var player = TCPlayer('player-container-id', {
-     fileID: '', // Pass in the `fileID` of the video to be played back, which is required
-     appID: '', // Pass in the `appID` of the VOD account, which is required
-     playDefinition: '', // Pass in the playback template, which is required
-     flash:{
-         swf: '//[Tencent Cloud's isolated domain name]/vod-player/[appID]/[fileID]/tcplayer/player.swf' // Address of the .swf file, which is required
-     }
-   });
+     fileID: '', // Pass in the `fileID` of the video to be played back, which is required
+     appID: '', // Pass in the `appID` of the VOD account, which is required
+     playDefinition: '', // Pass in the playback template, which is required
+     flash:{
+         swf: '//[Tencent Cloud's isolated domain name]/vod-player/[appID]/[fileID]/tcplayer/player.swf' // Address of the .swf file, which is required
+     }
+   });
 ```
 The swf URL needs to be passed in. If the browser uses Flash for playback, the Flash player will be obtained from this address. When the Flash player initiates a video request, the request's referer will bring this URL or the URL of the page.
 
@@ -269,44 +268,44 @@ The swf URL needs to be passed in. If the browser uses Flash for playback, the F
 >- You can also download the player.swf file to your CDN server and pass in the swf parameter pointing to the path to your CDN server.
 >- The isolated domain name provided by Tencent Cloud is a domain name exclusive to each user. One appID corresponds to one domain name, which is usually in the format of:
 >`[appID].vod2.myqcloud.com`.
->- You need to add the domain name of the player swf URL to the whitelist before videos for which referer hotlink protection is enabled can be played in Flash mode.
+>- You need to add the domain name of the player swf URL to the allowlist before videos for which referer hotlink protection is enabled can be played in Flash mode.
 >- The Flash swf file of the player is stored under the `imgcache.qq.com` domain name by default. If you need to deploy it to your own server, you can download it [here](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf) and deploy it by yourself.
 >- If iframe is embedded in the player page, the referer of the video request will bring `iframe src`.
 
 #### Support conditions by browser
 The support for DRM by each browser is as follows.
 
-| Browser        | Widevine | FairPlay | SimpleAES |
+| Browser        | Widevine | FairPlay | SimpleAES |
 |-----------------|----------|----------|-----------|
-| Chrome (PC/Mac)  | ✔        | ✖        | ✔         |
-| Firefox (PC/Mac) | ✔        | ✖        | ✔         |
-| Edge            | ✖        | ✖        | ✔         |
-| Mac Safari      | ✖        | ✔        | ✔         |
-| iOS Safari      | ✖        | ✔        | ✔         |
-| iOS Chrome      | ✖        | ✖        | ✔         |
-| iOS WeChat/QQ     | ✖        | ✖        | ✔         |
-| Android Chrome  | ✔        | ✖        | ✔         |
-| Android WeChat/QQ | ✖        | ✖        | ✔         |
-| IE 8, 9, 10, 11     | ✖        | ✖        | ✔         |
+| Chrome (PC/Mac)  | ✔        | ✖        | ✔         |
+| Firefox (PC/Mac) | ✔        | ✖        | ✔         |
+| Edge            | ✖        | ✖        | ✔         |
+| Mac Safari      | ✖        | ✔        | ✔         |
+| iOS Safari      | ✖        | ✔        | ✔         |
+| iOS Chrome      | ✖        | ✖        | ✔         |
+| iOS WeChat/QQ     | ✖        | ✖        | ✔         |
+| Android Chrome  | ✔        | ✖        | ✔         |
+| Android WeChat/QQ | ✖        | ✖        | ✔         |
+| IE 8, 9, 10, 11     | ✖        | ✖        | ✔         |
 
 > Flash is used for playback in IE.
 
 #### How to use
 
-First, the application needs to get the token from your **business backend**. 
+First, the application needs to get the token from your **business backend**.
 Then, play back the video through `FileId` and `Token` with the following playback code:
 
 ```
 var player = TCPlayer('player-container-id', {
-  appID:  '', // Pass in the `appID` of the VOD account, which is required
-  fileID: '', // Pass in the `fileID` of the video to be played back, which is required
-  playDefinition: '' // Pass in the playback template, which is required for playing back DRM content
-  plugins: {
-    DRM: {
-      token: '', // Pass in the token distributed by your backend service, which is required for playing back DRM content
-      certificateUri: '', // Pass in the download address of the FairPlay certificate, which is required for playing back FairPlay-encrypted content
-    }
-  }``
+  appID:  '', // Pass in the `appID` of the VOD account, which is required
+  fileID: '', // Pass in the `fileID` of the video to be played back, which is required
+  playDefinition: '' // Pass in the playback template, which is required for playing back DRM content
+  plugins: {
+    DRM: {
+      token: '', // Pass in the token distributed by your backend service, which is required for playing back DRM content
+      certificateUri: '', // Pass in the download address of the FairPlay certificate, which is required for playing back FairPlay-encrypted content
+    }
+  }``
 });
 ```
 The player will select an appropriate playback scheme based on the priority according to the playback template ID passed in and the support condition of the current browser. The priority order for DRM scheme selection is **Widevine** > **FairPlay** > **SimpleAES**; for example:

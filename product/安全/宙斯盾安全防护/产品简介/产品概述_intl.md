@@ -1,8 +1,7 @@
-
 Leveraging Tencent's over a decade of experience in security accumulated from various lines of business, Tencent Cloud Aegis Anti-DDoS is a multi-layer, all-around, cost-effective protection solution against DDoS attacks for your business. It is capable of precise purge of various types of network attack traffic and directing of normal traffic to business servers, preventing business fluctuations, service interruptions and user experience downgrading caused by potential DDoS attacks. In addition, it features protective resources at the Tbps level and customizable advanced security policies for targeted protection against specific attack behaviors.
 
 ## Product Categories
-Aegis Anti-DDoS offers the following options: [DDoS protective IP](https://intl.cloud.tencent.com/document/product/685/20368) and [DDoS protection pack](https://intl.cloud.tencent.com/document/product/685/20369) which are paid services; [advanced anti-DDoS policy](https://console.cloud.tencent.com/gamesec/asp), [advanced HTTP anti-CC defense policy](https://console.cloud.tencent.com/gamesec/ccsp) and [watermark protection](https://console.cloud.tencent.com/gamesec/mark) which can be configured free of charge. 
+Aegis Anti-DDoS offers the following options: [DDoS protective IP](https://intl.cloud.tencent.com/document/product/685/20368) and [DDoS protection pack](https://intl.cloud.tencent.com/document/product/685/20369) which are paid services; [advanced anti-DDoS policy](https://console.cloud.tencent.com/gamesec/asp), [advanced HTTP anti-CC defense policy](https://console.cloud.tencent.com/gamesec/ccsp) and [watermark protection](https://console.cloud.tencent.com/gamesec/mark) which can be configured free of charge.
  
 ## Pricing
 Aegis Anti-DDoS uses a mixed billing model including prepaid and pay-per-use on a daily basis. Base protection bandwidth is prepaid on a monthly basis, while elastic protection bandwidth and forwarded business traffic are pay-per-use on a daily basis. For detailed pricing of Aegis Anti-DDoS, see:
@@ -28,7 +27,7 @@ This refers to the non-BGP networks of China Mobile, China Unicom and China Tele
 - **Forwarding rule**
 This is to configure the rule according to which the business request first accesses the protective IP's service port and then is forwarded to the real server port of the real server IP address. Port forwarding rules can be configured and real server polling by weight or by minimum number of connections is supported.
 - **Traffic-forwarding egress IP address**
-This is the exit IP address used when forwarding the business request from the protective IP to the real server. If relevant security policies are configured for the real server, the exit IP address should be added to the whitelist to avoid mistaking normal requests for attacks.
+This is the exit IP address used when forwarding the business request from the protective IP to the real server. If relevant security policies are configured for the real server, the exit IP address should be added to the allowlist to avoid mistaking normal requests for attacks.
 - **Protection bandwidth**
 This is divided into base protection bandwidth and elastic protection bandwidth. If optional elastic protection is chosen, the protection bandwidth is the highest bandwidth that can protect against the actual attacks. If the attack traffic exceeds the protection bandwidth, the system will temporarily block the attacked IPs.
 - **Region**

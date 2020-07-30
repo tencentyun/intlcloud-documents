@@ -6,7 +6,7 @@ You can use the alias of an SCF function to implement the grayscale release sche
 - By using the same traffic switch scheme, you can quickly roll back the version when a failure occurs.
 
 The following is the scheme diagram:
-![](https://main.qcloudimg.com/raw/dd8c04415db3c9dead87f2a7ee5b6d74.png)
+![](https://main.qcloudimg.com/raw/b34a21d0a145f76ceae5eff53269c8c6.png)
 
 
 
@@ -35,7 +35,7 @@ It is a special alias. If a call request does not point to any version or anothe
 - You have [created an SCF function](https://intl.cloud.tencent.com/document/product/583/32742), but have not published its new version or created an alias.
 - You want to have separate test, pre-release, and release environments, where the SCF function can enter the next stage only after completing the test at the current stage. In addition, you want to implement grayscale release to ensure that your function can be launched smoothly.
 The following is the diagram of the overall scheme:
-![](https://main.qcloudimg.com/raw/b09e7431a9d2ea25fb1484e79d1eab8f.png)
+![](https://main.qcloudimg.com/raw/f9883012207a83fb4f7f63e1d41ce347.png)
 
 
 #### Initial configuration
@@ -77,7 +77,7 @@ Suppose a failure occurs when version 2 is launched. In this case, you need to r
 - You need to directly use an API or the SDK to run SCF functions.
 - You want to have separate test, pre-release, and release environments, where the SCF function can enter the next stage only after completing the test at the current stage. In addition, you want to implement grayscale release to ensure that your function can be launched smoothly.
 The following is the diagram of the overall scheme:
-![](https://main.qcloudimg.com/raw/81ebc03fcf1b3018ff65adc17a7837d9.png)
+![](https://main.qcloudimg.com/raw/f5deb7feec4bcc3136c207927e2a1bf9.png)
 
 #### Initial configuration
 Create aliases `release` and `prepub` in SCF function B, which temporarily point to the `$LATEST` version.
