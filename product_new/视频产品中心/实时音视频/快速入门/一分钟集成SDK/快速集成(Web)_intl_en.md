@@ -6,13 +6,13 @@ To implement TRTC on the web, the browser is required to fully support WebRTC ca
 
 | OS | Browser/WebView | Version Requirement | Remarks |
 | ------------ | -------------- | -------- | ------------------------------------ |
-| iOS | Safari | 11.1.2 | As Safari still has occasional bugs, it is recommended to restrain from developing iOS applications before Apple fixes such bugs. <br >Therefore, the WeChat Mini Program solution with better compatibility is recommended for iOS.  |
+| iOS | Safari | 11.1.2 | As Safari still has occasional bugs, it is recommended to restrain from developing iOS applications before Apple fixes such bugs. <br >Therefore, the WeChat Mini Program solution with better compatibility is recommended for iOS.  |
 | Android | TBS | 43600 | The default built-in browser kernel of WeChat and Mobile QQ is [TBS](http://x5.tencent.com/). |
 | Android | Chrome | 60+ | H264 codec needs to be supported. |
-| macOS          | Chrome         | 47+      | - |
-| macOS          | Safari         | 11+      | - |
-| Windows (PC)  | Chrome         | 52+      | - |
-| Windows (PC)  | QQ Browser      | 10.2     | - |
+| macOS          | Chrome         | 47+      | - |
+| macOS          | Safari         | 11+      | - |
+| Windows (PC)  | Chrome         | 52+      | - |
+| Windows (PC)  | QQ Browser      | 10.2     | - |
 
 > The WebView based on TBS kernel should be v43600 or above.
 > You can open the [WebRTC capability test](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html) page in your browser to check whether WebRTC is fully supported, such as the browser environments like WeChat Official Account.
@@ -20,7 +20,7 @@ To implement TRTC on the web, the browser is required to fully support WebRTC ca
 
 
 ## Environment Requirements
-The TRTC SDK for Web uses the following ports for data transfer, which should be added to the whitelist of the firewall.
+The TRTC SDK for Web uses the following ports for data transfer, which should be added to the allowlist of the firewall.
 - TCP port: 8687
 - UDP ports: 8000, 8800, 843, 443
 - Domain name: qcloud.rtc.qq.com
@@ -55,14 +55,12 @@ SDK download address: [click here](http://trtc-1252463788.cosgz.myqcloud.com/web
 
 For more information on the initialization process and how to use APIs, please see the guide below:
 
-| Feature                       | Sample Code Guide   |
+| Feature                       | Sample Code Guide   |
 | -------------------------- | --------------------------- |
-| Basic audio/video call  | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-01-basic-video-call.html)               |
-| ILVB | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-02-live-video.html)                           |
-| Switch cameras/mics | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-03-advanced-switch-camera-mic.html)      |
-| Setting local video attributes  | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-04-advanced-set-video-profile.html)      |
+| Basic audio/video call  | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-01-basic-video-call.html)               |
+| ILVB | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-02-live-video.html)                           |
+| Switch cameras/mics | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-03-advanced-switch-camera-mic.html)      |
+| Setting local video attributes  | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-04-advanced-set-video-profile.html)      |
 | Dynamically enabling/disabling local audio/video | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-05-advanced-dynamic-add-video.html) |
-| Sharing screen | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-06-advanced-screencast.html)   |
+| Sharing screen | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-06-advanced-screencast.html)   |
 | Detecting volume level | [Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-07-advanced-detect-volume.html) |
-
-
