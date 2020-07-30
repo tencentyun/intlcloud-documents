@@ -20,30 +20,30 @@ This document describes how to connect a website business to an Anti-DDoS Advanc
 Parameter description:
  - Domain Name: enter the website domain name to be protected.
  - Protocol: HTTP and HTTPS are supported. Please select an option as needed:
-		<table>
-			<tr>
-				<th>Business Scenario</th>
-				<th>Relevant Operation</th>
-			</tr>
-			<tr>
-				<td>Websites supporting only HTTP</td>
-				<td>Select **HTTP**.</td>
-			</tr>
-			<tr>
-				<td>Websites supporting only HTTPS</td>
-				<td><ul><li>Select **HTTPS**.</li>
-				        <li>Certificate source: Tencent Cloud-hosted certificate is selected by default.</li>
-				        <li>Certificate: select the name of the corresponding SSL certificate.</li></td>
-			</tr> 
-		</table>
+<table>
+<tr>
+<th>Business Scenario</th>
+<th>Relevant Operation</th>
+</tr>
+<tr>
+<td>Websites supporting only HTTP</td>
+<td>Select **HTTP**.</td>
+</tr>
+<tr>
+<td>Websites supporting only HTTPS</td>
+<td><ul><li>Select **HTTPS**.</li>
+        <li>Certificate source: Tencent Cloud-hosted certificate is selected by default.</li>
+        <li>Certificate: select the name of the corresponding SSL certificate.</li></td>
+</tr>
+</table>
   - Forwarding Method: **forwarding via IP** and **forwarding via domain name** are supported.
     - If you select **Forwarding via IP**, enter the IP (or IP + port) of the real server. If one website domain name corresponds to multiple real server IPs (or IP + port pairs), you can enter all of them and separate them with carriage return. Up to 16 IPs (or IP + port pairs) are supported.
     - If you select **Forwarding via domain name**, enter the real server domain name (CNAME) or domain name (CNAME) + port. If one website domain name corresponds to multiple real server domain names (CNAMEs) or pairs of domain name (CNAME) + port, you can enter all of them and separate them with carriage returns. Up to 16 entries are supported.
-	
+
 
 
 ### Opening forwarding IP range
-To prevent business interruption that occurs if the real server blocks the Anti-DDoS Advanced forwarding IP, you are recommended to configure whitelist policies for the real server infrastructure (such as firewall, web application firewall, intrusion protection system (IPS), and traffic management system) and disable the protection features of the server firewall and other security software tools (such as Safedog) or set whitelist policies for them, so that the forwarding IP will not be affected by the security policies of the real server.
+To prevent business interruption that occurs if the real server blocks the Anti-DDoS Advanced forwarding IP, you are recommended to configure allowlist policies for the real server infrastructure (such as firewall, web application firewall, intrusion protection system (IPS), and traffic management system) and disable the protection features of the server firewall and other security software tools (such as Safedog) or set allowlist policies for them, so that the forwarding IP will not be affected by the security policies of the real server.
 
 You can log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/overview) and click **Instance List** on the left sidebar to find the target instance ID.
 ![](https://main.qcloudimg.com/raw/ff2ae3b5f116c04589779023e20171c6.png)
@@ -67,6 +67,3 @@ To ensure the stability of your business, a local test is recommended. The verif
 
 3. After successfully configuring the `hosts`, check whether the domain name can be accessed. If it can be accessed properly, the configuration has taken effect.
 >If the verification still fails with the correct method, please log in to the Anti-DDoS Advanced Console and check whether the configuration is correct. If the problem persists after you fix any incorrect configuration items, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
-
-
-
