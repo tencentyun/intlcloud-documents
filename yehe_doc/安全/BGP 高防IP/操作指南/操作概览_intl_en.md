@@ -10,7 +10,7 @@ This document lists the references for common operations in Anti-DDoS Advanced.
 - [Attribute Filtering](https://intl.cloud.tencent.com/document/product/297/37212)
 - [AI protection](https://intl.cloud.tencent.com/document/product/297/37213)
 - [Exceptional connection protection](https://intl.cloud.tencent.com/document/product/297/37214)
-- [IP blacklist/whitelist](https://intl.cloud.tencent.com/document/product/297/37215)
+- [IP blocklist/allowlist](https://intl.cloud.tencent.com/document/product/297/37215)
 
 **Domain name protection**
 - [Protection level and cleansing threshold](https://intl.cloud.tencent.com/document/product/297/37217)
@@ -39,6 +39,3 @@ This document lists the references for common operations in Anti-DDoS Advanced.
 
 ## Operation Log
 [Viewing operation log](https://intl.cloud.tencent.com/document/product/297/34100)
-
-
-
