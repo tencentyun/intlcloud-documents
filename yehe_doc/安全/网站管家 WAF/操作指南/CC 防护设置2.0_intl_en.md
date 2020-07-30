@@ -38,7 +38,7 @@ An IP-based CC protection policy does not need to be set in the session dimensio
 
 5. Trigger CC attacks based on the rule settings.
 ![](https://main.qcloudimg.com/raw/381abed502dc483b2c1ebd1de14ccf26.png)
-6. View real-time IP address blocking. On the left sidebar, choose **IP Management** > **IP Blocking Status** to view information on the IP addresses blocked in real time and add IP addresses to the blacklist or whitelist as needed.
+6. View real-time IP address blocking. On the left sidebar, choose **IP Management** > **IP Blocking Status** to view information on the IP addresses blocked in real time and add IP addresses to the blocklist or allowlist as needed.
 
 #### **Example 3: session-based CC protection settings**
 CC protection based on the session access frequency can effectively solve the false positive problem caused when multiple users use the same IP egress in office buildings, stores, supermarkets, and other public Wi-Fi networks.
