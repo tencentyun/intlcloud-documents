@@ -53,7 +53,7 @@ The definition of a video during playback depends on the following two aspects:
 ### What is blocklist/allowlist?
 
 The blocklist/allowlist can be used to allow or deny the requests for accessing videos published through player code from particular webpages.
-These lists are effective to videos published through player code. You can enable this feature globally and specify a blocklist or an allowlist. Each list can contain up to 10 URLs by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
+These lists are effective to videos published through player code. You can enable this feature globally and specify a blocklist or an allow list. Each list can contain up to 10 URLs by checking the referer of access source. For more information on how to protect video file URLs, please see [Hotlink Protection Overview](https://intl.cloud.tencent.com/document/product/266/33984).
 
 ### Does VOD support publishing links on WeChat Official Account?
 Yes.
