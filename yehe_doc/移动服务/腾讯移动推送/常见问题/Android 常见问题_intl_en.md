@@ -7,13 +7,13 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 If you use the automatic gradle integration method, please configure the following node under the <application> tag of the `AndroidManifest.xml` file of your application, where ```xxx``` is a custom name. If you use manual integration, please modify the node attributes as follows:
 
 ```xml
-   <!-- Add the following node to the AndroidManifest.xml file of your application, where xxx is a custom name: -->     
+   <!-- Add the following node to the AndroidManifest.xml file of your application, where xxx is a custom name: -->    
    <!-- To disable the feature of keep-alive with TPNS application, please configure -->
    <provider
        android:name="com.tencent.android.tpush.XGPushProvider"
        tools:replace="android:authorities"
        android:authorities="application package name.xxx.XGVIP_PUSH_AUTH"
-       android:exported="false" />    
+       android:exported="false" />   
 ```
 
 If the following log is printed in the console, the session keep-alive feature has been disabled: `I/TPNS: [ServiceUtil] disable pull up other app`.
@@ -41,7 +41,7 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 
 ### Why pushes can't be received after the application is closed?
 - At present, third-party push services cannot guarantee that the pushes can be received after the application is closed. This problem is due to the limitation of the mobile phone's custom ROM on the TPNS service. All activities of TPNS are on the basis that the TPNS service can connect to the internet and run properly. After the service is terminated, whether it can be restarted depends on the system settings, security programs, and user operations.
-- QQ and WeChat are in the system-level application whitelist, and the relevant service will not be terminated after the application is closed, so the user can still receive messages after closing the app, and in fact, the relevant service survives on the backend.
+- QQ and WeChat are in the system-level application allowlist, and the relevant service will not be terminated after the application is closed, so the user can still receive messages after closing the app, and in fact, the relevant service survives on the backend.
 - On Android, after the user exits the application and the TPNS service is disconnected from the TPNS server, messages delivered to the device will become offline messages, which can be retained for up to 72 hours. If there are multiple offline messages, only two can be retained on each device. If messages are pushed after the application is closed, please check whether the `XGPushManager.unregisterPush\(this\)` API has been called if the messages cannot be received when the application is launched again.
 
 
@@ -78,7 +78,7 @@ action.setIntent("xgscheme://com.xg.push/notify_detail?param1=aa&param2=bb");
 1. In the `onCreate` method of the page you specify for redirect to, add the following code:
 ```
 Uri uri = getIntent().getData();
-    if (uri != null) {                
+    if (uri != null) {               
 String url = uri.toString();
 String p1= uri.getQueryParameter("param1");
 String p2= uri.getQueryParameter("param2");
@@ -87,7 +87,7 @@ String p2= uri.getQueryParameter("param2");
 2. If the parameters passed in contain special characters such as # and &, they can be parsed by using the following method:
 ```
 Uri uri = getIntent().getData();
-    if (uri != null) {                
+    if (uri != null) {               
  String url = uri.toString();
  UrlQuerySanitizer sanitizer = new UrlQuerySanitizer();
  sanitizer.setUnregisteredParameterValueSanitizer(UrlQuerySanitizer.getAllButNulLegal());
@@ -152,7 +152,7 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 - It is similar to the troubleshooting method for the Mi channel. For more information, please see troubleshooting for the Mi channel.
 
 ### Why aren't messages displayed in the notification bar when they arrive on the Meizu mobiles of version Flyme 6.0 or earlier?
-1.  Meizu mobiles of version Flyme 6.0 or earlier use manual integration. 
+1.  Meizu mobiles of version Flyme 6.0 or earlier use manual integration.
 2.  Meizu mobiles of version Flyme 6.0 or earlier use automatic integration, and TPNS Android SDK 1.1.4.0 or earlier versions.
 In both cases, you need to place a picture named "stat_sys_third_app_notify" under `drawable` folder with different resolutions. For details, see `flyme-notification-res` folder in [TPNS Android SDK](https://console.cloud.tencent.com/tpns/sdkdownload).
 
@@ -188,9 +188,9 @@ public final class StrUtils {
 
 
 ### How do I fix the exception that occurs when I use quick integration in the console?
-1. If an exception occurs during integration, set the `"debug"` field in the `tpns-configs.json` file to `true` and run the following command: 
+1. If an exception occurs during integration, set the `"debug"` field in the `tpns-configs.json` file to `true` and run the following command:
 ```
-./gradlew --rerun-tasks :app:processReleaseManifest 
+./gradlew --rerun-tasks :app:processReleaseManifest
 ```
 Then, use the `"TpnsPlugin"` keyword for analysis.
 2. Click "sync projects".
@@ -198,4 +198,3 @@ Then, use the `"TpnsPlugin"` keyword for analysis.
 
 3. Check whether there are relevant dependencies in the external libraries of the project.
 ![](https://main.qcloudimg.com/raw/485c7595f1b478a6fad725d38deb87b4.png)
-
