@@ -9,7 +9,7 @@
 | 80 | HTTP | IIS, Apache, Nginx 등 웹 사이트 서비스의 외부 액세스 제공에 사용됩니다. |
 | 110 | POP3 | 110 포트는 POP3(이메일 프로토콜 3) 서비스를 위해 개방됩니다. |
 | 137, 138, 139 | NETBIOS 프로토콜 | 그중 137, 138은 UDP 포트로 네트워크 환경을 통해 파일을 전송할 때 사용됩니다. <br> 139 포트: 이 포트를 통해 접속한 연결은 NetBIOS/SMB 서비스를 얻도록 시도합니다. 이 프로토콜은 Windows 파일, 프린터 공유와 SAMBA에 사용됩니다. |
-| 143 | IMAP | 143 포트는 "Internet Message AccessProtocol"v2(Internet 정보 액세스 프로토콜, 약칭 IMAP)에 주로 사용하며, POP3 같은 이메일 수신에 사용하는 프로토콜입니다. |
+| 143 | IMAP | 143 포트는 "Internet Message Access Protocol"v2(Internet 정보 액세스 프로토콜, 약칭 IMAP)에 주로 사용하며, POP3 같은 이메일 수신에 사용하는 프로토콜입니다. |
 | 443 | HTTPS | 웹 브라우징 포트로써 암호화 기능을 제공하고, 보안 포트를 통해 전송하는 또 하나의 HTTP 입니다. |
 | 1433 | SQL Server | 1433 포트는 SQL Server의 기본 포트로, SQL Server 서비스는 TCP-1433, UDP-1434 두 개의 포트를 사용됩니다. 그중 1433은 SQL Server가 외부 서비스를 제공하는 데 사용하며, 1434는 SQL Server가 사용하는 TCP/IP 포트를 요청자에게 리턴하는 데 사용됩니다. |
 | 3306 | MySQL | 3306 포트는 MySQL 데이터베이스의 기본 포트로 MySQL이 외부 서비스를 제공하는 데 사용됩니다. |
