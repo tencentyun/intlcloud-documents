@@ -1,3 +1,5 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [CKafka API 3.0](https://intl.cloud.tencent.com/document/product/597/36407) which is standardized and faster.
+>
 ## 1. API Description
 API domain name: `ckafka.api.qcloud.com`
 This API (SetTopicAttributes) is used to modify the attributes of a topic on a CKafka instance.
@@ -12,7 +14,7 @@ The list below contains only the API request parameters. Other parameters can be
 | instanceId | Yes | String | Instance ID |
 | topicName | Yes | String | Topic name |
 | note| No | String | Topic remark should have no more than 64 characters. It must begin with a letter and can contain letters, digits and dashes (`-`) |
-| enableWhiteList | No | Int | IP whitelist switch. 1: on; 0: off |
+| enableWhiteList | No | Int | IP allowlist switch. 1: on; 0: off |
 |minInsyncReplicas| No | Int | Default value is 1 |
 |uncleanLeaderElectionEnable| No | Int | Default value is 0. 0: false; 1:true |
 |retentionMs| No |Int | Message retention period. Unit: ms. Current minimum value is 60,000 ms |
@@ -32,8 +34,8 @@ The list below contains only the API request parameters. Other parameters can be
 
 ```
 {
-	"code": 0,
-	"codeDesc": "Success",
-	"message": "ok"
+"code": 0,
+"codeDesc": "Success",
+"message": "ok"
 }
 ```
