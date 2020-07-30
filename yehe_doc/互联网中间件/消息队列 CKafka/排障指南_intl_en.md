@@ -2,7 +2,7 @@
 
 - Check whether telnet works. It might be a network issue. Check whether Kafka and the producer are in the same network.
 - Check whether the accessed vip - port is correctly configured.
-- Check whether the topic whitelist is enabled. If yes, you need to configure the correct IP for access.
+- Check whether the topic allowlist is enabled. If yes, you need to configure the correct IP for access.
 
 ## What if no messages can be seen when testing with the client in the Kafka Console?
 - If the "latest" option is used, consumer can only get the last messages, and production needs to be ongoing in order to see the corresponding messages.
@@ -50,7 +50,7 @@ You should be able to see the names of all current consumer groups. If this is n
    ```
 You will find that there are no details for this consumer group, which means that the consumer client did not use the `consumerGroup` mechanism to consume data, that is, the client did not submit consumption details to the server. As the server did not store the consumption data, no details will be displayed.
 3. Check whether the problem is caused by the server.
-   Use the native consumer group command to specify the consumer group `test1` for consumption as shown below: 
+   Use the native consumer group command to specify the consumer group `test1` for consumption as shown below:
    ```
    ]$ bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --from-beginning --topic test --group test1
    ```
