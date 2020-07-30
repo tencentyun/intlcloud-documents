@@ -10,13 +10,10 @@ Generally, certain specific features are implemented through a group of correlat
 ![](https://main.qcloudimg.com/raw/c639838554162c971ce682416e877b9d.png)
 >
 >- Supported frontend types include HTTP and HTTPS, indicating the protocol types supported by the service.
->- Public network access, private network VPC access, or both can be selected as the access method (which is visible only to whitelisted users). API Gateway will generate different domain names to help implement access.
+>- Public network access, private network VPC access, or both can be selected as the access method (which is visible only to allowlisted users). API Gateway will generate different domain names to help implement access.
 > Access scope of a private network VPC domain name: CVM instances in VPCs in the same region as the service.
 Private network VPC access is currently in beta test. If you want to try it out, please contact your Tencent Cloud rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 >- The service name can contain up to 50 characters out of `a–z`, `A–Z`, `0–9`, and `_`.
 5. Click **Submit** to complete the creation.
 You can click the service name to enter the service details page and create APIs. For more information, please see [Creating APIs](https://intl.cloud.tencent.com/document/product/628/11795).
 ![](https://main.qcloudimg.com/raw/fe3a6726c9abfe5095e86c91c1d0382e.png)
-
-
-
