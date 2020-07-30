@@ -20,7 +20,7 @@ Modifications to the port will be valid only if they are made in the security gr
 6. In the left-side registry navigation pane, expand the following hierarchies in sequence: **HKEY_LOCAL_MACHINE** > **SYSTEM** > **CurrentControlSet** > **Control** > **Terminal Server** > **WinStations** > **RDP-Tcp**.
 7. Find and change PortNumber in **RDP-Tcp** to be the same as that in **tcp**.
 ![](https://main.qcloudimg.com/raw/fa54eb32c20dcc8a7c942c8e707fa665.png)
-8. (Optional) If a firewall is enabled for your CVM, be sure to add the new port to the whitelist of the firewall and set to allow connection.
+8. (Optional) If a firewall is enabled for your CVM, be sure to add the new port to the allowlist of the firewall and set to allow connection.
  1. In the “Windows PowerShell” window, enter **wf.msc** and press **Enter** to open the “Windows Firewall with Advanced Security” window.
  2. In the “Windows Firewall with Advanced Security” window, select **Inbound Rules** and click **New rule**, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/ac93eed862e215971073912030fdbc41.png)
@@ -114,4 +114,3 @@ vim /etc/ssh/sshd_config
 ```
 systemctl restart sshd.service
 ```
-
