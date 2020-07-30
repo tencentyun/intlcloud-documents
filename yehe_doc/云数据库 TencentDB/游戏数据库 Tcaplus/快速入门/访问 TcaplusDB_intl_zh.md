@@ -1,18 +1,18 @@
-TcaplusDB¿ÉÒÔÍ¨¹ı¶àÖÖ·½Ê½½øĞĞ·ÃÎÊ¶ÁÈ¡£¬Èç¿Í»§¶Ë¹¤¾ß¡¢¸÷ÓïÑÔ SDK ¹¤¾ß°ü¡¢RESTFul ½Ó¿Ú¡£
+ï»¿TcaplusDBå¯ä»¥é€šè¿‡å¤šç§æ–¹å¼è¿›è¡Œè®¿é—®è¯»å–ï¼Œå¦‚å®¢æˆ·ç«¯å·¥å…·ã€å„è¯­è¨€ SDK å·¥å…·åŒ…ã€RESTFul æ¥å£ã€‚
 
-## Í¨¹ıClient¿Í»§¶Ë¹¤¾ß·ÃÎÊTcaplusDBÊı¾İ
-Ö§³ÖÍ¨¹ıLinux[¿Í»§¶Ë¹¤¾ßtcaplus_client](https://intl.cloud.tencent.com/document/product/1016/37719)·ÃÎÊTcaplusDBÊı¾İ¡£
+## é€šè¿‡Clientå®¢æˆ·ç«¯å·¥å…·è®¿é—®TcaplusDBæ•°æ®
+æ”¯æŒé€šè¿‡Linux[å®¢æˆ·ç«¯å·¥å…·tcaplus_client](https://intl.cloud.tencent.com/document/product/1016/37719)è®¿é—®TcaplusDBæ•°æ®ã€‚
 
-## Í¨¹ı C++ SDK ½Ó¿Ú·ÃÎÊ TcaplusDB Êı¾İ
-Ö§³Ö [C++ ÓïÑÔ](https://intl.cloud.tencent.com/document/product/1016/30289) Í¨¹ı SDK ¹¤¾ß·ÃÎÊ TcaplusDB Êı¾İ¡£
+## é€šè¿‡ C++ SDK æ¥å£è®¿é—® TcaplusDB æ•°æ®
+æ”¯æŒ [C++ è¯­è¨€](https://intl.cloud.tencent.com/document/product/1016/30289) é€šè¿‡ SDK å·¥å…·è®¿é—® TcaplusDB æ•°æ®ã€‚
 
-## Í¨¹ı RESTFul API ½Ó¿Ú·ÃÎÊ TcaplusDB Êı¾İ
-¿ÉÒÔÍ¨¹ıRestFul½Ó¿Ú·ÃÎÊTcaplusDBÊı¾İ£¬ÏêÏ¸¿É²é¿´[RESTFul API ½Ó¿ÚËµÃ÷](https://intl.cloud.tencent.com/document/product/1016/37721)¡£
+## é€šè¿‡ RESTFul API æ¥å£è®¿é—® TcaplusDB æ•°æ®
+å¯ä»¥é€šè¿‡RestFulæ¥å£è®¿é—®TcaplusDBæ•°æ®ï¼Œè¯¦ç»†å¯æŸ¥çœ‹[RESTFul API æ¥å£è¯´æ˜](https://intl.cloud.tencent.com/document/product/1016/37721)ã€‚
 
-- ¿É²Î¿¼[Python ½Ó¿ÚËµÃ÷](https://intl.cloud.tencent.com/document/product/1016/37725)£¬Ê¹ÓÃPythonÓïÑÔÍ¨¹ıRestFul½Ó¿Ú·ÃÎÊTcaplusDBÊı¾İ¡£
+- å¯å‚è€ƒ[Python æ¥å£è¯´æ˜](https://intl.cloud.tencent.com/document/product/1016/37725)ï¼Œä½¿ç”¨Pythonè¯­è¨€é€šè¿‡RestFulæ¥å£è®¿é—®TcaplusDBæ•°æ®ã€‚
 
-- ¿É²Î¿¼[PHP ½Ó¿ÚËµÃ÷](https://intl.cloud.tencent.com/document/product/1016/37724)£¬Ê¹ÓÃPHPÓïÑÔÍ¨¹ıRestFul½Ó¿Ú·ÃÎÊTcaplusDBÊı¾İ¡£
+- å¯å‚è€ƒ[PHP æ¥å£è¯´æ˜](https://intl.cloud.tencent.com/document/product/1016/37724)ï¼Œä½¿ç”¨PHPè¯­è¨€é€šè¿‡RestFulæ¥å£è®¿é—®TcaplusDBæ•°æ®ã€‚
 
-- ¿É²Î¿¼[GO ½Ó¿ÚËµÃ÷](https://intl.cloud.tencent.com/document/product/1016/37722)£¬Ê¹ÓÃGOÓïÑÔÍ¨¹ıRestFul½Ó¿Ú·ÃÎÊTcaplusDBÊı¾İ¡£
+- å¯å‚è€ƒ[GO æ¥å£è¯´æ˜](https://intl.cloud.tencent.com/document/product/1016/37722)ï¼Œä½¿ç”¨GOè¯­è¨€é€šè¿‡RestFulæ¥å£è®¿é—®TcaplusDBæ•°æ®ã€‚
 
-- ¿É²Î¿¼[JAVA ½Ó¿ÚËµÃ÷](https://intl.cloud.tencent.com/document/product/1016/37722)£¬Ê¹ÓÃJAVAÓïÑÔÍ¨¹ıRestFul½Ó¿Ú·ÃÎÊTcaplusDBÊı¾İ¡£
+- å¯å‚è€ƒ[JAVA æ¥å£è¯´æ˜](https://intl.cloud.tencent.com/document/product/1016/37722)ï¼Œä½¿ç”¨JAVAè¯­è¨€é€šè¿‡RestFulæ¥å£è®¿é—®TcaplusDBæ•°æ®ã€‚

@@ -1,43 +1,43 @@
-## ¼ò½é
-Îª·½±ãÄú½ÓÈëÓÎÏ·Êı¾İ¿â TcaplusDB£¬±¾ÎÄÎªÄú½éÉÜ TcaplusDB SDK µÄÏÂÔØÖ¸Òı¡£
+## ç®€ä»‹
+ä¸ºæ–¹ä¾¿æ‚¨æ¥å…¥æ¸¸æˆæ•°æ®åº“ TcaplusDBï¼Œæœ¬æ–‡ä¸ºæ‚¨ä»‹ç» TcaplusDB SDK çš„ä¸‹è½½æŒ‡å¼•ã€‚
 
 
-## ±ä¸üÀúÊ·
-ÏÂÔØ SDK Ö®Ç°£¬Çë²éÔÄ [±ä¸üÀúÊ·](https://intl.cloud.tencent.com/document/product/1016/30284)¡£
+## å˜æ›´å†å²
+ä¸‹è½½ SDK ä¹‹å‰ï¼Œè¯·æŸ¥é˜… [å˜æ›´å†å²](https://intl.cloud.tencent.com/document/product/1016/30284)ã€‚
 
-## Linux C++ SDK ÏÂÔØ
+## Linux C++ SDK ä¸‹è½½
 
-|°æ±¾  | ¸üĞÂÊ±¼ä        |SDK ÏÂÔØ|
+|ç‰ˆæœ¬  | æ›´æ–°æ—¶é—´        |SDK ä¸‹è½½|
 |-------------| ------------- | ------------- |
-|3.36.0.192960|2020/04/21|[ÏÂÔØ](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/TcaplusPbApi3.36.0.192960.x86_64_release_20200115.tar.gz)|
+|3.36.0.192960|2020/04/21|[ä¸‹è½½](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/TcaplusPbApi3.36.0.192960.x86_64_release_20200115.tar.gz)|
 
-###  Protocol BuffersÔ´Âë°üÏÂÔØ
-|°æ±¾  | °²×°°üÃû|ÏÂÔØ|
+###  Protocol Buffersæºç åŒ…ä¸‹è½½
+|ç‰ˆæœ¬  | å®‰è£…åŒ…å|ä¸‹è½½|
 |------------|-|  ------------- |
-|v2.6.1|protobuf-2.6.1.tar.gz|[ÏÂÔØµØÖ·](https://github.com/protocolbuffers/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz)|
-|v3.5.0|protobuf-cpp-3.5.0.tar.gz|[ÏÂÔØµØÖ·](https://github.com/protocolbuffers/protobuf/releases/download/v3.5.0/protobuf-cpp-3.5.0.tar.gz)|
+|v2.6.1|protobuf-2.6.1.tar.gz|[ä¸‹è½½åœ°å€](https://github.com/protocolbuffers/protobuf/releases/download/v2.6.1/protobuf-2.6.1.tar.gz)|
+|v3.5.0|protobuf-cpp-3.5.0.tar.gz|[ä¸‹è½½åœ°å€](https://github.com/protocolbuffers/protobuf/releases/download/v3.5.0/protobuf-cpp-3.5.0.tar.gz)|
 
-## ¸÷ÓïÑÔRestFul·â×°SDKÏÂÔØ
-|ÓïÑÔ  | °²×°°üÃû|ÏÂÔØ|
+## å„è¯­è¨€RestFulå°è£…SDKä¸‹è½½
+|è¯­è¨€  | å®‰è£…åŒ…å|ä¸‹è½½|
 |------------|-|  ------------- |
-|GO|tcaplusdb-restapi-go-sdk-en.zip|[ÏÂÔØµØÖ·](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-go-sdk-en.zip)|
-|JAVA|tcaplusdb-restapi-java-sdk.zip|[ÏÂÔØµØÖ·](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-java-sdk-en.zip)|
-|PHP|tcaplusdb-restapi-php-sdk.zip|[ÏÂÔØµØÖ·](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-php-sdk-en.zip)|
-|Python 2.x|tcaplusdb-restapi-python-sdk-2.x.zip|[ÏÂÔØµØÖ·](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-python-sdk-en.zip)|
-|Python 3.x|tcaplusdb-restapi-python-sdk-3.x.zip|[ÏÂÔØµØÖ·](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-python-sdk-3.x.zip)|
+|GO|tcaplusdb-restapi-go-sdk-en.zip|[ä¸‹è½½åœ°å€](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-go-sdk-en.zip)|
+|JAVA|tcaplusdb-restapi-java-sdk.zip|[ä¸‹è½½åœ°å€](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-java-sdk-en.zip)|
+|PHP|tcaplusdb-restapi-php-sdk.zip|[ä¸‹è½½åœ°å€](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-php-sdk-en.zip)|
+|Python 2.x|tcaplusdb-restapi-python-sdk-2.x.zip|[ä¸‹è½½åœ°å€](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-python-sdk-en.zip)|
+|Python 3.x|tcaplusdb-restapi-python-sdk-3.x.zip|[ä¸‹è½½åœ°å€](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-python-sdk-3.x.zip)|
 
-## Windows C++ SDK ÏÂÔØ
+## Windows C++ SDK ä¸‹è½½
 
-|ÔËĞĞ¿â|°æ±¾  | ¸üĞÂÊ±¼ä |SDK ÏÂÔØ|
+|è¿è¡Œåº“|ç‰ˆæœ¬  | æ›´æ–°æ—¶é—´ |SDK ä¸‹è½½|
 |-----|-------------| ------------- | ------------- |
-|MT|3.34.0.191456|2019/04/21|[ÏÂÔØ](https://main.qcloudimg.com/raw/46cc4f9702373faf164dbae656e9a811/Tcaplus_PbAPI_3.34.0.191456_Win64Vc14MT_Release_20190421.zip)|
-|MD|3.34.0.191456|2019/04/21|[ÏÂÔØ](https://main.qcloudimg.com/raw/f5e40e65506fc941ea0514ef77ced9a4/Tcaplus_PbAPI_3.34.0.191456_Win64Vc14MD_Release_20190421.zip)|
+|MT|3.34.0.191456|2019/04/21|[ä¸‹è½½](https://main.qcloudimg.com/raw/46cc4f9702373faf164dbae656e9a811/Tcaplus_PbAPI_3.34.0.191456_Win64Vc14MT_Release_20190421.zip)|
+|MD|3.34.0.191456|2019/04/21|[ä¸‹è½½](https://main.qcloudimg.com/raw/f5e40e65506fc941ea0514ef77ced9a4/Tcaplus_PbAPI_3.34.0.191456_Win64Vc14MD_Release_20190421.zip)|
 
-### Windows Æ½Ì¨ÒÀÀµ°üÏÂÔØ
+### Windows å¹³å°ä¾èµ–åŒ…ä¸‹è½½
 
->!ÒÀÀµ°üÊÇ·ÖÅúÑ¹ËõºóÉÏ´«µÄ£¬ÇëÓÃ»§ÏÂÔØËùÓĞ·ÖÆ¬ºóÔÙ½âÑ¹Ëõ¡£
+>!ä¾èµ–åŒ…æ˜¯åˆ†æ‰¹å‹ç¼©åä¸Šä¼ çš„ï¼Œè¯·ç”¨æˆ·ä¸‹è½½æ‰€æœ‰åˆ†ç‰‡åå†è§£å‹ç¼©ã€‚
 
-|ÔËĞĞ¿â|°æ±¾  | ¸üĞÂÊ±¼ä |ÏÂÔØ|
+|è¿è¡Œåº“|ç‰ˆæœ¬  | æ›´æ–°æ—¶é—´ |ä¸‹è½½|
 |-----|-------------| ------------- | ------------- |
-|MT|2.7.30.177450_Win64Vc14Mt|2019/04/21|[ÏÂÔØ part001](https://main.qcloudimg.com/raw/536dc96c2137e7f1ba647889a279357c/TSF4G_BASE-2.7.30.177450_Win64Vc14Mt_Release.zip.001)¡¢[ÏÂÔØ part002](https://main.qcloudimg.com/raw/6437a8decd3771bb61269a5af9328282/TSF4G_BASE-2.7.30.177450_Win64Vc14Mt_Release.zip.002)¡¢[ÏÂÔØ part003](https://main.qcloudimg.com/raw/b5307a4db67330968c7e169206453acb/TSF4G_BASE-2.7.30.177450_Win64Vc14Mt_Release.zip.003)|
-|MD|2.7.30.177675_Win64Vc14Md|2019/04/21|[ÏÂÔØ part001](https://main.qcloudimg.com/raw/5dc72d7652bf2424cb9aac43d3eba78d/TSF4G_BASE-2.7.30.177675_Win64Vc14Md_Release.zip.001)¡¢[ÏÂÔØ part002](https://main.qcloudimg.com/raw/be7df5587e101564e6d3a63fde7a341d/TSF4G_BASE-2.7.30.177675_Win64Vc14Md_Release.zip.002)¡¢[ÏÂÔØ part003](https://main.qcloudimg.com/raw/3e5b09d21aa5088b6c7618f9345cce91/TSF4G_BASE-2.7.30.177675_Win64Vc14Md_Release.zip.003)|
+|MT|2.7.30.177450_Win64Vc14Mt|2019/04/21|[ä¸‹è½½ part001](https://main.qcloudimg.com/raw/536dc96c2137e7f1ba647889a279357c/TSF4G_BASE-2.7.30.177450_Win64Vc14Mt_Release.zip.001)ã€[ä¸‹è½½ part002](https://main.qcloudimg.com/raw/6437a8decd3771bb61269a5af9328282/TSF4G_BASE-2.7.30.177450_Win64Vc14Mt_Release.zip.002)ã€[ä¸‹è½½ part003](https://main.qcloudimg.com/raw/b5307a4db67330968c7e169206453acb/TSF4G_BASE-2.7.30.177450_Win64Vc14Mt_Release.zip.003)|
+|MD|2.7.30.177675_Win64Vc14Md|2019/04/21|[ä¸‹è½½ part001](https://main.qcloudimg.com/raw/5dc72d7652bf2424cb9aac43d3eba78d/TSF4G_BASE-2.7.30.177675_Win64Vc14Md_Release.zip.001)ã€[ä¸‹è½½ part002](https://main.qcloudimg.com/raw/be7df5587e101564e6d3a63fde7a341d/TSF4G_BASE-2.7.30.177675_Win64Vc14Md_Release.zip.002)ã€[ä¸‹è½½ part003](https://main.qcloudimg.com/raw/3e5b09d21aa5088b6c7618f9345cce91/TSF4G_BASE-2.7.30.177675_Win64Vc14Md_Release.zip.003)|
