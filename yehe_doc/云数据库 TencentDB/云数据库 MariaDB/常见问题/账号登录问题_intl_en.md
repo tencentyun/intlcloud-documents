@@ -1,7 +1,6 @@
 
 ### How do I create an account in TencentDB for MariaDB?
-For detailed directions, please see [Creating Accounts](https://intl.cloud.tencent.com/document/product/237/7054).
-
+For detailed directions, please see [Managing Account](https://intl.cloud.tencent.com/zh/document/product/237/7054).
 ### How do I access a TencentDB for MariaDB instance over the private network?
 Private network access: you can use a CVM instance connected to the network of the TencentDB for MariaDB instance for access over the private network.
 For detailed directions, please see [Private Network Access](https://intl.cloud.tencent.com/document/product/237/7056).
