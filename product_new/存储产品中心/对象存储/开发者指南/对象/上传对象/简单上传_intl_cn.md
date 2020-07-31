@@ -19,12 +19,12 @@
 
 ### 使用 SDK
 您可以直接调用 SDK 的简单上传对象方法，详情请参见下列各语言 SDK 文档：
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31514)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37674)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31518)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
 - [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30596)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31526)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31530)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37683)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710)
