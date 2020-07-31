@@ -3,7 +3,7 @@ After quickly constructing a Serverless website service through Serverless Compo
 
 ## Prerequisites
 - A website service has been deployed, and the website hosting address at COS/API Gateway has been obtained. For the specific deployment method, please see [Deploying Hexo Blog](https://intl.cloud.tencent.com/document/product/1040/36749).
-- You already have a custom domain name (such as www.example.com).
+- You already have a custom domain name (such as www.example.com) with ICP filing.
 - If you need HTTPS access, you can apply for a certificate and [get the certificate ID](https://console.cloud.tencent.com/ssl) (such as `certificateId` of `axE1bo3)`.
 
 
@@ -17,7 +17,7 @@ In `serverless.yml`, add CDN custom domain name configuration:
 ```yml         
 # serverless.yml
 
-component: tencent-website
+component: website
 name: myWebsite
 org: test
 app: websiteApp
@@ -46,13 +46,35 @@ inputs:
 [View full configuration item description >>](https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md)
 
 ### Deploying service
-Deploy by running the `sls deploy` command again, and you can add the `--debug` parameter to view the information during the deployment process:
+Deploy by running the `sls` command, and you can add the `--debug` parameter to view the information during the deployment process:
 
->?`sls` is short for the `serverless` command.
+
+>? `sls` is short for the `serverless` command.
 
 ```bash
-$ sls deploy 
-  
+$ sls --debug
+  DEBUG ─ Resolving the template's static variables.
+  DEBUG ─ Collecting components from the template.
+  DEBUG ─ Downloading any NPM components found in the template.
+  DEBUG ─ Analyzing the template's components dependencies.
+  DEBUG ─ Creating the template's components graph.
+  DEBUG ─ Syncing template state.
+  DEBUG ─ Executing the template's components graph.
+  DEBUG ─ Preparing website Tencent COS bucket my-hexo-bucket-1250000000.
+  DEBUG ─ Bucket "my-hexo-bucket-1250000000" in the "ap-guangzhou" region already exist.
+  DEBUG ─ Setting ACL for "my-hexo-bucket-1250000000" bucket in the "ap-guangzhou" region.
+  DEBUG ─ Ensuring no CORS are set for "my-hexo-bucket-1250000000" bucket in the "ap-guangzhou" region.
+  DEBUG ─ Ensuring no Tags are set for "my-hexo-bucket-1250000000" bucket in the "ap-guangzhou" region.
+  DEBUG ─ Configuring bucket my-hexo-bucket-1250000000 for website hosting.
+  DEBUG ─ Uploading website files from /Users/tina/Documents/hexoblog/hexo/public to bucket my-hexo-bucket-1250000000.
+  DEBUG ─ Starting upload to bucket my-hexo-bucket-1250000000 in region ap-guangzhou
+  DEBUG ─ Uploading directory /Users/tina/Documents/hexoblog/hexo/public to bucket my-hexo-bucket-1250000000
+  DEBUG ─ The CDN domain www.example.com has existed.
+  DEBUG ─ Updating...
+  DEBUG ─ Waiting for CDN deploy success..
+  DEBUG ─ CDN deploy success to host: www.example.com
+  DEBUG ─ Setup https for www.example.com...
+  DEBUG ─ Website deployed successfully to URL: https://my-hexo-bucket-1250000000.cos-website.ap-guangzhou.myqcloud.com.
   myWebsite: 
     url:  https://my-hexo-bucket-1250000000.cos-website.ap-guangzhou.myqcloud.com
     env: 
@@ -68,42 +90,54 @@ After the deployment is completed, you can see a CNAME domain name suffixed with
 In `serverless.yml`, add API Gateway custom domain name configuration. This document uses the egg.js framework as an example, and the configuration is as follows:
 ```yml
 # serverless.yml
-
-component: apigateway # Component name, which is required. `apigateway` is used in this example
-name: restApi # Instance name, which is required
-org: orgDemo # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
-app: appDemo # Application name, which is optional
-stage: dev # Information for identifying environment, which is optional. The default value is `dev`
-
-inputs:
-  region: ap-shanghai
-  protocols:
-    - http
-    - https
-  serviceName: serverless
-  environment: release
-  customDomain:
-    - domain: www.example.com
-      # If you want to add `https`, you need to get authenticated with Tencent Cloud SSL Certificates Service to get the `cettificateId` first
-      certificateId: abcdefg
-      protocols:
-        - http
-        - https
-  endpoints:
-    - path: /users
-      method: POST
-      function:
-        functionName: myFunction
-        
+restApi:
+  component: "@serverless/tencent-apigateway"
+  inputs:
+    region: ap-shanghai
+    protocols:
+      - http
+      - https
+    serviceName: serverless
+    environment: release
+    endpoints:
+      - path: /users
+        method: POST
+        function:
+          functionName: myFunction # The function name to which the gateway connects
+    # Add API Gateway custom domain name configuration
+    customDomain:
+      - domain: www.example.com
+        certificateId: axE1bo3
+        protocols:
+          - https
 ```
 [View full configuration item description >>](https://github.com/serverless-components/tencent-apigateway/blob/master/docs/configure.md)
 ### Deploying service
-Deploy by running the `sls deploy` command again, and you can add the `--debug` parameter to view the information during the deployment process:
+Deploy by running the `sls` command, and you can add the `--debug` parameter to view the information during the deployment process:
 
 >? `sls` is short for the `serverless` command.
 
 ```bash
-$ sls deploy 
+$ sls --debug
+  DEBUG ─ Resolving the template's static variables.
+  DEBUG ─ Collecting components from the template.
+  DEBUG ─ Downloading any NPM components found in the template.
+  DEBUG ─ Analyzing the template's components dependencies.
+  DEBUG ─ Creating the template's components graph.
+  DEBUG ─ Syncing template state.
+  DEBUG ─ Executing the template's components graph.
+  DEBUG ─ Starting API-Gateway deployment with name restApi in the ap-shanghai region
+  DEBUG ─ Using last time deploy service id service-lqhc88sr
+  DEBUG ─ Updating service with serviceId service-lqhc88sr.
+  DEBUG ─ Endpoint POST /users already exists with id api-e902tx1q.
+  DEBUG ─ Updating api with api id api-e902tx1q.
+  DEBUG ─ Service with id api-e902tx1q updated.
+  DEBUG ─ Deploying service with id service-lqhc88sr.
+  DEBUG ─ Deployment successful for the api named restApi in the ap-shanghai region.
+  DEBUG ─ Start unbind all exist domain for service service-lqhc88sr
+  DEBUG ─ Start bind custom domain for service service-lqhc88sr
+  DEBUG ─ Custom domain for service service-lqhc88sr created successfullly.
+  DEBUG ─ Please add CNAME record service-lqhc88sr-1250000000.sh.apigw.tencentcs.com for www.example.com.
   restApi: 
     protocols: 
       - http
