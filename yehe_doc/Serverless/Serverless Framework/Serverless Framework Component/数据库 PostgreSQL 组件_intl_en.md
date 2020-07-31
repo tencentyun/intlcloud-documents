@@ -1,13 +1,13 @@
 ## Operation Scenarios
-PostgreSQL for Serverless (ServerlessDB) is a PostgreSQL-based database product that provides on-demand rationing of resources. It can automatically assign resources according to the actual number of requests. You can simply create a database instance to use PostgreSQL for Serverless without caring about instance specification, and you only need to pay for resource usage during active period of the instance.
+PostgreSQL for Serverless (ServerlessDB) is a PostgreSQL-based database product that enables on-demand allocation of resources. It can automatically allocate resources according to the actual number of requests. You can simply create a database instance to use PostgreSQL for Serverless without caring about instance specification, and you only need to pay for resource usage during active period of the instance.
 
-Through the PostgreSQL ServerlessDB component, you can create, configure, and manage PostgreSQL for Serverless instances with speed and ease.
+Through the PostgreSQL ServerlessDB component, you can create, configure, and manage Tencent Cloud PostgreSQL instances with speed and ease.
 
 Features:
 
-- **Pay-as-you-go billing**: fees are charged based on the request usage, and you don't need to pay anything if there is no request.
-- **Zero configuration**: the default configuration is taken care of by Serverless.
-- **Fast deployment**: you can create or update your database in just a few seconds.
+- **Pay per use**: fees are charged based on the request usage, and you don't need to pay anything if there is no request.
+- **Zero configuration**: the default configuration is implemented by Serverless.
+- **Fast deployment**: you can create or update your database in a matter of seconds.
 - **Convenient collaboration**: the status information and deployment logs of the database in the cloud make multi-person collaborative development easier.
 
 ## Directions
@@ -34,8 +34,8 @@ TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
 >?
-> - If you do not have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
-> - If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
+- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
+- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
 
 #### Configuration
 
@@ -52,11 +52,11 @@ $ touch serverless.yml
 Configure `serverless.yml` as follows:
 ```yml
 # serverless.yml
-component: postgresql # Name of the imported component, which is required. The `postgresql` component is used in this example
-name: serverlessDB # Name of the instance created by the `postgresql` component, which is required
-org: test # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
-app: serverlessDB # SQL application name, which is optional
-stage: dev # Information for identifying environment, which is optional. The default value is `dev`
+component: postgresql # (Required) Name of the imported component. The `postgresql` component is used in this example
+name: serverlessDB # (Required) Name of the instance created by the `postgresql` component
+org: test # (Optional) Organization information. The default value is the `appid` of your Tencent Cloud account.
+app: serverlessDB # (Optional) SQL application name
+stage: dev # (Optional) Information for identifying environment. The default value is `dev`.
 
 inputs:
   region: ap-guangzhou  # You can select `ap-guangzhou`, `ap-shanghai`, or `ap-beijing`
