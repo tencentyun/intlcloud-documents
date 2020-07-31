@@ -12,15 +12,13 @@ The following services will be used in the steps outlined below:
 - DNS Service: Before hosting a static website, you need to register a domain name such as `www.example.com`.
 - [COS](https://intl.cloud.tencent.com/product/cos): You need to create a bucket in COS for storing the uploaded webpage contents.
 - [CDN](https://intl.cloud.tencent.com/product/cdn): CDN can accelerate the delivery of static website contents, reduce access delay, and improve availability, in addition to binding the domain name to the website content.
-- Tencent Cloud DNS: Allows you to access the static website through a custom domain name.
 
 >The sample domain name `www.example.com` is used in the steps outlined in this document. For your purposes, replace it with your own domain name.
 
 
-
 ## Step 1. Register the domain name and obtain ICP filing
 
-Domain registration is a prerequisite for any service built on the Internet. After the domain name is registered, it needs to go through the MIIT filing procedure before your website can be accessed.
+Domain registration is a prerequisite for any service built on the internet. After the domain name is registered, it needs to go through the MIIT filing procedure before your website can be accessed.
 
 - If you have already registered a domain name and obtained ICP filing for it, skip this step and proceed to [step 2](#Create a bucket).
 - Obtain ICP filing for the registered domain name.
