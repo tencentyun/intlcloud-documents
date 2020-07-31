@@ -109,7 +109,7 @@
 
 | API                                                          | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | Gets the sound effect management class `TXAudioEffectManager`. |
+| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | Gets the sound effect management class `TXAudioEffectManager` to manage background music, short sound effects, and vocal effects. |
 
 
 ### Secondary stream API functions
