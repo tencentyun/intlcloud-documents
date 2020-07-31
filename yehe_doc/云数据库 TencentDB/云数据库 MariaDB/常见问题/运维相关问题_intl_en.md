@@ -15,7 +15,7 @@ It is a normal master/slave sync thread, which is resident.
 Due to operation strategies, multi-thread download is not supported. You can use the `wget --content-disposition` command for download.
 
 ### Why does the master/slave delay of TencentDB for MariaDB suddenly increase even to several minutes?
-You can check whether you are running a very large SQL statement (e.g., batch insertion of a large amount of data). As the master needs to wait for response from the slave, the master/slave delay may seem long.
+The [TencentDB Console](https://console.cloud.tencent.com/tdsql) supports most common database parameters and sets security thresholds for them. If a parameter to be modified does not exist or cannot be modified to a specific value, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ### What can I do if an error occurs when I run `SELECT INTO OUTFILE` or `./mysqldump` on a TencentDB for MariaDB instance to export files locally?
 Files cannot be written to instance server directories.
