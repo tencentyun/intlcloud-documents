@@ -24,7 +24,7 @@ put_bucket_inventory(Bucket, Id, InventoryConfiguration={}, **kwargs)
 
 #### Sample request
 
-```
+```python
 response = client.put_bucket_inventory(
     Bucket='examplebucket-1250000000'',
     Id='string',
