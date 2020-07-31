@@ -9,7 +9,7 @@ This document describes how to host an existing or new static website on COS and
 
 The following services will be used in the steps outlined below:
 
-- [DNS Service]: Before hosting a static website, you need to register a domain name such as `www.example.com`.
+- DNS Service: Before hosting a static website, you need to register a domain name such as `www.example.com`.
 - [COS](https://intl.cloud.tencent.com/product/cos): You need to create a bucket in COS for storing the uploaded webpage contents.
 - [CDN](https://intl.cloud.tencent.com/product/cdn): Together with Tencent Cloud DNS, CDN can accelerate the delivery of static website contents, reduce access delay, and improve availability, in addition to binding the domain name to the website content.
 - Tencent Cloud DNS: Allows you to access the static website through a custom domain name.
