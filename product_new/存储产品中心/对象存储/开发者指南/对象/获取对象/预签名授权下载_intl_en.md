@@ -21,4 +21,4 @@ You can call the pre-signed URL method in the SDK directly. For more information
 - [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629)
 - [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470)
 - [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471)
-- [小程序 SDK](https://intl.cloud.tencent.com/document/product/436/31711)
+- [Mini Program SDK](https://intl.cloud.tencent.com/document/product/436/31711)
