@@ -2,7 +2,7 @@
 The TencentDB Console supports most common database parameters and sets security thresholds for them. If a parameter to be modified does not exist or cannot be modified to a specific value, please submit a ticket for assistance and we will process it as soon as possible.
 
 ### I have purchased a CVM instance in East China (Shanghai Zone 2) and a TencentDB for MariaDB instance in Shanghai, and both of them are in the basic network. Why is the TencentDB for MariaDB instance unpingable on the CVM instance?
-TencentDB disables ping by default.
+TencentDB disables the ping operation by default.
 You can use Telnet to check connectivity if needed.
 
 ### What can I do if Navicat MySQL 8.0.x of TencentDB for MariaDB has a connection error?
