@@ -53,6 +53,7 @@ pod update
 ```
 
 After the pod command is executed, a project file with the .xcworkspace extension integrated with the SDK will be generated. Double-click it to open it.
+>? You need to manually add the system dependent library **Accelerate.framework**.
 
 
 ### Manual integration

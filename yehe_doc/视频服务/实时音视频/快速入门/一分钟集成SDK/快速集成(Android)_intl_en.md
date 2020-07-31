@@ -109,7 +109,7 @@ Configure application permissions in `AndroidManifest.xml`. The TRTC SDK require
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
-
+>! Do not run the `android:hardwareAccelerated="false"` code to disable hardware acceleration; otherwise, the video streams of the peer cannot be rendered.
 ## Setting Obfuscation Rules
 In the `proguard-rules.pro` file, add the classes related to the TRTC SDK to the "do not obfuscate" list:
 

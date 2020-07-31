@@ -1,4 +1,4 @@
-TencentDB for Redis supports both password-enabled and password-free access. To use password-free access mode, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+TencentDB for Redis supports both password-enabled and password-free access.
 
 
 >- For the sake of data security, you are not recommended to enable password-free access.

@@ -11,6 +11,7 @@ When creating a pre-signed URL, you can include object keys in your signature to
 You can call the pre-signed URL method in the SDK directly. For more information, see the SDK documentations for the corresponding programming language below:
 
 - [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/31520)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465)
 - [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/30595)
 - [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466)
@@ -20,4 +21,4 @@ You can call the pre-signed URL method in the SDK directly. For more information
 - [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629)
 - [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470)
 - [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471)
-
+- [Mini Program SDK](https://intl.cloud.tencent.com/document/product/436/31711)
