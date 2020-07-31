@@ -1,6 +1,5 @@
 ### Why does my CPU utilization exceed 100%?
-By default, TencentDB for MariaDB adopts the policy of overuse of idle resources that allows your business to preempt some idle CPU resources. Therefore, when the number of CPU cores of your instance exceeds the default value assigned, the CPU utilization may appear to exceed 100% in the monitoring view, which is actually normal.
-
+y default, TencentDB for MariaDB adopts the policy of overuse of idle resources that allows your business to preempt some idle CPU resources. Therefore, when the number of CPU cores of your instance exceeds the default value assigned, the CPU utilization may appear to exceed 100% in the monitoring view, which is actually normal.
 However, if your CPU utilization always exceeds 60%, you are recommended to upgrade the database as soon as possible.
 
 ### I have purchased 16 GB of memory. The monitoring page shows that the memory has been almost used up, but why is my business not affected?

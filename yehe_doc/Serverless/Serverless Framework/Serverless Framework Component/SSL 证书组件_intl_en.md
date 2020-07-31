@@ -28,9 +28,9 @@ SSLTest:
     alias: Test certificate
 ```
 >!
-- You can only apply for one-year free DV certificates for domain names.
-- You can only create and remove certificates but cannot renew or reissue them.
-- For domain names resolved at Tencent Cloud, this component supports automatic DNS verification for certificates; for other domain names, after you apply for a certificate, it needs to be verified before it can be used. For more information, please see [Domain Name Verification Guide](https://intl.cloud.tencent.com/document/product/1007/30168).
+>- You can only apply for one-year free DV certificates for domain names.
+>- You can only create and remove certificates but cannot renew or reissue them.
+>- For domain names resolved at Tencent Cloud, this component supports automatic DNS verification for certificates; for other domain names, after you apply for a certificate, it needs to be verified before it can be used. For more information, please see [Domain Name Verification Guide](https://intl.cloud.tencent.com/document/product/1007/30168).
 
 
 ### Deployment
@@ -88,8 +88,8 @@ TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
 >?
-- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
-- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
+>- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
+>- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
 
 ### More components
 

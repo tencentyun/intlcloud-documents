@@ -1,15 +1,15 @@
 ## Operation Scenarios
-Tencent Cloud [Laravel](https://github.com/laravel/laravel) Serverless Component supports deploying RESTful API services.
+ Tencent Cloud [Laravel](https://github.com/laravel/laravel) Serverless Component supports Laravel v6.0 and above. 
 
 ## Prerequisites
-#### Initializing Laravel project
+### Initializing Laravel project
 Before using this component, you need to initialize a `laravel` project first:
 ```shell
-php composer create-project --prefer-dist laravel/laravel serverless-laravel
+composer create-project --prefer-dist laravel/laravel serverless-laravel
 ```
 >!Laravel uses Composer to manage dependencies, so you need to install Composer first. For more information, please see [here](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos).
 
-#### Modifying Laravel project
+### Modifying Laravel project
 When a function is executed, only `/tmp` is readable/writable; therefore, you need to write the `storage` directory of the `laravel` framework runtime into this directory by modifying the `bootstrap/app.php` file and adding the following content after `$app = new Illuminate\Foundation\Application`:
 ```php
 $app->useStoragePath($_ENV['APP_STORAGE'] ?? $app->storagePath());
@@ -32,107 +32,72 @@ APP_STORAGE=/tmp
 ```
 
 ## Directions
-#### Installation
+### Installation
 Use npm to install [Serverless CLI](https://github.com/serverless/serverless) globally:
 ```shell
-$ npm install -g serverless
+npm install -g serverless
 ```
 
-#### Configuration
+### Configuration
 Create a `serverless.yml` file in the project root directory:
 ```shell
-$ touch serverless.yml
+touch serverless.yml
 ```
 
 Configure `serverless.yml` as follows:
 ```yml
 # serverless.yml
 
-MyComponent:
-  component: "@serverless/tencent-laravel"
-  inputs:
-    region: ap-guangzhou 
-    functionName: laravel-function
-    code: ./
-    functionConf:
-      timeout: 10
-      memorySize: 128
-      environment:
-        variables:
-          TEST: vale
-      vpcConfig:
-        subnetId: ''
-        vpcId: ''
-    apigatewayConf:
-      protocol: https
-      environment: release
+component: laravel
+name: laravelDemo
+org: orgDemo
+app: appDemo
+stage: dev
+
+inputs:
+  src: ./
+  region: ap-guangzhou
+  runtime: Php7
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release
 ```
 
-[Detailed Configuration >>](https://github.com/serverless-components/tencent-laravel/tree/master/docs/configure.md)
+[Detailed Configuration >>](https://github.com/serverless-components/tencent-laravel/blob/master/docs/configure.md)
 
-#### Deployment
+### Deployment
 
+Run the following command to deploy by scanning code:
 
-
-Deploy by running the `sls` command and add the `--debug` parameter to view the information during the deployment process:
->? `sls` is short for the `serverless` command.
-
-```shell
-$ sls --debug
-
-  DEBUG ─ Resolving the template's static variables.
-  DEBUG ─ Collecting components from the template.
-  DEBUG ─ Downloading any NPM components found in the template.
-  DEBUG ─ Analyzing the template's components dependencies.
-  DEBUG ─ Creating the template's components graph.
-  DEBUG ─ Syncing template state.
-  DEBUG ─ Executing the template's components graph.
-  DEBUG ─ Compressing function laravel-function file to /Users/Downloads/serverless-laravel/.serverless/laravel-function.zip.
-  DEBUG ─ Compressed function laravel-function file successful
-  DEBUG ─ Uploading service package to cos[sls-cloudfunction-ap-guangzhou-code]. sls-cloudfunction-default-laravel-function-1581888194.zip
-  DEBUG ─ Uploaded package successful /Users/Downloads/serverless-laravel/.serverless/laravel-function.zip
-  DEBUG ─ Creating function laravel-function
-  DEBUG ─ Created function laravel-function successful
-  DEBUG ─ Setting tags for function laravel-function
-  DEBUG ─ Creating trigger for function laravel-function
-  DEBUG ─ Deployed function laravel-function successful
-  DEBUG ─ Starting API-Gateway deployment with name MyComponent.TencentApiGateway in the ap-guangzhou region
-  DEBUG ─ Service with ID service-ok334ism created.
-  DEBUG ─ API with id api-l7cppn6s created.
-  DEBUG ─ Deploying service with id service-ok334ism.
-  DEBUG ─ Deployment successful for the api named MyComponent.TencentApiGateway in the ap-guangzhou region.
-
-  MyComponent: 
-    region:              ap-guangzhou
-    functionName:        laravel-function
-    apiGatewayServiceId: service-ok334ism
-    url:                 http://service-ok334ism-1258834142.gz.apigw.tencentcs.com/release/
-
-  192s › MyComponent › done
+```console
+sls deploy
 ```
 
-#### Removal
+>?
+>-  **Before deployment, you need to clear the local configuration cache by running `php artisan config:clear`.** 
+>- To grant persistent permission, please see [Account Configuration](#account).
 
-You can run the following commands to remove the deployed service:
-```shell
-$ sls remove --debug
+### Removal
 
-  DEBUG ─ Flushing template state and removing all components.
-  DEBUG ─ Removing function
-  DEBUG ─ Request id
-  DEBUG ─ Removed function laravel-function successful
-  DEBUG ─ Removing any previously deployed API. api-l7cppn6s
-  DEBUG ─ Removing any previously deployed service. service-ok334ism
+You can run the following command to remove the deployed service:
 
-  18s › MyComponent › done
-  
+```console
+sls remove
 ```
 
-#### Account configuration (optional)
+<span id="account"></span>
+### Account configuration (optional)
 
 Currently, you can scan a QR code to log in to the CLI by default. If you want to configure persistent environment variables/key information, you can also create a local `.env` file:
 
+```shell
+touch .env # Tencent Cloud configuration information
+```
+
 Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` file and save it:
+
 ```text
 # .env
 TENCENT_SECRET_ID=123
@@ -141,4 +106,5 @@ TENCENT_SECRET_KEY=123
 
 >?
 >- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
->-  If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
+>- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
+
