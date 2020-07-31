@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td>The SDK v1.1.6.0 is released</td>
-        <td><li>The encryption protocol is optimized</li> <li>Network connection is optimized</li> <li>Badge can now be configured for the Huawei channel</li> <li>The SDK v3.7.5 for Mi Push and SDK v3.9.0 for Meizu Push are upgraded</li><li>Realme and Black Shark channels are supported</li></td>
+        <td><li> The encryption protocol is optimized </li> <li> Network connection is optimized</li> <li> Badge can now be configured for the Huawei channel </li> <li> The SDK v3.7.5 for Mi Push and SDK v3.9.0 for Meizu Push are upgraded </li><li> Realme and Black Shark channels are supported </li><li> Beacon will no longer be used to get QIMEI information </li></td>
         <td>April 21, 2020</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/35828">Badge Adaptation Guide</a></td>
     </tr>
