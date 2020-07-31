@@ -5,22 +5,22 @@ Namespace=QCE/COS
 
 ## Monitoring Metrics
 
->?Because COS uses a generic region, no matter where a bucket is located, please always select "Guangzhou" as `Region` when pulling COS monitoring metric data.
-- Please always select "North China (Guangzhou)" for the `Region` field when pulling data by using [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics).
+>?Because COS uses a generic region, no matter where a bucket is located, please always select "Guangzhou" as the `Region` when pulling COS monitoring metric data.
+- Please always select "ap-guangzhou" in the `Region` field when pulling data by using the [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics).
 - Please always enter "ap-guangzhou" in the `Region` field when pulling data by using an SDK.
 
-### Requests
+### Request metrics
 
 | Parameter | Metric Name | Description | Unit | Dimension |
 | ----------------------| ---------------------- | -------------- | ---- | ----------------------|
-| StdReadRequests | STANDARD read requests | Number of STANDARD read requests, which is calculated based on the number of sent requests | - | appid and bucket |
-| StdWriteRequests | STANDARD write requests | Number of STANDARD write requests, which is calculated based on the number of sent requests | - | appid and bucket |
-| IaReadRequests | STANDARD_IA read requests | Number of STANDARD_IA read requests, which is calculated based on the number of sent requests | - | appid and bucket |
-| IaWriteRequests | STANDARD_IA write requests | Number of STANDARD_IA write requests, which is calculated based on the number of sent requests | - | appid and bucket |
-| NlReadRequests | Nearline Storage read requests | Number of Nearline Storage read requests, which is calculated based on the number of sent requests | - | appid and bucket |
-| NlWriteRequests | Nearline Storage write requests | Number of Nearline Storage write requests, which is calculated based on the number of sent requests | - | appid and bucket |
+| StdReadRequests | STANDARD read requests | Number of STANDARD read requests, which is calculated based on the number of sent requests | Count | appid and bucket |
+| StdWriteRequests | STANDARD write requests | Number of STANDARD write requests, which is calculated based on the number of sent requests | Count | appid and bucket |
+| IaReadRequests | STANDARD_IA read requests | Number of STANDARD_IA read requests, which is calculated based on the number of sent requests | Count | appid and bucket |
+| IaWriteRequests | STANDARD_IA write requests | Number of STANDARD_IA write requests, which is calculated based on the number of sent requests | Count | appid and bucket |
+| NlReadRequests | Nearline Storage read requests | Number of Nearline Storage read requests, which is calculated based on the number of sent requests | Count | appid and bucket |
+| NlWriteRequests | Nearline Storage write requests | Number of Nearline Storage write requests, which is calculated based on the number of sent requests | Count | appid and bucket |
 
-### Storage
+### Storage metrics
 
 | Parameter | Metric Name | Unit | Dimension |
 | ---------------------- | ----------------- | ---- | ---------------------- |
@@ -29,36 +29,36 @@ Namespace=QCE/COS
 | NelStorage | Nearline Storage - storage space | MB | appid and bucket |
 | ArcStorage | ARCHIVE - storage space | MB | appid and bucket |
 | MazStdStorage | MAZ_STANDARD - storage space | MB | appid and bucket |
-| StdObjectNumber | STANDARD - number of objects | - | appid and bucket |
-| MazStdObjectNumber | MAZ_STANDARD - number of objects | - | appid and bucket |
-| IaObjectNumber | STANDARD_IA - number of objects | - | appid and bucket |
-| NlObjectNumber | Nearline Storage - number of objects | - | appid and bucket |
-|MazIaReadRequests | MAZ_STANDARD_IA - read requests | - |appid and bucket|
-|MazIaWriteRequests|MAZ_STANDARD_IA - write requests|- |appid and bucket|
+| StdObjectNumber | STANDARD - number of objects | Count | appid and bucket |
+| MazStdObjectNumber | MAZ_STANDARD - number of objects | Count | appid and bucket |
+| IaObjectNumber | STANDARD_IA - number of objects | Count | appid and bucket |
+| NlObjectNumber | Nearline Storage - number of objects | Count | appid and bucket |
+|MazIaReadRequests | MAZ_STANDARD_IA - read requests | Count |appid and bucket|
+|MazIaWriteRequests|MAZ_STANDARD_IA - write requests| Count |appid and bucket|
 |MazIaStorage|MAZ_STANDARD_IA - storage capacity|MB |appid and bucket|
-|MazIaObjectNumber|MAZ_STANDARD_IA - number of objects|- |appid and bucket|
+|MazIaObjectNumber|MAZ_STANDARD_IA - number of objects| Count |appid and bucket|
 
 
-### Traffic
+### Traffic metrics
 
 | Parameter | Metric Name | Description | Unit | Dimension |
 | ----------------------| ---------------------- | ------------- | ---- | ----------------------|
-| InternetTraffic | Public network downstream traffic | Traffic generated by mutual data transfer between client and COS over the public network | B | appid and bucket |
-| InternalTraffic | Private network downstream traffic | Traffic generated by mutual data transfer between client and COS over the Tencent Cloud private network | B | appid and bucket |
-| CdnOriginTraffic | CDN origin-pull traffic | Traffic generated by data transfer from COS to Tencent Cloud CDN edge server | B | appid and bucket |
-| InboundTraffic | Total upload traffic over public and private networks | Traffic generated by data upload to COS over the public and private networks | B | appid and bucket |
+| InternetTraffic | Public network downstream traffic | Traffic generated by mutual data transfer between the client and COS over the public network | B | appid and bucket |
+| InternalTraffic | Private network downstream traffic | Traffic generated by mutual data transfer between the client and COS over the Tencent Cloud private network | B | appid and bucket |
+| CdnOriginTraffic | CDN origin-pull traffic | Traffic generated by data transfer from COS to the Tencent Cloud CDN edge server | B | appid and bucket |
+| InboundTraffic | Total upload traffic over the public and private networks | Traffic generated by data upload to COS over the public and private networks | B | appid and bucket |
 
 ### Return code metrics
 
 | Parameter | Metric Name | Description | Unit | Dimension |
 | ---------------------- | ----------- | --------|---- | ---------------------- |
-| 2xxResponse | 2xx status code | Number of 2xx errors in the current bucket | - | appid and bucket |
-| 3xxResponse | 3xx status code | Number of 3xx errors in the current bucket | - | appid and bucket |
-| 4xxResponse | 4xx status code | Number of 4xx errors in the current bucket | - | appid and bucket |
-| 5xxResponse | 5xx status code | Number of 5xx errors in the current bucket | - | appid and bucket |
+| 2xxResponse | 2xx status code | Number of 2xx errors in the current bucket | Count | appid and bucket |
+| 3xxResponse | 3xx status code | Number of 3xx errors in the current bucket | Count | appid and bucket |
+| 4xxResponse | 4xx status code | Number of 4xx errors in the current bucket | Count | appid and bucket |
+| 5xxResponse | 5xx status code | Number of 5xx errors in the current bucket | Count | appid and bucket |
 >?
 > 1. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-> 2. The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` supported by each API.
+> 2. The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
 
 ### Data retrieval metrics
 
@@ -68,19 +68,19 @@ Namespace=QCE/COS
 | IaRetrieval | STANDARD_IA data retrieval | Traffic generated by the retrieval of STANDARD_IA data | B | appid and bucket |
 | NlRetrieval | Nearline data retrieval | Traffic generated by the retrieval of nearline data | B | appid and bucket |
 
-## Overview of Parameters in Each Dimension
+## Overview of the Parameters in Each Dimension
 
 | Parameter Name | Dimension Name | Dimension Description | Format |
 | ------------------------------- | -------- | ---------------------- | --------------------------------------------------- |
-| &Instances.N.Dimensions.0.Name | appid | Dimension name of root account `APPID` | String-type dimension name, such as appid |
+| &Instances.N.Dimensions.0.Name | appid | Dimension name of the root account `APPID` | String-type dimension name, such as appid |
 | &Instances.N.Dimensions.0.Value | appid | Specific root account `APPID` | Specific root account `APPID`, such as 1250000000 |
-| &Instances.N.Dimensions.1.Name | bucket | Dimension name of bucket | String-type dimension name, such as bucket |
+| &Instances.N.Dimensions.1.Name | bucket | Dimension name of the bucket | Enter a string-type dimension name, such as bucket |
 | &Instances.N.Dimensions.1.Value | bucket | Specific bucket name | Specific bucket name, such as examplebucket-1250000000 |
 
-## Input Parameter Description
+## Input Parameters
 To query the monitoring data of COS, use the following input parameters:
 &Namespace=QCE/COS
 &Instances.N.Dimensions.0.Name=appid
-&Instances.N.Dimensions.0.Value=root account `APPID`
+&Instances.N.Dimensions.0.Value=`APPID` of the root account
 &Instances.N.Dimensions.1.Name=bucket
 &Instances.N.Dimensions.1.Value=Bucket name 
