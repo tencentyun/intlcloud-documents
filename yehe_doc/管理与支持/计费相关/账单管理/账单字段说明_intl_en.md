@@ -17,7 +17,7 @@
 | Component Name | Component specification. E.g., Memory – Standard S2, Premium Cloud Storage – Storage Space. |
 | Component List Price | Original unit price of a component as listed on Tencent Cloud website. |
 | Component Contracted Price | Contracted unit price of a component. |
-| Component Price Unit | Unit of measurement for component price |
+| Component Price Measurement Unit | Unit of measurement for component price |
 | Component Usage | Component usage quantity. |
 | Component Usage Unit | Unit of measurement for component usage quantity. |
 | Usage Duration | Resource usage duration. |

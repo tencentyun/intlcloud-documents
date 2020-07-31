@@ -11,7 +11,7 @@
 
 ## 计算
 
-计算资源包括 CPU 资源和内存资源，计算资源的选择决定了实例的最大 QPS 和访问连接数等参数。腾讯云数据库 MongoDB 目前支持的可选规格请参考快速入门中的 [实例购买和初始化](https://intl.cloud.tencent.com/document/product/240/19868)。价格请参考 [腾讯云数据库 MongoDB 定价](https://intl.cloud.tencent.com/document/product/240/8364)。
+计算资源包括 CPU 资源和内存资源，计算资源的选择决定了实例的最大 QPS 和访问连接数等参数。腾讯云数据库 MongoDB 目前支持的可选规格请参考快速入门中的 [实例购买]((https://intl.cloud.tencent.com/document/product/240/19868))和[初始化](https://intl.cloud.tencent.com/document/product/240/7090)。价格请参考 [腾讯云数据库 MongoDB 定价](https://intl.cloud.tencent.com/document/product/240/8364)。
 
 
 
