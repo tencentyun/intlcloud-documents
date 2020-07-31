@@ -1,4 +1,4 @@
-﻿# Top-up Process
+
 
 You can purchase Tencent Cloud services only if your account has sufficient balance. Most Tencent Cloud services are billed hourly. To prevent service suspension due to your account being in arrears, use "online payment" or "bank transfer" to top-up your account in a timely manner.
 
