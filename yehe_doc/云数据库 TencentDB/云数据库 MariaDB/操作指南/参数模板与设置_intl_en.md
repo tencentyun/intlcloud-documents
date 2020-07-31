@@ -6,13 +6,12 @@ If you have already created a database parameter template and want to include mo
 If you want to use your own database parameter template, you only need to create it, modify the desired parameters, and configure your database instance to use it. It should be noted that all database instances that have applied a parameter template will not get all parameter updates of the template. If you want to apply new parameters to a batch of database instances, you can apply them by importing a template during batch parameter settings.
 
 ## Managing Parameter Templates
-A parameter template supports the following features, you can log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql) and select an instance to enter its management page and configure the template features:
+A parameter template supports the following features, you can log in to the [MariaDB Console](https://console.cloud.tencent.com/tdsql) and click an instance name to enter its management page and configure the template features:
 - Specify the default parameter template.
 - Create templates by modifying the default parameters to generate custom parameter optimization schemes.
 - Generate templates by importing parameters from configuration file `my.conf`.
 - Save parameter settings as templates.
 - Import parameters from templates when setting parameters for one or multiple instances.
-![](https://main.qcloudimg.com/raw/e70f5f40e72ddeed2830d9f14702a98a.png)
 
 ## Parameter Description
 - Parameters are initialized by default when an instance is created.
