@@ -1,4 +1,4 @@
->The beta test of this feature started on March 30, 2019 and is available only to allowed users.
+>The beta test of this feature started on March 30, 2019 and is available only to allowed users.>?The feature is available only to allowed users. To use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## SSL Connection Encryption Overview
 

@@ -28,12 +28,12 @@
 
 您可以直接调用 SDK 的下载对象方法，详情请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31463#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37675#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31464#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31465#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30595)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31466#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31467#.E8.8E.B7.E5.8F.96.E5.AF.B9.E8.B1.A1)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37684#.E8.8E.B7.E5.8F.96.E5.AF.B9.E8.B1.A1)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31468#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31477#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31469#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1)

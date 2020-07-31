@@ -1,150 +1,141 @@
-
-
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to custom domain name.
+This document provides an overview of APIs and SDK code samples related to custom endpoints.
 
-| API | Operation Name | Operation Description |
+| API          | Operation                   | Description                                       |
 | ----------------- | -------------- | -------------------------- |
-| PUT Bucket domain    | Setting custom domain name | Sets custom domain name information for a bucket |
-| GET Bucket domain | Querying custom domain name | Queries the custom domain name information of a bucket |
+| PUT Bucket domain | Setting custom endpoint   | Sets a custom endpoint for a bucket |
+| GET Bucket domain | Querying custom endpoint   | Queries the custom endpoint of a bucket |
 
-## Setting Custom Domain Name
+## SDK API References
 
-#### Feature description
+For parameters and method descriptions of all SDK APIs, see [SDK API References](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-This API (PUT Bucket domain) is used to configure a custom domain name for a bucket.
+## Setting Custom Endpoint
 
-#### Method prototype
+#### API description
 
-When you start to use COS, you need to create a bucket under a specified account for object use and management and specify the region where the bucket resides. The user who creates a bucket is considered the owner of the bucket by default. If you do not specify the access permission when creating a bucket, the bucket has private read/write ("private") permission. The steps are as follows:    
+This API (PUT Bucket domain) is used to configure a custom endpoint for a bucket.
 
-1. Instantiate `QCloudPutBucketDomainRequest`
-2. Call the `PutBucketDomain` method in the `QCloudCOSXMLService` object to initiate a request.
-3. Get the specific content from the `outputObject` in the `finishBlock` of the callback.
+#### Sample code
+**Objective-C**
 
-#### Sample request
-
-[//]: # (.cssg-snippet-objc-put-bucket-domain)
-
-```
+[//]: # (.cssg-snippet-put-bucket-domain)
+```objective-c
 QCloudPutBucketDomainRequest *req = [QCloudPutBucketDomainRequest new];
-    req.bucket = @"examplebucket-1250000000";
-    QCloudDomainConfiguration *config = [QCloudDomainConfiguration new];
-    QCloudDomainRule *rule = [QCloudDomainRule new];
-    rule.status = QCloudDomainStatueEnabled;
-    rule.name = @"www.baidu.com";
-    rule.replace = QCloudCOSDomainReplaceTypeTxt;
-    rule.type = QCloudCOSDomainTypeRest;
-    config.rules = @[rule];
-    req.domain  = config;
-    [req setFinishBlock:^(id outputObject, NSError *error) {
 
-    }];
-      [[QCloudCOSXMLService defaultCOSXML]PutBucketDomain:req];
+// Bucket name in the format of BucketName-APPID
+req.bucket = @"examplebucket-1250000000";
 
+QCloudDomainConfiguration *config = [QCloudDomainConfiguration new];
+QCloudDomainRule *rule = [QCloudDomainRule new];
+
+// Origin server status
+rule.status = QCloudDomainStatueEnabled;
+// Endpoint information
+rule.name = @"www.baidu.com";
+
+// Replace the existing configuration. If CNAME/TXT is specified as a valid value, the new configuration won’t be delivered until forced verification of the endpoint ownership
+rule.replace = QCloudCOSDomainReplaceTypeTxt;
+rule.type = QCloudCOSDomainTypeRest;
+
+// An array of rule descriptions
+config.rule = [rule];
+
+// Endpoint configuration rule
+req.domain  = config;
+
+[request setFinishBlock:^(id outputObject, NSError* error) {
+    // outputObject contains all HTTP response headers
+    NSDictionary* info = (NSDictionary *) outputObject;
+    
+}];
+[[QCloudCOSXMLService defaultCOSXML]PutBucketDomain:req];
 ```
 
-Swift sample code:
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketDomain.m).
 
-[//]: # (.cssg-snippet-swift-put-bucket-domain)
+**Swift**
 
-```
+[//]: # (.cssg-snippet-put-bucket-domain)
+```swift
 let req = QCloudPutBucketDomainRequest.init();
+
+// Bucket name in the format of BucketName-APPID
 req.bucket = "examplebucket-1250000000";
 
 let config = QCloudDomainConfiguration.init();
 let rule = QCloudDomainRule.init();
 rule.status = .enabled;
 rule.name = "www.baidu.com";
+
+// Replace the existing configuration. If CNAME/TXT is specified as a valid value, the new configuration won’t be delivered until forced verification of the endpoint ownership
 rule.replace = .txt;
 rule.type = .rest;
+
+// An array of rule descriptions
 config.rules = [rule];
+
+// Endpoint configuration rule
 req.domain = config;
 req.finishBlock = {(result,error) in
-
     if error != nil{
         print(error!);
     }else{
         print( result!);
     }
-
 }
 QCloudCOSXMLService.defaultCOSXML().putBucketDomain(req);
 ```
 
-#### Parameter description
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketDomain.swift).
 
-#### `QCloudPutBucketDomainRequest` request parameter description
+#### Error codes
 
-| Parameter Name | Description | Type | Required |
-| -------- | ------------------------------------------------------------ | --------------------------- | -------- |
-| bucket   | Bucket for which to set a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | NSString *                  | Yes       |
-| domain   | Domain name configuration rule                                               | QCloudDomainConfiguration * | Yes       |
+The following describes some frequent special errors that may occur when you make requests using this API.
 
-#### `QCloudDomainConfiguration` parameter description
+| Status Code                                 | Description                                                         |
+| -------------------------------------- | ------------------------------------------------------------ |
+| HTTP 409 Conflict                      | The endpoint record already exists, and no forced overwrite is specified in the request; OR the endpoint record does not exist, and forced overwrite is specified in the request |
+| HTTP 451 Unavailable For Legal Reasons | The endpoint is a domain name without ICP filing in Mainland China                           |
 
-| Parameter Name | Description | Type | Required |
-| -------- | ------------------ | ----------------------------- | -------- |
-| rules    | Rule set array | NSArray<QCloudDomainRule*>  * | Yes       |
+## Querying Custom Endpoint
 
-#### `QCloudDomainRule` parameter description
+#### API description
 
-| Parameter Name | Description | Type | Required |
-| -------- | ------------------------------------------------------------ | -------------------------- | -------- |
-| name     | Custom domain name. Valid values: letter, digit, dot                      | NSString *                 | Yes       |
-| status   | Domain name status. Valid values: ENABLED/DISABLED                   | QCloudDomainStatue         | Yes       |
-| type     | Type of bound origin server. Valid values: REST/WEBSITE                           | QCloudCOSDomainType        | Yes       |
-| replace  | Overwrites existing configuration. Valid values: CNAME/TXT. If this parameter is entered, the configuration will be distributed after the domain name ownership is forcibly verified | QCloudCOSDomainReplaceType | Yes       |
+This API (GET Bucket domain) is used to query the custom endpoint of a bucket.
 
-#### Returned error code description
+#### Sample code
+**Objective-C**
 
-When an SDK request fails, the returned error will not be empty and will include error code, error message, and other information required for troubleshooting to help developers fix the problem quickly.
-
-There are mainly two types of returned error codes (encapsulated in the returned error): error codes returned by the device for network reasons and error codes returned by COS.
-
-- All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, please see the definitions in the `NSURLError.h` header of the `Foundation` framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
-- Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, please see [API Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, please see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
-
-## Querying Custom Domain Name
-
-#### Feature description
-
-This API (GET Bucket domain) is used to query the custom domain name information of a bucket.
-
-#### Method prototype
-
-When you start to use COS, you need to create a bucket under a specified account for object use and management and specify the region where the bucket resides. The user who creates a bucket is considered the owner of the bucket by default. If you do not specify the access permission when creating a bucket, the bucket has private read/write ("private") permission. The steps are as follows:    
-
-1. Instantiate `QCloudGetBucketDomainRequest`
-2. Call the `GetBucketDomain` method in the `QCloudCOSXMLService` object to initiate a request.
-3. Get the specific content from the `result` in the `finishBlock` of the callback.
-
-#### Sample request
-
-[//]: # (.cssg-snippet-objc-get-bucket-domain)
-
-```
+[//]: # (.cssg-snippet-get-bucket-domain)
+```objective-c
 QCloudGetBucketDomainRequest *getReq =  [QCloudGetBucketDomainRequest new];
-getReq.bucket = @"examplebucket-1250000000";
-[getReq setFinishBlock:^(QCloudDomainConfiguration * _Nonnull result, NSError * _Nonnull error) {
 
+// Bucket name in the format of BucketName-APPID
+getReq.bucket = @"examplebucket-1250000000";
+
+[getReq setFinishBlock:^(QCloudDomainConfiguration * _Nonnull result,
+                         NSError * _Nonnull error) {
+    // An array of rule descriptions
+    NSArray *rules = result.rules;
 }];
 [[QCloudCOSXMLService defaultCOSXML]GetBucketDomain:getReq];
-
 ```
 
-Swift sample code:
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketDomain.m).
 
-[//]: # (.cssg-snippet-swift-get-bucket-domain)
 
-```
+**Swift**
+
+[//]: # (.cssg-snippet-get-bucket-domain)
+```swift
 let req = QCloudGetBucketDomainRequest.init();
+
+// Bucket name in the format of BucketName-APPID
 req.bucket = "examplebucket-1250000000";
 
 req.finishBlock = {(result,error) in
-
     if error != nil{
         print(error!);
     }else{
@@ -154,31 +145,23 @@ req.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketDomain(req);
 ```
 
-#### Parameter description
-
-#### `QCloudGetBucketTaggingRequest` request parameter description
-
-| Parameter Name | Description | Type | Required |
-| -------- | ------------------------------------------------------------ | --------------------------- | -------- |
-| bucket   | Bucket for which to query a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | NSString *                  | Yes       |
-| domain   | Domain name configuration rule                                               | QCloudDomainConfiguration * | Yes       |
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketDomain.swift).
 
 
+#### Response parameters
 
-#### Return parameter description
+<table>
+<thead>
+<tr>
+<th>Parameter Name</td>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td nowrap="nowrap">x-cos-domain-txt-verification</td>
+<td>Endpoint verification information, which appears as an MD5 checksum of a character string in the format of <code>cos[Region][BucketName-APPID][BucketCreateTime]</code>, where Region is the bucket location, and BucketCreateTime is the bucket creation time in GMT</td>
+<td>String</td>
+</tr>
+</tbody></table>
 
-#### `QCloudDomainConfiguration` parameter description
-
-| Parameter Name | Description | Type |
-| -------- | ------------------ | ----------------------------- |
-| rules    | Rule set array | NSArray<QCloudDomainRule*>  * |
-
-#### Returned error code description
-
-When an SDK request fails, the returned error will not be empty and will include error code, error message, and other information required for troubleshooting to help developers fix the problem quickly.
-
-There are mainly two types of returned error codes (encapsulated in the returned error): error codes returned by the device for network reasons and error codes returned by COS.
-
-- All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, please see the definitions in the `NSURLError.h` header of the `Foundation` framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
-- Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, please see [API Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, please see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).

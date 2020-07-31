@@ -20,9 +20,9 @@ Certain TencentCloud APIs for TcaplusDB do not support resource-level permission
 
 | Task | Link |
 | -------------------------- | ------------------------------------------------------------ |
-| Basic policy structure | [Policy Syntax](https://intl.cloud.tencent.com/document/product/1016/35751#clyf) |
-| Operation definition in a policy | [TcaplusDB Operations](https://intl.cloud.tencent.com/document/product/1016/35751#cz) |
-| Resource definition in a policy | [TcaplusDB Resource Path](https://intl.cloud.tencent.com/document/product/1016/35751#zylj) |
+| Basic policy structure | [Policy Syntax](https://intl.cloud.tencent.com/document/product/1016/35751) |
+| Operation definition in a policy | [TcaplusDB Operations](https://intl.cloud.tencent.com/document/product/1016/35751) |
+| Resource definition in a policy | [TcaplusDB Resource Path](https://intl.cloud.tencent.com/document/product/1016/35751) |
 | Supported resource-level permissions in TcaplusDB | [Supported Resource-Level Permissions in TcaplusDB](https://intl.cloud.tencent.com/document/product/1016/35750) |
 | Console Examples | [Console Examples](https://intl.cloud.tencent.com/document/product/1016/35752) |
 

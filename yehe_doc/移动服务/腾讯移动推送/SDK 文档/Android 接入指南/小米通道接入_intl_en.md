@@ -1,8 +1,8 @@
 ## Operation Scenarios
 The Mi push channel is a system-level push channel **officially provided by Mi**. On a Mi phone, push messages can be delivered through Mi's system channel without opening the application.
 
-> !
->- The Mi channel supports arrival callback and passthrough (arrival unguaranteed) but not click callback.
+>!
+>- The Mi channel supports arrival callback but not click callback.
 >- When you test message push through the Mi channel, avoid using words such as `test`; otherwise, the messages will be blocked by Mi and marked as "unimportant messages".
 
 ## Directions
@@ -15,7 +15,7 @@ Enter the [Mi open platform](https://dev.mi.com/console/appservice/push.html), s
 #### Using JCenter for dependency import
 JCenter is recommended for dependency import for AS development. Import the Jar package of Mi Push:
 ```js
- implementation 'com.tencent.tpns:xiaomi:[VERSION]-release'// Mi Push [VERSION] is the version number of the current SDK, which can be viewed on the SDK download page
+implementation 'com.tencent.tpns:xiaomi:[VERSION]-release'// Mi Push [VERSION] is the version number of the current SDK, which can be viewed on the SDK download page
 ```
 
 
@@ -25,67 +25,72 @@ JCenter is recommended for dependency import for AS development. Import the Jar 
 1. Download the [SDK installation package](https://console.cloud.tencent.com/tpns/sdkdownload).
 2. Open the `Other-Push-jar` folder and import the jar packages related to Mi Push. Import `xm4tpns1.1.2.1.jar` to the project folder.
 3. After successful TPNS configuration, add the configuration of Mi Push:
+
 ```xml
+<application>
+    <service
+        android:name="com.xiaomi.push.service.XMPushService"
+        android:enabled="true"
+        android:process=":pushservice" />
+    <service
+        android:name="com.xiaomi.push.service.XMJobService"
+        android:enabled="true"
+        android:exported="false"
+        android:permission="android.permission.BIND_JOB_SERVICE"
+        android:process=":pushservice" />
+    <!-- Note: this service must be added for version 3.0.1 or above -->
+    <service
+        android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
+        android:enabled="true"
+        android:exported="true" />
+    <service
+        android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+        android:enabled="true" />
+    <!-- Note: this service must be added for version 2.2.5 or above -->
+    <receiver
+        android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
+        android:exported="true" >
+        <intent-filter>
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </receiver>
+    <receiver
+        android:name="com.xiaomi.push.service.receivers.PingReceiver"
+        android:exported="false"
+        android:process=":pushservice" >
+        <intent-filter>
+            <action android:name="com.xiaomi.push.PING_TIMER" />
+        </intent-filter>
+    </receiver>
 </application>
-<service
-android:name="com.xiaomi.push.service.XMPushService"
-android:enabled="true"
-android:process=":pushservice" />
-<service
-android:name="com.xiaomi.push.service.XMJobService"
-android:enabled="true"
-android:exported="false"
-android:permission="android.permission.BIND_JOB_SERVICE"
-android:process=":pushservice" />
-<!-- Note: this service must be added for version 3.0.1 or above -->
-<service
-android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
-android:enabled="true"
-android:exported="true" />
-<service
-android:name="com.xiaomi.mipush.sdk.MessageHandleService"
-android:enabled="true" />
-<!-- Note: this service must be added for version 2.2.5 or above -->
-<receiver
-android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
-android:exported="true" >
-<intent-filter>
-<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-<category android:name="android.intent.category.DEFAULT" />
-</intent-filter>
-</receiver>
-<receiver
-android:name="com.xiaomi.push.service.receivers.PingReceiver"
-android:exported="false"
-android:process=":pushservice" >
-<intent-filter>
-<action android:name="com.xiaomi.push.PING_TIMER" />
-</intent-filter>
-</receiver>
-</application>
+
 <!-- Note: this is the beginning of permission required by Mi Push -->
 <permission
-android:name="application package name.permission.MIPUSH_RECEIVE"
-android:protectionLevel="signature" />
-<!-- Here, change `com.example.mipushtest` to the application package name -->
+    android:name="application package name.permission.MIPUSH_RECEIVE"
+    android:protectionLevel="signature" />
+<!-- Here, change application package name to the actual application package name -->
+
 <uses-permission android:name="application package name.permission.MIPUSH_RECEIVE" />
-<!-- Here, change `com.example.mipushtest` to the application package name -->
+<!-- Here, change application package name to the actual application package name -->
 <!-- Note: this is the end of the permissions required by Mi Push -->
 ```
-3. Add ```Receiver``` in ```AndroidManifest.xml``` with the following configuration:
+
+4. Add `Receiver` in `AndroidManifest.xml` and configure it as follows:
+
 ```xml
 <receiver
-android:exported="true"
-android:name="com.tencent.android.mipush.XMPushMessageReceiver">
-<intent-filter>
-<action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
-</intent-filter>
-<intent-filter>
-<action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
-</intent-filter>
-<intent-filter>
-<action android:name="com.xiaomi.mipush.ERROR" />
-</intent-filter>
+    android:exported="true"
+    android:name="com.tencent.android.mipush.XMPushMessageReceiver">
+    <intent-filter>
+        <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+    </intent-filter>
+    <intent-filter>
+        <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+    </intent-filter>
+    <intent-filter>
+        <action android:name="com.xiaomi.mipush.ERROR" />
+    </intent-filter>
 </receiver>
 ```
 

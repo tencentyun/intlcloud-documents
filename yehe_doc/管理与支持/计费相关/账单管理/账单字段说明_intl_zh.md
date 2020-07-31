@@ -17,7 +17,7 @@
 | ComponentName                  | 组件的名称，产品四层的第4层，如内存-标准型S2、高性能云硬盘-存储空间等 |
 | ComponentUnitPrice             | 组件的官网原始单价                                           |
 | Component  Contract Price Unit | 组件的合同签约单价                                           |
-| Component  Price Unit          | 组件刊例价对应的价格单位                                     |
+| Component Price Measurement Unit          | 组件刊例价对应的价格单位                                     |
 | Component  Usage               | 组件的用量                                                   |
 | Component  Usage Unit          | 组件用量对应的单位                                           |
 | Usage Time                     | 资源使用的时长                                               |

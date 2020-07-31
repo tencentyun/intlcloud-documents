@@ -5,130 +5,88 @@ This document provides an overview of APIs and SDK code samples related to versi
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
-| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning configuration of a bucket |
 
-## Set Versioning
+## SDK API References
 
-#### Feature
+For parameters and method descriptions of all SDK APIs, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
-This API (PUT Bucket versioning) is used to set a versioning configuration on a specified bucket.
+## Setting Versioning
 
-#### Method prototype
-```java
-PutBucketVersioningResult putBucketVersioning(PutBucketVersioningRequest request)throws CosXmlClientException, CosXmlServiceException;
-void putBucketVersionAsync(PutBucketVersioningRequest request, CosXmlResultListener cosXmlResultListener);
-```
+#### API description
 
-#### Request samples
+This API (PUT Bucket versioning) is used to set versioning configuration on a bucket. Once enabled, versioning can only be suspended, but not disabled.
+
+#### Sample code
 
 [//]: # ".cssg-snippet-put-bucket-versioning"
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-PutBucketVersioningRequest putBucketVersioningRequest = new PutBucketVersioningRequest(bucket);
-putBucketVersioningRequest.setEnableVersion(true); //true: enable versioning; false: suspend versioning
-// Set the host for signature verification, which verifies all headers by default
-Set<String> headerKeys = new HashSet<>();
-headerKeys.add("Host");
-putBucketVersioningRequest.setSignParamsAndHeaders(null, headerKeys);
-// Use the sync method
-try {
-    PutBucketVersioningResult putBucketVersioningResult = cosXmlService.putBucketVersioning(putBucketVersioningRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-// Use async callback to make requests
-cosXmlService.putBucketVersionAsync(putBucketVersioningRequest, new CosXmlResultListener() {
+PutBucketVersioningRequest putBucketVersioningRequest =
+        new PutBucketVersioningRequest(bucket);
+//true: enable versioning; false: suspend versioning
+putBucketVersioningRequest.setEnableVersion(true);
+
+cosXmlService.putBucketVersionAsync(putBucketVersioningRequest,
+        new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        PutBucketVersioningResult putBucketVersioningResult = (PutBucketVersioningResult) result;
+        PutBucketVersioningResult putBucketVersioningResult =
+                (PutBucketVersioningResult) result;
     }
 
     @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException) {
-        // todo PUT Bucket versioning failed because of CosXmlClientException or CosXmlServiceException...
+    public void onFail(CosXmlRequest cosXmlRequest,
+                       CosXmlClientException clientException,
+                       CosXmlServiceException serviceException) {
+        if (clientException != null) {
+            clientException.printStackTrace();
+        } else {
+            serviceException.printStackTrace();
+        }
     }
 });
 ```
 
-#### Parameter description
-| Parameter Name | Description | Type |
-| ----| ---- | ---- |
-| bucket | Bucket for which to enable or suspend versioning in the format: BucketName-APPID. For more information, please see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| isEnable | Indicates whether to enable versioning: <br><li>true: enable<br><li>false: suspend | boolean |
-| headerKeys  | Indicates whether to verify the header for the signature | `Set<String>` |
-| cosXmlResultListener                                                  | Result callback        | CosXmlResultListener   |
-
-
-#### Response description 
-The result of the request is returned through PutBucketVersioningResult.
-
-| Member Variable | Type | Description |
-| -------- | ---- | -------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between 200-300 indicates a successful operation. Other values indicate a failure. |
-
->If the operation fails, the SDK will throw [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517).
-
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java).
 
 ## Querying Versioning
 
-#### Feature
+#### API description
 
-This API (GET Bucket versioning) is used to query the versioning information of a specified bucket.
+This API (GET Bucket versioning) is used to query the versioning configuration of a bucket.
 
-#### Method prototype
-```java
-GetBucketVersioningResult getBucketVersioning(GetBucketVersioningRequest request) throws CosXmlClientException, CosXmlServiceException;
-void getBucketVersioningAsync(GetBucketVersioningRequest request, CosXmlResultListener cosXmlResultListener);
-```
+- To get the versioning state of a bucket, you need to have READ permission on the bucket.
+- There are three versioning states: non-versioned, enabled, and suspended.
 
-#### Request samples
+#### Sample code
 
 [//]: # ".cssg-snippet-get-bucket-versioning"
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-GetBucketVersioningRequest getBucketVersioningRequest = new GetBucketVersioningRequest(bucket);
-// Set the host for signature verification, which verifies all headers by default
-Set<String> headerKeys = new HashSet<>();
-headerKeys.add("Host");
-getBucketVersioningRequest.setSignParamsAndHeaders(null, headerKeys);
-// Use the sync method
-try {
-    GetBucketVersioningResult getBucketVersioningResult = cosXmlService.getBucketVersioning(getBucketVersioningRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-// Use async callback to make requests
-cosXmlService.getBucketVersioningAsync(getBucketVersioningRequest, new CosXmlResultListener() {
+GetBucketVersioningRequest getBucketVersioningRequest =
+        new GetBucketVersioningRequest(bucket);
+
+cosXmlService.getBucketVersioningAsync(getBucketVersioningRequest,
+        new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        GetBucketVersioningResult getBucketVersioningResult = (GetBucketVersioningResult) result;
+        GetBucketVersioningResult getBucketVersioningResult =
+                (GetBucketVersioningResult) result;
     }
 
     @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException) {
-        // todo GET Bucket versioning failed because of CosXmlClientException or CosXmlServiceException...
+    public void onFail(CosXmlRequest cosXmlRequest,
+                       CosXmlClientException clientException,
+                       CosXmlServiceException serviceException) {
+        if (clientException != null) {
+            clientException.printStackTrace();
+        } else {
+            serviceException.printStackTrace();
+        }
     }
 });
 ```
 
-#### Parameter description
-| Parameter Name | Description | Type |
-| ----| ---- | ---- |
-| bucket | Bucket for which to query versioning in the format: BucketName-APPID. For more information, please see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| headerKeys  | Indicates whether to verify the header for the signature | `Set<String>` |
-| cosXmlResultListener                                                  | Result callback        | CosXmlResultListener   |
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java).
 
-
-#### Response description 
-The result of the request is returned through GetBucketVersioningResult.
-
-| Member Variable | Type | Description |
-| -------- | ---- | -------------------------------------------------------- |
-| httpCode | int | HTTP Code. A code between 200-300 indicates a successful operation. Other values indicate a failure. |
-| versioningConfiguration | [VersioningConfiguration](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudCosXml/cosxml/src/normal/java/com/tencent/cos/xml/model/tag/VersioningConfiguration.java) | Returns the versioning status of the bucket under the specified account                      |
-
->If the operation fails, the SDK will throw [CosXmlClientException](https://intl.cloud.tencent.com/document/product/436/31517) or [CosXmlServiceException](https://intl.cloud.tencent.com/document/product/436/31517).

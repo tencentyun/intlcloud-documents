@@ -131,7 +131,7 @@ Definitions:
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	---- |	
-| [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647)   | Service level | &#10003; | -  |  - |	-|	
+| [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647)   | Resource level | &#10003; | -  |  - |	-|	
 | [Live Video Broadcasting (LVB)](https://intl.cloud.tencent.com/document/product/267)   | Resource level | &#10003; | &#10003;  |  &#10003;  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/267/32468) |	
 | [Video on Demand (VOD)](https://intl.cloud.tencent.com/document/product/266)    | Resource level   | &#10003;  | -    |  -  |	[CAM Guide](https://intl.cloud.tencent.com/document/product/266/33970)  |	
 | [Media Processing Service (MPS)](https://intl.cloud.tencent.com/document/product/1041)    | Service level   | &#10003;  | -    |   &#10003;   |	-  |		

@@ -35,7 +35,7 @@
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | [CreateCluster](https://intl.cloud.tencent.com/document/product/1016/35053) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
 | [ModifyClusterName](https://intl.cloud.tencent.com/document/product/1016/35049) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
-| https://intl.cloud.tencent.com/document/product/1016/35052 | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
+| [DeleteCluster](https://intl.cloud.tencent.com/document/product/1016/35052) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
 | [DescribeClusters](https://intl.cloud.tencent.com/document/product/1016/35050) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
 | [ModifyClusterPassword](https://intl.cloud.tencent.com/document/product/1016/35048) | `qcs::tcaplusdb:$region:$account:cluster/*`<br>`qcs::tcaplusdb:$region:$account:cluster/$clusterId` |
 

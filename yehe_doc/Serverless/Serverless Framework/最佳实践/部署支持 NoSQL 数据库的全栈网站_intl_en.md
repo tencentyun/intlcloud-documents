@@ -29,16 +29,19 @@ Components: 2.30.1
    
 ### Configuration
    
-1. Initialize the template through `sls init`:
+1. Create a local folder and run the `create --template-url` command to download the relevant template:
 ```bash
-$ sls init -t fullstack-nosql
+$ mkdir my_tcbdemo && cd my_tcbdemo
+$ serverless create --template-url https://github.com/serverless-components/tencent-mongodb/tree/master/example/fullstack-demo
 ```
+   
+2. Find the **function->serverless.yaml** file in the project directory and enter your own `SecretId` and `SecretKey`.  
 >?
 > - If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
 >- If you already have a Tencent Cloud account, you can get **SecretId** and **SecretKey** in [API Key Management](https://console.cloud.tencent.com/cam/capi).
 >- Currently, `sls` supports access to TCB in Mainland China. Please pay attention to the region settings in the `yaml` file during deployment. An error may be reported for other regions.
    
-2. In the `backend->src` directory, install the required dependencies with the following command:
+3. In the `function->src` directory, install the required dependencies with the following command:
 ```bash
 $ npm install
 ```

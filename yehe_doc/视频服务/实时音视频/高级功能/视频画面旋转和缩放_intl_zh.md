@@ -31,7 +31,6 @@ iOS 平台则可以直接在 XCode 的 【General】>【Deployment Info】>【De
 
 }
 ```
->?CSDN 上有一篇文章 [iOS横竖屏旋转及其基本适配方法](https://blog.csdn.net/DreamcoffeeZS/article/details/79037207)，详细介绍了 iOS 平台中关于屏幕方向的一些开发经验。
 
 在 Android 平台上，通过指定 activity 的 `screenOrientation` 属性为 portrait，即可指定该界面为竖屏模式：
 ```xml
