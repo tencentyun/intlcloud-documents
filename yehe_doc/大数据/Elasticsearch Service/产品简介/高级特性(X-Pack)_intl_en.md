@@ -14,7 +14,7 @@ As shown in the figure above, there are options for the X-Pack features on the E
 In order to be able to use more advanced features in ES, we recommend that you choose the **Platinum Edition** when you create a cluster. The specific features and differences of each edition are detailed below. For pricing information, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/845/18376).
 
 ## X-Pack Overview
-This document describes some of the commonly used X-Pack features. For more information, please see Elasticsearch's official [Elastic Stack ](https://www.elastic.co/cn/products/stack) and [API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/xpack-api.html).
+This document describes some of the commonly used X-Pack features. For more information, please see Elasticsearch's official [Elastic Stack subscriptions](https://www.elastic.co/subscriptions) and [API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/xpack-api.html).
 >- Some features vary by editions (Basic, Platinum, and Open Source).
 
 - **Security**  
@@ -34,7 +34,7 @@ This feature makes full-text search and statistical analysis of Elasticsearch da
 
 This section mainly compares and highlights some key features of different Elasticsearch versions. As Elasticsearch is in a stage of rapid development, and the support for various features by different versions is constantly adjusted, we do not guarantee that the following content can stay in sync with the changes in the community.
 
-For the latest and most accurate feature comparison, please see Elasticsearch's official [edition feature description](https://www.elastic.co/cn/subscriptions).
+For the latest and most accurate feature comparison, please see Elasticsearch's official [Elastic Stack subscriptions](https://www.elastic.co/subscriptions).
 
 
 >In the table below, ![all](https://main.qcloudimg.com/raw/7d8fd809e55e9a63c0122b2e3e702a23.png), ![partial](https://main.qcloudimg.com/raw/07a75780ad731f49a5f28b3918c6c461.png), and ![none](https://main.qcloudimg.com/raw/77ef3c9aa6959f7027acb2484781c491.png) are used to indicate the feature completeness. ![all](https://main.qcloudimg.com/raw/7d8fd809e55e9a63c0122b2e3e702a23.png): all; ![partial](https://main.qcloudimg.com/raw/07a75780ad731f49a5f28b3918c6c461.png): partial; ![none](https://main.qcloudimg.com/raw/77ef3c9aa6959f7027acb2484781c491.png): none.
