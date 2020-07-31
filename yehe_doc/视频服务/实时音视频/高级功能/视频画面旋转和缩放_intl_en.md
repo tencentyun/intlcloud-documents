@@ -67,7 +67,7 @@ The TRTC SDK provides a lot of API functions to control the rotation direction a
 | setLocalViewFillMode | Fill mode of local preview image | Valid values: crop, fill with black bars |
 | setRemoteViewRotation | Clockwise rotation angle of remote video image | Valid values: 90 degrees, 180 degrees, 270 degrees |
 | setRemoteViewFillMode | Fill mode of remote video image | Valid values: crop, fill with black bars |
-| setVideoEncoderRotation | Clockwise rotation angle of the video image output by the encoder | Currently, only 180-degree rotation is supported, i.e., upside down |
+| setVideoEncoderRotation | Clockwise rotation angle of the video image output by the encoder | Currently, only 90, 180, and 270-degree rotations are supported |
 
 ![](https://main.qcloudimg.com/raw/f965d6d603f95862d73525469637b437.jpg)
 
