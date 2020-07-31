@@ -54,7 +54,7 @@ done
 | fs.cosn.bucket.region | Enter the region of the bucket to be accessed. For enumerated values, see the region abbreviations outlined in [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224), such as ap-beijing and ap-guangzhou. Compatible with the original configuration: fs.cosn.userinfo.region. | None |Yes |
 | fs.cosn.bucket.endpoint_suffix | Specify the COS endpoint to be connected (optional). Public cloud COS users only need to enter the proper region configuration. Compatible with the original configuration: fs.cosn.userinfo.endpoint_suffix | None | No |
 | fs.cosn.tmp.dir | For this item, you need to set an actual existing local directory, as temporary files generated when running will be briefly stored in this directory. | /tmp/hadoop_cos | No |
-| fs.cosn.block.size | The size of each block in the CosN file system (this value is also the size of each part in a multipart upload). Since a maximum of 10,000 parts are allowed for a multipart upload in COS, you need to estimate the largest possible single file size that you may need to use. For example, if the block size is 8 MB, the largest file that can be uploaded is 78 GB. The maximum allowed block size is 2 GB, so the maximum single file size allowed for upload is 19TB | 8388608 (8 MB) | No |
+|  fs.cosn.upload.part.size  | The size of each block in the CosN file system (this value is also the size of each part in a multipart upload). Since a maximum of 10,000 parts are allowed for a multipart upload in COS, you need to estimate the largest possible single file size that you may need to use. For example, if the block size is 8 MB, the largest file that can be uploaded is 78 GB. The maximum allowed block size is 2 GB, so the maximum single file size allowed for upload is 19TB | 8388608 (8 MB) | No |
 | fs.cosn.upload_thread_pool | Number of concurrent upload threads when files are uploaded to COS via streams. | CPU cores*5 | No |
 | fs.cosn.copy_thread_pool | Number of threads that can be used to copy files concurrently when directories are copied. | CPU cores*3 | No |
 | fs.cosn.read.ahead.block.size | Read ahead block size | 1048576 (1 MB) |No |
@@ -144,7 +144,7 @@ Modify `$HADOOP_HOME/etc/hadoop/core-site.xml` and add information on the releva
     </property>
     
     <property>
-    	<name>fs.cosn.block.size</name>
+    	<name>fs.cosn.upload.part.size</name>
         <value>8388608</value>
         <description>Block size to use in the cosn filesysten; this value is also the part size for multipart uploads.
         Considering that COS supports up to 10000 blocks, users should estimate the maximum size of a single file to help decide on the configuration for block size.
