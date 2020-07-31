@@ -22,7 +22,7 @@ Domain registration is a prerequisite for any service built on the internet. Aft
 
 - If you have already registered a domain name and obtained ICP filing for it, skip this step and proceed to [step 2](#Create a bucket).
 - Obtain ICP filing for the registered domain name.
-- [Register a domain name] (https://dnspod.cloud.tencent.com/?from=qcloud), and obtain ICP filing for it.
+- Register a domain name and obtain ICP filing for it.
 
 <span id="Create a bucket"></span>
 
