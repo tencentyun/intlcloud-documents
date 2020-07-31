@@ -1,11 +1,11 @@
-If you want to view or download the full set of development documents, please see [Development Guide for TDSQL](https://intl.cloud.tencent.com/document/product/1042/33352).
+If you want to view or download the full set of development documents, please see [TDSQL Development Guide](https://intl.cloud.tencent.com/document/product/1042/33352).
 
-Because there are multiple physical nodes in a TDSQL instance, some join operations may involve data of multiple physical nodes. This type of data joins across multiple physical nodes is generally called distributed join.
+Because there are multiple physical nodes in a TDSQL instance, some join operations may involve data of multiple physical nodes. This type of data join is generally called distributed join.
 
-- If a join-related table has a shardkey equality condition (as shown in the example below), thanks to the consistency principle of sharding, this part of data will be automatically stored to the same physical node. In this case, it is equivalent to performing a standalone join which has the best performance. For more information on how to select the most appropriate shardkey, please see [FAQs](https://intl.cloud.tencent.com/document/product/1042/33328).
-- If it involves data across physical nodes, the proxy will pull data from other nodes and cache it first. Due to network data transfer, the performance will be affected.
+- Data of tables with the same shardkey is automatically stored on the same physical node. Therefore, if related tables are joined on a shardkey equality condition (as shown in the example below), it is equivalent to joining tables on the same physical node, which has the best performance. For more information on how to select the most appropriate shardkey, please see [FAQs](https://intl.cloud.tencent.com/document/product/1042/33328).
+- If a join operation involves data across physical nodes, the proxy will pull data from other nodes and cache it first. Due to data transmission over a network, the performance will be affected.
 
-### Equal condition of shardkey (with no performance loss)
+### Joining Tables on a Shardkey Equality Condition (No Performance Loss)
 ```
 	mysql> create table test1 ( a int key, b int, c char(20) ) shardkey=a;
 	Query OK, 0 rows affected (1.56 sec)
@@ -37,29 +37,22 @@ Because there are multiple physical nodes in a TDSQL instance, some join operati
 	2 rows in set (0.03 sec)
 ```
 
-### Unequal condition of shardkey (with performance loss)
+### Joining Tables not on a Shardkey Equality Condition (Performance Loss)
+```
+  mysql>  select * from test1  join test2;
+  +---+------+---------+---+------+---------------+
+  | a | b    | c       | a | d    | e             |
+  +---+------+---------+---+------+---------------+
+  | 1 |    2 | record1 | 1 |    3 | test2_record1 |
+  | 2 |    3 | record2 | 1 |    3 | test2_record1 |
+  | 1 |    2 | record1 | 2 |    3 | test2_record2 |
+  | 2 |    3 | record2 | 2 |    3 | test2_record2 |
+  +---+------+---------+---+------+---------------+
+  4 rows in set (0.06 sec)
 ```
 
-        mysql>  select * from test1  join test2;
-        +---+------+---------+---+------+---------------+
-        | a | b    | c       | a | d    | e             |
-        +---+------+---------+---+------+---------------+
-        | 1 |    2 | record1 | 1 |    3 | test2_record1 |
-        | 2 |    3 | record2 | 1 |    3 | test2_record1 |
-        | 1 |    2 | record1 | 2 |    3 | test2_record2 |
-        | 2 |    3 | record2 | 2 |    3 | test2_record2 |
-        +---+------+---------+---+------+---------------+
-        4 rows in set (0.06 sec)
-
-```
-
-### Joins related to broadcast and non-sharded tables (regular tables)
-If a join is performed between non-sharded tables (regular tables), it will work as a standalone one with no performance loss.
-If a join is performed between a broadcast table and a sharded table, it will work as a standalone one with no performance loss.
-If a join is performed between broadcast tables, it will work as a standalone one with no performance loss.
-
->Currently, joins are not supported between a non-sharded table (regular table) and a sharded table.
-
+### Joins Related to Broadcast Tables and Non-sharded Tables (Regular Tables)
+- A join operation can be performed between non-sharded tables (regular tables). It is equivalent to joining tables on the same physical node with no performance loss.
 ```
 	mysql> create table noshard_table ( a int, b int key);
 	Query OK, 0 rows affected (0.02 sec)
@@ -88,4 +81,25 @@ If a join is performed between broadcast tables, it will work as a standalone on
 	|    3 | 4 |   30 | 40 |
 	+------+---+------+----+
 	4 rows in set (0.00 sec)
+```
+- A join operation can be performed between broadcast tables and sharded tables. It is equivalent to joining tables on the same physical node with no performance loss.
+- A join operation can be performed between broadcast tables. It is equivalent to joining tables on the same physical node with no performance loss.
+- A join operation can be performed between non-sharded tables (regular tables) and sharded tables.
+```
+  mysql> CREATE TABLE `a1` (
+    `a` int(11) NOT NULL,
+    `b` int(11) DEFAULT NULL,
+    `c` char(20) COLLATE utf8_bin DEFAULT NULL,
+    PRIMARY KEY (`a`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin shardkey=a
+
+  mysql> DROP TABLE IF EXISTS TABLE_10;
+  CREATE TABLE TABLE_10 (
+      INTEGER_ID INTEGER,
+      CHARACTER_COL VARCHAR(20),
+      CHARACTER_1 CHAR(1),
+      PRIMARY KEY(INTEGER_ID)
+  )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+  mysql> select * from TABLE_10 left join a1 on TABLE_10.INTEGER_ID=a1.a;
 ```
