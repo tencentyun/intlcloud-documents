@@ -6,7 +6,7 @@ Instant Messaging (IM) empowers apps with social messaging capabilities and help
 ### Interactive Live Broadcasting
 IM allows you to deploy live broadcasting chat rooms that can support an unlimited number of participants and hundreds of millions of concurrent messages. IM makes chat room management easy and supports various message types, such as on-screen comments, gifts, and likes, helping you deliver a positive chatting experience to live broadcasting chat room users. IM also enables content moderation for on-screen comments, protecting your live broadcasts from illegal and inappropriate text.
 **Example**: live broadcasting
-**Recommended feature**: chat room
+**Recommended feature:** AVChatRoom
 
 ### Smart Customer Service
 IM can meet the needs of multi-scenario communication between merchants and users and provides customers with exclusive customer service to improve service efficiency. Together with smart robots, IM can effectively reduce labor costs and deliver additional value to customers.
