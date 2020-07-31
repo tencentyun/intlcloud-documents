@@ -2,7 +2,7 @@
 The TencentDB Console supports most common database parameters and sets security thresholds for them. If a parameter to be modified does not exist or cannot be modified to a specific value, please submit a ticket for assistance and we will process it as soon as possible.
 
 ### I have purchased a CVM instance in East China (Shanghai Zone 2) and a TencentDB for MariaDB instance in Shanghai, and both of them are in the basic network. Why is the TencentDB for MariaDB instance unpingable on the CVM instance?
-TencentDB disables ping by default.
+TencentDB disables the ping operation by default.
 You can use Telnet to check connectivity if needed.
 
 ### What can I do if Navicat MySQL 8.0.x of TencentDB for MariaDB has a connection error?
@@ -15,7 +15,7 @@ It is a normal master/slave sync thread, which is resident.
 Due to operation strategies, multi-thread download is not supported. You can use the `wget --content-disposition` command for download.
 
 ### Why does the master/slave delay of TencentDB for MariaDB suddenly increase even to several minutes?
-You can check whether you are running a very large SQL statement (e.g., batch insertion of a large amount of data). As the master needs to wait for response from the slave, the master/slave delay may seem long.
+The [TencentDB Console](https://console.cloud.tencent.com/tdsql) supports most common database parameters and sets security thresholds for them. If a parameter to be modified does not exist or cannot be modified to a specific value, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ### What can I do if an error occurs when I run `SELECT INTO OUTFILE` or `./mysqldump` on a TencentDB for MariaDB instance to export files locally?
 Files cannot be written to instance server directories.

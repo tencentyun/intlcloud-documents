@@ -1,185 +1,126 @@
-
-
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to static website.
+This document provides an overview of APIs and SDK code samples related to static websites.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website | Sets static website configuration for a bucket |
-| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying static website configuration | Queries the static website configuration information of a bucket |
-| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting static website configuration | Deletes the static website configuration of a bucket |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website | Sets static website configuration on a bucket |
+| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying static website configuration | Queries the static website configuration of a bucket |
+| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting static website configuration | Deletes the static website configuration from a bucket |
 
-## Setting Static Website
+## SDK API References
 
-#### Feature description
+For parameters and method descriptions of all SDK APIs, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+
+## Setting a Static Website
+
+#### API description
 
 This API (PUT Bucket website) is used to configure a static website for a bucket.
 
-#### Method prototype
+#### Sample code
 
-```
-PutBucketWebsiteResult putBucketWebsite(PutBucketWebsiteRequest request) throws CosXmlClientException, CosXmlServiceException;
-
-void putBucketWebsiteAsync(PutBucketWebsiteRequest request,  CosXmlResultListener cosXmlResultListener);
-```
-
-#### Sample request
-
-```
+[//]: # (.cssg-snippet-put-bucket-website)
+```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-PutBucketWebsiteRequest putBucketWebsiteRequest = new PutBucketWebsiteRequest(bucket);
+PutBucketWebsiteRequest putBucketWebsiteRequest =
+        new PutBucketWebsiteRequest(bucket);
+// Set an index document
 putBucketWebsiteRequest.setIndexDocument("index.html");
 
-// Use the sync method
-try {
-    PutBucketWebsiteResult putBucketWebsiteResult = cosXmlService.putBucketWebsite(putBucketWebsiteRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-
-// Use the async callback to request
-cosXmlService.putBucketWebsiteAsync(putBucketWebsiteRequest, new CosXmlResultListener() {
+cosXmlService.putBucketWebsiteAsync(putBucketWebsiteRequest,
+        new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        PutBucketWebsiteResult putBucketWebsiteResult = (PutBucketWebsiteResult) result;
+        PutBucketWebsiteResult putBucketWebsiteResult =
+                (PutBucketWebsiteResult) result;
     }
 
     @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException)  {
+    public void onFail(CosXmlRequest cosXmlRequest,
+                       CosXmlClientException clientException,
+                       CosXmlServiceException serviceException) {
+        if (clientException != null) {
+            clientException.printStackTrace();
+        } else {
+            serviceException.printStackTrace();
+        }
     }
 });
 ```
 
-#### Parameter description
-
-| Parameter Name | Description | Type |
-| -------------------- | ------------------------------------------------------------ | ------ |
-| bucket | Bucket for which to set a static website in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| IndexDocument        | Index document                                                     | String |
-| ErrorDocument        | Error document                                                     | String |
-| RedirectAllRequestTo | Redirects all requests                                               | String |
-| RoutingRules         | Redirect rule                                                   | List   |
-
-#### Response description
-
-| Member Variable | Description | Type |
-| -------- | -------------------------------------------------------- | ---- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketWebsite.java).
 
 ## Querying Static Website Configuration
 
-#### Feature description
+#### API description
 
-This API (GET Bucket website) is used to query the configuration information of a static website associated with a bucket.
+This API (GET Bucket website) is used to query the static website configuration associated with a bucket.
 
-#### Method prototype
+#### Sample code
 
-```
-GetBucketWebsiteResult getBucketWebsite(GetBucketWebsiteRequest request)throws CosXmlClientException, CosXmlServiceException;
-
-void getBucketWebsiteAsync(GetBucketWebsiteRequest request, CosXmlResultListener cosXmlResultListener);
-```
-
-#### Sample request
-
-```
+[//]: # (.cssg-snippet-get-bucket-website)
+```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-GetBucketWebsiteRequest getBucketWebsiteRequest = new GetBucketWebsiteRequest(bucket);
-// Set signature verification host. All headers are to be verified by default
-Set<String> headerKeys = new HashSet<>();
-headerKeys.add("Host");
-getBucketWebsiteRequest.setSignParamsAndHeaders(null, headerKeys);
-// Use the sync method
-try {
-    GetBucketWebsiteResult getBucketWebsiteResult = cosXmlService.getBucketWebsite(getBucketWebsiteRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-
-// Use the async callback to request
-cosXmlService.getBucketWebsiteAsync(getBucketWebsiteRequest, new CosXmlResultListener() {
+GetBucketWebsiteRequest getBucketWebsiteRequest =
+        new GetBucketWebsiteRequest(bucket);
+cosXmlService.getBucketWebsiteAsync(getBucketWebsiteRequest,
+        new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        GetBucketWebsiteResult getBucketWebsiteResult = (GetBucketWebsiteResult)result;
+        GetBucketWebsiteResult getBucketWebsiteResult =
+                (GetBucketWebsiteResult) result;
     }
 
     @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException)  {
+    public void onFail(CosXmlRequest cosXmlRequest,
+                       CosXmlClientException clientException,
+                       CosXmlServiceException serviceException) {
+        if (clientException != null) {
+            clientException.printStackTrace();
+        } else {
+            serviceException.printStackTrace();
+        }
     }
 });
 ```
 
-#### Parameter description
-
-| Parameter Name | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
-| bucket | Bucket for which to query static website configuration in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-
-#### Response description
-
-| Member Variable | Description | Type |
-| -------------------- | -------------------------------------------------------- | -------------------- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
-| websiteConfiguration | Returns bucket object's `WebsiteConfiguration` information               | WebsiteConfiguration |
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketWebsite.java).
 
 ## Deleting Static Website Configuration
 
-#### Feature description
+#### API description
 
-This API (DELETE Bucket website) is used to delete the static website configuration of a bucket.
+This API (DELETE Bucket website) is used to delete the static website configuration from a bucket.
 
-#### Method prototype
+#### Sample code
 
-```
-DeleteBucketWebsiteResult deleteBucketWebsite(DeleteBucketWebsiteRequest request) throws CosXmlClientException, CosXmlServiceException;
-
-void deleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, CosXmlResultListener cosXmlResultListener);
-```
-
-#### Sample request
-
-```
+[//]: # (.cssg-snippet-delete-bucket-website)
+```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-DeleteBucketWebsiteRequest deleteBucketWebsiteRequest = new DeleteBucketWebsiteRequest(bucket);
-// Set signature verification host. All headers are to be verified by default
-Set<String> headerKeys = new HashSet<>();
-headerKeys.add("Host");
-deleteBucketWebsiteRequest.setSignParamsAndHeaders(null, headerKeys);
-// Use the sync method
-try {
-    DeleteBucketWebsiteResult deleteBucketWebsiteResult = cosXmlService.deleteBucketWebsite(deleteBucketWebsiteRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
+DeleteBucketWebsiteRequest deleteBucketWebsiteRequest =
+        new DeleteBucketWebsiteRequest(bucket);
 
-// Use the async callback to request
-cosXmlService.deleteBucketWebsiteAsync(deleteBucketWebsiteRequest, new CosXmlResultListener() {
+cosXmlService.deleteBucketWebsiteAsync(deleteBucketWebsiteRequest,
+        new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        DeleteBucketWebsiteResult getBucketWebsiteResult = (DeleteBucketWebsiteResult)result;
+        DeleteBucketWebsiteResult getBucketWebsiteResult =
+                (DeleteBucketWebsiteResult) result;
     }
 
     @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException)  {
+    public void onFail(CosXmlRequest cosXmlRequest,
+                       CosXmlClientException clientException,
+                       CosXmlServiceException serviceException) {
+        if (clientException != null) {
+            clientException.printStackTrace();
+        } else {
+            serviceException.printStackTrace();
+        }
     }
 });
 ```
 
-#### Parameter description
+>?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketWebsite.java).
 
-| Parameter Name | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
-| bucket | Bucket for which to delete static website configuration in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-
-#### Response description
-
-| Member Variable | Description | Type |
-| -------- | -------------------------------------------------------- | ---- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
