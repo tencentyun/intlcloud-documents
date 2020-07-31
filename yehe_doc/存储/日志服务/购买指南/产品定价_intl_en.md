@@ -1,6 +1,6 @@
 
 
-This document introduces the pricing for Tencent Cloud CLS.
+This document describes Tencent Cloud CLS pricing.
 
 ## Pay-as-you-go Pricing
 
@@ -30,7 +30,7 @@ This document introduces the pricing for Tencent Cloud CLS.
       <td>Log topic partition (USD/partition/day)</td>
    </tr>
    <tr>
-      <td>Mainland China</td>
+      <td>Chinese mainland</td>
       <td  nowrap="nowrap">Beijing<br>Shanghai<br>Guangzhou<br>Nanjing<br>Chengdu<br>Chongqing</td>
       <td>0.032</td>
       <td>0.141</td>
