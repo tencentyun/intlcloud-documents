@@ -4,9 +4,7 @@
 
 **Description**
 
-* Launch TPNS by using the information of the application registered at the official TPNS website
-
-**API**
+This API is used to launch the TPNS service by using the information of the application registered at the official website of TPNS. It is applicable to SDK v1.2.7.2. For SDKs of earlier versions, please see XGPush.h.
 
 ```objective-c
 - (void)startXGWithAppID:(uint32_t)appID appKey:(nonnull NSString *)appKey delegate:(nullable id<XGPushDelegate>)delegate ;
