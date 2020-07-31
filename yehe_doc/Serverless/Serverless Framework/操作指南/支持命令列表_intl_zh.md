@@ -10,6 +10,8 @@ Serverless Framework 支持的 CLI 命令如下：
     
     `sls init xxx --name my-app`：支持自定义项目目录名称。
 
+	 `--debug`：列出模版下载过程中的日志信息。
+
 - **`serverless deploy`**：部署 Component 实例到云端。
 
     `--debug`：列出组件部署过程中 `console.log()` 输出的部署操作和状态等日志信息。

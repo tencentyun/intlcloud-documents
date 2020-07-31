@@ -1,5 +1,5 @@
+TencentDB for Redis can be purchased in the console or via APIs.
 
-TencentDB for Redis can be purchased at Tencent Cloud's official website or via APIs.
 ## Purchasing at Official Website
 You can purchase a TencentDB for Redis instance at [Tencent Cloud's official website](https://buy.cloud.tencent.com/redis) in a pay-as-you-go manner (billed per second and settled per hour). The section below describes how to purchase an instance there.
 
