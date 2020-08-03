@@ -103,15 +103,12 @@ They have the following differences when CDN or ECDN is used:
 <table>
 
    <tr>
-
       <th style=""width: 80px; text-align: center;"">Port Type</th>
 
       <th style=""width: 300px; text-align: center;"">Acceleration Port</th>
 
       <th style=""width: 300px; text-align: center;"">Origin-Pull Port</th>
-
    </tr>
-
    <tr>
 
       <td style=""width: 80px; text-align: center;"">Port difference</td>
@@ -119,24 +116,15 @@ They have the following differences when CDN or ECDN is used:
       <td style=""width: 300px; text-align: left;"">It is the CDN/ECDN service port, which is also the port for client or user requests to access edge servers</td>
 
       <td style=""width: 300px; text-align: left;"">It is the origin server service port, which is also the port for CDN/ECDN node requests to access origin servers</td>
-
    </tr>
-
    <tr>
-
       <td style=""width: 80px; text-align: center;"">Port number</td>
 
       <td>Only ports 80, 443, and 8080 are supported</td>
 
       <td>1–65535</td>
-
    </tr>
-
 </table>
-
-
-
-
 
 >
 
