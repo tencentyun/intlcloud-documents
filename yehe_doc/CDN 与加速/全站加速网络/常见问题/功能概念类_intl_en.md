@@ -34,7 +34,7 @@ Yes. ECDN fully supports WebSocket.
 WebSocket is a TCP-based persistent protocol that implements full-duplex communication between the client and server and allows the server to proactively send information to the client. Before the emergence of WebSocket, to implement such duplex communication, web applications needed to consistently send HTTP request calls for inquiry, which increased service costs and reduced the efficiency.
 Thanks to full-duplex, WebSocket is widely used in scenarios such as social networking subscription, online collaboration, market quotation push, interactive live streaming, online education, and Internet of Things. It can better save server resources and bandwidth and implement communication with higher real-timeliness.
 
-<span id=""global""></span>
+<span id="global"></span>
 
 ### Does ECDN support acceleration outside Mainland China?
 
