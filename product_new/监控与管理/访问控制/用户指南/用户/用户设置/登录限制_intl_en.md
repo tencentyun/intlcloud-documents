@@ -1,7 +1,7 @@
 ## Introduction
  This document describes how to configure restrictions on sub-accounts’ access to the console and how to apply for a temporary access. The sub-accounts will be subject to the restrictions when they access the console and manage the resources under the root account.
  ## Directions
- ### Configuring Login Restrictions
+### Configuring Login Restrictions
  You can configure login restrictions to limit sub-accounts’ access to the console. Sub-accounts will be subject to the restrictions when they manage the resources under the root account.
  1. Go to [User Settings](https://console.cloud.tencent.com/cam/security/subAccount) and scroll down to **Login Restrictions** as shown below:
  ![](https://main.qcloudimg.com/raw/8a5d2cd2c541fb0ee9e4c2617c0e0a7e.png)
@@ -17,7 +17,7 @@
  > To ensure that the approvers can receive the application in a timely manner, they need to set up and verify their phone numbers. If an approver switches to a new phone number, the new number also needs to be verified.
  7. Click **Apply Changes** to complete the configuration.
 
- ### Applying for Temporary Access
+### Applying for Temporary Access
  If a sub-account is allowed to apply for temporary access when it is subject to login restrictions, the sub-account can submit an application for temporary access. If the application is approved, the sub-account will get a two-hour access to the console.
  1. If your sub-account is not allowed to log in to the console due to the login restrictions, click **Send Temporary Access Application** as shown below:
  ![](https://main.qcloudimg.com/raw/7d78ca3808b59080ca0331de4da8133a.png)
