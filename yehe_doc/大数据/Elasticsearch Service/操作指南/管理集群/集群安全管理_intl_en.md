@@ -2,8 +2,8 @@ ES clusters are deployed in logically isolated VPCs, giving you full control ove
 
 - CAM for resources under Tencent Cloud account (for more information, please see [CAM-Based Access Control Configuration](https://intl.cloud.tencent.com/document/product/845/19550))
 - ES cluster access password/user authentication
-- IP blacklist/whitelist for public network access to Kibana (you can also enable only private network access to Kibana)
-- Control over public network access to ES clusters and IP whitelist
+- IP blocklist/allowlist for public network access to Kibana (you can also enable only private network access to Kibana)
+- Control over public network access to ES clusters and IP allowlist
 - Role-based access control (RBAC)
 
 
@@ -17,11 +17,11 @@ When creating an ES cluster, you will be asked to set a password for the default
 You can use the password resetting feature on the cluster details page to reset the password of the `elastic` account for your ES cluster as shown below:
 ![](https://main.qcloudimg.com/raw/ed889f4b12e6fbdcf7b13c7b63bcc1bc.jpg)
 
-## Setting IP Blacklist/Whitelist for Public Network Access to Kibana
+## Setting IP Blocklist/Allowlist for Public Network Access to Kibana
 
-If the Kibana page can be accessed over the public network, ES provides IP blacklist/whitelist in addition to password-based authentication for Kibana access, further enhancing the access security of you clusters.
+If the Kibana page can be accessed over the public network, ES provides IP blocklist/allowlist in addition to password-based authentication for Kibana access, further enhancing the access security of you clusters.
 - Configuration rule: up to 10 IPs in the format of `192.168.0.1` or `192.168.0.0/24` separated by commas are supported.
-- Blacklist/Whitelist settings: you can set either of them. If both are configured, the whitelist shall prevail. The configuration items are as shown below:
+- Blocklist/allowlist settings: you can set either of them. If both are configured, the allowlist shall prevail. The configuration items are as shown below:
 ![](https://main.qcloudimg.com/raw/744f20c80da87f9c813e236640ba0018.jpg)
 
 ## Enabling Only Private Network Access to Kibana
@@ -29,9 +29,9 @@ If the Kibana page can be accessed over the public network, ES provides IP black
 If you have concerns over the security of public network access, you can disable it and enable only private network access.
 ![](https://main.qcloudimg.com/raw/7a6031231c2085d3113e4f897d11ffc0.jpg)
 
-## Enabling Limited Public Network Access to ES Cluster and Setting IP Whitelist
+## Enabling Limited Public Network Access to ES Cluster and Setting IP Allowlist
 
-For the sake of security, access to ES clusters over the public network is disabled by default. For clusters having [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) enabled, you can enable access over the public network for convenience, but you need to set the IP whitelist for security protection.
+For the sake of security, access to ES clusters over the public network is disabled by default. For clusters having [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) enabled, you can enable access over the public network for convenience, but you need to set the IP allowlist for security protection.
 ![](https://main.qcloudimg.com/raw/1aa030ce5031f2899b856043a4e7641a.jpg)
 
 ## Role-Based Access Control (RBAC)
@@ -49,11 +49,11 @@ You can create, modify, and delete roles with different permissions in **Managem
 You can create, modify (information, password, etc.), and delete users with multiple roles in **Management** > **Security** > **Users** on the Kibana page as shown below:
 
 > The password of the default ES user `elastic` can be reset only in the console on the official website.
-> 
+>
 ![](https://main.qcloudimg.com/raw/c554431ef3186735d63cedb7b30ec454.png)
 
 
 For more information on how to use relevant security features, please see the following:
-- [Protect your data in the Elastic Stack](https://www.elastic.co/what-is/elastic-stack-security) 
+- [Protect your data in the Elastic Stack](https://www.elastic.co/what-is/elastic-stack-security)
 - [Kibana X-Pack Security](https://www.elastic.co/guide/en/kibana/current/xpack-security.html)
 - [Elasticsearch Security APIs](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api.html)
