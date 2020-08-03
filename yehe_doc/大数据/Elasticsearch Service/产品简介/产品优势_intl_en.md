@@ -18,7 +18,7 @@ ES can be deployed in multiple availability zones, guaranteeing service continui
 
 ### Security Reinforcement
 
-ES can be deployed in a logically isolated VPC, giving you full control over your environment configuration and the ability to customize network access control lists and security groups. It features a blacklisting/whitelisting mechanism for Kibana and IP access requests, and the security capability of X-Pack enables access control at the field level, helping ensure the security of your resources in the cloud.
+ES can be deployed in a logically isolated VPC, giving you full control over your environment configuration and the ability to customize network access control lists and security groups. It features a blocklisting/allowlisting mechanism for Kibana and IP access requests, and the security capability of X-Pack enables access control at the field level, helping ensure the security of your resources in the cloud.
 
 ### Openness and Service Integration
 

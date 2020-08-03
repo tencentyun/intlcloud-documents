@@ -15,7 +15,8 @@ TIM is the namespace of the IM Web SDK and provides the static method [create()]
 | Message | [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html) indicates the content to be sent and carries multiple attributes which specify whether you are the sender, the sender account, the message generation time, and so on. |
 | Conversation | Two types of [Conversation](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Conversation.html) are available:<li>Client to Client (C2C): a one-to-one chat, involving only 2 participants.</li><li>GROUP: a group chat, involving more than 2 participants. |
 | Profile | [Profile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Profile.html) describes the basic information of a user, including the nickname, gender, personal signature, and profile photo address. |
-| Group | [Group](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Group.html) in IM SDK is a  communication system for group chatting, including Work, Public, Meeting, and AVChatRoom.| GroupMember (Group member) | [GroupMember](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/GroupMember.html) indicates the basic information of each group member, such as the ID, nickname, role, and the time of joining the group. |
+| Group | [Group](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Group.html) in IM SDK is a  communication system for group chatting, including Work, Public, Meeting, and AVChatRoom.|
+|GroupMember (Group member) | [GroupMember](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/GroupMember.html) indicates the basic information of each group member, such as the ID, nickname, role, and the time of joining the group. |
 | Group notification | A group notification is generated when an event such as group member addition or deletion occurs. You can configure whether to display group notifications to group members.<br/>For more information about group notification types, see [Message.GroupTipPayload](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload).|
 | Group system message | For example, when a user applies for joining a group, the group admin receives a system message. After the admin accepts or denies the application, the IM SDK returns the application result to the access terminal, and then the user can view the result displayed on the access terminal.<br/>For more information about types of group system messages, see [Message.GroupSystemNoticePayload](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupSystemNoticePayload). |
 | Message display on screen | This is the process by which messages, including text and images, are displayed on the computer or phone screen after the user clicks send. |
@@ -56,9 +57,9 @@ TIM is the namespace of the IM Web SDK and provides the static method [create()]
 | [getMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMyProfile) | Obtains your personal profile. |
 | [getUserProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getUserProfile) | Obtains the profile of a user. |
 | [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile) | Updates your personal profile. |
-| [getBlacklist](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getBlacklist) | Obtains your blacklist. |
-| [addToBlacklist](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#addToBlacklist) | Adds a user to the blacklist. |
-| [removeFromBlacklist](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#removeFromBlacklist) | Deletes a user from the blacklist. |
+| [getBlacklist](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getBlacklist) | Obtains your blocklist. |
+| [addToBlacklist](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#addToBlacklist) | Adds a user to the blocklist. |
+| [removeFromBlacklist](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#removeFromBlacklist) | Deletes a user from the blocklist. |
 
 ### Group
 | API | Description |
@@ -94,4 +95,3 @@ TIM is the namespace of the IM Web SDK and provides the static method [create()]
 | [off](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#off) | Disables event listening. |
 | [registerPlugin](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#registerPlugin) | Registers a plugin. |
 | [setLogLevel](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel) | Configures the log level. |
-

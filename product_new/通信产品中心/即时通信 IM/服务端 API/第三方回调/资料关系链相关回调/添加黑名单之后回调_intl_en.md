@@ -1,6 +1,6 @@
 ## Feature Description
 
-The app backend uses this callback to monitor information about users added to the blacklist in real time.
+The app backend uses this callback to monitor information about users added to the blocklist in real time.
 
 ## Precautions
 
@@ -11,12 +11,12 @@ The app backend uses this callback to monitor information about users added to t
 
 ## Callback Triggering Scenarios
 
-- An app user uses the client to initiate a request for adding a user to the blacklist.
-- The app backend initiates a request for adding a user to the blacklist through the RESTful API.
+- An app user uses the client to initiate a request for adding a user to the blocklist.
+- The app backend initiates a request for adding a user to the blocklist through the RESTful API.
 
 ## Callback Triggering Time
 
-The callback is triggered when the IM backend receives a request for adding a user to the blacklist and successfully adds the user to the blacklist.
+The callback is triggered when the IM backend receives a request for adding a user to the blocklist and successfully adds the user to the blocklist.
 
 ## API Description
 
@@ -45,21 +45,21 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ```
 {
-    "CallbackCommand": "Sns.CallbackBlackListAdd",
-    "PairList": [
-        {
-            "From_Account": "id",
-            "To_Account": "id1"
-        },
-        {
-            "From_Account": "id",
-            "To_Account": "id2"
-        },
-        {
-            "From_Account": "id",
-            "To_Account": "id3"
-        }
-    ]
+    "CallbackCommand": "Sns.CallbackBlackListAdd",
+    "PairList": [
+        {
+            "From_Account": "id",
+            "To_Account": "id1"
+        },
+        {
+            "From_Account": "id",
+            "To_Account": "id2"
+        },
+        {
+            "From_Account": "id",
+            "To_Account": "id3"
+        }
+    ]
 }
 ```
 
@@ -68,17 +68,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Field | Type | Description |
 | --- | --- | --- |
 | CallbackCommand | String | The callback command. |
-| PairList | Array | The blacklist relationship chain pair that is successfully added. |
-| From_Account | String | From_Account adds To_Account to the blacklist. |
-| To_Account | String | To_Account is added to the blacklist of From_Account. |
+| PairList | Array | The blocklist relationship chain pair that is successfully added. |
+| From_Account | String | From_Account adds To_Account to the blocklist. |
+| To_Account | String | To_Account is added to the blocklist of From_Account. |
 
 ### Response packet example
 
 ```
 {
-    "ActionStatus": "OK",
-    "ErrorCode": 0,
-    "ErrorInfo": ""
+    "ActionStatus": "OK",
+    "ErrorCode": 0,
+    "ErrorInfo": ""
 }
 ```
 
@@ -93,4 +93,4 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 ## References
 
 - [Third-Party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
-- RESTful APIs: [Adding a user to the blacklist](https://intl.cloud.tencent.com/document/product/1047/34911)
+- RESTful APIs: [Adding users to the blocklist](https://intl.cloud.tencent.com/document/product/1047/34911)

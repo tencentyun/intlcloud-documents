@@ -10,8 +10,8 @@
 | ------------------ | ------------------------------------------------------------ |
 | Callback after adding a friend | [Sns.CallbackFriendAdd](https://intl.cloud.tencent.com/document/product/1047/34359) |
 | Callback after deleting a friend | [Sns.CallbackFriendDelete](https://intl.cloud.tencent.com/document/product/1047/34360) |
-| Callback after adding a blacklist | [Sns.CallbackBlackListAdd](https://intl.cloud.tencent.com/document/product/1047/34361) |
-| Callback after deleting a blacklist | [Sns.CallbackBlackListDelete](https://intl.cloud.tencent.com/document/product/1047/34362) |
+| Callback after adding a blocklist | [Sns.CallbackBlackListAdd](https://intl.cloud.tencent.com/document/product/1047/34361) |
+| Callback after deleting a blocklist | [Sns.CallbackBlackListDelete](https://intl.cloud.tencent.com/document/product/1047/34362) |
 
 ## One-to-One Chat Messages
 

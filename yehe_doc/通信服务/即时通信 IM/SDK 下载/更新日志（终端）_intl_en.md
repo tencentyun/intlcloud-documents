@@ -418,7 +418,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
   - Fixed the Didn't find class "android.support.v4.content.FileProvider" error reported on some mobile phones.
   - Optimized the logic for pinning a chat to the top to arrange chats in chronological order starting from the most recent.
   - Fixed the issue where the soft keyboard and other layouts appeared in chats at the same time.
-  - Fixed the issue where the Group Chats, Blacklist, and New Contacts items were not displayed on the Contacts interface when a user is newly registered with no contacts.
+  - Fixed the issue where the Group Chats, Blocklist, and New Contacts items were not displayed on the Contacts interface when a user is newly registered with no contacts.
   - Fixed the issue where the video sound continued to play after a user taps the Back button on a mobile phone.
   - Fixed the issue where the playing voice message did not stop and its sound was also recorded during voice message recording.
   - Fixed the issue where videos sent by iOS devices failed to playback on some mobile phones.
@@ -449,7 +449,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 - Fixed occasional crashes caused by TIMGroupInfo -> lastMsg calling related functions.
 - TUIKit
   - Optimized the recent contact list update algorithm to reduce the refresh frequency.
-  - Fixed blacklist memory leak.
+  - Fixed blocklist memory leak.
   - Added message bubble and profile photo click event callbacks.
   - Fixed the issue where the latest profile photo was not displayed in recent contacts or the chat window.
   - Optimized document annotations.
@@ -734,10 +734,10 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 - Supported importing through CocoaPods for TUIKit.
 - Added the Contacts interface for TUIKit.
 - Added the Adding Friends interface for TUIKit.
-- Added the Blacklist interface for TUIKit.
+- Added the Blocklist interface for TUIKit.
 - Added the Search Friend interface for TUIKit.
 - Added the New Friends interface for TUIKit.
-- Added the Remarks, Blacklist, and Delete Friend features to the friend's profile page for TUIKit.
+- Added the Remarks, Blocklist, and Delete Friend features to the friend's profile page for TUIKit.
 - Supported modification of nicknames, personal signature, date of birth, gender, and location on the user profile page for TUIKit.
 - Improve the group pinning feature for TUIKit.
 
@@ -801,7 +801,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 
 **Android platform**
 - New features:
- - Supplemented relationship chain features such as blacklist, friend list, and friend request handling of earlier version SDKs.
+ - Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
 - Fixed: 
  - Fixed the issue where an error was reported when the main process of the app was killed.
  - Fixed the issue with getting group member counts.
@@ -837,7 +837,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 
 **iOS platform**
 - New features:
- - Supplemented relationship chain features such as blacklist, friend list, and friend request handling of earlier version SDKs.
+ - Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
 - Fixed:
  - Optimized API annotations.
  - Fixed the issue with ineffective group custom fields and group member custom fields.
@@ -851,7 +851,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 
 **Android platform**
 - New features:
- - Supplemented relationship chain features such as blacklist, friend list, and friend request handling of earlier version SDKs.
+ - Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
 - Fixed:
  - Fixed jni leak on Android.
  - Fixed incorrect group member roles.
@@ -869,7 +869,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 
 **Windows platform**
 - New features:
- - Supplemented relationship chain features such as blacklist, friend list, and friend request handling of earlier version SDKs.
+ - Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
 - Fixed:
  - Fixed the issue where TIMMessage failed to get user profiles through senderProfile.
  - Fixed the issue with read receipt callback and status.
@@ -1130,7 +1130,7 @@ Fixed the issue where some so libraries were incompatible with devices running s
 - IM SDK features: basic login, receiving and sending messages, profile, and group features
 - IMMessageExt features: full message features, including message pulling, local storage, and unread count
 - IMGroupExt features: full group features, including group type management and group member management
-- IMFriendExt features: full relationship chain features, including friend list and blacklist
+- IMFriendExt features: full relationship chain features, including friend list and blocklist
 
 ## IM SDK 2.5.4 2017-4-28
 - Fixed the timer mechanism bug in the IM SDK.
@@ -1312,7 +1312,7 @@ For more information, see [Offline Push]
 
 ## IM SDK 1.4 2015-10-16
 - Multi-device login is supported.
-- Messages from blacklisted users cannot be received.
+- Messages from blocked users cannot be received.
 - Deleted friend recommendations.
 - APNs pushes nicknames.
 - Supported filtering sensitive words in group names.
@@ -1342,7 +1342,7 @@ For more information, see [Offline Push]
 - Windows C++ platform is supported.
 - Public groups and chat rooms are supported.
 - Supported adding group introductions and announcements and added muting, message block, and group role setting.
-- Added APIs for user profile and relationship chain operations, such as nicknames, adding friends, and blacklist settings.
+- Added APIs for user profile and relationship chain operations, such as nicknames, adding friends, and blocklist settings.
 - File messages are supported.
 - Optimized image messages: image quality includes the original image, thumbnail, and large image. Changed upload and download APIs. Image URLs can be passed.
 - Added log levels to the log callback API.

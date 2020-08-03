@@ -18,6 +18,9 @@ TUIKit 是对 IM SDK 封装的一层 UI 组件，包含常用的 IM 操作，例
 即时通信 IM 服务提供了 REST API 形式的服务端接口，用于 App 业务后台管理 IM 服务中的用户帐号、单聊消息、群聊消息、群组管理、用户资料、好友关系链、运营数据、历史消息下载以及第三方回调等服务端业务。
 详细的服务端集成操作请参见 [服务端 API 文档](https://intl.cloud.tencent.com/document/product/1047/34621)。
 
-## 步骤4：集成视频通话（可选）
+## 步骤4：集成音视频通话（可选）
 即时通信 IM 服务可以快速集成 [实时音视频 TRTC 服务](https://intl.cloud.tencent.com/document/product/647/35076)，用于实现 IM 应用中的用户视频通话、群聊视频会议等业务。
 详细的集成操作请参见 [集成视频通话](https://intl.cloud.tencent.com/document/product/1047/34298)。
+
+## 相关文档
+- [价格说明](https://cloud.tencent.com/document/product/269/11673)

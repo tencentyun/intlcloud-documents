@@ -1,6 +1,5 @@
-
 ## Configuration
-Generally, content delivered over CDN are public resources by default, which can be accessed by users with URLs. To prevent malicious users from hotlinking your content for profit, you can configure advanced timestamp authentication in addition to access control policies such as referer blacklist/whitelist, IP blacklist/whitelist, and IP access frequency limit.
+Generally, content delivered over CDN are public resources by default, which can be accessed by users with URLs. To prevent malicious users from hotlinking your content for profit, you can configure advanced timestamp authentication in addition to access control policies such as referer blocklist/allowlist, IP blocklist/allowlist, and IP access frequency limit.
 
 >After timestamp hotlink protection is configured, the client needs to calculate the signature as configured and carry it to the server when initiating a request. The CDN node will authenticate the signature on the server, which will pass only after successful authentication.
 
@@ -31,4 +30,3 @@ Then, the actual effect will be as follows:
 
 1. A user in mainland China can access the resource `http://cloud.tencent.com/1.jpg` by directly initiating a request.
 2. A user outside mainland China can access the resource `http://cloud.tencent.com/1.jpg` by initiating a request with a URL in the format of `http://cloud.tencent.com/509301d10da7b862052927ed7a947f43/5e561139/1.jpg`.
-

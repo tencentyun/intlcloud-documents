@@ -1,6 +1,6 @@
 ## Feature Description
 
-Through this callback, the app backend can monitor the deletion of user blacklists in real time.
+Through this callback, the app backend can monitor the user deletion from blocklist in real time.
 
 ## Precautions
 
@@ -11,12 +11,12 @@ Through this callback, the app backend can monitor the deletion of user blacklis
 
 ## Callback Triggering Scenarios
 
-- An app user uses a client to initiate a blacklist deletion request.
-- The app backend initiates a blacklist deletion request through the RESTful API.
+- An app user uses a client to initiate a request to remove users from blocklist.
+- The app backend initiates a request to remove users from blocklist through the RESTful API.
 
 ## Callback Triggering Time
 
-The callback is triggered after the IM backend receives a blacklist deletion request and successfully deletes the blacklist.
+The callback is triggered after the IM backend receives a request to remove users from blocklist and successfully remove the users.
 
 ## API Description
 
@@ -35,7 +35,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | --- | --- |
 | https | The request protocol is HTTPS, and the request method is POST. |
 | www.example.com | The callback URL. |
-| SdkAppid | The SDKAppID assigned by the IM console when an app is created. |
+| SdkAppid | The SDKAppID assigned by the IM console when an application is created. |
 | CallbackCommand | The value is fixed to Sns.CallbackBlackListDelete. |
 | contenttype | The value is fixed to JSON. |
 | ClientIP | The client IP address, whose format is similar to: 127.0.0.1. |
@@ -45,21 +45,21 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ```
 {
-    "CallbackCommand": "Sns.CallbackBlackListDelete",
-    "PairList": [
-        {
-            "From_Account": "id",
-            "To_Account": "id1"
-        },
-        {
-            "From_Account": "id",
-            "To_Account": "id2"
-        },
-        {
-            "From_Account": "id",
-            "To_Account": "id3"
-        }
-    ]
+    "CallbackCommand": "Sns.CallbackBlackListDelete",
+    "PairList": [
+        {
+            "From_Account": "id",
+            "To_Account": "id1"
+        },
+        {
+            "From_Account": "id",
+            "To_Account": "id2"
+        },
+        {
+            "From_Account": "id",
+            "To_Account": "id3"
+        }
+    ]
 }
 ```
 
@@ -68,17 +68,17 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | Field | Type | Description |
 | --- | --- | --- |
 | CallbackCommand | String | The callback command. |
-| PairList | Array | The blacklist pair that has been successfully deleted. |
-| From_Account | String | From_Account deletes To_Account from its blacklist. |
-| To_Account | String | To_Account is deleted from the blacklist of From_Account. |
+| PairList | Array | The account pair for which the deletion from blocklist is successful. |
+| From_Account | String | From_Account deletes To_Account from its blocklist. |
+| To_Account | String | To_Account is deleted from the blocklist of From_Account. |
 
 ### Response packet example
 
 ```
 {
-    "ActionStatus": "OK",
-    "ErrorCode": 0,
-    "ErrorInfo": ""
+    "ActionStatus": "OK",
+    "ErrorCode": 0,
+    "ErrorInfo": ""
 }
 ```
 
@@ -93,4 +93,4 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 ## References
 
 - [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
-- RESTful APIs: [Adding a user to the blacklist](https://intl.cloud.tencent.com/document/product/1047/34911)
+- RESTful APIs: [Adding users to the blocklist](https://intl.cloud.tencent.com/document/product/1047/34911)

@@ -7,7 +7,7 @@
             <th>Limit Description</th>
         </tr>
         <tr>
-            <td  rowspan="4">One-to-one/Group chat message</td>
+            <td  rowspan="4">One-to-one/group chat message</td>
             <td>Content length</td>
             <td>The maximum length allowed for a single one-to-one chat or group chat message is 8,000 bytes. If this limit is exceeded, the message will be discarded by the system.</td>
         </tr>
@@ -54,8 +54,8 @@
             <td><ul style="margin:0;"><li>A single user can have up to 3,000 friends.</li><li>Up to 100 pending friend requests are supported.</li><li>Up to 32 friend lists are supported.</li><li>A friend list name can be up to 30 bytes in length.</li><li>A friend remark can be up to 96 bytes in length.</li></ul></td>
         </tr>
         <tr>
-            <td>Blacklist</td>
-            <td>A single user can blacklist up to 1,000 users.</td>
+            <td>Blocklist</td>
+            <td>A single user can block up to 1,000 users.</td>
         </tr>
          <tr>
             <td  rowspan="7">Group</td>
