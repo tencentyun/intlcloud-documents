@@ -57,7 +57,7 @@ You can also manage your projects on the [Project Management](https://console.cl
 
 ### Are there any requirements for connecting a domain name to CDN?
 Yes. The following are the requirements for connecting a domain name to CDN:
-1. The domain name can contain up to 50 characters. CDN currently does not support Chinese domain names (even after transcoding).
+1. The length of the domain name cannot exceed 50 characters.
 2. If mainland China CDN is used, the domain name must have an ICP filing issued by the MIIT.
 3. The domain name is a sub-domain name in the format of `a.test.com` or `a.b.test.com` or a wildcard domain name in the format of `*.test.com` or `*.a.test.com`.
 4. If the domain name is a wildcard one or has been connected by another user, you need to [verify your ownership](https://intl.cloud.tencent.com/document/product/228/5734#m1) before connecting or retrieving it.
