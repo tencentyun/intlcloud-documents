@@ -92,15 +92,15 @@ The conversation list is the list a user sees on the first screen after logging 
 | [setConversationDraft](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#ae7f2f52bf375dae69368eae42edb28ab) | Sets a draft for a conversation. |
 
 ## User Profile APIs
-These APIs are used to query user profiles, modify the user profile of oneself, and block messages from a specified user (that is, add a specified user to the blacklist).
+These APIs are used to query user profiles, modify the user profile of oneself, and block messages from a specified user (that is, add a specified user to the blocklist).
 
 | API | Description |
 |---------|---------|
 | [getUsersInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a7ca8c0f71a9875021fc35dfcaff68d1e) | Obtains users’ profiles. |
 | [setSelfInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af004ab2f1d1458de354883f1995b678a) | Modifies the user profile of oneself. |
-| [addToBlackList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a8804c7f47000bf1c26aa6ab744a53456) | Blocks messages from a specified user, which means to add the user to the blacklist. |
-| [deleteFromBlackList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a3dcd8f1c70dceafa94ab48796c2f26aa) | Unblocks messages from a specified user, which means to remove the user from the blacklist. |
-| [getBlackList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a6269df2d96c910648ab2f0c43e1931c6) | Obtains the blacklist. |
+| [addToBlackList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a8804c7f47000bf1c26aa6ab744a53456) | Blocks messages from a specified user, which means to add the user to the blocklist. |
+| [deleteFromBlackList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a3dcd8f1c70dceafa94ab48796c2f26aa) | Unblocks messages from a specified user, which means to remove the user from the blocklist. |
+| [getBlackList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a6269df2d96c910648ab2f0c43e1931c6) | Obtains the blocklist. |
 
 ## Offline Push APIs
 Use the offline push service if you want your app to receive IM messages in real time when it is running in the background. As there is no unified push service in Mainland China, you need to configure Android offline push for each phone manufacturer.
@@ -114,7 +114,7 @@ By default, Tencent Cloud IM does not check for the relationship when receiving 
 
 | API | Description |
 |---------|---------|
-| [setFriendListener](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a17e92c5ca9abad7afe25b654f1fcd75c) | Sets a relationship chain listener to receive friend-list and blacklist change events. |
+| [setFriendListener](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a17e92c5ca9abad7afe25b654f1fcd75c) | Sets a relationship chain listener to receive friend-list and blocklist change events. |
 | [getFriendList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#ae478de55db21d42b72a6c5a6a5d16624) | Obtains the list of friends. |
 | [getFriendsInfo](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a88732b0f7a5e77a9dd34403fe7bbdd21) | Obtains the profiles of specified friends. |
 | [setFriendInfo](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a151b7de6219d966b4194ad7fcc8450fe) | Sets the profile of a specified friend. |
@@ -132,5 +132,3 @@ By default, Tencent Cloud IM does not check for the relationship when receiving 
 | [renameFriendGroup](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a5345957f4d75d8e57ea3b4cff9adee13) | Changes the name of a friend group. |
 | [addFriendsToFriendGroup](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a6de9168d476ac14e21025ec5c26251df) | Adds friends to a friend group. |
 | [deleteFriendsFromFriendGroup](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#ae367dfec88522e96d96c5ab942e50653) | Deletes friends from a friend group. |
-
-
