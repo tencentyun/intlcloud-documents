@@ -39,8 +39,6 @@ For more information, please see [Real server](#RS).
 
 A virtual private cloud (VPC) builds a separate network space in Tencent Cloud, which is very similar to a traditional network run in your IDC, except that the services hosted in a VPC are resources of your Tencent Cloud services such as [CVM](https://intl.cloud.tencent.com/document/product/213), [CLB](https://intl.cloud.tencent.com/document/product/214), and [TencentDB](https://intl.cloud.tencent.com/document/product/236). You don't have to care about the procurement and OPS of network devices at all; instead, you only need to customize IP ranges, IP addresses, routing policies, etc. through easy-to-use software programs. You can use [EIPs](https://intl.cloud.tencent.com/document/product/213/16586), [NAT gateways](https://intl.cloud.tencent.com/document/product/1015), and [public gateways](https://intl.cloud.tencent.com/document/product/213/34835) to flexibly access the internet or interconnect a VPC with your IDC through [VPN](https://intl.cloud.tencent.com/document/product/215) or [Direct Connect](https://intl.cloud.tencent.com/document/product/216). In addition, the [peering connection](https://intl.cloud.tencent.com/document/product/553) service of VPC can help you easily implement unified server for global access and 2-region-3-DC disaster recovery, and the security group and [network ACL](https://intl.cloud.tencent.com/document/product/215/31850) features of VPC can satisfy your network security needs in a multi-dimension and comprehensive manner.
 
-## V
-
 ### VIP
 
 For more information, please see [Virtual IP](#vip).
