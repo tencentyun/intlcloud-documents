@@ -284,7 +284,7 @@ We collect personal information for the following purposes and as described in t
 - For security and verification purposes, including to prevent and detect fraudulent activity; and
 - To address and remediate technical issues and bugs.
 
-For additional information about what each type of personal information is used for, see [this chart](#How We Use Your Personal Information) in the main portion of the Privacy Policy.
+For additional information about what each type of personal information is used for, see [this chart](#how-we-use-your-personal-information) in the main portion of the Privacy Policy.
 
 We disclose personal information to the following types of entities:
 
