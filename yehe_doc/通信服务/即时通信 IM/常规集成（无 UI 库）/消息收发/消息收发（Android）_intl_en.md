@@ -63,19 +63,19 @@ The sender creates and sends an image message.
 // Create an image message.
 V2TIMMessage v2TIMMessage = V2TIMManager.getMessageManager().createImageMessage("/sdcard/test.png");
 // Send the image message.
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "toUserID", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, true, null,  new V2TIMSendCallback<V2TIMMessage>() {
-	@Override
-	public void onError(int code, String desc) {
-		// The image message failed to be sent.
-	}
-	@Override
-	public void onSuccess(V2TIMMessage v2TIMMessage) {
-		// The image message is successfully sent.
-	}
-	@Override
-	public void onProgress(int progress) {
-		// Image upload progress (0-100)
-	}
+V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "toUserID", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, true, null,  new V2TIMSendCallback<V2TIMMessage>() {
+@Override
+public void onError(int code, String desc) {
+// The image message failed to be sent.
+}
+@Override
+public void onSuccess(V2TIMMessage v2TIMMessage) {
+// The image message is successfully sent.
+}
+@Override
+public void onProgress(int progress) {
+// Image upload progress (0-100)
+}
 });
 ```
 
@@ -83,42 +83,42 @@ The recipient identifies the image message and parses the message to obtain the 
 ```
 @Override
 public void onRecvNewMessage(V2TIMMessage msg) {
-	int elemType = msg.getElemType();
-	if (elemType == V2TIMMessage.V2TIM_ELEM_TYPE_IMAGE) {
-		V2TIMImageElem v2TIMImageElem = msg.getImageElem();
-		// An image message contains an image in three different sizes: original image, large image, and thumbnail. (The SDK automatically generates the large image and thumbnail.)
-		- A large image is an image obtained after the original image is proportionally compressed. After the compression, the compressed image has a height and width equal to 720 pixels.
-		- A thumbnail is an image obtained after the original image is proportionally compressed. After the compression, the compressed image has a height and width equal to 198 pixels.
-		List<V2TIMImageElem.V2TIMImage> imageList = v2TIMImageElem.getImageList();
-			for (V2TIMImageElem.V2TIMImage v2TIMImage : imageList) {
-				String uuid = v2TIMImage.getUUID(); // Image ID
-				int imageType = v2TIMImage.getType(); // Image type
-				int size = v2TIMImage.getSize(); // Image size (bytes)
-				int width = v2TIMImage.getWidth(); // Image width
-				int height = v2TIMImage.getHeight(); // Image height
-				// Set the image download path `imagePath`. Here, `uuid` can be used as an identifier to avoid repeated downloads.
-				String imagePath = "/sdcard/im/image/" + "myUserID" + uuid;
-				File imageFile = new File(imagePath);
-				if (imageFile.exists()) {
-					v2TIMImage.downloadImage(imagePath, new V2TIMDownloadCallback() {
-						@Override
-						public void onProgress(V2TIMElem.V2ProgressInfo progressInfo) {
-							// Image download progress. `v2ProgressInfo.getCurrentSize()` indicates the downloaded size, and `v2ProgressInfo.getTotalSize()` indicates the total file size.
-						}
-						@Override
-						public void onError(int code, String desc) {
-							// The image failed to be downloaded.
-						}
-						@Override
-						public void onSuccess() {
-							// The image download is completed.
-						}
-					});
-			} else {
-				// The image already exists.
-			}
-		}   
-	}
+int elemType = msg.getElemType();
+if (elemType == V2TIMMessage.V2TIM_ELEM_TYPE_IMAGE) {
+V2TIMImageElem v2TIMImageElem = msg.getImageElem();
+// An image message contains an image in three different sizes: original image, large image, and thumbnail. (The SDK automatically generates the large image and thumbnail.)
+- A large image is an image obtained after the original image is proportionally compressed. After the compression, the compressed image has a height and width equal to 720 pixels.
+- A thumbnail is an image obtained after the original image is proportionally compressed. After the compression, the compressed image has a height and width equal to 198 pixels.
+List<V2TIMImageElem.V2TIMImage> imageList = v2TIMImageElem.getImageList();
+for (V2TIMImageElem.V2TIMImage v2TIMImage : imageList) {
+String uuid = v2TIMImage.getUUID(); // Image ID
+int imageType = v2TIMImage.getType(); // Image type
+int size = v2TIMImage.getSize(); // Image size (bytes)
+int width = v2TIMImage.getWidth(); // Image width
+int height = v2TIMImage.getHeight(); // Image height
+// Set the image download path `imagePath`. Here, `uuid` can be used as an identifier to avoid repeated downloads.
+String imagePath = "/sdcard/im/image/" + "myUserID" + uuid;
+File imageFile = new File(imagePath);
+if (imageFile.exists()) {
+v2TIMImage.downloadImage(imagePath, new V2TIMDownloadCallback() {
+@Override
+public void onProgress(V2TIMElem.V2ProgressInfo progressInfo) {
+// Image download progress. `v2ProgressInfo.getCurrentSize()` indicates the downloaded size, and `v2ProgressInfo.getTotalSize()` indicates the total file size.
+}
+@Override
+public void onError(int code, String desc) {
+// The image failed to be downloaded.
+}
+@Override
+public void onSuccess() {
+// The image download is completed.
+}
+});
+} else {
+// The image already exists.
+}
+}  
+}
 }
 ```
 
@@ -139,18 +139,18 @@ v2TIMOfflinePushInfo.setTitle("offline_title");
 // Set the content of the notification bar.
 v2TIMOfflinePushInfo.setDesc("offline_desc");
 // Send a message.
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, null, "groupA", V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false,  v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-	@Override
-	public void onError(int code, String desc) {
-		// The message failed to be sent.
-	}
-	@Override
-	public void onSuccess(V2TIMMessage v2TIMMessage) {
-		// The message is sent successfully.
-	}
-	@Override
-	public void onProgress(int progress) {
-	}
+V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, null, "groupA", V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false,  v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
+@Override
+public void onError(int code, String desc) {
+// The message failed to be sent.
+}
+@Override
+public void onSuccess(V2TIMMessage v2TIMMessage) {
+// The message is sent successfully.
+}
+@Override
+public void onProgress(int progress) {
+}
 });
 ```
 
@@ -164,21 +164,21 @@ Sender: Denny needs to set `ext` before sending a message.
 // Denny sets `offlinePushInfo` and specifies `ext` before sending a message.
 JSONObject jsonObject = new JSONObject();
 try {
-	jsonObject.put("action", "jump to denny");
+jsonObject.put("action", "jump to denny");
 } catch (JSONException e) {
-	e.printStackTrace();
+e.printStackTrace();
 }
 String extContent = jsonObject.toString();
 V2TIMOfflinePushInfo v2TIMOfflinePushInfo = new V2TIMOfflinePushInfo();
 v2TIMOfflinePushInfo.setExt(extContent.getBytes());
 
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "vinson", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false,  v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-	@Override
-	public void onError(int code, String desc) {}
-	@Override
-	public void onSuccess(V2TIMMessage v2TIMMessage) {}
-	@Override
-	public void onProgress(int progress) {}
+V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "vinson", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false,  v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
+@Override
+public void onError(int code, String desc) {}
+@Override
+public void onSuccess(V2TIMMessage v2TIMMessage) {}
+@Override
+public void onProgress(int progress) {}
 });
 ```
 Recipient: although Vinson's app is not online, it can still receive the notification message pushed offline by the mobile phone vendor’s offline push method (such as OPPO Push). When Vinson clicks the pushed message, the app is started.
@@ -188,14 +188,14 @@ Recipient: although Vinson's app is not online, it can still receive the notific
 Bundle bundle = intent.getExtras();
 Set<String> set = bundle.keySet();
 if (set != null) {
-	for (String key : set) {
-		// `key` and `value` correspond to `extKey` and `ext content` set at the sender side.
-		String value = bundle.getString(key);
-		if (value.equals("jump to denny")) {
-			// Go to the chat window with Denny.
-			...
-		}
-	}
+for (String key : set) {
+// `key` and `value` correspond to `extKey` and `ext content` set at the sender side.
+String value = bundle.getString(key);
+if (value.equals("jump to denny")) {
+// Go to the chat window with Denny.
+...
+}
+}
 }
 ```
 
@@ -212,18 +212,18 @@ In a one-to-one chat scenario, you can call [sendMessage](http://doc.qcloudtrtc.
 // Sending the "I am typing..." message to userA.
 JSONObject jsonObject = new JSONObject();
 try {
-	jsonObject.put("command", "textInput");
+jsonObject.put("command", "textInput");
 } catch (JSONException e) {
-	e.printStackTrace();
+e.printStackTrace();
 }
 V2TIMMessage v2TIMMessage = V2TIMManager.getMessageManager().createCustomMessage(jsonObject.toString().getBytes());
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "userA", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, true,  v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
-	@Override
-	public void onError(int code, String desc) {}
-	@Override
-	public void onSuccess(V2TIMMessage v2TIMMessage) {}
-	@Override
-	public void onProgress(int progress) {}
+V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "userA", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, true,  v2TIMOfflinePushInfo, new V2TIMSendCallback<V2TIMMessage>() {
+@Override
+public void onError(int code, String desc) {}
+@Override
+public void onSuccess(V2TIMMessage v2TIMMessage) {}
+@Override
+public void onProgress(int progress) {}
 });
 ```
 
@@ -233,18 +233,18 @@ Message recall requires the support of the UI code at the recipient side. When t
 
 ### The sender recalls a message
 
- ```
+ ```
 V2TIMManager.getMessageManager().revokeMessage(v2TIMMessage, new V2TIMCallback() {
-	@Override
-	public void onError(int code, String desc) {
-		// The message failed to be recalled.
-	}
-	@Override
-	public void onSuccess() {
-		// The message is successfully recalled.
-	}
+@Override
+public void onError(int code, String desc) {
+// The message failed to be recalled.
+}
+@Override
+public void onSuccess() {
+// The message is successfully recalled.
+}
 });
- ```
+ ```
 
 ### The recipient learns that the message is recalled
 
@@ -254,12 +254,12 @@ V2TIMManager.getMessageManager().revokeMessage(v2TIMMessage, new V2TIMCallback()
 ```
 @Override
 public void onRecvMessageRevoked(String msgID) {
-	// `msgList` is the message list on the current chat window.
-	for (V2TIMMessage msg : msgList) {
-		if (msg.getMsgID().equals(msgID)) {
-				// `msg` is the recalled message. You need to change the corresponding message bubble state on the UI.
-		}
-	}
+// `msgList` is the message list on the current chat window.
+for (V2TIMMessage msg : msgList) {
+if (msg.getMsgID().equals(msgID)) {
+// `msg` is the recalled message. You need to change the corresponding message bubble state on the UI.
+}
+}
 }
 ```
 
@@ -271,19 +271,19 @@ In the one-to-one chat scenario, when the recipient calls the [markC2CMessageAsR
 
 ### The recipient marks messages as read
 
- ```
- // Mark messages coming from Haven as read.
- V2TIMManager.getMessageManager().markC2CMessageAsRead("haven", new V2TIMCallback() {
-	@Override
-	public void onError(int code, String desc) {
-		// Messages failed to be marked as read.
-	}
-	@Override
-	public void onSuccess() {
-		// Messages are successfully marked as read.
-	}
+ ```
+ // Mark messages coming from Haven as read.
+ V2TIMManager.getMessageManager().markC2CMessageAsRead("haven", new V2TIMCallback() {
+@Override
+public void onError(int code, String desc) {
+// Messages failed to be marked as read.
+}
+@Override
+public void onSuccess() {
+// Messages are successfully marked as read.
+}
 });
- ```
+ ```
 
 ### The sender learns that the messages are read
 The event notification for message read receipts is located in the advanced message listener [V2TIMAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html). To enable the sender to learn that a message has been read, call [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) to set the listener. Then, the sender can receive a read receipt from the recipient through the [onRecvC2CReadReceipt](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html#a25acb98db29da33ae3e3eebab19b655c) callback.
@@ -291,13 +291,13 @@ The event notification for message read receipts is located in the advanced mess
 ```
 @Override
 public void onRecvC2CReadReceipt(List<V2TIMMessageReceipt> receiptList) {
-	// The recipient may receive multiple read receipts at a time. Therefore, the array callback mode is used here.
-	for (V2TIMMessageReceipt v2TIMMessageReceipt : receiptList) {
-		// Message recipient
-		String userID = v2TIMMessageReceipt.getUserID();
-		// Time of the read receipt. A message is considered as read if the timestamp in the chat window is not later than `timestamp` here.
-		long timestamp = v2TIMMessageReceipt.getTimest
-	}
+// The recipient may receive multiple read receipts at a time. Therefore, the array callback mode is used here.
+for (V2TIMMessageReceipt v2TIMMessageReceipt : receiptList) {
+// Message recipient
+String userID = v2TIMMessageReceipt.getUserID();
+// Time of the read receipt. A message is considered as read if the timestamp in the chat window is not later than `timestamp` here.
+long timestamp = v2TIMMessageReceipt.getTimest
+}
 }
 ```
 
@@ -311,30 +311,30 @@ The following example assumes that the historical messages of `groupA` are pulle
 ```
 // The value `null` of `lastMsg` is passed in for the first pull, indicating that a total of 20 messages are pulled starting from the most recent message
 V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, null, new V2TIMValueCallback<List<V2TIMMessage>>() {
-	@Override
-	public void onError(int code, String desc) {
-		// Messages failed to be pulled.
-	}
-	@Override
-	public void onSuccess(List<V2TIMMessage> v2TIMMessages) {
-		// Messages pulled by page are listed from new to old by default.
-		if (v2TIMMessages.size() > 0) {
-			// Obtain the start message for the next pull by page.
-			V2TIMMessage lastMsg = v2TIMMessages.get(v2TIMMessages.size() - 1);
-			// Pull the remaining 20 messages.
-			V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, lastMsg, new V2TIMValueCallback<List<V2TIMMessage>>() {
-				@Override
-				public void onError(int code, String desc) {
-					 // Messages failed to be pulled.
-				}
+@Override
+public void onError(int code, String desc) {
+// Messages failed to be pulled.
+}
+@Override
+public void onSuccess(List<V2TIMMessage> v2TIMMessages) {
+// Messages pulled by page are listed from new to old by default.
+if (v2TIMMessages.size() > 0) {
+// Obtain the start message for the next pull by page.
+V2TIMMessage lastMsg = v2TIMMessages.get(v2TIMMessages.size() - 1);
+// Pull the remaining 20 messages.
+V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, lastMsg, new V2TIMValueCallback<List<V2TIMMessage>>() {
+@Override
+public void onError(int code, String desc) {
+// Messages failed to be pulled.
+}
 
-				@Override
-				public void onSuccess(List<V2TIMMessage> v2TIMMessages) {
-					// Message pulling is completed.
-				}
-			});
-		}
-	}
+@Override
+public void onSuccess(List<V2TIMMessage> v2TIMMessages) {
+// Message pulling is completed.
+}
+});
+}
+}
 });
 ```
 
@@ -352,14 +352,14 @@ You can call the [deleteMessageFromLocalStorage](http://doc.qcloudtrtc.com/im/cl
 
 ```
 V2TIMManager.getMessageManager().deleteMessageFromLocalStorage(v2TIMMessage, new V2TIMCallback() {
-	@Override
-	public void onError(int code, String desc) {
-		// Messages failed to be deleted.
-	}
-	@Override
-	public void onSuccess() {
-	 // Messages are deleted successfully.
-	}
+@Override
+public void onError(int code, String desc) {
+// Messages failed to be deleted.
+}
+@Override
+public void onSuccess() {
+// Messages are deleted successfully.
+}
 });
 ```
 > Why are the deleted messages pulled again after the app is uninstalled and then reinstalled?
@@ -373,8 +373,8 @@ Currently, IM does not support the deletion of messages in the cloud. If message
 By default, the IM SDK does not prevent message sending and receiving among strangers. If you want C2C messages to be sent and received only among friends, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Messages** -> **Relationship Check**, and enable **Check Relationship for One-to-One Messages**. After this feature is enabled, you can send messages only to friends. When you try to send messages to strangers, the IM SDK returns the 20009 error code.
 
 ### Blocking messages from a specified user
-If you want to block messages from a specified user, call the [addToBlackList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a8804c7f47000bf1c26aa6ab744a53456) API to add this user to the blacklist.
-When a user is added to the blacklist, by default, the user does not know that he/she is in the blacklist. That is, after this user sends a message, the prompt still indicates that the message was sent successfully, but in fact, the recipient will not receive the message. If you want a user in the blacklist to know that his/her message failed to be sent, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Messages** -> **Blacklist Check**, and disable **Show "Sent successfully" After Sending Messages**. After this feature is disabled, the IM SDK will return the 20007 error code when a user in the blacklist sends a message.
+If you want to block messages from a specified user, call the [addToBlackList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMFriendshipManager.html#a8804c7f47000bf1c26aa6ab744a53456) API to add this user to the blocklist.
+When a user is added to the blocklist, by default, the user does not know that he/she is in the blocklist. That is, after this user sends a message, the prompt still indicates that the message was sent successfully, but in fact, the recipient will not receive the message. If you want a user in the blocklist to know that his/her message failed to be sent, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Messages** -> **Blocklist Check**, and disable **Show "Sent successfully" After Sending Messages**. After this feature is disabled, the IM SDK will return the 20007 error code when a user in the blocklist sends a message.
 
 ### Blocking messages from a specified group
 To block messages from a specified group, you can call the [setReceiveMessageOpt](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6bf8f3eafb5ffcb1d13bd69231de8bd4) API to set the group message receiving option to the `V2TIM_GROUP_NOT_RECEIVE_MESSAGE` state.
@@ -402,25 +402,25 @@ To reduce the message complexity, 2.0 version APIs no longer support the creatio
 ```
 @Override
 public void onRecvNewMessage(V2TIMMessage msg) {
-	// View the first `Elem` object.
-	int elemType = msg.getElemType();
-	if (elemType == V2TIMMessage.V2TIM_ELEM_TYPE_TEXT) {
-		// Text message
-		V2TIMTextElem v2TIMTextElem = msg.getTextElem();
-		String text = v2TIMTextElem.getText();
-		// Check whether `v2TIMTextElem` is followed by more `Elem` objects.
-		V2TIMElem elem = v2TIMTextElem.getNextElem();
-		while (elem != null) {
-			// Identify the Elem type. Here, `V2TIMCustomElem` is used as an example.
-			if (elem instanceof V2TIMCustomElem) {
-				V2TIMCustomElem customElem = (V2TIMCustomElem) elem;
-				byte[] data = customElem.getData();
-			}
-			// Continue to check whether the current `Elem` is followed by more `Elem` objects.
-			elem.getNextElem();
-		}
-		// If `elem` is `null`, all `Elem` objects have been parsed.
-	}
+// View the first `Elem` object.
+int elemType = msg.getElemType();
+if (elemType == V2TIMMessage.V2TIM_ELEM_TYPE_TEXT) {
+// Text message
+V2TIMTextElem v2TIMTextElem = msg.getTextElem();
+String text = v2TIMTextElem.getText();
+// Check whether `v2TIMTextElem` is followed by more `Elem` objects.
+V2TIMElem elem = v2TIMTextElem.getNextElem();
+while (elem != null) {
+// Identify the Elem type. Here, `V2TIMCustomElem` is used as an example.
+if (elem instanceof V2TIMCustomElem) {
+V2TIMCustomElem customElem = (V2TIMCustomElem) elem;
+byte[] data = customElem.getData();
+}
+// Continue to check whether the current `Elem` is followed by more `Elem` objects.
+elem.getNextElem();
+}
+// If `elem` is `null`, all `Elem` objects have been parsed.
+}
 }
 ```
 
