@@ -7,7 +7,7 @@ If you disable the CDN service of a domain name that has already been connected 
 - Your origin server has enough bandwidth processing capabilities. Otherwise, you may not be able to access your domain name.
 
 ### What should I do if I cannot open my website after connecting to CDN?
-First, check whether the CDN status of the connected domain name is "Disabled". The website will not open if the status is "Disabled". Proceed to the next step if the status is not "Disabled":
+First, check whether the CDN status of the connected domain name is ""Disabled"". The website will not open if the status is ""Disabled"". Proceed to the next step if the status is not ""Disabled"":
 + Run `ping` or `nslookup` to check whether the CNAME resolution of the domain name has taken effect. If CNAME has not been added yet, please go to your DNS provider and add CNAME as instructed in [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
 + After CNAME takes effect, check whether you can access the origin server as usual.
 
@@ -43,14 +43,14 @@ Since all file types are cached by default, there may be different versions of a
 If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 
-### What should I do if my website cannot be accessed after the hotlink protection whitelist is configured in CDN?
+### What should I do if my website cannot be accessed after the hotlink protection allowlist is configured in CDN?
 
-Please select **Allow blank referer** when configuring the hotlink protection whitelist, so that the website can be opened normally in a browser (with a blank referer).
+Please select **Allow blank referer** when configuring the hotlink protection allowlist, so that the website can be opened normally in a browser (with a blank referer).
 ![](https://main.qcloudimg.com/raw/3ec77732d4f5266278af2e8f569b08a2.png)
 
 ### Can the traffic cap configuration defend against DDoS attacks?
 
 CDN mainly focuses on content delivery acceleration rather than DDoS protection. You can use CDN’s bandwidth cap feature to automatically collect bandwidth usage statistics in 5 minutes. If the cap threshold is reached, CDN will respond according to the configuration. **The maximum threshold is 10,000 Tbps.**
 
-### Can CDN provide all of its node IPs? 
-No. For security reasons, CDN cannot provide a full node IP list. However, you can query the IP region on the "Verify Tencent Cloud CDN IP" page. For more information, please see [Verify Tencent IP](https://intl.cloud.tencent.com/document/product/228/10747).
+### Can CDN provide all of its node IPs?
+No. For security reasons, CDN cannot provide a full node IP list. However, you can query the IP region on the ""Verify Tencent Cloud CDN IP"" page. For more information, please see [Verify Tencent IP](https://intl.cloud.tencent.com/document/product/228/10747).
