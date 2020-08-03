@@ -9,12 +9,12 @@ CDN has been working industriously on global acceleration since 2017. As of Janu
 
 | Region | Distribution |
 | ------ | ------------------------------------------------------------ |
-| Asia   | Hong Kong (China), Taiwan (China), Macao (China), Japan, Korea, Vietnam, Singapore, Thailand, <br/>Philippines, Malaysia, Indonesia, India, Turkey, Saudi Arabia, UAE, Myanmar, <br/>Cambodia, Iraq, Kuwait, Qatar, Oman, Israel, Mongolia |
-| North America   | United States, Canada, Mexico                                         |
-| South America   | Brazil, Argentina, Colombia, Peru, Ecuador, Chile                 |
-| Europe   | United Kingdom, Russia, Germany, Italy, Poland, Sweden, Ireland, Romania, <br/>Spain, Portugal, France, Netherlands, Belgium, Austria, Denmark, Finland |
-| Africa   | South Africa, Egypt, Tanzania                                         |
-| Oceania | Australia, New Zealand                                             |
+| Asia   | Hong Kong (China), Taiwan (China), Macao (China), Japan, Korea, Vietnam, Singapore, Thailand, <br/>Philippines, Malaysia, Indonesia, India, Turkey, Saudi Arabia, UAE, Myanmar, <br/>Cambodia, Iraq, Kuwait, Qatar, Oman, Israel, Mongolia |
+| North America   | United States, Canada, Mexico                                         |
+| South America   | Brazil, Argentina, Colombia, Peru, Ecuador, Chile                 |
+| Europe   | United Kingdom, Russia, Germany, Italy, Poland, Sweden, Ireland, Romania, <br/>Spain, Portugal, France, Netherlands, Belgium, Austria, Denmark, Finland |
+| Africa   | South Africa, Egypt, Tanzania                                         |
+| Oceania | Australia, New Zealand                                             |
 
 ## Global Intelligent Scheduling
 
@@ -35,12 +35,12 @@ CDN comes with an easy-to-use, full-featured console where you can change the co
 
 **Domain management**
 + You can add, delete, activate, and deactivate domain names.
-+ You can switch acceleration regions and select "Mainland China", "Outside Mainland China", or "Global" for the acceleration scope.
++ You can switch acceleration regions and select ""Mainland China"", ""Outside Mainland China"", or ""Global"" for the acceleration scope.
 + You can customize the domain name list page to display, filter, and query configuration items.
 
 **Domain configuration**
 + You can configure an external origin server (IP list or domain names) or use COS as an origin server. Round robin, weighted origin-pull, and hot backup of origin server are supported.
-+ You can configure custom access control policies such as referer blacklist/whitelist, IP blacklist/whitelist, timestamp hotlink protection, and IP access frequency limit.
++ You can configure custom access control policies such as referer blocklist/allowlist, IP blocklist/allowlist, timestamp hotlink protection, and IP access frequency limit.
 + You can customize the expiration time of node cache, status code cache, and HTTP header cache.
 + CDN supports configuring optimizations for cross-border origin-pull linkage, range GETs, and 301/302 origin-pull follow-redirect.
 + CDN supports HTTPS acceleration, HTTP/2 acceleration, and forced request redirection.
@@ -61,4 +61,3 @@ CDN comes with an easy-to-use, full-featured console where you can change the co
 
 **CDN APIs**
 CDN provides [APIs](https://intl.cloud.tencent.com/document/product/228/31719) for all the supported features listed above to enable customized service usage. You and your team can conveniently manage, monitor, display, and analyze your business through these APIs.
-
