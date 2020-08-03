@@ -1,4 +1,3 @@
-
 ## Concepts
 Three types of user status are defined:
 - Online: the frontend is running.
@@ -21,9 +20,9 @@ The PushOnline status means that the TCP persistent connection between the clien
 The user is in PushOnline status in the following scenarios:
 
 - The app process is killed by the operating system of the mobile phone after the user no longer needs to use the app and switches the app to the background, or the user proactively kills the app process.
- If the app is in the keepalive whitelist of the operating system of the mobile phone, the app process will not be killed by the operating system of the mobile phone after the user switches the app to the background. At this time, the user is still in Online status. One of the criteria to distinguish Online from PushOnline is whether the app process has been killed, that is, whether the TCP persistent connection between the client and the IM server has been ended.
+ If the app is in the keepalive allowlist of the operating system of the mobile phone, the app process will not be killed by the operating system of the mobile phone after the user switches the app to the background. At this time, the user is still in Online status. One of the criteria to distinguish Online from PushOnline is whether the app process has been killed, that is, whether the TCP persistent connection between the client and the IM server has been ended.
 - The user proactively disconnects the client from the network, such as when a user enables airplane mode on the mobile phone, or the client network is completely unavailable, such as when the user enters a tunnel that does not have any network signal.
- In this special case, the client cannot even send the FIN or RST packet over TCP. When the IM server fails to receive any heartbeat packet within 400 seconds, the user status changes to PushOnline.
+ In this special case, the client cannot even send the FIN or RST packet over TCP. When the IM server fails to receive any heartbeat packet within 400 seconds, the user status changes to PushOnline.
 
 > PushOnline only exists on mobile phones that run Android or iOS, not on PCs or web apps.
 

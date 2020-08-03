@@ -31,6 +31,6 @@ The IM SDK calls APIs in the following sequence.
 | Send a message | tim.sendMessage(message) | Sends message instances that have been created. |
 | Obtain the conversation list | tim.getConversationList() | Obtains the conversation list. The access terminal can then process conversation list data and render the conversation list interface. |
 | Obtain the group list | tim.getGroupList() | Obtains the group list. The access terminal can then process group list data and render the group list interface. |
-| Obtain the blacklist | tim.getBlacklist() | Obtains the blacklist. The access terminal can then process blacklist data and render the blacklist interface. |
+| Obtain the blocklist | tim.getBlacklist() | Obtains the blocklist. The access terminal can then process blocklist data and render the blocklist interface. |
 | Obtain the personal profile | tim.getMyProfile() | Obtains the user’s personal profile. The access terminal can then process personal profile data and render the personal profile interface. |
 | Logout | tim.logout() | Logs users out. |

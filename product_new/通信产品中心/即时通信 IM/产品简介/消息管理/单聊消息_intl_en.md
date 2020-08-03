@@ -39,7 +39,7 @@ Instant Messaging (IM) provides comprehensive one-to-one messaging capabilities.
 | Any two users in the app can send one-to-one chat messages | Any two strangers can send messages to each other | Strangers send messages to each other |
 | App admin sends one-to-one chat messages | App admin can send one-to-one chat messages to any user | App admin simulates other users to send messages<br>App admin simulates system messages |
 | Only friends are allowed to sent messages to each other | Only friends can send messages to each other | Friends send messages to each other |
-| Block messages from someone | You can blacklist certain users to block their messages | Unfriend someone<br>Block messages from someone |
+| Block messages from someone | You can block certain users to block their messages | Unfriend someone<br>Block messages from someone |
 
 
 ## One-to-One Messaging Extension Capabilities
@@ -57,12 +57,11 @@ Instant Messaging (IM) provides comprehensive one-to-one messaging capabilities.
 #### Offline and roaming processing of one-to-one chat messages:
 
 1. User A calls `sendMessage` to send messages to user B who is offline.
-  - User A is added to user B’s recent contacts, with up to 100 messages cached.
-  - Messages are stored in the offline cache for 7 days, and the maximum cache capacity is 30 KB.
-  - Messages are stored on the roaming server for 7 days.
+  - User A is added to user B’s recent contacts, with up to 100 messages cached.
+  - Messages are stored in the offline cache for 7 days, and the maximum cache capacity is 30 KB.
+  - Messages are stored on the roaming server for 7 days.
 2. User B calls the `login` API to log in to IM.
 3. The SDK automatically pulls messages from the offline cache and throws them through the `OnNewMessage` API.
 4. The SDK automatically pulls recent contacts and throws them through the `OnNewMessage` API.
 5. The user is notified through the `OnRefresh` API when message synchronization is completed.
 6. The user calls `getMessage`. If local messages are incomplete, the SDK automatically pulls them from the roaming server.
-

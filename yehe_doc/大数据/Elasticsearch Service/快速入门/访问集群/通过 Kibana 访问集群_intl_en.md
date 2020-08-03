@@ -4,12 +4,12 @@ ES comes with a Kibana module. You can access the Kibana page of your cluster to
 ### Entries
 There are two entries to the Kibana page, which are located on the cluster list page and the cluster details page, as shown below. Click either of them to jump to the Kibana login page.
 >By default, Kibana is accessed at the public address. If you are concerned that accessing Kibana over the public network will cause security problems, you can disable the Kibana public address and enable the Kibana private address for access on the cluster details page (**this feature is not supported for clusters where all nodes are of the 1-core 2 GB MEM specification; instead, it is supported for hot/warm clusters where not all nodes are of the 1-core 2 GB MEM specification**).
-> 
+>
 ![](https://main.qcloudimg.com/raw/3b4f196136668a1cdbe351d0ac655960.png)
 ![](https://main.qcloudimg.com/raw/168f91daf55dba8783c56d63ffdbb4e0.png)
 
 ### Login
-To access the Kibana page, you need to log in with the username "elastic" and the Kibana password you set when you created your cluster. If you forgot your password, you can reset it on the cluster details page. For security reasons, you can configure an access blacklist/whitelist for the public address of the Kibana page. For more information, please see [Kibana Access Settings](https://intl.cloud.tencent.com/document/product/845/16992).
+To access the Kibana page, you need to log in with the username "elastic" and the Kibana password you set when you created your cluster. If you forgot your password, you can reset it on the cluster details page. For security reasons, you can configure an access blocklist/allowlist for the public address of the Kibana page. For more information, please see [Kibana Access Settings](https://intl.cloud.tencent.com/document/product/845/16992).
 
 - If "ES cluster user authentication" is not enabled, the Kibana login page is as shown below:
 ![](https://main.qcloudimg.com/raw/5d8060f7bcb64b39e3770c6008fb0861.png)
@@ -33,32 +33,32 @@ Specify the index name as `china`, type name as `city`, and detailed field and t
 ```
 PUT china
 {
-  "mappings": {
-    "city": {
-      "properties":{
-        "name":{ "type": "keyword"  }, 
-        "province":{ "type": "keyword"  }, 
-        "location": {"type": "geo_point"},
-        "x":{ "type": "integer" },
-        "level":{
-            "properties":{                
-                "level":{ "type": "integer" },
-                "range":{ "type": "integer" },
-                "name":{ "type": "keyword" }
-            }
-        },
-        "y":{ "type": "integer" },
-        "cityNo":{ "type": "integer" } 
-      }
-    }
-  }
+  "mappings": {
+    "city": {
+      "properties":{
+        "name":{ "type": "keyword"  },
+        "province":{ "type": "keyword"  },
+        "location": {"type": "geo_point"},
+        "x":{ "type": "integer" },
+        "level":{
+            "properties":{               
+                "level":{ "type": "integer" },
+                "range":{ "type": "integer" },
+                "name":{ "type": "keyword" }
+            }
+        },
+        "y":{ "type": "integer" },
+        "cityNo":{ "type": "integer" }
+      }
+    }
+  }
 }
 ```
 
 #### Adding one single document
 ![](https://main.qcloudimg.com/raw/aa483266a62ae6399d4072e819c3db5f.png)
 ```
-PUT china/city/wuhan 
+PUT china/city/wuhan
 {"name":"Wuhan","province":"No.188, Yanjiang Avenue, Jiang'an District, Hubei Province","location":{"lat":30.5952548577,"lon":114.2999398195},"x":6384,"level":{"level":2,"range":19,"name":"New first-tier city"},"y":4231,"cityNo":7}
 ```
 

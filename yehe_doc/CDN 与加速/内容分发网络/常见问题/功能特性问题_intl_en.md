@@ -1,8 +1,8 @@
 ### Does Tencent Cloud CDN support global acceleration?
-Yes. Tencent has been building nodes for over a decade. Tencent Cloud CDN offers over 1,000 overseas nodes in more than 50 countries and regions to help your business go global seamlessly.
+Yes. Tencent has built nodes for over a decade. Tencent Cloud CDN offers over 1,000 overseas nodes in more than 50 countries and regions to help your business go global seamlessly.
 
 ### After connecting to CDN, do changes need to be made on the origin server for the acceleration service to take effect?
-No. To achieve a better acceleration result, however, we recommend you assign static and dynamic files to different domain names and only accelerate static resources.
+No. To achieve a better acceleration result, however, you are recommended to assign static and dynamic files to different domain names and only accelerate static resources.
 
 ### Does Tencent Cloud CDN support cross-origin access?
 Yes. If cross-origin access is needed for your website, simply configure the `Access-Control-Allow-Origin` field on your website or configure cross-origin headers for your domain name in the CDN Console. For more information, please see [HTTP Header Configuration](https://intl.cloud.tencent.com/document/product/228/35320).
@@ -11,11 +11,11 @@ Yes. If cross-origin access is needed for your website, simply configure the `Ac
 You can download CDN access logs in the CDN Console. For detailed directions, please see [Log Download](https://intl.cloud.tencent.com/document/product/228/6316).
 
 ### How do I use the CDN self-diagnosis tool?
-The self-diagnosis tool provides a range of diagnostic features such as testing DNS, linkage quality, site availability, and data access consistency for the accessed domain name. For more information, please see [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304). The tool is subject to the configuration of the local network environment and do not fully represent the entire network testing results.
+The self-diagnosis tool provides a range of diagnostic features such as testing for DNS resolution, linkage quality, site availability, and data access consistency for the accessed domain name. For more information, please see [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304). The tool is subject to the configuration of the local network environment and cannot fully represent the entire network testing results.
 
 ### What is the difference between the local access diagnosis and the user access diagnosis?
-Local access diagnosis: when you find an exception with one of your resource accesses, you can initiate a test with "local access diagnosis".
-User access diagnosis: when your users report an exception with their resource accesses, you can pinpoint the problem through "user access diagnosis" and troubleshoot the problem according to Tencent Cloud's suggestions.
+Local access diagnosis: when you find an exception with one of your resource accesses, you can initiate a test with ""local access diagnosis"".
+User access diagnosis: when your users report an exception with their resource accesses, you can pinpoint the problem through ""user access diagnosis"" and troubleshoot the problem according to Tencent Cloud's suggestions.
 
 ### Does CDN support POST requests?
 Yes.
@@ -46,9 +46,9 @@ CDN supports IP blocklist/allowlist configuration. You can create filtering poli
 For more information on this configuration, please see [IP Access Limit Configuration](https://intl.cloud.tencent.com/document/product/228/6420) and [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292).
 
 ### How do I configure Range GETs in CDN?
-Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of the domain name you want to edit. For more information, please see [Range GETs Configuration](https://intl.cloud.tencent.com/document/product/228/7184). 
+Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of the domain name you want to edit. For more information, please see [Range GETs Configuration](https://intl.cloud.tencent.com/document/product/228/7184).
 ![](https://main.qcloudimg.com/raw/af642b65bed86a97fadaf229e26aceac.png)
-Click **Origin Configuration** and you will see the "Range GETs Configuration" module. ![](https://main.qcloudimg.com/raw/79d08718f1399b735b9b2dc804bf383e.png)
+Click **Origin Configuration** and you will see the ""Range GETs Configuration"" module. ![](https://main.qcloudimg.com/raw/79d08718f1399b735b9b2dc804bf383e.png)
 
 ### Why can't CDN hide an IP completely?
 1. The IP was already exposed before CDN was used.
@@ -70,11 +70,11 @@ No. Currently, CDN does not support Chinese domain names (even after transcoding
 ### Can CDN forward requests to the origin server over the private network?
 No. Currently, CDN can only forward requests to the origin server over the public network.
 
-### Does CDN support using scripts to programmatically implement configuration?
-Yes. CDN currently uses Lua scripts to programmatically implement configurations. These scripts are generally used for customization and written and released by the CDN technical support team
+### Does CDN support edge scripts to implement programmable configuration?
+Yes. CDN currently uses Lua scripts to implement programmable configuration, which are generally used for customization and written and released by the CDN technical support team
 
 ### Does CDN support configuring different origin servers for different client requests?
-Yes. CDN supports origin-pull to different origin servers for different client requests. You can submit a description of your specific requirements, and the CDN technical support team will configure it for you on the backend.
+Yes. CDN supports origin-pull to different origin servers for different client requests. You can submit a description of your specific requirements, and the CDN technical support team will configure for you on the backend.
 
 ### Does CDN support dynamic origin-pull configuration and origin-pull queuing?
-If the primary origin server returns an exception, requests can be sequentially redirected to configured backup servers.
+If the primary origin server responds exceptionally, it can redirect requests to the configured backup origin server in sequence for request again.

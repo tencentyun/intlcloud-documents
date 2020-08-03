@@ -1,5 +1,5 @@
 ## 1. IM SDK Error Codes
->For Web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
+>For Web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html).
 
 ### General error codes
 
@@ -123,8 +123,8 @@
 | -10008 | IMEI and A2 must be contained. |
 | -10106 | SSO decryption with D2key failed too many times. Instruct the device to reset and refresh D2. |
 | -10109 | The format of the request packet is incorrect. |
-| -10110 | The SDKAppID is blacklisted. |
-| -10111 | The SDKAppID is on the service cmd blacklist. |
+| -10110 | The SDKAppID is blocked. |
+| -10111 | The SDKAppID is on the service cmd blocklist. |
 | -10112 | The SDKAppID has been disabled. |
 | -10113 | The request exceeds the frequency limit allowed for the user. The frequency limit is set for the number of requests per second based on a specific protocol. |
 | -10114 | Packet loss due to system overload. The connected server has too many requests to process and therefore refuses to provide services. |
@@ -182,7 +182,7 @@
 | 70016 | UserSig authentication failed because the public key does not exist. [Obtain the key](https://intl.cloud.tencent.com/document/product/1047/34540) in the IM console. |
 | 70020 | SDKAppID not found. Check the app information in the IM console. |
 | 70050 | You are attempting UserSig authentication too often. Check whether the UserSig is correct and try again after 1 minute. You can verify the UserSig on the **[Auxiliary Tools](https://console.cloud.tencent.com/im-detail/tool-usersig)** page of the IM console. |
-| 70051 | The account is blacklisted. |
+| 70051 | The account is blocked. |
 | 70107 | The requested UserID does not exist. |
 | 70114 | Login is restricted for security reasons. You are attempting to log in too often. |
 | 70169 | Server timed out. Try again later. |
@@ -227,11 +227,11 @@
 | 30010 | You have reached the limit of friends. |
 | 30011 | You have reached the limit of friend groups. |
 | 30012 | You have reached the limit of pending friend requests. |
-| 30013 | You have reached the limit of blacklisted users. |
+| 30013 | You have reached the limit of blocked users. |
 | 30014 | The other party has reached the limit of friends. |
-| 30515 | You cannot add this user as a friend because this user is in your blacklist. |
+| 30515 | You cannot add this user as a friend because this user is in your blocklist. |
 | 30516 | The other party has set the friend verification mode to reject all new friend requests. |
-| 30525 | You cannot add this user as a friend because you are in this user’s blacklist. |
+| 30525 | You cannot add this user as a friend because you are in this user’s blocklist. |
 | 30539 | The request is pending. If user A sends a friend request to user B who has set the friend verification mode to AllowType_Type_NeedConfirm, only a pending relationship can be established between users A and B. This return code is used to distinguish the result from the return code indicating friending success. The caller can capture this error and send a notification to user A. |
 | 30540 | The friend request was filtered by the security policy. Do not initiate friend requests too frequently. |
 | 30614 | The pending request does not exist. |
@@ -259,7 +259,7 @@
 | 20004 | Network exception. Try again later. |
 | 20005 | Internal server error. Try again later. |
 | 20006 | The callback prior to sending a one-to-one chat message was triggered, and the app backend returned a response to forbid the message. |
-| 20007 | The one-to-one chat message cannot be sent to the other party because the sender is in the blacklist of the other party.<br>The message delivery status is displayed as failed by default. You can log in to the IM console to change the message delivery status displayed in this scenario. For specific steps, see [Blacklist check](https://intl.cloud.tencent.com/document/product/1047/34419). |
+| 20007 | The one-to-one chat message cannot be sent to the other party because the sender is in the blocklist of the other party.<br>The message delivery status is displayed as failed by default. You can log in to the IM console to change the message delivery status displayed in this scenario. For specific steps, see [Blocklist check](https://intl.cloud.tencent.com/document/product/1047/34419). |
 | 20008 | The SDKAppID of the sender does not match the SDKAppID of the recipient, because the SDKAppID is switched on the client but the data is not cleared in the database. To rectify this problem, clear the original database after switching the SDKAppID. |
 | 20009 | The message cannot be sent because the sender and the intended recipient are not friends. This problem occurs only when friend verification is configured for one-to-one chats. |
 | 20010 | The one-to-one chat message cannot be sent because the sender is not a friend of the intended recipient (one-way relationship). |
@@ -359,69 +359,4 @@
 | 6020 | SessionNode is null. |
 | 6023 | This error is returned (during login) when you log out before login is complete. |
 | 6024 | The TLS SDK is not initialized. |
-| 6025 | The TLS SDK failed to find the corresponding user information. |
-| 6100 | The QALSDK failed to perform the BIND operation due to unknown reasons. |
-| 6101 | SSO ticket is missing. |
-| 6102 | Repeated BIND. |
-| 6103 | Empty TinyId. |
-| 6104 | Empty GUID. |
-| 6105 | Failed to parse the registration packet. |
-| 6106 | Registration timed out. |
-| 6107 | BIND operation is in progress. |
-| 6120 | An unknown error occurred during packet sending. |
-| 6121 | No network connection when sending the request packet. |
-| 6122 | No network connection when sending the response packet. |
-| 6123 | No permission to send request packets. |
-| 6124 | SSO error. |
-| 6125 | Request timed out. |
-| 6126 | Response timed out. |
-| 6127 | Failed to resend. |
-| 6128 | Failed to deliver the resent packet. |
-| 6129 | The stored data is filtered. |
-| 6130 | Delivery overloaded. |
-| 6131 | Data logic error. |
-| 6150 | proxy_manager did not finish data sync to the server. |
-| 6151 | proxy_manager is synchronizing data to the server. |
-| 6152 | proxy_manager failed to sync data. |
-| 6153 | The request parameters of proxy_manager were found to be invalid in local check. |
-| 6160 | Request fields from the group assistant contain non-preset fields. |
-| 6161 | The group assistant did not enable the local storage of the group profile. |
-| 6162 | Failed to load the group profile. |
-| 6200 | No network connection when sending the request. |
-| 6201 | No network connection when sending the response. |
-| 6205 | The QALSDK service is not ready. |
-| 6207 | Account authentication failed due to the failure in converting the TinyId. |
-| 6209 | The app did not attempt to connect to the network after start-up. |
-| 6210 | QALSDK execution failed. |
-| 6211 | Invalid request due to invalid toMsgService. |
-| 6212 | Request queue is full. |
-| 6213 | You were logged out due to login on another device. |
-| 6214 | Service suspended. |
-| 6215 | Incorrect SSO signature. |
-| 6216 | The SSO cookie is invalid. |
-| 6217 | Incorrect packet length. This error occurs when the TLS SDK performs verification on response packets during login. |
-| 6218 | Status report from OPENSTATSVC to OPENMSG timed out during login. |
-| 6219 | Failed to parse the response packet when OPENSTATSVC reported status to OPENMSG during login. |
-| 6220 | TLS SDK decryption failed during login. |
-| 6221 | Wi-Fi authentication is required. |
-| 6222 | Canceled by the user. |
-| 6223 | The message cannot be recalled after the time limit is reached, which is 2 minutes by default. |
-| 6224 | The UGC extension package is missing. |
-| 6226 | Auto login failed because the local ticket expired. Manual login with the UserSig is needed. |
-| 6300 | No available SSO for short connections. |
-| 80101 | Message content was filtered due to security reasons. |
-| 70101 | Ticket expired. This error is returned during login. |
-| 90101 | The IM SDK has been initialized. No need to initialize again. |
-| 115000 | OpenBDH error code. |
-| 6250 | No network connection when sending the request. Please try again after the network connection is recovered. |
-| 6251 | No network connection when sending the response. Please try again after the network connection is recovered. |
-| 6252 | QALSDK execution failed. |
-| 6253 | Invalid request due to invalid toMsgService. |
-| 6254 | Request queue is full. |
-| 6255 | You were logged out due to login on another device. |
-| 6256 | Service suspended. |
-| 6257 | Incorrect SSO signature. |
-| 6258 | The SSO cookie is invalid. |
-
-
-> If the problem persists, you can  [Submit a Ticket](https://console.cloud.tencent.com/workorder/category) with the API, error code, and error information to our tech support staff.
+|

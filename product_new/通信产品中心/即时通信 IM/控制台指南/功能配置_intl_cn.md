@@ -1,104 +1,112 @@
-## 登录与消息
-登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，在左侧导航栏选择【功能配置】>【登录与消息】，您可以根据实际业务需求管理登录与消息相关配置。
+## Login and Messages
+Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card. In the left sidebar, choose **Feature Configuration** > **Login and Messages**. On the page that appears, you can manage login and message configuration according to your business needs.
 
-### 登录设置
-1. 在【登录与消息】页面，单击【登录设置】右侧的【编辑】。
-2. 在弹出的登录设置对话框中，选择多端登录类型，设置 Web 端实例同时在线数量。
-3. 单击【确定】保存设置。
+### Login settings
+1. On the **Login and Messages** page, click **Edit** for **Login settings**.
+2. In the "Login Settings" dialog that appears, select multi-client login and set the number of concurrent online web instances.
 
-### 历史消息存储时长配置
-历史消息默认存储7天，**延长历史消息存储时长为增值服务**，具体计费说明请参见 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。每个自然月仅支持更改一次配置。
+3. Click **OK** to save the settings.
 
-1. 在【登录与消息】页面，单击【历史消息存储时长配置】右侧的【编辑】。
-2. 在弹出的历史消息存储时长配置对话框中，设置延长历史消息存储时长。
-3. 单击【确定】保存配置，该配置即刻生效。
+### Setting the retention period of historical messages
+Historical messages are retained for 7 days by default. **Increasing the retention period of historical messages is a value-added service**. For more information on billing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). You can modify the setting once every calendar month.
 
-### 消息撤回设置
-1. 在【登录与消息】页面，单击【消息撤回设置】右侧的【编辑】。
-2. 在弹出的【消息撤回设置】对话框中，设置消息可撤回时长。
-3. 单击【确定】保存配置。
+1. On the **Login and Messages** page, click **Edit** for **Historical message retention period settings**.
+2. In the "Historical Message Retention Period Settings" dialog that appears, increase the retention period.
+3. Click **OK** to save the setting, which takes effect immediately.
 
-### 黑名单检查
-在【登录与消息】页面，在【黑名单检查】区域可以选择开启或关闭发送消息后展示发送成功：
-- 启用：若对方已将您的帐号加入黑名单，您向对方发送单聊消息时将提示消息发送成功，实际对方不会收到消息。默认为启用。
-- 关闭：若对方已将您的帐号加入黑名单，您向对方发送单聊消息时将提示消息发送失败。
+### Message recall settings
+1. On the **Login and Messages** page, click **Edit** for **Message recall settings**.
+2. In the "Message Recall Settings" dialog that appears, set the message recallable period.
+3. Click **OK** to save the setting.
 
-### 好友关系检查
-在【登录与消息】页面，在【好友关系检查】区域可以选择开启或关闭发送单聊消息检查关系链：
-- 开启：发起单聊时会先检查好友关系，仅允许好友之间发送单聊消息，陌生人发送单聊消息时 SDK 会收到 [错误码 20009](https://intl.cloud.tencent.com/document/product/1047/34348#.E6.B6.88.E6.81.AF.E9.94.99.E8.AF.AF.E7.A0.812)。
-- 关闭：发起单聊时无需检查好友关系，允许用户和好友、陌生人之间发送单聊消息。默认为关闭。
+### Blocklist check
+You can enable or disable "Show "sent the message" after sending message" in the **Blocklist Check** area on the **Login and Messages** page.
+- On: if you are in the recipient’s blocklist, you will see "sent the message" after sending a one-to-one chat message and the recipient will not receive the message. This is the default setting.
+- Off: if you are in the recipient’s blocklist, you will see "failed to send the message" after sending a one-to-one chat message.
 
-## 用户自定义字段
-登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，在左侧导航栏选择【功能配置】>【用户自定义字段】，您可以根据实际业务需求管理用户自定义字段。
->最多可添加20个用户自定义字段，该字段不支持修改字段名与字段类型且不支持删除，请根据业务需求合理规划该字段。
+### Friend relationship check
+You can enable or disable "Check relationship chain before sending one-to-one chat messages" in the **Friend relationship check** area on the **Login and Messages** page.
+- On: check friend relationships before a one-to-one chat starts and only allow friends to send one-to-one messages. When a stranger sends a one-to-one chat message, the SDK will receive [error code 20009](https://intl.cloud.tencent.com/document/product/1047/34348#.E6.B6.88.E6.81.AF.E9.94.99.E8.AF.AF.E7.A0.812).
+- Off: do not check friend relationships before a one-to-one chat starts and allow users to send and receive one-to-one chat messages to and from friends and strangers. This is the default setting.
 
-### 添加用户自定义字段
+## User Custom Fields
+Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card. In the left sidebar, choose **Feature Configuration** > **User Custom Fields**. On the page that appears, you can manage user custom fields according to your business needs.
+>You can add up to 20 user custom fields. Once set, these fields cannot be deleted, and their names and types cannot be modified. Therefore, plan these fields with caution according to your business needs.
 
-1. 在【用户自定义字段】页面，单击【添加用户自定义字段】。
-2. 在弹出的用户自定义字段对话框中，输入自定义字段名，设置字段类型，设置读写权限。
- >
- >- 字段名必须是英文字母，且长度不能超过8个字符。
- >- 需至少设置一种读权限和一种写权限。
- >
-3. 单击【确定】保存配置。
+### Adding user custom fields
 
-### 修改用户自定义字段权限
-1. 在【用户自定义字段】页面，单击目标自定义字段所在行的【修改权限】。
-2. 在弹出的用户自定义字段对话框中，修改读写权限。
-3. 单击【确认】保存配置。
+1. On the **User Custom Fields** page, click **Add user custom field**.
+2. In the "User Custom Field" dialog that appears, enter a name for the custom field and set the field type and read and write permissions.
+ >
+ >- The field name must consist of letters with a maximum length of 8 characters.
+ >- You must set at least one read permission and one write permission.
+ >
 
-## 好友自定义字段
->最多可添加20个好友自定义字段，该字段不支持修改字段名与字段类型且不支持删除，请根据业务需求合理规划该字段。
+3. Click **OK** to save the settings.
 
-1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片。
-2. 在左侧导航栏选择【功能配置】>【好友自定义字段】。
-3. 单击【添加好友自定义字段】。
-4. 在弹出的好友自定义字段对话框中，输入自定义字段名，设置字段类型。
- >字段名必须是英文字母，且长度不能超过8个字符。
- >
-5. 单击【确定】保存配置。
+### Modifying the permissions of a user custom field
+1. On the **Login and Messages** page, click **Modify permissions** in the row of the target custom field.
+2. In the "User Custom Field" dialog that appears, modify the read and write permissions.
 
-## 群成员自定义字段
-登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，在左侧导航栏选择【功能配置】>【群成员自定义字段】，您可以根据实际业务需求管理群成员自定义字段。
->最多可添加5个群成员自定义字段，该字段仅支持修改群组形态及其对应的读写权限且不支持删除，请根据业务需求合理规划该字段。
+3. Click **OK** to save the settings.
 
-### 添加群成员自定义字段
-1. 在【群成员自定义字段】页面，单击【添加群成员维度自定义字段】。
-2. 在弹出的群成员维度自定义字段对话框中，输入字段名称，设置群组形态及其对应的读写权限。
-  >
-  >- 字段名称只能由字母、数字以及下划线（\_）组成，不能以数字开头，且长度不能超过16个字符。
-  >- 群成员自定义字段名称不允许与群自定义字段名称一致。
-  >
- - 单击【添加群组形态】可新增一组群组形态参数，群组形态不可重复。
- - 单击目标群组形态参数组所在行的【删除】可删除该组群组形态参数，需至少保留一组群组形态参数。
-3. 勾选【我已经知道自定义字段和群组形态添加后，除了形态的读写权限可修改，无法删除。】。
-4. 单击【确定】保存设置。
+## Friend Custom Fields
+>You can add up to 20 friend custom fields. Once set, these fields cannot be deleted, and their names and types cannot be modified. Therefore, plan these fields with caution according to your business needs.
 
-### 编辑群成员自定义字段
-1. 在【群成员自定义字段】页面，单击目标群成员自定义字段所在行的【编辑】。
-2. 在弹出的群成员维度自定义字段对话框中，修改已选群组形态的读写权限，或单击【添加群组形态】新增群组形态并设置其参数，群组形态不可重复。
-3. 勾选【我已经知道自定义字段和群组形态添加后，除了形态的读写权限可修改，无法删除。】。
-4. 单击【确定】保存设置。
+1. Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card.
+2. In the left sidebar, choose **Feature Configuration** > **Friend Custom Fields**.
+3. Click **Add friend custom fields**.
+4. In the "Friend Custom Field" dialog that appears, enter a name for the custom field and set the field type.
+ >The field name must consist of letters with a maximum length of 8 characters.
+ >
+
+5. Click **OK** to save the settings.
+
+## Group Member Custom Fields
+Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card. In the left sidebar, choose **Feature Configuration** > **Group Member Custom Fields**. On the page that appears, you can manage group member custom fields according to your business needs.
+>You can add up to 5 group member custom fields. Once set, these fields cannot be deleted, and only the group type and the corresponding read and write permissions can be modified. Therefore, plan these fields with caution according to your business needs.
+
+### Adding group member custom fields
+1. On the **Group Member Custom Fields** page, click **Add group member custom field**.
+2. In the "Group Member Custom Field" dialog that appears, enter a name for the custom field and set the group type and read and write permissions.
+  >
+  >- The field name can only contain letters, numbers, and underscores (\_), and cannot begin with a number. The maximum length of the name is 16 characters.
+  >- A group member custom field and a group custom field cannot have the same name.
+  >
+ - Click **Add group type** to add one group type at a time. Duplicate group types are not allowed.
+ - Click **Delete** in the row of the target group type parameter to delete it. However, you must retain at least one group type parameter.
+
+3. Select **I understand that once added, custom fields and group types cannot be deleted and only the read and write permissions of group types can be modified.**
+4. Click **OK** to save the setting.
+
+### Editing group member custom fields
+1. On the **Group Member Custom Fields** page, click **Edit** in the row of the target group member custom field.
+2. In the "Group Member Custom Field" dialog that appears, modify the read and write permissions of the selected group type, or click **Add group type** to add a group type and set its parameters. Duplicate group types are not allowed.
+
+3. Select **I understand that once added, custom fields and group types cannot be deleted and only the read and write permissions of group types can be modified.**
+4. Click **OK** to save the setting.
 
 
-## 群自定义字段
-登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，在左侧导航栏选择【功能配置】>【群自定义字段】，您可以根据实际业务需求管理群自定义字段。
->最多可添加5个群自定义字段，该字段仅支持修改群组形态及其对应的读写权限且不支持删除，请根据业务需求合理规划该字段。
+## Group Custom Fields
+Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card. In the left sidebar, choose **Feature Configuration** > **Group Custom Fields**. On the page that appears, you can manage group custom fields according to your business needs.
+>You can add up to 5 group custom fields. Once set, these fields cannot be deleted, and only the group type and the corresponding read and write permissions can be modified. Therefore, plan these fields with caution according to your business needs.
 
-### 添加群自定义字段
-1. 在【群自定义字段】页面，单击【添加群维度自定义字段】。
-2. 在弹出的群维度自定义字段对话框中，输入字段名称，设置群组形态及其对应的读写权限。
-  >
-  >- 字段名称只能由字母、数字以及下划线（\_）组成，不能以数字开头，且长度不能超过16个字符。
-  >- 群自定义字段名称不允许与群成员自定义字段名称一致。
-  >
- - 单击【添加群组形态】可新增一组群组形态参数，群组形态不可重复。
- - 单击目标群组形态参数组所在行的【删除】可删除该组群组形态参数，需至少保留一组群组形态参数。
-3. 勾选【我已经知道自定义字段和群组形态添加后，除了形态的读写权限可修改，无法删除。】。
-4. 单击【确定】保存设置。
+### Adding group custom fields
+1. On the **Group Custom Fields** page, click **Add group custom fields**.
+2. In the "Group Custom Field" dialog that appears, enter a name for the custom field and set the group type and read and write permissions.
+  >
+  >- The field name can only contain letters, numbers, and underscores (\_), and cannot begin with a number. The maximum length of the name is 16 characters.
+  >- A group custom field and a group member custom field cannot have the same name.
+  >
+ - Click **Add group type** to add one group type at a time. Duplicate group types are not allowed.
+ - Click **Delete** in the row of the target group type parameter to delete it. However, you must retain at least one group type parameter.
 
-### 编辑群自定义字段
-1. 在【群自定义字段】页面，单击目标群自定义字段所在行的【编辑】。
-2. 在弹出的群维度自定义字段对话框中，修改已选群组形态的读写权限，或单击【添加群组形态】新增群组形态并设置其参数，群组形态不可重复。
-3. 勾选【我已经知道自定义字段和群组形态添加后，除了形态的读写权限可修改，无法删除。】。
-4. 单击【确定】保存设置。
+3. Select **I understand that once added, custom fields and group types cannot be deleted and only the read and write permissions of group types can be modified.**
+4. Click **OK** to save the setting.
+
+### Editing group custom fields
+1. On the **Group Custom Fields** page, click **Edit** in the row of the target group custom field.
+2. In the "Group Custom Field" dialog, modify the read and write permissions of the selected group type, or click **Add group type** to add a group type and set its parameters. Duplicate group types are not allowed.
+
+3. Select **I understand that once added, custom fields and group types cannot be deleted and only the read and write permissions of group types can be modified.**
+4. Click **OK** to save the setting.

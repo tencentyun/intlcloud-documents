@@ -57,7 +57,7 @@ You can also manage your projects on the [Project Management](https://console.cl
 
 ### Are there any requirements for connecting a domain name to CDN?
 Yes. The following are the requirements for connecting a domain name to CDN:
-1.The domain name can contain up to 50 characters. CDN currently does not support Chinese domain names (even after transcoding).
+1. The length of the domain name cannot exceed 50 characters.
 2. If mainland China CDN is used, the domain name must have an ICP filing issued by the MIIT.
 3. The domain name is a sub-domain name in the format of `a.test.com` or `a.b.test.com` or a wildcard domain name in the format of `*.test.com` or `*.a.test.com`.
 4. If the domain name is a wildcard one or has been connected by another user, you need to [verify your ownership](https://intl.cloud.tencent.com/document/product/228/5734#m1) before connecting or retrieving it.
@@ -81,10 +81,8 @@ Ping the domain name and view the returned result. If `cdntip.com` is displayed 
 If files cannot be downloaded from CDN, we recommend you troubleshoot using the following methods:
 1. Check whether files can be downloaded normally from the origin server.
 2. Check whether the CDN domain name is correctly configured on the CDN Console > Basic Configuration > Origin Domain. Please make sure that the configured origin domain can be accessed properly. Otherwise, origin-pull may fail, which will affect your business.
-3. Check the security policy of the origin server. Please check whether the origin-pull failure is caused by the security policy configured on the origin server. If so, please contact us to get the intermediate IP range and whitelist the origin server.
+3. Check the security policy of the origin server. Please check whether the origin-pull failure is caused by the security policy configured on the origin server. If so, please contact us to get the intermediate IP range and allowlist the origin server.
 
 
 ### What should I do if I cannot log in to the WordPress backend after CDN acceleration is configured?
 WordPress involves dynamic requests. If the cache is configured inappropriately, login exceptions may occur. We recommend you set the cache expiration time of the corresponding dynamic file type to 0, so that files of this type will not be automatically cached. Common dynamic file types include .asp, .jsp, .php, .perl, and .cgi. For detailed directions, please see [Cache Expiration Configuration](https://intl.cloud.tencent.com/document/product/228/35317).
-
-

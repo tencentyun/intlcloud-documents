@@ -184,9 +184,9 @@ The list below contains only error codes specific to this API:
 | 30011 | You have too many friend lists. |
 | 30012 | You have too many pending friend requests. |
 | 30014 | The user you are trying to add has too many friends. |
-| 30515 | The user you are trying to add is on your blacklist. You cannot add this user. |
+| 30515 | The user you are trying to add is on your blocklist. You cannot add this user. |
 | 30516 | The user you are trying to add has disabled friend requests. |
-| 30525 | You have been blacklisted by the user you are trying to add. You cannot add this user. |
+| 30525 | You have been blocked by the user you are trying to add. You cannot add this user. |
 | 30539 | The user you are trying to add has selected `AllowType_Type_NeeedConfirm` as their friend request authentication method. Your friend request is pending approval. This code is used to differentiate a successful friend request, meaning the friend is added, and a pending friend request, so more helpful messages can be displayed. |
 | 30540 | You have sent too many friend requests in a short amount of time. Request filtered for security reasons. |
 

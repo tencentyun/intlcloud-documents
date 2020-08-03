@@ -389,7 +389,7 @@ typedef NS_ENUM(NSInteger, TIMFriendStatus) {
      */
     TIM_FRIEND_STATUS_SUCC                              = 0,
     /**
-     *  Valid when adding a friend: the user that you want to add as a friend is in your blacklist.
+     *  Valid when adding a friend: the user that you want to add as a friend is in your blocklist.
      */
     TIM_ADD_FRIEND_STATUS_IN_SELF_BLACK_LIST                = 30515,
     /**
@@ -401,7 +401,7 @@ typedef NS_ENUM(NSInteger, TIMFriendStatus) {
      */
     TIM_ADD_FRIEND_STATUS_SELF_FRIEND_FULL                  = 30010,     
     /**
-     *  Valid when adding a friend: the user that you want to add as a friend has added you to the blacklist.
+     *  Valid when adding a friend: the user that you want to add as a friend has added you to the blocklist.
      */
     TIM_ADD_FRIEND_STATUS_IN_OTHER_SIDE_BLACK_LIST          = 30525,    
     /**
@@ -821,16 +821,16 @@ After a pending record is marked as read, the unread count returned is changed t
 
 
 
-## Blacklist
+## Blocklist
 
-### Adding a user to the blacklist
+### Adding a user to the blocklist
 
-You can blacklist any user. If the user is your friend, after you blacklist the user, your friend relationship with the user is terminated and you cannot receive messages from this user.
+You can block any user. If the user is your friend, after you block the user, your friend relationship with the user is terminated and you cannot receive messages from this user.
 
 ```
 @interface TIMFriendshipManager : NSObject
 /**
- *  Add a user to the blacklist
+ *  Add a user to the blocklist
  *
  *  @param identifiers  User list
  *  @param succ  Success callback
@@ -843,12 +843,12 @@ You can blacklist any user. If the user is your friend, after you blacklist the 
 ```
 
 
-### Deleting a user from the blacklist
+### Deleting a user from the blocklist
 
 ```
 @interface TIMFriendshipManager : NSObject
 /**
- *  Delete a user from the blacklist
+ *  Delete a user from the blocklist
  *
  *  @param identifiers  User list
  *  @param succ  Success callback
@@ -861,12 +861,12 @@ You can blacklist any user. If the user is your friend, after you blacklist the 
 ```
 
 
-### Obtaining the blacklist
+### Obtaining the blocklist
 
 ```
 @interface TIMFriendshipManager : NSObject
 /**
- *  Obtain the blacklist
+ *  Obtain the blocklist
  *
  *  @param succ Success callback. The NSString* list is returned.
  *  @param fail   Failure callback

@@ -12,9 +12,9 @@ CDN supports various custom configurations that allow you to optimize your CDN a
 ## Access Control
 | Configuration Name | Feature Description |
 | ---------------------------------------- | ------------------------- |
-| [Ignore Query String Configuration](https://intl.cloud.tencent.com/document/product/228/35316) | You can specify whether a node will ignore the parameters after "?" in a user request URL. |
-| [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292) | You can configure the HTTP referer blacklist/whitelist. You can configure the settings in/outside mainland China differently. |
-| [IP Blacklist/Whitelist Configuration](https://intl.cloud.tencent.com/document/product/228/6298) | You can configure the IP blacklist/whitelist for access control. |
+| [Ignore Query String Configuration](https://intl.cloud.tencent.com/document/product/228/35316) | You can specify whether a node will ignore the parameters after ""?"" in a user request URL. |
+| [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292) | You can configure the HTTP referer blocklist/allowlist. You can configure the settings in/outside mainland China differently. |
+| [IP Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/6298) | You can configure the IP blocklist/allowlist for access control. |
 | [IP Access Limit Configuration](https://intl.cloud.tencent.com/document/product/228/6420) | You can configure the access limit of an IP to a single node. |
 | [Video Dragging Configuration](https://intl.cloud.tencent.com/document/product/228/8111) | You can enable the video dragging configuration. |
 | [Authentication Configuration](https://intl.cloud.tencent.com/document/product/228/35237) | You can configure the URL authentication. You can configure the settings in/outside mainland China differently. |
@@ -30,7 +30,7 @@ CDN supports various custom configurations that allow you to optimize your CDN a
 ## Origin-Pull Configuration
 | Configuration Name | Feature Description |
 | ---------------------------------------- | -------------------- |
-| [Range GETs Configuration](https://intl.cloud.tencent.com/document/product/228/7184)  | You can enable/disable Range GETs. |
+| [Range GETs Configuration](https://intl.cloud.tencent.com/document/product/228/7184)  | You can enable/disable Range GETs. |
 | [Follow 301/302 Configuration](https://intl.cloud.tencent.com/document/product/228/7183) | You can configure whether requests should be redirected when the origin server returns the 301/302 status code. |
 | [Origin-Pull Timeout Configuration](https://intl.cloud.tencent.com/document/product/228/35227) | You can configure the timeout periods for origin-pull TCP connection and data loading to ensure smooth origin-pull. |
 
@@ -42,6 +42,4 @@ CDN supports various custom configurations that allow you to optimize your CDN a
 | [Bandwidth Cap Configuration](https://intl.cloud.tencent.com/document/product/228/7541) | You can configure the bandwidth cap for domain names. When the cap is reached, the CDN service will be disabled and the access request will be forwarded to the origin server. You can configure the settings in/outside mainland China differently. |
 | [HTTPS Configuration](https://intl.cloud.tencent.com/document/product/228/35212) | You can configure HTTPS to implement secure acceleration, which supports forced HTTPS redirection, HTTP2.0 access, and OCSP stapling. |
 | [SEO Optimization Configuration](https://intl.cloud.tencent.com/document/product/228/35219) | You can enable SEO optimization configuration to ensure the stability of the search engine weights. |
-| [HTTP Header Configuration](https://intl.cloud.tencent.com/document/product/228/35320)  | You can add a HTTP header configuration. |
-
-
+| [HTTP Header Configuration](https://intl.cloud.tencent.com/document/product/228/35320)  | You can add an HTTP header configuration. |

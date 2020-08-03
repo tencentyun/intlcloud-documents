@@ -84,7 +84,7 @@ Before using the Tencent Cloud SMS service to send SMS messages, you need to cre
 
 
 ## General Management
-You can manage the blacklist and unsubscribe users in the console. For detailed directions, please see the following documents:
+You can manage the blocklist and unsubscribe users in the console. For detailed directions, please see the following documents:
 
 <table>
 <tr>
@@ -92,8 +92,8 @@ You can manage the blacklist and unsubscribe users in the console. For detailed 
 <th>Document</th>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/382/35473">Managing Blacklist</a></td>
-<td>This document describes how to blacklist a new mobile number and query or unblacklist a blacklisted number.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35473">Managing Blocklist</a></td>
+<td>This document describes how to block a new mobile number and query or unblock a blocked number.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/382/35474">Managing Unsubscribed Users</a></td>

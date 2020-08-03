@@ -10,7 +10,7 @@ The process of implementing offline message push is as follows:
 
 ## Directions
 
-Flyme is a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not included in the auto-start whitelist of the system. As apps running in the background are often killed by the system, we recommend that Meizu push be integrated on Meizu devices. Meizu push is a system-grade service of Flyme, with a high push delivery rate. Currently, **IM only supports the notification bar messages of Meizu push**.
+Flyme is a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not included in the auto-start allowlist of the system. As apps running in the background are often killed by the system, we recommend that Meizu push be integrated on Meizu devices. Meizu push is a system-grade service of Flyme, with a high push delivery rate. Currently, **IM only supports the notification bar messages of Meizu push**.
 >
 >- This document was prepared with direct reference to the official documentation of Meizu. If Meizu push is updated, refer to Meizu push documentation on the official website.
 >- This document was prepared based on the Flyme push access guide. It is intended for the Flyme system only and is not a unified push platform for Meizu (but the integration for different vendors).
