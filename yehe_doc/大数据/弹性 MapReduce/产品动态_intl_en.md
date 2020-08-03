@@ -1,4 +1,4 @@
-## June 2020
+<h2>June 2020</h2>
 <table>
 <thead>
 <tr>
@@ -28,14 +28,14 @@
 <tr>
 <td>Cluster event and cluster inspection are supported</td>
 <td>The console now supports recording critical change events and exception events occurring in the cluster to improve the efficiency of cluster troubleshooting. You can configure instant or regular inspection tasks to stay on top of the cluster health and handle exceptions or risks in time.
- </td><td>June 4, 2020</td>
+ </td><td>June 4, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">Cluster Inspection</a></td>
 </tr>
 </tbody></table>
 
-                
+               
 
-## May 2020
+<h2>May 2020</h2>
 <table>
 <thead>
 <tr>
@@ -64,7 +64,7 @@
 </tbody></table>
 
 
-## April 2020
+<h2>April 2020</h2>
 <table>
 <thead>
 <tr>
@@ -93,8 +93,7 @@
 </tbody></table>
 
 
-## March 2020 
-<table>
+<h2>March 2020</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -121,8 +120,7 @@
 </tr>
 </tbody></table>
 
-## February 2020
-<table>
+<h2>February 2020</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -147,10 +145,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## January 2020
-
-<table>
+<h2>January 2020</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -161,12 +156,12 @@
 </thead>
 <tbody><tr>
 <td>EMR supports cloud disk encryption</td>
-<td>EMR allows whitelisted CBS users to select cloud disk encryption when creating an EMR cluster.</td><td>January 2020</td>
+<td>EMR allows CBS users on the allowlist to select cloud disk encryption when creating an EMR cluster.</td><td>January 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/362/33139" target="_blank">Cloud Disk Encryption</a></td>
 </tr>
 <tr>
 <td>Task nodes support mounting multiple cloud disks</td>
-<td>Task nodes supports mounting cloud disks when a cluster is created or scaled out.</td><td>January 2020</td>
+<td>Task nodes support mounting cloud disks when a cluster is created or scaled out.</td><td>January 2020</td>
 <td>-</td>
 </tr>
 <tr>
@@ -175,10 +170,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## December 2019
-
-<table>
+<h2>December 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -223,10 +215,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-
-## November 2019
-
-<table>
+<h2>November 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -256,8 +245,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-## October 2019
-<table>
+<h2>October 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -272,8 +260,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
-## September 2019
-<table>
+<h2>September 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -298,8 +285,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-## August 2019
-<table>
+<h2>August 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -334,8 +320,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-## July 2019
-<table>
+<h2>July 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -370,8 +355,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-## June 2019
-<table>
+<h2>June 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -405,8 +389,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">Configuration Rollback</a></td>
 </tr>
 </tbody></table>
-## May 2019
-<table>
+<h2>May 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -458,8 +441,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
-## March 2019
-<table>
+<h2>March 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -470,7 +452,7 @@
 </thead>
 <tbody><tr>
 <td>New models are available</td>
-<td>The I3 model is available in the Beijing, Shanghai, and Guangzhou regions. This model is a CVM whitelist model, and you can purchase it only if you are in the I3 model whitelist.</td>
+<td>The I3 model is available in the Beijing, Shanghai, and Guangzhou regions. This model is a CVM allowlist model, and you can purchase it only if you are in the I3 model allowlist.</td>
 <td>March 2019</td>
 <td>-</td>
 </tr>
@@ -493,8 +475,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Configuration Adjustment</a></td>
 </tr>
 </tbody></table>
-## January 2019
-<table>
+<h2>January 2019</h2><table>
 <thead>
 <tr>
 <th width=20%>Update</th>

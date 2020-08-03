@@ -38,11 +38,11 @@ The default channel on the Opush platform is the public message channel. Now, th
 | Maximum number of pushes | All public message channels share a total number of pushes; if the daily limit is reached, they will stop pushing messages on the day. The current maximum number of daily pushes is the total number of all registered users * 2. | Unlimited. |
 | Configuration method | Default. | You need to register the channel with the Opush platform and set the corresponding channel attribute to "Private Message". |
 
->Official reminder from OPPO: you must not use the private message channel to push universal messages (such as trending news and new product promotions), as the backend will monitor the push content, and if you violate the operational rules, Opush has the right to disable your private channel access, and all consequences arising therefrom, such as exceptional API calls and delivery failures of messages sent through the private message channel shall be borne by you.
+>!Official reminder from OPPO: you must not use the private message channel to push universal messages (such as trending news and new product promotions), as the backend will monitor the push content, and if you violate the operational rules, Opush has the right to disable your private channel access, and all consequences arising therefrom, such as exceptional API calls and delivery failures of messages sent through the private message channel shall be borne by you.
 
 ### Application for OPPO private message channel
 1. Log in to the [Opush platform](https://push.oppo.com) and select **App Configuration** > **Create Channel** to create a channel. The channel ID and name are required and must be the same as those on the application client. Other configuration items are optional.
->Once the channel ID is set, it cannot be randomly changed or deleted.
+>!Once the channel ID is set, it cannot be randomly changed or deleted.
 
 2. Currently, the OPPO private message channel can take effect only after you apply for it through email. Please send an application email to Opush according to the following requirements. For more information, please see [Opush Channel Upgrade Beta Invitation](https://open.oppomobile.com/wiki/doc#id=10614).
 ```
@@ -63,7 +63,7 @@ I apply for connection to the Opush beta public/private message service for the 
 (2). Use the TPNS SDK (v1.1.5.4 or above) to create a notification channel. For more information, please see [Creating Notification Channel](https://intl.cloud.tencent.com/document/product/1024/30715).
 2. Configure RESTful API push.
 Set the `oppo_ch_id` parameter in the Android structure of the RESTful API request parameters so as to implement delivery based on notification channel. For more information, please see [Push API Parameter Description](https://intl.cloud.tencent.com/document/product/1024/33764).
->Currently, notifications pushed through the OPPO private message channel can be delivered only through RESTful APIs but not the console.
+>!Currently, notifications pushed through the OPPO private message channel can be delivered only through RESTful APIs but not the console.
 
 Below is a sample push:
 
@@ -125,7 +125,7 @@ Sample notification messages:
 | Personal family IoT reminder | xxxxxxxx | Mi Home smart camera_master bedroom  | Someone moved at 23:59 in the protected zone. |
 | Personal transaction reminder | xxxxxxxx | Fund transaction reminder | Your application for purchasing xx USD of the xx fund has been submitted. |
 
->a. The operational team of Mi Push will reply to you with the review result in 5 business days.
+>?a. The operational team of Mi Push will reply to you with the review result in 5 business days.
 >b. If your application is approved, you need to send the name that you want to display (on clients) for the channel to Mi as required. Then, the Mi Push team will create the channel of the corresponding notification message category (you cannot create it by yourself) and provide you with the `channel_id`.
 
 ### Using Mi Notification Message
@@ -155,7 +155,7 @@ The Vivo message categorization feature divides push messages into operation mes
 | Operation message | Number of SDK subscriptions * 2 | Collapsed when the application is not active and displayed when the application is active | The maximum number of messages one user can receive from one application per day is 5. |
 | System messages | Number of SDK subscriptions *2 | Displayed no matter whether the application is active | An unlimited number of messages can be received. |
 
->
+>?
 >1. Before June 1, 2020, no matter whether the message categorization feature is enabled, the frequency control rule remains the same, and the daily upper limit for "public messages (full push, group push, tag push)" per application per user is 5, while the number of messages for single push is unlimited. From June 1, 2020 on, the frequency control rule specifies that the upper limit for "operation messages" per application per user is 5, and if any user experience-related complaint is raised, the number will be adjusted accordingly.
 >2. There is no message box on Funtouch OS 10 and above, so messages will be displayed on the narrow bar when the application is not active.
 >3. Both the system message quota and operation message quota will automatically change with the number of SDK subscriptions. If special circumstances require an increase in the system message quota, please submit an application as instructed in **Vivo system message application** below.
@@ -174,7 +174,7 @@ Description of specific push scenario: such as personal user chat and merchant c
 ```
 
 ### Vivo system message usage
-Currently, Mi notification messages can be delivered only through RESTful APIs but not the console.
+Currently, vivo notification messages can be delivered only through RESTful APIs but not the console.
 Set the `vivo_ch_id` parameter in the Android structure of the RESTful API request parameters to "1" so as to implement delivery of Vivo system messages. For more information, please see the parameter description of the [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 Below is a sample push:
 

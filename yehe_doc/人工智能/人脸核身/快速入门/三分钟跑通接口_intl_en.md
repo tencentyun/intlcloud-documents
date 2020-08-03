@@ -2,8 +2,7 @@
 This document describes how to call Tencent Cloud FaceID APIs through API 3.0 Explorer and integrate SDKs in the corresponding programming language into your project after you purchase the FaceID service. You can access FaceID APIs quickly in the following steps.
 
 ## Prerequisites
-You have [applied to activate FaceID](https://intl.cloud.tencent.com/apply/p/shcgszvmppc) and your application has been approved.
-After your application is approved, enter [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=DetectAuth&SignVersion=) to call APIs in the following steps.
+Enter [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=DetectAuth&SignVersion=) to call APIs in the following steps.
 
 ## Directions
 ### Step 1

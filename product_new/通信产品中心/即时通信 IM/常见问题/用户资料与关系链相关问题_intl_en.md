@@ -6,8 +6,8 @@ There are several possible reasons for the occurrence of error code 30001:
 3. User A initiates a friend deletion request to user B, but user B is not in user A’s friend list.
 4. User A initiates a friend update request to update friend B’s relationship chain data, but friend B is not in user A’s friend list.
 5. User A initiates a request to fetch the relationship chain data of friend B, but friend B is not in user A’s friend list.
-6. User A initiates a blacklist request to user B, but user B is already in user A’s blacklist.
-7. User A initiates a request to remove user B from the blacklist, but user B is not in user A’s blacklist.
+6. User A initiates a blocklist request to user B, but user B is already in user A’s blocklist.
+7. User A initiates a request to remove user B from the blocklist, but user B is not in user A’s blocklist.
 
 When the IM backend returns an error code, it also returns the detailed error information, and users can identify the cause of the error based on the error information.
 

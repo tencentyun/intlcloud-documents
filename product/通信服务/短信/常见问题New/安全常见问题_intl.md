@@ -27,14 +27,11 @@ The sdkappid is the unique ID of an SMS project, which is used to identify the p
 For more information on how to create a project, please see the access guide.
 
 
-### How to set a whitelist with no frequency limit on sending SMS messages for a test phone number or alarm phone number?
+### How to set an allowlist with no frequency limit on sending SMS messages for a test phone number or alarm phone number?
 
-To impose no frequency limit on test numbers, [contact SMS helper](/document/product/382/3773) to add the numbers to the whitelist.
+To impose no frequency limit on test numbers, [contact SMS helper](/document/product/382/3773) to add the numbers to the allowlist.
 
 ### How can I check whether a specified phone number has received SMS messages?
 
 1. Check the delivery records in **China SMS Messages** or **Global SMS Messages** -> **Statistical Analysis** -> **SMS Message Records** on the Tencent Cloud SMS Console.
 2. Export an excel file containing the records of sending SMS messages over a period of time from **China SMS Messages** or **Global SMS Messages** -> **Statistical Analysis** -> **SMS Message Records** on the Tencent Cloud SMS Console.
-
-
-

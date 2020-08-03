@@ -4,14 +4,14 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 - Log reporting provides best-effort service, that is, it prioritizes service forwarding over log reporting.
 - Log storage and search provide SLA based on the storage service currently in use.
 
->
+>?
 >- As the feature of storing access logs in COS will be officially disused after 00:00:00, June 30, 2020, you are recommended to use CLS for CLB access log storage.
 >- Currently, access logs can be stored in CLS only for layer-7 protocols (HTTP/HTTPS) but not layer-4 protocols (TCP/UDP/TCP SSL).
-- The access log service for CLB is free of charge, and you only need to pay for CLS usage.
-- Currently, access logs can be stored in CLS in the Guangzhou, Shanghai, Nanjing, Beijing, Chongqing, Chengdu, Hong Kong (China), Singapore, Mumbai, Silicon Valley, Toronto, Tokyo, and Frankfurt regions through the console or APIs.
+- The feature of storing CLB access logs in CLS is free of charge, and you only need to pay for CLS usage.
+- Currently, access logs can be stored in CLS in the Guangzhou, Shanghai, Nanjing, Beijing, Chongqing, Chengdu, Hong Kong (China), Singapore, Mumbai, Silicon Valley, Toronto, and Frankfurt regions through the console or APIs.
 - Currently, [CLS](https://intl.cloud.tencent.com/document/product/614) is in beta test. To try it out, please submit a ticket for application.
 
-## Enabling Access Logging
+## Enabling Access Log Storage in CLS
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. Click the ID of the CLB instance to be configured to enter the "Basic Information" page.
 3. In the "Log Access" module, edit "Cloud Log Service".
@@ -22,9 +22,11 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 6. Then, click the logset or log topic to redirect to the log search page in CLS.
 7. (Optional) If you want to disable access logging, you can edit "Cloud Log Service" again to disable it and submit in the pop-up window.
 
+>? With the CLS scheme, you can also store access logs in COS according to your actual business needs such as costs and usage. For more information, please see [Shipping Overview](https://intl.cloud.tencent.com/document/product/614/32940).
+
 ## Searching for Access Log
 ### Step 1. Configure log topic indexes
->The log topics must be configured with indexes; otherwise, no logs can be searched for.
+>?The log topics must be configured with indexes; otherwise, no logs can be searched for.
 >
 The recommended indexes are as follows:
 
@@ -52,6 +54,7 @@ The steps are as follows:
 2. On the left sidebar, click **Search and Analysis** to enter the "Search Analysis" page.
 3. On the "Search Analysis" page, select a logset, log topic, and time range, and click **Search Analysis** to search for the access logs reported by CLB to CLS. For more information on the search syntax, please see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439).
 ![](https://main.qcloudimg.com/raw/e15271ea2d1ffac0e735eb254224a5e5.png)
+
 
 ## Log Format and Variable Description
 ### Log format

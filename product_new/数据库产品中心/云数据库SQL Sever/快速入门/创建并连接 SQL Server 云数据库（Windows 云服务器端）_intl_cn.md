@@ -9,7 +9,7 @@
 ![](https://main.qcloudimg.com/raw/019e13af6a6db7bf831cad9d7000279e.png)
 4. Windows 云服务器上启动 SQL Server Management Studio。在【Connect to server】页面，填写相关信息连接云数据库。单击【Connect】，稍等几分钟后，SQL Server Management Studio 将连接到您的数据库实例。
  - **Server type**：选择 Database Engine。
- - **Server name**：数据库实例的内网 IP 和端口号，需用英文逗号隔开。例如，内网 IP 和端口号为`10.10.10.10:1433`，则在此填入`10.10.10.10,1433`。注意使用英文标点符号。
+ - **Server name**：数据库实例的内网 IP 和端口号，需用英文逗号隔开。例如，内网 IP 为`10.10.10.10`、端口号为`1433`，则在此填入`10.10.10.10,1433`。注意使用英文标点符号。
  -  **Authentication**：选择 SQL Server Authentication。
  -  **Login 和 Password**：在实例【帐号管理】页创建帐号时，填写的帐号名和密码。
 ![](//mc.qcloudimg.com/static/img/1cac47c4fc515d30d2cb5a0ef0141e22/image.png)

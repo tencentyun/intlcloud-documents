@@ -1,7 +1,7 @@
 ## Feature Description
 - When the admin sends a message to an account, the recipient will see that the message sender is the admin.
 - When the admin specifies an account to send a message to another account, the recipient will see that the sender is not the admin but the account specified by the admin.
-- This API does not check whether the sender and the recipient are friends (nor does it check the blacklist) or whether the recipient is muted.
+- This API does not check whether the sender and the recipient are friends (nor does it check the blocklist) or whether the recipient is muted.
 
 > When the server uses this RESTful API to send one-to-one messages, you can choose whether to synchronize the messages to the sender (admin account or account specified by the admin). The synchronization methods include online terminals and the roaming server. The RESTful API provides the SyncOtherMachine parameter to determine whether to synchronize the messages. For details, see “Sample request packet”.
 
