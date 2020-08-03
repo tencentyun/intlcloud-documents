@@ -6,41 +6,62 @@
 
 ## 操作步骤
 ### 控制台操作指引
-
-#### 创建 StorageClass<span id="create"></span>
+<span id="create"></span>
+#### 创建 StorageClass
 1. 登录[ 容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧栏中的【集群】，进入“集群管理”界面。
 2. 单击需创建 StorageClass 的集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的【存储】>【StorageClass】，进入 “StorageClass” 页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/9e4085b33612d7c234c9e868d941e561.png)
 4. 单击【新建】进入“新建StorageClass” 页面，参考以下信息进行创建。如下图所示：
-![](https://main.qcloudimg.com/raw/5c10dbeed3d6a7073ce38ead2223d38d.png)
+![](https://main.qcloudimg.com/raw/cf1174e04957af4587f39b2c45247d9b.png)
 主要参数信息如下：
 	- **名称**：自定义，本文以 `cbs-test` 为例。
 	- **Provisioner**：选择【云硬盘CBS】。
 	- **可用区**：表示当前地域下支持使用云硬盘的可用区，请按需选择。
-	- **计费模式**：提供【按量计费】的计费模式，不同计费模式所支持的回收策略不同，请参考以下信息进行选择：  
-		- **按量计费**：一种弹性计费模式，支持随时开通/销毁实例，按实例的实际使用量付费。支持删除和保留的回收策略。
-> - **云盘类型**：通常提供【普通云硬盘】、【高性能云硬盘】、【SSD云硬盘】三种类型，不同可用区下提供情况有一定差异，详情请参见 [云硬盘类型说明 ](https://intl.cloud.tencent.com/document/product/213/33000)并结合控制台提示进行选择。
->- **回收策略**：云盘的回收策略，通常提供【删除】和【保留】两种回收策略，具体选择情况与所选计费模式相关。出于数据安全考虑，推荐使用保留回收策略。
-5. 单击【新建StorageClass 】即可完成创建。
+	- **计费模式**：提供【按量计费】弹性计费模式，支持随时开通/销毁实例，按实例的实际使用量付费。支持删除和保留的回收策略。
+- **云盘类型**：通常提供【高性能云硬盘】、【SSD云硬盘】两种类型，不同可用区下提供情况有一定差异，详情请参见 [云硬盘类型说明 ](https://intl.cloud.tencent.com/document/product/213/33000)并结合控制台提示进行选择。
+- **回收策略**：云盘的回收策略，通常提供【删除】和【保留】两种回收策略，具体选择情况与所选计费模式相关。出于数据安全考虑，推荐使用保留回收策略。
+- **卷绑定模式**：提供【立即绑定】和【等待调度】两种卷绑定模式，不同模式所支持的卷绑定策略不同，请参考以下信息进行选择：
+	- **立即绑定**：通过该 storageclass 创建的 PVC 将直接进行 PV 的绑定和分配。
+	- **等待调度**：通过该 storageclass 创建的 PVC 将延迟与 PV 的绑定和分配，直到使用该 PVC 的 Pod 被创建。
+- **定期备份**：设置定期备份可有效保护数据安全，备份数据将产生额外费用，详情请见 [快照概述](https://intl.cloud.tencent.com/document/product/362/31638)。
 
-#### 使用指定 StorageClass 创建 PVC<span id="createPVC"></span>
+	>? 容器服务默认提供的 default-policy 备份策略的配置包括：执行备份的日期、执行备份的时间点和备份保留的时长。
+	
+5. 单击【新建StorageClass】即可完成创建。
+
+   <span id="createPVC"></span>
+
+#### 使用指定 StorageClass 创建 PVC
 1. 在“集群管理”页面，选择需创建 PVC 的集群 ID。
 2. 在集群详情页面，选择左侧菜单栏中的【存储】>【PersistentVolumeClaim】，进入 “PersistentVolumeClaim” 信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/e771b0d7e010605c3701de3f20831a96.png)
 3. 单击【新建】进入“新建PersistentVolumeClaim” 页面，参考以下信息设置 PVC 关键参数。如下图所示：
-![](https://main.qcloudimg.com/raw/358edb5da97cd63030437b5628fa4d79.png)
+![](https://main.qcloudimg.com/raw/007f255c46582078e598932c5b1052a6.png)
 主要参数信息如下：
    - **名称**：自定义，本文以 `cbs-pvc` 为例。
    - **命名空间**：选择 “default”。
    - **Provisioner**：选择【云硬盘CBS】。
    - **读写权限**：云硬盘仅支持单机读写。
-   - **StorageClass**：按需选择 StorageClass，本文以选择在 [创建 StorageClass](#create) 步骤中创建的 `cbs-test` 为例。
-5. 单击【创建PersistentVolumeClaim】，即可完成创建。
+   - **StorageClass**：按需指定 StorageClass，本文选择已在 [创建 StorageClass](#create) 步骤中创建的 `cbs-test` 为例。
+>?
+>- PVC 和 PV 会绑定在同一个 StorageClass 下。
+>- 不指定 StorageClass 意味着该 PVC 对应的 StorageClass 取值为空，对应 YAML 文件中的 `storageClassName` 字段取值为空字符串。
+
+   - **PersistVolume**：按需指定 PersistentVolume，本文以不指定 PersistentVolume 为例。
+>? 
+>- 系统首先会筛选当前集群内是否存在符合绑定规则的 PV，如果没有则根据 PVC 和所选 StorageClass 的参数动态创建 PV 与之绑定。
+>- 系统不允许在不指定 StorageClass 的情况下同时选择不指定 PersistVolume。
+>- 不指定 PersistentVolume。
+
+   - **云盘类型**：根据所选的 StorageClass 展示所选的云盘类型为【高性能云硬盘】或【SSD云硬盘】。
+   - **容量**：在不指定 PersistentVolume 时，需提供期望的云硬盘容量。
+   - **费用**：根据上述参数计算创建对应云盘的所需费用，详情参考 [计费模式](https://intl.cloud.tencent.com/document/product/362/32415)。
+4. 单击【创建PersistentVolumeClaim】，即可完成创建。
 
 #### 创建 StatefulSet 挂载 PVC 类型数据卷
->该步骤以创建工作负载 StatefulSet 为例。
->
+>?该步骤以创建工作负载 StatefulSet 为例。
+
 1. 在目标集群详情页，选择左侧菜单栏中的【工作负载】>【StatefulSet】，进入 “StatefulSet” 页面。
 2. 单击【新建】进入“新建Workload” 页面，参考[ 创建 StatefulSet ](https://intl.cloud.tencent.com/document/product/457/30663)进行创建，并参考以下信息进行数据卷挂载。如下图所示：
 ![](https://main.qcloudimg.com/raw/f199ac6bdd9f926283916c4258502b55.png)
@@ -72,7 +93,7 @@ provisioner: cloud.tencent.com/qcloud-cbs ## TKE 集群自带的 provisioner
 parameters:
   type: CLOUD_PREMIUM
   # 支持 CLOUD_BASIC,CLOUD_PREMIUM,CLOUD_SSD  如果不识别则当做 CLOUD_BASIC
-  # paymode: PREPAID
+  # paymode: POSTPAID
   # paymode为云盘的计费模式，默认是 POSTPAID（按量计费：支持 Retain 保留和 Delete 删除策略，Retain 仅在高于1.8的集群版本生效）
   # aspid:asp-123
   # 支持指定快照策略，创建云盘后自动绑定此快照策略,绑定失败不影响创建
@@ -95,7 +116,6 @@ parameters:
 <td>aspid</td> <td>指定快照 ID，创建云硬盘后自动绑定此快照策略，绑定失败不影响创建。</td>
 </tr>
 </table>
-
 
 
 #### 创建多实例 StatefulSet
