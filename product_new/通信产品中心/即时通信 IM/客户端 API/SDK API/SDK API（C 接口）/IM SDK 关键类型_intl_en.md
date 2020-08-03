@@ -667,8 +667,8 @@ Notification elements of the group system (for individuals).
 | kTIMFriendChange_FriendDel | Deletes a friend. |
 | kTIMFriendChange_PendencyAdd | Pending adding |
 | kTIMFriendChange_PendencyDel | Pending deletion |
-| kTIMFriendChange_BlackListAdd | Adds a blacklist. |
-| kTIMFriendChange_BlackListDel | Deletes a blacklist. |
+| kTIMFriendChange_BlackListAdd | Adds a blocklist. |
+| kTIMFriendChange_BlackListDel | Deletes a blocklist. |
 | kTIMFriendChange_PendencyReadedReport | Reports pending message read. |
 | kTIMFriendChange_FriendProfileUpdate | Updates friend data. |
 | kTIMFriendChange_FriendGroupAdd | Adds a group. |
@@ -692,8 +692,8 @@ Notification elements of the group system (for individuals).
 | kTIMFriendChangeElemFriendAddPendencyItemArray | array [FriendAddPendency](#friendaddpendency) | Read-only | List of pending friend add requests. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_PendencyAdd`. |
 | kTIMFriendChangeElemPendencyDelIdentifierArray | array string | Read-only | List of friend deletion requests. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_PendencyDel`. |
 | kTIMFriendChangeElemPendencyReadedReportTimestamp | uint64 | Read-only | Pending message read report timestamp. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_PendencyReadedReport`. |
-| kTIMFriendChangeElemBlackListAddIdentifierArray | array string | Read-only | List of UserIDs added to the blacklist. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_BlackListAdd`. |
-| kTIMFriendChangeElemBlackListDelIdentifierArray | array string | Read-only | List of UserIDs removed from the blacklist. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_BlackListDel`. |
+| kTIMFriendChangeElemBlackListAddIdentifierArray | array string | Read-only | List of UserIDs added to the blocklist. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_BlackListAdd`. |
+| kTIMFriendChangeElemBlackListDelIdentifierArray | array string | Read-only | List of UserIDs removed from the blocklist. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_BlackListDel`. |
 | kTIMFriendChangeElemFreindProfileUpdateItemArray | array [FriendProfileUpdate](#friendprofileupdate) | Read-only | Friend profile update list. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_FriendProfileUpdate`. |
 | kTIMFriendChangeElemFriendGroupAddIdentifierArray | array string | Read-only | Names list of added friend groups. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_FriendGroupAdd`. |
 | kTIMFriendChangeElemFriendGroupDelIdentifierArray | array string | Read-only | Names list of deleted friend groups. This parameter is valid only when the value of `change_type` is `kTIMFriendChange_FriendGroupDel`. |
