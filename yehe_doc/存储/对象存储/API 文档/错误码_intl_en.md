@@ -116,7 +116,7 @@ The nodes are detailed as follows:
 | 400 Bad Request | XMLSizeLimit                        | The length of XML has exceeded the limit                                                                  |
 | 402 Payment Required                | PaymentRequired                       | Payment is required for exceeding quotas                                             |
 | 403 Forbidden                       | AccessDenied                          | Access denied for incorrect signature or permission. See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) and [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583)                                 |
-| 403 Forbidden                       | AccessForbidden                       | CORS request denied. Please confirm that your request method or the Origin, Access-Control-Request-Method and Access-Control-Requet-Headers request headers are in the CORS whitelist |
+| 403 Forbidden                       | AccessForbidden                       | CORS request denied. Please confirm that your request method or the Origin, Access-Control-Request-Method and Access-Control-Requet-Headers request headers are in the CORS allowlist |
  | 403 Forbidden | InvalidAccessKeyId | SecretID does not exist|
 | 403 Forbidden                       | InvalidObjectState                    | The object storage class conflicts with the operation request                                   |
 | 403 Forbidden                       | NoProcessAuthority                    | No permission for image processing                                           |
