@@ -122,11 +122,9 @@ In Windows, if a UI message loop has been created before the API [TIMInit](https
 | [TIMFriendshipGetFriendGroupList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetfriendgrouplist) | Obtains the group information of a specified friend group. |
 | [TIMFriendshipModifyFriendGroup](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipmodifyfriendgroup) | Modifies a friend group. |
 | [TIMFriendshipDeleteFriendGroup](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipdeletefriendgroup) | Deletes a friend group. |
-| [TIMFriendshipAddToBlackList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipaddtoblacklist) | Adds a specified user to the blacklist. |
-| [TIMFriendshipGetBlackList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetblacklist) | Obtains the blacklist. |
-| [TIMFriendshipDeleteFromBlackList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipdeletefromblacklist) | Deletes a specified user from the blacklist. |
+| [TIMFriendshipAddToBlackList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipaddtoblacklist) | Adds a specified user to the blocklist. |
+| [TIMFriendshipGetBlackList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetblacklist) | Obtains the blocklist. |
+| [TIMFriendshipDeleteFromBlackList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipdeletefromblacklist) | Deletes a specified user from the blocklist. |
 | [TIMFriendshipGetPendencyList](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipgetpendencylist) | Obtains the information list of pending friend requests. |
 | [TIMFriendshipDeletePendency](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipdeletependency) | Deletes the specified pending friend request information. |
 | [TIMFriendshipReportPendencyReaded](https://intl.cloud.tencent.com/document/product/1047/34559#timfriendshipreportpendencyreaded) | Reports the read state of the pending friend request information. |
-
-
