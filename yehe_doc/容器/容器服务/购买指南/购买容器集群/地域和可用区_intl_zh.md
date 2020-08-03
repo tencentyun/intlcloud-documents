@@ -8,8 +8,8 @@
 
 ### 相关特性
 
-- 不同地域之间网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
-- 不同地域之间云产品可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 进行 Internet 访问。处于私有网络中的云产品也可以通过腾讯云提供的对等连接经由腾讯云高速互联网络通信，以获得比 Internet 访问更稳定高速的互联。
+- 不同地域之间的网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
+- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/877) 进行通信，此通信方式更较为高速、稳定。
 - [负载均衡](https://intl.cloud.tencent.com/document/product/214 ) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 ## 可用区
@@ -17,13 +17,12 @@
 ### 简介
 
 可用区（Zone）是指腾讯云在同一地域内电力和网络互相独立的物理数据中心。其目标是能够保证可用区间故障相互隔离（大型灾害或者大型电力故障除外），不出现故障扩散，使得用户的业务持续在线服务。通过启动独立可用区内的实例，用户可以保护应用程序不受单一位置故障的影响。
-您可以通过 API 接口查询可用区列表查看完整的可用区列表。
+您可以通过 API 接口 [查询可用区列表](https://intl.cloud.tencent.com/document/product/213/35071) 查看完整的可用区列表。
 
 ### 相关特性
 
 处于相同地域不同可用区，但在同一个私有网络下的云产品之间均通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
->内网互通是指同一账户下的资源互通，不同账户的资源内网完全隔离。
->
+>? 内网互通是指同一账户下的资源互通，不同账户的资源内网完全隔离。
 
 <span id="MainlandChina"></span>
 ## 中国
@@ -38,7 +37,7 @@
 		<td>广州一区（已售罄）<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
-		<td>广州二区<br> ap-guangzhou-2</td>
+		<td>广州二区（已售罄）<br> ap-guangzhou-2</td>
 	</tr>
 	<tr>
 		<td>广州三区<br> ap-guangzhou-3</td>
@@ -46,6 +45,21 @@
 	<tr>
 		<td>广州四区<br> ap-guangzhou-4</td>
 	</tr>
+	<tr>
+		<td>华南地区（清远）<br> ap-qingyuan</td>
+		<td>清远一区<br> ap-qingyuan-1</td>
+	</tr>	
+	<tr>
+		<td rowspan="3">华南地区（深圳金融）<br>ap-shenzhen-fsi</td>
+		<td>深圳金融一区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shenzhen-fsi-1</span></td>
+	</tr>
+	<tr>
+		<td>深圳金融二区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shenzhen-fsi-2</span></td>
+	</tr>
+		<tr>
+		<td>深圳金融三区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shenzhen-fsi-3</span></td>
+	</tr>
+	<tr>
 		<td rowspan="4">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
 	</tr>
@@ -57,6 +71,16 @@
 	</tr>
 	<tr>
 		<td>上海四区<br>ap-shanghai-4</td>
+	</tr>
+	<tr>
+			<td rowspan="3">华东地区（上海金融）<br>ap-shanghai-fsi</td>
+			<td>上海金融一区（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shanghai-fsi-1</td>
+	</tr>
+	<tr>
+			<td>上海金融二区（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shanghai-fsi-2</td>
+	</tr>
+	<tr>
+			<td>上海金融三区（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shanghai-fsi-3</td>
 	</tr>
 		<tr>
 			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
@@ -100,7 +124,6 @@
 </table>	
 
 <span id="InternationalArea"></span>
-
 ## 其他国家和地区	
 <table class="table-striped">
 	<tbody>
@@ -166,7 +189,7 @@
 - 云服务器和其他云产品的关系。
 建议您在选择其他云产品时，尽量都在同个地域同个可用区，以便各云产品间可通过内网进行通信，降低访问时延、提高访问速度。
 - 业务高可用和容灾考虑。
-即使只有一个私有网络的场景下，建议您将业务至少部署在不同的可用区，以保证可用区间的故障隔离，实现跨可用区容灾。
+即使在只有一个私有网络的场景下，建议您将业务至少部署在不同的可用区，以保证可用区间的故障隔离，实现跨可用区容灾。
 - 不同可用区间可能会有网络的通信延迟，需要结合业务的实际需求进行评估，在高可用和低延迟之间找到最佳平衡点。
 - 如果您需要访问其他国家和地区的主机，建议您选择其他国家和地区的云服务器进行访问。如果您在 [中国](#MainlandChina) 创建云服务器，访问 [其他国家和地区的主机](#InternationalArea) 会有较高的访问延迟，不建议您使用。
 
@@ -195,7 +218,7 @@
 	  <td>用户只能在特定可用区下创建 CVM 实例。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4941?from_cn_redirect=1">自定义镜像</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/213/4941">自定义镜像</a> </td>
 	  <td>img-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>用户可以创建实例的自定义镜像，并在同个地域的不同可用区下使用。需要在其他地域使用时请使用复制镜像功能将自定义镜像复制到其他地域下。</td>
@@ -207,7 +230,7 @@
 	  <td>弹性 IP 地址在某个地域下创建，并且只能与同一地域的实例相关联。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://intl.cloud.tencent.com/document/product/213/12452?from_cn_redirect=1">安全组</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/213/12452">安全组</a> </td>
 	  <td>sg-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>安全组在某个地域下创建，并且只能与同一地域的实例相关联。腾讯云为用户自动创建三条默认安全组。</td>
@@ -225,7 +248,7 @@
 	  <td>为某块云硬盘创建快照后，用户可在该地域下使用该快照进行其他操作（如创建云硬盘等）。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://intl.cloud.tencent.com/document/product/214/524?from_cn_redirect=1">负载均衡</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/214/524">负载均衡</a> </td>
 	  <td>clb-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>负载均衡可以绑定单地域下不同可用区的云服务器进行流量转发。</td>
@@ -243,7 +266,7 @@
 	  <td>用户不能跨可用区创建子网。</td>
 	</tr>
 	<tr>
-	<td> 路由表 </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/215/31810">路由表</a> </td>
 	  <td>rtb-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>用户创建路由表时需要指定特定的私有网络，因此跟随私有网络的位置属性。</td>
@@ -259,7 +282,7 @@
 一个已经启动的实例是无法更改其可用区的，但是用户可以通过其他方法把实例迁移至其他可用区。迁移过程包括从原始实例创建自定义镜像、使用自定义镜像在新可用区中启动实例以及更新新实例的配置。
 1. 创建当前实例的自定义镜像。更多信息，请参阅 [创建自定义镜像](https://intl.cloud.tencent.com/document/product/213/4942)。
 2. 如果当前实例的网络环境为 [私有网络](https://intl.cloud.tencent.com/document/product/213/5227) 且需要在迁移后保留当前私有 IP 地址，用户可以先删除当前可用区中的子网，然后在新可用区中用与原始子网相同的 IP 地址范围创建子网。需要注意的是，不包含可用实例的子网才可以被删除。因此，应该将在当前子网中的所有实例移至新子网。
-3. 使用刚刚创建的自定义镜像在新的可用区中创建一个新实例。用户可以选择与原始实例相同的实例类型及配置，也可以选择新的实例类型及配置。更多信息，请参阅 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
+3. 使用刚创建的自定义镜像在新的可用区中创建一个新实例。用户可以选择与原始实例相同的实例类型及配置，也可以选择新的实例类型及配置。更多信息，请参阅 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
 4. 如果原始实例已关联弹性 IP 地址，则将其与旧实例解关联并与新实例相关联。更多信息，请参阅 [弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733)。
 5. （可选）若原有实例为 [按量计费](https://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择销毁原始实例。更多信息，请参阅 [销毁实例](https://intl.cloud.tencent.com/document/product/213/4930)。
 
