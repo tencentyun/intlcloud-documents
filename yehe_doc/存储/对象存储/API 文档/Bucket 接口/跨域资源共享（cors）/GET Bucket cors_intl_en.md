@@ -37,7 +37,7 @@ This API only returns common response headers. For more information, see [Common
 
 A successful query will return **application/xml** data which includes all information about the CORS configuration on the bucket.
 
-```xml
+```plaintext
 <?xml version='1.0' encoding='utf-8' ?>
 <CORSConfiguration>
 	<CORSRule>
