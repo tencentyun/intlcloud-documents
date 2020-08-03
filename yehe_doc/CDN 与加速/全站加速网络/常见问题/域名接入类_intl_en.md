@@ -95,43 +95,27 @@ No. ECDN currently does not support connecting wildcard domain names.
 ### What differences are there between an acceleration port (or access port) and origin-pull port?
 
 
-
 They have the following differences when CDN or ECDN is used:
-
-
-
 <table>
-
-   <tr>
-      <th style=""width: 80px; text-align: center;"">Port Type</th>
-
-      <th style=""width: 300px; text-align: center;"">Acceleration Port</th>
-
-      <th style=""width: 300px; text-align: center;"">Origin-Pull Port</th>
-   </tr>
-   <tr>
-
-      <td style=""width: 80px; text-align: center;"">Port difference</td>
-
-      <td style=""width: 300px; text-align: left;"">It is the CDN/ECDN service port, which is also the port for client or user requests to access edge servers</td>
-
-      <td style=""width: 300px; text-align: left;"">It is the origin server service port, which is also the port for CDN/ECDN node requests to access origin servers</td>
-   </tr>
-   <tr>
-      <td style=""width: 80px; text-align: center;"">Port number</td>
-
-      <td>Only ports 80, 443, and 8080 are supported</td>
-
-      <td>1–65535</td>
-   </tr>
+   <tr>
+      <th style=""width: 80px; text-align: center;"">Port Type</th>
+      <th style=""width: 300px; text-align: center;"">Acceleration Port</th>
+      <th style=""width: 300px; text-align: center;"">Origin-Pull Port</th>
+   </tr>
+   <tr>
+      <td style=""width: 80px; text-align: center;"">Port difference</td>
+      <td style=""width: 300px; text-align: left;"">It is the CDN/ECDN service port, which is also the port for client or user requests to access edge servers</td>
+      <td style=""width: 300px; text-align: left;"">It is the origin server service port, which is also the port for CDN/ECDN node requests to access origin servers</td>
+   </tr>
+   <tr>
+      <td style=""width: 80px; text-align: center;"">Port number</td>
+      <td>Only ports 80, 443, and 8080 are supported</td>
+      <td>1–65535</td>
+   </tr>
 </table>
-
 >
-
-> - After ECDN is activated, if the client request port is different from the service ports opened on the node, client access requests cannot be accelerated by the node. 
-
-> - You can specify the origin-pull port on a node on the ECDN domain management page.
-
+>- After ECDN is activated, if the client request port is different from the service ports opened on the node, client access requests cannot be accelerated by the node. 
+>- You can specify the origin-pull port on a node on the ECDN domain management page.
 
 
 ### What should I do if domain name connection failed in the console?
