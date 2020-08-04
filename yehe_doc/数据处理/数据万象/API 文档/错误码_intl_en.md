@@ -15,7 +15,7 @@ When an image fails to be downloaded, X-ErrNo contained in the header of the res
 | -107 | Invalid Host header field. | Check whether Host is correct. |
 | -108 | Invalid Referer. | Check the Referer configuration. |
 | -109 | Invalid style name ID. The image corresponding to the style name is not found. This style name may have been added after the image was uploaded, and therefore data corresponding to this style name could not be generated when the image was uploaded. | N/A |
-| -110 | The image is blacklisted. | N/A |
+| -110 | The image is blocked. | N/A |
 | -120 | Data returned by the origin server is exceptional during origin-pull, and consequently image data cannot be properly retrieved. | Check the data on the origin server. |
 | -124 | A download offset error has occurred. The setting of Range (checkpoint restart offset) for the HTTP request may be incorrect. | Check the checkpoint restart offset setting. |
 | -154 | Download is prohibited for this URL by the original image protection mechanism. | Use the style to access the image. |
@@ -42,12 +42,12 @@ When an image fails to be downloaded, X-ErrNo contained in the header of the res
 | -46152 | The bucket name is invalid. | Check whether the bucket name is valid. |                                 
 | -46154 | The APPID is invalid. | Check whether the APPID is valid. |
 | -46614 | Downloading is not allowed for a file that is being uploaded. | Send the download request after the file has finished uploading. |                              
-| -46617 | A blacklisted entry is hit. | Check whether the content of the image is illegal. |
+| -46617 | A blocked entry is hit. | Check whether the content of the image is illegal. |
 | -46618 | Signature authentication fails. | Check whether the signature is correct. |
 | -46619 | The signature is expired. | Update the signature. |
 | -46620 | The bucket is blocked. | Your bucket is blocked. [Submit a ticket](https://console.cloud.tencent.com/workorder/category) for further assistance. |
 | -46621 | The file is blocked. | Your resource is blocked. In this case, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us. |
-| -46627 | The user is currently blacklisted. | Your account is blocked. In this case, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us. |
+| -46627 | The user is currently blocked. | Your account is blocked. In this case, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us. |
 | -46628 | The file does not exist. | Check whether the file to be downloaded exists. |
 | -46642 | The APPID does not exist. | Check whether the APPID is correct. |
 | -46646 | The file is blocked. | The file is blocked. Check whether the content of the file is illegal. |                    
@@ -66,7 +66,7 @@ When an image fails to be downloaded, X-ErrNo contained in the header of the res
 | -60955 | Invalid URL. | Check whether the URL is correct. |
 | -60950 | No file is specified. | Specify the file to be processed in the request. |
 | -60949 | The request rate is too high. | Reduce the request rate. To increase the rate limit, contact us. |
-| -60948 | The account is blacklisted. | Your account is blocked. [Submit a ticket](https://console.cloud.tencent.com/workorder/category) for further assistance. |
+| -60948 | The account is blocked. | Your account is blocked. [Submit a ticket](https://console.cloud.tencent.com/workorder/category) for further assistance. |
 | -60938 | Incomplete signing information. | Check the required items in the signing information. |
 | -60936 | The request is denied. | AccessDenied. |
 | -60932 | The signature is incorrect. | The signature is incorrect. In this case, check whether the signing information matches. |

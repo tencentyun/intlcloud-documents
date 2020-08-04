@@ -34,7 +34,7 @@ Yes, if you set permissions configuration as required. For specific configuratio
 Yes. However, due to policies, the public ISP's network must be used when the overseas acceleration platform GCD pulls the data in Mainland China from the origin server or the Mainland Chinese users access overseas nodes. The access speed may be unsatisfactory and even the website cannot be accessed. You are suggested to use the URL prefetch feature of overseas acceleration GCD to cache hotspot files in advance.
 
 
-### What should I do if COS denies my access request with whitelisted headers after I configured CORS?
+### What should I do if COS denies my access request with allowed headers after I configured CORS?
 
 To find the reason for the deny:
 1. Check if your configuration is consistent with the headers you include, especially for the presence of invisible characters, such as spaces.
@@ -46,7 +46,7 @@ To find the reason for the deny:
 ## FAQs about Domain Names and Other Issues
 
 
-### When I manage domain names on the console, I am always prompted to "Enable at least one available key". What should I do?
+### When I manage domain names on the console, I am always prompted to ""Enable at least one available key"". What should I do?
 
 Log in to the [CAM Console](https://console.cloud.tencent.com/cam/capi) to check if the cloud API key is enabled.
 
@@ -61,13 +61,13 @@ Currently, you need to enable CDN service to use a custom domain name in COS.
 - For domain names connected to a CDN node in Mainland China, you need to complete ICP filing. You are not required to do so through Tencent Cloud though.
 - If your domain name is connected to a CDN node outside Mainland China, you don't need to obtain an ICP filing for it.
 
-### When the origin server is changed in the CDN Console, why does the original custom domain name disappear in the COS Console ?
+### When the origin server is changed in the CDN Console, why does the original custom domain name disappear in the COS Console?
 
 >If you use the Console V5 configured with JSON domain name, the COS V5 Console cannot display the new domain name.
 
 Check whether the JSON domain name is configured in your bucket, and modify the JSON domain name to XML domain name.
 
-<a id="gcd"></a>
+<a id=""gcd""></a>
 ### Can I access the overseas acceleration GCD platform via unfiled domain names?
 
 ICP filing is not required for GCD. However, it should be noted that your data and operations in Tencent Cloud should comply with local laws and regulations as well as [Tencent Cloud Terms of Service](https://intl.cloud.tencent.com/document/product/301/12905).

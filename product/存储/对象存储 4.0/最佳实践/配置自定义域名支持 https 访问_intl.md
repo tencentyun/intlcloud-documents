@@ -30,9 +30,9 @@ server {
     access_log logs/test.cos.com.access_log;
     location / {
         root /data/www/;
-        proxy_pass  http://testhttps-12345678.cos.ap-guangzhou.myqcloud.com; //Configure the default download domain name for a bucket 
+        proxy_pass  http://testhttps-12345678.cos.ap-guangzhou.myqcloud.com; //Configure the default download domain name for a bucket
     }
-        
+       
 }
 ```
 `Server.crt;` and `server.key` are HTTPS certificates for your own (custom) domain names. If no HTTPS certificate is in place for your domain names, you can apply for one on the [Tencent Cloud SSL Certificate](https://intl.cloud.tencent.com/product/ssl) page.
@@ -45,7 +45,7 @@ If no certificate is available, the following configuration information can be d
 ```
 
 ### 3. Resolve domain names to the server
-Resolve your domain names at your DNS resolution provider. If you are using Tencent Cloud DNS, go to the [Cloud DNS Console]() to resolve the domain name `test.cos.com` to the IP of the server in step 2. 
+Resolve your domain names at your DNS resolution provider. If you are using Tencent Cloud DNS, go to the [Cloud DNS Console]() to resolve the domain name `test.cos.com` to the IP of the server in step 2.
 ### Other configurations
 #### Open the web page directly in a browser
 - After configuring the custom domain name to support HTTPS access, you can download objects in the bucket using your domain name. According to your business needs, you can directly access web pages and images in a browser through the static website feature. For more information, see [Setting up a Static Website](https://intl.cloud.tencent.com/document/product/436/14984).
@@ -56,12 +56,11 @@ Resolve your domain names at your DNS resolution provider. If you are using Tenc
 proxy_set_header Host $http_host;
 ```
 #### Configure the refer hotlink protection
-There is a risk of hotlinking for public buckets. You can enable the Referer whitelist by setting hotlink protection to prevent malicious hotlinking. Follow the steps below:
-1. Enable the hotlink protection feature in the [COS Console](https://console.cloud.tencent.com/cos5) and select Whitelist. For more information, see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319).
+There is a risk of hotlinking for public buckets. You can enable the Referer allowlist by setting hotlink protection to prevent malicious hotlinking. Follow the steps below:
+1. Enable the hotlink protection feature in the [COS Console](https://console.cloud.tencent.com/cos5) and select allowlist. For more information, see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319).
 2. Add the following information to the Nginx configuration, restart Nginx, and refresh the browser cache.
 ```
 proxy_set_header   Referer www.test.com;
 ```
-3. After the configuration, an error (error code: `errorcode: -46616`; error message: the refer whitelist is not hit) may occur if you directly open the file. However, by using a custom domain name configured with a proxy, the web page can be opened.
+3. After the configuration, an error (error code: `errorcode: -46616`; error message: the refer allowlist is not hit) may occur if you directly open the file. However, by using a custom domain name configured with a proxy, the web page can be opened.
 ![](//mc.qcloudimg.com/static/img/005099e6a30398c600bb945b6b1c34e7/image.png)
-
