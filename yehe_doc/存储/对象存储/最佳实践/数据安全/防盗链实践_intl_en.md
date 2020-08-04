@@ -13,7 +13,7 @@ Hotlink protection works by checking the Referer address in the request header:
 For example, in the figure below, the image `1.jpg` is embedded in `https://127.0.0.1/test/test.html`, and a Referer pointing to the access origin will be carried when you access `https://127.0.0.1/test/test.html`:
 ![](https://main.qcloudimg.com/raw/ed5d4f915132b236eb9423d81881ffd4.jpg)
 
-<span id=""fenxi""></span>
+<span id="fenxi"></span>
 ## Hotlink Protection Case Study
 
 User A uploaded the image resource `1.jpg` to COS, and the accessible link to the image is `https://examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/1.jpg`.
