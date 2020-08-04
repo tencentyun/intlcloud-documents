@@ -1,6 +1,6 @@
 ## Feature Description
 
-This API (GET Bucket referer) is used to read the referer whitelist or blacklist of a bucket.
+This API (GET Bucket referer) is used to read the referer allowlist or blocklist of a bucket.
 
 ## Request
 
@@ -61,7 +61,7 @@ This response body is empty.
 
 #### Error codes
 
-This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Use Case
 
