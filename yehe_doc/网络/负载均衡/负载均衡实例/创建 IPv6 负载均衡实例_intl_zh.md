@@ -20,7 +20,7 @@ IPv6 负载均衡是基于 IPv6 单栈技术实现的负载均衡，和 IPv4 负
 IPv6 CLB 实例不但可以快速接入 IPv6 公网用户访问，且通过 IPv6 协议和后端云服务器进行通信，能够帮助云上的应用快速改造 IPv6，并实现端到端的 IPv6 通信。
 
 IPv6 负载均衡的架构如下图所示：
-![](https://main.qcloudimg.com/raw/ca444992408e16390a46a3e2d9239bf5.svg)
+![](https://main.qcloudimg.com/raw/d86205a385506928dc13ef9646a91243.png)
 
 
 ## 操作指南

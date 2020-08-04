@@ -88,9 +88,5 @@ Notifications for audio events are subject to a threshold, and the notification 
 
 
 
-### Will a blacklisted user stay in the blacklist after exiting the room?
-No. After voice room exit, the blacklist becomes invalid.
-
-
-
-
+### Will a blocked user stay in the blocklist after exiting the room?
+No. After voice room exit, the blocklist becomes invalid.

@@ -172,7 +172,7 @@
          <td>“旗舰版”套餐包上线</td>   
          <td>上线“旗舰版”套餐包，包含“无限量音视频聊天室”、“30天历史消息存储”、“群成员数上限2000人”等，支持一次购买更多功能。</td>   
 	     <td>2019-12-26</td>   
-	     <td><ul style="margin:0;"><li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">计费概述</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">价格说明</a></li><li><a href="https://cloud.tencent.com/document/product/269/32458">购买指引</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">创建并升级应用</a></li></ul></td>   
+	     <td><ul style="margin:0;"><li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">计费概述</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">价格说明</a></li><li><a href="">购买指引</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">创建并升级应用</a></li></ul></td>   
      </tr> 
 	 <tr>      
          <td>SDK 4.6版本持续优化（Android、iOS 以及 Windows 端）</td>   

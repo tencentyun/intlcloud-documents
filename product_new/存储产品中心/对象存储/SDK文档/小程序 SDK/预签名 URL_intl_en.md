@@ -11,7 +11,7 @@ There are two ways to use the authentication credential:
 1. Put it in the header parameter; field name: authorization.
 2. Put it in the URL parameter; field name: sign.
 
-The COS.getAuthorization method is used to calculate the authentication credential (Authorization), which is the signing information used to verify the request validity.
+The COS.getAuthorization method is used to calculate the authentication credential (Authorization), which is the signing information used to verify the request's validity.
 
 >  It is recommended to only use this method for frontend debugging and not in real projects as it involves key disclosure risks.
 
@@ -45,7 +45,7 @@ var Authorization = COS.getAuthorization({
 
 #### Returned Value Description
 
-The returned value is the calculated authentication credential string "authorization".
+The returned value is the calculated authentication credential string ""authorization"".
 
 ## Getting a Pre-signed Request URL
 
@@ -116,7 +116,7 @@ cos.getObjectUrl({
 }, function (err, data) {
     if (!err) return console.log(err);
     wx.downloadFile({
-        url: data.Url, // The “url” domain name needs to be added to the download whitelist
+        url: data.Url, // The “url” domain name needs to be added to the download allowlist
         success (res) {
             console.log(res.statusCode, res.tempFilePath);
         },
@@ -160,4 +160,3 @@ function(err, data) { ... }
 | err | Object returned when an error, a network error or service error, occurs. If the request is successful, this parameter will be empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | data | Object returned when the request succeeds. If the request fails, this will be empty | Object |
 | - Url | Calculated URL | String |
-

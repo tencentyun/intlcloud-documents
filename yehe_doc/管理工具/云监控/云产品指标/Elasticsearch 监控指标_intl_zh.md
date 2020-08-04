@@ -9,8 +9,10 @@ Namespace=QCE/CES
 | Status                             | 集群健康状态               | ES 集群在统计周期内的最新值                               | 集群健康状态:0:Green,1:Yellow,2:Red  | -       | uInstanceId | 60s、300s          |
 | DiskUsageAvg                       | 平均磁盘使用率             | ES 集群在统计周期内各节点磁盘使用率的平均值               | ES 集群各节点磁盘使用率的平均值      | %       | uInstanceId | 60s、300s          |
 | DiskUsageMax                       | 最大磁盘使用率             | ES 集群在统计周期内各节点磁盘使用率的最大值               | ES 集群各节点磁盘使用率的最大值       | %       | uInstanceId | 60s、300s          |
-| JvmMemUsageAvg                     | 平均JVM内存使用率          | ES 集群在统计周期内各节点 JVM 内存使用率的平均值            | ES 集群各节点 JVM 内存使用率的平均值    | %       | uInstanceId | 60s、300s          |
+| JvmMemUsageAvg                     | 平均 JVM 内存使用率          | ES 集群在统计周期内各节点 JVM 内存使用率的平均值            | ES 集群各节点 JVM 内存使用率的平均值    | %       | uInstanceId | 60s、300s          |
 | JvmMemUsageMax                     | 最大 JVM 内存使用率          | ES 集群在统计周期内各节点 JVM 内存使用率的最大值            | ES 集群各节点 JVM 内存使用率的最大值    | %       | uInstanceId | 60s、300s          |
+| JvmOldMemUsageAvg | 平均 JVM old 区内存使用率 |ES 集群在统计周期内各节点 JVM old 区内存使用率的平均值 | ES 集群各节点 JVM old 区的平均内存使用率 | %        | uInstanceId | 60s、300s          |
+| JvmOldMemUsageMax | 最大 JVM old 区内存使用率 | ES 集群在统计周期内各节点 JVM old 区内存使用率的最大值 | ES 集群各节点 JVM old 区的最大内存使用率 | %        | uInstanceId | 60s、300s          |
 | CpuUsageAvg                        | 平均 CPU 使用率              | ES 集群在统计周期内各节点 CPU 使用率的平均值                | ES集群各节点 CPU使用率的平均值        | %       | uInstanceId | 60s、300s          |
 | CpuUsageMax                        | 最大 CPU 使用率              | ES 集群在统计周期内各节点 CPU 使用率的最大值                | ES集群各节点 CPU使用率的最大值        | %       | uInstanceId | 60s、300s          |
 | CpuLoad1minAvg                     | 集群1分钟 CPU 平均负载       | ES 集群在统计周期内各节点1分钟 CPU 负载的平均值             | ES集群各节点 CPU 1分钟CPU负载的平均值 | -       | uInstanceId | 60s、300s          |
@@ -26,7 +28,7 @@ Namespace=QCE/CES
 | IndexDocs                          | 文档总数                   | ES 集群在统计周期内文档总数的平均值                       | ES 集群中的文档总数                   | count   | uInstanceId | 60s、300s          |
 | AutoSnapshotStatus                 | ES 集群自动备份任务执行状态 | ES 集群在统计周期内最后一次执行自动备份任务的状态         | ES 集群自动备份任务的执行状态         | -       | uInstanceId | 300s               |
 
->每个指标对应的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
+>?每个指标对应的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
 
 ##  各维度对应参数总览
 
@@ -40,4 +42,4 @@ Namespace=QCE/CES
 查询 Elasticsearch Service 监控数据，入参取值如下：
 &Namespace=QCE/CES
 &Instances.N.Dimensions.0.Name=uInstanceId
-&Instances.N.Dimensions.0.Value=es-example 
+&Instances.N.Dimensions.0.Value=ES 具体实例 ID

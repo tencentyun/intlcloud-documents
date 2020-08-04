@@ -10,7 +10,7 @@ A bucket domain name in the format of `<BucketName-APPID>.cos.<Region>.myqcloud.
 A bucket domain name in the format of `<BucketName-APPID>.<region>.myqcloud.com` is a JSON domain name. If you access the object link in this domain name format in your browser, a download window will pop up, and there are two ways to preview the file in the browser:
 
 1. Upgrade your COS Console to [the latest version](https://console.cloud.tencent.com/cos5) and use the object link in the XML domain name format for access (strongly recommended).
-2. Bind a custom domain name, enable static website, and access the file with the custom domain name. For more information, see [Domain Name Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
+2. Bind a custom domain name, enable the static website, and access the file with the custom domain name. For more information, see [Domain Name Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
 
 #### Sample:
 
@@ -19,7 +19,7 @@ Take the picture.jpg file in the root directory of the bucket examplebucket-1250
 - If the object address is in the format of `https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`, you can directly access the address to preview the picture.jpg file in your browser.
 - If the object address is in the format of `https://examplebucket-1250000000.cosbj.myqcloud.com/picture.jpg`, there are two ways to directly preview the object in your browser:
   1. Upgrade your COS Console to [the latest version](https://console.cloud.tencent.com/cos5) and use the object link in the XML domain name format for access (strongly recommended).
-  2. Bind a custom domain name, enable static website, and access the file with the custom domain name. For more information, see [Domain Name Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
+  2. Bind a custom domain name, enable the static website, and access the file with the custom domain name. For more information, see [Domain Name Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
 
 ### How can I directly download a file in my browser without previewing it?
 
@@ -83,7 +83,7 @@ Troubleshoot the problems by following the steps below:
 COS allows you to perform batch operations on files through APIs or SDK. Plus, it offers the command line tool [COSCMD tool](https://intl.cloud.tencent.com/document/product/436/10976) and graphical program [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366) for batch operations.
 
 
-### When I upload a new file to the bucket in which another file with the same name exists, will the another file be overwritten or the new file be saved with a different version name?
+### When I upload a new file to the bucket in which another file with the same name exists, will another file be overwritten or the new file be saved with a different version name?
 
 The versioning feature is now available in COS. If versioning is not enabled for the bucket, when you upload a new file to the bucket where another file with the same name already exists, the latter will be directly overwritten; if versioning is enabled, multiple versions of the object will co-exist.
 
@@ -102,10 +102,10 @@ This error may occur due to your unstable local network environment. You are rec
 
 ### How to prevent others from downloading my COS files?
 
-To do so, you can set your bucket permission to private read/write. For more information, see [Setting Access Permission] (https://intl.cloud.tencent.com/document/product/436/13315). You can also configure a hotlink protection whitelist on your bucket to block any access from domain names not in the list. For more information, see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319).
+To do so, you can set your bucket permission to private read/write. For more information, see [Setting Access Permission] (https://intl.cloud.tencent.com/document/product/436/13315). You can also configure a hotlink protection allowlist on your bucket to block any access from domain names not on the list. For more information, see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319).
 
 
 ### What should I do if the error "your policy or acl has reached the limit (Status Code: 400; Error Code: PolicyFull)" occurs when I upload files or create a bucket?
 
 COS allows each root account to have up to 1,000 bucket ACL rules, beyond which an error will be reported. Therefore, we recommend that you delete those you find useless.
->We do not recommend that you use ACLs or policies at the object level. When you call an API or SDK, please leave empty the object ACL parameters (such as  x-cos-acl, and ACL), and inherit the bucket permissions if you don't need any special ACL control over your files.
+>We do not recommend that you use ACLs or policies at the object level. When you call an API or SDK, please leave empty the object ACL parameters (such as x-cos-acl, and ACL), and inherit the bucket permissions if you don't need any special ACL control over your files.

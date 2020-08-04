@@ -3,14 +3,14 @@ Tencent Cloud MediaPackage (MDP) provides professional, stable and secure video 
 ## Key Features
 
 ### HLS and DASH input redundancy
-MediaPackage supports HLS and DASH input types. It will generate two input streams for each channel. You can push both streams at the same time. If one input stream fails due to unstable network or other exceptions, MediaPackage will switch over to the other input stream seamlessly so the service is not interrupted.It is stable and reliable in protecting your video assets.
+MediaPackage supports HLS and DASH input types. It will generate two input streams for each channel. **You can push both streams at the same time. If one input stream fails due to unstable network or other exceptions, MediaPackage will switch over to the other input stream seamlessly so the service is not interrupted.** It is stable and reliable in protecting your video assets.
 
 ### Diverse output methods
 MediaPackage supports pulling streams from the origin server through multiple endpoints. Its quick integration with Tencent Cloud LVB CDN distribution allows you to build your own origin servers, ensuring safe and reliable video stream distribution on a global scale.
 
 ### High security
 
-MediaPackage supports multiple authentication methods throughout the entire input and output process. You can verify an input stream using a username and password in HTTP-authentication mode. You can authenticate an output stream using an IP blacklist/whitelist (CIDR block supported), Authkey, and the X-TENCENT-PACKAGE field in the HTTP header.
+MediaPackage supports multiple authentication methods throughout the entire input and output process. **You can verify an input stream using a username and password in HTTP-authentication mode. You can authenticate an output stream using an IP blocklist/allowlist (CIDR block supported), Authkey, and the X-TENCENT-PACKAGE field in the HTTP header.**
 
 ### Built-in scalability and easy integration with Tencent Cloud services
 

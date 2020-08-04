@@ -13,7 +13,7 @@ public class HelloRedis {
             /**Enter your Redis instance private IP, port number, instance ID, and password in the following parameters*/
             String host = "192.168.0.195";
             int port = 6379;
-            String instanceid = "84ffd722-b506-4934-9025-645bb2a0997b";
+           String instanceid = "crs-09xxxqv";
             String password = "1234567q";
             // Connect to Redis
             Jedis jedis = new Jedis(host, port);

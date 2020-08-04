@@ -1,11 +1,11 @@
 ## API Description
 
-This API is used to add one or multiple people to your blacklist.
+This API is used to add one or multiple people to your blocklist.
 >
->- If users A and B are friends, either one adding the other to the blacklist removes them from each other’s friend list.
-> If user A blacklists user B, or vice versa, then neither of them can send a friend request to the other person.
->- If user B is on user A’s blacklist and user A is also on user B’s blacklist, then user A and B cannot start a conversation with each other.
--> If user B is on user A’s blacklist, but user A is not on user B’s blacklist, then user A can message user B but not the other way around.
+>- If users A and B are friends, either one adding the other to the blocklist removes them from each other’s friend list.
+> If user A blocks user B, or vice versa, then neither of them can send a friend request to the other person.
+>- If user B is on user A’s blocklist and user A is also on user B’s blocklist, then user A and B cannot start a conversation with each other.
+-> If user B is on user A’s blocklist, but user A is not on user B’s blocklist, then user A can message user B but not the other way around.
 
 ## API Call Description
 
@@ -42,8 +42,8 @@ The list below contains only the parameters commonly used when calling this API 
 
 | Field | Type | Required | Description |
 |--- |--- |--- |--- |
-| From_Account | String | Yes | The UserID that initiates the blacklist request. |
-| To_Account | Array | Yes | A list of UserIDs to be added to the blacklist. This array should not contain more than 1000 UserIDs. |
+| From_Account | String | Yes | The UserID that initiates the blocklist request. |
+| To_Account | Array | Yes | A list of UserIDs to be added to the blocklist. This array should not contain more than 1000 UserIDs. |
 
 ### Sample response
 
@@ -79,11 +79,11 @@ The list below contains only the parameters commonly used when calling this API 
 
 | Field | Type | Description |
 |--- |--- |--- |
-| ResultItem | Array | The result of batch blacklisting, which is an array of UserIDs and corresponding results. |
-| To_Account | String | The UserID that you requested to add to blacklist. |
+| ResultItem | Array | The result of batch blocking, which is an array of UserIDs and corresponding results. |
+| To_Account | String | The UserID that you requested to add to blocklist. |
 | ResultCode | Integer | The result. `0` means success and other values mean failure. For details on non-zero results, see [Error Codes](#ErrorCode). |
 | ResultInfo | String | Error description. This field is empty when the request succeeds. |
-| Fail_Account | Array | A list of users that failed to be added to the blacklist. This field is only returned when at least one user fails. |
+| Fail_Account | Array | A list of users that failed to be added to the blocklist. This field is only returned when at least one user fails. |
 | ActionStatus | String | The result of the request. `OK` means the request is successfully handled. `FAIL` means the request failed. |
 | ErrorCode | Integer | Error code. `0` means success and other values mean failure. For details on non-zero results, see [Error Codes](#ErrorCode). |
 | ErrorInfo | String | Detailed error information. |
@@ -104,7 +104,7 @@ The list below contains only error codes specific to this API:
 | 30006 | Internal server error. Please try again. |
 | 30007 | Request timed out. Please try again later. |
 | 30008 | A write conflict has occurred due to concurrent write operations. We recommend that you use batch processing. |
-| 30013 | The maximum number of blacklisted users has been reached. |
+| 30013 | The maximum number of blocked users has been reached. |
 
 
 ## API Debugging Tool
@@ -112,10 +112,10 @@ Use the [online RESTful API debugging tool](https://avc.cloud.tencent.com/im/API
 
 ## See Also
 
-- Deleting a user from the blacklist (<a href="https://intl.cloud.tencent.com/document/product/1047/34912">v4/sns/black_list_delete</a>)
-- Querying a blacklist (<a href="https://intl.cloud.tencent.com/document/product/1047/34914">v4/sns/black_list_get</a>)
-- Verifying a blacklist (<a href="https://intl.cloud.tencent.com/document/product/1047/34913">v4/sns/black_list_check</a>)
+- Deleting a user from the blocklist (<a href="https://intl.cloud.tencent.com/document/product/1047/34912">v4/sns/black_list_delete</a>)
+- Querying a blocklist (<a href="https://intl.cloud.tencent.com/document/product/1047/34914">v4/sns/black_list_get</a>)
+- Verifying a blocklist (<a href="https://intl.cloud.tencent.com/document/product/1047/34913">v4/sns/black_list_check</a>)
 
 ## Possible Callback
 
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/34361">Callback after adding users to the blacklist</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047/34361">Callback after adding users to the blocklist</a></td>

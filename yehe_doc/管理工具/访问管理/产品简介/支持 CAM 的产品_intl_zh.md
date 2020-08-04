@@ -134,7 +134,7 @@
 
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	---- |	
-| [实时音视频](https://intl.cloud.tencent.com/document/product/647)   | 服务级| &#10003; | -  |  - |	-|	
+| [实时音视频](https://intl.cloud.tencent.com/document/product/647)   | 资源级| &#10003; | -  |  - |	-|	
 | [云直播](https://intl.cloud.tencent.com/document/product/267)   | 资源级| &#10003; | &#10003;  |  &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/267/32468) |	
 | [云点播](https://intl.cloud.tencent.com/document/product/266)    | 资源级   | &#10003;  | -    |  -  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/266/33970)  |	
 | [视频处理](https://intl.cloud.tencent.com/document/product/1041)    | 服务级   | &#10003;  | -    |   &#10003;   |	-  |		
@@ -170,7 +170,7 @@
 
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | ----- | ---- |	---- |
-| [即时通信](https://intl.cloud.tencent.com/document/product/1047)   | 服务级 | &#10003;   | -  |  - | - |
+| [即时通信](https://intl.cloud.tencent.com/document/product/1047)   | 资源级 | &#10003;   | -  |  - | - |
 | [短信](https://intl.cloud.tencent.com/document/product/382) | 操作级 | &#10003; | -   | -  |	-  |	
 
 ## 云资源管理

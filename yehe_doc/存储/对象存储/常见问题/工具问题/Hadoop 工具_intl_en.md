@@ -2,7 +2,7 @@
 Hadoop-COS is a tool that helps integrate big-data computing frameworks including Apache Hadoop, Spark and Tez. It allows you to read and write Tencent Cloud COS data just as you do with HDFS. It can also be used as Deep Storage for Druid and other query and analysis engines.
 
 ### How do I set a reasonable block (part) size for multipart uploads via Hadoop-COS?
-Hadoop-COS uploads large files to COS via concurrent uploads of multiple blocks (parts), you can control the size of each block (part) by configuring `fs.cosn.block.size(Byte)`.
+Hadoop-COS uploads large files to COS via concurrent uploads of multiple blocks (parts), you can control the size of each block (part) by configuring `fs.cosn.upload.part.size(Byte)`.
 
 Because a COS multipart upload can support the upload of at most 10,000 parts, when choosing the block size, you need to estimate the largest possible single file size that you may need to upload. For example, with a block size of 8 MB, you can upload a single file of up to 78 GB in size. A maximum block size of 2GB is supported, meaning that the largest singe file size supported is 19 TB. A 400 error will be thrown if the number of blocks exceeds 10,000. If you encounter said error, please check if you have configured this parameter correctly.
 

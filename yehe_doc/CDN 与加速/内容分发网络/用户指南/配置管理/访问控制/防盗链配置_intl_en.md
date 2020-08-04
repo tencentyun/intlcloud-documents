@@ -12,16 +12,16 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Dom
 #### 1. Modify the configuration
 Switch to select the hotlink protection type, enter the corresponding information, select whether to allow blank referer, and click **OK** to enable hotlink protection.
 ![](https://main.qcloudimg.com/raw/4054e066457c91c7e581ed71dbb6412d.png)
-**Referer blacklist:**
+**Referer blocklist:**
 
-- If the referer field of a request matches the string configured in the blacklist, CDN node will not return the requested information and a 403 status code will be returned.
-- If the referer field of a request does not match the string configured in the blacklist, CDN node will return the requested information.
+- If the referer field of a request matches the string configured in the blocklist, CDN node will not return the requested information and a 403 status code will be returned.
+- If the referer field of a request does not match the string configured in the blocklist, CDN node will return the requested information.
 - If **Allow blank referer** is selected, CDN node will not return the requested information and a 403 status code will be returned if the referer field is empty or does not exist in a request (such as a browser request).
 
-**Referer whitelist:**
-- If the referer field of a request matches the string configured in the whitelist, CDN node will return the requested information.
-- If the referer field of a request does not match the string configured in the whitelist, CDN node will not return the requested information and a 403 status code will be returned.
-- Once the whitelist is configured, CDN node can only return requests that match the string configured in the whitelist.
+**Referer allowlist:**
+- If the referer field of a request matches the string configured in the allowlist, CDN node will return the requested information.
+- If the referer field of a request does not match the string configured in the allowlist, CDN node will not return the requested information and a 403 status code will be returned.
+- Once the allowlist is configured, CDN node can only return requests that match the string configured in the allowlist.
 - If **Allow empty referer** is selected, CDN node will return the requested information if the referer field is empty or does not exist in a request (such as a browser request).
 
 **Configuration rules:**
@@ -44,6 +44,5 @@ Suppose the hotlink protection configuration of the acceleration domain name `ww
 ![](https://main.qcloudimg.com/raw/f650be89fce5b7abb05e81ff66bf1343.png)
 The actual access status will be as follows:
 
-1. If a user in Mainland China whose referer is `1.1.1.1` initiates a request, the whitelist configured for Mainland China will be hit and the requested content will be directly returned.
-2. If a user outside Mainland China whose referer is empty initiates a request, the blacklist configured for regions outside Mainland China will be hit and a 403 code will be returned.
-
+1. If a user in Mainland China whose referer is `1.1.1.1` initiates a request, the allowlist configured for Mainland China will be hit and the requested content will be directly returned.
+2. If a user outside Mainland China whose referer is empty initiates a request, the blocklist configured for regions outside Mainland China will be hit and a 403 code will be returned.

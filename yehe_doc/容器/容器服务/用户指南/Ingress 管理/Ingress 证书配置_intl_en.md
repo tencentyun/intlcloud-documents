@@ -1,24 +1,22 @@
-## Scenario
-This document describes how to configure Ingress certificates. You can configure them in the following scenarios:
-- When you select the HTTPS listening protocol in creating an Ingress, select an appropriate server certificate to ensure access security.
-- Bind the same certificate for all HTTPS domain names to simplify the certificate configuration for all HTTPS rules under the Ingress. This facilitates future certificate updates.
-- Bind different certificates for different domain names to improve SSL/TLS performance between the server and clients.
+## Overview
+This document describes how to use an Ingress certificate. You can configure an Ingress certificate in the following scenarios:
+- If HTTPS is selected as the listener protocol when you create an Ingress, selecting a proper server certificate helps ensure access security.
+- If you bind the same certificate for all HTTPS domain names, you can configure a certificate with all HTTPS rules in the Ingress to simplify updates.
+- Binding different certificates to different domain names helps improve the SSL/TLS performance of the server and client.
 
 ## Notes
 - You need to create the certificate to be configured in advance. For more information, see [Creating a server certificate in the console](#create).
-- You need to configure the Ingress certificate by using Secret. By default, the TKE Ingress will create a Secret with the same name, which contains the ID of the certificate.
-- The Secret certificate resource must reside in the same namespace as the Ingress resource.
-- When you create an Ingress, a Secret certificate resource with the same name will be created in the console by default. If the Secret resource name already exists, the Ingress cannot be created.
-- In normal cases, the certificate resource associated with a Secret is not reused when an Ingress is created. However, this resource can be reused. When a Secret is updated, the certificates of all Ingresses that reference this Secret are updated synchronously.
-- After the matching certificate is added for a domain name, the CLB SNI feature is enabled (and cannot be disabled) at the same time. If the domain name corresponding to a certificate is deleted, the certificate will be matched to the HTTPS domain name corresponding to the Ingress by default.
-- Classic CLB instances do not support domain-name-based or URL-based forwarding. Therefore, an Ingress created by a classic CLB instance does not support the configuration of multiple certificates.
+- You need to set the Ingress certificate by using a Secret. Tencent Kubernetes Engine (TKE) Ingress creates a Secret with the same name as the certificate by default, which contains the certificate ID.
+- The Secret certificate resource must be in the same namespace as the Ingress resource.
+- When you create the Ingress certificate, a Secret certificate resource with the same name will be created automatically by the console. If the Secret resource name already exists, the Ingress certificate cannot be created.
+- Generally, when you create an Ingress certificate, the certificate resource associated with a Secret will not be reused. However, you still can create an Ingress certificate that reuses the certificate resource associated with the Secret. When the Secret is updated, all Ingress certificates that are associated with the Secret are also updated.
+- Once you add a matching certificate for a domain name, the CLB SNI feature is enabled and cannot be disabled. If the domain name corresponding to the certificate is deleted, the certificate will match the HTTPS domain name corresponding to the Ingress by default.
+- Classic CLB does not support domain name- or URL-based forwarding. An Ingress that is created through Classic CLB cannot be configured with multiple certificates.
 
 
-
-
-## Examples
-TKE allows you to configure a certificate for the CLB HTTPS listener created by an Ingress by using the `spec.tls` field of the Ingress. In the following example, `secretName` specifies a Kubernetes Secret resource containing the certificate ID.
-- **Ingress**
+## Example
+TKE allows you to configure a certificate for a CLB HTTPS listener that is created for an Ingress by using the `spec.tls` field in the Ingress. Where, `secretName` indicates a Kubernetes Secret resource that contains a Tencent Cloud certificate ID, as shown in the following example:
+- **ingress**
 ```yaml
 spec:
     tls:
@@ -30,24 +28,28 @@ spec:
 ```yaml
 apiVersion: v1
 stringData:
-    qcloud_cert_id: Xxxxxxxx ## Set the certificate ID to Xxxxxxxx
+    qcloud_cert_id: Xxxxxxxx ## Set the certificate ID as Xxxxxxxx.
 kind: Secret
 metadata:
     name: tencent-com-cert
     namespace: default
 type: Opaque
 ```
->? You can also create a Secret in the TKE console. For more information, see [Creating a Secret](https://intl.cloud.tencent.com/document/product/457/30676).
+>? Alternatively, you can create a Secret in the TKE console. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676). The main parameters are described as follows:
+>- **Name**: set a custom name. This document uses `cos-secret` as an example.
+>- **Secret Type**: select **Opaque**. This type is suitable for saving key certificates and configuration files. The value is Base64-coded.
+>- **Validity Range**: select a range as required and ensure that the Secret is in the same namespace as the Ingress.
+>- **Content**: set the variable name to `qcloud_cert_id` and the variable value to the certificate ID of qcloud_cert_id.
 
 
 ## Ingress Certificate Configuration
-- If a `spec.secretName` is configured with no `hosts` specified, the certificate is configured for all HTTPS forwarding rules. The following is an example.
+- If only one `spec.secretName` is set and no hosts are configured, the certificate will be configured for all HTTPS forwarding rules, as shown in the following example:
 ```yaml
 spec:
     tls:
     - secretName: secret-tls
 ```
-- Unified configuration of first-level wildcard certificates is supported. The following is an example.
+- You can configure a level-1 domain name with a wildcard, as shown in the following example:
 ```yaml
 spec:
     tls: 
@@ -55,7 +57,7 @@ spec:
       - *.abc.com
       secretName: secret-tls
 ```
-- If both the certificate and wildcard certificate are configured, the certificate is preferred. In the following example, `www.abc.com` will use the certificate specified in `secret-tls-2`.
+- If you configure a certificate and a wildcard certificate at the same time, TKE selects a certificate based on priority. As shown in the following example, `www.abc.com` will use the certificate that is described in `secret-tls-2`.
 ```yaml
 spec:
     tls: 
@@ -66,11 +68,11 @@ spec:
       - www.abc.com
       secretName: secret-tls-2
 ```
-- When updating an Ingress with multiple certificates, the TKE Ingress controller runs the following checks:
-   - When rules.host of HTTPS has no matches, the update cannot be submitted.
-   - When rules.host of HTTPS matches a single TLS, the update can be submitted, and the corresponding certificate in Secret can be configured for the host.
-   - When you modify `SecretName` of TLS, the system verifies only the existence of `SecretName`, but not the content of Secret. The update can be submitted if the Secret exists.
-   > ! Ensure that the certificate ID in Secret meets requirements.
+- When you update an Ingress that has used multiple certificates, the TKE Ingress controller will perform the following judgments:
+   - If no host matches rules.host in HTTPS, the update cannot be submitted.
+   - If one TLS host matches rules.host in HTTPS, the update can be submitted and the certificate corresponding to the Secret can be configured for the host.
+   - When a SecretName of TLS is changed, only the existence of the SecretName but not the Secret content will be verified. In this case, the update can be submitted as long as the Secret exists.
+   > ! Ensure that the certificate ID in the Secret meets requirements.
 
 
 
@@ -78,57 +80,56 @@ spec:
 
 ## Directions
 <span id="create"></span>
-
 ### Creating a server certificate in the console
->? Skip this procedure if you already have the certificate to be configured.
->
+>? Skip this step if you already have the target certificate.
+
 1. Log in to the CLB console and click **[Certificate Management](https://console.cloud.tencent.com/clb/cert)** in the left sidebar.
 2. On the "Certificate Management" page, click **Create**.
-3. In the "Create a new certificate" window that appears, set the parameters as follows:
- - **Certificate Name**: define a custom name.
+3. On the "Create a new certificate" page, set the parameters based on the following description:
+ - **Certificate Name**: set a custom certificate name.
  - **Certificate Type**: select **Server Certificate**.
-- **Server Certificate**: a server certificate is an SSL certificate. With an SSL certificate, you can switch the site from HTTP to HTTPS, which is an encrypted HTTP protocol for secure data transmission based on SSL.
-   - **Certificate Content**: specify the content of the certificate as appropriate. For more information on the format, see [SSL Certificate Format Requirements and Format Conversion Instructions](https://intl.cloud.tencent.com/document/product/214/5369).
-   - **Key Content**: this parameter is displayed only when the certificate type is **Server Certificate**. For more information on how to add the related key content, see [SSL Certificate Format Requirements and Format Conversion Instructions](https://intl.cloud.tencent.com/document/product/214/5369).
-4. Click **Submit** to complete the configuration.
+**Server Certificate**: indicates an SSL certificate. An encrypted HTTP protocol based on the SSL certificate for secure data transmission enables a site to be switched from Hypertext Transfer Protocol (HTTP) to Hyper Text Transfer Protocol over Secure Socket Layer (HTTPS).
+   - **Certificate Content**: enter the certificate content based on your actual requirements. For more information on certificate format requirements, see [SSL Certificate Format](https://intl.cloud.tencent.com/document/product/214/5369).
+   - **Key Content**: is displayed only when "Certificate Type" is "Server Certificate". For more information on how to add key content, see [SSL Certificate Format](https://intl.cloud.tencent.com/document/product/214/5369).
+4. Click **Submit** to complete the creation.
 
-### Creating an Ingress object
-For more information on how to create an Ingress, see [Creating an Ingress](https://intl.cloud.tencent.com/document/product/457/30673). Set the listening port to **Https:443**.
+### Creating an Ingress object that uses the certificate
+Create an Ingress object. For more information, see [Ingress Management](https://intl.cloud.tencent.com/document/product/457/30673). During the creation, select `Https:443` as the listening port.
 
 >!
 >
->- When the HTTPS service is enabled for an Ingress created in the console, a Secret resource with the same name will be created to store the certificate ID. Then, this Secret is used and listened to in the Ingress.
-- The mapping between domain names and certificates in TLS is as follows:
- - You can use first-level wildcard certificates for unified domain name configuration.
- - If a domain name matches multiple certificates, one of the certificates will be selected at random. However, it is not recommended that you use multiple certificates for one domain name.
- - You need to configure certificates for all HTTPS domain names. Otherwise, the Ingress cannot be created.
+> - When HTTPS service is enabled for an Ingress object created in the console, a Secret resource with the same name will be created to store the certificate ID. Then, this Secret is used and referenced to in the Ingress.
+>- The mappings between domain names and certificates that can be configured in TLS are as follows:
+  >- A level-1 domain name with the wildcard can be configured.
+  >- If a domain name matches several certificates, a certificate is randomly selected. We recommend that you not use different certificates for the same domain name.
+  >- You must configure certificates for all HTTPS domain names. Otherwise, the Ingress object may fail to be created.
 
 
-### Modifying a certificate
+#### Modifying certificates
 >! 
->- To modify a certificate, confirm all Ingresses that use this certificate. If multiple Ingresses use the same Secret resource, the certificates of the CLB instances corresponding to these Ingresses will be modified synchronously.
->- To modify a certificate, you need to modify the Secret, which contains the ID of the used Tencent Cloud certificate.
->
-1. Run the following command to open the Secret to modify by using the default editor. Note that you must replace `[secret-name]` with the name of the Secret to modify.
+>- To modify a certificate, you need to verify all Ingress objects that use the certificate. If multiple Ingress objects are configured with the same Secret resource, the CLB certificates of these Ingress objects will be modified simultaneously.
+>- You need to modify a certificate by modifying its Secret because the Secret content includes your Tencent Cloud certificate ID.
+
+1. Run the following command to open the Secret to be modified in the default editor. Note that you need to replace `[secret-name]` with the name of the target secret.
 ```
 kubectl edit secrets [secret-name]
 ```
-2. Modify the Secret resource. Change the value of `qcloud_cert_id` to the new certificate ID.
-Similar to creating a Secret, changing the certificate ID in a Secret requires Base64 encoding. To do this, select manual Base64 encoding or specify `stringData` to enable automatic Base64 encoding as needed.
+2. Modify the Secret resource and change the value of `qcloud_cert_id` to the new certificate ID.
+Similar to the creation of a Secret, modifying a Secret certificate ID requires Base64 encoding. Select Base64 manual encoding or specify `stringData` to perform Base64 automatic encoding based on your actual needs.
 
-### Updating an Ingress object
+### Updating Ingress objects
 
 #### Updating an Ingress object in the console
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
-2. On the **Cluster Management** page, select the cluster ID of the Ingress to update.
-3. On the cluster details page, choose **Services and Routes** > **Ingress**, as shown in the following figure.
+2. On the "Cluster Management" page, click the cluster ID whose Ingress object needs to be modified.
+3. On the cluster details page, choose **Services and Routes** > **Ingress** in the left sidebar, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/86707379f0cd64956ed64a29725787fc.png)
-4. Locate the target Ingress and click the **Update Forwarding Configuration** button for this Ingress.
-5. On the **Update Forwarding Configuration** page, update the forwarding configuration rules as needed.
+4. Find the target Ingress object, and click **Update Forwarding Configuration** in the "Operation" column.
+5. On the "Update forwarding configuration" page, update the forwarding configuration rules as required.
 6. Click **Update Forwarding Configuration** to complete the update.
 
-#### Updating an Ingress object by editing the YAML file
-Run the following command to open the Ingress to modify by using the default editor, modify the YAML file, and save the configuration to complete the update.
+#### Updating an Ingress object by using YAML
+Run the following command to open the Ingress object to be modified in the default editor. Modify the YAML file and save the modification.
 ```
 kubectl edit ingress <ingressname> -n <namespaces>
 ```

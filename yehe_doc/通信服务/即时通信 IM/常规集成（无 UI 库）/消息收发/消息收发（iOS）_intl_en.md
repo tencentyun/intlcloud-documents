@@ -68,49 +68,49 @@ NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"pn
 // Create an image message.
 V2TIMMessage *msg = [[V2TIMManager sharedInstance] createImageMessage:imagePath];
 // Send the image message.
-[[V2TIMManager sharedInstance] sendMessage:msg receiver:@"userA" groupID:nil 
-priority:V2TIM_PRIORITY_DEFAULT 
+[[V2TIMManager sharedInstance] sendMessage:msg receiver:@"userA" groupID:nil
+priority:V2TIM_PRIORITY_DEFAULT
 onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
-   // Image upload progress (0-100)
+   // Image upload progress (0-100)
 } succ:^{
-   // The image message is successfully sent.
+   // The image message is successfully sent.
 } fail:^(int code, NSString *msg) {
-   // The image message failed to be sent.
+   // The image message failed to be sent.
 }];
 ```
 
 The recipient identifies the image message and parses the message to obtain the original image, large image, and thumbnail contained in the message.
 ```
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
-  if (msg.elemType == V2TIM_ELEM_TYPE_IMAGE) {
-    V2TIMImageElem *imageElem = msg.imageElem;
-    // An image message contains an image in three different sizes: original image, large image, and thumbnail. (The SDK automatically generates the large image and thumbnail.)
-    - A large image is an image obtained after the original image is proportionally compressed. After the compression, the compressed image has a height and width equal to 720 pixels.
-    - A thumbnail is an image obtained after the original image is proportionally compressed. After the compression, the compressed image has a height and width equal to 198 pixels.
-    NSArray<V2TIMImage *> *imageList = imageElem.imageList;
-    for (V2TIMImage *timImage in imageList) {
-        NSString *uuid = timImage.uuid; // Image ID
-        V2TIMImageType type = timImage.type; // Image type
-        int size = timImage.size; // Image size (bytes)
-        int width = timImage.width; // Image width
-        int height = timImage.height; // Image height
-        // Set the image download path `imagePath`. Here, `uuid` can be used as an identifier to avoid repeated downloads.
-        NSString *imagePath = [NSTemporaryDirectory() stringByAppendingPathComponent:
-						    [NSString stringWithFormat: @"testImage%@",timImage.uuid]];
-        if (![[NSFileManager defaultManager] fileExistsAtPath:imagePath]) {
-                [timImage downloadImage:imagePath 
-								progress:^(NSInteger curSize, NSInteger totalSize) {
-                    NSLog(@"Image download progress: curSize: %lu,totalSize:%lu",curSize,totalSize);
-                } succ:^{
-                    NSLog(@"Image download completed");
-                } fail:^(int code, NSString *msg) {
-                    NSLog(@"Image download failed: code: %d,msg:%@",code,msg);
-                }];
-        } else {
-                // The image already exists.
-        }
-    }
-  }
+  if (msg.elemType == V2TIM_ELEM_TYPE_IMAGE) {
+    V2TIMImageElem *imageElem = msg.imageElem;
+    // An image message contains an image in three different sizes: original image, large image, and thumbnail. (The SDK automatically generates the large image and thumbnail.)
+    - A large image is an image obtained after the original image is proportionally compressed. After the compression, the compressed image has a height and width equal to 720 pixels.
+    - A thumbnail is an image obtained after the original image is proportionally compressed. After the compression, the compressed image has a height and width equal to 198 pixels.
+    NSArray<V2TIMImage *> *imageList = imageElem.imageList;
+    for (V2TIMImage *timImage in imageList) {
+        NSString *uuid = timImage.uuid; // Image ID
+        V2TIMImageType type = timImage.type; // Image type
+        int size = timImage.size; // Image size (bytes)
+        int width = timImage.width; // Image width
+        int height = timImage.height; // Image height
+        // Set the image download path `imagePath`. Here, `uuid` can be used as an identifier to avoid repeated downloads.
+        NSString *imagePath = [NSTemporaryDirectory() stringByAppendingPathComponent:
+    [NSString stringWithFormat: @"testImage%@",timImage.uuid]];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:imagePath]) {
+                [timImage downloadImage:imagePath
+progress:^(NSInteger curSize, NSInteger totalSize) {
+                    NSLog(@"Image download progress: curSize: %lu,totalSize:%lu",curSize,totalSize);
+                } succ:^{
+                    NSLog(@"Image download completed");
+                } fail:^(int code, NSString *msg) {
+                    NSLog(@"Image download failed: code: %d,msg:%@",code,msg);
+                }];
+        } else {
+                // The image already exists.
+        }
+    }
+  }
 }
 ```
 
@@ -132,12 +132,12 @@ V2TIMOfflinePushInfo *pushInfo = [[V2TIMOfflinePushInfo alloc] init];
 // Customize the title and sound for offline push. `01.caf` is a sample file, which must be linked to the Xcode project. Here, you only need to enter the file name with the extension.
 pushInfo.title = @"Customize the title displayed";
 pushInfo.iOSSound = @"01.caf";
-[[V2TIMManager sharedInstance] sendMessage:msg receiver:nil groupID:@"groupA" priority:V2TIM_PRIORITY_DEFAULT 
+[[V2TIMManager sharedInstance] sendMessage:msg receiver:nil groupID:@"groupA" priority:V2TIM_PRIORITY_DEFAULT
 onlineUserOnly:NO offlinePushInfo:pushInfo progress:^(uint32_t progress) {
 } succ:^{
-    // The message is sent successfully.
+    // The message is sent successfully.
 } fail:^(int code, NSString *msg) {
-    // The message failed to be sent.
+    // The message failed to be sent.
 }];
 ```
 
@@ -160,17 +160,17 @@ onlineUserOnly:NO offlinePushInfo:info progress:^(uint32_t progress) {
 
 Recipient: although Vinson's app is not online, it can still receive an APNs offline message notification. When Vinson clicks this notification, the app is started.
 <pre><code><span class="hljs-comment">// Vinson receives the following callback after starting the app.</span>
-<span class="hljs-selector-tag">-</span> (void)<span class="hljs-selector-tag">application</span><span class="hljs-selector-pseudo">:(UIApplication</span> *)<span class="hljs-selector-tag">application</span> <span class="hljs-selector-tag">didReceiveRemoteNotification</span><span class="hljs-selector-pseudo">:(NSDictionary</span> *)<span class="hljs-selector-tag">userInfo</span> 
+<span class="hljs-selector-tag">-</span> (void)<span class="hljs-selector-tag">application</span><span class="hljs-selector-pseudo">:(UIApplication</span> *)<span class="hljs-selector-tag">application</span> <span class="hljs-selector-tag">didReceiveRemoteNotification</span><span class="hljs-selector-pseudo">:(NSDictionary</span> *)<span class="hljs-selector-tag">userInfo</span>
 <span class="hljs-selector-tag">fetchCompletionHandler</span><span class="hljs-selector-pseudo">:(void</span> (^)(UIBackgroundFetchResult result))<span class="hljs-selector-tag">completionHandler</span> {
-    <span class="hljs-comment">// Parse `desc`, which is the extended field for online push.</span>
-    <span class="hljs-selector-tag">if</span> ([userInfo[@<span class="hljs-string">"ext"</span>] <span class="hljs-attribute">isEqualToString</span>:@<span class="hljs-string">"jump to denny"</span>]) {
-        <span class="hljs-comment">// Go to the chat window with Denny.</span>
-    }
+    <span class="hljs-comment">// Parse `desc`, which is the extended field for online push.</span>
+    <span class="hljs-selector-tag">if</span> ([userInfo[@<span class="hljs-string">"ext"</span>] <span class="hljs-attribute">isEqualToString</span>:@<span class="hljs-string">"jump to denny"</span>]) {
+        <span class="hljs-comment">// Go to the chat window with Denny.</span>
+    }
 }</code></pre>
 
 ## Setting onlineUserOnly so that Messages Can Be Received Only Online
 
-In some scenarios, you may wish that sent messages can only be received by online users. In this case, recipients are not aware of the message when they are offline. For this purpose, you can set 
+In some scenarios, you may wish that sent messages can only be received by online users. In this case, recipients are not aware of the message when they are offline. For this purpose, you can set
 `onlineUserOnly` to `YES` when calling [sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a6ea32e6c119c1d771ee1123c5fb2dbae). After this parameter value is set, the sent messages differ from common messages in the following ways:
 - Messages cannot be stored offline. That is, the recipient cannot receive messages unless he/she is online.
 - Messages do not support multi-device roaming. That is, if the recipient has received a message on one terminal, this message cannot be received on any other terminal no matter whether it has been read or not.
@@ -186,9 +186,9 @@ V2TIMMessage *msg = [[V2TIMManager sharedInstance] createCustomMessage:customDat
 [[V2TIMManager sharedInstance] sendMessage:msg receiver:@"userA" groupID:nil
 priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:^(uint32_t progress) {
 } succ:^{
-    // The message is sent successfully.
+    // The message is sent successfully.
 } fail:^(int code, NSString *msg) {
-    // The message failed to be sent.
+    // The message failed to be sent.
 }];
 
 ```
@@ -201,9 +201,9 @@ Message recall requires the support of the UI code at the recipient side. When t
 
 ```
 [[V2TIMManager sharedInstance] revokeMessage:msg succ:^{
-     // The message is successfully recalled.
+     // The message is successfully recalled.
 } fail:^(int code, NSString *msg) {
-     // The message failed to be recalled.
+     // The message failed to be recalled.
 }];
 ```
 
@@ -213,13 +213,13 @@ Message recall requires the support of the UI code at the recipient side. When t
 
 ```
 - (void)onRecvMessageRevoked:(NSString *)msgID {
-      // `msgList` is the message list on the current chat window.
-      for(V2TIMMessage *msg in msgList){
-         if ([msg.msgID isEqualToString:msgID]) {
-             // `msg` is the recalled message. You need to change the corresponding message bubble state on the UI.
-         }
-     }
- }
+      // `msgList` is the message list on the current chat window.
+      for(V2TIMMessage *msg in msgList){
+         if ([msg.msgID isEqualToString:msgID]) {
+             // `msg` is the recalled message. You need to change the corresponding message bubble state on the UI.
+         }
+     }
+ }
 ```
 
 ## Adding Read Receipts for Messages
@@ -241,13 +241,13 @@ The event notification of message read receipts is located in the advanced messa
 
 ```
 - (void)onRecvC2CReadReceipt:(NSArray<V2TIMMessageReceipt *> *)receiptList {
-      // The recipient may receive multiple read receipts at a time. Therefore, the array callback mode is used here.
-      for (V2TIMMessageReceipt *receipt in receiptList) {
-          // Message recipient
-          NSString * receiver = receipt.userID;
-          // Time of the read receipt. A message is considered as read if the timestamp in the chat window is not later than `timestamp` here.
-          time_t timestamp = receipt.timestamp;
-      }
+      // The recipient may receive multiple read receipts at a time. Therefore, the array callback mode is used here.
+      for (V2TIMMessageReceipt *receipt in receiptList) {
+          // Message recipient
+          NSString * receiver = receipt.userID;
+          // Time of the read receipt. A message is considered as read if the timestamp in the chat window is not later than `timestamp` here.
+          time_t timestamp = receipt.timestamp;
+      }
 }
 @end
 ```
@@ -261,22 +261,22 @@ The following example assumes that the historical messages of `groupA` are pulle
 
 ```
 // The value `nil` of `lastMsg` is passed in for the first pull, indicating that a total of 20 messages are pulled starting from the most recent message
-[[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20 
+[[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20
 lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
-    // Messages pulled by page are listed from new to old by default.
-    if (msgs.count > 0) {
-        // Obtain the start message for the next pull by page.
-        V2TIMMessage *lastMsg = msgs.lastObject;
-	    // Pull the remaining 20 messages.
-        [[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20 
-				lastMsg:lastMsg succ:^(NSArray<V2TIMMessage *> *msgs) {
-            // Message pulling is completed.
-        } fail:^(int code, NSString *msg) {
-            // Messages failed to be pulled.
-        }];
-    }
+    // Messages pulled by page are listed from new to old by default.
+    if (msgs.count > 0) {
+        // Obtain the start message for the next pull by page.
+        V2TIMMessage *lastMsg = msgs.lastObject;
+    // Pull the remaining 20 messages.
+        [[V2TIMManager sharedInstance] getGroupHistoryMessageList:@"groupA" count:20
+lastMsg:lastMsg succ:^(NSArray<V2TIMMessage *> *msgs) {
+            // Message pulling is completed.
+        } fail:^(int code, NSString *msg) {
+            // Messages failed to be pulled.
+        }];
+    }
 } fail:^(int code, NSString *msg) {
-    // Messages failed to be pulled.
+    // Messages failed to be pulled.
 }];
 ```
 
@@ -294,9 +294,9 @@ You can call the [deleteMessageFromLocalStorage](http://doc.qcloudtrtc.com/im/ca
 
 ```
 [[V2TIMManager sharedInstance] deleteMessageFromLocalStorage:msg succ:^{
-      // Messages are deleted successfully.
+      // Messages are deleted successfully.
 } fail:^(int code, NSString *msg) {
-     // Messages failed to be deleted.
+     // Messages failed to be deleted.
 }];
 ```
 
@@ -312,8 +312,8 @@ Currently, IM does not support the deletion of messages in the cloud. If message
 By default, the IM SDK does not prevent message sending and receiving among strangers. If you want C2C messages to be sent and received only among friends, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Messages** -> **Relationship Check**, and enable **Check Relationship for One-to-One Messages**. After this feature is enabled, you can send messages only to friends. When you try to send messages to strangers, the IM SDK returns the 20009 error code.
 
 ### Blocking messages from a specified user
-If you want to block messages from a specified user, call the [addToBlackList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Friendship_08.html#a67d998da5085b5004bb6aa8d4322022c) API to add this user to the blacklist.
-When a user is added to the blacklist, by default, the user does not know that he/she is in the blacklist. That is, after this user sends a message, the prompt still indicates that the message was sent successfully, but in fact, the recipient will not receive the message. If you want a user in the blacklist to know that his/her message failed to be sent, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Messages** -> **Blacklist Check**, and disable **Show "Sent successfully" After Sending Messages**. After this feature is disabled, the IM SDK will return the 20007 error code when a user in the blacklist sends a message.
+If you want to block messages from a specified user, call the [addToBlackList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Friendship_08.html#a67d998da5085b5004bb6aa8d4322022c) API to add this user to the blocklist.
+When a user is added to the blocklist, by default, the user does not know that he/she is in the blocklist. That is, after this user sends a message, the prompt still indicates that the message was sent successfully, but in fact, the recipient will not receive the message. If you want a user in the blocklist to know that his/her message failed to be sent, you can log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** -> **Login and Messages** -> **Blocklist Check**, and disable **Show "Sent successfully" After Sending Messages**. After this feature is disabled, the IM SDK will return the 20007 error code when a user in the blocklist sends a message.
 
 ### Blocking messages from a specified group
 To block messages from a specified group, you can call the [setReceiveMessageOpt](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a4974b44d56778b1d5a3df613bee09c87) API to set the group message receiving option to the `V2TIM_GROUP_NOT_RECEIVE_MESSAGE` state.
@@ -339,25 +339,25 @@ To reduce the message complexity, 2.0 version APIs no longer support the creatio
 
 ```
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
-    // View the first `Elem` object.
-    if (msg.elemType == V2TIM_ELEM_TYPE_TEXT) {
-        V2TIMTextElem *textElem = msg.textElem;
-        NSString *text = textElem.text;
-        NSLog(@"Text information: %@", text);
-        // Check whether `textElem` is followed by more `Elem` objects.
-        V2TIMElem *elem = textElem.nextElem;
-        while (elem != nil) {
-            // Identify the Elem type.
-            if ([elem isKindOfClass:[V2TIMCustomElem class]]) {
-                V2TIMCustomElem *customElem = (V2TIMCustomElem *)elem;
-                NSData *customData = customElem.data;
-                NSLog(@"Custom information: %@",customData);
-            }
-            // Continue to check whether the current `Elem` is followed by more `Elem` objects.
-            elem = elem.nextElem;
-        }
-        // If `elem` is `nil`, all `Elem` objects have been parsed.
-    }
+    // View the first `Elem` object.
+    if (msg.elemType == V2TIM_ELEM_TYPE_TEXT) {
+        V2TIMTextElem *textElem = msg.textElem;
+        NSString *text = textElem.text;
+        NSLog(@"Text information: %@", text);
+        // Check whether `textElem` is followed by more `Elem` objects.
+        V2TIMElem *elem = textElem.nextElem;
+        while (elem != nil) {
+            // Identify the Elem type.
+            if ([elem isKindOfClass:[V2TIMCustomElem class]]) {
+                V2TIMCustomElem *customElem = (V2TIMCustomElem *)elem;
+                NSData *customData = customElem.data;
+                NSLog(@"Custom information: %@",customData);
+            }
+            // Continue to check whether the current `Elem` is followed by more `Elem` objects.
+            elem = elem.nextElem;
+        }
+        // If `elem` is `nil`, all `Elem` objects have been parsed.
+    }
 }
 ```
 

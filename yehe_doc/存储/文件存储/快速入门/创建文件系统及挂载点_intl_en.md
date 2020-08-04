@@ -40,23 +40,23 @@ Click **Create** and configure the following information in the pop-up window. A
   </tr>
   <tr>
     <td nowrap="nowrap">Network type</td>
-    <td> 
+    <td>
     <p>VPC or basic network. Please create and mount the file system according to the network type in which your CVM instance resides; otherwise, access may fail as network interconnection is unavailable.</p>
     <li>To allow a file system to be shared by CVM instances in the same VPC, you need to select VPC when creating the file system. If a file system resides in a VPC, only CVM instances in the same VPC can be mounted if no specific network settings are made.</li>
     <li>To allow a file system to be shared by CVM instances in the basic network, you need to select basic network when creating the file system. If a file system resides in the basic network, only CVM instances in the basic network can be mounted if no specific network settings are made.</li>
     <li>If a file system needs to be shared across multiple networks, please see <a href="https://intl.cloud.tencent.com/document/product/582/9764">Cross-network Access to File System</a>.</li>
     </td>
-  </tr>  
+  </tr> 
   <tr>
     <td>Permission group</td>
-    <td>Each file system must be bound to a permission group, which specifies the access whitelist and read/write permissions.
+    <td>Each file system must be bound to a permission group, which specifies the access allowlist and read/write permissions.
     </td>
   </tr>
-	<tr>
+<tr>
     <td>Tag</td>
     <td>
       <li>If you already have a tag, you can add it to the new file system here;</li>
-			<li>If you don't have a tag yet, please go to the <a href="https://console.cloud.tencent.com/tag/taglist">Tag Console</a> to create a desired tag and add it to the file system. You can also add tags to the file system after it is created.</li>
+<li>If you don't have a tag yet, please go to the <a href="https://console.cloud.tencent.com/tag/taglist">Tag Console</a> to create a desired tag and add it to the file system. You can also add tags to the file system after it is created.</li>
     </td>
   </tr>
 </table>
@@ -68,5 +68,3 @@ Click **Create** and configure the following information in the pop-up window. A
 (1) After the file system is created, return to the file system list.
 (2) Click the name of the file system to enter its basic information page.
 (3) Click **Mount Target Info** to get the mount commands on Linux and Windows. You are recommended to copy the commands provided in the console to perform mount operations.
-
-

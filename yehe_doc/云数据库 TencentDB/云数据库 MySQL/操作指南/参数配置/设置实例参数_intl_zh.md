@@ -25,7 +25,7 @@
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【批量修改参数】或在“参数运行值”列单击<img src="https://main.qcloudimg.com/raw/788902e3f8c335cf17de420f7181c2a8.png"  style="margin:0;">修改单个参数值。  
 3. 选择需要修改的参数进行修改，确认无误后，单击【确认修改】或单击<img src="https://main.qcloudimg.com/raw/1f4c7f2e0744bc601efb5d9fb04a7a04.png"  style="margin:0;">保存 。
-4. 在弹出的对话框中，选择参数【生效时间】，单击【确定】。
+4. 在弹出的对话框中，选择参数“执行方式”，单击【确定】。
 >?若选择【维护时间内】，所选实例的参数变更任务会在实例的 [维护时间](https://intl.cloud.tencent.com/document/product/236/10929) 内执行并生效。
 >
 

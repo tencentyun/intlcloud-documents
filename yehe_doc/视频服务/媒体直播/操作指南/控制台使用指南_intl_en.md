@@ -6,7 +6,7 @@ An input security group is used to verify the validity of the input source's IPv
 ### Creating security group
 ![](https://main.qcloudimg.com/raw/d6a6ae8de1db8cb120e995c11b61aec3.png)
 Name: name of the security group, which is a string containing 32 letters, digits, and underscores.
-Whitelist: valid range of the input IPv4 addresses in CIDR format; for example, `0.0.0.0/0` means that all input IPs are valid. Up to 10 IP ranges can be entered and separated by line break.
+Allowlist: valid range of the input IPv4 addresses in CIDR format; for example, `0.0.0.0/0` means that all input IPs are valid. Up to 10 IP ranges can be entered and separated by line break.
 
 **Note**: you can create up to 5 security groups in the console by default. If you need more security groups, please submit a ticket for assistance.
 

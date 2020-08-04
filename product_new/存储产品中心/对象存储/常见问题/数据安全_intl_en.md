@@ -14,11 +14,11 @@ You can delete the leaked key and create a new one.
 
 ### How do I generate a time-bound access link for private-read/write files?
 
-For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).You can set the validity period for your key.
+For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). You can set the validity period for your key.
 
 ## FAQs About ACLs and Policies
 
-### What should I do if the error "403 Forbidden" occurs or the access is denied when I perform upload/download and other operations?
+### What should I do if the error ""403 Forbidden"" occurs or the access is denied when I perform upload/download and other operations?
 
 Troubleshoot the problem by following the steps below:
 
@@ -29,7 +29,7 @@ Troubleshoot the problem by following the steps below:
 3. If a temporary key is used, check whether the current operation is in the policy set when the temporary key is obtained, and if no, modify the relevant policy settings.
 4. If the problem persists after all the above steps are completed, contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=84&source=0&data_title=%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%20COS&step=1).
 
-### When I access a public-read bucket using the its default domain name, the file list is returned. How can I hide the file list?
+### When I access a public-read bucket using its default domain name, the file list is returned. How can I hide the file list?
 
 You can set the Get Bucket permission to deny anyone for the bucket by following the steps below:
 
@@ -46,31 +46,31 @@ Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click th
 Locate **Bucket Policy**, click **Policy Syntax** > **Edit**, and enter the following expression:
 ```
 {
-  "Statement": [
+  ""Statement"": [
     {
-      "Action": [
-        "name/cos:GetBucket",
-        "name/cos:GetBucketObjectVersions"
+      ""Action"": [
+        ""name/cos:GetBucket"",
+        ""name/cos:GetBucketObjectVersions""
       ],
-      "Effect": "Deny",
-      "Principal": {
-        "qcs": [
-          "qcs::cam::anyone:anyone"
+      ""Effect"": ""Deny"",
+      ""Principal"": {
+        ""qcs"": [
+          ""qcs::cam::anyone:anyone""
         ]
       },
-      "Resource": [
-        "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"
+      ""Resource"": [
+        ""qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*""
       ]
     }
   ],
-  "version": "2.0"
+  ""version"": ""2.0""
 }
 ```
 
->Replace the information in "qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*" as follows:
-> - Replace "ap-beijing" with the region where your bucket resides.
-> - Replace "1250000000" with your APPID.
-> - Replace "examplebucket-1250000000" with your bucket name.
+>Replace the information in ""qcs::cos:ap-beijing:uid/1250000000:examplebucket-1250000000/*"" as follows:
+> - Replace ""ap-beijing"" with the region where your bucket resides.
+> - Replace ""1250000000"" with your APPID.
+> - Replace ""examplebucket-1250000000"" with your bucket name.
 >
 > The second half of the bucket name is the APPID. You can view it by logging in to the [COS Console](https://console.cloud.tencent.com/cos5/bucket).
 
@@ -105,13 +105,13 @@ For more information, see [ACL Practices](https://intl.cloud.tencent.com/documen
 
 If you use a CDN-accelerated domain name to access resources, factors such as cache in CDN may affect the stability of hotlink protection in COS. You are recommended to log in to the [CDN Console](https://console.cloud.tencent.com/cdn) to configure hotlink protection. For more information, see [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292).
 
-### Can I set a whitelist to allow access and make a resource accessible when its link is opened in a browser?
+### Can I set an allowlist to allow access and make a resource accessible when its link is opened in a browser?
 
-When setting hotlink protection, you can choose to allow empty referer, so that access will be allowed when a resource link is opened in a browser even if a whitelist is configured.
+When setting hotlink protection, you can choose to allow empty referer, so that access will be allowed when a resource link is opened in a browser even if an allowlist is configured.
 
-### The whitelist hotlink protection for the bucket "test" is set to allow access by `a.com`, but the web player at `a.com` cannot play video files in the bucket. What should I do?
+### The allowlist hotlink protection for the bucket ""test"" is set to allow access by `a.com`, but the web player at `a.com` cannot play video files in the bucket. What should I do?
 
-> When you open a video link and use Windows Media Player, Flash Player, or other players to play the video on the webpage, referer in the request will be empty, leading to a miss in the whitelist. It is recommended to allow empty referer when setting the whitelist.
+> When you open a video link and use Windows Media Player, Flash Player, or other players to play the video on the webpage, referer in the request will be empty, leading to a miss in the allowlist. It is recommended to allow empty referer when setting the allowlist.
 
 ## FAQs About Encryption and Backup
 

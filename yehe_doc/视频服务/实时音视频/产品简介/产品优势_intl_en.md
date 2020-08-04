@@ -1,7 +1,7 @@
 ### Low Costs
 Audio call has a unit price as low as 0.99 USD/thousand minutes. TRTC enables you to build a low-latency, low-lag, and high-quality real-time audio/video interactive product from scratch within 1 minute, with only 2 lines of code modified. For more information, please see [Demo Quick Start](https://intl.cloud.tencent.com/document/product/647/35086).
 
-### Low Latency
+### Interconnection with WeChat Mini Program
 TRTC offers a highly connected, reliable, and secure network across the globe. Leveraging our proprietary multi-addressing algorithms, TRTC has the ability to stream users' audio/video data to optimal nodes across the entire network. With abundant high-bandwidth resources and globally-distributed edge servers, it can ensure **an average end-to-end latency of below 300 ms** between countries/regions.
 
 ### Low Lag

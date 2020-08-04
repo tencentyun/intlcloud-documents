@@ -1,5 +1,5 @@
 ### What is Serverless Framework?
-Serverless Framework is a popular serverless application framework service well recognized in the industry. It allows you to deploy completely available serverless application architectures without worrying about underlying resources. Its comprehensive capabilities including resource orchestration, auto scaling, and event-driven programming cover the entire application lifecycle from coding, debugging, and testing to deployment, enabling you to quickly build serverless applications by connecting to cloud-based resources. For more information, please see [Product Overview](https://intl.cloud.tencent.com/document/product/1040/33150).
+Well-received in the industry, Serverless Framework allows you to deploy a complete, available serverless application framework without the need to care about underlying resources. It features resource orchestrating, auto scaling, and event driving and covers the full development lifecycle from coding and debugging to testing and deploying, helping you quickly build serverless applications with the aid of Tencent Cloud resources. For more information, please see [Product Overview](https://intl.cloud.tencent.com/document/product/1040/33150).
 
 ### Is Serverless Framework a paid service?
 Currently, Serverless Framework is free of charge, but the Tencent Cloud services used by it will be charged by resource usage following their respective billing rules. For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1040/33152).
@@ -30,6 +30,15 @@ Solution: add `SERVERLESS_PLATFORM_VENDOR=tencent` in the `.env` file to start t
 Problem: the error message is `Cannot get secretId/Key, your account could be sub-account or does not have access, please check if SLS_QcsRole role exists in your account, and visit https://console.cloud.tencent.com/cam to bind this role to your account.` 
 
 Solution: this error is caused by insufficient account permissions. You can update the configuration as instructed in [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
-If you have any other questions or feedback, please submit a [ticket](https://console.cloud.tencent.com/workorder/category) or [GitHub issue](https://github.com/serverless-components?q=tencent) for assistance.
+If you have any other questions or feedback, please submit a [ticket](https://console.cloud.tencent.com/workorder/category) or [GitHub issue(https://github.com/serverless-components?q=tencent) for assistance.
 
+### How do I deploy if my environment does not have permission to access the public network and can access the public network only through a proxy?
+
+Problem: your environment does not have permission to access the public network and can access the public network only through a proxy, and a network failure is reported when `sls deploy` is executed.
+
+Solution: add the following configuration to the `.env` file:
+```
+HTTP_PROXY=http://127.0.0.1:12345 # Your proxy
+HTTPS_PROXY=http://127.0.0.1:12345 # Your proxy
+```
 

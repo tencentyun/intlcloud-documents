@@ -7,12 +7,3 @@
 > !密钥管理系统 KMS 与腾讯云产品（如 COS、CBS、TDSQL、CFS 等）加密功能无缝集成。在使用以上云产品与 KMS 相关加密功能前，您需要先开通 KMS 服务。
 
 
-## 购买白盒密钥
-密钥管理系统 KMS 提供了白盒密钥管理的解决方案，白盒密码技术是一项能够抵抗白盒攻击的密码技术，详细介绍请参见 [白盒密钥概述](https://intl.cloud.tencent.com/document/product/1030/35745)。
-
-白盒密钥需要额外进行购买，详细的价格请参见 [计费概述](https://intl.cloud.tencent.com/document/product/1030/31966)。购买步骤如下：
-
-
-1. 进入 [密钥管理系统（合规）](https://console.cloud.tencent.com/kms2/whitebox) 白盒密钥管理页面。
-2. 单击【立即开通】进入白盒密钥购买页面。
-3. 完成支付后，即购买成功。再次进入 [密钥管理系统（合规）](https://console.cloud.tencent.com/kms2/whitebox) 白盒密钥管理页面，可以看到已经开放的白盒密钥管理实例，如何使用请参考白盒密钥 [操作指南](https://intl.cloud.tencent.com/document/product/1030/35746)。

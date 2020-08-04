@@ -7,7 +7,7 @@ Instant Messaging (IM) can host user relationship chains and offers a complete s
 - IM provides professional operation processes and teams, ensuring 99.99% annual service quality stability and helping you offer services known for their stability.
 - IM provides easy-to-use service APIs and easy-to-access guidelines, with premium services throughout the whole process.
 
-A relationship chain is a set of data used to describe the relationships between one user and other users. The relationship chains supported by IM include friend lists and blacklists.
+A relationship chain is a set of data used to describe the relationships between one user and other users. The relationship chains supported by IM include friend lists and blocklists.
 
 ## Relationship Chain Fields
 The IM relationship chain system supports standard and custom relationship chain fields. Relationship chain fields have the following features:
@@ -15,10 +15,10 @@ The IM relationship chain system supports standard and custom relationship chain
 - Relationship chain fields are displayed in key-value format.
 - Key is in String format, and its name can only contain uppercase and lowercase letters, numbers, and underscores.
 - Value has the following types:
- a. An integer of uint64_t type (not supported for custom relationship chain fields).
- b. A string of string type (the length of string cannot exceed 500 bytes.)
- c. A buffer of bytes type (the length of buffer cannot exceed 500 bytes.)
- d. A string array of string type (the length of each string cannot exceed 500 bytes, and this type is used only for the `Tag_SNS_IM_Group` field of a friend list.)
+ a. An integer of uint64_t type (not supported for custom relationship chain fields).
+ b. A string of string type (the length of string cannot exceed 500 bytes.)
+ c. A buffer of bytes type (the length of buffer cannot exceed 500 bytes.)
+ d. A string array of string type (the length of each string cannot exceed 500 bytes, and this type is used only for the `Tag_SNS_IM_Group` field of a friend list.)
 
 ## Friend Lists
 Users can add up to 3,000 friends to their friend lists in IM.
@@ -54,7 +54,7 @@ When applying for custom friend fields, you need to submit the following informa
 
 ### Adding friends
 
-IM supports the following modes for adding friends: adding friends in batches, no approval required, and approval required. 
+IM supports the following modes for adding friends: adding friends in batches, no approval required, and approval required.
 
 Two-way friends: user A's friend list contains user B, and user B's friend list contains user A.
 One-way friend: user A's friend list contains user B, but user B's friend list does not contain user A.
@@ -72,7 +72,7 @@ IM supports two modes for deleting friends: one-way deletion and two-way deletio
 | Two-way deletion | Delete_Type_Both | To_Account is deleted from the friend list of From_Account, and From_Account is deleted from the friend list of To_Account. |
 
 
-IM also supports deleting friends in batches. 
+IM also supports deleting friends in batches.
 ### Pulling friends
 IM supports the following three modes for pulling friends: incremental pulling without friends, full pulling by page, and pulling with friends.
 ### Verifying friends
@@ -102,42 +102,41 @@ Possible results for two-way friend verification are:
 | CheckResult_Type_BWithA | To_Account is not in the friend list of From_Account, but From_Account is in the friend list of To_Account. |
 | CheckResult_Type_NoRelation | To_Account is not in the friend list of From_Account, and From_Account is not in the friend list of To_Account. |
 
-## Blacklists
-Each user has a blacklist, which is used to store the accounts blocked by this user.
-After user A adds user B to the blacklist, user A will unfriend user B (if they are friends), and users A and B cannot send friend requests to each other in the future.
-By default, you can add up to 1,000 accounts to the IM blacklist. If you need a larger blacklist, please contact Tencent Cloud customer service.
+## Blocklists
+Each user has a blocklist, which is used to store the accounts blocked by this user.
+After user A adds user B to the blocklist, user A will unfriend user B (if they are friends), and users A and B cannot send friend requests to each other in the future.
+By default, you can add up to 1,000 accounts to the IM blocklist. If you need a larger blocklist, please contact Tencent Cloud customer service.
 
-### Blacklisting users
-IM allows you to blacklist users in batches.
+### Blocking users
+IM allows you to block users in batches.
 
-### Removing users from the blacklist
-IM allows you to remove users from the blacklist in batches. 
+### Removing users from the blocklist
+IM allows you to remove users from the blocklist in batches.
 
-### Pulling blacklists
-IM supports pulling a full blacklist by page. 
+### Pulling blocklists
+IM supports pulling a full blocklist by page.
 
-### Verifying blacklists
-IM supports two blacklist verification modes: one-way verification and two-way verification.
+### Verifying blocklists
+IM supports two blocklist verification modes: one-way verification and two-way verification.
 
 
-| Verification Mode | CheckType | Description |
+| Verification Mode | Check Type | Description |
 |---------|---------|---------|
-| One-way verification | BlackCheckResult_Type_Single | This is used to check whether To_Account is in the blacklist of From_Account, but does not check whether From_Account is in the blacklist of To_Account. |
-| One-way verification | BlackCheckResult_Type_Both | This is used not only to check whether To_Account is in the blacklist of From_Account, but also to check whether From_Account is in the blacklist of To_Account. |
+| One-way verification | BlackCheckResult_Type_Single | This is used to check whether To_Account is in the blocklist of From_Account, but does not check whether From_Account is in the blocklist of To_Account. |
+| One-way verification | BlackCheckResult_Type_Both | This is used not only to check whether To_Account is in the blocklist of From_Account, but also to check whether From_Account is in the blocklist of To_Account. |
 
-Possible results of one-way blacklist relationship verification are:
-
-| Relation | Description |
-|---------|---------|
-| BlackCheckResult_Type_AWithB | To_Account is in the blacklist of From_Account, but it cannot determine whether From_Account is in the blacklist of To_Account. |
-| BlackCheckResult_Type_NO | To_Account is not in the blacklist of From_Account, but it cannot determine whether From_Account is in the blacklist of To_Account. |
-
-Possible results of two-way blacklist relationship verification are:
+Possible results of one-way blocklist relationship verification are:
 
 | Relation | Description |
 |---------|---------|
-| BlackCheckResult_Type_BothWay | To_Account is in the blacklist of From_Account, and From_Account is also in the blacklist of To_Account. |
-| BlackCheckResult_Type_AWithB | To_Account is in the blacklist of From_Account, but From_Account is not in the blacklist of To_Account. |
-| BlackCheckResult_Type_BWithA | To_Account is not in the blacklist of From_Account, but From_Account is in the blacklist of To_Account. |
-| BlackCheckResult_Type_NO | To_Account is not in the blacklist of From_Account, and From_Account is not in the blacklist of To_Account. |
+| BlackCheckResult_Type_AWithB | To_Account is in the blocklist of From_Account, but it cannot determine whether From_Account is in the blocklist of To_Account. |
+| BlackCheckResult_Type_NO | To_Account is not in the blocklist of From_Account, but it cannot determine whether From_Account is in the blocklist of To_Account. |
 
+Possible results of two-way blocklist relationship verification are:
+
+| Relation | Description |
+|---------|---------|
+| BlackCheckResult_Type_BothWay | To_Account is in the blocklist of From_Account, and From_Account is also in the blocklist of To_Account. |
+| BlackCheckResult_Type_AWithB | To_Account is in the blocklist of From_Account, but From_Account is not in the blocklist of To_Account. |
+| BlackCheckResult_Type_BWithA | To_Account is not in the blocklist of From_Account, but From_Account is in the blocklist of To_Account. |
+| BlackCheckResult_Type_NO | To_Account is not in the blocklist of From_Account, and From_Account is not in the blocklist of To_Account. |
