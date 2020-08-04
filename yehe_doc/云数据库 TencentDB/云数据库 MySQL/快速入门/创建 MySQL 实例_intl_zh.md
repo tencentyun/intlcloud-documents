@@ -1,8 +1,15 @@
-## 前提条件
-购买前需要实名认证，请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 
-## 官网购买
-1. 登录 [购买页](https://buy.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击【立即购买】。
+本文为您介绍如何通过控制台创建 MySQL 实例。
+
+## 前提条件
+已注册腾讯云账号并完成实名认证。
+- 如需注册腾讯云账号：
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">点此注册腾讯云账号</a></div>
+- 如需完成实名认证：
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
+
+## 操作步骤
+1. 登录 [MySQL 购买页](https://buy.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击【立即购买】。
  - **计费模式**：
     - 若业务量有瞬间大幅波动场景，建议选择按量计费。
  - **地域**：选择您业务需要部署 MySQL 的地域。不同地域的云产品内网不通，购买后不能更换。
@@ -16,11 +23,8 @@
  - **购买数量**：每个用户在每个可用区可购买按量计费实例的总数量为10个。
 2. 支付完成后，返回实例列表，待实例状态变为“未初始化”，即可进行初始化操作。
 
-##  API 购买
-通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15871)。
 
+## 下一步
+通过控制台初始化 MySQL 实例，请参见 [初始化 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/3128)。
 
-## 后续步骤
-- [初始化 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/3128)
-- [连接 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/3130)
 

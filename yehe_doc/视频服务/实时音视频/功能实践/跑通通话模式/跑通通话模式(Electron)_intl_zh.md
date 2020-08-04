@@ -1,6 +1,6 @@
 ## 适用场景
 
-TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语音通话（VoiceCall）统称为通话模式，视频互动直播（Live）和语音互动直播（VoiceChatRoom）统称为 直播模式。
+TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语音通话（VoiceCall）统称为通话模式，视频互动直播（Live）和语音互动直播（VoiceChatRoom）统称为 [直播模式](https://intl.cloud.tencent.com/document/product/647/36070)。
 通话模式下的 TRTC，支持单个房间最多300人同时在线，支持最多50人同时发言。适合1对1视频通话、300人视频会议、在线问诊、远程面试、视频客服、在线狼人杀等应用场景。
 
 ## 原理解析
@@ -14,7 +14,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 
 在通话模式下，TRTC 房间中的所有用户都会被分配到接口机上，相当于每个用户都是“主播”，每个用户随时都可以发言（最高的上行并发限制为50路），因此适合在线会议等场景，但单个房间的人数限制为300人。
 
-
+![](https://main.qcloudimg.com/raw/b88a624c0bd67d5d58db331b3d64c51c.gif)
 
 ## 示例代码
 
@@ -29,7 +29,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 
 如果 SimpleDemo 能顺利运行，说明您已经掌握了在项目中安装 Electron 的方法。
 
-反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考 Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
+反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考我们总结的 [Electron常见问题收录](https://cloud.tencent.com/developer/article/1616668) ，也可以参考 Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
 
 <span id="step2"></span>
 ### 步骤2：为您的项目集成 trtc-electron-sdk
@@ -89,7 +89,7 @@ param.userId = 'test_user_001';
 param.userSig = 'eJyrVareCeYrSy1SslI...';
 ```
 
-> TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
+>! TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
 
 <span id="step5"></span>
 ### 步骤5：创建并进入房间
@@ -144,7 +144,7 @@ SDK 支持自动订阅和手动订阅两种模式，自动订阅追求秒开速�
 
 2.  您可以通过 [muteRemoteAudio(userId,  true)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#muteRemoteAudio) 屏蔽某一个 userId 的音频数据，也可以通过 [muteAllRemoteAudio(true)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#muteAllRemoteAudio) 屏蔽所有远端用户的音频数据，屏蔽后 SDK 不再继续拉取对应远端用户的音频数据。
 
-3.  当房间中有其他用户在上行视频数据时，您会收到 [onUserAudioAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserAudioAvailable) 事件通知，但此时 SDK 未收到该如何展示视频数据的指令，因此不会自动处理视频数据。您需要通过调用 [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) 方法将远端用户的视频数据和显示 `view` 关联起来。
+3.  当房间中有其他用户在上行视频数据时，您会收到 [onUserVideoAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) 事件通知，但此时 SDK 未收到该如何展示视频数据的指令，因此不会自动处理视频数据。您需要通过调用 [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) 方法将远端用户的视频数据和显示 `view` 关联起来。
 
 4.  您可以通过  [setLocalViewFillMode()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setLocalViewFillMode)  指定视频画面的显示模式：
     -   `TRTCVideoFillMode.TRTCVideoFillMode_Fill` 模式：表示填充，画面可能会等比放大和裁剪，但不会有黑边。
@@ -193,7 +193,7 @@ SDK 支持自动订阅和手动订阅两种模式，自动订阅追求秒开速�
 </script>
 ```
 
-> 如果您在收到 `onUserVideoAvailable()` 事件回调后没有立即调用 `startRemoteView()` 订阅视频流，SDK 将会在5s内停止接收来自远端的视频数据。
+>? 如果您在收到 `onUserVideoAvailable()` 事件回调后没有立即调用 `startRemoteView()` 订阅视频流，SDK 将会在5s内停止接收来自远端的视频数据。
 
 #### 手动订阅
 
@@ -201,7 +201,7 @@ SDK 支持自动订阅和手动订阅两种模式，自动订阅追求秒开速�
 
 1.  在**进房前**调用 [setDefaultStreamRecvMode(false, false)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setDefaultStreamRecvMode) 接口将 SDK 设定为手动订阅模式。
 2.  当房间中有其他用户在上行音频数据时，您会收到 [onUserAudioAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserAudioAvailable) 事件通知。此时，您需要通过调用 [muteRemoteAudio(userId, false)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#muteRemoteAudio) 手动订阅该用户的音频数据，SDK 会在接收到该用户的音频数据后解码并播放。
-3.  当房间中有其他用户在上行视频数据时，您会收到 [onUserVideoAvailable(userId, userId)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) 事件通知。此时，您需要通过调用 [startRemoteView(userId,  view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) 方法手动订阅该用户的视频数据，SDK 会在接收到该用户的视频数据后解码并播放。
+3.  当房间中有其他用户在上行视频数据时，您会收到 [onUserVideoAvailable(userId, available)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) 事件通知。此时，您需要通过调用 [startRemoteView(userId,  view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) 方法手动订阅该用户的视频数据，SDK 会在接收到该用户的视频数据后解码并播放。
 
 
 <span id="step7"></span>
@@ -229,7 +229,7 @@ encParam.enableAdjustRes = true;
 trtcCloud.setVideoEncoderParam(encParam);
 ```
 
-> SDK 默认会使用当前系统默认的摄像头和麦克风。您可以通过调用 [setCurrentCameraDevice()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setCurrentCameraDevice) 和 [setCurrentMicDevice()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setCurrentMicDevice) 选择其他摄像头和麦克风。
+>! SDK 默认会使用当前系统默认的摄像头和麦克风。您可以通过调用 [setCurrentCameraDevice()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setCurrentCameraDevice) 和 [setCurrentMicDevice()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setCurrentMicDevice) 选择其他摄像头和麦克风。
 
 
 <span id="step8"></span>
@@ -246,4 +246,4 @@ trtcCloud.exitRoom();
 trtcCloud.on('onExitRoom', onExitRoom);
 ```
 
-> 如果您的 Electron 程序中同时集成了多个音视频 SDK，请在收到 `onExitRoom` 回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。
+>! 如果您的 Electron 程序中同时集成了多个音视频 SDK，请在收到 `onExitRoom` 回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。
