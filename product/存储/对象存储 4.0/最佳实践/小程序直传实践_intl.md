@@ -4,7 +4,7 @@ This document describes how to use simple code to upload files directly to a COS
 
 >  The content of this document is based on the XML edition of APIs.
 
-<span id=""preparations""></span>
+<span id="preparations"></span>
 
 ## Prophase condition
 
@@ -15,7 +15,7 @@ This document describes how to use simple code to upload files directly to a COS
 
 ### 1. Configuring the WeChat Mini Program Allowlist
 
-Mini Program requests that COS needs to log in to WeChat's public platform and configure the domain name allowlist in ""Development""-> ""Development Settings"". The SDK uses two APIs: wx.uploadFile and wx.request.
+Mini Program requests that COS needs to log in to WeChat's public platform and configure the domain name allowlist in "Development"-> "Development Settings". The SDK uses two APIs: wx.uploadFile and wx.request.
 
 - For the cos.postObject method, requests are sent using wx.uploadFile.
 - For other methods, requests are sent using wx.request.
