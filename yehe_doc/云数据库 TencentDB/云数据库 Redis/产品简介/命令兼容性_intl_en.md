@@ -60,7 +60,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
    </tr>
    <tr>
       <td>swapdb</td>
-      <td>x</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
