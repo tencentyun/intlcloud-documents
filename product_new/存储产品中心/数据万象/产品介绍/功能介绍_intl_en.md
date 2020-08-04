@@ -58,7 +58,6 @@ Cloud Infinite (CI) provides the following features:
 <tr>
       <td>Security policies</td>
       <td>Hotlink protection</td>
-      <td>Provide security policies such as signed download and the blacklist/whitelist for domain name control</td>
+      <td>Provide security policies such as signed download and the blocklist/allowlist for domain name control</td>
    </tr>
 </table>
-
