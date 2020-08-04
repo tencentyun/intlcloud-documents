@@ -23,8 +23,8 @@ In TKE, Pod Networking is implemented by a high-performance pod network based on
 
 The Kube-router image `ccr.ccs.tencentyun.com/library/kube-router:v1` used in the YAML file below is provided by the Tencent Cloud PaaS team. It is created based on the 2018-07-29 commit "e2ee6a76" in the community and two bug fixes by the Tencent Cloud PaaS team (both of which have been merged by the community):
 
-- [https://github.com/cloudnativelabs/kube-router/pull/488](https://github.com/cloudnativelabs/kube-router/pull/488)
-- [https://github.com/cloudnativelabs/kube-router/pull/498](https://github.com/cloudnativelabs/kube-router/pull/498)
+- [processing k8s version for NPC #488](https://github.com/cloudnativelabs/kube-router/pull/488)
+- [Improve health check for cache synchronization #498](https://github.com/cloudnativelabs/kube-router/pull/498)
 
 We regularly track the project progress in the community to provide version upgrades.
 
