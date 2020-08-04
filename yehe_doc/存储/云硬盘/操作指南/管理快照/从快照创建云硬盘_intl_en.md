@@ -1,8 +1,8 @@
 ## Overview
-Snapshots are important methods for data sharing and migration. Cloud disks created using a snapshot own all data in the snapshot. You can use a snapshot to create a cloud disk whose capacity is greater than or equal to that of the snapshot.
-- When you use a snapshot to create a data disk with the same capacity as that of the snapshot, the data disk does not need to be initialized. It can be read and written after you [mount](https://intl.cloud.tencent.com/document/product/362/32401) it and choose **Server Management** -> **Storage** -> **Disk Management** to associate it with a CVM.
-- When you use a snapshot to create a data disk whose capacity is greater than that of the snapshot, the system only performs block-level disk expansion and does not extend the file system or convert the partition format. After you [mount](https://intl.cloud.tencent.com/document/product/362/32401) the new data disk, it can only use the file system and data of the source snapshot and cannot use the new disk space. You need to manually extend the file system and convert the partition format.
-  For example, if you use a data disk snapshot that uses the MBR partition format and has a capacity of 1 TB to create a 3 TB data disk, you need to format the data disk and use GPT partition because the maximum disk space supported in MBR partition is 2 TB. The operation will **delete original data**. Therefore, **exercise caution based on your actual requirements**.
+Making snapshot is an important method for data sharing and migration. Cloud disks created using a snapshot own all data in the snapshot. You can use a snapshot to create a cloud disk whose capacity is greater than or equal to that of the snapshot.
+- When you use a snapshot to create a data disk with the same capacity as that of the snapshot, the data disk does not need to be initialized. To read and write into it, you only need to [mount](https://intl.cloud.tencent.com/document/product/362/32401) it and choose **Server Management** -> **Storage** -> **Disk Management** to associate it with a CVM.
+- When you use a snapshot to create a data disk whose capacity is greater than that of the snapshot, the system only expand the storage block and does not extend the file system or convert the partition format. After you [mount](https://intl.cloud.tencent.com/document/product/362/32401) the new data disk, it can only use the file system and data of the source snapshot and cannot use the new disk space. You need to manually extend the file system and convert the partition format.
+  For example, if you want to a 3 TB data disk by using a data disk snapshot that uses the MBR partition format and has a capacity of 1 TB, you need to format the data disk in GPT partition style because the maximum disk space supported in MBR partition style is 2 TB. Please note that this operation will **delete original data**.
 
 This document describes how to use a snapshot to create a cloud disk on the [Snapshot List](https://console.cloud.tencent.com/cvm/snapshot) page. When [creating a cloud disk](https://intl.cloud.tencent.com/document/product/362/5744), you can configure the **Snapshots** parameter to specify a snapshot for creating the cloud disk.
 
@@ -27,7 +27,7 @@ This document describes how to use a snapshot to create a cloud disk on the [Sna
      </tr>
      <tr>
          <td>Capacity</td>
-         <td>Required.</br>CBS provides the following cloud disk capacity and specifications:<ul><li>Premium Cloud Storage: 50–16,000 GB</li><li>SSD Cloud Storage: 100–16,000 GB</li></ul>When you create a cloud disk using a snapshot, the disk capacity cannot be smaller than that of the snapshot. If you do not specify this parameter, the disk capacity is equal to that of the snapshot by default.</td>
+         <td>Required.</br>CBS provides the following cloud disk capacity and specifications:<ul><li>Premium Cloud Storage: 50 to 16,000 GB</li><li>SSD Cloud Storage: 100 to 16,000 GB</li></ul>When you create a cloud disk using a snapshot, the disk capacity cannot be smaller than that of the snapshot. If you do not specify this parameter, the disk capacity is equal to that of the snapshot by default.</td>
      </tr>
 	<tr>
          <td>Snapshots</td>
@@ -35,7 +35,7 @@ This document describes how to use a snapshot to create a cloud disk on the [Sna
      </tr>
      <tr>
          <td>Disk Name</td>
-         <td>Optional.</br>A maximum of 20 characters are supported. It must start with a letter or Chinese character and can be a combination of letters, Chinese characters, digits, and special characters (`.`, `_`, `:`, and `-`). This parameter can be modified after the cloud disk is created.<ul><li>If you create only one cloud disk, the disk name is the name of the cloud disk you create.</li><li>If you create multiple cloud disks at one time, the disk name is the prefix of your cloud disk name, in the format of **disk name_number**, for example, "disk name_0" to "disk name_49".</li></ul></td>
+         <td>Optional.</br>A maximum of 20 characters are supported. It must start with a letter, and can be a combination of letters, digits, and special characters (`.`, `_`, `:`, and `-`). This parameter can be modified after the cloud disk is created.<ul><li>If you create only one cloud disk, the disk name is the name of the cloud disk you create.</li><li>If you create multiple cloud disks at one time, the disk name entered will be used as he prefix of the final disk name, in the format of **disk name_number**, for example, "disk name_0" to "disk name_49".</li></ul></td>
      </tr>
 	 <tr>
          <td>Project</td>
@@ -43,7 +43,7 @@ This document describes how to use a snapshot to create a cloud disk on the [Sna
      </tr>
 	 <tr>
          <td>Tag</td>
-         <td>Optional.</br>When creating a cloud disk, you can bind a tag to it. Tags are used to identify cloud resources, helping you easily categorize and search for cloud resources. For more information, see <a href="https://cloud.tencent.com/document/product/651">Tag</a>.</td>
+         <td>Optional.</br>When creating a cloud disk, you can bind a tag to it. Tags are used to identify cloud resources, helping you easily categorize and search for cloud resources. For more information, see <a href="https://intl.cloud.tencent.com/document/product/651">Tag</a>.</td>
      </tr>
 	 <tr>
          <td>Billing Mode</td>
@@ -64,7 +64,7 @@ This document describes how to use a snapshot to create a cloud disk on the [Sna
      </tr>
 		 		 <tr>
          <td>Automatic Renewal</td>
-         <td>If **Billing Mode** is set to **Pay as you go**, this parameter is not involved.</td>
+         <td> <li>If **Billing Mode** is set to **Pay as you go**, this parameter is not involved.</li></ul></td>
 	 </tr>
 </table>
 4. Click **OK**.
@@ -75,5 +75,5 @@ This document describes how to use a snapshot to create a cloud disk on the [Sna
  </ol>
 5. You can view the cloud disk(s) you created in the [Cloud Block Storage](https://console.cloud.tencent.com/cvm/cbs) list page. New elastic cloud disks are in the **To be mounted** state. For more information on how to mount an elastic cloud disk to a CVM in the same availability zone, see [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401).
 
-### Using an API to use a snapshot to create a cloud disk
+### Using an API to create a cloud disk from snapshot
 You can use the `CreateDisks` API to create a cloud disk. For more information, see [CreateDisks](https://intl.cloud.tencent.com/document/product/362/16312).
