@@ -1,8 +1,6 @@
 ## Overview
 This document describes how to use Kubernetes APIs to perform operations in Tencent Kubernetes Engine (TKE) clusters. For example, you can use the APIs to view all namespaces in a cluster, view all pods in a specified namespace, and add, delete, or query a pod in the specified namespace.
 
-
-
 ## Directions
 
 ### Obtaining the kubeconfig cluster access credential
