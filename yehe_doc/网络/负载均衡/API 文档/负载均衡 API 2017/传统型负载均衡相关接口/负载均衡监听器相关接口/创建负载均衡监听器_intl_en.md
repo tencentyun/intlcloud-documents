@@ -50,7 +50,7 @@ The list below contains only the API request parameters. Common parameters shoul
 | code | Int | Common error code. 0: success; other values: failure. For more information, see [Common Error Codes](https://intl.cloud.tencent.com/document/product/214/11602). |
 | message | String | API-related module error message description. |
 | codeDesc | String | Error code. For a successful operation, "Success" is returned. For a failed operation, a message describing the failure is returned. |
-| requestId | Int | Request task ID. The operation status can be queried via the [DescribeLoadBalancersTaskResult](https://cloud.tencent.com/document/api/214/4007) API.|
+| requestId | Int | Request task ID. The operation status can be queried via the [DescribeLoadBalancersTaskResult](https://intl.cloud.tencent.com/document/product/214/4007) API.|
 | listenerIds | Array | Listener ID array.|
 
 
