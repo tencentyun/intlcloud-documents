@@ -4,16 +4,16 @@ A [network policy](https://kubernetes.io/docs/concepts/services-networking/netwo
 
 ## Kube-router
 
-- Official website: [https://www.kube-router.io](https://www.kube-router.io)
-- Project address: [https://github.com/cloudnativelabs/kube-router](https://github.com/cloudnativelabs/kube-router)
+- [Official website](https://www.kube-router.io)
+- [Project address](https://github.com/cloudnativelabs/kube-router)
 
 The latest version of Kube-router is 0.2.0.
 
 It has three main features:
 
 - Pod Networking
-- IPVS/LVS-based service proxy  
-- Network Policy Controller 
+- IPVS/LVS-based service proxy 
+- Network Policy Controller
 
 In TKE, Pod Networking is implemented by a high-performance pod network based on VPC at the IaaS layer, and service proxy is provided by the ipvs and iptables modes supported by kube-proxy. We recommend using only the Network Policy feature in TKE.
 
@@ -23,8 +23,8 @@ In TKE, Pod Networking is implemented by a high-performance pod network based on
 
 The Kube-router image `ccr.ccs.tencentyun.com/library/kube-router:v1` used in the YAML file below is provided by the Tencent Cloud PaaS team. It is created based on the 2018-07-29 commit "e2ee6a76" in the community and two bug fixes by the Tencent Cloud PaaS team (both of which have been merged by the community):
 
-- [https://github.com/cloudnativelabs/kube-router/pull/488](https://github.com/cloudnativelabs/kube-router/pull/488)
-- [https://github.com/cloudnativelabs/kube-router/pull/498](https://github.com/cloudnativelabs/kube-router/pull/498)
+- [processing k8s version for NPC #488](https://github.com/cloudnativelabs/kube-router/pull/488)
+- [Improve health check for cache synchronization #498](https://github.com/cloudnativelabs/kube-router/pull/498)
 
 We regularly track the project progress in the community to provide version upgrades.
 
@@ -168,10 +168,10 @@ metadata:
   name: npa
   namespace: nsa
 spec:
-  ingress: 
+  ingress:
   - from:
-    - podSelector: {} 
-  podSelector: {} 
+    - podSelector: {}
+  podSelector: {}
   policyTypes:
   - Ingress
 ```
@@ -210,7 +210,7 @@ spec:
   - Ingress
 ```
 
-4. The pods in nsa namespace can access the 5978/TCP port of the network endpoint with CIDR of 14.215.0.0/16 but cannot access any other network endpoints (this method can be used to configure a whitelist for in-cluster services to access external network endpoints).
+4. The pods in nsa namespace can access the 5978/TCP port of the network endpoint with CIDR of 14.215.0.0/16 but cannot access any other network endpoints (this method can be used to configure an allowlist for in-cluster services to access external network endpoints).
 ```
 apiVersion: extensions/v1beta1
 kind: NetworkPolicy
@@ -256,9 +256,9 @@ spec:
 |:----|:----|
 | Pods in different namespaces are isolated from one another, and pods in the same namespace can intercommunicate | Pass |
 | Pods in the same and different namespaces are isolated from one another | Pass |
-| Pods in different namespaces are isolated from one another, and B can access A as specified in the whitelist | Pass |
+| Pods in different namespaces are isolated from one another, and B can access A as specified in the allowlist | Pass |
 | The specified namespace can access the specified CIDR outside the cluster, and all other external IPs are blocked | Pass |
-| Pods under different namespaces are isolated from one another, and namespace B can access the corresponding pods and port in namespace A as specified in the whitelist | Pass |
+| Pods under different namespaces are isolated from one another, and namespace B can access the corresponding pods and port in namespace A as specified in the allowlist | Pass |
 | In the test cases above, when the source pod and the destination pod are in the same node, the isolation takes effect | Fail |
 
 
@@ -282,7 +282,7 @@ VM OS: Ubuntu
 
 K8s: 1.10.5
 
-Kube-router version: 0.2.0 
+Kube-router version: 0.2.0
 
 ### Test Process
 

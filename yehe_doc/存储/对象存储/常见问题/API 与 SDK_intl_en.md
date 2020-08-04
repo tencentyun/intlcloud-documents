@@ -45,7 +45,7 @@ For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/docume
 
 ## FAQs About the SDK for WeChat Mini Program
 
-### How do I configure and limit the whitelist if multiple domain names are requested in the Mini Program or the bucket name is uncertain?
+### How do I configure and limit the allowlist if multiple domain names are requested in the Mini Program or the bucket name is uncertain?
 
 When you instantiate the SDK, open the suffix type using `ForcePathStyle:true`. If you make a suffix type request in a URL format like `https://cos-ap-beijing.myqcloud.com//`, the bucket name `/` will also be added to the signature calculation.
 
@@ -65,14 +65,14 @@ Solution: change the version of the package in your project that has caused NoSu
 
 
 
-### What if upload is slow in the SDK with IOException frequently printed in the log?
+### What if the upload is slow in the SDK with IOException frequently printed in the log?
 
 Cause and solution:
 
  a. Check whether you are accessing COS through the public network. Currently, CVM instances in the same region as COS can access COS through the private network (the IP ranges resolved by the private domain name is 10, 100, and 169). For more information on COS domain names, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). If the public network is used, check whether the egress bandwidth is too small or whether bandwidth resources are occupied by other programs.
  b. Make sure that the logs in the production environment are not at the DEBUG level. INFO logs are recommended.
  c. Currently, the simple upload speed is up to 10 MB/s, and the speed of 32 concurrent uploads using advanced APIs can reach 60 MB/s. If the speed is far lower than those two values, see a and b.
- d. If a WARN log prints IOException, ignore it, as the SDK will retry. IOException may be caused by slow network connection. For possible reasons, see a and b.
+ d. If a WARN log prints IOException, ignore it, as the SDK will retry. IOException may be caused by a slow network connection. For possible reasons, see a and b.
 
 ### How to create a directory in the SDK?
 
