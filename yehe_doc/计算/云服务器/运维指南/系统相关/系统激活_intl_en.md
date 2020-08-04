@@ -14,7 +14,7 @@ Before you activate a Windows CVM, make sure that services and other features on
 ## Automatic Activation
 Tencent Cloud encapsulates a script for activating Windows servers, which simplifies automatic activation.
 1. Log in to the Windows CVM.
-2. Visit `http://mirrors.tencentyun.com/install/windows/activate-win.bat` in the web browser and download the script.
+2. Open the browser on CVM, visit `http://mirrors.tencentyun.com/install/windows/activate-win.bat` and download the script.
 3. Run the script to complete automatic activation.
 
 ## Manual Activation
