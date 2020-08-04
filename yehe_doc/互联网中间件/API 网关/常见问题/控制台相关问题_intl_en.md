@@ -36,4 +36,9 @@ A created API service can be called only after it is published in an environment
 If a service is published in different environments, the default call address should contain the environment name, such as:
 `service-asoj98o0-1251762227.ap-guangzhou.apigateway.myqcloud.com/release/user path`
 
-
+### How do I upload a file through API Gateway?
+Based on different backend types and file sizes, there are four situations:
+- If the backend is connected to an SCF API to upload small files, we recommend you Base64-encode the files through the client and pass the encoded content to SCF first. Then, SCF will Base64-decode the content to complete the upload.
+- If the backend is connected to an SCF API to upload large files, we recommend you upload the files to COS through the client and pass the object addresses to SCF first. Then, SCF will pull the files from COS to complete the upload.
+- If the backend is connected to an API of another service to upload files below 16 MB in size, you only need to leave the parameters empty and keep everything pass-through.
+- If the backend is connected to an API of another service to upload large files above 16 MB in size, we recommend you upload the files to COS through the client and pass the object addresses to the backend service first. Then, the backend service will pull the files from COS to complete the upload.
