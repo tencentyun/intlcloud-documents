@@ -6,6 +6,7 @@ This document describes how to configure custom policies in Tencent Kubernetes E
 ## Policy Syntax Description
 The following figure shows the structure of the policy syntax.
 ![](https://main.qcloudimg.com/raw/dc57207bdbf095ad1b499f0b5acaef57.png)
+
 - **action**: indicates an API.
 - **resource**: indicates a resource.
 
@@ -67,7 +68,7 @@ cvm:DescribeKeyPairs</td>
 	</tr>
 	<tr>
 	<td>Using an existing CVM to create a self-deployed cluster</td>
-        <td><ul class="params"><li>Creating an empty cluster to include features</li><li>Using an existing CVM as a node</li><li>Using an existing CVM as Primary&ETCD</li><li>Mounting a security group</li><li>Mounting a data disk</li><li>Enabling automatic adjustment</li></ul></td>
+        <td><ul class="params"><li>Creating an empty cluster to include features</li><li>Using an existing CVM as a node</li><li>Using an existing CVM as Control Plane & ETCD</li><li>Mounting a security group</li><li>Mounting a data disk</li><li>Enabling automatic adjustment</li></ul></td>
     <td>cvm:DescribeInstances
 vpc:DescribeSubnetEx
 cvm:DescribeSecurityGroups
@@ -105,7 +106,7 @@ cvm:DescribeImages</td>
 </tr>
 	<tr>
 	<td>Automatically creating a CVM to create a self-deployed cluster</td>
-        <td><ul class="params"><li>Creating an empty cluster to include features</li><li>Purchasing a CVM as a node</li><li>Purchasing a CVM as Primary&ETCD</li><li>Mounting a security group</li><li>Mounting a data disk</li><li>Enabling automatic adjustment</li></ul></td>
+        <td><ul class="params"><li>Creating an empty cluster to include features</li><li>Purchasing a CVM as a node</li><li>Purchasing a CVM as Control Plane & ETCD</li><li>Mounting a security group</li><li>Mounting a data disk</li><li>Enabling automatic adjustment</li></ul></td>
     <td>cvm:DescribeSecurityGroups
 cvm:DescribeKeyPairs
 cvm:RunInstances

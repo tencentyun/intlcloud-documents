@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes how to perform auto scaling through a server fleet.
+This document describes how to implement auto scaling through a server fleet.
 
 
 
@@ -12,7 +12,7 @@ You have completed the steps in the [Demo](https://intl.cloud.tencent.com/docume
 ### Modifying the scaling configuration and the number of processes 
 
 1. Log in to the [GSE Console](https://console.cloud.tencent.com/gse/asset) and click **Fleet** on the left sidebar.
-2. Click the ID of the server fleet created in the "Demo" to enter the fleet details page. Click the **Expand/Reduce** tab to view scaling details.
+2. Click the ID of the server fleet created in the "Demo" to enter the fleet details page. Click the **Scaling** tab to view scaling details.
 ![](https://main.qcloudimg.com/raw/36b0bb5d3fd052bb79d87247555e637e.png)
 3. Click **Modify** in the top-right corner to modify the scaling configuration as follows:
  1. Select "Automatic adjustment" as the adjustment mode.
@@ -21,21 +21,22 @@ You have completed the steps in the [Demo](https://intl.cloud.tencent.com/docume
  4. After making the modifications, click **OK**.
 ![](https://main.qcloudimg.com/raw/e4805f7c77db319c80a46fade73b4170.png)
  >? 
- >-  Game server session buffer = number of available game server sessions / maximum number of game server sessions
+    -  Game server session buffer = number of available game server sessions / maximum number of game server sessions
   = (maximum number of game server sessions - number of active game server sessions) / maximum number of game server sessions.
- >- If the game server session buffer is configured as 30%, expansion will be performed when the available game server sessions are below 30%; otherwise, reduction will be performed.
+
+	  - If the game server session buffer is configured as 30%, expansion will be performed when the available game server sessions are below 30%; otherwise, reduction will be performed.
 
 ### Creating game server session and observing expansion result
 1. In the console, click **Demo** on the left sidebar, complete the first three steps in the [Demo](https://intl.cloud.tencent.com/document/product/1055/37401), and click **Create Game Server Session** for seven times to create eight game server sessions and trigger expansion.
 ![](https://main.qcloudimg.com/raw/9c3a7488abacb89bf8c31a254f294220.png)
 
 >?
->- In GSE Console > Demo, one server can sustain up to 10 game server sessions by default. Therefore, when the server sustains 7 game server sessions, the game server session buffer will be number of available game server sessions / maximum number of game server sessions = (maximum number of game server sessions - number of active game server sessions) / maximum number of game server sessions = (10 - 7) / 10 = 30%.
+>- In GSE Console > Demo, one server can sustain up to 10 game server sessions by default. Therefore, when the server sustains seven game server sessions, the game server session buffer will be number of available game server sessions / maximum number of game server sessions = (maximum number of game server sessions - number of active game server sessions) / maximum number of game server sessions = (10 - 7) / 10 = 30%.
 >- Therefore, you need to create eight game server sessions at least to trigger expansion.
 
-2. Click **[Fleet](https://console.cloud.tencent.com/gse/fleet)** on the left sidebar, select the ID of the created server fleet to enter the fleet details page, and click the **Instance List** tab to observe. After two minutes, you will see that the number of instances is increased to two.
+2. Click **[Fleet](https://console.cloud.tencent.com/gse/fleet)** on the left sidebar, and select the ID of the created server fleet to enter the fleet details page. Now, click the **Instance List** tab and observe. After two minutes, you will see that the number of instances is increased to two.
 ![](https://main.qcloudimg.com/raw/120fadd9401cdfb751bf6dcc469b2344.png)
->?After the creation, **do not** click **Complete** for next trial. Instead, you still need the above configuration for reduction.
+>?After the creation, **do not** click **Complete** for next round of trial. Instead, you will still need the above configuration for subsequent reduction steps.
 
 ### Ending game server session and observing reduction result
 
@@ -45,10 +46,10 @@ You have completed the steps in the [Demo](https://intl.cloud.tencent.com/docume
 
 >? 
 >- Game server session buffer = number of available game server sessions / maximum number of game server sessions = (maximum number of game server sessions - number of active game server sessions) / maximum number of game server sessions = (20 - 6) / 20 = 70%.
->- As there are only 6 active game server sessions left, which is above 30%, so reduction will be triggered.
->- On the current version, after you close the client webpage, previously created player sessions will not be able to reconnect to the client, and only new player sessions can be connected again to close the game server session.
+>- As there are only six active game server sessions left now, making the buffer increased to 70%, reduction is triggered (above 30%).
+>- Currently, if you close your client webpage, the previously created player sessions will not be able to reconnect to your client. In this case, you have to create a new player session for reconnection in order to close the game server session.
 
-3. Click **[Server Fleet](https://console.cloud.tencent.com/gse/fleet)** on the left sidebar, select the ID of the created server fleet to enter the fleet details page, and click the **Instance List** tab. Observe the instance quantity. After 2 minutes, you will see that the number of servers is decreased to 1.
+3. Click **[Fleet](https://console.cloud.tencent.com/gse/fleet)** on the left sidebar, select the ID of the created server fleet to access the fleet details page, and select **Instance List**. Observe the instance quantity. After two minutes, you will see the number of servers decreases to two.
 ![](https://main.qcloudimg.com/raw/08b123eb22e7bf84f6ebf812bc23e924.png)
 
 
