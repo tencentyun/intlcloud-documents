@@ -14,7 +14,7 @@ Windows CVMをアクティブ化する前に、Windowsのサービスおよび�
 ## 自動アクティベーション
 Tencent Cloudは、Windowsサーバーのアクティベーション用のスクリプトをカプセル化して、手動アクティベーションの手順を簡素化しました。
 1. Windows CVM にログインします。
-2. ブラウザで`http://mirrors.tencentyun.com/install/windows/activate-win.bat`にアクセスして、スクリプトをダウンロードします。
+CVMのブラウザーから `http://mirrors.tencentyun.com/install/windows/activate-win.bat`アドレスにアクセスし、スクリプトをダウンロードします。
 3. スクリプトを実行して、自動アクティベーションを完了します。
 
 ## 手動アクティベーション

@@ -2,7 +2,9 @@ Elasticsearch provides full-featured RESTful APIs for intercalation with cluster
 
 As Tencent Cloud ES is deployed in your VPC, you can use a CVM instance in the same VPC as the client to access the ES cluster over the **private network** or **public network**. **Public network access has security risks**; therefore, please enable it with caution.
 
+>?
 >Public network access is used for development and debugging only but cannot be used in the production environment, as the system limits the call frequency.
+> - Currently, ES access over the public network is free of charge for a bandwidth of up to 10 MB.
 
 ## Viewing Private/Public Network Access Addresses
 

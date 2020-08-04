@@ -1,5 +1,5 @@
 消息队列 CKafka 的架构图如下所示：
-![](https://mc.qcloudimg.com/static/img/c1094d009fa433ef2598e0deb51dde68/image.png)
+![](https://mc.qcloudimg.com/static/img/561a25b617029b3d76b8210e09338010/image.png)
 - 生产者 Producer 可能是网页活动产生的消息、服务日志等信息。生产者通过 push 模式将消息发布到 Cloud Kafka 的 Broker 集群。
 - 集群通过 Zookeeper 管理集群配置，进行 leader 选举，故障容错等。
 - 消费者 Consumer 被划分为若干个 Consumer Group。消费者通过 pull 模式从 Broker 中消费消息。
@@ -10,7 +10,7 @@
 消息队列 CKafka 中存在大量的网络数据持久化到磁盘和磁盘文件通过网络发送的过程。这一过程的性能直接影响 Kafka 的整体吞吐量，主要通过以下几点实现：
 - **高效使用磁盘**：磁盘中顺序读写数据，提高磁盘利用率。
  - 写 message：消息写到 page cache，由异步线程刷盘。
- - 读 message：消息直接从 page cache转入 socket 发送出去。
+ - 读 message：消息直接从 page cache 转入 socket 发送出去。
  - 当从 page cache 没有找到相应数据时，此时会产生磁盘 IO，从磁盘加载消息到 page cache，然后直接从 socket 发出去。
 - **Broker 的零拷贝（Zero Copy）机制**：使用 sendfile 系统调用，将数据直接从页缓存发送到网络上。 
 - **减少网络开销**
