@@ -4,8 +4,8 @@ A [network policy](https://kubernetes.io/docs/concepts/services-networking/netwo
 
 ## Kube-router
 
-- Official website: [https://www.kube-router.io](https://www.kube-router.io)
-- Project address: [https://github.com/cloudnativelabs/kube-router](https://github.com/cloudnativelabs/kube-router)
+- [Official website](https://www.kube-router.io)
+- [Project address](https://github.com/cloudnativelabs/kube-router)
 
 The latest version of Kube-router is 0.2.0.
 
