@@ -12,7 +12,7 @@
 1. 进入 [策略管理界面](https://console.cloud.tencent.com/cam/policy)，单击列项【服务类型】。
 2. 在下拉选项中选择【游戏服务器引擎】，您也可使用右上角搜索功能，查找该策略。
 
-![](https://main.qcloudimg.com/raw/e64467fc996a50465b46dbc6ac6859de.jpg)
+![](https://main.qcloudimg.com/raw/fe654b37e2fd44deac52743c77ecc477.png)
 
 策略语法如下：
 
@@ -40,7 +40,7 @@
 1. 进入 [策略管理界面](https://console.cloud.tencent.com/cam/policy)，单击列项【服务类型】。
 2. 在下拉选项中选择【游戏服务器引擎】，您也可使用右上角搜索功能，查找该策略。
 
-![](https://main.qcloudimg.com/raw/f58c8a249aff3ec4c2e4ce3863c82d6b.png)
+![](https://main.qcloudimg.com/raw/2368902dfcb590dd60e51b1720c0c07f.png)
 
 策略语法如下：
 
