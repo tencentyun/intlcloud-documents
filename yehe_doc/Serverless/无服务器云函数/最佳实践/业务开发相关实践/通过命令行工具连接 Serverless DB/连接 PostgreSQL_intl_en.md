@@ -30,11 +30,11 @@ This document uses a function in the Node.js programming language as an example 
 2. Create a `.env` file in `test-postgreSQL` and configure your Tencent Cloud `SecretId`, `SecretKey`, region, and AZ information in the following format in the file:
 ```text
  # .env
- TENCENT_SECRET_ID=xxx  // `SecretId` of your account
- TENCENT_SECRET_KEY=xxx // `SecretKey` of your account
+ TENCENT_SECRET_ID=xxx  # `SecretId` of your account
+ TENCENT_SECRET_KEY=xxx # `SecretKey` of your account
  # Region and AZ configuration
- REGION=ap-guangzhou // Resource deployment region, which refers to the region where the function and static webpage are deployed
- ZONE=ap-guangzhou-2 // Resource deployment AZ, which refers to the AZ where the database is deployed
+ REGION=ap-guangzhou # Resource deployment region, which refers to the region where the function and static webpage are deployed
+ ZONE=ap-guangzhou-2 # Resource deployment AZ, which refers to the AZ where the database is deployed
 ```
 >?
 > - If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.

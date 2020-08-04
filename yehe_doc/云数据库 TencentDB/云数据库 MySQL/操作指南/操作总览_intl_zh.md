@@ -1,50 +1,26 @@
-您在使用云数据库 MySQL 时，可能碰到诸如访问实例、维护实例、建立数据库和表、数据备份与回档等问题。本文将介绍云数据库 MySQL 实例以及跟云数据库 MySQL 相关的产品使用过程中的常用操作。
-## 实例
-[实例](https://intl.cloud.tencent.com/document/product/236/5147) 即云数据库 MySQL 实例。一个数据库实例可以包含多个由用户创建的数据库，并且可以使用与访问独立数据库实例相同的工具和应用程序进行访问。下面列举云数据库 MySQL 实例、数据库和表的常用操作。
+本文介绍云数据库 MySQL 控制台的实例列表页和管理页相关操作，指导您轻松管理 MySQL数据库。
 
-### 常用操作
-- [访问 MySQL 数据库](https://intl.cloud.tencent.com/document/product/236/3130)
+## 实例列表页
+在 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例列表页可查看实例相关信息，以及管理实例。
+![](https://main.qcloudimg.com/raw/6b5ce84ac2728e387d79703267efdbb8.png)
 
-- 维护实例
- - [设置实例维护时间](https://intl.cloud.tencent.com/document/product/236/10929)
- - [为实例指定项目](https://intl.cloud.tencent.com/document/product/236/8460)
+| 功能 | 介绍 |
+|---------|---------|
+| 调整配置 | 在实例列表，您可以对数据库实例进行配置调整（扩缩容），支持实例升级与降级，详细介绍请参见 [调整数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707)。 |
+|回档 | 在实例列表，勾选需要回档的实例，选择【更多操作】>【回档】，借助于冷备和 binlog 可以将数据库回档至某个指定的时间，详细介绍请参见 [数据回档](https://intl.cloud.tencent.com/document/product/236/7276)。|
+|重启 |在实例列表，勾选需要重启的实例，单击【重启】对实例进行重启操作，支持批量重启（勾选多个实例）。<li>重启期间，实例将无法正常访问，已有的连接会断掉，请您做好准备，以免造成影响。<li>重启期间，如果业务写入量很大，脏页过多，会导致重启失败。重启失败后，实例回到重启之前状态，实例仍可访问。<li>请确保在业务低峰期重启，保证重启成功率，降低对业务的影响。|
 
-- 变更实例
- - [升级数据库引擎版本](https://intl.cloud.tencent.com/document/product/236/8126)
- - [调整数据库实例规格](https://intl.cloud.tencent.com/document/product/236/19707)
+## 实例管理页
+登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)，初始化完成后，在实例列表，单击实例名或在“操作”列的【管理】，可以进入实例管理页面。您可以进行实例详情查看、实例监控、数据库管理等操作。
+![](https://main.qcloudimg.com/raw/98cd4863ce625f3b42a1f654da5bd7a4.png)
 
-- 扩展实例
- - [只读实例](https://intl.cloud.tencent.com/document/product/236/7270)
- - [只读实例 RO 组](https://intl.cloud.tencent.com/document/product/236/11361)
- - [管理灾备实例](https://intl.cloud.tencent.com/document/product/236/7272)
-
-- [销毁实例](https://intl.cloud.tencent.com/document/product/236/31895)
-
-### 数据库管理
-- [创建数据库和表](https://intl.cloud.tencent.com/document/product/236/8465)
-- [批量操作实例](https://intl.cloud.tencent.com/document/product/236/8466)
-- [删除数据库和表](https://intl.cloud.tencent.com/document/product/236/31905)
-
-## 参数模板
-[参数模版](https://intl.cloud.tencent.com/zh/document/product/236) 用来管理数据库引擎的参数配置。数据库参数组就像是引擎配置值的容器，这些值可应用于一个或多个数据库实例。下面介绍云数据库实例参数模板目前支持的常见操作。
-
-## 数据
-云数据库 MySQL 对数据的常见操作如下：
-
-### 备份与回档
-- [使用物理备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31910)
-- [使用逻辑备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31909)
-- [回档数据库](https://intl.cloud.tencent.com/document/product/236/7276)
-
-### 数据导入导出
-- [导入数据](https://intl.cloud.tencent.com/document/product/236/8463)
-- [离线迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)
-
-## 安全组
-[云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470) 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。
-#### 常用操作
-- [为云数据库配置安全组](https://intl.cloud.tencent.com/document/product/236/14470#.E4.B8.BA.E4.BA.91.E6.95.B0.E6.8D.AE.E5.BA.93.E9.85.8D.E7.BD.AE.E5.AE.89.E5.85.A8.E7.BB.84)
-- [导入安全组规则](https://intl.cloud.tencent.com/document/product/236/14470#.E5.AF.BC.E5.85.A5.E5.AE.89.E5.85.A8.E7.BB.84.E8.A7.84.E5.88.99)
-- [克隆安全组](https://intl.cloud.tencent.com/document/product/236/14470#.E5.85.8B.E9.9A.86.E5.AE.89.E5.85.A8.E7.BB.84)
-- [删除安全组](https://intl.cloud.tencent.com/document/product/236/14470#.E5.88.A0.E9.99.A4.E5.AE.89.E5.85.A8.E7.BB.84)
-
+| 功能 | 介绍 |
+|---------|---------|
+| 实例详情 | 在 [实例详情](https://console.cloud.tencent.com/cdb) 页面，您可以查看和操作数据库的各种信息，单击<img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;">可以对实例的基本信息进行修改，其中外网地址默认是关闭状态，如有需要，请单击“外网地址”处的【开启】进行开启。 |
+|实例监控 | 在实例监控页面，您可以查看当前数据库运行的众多核心指标的监控，分为访问、负载、查询缓存、表、InnoDB、MyISAM 等维度的监控，详细介绍请参见 [监控功能](https://intl.cloud.tencent.com/document/product/236/8455) 和 [告警功能](https://intl.cloud.tencent.com/document/product/236/8457)。|
+|数据库管理 | <li>**数据库列表**<br>在数据库列表页面，您可以将 SQL 文件导入到指定的数据库，详细介绍请参见 [导入 SQL 文件](https://intl.cloud.tencent.com/document/product/236/8466)。<li>**参数设置**<br>在参数设置页面，您可以对数据库的众多可修改参数进行设置和查看修改历史，单击【参数运行值】旁边的<img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;">可以对该参数值进行修改。<li>**帐号管理**<br>在帐号管理页面，您可以对系统默认的 root 帐号进行管理，如修改权限，重置密码等，也可以创建帐号，删除帐号，详细介绍请参见 [帐号管理](https://intl.cloud.tencent.com/document/product/236/31900)。|
+|安全组|在安全组页面，您可以对您的数据库进行安全组的配置操作，详细介绍请参见 [云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470)。|
+|备份恢复|在备份恢复页面，您可以进行下载 binlog 和冷备操作，详细介绍请参见 [备份数据库](https://intl.cloud.tencent.com/document/product/236/32340)。|
+|操作日志|在操作日志页面，您可以查看和下载慢查询日志、错误日志、回档日志，详细介绍请参见 [操作日志](https://intl.cloud.tencent.com/document/product/236/34588)。|
+|只读实例|在只读实例页面，您可以创建一个或多个只读实例，以支持用户的读写分离和一主多从应用场景，可显著提高用户数据库的读负载能力，详细介绍请参见 [只读实例](https://intl.cloud.tencent.com/document/product/236/7270)。|
+|连接检查|在连接检查页面，您可以检测云数据库可能存在的连接访问问题，并根据提供的解决方法处理访问问题，以确保您的云数据库能够正常访问，详细介绍请参见 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927)。|
