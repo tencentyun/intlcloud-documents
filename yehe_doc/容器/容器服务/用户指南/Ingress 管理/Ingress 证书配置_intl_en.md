@@ -14,8 +14,6 @@ This document describes how to use an Ingress certificate. You can configure an 
 - Classic CLB does not support domain name- or URL-based forwarding. An Ingress that is created through Classic CLB cannot be configured with multiple certificates.
 
 
-
-
 ## Example
 TKE allows you to configure a certificate for a CLB HTTPS listener that is created for an Ingress by using the `spec.tls` field in the Ingress. Where, `secretName` indicates a Kubernetes Secret resource that contains a Tencent Cloud certificate ID, as shown in the following example:
 - **ingress**

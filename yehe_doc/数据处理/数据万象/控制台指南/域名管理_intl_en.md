@@ -72,5 +72,5 @@ To protect developers’ images against hotlinking and traffic theft, Tencent Cl
 2. Click **Domain Management** and scroll down to the **Hotlink Protection Setting** section to make a configuration.
 
 >
->- You can whitelist or blacklist websites. The referer list supports the wildcard and multiple domain names separated by line breaks (one entry per line).
+>- You can allowlist or blocklist websites. The referer list supports the wildcard and multiple domain names separated by line breaks (one entry per line).
 >- After hotlink protection is enabled, you can limit service sources based on policies.

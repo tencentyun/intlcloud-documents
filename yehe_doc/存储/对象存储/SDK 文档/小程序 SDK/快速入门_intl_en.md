@@ -38,18 +38,18 @@ The WeChat Mini Program code is referenced with `var COS = require('cos-wx-sdk-v
 
 ## Getting Started
 
-### Configuring domain name whitelist for WeChat Mini Programs
+### Configuring domain name allowlist for WeChat Mini Programs
 
-To send a COS request using WeChat Mini Program, log in to [Wechat Official Accounts Platform](https://mp.weixin.qq.com), select **Development** > **Settings** > **Server Domains**, and then configure a domain whitelist.The SDK uses the following two APIs:
+To send a COS request using WeChat Mini Program, log in to [Wechat Official Accounts Platform](https://mp.weixin.qq.com), select **Development** > **Settings** > **Server Domains**, and then configure a domain allowlist.The SDK uses the following two APIs:
 
 1. For cos.postObject, use the wx.uploadFile API.
 2. For other methods, use the wx.request API.
 
-For both methods, you need to configure the COS domain name. There are two forms of domain name whitelists.
+For both methods, you need to configure the COS domain name. There are two forms of domain name allowlists.
 
-1. For standard requests, you can configure the bucket domain name as the whitelist domain name, for example:
+1. For standard requests, you can configure the bucket domain name as the allowlist domain name, for example:
    `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com`.
-2. If multiple buckets are used in your WeChat Mini Program, you can choose to use suffixed COS requests by passing in `ForcePathStyle: true` when instantiating the SDK. In this case, you need to configure the region domain name as the whitelisted domain name, such as `cos.ap-guangzhou.myqcloud.com`.
+2. If multiple buckets are used in your WeChat Mini Program, you can choose to use suffixed COS requests by passing in `ForcePathStyle: true` when instantiating the SDK. In this case, you need to configure the region domain name as the allowed domain name, such as `cos.ap-guangzhou.myqcloud.com`.
 
 ### Initialization
 
@@ -59,7 +59,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 
 ```js
 var cos = new COS({
-    // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of whitelisted domain names to be configured; the region domain name will be used for requests
+    // ForcePathStyle: true, // If multiple buckets are used, you can use suffixed requests to reduce the number of allowed domain names to be configured; the region domain name will be used for requests
     getAuthorization: function (options, callback) {
         // Get a temporary key asynchronously
         wx.request({
@@ -210,7 +210,7 @@ var cos = new COS({
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` measured in milliseconds. Default value: 1,000 | Number | No |
 | Protocol | Protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
 | ServiceDomain | The request domain name when `getService` is called, such as `service.cos.myqcloud.com` | String | No |
-| Domain | The custom request domain name used to call a bucket or object API. You can use a template such as `"{Bucket}.cos.{Region}.myqcloud.com"` which will use the bucket and region information passed in the replacement parameters when an API is called. | String | No |
+| Domain | The custom request domain name used to call a bucket or object API. You can use a template such as `""{Bucket}.cos.{Region}.myqcloud.com""` which will use the bucket and region information passed in the replacement parameters when an API is called. | String | No |
 | UploadQueueSize | The maximum size of the upload queue. Excess tasks will be cleared if their status is not waiting, checking, or uploading. Default value: 10,000 | Number | No |
 | ForcePathStyle | Forces the use of a suffix when sending requests. The suffixed bucket will be placed in the pathname after the domain name, and the bucket will be added to the signature pathname for calculation. Default value: false | Boolean | No |
 | UploadCheckContentMd5  | Forces the verification of `Content-MD5` for file uploads, which calculates the MD5 checksum of the file request body and places it in the `Content-MD5` field of the header. Default value: false | Boolean | No |
@@ -238,7 +238,7 @@ After the temporary key is obtained, callback returns an object. The attributes 
 | TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
 | TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | No |
 | XCosSecurityToken | sessionToken of the obtained temporary key, which corresponds to the x-cos-security-token field in the header | String | No |
-| StartTime | Key acquisition start time  measured in seconds, i.e., the timestamp of the key acquisition time, such as 1580000000. This parameter is used as the signature start time. Passing in this parameter can avoid signature expiration issues due to time deviation on the frontend | String | No |
+| StartTime | Key acquisition start time measured in seconds, i.e., the timestamp of the key acquisition time, such as 1580000000. This parameter is used as the signature start time. Passing in this parameter can avoid signature expiration issues due to time deviation on the frontend | String | No |
 | ExpiredTime | `expiredTime` of the obtained temporary key measured in seconds, i.e., the timeout timestamp, such as 1580000900 | String | No |
 
 #### `getAuthorization` callback function description (using method 2)
@@ -289,7 +289,7 @@ cos.putBucket({
 });
 ```
 
-> !If you need to create a bucket in your WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as a domain name whitelist. Instead, you can use the suffix to call it. For applicable measures, please see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687#.E5.B0.8F.E7.A8.8B.E5.BA.8F.E9.87.8C.E8.AF.B7.E6.B1.82.E5.A4.9A.E4.B8.AA.E5.9F.9F.E5.90.8D.EF.BC.8C.E6.88.96.E8.80.85.E5.AD.98.E5.82.A8.E6.A1.B6.E5.90.8D.E7.A7.B0.E4.B8.8D.E7.A1.AE.E5.AE.9A.EF.BC.8C.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.E7.99.BD.E5.90.8D.E5.8D.95.E9.85.8D.E7.BD.AE.E5.92.8C.E9.99.90.E5.88.B6.E9.97.AE.E9.A2.98.EF.BC.9F).
+> !If you need to create a bucket in your WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as a domain name allowlist. Instead, you can use the suffix to call it. For applicable measures, please see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687#.E5.B0.8F.E7.A8.8B.E5.BA.8F.E9.87.8C.E8.AF.B7.E6.B1.82.E5.A4.9A.E4.B8.AA.E5.9F.9F.E5.90.8D.EF.BC.8C.E6.88.96.E8.80.85.E5.AD.98.E5.82.A8.E6.A1.B6.E5.90.8D.E7.A7.B0.E4.B8.8D.E7.A1.AE.E5.AE.9A.EF.BC.8C.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.E7.99.BD.E5.90.8D.E5.8D.95.E9.85.8D.E7.BD.AE.E5.92.8C.E9.99.90.E5.88.B6.E9.97.AE.E9.A2.98.EF.BC.9F).
 
 ### Querying a bucket list
 
@@ -301,7 +301,7 @@ cos.getService(function (err, data) {
 
 ### Uploading an object
 
-The WeChat Mini Program upload API "wx.uploadFile" only supports POST requests. To upload files with the SDK, you need to use the postObject API. If only the file uploading API is needed in your WeChat Mini Program, we do not recommended referencing the SDK. For more information, please see the [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js).
+The WeChat Mini Program upload API ""wx.uploadFile"" only supports POST requests. To upload files with the SDK, you need to use the postObject API. If only the file uploading API is needed in your WeChat Mini Program, we do not recommended referencing the SDK. For more information, please see the [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js).
 
 ```js
 // First, select the file to get the temporary path

@@ -2,30 +2,31 @@
 ## Features
 Tencent Cloud CBS [snapshots](https://intl.cloud.tencent.com/document/product/362/31638) have the scheduled snapshot feature, which makes it easier for developers to flexibly set backup job policies.
 The following table describes the scheduled snapshot policies recommended for different businesses.
+
 <table>
 	<tr>
-		<th>Business</th>
+		<th>Scenario</th>
 		<th>Snapshot Policy</th>
 		<th>Snapshot Retention Period</th>
 	</tr>
 	<tr>
-		<td>Core businesses</td>
+		<td>Core product/service</td>
 		<td>Use scheduled snapshots, with the policy set to once per day.</td>
-		<td>7–30 days</td>
+		<td>7 to 30 days</td>
 	</tr>
 	<tr>
-		<td>Non-core businesses and non-data businesses</td>
+		<td>Non-core and non-data product/service</td>
 		<td>Use scheduled snapshots, with the policy set to once per week.</td>
 		<td>7 days</td>
 	</tr>
 	<tr>
-		<td>Archiving businesses</td>
-		<td>Snapshots are manually created based on actual business requirements without a fixed snapshot creation frequency.</td>
+		<td>Archive</td>
+		<td>Scheduled snapshot is not required. You can create snapshots manually whenever needed.</td>
 		<td>One month to several months</td>
 	</tr>
 	<tr>
-		<td>Test businesses</td>
-		<td>Snapshots are manually created based on actual business requirements without a fixed snapshot creation frequency.</td>
+		<td>Test</td>
+		<td>Scheduled snapshot is not required. You can create snapshots manually whenever needed.</td>
 		<td>Deleted after being used</td>
 	</tr>
 </table>
@@ -93,18 +94,17 @@ The following table describes the content and features of scheduled snapshot pol
 </table>
 
 
-## Operational Guidelines
+## Directions
 ### Creating a scheduled snapshot policy
 >? A single Tencent Cloud account can set a maximum of 30 scheduled snapshot policies in each region.
 
 1. Log in to the [Scheduled Snapshot Policy](https://console.cloud.tencent.com/cvm/snapshot/asp) page.
 <span id="step2"></span>
 2. Select a region.
-3. Click **Create**.
+3. Click **Create**, as shown in the following figure:
 
 <span id="step4"></span>
-4. On the "Create a new snapshot policy" page, set the following parameters and click **OK**.
-
+4. On the **Create a new snapshot policy** page, set the following parameters and click **OK**, as shown in the following figure:
  <table>
      <tr>
          <th width="14%">Parameter</th>  
@@ -112,7 +112,7 @@ The following table describes the content and features of scheduled snapshot pol
      </tr>
 	 <tr>
          <td>Name</td>
-         <td>Required.</br>The name of a scheduled snapshot policy. It contains up to 60 characters.</td>
+         <td>Required.</br>The name of a scheduled snapshot policy. It can contain up to 60 characters.</td>
      </tr> 
 	 <tr>
          <td>Region</td>
@@ -124,7 +124,7 @@ The following table describes the content and features of scheduled snapshot pol
      </tr>
 	 <tr>
          <td>Backup Time</td>
-         <td>Required.</br>The time for automatically creating snapshots. Value range: 00:00–23:00 (The set scheduled snapshot creation time may be different from the actual snapshot creation time in the console due to snapshot task execution in the backend. Data in a snapshot is based on the creation time in the console.)</td>
+         <td>Required.</br>The time to automatically create snapshots. Value range: 00:00 - 23:00. Due to server performance issues, the actual scheduled snapshot creation time may be slightly different from time set here. In this case, data in a snapshot is based on the actual creation time.</td>
      </tr>
 	 <tr>
          <td>Retention Period</td>
@@ -141,20 +141,19 @@ The following table describes the content and features of scheduled snapshot pol
 1. Log in to the [Scheduled Snapshot Policy](https://console.cloud.tencent.com/cvm/snapshot/asp) page.
 2. Select a region.
 3. Find the target policy and click **Associate Cloud Disks**.
-4. On the "Associate Cloud Disks" page, select cloud disks to associate with.
-
+4. On the **Associate Cloud Disks** page, select cloud disks to associate with.
 5. Click **OK**.
 
 ### Enabling or disabling a scheduled snapshot policy
 1. Log in to the [Scheduled Snapshot Policy](https://console.cloud.tencent.com/cvm/snapshot/asp) page.
 2. Select a region.
-3. Find the target policy and click the button in the "Scheduled Snapshot" column to enable or disable the scheduled snapshot policy.
+3. Find the target policy and click the button in the **Scheduled Snapshot** column to enable or disable the scheduled snapshot policy.
 
 ### Modifying a scheduled snapshot policy
 1. Log in to the [Scheduled Snapshot Policy](https://console.cloud.tencent.com/cvm/snapshot/asp) page.
 2. Select a region.
 3. Find the target policy and click **Change Policy** in the **Operation** column.
-4. In the "Modify snapshot policy" dialog box, modify related parameters and click **OK**. For more information about parameter descriptions, see [Step 4](#step4)).
+4. In the **Modify snapshot policy** dialog box, modify related parameters and click **OK**. For more information about parameter descriptions, see [Step 4](#step4)).
 
 ### Deleting a scheduled snapshot policy
 
@@ -171,4 +170,4 @@ The following table describes the content and features of scheduled snapshot pol
 2. Select a region.
 3. Click the ID of the target snapshot.
 4. On the details page, click **Permanent** to permanently store the snapshot.
-5. Return to the snapshot list. "Retention Period" of the snapshot is changed to "Permanent".
+5. Return to the snapshot list. **Retention Period** of the snapshot is changed to **Permanent**.
