@@ -3,7 +3,7 @@ TencentDB for MySQL allows you to create one or more read-only instances to form
 
 ## Prerequisites
 - A master instance should be created before a read-only instance can be created. For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/236/5160).
-- Before use, a TencentDB for MySQL instance needs to be initialized. For more information, please see [Initializing TencentDB for MySQL Instance](/doc/product/236/3128).
+- Before use, a TencentDB for MySQL instance needs to be initialized. For more information, please see [Initializing TencentDB for MySQL Instance](https://intl.cloud.tencent.com/document/product/236/3128).
 
 ## Directions
 
