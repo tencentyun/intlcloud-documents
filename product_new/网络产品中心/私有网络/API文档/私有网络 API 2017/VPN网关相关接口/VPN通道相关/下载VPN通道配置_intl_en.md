@@ -1,3 +1,6 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [VPC API 3.0](https://intl.cloud.tencent.com/document/product/215/15754) which is standardized and faster.
+>
+
 ## 1. API Description
 
 This API (GetVpnConnConfig) is used to download VPN tunnel configuration.
@@ -9,7 +12,7 @@ The following request parameter list only provides API request parameters. Commo
 
 | Parameter Name | Required | Type   | Description                                                  |
 | :------------- | :------- | :----- | :----------------------------------------------------------- |
-| vpnConnId      | Yes      | String | VPN tunnel ID assigned by the system, which can be vpnConnId or unVpnConnId. unVpnConnId is recommended. For example: vpnx-ol6bcqp0. Can be queried via the API [DescribeVpnConn](http://intl.cloud.tencent.com/doc/api/245/查询VPN通道列表). |
+| vpnConnId      | Yes      | String | VPN tunnel ID assigned by the system, which can be vpnConnId or unVpnConnId. unVpnConnId is recommended. For example: vpnx-ol6bcqp0. Can be queried via the API [DescribeVpnConn](https://intl.cloud.tencent.com/document/api/215/5113). |
 | vendorname     | Yes      | string | Type of peer gateway device.                                 |
 | platform       | Yes      | String | Platform of peer gateway device.                             |
 | software       | Yes      | String | Software version of peer gateway device.                     |
@@ -25,7 +28,7 @@ The following request parameter list only provides API request parameters. Commo
 
 ## 4. Error Codes
 
-The API does not have a business error code. For common error codes, see [VPC Error Codes for details](https://intl.cloud.tencent.com/doc/api/245/私有网络错误码?viewType=preview)
+The API does not have a business error code. For common error codes, see [VPC Error Codes for details](https://intl.cloud.tencent.com/document/api/215/4924)
 
 ## 5. Example
 
