@@ -1,4 +1,4 @@
-## Example of PHP Signature
+## Sample of PHP Signature
 ```php
 <?php
 // Determine the TencentCloud API key of the application
@@ -25,7 +25,7 @@ echo "\n";
 ?>
 ```
 
-## Example of Java Signature
+## Sample of Java Signature
 ```java
 import java.util.Random;
 import javax.crypto.Mac;
@@ -130,7 +130,7 @@ private String base64Encode(byte[] buffer) {
 }
 ```
 
-## Example of Node.js Signature
+## Sample of Node.js Signature
 ```javascript
 var querystring = require("querystring");
 var crypto = require('crypto');
@@ -163,7 +163,7 @@ var signature = Buffer.concat([hmac_buffer, orignal_buffer]).toString("base64");
 console.log(signature);
 ```
 
-## Example of C# Signature
+## Sample of C# Signature
 ```csharp
 using System;
 using System.Security.Cryptography;
@@ -222,7 +222,7 @@ class Program
 
 ```
 
-## Example of Python Signature
+## Sample of Python Signature
 ```Python
 #!/usr/local/bin/python3
 #coding=utf-8
@@ -256,7 +256,7 @@ print("Signature before BASE64: ", Signature)
 print("Signature after BASE64: ", str(Signature2))
 ```
 
-## Example of Go Signature
+## Sample of Go Signature
 ```go
 package main
 

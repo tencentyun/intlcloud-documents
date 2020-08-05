@@ -6,15 +6,15 @@ Tencent Cloud CVM에서 KMS 방식을 사용해 Windows 서버에 권한을 부�
 
 ## 활성화 전 숙지 사항
 1. Windows의 SPP Notification Service는 활성화 관련 서비스에 사용되므로, 아래 이미지와 같이 정상적으로 실행되어야 합니다.
-![](https://main.qcloudimg.com/raw/f8a8aab467f82898d61d7b67fab86c0b.png)
+![](https://main.qcloudimg.com/raw/f84f7bd86fae0df1c2394cdc554b6a98.png)
 2. 일부 최적화 소프트웨어는 서비스 관련 실행 프로그램의 실행 권한을 비활성화하거나 수정할 수 있습니다. 예를 들어, sppsvc.exe 프로세스의 실행 권한이 수정되면 서비스가 정상적으로 실행되지 않을 수 있습니다.
-![](https://mc.qcloudimg.com/static/img/685fe41ef992f11ba305dfb570cb916c/21.png)
+![](https://main.qcloudimg.com/raw/c1ad23337b0f1b6e186d0c6e50c9e1b5.png)
 Windows CVM을 활성화하기 전에, Windows에서 해당 서비스 및 기타 기본 기능이 정상적으로 작동하는지 확인하시기 바랍니다.
  
 ## 자동 활성화
 Tencent Cloud는 Windows 서버 활성화를 하나의 스크립트로 캡슐화하여, 수동 활성화의 절차를 간소화했습니다.
 1. Windows CVM에 로그인합니다.
-2. 브라우저에서 'http://mirrors.tencentyun.com/install/windows/activate-win.bat' 주소로 액세스하여 스크립트를 다운로드합니다.
+2. CVM의 브라우저를 통하여 `http://mirrors.tencentyun.com/install/windows/activate-win.bat` 주소를 액세스하고 스크립트를 다운로드합니다.
 3. 스크립트를 실행하여 자동 활성화를 완료합니다.
 
 ## 수동으로 활성화 실행

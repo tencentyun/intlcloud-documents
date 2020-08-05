@@ -7,7 +7,7 @@ You can log in to the [TencentDB for MySQL Console](https://console.cloud.tencen
 
 <span id = "shilixiaohui"></span>
 ### What if a TencentDB for MySQL instance is terminated?
-After return, a pay-as-you-go instance will be retained in the recycle bin for 1 day. During the retention period, terminated instances can be recovered from the recycle bin.
+When an instance is returned, it will be retained in the recycle bin for a period of time. A monthly subscription instance will be retained for 7 days and a pay-as-you-go instance for 1 day. During this period, you can go to the recycle bin and restore the instance.
 
 <span id = "zhanghaomima"></span>
 ### What if I accidentally delete an account or forgot the password?

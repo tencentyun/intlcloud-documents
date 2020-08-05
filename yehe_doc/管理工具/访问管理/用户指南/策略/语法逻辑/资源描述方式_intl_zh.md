@@ -1,16 +1,14 @@
 资源（resource）元素描述一个或多个操作对象，如 CVM 资源、 COS 存储桶等。 本文档主要介绍 CAM 的资源描述信息。
 
 ### 六段式
-所有资源均可采用下述的六段式描述方式。每种产品都拥有其各自的资源和对应的资源定义详情。有关如何指定资源的信息，请参阅有关如何指定资源的信息，请参阅对应的产品文档。
+所有资源均可采用下述的六段式描述方式。每种产品都拥有其各自的资源和对应的资源定义详情。有关如何指定资源的信息，有关如何指定资源的信息，请参阅 [支持CAM 的产品](https://intl.cloud.tencent.com/document/product/598/10588) 中对应产品的参考文档。
 六段式定义方式如下所示：
-
 ```
 qcs:project_id:service_type:region:account:resource
 ```
 
-
 -   **qcs**：是 qcloud service 的简称，表示是腾讯云的云资源。该字段是必填项。 
--  **project_id**：描述项目信息，仅兼容 CAM 早期逻辑。当前策略语法禁止填写该信息。  
+-  **project_id**：描述项目信息，仅兼容 CAM 早期逻辑。当前策略语法禁止填写该信息，置空即可。
 -  **service_type**：描述产品简称，如 CVM、CDN 等，产品的简称具体细节请参考对应的产品文档。值为`*`的时候表示所有产品。该字段是必填项。  
 - **region**：描述地域信息。值为空的时候表示所有地域。目前支持两种命名方式，新版地域统一命名方式请参考  [地域和可用区](https://intl.cloud.tencent.com/document/product/213/6091)，腾讯云现有的地域命名方式定义如下：
 
@@ -30,7 +28,7 @@ qcs:project_id:service_type:region:account:resource
  - uid 方式，即主账号的 APPID，表示为`uid/${appid}`，如 uid/10001234。
  - 值为空的时候表示创建策略的 CAM 用户所属的主账号。
  
- >  目前 COS 和 CAS 业务的资源拥有者只能用 uid 方式描述，其他业务的资源拥有者只能用 uin 方式描述。
+ >?  目前 COS 和 CAS 业务的资源拥有者只能用 uid 方式描述，其他业务的资源拥有者只能用 uin 方式描述。
 -  **resource**：描述各产品的具体资源详情。
 	-  有几种描述方式，该字段是必填项。
      - 表示某个资源子类下的资源 ID 。如 VPC 产品的 `instance/ins-abcdefg`。
@@ -41,16 +39,14 @@ qcs:project_id:service_type:region:account:resource
 ```
 	<resource_type>/<resource_path>
 ```
-	 - 表示某个资源子类下的所有资源。如 `instance/*`。 
+	 - 表示某个资源子类下的所有资源。如 `instance/*`。
 ```
 	<resource_type>/*
 ```
-	 -  表示某产品下的所有资源。 
-		```
-		 *
-		```
-
-
+	 -  表示某产品下的所有资源。
+```
+	*
+```
 
  -  在某些场景下，资源 resource 元素也可以用`*`来描述，含义定义如下，详细信息也请参阅对应的产品文档。
  -   操作 action 是需要关联资源的操作时，resource 定义为`*`，表示关联所有资源。
@@ -59,43 +55,30 @@ qcs:project_id:service_type:region:account:resource
 ### CAM 的资源定义  
 CAM 包含了用户、组、策略等资源，CAM 资源的描述方式如下所示： 
 #### 主账号：
-
 ```
 qcs::cam::uin/164256472:uin/164256472
 ```
-
 或
-
 ```
 qcs::cam::uin/164256472:root 
 ```
-
 #### 子账号：
-
 ```    
 qcs::cam::uin/164256472:uin/73829520
 ```
-
 #### 组：
-
 ```
 qcs::cam::uin/164256472:groupid/2340
 ```
-
 #### 所有资源：
-
 ```
 *
 ```
-
 #### 策略：
-
 ```
 qcs::cam::uin/12345678:policyid/*
 ```
-
 或
-
 ```
 qcs::cam::uin/12345678:policyid/12423
 ```

@@ -3,7 +3,7 @@
 
 ## 前提条件
 - 创建只读实例之前需要先创建云数据库主实例，请参见 [购买指引](https://intl.cloud.tencent.com/document/product/236/5160)。
-- 使用云数据库 MySQL 之前，需要对数据库进行初始化，请参见 [初始化 MySQL 数据库](/doc/product/236/3128)。
+- 使用云数据库 MySQL 之前，需要对数据库进行初始化，请参见 [初始化 MySQL 数据库](https://intl.cloud.tencent.com/document/product/236/3128)。
 
 ## 操作步骤
 

@@ -43,7 +43,7 @@ Download the IM SDK based on the platform you use. For more information on how t
 		<td align="center">Windows</td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'windows'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'windows'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
-		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'windows'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Windows">Gitee</a></td>
+		<td align="center">Gitee</td>
 		<td align="center">-</td>
 		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34310">DOC</a></td>
 		<td>x86: about 3.9 MB<br>x86-64: about 5.1 MB</td>
@@ -80,3 +80,6 @@ Download the IM SDK based on the platform you use. For more information on how t
   		s.parentNode.insertBefore(mta, s);
   	})();
 </script>
+
+## Related Documentation
+- [Pricing]![](https://intl.cloud.tencent.com/zh/document/product/1047/34350)

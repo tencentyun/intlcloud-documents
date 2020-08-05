@@ -12,7 +12,7 @@ The MySQL master/slave binlog sync feature is adopted for read-only instances, w
 
 
 ## Feature Limits
-- Read-only instances can be purchased only for **high-IO GTID-enabled master instances on MySQL 5.6 or above with the InnoDB engine at a specification of 1 GB memory and 50 GB disk capacity or above**. If your master instance is below this specification, please upgrade it first.
+Read-only instances can be purchased only for source instances of high-availability edition on MySQL 5.6 or above with the InnoDB engine at a specification of 1 GB memory and 50 GB disk capacity or above. If your source instance is below this specification, please upgrade it first.
 - The minimum specification of a read-only instance is 1 GB memory and 50 GB disk capacity and must be at least 1.1 times the storage capacity used by the master instance.
 - A master instance can create up to 5 read-only instances.
 - Backup and rollback features are not supported.

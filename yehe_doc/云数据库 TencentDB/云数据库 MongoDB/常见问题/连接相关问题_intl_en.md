@@ -2,7 +2,7 @@
 ### What do I do in case of disconnection from MongoDB?
 Please see [Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092) to troubleshoot authentication issues.
 
-### What do I do if a message that "Remote server has closed the connection" displays?
+### What do I do if a message saying "Remote server has closed the connection" displays?
 First, please see [Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092) to troubleshoot authentication issues. If you can connect to MongoDB but still encounter this problem, you may need a reconnection mechanism. For more information, please see [PHP Reconnection Sample](https://intl.cloud.tencent.com/document/product/240/4980).
 
 ### WiredTiger 3.2 has the problem of table lock. Is TencentDB for MongoDB affected by the same issue?
