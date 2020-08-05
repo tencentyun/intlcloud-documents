@@ -27,10 +27,10 @@ You can create a recording template in the following two methods:
    <td>Default template type for LVB recording, which can be FLV, MP4, or HLS.</td>
    </tr><tr>
    <td>Template name</td>
-   <td>Custom LVB recording template name, which can contain letters, digits, _, and -.</td>
+   <td>Custom LVB recording template name, which can contain letters, digits, underscores, and hyphens.</td>
    </tr><tr>
    <td>Template description</td>
-   <td>Custom LVB recording template description, which can contain letters, digits, _, and -.</td>
+   <td>Custom LVB recording template description, which can contain letters, digits, underscores, and hyphens.</td>
    </tr><tr>
    <td>Recording file type</td>
    <td>Videos are recorded based on the original bitrate of the live stream and can be output in .hls, .mp4, .flv, and .aac formats. The .aac format records the audio only.</td>
