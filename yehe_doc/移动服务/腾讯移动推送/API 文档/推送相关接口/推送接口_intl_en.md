@@ -342,7 +342,7 @@ The specific fields for the iOS platform are as follows:
 | thread_id       | String  | message       |None    | No    | Thread name for collapsed notification in threaded display |
 | ios    | Object       |message  | None    | Yes    | iOS message structure. For more information, please see the [iOS field description](#iOS)  |
 | xg_media_resources    | String     | message | None    | No    | URL address of rich media element such as image, audio, and video                          |
-| xg | String | message| None | No | key reserved by the system, which should not be used |
+
 
 <span id="iOS"></span>
 
@@ -357,6 +357,7 @@ The specific fields for the iOS platform are as follows:
 | mutable-content | Integer |     aps | None    | No    | This is a notification expansion parameter that carries "mutable-content" during push: <li>1 means that the Service Extension supports iOS 10. <li>Once enabled, the push details will include the arrival data report. Before using this feature, please implement the Service Extension API as instructed in [Notification Service Extension Use Instructions](https://intl.cloud.tencent.com/document/product/1024/30730). If this field is not carried, arrival data will not be reported. |
 | sound           | String  | aps    | None    | No    | The `sound` field is used as follows: <br>1. To play back the system default ringtone, use `"sound":"default"`<br>2. To play back local custom ringtone, use `"sound":"chime.aiff"` <br>3. To mute, use `"sound":""` or remove the custom ringtone description in the `sound` field. Note: the ringtone must be in Linear PCM, MA4 (IMA/ADPCM), alaw, or μLaw format, put in the `bundle` directory of the project, and of no more than 30s in length; otherwise, the system default ringtone will be used. |
 | custom_content  | String  | ios    | None    | No    | Parameters for custom delivery, which must be serialized to JSON string                                |
+| xg | String | message| None | No | key reserved by the system, which should not be used |
 
 Below is an example of a complete message:
 
